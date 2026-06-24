@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Efficient Medical Reasoning with Minimal Fine-Tuning Data
 description: >-
-  [CVPR 2026][Medical NLP][SFT] This paper proposes the Difficulty-Influence Quadrant (DIQ) data selection strategy, which jointly considers sample difficulty and gradient influence. This approach allows a VLM's language backbone to match full SFT performance using only 1% of curated data and exceed full-dataset training with 10% of the data.
+  [CVPR 2026][Medical LLM][Data Selection] This paper proposes the Difficulty-Influence Quadrant (DIQ) data selection strategy, which jointly considers sample difficulty and gradient influence. This approach allows a VLM's language backbone to match full SFT performance using only 1% of curated data and exceed full-dataset training with 10% of the data.
 tags:
-  - CVPR 2026
-  - Medical NLP
-  - SFT
+  - "CVPR 2026"
+  - "Medical LLM"
+  - "Data Selection"
+  - "Medical Reasoning"
+  - "Large Language Models"
+  - "SFT"
+  - "Gradient Influence"
 date: 2026-05-08
-content_hash: 3e1dbc7b802c45c7
+content_hash: ddeaaff2396b784a
 ---
+
 # Towards Efficient Medical Reasoning with Minimal Fine-Tuning Data
 
 **Conference**: CVPR 2026  

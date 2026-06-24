@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding
 description: >-
-  [ICLR 2026][Text Generation][Paper Note] This paper proposes p-less sampling: a **completely hyperparameter-free** truncation decoding method. At each step, it uses the "collision probability" $\sum_v P_\theta(v)^2$ of the entire token distribution as a dynamic truncation threshold. It outperforms methods like top-p and min-p in mathematics, logical reasoning
+  [ICLR 2026][Text Generation][Truncation Sampling] This paper proposes p-less sampling: a **completely hyperparameter-free** truncation decoding method. At each step, it uses the "collision probability" $\sum_v P_\theta(v)^2$ of the entire token distribution as a dynamic truncation threshold. It outperforms methods like top-p and min-p in mathematics, logical reasoning, and creative writing, showing minimal degradation at high temperatures while offering faster inference.
 tags:
-  - ICLR 2026
-  - Text Generation
+  - "ICLR 2026"
+  - "Text Generation"
+  - "Truncation Sampling"
+  - "Hyperparameter-Free Decoding"
+  - "Information Theory"
+  - "Collision Entropy"
+  - "Temperature Robustness"
 date: 2026-05-08
-content_hash: 2bbc9ad984367333
+content_hash: 5b8da32056ff05b1
 ---
+
 # p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding
 
 **Conference**: ICLR 2026  
@@ -149,10 +155,10 @@ Key observation: When the temperature rises to 1.5 or 2.0, the win rates for $\e
 ## Related Papers
 
 - [\[ACL 2025\] Balancing Diversity and Risk in LLM Sampling: How to Select Your Method and Parameter for Open-Ended Text Generation](../../ACL2025/nlp_generation/balancing_diversity_and_risk_in_llm_sampling_how_to_select_your_method_and_param.md)
-- [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/nlp_generation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
+- [\[ICLR 2026\] Diverse Text Decoding via Iterative Reweighting](diverse_text_decoding_via_iterative_reweighting.md)
+- [\[ICLR 2026\] Logit-KL Flow Matching: Non-Autoregressive Text Generation with Sampling-Mixing Inference](logitkl_flow_matching_nonautoregressive_text_generation_via_samplinghybrid_infer.md)
 - [\[ACL 2026\] ConlangCrafter: Constructing Languages with a Multi-Hop LLM Pipeline](../../ACL2026/nlp_generation/conlangcrafter_constructing_languages_with_a_multi-hop_llm_pipeline.md)
-- [\[ACL 2025\] IMPARA-GED: Grammatical Error Detection is Boosting Reference-free Grammatical Error Quality Estimator](../../ACL2025/nlp_generation/impara-ged_grammatical_error_detection_is_boosting_reference-free_grammatical_er.md)
-- [\[ACL 2026\] Are Emotion and Rhetoric Neurons in LLM? Neuron Recognition and Adaptive Masking for Emotion-Rhetoric Prediction Steering](../../ACL2026/nlp_generation/are_emotion_and_rhetoric_neurons_in_llm_neuron_recognition_and_adaptive_masking_.md)
+- [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/nlp_generation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
 
 </div>
 

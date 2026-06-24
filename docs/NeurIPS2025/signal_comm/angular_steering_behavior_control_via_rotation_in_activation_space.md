@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Angular Steering: Behavior Control via Rotation in Activation Space
 description: >-
-  [NeurIPS 2025][Signal & Communication][activation steering] This paper proposes Angular Steering, which unifies LLM activation steering as rotation operations within a fixed 2D subspace — providing a continuous…
+  [NeurIPS 2025 Spotlight][Signal & Communication][activation steering] This paper proposes Angular Steering, which unifies LLM activation steering as rotation operations within a fixed 2D subspace — providing a continuous, fine-grained, norm-preserving behavior control knob spanning 0°–360° via rotation angle. The framework subsumes activation addition and directional ablation as special cases of rotation, and demonstrates robust behavior control on Llama 3 / Qwen 2.5 / Gemma…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Signal & Communication"
   - "activation steering"
   - "behavior control"
@@ -12,7 +12,7 @@ tags:
   - "refusal steering"
   - "norm preservation"
 date: 2026-05-08
-content_hash: 7b7682d553f39577
+content_hash: cacf68ef6e6b5589
 ---
 
 # Angular Steering: Behavior Control via Rotation in Activation Space
@@ -137,10 +137,10 @@ Evaluated on Llama 3 (3B/8B), Qwen 2.5 (3B/7B/14B), and Gemma 2 (9B). Sweeping �
 ## Related Papers
 
 - [\[ICLR 2026\] Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection](../../ICLR2026/signal_comm/enhancing_instruction_following_of_llms_via_activation_steering_with_dynamic_rej.md)
+- [\[CVPR 2025\] Continuous Space-Time Video Resampling with Invertible Motion Steganography](../../CVPR2025/signal_comm/continuous_space-time_video_resampling_with_invertible_motion_steganography.md)
 - [\[ICLR 2026\] Mamba-3: Improved Sequence Modeling using State Space Principles](../../ICLR2026/signal_comm/mamba-3_improved_sequence_modeling_using_state_space_principles.md)
 - [\[CVPR 2026\] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation](../../CVPR2026/signal_comm/actta_rethinking_test-time_adaptation_via_dynamic_activation.md)
 - [\[CVPR 2026\] CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space](../../CVPR2026/signal_comm/clay_conditional_visual_similarity.md)
-- [\[NeurIPS 2025\] Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks](memory-integrated_reconfigurable_adapters_a_unified_framework_for_settings_with_.md)
 
 </div>
 

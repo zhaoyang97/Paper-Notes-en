@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation
 description: >-
-  [ICCV 2025][3D Vision][Monocular depth estimation] This paper proposes FiffDepth, which transforms a pretrained diffusion model into a deterministic feed-forward architecture for monocular depth estimation. By preserving…
+  [ICCV 2025][3D Vision][Monocular depth estimation] This paper proposes FiffDepth, which transforms a pretrained diffusion model into a deterministic feed-forward architecture for monocular depth estimation. By preserving the diffusion trajectory to maintain detail generation capability and introducing a learnable filter to distill DINOv2's robust generalization ability into the diffusion backbone, FiffDepth simultaneously surpasses existing methods in efficiency, accuracy…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "DINOv2 distillation"
   - "detail preservation"
 date: 2026-05-08
-content_hash: 6bc6b757a0139c5f
+content_hash: cf76399e1e62d531
 ---
 
 # FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation
@@ -170,11 +170,11 @@ The paper presents strong novelty with a concise and effective methodology, and 
 
 ## Related Papers
 
-- [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
 - [\[ICCV 2025\] AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion](adahuman_animatable_detailed_3d_human_generation_with_compositional_multiview_di.md)
-- [\[ICCV 2025\] RePoseD: Efficient Relative Pose Estimation with Known Depth Information](reposed_efficient_relative_pose_estimation_with_known_depth_information.md)
-- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
-- [\[NeurIPS 2025\] Jasmine: Harnessing Diffusion Prior for Self-Supervised Depth Estimation](../../NeurIPS2025/3d_vision/jasmine_harnessing_diffusion_prior_for_self-supervised_depth_estimation.md)
+- [\[ECCV 2024\] DiffusionDepth: Diffusion Denoising Approach for Monocular Depth Estimation](../../ECCV2024/3d_vision/diffusiondepth_diffusion_denoising_approach_for_monocular_depth_estimation.md)
+- [\[CVPR 2026\] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation](../../CVPR2026/3d_vision/iris_integrating_language_into_diffusion-based_monocular_depth_estimation.md)
+- [\[ECCV 2024\] Diffusion Models for Monocular Depth Estimation: Overcoming Challenging Conditions](../../ECCV2024/3d_vision/diffusion_models_for_monocular_depth_estimation_overcoming_challenging_condition.md)
+- [\[CVPR 2025\] FLARE: Feed-forward Geometry, Appearance and Camera Estimation from Uncalibrated Sparse Views](../../CVPR2025/3d_vision/flare_feed-forward_geometry_appearance_and_camera_estimation_from_uncalibrated_s.md)
 
 </div>
 

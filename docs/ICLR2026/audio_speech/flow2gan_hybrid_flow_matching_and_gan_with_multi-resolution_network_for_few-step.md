@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation
 description: >-
-  [ICLR 2026][Audio & Speech][Flow Matching] The paper proposes Flow2GAN, a two-stage training framework. It first utilizes improved Flow Matching to learn generative capabilities, then applies GAN fine-tuning to achieve few-step (1/2/4 steps) high-fidelity audio generation, incorporating a multi-resolution network architecture to process Fourier coefficients at
+  [ICLR 2026][Audio & Speech][Flow Matching] The paper proposes Flow2GAN, a two-stage training framework. It first utilizes improved Flow Matching to learn generative capabilities, then applies GAN fine-tuning to achieve few-step (1/2/4 steps) high-fidelity audio generation, incorporating a multi-resolution network architecture to process Fourier coefficients at different time-frequency resolutions.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Flow Matching
-  - GAN
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Flow Matching"
+  - "GAN"
+  - "Audio Generation"
+  - "Multi-resolution"
+  - "Few-step Inference"
 date: 2026-05-08
-content_hash: 16ebc171635d9876
+content_hash: baf74baeabaecae3
 ---
+
 # Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation
 
 **Conference**: ICLR 2026  
@@ -151,11 +155,11 @@ LibriTTS test set (Mel-spectrogram conditioned):
 
 ## Related Papers
 
+- [\[ICLR 2026\] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization](tangoflux_super_fast_and_faithful_text_to_audio_generation_with_flow_matching_an.md)
+- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/audio_speech/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
 - [\[ICLR 2026\] AlignSep: Temporally-Aligned Video-Queried Sound Separation with Flow Matching](alignsep_temporally-aligned_video-queried_sound_separation_with_flow_matching.md)
 - [\[ICML 2025\] BinauralFlow: A Causal and Streamable Approach for High-Quality Binaural Speech Synthesis with Flow Matching Models](../../ICML2025/audio_speech/binauralflow_a_causal_and_streamable_approach_for_high-quality_binaural_speech_s.md)
-- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/audio_speech/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
-- [\[CVPR 2026\] OmniRet: Efficient and High-Fidelity Omni Modality Retrieval](../../CVPR2026/audio_speech/omniret_efficient_and_high-fidelity_omni_modality_retrieval.md)
-- [\[NeurIPS 2025\] Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis](../../NeurIPS2025/audio_speech/shallow_flow_matching_for_coarse-to-fine_text-to-speech_synthesis.md)
+- [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](../../NeurIPS2025/audio_speech/model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
 
 </div>
 

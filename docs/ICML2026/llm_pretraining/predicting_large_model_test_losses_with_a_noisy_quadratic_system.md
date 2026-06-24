@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Predicting Large Model Test Losses with a Noisy Quadratic System
 description: >-
-  [ICML 2026][Pretraining][Chinchilla] This paper proposes the Noisy Quadratic System (NQS)—a mechanistic loss model that frames LLM test loss as $L(N, B, K)$ (model size / batch size / update steps). It is the first to explicitly model batch size within a scaling law, improving extrapolation capabilities on Pythia + OWT2 from Chinchilla's ~20× compute rang
+  [ICML 2026][LLM Pretraining][Noisy Quadratic System] This paper proposes the Noisy Quadratic System (NQS)—a mechanistic loss model that frames LLM test loss as $L(N, B, K)$ (model size / batch size / update steps). It is the first to explicitly model batch size within a scaling law, improving extrapolation capabilities on Pythia + OWT2 from Chinchilla's ~20× compute range to ~4000×.
 tags:
-  - ICML 2026
-  - Pretraining
-  - Chinchilla
-  - scaling law
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "Noisy Quadratic System"
+  - "Chinchilla"
+  - "scaling law"
+  - "batch size modeling"
+  - "extrapolation prediction"
 date: 2026-05-08
-content_hash: a3dab0010ace990e
+content_hash: 8f56fe811917e1c3
 ---
+
 # Predicting Large Model Test Losses with a Noisy Quadratic System
 
 **Conference**: ICML 2026  
@@ -123,9 +127,9 @@ The paper performs three ablations: necessity of LayerNorm correction, complexit
 
 - [\[ICML 2025\] Language Model Developers Should Report Train-Test Overlap](../../ICML2025/llm_pretraining/language_model_developers_should_report_train-test_overlap.md)
 - [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
+- [\[ICLR 2026\] Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training](../../ICLR2026/llm_pretraining/revisiting_the_scaling_properties_of_downstream_metrics_in_large_language_model_.md)
 - [\[ICLR 2026\] Predicting Training Re-evaluation Curves Enables Effective Data Curriculums](../../ICLR2026/llm_pretraining/predicting_training_re-evaluation_curves_enables_effective_data_curriculums_for_.md)
-- [\[ICML 2026\] Scaling Depth Capacity via Zero/One-Layer Model Expansion](scaling_depth_capacity_via_zeroone-layer_model_expansion.md)
-- [\[ICML 2026\] On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length](on_training_large_language_models_for_long-horizon_tasks_an_empirical_study_of_h.md)
+- [\[ICLR 2026\] TNT: Improving Chunkwise Training for Test-Time Memorization](../../ICLR2026/llm_pretraining/tnt_improving_chunkwise_training_for_test-time_memorization.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning in Compact Spaces with Approximately Normalized Transformer
 description: >-
-  [NeurIPS 2025][LLM Pretraining][approximate normalization] This paper proposes anGPT (Approximately Normalized GPT), which exploits the concentration of vector norms in high-dimensional spaces to replace per-sample exact…
+  [NeurIPS 2025][LLM Pretraining][approximate normalization] This paper proposes anGPT (Approximately Normalized GPT), which exploits the concentration of vector norms in high-dimensional spaces to replace per-sample exact normalization with simple scalar multiplication. The method achieves 40% convergence speedup over GPT+ (with QK-norm) while eliminating weight decay and learning rate warmup, incurring only 3% runtime overhead.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "weight-decay-free"
   - "convergence acceleration"
 date: 2026-05-08
-content_hash: 60def23f9c3c5a3a
+content_hash: 4ced9b821dae2869
 ---
 
 # Learning in Compact Spaces with Approximately Normalized Transformer
@@ -145,10 +145,10 @@ Consistent ~40% convergence speedup is also observed on 250M and 1.0B models.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Born a Transformer – Always a Transformer? On the Effect of Pretraining on Architectural Abilities](born_a_transformer_--_always_a_transformer_on_the_effect_of_pretraining_on_archi.md)
-- [\[ICML 2026\] Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning](../../ICML2026/llm_pretraining/names_dont_matter_symbol-invariant_transformer_for_open-vocabulary_learning.md)
 - [\[ACL 2026\] Compact Example-Based Explanations for Language Models](../../ACL2026/llm_pretraining/compact_example-based_explanations_for_language_models.md)
+- [\[ICML 2026\] Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning](../../ICML2026/llm_pretraining/names_dont_matter_symbol-invariant_transformer_for_open-vocabulary_learning.md)
+- [\[ACL 2025\] Byte Latent Transformer: Patches Scale Better Than Tokens](../../ACL2025/llm_pretraining/byte_latent_transformer.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
-- [\[NeurIPS 2025\] CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data](climb_class-imbalanced_learning_benchmark_on_tabular_data.md)
 
 </div>
 

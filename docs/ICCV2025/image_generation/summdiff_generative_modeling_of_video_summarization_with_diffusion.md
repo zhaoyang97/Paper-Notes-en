@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SummDiff: Generative Modeling of Video Summarization with Diffusion
 description: >-
-  [ICCV 2025][Image Generation][Video Summarization] SummDiff is the first work to introduce diffusion models into video summarization, formulating the task as a conditional generation problem. By learning the distribution…
+  [ICCV 2025][Image Generation][Video Summarization] SummDiff is the first work to introduce diffusion models into video summarization, formulating the task as a conditional generation problem. By learning the distribution of "good summaries," the model generates diverse plausible summaries that better reflect the inherent subjectivity of the video summarization task.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Subjectivity Modeling"
   - "Knapsack Problem"
 date: 2026-05-08
-content_hash: 2bb9d0dfa08284c3
+content_hash: 89face5149bbf993
 ---
 
 # SummDiff: Generative Modeling of Video Summarization with Diffusion
@@ -142,9 +142,9 @@ Both codebook quantization and AdaLN-Zero conditioning injection are critical to
 ## Related Papers
 
 - [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
-- [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](../../NeurIPS2025/image_generation/physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
-- [\[ICCV 2025\] Generative Modeling of Shape-Dependent Self-Contact Human Poses](generative_modeling_of_shape-dependent_self-contact_human_poses.md)
 - [\[ICCV 2025\] REGEN: Learning Compact Video Embedding with (Re-)Generative Decoder](regen_learning_compact_video_embedding_with_re-generative_decoder.md)
+- [\[ICCV 2025\] Generative Modeling of Shape-Dependent Self-Contact Human Poses](generative_modeling_of_shape-dependent_self-contact_human_poses.md)
+- [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](../../NeurIPS2025/image_generation/physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
 - [\[ICCV 2025\] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction](aid_adapting_image2video_diffusion_models_for_instruction-guided_video_predictio.md)
 
 </div>

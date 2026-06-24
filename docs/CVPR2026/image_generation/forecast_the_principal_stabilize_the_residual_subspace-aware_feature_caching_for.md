@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Forecast the Principal, Stabilize the Residual: Subspace-Aware Feature Caching for Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][DiT] This work makes a key observation regarding training-free feature caching for Diffusion Transformers (DiT): in the feature space, only the low-rank principal subspace evolves smoothly and predictably over time, while the high-frequency residual subspace is jittery and hard to forecast. Consequently, SVD is employed to
+  [CVPR 2026][Image Generation][Feature Caching] This work makes a key observation regarding training-free feature caching for Diffusion Transformers (DiT): in the feature space, only the low-rank principal subspace evolves smoothly and predictably over time, while the high-frequency residual subspace is jittery and hard to forecast. Consequently, SVD is employed to decompose features into two parts: EMA extrapolation is applied to the principal subspace…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Feature Caching"
+  - "Diffusion Acceleration"
+  - "SVD Low-rank Decomposition"
+  - "Subspace-Aware"
+  - "DiT"
 date: 2026-05-08
-content_hash: b7ef9ca52c69f7ec
+content_hash: 2c72ed66a6338075
 ---
+
 # Forecast the Principal, Stabilize the Residual: Subspace-Aware Feature Caching for Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -145,9 +150,9 @@ Compatibility (Table 3): SVD-Cache can be stacked with quantization (FLUX.1-dev-
 
 - [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[AAAI 2026\] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration](../../AAAI2026/image_generation/procache_constraint-aware_feature_caching_with_selective_computation_for_diffusi.md)
+- [\[ICLR 2026\] Let Features Decide Their Own Solvers: Hybrid Feature Caching for Diffusion Transformers](../../ICLR2026/image_generation/let_features_decide_their_own_solvers_hybrid_feature_caching_for_diffusion_trans.md)
 - [\[CVPR 2026\] SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching](sencache_accelerating_diffusion_model_inference_via_sensitivity-aware_caching.md)
 - [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
-- [\[CVPR 2026\] LESA: Learnable Stage-Aware Predictors for Diffusion Model Acceleration](lesa_learnable_stage-aware_predictors_for_diffusion_model_acceleration.md)
 
 </div>
 

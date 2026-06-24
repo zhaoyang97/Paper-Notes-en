@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning
 description: >-
-  [ICLR 2026][Model Compression][continual learning] Inspired by the neurobiological sparse expansion and modular integration of the Drosophila mushroom body, the FlyPrompt framework is proposed for General Continual Learning (GCL). It achieves non-iterative expert selection via a Random-Expanded Analytical Router (REAR) and enhances expert capabilities through Temporal-
+  [ICLR 2026][Model Compression][continual learning] Inspired by the neurobiological sparse expansion and modular integration of the Drosophila mushroom body, the FlyPrompt framework is proposed for General Continual Learning (GCL). It achieves non-iterative expert selection via a Random-Expanded Analytical Router (REAR) and enhances expert capabilities through Temporal-Ensemble Task-Experts (TE²) utilizing multi-time-scale EMA output heads. It achieves gains of up to 11.23%…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - continual learning
-  - prompt tuning
-  - brain-inspired
-  - expert routing
-  - temporal ensemble
+  - "ICLR 2026"
+  - "Model Compression"
+  - "continual learning"
+  - "prompt tuning"
+  - "brain-inspired"
+  - "expert routing"
+  - "temporal ensemble"
 date: 2026-05-08
-content_hash: bd11019824cac84a
+content_hash: 884f28488bc57848
 ---
+
 # FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning
 
 **Conference**: ICLR 2026  
@@ -141,15 +142,13 @@ Even with perfect routing, the decision boundaries of output heads shift due to 
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
-- [\[ICML 2026\] Continual Model Routing in Evolving Model Hubs](../../ICML2026/model_compression/continual_model_routing_in_evolving_model_hubs.md)
-- [\[ICLR 2026\] LoRA-Mixer: Coordinate Modular LoRA Experts Through Serial Attention Routing](lora-mixer_coordinate_modular_lora_experts_through_serial_attention_routing.md)
-- [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](rethinking_continual_learning_with_progressive_neural_collapse.md)
+- [\[ICLR 2026\] Robust Selective Activation with Randomized Temporal K-Winner-Take-All in Spiking Neural Networks for Continual Learning](robust_selective_activation_with_randomized_temporal_k-winner-take-all_in_spikin.md)
 - [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](quantized_gradient_projection_for_memory-efficient_continual_learning.md)
+- [\[ICLR 2026\] IDER: IDempotent Experience Replay for Reliable Continual Learning](ider_idempotent_experience_replay_for_reliable_continual_learning.md)
+- [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
+- [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
 
 </div>
 

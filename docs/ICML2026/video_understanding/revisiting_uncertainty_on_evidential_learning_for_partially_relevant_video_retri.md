@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting Uncertainty: On Evidential Learning for Partially Relevant Video Retrieval
 description: >-
-  [ICML 2026][Video Understanding][PRVR] To address query ambiguity and temporal sparse supervision caused by "short queries vs. long videos" in Partially Relevant Video Retrieval (PRVR), this paper proposes Holmes, a hierarchical evidential learning framework based on the Dirichlet distribution. It distinguishes precise, polysemous, and under-determined quer
+  [ICML 2026][Video Understanding][PRVR] To address query ambiguity and temporal sparse supervision caused by "short queries vs. long videos" in Partially Relevant Video Retrieval (PRVR), this paper proposes Holmes, a hierarchical evidential learning framework based on the Dirichlet distribution. It distinguishes precise, polysemous, and under-determined queries using a three-fold principle at the inter-video level for adaptive label calibration…
 tags:
-  - ICML 2026
-  - Video Understanding
-  - PRVR
+  - "ICML 2026"
+  - "Video Understanding"
+  - "PRVR"
+  - "Evidential Learning"
+  - "Dirichlet Distribution"
+  - "Optimal Transport"
+  - "Query Ambiguity"
 date: 2026-05-08
-content_hash: ae43d2fa616c6ad6
+content_hash: 27e27b5fdbb83516
 ---
+
 # Revisiting Uncertainty: On Evidential Learning for Partially Relevant Video Retrieval
 
 **Conference**: ICML 2026  
@@ -142,9 +147,9 @@ Holmes exceeds all PRVR baselines (ARL, MGAKD, ProtoPRVR, MamFusion) across all 
 
 - [\[ECCV 2024\] Bayesian Evidential Deep Learning for Online Action Detection](../../ECCV2024/video_understanding/bayesian_evidential_deep_learning_for_online_action_detection.md)
 - [\[CVPR 2026\] VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding](../../CVPR2026/video_understanding/virtuebench_evaluating_trustworthiness_under_uncertainty_in_long_video_understan.md)
-- [\[CVPR 2025\] Learning Audio-Guided Video Representation with Gated Attention for Video-Text Retrieval](../../CVPR2025/video_understanding/learning_audio-guided_video_representation_with_gated_attention_for_video-text_r.md)
 - [\[CVPR 2026\] U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation](../../CVPR2026/video_understanding/u2flow_uncertainty_aware_unsupervised_optical_flow_estimation.md)
-- [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](../../NeurIPS2025/video_understanding/when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
+- [\[CVPR 2025\] Learning Audio-Guided Video Representation with Gated Attention for Video-Text Retrieval](../../CVPR2025/video_understanding/learning_audio-guided_video_representation_with_gated_attention_for_video-text_r.md)
+- [\[ICML 2026\] RELO: Reinforcement Learning to Localize for Visual Object Tracking](relo_reinforcement_learning_to_localize_for_visual_object_tracking.md)
 
 </div>
 

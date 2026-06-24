@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VVS: Accelerating Speculative Decoding for Visual Autoregressive Generation via Partial Verification Skipping
 description: >-
-  [CVPR 2026][Model Compression][Inference Acceleration] VVS introduces "partial verification skipping" to speculative decoding (SD) for visual autoregressive generation for the first time. By utilizing verification-free token selection, stale feature cache reuse, and similarity-driven skip scheduling, it reduces the number of target model forward passes by up to 2.86× and a
+  [CVPR2026][Multimodal Efficiency][Speculative Decoding] VVS introduces "partial verification skipping" to speculative decoding (SD) for visual autoregressive generation for the first time. By utilizing verification-free token selection, stale feature cache reuse, and similarity-driven skip scheduling, it reduces the number of target model forward passes by up to 2.86× and achieves an end-to-end acceleration of 1.76× with minimal loss in image quality. This breaks the ceiling…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Inference Acceleration
+  - "CVPR2026"
+  - "Multimodal Efficiency"
+  - "Speculative Decoding"
+  - "Visual Autoregressions"
+  - "Verification Skipping"
+  - "Feature Caching"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: ea579dadac1082ea
+content_hash: c2211dd2eb179b18
 ---
+
 # VVS: Accelerating Speculative Decoding for Visual Autoregressive Generation via Partial Verification Skipping
 
 **Conference**: CVPR2026  
@@ -162,11 +167,11 @@ Setup: Evaluated on LlamaGen-XL Stage I / Stage II using 5000 captions from the 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Traversal Verification for Speculative Tree Decoding](../../NeurIPS2025/model_compression/traversal_verification_for_speculative_tree_decoding.md)
-- [\[CVPR 2026\] Progressive Supernet Training for Efficient Visual Autoregressive Modeling](progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)
-- [\[ICML 2026\] SPEED-Bench: A Unified and Diverse Benchmark for Speculative Decoding](../../ICML2026/model_compression/speed-bench_a_unified_and_diverse_benchmark_for_speculative_decoding.md)
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](../../ICCV2025/model_compression/bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
+- [\[CVPR 2026\] LazyVAR: Accelerating Visual Autoregressive Models via Scale-wise Token Pruning and Parallel Group Decoding](lazyvar_accelerating_visual_autoregressive_models_via_scale-wise_token_pruning_a.md)
+- [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](../../NeurIPS2025/vlm_efficiency/vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
+- [\[CVPR 2026\] MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping](modes_accelerating_mixture-of-experts_multimodal_large_language_models_via_dynam.md)
+- [\[CVPR 2026\] ViLearn: Accelerating Training Convergence of Image-to-3D Generation via Visibility Learning](vilearn_accelerating_training_convergence_of_image-to-3d_generation_via_visibili.md)
+- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
 
 </div>
 

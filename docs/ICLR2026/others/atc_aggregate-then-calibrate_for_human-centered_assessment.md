@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] AtC: Aggregate-then-Calibrate for Human-centered Assessment
 description: >-
-  [ICLR 2026][Others][Paper Note] AtC proposes a two-stage "Aggregate-then-Calibrate" framework: first, it aggregates human pairwise comparisons into a consensus ranking using a heterogeneous Thurstone model that accounts for annotator reliability; then, it aligns scores from any predictive model to this ranking via isotonic projection. This approach s
+  [ICLR 2026][Human-centered assessment] AtC proposes a two-stage "Aggregate-then-Calibrate" framework: first, it aggregates human pairwise comparisons into a consensus ranking using a heterogeneous Thurstone model that accounts for annotator reliability; then, it aligns scores from any predictive model to this ranking via isotonic projection. This approach simultaneously achieves "reliable human-provided ordering" and "consistent model-provided scale" in the absence of verifia…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Human-centered assessment"
+  - "rank aggregation"
+  - "isotonic regression"
+  - "annotator heterogeneity"
+  - "monotonic projection"
 date: 2026-05-08
-content_hash: 3519f1775265c8d6
+content_hash: f27c86aa954021be
 ---
+
 # AtC: Aggregate-then-Calibrate for Human-centered Assessment
 
 **Conference**: ICLR 2026  

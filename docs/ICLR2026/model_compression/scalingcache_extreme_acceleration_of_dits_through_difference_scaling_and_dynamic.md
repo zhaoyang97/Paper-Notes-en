@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ScalingCache: Extreme Acceleration of DiTs through Difference Scaling and Dynamic Interval Caching
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] ScalingCache is a training-free DiT inference acceleration framework. By offline estimation of a "difference scaling coefficient $\alpha$", it adaptively fuses zero-order (direct reuse) and first-order (linear extrapolation) cached features. Combined with a runtime dynamic caching interval strategy, it achieves approxi
+  [ICLR 2026][Model Compression][Diffusion Transformer] ScalingCache is a training-free DiT inference acceleration framework. By offline estimation of a "difference scaling coefficient $\alpha$", it adaptively fuses zero-order (direct reuse) and first-order (linear extrapolation) cached features. Combined with a runtime dynamic caching interval strategy, it achieves approximately 2.5× acceleration on Wan2.1 and HunyuanVideo with only a 0.5% drop in VBench…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Diffusion Transformer"
+  - "Feature Caching"
+  - "Training-free Acceleration"
+  - "Difference Scaling"
+  - "Dynamic Interval"
 date: 2026-05-08
-content_hash: e85fbfb513f374c6
+content_hash: bc12b026719f6881
 ---
+
 # ScalingCache: Extreme Acceleration of DiTs through Difference Scaling and Dynamic Interval Caching
 
 **Conference**: ICLR 2026  

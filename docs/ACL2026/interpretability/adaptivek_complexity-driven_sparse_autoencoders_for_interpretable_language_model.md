@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AdaptiveK: Complexity-Driven Sparse Autoencoders for Interpretable Language Model Representations
 description: >-
-  [ACL 2026][Interpretability][Paper Note] AdaptiveK proposes a Sparse Autoencoder driven by input semantic complexity, allowing simple text to activate fewer features and complex text to activate more. Across experiments on eight autoregressive LLMs and additional architectures, it improves reconstruction quality, conceptual decoupling, and training efficiency
+  [ACL 2026][Interpretability][Sparse Autoencoder] AdaptiveK proposes a Sparse Autoencoder driven by input semantic complexity, allowing simple text to activate fewer features and complex text to activate more. Across experiments on eight autoregressive LLMs and additional architectures, it improves reconstruction quality, conceptual decoupling, and training efficiency while reducing the need for repetitive hyperparameter tuning common in fixed TopK approaches.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Sparse Autoencoder"
+  - "Mechanistic Interpretability"
+  - "Linear Probe"
+  - "Adaptive Sparsity"
+  - "Representation Complexity"
 date: 2026-05-08
-content_hash: c472d5647185f5bb
+content_hash: d4261ba90d63c0f2
 ---
+
 # AdaptiveK: Complexity-Driven Sparse Autoencoders for Interpretable Language Model Representations
 
 **Conference**: ACL 2026  
@@ -128,11 +134,11 @@ Ablations on the $k$ mapping range show that increasing $k_{max}$ consistently i
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](../../ICLR2026/interpretability/the_price_of_amortized_inference_in_sparse_autoencoders.md)
+- [\[ICML 2026\] Ensembling Sparse Autoencoders](../../ICML2026/interpretability/ensembling_sparse_autoencoders.md)
+- [\[ICML 2025\] Do Sparse Autoencoders Generalize? A Case Study of Answerability](../../ICML2025/interpretability/do_sparse_autoencoders_generalize_a_case_study_of_answerability.md)
 - [\[ICLR 2026\] Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability](../../ICLR2026/interpretability/temporal_sparse_autoencoders_leveraging_the_sequential_nature_of_language_for_in.md)
 - [\[ICML 2026\] Sparse Autoencoders are Topic Models](../../ICML2026/interpretability/sparse_autoencoders_are_topic_models.md)
-- [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](../../NeurIPS2025/interpretability/transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
-- [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
-- [\[ICML 2026\] Ensembling Sparse Autoencoders](../../ICML2026/interpretability/ensembling_sparse_autoencoders.md)
 
 </div>
 

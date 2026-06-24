@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bayesian Decomposition and Semantic Completion for Few-shot Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][SAM] The authors decompose Few-shot Semantic Segmentation (FSS) into three lightweight probabilistic terms—Prior, Likelihood, and Class Consistency—using the Bayesian formula. The method utilizes SAM to generate structured candidate regions, a small binary classification network (CALM) to estimate likelihood and consistency
+  [CVPR 2026][Segmentation][Few-shot Semantic Segmentation] The authors decompose Few-shot Semantic Segmentation (FSS) into three lightweight probabilistic terms—Prior, Likelihood, and Class Consistency—using the Bayesian formula. The method utilizes SAM to generate structured candidate regions, a small binary classification network (CALM) to estimate likelihood and consistency simultaneously, and a Semantic Completion Module (SCM) to merge regional fragments into a complete ma…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Few-shot Semantic Segmentation"
+  - "Bayesian Decomposition"
+  - "SAM"
+  - "Class-agnostic Localization"
+  - "Semantic Completion"
 date: 2026-05-08
-content_hash: 44b30c49844a1c4d
+content_hash: 1991aa8facade863
 ---
+
 # Bayesian Decomposition and Semantic Completion for Few-shot Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -159,10 +164,10 @@ Module ablation (PASCAL-5$^i$ mIoU):
 ## Related Papers
 
 - [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
-- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
 - [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
-- [\[CVPR 2026\] PromptMoE: A Segmentation Refinement Framework Leveraging Mixture of Experts for Improved Prompting](promptmoe_a_segmentation_refinement_framework_leveraging_mixture_of_experts_for_.md)
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
+- [\[ICML 2025\] Adapter Naturally Serves as Decoupler for Cross-Domain Few-Shot Semantic Segmentation](../../ICML2025/segmentation/adapter_naturally_serves_as_decoupler_for_cross-domain_few-shot_semantic_segment.md)
+- [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](../../AAAI2026/segmentation/bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
+- [\[ECCV 2024\] Attention Decomposition for Cross-Domain Semantic Segmentation](../../ECCV2024/segmentation/attention_decomposition_for_cross-domain_semantic_segmentation.md)
 
 </div>
 

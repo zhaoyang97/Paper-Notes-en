@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SupCLAP: Controlling Optimization Trajectory Drift in Audio-Text Contrastive Learning with Support Vector Regularization
 description: >-
-  [ICLR 2026][Audio & Speech][CLAP] This paper decomposes the gradient of contrastive learning into "pulling force" and "pushing force". It discovers that the component of the negative sample pushing force perpendicular to the pulling force contains rich information but is uncontrolled, leading to optimization trajectory drift. Therefore, it proposes Sup
+  [ICLR 2026][Audio & Speech][CLAP] This paper decomposes the gradient of contrastive learning into "pulling force" and "pushing force". It discovers that the component of the negative sample pushing force perpendicular to the pulling force contains rich information but is uncontrolled, leading to optimization trajectory drift. Therefore, it proposes Support Vector Regularization (SVR): constructing a text support vector shifted towards the positive sample and using a semantic…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - CLAP
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "CLAP"
+  - "Contrastive Learning"
+  - "Optimization Trajectory Drift"
+  - "Support Vector Regularization"
+  - "Semantic Radius"
 date: 2026-05-08
-content_hash: dc2a9f6541e3620e
+content_hash: f0de5ae20db78a65
 ---
+
 # SupCLAP: Controlling Optimization Trajectory Drift in Audio-Text Contrastive Learning with Support Vector Regularization
 
 **Conference**: ICLR 2026  
@@ -140,15 +145,13 @@ Deconstructing SVR components on AudioCaps monolingual T2A / A2T retrieval (R@1)
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
+- [\[ICLR 2026\] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization](tangoflux_super_fast_and_faithful_text_to_audio_generation_with_flow_matching_an.md)
 - [\[ECCV 2024\] CoLeaF: A Contrastive-Collaborative Learning Framework for Weakly Supervised Audio-Visual Video Parsing](../../ECCV2024/audio_speech/coleaf_a_contrastive-collaborative_learning_framework_for_weakly_supervised_audi.md)
 - [\[ICLR 2026\] PACE: Pretrained Audio Continual Learning](pace_pretrained_audio_continual_learning.md)
 - [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
-- [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](../../ACL2026/audio_speech/data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
-- [\[ICLR 2026\] Physics-Informed Audio-Geometry-Grid Representation Learning for Universal Sound Source Localization](physics-informed_audio-geometry-grid_representation_learning_for_universal_sound.md)
+- [\[ICLR 2026\] CTC-DRO: Robust Optimization for Reducing Language Disparities in Speech Recognition](ctc-dro_robust_optimization_for_reducing_language_disparities_in_speech_recognit.md)
 
 </div>
 

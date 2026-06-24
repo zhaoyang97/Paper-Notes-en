@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model
 description: >-
-  [NeurIPS 2025][Image Generation][Optimal Transport] This paper proposes A2A-FM, a method that simultaneously learns optimal transport mappings across all pairs of conditional distributions within the Flow Matching framew…
+  [NeurIPS 2025][Image Generation][Optimal Transport] This paper proposes A2A-FM, a method that simultaneously learns optimal transport mappings across all pairs of conditional distributions within the Flow Matching framework via a novel cost function. It is theoretically shown to converge to pairwise optimal transport in the infinite-sample limit, and is particularly suited for non-grouped data with continuous conditional variables.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Pairwise Optimal Transport"
   - "Molecular Optimization"
 date: 2026-05-08
-content_hash: 3050d100c4cb3f74
+content_hash: 06f6d924f4ba093f
 ---
 
 # Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model
@@ -152,7 +152,7 @@ At inference, condition transfer is performed by solving the ODE from $t=0$ to $
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](on_the_relation_between_rectified_flows_and_optimal_transport.md)
 - [\[NeurIPS 2025\] GuideFlow3D: Optimization-Guided Rectified Flow For Appearance Transfer](guideflow3d_optimization-guided_rectified_flow_for_appearance_transfer.md)
 - [\[ICCV 2025\] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation](../../ICCV2025/image_generation/the_curse_of_conditions_analyzing_and_improving_optimal_transport_for_conditiona.md)
-- [\[ICCV 2025\] MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance](../../ICCV2025/image_generation/mmaif_multi-task_and_multi-degradation_all-in-one_for_image_fusion_with_language.md)
+- [\[ECCV 2024\] AFreeCA: Annotation-Free Counting for All](../../ECCV2024/image_generation/afreeca_annotation-free_counting_for_all.md)
 
 </div>
 

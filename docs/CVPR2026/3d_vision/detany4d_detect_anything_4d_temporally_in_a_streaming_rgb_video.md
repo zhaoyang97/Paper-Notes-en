@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] DetAny4D defines "continuous 3D bounding box prediction in streaming RGB videos" as a 4D detection task. It utilizes an end-to-end open-vocabulary framework (SAM + DINO + UniDepth features + Causal Spatiotemporal Decoder + multi-task heads) to directly output globally consistent 3D boxes across frames. Accompanying thi
+  [CVPR 2026][3D Vision][4D Detection] DetAny4D defines "continuous 3D bounding box prediction in streaming RGB videos" as a 4D detection task. It utilizes an end-to-end open-vocabulary framework (SAM + DINO + UniDepth features + Causal Spatiotemporal Decoder + multi-task heads) to directly output globally consistent 3D boxes across frames. Accompanying this is the DA4D dataset comprising 280,000 sequences, which reduces cross-frame jitter variance by 10–30% compared to single-…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Detection"
+  - "Streaming Video"
+  - "Open-Vocabulary 3D Detection"
+  - "Spatiotemporal Consistency"
+  - "Causal Attention"
 date: 2026-05-08
-content_hash: bb5b5df890e60f92
+content_hash: b8ac576aac00338a
 ---
+
 # DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,16 @@ Components added incrementally on 10% of the training data:
 - Value: ⭐⭐⭐⭐ The DA4D dataset and the end-to-end 4D paradigm provide significant value to the streaming 3D perception community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Detect Anything via Next Point Prediction](detect_anything_via_next_point_prediction.md)
-- [\[CVPR 2026\] Beyond Caption-Based Queries for Video Moment Retrieval](beyond_caption-based_queries_for_video_moment_retrieval.md)
-- [\[CVPR 2026\] Beyond Duality: A Hybrid Framework of Leveraging Shared and Private Features for RGB-Event Object Detection](beyond_duality_a_hybrid_framework_of_leveraging_shared_and_private_features_for_.md)
-- [\[CVPR 2026\] UAV-CB: A Complex-Background RGB-T Dataset and Local Frequency Bridge Network for UAV Detection](uav-cb_a_complex-background_rgb-t_dataset_and_local_frequency_bridge_network_for.md)
-- [\[CVPR 2026\] D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network](d2fanet_enhancing_video_object_detection_with_dual-domain_feature_aggregation_ne.md)
+- [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras](sparsecam4d_spatio-temporally_consistent_4d_reconstruction_from_sparse_cameras.md)
+- [\[CVPR 2026\] Stabilizing Streaming Video Geometry via Dynamic Feature Normalization](stabilizing_streaming_video_geometry_via_dynamic_feature_normalization.md)
+- [\[ICLR 2026\] Trace Anything: Representing Any Video in 4D via Trajectory Fields](../../ICLR2026/3d_vision/trace_anything_representing_any_video_in_4d_via_trajectory_fields.md)
+- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](vista4d_video_reshooting_with_4d_point_clouds.md)
 
 </div>
 

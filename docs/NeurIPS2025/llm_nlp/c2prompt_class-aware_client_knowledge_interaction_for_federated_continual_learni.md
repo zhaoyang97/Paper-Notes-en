@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning
 description: >-
-  [NeurIPS 2025][LLM/NLP][federated continual learning] To address class-level knowledge inconsistency during prompt communication in federated continual learning, C²Prompt is proposed…
+  [NeurIPS 2025][LLM (Other)][federated continual learning] To address class-level knowledge inconsistency during prompt communication in federated continual learning, C²Prompt is proposed, which explicitly enhances class-level knowledge coherence across clients via two mechanisms: Local Class Distribution Compensation (LCDC) and Class-aware Prompt Aggregation (CPA). The method achieves an Avg accuracy of 87.20% on ImageNet-R, surpassing the previous SOTA Powder by 2.51%.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "federated continual learning"
   - "prompt learning"
   - "class-aware aggregation"
   - "distribution compensation"
   - "knowledge conflict"
 date: 2026-05-08
-content_hash: 2c33a2a6691b0dbd
+content_hash: 72e3a18724407998
 ---
 
 # C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning
@@ -139,11 +139,11 @@ Ours surpasses Powder by 2.51% Avg on ImageNet-R and by 2.90% on DomainNet.
 
 ## Related Papers
 
+- [\[ACL 2025\] Recurrent Knowledge Identification and Fusion for Language Model Continual Learning](../../ACL2025/llm_nlp/recurrent_kif_continual_learning.md)
 - [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](system_prompt_optimization_with_meta-learning.md)
+- [\[ACL 2025\] Enhancing Hyperbole and Metaphor Detection with Their Bidirectional Dynamic Interaction and Emotion Knowledge](../../ACL2025/llm_nlp/hyperbole_metaphor_detection.md)
 - [\[ACL 2026\] Model-Agnostic Meta Learning for Class Imbalance Adaptation](../../ACL2026/llm_nlp/model-agnostic_meta_learning_for_class_imbalance_adaptation.md)
 - [\[NeurIPS 2025\] The Rise of Parameter Specialization for Knowledge Storage in Large Language Models](the_rise_of_parameter_specialization_for_knowledge_storage_in_large_language_mod.md)
-- [\[NeurIPS 2025\] MonarchAttention: Zero-Shot Conversion to Fast, Hardware-Aware Structured Attention](monarchattention_zero-shot_conversion_to_fast_hardware-aware_structured_attentio.md)
-- [\[ICCV 2025\] Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models](../../ICCV2025/llm_nlp/any-ssr_how_recursive_least_squares_works_in_continual_learning_of_large_languag.md)
 
 </div>
 

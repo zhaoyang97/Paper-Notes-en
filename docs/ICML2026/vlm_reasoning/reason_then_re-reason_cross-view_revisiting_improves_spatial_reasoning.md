@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reason, Then Re-reason: Cross-view Revisiting Improves Spatial Reasoning
 description: >-
-  [ICML 2026][vlm_reasoning][MLLM] To address the issue where egocentric video spatial reasoning is "trapped by camera trajectories and relies on semantic priors to guess geometry," this paper proposes the training-free ReRe framework. It first forms a spatial hypothesis on the original video (Reason), then verifies or corrects the hypothesis using a ne
+  [ICML 2026][VLM Reasoning][Spatial Reasoning] To address the issue where egocentric video spatial reasoning is "trapped by camera trajectories and relies on semantic priors to guess geometry," this paper proposes the training-free ReRe framework. It first forms a spatial hypothesis on the original video (Reason), then verifies or corrects the hypothesis using a new "oblique overview" video rendered from 3D geometry (Re-reason), enabling open-source MLLMs to approach closed-so…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - MLLM
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Spatial Reasoning"
+  - "MLLM"
+  - "Cross-view Verification"
+  - "New View Synthesis"
+  - "Training-free Inference"
 date: 2026-05-08
-content_hash: a0007ec90dd3f52a
+content_hash: 68b406f6a1bd238d
 ---
+
 # Reason, Then Re-reason: Cross-view Revisiting Improves Spatial Reasoning
 
 **Conference**: ICML 2026  
@@ -147,9 +152,9 @@ For reference, the closed-source Gemini-1.5 Pro scores 45.4 Avg. on VSI-Bench, w
 
 - [\[ICML 2026\] Find, Fix, Reason: Context Repair for Video Reasoning](find_fix_reason_context_repair_for_video_reasoning.md)
 - [\[CVPR 2026\] Learning to Reason in 4D: Dynamic Spatial Understanding for Vision Language Models](../../CVPR2026/vlm_reasoning/learning_to_reason_in_4d_dynamic_spatial_understanding_for_vision_language_model.md)
-- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](../../CVPR2026/vlm_reasoning/can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
+- [\[ICLR 2026\] Play to Generalize: Learning to Reason Through Game Play](../../ICLR2026/vlm_reasoning/play_to_generalize_learning_to_reason_through_game_play.md)
 - [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](../../CVPR2026/vlm_reasoning/reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
-- [\[CVPR 2026\] ViRC: Enhancing Visual Interleaved Mathematical CoT with Reason Chunking](../../CVPR2026/vlm_reasoning/virc_enhancing_visual_interleaved_mathematical_cot_with_reason_chunking.md)
+- [\[ICML 2026\] From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models](from_seeing_to_thinking_decoupling_perception_and_reasoning_improves_post-traini.md)
 
 </div>
 

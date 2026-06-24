@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Coupling Generative Modeling and an Autoencoder with the Causal Bridge
 description: >-
-  [NeurIPS 2025][Image Generation][causal bridge] In the presence of unobserved confounders, this paper proposes coupling a generative model with an autoencoder to improve estimation of the causal bridge function—sharing s…
+  [NeurIPS 2025][Image Generation][causal bridge] In the presence of unobserved confounders, this paper proposes coupling a generative model with an autoencoder to improve estimation of the causal bridge function—sharing statistical strength across treatment, control, and outcome variables via a shared encoder—and extends the framework to survival analysis.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "treatment effect"
   - "survival analysis"
 date: 2026-05-08
-content_hash: 43327e379d0ac2c0
+content_hash: 2909dfbbdd3fefcf
 ---
 
 # Coupling Generative Modeling and an Autoencoder with the Causal Bridge
@@ -152,11 +152,11 @@ The causal estimand is the hazard ratio (HR): $\text{HR} = \exp(b(W, X=1)) / \ex
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
-- [\[NeurIPS 2025\] Hephaestus: Mixture Generative Modeling with Energy Guidance for Large-scale QoS Degradation](hephaestus_mixture_generative_modeling_with_energy_guidance_for_large-scale_qos_.md)
+- [\[NeurIPS 2025\] DeCaFlow: A Deconfounding Causal Generative Model](decaflow_a_deconfounding_causal_generative_model.md)
 - [\[NeurIPS 2025\] System-Embedded Diffusion Bridge Models](system-embedded_diffusion_bridge_models.md)
-- [\[NeurIPS 2025\] Boosting Generative Image Modeling via Joint Image-Feature Synthesis](boosting_generative_image_modeling_via_joint_imagefeature_sy.md)
-- [\[NeurIPS 2025\] Continuous Uniqueness and Novelty Metrics for Generative Modeling of Inorganic Crystals](continuous_uniqueness_and_novelty_metrics_for_generative_modeling_of_inorganic_c.md)
+- [\[NeurIPS 2025\] Non-Markovian Discrete Diffusion with Causal Language Models](non-markovian_discrete_diffusion_with_causal_language_models.md)
+- [\[CVPR 2026\] Steering Where to Diffuse: Generative Modeling of Phenotypic Response Simulation with Steered Diffusion Bridge](../../CVPR2026/image_generation/steering_where_to_diffuse_generative_modeling_of_phenotypic_response_simulation_.md)
+- [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
 
 </div>
 

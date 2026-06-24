@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Breaking Spurious Correlations: Uncertainty-Driven Causal Transformers for AU Detection
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Addressing the issues of data scarcity, class imbalance, label noise, and confounding bias in Facial Action Unit (AU) detection, this paper proposes the UDCT framework: it models Transformer attention weights as Gaussian distributions to explicitly represent uncertainty, uses this uncertainty to reweight sample losses
+  [CVPR 2026][Human Understanding][AU Detection] Addressing the issues of data scarcity, class imbalance, label noise, and confounding bias in Facial Action Unit (AU) detection, this paper proposes the UDCT framework: it models Transformer attention weights as Gaussian distributions to explicitly represent uncertainty, uses this uncertainty to reweight sample losses against noise/imbalance, and employs per-AU causal backdoor adjustment to sever spurious AU correlations caused b…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "AU Detection"
+  - "Uncertainty Modeling"
+  - "Causal Intervention"
+  - "Probabilistic Attention"
+  - "Backdoor Adjustment"
 date: 2026-05-08
-content_hash: 717c47e45376222b
+content_hash: df57bad5d7abc358
 ---
+
 # Breaking Spurious Correlations: Uncertainty-Driven Causal Transformers for AU Detection
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Incremental additions on DISFA (DT = Deterministic Transformer, UAT = Uncertaint
 
 ## Related Papers
 
-- [\[CVPR 2026\] JUMP-Hand: Learning Joint-wise Uncertainty to Gate Mixture of View Experts for Multi-View 3D Hand Reconstruction](jump-hand_learning_joint-wise_uncertainty_to_gate_mixture_of_view_experts_for_mu.md)
-- [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
 - [\[CVPR 2026\] FisherPoser: Human Motion Estimation from Sparse Observations with Hierarchical Region-Wise Fisher-Matrix Uncertainty Modeling](fisherposer_human_motion_estimation_from_sparse_observations_with_hierarchical_r.md)
+- [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
 - [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](unleashing_vision-language_semantics_for_deepfake_video_detection.md)
-- [\[CVPR 2026\] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)
+- [\[CVPR 2026\] MotionMaster: Generalizable Text-Driven Motion Generation and Editing](motionmaster_generalizable_text-driven_motion_generation_and_editing.md)
 
 </div>
 

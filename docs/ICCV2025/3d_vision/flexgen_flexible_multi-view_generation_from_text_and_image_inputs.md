@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlexGen: Flexible Multi-View Generation from Text and Image Inputs
 description: >-
-  [ICCV 2025][3D Vision][multi-view generation] This paper proposes FlexGen, a flexible multi-view image generation framework that leverages GPT-4V to produce 3D-aware text annotations from tiled orthographic views and int…
+  [ICCV 2025][3D Vision][multi-view generation] This paper proposes FlexGen, a flexible multi-view image generation framework that leverages GPT-4V to produce 3D-aware text annotations from tiled orthographic views and introduces an adaptive dual-control module to support single-image, text-only, or joint image-text conditioning for generating consistent multi-view images, enabling capabilities such as unseen-region completion, material editing, and texture control.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "material editing"
 date: 2026-05-08
-content_hash: e1940cc9fb24c4ca
+content_hash: 88bc48deafd9e00f
 ---
 
 # FlexGen: Flexible Multi-View Generation from Text and Image Inputs
@@ -163,8 +163,8 @@ Text-to-multi-view comparison (300 GSO samples):
 
 - [\[ICCV 2025\] MV-Adapter: Multi-view Consistent Image Generation Made Easy](mv-adapter_multi-view_consistent_image_generation_made_easy.md)
 - [\[ICCV 2025\] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models](mvgbench_a_comprehensive_benchmark_for_multi-view_generation_models.md)
-- [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
 - [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
+- [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
 - [\[ICCV 2025\] Benchmarking and Learning Multi-Dimensional Quality Evaluator for Text-to-3D Generation](benchmarking_and_learning_multi-dimensional_quality_evaluator_for_text-to-3d_gen.md)
 
 </div>

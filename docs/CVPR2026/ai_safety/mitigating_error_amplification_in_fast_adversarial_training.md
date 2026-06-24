@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mitigating Error Amplification in Fast Adversarial Training
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper identifies low-confidence/misclassified samples as the primary culprits behind catastrophic overfitting (CO) and the robustness-accuracy trade-off in Fast Adversarial Training (FAT). It proposes the Distribution-aware Dynamic Guidance (DDG) strategy, which dynamically allocates perturbation budgets based on
+  [CVPR 2026][AI Safety][Fast Adversarial Training] This paper identifies low-confidence/misclassified samples as the primary culprits behind catastrophic overfitting (CO) and the robustness-accuracy trade-off in Fast Adversarial Training (FAT). It proposes the Distribution-aware Dynamic Guidance (DDG) strategy, which dynamically allocates perturbation budgets based on sample confidence, adaptively adjusts supervision signals according to prediction status…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Fast Adversarial Training"
+  - "Catastrophic Overfitting"
+  - "Robustness-Accuracy Trade-off"
+  - "Dynamic Perturbation Budget"
+  - "Confidence-aware Adaptation"
 date: 2026-05-08
-content_hash: 4d3e299834d34dcc
+content_hash: 4047b89713375d19
 ---
+
 # Mitigating Error Amplification in Fast Adversarial Training
 
 **Conference**: CVPR 2026  
@@ -142,12 +148,20 @@ Removing PBA decreases both clean and robust accuracy. Removing SSA slightly inc
 - Value: ⭐⭐⭐⭐ Practical and lightweight solution for improving the FAT trade-off.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Zhao et al., "Understanding Catastrophic Overfitting in Single-step Adversarial Training," ICCV 2023.
-- Huang et al., "TDAT: Training-Dynamics Aware Adversarial Training," NeurIPS 2022.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](../../ICML2026/ai_safety/sora_free_second-order_attacks_in_fast_adversarial_training.md)
+- [\[ECCV 2024\] Preventing Catastrophic Overfitting in Fast Adversarial Training: A Bi-level Optimization Perspective](../../ECCV2024/ai_safety/preventing_catastrophic_overfitting_in_fast_adversarial_training_a_bi-level_opti.md)
+- [\[CVPR 2026\] Taming the Long Tail: Rebalancing Adversarial Training via Adaptive Perturbation](taming_the_long_tail_rebalancing_adversarial_training_via_adaptive_perturbation.md)
+- [\[CVPR 2026\] FedCART: Tackling Long-Tailed Distributions in Federated Adversarial Training via Classifier Refinement](fedcart_tackling_long-tailed_distributions_in_federated_adversarial_training_via.md)
+- [\[CVPR 2026\] SafeLogo: Turning Your Logos into Jailbreak Shields via Micro-Regional Adversarial Training](safelogo_turning_your_logos_into_jailbreak_shields_via_micro-regional_adversaria.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](../../ICML2026/ai_safety/sora_free_second-order_attacks_in_fast_adversarial_training.md)

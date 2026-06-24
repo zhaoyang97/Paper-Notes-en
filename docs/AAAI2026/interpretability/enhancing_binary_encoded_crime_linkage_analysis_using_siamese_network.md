@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Binary Encoded Crime Linkage Analysis Using Siamese Network
 description: >-
-  [AAAI 2026][Interpretability][Crime Linkage Analysis] This paper proposes a **Siamese Autoencoder**-based crime linkage analysis framework that integrates **geo-temporal features at the decoder stage** and employs a **do…
+  [AAAI 2026][Interpretability][Crime Linkage Analysis] This paper proposes a **Siamese Autoencoder**-based crime linkage analysis framework that integrates **geo-temporal features at the decoder stage** and employs a **domain expert-driven dimensionality reduction strategy**. Evaluated on the real-world ViCLAS database from the UK National Crime Agency (NCA), the method achieves up to 9% AUC improvement, providing an effective machine learning solution for high-dimensional spa…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Geo-temporal Feature Fusion"
   - "ViCLAS Database"
 date: 2026-05-08
-content_hash: e9502cce46c0b002
+content_hash: aedf74b12a43d2bb
 ---
 
 # Enhancing Binary Encoded Crime Linkage Analysis Using Siamese Network
@@ -200,9 +200,9 @@ $$\mathcal{L}_{\text{recon}} = \mathbb{E}\left[\frac{v_1^\top \hat{v_1}}{\|v_1\|
 ## Related Papers
 
 - [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
-- [\[AAAI 2026\] FourierPET: Deep Fourier-based Unrolled Network for Low-count PET Reconstruction](fourierpet_deep_fourier-based_unrolled_network_for_low-count_pet_reconstruction.md)
 - [\[AAAI 2026\] ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games](elementarynet_a_non-strategic_neural_network_for_predicting_human_behavior_in_no.md)
-- [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
+- [\[AAAI 2026\] FourierPET: Deep Fourier-based Unrolled Network for Low-count PET Reconstruction](fourierpet_deep_fourier-based_unrolled_network_for_low-count_pet_reconstruction.md)
+- [\[ACL 2025\] Enhancing Automated Interpretability with Output-Centric Feature Descriptions](../../ACL2025/interpretability/output_centric_interpretability.md)
 - [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](../../ICLR2026/interpretability/causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models
 description: >-
-  [NeurIPS 2025][Model Compression][Visual Foundation Models] VESSA proposes an unsupervised adaptation method for visual foundation models using short object-centric videos. Through a self-distillation framework combined…
+  [NeurIPS 2025][Model Compression][Visual Foundation Models] VESSA proposes an unsupervised adaptation method for visual foundation models using short object-centric videos. Through a self-distillation framework combined with LoRA parameter-efficient fine-tuning and an uncertainty-weighted loss, it significantly improves downstream classification performance in target domains without requiring any labeled data.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Self-Distillation"
   - "LoRA"
 date: 2026-05-08
-content_hash: ec8f5e0bc1ae3d6c
+content_hash: 3ad35053b7498be0
 ---
 
 # VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models
@@ -54,9 +54,9 @@ VESSA consists of three main modules: Frame Selection, Preprocessing & Augmentat
 
 3. **Uncertainty-Weighted Self-Distillation Loss (UWSD)**: An uncertainty weighting scheme is introduced on top of the standard DINO loss. The entropy $\mathcal{H}(q)$ of the teacher network's output distribution is computed to modulate each sample's contribution to the loss:
 
-   $$w(q) = 1 + \gamma \cdot \mathcal{H}(q)$$
+    $w(q) = 1 + \gamma \cdot \mathcal{H}(q)$
 
-   $$\mathcal{L}_{\text{UWSD}} = \frac{1}{N} \sum_{(q,s,s_{lc_i}) \in \mathcal{B}} w(q) \cdot \mathcal{L}_{\text{DINO}}(q, s, s_{lc_i})$$
+    $\mathcal{L}_{\text{UWSD}} = \frac{1}{N} \sum_{(q,s,s_{lc_i}) \in \mathcal{B}} w(q) \cdot \mathcal{L}_{\text{DINO}}(q, s, s_{lc_i})$
 
    Teacher outputs with high entropy (uncertainty) receive larger weights, prioritizing learning from hard samples. $\gamma=1$ yields stable performance.
 
@@ -129,10 +129,10 @@ The base loss is DINO's cross-entropy self-distillation loss, with the teacher n
 ## Related Papers
 
 - [\[NeurIPS 2025\] Revisiting Semi-Supervised Learning in the Era of Foundation Models](revisiting_semi-supervised_learning_in_the_era_of_foundation_models.md)
+- [\[CVPR 2025\] AutoSSVH: Exploring Automated Frame Sampling for Efficient Self-Supervised Video Hashing](../../CVPR2025/model_compression/autossvh_exploring_automated_frame_sampling_for_efficient_self-supervised_video_h.md)
+- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](../../ICLR2026/model_compression/inlier-centric_post-training_quantization_for_object_detection_models.md)
 - [\[NeurIPS 2025\] Find your Needle: Small Object Image Retrieval via Multi-Object Attention Optimization](find_your_needle_small_object_image_retrieval_via_multi-object_attention_optimiz.md)
 - [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
-- [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
-- [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
 
 </div>
 

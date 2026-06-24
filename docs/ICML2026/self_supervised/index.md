@@ -78,7 +78,7 @@ item_total: 28
 
 **🧪 ICML2026** · **28** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (89)](../../CVPR2026/self_supervised/index.md) · [🔬 ICLR2026 (81)](../../ICLR2026/self_supervised/index.md) · [💬 ACL2026 (1)](../../ACL2026/self_supervised/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (33)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (92)](../../CVPR2026/self_supervised/index.md) · [🔬 ICLR2026 (81)](../../ICLR2026/self_supervised/index.md) · [💬 ACL2026 (1)](../../ACL2026/self_supervised/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (35)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
 
 🔥 **Top topics:** Self-Supervised Learning ×3 · Few-/Zero-Shot Learning ×2
 

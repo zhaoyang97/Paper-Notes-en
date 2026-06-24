@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes GaussianGrow, which "grows" 3D Gaussians from easily accessible 3D point clouds instead of predicting both geometry and appearance from scratch. It leverages multi-view diffusion models to generate consistent appearance supervision and introduces an overlap region detection and iterative completion
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes GaussianGrow, which "grows" 3D Gaussians from easily accessible 3D point clouds instead of predicting both geometry and appearance from scratch. It leverages multi-view diffusion models to generate consistent appearance supervision and introduces an overlap region detection and iterative completion mechanism to resolve viewpoint fusion artifacts and occluded areas, significantly outperforming SOTA on synthetic…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Point Clouds"
+  - "Text Guidance"
+  - "Multi-view Diffusion"
+  - "Appearance Generation"
 date: 2026-05-08
-content_hash: e32bbc05a8348110
+content_hash: e1e27603d5c2f1ab
 ---
+
 # GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ Gaussian optimization follows a view-specific strategy—only front-facing Gauss
 
 ## Related Papers
 
-- [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
 - [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
-- [\[CVPR 2026\] Edges Compete for Trust: Group Relative Edge Optimization for Building Reconstruction from Point Clouds](edges_compete_for_trust_group_relative_edge_optimization_for_building_reconstruc.md)
+- [\[ICCV 2025\] Egocentric Action-aware Inertial Localization in Point Clouds with Vision-Language Guidance](../../ICCV2025/3d_vision/egocentric_action-aware_inertial_localization_in_point_clouds_with_vision-langua.md)
+- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
+- [\[CVPR 2026\] Towards Foundation Models for 3D Scene Understanding: Instance-Aware Self-Supervised Learning for Point Clouds](towards_foundation_models_for_3d_scene_understanding_instance-aware_self-supervi.md)
+- [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
 
 </div>
 

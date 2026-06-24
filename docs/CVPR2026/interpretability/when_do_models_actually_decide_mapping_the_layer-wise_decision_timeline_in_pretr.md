@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Do Models Actually Decide? Mapping the Layer-Wise Decision Timeline in Pretrained Neural Networks
 description: >-
-  [CVPR 2026][Interpretability][ImageNet] The authors train linear probes at each anchor layer of ResNet-18/50/101 (plus ViT-B/16 and ConvNeXt-Tiny) to track the specific layer where the prediction for each ImageNet image "settles." They discover a strong bimodal decision distribution and a "semantic phase transition" concentrated in the final residual stages.
+  [CVPR 2026][Interpretability][Decision timeline] The authors train linear probes at each anchor layer of ResNet-18/50/101 (plus ViT-B/16 and ConvNeXt-Tiny) to track the specific layer where the prediction for each ImageNet image "settles." They discover a strong bimodal decision distribution and a "semantic phase transition" concentrated in the final residual stages. Based on these findings, they suggest that stability-based early exits provide negligible real-world speedup-a…
 tags:
-  - CVPR 2026
-  - Interpretability
-  - ImageNet
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Decision timeline"
+  - "linear probing"
+  - "early exit"
+  - "semantic phase transition"
+  - "ImageNet"
 date: 2026-05-08
-content_hash: 239ae857adafd365
+content_hash: 12408aa059032784
 ---
+
 # When Do Models Actually Decide? Mapping the Layer-Wise Decision Timeline in Pretrained Neural Networks
 
 **Conference**: CVPR 2026  
@@ -134,15 +139,15 @@ For ResNet-50, the early decision ratio drops from 67.7% at $k=1$ to 15.4% at $k
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition](hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition.md)
-- [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](../../ICLR2026/interpretability/modal_logical_neural_networks_for_financial_ai.md)
 - [\[ICML 2025\] On the Effect of Uncertainty on Layer-wise Inference Dynamics](../../ICML2025/interpretability/on_the_effect_of_uncertainty_on_layer-wise_inference_dynamics.md)
+- [\[ICLR 2026\] Bayesian Neural Networks for Functional ANOVA Model](../../ICLR2026/interpretability/bayesian_neural_networks_for_functional_anova_model.md)
 - [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](../../ICLR2026/interpretability/addressing_divergent_representations_causal.md)
-- [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](../../ICLR2026/interpretability/salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
+- [\[ICLR 2026\] Tracking Equivalent Mechanistic Interpretations Across Neural Networks](../../ICLR2026/interpretability/tracking_equivalent_mechanistic_interpretations_across_neural_networks.md)
 
 </div>
 

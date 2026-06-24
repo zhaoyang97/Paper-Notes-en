@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale
 description: >-
-  [NeurIPS 2025][LLM Pretraining][language model training dynamics] Through systematic analysis of over 1,400 language model checkpoints—spanning Transformer/Mamba/RWKV architectures, 14M–12B parameter scales…
+  [NeurIPS 2025][LLM Pretraining][language model training dynamics] Through systematic analysis of over 1,400 language model checkpoints—spanning Transformer/Mamba/RWKV architectures, 14M–12B parameter scales, and two training datasets—across 110K+ tokens, this work demonstrates that all autoregressive language models exhibit highly consistent behavioral phases during pre-training: predicted probabilities sequentially overfit to n-gram probabilities of increasing order. Three s…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "pre-training analysis"
   - "semantic similarity"
 date: 2026-05-08
-content_hash: f47d163fa1d84da5
+content_hash: d481d2e222f7f7f0
 ---
 
 # Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale
@@ -144,8 +144,8 @@ The study is large in scale (1,400+ checkpoints), rigorous in experimental desig
 - [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
 - [\[NeurIPS 2025\] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training](through_the_river_understanding_the_benefit_of_schedule-free_methods_for_languag.md)
 - [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Memory Mosaics at Scale](memory_mosaics_at_scale.md)
 - [\[NeurIPS 2025\] How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?](how_does_sequence_modeling_architecture_influence_base_capabilities_of_pre-train.md)
+- [\[NeurIPS 2025\] Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding](learning_to_flow_from_generative_pretext_tasks_for_neural_architecture_encoding.md)
 
 </div>
 

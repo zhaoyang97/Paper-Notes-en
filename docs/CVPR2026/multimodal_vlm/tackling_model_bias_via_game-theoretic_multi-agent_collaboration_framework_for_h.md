@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tackling Model Bias via Game-theoretic Multi-agent Collaboration Framework for Hateful Meme Classification
 description: >-
-  [CVPR 2026][Multi-Agent][Paper Note] GECO organizes three Large Multimodal Models (LMMs), one learnable agent, and one primary decision agent into a regularized game. Driven by a "hybrid reward" system to achieve consensus on correct labels, it suppresses both individual and inter-model cognitive biases, achieving new SOTA results on five hateful meme ben
+  [CVPR 2026][Multimodal VLM][Hateful meme detection] GECO organizes three Large Multimodal Models (LMMs), one learnable agent, and one primary decision agent into a regularized game. Driven by a "hybrid reward" system to achieve consensus on correct labels, it suppresses both individual and inter-model cognitive biases, achieving new SOTA results on five hateful meme benchmarks.
 tags:
-  - CVPR 2026
-  - Multi-Agent
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Hateful meme detection"
+  - "multi-agent collaboration"
+  - "game theory"
+  - "model bias"
+  - "Nash equilibrium"
 date: 2026-05-08
-content_hash: e0e9094ffe20242a
+content_hash: e9309df093dfe630
 ---
+
 # Tackling Model Bias via Game-theoretic Multi-agent Collaboration Framework for Hateful Meme Classification
 
 **Conference**: CVPR 2026  
@@ -131,11 +137,11 @@ Single/dual agent ablation on PrideMM and MultiOff (Acc):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
-- [\[NeurIPS 2025\] R&D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization](../../NeurIPS2025/multi_agent/rd-agent-quant_a_multi-agent_framework_for_data-centric_factors_and_model_joint_.md)
-- [\[ACL 2026\] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](../../ACL2026/multi_agent/when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)
-- [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
-- [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](../../ICML2026/multi_agent/omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
+- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
+- [\[ACL 2026\] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems](../../ACL2026/multimodal_vlm/moneta_multimodal_industry_classification_through_geographic_information_with_mu.md)
+- [\[AAAI 2026\] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](../../AAAI2026/multimodal_vlm/large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)
+- [\[AAAI 2026\] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](../../AAAI2026/multimodal_vlm/vipact_visual-perception_enhancement_via_specialized_vlm_age.md)
+- [\[CVPR 2026\] Information-Theoretic Decomposition for Multimodal Interaction Learning](information-theoretic_decomposition_for_multimodal_interaction_learning.md)
 
 </div>
 

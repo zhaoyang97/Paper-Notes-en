@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EventFlash: Towards Efficient MLLMs for Event-Based Vision
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] EventFlash leverages the inherent spatiotemporal sparsity of event streams by designing two token sparsification modules: Adaptive Time Window Aggregation and Sparsity-Driven Guided Attention. These modules increase inference throughput by 12.4× and extend the processable event bin capacity from 5 (in EventGPT) to 1000
+  [ICLR 2026][Multimodal VLM][Event Camera] EventFlash leverages the inherent spatiotemporal sparsity of event streams by designing two token sparsification modules: Adaptive Time Window Aggregation and Sparsity-Driven Guided Attention. These modules increase inference throughput by 12.4× and extend the processable event bin capacity from 5 (in EventGPT) to 1000.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Event Camera"
+  - "MLLM"
+  - "Spatiotemporal Token Sparsification"
+  - "Long-sequence Understanding"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 20161b62483cd608
+content_hash: 2380938cecf23841
 ---
+
 # EventFlash: Towards Efficient MLLMs for Event-Based Vision
 
 **Conference**: ICLR 2026  
@@ -114,15 +120,15 @@ Temporal sparsification contributes more to speedup (6.1×) than spatial sparsif
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](../../CVPR2026/multimodal_vlm/parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
 - [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](../../CVPR2026/multimodal_vlm/re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
+- [\[ICLR 2026\] Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs](patch-as-decodable-token_towards_unified_multi-modal_vision_tasks_in_mllms.md)
 - [\[CVPR 2026\] Learning to See through Illumination Extremes with Event Streaming in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/learning_to_see_through_illumination_extremes_with_event_streaming_in_multimodal.md)
-- [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
-- [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
+- [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](../../CVPR2026/multimodal_vlm/parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
+- [\[CVPR 2025\] EventGPT: Event Stream Understanding with Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/eventgpt_event_stream_understanding_with_multimodal_large_language_models.md)
 
 </div>
 

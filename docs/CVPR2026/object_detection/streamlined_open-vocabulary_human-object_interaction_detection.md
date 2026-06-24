@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] SL-HOI：精简化的开放词表人-物交互检测
+  [Paper Note] SL-HOI: Streamlined Open-Vocabulary Human-Object Interaction Detection
 description: >-
-  [CVPR 2026][Object Detection][DINOv3] SL-HOI utilizes a single frozen DINOv3 (dino.txt variant) for open-vocabulary HOI detection—using the backbone for precise localization and a text-aligned vision head for open-vocabulary interaction classification. By "inserting interaction queries and image tokens together into the frozen vision head," the representat
+  [CVPR 2026][Object Detection][Open-vocabulary HOI] SL-HOI utilizes a single frozen DINOv3 (dino.txt variant) for open-vocabulary HOI detection—using the backbone for precise localization and a text-aligned vision head for open-vocabulary interaction classification. By "inserting interaction queries and image tokens together into the frozen vision head," the representation gap is bridged. With only a small number of trainable parameters, it achieves SOTA performance on SWiG-HO…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - DINOv3
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-vocabulary HOI"
+  - "DINOv3"
+  - "Single-VLM detection"
+  - "Semantic bootstrapping"
+  - "Representation gap"
 date: 2026-05-08
-content_hash: a4244babf1605ca9
+content_hash: 21d40ca0fce64ddd
 ---
+
 # SL-HOI: Streamlined Open-Vocabulary Human-Object Interaction Detection
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ Component analysis (SWiG-HOI, mAP%):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
-- [\[CVPR 2026\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](show_dont_tell_detecting_novel_objects_by_watching.md)
-- [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
-- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
-- [\[CVPR 2026\] Evaluating Few-Shot Pill Recognition Under Visual Domain Shift](evaluating_few-shot_pill_recognition_under_visual_domain_shift.md)
+- [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
+- [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
+- [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
+- [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
+- [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
 
 </div>
 

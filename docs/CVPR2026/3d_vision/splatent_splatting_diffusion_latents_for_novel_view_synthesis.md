@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Splatent: Splatting Diffusion Latents for Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Splatent performs 3DGS reconstruction within a frozen diffusion VAE latent space. It utilizes a one-step diffusion model combined with multi-view self-attention to inject high-frequency details—previously "averaged out" by 3D optimization—from neighboring reference views back into the rendered novel view latents. This
+  [CVPR 2026][3D Vision][Latent Radiation Fields] Splatent performs 3DGS reconstruction within a frozen diffusion VAE latent space. It utilizes a one-step diffusion model combined with multi-view self-attention to inject high-frequency details—previously "averaged out" by 3D optimization—from neighboring reference views back into the rendered novel view latents. This approach achieves SOTA in latent-space novel view synthesis while preserving the reconstruction quality of the p…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Latent Radiation Fields"
+  - "3D Gaussian Splatting"
+  - "Multi-view Attention"
+  - "One-step Diffusion"
+  - "VAE Latent Space"
 date: 2026-05-08
-content_hash: e1c90b06488869c3
+content_hash: 4f8d3bb79a4b73ec
 ---
+
 # Splatent: Splatting Diffusion Latents for Novel View Synthesis
 
 **Conference**: CVPR 2026  
@@ -139,15 +145,16 @@ Impact of the number of reference views (DL3DV-10K, Dense):
 - Value: ⭐⭐⭐⭐ (Practical enhancement for latent-space 3D reconstruction).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
 - [\[CVPR 2026\] Physically Inspired Gaussian Splatting for HDR Novel View Synthesis](physically_inspired_gaussian_splatting_for_hdr_novel_view_synthesis.md)
 - [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
+- [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
 - [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
-- [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
 
 </div>
 

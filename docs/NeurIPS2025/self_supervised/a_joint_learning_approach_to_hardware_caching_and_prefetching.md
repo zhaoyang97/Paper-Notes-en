@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Joint Learning Approach to Hardware Caching and Prefetching
 description: >-
-  [NeurIPS 2025 (ML for Systems Workshop)][Self-Supervised Learning][Cache replacement] This paper proposes a joint training framework that unifies hardware cache replacement and prefetching policies. By constructing share…
+  [NeurIPS 2025 (ML for Systems Workshop)][Self-Supervised Learning][Cache replacement] This paper proposes a joint training framework that unifies hardware cache replacement and prefetching policies. By constructing shared feature representations via a joint encoder and contrastive learning, the framework breaks the performance bottleneck imposed by independently trained policies.
 tags:
   - "NeurIPS 2025 (ML for Systems Workshop)"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "shared representations"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: f60e83f4d4a1ceb0
+content_hash: c18b65d564707811
 ---
 
 # A Joint Learning Approach to Hardware Caching and Prefetching
@@ -156,8 +156,8 @@ Effect of varying degrees of sharing on performance:
 - [\[ICML 2026\] Learning to Extrapolate to New Tasks: A Relational Approach to Task Extrapolation](../../ICML2026/self_supervised/learning_to_extrapolate_to_new_tasks_a_relational_approach_to_task_extrapolation.md)
 - [\[CVPR 2026\] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](../../CVPR2026/self_supervised/an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)
 - [\[CVPR 2026\] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach](../../CVPR2026/self_supervised/cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati.md)
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
-- [\[NeurIPS 2025\] Know Thyself by Knowing Others: Learning Neuron Identity from Population Context](know_thyself_by_knowing_others_learning_neuron_identity_from_population_context.md)
+- [\[ICLR 2026\] Samples Are Not Equal: A Sample Selection Approach for Deep Clustering](../../ICLR2026/self_supervised/samples_are_not_equal_a_sample_selection_approach_for_deep_clustering.md)
+- [\[ICML 2025\] Foundation Model Insights and a Multi-Model Approach for Superior Fine-Grained One-shot Subset Selection](../../ICML2025/self_supervised/foundation_model_insights_and_a_multi-model_approach_for_superior_fine-grained_o.md)
 
 </div>
 

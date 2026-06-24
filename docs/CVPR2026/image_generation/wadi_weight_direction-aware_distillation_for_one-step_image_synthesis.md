@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WaDi: Weight Direction-aware Distillation for One-step Image Synthesis
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Through analyzing the norm-direction decomposition of weight changes during distillation, it is discovered that direction change is the primary driver of distillation (change magnitude is $22\times$ larger than norm). The authors propose LoRaD (Low-Rank weight Direction rotation) adapter and integrate it into the VSD f
+  [CVPR 2026][Image Generation][Diffusion Distillation] Through analyzing the norm-direction decomposition of weight changes during distillation, it is discovered that direction change is the primary driver of distillation (change magnitude is $22\times$ larger than norm). The authors propose LoRaD (Low-Rank weight Direction rotation) adapter and integrate it into the VSD framework to form WaDi, achieving SOTA one-step FID on COCO with only ~10% trainable parameters.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Distillation"
+  - "Weight Direction"
+  - "Low-Rank Rotation"
+  - "One-step Synthesis"
+  - "Parameter Efficiency"
 date: 2026-05-08
-content_hash: 9feb8d36b89de1bf
+content_hash: 7f23c52fbba46a56
 ---
+
 # WaDi: Weight Direction-aware Distillation for One-step Image Synthesis
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ This asymmetric "heavy student, light pseudo-model" ratio was confirmed by ablat
 ## Related Papers
 
 - [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
-- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
 - [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
 - [\[CVPR 2026\] FlowSteer: Guiding Few-Step Image Synthesis with Authentic Trajectories](flowsteer_guiding_few-step_image_synthesis_with_authentic_trajectories.md)
-- [\[NeurIPS 2025\] Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation](../../NeurIPS2025/image_generation/distilled_decoding_2_onestep_sampling_of_image_autoregressiv.md)
+- [\[CVPR 2026\] InverFill: One-Step Inversion for Enhanced Few-Step Diffusion Inpainting](inverfill_one-step_inversion_for_enhanced_few-step_diffusion_inpainting.md)
+- [\[CVPR 2026\] LogCD: Local-to-global Consistency Distillation for Few-step Image Generation](logcd_local-to-global_consistency_distillation_for_few-step_image_generation.md)
 
 </div>
 

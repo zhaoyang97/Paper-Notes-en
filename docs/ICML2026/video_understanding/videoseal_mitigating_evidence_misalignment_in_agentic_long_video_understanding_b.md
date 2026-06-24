@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority
 description: >-
-  [ICML 2026][Video Understanding][inspector gate] VideoSEAL identifies the "evidence misalignment" problem in existing agentic long video QA systems—where agents answer correctly without actually seeing the evidence—and attributes the root cause to "coupled agents conflating planning and answering authority." It proposes a planner-inspector decoupling framework: the p
+  [ICML 2026][Video Understanding][Evidence Misalignment] VideoSEAL identifies the "evidence misalignment" problem in existing agentic long video QA systems—where agents answer correctly without actually seeing the evidence—and attributes the root cause to "coupled agents conflating planning and answering authority." It proposes a planner-inspector decoupling framework: the planner handles long-horizon evidence search, while the inspector holds exclusive answering authority and…
 tags:
-  - ICML 2026
-  - Video Understanding
-  - inspector gate
-  - GRPO
-  - temporal/semantic groundedness
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Evidence Misalignment"
+  - "Planner-Inspector Decoupling"
+  - "Inspector Gate"
+  - "GRPO"
+  - "Temporal/Semantic Groundedness"
 date: 2026-05-08
-content_hash: 654e1ec3ed57bd84
+content_hash: 5984c4da07027e67
 ---
+
 # VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority
 
 **Conference**: ICML 2026  

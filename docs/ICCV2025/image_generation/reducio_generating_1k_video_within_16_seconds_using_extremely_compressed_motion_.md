@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] REDUCIO! Generating 1K Video within 16 Seconds using Extremely Compressed Motion Latents
 description: >-
-  [ICCV 2025][Image Generation][Video Generation] This paper proposes Reducio-VAE, a content-frame-conditioned 3D video autoencoder that compresses video into a motion latent space 64× smaller than a standard 2D VAE. Paire…
+  [ICCV 2025][Image Generation][Video Generation] This paper proposes Reducio-VAE, a content-frame-conditioned 3D video autoencoder that compresses video into a motion latent space 64× smaller than a standard 2D VAE. Paired with Reducio-DiT, it generates 16-frame 1024×1024 videos in 15.5 seconds on a single A100 GPU, with training requiring only 3,200 A100 GPU hours.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "DiT"
   - "Efficient Inference"
 date: 2026-05-08
-content_hash: 0f6c4b01defac921
+content_hash: 8899e625f3fe0433
 ---
 
 # REDUCIO! Generating 1K Video within 16 Seconds using Extremely Compressed Motion Latents
@@ -168,11 +168,11 @@ The core insight of this paper — that video can be decomposed into a content f
 
 ## Related Papers
 
+- [\[CVPR 2025\] SnapGen-V: Generating a Five-Second Video within Five Seconds on a Mobile Device](../../CVPR2025/image_generation/snapgen-v_generating_a_five-second_video_within_five_seconds_on_a_mobile_device.md)
 - [\[ICCV 2025\] Video Motion Graphs](video_motion_graphs.md)
 - [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
 - [\[ICCV 2025\] Learning to See in the Extremely Dark](learning_to_see_in_the_extremely_dark.md)
 - [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
-- [\[ICCV 2025\] Generating Multi-Image Synthetic Data for Text-to-Image Customization](generating_multi-image_synthetic_data_for_text-to-image_customization.md)
 
 </div>
 

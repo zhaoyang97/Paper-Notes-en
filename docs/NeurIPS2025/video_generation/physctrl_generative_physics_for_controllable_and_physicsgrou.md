@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PhysCtrl: Generative Physics for Controllable and Physics-Grounded Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][Physics-driven video generation] PhysCtrl employs diffusion models to learn the physical dynamics distribution of four material types (elastic, sand, plasticine, and rigid bodies)…
+  [NeurIPS 2025][Video Generation][Physics-driven video generation] PhysCtrl employs diffusion models to learn the physical dynamics distribution of four material types (elastic, sand, plasticine, and rigid bodies), representing dynamics as 3D point trajectories. A diffusion model incorporating spatiotemporal attention and physics constraints is trained on 550K synthetic animations; the generated trajectories drive a pretrained video model to achieve high-fidelity physics video…
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "material simulation"
   - "force control"
 date: 2026-05-08
-content_hash: a1e6bba6d1a76490
+content_hash: 327efb6a16c6dfbb
 ---
 
 # PhysCtrl: Generative Physics for Controllable and Physics-Grounded Video Generation
@@ -129,11 +129,11 @@ $\mathcal{L} = \mathcal{L}_{diff} + \lambda_{vel}\mathcal{L}_{vel} + \lambda_{ph
 
 ## Related Papers
 
+- [\[CVPR 2025\] PhyT2V: LLM-Guided Iterative Self-Refinement for Physics-Grounded Text-to-Video Generation](../../CVPR2025/video_generation/phyt2v_llm-guided_iterative_self-refinement_for_physics-grounded_text-to-video_g.md)
 - [\[NeurIPS 2025\] Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals](force_prompting_video_generation_models_can_learn_and_generalize_physics-based_c.md)
-- [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video Models](../../CVPR2026/video_generation/physvid_physics_aware_local_conditioning_for_generative_video_models.md)
-- [\[ICCV 2025\] FuXi-RTM: A Physics-Guided Prediction Framework with Radiative Transfer Modeling](../../ICCV2025/video_generation/fuxi-rtm_a_physics-guided_prediction_framework_with_radiative_transfer_modeling.md)
-- [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](../../CVPR2026/video_generation/phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
-- [\[ICCV 2025\] MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent](../../ICCV2025/video_generation/motionagent_fine-grained_controllable_video_generation_via_motion_field_agent.md)
+- [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video](../../CVPR2026/video_generation/physvid_physics_aware_local_conditioning_for_generative_video_models.md)
+- [\[ICLR 2026\] NewtonGen: Physics-consistent and Controllable Text-to-Video Generation via Neural Newtonian Dynamics](../../ICLR2026/video_generation/newtongen_physics-consistent_and_controllable_text-to-video_generation_via_neura.md)
+- [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](../../CVPR2026/video_generation/inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
 
 </div>
 

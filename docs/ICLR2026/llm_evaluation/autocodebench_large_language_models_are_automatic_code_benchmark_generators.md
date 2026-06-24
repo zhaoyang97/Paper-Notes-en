@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AutoCodeBench: Large Language Models are Automatic Code Benchmark Generators
 description: >-
-  [ICLR 2026][LLM Evaluation][AutoCodeBench] AutoCodeBench utilizes AutoCodeGen to automatically synthesize high-difficulty, multilingual, and execution-validated code generation problems. It chains LLM-generated test inputs, sandbox execution for test outputs, reverse prompt generation, and multi-stage filtering into a single pipeline. This process constructed a
+  [ICLR2026][LLM Evaluation][Automatic Benchmark Generation] AutoCodeBench utilizes AutoCodeGen to automatically synthesize high-difficulty, multilingual, and execution-validated code generation problems. It chains LLM-generated test inputs, sandbox execution for test outputs, reverse prompt generation, and multi-stage filtering into a single pipeline. This process constructed a benchmark of 3,920 problems across 20 programming languages. Experiments show that even the stronges…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - AutoCodeBench
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Automatic Benchmark Generation"
+  - "Code Generation Evaluation"
+  - "Multilingual Code"
+  - "LLM-Sandbox Interaction"
+  - "AutoCodeBench"
 date: 2026-05-08
-content_hash: 3c777a9b42d80425
+content_hash: 0607c5906a330032
 ---
+
 # AutoCodeBench: Large Language Models are Automatic Code Benchmark Generators
 
 **Conference**: ICLR2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] Grounded in the Information Bottleneck (IB) principle, this paper analyzes the capacity bottleneck of feed-forward 3DGS and proposes ZPressor, a lightweight…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] Grounded in the Information Bottleneck (IB) principle, this paper analyzes the capacity bottleneck of feed-forward 3DGS and proposes ZPressor, a lightweight, architecture-agnostic module that compresses multi-view inputs into a compact anchor-view representation, enabling existing models to scale to 100+ input views (480P, 80GB GPU) with consistent performance gains on DL3DV-10K and RealEstate10K.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Multi-View Compression"
   - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 20cff4a6ac6cab8f
+content_hash: 05dcf28cc6bc303d
 ---
 
 # ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS
@@ -127,11 +127,11 @@ ZPressor is an architecture-agnostic module that can be inserted after the encod
 
 ## Related Papers
 
+- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](../../CVPR2026/3d_vision/embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] Learning Efficient Fuse-and-Refine for Feed-Forward 3D Gaussian Splatting](learning_efficient_fuse-and-refine_for_feed-forward_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](../../CVPR2026/3d_vision/embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
 - [\[NeurIPS 2025\] Plana3R: Zero-shot Metric Planar 3D Reconstruction via Feed-Forward Planar Splatting](plana3r_zero-shot_metric_planar_3d_reconstruction_via_feed-forward_planar_splatt.md)
-- [\[ICLR 2026\] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation](../../ICLR2026/3d_vision/splat_and_distill_augmenting_teachers_with_feed-forward_3d_reconstruction_for_3d.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](../../CVPR2026/3d_vision/anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
 
 </div>
 

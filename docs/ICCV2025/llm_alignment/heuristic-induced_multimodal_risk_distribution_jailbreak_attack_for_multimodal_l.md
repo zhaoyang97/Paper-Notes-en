@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models
 description: >-
-  [ICCV 2025][LLM Alignment][jailbreak attack] This paper proposes HIMRD, a black-box multimodal jailbreak attack method that bypasses unimodal safety mechanisms by distributing malicious semantics across multiple modaliti…
+  [ICCV 2025][LLM Alignment][jailbreak attack] This paper proposes HIMRD, a black-box multimodal jailbreak attack method that bypasses unimodal safety mechanisms by distributing malicious semantics across multiple modalities. A heuristic search strategy is employed to identify optimal understanding-enhancing prompts and inducing prompts, achieving average attack success rates of approximately 90% and 68% on open-source and closed-source multimodal large language models…
 tags:
   - "ICCV 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "heuristic search"
   - "black-box attack"
 date: 2026-05-08
-content_hash: 927359c426f03cdc
+content_hash: 9d27bbd67a4e7d8c
 ---
 
 # Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models
@@ -144,11 +144,11 @@ Attack success rates are evaluated on seven open-source MLLMs and three closed-s
 
 ## Related Papers
 
+- [\[CVPR 2026\] Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models](../../CVPR2026/llm_alignment/uncertainty-aware_exploratory_direct_preference_optimization_for_multimodal_larg.md)
+- [\[ACL 2025\] SEA: Low-Resource Safety Alignment for Multimodal Large Language Models via Synthetic Embeddings](../../ACL2025/llm_alignment/sea_lowresource_safety_alignment_for_multimodal.md)
 - [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](../../ICLR2026/llm_alignment/guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
-- [\[NeurIPS 2025\] SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism](../../NeurIPS2025/llm_alignment/safeptr_token-level_jailbreak_defense_in_multimodal_llms_via_prune-then-restore_.md)
-- [\[ICML 2026\] New Wide-Net-Casting Jailbreak Attacks Risk Large Models](../../ICML2026/llm_alignment/new_wide-net-casting_jailbreak_attacks_risk_large_models.md)
-- [\[AAAI 2026\] BiasJailbreak: Analyzing Ethical Biases and Jailbreak Vulnerabilities in Large Language Models](../../AAAI2026/llm_alignment/biasjailbreakanalyzing_ethical_biases_and_jailbreak_vulnerabilities_in_large_lan.md)
-- [\[NeurIPS 2025\] Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs](../../NeurIPS2025/llm_alignment/attack_via_overfitting_10-shot_benign_fine-tuning_to_jailbreak_llms.md)
+- [\[ACL 2025\] SQL Injection Jailbreak: A Structural Disaster of Large Language Models](../../ACL2025/llm_alignment/sql_injection_jailbreak_a_structural_disaster_of_large_language_models.md)
+- [\[ACL 2025\] Chain-of-Jailbreak Attack for Image Generation Models via Editing Step by Step](../../ACL2025/llm_alignment/chain-of-jailbreak_attack_for_image_generation_models_via_editing_step_by_step.md)
 
 </div>
 

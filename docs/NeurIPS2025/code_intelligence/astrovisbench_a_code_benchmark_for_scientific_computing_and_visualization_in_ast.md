@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AstroVisBench: A Code Benchmark for Scientific Computing and Visualization in Astronomy
 description: >-
-  [NeurIPS 2025][Code Intelligence][Scientific Visualization] AstroVisBench introduces the first code benchmark for evaluating LLMs on astronomical scientific computing and visualization. It extracts 864 tasks (processing…
+  [NeurIPS 2025][Code Intelligence][Scientific Visualization] AstroVisBench introduces the first code benchmark for evaluating LLMs on astronomical scientific computing and visualization. It extracts 864 tasks (processing + visualization) from 110 Jupyter Notebooks, and designs a dual evaluation pipeline (execution-based variable inspection + VLM-as-Judge visualization scoring, achieving Spearman ρ=0.822 with expert ratings). Evaluation of 8 state-of-the-art models reveals that…
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "VLM Evaluation"
   - "Jupyter Notebook"
 date: 2026-05-08
-content_hash: ec345a33d151a893
+content_hash: d28267daa71697d7
 ---
 
 # AstroVisBench: A Code Benchmark for Scientific Computing and Visualization in Astronomy
@@ -130,11 +130,11 @@ The benchmark covers 38 libraries (26 astronomy-specific) across 6 astronomical 
 
 ## Related Papers
 
-- [\[ACL 2026\] From Charts to Code: A Hierarchical Benchmark for Multimodal Models](../../ACL2026/code_intelligence/from_charts_to_code_a_hierarchical_benchmark_for_multimodal_models.md)
+- [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](../../ICLR2026/code_intelligence/viscoder2_building_multi-language_visualization_coding_agents.md)
 - [\[ACL 2026\] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment](../../ACL2026/code_intelligence/scicoqa_quality_assurance_for_scientific_paper--code_alignment.md)
-- [\[ICML 2026\] AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms](../../ICML2026/code_intelligence/algoveri_an_aligned_benchmark_for_verified_code_generation_on_classical_algorith.md)
 - [\[ACL 2026\] CodeDistiller: Automatically Generating Code Libraries for Scientific Coding Agents](../../ACL2026/code_intelligence/codedistiller_automatically_generating_code_libraries_for_scientific_coding_agen.md)
 - [\[ICLR 2026\] Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning](../../ICLR2026/code_intelligence/paper2code_automating_code_generation_from_scientific_papers_in_machine_learning.md)
+- [\[ACL 2025\] TeXpert: A Multi-Level Benchmark for Evaluating LaTeX Code Generation by LLMs](../../ACL2025/code_intelligence/texpert_a_multi-level_benchmark_for_evaluating_latex_code_generation_by_llms.md)
 
 </div>
 

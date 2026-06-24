@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] Late-to-Early Training: 让 LLM 更早学到后期知识，从而更快更好
+  [Paper Note] Late-to-Early Training: Enabling LLMs to Learn Late-Stage Knowledge Earlier for Faster and Better Training
 description: >-
-  [ICLR 2026][Pretraining][Knowledge Distillation] LET uses the **final-layer representations** of a significantly smaller (up to 10×) open-source pre-trained model to align with the **early-layer representations of the target large model during early training steps**. This allows the large model to "prematurely" acquire knowledge that would otherwise only form in late
+  [ICLR 2026][LLM Pretraining][Pre-training acceleration] LET uses the **final-layer representations** of a significantly smaller (up to 10×) open-source pre-trained model to align with the **early-layer representations of the target large model during early training steps**. This allows the large model to "prematurely" acquire knowledge that would otherwise only form in later stages, achieving approximately 1.6× acceleration and nearly a 5% improvement in downstream accuracy o…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Pre-training acceleration"
+  - "representation alignment"
+  - "knowledge distillation"
+  - "model growth"
+  - "convergence acceleration"
 date: 2026-05-08
-content_hash: df854f7aa728b177
+content_hash: 594e02402b5d2229
 ---
+
 # Late-to-Early Training: Enabling LLMs to Learn Late-Stage Knowledge Earlier for Faster and Better Training
 
 **Conference**: ICLR 2026  
@@ -117,11 +122,11 @@ Highlights: On the 1.4B scale, LET exceeds the baseline's final average performa
 
 ## Related Papers
 
-- [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
-- [\[ICLR 2026\] Rewriting Pre-training Data Boosts LLM Performance in Math and Code](rewriting_pre-training_data_boosts_llm_performance_in_math_and_code.md)
-- [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
-- [\[ACL 2026\] Demystifying Data Organization for Enhanced LLM Training](../../ACL2026/llm_pretraining/demystifying_data_organization_for_enhanced_llm_training.md)
+- [\[ICLR 2026\] Pre-training Limited Memory Language Models with Internal and External Knowledge](pre-training_limited_memory_language_models_with_internal_and_external_knowledge.md)
 - [\[ICLR 2026\] Rethinking Data Curation in LLM Training: Online Reweighting Offers Better Generalization than Offline Methods](rethinking_data_curation_in_llm_training_online_reweighting_offers_better_genera.md)
+- [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_pretraining/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
+- [\[ACL 2025\] How Do LLMs Acquire New Knowledge? A Knowledge Circuits Perspective on Continual Pre-Training](../../ACL2025/llm_pretraining/how_do_llms_acquire_new_knowledge_a_knowledge_circuits_perspective_on_continual_.md)
+- [\[ICLR 2026\] Pre-training under Infinite Compute](pre-training_under_infinite_compute.md)
 
 </div>
 

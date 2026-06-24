@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From EduVisBench to EduVisAgent: A Benchmark and Multi-Agent Framework for Reasoning-Driven Pedagogical Visualization
 description: >-
-  [ICLR 2026][Multi-Agent][LVLM] This paper proposes the EduVisBench benchmark (1,154 STEM problems + five-dimensional pedagogical scoring rubric) to systematically reveal the weakness of foundation models in "reasoning correctly but failing to draw effective pedagogical diagrams." It designs the EduVisAgent multi-agent framework featuring five collab
+  [ICLR 2026][Multi-Agent][Educational Visualization] This paper proposes the EduVisBench benchmark (1,154 STEM problems + five-dimensional pedagogical scoring rubric) to systematically reveal the weakness of foundation models in "reasoning correctly but failing to draw effective pedagogical diagrams." It designs the EduVisAgent multi-agent framework featuring five collaborating experts to decompose abstract reasoning into human-cognition-aligned interactive web pages…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - LVLM
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Educational Visualization"
+  - "Multi-Agent Framework"
+  - "Visual Reasoning Evaluation"
+  - "STEM Education"
+  - "LVLM"
 date: 2026-05-08
-content_hash: 9d1d09864298fd9d
+content_hash: b3161aa6c72296e7
 ---
+
 # From EduVisBench to EduVisAgent: A Benchmark and Multi-Agent Framework for Reasoning-Driven Pedagogical Visualization
 
 **Conference**: ICLR 2026  

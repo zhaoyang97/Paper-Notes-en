@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CoPRS: Learning Positional Prior from Chain-of-Thought for Reasoning Segmentation
 description: >-
-  [ICLR 2026][vlm_reasoning][Chain-of-Thought] CoPRS enables multimodal large models to perform chain-of-thought reasoning before outputting a "focus token," which is converted into a dense, differentiable heatmap serving as a positional prior. A lightweight decoder سپس refines this prior into a segmentation mask, achieving SOTA performance on RefCOCO series and Re
+  [ICLR2026][VLM Reasoning][Reasoning Segmentation] CoPRS enables multimodal large models to perform chain-of-thought reasoning before outputting a "focus token," which is converted into a dense, differentiable heatmap serving as a positional prior. A lightweight decoder سپس refines this prior into a segmentation mask, achieving SOTA performance on RefCOCO series and ReasonSeg with interpretably aligned reasoning and segmentation.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Chain-of-Thought
-  - GRPO
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Reasoning Segmentation"
+  - "Chain-of-Thought"
+  - "Positional Prior"
+  - "Heatmap"
+  - "GRPO"
 date: 2026-05-08
-content_hash: f7e306cfceb938e6
+content_hash: 6c0c4f843e4bfa11
 ---
+
 # CoPRS: Learning Positional Prior from Chain-of-Thought for Reasoning Segmentation
 
 **Conference**: ICLR2026  
@@ -153,17 +157,16 @@ Notably, CoPRS-3B outperforms the 7B versions of Seg-R1 and Seg-Zero, demonstrat
 - Value: ⭐⭐⭐⭐⭐ (SOTA performance, 3B > 7B, and a transferable interface philosophy)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- Related papers would follow here -->
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning](rex-thinker_grounded_object_referring_via_chain-of-thought_reasoning.md)
 - [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](../../CVPR2026/vlm_reasoning/reinforcing_structured_chain-of-thought_for_video_understanding.md)
-- [\[ICLR 2026\] ThinkMorph: Emergent Properties in Multimodal Interleaved Chain-of-Thought Reasoning](thinkmorph_emergent_properties_in_multimodal_interleaved_chain-of-thought_reason.md)
 - [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[ICLR 2026\] ThinkMorph: Emergent Properties in Multimodal Interleaved Chain-of-Thought Reasoning](thinkmorph_emergent_properties_in_multimodal_interleaved_chain-of-thought_reason.md)
 - [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](../../CVPR2026/vlm_reasoning/unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
-- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](../../CVPR2026/vlm_reasoning/chain-of-thought_guided_multi-modal_object_re-identification.md)
 
 </div>
 

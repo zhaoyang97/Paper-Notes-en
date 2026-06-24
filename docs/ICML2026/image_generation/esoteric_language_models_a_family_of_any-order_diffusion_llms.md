@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Esoteric Language Models: A Family of Any-Order Diffusion LLMs
 description: >-
-  [ICML 2026][Image Generation][Masked Diffusion LM] Eso-LMs deeply integrate AR and Masked Diffusion at the loss, attention, and sampling levels. By utilizing a "causal-on-shuffled-sequence" denoising Transformer, it simultaneously supports parallel diffusion and left-to-right AR. This marks the **first time an MDM can utilize exact KV cache during the diffusion phase**
+  [ICML 2026][Image Generation][Masked Diffusion LM] Eso-LMs deeply integrate AR and Masked Diffusion at the loss, attention, and sampling levels. By utilizing a "causal-on-shuffled-sequence" denoising Transformer, it simultaneously supports parallel diffusion and left-to-right AR. This marks the **first time an MDM can utilize exact KV cache during the diffusion phase**, achieving 14–65× speedups over MDLM and 3–4× over BD3-LM on OWT long contexts…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Masked Diffusion LM
-  - Any-Order AR
-  - KV Cache
+  - "ICML 2026"
+  - "Image Generation"
+  - "Masked Diffusion LM"
+  - "Any-Order AR"
+  - "KV Cache"
+  - "Causal Attention"
+  - "Hybrid Training"
 date: 2026-05-08
-content_hash: 985d58d71a98de7b
+content_hash: 8ddcc8bed4c0436a
 ---
+
 # Esoteric Language Models: A Family of Any-Order Diffusion LLMs
 
 **Conference**: ICML 2026  
@@ -137,10 +140,10 @@ Long-context sampling latency (OWT, $T \gg L$, at same NFE level as AR):
 ## Related Papers
 
 - [\[ICML 2026\] $f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data](f-trajectory_balance_a_loss_family_for_tuning_gflownets_generative_models_and_ll.md)
-- [\[ICML 2026\] Order within Chaos: Capturing Intrinsic Energy Anomalies for AI-Manipulated Image Forgery Localization](order_within_chaos_capturing_intrinsic_energy_anomalies_for_ai-manipulated_image.md)
+- [\[ICLR 2026\] Any-Order Flexible Length Masked Diffusion](../../ICLR2026/image_generation/any-order_flexible_length_masked_diffusion.md)
 - [\[ICML 2026\] A Systematic Investigation of RL-Jailbreaking in LLMs](a_systematic_investigation_of_rl-jailbreaking_in_llms.md)
-- [\[CVPR 2026\] 2ndMatch: Finetuning Pruned Diffusion Models via Second-Order Jacobian Matching](../../CVPR2026/image_generation/2ndmatch_finetuning_pruned_diffusion_models_via_second-order_jacobian_matching.md)
 - [\[ICML 2026\] EvoGM: Learning to Merge LLMs via Evolutionary Generative Optimization](evogm_learning_to_merge_llms_via_evolutionary_generative_optimization.md)
+- [\[ICLR 2026\] Any-step Generation via N-th Order Recursive Consistent Velocity Field Estimation](../../ICLR2026/image_generation/any-step_generation_via_n-th_order_recursive_consistent_velocity_field_estimatio.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting the Necessity of Lengthy Chain-of-Thought in Vision-centric Reasoning Generalization
 description: >-
-  [CVPR 2026][LLM Reasoning][SFT-then-RL] The authors systematically compare three "think with image" supervision formats—Language CoT, Grounding CoT, and Visual CoT—using a controlled maze navigation task. They find that longer or more elaborate Visual CoTs only accelerate convergence without raising the final performance ceiling. Conversely, a **minimalist C
+  [CVPR 2026][Reasoning][Visual Chain-of-Thought] The authors systematically compare three "think with image" supervision formats—Language CoT, Grounding CoT, and Visual CoT—using a controlled maze navigation task. They find that longer or more elaborate Visual CoTs only accelerate convergence without raising the final performance ceiling. Conversely, a **minimalist CoT preserving only essential grounding information (a single coordinate path) achieves the best generalization**…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - SFT-then-RL
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Visual Chain-of-Thought"
+  - "Visual CoT"
+  - "Generalization"
+  - "SFT-then-RL"
+  - "Maze Navigation"
 date: 2026-05-08
-content_hash: 7fcf3e77354a3377
+content_hash: 9a501360c83ee0c5
 ---
+
 # Revisiting the Necessity of Lengthy Chain-of-Thought in Vision-centric Reasoning Generalization
 
 **Conference**: CVPR 2026  
@@ -134,11 +139,11 @@ The structure of this paper is unique—it is essentially a set of "ablation-sty
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
 - [\[CVPR 2025\] Argus: Vision-Centric Reasoning with Grounded Chain-of-Thought](../../CVPR2025/llm_reasoning/argus_vision-centric_reasoning_with_grounded_chain-of-thought.md)
 - [\[CVPR 2026\] Think-as-You-See: Streaming Chain-of-Thought Reasoning for Large Vision-Language Models](think-as-you-see_streaming_chain-of-thought_reasoning_for_large_vision-language_.md)
-- [\[CVPR 2026\] Think 360°: Beyond Depth — Evaluating the Width-centric Reasoning Capability of MLLMs](think_360deg_beyond_depth_evaluating_the_width-centric_reasoning_capability_of_m.md)
 - [\[ICML 2026\] Diversity Matters: Revisiting Test-Time Compute in Vision-Language Models](../../ICML2026/llm_reasoning/diversity_matters_revisiting_test-time_compute_in_vision-language_models.md)
+- [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](../../ICLR2026/llm_reasoning/uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
+- [\[CVPR 2026\] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought](rationale-enhanced_decoding_for_multi-modal_chain-of-thought.md)
 
 </div>
 

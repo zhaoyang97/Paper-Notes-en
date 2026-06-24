@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stacked From One: Multi-Scale Self-Injection for Context Window Extension
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] SHAREDLLM stacks a single short-context LLM into two parts: a "lower-layer compressor" and an "upper-layer decoder." The lower layer compresses long inputs into coarse-to-fine multi-granularity context trees and "self-injects" KV pairs into the upper layer only at the bottom few layers. This enables extrapolation to 12
+  [ICLR 2026][LLM Efficiency][Context Window Extension] SHAREDLLM stacks a single short-context LLM into two parts: a "lower-layer compressor" and an "upper-layer decoder." The lower layer compresses long inputs into coarse-to-fine multi-granularity context trees and "self-injects" KV pairs into the upper layer only at the bottom few layers. This enables extrapolation to 128K using only 8K sequence training, achieving 2× speedup over streaming methods and 3× over encoder-decode…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Context Window Extension"
+  - "Long Context Compression"
+  - "KV Sharing"
+  - "Context Tree"
+  - "Self-Injection"
 date: 2026-05-08
-content_hash: db686eecafe0bdbf
+content_hash: fec49370d6773f4e
 ---
+
 # Stacked From One: Multi-Scale Self-Injection for Context Window Extension
 
 **Conference**: ICLR 2026  
@@ -146,11 +152,11 @@ Performance is consistent with or exceeds strong baselines across five major cat
 
 ## Related Papers
 
+- [\[ICLR 2026\] Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs](beyond_real_imaginary_extension_of_rotary_position_embeddings_for_long-context_l.md)
 - [\[ICLR 2026\] Short Window Attention Enables Long-Term Memorization](short_window_attention_enables_long-term_memorization.md)
 - [\[ICLR 2026\] Cartridges: Lightweight and General-Purpose Long Context Representations via Self-Study](cartridges_lightweight_and_general-purpose_long_context_representations_via_self.md)
 - [\[ICLR 2026\] Smooth Reading: Bridging the Gap of Recurrent LLM to Self-Attention LLM on Long-Context Understanding](smooth_reading_bridging_the_gap_of_recurrent_llm_to_self-attention_llm_on_long-c.md)
 - [\[ICLR 2026\] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning](one-prompt_strikes_back_sparse_mixture_of_experts_for_prompt-based_continual_lea.md)
-- [\[ICLR 2026\] MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent](memagent_reshaping_long-context_llm_with_multi-conv_rl-based_memory_agent.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][native multimodal] Through systematic interpretability analysis, this work discovers that in native multimodal VLMs (Chameleon, Emu3)…
+  [NeurIPS 2025][Multimodal VLM][native multimodal] Through systematic interpretability analysis, this work discovers that in native multimodal VLMs (Chameleon, Emu3), image-to-text cross-modal information transfer is concentrated at a single end-of-image [EOI] token—forming a "narrow gate" bottleneck. Ablating the [EOI] token's attention causes catastrophic performance collapse, whereas in non-native VLMs (LLaVA, etc.) the information transfer is distributed. This mechanistic…
 tags:
   - "NeurIPS 2025"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "native multimodal"
   - "EOI token"
   - "narrow gate"
   - "cross-modal information flow"
   - "activation patching"
 date: 2026-05-08
-content_hash: 889520a50e569541
+content_hash: b46a0012b69fc751
 ---
 
 # The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models
@@ -135,11 +135,11 @@ The authors further propose **Masked Fine-tuning**: masking [EOI]'s attention du
 
 ## Related Papers
 
-- [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](../../ACL2026/information_retrieval/visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
-- [\[ICCV 2025\] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching](../../ICCV2025/information_retrieval/aligning_information_capacity_between_vision_and_language_via_dense_to_sparse_feature_distillation.md)
-- [\[ICCV 2025\] LangBridge: Interpreting Image as a Combination of Language Embeddings](../../ICCV2025/information_retrieval/langbridge_interpreting_image_as_a_combination_of_language_embeddings.md)
-- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](generalized_contrastive_learning_for_universal_multimodal_re.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
+- [\[ICCV 2025\] Scaling Laws for Native Multimodal Models](../../ICCV2025/multimodal_vlm/scaling_laws_for_native_multimodal_models.md)
+- [\[NeurIPS 2025\] NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints](navil_rethinking_scaling_properties_of_native_multimodal_large_language_models_u.md)
+- [\[ICCV 2025\] Multimodal LLMs as Customized Reward Models for Text-to-Image Generation](../../ICCV2025/multimodal_vlm/multimodal_llms_as_customized_reward_models_for_text-to-image_generation.md)
+- [\[ICML 2025\] M3-JEPA: Multimodal Alignment via Multi-gate MoE based on JEPA](../../ICML2025/multimodal_vlm/m3-jepa_multimodal_alignment_via_multi-gate_moe_based_on_the_joint-embedding_pre.md)
+- [\[ACL 2025\] Enhance Multimodal Consistency and Coherence for Text-Image Plan Generation](../../ACL2025/multimodal_vlm/enhance_multimodal_consistency_and_coherence_for_text-image_plan_generation.md)
 
 </div>
 

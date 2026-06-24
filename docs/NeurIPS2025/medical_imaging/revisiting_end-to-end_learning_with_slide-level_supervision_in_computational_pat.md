@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology
 description: >-
-  [NeurIPS 2025][Medical Imaging][Computational Pathology] This paper revisits end-to-end (E2E) learning with slide-level supervision in computational pathology…
+  [NeurIPS 2025][Medical Imaging][Computational Pathology] This paper revisits end-to-end (E2E) learning with slide-level supervision in computational pathology, and is the first to identify optimization difficulties induced by sparse-attention MIL under E2E training. It proposes ABMILX, which addresses this issue via multi-head attention and a global attention correction module, enabling E2E-trained ResNets to surpass state-of-the-art foundation models on multiple benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Sparse Attention"
   - "ABMILX"
 date: 2026-05-08
-content_hash: 2d0a771dd780ad46
+content_hash: 1f04ebf92bbf4ec7
 ---
 
 # Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology
@@ -157,11 +157,11 @@ Standard losses are employed according to the specific task (cross-entropy for c
 
 ## Related Papers
 
+- [\[CVPR 2026\] Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction](../../CVPR2026/medical_imaging/turning_pre-trained_vision_transformers_into_end-to-end_histopathology_whole_sli.md)
+- [\[CVPR 2026\] FBTA: Enabling Single-GPU End-to-End Gigapixel WSI Classification with Feature Bridging and Translation Alignment](../../CVPR2026/medical_imaging/fbta_enabling_single-gpu_end-to-end_gigapixel_wsi_classification_with_feature_br.md)
 - [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](../../CVPR2026/medical_imaging/momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
-- [\[NeurIPS 2025\] ImageNet-trained CNNs are not biased towards texture: Revisiting feature reliance through controlled suppression](imagenet-trained_cnns_are_not_biased_towards_texture_revisiting_feature_reliance.md)
-- [\[NeurIPS 2025\] THUNDER: Tile-level Histopathology image UNDERstanding benchmark](thunder_tile-level_histopathology_image_understanding_benchmark.md)
 - [\[NeurIPS 2025\] Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling](few-shot_learning_from_gigapixel_images_via_hierarchical_vision-language_alignme.md)
-- [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](../../ICCV2025/medical_imaging/aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
+- [\[ECCV 2024\] Pathology-knowledge Enhanced Multi-instance Prompt Learning for Few-shot Whole Slide Image Classification](../../ECCV2024/medical_imaging/pathology-knowledge_enhanced_multi-instance_prompt_learning_for_few-shot_whole_s.md)
 
 </div>
 

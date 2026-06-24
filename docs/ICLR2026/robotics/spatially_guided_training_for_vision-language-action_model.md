@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatially Guided Training for Vision-Language-Action Model
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][spatial prompting] ST4VLA significantly mitigates the issues of "seeing but not moving" or "forgetting how to see after learning to move" in VLA training by first teaching the VLM spatial priors such as points, boxes, and trajectories, and then injecting these priors as implicit planning conditions into a DiT action expert via spatial pr
+  [ICLR2026][Robotics][Vision-Language-Action models] ST4VLA significantly mitigates the issues of "seeing but not moving" or "forgetting how to see after learning to move" in VLA training by first teaching the VLM spatial priors such as points, boxes, and trajectories, and then injecting these priors as implicit planning conditions into a DiT action expert via spatial prompts during the action post-training phase. It achieves stronger generalization in SimplerEnv, LIBERO…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - spatial prompting
+  - "ICLR2026"
+  - "Robotics"
+  - "Vision-Language-Action models"
+  - "spatial grounding"
+  - "robotic manipulation"
+  - "spatial prompting"
+  - "dual-system strategy"
 date: 2026-05-08
-content_hash: 4cef326188c503fe
+content_hash: c1fe299b4b921425
 ---
+
 # Spatially Guided Training for Vision-Language-Action Model
 
 **Conference**: ICLR2026  
@@ -154,16 +159,16 @@ In SimplerEnv, ST4VLA achieved 97.3, 98.0, 65.3, and 77.8 in Pick Coke Can, Move
 - Value: ⭐⭐⭐⭐⭐ Practical recipe for VLA training, particularly regarding the preservation of spatial priors.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
 - [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[ICLR 2026\] Hybrid Training for Vision-Language-Action Models](hybrid_training_for_vision-language-action_models.md)
-- [\[ICLR 2026\] X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](x-vla_soft-prompted_transformer_as_scalable_cross-embodiment_vision-language-act.md)
-- [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
+- [\[ICLR 2026\] PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model](pixelvla_advancing_pixel-level_understanding_in_vision-language-action_model.md)
+- [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
+- [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
 
 </div>
 

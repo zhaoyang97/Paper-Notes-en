@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Foresee-to-Ground: From Predictive Temporal Perception to Evidence-Driven Reasoning
 description: >-
-  [ICML 2026][Video Understanding][Video-LLM] Foresee-to-Ground (F2G) reformulates Video Temporal Grounding (VTG) from direct timestamp regression into an "identify-then-measure" two-stage problem. By utilizing predictive temporal perception and a span evidence encoder to build a candidate event evidence pool, the LLM generates precise boundaries constrained by se
+  [ICML 2026][Video Understanding][Video Temporal Grounding (VTG)] Foresee-to-Ground (F2G) reformulates Video Temporal Grounding (VTG) from direct timestamp regression into an "identify-then-measure" two-stage problem. By utilizing predictive temporal perception and a span evidence encoder to build a candidate event evidence pool, the LLM generates precise boundaries constrained by selected events. This approach improves R@0.7 by 4.1 points on Charades-STA and 6.7 points on Act…
 tags:
-  - ICML 2026
-  - Video Understanding
-  - Video-LLM
-  - Identify-then-Measure
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Video Temporal Grounding (VTG)"
+  - "Video-LLM"
+  - "Evidence Pool"
+  - "Identify-then-Measure"
+  - "Boundary Detection"
 date: 2026-05-08
-content_hash: 5c86bfbf775e3b00
+content_hash: 57a966017bf61ba1
 ---
+
 # Foresee-to-Ground: From Predictive Temporal Perception to Evidence-Driven Reasoning
 
 **Conference**: ICML 2026  
@@ -143,11 +147,11 @@ Black-box regression over the entire video token stream is unstable and untracea
 
 ## Related Papers
 
+- [\[ICLR 2026\] AVoCaDO: An Audiovisual Video Captioner Driven by Temporal Orchestration](../../ICLR2026/video_understanding/avocado_an_audiovisual_video_captioner_driven_by_temporal_orchestration.md)
 - [\[CVPR 2025\] ViTED: Video Temporal Evidence Distillation](../../CVPR2025/video_understanding/vited_video_temporal_evidence_distillation.md)
 - [\[ICML 2026\] VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority](videoseal_mitigating_evidence_misalignment_in_agentic_long_video_understanding_b.md)
 - [\[ICML 2026\] SkelHCC: A Hyperbolic CLIP-Driven Cache Adaptation Framework for Skeleton-based One-Shot Action Recognition](skelhcc_a_hyperbolic_clip-driven_cache_adaptation_framework_for_skeleton-based_o.md)
 - [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
-- [\[AAAI 2026\] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](../../AAAI2026/video_understanding/r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)
 
 </div>
 

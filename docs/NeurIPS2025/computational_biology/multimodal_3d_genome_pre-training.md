@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multimodal 3D Genome Pre-training
 description: >-
-  [NeurIPS 2025][Computational Biology][3D genome] This paper proposes MIX-HIC — the first multimodal foundation model for 3D genomics — which integrates Hi-C contact maps and epigenomic signals via cross-modal interaction…
+  [NeurIPS 2025][Computational Biology][3D genome] This paper proposes MIX-HIC — the first multimodal foundation model for 3D genomics — which integrates Hi-C contact maps and epigenomic signals via cross-modal interaction blocks and cross-modal mapping blocks. Pre-trained on over 1.27 million paired samples, MIX-HIC achieves state-of-the-art performance across three downstream tasks: Hi-C prediction, chromatin loop detection, and CAGE-seq expression prediction.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "multimodal pre-training"
   - "foundation model"
 date: 2026-05-08
-content_hash: 0e61f08588b54e91
+content_hash: 87847d646fdc4eee
 ---
 
 # Multimodal 3D Genome Pre-training
@@ -152,10 +152,10 @@ The pre-training dataset spans four cell lines (HepG2, HCT116, IMR90, WTC11), yi
 
 ## Related Papers
 
-- [\[ICLR 2026\] Contact-Guided 3D Genome Structure Generation of E. coli via Diffusion Transformers](../../ICLR2026/computational_biology/contact-guided_3d_genome_structure_generation_of_e_coli_via_diffusion_transforme.md)
-- [\[ICLR 2026\] Zatom-1: A Multimodal Flow Foundation Model for 3D Molecules and Materials](../../ICLR2026/computational_biology/zatom-1_a_multimodal_flow_foundation_model_for_3d_molecules_and_materials.md)
+- [\[CVPR 2025\] Synthetic Visual Genome](../../CVPR2025/computational_biology/synthetic_visual_genome.md)
 - [\[NeurIPS 2025\] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space](manipulating_3d_molecules_in_a_fixed-dimensional_e3-equivariant_latent_space.md)
 - [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
+- [\[ICML 2025\] Graph Generative Pre-trained Transformer (G2PT)](../../ICML2025/computational_biology/graph_generative_pre-trained_transformer.md)
 - [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
 
 </div>

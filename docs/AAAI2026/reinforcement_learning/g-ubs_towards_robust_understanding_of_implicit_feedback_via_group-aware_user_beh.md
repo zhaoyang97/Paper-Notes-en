@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] G-UBS: Towards Robust Understanding of Implicit Feedback via Group-Aware User Behavior Simulation
 description: >-
-  [AAAI 2026][Reinforcement Learning][implicit feedback] This paper proposes G-UBS (Group-aware User Behavior Simulation), a paradigm that employs a User Group Manager (UGM) based on a "Summarize–Cluster–Reflect" LLM workf…
+  [AAAI 2026][Reinforcement Learning][implicit feedback] This paper proposes G-UBS (Group-aware User Behavior Simulation), a paradigm that employs a User Group Manager (UGM) based on a "Summarize–Cluster–Reflect" LLM workflow to generate group profiles, combined with group-aware reinforcement learning in a User Feedback Modeler (UFM), achieving robust user behavior understanding under implicit feedback noise. The paper also introduces IF-VR, the first multimodal implicit feedba…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "group-awareness"
   - "recommender systems"
 date: 2026-05-08
-content_hash: 2bf5df7b614138d7
+content_hash: 89e497ac4a089668
 ---
 
 # G-UBS: Towards Robust Understanding of Implicit Feedback via Group-Aware User Behavior Simulation
@@ -221,11 +221,11 @@ UGM grouping strategy ablation (Table 5):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Causally Robust Reward Learning from Reason-Augmented Preference Feedback](../../ICLR2026/reinforcement_learning/causally_robust_reward_learning_from_reason-augmented_preference_feedback.md)
 - [\[ICLR 2026\] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation](../../ICLR2026/reinforcement_learning/robust_deep_reinforcement_learning_against_adversarial_behavior_manipulation.md)
-- [\[AAAI 2026\] Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping](aligning_machiavellian_agents_behavior_steering_via_test-tim.md)
-- [\[AAAI 2026\] Bi-Level Contextual Bandits for Individualized Resource Allocation under Delayed Feedback](bi-level_contextual_bandits_for_individualized_resource_allocation_under_delayed.md)
 - [\[NeurIPS 2025\] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents](../../NeurIPS2025/reinforcement_learning/deep_rl_needs_deep_behavior_analysis_exploring_implicit_planning_by_model-free_a.md)
-- [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
+- [\[AAAI 2026\] Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping](aligning_machiavellian_agents_behavior_steering_via_test-tim.md)
+- [\[ICLR 2026\] AlphaSAGE: Structure-Aware Alpha Mining via GFlowNets for Robust Exploration](../../ICLR2026/reinforcement_learning/alphasage_structure-aware_alpha_mining_via_gflownets_for_robust_exploration.md)
 
 </div>
 

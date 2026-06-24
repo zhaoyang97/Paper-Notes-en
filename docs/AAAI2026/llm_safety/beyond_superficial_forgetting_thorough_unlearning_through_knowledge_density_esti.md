@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion
 description: >-
-  [AAAI 2026][LLM Safety][machine unlearning] This paper proposes the KUnBR framework, which employs gradient-guided knowledge density estimation to localize layers enriched with harmful knowledge…
+  [AAAI 2026][LLM Safety][machine unlearning] This paper proposes the KUnBR framework, which employs gradient-guided knowledge density estimation to localize layers enriched with harmful knowledge, and adopts a block re-insertion strategy to bypass the gradient-masking effect of cover layers, achieving deep unlearning of harmful knowledge in LLMs rather than mere surface-level suppression.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -11,7 +11,7 @@ tags:
   - "Block Re-insertion"
   - "RTT Attack"
 date: 2026-05-08
-content_hash: a4340c341d603d57
+content_hash: 5c9d655a3bebc7ed
 ---
 
 # Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion
@@ -135,11 +135,11 @@ Removing the re-insertion strategy causes the RTT accuracy to surge from 36.0% t
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting](../../CVPR2026/llm_safety/learning_from_oblivion_predicting_knowledge_overflowed_weights_via_retrodiction_.md)
 - [\[ICLR 2026\] Unlearning Evaluation through Subset Statistical Independence](../../ICLR2026/llm_safety/unlearning_evaluation_through_subset_statistical_independence.md)
 - [\[ICCV 2025\] Forgetting Through Transforming: Enabling Federated Unlearning via Class-Aware Representation Transformation](../../ICCV2025/llm_safety/forgetting_through_transforming_enabling_federated_unlearning_via_class-aware_re.md)
-- [\[ICML 2026\] Forgetting is Not Erasing: A Survey of Reversibility in Large Language Model Machine Unlearning](../../ICML2026/llm_safety/unlearning_isnt_deletion_investigating_reversibility_of_machine_unlearning_in_ll.md)
-- [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
+- [\[CVPR 2026\] Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting](../../CVPR2026/llm_safety/learning_from_oblivion_predicting_knowledge_overflowed_weights_via_retrodiction_.md)
+- [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](../../ICLR2026/llm_safety/explainable_llm_unlearning_through_reasoning.md)
+- [\[CVPR 2026\] pH-Strips for Selective Forgetting: A Blunt but Fast Diagnostic Baseline for Machine Unlearning](../../CVPR2026/llm_safety/ph-strips_for_selective_forgetting_a_blunt_but_fast_diagnostic_baseline_for_mach.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Sample Selection Against Label Noise by Cutting Mislabeled Easy Examples
 description: >-
-  [NeurIPS 2025][LLM Safety][noisy labels] This paper identifies and defines Mislabeled Easy Examples (MEEs)—samples whose incorrect labels are confidently learned by the model in the early stages of training—and demonstra…
+  [NeurIPS 2025][LLM Safety][noisy labels] This paper identifies and defines Mislabeled Easy Examples (MEEs)—samples whose incorrect labels are confidently learned by the model in the early stages of training—and demonstrates that these samples cause the greatest harm to generalization. An Early Cutting method is proposed to filter MEEs by recalibrating the early-stage confident subset using the model's later-stage state.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Early Cutting"
   - "robust training"
 date: 2026-05-08
-content_hash: eef029b38517c7dc
+content_hash: 60b120bd47a2fb7a
 ---
 
 # Enhancing Sample Selection Against Label Noise by Cutting Mislabeled Easy Examples
@@ -153,9 +153,9 @@ The existence of MEEs suggests that the standard DNN paradigm of "learn simple p
 
 - [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](on_the_sample_complexity_of_differentially_private_policy_optimization.md)
 - [\[NeurIPS 2025\] Adaptive LoRA Experts Allocation and Selection for Federated Fine-Tuning](adaptive_lora_experts_allocation_and_selection_for_federated_fine-tuning.md)
-- [\[ICML 2026\] AliMark: Enhancing Robustness of Sentence-Level Watermarking Against Text Paraphrasing](../../ICML2026/llm_safety/alimark_enhancing_robustness_of_sentence-level_watermarking_against_text_paraphr.md)
 - [\[NeurIPS 2025\] Enhancing CLIP Robustness via Cross-Modality Alignment](enhancing_clip_robustness_via_crossmodality_alignment.md)
 - [\[NeurIPS 2025\] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models](fedrw_efficient_privacy-preserving_data_reweighting_for_enhancing_federated_lear.md)
+- [\[ICCV 2025\] Asynchronous Event Error-Minimizing Noise for Safeguarding Event Dataset](../../ICCV2025/llm_safety/asynchronous_event_error-minimizing_noise_for_safeguarding_event_dataset.md)
 
 </div>
 

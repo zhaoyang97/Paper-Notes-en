@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Language Model Distillation: A Temporal Difference Imitation Learning Perspective
 description: >-
-  [AAAI 2026][Reinforcement Learning][knowledge distillation] This paper revisits language model distillation from an imitation learning / inverse reinforcement learning perspective. It exploits the sparsity of teacher out…
+  [AAAI 2026][Reinforcement Learning][knowledge distillation] This paper revisits language model distillation from an imitation learning / inverse reinforcement learning perspective. It exploits the sparsity of teacher output distributions (top-p tokens concentrate over 96% of probability mass) to construct a top-p MDP for temporal difference (TD) learning, proves that the optimal policy in the reduced action space admits a bounded suboptimality guarantee…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "top-p action space"
   - "inverse reinforcement learning"
 date: 2026-05-08
-content_hash: 619ac080eb52359c
+content_hash: 3ccebb6de0aa97af
 ---
 
 # Language Model Distillation: A Temporal Difference Imitation Learning Perspective
@@ -200,10 +200,10 @@ $$\max_Q \mathcal{J}^\star(Q) = \mathbb{E}_{\rho^\star}[\phi((\mathcal{F}_p^\sta
 ## Related Papers
 
 - [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](../../NeurIPS2025/reinforcement_learning/temporal-difference_variational_continual_learning.md)
+- [\[ICLR 2026\] Benefits and Pitfalls of Reinforcement Learning for Language Model Planning: A Theoretical Perspective](../../ICLR2026/reinforcement_learning/benefits_and_pitfalls_of_reinforcement_learning_for_language_model_planning_a_th.md)
 - [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](../../ICLR2026/reinforcement_learning/model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
 - [\[AAAI 2026\] Reasoning with Exploration: An Entropy Perspective](reasoning_with_exploration_an_entropy_perspective.md)
 - [\[ICLR 2026\] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective](../../ICLR2026/reinforcement_learning/the_sample_complexity_of_online_reinforcement_learning_a_multi-model_perspective.md)
-- [\[AAAI 2026\] SafeMIL: Learning Offline Safe Imitation Policy from Non-Preferred Trajectories](safemil_learning_offline_safe_imitation_policy_from_non-preferred_trajectories.md)
 
 </div>
 

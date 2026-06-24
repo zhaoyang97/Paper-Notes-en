@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unposed-to-3D: Learning Simulation-Ready Vehicles from Real-World Images
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Unposed-to-3D reconstructs "simulation-ready" 3D vehicles from real-world driving images using pure image supervision (without any 3D ground truth or camera pose annotations). By utilizing a camera prediction head to estimate poses and backpropagating image reconstruction losses through differentiable rendering to the
+  [CVPR 2026][Autonomous Driving][Self-supervised 3D Reconstruction] Unposed-to-3D reconstructs "simulation-ready" 3D vehicles from real-world driving images using pure image supervision (without any 3D ground truth or camera pose annotations). By utilizing a camera prediction head to estimate poses and backpropagating image reconstruction losses through differentiable rendering to the geometry—combined with scale prediction and lighting harmonization modules—the reconstructed…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Self-supervised 3D Reconstruction"
+  - "Pose-free"
+  - "3D Gaussian Splatting"
+  - "Simulation Assets"
+  - "Camera Pose Prediction"
 date: 2026-05-08
-content_hash: 09671bbeba2e0ff9
+content_hash: c774fc5c61adf8f7
 ---
+
 # Unposed-to-3D: Learning Simulation-Ready Vehicles from Real-World Images
 
 **Conference**: CVPR 2026  
@@ -156,10 +162,10 @@ Integrating generated assets into 100 Waymo scenes consistently improves AP/APH 
 ## Related Papers
 
 - [\[CVPR 2026\] SimScale: Learning to Drive via Real-World Simulation at Scale](simscale_learning_to_drive_via_real-world_simulation_at_scale.md)
+- [\[CVPR 2026\] DGGT: Feedforward 4D Reconstruction of Dynamic Driving Scenes using Unposed Images](dggt_feedforward_4d_reconstruction_of_dynamic_driving_scenes_using_unposed_image.md)
 - [\[CVPR 2026\] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World](worldlens_full-spectrum_evaluations_of_driving_world_models_in_real_world.md)
 - [\[CVPR 2026\] Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos](learning_to_drive_is_a_free_gift_large-scale_label-free_autonomy_pretraining_fro.md)
-- [\[CVPR 2026\] Open-Ended Instruction Realization with LLM-Enabled Multi-Planner Scheduling in Autonomous Vehicles](open-ended_instruction_realization_with_llm-enabled_multi-planner_scheduling_in_.md)
-- [\[CVPR 2026\] Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation](learning_to_identify_out-of-distribution_objects_for_3d_lidar_anomaly_segmentati.md)
+- [\[CVPR 2026\] V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception](v2u4real_a_real-world_large-scale_dataset_for_vehicle-to-uav_cooperative_percept.md)
 
 </div>
 

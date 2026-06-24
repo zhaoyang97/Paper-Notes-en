@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Weak-to-Strong Generalization under Distribution Shifts
 description: >-
-  [NeurIPS 2025][NLP Understanding][Weak-to-strong generalization] This paper demonstrates that naive weak-to-strong generalization fails under distribution shifts—where the strong model performs even worse than the weak s…
+  [NeurIPS 2025][NLP Understanding][Weak-to-strong generalization] This paper demonstrates that naive weak-to-strong generalization fails under distribution shifts—where the strong model performs even worse than the weak supervisor—and proposes RAVEN, a framework that dynamically learns optimal combination weights over multiple weak models to achieve robust weak-to-strong generalization, surpassing baselines by over 30% on OOD tasks.
 tags:
   - "NeurIPS 2025"
   - "NLP Understanding"
@@ -12,7 +12,7 @@ tags:
   - "dynamic weight combination"
   - "AI alignment"
 date: 2026-05-08
-content_hash: f3d69dc4d47ea4af
+content_hash: fb6905bff04dd030
 ---
 
 # Weak-to-Strong Generalization under Distribution Shifts
@@ -139,8 +139,8 @@ Cross-entropy loss (classification tasks) or preference loss (alignment tasks) i
 - [\[NeurIPS 2025\] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)
 - [\[ICML 2026\] Causal Fine-Tuning under Latent Confounded Shift](../../ICML2026/nlp_understanding/causal_fine-tuning_under_latent_confounded_shift.md)
 - [\[NeurIPS 2025\] Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL](planning_without_search_refining_frontier_llms_with_offline_goal-conditioned_rl.md)
-- [\[ICCV 2025\] Balancing Task-Invariant Interaction and Task-Specific Adaptation for Unified Image Fusion](../../ICCV2025/nlp_understanding/balancing_task-invariant_interaction_and_task-specific_adaptation_for_unified_im.md)
-- [\[ACL 2026\] Test-Time Reasoners Are Strategic Multiple-Choice Test-Takers](../../ACL2026/nlp_understanding/test-time_reasoners_are_strategic_multiple-choice_test-takers.md)
+- [\[ACL 2025\] Multi-Hop Reasoning for Question Answering with Hyperbolic Representations](../../ACL2025/nlp_understanding/multi-hop_reasoning_for_question_answering_with_hyperbolic_representations.md)
+- [\[ACL 2025\] RISE: Reasoning Enhancement via Iterative Self-Exploration in Multi-hop Question Answering](../../ACL2025/nlp_understanding/rise_reasoning_enhancement_via_iterative_self-exploration_in_multi-hop_question_.md)
 
 </div>
 

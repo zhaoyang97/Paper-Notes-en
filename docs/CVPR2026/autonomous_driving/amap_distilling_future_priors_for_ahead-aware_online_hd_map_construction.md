@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] AMap identifies a safety hazard in existing temporal HD mapping methods: they "only enhance the rear area already passed and provide almost no improvement for the critical road ahead." It proposes a "distill-from-future" paradigm—using a teacher capable of seeing future frames to implicitly instill forward priors into
+  [CVPR 2026][Autonomous Driving][Online HD Map] AMap identifies a safety hazard in existing temporal HD mapping methods: they "only enhance the rear area already passed and provide almost no improvement for the critical road ahead." It proposes a "distill-from-future" paradigm—using a teacher capable of seeing future frames to implicitly instill forward priors into a lightweight student observing only the current frame, significantly improving ahead-mapping accuracy (A-mAP) wi…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Online HD Map"
+  - "Ahead-Aware Perception"
+  - "Future Prior Distillation"
+  - "BEV Distillation"
+  - "Temporal Modeling"
 date: 2026-05-08
-content_hash: 8a18d089009588e7
+content_hash: 9aa4f04905e26706
 ---
+
 # AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ Standard BEVDistill/MapDistill methods designed for static distillation **actual
 
 ## Related Papers
 
-- [\[CVPR 2026\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](mapgclr_geospatial_contrastive_learning_of_represe.md)
+- [\[AAAI 2026\] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors](../../AAAI2026/autonomous_driving/priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
+- [\[ICLR 2026\] Stability under Scrutiny: Benchmarking Representation Paradigms for Online HD Map Construction](../../ICLR2026/autonomous_driving/stability_under_scrutiny_benchmarking_representation_paradigms_for_online_hd_map.md)
+- [\[CVPR 2026\] OptiMVMap: Offline Vectorized Map Construction via Optimal Multi-vehicle Perspectives](optimvmap_offline_vectorized_map_construction_via_optimal_multi-vehicle_perspect.md)
 - [\[ECCV 2024\] Stream Query Denoising for Vectorized HD-Map Construction](../../ECCV2024/autonomous_driving/stream_query_denoising_for_vectorized_hd-map_construction.md)
-- [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](../../NeurIPS2025/autonomous_driving/sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
-- [\[AAAI 2026\] PriorDrive: Enhancing Online HD Mapping with Unified Vector Priors](../../AAAI2026/autonomous_driving/priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
-- [\[ICCV 2025\] DAMap: Distance-aware MapNet for High Quality HD Map Construction](../../ICCV2025/autonomous_driving/damap_distance-aware_mapnet_for_high_quality_hd_map_construction.md)
+- [\[CVPR 2026\] Points-to-3D: Structure-Aware 3D Generation with Point Cloud Priors](points-to-3d_structure-aware_3d_generation_with_point_cloud_priors.md)
 
 </div>
 

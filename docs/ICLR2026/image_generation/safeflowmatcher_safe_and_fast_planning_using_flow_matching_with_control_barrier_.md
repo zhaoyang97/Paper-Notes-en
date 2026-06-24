@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Image Generation][Flow Matching] SafeFlowMatcher is proposed as a safe planning framework that combines flow matching with Control Barrier Functions (CBF). It decouples path generation from safety certification via a Predictor-Corrector (PC) integrator, maintaining the efficiency of flow matching while providing formal safety guarantees.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Control Barrier Functions (CBF)"
+  - "Safe Planning"
+  - "Predictor-Corrector Integrator"
+  - "Finite-time convergence"
 date: 2026-05-08
-content_hash: 66ca060bff350ece
+content_hash: 531c57b6026ce4fb
 ---
+
 # SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions
 
 **Conference**: ICLR 2026  
@@ -133,9 +138,9 @@ Verified the contributions of the PC integrator and barrier certificates:
 
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
 - [\[ICLR 2026\] Flow Straight and Fast in Hilbert Space: Functional Rectified Flow](flow_straight_and_fast_in_hilbert_space_functional_rectified_flow.md)
+- [\[ICLR 2026\] Safety-Guided Flow (SGF): A Unified Framework for Negative Guidance in Safe Generation](safety-guided_flow_sgf_a_unified_framework_for_negative_guidance_in_safe_generat.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
-- [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](edit-based_flow_matching_for_temporal_point_processes.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 
 </div>
 

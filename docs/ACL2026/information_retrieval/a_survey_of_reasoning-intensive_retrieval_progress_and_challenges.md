@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Survey of Reasoning-Intensive Retrieval: Progress and Challenges
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RIR] This paper systematically organizes the emerging direction of "Reasoning-Intensive Retrieval (RIR)." It provides the first comprehensive three-part survey—benchmarks, methods, and challenges—following the pipeline of query/index/retriever/reranker/iteration, and points out that current evaluations rely excessively on t
+  [ACL 2026][Information Retrieval & RAG][Reasoning-Intensive Retrieval] This paper systematically organizes the emerging direction of "Reasoning-Intensive Retrieval (RIR)." It provides the first comprehensive three-part survey—benchmarks, methods, and challenges—following the pipeline of query/index/retriever/reranker/iteration, and points out that current evaluations rely excessively on traditional IR metrics like nDCG.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - RIR
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Reasoning-Intensive Retrieval"
+  - "RIR"
+  - "Reranking"
+  - "Iterative Retrieval"
+  - "LLM Embeddings"
 date: 2026-05-08
-content_hash: c505d2979511ecb7
+content_hash: be61838b5a4d00b2
 ---
+
 # A Survey of Reasoning-Intensive Retrieval: Progress and Challenges
 
 **Conference**: ACL 2026  
@@ -117,10 +122,10 @@ As this is a survey, the following summarizes the synthesized RIR benchmark and 
 ## Related Papers
 
 - [\[ACL 2026\] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval](reasonembed_enhanced_text_embeddings_for_reasoning-intensive_document_retrieval.md)
-- [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
-- [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](../../ICLR2026/information_retrieval/reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
+- [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](../../ICLR2026/information_retrieval/retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
 - [\[ICLR 2026\] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval](../../ICLR2026/information_retrieval/beyond_sequential_reranking_reranker-guided_search_improves_reasoning_intensive_.md)
-- [\[ICML 2026\] REAL: Resolving Knowledge Conflicts in Knowledge-Intensive Visual Question Answering via Reasoning-Pivot Alignment](../../ICML2026/information_retrieval/real_resolving_knowledge_conflicts_in_knowledge-intensive_visual_question_answer.md)
+- [\[ICLR 2026\] MRMR: A Realistic and Expert-Level Multidisciplinary Benchmark for Reasoning-Intensive Multimodal Retrieval](../../ICLR2026/information_retrieval/mrmr_a_realistic_and_expert-level_multidisciplinary_benchmark_for_reasoning-inte.md)
+- [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](../../ICLR2026/information_retrieval/frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception
 description: >-
-  [ICCV 2025][Autonomous Driving][Multi-task Learning] This paper proposes the MAESTRO framework, which generates task-specific features and suppresses inter-task interference in multi-task 3D perception through three modu…
+  [ICCV 2025][Autonomous Driving][Multi-task Learning] This paper proposes the MAESTRO framework, which generates task-specific features and suppresses inter-task interference in multi-task 3D perception through three modules: Class-wise Prototype Generator (CPG), Task-Specific Feature Generator (TSFG), and Scene Prototype Aggregator (SPA). MAESTRO simultaneously surpasses single-task models on 3D object detection, BEV map segmentation, and 3D occupancy prediction.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "3D Object Detection"
   - "Occupancy Prediction"
 date: 2026-05-08
-content_hash: 65a9712cac5a32b3
+content_hash: c9d66000c8989345
 ---
 
 # MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception
@@ -126,10 +126,10 @@ TSFG sub-module ablation: prototype-level features contribute +1.8% mIoU (Map), 
 ## Related Papers
 
 - [\[AAAI 2026\] Task Prototype-Based Knowledge Retrieval for Multi-Task Learning from Partially Annotated Data](../../AAAI2026/autonomous_driving/task_prototype-based_knowledge_retrieval_for_multi-task_lear.md)
-- [\[ICCV 2025\] DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic](duet_dual_incremental_object_detection_via_exemplar-free_task_arithmetic.md)
 - [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
+- [\[ICCV 2025\] DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic](duet_dual_incremental_object_detection_via_exemplar-free_task_arithmetic.md)
+- [\[CVPR 2026\] TACO: Task-Aware Contrastive Learning for Joint LiDAR Localization and 3D Object Detection](../../CVPR2026/autonomous_driving/taco_task-aware_contrastive_learning_for_joint_lidar_localization_and_3d_object_.md)
 - [\[ICCV 2025\] Unleashing the Temporal Potential of Stereo Event Cameras for Continuous-Time 3D Perception](unleashing_the_temporal_potential_of_stereo_event_cameras_for_continuous-time_3d.md)
-- [\[ICCV 2025\] AGO: Adaptive Grounding for Open World 3D Occupancy Prediction](ago_adaptive_grounding_for_open_world_3d_occupancy_predictio.md)
 
 </div>
 

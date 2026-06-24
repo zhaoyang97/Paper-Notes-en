@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Inpainting-Guided Policy Optimization for Diffusion Large Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][diffusion LLM] By leveraging the unique "inpainting" capability of diffusion language models (dLLMs), partial ground-truth reasoning segments are injected to guide exploration when GRPO training encounters "all-wrong groups with zero advantage." This restores gradient signals and improves sample efficiency, achieving new SoTA results
+  [ICLR 2026][Reasoning][diffusion LLM] By leveraging the unique "inpainting" capability of diffusion language models (dLLMs), partial ground-truth reasoning segments are injected to guide exploration when GRPO training encounters "all-wrong groups with zero advantage." This restores gradient signals and improves sample efficiency, achieving new SoTA results for full-attention masked dLLMs on four mathematical reasoning benchmarks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - diffusion LLM
-  - GRPO
-  - inpainting
-  - RLVR
-  - exploration
-  - LLaDA
+  - "ICLR 2026"
+  - "Reasoning"
+  - "diffusion LLM"
+  - "GRPO"
+  - "inpainting"
+  - "RLVR"
+  - "exploration"
+  - "LLaDA"
 date: 2026-05-08
-content_hash: 79761d3eeb5fc717
+content_hash: f8b766417c9850a5
 ---
+
 # Inpainting-Guided Policy Optimization for Diffusion Large Language Models
 
 **Conference**: ICLR 2026  

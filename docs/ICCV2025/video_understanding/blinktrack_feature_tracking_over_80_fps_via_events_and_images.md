@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BlinkTrack: Feature Tracking over 80 FPS via Events and Images
 description: >-
-  [ICCV 2025][Video Understanding][Event Camera] BlinkTrack introduces a differentiable Kalman filter into a learning framework to address the challenges of asynchronous data association and uncertainty-aware fusion betwee…
+  [ICCV 2025][Video Understanding][Event Camera] BlinkTrack introduces a differentiable Kalman filter into a learning framework to address the challenges of asynchronous data association and uncertainty-aware fusion between event cameras and conventional cameras, achieving feature tracking at over 80 FPS with significantly superior performance in occlusion scenarios compared to existing methods.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Fusion"
   - "High Frame Rate Tracking"
 date: 2026-05-08
-content_hash: 9a6dfe90672b4190
+content_hash: 5f6ddc4604016a59
 ---
 
 # BlinkTrack: Feature Tracking over 80 FPS via Events and Images
@@ -151,10 +151,10 @@ Occlusion experiments: The Kalman filter yields the most substantial gains in oc
 ## Related Papers
 
 - [\[ICCV 2025\] Towards Efficient General Feature Prediction in Masked Skeleton Modeling](towards_efficient_general_feature_prediction_in_masked_skeleton_modeling.md)
-- [\[ACL 2026\] ArrowGEV: Grounding Events in Video via Learning the Arrow of Time](../../ACL2026/video_understanding/arrowgev_grounding_events_in_video_via_learning_the_arrow_of_time.md)
-- [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](online_dense_point_tracking_with_streaming_memory.md)
-- [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](general_compression_framework_for_efficient_transformer_object_tracking.md)
-- [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](alltracker_efficient_dense_point_tracking_at_high_resolution.md)
+- [\[CVPR 2026\] TAPFormer: Robust Arbitrary Point Tracking via Transient Asynchronous Fusion of Frames and Events](../../CVPR2026/video_understanding/ttapformer_robust_arbitrary_point_tracking_via_transient_asynchronous_fusion_of_.md)
+- [\[CVPR 2025\] Localizing Events in Videos with Multimodal Queries](../../CVPR2025/video_understanding/localizing_events_in_videos_with_multimodal_queries.md)
+- [\[ECCV 2024\] Exploring the Feature Extraction and Relation Modeling For Light-Weight Transformer Tracking](../../ECCV2024/video_understanding/exploring_the_feature_extraction_and_relation_modeling_for_light-weight_transfor.md)
+- [\[CVPR 2026\] FPS-Bench: A Benchmark for High Frame-Rate Video Understanding](../../CVPR2026/video_understanding/fps-bench_a_benchmark_for_high_frame-rate_video_understanding.md)
 
 </div>
 

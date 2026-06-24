@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data
 description: >-
-  [AAAI 2026][Graph Learning][Format Bias] This paper presents the first systematic investigation of format bias in LLMs when processing heterogeneous-format data (text / table / infobox / knowledge graph). Through a three…
+  [AAAI 2026][Graph Learning][Format Bias] This paper presents the first systematic investigation of format bias in LLMs when processing heterogeneous-format data (text / table / infobox / knowledge graph). Through a three-stage experimental framework, it reveals the existence of such bias, its data-level driving factors, and its internal causes at the attention mechanism level, and validates the effectiveness of attention rebalancing as an intervention.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -14,7 +14,7 @@ tags:
   - "Information Richness"
   - "Structural Quality"
 date: 2026-05-08
-content_hash: f4501a50979361fd
+content_hash: 5972c717a00988c9
 ---
 
 # Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data
@@ -173,7 +173,7 @@ The problem formulation is novel and important, the experimental design is syste
 - [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](self-correction_distillation_for_structured_data_question_answering.md)
 - [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
 - [\[AAAI 2026\] EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning](echoless_label-based_pre-computation_for_memory-efficient_heterogeneous_graph_le.md)
-- [\[AAAI 2026\] MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training](mug_meta-path-aware_universal_heterogeneous_graph_pre-training.md)
+- [\[ICLR 2026\] Towards Quantifying Long-Range Interactions in Graph Machine Learning: A Large Graph Dataset and a Measurement](../../ICLR2026/graph_learning/towards_quantifying_long-range_interactions_in_graph_machine_learning_a_large_gr.md)
 
 </div>
 

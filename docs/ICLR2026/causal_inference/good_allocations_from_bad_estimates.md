@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Good Allocations from Bad Estimates
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proves a counter-intuitive conclusion: **the sample size required for allocating limited treatment resources (treatment allocation) to target groups is smaller than the sample size required to accurately estimate the treatment effect (CATE) for each group by a factor of $1/\epsilon$**—requiring only $O(M/\ep
+  [ICLR 2026][Causal Inference][CATE estimation] This paper proves a counter-intuitive conclusion: **the sample size required for allocating limited treatment resources (treatment allocation) to target groups is smaller than the sample size required to accurately estimate the treatment effect (CATE) for each group by a factor of $1/\epsilon$**—requiring only $O(M/\epsilon)$ instead of $O(M/\epsilon^2)$ samples, because "coarse estimates are sufficient for making near-optimal al…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "CATE estimation"
+  - "Treatment allocation"
+  - "Sample complexity"
+  - "Welfare maximization"
+  - "$\\rho$-regularity"
 date: 2026-05-08
-content_hash: b60ec82083bc919b
+content_hash: 2613c7fd006c9a65
 ---
+
 # Good Allocations from Bad Estimates
 
 **Conference**: ICLR 2026  
@@ -109,16 +115,16 @@ Key Findings (Figure 1): **In all datasets, the sample size used by ALLOC was no
 - Value: ⭐⭐⭐⭐⭐ Directly challenges standard practices in CATE sample size calculation for policy; the conclusion that underpowered RCTs can be sufficient for allocation is highly impactful.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] LLMs Struggle to Balance Reasoning and World Knowledge in Causal Narrative Understanding](llms_struggle_to_balance_reasoning_and_world_knowledge_in_causal_narrative_under.md)
+- [\[ICLR 2026\] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes](an_orthogonal_learner_for_individualized_outcomes_in_markov_decision_processes.md)
+- [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
+- [\[ICLR 2026\] Topological Causal Effects](topological_causal_effects.md)
+- [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
 - [\[ICLR 2026\] Action-Guided Attention for Video Action Anticipation](action-guided_attention_for_video_action_anticipation.md)
-- [\[ICLR 2026\] On Measuring Influence in Avoiding Undesired Future](on_measuring_influence_in_avoiding_undesired_future.md)
-- [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](learning_robust_intervention_representations_with_delta_embeddings.md)
-- [\[ICLR 2026\] Overlap-Weighted Orthogonal Meta-Learner for Treatment Effect Estimation over Time](overlap-weighted_orthogonal_meta-learner_for_treatment_effect_estimation_over_ti.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Compositional Generative Modeling from Decentralized Data
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] When generative factors are partitioned across multiple clients that do not share raw data, this paper proposes **DCFM (Decentralized Compositional Flow Matching)** to enforce global conditional independence constraints on attributes. This allows the model to generate attribute combinations never observed by any single
+  [ICML 2026][Image Generation][Compositional Generalization] When generative factors are partitioned across multiple clients that do not share raw data, this paper proposes **DCFM (Decentralized Compositional Flow Matching)** to enforce global conditional independence constraints on attributes. This allows the model to generate attribute combinations never observed by any single client, significantly outperforming federated learning and mixture-of-experts baselines across cond…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
-  - Knowledge Distillation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Compositional Generalization"
+  - "Decentralized Generation"
+  - "Flow Matching"
+  - "Conditional Independence"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 3c7b0ac5177cd4a2
+content_hash: 85e8f60c8f4ad295
 ---
+
 # Compositional Generative Modeling from Decentralized Data
 
 **Conference**: ICML 2026  
@@ -146,9 +150,20 @@ FedAvg requires hundreds of rounds. DCFM-B requires only 2 (upload local model +
 - Value: ⭐⭐⭐⭐ Highly relevant for privacy-sensitive data silos; DCFM-B's constant communication is particularly practical.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Adapting Noise to Data: Generative Flows from Learned 1D Processes](adapting_noise_to_data_generative_flows_from_1d_processes.md)
+- [\[CVPR 2026\] Heterogeneous Decentralized Diffusion Models](../../CVPR2026/image_generation/heterogeneous_decentralized_diffusion_models.md)
+- [\[ICML 2025\] Compositional Scene Understanding through Inverse Generative Modeling](../../ICML2025/image_generation/compositional_scene_understanding_through_inverse_generative_modeling.md)
+- [\[ICLR 2026\] Score Distillation Beyond Acceleration: Generative Modeling from Corrupted Data](../../ICLR2026/image_generation/score_distillation_beyond_acceleration_generative_modeling_from_corrupted_data.md)
+- [\[CVPR 2025\] Decentralized Diffusion Models](../../CVPR2025/image_generation/decentralized_diffusion_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2025\] Compositional Scene Understanding through Inverse Generative Modeling](../../ICML2025/image_generation/compositional_scene_understanding_through_inverse_generative_modeling.md)

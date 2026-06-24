@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A New Paradigm for Genome-wide DNA Methylation Prediction Without Methylation Input
 description: >-
-  [ICLR 2026][Computational Biology][Transformer] MethylProphet is a "gene context + DNA sequence" driven Transformer foundation model that **completely eliminates the need for any measured methylation values as input**. By utilizing only a single sample's gene expression profile and the local DNA sequence around each CpG site, it can infer genome-wide methylation lev
+  [ICLR2026][Computational Biology][DNA Methylation] MethylProphet is a "gene context + DNA sequence" driven Transformer foundation model that **completely eliminates the need for any measured methylation values as input**. By utilizing only a single sample's gene expression profile and the local DNA sequence around each CpG site, it can infer genome-wide methylation levels (~28 million CpGs) and generalize to CpG sites and samples never seen during training.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Transformer
+  - "ICLR2026"
+  - "Computational Biology"
+  - "DNA Methylation"
+  - "Gene Expression Context"
+  - "Transformer"
+  - "Genome-wide Prediction"
+  - "Foundation Models"
 date: 2026-05-08
-content_hash: 8eb4e819ef5c61b8
+content_hash: 9971d0335d1d74a2
 ---
+
 # A New Paradigm for Genome-wide DNA Methylation Prediction Without Methylation Input
 
 **Conference**: ICLR2026  
@@ -134,13 +139,14 @@ Ours achieved the highest MAS-PCC while maintaining MAC-PCC parity with CpGPT, d
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2025\] Latent Imputation before Prediction: A New Computational Paradigm for De Novo Peptide Sequencing](../../ICML2025/computational_biology/latent_imputation_before_prediction_a_new_computational_paradigm_for_de_novo_pep.md)
+- [\[ICLR 2026\] Readout Representation: Redefining Neural Codes by Input Recovery](readout_representation_redefining_neural_codes_by_input_recovery.md)
 - [\[ICLR 2026\] Test-Time Adaptation without Source Data for Out-of-Domain Bioactivity Prediction](test-time_adaptation_without_source_data_for_out-of-domain_bioactivity_predictio.md)
-- [\[ICLR 2026\] Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction](adaptive_data-knowledge_alignment_in_genetic_perturbation_prediction.md)
 - [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
 - [\[ICLR 2026\] PatchDNA: A Flexible and Biologically-Informed Alternative to Tokenization for DNA](patchdna_a_flexible_and_biologically-informed_alternative_to_tokenization_for_dn.md)
 

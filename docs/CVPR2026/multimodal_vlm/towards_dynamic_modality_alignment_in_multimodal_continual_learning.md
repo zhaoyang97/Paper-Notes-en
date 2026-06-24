@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Dynamic Modality Alignment in Multimodal Continual Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper argues that "modality alignment is not a static one-time constraint, but a dynamic process evolving with tasks and network layers." It constructs a "Dynamic Alignment Graph" for each task (nodes are cross-modal cluster centroids, intra-layer edges capture token interactions, and inter-layer edges capture rep
+  [CVPR 2026][Multimodal VLM][Multimodal Continual Learning] This paper argues that "modality alignment is not a static one-time constraint, but a dynamic process evolving with tasks and network layers." It constructs a "Dynamic Alignment Graph" for each task (nodes are cross-modal cluster centroids, intra-layer edges capture token interactions, and inter-layer edges capture representation propagation). By using three-level graph regularization to lock the evolution of old clas…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Continual Learning"
+  - "Modality Alignment"
+  - "Graph Regularization"
+  - "Catastrophic Forgetting"
+  - "Prompt Learning"
 date: 2026-05-08
-content_hash: 78a48818ec9442a5
+content_hash: d6aa679f558f4d34
 ---
+
 # Towards Dynamic Modality Alignment in Multimodal Continual Learning
 
 **Conference**: CVPR 2026  

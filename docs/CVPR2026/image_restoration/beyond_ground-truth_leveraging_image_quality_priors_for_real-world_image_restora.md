@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][NR-IQA] The IQPIR framework is proposed, which introduces Image Quality Priors (IQP) from pre-trained NR-IQA models as conditioning signals. Through three mechanisms—a quality-conditioned Transformer, a dual-codebook structure, and quality optimization in discrete representation space—the model guides the restoration process t
+  [CVPR 2026][Image Restoration][Image Quality Prior] The IQPIR framework is proposed, which introduces Image Quality Priors (IQP) from pre-trained NR-IQA models as conditioning signals. Through three mechanisms—a quality-conditioned Transformer, a dual-codebook structure, and quality optimization in discrete representation space—the model guides the restoration process toward the highest perceptual quality, comprehensively outperforming SOTA on tasks such as blind face restora…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - NR-IQA
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Image Quality Prior"
+  - "Dual Codebook"
+  - "NR-IQA"
+  - "Quality Conditioning"
 date: 2026-05-08
-content_hash: ca6ae022298ee325
+content_hash: c2562a5186cf9d5f
 ---
+
 # Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration
 
 **Conference**: CVPR 2026  
@@ -132,7 +136,7 @@ The method also demonstrates comprehensive leads on WebPhoto-Test and WIDER-Test
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -140,7 +144,7 @@ The method also demonstrates comprehensive leads on WebPhoto-Test and WIDER-Test
 - [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
 - [\[CVPR 2026\] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising](next-scale_prediction_a_self-supervised_approach_for_real-world_image_denoising.md)
-- [\[CVPR 2026\] RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration](rar_restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)
+- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
 
 </div>
 

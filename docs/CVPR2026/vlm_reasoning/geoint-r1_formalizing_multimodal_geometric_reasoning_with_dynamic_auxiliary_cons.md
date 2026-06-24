@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geoint-R1: Formalizing Multimodal Geometric Reasoning with Dynamic Auxiliary Constructions
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Geoint-R1 formalizes "drawing auxiliary lines + formal proof" into a verifiable multimodal geometric reasoning task. By using Lean4 to encode dynamic auxiliary constructions into formal language and employing a Verification Reward Model (modulated by auxiliary line accuracy) to drive curriculum reinforcement learning,
+  [CVPR 2026][VLM Reasoning][Geometric Reasoning] Geoint-R1 formalizes "drawing auxiliary lines + formal proof" into a verifiable multimodal geometric reasoning task. By using Lean4 to encode dynamic auxiliary constructions into formal language and employing a Verification Reward Model (modulated by auxiliary line accuracy) to drive curriculum reinforcement learning, a 7B model achieves an average performance exceeding GPT-4o / Gemini-1.5-pro on the self-built Geoint benchmark.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Geometric Reasoning"
+  - "Auxiliary Construction"
+  - "Lean4 Formalization"
+  - "Verification Reward Model"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 497160a72cbc3cc5
+content_hash: 6d21345e565248f4
 ---
+
 # Geoint-R1: Formalizing Multimodal Geometric Reasoning with Dynamic Auxiliary Constructions
 
 **Conference**: CVPR 2026  
@@ -156,10 +162,10 @@ Removing any module leads to significant drops. **Removing Verify causes the lar
 ## Related Papers
 
 - [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
-- [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
+- [\[CVPR 2026\] CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning](codedance_a_dynamic_tool-integrated_mllm_for_executable_visual_reasoning.md)
 - [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
+- [\[ICLR 2026\] Efficient Multimodal Spatial Reasoning via Dynamic and Asymmetric Routing](../../ICLR2026/vlm_reasoning/efficient_multimodal_spatial_reasoning_via_dynamic_and_asymmetric_routing.md)
 - [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
-- [\[CVPR 2026\] Unbiased Dynamic Multimodal Fusion](unbiased_dynamic_multimodal_fusion.md)
 
 </div>
 

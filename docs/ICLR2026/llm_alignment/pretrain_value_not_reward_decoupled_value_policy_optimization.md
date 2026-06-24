@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pretrain Value, Not Reward: Decoupled Value Policy Optimization
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] The authors argue that under fixed preference data, "training a reward model followed by online critic learning" is informationally equivalent to "directly pretraining a value model." Consequently, they propose DVPO: pretraining a Global Value Model (GVM) offline and freezing it as a universal critic to guide policy op
+  [ICLR 2026][LLM Alignment][RLHF] The authors argue that under fixed preference data, "training a reward model followed by online critic learning" is informationally equivalent to "directly pretraining a value model." Consequently, they propose DVPO: pretraining a Global Value Model (GVM) offline and freezing it as a universal critic to guide policy optimization. This eliminates online critic training, matches or exceeds mainstream RLHF methods on MT-Bench / Alpaca-Eval / Aren…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
-  - PPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "RLHF"
+  - "Value Model"
+  - "Critic Pretraining"
+  - "PPO"
+  - "Token-level Credit Assignment"
 date: 2026-05-08
-content_hash: 1632f222663d09da
+content_hash: 21c168cf070102e4
 ---
+
 # Pretrain Value, Not Reward: Decoupled Value Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -149,10 +153,10 @@ Computational Overhead (Table 6): PPO VRAM is $2\times m_{\text{train}}$ (traini
 ## Related Papers
 
 - [\[ICLR 2026\] Reward Models Inherit Value Biases from Pretraining](reward_models_inherit_value_biases_from_pretraining.md)
+- [\[ICLR 2026\] Group-Normalized Implicit Value Optimization for Language Models](group-normalized_implicit_value_optimization_for_language_models.md)
+- [\[ICLR 2026\] EigenBench: A Comparative Behavioral Measure of Value Alignment](eigenbench_a_comparative_behavioral_measure_of_value_alignment.md)
 - [\[ICML 2026\] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](../../ICML2026/llm_alignment/toward_stable_value_alignment_introducing_independent_modules_for_consistent_val.md)
 - [\[ICLR 2026\] Cognitive models can reveal interpretable value trade-offs in language models](cognitive_models_can_reveal_interpretable_value_trade-offs_in_language_models.md)
-- [\[ICML 2026\] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization](../../ICML2026/llm_alignment/picaco_pluralistic_in-context_value_alignment_of_llms_via_total_correlation_opti.md)
-- [\[ACL 2026\] How Value Induction Reshapes LLM Behaviour](../../ACL2026/llm_alignment/how_value_induction_reshapes_llm_behaviour.md)
 
 </div>
 

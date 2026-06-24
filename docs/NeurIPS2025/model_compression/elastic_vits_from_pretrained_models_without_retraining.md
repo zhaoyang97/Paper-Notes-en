@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Elastic ViTs from Pretrained Models without Retraining
 description: >-
-  [NeurIPS 2025][Model Compression][Vision Transformer Pruning] SnapViT proposes a post-training structured pruning method that combines a local Hessian diagonal approximation derived from self-supervised gradients with gl…
+  [NeurIPS 2025][Model Compression][Vision Transformer Pruning] SnapViT proposes a post-training structured pruning method that combines a local Hessian diagonal approximation derived from self-supervised gradients with global cross-module correlations estimated via evolutionary algorithms. Without any retraining or labels, it generates elastic ViT sub-networks spanning continuous sparsity levels in a single run, requiring less than 5 minutes on an A100 GPU.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Evolutionary Algorithms"
   - "Self-Supervised Importance Scoring"
 date: 2026-05-08
-content_hash: e8d28fbbc80e3349
+content_hash: 64a8166797b1c3c4
 ---
 
 # Elastic ViTs from Pretrained Models without Retraining
@@ -143,11 +143,11 @@ SnapViT approaches NViT on ImageNet while substantially outperforming it in 7-da
 
 ## Related Papers
 
+- [\[ICML 2025\] Olica: Efficient Structured Pruning of Large Language Models without Retraining](../../ICML2025/model_compression/olica_efficient_structured_pruning_of_large_language_models_without_retraining.md)
 - [\[NeurIPS 2025\] Understanding Differential Transformer Unchains Pretrained Self-Attentions](understanding_differential_transformer_unchains_pretrained_self-attentions.md)
 - [\[NeurIPS 2025\] AutoJudge: Judge Decoding Without Manual Annotation](autojudge_judge_decoding_without_manual_annotation.md)
 - [\[NeurIPS 2025\] Robustifying Learning-Augmented Caching Efficiently without Compromising 1-Consistency](robustifying_learning-augmented_caching_efficiently_without_compromising_1-consi.md)
 - [\[NeurIPS 2025\] Deterministic Continuous Replacement: Fast and Stable Module Replacement in Pretrained Transformers](deterministic_continuous_replacement_fast_and_stable_module_replacement_in_pretr.md)
-- [\[ICCV 2025\] EA-ViT: Efficient Adaptation for Elastic Vision Transformer](../../ICCV2025/model_compression/ea-vit_efficient_adaptation_for_elastic_vision_transformer.md)
 
 </div>
 

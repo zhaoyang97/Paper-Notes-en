@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Confidence Estimation for LLMs in Multi-turn Interactions
 description: >-
-  [ACL 2026][LLM (Other)][P(SUFFICIENT)] This paper presents the first systematic study of LLM confidence estimation in multi-turn dialogue scenarios. It proposes two core desiderata (per-turn calibration and monotonicity with increasing information), the corresponding InfoECE metric and Kendall’s $\tau$ evaluation, and the Hinter-Guesser dataset construction
+  [ACL 2026 Findings][LLM (Other)][Multi-turn dialogue] This paper presents the first systematic study of LLM confidence estimation in multi-turn dialogue scenarios. It proposes two core desiderata (per-turn calibration and monotonicity with increasing information), the corresponding InfoECE metric and Kendall’s $\tau$ evaluation, and the Hinter-Guesser dataset construction paradigm. A novel P(SUFFICIENT) logit probe is introduced. Findings indicate that existing methods (verba…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - P(SUFFICIENT)
-  - InfoECE
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Multi-turn dialogue"
+  - "Confidence estimation"
+  - "P(SUFFICIENT)"
+  - "InfoECE"
+  - "Monotonicity"
 date: 2026-05-08
-content_hash: f0a3ebde6ae70402
+content_hash: cbdc81d6ee8af047
 ---
+
 # Confidence Estimation for LLMs in Multi-turn Interactions
 
 **Conference**: ACL 2026 Findings  
@@ -130,11 +134,11 @@ P(SUFFICIENT) is the only method that **significantly decreases** confidence in 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
-- [\[ACL 2026\] VISTA: Verification In Sequential Turn-based Assessment](vista_verification_in_sequential_turn-based_assessment.md)
 - [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](../../AAAI2026/llm_nlp/quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
+- [\[ACL 2026\] VISTA: Verification In Sequential Turn-based Assessment](vista_verification_in_sequential_turn-based_assessment.md)
 - [\[ACL 2025\] Revisiting Epistemic Markers in Confidence Estimation: Can Markers Accurately Reflect Large Language Models' Uncertainty?](../../ACL2025/llm_nlp/revisiting_epistemic_markers_in_confidence_estimation_can_markers_accurately_ref.md)
 - [\[ACL 2025\] Controlling Politeness in Multi-Turn Dialogues Through Pre-Phrase Augmentation](../../ACL2025/llm_nlp/controlling_politeness_in_multi-turn_dialogues_through_pre-phrase_augmentation.md)
+- [\[ACL 2025\] CER: Confidence Enhanced Reasoning in LLMs](../../ACL2025/llm_nlp/cer_confidence_enhanced_reasoning.md)
 
 </div>
 

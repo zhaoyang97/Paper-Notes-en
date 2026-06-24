@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] 为什么 LLM 网络代理失败：一个分层规划视角
+  [Paper Note] Why LLM Web Agents Fail: A Hierarchical Planning Perspective
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper systematically analyzes the failure causes of LLM web agents through a hierarchical planning framework (high-level planning, low-level execution, and replanning). It discovers that PDDL representations outperform natural language planning, but low-level execution and perceptual grounding are the primary bott
+  [ACL 2026][LLM Agent][Web agent failure analysis] This paper systematically analyzes the failure causes of LLM web agents through a hierarchical planning framework (high-level planning, low-level execution, and replanning). It discovers that PDDL representations outperform natural language planning, but low-level execution and perceptual grounding are the primary bottlenecks.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Web agent failure analysis"
+  - "hierarchical planning"
+  - "natural language vs PDDL"
+  - "execution bottleneck"
 date: 2026-05-08
-content_hash: 809f4b7147757c15
+content_hash: a1cadbbabfcf71b9
 ---
+
 # Why LLM Web Agents Fail: A Hierarchical Planning Perspective
 
 **Conference**: ACL 2026  
@@ -165,11 +170,11 @@ Single-round replanning improves success rate by 4-5 percentage points, showing 
 
 ## Related Papers
 
-- [\[ACL 2026\] 拓扑重要：多智能体 LLM 中的内存泄露测量](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
-- [\[ACL 2026\] LiTS: A Modular Framework for LLM Tree Search](lits_a_modular_framework_for_llm_tree_search.md)
-- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
-- [\[ACL 2026\] Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities](uncertainty_quantification_in_llm_agents_foundations_emerging_challenges_and_opp.md)
-- [\[ACL 2026\] What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search](what_makes_an_llm_a_good_optimizer_a_trajectory_analysis_of_llm-guided_evolution.md)
+- [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
+- [\[AAAI 2026\] When Refusals Fail: Unstable Safety Mechanisms in Long-Context LLM Agents](../../AAAI2026/llm_agent/when_refusals_fail_unstable_safety_mechanisms_in_long-context_llm_agents.md)
+- [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
+- [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](synthagent_adapting_web_agents_with_synthetic_supervision.md)
+- [\[ICML 2026\] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling](../../ICML2026/llm_agent/agent_jit_compilation_for_latency-optimizing_web_agent_planning_and_scheduling.md)
 
 </div>
 

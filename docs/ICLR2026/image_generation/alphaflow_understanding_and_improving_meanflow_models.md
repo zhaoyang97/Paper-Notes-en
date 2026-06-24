@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AlphaFlow: Understanding and Improving MeanFlow Models
 description: >-
-  [ICLR 2026][Image Generation][MeanFlow] This paper decomposes the training objective of MeanFlow into two terms: "Trajectory Flow Matching + Trajectory Consistency." It identifies that the strong negative correlation between their gradients leads to optimization conflicts. Consequently, the authors propose the $\alpha$-Flow objective family, which unifies Fl
+  [ICLR2026][Image Generation][MeanFlow] This paper decomposes the training objective of MeanFlow into two terms: "Trajectory Flow Matching + Trajectory Consistency." It identifies that the strong negative correlation between their gradients leads to optimization conflicts. Consequently, the authors propose the $\alpha$-Flow objective family, which unifies Flow Matching, Shortcut, and MeanFlow. Using a curriculum strategy that anneals $\alpha$ from 1 to 0…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - MeanFlow
-  - Flow Matching
+  - "ICLR2026"
+  - "Image Generation"
+  - "MeanFlow"
+  - "Flow Matching"
+  - "Few-step Generation"
+  - "Curriculum Learning"
+  - "Trajectory Consistency"
 date: 2026-05-08
-content_hash: 332e9d08d1aabfaf
+content_hash: a93d2e7504dcb33b
 ---
+
 # AlphaFlow: Understanding and Improving MeanFlow Models
 
 **Conference**: ICLR2026  
@@ -138,8 +142,8 @@ With the same 240 epochs, $\alpha$-Flow-XL/2 improves 1-NFE FID by ~15% over Mea
 - [\[CVPR 2026\] Understanding, Accelerating, and Improving MeanFlow Training](../../CVPR2026/image_generation/understanding_accelerating_and_improving_meanflow_training.md)
 - [\[ICLR 2026\] Decoupled MeanFlow: Turning Flow Models into Flow Maps for Accelerated Sampling](decoupled_meanflow_turning_flow_models_into_flow_maps_for_accelerated_sampling.md)
 - [\[ICLR 2026\] Constantly Improving Image Models Need Constantly Improving Benchmarks](constantly_improving_image_models_need_constantly_improving_benchmarks.md)
+- [\[ICLR 2026\] Shortcut Diffusion Training with Cumulative Consistency Loss: An Optimal Control View](shortcut_diffusion_training_with_cumulative_consistency_loss_an_optimal_control_.md)
 - [\[AAAI 2026\] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation](../../AAAI2026/image_generation/mp1_meanflow_tames_policy_learning_in_1-step_for_robotic_manipulation.md)
-- [\[ICLR 2026\] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport](alignflow_improving_flow-based_generative_models_with_semi-discrete_optimal_tran.md)
 
 </div>
 

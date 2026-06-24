@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Finer Parameter Steps for Low-Rank PEFT: A Controlled Study with CP Tensor Adapters
 description: >-
-  [ICML 2026][Model Compression][LoRA] The authors replace LoRA's "growth by rank" with "growth by CP tensor component," reducing the single-step parameter increment from 4096 to 193 (a 21× reduction). Through a strict controlled study on OPT-1.3B / SST-2/RTE/BoolQ, they prove that finer parameter granularity serves as a tool for "diagnosing PEFT budget sen
+  [ICML 2026][Model Compression][Parameter-Efficient Fine-Tuning] The authors replace LoRA's "growth by rank" with "growth by CP tensor component," reducing the single-step parameter increment from 4096 to 193 (a 21× reduction). Through a strict controlled study on OPT-1.3B / SST-2/RTE/BoolQ, they prove that finer parameter granularity serves as a tool for "diagnosing PEFT budget sensitivity," but does not inherently yield a better accuracy-budget curve—yielding a sober negativ…
 tags:
-  - ICML 2026
-  - Model Compression
-  - LoRA
+  - "ICML 2026"
+  - "Model Compression"
+  - "Parameter-Efficient Fine-Tuning"
+  - "CP Tensor Decomposition"
+  - "LoRA"
+  - "Budget Granularity"
+  - "Ablation Study"
 date: 2026-05-08
-content_hash: 32fd4cdcee556e9b
+content_hash: 715c8d3a5b4c9ced
 ---
+
 # Finer Parameter Steps for Low-Rank PEFT: A Controlled Study with CP Tensor Adapters
 
 **Conference**: ICML 2026  
@@ -151,11 +156,11 @@ Conclusion: Under matched-budget, the two methods effectively "tie" on SST-2 and
 
 ## Related Papers
 
+- [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](../../ICLR2026/model_compression/trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
 - [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
 - [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/model_compression/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
-- [\[ICCV 2025\] Generalized Tensor-based Parameter-Efficient Fine-Tuning via Lie Group Transformations](../../ICCV2025/model_compression/generalized_tensor-based_parameter-efficient_fine-tuning_via_lie_group_transform.md)
-- [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
+- [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](../../ICLR2026/model_compression/stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
 
 </div>
 

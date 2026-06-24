@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deft Scheduling of Dynamic Cloud Workflows with Varying Deadlines via Mixture-of-Experts
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] DEFT introduces the Mixture-of-Experts (MoE) architecture to dynamic cloud workflow scheduling for the first time. It replaces the single-path feed-forward policy head in traditional DRL schedulers with a set of experts specialized in different "deadline tightness levels," coupled with a graph-adaptive gating network t
+  [ICLR2026][Reinforcement Learning][Mixture-of-Experts] DEFT introduces the Mixture-of-Experts (MoE) architecture to dynamic cloud workflow scheduling for the first time. It replaces the single-path feed-forward policy head in traditional DRL schedulers with a set of experts specialized in different "deadline tightness levels," coupled with a graph-adaptive gating network that understands DAG structures and urgency for step-by-step routing. In large-scale scenarios…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Mixture-of-Experts"
+  - "Deep Reinforcement Learning"
+  - "Cloud Workflow Scheduling"
+  - "Deadline-aware"
+  - "Graph-adaptive Gating"
 date: 2026-05-08
-content_hash: 16a4622d6ab88c83
+content_hash: fa5eb5a1f02054c4
 ---
+
 # Deft Scheduling of Dynamic Cloud Workflows with Varying Deadlines via Mixture-of-Experts
 
 **Conference**: ICLR2026  
@@ -124,7 +130,6 @@ Comparing different gating mechanisms and a deeper PMM (all reporting average in
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

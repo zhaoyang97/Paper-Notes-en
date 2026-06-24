@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SOLAR: Self-supervised Joint Learning for Symmetric Multimodal Retrieval
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] SOLAR proposes the first two-stage self-supervised learning framework for "symmetric MM2MM retrieval" (where both query and document are image+text pairs and roles are interchangeable). The first stage learns an "intersection mask" via global-local alignment and QDA adaptive thresholds to decouple shared and unique inf
+  [ICML2026][Multimodal VLM][Symmetric Multimodal Retrieval] SOLAR proposes the first two-stage self-supervised learning framework for "symmetric MM2MM retrieval" (where both query and document are image+text pairs and roles are interchangeable). The first stage learns an "intersection mask" via global-local alignment and QDA adaptive thresholds to decouple shared and unique information between images and text. The second stage utilizes this mask to construct positive and hard…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Symmetric Multimodal Retrieval"
+  - "Self-supervised Joint Learning"
+  - "Intersection-Difference Decoupling"
+  - "Masked Contrastive Learning"
+  - "Multimodal Embedding"
 date: 2026-05-08
-content_hash: d76e9ce13a2d0673
+content_hash: dce29cbe01040e89
 ---
+
 # SOLAR: Self-supervised Joint Learning for Symmetric Multimodal Retrieval
 
 **Conference**: ICML2026  
@@ -153,8 +159,8 @@ Stage 1 ablations (selected from Table 2):
 - [\[ECCV 2024\] Decoupling Common and Unique Representations for Multimodal Self-supervised Learning](../../ECCV2024/multimodal_vlm/decoupling_common_and_unique_representations_for_multimodal_self-supervised_lear.md)
 - [\[CVPR 2026\] Finding Distributed Object-Centric Properties in Self-Supervised Transformers](../../CVPR2026/multimodal_vlm/finding_distributed_object-centric_properties_in_self-supervised_transformers.md)
 - [\[CVPR 2025\] Self-Supervised Spatial Correspondence Across Modalities](../../CVPR2025/multimodal_vlm/self-supervised_spatial_correspondence_across_modalities.md)
-- [\[CVPR 2026\] EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval](../../CVPR2026/multimodal_vlm/evograph-r1_self-evolving_multimodal_knowledge_hypergraphs_for_agentic_retrieval.md)
 - [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](../../CVPR2026/multimodal_vlm/trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
+- [\[CVPR 2026\] EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval](../../CVPR2026/multimodal_vlm/evograph-r1_self-evolving_multimodal_knowledge_hypergraphs_for_agentic_retrieval.md)
 
 </div>
 

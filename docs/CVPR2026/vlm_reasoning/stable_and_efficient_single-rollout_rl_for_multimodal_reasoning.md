@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Stable and Efficient Single-Rollout RL for Multimodal Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][RLVR] Addressing the dilemma in multimodal RLVR where GRPO with multiple rollouts is computationally expensive while single-rollout methods suffer from entropy collapse, this paper proposes MSSR. By replacing group normalization with a Beta conjugate baseline and introducing an "entropy-based advantage shaping" mechanism, th
+  [CVPR 2026][VLM Reasoning][Multimodal reasoning] Addressing the dilemma in multimodal RLVR where GRPO with multiple rollouts is computationally expensive while single-rollout methods suffer from entropy collapse, this paper proposes MSSR. By replacing group normalization with a Beta conjugate baseline and introducing an "entropy-based advantage shaping" mechanism, the framework maintains stable training with only one rollout per sample. MSSR matches GRPO performance in half t…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RLVR
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal reasoning"
+  - "RLVR"
+  - "single-rollout"
+  - "entropy-shaped advantage"
+  - "GRPO"
 date: 2026-05-08
-content_hash: e49090c42d8980ea
+content_hash: ff6a0124bb0991bb
 ---
+
 # Stable and Efficient Single-Rollout RL for Multimodal Reasoning
 
 **Conference**: CVPR 2026  
@@ -141,10 +145,10 @@ The authors demonstrate that entropy shaping is irreplaceable:
 ## Related Papers
 
 - [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
-- [\[ICLR 2026\] Shuffle-R1: Efficient RL Framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle](../../ICLR2026/multimodal_vlm/shuffle-r1_efficient_rl_framework_for_multimodal_large_language_models_via_data-.md)
 - [\[CVPR 2026\] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning](reagen_adaptive_generation_of_structured_chains-of-thought_for_efficient_multimo.md)
-- [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
-- [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
+- [\[ICLR 2026\] Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning](../../ICLR2026/vlm_reasoning/game-rl_synthesizing_multimodal_verifiable_game_data_to_boost_vlms_general_reaso.md)
+- [\[CVPR 2026\] VisionLeaf: Entropy-Guided Leaf-First Reasoning for Efficient and Accurate Think-with-Image](visionleaf_entropy-guided_leaf-first_reasoning_for_efficient_and_accurate_think-.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
 
 </div>
 

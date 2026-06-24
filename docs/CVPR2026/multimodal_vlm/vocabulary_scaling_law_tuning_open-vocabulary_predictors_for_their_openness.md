@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vocabulary Scaling Law: Tuning Open-vocabulary Predictors for Their Openness
 description: >-
-  [CVPR 2026][Multimodal VLM][stability/extensibility] This paper theoretically proves that the ability of CLIP to maintain accuracy on old classes (stability) and recognize new classes (extensibility) as the vocabulary expands is lower-bounded by the "prediction confidence over the complete open vocabulary universe $U$." Based on this, it proposes three tuning principles
+  [CVPR 2026][Multimodal VLM][CLIP Open-vocabulary] This paper theoretically proves that the ability of CLIP to maintain accuracy on old classes (stability) and recognize new classes (extensibility) as the vocabulary expands is lower-bounded by the "prediction confidence over the complete open vocabulary universe $U$." Based on this, it proposes three tuning principles (covering the entire $U$, tuning only class-name embeddings, and adding orthogonal constraints to trained/open…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - stability/extensibility
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP Open-vocabulary"
+  - "Vocabulary Scaling Law"
+  - "stability/extensibility"
+  - "Submodular Optimization"
+  - "Prompt-tuning"
 date: 2026-05-08
-content_hash: 67c664019082165d
+content_hash: ecc195540931a339
 ---
+
 # Vocabulary Scaling Law: Tuning Open-vocabulary Predictors for Their Openness
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ Interpretation: ① "Covering U" is generally superior to "V(T) only," and name-
 
 ## Related Papers
 
-- [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](reconstructing_clip_for_open-vocabulary_dense_perception.md)
 - [\[CVPR 2026\] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset](towards_open-vocabulary_industrial_defect_understanding_with_a_large-scale_multi.md)
 - [\[CVPR 2026\] SynCLIP: Synonym-Coherent Language-Image Pretraining for Robust Open-Vocabulary Dense Perception](synclip_synonym-coherent_language-image_pretraining_for_robust_open-vocabulary_d.md)
 - [\[AAAI 2026\] O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model](../../AAAI2026/multimodal_vlm/o3slm_open_weight_open_data_and_open_vocabulary_sketch-language_model.md)
-- [\[CVPR 2026\] Thinking Beyond Labels: Vocabulary-Free Fine-Grained Recognition using Reasoning-Augmented LMMs](thinking_beyond_labels_vocabulary-free_fine-grained_recognition_using_reasoning-.md)
+- [\[ICLR 2026\] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach](../../ICLR2026/multimodal_vlm/customizing_visual_emotion_evaluation_for_mllms_an_open-vocabulary_multifaceted_.md)
+- [\[CVPR 2025\] Compositional Caching for Training-free Open-vocabulary Attribute Detection](../../CVPR2025/multimodal_vlm/compositional_caching_for_training-free_open-vocabulary_attribute_detection.md)
 
 </div>
 

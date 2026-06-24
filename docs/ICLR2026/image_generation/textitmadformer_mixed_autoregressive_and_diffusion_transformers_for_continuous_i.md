@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MADFormer: Mixed Autoregressive and Diffusion Transformers for Continuous Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] MADFormer mixes Autoregression (AR) and Diffusion along both the "token axis" and the "layer axis." It utilizes AR for one-time global conditioning between blocks and Diffusion for iterative refinement within blocks. By treating early Transformer layers as AR conditioners and later layers as diffusion denoisers, it ser
+  [ICLR 2026][Image Generation][Autoregressive-Diffusion Hybrid] MADFormer mixes Autoregression (AR) and Diffusion along both the "token axis" and the "layer axis." It utilizes AR for one-time global conditioning between blocks and Diffusion for iterative refinement within blocks. By treating early Transformer layers as AR conditioners and later layers as diffusion denoisers, it serves as a controllable testbed to systematically answer "how to allocate compute between AR and Di…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Autoregressive-Diffusion Hybrid"
+  - "Continuous Image Generation"
+  - "Block-wise Autoregression"
+  - "Compute-Quality Trade-off"
+  - "Unified Transformer"
 date: 2026-05-08
-content_hash: 89ba046a75c6bf63
+content_hash: 5fcf2664266e3402
 ---
+
 # MADFormer: Mixed Autoregressive and Diffusion Transformers for Continuous Image Generation
 
 **Conference**: ICLR 2026  
@@ -148,9 +154,9 @@ These conclusions are not contradictory: at a fixed NFE, favoring AR saves compu
 
 - [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
 - [\[ICLR 2026\] Hyperspherical Latents Improve Continuous-Token Autoregressive Generation](hyperspherical_latents_improve_continuous-token_autoregressive_generation.md)
+- [\[ICLR 2026\] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss](condition_errors_refinement_in_autoregressive_image_generation_with_diffusion_lo.md)
+- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
 - [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](../../CVPR2026/image_generation/training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
-- [\[ICLR 2026\] Scaling Laws for Diffusion Transformers](scaling_laws_for_diffusion_transformers.md)
-- [\[ICLR 2026\] Geometric Image Editing via Effects-Sensitive In-Context Inpainting with Diffusion Transformers](geometric_image_editing_via_effects-sensitive_in-context_inpainting_with_diffusi.md)
 
 </div>
 

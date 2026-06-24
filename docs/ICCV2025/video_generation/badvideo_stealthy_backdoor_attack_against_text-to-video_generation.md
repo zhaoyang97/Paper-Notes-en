@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BadVideo: Stealthy Backdoor Attack against Text-to-Video Generation
 description: >-
-  [ICCV 2025][Video Generation][text-to-video generation] BadVideo is the first backdoor attack framework targeting text-to-video (T2V) generation models. It exploits inherent static and dynamic redundancy in video (e.g.…
+  [ICCV 2025][Video Generation][text-to-video generation] BadVideo is the first backdoor attack framework targeting text-to-video (T2V) generation models. It exploits inherent static and dynamic redundancy in video (e.g., unspecified background elements, motion trajectories) through two strategies—spatio-temporal composition and dynamic element transition—to covertly embed malicious content. The framework achieves up to 93.5% human-evaluated attack success rate on LaVie and Ope…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "spatio-temporal composition"
   - "content safety"
 date: 2026-05-08
-content_hash: f7416bad38755814
+content_hash: 9e5b316b2030788e
 ---
 
 # BadVideo: Stealthy Backdoor Attack against Text-to-Video Generation
@@ -142,7 +142,7 @@ The text encoder is kept frozen; only diffusion model parameters are updated. Th
 - [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
 - [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
 - [\[ICCV 2025\] ETVA: Evaluation of Text-to-Video Alignment via Fine-Grained Question Generation and Answering](etva_evaluation_of_text-to-video_alignment_via_fine-grained_question_generation_.md)
-- [\[ICCV 2025\] TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation](tip-i2v_a_million-scale_real_text_and_image_prompt_dataset_for_image-to-video_ge.md)
+- [\[CVPR 2025\] Can Text-to-Video Generation Help Video-Language Alignment?](../../CVPR2025/video_generation/can_text-to-video_generation_help_video-language_alignment.md)
 
 </div>
 

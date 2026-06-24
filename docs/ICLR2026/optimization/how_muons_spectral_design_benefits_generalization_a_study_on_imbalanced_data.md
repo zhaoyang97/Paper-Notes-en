@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] How Muon's Spectral Design Benefits Generalization: A Study on Imbalanced Data
 description: >-
-  [ICLR 2026][Optimization & Theory][Muon] This paper abstracts Muon/Shampoo as Spectral Gradient Descent (SpecGD) and provides closed-form training trajectories on Gaussian mixture imbalanced data. It proves that SpecGD learns **all spectral components at the same rate** (whereas GD prioritizes principal components), thereby achieving superior worst-class/clas
+  [ICLR 2026][Optimization][Muon] This paper abstracts Muon/Shampoo as Spectral Gradient Descent (SpecGD) and provides closed-form training trajectories on Gaussian mixture imbalanced data. It proves that SpecGD learns **all spectral components at the same rate** (whereas GD prioritizes principal components), thereby achieving superior worst-class/class-balanced generalization under early stopping. This reveals the mechanism through which Muon outperforms SGD on imbalanced data…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Muon
-  - Shampoo
-  - Spectral Gradient Descent
+  - "ICLR 2026"
+  - "Optimization"
+  - "Muon"
+  - "Shampoo"
+  - "Spectral Gradient Descent"
+  - "Implicit Regularization"
+  - "Class Imbalance"
+  - "Spectrum-aware Optimizers"
 date: 2026-05-08
-content_hash: 0b95ef7392d7a6c7
+content_hash: 219036e1db2948de
 ---
+
 # How Muon's Spectral Design Benefits Generalization: A Study on Imbalanced Data
 
 **Conference**: ICLR 2026  
@@ -134,10 +138,10 @@ flowchart TD
 
 ## Related Papers
 
-- [\[ICLR 2026\] MuonBP: Faster Muon via Block-Periodic Orthogonalization](muonbp_faster_muon_via_block-periodic_orthogonalization.md)
 - [\[ICLR 2026\] Generalization Below the Edge of Stability: The Role of Data Geometry](generalization_below_the_edge_of_stability_the_role_of_data_geometry.md)
+- [\[NeurIPS 2025\] Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data](../../NeurIPS2025/optimization/implicit_bias_of_spectral_descent_and_muon_on_multiclass_separable_data.md)
 - [\[ICLR 2026\] Error Feedback for Muon and Friends](error_feedback_for_muon_and_friends.md)
-- [\[ICLR 2026\] How does the optimizer implicitly bias the model merging loss landscape?](how_does_the_optimizer_implicitly_bias_the_model_merging_loss_landscape.md)
+- [\[ICLR 2026\] MuonBP: Faster Muon via Block-Periodic Orthogonalization](muonbp_faster_muon_via_block-periodic_orthogonalization.md)
 - [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
 
 </div>

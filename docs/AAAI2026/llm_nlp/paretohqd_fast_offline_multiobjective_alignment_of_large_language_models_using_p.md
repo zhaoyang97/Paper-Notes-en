@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ParetoHqD: Fast Offline Multiobjective Alignment of Large Language Models Using Pareto High-Quality Data
 description: >-
-  [AAAI 2026][LLM/NLP][multi-objective alignment] This paper proposes ParetoHqD, which represents human preferences as preference directions in objective space (rather than linear scalarization)…
+  [AAAI 2026][LLM (Other)][multi-objective alignment] This paper proposes ParetoHqD, which represents human preferences as preference directions in objective space (rather than linear scalarization), and performs two-stage SFT on high-quality data selected near the Pareto front. Using only 42% of the GPU time, it achieves multi-objective LLM alignment performance superior to five baselines.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "multi-objective alignment"
   - "Pareto optimality"
   - "SFT"
   - "preference direction"
   - "data selection"
 date: 2026-05-08
-content_hash: 4d79d6d27f7857fe
+content_hash: 2362c3193dc6f07e
 ---
 
 # ParetoHqD: Fast Offline Multiobjective Alignment of Large Language Models Using Pareto High-Quality Data
@@ -130,11 +130,11 @@ Both stages use the standard SFT loss $\mathcal{L}_{\text{SFT}} = -\mathbb{E}[\s
 
 ## Related Papers
 
-- [\[ACL 2026\] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models](../../ACL2026/llm_nlp/costomcausal-oriented_steering_for_intrinsic_theory-of-mind_alignment_in_large_l.md)
+- [\[ACL 2025\] Gradient-Adaptive Policy Optimization: Towards Multi-Objective Alignment of Large Language Models](../../ACL2025/llm_nlp/gapo_multi_objective_alignment.md)
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
-- [\[AAAI 2026\] CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models](coevo_continual_evolution_of_symbolic_solutions_using_large_language_models.md)
-- [\[AAAI 2026\] LoKI: Low-damage Knowledge Implanting of Large Language Models](loki_low-damage_knowledge_implanting_of_large_language_models.md)
-- [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
+- [\[ACL 2025\] DeAL: Decoding-time Alignment for Large Language Models](../../ACL2025/llm_nlp/deal_decoding_time_alignment.md)
+- [\[ACL 2025\] Diversity-oriented Data Augmentation with Large Language Models](../../ACL2025/llm_nlp/diversity_data_augmentation.md)
+- [\[ACL 2025\] From Neurons to Semantics: Evaluating Cross-Linguistic Alignment Capabilities of Large Language Models via Neurons Alignment](../../ACL2025/llm_nlp/from_neurons_to_semantics_evaluating_cross-linguistic_alignment_capabilities_of_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SynCLIP: Synonym-Coherent Language-Image Pretraining for Robust Open-Vocabulary Dense Perception
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] SynCLIP identifies "synonym-induced grounding inconsistency" in existing CLIP-based open-vocabulary dense perception methods—where the spatial attention shifts when the same object is described using different synonyms. It introduces a Synonym-to-label Spatial Attention alignment (SSA) loss and a Semantic-induced Atten
+  [CVPR 2026][Multimodal VLM][Open-vocabulary perception] SynCLIP identifies "synonym-induced grounding inconsistency" in existing CLIP-based open-vocabulary dense perception methods—where the spatial attention shifts when the same object is described using different synonyms. It introduces a Synonym-to-label Spatial Attention alignment (SSA) loss and a Semantic-induced Attention Refinement (SAR) module that leverages DINOv2 for semantic token selection and context aggregation.…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Open-vocabulary perception"
+  - "CLIP"
+  - "Synonym robustness"
+  - "Spatial attention alignment"
+  - "Vision foundation models"
 date: 2026-05-08
-content_hash: 1f6b668012ac1362
+content_hash: 6f60028cda5c33f5
 ---
+
 # SynCLIP: Synonym-Coherent Language-Image Pretraining for Robust Open-Vocabulary Dense Perception
 
 **Conference**: CVPR 2026  
@@ -131,15 +136,16 @@ On OV-COCO (Baseline is DeCLIP):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](reconstructing_clip_for_open-vocabulary_dense_perception.md)
 - [\[CVPR 2026\] Vocabulary Scaling Law: Tuning Open-vocabulary Predictors for Their Openness](vocabulary_scaling_law_tuning_open-vocabulary_predictors_for_their_openness.md)
 - [\[CVPR 2026\] Concept-Aware Batch Sampling Improves Language-Image Pretraining](concept-aware_batch_sampling_improves_language-image_pretraining.md)
 - [\[CVPR 2026\] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset](towards_open-vocabulary_industrial_defect_understanding_with_a_large-scale_multi.md)
-- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
+- [\[AAAI 2026\] O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model](../../AAAI2026/multimodal_vlm/o3slm_open_weight_open_data_and_open_vocabulary_sketch-language_model.md)
+- [\[ECCV 2024\] MarvelOVD: Marrying Object Recognition and Vision-Language Models for Robust Open-Vocabulary Object Detection](../../ECCV2024/multimodal_vlm/marvelovd_marrying_object_recognition_and_vision-language_models_for_robust_open.md)
 
 </div>
 

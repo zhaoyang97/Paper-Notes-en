@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] DART identifies and addresses the "harm drift" problem—where fine-tuning LLMs to improve difference-aware classification accuracy (e.g., identifying legitimate demographic differences) causes generated explanations to become more harmful. Through a three-stage Distill-Audit-Repair pipeline, DART improves Llama-3-8B acc
+  [ACL 2026 Findings][LLM Safety][Difference-aware] DART identifies and addresses the "harm drift" problem—where fine-tuning LLMs to improve difference-aware classification accuracy (e.g., identifying legitimate demographic differences) causes generated explanations to become more harmful. Through a three-stage Distill-Audit-Repair pipeline, DART improves Llama-3-8B accuracy from 39.0% to 68.8% while reducing harm drift cases by 72.6%.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Difference-aware"
+  - "harm drift"
+  - "distill-audit-repair"
+  - "safety alignment"
+  - "over-refusal"
 date: 2026-05-08
-content_hash: f32af1c680a8ca5e
+content_hash: eb358f8b854c2045
 ---
+
 # DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training
 
 **Conference**: ACL 2026 Findings  
@@ -121,8 +127,8 @@ Both Stage I and Stage III use LoRA fine-tuning with standard next-token predict
 - [\[ACL 2026\] SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering](safeconstellations_mitigating_over-refusals_in_llms_through_task-aware_represent.md)
 - [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
 - [\[AAAI 2026\] Can Editing LLMs Inject Harm?](../../AAAI2026/llm_safety/can_editing_llms_inject_harm.md)
-- [\[ACL 2025\] Fairness through Difference Awareness: Measuring Desired Group Discrimination in LLMs](../../ACL2025/llm_safety/fairness_difference_awareness.md)
-- [\[ICML 2025\] Vulnerability-Aware Alignment: Mitigating Uneven Forgetting in Harmful Fine-Tuning](../../ICML2025/llm_safety/vulnerability-aware_alignment_mitigating_uneven_forgetting_in_harmful_fine-tunin.md)
+- [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](../../ICLR2026/llm_safety/prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
+- [\[ICLR 2026\] Bias Similarity Measurement: A Black-Box Audit of Fairness Across LLMs](../../ICLR2026/llm_safety/bias_similarity_measurement_a_black-box_audit_of_fairness_across_llms.md)
 
 </div>
 

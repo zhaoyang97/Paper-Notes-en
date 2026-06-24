@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Smarter Saboteurs, Better Fixers: Scaling & Security in Linear Multi-Agent Workflows
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] This paper employs a linear MetaGPT pipeline (Product Manager → Architect → Project Manager → Engineer) and injects a malicious agent into the Engineer role to secretly embed bugs. It finds that **larger models cause more severe destruction** (Pass@1 drops by 53.7pp at 27B); however, simply appending a lightweight QA+F
+  [ICML2026][Multi-Agent][Multi-Agent Systems] This paper employs a linear MetaGPT pipeline (Product Manager → Architect → Project Manager → Engineer) and injects a malicious agent into the Engineer role to secretly embed bugs. It finds that **larger models cause more severe destruction** (Pass@1 drops by 53.7pp at 27B); however, simply appending a lightweight QA+Fixer terminal stage reduces the performance drop to 0.6pp. This indicates that the previously claimed "inherent fra…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML2026"
+  - "Multi-Agent"
+  - "Multi-Agent Systems"
+  - "LLM Security"
+  - "Prompt Injection"
+  - "Model Scaling"
+  - "Linear Topology"
+  - "Verification and Error Correction"
 date: 2026-05-08
-content_hash: 932b5f492856d2c6
+content_hash: 562700cc709412c6
 ---
+
 # Smarter Saboteurs, Better Fixers: Scaling & Security in Linear Multi-Agent Workflows
 
 **Conference**: ICML2026  
@@ -141,11 +148,11 @@ Impact of key axes (anchored on the Malicious scenario):
 
 ## Related Papers
 
-- [\[ACL 2026\] PROTEA: Offline Evaluation and Iterative Refinement for Multi-Agent LLM Workflows](../../ACL2026/multi_agent/protea_offline_evaluation_and_iterative_refinement_for_multi-agent_llm_workflows.md)
 - [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](../../ICLR2026/multi_agent/multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
+- [\[ACL 2026\] PROTEA: Offline Evaluation and Iterative Refinement for Multi-Agent LLM Workflows](../../ACL2026/multi_agent/protea_offline_evaluation_and_iterative_refinement_for_multi-agent_llm_workflows.md)
+- [\[ICLR 2026\] Strategic Planning and Rationalizing on Trees Make LLMs Better Debaters](../../ICLR2026/multi_agent/strategic_planning_and_rationalizing_on_trees_make_llms_better_debaters.md)
 - [\[ACL 2026\] Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling](../../ACL2026/multi_agent/multi-agent_reasoning_improves_compute_efficiency_pareto-optimal_test-time_scali.md)
 - [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](../../ACL2026/multi_agent/scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
-- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
 
 </div>
 

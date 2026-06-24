@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] External Knowledge Injection for CLIP-Based Class-Incremental Learning
 description: >-
-  [ICCV 2025][Information Retrieval & RAG][Class-Incremental Learning] This paper proposes Engine (ExterNal knowledGe INjEction), a framework that employs dual-branch injection tuning (visual branch via data augmentation…
+  [ICCV 2025][Information Retrieval & RAG][Class-Incremental Learning] This paper proposes Engine (ExterNal knowledGe INjEction), a framework that employs dual-branch injection tuning (visual branch via data augmentation; text branch via GPT-4-generated discriminative descriptions) and post-tuning knowledge injection at inference (pairwise discriminative feature re-ranking), achieving 3–10% improvements over all CLIP-based class-incremental learning methods across 9 benchmark d…
 tags:
   - "ICCV 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "GPT-4"
   - "Vision-Language Models"
 date: 2026-05-08
-content_hash: eef6274fae6872ff
+content_hash: b61439c39f3a8ac2
 ---
 
 # External Knowledge Injection for CLIP-Based Class-Incremental Learning
@@ -167,11 +167,11 @@ Even when all methods are provided with identical external knowledge, Engine ach
 
 ## Related Papers
 
-- [\[ICML 2026\] CARE: Class-Adaptive Expert Consensus for Reliable Learning with Long-Tailed Noisy Labels](../../ICML2026/information_retrieval/care_class-adaptive_expert_consensus_for_reliable_learning_with_long-tailed_nois.md)
 - [\[NeurIPS 2025\] SuperCLIP: CLIP with Simple Classification Supervision](../../NeurIPS2025/information_retrieval/superclip_clip_with_simple_classification_supervision.md)
-- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](../../CVPR2026/information_retrieval/explaining_clip_zero-shot_predictions_through_concepts.md)
-- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](../../NeurIPS2025/information_retrieval/generalized_contrastive_learning_for_universal_multimodal_re.md)
-- [\[ICCV 2025\] ViLU: Learning Vision-Language Uncertainties for Failure Prediction](vilu_learning_vision-language_uncertainties_for_failure_prediction.md)
+- [\[ICML 2026\] CARE: Class-Adaptive Expert Consensus for Reliable Learning with Long-Tailed Noisy Labels](../../ICML2026/information_retrieval/care_class-adaptive_expert_consensus_for_reliable_learning_with_long-tailed_nois.md)
+- [\[CVPR 2025\] Preserving Clusters in Prompt Learning for Unsupervised Domain Adaptation](../../CVPR2025/information_retrieval/preserving_clusters_in_prompt_learning_for_unsupervised_domain_adaptation.md)
+- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
+- [\[AAAI 2026\] Magnitude Matters: A Superior Class of Similarity Metrics for Holistic Semantic Understanding](../../AAAI2026/information_retrieval/magnitude_matters_a_superior_class_of_similarity_metrics_for_holistic_semantic_u.md)
 
 </div>
 

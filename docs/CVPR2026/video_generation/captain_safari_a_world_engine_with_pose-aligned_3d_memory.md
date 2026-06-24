@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Captain Safari: A World Engine with Pose-Aligned 3D Memory
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Captain Safari is a "world engine" that maintains an implicit 3D geometric memory. Given an arbitrary camera trajectory, it retrieves world tokens aligned with the target pose to condition a DiT-based video generator. This ensures both precise trajectory following and long-term 3D consistency under aggressive 6-DoF mot
+  [CVPR 2026][Video Generation][World Engine] Captain Safari is a "world engine" that maintains an implicit 3D geometric memory. Given an arbitrary camera trajectory, it retrieves world tokens aligned with the target pose to condition a DiT-based video generator. This ensures both precise trajectory following and long-term 3D consistency under aggressive 6-DoF motion. It is accompanied by the OpenSafari wild FPV drone dataset.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "World Engine"
+  - "Camera-controlled video generation"
+  - "Pose-aligned memory"
+  - "Long-term 3D consistency"
+  - "FPV drone dataset"
 date: 2026-05-08
-content_hash: ca6931755b7b6e89
+content_hash: dc9f5d72ebbd6847
 ---
+
 # Captain Safari: A World Engine with Pose-Aligned 3D Memory
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Across all three criteria, ~67% of votes went to the full model, showing signifi
 
 ## Related Papers
 
-- [\[CVPR 2026\] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation](pam_a_pose-appearance-motion_engine_for_sim-to-real_hoi_video_generation.md)
 - [\[CVPR 2026\] Spatia: Video Generation with Updatable Spatial Memory](spatia_video_generation_with_updatable_spatial_memory.md)
 - [\[CVPR 2026\] Dual-Granularity Memory for Efficient Video Generation](dual-granularity_memory_for_efficient_video_generation.md)
 - [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
+- [\[CVPR 2026\] MoReGen: Multi-Agent Motion-Reasoning Engine for Code-based Text-to-Video Synthesis](moregen_multi-agent_motion-reasoning_engine_for_code-based_text-to-video_synthes.md)
 - [\[CVPR 2026\] OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory](onestory_coherent_multi-shot_video_generation_with_adaptive_memory.md)
 
 </div>

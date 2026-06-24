@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ProbRes: Probabilistic Jump Diffusion for Open-World Egocentric Activity Recognition
 description: >-
-  [ICCV 2025][Multimodal VLM][Open-world activity recognition] This paper proposes ProbRes, a framework that leverages a probabilistic residual search strategy based on jump diffusion…
+  [ICCV 2025][Multimodal VLM][Open-world activity recognition] This paper proposes ProbRes, a framework that leverages a probabilistic residual search strategy based on jump diffusion, combined with ConceptNet commonsense priors and VLM likelihood estimation, to efficiently navigate large-scale search spaces in open-world egocentric activity recognition. ProbRes substantially reduces the number of VLM queries while improving recognition accuracy.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "structured search"
   - "VLM"
 date: 2026-05-08
-content_hash: a0cefc58f63ea25f
+content_hash: 0b1ef6c9d40ec2c5
 ---
 
 # ProbRes: Probabilistic Jump Diffusion for Open-World Egocentric Activity Recognition
@@ -172,9 +172,9 @@ Under the most open L3 setting, VLM queries decrease from 195,714 to 5,000, with
 
 - [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](on_large_multimodal_models_as_open-world_image_classifiers.md)
 - [\[ICCV 2025\] DisenQ: Disentangling Q-Former for Activity-Biometrics](disenq_disentangling_q-former_for_activity-biometrics.md)
+- [\[ICCV 2025\] Visual Intention Grounding for Egocentric Assistants](visual_intention_grounding_for_egocentric_assistants.md)
+- [\[CVPR 2026\] CountGD++: Generalized Prompting for Open-World Counting](../../CVPR2026/multimodal_vlm/countgd_generalized_prompting_for_open-world_counting.md)
 - [\[NeurIPS 2025\] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](../../NeurIPS2025/multimodal_vlm/wearvqa_a_visual_question_answering_benchmark_for_wearables_in_egocentric_authen.md)
-- [\[NeurIPS 2025\] OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Models](../../NeurIPS2025/multimodal_vlm/openhoi_open-world_hand-object_interaction_synthesis_with_multimodal_large_langu.md)
-- [\[ICCV 2025\] Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy](dita_scaling_diffusion_transformer_for_generalist_visionlang.md)
 
 </div>
 

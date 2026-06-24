@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations
 description: >-
-  [ICML 2026][vlm_reasoning][Incomplete Multimodal Learning] The authors remodel multimodal Action Quality Assessment (AQA) with "incomplete modalities during training" as an "LLM-based conditional sequence-to-score reasoning" problem. By utilizing prompts and special tokens, the LLM completes missing semantics without complete data supervision. Combined with mask-aware dual-pat
+  [ICML 2026 Spotlight][VLM Reasoning][Incomplete Multimodal Learning] The authors remodel multimodal Action Quality Assessment (AQA) with "incomplete modalities during training" as an "LLM-based conditional sequence-to-score reasoning" problem. By utilizing prompts and special tokens, the LLM completes missing semantics without complete data supervision. Combined with mask-aware dual-path fusion to suppress hallucinations, the method outperforms SOTAs relying on complete train…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - Incomplete Multimodal Learning
-  - LLM Reasoning
-  - Action Quality Assessment
-  - Mask-Aware Fusion
-  - Token-level Regularization
+  - "ICML 2026 Spotlight"
+  - "VLM Reasoning"
+  - "Incomplete Multimodal Learning"
+  - "LLM Reasoning"
+  - "Action Quality Assessment"
+  - "Mask-Aware Fusion"
+  - "Token-level Regularization"
 date: 2026-05-08
-content_hash: b5519047ac4ebd44
+content_hash: 092f7fa3e5329c87
 ---
+
 # LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations
 
 **Conference**: ICML 2026 Spotlight  
@@ -161,10 +162,10 @@ Note: LIMSSR is the only model in the table trained under the **T-Miss ✓** set
 ## Related Papers
 
 - [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](../../ICLR2026/vlm_reasoning/reasoning-driven_multimodal_llm_for_domain_generalization.md)
+- [\[ICLR 2026\] Vid-LLM: A Compact Video-based 3D Multimodal LLM with Reconstruction–Reasoning Synergy](../../ICLR2026/vlm_reasoning/vid-llm_a_compact_video-based_3d_multimodal_llm_with_reconstructionreasoning_syn.md)
 - [\[ACL 2026\] TableVista: Benchmarking Multimodal Table Reasoning under Visual and Structural Complexity](../../ACL2026/vlm_reasoning/tablevista_benchmarking_multimodal_table_reasoning_under_visual_and_structural_c.md)
 - [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
-- [\[ACL 2026\] Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry](../../ACL2026/vlm_reasoning/thinking_like_a_botanist_challenging_multimodal_language_models_with_intent-driv.md)
-- [\[ICML 2026\] From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models](from_seeing_to_thinking_decoupling_perception_and_reasoning_improves_post-traini.md)
+- [\[ICLR 2026\] Unleashing Perception-Time Scaling to Multimodal Reasoning Models](../../ICLR2026/vlm_reasoning/unleashing_perception-time_scaling_to_multimodal_reasoning_models.md)
 
 </div>
 

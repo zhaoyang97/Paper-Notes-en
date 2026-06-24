@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stepping Out of Similar Semantic Space for Open-Vocabulary Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Open-vocabulary segmentation] This paper exposes an evaluation bias in existing open-vocabulary segmentation (OVS) benchmarks…
+  [ICCV 2025][Segmentation][Open-vocabulary segmentation] This paper exposes an evaluation bias in existing open-vocabulary segmentation (OVS) benchmarks, where test sets exhibit high semantic similarity to training spaces. It proposes a new benchmark, OpenBench, and a method, OVSNet, that integrates heterogeneous features via Gradient-Free Aggregation (GFA) and expands the training semantic space at zero cost through Proxy Calibration (PC), achieving state-of-the-art performan…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "gradient-free aggregation"
   - "proxy calibration"
 date: 2026-05-08
-content_hash: c94f9fd0ac53e41d
+content_hash: b9341b3cc92b038e
 ---
 
 # Stepping Out of Similar Semantic Space for Open-Vocabulary Segmentation
@@ -169,9 +169,9 @@ An interesting finding: given the same model and images, performance degrades as
 
 - [\[ICCV 2025\] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation](floss_free_lunch_in_openvocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
+- [\[CVPR 2025\] Exploring Simple Open-Vocabulary Semantic Segmentation](../../CVPR2025/segmentation/exploring_simple_open-vocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation](understanding_personal_concept_in_open-vocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation](corrclip_reconstructing_patch_correlations_in_clip_for_openv.md)
-- [\[ICCV 2025\] Auto-Vocabulary Semantic Segmentation](auto-vocabulary_semantic_segmentation.md)
 
 </div>
 

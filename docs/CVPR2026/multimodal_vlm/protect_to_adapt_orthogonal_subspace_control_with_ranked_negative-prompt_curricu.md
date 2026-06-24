@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Protect to Adapt: Orthogonal Subspace Control with Ranked Negative-Prompt Curriculum for Few-Shot Action Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] When adapting CLIP to Few-Shot Action Recognition (FSAR), the authors employ "Orthogonal Subspace Control (OSC)" to constrain LoRA updates to the orthogonal complement of the pre-trained weights' principal subspace, preventing the destruction of general semantics and suppressing catastrophic forgetting. Furthermore, a
+  [CVPR 2026][Multimodal VLM][VLM Adaptation] When adapting CLIP to Few-Shot Action Recognition (FSAR), the authors employ "Orthogonal Subspace Control (OSC)" to constrain LoRA updates to the orthogonal complement of the pre-trained weights' principal subspace, preventing the destruction of general semantics and suppressing catastrophic forgetting. Furthermore, a "Ranked Negative-Prompt Curriculum (RNC)" uses an LLM to generate rank-ordered intra-class hard negative samples…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM Adaptation"
+  - "PEFT"
+  - "Orthogonal Subspace"
+  - "Hard Negative Curriculum"
+  - "Few-Shot Action Recognition"
 date: 2026-05-08
-content_hash: 9fc9a29879608e75
+content_hash: d754bc4192331e38
 ---
+
 # Protect to Adapt: Orthogonal Subspace Control with Ranked Negative-Prompt Curriculum for Few-Shot Action Recognition
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,20 @@ OSC alone improves vanilla LoRA from 78.6/90.7 to 79.9/91.8. The full P2A (OSC +
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] SoC: Semantic Orthogonal Calibration for Test-Time Prompt Tuning](soc_semantic_orthogonal_calibration_for_test-time_prompt_tuning.md)
+- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
+- [\[CVPR 2026\] Condensed Test-Time Adaptation of VLMs for Action Recognition](condensed_test-time_adaptation_of_vlms_for_action_recognition.md)
+- [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](../../ICLR2026/multimodal_vlm/meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
+- [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] SoC: Semantic Orthogonal Calibration for Test-Time Prompt Tuning](soc_semantic_orthogonal_calibration_for_test-time_prompt_tuning.md)

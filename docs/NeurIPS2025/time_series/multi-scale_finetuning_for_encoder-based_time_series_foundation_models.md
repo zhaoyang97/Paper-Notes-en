@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Scale Finetuning for Encoder-based Time Series Foundation Models
 description: >-
-  [NeurIPS 2025][Time Series][Time series foundation models] This paper proposes MSFT (Multi-Scale FineTuning), which leverages causal analysis to reveal that naive fine-tuning suffers from scale confounding…
+  [NeurIPS 2025][Time Series][Time series foundation models] This paper proposes MSFT (Multi-Scale FineTuning), which leverages causal analysis to reveal that naive fine-tuning suffers from scale confounding, and designs a multi-scale modeling framework for efficient fine-tuning of encoder-based time series foundation models, significantly outperforming both naive fine-tuning and from-scratch SOTA methods.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "causal inference"
   - "parameter-efficient fine-tuning"
 date: 2026-05-08
-content_hash: f5aa7f188c11fd48
+content_hash: a719e421bf480c17
 ---
 
 # Multi-Scale Finetuning for Encoder-based Time Series Foundation Models

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] The authors propose **ERBA (Enzyme-Reaction Bridging Adapter)**, which reframes enzyme kinetic parameter prediction as a **staged multimodal conditional generation problem**. The model injects substrate information via MRCA to capture substrate recognition specificity, integrates active site 3D structures through G-MoE
+  [CVPR 2026][Computational Biology][Enzyme kinetic prediction] The authors propose **ERBA (Enzyme-Reaction Bridging Adapter)**, which reframes enzyme kinetic parameter prediction as a **staged multimodal conditional generation problem**. The model injects substrate information via MRCA to capture substrate recognition specificity, integrates active site 3D structures through G-MoE to capture conformational adaptation, and utilizes ESDA distribution alignment to maintain the bi…
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Enzyme kinetic prediction"
+  - "Protein language models"
+  - "Multimodal fusion"
+  - "Mixture-of-Experts"
+  - "Cross-modal adapters"
 date: 2026-05-08
-content_hash: 18763eee58862b97
+content_hash: 7e7dda8856f2667e
 ---
+
 # Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation
 
 **Conference**: CVPR 2026  
@@ -139,15 +145,16 @@ $$\mathcal{L}_{\text{G-MoE}} = \|\bar{\boldsymbol{\alpha}} - \frac{1}{n}\mathbf{
 ⭐⭐⭐⭐ — The mechanism-driven modeling is sophisticated and the cross-backbone improvements are convincing, though the paper's title might be slightly misleading regarding its relationship to traditional CV.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] BiGMINT: Biologically-guided Hierarchical Multimodal Integration for Modeling Multiple Compound Activities in Drug Discovery](bigmint_biologically-guided_hierarchical_multimodal_integration_for_modeling_mul.md)
-- [\[CVPR 2026\] Bulk RNA-seq Guided Multi-modal Detection of Anomalous Regions in Human Cancer via Spatial Transcriptomics](bulk_rna-seq_guided_multi-modal_detection_of_anomalous_regions_in_human_cancer_v.md)
 - [\[CVPR 2026\] MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation](mmcp-gen_a_modality-extensible_diffusion_language_model_for_conditional_protein_.md)
 - [\[ICLR 2026\] Controlling Repetition in Protein Language Models](../../ICLR2026/computational_biology/controlling_repetition_in_protein_language_models.md)
-- [\[CVPR 2026\] cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold](cryosense_compressive_sensing_enables_high-throughput_microscopy_with_sparse_and.md)
+- [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](../../ICLR2026/computational_biology/towards_understanding_the_shape_of_representations_in_protein_language_models.md)
+- [\[ICML 2026\] Viral Proteins Reveal Geometry of Protein Language Models](../../ICML2026/computational_biology/viral_proteins_reveal_geometry_of_protein_language_models.md)
 
 </div>
 

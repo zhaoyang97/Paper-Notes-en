@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Evidential Neural Radiance Fields
 description: >-
-  [CVPR 2026][3D Vision][NeRF] This paper adapts Evidential Deep Learning (EDL) to the NeRF volume rendering pipeline, allowing the model to directly predict and disentangle aleatoric uncertainty (data noise) and epistemic uncertainty (model ignorance) in a single forward pass. Without sacrificing rendering quality or increasing inference cost, it a
+  [CVPR 2026][3D Vision][NeRF] This paper adapts Evidential Deep Learning (EDL) to the NeRF volume rendering pipeline, allowing the model to directly predict and disentangle aleatoric uncertainty (data noise) and epistemic uncertainty (model ignorance) in a single forward pass. Without sacrificing rendering quality or increasing inference cost, it achieves both leading reconstruction fidelity and competitive uncertainty quality across three standardized benchmarks.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - NeRF
+  - "CVPR 2026"
+  - "3D Vision"
+  - "NeRF"
+  - "Uncertainty Quantification"
+  - "Evidential Deep Learning"
+  - "Aleatoric Uncertainty"
+  - "Epistemic Uncertainty"
 date: 2026-05-08
-content_hash: 77db7fdb69afdbad
+content_hash: c5ea5e61c60b55f4
 ---
+
 # Evidential Neural Radiance Fields
 
 **Conference**: CVPR 2026  
@@ -132,11 +137,11 @@ Ours is nearly as fast as vanilla NeRF and significantly faster than Ensembles o
 
 ## Related Papers
 
-- [\[CVPR 2026\] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields](dynamic_black-hole_emission_tomography_with_physics-informed_neural_fields.md)
-- [\[CVPR 2026\] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport](glint_modeling_scene-scale_transparency_via_gaussian_radiance_transport.md)
-- [\[CVPR 2026\] DiffSoup: Direct Differentiable Rasterization of Triangle Soup for Extreme Radiance Field Simplification](diffsoup_direct_differentiable_rasterization_of_triangle_soup_for_extreme_radian.md)
-- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
-- [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
+- [\[CVPR 2026\] MU-GeNeRF: Multi-view Uncertainty-guided Generalizable Neural Radiance Fields for Distractor-aware Scene](mu-generf_multi-view_uncertainty-guided_generalizable_neural_radiance_fields_for.md)
+- [\[ICLR 2026\] Splat the Net: Radiance Fields with Splattable Neural Primitives](../../ICLR2026/3d_vision/splat_the_net_radiance_fields_with_splattable_neural_primitives.md)
+- [\[CVPR 2026\] Generalizable Radio-Frequency Radiance Fields for Spatial Spectrum Synthesis](generalizable_radio-frequency_radiance_fields_for_spatial_spectrum_synthesis.md)
+- [\[CVPR 2025\] FFaceNeRF: Few-Shot Face Editing in Neural Radiance Fields](../../CVPR2025/3d_vision/ffacenerf_few-shot_face_editing_in_neural_radiance_fields.md)
+- [\[CVPR 2026\] Turbo-GS: Accelerating 3D Gaussian Fitting for High-Resolution Radiance Fields](turbo-gs_accelerating_3d_gaussian_fitting_for_high-quality_radiance_fields.md)
 
 </div>
 

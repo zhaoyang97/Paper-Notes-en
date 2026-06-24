@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Learning Pseudorandom Numbers with Transformers: Permuted Congruential Generators, Curricula, and Interpretability
 description: >-
-  [ICLR 2026][Interpretability][PCG] Transformers can crack NumPy's default random number generator, PCG, purely via in-context sequence data (surpassing classical attack assumptions). The required context length scales with the modulus as $\sqrt{m}$. Training on large moduli necessitates curriculum learning, and the embedding layer spontaneously clusters
+  [ICLR 2026][Interpretability][Pseudorandom Number Generators] Transformers can crack NumPy's default random number generator, PCG, purely via in-context sequence data (surpassing classical attack assumptions). The required context length scales with the modulus as $\sqrt{m}$. Training on large moduli necessitates curriculum learning, and the embedding layer spontaneously clusters integers based on a "rotation-invariant zero-run structure."
 tags:
-  - ICLR 2026
-  - Interpretability
-  - PCG
-  - in-context learning
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Pseudorandom Number Generators"
+  - "PCG"
+  - "in-context learning"
+  - "Curriculum Learning"
+  - "Scaling Laws"
+  - "Embedding Interpretability"
 date: 2026-05-08
-content_hash: 87e4bbc5df85c22a
+content_hash: 513565c10aff2443
 ---
+
 # Learning Pseudorandom Numbers with Transformers: Permuted Congruential Generators, Curricula, and Interpretability
 
 **Conference**: ICLR 2026  

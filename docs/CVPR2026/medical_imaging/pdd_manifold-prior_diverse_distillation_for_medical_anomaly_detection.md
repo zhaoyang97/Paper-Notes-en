@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PDD: Manifold-Prior Diverse Distillation for Medical Anomaly Detection
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This paper uses Grad-CAM analysis to reveal that discriminative activation maps, which are effective in industrial anomaly detection, fail in medical images. Consequently, PDD is proposed: features from two heterogeneous frozen teachers—VMamba-Tiny (global context prior) and wide-ResNet50 (local structural prior)—are u
+  [CVPR 2026][Medical Imaging][Medical Anomaly Detection] This paper uses Grad-CAM analysis to reveal that discriminative activation maps, which are effective in industrial anomaly detection, fail in medical images. Consequently, PDD is proposed: features from two heterogeneous frozen teachers—VMamba-Tiny (global context prior) and wide-ResNet50 (local structural prior)—are unified into a single high-dimensional manifold and distilled into two behaviorally complementary student…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical Anomaly Detection"
+  - "Reverse Distillation"
+  - "Dual-Teacher Dual-Student"
+  - "Manifold Unification"
+  - "Representation Diversity"
 date: 2026-05-08
-content_hash: 5fab47c6e3b2bce5
+content_hash: e77c79ab0785610f
 ---
+
 # PDD: Manifold-Prior Diverse Distillation for Medical Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -150,6 +156,7 @@ PDD achieves the best F1 max across all categories (Mean 85.4), though its Mean 
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

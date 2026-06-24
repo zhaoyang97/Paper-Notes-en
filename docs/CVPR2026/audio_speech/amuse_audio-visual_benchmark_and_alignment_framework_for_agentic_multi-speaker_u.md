@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] This paper introduces AMUSE—an audio-visual benchmark for "multi-speaker, dialogue-dense" scenarios (6 agentic tasks × Zero-shot/Guided/Agentic evaluation modes), revealing systematic weaknesses in mainstream MLLMs like GPT-4o and Qwen3-Omni regarding "who is speaking, when, and cross-scene causality." It also proposes
+  [CVPR 2026][Audio & Speech][Multi-speaker understanding] This paper introduces AMUSE—an audio-visual benchmark for "multi-speaker, dialogue-dense" scenarios (6 agentic tasks × Zero-shot/Guided/Agentic evaluation modes), revealing systematic weaknesses in mainstream MLLMs like GPT-4o and Qwen3-Omni regarding "who is speaking, when, and cross-scene causality." It also proposes the RAFT alignment framework (Reflective Reward + Selective Reasoning Adaptation)…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Multi-speaker understanding"
+  - "Audio-Visual Benchmark"
+  - "Agentic evaluation"
+  - "Reflective reward"
+  - "Data-efficient alignment"
 date: 2026-05-08
-content_hash: dfa3ed5141378bfd
+content_hash: b6bdb64dfcc03596
 ---
+
 # AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ Accuracy (%) for classification tasks:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
-- [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](egoavu_egocentric_audio-visual_understanding.md)
 - [\[ICML 2026\] MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks](../../ICML2026/audio_speech/mecat_a_multi-experts_constructed_benchmark_for_fine-grained_audio_understanding.md)
 - [\[ICLR 2026\] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark](../../ICLR2026/audio_speech/mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark.md)
 - [\[ACL 2026\] MSU-Bench: Musical Score Understanding Benchmark](../../ACL2026/audio_speech/musical_score_understanding_benchmark_evaluating_large_language_models39_compreh.md)
+- [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
+- [\[AAAI 2026\] Multi-granularity Interactive Attention Framework for Residual Hierarchical Pronunciation Assessment](../../AAAI2026/audio_speech/multi-granularity_interactive_attention_framework_for_residual_hierarchical_pron.md)
 
 </div>
 

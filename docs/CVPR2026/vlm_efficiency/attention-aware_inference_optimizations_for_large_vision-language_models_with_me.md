@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding
 description: >-
-  [CVPR 2026][Model Compression][Inference Acceleration] AttentionPack leverages the inherent low-rank observation of LVLM KV caches (especially vision tokens). It compresses the cache along the hidden dimension using SVD via "multi-head concatenation + modality separation" and employs an "attention-aware partial decompression" strategy based on cumulative attention scores t
+  [CVPR 2026][Multimodal Efficiency][KV cache compression] AttentionPack leverages the inherent low-rank observation of LVLM KV caches (especially vision tokens). It compresses the cache along the hidden dimension using SVD via "multi-head concatenation + modality separation" and employs an "attention-aware partial decompression" strategy based on cumulative attention scores to select ranks on-demand. Without significant performance loss, it reduces memory consumption to 1/5–1/…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Inference Acceleration
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "KV cache compression"
+  - "low-rank decomposition"
+  - "vision tokens"
+  - "inference acceleration"
+  - "vision-language models"
 date: 2026-05-08
-content_hash: 20b23aea346bb152
+content_hash: e95edba227f42bcf
 ---
+
 # Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding
 
 **Conference**: CVPR 2026  
@@ -154,11 +158,11 @@ Combining with other compression techniques (Table 4, LLaVA1.5-7B):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
+- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
+- [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
 - [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
-- [\[CVPR 2026\] Masking Teacher and Reinforcing Student for Distilling Vision-Language Models](masking_teacher_and_reinforcing_student_for_distilling_vision-language_models.md)
-- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
+- [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](../../NeurIPS2025/vlm_efficiency/vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
+- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
 
 </div>
 

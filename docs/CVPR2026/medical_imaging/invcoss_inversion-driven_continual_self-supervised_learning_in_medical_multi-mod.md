@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] InvCoSS utilizes "model inversion" to synthesize images from self-supervised models of previous stages, replacing privacy-sensitive real data replay buffers. It performs continual self-supervised pre-training without storing any original data, matching or even exceeding the performance of data replay methods across nin
+  [CVPR 2026][Medical Imaging][Continual Self-supervised Learning] InvCoSS utilizes "model inversion" to synthesize images from self-supervised models of previous stages, replacing privacy-sensitive real data replay buffers. It performs continual self-supervised pre-training without storing any original data, matching or even exceeding the performance of data replay methods across nine medical downstream tasks while reducing storage overhead by up to $590\times$.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Continual Self-supervised Learning"
+  - "Model Inversion"
+  - "Catastrophic Forgetting"
+  - "Data-free"
+  - "Medical Multi-modal Pre-training"
 date: 2026-05-08
-content_hash: 867cf50440f7aad5
+content_hash: 967f6927373b62cc
 ---
+
 # InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training
 
 **Conference**: CVPR 2026  
@@ -132,10 +138,17 @@ Ablation of components across six downstream tasks (AVG↑/AVG↓):
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)
+- [\[CVPR 2025\] Multi-modal Vision Pre-training for Medical Image Analysis (BrainMVP)](../../CVPR2025/medical_imaging/multi-modal_vision_pre-training_for_medical_image_analysis.md)
+- [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
+- [\[CVPR 2026\] SPECTRE: Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers](scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
+- [\[CVPR 2026\] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)

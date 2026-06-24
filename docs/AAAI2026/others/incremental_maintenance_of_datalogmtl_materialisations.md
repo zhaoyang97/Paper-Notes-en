@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Incremental Maintenance of DatalogMTL Materialisations
 description: >-
-  [AAAI 2026][DatalogMTL] This paper proposes the DRed$_{\text{MTL}}$ algorithm, extending the classical Delete/Rederive incremental maintenance technique to DatalogMTL (Datalog with Metric Temporal Logic). By designing no…
+  [AAAI 2026 Oral][DatalogMTL] This paper proposes the DRed$_{\text{MTL}}$ algorithm, extending the classical Delete/Rederive incremental maintenance technique to DatalogMTL (Datalog with Metric Temporal Logic). By designing novel seminaïve evaluation operators and a periodicity detection algorithm over periodic materialisation representations, the approach enables efficient incremental updates, achieving order-of-magnitude speedups over full rematerialisation.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "DatalogMTL"
   - "incremental reasoning"
   - "materialisation"
   - "Delete/Rederive"
   - "temporal logic"
 date: 2026-05-08
-content_hash: 2377fbe87298e63e
+content_hash: 1f7cf324ee42513b
 ---
 
 # Incremental Maintenance of DatalogMTL Materialisations
@@ -112,11 +112,11 @@ Comparison across three public datasets (DRed$_{\text{MTL}}$ vs. rematerialisati
 
 ## Related Papers
 
-- [\[AAAI 2026\] Expressive Temporal Specifications for Reward Monitoring](expressive_temporal_specifications_for_reward_monitoring.md)
-- [\[AAAI 2026\] Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)
-- [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](model_counting_for_dependency_quantified_boolean_formulas.md)
-- [\[AAAI 2026\] Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation](generating_sketches_in_a_hierarchical_auto-regressive_proces.md)
-- [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
+- [\[ECCV 2024\] An Incremental Unified Framework for Small Defect Inspection](../../ECCV2024/others/an_incremental_unified_framework_for_small_defect_inspection.md)
+- [\[ICLR 2026\] Consistency-Driven Calibration and Matching for Few-Shot Class Incremental Learning](../../ICLR2026/others/consistency-driven_calibration_and_matching_for_few-shot_class_incremental_learn.md)
+- [\[ICLR 2026\] Random Anchors with Low-rank Decorrelated Learning: A Minimalist Pipeline for Class-Incremental Medical Image Classification](../../ICLR2026/others/random_anchors_with_low-rank_decorrelated_learning_a_minimalist_pipeline_for_cla.md)
+- [\[ICML 2025\] Addressing Imbalanced Domain-Incremental Learning through Dual-Balance Collaborative Experts (DCE)](../../ICML2025/others/addressing_imbalanced_domain-incremental_learning_through_dual-balance_collabora.md)
+- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
 
 </div>
 

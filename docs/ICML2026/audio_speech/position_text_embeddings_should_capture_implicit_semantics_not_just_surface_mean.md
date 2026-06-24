@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Text Embeddings Should Capture Implicit Semantics, Not Just Surface Meaning
 description: >-
-  [ICML 2026][Audio & Speech][MTEB] This is a position paper: the authors argue that current text embedding research focuses excessively on "surface semantics" (morphology / syntax / topical similarity) while systematically ignoring "implicit semantics" such as pragmatics, stance, and social context. Empirical evidence from 7 implicit semantic datasets s
+  [ICML 2026][Audio & Speech][Text Embeddings] This is a position paper: the authors argue that current text embedding research focuses excessively on "surface semantics" (morphology / syntax / topical similarity) while systematically ignoring "implicit semantics" such as pragmatics, stance, and social context. Empirical evidence from 7 implicit semantic datasets shows that even SOTA embeddings offer only marginal improvements over Bag-of-Tokens…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - MTEB
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Text Embeddings"
+  - "Implicit Semantics"
+  - "Pragmatics"
+  - "Stance Detection"
+  - "MTEB"
 date: 2026-05-08
-content_hash: ecfe8454f128d7e1
+content_hash: 79a82d86c258456a
 ---
+
 # Position: Text Embeddings Should Capture Implicit Semantics, Not Just Surface Meaning
 
 **Conference**: ICML 2026  

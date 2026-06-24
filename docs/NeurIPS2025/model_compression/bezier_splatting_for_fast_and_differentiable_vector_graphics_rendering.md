@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bézier Splatting for Fast and Differentiable Vector Graphics Rendering
 description: >-
-  [NeurIPS 2025][Model Compression][Differentiable Rendering] Bézier Splatting integrates the Gaussian Splatting framework with Bézier curves by uniformly sampling 2D Gaussian points along each curve and rendering via α-bl…
+  [NeurIPS 2025][Model Compression][Differentiable Rendering] Bézier Splatting integrates the Gaussian Splatting framework with Bézier curves by uniformly sampling 2D Gaussian points along each curve and rendering via α-blending to achieve differentiable vector graphics. The method achieves 30× forward and 150× backward speedups over DiffVG while maintaining or surpassing the image quality of methods such as LIVE.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Vectorization"
   - "Image Optimization"
 date: 2026-05-08
-content_hash: 3fa22ac5b04e54c3
+content_hash: a5d98b6ede800d7e
 ---
 
 # Bézier Splatting for Fast and Differentiable Vector Graphics Rendering
@@ -122,11 +122,11 @@ Input image → Initialize a set of Bézier curves → Uniformly sample points a
 
 ## Related Papers
 
-- [\[CVPR 2026\] RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](../../CVPR2026/model_compression/rdvq_differentiable_vq_image_compression.md)
-- [\[NeurIPS 2025\] Uni-LoRA: One Vector is All You Need](uni-lora_one_vector_is_all_you_need.md)
-- [\[NeurIPS 2025\] Deterministic Continuous Replacement: Fast and Stable Module Replacement in Pretrained Transformers](deterministic_continuous_replacement_fast_and_stable_module_replacement_in_pretr.md)
 - [\[NeurIPS 2025\] All You Need is One: Capsule Prompt Tuning with a Single Vector](all_you_need_is_one_capsule_prompt_tuning_with_a_single_vector.md)
 - [\[NeurIPS 2025\] Learning Grouped Lattice Vector Quantizers for Low-Bit LLM Compression](learning_grouped_lattice_vector_quantizers_for_low-bit_llm_compression.md)
+- [\[ICLR 2026\] Light Differentiable Logic Gate Networks](../../ICLR2026/model_compression/light_differentiable_logic_gate_networks.md)
+- [\[NeurIPS 2025\] Uni-LoRA: One Vector is All You Need](uni-lora_one_vector_is_all_you_need.md)
+- [\[NeurIPS 2025\] Deterministic Continuous Replacement: Fast and Stable Module Replacement in Pretrained Transformers](deterministic_continuous_replacement_fast_and_stable_module_replacement_in_pretr.md)
 
 </div>
 

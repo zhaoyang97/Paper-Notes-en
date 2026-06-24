@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RobustSpring: Benchmarking Robustness to Image Corruptions for Optical Flow, Scene Flow and Stereo
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Ours proposes RobustSpring—the first benchmark for image corruption robustness in optical flow, scene flow, and stereo matching (dense matching). It injects 20 corruptions into the high-resolution Spring dataset in a temporal, stereo, and depth-consistent manner. Equipped with a Lipschitz-based robustness metric decoup
+  [ICLR2026][3D Vision][Optical Flow] Ours proposes RobustSpring—the first benchmark for image corruption robustness in optical flow, scene flow, and stereo matching (dense matching). It injects 20 corruptions into the high-resolution Spring dataset in a temporal, stereo, and depth-consistent manner. Equipped with a Lipschitz-based robustness metric decoupled from accuracy, it evaluates 17 models, revealing hidden weaknesses where "high accuracy $\neq$ high robustness."
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Optical Flow"
+  - "Scene Flow"
+  - "Stereo Matching"
+  - "Robustness Benchmark"
+  - "Image Corruption"
 date: 2026-05-08
-content_hash: 62a6b4b89c652b72
+content_hash: f91bf25180dce47d
 ---
+
 # RobustSpring: Benchmarking Robustness to Image Corruptions for Optical Flow, Scene Flow and Stereo
 
 **Conference**: ICLR2026  
@@ -126,7 +132,7 @@ SEA-RAFT and GMFlow achieve the lowest Average $R^c_{\text{EPE}}$, while GMA ach
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

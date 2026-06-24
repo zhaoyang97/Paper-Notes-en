@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Circuit Tracing in Autoregressive Protein Language Models
 description: >-
-  [ICML 2026][Computational Biology][ProGen3] ProGenMech introduces "Cross-Layer Transcoders (CLT)" to the **autoregressive** protein language model ProGen3. Using a zero-shot circuit discovery algorithm, it identifies sparse latent circuits (less than 2%) that faithfully replicate generative probability distributions and zero-shot fitness scores while mapping to
+  [ICML 2026][Computational Biology][Cross-Layer Transcoder] ProGenMech introduces "Cross-Layer Transcoders (CLT)" to the **autoregressive** protein language model ProGen3. Using a zero-shot circuit discovery algorithm, it identifies sparse latent circuits (less than 2%) that faithfully replicate generative probability distributions and zero-shot fitness scores while mapping to biologically conserved motifs such as the HRD/DFG motifs in kinases.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - ProGen3
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Cross-Layer Transcoder"
+  - "Circuit Discovery"
+  - "ProGen3"
+  - "Sparse MoE"
+  - "Biological Motifs"
 date: 2026-05-08
-content_hash: 0c464bce55126fc8
+content_hash: fe5ac285c9fe0388
 ---
+
 # Circuit Tracing in Autoregressive Protein Language Models
 
 **Conference**: ICML 2026  
@@ -118,10 +123,10 @@ Evaluation was performed on Swiss-Prot (generation) and ProteinGym (fitness scor
 ## Related Papers
 
 - [\[ICML 2026\] Protein Circuit Tracing via Cross-layer Transcoders](protein_circuit_tracing_via_cross-layer_transcoders.md)
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/computational_biology/tracing_pharmacological_knowledge_in_large_language_models.md)
 - [\[ICML 2026\] SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning](sigma_structure-invariant_generative_molecular_alignment_for_chemical_language_m.md)
-- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](protein_autoregressive_modeling_via_multiscale_structure_generation.md)
 - [\[ICML 2026\] Viral Proteins Reveal Geometry of Protein Language Models](viral_proteins_reveal_geometry_of_protein_language_models.md)
+- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](protein_autoregressive_modeling_via_multiscale_structure_generation.md)
+- [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MICo-150K: A Comprehensive Dataset Advancing Multi-Image Composition
 description: >-
-  [CVPR 2026][Image Generation][Dataset] To address the lack of high-quality training data for Multi-Image Composition (MICo)—the task of synthesizing people, objects, clothing, and scenes from multiple reference images into a single coherent image—this work constructs the MICo-150K dataset (containing 150,000 identity-consistent samples) and the MICo-Bench.
+  [CVPR 2026][Image Generation][Multi-image composition] To address the lack of high-quality training data for Multi-Image Composition (MICo)—the task of synthesizing people, objects, clothing, and scenes from multiple reference images into a single coherent image—this work constructs the MICo-150K dataset (containing 150,000 identity-consistent samples) and the MICo-Bench. The construction utilizes the proprietary Nano-Banana model combined with a Compose-by-Retrieval prompt s…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Dataset
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-image composition"
+  - "identity consistency"
+  - "controllable generation"
+  - "dataset"
+  - "evaluation metrics"
 date: 2026-05-08
-content_hash: fbec8ce5f5858343
+content_hash: aada5ceb8b4318a1
 ---
+
 # MICo-150K: A Comprehensive Dataset Advancing Multi-Image Composition
 
 **Conference**: CVPR 2026  
@@ -108,10 +113,20 @@ Note: Qwen-MICo approaches the performance of Qwen-Image-2509 but supports **arb
 - Value: ⭐⭐⭐⭐⭐ Fills a critical gap in open-source MICo training data and evaluation benchmarks.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] PhotoFramer: Multi-modal Image Composition Instruction](photoframer_multi-modal_image_composition_instruction.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
+- [\[CVPR 2025\] ORIDa: Object-Centric Real-World Image Composition Dataset](../../CVPR2025/image_generation/orida_object-centric_real-world_image_composition_dataset.md)
+- [\[CVPR 2026\] Advancing Image Classification with Discrete Diffusion Classification Modeling](advancing_image_classification_with_discrete_diffusion_classification_modeling.md)
+- [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](consistcompose_multimodal_layout_control.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] PhotoFramer: Multi-modal Image Composition Instruction](photoframer_multi-modal_image_composition_instruction.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoFu: Scale-Aware Modulation and Fourier Fusion for Multi-Subject Video Generation
 description: >-
-  [AAAI 2026][Video Generation][Multi-subject video generation] This paper proposes MoFu, which addresses two fundamental challenges in multi-subject video generation—**scale inconsistency** and **permutation sensitivity**…
+  [AAAI 2026][Video Generation][Multi-subject video generation] This paper proposes MoFu, which addresses two fundamental challenges in multi-subject video generation—**scale inconsistency** and **permutation sensitivity**—through two core modules: Scale-Aware Modulation (SMO, an LLM-guided scale-aware modulation mechanism) and Fourier Fusion (an FFT-based permutation-invariant feature fusion strategy). The work additionally introduces the MoFu-1M training dataset and the MoFu-…
 tags:
   - "AAAI 2026"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Fourier fusion"
   - "DiT"
 date: 2026-05-08
-content_hash: 10b030e272a5aa92
+content_hash: 4a7ce2558617f118
 ---
 
 # MoFu: Scale-Aware Modulation and Fourier Fusion for Multi-Subject Video Generation
@@ -225,11 +225,11 @@ Note: The authors explain that SPSL is not ablated independently because SMO and
 
 ## Related Papers
 
+- [\[CVPR 2026\] ID-Crafter: VLM-Grounded Online RL for Compositional Multi-Subject Video Generation](../../CVPR2026/video_generation/id-crafter_vlm-grounded_online_rl_for_compositional_multi-subject_video_generati.md)
 - [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](../../CVPR2026/video_generation/facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
-- [\[CVPR 2026\] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives](../../CVPR2026/video_generation/storytailora_zero-shot_pipeline_for_action-rich_multi-subject_visual_narratives.md)
-- [\[ICLR 2026\] BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration](../../ICLR2026/video_generation/bindweave_subject-consistent_video_generation_via_cross-modal_integration.md)
-- [\[AAAI 2026\] FilmWeaver: Weaving Consistent Multi-Shot Videos with Cache-Guided Autoregressive Diffusion](filmweaver_weaving_consistent_multi-shot_videos_with_cache-guided_autoregressive.md)
-- [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](../../CVPR2026/video_generation/rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
+- [\[CVPR 2026\] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation](../../CVPR2026/video_generation/unityvideo_unified_multi-modal_multi-task_learning_for_enhancing_world-aware_vid.md)
+- [\[CVPR 2025\] Multi-subject Open-set Personalization in Video Generation](../../CVPR2025/video_generation/multi-subject_open-set_personalization_in_video_generation.md)
+- [\[CVPR 2026\] CineBrain: A Large-Scale Multi-Modal Audiovisual Brain Dataset for Brain-Conditioned Video Generation](../../CVPR2026/video_generation/cinebrain_a_large-scale_multi-modal_audiovisual_brain_dataset_for_brain-conditio.md)
 
 </div>
 

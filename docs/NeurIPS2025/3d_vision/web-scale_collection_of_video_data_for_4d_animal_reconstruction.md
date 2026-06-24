@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Web-Scale Collection of Video Data for 4D Animal Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][4D animal reconstruction] This paper proposes a fully automated large-scale video data collection pipeline that mines and processes 30K animal videos (2M frames) from YouTube…
+  [NeurIPS 2025][3D Vision][4D animal reconstruction] This paper proposes a fully automated large-scale video data collection pipeline that mines and processes 30K animal videos (2M frames) from YouTube, establishes the first 4D quadruped animal reconstruction benchmark Animal-in-Motion (230 sequences / 11K frames), and introduces a baseline method 4D-Fauna that achieves model-free 4D reconstruction via sequence-level optimization.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "benchmark dataset"
   - "single-view reconstruction"
 date: 2026-05-08
-content_hash: 114d986ab811ef97
+content_hash: 3020d695757394d9
 ---
 
 # Web-Scale Collection of Video Data for 4D Animal Reconstruction
@@ -139,7 +139,7 @@ The pipeline consists of four stages: (1) searching and downloading raw videos f
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](../../ICCV2025/3d_vision/shape_of_motion_4d_reconstruction_from_a_single_video.md)
 - [\[NeurIPS 2025\] Flux4D: Flow-based Unsupervised 4D Reconstruction](flux4d_flow-based_unsupervised_4d_reconstruction.md)
 - [\[ICCV 2025\] Geo4D: Leveraging Video Generators for Geometric 4D Scene Reconstruction](../../ICCV2025/3d_vision/geo4d_leveraging_video_generators_for_geometric_4d_scene_reconstruction.md)
-- [\[NeurIPS 2025\] Motion Matters: Compact Gaussian Streaming for Free-Viewpoint Video Reconstruction](motion_matters_compact_gaussian_streaming_for_free-viewpoint_video_reconstructio.md)
+- [\[NeurIPS 2025\] Every Camera Effect, Every Time, All at Once: 4D Gaussian Ray Tracing for Physics-based Camera Effect Data Generation](every_camera_effect_every_time_all_at_once_4d_gaussian_ray_tracing_for_physics-b.md)
 
 </div>
 

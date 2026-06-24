@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Gaze Target Estimation Anywhere with Concepts
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper introduces "Promptable Gaze Estimation (PGE)," a new task where a specific individual in a scene is designated via natural language or a coordinate, and the model directly produces a heatmap of their gaze location end-to-end. The authors provide the Gaze-Co dataset with 120K concept annotations and the first
+  [CVPR 2026][Human Understanding][Gaze Target Estimation] This paper introduces "Promptable Gaze Estimation (PGE)," a new task where a specific individual in a scene is designated via natural language or a coordinate, and the model directly produces a heatmap of their gaze location end-to-end. The authors provide the Gaze-Co dataset with 120K concept annotations and the first PGE model, GazeAnywhere, achieving SOTA across multiple benchmarks.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Gaze Target Estimation"
+  - "Promptable Perception"
+  - "Concept-driven"
+  - "End-to-end"
+  - "Visual Foundation Models"
 date: 2026-05-08
-content_hash: 2b494375a0338e8d
+content_hash: 6d0cb6e542d25941
 ---
+
 # Gaze Target Estimation Anywhere with Concepts
 
 **Conference**: CVPR 2026  
@@ -154,8 +160,8 @@ Compared to zero-shot general VLMs:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

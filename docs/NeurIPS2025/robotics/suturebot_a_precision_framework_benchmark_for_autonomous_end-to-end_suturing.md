@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing
 description: >-
-  [NeurIPS 2025][Robotics][Surgical Robotics] This paper presents SutureBot — the first precision-oriented benchmark and goal-conditioned framework for end-to-end autonomous suturing on the da Vinci surgical robot. It rele…
+  [NeurIPS 2025][Robotics][Surgical Robotics] This paper presents SutureBot — the first precision-oriented benchmark and goal-conditioned framework for end-to-end autonomous suturing on the da Vinci surgical robot. It releases a high-fidelity dataset of 1,890 demonstrations, achieves 59%–74% improvements in needle insertion accuracy via point-label goal conditioning, and systematically evaluates state-of-the-art VLA models including π0, GR00T N1, OpenVLA-OFT…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Goal-Conditioned Control"
   - "VLA Benchmark"
 date: 2026-05-08
-content_hash: f7f1cfb65164bc28
+content_hash: b3d1b332fd787a22
 ---
 
 # SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing
@@ -52,9 +52,9 @@ A hierarchical architecture is employed: a high-level policy (based on Swin Tran
 1. **Large-Scale Dataset Construction**
 
    Using the dVRK Si platform, 1,890 demonstrations were collected via a standard teleoperation console:
-   - Needle pickup: 628 (including 148 recovery demonstrations)
-   - Needle throw: 310 (including 96 recovery demonstrations)
-   - Knot tying: 952 (including 210 recovery demonstrations)
+    - Needle pickup: 628 (including 148 recovery demonstrations)
+    - Needle throw: 310 (including 96 recovery demonstrations)
+    - Knot tying: 952 (including 210 recovery demonstrations)
 
    Recovery demonstrations are inspired by DAgger: an initial policy is first deployed to identify common failure modes, followed by collection of additional demonstrations recovering from failure states to successful completion. Data includes synchronized visual streams (wrist camera 640×480@30Hz + stereo endoscope 960×540@30Hz) and kinematic data (6-DoF Cartesian poses, jaw angles, etc.). Diversity is introduced by varying robot joint configurations, RCM positions, suture pad placement, needle initial poses, and camera mounting.
 
@@ -63,19 +63,19 @@ A hierarchical architecture is employed: a high-level policy (based on Swin Tran
 2. **Goal-Conditioned Representations**
 
    Three goal conditioning formats are explored for precision-controlled suturing:
-   - **Point Labels**: Opaque blue pixels (insertion point) and green pixels (exit point) overlaid on the endoscope image.
-   - **Binary Masks**: A three-channel image encoding insertion and exit masks in separate channels.
-   - **Distance Maps**: A three-channel image where the first two channels encode normalized pixel offset vectors $(dx, dy)$ pointing toward the insertion point, and the third channel encodes an intensity heatmap.
+    - **Point Labels**: Opaque blue pixels (insertion point) and green pixels (exit point) overlaid on the endoscope image.
+    - **Binary Masks**: A three-channel image encoding insertion and exit masks in separate channels.
+    - **Distance Maps**: A three-channel image where the first two channels encode normalized pixel offset vectors $(dx, dy)$ pointing toward the insertion point, and the third channel encodes an intensity heatmap.
 
    **Design Motivation**: Point labels embed the goal directly into the task image, providing the most explicit and intuitive goal representation. Masks and distance maps, as separate inputs, may impose additional cognitive burden on the model for information integration.
 
 3. **Systematic Multi-VLA Model Evaluation**
 
    Four low-level policies are compared:
-   - **π0**: Pre-trained VLM backbone with a flow-matching action head.
-   - **GR00T N1**: Similar architecture but pre-trained primarily on humanoid robot data.
-   - **OpenVLA-OFT**: Parallel decoding with L1 regression and FiLM conditioning.
-   - **Multi-task ACT**: A non-VLA baseline without a pre-trained VLM backbone.
+    - **π0**: Pre-trained VLM backbone with a flow-matching action head.
+    - **GR00T N1**: Similar architecture but pre-trained primarily on humanoid robot data.
+    - **OpenVLA-OFT**: Parallel decoding with L1 regression and FiLM conditioning.
+    - **Multi-task ACT**: A non-VLA baseline without a pre-trained VLM backbone.
 
    ACT and OpenVLA are trained with L1 regression for at least 10,000 steps; π0 and GR00T use MSE with fewer steps and require early stopping to prevent overfitting. All training is conducted on a DGX A100 (8×A100 80GB). Each sub-task is assigned a maximum time limit during evaluation (120s each for needle pickup/throw/knot tying; 60s for thread pull-through).
 
@@ -166,10 +166,10 @@ Generalization tests:
 ## Related Papers
 
 - [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
-- [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
-- [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
-- [\[NeurIPS 2025\] RoboCerebra: A Large-scale Benchmark for Long-horizon Robotic Manipulation Evaluation](robocerebra_a_large-scale_benchmark_for_long-horizon_robotic_manipulation_evalua.md)
-- [\[NeurIPS 2025\] A Snapshot of Influence: A Local Data Attribution Framework for Online Reinforcement Learning](a_snapshot_of_influence_a_local_data_attribution_framework_f.md)
+- [\[CVPR 2025\] TinyNav: End-to-End TinyML for Real-Time Autonomous Navigation on Microcontrollers](../../CVPR2025/robotics/tinynav_end-to-end_tinyml_for_real-time_autonomous_navigation_on_microcontroller.md)
+- [\[ICLR 2026\] RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras](../../ICLR2026/robotics/raven_end-to-end_equivariant_robot_learning_with_rgb_cameras.md)
+- [\[ICLR 2026\] LeRobot: An Open-Source Library for End-to-End Robot Learning](../../ICLR2026/robotics/lerobot_an_open-source_library_for_end-to-end_robot_learning.md)
+- [\[CVPR 2025\] Reasoning in Visual Navigation of End-to-end Trained Agents: A Dynamical Systems Approach](../../CVPR2025/robotics/reasoning_in_visual_navigation_of_end-to-end_trained_agents_a_dynamical_systems_.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] R2-Dreamer: Redundancy-Reduced World Models without Decoders or Augmentation
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] Based on the DreamerV3 framework, R2-Dreamer replaces the "reconstruction decoder" with a Barlow Twins-inspired redundancy reduction self-supervised objective. It prevents representation collapse without decoders or data augmentation, performing on par with DreamerV3/TD-MPC2 on DMC and Meta-World while training 1.59× f
+  [ICLR 2026][Reinforcement Learning][Model-based Reinforcement Learning] Based on the DreamerV3 framework, R2-Dreamer replaces the "reconstruction decoder" with a Barlow Twins-inspired redundancy reduction self-supervised objective. It prevents representation collapse without decoders or data augmentation, performing on par with DreamerV3/TD-MPC2 on DMC and Meta-World while training 1.59× faster, and significantly outperforming baselines on the small-target benchmark DMC-Subtl…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
-  - Barlow Twins
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Model-based Reinforcement Learning"
+  - "World Models"
+  - "Decoder-free"
+  - "Redundancy Reduction"
+  - "Barlow Twins"
 date: 2026-05-08
-content_hash: 22e13536224aa081
+content_hash: 1eb2b0e5ebffafbb
 ---
+
 # R2-Dreamer: Redundancy-Reduced World Models without Decoders or Augmentation
 
 **Conference**: ICLR 2026  
@@ -158,10 +162,10 @@ On DMC-Subtle, which requires high precision, **adding DA to R2-Dreamer signific
 ## Related Papers
 
 - [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
+- [\[ICLR 2026\] Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
 - [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](learning_massively_multitask_world_models_for_continuous_control.md)
-- [\[ICLR 2026\] Learning to Be Uncertain: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
+- [\[ICLR 2026\] Efficient Reinforcement Learning by Guiding World Models with Non-Curated Data](efficient_reinforcement_learning_by_guiding_world_models_with_non-curated_data.md)
 - [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
-- [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
 
 </div>
 

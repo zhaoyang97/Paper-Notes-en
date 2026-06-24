@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Best-of-N through the Smoothing Lens: KL Divergence and Regret Analysis
 description: >-
-  [ICLR 2026][learning_theory][Best-of-N] This paper analyzes the commonly used Best-of-N (BoN) inference-time alignment through a "softened" framework, Soft Best-of-N (SBoN). It provides KL divergence upper bounds relative to the reference policy and upper/lower regret bounds relative to the optimal policy. The authors prove that when the proxy reward model q
+  [ICLR2026][Learning Theory][Best-of-N] This paper analyzes the commonly used Best-of-N (BoN) inference-time alignment through a "softened" framework, Soft Best-of-N (SBoN). It provides KL divergence upper bounds relative to the reference policy and upper/lower regret bounds relative to the optimal policy. The authors prove that when the proxy reward model quality is poor and overoptimization occurs, a finite inverse temperature $\beta$ makes the regret bound for SBoN tighter…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Best-of-N
+  - "ICLR2026"
+  - "Learning Theory"
+  - "LLM Alignment"
+  - "Best-of-N"
+  - "Inference-time Alignment"
+  - "KL Divergence"
+  - "Regret Bound"
+  - "Reward Overoptimization"
 date: 2026-05-08
-content_hash: b09d3101285d5bf3
+content_hash: afae1a3f7feaaba5
 ---
+
 # Best-of-N through the Smoothing Lens: KL Divergence and Regret Analysis
 
 **Conference**: ICLR2026  
@@ -128,6 +134,7 @@ Experiments validate the theory: Olmo-2 1B generator, Attaq dataset (harmful pro
 - Value: ⭐⭐⭐⭐  
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

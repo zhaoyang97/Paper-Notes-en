@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Label-Free Cross-Task LoRA Merging with Null-Space Compression
 description: >-
-  [CVPR 2026][Optimization & Theory][LoRA] It is observed that the null-space ratio of the down-projection matrix A during LoRA fine-tuning decreases and strongly correlates with performance. Based on this, NSC Merging is proposed—a label-free, task-agnostic LoRA merging method that achieves SOTA results on 20 heterogeneous vision tasks, 6 NLI tasks, and VLM ev
+  [CVPR 2026][Optimization][Model Merging] It is observed that the null-space ratio of the down-projection matrix A during LoRA fine-tuning decreases and strongly correlates with performance. Based on this, NSC Merging is proposed—a label-free, task-agnostic LoRA merging method that achieves SOTA results on 20 heterogeneous vision tasks, 6 NLI tasks, and VLM evaluations.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - LoRA
+  - "CVPR 2026"
+  - "Optimization"
+  - "Model Merging"
+  - "LoRA"
+  - "Null-Space Compression"
+  - "Label-Free"
+  - "Cross-Task"
 date: 2026-05-08
-content_hash: a61c0e4fa1f222a7
+content_hash: 2db1fcc5c8dda7e9
 ---
+
 # Label-Free Cross-Task LoRA Merging with Null-Space Compression
 
 **Conference**: CVPR 2026  
@@ -159,7 +164,7 @@ Since $\mathbf{z}$ and $A_k\mathbf{z}$ are already computed during forward infer
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
 - [\[CVPR 2026\] Model Merging in the Essential Subspace](model_merging_in_the_essential_subspace.md)
 - [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
-- [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](../../ICML2026/optimization/on_the_convergence_rate_of_lora_gradient_descent.md)
+- [\[ICLR 2026\] Combination-of-Experts with Knowledge Sharing for Cross-Task Vehicle Routing Problems](../../ICLR2026/optimization/combination-of-experts_with_knowledge_sharing_for_cross-task_vehicle_routing_pro.md)
 - [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](dc-merge_improving_model_merging_with_directional_consistency.md)
 
 </div>

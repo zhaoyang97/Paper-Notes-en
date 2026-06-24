@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QuCNet: Quantum Deep Learning Driven Multi-Circuit Network for Remote Sensing Image Classification
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] QuCNet integrates an ultra-lightweight convolutional encoder with 16 parallel 4-qubit Trainable Quantum Circuits (TQCs). It employs "Hybrid Cyclic Weight Sharing (HCWS)" to manage 16 circuits with only 64 independent parameters and utilizes KL divergence expressibility analysis to select gate sequences that avoid barre
+  [CVPR 2026][Remote Sensing][Hybrid Quantum-Classical Networks] QuCNet integrates an ultra-lightweight convolutional encoder with 16 parallel 4-qubit Trainable Quantum Circuits (TQCs). It employs "Hybrid Cyclic Weight Sharing (HCWS)" to manage 16 circuits with only 64 independent parameters and utilizes KL divergence expressibility analysis to select gate sequences that avoid barren plateaus. Ultimately, it achieves higher accuracy than classical CNNs on 7 remote sensing bench…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Hybrid Quantum-Classical Networks"
+  - "Trainable Quantum Circuits"
+  - "Expressibility Analysis"
+  - "Weight Sharing"
+  - "Remote Sensing Scene Classification"
 date: 2026-05-08
-content_hash: 4d43c7e3ef8fd98b
+content_hash: b1b9fe848da02a27
 ---
+
 # QuCNet: Quantum Deep Learning Driven Multi-Circuit Network for Remote Sensing Image Classification
 
 **Conference**: CVPR 2026  
@@ -151,15 +157,16 @@ QuCNet was tested on 7 remote sensing benchmarks (AID, AIDER, UCM, NPU-45, EuroS
 - Value: ⭐⭐⭐⭐ Provides a hardware-feasible lightweight RSISC path with significant reference value for quantum remote sensing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Uncertainty-Guided Edge Learning for Deep Image Regression in Remote Sensing](uncertainty-guided_edge_learning_for_deep_image_regression_in_remote_sensing.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] Robust Remote Sensing Image–Text Retrieval with Noisy Correspondence](robust_remote_sensing_image-text_retrieval_with_noisy_correspondence.md)
-- [\[CVPR 2026\] Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)
 - [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
 - [\[CVPR 2026\] Orthogonal Spatial-Aware Multi-View Anchor Graph Clustering for Incomplete Remote Sensing Data](orthogonal_spatial-aware_multi-view_anchor_graph_clustering_for_incomplete_remot.md)
+- [\[CVPR 2026\] Remote Sensing Image Super-Resolution for Imbalanced Textures: A Texture-Aware Diffusion Framework](remote_sensing_image_super-resolution_for_imbalanced_textures_a_texture-aware_di.md)
 
 </div>
 

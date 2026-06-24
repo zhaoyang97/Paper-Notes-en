@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IdealTSF: Can Non-Ideal Data Contribute to Enhancing Time Series Forecasting?
 description: >-
-  [AAAI 2026][Time Series][time series forecasting] IdealTSF is a three-stage progressive framework that (1) uses negative sample pre-training on synthetic non-ideal data to enhance robustness…
+  [AAAI 2026][Time Series][time series forecasting] IdealTSF is a three-stage progressive framework that (1) uses negative sample pre-training on synthetic non-ideal data to enhance robustness, (2) trains on repaired positive samples to learn underlying trends, and (3) applies the ECOS optimizer to guide parameters toward flat minima — achieving approximately 10% MSE improvement on time series data containing noise and missing values.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "data robustness"
   - "non-ideal data"
 date: 2026-05-08
-content_hash: 985cc2ee28741704
+content_hash: dc2ac2cabc92752a
 ---
 
 # IdealTSF: Can Non-Ideal Data Contribute to Enhancing Time Series Forecasting?
@@ -130,10 +130,10 @@ Average cross-dataset MSE improvement is approximately 10%.
 ## Related Papers
 
 - [\[AAAI 2026\] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing](towards_non-stationary_time_series_forecasting_with_temporal_stabilization_and_f.md)
+- [\[ICLR 2026\] Can we generate portable representations for clinical time series data using LLMs?](../../ICLR2026/time_series/can_we_generate_portable_representations_for_clinical_time_series_data_using_llm.md)
 - [\[AAAI 2026\] Finding Time Series Anomalies using Granular-ball Vector Data Description](finding_time_series_anomalies_using_granular-ball_vector_data_description.md)
+- [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](../../ICLR2026/time_series/cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
 - [\[AAAI 2026\] Scaling LLM Speculative Decoding: Non-Autoregressive Forecasting in Large-Batch Scenarios](scaling_llm_speculative_decoding_non-autoregressive_forecasting_in_large-batch_s.md)
-- [\[ICML 2026\] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting](../../ICML2026/time_series/parametric_prior_mapping_framework_for_non-stationary_probabilistic_time_series_.md)
-- [\[AAAI 2026\] Harmonic Dataset Distillation for Time Series Forecasting](harmonic_dataset_distillation_for_time_series_forecasting.md)
 
 </div>
 

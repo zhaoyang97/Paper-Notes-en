@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion
 description: >-
-  [ICLR 2026][learning_theory][k-center] This paper generalizes the previous "one representative per component" Metric Forest Completion (MFC) approximation algorithm into MultiRepMFC, which selects "a set of representatives per component." It provides an instance-specific $\alpha$-approximation bound using a cheaply computable cost function, while tightening
+  [ICLR 2026][Learning-Augmented Algorithms][Metric Minimum Spanning Tree] This paper generalizes the previous "one representative per component" Metric Forest Completion (MFC) approximation algorithm into MultiRepMFC, which selects "a set of representatives per component." It provides an instance-specific $\alpha$-approximation bound using a cheaply computable cost function, while tightening worst-case approximation ratios from $2.62$ (MFC) and $2\gamma+1$ (Metric MST) to $2$…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - k-center
+  - "ICLR 2026"
+  - "Learning-Augmented Algorithms"
+  - "Graphs and Metric Spaces"
+  - "Metric Minimum Spanning Tree"
+  - "Metric Forest Completion"
+  - "k-center"
+  - "Approximation Algorithms"
 date: 2026-05-08
-content_hash: f3808fac4700c9a6
+content_hash: c978df742ab6ab71
 ---
+
 # Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion
 
 **Conference**: ICLR 2026  
@@ -138,16 +143,16 @@ The core conclusion: All variants provide a useful interpolation. Adding just a 
 - Value: ⭐⭐⭐⭐ (Provides tight bounds and runtime guarantees for large-scale metric MST; practical with clear open problems.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Online Rounding and Learning Augmented Algorithms for Facility Location](online_rounding_and_learning_augmented_algorithms_for_facility_location.md)
 - [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/learning_theory/parsimonious_learning-augmented_online_metric_matching.md)
+- [\[ICLR 2026\] Online Rounding and Learning Augmented Algorithms for Facility Location](online_rounding_and_learning_augmented_algorithms_for_facility_location.md)
 - [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
+- [\[ICLR 2026\] Learning-Augmented Moment Estimation on Time-Decay Models](learning-augmented_moment_estimation_on_time-decay_models.md)
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
-- [\[ICLR 2026\] ATLAS: Alibaba Dataset and Benchmark for Learning-Augmented Scheduling](atlas_alibaba_dataset_and_benchmark_for_learning-augmented_scheduling.md)
 
 </div>
 

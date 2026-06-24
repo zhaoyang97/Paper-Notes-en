@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Procedural-aware Video Representations through State-Grounded Hierarchy Unfolding
 description: >-
-  [AAAI 2026][LLM Pretraining][Procedural video understanding] This paper proposes a Task-Step-State (TSS) three-level semantic framework that introduces "state" as a visual grounding layer within the conventional task-ste…
+  [AAAI 2026][LLM Pretraining][Procedural video understanding] This paper proposes a Task-Step-State (TSS) three-level semantic framework that introduces "state" as a visual grounding layer within the conventional task-step hierarchy, and designs a progressive pretraining strategy following a U-shaped path (Task→Step→State→Step→Task) to unfold the TSS hierarchy stage by stage. The approach achieves comprehensive state-of-the-art performance on task recognition, step recognition…
 tags:
   - "AAAI 2026"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "progressive pretraining"
   - "video representation"
 date: 2026-05-08
-content_hash: ffabcd54bf74fe03
+content_hash: d69dbf8a66e5fb78
 ---
 
 # Learning Procedural-aware Video Representations through State-Grounded Hierarchy Unfolding
@@ -163,7 +163,7 @@ The method comprises two core contributions:
 - [\[AAAI 2026\] GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval](granalign_granularity-aware_alignment_framework_for_zero-shot_video_moment_retri.md)
 - [\[NeurIPS 2025\] Mouse-Guided Gaze: Semi-Supervised Learning of Intention-Aware Representations for Reading Detection](../../NeurIPS2025/llm_pretraining/mouse-guided_gaze_semi-supervised_learning_of_intention-aware_representations_fo.md)
 - [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
-- [\[ICLR 2026\] Explaining Grokking and Information Bottleneck through Neural Collapse Emergence](../../ICLR2026/llm_pretraining/explaining_grokking_and_information_bottleneck_through_neural_collapse_emergence.md)
+- [\[ECCV 2024\] Cross-Domain Learning for Video Anomaly Detection with Limited Supervision](../../ECCV2024/llm_pretraining/cross-domain_learning_for_video_anomaly_detection_with_limited_supervision.md)
 - [\[ICCV 2025\] FlowMo: Flow to the Mode — Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization](../../ICCV2025/llm_pretraining/flow_to_the_mode_mode-seeking_diffusion_autoencoders_for_state-of-the-art_image_.md)
 
 </div>

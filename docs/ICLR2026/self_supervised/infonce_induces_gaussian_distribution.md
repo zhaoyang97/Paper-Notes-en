@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] InfoNCE Induces Gaussian Distribution
 description: >-
-  [ICLR 2026][Self-Supervised Learning][InfoNCE] This paper theoretically demonstrates that the InfoNCE loss induces representations to converge toward a Gaussian distribution through two complementary mechanisms: an empirical idealization path (alignment + spherical uniformity → Gaussian) and a regularized path (vanishing regularization → isotropic Gaussian). These
+  [ICLR 2026 Oral][Self-Supervised Learning][InfoNCE] This paper theoretically demonstrates that the InfoNCE loss induces representations to converge toward a Gaussian distribution through two complementary mechanisms: an empirical idealization path (alignment + spherical uniformity → Gaussian) and a regularized path (vanishing regularization → isotropic Gaussian). These findings are validated using synthetic data and CIFAR-10.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - InfoNCE
-  - contrastive learning
-  - Gaussian distribution
-  - uniformity
-  - representation learning
+  - "ICLR 2026 Oral"
+  - "Self-Supervised Learning"
+  - "InfoNCE"
+  - "contrastive learning"
+  - "Gaussian distribution"
+  - "uniformity"
+  - "representation learning"
 date: 2026-05-08
-content_hash: baf8781e5cf41304
+content_hash: 3364b803c69b90a0
 ---
+
 # InfoNCE Induces Gaussian Distribution
 
 **Conference**: ICLR 2026 Oral  

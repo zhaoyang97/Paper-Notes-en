@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] PG-SFD models "unsupervised anomaly detection (pixel-level localization) + weakly supervised anomaly classification (region-level classification)" as a dual-prototype collaborative optimization problem. By explicitly decoupling normal/anomaly semantics using normal and category prototypes, injecting normal priors into
+  [CVPR 2026][Anomaly Detection][Unsupervised Anomaly Detection] PG-SFD models "unsupervised anomaly detection (pixel-level localization) + weakly supervised anomaly classification (region-level classification)" as a dual-prototype collaborative optimization problem. By explicitly decoupling normal/anomaly semantics using normal and category prototypes, injecting normal priors into the classification branch via differential gating, and alleviating multi-task gradient conflicts…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Anomaly Detection"
+  - "Unsupervised Anomaly Detection"
+  - "Anomaly Classification"
+  - "Prototype Learning"
+  - "Multi-task Learning"
+  - "Feature Disentanglement"
 date: 2026-05-08
-content_hash: eb30112b7e1aa2be
+content_hash: cd94c5ab3bee4634
 ---
+
 # Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification
 
 **Conference**: CVPR 2026  
@@ -140,10 +146,10 @@ The dataset covers industrial and medical domains: MVTec-AD, a self-collected Ho
 ## Related Papers
 
 - [\[CVPR 2026\] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)
-- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
-- [\[CVPR 2026\] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection](beyond_prompt_degradation_prototype-guided_dual-pool_prompting_for_incremental_o.md)
-- [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
-- [\[ECCV 2024\] Adaptive Multi-task Learning for Few-Shot Object Detection](../../ECCV2024/object_detection/adaptive_multi-task_learning_for_few-shot_object_detection.md)
+- [\[CVPR 2026\] Hunting Normality from Query Sample via Residual Learning for Generalist Anomaly Detection](hunting_normality_from_query_sample_via_residual_learning_for_generalist_anomaly.md)
+- [\[CVPR 2026\] RAID: Retrieval-Augmented Anomaly Detection](raid_retrieval-augmented_anomaly_detection.md)
+- [\[CVPR 2026\] LayoutAD: Exploring Semantic-Geometric Misalignment Reasoning for Scene Layout Anomaly Detection](layoutad_exploring_semantic-geometric_misalignment_reasoning_for_scene_layout_an.md)
+- [\[CVPR 2026\] Anomaly-Related Residual Fields for Cross-domain Anomaly Detection](anomaly-related_residual_fields_for_cross-domain_anomaly_detection.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][tabular data] This paper proposes TANDEM (Tree-And-Neural Dual Encoder Model), a hybrid autoencoder architecture that jointly trains a neural network encoder and an Oblivious Soft…
+  [NeurIPS 2025][Self-Supervised Learning][tabular data] This paper proposes TANDEM (Tree-And-Neural Dual Encoder Model), a hybrid autoencoder architecture that jointly trains a neural network encoder and an Oblivious Soft Decision Tree (OSDT) encoder, and introduces a sample-level stochastic gating network as a learnable data augmentation mechanism. TANDEM achieves superior performance over strong baselines—including tree-based and deep learning methods—in low-label tabular da…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -11,7 +11,7 @@ tags:
   - "oblivious soft decision tree"
   - "low-label learning"
 date: 2026-05-08
-content_hash: 03c1cce47571028c
+content_hash: e4b42e14ce3663dc
 ---
 
 # Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings
@@ -166,10 +166,10 @@ TANDEM achieves the best mean metric and best average rank on both classificatio
 ## Related Papers
 
 - [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
+- [\[ICML 2025\] Towards Benchmarking Foundation Models for Tabular Data With Text](../../ICML2025/self_supervised/towards_benchmarking_foundation_models_for_tabular_data_with_text.md)
 - [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
 - [\[ICCV 2025\] To Label or Not to Label: PALM – A Predictive Model for Evaluating Sample Efficiency in Active Learning Models](../../ICCV2025/self_supervised/to_label_or_not_to_label_palm_-_a_predictive_model_for_evaluating_sample_efficie.md)
 - [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
-- [\[ICML 2026\] Data Augmentation of Contrastive Learning is Estimating Positive-incentive Noise](../../ICML2026/self_supervised/data_augmentation_of_contrastive_learning_is_estimating_positive-incentive_noise.md)
 
 </div>
 

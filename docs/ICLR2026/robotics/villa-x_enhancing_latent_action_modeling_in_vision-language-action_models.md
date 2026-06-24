@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] villa-X: Enhancing Latent Action Modeling in Vision-Language-Action Models
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] villa-X introduces two upgrades to "latent action" modeling: grounding latent actions to the robot's physical state via a proprioceptive forward dynamics model (proprio-FDM), and feeding latent actions to low-level control through joint diffusion of "latent experts + robot experts." The model achieves SOTA performance
+  [ICLR 2026][Robotics][Latent Action] villa-X introduces two upgrades to "latent action" modeling: grounding latent actions to the robot's physical state via a proprioceptive forward dynamics model (proprio-FDM), and feeding latent actions to low-level control through joint diffusion of "latent experts + robot experts." The model achieves SOTA performance in SIMPLER simulations and on two real-world platforms (gripper + dexterous hand), demonstrating zero-shot transfer to unse…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Latent Action"
+  - "VLA Pre-training"
+  - "Proprioceptive Grounding"
+  - "Joint Diffusion"
+  - "Cross-Embodiment Generalization"
 date: 2026-05-08
-content_hash: 3c2b08c7ebba62b9
+content_hash: de3525c287b904b9
 ---
+
 # villa-X: Enhancing Latent Action Modeling in Vision-Language-Action Models
 
 **Conference**: ICLR 2026  
@@ -144,10 +150,20 @@ Ours w/o latent drops to 36.5 (Google) and 49.0 (WidowX), proving the latent exp
 - Value: ⭐⭐⭐⭐⭐ Provides a scalable, cross-embodiment paradigm for latent action VLAs.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
+- [\[ICLR 2026\] Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance](align-then-steer_adapting_the_vision-language_action_models_through_unified_late.md)
+- [\[ICLR 2026\] Hybrid Training for Vision-Language-Action Models](hybrid_training_for_vision-language-action_models.md)
+- [\[ICLR 2026\] Vision-Language-Action Instruction Tuning: From Understanding to Manipulation](vision-language-action_instruction_tuning_from_understanding_to_manipulation.md)
+- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](../../ICML2026/robotics/langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)

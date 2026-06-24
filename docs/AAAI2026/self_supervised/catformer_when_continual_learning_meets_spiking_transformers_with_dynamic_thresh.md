@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds
 description: >-
-  [AAAI 2026 (Neuro for AI & AI for Neuro Workshop, PMLR)][Self-Supervised Learning][Spiking Neural Networks] This paper proposes CATFormer, a data-replay-free continual learning framework built upon a spiking Vision Trans…
+  [AAAI 2026 (Neuro for AI & AI for Neuro Workshop, PMLR)][Self-Supervised Learning][Spiking Neural Networks] This paper proposes CATFormer, a data-replay-free continual learning framework built upon a spiking Vision Transformer, which achieves task-specific neuronal excitability modulation via context-adaptive dynamic firing thresholds. Over sequences of up to 100 tasks, the model not only avoids forgetting but actually improves in accuracy — a phenomenon the authors term "rev…
 tags:
   - "AAAI 2026 (Neuro for AI & AI for Neuro Workshop, PMLR)"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Class-Incremental Learning"
   - "Vision Transformer"
 date: 2026-05-08
-content_hash: 19d11d34d0cdbf04
+content_hash: 6b454658fcf72b25
 ---
 
 # CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds
@@ -156,11 +156,11 @@ Gating network structure: $\mathcal{G}(\mathbf{f}) = \text{Linear}(\text{ReLU}(\
 
 ## Related Papers
 
+- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](../../CVPR2026/self_supervised/temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](../../CVPR2026/self_supervised/is_parameter_isolation_better_for_prompt-based_continual_learning.md)
 - [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
-- [\[CVPR 2026\] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers](../../CVPR2026/self_supervised/diversedit_towards_diverse_representation_learning_in_diffusion_transformers.md)
-- [\[AAAI 2026\] Expandable and Differentiable Dual Memories with Orthogonal Regularization for Exemplar-free Continual Learning](expandable_and_differentiable_dual_memories_with_orthogonal_regularization_for_e.md)
+- [\[CVPR 2026\] A Faster Path to Continual Learning](../../CVPR2026/self_supervised/a_faster_path_to_continual_learning.md)
 - [\[CVPR 2026\] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach](../../CVPR2026/self_supervised/cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati.md)
-- [\[CVPR 2026\] Vision Transformers Need More Than Registers](../../CVPR2026/self_supervised/vision_transformers_need_more_than_registers.md)
 
 </div>
 

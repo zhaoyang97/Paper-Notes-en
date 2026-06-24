@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning
 description: >-
-  [CVPR 2026][Optimization & Theory][Non-IID] FedAlign requires each client to upload noisy versions of the first four statistical moments (mean, variance, skewness, kurtosis) of their local data. The server aggregates these into a global reference distribution and broadcasts it back. Clients then align the distribution of their locally sampled data accordingly—mi
+  [CVPR 2026][Federated Learning][Non-IID] FedAlign requires each client to upload noisy versions of the first four statistical moments (mean, variance, skewness, kurtosis) of their local data. The server aggregates these into a global reference distribution and broadcasts it back. Clients then align the distribution of their locally sampled data accordingly—mitigating both Non-IID heterogeneity and privacy leakage under differential privacy constraints…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - Non-IID
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Non-IID"
+  - "Differential Privacy"
+  - "Distribution Alignment"
+  - "Statistical Moments"
 date: 2026-05-08
-content_hash: 9d6b89d2e888f1fa
+content_hash: 975a9e4c24c784fd
 ---
+
 # FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning
 
 **Conference**: CVPR 2026  
@@ -146,16 +150,16 @@ At $\beta=0.05$, FedAlign improves CIFAR-10 accuracy by 11.9% / 7.5% / 4.8% rela
 - Value: ⭐⭐⭐⭐ A solid framework that makes "Alignment = Convergence Tightening" a provable proposition.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] DP-FedAdamW: An Efficient Optimizer for Differentially Private Federated Large Models](dp-fedadamw_an_efficient_optimizer_for_differentially_private_federated_large_mo.md)
-- [\[CVPR 2026\] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift](fed-ade_adaptive_learning_rate_for_federated_post-adaptation_under_distribution_.md)
+- [\[CVPR 2026\] GDFA: Geometry-Driven Federated Unlearning with Directional Task Vector Alignment](gdfa_geometry-driven_federated_unlearning_with_directional_task_vector_alignment.md)
+- [\[CVPR 2026\] FedARA: Resource-adaptive Low-rank Personalized Federated Learning via Anchor-driven Representation Alignment on Heterogeneous Edge Devices](fedara_resource-adaptive_low-rank_personalized_federated_learning_via_anchor-dri.md)
 - [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
-- [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
-- [\[CVPR 2026\] FedRAC: Rolling Submodel Allocation for Collaborative Fairness in Federated Learning](fedrac_rolling_submodel_allocation_for_collaborative_fairness_in_federated_learn.md)
+- [\[CVPR 2026\] Single-Round Scalable Analytic Federated Learning](single-round_scalable_analytic_federated_learning.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
 
 </div>
 

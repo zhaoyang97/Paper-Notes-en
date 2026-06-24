@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding
 description: >-
-  [ACL 2026][vlm_efficiency][Paper Note] This paper proposes HERMES, which conceptualizes KV cache as a hierarchical memory framework (shallow = sensory memory, middle = working memory, deep = long-term memory) based on a mechanistic analysis of MLLM decoder hierarchical attention preferences. It achieves training-free efficient streaming video understanding,
+  [ACL 2026][Multimodal Efficiency][Streaming Video] This paper proposes HERMES, which conceptualizes KV cache as a hierarchical memory framework (shallow = sensory memory, middle = working memory, deep = long-term memory) based on a mechanistic analysis of MLLM decoder hierarchical attention preferences. It achieves training-free efficient streaming video understanding, maintaining or improving accuracy while reducing video tokens by 68%. The TTFT latency is <30ms…
 tags:
-  - ACL 2026
-  - vlm_efficiency
+  - "ACL 2026"
+  - "Multimodal Efficiency"
+  - "Streaming Video"
+  - "KV Cache Management"
+  - "Hierarchical Memory"
+  - "Real-time Response"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 11d6543379ee6d56
+content_hash: 9581c06f0ab4a4bf
 ---
+
 # HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding
 
 **Conference**: ACL 2026  
@@ -140,10 +146,10 @@ Completely training-free. The design draws inspiration from Ebbinghaus's Forgett
 ## Related Papers
 
 - [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](../../CVPR2026/vlm_efficiency/accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
-- [\[ACL 2026\] APB-V: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention](apb-v_accelerating_long-video_understanding_via_sequence-parallelism-aware_appro.md)
-- [\[CVPR 2026\] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression](../../CVPR2026/vlm_efficiency/flashcache_frequency_kv_cache_compression.md)
+- [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](../../ICLR2026/vlm_efficiency/surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
+- [\[ICLR 2026\] ST-SimDiff: Balancing Spatiotemporal Similarity and Difference for Efficient Video Understanding with MLLMs](../../ICLR2026/vlm_efficiency/st-simdiff_balancing_spatiotemporal_similarity_and_difference_for_efficient_vide.md)
 - [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](../../CVPR2026/vlm_efficiency/timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
+- [\[CVPR 2026\] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression](../../CVPR2026/vlm_efficiency/flashcache_frequency_kv_cache_compression.md)
 
 </div>
 

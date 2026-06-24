@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DemoFunGrasp: Universal Dexterous Functional Grasping via Demonstration-Editing Reinforcement Learning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Reinforcement Learning] This work decomposes "functional grasping" into two conditions: affordance (where to grasp) and grasping style (how to grasp). By employing "Single-step Demonstration-Editing RL"—which collects only one demonstration and requires the policy to output residual corrections—it bypasses the multi-step, multi-task explorati
+  [CVPR 2026][Robotics][Functional Grasping] This work decomposes "functional grasping" into two conditions: affordance (where to grasp) and grasping style (how to grasp). By employing "Single-step Demonstration-Editing RL"—which collects only one demonstration and requires the policy to output residual corrections—it bypasses the multi-step, multi-task exploration challenges of high-DOF dexterous hands. A universal functional grasping policy is trained on 3…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Reinforcement Learning
-  - Sim-to-Real
+  - "CVPR 2026"
+  - "Robotics"
+  - "Functional Grasping"
+  - "Dexterous Hands"
+  - "Reinforcement Learning"
+  - "Demonstration Editing"
+  - "Sim-to-Real"
 date: 2026-05-08
-content_hash: b55e3ebd2e22296c
+content_hash: 1fda0777274454a2
 ---
+
 # DemoFunGrasp: Universal Dexterous Functional Grasping via Demonstration-Editing Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -150,11 +154,11 @@ Ablation results on the state policy (GSR↑ / SAD↓ / SA↑):
 
 ## Related Papers
 
-- [\[CVPR 2025\] DexGrasp Anything: Towards Universal Robotic Dexterous Grasping with Physics Awareness](../../CVPR2025/robotics/dexgrasp_anything_towards_universal_robotic_dexterous_grasping_with_physics_awar.md)
+- [\[ICLR 2026\] DemoGrasp: Universal Dexterous Grasping from a Single Demonstration](../../ICLR2026/robotics/demograsp_universal_dexterous_grasping_from_a_single_demonstration.md)
 - [\[CVPR 2026\] General Process Reward Modeling for Robotic Reinforcement Learning](general_process_reward_modeling_for_robotic_reinforcement_learning.md)
+- [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
 - [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
 - [\[CVPR 2026\] Towards Training-Free Scene Text Editing](towards_training-free_scene_text_editing.md)
-- [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
 
 </div>
 

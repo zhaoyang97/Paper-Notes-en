@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Speculative Actions: A Lossless Framework for Faster AI Agents
 description: >-
-  [ICLR 2026][LLM (Other)][speculative execution] Drawing inspiration from CPU speculative execution and LLM speculative decoding, this paper proposes the Speculative Actions framework: while a slow Actor (large model) computes, a fast Speculator (small model) predicts and pre-executes future actions. If the prediction matches, the wait time is skipped to achieve loss
+  [ICLR 2026 Oral][LLM (Other)][speculative execution] Drawing inspiration from CPU speculative execution and LLM speculative decoding, this paper proposes the Speculative Actions framework: while a slow Actor (large model) computes, a fast Speculator (small model) predicts and pre-executes future actions. If the prediction matches, the wait time is skipped to achieve lossless acceleration. The framework reduces latency by 15-30% in scenarios such as Chess, e-commerce…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - speculative execution
-  - AI agents
-  - latency reduction
-  - lossless acceleration
-  - MDP
+  - "ICLR 2026 Oral"
+  - "LLM (Other)"
+  - "speculative execution"
+  - "AI agents"
+  - "latency reduction"
+  - "lossless acceleration"
+  - "MDP"
 date: 2026-05-08
-content_hash: 66e8b5132750c274
+content_hash: 795549ad91625fd8
 ---
+
 # Speculative Actions: A Lossless Framework for Faster AI Agents
 
 **Conference**: ICLR 2026 Oral  
@@ -140,8 +141,6 @@ Where Actor/Speculator latencies follow $\text{Exp}(\beta)$ and $\text{Exp}(\alp
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

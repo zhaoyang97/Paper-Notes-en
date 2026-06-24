@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hilbert-Geo: Solving Solid Geometric Problems by Neural-Symbolic Reasoning
 description: >-
-  [CVPR 2026][LLM Reasoning][Paper Note] Hilbert-Geo is the first unified formal language framework (including a predicate library and a theorem library) for **solid geometry**. It utilizes a "Parse2Reason" approach: first, a Multimodal Large Language Model (MLLM) translates text and 3D diagrams into a formal Condition Description Language (CDL); then, a spec
+  [CVPR 2026][Reasoning][Solid Geometry] Hilbert-Geo is the first unified formal language framework (including a predicate library and a theorem library) for **solid geometry**. It utilizes a "Parse2Reason" approach: first, a Multimodal Large Language Model (MLLM) translates text and 3D diagrams into a formal Condition Description Language (CDL); then, a specialized symbolic reasoning engine performs rigorous theorem searching. This method improves MLLM accuracy in solid geomet…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Solid Geometry"
+  - "Neural-Symbolic Reasoning"
+  - "Formal Language"
+  - "Multimodal Large Language Models"
+  - "Theorem Search"
 date: 2026-05-08
-content_hash: 9f8cc1d35c902611
+content_hash: 6af2b06724683344
 ---
+
 # Hilbert-Geo: Solving Solid Geometric Problems by Neural-Symbolic Reasoning
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ Table 2: Accuracy and solving cost using different MLLMs as parsers within the s
 
 ## Related Papers
 
+- [\[ICLR 2026\] RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems](../../ICLR2026/llm_reasoning/rlad_training_llms_to_discover_abstractions_for_solving_reasoning_problems.md)
 - [\[CVPR 2026\] Human-like Abstract Visual Reasoning via Understanding and Solving Reasoning Loop](human-like_abstract_visual_reasoning_via_understanding_and_solving_reasoning_loo.md)
+- [\[NeurIPS 2025\] SolverLLM: Solving Optimization Problems via Test-Time Scaling with LLM-Guided Search](../../NeurIPS2025/llm_reasoning/solverllm_leveraging_test-time_scaling_for_optimization_problem_via_llm-guided_s.md)
 - [\[ICLR 2026\] GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs](../../ICLR2026/llm_reasoning/geogrambench_benchmarking_the_geometric_program_reasoning_in_modern_llms.md)
-- [\[AAAI 2026\] MathSmith: Towards Extremely Hard Mathematical Reasoning by Forging Synthetic Problems with a Reinforced Policy](../../AAAI2026/llm_reasoning/mathsmith_towards_extremely_hard_mathematical_reasoning_by_forging_synthetic_pro.md)
-- [\[ICLR 2026\] $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving](../../ICLR2026/llm_reasoning/textbfre2_unlocking_llm_reasoning_via_reinforcement_learning_with_re-solving.md)
-- [\[NeurIPS 2025\] MuSLR: Multimodal Symbolic Logical Reasoning](../../NeurIPS2025/llm_reasoning/muslr_multimodal_symbolic_logical_reasoning.md)
+- [\[ICLR 2026\] Hilbert: Recursively Building Formal Proofs with Informal Reasoning](../../ICLR2026/llm_reasoning/hilbert_recursively_building_formal_proofs_with_informal_reasoning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Play to Generalize: Learning to Reason Through Game Play
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] By applying Reinforcement Learning (RL) to let a 7B multimodal large model (MLLM) play arcade games like Snake and 3D rotation recognition—without ever touching math problems, formulas, or diagrams—the model outperforms similarly sized models trained specifically on mathematical data in multimodal reasoning benchmarks
+  [ICLR 2026][VLM Reasoning][Multimodal Large Models] By applying Reinforcement Learning (RL) to let a 7B multimodal large model (MLLM) play arcade games like Snake and 3D rotation recognition—without ever touching math problems, formulas, or diagrams—the model outperforms similarly sized models trained specifically on mathematical data in multimodal reasoning benchmarks like MathVista and MMMU, while preserving general vision capabilities.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Large Models"
+  - "Reinforcement Learning"
+  - "Post-training on Games"
+  - "Cross-domain Generalization"
+  - "Surrogate Tasks"
 date: 2026-05-08
-content_hash: 336676647091be3b
+content_hash: 5a02fc6a1c39d64e
 ---
+
 # Play to Generalize: Learning to Reason Through Game Play
 
 **Conference**: ICLR 2026  

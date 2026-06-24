@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adapting Vision-Language Models for Evaluating World Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][world model evaluation] This paper proposes UNIVERSE (UNIfied Vision-language Evaluator for Rollouts in Simulated Environments)…
+  [NeurIPS 2025][Multimodal VLM][world model evaluation] This paper proposes UNIVERSE (UNIfied Vision-language Evaluator for Rollouts in Simulated Environments), a unified semantic evaluator for world model rollouts constructed by fine-tuning only the projection head of PaliGemma 2 (0.07% of total parameters). UNIVERSE achieves performance comparable to task-specific models on action recognition and character recognition, while exhibiting strong alignment with human judgments.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "character recognition"
   - "lightweight fine-tuning"
 date: 2026-05-08
-content_hash: 2a8d3135ad042aab
+content_hash: a5f12f494ba7a93c
 ---
 
 # Adapting Vision-Language Models for Evaluating World Models
@@ -141,9 +141,9 @@ Uniform sampling substantially outperforms sequential sampling across all format
 
 - [\[NeurIPS 2025\] Towards Evaluating Proactive Risk Awareness of Multimodal Language Models](towards_evaluating_proactive_risk_awareness_of_multimodal_language_models.md)
 - [\[NeurIPS 2025\] Evaluating Multimodal Large Language Models on Core Music Perception Tasks](evaluating_multimodal_large_language_models_on_core_music_perception_tasks.md)
-- [\[NeurIPS 2025\] OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Models](openhoi_open-world_hand-object_interaction_synthesis_with_multimodal_large_langu.md)
-- [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](../../ACL2026/multimodal_vlm/geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
-- [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
+- [\[CVPR 2025\] Evaluating Vision-Language Models as Evaluators in Path Planning](../../CVPR2025/multimodal_vlm/evaluating_vision-language_models_as_evaluators_in_path_planning.md)
+- [\[ACL 2025\] Do Vision-Language Models Have Internal World Models? Towards an Atomic Evaluation](../../ACL2025/multimodal_vlm/do_vision-language_models_have_internal_world_models_towards_an_atomic_evaluatio.md)
+- [\[ACL 2025\] AlignMMBench: Evaluating Chinese Multimodal Alignment in Large Vision-Language Models](../../ACL2025/multimodal_vlm/alignmmbench_evaluating_chinese_multimodal_alignment_in_large_vision-language_mo.md)
 
 </div>
 

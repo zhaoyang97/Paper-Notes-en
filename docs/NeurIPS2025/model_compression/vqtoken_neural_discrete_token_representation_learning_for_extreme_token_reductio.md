@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VQToken: Neural Discrete Token Representation Learning for Extreme Token Reduction in Video Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][token reduction] VQToken introduces the first vector-quantization-based framework for extreme video token compression. By adaptively discretizing continuous ViT embeddings into a compact…
+  [NeurIPS 2025][Model Compression][token reduction] VQToken introduces the first vector-quantization-based framework for extreme video token compression. By adaptively discretizing continuous ViT embeddings into a compact codebook and preserving spatiotemporal positional information via a token hash function, it achieves only 0.66% accuracy loss on NextQA-MC using merely 0.07% of the original tokens (approximately 13 tokens).
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "discrete representation"
   - "token information density"
 date: 2026-05-08
-content_hash: b29980a692c983e2
+content_hash: a8e9dbcad0647596
 ---
 
 # VQToken: Neural Discrete Token Representation Learning for Extreme Token Reduction in Video Large Language Models
@@ -183,8 +183,8 @@ The VQToken pipeline proceeds as follows:
 - [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](vision-centric_token_compression_in_large_language_model.md)
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
 - [\[ICCV 2025\] Representation Shift: Unifying Token Compression with FlashAttention](../../ICCV2025/model_compression/representation_shift_unifying_token_compression_with_flashattention.md)
+- [\[CVPR 2025\] Faster Parameter-Efficient Tuning with Token Redundancy Reduction (FPET)](../../CVPR2025/model_compression/faster_parameter-efficient_tuning_with_token_redundancy_reduction.md)
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
-- [\[ICLR 2026\] Parallel Token Prediction for Language Models](../../ICLR2026/model_compression/parallel_token_prediction_for_language_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Imagined Futures to Executable Actions: Mixture of Latent Actions for Robot Manipulation
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Video Generation] MoLA utilizes a set of "Modality-aware Inverse Dynamics Models (IDM)" pre-trained on large-scale robotic data to translate future frames predicted by a video generation model into three-way discrete latent actions (semantic, depth, and optical flow). A policy head then performs control based on these action-centric rep
+  [ICML 2026][Robotics][Latent Actions] MoLA utilizes a set of "Modality-aware Inverse Dynamics Models (IDM)" pre-trained on large-scale robotic data to translate future frames predicted by a video generation model into three-way discrete latent actions (semantic, depth, and optical flow). A policy head then performs control based on these action-centric representations, making the "imagine-execute" interface both stable and precise across CALVIN, LIBERO, LIBERO-Plus…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Video Generation
+  - "ICML 2026"
+  - "Robotics"
+  - "Latent Actions"
+  - "Inverse Dynamics"
+  - "Video Generation"
+  - "Robot Manipulation"
+  - "Modality-aware"
 date: 2026-05-08
-content_hash: d8612f1a019e75c3
+content_hash: 31f83d81edf88239
 ---
+
 # From Imagined Futures to Executable Actions: Mixture of Latent Actions for Robot Manipulation
 
 **Conference**: ICML 2026  
@@ -135,11 +140,11 @@ On CALVIN, MoLA improves the success rate for completing 5 consecutive sub-tasks
 
 ## Related Papers
 
+- [\[ICLR 2026\] ViPRA: Video Prediction for Robot Actions](../../ICLR2026/robotics/vipra_video_prediction_for_robot_actions.md)
 - [\[CVPR 2026\] Learning to Act Robustly with View-Invariant Latent Actions](../../CVPR2026/robotics/learning_to_act_robustly_with_view-invariant_latent_actions.md)
-- [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](../../ICLR2026/robotics/from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
+- [\[ICLR 2026\] Rodrigues Network for Learning Robot Actions](../../ICLR2026/robotics/rodrigues_network_for_learning_robot_actions.md)
 - [\[ICML 2026\] Mixture of Horizons in Action Chunking](mixture_of_horizons_in_action_chunking.md)
 - [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](../../CVPR2026/robotics/from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
-- [\[CVPR 2026\] Training One Model to Master Cross-Level Agentic Actions via Reinforcement Learning](../../CVPR2026/robotics/training_one_model_to_master_cross-level_agentic_actions_via_reinforcement_learn.md)
 
 </div>
 

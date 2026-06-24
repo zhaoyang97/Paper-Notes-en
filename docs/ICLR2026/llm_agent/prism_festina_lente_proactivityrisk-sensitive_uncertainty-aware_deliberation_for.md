@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PRISM: Festina Lente Proactivity—Risk-Sensitive, Uncertainty-Aware Deliberation for Proactive Agents
 description: >-
-  [ICLR 2026][LLM Agent][Knowledge Distillation] PRISM models the decision of "whether a proactive agent should speak" as a **cost-sensitive selective intervention problem**. It first estimates two calibrated probabilities—"whether the user needs help" and "whether the user will accept"—and uses an adaptive threshold derived from false alarm/missed detection costs fo
+  [ICLR 2026][LLM Agent][Proactive agents] PRISM models the decision of "whether a proactive agent should speak" as a **cost-sensitive selective intervention problem**. It first estimates two calibrated probabilities—"whether the user needs help" and "whether the user will accept"—and uses an adaptive threshold derived from false alarm/missed detection costs for gating. A single "slow reasoning" pass is triggered only near the decision boundary. By employing gate-aligned distil…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Proactive agents"
+  - "cost-sensitive gating"
+  - "selective slow reasoning"
+  - "calibrated probabilities"
+  - "knowledge distillation"
 date: 2026-05-08
-content_hash: d56da072dcc26e9a
+content_hash: 5498b0b697232643
 ---
+
 # PRISM: Festina Lente Proactivity—Risk-Sensitive, Uncertainty-Aware Deliberation for Proactive Agents
 
 **Conference**: ICLR 2026  
@@ -141,15 +146,16 @@ Compared to the previous SOTA, Qwen2-7B-Proactive, F1 improved by over 20 points
 - Value: ⭐⭐⭐⭐⭐ Highly practical for real-world deployments by making proactive agents precise, compute-efficient, and auditable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
+- [\[ICLR 2026\] ProRe: A Proactive Reward System for GUI Agents via Reasoner–Actor Collaboration](prore_a_proactive_reward_system_for_gui_agents_via_reasoneractor_collaboration.md)
 - [\[NeurIPS 2025\] ContextAgent: Context-Aware Proactive LLM Agents with Open-World Sensory Perceptions](../../NeurIPS2025/llm_agent/contextagent_context-aware_proactive_llm_agents_with_open-world_sensory_percepti.md)
 - [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
 - [\[ICLR 2026\] MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents](mmsearch-plus_benchmarking_provenance-aware_search_for_multimodal_browsing_agent.md)
-- [\[ICLR 2026\] DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents](dreamphase_offline_imagination_and_uncertainty-guided_planning_for_large-languag.md)
 
 </div>
 

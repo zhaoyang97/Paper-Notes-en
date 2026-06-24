@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] The authors propose the AutoRPA framework, which automatically distills interaction trajectories of ReAct-style GUI Agents into reusable RPA functions via a Translator-Builder pipeline. By combining iterative optimization with a hybrid repair strategy, the method maintains or exceeds original Agent success rates while
+  [ICML2026][LLM Agent][GUI Automation] The authors propose the AutoRPA framework, which automatically distills interaction trajectories of ReAct-style GUI Agents into reusable RPA functions via a Translator-Builder pipeline. By combining iterative optimization with a hybrid repair strategy, the method maintains or exceeds original Agent success rates while reducing token consumption by 82%~96%.
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML2026"
+  - "LLM Agent"
+  - "GUI Automation"
+  - "Robotic Process Automation"
+  - "Code Synthesis"
+  - "Trajectory Distillation"
 date: 2026-05-08
-content_hash: ad524de36decc334
+content_hash: 2e207f4d25d76651
 ---
+
 # AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions
 
 **Conference**: ICML2026  
@@ -133,15 +138,15 @@ On MiniWoB++ (GPT-4.1):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
+- [\[ICLR 2026\] Code Driven Planning with Domain-Adaptive Selector](../../ICLR2026/llm_agent/code_driven_planning_with_domain-adaptive_selector.md)
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](../../AAAI2026/llm_agent/reflection-driven_control_for_trustworthy_code_agents.md)
 - [\[ACL 2026\] Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction](../../ACL2026/llm_agent/don39t_act_blindly_robust_gui_automation_via_action-effect_verification_and_self.md)
 - [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
-- [\[CVPR 2026\] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents](../../CVPR2026/llm_agent/hats_hardness-aware_trajectory_synthesis_for_gui_agents.md)
 
 </div>
 

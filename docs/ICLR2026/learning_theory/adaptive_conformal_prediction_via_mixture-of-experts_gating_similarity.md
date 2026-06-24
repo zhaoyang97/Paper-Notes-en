@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity
 description: >-
-  [ICLR 2026][learning_theory][Mixture-of-Experts] This paper proposes MoE-CP, which utilizes the gating probabilities of a Mixture-of-Experts (MoE) model as soft domain memberships. By weighting calibration residuals based on gating similarity, it allows prediction intervals to adaptively widen or narrow according to the noise and residual distributions of latent subg
+  [ICLR2026][Learning Theory][Conformal Prediction] This paper proposes MoE-CP, which utilizes the gating probabilities of a Mixture-of-Experts (MoE) model as soft domain memberships. By weighting calibration residuals based on gating similarity, it allows prediction intervals to adaptively widen or narrow according to the noise and residual distributions of latent subgroups while maintaining marginal coverage guarantees for conformal prediction.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Mixture-of-Experts
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Uncertainty Estimation"
+  - "Conformal Prediction"
+  - "Mixture-of-Experts"
+  - "Weighted Calibration"
+  - "Latent Domain Adaptation"
 date: 2026-05-08
-content_hash: 6c66ac08c9d770dd
+content_hash: 4cf5e94afa8d9267
 ---
+
 # Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity
 
 **Conference**: ICLR2026  
@@ -156,15 +161,16 @@ Experiments were conducted on synthetic data and two real datasets (Bike-sharing
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
 - [\[ICML 2026\] Enhancing Conformal Prediction via Class Similarity](../../ICML2026/learning_theory/enhancing_conformal_prediction_via_class_similarity.md)
+- [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
 - [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
+- [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
 - [\[ICLR 2026\] Softmax is not Enough (for Adaptive Conformal Classification)](softmax_is_not_enough_for_adaptive_conformal_classification.md)
-- [\[ICLR 2026\] Conformal Prediction with Corrupted Labels: Uncertain Imputation and Robust Re-weighting](conformal_prediction_with_corrupted_labels_uncertain_imputation_and_robust_re-we.md)
 
 </div>
 

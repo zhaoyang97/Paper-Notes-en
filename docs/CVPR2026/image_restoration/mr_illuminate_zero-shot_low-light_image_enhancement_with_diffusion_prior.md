@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior
 description: >-
-  [CVPR 2026][Image Restoration][AdaIN] MR. Illuminate utilizes a **completely frozen, zero-training, and zero-optimization** pre-trained diffusion model (SD v1.5) for low-light enhancement. It performs DDIM inversion on the input, applies AdaIN to align the statistics of the inverted latents with the standard normal distribution expected by the model for gl
+  [CVPR 2026][Image Restoration][Low-light enhancement] MR. Illuminate utilizes a **completely frozen, zero-training, and zero-optimization** pre-trained diffusion model (SD v1.5) for low-light enhancement. It performs DDIM inversion on the input, applies AdaIN to align the statistics of the inverted latents with the standard normal distribution expected by the model for global luminance/color correction (Modulate), and injects self-attention features recorded during inversion…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - AdaIN
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Low-light enhancement"
+  - "zero-shot"
+  - "diffusion prior"
+  - "AdaIN"
+  - "self-attention injection"
+  - "color constancy"
 date: 2026-05-08
-content_hash: 21ee6124e3863756
+content_hash: 4ee38c0c89bce5fc
 ---
+
 # MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior
 
 **Conference**: CVPR 2026  
@@ -140,8 +146,8 @@ Efficiency (A10, 400×600, min/GB):
 - Value: ⭐⭐⭐⭐⭐ Fast, zero-training, and dual-purpose (LLIE/AWB), making it highly attractive for practical deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -149,7 +155,7 @@ Efficiency (A10, 400×600, min/GB):
 - [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
 - [\[CVPR 2026\] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation](zero-shot_image_denoising_via_hybrid_prior-guided_pseudo_sample_generation.md)
 - [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
-- [\[CVPR 2026\] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration](self-supervised_dynamic_heterogeneous_degradation_modeling_for_unified_zero-shot.md)
+- [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
 
 </div>
 

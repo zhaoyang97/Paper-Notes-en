@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MRD: Multi-resolution Retrieval-Detection Fusion for High-Resolution Image Understanding
 description: >-
-  [CVPR 2026][Object Detection][training-free] Proposes MRD, a training-free multi-resolution retrieval-detection fusion framework that alleviates object fragmentation through multi-resolution semantic fusion and suppresses background interference with an open-vocabulary detector, significantly enhancing MLLM capabilities for high-resolution image understanding.
+  [CVPR2026][Object Detection][High-resolution image understanding] Proposes MRD, a training-free multi-resolution retrieval-detection fusion framework that alleviates object fragmentation through multi-resolution semantic fusion and suppresses background interference with an open-vocabulary detector, significantly enhancing MLLM capabilities for high-resolution image understanding.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - training-free
+  - "CVPR2026"
+  - "Object Detection"
+  - "High-resolution image understanding"
+  - "Multimodal Large Language Models (MLLM)"
+  - "Retrieval-Augmented Perception"
+  - "Open-vocabulary Detection"
+  - "Multi-resolution Fusion"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 4fc76e30914dd0b6
+content_hash: 7fda1d8d63599e98
 ---
+
 # MRD: Multi-resolution Retrieval-Detection Fusion for High-Resolution Image Understanding
 
 **Conference**: CVPR2026  
@@ -152,9 +158,9 @@ MRD is the first method to jointly model local semantic integrity and global spa
 
 - [\[CVPR 2026\] Toward Generalizable Whole Brain Representations with High-Resolution Light-Sheet Data](toward_generalizable_whole_brain_representations_with_high-resolution_light-shee.md)
 - [\[CVPR 2026\] Beyond Semantic Search: Towards Referential Anchoring in Composed Image Retrieval](beyond_semantic_search_towards_referential_anchoring_in_composed_image_retrieval.md)
+- [\[CVPR 2025\] Search and Detect: Training-Free Long Tail Object Detection via Web-Image Retrieval](../../CVPR2025/object_detection/search_and_detect_training-free_long_tail_object_detection_via_web-image_retriev.md)
+- [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
 - [\[CVPR 2026\] SFR-Net: Steering-Fusion-Refining Network in Multi-label Zero-Shot Sewer Defect Detection](sfr-net_steering-fusion-refining_network_in_multi-label_zero-shot_sewer_defect_d.md)
-- [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
-- [\[CVPR 2026\] Distribution-Aligned Multimodal Fusion for Robust Object Detection](distribution-aligned_multimodal_fusion_for_robust_object_detection.md)
 
 </div>
 

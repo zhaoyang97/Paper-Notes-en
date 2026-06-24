@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] The Confidence Trap: Gender Bias and Predictive Certainty in LLMs
 description: >-
-  [AAAI2026][LLM Safety][LLM Fairness] This paper proposes Gender-ECE, a metric for systematically evaluating the confidence calibration and alignment with human bias judgments of six open-source LLMs on gendered pronoun p…
+  [AAAI2026 Oral][LLM Safety][LLM Fairness] This paper proposes Gender-ECE, a metric for systematically evaluating the confidence calibration and alignment with human bias judgments of six open-source LLMs on gendered pronoun prediction tasks. The authors find that Gemma-2 exhibits the worst calibration and an extreme disparity between male and female pronoun calibration, whereas GPT-J-6B — trained on less filtered data — achieves the best calibration overall.
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "LLM Safety"
   - "LLM Fairness"
   - "Gender Bias"
@@ -13,7 +13,7 @@ tags:
   - "Coreference Resolution"
   - "Gender-ECE"
 date: 2026-05-08
-content_hash: d543ef5f80296992
+content_hash: 1b4a142fec603417
 ---
 
 # The Confidence Trap: Gender Bias and Predictive Certainty in LLMs
@@ -181,10 +181,10 @@ Scaling up the model improves calibration for male pronouns, but female pronoun 
 ## Related Papers
 
 - [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
-- [\[CVPR 2026\] Demographic Fairness in Multimodal LLMs: A Benchmark of Gender and Ethnicity Bias in Face Verification](../../CVPR2026/llm_safety/demographic_fairness_in_multimodal_llms_a_benchmark_of_gender_and_ethnicity_bias.md)
 - [\[NeurIPS 2025\] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks](../../NeurIPS2025/llm_safety/on_the_robustness_of_verbal_confidence_of_llms_in_adversarial_attacks.md)
-- [\[AAAI 2026\] Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach](uncovering_bias_paths_with_llm-guided_causal_discovery_an_active_learning_and_dy.md)
-- [\[AAAI 2026\] Can Editing LLMs Inject Harm?](can_editing_llms_inject_harm.md)
+- [\[ICLR 2026\] Bias Similarity Measurement: A Black-Box Audit of Fairness Across LLMs](../../ICLR2026/llm_safety/bias_similarity_measurement_a_black-box_audit_of_fairness_across_llms.md)
+- [\[AAAI 2026\] From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions](from_single_to_societal_analyzing_persona-induced_bias_in_multi-agent_interactio.md)
+- [\[ACL 2026\] ADVICE: Answer-Dependent Verbalized Confidence Estimation](../../ACL2026/llm_safety/advice_answer-dependent_verbalized_confidence_estimation.md)
 
 </div>
 

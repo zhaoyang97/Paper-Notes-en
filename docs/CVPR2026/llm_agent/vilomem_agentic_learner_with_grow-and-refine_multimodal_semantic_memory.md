@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ViLoMem: Agentic Learner with Grow-and-Refine Multimodal Semantic Memory
 description: >-
-  [CVPR 2026][LLM Agent][grow-and-refine] ViLoMem equips Multimodal Large Language Models (MLLMs) with a "visual stream + logic stream" dual-channel semantic memory. This allows the agent, upon failing a task, to **attribute, store, and retrieve** perception errors and reasoning errors separately. By using a grow-and-refine incremental update strategy to avoid
+  [CVPR 2026][LLM Agent][Multimodal Memory] ViLoMem equips Multimodal Large Language Models (MLLMs) with a "visual stream + logic stream" dual-channel semantic memory. This allows the agent, upon failing a task, to **attribute, store, and retrieve** perception errors and reasoning errors separately. By using a grow-and-refine incremental update strategy to avoid forgetting, it consistently improves pass@1 across six multimodal reasoning benchmarks and significantly reduces repe…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - grow-and-refine
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Multimodal Memory"
+  - "Agent Self-Improvement"
+  - "Visual Perception Errors"
+  - "Grow-and-Refine"
+  - "Lifelong Learning"
 date: 2026-05-08
-content_hash: 98f61c61b7843e3e
+content_hash: d60c292b1d1c1edb
 ---
+
 # ViLoMem: Agentic Learner with Grow-and-Refine Multimodal Semantic Memory
 
 **Conference**: CVPR 2026  
@@ -148,11 +153,11 @@ Removing either stream causes a drop, proving the two streams are complementary.
 
 ## Related Papers
 
-- [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
 - [\[ICML 2026\] HawkesLLM: Semantic Uncertainty Propagation in Agentic Text Simulation](../../ICML2026/llm_agent/hawkesllm_semantic_uncertainty_propagation_in_agentic_text_simulation.md)
 - [\[CVPR 2026\] Experience Transfer for Multimodal LLM Agents in Minecraft Game](experience_transfer_for_multimodal_llm_agents_in_minecraft_game.md)
-- [\[ECCV 2024\] VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding](../../ECCV2024/llm_agent/videoagent_a_memory-augmented_multimodal_agent_for_video_understanding.md)
+- [\[ICLR 2026\] Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory](../../ICLR2026/llm_agent/seeing_listening_remembering_and_reasoning_a_multimodal_agent_with_long-term_mem.md)
 - [\[CVPR 2026\] ReFAct: Empowering Multimodal Web Agents with Visual and Context Focusing](refact_empowering_multimodal_web_agents_with_visual_and_context_focusing.md)
+- [\[ECCV 2024\] VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding](../../ECCV2024/llm_agent/videoagent_a_memory-augmented_multimodal_agent_for_video_understanding.md)
 
 </div>
 

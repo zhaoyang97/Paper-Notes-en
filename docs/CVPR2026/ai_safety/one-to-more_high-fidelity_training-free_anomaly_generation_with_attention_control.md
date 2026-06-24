@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] O2MAG proposes a training-free few-shot anomaly generation method that synthesizes realistic anomalies from a single reference image via Tri-branch Attention Grafting (TriAG). Combined with Anomaly-Guided Optimization (AGO) to align text semantics and Dual Attention Enhancement (DAE) to ensure complete mask filling, it
+  [CVPR 2026][AI Safety][Anomaly Generation] O2MAG proposes a training-free few-shot anomaly generation method that synthesizes realistic anomalies from a single reference image via Tri-branch Attention Grafting (TriAG). Combined with Anomaly-Guided Optimization (AGO) to align text semantics and Dual Attention Enhancement (DAE) to ensure complete mask filling, it significantly outperforms existing methods in downstream MVTec-AD anomaly detection tasks.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Anomaly Generation"
+  - "Training-free/Fine-tuning-free"
+  - "Self-Attention Grafting"
+  - "Diffusion Models"
+  - "Industrial Anomaly Detection"
 date: 2026-05-08
-content_hash: 17e083763fcb0d63
+content_hash: 652755759ff520eb
 ---
+
 # One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control
 
 **Conference**: CVPR 2026  

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions
 description: >-
-  [NeurIPS 2025][LLM Safety][patient simulator] This paper introduces PatientSim — an LLM-based patient simulator grounded in real MIMIC clinical data and a four-dimensional persona framework (personality…
+  [NeurIPS 2025 Spotlight][Medical LLM][patient simulator] This paper introduces PatientSim — an LLM-based patient simulator grounded in real MIMIC clinical data and a four-dimensional persona framework (personality, language proficiency, medical history recall, and cognitive confusion), generating 37 unique persona combinations. The system is evaluated across 8 LLMs for factual accuracy and persona fidelity, and validated by 4 clinical experts with a mean quality score of 3.89…
 tags:
-  - "NeurIPS 2025"
-  - "LLM Safety"
+  - "NeurIPS 2025 Spotlight"
+  - "Medical LLM"
   - "patient simulator"
   - "LLM role-playing"
   - "doctor-patient dialogue"
   - "persona modeling"
   - "clinical education"
 date: 2026-05-08
-content_hash: 58ed0081bef68f00
+content_hash: bcfd729defe9c3d6
 ---
 
 # PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions
@@ -155,11 +155,11 @@ Four clinical experts evaluate PatientSim based on Llama-3.3-70B:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID](demo_guide-rag_evidence-driven_corpus_curation_for_retrieval-augmented_generatio.md)
-- [\[ACL 2026\] Query Pipeline Optimization for Cancer Patient Question Answering Systems](../../ACL2026/medical_nlp/query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)
+- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](../../ICLR2026/medical_nlp/doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 - [\[ICLR 2026\] From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents](../../ICLR2026/medical_nlp/from_conversation_to_query_execution_benchmarking_user_and_tool_interactions_for.md)
+- [\[ACL 2025\] Follow-up Question Generation for Enhanced Patient-Provider Conversations](../../ACL2025/medical_nlp/follow-up_question_generation_for_enhanced_patient-provider_conversations.md)
+- [\[NeurIPS 2025\] Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID](demo_guide-rag_evidence-driven_corpus_curation_for_retrieval-augmented_generatio.md)
 - [\[ICML 2026\] MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings](../../ICML2026/medical_nlp/medcase-structured_a_text-to-fhir_dataset_for_benchmarking_diagnostic_reasoning_.md)
-- [\[AAAI 2026\] A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment](../../AAAI2026/medical_nlp/a_principle-driven_adaptive_policy_for_group_cognitive_stimu.md)
 
 </div>
 

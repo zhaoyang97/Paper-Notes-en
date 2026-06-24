@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Electromagnetic Inverse Scattering from a Single Transmitter
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper reformulates the Electromagnetic Inverse Scattering Problem (EISP) from "per-sample physical optimization" to "end-to-end data-driven regression." By using an MLP to directly map received scattered fields and spatial coordinates to local relative permittivity, the method leverages data distribution priors le
+  [CVPR 2026][3D Vision][Electromagnetic inverse scattering] This paper reformulates the Electromagnetic Inverse Scattering Problem (EISP) from "per-sample physical optimization" to "end-to-end data-driven regression." By using an MLP to directly map received scattered fields and spatial coordinates to local relative permittivity, the method leverages data distribution priors learned from the training set to compensate for the information deficiency in sparse measurements. It a…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Electromagnetic inverse scattering"
+  - "Relative permittivity reconstruction"
+  - "Data-driven inversion"
+  - "Single transmitter"
+  - "Implicit neural representation"
 date: 2026-05-08
-content_hash: 0f3d79aa38c946f1
+content_hash: fd581e5c656e822a
 ---
+
 # Electromagnetic Inverse Scattering from a Single Transmitter
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Under multiple transmitters, the proposed method is optimal or on par with SOTA.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient Unrolled Networks for Large-Scale 3D Inverse Problems](efficient_unrolled_networks_for_large-scale_3d_inverse_problems.md)
-- [\[CVPR 2026\] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion](omnifood8k_nutrition_estimation.md)
-- [\[CVPR 2025\] TensoFlow: Tensorial Flow-based Sampler for Inverse Rendering](../../CVPR2025/others/tensoflow_tensorial_flow-based_sampler_for_inverse_rendering.md)
-- [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](../../ICLR2026/others/a_single_architecture_for_representing_invariance_under_any_space_group.md)
-- [\[CVPR 2025\] Towards In-the-Wild 3D Plane Reconstruction from a Single Image](../../CVPR2025/others/towards_in-the-wild_3d_plane_reconstruction_from_a_single_image.md)
+- [\[CVPR 2026\] MVInverse: Feed-forward Multiview Inverse Rendering in Seconds](mvinverse_feed-forward_multiview_inverse_rendering_in_seconds.md)
+- [\[ICLR 2026\] SSD-GS: Scattering and Shadow Decomposition for Relightable 3D Gaussian Splatting](../../ICLR2026/3d_vision/ssd-gs_scattering_and_shadow_decomposition_for_relightable_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
+- [\[CVPR 2026\] IR-HGP: Physically-Aware Gaussian Inverse Rendering for High-Illumination Scenes via Generative Priors](ir-hgp_physically-aware_gaussian_inverse_rendering_for_high-illumination_scenes_.md)
+- [\[ICLR 2026\] RadioGS: Radiometrically Consistent Gaussian Surfels for Inverse Rendering](../../ICLR2026/3d_vision/radiogs_radiometric_gaussian_surfels.md)
 
 </div>
 

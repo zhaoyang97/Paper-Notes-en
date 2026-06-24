@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] New Hybrid Fine-Tuning Paradigm for LLMs: Algorithm Design and Convergence Analysis Framework
 description: >-
-  [ICLR 2026][Optimization & Theory][PEFT] Ours proposes a "Hybrid Fine-Tuning" paradigm that updates the massive base LLM using zeroth-order optimization and lightweight PEFT modules using first-order gradients. A "Mixed Smoothness Condition" is introduced to address the vast disparity in parameter smoothness, providing the first optimal convergence guarantee
+  [ICLR 2026][Optimization][Hybrid Fine-Tuning] Ours proposes a "Hybrid Fine-Tuning" paradigm that updates the massive base LLM using zeroth-order optimization and lightweight PEFT modules using first-order gradients. A "Mixed Smoothness Condition" is introduced to address the vast disparity in parameter smoothness, providing the first optimal convergence guarantee for Random Reshuffling SGD under generalized smoothness with multiple learning rates.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - PEFT
+  - "ICLR 2026"
+  - "Optimization"
+  - "Hybrid Fine-Tuning"
+  - "Zeroth-Order Optimization"
+  - "First-Order Optimization"
+  - "PEFT"
+  - "Generalized Smoothness"
+  - "Random Reshuffling SGD"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: 77b94f7d781ba464
+content_hash: fd5172d459c50667
 ---
+
 # New Hybrid Fine-Tuning Paradigm for LLMs: Algorithm Design and Convergence Analysis Framework
 
 **Conference**: ICLR 2026  
@@ -113,8 +120,8 @@ Hybrid fine-tuning incurs almost no additional memory budget yet simultaneously 
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](../../ICML2026/optimization/learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
 - [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
 - [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
+- [\[ICLR 2026\] Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis](sobolev_gradient_ascent_for_optimal_transport_barycenter_optimization_and_conver.md)
 - [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
-- [\[ICLR 2026\] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning](arbitrary-order_block_signsgd_for_memory-efficient_llm_fine-tuning.md)
 
 </div>
 

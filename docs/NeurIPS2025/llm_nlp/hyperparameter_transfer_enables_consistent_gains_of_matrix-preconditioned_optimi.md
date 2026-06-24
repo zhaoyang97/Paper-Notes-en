@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales
 description: >-
-  [NEURIPS2025][LLM/NLP][optimizer scaling] This paper investigates the hyperparameter scaling rules for matrix-preconditioned optimizers (Shampoo/SOAP/Muon) with respect to model width and depth under the μP framework…
+  [NEURIPS2025][LLM (Other)][optimizer scaling] This paper investigates the hyperparameter scaling rules for matrix-preconditioned optimizers (Shampoo/SOAP/Muon) with respect to model width and depth under the μP framework, and demonstrates that correct hyperparameter scaling is the key to achieving consistent speedups. Using μP with $1/\text{width}$ weight decay, all three optimizers consistently achieve approximately $1.4\times$ speedup on Llama models ranging from 190M to 1.…
 tags:
   - "NEURIPS2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "optimizer scaling"
   - "μP"
   - "Shampoo"
@@ -14,7 +14,7 @@ tags:
   - "hyperparameter transfer"
   - "matrix preconditioning"
 date: 2026-05-08
-content_hash: f07bd395793ebeb6
+content_hash: 39bed5f4fdbaa8f3
 ---
 
 # Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales
@@ -124,10 +124,10 @@ Compute-equivalent comparisons on Llama models from 190M to 1.4B:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers](dont_be_lazy_completep_enables_compute-efficient_deep_transformers.md)
-- [\[ICLR 2026\] Weight Decay may matter more than μP for Learning Rate Transfer in Practice](../../ICLR2026/llm_nlp/weight_decay_may_matter_more_than_mup_for_learning_rate_transfer_in_practice.md)
-- [\[ACL 2026\] SteerEval: How Controllable Are Large Language Models? A Unified Evaluation across Behavioral Granularities](../../ACL2026/llm_nlp/how_controllable_are_large_language_models_a_unified_evaluation_across_behaviora.md)
-- [\[ICLR 2026\] Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator](../../ICLR2026/llm_nlp/evaluating_text_creativity_across_diverse_domains_a_dataset_and_large_language_m.md)
-- [\[NeurIPS 2025\] Breaking AR's Sampling Bottleneck: Provable Acceleration via Diffusion Language Models](breaking_ars_sampling_bottleneck_provable_acceleration_via_d.md)
+- [\[ACL 2025\] ExpeTrans: LLMs Are Experiential Transfer Learners](../../ACL2025/llm_nlp/expetrans_llms_are_experiential_transfer_learners.md)
+- [\[ACL 2025\] Systematic Generalization in Language Models Scales with Information Entropy](../../ACL2025/llm_nlp/systematic_generalization_in_language_models_scales_with_information_entropy.md)
+- [\[ACL 2025\] OPTS: Bandit-Based Prompt Design Strategy Selection Improves Prompt Optimizers](../../ACL2025/llm_nlp/bandit-based_prompt_design_strategy_selection_improves_prompt_optimizers.md)
+- [\[ACL 2025\] Geometric Signatures of Compositionality Across a Language Model's Lifetime](../../ACL2025/llm_nlp/geometric_compositionality_lifetime.md)
 
 </div>
 

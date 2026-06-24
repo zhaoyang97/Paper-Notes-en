@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment
 description: >-
-  [AAAI 2026][Incomplete multi-view clustering] This paper proposes DIMVC-HIA, a deep incomplete multi-view clustering framework that integrates hierarchical imputation with dual alignment. The method first imputes missing…
+  [AAAI 2026][Incomplete multi-view clustering] This paper proposes DIMVC-HIA, a deep incomplete multi-view clustering framework that integrates hierarchical imputation with dual alignment. The method first imputes missing cluster assignments and then imputes missing features in a coarse-to-fine manner, maintaining robust performance under high missing rates (up to 70%).
 tags:
   - "AAAI 2026"
   - "Incomplete multi-view clustering"
@@ -11,7 +11,7 @@ tags:
   - "contrastive alignment"
   - "missing views"
 date: 2026-05-08
-content_hash: d747a6b60a43ece2
+content_hash: 13f28e4b5aeb8b8a
 ---
 
 # Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment
@@ -191,9 +191,9 @@ Hyperparameter sensitivity analysis: Performance remains stable without signific
 
 - [\[NeurIPS 2025\] Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion](../../NeurIPS2025/others/incomplete_multi-view_clustering_via_hierarchical_semantic_alignment_and_coopera.md)
 - [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](hierarchical_semantic_alignment_for_image_clustering.md)
+- [\[ICLR 2026\] Aligning Collaborative View Recovery and Tensorial Subspace Learning via Latent Representation for Incomplete Multi-View Clustering](../../ICLR2026/others/aligning_collaborative_view_recovery_and_tensorial_subspace_learning_via_latent_.md)
+- [\[CVPR 2026\] Plug-and-Play Incomplete Multi-View Clustering via Janus-Faced Affinity Learning with Topology Harmonization](../../CVPR2026/others/plug-and-play_incomplete_multi-view_clustering_via_janus-faced_affinity_learning.md)
 - [\[AAAI 2026\] DECOR: Deep Embedding Clustering with Orientation Robustness](decor_deep_embedding_clustering_with_orientation_robustness.md)
-- [\[AAAI 2026\] Forget Less by Learning from Parents Through Hierarchical Relationships](forget_less_by_learning_from_parents_through_hierarchical_relationships.md)
-- [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
 
 </div>
 

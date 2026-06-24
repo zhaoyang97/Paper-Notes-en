@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?
 description: >-
-  [ACL 2026][LLM Reasoning][Self-Consistency] The authors split the 57 subjects of MMLU into two subsets—**symbolic reasoning** and **knowledge recall** (approx. 1:2)—using the "=="-heuristic from Sprague et al. based on academic disciplines. They empirically demonstrate that self-consistency (SC) is not only effective for symbolic reasoning—where CoT already exce
+  [ACL 2026][Reasoning][Self-Consistency] The authors split the 57 subjects of MMLU into two subsets—**symbolic reasoning** and **knowledge recall** (approx. 1:2)—using the "=="-heuristic from Sprague et al. based on academic disciplines. They empirically demonstrate that self-consistency (SC) is not only effective for symbolic reasoning—where CoT already excels—but also **consistently yields gains in knowledge recall** (+2.48 when $n=20$). This pushes the overall MMLU accuracy…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Self-Consistency
-  - Chain-of-Thought
-  - MMLU Split
-  - Knowledge Recall
-  - Symbolic Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Self-Consistency"
+  - "Chain-of-Thought"
+  - "MMLU Split"
+  - "Knowledge Recall"
+  - "Symbolic Reasoning"
 date: 2026-05-08
-content_hash: 8b0d2d20c932337c
+content_hash: 65797cfa2d13cd51
 ---
+
 # Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?
 
 **Conference**: ACL 2026  
@@ -138,11 +139,11 @@ The bulk of CoT improvements comes from reasoning (+14.93 vs +1.56), consistent 
 
 ## Related Papers
 
+- [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
 - [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
 - [\[ICML 2025\] Self-Consistency Preference Optimization](../../ICML2025/llm_reasoning/self-consistency_preference_optimization.md)
-- [\[ACL 2025\] Ranked Voting based Self-Consistency of Large Language Models](../../ACL2025/llm_reasoning/ranked_voting_based_self-consistency_of_large_language_models.md)
-- [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
 - [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
+- [\[ACL 2025\] Ranked Voting based Self-Consistency of Large Language Models](../../ACL2025/llm_reasoning/ranked_voting_based_self-consistency_of_large_language_models.md)
 
 </div>
 

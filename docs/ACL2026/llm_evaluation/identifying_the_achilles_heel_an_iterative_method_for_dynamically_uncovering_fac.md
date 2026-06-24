@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Identifying the Achilles' Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] HalluHunter is a fully automated LLM factual error testing framework based on Knowledge Graphs (KG). It extracts factual triples from Wikidata, generates three question types (Yes/No, Multiple Choice, and WH-questions) using rule-based methods, and supports multi-hop reasoning. Through an "adaptive iterative algorithm"
+  [ACL 2026 Findings][LLM Evaluation][Knowledge Graph testing] HalluHunter is a fully automated LLM factual error testing framework based on Knowledge Graphs (KG). It extracts factual triples from Wikidata, generates three question types (Yes/No, Multiple Choice, and WH-questions) using rule-based methods, and supports multi-hop reasoning. Through an "adaptive iterative algorithm" that selects the next batch of difficult questions based on entity similarity and relationship acc…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Knowledge Graph testing"
+  - "Factual error detection"
+  - "Adaptive question generation"
+  - "Multi-hop reasoning"
+  - "Data contamination"
 date: 2026-05-08
-content_hash: 7eb9bd85cf724992
+content_hash: e65a58a48c914f6a
 ---
+
 <!-- Generated automatically by src/gen_stubs.py -->
 # Identifying the Achilles' Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models
 
@@ -146,6 +152,7 @@ GPT-4o dropped from 84.4% to 65.8% in Humanity Yes/No and from 82.9% to 54.1% in
 - Value: ⭐⭐⭐⭐ (Open-source, avoids contamination, long-term utility for evaluation).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

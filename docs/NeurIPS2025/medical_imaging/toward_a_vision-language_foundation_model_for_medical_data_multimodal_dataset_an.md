@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation
 description: >-
-  [NeurIPS 2025][Medical Imaging][vision-language model] This work introduces ViMed-PET, the first Vietnamese PET/CT image-report dataset comprising 2…
+  [NeurIPS 2025][Medical Imaging][vision-language model] This work introduces ViMed-PET, the first Vietnamese PET/CT image-report dataset comprising 2,757 whole-body PET/CT volumes paired with complete clinical reports. Through a data augmentation strategy and a three-stage fine-tuning pipeline, the approach substantially improves VLM performance on medical report generation and VQA tasks. Novel evaluation metrics based on clinically critical information are also proposed.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "dataset"
   - "report generation"
 date: 2026-05-08
-content_hash: 1228fa0d65aca2f3
+content_hash: 8e67b48e2dfb7032
 ---
 
 # Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation
@@ -149,8 +149,8 @@ Conventional NLP metrics (BLEU, ROUGE) fail to capture clinical accuracy. Four c
 - [\[NeurIPS 2025\] Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens](brain_harmony_a_multimodal_foundation_model_unifying_morphology_and_function_int.md)
 - [\[NeurIPS 2025\] NeurIPT: Foundation Model for Neural Interfaces](neuript_foundation_model_for_neural_interfaces.md)
 - [\[NeurIPS 2025\] Magical: Medical Lay Language Generation via Semantic Invariance and Layperson-tailored Adaptation](magical_medical_lay_language_generation_via_semantic_invariance_and_layperson-ta.md)
-- [\[ICML 2026\] Foundation VAEs for 3D CT Reconstruction, Augmentation, and Generation](../../ICML2026/medical_imaging/foundation_vaes_for_3d_ct_reconstruction_augmentation_and_generation.md)
 - [\[NeurIPS 2025\] Mind the (Data) Gap: Evaluating Vision Systems in Small Data Applications](mind_the_data_gap_evaluating_vision_systems_in_small_data_applications.md)
+- [\[CVPR 2026\] PETAR: Localized Findings Generation with Mask-Aware Vision-Language Modeling for PET Automated Reporting](../../CVPR2026/medical_imaging/petar_localized_findings_generation_with_mask-aware_vision-language_modeling_for.md)
 
 </div>
 

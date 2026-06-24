@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] Ours proposes the Regularized Policy Gradient (RPG) framework, which systematically derives and analyzes policy gradient methods based on Forward/Reverse KL divergence (in both normalized and unnormalized forms). The study identifies a theoretical inconsistency in the KL term of GRPO and achieves superior results compa
+  [ICLR 2026][Reasoning][KL Regularization] Ours proposes the Regularized Policy Gradient (RPG) framework, which systematically derives and analyzes policy gradient methods based on Forward/Reverse KL divergence (in both normalized and unnormalized forms). The study identifies a theoretical inconsistency in the KL term of GRPO and achieves superior results compared to GRPO, REINFORCE++, and DAPO on mathematical reasoning tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
-  - REINFORCE
+  - "ICLR 2026"
+  - "Reasoning"
+  - "KL Regularization"
+  - "Policy Gradient"
+  - "LLM Reasoning"
+  - "GRPO"
+  - "REINFORCE"
 date: 2026-05-08
-content_hash: cf0d6033c76a72ad
+content_hash: 8d1dc1865a4aadfd
 ---
+
 # On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -153,8 +157,8 @@ Based on Qwen2.5-7B-Instruct, using DAPO-Math-17k (13.9k samples for the English
 ## Related Papers
 
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
-- [\[ICLR 2026\] ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 - [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
+- [\[ICLR 2026\] $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 - [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
 

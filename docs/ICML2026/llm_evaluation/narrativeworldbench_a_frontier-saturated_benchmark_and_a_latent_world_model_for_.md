@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] NarrativeWorldBench: A Frontier-Saturated Benchmark and a Latent World Model for Long-Horizon Co-Creative Audio Drama
 description: >-
-  [ICML 2026][LLM Evaluation][World Models] The authors developed NarrativeWorldBench, a nine-metric benchmark for testing structural consistency in "long-form serialized script continuation." They found that 21 frontier LLMs collectively hit a ceiling in Plot-Beat F1 between $[0.78,0.81]$, with performance dropping by $-0.20$ when the horizon extends to 200 epi
+  [ICML 2026][LLM Evaluation][Long-Horizon Narrativity] The authors developed NarrativeWorldBench, a nine-metric benchmark for testing structural consistency in "long-form serialized script continuation." They found that 21 frontier LLMs collectively hit a ceiling in Plot-Beat F1 between $[0.78,0.81]$, with performance dropping by $-0.20$ when the horizon extends to 200 episodes. To address this, they proposed N-VSSM, a world model utilizing Mamba-2 to maintain a 256-dimensiona…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - World Models
-  - Mamba-2
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Long-Horizon Narrativity"
+  - "Plot Beats"
+  - "World Models"
+  - "Mamba-2"
+  - "Cross-Cultural Localization"
 date: 2026-05-08
-content_hash: bfdd536665c1524f
+content_hash: b02688fb659d4fcb
 ---
+
 # NarrativeWorldBench: A Frontier-Saturated Benchmark and a Latent World Model for Long-Horizon Co-Creative Audio Drama
 
 **Conference**: ICML 2026  
@@ -149,11 +153,20 @@ In terms of compute, N-VSSM 8B requires 17 H100-seconds/ep, compared to ~72 seco
 - Value: ⭐⭐⭐⭐⭐ Identifies a scaling-resistant problem and provides open-source benchmarks/weights for the community.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] CubeBench: Diagnosing Interactive, Long-Horizon Spatial Reasoning under Partial Observations](../../ICLR2026/llm_evaluation/cubebench_diagnosing_interactive_long-horizon_physical_intelligence_under_partia.md)
+- [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
+- [\[ICLR 2026\] GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks](../../ICLR2026/llm_evaluation/gdpval_evaluating_ai_model_performance_on_real-world_economically_valuable_tasks.md)
+- [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Models](../../ICLR2026/llm_evaluation/prompt_and_parameter_co-optimization_for_large_language_models.md)
+- [\[ICML 2026\] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](bespoke_benchmark_for_search-augmented_large_language_model_personalization_via_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)

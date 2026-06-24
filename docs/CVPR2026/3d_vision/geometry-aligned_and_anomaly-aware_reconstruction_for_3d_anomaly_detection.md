@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Diffusion Model] AARD addresses two systematic weaknesses in diffusion-based point cloud anomaly detection: geometric destruction by random noise and blurred details from unified references. It proposes "Geometry Rectification" to align noise with vertex normals and an "Anomaly-Aware Transformer" to route normal references to anomalous
+  [CVPR 2026][3D Vision][3D Anomaly Detection] AARD addresses two systematic weaknesses in diffusion-based point cloud anomaly detection: geometric destruction by random noise and blurred details from unified references. It proposes "Geometry Rectification" to align noise with vertex normals and an "Anomaly-Aware Transformer" to route normal references to anomalous regions and input references to normal regions, setting new SOTA results on Real3D-AD (O-AUROC 0.82) and Anomaly-S…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Anomaly Detection"
+  - "Point Cloud Reconstruction"
+  - "Diffusion Model"
+  - "Geometry-Aligned Noise"
+  - "Anomaly-Aware Attention"
 date: 2026-05-08
-content_hash: c4a6bcde0d85ce9f
+content_hash: ab0f639a60d363dc
 ---
+
 # Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -166,11 +171,11 @@ Hyperparameter sensitivity (O-AUROC): optimal at grid size $g=4$ (0.931); optima
 
 ## Related Papers
 
-- [\[CVPR 2026\] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning](gs-clip_zero-shot_3d_anomaly_detection_by_geometry-aware_prompt_and_synergistic_.md)
-- [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
-- [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
-- [\[CVPR 2026\] Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection](target-aware_invertible_encoder_with_reconstruction_guidance_for_infrared_small_.md)
-- [\[CVPR 2026\] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
+- [\[CVPR 2026\] Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection](hierarchical_point-patch_fusion_with_adaptive_patch_codebook_for_3d_shape_anomal.md)
+- [\[ICCV 2025\] G2SF: Geometry-Guided Score Fusion for Multimodal Industrial Anomaly Detection](../../ICCV2025/3d_vision/g2sf_geometry-guided_score_fusion_for_multimodal_industrial_anomaly_detection.md)
+- [\[ICCV 2025\] SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark](../../ICCV2025/3d_vision/sim3d_single-instance_multiview_multimodal_and_multisetup_3d_anomaly_detection_b.md)
+- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
 
 </div>
 

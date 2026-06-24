@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models
 description: >-
-  [ICLR 2026][Earth Science][PEFT] For Weather Foundation Model (WFM) fine-tuning, this paper proposes WeatherPEFT: the forward pass uses Task-Adaptive Dynamic Prompting (TADP) to extract "variable × resolution × spatiotemporal" task features from encoder embedding weights to generate soft prompts, while the backward pass employs Stochastic Fisher-Guide
+  [ICLR 2026][Earth Science][Weather Foundation Models] For Weather Foundation Model (WFM) fine-tuning, this paper proposes WeatherPEFT: the forward pass uses Task-Adaptive Dynamic Prompting (TADP) to extract "variable × resolution × spatiotemporal" task features from encoder embedding weights to generate soft prompts, while the backward pass employs Stochastic Fisher-Guided Adaptive Selection (SFAS) to update only a small subset of parameters with the highest Fisher informatio…
 tags:
-  - ICLR 2026
-  - Earth Science
-  - PEFT
+  - "ICLR 2026"
+  - "Earth Science"
+  - "Weather Foundation Models"
+  - "PEFT"
+  - "task-adaptive prompt"
+  - "Fisher information"
+  - "parameter selection"
 date: 2026-05-08
-content_hash: 267b79de27c92826
+content_hash: be42a0b260ad586f
 ---
+
 # Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models
 
 **Conference**: ICLR 2026  
@@ -156,15 +161,16 @@ At ~4% budget, WeatherPEFT **outperforms** the 1.2B Full-Tuning across all preci
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology](tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
 - [\[ICML 2026\] Scaling Laws of Global Weather Models](../../ICML2026/earth_science/scaling_laws_of_global_weather_models.md)
 - [\[ICLR 2026\] The Seismic Wavefield Common Task Framework](the_seismic_wavefield_common_task_framework.md)
 - [\[ICLR 2026\] RainPro-8: An Efficient Deep Learning Model to Estimate Rainfall Probabilities Over 8 Hours](rainpro-8_an_efficient_deep_learning_model_to_estimate_rainfall_probabilities_ov.md)
 - [\[ICML 2026\] (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](../../ICML2026/earth_science/sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)
-- [\[NeurIPS 2025\] Adaptive Online Emulation for Accelerating Complex Physical Simulations](../../NeurIPS2025/earth_science/adaptive_online_emulation_for_accelerating_complex_physical_simulations.md)
 
 </div>
 

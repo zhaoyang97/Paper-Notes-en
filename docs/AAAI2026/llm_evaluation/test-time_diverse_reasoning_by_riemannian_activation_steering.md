@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Test-time Diverse Reasoning by Riemannian Activation Steering
 description: >-
-  [AAAI 2026][LLM Evaluation][Activation Steering] This paper proposes SPREAD, an unsupervised test-time activation steering framework that maximizes the total volume spanned by hidden activations across multiple reasoning…
+  [AAAI 2026][LLM Evaluation][Activation Steering] This paper proposes SPREAD, an unsupervised test-time activation steering framework that maximizes the total volume spanned by hidden activations across multiple reasoning paths by solving a Riemannian optimization problem on a product of spherical manifolds. SPREAD improves reasoning diversity and accuracy in Best-of-N sampling, outperforming temperature sampling baselines on mathematical reasoning benchmarks.
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -14,7 +14,7 @@ tags:
   - "Manifold Optimization"
   - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: a1a175885740a34f
+content_hash: 0af3da9c0f42a6c7
 ---
 
 # Test-time Diverse Reasoning by Riemannian Activation Steering
@@ -158,7 +158,7 @@ SPREAD substantially increases the number of unique solutions on AIME24 (e.g., 6
 - [\[ICML 2026\] Spherical Steering: Geometry-Aware Activation Rotation for Language Models](../../ICML2026/llm_evaluation/spherical_steering_geometry-aware_activation_rotation_for_language_models.md)
 - [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](optscale_probabilistic_optimality_for_inference-time_scaling.md)
 - [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
-- [\[ICCV 2025\] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP](../../ICCV2025/llm_evaluation/batclip_bimodal_online_test-time_adaptation_for_clip.md)
+- [\[ICLR 2026\] Towards Self-Evolving Agent Benchmarks: Validatable Agent Trajectory via Test-Time Exploration](../../ICLR2026/llm_evaluation/towards_self-evolving_agent_benchmarks_validatable_agent_trajectory_via_test-tim.md)
 
 </div>
 

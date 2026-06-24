@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][GRPO] The denoising process of diffusion/flow models is reinterpreted as a search tree—starting from shared noise, branching only within scheduled SDE windows, and reusing public prefixes for ODE steps. By backpropagating leaf rewards along the tree to derive per-edge advantages for GRPO updates, this method achieves 2.4× fa
+  [ICLR 2026][Image Generation][GRPO] The denoising process of diffusion/flow models is reinterpreted as a search tree—starting from shared noise, branching only within scheduled SDE windows, and reusing public prefixes for ODE steps. By backpropagating leaf rewards along the tree to derive per-edge advantages for GRPO updates, this method achieves 2.4× faster training under the same sampling budget and consistently outperforms DanceGRPO/MixGRPO on the efficiency-reward Pareto…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "Diffusion RL Post-training"
+  - "Tree Search"
+  - "Credit Assignment"
+  - "Sampling Efficiency"
 date: 2026-05-08
-content_hash: 35cb02b3ab37e4aa
+content_hash: 3ab0af378bf8ae49
 ---
+
 # TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -137,9 +142,8 @@ Sampling strategy ablation (Random window $r$): $r=0.5$ is most balanced. $r=0.3
 - Value: ⭐⭐⭐⭐⭐ 2.4× speedup and Pareto dominance provide a scalable and practical path for visual RL alignment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-...
-</div>
 
 ## Related Papers
 

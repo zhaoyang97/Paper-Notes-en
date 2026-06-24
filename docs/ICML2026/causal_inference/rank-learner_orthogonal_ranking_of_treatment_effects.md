@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rank-Learner: Orthogonal Ranking of Treatment Effects
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] The authors propose Rank-Learner, the first Neyman-orthogonal two-stage treatment effect **ranking** learner for observational data. By replacing the indirect "estimate CATE then rank" approach with pairwise soft labels and a doubly robust correction term, it consistently outperforms T/DR-learners and non-orthogonal pl
+  [ICML 2026][Causal Inference][Treatment Effect Ranking] The authors propose Rank-Learner, the first Neyman-orthogonal two-stage treatment effect **ranking** learner for observational data. By replacing the indirect "estimate CATE then rank" approach with pairwise soft labels and a doubly robust correction term, it consistently outperforms T/DR-learners and non-orthogonal plug-in rankers on synthetic, semi-synthetic, and Criteo uplift real-world datasets.
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML 2026"
+  - "Causal Inference"
+  - "Treatment Effect Ranking"
+  - "Neyman Orthogonality"
+  - "Two-stage Learner"
+  - "Doubly Robust"
+  - "Pairwise Loss"
 date: 2026-05-08
-content_hash: 4041d4f6f06977ee
+content_hash: 71c3c544df42dc3e
 ---
+
 # Rank-Learner: Orthogonal Ranking of Treatment Effects
 
 **Conference**: ICML 2026  
@@ -140,11 +146,11 @@ Semi-synthetic and Criteo real data (test AUTOC / AUUC×10³):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Overlap-Weighted Orthogonal Meta-Learner for Treatment Effect Estimation over Time](../../ICLR2026/causal_inference/overlap-weighted_orthogonal_meta-learner_for_treatment_effect_estimation_over_ti.md)
 - [\[ICLR 2026\] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes](../../ICLR2026/causal_inference/an_orthogonal_learner_for_individualized_outcomes_in_markov_decision_processes.md)
 - [\[AAAI 2026\] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](../../AAAI2026/causal_inference/learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)
+- [\[ICLR 2026\] GDR-learners: Orthogonal Learning of Generative Models for Potential Outcomes](../../ICLR2026/causal_inference/gdr-learners_orthogonal_learning_of_generative_models_for_potential_outcomes.md)
 - [\[AAAI 2026\] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](../../AAAI2026/causal_inference/causal_inference_under_threshold_manipulation_bayesian_mixtu.md)
-- [\[ICML 2026\] Evaluating Bivariate Causal Statements Based on Mutual Compatibility](evaluating_bivariate_causal_statements_based_on_mutual_compatibility.md)
-- [\[NeurIPS 2025\] Transferring Causal Effects using Proxies](../../NeurIPS2025/causal_inference/transferring_causal_effects_using_proxies.md)
 
 </div>
 

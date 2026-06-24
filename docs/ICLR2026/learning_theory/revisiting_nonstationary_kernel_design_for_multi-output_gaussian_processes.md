@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Revisiting Nonstationary Kernel Design for Multi-Output Gaussian Processes
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper revisits nonstationary kernel design for multi-output Gaussian processes (MOGPs) from the spectral domain. It proposes a more general multi-output spectral-kernel duality and constructs the MO-LRN kernel using a low-rank matrix-valued spectral density. This approach significantly improves performance in regr
+  [ICLR2026][Gaussian processes][Multi-output Gaussian processes] This paper revisits nonstationary kernel design for multi-output Gaussian processes (MOGPs) from the spectral domain. It proposes a more general multi-output spectral-kernel duality and constructs the MO-LRN kernel using a low-rank matrix-valued spectral density. This approach significantly improves performance in regression, interpolation, and missing data imputation while maintaining linear parameter scaling.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Gaussian processes"
+  - "probabilistic ML"
+  - "Multi-output Gaussian processes"
+  - "nonstationary kernels"
+  - "spectral-kernel duality"
+  - "low-rank spectral density"
+  - "uncertainty modeling"
 date: 2026-05-08
-content_hash: 1e043b756ad8c7f7
+content_hash: ba54ce142460fe64
 ---
+
 # Revisiting Nonstationary Kernel Design for Multi-Output Gaussian Processes
 
 **Conference**: ICLR2026  
@@ -145,8 +152,8 @@ The paper covers three experiment types: synthetic MOGP regression, ETT real-wor
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

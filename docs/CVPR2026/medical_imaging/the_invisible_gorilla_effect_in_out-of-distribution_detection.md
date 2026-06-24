@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Invisible Gorilla Effect in Out-of-distribution Detection
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Reveals a previously unreported bias in OOD detection—the "Invisible Gorilla Effect": detection performance is significantly better when OOD artifacts are visually similar to the model's region of interest (ROI) and drops drastically when they are dissimilar, particularly affecting feature-based OOD methods.
+  [CVPR 2026][Medical Imaging][OOD Detection] Reveals a previously unreported bias in OOD detection—the "Invisible Gorilla Effect": detection performance is significantly better when OOD artifacts are visually similar to the model's region of interest (ROI) and drops drastically when they are dissimilar, particularly affecting feature-based OOD methods.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "OOD Detection"
+  - "OOD Detection Bias"
+  - "Visual Similarity"
+  - "Medical Image Safety"
+  - "Feature Space Analysis"
 date: 2026-05-08
-content_hash: 49b3f91a501de8f5
+content_hash: 1e29070871172519
 ---
+
 # The Invisible Gorilla Effect in Out-of-distribution Detection
 
 **Conference**: CVPR 2026  
@@ -184,7 +190,7 @@ This paper is primarily analytical and does not propose a new training objective
 - [\[CVPR 2025\] OpenMIBOOD: Open Medical Imaging Benchmarks for Out-Of-Distribution Detection](../../CVPR2025/medical_imaging/openmibood_open_medical_imaging_benchmarks_for_out-of-distribution_detection.md)
 - [\[CVPR 2026\] KLIP: localized distribution shift detection via KL-divergence with diffusion priors in Inverse Problems](klip_localized_distribution_shift_detection_via_kl-divergence_with_diffusion_pri.md)
 - [\[CVPR 2026\] Breaking the Continuum: Discrete Distribution Learning for Structural MRI Reconstruction](breaking_the_continuum_discrete_distribution_learning_for_structural_mri_reconst.md)
-- [\[CVPR 2026\] Event-Level Detection of Surgical Instrument Handovers in Videos](event_level_detection_of_surgical_instrument_handovers_in_videos.md)
+- [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
 
 </div>
 

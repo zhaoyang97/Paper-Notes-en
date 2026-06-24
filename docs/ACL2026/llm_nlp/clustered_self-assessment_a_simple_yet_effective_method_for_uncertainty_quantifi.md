@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Clustered Self-Assessment: A Simple yet Effective Method for Uncertainty Quantification in Large Language Models
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes Clustered Self-Assessment: a method that first clusters multiple sampled LLM responses into mutually exclusive semantic options, and then prompts the same LLM to assign confidence scores to original answers via multiple-choice question (MCQ) probabilities. This approach yields superior AUROC and Bri
+  [ACL2026 Findings][LLM (Other)][LLM Calibration] This paper proposes Clustered Self-Assessment: a method that first clusters multiple sampled LLM responses into mutually exclusive semantic options, and then prompts the same LLM to assign confidence scores to original answers via multiple-choice question (MCQ) probabilities. This approach yields superior AUROC and Brier calibration performance over baselines like semantic entropy and $P(\text{True})$ on TQA, NQ, and XSum.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL2026 Findings"
+  - "LLM (Other)"
+  - "LLM Calibration"
+  - "Uncertainty Quantification"
+  - "Semantic Clustering"
+  - "Self-Assessment"
+  - "MCQ Reformulation"
 date: 2026-05-08
-content_hash: 4347d8f14e3a2a19
+content_hash: a919b3c8ec8cf00f
 ---
+
 # Clustered Self-Assessment: A Simple yet Effective Method for Uncertainty Quantification in Large Language Models
 
 **Conference**: ACL2026 Findings  
@@ -125,7 +131,7 @@ Calibration is measured by Brier score (lower is better). The method outperforms
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

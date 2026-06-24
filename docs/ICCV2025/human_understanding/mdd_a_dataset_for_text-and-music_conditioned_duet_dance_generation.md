@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MDD: A Dataset for Text-and-Music Conditioned Duet Dance Generation
 description: >-
-  [ICCV 2025][Human Understanding][duet dance generation] This paper introduces the Multimodal DuetDance (MDD) dataset — the first large-scale, professional-grade duet dance dataset simultaneously integrating motion, music…
+  [ICCV 2025][Human Understanding][duet dance generation] This paper introduces the Multimodal DuetDance (MDD) dataset — the first large-scale, professional-grade duet dance dataset simultaneously integrating motion, music, and text descriptions. MDD comprises 620 minutes of motion capture data spanning 15 dance styles and over 10K fine-grained text annotations, and defines two new tasks: Text-to-Duet and Text-to-Dance Accompaniment.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "motion capture"
   - "SMPL-X"
 date: 2026-05-08
-content_hash: a179ca7719f15987
+content_hash: aa2ac68f369e40c8
 ---
 
 # MDD: A Dataset for Text-and-Music Conditioned Duet Dance Generation
@@ -155,9 +155,9 @@ All baseline models are trained with the AdamW optimizer, batch size 64, for 3,0
 
 - [\[ICCV 2025\] HUMOTO: A 4D Dataset of Mocap Human Object Interactions](humoto_a_4d_dataset_of_mocap_human_object_interactions.md)
 - [\[ICCV 2025\] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation](genm3_generative_pretrained_multi-path_motion_model_for_text_conditional_human_m.md)
-- [\[ICCV 2025\] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras](udc-vit_a_real-world_video_dataset_for_under-display_cameras.md)
-- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](../../CVPR2026/human_understanding/next-scale_autoregressive_models_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation](../../CVPR2026/human_understanding/handdreamer_zero_shot_text_to_3d_hand_model_generation.md)
+- [\[CVPR 2025\] PersonaBooth: Personalized Text-to-Motion Generation](../../CVPR2025/human_understanding/personabooth_personalized_text-to-motion_generation.md)
+- [\[ICLR 2026\] CLUTCH: Contextualized Language model for Unlocking Text-Conditioned Hand motion modelling in the wild](../../ICLR2026/human_understanding/clutch_contextualized_language_model_for_unlocking_text-conditioned_hand_motion_.md)
+- [\[CVPR 2026\] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data](../../CVPR2026/human_understanding/opendance_multimodal_controllable_3d_dance_generation_with_large-scale_internet_.md)
 
 </div>
 

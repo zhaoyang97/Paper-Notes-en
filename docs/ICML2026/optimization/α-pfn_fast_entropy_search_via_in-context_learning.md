@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] $α$-PFN: Fast Entropy Search via In-Context Learning
 description: >-
-  [ICML 2026][Optimization & Theory][Prior-Fitted Networks] This paper "amortizes" information-theoretic acquisition functions like Entropy Search (ES) into a single forward pass using a two-stage Prior-data Fitted Network (PFN). It first trains a base PFN capable of making predictions conditioned on optimal point information, then trains an $α$-PFN that directly outputs the di
+  [ICML 2026][Optimization][Bayesian Optimization] This paper "amortizes" information-theoretic acquisition functions like Entropy Search (ES) into a single forward pass using a two-stage Prior-data Fitted Network (PFN). It first trains a base PFN capable of making predictions conditioned on optimal point information, then trains an $α$-PFN that directly outputs the distribution of information gain. This bypasses slow and complex Monte Carlo approximations…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Prior-Fitted Networks
-  - in-context learning
+  - "ICML 2026"
+  - "Optimization"
+  - "Bayesian Optimization"
+  - "Entropy Search"
+  - "Prior-Fitted Networks"
+  - "Acquisition Function Amortization"
+  - "in-context learning"
 date: 2026-05-08
-content_hash: 2a7f02392561e269
+content_hash: 867e42aa98609d6b
 ---
+
 # $α$-PFN: Fast Entropy Search via In-Context Learning
 
 **Conference**: ICML 2026  
@@ -142,11 +146,11 @@ Baselines include BoTorch implementations of JES, MES-GIBBON, and PES, plus EI a
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning Context-Conditioned Predicate Semantics via Prototype Feedback](learning_context-conditioned_predicate_semantics_via_prototype_feedback.md)
+- [\[ICLR 2026\] Local Entropy Search over Descent Sequences for Bayesian Optimization](../../ICLR2026/optimization/local_entropy_search_over_descent_sequences_for_bayesian_optimization.md)
 - [\[ICML 2026\] Test time training enhances in-context learning of nonlinear functions](test_time_training_enhances_in-context_learning_of_nonlinear_functions.md)
-- [\[NeurIPS 2025\] In Search of Adam's Secret Sauce](../../NeurIPS2025/optimization/in_search_of_adams_secret_sauce.md)
-- [\[ICML 2026\] ePC: Fast and Deep Predictive Coding in Digital Simulation](epc_fast_and_deep_predictive_coding_in_digital_simulation.md)
+- [\[ICML 2026\] Learning Context-Conditioned Predicate Semantics via Prototype Feedback](learning_context-conditioned_predicate_semantics_via_prototype_feedback.md)
 - [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](limuon_light_and_fast_muon_optimizer_for_large_models.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](../../ICLR2026/optimization/in-context_multi-objective_optimization.md)
 
 </div>
 

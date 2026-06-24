@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DISC: Dynamic Decomposition Improves LLM Inference Scaling
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Test-time compute] DISC proposes a dynamic decomposition algorithm that automatically and recursively adjusts the granularity of reasoning steps at inference time based on the z-score (norm…
+  [NeurIPS 2025][LLM Efficiency][Test-time compute] DISC proposes a dynamic decomposition algorithm that automatically and recursively adjusts the granularity of reasoning steps at inference time based on the z-score (normalized maximum of sampled rewards) at each step — decomposing difficult steps more finely while taking larger strides over easy ones. It can be plugged into greedy search, Beam Search, and MCTS, achieving higher pass@k with fewer token budgets on APPS, MATH…
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "inference-time scaling"
   - "reasoning efficiency"
 date: 2026-05-08
-content_hash: b113b2e4d900a217
+content_hash: 39ce218bde36138e
 ---
 
 # DISC: Dynamic Decomposition Improves LLM Inference Scaling
@@ -128,10 +128,10 @@ On the DeepSeek-R1 reasoning model: pass@10 improves 85% relative to the base mo
 ## Related Papers
 
 - [\[NeurIPS 2025\] Yggdrasil: Bridging Dynamic Speculation and Static Runtime for Latency-Optimal Tree-Based LLM Decoding](yggdrasil_bridging_dynamic_speculation_and_static_runtime_for_latency-optimal_tr.md)
+- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](../../ICLR2026/llm_efficiency/inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
 - [\[ICLR 2026\] When Does Divide and Conquer Work for Long Context LLM? A Noise Decomposition Framework](../../ICLR2026/llm_efficiency/when_does_divide_and_conquer_work_for_long_context_llm_a_noise_decomposition_fra.md)
+- [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](../../ICLR2026/llm_efficiency/dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
 - [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
-- [\[ICML 2026\] Ekka: Automated Diagnosis of Silent Errors in LLM Inference](../../ICML2026/llm_efficiency/ekka_automated_diagnosis_of_silent_errors_in_llm_inference.md)
-- [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](../../ICML2026/llm_efficiency/optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
 
 </div>
 

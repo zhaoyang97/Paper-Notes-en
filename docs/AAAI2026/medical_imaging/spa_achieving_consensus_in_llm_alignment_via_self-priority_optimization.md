@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization
 description: >-
-  [AAAI 2026][Medical Imaging][LLM alignment] This paper proposes Self-Priority Alignment (SPA), a fully unsupervised framework that enforces a strict "trustworthiness before helpfulness" priority ordering via lexicographi…
+  [AAAI 2026 Oral][Medical Imaging][LLM alignment] This paper proposes Self-Priority Alignment (SPA), a fully unsupervised framework that enforces a strict "trustworthiness before helpfulness" priority ordering via lexicographic optimization. The model self-generates diverse responses, self-evaluates, and self-improves; dual-criterion denoising constructs preference pairs; and an uncertainty-weighted SimPO loss fine-tunes the model, simultaneously improving safety and helpfulne…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Medical Imaging"
   - "LLM alignment"
   - "priority alignment"
@@ -13,7 +13,7 @@ tags:
   - "preference learning"
   - "safety"
 date: 2026-05-08
-content_hash: 7b9379330520d21a
+content_hash: 172b8f0dfbe2cb7d
 ---
 
 # SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization
@@ -188,10 +188,10 @@ The method is theoretically elegant (lexicographic optimization + Pareto frontie
 ## Related Papers
 
 - [\[AAAI 2026\] Self-supervised Multiplex Consensus Mamba for General Image Fusion](self-supervised_multiplex_consensus_mamba_for_general_image_fusion.md)
+- [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](../../CVPR2026/medical_imaging/sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](../../ICLR2026/medical_imaging/the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
 - [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
 - [\[AAAI 2026\] Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks](neural_bandit_based_optimal_llm_selection_for_a_pipeline_of_tasks.md)
-- [\[AAAI 2026\] TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning](taligndiff_automatic_tooth_alignment_assisted_by_diffusion-based_transformation_.md)
-- [\[ICLR 2026\] LaVCa: LLM-assisted Visual Cortex Captioning](../../ICLR2026/medical_imaging/lavca_llm-assisted_visual_cortex_captioning.md)
 
 </div>
 

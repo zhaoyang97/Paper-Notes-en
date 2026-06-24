@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D Test-time Adaptation via Graph Spectral Driven Point Shift
 description: >-
-  [ICCV 2025][3D Vision][Test-time adaptation] This paper proposes GSDTTA, which is the first work to shift 3D point cloud test-time adaptation (TTA) from the spatial domain to the graph spectral domain. By optimizing only…
+  [ICCV 2025][3D Vision][Test-time adaptation] This paper proposes GSDTTA, which is the first work to shift 3D point cloud test-time adaptation (TTA) from the spatial domain to the graph spectral domain. By optimizing only the lowest 10% frequency components (reducing parameters by ~90%), GSDTTA achieves global structural adjustment. Combined with a feature map guided self-training strategy for pseudo-label generation, it significantly outperforms existing 3D TTA methods on Mod…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "graph Fourier transform"
   - "feature map guided self-training"
 date: 2026-05-08
-content_hash: 1fb5bafd0a7795fd
+content_hash: 3af5bd6c92f7f464
 ---
 
 # 3D Test-time Adaptation via Graph Spectral Driven Point Shift
@@ -193,10 +193,10 @@ The unique advantages of GSDTTA are: (1) simultaneous adaptation of both input a
 ## Related Papers
 
 - [\[NeurIPS 2025\] PointMAC: Meta-Learned Adaptation for Robust Test-Time Point Cloud Completion](../../NeurIPS2025/3d_vision/pointmac_meta-learned_adaptation_for_robust_test-time_point_cloud_completion.md)
+- [\[ECCV 2024\] CloudFixer: Test-Time Adaptation for 3D Point Clouds via Diffusion-Guided Geometric Transformation](../../ECCV2024/3d_vision/cloudfixer_test-time_adaptation_for_3d_point_clouds_via_diffusion-guided_geometr.md)
 - [\[ICCV 2025\] FROSS: Faster-than-Real-Time Online 3D Semantic Scene Graph Generation from RGB-D Images](fross_faster-than-real-time_online_3d_semantic_scene_graph_generation_from_rgb-d.md)
-- [\[ICCV 2025\] Open-Vocabulary Octree-Graph for 3D Scene Understanding](open-vocabulary_octree-graph_for_3d_scene_understanding.md)
-- [\[ICCV 2025\] Event-Driven Storytelling with Multiple Lifelike Humans in a 3D Scene](event-driven_storytelling_with_multiple_lifelike_humans_in_a_3d_scene.md)
-- [\[AAAI 2026\] Adapt-As-You-Walk Through the Clouds: Training-Free Online Test-Time Adaptation of 3D Vision-Language Foundation Models](../../AAAI2026/3d_vision/adapt-as-you-walk_through_the_clouds_training-free_online_te.md)
+- [\[ECCV 2024\] Reliable Spatial-Temporal Voxels For Multi-Modal Test-Time Adaptation](../../ECCV2024/3d_vision/reliable_spatial-temporal_voxels_for_multi-modal_test-time_adaptation.md)
+- [\[CVPR 2026\] ELITE: Efficient Gaussian Head Avatar from a Monocular Video via Learned Initialization and Test-time Generative Adaptation](../../CVPR2026/3d_vision/elite_efficient_gaussian_head_avatar_from_a_monocular_video_via_learned_initiali.md)
 
 </div>
 

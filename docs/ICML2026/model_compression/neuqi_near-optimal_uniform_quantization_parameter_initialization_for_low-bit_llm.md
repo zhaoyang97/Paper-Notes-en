@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper points out that prevailing Post-Training Quantization (PTQ) methods all follow the Min-Max formula for initializing scale and zero-point. This legacy formula contains two long-overlooked constraints: "parameters determined by extreme values" and "zero-point must be an integer." The authors propose NeUQI, whi
+  [ICML 2026][Model Compression][Post-training quantization] This paper points out that prevailing Post-Training Quantization (PTQ) methods all follow the Min-Max formula for initializing scale and zero-point. This legacy formula contains two long-overlooked constraints: "parameters determined by extreme values" and "zero-point must be an integer." The authors propose NeUQI, which removes these constraints by analytically solving for the optimal zero-point given a scale and emp…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "uniform quantization"
+  - "quantization parameter initialization"
+  - "scale-zero point optimization"
+  - "LLM deployment"
 date: 2026-05-08
-content_hash: bf78eda337bc69b8
+content_hash: df483e2bd77f9c64
 ---
+
 # NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs
 
 **Conference**: ICML 2026  
@@ -139,10 +145,10 @@ Acceleration ablation (LLaMA-2 7B 2-bit, time for a single query projection laye
 ## Related Papers
 
 - [\[ICML 2026\] WUSH: Near-Optimal Adaptive Transforms for LLM Quantization](wush_near-optimal_adaptive_transforms_for_llm_quantization.md)
+- [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
 - [\[ICML 2026\] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs](lfq_logit-aware_final-block_quantization_for_boosting_the_generation_quality_of_.md)
-- [\[ICML 2026\] OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization](osaq_outlier_self-absorption_for_accurate_low-bit_llm_quantization.md)
-- [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
-- [\[AAAI 2026\] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization](../../AAAI2026/model_compression/specquant_spectral_decomposition_and_adaptive_truncation_for_ultra-low-bit_llms_.md)
+- [\[ICML 2026\] UniSVQ: 2-bit Unified Scalar-Vector Quantization](unisvq_2-bit_unified_scalar-vector_quantization.md)
+- [\[ICLR 2026\] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate](../../ICLR2026/model_compression/turboquant_online_vector_quantization_with_near-optimal_distortion_rate.md)
 
 </div>
 

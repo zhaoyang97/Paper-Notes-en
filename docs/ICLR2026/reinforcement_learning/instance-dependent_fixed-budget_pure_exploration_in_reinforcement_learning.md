@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Instance-Dependent Fixed-Budget Pure Exploration in Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][instance-dependent] This paper conducts the first study on the fixed-budget pure exploration problem in MDPs and proposes the BREA algorithm. By taking only the interaction budget $B$ as input, it provides an instance-dependent "$\epsilon$-uniform" failure probability upper bound (valid for all precision levels $\epsilon$ exceeding a budg
+  [ICLR 2026][Reinforcement Learning][fixed-budget] This paper conducts the first study on the fixed-budget pure exploration problem in MDPs and proposes the BREA algorithm. By taking only the interaction budget $B$ as input, it provides an instance-dependent "$\epsilon$-uniform" failure probability upper bound (valid for all precision levels $\epsilon$ exceeding a budget-related threshold), liberating policy identification from the PAC paradigm that requires pre-specifying pre…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - instance-dependent
-  - multiple bandit
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "fixed-budget"
+  - "pure exploration"
+  - "policy identification"
+  - "instance-dependent"
+  - "$\\epsilon$-uniform guarantee"
+  - "multiple bandit"
+  - "reward-free exploration"
 date: 2026-05-08
-content_hash: 7ef171bf5cd1f48b
+content_hash: 6e4cc1993d15874c
 ---
+
 # Instance-Dependent Fixed-Budget Pure Exploration in Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -109,8 +115,8 @@ flowchart TD
 - [\[ICLR 2026\] Q-Learning with Fine-Grained Gap-Dependent Regret](q-learning_with_fine-grained_gap-dependent_regret.md)
 - [\[ICLR 2026\] Instance-wise Adaptive Scheduling via Derivative-Free Meta-Learning](instance-wise_adaptive_scheduling_via_derivative-free_meta-learning.md)
 - [\[ICLR 2026\] Is Pure Exploitation Sufficient in Exogenous MDPs with Linear Function Approximation?](is_pure_exploitation_sufficient_in_exogenous_mdps_with_linear_function_approxima.md)
+- [\[ICLR 2026\] OPRIDE: Efficient Offline Preference Reinforcement Learning via In-Dataset Exploration](opride_efficient_offline_preference-based_reinforcement_learning_via_in-dataset_.md)
 - [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
-- [\[ICLR 2026\] Selective Expert Guidance for Effective and Diverse Exploration in Reinforcement Learning of LLMs](selective_expert_guidance_for_effective_and_diverse_exploration_in_reinforcement.md)
 
 </div>
 

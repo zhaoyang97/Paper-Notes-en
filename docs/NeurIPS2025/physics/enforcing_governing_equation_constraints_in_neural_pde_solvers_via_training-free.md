@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Neural PDE Solver] Two training-free post-processing projection methods are proposed—nonlinear LBFGS optimization and local linearization projection—to project the outputs o…
+  [NeurIPS 2025][Physics & Scientific Computing][Neural PDE Solver] Two training-free post-processing projection methods are proposed—nonlinear LBFGS optimization and local linearization projection—to project the outputs of neural PDE solvers onto the feasible manifold satisfying governing equation constraints. Evaluated on Lorenz/KS/Navier-Stokes, both methods substantially reduce constraint violations and improve accuracy, markedly outperforming physics-informed training.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Physical Consistency"
   - "Post-processing"
 date: 2026-05-08
-content_hash: c02e44ba2d315526
+content_hash: 881ab4cc3ea6572b
 ---
 
 # Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections
@@ -136,8 +136,8 @@ Cross-resolution results: KS and NS exhibit similar trends at resolutions of 128
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)
 - [\[AAAI 2026\] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations](../../AAAI2026/physics/physicscorrect_a_training-free_approach_for_stable_neural_pde_simulations.md)
 - [\[NeurIPS 2025\] INC: An Indirect Neural Corrector for Auto-Regressive Hybrid PDE Solvers](inc_an_indirect_neural_corrector_for_auto-regressive_hybrid_pde_solvers.md)
-- [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
 - [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](feat_free_energy_estimators_with_adaptive_transport.md)
+- [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
 
 </div>
 

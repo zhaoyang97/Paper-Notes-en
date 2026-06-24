@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] Lens constructs a unified distribution benchmark consisting of three levels and eight tasks ("Perception-Understanding-Reasoning") using the same set of 3.4K contemporary social media images paired with 60K+ human-annotated questions. It specifically quantifies the synergistic effect of low-level perception on high-lev
+  [ICLR 2026][VLM Reasoning][Multimodal Large Language Models] Lens constructs a unified distribution benchmark consisting of three levels and eight tasks ("Perception-Understanding-Reasoning") using the same set of 3.4K contemporary social media images paired with 60K+ human-annotated questions. It specifically quantifies the synergistic effect of low-level perception on high-level reasoning and proposes SMEC, a self-driven multi-expert collaboration framework without external…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Large Language Models"
+  - "Evaluation Benchmark"
+  - "Hierarchical Reasoning"
+  - "Perception-Understanding-Reasoning"
+  - "Multi-expert Collaboration"
 date: 2026-05-08
-content_hash: b5ce42c13eb93712
+content_hash: 4d020c174aa37b6d
 ---
+
 # LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models
 
 **Conference**: ICLR 2026  
@@ -117,9 +123,9 @@ None of the 15+ frontier models **exceed 60% on reasoning tasks**; VG (Visual Gr
 
 ## Related Papers
 
-- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
-- [\[ICLR 2026\] MIMIC-Bench: Exploring the User-Like Thinking and Mimicking Capabilities of Multimodal Large Language Models](mimic-bench_exploring_the_user-like_thinking_and_mimicking_capabilities_of_multi.md)
 - [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](../../ACL2026/vlm_reasoning/omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
+- [\[ICLR 2026\] MIMIC-Bench: Exploring the User-Like Thinking and Mimicking Capabilities of Multimodal Large Language Models](mimic-bench_exploring_the_user-like_thinking_and_mimicking_capabilities_of_multi.md)
 - [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
 - [\[ICLR 2026\] VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning](visuriddles_fine-grained_perception_is_a_primary_bottleneck_for_multimodal_large.md)
 

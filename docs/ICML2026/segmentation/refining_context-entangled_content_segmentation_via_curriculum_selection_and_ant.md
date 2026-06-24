@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Refining Context-Entangled Content Segmentation via Curriculum Selection and Anti-Curriculum Promotion
 description: >-
-  [ICML 2026][Segmentation][Paper Note] CurriSeg keeps the segmentation network architecture unchanged and modifies only the training schedule: it first pushes the model to a stable state using a robust curriculum based on "temporal loss statistics + pixel entropy weighting," and then performs anti-curriculum "spectral blindness" fine-tuning (removing high f
+  [ICML 2026][Segmentation][Camouflaged Object Segmentation] CurriSeg keeps the segmentation network architecture unchanged and modifies only the training schedule: it first pushes the model to a stable state using a robust curriculum based on "temporal loss statistics + pixel entropy weighting," and then performs anti-curriculum "spectral blindness" fine-tuning (removing high frequencies to force the model to capture structural semantics). This approach consistently improves F…
 tags:
-  - ICML 2026
-  - Segmentation
+  - "ICML 2026"
+  - "Segmentation"
+  - "Camouflaged Object Segmentation"
+  - "Curriculum Learning"
+  - "Anti-Curriculum Learning"
+  - "Frequency Domain Fine-tuning"
+  - "Sample Reliability"
 date: 2026-05-08
-content_hash: 7bbf4ffc79998fc3
+content_hash: 2826f47f8fbc5fae
 ---
+
 # Refining Context-Entangled Content Segmentation via Curriculum Selection and Anti-Curriculum Promotion
 
 **Conference**: ICML 2026  

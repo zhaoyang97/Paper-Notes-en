@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] KV-Tracker: Real-Time Pose Tracking with Transformers
 description: >-
-  [CVPR 2026][3D Vision][KV-cache] KV-Tracker transforms offline multi-view geometry large models (π3) into real-time systems: the Key-Value pairs calculated by keyframes during the global attention of the mapping phase are cached as a scene representation. During tracking, only a single-frame query is used to attend to this cache, reducing per-frame in
+  [CVPR 2026][3D Vision][Multi-view geometry] KV-Tracker transforms offline multi-view geometry large models (π3) into real-time systems: the Key-Value pairs calculated by keyframes during the global attention of the mapping phase are cached as a scene representation. During tracking, only a single-frame query is used to attend to this cache, reducing per-frame inference complexity from $O((NM)^2)$ to $O(M^2(N+1))$. It achieves drift-free 6-DoF camera and zero-prior object trac…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - KV-cache
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view geometry"
+  - "Real-time pose tracking"
+  - "KV-cache"
+  - "Online reconstruction"
+  - "Object tracking"
 date: 2026-05-08
-content_hash: 37c0f0f4799c5d9e
+content_hash: a2f5f6005aaf708a
 ---
+
 # KV-Tracker: Real-Time Pose Tracking with Transformers
 
 **Conference**: CVPR 2026  
@@ -166,11 +171,11 @@ Tested until 24GB VRAM was exhausted. This ablation confirms that "cache reuse" 
 
 ## Related Papers
 
-- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
-- [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
+- [\[CVPR 2026\] Tracking by Predicting 3-D Gaussians Over Time](tracking_by_predicting_3-d_gaussians_over_time.md)
+- [\[CVPR 2026\] Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation](tracking-guided_4d_generation_foundation-tracker_motion_priors_for_3d_model_anim.md)
 - [\[CVPR 2026\] AnthroTAP: Learning Point Tracking with Real-World Motion](anthrotap_learning_point_tracking_with_real-world_motion.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
 - [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
+- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
 
 </div>
 

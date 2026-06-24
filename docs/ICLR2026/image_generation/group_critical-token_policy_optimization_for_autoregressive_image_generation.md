@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Group Critical-token Policy Optimization for Autoregressive Image Generation
 description: >-
-  [ICLR 2026][Image Generation][GRPO] This paper proposes GCPO, which identifies truly "critical" tokens in autoregressive image generation from three perspectives: causal dependency, spatial structure of entropy gradients, and intra-group token diversity. By performing RLVR optimization on only 30% of these tokens with dynamic advantage weights, the metho
+  [ICLR 2026][Image Generation][Autoregressive Image Generation] This paper proposes GCPO, which identifies truly "critical" tokens in autoregressive image generation from three perspectives: causal dependency, spatial structure of entropy gradients, and intra-group token diversity. By performing RLVR optimization on only 30% of these tokens with dynamic advantage weights, the method outperforms GRPO applied to the entire token sequence.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - GRPO
-  - RLVR
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Autoregressive Image Generation"
+  - "GRPO"
+  - "RLVR"
+  - "Critical token"
+  - "token-wise optimization"
+  - "Text-to-Image"
 date: 2026-05-08
-content_hash: 3b72cfbe54855b94
+content_hash: 3cc1ba3e12b703a7
 ---
+
 # Group Critical-token Policy Optimization for Autoregressive Image Generation
 
 **Conference**: ICLR 2026  
@@ -119,15 +124,14 @@ The three critical token types are all essential; their union significantly outp
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] MaskFocus: Focusing Policy Optimization on Critical Steps for Masked Image Generation](../../CVPR2026/image_generation/maskfocus_focusing_policy_optimization_on_critical_steps_for_masked_image_genera.md)
-- [\[CVPR 2026\] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation](../../CVPR2026/image_generation/curriculum_group_policy_optimization_adaptive_sampling_for_unleashing_the_potent.md)
 - [\[ICLR 2026\] Hyperspherical Latents Improve Continuous-Token Autoregressive Generation](hyperspherical_latents_improve_continuous-token_autoregressive_generation.md)
-- [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
 - [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Preference Alignment of Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_preference_alignment_of_image_.md)
+- [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
+- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 
 </div>
 

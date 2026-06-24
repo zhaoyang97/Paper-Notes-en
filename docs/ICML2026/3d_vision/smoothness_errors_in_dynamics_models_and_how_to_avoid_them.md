@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Smoothness Errors in Dynamics Models and How to Avoid Them
 description: >-
-  [ICML 2026][3D Vision][GNN] The authors theoretically demonstrate that the "unitary GNN" by Kiani et al. over-constrains physical systems that are "naturally smoothing" (such as heat diffusion) by strictly maintaining the Rayleigh quotient. They propose "relaxed unitary convolutions" (R-UniGraph / R-UniMesh) and extend the entire Rayleigh quotien
+  [ICML 2026][3D Vision][GNN] The authors theoretically demonstrate that the "unitary GNN" by Kiani et al. over-constrains physical systems that are "naturally smoothing" (such as heat diffusion) by strictly maintaining the Rayleigh quotient. They propose "relaxed unitary convolutions" (R-UniGraph / R-UniMesh) and extend the entire Rayleigh quotient-unitary convolution framework from graphs to triangular meshes, outperforming several strong baselines on MeshPDE and WeatherBench…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - GNN
+  - "ICML 2026"
+  - "3D Vision"
+  - "GNN"
+  - "Mesh Learning"
+  - "Over-smoothing/Under-smoothing"
+  - "Unitary Convolution"
+  - "Rayleigh Quotient"
+  - "Weather Forecasting"
 date: 2026-05-08
-content_hash: a1467ac5896171bf
+content_hash: 8e80361de0a8fa9a
 ---
+
 # Smoothness Errors in Dynamics Models and How to Avoid Them
 
 **Conference**: ICML 2026  

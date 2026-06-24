@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Markovian Drifts: Action-Biased Geometric Walks with Memory for Personalized Summarization
 description: >-
-  [ICLR 2026][Recommender Systems][Paper Note] This paper proposes the "Structured Walk Hypothesis" (SWH) to challenge the prevailing "Markovian Drift Hypothesis" (MDH) in personalized summarization. It introduces Walk2Pers, a lightweight encoder-decoder model that characterizes user preference evolution as an action-biased geometric walk with dual memory channels,
+  [ICLR 2026][Recommender Systems][Personalized Summarization] This paper proposes the "Structured Walk Hypothesis" (SWH) to challenge the prevailing "Markovian Drift Hypothesis" (MDH) in personalized summarization. It introduces Walk2Pers, a lightweight encoder-decoder model that characterizes user preference evolution as an action-biased geometric walk with dual memory channels, decomposable into magnitude and orientation (continuity vs. novelty). It significantly outperforms…
 tags:
-  - ICLR 2026
-  - Recommender Systems
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "Personalized Summarization"
+  - "User Preference Modeling"
+  - "Geometric Random Walk"
+  - "Dual Memory Channels"
+  - "Action Conditioning"
 date: 2026-05-08
-content_hash: c5b6a955dd4a92b0
+content_hash: d2efb0e1208f7652
 ---
+
 # Beyond Markovian Drifts: Action-Biased Geometric Walks with Memory for Personalized Summarization
 
 **Conference**: ICLR 2026  

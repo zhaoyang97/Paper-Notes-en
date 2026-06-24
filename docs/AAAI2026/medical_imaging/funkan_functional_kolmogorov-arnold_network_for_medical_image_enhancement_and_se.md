@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Kolmogorov-Arnold Network] This paper generalizes the Kolmogorov-Arnold representation theorem from finite-dimensional scalar spaces to function spaces (Hilbert spaces)…
+  [AAAI 2026][Medical Imaging][Kolmogorov-Arnold Network] This paper generalizes the Kolmogorov-Arnold representation theorem from finite-dimensional scalar spaces to function spaces (Hilbert spaces), proposing the FunKAN framework. By learning inner functions via Fourier expansion over Hermite basis functions, the framework preserves the spatial structure of image data and outperforms existing KAN variants on MRI enhancement and three medical image segmentation tasks.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "MRI De-artifacting"
   - "Hermite Functions"
 date: 2026-05-08
-content_hash: d733d9194cd2795b
+content_hash: 51c75c036102a791
 ---
 
 # FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation
@@ -156,11 +156,11 @@ The default configuration 32→64→128 achieves the optimal balance between eff
 
 ## Related Papers
 
+- [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](../../CVPR2026/medical_imaging/pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
 - [\[AAAI 2026\] Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation](decoding_with_structured_awareness_integrating_directional_frequency-spatial_and.md)
 - [\[AAAI 2026\] Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation](ambiguity-aware_truncated_flow_matching_for_ambiguous_medica.md)
-- [\[AAAI 2026\] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation](dualfete_revisiting_teacher-student_interactions_from_a_feedback_perspective_for.md)
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
-- [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
+- [\[CVPR 2026\] From Infusion to Assimilation Distillation for Medical Image Segmentation](../../CVPR2026/medical_imaging/from_infusion_to_assimilation_distillation_for_medical_image_segmentation.md)
 
 </div>
 

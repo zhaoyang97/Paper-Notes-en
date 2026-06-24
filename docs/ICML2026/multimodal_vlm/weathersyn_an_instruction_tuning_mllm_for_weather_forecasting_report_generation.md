@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation
 description: >-
-  [ICML 2026][Multimodal VLM][aspect-controlled prompting] WeatherSyn decomposes the weather forecaster's report writing process into a multimodal instruction task of "observe images → list key points → produce draft." The authors first constructed the WSInstruct dataset, covering 31 US cities and 8 types of weather elements. Subsequently, a three-stage fine-tuning process (SF
+  [ICML 2026][Multimodal VLM][Weather Forecasting Report] WeatherSyn decomposes the weather forecaster's report writing process into a multimodal instruction task of "observe images → list key points → produce draft." The authors first constructed the WSInstruct dataset, covering 31 US cities and 8 types of weather elements. Subsequently, a three-stage fine-tuning process (SFT→RFT→DPO) was applied to Qwen3-VL-8B. The results demonstrate that an 8B open-source model consistently…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - aspect-controlled prompting
-  - RFT
-  - DPO
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Weather Forecasting Report"
+  - "Instruction Tuning"
+  - "aspect-controlled prompting"
+  - "RFT"
+  - "DPO"
 date: 2026-05-08
-content_hash: 5f3fd75ea2a42d7b
+content_hash: f669f7d080361f23
 ---
+
 # WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation
 
 **Conference**: ICML 2026  
@@ -153,10 +156,10 @@ Weighted F1 across 8 aspects (partial): WeatherSyn-DPO shows significant gains (
 ## Related Papers
 
 - [\[ACL 2025\] MEIT: Multimodal Electrocardiogram Instruction Tuning on Large Language Models for Report Generation](../../ACL2025/multimodal_vlm/meit_multimodal_electrocardiogram_instruction_tuning_on_large_language_models_fo.md)
-- [\[ICML 2026\] Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging](decentralized_instruction_tuning_conflict-aware_splitting_and_weight_merging.md)
 - [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](../../ICCV2025/multimodal_vlm/metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
+- [\[ICML 2026\] Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging](decentralized_instruction_tuning_conflict-aware_splitting_and_weight_merging.md)
+- [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](../../ICLR2026/multimodal_vlm/omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
 - [\[CVPR 2026\] Streaming Video Instruction Tuning (Streamo)](../../CVPR2026/multimodal_vlm/streaming_video_instruction_tuning.md)
-- [\[ICML 2026\] RESTORE: 通过矫正失真改进视觉 Token 缩减以提升 MLLM 推理效率](improving_visual_token_reduction_via_rectifying_distortions_for_efficient_multim.md)
 
 </div>
 

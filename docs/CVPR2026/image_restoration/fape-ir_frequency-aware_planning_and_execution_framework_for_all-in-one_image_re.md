@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][LoRA-MoE] FAPE-IR utilizes a frozen multimodal large language model (Qwen2.5-VL) as a "planner" to interpret degraded images and generate frequency-aware restoration plans. An execution stage utilizing a LoRA-MoE within a diffusion framework dynamically schedules high- and low-frequency experts based on these plans. Combined wit
+  [CVPR 2026][Image Restoration][All-in-One Image Restoration] FAPE-IR utilizes a frozen multimodal large language model (Qwen2.5-VL) as a "planner" to interpret degraded images and generate frequency-aware restoration plans. An execution stage utilizing a LoRA-MoE within a diffusion framework dynamically schedules high- and low-frequency experts based on these plans. Combined with adversarial training and frequency regularization, the method achieves SOTA performance across se…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - LoRA-MoE
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "All-in-One Image Restoration"
+  - "Frequency-Aware"
+  - "MLLM Planner"
+  - "LoRA-MoE"
+  - "Diffusion Model"
 date: 2026-05-08
-content_hash: 64004c546b3d2996
+content_hash: fbd50b765f21f023
 ---
+
 # FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration
 
 **Conference**: CVPR 2026  
@@ -149,11 +153,11 @@ Mini-ablation on URHI (low-frequency/haze dominant) at 10K steps:
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
 - [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
+- [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
 - [\[CVPR 2026\] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
 - [\[CVPR 2025\] Degradation-Aware Feature Perturbation for All-in-One Image Restoration](../../CVPR2025/image_restoration/degradation-aware_feature_perturbation_for_all-in-one_image_restoration.md)
+- [\[ICLR 2026\] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration](../../ICLR2026/image_restoration/learning_domain-aware_task_prompt_representations_for_multi-domain_all-in-one_im.md)
 
 </div>
 

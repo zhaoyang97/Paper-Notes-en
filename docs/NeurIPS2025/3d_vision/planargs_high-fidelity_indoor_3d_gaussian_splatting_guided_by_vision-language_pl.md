@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PlanarGS: High-Fidelity Indoor 3D Gaussian Splatting Guided by Vision-Language Planar Priors
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] PlanarGS detects planar regions via a vision-language foundation model (GroundedSAM) with text prompts, combines multi-view depth priors from DUSt3R…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] PlanarGS detects planar regions via a vision-language foundation model (GroundedSAM) with text prompts, combines multi-view depth priors from DUSt3R, and optimizes 3DGS through coplanarity constraints and geometric prior supervision to achieve high-fidelity surface reconstruction in indoor scenes.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Vision-Language Models"
   - "DUSt3R"
 date: 2026-05-08
-content_hash: bad283abe9b5cdea
+content_hash: 1b1c7cd6b378ee0e
 ---
 
 # PlanarGS: High-Fidelity Indoor 3D Gaussian Splatting Guided by Vision-Language Planar Priors
@@ -140,10 +140,10 @@ $\lambda_1=0.05, \lambda_2=0.5, \lambda_3=0.05, \lambda_4=0.2$. Training runs fo
 ## Related Papers
 
 - [\[ICCV 2025\] AutoOcc: Automatic Open-Ended Semantic Occupancy Annotation via Vision-Language Guided Gaussian Splatting](../../ICCV2025/3d_vision/autoocc_automatic_openended_semantic_occupancy_annotation_vi.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](../../CVPR2026/3d_vision/3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
 - [\[NeurIPS 2025\] LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS](langsplatv2_high-dimensional_3d_language_gaussian_splatting_with_450_fps.md)
-- [\[ICCV 2025\] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting](../../ICCV2025/3d_vision/gazegaussian_high-fidelity_gaze_redirection_with_3d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] Plana3R: Zero-shot Metric Planar 3D Reconstruction via Feed-Forward Planar Splatting](plana3r_zero-shot_metric_planar_3d_reconstruction_via_feed-forward_planar_splatt.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](../../CVPR2026/3d_vision/3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[ICCV 2025\] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting](../../ICCV2025/3d_vision/gazegaussian_high-fidelity_gaze_redirection_with_3d_gaussian_splatting.md)
 
 </div>
 

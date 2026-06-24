@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Always Skip Attention
 description: >-
-  [ICCV 2025][Self-Supervised Learning][self-attention] This paper theoretically demonstrates that the self-attention mechanism in Vision Transformers is inherently ill-conditioned…
+  [ICCV 2025][Self-Supervised Learning][self-attention] This paper theoretically demonstrates that the self-attention mechanism in Vision Transformers is inherently ill-conditioned, leading to training collapse in the absence of skip connections. It further proposes Token Graying (TG), a method that improves the condition number of input tokens to enhance ViT training stability and performance.
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -13,7 +13,7 @@ tags:
   - "token graying"
   - "Vision Transformer"
 date: 2026-05-08
-content_hash: 48460315b2e08e43
+content_hash: 07f4d86628f95c32
 ---
 
 # Always Skip Attention

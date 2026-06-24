@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Supercharging Floorplan Localization with Semantic Rays
 description: >-
-  [ICCV 2025][LLM Evaluation][Indoor Localization] A semantics-aware floorplan localization framework is proposed that fuses predicted semantic rays with depth rays into a structural-semantic probability volume. Combined w…
+  [ICCV 2025][LLM Evaluation][Indoor Localization] A semantics-aware floorplan localization framework is proposed that fuses predicted semantic rays with depth rays into a structural-semantic probability volume. Combined with a coarse-to-fine refinement strategy, the method achieves 2–3× performance improvements on two standard benchmarks.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Probability Volume"
   - "Coarse-to-Fine"
 date: 2026-05-08
-content_hash: e0eedc094dd98d35
+content_hash: d3433695ccc5e1d8
 ---
 
 # Supercharging Floorplan Localization with Semantic Rays
@@ -143,10 +143,10 @@ Component contributions analyzed on S3D:
 ## Related Papers
 
 - [\[ICLR 2026\] vCache: Verified Semantic Prompt Caching](../../ICLR2026/llm_evaluation/vcache_verified_semantic_prompt_caching.md)
-- [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](../../NeurIPS2025/llm_evaluation/efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
-- [\[ACL 2026\] Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models](../../ACL2026/llm_evaluation/revisiting_a_pain_in_the_neck_a_semantic_reasoning_benchmark_for_language_models.md)
 - [\[ACL 2026\] LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control](../../ACL2026/llm_evaluation/locar_localization-aware_evaluation_of_in-vehicle_assistants_through_fine-graine.md)
-- [\[ICLR 2026\] AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size](../../ICLR2026/llm_evaluation/adablock-dllm_semantic-aware_diffusion_llm_inference_via_adaptive_block_size.md)
+- [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](../../NeurIPS2025/llm_evaluation/efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
+- [\[ICLR 2026\] Contamination Detection for VLMs Using Multi-Modal Semantic Perturbations](../../ICLR2026/llm_evaluation/contamination_detection_for_vlms_using_multimodal_semantic_perturbations.md)
+- [\[ACL 2026\] Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models](../../ACL2026/llm_evaluation/revisiting_a_pain_in_the_neck_a_semantic_reasoning_benchmark_for_language_models.md)
 
 </div>
 

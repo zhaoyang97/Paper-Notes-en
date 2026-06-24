@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering
 description: >-
-  [ACL 2026][NLP Understanding][RST] This paper leverages Rhetorical Structure Theory (RST) to parse the discourse organization of long documents, constructing a sentence-level hierarchical tree with intermediate nodes enhanced by LLM summarization. By performing structure-aware multi-granularity retrieval on this tree, the proposed method consistently ou
+  [ACL 2026][NLP Understanding][Long Document Question Answering] This paper leverages Rhetorical Structure Theory (RST) to parse the discourse organization of long documents, constructing a sentence-level hierarchical tree with intermediate nodes enhanced by LLM summarization. By performing structure-aware multi-granularity retrieval on this tree, the proposed method consistently outperforms fixed-size chunking and RAPTOR-style semantic clustering across four benchmarks: QASPE…
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - RST
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Long Document Question Answering"
+  - "Rhetorical Structure Theory (RST)"
+  - "Hierarchical Retrieval"
+  - "Cross-lingual"
 date: 2026-05-08
-content_hash: 411dde475b920542
+content_hash: c9b247c6d8381379
 ---
+
 # Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering
 
 **Conference**: ACL 2026  
@@ -148,9 +152,9 @@ Bisection shares the LLM enhancement and hierarchical retrieval mechanism but re
 ## Related Papers
 
 - [\[ACL 2026\] HCRE: LLM-based Hierarchical Classification for Cross-Document Relation Extraction](hcre_llm-based_hierarchical_classification_for_cross-document_relation_extractio.md)
-- [\[ACL 2026\] It's High Time: A Survey of Temporal Question Answering](it39s_high_time_a_survey_of_temporal_question_answering.md)
-- [\[ACL 2026\] ASTRA: Adaptive Semantic Tree Reasoning Architecture for Complex Table Question Answering](astra_adaptive_semantic_tree_reasoning_architecture_for_complex_table_question_a.md)
 - [\[ACL 2026\] Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation](knowledge-driven_augmentation_and_retrieval_for_integrative_temporal_adaptation.md)
+- [\[ACL 2026\] It's High Time: A Survey of Temporal Question Answering](it39s_high_time_a_survey_of_temporal_question_answering.md)
+- [\[ACL 2025\] Beyond Prompting: An Efficient Embedding Framework for Open-Domain Question Answering](../../ACL2025/nlp_understanding/embqa_embedding_odqa.md)
 - [\[ACL 2026\] Table Question Answering in the Era of Large Language Models: A Comprehensive Survey](table_question_answering_in_the_era_of_large_language_models_a_comprehensive_sur.md)
 
 </div>

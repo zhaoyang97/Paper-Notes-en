@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling by Diversified Experience for Vision-Language-Action Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Flow Matching] SyVLA utilizes a dual-system architecture comprising a "VLM + Flow Matching Action Expert + Feature Query Token" for "think-before-act" robotic control. It incorporates two core designs: an **intention decoupling** algorithm based on gradient norm masking (stripping high-level reasoning from control intent) and **simil
+  [ICML 2026][Robotics][Vision-Language-Action Models] SyVLA utilizes a dual-system architecture comprising a "VLM + Flow Matching Action Expert + Feature Query Token" for "think-before-act" robotic control. It incorporates two core designs: an **intention decoupling** algorithm based on gradient norm masking (stripping high-level reasoning from control intent) and **similar-sample guided RL** (fixing expert sample advantage at 1.0 to stabilize real-world online RL). Using less…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "ICML 2026"
+  - "Robotics"
+  - "Vision-Language-Action Models"
+  - "Intention Decoupling"
+  - "Real-world RL"
+  - "Catastrophic Forgetting"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 79864fa6d8bfe61b
+content_hash: 8c269a668df68b37
 ---
+
 # Scaling by Diversified Experience for Vision-Language-Action Models
 
 **Conference**: ICML 2026  
@@ -164,9 +169,9 @@ Reported as average success rate on Task 1 (shirt folding, the most challenging 
 
 - [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
 - [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
+- [\[ICLR 2026\] Scaling up Memory for Robotic Control via Experience Retrieval](../../ICLR2026/robotics/scaling_up_memory_for_robotic_control_via_experience_retrieval.md)
 - [\[ICML 2026\] StableVLA: Towards Robust Vision-Language-Action Models without Extra Data](stablevla_towards_robust_vision-language-action_models_without_extra_data.md)
 - [\[ICML 2026\] Test-Time Training for Visual Foresight Vision-Language-Action Models](test-time_training_for_visual_foresight_vision-language-action_models.md)
-- [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](../../CVPR2026/robotics/moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
 
 </div>
 

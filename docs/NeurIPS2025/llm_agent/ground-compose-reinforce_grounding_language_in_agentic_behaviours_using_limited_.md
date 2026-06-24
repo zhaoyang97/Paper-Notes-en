@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ground-Compose-Reinforce: Grounding Language in Agentic Behaviours using Limited Data
 description: >-
-  [NeurIPS 2025][LLM Agent][Language Grounding] This paper proposes Ground-Compose-Reinforce (GCR), an end-to-end neuro-symbolic framework that learns the grounding semantics of atomic propositions from a small number of a…
+  [NeurIPS 2025][LLM Agent][Language Grounding] This paper proposes Ground-Compose-Reinforce (GCR), an end-to-end neuro-symbolic framework that learns the grounding semantics of atomic propositions from a small number of annotated trajectories (only 350), composes them into complex task specifications via Reward Machines, and trains an RL agent using self-generated dense rewards — eliciting out-of-distribution complex behaviours without any hand-crafted reward functions.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Neuro-Symbolic"
   - "Reward Shaping"
 date: 2026-05-08
-content_hash: 720630bf4b2e35e0
+content_hash: bf2b06adf7b3cf63
 ---
 
 # Ground-Compose-Reinforce: Grounding Language in Agentic Behaviours using Limited Data
@@ -138,11 +138,11 @@ GCR consists of two phases: pre-training and behaviour elicitation.
 
 ## Related Papers
 
+- [\[ACL 2025\] AndroidGen: Building an Android Language Agent under Data Scarcity](../../ACL2025/llm_agent/androidgen_agent_data_scarcity.md)
 - [\[NeurIPS 2025\] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers](lc-opt_benchmarking_reinforcement_learning_and_agentic_ai_for_end-to-end_liquid_.md)
-- [\[NeurIPS 2025\] Enhancing Demand-Oriented Regionalization with Agentic AI and Local Heterogeneous Data for Adaptation Planning](enhancing_demand-oriented_regionalization_with_agentic_ai_and_local_heterogeneou.md)
 - [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](../../CVPR2026/llm_agent/towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
-- [\[NeurIPS 2025\] What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects](what_ai_speaks_for_your_community_polling_ai_agents_for_public_opinion_on_data_c.md)
-- [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
+- [\[NeurIPS 2025\] Enhancing Demand-Oriented Regionalization with Agentic AI and Local Heterogeneous Data for Adaptation Planning](enhancing_demand-oriented_regionalization_with_agentic_ai_and_local_heterogeneou.md)
+- [\[ICLR 2026\] CoDA: Agentic Systems for Collaborative Data Visualization](../../ICLR2026/llm_agent/coda_agentic_systems_for_collaborative_data_visualization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Whatever Remains Must Be True: Filtering Drives Reasoning in LLMs, Shaping Diversity
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] The DMVR framework and α-DPG algorithm are proposed by explicitly defining a target distribution that "filters out incorrect answers" and approximating it via the α-divergence family. This approach unifies RLVR (Reverse KL) and Rejection Sampling Fine-Tuning (Forward KL), achieving optimal performance on the precision-
+  [ICLR 2026][Reasoning][α-divergence] The DMVR framework and α-DPG algorithm are proposed by explicitly defining a target distribution that "filters out incorrect answers" and approximating it via the α-divergence family. This approach unifies RLVR (Reverse KL) and Rejection Sampling Fine-Tuning (Forward KL), achieving optimal performance on the precision-coverage Pareto frontier in Lean theorem proving.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "α-divergence"
+  - "Distributional Matching"
+  - "RLVR"
+  - "Diversity Preservation"
+  - "Theorem Proving"
 date: 2026-05-08
-content_hash: 2296f78aa8a62bc9
+content_hash: a7d7034219bc502a
 ---
+
 # Whatever Remains Must Be True: Filtering Drives Reasoning in LLMs, Shaping Diversity
 
 **Conference**: ICLR 2026  
@@ -138,6 +143,7 @@ Pass@k results on the Lean theorem proving task (10K training, 200 test problems
 - Value: ⭐⭐⭐⭐⭐ Provides both a theoretical framework and a practical solution for a core problem in LLM post-training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -145,8 +151,8 @@ Pass@k results on the Lean theorem proving task (10K training, 200 test problems
 - [\[ICLR 2026\] Diversity-Enhanced Reasoning for Subjective Questions](diversity-enhanced_reasoning_for_subjective_questions.md)
 - [\[ICLR 2026\] FROST: Filtering Reasoning Outliers with Attention for Efficient Reasoning](frost_filtering_reasoning_outliers_with_attention_for_efficient_reasoning.md)
 - [\[ICLR 2026\] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping](smarter_not_harder_generative_process_evaluation_with_intrinsic-signal_driving_a.md)
+- [\[ACL 2025\] Fine-Tuning on Diverse Reasoning Chains Drives Within-Inference CoT Refinement in LLMs](../../ACL2025/llm_reasoning/dcot_diverse_cot_refinement.md)
 - [\[ICLR 2026\] Executable Counterfactuals: Improving LLMs' Causal Reasoning Through Code](executable_counterfactuals_improving_llms_causal_reasoning_through_code.md)
-- [\[ICLR 2026\] On Code-Induced Reasoning in LLMs](on_code-induced_reasoning_in_llms.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Inertia in Moral and Value Judgments of Large Language Models
 description: >-
-  [ACL 2026][Social Computing][Persona Injection] This paper systematically measures "Value Inertia" across 7 mainstream LLMs using a "Large-scale random persona × Moral/Value questionnaire" paradigm. It finds highly stable inertia in the Harm/Fairness dimensions—where personas struggle to shift the model's response direction—and introduces two quantifiable metrics, I
+  [ACL 2026][Social Computing][Role-Playing] This paper systematically measures "Value Inertia" across 7 mainstream LLMs using a "Large-scale random persona × Moral/Value questionnaire" paradigm. It finds highly stable inertia in the Harm/Fairness dimensions—where personas struggle to shift the model's response direction—and introduces two quantifiable metrics, Inertia Index and Steerability, to reveal that these preferences are unevenly distributed and aligned with safety trai…
 tags:
-  - ACL 2026
-  - Social Computing
-  - Persona Injection
+  - "ACL 2026"
+  - "Social Computing"
+  - "Role-Playing"
+  - "Value Inertia"
+  - "Steerability"
+  - "Persona Injection"
+  - "Moral Foundations"
 date: 2026-05-08
-content_hash: 3531075e6a413d70
+content_hash: 62851206d4a1821f
 ---
+
 # Inertia in Moral and Value Judgments of Large Language Models
 
 **Conference**: ACL 2026  

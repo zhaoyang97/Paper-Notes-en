@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-supervised Multiplex Consensus Mamba for General Image Fusion
 description: >-
-  [AAAI 2026][Medical Imaging][General Image Fusion] This paper proposes the SMC-Mamba framework, which achieves general image fusion across infrared-visible, medical, multi-focus…
+  [AAAI 2026][Medical Imaging][General Image Fusion] This paper proposes the SMC-Mamba framework, which achieves general image fusion across infrared-visible, medical, multi-focus, and multi-exposure tasks through **Modality-Agnostic Feature Enhancement (MAFE)**, **Multiplex Consensus Cross-modal Mamba (MCCM)**, and **Bi-level Self-supervised Contrastive Learning loss (BSCL)**, comprehensively surpassing state-of-the-art methods.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "High-Frequency Preservation"
 date: 2026-05-08
-content_hash: 6a9280a7fe378de1
+content_hash: 063afd1b373d2371
 ---
 
 # Self-supervised Multiplex Consensus Mamba for General Image Fusion

@@ -4,17 +4,19 @@ title: >-
 description: >-
   [ICLR 2026][Interpretability][noise stability] Proposes noise stability as a superior metric over average sensitivity for measuring simplicity bias in Transformers, and designs a regularization method based on this that accelerates training by approximately 35% on synthetic tasks and 75% on language modeling.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - noise stability
-  - simplicity bias
-  - Transformer
-  - grokking
-  - Fourier analysis
-  - regularization
+  - "ICLR 2026"
+  - "Interpretability"
+  - "noise stability"
+  - "simplicity bias"
+  - "Transformer"
+  - "grokking"
+  - "Fourier analysis"
+  - "regularization"
+  - "Boolean function analysis"
 date: 2026-05-08
-content_hash: 5abe96ba2de208ed
+content_hash: 3d7e8994b508a81e
 ---
+
 # Noise Stability of Transformer Models
 
 **Conference**: ICLR 2026  
@@ -166,10 +168,10 @@ Unlike Vasudeva et al. (2024), who use average sensitivity to track grokking, th
 ## Related Papers
 
 - [\[ICLR 2026\] Latent Concept Disentanglement in Transformer-based Language Models](latent_concept_disentanglement_in_transformer-based_language_models.md)
+- [\[ICLR 2026\] Signal in the Noise: Polysemantic Interference Transfers and Predicts Cross-Model Influence](signal_in_the_noise_polysemantic_interference_transfers_and_predicts_cross-model.md)
 - [\[ICLR 2026\] How Stable is the Next Token? A Geometric View of LLM Prediction Stability](how_stable_is_the_next_token_a_geometric_view_of_llm_prediction_stability.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[ICML 2026\] Certified Circuits: Stability Guarantees for Mechanistic Circuits](../../ICML2026/interpretability/certified_circuits_stability_guarantees_for_mechanistic_circuits.md)
-- [\[NeurIPS 2025\] AdaptGrad: Adaptive Sampling to Reduce Noise](../../NeurIPS2025/interpretability/adaptgrad_adaptive_sampling_to_reduce_noise.md)
-- [\[ICLR 2026\] Hedonic Neurons: A Mechanistic Mapping of Latent Coalitions in Transformer MLPs](hedonic_neurons_a_mechanistic_mapping_of_latent_coalitions_in_transformer_mlps.md)
 
 </div>
 

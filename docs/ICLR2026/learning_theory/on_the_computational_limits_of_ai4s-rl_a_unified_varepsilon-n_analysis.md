@@ -1,15 +1,22 @@
 ---
 title: >-
-  [Paper Note] On the Computational Limits of AI4S-RL：A Unified $\varepsilon$-$N$ Analysis
+  [Paper Note] On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis
 description: >-
-  [ICLR 2026][learning_theory][AI4Science] When using AI surrogate models (neural operators) as RL simulation environments to replace expensive PDE solvers, this paper proposes a unified $\varepsilon$-$N$ theoretical framework. By putting the surrogate discretization accuracy, RL agent grid resolution, and policy learning quality into a single probabilistic lan
+  [ICLR 2026][Learning Theory][AI4Science] When using AI surrogate models (neural operators) as RL simulation environments to replace expensive PDE solvers, this paper proposes a unified $\varepsilon$-$N$ theoretical framework. By putting the surrogate discretization accuracy, RL agent grid resolution, and policy learning quality into a single probabilistic language, it derives the minimum computational cost $N^*(\varepsilon)$ required for unbiased value function estimation und…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - AI4Science
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Reinforcement Learning Theory"
+  - "AI for Science"
+  - "AI4Science"
+  - "Surrogate Models"
+  - "PAC Sample Complexity"
+  - "Discretization Error"
+  - "Computational Cost Trade-off"
 date: 2026-05-08
-content_hash: c422101b1a41c717
+content_hash: 33c27aa89ca5f021
 ---
+
 # On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis
 
 **Conference**: ICLR 2026  
@@ -122,6 +129,7 @@ where $\alpha, \beta$ are determined by the "actuation topology." Boundary actua
 - Value: ⭐⭐⭐⭐⭐ Clear engineering guidance for compute-constrained AI4S-RL.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -129,8 +137,8 @@ where $\alpha, \beta$ are determined by the "actuation topology." Boundary actua
 - [\[ICLR 2026\] Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection](reshaping_reasoning_in_llms_a_theoretical_analysis_of_rl_training_dynamics_throu.md)
 - [\[ICLR 2026\] Computational Bottlenecks for Denoising Diffusions](computational_bottlenecks_for_denoising_diffusions.md)
 - [\[ICLR 2026\] Language Identification in the Limit with Computational Trace](language_identification_in_the_limit_with_computational_trace.md)
+- [\[ICLR 2026\] UniCon: Unified Framework for Efficient Contrastive Alignment via Kernels](unicon_unified_framework_for_efficient_contrastive_alignment_via_kernels.md)
 - [\[ICLR 2026\] Characterizing Pattern Matching and Its Limits on Compositional Task Structures](characterizing_pattern_matching_and_its_limits_on_compositional_task_structures.md)
-- [\[ICLR 2026\] The Expressive Limits of Diagonal SSMs for State-Tracking](the_expressive_limits_of_diagonal_ssms_for_state-tracking.md)
 
 </div>
 

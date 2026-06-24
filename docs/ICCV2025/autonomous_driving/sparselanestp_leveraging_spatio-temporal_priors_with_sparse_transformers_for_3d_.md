@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SparseLaneSTP: Leveraging Spatio-Temporal Priors with Sparse Transformers for 3D Lane Detection
 description: >-
-  [ICCV 2025][Autonomous Driving][3D lane detection] This paper proposes SparseLaneSTP, which integrates lane geometry priors (parallelism…
+  [ICCV 2025][Autonomous Driving][3D lane detection] This paper proposes SparseLaneSTP, which integrates lane geometry priors (parallelism, continuity) and temporal information into a sparse Transformer architecture. Through Catmull-Rom spline representation, spatio-temporal attention mechanisms, and temporal regularization, the method achieves state-of-the-art performance on multiple 3D lane detection benchmarks.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Catmull-Rom spline"
   - "temporal fusion"
 date: 2026-05-08
-content_hash: 77f6d75333440390
+content_hash: fed2034a74ad7bc2
 ---
 
 # SparseLaneSTP: Leveraging Spatio-Temporal Priors with Sparse Transformers for 3D Lane Detection
@@ -158,10 +158,10 @@ SparseLaneSTP takes a single-frame RGB image $\mathbf{I} \in \mathbb{R}^{H \time
 ## Related Papers
 
 - [\[ICCV 2025\] Leveraging 2D Priors and SDF Guidance for Dynamic Urban Scene Rendering](leveraging_2d_priors_and_sdf_guidance_for_urban_scene_rendering.md)
+- [\[CVPR 2025\] Rethinking Lanes and Points in Complex Scenarios for Monocular 3D Lane Detection](../../CVPR2025/autonomous_driving/rethinking_lanes_and_points_in_complex_scenarios_for_monocular_3d_lane_detection.md)
 - [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
-- [\[AAAI 2026\] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception](../../AAAI2026/autonomous_driving/rethinking_the_spatio-temporal_alignment_of_end-to-end_3d_perception.md)
-- [\[NeurIPS 2025\] FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving](../../NeurIPS2025/autonomous_driving/futuresightdrive_thinking_visually_with_spatiotemporal_cot_f.md)
-- [\[ICCV 2025\] Unleashing the Temporal Potential of Stereo Event Cameras for Continuous-Time 3D Perception](unleashing_the_temporal_potential_of_stereo_event_cameras_for_continuous-time_3d.md)
+- [\[CVPR 2026\] STUR3D: Spatio-Temporal Unified Representation Learning for 3D Object Detection](../../CVPR2026/autonomous_driving/stur3d_spatio-temporal_unified_representation_learning_for_3d_object_detection.md)
+- [\[ECCV 2024\] Equivariant Spatio-Temporal Self-Supervision for LiDAR Object Detection](../../ECCV2024/autonomous_driving/equivariant_spatio-temporal_self-supervision_for_lidar_object_detection.md)
 
 </div>
 

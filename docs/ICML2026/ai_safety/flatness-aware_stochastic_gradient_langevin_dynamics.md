@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Flatness-Aware Stochastic Gradient Langevin Dynamics
 description: >-
-  [ICML 2026][AI Safety][SGLD] This paper proposes fSGLD: it replaces the parameter $\theta$ at the gradient step in standard SGLD with a Gaussian-perturbed $\theta+\epsilon$, and strictly couples the perturbation scale $\sigma$ with the inverse temperature $\beta$ via $\sigma=\beta^{-(1+\eta)/4}$. Without adding any gradient or memory overhead, the
+  [ICML 2026][AI Safety][SGLD] This paper proposes fSGLD: it replaces the parameter $\theta$ at the gradient step in standard SGLD with a Gaussian-perturbed $\theta+\epsilon$, and strictly couples the perturbation scale $\sigma$ with the inverse temperature $\beta$ via $\sigma=\beta^{-(1+\eta)/4}$. Without adding any gradient or memory overhead, the algorithm's invariant measure approximates the Gibbs distribution corresponding to the Hessian-trace regularized objective $v(\the…
 tags:
-  - ICML 2026
-  - AI Safety
-  - SGLD
+  - "ICML 2026"
+  - "AI Safety"
+  - "SGLD"
+  - "Flat Minima"
+  - "Hessian-trace Regularization"
+  - "Gibbs Distribution"
+  - "Random Weight Perturbation"
 date: 2026-05-08
-content_hash: 6669bf083d2a2bc3
+content_hash: be8187e73a456a36
 ---
+
 # Flatness-Aware Stochastic Gradient Langevin Dynamics
 
 **Conference**: ICML 2026  
@@ -135,11 +140,11 @@ ViT-B/16 Fine-tuning: fSGLD achieves 75.67 on CIFAR-100N, surpassing ASAM's 74.8
 
 ## Related Papers
 
+- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](../../CVPR2026/ai_safety/flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
-- [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
-- [\[ICML 2026\] Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio](hidden_in_plain_tokens_simply_robust_gradient-free_watermark_for_synthetic_audio.md)
 - [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](gradient_transformer_learning_to_generate_updates_for_llms.md)
-- [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
+- [\[ICLR 2026\] When Flatness Does (Not) Guarantee Adversarial Robustness](../../ICLR2026/ai_safety/when_flatness_does_not_guarantee_adversarial_robustness.md)
+- [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
 
 </div>
 

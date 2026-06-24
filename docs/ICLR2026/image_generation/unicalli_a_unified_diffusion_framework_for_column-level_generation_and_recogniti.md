@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniCalli: A Unified Diffusion Framework for Column-Level Generation and Recognition of Chinese Calligraphy
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] UniCalli unifies column-level generation and recognition of Chinese calligraphy into a multimodal Diffusion Transformer. Through asymmetric denoising, box map spatial priors, and joint training, the model generates entire columns of calligraphy with natural ligatures and layout rhythm while maintaining robust recogniti
+  [ICLR 2026][Image Generation][Chinese Calligraphy Generation] UniCalli unifies column-level generation and recognition of Chinese calligraphy into a multimodal Diffusion Transformer. Through asymmetric denoising, box map spatial priors, and joint training, the model generates entire columns of calligraphy with natural ligatures and layout rhythm while maintaining robust recognition capabilities across long-tail calligraphers and styles.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Chinese Calligraphy Generation"
+  - "Column-level Layout"
+  - "Diffusion Transformer"
+  - "Calligraphy Recognition"
+  - "Cultural Heritage Digitalization"
 date: 2026-05-08
-content_hash: c3eaa8411fcdee23
+content_hash: 1dcdc3c0c0d8060d
 ---
+
 # UniCalli: A Unified Diffusion Framework for Column-Level Generation and Recognition of Chinese Calligraphy
 
 **Conference**: ICLR 2026  
@@ -140,8 +146,8 @@ The ablation starts from a standard FLUX baseline, adding joint training, Duplic
 - [\[ICLR 2026\] PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework](postercraft_rethinking_high-quality_aesthetic_poster_generation_in_a_unified_fra.md)
 - [\[ICLR 2026\] Safety-Guided Flow (SGF): A Unified Framework for Negative Guidance in Safe Generation](safety-guided_flow_sgf_a_unified_framework_for_negative_guidance_in_safe_generat.md)
 - [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](../../ICML2026/image_generation/a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
-- [\[ACL 2025\] A Unified Agentic Framework for Evaluating Conditional Image Generation](../../ACL2025/image_generation/a_unified_agentic_framework_for_evaluating_conditional_image_generation.md)
-- [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](../../ICCV2025/image_generation/a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
+- [\[CVPR 2026\] UniGenDet: A Unified Generative-Discriminative Framework for Co-evolutionary Generation and Detection](../../CVPR2026/image_generation/unigendet_a_unified_generative-discriminative_framework_for_co-evolutionary_imag.md)
+- [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](../../NeurIPS2025/image_generation/toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
 
 </div>
 

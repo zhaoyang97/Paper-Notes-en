@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Local Dense Logit Relations for Enhanced Knowledge Distillation
 description: >-
-  [ICCV 2025][Model Compression][Knowledge Distillation] This paper proposes Local Dense Relational Logit Distillation (LDRLD), which captures fine-grained inter-class relations by recursively decoupling and recombining lo…
+  [ICCV 2025][Model Compression][Knowledge Distillation] This paper proposes Local Dense Relational Logit Distillation (LDRLD), which captures fine-grained inter-class relations by recursively decoupling and recombining logit knowledge, combined with an Adaptive Decay Weight (ADW) strategy that assigns higher weights to critical class pairs. LDRLD consistently outperforms existing logit distillation state-of-the-art methods on CIFAR-100, ImageNet-1K, and Tiny-ImageNet.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Adaptive Decay Weights"
   - "Fine-Grained Knowledge Transfer"
 date: 2026-05-08
-content_hash: bded630bd3386913
+content_hash: f7a49741720bc3bd
 ---
 
 # Local Dense Logit Relations for Enhanced Knowledge Distillation
@@ -150,10 +150,10 @@ CIFAR-100 heterogeneous architecture distillation (ResNet32×4→ShuffleNetV1):
 ## Related Papers
 
 - [\[ICCV 2025\] Knowledge Distillation with Refined Logits](knowledge_distillation_with_refined_logits.md)
+- [\[ACL 2025\] Sparse Logit Sampling: Accelerating Knowledge Distillation in LLMs](../../ACL2025/model_compression/sparse_logit_sampling_accelerating_knowledge_distillation_in_llms.md)
 - [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](a_good_teacher_adapts_their_knowledge_for_distillation.md)
 - [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
-- [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
-- [\[ICCV 2025\] SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting](frequency-aligned_knowledge_distillation_for_lightweight_spatiotemporal_forecast.md)
+- [\[ICML 2025\] Efficient Logit-based Knowledge Distillation of Deep Spiking Neural Networks for Full-Range Timestep Deployment](../../ICML2025/model_compression/efficient_logit-based_knowledge_distillation_of_deep_spiking_neural_networks_for.md)
 
 </div>
 

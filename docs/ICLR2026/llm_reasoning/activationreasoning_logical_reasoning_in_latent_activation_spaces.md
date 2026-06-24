@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ActivationReasoning: Logical Reasoning in Latent Activation Spaces
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The ActivationReasoning (AR) framework is proposed to embed explicit logical reasoning into the latent activation space of LLMs (via features extracted by SAEs). Through a three-stage pipeline (discovering concept representations → detecting activation propositions → reasoning with logical rules), it achieves multi-hop
+  [ICLR 2026][Reasoning][Sparse Autoencoders (SAE)] The ActivationReasoning (AR) framework is proposed to embed explicit logical reasoning into the latent activation space of LLMs (via features extracted by SAEs). Through a three-stage pipeline (discovering concept representations → detecting activation propositions → reasoning with logical rules), it achieves multi-hop reasoning, concept composition, and safety control. On PrOntoQA, an 8B model achieves 95%+ accuracy…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Sparse Autoencoders (SAE)"
+  - "Logical Reasoning"
+  - "Latent Space Intervention"
+  - "Concept Composition"
+  - "Model Control"
 date: 2026-05-08
-content_hash: 7f6ae1d27db83d45
+content_hash: 70bd62d1bae5cd5a
 ---
+
 # ActivationReasoning: Logical Reasoning in Latent Activation Spaces
 
 **Conference**: ICLR 2026  
@@ -163,11 +169,11 @@ AR does not train the LLM itself. Concept extraction utilizes lightweight statis
 
 ## Related Papers
 
-- [\[ICLR 2026\] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision](logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision.md)
-- [\[ICLR 2026\] VERICOT: Neuro-Symbolic Chain-of-Thought Validation via Logical Consistency Checks](vericot_neuro-symbolic_chain-of-thought_validation_via_logical_consistency_check.md)
 - [\[ICLR 2026\] Learning to Reason via Mixture-of-Thought for Logical Reasoning](learning_to_reason_via_mixture-of-thought_for_logical_reasoning.md)
-- [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_reasoning_interv.md)
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
+- [\[ACL 2026\] Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning](../../ACL2026/llm_reasoning/logical_phase_transitions_understanding_collapse_in_llm_logical_reasoning.md)
+- [\[ICLR 2026\] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision](logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision.md)
+- [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](../../ACL2026/llm_reasoning/discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
+- [\[ACL 2026\] Semantic-Aware Logical Reasoning via a Semiotic Framework](../../ACL2026/llm_reasoning/semantic-aware_logical_reasoning_via_a_semiotic_framework.md)
 
 </div>
 

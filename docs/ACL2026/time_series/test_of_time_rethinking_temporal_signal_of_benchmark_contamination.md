@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test of Time: Rethinking Temporal Signal of Benchmark Contamination
 description: >-
-  [ACL 2026][Time Series][Paper Note] This paper demonstrates that "performance decay after cutoff" is not robust evidence of benchmark contamination: as long as the same set of source documents is converted from original fill-in-the-blank questions to LLM-rephrased questions, the temporal decay signal changes significantly or even disappears.
+  [ACL2026][Time Series][Benchmark Contamination] This paper demonstrates that "performance decay after cutoff" is not robust evidence of benchmark contamination: as long as the same set of source documents is converted from original fill-in-the-blank questions to LLM-rephrased questions, the temporal decay signal changes significantly or even disappears.
 tags:
-  - ACL 2026
-  - Time Series
+  - "ACL2026"
+  - "Time Series"
+  - "Benchmark Contamination"
+  - "Temporal Signal"
+  - "LLM Evaluation"
+  - "Question Rephrasing"
+  - "Influence Function"
 date: 2026-05-08
-content_hash: 594d6222f389ac37
+content_hash: 6056b6e90c89f8b3
 ---
+
 # Test of Time: Rethinking Temporal Signal of Benchmark Contamination
 
 **Conference**: ACL2026  
@@ -148,7 +154,7 @@ Mechanism experiments further show that cloze questions make it easier for the m
 - [\[NeurIPS 2025\] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting](../../NeurIPS2025/time_series/learning_with_calibration_exploring_test-time_computing_of_spatio-temporal_forec.md)
 - [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](../../NeurIPS2025/time_series/syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
 - [\[ACL 2026\] TSAQA: Time Series Analysis Question And Answering Benchmark](tsaqa_time_series_analysis_question_and_answering_benchmark.md)
-- [\[ACL 2026\] STReasoner: Empowering LLMs for Spatio-Temporal Reasoning in Time Series via Spatial-Aware Reinforcement Learning](streasoner_empowering_llms_for_spatio-temporal_reasoning_in_time_series_via_spat.md)
+- [\[ICLR 2026\] CTBench: Cryptocurrency Time Series Generation Benchmark](../../ICLR2026/time_series/ctbench_cryptocurrency_time_series_generation_benchmark.md)
 - [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](../../ICLR2026/time_series/uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
 
 </div>

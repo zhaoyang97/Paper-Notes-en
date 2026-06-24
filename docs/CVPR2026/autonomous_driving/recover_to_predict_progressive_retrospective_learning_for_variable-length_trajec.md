@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction
 description: >-
-  [CVPR 2026][Autonomous Driving][Knowledge Distillation] Ours proposes PRF, a progressive retrospective framework that gradually aligns features of incomplete observations to complete ones through cascaded retrospective units. It significantly improves variable-length trajectory prediction performance and is plug-and-play compatible with existing methods.
+  [CVPR2026][Autonomous Driving][Trajectory Prediction] Ours proposes PRF, a progressive retrospective framework that gradually aligns features of incomplete observations to complete ones through cascaded retrospective units. It significantly improves variable-length trajectory prediction performance and is plug-and-play compatible with existing methods.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Knowledge Distillation
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Trajectory Prediction"
+  - "Variable-Length Observation"
+  - "Progressive Retrospective"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 6c59171d6ecb39b8
+content_hash: 18f6c3363a9ca60c
 ---
+
 # Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction
 
 **Conference**: CVPR2026  

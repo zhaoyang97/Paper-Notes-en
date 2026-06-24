@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Discrete Compositional Generation via General Soft Operators and Robust Reinforcement Learning
 description: >-
-  [ICLR 2026][Computational Biology][GFlowNet] To address the issue where reward-proportional sampling in GFlowNets is overwhelmed by a massive number of sub-optimal objects in exponentially large search spaces, this paper proposes a general mellowmax operator that unifies soft Bellman, mellowmax, and soft mellowmax (interpolating between "accumulation" and "diluti
+  [ICLR2026][Computational Biology][GFlowNet] To address the issue where reward-proportional sampling in GFlowNets is overwhelmed by a massive number of sub-optimal objects in exponentially large search spaces, this paper proposes a general mellowmax operator that unifies soft Bellman, mellowmax, and soft mellowmax (interpolating between "accumulation" and "dilution" biases via parameter $q$). Based on this, it derives TGM, a simple trajectory-level algorithm that identifies hi…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - GFlowNet
+  - "ICLR2026"
+  - "Computational Biology"
+  - "GFlowNet"
+  - "Discrete Compositional Generation"
+  - "Regularized RL"
+  - "Robust RL"
+  - "mellowmax operator"
+  - "Scientific Discovery"
 date: 2026-05-08
-content_hash: c1cf9ecaf82eaec4
+content_hash: 371d1cd63bcc2fdc
 ---
+
 # Discrete Compositional Generation via General Soft Operators and Robust Reinforcement Learning
 
 **Conference**: ICLR2026  
@@ -135,15 +141,16 @@ TGM variants **match or exceed** GFN/PPO/SAC in all tasks. The gap is most signi
 - Value: ⭐⭐⭐⭐ Plug-and-play超集 for GFN with high practical utility for scientific discovery.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] MolEditRL: Structure-Preserving Molecular Editing via Discrete Diffusion and Reinforcement Learning](moleditrl_structure-preserving_molecular_editing_via_discrete_diffusion_and_rein.md)
 - [\[ICLR 2026\] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct](ultra-fast_language_generation_via_discrete_diffusion_divergence_instruct.md)
-- [\[NeurIPS 2025\] Self Iterative Label Refinement via Robust Unlabeled Learning](../../NeurIPS2025/computational_biology/self_iterative_label_refinement_via_robust_unlabeled_learning.md)
-- [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
 - [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
-- [\[ICML 2025\] Improved Off-policy Reinforcement Learning in Biological Sequence Design](../../ICML2025/computational_biology/improved_off-policy_reinforcement_learning_in_biological_sequence_design.md)
+- [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
+- [\[ICLR 2026\] Learning Collective Variables from BioEmu with Time-Lagged Generation](learning_collective_variables_from_bioemu_with_time-lagged_generation.md)
 
 </div>
 

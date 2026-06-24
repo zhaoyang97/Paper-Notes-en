@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLA] This paper shifts VLA action decoding from Autoregressive (AR) or external continuous diffusion heads to "masked diffusion on discrete action tokens within a unified Transformer." Combined with adaptive parallel decoding ranked by confidence and secondary re-masking for error correction, it achieves a 96.4% average suc
+  [ICML 2026][Robotics][VLA] This paper shifts VLA action decoding from Autoregressive (AR) or external continuous diffusion heads to "masked diffusion on discrete action tokens within a unified Transformer." Combined with adaptive parallel decoding ranked by confidence and secondary re-masking for error correction, it achieves a 96.4% average success rate on LIBERO and a 64.1% total mean score on SimplerEnv-Fractal. Notably, performance degrades by only 0.8% / 20.4% under OOD…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA"
+  - "Discrete Diffusion"
+  - "Action Decoding"
+  - "Autoregressive Alternative"
+  - "Vision-Language Preservation"
 date: 2026-05-08
-content_hash: dc8724da131fc415
+content_hash: c7a7d06549bdabf3
 ---
+
 # Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies
 
 **Conference**: ICML 2026  
@@ -141,10 +146,10 @@ LIBERO-Spatial OOD shows a similar trend of "best absolute value + minimum degra
 
 ## Related Papers
 
+- [\[ICLR 2026\] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process](../../ICLR2026/robotics/unified_diffusion_vla_vision-language-action_model_via_joint_discrete_denosing_d.md)
 - [\[ICML 2026\] Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models](neural_implicit_action_fields_from_discrete_waypoints_to_continuous_functions_fo.md)
 - [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
 - [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
-- [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
 - [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
 
 </div>

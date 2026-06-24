@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Softmax Transformers are Turing-Complete
 description: >-
-  [ICLR 2026][learning_theory][Chain-of-Thought] This paper provides the first proof that **softmax** attention Transformers with Chain-of-Thought (CoT) are Turing-complete. This construction inherits length generalization guarantees by simulating a Minsky counter machine through the intrinsic "counting" capability of softmax (via C-RASP), rather than hard-coding Tur
+  [ICLR 2026][Learning Theory][Turing completeness] This paper provides the first proof that **softmax** attention Transformers with Chain-of-Thought (CoT) are Turing-complete. This construction inherits length generalization guarantees by simulating a Minsky counter machine through the intrinsic "counting" capability of softmax (via C-RASP), rather than hard-coding Turing machine tape heads. It utilizes a task-agnostic Relative Position Encoding (RPE) to encode arbitrary input…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Chain-of-Thought
-  - C-RASP
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Expressivity"
+  - "Formal Languages"
+  - "Turing completeness"
+  - "softmax attention"
+  - "chain-of-thought"
+  - "C-RASP"
+  - "counter machine"
 date: 2026-05-08
-content_hash: 83327b633bf8a6d1
+content_hash: 3cea347af63b85cc
 ---
+
 # Softmax Transformers are Turing-Complete
 
 **Conference**: ICLR 2026  
@@ -137,8 +143,8 @@ The experiments aim to **validate theoretical predictions**: unary representatio
 - [\[ICLR 2026\] Efficient Turing Machine Simulation with Transformers](efficient_turing_machine_simulation_with_transformers.md)
 - [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)
 - [\[ICLR 2026\] Probability Distributions Computed by Autoregressive Transformers](probability_distributions_computed_by_autoregressive_transformers.md)
-- [\[ICLR 2026\] The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens](the_softmax_bottleneck_does_not_limit_the_probabilities_of_the_most_likely_token.md)
 - [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
+- [\[ICLR 2026\] Understanding and Relaxing the Limitations of Transformers for Linear Algebra](understanding_and_relaxing_the_limitations_of_transformers_for_linear_algebra.md)
 
 </div>
 

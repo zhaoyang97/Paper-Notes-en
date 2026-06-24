@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Rapid Poison: Practical Poisoning Attacks Against the Rapid Response Framework
 description: >-
-  [ICML 2026][AI Safety][Rapid Response] This paper reveals that the Rapid Response (RR) jailbreak detection framework, deployed in production systems like Anthropic's ASL-3, can be systematically poisoned. By delivering malicious samples into the RR "proliferation" pipeline via prompt injection, an attacker can achieve up to 100% False Positive Rate (FPR) on
+  [ICML 2026][AI Safety][Data Poisoning] This paper reveals that the Rapid Response (RR) jailbreak detection framework, deployed in production systems like Anthropic's ASL-3, can be systematically poisoned. By delivering malicious samples into the RR "proliferation" pipeline via prompt injection, an attacker can achieve up to 100% False Positive Rate (FPR) on benign samples or up to 96% False Negative Rate (FNR) on jailbreak samples with only a 1% poisoning rate. The mission at…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Rapid Response
+  - "ICML 2026"
+  - "AI Safety"
+  - "Data Poisoning"
+  - "Backdoor Attack"
+  - "Safety Classifier"
+  - "Prompt Injection"
+  - "Rapid Response"
+  - "Jailbreak Detection"
 date: 2026-05-08
-content_hash: 8fa28abc23de9a7e
+content_hash: b1091290c9d35afb
 ---
+
 # Rapid Poison: Practical Poisoning Attacks Against the Rapid Response Framework
 
 **Conference**: ICML 2026  
@@ -127,16 +133,16 @@ Format attack evidence: few-shot examples from MMLU achieved similar FPR on the 
 - **Value**: ⭐⭐⭐⭐⭐ Directly identifies a critical vulnerability in production-level safety frameworks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Robust In-Context Reinforcement Learning Under Reward Poisoning Attacks](robust_in-context_reinforcement_learning_under_reward_poisoning_attacks.md)
 - [\[NeurIPS 2025\] Provable Watermarking for Data Poisoning Attacks](../../NeurIPS2025/ai_safety/provable_watermarking_for_data_poisoning_attacks.md)
 - [\[CVPR 2026\] Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach](../../CVPR2026/ai_safety/towards_stealthy_and_effective_backdoor_attacks_on_lane_detection_a_naturalistic.md)
-- [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](../../ICLR2026/ai_safety/a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)
-- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
+- [\[ICML 2026\] Robust In-Context Reinforcement Learning Under Reward Poisoning Attacks](robust_in-context_reinforcement_learning_under_reward_poisoning_attacks.md)
+- [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
+- [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](../../ICLR2026/ai_safety/defending_against_backdoor_attacks_via_module_switching.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Virtues of Brevity: Avoid Overthinking in Parallel Test-Time Reasoning
 description: >-
-  [NeurIPS 2025 Workshop on Efficient Reasoning][LLM Reasoning][Overthinking] This paper demonstrates that selecting the shortest solution in Best-of-N sampling for reasoning models is a simple yet counterintuitive and eff…
+  [NeurIPS 2025 Workshop on Efficient Reasoning][Reasoning][Overthinking] This paper demonstrates that selecting the shortest solution in Best-of-N sampling for reasoning models is a simple yet counterintuitive and effective heuristic, achieving performance comparable to self-consistency at significantly lower token cost. The underlying mechanism exploits a systematic bias in reasoning models between a "conventional mode" and an "overthinking mode."
 tags:
   - "NeurIPS 2025 Workshop on Efficient Reasoning"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Overthinking"
   - "Shortest-Answer Heuristic"
   - "Best-of-N"
   - "Self-Consistency"
   - "Reasoning Models"
 date: 2026-05-08
-content_hash: 632ca5c221b95b82
+content_hash: cb167ba1a0d4d98e
 ---
 
 # The Virtues of Brevity: Avoid Overthinking in Parallel Test-Time Reasoning

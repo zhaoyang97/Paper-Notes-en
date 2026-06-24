@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties
 description: >-
-  [NeurIPS 2025][LLM Safety][Linguistic Robustness] This paper proposes the Trans-EnV framework, which combines expert linguistic knowledge with the transformation capabilities of LLMs to automatically convert Standard Ame…
+  [NeurIPS 2025][LLM Safety][Linguistic Robustness] This paper proposes the Trans-EnV framework, which combines expert linguistic knowledge with the transformation capabilities of LLMs to automatically convert Standard American English (SAE) datasets into 38 English varieties (18 dialects + 20 ESL Englishes), revealing performance degradations of up to 46.3% on non-standard English and highlighting critical linguistic fairness concerns.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "LLM Evaluation"
   - "ESL English"
 date: 2026-05-08
-content_hash: 069a7a18ac570ab6
+content_hash: 4cc06543a3b2e824
 ---
 
 # Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties
@@ -130,11 +130,11 @@ Trans-EnV operates in three stages: (1) **Data Collection**—acquiring variety-
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Evaluating the Promise and Pitfalls of LLMs in Hiring Decisions](evaluating_the_promise_and_pitfalls_of_llms_in_hiring_decisions.md)
 - [\[NeurIPS 2025\] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks](on_the_robustness_of_verbal_confidence_of_llms_in_adversarial_attacks.md)
+- [\[NeurIPS 2025\] Evaluating the Promise and Pitfalls of LLMs in Hiring Decisions](evaluating_the_promise_and_pitfalls_of_llms_in_hiring_decisions.md)
+- [\[ACL 2025\] Truth Knows No Language: Evaluating Truthfulness Beyond English](../../ACL2025/llm_safety/truth_knows_no_language_evaluating_truthfulness_beyond_english.md)
+- [\[ACL 2025\] ComparisonQA: Evaluating Factuality Robustness of LLMs Through Knowledge Frequency Control and Uncertainty](../../ACL2025/llm_safety/comparisonqa_evaluating_factuality_robustness_of_llms_through_knowledge_frequenc.md)
 - [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](../../ACL2026/llm_safety/evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
-- [\[NeurIPS 2025\] CoreGuard: Safeguarding Foundational Capabilities of LLMs Against Model Stealing in Edge Deployment](coreguard_safeguarding_foundational_capabilities_of_llms_against_model_stealing_.md)
-- [\[NeurIPS 2025\] Bits Leaked per Query: Information-Theoretic Bounds on Adversarial Attacks Against LLMs](bits_leaked_per_query_information-theoretic_bounds_on_adversarial_attacks_agains.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Encoding and Understanding Astrophysical Information in Large Language Model-Generated Summaries
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][LLM embeddings] This work investigates whether LLM embeddings encode physically meaningful quantities derived from X-ray astronomical observations—specifically hardness rati…
+  [NeurIPS 2025][Physics & Scientific Computing][LLM embeddings] This work investigates whether LLM embeddings encode physically meaningful quantities derived from X-ray astronomical observations—specifically hardness ratios, power-law indices, and variability indices. Results show that structured prompt design improves clustering purity of physical attributes by 5.9%–57.5%, and sparse autoencoders reveal that LLMs infer physical parameters not explicitly stated by recognizing…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "X-ray astronomy"
   - "physical encoding"
 date: 2026-05-08
-content_hash: 4a5eb71be77ac5ec
+content_hash: aa455fb1a526a137
 ---
 
 # Encoding and Understanding Astrophysical Information in Large Language Model-Generated Summaries
@@ -117,11 +117,11 @@ The SAE is trained with standard sparsity constraints. The main experiments invo
 
 ## Related Papers
 
+- [\[ICML 2025\] L2D: Large Language Models to Diffusion Finetuning](../../ICML2025/physics/large_language_models_to_diffusion_finetuning.md)
+- [\[ICML 2025\] Liger: Linearizing Large Language Models to Gated Recurrent Structures](../../ICML2025/physics/liger_linearizing_large_language_models_to_gated_recurrent_structures.md)
 - [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
-- [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](../../ICML2026/physics/softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
 - [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
-- [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
-- [\[ICML 2026\] Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs](../../ICML2026/physics/hermite-ngp_gradient-augmented_hash_encoding_for_learning_pdes.md)
+- [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](../../ICML2026/physics/softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
 
 </div>
 

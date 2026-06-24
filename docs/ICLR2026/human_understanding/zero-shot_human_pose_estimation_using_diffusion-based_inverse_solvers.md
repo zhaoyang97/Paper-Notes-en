@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Zero-Shot Human Pose Estimation Using Diffusion-Based Inverse Solvers
 description: >-
-  [ICLR 2026][Human Understanding][ΠGDM] For the sparse pose estimation task of "recovering full-body 22-joint poses from only a VR headset + two controllers (3 upper-body sensors)," this paper proposes **InPose**: it decomposes the pose into scale-free rotations and scale-dependent joint positions. It uses only rotations as a conditional diffusion prior whil
+  [ICLR 2026][Human Understanding][Sparse Sensor Pose Estimation] For the sparse pose estimation task of "recovering full-body 22-joint poses from only a VR headset + two controllers (3 upper-body sensors)," this paper proposes **InPose**: it decomposes the pose into scale-free rotations and scale-dependent joint positions. It uses only rotations as a conditional diffusion prior while treating position measurements as an Inverse Kinematics (IK) likelihood term to guide denoisin…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - ΠGDM
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Sparse Sensor Pose Estimation"
+  - "Diffusion Inverse Problems"
+  - "Zero-Shot Generalization"
+  - "Inverse Kinematics Guidance"
+  - "$\\Pi$GDM"
 date: 2026-05-08
-content_hash: 623b453f4f22815c
+content_hash: 167e00279b3be3bf
 ---
+
 # Zero-Shot Human Pose Estimation Using Diffusion-Based Inverse Solvers
 
 **Conference**: ICLR 2026  

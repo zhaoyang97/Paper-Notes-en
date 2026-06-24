@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WEAVE: Unleashing and Benchmarking the In-context Interleaved Comprehension and Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] WEAVE constructs the first interleaved cross-modal comprehension and generation data suite for "multi-turn with historical context." It includes a 100k multi-turn dialogue training set (WEAVE-100k), a 100-question manually annotated benchmark (WEAVEBench), and a hybrid VLM evaluation framework. The study reveals that c
+  [CVPR 2026][Multimodal VLM][Unified Multimodal Model] WEAVE constructs the first interleaved cross-modal comprehension and generation data suite for "multi-turn with historical context." It includes a 100k multi-turn dialogue training set (WEAVE-100k), a 100-question manually annotated benchmark (WEAVEBench), and a hybrid VLM evaluation framework. The study reveals that current unified multimodal models collectively fail at multi-turn image editing/generation requiring "visua…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Unified Multimodal Model"
+  - "Interleaved Comprehension and Generation"
+  - "Multi-turn Image Editing"
+  - "Visual Memory"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: df3f97a60e9e031f
+content_hash: 8a25793d5c48aba2
 ---
+
 # WEAVE: Unleashing and Benchmarking the In-context Interleaved Comprehension and Generation
 
 **Conference**: CVPR 2026  
@@ -125,16 +131,16 @@ Fine-tuning Bagel with WEAVE-100k yielded gains across multiple public benchmark
 - **Value**: ⭐⭐⭐⭐⭐ (Publicly available data and benchmark addressing a critical UMM gap)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] DuoGen: Towards Autonomous Interleaved Multimodal Generation](duogen_towards_autonomous_interleaved_multimodal_generation.md)
 - [\[CVPR 2026\] Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training](wan-weaver_interleaved_multi-modal_generation_via_decoupled_training.md)
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
 - [\[CVPR 2026\] Benchmarking Single-Factor Physical Video-to-Audio Generation](benchmarking_single-factor_physical_video-to-audio_generation.md)
 - [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
-- [\[ACL 2025\] PunchBench: Benchmarking MLLMs in Multimodal Punchline Comprehension](../../ACL2025/multimodal_vlm/punchbench_mllm_punchline.md)
 
 </div>
 

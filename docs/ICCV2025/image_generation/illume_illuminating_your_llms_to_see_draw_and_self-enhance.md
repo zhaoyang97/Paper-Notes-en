@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ILLUME: Illuminating Your LLMs to See, Draw, and Self-Enhance
 description: >-
-  [ICCV 2025][Image Generation][Unified multimodal model] This paper proposes ILLUME, a unified MLLM that integrates multimodal understanding and generation capabilities into a single LLM via a unified next-token predictio…
+  [ICCV 2025][Image Generation][Unified multimodal model] This paper proposes ILLUME, a unified MLLM that integrates multimodal understanding and generation capabilities into a single LLM via a unified next-token prediction paradigm. Through a **semantic visual tokenizer** (reducing pretraining data by 4× to 15M) and a **self-enhancement multimodal alignment scheme** (enabling the model to self-evaluate the consistency between its generated images and text)…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "self-enhancement alignment"
   - "next-token prediction"
 date: 2026-05-08
-content_hash: a2cf720ea0076a4d
+content_hash: 1a9504b6ac0b919a
 ---
 
 # ILLUME: Illuminating Your LLMs to See, Draw, and Self-Enhance
@@ -173,10 +173,10 @@ Adding only 50K assessment samples improves both understanding and generation. M
 ## Related Papers
 
 - [\[ICCV 2025\] Learning to See in the Extremely Dark](learning_to_see_in_the_extremely_dark.md)
-- [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](your_text_encoder_can_be_an_object-level_watermarking_controller.md)
 - [\[ICCV 2025\] PanoLlama: Generating Endless and Coherent Panoramas with Next-Token-Prediction LLMs](panollama_generating_endless_and_coherent_panoramas_with_next-token-prediction_l.md)
+- [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](your_text_encoder_can_be_an_object-level_watermarking_controller.md)
+- [\[CVPR 2025\] See Further When Clear: Curriculum Consistency Model](../../CVPR2025/image_generation/see_further_when_clear_curriculum_consistency_model.md)
 - [\[ICCV 2025\] Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!](attention_to_neural_plagiarism_diffusion_models_can_plagiarize_your_copyrighted_.md)
-- [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
 
 </div>
 

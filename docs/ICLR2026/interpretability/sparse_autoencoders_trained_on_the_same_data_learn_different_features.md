@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Sparse Autoencoders Trained on the Same Data Learn Different Features
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This is an analytical paper: the authors use the Hungarian algorithm to align multiple Sparse Autoencoders (SAEs) that differ only in their initialization random seeds while seeing identical data. They find that learned features only partially overlap (only 30% on Llama 3 8B). Furthermore, larger models/SAEs exhibit lo
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This is an analytical paper: the authors use the Hungarian algorithm to align multiple Sparse Autoencoders (SAEs) that differ only in their initialization random seeds while seeing identical data. They find that learned features only partially overlap (only 30% on Llama 3 8B). Furthermore, larger models/SAEs exhibit lower overlap, and TopK is more unstable than ReLU. This demonstrates that SAEs identify a "practical decomposi…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Random Seeds"
+  - "Feature Stability"
+  - "Hungarian Matching"
 date: 2026-05-08
-content_hash: a3fade76c260cf4e
+content_hash: 8c722f88b1fe2347
 ---
+
 # Sparse Autoencoders Trained on the Same Data Learn Different Features
 
 **Conference**: ICLR 2026  
@@ -128,8 +133,8 @@ SAEs are trained using the Adam optimizer with a sequence length of 2049 and a b
 - Value: ⭐⭐⭐⭐⭐ Significantly impacts how the community views SAEs for interpretability and safety.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

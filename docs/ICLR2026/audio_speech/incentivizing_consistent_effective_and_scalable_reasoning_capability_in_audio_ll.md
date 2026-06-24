@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Incentivizing Consistent, Effective and Scalable Reasoning Capability in Audio LLMs via Reasoning Process Rewards
 description: >-
-  [ICLR 2026][Audio & Speech][GRPO] Addressing the phenomenon where "thinking more leads to worse performance" (test-time inverse scaling) in Audio LLMs, this paper employs GRPO online reinforcement learning with a multi-faceted reward suite that **rewards the reasoning process itself** (consistency, structural patterns, logical depth, domain knowledge,
+  [ICLR 2026][Audio & Speech][Audio Large Language Models] Addressing the phenomenon where "thinking more leads to worse performance" (test-time inverse scaling) in Audio LLMs, this paper employs GRPO online reinforcement learning with a multi-faceted reward suite that **rewards the reasoning process itself** (consistency, structural patterns, logical depth, domain knowledge, and overthinking penalty). This transforms reasoning from a burden into a gain…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - GRPO
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Audio Large Language Models"
+  - "Reasoning Process Rewards"
+  - "GRPO"
+  - "Test-time Scaling"
+  - "Inverse Scaling"
 date: 2026-05-08
-content_hash: 25f106dfa25486a4
+content_hash: 1c66ddf73e3f456d
 ---
+
 # Incentivizing Consistent, Effective and Scalable Reasoning Capability in Audio LLMs via Reasoning Process Rewards
 
 **Conference**: ICLR 2026  
@@ -152,6 +157,7 @@ Human evaluation shows CESAR has an **88.60%** win rate in reasoning quality aga
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

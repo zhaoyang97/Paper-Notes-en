@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Chain of World: World Model Thinking in Latent Motion (CoWVLA)
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][[VLA] CoWVLA is proposed to unify the advantages of world-model VLAs and latent-action VLAs. By utilizing a Latent Motion Extractor to decompose video into structural and motion latents, the VLA performs world-model prediction within the latent motion space instead of reconstructing redundant pixels. Combined with Co-Fine-tu
+  [CVPR 2026][Robotics][VLA] CoWVLA is proposed to unify the advantages of world-model VLAs and latent-action VLAs. By utilizing a Latent Motion Extractor to decompose video into structural and motion latents, the VLA performs world-model prediction within the latent motion space instead of reconstructing redundant pixels. Combined with Co-Fine-tuning to alternately generate keyframes and action tokens, it achieves 95.2% on LIBERO-LONG, surpassing $\pi_0$ (85.2%)…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - World Models
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "World Model"
+  - "Latent Motion Modeling"
+  - "Video VAE"
+  - "Keyframe Prediction"
+  - "Action Quantization"
 date: 2026-05-08
-content_hash: a0bd9fc243b6f3ea
+content_hash: 6d72ec1b57627e21
 ---
+
 # Chain of World: World Model Thinking in Latent Motion (CoWVLA)
 
 **Conference**: CVPR 2026  
@@ -127,15 +132,16 @@ flowchart TD
 - **Value**: ⭐⭐⭐⭐⭐ Directs VLA world models toward latent motion spaces, achieving substantial SOTA improvements.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Motus: A Unified Latent Action World Model](motus_a_unified_latent_action_world_model.md)
-- [\[CVPR 2026\] Dexterous World Models](dexterous_world_models.md)
+- [\[CVPR 2026\] RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model](rehearsevla_simulated_post-training_for_vlas_with_physically-consistent_world_mo.md)
+- [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](../../ICLR2026/robotics/ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
 - [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
-- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
-- [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
+- [\[ICLR 2026\] Sparse Imagination for Efficient Visual World Model Planning](../../ICLR2026/robotics/sparse_imagination_for_efficient_visual_world_model_planning.md)
 
 </div>
 

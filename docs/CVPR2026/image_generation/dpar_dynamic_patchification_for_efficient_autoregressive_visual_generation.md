@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation
 description: >-
-  [CVPR 2026][Image Generation][VQ-VAE] DPAR utilizes a lightweight entropy model to compute the "next-token prediction entropy" for each image token. Adjacent tokens in low-information regions (e.g., sky, walls) are dynamically merged into variable-length patches, while high-information regions maintain token-level granularity. This allows the decoder-only
+  [CVPR 2026][Image Generation][Autoregressive Image Generation] DPAR utilizes a lightweight entropy model to compute the "next-token prediction entropy" for each image token. Adjacent tokens in low-information regions (e.g., sky, walls) are dynamically merged into variable-length patches, while high-information regions maintain token-level granularity. This allows the decoder-only autoregressive Transformer to perform next-patch prediction on a "reduced number of patches…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - VQ-VAE
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Autoregressive Image Generation"
+  - "Dynamic Patchification"
+  - "Entropy-guided Token Merging"
+  - "Efficient Transformer"
+  - "VQ-VAE"
 date: 2026-05-08
-content_hash: 1d9b89cd5ee11cd9
+content_hash: 263b7dfcf1c53e11
 ---
+
 # DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation
 
 **Conference**: CVPR 2026  
@@ -148,12 +153,20 @@ Ablation of patching designs (DPAR-L, 256px, 50 epochs; "All off" = Static mergi
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- LlamaGen: Autoregressive Model is All You Need for Visual Generation (CVPR 2024)
-- BLT: Byte Latent Transformer for Language Modeling (arXiv 2024)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Pyramidal Patchification Flow for Visual Generation](../../ICLR2026/image_generation/pyramid_patchification_flow_for_visual_generation.md)
+- [\[CVPR 2026\] Mirai: Autoregressive Visual Generation Needs Foresight](mirai_autoregressive_visual_generation_needs_foresight.md)
+- [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
+- [\[CVPR 2026\] DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers](ddit_dynamic_patch_scheduling_for_efficient_diffusion_transformers.md)
+- [\[CVPR 2026\] Parallel Jacobi Decoding for Fast Autoregressive Image Generation](parallel_jacobi_decoding_for_fast_autoregressive_image_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers](ddit_dynamic_patch_scheduling_for_efficient_diffusion_transformers.md)

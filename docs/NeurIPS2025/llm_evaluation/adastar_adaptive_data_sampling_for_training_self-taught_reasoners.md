@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdaSTaR: Adaptive Data Sampling for Training Self-Taught Reasoners
 description: >-
-  [NeurIPS 2025][LLM Evaluation][self-improvement reasoning] This work identifies that random data sampling in STaR (Self-Taught Reasoner) leads to severely imbalanced observation training frequencies—easy problems are ove…
+  [NeurIPS 2025][LLM Evaluation][self-improvement reasoning] This work identifies that random data sampling in STaR (Self-Taught Reasoner) leads to severely imbalanced observation training frequencies—easy problems are over-trained while hard problems are under-trained—and proposes AdaSTaR, which combines adaptive diversity sampling (prioritizing under-trained samples) with adaptive curriculum sampling (adjusting difficulty based on model strength) to achieve the highest accura…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "curriculum learning"
   - "data efficiency"
 date: 2026-05-08
-content_hash: f6448f068c0c2434
+content_hash: 67575d2b88ddfa04
 ---
 
 # AdaSTaR: Adaptive Data Sampling for Training Self-Taught Reasoners
@@ -128,10 +128,10 @@ An adaptive sampling module is inserted into the data sampling step of the STaR 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
+- [\[ACL 2025\] GuessArena: Guess Who I Am? A Self-Adaptive Framework for Evaluating LLMs in Domain-Specific Knowledge and Reasoning](../../ACL2025/llm_evaluation/guessarena_guess_who_i_am_a.md)
 - [\[ICML 2026\] Toward Training Superintelligent Software Agents through Self-Play SWE-RL](../../ICML2026/llm_evaluation/toward_training_superintelligent_software_agents_through_self-play_swe-rl.md)
 - [\[NeurIPS 2025\] HybridNorm: Towards Stable and Efficient Transformer Training via Hybrid Normalization](hybridnorm_towards_stable_and_efficient_transformer_training_via_hybrid_normaliz.md)
 - [\[NeurIPS 2025\] Exploiting Vocabulary Frequency Imbalance in Language Model Pre-training](exploiting_vocabulary_frequency_imbalance_in_language_model_pre-training.md)
-- [\[ICCV 2025\] Neural Multi-View Self-Calibrated Photometric Stereo without Photometric Stereo Cues](../../ICCV2025/llm_evaluation/neural_multi-view_self-calibrated_photometric_stereo_without_photometric_stereo_.md)
 
 </div>
 

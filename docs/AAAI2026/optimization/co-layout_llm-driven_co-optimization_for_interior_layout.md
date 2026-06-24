@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Co-Layout: LLM-driven Co-optimization for Interior Layout
 description: >-
-  [AAAI 2026][Optimization][Interior layout] This paper proposes Co-Layout, a framework that leverages LLMs to extract structured constraints from natural language descriptions…
+  [AAAI 2026][Optimization][Interior layout] This paper proposes Co-Layout, a framework that leverages LLMs to extract structured constraints from natural language descriptions, then jointly optimizes room layout and furniture placement via a grid-based integer programming (IP) formulation augmented with a coarse-to-fine solving strategy, substantially outperforming existing two-stage approaches.
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "co-optimization"
   - "coarse-to-fine strategy"
 date: 2026-05-08
-content_hash: 90482c16b793187f
+content_hash: cbc05acc2d072149
 ---
 
 # Co-Layout: LLM-driven Co-optimization for Interior Layout
@@ -157,11 +157,11 @@ The user study further validates Co-Layout's comprehensive superiority in subjec
 
 ## Related Papers
 
+- [\[ICLR 2026\] CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design](../../ICLR2026/optimization/calm_co-evolution_of_algorithms_and_language_model_for_automatic_heuristic_desig.md)
+- [\[ICLR 2026\] Improving LLM-based Global Optimization with Search Space Partitioning](../../ICLR2026/optimization/improving_llm-based_global_optimization_with_search_space_partitioning.md)
 - [\[AAAI 2026\] Cost-Minimized Label-Flipping Poisoning Attack to LLM Alignment](cost-minimized_label-flipping_poisoning_attack_to_llm_alignment.md)
-- [\[NeurIPS 2025\] MeCeFO: Enhancing LLM Training Robustness via Fault-Tolerant Optimization](../../NeurIPS2025/optimization/mecefo_enhancing_llm_training_robustness_via_fault-tolerant_optimization.md)
-- [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](../../NeurIPS2025/optimization/robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
 - [\[AAAI 2026\] Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation](bridging_synthetic_and_real_routing_problems_via_llm-guided_instance_generation_.md)
-- [\[ICML 2026\] Provably Data-Driven Lagrangian Relaxation for Mixed Integer Linear Programming](../../ICML2026/optimization/provably_data-driven_lagrangian_relaxation_for_mixed_integer_linear_programming.md)
+- [\[ICLR 2026\] AutoEP: LLMs-Driven Automation of Hyperparameter Evolution for Metaheuristic Algorithms](../../ICLR2026/optimization/autoep_llms-driven_automation_of_hyperparameter_evolution_for_metaheuristic_algo.md)
 
 </div>
 

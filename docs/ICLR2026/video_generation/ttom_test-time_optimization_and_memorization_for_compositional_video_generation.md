@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TTOM: Test-Time Optimization and Memorization for Compositional Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] The TTOM framework is proposed to align the attention of video generation models with LLM-generated spatio-temporal layouts during inference by optimizing newly added parameters. A parameter memorization mechanism is utilized to store historical optimization contexts for reuse, achieving relative improvements of 34% (C
+  [ICLR 2026][Video Generation][Test-time Optimization] The TTOM framework is proposed to align the attention of video generation models with LLM-generated spatio-temporal layouts during inference by optimizing newly added parameters. A parameter memorization mechanism is utilized to store historical optimization contexts for reuse, achieving relative improvements of 34% (CogVideoX) and 14% (Wan2.1) on T2V-CompBench.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Test-time Optimization"
+  - "Compositional Video Generation"
+  - "Parameter Memorization"
+  - "Spatio-temporal Layout"
+  - "Attention Alignment"
 date: 2026-05-08
-content_hash: 4af914b874500993
+content_hash: 028181f6853e5b4d
 ---
+
 # TTOM: Test-Time Optimization and Memorization for Compositional Video Generation
 
 **Conference**: ICLR 2026  
@@ -137,7 +143,6 @@ Consistent improvements are also observed on VBench.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Causality Meets Locality: Provably Generalizable and Scalable Policy Learning for Networked Systems
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Networked MARL] This paper proposes the GSAC framework, which integrates causal representation learning with meta Actor-Critic. By learning sparse causal masks from networked MARL to co…
+  [NeurIPS 2025 Spotlight][Autonomous Driving][Networked MARL] This paper proposes the GSAC framework, which integrates causal representation learning with meta Actor-Critic. By learning sparse causal masks from networked MARL to construct Approximate Compact Representations (ACR), GSAC achieves scalability; by conditioning policies on domain factors, it achieves cross-domain generalization. Finite-sample guarantees are provided for causal recovery, convergence…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Autonomous Driving"
   - "Networked MARL"
   - "Causal Mask"
@@ -12,7 +12,7 @@ tags:
   - "Domain Generalization"
   - "Meta Actor-Critic"
 date: 2026-05-08
-content_hash: 3bf4e9340270bf64
+content_hash: d6db80e2d9b28f9d
 ---
 
 # Causality Meets Locality: Provably Generalizable and Scalable Policy Learning for Networked Systems
@@ -130,10 +130,10 @@ GSAC follows a four-stage pipeline: (1) causal discovery + domain factor estimat
 ## Related Papers
 
 - [\[NeurIPS 2025\] BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning](bayesian_ego-graph_inference_for_networked_multi-agent_reinforcement_learning.md)
-- [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
 - [\[ICCV 2025\] Wavelet Policy: Lifting Scheme for Policy Learning in Long-Horizon Tasks](../../ICCV2025/autonomous_driving/wavelet_policy_lifting_scheme_for_policy_learning_in_long-horizon_tasks.md)
+- [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
 - [\[ICCV 2025\] DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving](../../ICCV2025/autonomous_driving/drivex_omni_scene_modeling_for_learning_generalizable_world_knowledge_in_autonom.md)
-- [\[NeurIPS 2025\] Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving](model-based_policy_adaptation_for_closed-loop_end-to-end_autonomous_driving.md)
+- [\[ICCV 2025\] Semantic Causality-Aware Vision-Based 3D Occupancy Prediction](../../ICCV2025/autonomous_driving/semantic_causality-aware_vision-based_3d_occupancy_prediction.md)
 
 </div>
 

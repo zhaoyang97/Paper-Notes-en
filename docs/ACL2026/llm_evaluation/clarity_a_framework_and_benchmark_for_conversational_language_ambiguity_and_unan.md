@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLARITY: A Framework and Benchmark for Conversational Language Ambiguity and Unanswerability in Interactive NL2SQL Systems
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] CLARITY is the first diagnostic benchmark for NL2SQL proposed by Oracle that supports "**multi-facet ambiguity + unanswerability** + single/multi-turn dialogue + diverse user clarification behaviors". Using a controllable LLM pipeline (SQL → pivot term → rewriting → dialogue → screening), it automatically extends Spide
+  [ACL 2026][LLM Evaluation][NL2SQL Evaluation] CLARITY is the first diagnostic benchmark for NL2SQL proposed by Oracle that supports "**multi-facet ambiguity + unanswerability** + single/multi-turn dialogue + diverse user clarification behaviors". Using a controllable LLM pipeline (SQL → pivot term → rewriting → dialogue → screening), it automatically extends Spider/BIRD into approximately 30,000 instances. Through schema-level pivot/group annotations…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "NL2SQL Evaluation"
+  - "Multi-facet Ambiguity"
+  - "Unanswerability"
+  - "Schema Grounding"
+  - "Conversational Clarification"
 date: 2026-05-08
-content_hash: d9e3433c36637a3f
+content_hash: 1bbd11e4ffe5ee6c
 ---
+
 # CLARITY: A Framework and Benchmark for Conversational Language Ambiguity and Unanswerability in Interactive NL2SQL Systems
 
 **Conference**: ACL 2026  
@@ -124,16 +130,16 @@ SEM (Strict Exact Match) requires enumerating all correct SQL interpretations; L
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] SPENCE: A Syntactic Probe for Detecting Contamination in NL2SQL Benchmarks](spence_a_syntactic_probe_for_detecting_contamination_in_nl2sql_benchmarks.md)
 - [\[ACL 2026\] MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference](march_evaluating_the_intersection_of_ambiguity_interpretation_and_multi-hop_infe.md)
-- [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
 - [\[ICML 2026\] BuildArena: A Physics-Aligned Interactive Benchmark of LLMs for Engineering Construction](../../ICML2026/llm_evaluation/buildarena_a_physics-aligned_interactive_benchmark_of_llms_for_engineering_const.md)
-- [\[NeurIPS 2025\] Small Language Models as Compiler Experts: Auto-Parallelization for Heterogeneous Systems](../../NeurIPS2025/llm_evaluation/small_language_models_as_compiler_experts_auto-parallelization_for_heterogeneous.md)
+- [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
+- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
 
 </div>
 

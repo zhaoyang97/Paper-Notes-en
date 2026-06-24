@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Consis-GCPO: Consistency-Preserving Group Causal Preference Optimization for Vision Customization
 description: >-
-  [ICLR 2026][Image Generation][GRPO] Consis-GCPO reformulates GRPO reinforcement learning in subject-driven generation (reference-to-image/video) as a "discrete-time causal optimization" problem. By performing counterfactual interventions—specifically "masking text" and "masking reference images"—at each denoising step, it quantifies the instantaneous cau
+  [ICLR2026][Image Generation][Subject-driven generation] Consis-GCPO reformulates GRPO reinforcement learning in subject-driven generation (reference-to-image/video) as a "discrete-time causal optimization" problem. By performing counterfactual interventions—specifically "masking text" and "masking reference images"—at each denoising step, it quantifies the instantaneous causal contribution of linguistic and visual conditions. These are converted into timestep-weighted advanta…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - GRPO
+  - "ICLR2026"
+  - "Image Generation"
+  - "Subject-driven generation"
+  - "GRPO"
+  - "Causal intervention"
+  - "Timestep reweighting"
+  - "Text-reference decoupling"
 date: 2026-05-08
-content_hash: 82ca6c39a136611b
+content_hash: 3814d0be9599d5e7
 ---
+
 # Consis-GCPO: Consistency-Preserving Group Causal Preference Optimization for Vision Customization
 
 **Conference**: ICLR2026  

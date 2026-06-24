@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining
 description: >-
-  [ICLR 2026][Computational Biology][Vision Transformer] BEAST utilizes a dual-objective of "masked autoencoding + temporal contrastive learning" to pretrain a ViT backbone on unlabeled behavioral videos collected from a single experimental setup. This single model outperforms specialized, heavily annotated models across three neuroethological tasks: neural encoding, pose es
+  [ICLR 2026][Computational Biology][Animal behavior analysis] BEAST utilizes a dual-objective of "masked autoencoding + temporal contrastive learning" to pretrain a ViT backbone on unlabeled behavioral videos collected from a single experimental setup. This single model outperforms specialized, heavily annotated models across three neuroethological tasks: neural encoding, pose estimation, and action segmentation.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Vision Transformer
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Animal behavior analysis"
+  - "neural encoding"
+  - "self-supervised pretraining"
+  - "masked autoencoder"
+  - "temporal contrastive learning"
+  - "Vision Transformer"
 date: 2026-05-08
-content_hash: b7c6e8e10b5caea3
+content_hash: 90d6947af4ab62dd
 ---
+
 # Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining
 
 **Conference**: ICLR 2026  
@@ -141,9 +147,9 @@ Action Segmentation (macro-F1): On the IBL dataset, BEAST ensembles match keypoi
 
 - [\[ICLR 2026\] Pretraining with Re-parametrized Self-Attention: Unlocking Generalization in SNN-Based Neural Decoding Across Time, Brains, and Tasks](pretraining_with_re-parametrized_self-attention_unlocking_generalizationin_snn-b.md)
 - [\[ICML 2026\] Learning the Neighborhood: Contrast-Free Multimodal Self-Supervised Molecular Graph Pretraining](../../ICML2026/computational_biology/learning_the_neighborhood_contrast-free_multimodal_self-supervised_molecular_gra.md)
-- [\[ICLR 2026\] CryoLVM: Self-supervised Learning from Cryo-EM Density Maps with Large Vision Models](cryolvm_self-supervised_learning_from_cryo-em_density_maps_with_large_vision_mod.md)
 - [\[ICLR 2026\] CellDuality: Unlocking Biological Reasoning in LLMs with Self-Supervised RLVR](cellduality_unlocking_biological_reasoning_in_llms_with_self-supervised_rlvr.md)
 - [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
+- [\[ICLR 2026\] CryoLVM: Self-supervised Learning from Cryo-EM Density Maps with Large Vision Models](cryolvm_self-supervised_learning_from_cryo-em_density_maps_with_large_vision_mod.md)
 
 </div>
 

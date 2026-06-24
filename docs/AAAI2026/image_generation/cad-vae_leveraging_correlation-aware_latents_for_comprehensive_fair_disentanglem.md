@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement
 description: >-
-  [AAAI 2026][Image Generation][fair disentanglement] CAD-VAE introduces a correlation-aware latent code to capture shared information between target and sensitive attributes…
+  [AAAI 2026][Image Generation][fair disentanglement] CAD-VAE introduces a correlation-aware latent code to capture shared information between target and sensitive attributes, achieves disentanglement by directly minimizing conditional mutual information, and employs a relevance-driven optimization strategy to precisely regulate the shared code, attaining state-of-the-art performance on fair representation learning, counterfactual generation, and fair image editing.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "correlation-aware"
   - "counterfactual fairness"
 date: 2026-05-08
-content_hash: 53be015e6e24850d
+content_hash: d7eef36a8960b212
 ---
 
 # CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement
@@ -129,11 +129,11 @@ Total loss = VAE reconstruction loss + KL regularization (for all three latent c
 
 ## Related Papers
 
-- [\[ICLR 2026\] Seek-CAD: A Self-Refined Generative Modeling for 3D Parametric CAD Using Local Inference via DeepSeek](../../ICLR2026/image_generation/seek-cad_a_self-refined_generative_modeling_for_3d_parametric_cad_using_local_in.md)
+- [\[CVPR 2026\] CARD: Correlation Aware Restoration with Diffusion](../../CVPR2026/image_generation/card_correlation_aware_restoration_with_diffusion.md)
 - [\[AAAI 2026\] CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection of Generated Images](causalclip_causally-informed_feature_disentanglement_and_filtering_for_generaliz.md)
-- [\[CVPR 2026\] DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment](../../CVPR2026/image_generation/da-vae_plug-in_latent_compression_for_diffusion_via_detail_alignment.md)
-- [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](../../CVPR2026/image_generation/vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
-- [\[NeurIPS 2025\] What We Don't C: Manifold Disentanglement for Structured Discovery](../../NeurIPS2025/image_generation/what_we_dont_c_manifold_disentanglement_for_structured_discovery.md)
+- [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](../../ICLR2026/image_generation/mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
+- [\[ICLR 2026\] Seek-CAD: A Self-Refined Generative Modeling for 3D Parametric CAD Using Local Inference via DeepSeek](../../ICLR2026/image_generation/seek-cad_a_self-refined_generative_modeling_for_3d_parametric_cad_using_local_in.md)
+- [\[ICLR 2026\] Multiplicative Diffusion Models: Beyond Gaussian Latents](../../ICLR2026/image_generation/multiplicative_diffusion_models_beyond_gaussian_latents.md)
 
 </div>
 

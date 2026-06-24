@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] C3G utilizes a small set of learnable query tokens to "discover and decode" approximately 2K compact 3D Gaussians placed at key spatial locations from unposed multi-view images using self-attention. Compared to pixel-wise methods, it maintains comparable novel view synthesis quality with ~65× fewer Gaussians. It furthe
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] C3G utilizes a small set of learnable query tokens to "discover and decode" approximately 2K compact 3D Gaussians placed at key spatial locations from unposed multi-view images using self-attention. Compared to pixel-wise methods, it maintains comparable novel view synthesis quality with ~65× fewer Gaussians. It further reuses emergent attention maps from the query decoder to lift arbitrary 2D features to 3D without additional tra…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "feed-forward reconstruction"
+  - "compact representation"
+  - "learnable queries"
+  - "feature lifting"
 date: 2026-05-08
-content_hash: 2488ea19e2344bb8
+content_hash: 7c3b92383c196d87
 ---
+
 # Learning Compact 3D Representations from Feed-Forward Novel View Synthesis
 
 **Conference**: CVPR 2026  
@@ -133,10 +139,10 @@ Ours dominates in memory (4.1MB vs 61.5MB, ~15× reduction), Gaussian count (~65
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] Splatent: Splatting Diffusion Latents for Novel View Synthesis](splatent_splatting_diffusion_latents_for_novel_view_synthesis.md)
 - [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
+- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
+- [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
 
 </div>
 

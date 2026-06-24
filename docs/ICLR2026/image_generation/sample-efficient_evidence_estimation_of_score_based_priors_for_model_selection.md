@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Proposes DiME, a model evidence estimator integrated along the time marginals of the diffusion posterior. It requires no prior scores or density evaluations and accurately estimates model evidence under diffusion priors using only a small number of posterior samples (e.g., 20) for prior selection and model validation.
+  [ICLR 2026][Image Generation][Model Evidence] Proposes DiME, a model evidence estimator integrated along the time marginals of the diffusion posterior. It requires no prior scores or density evaluations and accurately estimates model evidence under diffusion priors using only a small number of posterior samples (e.g., 20) for prior selection and model validation.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Model Evidence"
+  - "Diffusion Prior"
+  - "Posterior Sampling"
+  - "Model Selection"
+  - "Black Hole Imaging"
 date: 2026-05-08
-content_hash: f7e67736377db41b
+content_hash: 0b09650bb9e9e52f
 ---
+
 # Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection
 
 **Conference**: ICLR 2026  
@@ -140,8 +146,8 @@ Given a single noisy measurement, the correct prior is selected from 10 diffusio
 - [\[ICLR 2026\] Measurement Score-based Diffusion Model (MSM)](measurement_score-based_diffusion_model.md)
 - [\[AAAI 2026\] Diffusion Reconstruction-Based Data Likelihood Estimation for Core-Set Selection](../../AAAI2026/image_generation/diffusion_reconstruction-based_data_likelihood_estimation_for_core-set_selection.md)
 - [\[ICML 2026\] DiScoFormer: Plug-In Density and Score Estimation with Transformers](../../ICML2026/image_generation/discoformer_plug-in_density_and_score_estimation_with_transformers.md)
+- [\[ICLR 2026\] Sample Reward Soups: Query-efficient Multi-Reward Guidance for Text-to-Image Diffusion Models](sample_reward_soups_query-efficient_multi-reward_guidance_for_text-to-image_diff.md)
 - [\[ICLR 2026\] Monocular Normal Estimation via Shading Sequence Estimation](monocular_normal_estimation_via_shading_sequence_estimation.md)
-- [\[CVPR 2026\] Efficient Weighted Sampling via Score-based Generative Models](../../CVPR2026/image_generation/efficient_weighted_sampling_via_score-based_generative_models.md)
 
 </div>
 

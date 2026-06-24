@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] This paper proposes TRACE (Textual Representation of Allocentric Context from Egocentric Video), a prompting method that guides Multimodal Large Language Models (MLLMs) to generate structured textual allocentric 3D environment representations—including meta-context, camera trajectories, and entity registries—from egoce
+  [ACL 2026][VLM Reasoning][Spatial Reasoning] This paper proposes TRACE (Textual Representation of Allocentric Context from Egocentric Video), a prompting method that guides Multimodal Large Language Models (MLLMs) to generate structured textual allocentric 3D environment representations—including meta-context, camera trajectories, and entity registries—from egocentric videos. These serve as intermediate reasoning steps to enhance spatial question-answering capabilities…
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Spatial Reasoning"
+  - "Multimodal Large Language Models"
+  - "Textual Representation"
+  - "Egocentric Video"
+  - "Prompt Engineering"
 date: 2026-05-08
-content_hash: be90787b83ef56f6
+content_hash: e421117660416b69
 ---
+
 # TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning
 
 **Conference**: ACL 2026  
@@ -148,11 +154,11 @@ TRACE is a pure prompting method and does not involve any training or fine-tunin
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](../../NeurIPS2025/vlm_reasoning/struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
-- [\[ECCV 2024\] NavGPT-2: Unleashing Navigational Reasoning Capability for Large Vision-Language Models](../../ECCV2024/vlm_reasoning/navgpt-2_unleashing_navigational_reasoning_capability_for_large_vision-language_.md)
-- [\[ACL 2026\] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization](addressing_overthinking_in_large_vision-language_models_via_gated_perception-rea.md)
-- [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
+- [\[ACL 2026\] CAPruner: Conceptual-Adjacent Scene Graph Pruner for Enhancing 3D Spatial Reasoning of Large Language Models](capruner_conceptual-adjacent_scene_graph_pruner_for_enhancing_3d_spatial_reasoni.md)
 - [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
+- [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](../../NeurIPS2025/vlm_reasoning/struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
+- [\[ICLR 2026\] Unleashing Perception-Time Scaling to Multimodal Reasoning Models](../../ICLR2026/vlm_reasoning/unleashing_perception-time_scaling_to_multimodal_reasoning_models.md)
+- [\[ECCV 2024\] NavGPT-2: Unleashing Navigational Reasoning Capability for Large Vision-Language Models](../../ECCV2024/vlm_reasoning/navgpt-2_unleashing_navigational_reasoning_capability_for_large_vision-language_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends
 description: >-
-  [ACL 2026][Multimodal VLM][OCR-free] This paper systematically reviews Visually Rich Document Understanding (VRDU) based on Multimodal Large Language Models (MLLMs), categorizing OCR-based and OCR-free methods from two dimensions: feature representation/fusion and training paradigms, while discussing emerging directions such as data scarcity, multi-page d
+  [ACL 2026 Findings][Multimodal VLM][Visually Rich Document Understanding] This paper systematically reviews Visually Rich Document Understanding (VRDU) based on Multimodal Large Language Models (MLLMs), categorizing OCR-based and OCR-free methods from two dimensions: feature representation/fusion and training paradigms, while discussing emerging directions such as data scarcity, multi-page documents, multilingual support, RAG, and agents.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - OCR-free
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Visually Rich Document Understanding"
+  - "Multimodal Large Language Models"
+  - "OCR-free"
+  - "Document Information Extraction"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
-content_hash: 192131a566b351f9
+content_hash: 21c6238919ed217c
 ---
+
 # A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends
 
 **Conference**: ACL 2026 Findings  
@@ -116,11 +121,11 @@ Methods covered in the survey use various training strategies: standard autoregr
 
 ## Related Papers
 
+- [\[ACL 2026\] A Survey of Deep Learning for Geometry Problem Solving](a_survey_of_deep_learning_for_geometry_problem_solving.md)
 - [\[CVPR 2025\] Relation-Rich Visual Document Generator for Visual Information Extraction](../../CVPR2025/multimodal_vlm/relation-rich_visual_document_generator_for_visual_information_extraction.md)
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
-- [\[AAAI 2026\] Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding](../../AAAI2026/multimodal_vlm/exo2ego_exocentric_knowledge_guided_mllm_for_egocentric_vide.md)
 - [\[ACL 2026\] Towards Visually Grounded Multimodal Summarization via Cross-Modal Transformer and Gated Attention](towards_visually_grounded_multimodal_summarization_via_cross-modal_transformer_a.md)
-- [\[ACL 2026\] TeXOCR: Advancing Document OCR Models for Compilable Page-to-LaTeX Reconstruction](texocr_advancing_document_ocr_models_for_compilable_page-to-latex_reconstruction.md)
+- [\[ACL 2026\] Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval](sculpting_the_vector_space_towards_efficient_multi-vector_visual_document_retrie.md)
 
 </div>
 

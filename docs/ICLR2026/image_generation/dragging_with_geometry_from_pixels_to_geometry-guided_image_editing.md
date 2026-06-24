@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dragging with Geometry: From Pixels to Geometry-Guided Image Editing
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] GeoDrag incorporates the 3D perspective rule "near pixels move more, far pixels move less" into drag-based image editing. By using a unified displacement field that encodes both 3D geometry (depth) and 2D planar priors, it achieves structure-consistent dragging in a single latent-space forward pass. It utilizes Voronoi
+  [ICLR2026][Image Generation][Drag editing] GeoDrag incorporates the 3D perspective rule "near pixels move more, far pixels move less" into drag-based image editing. By using a unified displacement field that encodes both 3D geometry (depth) and 2D planar priors, it achieves structure-consistent dragging in a single latent-space forward pass. It utilizes Voronoi partitioning to resolve cancellation issues in multi-point dragging, improving drag accuracy (DAI) by 1.4x and Mean…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Drag editing"
+  - "geometry-aware"
+  - "displacement field"
+  - "multi-point editing"
+  - "one-step editing"
 date: 2026-05-08
-content_hash: 1225e627ced41059
+content_hash: 8ed98ecaac6f24ac
 ---
+
 # Dragging with Geometry: From Pixels to Geometry-Guided Image Editing
 
 **Conference**: ICLR2026  
@@ -146,9 +152,18 @@ GeoDrag achieves the lowest MD and DAI without LoRA warm-up, maintaining a peak 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+## Related Papers
+
+- [\[ICLR 2026\] The Spacetime of Diffusion Models: An Information Geometry Perspective](the_spacetime_of_diffusion_models_an_information_geometry_perspective.md)
+- [\[ICML 2026\] Geometry-Aware Tabular Diffusion](../../ICML2026/image_generation/geometry-aware_tabular_diffusion.md)
+- [\[CVPR 2026\] GeoRK2: Geometry-Guided Runge-Kutta Integration for Diffusion Transformer Acceleration](../../CVPR2026/image_generation/geork2_geometry-guided_runge-kutta_integration_for_diffusion_transformer_acceler.md)
+- [\[ICLR 2026\] Learning a Distance Measure from the Information-Estimation Geometry of Data](learning_a_distance_measure_from_the_information-estimation_geometry_of_data.md)
+- [\[ICML 2026\] Rethinking FID Through the Geometry of the Reference Dataset](../../ICML2026/image_generation/rethinking_fid_through_the_geometry_of_the_reference_dataset.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] The Spacetime of Diffusion Models: An Information Geometry Perspective](the_spacetime_of_diffusion_models_an_information_geometry_perspective.md)

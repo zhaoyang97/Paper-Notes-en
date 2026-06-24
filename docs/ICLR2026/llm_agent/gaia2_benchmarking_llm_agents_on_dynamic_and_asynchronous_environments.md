@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments
 description: >-
-  [ICLR 2026][LLM Agent][benchmark] Ours proposes the Gaia2 benchmark to evaluate LLM Agent capabilities in dynamic and asynchronous environments. It introduces real-world scenarios such as time constraints, noisy events, ambiguity resolution, and multi-agent collaboration. Combined with write action verifiers providing verifiable rewards, the benchmark
+  [ICLR 2026 (Oral)][LLM Agent][Dynamic Environment] Ours proposes the Gaia2 benchmark to evaluate LLM Agent capabilities in dynamic and asynchronous environments. It introduces real-world scenarios such as time constraints, noisy events, ambiguity resolution, and multi-agent collaboration. Combined with write action verifiers providing verifiable rewards, the benchmark can be directly used for RLVR training. Evaluations show that even the strongest model, GPT-5 (high)…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - benchmark
-  - Reinforcement Learning
+  - "ICLR 2026 (Oral)"
+  - "LLM Agent"
+  - "Dynamic Environment"
+  - "Asynchronous Interaction"
+  - "benchmark"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: f6bef7d9d7efd081
+content_hash: 6f1df5b532ce668e
 ---
+
 # Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments
 
 **Conference**: ICLR 2026 (Oral)  
@@ -136,8 +139,8 @@ To ensure sustainability, the system is built on the open-source Agents Research
 ## Related Papers
 
 - [\[CVPR 2025\] Sketchtopia: A Dataset and Foundational Agents for Benchmarking Asynchronous Multimodal Communication with Iconic Feedback](../../CVPR2025/llm_agent/sketchtopia_a_dataset_and_foundational_agents_for_benchmarking_asynchronous_mult.md)
-- [\[ICLR 2026\] Real-Time Reasoning Agents in Evolving Environments](real-time_reasoning_agents_in_evolving_environments.md)
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
+- [\[ICLR 2026\] Real-Time Reasoning Agents in Evolving Environments](real-time_reasoning_agents_in_evolving_environments.md)
 - [\[AAAI 2026\] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs](../../AAAI2026/llm_agent/llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr.md)
 - [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Chain-of-Thought] This paper provides the first systematic formalization of the "Thought Leap" phenomenon in CoT reasoning chains, and proposes CoT-Bridge…
+  [NeurIPS 2025][Reasoning][Chain-of-Thought] This paper provides the first systematic formalization of the "Thought Leap" phenomenon in CoT reasoning chains, and proposes CoT-Bridge, a model that automatically detects and fills omitted intermediate steps. It achieves up to +5.87% improvement on NuminaMath and can serve as a plug-and-play module to enhance distillation and RL pipelines.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Chain-of-Thought"
   - "Thought Leap"
   - "Reasoning Completeness"
   - "Data Augmentation"
   - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 59168e72d76c9ffc
+content_hash: 18d013675a0136b1
 ---
 
 # Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning
@@ -116,11 +116,11 @@ CoT-Bridge is applied to MetaMathQA and NuminaMath-CoT, adapting to each dataset
 
 ## Related Papers
 
+- [\[ACL 2025\] Enhancing Chain-of-Thought Reasoning with Critical Representation Fine-tuning](../../ACL2025/llm_reasoning/enhancing_chain-of-thought_reasoning_with_critical_representation_fine-tuning.md)
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](latent_chain-of-thought_for_visual_reasoning.md)
+- [\[ACL 2025\] TRACT: Regression-Aware Fine-tuning Meets Chain-of-Thought Reasoning](../../ACL2025/llm_reasoning/tract_regression_cot.md)
 - [\[NeurIPS 2025\] On Learning Verifiers and Implications to Chain-of-Thought Reasoning](on_learning_verifiers_and_implications_to_chain-of-thought_reasoning.md)
-- [\[NeurIPS 2025\] SafePath: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment](safepath_preventing_harmful_reasoning_in_chain-of-thought_via_early_alignment.md)
-- [\[NeurIPS 2025\] Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning](re-forc_adaptive_reward_prediction_for_efficient_chain-of-thought_reasoning.md)
-- [\[NeurIPS 2025\] Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones](let_me_think_a_long_chainofthought_can_be_worth_exponentiall.md)
+- [\[ACL 2025\] CoT-Valve: Length-Compressible Chain-of-Thought Tuning](../../ACL2025/llm_reasoning/cot-valve_length-compressible_chain-of-thought_tuning.md)
 
 </div>
 

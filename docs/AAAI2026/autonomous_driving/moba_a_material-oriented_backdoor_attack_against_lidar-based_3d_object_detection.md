@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MOBA: A Material-Oriented Backdoor Attack against LiDAR-based 3D Object Detection
 description: >-
-  [AAAI 2026][Autonomous Driving][backdoor attack] This paper proposes MOBA (Material-Oriented Backdoor Attack), the first physically realizable backdoor attack framework grounded in **material reflectance modeling**. It s…
+  [AAAI 2026][Autonomous Driving][backdoor attack] This paper proposes MOBA (Material-Oriented Backdoor Attack), the first physically realizable backdoor attack framework grounded in **material reflectance modeling**. It systematically selects titanium dioxide (TiO₂) as the trigger material and employs an **angle-independent approximation of the Oren-Nayar BRDF model** for LiDAR intensity simulation, achieving an **attack success rate (ASR) of 93.50%** on real physical data—mor…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "BRDF reflectance model"
   - "material modeling"
 date: 2026-05-08
-content_hash: ec0bbde577e05c6b
+content_hash: bb7c9b37cf67e91a
 ---
 
 # MOBA: A Material-Oriented Backdoor Attack against LiDAR-based 3D Object Detection
@@ -230,11 +230,11 @@ MOBA achieves an average ASR of 92.7%, surpassing baselines by more than 41%, wh
 
 ## Related Papers
 
-- [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](exploring_surround-view_fisheye_camera_3d_object_detection.md)
 - [\[AAAI 2026\] Backdoor Attacks on Open Vocabulary Object Detectors via Multi-Modal Prompt Tuning](backdoor_attacks_on_open_vocabulary_object_detectors_via_multi-modal_prompt_tuni.md)
+- [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](exploring_surround-view_fisheye_camera_3d_object_detection.md)
 - [\[AAAI 2026\] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving](driveflow_rectified_flow_adaptation_for_robust_3d_object_detection_in_autonomous.md)
 - [\[AAAI 2026\] FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection](fq-petr_fully_quantized_position_embedding_transformation_fo.md)
-- [\[AAAI 2026\] Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection](difficulty-aware_label-guided_denoising_for_monocular_3d_object_detection.md)
+- [\[ICCV 2025\] PBCAT: Patch-Based Composite Adversarial Training against Physically Realizable Attacks on Object Detection](../../ICCV2025/autonomous_driving/pbcat_patch-based_composite_adversarial_training_against_physically_realizable_a.md)
 
 </div>
 

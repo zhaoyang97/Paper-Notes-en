@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] SafeMPO: 基于概率增量改进的约束强化学习
+  [Paper Note] SafeMPO: Constrained Reinforcement Learning via Probabilistic Incremental Improvement
 description: >-
-  [ICLR 2026][Reinforcement Learning][MPO] SafeMPO models "safety" as an inferrable probabilistic event, shifting constrained reinforcement learning from "hard-projecting the policy into the feasible region" to "guaranteeing each step is safer than the last." By leveraging the EM framework of MPO and the log-barrier construction from interior point methods, it
+  [ICLR 2026][Reinforcement Learning][Constrained Markov Decision Process] SafeMPO models "safety" as an inferrable probabilistic event, shifting constrained reinforcement learning from "hard-projecting the policy into the feasible region" to "guaranteeing each step is safer than the last." By leveraging the EM framework of MPO and the log-barrier construction from interior point methods, it formulates a non-parametric proxy problem with geometric convergence guarantees. With o…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - MPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Constrained Markov Decision Process"
+  - "Safe Reinforcement Learning"
+  - "MPO"
+  - "Incremental Improvement"
+  - "Log-barrier"
 date: 2026-05-08
-content_hash: 792b0adf6aaa6000
+content_hash: 0a825fa8ac5e5c30
 ---
+
 # SafeMPO: Constrained Reinforcement Learning via Probabilistic Incremental Improvement
 
 **Conference**: ICLR 2026  
@@ -161,11 +166,11 @@ During discussion, the authors noted that costs for all variants stabilized at a
 
 ## Related Papers
 
-- [\[ICLR 2026\] Safe Exploration via Policy Priors](safe_exploration_via_policy_priors.md)
-- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
-- [\[ICLR 2026\] Accelerated Learning with Linear Temporal Logic using Differentiable Simulation](accelerated_learning_with_linear_temporal_logic_using_differentiable_simulation.md)
-- [\[ICLR 2026\] RLP: Reinforcement as a Pretraining Objective](rlp_reinforcement_as_a_pretraining_objective.md)
-- [\[ICLR 2026\] PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity](poli-rl_a_point-to-list_reinforcement_learning_framework_for_conditional_semanti.md)
+- [\[AAAI 2026\] Constrained and Robust Policy Synthesis with Satisfiability-Modulo-Probabilistic-Model-Checking](../../AAAI2026/reinforcement_learning/constrained_and_robust_policy_synthesis_with_satisfiability-modulo-probabilistic.md)
+- [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
+- [\[ICLR 2026\] Goal Reaching with Eikonal-Constrained Hierarchical Quasimetric Reinforcement Learning](goal_reaching_with_eikonal-constrained_hierarchical_quasimetric_reinforcement_le.md)
+- [\[ICLR 2026\] Deep SPI: Safe Policy Improvement via World Models](deep_spi_safe_policy_improvement_via_world_models.md)
+- [\[CVPR 2026\] JoPPO: Hierarchical Photography Assessment via Contrastive Joint Conditional Probabilistic Reinforcement Learning](../../CVPR2026/reinforcement_learning/joppo_hierarchical_photography_assessment_via_contrastive_joint_conditional_prob.md)
 
 </div>
 

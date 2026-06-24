@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SuP: Sub-cloud Driven Point Cloud Registration
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the persistent challenge in low-overlap point cloud registration—where geometric and semantic similarities in non-overlapping regions lead to mismatches—SuP reformulates the problem as "mining high-overlap anchor pairs within sub-clouds." By employing a dual-phase mining process (prior weighting for candidat
+  [CVPR 2026][3D Vision][Point cloud registration] To address the persistent challenge in low-overlap point cloud registration—where geometric and semantic similarities in non-overlapping regions lead to mismatches—SuP reformulates the problem as "mining high-overlap anchor pairs within sub-clouds." By employing a dual-phase mining process (prior weighting for candidate screening + posterior network for consistency verification) followed by merged matching…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud registration"
+  - "low overlap"
+  - "sub-cloud anchor pair mining"
+  - "feature consistency"
+  - "plug-and-play"
 date: 2026-05-08
-content_hash: a48363b92df12615
+content_hash: ee07e4fbeece3460
 ---
+
 # SuP: Sub-cloud Driven Point Cloud Registration
 
 **Conference**: CVPR 2026  
@@ -141,9 +147,9 @@ Step-by-step ablation study (RR%, starting from a baseline without the proposed 
 
 - [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
 - [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
 - [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
 - [\[CVPR 2026\] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)
+- [\[ICLR 2026\] RayI2P: Learning Rays for Image-to-Point Cloud Registration](../../ICLR2026/3d_vision/rayi2p_learning_rays_for_image-to-point_cloud_registration.md)
 
 </div>
 

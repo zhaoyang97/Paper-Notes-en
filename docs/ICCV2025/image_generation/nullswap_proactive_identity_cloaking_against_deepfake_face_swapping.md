@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NullSwap: Proactive Identity Cloaking Against Deepfake Face Swapping
 description: >-
-  [ICCV2025][Image Generation][Deepfake defense] This paper proposes NullSwap, which embeds identity-guided invisible perturbations into source images to cloak facial identity information…
+  [ICCV2025][Image Generation][Deepfake defense] This paper proposes NullSwap, which embeds identity-guided invisible perturbations into source images to cloak facial identity information, preventing Deepfake face-swapping models from extracting the correct identity, thereby enabling proactive defense against face-swapping attacks in a purely black-box setting.
 tags:
   - "ICCV2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "adversarial perturbation"
   - "black-box defense"
 date: 2026-05-08
-content_hash: 0366f5245c82e7b8
+content_hash: b06ed518a6c8c296
 ---
 
 # NullSwap: Proactive Identity Cloaking Against Deepfake Face Swapping
@@ -187,11 +187,11 @@ DLW achieves balanced performance across all recognizers and attains the best av
 
 ## Related Papers
 
+- [\[CVPR 2026\] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](../../CVPR2026/image_generation/attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
 - [\[ICCV 2025\] VIGFace: Virtual Identity Generation for Privacy-Free Face Recognition Dataset](vigface_virtual_identity_generation_for_privacy-free_face_recognition_dataset.md)
-- [\[CVPR 2026\] APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](../../CVPR2026/image_generation/apple_attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](../../CVPR2026/image_generation/high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](../../CVPR2026/image_generation/preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
-- [\[ICCV 2025\] DCT-Shield: A Robust Frequency Domain Defense against Malicious Image Editing](dct-shield_a_robust_frequency_domain_defense_against_malicious_image_editing.md)
+- [\[ICML 2025\] Synthetic Face Datasets Generation via Latent Space Exploration from Brownian Identity Diffusion](../../ICML2025/image_generation/synthetic_face_datasets_generation_via_latent_space_exploration_from_brownian_id.md)
 
 </div>
 

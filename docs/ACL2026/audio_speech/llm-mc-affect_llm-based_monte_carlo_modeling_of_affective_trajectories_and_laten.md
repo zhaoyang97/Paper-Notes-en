@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLM-MC-Affect: LLM-Based Monte Carlo Modeling of Affective Trajectories and Latent Ambiguity for Interpersonal Dynamic Insight
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper proposes LLM-MC-Affect, which transforms affective states in dialogue from single-point labels into latent distributions approximated by stochastic LLM decoding. It further utilizes mean, variance, cross-correlation, and slope metrics to analyze affective synchrony and dominance in teacher-student dialogues.
+  [ACL2026][Audio & Speech][Probabilistic Affective Modeling] This paper proposes LLM-MC-Affect, which transforms affective states in dialogue from single-point labels into latent distributions approximated by stochastic LLM decoding. It further utilizes mean, variance, cross-correlation, and slope metrics to analyze affective synchrony and dominance in teacher-student dialogues.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Probabilistic Affective Modeling"
+  - "Monte Carlo Sampling"
+  - "Affective Trajectories"
+  - "Latent Ambiguity"
+  - "Interpersonal Dynamics"
 date: 2026-05-08
-content_hash: 22c7f1c32c6adbfd
+content_hash: 3088334502953d80
 ---
+
 # LLM-MC-Affect: LLM-Based Monte Carlo Modeling of Affective Trajectories and Latent Ambiguity for Interpersonal Dynamic Insight
 
 **Conference**: ACL2026  
@@ -134,10 +140,20 @@ This work does not train a new model or propose supervised losses. it adopts zer
 - Value: ⭐⭐⭐⭐☆ Highly relevant for educational dialogue, affective computing, and LLM evaluation, particularly for uncertainty-aware interaction analysis.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Incentive-Aligned Multi-Source LLM Summaries](../../ICLR2026/audio_speech/incentive-aligned_multi-source_llm_summaries.md)
+- [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
+- [\[ICML 2026\] SafeSearch: Automated Red-Teaming of LLM-Based Search Agents](../../ICML2026/audio_speech/safesearch_automated_red-teaming_of_llm-based_search_agents.md)
+- [\[ACL 2026\] DuIVRS-2: An LLM-based Interactive Voice Response System for Large-scale POI Attribute Acquisition](duivrs-2_an_llm-based_interactive_voice_response_system_for_large-scale_poi_attr.md)
+- [\[ICML 2026\] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety](../../ICML2026/audio_speech/multibreak_a_scalable_and_diverse_multi-turn_jailbreak_benchmark_for_evaluating_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Dynamic Parameter Memory: Temporary LoRA-Enhanced LLM for Long-Sequence Emotion Recognition in Conversation](../../ICLR2026/audio_speech/dynamic_parameter_memory_temporary_lora-enhanced_llm_for_long-sequence_emotion_r.md)

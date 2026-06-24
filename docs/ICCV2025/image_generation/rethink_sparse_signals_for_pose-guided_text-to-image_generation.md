@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethink Sparse Signals for Pose-guided Text-to-Image Generation
 description: >-
-  [ICCV 2025][Image Generation][ControlNet] This paper proposes SP-Ctrl (Spatial-Pose ControlNet), which replaces the fixed RGB encoding of OpenPose with learnable Spatial-Pose Representations (SPR) and introduces a Keypoi…
+  [ICCV 2025][Image Generation][ControlNet] This paper proposes SP-Ctrl (Spatial-Pose ControlNet), which replaces the fixed RGB encoding of OpenPose with learnable Spatial-Pose Representations (SPR) and introduces a Keypoint Concept Learning (KCL) strategy that leverages cross-attention heatmap constraints to improve keypoint alignment. The method enables sparse pose signals to achieve pose control accuracy comparable to dense signals (depth maps / DensePose)…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Keypoint Concept Learning"
   - "Pose-guided Generation"
 date: 2026-05-08
-content_hash: 4ccc8667481b4ca0
+content_hash: 6dadfdf93b2775e4
 ---
 
 # Rethink Sparse Signals for Pose-guided Text-to-Image Generation
@@ -177,7 +177,7 @@ SP-Ctrl, using sparse signals, achieves pose control accuracy close to that of d
 - [\[ICCV 2025\] TeRA: Rethinking Text-guided Realistic 3D Avatar Generation](tera_rethinking_text-guided_realistic_3d_avatar_generation.md)
 - [\[NeurIPS 2025\] SceneDesigner: Controllable Multi-Object Image Generation with 9-DoF Pose Manipulation](../../NeurIPS2025/image_generation/scenedesigner_controllable_multi-object_image_generation_with_9-dof_pose_manipul.md)
 - [\[ICCV 2025\] LUSD: Localized Update Score Distillation for Text-Guided Image Editing](lusd_localized_update_score_distillation_for_text-guided_image_editing.md)
-- [\[ICCV 2025\] Text Embedding Knows How to Quantize Text-Guided Diffusion Models](text_embedding_knows_how_to_quantize_text-guided_diffusion_models.md)
+- [\[CVPR 2025\] Exploring Sparse MoE in GANs for Text-conditioned Image Synthesis](../../CVPR2025/image_generation/exploring_sparse_moe_in_gans_for_text-conditioned_image_synthesis.md)
 
 </div>
 

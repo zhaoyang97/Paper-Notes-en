@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Inference-Time Scaling of Diffusion Models Through Classical Search
 description: >-
-  [ICLR 2026][Image Generation][inference-time scaling] This work systematically transfers classical AI search (BFS/DFS global tree search + annealed Langevin MCMC local search) to the diffusion model inference stage, jointly scaling "local search" and "global search" for the first time to refresh the efficiency-performance Pareto frontier across image generation, long-hori
+  [ICLR 2026][Image Generation][inference-time scaling] This work systematically transfers classical AI search (BFS/DFS global tree search + annealed Langevin MCMC local search) to the diffusion model inference stage, jointly scaling "local search" and "global search" for the first time to refresh the efficiency-performance Pareto frontier across image generation, long-horizon planning, and offline RL.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - inference-time scaling
-  - diffusion models
-  - tree search (BFS/DFS)
-  - Langevin MCMC
-  - verifier guidance
+  - "ICLR 2026"
+  - "Image Generation"
+  - "inference-time scaling"
+  - "diffusion models"
+  - "tree search (BFS/DFS)"
+  - "Langevin MCMC"
+  - "verifier guidance"
 date: 2026-05-08
-content_hash: 8c8d7ff89b00687d
+content_hash: 01eb6d245eda71ac
 ---
+
 # Inference-Time Scaling of Diffusion Models Through Classical Search
 
 **Conference**: ICLR 2026  
@@ -122,11 +123,11 @@ SSP resampling provides the largest gain, with Max scoring and Increase temperat
 
 ## Related Papers
 
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
 - [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](compositional_visual_planning_via_inference-time_diffusion_scaling.md)
+- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](scaling_group_inference_for_diverse_and_high-quality_generation.md)
 - [\[ICLR 2026\] RNE: plug-and-play diffusion inference-time control and energy-based training](rne_plug-and-play_diffusion_inference-time_control_and_energy-based_training.md)
-- [\[ICML 2025\] Performance Plateaus in Inference-Time Scaling for Text-to-Image Diffusion Without External Models](../../ICML2025/image_generation/performance_plateaus_in_inference-time_scaling_for_text-to-image_diffusion_witho.md)
 - [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
-- [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](../../CVPR2026/image_generation/rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TeRA: Rethinking Text-guided Realistic 3D Avatar Generation
 description: >-
-  [ICCV 2025][Image Generation][3D Avatar] TeRA is proposed as the first text-guided 3D realistic avatar generation framework based on a latent diffusion model. By distilling a large-scale human reconstruction model to con…
+  [ICCV 2025][Image Generation][3D Avatar] TeRA is proposed as the first text-guided 3D realistic avatar generation framework based on a latent diffusion model. By distilling a large-scale human reconstruction model to construct a structured latent space, TeRA generates realistic 3D human avatars in 12 seconds—two orders of magnitude faster than SDS-based methods.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "SMPL-X"
   - "UV Gaussian"
 date: 2026-05-08
-content_hash: caae3f4f38edbf45
+content_hash: a5c597a01d00efb2
 ---
 
 # TeRA: Rethinking Text-guided Realistic 3D Avatar Generation
@@ -180,9 +180,9 @@ TeRA comprehensively outperforms all baselines in user ratings: text consistency
 
 - [\[ICCV 2025\] FaceCraft4D: Animated 3D Facial Avatar Generation from a Single Image](facecraft4d_animated_3d_facial_avatar_generation_from_a_single_image.md)
 - [\[ICCV 2025\] Rethink Sparse Signals for Pose-guided Text-to-Image Generation](rethink_sparse_signals_for_pose-guided_text-to-image_generation.md)
+- [\[ECCV 2024\] RodinHD: High-Fidelity 3D Avatar Generation with Diffusion Models](../../ECCV2024/image_generation/rodinhd_high-fidelity_3d_avatar_generation_with_diffusion_models.md)
+- [\[CVPR 2025\] Nonisotropic Gaussian Diffusion for Realistic 3D Human Motion Prediction](../../CVPR2025/image_generation/nonisotropic_gaussian_diffusion_for_realistic_3d_human_motion_prediction.md)
 - [\[ICCV 2025\] Text Embedding Knows How to Quantize Text-Guided Diffusion Models](text_embedding_knows_how_to_quantize_text-guided_diffusion_models.md)
-- [\[ICCV 2025\] Rethinking Layered Graphic Design Generation with a Top-Down Approach](rethinking_layered_graphic_design_generation_with_a_top-down_approach.md)
-- [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](../../CVPR2026/image_generation/vinedresser3d_agentic_text-guided_3d_editing.md)
 
 </div>
 

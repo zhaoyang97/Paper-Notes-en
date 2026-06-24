@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM
 description: >-
-  [CVPR 2026][3D Vision][SLAM] ODGS-SLAM is the first system to utilize 3D Gaussian Splatting (3DGS) as a unified representation for omnidirectional (360° panoramic) camera SLAM. It complements the 3DGS-SLAM backpropagation pipeline with analytical gradients for camera poses under equirectangular projection, counteracts equator-pole distortion using
+  [CVPR 2026][3D Vision][SLAM] ODGS-SLAM is the first system to utilize 3D Gaussian Splatting (3DGS) as a unified representation for omnidirectional (360° panoramic) camera SLAM. It complements the 3DGS-SLAM backpropagation pipeline with analytical gradients for camera poses under equirectangular projection, counteracts equator-pole distortion using latitude weighting, and suppresses memory usage through a graph-analysis-based keyframe removal strategy. Consequently…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SLAM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "SLAM"
+  - "Omnidirectional Camera"
+  - "3D Gaussian Splatting"
+  - "Equirectangular Projection"
+  - "Keyframe Management"
 date: 2026-05-08
-content_hash: c63bf945d4845a17
+content_hash: 907ae3fca6293795
 ---
+
 # ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM
 
 **Conference**: CVPR 2026  
@@ -111,15 +116,16 @@ Real-world ATE on Insta360 Pro (RGB): MonoGS 0.310, PMSP 0.122, **O-SLM 0.031**.
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)
 - [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] Unblur-SLAM: Dense Neural SLAM for Blurry Inputs](unblur-slam_dense_neural_slam_for_blurry_inputs.md)
-- [\[CVPR 2026\] SGAD-SLAM: Splatting Gaussians at Adjusted Depth for Better Radiance Fields in RGBD SLAM](sgad-slam_splatting_gaussians_at_adjusted_depth_for_better_radiance_fields_in_rg.md)
-- [\[CVPR 2026\] SCE-SLAM: Scale-Consistent Monocular SLAM via Scene Coordinate Embeddings](sce-slam_scale-consistent_monocular_slam_via_scene_coordinate_embeddings.md)
+- [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
+- [\[CVPR 2025\] WildGS-SLAM: Monocular Gaussian Splatting SLAM in Dynamic Environments](../../CVPR2025/3d_vision/wildgs-slam_monocular_gaussian_splatting_slam_in_dynamic_environments.md)
+- [\[ECCV 2024\] SGS-SLAM: Semantic Gaussian Splatting for Neural Dense SLAM](../../ECCV2024/3d_vision/sgs-slam_semantic_gaussian_splatting_for_neural_dense_slam.md)
 
 </div>
 

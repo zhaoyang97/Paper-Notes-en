@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization
 description: >-
-  [ICLR 2026][Alignment & RLHF][Safety Alignment] This paper proposes NSPO, which projects safety alignment policy gradients into the null space of general task representations. This ensures, from a geometric perspective, that safety optimization does not damage general capabilities. Using only 40% of safety data, it achieves SOTA on 7 safety benchmarks with almost no
+  [ICLR 2026][LLM Alignment][Safety Alignment] This paper proposes NSPO, which projects safety alignment policy gradients into the null space of general task representations. This ensures, from a geometric perspective, that safety optimization does not damage general capabilities. Using only 40% of safety data, it achieves SOTA on 7 safety benchmarks with almost no performance loss in mathematics, coding, or instruction following.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Safety Alignment
-  - Null Space
-  - Alignment Tax
-  - gradient projection
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Safety Alignment"
+  - "Null Space"
+  - "Policy Optimization"
+  - "Alignment Tax"
+  - "gradient projection"
 date: 2026-05-08
-content_hash: 015f5c5231125a7f
+content_hash: 4ae5abe781c38c68
 ---
+
 # Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -146,15 +148,15 @@ The training objective is the GRPO policy gradient term with null-space projecti
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint](alphasteer_learning_refusal_steering_with_principled_null-space_constraint.md)
+- [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](superficial_safety_alignment_hypothesis.md)
 - [\[ACL 2025\] Safety Alignment via Constrained Knowledge Unlearning](../../ACL2025/llm_alignment/safety_alignment_via_constrained_knowledge_unlearning.md)
-- [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
+- [\[ICLR 2026\] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment](alignment-weighted_dpo_a_principled_reasoning_approach_to_improve_safety_alignme.md)
 - [\[ICLR 2026\] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?](is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base.md)
-- [\[ICLR 2026\] RE-PO: Robust Enhanced Policy Optimization as a General Framework for LLM Alignment](re-po_robust_enhanced_policy_optimization_as_a_general_framework_for_llm_alignme.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Adaptive Learned Image Compression with Graph Neural Networks
 description: >-
-  [CVPR 2026][Graph Learning][Image Compression] GLIC transforms nonlinear transformations in learned image compression (LIC) from fixed convolutions or window attention into content-adaptive connections driven by Graph Neural Networks (GNNs). It employs dual-scale graphs to determine "where to connect" and a complexity-aware mechanism to decide "how much to connect"
+  [CVPR 2026][Graph Learning][Image Compression] GLIC transforms nonlinear transformations in learned image compression (LIC) from fixed convolutions or window attention into content-adaptive connections driven by Graph Neural Networks (GNNs). It employs dual-scale graphs to determine "where to connect" and a complexity-aware mechanism to decide "how much to connect" to better model local and long-range redundancy. It significantly outperforms traditional codecs and recent LIC…
 tags:
-  - CVPR 2026
-  - Graph Learning
-  - Image Compression
-  - GNN
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Image Compression"
+  - "GNN"
+  - "Dual-scale Sampling"
+  - "RMS Gradient"
+  - "Content-adaptive Connection"
 date: 2026-05-08
-content_hash: 43fc24b5a5af1824
+content_hash: 44df3eac252b39ba
 ---
+
 # Adaptive Learned Image Compression with Graph Neural Networks
 
 **Conference**: CVPR 2026  
@@ -141,9 +145,20 @@ The paper provides detailed ablations on scoring strategies and pooling methods,
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](../../AAAI2026/graph_learning/adaptive_riemannian_graph_neural_networks.md)
+- [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
+- [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](../../ICLR2026/graph_learning/learning_from_historical_activations_in_graph_neural_networks.md)
+- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](../../ICML2026/graph_learning/quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
+- [\[NeurIPS 2025\] Graph Neural Networks for Interferometer Simulations](../../NeurIPS2025/graph_learning/graph_neural_networks_for_interferometer_simulations.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](../../AAAI2026/graph_learning/adaptive_riemannian_graph_neural_networks.md)

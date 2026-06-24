@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SPARE: Single-Pass Annotation with Reference-Guided Evaluation for Automatic Process Supervision
 description: >-
-  [AAAI 2026][LLM Reasoning][Process Reward Model] This paper proposes SPARE, a unified single-pass evaluation framework that simultaneously performs step-to-reference alignment and correctness judgment (with explicit reas…
+  [AAAI 2026 Oral][Reasoning][Process Reward Model] This paper proposes SPARE, a unified single-pass evaluation framework that simultaneously performs step-to-reference alignment and correctness judgment (with explicit reasoning) in a single structured generation, requiring no additional training data. SPARE achieves 2.3× speedup over MCTS-based methods and attains OOD generalization with only 16% of the training samples.
 tags:
-  - "AAAI 2026"
-  - "LLM Reasoning"
+  - "AAAI 2026 Oral"
+  - "Reasoning"
   - "Process Reward Model"
   - "Automatic Annotation"
   - "Reference-Guided"
   - "Single-Pass Generation"
   - "Data Efficiency"
 date: 2026-05-08
-content_hash: 2d184d8d21bbde4d
+content_hash: 72d6d0892fa535c5
 ---
 
 # SPARE: Single-Pass Annotation with Reference-Guided Evaluation for Automatic Process Supervision
@@ -157,11 +157,11 @@ PRM training uses a standard binary classification loss. Offline RL fine-tuning 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Annotation-Efficient Universal Honesty Alignment](../../ICLR2026/llm_reasoning/annotation-efficient_universal_honesty_alignment.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](../../ICLR2026/llm_reasoning/reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
+- [\[ICLR 2026\] StepORLM: A Self-Evolving Framework with Generative Process Supervision for Operations Research Language Models](../../ICLR2026/llm_reasoning/steporlm_a_self-evolving_framework_with_generative_process_supervision_for_opera.md)
+- [\[ICLR 2026\] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping](../../ICLR2026/llm_reasoning/smarter_not_harder_generative_process_evaluation_with_intrinsic-signal_driving_a.md)
 - [\[NeurIPS 2025\] Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision](../../NeurIPS2025/llm_reasoning/large_language_models_can_learn_and_generalize_steganographic_chain-of-thought_u.md)
 - [\[AAAI 2026\] RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation](rpm-mcts_knowledge-retrieval_as_process_reward_model_with_monte_carlo_tree_searc.md)
-- [\[AAAI 2026\] Improving Value-based Process Verifier via Low-Cost Variance Reduction](improving_value-based_process_verifier_via_low-cost_variance_reduction.md)
-- [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
 
 </div>
 

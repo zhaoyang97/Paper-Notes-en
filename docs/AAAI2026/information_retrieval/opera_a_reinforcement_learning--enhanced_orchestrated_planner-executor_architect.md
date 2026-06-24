@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OPERA: A Reinforcement Learning--Enhanced Orchestrated Planner-Executor Architecture for Reasoning-Oriented Multi-Hop Retrieval
 description: >-
-  [AAAI2026][Information Retrieval & RAG][RAG] This paper proposes OPERA, a hierarchical framework comprising a Goal Planning Module and a Reason-Execute Module…
+  [AAAI2026][Information Retrieval & RAG][RAG] This paper proposes OPERA, a hierarchical framework comprising a Goal Planning Module and a Reason-Execute Module, combined with MAPGRPO—a training algorithm specifically designed for multi-agent settings—to substantially improve performance on reasoning-oriented multi-hop retrieval tasks.
 tags:
   - "AAAI2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "multi-agent"
 date: 2026-05-08
-content_hash: 71984a33a729a572
+content_hash: 9e272fdaa10ca25d
 ---
 
 # OPERA: A Reinforcement Learning--Enhanced Orchestrated Planner-Executor Architecture for Reasoning-Oriented Multi-Hop Retrieval
@@ -119,9 +119,9 @@ GRPO is extended into Multi-Agents Progressive Group Relative Policy Optimizatio
 ## Related Papers
 
 - [\[AAAI 2026\] PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning](prime_planning_and_retrieval-integrated_memory_for_enhanced_reasoning.md)
+- [\[ACL 2026\] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation](../../ACL2026/information_retrieval/learning_to_extract_rational_evidence_via_reinforcement_learning_for_retrieval-a.md)
 - [\[ACL 2026\] Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning](../../ACL2026/information_retrieval/agentic_conversational_search_with_contextualized_reasoning_via_reinforcement_le.md)
 - [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](../../ACL2026/information_retrieval/chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
-- [\[ACL 2026\] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation](../../ACL2026/information_retrieval/learning_to_extract_rational_evidence_via_reinforcement_learning_for_retrieval-a.md)
 - [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](../../ACL2026/information_retrieval/language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
 
 </div>

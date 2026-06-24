@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Q-DiT4SR: Exploration of Detail-Preserving Diffusion Transformer Quantization for Real-World Image Super-Resolution
 description: >-
-  [ICML 2026][Image Generation][PTQ] This paper introduces Q-DiT4SR, the first PTQ framework designed for DiT-based Real-World Image Super-Resolution (Real-ISR). It preserves high-frequency details through a "global low-rank + local block-wise rank-1" hierarchical SVD decomposition (H-SVD). Furthermore, it proposes data-free inter-layer weight bit-width a
+  [ICML 2026][Image Generation][PTQ] This paper introduces Q-DiT4SR, the first PTQ framework designed for DiT-based Real-World Image Super-Resolution (Real-ISR). It preserves high-frequency details through a "global low-rank + local block-wise rank-1" hierarchical SVD decomposition (H-SVD). Furthermore, it proposes data-free inter-layer weight bit-width allocation (VaSMP) based on rate-distortion theory and dynamic programming-based timestep activation bit-width scheduling (VaT…
 tags:
-  - ICML 2026
-  - Image Generation
-  - PTQ
-  - Diffusion Transformer
-  - Hierarchical SVD
-  - Real-ISR
+  - "ICML 2026"
+  - "Image Generation"
+  - "PTQ"
+  - "Diffusion Transformer"
+  - "Hierarchical SVD"
+  - "Mixed Precision"
+  - "Real-ISR"
 date: 2026-05-08
-content_hash: 64146afe49035f30
+content_hash: 9c72765bd758508c
 ---
+
 # Q-DiT4SR: Exploration of Detail-Preserving Diffusion Transformer Quantization for Real-World Image Super-Resolution
 
 **Conference**: ICML 2026  
@@ -127,13 +129,20 @@ SVD-L rank ablation (Table 2): rank 8 was selected as the best balance between p
 - Value: ⭐⭐⭐⭐ High practical value for deploying DiT-based SR models on edge devices.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **SVDQuant**: Absorbing Outliers by Low-Rank Components for 4-Bit Diffusion Models (ICLR 2025)
-- **PTQ4DiT**: Post-training Quantization for Diffusion Transformer (NeurIPS 2024)
-- **DiT4SR**: Diffusion Transformer for Real-World Image Super-Resolution
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](../../AAAI2026/image_generation/realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
+- [\[AAAI 2026\] Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution](../../AAAI2026/image_generation/continuous_degradation_modeling_via_latent_flow_matching_for_real-world_super-re.md)
+- [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](../../AAAI2026/image_generation/mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
+- [\[CVPR 2026\] FRAMER: Frequency-Aligned Self-Distillation with Adaptive Modulation Leveraging Diffusion Priors for Real-World Image Super-Resolution](../../CVPR2026/image_generation/framer_frequency-aligned_self-distillation_with_adaptive_modulation_leveraging_d.md)
+- [\[NeurIPS 2025\] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](../../NeurIPS2025/image_generation/dove_efficient_one-step_diffusion_model_for_real-world_video_super-resolution.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](../../AAAI2026/image_generation/realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis
 description: >-
-  [CVPR 2026][Physics & Scientific Computing][Paper Note] Ours proposes the Exposure-Time dependent Modulation Transfer Function (ET-MTF), modeling exposure time as a continuous variable. A large-scale synthetic turbulence dataset, ET-Turb (5,083 videos, 2 million frames), is constructed, significantly improving the generalization of turbulence restoration models on real-worl
+  [CVPR 2026][Scientific Computing][Atmospheric Turbulence Synthesis] Ours proposes the Exposure-Time dependent Modulation Transfer Function (ET-MTF), modeling exposure time as a continuous variable. A large-scale synthetic turbulence dataset, ET-Turb (5,083 videos, 2 million frames), is constructed, significantly improving the generalization of turbulence restoration models on real-world data.
 tags:
-  - CVPR 2026
-  - Physics & Scientific Computing
+  - "CVPR 2026"
+  - "Scientific Computing"
+  - "Atmospheric Turbulence Synthesis"
+  - "Exposure-Time Modeling"
+  - "Modulation Transfer Function (MTF)"
+  - "Point Spread Function (PSF)"
+  - "Turbulence Image Restoration"
 date: 2026-05-08
-content_hash: 4981c2df4157d78b
+content_hash: df4c562d415d5e9f
 ---
+
 # Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis
 
 **Conference**: CVPR 2026  
@@ -158,11 +164,8 @@ Solid physical modeling contribution to the specialized field of turbulence synt
 
 ## Related Papers
 
-- [\[CVPR 2026\] PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation](physskin_real-time_and_generalizable_physics-based_animation_via_self-supervised.md)
 - [\[CVPR 2026\] EHETM: High-Quality and Efficient Turbulence Mitigation with Events](high-quality_and_efficient_turbulence_mitigation_with_events.md)
-- [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
-- [\[AAAI 2026\] Fast 3D Surrogate Modeling for Data Center Thermal Management](../../AAAI2026/physics/fast_3d_surrogate_modeling_for_data_center_thermal_management.md)
-- [\[NeurIPS 2025\] GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations](../../NeurIPS2025/physics/gyroswin_5d_surrogates_for_gyrokinetic_plasma_turbulence_simulations.md)
+- [\[CVPR 2026\] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training](nestor_a_nested_moe-based_neural_operator_for_large-scale_pde_pre-training.md)
 
 </div>
 

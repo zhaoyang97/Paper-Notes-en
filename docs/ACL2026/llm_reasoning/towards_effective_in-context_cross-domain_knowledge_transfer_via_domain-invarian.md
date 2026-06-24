@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper proposes DIN-Retrieval, which identifies domain-invariant neurons (DINs) with consistent activation polarity across domains in LLMs to construct a domain-robust representation subspace. This subspace is used to retrieve structurally compatible cross-domain examples. It serves as the first demonstration of th
+  [ACL 2026 Findings][Reasoning][Cross-domain knowledge transfer] This paper proposes DIN-Retrieval, which identifies domain-invariant neurons (DINs) with consistent activation polarity across domains in LLMs to construct a domain-robust representation subspace. This subspace is used to retrieve structurally compatible cross-domain examples. It serves as the first demonstration of the feasibility of using cross-domain ICL examples to improve LLM reasoning performance…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Cross-domain knowledge transfer"
+  - "domain-invariant neurons"
+  - "in-context learning retrieval"
+  - "reasoning structure alignment"
+  - "math-logic reasoning"
 date: 2026-05-08
-content_hash: 69fb0fe79a33f018
+content_hash: a851212f56e8465b
 ---
+
 # Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval
 
 **Conference**: ACL 2026 Findings  
@@ -133,11 +139,11 @@ DIN-Retrieval is training-free. DIN identification relies on activation statisti
 
 ## Related Papers
 
-- [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](../../AAAI2026/llm_reasoning/serl_self-examining_reinforcement_learning_on_open-domain.md)
 - [\[AAAI 2026\] L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention](../../AAAI2026/llm_reasoning/l2v-cot_cross-modal_transfer_of_chain-of-thought_reasoning_v.md)
+- [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](../../AAAI2026/llm_reasoning/serl_self-examining_reinforcement_learning_on_open-domain.md)
+- [\[ICLR 2026\] ContextPRM: Leveraging Contextual Coherence for multi-domain Test-Time Scaling](../../ICLR2026/llm_reasoning/contextprm_leveraging_contextual_coherence_for_multi-domain_test-time_scaling.md)
 - [\[NeurIPS 2025\] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](../../NeurIPS2025/llm_reasoning/dreamprm_domain-reweighted_process_reward_model_for_multimodal_reasoning.md)
 - [\[CVPR 2025\] Style Evolving along Chain-of-Thought for Unknown-Domain Object Detection](../../CVPR2025/llm_reasoning/style_evolving_along_chain-of-thought_for_unknown-domain_object_detection.md)
-- [\[AAAI 2026\] RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation](../../AAAI2026/llm_reasoning/rpm-mcts_knowledge-retrieval_as_process_reward_model_with_monte_carlo_tree_searc.md)
 
 </div>
 

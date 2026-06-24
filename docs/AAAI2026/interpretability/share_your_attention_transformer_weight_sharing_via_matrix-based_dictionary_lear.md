@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning
 description: >-
-  [AAAI 2026][Interpretability][weight sharing] Inspired by dictionary learning, this paper proposes the MASA framework, which decomposes the attention projection matrices (Q/K/V/O) across Transformer layers into linear co…
+  [AAAI 2026][Interpretability][weight sharing] Inspired by dictionary learning, this paper proposes the MASA framework, which decomposes the attention projection matrices (Q/K/V/O) across Transformer layers into linear combinations of shared matrix atoms, achieving performance on par with or superior to the original Transformer at a 66.7% attention parameter compression ratio.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "attention compression"
   - "parameter efficiency"
 date: 2026-05-08
-content_hash: d46212b66ebe6911
+content_hash: 533608ad911fa0e2
 ---
 
 # Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning
@@ -154,10 +154,10 @@ Both the dictionary atoms and the linear coefficients are jointly learned via ba
 ## Related Papers
 
 - [\[AAAI 2026\] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)
-- [\[ICML 2026\] What Linear Probes Miss: Multi-View Probing for Weight-Space Learning](../../ICML2026/interpretability/what_linear_probes_miss_multi-view_probing_for_weight-space_learning.md)
-- [\[ICML 2026\] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions](../../ICML2026/interpretability/optimal_attention_temperature_improves_the_robustness_of_in-context_learning_und.md)
-- [\[AAAI 2026\] Quiet Feature Learning in Algorithmic Tasks](quiet_feature_learning_in_algorithmic_tasks.md)
-- [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](data_whitening_improves_sparse_autoencoder_learning.md)
+- [\[ICLR 2026\] Learning Multimodal Dictionary Decompositions with Group-Sparse Autoencoders](../../ICLR2026/interpretability/learning_multimodal_dictionary_decompositions_with_group-sparse_autoencoders.md)
+- [\[ICLR 2026\] Learning to Interpret Weight Differences in Language Models](../../ICLR2026/interpretability/learning_to_interpret_weight_differences_in_language_models.md)
+- [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](../../ICLR2026/interpretability/learning_to_weight_parameters_for_training_data_attribution.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](../../ICLR2026/interpretability/why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 
 </div>
 

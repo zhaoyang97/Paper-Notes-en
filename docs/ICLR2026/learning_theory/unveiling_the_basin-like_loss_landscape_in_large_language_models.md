@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Unveiling the Basin-like Loss Landscape in Large Language Models
 description: >-
-  [ICLR 2026][learning_theory][basin] This paper discovers that the loss landscape of LLMs presents "basins" as model scale increases—any perturbation of parameters within the basin preserves performance, while moving outside leads to a sudden collapse. Based on this, randomized smoothing is used to prove that performance degradation from arbitrary fine-tu
+  [ICLR 2026][Learning Theory][basin] This paper discovers that the loss landscape of LLMs presents "basins" as model scale increases—any perturbation of parameters within the basin preserves performance, while moving outside leads to a sudden collapse. Based on this, randomized smoothing is used to prove that performance degradation from arbitrary fine-tuning or jailbreaking is bounded by the basin radius. A GO optimizer is proposed to actively enlarge these basins to mitigate…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - basin
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Loss Landscape"
+  - "LLM Safety"
+  - "basin"
+  - "randomized smoothing"
+  - "catastrophic forgetting"
+  - "alignment fragility"
 date: 2026-05-08
-content_hash: e413f12f443bd95c
+content_hash: 4f374e9e3941cd40
 ---
+
 # Unveiling the Basin-like Loss Landscape in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -157,10 +163,10 @@ Using NanoGPT to pre-train GPT2-127M on OpenWebText for 8× Chinchilla steps (GO
 ## Related Papers
 
 - [\[ICLR 2026\] Automata Learning and Identification of the Support of Language Models](automata_learning_and_identification_of_the_support_of_language_models.md)
+- [\[ICLR 2026\] Theoretical Modeling of Large Language Model Self-Improvement Training Dynamics Through Solver-Verifier Gap](theoretical_modeling_of_large_language_model_self-improvement_training_dynamics_.md)
 - [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
 - [\[ICLR 2026\] FlowNIB: An Information Bottleneck Analysis of Bidirectional vs. Unidirectional Language Models](flownib_an_information_bottleneck_analysis_of_bidirectional_vs_unidirectional_la.md)
 - [\[ICLR 2026\] Overparametrization bends the landscape: BBP transitions at initialization in simple Neural Networks](overparametrization_bends_the_landscape_bbp_transitions_at_initialization_in_sim.md)
-- [\[ICLR 2026\] Language Identification in the Limit with Computational Trace](language_identification_in_the_limit_with_computational_trace.md)
 
 </div>
 

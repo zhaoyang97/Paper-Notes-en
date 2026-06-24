@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks
 description: >-
-  [AAAI 2026][Medical Imaging][Medical Diagnosis Segmentation] This paper introduces the Medical Diagnosis Segmentation (MDS) task along with the M3DS dataset, and proposes the Sim4Seg framework…
+  [AAAI 2026][Medical Imaging][Medical Diagnosis Segmentation] This paper introduces the Medical Diagnosis Segmentation (MDS) task along with the M3DS dataset, and proposes the Sim4Seg framework, which leverages **Region-aware Vision-Language Similarity Masks (RVLS2M)** derived from LVLM hidden states to prompt SAM for segmentation while simultaneously generating diagnostic chain-of-thought reasoning. Combined with a test-time scaling strategy, Sim4Seg comprehensively outperfor…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Multi-disease"
   - "Test-Time Scaling"
 date: 2026-05-08
-content_hash: c2d689973a938fbe
+content_hash: 83a2350f213e7c62
 ---
 
 # Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks
@@ -129,11 +129,11 @@ Results on the M3DS test set:
 
 ## Related Papers
 
-- [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
 - [\[ICLR 2026\] Boosting Medical Visual Understanding From Multi-Granular Language Learning](../../ICLR2026/medical_imaging/boosting_medical_visual_understanding_from_multi-granular_language_learning.md)
+- [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
 - [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
-- [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
 - [\[CVPR 2026\] EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease](../../CVPR2026/medical_imaging/emad_evidence-centric_grounded_multimodal_diagnosis_for_alzheimers_disease.md)
+- [\[AAAI 2026\] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis](dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_.md)
 
 </div>
 

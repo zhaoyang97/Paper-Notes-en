@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][molecular dynamics] FlashMD is proposed as a GNN-based framework that directly predicts the positional and momentum evolution of molecular dynamics trajectories with long st…
+  [NeurIPS 2025 Spotlight][Physics & Scientific Computing][molecular dynamics] FlashMD is proposed as a GNN-based framework that directly predicts the positional and momentum evolution of molecular dynamics trajectories with long strides, achieving time steps 1–2 orders of magnitude larger than those of conventional MD integrators. The architecture incorporates Hamiltonian dynamics constraints and generalizes to arbitrary thermodynamic ensembles and universal chemical systems.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Physics & Scientific Computing"
   - "molecular dynamics"
   - "graph neural network"
@@ -13,7 +13,7 @@ tags:
   - "Hamiltonian dynamics"
   - "energy conservation"
 date: 2026-05-08
-content_hash: b996e39000e92873
+content_hash: 86a1e5ef80e5ebe7
 ---
 
 # FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics
@@ -173,11 +173,11 @@ Insight: FlashMD demonstrates a future paradigm in which "each MLIP is paired wi
 
 ## Related Papers
 
+- [\[ICLR 2026\] ATOM: A Pretrained Neural Operator for Multitask Molecular Dynamics](../../ICLR2026/physics/atom_a_pretrained_neural_operator_for_multitask_molecular_dynamics.md)
 - [\[ICML 2026\] Speculative Sampling for Faster Molecular Dynamics](../../ICML2026/physics/speculative_sampling_for_faster_molecular_dynamics.md)
-- [\[NeurIPS 2025\] Towards Universal Neural Operators through Multiphysics Pretraining](towards_universal_neural_operators_through_multiphysics_pretraining.md)
 - [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](../../ICML2026/physics/teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
-- [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
-- [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
+- [\[ICLR 2026\] Advancing Universal Deep Learning for Electronic-Structure Hamiltonian Prediction of Materials](../../ICLR2026/physics/advancing_universal_deep_learning_for_electronic-structure_hamiltonian_predictio.md)
+- [\[NeurIPS 2025\] Towards Universal Neural Operators through Multiphysics Pretraining](towards_universal_neural_operators_through_multiphysics_pretraining.md)
 
 </div>
 

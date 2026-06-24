@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs
 description: >-
-  [ACL 2026][Multilingual & Translation][Strategic Downsampling] This paper introduces NiuTrans.LMT, an open-source LLM machine translation suite covering 60 languages and 234 Chinese-English dual-centric translation directions across four scales (0.6B/1.7B/4B/8B). It identifies that multi-way parallel data causes X→Zh/En directional degeneration in symmetric SFT and restores qualit
+  [ACL 2026][Multilingual & Machine Translation][Multilingual Machine Translation] This paper introduces NiuTrans.LMT, an open-source LLM machine translation suite covering 60 languages and 234 Chinese-English dual-centric translation directions across four scales (0.6B/1.7B/4B/8B). It identifies that multi-way parallel data causes X→Zh/En directional degeneration in symmetric SFT and restores quality to the level of strong open-source MMT systems using Strategic Downsampling…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - Strategic Downsampling
-  - Parallel Multilingual Prompting
-  - GRPO
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual Machine Translation"
+  - "Directional Degeneration"
+  - "Strategic Downsampling"
+  - "Parallel Multilingual Prompting"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 6d66b3b0b3873c96
+content_hash: 03c4684a4758edd0
 ---
+
 # NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs
 
 **Conference**: ACL 2026  

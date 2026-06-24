@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Multimodal CoT] This paper proposes "Visual Thoughts" as a unified framework for interpreting the effectiveness of multimodal chain-of-thought reasoning (MCoT). The core mechanism underlying…
+  [NeurIPS 2025][Reasoning][Multimodal CoT] This paper proposes "Visual Thoughts" as a unified framework for interpreting the effectiveness of multimodal chain-of-thought reasoning (MCoT). The core mechanism underlying performance gains in both textual MCoT (T-MCoT) and interleaved multimodal MCoT (I-MCoT) is the caching and transfer of visual information into the reasoning process. The paper defines four forms of visual thought expressions and reveals their role as image-to-re…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Multimodal CoT"
   - "Visual Thoughts"
   - "T-MCoT"
   - "I-MCoT"
   - "Visual Information Transfer"
 date: 2026-05-08
-content_hash: 35b3836e60c36511
+content_hash: c11a078b5007669e
 ---
 
 # Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought
@@ -123,10 +123,10 @@ The paper formally defines visual thoughts as a special type of MCoT reasoning s
 ## Related Papers
 
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](latent_chain-of-thought_for_visual_reasoning.md)
-- [\[NeurIPS 2025\] Atom of Thoughts for Markov LLM Test-Time Scaling](atom_of_thoughts_for_markov_llm_testtime_scaling.md)
-- [\[NeurIPS 2025\] Note 1: Is CoT a Hallucination? A Data Distribution Perspective](is_chain-of-thought_reasoning_of_llms_a_mirage_a_data_distribution_lens.md)
+- [\[ACL 2025\] Chain-of-Reasoning: Towards Unified Mathematical Reasoning in Large Language Models via a Multi-Paradigm Perspective](../../ACL2025/llm_reasoning/chain_of_reasoning_unified_math.md)
+- [\[ACL 2025\] MM-Verify: Enhancing Multimodal Reasoning with Chain-of-Thought Verification](../../ACL2025/llm_reasoning/mm-verify_enhancing_multimodal_reasoning_with_chain-of-thought_verification.md)
 - [\[ICCV 2025\] Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization](../../ICCV2025/llm_reasoning/unsupervised_visual_chain-of-thought_reasoning_via_preference_optimization.md)
-- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](../../CVPR2026/llm_reasoning/reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](../../ICLR2026/llm_reasoning/uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
 
 </div>
 

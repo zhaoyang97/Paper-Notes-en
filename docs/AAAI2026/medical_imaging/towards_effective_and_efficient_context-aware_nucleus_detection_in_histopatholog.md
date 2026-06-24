@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images
 description: >-
-  [AAAI 2026][Medical Imaging][Nucleus Detection] This paper proposes an efficient context-aware nucleus detection method that aggregates off-the-shelf features from historically visited sliding windows—rather than additio…
+  [AAAI 2026][Medical Imaging][Nucleus Detection] This paper proposes an efficient context-aware nucleus detection method that aggregates off-the-shelf features from historically visited sliding windows—rather than additionally cropping large low-field-of-view patches—to provide tissue context, while employing a cross-annotation strategy to mine surrounding unannotated nucleus samples for enhanced contextual adaptability.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Pathology Image Analysis"
   - "Pseudo Labels"
 date: 2026-05-08
-content_hash: 49d5d5866838ba36
+content_hash: b54858ef4bd5dc20
 ---
 
 # Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images
@@ -133,10 +133,10 @@ During training, a shared visual encoder (ResNet-50) encodes both annotated patc
 ## Related Papers
 
 - [\[CVPR 2026\] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning](../../CVPR2026/medical_imaging/act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning.md)
+- [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](../../CVPR2026/medical_imaging/toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
 - [\[AAAI 2026\] WDT-MD: Wavelet Diffusion Transformers for Microaneurysm Detection in Fundus Images](wdt-md_wavelet_diffusion_transformers_for_microaneurysm_detection_in_fundus_imag.md)
-- [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
-- [\[AAAI 2026\] Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation](graph-theoretic_consistency_for_robust_and_topology-aware_semi-supervised_histop.md)
-- [\[ICML 2026\] Federated Distillation for Whole Slide Image via Gaussian-Mixture Feature Alignment and Curriculum Integration](../../ICML2026/medical_imaging/federated_distillation_for_whole_slide_image_via_gaussian-mixture_feature_alignm.md)
+- [\[CVPR 2026\] Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction](../../CVPR2026/medical_imaging/turning_pre-trained_vision_transformers_into_end-to-end_histopathology_whole_sli.md)
+- [\[ICML 2025\] Context Matters: Query-aware Dynamic Long Sequence Modeling of Gigapixel Images](../../ICML2025/medical_imaging/context_matters_query-aware_dynamic_long_sequence_modeling_of_gigapixel_images.md)
 
 </div>
 

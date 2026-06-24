@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Training-Free Determination of Network Width via Neural Tangent Kernel
 description: >-
-  [ICLR 2026][learning_theory][Neural Tangent Kernel] This paper uses the **minimum eigenvalue** $\mu_{\min}$ of the Neural Tangent Kernel (NTK) to theoretically bound the test error of infinite and finite-width networks. Based on this, it proposes a **training-free** metric: scanning $\mu_{\min}$ at different widths during initialization to find the inflection point wher
+  [ICLR 2026][Learning Theory][minimum eigenvalue] This paper uses the **minimum eigenvalue** $\mu_{\min}$ of the Neural Tangent Kernel (NTK) to theoretically bound the test error of infinite and finite-width networks. Based on this, it proposes a **training-free** metric: scanning $\mu_{\min}$ at different widths during initialization to find the inflection point where growth saturates, defined as the "cardinal width"—the point beyond which further widening yields no additiona…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Neural Tangent Kernel
-  - training-free
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Neural Tangent Kernel"
+  - "Network Width Selection"
+  - "minimum eigenvalue"
+  - "generalization error bound"
+  - "network width"
+  - "training-free"
 date: 2026-05-08
-content_hash: 21e654f0c0ab8f5e
+content_hash: 4e96867f1799162d
 ---
+
 # Training-Free Determination of Network Width via Neural Tangent Kernel
 
 **Conference**: ICLR 2026  
@@ -158,8 +163,8 @@ Cardinal width prediction (Multiple architectures × Multiple datasets):
 - [\[ICML 2026\] Finite-Width Neural Tangent Kernels from Feynman Diagrams](../../ICML2026/learning_theory/finite-width_neural_tangent_kernels_from_feynman_diagrams.md)
 - [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
 - [\[ICLR 2026\] Parameterized Hardness of Zonotope Containment and Neural Network Verification](parameterized_hardness_of_zonotope_containment_and_neural_network_verification.md)
-- [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
 - [\[ICLR 2026\] Convergence Analysis of Tsetlin Machines under Noise-Free and Noisy Training Conditions: From 2 Bits to k Bits](convergence_analysis_of_tsetlin_machines_under_noise-free_and_noisy_training_con.md)
+- [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
 
 </div>
 

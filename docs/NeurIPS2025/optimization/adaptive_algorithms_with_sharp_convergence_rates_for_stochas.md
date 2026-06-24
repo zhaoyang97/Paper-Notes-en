@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization
 description: >-
-  [NeurIPS 2025][Optimization][minimax optimization] This paper proposes Ada-Minimax and Ada-BiO, two adaptive algorithms that combine momentum normalization with a novel online noise estimation strategy to achieve…
+  [NeurIPS 2025][Optimization][minimax optimization] This paper proposes Ada-Minimax and Ada-BiO, two adaptive algorithms that combine momentum normalization with a novel online noise estimation strategy to achieve, for the first time, sharp convergence rates of $\tilde{O}(1/\sqrt{T} + \sqrt{\bar{\sigma}}/T^{1/4})$ for nonconvex-strongly-concave minimax and nonconvex-strongly-convex bilevel optimization without requiring prior knowledge of the gradient noise level.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "momentum normalization"
   - "convergence rate"
 date: 2026-05-08
-content_hash: f35d752373879cd4
+content_hash: 7f6ff9359bbeaa17
 ---
 
 # Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization
@@ -124,7 +124,7 @@ Ada-Minimax targets $\min_x \max_y f(x, y)$ (with $f$ strongly concave in $y$); 
 - [\[NeurIPS 2025\] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds](an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
 - [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
-- [\[NeurIPS 2025\] CHiQPM: Calibrated Hierarchical Interpretable Image Classification](chiqpm_calibrated_hierarchical_interpretable_image_classification.md)
+- [\[NeurIPS 2025\] Robust Estimation Under Heterogeneous Corruption Rates](robust_estimation_under_heterogeneous_corruption_rates.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features
 description: >-
-  [ICML 2026][Interpretability][Paper Note] By calculating the Pearson correlation between SAE activations on generation-time tokens and task correctness, CorrSteer identifies interpretable steering features. Using mean activations from positive samples as coefficients without contrasting datasets or backpropagation, it improves MMLU by +3.3% and HarmBench by +2
+  [ICML 2026][Interpretability][Sparse Autoencoders] By calculating the Pearson correlation between SAE activations on generation-time tokens and task correctness, CorrSteer identifies interpretable steering features. Using mean activations from positive samples as coefficients without contrasting datasets or backpropagation, it improves MMLU by +3.3% and HarmBench by +27.1% on Gemma-2 2B / LLaMA-3.1 8B, achieving a lower side-effect rate than fine-tuning.
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Representation Steering"
+  - "Feature Selection"
+  - "Pearson Correlation"
+  - "Side-Effect Rate"
 date: 2026-05-08
-content_hash: f57d09aed4ab228b
+content_hash: f52e2c36476a1854
 ---
+
 # CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features
 
 **Conference**: ICML 2026  
@@ -133,8 +139,8 @@ Evaluated on Gemma-2 2B + Gemma Scope (16K features × 26 layers) and LLaMA-3.1 
 ## Related Papers
 
 - [\[ICML 2026\] Rational Sparse Autoencoder](rational_sparse_autoencoder.md)
-- [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](../../CVPR2026/interpretability/improving_sparse_autoencoder_with_dynamic_attention.md)
-- [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](../../AAAI2026/interpretability/sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
+- [\[ICML 2026\] Closing the Loop: PID Feedback Control for Interpretable Activation Steering in Symbolic Music Generation](closing_the_loop_pid_feedback_control_for_interpretable_activation_steering_in_s.md)
+- [\[ICML 2026\] Query Lens: Interpreting Sparse Key-Value Features with Indirect Effects](query_lens_interpreting_sparse_key-value_features_with_indirect_effects.md)
 - [\[ICML 2026\] Steer Like the LLM: Activation Steering that Mimics Prompting](steer_like_the_llm_activation_steering_that_mimics_prompting.md)
 - [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
 

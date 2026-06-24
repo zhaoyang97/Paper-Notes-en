@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Certifiably Optimal Anisotropic Rotation Averaging
 description: >-
-  [ICCV 2025][Robotics][rotation averaging] This paper proposes a novel SDP relaxation that enforces solutions to lie within the convex hull of SO(3), conv(SO(3))…
+  [ICCV 2025][Robotics][rotation averaging] This paper proposes a novel SDP relaxation that enforces solutions to lie within the convex hull of SO(3), conv(SO(3)), achieving for the first time certifiably globally optimal rotation averaging under anisotropic cost functions. It resolves the fundamental failure of the conventional O(3) relaxation in anisotropic settings.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "convex relaxation"
   - "structure from motion"
 date: 2026-05-08
-content_hash: a2103ed675279a68
+content_hash: 27c7cc5087772750
 ---
 
 # Certifiably Optimal Anisotropic Rotation Averaging
@@ -133,11 +133,11 @@ Note: SDP-O(3)-aniso (anisotropic cost + conventional O(3) relaxation) **complet
 
 ## Related Papers
 
+- [\[ICML 2025\] Learning to Stop: Deep Learning for Mean Field Optimal Stopping](../../ICML2025/robotics/learning_to_stop_deep_learning_for_mean_field_optimal_stopping.md)
 - [\[ICML 2026\] Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges](../../ICML2026/robotics/optimal_and_scalable_mapf_via_multi-marginal_optimal_transport_and_schrödinger_b.md)
-- [\[ICCV 2025\] DexVLG: Dexterous Vision-Language-Grasp Model at Scale](dexvlg_dexterous_vision-language-grasp_model_at_scale.md)
-- [\[ICCV 2025\] TransiT: Transient Transformer for Non-line-of-sight Videography](transit_transient_transformer_for_non-line-of-sight_videography.md)
-- [\[ICCV 2025\] Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding](adaptive_articulated_object_manipulation_on_the_fly_with_foundation_model_reason.md)
-- [\[ICCV 2025\] Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning](resolving_token-space_gradient_conflicts_token_space_manipulation_for_transforme.md)
+- [\[ICML 2025\] STAR: Learning Diverse Robot Skill Abstractions through Rotation-Augmented Vector Quantization](../../ICML2025/robotics/star_learning_diverse_robot_skill_abstractions_through_rotation-augmented_vector.md)
+- [\[ICLR 2026\] Time Optimal Execution of Action Chunk Policies Beyond Demonstration Speed](../../ICLR2026/robotics/time_optimal_execution_of_action_chunk_policies_beyond_demonstration_speed.md)
+- [\[ICLR 2026\] DexNDM: Closing the Reality Gap for Dexterous In-Hand Rotation via Joint-Wise Neural Dynamics Model](../../ICLR2026/robotics/dexndm_closing_the_reality_gap_for_dexterous_in-hand_rotation_via_joint-wise_neu.md)
 
 </div>
 

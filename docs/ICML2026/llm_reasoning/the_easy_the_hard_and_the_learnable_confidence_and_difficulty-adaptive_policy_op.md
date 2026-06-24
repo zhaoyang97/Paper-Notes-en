@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][GRPO] This paper decomposes the training dynamics of GRPO and discovers that treating easy, hard, and learnable problems uniformly leads to compute mismatch. It proposes CoDaPO, which calculates a bounded value based on "confidence × difficulty" for each question. this value is used both to weight gradient updates and to res
+  [ICML2026][Reasoning][GRPO] This paper decomposes the training dynamics of GRPO and discovers that treating easy, hard, and learnable problems uniformly leads to compute mismatch. It proposes CoDaPO, which calculates a bounded value based on "confidence × difficulty" for each question. this value is used both to weight gradient updates and to resample high-value questions, concentrating updates on the "learnable zone" within a fixed compute budget. CoDaPO consistently outperf…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICML2026"
+  - "Reasoning"
+  - "GRPO"
+  - "Verifiable Reward RL"
+  - "Compute Allocation"
+  - "Difficulty Adaptation"
+  - "Confidence"
 date: 2026-05-08
-content_hash: ac3f249ddae42fbf
+content_hash: ffd0474b5d8371a2
 ---
+
 # The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning
 
 **Conference**: ICML2026  
@@ -133,11 +138,11 @@ Components were added incrementally (same base model and budget):
 
 ## Related Papers
 
-- [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](../../ACL2026/llm_reasoning/adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
 - [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](inference_time_optimization_with_confidence_dynamics.md)
-- [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](../../ICLR2026/llm_reasoning/adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
+- [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](../../ICLR2026/llm_reasoning/curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
+- [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](../../ACL2026/llm_reasoning/adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
 - [\[ICML 2026\] Attention Illuminates LLM Reasoning: The Preplan-and-Anchor Rhythm Enables Fine-Grained Policy Optimization](attention_illuminates_llm_reasoning_the_preplan-and-anchor_rhythm_enables_fine-g.md)
-- [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](../../ICLR2026/llm_reasoning/temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](../../ICLR2026/llm_reasoning/reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 
 </div>
 

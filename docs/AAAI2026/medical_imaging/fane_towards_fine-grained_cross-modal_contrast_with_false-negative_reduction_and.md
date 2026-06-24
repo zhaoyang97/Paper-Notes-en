@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention
 description: >-
-  [Medical Imaging] FaNe proposes a semantics-enhanced medical vision-language pre-training framework that addresses the false-negative problem and insufficient coarse-grained alignment in medical VLP through semantics-awa…
+  [Medical Imaging] FaNe proposes a semantics-enhanced medical vision-language pre-training framework that addresses the false-negative problem and insufficient coarse-grained alignment in medical VLP through semantics-aware positive mining, text-conditioned sparse attention pooling, and hard-negative-aware contrastive loss.
 tags:
   - "Medical Imaging"
 date: 2026-05-08
-content_hash: ac73d4ec89b4728e
+content_hash: 6d5d451ddd20c4ab
 ---
 
 # FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention
@@ -160,9 +160,9 @@ where $\lambda_1 = \lambda_2 = \lambda_3 = 1$ in experiments.
 
 - [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
 - [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
+- [\[CVPR 2025\] Multi-Resolution Pathology-Language Pre-training Model with Text-Guided Visual Representation](../../CVPR2025/medical_imaging/multi-resolution_pathology-language_pre-training_model_with_text-guided_visual_r.md)
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 - [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
-- [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](../../NeurIPS2025/medical_imaging/scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
 
 </div>
 

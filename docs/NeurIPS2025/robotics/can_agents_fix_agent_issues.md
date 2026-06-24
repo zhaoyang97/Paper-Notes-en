@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Can Agents Fix Agent Issues?
 description: >-
-  [NeurIPS 2025][Robotics][Agent system maintenance] This paper presents the first systematic study of automated issue resolution in LLM-based agent systems. Through manual analysis of 201 real-world agent issues…
+  [NeurIPS 2025][Robotics][Agent system maintenance] This paper presents the first systematic study of automated issue resolution in LLM-based agent systems. Through manual analysis of 201 real-world agent issues, the authors construct a taxonomy comprising 6 categories and 20 subcategories, invest approximately 500 person-hours to build AgentIssue-Bench—a benchmark of 50 reproducible tasks—and find that state-of-the-art software engineering (SE) agents (e.g., SWE-agent…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "bug taxonomy"
   - "benchmark"
 date: 2026-05-08
-content_hash: b886db7142058587
+content_hash: ed1c44ffdab92d7e
 ---
 
 # Can Agents Fix Agent Issues?
@@ -159,10 +159,10 @@ Compared to conventional software (SWE-bench Lite): these SE agents achieve reso
 ## Related Papers
 
 - [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](../../ICLR2026/robotics/rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
-- [\[NeurIPS 2025\] AutoToM: Scaling Model-based Mental Inference via Automated Agent Modeling](autotom_scaling_model-based_mental_inference_via_automated_agent_modeling.md)
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
 - [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
+- [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
+- [\[NeurIPS 2025\] AutoToM: Scaling Model-based Mental Inference via Automated Agent Modeling](autotom_scaling_model-based_mental_inference_via_automated_agent_modeling.md)
 
 </div>
 

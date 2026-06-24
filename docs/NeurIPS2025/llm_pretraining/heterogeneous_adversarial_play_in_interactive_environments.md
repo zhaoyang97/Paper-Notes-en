@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Heterogeneous Adversarial Play in Interactive Environments
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Adversarial Curriculum Learning] This paper proposes **HAP (Heterogeneous Adversarial Play)**, which formalizes teacher-student interaction as a minimax game: a teacher network automatical…
+  [NeurIPS 2025][LLM Pretraining][Adversarial Curriculum Learning] This paper proposes **HAP (Heterogeneous Adversarial Play)**, which formalizes teacher-student interaction as a minimax game: a teacher network automatically generates challenge tasks targeting student weaknesses, while the student policy continuously adapts and evolves, forming an adaptive curriculum without manual design. HAP outperforms state-of-the-art baselines in multi-task RL environments…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Task RL"
   - "Adaptive Curriculum"
 date: 2026-05-08
-content_hash: 345fb141820b6174
+content_hash: ed95129f913dc8b1
 ---
 
 # Heterogeneous Adversarial Play in Interactive Environments
@@ -156,11 +156,11 @@ Thirty participants were evaluated in Minigrid under three conditions: no tutori
 
 ## Related Papers
 
-- [\[CVPR 2026\] Linking Modality Isolation in Heterogeneous Collaborative Perception](../../CVPR2026/llm_pretraining/linking_modality_isolation_in_heterogeneous_collaborative_perception.md)
-- [\[ICLR 2026\] CHAMMI-75: Pre-training multi-channel models with heterogeneous microscopy images](../../ICLR2026/llm_pretraining/chammi-75_pre-training_multi-channel_models_with_heterogeneous_microscopy_images.md)
+- [\[CVPR 2025\] Exploration-Driven Generative Interactive Environments](../../CVPR2025/llm_pretraining/exploration-driven_generative_interactive_environments.md)
+- [\[ACL 2025\] Adversarial Tokenization](../../ACL2025/llm_pretraining/adversarial_tokenization.md)
+- [\[CVPR 2025\] A Unified Framework for Heterogeneous Semi-supervised Learning](../../CVPR2025/llm_pretraining/a_unified_framework_for_heterogeneous_semi-supervised_learning.md)
+- [\[ACL 2025\] An Effective Incorporating Heterogeneous Knowledge Curriculum Learning for Sequence Labeling](../../ACL2025/llm_pretraining/dual_stage_curriculum_learning_sequence_labeling.md)
 - [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
-- [\[NeurIPS 2025\] Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding](learning_to_flow_from_generative_pretext_tasks_for_neural_architecture_encoding.md)
-- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](scaling_embedding_layers_in_language_models.md)
 
 </div>
 

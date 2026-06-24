@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons
 description: >-
-  [ICLR 2026][LLM Safety][JailNeurons] JDJN reduces LVLM jailbreak detection to the "neuron level"—it uses causal ablation to locate a small set of **JailNeurons** in each layer specifically activated by jailbreak inputs. By aggregating these activations across layers to train a lightweight SVM, it achieves robust generalized detection of unseen attack type
+  [ICLR 2026][LLM Safety][Jailbreak Detection] JDJN reduces LVLM jailbreak detection to the "neuron level"—it uses causal ablation to locate a small set of **JailNeurons** in each layer specifically activated by jailbreak inputs. By aggregating these activations across layers to train a lightweight SVM, it achieves robust generalized detection of unseen attack types with near-zero false positives and ultra-low latency.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - JailNeurons
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Jailbreak Detection"
+  - "LVLM Safety"
+  - "JailNeurons"
+  - "Neuron Localization"
+  - "Generalized Detection"
 date: 2026-05-08
-content_hash: 773c91cbd5696fc3
+content_hash: 23cc602406e51020
 ---
+
 # From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons
 
 **Conference**: ICLR 2026  

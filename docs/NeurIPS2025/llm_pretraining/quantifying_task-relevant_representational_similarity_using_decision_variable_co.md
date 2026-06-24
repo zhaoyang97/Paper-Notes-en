@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Quantifying Task-Relevant Representational Similarity Using Decision Variable Correlation
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Decision Variable Correlation] This paper proposes Decision Variable Correlation (DVC), a novel metric for quantifying trial-by-trial consistency between two neural representations on clas…
+  [NeurIPS 2025][LLM Pretraining][Decision Variable Correlation] This paper proposes Decision Variable Correlation (DVC), a novel metric for quantifying trial-by-trial consistency between two neural representations on classification tasks. The authors find that higher ImageNet accuracy in deep networks is associated with *lower* DVC relative to monkey V4/IT, and that neither adversarial training nor large-scale dataset pretraining closes this gap.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Signal Detection Theory"
   - "Visual Cortex"
 date: 2026-05-08
-content_hash: 90dfa37c9cd60619
+content_hash: 34d0560c28f2452d
 ---
 
 # Quantifying Task-Relevant Representational Similarity Using Decision Variable Correlation
@@ -163,10 +163,10 @@ The inflated inter-model Cohen's Kappa values arise from decision bias introduce
 ## Related Papers
 
 - [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](enhancing_training_data_attribution_with_representational_optimization.md)
+- [\[ICML 2025\] DipLLM: Fine-Tuning LLM for Strategic Decision-Making in Diplomacy](../../ICML2025/llm_pretraining/dipllm_fine-tuning_llm_for_strategic_decision-making_in_diplomacy.md)
+- [\[ICML 2025\] When Can In-Context Learning Generalize Out of Task Distribution?](../../ICML2025/llm_pretraining/when_can_in-context_learning_generalize_out_of_task_distribution.md)
+- [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](../../ICLR2026/llm_pretraining/beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
 - [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](../../AAAI2026/llm_pretraining/beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
-- [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
-- [\[NeurIPS 2025\] Disaggregation Reveals Hidden Training Dynamics: The Case of Agreement Attraction](disaggregation_reveals_hidden_training_dynamics_the_case_of_agreement_attraction.md)
-- [\[NeurIPS 2025\] ZEUS: Zero-shot Embeddings for Unsupervised Separation of Tabular Data](zeus_zero-shot_embeddings_for_unsupervised_separation_of_tabular_data.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Training-Free Efficient Video Generation via Dynamic Token Carving
 description: >-
-  [NeurIPS 2025][Video Generation][Training-free acceleration] This paper proposes Jenga, a training-free inference acceleration framework for video DiTs that achieves 8.83× speedup on HunyuanVideo with only a 0.01% drop i…
+  [NeurIPS 2025][Video Generation][Training-free acceleration] This paper proposes Jenga, a training-free inference acceleration framework for video DiTs that achieves 8.83× speedup on HunyuanVideo with only a 0.01% drop in VBench score. The framework combines dynamic block attention carving (sparse KV block selection after token reordering via 3D space-filling curves) and a progressive resolution strategy (coarse-to-fine denoising), which operate orthogonally.
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "progressive resolution"
   - "video diffusion Transformer"
 date: 2026-05-08
-content_hash: 1c199b064272e7c2
+content_hash: 6a0d5137cb314145
 ---
 
 # Training-Free Efficient Video Generation via Dynamic Token Carving
@@ -147,9 +147,9 @@ Jenga is entirely training-free; all components are plug-and-play. AttenCarve em
 
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](../../ICML2026/video_generation/dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
 - [\[NeurIPS 2025\] S²Q-VDiT: Accurate Quantized Video Diffusion Transformer with Salient Data and Sparse Token Distillation](s2q-vdit_accurate_quantized_video_diffusion_transformer_with_salient_data_and_sp.md)
+- [\[CVPR 2025\] LongDiff: Training-Free Long Video Generation in One Go](../../CVPR2025/video_generation/longdiff_training-free_long_video_generation_in_one_go.md)
 - [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
-- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](../../CVPR2026/video_generation/training-free_motion_factorization_for_compositional_video_generation.md)
-- [\[NeurIPS 2025\] LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation](lemica_lexicographic_minimax_path_caching_for_efficient_diffusion-based_video_ge.md)
+- [\[ICML 2026\] WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching](../../ICML2026/video_generation/worldcache_accelerating_world_models_for_free_via_heterogeneous_token_caching.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Understanding Adam Convergence on Highly Degenerate Polynomials
 description: >-
-  [ICML 2026][Optimization & Theory][Adam] This paper selects a class of high-order degenerate polynomials $L(x)=\tfrac{1}{k}x^k$ (even $k\ge 4$) as a minimal problem model. It proves that under a constant learning rate, Adam achieves local linear convergence by exponentially amplifying the effective learning rate through a "decoupling" mechanism between $v_t$
+  [ICML2026][Optimization][Adam] This paper selects a class of high-order degenerate polynomials $L(x)=\tfrac{1}{k}x^k$ (even $k\ge 4$) as a minimal problem model. It proves that under a constant learning rate, Adam achieves local linear convergence by exponentially amplifying the effective learning rate through a "decoupling" mechanism between $v_t$ and $g_t^2$. Meanwhile, GD and momentum only achieve a sublinear rate of $\Theta(t^{-1/(k-2)})$ on the same problem. The study co…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Adam
+  - "ICML2026"
+  - "Optimization"
+  - "Adam"
+  - "Degenerate Minima"
+  - "Linear Convergence"
+  - "Phase Diagram"
+  - "Adaptive Step Size"
 date: 2026-05-08
-content_hash: 48c80cd6b268d986
+content_hash: 9e38ea200cc8b797
 ---
+
 # Towards Understanding Adam Convergence on Highly Degenerate Polynomials
 
 **Conference**: ICML2026  
@@ -125,7 +130,7 @@ All experiments were conducted on the analytical minimal problem $L(x)=\tfrac{1}
 - [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](../../NeurIPS2025/optimization/understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
 - [\[NeurIPS 2025\] Understanding Adam Requires Better Rotation Dependent Assumptions](../../NeurIPS2025/optimization/understanding_adam_requires_better_rotation_dependent_assumptions.md)
 - [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
-- [\[ICML 2026\] Balanced LoRA: Removing Parameter Invariance to Accelerate Convergence](balanced_lora_removing_parameter_invariance_to_accelerate_convergence.md)
+- [\[ICLR 2026\] Neural Sum-of-Squares: Certifying the Nonnegativity of Polynomials with Transformers](../../ICLR2026/optimization/neural_sum-of-squares_certifying_the_nonnegativity_of_polynomials_with_transform.md)
 - [\[ICML 2026\] Adaptive Preconditioners Trigger Loss Spikes in Adam](adaptive_preconditioners_trigger_loss_spikes_in_adam.md)
 
 </div>

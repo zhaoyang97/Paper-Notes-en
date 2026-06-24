@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] The paper proposes Nested Subspace Networks (NSN), which utilize low-rank decomposition to form strictly nested subspace hierarchies in linear layers. Combined with uncertainty-aware multi-rank training, a single model can adjust the trade-off between computation and performance on-the-fly during inference (50% FLOPs r
+  [ICLR 2026][LLM Efficiency][Nested subspaces] The paper proposes Nested Subspace Networks (NSN), which utilize low-rank decomposition to form strictly nested subspace hierarchies in linear layers. Combined with uncertainty-aware multi-rank training, a single model can adjust the trade-off between computation and performance on-the-fly during inference (50% FLOPs reduction with only 5% accuracy loss) and can be applied post-hoc to pretrained LLMs.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Nested subspaces"
+  - "dynamic inference"
+  - "low-rank decomposition"
+  - "uncertainty-aware training"
+  - "elastic computation"
 date: 2026-05-08
-content_hash: ad4552b5186ca0ce
+content_hash: 99158470713babd9
 ---
+
 # Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models
 
 **Conference**: ICLR 2026  

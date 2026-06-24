@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GateRA: Token-Aware Modulation for Parameter-Efficient Fine-Tuning
 description: >-
-  [AAAI 2026][Interpretability][Parameter-efficient fine-tuning] This paper proposes GateRA, which introduces a lightweight token-aware gating module into PEFT methods (LoRA/DoRA/HiRA). A sigmoid gate dynamically adjusts t…
+  [AAAI 2026][Interpretability][Parameter-efficient fine-tuning] This paper proposes GateRA, which introduces a lightweight token-aware gating module into PEFT methods (LoRA/DoRA/HiRA). A sigmoid gate dynamically adjusts the adaptation intensity per token—suppressing updates for in-distribution or simple tokens to preserve pre-trained knowledge, while amplifying adaptation for challenging tokens. Combined with entropy regularization to encourage near-binary gating decisions…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "entropy regularization"
   - "gradient modulation"
 date: 2026-05-08
-content_hash: 65ecce9526c113b8
+content_hash: 6189173138604700
 ---
 
 # GateRA: Token-Aware Modulation for Parameter-Efficient Fine-Tuning
@@ -130,9 +130,9 @@ $\mathcal{L} = \mathcal{L}_{\text{task}} + \lambda \mathcal{L}_{\text{ent}}$, co
 
 - [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Ditching](../../ICLR2026/interpretability/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_ditching.md)
 - [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
-- [\[NeurIPS 2025\] Curvature Tuning: Provable Training-free Model Steering From a Single Parameter](../../NeurIPS2025/interpretability/curvature_tuning_provable_training-free_model_steering_from_a_single_parameter.md)
 - [\[AAAI 2026\] SparK: Query-Aware Unstructured Sparsity with Recoverable KV Cache Channel Pruning](spark_query-aware_unstructured_sparsity_with_recoverable_kv_cache_channel_prunin.md)
-- [\[AAAI 2026\] HSKBenchmark: Modeling and Benchmarking Chinese Second Language Acquisition in Large Language Models through Curriculum Tuning](hskbenchmark_modeling_and_benchmarking_chinese_second_language_acquisition_in_la.md)
+- [\[AAAI 2026\] DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment](drexperts_differential_refinement_of_distortion-aware_experts_for_blind_image_qu.md)
+- [\[NeurIPS 2025\] Curvature Tuning: Provable Training-free Model Steering From a Single Parameter](../../NeurIPS2025/interpretability/curvature_tuning_provable_training-free_model_steering_from_a_single_parameter.md)
 
 </div>
 

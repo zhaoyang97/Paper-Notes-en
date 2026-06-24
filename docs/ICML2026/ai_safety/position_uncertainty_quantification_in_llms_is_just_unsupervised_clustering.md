@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering
 description: >-
-  [ICML 2026][AI Safety][Position Paper] This is a position paper making a core assertion: current mainstream methods for LLM Uncertainty Quantification (UQ)—such as Semantic Entropy, graph-based methods, and P(true)—are mechanistically isomorphic to unsupervised clustering. They measure "internal consistency of model generations" rather than "external correc
+  [ICML 2026][AI Safety][Position Paper] This is a position paper making a core assertion: current mainstream methods for LLM Uncertainty Quantification (UQ)—such as Semantic Entropy, graph-based methods, and P(true)—are mechanistically isomorphic to unsupervised clustering. They measure "internal consistency of model generations" rather than "external correctness," making them inherently fail against "confident hallucinations." The authors diagnose three major pathologies: par…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Position Paper
-  - Uncertainty Quantification
+  - "ICML 2026"
+  - "AI Safety"
+  - "Position Paper"
+  - "Uncertainty Quantification"
+  - "Confident Hallucination"
+  - "Clustering Paradigm"
+  - "External Ground Truth"
 date: 2026-05-08
-content_hash: f592b5fd44c7ae3e
+content_hash: fab7415c4250ead9
 ---
+
 # Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering
 
 **Conference**: ICML 2026  
@@ -115,10 +119,10 @@ The paper does not test a new method but uses supportive data to "falsify" the r
 ## Related Papers
 
 - [\[AAAI 2026\] Credal Ensemble Distillation for Uncertainty Quantification](../../AAAI2026/ai_safety/credal_ensemble_distillation_for_uncertainty_quantification.md)
-- [\[ICML 2026\] Multilingual Unlearning in LLMs: 转移、动力学与可逆性](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
+- [\[ICML 2026\] Position: 'AI Alignment' Encompasses Competing Technical Priorities](ai_alignment_encompasses_competing_technical_priorities.md)
 - [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](gradient_transformer_learning_to_generate_updates_for_llms.md)
 - [\[ICML 2026\] Efficient DP-SGD for LLMs with Randomized Clipping](efficient_dp-sgd_for_llms_with_randomized_clipping.md)
-- [\[ICML 2026\] SemGrad: Gradients w.r.t. Semantics-Preserving Embeddings Tell LLM Uncertainty](gradients_with_respect_to_semantics_preserving_embeddings_tell_the_uncertainty_o.md)
+- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 
 </div>
 

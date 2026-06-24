@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] RESFL integrates "adversarial privacy decoupling" and "uncertainty-guided fair aggregation" into a single Federated Learning (FL) pipeline. It utilizes an evidential neural network to compute a scale-invariant group fairness metric, UFM, to weight client updates. In autonomous driving object detection, this framework s
+  [ICLR 2026][AI Safety][Federated Learning] RESFL integrates "adversarial privacy decoupling" and "uncertainty-guided fair aggregation" into a single Federated Learning (FL) pipeline. It utilizes an evidential neural network to compute a scale-invariant group fairness metric, UFM, to weight client updates. In autonomous driving object detection, this framework simultaneously reduces privacy leakage and narrows group disparities with minimal impact on accuracy.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Privacy-Fairness Trade-off"
+  - "Evidential Uncertainty"
+  - "Gradient Reversal"
+  - "Fair Aggregation"
 date: 2026-05-08
-content_hash: 02464aacb2e3437b
+content_hash: 9dd39bcf6c2502b8
 ---
+
 # RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility
 
 **Conference**: ICLR 2026  
@@ -119,16 +125,16 @@ Increasing $\lambda_{\text{fair}}$ improves fairness by shifting model capacity 
 **Limitations & Future Work**: While the method claims to be domain-agnostic, experiments are limited to autonomous driving scenarios. Under extreme low-visibility conditions (e.g., heavy fog), all methods degrade due to physical limits; RESFL only mitigates the rate of deterioration. Furthermore, adversarial decoupling provides information-theoretic benefits rather than formal $(\epsilon, \delta)$-DP guarantees. The reliability of UFM also depends on the robustness of evidence, which could be targeted by sophisticated adversarial attacks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Federated Learning of Quantile Inference under Local Differential Privacy](federated_learning_of_quantile_inference_under_local_differential_privacy.md)
+- [\[ICLR 2026\] Fairness-Aware Multi-view Evidential Learning with Adaptive Prior](fairness-aware_multi-view_evidential_learning_with_adaptive_prior.md)
 - [\[ICLR 2026\] PateGAIL++: Utility Optimized Private Trajectory Generation with Imitation Learning](pategail_utility_optimized_private_trajectory_generation_with_imitation_learning.md)
 - [\[ICLR 2026\] Convergent Differential Privacy Analysis for General Federated Learning](convergent_differential_privacy_analysis_for_general_federated_learning.md)
-- [\[ICLR 2026\] Fairness via Independence: A General Regularization Framework for Machine Learning](fairness_via_independence_a_general_regularization_framework_for_machine_learnin.md)
-- [\[ICLR 2026\] Rethinking LoRA for Privacy-Preserving Federated Learning in Large Models](rethinking_lora_for_privacy-preserving_federated_learning_in_large_models.md)
+- [\[ICLR 2026\] Fine-Grained Class-Conditional Distribution Balancing for Debiased Learning](fine-grained_class-conditional_distribution_balancing_for_debiased_learning.md)
 
 </div>
 

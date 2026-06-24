@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation
 description: >-
-  [ICML 2026][learning_theory][MMD] The paper provides the first PAC-Bayes upper bound for test-time adaptation in the form of "target risk $\le$ source empirical risk + KL complexity + MMD distribution shift." It interprets MMD-balls as credal sets in the sense of Walley, naturally separating aleatoric and epistemic uncertainty via "upper/lower risk int
+  [ICML 2026][Test-time adaptation][PAC-Bayes bounds] The paper provides the first PAC-Bayes upper bound for test-time adaptation in the form of "target risk $\le$ source empirical risk + KL complexity + MMD distribution shift." It interprets MMD-balls as credal sets in the sense of Walley, naturally separating aleatoric and epistemic uncertainty via "upper/lower risk intervals," and providing computable criteria for "when to adapt and when to abstain."
 tags:
-  - ICML 2026
-  - learning_theory
-  - MMD
-  - credal set
+  - "ICML 2026"
+  - "Test-time adaptation"
+  - "PAC-Bayes theory"
+  - "Uncertainty quantification"
+  - "PAC-Bayes bounds"
+  - "MMD"
+  - "credal set"
+  - "epistemic uncertainty"
 date: 2026-05-08
-content_hash: 0aad6097a2f9adad
+content_hash: ebf81e256777db2b
 ---
+
 # MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation
 
 **Conference**: ICML 2026  
@@ -137,8 +142,8 @@ This is a theoretical work and **does not contain complete experimental tables**
 
 - [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
 - [\[ICLR 2026\] Epistemic Uncertainty Quantification To Improve Decisions From Black-Box Models](../../ICLR2026/learning_theory/epistemic_uncertainty_quantification_to_improve_decisions_from_black-box_models.md)
+- [\[ICML 2026\] Learning Credal Ensembles via Distributionally Robust Optimization](learning_credal_ensembles_via_distributionally_robust_optimization.md)
 - [\[ICLR 2026\] Efficient Credal Prediction through Decalibration](../../ICLR2026/learning_theory/efficient_credal_prediction_through_decalibration.md)
-- [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](../../ICLR2026/learning_theory/expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
 - [\[ICML 2026\] On Regret Bounds of Thompson Sampling for Bayesian Optimization](on_regret_bounds_of_thompson_sampling_for_bayesian_optimization.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] The authors organized 19 native experts to conduct 8.8k human-machine text discrimination trials across 16 datasets involving 9 languages, 9 domains, and 11 SOTA LLMs. They found that the average expert accuracy reached 87.6% (significantly higher than the "near random" conclusions of early studies) and further reveale
+  [ACL 2026][Multilingual & Machine Translation][MGT Detection] The authors organized 19 native experts to conduct 8.8k human-machine text discrimination trials across 16 datasets involving 9 languages, 9 domains, and 11 SOTA LLMs. They found that the average expert accuracy reached 87.6% (significantly higher than the "near random" conclusions of early studies) and further revealed that while machine text rewritten with prompts explicitly addressing differences can lower detec…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "MGT Detection"
+  - "Multilingual"
+  - "Human Evaluation"
+  - "Prompting Rewriting"
+  - "Preference Analysis"
 date: 2026-05-08
-content_hash: 52e0983dc5417ba5
+content_hash: 5fbf075c52dd4799
 ---
+
 # Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI
 
 **Conference**: ACL 2026  
@@ -123,6 +129,7 @@ This paper is an evaluation/analysis study and does not involve specific trainin
 - **Value**: ⭐⭐⭐⭐⭐ Directly counters the "failed Turing Test" narrative and provides a major multilingual resource.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] ROSE: Rotate Your Large Language Model to See
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] Instead of concatenating visual features as tokens into the LLM input (which causes long sequences, quadratic complexity, and dilutes language priors), this work encodes visual semantics into **orthogonal rotation matrices** that are directly left-multiplied onto the pre-trained weights of the LLM. This avoids context
+  [CVPR 2026][Multimodal VLM][MLLM] Instead of concatenating visual features as tokens into the LLM input (which causes long sequences, quadratic complexity, and dilutes language priors), this work encodes visual semantics into **orthogonal rotation matrices** that are directly left-multiplied onto the pre-trained weights of the LLM. This avoids context expansion and maintains the angular structure between parameters (i.e., language priors) through orthogonality. The resulting…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
-  - vision injection
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "vision injection"
+  - "parameter space"
+  - "orthogonal rotation"
+  - "Cayley transform"
+  - "inference efficiency"
 date: 2026-05-08
-content_hash: ff8c17466e62c1ee
+content_hash: 0c5de3d64e6833d2
 ---
+
 # ROSE: Rotate Your Large Language Model to See
 
 **Conference**: CVPR 2026  
@@ -136,9 +141,9 @@ ROSE-7B achieves an Avg of 74.5, comparable to Qwen2.5-VL-7B (76.0), but with on
 
 - [\[CVPR 2026\] Learning to See through Illumination Extremes with Event Streaming in Multimodal Large Language Models](learning_to_see_through_illumination_extremes_with_event_streaming_in_multimodal.md)
 - [\[CVPR 2026\] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding](see_what_i_mean_aligning_vision_and_language_representations_for_video_fine-grai.md)
+- [\[CVPR 2026\] Point Cloud as a Foreign Language for Multi-modal Large Language Model](point_cloud_as_a_foreign_language_for_multi-modal_large_language_model.md)
+- [\[CVPR 2025\] LamRA: Large Multimodal Model as Your Advanced Retrieval Assistant](../../CVPR2025/multimodal_vlm/lamra_large_multimodal_model_as_your_advanced_retrieval_assistant.md)
 - [\[CVPR 2026\] CaptionQA: Is Your Caption as Useful as the Image Itself?](captionqa_is_your_caption_as_useful_as_the_image_itself.md)
-- [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
 
 </div>
 

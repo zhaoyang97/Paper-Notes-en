@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents
 description: >-
-  [AAAI 2026][LLM Evaluation][Cognitive Load Theory] Drawing on Cognitive Load Theory (CLT) from psychology, this work decomposes the complexity of tool-use tasks into intrinsic load (structural complexity of the solution…
+  [AAAI 2026][LLM Evaluation][Cognitive Load Theory] Drawing on Cognitive Load Theory (CLT) from psychology, this work decomposes the complexity of tool-use tasks into intrinsic load (structural complexity of the solution path) and extraneous load (ambiguity of problem formulation). It constructs ToolLoad-Bench, a benchmark with parametrically adjustable cognitive load, and employs an exponential decay model $\text{Acc} \approx e^{-(k \cdot CL + b)}$ to precisely characterize t…
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Tool Interaction Graph"
   - "Benchmark"
 date: 2026-05-08
-content_hash: a3e593d370cfdadc
+content_hash: 98940a8342e2f9cd
 ---
 
 # Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents
@@ -140,10 +140,10 @@ Hosmer–Lemeshow goodness-of-fit test (p-value > 0.05 indicates no statisticall
 ## Related Papers
 
 - [\[ACL 2026\] Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language](../../ACL2026/llm_evaluation/exploring_the_capability_boundaries_of_llms_in_mastering_of_chinese_chouxiang_la.md)
+- [\[ICLR 2026\] HackWorld: Evaluating Computer-Use Agents on Exploiting Web Application Vulnerabilities](../../ICLR2026/llm_evaluation/hackworld_evaluating_computer-use_agents_on_exploiting_web_application_vulnerabi.md)
+- [\[ICLR 2026\] Computer Agent Arena: Toward Human-Centric Evaluation and Analysis of Computer-Use Agents](../../ICLR2026/llm_evaluation/computer_agent_arena_toward_human-centric_evaluation_and_analysis_of_computer-us.md)
 - [\[AAAI 2026\] Towards a Common Framework for Autoformalization](towards_a_common_framework_for_autoformalization.md)
 - [\[ACL 2026\] StratMem-Bench: Evaluating Strategic Memory Use in Virtual Character Conversation Beyond Factual Recall](../../ACL2026/llm_evaluation/stratmem-bench_evaluating_strategic_memory_use_in_virtual_character_conversation.md)
-- [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](../../ACL2026/llm_evaluation/beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
-- [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](../../ACL2026/llm_evaluation/beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
 
 </div>
 

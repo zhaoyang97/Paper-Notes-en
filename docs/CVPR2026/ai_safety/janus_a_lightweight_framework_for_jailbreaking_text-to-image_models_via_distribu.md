@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] JANUS: A Lightweight Framework for Jailbreaking Text-to-Image Models via Distribution Optimization
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] JANUS reformulates jailbreaking attacks on Text-to-Image (T2I) models as a "low-dimensional distribution optimization" problem. By employing two semantically anchored Gaussian distributions for "wave interference" mixing and a lightweight policy gradient to learn optimal mixing coefficients under black-box rewards, it
+  [CVPR 2026][AI Safety][Text-to-Image Models] JANUS reformulates jailbreaking attacks on Text-to-Image (T2I) models as a "low-dimensional distribution optimization" problem. By employing two semantically anchored Gaussian distributions for "wave interference" mixing and a lightweight policy gradient to learn optimal mixing coefficients under black-box rewards, it improves the ASR-8 on SD3.5 Large Turbo from 25.30% to 43.15% without a large model generator…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Text-to-Image Models"
+  - "Jailbreaking Attacks"
+  - "Safety Filtering"
+  - "Distribution Optimization"
+  - "Black-box Policy Gradient"
 date: 2026-05-08
-content_hash: a5843ce85db51d5d
+content_hash: 2160da8e62e5725d
 ---
+
 # JANUS: A Lightweight Framework for Jailbreaking Text-to-Image Models via Distribution Optimization
 
 **Conference**: CVPR 2026  
@@ -147,8 +153,8 @@ Component ablation (N=8, SD3.5LT):
 
 ## Related Papers
 
-- [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](runawayevil_jailbreaking_the_image-to-video_generative_models.md)
 - [\[CVPR 2026\] Jailbreaking Vision-Language Models via Dissonance-Guided Suffix Optimization and Image-Phrase Injection](jailbreaking_vision-language_models_via_dissonance-guided_suffix_optimization_an.md)
+- [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](runawayevil_jailbreaking_the_image-to-video_generative_models.md)
 - [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
 - [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)

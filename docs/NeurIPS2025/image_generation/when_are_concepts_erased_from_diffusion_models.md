@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Are Concepts Erased From Diffusion Models?
 description: >-
-  [NeurIPS 2025][Image Generation][Concept Erasure] This paper proposes two mechanistic models of concept erasure (guidance-based avoidance vs. destruction-based removal) and designs a suite of five independent probing met…
+  [NeurIPS 2025][Image Generation][Concept Erasure] This paper proposes two mechanistic models of concept erasure (guidance-based avoidance vs. destruction-based removal) and designs a suite of five independent probing methods—spanning optimization search, in-context probing, noise trajectory probing, classifier-guided probing, and dynamic concept tracing—to systematically demonstrate that most existing erasure methods merely "circumvent" concepts rather than genuinely eliminat…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Guidance-Based Avoidance"
   - "Destruction-Based Removal"
 date: 2026-05-08
-content_hash: 14c2c560a0ce3125
+content_hash: c07ebf10113fe5fa
 ---
 
 # When Are Concepts Erased From Diffusion Models?
@@ -137,8 +137,8 @@ The classifier is trained with BCEWithLogits loss with positive-class reweightin
 - [\[NeurIPS 2025\] Emergence and Evolution of Interpretable Concepts in Diffusion Models](emergence_and_evolution_of_interpretable_concepts_in_diffusi.md)
 - [\[ICCV 2025\] Meta-Unlearning on Diffusion Models: Preventing Relearning Unlearned Concepts](../../ICCV2025/image_generation/meta-unlearning_on_diffusion_models_preventing_relearning_unlearned_concepts.md)
 - [\[ICML 2026\] SAEmnesia: Erasing Concepts in Diffusion Models with Supervised Sparse Autoencoders](../../ICML2026/image_generation/saemnesia_erasing_concepts_in_diffusion_models_with_supervised_sparse_autoencode.md)
-- [\[NeurIPS 2025\] Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models](semantic_surgery_zero-shot_concept_erasure_in_diffusion_models.md)
-- [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
+- [\[CVPR 2025\] Concept Replacer: Replacing Sensitive Concepts in Diffusion Models via Precision Localization](../../CVPR2025/image_generation/concept_replacer_replacing_sensitive_concepts_in_diffusion_models_via_precision_.md)
+- [\[CVPR 2025\] Memories of Forgotten Concepts](../../CVPR2025/image_generation/memories_of_forgotten_concepts.md)
 
 </div>
 

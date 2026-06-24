@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] Ours proposes XMark, a multi-bit text watermarking method based on the Leave-one-Shard-out (LoSo) strategy and evergreen lists. By intersecting green lists arranged across multiple vocabulary permutations and constraining the token-shard mapping matrix, it significantly improves decoding accuracy under limited token co
+  [ACL 2026][LLM Safety][Multi-bit watermarking] Ours proposes XMark, a multi-bit text watermarking method based on the Leave-one-Shard-out (LoSo) strategy and evergreen lists. By intersecting green lists arranged across multiple vocabulary permutations and constraining the token-shard mapping matrix, it significantly improves decoding accuracy under limited token conditions while maintaining text quality.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Multi-bit watermarking"
+  - "LLM text detection"
+  - "digital watermarking"
+  - "text provenance"
+  - "logit perturbation"
 date: 2026-05-08
-content_hash: 7111aba308a94a4a
+content_hash: 4ccdb28023803507
 ---
+
 # XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts
 
 **Conference**: ACL 2026  
@@ -143,8 +149,8 @@ The PPL of unwatermarked text is 3.97; XMark's PPL is the closest.
 - [\[ICML 2025\] Robust Multi-bit Text Watermark with LLM-based Paraphrasers](../../ICML2025/llm_safety/robust_multi-bit_text_watermark_with_llm-based_paraphrasers.md)
 - [\[ACL 2026\] STELA: A Linguistics-Aware LLM Watermarking via Syntactic Predictability](a_linguistics-aware_llm_watermarking_via_syntactic_predictability.md)
 - [\[ACL 2026\] SSG: Logit-Balanced Vocabulary Partitioning for LLM Watermarking](ssg_logit-balanced_vocabulary_partitioning_for_llm_watermarking.md)
+- [\[ICLR 2026\] Reliable Weak-to-Strong Monitoring of LLM Agents](../../ICLR2026/llm_safety/reliable_weak-to-strong_monitoring_of_llm_agents.md)
 - [\[ACL 2026\] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)
-- [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
 
 </div>
 

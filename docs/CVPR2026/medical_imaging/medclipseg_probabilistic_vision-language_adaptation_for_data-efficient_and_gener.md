@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Building on frozen CLIP encoders, this work achieves bidirectional image-text interaction and prediction uncertainty modeling through Probabilistic Vision-Language (PVL) adaptation. Combined with a soft patch-level contrastive loss, it balances data efficiency, domain generalization, and interpretability across 16 medi
+  [CVPR2026][Medical Imaging][Medical Image Segmentation] Building on frozen CLIP encoders, this work achieves bidirectional image-text interaction and prediction uncertainty modeling through Probabilistic Vision-Language (PVL) adaptation. Combined with a soft patch-level contrastive loss, it balances data efficiency, domain generalization, and interpretability across 16 medical segmentation datasets.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Medical Image Segmentation"
+  - "CLIP Adaptation"
+  - "Probabilistic Attention"
+  - "Uncertainty Modeling"
+  - "Cross-modal Fusion"
+  - "Data-efficient"
 date: 2026-05-08
-content_hash: 822944b8ee2e1481
+content_hash: 1a72c921d4054a2f
 ---
+
 # MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation
 
 **Conference**: CVPR2026  
@@ -137,9 +144,9 @@ Two key findings: (1) The PVL adapter is the core component, moving which drops 
 
 - [\[CVPR 2026\] Decoupling Vision and Language: Codebook Anchored Visual Adaptation](decoupling_vision_and_language_codebook_anchored_visual_adaptation.md)
 - [\[CVPR 2026\] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection](chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_.md)
+- [\[CVPR 2026\] Simple-ViLMedSAM: Simple Text Prompts Meet Vision-Language Models for Medical Image Segmentation](simple-vilmedsam_simple_text_prompts_meet_vision-language_models_for_medical_ima.md)
 - [\[AAAI 2026\] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation](../../AAAI2026/medical_imaging/denas-vit_data_efficient_nas-optimized_vision_transformer_for_ultrasound_image_s.md)
 - [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
-- [\[CVPR 2026\] SHAPE: Structure-aware Hierarchical Unsupervised Domain Adaptation with Plausibility Evaluation for Medical Image Segmentation](shape_structure-aware_hierarchical_unsupervised_domain_adaptation_with_plausibil.md)
 
 </div>
 

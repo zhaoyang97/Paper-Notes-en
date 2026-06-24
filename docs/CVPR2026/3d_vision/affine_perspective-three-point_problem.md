@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Affine Perspective-Three-Point Problem
 description: >-
-  [CVPR 2026][Others][P3P] This paper frames the classic P3P (Perspective-Three-Point) problem within weak-perspective and para-perspective affine camera models. It derives a closed-form minimal solver requiring only a **bi-quadratic equation**, followed by a lightweight iterative upgrade to "refine" the affine solution into an exact perspective
+  [CVPR 2026][3D Vision][P3P] This paper frames the classic P3P (Perspective-Three-Point) problem within weak-perspective and para-perspective affine camera models. It derives a closed-form minimal solver requiring only a **bi-quadratic equation**, followed by a lightweight iterative upgrade to "refine" the affine solution into an exact perspective solution. This two-step approach matches the accuracy of SOTA exact P3P solvers while being faster.
 tags:
-  - CVPR 2026
-  - Others
-  - P3P
+  - "CVPR 2026"
+  - "3D Vision"
+  - "P3P"
+  - "Camera Pose"
+  - "Affine Camera"
+  - "Weak Perspective"
+  - "Para-perspective"
 date: 2026-05-08
-content_hash: 147998a60e4cc22c
+content_hash: 8b47de0f4f052c64
 ---
+
 # Affine Perspective-Three-Point Problem
 
 **Conference**: CVPR 2026  
@@ -148,11 +153,11 @@ Affine solvers are faster than Ding: `Weak1` is ~10% faster, and `Weak2` is ~4% 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Automated Reproducibility Has a Problem Statement Problem](../../AAAI2026/others/automated_reproducibility_has_a_problem_statement_problem.md)
-- [\[AAAI 2026\] The Publication Choice Problem](../../AAAI2026/others/the_publication_choice_problem.md)
-- [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
-- [\[CVPR 2026\] DDSF: Robust Few-Shot Learning via Disentangled Subspaces with Determinantal Point Process](ddsf_robust_few-shot_learning_via_disentangled_subspaces_with_determinantal_poin.md)
-- [\[CVPR 2026\] Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective](rethinking_knowledge_transfer_in_image_quality_assessment_a_perceptual_preferenc.md)
+- [\[CVPR 2026\] Solvability of the Viewing Graph Under the Affine Camera Model](solvability_of_the_viewing_graph_under_the_affine_camera_model.md)
+- [\[AAAI 2026\] Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective](../../AAAI2026/3d_vision/rethinking_multimodal_point_cloud_completion_a_completion-by-correction_perspect.md)
+- [\[CVPR 2026\] No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency](no_calibration_no_depth_no_problem_cross-sensor_view_synthesis_with_3d_consisten.md)
+- [\[CVPR 2026\] Pano360: Perspective to Panoramic Vision with Geometric Consistency](pano360_perspective_to_panoramic_vision_with_geometric_consistency.md)
+- [\[ICCV 2025\] PersPose: 3D Human Pose Estimation with Perspective Encoding and Perspective Rotation](../../ICCV2025/3d_vision/perspose_3d_human_pose_estimation_with_perspective_encoding_and_perspective_rota.md)
 
 </div>
 

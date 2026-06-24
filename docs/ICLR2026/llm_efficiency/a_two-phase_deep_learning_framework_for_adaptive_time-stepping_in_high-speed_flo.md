@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Two-Phase Deep Learning Framework for Adaptive Time-Stepping in High-Speed Flow Modeling
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] ShockCast decouples "adaptive time-stepping for high-speed flows" into two learning problems: first, using a Neural CFL model to predict the next time step $\Delta t$ based on the current flow field; then, using a Neural Solver conditioned on $\Delta t$ to advance the flow field by $\Delta t$. These two modules alterna
+  [ICLR2026][LLM Efficiency][High-speed flows] ShockCast decouples "adaptive time-stepping for high-speed flows" into two learning problems: first, using a Neural CFL model to predict the next time step $\Delta t$ based on the current flow field; then, using a Neural Solver conditioned on $\Delta t$ to advance the flow field by $\Delta t$. These two modules alternate autoregressively during inference, allowing the neural solver to process supersonic flow fields with shocks by r…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "High-speed flows"
+  - "Adaptive time-stepping"
+  - "Neural PDE solver"
+  - "CFL condition"
+  - "Time-step conditioning"
 date: 2026-05-08
-content_hash: b46918eef65aa69d
+content_hash: 3939178c67079d9f
 ---
+
 # A Two-Phase Deep Learning Framework for Adaptive Time-Stepping in High-Speed Flow Modeling
 
 **Conference**: ICLR2026  
@@ -129,11 +135,11 @@ Results also showed scalability on 3D Spherical Blast and long-term stability on
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
 - [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
 - [\[ICML 2025\] Curse of High Dimensionality Issue in Transformer for Long-context Modeling](../../ICML2025/llm_efficiency/curse_of_high_dimensionality_issue_in_transformer_for_long-context_modeling.md)
 - [\[ICLR 2026\] DASH: Deterministic Attention Scheduling for High-throughput Reproducible LLM Training](dash_deterministic_attention_scheduling_for_high-throughput_reproducible_llm_tra.md)
-- [\[ICLR 2026\] CONCUR: A Framework for Continual Constrained and Unconstrained Routing](concur_a_framework_for_continual_constrained_and_unconstrained_routing.md)
 
 </div>
 

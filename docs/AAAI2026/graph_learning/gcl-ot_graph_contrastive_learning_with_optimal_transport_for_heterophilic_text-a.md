@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs
 description: >-
-  [AAAI 2026][Graph Learning][Graph Contrastive Learning] This paper proposes GCL-OT, the first framework to introduce Optimal Transport (OT) into graph contrastive learning for heterophilic text-attributed graphs. Three d…
+  [AAAI 2026][Graph Learning][Graph Contrastive Learning] This paper proposes GCL-OT, the first framework to introduce Optimal Transport (OT) into graph contrastive learning for heterophilic text-attributed graphs. Three dedicated modules — RealSoftMax similarity estimation, a filter-prompt mechanism, and OT-guided latent homophily mining — address three multi-granularity heterophily challenges: partial heterophily, complete heterophily, and latent homophily, respectively.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -14,7 +14,7 @@ tags:
   - "RealSoftMax"
   - "Sinkhorn"
 date: 2026-05-08
-content_hash: 01e22b7889c47535
+content_hash: cea311a38562b4dd
 ---
 
 # GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs
@@ -154,11 +154,11 @@ The problem is clearly defined (multi-granularity heterophily), the method is el
 
 ## Related Papers
 
+- [\[ICML 2026\] ERAlign: Energy-based Representation Alignment of GNNs and LLMs on Text-attributed Graphs](../../ICML2026/graph_learning/eralign_energy-based_representation_alignment_of_gnns_and_llms_on_text-attribute.md)
 - [\[NeurIPS 2025\] SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs](../../NeurIPS2025/graph_learning/sstag_structure-aware_self-supervised_learning_method_for_text-attributed_graphs.md)
+- [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](../../ICLR2026/graph_learning/gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
+- [\[ICML 2025\] HGOT: Self-supervised Heterogeneous Graph Neural Network with Optimal Transport](../../ICML2025/graph_learning/hgot_self-supervised_heterogeneous_graph_neural_network_with_optimal_transport.md)
 - [\[NeurIPS 2025\] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs](../../NeurIPS2025/graph_learning/unifying_text_semantics_and_graph_structures_for_temporal_text-attributed_graphs.md)
-- [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](../../NeurIPS2025/graph_learning/dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
-- [\[ICLR 2026\] GRAPHITE: Graph Homophily Booster — Reimagining the Role of Discrete Features in Heterophilic Graph Learning](../../ICLR2026/graph_learning/graph_homophily_booster_reimagining_the_role_of_discrete_features_in_heterophili.md)
-- [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
 
 </div>
 

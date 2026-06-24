@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Audio-sync Video Instance Editing with Granularity-Aware Mask Refiner
 description: >-
-  [CVPR 2026][Audio & Speech][Flow Matching] AVI-Edit performs "audio-visual synchronized instance-level video editing" on a pre-trained video diffusion backbone. It utilizes a **Granularity-Aware Mask Refiner** to progressively refine rough user-provided masks (even bounding boxes) into precise instance contours, paired with a **Self-Feedback Audio Agent** (a se
+  [CVPR 2026][Object Detection][Audio-video synchronized editing] AVI-Edit performs "audio-visual synchronized instance-level video editing" on a pre-trained video diffusion backbone. It utilizes a **Granularity-Aware Mask Refiner** to progressively refine rough user-provided masks (even bounding boxes) into precise instance contours, paired with a **Self-Feedback Audio Agent** (a separate-generate-remix-rework pipeline) to produce accompanying audio temporally aligned with the…
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - Flow Matching
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Audio-video synchronized editing"
+  - "instance-level editing"
+  - "mask refinement"
+  - "audio Agent"
+  - "flow matching"
 date: 2026-05-08
-content_hash: 980d513111b6856d
+content_hash: dd065af26d4f269d
 ---
+
 # Audio-sync Video Instance Editing with Granularity-Aware Mask Refiner
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ Ablations were conducted on AVISET by randomly degrading masks to test the robus
 
 ## Related Papers
 
-- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](pavas_physics-aware_video-to-audio_synthesis.md)
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
-- [\[NeurIPS 2025\] Instance-Specific Test-Time Training for Speech Editing in the Wild](../../NeurIPS2025/audio_speech/instance-specific_test-time_training_for_speech_editing_in_the_wild.md)
-- [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](../../NeurIPS2025/audio_speech/node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
-- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2026\] Learning to Track Instance from Single Nature Language Description](learning_to_track_instance_from_single_nature_language_description.md)
+- [\[CVPR 2026\] Object-Generalized Re-Identification: A Step Towards Universal Instance Perception](object-generalized_re-identification_a_step_towards_universal_instance_perceptio.md)
+- [\[CVPR 2026\] Beyond Caption-Based Queries for Video Moment Retrieval](beyond_caption-based_queries_for_video_moment_retrieval.md)
+- [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](../../AAAI2026/object_detection/temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
+- [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
 
 </div>
 

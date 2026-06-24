@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] This work upgrades UWB ranging between 6 IMUs from "extra features" to "geometric constraints." It first uses Multidimensional Scaling (MDS) to reconstruct 3D sensor layouts from pairwise distances as diffusion conditions, then employs forward kinematics during denoising sampling to align predicted poses with sensor di
+  [CVPR 2026][Image Generation][Sparse Inertial MoCap] This work upgrades UWB ranging between 6 IMUs from "extra features" to "geometric constraints." It first uses Multidimensional Scaling (MDS) to reconstruct 3D sensor layouts from pairwise distances as diffusion conditions, then employs forward kinematics during denoising sampling to align predicted poses with sensor distances via guidance, reducing joint position error in sparse inertial pose estimation by up to 22%.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Sparse Inertial MoCap"
+  - "UWB Ranging"
+  - "Diffusion Models"
+  - "Multidimensional Scaling"
+  - "Classifier Guidance"
 date: 2026-05-08
-content_hash: a1cee7d66b237e14
+content_hash: c9fd0922e8d7d0a3
 ---
+
 # Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances
 
 **Conference**: CVPR 2026  
@@ -139,16 +144,16 @@ Key Findings: UDP achieves the lowest JPE in almost all settings, with up to 22%
 - Value: ⭐⭐⭐⭐ Significantly pushes the SOTA for sparse inertial MoCap in modern UWB settings.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] FloodDiffusion: Tailored Diffusion Forcing for Streaming Motion Generation](flooddiffusion_tailored_diffusion_forcing_for_streaming_motion_generation.md)
-- [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
-- [\[CVPR 2026\] Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization](towards_highly-constrained_human_motion_generation_with_retrieval-guided_diffusi.md)
-- [\[CVPR 2026\] Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation](bi-directional_autoregressive_diffusion_for_large_complex_motion_interpolation.md)
-- [\[CVPR 2026\] HSI-GPT2: A Dual-Granularity Large Motion Reasoning Model with Diffusion Refinement for Human-Scene Interaction](hsi-gpt2_a_dual-granularity_large_motion_reasoning_model_with_diffusion_refineme.md)
+- [\[CVPR 2026\] Guiding Token-Sparse Diffusion Models](guiding_token-sparse_diffusion_models.md)
+- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
+- [\[CVPR 2026\] Leveraging Multispectral Sensors for Color Correction in Mobile Cameras](leveraging_multispectral_sensors_for_color_correction_in_mobile_cameras.md)
+- [\[ICCV 2025\] Less is More: Improving Motion Diffusion Models with Sparse Keyframes](../../ICCV2025/image_generation/less_is_more_improving_motion_diffusion_models_with_sparse_keyframes.md)
+- [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
 
 </div>
 

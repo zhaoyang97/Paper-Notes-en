@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift
 description: >-
-  [CVPR 2026][Optimization & Theory][federated learning] Proposes the Fed-ADE framework, which utilizes two lightweight distribution shift signals—uncertainty dynamics estimation and representation dynamics estimation—to adaptively adjust the learning rate for each client at each time step, achieving unsupervised post-deployment adaptation in federated learning.
+  [CVPR2026][Optimization][federated learning] Proposes the Fed-ADE framework, which utilizes two lightweight distribution shift signals—uncertainty dynamics estimation and representation dynamics estimation—to adaptively adjust the learning rate for each client at each time step, achieving unsupervised post-deployment adaptation in federated learning.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - federated learning
-  - distribution shift
-  - adaptive learning rate
-  - online adaptation
-  - unsupervised adaptation
+  - "CVPR2026"
+  - "Optimization"
+  - "federated learning"
+  - "distribution shift"
+  - "adaptive learning rate"
+  - "online adaptation"
+  - "unsupervised adaptation"
 date: 2026-05-08
-content_hash: bd6bd35a52c111ec
+content_hash: f1d9a0b1c7c70f45
 ---
+
 # Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift
 
 **Conference**: CVPR2026  
@@ -160,15 +161,15 @@ This matches the min-max optimal bound for online learning under unsupervised la
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] FedSST: Rethinking Fair Federated Graph Learning under Structural Shift](fedsst_rethinking_fair_federated_graph_learning_under_structural_shift.md)
-- [\[CVPR 2026\] FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning](fedalign_differentially_private_distribution_alignment_for_non-iid_federated_lea.md)
+- [\[ICLR 2026\] Federated Learning with Profile Mapping under Distribution Shifts and Drifts](../../ICLR2026/optimization/federated_learning_with_profile_mapping_under_distribution_shifts_and_drifts.md)
 - [\[CVPR 2025\] Federated Learning with Domain Shift Eraser](../../CVPR2025/optimization/federated_learning_with_domain_shift_eraser.md)
-- [\[CVPR 2026\] OS-FED: One Snapshot Is All You Need](os-fed_one_snapshot_is_all_you_need.md)
-- [\[CVPR 2026\] FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization](fedadamom_adaptive_momentum_for_improved_generalization_in_federated_optimizatio.md)
+- [\[NeurIPS 2025\] FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts](../../NeurIPS2025/optimization/flux_efficient_descriptor-driven_clustered_federated_learning_under_arbitrary_di.md)
+- [\[ICML 2026\] Distribution Alignment for One-Shot Federated Learning via Optimal Transport](../../ICML2026/optimization/distribution_alignment_for_one-shot_federated_learning_via_optimal_transport.md)
+- [\[ICLR 2026\] Bayesian Evidence-Driven Prototype Evolution for Federated Domain Adaptation](../../ICLR2026/optimization/bayesian_evidence-driven_prototype_evolution_for_federated_domain_adaptation.md)
 
 </div>
 

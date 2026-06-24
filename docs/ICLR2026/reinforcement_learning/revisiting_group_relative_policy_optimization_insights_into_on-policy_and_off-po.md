@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] This paper generalizes DeepSeek's GRPO from on-policy to off-policy by utilizing a lagged policy $\alpha=\pi_{k-v}$ to whiten rewards and estimate advantages. It proves that both on-policy and off-policy objectives provide a lower bound for expected reward improvement, leading to a clipped surrogate objective consisten
+  [ICLR2026][Reinforcement Learning][GRPO] This paper generalizes DeepSeek's GRPO from on-policy to off-policy by utilizing a lagged policy $\alpha=\pi_{k-v}$ to whiten rewards and estimate advantages. It proves that both on-policy and off-policy objectives provide a lower bound for expected reward improvement, leading to a clipped surrogate objective consistent with off-policy PPO. Experiments demonstrate that off-policy GRPO (updating the inference server every $v$ steps) per…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Off-policy"
+  - "Verifiable Rewards"
+  - "Policy Improvement Lower Bound"
+  - "Clipped Surrogate Objective"
 date: 2026-05-08
-content_hash: 623a9eb0bd5c3fd1
+content_hash: 469576c49b358ecf
 ---
+
 # Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training
 
 **Conference**: ICLR2026  
@@ -152,15 +157,15 @@ Off-policy results are essentially on par with on-policy.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](group_verification-based_policy_optimization_for_interactive_coding_agents.md)
 - [\[ICLR 2026\] Relative Entropy Pathwise Policy Optimization](relative_entropy_pathwise_policy_optimization.md)
 - [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
+- [\[ICLR 2026\] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](sample_more_to_think_less_group_filtered_policy_optimization_for_concise_reasoni.md)
 - [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
-- [\[ICLR 2026\] Buffer Matters: Unleashing the Power of Off-Policy Reinforcement Learning in Large Language Model Reasoning](buffer_matters_unleashing_the_power_of_off-policy_reinforcement_learning_in_larg.md)
 
 </div>
 

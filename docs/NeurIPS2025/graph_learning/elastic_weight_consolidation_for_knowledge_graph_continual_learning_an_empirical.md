@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Elastic Weight Consolidation for Knowledge Graph Continual Learning: An Empirical Evaluation
 description: >-
-  [NeurIPS 2025 (NORA Workshop)][Graph Learning][Continual Learning] This paper systematically evaluates Elastic Weight Consolidation (EWC) for continual learning of TransE knowledge graph embeddings on FB15k-237…
+  [NeurIPS 2025 (NORA Workshop)][Graph Learning][Continual Learning] This paper systematically evaluates Elastic Weight Consolidation (EWC) for continual learning of TransE knowledge graph embeddings on FB15k-237, finding that EWC reduces catastrophic forgetting from 12.62% to 6.85% (a 45.7% reduction), and reveals that task partitioning strategy (relation-based vs. random) has a substantial impact on forgetting metrics (a difference of 9.8 percentage points).
 tags:
   - "NeurIPS 2025 (NORA Workshop)"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Catastrophic Forgetting"
   - "Link Prediction"
 date: 2026-05-08
-content_hash: 83ac0854db9761dc
+content_hash: a2eb849d4de4151b
 ---
 
 # Elastic Weight Consolidation for Knowledge Graph Continual Learning: An Empirical Evaluation
@@ -134,11 +134,11 @@ The KG $\mathcal{G}=(\mathcal{E},\mathcal{R},\mathcal{T})$ is divided into $T$ s
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning](uncertain_knowledge_graph_completion_via_semi-supervised_confidence_distribution.md)
+- [\[ACL 2025\] A Generative Adaptive Replay Continual Learning Model for Temporal Knowledge Graph Reasoning](../../ACL2025/graph_learning/a_generative_adaptive_replay_continual_learning_model_for_temporal_knowledge_gra.md)
+- [\[ICML 2025\] From RAG to Memory: Non-Parametric Continual Learning for Large Language Models](../../ICML2025/graph_learning/from_rag_to_memory_non-parametric_continual_learning_for_large_language_models.md)
+- [\[ICLR 2026\] G-Merging: Graph Models Merging for Parameter-Efficient Multi-Task Knowledge Consolidation](../../ICLR2026/graph_learning/g-merging_graph_models_merging_for_parameter-efficient_multi-task_knowledge_cons.md)
 - [\[NeurIPS 2025\] MedMKG: Benchmarking Medical Knowledge Exploitation with Multimodal Knowledge Graph](medmkg_benchmarking_medical_knowledge_exploitation_with_multimodal_knowledge_gra.md)
-- [\[AAAI 2026\] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction](../../AAAI2026/graph_learning/unihr_hierarchical_representation_learning_for_unified_knowledge_graph_link_pred.md)
-- [\[NeurIPS 2025\] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning](moemeta_mixture-of-experts_meta_learning_for_few-shot_relational_learning.md)
-- [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](../../ICML2026/graph_learning/generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
+- [\[NeurIPS 2025\] Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning](uncertain_knowledge_graph_completion_via_semi-supervised_confidence_distribution.md)
 
 </div>
 

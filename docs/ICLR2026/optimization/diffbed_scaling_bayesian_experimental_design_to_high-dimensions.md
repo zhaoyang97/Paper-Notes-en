@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiffBED: Scaling Bayesian Experimental Design to High-Dimensions
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] DiffBED identifies that the primary cause of Bayesian Experimental Design (BED) failure in high-dimensional design spaces is not the inadequacy of EIG estimators, but rather the "overconfident" exploitation of the likelihood in areas far from the data manifold (a form of reward hacking). It utilizes a diffusion model a
+  [ICLR2026][Optimization][Bayesian Experimental Design] DiffBED identifies that the primary cause of Bayesian Experimental Design (BED) failure in high-dimensional design spaces is not the inadequacy of EIG estimators, but rather the "overconfident" exploitation of the likelihood in areas far from the data manifold (a form of reward hacking). It utilizes a diffusion model as a "realism prior" and uses EIG gradients to guide the reverse SDE of the diffusion process…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Bayesian Experimental Design"
+  - "Expected Information Gain"
+  - "Diffusion Guidance"
+  - "Model Mismatch"
+  - "Reward Hacking"
 date: 2026-05-08
-content_hash: 58f2d417aa4959fd
+content_hash: 42c5e676387d354d
 ---
+
 # DiffBED: Scaling Bayesian Experimental Design to High-Dimensions
 
 **Conference**: ICLR2026  
@@ -137,11 +143,11 @@ The most significant result is Zappos: using a fine-tuned Stable Diffusion v1.5 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Multi-Task Bayesian Optimization with Large Language Models](scaling_multi-task_bayesian_optimization_with_large_language_models.md)
 - [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](../../NeurIPS2025/optimization/learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
+- [\[ICLR 2026\] GIT-BO: High-Dimensional Bayesian Optimization with Tabular Foundation Models](git-bo_high-dimensional_bayesian_optimization_with_tabular_foundation_models.md)
 - [\[ICLR 2026\] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces](from_sorting_algorithms_to_scalable_kernels_bayesian_optimization_in_high-dimens.md)
-- [\[ICLR 2026\] Contextual Causal Bayesian Optimisation](contextual_causal_bayesian_optimisation.md)
-- [\[ICLR 2026\] CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design](calm_co-evolution_of_algorithms_and_language_model_for_automatic_heuristic_desig.md)
-- [\[ICLR 2026\] Combinatorial Bandit Bayesian Optimization for Tensor Outputs](combinatorial_bandit_bayesian_optimization_for_tensor_outputs.md)
+- [\[ICLR 2026\] Leveraging Discrete Function Decomposability for Scientific Design](leveraging_discrete_function_decomposability_for_scientific_design.md)
 
 </div>
 

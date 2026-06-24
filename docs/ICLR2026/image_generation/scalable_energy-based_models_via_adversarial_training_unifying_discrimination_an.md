@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation
 description: >-
-  [ICLR 2026][Image Generation][JEM] This paper proposes Dual Adversarial Training (DAT), which replaces the unstable SGLD sampling in JEM with adversarial training (PGD for contrastive samples + BCE loss) to learn the energy function. Combined with adversarial training for the discriminative branch and a two-stage training strategy, it scales energy-base
+  [ICLR 2026][Image Generation][Energy-Based Model (EBM)] This paper proposes Dual Adversarial Training (DAT), which replaces the unstable SGLD sampling in JEM with adversarial training (PGD for contrastive samples + BCE loss) to learn the energy function. Combined with adversarial training for the discriminative branch and a two-stage training strategy, it scales energy-based discriminative-generative hybrid models to ImageNet 256×256 for the first time…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - JEM
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Energy-Based Model (EBM)"
+  - "Adversarial Training"
+  - "JEM"
+  - "Discriminative-Generative Unification"
+  - "Counterfactual Explanation"
 date: 2026-05-08
-content_hash: ee0c7e555dd9bbaf
+content_hash: 276eef1651a5bc9c
 ---
+
 # Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation
 
 **Conference**: ICLR 2026  
@@ -156,16 +161,16 @@ DAT achieves an FID of 3.29 with fewer parameters (198M), comparable to VAR-d16 
 - Value: ⭐⭐⭐⭐⭐ Breaks the CIFAR ceiling for EBM hybrid models, offering robustness, generation, and counterfactuals in one package.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Bridging Degradation Discrimination and Generation for Universal Image Restoration](bridging_degradation_discrimination_and_generation_for_universal_image_restorati.md)
 - [\[ICLR 2026\] RNE: plug-and-play diffusion inference-time control and energy-based training](rne_plug-and-play_diffusion_inference-time_control_and_energy-based_training.md)
 - [\[ICLR 2026\] Scalable Training for Vector-Quantized Networks with 100% Codebook Utilization](scalable_training_for_vector-quantized_networks_with_100_codebook_utilization.md)
+- [\[ICML 2026\] Adversarial Flow Models](../../ICML2026/image_generation/adversarial_flow_models.md)
 - [\[ICLR 2026\] TwinFlow: Realizing One-step Generation on Large Models with Self-adversarial Flows](twinflow_realizing_one-step_generation_on_large_models_with_self-adversarial_flo.md)
-- [\[ICLR 2026\] SERUM: Simple, Efficient, Robust, and Unifying Marking for Diffusion-based Image Generation](serum_simple_efficient_robust_and_unifying_marking_for_diffusion-based_image_gen.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semantic Glitch: Agency and Artistry in an Autonomous Pixel Cloud
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Weak robot] This paper presents "Pixel Cloud," a low-fidelity autonomous aerial robotic art installation that deliberately forgoes conventional LiDAR/SLAM sensors and relies solely on t…
+  [NeurIPS 2025][Autonomous Driving][Weak robot] This paper presents "Pixel Cloud," a low-fidelity autonomous aerial robotic art installation that deliberately forgoes conventional LiDAR/SLAM sensors and relies solely on the semantic understanding of a multimodal large language model (MLLM) for navigation. Through natural language prompting, the robot is endowed with a biologically inspired narrative persona, yielding imprecise yet characterful emergent behaviors.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "pixel cloud"
   - "emergent behavior"
 date: 2026-05-08
-content_hash: 4531fed7b6cef996
+content_hash: 1f754690dd3b15e1
 ---
 
 # Semantic Glitch: Agency and Artistry in an Autonomous Pixel Cloud
@@ -133,11 +133,11 @@ Statistical significance: behavioral fingerprint distribution $\chi^2(4, N=633) 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Single Pixel Image Classification using an Ultrafast Digital Light Projector](../../ICLR2026/autonomous_driving/single_pixel_image_classification_using_an_ultrafast_digital_light_projector.md)
+- [\[CVPR 2025\] Single Pixel Image Classification using an Ultrafast Digital Light Projector](../../CVPR2025/autonomous_driving/single_pixel_image_classification_using_an_ultrafast_digital_light_projector.md)
+- [\[CVPR 2025\] Unlocking Generalization Power in LiDAR Point Cloud Registration](../../CVPR2025/autonomous_driving/unlocking_generalization_power_in_lidar_point_cloud_registration.md)
+- [\[ECCV 2024\] Random Walk on Pixel Manifolds for Anomaly Segmentation of Complex Driving Scenes](../../ECCV2024/autonomous_driving/random_walk_on_pixel_manifolds_for_anomaly_segmentation_of_complex_driving_scene.md)
 - [\[NeurIPS 2025\] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding](spiral_semantic-aware_progressive_lidar_scene_generation_and_understanding.md)
-- [\[NeurIPS 2025\] Leveraging Depth and Language for Open-Vocabulary Domain-Generalized Semantic Segmentation](leveraging_depth_and_language_for_open-vocabulary_domain-generalized_semantic_se.md)
-- [\[NeurIPS 2025\] FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance](learning_temporal_3d_semantic_scene_completion_via_optical_flow_guidance.md)
-- [\[NeurIPS 2025\] GSAlign: Geometric and Semantic Alignment Network for Aerial-Ground Person Re-Identification](gsalign_geometric_and_semantic_alignment_network_for_aerial-ground_person_re-ide.md)
+- [\[ICML 2025\] Geometry-to-Image Synthesis-Driven Generative Point Cloud Registration](../../ICML2025/autonomous_driving/geometry-to-image_synthesis-driven_generative_point_cloud_registration.md)
 
 </div>
 

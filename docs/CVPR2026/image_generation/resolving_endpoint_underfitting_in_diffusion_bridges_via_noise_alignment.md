@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Resolving Endpoint Underfitting in Diffusion Bridges via Noise Alignment
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The authors discover that diffusion bridge models, exemplified by I2SB, undergo "endpoint underfitting"—variance collapse and directional misalignment—when approaching the target endpoint ($t\to0$). The root cause is the conflicting noise magnitude trends between the network input and the regression target. They propos
+  [CVPR 2026][Image Generation][Diffusion bridge] The authors discover that diffusion bridge models, exemplified by I2SB, undergo "endpoint underfitting"—variance collapse and directional misalignment—when approaching the target endpoint ($t\to0$). The root cause is the conflicting noise magnitude trends between the network input and the regression target. They propose NADB, which utilizes "magnitude-aligned stochastic interpolation" to correct variance and a mean network to al…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion bridge"
+  - "endpoint underfitting"
+  - "noise alignment"
+  - "stochastic interpolation"
+  - "image restoration"
 date: 2026-05-08
-content_hash: 4f5d9862f57d7023
+content_hash: 17f25371e4289eb1
 ---
+
 # Resolving Endpoint Underfitting in Diffusion Bridges via Noise Alignment
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,10 @@ Comparison of four configurations on JPEG-5, where heavy degradation amplifies e
 ## Related Papers
 
 - [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
+- [\[CVPR 2026\] What Is It Like to Be a Noise? An Entropy-based Gaussian Noise Regularization for Diffusion Models](what_is_it_like_to_be_a_noise_an_entropy-based_gaussian_noise_regularization_for.md)
 - [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models](eda_arbitrary_noise_diffusion_design_space.md)
 - [\[ICML 2026\] Restoring Initial Noise Sensitivity in Text-to-Image Distillation via Geometric Alignment](../../ICML2026/image_generation/restoring_initial_noise_sensitivity_in_text-to-image_distillation_via_geometric_.md)
-- [\[CVPR 2026\] Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training](beyond_the_golden_data_resolving_the_motion-vision_quality_dilemma_via_timestep_.md)
-- [\[CVPR 2026\] Correspondence-Attention Alignment for Multi-View Diffusion Models](correspondence-attention_alignment_for_multi-view_diffusion_models.md)
+- [\[ICLR 2026\] Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting](../../ICLR2026/image_generation/diffusion_adversarial_schrödinger_bridges_via_iterative_proportional_markovian_f.md)
 
 </div>
 

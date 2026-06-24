@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Membership Privacy Risks of Sharpness Aware Minimization
 description: >-
-  [ICLR 2026][AI Safety][Sharpness-Aware Minimization] This paper systematically reveals for the first time that models trained with Sharpness-Aware Minimization (SAM), despite having better generalization performance, are more vulnerable to Membership Inference Attacks (MIA) than those trained with SGD. Theoretical and experimental explanations are provided through the le
+  [ICLR 2026][AI Safety][Sharpness-Aware Minimization] This paper systematically reveals for the first time that models trained with Sharpness-Aware Minimization (SAM), despite having better generalization performance, are more vulnerable to Membership Inference Attacks (MIA) than those trained with SGD. Theoretical and experimental explanations are provided through the lenses of memorization behavior and variance contraction.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Sharpness-Aware Minimization
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Sharpness-Aware Minimization"
+  - "Membership Inference Attacks"
+  - "Privacy Leakage"
+  - "Memorization"
+  - "Variance Contraction"
 date: 2026-05-08
-content_hash: 548e1c421b58bd07
+content_hash: 7a0956e3faafbadf
 ---
+
 # Membership Privacy Risks of Sharpness Aware Minimization
 
 **Conference**: ICLR 2026  
@@ -137,10 +142,10 @@ This is an analytical work and does not involve new training strategies. The ana
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reliable Poisoned Sample Detection against Backdoor Attacks Enhanced by Sharpness-Aware Minimization](reliable_poisoned_sample_detection_against_backdoor_attacks_enhanced_by_sharpnes.md)
 - [\[AAAI 2026\] Transferable Backdoor Attacks for Code Models via Sharpness-Aware Adversarial Perturbation](../../AAAI2026/ai_safety/transferable_backdoor_attacks_for_code_models_via_sharpness-aware_adversarial_pe.md)
-- [\[ICML 2026\] Where Rectified Flows Leak: Characterising Membership Signals Along the Interpolation Path](../../ICML2026/ai_safety/where_rectified_flows_leak_characterising_membership_signals_along_the_interpola.md)
 - [\[ICLR 2026\] Beyond Membership: Limitations of Add/Remove Adjacency in Differential Privacy](beyond_membership_limitations_of_addremove_adjacency_in_differential_privacy.md)
+- [\[ICLR 2026\] Concept-Aware Privacy Mechanisms for Defending Embedding Inversion Attacks](concept-aware_privacy_mechanisms_for_defending_embedding_inversion_attacks.md)
+- [\[ICLR 2026\] Curation Leaks: Membership Inference Attacks against Data Curation for Machine Learning](curation_leaks_membership_inference_attacks_against_data_curation_for_machine_le.md)
 - [\[ICLR 2026\] RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility](resfl_an_uncertainty-aware_framework_for_responsible_federated_learning_by_balan.md)
 
 </div>

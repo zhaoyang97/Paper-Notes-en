@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GraspALL: Adaptive Structural Compensation from Illumination Variation for Robotic Garment Grasping in Any Low-Light Conditions
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][RGB-D] GraspALL encodes continuously varying illumination into a set of learnable "luminance curves," using estimated light levels to **dynamically regulate** the fusion weights of RGB and depth (non-RGB) features. This generates illumination-consistent garment grasping representations under arbitrary low-light conditions, im
+  [CVPR 2026][Robotics][Garment Grasping] GraspALL encodes continuously varying illumination into a set of learnable "luminance curves," using estimated light levels to **dynamically regulate** the fusion weights of RGB and depth (non-RGB) features. This generates illumination-consistent garment grasping representations under arbitrary low-light conditions, improving the grasp success rate by 32–44% over baselines on a self-constructed multi-illumination garment dataset.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - RGB-D
+  - "CVPR 2026"
+  - "Robotics"
+  - "Garment Grasping"
+  - "Illumination Adaptation"
+  - "Multimodal Fusion"
+  - "RGB-D"
+  - "Service Robots"
 date: 2026-05-08
-content_hash: 24a216c8cc3060ed
+content_hash: d8272a3b8516aba7
 ---
+
 # GraspALL: Adaptive Structural Compensation from Illumination Variation for Robotic Garment Grasping in Any Low-Light Conditions
 
 **Conference**: CVPR 2026  
@@ -130,6 +135,7 @@ GraspALL's mIoU remains highly stable across light levels (e.g., 84.8% at high v
 - Value: ⭐⭐⭐⭐ Directly addresses a key hurdle for 24/7 home service robots.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

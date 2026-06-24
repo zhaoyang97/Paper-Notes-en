@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Multi-Scale Hypergraph for High-Order Brain Connectivity Analysis
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] MuHL utilizes graph wavelets with learnable scales to decompose brain ROI features into multi-resolution representations. It dynamically generates soft hyperedges via a "node embedding × shared projection matrix" mechanism, achieving 93.2% Acc for multi-stage AD classification on ADNI and 76.8% Acc for PD classificatio
+  [ICML 2026][Medical Imaging][Brain Network] MuHL utilizes graph wavelets with learnable scales to decompose brain ROI features into multi-resolution representations. It dynamically generates soft hyperedges via a "node embedding × shared projection matrix" mechanism, achieving 93.2% Acc for multi-stage AD classification on ADNI and 76.8% Acc for PD classification on PPMI, while providing interpretable key ROIs and hypergraphs.
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Brain Network"
+  - "Hypergraph Learning"
+  - "Graph Wavelet"
+  - "Neurodegenerative Disease"
+  - "Multi-scale"
 date: 2026-05-08
-content_hash: 2dbce1429e1fc5f1
+content_hash: 5e4064b1d7bb2eeb
 ---
+
 # Learning Multi-Scale Hypergraph for High-Order Brain Connectivity Analysis
 
 **Conference**: ICML 2026  
@@ -125,6 +131,7 @@ MuHL also outperformed others in zero-shot cross-dataset transfer (e.g., ADNI-2 
 - **Value**: ⭐⭐⭐⭐ Provides a robust baseline for multi-resolution hypergraph learning in brain networks, despite the lack of open-source code.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -132,8 +139,8 @@ MuHL also outperformed others in zero-shot cross-dataset transfer (e.g., ADNI-2 
 - [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](../../CVPR2026/medical_imaging/forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
 - [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](../../CVPR2026/medical_imaging/omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
 - [\[ICML 2026\] CAME-Grad: The Double Dilemma in Multi-Task Radiology Report Generation — A Gradient Dynamics Analysis and Solution](the_double_dilemma_in_multi-task_radiology_report_generation_a_gradient_dynamics.md)
+- [\[ICLR 2026\] Spike-based Digital Brain: A Novel Fundamental Model for Brain Activity Analysis](../../ICLR2026/medical_imaging/spike-based_digital_brain_a_novel_fundamental_model_for_brain_activity_analysis.md)
 - [\[NeurIPS 2025\] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry](../../NeurIPS2025/medical_imaging/riemannian_flow_matching_for_brain_connectivity_matrices_via_pullback_geometry.md)
-- [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](../../CVPR2026/medical_imaging/pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
 
 </div>
 

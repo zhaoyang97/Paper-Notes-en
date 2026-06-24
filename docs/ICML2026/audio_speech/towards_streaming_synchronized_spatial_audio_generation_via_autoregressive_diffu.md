@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer
 description: >-
-  [ICML 2026][Audio & Speech][First-Order Ambisonics] SwanSphere proposes a two-stage streaming architecture consisting of a "Causal AR Language Model + Local DiT (LocDiT)." It generates four-channel First-Order Ambisonics (FOA) spatial audio from panoramic videos or text. Combined with SVAC physics-aware contrastive learning and multi-objective ODPO, it reduces first-chu
+  [ICML 2026][Audio & Speech][Spatial Audio Generation] SwanSphere proposes a two-stage streaming architecture consisting of a "Causal AR Language Model + Local DiT (LocDiT)." It generates four-channel First-Order Ambisonics (FOA) spatial audio from panoramic videos or text. Combined with SVAC physics-aware contrastive learning and multi-objective ODPO, it reduces first-chunk latency to 0.21s while outperforming cascade and end-to-end baselines in FD, KL, and angular error.
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - First-Order Ambisonics
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Spatial Audio Generation"
+  - "First-Order Ambisonics"
+  - "Streaming Generation"
+  - "Autoregressive Diffusion"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 53327a131fa49c4b
+content_hash: b70a5960503156b0
 ---
+
 # Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer
 
 **Conference**: ICML 2026  
@@ -138,11 +143,11 @@ First-chunk latency of 0.21s is ~4× faster than OmniAudio (0.85s) and ~30× fas
 
 ## Related Papers
 
-- [\[ICML 2025\] OmniAudio: Generating Spatial Audio from 360-Degree Video](../../ICML2025/audio_speech/omniaudio_generating_spatial_audio_from_360-degree_video.md)
+- [\[ICLR 2026\] TVTSyn: Content-Synchronized Time-Varying Timbre for Streaming Voice Conversion and Anonymization](../../ICLR2026/audio_speech/tvtsyn_content-synchronous_time-varying_timbre_for_streaming_voice_conversion_an.md)
 - [\[CVPR 2026\] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization](../../CVPR2026/audio_speech/hear_what_you_see_video-to-audio_generation_with_diffusion_transformer_and_seman.md)
+- [\[ICML 2025\] OmniAudio: Generating Spatial Audio from 360-Degree Video](../../ICML2025/audio_speech/omniaudio_generating_spatial_audio_from_360-degree_video.md)
+- [\[ICLR 2026\] Steering Autoregressive Music Generation with Recursive Feature Machines](../../ICLR2026/audio_speech/steering_autoregressive_music_generation_with_recursive_feature_machines.md)
 - [\[CVPR 2025\] Synchronized Video-to-Audio Generation via Mel Quantization-Continuum Decomposition](../../CVPR2025/audio_speech/synchronized_video-to-audio_generation_via_mel_quantization-continuum_decomposit.md)
-- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/audio_speech/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
-- [\[ACL 2026\] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment](../../ACL2026/audio_speech/immersivetts_environment-aware_text-to-speech_with_multimodal_diffusion_transfor.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AANet: Virtual Screening under Structural Uncertainty via Alignment and Aggregation
 description: >-
-  [NeurIPS 2025][Computational Biology][Virtual screening] To address the unavailability of holo protein structures in real-world drug discovery…
+  [NeurIPS 2025][Computational Biology][Virtual screening] To address the unavailability of holo protein structures in real-world drug discovery, this paper proposes AANet—a framework that aligns representations via tri-modal contrastive learning (ligand–holo pocket–detected cavity) and aggregates multiple candidate binding sites through cross-attention. AANet substantially outperforms SOTA methods in blind screening on apo/predicted protein structures (EF1% on DUD-E: 11.75 → 3…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "protein binding site"
 date: 2026-05-08
-content_hash: 4a2afe511c289c54
+content_hash: 742113a9af66c4d7
 ---
 
 # AANet: Virtual Screening under Structural Uncertainty via Alignment and Aggregation
@@ -130,10 +130,10 @@ Two stages: (1) **Alignment stage** — tri-modal contrastive learning on annota
 ## Related Papers
 
 - [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](../../AAAI2026/computational_biology/s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
+- [\[ICLR 2026\] SubDyve: Subgraph-Driven Dynamic Propagation for Virtual Screening Enhancement](../../ICLR2026/computational_biology/subdyve_subgraph-driven_dynamic_propagation_for_virtual_screening_enhancement_co.md)
 - [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
-- [\[NeurIPS 2025\] Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction](uncertainty-guided_model_selection_for_tabular_foundation_models_in_biomolecule_.md)
-- [\[NeurIPS 2025\] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models](mol-llama_towards_general_understanding_of_molecules_in_large_molecular_language.md)
+- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
+- [\[ICML 2026\] Advancing Ligand-based Virtual Screening and Molecular Generation with Pretrained Molecular Embedding Distance](../../ICML2026/computational_biology/advancing_ligand-based_virtual_screening_and_molecular_generation_with_pretraine.md)
 
 </div>
 

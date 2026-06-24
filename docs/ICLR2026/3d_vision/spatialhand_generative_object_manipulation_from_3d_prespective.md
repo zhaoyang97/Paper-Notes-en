@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpatialHand: Generative Object Manipulation from 3D Perspective
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] SpatialHand elevates generative object insertion from the 2D image plane to a "3D perspective." By decoupling 6DoF poses into three conditional streams—2D position (mask), depth (depth map), and 3D orientation (latent embedding)—and feeding them into a FLUX diffusion Transformer, paired with an automated synthetic data
+  [ICLR 2026][3D Vision][Object Insertion] SpatialHand elevates generative object insertion from the 2D image plane to a "3D perspective." By decoupling 6DoF poses into three conditional streams—2D position (mask), depth (depth map), and 3D orientation (latent embedding)—and feeding them into a FLUX diffusion Transformer, paired with an automated synthetic data pipeline and progressive multi-stage training, it achieves precise 3D localization, arbitrary rotation…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Object Insertion"
+  - "6DoF Pose"
+  - "Depth Conditioning"
+  - "Orientation Control"
+  - "Occlusion Relationships"
 date: 2026-05-08
-content_hash: 4dd59c097f6353d6
+content_hash: cdff9bc1d74673a2
 ---
+
 # SpatialHand: Generative Object Manipulation from 3D Perspective
 
 **Conference**: ICLR 2026  
@@ -133,6 +139,7 @@ SpatialHand significantly outperforms explicit point-cloud methods (Diffusion Ha
 - **Value**: ⭐⭐⭐⭐⭐ (Directly addresses AR/VR requirements with reusable insights for controllable generation).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sequentially Auditing Differential Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][differential privacy] This paper proposes a differential privacy auditing framework based on sequential hypothesis testing and kernel MMD statistics…
+  [NeurIPS 2025][AI Safety][differential privacy] This paper proposes a differential privacy auditing framework based on sequential hypothesis testing and kernel MMD statistics, enabling valid detection of privacy violations at any point during streaming mechanism outputs. The approach reduces the required sample count from 50K (as needed by existing methods) to just a few hundred, and can identify DP-SGD privacy violations within less than one full training run.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "E-values"
   - "DP-SGD Auditing"
 date: 2026-05-08
-content_hash: c0156d29ab7ce3eb
+content_hash: 0c4b16bfd86b1b59
 ---
 
 # Sequentially Auditing Differential Privacy
@@ -147,8 +147,8 @@ The core mechanism constructs a stochastic process $\{\mathcal{K}_t\}$ that is a
 - [\[NeurIPS 2025\] Multi-Class Support Vector Machine with Differential Privacy](multi-class_support_vector_machine_with_differential_privacy.md)
 - [\[NeurIPS 2025\] Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming](differential_privacy_for_euclidean_jordan_algebra_with_applications_to_private_s.md)
 - [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
+- [\[ICLR 2026\] Optimizing Canaries for Privacy Auditing with Metagradient Descent](../../ICLR2026/ai_safety/optimizing_canaries_for_privacy_auditing_with_metagradient_descent.md)
 - [\[NeurIPS 2025\] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy](mitigating_privacy-utility_trade-off_in_decentralized_federated_learning_via_f-d.md)
-- [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](../../AAAI2026/ai_safety/privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
 
 </div>
 

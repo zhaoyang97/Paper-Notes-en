@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Where Rectified Flows Leak: Characterising Membership Signals Along the Interpolation Path
 description: >-
-  [ICML 2026][AI Safety][Rectified Flow] The authors discover that along the linear interpolation path $X_\lambda=(1-\lambda)X_0+\lambda X_1$ used for training Rectified Flows, the **reconstruction error gap between training and test samples follows a bell-shaped curve across $\lambda$**. Under Gaussian assumptions, they derive a closed-form solution for the
+  [ICML2026][AI Safety][Rectified Flow] The authors discover that along the linear interpolation path $X_\lambda=(1-\lambda)X_0+\lambda X_1$ used for training Rectified Flows, the **reconstruction error gap between training and test samples follows a bell-shaped curve across $\lambda$**. Under Gaussian assumptions, they derive a closed-form solution for the peak position $\lambda_F^*$. This "membership signal" accumulates silently during training while being completely masked b…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Rectified Flow
+  - "ICML2026"
+  - "AI Safety"
+  - "Rectified Flow"
+  - "Membership Inference Attack"
+  - "Memorization"
+  - "Interpolation Path"
+  - "Privacy Leakage"
 date: 2026-05-08
-content_hash: cd6ab4ff163ceaa4
+content_hash: c5b1fc598d36a3b7
 ---
+
 # Where Rectified Flows Leak: Characterising Membership Signals Along the Interpolation Path
 
 **Conference**: ICML2026  
@@ -138,11 +143,11 @@ The Naive baseline peak falls exactly at $\lambda^*$, confirming the theoretical
 
 ## Related Papers
 
-- [\[ACL 2026\] Signals Are Not States: Neuro-Symbolic Safeguards for Culturally Aware Classroom AI](../../ACL2026/ai_safety/signals_are_not_states_neuro-symbolic_safeguards_for_culturally_aware_classroom_.md)
-- [\[CVPR 2026\] Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training](../../CVPR2026/ai_safety/towards_robust_vision_transformers_path_dependency_analysis_and_a_simple_two-sta.md)
+- [\[ICLR 2026\] Membership Privacy Risks of Sharpness Aware Minimization](../../ICLR2026/ai_safety/sam_membership_privacy_risks.md)
 - [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](how_does_bayesian_sampling_help_membership_inference_attacks.md)
 - [\[CVPR 2026\] SafeRoPE: Risk-specific Head-wise Embedding Rotation for Safe Generation in Rectified Flow Transformers](../../CVPR2026/ai_safety/saferope_risk-specific_head-wise_embedding_rotation_for_safe_generation_in_recti.md)
-- [\[CVPR 2025\] Where the Devil Hides: Deepfake Detectors Can No Longer Be Trusted](../../CVPR2025/ai_safety/where_the_devil_hides_deepfake_detectors_can_no_longer_be_trusted.md)
+- [\[ACL 2026\] Signals Are Not States: Neuro-Symbolic Safeguards for Culturally Aware Classroom AI](../../ACL2026/ai_safety/signals_are_not_states_neuro-symbolic_safeguards_for_culturally_aware_classroom_.md)
+- [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](../../CVPR2026/ai_safety/a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
 
 </div>
 

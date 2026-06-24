@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HumanBA: Human-Aware Bundle Adjustment via Global Human-Camera Decoupling
 description: >-
-  [CVPR 2026][3D Vision][SLAM] To address the failure of traditional SLAM in monocular videos where the foreground human occupies most of the frame, HumanBA treats humans not as dynamic distractions to be masked, but as structured landmarks. It uses HMR to estimate human motion and subtracts it from observed trajectories to obtain "pseudo-static" hu
+  [CVPR 2026][3D Vision][Global Human Reconstruction] To address the failure of traditional SLAM in monocular videos where the foreground human occupies most of the frame, HumanBA treats humans not as dynamic distractions to be masked, but as structured landmarks. It uses HMR to estimate human motion and subtracts it from observed trajectories to obtain "pseudo-static" human joint landmarks. These landmarks, adaptively weighted by motion stability…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SLAM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Global Human Reconstruction"
+  - "SLAM"
+  - "Bundle Adjustment"
+  - "Motion Decoupling"
+  - "Monocular Video"
 date: 2026-05-08
-content_hash: f4b16e4a57037cf3
+content_hash: 276bdfe0dbb65c97
 ---
+
 # HumanBA: Human-Aware Bundle Adjustment via Global Human-Camera Decoupling
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ On the full EMDB2 dataset, adding components to Masked DROID:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
-- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
-- [\[CVPR 2026\] HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation](humanorbit_3d_human_reconstruction_as_360_orbit_generation.md)
-- [\[CVPR 2026\] Anny-Fit: All-Age Human Mesh Recovery](anny-fit_all-age_human_mesh_recovery.md)
-- [\[CVPR 2026\] A Survey of Spatial Memory Representations for Efficient Robot Navigation](a_survey_of_spatial_memory_representations_for_efficient_robot_navigation.md)
+- [\[CVPR 2026\] Parallel Rigidity Matters for Bundle Adjustment](parallel_rigidity_matters_for_bundle_adjustment.md)
+- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
+- [\[ECCV 2024\] Event-based Mosaicing Bundle Adjustment](../../ECCV2024/3d_vision/event-based_mosaicing_bundle_adjustment.md)
+- [\[ICCV 2025\] Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction](../../ICCV2025/3d_vision/back_on_track_bundle_adjustment_for_dynamic_scene_reconstruction.md)
+- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
 
 </div>
 

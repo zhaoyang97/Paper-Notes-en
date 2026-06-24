@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition
 description: >-
-  [ICLR 2026][Pretraining][Memorization] The authors propose the FictionalQA dataset and a generation pipeline. By synthesizing webtext-style documents and QA pairs regarding fictional events, they study the dual processes of factual and verbatim memorization during LLM training in a controlled environment. The study finds that more diverse surface forms faci
+  [ICLR 2026][LLM Pretraining][Memorization] The authors propose the FictionalQA dataset and a generation pipeline. By synthesizing webtext-style documents and QA pairs regarding fictional events, they study the dual processes of factual and verbatim memorization during LLM training in a controlled environment. The study finds that more diverse surface forms facilitate knowledge acquisition, whereas concise structured lists are the least conducive to generalization.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Memorization
-  - Knowledge Acquisition
-  - synthetic data
-  - LLM Training Dynamics
-  - Factual Memorization
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Memorization"
+  - "Knowledge Acquisition"
+  - "synthetic data"
+  - "LLM Training Dynamics"
+  - "Factual Memorization"
 date: 2026-05-08
-content_hash: b51a66982537d9ce
+content_hash: a6115a058058c5b6
 ---
+
 # FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition
 
 **Conference**: ICLR 2026  
@@ -144,10 +145,10 @@ The study uses standard next-token prediction loss (cross-entropy). The core foc
 ## Related Papers
 
 - [\[ICLR 2026\] TNT: Improving Chunkwise Training for Test-Time Memorization](tnt_improving_chunkwise_training_for_test-time_memorization.md)
-- [\[ICLR 2026\] Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge](pretraining_with_hierarchical_memories_separating_long-tail_and_common_knowledge.md)
 - [\[ICLR 2026\] Nemotron-CC-Math: A 133 Billion-Token-Scale High Quality Math Pretraining Dataset](nemotron-cc-math_a_133_billion-token-scale_high_quality_math_pretraining_dataset.md)
+- [\[ICLR 2026\] Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge](pretraining_with_hierarchical_memories_separating_long-tail_and_common_knowledge.md)
 - [\[ICLR 2026\] Pre-training Limited Memory Language Models with Internal and External Knowledge](pre-training_limited_memory_language_models_with_internal_and_external_knowledge.md)
-- [\[ACL 2025\] Second Language (Arabic) Acquisition of LLMs via Progressive Vocabulary Expansion](../../ACL2025/llm_pretraining/second_language_arabic_acquisition_of_llms_via_progressive_vocabulary_expansion.md)
+- [\[ACL 2025\] How Do LLMs Acquire New Knowledge? A Knowledge Circuits Perspective on Continual Pre-Training](../../ACL2025/llm_pretraining/how_do_llms_acquire_new_knowledge_a_knowledge_circuits_perspective_on_continual_.md)
 
 </div>
 

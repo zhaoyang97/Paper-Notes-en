@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes GT-NSGDm—a decentralized algorithm combining gradient normalization, momentum variance reduction, and gradient tracking. For the first time in a decentralized nonconvex setting, assuming only that gradient noise has finite $p$-th moments ($p\in(1,2]$), it proves that the expected gradient norm achie
+  [ICLR2026][Optimization][decentralized optimization] This paper proposes GT-NSGDm—a decentralized algorithm combining gradient normalization, momentum variance reduction, and gradient tracking. For the first time in a decentralized nonconvex setting, assuming only that gradient noise has finite $p$-th moments ($p\in(1,2]$), it proves that the expected gradient norm achieves the optimal convergence rate of $O(1/T^{(p-1)/(3p-2)})$, consistent with the centralized lower bound.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "decentralized optimization"
+  - "heavy-tailed noise"
+  - "gradient normalization"
+  - "gradient tracking"
+  - "nonconvex optimization"
 date: 2026-05-08
-content_hash: a0fe422273246b80
+content_hash: 5e52279750869ecd
 ---
+
 # Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence
 
 **Conference**: ICLR2026  
@@ -124,10 +130,20 @@ Observations: **Ours** (GT-NSGDm) nearly matches the best-performing DSGD-GClip 
 - Value: ⭐⭐⭐⭐ (Strong practical implications for training Transformers in decentralized settings).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
+- [\[ICML 2026\] Can Adaptive Gradient Methods Converge under Heavy-Tailed Noise? A Case Study of AdaGrad](../../ICML2026/optimization/can_adaptive_gradient_methods_converge_under_heavy-tailed_noise_a_case_study_of_.md)
+- [\[NeurIPS 2025\] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity](../../NeurIPS2025/optimization/second-order_optimization_under_heavy-tailed_noise_hessian_clipping_and_sample_c.md)
+- [\[ICLR 2026\] Communication-Efficient Decentralized Optimization via Double-Communication Symmetric ADMM](communication-efficient_decentralized_optimization_via_double-communication_symm.md)
+- [\[ICML 2026\] Bregman meets Lévy: Stochastic Mirror Descent with Heavy-Tailed Noise in Continuous and Discrete Time](../../ICML2026/optimization/bregman_meets_lévy_stochastic_mirror_descent_with_heavy-tailed_noise_in_continuo.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)

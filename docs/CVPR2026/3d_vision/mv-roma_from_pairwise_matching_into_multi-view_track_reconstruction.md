@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MV-RoMa: From Pairwise Matching into Multi-View Track Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][SfM] MV-RoMa is proposed as the first multi-view dense matching model. By employing a Track-Guided multi-view encoder and a pixel-aligned multi-view refiner, it simultaneously estimates dense correspondences from a single source image to multiple target images. This produces geometrically consistent tracks for SfM, comprehe
+  [CVPR 2026][3D Vision][Multi-view matching] MV-RoMa is proposed as the first multi-view dense matching model. By employing a Track-Guided multi-view encoder and a pixel-aligned multi-view refiner, it simultaneously estimates dense correspondences from a single source image to multiple target images. This produces geometrically consistent tracks for SfM, comprehensively outperforming existing methods on benchmarks such as HPatches, ETH3D, and IMC.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SfM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view matching"
+  - "dense correspondence"
+  - "track reconstruction"
+  - "SfM"
+  - "feature fusion"
 date: 2026-05-08
-content_hash: 60ea216906e01ef8
+content_hash: 2ea5905ef187ce94
 ---
+
 # MV-RoMa: From Pairwise Matching into Multi-View Track Reconstruction
 
 **Conference**: CVPR 2026  
@@ -146,11 +151,10 @@ Consider a source image $I_0$ plus 4 target images (5 views total). After initia
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
+- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
 - [\[CVPR 2025\] CoMatcher: Multi-View Collaborative Feature Matching](../../CVPR2025/3d_vision/comatcher_multi-view_collaborative_feature_matching.md)
 - [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
 - [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SPRINT: Enabling Interleaved Planning and Parallelized Execution in Reasoning Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Reasoning Acceleration] By restructuring long chain-of-thought reasoning traces into interleaved planning and parallel execution stages…
+  [NeurIPS 2025][Reasoning][Reasoning Acceleration] By restructuring long chain-of-thought reasoning traces into interleaved planning and parallel execution stages, Sprint reduces sequential token counts by up to 39% on in-distribution tasks (up to 65% on OOD tasks) while maintaining accuracy, enabling dynamic parallelization of the reasoning process.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Reasoning Acceleration"
   - "Parallel Inference"
   - "Planning and Execution"
   - "Chain-of-Thought"
   - "Reasoning Models"
 date: 2026-05-08
-content_hash: 1c605fa6dd0cdefc
+content_hash: 5adfadecce3c01f7
 ---
 
 # SPRINT: Enabling Interleaved Planning and Parallelized Execution in Reasoning Models
@@ -138,11 +138,11 @@ Given a user query, the planner generates a plan for the current stage (potentia
 
 ## Related Papers
 
+- [\[CVPR 2025\] Interleaved-Modal Chain-of-Thought](../../CVPR2025/llm_reasoning/interleaved-modal_chain-of-thought.md)
 - [\[NeurIPS 2025\] Reasoning Models Better Express Their Confidence](reasoning_models_better_express_their_confidence.md)
 - [\[ICLR 2026\] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs](../../ICLR2026/llm_reasoning/the_illusion_of_diminishing_returns_measuring_long_horizon_execution_in_llms.md)
 - [\[ACL 2026\] Merlin's Whisper: Enabling Efficient Reasoning in Large Language Models via Black-box Persuasive Prompting](../../ACL2026/llm_reasoning/merlin39s_whisper_enabling_efficient_reasoning_in_large_language_models_via_blac.md)
 - [\[NeurIPS 2025\] Mapping Faithful Reasoning in Language Models](mapping_faithful_reasoning_in_language_models.md)
-- [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
 
 </div>
 

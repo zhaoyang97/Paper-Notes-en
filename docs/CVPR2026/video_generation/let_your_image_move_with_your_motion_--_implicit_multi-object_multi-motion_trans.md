@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] This paper proposes FlexiMMT, the first I2V framework supporting implicit multi-object multi-motion transfer. By utilizing a Motion Decoupled Masked Attention (MDMA) mechanism to constrain motion/text tokens to affect only corresponding target regions and a Differentiated Mask Extraction Mechanism (DMEM) to derive targ
+  [CVPR 2026][Video Generation][Motion Transfer] This paper proposes FlexiMMT, the first I2V framework supporting implicit multi-object multi-motion transfer. By utilizing a Motion Decoupled Masked Attention (MDMA) mechanism to constrain motion/text tokens to affect only corresponding target regions and a Differentiated Mask Extraction Mechanism (DMEM) to derive target masks from diffusion attention for progressive propagation, it achieves precise compositional multi-object mot…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Motion Transfer"
+  - "Multi-Object Multi-Motion"
+  - "Masked Attention"
+  - "Video Diffusion Models"
+  - "I2V Generation"
 date: 2026-05-08
-content_hash: df97e2d96bc37807
+content_hash: 66c15b9ff8e91089
 ---
+
 # Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer
 
 **Conference**: CVPR 2026  
@@ -146,9 +152,9 @@ Training follows the standard noise prediction loss of CogVideoX-5B-I2V, optimiz
 
 - [\[CVPR 2026\] Anti-I2V: Safeguarding your photos from malicious image-to-video generation](anti-i2v_safeguarding_your_photos_from_malicious_image-to-video_generation.md)
 - [\[CVPR 2026\] Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](attention_surgery_an_efficient_recipe_to_linearize_your_video_diffusion_transfor.md)
+- [\[CVPR 2026\] MoReGen: Multi-Agent Motion-Reasoning Engine for Code-based Text-to-Video Synthesis](moregen_multi-agent_motion-reasoning_engine_for_code-based_text-to-video_synthes.md)
 - [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
 - [\[CVPR 2026\] VideoWeaver: Multimodal Multi-View Video-to-Video Transfer for Embodied Agents](videoweaver_multimodal_multi-view_video-to-video_transfer_for_embodied_agents.md)
-- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
 
 </div>
 

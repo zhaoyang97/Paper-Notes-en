@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Born a Transformer – Always a Transformer? On the Effect of Pretraining on Architectural Abilities
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Length Generalization] Through systematic study of a family of retrieval and copying tasks, this paper reveals that large-scale pretraining introduces a directional bias into Transformers…
+  [NeurIPS 2025][LLM Pretraining][Length Generalization] Through systematic study of a family of retrieval and copying tasks, this paper reveals that large-scale pretraining introduces a directional bias into Transformers (rightward/forward over leftward/backward), while failing to overcome fundamental architectural limitations on non-unique tasks. Fine-tuning can eliminate the directional bias but cannot surpass the boundaries of architectural expressiveness.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Pretraining Bias"
   - "Reliability"
 date: 2026-05-08
-content_hash: c74a7a16d1c525d6
+content_hash: f34648dfa80cf086
 ---
 
 # Born a Transformer – Always a Transformer? On the Effect of Pretraining on Architectural Abilities
@@ -145,10 +145,10 @@ Core finding: **Directional bias** is consistently present across all models, ta
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning in Compact Spaces with Approximately Normalized Transformer](learning_in_compact_spaces_with_approximately_normalized_transformer.md)
+- [\[ACL 2025\] Byte Latent Transformer: Patches Scale Better Than Tokens](../../ACL2025/llm_pretraining/byte_latent_transformer.md)
+- [\[ACL 2025\] Emergent Abilities of Large Language Models under Continued Pretraining for Language Adaptation](../../ACL2025/llm_pretraining/emergent_abilities_continued_pt.md)
 - [\[AAAI 2026\] PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer](../../AAAI2026/llm_pretraining/prefixgpt_prefix_adder_optimization_by_a_generative_pre-trained_transformer.md)
-- [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
 - [\[ICML 2026\] Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning](../../ICML2026/llm_pretraining/names_dont_matter_symbol-invariant_transformer_for_open-vocabulary_learning.md)
-- [\[NeurIPS 2025\] Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training](power_lines_scaling_laws_for_weight_decay_and_batch_size_in_llm_pre-training.md)
 
 </div>
 

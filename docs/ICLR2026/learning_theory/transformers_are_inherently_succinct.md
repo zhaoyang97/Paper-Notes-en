@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Transformers Are Inherently Succinct
 description: >-
-  [ICLR 2026][learning_theory][UHAT] This paper evaluates Transformer capabilities using a different metric: instead of asking "which languages it can recognize," it asks "how concisely it can describe a language." The results prove that fixed-precision Transformers (UHAT) are extremely "succinct," describing certain languages exponentially more concisely
+  [ICLR 2026][Learning Theory][Succinctness] This paper evaluates Transformer capabilities using a different metric: instead of asking "which languages it can recognize," it asks "how concisely it can describe a language." The results prove that fixed-precision Transformers (UHAT) are extremely "succinct," describing certain languages exponentially more concisely than LTL and RNNs, and doubly-exponentially more than finite automata. The trade-off is that its emptiness/equivalen…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - UHAT
-  - EXPSPACE
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Expressivity"
+  - "Succinctness"
+  - "Formal Languages"
+  - "UHAT"
+  - "EXPSPACE"
 date: 2026-05-08
-content_hash: 1491f88f3a598d8b
+content_hash: f6473ce8025908e2
 ---
+
 # Transformers Are Inherently Succinct
 
 **Conference**: ICLR 2026  
@@ -144,8 +148,8 @@ Key point: The witness family $\{L_n\}$ uses the same construction—poly($n$) s
 
 - [\[ICLR 2026\] Probability Distributions Computed by Autoregressive Transformers](probability_distributions_computed_by_autoregressive_transformers.md)
 - [\[ICLR 2026\] Softmax Transformers are Turing-Complete](softmax_transformers_are_turing-complete.md)
+- [\[ICLR 2026\] Some Neural Networks Inherently Preserve Subspace Clustering Structure](some_neural_networks_inherently_preserve_subspace_clustering_structure.md)
 - [\[ICLR 2026\] Efficient Turing Machine Simulation with Transformers](efficient_turing_machine_simulation_with_transformers.md)
-- [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
 - [\[ICLR 2026\] Understanding and Relaxing the Limitations of Transformers for Linear Algebra](understanding_and_relaxing_the_limitations_of_transformers_for_linear_algebra.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Diffusion Model Guidance through Calibration and Regularization
 description: >-
-  [NeurIPS 2025 (SPIGM Workshop)][Image Generation][classifier guidance] To address the vanishing gradient problem caused by overconfident classifiers in classifier-guided diffusion models…
+  [NeurIPS 2025 (SPIGM Workshop)][Image Generation][classifier guidance] To address the vanishing gradient problem caused by overconfident classifiers in classifier-guided diffusion models, this paper proposes two complementary approaches: (1) a Smooth ECE calibration loss for fine-tuning classifiers, yielding ~3% FID improvement; and (2) regularized sampling guidance based on f-divergences (RKL/FKL/JS) that requires no retraining, achieving FID 2.13 on ImageNet 128×128.
 tags:
   - "NeurIPS 2025 (SPIGM Workshop)"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "calibration"
   - "conditional generation"
 date: 2026-05-08
-content_hash: 1952ba25091fb40d
+content_hash: d5a038d71ddd04e3
 ---
 
 # Enhancing Diffusion Model Guidance through Calibration and Regularization
@@ -179,10 +179,10 @@ JS divergence achieves the best FID of 2.13 without retraining the diffusion mod
 ## Related Papers
 
 - [\[NeurIPS 2025\] Increasing the Utility of Synthetic Images through Chamfer Guidance](increasing_the_utility_of_synthetic_images_through_chamfer_guidance.md)
+- [\[ICML 2025\] Beyond One-Hot Labels: Semantic Mixing for Model Calibration](../../ICML2025/image_generation/beyond_one-hot_labels_semantic_mixing_for_model_calibration.md)
 - [\[NeurIPS 2025\] Generative Model Inversion Through the Lens of the Manifold Hypothesis](generative_model_inversion_through_the_lens_of_the_manifold_hypothesis.md)
+- [\[ICLR 2026\] ACCORD: Alleviating Concept Coupling through Dependence Regularization for Text-to-Image Diffusion Personalization](../../ICLR2026/image_generation/accord_alleviating_concept_coupling_through_dependence_regularization_for_text-t.md)
 - [\[NeurIPS 2025\] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration](tortoise_and_hare_guidance_accelerating_diffusion_model_inference_with_multirate.md)
-- [\[NeurIPS 2025\] Why Diffusion Models Don't Memorize: The Role of Implicit Dynamical Regularization in Training](why_diffusion_models_dont_memorize_the_role_of_implicit_dynamical_regularization.md)
-- [\[NeurIPS 2025\] BADiff: Bandwidth Adaptive Diffusion Model](badiff_bandwidth_adaptive_diffusion_model.md)
 
 </div>
 

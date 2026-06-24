@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings
 description: >-
-  [NeurIPS 2025][Audio & Speech][abusive language detection] This paper introduces TiALD (Tigrinya Abusive Language Detection), the first large-scale multi-task benchmark dataset for the low-resource Tigrinya language. It…
+  [NeurIPS 2025][Audio & Speech][abusive language detection] This paper introduces TiALD (Tigrinya Abusive Language Detection), the first large-scale multi-task benchmark dataset for the low-resource Tigrinya language. It comprises 13,717 YouTube comments annotated jointly across three tasks—abusive language detection, sentiment analysis, and topic classification—and demonstrates that a compact fine-tuned model (TiRoBERTa, 125M parameters) consistently outperforms frontier LLMs…
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Tigrinya"
   - "benchmark dataset"
 date: 2026-05-08
-content_hash: a56efe9d3a86517f
+content_hash: a4f0d7f9cf4ea747
 ---
 
 # A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings
@@ -133,11 +133,11 @@ The paper introduces the **TiALD Score**, defined as the average macro F1 across
 
 ## Related Papers
 
+- [\[ACL 2025\] GigaSpeech 2: An Evolving, Large-Scale and Multi-domain ASR Corpus for Low-Resource Languages](../../ACL2025/audio_speech/gigaspeech2_low_resource_asr.md)
 - [\[ICLR 2026\] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark](../../ICLR2026/audio_speech/mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark.md)
-- [\[NeurIPS 2025\] DeepASA: An Object-Oriented Multi-Purpose Network for Auditory Scene Analysis](deepasa_an_object-oriented_multi-purpose_network_for_auditory_scene_analysis.md)
 - [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](../../ACL2026/audio_speech/multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
+- [\[NeurIPS 2025\] DeepASA: An Object-Oriented Multi-Purpose Network for Auditory Scene Analysis](deepasa_an_object-oriented_multi-purpose_network_for_auditory_scene_analysis.md)
 - [\[ACL 2026\] HCFD: A Benchmark for Audio Deepfake Detection in Healthcare](../../ACL2026/audio_speech/hcfd_a_benchmark_for_audio_deepfake_detection_in_healthcare.md)
-- [\[NeurIPS 2025\] Multi-head Temporal Latent Attention](multi-head_temporal_latent_attention.md)
 
 </div>
 

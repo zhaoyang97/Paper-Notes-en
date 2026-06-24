@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Open-Insect: Benchmarking Open-Set Recognition of Novel Species in Biodiversity Monitoring
 description: >-
-  [NeurIPS 2025][AI Safety][open-set recognition] This paper introduces Open-Insect — the first large-scale fine-grained open-set recognition benchmark for insect species discovery…
+  [NeurIPS 2025 Spotlight][AI Safety][open-set recognition] This paper introduces Open-Insect — the first large-scale fine-grained open-set recognition benchmark for insect species discovery, spanning three geographic regions and three types of open-set splits. It systematically evaluates 38 OSR algorithms, finding that simple posterior methods (e.g., MSP) remain strong baselines in fine-grained settings, and demonstrates the critical role of domain-relevant auxiliary data in i…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "AI Safety"
   - "open-set recognition"
   - "fine-grained classification"
@@ -12,7 +12,7 @@ tags:
   - "OOD detection"
   - "biodiversity monitoring"
 date: 2026-05-08
-content_hash: d05d92b27969e64d
+content_hash: c4ea1d0b055a1739
 ---
 
 # Open-Insect: Benchmarking Open-Set Recognition of Novel Species in Biodiversity Monitoring
@@ -139,11 +139,11 @@ Both methods use the closed-set classification head to compute OSR scores at tes
 
 ## Related Papers
 
+- [\[ECCV 2024\] Operational Open-Set Recognition and PostMax Refinement](../../ECCV2024/ai_safety/operational_open-set_recognition_and_postmax_refinement.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
 - [\[NeurIPS 2025\] Unlocking Transfer Learning for Open-World Few-Shot Recognition](unlocking_transfer_learning_for_open-world_few-shot_recognition.md)
 - [\[NeurIPS 2025\] A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers](a_set_of_generalized_components_to_achieve_effective_poison-only_clean-label_bac.md)
-- [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
-- [\[NeurIPS 2025\] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)
+- [\[NeurIPS 2025\] CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D](ctrl-alt-deceit_sabotage_evaluations_for_automated_ai_rd.md)
 
 </div>
 

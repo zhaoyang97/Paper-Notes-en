@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Universal Gene Regulatory Network Inference: Unlocking Generalizable Regulatory Knowledge in Single-cell Foundation Models
 description: >-
-  [ICML 2026][Computational Biology][scFM] This paper points out that single-cell foundation models (scFMs) contain rich gene regulatory knowledge that is often obscured by "reconstructive pre-training." It proposes two probes, Virtual Value Perturbation (VVP) and Gradient Trajectory (GDT), to distill pairwise gene features from frozen scFMs that generalize acr
+  [ICML 2026][Computational Biology][Gene Regulatory Networks] This paper points out that single-cell foundation models (scFMs) contain rich gene regulatory knowledge that is often obscured by "reconstructive pre-training." It proposes two probes, Virtual Value Perturbation (VVP) and Gradient Trajectory (GDT), to distill pairwise gene features from frozen scFMs that generalize across genes and datasets. This approach pushes AUPRC on the BEELINE benchmark from ~0.5 to 0.8–0.97…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - scFM
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Gene Regulatory Networks"
+  - "scFM"
+  - "Counterfactual Perturbation"
+  - "Gradient Trajectory"
+  - "Zero-shot Generalization"
 date: 2026-05-08
-content_hash: 365713253f6dd867
+content_hash: 2f132c50f0656f8a
 ---
+
 # Towards Universal Gene Regulatory Network Inference: Unlocking Generalizable Regulatory Knowledge in Single-cell Foundation Models
 
 **Conference**: ICML 2026  
@@ -133,9 +138,9 @@ Original scFM usage (Pert/Attn) is near-random. Converting the UGRN baseline int
 
 - [\[ICML 2026\] Supervised Graph Contrastive Learning for Gene Regulatory Networks](supervised_graph_contrastive_learning_for_gene_regulatory_networks.md)
 - [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
+- [\[ICLR 2026\] SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention](../../ICLR2026/computational_biology/save_a_generalizable_framework_for_multi-condition_single-cell_generation_with_g.md)
+- [\[ICML 2026\] scCBGM: Interpretable Single-Cell Counterfactual Editing](sccbgm_interpretable_single-cell_counterfactual_editing.md)
 - [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](../../AAAI2026/computational_biology/gene_incremental_learning_for_single-cell_transcriptomics.md)
-- [\[ACL 2025\] A Survey on Foundation Language Models for Single-cell Biology](../../ACL2025/computational_biology/foundation_lm_single_cell_survey.md)
-- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
 
 </div>
 

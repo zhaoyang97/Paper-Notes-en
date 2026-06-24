@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation
 description: >-
-  [CVPR 2026][Video Generation][video editing] AutoCut proposes an end-to-end advertisement video editing framework that unifies video, audio, and text into a shared discrete token space via Residual Vector Quantization (RQVAE). By performing multimodal alignment and supervised fine-tuning on Qwen3-8B, it achieves unified processing of four tasks—video selection, o
+  [CVPR 2026][Video Understanding][video editing] AutoCut proposes an end-to-end advertisement video editing framework that unifies video, audio, and text into a shared discrete token space via Residual Vector Quantization (RQVAE). By performing multimodal alignment and supervised fine-tuning on Qwen3-8B, it achieves unified processing of four tasks—video selection, ordering, script generation, and background music (BGM) selection—outperforming GPT-4o baselines on multiple metr…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - video editing
-  - Multimodal LLM
-  - Residual VQ
-  - Advertisement
-  - Controllable Generation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "video editing"
+  - "Multimodal LLM"
+  - "Residual VQ"
+  - "Advertisement"
+  - "Controllable Generation"
 date: 2026-05-08
-content_hash: da23ee73764dc6ee
+content_hash: c2c21ed15c3f9a32
 ---
+
 # AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation
 
 **Conference**: CVPR 2026  
@@ -146,11 +147,11 @@ The alignment phase uses ~700K filtered advertisement videos (preferring high-in
 
 ## Related Papers
 
-- [\[CVPR 2026\] STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows](starflow-v_end-to-end_video_generative_modeling_with_autoregressive_normalizing_.md)
-- [\[CVPR 2026\] MoCha: End-to-End Video Character Replacement without Structural Guidance](mocha_end-to-end_video_character_replacement_without_structural_guidance.md)
-- [\[CVPR 2026\] M4V: Multimodal Mamba for Efficient Text-to-Video Generation](m4v_multimodal_mamba_for_efficient_text-to-video_generation.md)
-- [\[CVPR 2026\] Thinking with Video: Video Generation as a Promising Multimodal Reasoning Paradigm](thinking_with_video_video_generation_as_a_promising_multimodal_reasoning_paradig.md)
-- [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
+- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)
+- [\[CVPR 2026\] TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction](timebridge_self-supervised_video_representation_learning_via_start-end_joint_emb.md)
+- [\[ECCV 2024\] OneTrack: Demystifying the Conflict Between Detection and Tracking in End-to-End 3D Trackers](../../ECCV2024/video_understanding/onetrack_demystifying_the_conflict_between_detection_and_tracking_in_end-to-end_.md)
+- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](gloria_consistent_character_video_generation_via_content_anchors.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation
 description: >-
-  [CVPR 2026][Remote Sensing][UAV] APEX decomposes the "UAV target search" task into three decoupled modules—using MLLMs to dynamically construct 3D spatio-temporal semantic maps as memory, PPO-based reinforcement learning to translate maps into actions, and an open-vocabulary detector for final target confirmation. These modules run at different freque
+  [CVPR 2026][Remote Sensing][Aerial Object Navigation] APEX decomposes the "UAV target search" task into three decoupled modules—using MLLMs to dynamically construct 3D spatio-temporal semantic maps as memory, PPO-based reinforcement learning to translate maps into actions, and an open-vocabulary detector for final target confirmation. These modules run at different frequencies via an asynchronous parallel framework to bypass the inference latency of large models…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - UAV
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Aerial Object Navigation"
+  - "UAV"
+  - "3D Spatio-Temporal Semantic Map"
+  - "Reinforcement Learning"
+  - "Asynchronous Parallel Framework"
 date: 2026-05-08
-content_hash: 81269b608eb26f16
+content_hash: a17c8034096a9ebc
 ---
+
 # APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation
 
 **Conference**: CVPR 2026  
@@ -157,8 +161,8 @@ Module Ablation (Tab. 4):
 - [\[CVPR 2026\] LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation](lookasidevln_direction-aware_aerial_vision-and-language_navigation.md)
 - [\[CVPR 2026\] Beyond Matching to Tiles: Bridging Unaligned Aerial and Satellite Views for Vision-Only UAV Navigation](beyond_matching_to_tiles_bridging_unaligned_aerial_and_satellite_views_for_visio.md)
 - [\[ICCV 2025\] CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../../ICCV2025/remote_sensing/citynav_a_large-scale_dataset_for_real-world_aerial_navigation.md)
-- [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
-- [\[CVPR 2026\] Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)
+- [\[CVPR 2026\] FUSAR-GPT: A Spatiotemporal Feature-Embedded and Two-Stage Decoupled Visual Language Model for SAR Imagery](fusar-gpt_a_spatiotemporal_feature-embedded_and_two-stage_decoupled_visual_langu.md)
+- [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
 
 </div>
 

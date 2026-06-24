@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling
 description: >-
-  [ACL 2026][Interpretability][Paper Note] VL-MDR upgrades the "single-scalar black-box" discriminative vision-language reward model into a three-headed architecture consisting of "dynamic dimension selection + per-dimension scoring + adaptive weighting." Combined with a 321k dataset featuring 21-dimensional fine-grained preference annotations, it outperforms e
+  [ACL 2026][Interpretability][Vision-Language Reward Models] VL-MDR upgrades the "single-scalar black-box" discriminative vision-language reward model into a three-headed architecture consisting of "dynamic dimension selection + per-dimension scoring + adaptive weighting." Combined with a 321k dataset featuring 21-dimensional fine-grained preference annotations, it outperforms existing open-source RMs on VL-RewardBench and generates higher-quality DPO preference pairs to mitig…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Vision-Language Reward Models"
+  - "multi-dimensional evaluation"
+  - "dynamic gating"
+  - "DPO alignment"
 date: 2026-05-08
-content_hash: 9bc53ad5931709dc
+content_hash: 0c843edb7034361f
 ---
+
 # Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling
 
 **Conference**: ACL 2026  
@@ -140,8 +145,8 @@ The model was compared against open-source RMs on VL-RewardBench and two other m
 - [\[ICML 2026\] IdEst: Assessing Self-Supervised Learning Representations via Intrinsic Dimension](../../ICML2026/interpretability/idest_assessing_self-supervised_learning_representations_via_intrinsic_dimension.md)
 - [\[ICML 2025\] What Makes an Ensemble (Un)interpretable?](../../ICML2025/interpretability/what_makes_an_ensemble_un_interpretable.md)
 - [\[ACL 2026\] Retrieval Heads are Dynamic](retrieval_heads_are_dynamic.md)
-- [\[NeurIPS 2025\] Rectifying Shortcut Behaviors in Preference-based Reward Learning](../../NeurIPS2025/interpretability/rectifying_shortcut_behaviors_in_preference-based_reward_learning.md)
 - [\[ACL 2026\] AdaptiveK: Complexity-Driven Sparse Autoencoders for Interpretable Language Model Representations](adaptivek_complexity-driven_sparse_autoencoders_for_interpretable_language_model.md)
+- [\[NeurIPS 2025\] Rectifying Shortcut Behaviors in Preference-based Reward Learning](../../NeurIPS2025/interpretability/rectifying_shortcut_behaviors_in_preference-based_reward_learning.md)
 
 </div>
 

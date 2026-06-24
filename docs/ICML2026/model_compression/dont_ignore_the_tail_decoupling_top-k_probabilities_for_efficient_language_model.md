@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Don't Ignore the Tail: Decoupling top-K Probabilities for Efficient Language Model Distillation
 description: >-
-  [ICML 2026][Model Compression][Knowledge Distillation] Ours proposes TAD (Tail-Aware Distillation): It explicitly decouples teacher top-$K$ probabilities from "tail" probabilities within the standard KD KL divergence and amplifies the tail contribution. This allows LLM pre-training distillation to be completed within academic-scale compute (single H100 + 1 week), outperfor
+  [ICML 2026][Model Compression][Knowledge Distillation] Ours proposes TAD (Tail-Aware Distillation): It explicitly decouples teacher top-$K$ probabilities from "tail" probabilities within the standard KD KL divergence and amplifies the tail contribution. This allows LLM pre-training distillation to be completed within academic-scale compute (single H100 + 1 week), outperforming data-centric methods like MiniPLM.
 tags:
-  - ICML 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICML 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "KL Divergence"
+  - "Tail Probabilities"
+  - "Pre-training Distillation"
+  - "Causal Language Models"
 date: 2026-05-08
-content_hash: b8e9162b74de65e8
+content_hash: f69e51280c104556
 ---
+
 # Don't Ignore the Tail: Decoupling top-K Probabilities for Efficient Language Model Distillation
 
 **Conference**: ICML 2026  

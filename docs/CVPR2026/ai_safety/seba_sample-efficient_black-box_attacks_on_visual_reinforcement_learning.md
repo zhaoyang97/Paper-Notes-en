@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning
 description: >-
-  [CVPR 2026][AI Safety][World Models] SEBA utilizes a differentiable "Shadow Critic," a GAN-based perturbation generator, and a World Model to generate nearly imperceptible adversarial perturbations for pixel-input continuous control RL agents under **black-box conditions (no access to victim policy gradients)**. It reduces cumulative rewards to near zero
+  [CVPR 2026][AI Safety][Black-box Adversarial Attack] SEBA utilizes a differentiable "Shadow Critic," a GAN-based perturbation generator, and a World Model to generate nearly imperceptible adversarial perturbations for pixel-input continuous control RL agents under **black-box conditions (no access to victim policy gradients)**. It reduces cumulative rewards to near zero while decreasing environment/victim query volume by one to two orders of magnitude compared to RL-based att…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - World Models
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Black-box Adversarial Attack"
+  - "Visual Reinforcement Learning"
+  - "Continuous Control"
+  - "Shadow Q-Model"
+  - "World Model"
 date: 2026-05-08
-content_hash: 8cb0c2fbc84c9bfd
+content_hash: 0668061004110ca6
 ---
+
 # SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -157,8 +162,8 @@ Components were removed individually (-D for discriminator, -Noise for training 
 - [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
 - [\[CVPR 2026\] Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack](shedding_light_on_vln_robustness_a_black-box_framework_for_indoor_lighting-based.md)
-- [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](../../ICLR2026/ai_safety/sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
 - [\[CVPR 2026\] What Your Features Reveal: Data-Efficient Black-Box Feature Inversion Attack for Split DNNs](what_your_features_reveal_data-efficient_black-box_feature_inversion_attack_for_.md)
+- [\[ICLR 2026\] Black-Box Privacy Attacks on Shared Representations in Multitask Learning](../../ICLR2026/ai_safety/black-box_privacy_attacks_on_shared_representations_in_multitask_learning.md)
 
 </div>
 

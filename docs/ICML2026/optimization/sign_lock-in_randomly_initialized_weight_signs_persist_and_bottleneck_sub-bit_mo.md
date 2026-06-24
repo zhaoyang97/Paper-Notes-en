@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sign Lock-In: Randomly Initialized Weight Signs Persist and Bottleneck Sub-Bit Model Compression
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper reveals that post-training weight sign matrices are indistinguishable from i.i.d. Rademacher noise across all architectures, forming a "one-bit wall" for sub-bit compression. Using stopping time analysis, it proves this pseudo-randomness is actually a "lock-in" of initialized signs. Consequently, it proposes
+  [ICML2026][Optimization][Sub-bit compression] This paper reveals that post-training weight sign matrices are indistinguishable from i.i.d. Rademacher noise across all architectures, forming a "one-bit wall" for sub-bit compression. Using stopping time analysis, it proves this pseudo-randomness is actually a "lock-in" of initialized signs. Consequently, it proposes a from-scratch training scheme using low-rank sign templates + gap initialization + outer-zone log-barrier regula…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Sub-bit compression"
+  - "sign bit"
+  - "lock-in theory"
+  - "geometric tail law"
+  - "low-rank template"
 date: 2026-05-08
-content_hash: 06207ea664479a83
+content_hash: 29deb4e6ec44eb82
 ---
+
 # Sign Lock-In: Randomly Initialized Weight Signs Persist and Bottleneck Sub-Bit Model Compression
 
 **Conference**: ICML2026  
@@ -141,11 +147,11 @@ Beyond the task loss, only one term $\lambda(t)\sum_{l\in\mathcal{M}}R_{\mathrm{
 
 ## Related Papers
 
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
+- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 - [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](../../CVPR2026/optimization/defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
-- [\[ICML 2026\] Limits of Convergence-Rate Control for Open-Weight Safety](limits_of_convergence-rate_control_for_open-weight_safety.md)
+- [\[ICLR 2026\] Cautious Weight Decay](../../ICLR2026/optimization/cautious_weight_decay.md)
 - [\[ICML 2026\] Automatic Unsupervised Ensemble Outlier Model Selection–Extended Version](automatic_unsupervised_ensemble_outlier_model_selection--extended_version.md)
-- [\[ICML 2026\] On the Interaction of Batch Noise, Adaptivity, and Compression, under $(L_0,L_1)$-Smoothness: An SDE Approach](on_the_interaction_of_batch_noise_adaptivity_and_compression_under_l_0l_1-smooth.md)
+- [\[ICLR 2026\] Sign-SGD via Parameter-Free Optimization](../../ICLR2026/optimization/sign-sgd_via_parameter-free_optimization.md)
 
 </div>
 

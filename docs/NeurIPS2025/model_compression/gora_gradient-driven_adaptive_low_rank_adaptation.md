@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GoRA: Gradient-Driven Adaptive Low Rank Adaptation
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA] GoRA is proposed to leverage **pre-computed gradient information** to simultaneously perform adaptive rank allocation and weight initialization prior to training — assigning per-la…
+  [NeurIPS 2025][Model Compression][LoRA] GoRA is proposed to leverage **pre-computed gradient information** to simultaneously perform adaptive rank allocation and weight initialization prior to training — assigning per-layer ranks based on parameter sensitivity and initializing the $B$ matrix via the gradient pseudo-inverse so that the initial output approximates one step of gradient descent, thereby addressing both major bottlenecks of LoRA in a unified framework.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "parameter-efficient fine-tuning"
   - "LLM"
 date: 2026-05-08
-content_hash: 45f887c39154b673
+content_hash: daa4ed6f18f9c218
 ---
 
 # GoRA: Gradient-Driven Adaptive Low Rank Adaptation
@@ -210,7 +210,7 @@ GoRA ($r^{\text{ref}}=128$) **surpasses full fine-tuning** on GSM8k and HumanEva
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
 - [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
-- [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
+- [\[ACL 2025\] CoLA: Collaborative Low-Rank Adaptation](../../ACL2025/model_compression/cola_collaborative_low-rank_adaptation.md)
 
 </div>
 

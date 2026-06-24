@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IGGT: Instance-Grounded Geometry Transformer for Semantic 3D Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] IGGT utilizes a multi-view Geometry Transformer to simultaneously predict cameras, depth, point maps, and instance-level features. By employing 3D-consistent contrastive learning to bind geometric reconstruction and instance semantics within a single representation, it achieves more stable results in semantic 3D recons
+  [ICLR 2026][3D Vision][Semantic 3D Reconstruction] IGGT utilizes a multi-view Geometry Transformer to simultaneously predict cameras, depth, point maps, and instance-level features. By employing 3D-consistent contrastive learning to bind geometric reconstruction and instance semantics within a single representation, it achieves more stable results in semantic 3D reconstruction, multi-view instance matching, and open-vocabulary scene understanding.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Semantic 3D Reconstruction"
+  - "Multi-view Instance Matching"
+  - "Open-vocabulary Segmentation"
+  - "3D Consistency"
+  - "Instance-level Scene Understanding"
 date: 2026-05-08
-content_hash: 8b79c93499f91d94
+content_hash: 421c23b49e1593e6
 ---
+
 # IGGT: Instance-Grounded Geometry Transformer for Semantic 3D Reconstruction
 
 **Conference**: ICLR 2026  
@@ -140,6 +146,7 @@ Analyses on contrastive loss weights and VLM integration.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

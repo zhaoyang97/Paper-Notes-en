@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Align Your Structures: Generating Trajectories with Structure Pretraining for Molecular Dynamics
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes EGINTERPOLATOR: it first trains an equivariant diffusion structure model on large-scale static molecular conformation data, and then learns inter-frame correlations on a small amount of MD trajectories using a temporal interpolator, generating trajectories for small molecules, drug molecules, tetrap
+  [ICLR 2026][Computational Biology][Molecular Dynamics Generation] This paper proposes EGINTERPOLATOR: it first trains an equivariant diffusion structure model on large-scale static molecular conformation data, and then learns inter-frame correlations on a small amount of MD trajectories using a temporal interpolator, generating trajectories for small molecules, drug molecules, tetrapeptides, and protein monomers that more closely resemble real molecular dynamics.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Dynamics Generation"
+  - "Structure Pretraining"
+  - "Equivariant Diffusion Model"
+  - "Temporal Interpolator"
+  - "Conformation Generation"
 date: 2026-05-08
-content_hash: a5937c5bd7b1b0db
+content_hash: c15c0c22b307f0f4
 ---
+
 # Align Your Structures: Generating Trajectories with Structure Pretraining for Molecular Dynamics
 
 **Conference**: ICLR 2026  

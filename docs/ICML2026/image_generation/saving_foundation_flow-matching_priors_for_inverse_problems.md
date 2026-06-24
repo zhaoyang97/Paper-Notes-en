@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Saving Foundation Flow-Matching Priors for Inverse Problems
 description: >-
-  [ICML 2026][Image Generation][warm-start] Addressing the observation that foundation flow-matching (FM) models like Stable Diffusion / Flux significantly underperform compared to domain-specific or even untrained priors in solving inverse problems, the authors propose FMPlug. By using a time-learnable warm-start guided by approximate samples and a sharp Gaussi
+  [ICML 2026][Image Generation][Foundation Flow-Matching Priors] Addressing the observation that foundation flow-matching (FM) models like Stable Diffusion / Flux significantly underperform compared to domain-specific or even untrained priors in solving inverse problems, the authors propose FMPlug. By using a time-learnable warm-start guided by approximate samples and a sharp Gaussian shell constraint, FMPlug forces the latent variables of the foundation FM back onto the thin s…
 tags:
-  - ICML 2026
-  - Image Generation
-  - warm-start
+  - "ICML 2026"
+  - "Image Generation"
+  - "Foundation Flow-Matching Priors"
+  - "Inverse Problems"
+  - "warm-start"
+  - "Gaussian Regularization"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 6463f3ea704c3e96
+content_hash: a05705d6ba9a9024
 ---
+
 # Saving Foundation Flow-Matching Priors for Inverse Problems
 
 **Conference**: ICML 2026  
@@ -130,8 +135,8 @@ FMPlug nearly halves the LPIPS, indicating it successfully pushes the foundation
 - [\[ICML 2026\] LithoGRPO: Fast Inverse Lithography via GRPO Reinforced Flow Matching](lithogrpo_fast_inverse_lithography_via_grpo_reinforced_flow_matching.md)
 - [\[ICCV 2025\] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching](../../ICCV2025/image_generation/unsupervised_imaging_inverse_problems_with_diffusion_distribution_matching.md)
 - [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
+- [\[ICLR 2026\] Contrastive Diffusion Guidance for Spatial Inverse Problems](../../ICLR2026/image_generation/contrastive_diffusion_guidance_for_spatial_inverse_problems.md)
 - [\[ICML 2026\] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models](stage-wise_distortion-perception_traversal_in_zero-shot_inverse_problems_with_di.md)
-- [\[ICML 2026\] Zeroth-Order Non-Log-Concave Sampling with Variance Reduction and Applications to Inverse Problems](zeroth-order_non-log-concave_sampling_with_variance_reduction_and_applications_t.md)
 
 </div>
 

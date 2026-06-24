@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] Multi-Agent Teams Hold Experts Back: 自组织 LLM 团队为什么留不住「专家」
+  [Paper Note] Multi-Agent Teams Hold Experts Back: Why Self-Organized LLM Teams Fail to Retain "Experts"
 description: >-
-  [ICML 2026][LLM (Other)][Multi-Agent] This paper systematically evaluates self-organized heterogeneous LLM teams using the organizational psychology standard of "strong synergy" (team $\ge$ strongest individual). It finds that even when explicitly informed of expert identities, teams underperform experts by 6.3%–41.1% on frontier ML benchmarks. The root ca
+  [ICML 2026][LLM (Other)][Multi-agent] This paper systematically evaluates self-organized heterogeneous LLM teams using the organizational psychology standard of "strong synergy" (team $\ge$ strongest individual). It finds that even when explicitly informed of expert identities, teams underperform experts by 6.3%–41.1% on frontier ML benchmarks. The root cause is not the inability to recognize experts, but a reluctance to let them lead—LLMs favor "middle-ground integration" ov…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Multi-Agent
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Multi-agent"
+  - "self-organized teams"
+  - "expert utilization"
+  - "consensus bias"
+  - "alignment side-effects"
 date: 2026-05-08
-content_hash: 6524f11304786115
+content_hash: 8f4865c67ce82ec0
 ---
+
 # Multi-Agent Teams Hold Experts Back: Why Self-Organized LLM Teams Fail to Retain "Experts"
 
 **Conference**: ICML 2026  
@@ -124,11 +129,11 @@ For most tasks, the gap remained nearly unchanged after revelation, indicating t
 
 ## Related Papers
 
+- [\[ICLR 2026\] Discovering Novel LLM Experts via Task-Capability Coevolution](../../ICLR2026/llm_nlp/discovering_novel_llm_experts_via_task-capability_coevolution.md)
+- [\[ICML 2025\] Product of Experts with LLMs: Boosting Performance on ARC Is a Matter of Perspective](../../ICML2025/llm_nlp/product_of_experts_with_llms_boosting_performance_on_arc_is_a_matter_of_perspect.md)
+- [\[ICML 2026\] Why Are Linear RNNs More Parallelizable?](why_are_linear_rnns_more_parallelizable.md)
 - [\[ACL 2025\] AgentDropout: Dynamic Agent Elimination for Token-Efficient and High-Performance LLM-Based Multi-Agent Collaboration](../../ACL2025/llm_nlp/agentdropout-dynamic-agent-elimination-for-multi-agent-collaboration.md)
 - [\[ACL 2025\] Red-Teaming LLM Multi-Agent Systems via Communication Attacks](../../ACL2025/llm_nlp/red-teaming_llm_multi-agent_systems_via_communication_attacks.md)
-- [\[ACL 2025\] Graph Counselor: Adaptive Graph Exploration via Multi-Agent Synergy to Enhance LLM Reasoning](../../ACL2025/llm_nlp/graph_counselor_multiagent_graphrag.md)
-- [\[ACL 2025\] MasRouter: Learning to Route LLMs for Multi-Agent Systems](../../ACL2025/llm_nlp/masrouter_learning_to_route_llms_for_multi-agent_systems.md)
-- [\[ACL 2025\] Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System](../../ACL2025/llm_nlp/virsci_multi_agent_idea_gen.md)
 
 </div>
 

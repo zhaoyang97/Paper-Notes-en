@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CL-DPS: A Contrastive Learning Approach to Blind Nonlinear Inverse Problem Solving via Diffusion Posterior Sampling
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] CL-DPS utilizes an offline-trained contrastive learning encoder to approximate the intractable likelihood term $p(y\mid x_t)$ in diffusion posterior sampling (DPS). This enables diffusion models to solve blind **nonlinear** inverse problems (e.g., rotation blur, radial blur) for the first time without **knowing or esti
+  [ICLR2026][Image Restoration][Blind Inverse Problems] CL-DPS utilizes an offline-trained contrastive learning encoder to approximate the intractable likelihood term $p(y\mid x_t)$ in diffusion posterior sampling (DPS). This enables diffusion models to solve blind **nonlinear** inverse problems (e.g., rotation blur, radial blur) for the first time without **knowing or estimating operator parameters**. It achieves clean restorations where existing methods fail…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Blind Inverse Problems"
+  - "Nonlinear Operators"
+  - "Diffusion Posterior Sampling"
+  - "Contrastive Learning"
+  - "Deblurring"
 date: 2026-05-08
-content_hash: ebb5f0d99d431fa9
+content_hash: 35184e02d5a6f9c2
 ---
+
 # CL-DPS: A Contrastive Learning Approach to Blind Nonlinear Inverse Problem Solving via Diffusion Posterior Sampling
 
 **Conference**: ICLR2026  
@@ -153,7 +159,7 @@ Additional experiments show that replacing the UNI encoder with ResNet-50 recove
 - [\[ICLR 2026\] A Statistical Benchmark for Diffusion-Posterior-Sampling Algorithms](a_statistical_benchmark_for_diffusion-posterior-sampling_algorithms.md)
 - [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](../../ICML2026/image_restoration/triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
 - [\[ICLR 2026\] LearnIR: Learnable Posterior Sampling for Real-World Image Restoration](learnir_learnable_posterior_sampling_for_real-world_image_restoration.md)
-- [\[ICLR 2026\] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](adaptive_moments_are_surprisingly_effective_for_plug-and-play_diffusion_sampling.md)
+- [\[ICLR 2026\] Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning](noise-adaptive_diffusion_sampling_for_inverse_problems_without_task-specific_tun.md)
 - [\[ICML 2026\] Measurement-Consistent Langevin Corrector for Stabilizing Latent Diffusion Inverse Problem Solvers](../../ICML2026/image_restoration/measurement-consistent_langevin_corrector_for_stabilizing_latent_diffusion_inver.md)
 
 </div>

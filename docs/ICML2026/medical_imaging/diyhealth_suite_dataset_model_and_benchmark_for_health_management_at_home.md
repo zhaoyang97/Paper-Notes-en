@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DIYHealth Suite: Dataset, Model, and Benchmark for Health Management at Home
 description: >-
-  [ICML 2026][Medical Imaging][MoE-LoRA] Addressing the "Diagnosis-It-Yourself" scenario—a field overlooked by existing medical LLMs—this work delivers an integrated suite comprising a dataset (DIYHealth-900K, 900,000 multimodal home health QAs), a model (DIYHealthGPT, centered on the newly proposed H2LoRA parameter-efficient fine-tuning mechanism), and a ben
+  [ICML 2026][Medical Imaging][Home Health Management] Addressing the "Diagnosis-It-Yourself" scenario—a field overlooked by existing medical LLMs—this work delivers an integrated suite comprising a dataset (DIYHealth-900K, 900,000 multimodal home health QAs), a model (DIYHealthGPT, centered on the newly proposed H2LoRA parameter-efficient fine-tuning mechanism), and a benchmark (DIYHealthBench, the first evaluation covering 11 home health tasks). The suite achieves SOTA perfor…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - MoE-LoRA
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Home Health Management"
+  - "Multimodal Dataset"
+  - "Parameter-Efficient Fine-Tuning"
+  - "MoE-LoRA"
+  - "Hypernetwork"
 date: 2026-05-08
-content_hash: 95ae1c46e143c778
+content_hash: a001075ccdd34b2e
 ---
+
 # DIYHealth Suite: Dataset, Model, and Benchmark for Health Management at Home
 
 **Conference**: ICML 2026  
@@ -134,9 +139,9 @@ Evaluation was conducted on DIYHealthBench (12,167 samples). Metrics for closed-
 
 - [\[ICML 2026\] Seizure-Semiology-Suite (S³): A Clinically Multimodal Dataset, Benchmark, and Models for Seizure Semiology Understanding](seizure-semiology-suite_s3_a_clinically_multimodal_dataset_benchmark_and_models_.md)
 - [\[ICML 2026\] Marrying Generative Model of Healthcare Events with Digital Twin of Social Determinants of Health for Disease Reasoning](marrying_generative_model_of_healthcare_events_with_digital_twin_of_social_deter.md)
+- [\[ICLR 2026\] MedLesionVQA: A Multimodal Benchmark Emulating Clinical Visual Diagnosis for Body Surface Health](../../ICLR2026/medical_imaging/medlesionvqa_a_multimodal_benchmark_emulating_clinical_visual_diagnosis_for_body.md)
+- [\[ICML 2026\] Which Anatomy Matters Under Limited Labels? A Data-Efficient Anatomy-Aware Benchmark for Cardiac Pathology Prediction](which_anatomy_matters_under_limited_labels_a_data-efficient_anatomy-aware_benchm.md)
 - [\[AAAI 2026\] Personalization of Large Foundation Models for Health Interventions](../../AAAI2026/medical_imaging/personalization_of_large_foundation_models_for_health_interventions.md)
-- [\[CVPR 2026\] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings](../../CVPR2026/medical_imaging/lemon_a_large_endoscopic_monocular_dataset_and_foundation_model_for_perception_in.md)
-- [\[CVPR 2025\] Interactive Medical Image Segmentation: A Benchmark Dataset and Baseline](../../CVPR2025/medical_imaging/interactive_medical_image_segmentation_a_benchmark_dataset_and_baseline.md)
 
 </div>
 

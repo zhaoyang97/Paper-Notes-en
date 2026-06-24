@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper proposes a hierarchical "point-patch" fusion network that constructs a position-independent normal patch feature codebook using adaptive multi-scale patching. It then injects patch-level priors into point-wise features via RoPE cross-attention to regress anomaly offsets. The method significantly outperforms
+  [CVPR 2026][3D Vision][3D Shape Anomaly Detection] This paper proposes a hierarchical "point-patch" fusion network that constructs a position-independent normal patch feature codebook using adaptive multi-scale patching. It then injects patch-level priors into point-wise features via RoPE cross-attention to regress anomaly offsets. The method significantly outperforms previous point-wise approaches in detecting large-scale structural defects (planar displacement…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Shape Anomaly Detection"
+  - "Multi-scale patch"
+  - "Feature codebook"
+  - "Point-patch fusion"
+  - "Offset regression"
 date: 2026-05-08
-content_hash: b94a91875ca8bd2e
+content_hash: 213c3b25a829b32f
 ---
+
 # Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -127,11 +133,11 @@ Inference overhead breakdown (RTX 3090, batch=1): 3D U-Net backbone accounts for
 
 ## Related Papers
 
-- [\[CVPR 2026\] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection](moeclip_patch-specialized_experts_for_zero-shot_anomaly_detection.md)
-- [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
-- [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/object_detection/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
 - [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
-- [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
+- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
+- [\[CVPR 2026\] PatchScene: Patch-based Voxel Diffusion Model for Large-Scale Scene Completion](patchscene_patch-based_voxel_diffusion_model_for_large-scale_scene_completion.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
+- [\[ECCV 2024\] Deep Patch Visual SLAM](../../ECCV2024/3d_vision/deep_patch_visual_slam.md)
 
 </div>
 

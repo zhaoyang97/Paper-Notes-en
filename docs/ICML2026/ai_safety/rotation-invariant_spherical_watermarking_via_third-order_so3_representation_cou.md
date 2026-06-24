@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling
 description: >-
-  [ICML 2026][AI Safety][Paper Note] TRIAD treats 360° panoramas as spherical signals and projects third-order spherical harmonic (SH) coefficient tensor products onto a trivial representation to obtain a **theoretically provable SO(3)-invariant** bispectral scalar. This allows embedding watermarks in high-order SH coefficients and extracting them from th
+  [ICML 2026][AI Safety][Panoramic Watermarking] TRIAD treats 360° panoramas as spherical signals and projects third-order spherical harmonic (SH) coefficient tensor products onto a trivial representation to obtain a **theoretically provable SO(3)-invariant** bispectral scalar. This allows embedding watermarks in high-order SH coefficients and extracting them from this invariant, maintaining near 100% bit accuracy under arbitrary 3D rotations without relying on data augmentatio…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Panoramic Watermarking"
+  - "SO(3) Equivariance"
+  - "Spherical Harmonics"
+  - "Bispectrum Invariant"
+  - "Tensor Product Coupling"
 date: 2026-05-08
-content_hash: 2e99bbaebb87fa3e
+content_hash: 12ea114be324f68b
 ---
+
 # Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling
 
 **Conference**: ICML 2026  
@@ -137,10 +143,10 @@ Regarding rotation robustness, all baselines fail (bit acc drops to ~50% random)
 ## Related Papers
 
 - [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](sora_free_second-order_attacks_in_fast_adversarial_training.md)
-- [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](prism_gauge-invariant_tangent-space_differentially_private_lora.md)
 - [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
 - [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
-- [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](../../ICLR2026/ai_safety/toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
+- [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](prism_gauge-invariant_tangent-space_differentially_private_lora.md)
+- [\[ICLR 2026\] Wring Out the Bias: A Rotation-Based Alternative to Projection Debiasing](../../ICLR2026/ai_safety/wring_out_the_bias_a_rotation-based_alternative_to_projection_debiasing.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Capability-Based Scaling Trends for LLM-Based Red-Teaming
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] Four jailbreak methods were systematically evaluated on over 600 attacker-target LLM pairs. The study found that the Attack Success Rate (ASR) follows a sigmoid scaling law ($R^2=0.83$) relative to the attacker-target capability gap, which can be quantified using the logit-transformed MMLU-Pro scores.
+  [ICLR 2026][LLM Alignment][Red-teaming] Four jailbreak methods were systematically evaluated on over 600 attacker-target LLM pairs. The study found that the Attack Success Rate (ASR) follows a sigmoid scaling law ($R^2=0.83$) relative to the attacker-target capability gap, which can be quantified using the logit-transformed MMLU-Pro scores.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Red-teaming"
+  - "Jailbreak Attacks"
+  - "Capability Scaling"
+  - "Safety Evaluation"
+  - "Attack Success Rate"
 date: 2026-05-08
-content_hash: 88b82357438c6a3f
+content_hash: 457e2ef31fe423cd
 ---
+
 # Capability-Based Scaling Trends for LLM-Based Red-Teaming
 
 **Conference**: ICLR 2026  
@@ -123,8 +129,8 @@ Using $\delta$, a linear regression of ASR against $\delta$ is fitted for each t
 - [\[ICLR 2026\] CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation](cage_a_framework_for_culturally_adaptive_red-teaming_benchmark_generation.md)
 - [\[ICLR 2026\] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment](inverse_reinforcement_learning_with_dynamic_reward_scaling_for_llm_alignment.md)
 - [\[ACL 2026\] ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System](../../ACL2026/llm_alignment/ares_adaptive_red-teaming_and_end-to-end_repair_of_policy-reward_system.md)
-- [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](../../NeurIPS2025/llm_alignment/jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
 - [\[ICLR 2026\] IDEAL: Data Equilibrium Adaptation for Multi-Capability Language Model Alignment](ideal_data_equilibrium_adaptation_for_multi-capability_language_model_alignment.md)
+- [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](../../NeurIPS2025/llm_alignment/jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
 
 </div>
 

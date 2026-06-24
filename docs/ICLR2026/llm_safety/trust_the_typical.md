@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Trust The Typical：把 LLM 安全护栏当作分布外检测来做
+  [Paper Note] Trust The Typical: LLM Safety Guardrails as Out-of-Distribution Detection
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes T3 (Trust The Typical), which flips LLM safety guardrails from "enumerating harmful patterns" to "characterizing safe distributions." By modeling the "typical set" in the semantic space using only safe English text, any significant deviation is identified as a potential threat. It requires no traini
+  [ICLR 2026][LLM Safety][LLM Safety Guardrails] This paper proposes T3 (Trust The Typical), which flips LLM safety guardrails from "enumerating harmful patterns" to "characterizing safe distributions." By modeling the "typical set" in the semantic space using only safe English text, any significant deviation is identified as a potential threat. It requires no training on harmful samples yet achieves SOTA across 18 benchmarks, reducing false positive rates by up to 40x and enab…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Safety Guardrails"
+  - "OOD Detection"
+  - "Typical Set"
+  - "PRDC Geometric Features"
+  - "One-Class Modeling"
 date: 2026-05-08
-content_hash: 62fd493220441b4e
+content_hash: f6ae7dfa8c918717
 ---
+
 # Trust The Typical: LLM Safety Guardrails as Out-of-Distribution Detection
 
 **Conference**: ICLR 2026  
@@ -137,11 +143,11 @@ A single English-trained model transfers zero-shot to specialized domains like c
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] TRUST -- Transformer-Driven U-Net for Sparse Target Recovery](../../NeurIPS2025/llm_safety/trust_--_transformer-driven_u-net_for_sparse_target_recovery.md)
-- [\[ACL 2026\] Decomposed Trust: Privacy, Adversarial Robustness, Ethics, and Fairness in Low-Rank LLMs](../../ACL2026/llm_safety/decomposed_trust_privacy_adversarial_robustness_ethics_and_fairness_in_low-rank_.md)
-- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
-- [\[ICLR 2026\] RedSage: A Cybersecurity Generalist LLM](redsage_a_cybersecurity_generalist_llm.md)
-- [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
+- [\[ICLR 2026\] Safety Instincts: LLMs Learn to Trust Their Internal Compass for Self-Defense](safety_instincts_llms_learn_to_trust_their_internal_compass_for_self-defense.md)
+- [\[ICLR 2026\] Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training](self-jailbreaking_language_models_can_reason_themselves_out_of_safety_alignment_.md)
+- [\[ICLR 2026\] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning](from_static_benchmarks_to_dynamic_protocol_agent-centric_text_anomaly_detection_.md)
+- [\[ICLR 2026\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
+- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
 
 </div>
 

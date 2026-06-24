@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution
 description: >-
-  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes TGDD, which reframes static distribution matching as a dynamic alignment process along training trajectories. It captures evolving semantics via St…
+  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes TGDD, which reframes static distribution matching as a dynamic alignment process along training trajectories. It captures evolving semantics via Stage-wise Distribution Matching and reduces inter-class overlap via Stage-wise Distribution Constraint, achieving SOTA on 10 datasets with a 5.0% accuracy gain on high-resolution benchmarks.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Distribution Constraint"
   - "Synthetic Data"
 date: 2026-05-08
-content_hash: 2d07ef25e6f06a24
+content_hash: 188fbf4cc1461de5
 ---
 
 # TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution
@@ -172,11 +172,11 @@ $$L_{overall} = L_{MMD} + \alpha L_{SDC}$$
 
 ## Related Papers
 
+- [\[CVPR 2026\] Balanced Dataset Distillation via Modeling Multiple Visual Pattern Distribution](../../CVPR2026/model_compression/balanced_dataset_distillation_via_modeling_multiple_visual_pattern_distribution.md)
+- [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](../../CVPR2026/model_compression/mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
 - [\[AAAI 2026\] DP-GenG: Differentially Private Dataset Distillation Guided by DP-Generated Data](dp-geng_differentially_private_dataset_distillation_guided_by_dp-generated_data.md)
-- [\[NeurIPS 2025\] Hyperbolic Dataset Distillation](../../NeurIPS2025/model_compression/hyperbolic_dataset_distillation.md)
 - [\[AAAI 2026\] EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training](eeg-dlite_dataset_distillation_for_efficient_large_eeg_model_training.md)
-- [\[AAAI 2026\] Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling](rethinking_long-tailed_dataset_distillation_a_uni-level_framework_with_unbiased_.md)
-- [\[ICCV 2025\] Dataset Distillation via the Wasserstein Metric](../../ICCV2025/model_compression/dataset_distillation_via_the_wasserstein_metric.md)
+- [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](../../CVPR2026/model_compression/dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
 
 </div>
 

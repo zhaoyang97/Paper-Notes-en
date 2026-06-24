@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] NeoAMT: Neologism-Aware Agentic Machine Translation with Reinforcement Learning
 description: >-
-  [ACL 2026][Multilingual & Translation][Reinforcement Learning] NeoAMT transforms neologism translation from a problem purely dependent on model parametric knowledge into an agentic MT task characterized by "reasoning, then dictionary lookup, then translation." By using GRPO training sessions targeting neologism hit rates, overall translation quality, and translation difficulty, an
+  [ACL2026][Multilingual & Machine Translation][Neologism Translation] NeoAMT transforms neologism translation from a problem purely dependent on model parametric knowledge into an agentic MT task characterized by "reasoning, then dictionary lookup, then translation." By using GRPO training sessions targeting neologism hit rates, overall translation quality, and translation difficulty, an 8B model significantly outperforms SFT, retrieval-free RL…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - Reinforcement Learning
-  - Wiktionary
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Neologism Translation"
+  - "Machine Translation"
+  - "Retrieval-Augmented Generation"
+  - "Reinforcement Learning"
+  - "Wiktionary"
 date: 2026-05-08
-content_hash: de23c0fd05ea9c63
+content_hash: 36dec701cf949fa3
 ---
+
 # NeoAMT: Neologism-Aware Agentic Machine Translation with Reinforcement Learning
 
 **Conference**: ACL2026  
@@ -156,6 +160,7 @@ The agentic search was compared against one-off RAG and training with/without RQ
 - Value: ⭐⭐⭐⭐⭐ Addresses a critical real-world MT pain point with a reusable framework.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

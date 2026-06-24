@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Query Circuits: Explaining How Language Models Answer User Prompts
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper proposes the **query circuit discovery** task—directly tracing sparse subnetworks within the original LLM to explain "why the model produced a specific output for a specific input." It introduces a more robust fidelity metric, NDF, and a Best-of-N (BoN) sampling algorithm, enabling circuits comprising only 1
+  [ICML 2026][Interpretability][Query Circuits] This paper proposes the **query circuit discovery** task—directly tracing sparse subnetworks within the original LLM to explain "why the model produced a specific output for a specific input." It introduces a more robust fidelity metric, NDF, and a Best-of-N (BoN) sampling algorithm, enabling circuits comprising only 1.3% of the model's edges to recover approximately 60% of single-instance behavior on MMLU.
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Query Circuits"
+  - "Mechanistic Interpretability"
+  - "Circuit Discovery"
+  - "BoN Sampling"
+  - "Normalized Deviation Faithfulness"
 date: 2026-05-08
-content_hash: 232317c77964c834
+content_hash: 7d8bd5463b722300
 ---
+
 # Query Circuits: Explaining How Language Models Answer User Prompts
 
 **Conference**: ICML 2026  
@@ -133,11 +139,11 @@ Target LLMs: GPT-2 Small (32,491 edges) for IOI; Llama-3.2-1B-Instruct (386,713 
 
 ## Related Papers
 
+- [\[ICML 2026\] Certified Circuits: Stability Guarantees for Mechanistic Circuits](certified_circuits_stability_guarantees_for_mechanistic_circuits.md)
 - [\[ICML 2026\] Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path](circuit_fingerprints_how_answer_tokens_encode_their_geometrical_path.md)
 - [\[ICML 2026\] How Language Models Process Negation](how_language_models_process_negation.md)
-- [\[ICML 2026\] Certified Circuits: Stability Guarantees for Mechanistic Circuits](certified_circuits_stability_guarantees_for_mechanistic_circuits.md)
-- [\[ICLR 2026\] Provably Explaining Neural Additive Models](../../ICLR2026/interpretability/provably_explaining_neural_additive_models.md)
 - [\[ACL 2025\] Reasoning Circuits in Language Models: A Mechanistic Interpretation of Syllogistic Inference](../../ACL2025/interpretability/reasoning_circuits_in_language_models_a_mechanistic_interpretation_of_syllogisti.md)
+- [\[ICML 2026\] All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs](all_circuits_lead_to_rome_rethinking_functional_anisotropy_in_circuit_and_sheaf_.md)
 
 </div>
 

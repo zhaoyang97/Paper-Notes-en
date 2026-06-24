@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Samples Are Not Equal: A Sample Selection Approach for Deep Clustering
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper argues that deep clustering over-learns simple and redundant samples in high-density regions. It proposes a plug-and-play sample selection component: using local density to re-estimate clustering prototypes during initialization, and dynamically removing learned samples during training based on prediction co
+  [ICLR2026][Self-Supervised Learning][Deep Clustering] This paper argues that deep clustering over-learns simple and redundant samples in high-density regions. It proposes a plug-and-play sample selection component: using local density to re-estimate clustering prototypes during initialization, and dynamically removing learned samples during training based on prediction consistency and pseudo-label stability. This approach simultaneously improves clustering accuracy and traini…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Deep Clustering"
+  - "Sample Selection"
+  - "Density-aware Initialization"
+  - "Pseudo-label Stability"
+  - "Training Efficiency"
 date: 2026-05-08
-content_hash: 114ed768698dc4d1
+content_hash: 1125a30255fca131
 ---
+
 # Samples Are Not Equal: A Sample Selection Approach for Deep Clustering
 
 **Conference**: ICLR2026  
@@ -165,13 +171,20 @@ DACHI denotes density-aware initialization; DSS denotes dynamic sample selection
 - Value: ⭐⭐⭐⭐☆ Highly practical as a plugin for improving pseudo-label-based training tasks.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-[1] Van Gansbeke et al. "SCAN: Learning to Classify Images without Labels." ECCV 2020.  
-[2] Li et al. "Contrastive Clustering." AAAI 2021.  
-[3] Niu et al. "CDC: Clustering with Density-aware Calibration." ICLR 2025.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](mini-cluster_guided_long-tailed_deep_clustering.md)
+- [\[ICML 2025\] Deep Learning is Not So Mysterious or Different](../../ICML2025/self_supervised/deep_learning_is_not_so_mysterious_or_different.md)
+- [\[ICCV 2025\] To Label or Not to Label: PALM – A Predictive Model for Evaluating Sample Efficiency in Active Learning Models](../../ICCV2025/self_supervised/to_label_or_not_to_label_palm_-_a_predictive_model_for_evaluating_sample_efficie.md)
+- [\[ICLR 2026\] Unified and Efficient Multi-view Clustering from Probabilistic Perspective](unified_and_efficient_multi-view_clustering_from_probabilistic_perspective.md)
+- [\[ICLR 2026\] Chart Deep Research in LVLMs via Parallel Relative Policy Optimization](chart_deep_research_in_lvlms_via_parallel_relative_policy_optimization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](mini-cluster_guided_long-tailed_deep_clustering.md)

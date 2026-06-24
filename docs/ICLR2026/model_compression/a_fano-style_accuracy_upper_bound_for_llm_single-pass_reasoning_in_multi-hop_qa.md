@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Fano-Style Accuracy Upper Bound for LLM Single-Pass Reasoning in Multi-Hop QA
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper derives a Fano-style accuracy upper bound for single-pass LLM reasoning in Multi-Hop QA (MHQA) using information theory. It reveals a "cliff-like" precipitous drop in accuracy when task information requirements exceed model output capacity. Based on these insights, the authors design InfoQA, a multi-turn rea
+  [ICLR 2026][Model Compression][Multi-hop QA] This paper derives a Fano-style accuracy upper bound for single-pass LLM reasoning in Multi-Hop QA (MHQA) using information theory. It reveals a "cliff-like" precipitous drop in accuracy when task information requirements exceed model output capacity. Based on these insights, the authors design InfoQA, a multi-turn reasoning framework that breaks the single-pass bottleneck through capacity-aware decomposition…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Multi-hop QA"
+  - "Information Theory"
+  - "Fano's Inequality"
+  - "Accuracy Upper Bound"
+  - "Multi-turn Reasoning"
 date: 2026-05-08
-content_hash: 6be28b3ef8e0dac1
+content_hash: 1603285a93c94bca
 ---
+
 # A Fano-Style Accuracy Upper Bound for LLM Single-Pass Reasoning in Multi-Hop QA
 
 **Conference**: ICLR 2026  
@@ -125,6 +131,7 @@ InfoQA is a training-free inference-time framework implemented through prompt en
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

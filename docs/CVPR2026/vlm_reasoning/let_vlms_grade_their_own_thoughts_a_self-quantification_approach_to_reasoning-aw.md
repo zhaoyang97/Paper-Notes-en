@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Let VLMs Grade Their Own Thoughts: A Self-Quantification Approach to Reasoning-Aware Reward Modeling
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] Video-RAISE proposes to let video VLMs score their own reasoning chains using "intrinsic confidence" (answer token probabilities) during generation. This transforms the sparse 0/1 text-matching rewards in GRPO into continuous, fine-grained learning signals. By designing two reward mechanisms, SCRE for strict logic task
+  [CVPR 2026][VLM Reasoning][Video Understanding] Video-RAISE proposes to let video VLMs score their own reasoning chains using "intrinsic confidence" (answer token probabilities) during generation. This transforms the sparse 0/1 text-matching rewards in GRPO into continuous, fine-grained learning signals. By designing two reward mechanisms, SCRE for strict logic tasks and IGSR for open-ended tasks, the method achieves SOTA performance on six video understanding benchmarks and…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Understanding"
+  - "Reinforcement Learning"
+  - "Reward Modeling"
+  - "Self-evaluated Confidence"
+  - "Reasoning Chain Alignment"
 date: 2026-05-08
-content_hash: 0f7e8b195161af67
+content_hash: b5649840a1dbe547
 ---
+
 # Let VLMs Grade Their Own Thoughts: A Self-Quantification Approach to Reasoning-Aware Reward Modeling
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ Advantages are more pronounced in the 16-frame setting: VideoMMMU reaches 52.8% 
 
 ## Related Papers
 
-- [\[ACL 2026\] VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation](../../ACL2026/multimodal_vlm/vauq_vision-aware_uncertainty_quantification_for_lvlm_self-evaluation.md)
-- [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](grounded_3d-aware_spatial_vision-language_modeling.md)
-- [\[CVPR 2026\] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning](pdcr_perception-decomposed_confidence_reward_for_vision-language_reasoning.md)
-- [\[CVPR 2026\] Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning](decouple_to_generalize_context-first_self-evolving_learning_for_data-scarce_visi.md)
-- [\[CVPR 2026\] Vocabulary Scaling Law: Tuning Open-vocabulary Predictors for Their Openness](vocabulary_scaling_law_tuning_open-vocabulary_predictors_for_their_openness.md)
+- [\[ICLR 2026\] Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification](../../ICLR2026/vlm_reasoning/lets_think_in_two_steps_mitigating_agreement_bias_in_mllms_with_self-grounded_ve.md)
+- [\[ICLR 2026\] What "Not" to Detect: Negation-Aware VLMs via Structured Reasoning and Token Merging](../../ICLR2026/vlm_reasoning/what_not_to_detect_negation-aware_vlms_via_structured_reasoning_and_token_mergin.md)
+- [\[ICLR 2026\] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs](../../ICLR2026/vlm_reasoning/through_the_lens_of_contrast_self-improving_visual_reasoning_in_vlms.md)
+- [\[CVPR 2026\] From Exploration to Exploitation: A Two-Stage Entropy RLVR Approach for Noise-Tolerant MLLM Training](from_exploration_to_exploitation_a_two-stage_entropy_rlvr_approach_for_noise-tol.md)
+- [\[NeurIPS 2025\] Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling](../../NeurIPS2025/vlm_reasoning/enhancing_the_outcome_reward-based_rl_training_of_mllms_with_self-consistency_sa.md)
 
 </div>
 

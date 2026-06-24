@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Kimi-Dev: Agentless Training as Skill Prior for SWE-agents
 description: >-
-  [ICLR 2026][Code Intelligence][SWE-bench] This paper proposes treating Agentless (workflow-style) training as a "skill prior" for SWE-Agents (multi-turn interactive). By utilizing a recipe of mid-training + cold-start + RL + test-time self-play, the open-source model Kimi-Dev achieves 60.4% on SWE-bench Verified (a SoTA for workflow solutions). It is further u
+  [ICLR 2026][Code Intelligence][SWE-bench] This paper proposes treating Agentless (workflow-style) training as a "skill prior" for SWE-Agents (multi-turn interactive). By utilizing a recipe of mid-training + cold-start + RL + test-time self-play, the open-source model Kimi-Dev achieves 60.4% on SWE-bench Verified (a SoTA for workflow solutions). It is further upgraded into an agent with 48.6% pass@1, comparable to Claude 3.5 Sonnet, using a lightweight SFT of 5k trajectories.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - SWE-bench
-  - Agentless
-  - SWE-Agent
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "SWE-bench"
+  - "Agentless"
+  - "SWE-Agent"
+  - "Skill Prior"
+  - "Reinforcement Learning"
+  - "Test-time Self-play"
 date: 2026-05-08
-content_hash: 743f0a9b1ad46776
+content_hash: 7c2bf4dc3931ce8c
 ---
+
 # Kimi-Dev: Agentless Training as Skill Prior for SWE-agents
 
 **Conference**: ICLR 2026  

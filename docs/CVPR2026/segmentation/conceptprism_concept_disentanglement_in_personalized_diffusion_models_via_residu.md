@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] ConceptPrism: Concept Disentanglement in Personalized Diffusion Models via Residual Token Optimization
 description: >-
-  [CVPR 2026][Segmentation][Textual Inversion] ConceptPrism is proposed to automatically disentangle shared target concepts from image-specific residual information in personalized T2I diffusion models. By introducing image-level residual tokens and cross-image exclusion loss, the method achieves state-of-the-art performance across CLIP-T, DINO, and CLIP-I metrics
+  [CVPR2026][Segmentation][Personalized Diffusion Models] ConceptPrism is proposed to automatically disentangle shared target concepts from image-specific residual information in personalized T2I diffusion models. By introducing image-level residual tokens and cross-image exclusion loss, the method achieves state-of-the-art performance across CLIP-T, DINO, and CLIP-I metrics on DreamBench.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Textual Inversion
-  - LoRA
+  - "CVPR2026"
+  - "Segmentation"
+  - "Personalized Diffusion Models"
+  - "Concept Disentanglement"
+  - "Residual Token Optimization"
+  - "Textual Inversion"
+  - "LoRA"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 162422335888ac25
+content_hash: a43ce34942503f61
 ---
+
 # ConceptPrism: Concept Disentanglement in Personalized Diffusion Models via Residual Token Optimization
 
 **Conference**: CVPR2026  
@@ -160,15 +165,16 @@ The effectiveness across object, style, and pose demonstrates the universality o
 - Value: ⭐⭐⭐⭐ — Addresses a core pain point in personalized T2I with a lightweight solution.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICCV 2025\] Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/understanding_personal_concept_in_open-vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](ca-lora_concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
 - [\[CVPR 2026\] Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness](concept-guided_fine-tuning_steering_vits_away_from_spurious_correlations_to_impr.md)
 - [\[ECCV 2024\] Diffusion Models for Open-Vocabulary Segmentation](../../ECCV2024/segmentation/diffusion_models_for_open-vocabulary_segmentation.md)
 - [\[CVPR 2026\] Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
+- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
 
 </div>
 

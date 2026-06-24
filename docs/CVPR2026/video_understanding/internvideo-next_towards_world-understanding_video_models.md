@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] InternVideo-Next: Towards World-Understanding Video Models
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] InternVideo-Next decomposes the traditional "Encoder-Decoder" architecture of Masked Video Modeling (MVM) into a three-stage **Encoder-Predictor-Decoder (EPD)** framework. It utilizes a two-stage self-supervised pre-training strategy: Stage 1 constructs a latent space that is both detail-preserving and semantically ric
+  [CVPR 2026][Video Understanding][Masked Video Modeling] InternVideo-Next decomposes the traditional "Encoder-Decoder" architecture of Masked Video Modeling (MVM) into a three-stage **Encoder-Predictor-Decoder (EPD)** framework. It utilizes a two-stage self-supervised pre-training strategy: Stage 1 constructs a latent space that is both detail-preserving and semantically rich using a conditional diffusion decoder and image-level semantic priors…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Masked Video Modeling"
+  - "Self-Supervised Pre-training"
+  - "Latent World Model"
+  - "Diffusion Decoder"
+  - "Video Foundation Models"
 date: 2026-05-08
-content_hash: 2d4d385bd75b171b
+content_hash: 3eb7f56639516947
 ---
+
 # InternVideo-Next: Towards World-Understanding Video Models
 
 **Conference**: CVPR 2026  
@@ -171,11 +177,11 @@ Stage 2 components (K400/SSv2):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Active Intelligence in Video Avatars via Closed-loop World Modeling](active_intelligence_in_video_avatars_via_closed-loop_world_modeling.md)
+- [\[AAAI 2026\] UVLM: Benchmarking Video Language Model for Underwater World Understanding](../../AAAI2026/video_understanding/uvlm_benchmarking_video_language_model_for_underwater_world_understanding.md)
+- [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
 - [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
-- [\[CVPR 2026\] UniVBench: Towards Unified Evaluation for Video Foundation Models](univbench_towards_unified_evaluation_for_video_foundation_models.md)
-- [\[CVPR 2026\] CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization](cinesrd_leveraging_visual_acoustic_and_linguistic_cues_for_open-world_visual_med.md)
-- [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
-- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)
+- [\[CVPR 2026\] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](omnivtg_a_large-scale_dataset_and_training_paradigm_for_open-world_video_tempora.md)
 
 </div>
 

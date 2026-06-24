@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Parameterized Skills from Demonstrations
 description: >-
-  [NeurIPS 2025][Robotics][Parameterized skills] This paper proposes DEPS, an end-to-end algorithm for discovering parameterized skills from expert demonstrations. Through a three-level hierarchical policy (discrete skill…
+  [NeurIPS 2025][Robotics][Parameterized skills] This paper proposes DEPS, an end-to-end algorithm for discovering parameterized skills from expert demonstrations. Through a three-level hierarchical policy (discrete skill selection → continuous parameter selection → low-level actions) and an information bottleneck design, DEPS learns interpretable and generalizable skill abstractions, achieving significant improvements over baselines on LIBERO and MetaWorld.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "variational inference"
   - "robot manipulation"
 date: 2026-05-08
-content_hash: 6ad3aee40d14b46e
+content_hash: 7635cb3dca62c435
 ---
 
 # Learning Parameterized Skills from Demonstrations
@@ -160,10 +160,10 @@ DEPS trains a three-level hierarchy:
 ## Related Papers
 
 - [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
+- [\[ICLR 2026\] Sim2Real VLA: Zero-Shot Generalization of Synthesized Skills to Realistic Manipulation](../../ICLR2026/robotics/sim2real_vla_zero-shot_generalization_of_synthesized_skills_to_realistic_manipul.md)
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Policy Compatible Skill Incremental Learning via Lazy Learning Interface](policy_compatible_skill_incremental_learning_via_lazy_learning_interface.md)
-- [\[ICML 2026\] Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation](../../ICML2026/robotics/decompose_and_recompose_reasoning_new_skills_from_existing_abilities_for_cross-t.md)
-- [\[ICLR 2026\] MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation](../../ICLR2026/robotics/momagen_generating_demonstrations_under_soft_and_hard_constraints_for_multi-step.md)
+- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](../../CVPR2026/robotics/beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
+- [\[CVPR 2026\] RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](../../CVPR2026/robotics/robowheel_a_data_engine_from_real-world_human_demonstrations_for_cross-embodimen.md)
 
 </div>
 

@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] ColorCtrl: 基于多模态扩散 Transformer 的免训练文本引导颜色编辑
+  [Paper Note] ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer
 description: >-
-  [ICLR 2026][Image Generation][MM-DiT] ColorCtrl is a training-free text-guided color editing method that decouples "structure" and "color" by directly manipulating MM-DiT attention maps and value tokens. It achieves precise color editing with virtually zero damage to geometry, material, and lighting consistency across various models (SD3, FLUX.1-dev, CogVi
+  [ICLR 2026][Image Generation][Training-free Editing] ColorCtrl is a training-free text-guided color editing method that decouples "structure" and "color" by directly manipulating MM-DiT attention maps and value tokens. It achieves precise color editing with virtually zero damage to geometry, material, and lighting consistency across various models (SD3, FLUX.1-dev, CogVideoX), while supporting word-level intensity adjustment.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - MM-DiT
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Training-free Editing"
+  - "Color Editing"
+  - "MM-DiT"
+  - "Attention Control"
+  - "Consistency Preservation"
 date: 2026-05-08
-content_hash: 87af04762d8c1a98
+content_hash: a71535b32794f229
 ---
+
 # ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer
 
 **Conference**: ICLR 2026  
@@ -139,11 +144,11 @@ ColorCtrl significantly outperforms commercial models in consistency (Canny SSIM
 
 ## Related Papers
 
-- [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](../../CVPR2026/image_generation/ddt_decoupled_diffusion_transformer.md)
-- [\[ICLR 2026\] LaTo: Landmark-tokenized Diffusion Transformer for Fine-grained Human Face Editing](lato_landmark-tokenized_diffusion_transformer_for_fine-grained_human_face_editin.md)
-- [\[ICLR 2026\] DiffInk: Glyph- and Style-Aware Latent Diffusion Transformer for Text to Online Handwriting Generation](diffink_glyph-_and_style-aware_latent_diffusion_transformer_for_text_to_online_h.md)
-- [\[CVPR 2026\] FARMER: Flow AutoRegressive Transformer over Pixels](../../CVPR2026/image_generation/farmer_flow_autoregressive_transformer_over_pixels.md)
-- [\[ICLR 2026\] CreatiDesign: A Unified Multi-Conditional Diffusion Transformer for Creative Graphic Design](creatidesign_a_unified_multi-conditional_diffusion_transformer_for_creative_grap.md)
+- [\[ICLR 2026\] LazyDrag: Enabling Stable Drag-Based Editing on Multi-Modal Diffusion Transformers via Explicit Correspondence](lazydrag_enabling_stable_drag-based_editing_on_multi-modal_diffusion_transformer.md)
+- [\[CVPR 2026\] Dynamic-eDiTor: Training-Free Text-Driven 4D Scene Editing with Multimodal Diffusion Transformer](../../CVPR2026/image_generation/dynamic-editor_training-free_text-driven_4d_scene_editing_with_multimodal_diffus.md)
+- [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](../../CVPR2026/image_generation/coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
+- [\[ICLR 2026\] Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts](multi-subspace_multi-modal_modeling_for_diffusion_models_estimation_convergence_.md)
 
 </div>
 

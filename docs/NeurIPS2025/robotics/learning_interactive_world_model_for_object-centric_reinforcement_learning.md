@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Interactive World Model for Object-Centric Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Robotics][world model] This paper proposes FIOC-WM, which learns the interaction structure among objects in a world model via a two-level factorization at the object and attribute levels. It trains a hiera…
+  [NeurIPS 2025][Robotics][world model] This paper proposes FIOC-WM, which learns the interaction structure among objects in a world model via a two-level factorization at the object and attribute levels. It trains a hierarchical policy grounded in interaction primitives, achieving more efficient policy learning and compositional generalization across multiple robot control tasks.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Hierarchical Policy"
   - "Compositional Generalization"
 date: 2026-05-08
-content_hash: bd99068231db335d
+content_hash: a774f79322fd405a
 ---
 
 # Learning Interactive World Model for Object-Centric Reinforcement Learning
@@ -141,8 +141,8 @@ For the hierarchical policy, the high-level policy selects a target interaction 
 - [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
 - [\[AAAI 2026\] Object-Centric Latent Action Learning](../../AAAI2026/robotics/object-centric_latent_action_learning.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
+- [\[NeurIPS 2025\] C-NAV: Towards Self-Evolving Continual Object Navigation in Open World](c-nav_towards_self-evolving_continual_object_navigation_in_open_world.md)
 - [\[NeurIPS 2025\] Learning Parameterized Skills from Demonstrations](learning_parameterized_skills_from_demonstrations.md)
-- [\[NeurIPS 2025\] Policy Compatible Skill Incremental Learning via Lazy Learning Interface](policy_compatible_skill_incremental_learning_via_lazy_learning_interface.md)
 
 </div>
 

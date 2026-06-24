@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SysMoBench: Evaluating AI on Formally Specifying Complex Real-World Systems
 description: >-
-  [ICLR 2026][LLM Evaluation][TLA+] Ours proposes SysMoBench—the first benchmark to evaluate the capability of AI in automatically generating formal models (TLA+) for real-world complex systems (concurrency/distributed). By scoring with four automatically verifiable metrics (syntax, runtime, code consistency, and invariants), it is discovered that LLMs c
+  [ICLR 2026][LLM Evaluation][TLA+] Ours proposes SysMoBench—the first benchmark to evaluate the capability of AI in automatically generating formal models (TLA+) for real-world complex systems (concurrency/distributed). By scoring with four automatically verifiable metrics (syntax, runtime, code consistency, and invariants), it is discovered that LLMs can handle small systems like spinlocks but significantly struggle with large-scale protocol implementations like Etcd Raft.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - TLA+
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "TLA+"
+  - "Formal Specification"
+  - "System Modeling"
+  - "Automated Evaluation"
+  - "Distributed Systems"
 date: 2026-05-08
-content_hash: 89f278b4ff6c76a3
+content_hash: 4e8eb12918354061
 ---
+
 # SysMoBench: Evaluating AI on Formally Specifying Complex Real-World Systems
 
 **Conference**: ICLR 2026  
@@ -128,7 +133,6 @@ The authors acknowledge: The evaluation currently focuses on TLA+ (while support
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

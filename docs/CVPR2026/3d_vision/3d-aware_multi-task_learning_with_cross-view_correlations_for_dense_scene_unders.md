@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Append a lightweight, task-agnostic "geometric bypass"—the Cross-View Module (CvM, consisting of a spatial-aware encoder + multi-view Transformer + cost volume)—to standard Multi-Task Learning (MTL) networks. By injecting geometric correspondences between adjacent views into shared features as geometric consistency, th
+  [CVPR 2026][3D Vision][Multi-Task Learning] Append a lightweight, task-agnostic "geometric bypass"—the Cross-View Module (CvM, consisting of a spatial-aware encoder + multi-view Transformer + cost volume)—to standard Multi-Task Learning (MTL) networks. By injecting geometric correspondences between adjacent views into shared features as geometric consistency, the single network develops a better "understanding of 3D" when simultaneously predicting depth, segmentation…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-Task Learning"
+  - "Cross-View Correlation"
+  - "Cost Volume"
+  - "Geometric Consistency"
+  - "Dense Prediction"
 date: 2026-05-08
-content_hash: 6415a8785f6de79f
+content_hash: d9fd468978523664
 ---
+
 # 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ Comparison of spatial feature extraction methods ($\Delta$MTL): Direct MTL encod
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
+- [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
+- [\[CVPR 2026\] StableMTL: Repurposing Latent Diffusion Models for Multi-Task Learning from Partially Annotated Synthetic Datasets](stablemtl_repurposing_latent_diffusion_models_for_multi-task_learning_from_parti.md)
+- [\[CVPR 2026\] Towards Foundation Models for 3D Scene Understanding: Instance-Aware Self-Supervised Learning for Point Clouds](towards_foundation_models_for_3d_scene_understanding_instance-aware_self-supervi.md)
 - [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
-- [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Escaping the Homophily Trap: A Threshold-free Graph Outlier Detection Framework via Clustering-guided Edge Reweighting
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] Addressing the "homophily trap" where graph convolution pollutes normal node representations with outliers through neighbor aggregation, this paper proposes CER-GOD. It employs a learnable mask to adaptively weaken edge weights between heterophilic neighbors and utilizes an unsupervised binary clustering detector to ge
+  [ICLR 2026][Graph Learning][Graph Outlier Detection] Addressing the "homophily trap" where graph convolution pollutes normal node representations with outliers through neighbor aggregation, this paper proposes CER-GOD. It employs a learnable mask to adaptively weaken edge weights between heterophilic neighbors and utilizes an unsupervised binary clustering detector to generate pseudo-labels. These labels guide the mask optimization and provide threshold-free outlier scores. C…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Outlier Detection"
+  - "Homophily Trap"
+  - "Edge Reweighting"
+  - "Clustering Pseudo-labels"
+  - "Threshold-free Detection"
 date: 2026-05-08
-content_hash: a524193dce2dbe77
+content_hash: 391036b176df5614
 ---
+
 # Escaping the Homophily Trap: A Threshold-free Graph Outlier Detection Framework via Clustering-guided Edge Reweighting
 
 **Conference**: ICLR 2026  
@@ -125,7 +131,6 @@ The contribution of each component was verified on Email, Cora, and Flickr (AUC 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

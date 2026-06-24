@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] HoneyBee: Data Recipes for Vision-Language Reasoners
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM reasoning] This work systematically investigates construction principles for vision-language (VL) reasoning datasets—covering context source strategies, data interventions (image description auxiliary signals + text-only reasoning), and multi-dimensional data scaling. Based on these findings, the authors construct the HoneyBee Co
+  [CVPR 2026][VLM Reasoning][data curation] This work systematically investigates construction principles for vision-language (VL) reasoning datasets—covering context source strategies, data interventions (image description auxiliary signals + text-only reasoning), and multi-dimensional data scaling. Based on these findings, the authors construct the HoneyBee CoT reasoning dataset with 2.5 million samples. The trained 3B VLM outperforms SOTA by 7.8% on MathVerse…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM reasoning
-  - data curation
-  - chain-of-thought
-  - test-time scaling
-  - data recipes
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "data curation"
+  - "chain-of-thought"
+  - "test-time scaling"
+  - "data recipes"
 date: 2026-05-08
-content_hash: deba9228c5433e82
+content_hash: 8f48892a0db8cd45
 ---
+
 # HoneyBee: Data Recipes for Vision-Language Reasoners
 
 **Conference**: CVPR 2026  
@@ -148,11 +148,11 @@ PLM-3B + HoneyBee outperforms its same-parameter SOTA on MathVerse by **7.8%**, 
 
 ## Related Papers
 
-- [\[CVPR 2026\] MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data and Training Recipes](minicpm-v_45_cooking_efficient_mllms_via_architecture_data_and_training_recipe.md)
-- [\[CVPR 2026\] Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding](molmo2_open_weights_and_data_for_vision-language_models_with_video_understanding.md)
 - [\[CVPR 2026\] Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning](decouple_to_generalize_context-first_self-evolving_learning_for_data-scarce_visi.md)
-- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
-- [\[CVPR 2026\] EMMA: Extracting Multiple physical parameters from Multimodal Data](emma_extracting_multiple_physical_parameters_from_multimodal_data.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[CVPR 2026\] All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models](all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vision-language_model.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
+- [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
 
 </div>
 

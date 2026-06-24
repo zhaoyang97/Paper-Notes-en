@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions
 description: >-
-  [ICCV 2025][LLM Agent][Embodied Perception] A three-stage self-supervised framework is proposed that significantly improves cross-view description consistency and accuracy for the same object in indoor environments…
+  [ICCV 2025][LLM Agent][Embodied Perception] A three-stage self-supervised framework is proposed that significantly improves cross-view description consistency and accuracy for the same object in indoor environments, achieved through agent-driven multi-view observation collection, LLM consensus-based pseudo-label generation, and contrastive fine-tuning of the captioner.
 tags:
   - "ICCV 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Pseudo-labeling"
   - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 3e5791ce43417b89
+content_hash: ac250a2f46cce5a3
 ---
 
 # Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions
@@ -121,11 +121,11 @@ Total loss = cross-entropy captioning loss + $\lambda_{tr}$ × triplet loss ($\l
 
 ## Related Papers
 
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](../../ICLR2026/llm_agent/gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
+- [\[ACL 2025\] Enhancing Interpretable Image Classification Through LLM Agents and Conditional Concept Bottleneck Models](../../ACL2025/llm_agent/llm_agent_image_classification.md)
+- [\[CVPR 2026\] RetouchIQ: MLLM Agents for Instruction-Based Image Retouching with Generalist Reward](../../CVPR2026/llm_agent/retouchiq_mllm_agents_for_instruction-based_image_retouching_with_generalist_rew.md)
+- [\[CVPR 2026\] Universal Guideline-Driven Image Clustering via a Hybrid LLM Agent](../../CVPR2026/llm_agent/universal_guideline-driven_image_clustering_via_a_hybrid_llm_agent.md)
 - [\[AAAI 2026\] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching](../../AAAI2026/llm_agent/pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching.md)
-- [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICML2026/llm_agent/on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
-- [\[AAAI 2026\] Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution](../../AAAI2026/llm_agent/cook_and_clean_together_teaching_embodied_agents_for_paralle.md)
-- [\[ICCV 2025\] UIPro: Unleashing Superior Interaction Capability for GUI Agents](uipro_unleashing_superior_interaction_capability_for_gui_agents.md)
-- [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](../../NeurIPS2025/llm_agent/mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
 
 </div>
 

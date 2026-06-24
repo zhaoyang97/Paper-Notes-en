@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance
 description: >-
-  [CVPR 2026][Image Generation][Classifier-Free Guidance] Reinterprets Classifier-Free Guidance (CFG) as a feedback control process within flow-matching diffusion models, proposes a unified framework CFG-Ctrl, and designs a nonlinear feedback guidance mechanism SMC-CFG based on Sliding Mode Control (SMC). This approach significantly enhances semantic consistency and generatio
+  [CVPR2026][Image Generation][Classifier-Free Guidance] Reinterprets Classifier-Free Guidance (CFG) as a feedback control process within flow-matching diffusion models, proposes a unified framework CFG-Ctrl, and designs a nonlinear feedback guidance mechanism SMC-CFG based on Sliding Mode Control (SMC). This approach significantly enhances semantic consistency and generation robustness at large guidance scales.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Classifier-Free Guidance
-  - Flow Matching
+  - "CVPR2026"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "Control Theory"
+  - "Sliding Mode Control"
+  - "Flow Matching"
+  - "Text-to-Image Generation"
 date: 2026-05-08
-content_hash: 3316c7c0ac800c20
+content_hash: d846150a1ef5e8ac
 ---
+
 # CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance
 
 **Conference**: CVPR2026  
@@ -142,10 +146,10 @@ Ours (SMC-CFG) comprehensively outperforms standard CFG and other variants (CFG-
 ## Related Papers
 
 - [\[CVPR 2026\] C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis](c2fg_control_classifier-free_guidance_via_score_discrepancy_analysis.md)
-- [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](../../AAAI2026/image_generation/dice_distilling_classifier-free_guidance_into_text_embedding.md)
 - [\[AAAI 2026\] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective](../../AAAI2026/image_generation/studying_classifier-free_guidance_from_a_classifier-centric_perspective.md)
-- [\[NeurIPS 2025\] Towards a Golden Classifier-Free Guidance Path via Foresight Fixed Point Iterations](../../NeurIPS2025/image_generation/towards_a_golden_classifier-free_guidance_path_via_foresight_fixed_point_iterati.md)
-- [\[NeurIPS 2025\] Rectified-CFG++ for Flow Based Models](../../NeurIPS2025/image_generation/rectified-cfg_for_flow_based_models.md)
+- [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](../../ICLR2026/image_generation/stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
+- [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](../../AAAI2026/image_generation/dice_distilling_classifier-free_guidance_into_text_embedding.md)
+- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](../../ICLR2026/image_generation/overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
 
 </div>
 

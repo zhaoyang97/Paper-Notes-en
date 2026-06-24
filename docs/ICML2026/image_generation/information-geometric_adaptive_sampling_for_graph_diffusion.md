@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Information-Geometric Adaptive Sampling for Graph Diffusion
 description: >-
-  [ICML 2026][Image Generation][Paper Note] This paper treats the sampling trajectory of the reverse SDE in graph diffusion as a parametric curve on a Riemannian statistical manifold. Using the Fisher-Rao metric, a training-free Drift Variation Score (DVS) is derived to measure the local "information curvature" of the trajectory. The step size is adaptively scal
+  [ICML 2026][Image Generation][Graph Diffusion] This paper treats the sampling trajectory of the reverse SDE in graph diffusion as a parametric curve on a Riemannian statistical manifold. Using the Fisher-Rao metric, a training-free Drift Variation Score (DVS) is derived to measure the local "information curvature" of the trajectory. The step size is adaptively scaled to ensure equal-length progression on the information manifold, achieving higher FCD/MMD fidelity with fewer s…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Graph Diffusion"
+  - "Fisher-Rao Metric"
+  - "Adaptive Step Size"
+  - "Information Geometry"
+  - "Molecule Generation"
 date: 2026-05-08
-content_hash: 6ca5a980e6feb506
+content_hash: b12cc6ceb8839f53
 ---
+
 # Information-Geometric Adaptive Sampling for Graph Diffusion
 
 **Conference**: ICML 2026  
@@ -137,7 +143,7 @@ The method is entirely training-free with no learnable parameters. Four sampling
 - [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](../../CVPR2026/image_generation/adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
 - [\[ECCV 2024\] EchoScene: Indoor Scene Generation via Information Echo over Scene Graph Diffusion](../../ECCV2024/image_generation/echoscene_indoor_scene_generation_via_information_echo_over_scene_graph_diffusio.md)
 - [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
-- [\[ICML 2026\] Watch Your Step: Information Injection in Diffusion Models via Shadow Timestep Embedding](watch_your_step_information_injection_in_diffusion_models_via_shadow_timestep_em.md)
+- [\[ICLR 2026\] The Spacetime of Diffusion Models: An Information Geometry Perspective](../../ICLR2026/image_generation/the_spacetime_of_diffusion_models_an_information_geometry_perspective.md)
 
 </div>
 

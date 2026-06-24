@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] CANON eschews predefined directional priors such as "higher entropy is better" or "shorter length is better." Instead, it sorts sampled responses for the same query by a target metric (entropy or length) and splits them into two groups. By utilizing **inter-group comparisons** to automatically discover which metric tre
+  [ICLR 2026][Reasoning][RLVR] CANON eschews predefined directional priors such as "higher entropy is better" or "shorter length is better." Instead, it sorts sampled responses for the same query by a target metric (entropy or length) and splits them into two groups. By utilizing **inter-group comparisons** to automatically discover which metric trend favors accuracy and **intra-group comparisons** to select superior responses within the same trend…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "GRPO"
+  - "Advantage Estimation"
+  - "Conditional Grouping"
+  - "Entropy"
+  - "Token Efficiency"
+  - "Reasoning Models"
 date: 2026-05-08
-content_hash: a7e895fae9818bc2
+content_hash: 903569c44563446a
 ---
+
 # Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -136,8 +142,8 @@ Robustness of CANON-Dynamic ($\mu$ scheduling) across three models and two tasks
 - [\[ICLR 2026\] Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning](quantile_advantage_estimation_stabilizing_rlvr_for_llm_reasoning.md)
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](../../ACL2026/llm_reasoning/revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 - [\[ICLR 2026\] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models](a_simple_motivation_can_enhance_reinforcement_finetuning_of_large_reasoning_mode.md)
+- [\[ACL 2026\] SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning](../../ACL2026/llm_reasoning/shape_stage-aware_hierarchical_advantage_via_potential_estimation_for_llm_reason.md)
 - [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
-- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 
 </div>
 

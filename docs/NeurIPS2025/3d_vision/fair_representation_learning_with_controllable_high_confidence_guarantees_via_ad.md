@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fair Representation Learning with Controllable High Confidence Guarantees via Adversarial Inference
 description: >-
-  [NeurIPS 2025][3D Vision][fair representation learning] This paper proposes FRG (Fair Representation learning with high-confidence Guarantees)…
+  [NeurIPS 2025][3D Vision][fair representation learning] This paper proposes FRG (Fair Representation learning with high-confidence Guarantees), the first fair representation learning framework that allows users to specify a fairness threshold $\varepsilon$ and confidence level $1-\delta$. By combining VAE-based candidate selection, adversarial inference that maximizes covariance, and a Student's t-test to construct a high-confidence upper bound…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "statistical testing"
   - "demographic parity"
 date: 2026-05-08
-content_hash: a29af3bdc44e8303
+content_hash: d0b7a2e6fe17820e
 ---
 
 # Fair Representation Learning with Controllable High Confidence Guarantees via Adversarial Inference
@@ -138,8 +138,8 @@ Under $\varepsilon \in \{0.04, 0.08, 0.12, 0.16\}$ and $\delta=0.1$: FRG consist
 - [\[NeurIPS 2025\] FedFACT: A Provable Framework for Controllable Group-Fairness Calibration in Federated Learning](fedfact_a_provable_framework_for_controllable_group-fairness_calibration_in_fede.md)
 - [\[NeurIPS 2025\] Object-Centric Representation Learning for Enhanced 3D Semantic Scene Graph Prediction](object-centric_representation_learning_for_enhanced_3d_semantic_scene_graph_pred.md)
 - [\[NeurIPS 2025\] Novel Class Discovery for Point Cloud Segmentation via Joint Learning of Causal Representation and Reasoning](novel_class_discovery_for_point_cloud_segmentation_via_joint_learning_of_causal_.md)
-- [\[ICCV 2025\] LayerLock: Non-collapsing Representation Learning with Progressive Freezing](../../ICCV2025/3d_vision/layerlock_non-collapsing_representation_learning_with_progressive_freezing.md)
 - [\[NeurIPS 2025\] TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming](trim_scalable_3d_gaussian_diffusion_inference_with_temporal_and_spatial_trimming.md)
+- [\[NeurIPS 2025\] MaterialRefGS: Reflective Gaussian Splatting with Multi-view Consistent Material Inference](materialrefgs_reflective_gaussian_splatting_with_multi-view_consistent_material_.md)
 
 </div>
 

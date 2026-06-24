@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Harnessing the Computation Redundancy in ViTs to Boost Adversarial Transferability
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Adversarial transferability] By systematically exploiting data-level and model-level computation redundancy in ViTs, this paper proposes five techniques—attention sparsification…
+  [NeurIPS 2025][LLM Efficiency][Adversarial transferability] By systematically exploiting data-level and model-level computation redundancy in ViTs, this paper proposes five techniques—attention sparsification, attention head permutation, clean token regularization, Ghost MoE diversification, and robust tokens—combined with an online learning strategy that dynamically selects operations. The method achieves an average fooling rate of 86.9% on ImageNet-1K…
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Ghost MoE"
   - "robust tokens"
 date: 2026-05-08
-content_hash: a1c4cfca77c6dec5
+content_hash: d4434d850c5a2b46
 ---
 
 # Harnessing the Computation Redundancy in ViTs to Boost Adversarial Transferability
@@ -124,10 +124,10 @@ Average improvement of 2.2%, with a 5.5% gain over the runner-up on Qwen.
 ## Related Papers
 
 - [\[AAAI 2026\] Scaling and Transferability of Annealing Strategies in Large Language Model Training](../../AAAI2026/llm_efficiency/scaling_and_transferability_of_annealing_strategies_in_large_language_model_trai.md)
-- [\[ICLR 2026\] SwingArena: Adversarial Programming Arena for Long-context GitHub Issue Solving](../../ICLR2026/llm_efficiency/swingarena_competitive_programming_arena_for_long-context_github_issue_solving.md)
 - [\[AAAI 2026\] Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models](../../AAAI2026/llm_efficiency/harnessing_the_unseen_the_hidden_influence_of_intrinsic_knowledge_in_long-contex.md)
-- [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)
-- [\[NeurIPS 2025\] Advancing Expert Specialization for Better MoE](advancing_expert_specialization_for_better_moe.md)
+- [\[ICLR 2026\] SpareTrain: Fault-Tolerant LLM Training via Low-Cost Dual Modular Redundancy](../../ICLR2026/llm_efficiency/sparetrain_fault-tolerant_llm_training_via_low-cost_dual_modular_redundancy.md)
+- [\[ICLR 2026\] SwingArena: Adversarial Programming Arena for Long-context GitHub Issue Solving](../../ICLR2026/llm_efficiency/swingarena_competitive_programming_arena_for_long-context_github_issue_solving.md)
+- [\[ACL 2026\] Small Data, Big Noise: Adversarial Training for Robust Parameter-Efficient Fine-Tuning](../../ACL2026/llm_efficiency/small_data_big_noise_adversarial_training_for_robust_parameter-efficient_fine-tu.md)
 
 </div>
 

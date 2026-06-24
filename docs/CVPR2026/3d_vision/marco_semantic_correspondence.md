@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MARCO: Navigating the Unseen Space of Semantic Correspondence
 description: >-
-  [CVPR 2026][3D Vision][DINOv2] MARCO is proposed, a semantic correspondence model based on a single DINOv2 backbone. It progressively improves spatial precision through a coarse-to-fine Gaussian RBF loss and expands sparse keypoint supervision into dense pseudo-correspondence labels using a self-distillation framework. MARCO achieves SOTA performanc
+  [CVPR 2026 Oral][3D Vision][Semantic Correspondence] MARCO is proposed, a semantic correspondence model based on a single DINOv2 backbone. It progressively improves spatial precision through a coarse-to-fine Gaussian RBF loss and expands sparse keypoint supervision into dense pseudo-correspondence labels using a self-distillation framework. MARCO achieves SOTA performance on standard benchmarks and unseen keypoints/categories while being $3\times$ smaller and $10\times$ faste…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - DINOv2
-  - Generalizability
+  - "CVPR 2026 Oral"
+  - "3D Vision"
+  - "Semantic Correspondence"
+  - "DINOv2"
+  - "Self-distillation"
+  - "Coarse-to-fine"
+  - "Generalizability"
 date: 2026-05-08
-content_hash: 014a15e3d2790d42
+content_hash: 8d2a6ab12e4ab1b9
 ---
+
 # MARCO: Navigating the Unseen Space of Semantic Correspondence
 
 **Conference**: CVPR 2026 Oral  
@@ -153,11 +157,11 @@ The total loss is $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{self}$. The su
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
+- [\[CVPR 2026\] Registration-Free Learnable Multi-View Capture of Faces in Dense Semantic Correspondence](registration-free_learnable_multi-view_capture_of_faces_in_dense_semantic_corres.md)
+- [\[ICCV 2025\] Do It Yourself: Learning Semantic Correspondence from Pseudo-Labels](../../ICCV2025/3d_vision/do_it_yourself_learning_semantic_correspondence_from_pseudo-labels.md)
+- [\[CVPR 2026\] SGSoft: Learning Fused Semantic-Geometric Features for 3D Shape Correspondence via Template-Guided Soft Signals](sgsoft_learning_fused_semantic-geometric_features_for_3d_shape_correspondence_vi.md)
+- [\[CVPR 2025\] SemAlign3D: Semantic Correspondence Between RGB-Images Through Aligning 3D Object-Class Representations](../../CVPR2025/3d_vision/semalign3d_semantic_correspondence_between_rgb-images_through_aligning_3d_object.md)
 - [\[CVPR 2026\] Best Segmentation Buddies for Image-Shape Correspondence](best_segmentation_buddies_for_image-shape_correspondence.md)
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
-- [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
 
 </div>
 

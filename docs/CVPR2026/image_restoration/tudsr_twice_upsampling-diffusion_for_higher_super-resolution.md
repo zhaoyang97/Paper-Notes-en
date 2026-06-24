@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TUDSR: Twice Upsampling-Diffusion for Higher Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][LoRA] Addressing the failure of diffusion models like SD (with a native resolution of $512^2$) in $\times 8$ high-magnification super-resolution (e.g., $256^2 \to 2048^2$), TUDSR decomposes "one-time high-magnification upsampling" into two stages of "upsampling-diffusion" that fall within the model's native capability. By us
+  [CVPR 2026][Image Restoration][Real Super-Resolution] Addressing the failure of diffusion models like SD (with a native resolution of $512^2$) in $\times 8$ high-magnification super-resolution (e.g., $256^2 \to 2048^2$), TUDSR decomposes "one-time high-magnification upsampling" into two stages of "upsampling-diffusion" that fall within the model's native capability. By using two serial LoRAs and a one-step GAN, it produces high-quality $2048^2$ images on 4x RTX 4090 GPUs…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - LoRA
-  - GAN
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Real Super-Resolution"
+  - "One-step Diffusion"
+  - "LoRA"
+  - "Twice Upsampling"
+  - "GAN"
 date: 2026-05-08
-content_hash: 3e39b23d74046698
+content_hash: 611fa2a176fd3eda
 ---
+
 # TUDSR: Twice Upsampling-Diffusion for Higher Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -153,8 +157,8 @@ Configuration: M4/N4 indicates single-stage LoRA; M2N2/M4N2 indicates serial dec
 ## Related Papers
 
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
-- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 - [\[CVPR 2026\] Disentangled Textual Priors for Diffusion-based Image Super-Resolution](disentangled_textual_priors_for_diffusion-based_image_super-resolution.md)
+- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
 - [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
 - [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
 

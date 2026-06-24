@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiscoverLLM: From Executing Intents to Discovering Them
 description: >-
-  [ICML 2026][Dialogue Systems][RLHF] DiscoverLLM formalizes the scenario where "the user has not clearly defined their goals" as a progressive discovery process within a hierarchical intent tree. By using a rewardable hierarchical user simulator, the model is trained to actively explore divergently when goals are unclear and converge for execution when th
+  [ICML 2026][Dialogue Systems][Intent Discovery] DiscoverLLM formalizes the scenario where "the user has not clearly defined their goals" as a progressive discovery process within a hierarchical intent tree. By using a rewardable hierarchical user simulator, the model is trained to actively explore divergently when goals are unclear and converge for execution when they are clarified. On creative writing, technical writing, and SVG tasks, the method achieves a +10% improvement…
 tags:
-  - ICML 2026
-  - Dialogue Systems
-  - RLHF
+  - "ICML 2026"
+  - "Dialogue Systems"
+  - "Intent Discovery"
+  - "Multi-turn Dialogue"
+  - "User Simulator"
+  - "RLHF"
+  - "Collaborative Creation"
 date: 2026-05-08
-content_hash: 02d1e74d6a63232e
+content_hash: 5673cec05ff085ff
 ---
+
 # DiscoverLLM: From Executing Intents to Discovering Them
 
 **Conference**: ICML 2026  
@@ -129,15 +134,15 @@ A 75-person user study showed that DiscoverLLM significantly outperformed baseli
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] Context-Driven Incremental Compression for Multi-Turn Dialogue Generation](context-driven_incremental_compression_for_multi-turn_dialogue_generation.md)
 - [\[ICML 2026\] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving](not_all_prefills_are_equal_ppd_disaggregation_for_multi-turn_llm_serving.md)
+- [\[ICLR 2026\] Flipping the Dialogue: Training and Evaluating User Language Models](../../ICLR2026/dialogue/flipping_the_dialogue_training_and_evaluating_user_language_models.md)
 - [\[ICML 2026\] From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents](from_self-evolving_synthetic_data_to_verifiable-reward_rl_post-training_multi-tu.md)
 - [\[ACL 2025\] Know You First and Be You Better: Modeling Human-Like User Simulators via Implicit Profiles](../../ACL2025/dialogue/know_you_first_and_be_you_better_modeling_human-like_user_simulators_via_implici.md)
-- [\[ICML 2026\] Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives](is_your_llm_overcharging_you_tokenization_transparency_and_incentives.md)
-- [\[ACL 2026\] Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky](../../ACL2026/dialogue/disambiguation-centric_finetuning_makes_enterprise_tool-calling_llms_more_realis.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ChartR: Evaluating Reasoning Accuracy and Robustness in Chart Question Answering
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] ChartR decomposes each chart question into 4–10 dependent sub-questions and provides four visual perturbation variants for each image. Using eight metrics to simultaneously evaluate "step-by-step reasoning accuracy" and "robustness under perturbation," the study reveals that across 12 MLLMs, full-chain accuracy is gene
+  [CVPR 2026][VLM Reasoning][Chart Question Answering] ChartR decomposes each chart question into 4–10 dependent sub-questions and provides four visual perturbation variants for each image. Using eight metrics to simultaneously evaluate "step-by-step reasoning accuracy" and "robustness under perturbation," the study reveals that across 12 MLLMs, full-chain accuracy is generally below 10%, numerical value extraction is the primary bottleneck, and models rely heavily on text anno…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
-  - benchmark
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Chart Question Answering"
+  - "Reasoning Chain Evaluation"
+  - "Visual Robustness"
+  - "MLLM"
+  - "benchmark"
 date: 2026-05-08
-content_hash: ebb2f3c478fe2a10
+content_hash: eb2a3719f42092ad
 ---
+
 # ChartR: Evaluating Reasoning Accuracy and Robustness in Chart Question Answering
 
 **Conference**: CVPR 2026  
@@ -131,11 +135,11 @@ Findings: Most models show higher ARCSA/ARCFA than ARISA/ARFAA, meaning **visual
 
 ## Related Papers
 
-- [\[CVPR 2026\] SEA: Evaluating Sketch Abstraction Efficiency via Element-level Commonsense Visual Question Answering](sea_evaluating_sketch_abstraction_efficiency_via_element-level_commonsense_visua.md)
 - [\[CVPR 2026\] StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering](star-kvqa_structured_reasoning_traces_for_implicit-knowledge_visual_question_ans.md)
-- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
-- [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](vq-va_world_towards_high-quality_visual_question-visual_answering.md)
-- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
+- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
+- [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](../../ICCV2025/vlm_reasoning/reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
+- [\[CVPR 2026\] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](think_360_evaluating_the_width-centric_reasoning_capability_of_mllms_beyond_dept.md)
+- [\[CVPR 2026\] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)
 
 </div>
 

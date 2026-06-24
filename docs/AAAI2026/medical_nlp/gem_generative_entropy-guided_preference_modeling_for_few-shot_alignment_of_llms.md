@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs
 description: >-
-  [Medical NLP] GEM proposes a generative entropy-guided preference modeling approach that achieves efficient LLM alignment in low-resource settings (only 3…
+  [Medical LLM] GEM proposes a generative entropy-guided preference modeling approach that achieves efficient LLM alignment in low-resource settings (only 3,000 preference pairs) through cognitive filtering (entropy-based CoT scoring) and the SEGA algorithm (Self-Evaluated Group Advantage policy optimization).
 tags:
-  - "Medical NLP"
+  - "Medical LLM"
 date: 2026-05-08
-content_hash: 8bbd2ecc2bf1645f
+content_hash: dd7431b65cf7eb0f
 ---
 
 # GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs
@@ -177,8 +177,8 @@ The SEGA loss is essentially a weighted policy gradient loss, where weight $w_i$
 - [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](../../NeurIPS2025/medical_nlp/position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
 - [\[NeurIPS 2025\] LLM-Assisted Emergency Triage Benchmark: Bridging Hospital-Rich and MCI-Like Field Simulation](../../NeurIPS2025/medical_nlp/llm-assisted_emergency_triage_benchmark_bridging_hospital-rich_and_mci-like_fiel.md)
 - [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](../../NeurIPS2025/medical_nlp/raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
+- [\[ACL 2025\] MedBioRAG: Semantic Search and Retrieval-Augmented Generation with Large Language Models for Medical and Biological QA](../../ACL2025/medical_nlp/medbiorag_semantic_search_and_retrieval-augmented_generation_for_biomedical_lite.md)
 - [\[ACL 2026\] ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](../../ACL2026/medical_nlp/promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)
-- [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
 
 </div>
 

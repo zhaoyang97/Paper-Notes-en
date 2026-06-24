@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Clean: Reinforcement Learning for Noisy Label Correction
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Noisy Labels] This paper formulates noisy label correction as a Markov Decision Process under the reinforcement learning framework…
+  [NeurIPS 2025][Reinforcement Learning][Noisy Labels] This paper formulates noisy label correction as a Markov Decision Process under the reinforcement learning framework, proposing RLNLC. A policy function built upon a k-nearest-neighbor embedding space determines which labels should be corrected, guided by a label consistency reward and a cross-subset alignment reward. RLNLC achieves state-of-the-art performance across multiple benchmark datasets under both instance-dependen…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Actor-Critic"
   - "k-Nearest Neighbors"
 date: 2026-05-08
-content_hash: 02a8a5e4cb82c8b0
+content_hash: 60bedb6ccfdad28a
 ---
 
 # Learning to Clean: Reinforcement Learning for Noisy Label Correction
@@ -147,11 +147,11 @@ An Actor-Critic method is used to learn the optimal policy. After training, the 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
+- [\[ICLR 2026\] Beyond Noisy-TVs: Noise-Robust Exploration Via Learning Progress Monitoring](../../ICLR2026/reinforcement_learning/beyond_noisy-tvs_noise-robust_exploration_via_learning_progress_monitoring.md)
+- [\[ICML 2025\] Adversarial Cooperative Rationalization: The Risk of Spurious Correlations in Even Clean Datasets](../../ICML2025/reinforcement_learning/adversarial_cooperative_rationalization_the_risk_of_spurious_correlations_in_eve.md)
 - [\[NeurIPS 2025\] On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning](on_the_global_optimality_of_policy_gradient_methods_in_general_utility_reinforce.md)
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Continual Knowledge Adaptation for Reinforcement Learning](continual_knowledge_adaptation_for_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Towards Provable Emergence of In-Context Reinforcement Learning](towards_provable_emergence_of_in-context_reinforcement_learning.md)
 
 </div>
 

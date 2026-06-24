@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the pain points of "inaccurate mask priors" and "improper label representation" in dynamic-static decomposition for 3DGS, this paper employs a 4D spatio-temporal fine-grained mask field for supervision and utilizes spiking neurons to optimize dynamic-static labels directly into discrete 0/1 values. This appr
+  [CVPR 2026][3D Vision][Dynamic-Static Decomposition] Addressing the pain points of "inaccurate mask priors" and "improper label representation" in dynamic-static decomposition for 3DGS, this paper employs a 4D spatio-temporal fine-grained mask field for supervision and utilizes spiking neurons to optimize dynamic-static labels directly into discrete 0/1 values. This approach precisely classifies Gaussians into dynamic or static categories, achieving SOTA rendering quality in…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic-Static Decomposition"
+  - "3D Gaussian Splatting"
+  - "Spiking Neurons"
+  - "4D Mask Field"
+  - "Side-view Evaluation"
 date: 2026-05-08
-content_hash: 97e0f59e833ef97c
+content_hash: a5b750d23f6bb360
 ---
+
 # Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ Ablation on N3DV "cut beef" (Side View), where SN denotes Spiking Neurons:
 
 ## Related Papers
 
+- [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
 - [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
-- [\[CVPR 2026\] Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](efficiently_reconstructing_dynamic_scenes_one_d4rt_at_a_time.md)
-- [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
-- [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
+- [\[ICLR 2026\] Dynamic Novel View Synthesis in High Dynamic Range](../../ICLR2026/3d_vision/dynamic_novel_view_synthesis_in_high_dynamic_range.md)
+- [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](../../ICCV2025/3d_vision/degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
+- [\[CVPR 2026\] GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials](gaussianfluent_gaussian_simulation_for_dynamic_scenes_with_mixed_materials.md)
 
 </div>
 

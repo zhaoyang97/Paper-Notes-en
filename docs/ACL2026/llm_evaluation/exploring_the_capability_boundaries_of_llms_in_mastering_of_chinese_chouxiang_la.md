@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper introduces "Chouxiang Language," a Chinese internet subculture language, to the NLP community and constructs Mouse, the first evaluation benchmark (comprising six tasks: translation, representation classification, intent recognition, toxicity detection, meaning selection, and cloze test). It discovers that w
+  [ACL 2026 Findings][LLM Evaluation][Chouxiang Language] This paper introduces "Chouxiang Language," a Chinese internet subculture language, to the NLP community and constructs Mouse, the first evaluation benchmark (comprising six tasks: translation, representation classification, intent recognition, toxicity detection, meaning selection, and cloze test). It discovers that while SOTA LLMs perform reasonably in contextual semantic understanding…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Chouxiang Language"
+  - "Internet Subculture Language"
+  - "LLM Benchmark"
+  - "Chinese Internet Slang"
+  - "Cross-cultural Understanding"
 date: 2026-05-08
-content_hash: da88ff0fdbb1e422
+content_hash: 5e83b42ea7ddf0b5
 ---
+
 # Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language
 
 **Conference**: ACL 2026 Findings  
@@ -107,11 +113,11 @@ A single task cannot characterize the mastery of Chouxiang Language—a model mi
 
 ## Related Papers
 
-- [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](scan_structured_capability_assessment_and_navigation_for_llms.md)
 - [\[AAAI 2026\] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents](../../AAAI2026/llm_evaluation/beyond_accuracy_a_cognitive_load_framework_for_mapping_the_c.md)
+- [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](scan_structured_capability_assessment_and_navigation_for_llms.md)
 - [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
 - [\[ACL 2026\] Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models](challenging_the_boundaries_of_reasoning_an_olympiad-level_math_benchmark_for_lar.md)
-- [\[ACL 2026\] Evaluating Memory Capability in Continuous Lifelog Scenario](evaluating_memory_capability_in_continuous_lifelog_scenario.md)
+- [\[ACL 2026\] Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry](capabilities_and_evaluation_biases_of_large_language_models_in_classical_chinese.md)
 
 </div>
 

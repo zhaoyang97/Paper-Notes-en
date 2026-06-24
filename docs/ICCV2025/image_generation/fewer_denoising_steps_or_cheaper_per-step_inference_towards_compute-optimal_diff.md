@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment
 description: >-
-  [ICCV 2025][Image Generation][diffusion model acceleration] This paper proposes PostDiff — a training-free diffusion model acceleration framework that reduces redundancy at two levels: at the input level via a mixed-reso…
+  [ICCV 2025][Image Generation][diffusion model acceleration] This paper proposes PostDiff — a training-free diffusion model acceleration framework that reduces redundancy at two levels: at the input level via a mixed-resolution denoising strategy (low resolution in early steps → high resolution in later steps), and at the module level via a hybrid caching strategy (DeepCache + cross-attention caching). The work systematically addresses the key question of whether reducing the…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "training-free compression"
   - "compute-optimal deployment"
 date: 2026-05-08
-content_hash: fdd562dc80075756
+content_hash: f374c1c641a6994e
 ---
 
 # Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment
@@ -167,8 +167,8 @@ Comparison with other training-free methods (SD V1.5):
 - [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](inference-time_diffusion_model_distillation.md)
 - [\[NeurIPS 2025\] Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising](../../NeurIPS2025/image_generation/two-steps_diffusion_policy_for_robotic_manipulation_via_genetic_denoising.md)
 - [\[NeurIPS 2025\] AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models](../../NeurIPS2025/image_generation/accuquant_simulating_multiple_denoising_steps_for_quantizing.md)
+- [\[CVPR 2025\] Optimizing for the Shortest Path in Denoising Diffusion Model](../../CVPR2025/image_generation/optimizing_for_the_shortest_path_in_denoising_diffusion_model.md)
 - [\[ICCV 2025\] Compression-Aware One-Step Diffusion Model for JPEG Artifact Removal](compression-aware_one-step_diffusion_model_for_jpeg_artifact_removal.md)
-- [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](../../NeurIPS2025/image_generation/denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
 
 </div>
 

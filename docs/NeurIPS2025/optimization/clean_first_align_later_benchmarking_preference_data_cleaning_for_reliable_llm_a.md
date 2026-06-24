@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Clean First, Align Later: Benchmarking Preference Data Cleaning for Reliable LLM Alignment
 description: >-
-  [NeurIPS 2025 (D&B Track)][Optimization][preference data cleaning] This paper introduces PrefCleanBench, the first comprehensive benchmark for systematically evaluating 13 preference data cleaning methods in the context…
+  [NeurIPS 2025 (D&B Track)][Optimization][preference data cleaning] This paper introduces PrefCleanBench, the first comprehensive benchmark for systematically evaluating 13 preference data cleaning methods in the context of LLM alignment. It covers diverse datasets, model architectures, and optimization algorithms, revealing the underappreciated yet critical role of data preprocessing in responsible AI development.
 tags:
   - "NeurIPS 2025 (D&B Track)"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "benchmark"
 date: 2026-05-08
-content_hash: 3cc4fd30366fa0ca
+content_hash: 63daa8a84157b4e8
 ---
 
 # Clean First, Align Later: Benchmarking Preference Data Cleaning for Reliable LLM Alignment
@@ -186,9 +186,9 @@ Cross-algorithm consistency:
 
 - [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
 - [\[NeurIPS 2025\] Doubly Robust Alignment for Large Language Models](doubly_robust_alignment_for_large_language_models.md)
+- [\[ICML 2025\] Right Now, Wrong Then: Non-Stationary Direct Preference Optimization under Preference Drift](../../ICML2025/optimization/right_now_wrong_then_non-stationary_direct_preference_optimization_under_prefere.md)
+- [\[ICLR 2026\] Align-SAM: Seeking Flatter Minima for Better Cross-Subset Alignment](../../ICLR2026/optimization/align-sam_seeking_flatter_minima_for_better_cross-subset_alignment.md)
 - [\[NeurIPS 2025\] Towards Reliable and Holistic Visual In-Context Learning Prompt Selection](towards_reliable_and_holistic_visual_in-context_learning_prompt_selection.md)
-- [\[NeurIPS 2025\] Preference Learning with Response Time: Robust Losses and Guarantees](preference_learning_with_response_time_robust_losses_and_guarantees.md)
-- [\[NeurIPS 2025\] The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels](the_implicit_bias_of_structured_state_space_models_can_be_poisoned_with_clean_la.md)
 
 </div>
 

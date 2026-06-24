@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models
 description: >-
-  [AAAI 2026][Image Generation][Flow Matching] This paper proposes Symmetrical Flow Matching (SymmFlow), which unifies semantic segmentation, classification…
+  [AAAI 2026][Image Generation][Flow Matching] This paper proposes Symmetrical Flow Matching (SymmFlow), which unifies semantic segmentation, classification, and image generation into a single model. By jointly modeling forward and reverse flow transformations through a symmetric learning objective, SymmFlow achieves state-of-the-art performance in semantic image synthesis with only 25 inference steps (CelebAMask-HQ FID 11.9, COCO-Stuff FID 7.0)…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -11,7 +11,7 @@ tags:
   - "Classification"
   - "Unified Framework"
 date: 2026-05-08
-content_hash: 9c631f72c26a2b13
+content_hash: 988935b78e2844a9
 ---
 
 # Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models
@@ -195,9 +195,9 @@ SymmFlow surpasses Diffusion Classifier on CIFAR-10 using only 25 steps, whereas
 
 - [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](../../NeurIPS2025/image_generation/latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
 - [\[AAAI 2026\] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement](rethinking_flow_and_diffusion_bridge_models_for_speech_enhancement.md)
+- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](../../ICLR2026/image_generation/fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
 - [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
 - [\[CVPR 2026\] BiGain: Unified Token Compression for Joint Generation and Classification](../../CVPR2026/image_generation/bigain_unified_token_compression_for_joint_generation_and_classification.md)
-- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](../../CVPR2026/image_generation/freqflow_frequency_aware_flow_matching.md)
 
 </div>
 

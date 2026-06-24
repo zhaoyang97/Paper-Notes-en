@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GT-Space: Enhancing Heterogeneous Collaborative Perception with Ground Truth Feature Space
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] GT-Space utilizes ground truth annotations (object boxes) to construct a unified BEV "common feature space" as an alignment anchor. This allows each heterogeneous agent to map its features into this space for fusion via a lightweight projector. Combined with cross-modal combinatorial contrastive loss, the 3D detection
+  [ICLR 2026][Autonomous Driving][Collaborative Perception] GT-Space utilizes ground truth annotations (object boxes) to construct a unified BEV "common feature space" as an alignment anchor. This allows each heterogeneous agent to map its features into this space for fusion via a lightweight projector. Combined with cross-modal combinatorial contrastive loss, the 3D detection accuracy for heterogeneous collaboration on OPV2V / V2XSet / RCooper significantly outperforms existin…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Collaborative Perception"
+  - "Heterogeneous Feature Alignment"
+  - "Common Feature Space"
+  - "Contrastive Learning"
+  - "BEV Detection"
 date: 2026-05-08
-content_hash: c1e5d4ab086b9ba9
+content_hash: 8d1258a6c374d1e6
 ---
+
 # GT-Space: Enhancing Heterogeneous Collaborative Perception with Ground Truth Feature Space
 
 **Conference**: ICLR 2026  
@@ -152,11 +158,11 @@ Impact of components from Agent 1's perspective:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Rate-Distortion Optimized Pragmatic Communication for Collaborative Perception](rate-distortion_optimized_pragmatic_communication_for_collaborative_perception.md)
 - [\[ICLR 2026\] SiMO: Single-Modality-Operable Multimodal Collaborative Perception](simo_single-modality-operable_multimodal_collaborative_perceptio.md)
+- [\[ICLR 2026\] Rate-Distortion Optimized Pragmatic Communication for Collaborative Perception](rate-distortion_optimized_pragmatic_communication_for_collaborative_perception.md)
 - [\[CVPR 2026\] IntrinsicWeather: Controllable Weather Editing in Intrinsic Space](../../CVPR2026/autonomous_driving/intrinsicweather_controllable_weather_editing_in_intrinsic_space.md)
 - [\[ICLR 2026\] DriveMamba: Task-Centric Scalable State Space Model for Efficient End-to-End Autonomous Driving](drivemamba_task-centric_scalable_state_space_model_for_efficient_end-to-end_auto.md)
-- [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](../../CVPR2026/autonomous_driving/catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
+- [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](../../CVPR2026/autonomous_driving/colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
 
 </div>
 

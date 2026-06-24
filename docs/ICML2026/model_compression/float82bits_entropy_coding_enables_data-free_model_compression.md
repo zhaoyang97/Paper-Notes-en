@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Float8@2bits: Entropy Coding Enables Data-Free Model Compression
 description: >-
-  [ICML 2026][Model Compression][ANS] EntQuant preserves weights with Float8/Int8 precision but adds an additional $\ell_1$ regularization during the quantization phase to "align" weights toward a low-entropy distribution. These are then losslessly compressed to approximately 2 bits using parallelized ANS entropy coding on the GPU. This achieves over 8× co
+  [ICML 2026][Model Compression][Post-Training Quantization] EntQuant preserves weights with Float8/Int8 precision but adds an additional $\ell_1$ regularization during the quantization phase to "align" weights toward a low-entropy distribution. These are then losslessly compressed to approximately 2 bits using parallelized ANS entropy coding on the GPU. This achieves over 8× compression for 70B LLMs in under 10 minutes without requiring calibration data or recovery training…
 tags:
-  - ICML 2026
-  - Model Compression
-  - ANS
+  - "ICML 2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Entropy Coding"
+  - "ANS"
+  - "Data-free Compression"
+  - "Extreme Low-bit"
 date: 2026-05-08
-content_hash: 1640b71529b0c87a
+content_hash: c6b354381af66412
 ---
+
 # Float8@2bits: Entropy Coding Enables Data-Free Model Compression
 
 **Conference**: ICML 2026  
@@ -146,7 +151,7 @@ The 2.1 bpw range highlights Ours' performance—while all data-free baselines c
 - [\[ICML 2026\] Efficient Learned Image Compression without Entropy Coding](efficient_learned_image_compression_without_entropy_coding.md)
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
 - [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
-- [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](entropy-aware_on-policy_distillation_of_language_models.md)
+- [\[ICLR 2026\] Boomerang Distillation Enables Zero-Shot Model Size Interpolation](../../ICLR2026/model_compression/boomerang_distillation_enables_zero-shot_model_size_interpolation.md)
 - [\[CVPR 2025\] Learned Image Compression with Dictionary-based Entropy Model](../../CVPR2025/model_compression/learned_image_compression_with_dictionary-based_entropy_model.md)
 
 </div>

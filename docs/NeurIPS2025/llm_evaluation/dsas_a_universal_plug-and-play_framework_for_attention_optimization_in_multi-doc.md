@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Multi-doc QA] This paper proposes Dual-Stage Adaptive Sharpening (DSAS), a training-free plug-and-play attention optimization framework. It employs Contextual Gate Weighting (CGW) to enhanc…
+  [NeurIPS 2025][LLM Evaluation][Multi-doc QA] This paper proposes Dual-Stage Adaptive Sharpening (DSAS), a training-free plug-and-play attention optimization framework. It employs Contextual Gate Weighting (CGW) to enhance attention from key passages toward the question and target positions, and Reciprocal Attention Suppression (RAS) to suppress information exchange between key and irrelevant passages, achieving an average F1 improvement of 4.2% on multi-document QA benchmarks…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "plug-and-play"
   - "information flow"
 date: 2026-05-08
-content_hash: 6983a2c04cd6d102
+content_hash: 9a6fb6821c332fe2
 ---
 
 # DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering
@@ -132,11 +132,11 @@ DSAS inserts two stages into the attention computation during LLM inference. CGW
 
 ## Related Papers
 
+- [\[ACL 2025\] YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering](../../ACL2025/llm_evaluation/yescieval_llm_judge_science.md)
 - [\[ACL 2026\] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](../../ACL2026/llm_evaluation/recoqa_a_benchmark_for_tool-augmented_and_multi-step_reasoning_in_real_estate_qu.md)
 - [\[NeurIPS 2025\] PaTH Attention: Position Encoding via Accumulating Householder Transformations](path_attention_position_encoding_via_accumulating_householder_transformations.md)
-- [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
-- [\[NeurIPS 2025\] OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling](optitree_hierarchical_thoughts_generation_with_tree_search_for_llm_optimization_.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](../../ACL2026/llm_evaluation/retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
+- [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
 
 </div>
 

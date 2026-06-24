@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments
 description: >-
-  [AAAI 2026][Reinforcement Learning][Hybrid Action Space] This paper models the hybrid action space problem as a fully cooperative two-agent game…
+  [AAAI 2026][Reinforcement Learning][Hybrid Action Space] This paper models the hybrid action space problem as a fully cooperative two-agent game, employing discrete and continuous diffusion policies respectively to generate actions. Sequential updates and a Q-guided codebook are introduced to resolve policy conflicts and high-dimensional scalability issues, achieving up to a 19.3% improvement in success rate.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Vector-Quantized Codebook"
   - "Parameterized Action MDP"
 date: 2026-05-08
-content_hash: 12831018a0575e2a
+content_hash: bfa4bbcb499fbfcc
 ---
 
 # CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments

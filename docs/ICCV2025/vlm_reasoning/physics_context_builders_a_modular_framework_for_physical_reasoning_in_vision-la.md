@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models
 description: >-
-  [Multimodal VLM] This paper proposes Physics Context Builders (PCBs), a modular framework that fine-tunes small specialized VLMs on simulation data to generate detailed physical scene descriptions…
+  [VLM Reasoning] This paper proposes Physics Context Builders (PCBs), a modular framework that fine-tunes small specialized VLMs on simulation data to generate detailed physical scene descriptions, which serve as physical context to augment the physical reasoning capabilities of large foundation VLMs (e.g., GPT-4o), without modifying the large model itself.
 tags:
-  - "Multimodal VLM"
+  - "VLM Reasoning"
 date: 2026-05-08
-content_hash: 343fb2305a768d65
+content_hash: 1ccd042f0cc9947e
 ---
 
 # Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models
@@ -140,11 +140,11 @@ The approach is conceptually clean and elegant, with clear and insightful experi
 
 ## Related Papers
 
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
 - [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
-- [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](../../AAAI2026/multimodal_vlm/ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
+- [\[CVPR 2025\] Document Haystacks: Vision-Language Reasoning Over Piles of 1000+ Documents](../../CVPR2025/vlm_reasoning/document_haystacks_vision-language_reasoning_over_piles_of_1000_documents.md)
+- [\[ICCV 2025\] Training-Free Personalization via Retrieval and Reasoning on Fingerprints](training-free_personalization_via_retrieval_and_reasoning_on_fingerprints.md)
+- [\[ACL 2025\] MAmmoTH-VL: Eliciting Multimodal Reasoning with Instruction Tuning at Scale](../../ACL2025/vlm_reasoning/mammoth_vl_multimodal_reasoning.md)
+- [\[NeurIPS 2025\] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](../../NeurIPS2025/vlm_reasoning/rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md)
 
 </div>
 

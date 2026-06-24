@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] PiLoT unifies "UAV ego-localization + arbitrary target geo-localization" into a single problem: "pixel-to-3D registration between real-time video frames and georeferenced 3D maps." Using a dual-thread engine, a lightweight network trained on millions of synthetic data points, and a Joint Neural-Guided Optimizer (JNGO),
+  [CVPR 2026][Remote Sensing][UAV Localization] PiLoT unifies "UAV ego-localization + arbitrary target geo-localization" into a single problem: "pixel-to-3D registration between real-time video frames and georeferenced 3D maps." Using a dual-thread engine, a lightweight network trained on millions of synthetic data points, and a Joint Neural-Guided Optimizer (JNGO), it achieves a median error of 1.37 m and 25+ FPS on Jetson Orin under GNSS/IMU-denied conditions.
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "UAV Localization"
+  - "Pixel-to-3D Registration"
+  - "GNSS-denied"
+  - "Pose Optimization"
+  - "Target Geo-localization"
 date: 2026-05-08
-content_hash: bbb6ebf7d9b75a70
+content_hash: f487a1f3caf4fe5d
 ---
+
 # PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization
 
 **Conference**: CVPR 2026  
@@ -178,7 +184,7 @@ Recall(%) @ 1m/1° under different initialization noise budgets:
 - [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
 - [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
 - [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
-- [\[CVPR 2026\] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization](singeo_unlock_single_models_potential_for_robust_cross-view_geo-localization.md)
+- [\[CVPR 2026\] LNEM: Lunar Neural Elevation Model](lnem_lunar_neural_elevation_model.md)
 
 </div>
 

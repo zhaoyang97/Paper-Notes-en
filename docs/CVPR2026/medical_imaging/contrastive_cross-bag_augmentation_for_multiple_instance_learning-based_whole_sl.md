@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Addressing the restricted diversity issue in weak-supervised WSI classification where pseudo-bag augmentation "only samples within one or two bags," C2Aug constructs pseudo-bags by sampling instances across all same-class bags in the dataset (addition-and-merge rather than reduction-and-merge). It utilizes bag-level an
+  [CVPR 2026][Medical Imaging][Whole Slide Image Classification] Addressing the restricted diversity issue in weak-supervised WSI classification where pseudo-bag augmentation "only samples within one or two bags," C2Aug constructs pseudo-bags by sampling instances across all same-class bags in the dataset (addition-and-merge rather than reduction-and-merge). It utilizes bag-level and group-level contrastive learning to mitigate the side effect of "reduced small tumor region sam…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Image Classification"
+  - "Multiple Instance Learning"
+  - "Pseudo-bag Augmentation"
+  - "Cross-bag Sampling"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 7253cbcd8f2ed03f
+content_hash: c008409300da1c11
 ---
+
 # Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification
 
 **Conference**: CVPR 2026  
@@ -165,10 +171,10 @@ Stratified ablation of contrastive losses by tumor percentage (CAMELYON-16 ACC %
 ## Related Papers
 
 - [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
+- [\[ICLR 2026\] ASMIL: Attention-Stabilized Multiple Instance Learning for Whole-Slide Imaging](../../ICLR2026/medical_imaging/asmil_attention-stabilized_multiple_instance_learning_for_whole-slide_imaging.md)
+- [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
 - [\[CVPR 2026\] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification](dual-level_hypergraph_generation_for_addressing_feature_scarcity_in_whole-slide_.md)
 - [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
-- [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
-- [\[CVPR 2026\] TopoCL: Topological Contrastive Learning for Medical Imaging](topocl_topological_contrastive_learning_for_medical_imaging.md)
 
 </div>
 

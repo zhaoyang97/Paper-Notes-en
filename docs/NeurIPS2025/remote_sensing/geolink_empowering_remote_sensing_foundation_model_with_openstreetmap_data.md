@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data
 description: >-
-  [NeurIPS 2025][Remote Sensing][Remote sensing foundation model] GeoLink directly integrates OpenStreetMap vector data into remote sensing foundation model pretraining by encoding OSM data with a heterogeneous GNN and des…
+  [NeurIPS 2025][Remote Sensing][Remote sensing foundation model] GeoLink directly integrates OpenStreetMap vector data into remote sensing foundation model pretraining by encoding OSM data with a heterogeneous GNN and designing multi-granularity cross-modal learning objectives (region–image-level contrastive + object–patch-level fusion). Pretrained efficiently on 1.27 million sample pairs, GeoLink surpasses existing RS FMs across 7 classification and 4 segmentation/change dete…
 tags:
   - "NeurIPS 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "heterogeneous graph neural network"
   - "cross-modal alignment"
 date: 2026-05-08
-content_hash: 355dab5e9628432a
+content_hash: ee567972a8d6eb27
 ---
 
 # GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data
@@ -124,8 +124,8 @@ $\mathcal{L} = \mathcal{L}_{rec} + 0.01\mathcal{L}_{cont} + 0.01\mathcal{L}_{cst
 - [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](../../ICCV2025/remote_sensing/skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
 - [\[ICCV 2025\] RS-vHeat: Heat Conduction Guided Efficient Remote Sensing Foundation Model](../../ICCV2025/remote_sensing/rs-vheat_heat_conduction_guided_efficient_remote_sensing_foundation_model.md)
 - [\[ICCV 2025\] Towards a Unified Copernicus Foundation Model for Earth Vision](../../ICCV2025/remote_sensing/towards_a_unified_copernicus_foundation_model_for_earth_vision.md)
+- [\[CVPR 2026\] ORSATR-X: A Foundation Model based on Differential-and-Excitation Networks for Optical Remote Sensing Object Recognition](../../CVPR2026/remote_sensing/orsatr-x_a_foundation_model_based_on_differential-and-excitation_networks_for_op.md)
 - [\[NeurIPS 2025\] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)
-- [\[ICCV 2025\] SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images](../../ICCV2025/remote_sensing/smarties_spectrum-aware_multi-sensor_auto-encoder_for_remote_sensing_images.md)
 
 </div>
 

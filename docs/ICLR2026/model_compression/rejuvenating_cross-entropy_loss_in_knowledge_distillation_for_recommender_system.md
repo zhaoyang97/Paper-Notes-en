@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Rejuvenating Cross-Entropy Loss in Knowledge Distillation for Recommender Systems
 description: >-
-  [ICLR 2026][Model Compression][knowledge distillation] Theory proves that maximizing the NDCG lower bound via CE loss in RecSys KD requires the "Closure Assumption" (the subset must contain the student's top items). However, the actual goal is to distill the ranking of the teacher's top items—this conflict causes vanilla CE to perform poorly. Accordingly, RCE-KD is propose
+  [ICLR 2026][Model Compression][knowledge distillation] Theory proves that maximizing the NDCG lower bound via CE loss in RecSys KD requires the "Closure Assumption" (the subset must contain the student's top items). However, the actual goal is to distill the ranking of the teacher's top items—this conflict causes vanilla CE to perform poorly. Accordingly, RCE-KD is proposed: it splits the teacher's top-K items into two groups based on whether they are in the student's top-K…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - knowledge distillation
-  - cross-entropy
-  - NDCG
-  - recommender system
-  - ranking
-  - partial NDCG
+  - "ICLR 2026"
+  - "Model Compression"
+  - "knowledge distillation"
+  - "cross-entropy"
+  - "NDCG"
+  - "recommender system"
+  - "ranking"
+  - "partial NDCG"
 date: 2026-05-08
-content_hash: 6d0b36633df035da
+content_hash: 934676b1c3151107
 ---
+
 # Rejuvenating Cross-Entropy Loss in Knowledge Distillation for Recommender Systems
 
 **Conference**: ICLR 2026  
@@ -160,7 +161,7 @@ RCE-KD only adds random sampling overhead on top of CE, achieving the highest tr
 - [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](../../ICCV2025/model_compression/ea-kd_entropy-based_adaptive_knowledge_distillation.md)
 - [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
 - [\[ICLR 2026\] SGD-Based Knowledge Distillation with Bayesian Teachers: Theory and Guidelines](sgd-based_knowledge_distillation_with_bayesian_teachers_theory_and_guidelines.md)
-- [\[AAAI 2026\] Asymmetric Cross-Modal Knowledge Distillation: Bridging Modalities with Weak Semantic Consistency](../../AAAI2026/model_compression/asymmetric_cross-modal_knowledge_distillation_bridging_modalities_with_weak_sema.md)
+- [\[ICLR 2026\] Generative Diffusion Prior Distillation for Long-Context Knowledge Transfer](generative_diffusion_prior_distillation_for_long-context_knowledge_transfer.md)
 
 </div>
 

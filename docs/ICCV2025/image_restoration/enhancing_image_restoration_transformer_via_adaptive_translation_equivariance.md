@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Image Restoration Transformer via Adaptive Translation Equivariance
 description: >-
-  [ICCV 2025][Image Restoration][Translation Equivariance] This paper systematically investigates the impact of Translation Equivariance (TE) on the convergence speed and generalization ability of image restoration network…
+  [ICCV 2025][Image Restoration][Translation Equivariance] This paper systematically investigates the impact of Translation Equivariance (TE) on the convergence speed and generalization ability of image restoration networks. It proposes Sliding Key-Value Self-Attention (SkvSA), its adaptive variant (ASkvSA), and Downsampled Self-Attention (DSA), and constructs TEAFormer, which achieves state-of-the-art performance on super-resolution, deblurring, denoising…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -11,7 +11,7 @@ tags:
   - "Adaptive Attention"
   - "Super-Resolution"
 date: 2026-05-08
-content_hash: 9eaec12e87aef15e
+content_hash: 5ce15e25320053f2
 ---
 
 # Enhancing Image Restoration Transformer via Adaptive Translation Equivariance
@@ -152,10 +152,10 @@ The total FLOPs of TEA is $3ND^2 + 2NDk^2 + 2Nw^2D + 2NN_dD$. With hyperparamete
 ## Related Papers
 
 - [\[ICCV 2025\] Devil is in the Uniformity: Exploring Diverse Learners within Transformer for Image Restoration](devil_is_in_the_uniformity_exploring_diverse_learners_within_transformer_for_ima.md)
+- [\[CVPR 2025\] Progressive Focused Transformer for Single Image Super-Resolution](../../CVPR2025/image_restoration/progressive_focused_transformer_for_single_image_super-resolution.md)
 - [\[ICCV 2025\] Metric Convolutions: A Unifying Theory to Adaptive Image Convolutions](metric_convolutions_a_unifying_theory_to_adaptive_image_convolutions.md)
-- [\[CVPR 2026\] SAT: Selective Aggregation Transformer for Image Super-Resolution](../../CVPR2026/image_restoration/sat_selective_aggregation_transformer_for_image_super_resolution.md)
+- [\[ECCV 2024\] Seeing the Unseen: A Frequency Prompt Guided Transformer for Image Restoration](../../ECCV2024/image_restoration/seeing_the_unseen_a_frequency_prompt_guided_transformer_for_image_restoration.md)
 - [\[ICCV 2025\] Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement](learning_pixel-adaptive_multi-layer_perceptrons_for_real-time_image_enhancement.md)
-- [\[ICCV 2025\] UniRes: Universal Image Restoration for Complex Degradations](unires_universal_image_restoration_for_complex_degradations.md)
 
 </div>
 

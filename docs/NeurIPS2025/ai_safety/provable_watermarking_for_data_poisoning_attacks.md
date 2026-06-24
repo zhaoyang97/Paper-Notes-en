@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Provable Watermarking for Data Poisoning Attacks
 description: >-
-  [NeurIPS 2025][AI Safety][watermarking] This paper proposes two provable watermarking schemes—post-poisoning watermarking and poisoning-concurrent watermarking—that provide transparency declaration mechanisms for data po…
+  [NeurIPS 2025][AI Safety][watermarking] This paper proposes two provable watermarking schemes—post-poisoning watermarking and poisoning-concurrent watermarking—that provide transparency declaration mechanisms for data poisoning attacks. The theoretical analysis demonstrates that, under specific watermark length conditions, both watermark detectability and poisoning effectiveness can be simultaneously guaranteed.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "availability attack"
   - "provable guarantee"
 date: 2026-05-08
-content_hash: b7f4b0437af321e7
+content_hash: 05193251f8e591a5
 ---
 
 # Provable Watermarking for Data Poisoning Attacks
@@ -149,11 +149,11 @@ Using an autonomous driving dataset as a running example, the paper constructs a
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach](../../CVPR2026/ai_safety/towards_stealthy_and_effective_backdoor_attacks_on_lane_detection_a_naturalistic.md)
+- [\[ICML 2026\] Rapid Poison: Practical Poisoning Attacks Against the Rapid Response Framework](../../ICML2026/ai_safety/rapid_poison_practical_poisoning_attacks_against_the_rapid_response_framework.md)
 - [\[NeurIPS 2025\] Incentivizing Time-Aware Fairness in Data Sharing](incentivizing_time-aware_fairness_in_data_sharing.md)
+- [\[NeurIPS 2025\] A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers](a_set_of_generalized_components_to_achieve_effective_poison-only_clean-label_bac.md)
 - [\[NeurIPS 2025\] Factor Decorrelation Enhanced Data Removal from Deep Predictive Models](factor_decorrelation_enhanced_data_removal_from_deep_predictive_models.md)
-- [\[AAAI 2026\] Yours or Mine? Overwriting Attacks Against Neural Audio Watermarking](../../AAAI2026/ai_safety/yours_or_mine_overwriting_attacks_against_neural_audio_watermarking.md)
-- [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
-- [\[NeurIPS 2025\] Model Inversion with Layer-Specific Modeling and Alignment for Data-Free Continual Learning](model_inversion_with_layer-specific_modeling_and_alignment_for_data-free_continu.md)
 
 </div>
 

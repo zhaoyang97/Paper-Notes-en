@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Connectivity-Guided Sparsification of 2-FWL GNNs Preserving Full Expressivity
 description: >-
-  [AAAI 2026][LLM Efficiency][Higher-order GNN] Co-Sparsify proposes a connectivity-aware sparsification framework that restricts 3-node interactions to biconnected components and 2-node interactions to connected component…
+  [AAAI 2026][LLM Efficiency][Higher-order GNN] Co-Sparsify proposes a connectivity-aware sparsification framework that restricts 3-node interactions to biconnected components and 2-node interactions to connected components, eliminating provably redundant computation. It preserves full 2-FWL expressivity while substantially improving efficiency, achieving state-of-the-art results on synthetic substructure counting tasks and benchmarks including ZINC and QM9.
 tags:
   - "AAAI 2026"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "biconnected components"
   - "expressivity preservation"
 date: 2026-05-08
-content_hash: a58450dce3319417
+content_hash: 595fcbe979347191
 ---
 
 # Connectivity-Guided Sparsification of 2-FWL GNNs Preserving Full Expressivity
@@ -166,11 +166,11 @@ CoSp-PPGN matches or surpasses PPGN on all substructure counting tasks.
 
 ## Related Papers
 
+- [\[ICLR 2026\] MHLA: Restoring Expressivity of Linear Attention via Token-Level Multi-Head](../../ICLR2026/llm_efficiency/mhla_restoring_expressivity_of_linear_attention_via_token-level_multi-head.md)
 - [\[ACL 2026\] StructKV: Preserving the Structural Skeleton for Scalable Long-Context Inference](../../ACL2026/llm_efficiency/structkv_preserving_the_structural_skeleton_for_scalable_long-context_inference.md)
-- [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](../../ICML2026/llm_efficiency/team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
-- [\[ACL 2026\] Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios](../../ACL2026/llm_efficiency/task-aware_llm_routing_with_multi-level_task-profile-guided_data_synthesis_for_c.md)
-- [\[AAAI 2026\] InterMoE: Individual-Specific 3D Human Interaction Generation via Dynamic Temporal-Selective MoE](intermoe_individual-specific_3d_human_interaction_generation_via_dynamic_tempora.md)
-- [\[AAAI 2026\] MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm](moetta_test-time_adaptation_under_mixed_distribution_shifts_with_moe-layernorm.md)
+- [\[ICLR 2026\] Unlocking Full Efficiency of Token Filtering in Large Language Model Training](../../ICLR2026/llm_efficiency/unlocking_full_efficiency_of_token_filtering_in_large_language_model_training.md)
+- [\[ICML 2026\] TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins](../../ICML2026/llm_efficiency/tuneahead_predicting_fine-tuning_performance_before_full_training_begins.md)
+- [\[ICLR 2026\] Influence-Preserving Proxies for Gradient-Based Data Selection in LLM Fine-Tuning](../../ICLR2026/llm_efficiency/influence-preserving_proxies_for_gradient-based_data_selection_in_llm_finetuning.md)
 
 </div>
 

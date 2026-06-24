@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Gradient Descent with Large Step Sizes: Chaos and Fractal Convergence Region
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper provides a rigorous proof for matrix factorization problems: when gradient descent uses large step sizes close to the critical threshold, fractal convergence boundaries and chaotic dynamics emerge in the parameter space. The final minimum reached (or even whether convergence occurs) becomes extremely sensiti
+  [ICLR 2026][Optimization][large learning rate] This paper provides a rigorous proof for matrix factorization problems: when gradient descent uses large step sizes close to the critical threshold, fractal convergence boundaries and chaotic dynamics emerge in the parameter space. The final minimum reached (or even whether convergence occurs) becomes extremely sensitive to initialization, causing commonly assumed implicit biases—such as "flatness/minimum norm/balance"—to fail co…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "large learning rate"
+  - "matrix factorization"
+  - "chaotic dynamics"
+  - "fractal convergence region"
+  - "implicit bias"
+  - "topological entropy"
 date: 2026-05-08
-content_hash: 18f9c547b5e6a831
+content_hash: b90bf0aefce396ff
 ---
+
 # Gradient Descent with Large Step Sizes: Chaos and Fractal Convergence Region
 
 **Conference**: ICLR 2026  
@@ -105,6 +112,7 @@ Training the same network with weight decay for 3000 steps and visualizing rando
 - **Value**: ⭐⭐⭐⭐⭐ (Profound implications for understanding large learning rates and implicit bias.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

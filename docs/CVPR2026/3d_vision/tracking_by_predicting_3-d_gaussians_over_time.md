@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tracking by Predicting 3-D Gaussians Over Time
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Video-GMAE self-supervisedly encodes a video into "a set of 3-D Gaussian primitives drifting over time"—predicting complete Gaussians for the first frame and only residual displacements for subsequent frames. This inductive bias forces the network to learn cross-frame pixel correspondences, enabling zero-shot point tra
+  [CVPR 2026][3D Vision][Gaussian Splatting] Video-GMAE self-supervisedly encodes a video into "a set of 3-D Gaussian primitives drifting over time"—predicting complete Gaussians for the first frame and only residual displacements for subsequent frames. This inductive bias forces the network to learn cross-frame pixel correspondences, enabling zero-shot point tracking without any tracking annotations. After fine-tuning, it exceeds previous self-supervised methods by 34.6% and 1…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Self-supervised Video Pre-training"
+  - "Point Tracking"
+  - "Masked Autoencoder"
+  - "Temporal Correspondence"
 date: 2026-05-08
-content_hash: 805a17e9b76400c3
+content_hash: b9aaa832265c6260
 ---
+
 # Tracking by Predicting 3-D Gaussians Over Time
 
 **Conference**: CVPR 2026  
@@ -157,9 +163,9 @@ Table 3 Left ($\Delta$Gaussian ablation, Video-GMAE-large, Davis AJ) + Right (Fr
 
 - [\[CVPR 2026\] KV-Tracker: Real-Time Pose Tracking with Transformers](kv-tracker_real-time_pose_tracking_with_transformers.md)
 - [\[CVPR 2026\] AnthroTAP: Learning Point Tracking with Real-World Motion](anthrotap_learning_point_tracking_with_real-world_motion.md)
+- [\[ICLR 2026\] VoMP: Predicting Volumetric Mechanical Property Fields](../../ICLR2026/3d_vision/vomp_predicting_volumetric_mechanical_property_fields.md)
 - [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](zipmap_linear-time_stateful_3d_reconstruction_via_test-time_training.md)
-- [\[CVPR 2026\] TESO: Online Tracking of Essential Matrix by Stochastic Optimization](teso_online_tracking_of_essential_matrix_by_stochastic_optimization.md)
+- [\[CVPR 2025\] 4DTAM: Non-Rigid Tracking and Mapping via Dynamic Surface Gaussians](../../CVPR2025/3d_vision/4dtam_non-rigid_tracking_and_mapping_via_dynamic_surface_gaussians.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fast training of accurate physics-informed neural networks without gradient descent
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper proposes Frozen-PINN, which freezes randomly sampled spatial basis functions and utilizes least squares and adaptive ODE solvers to advance time-varying output layer coefficients. By fundamentally bypassing gradient descent training, it achieves faster training, higher accuracy, and explicit temporal causali
+  [ICLR 2026][Physics & Scientific Computing][Physics-Informed Neural Networks] This paper proposes Frozen-PINN, which freezes randomly sampled spatial basis functions and utilizes least squares and adaptive ODE solvers to advance time-varying output layer coefficients. By fundamentally bypassing gradient descent training, it achieves faster training, higher accuracy, and explicit temporal causality across various time-dependent PDEs.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Physics-Informed Neural Networks"
+  - "PDE Solving"
+  - "Gradient-Free Training"
+  - "Random Features"
+  - "Space-Time Separation"
 date: 2026-05-08
-content_hash: f7e65b351ec55fe2
+content_hash: ecb2f59eda05015c
 ---
+
 # Fast training of accurate physics-informed neural networks without gradient descent
 
 **Conference**: ICLR 2026  
@@ -141,15 +147,16 @@ Frozen-PINN was compared against standard PINNs, Causal PINNs, and traditional m
 - **Value**: ⭐⭐⭐⭐⭐ High impact potential for scientific computing by bypassing the non-convex optimization hurdle.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Iterative Training of Physics-Informed Neural Networks with Fourier-enhanced Features](iterative_training_of_physics-informed_neural_networks_with_fourier-enhanced_fea.md)
 - [\[ICLR 2026\] Enhancing Stability of Physics-Informed Neural Network Training Through Saddle-Point Reformulation](enhancing_stability_of_physics-informed_neural_network_training_through_saddle-p.md)
-- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
+- [\[ICLR 2026\] Iterative Training of Physics-Informed Neural Networks with Fourier-enhanced Features](iterative_training_of_physics-informed_neural_networks_with_fourier-enhanced_fea.md)
 - [\[ICML 2025\] Differentiable Stellar Atmospheres with Physics-Informed Neural Networks](../../ICML2025/physics/differentiable_stellar_atmospheres_with_physics-informed_neural_networks.md)
 - [\[ICLR 2026\] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning](uncertainty-aware_diagnostics_for_physics-informed_machine_learning.md)
+- [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](../../NeurIPS2025/physics/physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
 
 </div>
 

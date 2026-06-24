@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] The authors propose MATA, a multi-agent framework for TableQA that uses a scheduler to prioritize reasoning paths (CoT/PoT/text2SQL), a confidence checker to filter answers, and a judge agent for arbitration. This model-agnostic, efficient framework achieves an average EM improvement of 40.1% across 10 LLMs.
+  [ACL 2026 Findings][Multi-Agent][Table Question Answering] The authors propose MATA, a multi-agent framework for TableQA that uses a scheduler to prioritize reasoning paths (CoT/PoT/text2SQL), a confidence checker to filter answers, and a judge agent for arbitration. This model-agnostic, efficient framework achieves an average EM improvement of 40.1% across 10 LLMs.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Multi-Agent"
+  - "Table Question Answering"
+  - "Multi-Agent Framework"
+  - "Multi-Reasoning Paths"
+  - "Model-Agnostic"
+  - "LLM Efficiency"
 date: 2026-05-08
-content_hash: ea36df08a7c1907e
+content_hash: 54cdbef3e253e6cc
 ---
+
 # MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering
 
 **Conference**: ACL 2026 Findings  
@@ -135,9 +141,9 @@ The Scheduler and Confidence Checker were trained on 173,664 samples. Scheduler 
 
 - [\[AAAI 2026\] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring](../../AAAI2026/multi_agent/hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia.md)
 - [\[ACL 2026\] EvoSci: A Bio-Inspired Multi-Agent Framework for the Evolution of Scientific Discovery](evosci_a_bio-inspired_multi-agent_framework_for_the_evolution_of_scientific_disc.md)
+- [\[ICLR 2026\] HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatre](../../ICLR2026/multi_agent/hamlet_a_hierarchical_and_adaptive_multi-agent_framework_for_live_embodied_theat.md)
 - [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
-- [\[ACL 2026\] A Multi-Agent Framework for Feature-Constrained Difficulty Control in Reading Comprehension Item Generation](a_multi-agent_framework_for_feature-constrained_difficulty_control_in_reading_co.md)
-- [\[ACL 2026\] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing](masfactory_a_graph-centric_framework_for_orchestrating_llm-based_multi-agent_sys.md)
+- [\[ACL 2026\] MAGEO: From Experience to Skill — Multi-Agent Generative Engine Optimization via Reusable Strategy Learning](from_experience_to_skill_multi-agent_generative_engine_optimization_via_reusable.md)
 
 </div>
 

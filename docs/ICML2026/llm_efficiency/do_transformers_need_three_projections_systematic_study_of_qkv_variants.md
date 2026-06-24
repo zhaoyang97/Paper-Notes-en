@@ -1,17 +1,20 @@
 ---
 title: >-
-  [Paper Note] Do Transformers Need Three Projections？三选一/二的 QKV 共享系统研究
+  [Paper Note] Do Transformers Need Three Projections? A Systematic Study of QKV Sharing Systems
 description: >-
-  [ICML 2026][LLM Efficiency][KV cache] The paper systematically compares three QKV projection sharing schemes: Q=K-V (shared query and key), Q-K=V (shared key and value), and Q=K=V (all three shared). It finds that for Language Modeling (LM), Q-K=V increases Perplexity (PPL) by only 3.1% while reducing the KV cache by 50%. This approach is orthogonal to GQA
+  [ICML 2026][LLM Efficiency][QKV Sharing] The paper systematically compares three QKV projection sharing schemes: Q=K-V (shared query and key), Q-K=V (shared key and value), and Q=K=V (all three shared). It finds that for Language Modeling (LM), Q-K=V increases Perplexity (PPL) by only 3.1% while reducing the KV cache by 50%. This approach is orthogonal to GQA/MQA, enabling a total cache reduction of 87.5%–96.9%, providing quantifiable memory benefits for edge inference.
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - KV cache
-  - GQA/MQA
-  - weight tying
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "QKV Sharing"
+  - "KV cache"
+  - "GQA/MQA"
+  - "Attention Sharing"
+  - "Weight Tying"
 date: 2026-05-08
-content_hash: 87b23dfe486bcc88
+content_hash: d6ce327698b68e85
 ---
+
 # Do Transformers Need Three Projections? A Systematic Study of QKV Sharing Systems
 
 **Conference**: ICML 2026  
@@ -148,15 +151,14 @@ For the 300M model, Q-K=V PPL increases by only 3.1% compared to QKV while halvi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](../../ICLR2026/llm_efficiency/attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
 - [\[NeurIPS 2025\] Tensor Product Attention Is All You Need](../../NeurIPS2025/llm_efficiency/tensor_product_attention_is_all_you_need.md)
-- [\[ICLR 2026\] Universe Routing: Why Self-Evolving Agents Need Epistemic Control](../../ICLR2026/llm_efficiency/universe_routing_why_self-evolving_agents_need_epistemic_control.md)
-- [\[ICLR 2026\] Efficient Resource-Constrained Training of Transformers via Subspace Optimization](../../ICLR2026/llm_efficiency/efficient_resource-constrained_training_of_transformers_via_subspace_optimizatio.md)
-- [\[NeurIPS 2025\] Constant Bit-Size Transformers Are Turing Complete](../../NeurIPS2025/llm_efficiency/constant_bit-size_transformers_are_turing_complete.md)
-- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](../../NeurIPS2025/llm_efficiency/zeros_zero-sum_linear_attention_for_efficient_transformers.md)
+- [\[ICML 2026\] RKSC: Reasoning-Aware KV Cache Sharing and Confident Early Exit for Multi-Step LLM Inference](rksc_reasoning-aware_kv_cache_sharing_and_confident_early_exit_for_multi-step_ll.md)
+- [\[ICLR 2026\] Reasoning Language Model Inference Serving Unveiled: An Empirical Study](../../ICLR2026/llm_efficiency/reasoning_language_model_inference_serving_unveiled_an_empirical_study.md)
+- [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
 
 </div>
 

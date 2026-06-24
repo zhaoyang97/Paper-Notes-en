@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Closer Look at Knowledge Distillation in Spiking Neural Network Training
 description: >-
-  [AAAI 2026][Model Compression][Knowledge Distillation] To address the overlooked distribution mismatch between teacher ANN continuous features/logits and student SNN discrete sparse spike features/logits in ANN→SNN knowl…
+  [AAAI 2026][Model Compression][Knowledge Distillation] To address the overlooked distribution mismatch between teacher ANN continuous features/logits and student SNN discrete sparse spike features/logits in ANN→SNN knowledge distillation, this paper proposes the CKDSNN framework based on Saliency-scaled Activation Map Distillation (SAMD) and Noise-smoothed Logits Distillation (NLD), achieving new state-of-the-art SNN training performance on CIFAR-10/100, ImageNet-1K…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Noise Smoothing"
   - "Energy-Efficient Training"
 date: 2026-05-08
-content_hash: 657556c450ce4dfb
+content_hash: 509d9b3893ec967a
 ---
 
 # A Closer Look at Knowledge Distillation in Spiking Neural Network Training
@@ -132,10 +132,10 @@ The SAM design philosophy is transferable: directly leveraging a model's intrins
 ## Related Papers
 
 - [\[ICLR 2026\] Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation](../../ICLR2026/model_compression/rectified_decoupled_dataset_distillation_a_closer_look_for_fair_and_comprehensiv.md)
-- [\[NeurIPS 2025\] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks](../../NeurIPS2025/model_compression/spiking_brain_compression_post-training_second-order_compression_for_spiking_neu.md)
+- [\[ICML 2025\] Efficient Logit-based Knowledge Distillation of Deep Spiking Neural Networks for Full-Range Timestep Deployment](../../ICML2025/model_compression/efficient_logit-based_knowledge_distillation_of_deep_spiking_neural_networks_for.md)
+- [\[ICLR 2026\] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks](../../ICLR2026/model_compression/cannistraci-hebb_training_on_ultra-sparse_spiking_neural_networks.md)
+- [\[ICLR 2026\] Beyond Student: An Asymmetric Network for Neural Network Inheritance](../../ICLR2026/model_compression/beyond_student_an_asymmetric_network_for_neural_network_inheritance.md)
 - [\[AAAI 2026\] Condensed Data Expansion Using Model Inversion for Knowledge Distillation](condensed_data_expansion_using_model_inversion_for_knowledge_distillation.md)
-- [\[AAAI 2026\] Stratified Knowledge-Density Super-Network for Scalable Vision Transformers](stratified_knowledge-density_super-network_for_scalable_vision_transformers.md)
-- [\[NeurIPS 2025\] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing](../../NeurIPS2025/model_compression/synergy_between_the_strong_and_the_weak_spiking_neural_networks_are_inherently_s.md)
 
 </div>
 

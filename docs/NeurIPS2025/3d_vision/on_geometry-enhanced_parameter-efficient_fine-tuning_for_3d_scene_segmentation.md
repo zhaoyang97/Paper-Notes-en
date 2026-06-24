@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation
 description: >-
-  [NeurIPS 2025][3D Vision][Parameter-Efficient Fine-Tuning] This paper proposes the Geometry Encoding Mixer (GEM), a geometry-aware PEFT module designed for 3D point cloud Transformers. It captures fine-grained local geom…
+  [NeurIPS 2025][3D Vision][Parameter-Efficient Fine-Tuning] This paper proposes the Geometry Encoding Mixer (GEM), a geometry-aware PEFT module designed for 3D point cloud Transformers. It captures fine-grained local geometric details via a Spatial Adapter and injects global scene context via a Context Adapter, achieving performance on par with or exceeding full fine-tuning while updating only 1.6% of parameters.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Scene Understanding"
   - "Transformer"
 date: 2026-05-08
-content_hash: 39163f55e1c5efe2
+content_hash: 410d7283d440a973
 ---
 
 # On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation
@@ -121,8 +121,8 @@ In data efficiency experiments, GEM achieves 47.5 mIoU with only 1% annotated sc
 - [\[NeurIPS 2025\] Mesh-RFT: Enhancing Mesh Generation via Fine-Grained Reinforcement Fine-Tuning](mesh-rft_enhancing_mesh_generation_via_fine-grained_reinforcement_fine-tuning.md)
 - [\[AAAI 2026\] Parameter-Free Fine-tuning via Redundancy Elimination for Vision Foundation Models](../../AAAI2026/3d_vision/parameter-free_fine-tuning_via_redundancy_elimination_for_vision_foundation_mode.md)
 - [\[NeurIPS 2025\] Object-Centric Representation Learning for Enhanced 3D Semantic Scene Graph Prediction](object-centric_representation_learning_for_enhanced_3d_semantic_scene_graph_pred.md)
+- [\[CVPR 2025\] PMA: Towards Parameter-Efficient Point Cloud Understanding via Point Mamba Adapter](../../CVPR2025/3d_vision/pma_towards_parameter-efficient_point_cloud_understanding_via_point_mamba_adapte.md)
 - [\[NeurIPS 2025\] EUGens: Efficient, Unified, and General Dense Layers](eugens_efficient_unified_and_general_dense_layers.md)
-- [\[NeurIPS 2025\] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations](openlex3d_a_tiered_evaluation_benchmark_for_open-vocabulary_3d_scene_representat.md)
 
 </div>
 

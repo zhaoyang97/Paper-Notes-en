@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Path Not Taken: Duality in Reasoning about Program Execution
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] This paper proposes the concept of duality in program execution reasoning. Through the DexBench benchmark (445 paired instances), it jointly evaluates LLMs' forward execution reasoning (predicting code coverage under a given input) and backward counterfactual reasoning (inferring input mutations that redirect execution
+  [ACL 2026][Code Intelligence][Program Execution Reasoning] This paper proposes the concept of duality in program execution reasoning. Through the DexBench benchmark (445 paired instances), it jointly evaluates LLMs' forward execution reasoning (predicting code coverage under a given input) and backward counterfactual reasoning (inferring input mutations that redirect execution flow to a target branch). It discovers that strong performance in a single direction does not transl…
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Program Execution Reasoning"
+  - "Counterfactual Reasoning"
+  - "Dual-path Reasoning"
+  - "Code Coverage"
+  - "LLM Code Understanding"
 date: 2026-05-08
-content_hash: 837a5803e022b02d
+content_hash: 2fcaf66683008bc8
 ---
+
 # The Path Not Taken: Duality in Reasoning about Program Execution
 
 **Conference**: ACL 2026  
@@ -122,11 +128,11 @@ An instance is successful under dual-path reasoning if and only if both sides ar
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Natural Geometry of Code: Hyperbolic Representation Learning for Program Reasoning](../../ICLR2026/code_intelligence/the_natural_geometry_of_code_hyperbolic_representation_learning_for_program_reas.md)
 - [\[NeurIPS 2025\] Once Upon an Input: Reasoning via Per-Instance Program Synthesis](../../NeurIPS2025/code_intelligence/once_upon_an_input_reasoning_via_per-instance_program_synthesis.md)
+- [\[ICML 2025\] Reasoning Through Execution: Unifying Process and Outcome Rewards for Code Generation](../../ICML2025/code_intelligence/reasoning_through_execution_unifying_process_and_outcome_rewards_for_code_genera.md)
 - [\[ICML 2026\] BoostAPR: Boosting Automated Program Repair via Execution-Grounded Reinforcement Learning with Dual Reward Models](../../ICML2026/code_intelligence/boostapr_boosting_automated_program_repair_via_execution-grounded_reinforcement_.md)
 - [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
-- [\[ICML 2025\] Reasoning Through Execution: Unifying Process and Outcome Rewards for Code Generation](../../ICML2025/code_intelligence/reasoning_through_execution_unifying_process_and_outcome_rewards_for_code_genera.md)
-- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
 
 </div>
 

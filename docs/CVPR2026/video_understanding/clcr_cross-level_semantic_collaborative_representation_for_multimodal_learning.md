@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] The CLCR framework is proposed to organize each modal feature into three semantic levels (shallow/middle/deep). It utilizes an Intra-level Controlled Exchange Domain (IntraCED) to restrict cross-modal interaction within a shared subspace and an Inter-layer Collaborative Aggregation Domain (InterCAD) for adaptive cross-
+  [CVPR 2026][Video Understanding][Cross-level semantic alignment] The CLCR framework is proposed to organize each modal feature into three semantic levels (shallow/middle/deep). It utilizes an Intra-level Controlled Exchange Domain (IntraCED) to restrict cross-modal interaction within a shared subspace and an Inter-layer Collaborative Aggregation Domain (InterCAD) for adaptive cross-layer fusion, addressing the cross-level semantic asynchrony problem in multimodal learning.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Cross-level semantic alignment"
+  - "shared-private decoupling"
+  - "multimodal fusion"
+  - "sentiment analysis"
+  - "event localization"
 date: 2026-05-08
-content_hash: bd884bd779b0fa82
+content_hash: 6c09a89ffe3135cd
 ---
+
 # CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning
 
 **Conference**: CVPR 2026  
@@ -165,9 +171,9 @@ Training Config: SGD (momentum 0.9), lr 1e-3, weight decay 1e-4, batch 64, 100 e
 
 - [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
 - [\[CVPR 2025\] SEAL: SEmantic Attention Learning for Long Video Representation](../../CVPR2025/video_understanding/seal_semantic_attention_learning_for_long_video_representation.md)
-- [\[CVPR 2026\] MTLLFM: Multimodal-Temporal Laughter Localization](mtllfm_multimodal-temporal_laughter_localization_ur-funny-temporal_and_smile-tem.md)
 - [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)
 - [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
+- [\[CVPR 2026\] SMV-EAR: Bring Spatiotemporal Multi-View Representation Learning into Efficient Event-Based Action Recognition](smv-ear_bring_spatiotemporal_multi-view_representation_learning_into_efficient_e.md)
 
 </div>
 

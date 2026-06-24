@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] AttnRL uses the model's own attention scores as a "compass" to perform tree branching on critical reasoning steps (rather than using fixed lengths or entropy). Combined with difficulty-adaptive sampling and a one-step off-policy training pipeline, it enables Process-Supervised RL (PSRL) to improve mathematical reasonin
+  [ICLR2026][Reasoning][Process-Supervised RL] AttnRL uses the model's own attention scores as a "compass" to perform tree branching on critical reasoning steps (rather than using fixed lengths or entropy). Combined with difficulty-adaptive sampling and a one-step off-policy training pipeline, it enables Process-Supervised RL (PSRL) to improve mathematical reasoning while saving computation—achieving a 7.5% average gain on 1.5B models with shorter wall-clock time than TreeRL.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Process-Supervised RL"
+  - "Attention Branching"
+  - "Adaptive Sampling"
+  - "Exploration Efficiency"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 607a45b7b562ad96
+content_hash: 7d001f863e172836
 ---
+
 # Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models
 
 **Conference**: ICLR2026  
@@ -129,6 +135,7 @@ On DS-R1-Distill-Qwen-1.5B (Average Pass@1):
 - Value: ⭐⭐⭐⭐ Practical improvements for PSRL efficiency and performance.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -136,8 +143,8 @@ On DS-R1-Distill-Qwen-1.5B (Average Pass@1):
 - [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
 - [\[ICLR 2026\] FROST: Filtering Reasoning Outliers with Attention for Efficient Reasoning](frost_filtering_reasoning_outliers_with_attention_for_efficient_reasoning.md)
 - [\[ICLR 2026\] Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning](beyond_markovian_reflective_exploration_via_bayes-adaptive_rl_for_llm_reasoning.md)
-- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 - [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](../../ACL2026/llm_reasoning/reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
+- [\[ACL 2025\] An Efficient and Precise Training Data Construction Framework for Process-Supervised Reward Model in Mathematical Reasoning](../../ACL2025/llm_reasoning/an_efficient_and_precise_training_data_construction_framework_for_process-superv.md)
 
 </div>
 

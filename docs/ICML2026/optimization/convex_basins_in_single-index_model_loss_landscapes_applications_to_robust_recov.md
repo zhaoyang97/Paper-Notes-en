@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] Under heavy-tailed noise and constant-proportion strong adversarial corruption, the authors prove that a dimension-independent, constant-radius convex basin exists in the squared loss of Gaussian Single-Index Models for a wide class of non-monotonic link functions (GeLU, Swish, Tanh, Probit, Logistic, Phase Retrieval..
+  [ICML2026][Optimization][Single-Index Model] Under heavy-tailed noise and constant-proportion strong adversarial corruption, the authors prove that a dimension-independent, constant-radius convex basin exists in the squared loss of Gaussian Single-Index Models for a wide class of non-monotonic link functions (GeLU, Swish, Tanh, Probit, Logistic, Phase Retrieval...). Based on this, they design a robust recovery algorithm with $\tilde{O}(nd)$ time and $\tilde{O}(d)$ sample comp…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Single-Index Model"
+  - "Robust Regression"
+  - "Heavy-tailed Noise"
+  - "Strong Adversarial Corruption"
+  - "Convex Basin"
+  - "Spectral Initialization"
 date: 2026-05-08
-content_hash: 562987375fb7b2dd
+content_hash: ccabd85658e9be2c
 ---
+
 # Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption
 
 **Conference**: ICML2026  
@@ -111,15 +118,16 @@ This is a theoretical paper. The following tables summarize theoretical metrics 
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust Estimation Under Heterogeneous Corruption Rates](../../NeurIPS2025/optimization/robust_estimation_under_heterogeneous_corruption_rates.md)
+- [\[ICML 2026\] Full-Batch Gradient Descent Outperforms One-Pass SGD: Sample Complexity Separation in Single-Index Learning](full-batch_gradient_descent_outperforms_one-pass_sgd_sample_complexity_separatio.md)
 - [\[NeurIPS 2025\] Learning Single-Index Models via Harmonic Decomposition](../../NeurIPS2025/optimization/learning_single-index_models_via_harmonic_decomposition.md)
 - [\[ICML 2026\] Automatic Unsupervised Ensemble Outlier Model Selection–Extended Version](automatic_unsupervised_ensemble_outlier_model_selection--extended_version.md)
-- [\[AAAI 2026\] Convex Clustering Redefined: Robust Learning with the Median of Means Estimator](../../AAAI2026/optimization/convex_clustering_redefined_robust_learning_with_higher_order_norms_and_beyond.md)
-- [\[ICML 2026\] Full-Batch Gradient Descent Outperforms One-Pass SGD: Sample Complexity Separation in Single-Index Learning](full-batch_gradient_descent_outperforms_one-pass_sgd_sample_complexity_separatio.md)
+- [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](../../ICLR2026/optimization/clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
 
 </div>
 

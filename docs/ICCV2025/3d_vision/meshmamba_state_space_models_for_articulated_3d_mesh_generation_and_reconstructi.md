@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MeshMamba: State Space Models for Articulated 3D Mesh Generation and Reconstruction
 description: >-
-  [ICCV2025][3D Vision][Mamba] MeshMamba introduces a Mamba state space model-based approach for articulated 3D mesh generation and reconstruction. By designing vertex serialization strategies based on body-part UV maps an…
+  [ICCV2025][3D Vision][Mamba] MeshMamba introduces a Mamba state space model-based approach for articulated 3D mesh generation and reconstruction. By designing vertex serialization strategies based on body-part UV maps and template mesh coordinates, the method achieves efficient generation and reconstruction of meshes with tens of thousands of vertices, running 6–9× faster than Transformer-based counterparts.
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "human mesh recovery"
   - "vertex serialization"
 date: 2026-05-08
-content_hash: e345d7b598a361da
+content_hash: e43881768610eb25
 ---
 
 # MeshMamba: State Space Models for Articulated 3D Mesh Generation and Reconstruction
@@ -163,10 +163,10 @@ This work is the first to introduce Mamba into 3D mesh generation and reconstruc
 ## Related Papers
 
 - [\[ICCV 2025\] Global-Aware Monocular Semantic Scene Completion with State Space Models](global-aware_monocular_semantic_scene_completion_with_state_space_models.md)
+- [\[CVPR 2025\] Mesh Mamba: A Unified State Space Model for Saliency Prediction in Non-Textured and Textured Meshes](../../CVPR2025/3d_vision/mesh_mamba_a_unified_state_space_model_for_saliency_prediction_in_non-textured_a.md)
 - [\[ICCV 2025\] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling](ust-ssm_unified_spatio-temporal_state_space_models_for_point_cloud_video_modelin.md)
 - [\[NeurIPS 2025\] MVSMamba: Multi-View Stereo with State Space Model](../../NeurIPS2025/3d_vision/mvsmamba_multi-view_stereo_with_state_space_model.md)
 - [\[ICCV 2025\] Nautilus: Locality-aware Autoencoder for Scalable Mesh Generation](nautilus_locality-aware_autoencoder_for_scalable_mesh_generation.md)
-- [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Computational Method for Measuring "Open Codes" in Qualitative Analysis
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] This paper proposes a theory-based computational method to systematically evaluate human and AI performance in inductive qualitative coding through an LLM-enhanced code merging algorithm and four ground-truth-free metrics (Coverage, Overlap, Novelty, and Divergence).
+  [ACL 2026 Findings][NLP Understanding][Inductive Coding] This paper proposes a theory-based computational method to systematically evaluate human and AI performance in inductive qualitative coding through an LLM-enhanced code merging algorithm and four ground-truth-free metrics (Coverage, Overlap, Novelty, and Divergence).
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026 Findings"
+  - "NLP Understanding"
+  - "Inductive Coding"
+  - "Qualitative Analysis"
+  - "LLM-assisted Evaluation"
+  - "Code Space Aggregation"
+  - "Team Collaboration Evaluation"
 date: 2026-05-08
-content_hash: 34a1ae3024db8adc
+content_hash: b8e13f24cff89000
 ---
+
 # A Computational Method for Measuring "Open Codes" in Qualitative Analysis
 
 **Conference**: ACL 2026 Findings  
@@ -125,7 +131,7 @@ This paper does not involve model training. The merging algorithm utilizes cosin
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

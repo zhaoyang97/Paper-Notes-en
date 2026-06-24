@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Toward Real-world Text Image Forgery Localization: Structured and Interpretable Data Synthesis
 description: >-
-  [NeurIPS 2025][Interpretability][Text image forgery] This paper proposes FSTS, a Fourier-series-inspired forgery synthesis framework that models the "invisible distribution" (the high-dimensional distribution of forgery…
+  [NeurIPS 2025][Interpretability][Text image forgery] This paper proposes FSTS, a Fourier-series-inspired forgery synthesis framework that models the "invisible distribution" (the high-dimensional distribution of forgery operation parameters) from 16,750 real-world forgery instances collected from 67 human participants, generating synthetic training data that more closely approximates real-world forgeries and substantially improving the generalization of text image forgery loc…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Fourier series"
   - "forgery parameters"
 date: 2026-05-08
-content_hash: 6185adca1a0f4c70
+content_hash: 4b0f187bb10bc806
 ---
 
 # Toward Real-world Text Image Forgery Localization: Structured and Interpretable Data Synthesis
@@ -129,11 +129,11 @@ All methods trained on FSTS-T substantially outperform their DocT-T counterparts
 
 ## Related Papers
 
+- [\[ICLR 2026\] REAL: Reading Out Transformer Activations for Precise Localization in Language Model Steering](../../ICLR2026/interpretability/real_reading_out_transformer_activations_for_precise_localization_in_language_mo.md)
+- [\[ACL 2025\] EXPERT: An Explainable Image Captioning Evaluation Metric with Structured Explanations](../../ACL2025/interpretability/expert_an_explainable_image_captioning_evaluation_metric_with_structured_explana.md)
 - [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)
-- [\[ACL 2026\] Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models](../../ACL2026/interpretability/follow_the_flow_on_information_flow_across_textual_tokens_in_text-to-image_model.md)
-- [\[NeurIPS 2025\] AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation](agentiql_an_agent-inspired_multi-expert_framework_for_text-to-sql_generation.md)
-- [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](../../AAAI2026/interpretability/shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
-- [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
+- [\[CVPR 2025\] Why Does It Look There? Structured Explanations for Image Classification](../../CVPR2025/interpretability/why_does_it_look_there_structured_explanations_for_image_classification.md)
+- [\[NeurIPS 2025\] Geometric Priors for Generalizable World Models via Vector Symbolic Architecture](geometric_priors_for_generalizable_world_models_via_vector_symbolic_architecture.md)
 
 </div>
 

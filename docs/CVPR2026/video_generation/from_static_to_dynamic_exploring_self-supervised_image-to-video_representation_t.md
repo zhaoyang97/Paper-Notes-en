@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning
 description: >-
-  [CVPR 2026][Video Generation][Self-Supervised Learning] This paper proposes the Co-Settle framework, which trains a lightweight linear projection layer on a frozen image pre-trained encoder. By leveraging temporal cycle consistency loss and semantic separability constraints, it consistently enhances multi-granularity video downstream task performance across 8 image foundati
+  [CVPR 2026][Video Generation][Image-to-video transfer] This paper proposes the Co-Settle framework, which trains a lightweight linear projection layer on a frozen image pre-trained encoder. By leveraging temporal cycle consistency loss and semantic separability constraints, it consistently enhances multi-granularity video downstream task performance across 8 image foundation models with only 5 epochs of self-supervised training.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Image-to-video transfer"
+  - "Self-supervised learning"
+  - "Temporal consistency"
+  - "Semantic separability"
+  - "Lightweight projection"
 date: 2026-05-08
-content_hash: 14f041f1fb0c4b75
+content_hash: be1a097c516dae70
 ---
+
 # From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning
 
 **Conference**: CVPR 2026  
@@ -144,14 +149,15 @@ Here $\mathbf{z}$ represents original features and $\mathbf{p}$ represents proje
 - Value: ⭐⭐⭐⭐ Provides an efficient baseline and theoretical framework for image-to-video transfer, though the application scope is relatively vertical.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] VidPrism: Heterogeneous Mixture of Experts for Image-to-Video Transfer](vidprism_heterogeneous_mixture_of_experts_for_image-to-video_transfer.md)
 - [\[CVPR 2026\] GT-SVJ: Generative-Transformer-Based Self-Supervised Video Judge For Efficient Video Reward Modeling](gt-svj_generative-transformer-based_self-supervised_video_judge.md)
 - [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
 - [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
+- [\[CVPR 2026\] Content-Aware Dynamic Patchification for Efficient Video Diffusion](content-aware_dynamic_patchification_for_efficient_video_diffusion.md)
 - [\[CVPR 2026\] SMRABooth: Subject and Motion Representation Alignment for Customized Video Generation](smrabooth_subject_and_motion_representation_alignment_for_customized_video_gener.md)
 
 </div>

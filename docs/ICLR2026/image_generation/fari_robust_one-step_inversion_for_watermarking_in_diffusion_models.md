@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] FARI: Robust One-Step Inversion for Watermarking in Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][LoRA] FARI identifies a geometric asymmetry where the "curvature of the inversion trajectory is significantly lower than that of the generation trajectory." Based on this, it distills multi-step DDIM inversion into a single step and employs lightweight adversarial LoRA fine-tuning to specifically enhance watermark extraction
+  [ICLR 2026][Image Generation][Diffusion model watermarking] FARI identifies a geometric asymmetry where the "curvature of the inversion trajectory is significantly lower than that of the generation trajectory." Based on this, it distills multi-step DDIM inversion into a single step and employs lightweight adversarial LoRA fine-tuning to specifically enhance watermark extraction robustness. With just 20 minutes of fine-tuning on a single A6000…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - LoRA
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion model watermarking"
+  - "DDIM inversion"
+  - "one-step inversion"
+  - "trajectory distillation"
+  - "adversarial training"
+  - "LoRA"
+  - "robustness"
 date: 2026-05-08
-content_hash: f9c3c30b1e50ab2b
+content_hash: b607a59c104ee2e2
 ---
+
 # FARI: Robust One-Step Inversion for Watermarking in Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -131,15 +138,15 @@ Key Point: FARI achieves the **most robust results with the lowest NFE (1)**. On
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Guidance Watermarking for Diffusion Models](guidance_watermarking_for_diffusion_models.md)
 - [\[CVPR 2026\] InverFill: One-Step Inversion for Enhanced Few-Step Diffusion Inpainting](../../CVPR2026/image_generation/inverfill_one-step_inversion_for_enhanced_few-step_diffusion_inpainting.md)
 - [\[CVPR 2026\] SPDMark: Selective Parameter Displacement for Robust Video Watermarking](../../CVPR2026/image_generation/spdmark_selective_parameter_displacement_for_robust_video_watermarking.md)
-- [\[ICLR 2026\] On the Design of One-Step Diffusion via Shortcutting Flow Paths](on_the_design_of_one-step_diffusion_via_shortcutting_flow_paths.md)
 - [\[ICLR 2026\] SERUM: Simple, Efficient, Robust, and Unifying Marking for Diffusion-based Image Generation](serum_simple_efficient_robust_and_unifying_marking_for_diffusion-based_image_gen.md)
+- [\[ICLR 2026\] On the Design of One-Step Diffusion via Shortcutting Flow Paths](on_the_design_of_one-step_diffusion_via_shortcutting_flow_paths.md)
 
 </div>
 

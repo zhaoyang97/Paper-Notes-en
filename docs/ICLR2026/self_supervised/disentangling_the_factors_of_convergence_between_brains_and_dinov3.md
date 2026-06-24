@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Disentangling the Factors of Convergence between Brains and DINOv3
 description: >-
-  [ICLR 2026][Self-Supervised Learning][DINOv3] The authors train a series of DINOv3 self-supervised vision models with systematically controlled variables from scratch. Using three complementary metrics—"Encoding Score / Spatial Score / Temporal Score"—they align model representations with human fMRI and MEG data. This approach quantitatively disentangles how "mode
+  [ICLR 2026][Self-Supervised Learning][Brain-model alignment] The authors train a series of DINOv3 self-supervised vision models with systematically controlled variables from scratch. Using three complementary metrics—"Encoding Score / Spatial Score / Temporal Score"—they align model representations with human fMRI and MEG data. This approach quantitatively disentangles how "model scale, training amount, and image type" independently and interactively drive models to become "b…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - DINOv3
-  - fMRI/MEG
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Brain-model alignment"
+  - "DINOv3"
+  - "fMRI/MEG"
+  - "Representational developmental timing"
 date: 2026-05-08
-content_hash: 88f070491bb26835
+content_hash: 82814b1232cad3f1
 ---
+
 # Disentangling the Factors of Convergence between Brains and DINOv3
 
 **Conference**: ICLR 2026  
@@ -135,8 +138,8 @@ Varying single factors while holding others constant.
 - [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
 - [\[NeurIPS 2025\] Disentangling Hyperedges through the Lens of Category Theory](../../NeurIPS2025/self_supervised/disentangling_hyperedges_through_the_lens_of_category_theory.md)
 - [\[CVPR 2026\] Teaching DINOv3 About Partial 3D Geometry: A Self-Supervised Geometry-Aware Approach](../../CVPR2026/self_supervised/teaching_dinov3_about_partial_3d_geometry_a_self-supervised_geometry-aware_appro.md)
-- [\[ICLR 2026\] Rethinking Unsupervised Cross-Modal Flow Estimation: Learning from Decoupled Optimization and Consistency Constraint](rethinking_unsupervised_cross-modal_flow_estimation_learning_from_decoupled_opti.md)
-- [\[ICLR 2026\] SNAP-UQ: Self-supervised Next-Activation Prediction for Single-Pass Uncertainty](snap-uq_self-supervised_next-activation_prediction_for_single-pass_uncertainty_i.md)
+- [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
+- [\[ICLR 2026\] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods](understanding_the_learning_phases_in_self-supervised_learning_via_critical_perio.md)
 
 </div>
 

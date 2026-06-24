@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training
 description: >-
-  [CVPR 2026][AI Safety][Vision Transformer] This paper introduces a "Gradient Path Masking" diagnostic tool to dissect the internal information flow of ViT attention. It discovers that the residual path is the primary vulnerability for adversarial attacks, while the QK path carries robustness. Based on these insights, a simple two-stage adversarial training is d
+  [CVPR 2026][AI Safety][Adversarial Training] This paper introduces a "Gradient Path Masking" diagnostic tool to dissect the internal information flow of ViT attention. It discovers that the residual path is the primary vulnerability for adversarial attacks, while the QK path carries robustness. Based on these insights, a simple two-stage adversarial training is designed (Teacher ViT provides class attention map priors + Student distillation + Residual gating)…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Vision Transformer
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Training"
+  - "Vision Transformer"
+  - "Gradient Path"
+  - "Class Attention Distillation"
+  - "Residual Gating"
 date: 2026-05-08
-content_hash: 9bfcabf53711f7ac
+content_hash: 07aa8e727946cbfc
 ---
+
 # Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training
 
 **Conference**: CVPR 2026  
@@ -153,8 +158,8 @@ CAM distillation is the primary contributor (+1.8% Clean / +0.7% AA), with resid
 - [\[CVPR 2026\] ReMoE: Region-Mixture Experts for Adversarially-Robust Vision Transformers](remoe_region-mixture_experts_for_adversarially-robust_vision_transformers.md)
 - [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
 - [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
-- [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
 - [\[CVPR 2026\] Taming the Long Tail: Rebalancing Adversarial Training via Adaptive Perturbation](taming_the_long_tail_rebalancing_adversarial_training_via_adaptive_perturbation.md)
+- [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
 
 </div>
 

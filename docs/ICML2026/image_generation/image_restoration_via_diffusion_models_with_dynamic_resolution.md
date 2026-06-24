@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Image Restoration via Diffusion Models with Dynamic Resolution
 description: >-
-  [ICML 2026][Image Generation][DAPS] SubDAPS / SubDAPS++ integrates pixel-space diffusion restoration methods (such as DPS and DAPS) into a "dynamic resolution diffusion" framework—sampling in $64^2 / 128^2$ subspaces during early stages and returning to the $256^2$ full resolution later. By replacing Langevin with Conjugate Gradient (CG), using threshold
+  [ICML 2026][Image Generation][Dynamic Resolution Diffusion] SubDAPS / SubDAPS++ integrates pixel-space diffusion restoration methods (such as DPS and DAPS) into a "dynamic resolution diffusion" framework—sampling in $64^2 / 128^2$ subspaces during early stages and returning to the $256^2$ full resolution later. By replacing Langevin with Conjugate Gradient (CG), using threshold-based switching between stochastic/deterministic sampling, and adding a corrector step that require…
 tags:
-  - ICML 2026
-  - Image Generation
-  - DAPS
-  - predictor-corrector
-  - ISR
+  - "ICML 2026"
+  - "Image Generation"
+  - "Dynamic Resolution Diffusion"
+  - "DAPS"
+  - "Conjugate Gradient"
+  - "predictor-corrector"
+  - "ISR"
 date: 2026-05-08
-content_hash: c861f963fb1c80d0
+content_hash: 100e758cc4f2bf32
 ---
+
 # Image Restoration via Diffusion Models with Dynamic Resolution
 
 **Conference**: ICML 2026  
@@ -149,7 +152,7 @@ where $\lambda_t = \log(\alpha_t/\sigma_t)$ is the half log-SNR. Crucially, this
 - [\[ICLR 2026\] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration](../../ICLR2026/image_generation/eliminating_vae_for_fast_and_high-resolution_generative_detail_restoration.md)
 - [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](../../CVPR2026/image_generation/residual_diffusion_bridge_model_for_image_restoration.md)
 - [\[ICML 2026\] Q-DiT4SR: Exploration of Detail-Preserving Diffusion Transformer Quantization for Real-World Image Super-Resolution](q-dit4sr_exploration_of_detail-preserving_diffusion_transformer_quantization_for.md)
-- [\[ICML 2026\] Learning General Causal Structures with Hidden Dynamic Process for Climate Analysis](learning_general_causal_structures_with_hidden_dynamic_process_for_climate_analy.md)
+- [\[ICML 2026\] UnHype: CLIP-Guided Hypernetworks for Dynamic LoRA Unlearning](unhype_clip-guided_hypernetworks_for_dynamic_lora_unlearning.md)
 
 </div>
 

@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding
 description: >-
-  [ICLR 2026][LLM Efficiency][diffusion LLM] Addressing the pain point that parallel decoding in diffusion large language models (dLLMs) relies on fixed heuristics (e.g., confidence thresholds) and lacks adaptability to different inputs, this paper employs an extremely lightweight learnable filter (2-layer MLP, ~2k parameters, 6-minute training) to approximate an
+  [ICLR 2026][LLM Efficiency][diffusion LLM] Addressing the pain point that parallel decoding in diffusion large language models (dLLMs) relies on fixed heuristics (e.g., confidence thresholds) and lacks adaptability to different inputs, this paper employs an extremely lightweight learnable filter (2-layer MLP, ~2k parameters, 6-minute training) to approximate an oracle strategy of "finalize immediately once predicted correctly." Coupled with End-of-Text early stopping…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - diffusion LLM
-  - Inference Acceleration
-  - LLaDA
-  - KV-Cache
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "diffusion LLM"
+  - "parallel decoding"
+  - "learnable filter"
+  - "inference acceleration"
+  - "LLaDA"
+  - "KV-Cache"
 date: 2026-05-08
-content_hash: 62dcc380052a29a7
+content_hash: 9a557524b1d4cf0f
 ---
+
 # Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding
 
 **Conference**: ICLR 2026  
@@ -115,10 +118,18 @@ Acceleration is typically 3-5× at length 256 and 6-22× at length 1024. Accurac
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
+- [\[ICLR 2026\] dParallel: Learnable Parallel Decoding for dLLMs](dparallel_learnable_parallel_decoding_for_dllms.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
+- [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](../../ACL2026/llm_efficiency/creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
+- [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] dParallel: Learnable Parallel Decoding for dLLMs](dparallel_learnable_parallel_decoding_for_dllms.md)

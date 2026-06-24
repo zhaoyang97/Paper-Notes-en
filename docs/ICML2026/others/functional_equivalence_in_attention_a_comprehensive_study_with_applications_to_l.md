@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Functional Equivalence in Attention: A Comprehensive Study with Applications to Linear Mode Connectivity
 description: >-
-  [ICML 2026][Others][RoPE] This paper theoretically characterizes the "functional equivalence" symmetry groups of Transformer attention with positional encodings—proving that sinusoidal positional encodings preserve the original attention's symmetry structure, while RoPE significantly compresses the symmetry group to enhance expressivity. Based
+  [ICML 2026][Functional equivalence] This paper theoretically characterizes the "functional equivalence" symmetry groups of Transformer attention with positional encodings—proving that sinusoidal positional encodings preserve the original attention's symmetry structure, while RoPE significantly compresses the symmetry group to enhance expressivity. Based on this, it designs a two-stage weight matching algorithm adaptable to both positional encodings and systematically validate…
 tags:
-  - ICML 2026
-  - Others
-  - RoPE
+  - "ICML 2026"
+  - "Functional equivalence"
+  - "positional encoding"
+  - "RoPE"
+  - "linear mode connectivity"
+  - "weight matching"
 date: 2026-05-08
-content_hash: e271f1e98617a02d
+content_hash: 9c65e600588cc7d4
 ---
+
 # Functional Equivalence in Attention: A Comprehensive Study with Applications to Linear Mode Connectivity
 
 **Conference**: ICML 2026  
@@ -140,7 +144,7 @@ On a 6-layer, 4-head ViT/BERT (CIFAR-10/100, IMDB, DBPedia; first layer replaced
 - [\[ICLR 2026\] Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity](../../ICLR2026/others/do_we_really_need_permutations_impact_of_model_width_on_linear_mode_connectivity.md)
 - [\[ICML 2026\] Test-Time Training with KV Binding Is Secretly Linear Attention](test-time_training_with_kv_binding_is_secretly_linear_attention.md)
 - [\[NeurIPS 2025\] Scalable Inference of Functional Neural Connectivity at Submillisecond Timescales](../../NeurIPS2025/others/scalable_inference_of_functional_neural_connectivity_at_submillisecond_timescale.md)
-- [\[ICML 2026\] Connecting Independently Trained Modes via Layer-Wise Connectivity](connecting_independently_trained_modes_via_layer-wise_connectivity.md)
+- [\[ICML 2026\] TabSwift: An Efficient Tabular Foundation Model with Row-Wise Attention](tabswift_an_efficient_tabular_foundation_model_with_row-wise_attention.md)
 
 </div>
 

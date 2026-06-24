@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] AdaptDel: Adaptable Deletion Rate Randomized Smoothing for Certified Robustness
 description: >-
-  [NeurIPS 2025][LLM/NLP][certified robustness] AdaptDel extends the fixed deletion rate used in randomized smoothing for discrete sequences to an adaptable deletion rate that varies according to input properties such as s…
+  [NeurIPS 2025][LLM (Other)][certified robustness] AdaptDel extends the fixed deletion rate used in randomized smoothing for discrete sequences to an adaptable deletion rate that varies according to input properties such as sequence length. The paper provides a theoretical soundness proof for certification under variable rates, and experiments on NLP sequence classification tasks demonstrate improvements in certified region cardinality of up to 30 orders of magnitude.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "certified robustness"
   - "randomized smoothing"
   - "edit distance"
   - "adaptable deletion rate"
   - "sequence classification"
 date: 2026-05-08
-content_hash: 0abb3eddb7f5a831
+content_hash: 39ed6691679827ff
 ---
 
 # AdaptDel: Adaptable Deletion Rate Randomized Smoothing for Certified Robustness
@@ -114,11 +114,11 @@ AdaptDel does not introduce a new training procedure; it is a certification meth
 
 ## Related Papers
 
-- [\[ICLR 2026\] Weight Decay may matter more than μP for Learning Rate Transfer in Practice](../../ICLR2026/llm_nlp/weight_decay_may_matter_more_than_mup_for_learning_rate_transfer_in_practice.md)
+- [\[ACL 2025\] Exploring Explanations Improves the Robustness of In-Context Learning](../../ACL2025/llm_nlp/exploring_explanations_improves_the_robustness_of_in-context_learning.md)
+- [\[ACL 2025\] Wait, that's not an option: LLMs Robustness with Incorrect Multiple-Choice Options](../../ACL2025/llm_nlp/llm_robustness_incorrect_mcq.md)
+- [\[ACL 2025\] ArithmAttack: Evaluating Robustness of LLMs to Noisy Context in Math Problem Solving](../../ACL2025/llm_nlp/arithmattack_evaluating_robustness_of_llms_to_noisy_context_in_math_problem_solv.md)
+- [\[ACL 2025\] Factual Knowledge in Language Models: Robustness and Anomalies under Simple Temporal Context Variations](../../ACL2025/llm_nlp/factual_knowledge_in_language_models_robustness_and_anomalies_under_simple_tempo.md)
 - [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
-- [\[NeurIPS 2025\] Strassen Attention, Split VC Dimension and Compositionality in Transformers](strassen_attention_split_vc_dimension_and_compositionality_in_transformers.md)
-- [\[NeurIPS 2025\] EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths](encompass_enhancing_agent_programming_with_search_over_program_execution_paths.md)
-- [\[NeurIPS 2025\] Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks](mind_the_gap_removing_the_discretization_gap_in_differentiable_logic_gate_networ.md)
 
 </div>
 

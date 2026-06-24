@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Text-to-Scene with Large Reasoning Models
 description: >-
-  [AAAI 2026][LLM Reasoning][Text-to-3D Scene] This paper proposes Reason-3D, which leverages the multi-step spatial reasoning capabilities of large reasoning models (LRMs) to achieve zero-shot text-to-3D scene generation…
+  [AAAI 2026][Reasoning][Text-to-3D Scene] This paper proposes Reason-3D, which leverages the multi-step spatial reasoning capabilities of large reasoning models (LRMs) to achieve zero-shot text-to-3D scene generation via semantic-voting-based object retrieval and a two-stage layout strategy (autoregressive placement + collision-aware refinement). The system achieves an Elo score of 2248 in human evaluation, substantially outperforming Holodeck (1500) and LayoutVLM (1650).
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Text-to-3D Scene"
   - "Large Reasoning Models"
   - "Structured Reasoning"
   - "Scene Generation"
   - "Reason-3D"
 date: 2026-05-08
-content_hash: 85985032d94407ae
+content_hash: eb3d6a676da59776
 ---
 
 # Text-to-Scene with Large Reasoning Models
@@ -133,8 +133,8 @@ Reason-3D is a modular zero-shot scene generation pipeline consisting of two mai
 - [\[AAAI 2026\] Trade-offs in Large Reasoning Models: An Empirical Analysis of Deliberative and Adaptive Reasoning over Foundational Capabilities](trade-offs_in_large_reasoning_models_an_empirical_analysis_of_deliberative_and_a.md)
 - [\[AAAI 2026\] Answering the Unanswerable Is to Err Knowingly: Analyzing and Mitigating Abstention Failures in Large Reasoning Models](answering_the_unanswerable_is_to_err_knowingly_analyzing_and.md)
 - [\[AAAI 2026\] The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models](the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua.md)
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](../../ICLR2026/llm_reasoning/towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
-- [\[ICML 2026\] Are Large Reasoning Models Interruptible?](../../ICML2026/llm_reasoning/are_large_reasoning_models_interruptible.md)
+- [\[ICLR 2026\] LaDiR: Latent Diffusion Enhances LLMs for Text Reasoning](../../ICLR2026/llm_reasoning/ladir_latent_diffusion_enhances_llms_for_text_reasoning.md)
+- [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
 
 </div>
 

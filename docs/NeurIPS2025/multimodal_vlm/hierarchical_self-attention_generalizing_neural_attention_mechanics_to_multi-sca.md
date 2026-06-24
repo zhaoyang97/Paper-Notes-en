@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hierarchical Self-Attention: Generalizing Neural Attention Mechanics to Multi-Scale Problems
 description: >-
-  [NeurIPS 2025][Multimodal VLM][hierarchical attention] This paper derives a Hierarchical Self-Attention (HSA) mechanism from the first principle of entropy minimization…
+  [NeurIPS 2025][Multimodal VLM][hierarchical attention] This paper derives a Hierarchical Self-Attention (HSA) mechanism from the first principle of entropy minimization, providing a theoretically optimal attention computation method for nested signals (multimodal and multi-scale data). It further proves that HSA is the KL-divergence-optimal solution closest to standard Softmax attention under hierarchical block constraints.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "information entropy minimization"
   - "dynamic programming"
 date: 2026-05-08
-content_hash: 6a870b6be7265ad3
+content_hash: e0c54370cdb30a66
 ---
 
 # Hierarchical Self-Attention: Generalizing Neural Attention Mechanics to Multi-Scale Problems
@@ -196,11 +196,11 @@ The theoretical derivation is rigorous and elegant. The HSA mechanism combines g
 
 ## Related Papers
 
-- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/multimodal_vlm/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
 - [\[ICCV 2025\] Attention to the Burstiness in Visual Prompt Tuning!](../../ICCV2025/multimodal_vlm/attention_to_the_burstiness_in_visual_prompt_tuning.md)
+- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](../../CVPR2026/multimodal_vlm/multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
 - [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](../../ICML2026/multimodal_vlm/seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
 - [\[ICML 2026\] Smoothing Slot Attention Iterations and Recurrences](../../ICML2026/multimodal_vlm/smoothing_slot_attention_iterations_and_recurrences.md)
-- [\[NeurIPS 2025\] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM](hawaii_hierarchical_visual_knowledge_transfer_for_efficient_vision-language_mode.md)
+- [\[CVPR 2026\] Personalized Image Descriptions from Attention Sequences](../../CVPR2026/multimodal_vlm/personalized_image_descriptions_from_attention_sequences.md)
 
 </div>
 

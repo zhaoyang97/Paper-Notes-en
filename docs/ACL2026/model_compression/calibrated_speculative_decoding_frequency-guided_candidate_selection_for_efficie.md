@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference
 description: >-
-  [ACL 2026][Model Compression][Paper Note] CSD proposes a training-free enhancement framework for speculative decoding. It utilizes Online Correction Memory (OCM) to record high-frequency rejection patterns for rescuing candidates, and employs Semantic Consistency Gating (SCG) to verify candidate reliability based on probability ratios. This approach improves s
+  [ACL 2026][Model Compression][Speculative Decoding] CSD proposes a training-free enhancement framework for speculative decoding. It utilizes Online Correction Memory (OCM) to record high-frequency rejection patterns for rescuing candidates, and employs Semantic Consistency Gating (SCG) to verify candidate reliability based on probability ratios. This approach improves speculative decoding throughput by up to 2.33× while simultaneously increasing accuracy on HumanEval and MATH…
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "Speculative Decoding"
+  - "False Rejections"
+  - "Online Correction Memory"
+  - "Semantic Consistency Gating"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 306ef23bdf40fab7
+content_hash: e1acbac29c078190
 ---
+
 # Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference
 
 **Conference**: ACL 2026  
@@ -125,9 +131,9 @@ CSD is entirely training-free. The calibration phase uses only 2000-8000 samples
 
 - [\[ACL 2026\] SSSD: Simply-Scalable Speculative Decoding](sssd_simply-scalable_speculative_decoding.md)
 - [\[AAAI 2026\] Steering Pretrained Drafters during Speculative Decoding](../../AAAI2026/model_compression/steering_pretrained_drafters_during_speculative_decoding.md)
-- [\[ICML 2025\] Speculative Decoding in Decentralized LLM Inference: Turning Communication Latency into Computation Throughput](../../ICML2025/model_compression/speculative_decoding_in_decentralized_llm_inference_turning_communication_latenc.md)
-- [\[NeurIPS 2025\] Traversal Verification for Speculative Tree Decoding](../../NeurIPS2025/model_compression/traversal_verification_for_speculative_tree_decoding.md)
-- [\[ICML 2026\] LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding](../../ICML2026/model_compression/lk_losses_direct_acceptance_rate_optimization_for_speculative_decoding.md)
+- [\[NeurIPS 2025\] CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs](../../NeurIPS2025/model_compression/casspec_cascade_adaptive_selfspeculative_decoding_for_onthef.md)
+- [\[ICML 2025\] VocabTrim: Vocabulary Pruning for Efficient Speculative Decoding in LLMs](../../ICML2025/model_compression/vocabtrim_vocabulary_pruning_for_efficient_speculative_decoding_in_llms.md)
+- [\[ICML 2026\] SPEED-Bench: A Unified and Diverse Benchmark for Speculative Decoding](../../ICML2026/model_compression/speed-bench_a_unified_and_diverse_benchmark_for_speculative_decoding.md)
 
 </div>
 

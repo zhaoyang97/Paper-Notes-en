@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Last-Click: An Optimal Mechanism for Ad Attribution
 description: >-
-  [NeurIPS 2025][AI Safety][Last-Click] This paper analyzes the strategic manipulation vulnerabilities of the Last-Click attribution mechanism from a game-theoretic perspective—platforms can obtain unfair attribution credi…
+  [NeurIPS 2025][AI Safety][Last-Click] This paper analyzes the strategic manipulation vulnerabilities of the Last-Click attribution mechanism from a game-theoretic perspective—platforms can obtain unfair attribution credit by falsifying timestamps—and proposes the Peer-Validated Mechanism (PVM), in which each platform's credit depends solely on the reports of other platforms (analogous to peer review). The paper theoretically proves that PVM is dominant strategy incentive comp…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Peer-Validated"
   - "Ad Platforms"
 date: 2026-05-08
-content_hash: 7147ebfe32bdb962
+content_hash: c4e35cb531b1a939
 ---
 
 # Beyond Last-Click: An Optimal Mechanism for Ad Attribution
@@ -131,7 +131,7 @@ $n$ platforms each report user interaction timestamps → **PVM**: platform $i$'
 - [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
 - [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
 - [\[NeurIPS 2025\] Optimal Adjustment Sets for Nonparametric Estimation of Weighted Controlled Direct Effect](optimal_adjustment_sets_for_nonparametric_estimation_of_weighted_controlled_dire.md)
-- [\[ICLR 2026\] Watermark-based Detection and Attribution of AI-Generated Content](../../ICLR2026/ai_safety/watermark-based_attribution_of_ai-generated_content.md)
+- [\[ACL 2025\] Quantifying Misattribution Unfairness in Authorship Attribution](../../ACL2025/ai_safety/quantifying_misattribution_unfairness_in_authorship_attribution.md)
 
 </div>
 

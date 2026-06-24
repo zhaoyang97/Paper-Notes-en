@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Hot-Start from Pixels: Low-Resolution Visual Tokens for Chinese Language Modeling
 description: >-
-  [ACL 2026][LLM (Other)][pixel-based LM] By rendering Chinese characters into $8\times 8$ grayscale images and feeding them into a GPT-2 style decoder for next-character prediction, this work achieves final accuracy (39.21%) comparable to index-based baselines (39.10%). Crucially, it doubles the baseline accuracy in early training (at 0.4% data), demonstratin
+  [ACL 2026][LLM (Other)][pixel-based LM] By rendering Chinese characters into $8\times 8$ grayscale images and feeding them into a GPT-2 style decoder for next-character prediction, this work achieves final accuracy (39.21%) comparable to index-based baselines (39.10%). Crucially, it doubles the baseline accuracy in early training (at 0.4% data), demonstrating that "visual structure" serves as a natural hot-start prior for Chinese character modeling.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - pixel-based LM
-  - Chinese characters
-  - hot-start
-  - low-resolution
-  - visual tokens
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "pixel-based LM"
+  - "Chinese characters"
+  - "hot-start"
+  - "low-resolution"
+  - "visual tokens"
 date: 2026-05-08
-content_hash: c19d48e4f54cd9aa
+content_hash: d5d660eb0a5295cf
 ---
+
 # Hot-Start from Pixels: Low-Resolution Visual Tokens for Chinese Language Modeling
 
 **Conference**: ACL 2026  
@@ -153,8 +154,6 @@ Efficiency analysis (zhwp + RTX 5090 Laptop GPU):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

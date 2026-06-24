@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ECPv2: Fast, Efficient, and Scalable Global Optimization of Lipschitz Functions
 description: >-
-  [AAAI2026][Optimization][Global optimization] This paper proposes ECPv2, which introduces three innovations—adaptive lower bound, Worst-$m$ memory…
+  [AAAI2026][Optimization][Global optimization] This paper proposes ECPv2, which introduces three innovations—adaptive lower bound, Worst-$m$ memory, and fixed random projection—to reduce the per-run complexity of Lipschitz global optimization from $\Omega(n^2 d)$ to $\Omega(n(m+d)\log n)$, while maintaining an $O(n^{-1/d})$ regret convergence rate that matches the minimax lower bound.
 tags:
   - "AAAI2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "random projection"
   - "no-regret"
 date: 2026-05-08
-content_hash: e8df895a802be242
+content_hash: 65d4d9c11f4ffb5b
 ---
 
 # ECPv2: Fast, Efficient, and Scalable Global Optimization of Lipschitz Functions
@@ -135,11 +135,11 @@ This bound matches the minimax lower bound $\Omega(k \cdot n^{-1/d})$, preservin
 
 ## Related Papers
 
-- [\[ICML 2026\] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization](../../ICML2026/optimization/rmnp_row-momentum_normalized_preconditioning_for_scalable_matrix-based_optimizat.md)
-- [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](../../ICML2026/optimization/learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
-- [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
-- [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](../../NeurIPS2025/optimization/efficient_adaptive_federated_optimization.md)
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](../../ICML2026/optimization/limuon_light_and_fast_muon_optimizer_for_large_models.md)
+- [\[ICLR 2026\] Efficient Submodular Maximization for Sums of Concave over Modular Functions](../../ICLR2026/optimization/efficient_submodular_maximization_for_sums_of_concave_over_modular_functions.md)
+- [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](../../ICLR2026/optimization/generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
+- [\[ICLR 2026\] Fast Frank–Wolfe Algorithms with Adaptive Bregman Step-Size for Weakly Convex Functions](../../ICLR2026/optimization/fast_frankwolfe_algorithms_with_adaptive_bregman_step-size_for_weakly_convex_fun.md)
+- [\[ICLR 2026\] Improving LLM-based Global Optimization with Search Space Partitioning](../../ICLR2026/optimization/improving_llm-based_global_optimization_with_search_space_partitioning.md)
+- [\[ICLR 2026\] Scalable Second-Order Riemannian Optimization for K-means Clustering](../../ICLR2026/optimization/scalable_second-order_riemannian_optimization_for_k-means_clustering.md)
 
 </div>
 

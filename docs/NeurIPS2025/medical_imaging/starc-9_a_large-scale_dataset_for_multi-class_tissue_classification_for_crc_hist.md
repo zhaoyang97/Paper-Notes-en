@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology
 description: >-
-  [NeurIPS 2025][Medical Imaging][Colorectal Cancer] This paper introduces STARC-9, a large-scale colorectal cancer (CRC) tissue classification dataset comprising 630K patches across 9 tissue classes…
+  [NeurIPS 2025][Medical Imaging][Colorectal Cancer] This paper introduces STARC-9, a large-scale colorectal cancer (CRC) tissue classification dataset comprising 630K patches across 9 tissue classes, along with its construction framework DeepCluster++. The framework combines domain-specific autoencoder feature extraction, K-means clustering, and equal-frequency binning sampling to ensure morphological diversity. Models trained on STARC-9 significantly outperform those trained…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Histopathology"
   - "Deep Clustering"
 date: 2026-05-08
-content_hash: 85c5f4c9b9883a52
+content_hash: 96a815ba7d4a0e92
 ---
 
 # STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology
@@ -147,7 +147,7 @@ Compared to NCT-CRC-HE-100K (100K patches, JPEG artifacts) and HMU-GC-HE-30K (30
 - [\[NeurIPS 2025\] MATCH: Multi-faceted Adaptive Topo-Consistency for Semi-Supervised Histopathology Segmentation](match_multi-faceted_adaptive_topo-consistency_for_semi-supervised_histopathology.md)
 - [\[NeurIPS 2025\] RAM-W600: A Multi-Task Wrist Dataset and Benchmark for Rheumatoid Arthritis](ram-w600_a_multi-task_wrist_dataset_and_benchmark_for_rheumatoid_arthritis.md)
 - [\[NeurIPS 2025\] PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation](physiowave_a_multi-scale_wavelet-transformer_for_physiological_signal_representa.md)
-- [\[NeurIPS 2025\] LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation](lomix_learnable_weighted_multi-scale_logits_mixing_for_medical_image_segmentatio.md)
+- [\[ICLR 2026\] OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography](../../ICLR2026/medical_imaging/openpros_a_large-scale_dataset_for_limited_view_prostate_ultrasound_computed_tom.md)
 
 </div>
 

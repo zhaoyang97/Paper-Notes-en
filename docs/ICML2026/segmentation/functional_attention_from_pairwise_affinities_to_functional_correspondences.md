@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Functional Attention: From Pairwise Affinities to Functional Correspondences
 description: >-
-  [ICML 2026][Segmentation][Paper Note] This paper reinterprets softmax attention in Transformers as a "least-squares linear operator between two learned functional bases." Borrowing the idea of functional maps from shape matching, it compresses the $n \times n$ pairwise affinity matrix into a $k \times k$ compact spectral operator, achieving SOTA performanc
+  [ICML 2026][Segmentation][Operator learning] This paper reinterprets softmax attention in Transformers as a "least-squares linear operator between two learned functional bases." Borrowing the idea of functional maps from shape matching, it compresses the $n \times n$ pairwise affinity matrix into a $k \times k$ compact spectral operator, achieving SOTA performance in PDE solving, 3D point cloud segmentation, and OOD generalization simultaneously.
 tags:
-  - ICML 2026
-  - Segmentation
+  - "ICML 2026"
+  - "Segmentation"
+  - "Operator learning"
+  - "functional mapping"
+  - "spectral attention"
+  - "PDE solving"
+  - "geometric correspondence"
 date: 2026-05-08
-content_hash: 88db34a0d355015a
+content_hash: ac72ad66e840f81b
 ---
+
 # Functional Attention: From Pairwise Affinities to Functional Correspondences
 
 **Conference**: ICML 2026  
@@ -123,12 +129,13 @@ SOTA was achieved on 5 out of 6 datasets, with relative improvements of 6%–26%
 - Value: ⭐⭐⭐⭐ Provides a new attention template for the scientific computing community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Panoptic Pairwise Distortion Graph](../../ICLR2026/segmentation/panoptic_pairwise_distortion_graph.md)
 - [\[ECCV 2024\] Self-supervised Co-salient Object Detection via Feature Correspondences at Multiple Scales](../../ECCV2024/segmentation/self-supervised_co-salient_object_detection_via_feature_correspondences_at_multi.md)
-- [\[NeurIPS 2025\] Attention (as Discrete-Time Markov) Chains](../../NeurIPS2025/segmentation/attention_as_discrete-time_markov_chains.md)
 - [\[CVPR 2026\] MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models](../../CVPR2026/segmentation/marss_radar_semantic_segmentation_via_modular_attention_and_state_space_models.md)
 - [\[CVPR 2026\] DeBias-CLIP: CLIP Is Shortsighted — Paying Attention Beyond the First Sentence](../../CVPR2026/segmentation/clip_shortsighted_beyond_first_sentence.md)
 - [\[CVPR 2026\] MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention](../../CVPR2026/segmentation/mixercseg_an_efficient_mixer_architecture_for_crack_segmentation_via_decoupled_m.md)

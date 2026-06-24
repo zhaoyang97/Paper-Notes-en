@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-Scale Gradient-Guided Unrolling Architecture with Adaptive Mamba for Compressive Sensing
 description: >-
-  [CVPR 2026][Image Restoration][Mamba] MambaCS unrolls the classic Proximal Gradient Descent (PGD) algorithm into a U-shaped deep network across multiple feature scales. It replaces traditional convolution/Transformer modules in unrolling networks with a customized Adaptive State-Space Block (A-SSB) and redesigns the High-Dimensional Gradient Fusion (HDGF)
+  [CVPR 2026][Image Restoration][Compressive Sensing] MambaCS unrolls the classic Proximal Gradient Descent (PGD) algorithm into a U-shaped deep network across multiple feature scales. It replaces traditional convolution/Transformer modules in unrolling networks with a customized Adaptive State-Space Block (A-SSB) and redesigns the High-Dimensional Gradient Fusion (HDGF) and Feature-Adaptive Proximal Operator (FAPO). It achieves SOTA PSNR/SSIM on multiple compressive sensing re…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Mamba
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Compressive Sensing"
+  - "Deep Unrolling Network"
+  - "Mamba"
+  - "Gradient Guidance"
+  - "Proximal Gradient Descent"
 date: 2026-05-08
-content_hash: 99833f62903b79d8
+content_hash: e1349c46f4f2fac3
 ---
+
 # Multi-Scale Gradient-Guided Unrolling Architecture with Adaptive Mamba for Compressive Sensing
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ The authors evaluated components by progressively replacing/removing them (Net-1
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Single Solution: Multi-Hypothesis Collaborative Deep Unfolding Network for Image Compressive Sensing](beyond_single_solution_multi-hypothesis_collaborative_deep_unfolding_network_for.md)
 - [\[CVPR 2026\] DetectSCI: Toward Object-Guided ROI Reconstruction for High-Resolution Video Snapshot Compressive Imaging](detectsci_toward_object-guided_roi_reconstruction_for_high-resolution_video_snap.md)
+- [\[CVPR 2026\] LRDUN: A Low-Rank Deep Unfolding Network for Efficient Spectral Compressive Imaging](lrdun_a_low-rank_deep_unfolding_network_for_efficient_spectral_compressive_imagi.md)
 - [\[CVPR 2026\] VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba](vemamba_efficient_isotropic_reconstruction_of_volume_electron_microscopy_with_ax.md)
-- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
 - [\[ICML 2026\] Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging](../../ICML2026/image_restoration/phy-cosf_physics-guided_continuous_spectral_fields_reconstruction_and_super-reso.md)
+- [\[ICLR 2026\] Content-Aware Mamba for Learned Image Compression](../../ICLR2026/image_restoration/content-aware_mamba_for_learned_image_compression.md)
 
 </div>
 

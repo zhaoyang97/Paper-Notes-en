@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] GridAR proposes a **training-free test-time scaling** framework for visual autoregressive (AR) models. By partitioning the canvas into row blocks, generating multiple partial candidates in parallel, and pruning incorrect trajectories early, combined with "layout-specified prompt reconstruction" to provide a global blue
+  [CVPR 2026][Image Generation][Visual Autoregressive] GridAR proposes a **training-free test-time scaling** framework for visual autoregressive (AR) models. By partitioning the canvas into row blocks, generating multiple partial candidates in parallel, and pruning incorrect trajectories early, combined with "layout-specified prompt reconstruction" to provide a global blueprint for subsequent decoding, it outperforms Best-of-N (N=8) by 14.4% on T2I-CompBench++ using only N=4 wh…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual Autoregressive"
+  - "Test-Time Scaling"
+  - "Grid-based Progressive Generation"
+  - "Prompt Reconstruction"
+  - "Compositional T2I"
 date: 2026-05-08
-content_hash: 7adefc400c14c0d1
+content_hash: a1b200424028bb95
 ---
+
 # Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation
 
 **Conference**: CVPR 2026  
@@ -135,7 +141,7 @@ The paper analyzes verifier robustness, prompt reconstruction strategies, human 
 - [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
 - [\[CVPR 2026\] Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation](test-time_alignment_of_text-to-image_diffusion_models_via_null-text_embedding_op.md)
 - [\[CVPR 2026\] VibeToken: Scaling 1D Image Tokenizers and Autoregressive Models for Dynamic Resolution Generations](vibetoken_scaling_1d_image_tokenizers_and_autoregressive_models_for_dynamic_reso.md)
-- [\[CVPR 2026\] Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling](test-time_instance-specific_parameter_composition_a_new_paradigm_for_adaptive_ge.md)
+- [\[CVPR 2026\] NEAF: Natural Image Editing with Attention Fusion for Generalizable Test-time Optimization in Text-Guided Image Editing](neaf_natural_image_editing_with_attention_fusion_for_generalizable_test-time_opt.md)
 
 </div>
 

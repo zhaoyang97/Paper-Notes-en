@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Demystifying Data Organization for Enhanced LLM Training
 description: >-
-  [ACL 2026][Pretraining][STR] This paper systematically investigates the impact of "sample appearance order" in LLM training. By reusing existing sample-level quality/difficulty scores, it proposes four data organization principles: boundary reinforcement, cyclic review, continuous curriculum, and local diversity. The proposed STR and SAW strategie
+  [ACL2026][LLM Pretraining][Data Ordering] This paper systematically investigates the impact of "sample appearance order" in LLM training. By reusing existing sample-level quality/difficulty scores, it proposes four data organization principles: boundary reinforcement, cyclic review, continuous curriculum, and local diversity. The proposed STR and SAW strategies consistently enhance performance in both pre-training and SFT.
 tags:
-  - ACL 2026
-  - Pretraining
-  - STR
-  - SAW
+  - "ACL2026"
+  - "LLM Pretraining"
+  - "Data Ordering"
+  - "Curriculum Learning"
+  - "Pre-training Efficiency"
+  - "STR"
+  - "SAW"
 date: 2026-05-08
-content_hash: cf7c78c53d5994eb
+content_hash: dcc95f0d3d7a54df
 ---
+
 # Demystifying Data Organization for Enhanced LLM Training
 
 **Conference**: ACL2026  
@@ -144,11 +148,11 @@ The paper does not propose a new loss function but rather a strategy for trainin
 
 ## Related Papers
 
-- [\[ICLR 2026\] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training](../../ICLR2026/llm_pretraining/common_corpus_the_largest_collection_of_ethical_data_for_llm_pre-training.md)
+- [\[ICLR 2026\] Task-Aware Data Selection via Proxy-Label Enhanced Distribution Matching for LLM Fine-Tuning](../../ICLR2026/llm_pretraining/task-aware_data_selection_via_proxy-label_enhanced_distribution_matching_for_llm.md)
+- [\[ICLR 2026\] Rewriting Pre-training Data Boosts LLM Performance in Math and Code](../../ICLR2026/llm_pretraining/rewriting_pre-training_data_boosts_llm_performance_in_math_and_code.md)
+- [\[ICLR 2026\] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training](../../ICLR2026/llm_pretraining/common_corpus_ethical_data_for_llm_pretraining.md)
 - [\[AAAI 2026\] ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences](../../AAAI2026/llm_pretraining/elspr_evaluator_llm_training_data_self-purification_on_non-transitive_preference.md)
-- [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](../../ICLR2026/llm_pretraining/scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
-- [\[ICML 2026\] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning](../../ICML2026/llm_pretraining/data_difficulty_and_the_generalization--extrapolation_tradeoff_in_llm_fine-tunin.md)
-- [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](../../ICLR2026/llm_pretraining/token-level_data_selection_for_safe_llm_fine-tuning.md)
+- [\[ICLR 2026\] DUET: Optimizing LLM Training Data Mixtures via Noisy Feedback from Unseen, Downstream Evaluation Tasks](../../ICLR2026/llm_pretraining/duet_optimizing_llm_training_data_mixtures_via_noisy_feedback_from_unseen_downst.md)
 
 </div>
 

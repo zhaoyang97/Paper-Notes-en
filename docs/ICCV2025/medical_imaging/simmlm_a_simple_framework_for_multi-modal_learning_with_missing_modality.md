@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SimMLM: A Simple Framework for Multi-modal Learning with Missing Modality
 description: >-
-  [ICCV 2025][Medical Imaging][multi-modal learning] This paper proposes SimMLM, a simple yet effective framework for multi-modal learning under missing modality conditions. It consists of a Dynamic Mixture of Modality Exp…
+  [ICCV 2025][Medical Imaging][multi-modal learning] This paper proposes SimMLM, a simple yet effective framework for multi-modal learning under missing modality conditions. It consists of a Dynamic Mixture of Modality Experts (DMoME) architecture and a More vs. Fewer (MoFe) ranking loss. SimMLM comprehensively outperforms state-of-the-art methods on brain tumor segmentation and multi-modal classification tasks with fewer parameters and lower computational cost…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "ranking loss"
   - "brain tumor segmentation"
 date: 2026-05-08
-content_hash: 04bdd70ecea0db13
+content_hash: 04fe3994cd416c3e
 ---
 
 # SimMLM: A Simple Framework for Multi-modal Learning with Missing Modality
@@ -177,11 +177,11 @@ Performance with single modality T1ce only:
 
 ## Related Papers
 
-- [\[CVPR 2026\] CLoE: Expert Consistency Learning for Missing Modality Segmentation](../../CVPR2026/medical_imaging/cloe_expert_consistency_learning_for_missing_modality_segmentation.md)
+- [\[CVPR 2025\] CLoE: Expert Consistency Learning for Missing Modality Segmentation](../../CVPR2025/medical_imaging/cloe_expert_consistency_learning_for_missing_modality_segmentation.md)
 - [\[CVPR 2026\] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality](../../CVPR2026/medical_imaging/must_modality-specific_representation-aware_transformer_for_diffusion-enhanced_s.md)
-- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](../../ICLR2026/medical_imaging/care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
-- [\[ICCV 2025\] TeethGenerator: A Two-Stage Framework for Paired Pre- and Post-Orthodontic 3D Dental Data Generation](teethgenerator_a_two-stage_framework_for_paired_pre-_and_post-orthodontic_3d_den.md)
-- [\[NeurIPS 2025\] EndoBench: A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis](../../NeurIPS2025/medical_imaging/endobench_a_comprehensive_evaluation_of_multi-modal_large_language_models_for_en.md)
+- [\[CVPR 2026\] Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities](../../CVPR2026/medical_imaging/uni-encoder_meets_multi-encoders_representation_before_fusion_for_brain_tumor_se.md)
+- [\[CVPR 2025\] Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization](../../CVPR2025/medical_imaging/human_knowledge_integrated_multi-modal_learning_for_single_source_domain_general.md)
+- [\[ICLR 2026\] Sequential Information Bottleneck Fusion: Towards Robust and Generalizable Multi-Modal Brain Tumor Segmentation](../../ICLR2026/medical_imaging/sequential_information_bottleneck_fusion_towards_robust_and_generalizable_multi-.md)
 
 </div>
 

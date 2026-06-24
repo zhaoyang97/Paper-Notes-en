@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Statistical Advantage of Softmax Attention: Insights from Single-Location Regression
 description: >-
-  [ICLR 2026][LLM (Other)][softmax attention] By proposing the "Single-Location Regression" (SLR) theoretical framework and employing the order parameter method from statistical physics, this work rigorously proves that softmax attention reaches the Bayes risk at the population level in the high-dimensional limit, whereas linear attention fundamentally cannot. Fur
+  [ICLR2026][LLM (Other)][softmax attention] By proposing the "Single-Location Regression" (SLR) theoretical framework and employing the order parameter method from statistical physics, this work rigorously proves that softmax attention reaches the Bayes risk at the population level in the high-dimensional limit, whereas linear attention fundamentally cannot. Furthermore, it confirms that softmax consistently outperforms linear attention in finite-sample scenarios…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - softmax attention
-  - linear attention
-  - Information Retrieval
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "softmax attention"
+  - "linear attention"
+  - "information retrieval"
+  - "statistical physics"
+  - "high-dimensional analysis"
+  - "Bayes optimality"
+  - "single-location regression"
 date: 2026-05-08
-content_hash: 0b891285dd0a4087
+content_hash: 1dfee651aaf623d3
 ---
+
 # Statistical Advantage of Softmax Attention: Insights from Single-Location Regression
 
 **Conference**: ICLR2026  
@@ -195,11 +200,11 @@ Population-level conclusions assume infinite samples, but practical interest lie
 
 ## Related Papers
 
-- [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](spectral_attention_steering_for_prompt_highlighting.md)
 - [\[ICLR 2026\] Eliciting Numerical Predictive Distributions of LLMs Without Auto-Regression](eliciting_numerical_predictive_distributions_of_llms_without_auto-regression.md)
-- [\[ICML 2025\] Binary Hypothesis Testing for Softmax Models and Leverage Score Models](../../ICML2025/llm_nlp/binary_hypothesis_testing_for_softmax_models_and_leverage_score_models.md)
+- [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](spectral_attention_steering_for_prompt_highlighting.md)
 - [\[CVPR 2026\] Single-step Diffusion-based Video Coding with Semantic-Temporal Guidance](../../CVPR2026/llm_nlp/single-step_diffusion-based_video_coding_with_semantic-temporal_guidance.md)
-- [\[ACL 2025\] Mitigate Position Bias in LLMs via Scaling a Single Hidden States Channel](../../ACL2025/llm_nlp/mitigate_position_bias_in_large_language_models_via_scaling_a_single_dimension.md)
+- [\[ICML 2025\] Binary Hypothesis Testing for Softmax Models and Leverage Score Models](../../ICML2025/llm_nlp/binary_hypothesis_testing_for_softmax_models_and_leverage_score_models.md)
+- [\[ECCV 2024\] Reprojection Errors as Prompts for Efficient Scene Coordinate Regression](../../ECCV2024/llm_nlp/reprojection_errors_as_prompts_for_efficient_scene_coordinate_regression.md)
 
 </div>
 

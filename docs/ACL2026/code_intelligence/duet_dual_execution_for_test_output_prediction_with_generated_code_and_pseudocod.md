@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] This paper proposes DUET, a dual-path framework that combines direct code execution and LLM-based pseudocode execution. By performing functional majority voting to fuse two complementary execution paths—deterministic execution (reliable when code is correct but fragile to implementation errors) and pseudocode execution
+  [ACL 2026 Findings][Code Intelligence][Test Output Prediction] This paper proposes DUET, a dual-path framework that combines direct code execution and LLM-based pseudocode execution. By performing functional majority voting to fuse two complementary execution paths—deterministic execution (reliable when code is correct but fragile to implementation errors) and pseudocode execution (bypasses implementation details but prone to hallucinations)—the method improves Pass@1 on Live…
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Test Output Prediction"
+  - "Pseudocode Execution"
+  - "Dual Execution"
+  - "Code Generation"
+  - "Functional Majority Voting"
 date: 2026-05-08
-content_hash: 8ce58619e7e66abf
+content_hash: 506e1acbd4e3fa57
 ---
+
 # DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode
 
 **Conference**: ACL 2026 Findings  

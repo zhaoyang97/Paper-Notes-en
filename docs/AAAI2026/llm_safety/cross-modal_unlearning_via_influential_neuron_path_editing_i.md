@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models
 description: >-
-  [AAAI 2026][LLM Safety][Machine Unlearning] This paper proposes MIP-Editor, which localizes **influential neuron paths** encoding forget-target knowledge in MLLMs via cross-layer gradient integration (text branch) and Fi…
+  [AAAI 2026 Oral][LLM Safety][Machine Unlearning] This paper proposes MIP-Editor, which localizes **influential neuron paths** encoding forget-target knowledge in MLLMs via cross-layer gradient integration (text branch) and Fisher integration (visual branch), then edits these neurons using path-based Representation Misdirection Unlearning (RMisU), achieving up to 87.75% forget rate and 54.26% improvement in general knowledge retention on MLLMU-Bench.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Safety"
   - "Machine Unlearning"
   - "Multimodal Large Language Models"
@@ -12,7 +12,7 @@ tags:
   - "Representation Misdirection"
   - "Cross-Modal Consistency"
 date: 2026-05-08
-content_hash: d3ca07290c7f0919
+content_hash: 9501794f553b903c
 ---
 
 # Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models
@@ -158,10 +158,10 @@ The path-level attribution idea can transfer to continual learning (localizing o
 ## Related Papers
 
 - [\[AAAI 2026\] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models](auvic_adversarial_unlearning_of_visual_concepts_for_multi-mo.md)
-- [\[ACL 2026\] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models](../../ACL2026/llm_safety/gambit_a_gamified_jailbreak_framework_for_multimodal_large_language_models.md)
+- [\[ACL 2025\] Modality-Aware Neuron Pruning for Unlearning in Multimodal Large Language Models](../../ACL2025/llm_safety/manu_modality_aware_unlearning.md)
+- [\[ACL 2025\] MMUnlearner: Reformulating Multimodal Machine Unlearning in the Era of Multimodal Large Language Models](../../ACL2025/llm_safety/mmunlearner_reformulating_multimodal_machine_unlearning_in_the_era_of_multimodal.md)
+- [\[ICLR 2026\] Knowledge Externalization: Reversible Unlearning and Modular Retrieval in Multimodal Large Language Models](../../ICLR2026/llm_safety/knowledge_externalization_reversible_unlearning_and_modular_retrieval_in_multimo.md)
 - [\[AAAI 2026\] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models](multi-faceted_attack_exposing_cross-model_vulnerabilities_in_defense-equipped_vi.md)
-- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](../../ACL2026/llm_safety/safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
-- [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis
 description: >-
-  [CVPR 2026][Autonomous Driving][NeRF] SG-NLF proposes a LiDAR NeRF framework that does not require precise poses. It solves geometric holes caused by sparse LiDAR data through a hybrid spectral-geometric representation, achieves global pose optimization via a confidence-aware graph, and strengthens cross-frame consistency using adversarial learning. Recons
+  [CVPR 2026][Autonomous Driving][Pose-free LiDAR] SG-NLF proposes a LiDAR NeRF framework that does not require precise poses. It solves geometric holes caused by sparse LiDAR data through a hybrid spectral-geometric representation, achieves global pose optimization via a confidence-aware graph, and strengthens cross-frame consistency using adversarial learning. Reconstruction quality and pose accuracy improve by 35.8% and 68.8% respectively compared to SOTA on nuScenes.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - NeRF
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Pose-free LiDAR"
+  - "NeRF"
+  - "Spectral Embedding"
+  - "Confidence-aware Graph Optimization"
+  - "Adversarial Cross-frame Consistency"
 date: 2026-05-08
-content_hash: 8b27fdbe47a3052b
+content_hash: 2bec1360e16d45e8
 ---
+
 # SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis
 
 **Conference**: CVPR 2026  
@@ -133,10 +138,10 @@ Total Loss = Spectral Loss (Rayleigh quotient + Orthogonality + Normalization) +
 
 ## Related Papers
 
-- [\[ICLR 2026\] Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](../../ICLR2026/autonomous_driving/spectral-geometric_neural_fields_for_pose-free_lidar_view_synthesis.md)
+- [\[CVPR 2025\] Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](../../CVPR2025/autonomous_driving/spectral-geometric_neural_fields_for_pose-free_lidar_view_synthesis.md)
 - [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
 - [\[CVPR 2026\] Neural Distribution Prior for LiDAR Out-of-Distribution Detection](neural_distribution_prior_for_lidar_ood_detection.md)
-- [\[CVPR 2026\] Learning Geometric and Photometric Features from Panoramic LiDAR Scans for Outdoor Place Categorization](learning_geometric_and_photometric_features_from_p.md)
+- [\[CVPR 2026\] Test-Time Training for LiDAR Semantic Segmentation under Corruption via Geometric Inlier Discrimination](test-time_training_for_lidar_semantic_segmentation_under_corruption_via_geometri.md)
 - [\[CVPR 2026\] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration](lirec-net_a_target-free_and_learning-based_network_for_lidar_rgb_and_event_calib.md)
 
 </div>

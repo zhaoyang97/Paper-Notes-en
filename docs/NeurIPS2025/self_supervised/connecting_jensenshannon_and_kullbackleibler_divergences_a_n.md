@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Connecting Jensen-Shannon and Kullback-Leibler Divergences: A New Bound for Representation Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][mutual information] This paper derives the optimal tight lower bound of KL divergence in terms of JS divergence, $\Xi(D_{\text{JS}}) \leq D_{\text{KL}}$…
+  [NeurIPS 2025][Self-Supervised Learning][mutual information] This paper derives the optimal tight lower bound of KL divergence in terms of JS divergence, $\Xi(D_{\text{JS}}) \leq D_{\text{KL}}$, in the general case. It proves that training a discriminator by minimizing cross-entropy loss is equivalent to maximizing a guaranteed lower bound on mutual information, thereby providing the missing theoretical foundation for JSD-based discriminative representation learning methods.…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "variational bound"
   - "representation learning"
 date: 2026-05-08
-content_hash: c8e754e1ed6a6f85
+content_hash: bb9baafdec57ae5d
 ---
 
 # Connecting Jensen-Shannon and Kullback-Leibler Divergences: A New Bound for Representation Learning
@@ -138,11 +138,11 @@ The discriminator is trained with standard binary cross-entropy: positive sample
 
 ## Related Papers
 
+- [\[ICML 2026\] Learning to Extrapolate to New Tasks: A Relational Approach to Task Extrapolation](../../ICML2026/self_supervised/learning_to_extrapolate_to_new_tasks_a_relational_approach_to_task_extrapolation.md)
 - [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
 - [\[NeurIPS 2025\] Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees](adv-ssl_adversarial_self-supervised_representation_learning_with_theoretical_gua.md)
 - [\[NeurIPS 2025\] TRIDENT: Tri-Modal Molecular Representation Learning with Taxonomic Annotations and Structural Relationships](trident_tri-modal_molecular_representation_learning_with_taxonomic_annotations_a.md)
-- [\[ICML 2026\] Learning to Extrapolate to New Tasks: A Relational Approach to Task Extrapolation](../../ICML2026/self_supervised/learning_to_extrapolate_to_new_tasks_a_relational_approach_to_task_extrapolation.md)
-- [\[NeurIPS 2025\] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking](starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att.md)
+- [\[CVPR 2025\] Representation Learning for Spatiotemporal Physical Systems](../../CVPR2025/self_supervised/representation_learning_for_spatiotemporal_physical_systems.md)
 
 </div>
 

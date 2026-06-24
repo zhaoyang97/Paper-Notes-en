@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] All Changes May Have Invariant Principles: Improving Ever-Shifting Harmful Meme Detection via Design Concept Reproduction
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] Ours proposes RepMD, a method that constructs Design Concept Graphs (DCG)—inspired by the concept of attack trees to describe the steps and logic used by malicious users to design harmful memes—to guide MLLMs in detecting evolving harmful memes, achieving 81.1% accuracy on GOAT-Bench.
+  [ACL 2026][Multimodal VLM][Harmful Meme Detection] Ours proposes RepMD, a method that constructs Design Concept Graphs (DCG)—inspired by the concept of attack trees to describe the steps and logic used by malicious users to design harmful memes—to guide MLLMs in detecting evolving harmful memes, achieving 81.1% accuracy on GOAT-Bench.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Harmful Meme Detection"
+  - "Design Concept Graph"
+  - "Attack Tree"
+  - "MLLM Reasoning Guidance"
+  - "Type Drift"
 date: 2026-05-08
-content_hash: 4e6510dc770e4c7c
+content_hash: c712a1178b8ccfc4
 ---
+
 # All Changes May Have Invariant Principles: Improving Ever-Shifting Harmful Meme Detection via Design Concept Reproduction
 
 **Conference**: ACL 2026  
@@ -135,9 +141,9 @@ RepMD is a training-free method that relies entirely on the in-context learning 
 
 - [\[ACL 2025\] Redundancy Principles for MLLMs Benchmarks](../../ACL2025/multimodal_vlm/redundancy_principles_for_mllms_benchmarks.md)
 - [\[AAAI 2026\] CAMU: Context Augmentation for Meme Understanding](../../AAAI2026/multimodal_vlm/trace_textual_relevance_augmentation_and_contextual_encoding_for_multimodal_hate.md)
+- [\[ACL 2026\] Cross-Modal Masked Compositional Concept Modeling for Enhancing Visio-Linguistic Compositionality](cross-modal_masked_compositional_concept_modeling_for_enhancing_visio-linguistic.md)
 - [\[ACL 2026\] Dynamic Emotion and Personality Profiling for Multimodal Deception Detection](dynamic_emotion_and_personality_profiling_for_multimodal_deception_detection.md)
 - [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](../../CVPR2026/multimodal_vlm/have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
-- [\[ICML 2025\] Learning Invariant Causal Mechanism from Vision-Language Models](../../ICML2025/multimodal_vlm/learning_invariant_causal_mechanism_from_vision-language_models.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Activation-Free Backbones for Image Recognition: Polynomial Alternatives within MetaFormer-Style Vision Models
 description: >-
-  [ICML 2026][Segmentation][MetaFormer] This paper constructs PolyMLP, PolyConv, and PolyAttn using Hadamard products to replace pointwise activations/softmax in MLP, convolution, and attention. Without conventional activation functions, these modules allow MetaFormer-style backbones to reach or exceed the performance of activation-based models on ImageNet,
+  [ICML2026][Segmentation][Activation Function Alternatives] This paper constructs PolyMLP, PolyConv, and PolyAttn using Hadamard products to replace pointwise activations/softmax in MLP, convolution, and attention. Without conventional activation functions, these modules allow MetaFormer-style backbones to reach or exceed the performance of activation-based models on ImageNet, robustness benchmarks, and ADE20K segmentation.
 tags:
-  - ICML 2026
-  - Segmentation
-  - MetaFormer
-  - PolyNeXt
+  - "ICML2026"
+  - "Segmentation"
+  - "Activation Function Alternatives"
+  - "Polynomial Networks"
+  - "Hadamard Product"
+  - "MetaFormer"
+  - "PolyNeXt"
 date: 2026-05-08
-content_hash: aee6b205ae4daa7a
+content_hash: 2bf3b5ee8d214cb3
 ---
+
 # Activation-Free Backbones for Image Recognition: Polynomial Alternatives within MetaFormer-Style Vision Models
 
 **Conference**: ICML2026  
@@ -171,11 +175,11 @@ Ablations examine the necessity of activation functions and the criticality of s
 
 ## Related Papers
 
-- [\[ICML 2026\] SPROUT: Supervise Less, See More — Training-free Nuclear Instance Segmentation with Prototype-Guided Prompting](supervise_less_see_more_training-free_nuclear_instance_segmentation_with_prototy.md)
+- [\[NeurIPS 2025\] InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition](../../NeurIPS2025/segmentation/instructsam_a_training-free_framework_for_instruction-oriented_remote_sensing_ob.md)
+- [\[CVPR 2025\] Style-Editor: Text-driven Object-Centric Style Editing](../../CVPR2025/segmentation/style-editor_text-driven_object-centric_style_editing.md)
 - [\[ICLR 2026\] How Well Does GPT-4o Understand Vision? Evaluating Multimodal Foundation Models on Standard Computer Vision Tasks](../../ICLR2026/segmentation/how_well_does_gpt-4o_understand_vision_evaluating_multimodal_foundation_models_o.md)
+- [\[CVPR 2026\] PIX-TAB: Efficient PIXel-Precise TABle Structure Recognition Approach with Speculative Decoding and Region-Based Image Segmentation](../../CVPR2026/segmentation/pix-tab_efficient_pixel-precise_table_structure_recognition_approach_with_specul.md)
 - [\[CVPR 2026\] The Missing Point in Vision Transformers for Universal Image Segmentation](../../CVPR2026/segmentation/the_missing_point_in_vision_transformers_for_universal_image_segmentation.md)
-- [\[ICML 2026\] Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models](geometry-preserving_unsupervised_alignment_for_heterogeneous_foundation_models.md)
-- [\[ICML 2026\] What Makes Synthetic Data Effective in Image Segmentation](what_makes_synthetic_data_effective_in_image_segmentation.md)
 
 </div>
 

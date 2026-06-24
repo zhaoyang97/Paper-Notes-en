@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HORIZON: A Benchmark for in-the-wild User Behaviour Modeling
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] This paper proposes HORIZON, the first fully open-source large-scale cross-domain long-term recommendation benchmark. Based on merged Amazon Reviews, it constructs a unified interaction history containing 54M users and 35M items. It designs a four-quadrant evaluation protocol decoupled along the time axis and user dime
+  [ACL 2026 Findings][Recommender Systems][Sequential Recommendation] This paper proposes HORIZON, the first fully open-source large-scale cross-domain long-term recommendation benchmark. Based on merged Amazon Reviews, it constructs a unified interaction history containing 54M users and 35M items. It designs a four-quadrant evaluation protocol decoupled along the time axis and user dimension, revealing that models like BERT4Rec perform strongly in-distribution but significantl…
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026 Findings"
+  - "Recommender Systems"
+  - "Sequential Recommendation"
+  - "Cross-domain User Modeling"
+  - "Long-term Behavior Prediction"
+  - "Temporal Generalization"
+  - "LLM Recommendation"
 date: 2026-05-08
-content_hash: 06e2207d85465aa4
+content_hash: 6c6bf18559e9743e
 ---
+
 # HORIZON: A Benchmark for in-the-wild User Behaviour Modeling
 
 **Conference**: ACL 2026 Findings  
@@ -146,7 +152,7 @@ In Task 1, traditional models are trained using standard settings within the Rec
 - [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
 - [\[AAAI 2026\] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems](../../AAAI2026/recommender/rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati.md)
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
-- [\[ACL 2026\] Decisive: Guiding User Decisions with Optimal Preference Elicitation from Unstructured Documents](decisive_guiding_user_decisions_with_optimal_preference_elicitation_from_unstruc.md)
+- [\[AAAI 2026\] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction](../../AAAI2026/recommender/length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_.md)
 
 </div>
 

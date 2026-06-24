@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Large Language Models Balance Internal Knowledge with User and Document Assertions
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper moves beyond the binary conflict paradigm of "parametric knowledge vs. a single external source" and proposes a ternary source interaction evaluation framework comprising "parametric (P) / user assertion (U) / document assertion (D)." Based on evaluations of 27 LLMs across two datasets, it finds that most mo
+  [ACL 2026 Findings][Information Retrieval & RAG][Ternary Source Interaction] This paper moves beyond the binary conflict paradigm of "parametric knowledge vs. a single external source" and proposes a ternary source interaction evaluation framework comprising "parametric (P) / user assertion (U) / document assertion (D)." Based on evaluations of 27 LLMs across two datasets, it finds that most models are more credulous of documents than users, post-training further strengthens…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Ternary Source Interaction"
+  - "Document Preference"
+  - "Sycophancy"
+  - "Discrimination"
+  - "Post-training Impact"
 date: 2026-05-08
-content_hash: 3a888eb203ebb791
+content_hash: cdef8de6f6cc719c
 ---
+
 # How Large Language Models Balance Internal Knowledge with User and Document Assertions
 
 **Conference**: ACL 2026 Findings  

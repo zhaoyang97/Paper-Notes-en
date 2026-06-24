@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AVoCaDO: An Audiovisual Video Captioner Driven by Temporal Orchestration
 description: >-
-  [ICLR 2026][Video Understanding][GRPO] AVoCaDO, based on Qwen2.5-Omni, undergoes SFT using 107K high-quality temporally aligned audiovisual captioning data, followed by GRPO reward fine-tuning focused on key events, dialogue, and length. This enables the 7B audiovisual captioner to outperform existing open-source models on multiple benchmarks, with some met
+  [ICLR 2026][Video Understanding][Audiovisual Captioning] AVoCaDO, based on Qwen2.5-Omni, undergoes SFT using 107K high-quality temporally aligned audiovisual captioning data, followed by GRPO reward fine-tuning focused on key events, dialogue, and length. This enables the 7B audiovisual captioner to outperform existing open-source models on multiple benchmarks, with some metrics matching or exceeding the Gemini-2.5 series.
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - GRPO
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Audiovisual Captioning"
+  - "Temporal Alignment"
+  - "Multimodal Large Language Model"
+  - "GRPO"
+  - "Dialogue Transcription"
 date: 2026-05-08
-content_hash: 721c27e1acda5a6a
+content_hash: 25068e8a6cf5368b
 ---
+
 # AVoCaDO: An Audiovisual Video Captioner Driven by Temporal Orchestration
 
 **Conference**: ICLR 2026  
@@ -174,7 +179,7 @@ This optimization includes a clipped policy ratio and KL penalty relative to the
 - [\[ICLR 2026\] Invert4TVG: A Temporal Video Grounding Framework with Inversion Tasks Preserving Action Understanding Ability](invert4tvg_a_temporal_video_grounding_framework_with_inversion_tasks_preserving_.md)
 - [\[ICLR 2026\] HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding](hitea_hierarchical_temporal_alignment_for_training-free_long-video_temporal_grou.md)
 - [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](../../CVPR2026/video_understanding/spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
-- [\[CVPR 2025\] SeriesBench: A Benchmark for Narrative-Driven Drama Series Understanding](../../CVPR2025/video_understanding/seriesbench_a_benchmark_for_narrative-driven_drama_series_understanding.md)
+- [\[ICLR 2026\] OmniSTVG: Toward Spatio-Temporal Omni-Object Video Grounding](omnistvg_toward_spatio-temporal_omni-object_video_grounding.md)
 
 </div>
 

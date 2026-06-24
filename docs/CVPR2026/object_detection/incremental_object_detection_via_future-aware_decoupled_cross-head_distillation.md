@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation
 description: >-
-  [CVPR 2026][Object Detection][Knowledge Distillation] To address the issue where "detection head bias contaminates backbone features leading to distillation failure" in incremental object detection, this paper proposes FaCHD. It utilizes two frozen teachers—a historical teacher and an intermediate teacher—to perform cross-head decoding of student ROI features for feature
+  [CVPR 2026][Object Detection][Incremental Object Detection] To address the issue where "detection head bias contaminates backbone features leading to distillation failure" in incremental object detection, this paper proposes FaCHD. It utilizes two frozen teachers—a historical teacher and an intermediate teacher—to perform cross-head decoding of student ROI features for feature distillation. This decouples the classification head from the backbone. Combined with RPSC multi-gra…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Incremental Object Detection"
+  - "Knowledge Distillation"
+  - "Cross-Head Decoupling"
+  - "Semantic Drift Compensation"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 0bb56a96bfd2590a
+content_hash: 29628ece1ef0f3a2
 ---
+
 # Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation
 
 **Conference**: CVPR 2026  
@@ -132,15 +137,14 @@ Components were added individually on VOC 10-10 / 10-5 / 5-5 (mAP@0.5, all class
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ECCV 2024\] Bridge Past and Future: Overcoming Information Asymmetry in Incremental Object Detection](../../ECCV2024/object_detection/bridge_past_and_future_overcoming_information_asymmetry_in_incremental_object_de.md)
 - [\[CVPR 2026\] Parameterized Prompt for Incremental Object Detection](parameterized_prompt_for_incremental_object_detection.md)
 - [\[CVPR 2026\] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection](beyond_prompt_degradation_prototype-guided_dual-pool_prompting_for_incremental_o.md)
 - [\[CVPR 2026\] DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection](dyfclt_dynamic_frequency-decoupled_cross-modal_learning_transformer_for_multimod.md)
 - [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
-- [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs
 description: >-
-  [ICML 2026][Model Compression][MoE-LLM] GEMQ upgrades expert-level bit allocation for MoE models from intra-layer local Linear Programming (LP) to cross-layer global LP. Combined with "post-quantization router weight fine-tuning" to realign distorted routing distributions and a "progressive bit reduction" iterative framework to refine importance estimation,
+  [ICML 2026][Model Compression][MoE-LLM] GEMQ upgrades expert-level bit allocation for MoE models from intra-layer local Linear Programming (LP) to cross-layer global LP. Combined with "post-quantization router weight fine-tuning" to realign distorted routing distributions and a "progressive bit reduction" iterative framework to refine importance estimation, GEMQ compresses models like Mixtral-8×7B to an average of 2.5 bits per expert with less than a 7% drop in average zero-s…
 tags:
-  - ICML 2026
-  - Model Compression
-  - MoE-LLM
+  - "ICML 2026"
+  - "Model Compression"
+  - "MoE-LLM"
+  - "Mixed-Precision Quantization"
+  - "Global Linear Programming"
+  - "Router Fine-tuning"
+  - "Progressive Quantization"
 date: 2026-05-08
-content_hash: b7008346f55564c4
+content_hash: 309c2d74f6d68ed1
 ---
+
 # GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs
 
 **Conference**: ICML 2026  
@@ -135,14 +140,17 @@ Using the $\Delta z^\top H(z)\Delta z$ formula for global LP reduces C4 PPL from
 
 <div class="related-papers" markdown="1">
 
-- **PMQ**: *Post-Training Quantization for Large Mixture-of-Experts Models*, ICML 2024.
-- **MoEQuant**: *Towards Efficient Post-training Quantization of Large Mixture-of-Experts Models*, ArXiv 2025.
-- **EAQuant**: *Expert-Aware Quantization for Large MoE Models*, ArXiv 2025.
+## Related Papers
+
+- [\[ICML 2026\] Geo-Expert: Fine-Tuning an 8B Model into an Expert-Level Geological Reasoning LLM via LoRA](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
+- [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
+- [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](../../ICLR2026/model_compression/stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
+- [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](../../ICLR2026/model_compression/channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
+- [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)

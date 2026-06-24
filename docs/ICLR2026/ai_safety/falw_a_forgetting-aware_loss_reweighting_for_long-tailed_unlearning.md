@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FaLW: A Forgetting-aware Loss Reweighting for Long-tailed Unlearning
 description: >-
-  [ICLR 2026][AI Safety][Machine Unlearning] This paper is the first to investigate the realistic scenario where the "forget set follows a long-tailed distribution." It identifies that existing approximate unlearning methods produce **heterogeneous unlearning deviation** and **skewed unlearning deviation**. The authors propose FaLW, a plug-and-play instance-level
+  [ICLR 2026][AI Safety][Machine Unlearning] This paper is the first to investigate the realistic scenario where the "forget set follows a long-tailed distribution." It identifies that existing approximate unlearning methods produce **heterogeneous unlearning deviation** and **skewed unlearning deviation**. The authors propose FaLW, a plug-and-play instance-level dynamic loss reweighting method that uses the "predictive probability distribution of unseen data" to measure the un…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Machine Unlearning
-  - Long-tailed Distribution
-  - Loss Reweighting
-  - Right to be Forgotten
-  - Unlearning Deviation
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Long-tailed Distribution"
+  - "Loss Reweighting"
+  - "Right to be Forgotten"
+  - "Unlearning Deviation"
 date: 2026-05-08
-content_hash: 2f9a856eeea47127
+content_hash: 32f768bccd7f0cd7
 ---
+
 # FaLW: A Forgetting-aware Loss Reweighting for Long-tailed Unlearning
 
 **Conference**: ICLR 2026  
@@ -144,11 +145,11 @@ VGG-16 on CIFAR-10 (10% unlearning, $\gamma=1$) and Tiny-ImageNet (40% unlearnin
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Privacy-Guaranteed Label Unlearning in Vertical Federated Learning: Few-Shot Forgetting without Disclosure](towards_privacy-guaranteed_label_unlearning_in_vertical_federated_learning_few-s.md)
 - [\[CVPR 2026\] FedCART: Tackling Long-Tailed Distributions in Federated Adversarial Training via Classifier Refinement](../../CVPR2026/ai_safety/fedcart_tackling_long-tailed_distributions_in_federated_adversarial_training_via.md)
+- [\[ICLR 2026\] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution](remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md)
+- [\[ICLR 2026\] Towards Privacy-Guaranteed Label Unlearning in Vertical Federated Learning: Few-Shot Forgetting without Disclosure](towards_privacy-guaranteed_label_unlearning_in_vertical_federated_learning_few-s.md)
+- [\[ICML 2026\] Forgetting is Not Deletion: An Investigation of Reversibility in LLM Machine Unlearning](../../ICML2026/ai_safety/unlearning_isnt_deletion_investigating_reversibility_of_machine_unlearning_in_ll.md)
 - [\[ICML 2025\] Rethinking the Bias of Foundation Model under Long-tailed Distribution](../../ICML2025/ai_safety/rethinking_the_bias_of_foundation_model_under_long-tailed_distribution.md)
-- [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](machine_unlearning_under_retainforget_entanglement.md)
-- [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](../../ICML2026/ai_safety/how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SubDyve: Subgraph-Driven Dynamic Propagation for Virtual Screening Enhancement
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] SubDyve replaces general molecular fingerprints with "class-discriminative subgraphs" to construct similarity networks. It then utilizes an iterative seed refinement process guided by the local False Discovery Rate (LFDR) to safely expand a small set of known active molecules into a larger seed set. In low-label virtua
+  [ICLR 2026][Computational Biology][Virtual Screening] SubDyve replaces general molecular fingerprints with "class-discriminative subgraphs" to construct similarity networks. It then utilizes an iterative seed refinement process guided by the local False Discovery Rate (LFDR) to safely expand a small set of known active molecules into a larger seed set. In low-label virtual screening scenarios with only dozens of active labels, SubDyve significantly boosts early enrichment met…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Virtual Screening"
+  - "Network Propagation"
+  - "Discriminative Subgraph"
+  - "Local False Discovery Rate"
+  - "Seed Refinement"
 date: 2026-05-08
-content_hash: a19ba17ea9075f4c
+content_hash: 5d4e6ee8dd774de9
 ---
+
 # SubDyve: Subgraph-Driven Dynamic Propagation for Virtual Screening Enhancement
 
 **Conference**: ICLR 2026  

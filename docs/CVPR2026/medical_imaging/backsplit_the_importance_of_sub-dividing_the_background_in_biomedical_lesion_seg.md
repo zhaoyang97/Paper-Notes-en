@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BackSplit: The Importance of Sub-dividing the Background in Biomedical Lesion Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] The paper proposes BackSplit: a paradigm that subdivides the homogeneous "background" in lesion segmentation into semantic auxiliary organ/tissue classes for joint multi-class softmax training. Using Fisher information theory, it proves that this approach retains more information and produces more stable estimates than
+  [CVPR 2026][Medical Imaging][Lesion Segmentation] The paper proposes BackSplit: a paradigm that subdivides the homogeneous "background" in lesion segmentation into semantic auxiliary organ/tissue classes for joint multi-class softmax training. Using Fisher information theory, it proves that this approach retains more information and produces more stable estimates than binary training, consistently improving Dice scores for small lesions across five datasets with zero addition…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Lesion Segmentation"
+  - "Background Subdivision"
+  - "Fisher Information"
+  - "Auxiliary Supervision"
+  - "Label Granularity"
 date: 2026-05-08
-content_hash: 35f06433b1f2f9e0
+content_hash: 37982369aa6fbb9c
 ---
+
 # BackSplit: The Importance of Sub-dividing the Background in Biomedical Lesion Segmentation
 
 **Conference**: CVPR 2026  
@@ -141,8 +147,8 @@ Comparison of foundation model generated labels (AutoPET, single fold, Dice): Re
 ## Related Papers
 
 - [\[CVPR 2026\] Focus on Background: Exploring SAM's Potential in Few-shot Medical Image Segmentation with Background-centric Prompting](focus_on_background_exploring_sams_potential_in_few-shot_medical_image_segmentat.md)
-- [\[CVPR 2026\] MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation](mambaliteunet_cross-gated_adaptive_feature_fusion_for_robust_skin_lesion_segment.md)
 - [\[CVPR 2026\] Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset](instruction-guided_lesion_segmentation_for_chest_x-rays_with_automatically_gener.md)
+- [\[CVPR 2026\] MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation](mambaliteunet_cross-gated_adaptive_feature_fusion_for_robust_skin_lesion_segment.md)
 - [\[CVPR 2026\] IBISAgent: Reinforcing Pixel-Level Visual Reasoning in MLLMs for Universal Biomedical Object Referring and Segmentation](ibisagent_reinforcing_pixel-level_visual_reasoning_in_mllms_for_universal_biomed.md)
 - [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
 

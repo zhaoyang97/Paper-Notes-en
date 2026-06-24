@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DisenQ: Disentangling Q-Former for Activity-Biometrics
 description: >-
-  [ICCV 2025][Multimodal VLM][Activity-biometrics recognition] This paper proposes DisenQ (Disentangling Q-Former), which leverages structured language guidance to disentangle video features into three independent spaces—b…
+  [ICCV 2025][Multimodal VLM][Activity-biometrics recognition] This paper proposes DisenQ (Disentangling Q-Former), which leverages structured language guidance to disentangle video features into three independent spaces—biometric, motion, and non-biometric—achieving state-of-the-art activity-aware person recognition without requiring additional visual modalities.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "multimodal learning"
   - "video person re-identification"
 date: 2026-05-08
-content_hash: a13717f8d6fd1502
+content_hash: ee472eb2a9f05829
 ---
 
 # DisenQ: Disentangling Q-Former for Activity-Biometrics
@@ -157,9 +157,9 @@ When used alone, non-biometric features achieve only 3.8% R@1, confirming that i
 ## Related Papers
 
 - [\[ICCV 2025\] ProbRes: Probabilistic Jump Diffusion for Open-World Egocentric Activity Recognition](probres_probabilistic_jump_diffusion_for_open-world_egocentric_activity_recognit.md)
+- [\[ECCV 2024\] X-Former: Unifying Contrastive and Reconstruction Learning for MLLMs](../../ECCV2024/multimodal_vlm/x-former_unifying_contrastive_and_reconstruction_learning_for_mllms.md)
 - [\[ACL 2026\] When Seeing Overrides Knowing: Disentangling Knowledge Conflicts in Vision-Language Models](../../ACL2026/multimodal_vlm/when_seeing_overrides_knowing_disentangling_knowledge_conflicts_in_vision-langua.md)
 - [\[ACL 2026\] Long Story Short: Disentangling Compositionality and Long-Caption Understanding in Contrastive VLMs](../../ACL2026/multimodal_vlm/long_story_short_disentangling_compositionality_and_long-caption_understanding_i.md)
-- [\[ACL 2026\] From Inheritance to Saturation: Disentangling the Evolution of Visual Redundancy for Architecture-Aware MLLM Inference Acceleration](../../ACL2026/multimodal_vlm/from_inheritance_to_saturation_disentangling_the_evolution_of_visual_redundancy_.md)
 - [\[ICCV 2025\] OpenVision: A Fully-Open, Cost-Effective Family of Advanced Vision Encoders for Multimodal Learning](openvision_a_fully-open_cost-effective_family_of_advanced_vision_encoders_for_mu.md)
 
 </div>

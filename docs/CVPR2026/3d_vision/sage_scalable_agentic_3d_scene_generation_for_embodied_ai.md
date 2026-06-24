@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAGE: Scalable Agentic 3D Scene Generation for Embodied AI
 description: >-
-  [CVPR 2026][3D Vision][Embodied AI] SAGE formalizes 3D indoor scene generation as an agent operating under the MCP protocol. It invokes layout/asset generators on demand and employs a closed-loop self-correction mechanism via "Visual Review + Physical Review (Isaac Sim in-the-loop verification)." It produces physically stable, open-vocabulary scenes that
+  [CVPR 2026][3D Vision][Agentic Generation] SAGE formalizes 3D indoor scene generation as an agent operating under the MCP protocol. It invokes layout/asset generators on demand and employs a closed-loop self-correction mechanism via "Visual Review + Physical Review (Isaac Sim in-the-loop verification)." It produces physically stable, open-vocabulary scenes that can be directly imported into simulators for robot policy training, scaled through multi-layer augmentation.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Embodied AI
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Agentic Generation"
+  - "3D Scene Synthesis"
+  - "Embodied AI"
+  - "Simulation-Ready"
+  - "Self-Correction"
 date: 2026-05-08
-content_hash: 0913a24efecad422
+content_hash: 2e3ff01681ac2b00
 ---
+
 # SAGE: Scalable Agentic 3D Scene Generation for Embodied AI
 
 **Conference**: CVPR 2026  
@@ -133,11 +138,11 @@ Ablation of the review modules (Tab. 3 key values):
 
 ## Related Papers
 
+- [\[CVPR 2026\] TGSFormer: Scalable Temporal Gaussian Splatting for Embodied Semantic Scene Completion](tgsformer_scalable_temporal_gaussian_splatting_for_embodied_semantic_scene_compl.md)
 - [\[CVPR 2026\] Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI](wanderland_geometrically_grounded_simulation_for_open-world_embodied_ai.md)
 - [\[CVPR 2026\] EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents](embodmocap_in-the-wild_4d_human-scene_reconstruction_for_embodied_agents.md)
-- [\[CVPR 2026\] PromptDepth: Efficient and Promptable Geometric 3D Vision Model for Embodied Intelligence](promptdepth_efficient_and_promptable_geometric_3d_vision_model_for_embodied_inte.md)
+- [\[ICLR 2026\] Scenethesis: A Language and Vision Agentic Framework for 3D Scene Generation](../../ICLR2026/3d_vision/scenethesis_a_language_and_vision_agentic_framework_for_3d_scene_generation.md)
 - [\[CVPR 2026\] MANSION: Multi-floor Language-to-3D Scene Generation for Long-horizon Tasks](mansion_multi-floor_language-to-3d_scene_generation_for_long-horizon_tasks.md)
-- [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)
 
 </div>
 

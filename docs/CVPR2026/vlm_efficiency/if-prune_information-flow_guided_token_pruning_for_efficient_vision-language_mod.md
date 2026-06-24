@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper proposes IF-Prune, which models visual token importance estimation as an amortized variational inference problem. Using a small VLM equipped with a token-level Variational Information Bottleneck (VIB), the KL divergence between the posterior and prior of each visual token latent variable is used as the impor
+  [CVPR 2026][Multimodal Efficiency][Visual token pruning] This paper proposes IF-Prune, which models visual token importance estimation as an amortized variational inference problem. Using a small VLM equipped with a token-level Variational Information Bottleneck (VIB), the KL divergence between the posterior and prior of each visual token latent variable is used as the importance score to prune the large VLM. Guidance is provided in a single forward pass. Even when retaining…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token pruning"
+  - "VLM inference acceleration"
+  - "Variational Information Bottleneck"
+  - "Posterior guidance"
+  - "Information flow"
 date: 2026-05-08
-content_hash: d36de07d56518fbf
+content_hash: 999cddff004f43ea
 ---
+
 # IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -137,11 +143,11 @@ The small VLM trained for InternVL2.5-1B was reused to prune InternVL2-8B ($L{=}
 
 ## Related Papers
 
-- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
+- [\[NeurIPS 2025\] FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models](../../NeurIPS2025/vlm_efficiency/flowcut_rethinking_redundancy_via_information_flow_for_effic.md)
+- [\[CVPR 2026\] When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs](when_token_pruning_is_worse_than_random_understanding_visual_token_information_i.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
 - [\[CVPR 2026\] Hi-Lo Prune: Look at What You'll Lose before Pruning with Hierarchical Token Selection](hi-lo_prune_look_at_what_youll_lose_before_pruning_with_hierarchical_token_selec.md)
-- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
-- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
-- [\[CVPR 2026\] Collaborative Multi-Mode Pruning for Vision-Language Models](collaborative_multi-mode_pruning_for_vision-language_models.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Graph-based RAG] QAFD-RAG introduces "flow diffusion" into graph-based RAG by dynamically re-weighting edges based on query semantics. This ensures information flows only along paths aligned with the query, enabling the training-free extraction of compact, interpretable reasoning subgraphs. It provides the first statistical guarantee f
+  [ICLR 2026][Information Retrieval & RAG][Graph-based RAG] QAFD-RAG introduces "flow diffusion" into graph-based RAG by dynamically re-weighting edges based on query semantics. This ensures information flows only along paths aligned with the query, enabling the training-free extraction of compact, interpretable reasoning subgraphs. It provides the first statistical guarantee for "recalling relevant subgraphs with high probability" and consistently outperforms baselines like Gr…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Graph-based RAG
-  - Text-to-SQL
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Graph-based RAG"
+  - "Flow Diffusion"
+  - "Query-Aware Traversal"
+  - "Subgraph Retrieval Guarantees"
+  - "Text-to-SQL"
 date: 2026-05-08
-content_hash: fed2e20169510abc
+content_hash: 948d6f40e837041e
 ---
+
 # Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees
 
 **Conference**: ICLR 2026  
@@ -148,14 +152,17 @@ Text-to-SQL (Spider 2.0 Local, Execution Accuracy):
 
 <div class="related-papers" markdown="1">
 
-- **HippoRAG**: Neuro-biologically inspired multi-hop retrieval using PPR.
-- **GraphRAG**: Leveraging community detection and hierarchical summaries for global RAG.
-- **LightRAG**: Dual-level retrieval with ego-network sampling.
+## Related Papers
+
+- [\[ICLR 2026\] SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG](smartchunk_retrieval_query-aware_chunk_compression_with_planning_for_efficient_d.md)
+- [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
+- [\[ICLR 2026\] Flow of Spans: Generalizing Language Models to Dynamic Span-Vocabulary via GFlowNets](flow_of_spans_generalizing_language_models_to_dynamic_span-vocabulary_via_gflown.md)
+- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
+- [\[ICLR 2026\] GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation](gro-rag_gradient-aware_re-rank_optimization_for_multi-source_retrieval-augmented.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Flow of Spans: Generalizing Language Models to Dynamic Span-Vocabulary via GFlowNets](flow_of_spans_generalizing_language_models_to_dynamic_span-vocabulary_via_gflown.md)

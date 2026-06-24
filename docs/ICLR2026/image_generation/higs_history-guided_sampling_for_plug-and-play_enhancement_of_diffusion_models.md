@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HiGS: History-Guided Sampling for Plug-and-Play Enhancement of Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][CFG] HiGS is a training-free, additional-forward-free sampling plugin for diffusion models. It corrects the sampling direction using the difference between current model predictions and the EMA of historical predictions, significantly improving image clarity, structure, and detail under low NFE or low CFG scales.
+  [ICLR 2026][Image Generation][History-Guided Sampling] HiGS is a training-free, additional-forward-free sampling plugin for diffusion models. It corrects the sampling direction using the difference between current model predictions and the EMA of historical predictions, significantly improving image clarity, structure, and detail under low NFE or low CFG scales.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - CFG
+  - "ICLR 2026"
+  - "Image Generation"
+  - "History-Guided Sampling"
+  - "Diffusion Model Acceleration"
+  - "CFG"
+  - "Low-step Generation"
+  - "Frequency Domain Filtering"
 date: 2026-05-08
-content_hash: a6804963baf64fca
+content_hash: 90decee121b03b98
 ---
+
 # HiGS: History-Guided Sampling for Plug-and-Play Enhancement of Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -163,8 +168,8 @@ On preference-based metrics, HiGS shows significant gains. On DrawBench, SDXL's 
 - **Value**: ⭐⭐⭐⭐⭐ Training-free, low-overhead, and easy to deploy, making it highly valuable for real-world applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

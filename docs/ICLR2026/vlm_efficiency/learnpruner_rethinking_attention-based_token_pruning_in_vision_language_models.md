@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models
 description: >-
-  [ICLR 2026][vlm_efficiency][Token Pruning] LearnPruner empirically debunks the prevalent assumption that "attention score = token importance." It points out that [CLS] attention in vision encoders is contaminated by attention sinks, while in LLMs, only "text-to-vision" mid-layer attention is reliable. Consequently, it replaces [CLS] attention with a learnable p
+  [ICLR 2026][Multimodal Efficiency][Token Pruning] LearnPruner empirically debunks the prevalent assumption that "attention score = token importance." It points out that [CLS] attention in vision encoders is contaminated by attention sinks, while in LLMs, only "text-to-vision" mid-layer attention is reliable. Consequently, it replaces [CLS] attention with a learnable pruning module and superimposes text-guided pruning at the LLM mid-layers. By retaining only ~5.5% of vision to…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
-  - Token Pruning
-  - Vision-Language Model
-  - Attention Sink
-  - Learnable Pruning
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Token Pruning"
+  - "Vision-Language Model"
+  - "Attention Sink"
+  - "Learnable Pruning"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: af5f040a1d549ca4
+content_hash: ec835cba43884190
 ---
+
 # LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models
 
 **Conference**: ICLR 2026  
@@ -126,9 +127,9 @@ Replacing [CLS] attention with LPM in Stage 1 directly yields +1.5%; adding Stag
 
 - [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](../../CVPR2026/vlm_efficiency/rethinking_token_reduction_for_large_vision-language_models.md)
 - [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/vlm_efficiency/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
-- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
-- [\[ICLR 2026\] HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit](hidrop_hierarchical_vision_token_reduction_in_mllms_via_late_injection_concave_p.md)
 - [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](../../CVPR2026/vlm_efficiency/attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
+- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
+- [\[ICLR 2026\] SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration](sp-vla_a_joint_model_scheduling_and_token_pruning_approach_for_vla_model_acceler.md)
 
 </div>
 

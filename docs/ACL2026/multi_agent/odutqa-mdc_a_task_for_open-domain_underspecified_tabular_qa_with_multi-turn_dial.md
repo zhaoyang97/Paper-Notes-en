@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification
 description: >-
-  [ACL 2026][Multi-Agent][Text-to-SQL] This paper proposes the ODUTQA-MDC task and benchmark, systematically investigating the detection and multi-turn dialogue clarification of user query ambiguity in open-domain scenarios for the first time. It constructs a large-scale dataset containing 25,105 QA pairs and designs the MAIC-TQA multi-agent framework to pe
+  [ACL 2026][Multi-Agent][Tabular QA] This paper proposes the ODUTQA-MDC task and benchmark, systematically investigating the detection and multi-turn dialogue clarification of user query ambiguity in open-domain scenarios for the first time. It constructs a large-scale dataset containing 25,105 QA pairs and designs the MAIC-TQA multi-agent framework to perform end-to-end "detection-clarification-reasoning" tabular QA.
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - Text-to-SQL
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Tabular QA"
+  - "Ambiguous Query Clarification"
+  - "Multi-turn Dialogue"
+  - "Multi-agent Framework"
+  - "Text-to-SQL"
 date: 2026-05-08
-content_hash: 22a89de5fe7f7400
+content_hash: f29a37871e2b9977
 ---
+
 # ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification
 
 **Conference**: ACL 2026  
@@ -129,7 +134,6 @@ The SLU module uses BERT for joint training of intent classification and slot fi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

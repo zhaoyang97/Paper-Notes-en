@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Perception Characteristics Distance: Measuring Stability and Robustness of Perception System in Dynamic Conditions under a Certain Decision Rule
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes Perception Characteristics Distance (PCD), a new metric to quantify the reliable detection capability of perception systems at different distances. By statistically modeling the changes in mean and variance of detection confidence relative to distance, PCD defines the maximum reliable detection distance o
+  [CVPR2026][Autonomous Driving][Perception evaluation metrics] Ours proposes Perception Characteristics Distance (PCD), a new metric to quantify the reliable detection capability of perception systems at different distances. By statistically modeling the changes in mean and variance of detection confidence relative to distance, PCD defines the maximum reliable detection distance of a perception system, addressing the limitations of traditional static metrics like AP/IoU that f…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Perception evaluation metrics"
+  - "distance reliability"
+  - "uncertainty modeling"
+  - "variance change-point detection"
+  - "autonomous driving safety"
 date: 2026-05-08
-content_hash: dd408e7047bfd0f5
+content_hash: d41671c9293cebe4
 ---
+
 # Perception Characteristics Distance: Measuring Stability and Robustness of Perception System in Dynamic Conditions under a Certain Decision Rule
 
 **Conference**: CVPR2026  
@@ -155,7 +161,7 @@ Ours is an evaluation metric paper and does not involve training losses. The onl
 
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 - [\[CVPR 2026\] LiDAS: Lighting-driven Dynamic Active Sensing for Nighttime Perception](lidas_lighting-driven_dynamic_active_sensing_for_nighttime_perception.md)
-- [\[CVPR 2026\] Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks](mind_the_hitch_dynamic_calibration_and_articulated_perception_for_autonomous_tru.md)
+- [\[ICLR 2026\] Stability under Scrutiny: Benchmarking Representation Paradigms for Online HD Map Construction](../../ICLR2026/autonomous_driving/stability_under_scrutiny_benchmarking_representation_paradigms_for_online_hd_map.md)
 - [\[AAAI 2026\] RoadSceneVQA: Benchmarking Visual Question Answering in Roadside Perception Systems for Intelligent Transportation System](../../AAAI2026/autonomous_driving/roadscenevqa_benchmarking_visual_question_answering_in_roadside_perception_syste.md)
 - [\[CVPR 2026\] AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception](adaradar_rate_adaptive_spectral_compression_for_radar-based_perception.md)
 

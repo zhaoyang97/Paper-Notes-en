@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Radar-Guided Polynomial Fitting for Metric Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] POLAR reformulates the task of "transforming scale-invariant monocular depth estimation (MDE) into metric depth using sparse radar points" as a **polynomial fitting** problem. It utilizes radar features to predict a set of polynomial coefficients to apply non-uniform, depth-dependent corrections to MDE depth (instead o
+  [CVPR 2026][3D Vision][Radar-Camera Depth Estimation] POLAR reformulates the task of "transforming scale-invariant monocular depth estimation (MDE) into metric depth using sparse radar points" as a **polynomial fitting** problem. It utilizes radar features to predict a set of polynomial coefficients to apply non-uniform, depth-dependent corrections to MDE depth (instead of traditional global scale-and-shift affine transforms). This approach reduces MAE/RMSE by 24.9%/33.2% on…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Radar-Camera Depth Estimation"
+  - "Metric Depth"
+  - "Polynomial Fitting"
+  - "Monocular Depth Prior"
+  - "Monotonicity Regularization"
 date: 2026-05-08
-content_hash: 10cf2deee49f9598
+content_hash: cba37abf327d8f3e
 ---
+
 # Radar-Guided Polynomial Fitting for Metric Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -153,14 +159,17 @@ Polynomial degree sensitivity (nuScenes / ZJU MAE): Degree 1 (Affine) 2156.8 / 1
 
 <div class="related-papers" markdown="1">
 
-1. **UniDepth**: Universal Monocular Metric Depth Estimation (CVPR 2024)
-2. **Depth Anything**: Unleashing the Power of Large-Scale Unlabeled Data (CVPR 2024)
-3. **RadarCam-Depth**: Sparse-to-Dense Depth Completion using mmWave Radar (CVPR 2023)
+## Related Papers
+
+- [\[CVPR 2026\] The Midas Touch for Metric Depth](the_midas_touch_for_metric_depth.md)
+- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
+- [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](unidac_universal_metric_depth_estimation_for_any_camera.md)
+- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
+- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] The Midas Touch for Metric Depth](the_midas_touch_for_metric_depth.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Converge Faster, Talk Less: Hessian-Informed Federated Zeroth-Order Optimization
 description: >-
-  [ICLR 2026][LLM Safety][zeroth-order optimization] Ours proposes HiSo (Hessian-informed Scalar-only communication), which utilizes global diagonal Hessian approximation to accelerate convergence in federated zeroth-order optimization while strictly maintaining scalar-only communication without transmitting any second-order information. It is theoretically proven that u
+  [ICLR 2026][LLM Safety][Federated Learning] Ours proposes HiSo (Hessian-informed Scalar-only communication), which utilizes global diagonal Hessian approximation to accelerate convergence in federated zeroth-order optimization while strictly maintaining scalar-only communication without transmitting any second-order information. It is theoretically proven that under low effective rank and whitening assumptions, the convergence rate is independent of the Lipschitz constant $L$…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - zeroth-order optimization
-  - Hessian preconditioning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Federated Learning"
+  - "zeroth-order optimization"
+  - "Hessian preconditioning"
+  - "scalar-only communication"
+  - "LLM fine-tuning"
 date: 2026-05-08
-content_hash: 03cb45fde149d3a2
+content_hash: 150059681daf3e8d
 ---
+
 # Converge Faster, Talk Less: Hessian-Informed Federated Zeroth-Order Optimization
 
 **Conference**: ICLR 2026  

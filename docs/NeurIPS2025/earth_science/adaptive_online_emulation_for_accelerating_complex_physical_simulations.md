@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Online Emulation for Accelerating Complex Physical Simulations
 description: >-
-  [NeurIPS 2025][Earth Science][Online learning] This paper proposes Adaptive Online Emulation (AOE), a framework that dynamically trains an ELM-based neural network surrogate model during physical simulation execution to…
+  [NeurIPS 2025][Earth Science][Online learning] This paper proposes Adaptive Online Emulation (AOE), a framework that dynamically trains an ELM-based neural network surrogate model during physical simulation execution to replace expensive computational components, requiring no offline pretraining. On an exoplanetary atmospheric simulation, AOE achieves an 11.1× speedup (91% time savings) with only ~0.01% accuracy loss.
 tags:
   - "NeurIPS 2025"
   - "Earth Science"
@@ -12,7 +12,7 @@ tags:
   - "ELM"
   - "atmospheric modeling"
 date: 2026-05-08
-content_hash: 574a2c9d9c67a04f
+content_hash: ad1d2f4c27fdfe22
 ---
 
 # Adaptive Online Emulation for Accelerating Complex Physical Simulations
@@ -119,10 +119,10 @@ Evaluated on a one-dimensional atmospheric model of the exoplanet GJ1214b (OASIS
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Probabilistic U-Net Approach to Downscaling Climate Simulations](a_probabilistic_unet_approach_to_downscaling_climate_simulat.md)
+- [\[ICLR 2026\] Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models](../../ICLR2026/earth_science/task-adaptive_parameter-efficient_fine-tuning_for_weather_foundation_models.md)
 - [\[NeurIPS 2025\] Power Ensemble Aggregation for Improved Extreme Event AI Prediction](power_ensemble_aggregation_for_improved_extreme_event_ai_prediction.md)
 - [\[NeurIPS 2025\] Reasoning With a Star: A Heliophysics Dataset and Benchmark for Agentic Scientific Reasoning](reasoning_with_a_star_a_heliophysics_dataset_and_benchmark_for_agentic_scientifi.md)
 - [\[NeurIPS 2025\] Predicting Public Health Impacts of Electricity Usage](predicting_public_health_impacts_of_electricity_usage.md)
-- [\[NeurIPS 2025\] ControlFusion: A Controllable Image Fusion Framework with Language-Vision Degradation Prompts](controlfusion_a_controllable_image_fusion_framework_with_language-vision_degrada.md)
 
 </div>
 

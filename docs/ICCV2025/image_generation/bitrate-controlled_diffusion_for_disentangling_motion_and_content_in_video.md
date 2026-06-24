@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video
 description: >-
-  [ICCV 2025][Image Generation][video disentanglement] This paper proposes BCD (Bitrate-Controlled Diffusion), a general self-supervised video disentanglement framework that separates per-frame motion features from global…
+  [ICCV 2025][Image Generation][video disentanglement] This paper proposes BCD (Bitrate-Controlled Diffusion), a general self-supervised video disentanglement framework that separates per-frame motion features from global content features via a low-bitrate vector quantization information bottleneck, and reconstructs video using a conditional diffusion model. The approach demonstrates high-quality motion transfer and autoregressive video generation on talking-head and pixel-art…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "vector quantization"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 59727055043105db
+content_hash: ff2360740c89d603
 ---
 
 # Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video
@@ -152,9 +152,9 @@ Training details: batch=32, 50 frames per clip; trained for 30 epochs (without t
 
 - [\[ICCV 2025\] Video Motion Graphs](video_motion_graphs.md)
 - [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
+- [\[CVPR 2025\] DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning](../../CVPR2025/image_generation/dreamvideo-omni_omni-motion_controlled_multi-subject_video_customization_with_la.md)
 - [\[ICCV 2025\] SummDiff: Generative Modeling of Video Summarization with Diffusion](summdiff_generative_modeling_of_video_summarization_with_diffusion.md)
 - [\[ICCV 2025\] Diffusion-based 3D Hand Motion Recovery with Intuitive Physics](diffusion-based_3d_hand_motion_recovery_with_intuitive_physics.md)
-- [\[ICCV 2025\] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction](aid_adapting_image2video_diffusion_models_for_instruction-guided_video_predictio.md)
 
 </div>
 

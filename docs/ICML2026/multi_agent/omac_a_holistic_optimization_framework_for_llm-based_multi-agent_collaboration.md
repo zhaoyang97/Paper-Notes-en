@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] This paper formalizes the optimization space of multi-agent systems (MAS) into five dimensions (two functional + three structural). It utilizes a dual-actor algorithm comprising a "Semantic Initializer" for generation and a "Contrastive Comparator" for iterative improvement to perform supervised optimization across eac
+  [ICML 2026 Spotlight][Multi-Agent][Multi-agent systems] This paper formalizes the optimization space of multi-agent systems (MAS) into five dimensions (two functional + three structural). It utilizes a dual-actor algorithm comprising a "Semantic Initializer" for generation and a "Contrastive Comparator" for iterative improvement to perform supervised optimization across each dimension. By iteratively and jointly optimizing multiple dimensions…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML 2026 Spotlight"
+  - "Multi-Agent"
+  - "Multi-agent systems"
+  - "collaborative optimization"
+  - "contrastive reasoning"
+  - "prompt evolution"
+  - "supervised optimization"
 date: 2026-05-08
-content_hash: 79fc25a977bd3487
+content_hash: 42bd3f9043bda15f
 ---
+
 # OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration
 
 **Conference**: ICML 2026 Spotlight  
@@ -149,10 +155,10 @@ OMAC-C: Removes the Contrastive Comparator, using only the Semantic Initializer 
 ## Related Papers
 
 - [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
+- [\[ICLR 2026\] Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration](../../ICLR2026/multi_agent/graph-of-agents_a_graph-based_framework_for_multi-agent_llm_collaboration.md)
 - [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](../../ICLR2026/multi_agent/adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
 - [\[ICML 2026\] MAS-Orchestra: Understanding and Improving Multi-Agent Reasoning Through Holistic Orchestration and Controlled Benchmarks](mas-orchestra_understanding_and_improving_multi-agent_reasoning_through_holistic.md)
-- [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](../../ACL2026/multi_agent/atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
-- [\[NeurIPS 2025\] R&D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization](../../NeurIPS2025/multi_agent/rd-agent-quant_a_multi-agent_framework_for_data-centric_factors_and_model_joint_.md)
+- [\[ICML 2026\] MASPOB: Multi-Agent Prompt Optimization via GNN Surrogate + LinUCB + Coordinate Ascent](maspob_bandit-based_prompt_optimization_for_multi-agent_systems_with_graph_neura.md)
 
 </div>
 

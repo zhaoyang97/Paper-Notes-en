@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exact Learning of Arithmetic with Differentiable Agents
 description: >-
-  [NeurIPS 2025 (MATH-AI Workshop)][differentiable FST] This paper proposes the Differentiable Finite-State Transducer (DFST), a Turing-complete and end-to-end differentiable model family that operates on a 2D symbol grid.…
+  [NeurIPS 2025 (MATH-AI Workshop)][differentiable FST] This paper proposes the Differentiable Finite-State Transducer (DFST), a Turing-complete and end-to-end differentiable model family that operates on a 2D symbol grid. Trained via Policy-Trajectory Observations (PTOs) derived from expert arithmetic computations, DFST achieves perfect generalization to 3,850-digit binary addition and 2,450-digit decimal addition using only 20 training samples of up to 3-digit addition…
 tags:
   - "NeurIPS 2025 (MATH-AI Workshop)"
   - "differentiable FST"
@@ -11,7 +11,7 @@ tags:
   - "length generalization"
   - "Turing-complete"
 date: 2026-05-08
-content_hash: 196c67394e59853e
+content_hash: 3c3ded8f626d87b2
 ---
 
 # Exact Learning of Arithmetic with Differentiable Agents
@@ -117,10 +117,10 @@ Note: All "≥" values indicate that longer inputs could not be tested due to GP
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scalable GPU-Accelerated Euler Characteristic Curves: Optimization and Differentiable Learning for PyTorch](scalable_gpu-accelerated_euler_characteristic_curves_optimization_and_differenti.md)
+- [\[ICML 2025\] AutoAL: Automated Active Learning with Differentiable Query Strategy Search](../../ICML2025/others/autoal_automated_active_learning_with_differentiable_query_strategy_search.md)
 - [\[NeurIPS 2025\] A Differentiable Model of Supply-Chain Shocks](a_differentiable_model_of_supply-chain_shocks.md)
-- [\[ICML 2026\] DisjunctiveNet: Neural Symbolic Learning via Differentiable Convexified Optimization Layers](../../ICML2026/others/disjunctivenet_neural_symbolic_learning_via_differentiable_convexified_optimizat.md)
-- [\[CVPR 2026\] DiffBMP: Differentiable Rendering with Bitmap Primitives](../../CVPR2026/others/diffbmp_differentiable_rendering_with_bitmap_primitives.md)
-- [\[ICLR 2026\] Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](../../ICLR2026/others/improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)
+- [\[ACL 2025\] Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks](../../ACL2025/others/principled_generalization_arithmetic.md)
+- [\[ICML 2025\] Truly Self-Improving Agents Require Intrinsic Metacognitive Learning](../../ICML2025/others/truly_self-improving_agents_require_intrinsic_metacognitive_learning.md)
 
 </div>
 

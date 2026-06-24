@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Margin-Adaptive Confidence Ranking for Reliable LLM Judgement
 description: >-
-  [ICML 2026][LLM Evaluation][LLM-as-a-judge] Addressing the frequently violated monotonicity assumption in LLM-as-a-judge—where high confidence does not necessarily imply reliability—this paper proposes using a small MLP to map multiple in-context prediction probabilities to confidence scores. By deriving a margin-adaptive training strategy via margin-based ranki
+  [ICML 2026][LLM Evaluation][LLM-as-a-judge] Addressing the frequently violated monotonicity assumption in LLM-as-a-judge—where high confidence does not necessarily imply reliability—this paper proposes using a small MLP to map multiple in-context prediction probabilities to confidence scores. By deriving a margin-adaptive training strategy via margin-based ranking loss and PAC-Bayes generalization bounds, the learned confidence achieves lower ranking loss, higher AUROC…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - LLM-as-a-judge
-  - margin ranking
-  - PAC-Bayesian bound
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-judge"
+  - "confidence estimation"
+  - "margin ranking"
+  - "PAC-Bayesian bound"
+  - "selective evaluation"
 date: 2026-05-08
-content_hash: 18f586ea525f83c8
+content_hash: 94f3f4ddf96b1500
 ---
+
 # Margin-Adaptive Confidence Ranking for Reliable LLM Judgement
 
 **Conference**: ICML 2026  
@@ -140,11 +143,11 @@ Across all 4 datasets × 6 judge model combinations, the proposed method achieve
 
 ## Related Papers
 
-- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](../../ICLR2026/llm_evaluation/multi-llm_adaptive_conformal_inference_for_reliable_llm_responses.md)
+- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](../../ICLR2026/llm_evaluation/multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
 - [\[ACL 2026\] Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference](../../ACL2026/llm_evaluation/statistically_reliable_llm-based_ranking_evaluation_via_prediction-powered_infer.md)
 - [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
-- [\[ICML 2026\] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
-- [\[ACL 2025\] JuStRank: Benchmarking LLM Judges for System Ranking](../../ACL2025/llm_evaluation/justrank_llm_judge_system_ranking.md)
+- [\[ICML 2026\] Reliable to Expressive: A Curriculum for Rubric-Following Safety Judges](reliable_to_expressive_a_curriculum_for_rubric-following_safety_judges.md)
+- [\[ICML 2026\] On Cost-Effective LLM-as-a-Judge Improvement Techniques](on_cost-effective_llm-as-a-judge_improvement_techniques.md)
 
 </div>
 

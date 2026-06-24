@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] CRISP: Persistent Concept Unlearning via Sparse Autoencoders
 description: >-
-  [ACL 2026][LLM Safety][SAE] Addressing the issue where SAE-based unlearning mostly intervenes only during inference while weights still contain sensitive knowledge, CRISP automatically identifies SAE features that are "strongly activated only on target" by comparing target/retain corpora. It then uses LoRA with a three-part loss (unlearn + retain
+  [ACL 2026][LLM Safety][SAE] Addressing the issue where SAE-based unlearning mostly intervenes only during inference while weights still contain sensitive knowledge, CRISP automatically identifies SAE features that are "strongly activated only on target" by comparing target/retain corpora. It then uses LoRA with a three-part loss (unlearn + retain + coherence) to "fix" these feature activations to zero within the weights. This approach advances the Pareto frontier across unlea…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - SAE
-  - WMDP
-  - LoRA
+  - "ACL 2026"
+  - "LLM Safety"
+  - "SAE"
+  - "Persistent Unlearning"
+  - "WMDP"
+  - "Contrastive Feature Selection"
+  - "LoRA"
+  - "Concept Suppression"
 date: 2026-05-08
-content_hash: 4df8f431f3f16154
+content_hash: ed17f3ed1e55d2e5
 ---
+
 # CRISP: Persistent Concept Unlearning via Sparse Autoencoders
 
 **Conference**: ACL 2026  
@@ -158,6 +162,7 @@ CRISP takes the lead in Overall score across all 4 (model, dataset) settings. On
 - Value: ⭐⭐⭐⭐ New SOTA for persistent unlearning with transferable methodology.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -165,8 +170,8 @@ CRISP takes the lead in Overall score across all 4 (model, dataset) settings. On
 - [\[ICCV 2025\] SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders](../../ICCV2025/llm_safety/sauce_selective_concept_unlearning_in_vision-language_models_with_sparse_autoenc.md)
 - [\[ICML 2025\] SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability](../../ICML2025/llm_safety/saebench_a_comprehensive_benchmark_for_sparse_autoencoders_in_language_model_int.md)
 - [\[NeurIPS 2025\] SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders](../../NeurIPS2025/llm_safety/saemark_steering_personalized_multilingual_llm_watermarks_with_sparse_autoencode.md)
-- [\[ACL 2026\] CAP: Controllable Alignment Prompting for Unlearning in LLMs](cap_controllable_alignment_prompting_for_unlearning_in_llms.md)
 - [\[ACL 2026\] SAGE: Sparse Adaptive Guidance for Dependency-Aware Tabular Data Generation](sage_sparse_adaptive_guidance_for_dependency-aware_tabular_data_generation.md)
+- [\[ACL 2026\] CAP: Controllable Alignment Prompting for Unlearning in LLMs](cap_controllable_alignment_prompting_for_unlearning_in_llms.md)
 
 </div>
 

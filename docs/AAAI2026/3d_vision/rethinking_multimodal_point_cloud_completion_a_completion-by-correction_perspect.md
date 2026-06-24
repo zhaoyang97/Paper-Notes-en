@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective
 description: >-
-  [AAAI 2026][3D Vision][Point Cloud Completion] This paper proposes a novel Completion-by-Correction paradigm that leverages a pretrained image-to-3D model to generate a topologically complete shape prior…
+  [AAAI 2026][3D Vision][Point Cloud Completion] A new paradigm, Completion-by-Correction, is proposed. It utilizes a pretrained image-to-3D model to generate a topologically complete shape prior, which is then corrected in the feature space to align with partial observations, replacing the traditional Completion-by-Inpainting method. It achieves a 23.5% reduction in average CD and a 7.1% improvement in F-score on ShapeNetViPC.
 tags:
   - "AAAI 2026"
   - "3D Vision"
@@ -12,40 +12,40 @@ tags:
   - "Correction Paradigm"
   - "Feature Alignment"
 date: 2026-05-08
-content_hash: b3a042840d8db123
+content_hash: c652babe5661a5cc
 ---
 
 # Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.12170](https://arxiv.org/abs/2511.12170)  
 **Code**: [https://github.com/RobWonn/PGNet](https://github.com/RobWonn/PGNet)  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: Point Cloud Completion, Multimodal Fusion, Generative Prior, Correction Paradigm, Feature Alignment
 
 ## TL;DR
 
-This paper proposes a novel Completion-by-Correction paradigm that leverages a pretrained image-to-3D model to generate a topologically complete shape prior, then corrects it in feature space to align with local observations. This replaces the conventional Completion-by-Inpainting approach, achieving a 23.5% reduction in average CD and a 7.1% improvement in F-score on ShapeNet-ViPC.
+A new paradigm, Completion-by-Correction, is proposed. It utilizes a pretrained image-to-3D model to generate a topologically complete shape prior, which is then corrected in the feature space to align with partial observations, replacing the traditional Completion-by-Inpainting method. It achieves a 23.5% reduction in average CD and a 7.1% improvement in F-score on ShapeNetViPC.
 
 ## Background & Motivation
 
-### State of the Field
+### Background
 
-Point cloud completion aims to recover complete 3D shapes from partial observations, with broad applications in autonomous driving, augmented reality, and robotics. Deep learning methods such as PoinTr and SeedFormer have achieved notable progress, yet purely unimodal approaches still struggle to distinguish between occlusion-induced missing regions and structural holes under severe occlusion. Multimodal methods therefore exploit RGB images to provide complementary texture and semantic information to assist completion.
+Point cloud completion aims to recover complete 3D shapes from partial observations, with wide applications in autonomous driving, augmented reality, and robotics. Recently, deep learning methods (e.g., PoinTr, SeedFormer) have made significant progress. However, single-modal methods still struggle to distinguish "occlusion-induced missingness" from "structural voids" under severe occlusion. Consequently, multimodal methods leverage RGB images to provide complementary texture and semantic information to assist in completion.
 
 ### Limitations of Prior Work
 
-Existing multimodal methods (CSDN, XMFNet, EGIInet, etc.) all follow the **Completion-by-Inpainting** paradigm—fusing image and point cloud features and then directly synthesizing missing geometry from the fused latent representation. Through empirical analysis, the authors identify fundamental drawbacks of this approach:
+Existing multimodal methods (CSDN, XMFNet, EGIInet, etc.) all follow the **Completion-by-Inpainting** paradigm—fusing image and point cloud features first, and then directly synthesizing the missing geometry from the fused latent features. The authors experimentally identify inherent flaws in this approach:
 
-**Structural inconsistency**: Without an explicit structural skeleton, the network must "hallucinate" missing structures, often producing topological artifacts.
+**Structural Inconsistency**: The network must "invent out of thin air" the missing structure without an explicit structural skeleton, which easily leads to topological artifacts.
 
-**Semantic ambiguity**: Under severe degradation, the fused features provide insufficient constraints, yielding results that are semantically plausible but geometrically incoherent.
+**Semantic Ambiguity**: In severely degraded cases, the constraints provided by fused features are insufficient, resulting in generations that are semantically plausible but geometrically incoherent.
 
-**Unconstrained synthesis**: Synthesizing geometry from incomplete representations is inherently ill-posed.
+**Unconstrained Synthesis**: Synthesizing geometry from incomplete representations is inherently an ill-posed problem.
 
-### Root Cause & Starting Point
+### Key Challenge & Key Insight
 
-The authors argue that the fundamental issue lies in performing unconstrained synthesis from incomplete representations. Instead, they propose first obtaining a topologically complete initial shape via an image-to-3D model, and then correcting it to align with the observation. This transforms the problem from unconstrained synthesis to guided refinement, making it better-posed.
+The authors argue that the root of the problem lies in the extreme difficulty of performing "unconstrained synthesis" from incomplete representations. Instead, it is better to first provide a topologically complete initial shape (utilizing an image-to-3D model) and then "correct" this shape to align with observations. This shifts the task from "unconstrained synthesis" to "guided refinement," making the problem much more well-posed.
 
 ## Method
 
@@ -53,131 +53,131 @@ The authors argue that the fundamental issue lies in performing unconstrained sy
 
 PGNet (PriorGroundNet) consists of three stages:
 
-1. **Corrective Dual-Feature Encoding**: Parallel encoding of the generated prior and the partial observation, with feature-space correction of the prior.
-2. **Grounded Seed Generation**: Synthesis of a coarse yet topologically complete seed point cloud as a structural skeleton.
-3. **Hierarchical Grounded Refinement**: Iterative geometry refinement through two stacked Grounded Refinement Blocks (GRBs).
+1. **Corrective Dual-Feature Encoding**: Parallely encodes the generative prior and partial observations, correcting the prior in the feature space.
+2. **Grounded Seed Generation**: Synthesizes coarse but topologically complete seed point clouds as the structural skeleton.
+3. **Hierarchical Grounded Refinement**: Progressively refines geometric details through two layers of GRBs.
 
-The inputs are a partial point cloud $P_o \in \mathbb{R}^{M \times 3}$ and a corresponding single-view RGB image $I$, with the goal of reconstructing the complete point cloud. A pretrained Trellis image-to-3D model first generates a prior point cloud $P_g$ from the image, which is then aligned to the observation via a learned correction function $\mathcal{T}$.
+The inputs include a partial point cloud $P_o \in \mathbb{R}^{M \times 3}$ and the corresponding single-view RGB image $I$, aiming to reconstruct the complete point cloud. First, a pretrained Trellis image-to-3D model is used to generate a prior point cloud $P_g$ from the image, and then $P_g$ is aligned with the observation via a learned correction function $\mathcal{T}$.
 
 ### Key Designs
 
 #### 1. Corrective Dual-Feature Encoding
 
-**Mechanism**: Since $P_g$ and $P_o$ differ in scale, pose, and point distribution, feature-space alignment is required.
+**Core Idea**: Since disparities exist between the prior $P_g$ and the observation $P_o$ in scale, pose, and point distribution, alignment is required in the feature space.
 
-- **Partial point cloud encoder**: Employs hierarchical local feature aggregation (FPS + DGCNN) to extract $N_e = 128$ representative points and initial features. Learnable relative positional encodings $\Phi$ are incorporated to mitigate pose discrepancy. A **Salient Transformer** (dual-branch structure) then fuses global and local context:
-    - Global branch: MHSA produces long-range context $A_o$
-    - Local branch: kNN + shared MLP + max pooling produces local patterns $X_o$
-    - A learnable saliency gate $G_o = \sigma(\text{MLP}([A_o, X_o]))$ adaptively fuses both
+- **Partial Point Cloud Encoder**: Employs hierarchical local feature aggregation (FPS + DGCNN) to extract $N_e = 128$ representative points and initial features. A learnable relative position encoding $\Phi$ is incorporated to alleviate pose disparities. Then, global and local contexts are fused using the **Salient Transformer** (dual-branch structure):
+    - Global Branch: MHSA generates long-range context $A_o$.
+    - Local Branch: kNN + shared MLP + max pooling generates local patterns $X_o$.
+    - Adaptive fusion is achieved via a learnable saliency gate $G_o = \sigma(\text{MLP}([A_o, X_o]))$.
 
 $$F_o = (1 - G_o) \odot A_o + G_o \odot X_o$$
 
-- **Generative prior encoder**: Uses the same hierarchical encoding, but employs a **Grounding Transformer** to correct the prior in feature space:
-    - A self-attention branch captures the internal structure of the prior
-    - A grounding branch (cross-attention) takes $F_g''$ as query and $F_o$ as key/value to yield observation-aligned features
-    - A saliency gate fuses both branches analogously
+- **Generative Prior Encoder**: Employs the same hierarchical encoding, but utilizes a **Grounding Transformer** to correct the prior in the feature space:
+    - Self-attention branch captures the internal structure of the prior.
+    - Grounding branch (cross-attention) uses $F_g''$ as queries and $F_o$ as keys/values to obtain observation-aligned features.
+    - Similarly fused via a saliency gate.
 
-**Design Motivation**: The Salient Transformer enhances the reliability of $F_o$ (attending globally in sparse regions, locally in detailed regions), while the Grounding Transformer injects reliable observation signals into the generated prior.
+**Design Motivation**: The Salient Transformer enhances the reliability of $F_o$ (attending to the global context in sparse regions and local details in fine regions), while the Grounding Transformer injects reliable observation signals into the generative prior.
 
 #### 2. Grounded Seed Generation
 
-**Mechanism**: Produces a coarse but topologically complete and geometrically grounded skeleton point cloud.
+**Core Idea**: Generate a coarse but topologically complete and geometrically grounded skeleton point cloud.
 
-- Max pooling over $F_g$ and $F_o$ extracts global representations $\hat{F}_g$ and $\hat{F}_o$
-- Cross-attention fuses the global features to yield $\hat{F}_{\text{fused}}$
-- Inspired by PixelShuffle, an MLP followed by reshaping expands the global feature into $N_c = 512$ seed features
-- Cross-attention then aligns the seed features with $F_o$ (grounding)
-- A final MLP generates the coarse point cloud $P_c$:
+- Performs max pooling on $F_g$ and $F_o$ to extract global representations $\hat{F}_g$ and $\hat{F}_o$.
+- Fuses global features via cross-attention to obtain $\hat{F}_{\text{fused}}$.
+- Inspired by PixelShuffle, expands the global features to $N_c = 512$ seed features through MLP + reshape.
+- Performs cross-attention again to align (ground) seed features with $F_o$.
+- Finally, an MLP generates the coarse point cloud $P_c$:
 
 $$P_c = \text{MLP}([\text{Replicate}(\hat{F}_{\text{fused}}, N_c), F_{\text{seed}}, F_{\text{gr}}])$$
 
 #### 3. Hierarchical Grounded Refinement
 
-**Mechanism**: $K=2$ stacked Grounded Refinement Blocks (GRBs) progressively improve geometric fidelity. Each GRB contains two components:
+**Core Idea**: Progressively enhance geometric fidelity through $K=2$ stacked Grounded Refinement Blocks (GRBs). Each GRB contains two components:
 
 **(a) Dual-Source Feature Association**:
-- Query from observation: for each point, interpolate features from $F_o$ via kNN + IDW (inverse distance weighting)
-- Query from prior: since $P_o$ and $P_g$ are spatially misaligned, kNN + IDW interpolation is performed in **feature space** rather than geometric space
-- Dual-source features are concatenated: $f_{as}(p_i) = [f_{\text{interp},o}(p_i), f_{\text{interp},g}(p_i)]$
+- Querying from observations: Uses Inverse Distance Weighting (IDW) to interpolate features from the kNN of $F_o$ for each point.
+- Querying from priors: Since $P_o$ and $P_g$ are spatially unaligned, kNN + IDW interpolation is conducted in the **feature space** instead.
+- Concatenating dual-source features: $f_{as}(p_i) = [f_{\text{interp},o}(p_i), f_{\text{interp},g}(p_i)]$
 
 **(b) Structure-Aware Upsampling**:
-- Cross-Scale Shape Context (CSSC) module: for each point, a geometric transformer aggregates multi-scale shape context from the previous resolution
-- Attention weights jointly account for feature similarity and relative spatial position
-- Predicts $r$ displacement vectors ($r=2$), upsampling hierarchically: $512 \to 1024 \to 2048$
+- Cross-Scale Shape Context (CSSC) module: Aggregates multi-scale shape contexts from the previous resolution for each point via geometric transformer attention.
+- Attention weights simultaneously consider feature similarity and relative spatial positions.
+- Predicts $r$ displacement vectors ($r=2$), progressively upsampling from low to high resolution at each layer: $512 \to 1024 \to 2048$.
 
 ### Loss & Training
 
-L1 Chamfer Distance is used as the training objective, applied to both the coarse output and each upsampled output (multi-level supervision):
+The L1 Chamfer Distance is adopted as the training objective, supervising both the coarse output and the upsampled output of each layer (multi-level supervision):
 
 $$\mathcal{L} = \frac{1}{K+1}\left(\mathcal{L}_{\text{CD}}(P_c, P_{gt}) + \sum_{k=1}^{K}\mathcal{L}_{\text{CD}}(P^{(k)}, P_{gt})\right)$$
 
-Training details: AdamW optimizer, initial learning rate $2 \times 10^{-4}$, cosine annealing, trained per-category for 100K steps, batch size 192, NVIDIA RTX 4090. Prior generation uses the Trellis model with Poisson disk sampling to 2048 points.
+Training details: AdamW optimizer, initial learning rate of $2 \times 10^{-4}$ with cosine annealing, trained for 100K steps per category individually, batch size 192, NVIDIA RTX 4090. Prior generation uses the Trellis model + Poisson disk sampling 2048 points.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated on ShapeNet-ViPC (38,328 objects, 13 categories):
+Evaluated on the ShapeNet-ViPC dataset (38,328 objects, 13 categories):
 
-| Method | Type | Avg. CD (×10⁻³) ↓ | Avg. F-score ↑ |
-|--------|------|-------------------|----------------|
-| PoinTr | Unimodal | 2.851 | 0.683 |
-| SeedFormer | Unimodal | 2.902 | 0.688 |
+| Method | Type | Mean CD (×10⁻³) ↓ | Mean F-score ↑ |
+|------|------|-------------------|---------------|
+| PoinTr | Single-modal | 2.851 | 0.683 |
+| SeedFormer | Single-modal | 2.902 | 0.688 |
 | ViPC | Multimodal | 3.308 | 0.591 |
 | CSDN | Multimodal | 2.570 | 0.695 |
 | XMFNet | Multimodal | 1.454 | 0.797 |
 | EGIInet | Multimodal | 1.211 | 0.836 |
 | **PGNet (Ours)** | **Multimodal** | **0.926** | **0.895** |
 
-Compared to the previous SOTA EGIInet: **CD reduced by 23.5%, F-score improved by 7.1%**. Gains are especially pronounced on heavily occluded categories such as cabinet (+42.2%) and sofa (+26.6%).
+Compared with the previous SOTA EGIInet: **CD decreases by 23.5%, and F-score improves by 7.1%**. The gains are particularly significant on heavily occluded categories such as cabinet (+42.2%) and sofa (+26.6%).
 
 ### Ablation Study
 
-Ablation on the cabinet category (CD ×10⁻³ / F-score):
+Ablation study on the cabinet category (CD ×10⁻³ / F-score):
 
-| Configuration | CD ↓ | F-score ↑ | Note |
-|---------------|------|-----------|------|
+| Configuration | CD ↓ | F-score ↑ | Description |
+|------|------|-----------|------|
 | w/o Prior Feature Grounding | 1.185 | 0.827 | Removes feature-space correction |
 | w/o Seed Grounding | 1.219 | 0.821 | Removes seed grounding |
-| w/o Dual-Source Association | 1.324 | 0.803 | Largest impact; dual-source association is central |
+| w/o Dual-Source Association | 1.324 | 0.803 | Largest impact; dual-source association is the core component |
 | w/o Structure-Aware | 1.275 | 0.800 | Removes structure-aware upsampling |
-| **PGNet (Full)** | **1.111** | **0.839** | Complete model |
+| **PGNet (Full)** | **1.111** | **0.839** | Full model |
 
-Paradigm comparison (Inpainting vs. Correction): the Inpainting variant achieves an average CD of 1.10 versus 0.93 for PGNet, with the Inpainting variant showing 41.4% higher CD on cabinet.
+Paradigm comparison (Inpainting vs. Correction): The Inpainting variant achieves an average CD of 1.10 compared to 0.93 for PGNet. Inpainting's CD on the cabinet category is 41.4% higher.
 
 ### Key Findings
 
-1. The Completion-by-Correction paradigm is inherently more robust than Completion-by-Inpainting, demonstrating that correcting from a complete prior is superior to synthesizing from incomplete features.
-2. Dual-Source Feature Association is the most critical component (removing it increases CD by 19.2%), confirming that jointly exploiting observational fidelity and prior structural information is essential.
-3. Gains are largest on heavily occluded categories (cabinet, sofa), validating the central role of the prior skeleton when missing regions are large.
+1. The Completion-by-Correction paradigm is inherently more robust than Completion-by-Inpainting, proving that "correcting from a complete prior" outperforms "synthesizing from incomplete features."
+2. Dual-source feature association is the most critical performance component (removing it increases CD by 19.2%), showing that simultaneously leveraging observation fidelity and prior structural information is essential.
+3. The superiority is most pronounced on heavily occluded categories (cabinet, sofa), validating the core value of the prior skeleton when missing regions are large.
 
 ## Highlights & Insights
 
-1. **Paradigm innovation**: Proposes a new completion paradigm—shifting from "filling in missing parts" to "correcting a complete prior"—transforming an ill-posed synthesis problem into a well-posed refinement problem.
-2. **Elegant use of image-to-3D models**: Rather than fusing at the geometric level (susceptible to pose/scale discrepancy), correction is performed in feature space, yielding a more principled design.
-3. **Saliency gating mechanism**: A unified gating design across both the Salient Transformer and the Grounding Transformer is concise and effective.
-4. **Feature-space interpolation**: Dual-Source Association applies kNN in feature space rather than geometric space for prior features, elegantly circumventing geometric misalignment.
+1. **Paradigm Innovation**: Proposes a new paradigm for point cloud completion—shifting from "inpainting" to "correction," which converts the ill-posed synthesis problem into a well-posed refinement task.
+2. **Clever Utilization of Image-to-3D Models**: Instead of direct geometric-level fusion (which is vulnerable to pose/scale disparities), it corrects features in the feature space, yielding a more elegant design.
+3. **Saliency Gating Mechanism**: Unifies the gating design of both the Salient Transformer and the Grounding Transformer, which is simple yet effective.
+4. **Feature-Space Interpolation**: Adopts feature-space kNN instead of spatial kNN for prior features in the Dual-Source Association, successfully bypassing geometric unalignment issues.
 
 ## Limitations & Future Work
 
-1. The method depends on the pretrained Trellis image-to-3D model; prior quality directly limits performance, and inference overhead is increased.
-2. Each category is trained separately for 100K steps, incurring high training cost; cross-category generalization has not been verified.
-3. Evaluation is limited to the ShapeNet-ViPC synthetic dataset; real-scene validation is absent.
-4. Biases (hallucinations) introduced by the prior generation model may cause systematic errors, a concern not thoroughly analyzed in the paper.
+1. It relies on a pretrained image-to-3D model (Trellis). The quality of the prior directly determines the performance upper bound and increases inference overhead.
+2. Training 100K steps per category individually involves high computational costs, and cross-category generalization capabilities have not been evaluated.
+3. Evaluation is only conducted on the ShapeNetViPC synthetic dataset, lacking validation in real-world scenarios.
+4. Hallucinations from the prior generation model may introduce systematic errors, which lacks in-depth analysis in the paper.
 
 ## Related Work & Insights
 
-- **SymmCompletion** (AAAI 2025): Exploits symmetry priors for point cloud completion; combining it with the present framework—generating a prior then correcting it—is a natural direction.
-- **PCDreamer** (CVPR 2025): Diffusion-based point cloud completion; direct geometric fusion suffers from pose discrepancy, a problem the present method avoids via feature-space correction.
-- Advances in image-to-3D models (e.g., Trellis, TripoSR) will directly raise the ceiling of this framework.
-- The "generate-then-correct" paradigm is broadly transferable to other 3D reconstruction tasks.
+- **SymmCompletion** (AAAI 2025): Utilizes symmetry priors for point cloud completion. This work can be combined with it—first generating symmetry-based priors and then correcting them.
+- **PCDreamer** (CVPR 2025): Diffusion-based point cloud completion. Direct geometric fusion suffers from pose disparities, which this work bypasses via feature-space correction.
+- Advances in image-to-3D models (e.g., Trellis, TripoSR) will directly elevate the upper bound of this framework.
+- Similar "generate-then-correct" ideas can be extended to other 3D reconstruction tasks.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — A paradigm-level innovation; the shift from Inpainting to Correction is well-motivated and compelling.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive ablations, but limited to a single dataset with no real-scene validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Clear motivation, high-quality figures, and coherent narrative.
-- Value: ⭐⭐⭐⭐ — Opens a new direction for multimodal point cloud completion, though real-world deployment requires further validation.
+- Novelty: ⭐⭐⭐⭐⭐ — Paradigm-level innovation. The transition from Inpainting to Correction is highly convincing.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive ablation studies, but evaluated on only one dataset, and lacks real-world scenario validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear motivation, exquisite illustrations, and coherent narration.
+- Value: ⭐⭐⭐⭐ — Opens up a new direction for multimodal point cloud completion, though practical deployment remains to be validated.
 
 <!-- RELATED:START -->
 
@@ -186,10 +186,10 @@ Paradigm comparison (Inpainting vs. Correction): the Inpainting variant achieves
 ## Related Papers
 
 - [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
-- [\[AAAI 2026\] DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion](dance_density-agnostic_and_class-aware_network_for_point_cloud_completion.md)
 - [\[AAAI 2026\] Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion](simba_towards_high-fidelity_and_geometrically-consistent_point_cloud_completion_.md)
+- [\[AAAI 2026\] DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion](dance_density-agnostic_and_class-aware_network_for_point_cloud_completion.md)
 - [\[AAAI 2026\] TOSC: Task-Oriented Shape Completion for Open-World Dexterous Grasp Generation from Partial Point Clouds](tosc_task-oriented_shape_completion_for_open-world_dexterous_grasp_generation_fr.md)
-- [\[AAAI 2026\] Rethinking Rainy 3D Scene Reconstruction via Perspective Transforming and Brightness Tuning](rethinking_rainy_3d_scene_reconstruction_via_perspective_transforming_and_bright.md)
+- [\[AAAI 2026\] Point Cloud Quantization through Multimodal Prompting for 3D Understanding](point_cloud_quantization_through_multimodal_prompting_for_3d_understanding.md)
 
 </div>
 

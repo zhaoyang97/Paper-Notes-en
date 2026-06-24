@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] NeuroRule connects the pixel-level perception of Mask2Former with a differentiable first-order logic rule induction engine. It **automatically learns explainable compositional logic rules** (e.g., `riding(x,y) ∧ on(y,z) → travel-on(x,z)`) from images in an end-to-end manner. This approach achieves SOTA performance acro
+  [CVPR 2026][Scene Graph Generation] NeuroRule connects the pixel-level perception of Mask2Former with a differentiable first-order logic rule induction engine. It **automatically learns explainable compositional logic rules** (e.g., `riding(x,y) ∧ on(y,z) → travel-on(x,z)`) from images in an end-to-end manner. This approach achieves SOTA performance across three scene graph benchmarks (VG / PSG / Open-PSG) while providing an auditable reasoning chain for every relation predic…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Scene Graph Generation"
+  - "Neuro-symbolic"
+  - "Differentiable Rule Induction"
+  - "First-Order Logic"
+  - "Compositional Reasoning"
 date: 2026-05-08
-content_hash: 11eb8a05b36a4ebd
+content_hash: 8fb67c692678f685
 ---
+
 # NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ On VG under the PredCls setting (isolating the reasoning module using ground tru
 
 ## Related Papers
 
-- [\[ICLR 2026\] GAVEL: Towards Rule-Based Safety through Activation Monitoring](../../ICLR2026/interpretability/gavel_towards_rule-based_safety_through_activation_monitoring.md)
-- [\[CVPR 2026\] Rounded or Streamlined Head? Bridging Concept Bottleneck Models and Attribute-Described Object Parts](rounded_or_streamlined_head_bridging_concept_bottleneck_models_and_attribute-des.md)
-- [\[CVPR 2026\] Selection-as-Nonlinearity: Bridging Attention and Activation via a Joint Game-Decision Lens for Interpretable, Discriminative Visual Representations](selection-as-nonlinearity_bridging_attention_and_activation_via_a_joint_game-dec.md)
-- [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
-- [\[CVPR 2025\] Differentiable Inverse Rendering with Interpretable Basis BRDFs](../../CVPR2025/interpretability/differentiable_inverse_rendering_with_interpretable_basis_brdfs.md)
+- [\[ACL 2025\] Improve Rule Retrieval and Reasoning with Self-Induction and Relevance ReEstimate](../../ACL2025/others/improve_rule_retrieval_and_reasoning_with_self-induction_and_relevance_reestimat.md)
+- [\[CVPR 2026\] Bridging Domain Expertise and Generalization for Performance Estimation](bridging_domain_expertise_and_generalization_for_performance_estimation.md)
+- [\[CVPR 2026\] Computer Vision with a Superpixelation Camera](computer_vision_with_a_superpixelation_camera.md)
+- [\[CVPR 2026\] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision](towards_knowledge-augmented_bayesian_deep_learning_for_computer_vision.md)
+- [\[CVPR 2026\] Differentiable Stroke Planning with Dual Parameterization for Efficient and High-Fidelity Painting Creation](differentiable_stroke_planning_with_dual_parameterization_for_efficient_and_high.md)
 
 </div>
 

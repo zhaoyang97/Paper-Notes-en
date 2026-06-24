@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Scaling with Reflective Generative Model
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper proposes the Reflective Generative Model (RGM), which enables a single network to serve as both a policy model for generating reasoning trajectories and a process reward model for scoring them. By adding only a 50M parameter SPRM head and utilizing a self-supervised SPR Loss to bypass process-level annotatio
+  [ICLR 2026][Reasoning][Test-Time Scaling] This paper proposes the Reflective Generative Model (RGM), which enables a single network to serve as both a policy model for generating reasoning trajectories and a process reward model for scoring them. By adding only a 50M parameter SPRM head and utilizing a self-supervised SPR Loss to bypass process-level annotations, a 32B model outperforms OpenAI o3-mini on AIME24 (84.2 vs. 79.6), with scoring performance exceeding 72B-class rew…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-Time Scaling"
+  - "Process Reward Model"
+  - "Self-supervised"
+  - "Reasoning Trajectory Selection"
+  - "Reflective Generation"
 date: 2026-05-08
-content_hash: ba85f521f4e685bf
+content_hash: 492bd73e81177f91
 ---
+
 # Test-Time Scaling with Reflective Generative Model
 
 **Conference**: ICLR 2026  
@@ -144,9 +150,9 @@ SPR Loss also consistently outperformed standard BCELoss (using raw outcome labe
 
 - [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
 - [\[ICLR 2026\] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning](tattoo_tool-grounded_thinking_prm_for_test-time_scaling_in_tabular_reasoning.md)
+- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ICLR 2026\] Mode-conditioning unlocks superior test-time compute scaling](mode-conditioning_unlocks_superior_test-time_compute_scaling.md)
-- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
-- [\[ICLR 2026\] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling](roc-n-reroll_how_verifier_imperfection_affects_test-time_scaling.md)
 
 </div>
 

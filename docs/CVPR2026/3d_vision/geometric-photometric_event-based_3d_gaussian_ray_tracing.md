@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Geometric-Photometric Event-based 3D Gaussian Ray Tracing
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] GPERT decouples pure event-driven 3DGS rendering into two complementary branches: per-event ray-tracing depth rendering (temporally dense, spatially sparse) for geometric loss, and a single snapshot radiance map rendering (spatially dense, temporally sparse) for photometric loss. By bridging these branches via the "Ima
+  [CVPR 2026][3D Vision][Event Camera] GPERT decouples pure event-driven 3DGS rendering into two complementary branches: per-event ray-tracing depth rendering (temporally dense, spatially sparse) for geometric loss, and a single snapshot radiance map rendering (spatially dense, temporally sparse) for photometric loss. By bridging these branches via the "Image of Warped Events" (IWE), it resolves the conflict between precision and time windows inherent in the "render-twice-and-s…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event Camera"
+  - "3D Gaussian Splatting"
+  - "Ray Tracing"
+  - "Contrast Maximization"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 7725c3da4245ac94
+content_hash: 6916ba88322d9342
 ---
+
 # Geometric-Photometric Event-based 3D Gaussian Ray Tracing
 
 **Conference**: CVPR 2026  
@@ -134,11 +139,11 @@ Ablation of contrast loss and initialization (PSNR↑):
 
 ## Related Papers
 
-- [\[CVPR 2026\] GAI-GS: A Wireless Channel Prediction Framework Injecting Ray-Object Interaction into 3DGS via Geometric Algebra Attention](a_geometric_algebra-informed_3dgs_framework_for_wireless_channel_prediction.md)
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction](fluidgaussian_propagating_simulation-based_uncertainty_toward_functionally-intel.md)
+- [\[CVPR 2026\] Stochastic Ray Tracing for the Reconstruction of 3D Gaussian Splatting](stochastic_ray_tracing_for_the_reconstruction_of_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
+- [\[CVPR 2026\] Lens Component Deletion based on Differentiable Ray Tracing](lens_component_deletion_based_on_differentiable_ray_tracing.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
+- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
 
 </div>
 

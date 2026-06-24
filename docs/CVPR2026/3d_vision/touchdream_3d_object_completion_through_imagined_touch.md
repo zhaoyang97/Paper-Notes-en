@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TouchDream: 3D Object Completion through Imagined Touch
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] TouchDream uses a conditional diffusion model to "imagine" tactile signals on object surfaces—generating compact tactile latent vectors from coarse point clouds and sampled poses. These vectors are decoded into local geometry and fused back into the point cloud. This provides fine-grained local geometric guidance for p
+  [CVPR 2026][3D Vision][Point cloud completion] TouchDream uses a conditional diffusion model to "imagine" tactile signals on object surfaces—generating compact tactile latent vectors from coarse point clouds and sampled poses. These vectors are decoded into local geometry and fused back into the point cloud. This provides fine-grained local geometric guidance for point cloud completion without any physical touch, achieving SOTA performance on PCN, ShapeNet55-34, and KITTI.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud completion"
+  - "tactile generation"
+  - "diffusion model"
+  - "local geometry"
+  - "cross-modal guidance"
 date: 2026-05-08
-content_hash: 225a93e8148f95e5
+content_hash: b1dceae4c62a7fae
 ---
+
 # TouchDream: 3D Object Completion through Imagined Touch
 
 **Conference**: CVPR 2026  
@@ -160,10 +165,10 @@ KITTI real-world generalization (sim-to-real trained on ShapeNet Car): FD 1.43 (
 
 ## Related Papers
 
+- [\[CVPR 2026\] Wave-Former: Through-Occlusion 3D Reconstruction via Wireless Shape Completion](wave-former_through-occlusion_3d_reconstruction_via_wireless_shape_completion.md)
 - [\[CVPR 2026\] The Midas Touch for Metric Depth](the_midas_touch_for_metric_depth.md)
 - [\[CVPR 2026\] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping](magician_efficient_long-term_planning_with_imagined_gaussians_for_active_mapping.md)
 - [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
-- [\[CVPR 2025\] PCDreamer: Point Cloud Completion Through Multi-view Diffusion Priors](../../CVPR2025/3d_vision/pcdreamer_point_cloud_completion_through_multi-view_diffusion_priors.md)
 - [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
 
 </div>

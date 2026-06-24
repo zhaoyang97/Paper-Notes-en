@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ODEBRAIN: Continuous-Time EEG Graph for Modeling Dynamic Brain Networks
 description: >-
-  [ICLR 2026][Medical Imaging][Neural ODE] ODEBRAIN utilizes Neural Ordinary Differential Equations (NODE) to explicitly model multi-channel EEG as a "continuous-time dynamic system." By constructing noise-resistant initial states through a dual encoder, solving latent space trajectories via an adaptive spatio-temporal vector field, and employing a graph-struct
+  [ICLR 2026][Medical Imaging][Neural ODE] ODEBRAIN utilizes Neural Ordinary Differential Equations (NODE) to explicitly model multi-channel EEG as a "continuous-time dynamic system." By constructing noise-resistant initial states through a dual encoder, solving latent space trajectories via an adaptive spatio-temporal vector field, and employing a graph-structured multi-step prediction loss, it significantly outperforms discrete recurrent baselines on TUSZ/TUAB epilepsy and ab…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Neural ODE
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Neural ODE"
+  - "Brain Network"
+  - "Continuous-time Modeling"
+  - "Temporal Graph"
+  - "Epilepsy Detection"
 date: 2026-05-08
-content_hash: 8473d587082ceccd
+content_hash: 1c599721420d4d11
 ---
+
 # ODEBRAIN: Continuous-Time EEG Graph for Modeling Dynamic Brain Networks
 
 **Conference**: ICLR 2026  
@@ -134,16 +139,16 @@ Initial state ablation indicates that spatio-temporal joint initialization (AURO
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] EvoBrain: Dynamic Multi-Channel EEG Graph Modeling for Time-Evolving Brain Networks](../../NeurIPS2025/medical_imaging/evobrain_dynamic_multi-channel_eeg_graph_modeling_for_time-evolving_brain_networ.md)
+- [\[ICLR 2026\] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning](stochastic_optimal_control_for_continuous-time_fmri_representation_learning.md)
 - [\[ICLR 2026\] Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification](inference-time_dynamic_modality_selection_for_incomplete_multimodal_classificati.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
 - [\[ICLR 2026\] Lightweight Transformer for EEG Classification via Balanced Signed Graph Algorithm Unrolling](lightweight_transformer_for_eeg_classification_via_balanced_signed_graph_algorit.md)
-- [\[ICLR 2026\] CRONOS: Continuous time reconstruction for 4D medical longitudinal series](cronos_continuous_time_reconstruction_for_4d_medical_longitudinal_series.md)
-- [\[ICLR 2026\] Functional MRI Time Series Generation via Wavelet-Based Image Transform and Spectral Flow Matching for Brain Disorder Identification](functional_mri_time_series_generation_via_wavelet-based_image_transform_and_spec.md)
 
 </div>
 

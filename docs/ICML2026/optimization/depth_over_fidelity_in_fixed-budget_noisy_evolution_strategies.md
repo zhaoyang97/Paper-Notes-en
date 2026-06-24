@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Depth over Fidelity in Fixed-Budget Noisy Evolution Strategies
 description: >-
-  [ICML 2026][Optimization & Theory][CMA-ES] In noisy black-box optimization where the number of evaluations is strictly limited (fixed budget), instead of spending budget on repeated measurements to "clean" intra-generational rankings (fidelity), it is more effective to save that budget to perform more distribution updates (depth). This paper introduces **PEM (P
+  [ICML 2026][Optimization][Evolution Strategies] In noisy black-box optimization where the number of evaluations is strictly limited (fixed budget), instead of spending budget on repeated measurements to "clean" intra-generational rankings (fidelity), it is more effective to save that budget to perform more distribution updates (depth). This paper introduces **PEM (Probabilistic Elite Membership)** to replace hard ranking weights with "expected weights over ranking uncertainty…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - CMA-ES
-  - Rao–Blackwell
+  - "ICML 2026"
+  - "Optimization"
+  - "Evolution Strategies"
+  - "Noisy Optimization"
+  - "Fixed Budget"
+  - "CMA-ES"
+  - "Rao–Blackwell"
+  - "Zeroth-order Optimization"
 date: 2026-05-08
-content_hash: f082be60295afbc8
+content_hash: 52b79c6a234d00c6
 ---
+
 # Depth over Fidelity in Fixed-Budget Noisy Evolution Strategies
 
 **Conference**: ICML 2026  
@@ -137,9 +142,9 @@ Rankings on high-misranking subsets (15 bbob-noisy functions, $d{=}40$, $B{=}100
 
 - [\[ICML 2026\] Budget-Feasible Mechanisms for Submodular Welfare Maximization in Procurement Auctions](budget-feasible_mechanisms_for_submodular_welfare_maximization_in_procurement_au.md)
 - [\[ICML 2026\] Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels](learning_locally_revising_globally_global_reviser_for_federated_learning_with_no.md)
-- [\[ICLR 2026\] CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design](../../ICLR2026/optimization/calm_co-evolution_of_algorithms_and_language_model_for_automatic_heuristic_desig.md)
+- [\[ICLR 2026\] Enhancing Learning with Noisy Labels via Rockafellian Relaxation](../../ICLR2026/optimization/enhancing_learning_with_noisy_labels_via_rockafellian_relaxation.md)
 - [\[ICML 2026\] Taming the Loss Landscape of PINNs with Noisy Feynman-Kac Supervision: Operator Preconditioning and Non-Asymptotic Error Bounds](taming_the_loss_landscape_of_pinns_with_noisy_feynman-kac_supervision_operator_p.md)
-- [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](../../ICLR2026/optimization/minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
+- [\[ICLR 2026\] Online Black-Box Prompt Optimization with Regret Guarantees under Noisy Feedback](../../ICLR2026/optimization/online_black-box_prompt_optimization_with_regret_guarantees_under_noisy_feedback.md)
 
 </div>
 

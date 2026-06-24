@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Is Artificial Intelligence Generated Image Detection a Solved Problem?
 description: >-
-  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes AIGIBench, a comprehensive benchmark that systematically evaluates 11 state-of-the-art detectors across four tasks—multi-source generaliz…
+  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes AIGIBench, a comprehensive benchmark that systematically evaluates 11 state-of-the-art detectors across four tasks—multi-source generalization, multi-degradation robustness, data augmentation sensitivity, and test-time preprocessing impact—revealing that existing AIGI detection methods suffer severe performance degradation in real-world scenarios, demonstrating that the problem is far from solv…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "data augmentation"
   - "generalization"
 date: 2026-05-08
-content_hash: aba17d76e86ea171
+content_hash: 28a9cef9a04cdaef
 ---
 
 # Is Artificial Intelligence Generated Image Detection a Solved Problem?
@@ -206,10 +206,10 @@ AIGIBench substantially leads in coverage of recent generation methods, comprehe
 ## Related Papers
 
 - [\[NeurIPS 2025\] Epistemic Uncertainty for Generated Image Detection](epistemic_uncertainty_for_generated_image_detection.md)
+- [\[CVPR 2025\] A Bias-Free Training Paradigm for More General AI-generated Image Detection](../../CVPR2025/image_generation/a_bias-free_training_paradigm_for_more_general_ai-generated_image_detection.md)
 - [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
-- [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
 - [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](../../AAAI2026/image_generation/aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
-- [\[NeurIPS 2025\] Detecting Generated Images by Fitting Natural Image Distributions](detecting_generated_images_by_fitting_natural_image_distributions.md)
+- [\[ECCV 2024\] Zero-Shot Detection of AI-Generated Images](../../ECCV2024/image_generation/zero-shot_detection_of_ai-generated_images.md)
 
 </div>
 

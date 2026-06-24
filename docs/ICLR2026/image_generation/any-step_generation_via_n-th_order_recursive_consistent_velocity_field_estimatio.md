@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Any-step Generation via N-th Order Recursive Consistent Velocity Field Estimation
 description: >-
-  [ICLR 2026][Image Generation][MeanFlow] This paper proposes RCGM, which unifies few-step generation methods such as consistency models, MeanFlow, and shortcuts as 1st-order special cases of "N-th Order Recursive Velocity Field Estimation." By extending to 2nd-order and higher, the high-order targets avoid expensive JVPs and remain compatible with aggressive
+  [ICLR 2026][Image Generation][Consistency Models] This paper proposes RCGM, which unifies few-step generation methods such as consistency models, MeanFlow, and shortcuts as 1st-order special cases of "N-th Order Recursive Velocity Field Estimation." By extending to 2nd-order and higher, the high-order targets avoid expensive JVPs and remain compatible with aggressive EMA smoothing. This enables the stable expansion of few-step generation training to 20B large models…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - MeanFlow
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Consistency Models"
+  - "MeanFlow"
+  - "Flow Matching"
+  - "Few-step Sampling"
+  - "High-order Recursion"
+  - "EMA Stability"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: f3f023a26026047f
+content_hash: 30966d1c0b0b553f
 ---
+
 # Any-step Generation via N-th Order Recursive Consistent Velocity Field Estimation
 
 **Conference**: ICLR 2026  

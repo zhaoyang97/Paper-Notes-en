@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] HealthSLM-Bench: Benchmarking Small Language Models for Mobile and Wearable Healthcare Monitoring
 description: >-
-  [NeurIPS 2025][LLM Safety][small language models] The first benchmark systematically evaluating small language models (SLMs, 1–4B parameters) on mobile and wearable health monitoring tasks, covering zero-shot, few-shot…
+  [NeurIPS 2025][Medical LLM][small language models] The first benchmark systematically evaluating small language models (SLMs, 1–4B parameters) on mobile and wearable health monitoring tasks, covering zero-shot, few-shot, and instruction fine-tuning paradigms, with on-device deployment validated on an iPhone.
 tags:
   - "NeurIPS 2025"
-  - "LLM Safety"
+  - "Medical LLM"
   - "small language models"
   - "mobile health monitoring"
   - "wearable devices"
   - "privacy preservation"
   - "on-device deployment"
 date: 2026-05-08
-content_hash: 9f6ace3905f2cbcc
+content_hash: 6d8fe39c6d5783bd
 ---
 
 # HealthSLM-Bench: Benchmarking Small Language Models for Mobile and Wearable Healthcare Monitoring
@@ -162,11 +162,11 @@ HealthSLM-Bench evaluates SLMs under three paradigms: (1) **Zero-shot learning**
 
 ## Related Papers
 
+- [\[ACL 2025\] VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare](../../ACL2025/medical_nlp/vital_pluralistic_alignment_healthcare.md)
 - [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
 - [\[AAAI 2026\] Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology](../../AAAI2026/medical_nlp/measuring_stability_beyond_accuracy_in_small_open-source_medical_large_language_.md)
-- [\[ACL 2026\] MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts](../../ACL2026/medical_nlp/medfact_benchmarking_the_fact-checking_capabilities_of_large_language_models_on_.md)
-- [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](../../ACL2026/medical_nlp/mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
 - [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
+- [\[ACL 2026\] MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts](../../ACL2026/medical_nlp/medfact_benchmarking_the_fact-checking_capabilities_of_large_language_models_on_.md)
 
 </div>
 

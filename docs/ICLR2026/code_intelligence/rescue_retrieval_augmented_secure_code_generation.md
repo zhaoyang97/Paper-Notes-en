@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RESCUE: Retrieval Augmented Secure Code Generation
 description: >-
-  [ICLR 2026][Code Intelligence][RAG] RESCUE proposes a novel RAG framework for "secure code generation": it offline distills messy vulnerability-fix data into a hierarchical security knowledge base using "clustering-summarization + program slicing," and online analyzes tasks from three security perspectives (vulnerability causes, API patterns, code) via "
+  [ICLR 2026][Code Intelligence][Secure code generation] RESCUE proposes a novel RAG framework for "secure code generation": it offline distills messy vulnerability-fix data into a hierarchical security knowledge base using "clustering-summarization + program slicing," and online analyzes tasks from three security perspectives (vulnerability causes, API patterns, code) via "hierarchical multi-faceted retrieval." Across four benchmarks and six LLMs…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - RAG
-  - CWE
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Secure code generation"
+  - "RAG"
+  - "Program slicing"
+  - "Multi-faceted retrieval"
+  - "CWE"
 date: 2026-05-08
-content_hash: 823ce5de218dc938
+content_hash: 7cd9fe4e6e9b8d24
 ---
+
 # RESCUE: Retrieval Augmented Secure Code Generation
 
 **Conference**: ICLR 2026  
@@ -153,7 +157,7 @@ RESCUE achieved the highest SP@1 across all models, with an average absolute gai
 - [\[ICLR 2026\] FHE-Coder: Benchmarking Secure Agentic Code Generation for Fully Homomorphic Encryption](fhe-coder_benchmarking_secure_agentic_code_generation_for_fully_homomorphic_encr.md)
 - [\[ACL 2026\] DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation](../../ACL2026/code_intelligence/deepguard_secure_code_generation_via_multi-layer_semantic_aggregation.md)
 - [\[ICLR 2026\] VERINA: Benchmarking Verifiable Code Generation](verina_benchmarking_verifiable_code_generation.md)
-- [\[ICLR 2026\] Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning](paper2code_automating_code_generation_from_scientific_papers_in_machine_learning.md)
+- [\[ICLR 2026\] DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation](diffucoder_understanding_and_improving_masked_diffusion_models_for_code_generati.md)
 
 </div>
 

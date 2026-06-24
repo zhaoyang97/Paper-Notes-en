@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ACIArena: Toward Unified Evaluation for Agent Cascading Injection
 description: >-
-  [ACL 2026][LLM Safety][ACI-Sentinel] This paper constructs the first unified evaluation framework for "Agent Cascading Injection (ACI)" attacks, ACIArena. It covers 6 mainstream multi-agent systems (MAS), 3 attack surfaces (Adversarial Input / Malicious Agent / Message Poison), and 3 attack goals (Hijacking / Disruption / Exfiltration) with 1356 test case
+  [ACL 2026][LLM Safety][Multi-agent systems] This paper constructs the first unified evaluation framework for "Agent Cascading Injection (ACI)" attacks, ACIArena. It covers 6 mainstream multi-agent systems (MAS), 3 attack surfaces (Adversarial Input / Malicious Agent / Message Poison), and 3 attack goals (Hijacking / Disruption / Exfiltration) with 1356 test cases. It also proposes ACI-Sentinel, a minimalist yet effective defense that reduces Hijacking attack success rates fro…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - ACI-Sentinel
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Multi-agent systems"
+  - "cascading injection"
+  - "ACI attacks"
+  - "MAS robustness"
+  - "ACI-Sentinel"
 date: 2026-05-08
-content_hash: bc3e9f2d2b9ba39d
+content_hash: 188a3e48ebc6ec72
 ---
+
 # ACIArena: Toward Unified Evaluation for Agent Cascading Injection
 
 **Conference**: ACL 2026  
@@ -146,9 +151,9 @@ Attack generation is black-box optimization: $J(a') = J_{\text{stealth}}(a' | c)
 
 - [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](piarena_a_platform_for_prompt_injection_evaluation.md)
 - [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
+- [\[ICLR 2026\] A2ASecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems](../../ICLR2026/llm_safety/a2asecbench_a_protocol-aware_security_benchmark_for_agent-to-agent_multi-agent_s.md)
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)
 - [\[ACL 2026\] Permutation-Consensus Listwise Judging for Robust Factuality Evaluation](permutation-consensus_listwise_judging_for_robust_factuality_evaluation.md)
-- [\[ACL 2026\] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)
 
 </div>
 

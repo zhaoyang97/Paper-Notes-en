@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FlexLinearAttention: Compiling a Unified Abstraction into Scalable Kernels for Linear Attention
 description: >-
-  [ICLR 2026][LLM Efficiency][Triton] FlexLA unifies various linear attention variants into a three-stage abstraction: "intra-chunk computation / inter-chunk state propagation / output merging." This allows users to describe algorithms in dozens of lines of PyTorch. A domain-specific compiler then automatically generates high-performance Triton kernels fus
+  [ICLR 2026][LLM Efficiency][Linear Attention] FlexLA unifies various linear attention variants into a three-stage abstraction: "intra-chunk computation / inter-chunk state propagation / output merging." This allows users to describe algorithms in dozens of lines of PyTorch. A domain-specific compiler then automatically generates high-performance Triton kernels fused with computation and communication, achieving or exceeding the expert-handwritten library FLA ($1.01\times \tex…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Triton
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "Domain-Specific Compiler"
+  - "Chunk-wise Parallelism"
+  - "Computation-Communication Fusion"
+  - "Sequence Parallelism"
+  - "Triton"
 date: 2026-05-08
-content_hash: 28c7b77d83fb4cd3
+content_hash: 292437c21336f617
 ---
+
 # FlexLinearAttention: Compiling a Unified Abstraction into Scalable Kernels for Linear Attention
 
 **Conference**: ICLR 2026  
@@ -118,10 +124,19 @@ Fixed BatchSize=4, NumHeads=32, HeadDim=128, scaling from 4 GPUs (128K tokens) t
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Log-Linear Attention](log-linear_attention.md)
+- [\[ICLR 2026\] Householder-Diagonalized Linear Attention (HDLA): Utilizing Rank-Enhanced Decay Mechanism for Efficient Sequence Modeling](householder-diagonalized_linear_attention_hdla_utilizing_enhanced_decay_mechanis.md)
+- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts](race_attention_a_strictly_linear-time_attention_layer_for_training_on_outrageous.md)
+- [\[ICLR 2026\] MHLA: Restoring Expressivity of Linear Attention via Token-Level Multi-Head](mhla_restoring_expressivity_of_linear_attention_via_token-level_multi-head.md)
+- [\[ICLR 2026\] Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression](local_linear_attention_an_optimal_interpolation_of_linear_and_softmax_attention_.md)
+
+</div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Log-Linear Attention](log-linear_attention.md)

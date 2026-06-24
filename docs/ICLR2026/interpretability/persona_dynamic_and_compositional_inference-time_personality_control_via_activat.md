@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra
 description: >-
-  [ICLR 2026][Interpretability][personality control] The PERSONA framework is proposed to achieve training-free dynamic and compositional personality control by extracting approximately orthogonal personality vectors in the activation space and performing vector algebra operations (scaling, addition, subtraction). It achieves a score of 9.60 on PersonalityBench, nearly m
+  [ICLR 2026][Interpretability][personality control] The PERSONA framework is proposed to achieve training-free dynamic and compositional personality control by extracting approximately orthogonal personality vectors in the activation space and performing vector algebra operations (scaling, addition, subtraction). It achieves a score of 9.60 on PersonalityBench, nearly matching the SFT upper bound of 9.61.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - personality control
-  - activation steering
-  - vector algebra
-  - inference-time
-  - Big Five
+  - "ICLR 2026"
+  - "Interpretability"
+  - "personality control"
+  - "activation steering"
+  - "vector algebra"
+  - "inference-time"
+  - "Big Five"
 date: 2026-05-08
-content_hash: d0838d2bc30265aa
+content_hash: c57b6c055415aa89
 ---
+
 # PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra
 
 **Conference**: ICLR 2026  
@@ -146,10 +147,10 @@ where $v_l$ is the personality vector extracted from the optimal layer and $\alp
 ## Related Papers
 
 - [\[ICLR 2026\] Persona Features Control Emergent Misalignment](persona_features_control_emergent_misalignment.md)
-- [\[ICLR 2026\] Small Transformers Don't Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and Implications for Mechanistic Interpretability](small_transformers_dont_need_layernorm_at_inference_time_scaling_layernorm_remov.md)
-- [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text Alignment](dynamic_reflections_probing_video_representations_with_text_alignment.md)
 - [\[ICLR 2026\] Watch the Weights: Unsupervised Monitoring and Control of Fine-tuned LLMs](watch_the_weights_unsupervised_monitoring_and_control_of_fine-tuned_llms.md)
-- [\[ICLR 2026\] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models](beyond_linear_probes_dynamic_safety_monitoring_for_language_models.md)
+- [\[ICLR 2026\] Small Transformers Don't Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and Implications for Mechanistic Interpretability](small_transformers_dont_need_layernorm_at_inference_time_scaling_layernorm_remov.md)
+- [\[ICML 2026\] Closing the Loop: PID Feedback Control for Interpretable Activation Steering in Symbolic Music Generation](../../ICML2026/interpretability/closing_the_loop_pid_feedback_control_for_interpretable_activation_steering_in_s.md)
+- [\[ICLR 2026\] Activation Steering with a Feedback Controller](activation_steering_with_a_feedback_controller.md)
 
 </div>
 

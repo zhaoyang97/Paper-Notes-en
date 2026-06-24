@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Attend to the Active: Structure-Aware Dynamic Attention in LLMs for Compositional Instruction Following
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] ATA identifies the structural types of compositional instructions (Chaining/Branching/Paralleling) and decomposes mutually exclusive subtasks in a single forward pass without updating any parameters. By dynamically identifying the currently "active" subtasks at each generation step and masking the "dormant" ones using
+  [ICLR 2026][LLM (Other)][Compositional Instruction Following] ATA identifies the structural types of compositional instructions (Chaining/Branching/Paralleling) and decomposes mutually exclusive subtasks in a single forward pass without updating any parameters. By dynamically identifying the currently "active" subtasks at each generation step and masking the "dormant" ones using attention bias, it eliminates interference between subtasks and significantly improves LLM faithfu…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Compositional Instruction Following"
+  - "Attention Steering"
+  - "Structure-Aware"
+  - "Training-Free"
+  - "Mutually Exclusive Subtasks"
+  - "Inference-Time Intervention"
 date: 2026-05-08
-content_hash: 20a8f51fc86e16e5
+content_hash: a471b6143ecafcf4
 ---
+
 # Attend to the Active: Structure-Aware Dynamic Attention in LLMs for Compositional Instruction Following
 
 **Conference**: ICLR 2026  

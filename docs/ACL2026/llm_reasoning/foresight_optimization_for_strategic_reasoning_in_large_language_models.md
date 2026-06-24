@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Foresight Optimization for Strategic Reasoning in Large Language Models
 description: >-
-  [ACL 2026][LLM Reasoning][Multi-Agent] This paper proposes Foresight Policy Optimization (FoPO), which introduces a foresight correction term based on opponent modeling into policy optimization. This enables LLMs to explicitly anticipate opponent behaviors and adjust their own strategies accordingly. FoPO significantly improves strategic reasoning in both c
+  [ACL 2026][Reasoning][Strategic Reasoning] This paper proposes Foresight Policy Optimization (FoPO), which introduces a foresight correction term based on opponent modeling into policy optimization. This enables LLMs to explicitly anticipate opponent behaviors and adjust their own strategies accordingly. FoPO significantly improves strategic reasoning in both cooperative (Cooperative RSA) and competitive (Competitive Taboo) game tasks and achieves consistent improvements on t…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Multi-Agent
+  - "ACL 2026"
+  - "Reasoning"
+  - "Strategic Reasoning"
+  - "Foresight Optimization"
+  - "Opponent Modeling"
+  - "Self-Play"
+  - "Multi-Agent"
 date: 2026-05-08
-content_hash: b198743c782f12de
+content_hash: 1ca03089e9989c10
 ---
+
 # Foresight Optimization for Strategic Reasoning in Large Language Models
 
 **Conference**: ACL 2026  
@@ -148,10 +153,10 @@ Training consists of three stages: (1) SFT stage using cross-entropy loss with K
 ## Related Papers
 
 - [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](selar_selective_latent_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] TInR: Exploring Tool-Internalized Reasoning in Large Language Models](tinr_exploring_tool-internalized_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] Inpainting-Guided Policy Optimization for Diffusion Large Language Models](../../ICLR2026/llm_reasoning/inpainting-guided_policy_optimization_for_diffusion_large_language_models.md)
 - [\[ICML 2026\] Reasoning Structure of Large Language Models](../../ICML2026/llm_reasoning/reasoning_structure_of_large_language_models.md)
 - [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
-- [\[ACL 2026\] Dissecting Failure Dynamics in Large Language Model Reasoning](dissecting_failure_dynamics_in_large_language_model_reasoning.md)
-- [\[ACL 2026\] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents](jtpro_a_joint_tool-prompt_reflective_optimization_framework_for_language_agents.md)
 
 </div>
 

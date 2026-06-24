@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WARP: Weight Teleportation for Attack-Resilient Unlearning Protocols
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper points out that approximate machine unlearning can conversely leak the data being forgotten. This leakage is attributed to two root causes: "large gradient norms of forgotten samples" and "parameters being too close to the original model after unlearning." The authors propose WARP, a plug-and-play defense th
+  [ICLR 2026][AI Safety][Approximate Unlearning] This paper points out that approximate machine unlearning can conversely leak the data being forgotten. This leakage is attributed to two root causes: "large gradient norms of forgotten samples" and "parameters being too close to the original model after unlearning." The authors propose WARP, a plug-and-play defense that utilizes the loss-preserving symmetry of neural networks to "teleport" the model to another point on the loss…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Approximate Unlearning"
+  - "Member Inference"
+  - "Data Reconstruction"
+  - "Weight Teleportation"
+  - "Network Symmetry"
 date: 2026-05-08
-content_hash: 0f41e81616ea5f81
+content_hash: 3e95eb2a8f8da421
 ---
+
 # WARP: Weight Teleportation for Attack-Resilient Unlearning Protocols
 
 **Conference**: ICLR 2026  
@@ -137,7 +143,6 @@ In the reconstruction attack (ImageNet-1K, ResNet-18, NGP), WARP significantly d
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

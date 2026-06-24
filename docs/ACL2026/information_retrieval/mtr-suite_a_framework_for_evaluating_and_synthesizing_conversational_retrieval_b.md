@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MTR-Suite: A Framework for Evaluating and Synthesizing Conversational Retrieval Benchmarks
 description: >-
-  [ACL 2026][Information Retrieval & RAG][LLM-as-a-Judge] MTR-Suite proposes a comprehensive framework spanning benchmark auditing, conversational data synthesis, and retrieval evaluation. It utilizes MTR-Eval to diagnose annotation quality and MTR-Pipeline to generate MTR-Bench—a challenging multi-turn retrieval benchmark—at approximately 1/400 of the cost of manual labor.
+  [ACL 2026][Information Retrieval & RAG][Conversational Retrieval] MTR-Suite proposes a comprehensive framework spanning benchmark auditing, conversational data synthesis, and retrieval evaluation. It utilizes MTR-Eval to diagnose annotation quality and MTR-Pipeline to generate MTR-Bench—a challenging multi-turn retrieval benchmark—at approximately 1/400 of the cost of manual labor.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - LLM-as-a-Judge
-  - Greedy Traversal Clustering
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Conversational Retrieval"
+  - "RAG Evaluation"
+  - "Synthetic Benchmarks"
+  - "LLM-as-a-Judge"
+  - "Greedy Traversal Clustering"
 date: 2026-05-08
-content_hash: d534f0c16583518b
+content_hash: ea610c23ac293318
 ---
+
 # MTR-Suite: A Framework for Evaluating and Synthesizing Conversational Retrieval Benchmarks
 
 **Conference**: ACL 2026  
@@ -137,9 +141,9 @@ MTR-Bench is constructed using the Wikipedia 2025-01 dump to prevent models from
 
 - [\[AAAI 2026\] ConvMix: A Mixed-Criteria Data Augmentation Framework for Conversational Dense Retrieval](../../AAAI2026/information_retrieval/convmix_a_mixed-criteria_data_augmentation_framework_for_conversational_dense_re.md)
 - [\[ACL 2026\] Code-Switching Information Retrieval: Benchmarks, Analysis, and the Limits of Current Retrievers](code-switching_information_retrieval_benchmarks_analysis_and_the_limits_of_curre.md)
+- [\[ICLR 2026\] ChronoPlay: A Framework for Modeling Dual Dynamics and Authenticity in Game RAG Benchmarks](../../ICLR2026/information_retrieval/chronoplay_a_framework_for_modeling_dual_dynamics_and_authenticity_in_game_rag_b.md)
 - [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
 - [\[ACL 2026\] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora](rare_redundancy-aware_retrieval_evaluation_framework_for_high-similarity_corpora.md)
-- [\[ACL 2026\] Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning](agentic_conversational_search_with_contextualized_reasoning_via_reinforcement_le.md)
 
 </div>
 

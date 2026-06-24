@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Shapley Neuron Values for Continual Learning: Which Neurons Matter Most?
 description: >-
-  [ICML 2026][Reinforcement Learning][Buffer-Free] The authors adapt Shapley values from cooperative game theory to the "filter" level of Convolutional Neural Networks, using a triple approximation of Monte Carlo, truncation, and Multi-Armed Bandits to estimate continuous importance rankings for each neuron. By freezing the Top-$r\%$ "expert" neurons and leaving the re
+  [ICML 2026][Reinforcement Learning][Continual Learning] The authors adapt Shapley values from cooperative game theory to the "filter" level of Convolutional Neural Networks, using a triple approximation of Monte Carlo, truncation, and Multi-Armed Bandits to estimate continuous importance rankings for each neuron. By freezing the Top-$r\%$ "expert" neurons and leaving the rest plastic for further training, they achieve a $+2.88\%$ accuracy gain in Class-Incremental Learning an…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Buffer-Free
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Continual Learning"
+  - "Shapley Value"
+  - "Neuron Importance"
+  - "Catastrophic Forgetting"
+  - "Buffer-Free"
 date: 2026-05-08
-content_hash: 0325f7e91b4dd6b2
+content_hash: 606585f310819e62
 ---
+
 # Shapley Neuron Values for Continual Learning: Which Neurons Matter Most?
 
 **Conference**: ICML 2026  
@@ -156,9 +161,9 @@ SNV on CIL/10 even outperforms the memory-based method DyTox ($40.15\%$) which u
 
 - [\[ICML 2026\] Position: Deployed Reinforcement Learning should be Continual](position_deployed_reinforcement_learning_should_be_continual.md)
 - [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](../../NeurIPS2025/reinforcement_learning/temporal-difference_variational_continual_learning.md)
+- [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](../../ICLR2026/reinforcement_learning/context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
 - [\[NeurIPS 2025\] Approximating Shapley Explanations in Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/approximating_shapley_explanations_in_reinforcement_learning.md)
-- [\[ACL 2026\] Savoir: Learning Social Savoir-Faire via Shapley-based Reward Attribution](../../ACL2026/reinforcement_learning/savoir_learning_social_savoir-faire_via_shapley-based_reward_attribution.md)
-- [\[CVPR 2026\] Resolving the Stability-Plasticity Dilemma in Reinforcement Learning via Complementary Continual Critics](../../CVPR2026/reinforcement_learning/resolving_the_stability-plasticity_dilemma_in_reinforcement_learning_via_complem.md)
+- [\[ICLR 2026\] Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning](../../ICLR2026/reinforcement_learning/principled_fast_and_meta_knowledge_learners_for_continual_reinforcement_learning.md)
 
 </div>
 

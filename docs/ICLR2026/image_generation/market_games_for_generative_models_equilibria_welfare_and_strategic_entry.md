@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Market Games for Generative Models: Equilibria, Welfare, and Strategic Entry
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper formalizes a three-layer model-platform-user market game to analyze the existence conditions of pure strategy Nash equilibrium, market structure, and social welfare impacts under generative model competition, while designing optimal entry strategies for model providers.
+  [ICLR 2026][Image Generation][Market games] This paper formalizes a three-layer model-platform-user market game to analyze the existence conditions of pure strategy Nash equilibrium, market structure, and social welfare impacts under generative model competition, while designing optimal entry strategies for model providers.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Market games"
+  - "Nash equilibrium"
+  - "generative model competition"
+  - "social welfare"
+  - "strategic entry"
 date: 2026-05-08
-content_hash: 3f5db3b65f109a30
+content_hash: ab54f2705150c7ec
 ---
+
 # Market Games for Generative Models: Equilibria, Welfare, and Strategic Entry
 
 **Conference**: ICLR 2026  

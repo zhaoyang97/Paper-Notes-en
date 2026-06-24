@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dual-Branch Representations with Dynamic Gated Fusion and Triple-Granularity Alignment for Deep Multi-View Clustering
 description: >-
-  [ICLR 2026][Graph Learning][GCN] DREAM explicitly decouples semantic and structural information, which are often treated with imbalanced emphasis in multi-view clustering, into two parallel branches using VAE and GCN. It employs gated fusion to adaptively adjust weights based on the dataset and utilizes triple-granularity alignment (cross-view, intra-
+  [ICLR2026][Graph Learning][Multi-view clustering] DREAM explicitly decouples semantic and structural information, which are often treated with imbalanced emphasis in multi-view clustering, into two parallel branches using VAE and GCN. It employs gated fusion to adaptively adjust weights based on the dataset and utilizes triple-granularity alignment (cross-view, intra-sample, and inter-cluster) to unify heterogeneous embedding spaces, outperforming eight SOTA methods across si…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GCN
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Multi-view clustering"
+  - "Dual-branch decoupling"
+  - "Gated fusion"
+  - "Triple-granularity alignment"
+  - "GCN"
 date: 2026-05-08
-content_hash: 974e380eba20f94e
+content_hash: 433e21a43e1594cd
 ---
+
 # Dual-Branch Representations with Dynamic Gated Fusion and Triple-Granularity Alignment for Deep Multi-View Clustering
 
 **Conference**: ICLR2026  
@@ -136,15 +141,14 @@ Ablation of the four core modules (ACC on UCI / HW / ALOI100):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering](multi-scale_diffusion-guided_graph_learning_with_power-smoothing_random_walk_con.md)
 - [\[ICLR 2026\] Compactness and Consistency: A Conjoint Framework for Deep Graph Clustering](compactness_and_consistency_a_conjoint_framework_for_deep_graph_clustering.md)
 - [\[ICLR 2026\] Confident Block Diagonal Structure-Aware Invariable Graph Completion for Incomplete Multi-view Clustering](confident_block_diagonal_structure-aware_invariable_graph_completion_for_incompl.md)
-- [\[ICLR 2026\] Constant Degree Matrix-Driven Incomplete Multi-View Clustering via Connectivity-Structure and Embedding Tensor Learning](constant_degree_matrix-driven_incomplete_multi-view_clustering_via_connectivity-.md)
+- [\[ICLR 2026\] SAGA: Structural Aggregation Guided Alignment with Dynamic View and Neighborhood Order Selection for Multiview Graph Domain Adaptation](saga_structural_aggregation_guided_alignment_with_dynamic_view_and_neighborhood_.md)
 - [\[ICLR 2026\] Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment](learning_with_dual-level_noisy_correspondence_for_multi-modal_entity_alignment.md)
-- [\[ICLR 2026\] Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering](multi-scale_diffusion-guided_graph_learning_with_power-smoothing_random_walk_con.md)
 
 </div>
 

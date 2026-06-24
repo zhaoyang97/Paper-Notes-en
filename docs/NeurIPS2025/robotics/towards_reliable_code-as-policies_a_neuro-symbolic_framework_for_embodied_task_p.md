@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Reliable Code-as-Policies: A Neuro-Symbolic Framework for Embodied Task Planning
 description: >-
-  [NeurIPS 2025 (Spotlight)][Robotics][Code-as-Policies] This paper proposes a neuro-symbolic framework for embodied task planning that augments LLM-based code generation with explicit symbolic verification (checking wheth…
+  [NeurIPS 2025 (Spotlight)][Robotics][Code-as-Policies] This paper proposes a neuro-symbolic framework for embodied task planning that augments LLM-based code generation with explicit symbolic verification (checking whether preconditions are satisfied) and interactive verification (active exploration to acquire missing information), enabling more reliable code execution in dynamic and partially observable environments. On RLBench, task success rate improves from a baseline of…
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "LLM code generation"
   - "symbolic verification"
 date: 2026-05-08
-content_hash: 66464a73e6d603cc
+content_hash: e5ba07b803f63cce
 ---
 
 # Towards Reliable Code-as-Policies: A Neuro-Symbolic Framework for Embodied Task Planning
@@ -141,11 +141,11 @@ Compared to the CaP baseline, the proposed framework achieves an absolute improv
 
 ## Related Papers
 
-- [\[CVPR 2026\] RoboAgent: Chaining Basic Capabilities for Embodied Task Planning](../../CVPR2026/robotics/roboagent_chaining_basic_capabilities_for_embodied_task_planning.md)
+- [\[ICML 2025\] Sketch-Plan-Generalize: Learning and Planning with Neuro-Symbolic Programmatic Representations for Inductive Spatial Concepts](../../ICML2025/robotics/sketch-plan-generalize_learning_and_planning_with_neuro-symbolic_programmatic_re.md)
 - [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
-- [\[ICML 2026\] Embodied Task Planning via Graph-Informed Action Generation with Large Language Models](../../ICML2026/robotics/embodied_task_planning_via_graph-informed_action_generation_with_large_language_.md)
-- [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](../../ICLR2026/robotics/rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
-- [\[CVPR 2026\] Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning](../../CVPR2026/robotics/cross-domain_demo-to-code_via_neurosymbolic_counterfactual_reasoning.md)
+- [\[CVPR 2026\] RoboAgent: Chaining Basic Capabilities for Embodied Task Planning](../../CVPR2026/robotics/roboagent_chaining_basic_capabilities_for_embodied_task_planning.md)
+- [\[ICLR 2026\] Planning with an Embodied Learnable Memory](../../ICLR2026/robotics/planning_with_an_embodied_learnable_memory.md)
+- [\[ICML 2026\] Functional Cache Grafting: Robust and Rapid Code-Policy Synthesis for Embodied Agents](../../ICML2026/robotics/functional_cache_grafting_robust_and_rapid_code-policy_synthesis_for_embodied_ag.md)
 
 </div>
 

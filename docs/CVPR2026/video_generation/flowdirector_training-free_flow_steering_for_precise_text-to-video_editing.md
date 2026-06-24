@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing
 description: >-
-  [CVPR 2026][Video Generation][training-free] FlowDirector models text-driven video editing as a "direct evolution" driven by ODEs in the data space, completely bypassing the traditional inversion step. By employing three training-free flow steering strategies (Direction-Aware, Motion-Appearance Decoupled, and Differential Average Guidance), it effectively manages
+  [CVPR 2026][Video Generation][Text-driven video editing] FlowDirector models text-driven video editing as a "direct evolution" driven by ODEs in the data space, completely bypassing the traditional inversion step. By employing three training-free flow steering strategies (Direction-Aware, Motion-Appearance Decoupled, and Differential Average Guidance), it effectively manages "thorough modification," "motion preservation," and "trajectory stability…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - training-free
-  - Rectified Flow
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-driven video editing"
+  - "training-free"
+  - "inversion-free editing"
+  - "Rectified Flow"
+  - "flow steering"
 date: 2026-05-08
-content_hash: 164e0104d455018a
+content_hash: 834c5377452a5c45
 ---
+
 # FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing
 
 **Conference**: CVPR 2026  
@@ -156,10 +160,10 @@ Ablating $\alpha$ in DA-FC: Increasing $\alpha$ from 0 to 0.25 improves CLIP-T f
 
 ## Related Papers
 
-- [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
 - [\[CVPR 2026\] FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement](flowportal_residual-corrected_flow_for_training-free_video_relighting_and_backgr.md)
+- [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
 - [\[CVPR 2026\] RFDM: Residual Flow Diffusion Models for Video Editing](rfdm_residual_flow_diffusion_models_for_video_editing.md)
-- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
+- [\[CVPR 2026\] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution](swift_sliding_window_reconstruction_for_few-shot_training-free_generated_video_a.md)
 - [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
 
 </div>

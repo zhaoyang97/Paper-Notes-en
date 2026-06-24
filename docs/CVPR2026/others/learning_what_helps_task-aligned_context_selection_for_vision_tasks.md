@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Learning What Helps: Task-Aligned Context Selection for Vision Tasks
 description: >-
-  [CVPR 2026][Others][ViT] TACS enables discriminative vision models (ViT) to learn to select paired samples from a candidate pool that "truly improve task performance," rather than "visually most similar" neighbors. By jointly training a selector through a differentiable sampling path and a reward-driven policy optimization path, retrieval is t
+  [CVPR 2026][Task-Aligned Retrieval] TACS enables discriminative vision models (ViT) to learn to select paired samples from a candidate pool that "truly improve task performance," rather than "visually most similar" neighbors. By jointly training a selector through a differentiable sampling path and a reward-driven policy optimization path, retrieval is transformed from a static preprocessing step into a learnable component back-propagated by downstream task loss. It consisten…
 tags:
-  - CVPR 2026
-  - Others
-  - ViT
-  - Gumbel-Softmax
+  - "CVPR 2026"
+  - "Task-Aligned Retrieval"
+  - "Context Selection"
+  - "ViT"
+  - "Gumbel-Softmax"
+  - "Policy Gradient"
 date: 2026-05-08
-content_hash: b363dd2391d23d87
+content_hash: bfcf58e5c6b79295
 ---
+
 # Learning What Helps: Task-Aligned Context Selection for Vision Tasks
 
 **Conference**: CVPR 2026  
@@ -151,9 +154,9 @@ Note: Metric specifics—Fine-grained classification reports top-1 accuracy or m
 
 - [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](debiased_sample_selection_for_learning_with_noisy_labels.md)
 - [\[CVPR 2026\] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision](towards_knowledge-augmented_bayesian_deep_learning_for_computer_vision.md)
+- [\[ICLR 2026\] Ensemble Prediction of Task Affinity for Efficient Multi-Task Learning](../../ICLR2026/others/ensemble_prediction_of_task_affinity_for_efficient_multi-task_learning.md)
 - [\[CVPR 2026\] Computer Vision with a Superpixelation Camera](computer_vision_with_a_superpixelation_camera.md)
-- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
-- [\[CVPR 2026\] ALLNet: Multi-task Dense Prediction for Degraded Images](allnet_multi-task_dense_prediction_for_degraded_images.md)
+- [\[ICLR 2026\] IC-Custom: Diverse Image Customization via In-Context Learning](../../ICLR2026/others/ic-custom_diverse_image_customization_via_in-context_learning.md)
 
 </div>
 

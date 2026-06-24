@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EmbodiedOcc: Embodied 3D Occupancy Prediction for Vision-based Online Scene Understanding
 description: >-
-  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes EmbodiedOcc, a framework that leverages 3D semantic Gaussians as a global memory to enable online indoor 3D occupancy prediction from monocular…
+  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes EmbodiedOcc, a framework that leverages 3D semantic Gaussians as a global memory to enable online indoor 3D occupancy prediction from monocular visual input through progressive exploration and local updating.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "online scene understanding"
   - "indoor scene"
 date: 2026-05-08
-content_hash: a6a3f41f8204f70b
+content_hash: 994c09c963985e42
 ---
 
 # EmbodiedOcc: Embodied 3D Occupancy Prediction for Vision-based Online Scene Understanding
@@ -145,7 +145,7 @@ The local module is first trained for 10 epochs on Occ-ScanNet, followed by 5 ep
 - [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
 - [\[ICCV 2025\] AGO: Adaptive Grounding for Open World 3D Occupancy Prediction](ago_adaptive_grounding_for_open_world_3d_occupancy_predictio.md)
 - [\[ICCV 2025\] GaussRender: Learning 3D Occupancy with Gaussian Rendering](gaussrender_learning_3d_occupancy_with_gaussian_rendering.md)
-- [\[ICCV 2025\] Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation](hermes_a_unified_self-driving_world_model_for_simultaneous_3d_scene_understandin.md)
+- [\[ECCV 2024\] GaussianFormer: Scene as Gaussians for Vision-Based 3D Semantic Occupancy Prediction](../../ECCV2024/autonomous_driving/gaussianformer_scene_as_gaussians_for_vision-based_3d_semantic_occupancy_predict.md)
 
 </div>
 

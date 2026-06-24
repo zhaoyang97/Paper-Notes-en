@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] reAR: Rethinking Visual Autoregressive Models via Token-wise Consistency Regularization
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] reAR argues that the core bottleneck of visual autoregressive generation is not the single-token prediction accuracy itself, but the inconsistency between the discrete token sequence produced by the generator and the tokenizer decoder. By using noisy context regularization and codebook embedding regularization to const
+  [ICLR2026][Image Generation][Visual Autoregressive Generation] reAR argues that the core bottleneck of visual autoregressive generation is not the single-token prediction accuracy itself, but the inconsistency between the discrete token sequence produced by the generator and the tokenizer decoder. By using noisy context regularization and codebook embedding regularization to constrain the hidden representations of each token during training, reAR significantly improves ImageN…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Visual Autoregressive Generation"
+  - "Discrete Tokenizer"
+  - "Exposure Bias"
+  - "Codebook Embedding Regularization"
+  - "ImageNet Generation"
 date: 2026-05-08
-content_hash: 85c3edfa475dbab6
+content_hash: 603ce7890d164fb4
 ---
+
 # reAR: Rethinking Visual Autoregressive Models via Token-wise Consistency Regularization
 
 **Conference**: ICLR2026  

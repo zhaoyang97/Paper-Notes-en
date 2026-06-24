@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neuron-Level Analysis of Cultural Understanding in Large Language Models
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes CULNIG—a neuron identification pipeline based on gradient attribution and dual-contrast filtering. It accurately locates "culture-general neurons" and "culture-specific neurons" in LLMs, finding that they constitute less than 1% of all neurons and are concentrated in shallow-to-middle MLP layers. In
+  [ICLR 2026][Interpretability][Cultural Understanding] This paper proposes CULNIG—a neuron identification pipeline based on gradient attribution and dual-contrast filtering. It accurately locates "culture-general neurons" and "culture-specific neurons" in LLMs, finding that they constitute less than 1% of all neurons and are concentrated in shallow-to-middle MLP layers. Inhibiting them drops performance on cultural benchmarks by up to 30% while barely affecting general NLU.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Cultural Understanding"
+  - "Neuron Attribution"
+  - "Gradient Attribution"
+  - "MLP Memory"
+  - "Cultural Bias"
 date: 2026-05-08
-content_hash: bf6fe600613beeec
+content_hash: 7316af9199942c18
 ---
+
 # Neuron-Level Analysis of Cultural Understanding in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -114,8 +120,6 @@ Conclusion: Inhibiting <1% of culture-general neurons causes BLEnD_test to drop 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

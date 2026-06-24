@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Diverse Text-to-Image Generation via Contrastive Noise Optimization
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] Ours proposes Contrastive Noise Optimization (CNO), which enhances the generation diversity of diffusion models through a pre-processing approach by imposing an InfoNCE contrastive loss on initial noise within the Tweedie denoising prediction space, maintaining fidelity without modifying the sampling process or the mod
+  [ICLR 2026][Image Generation][Diffusion Models] Ours proposes Contrastive Noise Optimization (CNO), which enhances the generation diversity of diffusion models through a pre-processing approach by imposing an InfoNCE contrastive loss on initial noise within the Tweedie denoising prediction space, maintaining fidelity without modifying the sampling process or the model itself.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - InfoNCE
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Text-to-Image Generation"
+  - "Diversity"
+  - "Contrastive Learning"
+  - "Noise Optimization"
+  - "InfoNCE"
 date: 2026-05-08
-content_hash: 6c6546b05101a78a
+content_hash: b95de905b90cd985
 ---
+
 # Diverse Text-to-Image Generation via Contrastive Noise Optimization
 
 **Conference**: ICLR 2026  
@@ -153,10 +158,17 @@ Comparison of diversity and quality metrics between CNO and baseline methods acr
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2025\] Learning to Sample Effective and Diverse Prompts for Text-to-Image Generation](../../CVPR2025/image_generation/learning_to_sample_effective_and_diverse_prompts_for_text-to-image_generation.md)
+- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](scaling_group_inference_for_diverse_and_high-quality_generation.md)
+- [\[ICLR 2026\] TIPO: Text to Image with Text Pre-sampling for Prompt Optimization](tipo_text_to_image_with_text_pre-sampling_for_prompt_optimization.md)
+- [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_aligning_image_generation_mode.md)
+- [\[ICLR 2026\] From Broad Exploration to Stable Synthesis: Entropy-Guided Optimization for Autoregressive Image Generation](from_broad_exploration_to_stable_synthesis_entropy-guided_optimization_for_autor.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] Learning to Sample Effective and Diverse Prompts for Text-to-Image Generation](../../CVPR2025/image_generation/learning_to_sample_effective_and_diverse_prompts_for_text-to-image_generation.md)

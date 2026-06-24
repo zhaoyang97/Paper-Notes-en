@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Computing Equilibrium beyond Unilateral Deviation
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Addressing the blind spot where Nash/Correlated Equilibria only prevent "unilateral deviation" but fail against "multilateral coalition deviation," this paper proposes a **guaranteed-to-exist** solution concept called MASE (Minimum Average-Strong Equilibrium, which minimizes the maximum average utility any coalition ca
+  [ICLR2026][Learning Theory][Game theoretic equilibrium] Addressing the blind spot where Nash/Correlated Equilibria only prevent "unilateral deviation" but fail against "multilateral coalition deviation," this paper proposes a **guaranteed-to-exist** solution concept called MASE (Minimum Average-Strong Equilibrium, which minimizes the maximum average utility any coalition can gain). It proves the computational complexity is determined by the **treewidth** of the "Utility Depen…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Algorithmic Game Theory"
+  - "Game theoretic equilibrium"
+  - "coalition deviation"
+  - "computational complexity"
+  - "treewidth"
+  - "no-regret learning"
 date: 2026-05-08
-content_hash: 621b3e32fb433863
+content_hash: c8fc77959fd46699
 ---
+
 # Computing Equilibrium beyond Unilateral Deviation
 
 **Conference**: ICLR2026  
@@ -150,7 +157,7 @@ Key phenomenon: In the Prisoner's Dilemma, baselines converge to the unique NE/C
 - [\[ICLR 2026\] Differentially Private Equilibrium Finding in Polymatrix Games](differentially_private_equilibrium_finding_in_polymatrix_games.md)
 - [\[ICLR 2026\] Quantum Machine Learning Advantages Beyond Hardness of Evaluation](quantum_machine_learning_advantages_beyond_hardness_of_evaluation.md)
 - [\[NeurIPS 2025\] The Parameterized Complexity of Computing the VC-Dimension](../../NeurIPS2025/learning_theory/the_parameterized_complexity_of_computing_the_vc-dimension.md)
-- [\[ICLR 2026\] Bounds of Chain-of-Thought Robustness: Reasoning Steps, Embed Norms, and Beyond](bounds_of_chain-of-thought_robustness_reasoning_steps_embed_norms_and_beyond.md)
+- [\[ICLR 2026\] A Derandomization Framework for Structure Discovery: Applications in Neural Networks and Beyond](a_derandomization_framework_for_structure_discovery_applications_in_neural_netwo.md)
 
 </div>
 

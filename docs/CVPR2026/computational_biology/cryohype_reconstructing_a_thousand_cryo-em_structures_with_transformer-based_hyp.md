@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks
 description: >-
-  [CVPR 2026][Computational Biology][Cryo-EM] Ours proposes CryoHype, a Cryo-EM reconstruction method based on a Transformer hypernetwork, which reduces parameter sharing by dynamically adjusting the weights of Implicit Neural Representations (INR), achieving simultaneous reconstruction of 1000 different protein structures from unlabeled Cryo-EM images for the fir
+  [CVPR 2026][Computational Biology][Cryo-EM] Ours proposes CryoHype, a Cryo-EM reconstruction method based on a Transformer hypernetwork, which reduces parameter sharing by dynamically adjusting the weights of Implicit Neural Representations (INR), achieving simultaneous reconstruction of 1000 different protein structures from unlabeled Cryo-EM images for the first time.
 tags:
-  - CVPR 2026
-  - Computational Biology
-  - Cryo-EM
-  - Hypernetwork
-  - Transformer
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Cryo-EM"
+  - "heterogeneous reconstruction"
+  - "Hypernetwork"
+  - "Transformer"
+  - "Implicit Neural Representation"
 date: 2026-05-08
-content_hash: 32b0b3d225cc697f
+content_hash: fd641a55acd5be99
 ---
+
 # CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks
 
 **Conference**: CVPR 2026  
@@ -139,10 +142,10 @@ The ViT encoder, weight tokens, INR base parameters, and linear heads are all op
 
 ## Related Papers
 
-- [\[CVPR 2026\] CryoKRAQEN: Kernel-Regularized Annealing for Quantized Embedding Networks in Cryo-EM Heterogeneous Reconstruction](cryokraqen_kernel-regularized_annealing_for_quantized_embedding_networks_in_cryo.md)
+- [\[ICLR 2026\] CryoSplat: Gaussian Splatting for Cryo-EM Homogeneous Reconstruction](../../ICLR2026/computational_biology/cryosplat_gaussian_splatting_for_cryo-em_homogeneous_reconstruction.md)
 - [\[CVPR 2026\] cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold](cryosense_compressive_sensing_enables_high-throughput_microscopy_with_sparse_and.md)
+- [\[CVPR 2026\] CryoKRAQEN: Kernel-Regularized Annealing for Quantized Embedding Networks in Cryo-EM Heterogeneous Reconstruction](cryokraqen_kernel-regularized_annealing_for_quantized_embedding_networks_in_cryo.md)
 - [\[ICCV 2025\] CryoFastAR: Fast Cryo-EM Ab initio Reconstruction Made Easy](../../ICCV2025/computational_biology/cryofastar_fast_cryoem_ab_initio_reconstruction_made_easy.md)
-- [\[ICLR 2026\] CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints](../../ICLR2026/computational_biology/cryonetrefine_a_one-step_diffusion_model_for_rapid_refinement_of_structural_mode.md)
 - [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](../../NeurIPS2025/computational_biology/multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
 
 </div>

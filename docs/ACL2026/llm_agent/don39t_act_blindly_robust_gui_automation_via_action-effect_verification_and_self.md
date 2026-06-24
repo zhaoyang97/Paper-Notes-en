@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes the VeriGUI framework, which utilizes a Thinking-Verification-Action-Expectation (TVAE) closed-loop reasoning mechanism and a two-stage training pipeline (Robust SFT + GRPO). It enables GUI Agents to verify the success of each operation and perform self-correction upon failure, significantly outperf
+  [ACL 2026][LLM Agent][GUI Automation] This paper proposes the VeriGUI framework, which utilizes a Thinking-Verification-Action-Expectation (TVAE) closed-loop reasoning mechanism and a two-stage training pipeline (Robust SFT + GRPO). It enables GUI Agents to verify the success of each operation and perform self-correction upon failure, significantly outperforming baselines at both 3B and 7B scales.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "GUI Automation"
+  - "Action Verification"
+  - "Self-Correction"
+  - "GRPO Reinforcement Learning"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 971f1a5f9531838e
+content_hash: 0808c8b54578a1bc
 ---
+
 # Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction
 
 **Conference**: ACL 2026  
@@ -131,11 +137,11 @@ Stage 1 uses standard cross-entropy loss for 2 epochs with a learning rate of $1
 
 ## Related Papers
 
+- [\[ICLR 2026\] LongHorizonUI: A Unified Framework for Robust Long-Horizon Task Automation of GUI Agent](../../ICLR2026/llm_agent/longhorizonui_a_unified_framework_for_robust_long-horizon_task_automation_of_gui.md)
 - [\[ICML 2026\] Think Twice Before You Act: Enhancing Agent Behavioral Safety with Thought Correction](../../ICML2026/llm_agent/think_twice_before_you_act_enhancing_agent_behavioral_safety_with_thought_correc.md)
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](../../ICLR2026/llm_agent/reveal_self-evolving_code_agents_via_reliable_self-verification.md)
 - [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](../../ICML2026/llm_agent/autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)
 - [\[ACL 2026\] Don't Click That: Teaching Web Agents to Resist Deceptive Interfaces](dont_click_that_teaching_web_agents_to_resist_deceptive_interfaces.md)
-- [\[ACL 2026\] CodeStruct: Code Agents over Structured Action Spaces](codestruct_code_agents_over_structured_action_spaces.md)
-- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
 
 </div>
 

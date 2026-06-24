@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition
 description: >-
-  [NEURIPS2025][Video Understanding][action recognition] A cross-attention multimodal architecture is proposed that integrates V-JEPA 2 visual context features with CoMotion 3D skeletal pose data…
+  [NEURIPS2025][Video Understanding][action recognition] A cross-attention multimodal architecture is proposed that integrates V-JEPA 2 visual context features with CoMotion 3D skeletal pose data, outperforming unimodal baselines on standard and high-occlusion action recognition benchmarks.
 tags:
   - "NEURIPS2025"
   - "Video Understanding"
@@ -13,7 +13,7 @@ tags:
   - "V-JEPA 2"
   - "CoMotion"
 date: 2026-05-08
-content_hash: f8b7744a1a01419e
+content_hash: f6e0f0f1c0403cbf
 ---
 
 # Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition
@@ -162,11 +162,11 @@ The core insight of this work—combining a world model's implicit understanding
 
 ## Related Papers
 
-- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](../../ICCV2025/video_understanding/adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
+- [\[ECCV 2024\] On the Utility of 3D Hand Poses for Action Recognition](../../ECCV2024/video_understanding/on_the_utility_of_3d_hand_poses_for_action_recognition.md)
 - [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
-- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-based Human Action Recognition with Virtual Connections](../../ICCV2025/video_understanding/adaptive_hyper_graph_convolution_network_skeleton_action_recognition.md)
+- [\[ICLR 2026\] EgoBrain: Synergizing Minds and Eyes For Human Action Understanding](../../ICLR2026/video_understanding/egobrain_synergizing_minds_and_eyes_for_human_action_understanding.md)
 - [\[NeurIPS 2025\] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition](seeing_beyond_the_scene_analyzing_and_mitigating_background_bias_in_action_recog.md)
-- [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](../../ICCV2025/video_understanding/beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
+- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](../../ICCV2025/video_understanding/adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
 
 </div>
 

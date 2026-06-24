@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][RLVR] This work releases Reasoning Gym, a library of 100+ procedurally generated reasoning tasks spanning algebra, arithmetic, algorithms, logic, geometry, graph theory, games…
+  [NeurIPS 2025 Spotlight][Reinforcement Learning][RLVR] This work releases Reasoning Gym, a library of 100+ procedurally generated reasoning tasks spanning algebra, arithmetic, algorithms, logic, geometry, graph theory, games, and more. Each task supports infinite data generation and parameterized difficulty control. Experiments demonstrate that RLVR training achieves significant skill transfer both within and across domains, and improves performance on external benchmarks suc…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Reinforcement Learning"
   - "RLVR"
   - "verifiable rewards"
@@ -13,7 +13,7 @@ tags:
   - "reasoning transfer"
   - "difficulty cliff"
 date: 2026-05-08
-content_hash: 0114cd689a76e3aa
+content_hash: 02ffa0f46d06db78
 ---
 
 # Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards
@@ -138,11 +138,11 @@ GRPO is used for RLVR training. Rewards consist of an accuracy reward (1.0) and 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](../../ICLR2026/reinforcement_learning/reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
+- [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](../../ICLR2026/reinforcement_learning/rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
 - [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](../../ICLR2026/reinforcement_learning/longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
-- [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](../../ICLR2026/reinforcement_learning/from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
-- [\[NeurIPS 2025\] Generalizing Verifiable Instruction Following](generalizing_verifiable_instruction_following.md)
+- [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](../../ICLR2026/reinforcement_learning/rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
 
 </div>
 

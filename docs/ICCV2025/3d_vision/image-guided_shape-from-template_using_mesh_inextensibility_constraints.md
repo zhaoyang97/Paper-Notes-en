@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Image-Guided Shape-from-Template Using Mesh Inextensibility Constraints
 description: >-
-  [ICCV 2025][3D Vision][Shape-from-Template] This paper proposes a purely image-guided unsupervised Shape-from-Template (SfT) method that reconstructs the 3D shape of deforming objects using only visual cues—color…
+  [ICCV 2025][3D Vision][Shape-from-Template] This paper proposes a purely image-guided unsupervised Shape-from-Template (SfT) method that reconstructs the 3D shape of deforming objects using only visual cues—color, gradients, and silhouettes—combined with mesh inextensibility constraints. The method is approximately 400× faster than the best-performing unsupervised baseline while achieving substantially higher accuracy.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Unsupervised"
   - "Deformation Modeling"
 date: 2026-05-08
-content_hash: e92b836df9cda875
+content_hash: ba4f3382c01a7922
 ---
 
 # Image-Guided Shape-from-Template Using Mesh Inextensibility Constraints
@@ -158,11 +158,11 @@ The proposed method substantially outperforms ϕ-SfT and PGSfT across all 9 sequ
 
 ## Related Papers
 
+- [\[CVPR 2026\] SGSoft: Learning Fused Semantic-Geometric Features for 3D Shape Correspondence via Template-Guided Soft Signals](../../CVPR2026/3d_vision/sgsoft_learning_fused_semantic-geometric_features_for_3d_shape_correspondence_vi.md)
 - [\[ICCV 2025\] Blended Point Cloud Diffusion for Localized Text-guided Shape Editing](blended_point_cloud_diffusion_for_localized_textguided_shape.md)
-- [\[CVPR 2026\] Best Segmentation Buddies for Image-Shape Correspondence](../../CVPR2026/3d_vision/best_segmentation_buddies_for_image-shape_correspondence.md)
+- [\[ICML 2025\] FlowDrag: 3D-aware Drag-based Image Editing with Mesh-guided Deformation Vector Flow Fields](../../ICML2025/3d_vision/flowdrag_3d-aware_drag-based_image_editing_with_mesh-guided_deformation_vector_f.md)
 - [\[ICCV 2025\] Guiding Diffusion-Based Articulated Object Generation by Partial Point Cloud Alignment and Physical Plausibility Constraints](guiding_diffusion-based_articulated_object_generation_by_partial_point_cloud_ali.md)
 - [\[ICCV 2025\] MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization](meshanything_v2_artist-created_mesh_generation_with_adjacent_mesh_tokenization.md)
-- [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
 
 </div>
 

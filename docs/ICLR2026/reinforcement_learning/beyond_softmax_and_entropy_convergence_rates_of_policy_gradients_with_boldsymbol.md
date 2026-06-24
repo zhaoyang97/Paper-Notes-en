@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Beyond Softmax and Entropy: Convergence Rates of Policy Gradients with $f$-SoftArgmax Parameterization & Coupled Regularization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] By replacing the default "softmax parameterization + entropy regularization" in RL with the **coupled duo** of "$f$-softargmax parameterization + homologous $f$-divergence regularization", the authors prove that the coupled objective satisfies the Polyak-Łojasiewicz (PL) inequality. This allows for the first **explicit
+  [ICLR 2026][Reinforcement Learning][policy gradient] By replacing the default "softmax parameterization + entropy regularization" in RL with the **coupled duo** of "$f$-softargmax parameterization + homologous $f$-divergence regularization", the authors prove that the coupled objective satisfies the Polyak-Łojasiewicz (PL) inequality. This allows for the first **explicit last-iterate convergence guarantee** for stochastic policy gradients without preconditioning. Specifically…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "policy gradient"
+  - "softmax parameterization"
+  - "f-divergence"
+  - "Tsallis divergence"
+  - "last-iterate convergence"
+  - "sample complexity"
 date: 2026-05-08
-content_hash: 27acd7460843cd2e
+content_hash: 0c3fd6140365478b
 ---
+
 # Beyond Softmax and Entropy: Convergence Rates of Policy Gradients with $f$-SoftArgmax Parameterization & Coupled Regularization
 
 **Conference**: ICLR 2026  
@@ -106,11 +113,11 @@ Each curve uses the optimal temperature and step size for that $\alpha$; shaded 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
 - [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
 - [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
 - [\[ICLR 2026\] Relative Entropy Pathwise Policy Optimization](relative_entropy_pathwise_policy_optimization.md)
 - [\[ICLR 2026\] Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces](convergence_of_an_actor-critic_gradient_flow_for_entropy_regularised_mdps_in_gen.md)
-- [\[ICLR 2026\] Beyond Penalization: Diffusion-based Out-of-Distribution Detection and Selective Regularization in Offline Reinforcement Learning](beyond_penalization_diffusion-based_out-of-distribution_detection_and_selective_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization
 description: >-
-  [CVPR 2026][Reinforcement Learning][Paper Note] TaskForce models the process of weighting task-specific gradients into a unified update direction as a cooperative multi-agent reinforcement learning (MARL) problem. Each task is assigned an agent that observes a compressed gradient summary via a Gram matrix and outputs a weight for its own gradient. The learning is dr
+  [CVPR 2026][Reinforcement Learning][Multi-task learning] TaskForce models the process of weighting task-specific gradients into a unified update direction as a cooperative multi-agent reinforcement learning (MARL) problem. Each task is assigned an agent that observes a compressed gradient summary via a Gram matrix and outputs a weight for its own gradient. The learning is driven by a hybrid reward encoding both "gradient alignment" and "loss descent." The method consistently…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Multi-task learning"
+  - "gradient conflict"
+  - "multi-agent reinforcement learning"
+  - "gradient aggregation"
+  - "hybrid reward"
 date: 2026-05-08
-content_hash: 5306a1cfeaf8084f
+content_hash: 26b275752448bf37
 ---
+
 # TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization
 
 **Conference**: CVPR 2026  
@@ -126,15 +132,16 @@ Ablation on NYU-v2 showing the cumulative effect of components (Training cost re
 - Value: ⭐⭐⭐⭐ Provides a new paradigm for "learning aggregation strategies" applicable to multi-source weighting problems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](../../ICLR2026/reinforcement_learning/when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
+- [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](../../ICLR2026/reinforcement_learning/multi-agent_guided_policy_optimization.md)
 - [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](../../ICLR2026/reinforcement_learning/distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
 - [\[CVPR 2026\] MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning](mangobench_a_benchmark_for_multi-agent_goal-conditioned_offline_reinforcement_le.md)
-- [\[ICML 2025\] Enhancing Cooperative Multi-Agent Reinforcement Learning with State Modelling and Adversarial Exploration](../../ICML2025/reinforcement_learning/enhancing_cooperative_multi-agent_reinforcement_learning_with_state_modelling_an.md)
-- [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](../../AAAI2026/reinforcement_learning/explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 
 </div>
 

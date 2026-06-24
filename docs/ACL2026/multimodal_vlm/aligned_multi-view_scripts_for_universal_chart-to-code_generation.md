@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Aligned Multi-View Scripts for Universal Chart-to-Code Generation
 description: >-
-  [ACL 2026][Multimodal VLM][Chart-to-Code] Utilizing "semantically equivalent scripts for the same chart in Python, R, and LaTeX" as a new supervision signal, this work constructs the 176K quadruplet dataset Chart2NCode. It proposes CharLuMA, a lightweight adapter that integrates a "language-conditional low-rank subspace router" into the LLaVA projector, enabli
+  [ACL 2026][Multimodal VLM][Chart-to-Code] Utilizing "semantically equivalent scripts for the same chart in Python, R, and LaTeX" as a new supervision signal, this work constructs the 176K quadruplet dataset Chart2NCode. It proposes CharLuMA, a lightweight adapter that integrates a "language-conditional low-rank subspace router" into the LLaVA projector, enabling a single model to achieve high execution rates and visual fidelity across three plotting languages.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Chart-to-Code
-  - LLaVA
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Chart-to-Code"
+  - "Multilingual Alignment"
+  - "LLaVA"
+  - "Low-rank Subspace Adapter"
+  - "MoE Projector"
 date: 2026-05-08
-content_hash: fb52d1d93bec663c
+content_hash: 9bb0c0045101ceb0
 ---
+
 # Aligned Multi-View Scripts for Universal Chart-to-Code Generation
 
 **Conference**: ACL 2026  
@@ -145,14 +149,17 @@ CharLuMA-6.7B approaches Claude-Sonnet-4 performance; Python specialists like Ch
 
 <div class="related-papers" markdown="1">
 
-- **ChartMimic**: [2406.09961](https://arxiv.org/abs/2406.09961)  
-- **Plot2Code**: [2405.07990](https://arxiv.org/abs/2405.07990)  
-- **ChartCoder**: [2501.03214](https://arxiv.org/abs/2501.03214)
+## Related Papers
+
+- [\[ACL 2026\] CharTide: Data-Centric Chart-to-Code Generation via Tri-Perspective Tuning and Inquiry-Driven Evolution](chartide_data-centric_chart-to-code_generation_via_tri-perspective_tuning_and_in.md)
+- [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/multimodal_vlm/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
+- [\[CVPR 2026\] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](../../CVPR2026/multimodal_vlm/mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)
+- [\[ACL 2025\] ChartCoder: Advancing Multimodal Large Language Model for Chart-to-Code Generation](../../ACL2025/multimodal_vlm/chartcoder_chart_to_code.md)
+- [\[ICLR 2026\] ChartGalaxy: A Dataset for Infographic Chart Understanding and Generation](../../ICLR2026/multimodal_vlm/chartgalaxy_a_dataset_for_infographic_chart_understanding_and_generation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/multimodal_vlm/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)

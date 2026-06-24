@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scaling Agent Learning via Experience Synthesis
 description: >-
-  [ICLR 2026][LLM Agent][RL] DreamGym utilizes a "reasoning-based experience model" to synthesize agent-environment interactions (state transitions + rewards) within an abstract textual state space. Combined with an experience replay buffer and a reward-entropy-based curriculum task generator, it enables LLM agents to execute RL training with almo
+  [ICLR 2026][LLM Agent][Experience Model] DreamGym utilizes a "reasoning-based experience model" to synthesize agent-environment interactions (state transitions + rewards) within an abstract textual state space. Combined with an experience replay buffer and a reward-entropy-based curriculum task generator, it enables LLM agents to execute RL training with almost no real-world rollouts. It outperforms all baselines by 30%+ on the non-RL-ready WebArena and matches GRPO/PPO perfo…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - RL
-  - sim-to-real
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Experience Model"
+  - "Synthetic Experience"
+  - "Curriculum Learning"
+  - "RL"
+  - "sim-to-real"
 date: 2026-05-08
-content_hash: f79421db80fc3dcc
+content_hash: 5f045c213b0afbdb
 ---
+
 # Scaling Agent Learning via Experience Synthesis
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Benchmarking is Broken — Don't Let AI be its Own Judge
 description: >-
-  [NeurIPS 2025][LLM Evaluation][benchmark evaluation] This paper systematically critiques the fundamental flaws of current AI benchmark evaluation—data contamination (45%+ overlap in MMLU), selective reporting…
+  [NeurIPS 2025][LLM Evaluation][benchmark evaluation] This paper systematically critiques the fundamental flaws of current AI benchmark evaluation—data contamination (45%+ overlap in MMLU), selective reporting, and lack of proctoring—and proposes PeerBench: drawing on the proctoring paradigm of high-stakes exams (e.g., SAT/GRE), it constructs a next-generation AI evaluation infrastructure via a rolling confidential question bank, peer-review quality control…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "peer review"
   - "reputation system"
 date: 2026-05-08
-content_hash: a894193d97cf9d21
+content_hash: cf50253dd626a1b0
 ---
 
 # Benchmarking is Broken — Don't Let AI be its Own Judge
@@ -131,11 +131,11 @@ This paper systematically critiques the fundamental flaws of current AI benchmar
 
 ## Related Papers
 
+- [\[ICML 2025\] Position: Theory of Mind Benchmarks are Broken for Large Language Models](../../ICML2025/llm_evaluation/position_theory_of_mind_benchmarks_are_broken_for_large_language_models.md)
 - [\[ICLR 2026\] AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite](../../ICLR2026/llm_evaluation/astabench_benchmarking_ai_agents.md)
-- [\[ICML 2026\] From Human-Level AI Tales to AI Leveling Human Scales](../../ICML2026/llm_evaluation/from_human-level_ai_tales_to_ai_leveling_human_scales.md)
+- [\[ACL 2025\] ChatBench: From Static Benchmarks to Human-AI Evaluation](../../ACL2025/llm_evaluation/chatbench_from_static_benchmarks_to_human-ai_evaluation.md)
 - [\[NeurIPS 2025\] Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations](beyond_the_surface_enhancing_llm-as-a-judge_alignment_with_human_via_internal_re.md)
 - [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](../../ACL2026/llm_evaluation/if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
-- [\[ACL 2026\] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](../../ACL2026/llm_evaluation/aj-bench_benchmarking_agent-as-a-judge_for_environment-aware_evaluation.md)
 
 </div>
 

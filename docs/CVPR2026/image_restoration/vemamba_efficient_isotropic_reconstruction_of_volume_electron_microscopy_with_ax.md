@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba
 description: >-
-  [CVPR 2026][Image Restoration][Mamba] VEMamba serves as the first application of Mamba to the isotropic reconstruction of Volume Electron Microscopy (VEM). By employing "Axial-Lateral Chunk-based Selective Scanning (ALCSSM) + Dynamic Weight Aggregation (DWAM)," it rearranges 3D voxel dependencies into 1D sequences for linear-complexity modeling. It incorpo
+  [CVPR 2026][Image Restoration][Volume Electron Microscopy] VEMamba serves as the first application of Mamba to the isotropic reconstruction of Volume Electron Microscopy (VEM). By employing "Axial-Lateral Chunk-based Selective Scanning (ALCSSM) + Dynamic Weight Aggregation (DWAM)," it rearranges 3D voxel dependencies into 1D sequences for linear-complexity modeling. It incorporates degradation priors via realistic simulation and Momentum Contrast (MoCo). The model achieves SO…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Mamba
-  - State Space Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Volume Electron Microscopy"
+  - "Isotropic Reconstruction"
+  - "Mamba"
+  - "State Space Models"
+  - "Self-supervised Degradation Modeling"
 date: 2026-05-08
-content_hash: 462b5e5a9e3558c6
+content_hash: 7b31812e827518fb
 ---
+
 # VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba
 
 **Conference**: CVPR 2026  
@@ -161,8 +165,8 @@ VEMamba outperformed others across all factors. At $\times 4$, the gap to isotro
 - [\[CVPR 2026\] Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](statistical_characteristic-guided_denoising_for_rapid_high-resolution_transmissi.md)
 - [\[CVPR 2026\] Polarization State Tracing for Reflection Removal and Color-Consistent Reconstruction](polarization_state_tracing_for_reflection_removal_and_color-consistent_reconstru.md)
 - [\[CVPR 2026\] Multi-Scale Gradient-Guided Unrolling Architecture with Adaptive Mamba for Compressive Sensing](multi-scale_gradient-guided_unrolling_architecture_with_adaptive_mamba_for_compr.md)
+- [\[ICLR 2026\] Content-Aware Mamba for Learned Image Compression](../../ICLR2026/image_restoration/content-aware_mamba_for_learned_image_compression.md)
 - [\[CVPR 2026\] DetectSCI: Toward Object-Guided ROI Reconstruction for High-Resolution Video Snapshot Compressive Imaging](detectsci_toward_object-guided_roi_reconstruction_for_high-resolution_video_snap.md)
-- [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
 
 </div>
 

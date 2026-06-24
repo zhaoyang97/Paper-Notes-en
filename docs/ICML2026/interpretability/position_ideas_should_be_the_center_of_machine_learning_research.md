@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Ideas Should be the Center of Machine Learning Research
 description: >-
-  [ICML 2026][Interpretability][Ideas First] The authors propose the "Ideas First" stance: treating "idea → observable signature → tailored experiment" as the core evaluation unit of machine learning research. This approach opposes treating leaderboard gains or idealized theorems as ends in themselves, aiming to bridge the theory-practice gap while lowering the p
+  [ICML 2026][Interpretability][Ideas First] The authors propose the "Ideas First" stance: treating "idea → observable signature → tailored experiment" as the core evaluation unit of machine learning research. This approach opposes treating leaderboard gains or idealized theorems as ends in themselves, aiming to bridge the theory-practice gap while lowering the participation threshold for researchers with limited compute resources.
 tags:
-  - ICML 2026
-  - Interpretability
-  - Ideas First
+  - "ICML 2026"
+  - "Interpretability"
+  - "Ideas First"
+  - "signature"
+  - "tailored experiments"
+  - "benchmark myths"
+  - "computational fairness"
 date: 2026-05-08
-content_hash: 245e62a1d0521f30
+content_hash: 0fe49467ac4db528
 ---
+
 # Position: Ideas Should be the Center of Machine Learning Research
 
 **Conference**: ICML 2026  
@@ -127,8 +132,8 @@ As a position paper, there are no quantitative results; instead, the authors sup
 - [\[ICML 2026\] Position: Zeroth-Order Optimization in Deep Learning Is Underexplored, Not Underpowered](position_zeroth-order_optimization_in_deep_learning_is_underexplored_not_underpo.md)
 - [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
 - [\[ICML 2025\] Rethinking Explainable Machine Learning as Applied Statistics](../../ICML2025/interpretability/rethinking_explainable_machine_learning_as_applied_statistics.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 - [\[ICML 2026\] Position: Let's Develop Data Probes to Fundamentally Understand How Data Affects LLM Performance](position_lets_develop_data_probes_to_fundamentally_understand_how_data_affects_l.md)
-- [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
 
 </div>
 

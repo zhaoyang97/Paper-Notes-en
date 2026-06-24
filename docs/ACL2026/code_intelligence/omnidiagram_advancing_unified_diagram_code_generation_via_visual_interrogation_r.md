@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward
 description: >-
-  [ACL 2026][Code Intelligence][Reinforcement Learning] This paper proposes OmniDiagram, a unified diagram code generation framework covering three languages (LaTeX/Mermaid/PlantUML) and three tasks (Diagram-to-Code, Diagram Editing, Text-to-Code). It introduces the Viva reward mechanism based on Visual Question Answering to guide RL training, achieving SOTA performance acr
+  [ACL 2026 Findings][Code Intelligence][Diagram code generation] This paper proposes OmniDiagram, a unified diagram code generation framework covering three languages (LaTeX/Mermaid/PlantUML) and three tasks (Diagram-to-Code, Diagram Editing, Text-to-Code). It introduces the Viva reward mechanism based on Visual Question Answering to guide RL training, achieving SOTA performance across multiple benchmarks.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Diagram code generation"
+  - "VQA reward"
+  - "Reinforcement Learning"
+  - "Unified framework"
+  - "Multimodal"
 date: 2026-05-08
-content_hash: 4fa5996d543065da
+content_hash: fd439c27a77d50cf
 ---
+
 # OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward
 
 **Conference**: ACL 2026 Findings  
@@ -139,11 +144,11 @@ The SFT phase uses standard cross-entropy loss on 8 H800 GPUs with a global batc
 
 ## Related Papers
 
-- [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](../../CVPR2026/code_intelligence/geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
-- [\[ACL 2026\] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization](qimeng-prepair_precise_code_repair_via_edit-aware_reward_optimization.md)
-- [\[ACL 2026\] R$^3$-SQL: Ranking Reward and Resampling for Text-to-SQL](r3-sql_ranking_reward_and_resampling_for_text-to-sql.md)
+- [\[ICLR 2026\] RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation](../../ICLR2026/code_intelligence/rpg_a_repository_planning_graph_for_unified_and_scalable_codebase_generation.md)
+- [\[ICLR 2026\] JanusCoder: Towards a Foundational Visual-Programmatic Interface for Code Intelligence](../../ICLR2026/code_intelligence/januscoder_towards_a_foundational_visual-programmatic_interface_for_code_intelli.md)
+- [\[ICLR 2026\] Code Aesthetics with Agentic Reward Feedback](../../ICLR2026/code_intelligence/code_aesthetics_with_agentic_reward_feedback.md)
 - [\[ACL 2025\] ExploraCoder: Advancing Code Generation for Multiple Unseen APIs via Planning and Chained Exploration](../../ACL2025/code_intelligence/exploracoder_advancing_code_generation_for_multiple_unseen_apis_via_planning_and.md)
-- [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
+- [\[ACL 2026\] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization](qimeng-prepair_precise_code_repair_via_edit-aware_reward_optimization.md)
 
 </div>
 

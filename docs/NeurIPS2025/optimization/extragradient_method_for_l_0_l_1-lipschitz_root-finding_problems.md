@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Extragradient Method for $(L_0, L_1)$-Lipschitz Root-finding Problems
 description: >-
-  [NeurIPS 2025][Optimization][Extragradient method] Under the $\alpha$-symmetric $(L_0,L_1)$-Lipschitz condition (a relaxation of the classical $L$-Lipschitz assumption)…
+  [NeurIPS 2025][Optimization][Extragradient method] Under the $\alpha$-symmetric $(L_0,L_1)$-Lipschitz condition (a relaxation of the classical $L$-Lipschitz assumption), this paper proposes an adaptive step size strategy $\gamma_k = 1/(c_0 + c_1\|F(x_k)\|^\alpha)$ for the extragradient (EG) method, establishing the first complete convergence guarantees for three classes of root-finding problems: strongly monotone (linear convergence), monotone (sublinear convergence)…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "adaptive step size"
   - "min-max optimization"
 date: 2026-05-08
-content_hash: 54100d26b911cec1
+content_hash: 9b3ca93a1fa4e4d5
 ---
 
 # Extragradient Method for $(L_0, L_1)$-Lipschitz Root-finding Problems

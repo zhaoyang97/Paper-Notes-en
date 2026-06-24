@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MU-GeNeRF: Multi-view Uncertainty-guided Generalizable Neural Radiance Fields for Distractor-aware Scene
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the issue where generalizable NeRF (GeNeRF) supervision signals are contaminated by transient distractors (pedestrians, shadows, dynamic objects) in dynamic real-world scenes, this paper decouples "distractor-awareness" into two complementary components: **source-view uncertainty** (structural inconsistency
+  [CVPR 2026][3D Vision][Generalizable NeRF] To address the issue where generalizable NeRF (GeNeRF) supervision signals are contaminated by transient distractors (pedestrians, shadows, dynamic objects) in dynamic real-world scenes, this paper decouples "distractor-awareness" into two complementary components: **source-view uncertainty** (structural inconsistency across source views) and **target-view uncertainty** (observation anomalies in the target image). These are fused via…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Generalizable NeRF"
+  - "Distractor Suppression"
+  - "Uncertainty Modeling"
+  - "Heteroscedastic Loss"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: bd365d924125a6cc
+content_hash: 8c65e2935b85816f
 ---
+
 # MU-GeNeRF: Multi-view Uncertainty-guided Generalizable Neural Radiance Fields for Distractor-aware Scene
 
 **Conference**: CVPR 2026  
@@ -140,10 +146,10 @@ Component-wise ablation on Corner / Patio-High from On-the-go (PSNR↑ / SSIM↑
 ## Related Papers
 
 - [\[CVPR 2026\] Evidential Neural Radiance Fields](evidential_neural_radiance_fields.md)
-- [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
+- [\[CVPR 2026\] Generalizable Radio-Frequency Radiance Fields for Spatial Spectrum Synthesis](generalizable_radio-frequency_radiance_fields_for_spatial_spectrum_synthesis.md)
 - [\[CVPR 2025\] Depth-Guided Bundle Sampling for Efficient Generalizable Neural Radiance Field Reconstruction](../../CVPR2025/3d_vision/depth-guided_bundle_sampling_for_efficient_generalizable_neural_radiance_field_r.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] NTK-Guided Implicit Neural Teaching](ntk-guided_implicit_neural_teaching.md)
+- [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
+- [\[ICLR 2026\] Splat the Net: Radiance Fields with Splattable Neural Primitives](../../ICLR2026/3d_vision/splat_the_net_radiance_fields_with_splattable_neural_primitives.md)
 
 </div>
 

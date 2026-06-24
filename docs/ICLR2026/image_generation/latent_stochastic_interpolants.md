@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Latent Stochastic Interpolants
 description: >-
-  [ICLR 2026][Image Generation][Stochastic Interpolants] This paper proposes **Latent Stochastic Interpolants (LSI)**, which utilizes a single ELBO objective derived from continuous time to bring the Stochastic Interpolants framework into an end-to-end jointly trained latent space. By optimizing the encoder, decoder, and the latent SI generative model together, LSI achieves
+  [ICLR 2026][Image Generation][Stochastic Interpolants] This paper proposes **Latent Stochastic Interpolants (LSI)**, which utilizes a single ELBO objective derived from continuous time to bring the Stochastic Interpolants framework into an end-to-end jointly trained latent space. By optimizing the encoder, decoder, and the latent SI generative model together, LSI achieves FIDs comparable to pixel-space SI on ImageNet with significantly lower sampling FLOPs.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Stochastic Interpolants
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Stochastic Interpolants"
+  - "Latent space generation"
+  - "Continuous-time ELBO"
+  - "Diffusion bridge"
+  - "Joint training"
 date: 2026-05-08
-content_hash: ac10fd11fc6e1a28
+content_hash: d376b085bc2a69d8
 ---
+
 # Latent Stochastic Interpolants
 
 **Conference**: ICLR 2026  
@@ -121,11 +126,11 @@ Joint training consistently performs better and shows slower FID degradation as 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants](generative_modeling_from_black-box_corruptions_via_self-consistent_stochastic_in.md)
 - [\[NeurIPS 2025\] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants](../../NeurIPS2025/image_generation/boltznce_learning_likelihoods_for_boltzmann_generation_with_stochastic_interpola.md)
 - [\[ICLR 2026\] SESaMo: Symmetry-Enforcing Stochastic Modulation for Normalizing Flows](sesamo_symmetry-enforcing_stochastic_modulation_for_normalizing_flows.md)
 - [\[ICLR 2026\] Latent Denoising Makes Good Tokenizers](latent_denoising_makes_good_tokenizers.md)
 - [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](latent_diffusion_model_without_variational_autoencoder.md)
-- [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
 
 </div>
 

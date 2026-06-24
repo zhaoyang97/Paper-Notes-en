@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TaCo: A Benchmark for Lossless and Lossy Codecs of Heterogeneous Tactile Data
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper proposes TaCo—the first comprehensive benchmark for tactile data codecs. It systematically evaluates lossless and lossy compression across 5 heterogeneous tactile datasets, 30 codecs, and 4 types of downstream tasks. The authors train TaCo-LL (lossless) and TaCo-L (lossy), the first codecs driven purely by t
+  [ICLR 2026][Robotics][Tactile data compression] This paper proposes TaCo—the first comprehensive benchmark for tactile data codecs. It systematically evaluates lossless and lossy compression across 5 heterogeneous tactile datasets, 30 codecs, and 4 types of downstream tasks. The authors train TaCo-LL (lossless) and TaCo-L (lossy), the first codecs driven purely by tactile data, which achieve new SOTA results across all tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Tactile data compression"
+  - "Lossless/Lossy codecs"
+  - "Heterogeneous tactile sensors"
+  - "Dexterous grasping"
+  - "Neural codecs"
 date: 2026-05-08
-content_hash: 7268c64dce8a9085
+content_hash: 1d82df1bff9ca0f0
 ---
+
 # TaCo: A Benchmark for Lossless and Lossy Codecs of Heterogeneous Tactile Data
 
 **Conference**: ICLR 2026  
@@ -133,6 +139,7 @@ $$L = \lambda \cdot D(x,\hat x) + \mathbb{E}\big[-\log_2 p_{\hat y\mid\hat z}(\h
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

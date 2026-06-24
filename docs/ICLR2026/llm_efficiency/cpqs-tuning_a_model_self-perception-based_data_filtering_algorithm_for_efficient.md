@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CPQS-Tuning: A Model Self-Perception-Based Data Filtering Algorithm for Efficient Instruction Fine-Tuning
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper proposes CPQS-Tuning: instead of using external scoring models or manual metrics to filter instruction fine-tuning data, it directly reads the hidden states of the target LLM. A small CNN translates the model's "implicit evaluation" of data into a Contrastive Perception Quality Score (CPQS). Selecting less t
+  [ICLR2026][LLM Efficiency][Data Filtering] This paper proposes CPQS-Tuning: instead of using external scoring models or manual metrics to filter instruction fine-tuning data, it directly reads the hidden states of the target LLM. A small CNN translates the model's "implicit evaluation" of data into a Contrastive Perception Quality Score (CPQS). Selecting less than 10% of high-quality data based on this score results in training performance that exceeds using the full dataset.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Data Filtering"
+  - "Instruction Fine-Tuning"
+  - "Hidden States"
+  - "Contrastive Perception Quality Score"
+  - "Efficient Training"
 date: 2026-05-08
-content_hash: 71644c52bf566bcc
+content_hash: e80cde5604fb5348
 ---
+
 # CPQS-Tuning: A Model Self-Perception-Based Data Filtering Algorithm for Efficient Instruction Fine-Tuning
 
 **Conference**: ICLR2026  

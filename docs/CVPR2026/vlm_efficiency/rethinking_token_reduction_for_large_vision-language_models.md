@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Rethinking Token Reduction for Large Vision-Language Models
 description: >-
-  [CVPR 2026][Model Compression][Inference Acceleration] Aiming at multi-round visual question answering (MT-VQA) scenarios, this paper unifies visual token pruning and merging into a "learnable compression mapping $P$" and trains a meta-generator, MetaCompress, which relies solely on images and adapts to arbitrary resolutions to produce $P$. At a 90% compression rate, it co
+  [CVPR 2026][Multimodal Efficiency][Visual token compression] Aiming at multi-round visual question answering (MT-VQA) scenarios, this paper unifies visual token pruning and merging into a "learnable compression mapping $P$" and trains a meta-generator, MetaCompress, which relies solely on images and adapts to arbitrary resolutions to produce $P$. At a 90% compression rate, it consistently outperforms heuristic methods like FastV and PruMerge, with inference efficiency approac…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Inference Acceleration
-  - prompt-agnostic
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token compression"
+  - "Multi-round VQA"
+  - "Learnable compression matrix"
+  - "Inference acceleration"
+  - "prompt-agnostic"
 date: 2026-05-08
-content_hash: 93c2f6322e5bcff7
+content_hash: 881f452d55ea5b66
 ---
+
 # Rethinking Token Reduction for Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -155,10 +159,10 @@ LLaVA-NeXT-7b, MT-GQA, 90% compression, adding losses sequentially:
 ## Related Papers
 
 - [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
+- [\[ICLR 2026\] LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models](../../ICLR2026/vlm_efficiency/learnpruner_rethinking_attention-based_token_pruning_in_vision_language_models.md)
+- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/vlm_efficiency/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
 - [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
 - [\[CVPR 2026\] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)
-- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
 
 </div>
 

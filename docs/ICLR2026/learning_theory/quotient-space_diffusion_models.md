@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Quotient-Space Diffusion Models
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes "Quotient-Space Diffusion Models," which project traditional equivariant diffusion processes onto a quotient space to eliminate symmetric redundancy and then horizontally lift them back to the original space. This allows the model output within equivalence classes to be arbitrary (reducing learning
+  [ICLR 2026][Diffusion Models][Quotient Space] This paper proposes "Quotient-Space Diffusion Models," which project traditional equivariant diffusion processes onto a quotient space to eliminate symmetric redundancy and then horizontally lift them back to the original space. This allows the model output within equivalence classes to be arbitrary (reducing learning difficulty) while ensuring the sampling restores the correct symmetric target distribution via a curvature compens…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Diffusion Models"
+  - "Geometric Deep Learning"
+  - "Generative Model Theory"
+  - "Quotient Space"
+  - "Equivariant Diffusion"
+  - "SE(3) Symmetry"
+  - "Horizontal Lifting"
+  - "Molecular Structure Generation"
 date: 2026-05-08
-content_hash: 6abebe557907d190
+content_hash: 5560598a514252d7
 ---
+
 # Quotient-Space Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -150,6 +158,7 @@ Across all settings, Ours outperforms vanilla Proteína, while AF3 alignment sig
 - **Value**: ⭐⭐⭐⭐⭐ Significant theoretical unity and practical value (e.g., small models surpassing large ones).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -158,7 +167,7 @@ Across all settings, Ours outperforms vanilla Proteína, while AF3 alignment sig
 - [\[ICLR 2026\] On the Expressiveness of State Space Models via Temporal Logics](on_the_expressiveness_of_state_space_models_via_temporal_logics.md)
 - [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
 - [\[ICLR 2026\] Polynomial Convergence of Riemannian Diffusion Models](polynomial_convergence_of_riemannian_diffusion_models.md)
-- [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 
 </div>
 

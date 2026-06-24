@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] What Is Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution
 description: >-
-  [CVPR 2026][Others][Scene Text Recognition] This paper systematically analyzes the deficiencies of existing rendered synthetic data in terms of corpus, font, and layout diversity. It proposes the UnionST synthesis engine and a Self-Evolution Learning (SEL) framework. Using only synthetic data, UnionST significantly outperforms traditional synthetic sets. Combine
+  [CVPR2026][Scene Text Recognition] This paper systematically analyzes the deficiencies of existing rendered synthetic data in terms of corpus, font, and layout diversity. It proposes the UnionST synthesis engine and a Self-Evolution Learning (SEL) framework. Using only synthetic data, UnionST significantly outperforms traditional synthetic sets. Combined with SEL, it approaches fully supervised performance using only 9% of real-world annotations.
 tags:
-  - CVPR 2026
-  - Others
-  - Scene Text Recognition
+  - "CVPR2026"
+  - "Scene Text Recognition"
+  - "Synthetic Data"
+  - "Data Engine"
+  - "Self-Evolution Learning"
+  - "Pseudo-labels"
 date: 2026-05-08
-content_hash: 20f3ae564245a864
+content_hash: ca0bdf840986e7a4
 ---
+
 # What Is Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution
 
 **Conference**: CVPR2026  
@@ -170,11 +174,11 @@ Labeling only 9% (290K / 3.22M) of the real data achieves performance within 0.1
 
 ## Related Papers
 
-- [\[CVPR 2026\] What's Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution](whats_wrong_with_synthetic_data_for_scene_text_recognition_a_strong_synthetic_en.md)
-- [\[CVPR 2026\] Deconstructing the Failure of Ideal Noise Correction: A Three-Pillar Diagnosis](deconstructing_the_failure_of_ideal_noise_correction_a_three-pillar_diagnosis.md)
-- [\[CVPR 2026\] Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning](mitigating_instance_entanglement_in_instance-dependent_partial_label_learning.md)
-- [\[CVPR 2026\] DiffBMP: Differentiable Rendering with Bitmap Primitives](diffbmp_differentiable_rendering_with_bitmap_primitives.md)
-- [\[CVPR 2026\] Coded-E2LF: Coded Aperture Light Field Imaging from Events](coded-e2lf_coded_aperture_light_field_imaging_from_events.md)
+- [\[ACL 2025\] KodCode: A Diverse, Challenging, and Verifiable Synthetic Dataset for Coding](../../ACL2025/others/kodcode_a_diverse_challenging_and_verifiable_synthetic_dataset_for_coding.md)
+- [\[ACL 2025\] Generating Synthetic Relational Tabular Data via Structural Causal Models](../../ACL2025/others/generating_synthetic_relational_tabular_data_via_structural_causal_models.md)
+- [\[ICML 2025\] Provably Improving Generalization of Few-Shot Models with Synthetic Data](../../ICML2025/others/provably_improving_generalization_of_few-shot_models_with_synthetic_data.md)
+- [\[ACL 2025\] TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data](../../ACL2025/others/targa_targeted_synthetic_data_generation_for_practical_reasoning_over_structured.md)
+- [\[ICLR 2026\] Using maximal information auxiliary variables to improve synthetic data generation based on TabPFN foundation models](../../ICLR2026/others/using_maximal_information_auxiliary_variables_to_improve_synthetic_data_generati.md)
 
 </div>
 

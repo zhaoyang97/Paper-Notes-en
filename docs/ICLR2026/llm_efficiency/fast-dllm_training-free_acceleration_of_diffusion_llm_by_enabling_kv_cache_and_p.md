@@ -4,14 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][LLM Efficiency][Diffusion LLM] Fast-dLLM accelerates bidirectional Diffusion LLMs without retraining by introducing a block-wise approximate KV Cache and replacing fixed top-K parallel decoding with a "confidence threshold" strategy. It achieves up to a 27.6× end-to-end throughput gain on LLaDA and Dream with almost no loss in accuracy.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Diffusion LLM
-  - KV Cache
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Diffusion LLM"
+  - "KV Cache"
+  - "Parallel Decoding"
+  - "Inference Acceleration"
+  - "Confidence Threshold"
 date: 2026-05-08
-content_hash: 8997287cb5df9f60
+content_hash: c73b97f488fa8133
 ---
+
 # Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding
 
 **Conference**: ICLR 2026  
@@ -128,10 +131,20 @@ DualCache provides the greatest gains in long prefill/generation scenarios (LLaD
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
+- [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
+- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
+- [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](fast-dllm_v2_efficient_block-diffusion_llm.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)

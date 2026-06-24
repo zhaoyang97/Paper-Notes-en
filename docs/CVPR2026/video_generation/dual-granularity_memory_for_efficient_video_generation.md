@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dual-Granularity Memory for Efficient Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Knowledge Distillation] Tackling the "chunk isolation" issue in linear recurrent video generators caused by chunk-wise parallelism, this paper stacks two complementary memories on the GSTPN backbone: intra-chunk Context Memory (sink columns + boundary buffers, adding only +150K parameters) and cross-segment LCaM (latent memory bank + content
+  [CVPR 2026][Video Generation][Linear Recurrence] Tackling the "chunk isolation" issue in linear recurrent video generators caused by chunk-wise parallelism, this paper stacks two complementary memories on the GSTPN backbone: intra-chunk Context Memory (sink columns + boundary buffers, adding only +150K parameters) and cross-segment LCaM (latent memory bank + content retrieval + cross-attention). This achieves a 1.54× inference speedup while maintaining visual quality comparab…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Linear Recurrence"
+  - "Chunk Isolation"
+  - "Attention Sink"
+  - "Latent Memory"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 0404002838db5d97
+content_hash: 9d7debb355a5466f
 ---
+
 # Dual-Granularity Memory for Efficient Video Generation
 
 **Conference**: CVPR 2026  

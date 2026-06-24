@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Life-IQA: Boosting Blind Image Quality Assessment through GCN-enhanced Layer Interaction and MoE-based Feature Decoupling
 description: >-
-  [CVPR 2026][Others][GCN] Addressing the issue in Blind Image Quality Assessment (BIQA) where "blindly merging all layer features introduces noise," Life-IQA utilizes only the features from the two deepest layers of the backbone for quality decoding. It employs a GCN-enhanced query topology to treat stage 4 features as queries and stage 3 featu
+  [CVPR 2026][Image Restoration][Blind Image Quality Assessment (BIQA)] Addressing the issue in Blind Image Quality Assessment (BIQA) where "blindly merging all layer features introduces noise," Life-IQA utilizes only the features from the two deepest layers of the backbone for quality decoding. It employs a GCN-enhanced query topology to treat stage 4 features as queries and stage 3 features as keys/values for cross-layer interaction. Subsequently…
 tags:
-  - CVPR 2026
-  - Others
-  - GCN
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Blind Image Quality Assessment (BIQA)"
+  - "GCN"
+  - "Mixture of Experts (MoE)"
+  - "Transformer Decoder"
+  - "Cross-layer Interaction"
 date: 2026-05-08
-content_hash: ddfffdaff94c543e
+content_hash: e9aa587f5253a4d4
 ---
+
 # Life-IQA: Boosting Blind Image Quality Assessment through GCN-enhanced Layer Interaction and MoE-based Feature Decoupling
 
 **Conference**: CVPR 2026  
@@ -133,11 +138,11 @@ Replacement of decoder variants (parameter budget aligned, Table 4) and componen
 
 ## Related Papers
 
+- [\[CVPR 2026\] RL-ScanIQA: Reinforcement-Learned Scanpaths for Blind 360deg Image Quality Assessment](rl-scaniqa_reinforcement-learned_scanpaths_for_blind_360deg_image_quality_assess.md)
 - [\[CVPR 2026\] Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective](rethinking_knowledge_transfer_in_image_quality_assessment_a_perceptual_preferenc.md)
-- [\[CVPR 2026\] Large-scale Robust Enhanced Ensemble Clustering via Outlier Decoupling](large-scale_robust_enhanced_ensemble_clustering_via_outlier_decoupling.md)
-- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
-- [\[CVPR 2026\] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding](artimuse_fine-grained_image_aesthetics_assessment_with_joint_scoring_and_expert-.md)
-- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
+- [\[CVPR 2026\] DPGF-Net: Dual-Prior Guided Fusion Network for Joint Assessment of Perceptual Quality and Semantic Consistency in AI-Generated Images](dpgf-net_dual-prior_guided_fusion_network_for_joint_assessment_of_perceptual_qua.md)
+- [\[CVPR 2026\] Disentanglement-wise Image Dehazing through Cross-Domain Manifold Consensus](disentanglement-wise_image_dehazing_through_cross-domain_manifold_consensus.md)
+- [\[CVPR 2026\] ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation](reflexsplit_single_image_reflection_separation_via_layer_fusion-separation.md)
 
 </div>
 

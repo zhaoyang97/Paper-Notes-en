@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FastHybrid: Accelerating Hybrid Autoregressive Image Generation with Lookahead and Guided Decoding
 description: >-
-  [CVPR 2026][Image Generation][Inference Acceleration] Addressing the bottleneck of slow diffusion denoising in "Autoregressive + Diffusion Head" hybrid image generation, FastHybrid utilizes a **lookahead branch to parallelly pre-decode several future tokens** and an **autoregressive branch to verify/correct them via cosine similarity**. By employing **guided diffusion sam
+  [CVPR 2026][Image Generation][Hybrid Autoregressive Generation] Addressing the bottleneck of slow diffusion denoising in "Autoregressive + Diffusion Head" hybrid image generation, FastHybrid utilizes a **lookahead branch to parallelly pre-decode several future tokens** and an **autoregressive branch to verify/correct them via cosine similarity**. By employing **guided diffusion sampling**, the denoising steps for verified tokens are compressed from 100 to 10…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Inference Acceleration
-  - MAR
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Hybrid Autoregressive Generation"
+  - "Lookahead Decoding"
+  - "Guided Diffusion Sampling"
+  - "Inference Acceleration"
+  - "MAR"
 date: 2026-05-08
-content_hash: a53ddedcf6bdb7e1
+content_hash: 63d24dc2e1404db7
 ---
+
 # FastHybrid: Accelerating Hybrid Autoregressive Image Generation with Lookahead and Guided Decoding
 
 **Conference**: CVPR 2026  
@@ -158,9 +162,9 @@ Ablations were conducted on 10k images (FID/IS values are overall lower than mai
 
 - [\[CVPR 2026\] Parallel Jacobi Decoding for Fast Autoregressive Image Generation](parallel_jacobi_decoding_for_fast_autoregressive_image_generation.md)
 - [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
+- [\[CVPR 2026\] Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling](accelerating_diffusion_via_hybrid_data-pipeline_parallelism_based_on_conditional.md)
 - [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
 - [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](../../ICLR2026/image_generation/autoregressive_image_generation_with_randomized_parallel_decoding.md)
-- [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
 
 </div>
 

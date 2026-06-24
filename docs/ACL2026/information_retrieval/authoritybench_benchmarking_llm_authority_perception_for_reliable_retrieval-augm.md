@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][PageRank] AuthorityBench constructs the first LLM "authority perception" benchmark using 10K web domains (PageRank ground truth) + 22K entities (Wikipedia cross-lingual sitelink ground truth) + 120 RAG questions. The study finds that ListJudge / PairJudge + PointScore yields the most accurate outputs, adding web text can degrade
+  [ACL 2026][Information Retrieval & RAG][Authority Perception] AuthorityBench constructs the first LLM "authority perception" benchmark using 10K web domains (PageRank ground truth) + 22K entities (Wikipedia cross-lingual sitelink ground truth) + 120 RAG questions. The study finds that ListJudge / PairJudge + PointScore yields the most accurate outputs, adding web text can degrade performance, and utilizing authority signals for RAG filtering improves answer accuracy by up to…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - PageRank
-  - LLM-as-a-Judge
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Authority Perception"
+  - "RAG Filtering"
+  - "PageRank"
+  - "Entity Popularity"
+  - "LLM-as-a-Judge"
 date: 2026-05-08
-content_hash: 6daa103eaeff4eb0
+content_hash: eb554b1ec83d3342
 ---
+
 # AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation
 
 **Conference**: ACL 2026  

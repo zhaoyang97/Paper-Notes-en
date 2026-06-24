@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models
 description: >-
-  [CVPR 2026][Video Understanding][Video LLM] The AOT framework is proposed to achieve training-free video token compression by establishing local-global token anchors and utilizing Optimal Transport (OT) to aggregate the semantic information of pruned/merged tokens at both intra-frame and inter-frame levels. It retains 97.6% of the original performance even when
+  [CVPR2026][Video Understanding][Video LLM] The AOT framework is proposed to achieve training-free video token compression by establishing local-global token anchors and utilizing Optimal Transport (OT) to aggregate the semantic information of pruned/merged tokens at both intra-frame and inter-frame levels. It retains 97.6% of the original performance even when 90% of tokens are pruned.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video LLM
-  - Token Reduction
-  - optimal transport
-  - training-free
-  - Spatiotemporal Compression
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Video LLM"
+  - "Token Reduction"
+  - "optimal transport"
+  - "training-free"
+  - "Spatiotemporal Compression"
 date: 2026-05-08
-content_hash: 9c6f18fe4a2d1b97
+content_hash: 18ff94e3d5ecd3f2
 ---
+
 # Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models
 
 **Conference**: CVPR2026  
@@ -162,10 +163,10 @@ Aggregation strategy comparison: No Merging (56.4) vs Cosine Merging (52.4) vs *
 
 ## Related Papers
 
-- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](gift_global_irreplaceability_frame_targeting_for_efficient_video_understanding.md)
+- [\[ICML 2026\] OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models](../../ICML2026/video_understanding/omnisift_modality-asymmetric_token_compression_for_efficient_omni-modal_large_la.md)
 - [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](../../ICLR2026/video_understanding/flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
 - [\[NeurIPS 2025\] Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization](../../NeurIPS2025/video_understanding/self-alignment_of_large_video_language_models_with_refined_regularized_preferenc.md)
-- [\[ICML 2026\] OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models](../../ICML2026/video_understanding/omnisift_modality-asymmetric_token_compression_for_efficient_omni-modal_large_la.md)
 - [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
 
 </div>

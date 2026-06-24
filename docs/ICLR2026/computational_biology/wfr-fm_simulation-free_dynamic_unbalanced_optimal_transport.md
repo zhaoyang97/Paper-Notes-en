@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport
 description: >-
-  [ICLR 2026][Computational Biology][Wasserstein–Fisher–Rao] WFR-FM extends flow matching to "non-mass-conserving" dynamic unbalanced optimal transport. Under the Wasserstein–Fisher–Rao (WFR) geometry, it simultaneously regresses a displacement velocity field and a scalar growth rate function. By constructing conditional paths using analytical Dirac-to-Dirac geodesics, it recove
+  [ICLR 2026][Computational Biology][Wasserstein–Fisher–Rao] WFR-FM extends flow matching to "non-mass-conserving" dynamic unbalanced optimal transport. Under the Wasserstein–Fisher–Rao (WFR) geometry, it simultaneously regresses a displacement velocity field and a scalar growth rate function. By constructing conditional paths using analytical Dirac-to-Dirac geodesics, it recovers single-cell dynamics with proliferation/apoptosis **without ODE simulation**…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Wasserstein–Fisher–Rao
-  - Flow Matching
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Wasserstein–Fisher–Rao"
+  - "Unbalanced Optimal Transport"
+  - "Flow Matching"
+  - "Single-cell Trajectory Inference"
+  - "Birth-death Dynamics"
 date: 2026-05-08
-content_hash: 716cff176d731038
+content_hash: 504e88fced1db272
 ---
+
 # WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport
 
 **Conference**: ICLR 2026  

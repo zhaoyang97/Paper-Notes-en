@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GOATex: Geometry & Occlusion-Aware Texturing
 description: >-
-  [NeurIPS 2025][3D Vision][3D texture generation] GOATex proposes the first occlusion-aware 3D mesh texturing framework. It decomposes meshes into visibility layers ordered from outermost to innermost via a ray-casting-ba…
+  [NeurIPS 2025][3D Vision][3D texture generation] GOATex proposes the first occlusion-aware 3D mesh texturing framework. It decomposes meshes into visibility layers ordered from outermost to innermost via a ray-casting-based hit-level mechanism, applies a two-stage visibility control strategy combining normal flipping and residual face clustering, and performs visibility-weighted blending in UV space—achieving high-quality texture generation for both exterior surfaces and occl…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "UV texture blending"
   - "multi-layer texturing"
 date: 2026-05-08
-content_hash: 736535c7165d888f
+content_hash: e204fc857e9aaa6a
 ---
 
 # GOATex: Geometry & Occlusion-Aware Texturing
@@ -131,9 +131,9 @@ Human evaluators consistently and strongly prefer GOATex across all comparisons,
 
 - [\[NeurIPS 2025\] GeoComplete: Geometry-Aware Diffusion for Reference-Driven Image Completion](geocomplete_geometry-aware_diffusion_for_reference-driven_image_completion.md)
 - [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](../../ICCV2025/3d_vision/occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
-- [\[ICCV 2025\] Geometry Distributions](../../ICCV2025/3d_vision/geometry_distributions.md)
-- [\[NeurIPS 2025\] TAPIP3D: Tracking Any Point in Persistent 3D Geometry](tapip3d_tracking_any_point_in_persistent_3d_geometry.md)
-- [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](../../CVPR2026/3d_vision/customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
+- [\[CVPR 2026\] Lafite: A Generative Latent Field for 3D Native Texturing](../../CVPR2026/3d_vision/lafite_a_generative_latent_field_for_3d_native_texturing.md)
+- [\[CVPR 2026\] UniTEX: Universal High Fidelity Generative Texturing for 3D Shapes](../../CVPR2026/3d_vision/unitex_universal_high_fidelity_generative_texturing_for_3d_shapes.md)
+- [\[CVPR 2025\] RoomTour3D: Geometry-Aware Video-Instruction Tuning for Embodied Navigation](../../CVPR2025/3d_vision/roomtour3d_geometry-aware_video-instruction_tuning_for_embodied_navigation.md)
 
 </div>
 

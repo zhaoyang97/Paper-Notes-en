@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Exploring Reasoning Reward Model for Agents
 description: >-
-  [ACL 2026][LLM Agent][agentic RL] The authors identify that current agentic RL typically employs sparse outcome rewards (evaluating only final correctness), which discards high-quality signals from intermediate reasoning steps. They propose **Agent-RRM**, a reasoning reward model generating structured feedback in three segments: `<think>/<critique>/<sc
+  [ACL 2026 Findings][LLM Agent][agentic RL] The authors identify that current agentic RL typically employs sparse outcome rewards (evaluating only final correctness), which discards high-quality signals from intermediate reasoning steps. They propose **Agent-RRM**, a reasoning reward model generating structured feedback in three segments: `<think>/<critique>/<score>`. By systematically comparing three integration methods (C: pure critique refinement…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - agentic RL
-  - reasoning reward model
-  - GRPO
-  - critique-guided refinement
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "agentic RL"
+  - "reasoning reward model"
+  - "GRPO"
+  - "critique-guided refinement"
+  - "multimodal feedback"
 date: 2026-05-08
-content_hash: fa7b1134565ce961
+content_hash: 90c9fff2c2bdf3da
 ---
+
 # Exploring Reasoning Reward Model for Agents
 
 **Conference**: ACL 2026 Findings  
@@ -150,9 +152,9 @@ Comparison of the three variants:
 
 - [\[ICLR 2026\] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents](../../ICLR2026/llm_agent/webarbiter_a_principle-guided_reasoning_process_reward_model_for_web_agents.md)
 - [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](memp_exploring_agent_procedural_memory.md)
+- [\[ICLR 2026\] Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning](../../ICLR2026/llm_agent/nemotron-research-tool-n1_exploring_tool-using_language_models_with_reinforced_r.md)
 - [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](../../ICML2026/llm_agent/process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
-- [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
-- [\[NeurIPS 2025\] BTL-UI: Blink-Think-Link Reasoning Model for GUI Agent](../../NeurIPS2025/llm_agent/btlui_blinkthinklink_reasoning_model_for_gui_agent.md)
+- [\[ICLR 2026\] Empowering LLM Tool Invocation with Tool-call Reward Model](../../ICLR2026/llm_agent/empowering_llm_tool_invocation_with_tool-call_reward_model.md)
 
 </div>
 

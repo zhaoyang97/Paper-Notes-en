@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CARD: Coarse-to-fine Autoregressive Modeling with Radix-based Decomposition for Transferable Free Energy Estimation
 description: >-
-  [ICML 2026][Computational Biology][BAR] CARD utilizes "radix $r$ decomposition" to bijectively map molecular 3D coordinates into coarse-to-fine sequences of discrete-continuous mixed tokens. This enables a cross-system general autoregressive Transformer to act as a "zero-free-energy proposal" for directly estimating the absolute free energy of arbitrary mole
+  [ICML 2026][Computational Biology][Free Energy Estimation] CARD utilizes "radix $r$ decomposition" to bijectively map molecular 3D coordinates into coarse-to-fine sequences of discrete-continuous mixed tokens. This enables a cross-system general autoregressive Transformer to act as a "zero-free-energy proposal" for directly estimating the absolute free energy of arbitrary molecular systems via BAR. It achieves the accuracy of classical MFES on 70 new solvation systems while b…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - BAR
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Free Energy Estimation"
+  - "Autoregressive Transformer"
+  - "Radix decomposition"
+  - "Zero-free-energy proposal"
+  - "BAR"
 date: 2026-05-08
-content_hash: 9ad57a22596c6e96
+content_hash: f21abfcdda8645ae
 ---
+
 # CARD: Coarse-to-fine Autoregressive Modeling with Radix-based Decomposition for Transferable Free Energy Estimation
 
 **Conference**: ICML 2026  
@@ -135,10 +140,10 @@ Ablation on radix $r$, depth $L$, and training stages for the Vacuum$\to$Toluene
 ## Related Papers
 
 - [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](protein_autoregressive_modeling_via_multiscale_structure_generation.md)
+- [\[ICML 2026\] Circuit Tracing in Autoregressive Protein Language Models](circuit_tracing_in_autoregressive_protein_language_models.md)
 - [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](../../NeurIPS2025/computational_biology/energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
 - [\[ICML 2026\] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition](learning_protein_structure-function_relationships_through_knowledge-guided_repre.md)
-- [\[CVPR 2026\] Stronger Normalization-Free Transformers](../../CVPR2026/computational_biology/stronger_normalization-free_transformers.md)
-- [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
+- [\[ICML 2026\] Learning the Neighborhood: Contrast-Free Multimodal Self-Supervised Molecular Graph Pretraining](learning_the_neighborhood_contrast-free_multimodal_self-supervised_molecular_gra.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization
 description: >-
-  [ICCV 2025][LLM/NLP][Model merging] This paper formalizes model merging as a constrained optimization problem and introduces FW-Merging…
+  [ICCV 2025][LLM (Other)][Model merging] This paper formalizes model merging as a constrained optimization problem and introduces FW-Merging, a Frank-Wolfe optimization-inspired method that iteratively selects the most relevant models and performs local merging. The approach achieves scalable and robust merging over large black-box model pools, surpassing the data-aware method AdaMerging by 8.39% when merging 20 ViT models.
 tags:
   - "ICCV 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Model merging"
   - "Frank-Wolfe optimization"
   - "multi-task learning"
   - "scalability"
   - "large language models"
 date: 2026-05-08
-content_hash: 9bffe286af71f94e
+content_hash: 4280fb0b7203788c
 ---
 
 # FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization
@@ -164,11 +164,11 @@ Optimizing merging coefficients yields gains of up to 9.9 points; task-wise LMO 
 
 ## Related Papers
 
-- [\[AAAI 2026\] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization](../../AAAI2026/llm_nlp/irote_human-like_traits_elicitation_of_large_language_model_via_in-context_self-.md)
-- [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](../../NeurIPS2025/llm_nlp/scaling_up_active_testing_to_large_language_models.md)
+- [\[ACL 2025\] Training-free LLM Merging for Multi-task Learning](../../ACL2025/llm_nlp/training-free_llm_merging_for_multi-task_learning.md)
+- [\[ACL 2025\] Binary Classifier Optimization for Large Language Model Alignment](../../ACL2025/llm_nlp/bco_binary_classifier_alignment.md)
 - [\[ICCV 2025\] VIM: Versatile Interactive Motion-Language Model](vim_versatile_interactive_motion_language_model.md)
-- [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](../../NeurIPS2025/llm_nlp/system_prompt_optimization_with_meta-learning.md)
-- [\[NeurIPS 2025\] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](../../NeurIPS2025/llm_nlp/adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)
+- [\[ICML 2025\] TabFlex: Scaling Tabular Learning to Millions with Linear Attention](../../ICML2025/llm_nlp/tabflex_scaling_tabular_learning_to_millions_with_linear_attention.md)
+- [\[ICML 2025\] Towards Universal Offline Black-Box Optimization via Learning Language Model Embeddings](../../ICML2025/llm_nlp/towards_universal_offline_black-box_optimization_via_learning_language_model_emb.md)
 
 </div>
 

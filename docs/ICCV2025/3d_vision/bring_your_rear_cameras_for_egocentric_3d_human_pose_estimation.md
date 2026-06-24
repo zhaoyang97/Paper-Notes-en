@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation
 description: >-
-  [ICCV 2025][3D Vision][egocentric view] This paper is the first to investigate the value of rear-mounted cameras on HMDs for egocentric 3D whole-body pose estimation. It proposes a Transformer-based multi-view heatmap re…
+  [ICCV 2025][3D Vision][egocentric view] This paper is the first to investigate the value of rear-mounted cameras on HMDs for egocentric 3D whole-body pose estimation. It proposes a Transformer-based multi-view heatmap refinement method with an uncertainty-aware masking mechanism, achieving >10% MPJPE improvement on the newly constructed Ego4View dataset.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "multi-view fusion"
   - "head-mounted devices"
 date: 2026-05-08
-content_hash: ca17267b722d3500
+content_hash: 51f3f558e67695cf
 ---
 
 # Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation
@@ -158,9 +158,9 @@ Camera count ablation (Ego4View-RW, EgoPoseFormer + Ours):
 
 - [\[ICCV 2025\] PersPose: 3D Human Pose Estimation with Perspective Encoding and Perspective Rotation](perspose_3d_human_pose_estimation_with_perspective_encoding_and_perspective_rota.md)
 - [\[ICCV 2025\] Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras](single-scanline_relative_pose_estimation_for_rolling_shutter_cameras.md)
+- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](../../CVPR2026/3d_vision/egocentric_visibility-aware_human_pose_estimation.md)
 - [\[ICCV 2025\] Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision](fish2mesh_transformer_3d_human_mesh_recovery_from_egocentric_vision.md)
-- [\[ICCV 2025\] BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation](boxdreamer_dreaming_box_corners_for_generalizable_object_pose_estimation.md)
-- [\[ICCV 2025\] RePoseD: Efficient Relative Pose Estimation with Known Depth Information](reposed_efficient_relative_pose_estimation_with_known_depth_information.md)
+- [\[CVPR 2025\] EgoPressure: A Dataset for Hand Pressure and Pose Estimation in Egocentric Vision](../../CVPR2025/3d_vision/egopressure_a_dataset_for_hand_pressure_and_pose_estimation_in_egocentric_vision.md)
 
 </div>
 

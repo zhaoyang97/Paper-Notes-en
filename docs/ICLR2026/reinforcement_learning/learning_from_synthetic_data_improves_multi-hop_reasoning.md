@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning from Synthetic Data Improves Multi-hop Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] It is discovered that RLVR training on synthetic data generated from completely fictional rules significantly improves LLM performance on real-world multi-hop reasoning tasks (Qwen3-0.6B improves by 56%-131%). This occurs because the model learns the general reasoning skill of knowledge composition rather than memorizi
+  [ICLR 2026][Reinforcement Learning][Synthetic Data] It is discovered that RLVR training on synthetic data generated from completely fictional rules significantly improves LLM performance on real-world multi-hop reasoning tasks (Qwen3-0.6B improves by 56%-131%). This occurs because the model learns the general reasoning skill of knowledge composition rather than memorizing factual knowledge.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Synthetic Data"
+  - "Multi-hop Reasoning"
+  - "RLVR"
+  - "Knowledge Composition"
+  - "Virtual Worlds"
 date: 2026-05-08
-content_hash: a21c380db3d3198f
+content_hash: 86f6d279b404f167
 ---
+
 # Learning from Synthetic Data Improves Multi-hop Reasoning
 
 **Conference**: ICLR 2026  
@@ -127,7 +132,7 @@ Qwen3-0.6B + PhantomWiki Training → Real Benchmarks:
 - [\[ICLR 2026\] Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning](controllable_exploration_in_hybrid-policy_rlvr_for_multi-modal_reasoning.md)
 - [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
 - [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](r-zero_self-evolving_reasoning_llm_from_zero_data.md)
-- [\[ICLR 2026\] Scheduling Your LLM Reinforcement Learning with Reasoning Trees](scheduling_your_llm_reinforcement_learning_with_reasoning_trees.md)
+- [\[ICLR 2026\] SCRIBES: Web-scale Scripted Semi-structured Data Extraction with Reinforcement Learning](scribes_web-scale_script-based_semi-structured_data_extraction_with_reinforcemen.md)
 
 </div>
 

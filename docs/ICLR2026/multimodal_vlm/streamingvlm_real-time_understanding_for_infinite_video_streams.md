@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StreamingVLM: Real-Time Understanding for Infinite Video Streams
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] StreamingVLM utilizes a unified framework of "overlapping short segments during training and reusing compact KV cache during inference," enabling 7B-class VLMs to maintain low latency, long-range memory, and second-level real-time commentary capabilities over hours of video streams.
+  [ICLR2026][Multimodal VLM][Streaming VLM] StreamingVLM utilizes a unified framework of "overlapping short segments during training and reusing compact KV cache during inference," enabling 7B-class VLMs to maintain low latency, long-range memory, and second-level real-time commentary capabilities over hours of video streams.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Streaming VLM"
+  - "Infinite Video"
+  - "KV Cache"
+  - "Contiguous RoPE"
+  - "Real-Time Commentary"
 date: 2026-05-08
-content_hash: 861fd0ed74bf35c5
+content_hash: 5ee6682b09a37514
 ---
+
 # StreamingVLM: Real-Time Understanding for Infinite Video Streams
 
 **Conference**: ICLR2026  
@@ -146,8 +152,8 @@ StreamingVLM does not just excel at sports lingo; it improves general video VQA 
 - [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
 - [\[ACL 2026\] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production](../../ACL2026/multimodal_vlm/hybrid_autoregressive-diffusion_model_for_real-time_sign_language_production.md)
 - [\[ICLR 2026\] Can Vision-Language Models Answer Face to Face Questions in the Real-World?](can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)
-- [\[ICLR 2026\] Long-tailed Test-Time Adaptation for Vision-Language Models](long-tailed_test-time_adaptation_for_vision-language_models.md)
 - [\[ICML 2026\] TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings](../../ICML2026/multimodal_vlm/timespot_benchmarking_geo-temporal_understanding_in_vision-language_models_in_re.md)
+- [\[ICLR 2026\] Long-tailed Test-Time Adaptation for Vision-Language Models](long-tailed_test-time_adaptation_for_vision-language_models.md)
 
 </div>
 

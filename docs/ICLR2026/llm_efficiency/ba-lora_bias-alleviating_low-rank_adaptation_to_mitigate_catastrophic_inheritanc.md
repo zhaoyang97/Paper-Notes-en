@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BA-LoRA: Bias-Alleviating Low-Rank Adaptation to Mitigate Catastrophic Inheritance in Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][LoRA] BA-LoRA superimposes three **output space regularizations**—consistency, diversity, and SVD—onto the PiSSA spectral-initialized LoRA framework. These specifically address knowledge drift, representation collapse, and noise overfitting caused by the amplification of pre-training biases during fine-tuning. It consistentl
+  [ICLR2026][LLM Efficiency][LoRA] BA-LoRA superimposes three **output space regularizations**—consistency, diversity, and SVD—onto the PiSSA spectral-initialized LoRA framework. These specifically address knowledge drift, representation collapse, and noise overfitting caused by the amplification of pre-training biases during fine-tuning. It consistently outperforms numerous LoRA variants on both NLG and NLU tasks, showing greater gains on noisier pre-trained models.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LoRA
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "LoRA"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Catastrophic Inheritance"
+  - "Bias Alleviation"
+  - "Output Space Regularization"
 date: 2026-05-08
-content_hash: 831c2ece19e1a292
+content_hash: a91b247487485fe7
 ---
+
 # BA-LoRA: Bias-Alleviating Low-Rank Adaptation to Mitigate Catastrophic Inheritance in Large Language Models
 
 **Conference**: ICLR2026  

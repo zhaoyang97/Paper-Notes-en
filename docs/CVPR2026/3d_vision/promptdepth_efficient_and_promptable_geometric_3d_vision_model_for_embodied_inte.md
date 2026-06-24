@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PromptDepth: Efficient and Promptable Geometric 3D Vision Model for Embodied Intelligence
 description: >-
-  [CVPR 2026][3D Vision][Embodied AI] PromptDepth unifies "panoptic depth, instance depth, tracking depth, and stereo depth" into a single **promptable** dense prediction task. A feed-forward network learns geometric representations, switching outputs via different task tokens/points/mask prompts. Combined with ILDS loss and Gram Anchoring to resolve train
+  [CVPR 2026][3D Vision][Geometric 3D Perception] PromptDepth unifies "panoptic depth, instance depth, tracking depth, and stereo depth" into a single **promptable** dense prediction task. A feed-forward network learns geometric representations, switching outputs via different task tokens/points/mask prompts. Combined with ILDS loss and Gram Anchoring to resolve training conflicts between panoptic and instance depth, the model achieves SOTA on multiple benchmarks using only syn…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Embodied AI
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Geometric 3D Perception"
+  - "Depth Estimation"
+  - "Promptable Model"
+  - "Embodied Intelligence"
+  - "Instance-aware"
 date: 2026-05-08
-content_hash: 2423d9468e54a3f1
+content_hash: 0ed9e28d3c40bef4
 ---
+
 # PromptDepth: Efficient and Promptable Geometric 3D Vision Model for Embodied Intelligence
 
 **Conference**: CVPR 2026  
@@ -158,9 +163,9 @@ Latency (RTX 4090): Monocular **Ours** 39.09ms vs. SAM+DAv2 95.53ms (~2.4× fast
 
 - [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
 - [\[CVPR 2026\] Landscape-Awareness for Geometric View Diffusion Model](landscape-awareness_for_geometric_view_diffusion_model.md)
-- [\[CVPR 2026\] SAGE: Scalable Agentic 3D Scene Generation for Embodied AI](sage_scalable_agentic_3d_scene_generation_for_embodied_ai.md)
 - [\[CVPR 2026\] Pano360: Perspective to Panoramic Vision with Geometric Consistency](pano360_perspective_to_panoramic_vision_with_geometric_consistency.md)
 - [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
+- [\[CVPR 2026\] Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](learning_3d_representations_for_spatial_intelligence_from_unposed_multi-view_ima.md)
 
 </div>
 

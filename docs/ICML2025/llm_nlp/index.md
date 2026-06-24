@@ -1,0 +1,193 @@
+---
+title: >-
+  ICML2025 LLM (Other) Papers · 28 Notes
+description: >-
+  28 ICML2025 papers in the LLM (Other) area, covering LLM, Few-/Zero-Shot Learning, Time-Series Forecasting and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+tags:
+  - "ICML2025"
+  - "LLM (Other)"
+  - "AI paper notes"
+  - "paper summaries"
+  - "LLM"
+  - "Few-/Zero-Shot Learning"
+  - "Time-Series Forecasting"
+item_list:
+  - u: "b-score_detecting_biases_in_large_language_models_using_response_history/"
+    t: "B-score: Detecting biases in large language models using response history"
+  - u: "best-route_adaptive_llm_routing_with_test-time_optimal_compute/"
+    t: "BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute"
+  - u: "beyond_induction_heads_in-context_meta_learning_induces_multi-phase_circuit_emer/"
+    t: "Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence"
+  - u: "binary_hypothesis_testing_for_softmax_models_and_leverage_score_models/"
+    t: "Binary Hypothesis Testing for Softmax Models and Leverage Score Models"
+  - u: "breaking_silos_adaptive_model_fusion_unlocks_better_time_series_forecasting/"
+    t: "Breaking Silos: Adaptive Model Fusion Unlocks Better Time Series Forecasting"
+  - u: "build_agent_advocates_not_platform_agents/"
+    t: "Build Agent Advocates, Not Platform Agents"
+  - u: "defending_lvlms_against_vision_attacks_through_partial-perception_supervision/"
+    t: "Defending LVLMs Against Vision Attacks through Partial-Perception Supervision"
+  - u: "expert_evaluation_of_llm_world_models_a_high-t_c_superconductivity_case_study/"
+    t: "Expert Evaluation of LLM World Models: A High-Tc Superconductivity Case Study"
+  - u: "generalized_interpolating_discrete_diffusion/"
+    t: "Generalized Interpolating Discrete Diffusion"
+  - u: "generative_social_choice_the_next_generation/"
+    t: "Generative Social Choice: The Next Generation"
+  - u: "interchangeable_token_embeddings_for_extendable_vocabulary_and_alpha-equivalence/"
+    t: "Interchangeable Token Embeddings for Extendable Vocabulary and Alpha-Equivalence"
+  - u: "la_rosa_enhancing_llm_efficiency_via_layerwise_rotated_sparse_activation/"
+    t: "LaRoSA: Enhancing LLM Efficiency via Layerwise Rotated Sparse Activation"
+  - u: "laser_attention_with_exponential_transformation/"
+    t: "LASER: Attention with Exponential Transformation"
+  - u: "llm_social_simulations_are_a_promising_research_method/"
+    t: "LLM Social Simulations Are a Promising Research Method"
+  - u: "merit_maximum-normalized_element-wise_ratio_for_language_model_large-batch_train/"
+    t: "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training"
+  - u: "on_expressive_power_of_looped_transformers_theoretical_analysis_and_enhancement_/"
+    t: "On Expressive Power of Looped Transformers: Theoretical Analysis and Enhancement via Timestep Encoding"
+  - u: "product_of_experts_with_llms_boosting_performance_on_arc_is_a_matter_of_perspect/"
+    t: "Product of Experts with LLMs: Boosting Performance on ARC Is a Matter of Perspective"
+  - u: "quest_enhancing_estimates_of_quantile-based_distributional_measures_using_model_/"
+    t: "QuEst: Enhancing Estimates of Quantile-Based Distributional Measures Using Model Predictions"
+  - u: "random_registers_for_cross-domain_few-shot_learning/"
+    t: "Random Registers for Cross-Domain Few-Shot Learning"
+  - u: "regress_dont_guess_--_a_regression-like_loss_on_number_tokens_for_language_model/"
+    t: "Regress, Don't Guess — A Regression-like Loss on Number Tokens for Language Models"
+  - u: "rulebreakers_challenging_llms_at_the_crossroads_between_formal_logic_and_human-l/"
+    t: "RULEBREAKERS: Challenging LLMs at the Crossroads between Formal Logic and Human-like Reasoning"
+  - u: "safe_delta_consistently_preserving_safety_when_fine-tuning_llms_on_diverse_datas/"
+    t: "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets"
+  - u: "star_attention_efficient_llm_inference_over_long_sequences/"
+    t: "Star Attention: Efficient LLM Inference over Long Sequences"
+  - u: "tabflex_scaling_tabular_learning_to_millions_with_linear_attention/"
+    t: "TabFlex: Scaling Tabular Learning to Millions with Linear Attention"
+  - u: "the_lock-in_hypothesis_stagnation_by_algorithm/"
+    t: "The Lock-in Hypothesis: Stagnation by Algorithm"
+  - u: "theoretical_limitations_of_ensembles_in_the_age_of_overparameterization/"
+    t: "Theoretical Limitations of Ensembles in the Age of Overparameterization"
+  - u: "towards_universal_offline_black-box_optimization_via_learning_language_model_emb/"
+    t: "Towards Universal Offline Black-Box Optimization via Learning Language Model Embeddings"
+  - u: "when_will_it_fail_anomaly_to_prompt_for_forecasting_future_anomalies_in_time_ser/"
+    t: "When Will It Fail?: Anomaly to Prompt for Forecasting Future Anomalies in Time Series"
+item_total: 28
+---
+
+<!-- Auto-generated by src/gen_blog_index.py --lang en -->
+# 💬 LLM (Other)
+
+**🧪 ICML2025** · **28** paper notes
+
+📌 **Same area in other venues:** [📷 CVPR2026 (3)](../../CVPR2026/llm_nlp/index.md) · [🔬 ICLR2026 (56)](../../ICLR2026/llm_nlp/index.md) · [💬 ACL2026 (62)](../../ACL2026/llm_nlp/index.md) · [🧪 ICML2026 (39)](../../ICML2026/llm_nlp/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/llm_nlp/index.md)
+
+🔥 **Top topics:** LLM ×6 · Few-/Zero-Shot Learning ×2 · Time-Series Forecasting ×2
+
+**[B-score: Detecting biases in large language models using response history](b-score_detecting_biases_in_large_language_models_using_response_history.md)**
+
+:   The paper proposes B-score, a metric that detects bias by comparing the difference in probability of LLM responses between single-turn and multi-turn dialogues. It discovers that LLMs can "self-debias" in multi-turn dialogues and leverages B-score to improve answer verification accuracy.
+
+**[BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute](best-route_adaptive_llm_routing_with_test-time_optimal_compute.md)**
+
+:   The paper proposes BEST-Route (Best-of-$n$ Enhanced Sampling and Test-time Route Optimization). It introduces the best-of-$n$ sampling strategy into traditional query routing, allowing the router to not only select the model but also adaptively decide the sampling number $n$. By replacing a single invocation of a large model with multiple samplings and selections from a small model, it reduces inference costs by up to 60% with less than 1% performance loss.
+
+**[Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence](beyond_induction_heads_in-context_meta_learning_induces_multi-phase_circuit_emer.md)**
+
+:   This paper designs an In-Context Meta-Learning (ICML) experimental setup to reveal that the internal circuits of Transformers undergo three distinct phases of emergence (Bigram $\rightarrow$ Label Attention $\rightarrow$ Chunk Example) during the training process of acquiring in-context meta-learning capabilities, rather than the single-stage sudden jump observed in prior induction head studies. This provides a new perspective on understanding the deep mechanisms of ICL.
+
+**[Binary Hypothesis Testing for Softmax Models and Leverage Score Models](binary_hypothesis_testing_for_softmax_models_and_leverage_score_models.md)**
+
+:   This work investigates the binary hypothesis testing problem for Softmax and Leverage Score models from a theoretical perspective. It establishes tight bounds on the number of queries required to distinguish between two parameterized models under an energy constraint, which is relevant to understanding the discriminative capabilities of LLMs across different domains.
+
+**[Breaking Silos: Adaptive Model Fusion Unlocks Better Time Series Forecasting](breaking_silos_adaptive_model_fusion_unlocks_better_time_series_forecasting.md)**
+
+:   Proposes TimeFuse—a sample-level adaptive model fusion framework. It characterizes input time series features using meta-features and trains a learnable fuser to predict the optimal model combination weights, achieving near-universal improvements (outperforming the best single model on 95.1% of samples) across multiple forecasting benchmarks.
+
+**[Build Agent Advocates, Not Platform Agents](build_agent_advocates_not_platform_agents.md)**
+
+:   A position paper arguing that language model agents (LMAs), if controlled by platform companies, will become "platform agents" that exacerbate surveillance, lock-in, and attention manipulation. The authors propose developing user-controlled "agent advocates" to protect individual autonomy, recommending three key interventions: open models/compute, interoperability standards, and market regulation.
+
+**[Defending LVLMs Against Vision Attacks through Partial-Perception Supervision](defending_lvlms_against_vision_attacks_through_partial-perception_supervision.md)**
+
+:   Proposes DPS (Defense through Partial-Perception Supervision), which utilizes responses from cropped images as "weak supervision" to guide the full-image model for self-correction during inference. This achieves training-free, black-box visual attack defense for LVLMs, reducing the average attack success rate by 76.3%.
+
+**[Expert Evaluation of LLM World Models: A High-Tc Superconductivity Case Study](expert_evaluation_of_llm_world_models_a_high-t_c_superconductivity_case_study.md)**
+
+:   Using the field of high-temperature superconductivity (HTS) as a case study, an expert-level dataset (1,726 papers + 67 expert questions) is constructed to systematically evaluate the scientific literature understanding capabilities of six LLM systems. The evaluation reveals that RAG systems based on curated literature significantly outperform general closed-source models in terms of factual completeness and evidentiary support.
+
+**[Generalized Interpolating Discrete Diffusion](generalized_interpolating_discrete_diffusion.md)**
+
+:   The Generalized Interpolating Discrete Diffusion (GIDD) framework is proposed, which generalizes Masked Diffusion Models (MDM) to a family of diffusion processes supporting arbitrary time-varying mixture distributions. By combining mask and uniform noise, GIDD equips the model with self-correction capabilities and achieves compute-matched SOTA in diffusion language modeling.
+
+**[Generative Social Choice: The Next Generation](generative_social_choice_the_next_generation.md)**
+
+:   Extends the generative social choice framework to scenarios with cost/budget constraints and approximate queries, proposes the DemocraticProcess algorithm with near-optimal approximate proportional representation guarantees, and implements a practical system PROSE (based on GPT-4o) validated on drug review and urban governance datasets.
+
+**[Interchangeable Token Embeddings for Extendable Vocabulary and Alpha-Equivalence](interchangeable_token_embeddings_for_extendable_vocabulary_and_alpha-equivalence.md)**
+
+:   Proposes a dual-part token embedding strategy (a shared learnable part + a random distinguishing part), enabling language models to generalize to larger vocabularies post-training and possess inherent robustness to alpha-equivalent transformations.
+
+**[LaRoSA: Enhancing LLM Efficiency via Layerwise Rotated Sparse Activation](la_rosa_enhancing_llm_efficiency_via_layerwise_rotated_sparse_activation.md)**
+
+:   LaRoSA proposes a training-free activation sparsification method. By applying layerwise orthogonal rotation matrices, it transforms input activations into a space better suited for sparsification, and combines this with Top-K selection to achieve consistent model-level sparsity and reliable inference acceleration.
+
+**[LASER: Attention with Exponential Transformation](laser_attention_with_exponential_transformation.md)**
+
+:   By analyzing the gradient backpropagation bottleneck of softmax in the attention mechanism, this paper proposes LASER attention—performing attention computation in the exponentially transformed Value space (i.e., applying attention to $\exp(V)$ and then taking the logarithm), thereby obtaining larger Jacobian signals and improving parameter learning efficiency.
+
+**[LLM Social Simulations Are a Promising Research Method](llm_social_simulations_are_a_promising_research_method.md)**
+
+:   As a position paper, this work synthesizes 36 empirical studies to argue that LLM social simulation (using LLMs to simulate human research subjects) is a promising research methodology. It identifies five addressable challenges (diversity, bias, sycophancy, alienness, generalization) and proposes promising directions for each.
+
+**[MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training](merit_maximum-normalized_element-wise_ratio_for_language_model_large-batch_train.md)**
+
+:   Proposes the MERIT optimizer, which extends LAMB with maximum-norm normalization and element-wise trust ratios to effectively resolve the performance degradation caused by attention logit explosion during large-batch training.
+
+**[On Expressive Power of Looped Transformers: Theoretical Analysis and Enhancement via Timestep Encoding](on_expressive_power_of_looped_transformers_theoretical_analysis_and_enhancement_.md)**
+
+:   This work establishes the first approximation rate theory of Looped Transformers regarding the number of loops and the modulus of continuity of target functions. It reveals the loop-architecture-specific approximation error sources (contextual continuity and token continuity) and proposes the Timestep-Modulated Looped Transformer (TMLT) to eliminate this limitation via timestep encoding, achieving consistent improvements across reasoning, in-context learning, and language modeling tasks.
+
+**[Product of Experts with LLMs: Boosting Performance on ARC Is a Matter of Perspective](product_of_experts_with_llms_boosting_performance_on_arc_is_a_matter_of_perspect.md)**
+
+:   By employing the LLM simultaneously as a candidate generator and a scorer, this work leverages a DFS-based search algorithm to generate high-probability candidate solutions and subsequently utilizes Product of Experts (PoE) scoring under multi-perspective augmentation to select the optimal answer. This approach achieves an open-source SOTA accuracy of 71.6% on the ARC-AGI public evaluation set, surpassing the average human performance (60.2%) with a single-task inference cost of only around $0.02.
+
+**[QuEst: Enhancing Estimates of Quantile-Based Distributional Measures Using Model Predictions](quest_enhancing_estimates_of_quantile-based_distributional_measures_using_model_.md)**
+
+:   The QuEst framework is proposed to combine a small amount of high-quality observed data with a large amount of model-predicted (imputed) data. This provides more accurate point estimates and rigorous confidence intervals for quantile-based distributional measures (QBDMs), covering classical metrics such as CVaR and Interval-VaR.
+
+**[Random Registers for Cross-Domain Few-Shot Learning](random_registers_for_cross-domain_few-shot_learning.md)**
+
+:   This work discover that in cross-domain few-shot learning (CDFSL), learnable prompts impair generalization in the target domain, whereas replacing them with random noise (i.e., random registers) consistently improves performance. Based on this observation, the REAP method is proposed, which enhances attention perturbation by introducing random registers to semantic image regions, enabling efficient domain-agnostic feature learning.
+
+**[Regress, Don't Guess — A Regression-like Loss on Number Tokens for Language Models](regress_dont_guess_--_a_regression-like_loss_on_number_tokens_for_language_model.md)**
+
+:   Proposes Number Token Loss (NTL), a pure token-level regression-like loss function that injects a numerical proximity inductive bias into LLMs by minimizing the $L_p$ norm or Wasserstein distance between target and predicted numerical tokens.
+
+**[RULEBREAKERS: Challenging LLMs at the Crossroads between Formal Logic and Human-like Reasoning](rulebreakers_challenging_llms_at_the_crossroads_between_formal_logic_and_human-l.md)**
+
+:   Constructs the first large-scale "rulebreaker" dataset, RULEBREAKERS (25,600 instances), to systematically evaluate the performance of 7 LLMs when formal logical reasoning conflicts with factual knowledge. The study reveals that models generally tend to apply logical rules over-rigidly while ignoring common sense, deviating significantly from human reasoning behavior.
+
+**[Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets](safe_delta_consistently_preserving_safety_when_fine-tuning_llms_on_diverse_datas.md)**
+
+:   Safe Delta proposes a safety-aware post-training defense method that consistently preserves LLM safety across diverse fine-tuning datasets (of varying scales and task types) without sacrificing utility. This is achieved by estimating safety degradation, selectively retaining delta parameters to maximize utility while limiting safety loss, and applying a safety compensation vector to mitigate residual safety loss.
+
+**[Star Attention: Efficient LLM Inference over Long Sequences](star_attention_efficient_llm_inference_over_long_sequences.md)**
+
+:   Proposes Star Attention, a two-phase block-sparse attention mechanism: Phase 1 encodes partitioned context blocks via local attention across multiple hosts, and Phase 2 generates queries by aggregating global attention. It is compatible with existing LLMs without fine-tuning, achieving up to an 11x speedup in inference while retaining 97-100% accuracy.
+
+**[TabFlex: Scaling Tabular Learning to Millions with Linear Attention](tabflex_scaling_tabular_learning_to_millions_with_linear_attention.md)**
+
+:   Replaces the softmax attention in TabPFN with linear attention to scale the in-context learning (ICL) method for tabular classification from small datasets to millions of samples, achieving a over 2× speedup with no performance degradation.
+
+**[The Lock-in Hypothesis: Stagnation by Algorithm](the_lock-in_hypothesis_stagnation_by_algorithm.md)**
+
+:   This paper proposes and formalizes "The Lock-in Hypothesis": the human-AI feedback loop formed during LLM training and deployment solidifies users' pre-existing beliefs, leading to an irreversible loss of collective viewpoint diversity and potentially locking the population into incorrect beliefs.
+
+**[Theoretical Limitations of Ensembles in the Age of Overparameterization](theoretical_limitations_of_ensembles_in_the_age_of_overparameterization.md)**
+
+:   Under overparameterization conditions, infinite ensembles are pointwise equivalent to a single infinitely wide model. The ensemble variance no longer reflects traditional Bayesian uncertainty but instead measures the expected effect of increasing model capacity, providing a theoretical explanation for empirical observations that deep ensembles offer no fundamental generalization advantage over large models.
+
+**[Towards Universal Offline Black-Box Optimization via Learning Language Model Embeddings](towards_universal_offline_black-box_optimization_via_learning_language_model_emb.md)**
+
+:   This work proposes the UniSO framework, which encodes optimization variables of different types and dimensions into unified JSON strings before feeding them into language models. It trains universal regressors using two modeling paradigms: token prediction (UniSO-T) and numerical regression (UniSO-N). The embedding space quality is improved via metadata-guided contrastive learning and Lipschitz smoothness regularization, achieving universal offline black-box optimization across domains and dimensions.
+
+**[When Will It Fail?: Anomaly to Prompt for Forecasting Future Anomalies in Time Series](when_will_it_fail_anomaly_to_prompt_for_forecasting_future_anomalies_in_time_ser.md)**
+
+:   This work proposes the Anomaly to Prompt (A2P) framework. Via two core modules, Anomaly-Aware Forecasting (AAF) and Synthetic Anomaly Prompting (SAP), it effectively solves the new task of "Anomaly Prediction" (AP) in time series for the first time—not only predicting future signal trends but also accurately locating which exact timestamps in the future will experience anomalies.

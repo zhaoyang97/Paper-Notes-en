@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VINCIE: Unlocking In-context Image Editing from Video
 description: >-
-  [ICLR 2026][Segmentation][DiT] The VINCIE framework is proposed, demonstrating for the first time that in-context image editing models can be learned entirely from native video data. By annotating videos as interleaved multimodal sequences and designing three proxy tasks (NIP/CSP/NSP), it reaches SOTA on multi-turn editing benchmarks, increasing the
+  [ICLR 2026][Segmentation][in-context editing] The VINCIE framework is proposed, demonstrating for the first time that in-context image editing models can be learned entirely from native video data. By annotating videos as interleaved multimodal sequences and designing three proxy tasks (NIP/CSP/NSP), it reaches SOTA on multi-turn editing benchmarks, increasing the 5-turn editing success rate from <2% to 25% compared to baselines.
 tags:
-  - ICLR 2026
-  - Segmentation
-  - DiT
+  - "ICLR 2026"
+  - "Segmentation"
+  - "in-context editing"
+  - "video learning"
+  - "multi-turn editing"
+  - "DiT"
+  - "segmentation prediction"
 date: 2026-05-08
-content_hash: 290cd2f724ad1b86
+content_hash: f8a0c985b474de43
 ---
+
 # VINCIE: Unlocking In-context Image Editing from Video
 
 **Conference**: ICLR 2026  
@@ -139,7 +144,7 @@ The three tasks are jointly optimized using a unified flow matching MSE diffusio
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ORBIT -- Open Recommendation Benchmark for Reproducible Research with Hidden Tests
 description: >-
-  [NeurIPS 2025][LLM Safety][Recommender Systems] This paper proposes ORBIT, a unified benchmark for recommender systems comprising standardized evaluation on 5 public datasets and a privacy-safe hidden test set…
+  [NeurIPS 2025][LLM Safety][Recommender Systems] This paper proposes ORBIT, a unified benchmark for recommender systems comprising standardized evaluation on 5 public datasets and a privacy-safe hidden test set, ClueWeb-Reco, constructed from real users' browsing histories. The benchmark systematically evaluates 12 recommendation models and introduces the LLM-QueryGen baseline, revealing the limitations of existing approaches in large-scale, real-world recommendation scenarios…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Web Recommendation"
   - "LLM-based Recommendation"
 date: 2026-05-08
-content_hash: 43cccc44844c3384
+content_hash: 1a220adf95fea153
 ---
 
 # ORBIT -- Open Recommendation Benchmark for Reproducible Research with Hidden Tests
@@ -122,8 +122,8 @@ ORBIT consists of two core components: (1) standardized reproducible evaluation 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection](on_the_empirical_power_of_goodness-of-fit_tests_in_watermark_detection.md)
 - [\[NeurIPS 2025\] Stop DDoS Attacking the Research Community with AI-Generated Survey Papers](stop_ddos_attacking_the_research_community_with_ai-generated_survey_papers.md)
+- [\[NeurIPS 2025\] On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection](on_the_empirical_power_of_goodness-of-fit_tests_in_watermark_detection.md)
 - [\[NeurIPS 2025\] CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming](cpret_a_dataset_benchmark_and_model_for_retrieval_in_competitive_programming.md)
 - [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](../../ACL2026/llm_safety/membership_inference_attacks_on_llm-based_recommender_systems.md)
 - [\[NeurIPS 2025\] Unlearning as Ablation: Toward a Falsifiable Benchmark for Generative Scientific Discovery](unlearning_as_ablation_toward_a_falsifiable_benchmark_for_generative_scientific_.md)

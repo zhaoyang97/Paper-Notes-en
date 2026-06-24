@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies
 description: >-
-  [NeurIPS 2025][Multi-Agent][3D Gaussian Splatting] GauDP is proposed to enable scalable, perception-enhanced multi-agent collaborative imitation learning by constructing a globally consistent 3D Gaussian field from decen…
+  [NeurIPS 2025][Multi-Agent][3D Gaussian Splatting] GauDP is proposed to enable scalable, perception-enhanced multi-agent collaborative imitation learning by constructing a globally consistent 3D Gaussian field from decentralized RGB observations of multiple agents and dynamically allocating Gaussian attributes back to each agent's local viewpoint.
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Imitation Learning"
   - "Robot Manipulation"
 date: 2026-05-08
-content_hash: be56c42760b881e8
+content_hash: 1e079654a1614ef2
 ---
 
 # GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies
@@ -160,11 +160,11 @@ Real-robot experiments: GauDP achieves 17/30, 19/30, and 27/30 on Card Box Stack
 
 ## Related Papers
 
+- [\[ACL 2025\] GETReason: Enhancing Image Context Extraction through Hierarchical Multi-Agent Reasoning](../../ACL2025/multi_agent/getreason_enhancing_image_context_extraction_through_hierarchical_multi-agent_re.md)
 - [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](multi-agent_collaboration_via_evolving_orchestration.md)
-- [\[ICML 2026\] RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation](../../ICML2026/multi_agent/radar_redundancy-aware_diffusion_for_multi-agent_communication_structure_generat.md)
+- [\[ICML 2026\] Searching for Synergy in Shared Workspace Human-AI Collaboration](../../ICML2026/multi_agent/searching_for_synergy_in_shared_workspace_human-ai_collaboration.md)
 - [\[NeurIPS 2025\] 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation](3d-agenttri-modal_multi-agent_collaboration_for_scalable_3d_object_annotation.md)
-- [\[NeurIPS 2025\] Thought Communication in Multiagent Collaboration](thought_communication_in_multiagent_collaboration.md)
-- [\[NeurIPS 2025\] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks](medagentboard_benchmarking_multi-agent_collaboration_with_conventional_methods_f.md)
+- [\[ICML 2026\] RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation](../../ICML2026/multi_agent/radar_redundancy-aware_diffusion_for_multi-agent_communication_structure_generat.md)
 
 </div>
 

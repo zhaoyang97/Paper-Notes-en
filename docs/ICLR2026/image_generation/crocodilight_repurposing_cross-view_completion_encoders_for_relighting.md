@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] CroCoDiLight: Repurposing Cross-View Completion Encoders for Relighting
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper reveals that the latent space of the geometric vision pre-trained model CroCo implicitly encodes illumination information. By using minimal data (two orders of magnitude less than used for CroCo), the authors decouple its patch latent representations into "a global illumination vector + per-patch intrinsic v
+  [ICLR 2026][Image Generation][Relighting] This paper reveals that the latent space of the geometric vision pre-trained model CroCo implicitly encodes illumination information. By using minimal data (two orders of magnitude less than used for CroCo), the authors decouple its patch latent representations into "a global illumination vector + per-patch intrinsic vectors," leveraging a series of photometric tasks such as relighting, shadow removal…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Relighting"
+  - "Cross-view Completion (CroCo)"
+  - "Illumination Decoupling"
+  - "Shadow Removal"
+  - "Albedo Estimation"
+  - "Self-supervised"
 date: 2026-05-08
-content_hash: cd64d64adae81a5c
+content_hash: 34bbf93b59ea6c37
 ---
+
 # CroCoDiLight: Repurposing Cross-View Completion Encoders for Relighting
 
 **Conference**: ICLR 2026  
@@ -126,8 +133,6 @@ Ours achieves SOTA in a fair "zero-shot" setting (not trained on IIW), despite a
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

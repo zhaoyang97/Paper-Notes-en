@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mind Dreamer: Untethering Imagination via Active Causal Intervention on Latent Manifolds
 description: >-
-  [ICML 2026][Reinforcement Learning][Dreamer] This paper proposes Mind Dreamer for Model-Based Reinforcement Learning (MBRL), which utilizes an adversarial generator to "jump" to key anchors on the learned latent manifold of the world model that are not covered by historical trajectories. It resolves credit assignment across breakpoints through newly designed Rela
+  [ICML2026][Reinforcement Learning][Model-based RL] This paper proposes Mind Dreamer for Model-Based Reinforcement Learning (MBRL), which utilizes an adversarial generator to "jump" to key anchors on the learned latent manifold of the world model that are not covered by historical trajectories. It resolves credit assignment across breakpoints through newly designed Relay Value/Uncertainty functions (incorporating a $\gamma^2$ discount), achieving an average $1.67\times$ speedu…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Dreamer
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Model-based RL"
+  - "Latent Space Imagination"
+  - "Active Causal Intervention"
+  - "Free Energy"
+  - "Dreamer"
 date: 2026-05-08
-content_hash: c50d88c58d5e6aa0
+content_hash: 41cb961a68e8956c
 ---
+
 # Mind Dreamer: Untethering Imagination via Active Causal Intervention on Latent Manifolds
 
 **Conference**: ICML2026  
@@ -136,10 +141,10 @@ Baselines also include DreamerV2 and Plan2Explore, with MD consistently leading 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization](../../NeurIPS2025/reinforcement_learning/dynamics-aligned_latent_imagination_in_contextual_world_models_for_zero-shot_gen.md)
+- [\[ICLR 2026\] Generalization of RLVR Using Causal Reasoning as a Testbed](../../ICLR2026/reinforcement_learning/generalization_of_rlvr_using_causal_reasoning_as_a_testbed.md)
+- [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
 - [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
 - [\[ICML 2026\] LASER: Learning Active Sensing for Continuum Field Reconstruction](laser_learning_active_sensing_for_continuum_field_reconstruction.md)
-- [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
-- [\[ICLR 2026\] RebuttalAgent: Strategic Persuasion in Academic Rebuttal via Theory of Mind](../../ICLR2026/reinforcement_learning/rebuttalagent_strategic_persuasion_in_academic_rebuttal_via_theory_of_mind.md)
 
 </div>
 

@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] Vision Language Models 无法推理物理变换
+  [Paper Note] Vision Language Models Cannot Reason About Physical Transformations
 description: >-
-  [ICML 2026][Multimodal VLM][Vision-Language Model] By introducing the ConservationBench benchmark, this paper reveals that while 112 VLMs claim powerful perception and reasoning capabilities, they systematically fail to judge conservation in physical transformations (e.g., constant liquid volume after pouring), relying on textual priors rather than genuine visual under
+  [ICML 2026][Multimodal VLM][Vision Language Models] By introducing the ConservationBench benchmark, this paper reveals that while 112 VLMs claim powerful perception and reasoning capabilities, they systematically fail to judge conservation in physical transformations (e.g., constant liquid volume after pouring), relying on textual priors rather than genuine visual understanding.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Vision Language Models"
+  - "Physical Reasoning"
+  - "Invariance"
+  - "Conservation"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: f9275466e0aabacb
+content_hash: 44a37ce956a75d98
 ---
+
 # Vision Language Models Cannot Reason About Physical Transformations
 
 **Conference**: ICML 2026  
@@ -109,11 +114,11 @@ The previous designs proved models are taking shortcuts; this experiment identif
 
 ## Related Papers
 
+- [\[CVPR 2026\] Vision-Speech Models: Teaching Speech Models to Converse about Images](../../CVPR2026/multimodal_vlm/vision-speech_models_teaching_speech_models_to_converse_about_images.md)
+- [\[ECCV 2024\] The Hard Positive Truth About Vision-Language Compositionality](../../ECCV2024/multimodal_vlm/the_hard_positive_truth_about_visionlanguage_compositionalit.md)
+- [\[CVPR 2026\] PhyCritic: Multimodal Critic Models for Physical AI](../../CVPR2026/multimodal_vlm/phycritic_multimodal_critic_models_for_physical_ai.md)
 - [\[ICML 2026\] Neutral-Reference Prompting for Vision-Language Models](neutral-reference_prompting_for_vision-language_models.md)
-- [\[ICML 2026\] Circle-RoPE: Cone-like Decoupled Rotary Positional Embedding for Vision-Language Models](circle-rope_cone-like_decoupled_rotary_positional_embedding_for_large_vision-lan.md)
 - [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
-- [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
-- [\[CVPR 2026\] SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](../../CVPR2026/multimodal_vlm/simpact_simulation-enabled_action_planning_using_vision-language_models.md)
 
 </div>
 

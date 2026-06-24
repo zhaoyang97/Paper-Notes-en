@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Consistency in Retrieval-Augmented Systems with Group Similarity Rewards
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][RAG consistency] This paper proposes Con-RAG, a framework that trains RAG generators to produce informationally consistent outputs under paraphrased inputs by computing group s…
+  [NeurIPS 2025][Information Retrieval & RAG][RAG consistency] This paper proposes Con-RAG, a framework that trains RAG generators to produce informationally consistent outputs under paraphrased inputs by computing group similarity rewards across multiple generations of semantically equivalent queries via Paraphrased Set GRPO (PS-GRPO), simultaneously improving both consistency and accuracy without requiring explicit ground-truth supervision.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "semantically equivalent queries"
   - "reinforcement learning alignment"
 date: 2026-05-08
-content_hash: 9ff86321dc96a391
+content_hash: bb4f4e85b166a591
 ---
 
 # Improving Consistency in Retrieval-Augmented Systems with Group Similarity Rewards
@@ -177,11 +177,11 @@ Lower-order BLEU (1–2) performs best, emphasizing lexical choice and local flu
 
 ## Related Papers
 
+- [\[ICML 2025\] FedRAG: A Framework for Fine-Tuning Retrieval-Augmented Generation Systems](../../ICML2025/information_retrieval/fedrag_a_framework_for_fine-tuning_retrieval-augmented_generation_systems.md)
 - [\[ACL 2026\] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning](../../ACL2026/information_retrieval/end-to-end_optimization_of_llm-driven_multi-agent_search_systems_via_heterogeneo.md)
-- [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](chain-of-retrieval_augmented_generation.md)
+- [\[ICLR 2026\] HiPRAG: Hierarchical Process Rewards for Efficient Agentic Retrieval Augmented Generation](../../ICLR2026/information_retrieval/hiprag_hierarchical_process_rewards_for_efficient_agentic_retrieval_augmented_ge.md)
 - [\[ACL 2026\] Quantifying and Improving the Robustness of Retrieval-Augmented Language Models Against Spurious Features in Grounding Data](../../ACL2026/information_retrieval/quantifying_and_improving_the_robustness_of_retrieval-augmented_language_models_.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
+- [\[ACL 2025\] Logical Consistency is Vital: Neural-Symbolic Information Retrieval for Negative-Constraint Queries](../../ACL2025/information_retrieval/logical_consistency_is_vital_neural-symbolic_information_retrieval_for_negative-.md)
 
 </div>
 

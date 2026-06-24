@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PoseAnything: General Pose-guided Video Generation with Part-aware Temporal Coherence
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] PoseAnything enables pose-guided video generation to break free from "human-only" constraints for the first time. Given an initial frame and an arbitrary subject's skeleton sequence, it generates corresponding motion videos. It relies on a "Part-aware Temporal Coherence Module" to refine appearance consistency to local
+  [CVPR 2026][Video Generation][Pose-guided video generation] PoseAnything enables pose-guided video generation to break free from "human-only" constraints for the first time. Given an initial frame and an arbitrary subject's skeleton sequence, it generates corresponding motion videos. It relies on a "Part-aware Temporal Coherence Module" to refine appearance consistency to local body parts and a "Subject-Camera Motion Decoupled CFG" to achieve independent camera control. The a…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Pose-guided video generation"
+  - "General skeleton"
+  - "Part-level coherence"
+  - "Decoupled CFG"
+  - "Camera motion control"
 date: 2026-05-08
-content_hash: 9df8fc83b9c4c96d
+content_hash: 0cf7cd2a184d7dd9
 ---
+
 # PoseAnything: General Pose-guided Video Generation with Part-aware Temporal Coherence
 
 **Conference**: CVPR 2026  
@@ -138,14 +144,17 @@ Ablations on XPose: Concat is the baseline without PTCM; EC uses cross-attention
 
 <div class="related-papers" markdown="1">
 
-- **AnimateAnyone**: ReferenceNet for consistent human video generation.
-- **Wan 2.1/2.2**: The underlying diffusion transformer backbone.
-- **ControlNet**: Foundational work for controllable diffusion generation.
+## Related Papers
+
+- [\[CVPR 2026\] MultiAnimate: Pose-Guided Image Animation Made Extensible](multianimate_pose-guided_image_animation_made_extensible.md)
+- [\[CVPR 2026\] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models](tear_temporal-aware_automated_red-teaming_for_text-to-video_models.md)
+- [\[CVPR 2026\] ExPose: Reinforcing Video Generation Models for Extreme Pose Estimation](expose_reinforcing_video_generation_models_for_extreme_pose_estimation.md)
+- [\[CVPR 2026\] BulletTime: Decoupled Control of Time and Camera Pose for Video Generation](bullettime_decoupled_control_of_time_and_camera_pose_for_video_generation.md)
+- [\[ICML 2025\] MimicMotion: High-Quality Human Motion Video Generation with Confidence-aware Pose Guidance](../../ICML2025/video_generation/mimicmotion_high-quality_human_motion_video_generation_with_confidence-aware_pos.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] MultiAnimate: Pose-Guided Image Animation Made Extensible](multianimate_pose-guided_image_animation_made_extensible.md)

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Learning-Augmented Streaming Algorithms for Correlation Clustering
 description: >-
-  [NeurIPS 2025][Streaming Algorithms / Clustering][Correlation Clustering] This paper proposes the first learning-augmented streaming algorithms for Correlation Clustering. By leveraging pairwise distance predictions…
+  [NeurIPS 2025][Streaming Algorithms][Correlation Clustering] This paper proposes the first learning-augmented streaming algorithms for Correlation Clustering. By leveraging pairwise distance predictions, the proposed methods achieve a better-than-3 approximation ratio on complete graphs ($\tilde{O}(n)$ space) and an $O(\log|E^-|)$ approximation ratio on general graphs ($\tilde{O}(n)$ space), significantly improving the space–approximation tradeoff over existing prediction-fre…
 tags:
   - "NeurIPS 2025"
-  - "Streaming Algorithms / Clustering"
-  - "Correlation Clustering"
   - "Streaming Algorithms"
+  - "Clustering"
+  - "Correlation Clustering"
   - "Learning-Augmented"
   - "Space Efficiency"
   - "Approximation Algorithms"
 date: 2026-05-08
-content_hash: 7ec6f21ebb40a11b
+content_hash: e11335191318984e
 ---
 
 # Learning-Augmented Streaming Algorithms for Correlation Clustering
@@ -196,10 +196,10 @@ Key observation: **The improvement in space efficiency is unconditional**—the 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
+- [\[ICML 2025\] Learning-Augmented Hierarchical Clustering](../../ICML2025/learning_theory/learning-augmented_hierarchical_clustering.md)
 - [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](../../ICML2026/learning_theory/simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
-- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
-- [\[ICML 2026\] Estimating Correlation Clustering Cost in Node-Arrival Stream](../../ICML2026/learning_theory/estimating_correlation_clustering_cost_in_node-arrival_stream.md)
-- [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
+- [\[ICML 2025\] Sparse-Pivot: Dynamic Correlation Clustering for Node Insertions](../../ICML2025/learning_theory/sparse-pivot_dynamic_correlation_clustering_for_node_insertions.md)
+- [\[ICLR 2026\] Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds](../../ICLR2026/learning_theory/efficient_testing_for_correlation_clustering_improved_algorithms_and_optimal_bou.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning
 description: >-
-  [ICLR 2026][Recommender Systems][GRPO] This paper proposes the ConvRec-R1 two-stage framework to train LLM-based conversational recommender systems: first, a Remap–Reflect–Adjust distillation pipeline is used to generate high-quality demonstrations from a black-box teacher that are "grounded within the target catalog" for SFT warmup; then, Rank-GRPO (recraf
+  [ICLR 2026][Recommender Systems][Conversational Recommendation] This paper proposes the ConvRec-R1 two-stage framework to train LLM-based conversational recommender systems: first, a Remap–Reflect–Adjust distillation pipeline is used to generate high-quality demonstrations from a black-box teacher that are "grounded within the target catalog" for SFT warmup; then, Rank-GRPO (recrafting GRPO to treat "each rank" in the recommendation list as an action unit) is applied for RL a…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - GRPO
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "Conversational Recommendation"
+  - "GRPO"
+  - "RL Alignment"
+  - "Ranking Reward"
+  - "Behavior Cloning"
 date: 2026-05-08
-content_hash: 04cd89261ecc2711
+content_hash: 065e5e43c0a502e5
 ---
+
 # Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -147,7 +152,7 @@ Key Finding: 0.5B models with ConvRec-R1 exceed GPT-4o-mini; 3B models **outperf
 - [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
 - [\[AAAI 2026\] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems](../../AAAI2026/recommender/rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati.md)
 - [\[ICLR 2026\] Reinforced Latent Reasoning for LLM-based Recommendation](reinforced_latent_reasoning_for_llm-based_recommendation.md)
-- [\[ICLR 2026\] On the Mechanisms of Collaborative Learning in VAE Recommenders](on_the_mechanisms_of_collaborative_learning_in_vae_recommenders.md)
+- [\[ICLR 2026\] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)
 
 </div>
 

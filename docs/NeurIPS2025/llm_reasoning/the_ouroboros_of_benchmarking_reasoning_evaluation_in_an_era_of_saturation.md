@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Ouroboros of Benchmarking: Reasoning Evaluation in an Era of Saturation
 description: >-
-  [NeurIPS 2025][LLM Reasoning][benchmark saturation] Through a systematic analysis of 52 reasoning benchmarks across three major model families—OpenAI, Anthropic…
+  [NeurIPS 2025][Reasoning][benchmark saturation] Through a systematic analysis of 52 reasoning benchmarks across three major model families—OpenAI, Anthropic, and Google—this paper identifies an "ouroboros" cycle: old benchmarks are rapidly saturated → new benchmarks are created to restore discriminability → new benchmarks are rapidly saturated in turn. This cycle calls into question whether improvements in benchmark scores genuinely reflect generalized reasoning ability or me…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "benchmark saturation"
   - "reasoning evaluation"
   - "large language models"
   - "leaderboards"
   - "ouroboros cycle"
 date: 2026-05-08
-content_hash: 2be9e008ae2d2c2a
+content_hash: cf28e45f9086d0e9
 ---
 
 # The Ouroboros of Benchmarking: Reasoning Evaluation in an Era of Saturation
@@ -181,9 +181,9 @@ This paper is closely related to several research threads:
 
 - [\[NeurIPS 2025\] I-RAVEN-X: Benchmarking Generalization and Robustness of Analogical and Mathematical Reasoning in Large Language and Reasoning Models](i-raven-x_benchmarking_generalization_and_robustness_of_analogical_and_mathemati.md)
 - [\[NeurIPS 2025\] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)
-- [\[ACL 2026\] Scaling Evaluation-Time Compute with Reasoning Models as Evaluators](../../ACL2026/llm_reasoning/scaling_evaluation-time_compute_with_reasoning_models_as_evaluators.md)
+- [\[ICLR 2026\] Theory-Grounded Evaluation of Human-Like Fallacy Patterns in LLM Reasoning](../../ICLR2026/llm_reasoning/theory-grounded_evaluation_of_human-like_fallacy_patterns_in_llm_reasoning.md)
 - [\[ICLR 2026\] VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs](../../ICLR2026/llm_reasoning/visiomath_benchmarking_figure-based_mathematical_reasoning_in_lmms.md)
-- [\[ICLR 2026\] TopoBench: Benchmarking LLMs on Hard Topological Reasoning](../../ICLR2026/llm_reasoning/topobench_benchmarking_llms_on_hard_topological_reasoning.md)
+- [\[ACL 2026\] Scaling Evaluation-Time Compute with Reasoning Models as Evaluators](../../ACL2026/llm_reasoning/scaling_evaluation-time_compute_with_reasoning_models_as_evaluators.md)
 
 </div>
 

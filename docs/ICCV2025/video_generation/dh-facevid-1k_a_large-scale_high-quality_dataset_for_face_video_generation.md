@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation
 description: >-
-  [ICCV 2025][Video Generation][face video dataset] This paper introduces DH-FaceVid-1K, a large-scale high-quality face video dataset comprising 1,200+ hours, 270,043 video clips, and 20…
+  [ICCV 2025][Video Generation][face video dataset] This paper introduces DH-FaceVid-1K, a large-scale high-quality face video dataset comprising 1,200+ hours, 270,043 video clips, and 20,000+ unique identities. It specifically addresses the severe underrepresentation of Asian faces in existing datasets and empirically validates scaling laws with respect to data volume and model parameter count through systematic experiments.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "image-to-video"
   - "diffusion models"
 date: 2026-05-08
-content_hash: bec3c27d4f476ec8
+content_hash: e906d575bbc3b749
 ---
 
 # DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation
@@ -132,10 +132,10 @@ The 2B model reaches a performance inflection point at 600h (additional data yie
 ## Related Papers
 
 - [\[ICCV 2025\] TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation](tip-i2v_a_million-scale_real_text_and_image_prompt_dataset_for_image-to-video_ge.md)
+- [\[CVPR 2025\] HOIGen-1M: A Large-Scale Dataset for Human-Object Interaction Video Generation](../../CVPR2025/video_generation/hoigen-1m_a_large-scale_dataset_for_human-object_interaction_video_generation.md)
 - [\[ICCV 2025\] Dual-Expert Consistency Model for Efficient and High-Quality Video Generation](dual-expert_consistency_model_for_efficient_and_high-quality_video_generation.md)
-- [\[NeurIPS 2025\] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation](../../NeurIPS2025/video_generation/foresight_adaptive_layer_reuse_for_accelerated_and_highquali.md)
-- [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
-- [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](stiv_scalable_text_and_image_conditioned_video_generation.md)
+- [\[ICLR 2026\] Self-Forcing++: Towards Minute-Scale High-Quality Video Generation](../../ICLR2026/video_generation/self-forcing_towards_minute-scale_high-quality_video_generation.md)
+- [\[CVPR 2026\] Scaling Instruction-Based Video Editing with a High-Quality Synthetic Dataset](../../CVPR2026/video_generation/scaling_instruction-based_video_editing_with_a_high-quality_synthetic_dataset.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] To address the challenge of "detecting and explaining user operation errors in long task videos," this paper utilizes a frozen VLM combined with an automatically constructed "Action Execution Graph (AXG)" and temporal action segmentation. By decomposing each action segment into fine-grained sub-actions and querying the
+  [CVPR 2026][VLM Reasoning][Error reasoning] To address the challenge of "detecting and explaining user operation errors in long task videos," this paper utilizes a frozen VLM combined with an automatically constructed "Action Execution Graph (AXG)" and temporal action segmentation. By decomposing each action segment into fine-grained sub-actions and querying the VLM only on keyframes of these sub-actions, the model focuses on sparse spatial-temporal error clues. It achieves S…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Error reasoning"
+  - "long task videos"
+  - "vision-language models"
+  - "temporal action segmentation"
+  - "sub-action graphs"
 date: 2026-05-08
-content_hash: 8755c1c1937c8f98
+content_hash: b9e5545d32a959d4
 ---
+
 # AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -138,16 +143,16 @@ AXG improves F1@0.5 by ~13% over naive baselines and achieves SOTA in error dete
 - Value: ⭐⭐⭐⭐ Practical for virtual assistants and interpretable feedback systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](understanding_task_transfer_in_vision-language_models.md)
+- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](../../ACL2026/vlm_reasoning/errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
 - [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
 - [\[CVPR 2026\] IPR-1: Interactive Physical Reasoner](ipr-1_interactive_physical_reasoner.md)
-- [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
-- [\[CVPR 2026\] LVLM-Aided Alignment of Task-Specific Vision Models](lvlm-aided_alignment_of_task-specific_vision_models.md)
+- [\[CVPR 2026\] LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling](longvt_incentivizing_thinking_with_long_videos_via_native_tool_calling.md)
 
 </div>
 

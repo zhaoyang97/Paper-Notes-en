@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Colorful Pinball: Density-Weighted Quantile Regression for Conditional Guarantee of Conformal Prediction
 description: >-
-  [ICML 2026][Optimization & Theory][conformal prediction] This paper reveals the inherent flaw of standard pinball loss in optimizing conditional coverage through Taylor expansion—specifically, its neglect of heteroscedasticity. It proposes the density-weighted pinball loss as a tighter surrogate objective for the Mean Squared Coverage Error (MSCE) and designs a triple-head q
+  [ICML2026][Optimization][conformal prediction] This paper reveals the inherent flaw of standard pinball loss in optimizing conditional coverage through Taylor expansion—specifically, its neglect of heteroscedasticity. It proposes the density-weighted pinball loss as a tighter surrogate objective for the Mean Squared Coverage Error (MSCE) and designs a triple-head quantile network using finite differences to estimate density weights, significantly improving conditional coverag…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - conformal prediction
+  - "ICML2026"
+  - "Optimization"
+  - "conformal prediction"
+  - "conditional coverage"
+  - "quantile regression"
+  - "density weighting"
+  - "pinball loss"
 date: 2026-05-08
-content_hash: 3703b027f99fbf5a
+content_hash: 3fc30bdf80f0be48
 ---
+
 # Colorful Pinball: Density-Weighted Quantile Regression for Conditional Guarantee of Conformal Prediction
 
 **Conference**: ICML2026  
@@ -138,10 +143,10 @@ Comparison of MSCE (Mean Squared Coverage Error) across 8 high-dimensional regre
 ## Related Papers
 
 - [\[CVPR 2026\] Conditional Factuality Controlled LLMs with Generalization Certificates via Conformal Sampling](../../CVPR2026/optimization/conditional_factuality_controlled_llms_with_generalization_certificates_via_conf.md)
-- [\[ICLR 2026\] Conformal Prediction Adaptive to Unknown Subpopulation Shifts](../../ICLR2026/optimization/conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)
-- [\[ICML 2025\] Conformal Prediction as Bayesian Quadrature](../../ICML2025/optimization/conformal_prediction_as_bayesian_quadrature.md)
-- [\[NeurIPS 2025\] Conformal Prediction for Causal Effects of Continuous Treatments](../../NeurIPS2025/optimization/conformal_prediction_for_causal_effects_of_continuous_treatments.md)
 - [\[ICML 2025\] On Temperature Scaling and Conformal Prediction of Deep Classifiers](../../ICML2025/optimization/on_temperature_scaling_and_conformal_prediction_of_deep_classifiers.md)
+- [\[ICML 2025\] Conformal Prediction as Bayesian Quadrature](../../ICML2025/optimization/conformal_prediction_as_bayesian_quadrature.md)
+- [\[CVPR 2026\] Semi-Supervised Conformal Prediction With Unlabeled Nonconformity Score](../../CVPR2026/optimization/semi-supervised_conformal_prediction_with_unlabeled_nonconformity_score.md)
+- [\[CVPR 2025\] Conformal Prediction for Zero-Shot Models](../../CVPR2025/optimization/conformal_prediction_for_zero-shot_models.md)
 
 </div>
 

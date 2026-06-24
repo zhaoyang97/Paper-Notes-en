@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] TRACE：基于证据定位的多视频事件理解与声明生成
+  [Paper Note] TRACE: Evidence Localization-based Multi-video Event Understanding and Claim Generation
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] TRACE achieves SOTA on multi-video event understanding tasks, improving F1 from 0.705 to 0.811, by employing a "localize-then-reason" pipeline that builds text-searchable video timelines via OCR and object detection, performs query-conditioned evidence localization with a text LLM, and generates cited claims using an L
+  [ACL 2026][Multimodal VLM][Multi-video event understanding] TRACE achieves SOTA on multi-video event understanding tasks, improving F1 from 0.705 to 0.811, by employing a "localize-then-reason" pipeline that builds text-searchable video timelines via OCR and object detection, performs query-conditioned evidence localization with a text LLM, and generates cited claims using an LVLM.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multi-video event understanding"
+  - "evidence localization"
+  - "claim generation"
+  - "video citation"
+  - "large vision-language models"
 date: 2026-05-08
-content_hash: a1de854d1a74a0af
+content_hash: b58f311fadf8c805
 ---
+
 # TRACE: Evidence Localization-based Multi-video Event Understanding and Claim Generation
 
 **Conference**: ACL 2026  
@@ -147,16 +152,16 @@ TRACE improves Avg. F1 by +0.106 (+15%) over the strongest baseline. Notably, ci
 - Value: ⭐⭐⭐⭐⭐ Achieves SOTA on the MAGMaR 2026 leaderboard with substantial practical improvements in citation recall (+42.7%).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Topology-Aware Layer Pruning for Large Vision-Language Models](topology-aware_layer_pruning_for_large_vision-language_models.md)
-- [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
-- [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](vill-e_video_llm_embeddings_for_retrieval.md)
+- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
 - [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
-- [\[ACL 2026\] More Than Meets the Eye: Measuring the Semiotic Gap in Vision-Language Models via Semantic Anchorage](more_than_meets_the_eye_measuring_the_semiotic_gap_in_vision-language_models_via.md)
+- [\[ACL 2026\] Aligned Multi-View Scripts for Universal Chart-to-Code Generation](aligned_multi-view_scripts_for_universal_chart-to-code_generation.md)
+- [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](../../CVPR2026/multimodal_vlm/re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
+- [\[AAAI 2026\] Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation](../../AAAI2026/multimodal_vlm/few-shot_precise_event_spotting_via_unified_multi-entity_graph_and_distillation.md)
 
 </div>
 

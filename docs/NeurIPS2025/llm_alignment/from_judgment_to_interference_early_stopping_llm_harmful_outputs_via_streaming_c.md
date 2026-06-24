@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Judgment to Interference: Early Stopping LLM Harmful Outputs via Streaming Content Monitoring
 description: >-
-  [NeurIPS 2025][LLM Alignment][streaming moderation] This paper proposes the Streaming Content Monitor (SCM)—the first harmful content monitor natively designed for partial detection. Built upon the FineHarm dataset (29K…
+  [NeurIPS 2025][LLM Alignment][streaming moderation] This paper proposes the Streaming Content Monitor (SCM)—the first harmful content monitor natively designed for partial detection. Built upon the FineHarm dataset (29K samples with token-level annotations) and hierarchical consistency-aware learning, SCM achieves a macro F1 of 0.95+ after observing on average only 18% of response tokens, enabling real-time early stopping of harmful LLM outputs.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "token-level annotation"
   - "partial detection"
 date: 2026-05-08
-content_hash: 3dfcde6260c30ffe
+content_hash: 8976449ec7c70bca
 ---
 
 # From Judgment to Interference: Early Stopping LLM Harmful Outputs via Streaming Content Monitoring
@@ -123,11 +123,11 @@ This paper proposes the Streaming Content Monitor (SCM)—the first harmful cont
 
 ## Related Papers
 
+- [\[ACL 2025\] HiddenDetect: Detecting Jailbreak Attacks against Large Vision-Language Models via Monitoring Hidden States](../../ACL2025/llm_alignment/hiddendetect_detecting_jailbreak_attacks_against_multimodal_large_language_model.md)
 - [\[ICML 2026\] Safety Anchor: Defending Harmful Fine-tuning via Geometric Bottlenecks](../../ICML2026/llm_alignment/safety_anchor_defending_harmful_fine-tuning_via_geometric_bottlenecks.md)
 - [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](llm_safety_alignment_is_divergence_estimation_in_disguise.md)
 - [\[NeurIPS 2025\] EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization](evorefuse_evolutionary_prompt_optimization_for_evaluation_and_mitigation_of_llm_.md)
 - [\[NeurIPS 2025\] Mechanism Design for LLM Fine-tuning with Multiple Reward Models](mechanism_design_for_llm_fine-tuning_with_multiple_reward_models.md)
-- [\[NeurIPS 2025\] Ask a Strong LLM Judge when Your Reward Model is Uncertain](ask_a_strong_llm_judge_when_your_reward_model_is_uncertain.md)
 
 </div>
 

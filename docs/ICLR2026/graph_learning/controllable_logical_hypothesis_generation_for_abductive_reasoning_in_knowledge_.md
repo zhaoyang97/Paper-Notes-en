@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Controllable Logical Hypothesis Generation for Abductive Reasoning in Knowledge Graphs
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper proposes CtrlHGen, upgrading abductive reasoning on knowledge graphs (inferring rational logical hypotheses from observed entities) into a "controllable" task. This allows users to specify the semantic direction and structural complexity of hypotheses. Through data augmentation via sub-logic decomposition, i
+  [ICLR2026][Graph Learning][Knowledge Graphs] This paper proposes CtrlHGen, upgrading abductive reasoning on knowledge graphs (inferring rational logical hypotheses from observed entities) into a "controllable" task. This allows users to specify the semantic direction and structural complexity of hypotheses. Through data augmentation via sub-logic decomposition, it mitigates the "scarcity of long hypothesis samples." By using a smooth semantic reward involving Dice/Overlap alo…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Knowledge Graphs"
+  - "Abductive Reasoning"
+  - "Logical Hypothesis Generation"
+  - "Controllable Generation"
+  - "Reinforcement Learning (GRPO)"
 date: 2026-05-08
-content_hash: 4dad4a090cd73b65
+content_hash: e7b9255a98822b63
 ---
+
 # Controllable Logical Hypothesis Generation for Abductive Reasoning in Knowledge Graphs
 
 **Conference**: ICLR2026  
@@ -166,8 +172,8 @@ Reward function ablation (WN18RR, `pattern` condition):
 - [\[ACL 2026\] CoG: Controllable Graph Reasoning via Relational Blueprints and Failure-Aware Refinement over Knowledge Graphs](../../ACL2026/graph_learning/cog_controllable_graph_reasoning_via_relational_blueprints_and_failure-aware_ref.md)
 - [\[ICLR 2026\] Inductive Reasoning for Temporal Knowledge Graphs with Emerging Entities](inductive_reasoning_for_temporal_knowledge_graphs_with_emerging_entities.md)
 - [\[ACL 2025\] Extending Complex Logical Queries on Uncertain Knowledge Graphs](../../ACL2025/graph_learning/extending_complex_logical_queries_uncertain_knowledge_graphs.md)
-- [\[CVPR 2026\] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs](../../CVPR2026/graph_learning/graph2eval_automatic_multimodal_task_generation_for_agents_via_knowledge_graphs.md)
 - [\[ICLR 2026\] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning](knowledge_reasoning_language_model_unifying_knowledge_and_language_for_inductive.md)
+- [\[ICLR 2026\] CLAUSE: Agentic Neuro-Symbolic Knowledge Graph Reasoning via Dynamic Learnable Context Engineering](clause_agentic_neuro-symbolic_knowledge_graph_reasoning_via_dynamic_learnable_co.md)
 
 </div>
 

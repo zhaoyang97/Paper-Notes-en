@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning
 description: >-
-  [NeurIPS 2025][LLM/NLP][multi-domain fine-tuning] This paper proposes a partition-based multi-stage fine-tuning framework that strategically partitions multiple domains into subsets (stages) to maximize inter-domain syne…
+  [NeurIPS 2025][LLM (Other)][multi-domain fine-tuning] This paper proposes a partition-based multi-stage fine-tuning framework that strategically partitions multiple domains into subsets (stages) to maximize inter-domain synergy while minimizing negative transfer, and derives a novel generalization bound to theoretically support the partitioning strategy.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "multi-domain fine-tuning"
   - "inter-domain synergy"
   - "partition strategy"
   - "generalization bound"
   - "Adapter"
 date: 2026-05-08
-content_hash: 53ef8b56469838f7
+content_hash: 1907df8c1fe1f0f7
 ---
 
 # Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning
@@ -151,10 +151,10 @@ PMS-FT outperforms all baselines across all models and tasks.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning](sparse_mezo_less_parameters_for_better_performance_in_zeroth-order_llm_fine-tuni.md)
+- [\[ACL 2025\] A Semantic-Aware Layer-Freezing Approach to Computation-Efficient Fine-Tuning of Language Models](../../ACL2025/llm_nlp/a_semantic-aware_layer-freezing_approach_to_computation-efficient_fine-tuning_of.md)
+- [\[ACL 2025\] Graph Counselor: Adaptive Graph Exploration via Multi-Agent Synergy to Enhance LLM Reasoning](../../ACL2025/llm_nlp/graph_counselor_multiagent_graphrag.md)
 - [\[NeurIPS 2025\] Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs](triplets_better_than_pairs_towards_stable_and_effective_self-play_fine-tuning_fo.md)
 - [\[NeurIPS 2025\] SPACE: Noise Contrastive Estimation Stabilizes Self-Play Fine-Tuning for Large Language Models](space_noise_contrastive_estimation_stabilizes_self-play_fine-tuning_for_large_la.md)
-- [\[NeurIPS 2025\] MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery](moose-chem2_exploring_llm_limits_in_fine-grained_scientific_hypothesis_discovery.md)
-- [\[ACL 2026\] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](../../ACL2026/llm_nlp/synthetic_eggs_in_many_baskets_the_impact_of_synthetic_data_diversity_on_llm_fin.md)
 
 </div>
 

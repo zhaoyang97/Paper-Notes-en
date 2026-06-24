@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] The FECO framework is proposed to achieve robust dense foot contact estimation from a single RGB image through shoe style-content randomization (adversarial training) and ground-aware learning (pixel height maps + ground normals), significantly outperforming existing methods on multiple benchmarks.
+  [CVPR2026][Foot Contact Estimation] The FECO framework is proposed to achieve robust dense foot contact estimation from a single RGB image through shoe style-content randomization (adversarial training) and ground-aware learning (pixel height maps + ground normals), significantly outperforming existing methods on multiple benchmarks.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR2026"
+  - "Foot Contact Estimation"
+  - "Shoe Style Invariance"
+  - "Ground-Aware Learning"
+  - "Adversarial Training"
+  - "Dense Contact Prediction"
 date: 2026-05-08
-content_hash: 8cc8b0084426e24c
+content_hash: f8fe5013f41647e0
 ---
+
 # Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation
 
 **Conference**: CVPR2026  
@@ -160,10 +165,20 @@ FECO outperforms BSTRO by 11.3% and DECO by 16.8% in F1-score on MMVP. On joint-
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICCV 2025\] Magic Insert: Style-Aware Drag-and-Drop](../../ICCV2025/others/magic_insert_style-aware_drag-and-drop.md)
+- [\[AAAI 2026\] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras](../../AAAI2026/others/spike_imaging_velocimetry_dense_motion_estimation_of_fluids_using_spike_cameras.md)
+- [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](../../ICML2026/others/learning_permutation-invariant_macroscopic_dynamics.md)
+- [\[ICML 2026\] Continual Learning of Domain-Invariant Representations](../../ICML2026/others/continual_learning_of_domain-invariant_representations.md)
+- [\[CVPR 2025\] Sufficient Invariant Learning for Distribution Shift](../../CVPR2025/others/sufficient_invariant_learning_for_distribution_shift.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Dense Hand Contact Estimation from Imbalanced Data](../../NeurIPS2025/human_understanding/learning_dense_hand_contact_estimation_from_imbalanced_data.md)

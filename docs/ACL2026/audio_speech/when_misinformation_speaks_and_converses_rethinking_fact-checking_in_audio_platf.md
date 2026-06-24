@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Misinformation Speaks and Converses: Rethinking Fact-Checking in Audio Platforms
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This is a position paper arguing that misinformation on audio platforms is fundamentally different from textual misinformation. It possesses both spoken characteristics (prosody, pacing, emotion) and conversational traits (multi-turn, multi-speaker, cross-episode). Existing text-centric fact-checking pipelines cannot p
+  [ACL 2026][Audio & Speech][Audio Misinformation] This is a position paper arguing that misinformation on audio platforms is fundamentally different from textual misinformation. It possesses both spoken characteristics (prosody, pacing, emotion) and conversational traits (multi-turn, multi-speaker, cross-episode). Existing text-centric fact-checking pipelines cannot process these effectively, necessitating the redesign of verification frameworks around audio-specific attribute…
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Audio Misinformation"
+  - "Fact-Checking"
+  - "Podcasts"
+  - "Spoken Characteristics"
+  - "Conversationality"
 date: 2026-05-08
-content_hash: d5c4cedd27f553a9
+content_hash: 4fec3215e9dacb98
 ---
+
 # When Misinformation Speaks and Converses: Rethinking Fact-Checking in Audio Platforms
 
 **Conference**: ACL 2026  
@@ -114,10 +120,10 @@ N/A (Position Paper)
 ## Related Papers
 
 - [\[ACL 2026\] TellWhisper: Tell Whisper Who Speaks When](tellwhisper_tell_whisper_who_speaks_when.md)
+- [\[ACL 2026\] From Isolation to Entanglement: When Do Interpretability Methods Identify and Disentangle Known Concepts?](from_isolation_to_entanglement_when_do_interpretability_methods_identify_and_dis.md)
+- [\[ICLR 2026\] Unmute the Patch Tokens: Rethinking Probing in Multi-Label Audio Classification](../../ICLR2026/audio_speech/unmute_the_patch_tokens_rethinking_probing_in_multi-label_audio_classification.md)
 - [\[ICML 2026\] Multimodal Fact-Level Attribution for Verifiable Reasoning](../../ICML2026/audio_speech/multimodal_fact-level_attribution_for_verifiable_reasoning.md)
-- [\[ACL 2026\] Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval](omni-embed-audio_leveraging_multimodal_llms_for_robust_audio-text_retrieval.md)
-- [\[ACL 2026\] HCFD: A Benchmark for Audio Deepfake Detection in Healthcare](hcfd_a_benchmark_for_audio_deepfake_detection_in_healthcare.md)
-- [\[ACL 2026\] Protecting Bystander Privacy via Selective Hearing in Audio LLMs](protecting_bystander_privacy_via_selective_hearing_in_audio_llms.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 
 </div>
 

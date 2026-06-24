@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] PS-SR decomposes an expensive multi-step diffusion SR process into an asymmetric sampling sequence consisting of "1 step by a strong base model + T−1 steps of speculative refinement by a lightweight draft model." It then applies a frequency domain update rule to ensure subsequent steps only inject high-frequency detail
+  [CVPR 2026][Multimodal Efficiency][Video Super-Resolution] PS-SR decomposes an expensive multi-step diffusion SR process into an asymmetric sampling sequence consisting of "1 step by a strong base model + T−1 steps of speculative refinement by a lightweight draft model." It then applies a frequency domain update rule to ensure subsequent steps only inject high-frequency details without altering low-frequency structures, achieving multi-step diffusion quality and detail at spe…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Video Super-Resolution"
+  - "Speculative Diffusion"
+  - "Single-step Diffusion"
+  - "Frequency Domain Constraint"
+  - "Computational Asymmetry Sampling"
 date: 2026-05-08
-content_hash: 875b181dfd07fa7d
+content_hash: ff44a9c30d2d39c3
 ---
+
 # PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion
 
 **Conference**: CVPR 2026  
@@ -159,11 +165,11 @@ Without FDU, PSNR drops from 22.09 to 18.66 and SSIM from 0.629 to 0.530, markin
 
 ## Related Papers
 
-- [\[CVPR 2026\] GDPO-SR: Group Direct Preference Optimization for One-Step Generative Image Super-Resolution](gdpo-sr_group_direct_preference_optimization_for_one-step_generative_image_super.md)
-- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
-- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
+- [\[CVPR 2026\] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)
+- [\[CVPR 2026\] SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer](soda_sensitivity-oriented_dynamic_acceleration_for_diffusion_transformer.md)
+- [\[CVPR 2026\] LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models](lift_and_place_a_simple_stable_and_effective_knowledge_distillation_framework_fo.md)
+- [\[CVPR 2026\] VVS: Accelerating Speculative Decoding for Visual Autoregressive Generation via Partial Verification Skipping](vvs_accelerating_speculative_decoding_for_visual_autoregressive_generation_via_p.md)
+- [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)
 
 </div>
 

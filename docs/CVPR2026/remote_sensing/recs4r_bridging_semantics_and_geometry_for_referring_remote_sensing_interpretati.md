@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] RECS4R: Bridging Semantics and Geometry for Referring Remote Sensing Interpretation
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] RECS4R unifies Referring Visual Grounding (VG) and Referring Image Segmentation (RIS) in remote sensing by "decoding a sequence of language-conditioned polygon contour vertices"—where the contour's bounding box serves as the box and the filled region as the mask. By integrating residual coarse-to-fine encoding, channel
+  [CVPR 2026][Remote Sensing][Referring Expression Comprehension and Segmentation] RECS4R unifies Referring Visual Grounding (VG) and Referring Image Segmentation (RIS) in remote sensing by "decoding a sequence of language-conditioned polygon contour vertices"—where the contour's bounding box serves as the box and the filled region as the mask. By integrating residual coarse-to-fine encoding, channel-separated multi-scale fusion, and gradient-domain boundary supervision…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Referring Expression Comprehension and Segmentation"
+  - "Unified Contour Decoding"
+  - "Coarse-to-Fine"
+  - "Multi-scale Fusion"
 date: 2026-05-08
-content_hash: a015cd97a3565b8e
+content_hash: 0729ccf4a027f285
 ---
+
 # RECS4R: Bridging Semantics and Geometry for Referring Remote Sensing Interpretation
 
 **Conference**: CVPR 2026  
@@ -130,13 +135,14 @@ Ablation on decoding paradigms suggests that the "Unified Head" is only effectiv
 - Value: ⭐⭐⭐⭐⭐ Significant practical and methodological value for multi-task referring interpretation in remote sensing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Sparsely Timing the Change: A Spiking Temporal Framework for Remote Sensing Interpretation](sparsely_timing_the_change_a_spiking_temporal_framework_for_remote_sensing_inter.md)
 - [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
-- [\[CVPR 2026\] Fast Kernel-Space Diffusion for Remote Sensing Pansharpening](fast_kernel-space_diffusion_for_remote_sensing_pansharpening.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective](geocot_towards_reliable_remote_sensing_reasoning_with_manifold_perspective.md)
 - [\[CVPR 2026\] Robust Remote Sensing Image–Text Retrieval with Noisy Correspondence](robust_remote_sensing_image-text_retrieval_with_noisy_correspondence.md)
 

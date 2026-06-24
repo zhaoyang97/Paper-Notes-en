@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] BAR: Refactor the Basis of Autoregressive Visual Generation
 description: >-
-  [ICLR 2026][Image Generation][Autoregressive Generation] BAR abstracts the concept of "token sequences" in autoregressive image generation as "projections of image vectors onto a set of basis vectors." By utilizing an end-to-end learnable linear transformation matrix $A$, it unifies various manually designed prediction units and orders (such as VAR/xAR/RAR/PAR/FAR). The mode
+  [ICLR 2026][Image Generation][Autoregressive Generation] BAR abstracts the concept of "token sequences" in autoregressive image generation as "projections of image vectors onto a set of basis vectors." By utilizing an end-to-end learnable linear transformation matrix $A$, it unifies various manually designed prediction units and orders (such as VAR/xAR/RAR/PAR/FAR). The model learns the optimal basis automatically, achieving an FID of 1.15 on ImageNet-256.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Autoregressive Generation
-  - Basis Transform
-  - Next-Basis Prediction
-  - Learnable Token Order
-  - ImageNet
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Autoregressive Generation"
+  - "Basis Transform"
+  - "Next-Basis Prediction"
+  - "Learnable Token Order"
+  - "ImageNet"
 date: 2026-05-08
-content_hash: 81a55c05b2d61294
+content_hash: 0c10cbb833e2e4d8
 ---
+
 # BAR: Refactor the Basis of Autoregressive Visual Generation
 
 **Conference**: ICLR 2026  
@@ -134,8 +135,8 @@ Ablation of key components (based on xAR-B, baseline FID 1.72):
 
 ## Related Papers
 
-- [\[ICLR 2026\] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation](ssg_scaled_spatial_guidance_for_multi-scale_visual_autoregressive_generation.md)
 - [\[ICLR 2026\] Next Visual Granularity Generation](next_visual_granularity_generation.md)
+- [\[ICLR 2026\] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation](ssg_scaled_spatial_guidance_for_multi-scale_visual_autoregressive_generation.md)
 - [\[ICCV 2025\] Randomized Autoregressive Visual Generation](../../ICCV2025/image_generation/randomized_autoregressive_visual_generation.md)
 - [\[ICLR 2026\] GoT-R1: Unleashing Reasoning Capability of Autoregressive Visual Generation with Reinforcement Learning](got-r1_unleashing_reasoning_capability_of_autoregressive_visual_generation_with_.md)
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)

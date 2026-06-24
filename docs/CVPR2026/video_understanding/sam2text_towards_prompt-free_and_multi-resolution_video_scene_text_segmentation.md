@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAM2Text: Towards Prompt-Free and Multi-Resolution Video Scene Text Segmentation
 description: >-
-  [CVPR 2026][Segmentation][SAM2] SAM2 is systematically adapted into SAM2Text specialized for video scene text segmentation (video STS): LoRA is employed to enable the encoder to learn text features, a self-prompting module is added to eliminate external prompts, 512/1024 high-resolution branches are appended to the decoder to preserve stroke details,
+  [CVPR 2026][Video Understanding][Video Scene Text Segmentation] SAM2 is systematically adapted into SAM2Text specialized for video scene text segmentation (video STS): LoRA is employed to enable the encoder to learn text features, a self-prompting module is added to eliminate external prompts, 512/1024 high-resolution branches are appended to the decoder to preserve stroke details, and a "Short-term FIFO + Top-K Long-term Retrieval" dual-layer memory is used to stabilize cros…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM2
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Scene Text Segmentation"
+  - "SAM2"
+  - "Self-Prompting"
+  - "Multi-Resolution Decoding"
+  - "Memory Mechanism"
 date: 2026-05-08
-content_hash: f115bedfe568df37
+content_hash: 00a74875265845d8
 ---
+
 # SAM2Text: Towards Prompt-Free and Multi-Resolution Video Scene Text Segmentation
 
 **Conference**: CVPR 2026  
@@ -136,15 +141,16 @@ On STS-RealV, starting from SAM2.1 baseline (baseline, +LoRA, +Self-prompting ro
 - Value: ⭐⭐⭐⭐⭐ Significant practical value due to both the framework and the released pixel-level video datasets.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence](v2-sam_marrying_sam2_with_multi-prompt_experts_for_cross-view_object_corresponde.md)
-- [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
+- [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](scene-centric_unsupervised_video_panoptic_segmentation.md)
 - [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
-- [\[CVPR 2026\] M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](m4-sam_multi-modal_mixture-of-experts_with_memory-augmented_sam_for_rgb-d_video_.md)
-- [\[CVPR 2026\] Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt](training-free_open-vocabulary_camouflaged_object_segmentation_via_fine-grained_o.md)
+- [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
+- [\[ICLR 2026\] Video Scene Segmentation with Genre and Duration Signals](../../ICLR2026/video_understanding/video_scene_segmentation_with_genre_and_duration_signals.md)
+- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
 
 </div>
 

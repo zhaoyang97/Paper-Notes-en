@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] MET-Bench: Multimodal Entity Tracking for Evaluating the Limitations of Vision-Language and Reasoning Models
 description: >-
-  [ICML 2026][vlm_reasoning][Vision-Language Model] This paper proposes MET-Bench, a multimodal entity tracking benchmark across three domains (Chess, Shell Game, and Minecraft). It requires vision-language models to track entity state changes from sequences of actions presented in either text or image format. Findings show that "image-based actions" are significantly m
+  [ICML2026][VLM Reasoning][Entity State Tracking] This paper proposes MET-Bench, a multimodal entity tracking benchmark across three domains (Chess, Shell Game, and Minecraft). It requires vision-language models to track entity state changes from sequences of actions presented in either text or image format. Findings show that "image-based actions" are significantly more difficult than "text-based actions," and this gap originates from visual reasoning rather than perception.…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - Vision-Language Model
-  - Reinforcement Learning
-  - GRPO
+  - "ICML2026"
+  - "VLM Reasoning"
+  - "Entity State Tracking"
+  - "Vision-Language Models"
+  - "Multimodal Reasoning"
+  - "Reinforcement Learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: b0cfbb5729519977
+content_hash: 420e00753f93f032
 ---
+
 # MET-Bench: Multimodal Entity Tracking for Evaluating the Limitations of Vision-Language and Reasoning Models
 
 **Conference**: ICML2026  
@@ -137,10 +140,10 @@ In the Shell Game zero-shot setting, all models perform near random (the ball is
 ## Related Papers
 
 - [\[ICLR 2026\] GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod.md)
+- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](../../CVPR2026/vlm_reasoning/moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
 - [\[CVPR 2026\] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs](../../CVPR2026/vlm_reasoning/visres_bench_on_evaluating_the_visual_reasoning_capabilities_of_vlms.md)
 - [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/vlm_reasoning/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
-- [\[ICML 2025\] Reasoning Limitations of Multimodal Large Language Models. A Case Study of Bongard Problems](../../ICML2025/vlm_reasoning/reasoning_limitations_of_multimodal_large_language_models_a_case_study_of_bongar.md)
-- [\[CVPR 2026\] QUANTIPHY: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models](../../CVPR2026/vlm_reasoning/quantiphy_a_quantitative_benchmark_evaluating_physical_reasoning_abilities_of_vi.md)
+- [\[ICLR 2026\] Agentic Jigsaw Interaction Learning for Enhancing Visual Perception and Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/agentic_jigsaw_interaction_learning_for_enhancing_visual_perception_and_reasonin.md)
 
 </div>
 

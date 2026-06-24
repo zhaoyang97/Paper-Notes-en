@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MVCustom: Multi-View Customized Diffusion via Geometric Latent Rendering and Completion
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Ours proposes a new task called multi-view customization and designs the MVCustom framework. By utilizing a video diffusion backbone combined with dense spatio-temporal attention to achieve overall frame consistency, and introducing two inference-stage techniques—depth-aware feature rendering and consistency-aware late
+  [ICLR 2026][Image Generation][Multi-view customized generation] Ours proposes a new task called multi-view customization and designs the MVCustom framework. By utilizing a video diffusion backbone combined with dense spatio-temporal attention to achieve overall frame consistency, and introducing two inference-stage techniques—depth-aware feature rendering and consistency-aware latent completion—it is the first to simultaneously achieve camera pose control…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multi-view customized generation"
+  - "camera pose control"
+  - "feature field rendering"
+  - "video diffusion"
+  - "geometric consistency"
 date: 2026-05-08
-content_hash: 3789fba708edcc34
+content_hash: 4d183cc62ee63b06
 ---
+
 # MVCustom: Multi-View Customized Diffusion via Geometric Latent Rendering and Completion
 
 **Conference**: ICLR 2026  

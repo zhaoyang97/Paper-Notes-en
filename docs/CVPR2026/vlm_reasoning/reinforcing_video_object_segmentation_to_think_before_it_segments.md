@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reinforcing Video Object Segmentation to Think before it Segments
 description: >-
-  [CVPR 2026][Segmentation][GRPO] Veason-R1 reformulates "Video Reasoning Segmentation (VRS)" as a two-step sequential decision-making process: "select a keyframe first, then locate the target within that frame." It trains a single policy using Chain-of-Thought (CoT) SFT for cold-starting and GRPO reinforcement learning (with three types of verifiable
+  [CVPR 2026][VLM Reasoning][Video Reasoning Segmentation] Veason-R1 reformulates "Video Reasoning Segmentation (VRS)" as a two-step sequential decision-making process: "select a keyframe first, then locate the target within that frame." It trains a single policy using Chain-of-Thought (CoT) SFT for cold-starting and GRPO reinforcement learning (with three types of verifiable rewards: temporal, spatial, and consistency). Using only the ReVOS dataset…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - GRPO
-  - Chain-of-Thought
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Reasoning Segmentation"
+  - "Keyframe Selection"
+  - "GRPO"
+  - "Chain-of-Thought"
+  - "Verifiable Rewards"
 date: 2026-05-08
-content_hash: 209ae9653baf2811
+content_hash: 3e542a71e379ccdb
 ---
+
 # Reinforcing Video Object Segmentation to Think before it Segments
 
 **Conference**: CVPR 2026  
@@ -133,11 +137,11 @@ Notably, Veason-R1-3B trained only on ReVOS matches the 13B VRS-HQ (59.9 vs 60.0
 
 ## Related Papers
 
-- [\[CVPR 2026\] InterRVOS: Interaction-Aware Referring Video Object Segmentation](interrvos_interaction-aware_referring_video_object_segmentation.md)
-- [\[CVPR 2026\] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel](efficient_video_object_segmentation_and_tracking_with_recurrent_dynamic_submodel.md)
-- [\[CVPR 2026\] SAMIX: Reinforcing SAM2 with Semantic Adapter and Reference Selecting Policy for Mix-Supervised Segmentation](samix_reinforcing_sam2_with_semantic_adapter_and_reference_selecting_policy_for_.md)
-- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
-- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/vlm_reasoning/video-r1_reinforcing_video_reasoning_in_mllms.md)
+- [\[CVPR 2026\] SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation](segcompass_exploring_interpretable_alignment_with_sparse_autoencoders_for_enhanc.md)
+- [\[CVPR 2026\] DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation](discriminative_perception_via_anchored_description_for_reasoning_segmentation.md)
+- [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)
 
 </div>
 

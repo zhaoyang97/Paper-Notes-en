@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-View Synthesis from Monocular Videos
 description: >-
-  [NeurIPS 2025][3D Vision][dynamic novel-view synthesis] This paper proposes CogNVS, which decomposes dynamic scene novel-view synthesis into a three-stage pipeline — 3D reconstruction (recovering visible pixels) → video…
+  [NeurIPS 2025][3D Vision][dynamic novel-view synthesis] This paper proposes CogNVS, which decomposes dynamic scene novel-view synthesis into a three-stage pipeline — 3D reconstruction (recovering visible pixels) → video diffusion inpainting (generating occluded regions) → test-time finetuning (adapting to the target video distribution) — training the inpainting model with purely 2D video self-supervision to achieve zero-shot generalization to new test videos.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "test-time finetuning"
   - "diffusion models"
 date: 2026-05-08
-content_hash: b00d3b471aec0d42
+content_hash: 05800d1c890f7e77
 ---
 
 # Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-View Synthesis from Monocular Videos
@@ -137,10 +137,10 @@ A three-stage pipeline: (1) **Reconstruct**: MegaSAM is used to obtain a dynamic
 ## Related Papers
 
 - [\[NeurIPS 2025\] Novel View Synthesis from A Few Glimpses via Test-Time Natural Video Completion](novel_view_synthesis_from_a_few_glimpses_via_test-time_natural_video_completion.md)
+- [\[CVPR 2026\] Scaling4D: Pushing the Frontier of Video Novel View Synthesis through Large-Scale Monocular Videos](../../CVPR2026/3d_vision/scaling4d_pushing_the_frontier_of_video_novel_view_synthesis_through_large-scale.md)
+- [\[ECCV 2024\] Generative Camera Dolly: Extreme Monocular Dynamic Novel View Synthesis](../../ECCV2024/3d_vision/generative_camera_dolly_extreme_monocular_dynamic_novel_view_synthesis.md)
 - [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
 - [\[NeurIPS 2025\] NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods](nerfbaselines_consistent_and_reproducible_evaluation_of_novel_view_synthesis_met.md)
-- [\[NeurIPS 2025\] HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis](hyrf_hybrid_radiance_fields_for_memory-efficient_and_high-quality_novel_view_syn.md)
-- [\[NeurIPS 2025\] UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis](umami_unifying_masked_autoregressive_models_and_deterministic_rendering_for_view.md)
 
 </div>
 

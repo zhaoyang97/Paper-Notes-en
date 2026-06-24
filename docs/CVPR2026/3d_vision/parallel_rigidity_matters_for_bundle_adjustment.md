@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Parallel Rigidity Matters for Bundle Adjustment
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper employs "parallel rigidity" theory to systematically address the long-overlooked fundamental question of "when the solution to Bundle Adjustment (BA) is unique." By treating the joint optimization of camera translations and 3D points as a direction-constrained problem on a bipartite graph, the authors design
+  [CVPR 2026][3D Vision][Bundle Adjustment] This paper employs "parallel rigidity" theory to systematically address the long-overlooked fundamental question of "when the solution to Bundle Adjustment (BA) is unique." By treating the joint optimization of camera translations and 3D points as a direction-constrained problem on a bipartite graph, the authors design the GPRBA algorithm. This algorithm efficiently extracts "generically parallel rigid" (GPR) subgraphs via the camera-…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Bundle Adjustment"
+  - "Parallel Rigidity"
+  - "Structure from Motion"
+  - "Unique Solvability"
+  - "Viewgraph"
 date: 2026-05-08
-content_hash: 19e7b99deafed491
+content_hash: 4ee507a96d3f6289
 ---
+
 # Parallel Rigidity Matters for Bundle Adjustment
 
 **Conference**: CVPR 2026  
@@ -133,9 +139,9 @@ Experiments used IMC 2022 and 1DSfM datasets with GLOMAP as the baseline global 
 
 - [\[CVPR 2026\] HumanBA: Human-Aware Bundle Adjustment via Global Human-Camera Decoupling](humanba_human-aware_bundle_adjustment_via_global_human-camera_decoupling.md)
 - [\[ECCV 2024\] Event-based Mosaicing Bundle Adjustment](../../ECCV2024/3d_vision/event-based_mosaicing_bundle_adjustment.md)
-- [\[ECCV 2024\] Power Variable Projection for Initialization-Free Large-Scale Bundle Adjustment](../../ECCV2024/3d_vision/power_variable_projection_for_initialization-free_large-scale_bundle_adjustment.md)
 - [\[ICCV 2025\] Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction](../../ICCV2025/3d_vision/back_on_track_bundle_adjustment_for_dynamic_scene_reconstruction.md)
-- [\[CVPR 2026\] Order Matters: 3D Shape Generation from Sequential VR Sketches](order_matters_3d_shape_generation_from_sequential_vr_sketches.md)
+- [\[ECCV 2024\] Power Variable Projection for Initialization-Free Large-Scale Bundle Adjustment](../../ECCV2024/3d_vision/power_variable_projection_for_initialization-free_large-scale_bundle_adjustment.md)
+- [\[CVPR 2026\] Spatial Matters: Position-Guided 3D Referring Expression Segmentation](spatial_matters_position-guided_3d_referring_expression_segmentation.md)
 
 </div>
 

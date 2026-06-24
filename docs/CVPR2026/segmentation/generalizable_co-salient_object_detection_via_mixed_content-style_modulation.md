@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generalizable Co-Salient Object Detection via Mixed Content-Style Modulation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] The paper proposes CoMCS, which leverages a dual approach of "content modulation + style modulation" to enhance the generalization of Co-Salient Object Detection (CoSOD) in unseen domains. Specifically, it employs CLIP semantic embeddings to inject domain-invariant scene structure priors (MCM), synthesizes expanded tra
+  [CVPR 2026][Segmentation][Co-salient object detection] The paper proposes CoMCS, which leverages a dual approach of "content modulation + style modulation" to enhance the generalization of Co-Salient Object Detection (CoSOD) in unseen domains. Specifically, it employs CLIP semantic embeddings to inject domain-invariant scene structure priors (MCM), synthesizes expanded training domain styles using feature statistics (MSM), and pushes prototypes apart on a hypersphere using a…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Co-salient object detection"
+  - "Domain generalization"
+  - "Content-style modulation"
+  - "CLIP semantic embedding"
+  - "Style augmentation"
 date: 2026-05-08
-content_hash: 4c1393586eb7bbab
+content_hash: d9eadd3f6deb80c3
 ---
+
 # Generalizable Co-Salient Object Detection via Mixed Content-Style Modulation
 
 **Conference**: CVPR 2026  
@@ -154,13 +160,17 @@ Incremental addition of the three modules (Results on CoCA $S_\alpha$ / $F^{max}
 
 <div class="related-papers" markdown="1">
 
-- **GCoNet+**: A Stronger Group Collaborative Network for Co-Salient Object Detection, IEEE TPAMI 2023.
-- **MCCL**: Multi-level Consensus Contrastive Learning for Co-salient Object Detection, CVPR 2023.
+## Related Papers
+
+- [\[CVPR 2026\] TF-SSD: A Strong Pipeline via Synergic Mask Filter for Training-free Co-salient Object Detection](tf-ssd_a_strong_pipeline_via_synergic_mask_filter_for_training-free_co-salient_o.md)
+- [\[CVPR 2025\] Visual Consensus Prompting for Co-Salient Object Detection](../../CVPR2025/segmentation/visual_consensus_prompting_for_co-salient_object_detection.md)
+- [\[ICLR 2026\] S3OD: Towards Generalizable Salient Object Detection with Synthetic Data](../../ICLR2026/segmentation/s3od_towards_generalizable_salient_object_detection_with_synthetic_data.md)
+- [\[CVPR 2026\] Uncertainty-Aware Modality Fusion for Unaligned RGB-T Salient Object Detection](uncertainty-aware_modality_fusion_for_unaligned_rgb-t_salient_object_detection.md)
+- [\[ECCV 2024\] Self-supervised Co-salient Object Detection via Feature Correspondences at Multiple Scales](../../ECCV2024/segmentation/self-supervised_co-salient_object_detection_via_feature_correspondences_at_multi.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] TF-SSD: A Strong Pipeline via Synergic Mask Filter for Training-free Co-salient Object Detection](tf-ssd_a_strong_pipeline_via_synergic_mask_filter_for_training-free_co-salient_o.md)

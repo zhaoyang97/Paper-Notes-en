@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] How Far Can Unsupervised RLVR Scale LLM Training?
 description: >-
-  [ICLR 2026][Reinforcement Learning][unsupervised RLVR] This paper provides a comprehensive analysis of Unsupervised Reinforcement Learning via Verifiable Rewards (URLVR), revealing that all intrinsic reward methods essentially "sharpen" the model's initial distribution. This leads to an inevitable "rise-then-fall" collapse pattern. The authors propose the Model Collapse St
+  [ICLR 2026][Reinforcement Learning][unsupervised RLVR] This paper provides a comprehensive analysis of Unsupervised Reinforcement Learning via Verifiable Rewards (URLVR), revealing that all intrinsic reward methods essentially "sharpen" the model's initial distribution. This leads to an inevitable "rise-then-fall" collapse pattern. The authors propose the Model Collapse Step as a prior metric for model trainability and suggest that external reward methods are the key to break…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - unsupervised RLVR
-  - model collapse
-  - intrinsic rewards
-  - sharpening mechanism
-  - test-time training
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "unsupervised RLVR"
+  - "model collapse"
+  - "intrinsic rewards"
+  - "sharpening mechanism"
+  - "test-time training"
 date: 2026-05-08
-content_hash: 0e924379ce7e5afc
+content_hash: d79829830bb146e1
 ---
+
 # How Far Can Unsupervised RLVR Scale LLM Training?
 
 **Conference**: ICLR 2026  
@@ -159,8 +160,8 @@ This work intersects with RLVR (DeepSeek-R1, Qwen3), unsupervised/self-supervise
 - [\[ICLR 2026\] Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?](prosperity_before_collapse_how_far_can_off-policy_rl_reach_with_stale_data_on_ll.md)
 - [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](prompt_curriculum_learning_for_efficient_llm_post-training.md)
 - [\[ICLR 2026\] Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals](unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
 - [\[ICLR 2026\] When Greedy Wins: Emergent Exploitation Bias in Meta-Bandit LLM Training](when_greedy_wins_emergent_exploitation_bias_in_meta-bandit_llm_training.md)
-- [\[ICLR 2026\] Exploratory Diffusion Model for Unsupervised Reinforcement Learning](exploratory_diffusion_model_for_unsupervised_reinforcement_learning.md)
 
 </div>
 

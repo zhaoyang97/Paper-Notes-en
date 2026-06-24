@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] How Does Reasoning Flow? Tracing Attention-Induced Information Flow for Targeted RL in LLMs
 description: >-
-  [ICML 2026][Reinforcement Learning][RLVR] A generated trajectory is viewed as an attention-induced Directed Acyclic Graph (DAG). A Doob-h-like reweighting is applied to filter information paths that "actually flow toward the answer," and the "flow throughput" of each token is used for non-uniform credit assignment in GRPO. This concentrates training signals on
+  [ICML2026][Reinforcement Learning][Credit Assignment] A generated trajectory is viewed as an attention-induced Directed Acyclic Graph (DAG). A Doob-h-like reweighting is applied to filter information paths that "actually flow toward the answer," and the "flow throughput" of each token is used for non-uniform credit assignment in GRPO. This concentrates training signals on a few critical tokens supporting the answer, consistently outperforming GRPO and various point-wise heuri…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Credit Assignment"
+  - "Attention Information Flow"
+  - "RLVR"
+  - "GRPO"
+  - "Reasoning Skeleton"
 date: 2026-05-08
-content_hash: 8583f56c0149e6ce
+content_hash: 24738d567c1f1efe
 ---
+
 # How Does Reasoning Flow? Tracing Attention-Induced Information Flow for Targeted RL in LLMs
 
 **Conference**: ICML2026  
@@ -136,15 +140,14 @@ The improvement consistently holds across tasks and architectures: Countdown sym
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?](../../ICLR2026/reinforcement_learning/rl_grokking_recipe_how_does_rl_unlock_and_transfer_new_algorithms_in_llms.md)
 - [\[ICML 2026\] Perceptual Flow Network for Visually Grounded Reasoning](perceptual_flow_network_for_visually_grounded_reasoning.md)
 - [\[ICML 2026\] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies](reverse_flow_matching_a_unified_framework_for_online_reinforcement_learning_with.md)
-- [\[ICML 2026\] Flow-Equivariant World Models: Memory for Partially Observed Dynamic Environments](flow_equivariant_world_models_memory_for_partially_observed_dynamic_environments.md)
-- [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](../../ICLR2026/reinforcement_learning/attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
-- [\[ICLR 2026\] InFOM: Intention-Conditioned Flow Occupancy Models](../../ICLR2026/reinforcement_learning/infom_intention_flow_occupancy.md)
+- [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
+- [\[ICML 2026\] Fast and Highly Expressive Policy Learning for Offline Reinforcement Learning via Bootstrapped Flow Q-Learning](fast_and_highly_expressive_policy_learning_for_offline_reinforcement_learning_vi.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation
 description: >-
-  [ICCV 2025][3D Vision][3D anomaly detection] This paper proposes the PASDF framework, which achieves continuous geometric representation via a pose-aware signed distance function (SDF)…
+  [ICCV 2025][3D Vision][3D anomaly detection] This paper proposes the PASDF framework, which achieves continuous geometric representation via a pose-aware signed distance function (SDF), unifying 3D anomaly detection and repair tasks, and attains state-of-the-art performance on Real3D-AD and Anomaly-ShapeNet.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "anomaly repair"
   - "point cloud"
 date: 2026-05-08
-content_hash: 6552b6eee26b981d
+content_hash: 9a71341bb0250351
 ---
 
 # Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation
@@ -210,7 +210,7 @@ Incorporating PAM into PatchCore(FPFH) yields a remarkable gain of 24.6% in O-AU
 - [\[ICCV 2025\] SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark](sim3d_single-instance_multiview_multimodal_and_multisetup_3d_anomaly_detection_b.md)
 - [\[ICCV 2025\] TAR3D: Creating High-Quality 3D Assets via Next-Part Prediction](tar3d_creating_high-quality_3d_assets_via_next-part_prediction.md)
 - [\[ICCV 2025\] Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction](momentum-gs_momentum_gaussian_self-distillation_for_high-quality_large_scene_rec.md)
-- [\[ICCV 2025\] Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework](bridging_diffusion_models_and_3d_representations_a_3d_consistent_super-resolutio.md)
+- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](../../CVPR2026/3d_vision/geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
 
 </div>
 

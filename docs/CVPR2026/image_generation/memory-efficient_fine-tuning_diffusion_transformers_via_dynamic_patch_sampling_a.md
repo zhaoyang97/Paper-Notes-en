@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The DiT-BlockSkip framework is proposed, reducing LoRA fine-tuning VRAM on FLUX by approximately 50% through timestep-aware dynamic patch sampling (low-resolution training with dynamically adjusted cropping ranges) and a block skipping strategy based on cross-attention analysis for key block selection and residual feat
+  [CVPR 2026][Image Generation][Diffusion Transformer] The DiT-BlockSkip framework is proposed, reducing LoRA fine-tuning VRAM on FLUX by approximately 50% through timestep-aware dynamic patch sampling (low-resolution training with dynamically adjusted cropping ranges) and a block skipping strategy based on cross-attention analysis for key block selection and residual feature pre-computation, while maintaining personalized generation quality comparable to standard LoRA.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Efficient Fine-Tuning"
+  - "Dynamic Patch Sampling"
+  - "Block Skipping"
+  - "Personalized Generation"
 date: 2026-05-08
-content_hash: dfb204573d9da00b
+content_hash: 1fb51d148401b53b
 ---
+
 # Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping
 
 **Conference**: CVPR 2026  
@@ -154,7 +160,7 @@ The training objective is the standard conditional flow matching loss, consisten
 - [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
 - [\[ECCV 2024\] Memory-Efficient Fine-Tuning for Quantized Diffusion Model](../../ECCV2024/image_generation/memory-efficient_fine-tuning_for_quantized_diffusion_model.md)
 - [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
-- [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
+- [\[CVPR 2026\] Reward Sharpness-Aware Fine-Tuning for Diffusion Models](reward_sharpness-aware_fine-tuning_for_diffusion_models.md)
 
 </div>
 

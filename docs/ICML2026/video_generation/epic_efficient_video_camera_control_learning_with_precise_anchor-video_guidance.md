@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EPiC: Efficient Video Camera Control Learning with Precise Anchor-Video Guidance
 description: >-
-  [ICML 2026][Video Generation][anchor video] EPiC utilizes a "first-frame visibility mask" approach to construct pixel-aligned anchor videos directly from arbitrary in-the-wild videos. By pairing this with Anchor-ControlNet—comprising only 26M parameters (<1% of the backbone) and operating exclusively on visible regions—Ours achieves SOTA I2V camera control preci
+  [ICML 2026][Video Generation][anchor video] EPiC utilizes a "first-frame visibility mask" approach to construct pixel-aligned anchor videos directly from arbitrary in-the-wild videos. By pairing this with Anchor-ControlNet—comprising only 26M parameters (<1% of the backbone) and operating exclusively on visible regions—Ours achieves SOTA I2V camera control precision and zero-shot generalization to V2V. This is accomplished while freezing the CogVideoX-5B-I2V backbone…
 tags:
-  - ICML 2026
-  - Video Generation
-  - anchor video
-  - Anchor-ControlNet
+  - "ICML 2026"
+  - "Video Generation"
+  - "anchor video"
+  - "visibility mask"
+  - "Anchor-ControlNet"
+  - "I2V/V2V camera control"
+  - "lightweight adaptation"
 date: 2026-05-08
-content_hash: d72c0a6107e1d715
+content_hash: c36fc4c24ee38665
 ---
+
 # EPiC: Efficient Video Camera Control Learning with Precise Anchor-Video Guidance
 
 **Conference**: ICML 2026  
@@ -130,7 +134,7 @@ Ours ranks first across all 6 camera/quality metrics with the lowest standard de
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -138,7 +142,7 @@ Ours ranks first across all 6 camera/quality metrics with the lowest standard de
 - [\[CVPR 2025\] GEN3C: 3D-Informed World-Consistent Video Generation with Precise Camera Control](../../CVPR2025/video_generation/gen3c_3d-informed_world-consistent_video_generation_with_precise_camera_control.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](../../ICLR2026/video_generation/frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
 - [\[ICML 2026\] iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance](itryon_mastering_interactive_video_virtual_try-on_with_spatial-semantic_guidance.md)
-- [\[ICLR 2026\] Learning Video Generation for Robotic Manipulation with Collaborative Trajectory Control](../../ICLR2026/video_generation/learning_video_generation_for_robotic_manipulation_with_collaborative_trajectory.md)
+- [\[ICLR 2026\] PreciseCache: Precise Feature Caching for Efficient and High-fidelity Video Generation](../../ICLR2026/video_generation/precisecache_precise_feature_caching_for_efficient_and_high-fidelity_video_gener.md)
 
 </div>
 

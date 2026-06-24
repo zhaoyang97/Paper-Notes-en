@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PairFlow: Closed-Form Source-Target Coupling for Few-Step Generation in Discrete Flow Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] PairFlow utilizes a closed-form discrete flow velocity field (determined by Hamming distance) to invert source samples from data. With preprocessing costs less than 1.7% of training time, it enables discrete flow models to achieve few-step generation performance that matches or exceeds distillation methods requiring pr
+  [ICLR 2026][Image Generation][Discrete Flow Models] PairFlow utilizes a closed-form discrete flow velocity field (determined by Hamming distance) to invert source samples from data. With preprocessing costs less than 1.7% of training time, it enables discrete flow models to achieve few-step generation performance that matches or exceeds distillation methods requiring pretrained teachers and fine-tuning.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Discrete Flow Models"
+  - "Few-step sampling"
+  - "Closed-form velocity field"
+  - "Source-target pairing"
+  - "Teacher-free"
 date: 2026-05-08
-content_hash: da5ca91af5972a78
+content_hash: fc6f75b6f5477d43
 ---
+
 # PairFlow: Closed-Form Source-Target Coupling for Few-Step Generation in Discrete Flow Models
 
 **Conference**: ICLR 2026  
@@ -138,10 +144,20 @@ PairFlow's preprocessing is **28.6× to 35×** faster than DCD/ReDi on MNIST, sa
 - Value: ⭐⭐⭐⭐⭐ Reduces acceleration cost to ~1.7% and highlights pair quality as a critical variable for discrete flow acceleration.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](../../CVPR2026/image_generation/closed-form_concept_erasure_via_double_projections.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
+- [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
+- [\[ICLR 2026\] DistillKac: Few-Step Image Generation via Damped Wave Equations](distillkac_few-step_image_generation_via_damped_wave_equations.md)
+- [\[ICLR 2026\] BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation](bézierflow_learning_bézier_stochastic_interpolant_schedulers_for_few-step_genera.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](../../CVPR2026/image_generation/closed-form_concept_erasure_via_double_projections.md)

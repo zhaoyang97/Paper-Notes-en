@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training
 description: >-
-  [NeurIPS 2025][LLM Pretraining][data mixture] NVIDIA proposes the CLIMB framework, which automatically discovers optimal pre-training data mixture ratios through embedding-based clustering and iterative bootstrapped sear…
+  [NeurIPS 2025][LLM Pretraining][data mixture] NVIDIA proposes the CLIMB framework, which automatically discovers optimal pre-training data mixture ratios through embedding-based clustering and iterative bootstrapped search. On a 1B-scale model, CLIMB outperforms Llama-3.2-1B by 2.0%, and releases the 1.2T-token ClimbLab corpus and the 400B-token ClimbMix high-quality dataset.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "iterative optimization"
   - "LLM"
 date: 2026-05-08
-content_hash: 0ef07a1f2931f79f
+content_hash: 64d6ecb038e25a9b
 ---
 
 # Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training
@@ -151,11 +151,11 @@ Trained on 400B tokens, the 950M CLIMB model achieves an average score of 53.54%
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)
 - [\[NeurIPS 2025\] CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data](climb_class-imbalanced_learning_benchmark_on_tabular_data.md)
+- [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)
+- [\[ICML 2025\] Metadata Conditioning Accelerates Language Model Pre-training](../../ICML2025/llm_pretraining/metadata_conditioning_accelerates_language_model_pre-training.md)
 - [\[NeurIPS 2025\] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training](through_the_river_understanding_the_benefit_of_schedule-free_methods_for_languag.md)
-- [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_pretraining/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
-- [\[NeurIPS 2025\] Final-Model-Only Data Attribution with a Unifying View of Gradient-Based Methods](final-model-only_data_attribution_with_a_unifying_view_of_gradient-based_methods.md)
+- [\[ACL 2025\] Meta-rater: A Multi-dimensional Data Selection Method for Pre-training Language Models](../../ACL2025/llm_pretraining/metarater_a_multidimensional_data_selection_method.md)
 
 </div>
 

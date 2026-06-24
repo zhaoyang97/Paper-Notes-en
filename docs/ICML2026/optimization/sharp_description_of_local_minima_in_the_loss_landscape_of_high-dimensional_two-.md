@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sharp Description of Local Minima in the Loss Landscape of High-Dimensional Two-Layer ReLU Networks
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] Under the high-dimensional Gaussian input setting for teacher-student two-layer ReLU networks, this paper provides a hierarchical classification of all local minima of the population loss using a set of exact low-dimensional summary statistics equations regarding weight overlaps $(Q,R)$. It characterizes how over-param
+  [ICML2026][Optimization][Loss Landscape] Under the high-dimensional Gaussian input setting for teacher-student two-layer ReLU networks, this paper provides a hierarchical classification of all local minima of the population loss using a set of exact low-dimensional summary statistics equations regarding weight overlaps $(Q,R)$. It characterizes how over-parameterization transforms low-order spurious minima into saddle points while retaining high-order minima…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Loss Landscape"
+  - "ReLU two-layer networks"
+  - "Summary statistics"
+  - "Over-parameterization"
+  - "Fixed point"
 date: 2026-05-08
-content_hash: aee943eb0f0aaef8
+content_hash: 05767ab453fe7628
 ---
+
 # Sharp Description of Local Minima in the Loss Landscape of High-Dimensional Two-Layer ReLU Networks
 
 **Conference**: ICML2026  
@@ -115,11 +121,11 @@ Loss is $\mathcal{L}(W;W^*)=\frac{1}{2}\mathbb{E}_x[(\phi(x,W)-\phi(x,W^*))^2]$.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Deep-ICE: The First Globally Optimal Algorithm for Minimizing 0–1 Loss in Two-Layer ReLU and Maxout Networks](../../ICLR2026/optimization/deep-ice_the_first_globally_optimal_algorithm_for_empirical_risk_minimization_of.md)
 - [\[ICLR 2026\] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks](../../ICLR2026/optimization/directional_convergence_benign_overfitting_of_gradient_descent_in_leaky_relu_two.md)
 - [\[CVPR 2026\] Globscope: Toward a Global View of the Loss Landscape](../../CVPR2026/optimization/globscope_toward_a_global_view_of_the_loss_landscape.md)
-- [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](../../AAAI2026/optimization/on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
 - [\[ICML 2026\] Taming the Loss Landscape of PINNs with Noisy Feynman-Kac Supervision: Operator Preconditioning and Non-Asymptotic Error Bounds](taming_the_loss_landscape_of_pinns_with_noisy_feynman-kac_supervision_operator_p.md)
-- [\[ICLR 2026\] Rolling Ball Optimizer: Learning by Ironing Out Loss Landscape Wrinkles](../../ICLR2026/optimization/rolling_ball_optimizer_learning_by_ironing_out_loss_landscape_wrinkles.md)
+- [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](../../AAAI2026/optimization/on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Physically-Guided Optical Inversion Enable Non-Contact Side-Channel Attack on Isolated Screens
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper demonstrates for the first time that wall diffuse scattering can serve as an "optical projection side-channel." It proposes IR4Net, a physically-guided inversion network that reconstructs display content from air-gapped screens using only passively captured scattering spots, without line-of-sight, electromag
+  [ICLR 2026][AI Safety][side-channel attack] This paper demonstrates for the first time that wall diffuse scattering can serve as an "optical projection side-channel." It proposes IR4Net, a physically-guided inversion network that reconstructs display content from air-gapped screens using only passively captured scattering spots, without line-of-sight, electromagnetic leakage, or network connectivity.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "side-channel attack"
+  - "optical projection"
+  - "physically-guided inversion"
+  - "screen content reconstruction"
+  - "diffuse scattering"
 date: 2026-05-08
-content_hash: 897a29f2de2481cb
+content_hash: 36a13d49ceb90086
 ---
+
 # Physically-Guided Optical Inversion Enable Non-Contact Side-Channel Attack on Isolated Screens
 
 **Conference**: ICLR 2026  
@@ -119,15 +125,15 @@ Replacing the PRIrr iterative update strategy with standard momentum schemes (ac
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Concept-Aware Privacy Mechanisms for Defending Embedding Inversion Attacks](concept-aware_privacy_mechanisms_for_defending_embedding_inversion_attacks.md)
 - [\[CVPR 2026\] What Your Features Reveal: Data-Efficient Black-Box Feature Inversion Attack for Split DNNs](../../CVPR2026/ai_safety/what_your_features_reveal_data-efficient_black-box_feature_inversion_attack_for_.md)
 - [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
 - [\[NeurIPS 2025\] Exploration of Incremental Synthetic Non-Morphed Images for Single Morphing Attack Detection](../../NeurIPS2025/ai_safety/exploration_of_incremental_synthetic_non-morphed_images_for_single_morphing_atta.md)
 - [\[ICLR 2026\] Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling](robust_fine-tuning_from_non-robust_pretrained_models_mitigating_suboptimal_trans.md)
-- [\[ICML 2026\] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting](../../ICML2026/ai_safety/timeguard_channel-wise_pool_training_for_backdoor_defense_in_time_series_forecas.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper characterizes the dynamic upper and lower bounds of forgetting and generalization error "during training" (rather than after convergence) under the NTK paradigm. It proves that **lowering the Lipschitz constant of the loss with respect to predictions** and **minimizing the cross-task kernel to zero** simulta
+  [ICLR 2026][Continual Learning Theory][Continual Learning] This paper characterizes the dynamic upper and lower bounds of forgetting and generalization error "during training" (rather than after convergence) under the NTK paradigm. It proves that **lowering the Lipschitz constant of the loss with respect to predictions** and **minimizing the cross-task kernel to zero** simultaneously mitigate forgetting and improve generalization. Based on this…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Continual Learning Theory"
+  - "Learning Theory"
+  - "Continual Learning"
+  - "Neural Tangent Kernel (NTK)"
+  - "Catastrophic Forgetting"
+  - "Generalization Bounds"
+  - "Orthogonal Gradient Descent"
 date: 2026-05-08
-content_hash: c1f63ffa2b60f7ec
+content_hash: 54191b0591a0d0db
 ---
+
 # Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel
 
 **Conference**: ICLR 2026  
@@ -159,11 +166,11 @@ Incremental mechanism addition:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Navigating the Latent Space Dynamics of Neural Models](navigating_the_latent_space_dynamics_of_neural_models.md)
-- [\[ICLR 2026\] Subspace Kernel Learning on Tensor Sequences](subspace_kernel_learning_on_tensor_sequences.md)
+- [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](training-free_determination_of_network_width_via_neural_tangent_kernel.md)
 - [\[ICLR 2026\] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization](memory-statistics_tradeoff_in_continual_learning_with_structural_regularization.md)
-- [\[ICLR 2026\] Barriers for Learning in an Evolving World: Mathematical Understanding of Loss of Plasticity](barriers_for_learning_in_an_evolving_world_mathematical_understanding_of_loss_of.md)
-- [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
+- [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
+- [\[ICML 2026\] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation](../../ICML2026/learning_theory/catastrophic_forgetting_is_low-rank_a_function-space_theory_for_continual_adapta.md)
+- [\[ICLR 2026\] PAC-Bayes Bounds for Cumulative Loss in Continual Learning](pac-bayes_bounds_for_cumulative_loss_in_continual_learning.md)
 
 </div>
 

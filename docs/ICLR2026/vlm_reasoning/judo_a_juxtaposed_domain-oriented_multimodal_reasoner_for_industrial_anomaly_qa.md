@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] JUDO: A Juxtaposed Domain-Oriented Multimodal Reasoner for Industrial Anomaly QA
 description: >-
-  [ICLR 2026][vlm_reasoning][GRPO] JUDO utilizes "juxtaposed normal-defect images" for fine-grained segmentation reasoning, internalizes industrial domain knowledge into model parameters via SFT, and unifies visual grounding with domain semantics using multi-reward GRPO. Using a 7B model, it outperforms GPT-4o and Qwen2.5-VL on the MMAD benchmark.
+  [ICLR 2026][VLM Reasoning][Industrial Anomaly Detection] JUDO utilizes "juxtaposed normal-defect images" for fine-grained segmentation reasoning, internalizes industrial domain knowledge into model parameters via SFT, and unifies visual grounding with domain semantics using multi-reward GRPO. Using a 7B model, it outperforms GPT-4o and Qwen2.5-VL on the MMAD benchmark.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Industrial Anomaly Detection"
+  - "Large Multimodal Models"
+  - "Domain Knowledge Internalization"
+  - "Juxtaposed Reasoning"
+  - "Anomaly Segmentation"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 25a1844b87892e7c
+content_hash: 6a918ff70e1c002f
 ---
+
 # JUDO: A Juxtaposed Domain-Oriented Multimodal Reasoner for Industrial Anomaly QA
 
 **Conference**: ICLR 2026  
@@ -110,10 +116,10 @@ JUDO achieves an average accuracy of 81.20% with a 7B parameter scale, surpassin
 ## Related Papers
 
 - [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](reasoning-driven_multimodal_llm_for_domain_generalization.md)
+- [\[ICLR 2026\] Generative Universal Verifier as Multimodal Meta-Reasoner](generative_universal_verifier_as_multimodal_meta-reasoner.md)
 - [\[ICLR 2026\] Not Search, But Scan: Benchmarking MLLMs on Scan-Oriented Academic Paper Reasoning](not_search_but_scan_benchmarking_mllms_on_scan-oriented_academic_paper_reasoning.md)
 - [\[CVPR 2026\] IPR-1: Interactive Physical Reasoner](../../CVPR2026/vlm_reasoning/ipr-1_interactive_physical_reasoner.md)
 - [\[CVPR 2026\] VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues](../../CVPR2026/vlm_reasoning/vrr-qa_visual_relational_reasoning_in_videos_beyond_explicit_cues.md)
-- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](../../CVPR2026/vlm_reasoning/dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
 
 </div>
 

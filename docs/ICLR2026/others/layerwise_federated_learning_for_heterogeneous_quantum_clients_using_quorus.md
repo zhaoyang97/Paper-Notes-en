@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Layerwise Federated Learning for Heterogeneous Quantum Clients using Quorus
 description: >-
-  [ICLR 2026][Others][Paper Note] Targeting Quantum Federated Learning (QFL) scenarios where different clients can only support different circuit depths, Quorus employs layerwise loss and reverse distillation to enable collaborative training across quantum models of varying depths. It proposes four quantum classifier designs (Layerwise/Ancilla/Blocking
+  [ICLR 2026][Quantum Federated Learning] Targeting Quantum Federated Learning (QFL) scenarios where different clients can only support different circuit depths, Quorus employs layerwise loss and reverse distillation to enable collaborative training across quantum models of varying depths. It proposes four quantum classifier designs (Layerwise/Ancilla/Blocking/Funnel) with distinct trade-offs in shots, qubits, mid-circuit measurement, and Hilbert space…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Quantum Federated Learning"
+  - "Heterogeneous Clients"
+  - "Layerwise Loss"
+  - "Reverse Distillation"
+  - "Parameterized Quantum Circuits"
+  - "Barren Plateaus"
 date: 2026-05-08
-content_hash: 12701b604585419e
+content_hash: 0954527c4b13ac29
 ---
+
 # Layerwise Federated Learning for Heterogeneous Quantum Clients using Quorus
 
 **Conference**: ICLR 2026  

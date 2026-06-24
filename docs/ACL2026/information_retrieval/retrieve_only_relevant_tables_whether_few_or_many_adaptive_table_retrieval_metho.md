@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Retrieve Only Relevant Tables Whether Few or Many: Adaptive Table Retrieval Method
 description: >-
-  [ACL 2026][Information Retrieval & RAG][adaptive retrieval] This paper proposes Adaptive Table Retrieval (ATR), which replaces fixed top-k table retrieval with a query-adaptive threshold. By combining relevance calibration, inter-table semantic grouping, and sliding-window reranking, it simultaneously improves retrieval recall, text-to-SQL execution accuracy, and inference effi
+  [ACL2026 Findings][Information Retrieval & RAG][adaptive retrieval] This paper proposes Adaptive Table Retrieval (ATR), which replaces fixed top-k table retrieval with a query-adaptive threshold. By combining relevance calibration, inter-table semantic grouping, and sliding-window reranking, it simultaneously improves retrieval recall, text-to-SQL execution accuracy, and inference efficiency on Spider, BIRD, and Spider 2.0.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - adaptive retrieval
-  - table retrieval
-  - text-to-SQL
-  - thresholding
-  - sliding-window reranking
+  - "ACL2026 Findings"
+  - "Information Retrieval & RAG"
+  - "adaptive retrieval"
+  - "table retrieval"
+  - "text-to-SQL"
+  - "thresholding"
+  - "sliding-window reranking"
 date: 2026-05-08
-content_hash: 2819bd65bfdcf50d
+content_hash: d3b4b02fb1c5de53
 ---
+
 # Retrieve Only Relevant Tables Whether Few or Many: Adaptive Table Retrieval Method
 
 **Conference**: ACL2026 Findings  
@@ -135,10 +136,10 @@ ATR is trained only on the Spider and BIRD training sets and does not use Spider
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond Text-Only: Towards Multimodal Table Retrieval in Open-World](../../ICLR2026/information_retrieval/beyond_text-only_towards_multimodal_table_retrieval_in_open-world.md)
+- [\[ICLR 2026\] DeepRAG: Thinking to Retrieve Step by Step for Large Language Models](../../ICLR2026/information_retrieval/deeprag_thinking_to_retrieve_step_by_step_for_large_language_models.md)
 - [\[ACL 2026\] CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG](coral_adaptive_retrieval_loop_for_culturally-aligned_multilingual_rag.md)
 - [\[ACL 2026\] REZE: Representation Regularization for Domain-adaptive Text Embedding Pre-finetuning](reze_representation_regularization_for_domain-adaptive_text_embedding_pre-finetu.md)
 - [\[CVPR 2025\] COBRA: COmBinatorial Retrieval Augmentation for Few-Shot Adaptation](../../CVPR2025/information_retrieval/cobra_combinatorial_retrieval_augmentation_for_few-shot_adaptation.md)
-- [\[CVPR 2025\] Few-Shot Recognition via Stage-Wise Retrieval-Augmented Finetuning](../../CVPR2025/information_retrieval/few-shot_recognition_via_stage-wise_retrieval-augmented_finetuning.md)
 
 </div>
 

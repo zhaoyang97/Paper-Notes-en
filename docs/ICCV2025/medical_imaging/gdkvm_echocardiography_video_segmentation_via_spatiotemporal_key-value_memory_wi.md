@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule
 description: >-
-  [ICCV 2025][Medical Imaging][echocardiography segmentation] This paper proposes GDKVM, an echocardiography video segmentation architecture based on linear key-value association and the gated delta rule…
+  [ICCV 2025][Medical Imaging][echocardiography segmentation] This paper proposes GDKVM, an echocardiography video segmentation architecture based on linear key-value association and the gated delta rule, achieving state-of-the-art performance on CAMUS and EchoNet-Dynamic through efficient memory management and multi-scale feature fusion while maintaining real-time inference speed.
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "gated delta rule"
   - "video segmentation"
 date: 2026-05-08
-content_hash: fcad391b99cca4a0
+content_hash: 00d32da3b93821e7
 ---
 
 # GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule
@@ -163,11 +163,11 @@ Internal ablation of GDR (state update strategies):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Semi-supervised Echocardiography Video Segmentation via Anchor Semantic Awareness and Continuous Pseudo-label Reforging](../../CVPR2026/medical_imaging/semi-supervised_echocardiography_video_segmentation_via_anchor_semantic_awarenes.md)
+- [\[CVPR 2026\] OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement](../../CVPR2026/medical_imaging/osa_echocardiography_video_segmentation_via_orthogonalized_state_update_and_anat.md)
+- [\[CVPR 2026\] EchoVDiff: Cardiac-Cycle Echocardiography Video Generation from Arbitrary Single Frame](../../CVPR2026/medical_imaging/echovdiff_cardiac-cycle_echocardiography_video_generation_from_arbitrary_single_.md)
+- [\[CVPR 2025\] EchoONE: Segmenting Multiple Echocardiography Planes in One Model](../../CVPR2025/medical_imaging/echoone_segmenting_multiple_echocardiography_planes_in_one_model.md)
 - [\[ICCV 2025\] PVChat: Personalized Video Chat with One-Shot Learning](pvchat_personalized_video_chat_with_one-shot_learning.md)
-- [\[ICCV 2025\] SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications](scivid_cross-domain_evaluation_of_video_models_in_scientific_applications.md)
-- [\[ICCV 2025\] ProGait: A Multi-Purpose Video Dataset and Benchmark for Transfemoral Prosthesis Users](progait_a_multi-purpose_video_dataset_and_benchmark_for_transfemoral_prosthesis_.md)
-- [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](../../CVPR2026/medical_imaging/momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
-- [\[ICCV 2025\] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction](neurons_emulating_the_human_visual_cortex_improves_fidelity_and_interpretability.md)
 
 </div>
 

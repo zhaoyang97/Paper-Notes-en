@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SkyLadder: Better and Faster Pretraining via Context Window Scheduling
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Context window scheduling] SkyLadder, a progressive short-to-long context window scheduling strategy, achieves superior pretraining efficiency (22% training time saved) and improved model p…
+  [NeurIPS 2025][LLM Efficiency][Context window scheduling] SkyLadder, a progressive short-to-long context window scheduling strategy, achieves superior pretraining efficiency (22% training time saved) and improved model performance (+3.7%) under a fixed compute budget, challenging the prevailing belief that "longer context = better performance."
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "attention mechanism"
   - "training stability"
 date: 2026-05-08
-content_hash: a7e3d7cc458d6cc8
+content_hash: 4080d07696a9656b
 ---
 
 # SkyLadder: Better and Faster Pretraining via Context Window Scheduling
@@ -131,11 +131,11 @@ Gains increase with model size. For the 32K context setting: 22.2% training time
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Advancing Expert Specialization for Better MoE](advancing_expert_specialization_for_better_moe.md)
+- [\[ACL 2025\] Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference](../../ACL2025/llm_efficiency/smarter_better_faster_longer_a_modern_bidirectional_encoder_for_fast_memory_effi.md)
 - [\[NeurIPS 2025\] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training](flowmoe_a_scalable_pipeline_scheduling_framework_for_distributed_mixture-of-expe.md)
-- [\[NeurIPS 2025\] Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context](technical_debt_in_in-context_learning_diminishing_efficiency_in_long_context.md)
-- [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
-- [\[NeurIPS 2025\] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM](hierarchical_balance_packing_towards_efficient_supervised_fine-tuning_for_long-c.md)
+- [\[NeurIPS 2025\] Advancing Expert Specialization for Better MoE](advancing_expert_specialization_for_better_moe.md)
+- [\[ICML 2025\] EasyInv: Toward Fast and Better DDIM Inversion](../../ICML2025/llm_efficiency/easyinv_toward_fast_and_better_ddim_inversion.md)
+- [\[ICLR 2026\] Stacked From One: Multi-Scale Self-Injection for Context Window Extension](../../ICLR2026/llm_efficiency/stacked_from_one_multi-scale_self-injection_for_context_window_extension.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Are Deep Speech Denoising Models Robust to Adversarial Noise?
 description: >-
-  [ICLR 2026][Image Restoration][DNS] This paper presents the first systematic evaluation of the robustness of 4 SOTA Deep Speech Denoising (DNS) models against adversarial noise. By generating imperceptible adversarial perturbations through psychoacoustic-constrained PGD attacks, the authors demonstrate that Demucs, Full-SubNet+, FRCRN, and MP-SENet can b
+  [ICLR 2026][Image Restoration][Adversarial Attack] This paper presents the first systematic evaluation of the robustness of 4 SOTA Deep Speech Denoising (DNS) models against adversarial noise. By generating imperceptible adversarial perturbations through psychoacoustic-constrained PGD attacks, the authors demonstrate that Demucs, Full-SubNet+, FRCRN, and MP-SENet can be forced to output completely unintelligible gibberish. The experiments cover various acoustic conditions and…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - DNS
-  - PGD
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Adversarial Attack"
+  - "Speech Denoising"
+  - "Psychoacoustic Masking"
+  - "DNS"
+  - "Adversarial Robustness"
+  - "PGD"
 date: 2026-05-08
-content_hash: 0ccf4ae25319c8f3
+content_hash: 00f9b10bfcc1595d
 ---
+
 # Are Deep Speech Denoising Models Robust to Adversarial Noise?
 
 **Conference**: ICLR 2026  

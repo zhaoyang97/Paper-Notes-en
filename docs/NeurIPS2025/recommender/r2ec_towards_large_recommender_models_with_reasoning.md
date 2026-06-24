@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] R²ec: Towards Large Recommender Models with Reasoning
 description: >-
-  [NeurIPS 2025][Recommender Systems][LLM Reasoning] This paper proposes R²ec, the first unified large recommender model that endogenously integrates reasoning capabilities…
+  [NeurIPS 2025][Recommender Systems][LLM Reasoning] This paper proposes R²ec, the first unified large recommender model that endogenously integrates reasoning capabilities, achieving joint reasoning chain generation and efficient item prediction via a dual-head architecture, and introduces the RecPO reinforcement learning framework to jointly optimize reasoning and recommendation objectives without any annotated reasoning data.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -11,7 +11,7 @@ tags:
   - "Dual-Head Architecture"
   - "Test-Time Scaling"
 date: 2026-05-08
-content_hash: 14fa4c951e03964d
+content_hash: 01bc2b1679888096
 ---
 
 # R²ec: Towards Large Recommender Models with Reasoning
@@ -152,9 +152,9 @@ R²ec improvements over the best baseline: H@5 on CDs +63.7%, N@10 on CDs +72.3%
 
 - [\[NeurIPS 2025\] Think before Recommendation: Autonomous Reasoning-enhanced Recommender](think_before_recommendation_autonomous_reasoning-enhanced_recommender.md)
 - [\[NeurIPS 2025\] Inference-Time Reward Hacking in Large Language Models](inference-time_reward_hacking_in_large_language_models.md)
-- [\[AAAI 2026\] Hard vs. Noise: Resolving Hard-Noisy Sample Confusion in Recommender Systems via Large Language Models](../../AAAI2026/recommender/hard_vs_noise_resolving_hard-noisy_sample_confusion_in_recommender_systems_via_l.md)
+- [\[ICLR 2026\] RPM: Reasoning-Level Personalization for Black-Box Large Language Models](../../ICLR2026/recommender/rpm_reasoning-level_personalization_for_black-box_large_language_models.md)
 - [\[NeurIPS 2025\] Radial Neighborhood Smoothing Recommender System](radial_neighborhood_smoothing_recommender_system.md)
-- [\[ICLR 2026\] From Evaluation to Defense: Advancing Safety in Video Large Language Models](../../ICLR2026/recommender/from_evaluation_to_defense_advancing_safety_in_video_large_language_models.md)
+- [\[AAAI 2026\] Hard vs. Noise: Resolving Hard-Noisy Sample Confusion in Recommender Systems via Large Language Models](../../AAAI2026/recommender/hard_vs_noise_resolving_hard-noisy_sample_confusion_in_recommender_systems_via_l.md)
 
 </div>
 

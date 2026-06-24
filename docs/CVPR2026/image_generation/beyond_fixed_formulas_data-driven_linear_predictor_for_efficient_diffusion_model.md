@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Fixed Formulas: Data-Driven Linear Predictor for Efficient Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] This paper proves that "predictive feature caching" methods such as TaylorSeer and FoCa mathematically degenerate into **fixed-coefficient linear combinations** of historical features. Demonstrating that DiT feature trajectories are inherently highly linearly reconstructible, the authors propose $L^2P$—replacing hand-d
+  [CVPR 2026][Image Generation][Feature Caching] This paper proves that "predictive feature caching" methods such as TaylorSeer and FoCa mathematically degenerate into **fixed-coefficient linear combinations** of historical features. Demonstrating that DiT feature trajectories are inherently highly linearly reconstructible, the authors propose $L^2P$—replacing hand-derived fixed coefficients with a set of **learnable linear weights for each timestep**. Using only 50 images and…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Feature Caching"
+  - "Diffusion Transformer"
+  - "Learnable Linear Prediction"
+  - "Training-free Acceleration"
+  - "Feature Prediction"
 date: 2026-05-08
-content_hash: 73d64a9c91497f79
+content_hash: d3e88f97c6592ae6
 ---
+
 # Beyond Fixed Formulas: Data-Driven Linear Predictor for Efficient Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -134,6 +139,7 @@ Training Data Semantics (DrawBench, vs. TaylorSeer):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

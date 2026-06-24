@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Generalized Parallel Scaling with Interdependent Generations
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] This paper proposes **Bridge**: treating $N$ parallel sampling trajectories of a single prompt as a unified 3-D tensor rather than independent slices. By performing "cross-sample attention" along the batch axis at each time step, $N$ generations exchange information. Adding only 2.8%–5.1% parameters improves the relati
+  [ICLR 2026][Reasoning][Parallel Sampling] This paper proposes **Bridge**: treating $N$ parallel sampling trajectories of a single prompt as a unified 3-D tensor rather than independent slices. By performing "cross-sample attention" along the batch axis at each time step, $N$ generations exchange information. Adding only 2.8%–5.1% parameters improves the relative gain of RLVR by up to 39%, with a single training session generalizing to any generation width.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Parallel Sampling"
+  - "Test-time Scaling"
+  - "RLVR"
+  - "Cross-sample Attention"
+  - "Tensor Perspective"
 date: 2026-05-08
-content_hash: 9328f1923b8a4941
+content_hash: 7ddf5526b66bdc34
 ---
+
 # Generalized Parallel Scaling with Interdependent Generations
 
 **Conference**: ICLR 2026  
@@ -110,11 +115,11 @@ Bridge improves the relative gain over the base model by **26% / 39% / 34%** mor
 
 ## Related Papers
 
+- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](../../ACL2026/llm_reasoning/parallel_test-time_scaling_for_latent_reasoning_models.md)
 - [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
 - [\[ICLR 2026\] Mode-conditioning unlocks superior test-time compute scaling](mode-conditioning_unlocks_superior_test-time_compute_scaling.md)
-- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](../../ACL2026/llm_reasoning/parallel_test-time_scaling_for_latent_reasoning_models.md)
 - [\[ICLR 2026\] Think in Parallel, Answer as One: Logit Averaging for Open-Ended Reasoning](think_in_parallel_answer_as_one_logit_averaging_for_open-ended_reasoning.md)
-- [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 
 </div>
 

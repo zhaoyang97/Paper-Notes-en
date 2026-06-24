@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Explore and Establish Synergistic Effects between Weight Pruning and Coreset Selection
 description: >-
-  [AAAI 2026][Model Compression][Weight Pruning] This paper presents the first systematic investigation of the interaction between weight pruning and coreset selection…
+  [AAAI 2026][Model Compression][Weight Pruning] This paper presents the first systematic investigation of the interaction between weight pruning and coreset selection, proposing the SWaST mechanism to alternately perform both operations and establish synergistic effects, while introducing a state preservation mechanism to address the "dual loss" problem, achieving up to 17.83% accuracy improvement under 10%–90% FLOPs reduction.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Training Acceleration"
   - "State Preservation Mechanism"
 date: 2026-05-08
-content_hash: fe21faaa21b6a1cf
+content_hash: 9f10e702f5ae1bdd
 ---
 
 # Explore and Establish Synergistic Effects between Weight Pruning and Coreset Selection
@@ -166,11 +166,11 @@ On ResNet-18/CIFAR-10, SWaST-cut achieves 93.15% accuracy at 90% pruning ratio, 
 
 ## Related Papers
 
+- [\[CVPR 2026\] FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection](../../CVPR2026/model_compression/fast_topology-aware_frequency-domain_distribution_matching_for_coreset_selection.md)
 - [\[ICML 2026\] Partial Fusion of Neural Networks: Efficient Tradeoffs Between Ensembles and Weight Aggregation](../../ICML2026/model_compression/partial_fusion_of_neural_networks_efficient_tradeoffs_between_ensembles_and_weig.md)
+- [\[ICML 2026\] ToaSt: Token Channel Selection and Structured Pruning for Efficient ViT](../../ICML2026/model_compression/toast_token_channel_selection_and_structured_pruning_for_efficient_vit.md)
 - [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
-- [\[AAAI 2026\] Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs](dont_start_over_a_cost-effective_framework_for_migrating_personalized_prompts_be.md)
-- [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
-- [\[AAAI 2026\] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning](sharp_eyes_and_memory_for_videollms_information-aware_visual_token_pruning_for_e.md)
+- [\[ACL 2025\] Disentangling the Roles of Representation and Selection in Data Pruning](../../ACL2025/model_compression/disentangling_the_roles_of_representation_and_selection_in_data_pruning.md)
 
 </div>
 

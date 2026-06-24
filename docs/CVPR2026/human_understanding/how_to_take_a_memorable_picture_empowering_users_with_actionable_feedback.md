@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How to Take a Memorable Picture? Empowering Users with Actionable Feedback
 description: >-
-  [CVPR 2026][Human Understanding][MLLM] This paper defines a new task of Memorability Feedback (MemFeed) and proposes MemCoach—a training-free activation steering method for Multimodal Large Language Models (MLLMs). By injecting memorability-aware knowledge into the model's activation space using a teacher-student strategy, it enables MLLMs to generate natur
+  [CVPR 2026][Human Understanding][Image Memorability] This paper defines a new task of Memorability Feedback (MemFeed) and proposes MemCoach—a training-free activation steering method for Multimodal Large Language Models (MLLMs). By injecting memorability-aware knowledge into the model's activation space using a teacher-student strategy, it enables MLLMs to generate natural language actionable suggestions for improving photo memorability.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - MLLM
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Image Memorability"
+  - "Actionable Feedback"
+  - "Activation Steering"
+  - "MLLM"
+  - "Photography Assistance"
 date: 2026-05-08
-content_hash: d308e34ffca33182
+content_hash: ba45bcea59a5d20b
 ---
+
 # How to Take a Memorable Picture? Empowering Users with Actionable Feedback
 
 **Conference**: CVPR 2026  
@@ -135,12 +140,11 @@ Evaluation uses three metrics: **Improvement Ratio (IR)** (ratio of edited image
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
 - [\[ECCV 2024\] How Video Meetings Change Your Expression](../../ECCV2024/human_understanding/how_video_meetings_change_your_expression.md)
+- [\[CVPR 2025\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](../../CVPR2025/human_understanding/reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
 - [\[ICML 2025\] How to Move Your Dragon: Text-to-Motion Synthesis for Large-Vocabulary Objects](../../ICML2025/human_understanding/how_to_move_your_dragon_text-to-motion_synthesis_for_large-vocabulary_objects.md)
 - [\[CVPR 2026\] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation](superman_unifying_skeleton_and_vision_for_human_motion_perception_and_generation.md)
 - [\[CVPR 2026\] Geometric Neural Distance Fields for Learning Human Motion Priors](geometric_neural_distance_fields_for_learning_human_motion_priors.md)

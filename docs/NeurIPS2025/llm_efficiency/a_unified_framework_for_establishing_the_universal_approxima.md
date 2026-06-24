@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Unified Framework for Establishing the Universal Approximation of Transformer-Type Architectures
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Universal Approximation Property] A unified theoretical framework is established for proving the universal approximation property (UAP) of diverse Transformer architectures. The framework r…
+  [NeurIPS 2025][LLM Efficiency][Universal Approximation Property] A unified theoretical framework is established for proving the universal approximation property (UAP) of diverse Transformer architectures. The framework rests on two core conditions — nonlinear affine invariance of the feed-forward layer and token distinguishability of the attention layer — and leverages an analyticity assumption to reduce the latter to verification on only two-sample cases. The framework succe…
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Permutation Equivariance"
   - "Control Theory"
 date: 2026-05-08
-content_hash: deda24503e9cb3be
+content_hash: 82d6290f03a39694
 ---
 
 # A Unified Framework for Establishing the Universal Approximation of Transformer-Type Architectures
@@ -120,11 +120,11 @@ As a purely theoretical paper, the core contribution lies in applying the unifie
 
 ## Related Papers
 
+- [\[CVPR 2025\] Associative Transformer](../../CVPR2025/llm_efficiency/associative_transformer.md)
 - [\[NeurIPS 2025\] Mozart: Modularized and Efficient MoE Training on 3.5D Wafer-Scale Chiplet Architectures](mozart_modularized_and_efficient_moe_training_on_35d_wafer-scale_chiplet_archite.md)
 - [\[NeurIPS 2025\] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training](flowmoe_a_scalable_pipeline_scheduling_framework_for_distributed_mixture-of-expe.md)
-- [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](../../ACL2026/llm_efficiency/comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
-- [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](../../ACL2026/llm_efficiency/tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
-- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](../../ICML2026/llm_efficiency/minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
+- [\[ICML 2025\] Curse of High Dimensionality Issue in Transformer for Long-context Modeling](../../ICML2025/llm_efficiency/curse_of_high_dimensionality_issue_in_transformer_for_long-context_modeling.md)
+- [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](../../ICLR2026/llm_efficiency/universal_model_routing_for_efficient_llm_inference.md)
 
 </div>
 

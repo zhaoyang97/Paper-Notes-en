@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Path Not Taken: RLVR Provably Learns Off the Principals
 description: >-
-  [NeurIPS 2025 Workshop on Efficient Reasoning (Spotlight)][Reinforcement Learning][RLVR] This paper proposes the Three-Gate Theory to explain the apparent sparsity of parameter updates in RLVR…
+  [NeurIPS 2025 Workshop on Efficient Reasoning (Spotlight)][Reinforcement Learning][RLVR] This paper proposes the Three-Gate Theory to explain the apparent sparsity of parameter updates in RLVR, demonstrating that RLVR learns along off-principal directions in weight space — a fundamentally different optimization mechanism from SFT — and that directly transplanting SFT-era PEFT methods to RLVR is therefore flawed.
 tags:
   - "NeurIPS 2025 Workshop on Efficient Reasoning (Spotlight)"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "parameter-efficient fine-tuning"
   - "SFT comparison"
 date: 2026-05-08
-content_hash: 001bf8260f8a32b4
+content_hash: c88eebb72bf10cd5
 ---
 
 # The Path Not Taken: RLVR Provably Learns Off the Principals
@@ -160,10 +160,10 @@ Comparison of PEFT methods applied to RLVR:
 ## Related Papers
 
 - [\[AAAI 2026\] Behaviour Policy Optimization: Provably Lower Variance Return Estimates for Off-Policy Reinforcement Learning](../../AAAI2026/reinforcement_learning/behaviour_policy_optimization_provably_lower_variance_return_estimates_for_off-p.md)
-- [\[NeurIPS 2025\] Bootstrap Off-policy with World Model (BOOM)](bootstrap_off-policy_with_world_model.md)
 - [\[NeurIPS 2025\] Interactive and Hybrid Imitation Learning: Provably Beating Behavior Cloning](interactive_and_hybrid_imitation_learning_provably_beating_behavior_cloning.md)
-- [\[NeurIPS 2025\] Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control](succeed_or_learn_slowly_sample_efficient_off-policy_reinforcement_learning_for_m.md)
-- [\[NeurIPS 2025\] A Unifying View of Linear Function Approximation in Off-Policy RL Through Matrix Splitting and Preconditioning](a_unifying_view_of_linear_function_approximation_in_offpolic.md)
+- [\[ICLR 2026\] Generalization of RLVR Using Causal Reasoning as a Testbed](../../ICLR2026/reinforcement_learning/generalization_of_rlvr_using_causal_reasoning_as_a_testbed.md)
+- [\[NeurIPS 2025\] Bootstrap Off-policy with World Model (BOOM)](bootstrap_off-policy_with_world_model.md)
+- [\[ICLR 2026\] Negotiated Reasoning: On Provably Addressing Relative Over-Generalization](../../ICLR2026/reinforcement_learning/negotiated_reasoning_on_provably_addressing_relative_over-generalization.md)
 
 </div>
 

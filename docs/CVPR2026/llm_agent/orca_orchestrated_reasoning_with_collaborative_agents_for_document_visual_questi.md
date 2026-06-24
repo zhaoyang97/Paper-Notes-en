@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ORCA: Orchestrated Reasoning with Collaborative Agents for Document Visual Question Answering
 description: >-
-  [CVPR 2026][LLM Agent][DocVQA] ORCA transforms single-page Document Visual Question Answering (DocVQA) into a five-stage multi-agent pipeline. It uses a thinking agent to decompose questions into reasoning paths, routes them via content types to orchestrate nine specialized agents, and triggers pressure tests and adversarial debates only when expert
+  [CVPR 2026][LLM Agent][DocVQA] ORCA transforms single-page Document Visual Question Answering (DocVQA) into a five-stage multi-agent pipeline. It uses a thinking agent to decompose questions into reasoning paths, routes them via content types to orchestrate nine specialized agents, and triggers pressure tests and adversarial debates only when expert answers conflict with the thinking agent. This approach surpasses single-model SOTA performance across three benchmarks while re…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - DocVQA
-  - Multi-Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "DocVQA"
+  - "Multi-agent"
+  - "Reasoning-guided Routing"
+  - "Adversarial Verification"
+  - "Conditional Activation"
 date: 2026-05-08
-content_hash: 57cc57b3734760cb
+content_hash: 348764f51e50ead6
 ---
+
 # ORCA: Orchestrated Reasoning with Collaborative Agents for Document Visual Question Answering
 
 **Conference**: CVPR 2026  
@@ -120,14 +124,15 @@ Stage-level ablation (Backbone: Qwen3VL-8B):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2026\] ChartAgent: A Multimodal Agent for Visually Grounded Reasoning in Complex Chart Question Answering](../../ACL2026/llm_agent/chartagent_a_multimodal_agent_for_visually_grounded_reasoning_in_complex_chart_q.md)
+- [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
 - [\[CVPR 2026\] Resolving Evidence Sparsity: Agentic Context Engineering for Long-Document Understanding](resolving_evidence_sparsity_agentic_context_engineering_for_long-document_unders.md)
-- [\[AAAI 2026\] COVR: Collaborative Optimization of VLMs and RL Agent for Visual-Based Control](../../AAAI2026/llm_agent/covrcollaborative_optimization_of_vlms_and_rl_agent_for_visu.md)
-- [\[ACL 2025\] A Multi-Agent Framework for Mitigating Dialect Biases in Privacy Policy Question-Answering Systems](../../ACL2025/llm_agent/multi_agent_dialect_bias_privacy_qa.md)
-- [\[ICML 2025\] KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search](../../ICML2025/llm_agent/kbqa-o1_agentic_knowledge_base_question_answering_with_monte_carlo_tree_search.md)
+- [\[CVPR 2026\] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper](paper2figure_a_multi-agent_collaborative_system_for_figure_generation_towards_ac.md)
 - [\[CVPR 2026\] ReFAct: Empowering Multimodal Web Agents with Visual and Context Focusing](refact_empowering_multimodal_web_agents_with_visual_and_context_focusing.md)
 
 </div>

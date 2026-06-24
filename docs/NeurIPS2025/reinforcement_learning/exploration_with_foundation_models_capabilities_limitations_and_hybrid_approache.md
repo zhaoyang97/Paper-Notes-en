@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploration with Foundation Models: Capabilities, Limitations, and Hybrid Approaches
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][foundation models] This paper systematically evaluates the zero-shot exploration capabilities of LLMs/VLMs on classic RL exploration tasks (bandits, Gridworld, Atari)…
+  [NeurIPS 2025][Reinforcement Learning][foundation models] This paper systematically evaluates the zero-shot exploration capabilities of LLMs/VLMs on classic RL exploration tasks (bandits, Gridworld, Atari), identifies a *knowing-doing gap* in VLMs — where high-level reasoning succeeds but low-level control fails — and proposes a simple VLM-RL hybrid framework that substantially accelerates learning under idealized conditions.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "VLM"
   - "knowing-doing gap"
 date: 2026-05-08
-content_hash: e2363cb94ba0a656
+content_hash: ca837d008d6ff1fb
 ---
 
 # Exploration with Foundation Models: Capabilities, Limitations, and Hybrid Approaches
@@ -166,8 +166,8 @@ Suboptimality gap analysis (GPT-4, explicit prompt):
 - [\[NeurIPS 2025\] Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds](foundation_models_as_world_models_a_foundational_study_in_text-based_gridworlds.md)
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
 - [\[ICLR 2026\] Optimistic Task Inference for Behavior Foundation Models](../../ICLR2026/reinforcement_learning/optimistic_task_inference_behavior_models.md)
-- [\[ICLR 2026\] Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning](../../ICLR2026/reinforcement_learning/controllable_exploration_in_hybrid-policy_rlvr_for_multi-modal_reasoning.md)
-- [\[ICLR 2026\] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning](../../ICLR2026/reinforcement_learning/arm-fm_automated_reward_machines_via_foundation_models_for_compositional_reinfor.md)
+- [\[NeurIPS 2025\] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation](decoderhybriddecoder_architecture_for_efficient_reasoning_wi.md)
+- [\[NeurIPS 2025\] Interactive and Hybrid Imitation Learning: Provably Beating Behavior Cloning](interactive_and_hybrid_imitation_learning_provably_beating_behavior_cloning.md)
 
 </div>
 

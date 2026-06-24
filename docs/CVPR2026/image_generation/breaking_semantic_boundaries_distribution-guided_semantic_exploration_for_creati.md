@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Breaking Semantic Boundaries: Distribution-Guided Semantic Exploration for Creative Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper reformulates "generating new concepts" as "image synthesis conditioned on class distributions." Using a lightweight encoder–decoder (DisTok), any class distribution or random latent vector is decoded into "creative tokens" that can be embedded into prompts. This approach unifies controllable conditional expl
+  [CVPR 2026][Image Generation][Creative generation] This paper reformulates "generating new concepts" as "image synthesis conditioned on class distributions." Using a lightweight encoder–decoder (DisTok), any class distribution or random latent vector is decoded into "creative tokens" that can be embedded into prompts. This approach unifies controllable conditional exploration and open-ended unconditional exploration, achieving SOTA in text-to-image alignment and human prefere…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Creative generation"
+  - "Distribution-conditional generation"
+  - "Concept fusion"
+  - "Semantic exploration"
+  - "Encoder-decoder"
 date: 2026-05-08
-content_hash: 8225d20e4c3dbbcc
+content_hash: 2a2ddc6604ddf59d
 ---
+
 # Breaking Semantic Boundaries: Distribution-Guided Semantic Exploration for Creative Generation
 
 **Conference**: CVPR 2026  
@@ -165,7 +171,7 @@ Efficiency Comparison (Time per concept): BASS ≈40s, ConceptLab ≈120s, CreTo
 - [\[CVPR 2026\] Semantic Derivative Flow: Graph-Guided Diffusion for Controllable Instance Interactions](semantic_derivative_flow_graph-guided_diffusion_for_controllable_instance_intera.md)
 - [\[CVPR 2026\] Unified Latent Space for Understanding and Generation via Semantic Auto-encoder](unified_latent_space_for_understanding_and_generation_via_semantic_auto-encoder.md)
 - [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
-- [\[CVPR 2026\] SHOE: Semantic HOI Open-Vocabulary Evaluation Metric](shoe_semantic_hoi_open-vocabulary_evaluation_metric.md)
+- [\[CVPR 2026\] Semantic Alignment for Pose-Invariant Identity Preserving Diffusion](semantic_alignment_for_pose-invariant_identity_preserving_diffusion.md)
 
 </div>
 

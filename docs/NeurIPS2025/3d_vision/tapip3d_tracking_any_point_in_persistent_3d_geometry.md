@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAPIP3D: Tracking Any Point in Persistent 3D Geometry
 description: >-
-  [NeurIPS 2025][3D Vision][3D point tracking] This paper proposes TAPIP3D, which represents video as a camera-stabilized spatiotemporal 3D feature point cloud and iteratively refines multi-frame point trajectories in pers…
+  [NeurIPS 2025][3D Vision][3D point tracking] This paper proposes TAPIP3D, which represents video as a camera-stabilized spatiotemporal 3D feature point cloud and iteratively refines multi-frame point trajectories in persistent 3D geometric space via a 3D Neighborhood-to-Neighborhood (N2N) attention mechanism, substantially outperforming existing 3D point tracking methods.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "neighborhood attention"
   - "camera motion elimination"
 date: 2026-05-08
-content_hash: 516e6954b9a44070
+content_hash: d9d328f05bc90bc7
 ---
 
 # TAPIP3D: Tracking Any Point in Persistent 3D Geometry
@@ -153,8 +153,8 @@ TAPIP3D builds on the iterative refinement framework of CoTracker3, replacing 2D
 - [\[NeurIPS 2025\] Online Segment Any 3D Thing as Instance Tracking](online_segment_any_3d_thing_as_instance_tracking.md)
 - [\[ICCV 2025\] TAPNext: Tracking Any Point (TAP) as Next Token Prediction](../../ICCV2025/3d_vision/tapnext_tracking_any_point_tap_as_next_token_prediction.md)
 - [\[ICCV 2025\] Multi-View 3D Point Tracking](../../ICCV2025/3d_vision/multi-view_3d_point_tracking.md)
-- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](../../CVPR2026/3d_vision/any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
 - [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](../../CVPR2026/3d_vision/fast_spatial_tracking_with_visual_geometry_transformer.md)
+- [\[CVPR 2025\] Continuous 3D Perception Model with Persistent State](../../CVPR2025/3d_vision/continuous_3d_perception_model_with_persistent_state.md)
 
 </div>
 

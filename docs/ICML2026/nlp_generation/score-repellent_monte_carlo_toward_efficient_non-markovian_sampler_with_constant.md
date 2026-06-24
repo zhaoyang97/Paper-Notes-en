@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Score-Repellent Monte Carlo: Toward Efficient Non-Markovian Sampler with Constant Memory in General State Spaces
 description: >-
-  [ICML 2026][Text Generation][MCMC] SRMC utilizes a $d$-dimensional running score average (rather than an $|\mathcal{X}|$-dimensional empirical measure) to record history. This history is then incorporated into an exponential score-tilt to construct a surrogate target $\pi_\theta$ that "repels already visited regions." By wrapping this around any base MC
+  [ICML 2026 Spotlight][Text Generation][MCMC] SRMC utilizes a $d$-dimensional running score average (rather than an $|\mathcal{X}|$-dimensional empirical measure) to record history. This history is then incorporated into an exponential score-tilt to construct a surrogate target $\pi_\theta$ that "repels already visited regions." By wrapping this around any base MCMC kernel, the authors implement a non-Markovian, low-variance, normalization-free sampler with constant memory in…
 tags:
-  - ICML 2026
-  - Text Generation
-  - MCMC
-  - score-tilt
+  - "ICML 2026 Spotlight"
+  - "Text Generation"
+  - "MCMC"
+  - "non-Markovian sampling"
+  - "score-tilt"
+  - "self-repulsion"
+  - "stochastic approximation CLT"
 date: 2026-05-08
-content_hash: 17db46f15a3c8f72
+content_hash: 8445c61dc2049c18
 ---
+
 # Score-Repellent Monte Carlo: Toward Efficient Non-Markovian Sampler with Constant Memory in General State Spaces
 
 **Conference**: ICML 2026 Spotlight  
@@ -131,9 +135,9 @@ Discrete EBM (Static MNIST, $\{0,1\}^{784}$, 100 parallel chains initialized fro
 
 - [\[ACL 2026\] Adaptive Planning for Multi-Attribute Controllable Summarization with Monte Carlo Tree Search](../../ACL2026/nlp_generation/adaptive_planning_for_multi-attribute_controllable_summarization_with_monte_carl.md)
 - [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/nlp_generation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
+- [\[ICLR 2026\] Logit-KL Flow Matching: Non-Autoregressive Text Generation with Sampling-Mixing Inference](../../ICLR2026/nlp_generation/logitkl_flow_matching_nonautoregressive_text_generation_via_samplinghybrid_infer.md)
 - [\[ICML 2026\] Characterizing the Effect of Noise in Language Generation in the Limit](characterizing_the_effect_of_noise_in_language_generation_in_the_limit.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](../../ICLR2026/nlp_generation/fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
-- [\[ACL 2026\] ThreadSumm: Summarization of Nested Discourse Threads Using Tree of Thoughts](../../ACL2026/nlp_generation/threadsumm_summarization_of_nested_discourse_threads_using_tree_of_thoughts.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detecting and Mitigating Memorization in Diffusion Models through Anisotropy of the Log-Probability
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper demonstrates that norm-based memorization detection metrics are only effective under isotropic log-probability distributions and fail in low-noise anisotropic regions. It proposes a denoising-free detection metric combining high-noise norm and low-noise angular alignment (cosine similarity), which outperform
+  [ICLR 2026][Image Generation][Memorization detection] This paper demonstrates that norm-based memorization detection metrics are only effective under isotropic log-probability distributions and fail in low-noise anisotropic regions. It proposes a denoising-free detection metric combining high-noise norm and low-noise angular alignment (cosine similarity), which outperforms existing denoising-free methods on SD v1.4/v2.0 and is over $5\times$ faster.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Memorization detection"
+  - "anisotropy"
+  - "score function"
+  - "cosine similarity"
+  - "denoising-free detection"
 date: 2026-05-08
-content_hash: 04fd2f83e5f4f8c0
+content_hash: 0e26286e1d767b2b
 ---
+
 # Detecting and Mitigating Memorization in Diffusion Models through Anisotropy of the Log-Probability
 
 **Conference**: ICLR 2026  
@@ -139,15 +145,15 @@ At n=4, the AUC reaches 0.999 (SD v1.4), with a TPR@1%FPR of 0.984.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2025\] Understanding and Mitigating Memorization in Generative Models via Sharpness of Probability Landscapes](../../ICML2025/image_generation/understanding_and_mitigating_memorization_in_generative_models_via_sharpness_of_.md)
 - [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
-- [\[ICML 2025\] Localizing and Mitigating Memorization in Image Autoregressive Models](../../ICML2025/image_generation/localizing_and_mitigating_memorization_in_image_autoregressive_models.md)
 - [\[ICLR 2026\] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance](mitigating_noise_shift_in_denoising_generative_models_with_noise_awareness_guida.md)
+- [\[ICML 2025\] Localizing and Mitigating Memorization in Image Autoregressive Models](../../ICML2025/image_generation/localizing_and_mitigating_memorization_in_image_autoregressive_models.md)
 
 </div>
 

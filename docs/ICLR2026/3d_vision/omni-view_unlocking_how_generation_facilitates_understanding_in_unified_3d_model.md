@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Omni-View is a unified 3D scene understanding and generation model that enhances understanding performance through the generative capabilities of a texture module (novel view synthesis) and a geometry module (depth/pose estimation), achieving a score of 55.4 on VSI-Bench and surpassing all existing specialized 3D under
+  [ICLR 2026][3D Vision][Unified Understanding and Generation] Omni-View is a unified 3D scene understanding and generation model that enhances understanding performance through the generative capabilities of a texture module (novel view synthesis) and a geometry module (depth/pose estimation), achieving a score of 55.4 on VSI-Bench and surpassing all existing specialized 3D understanding models.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Unified Understanding and Generation"
+  - "3D Scene Understanding"
+  - "Novel View Synthesis"
+  - "Spatial Reasoning"
+  - "Multi-view"
 date: 2026-05-08
-content_hash: 3733e8df5d67972b
+content_hash: 136c7d06f161f388
 ---
+
 # Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images
 
 **Conference**: ICLR 2026  
@@ -139,10 +145,10 @@ Novel View Synthesis (Re10k): PSNR=23.22 (surpassing Voyager-13B's 23.12), LPIPS
 ## Related Papers
 
 - [\[ICLR 2026\] UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](uniugg_unified_3d_understanding_and_generation_via_geometric-semantic_encoding.md)
+- [\[ICLR 2026\] Unified 3D Scene Understanding Through Physical World Modeling](unified_3d_scene_understanding_through_physical_world_modeling.md)
 - [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](../../CVPR2026/3d_vision/masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
 - [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](../../CVPR2026/3d_vision/uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
 - [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
-- [\[ICLR 2026\] ReconViaGen: Towards Accurate Multi-view 3D Object Reconstruction via Generation](reconviagen_towards_accurate_multi-view_3d_object_reconstruction_via_generation.md)
 
 </div>
 

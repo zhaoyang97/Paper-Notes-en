@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Same Content, Different Representations: A Controlled Study for Table QA
 description: >-
-  [ICLR 2026][LLM Evaluation][Table QA] The first controlled-variable study: By keeping table content identical while varying representation forms (structured vs. semi-structured), this work systematically evaluates the robustness of NL2SQL, LLM, and hybrid methods across different table sizes, schema qualities, and query complexities, identifying representa
+  [ICLR 2026][LLM Evaluation][Table QA] The first controlled-variable study: By keeping table content identical while varying representation forms (structured vs. semi-structured), this work systematically evaluates the robustness of NL2SQL, LLM, and hybrid methods across different table sizes, schema qualities, and query complexities, identifying representation as a first-order factor affecting Table QA performance.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Table QA
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Table QA"
+  - "Structured Tables"
+  - "Semi-structured Tables"
+  - "Representations"
+  - "Diagnostic Benchmark"
 date: 2026-05-08
-content_hash: 68541a54482cda38
+content_hash: 1868761f107c2070
 ---
+
 # Same Content, Different Representations: A Controlled Study for Table QA
 
 **Conference**: ICLR 2026  
@@ -121,10 +126,20 @@ Semi-structured answers often involve different number formats or synonymous phr
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Same Voice, Different Lab: On the Homogenization of Frontier LLM Personalities](../../ACL2026/llm_evaluation/same_voice_different_lab_on_the_homogenization_of_frontier_llm_personalities.md)
+- [\[ICLR 2026\] LFQA-E: Carefully Benchmarking Long-form QA Evaluation](lfqa-e_carefully_benchmarking_long-form_qa_evaluation.md)
+- [\[ICLR 2026\] The Open Proof Corpus: A Large-Scale Study of LLM-Generated Mathematical Proofs](the_open_proof_corpus_a_large-scale_study_of_llm-generated_mathematical_proofs.md)
+- [\[ICLR 2026\] AirQA: A Comprehensive QA Dataset for AI Research with Instance-Level Evaluation](airqa_a_comprehensive_qa_dataset_for_ai_research_with_instance-level_evaluation.md)
+- [\[ACL 2025\] RealHiTBench: A Comprehensive Realistic Hierarchical Table Benchmark for Evaluating LLM-Based Table Analysis](../../ACL2025/llm_evaluation/realhitbench_a_comprehensive_realistic_hierarchical_table_benchmark_for_evaluati.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Same Voice, Different Lab: On the Homogenization of Frontier LLM Personalities](../../ACL2026/llm_evaluation/same_voice_different_lab_on_the_homogenization_of_frontier_llm_personalities.md)

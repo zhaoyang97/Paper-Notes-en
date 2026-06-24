@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Can Large Language Models Generalize Procedures Across Representations?
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] This paper finds that procedural knowledge learned by LLMs on symbolic representations (code/graphs) cannot reliably transfer to natural language tasks. It proposes a two-stage RL curriculum strategy—"symbolic then natural language"—enabling a 1.5B Qwen model to approach zero-shot GPT-4o performance on asynchronous pla
+  [ICML2026][Reinforcement Learning][Cross-representation generalization] This paper finds that procedural knowledge learned by LLMs on symbolic representations (code/graphs) cannot reliably transfer to natural language tasks. It proposes a two-stage RL curriculum strategy—"symbolic then natural language"—enabling a 1.5B Qwen model to approach zero-shot GPT-4o performance on asynchronous planning tasks. From a cognitive science perspective, it demonstrates that successful cross…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Cross-representation generalization"
+  - "RL curriculum"
+  - "generative analogy"
+  - "procedural knowledge transfer"
+  - "GRPO"
 date: 2026-05-08
-content_hash: a34477a53a09465a
+content_hash: cefb8f3ed865f99a
 ---
+
 # Can Large Language Models Generalize Procedures Across Representations?
 
 **Conference**: ICML2026  
@@ -146,10 +151,10 @@ To distinguish whether the model relies on "accumulating moderately similar inst
 ## Related Papers
 
 - [\[ACL 2026\] Why Does Reinforcement Learning Generalize? A Feature-Level Mechanistic Study of Post-Training in Large Language Models](../../ACL2026/reinforcement_learning/why_does_reinforcement_learning_generalize_a_feature-level_mechanistic_study_of_.md)
+- [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](../../ICLR2026/reinforcement_learning/using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
 - [\[ICML 2026\] The Shape of Reasoning: Topological Analysis of Reasoning Traces in Large Language Models](the_shape_of_reasoning_topological_analysis_of_reasoning_traces_in_large_languag.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](../../ICLR2026/reinforcement_learning/post-training_large_language_models_for_diverse_high-quality_responses.md)
 - [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)
-- [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
 
 </div>
 

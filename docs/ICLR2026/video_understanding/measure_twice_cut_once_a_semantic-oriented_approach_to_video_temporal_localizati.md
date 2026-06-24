@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Measure Twice, Cut Once: A Semantic-Oriented Approach to Video Temporal Localization with Video LLMs
 description: >-
-  [ICLR 2026][Video Understanding][Video LLM] MeCo abandons the mainstream paradigm of "letting Video LLMs directly output boundary timestamps" in favor of a semantic-driven approach using structured tokens + query-focused captioning + contrastive grounding. By reframing video temporal localization as "understanding semantic structure before cutting segments," it
+  [ICLR 2026][Video Understanding][Temporal Localization] MeCo abandons the mainstream paradigm of "letting Video LLMs directly output boundary timestamps" in favor of a semantic-driven approach using structured tokens + query-focused captioning + contrastive grounding. By reframing video temporal localization as "understanding semantic structure before cutting segments," it consistently outperforms timestamp-generation methods across 9 tasks.
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Video LLM
-  - query-focused captioning
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Temporal Localization"
+  - "Video LLM"
+  - "Structured Tokens"
+  - "Contrastive Learning"
+  - "Query-focused Captioning"
 date: 2026-05-08
-content_hash: b6300b1e852bfbdf
+content_hash: 4c68b0056e0b2af9
 ---
+
 # Measure Twice, Cut Once: A Semantic-Oriented Approach to Video Temporal Localization with Video LLMs
 
 **Conference**: ICLR 2026  
@@ -125,11 +129,11 @@ In grounding loss variants, using only $p(h_t\mid s_i)$ (40.6) is significantly 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Divid: Disentangled Spatial-Temporal Modeling within LLMs for Temporally Grounded Video Understanding](divid_disentangled_spatial-temporal_modeling_within_llms_for_temporally_grounded.md)
 - [\[ICLR 2026\] SPIKE-RL: Video-LLMs Meet Bayesian Surprise](spike-rl_video-llms_meet_bayesian_surprise.md)
+- [\[ICLR 2026\] RIVER: A Real-Time Interaction Benchmark for Video LLMs](river_a_real-time_interaction_benchmark_for_video_llms.md)
 - [\[NeurIPS 2025\] Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders](../../NeurIPS2025/video_understanding/enhancing_temporal_understanding_in_videollms_through_stacke.md)
 - [\[NeurIPS 2025\] TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](../../NeurIPS2025/video_understanding/tempsampr1_effective_temporal_sampling_with_reinforcement_fi.md)
-- [\[ICLR 2026\] Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection](steering_and_rectifying_latent_representation_manifolds_in_frozen_multi-modal_ll.md)
-- [\[ECCV 2024\] Online Temporal Action Localization with Memory-Augmented Transformer](../../ECCV2024/video_understanding/online_temporal_action_localization_with_memory-augmented_transformer.md)
 
 </div>
 

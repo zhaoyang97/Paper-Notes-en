@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AntiGrounding: Lifting Robotic Actions into VLM Representation Space for Decision Making
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM] This paper inverts the conventional instruction grounding paradigm — rather than compressing VLM knowledge into intermediate representations (symbolic skills or constraints)…
+  [NeurIPS 2025][Multimodal VLM][VLM] This paper inverts the conventional instruction grounding paradigm — rather than compressing VLM knowledge into intermediate representations (symbolic skills or constraints), it renders candidate robot trajectories into multi-view scene images and evaluates action proposals directly within the VLM's native high-dimensional representation space, enabling zero-shot closed-loop robotic manipulation control.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "Structured VQA"
   - "Real2Sim2Real"
 date: 2026-05-08
-content_hash: f7e2cb44b8a58fc1
+content_hash: f8f085e1b3e3b5bf
 ---
 
 # AntiGrounding: Lifting Robotic Actions into VLM Representation Space for Decision Making
@@ -167,9 +167,9 @@ The paradigm innovation is impressive — the inversion of "grounding" opens a n
 
 - [\[NeurIPS 2025\] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning](praxisvlm_visiongrounded_decision_making_via_textdriven_rein.md)
 - [\[NeurIPS 2025\] T-Rex: Task-Adaptive Spatial Representation Extraction for Robotic Manipulation with VLMs](t-rex_task-adaptive_spatial_representation_extraction_for_robotic_manipulation_w.md)
-- [\[ICML 2026\] Visual Persuasion: What Influences the Decision-Making of Vision-Language Models?](../../ICML2026/multimodal_vlm/visual_persuasion_what_influences_decisions_of_vision-language_models.md)
-- [\[NeurIPS 2025\] CyIN: Cyclic Informative Latent Space for Bridging Complete and Incomplete Multimodal Learning](cyin_cyclic_informative_latent_space_for_bridging_complete_and_incomplete_multim.md)
 - [\[NeurIPS 2025\] SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models](sd-vlm_spatial_measuring_and_understanding_with_depth-encoded_vision-language_mo.md)
+- [\[NeurIPS 2025\] Text to Robotic Assembly of Multi Component Objects using 3D Generative AI and Vision Language Models](text_to_robotic_assembly_of_multi_component_objects_using_3d_generative_ai_and_v.md)
+- [\[NeurIPS 2025\] CyIN: Cyclic Informative Latent Space for Bridging Complete and Incomplete Multimodal Learning](cyin_cyclic_informative_latent_space_for_bridging_complete_and_incomplete_multim.md)
 
 </div>
 

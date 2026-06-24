@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Misaligned Roles, Misplaced Images: Structural Input Perturbations Expose Multimodal Alignment Blind Spots
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper demonstrates that the safety alignment of multimodal large language models (MLLMs) over-relies on fixed chat template structures—specifically, aligning only the assistant role and fixing image tokens in default positions. By merely applying structural perturbations such as **swapping role tags** or **shiftin
+  [ICLR 2026][LLM Safety][VLM Safety] This paper demonstrates that the safety alignment of multimodal large language models (MLLMs) over-relies on fixed chat template structures—specifically, aligning only the assistant role and fixing image tokens in default positions. By merely applying structural perturbations such as **swapping role tags** or **shifting image token positions** without altering the query content, models can be pushed away from the refusal direction in the re…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "VLM Safety"
+  - "Alignment Blind Spots"
+  - "Role Confusion"
+  - "Modality Location"
+  - "Refusal Direction"
+  - "Adversarial Training"
 date: 2026-05-08
-content_hash: d0c84acc87659f6b
+content_hash: b49c4ded734713dc
 ---
+
 # Misaligned Roles, Misplaced Images: Structural Input Perturbations Expose Multimodal Alignment Blind Spots
 
 **Conference**: ICLR 2026  
@@ -126,11 +133,11 @@ Compound attacks push harmful samples "more densely and deeper" into the harmles
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] ARMS: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks](arms_adaptive_red-teaming_agent_against_multimodal_models_with_plug-and-play_att.md)
+- [\[ICLR 2026\] SafeMoE: Safe Fine-Tuning for MoE LLMs by Aligning Harmful Input Routing](safemoe_safe_fine-tuning_for_moe_llms_by_aligning_harmful_input_routing.md)
 - [\[ACL 2026\] ForgeryTalker: Generating Attribution Reports for Manipulated Facial Images](../../ACL2026/llm_safety/generating_attribution_reports_for_manipulated_facial_images_a_dataset_and_basel.md)
 - [\[ACL 2026\] SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification](../../ACL2026/llm_safety/sere_structural_example_retrieval_for_enhancing_llms_in_event_causality_identifi.md)
 - [\[ACL 2026\] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](../../ACL2026/llm_safety/making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism
 description: >-
-  [ICLR 2026][LLM Efficiency][DeepSpeed-Ulysses] AutoSP elevates Sequence Parallelism (SP) from manual, framework-coupled operators to two specialized passes within the PyTorch-2.0 compiler stack: an SP-Pass on Torch-IR that automatically inserts communication and resizes activation buffers, and a Sequence-Aware Checkpointing (SAC-Pass) on the joint Aten-IR graph tha
+  [ICLR 2026][LLM Efficiency][Sequence Parallelism] AutoSP elevates Sequence Parallelism (SP) from manual, framework-coupled operators to two specialized passes within the PyTorch-2.0 compiler stack: an SP-Pass on Torch-IR that automatically inserts communication and resizes activation buffers, and a Sequence-Aware Checkpointing (SAC-Pass) on the joint Aten-IR graph that relaxes min-cut constraints to recompute compute-intensive operators. This allows users to compile single-GP…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - DeepSpeed-Ulysses
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sequence Parallelism"
+  - "Long-Context Training"
+  - "PyTorch-2.0 Compiler"
+  - "Activation Checkpointing"
+  - "DeepSpeed-Ulysses"
 date: 2026-05-08
-content_hash: 4c84827136d86f7c
+content_hash: dbc14c4e1fd0dbdd
 ---
+
 # AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism
 
 **Conference**: ICLR 2026  
@@ -125,11 +130,11 @@ Llama-3.1 1B, itemized optimization (Table 1):
 
 ## Related Papers
 
-- [\[ICLR 2026\] ParaRNN: Unlocking Parallel Training of Nonlinear RNNs for Large Language Models](pararnn_unlocking_parallel_training_of_nonlinear_rnns_for_large_language_models.md)
 - [\[ICLR 2026\] Long-Context Attention Benchmark: From Kernel Efficiency to Distributed Context Parallelism](long-context_attention_benchmark_from_kernel_efficiency_to_distributed_context_p.md)
+- [\[ICLR 2026\] ParaRNN: Unlocking Parallel Training of Nonlinear RNNs for Large Language Models](pararnn_unlocking_parallel_training_of_nonlinear_rnns_for_large_language_models.md)
 - [\[ICLR 2026\] EntropyLong: Effective Long-Context Training via Predictive Uncertainty](entropylong_effective_long-context_training_via_predictive_uncertainty.md)
+- [\[ICLR 2026\] SoLoPO: Unlocking Long-Context Capabilities in LLMs via Short-to-Long Preference Optimization](solopo_unlocking_long-context_capabilities_in_llms_via_short-to-long_preference_.md)
 - [\[ICLR 2026\] Unlocking Full Efficiency of Token Filtering in Large Language Model Training](unlocking_full_efficiency_of_token_filtering_in_large_language_model_training.md)
-- [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
 
 </div>
 

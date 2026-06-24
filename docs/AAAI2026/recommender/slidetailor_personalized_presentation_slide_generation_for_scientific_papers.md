@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SlideTailor: Personalized Presentation Slide Generation for Scientific Papers
 description: >-
-  [AAAI 2026][Recommender Systems][Personalized slide generation] This paper defines a new task of preference-guided paper-to-slide generation and proposes the SlideTailor framework…
+  [AAAI 2026][Recommender Systems][Personalized slide generation] This paper defines a new task of preference-guided paper-to-slide generation and proposes the SlideTailor framework, which distills content preferences from user-provided paper–slide example pairs and aesthetic preferences from .pptx templates. A chain-of-speech mechanism aligns slide content with intended spoken narratives. On the self-constructed PSP benchmark, SlideTailor achieves an overall score of 75.8% and…
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "agent framework"
   - "academic paper presentation"
 date: 2026-05-08
-content_hash: 69d67a26aef6deb1
+content_hash: 05b77cffca9fde3a
 ---
 
 # SlideTailor: Personalized Presentation Slide Generation for Scientific Papers

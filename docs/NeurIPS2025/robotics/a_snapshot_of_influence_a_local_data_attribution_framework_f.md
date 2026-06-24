@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] A Snapshot of Influence: A Local Data Attribution Framework for Online Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Robotics][Data Attribution] This work is the first to introduce data attribution into online reinforcement learning. It proposes a local attribution framework to quantify each training record's contributio…
+  [NeurIPS 2025 Oral][Robotics][Data Attribution] This work is the first to introduce data attribution into online reinforcement learning. It proposes a local attribution framework to quantify each training record's contribution to policy updates, and builds upon it an Iterative Influence Filtering (IIF) algorithm that substantially improves sample efficiency and final performance on both classical RL benchmarks and LLM RLHF.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Robotics"
   - "Data Attribution"
   - "Online Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Influence Functions"
   - "Experience Filtering"
 date: 2026-05-08
-content_hash: cfca29f4b9e5dc94
+content_hash: e5474e2b1a014e70
 ---
 
 # A Snapshot of Influence: A Local Data Attribution Framework for Online Reinforcement Learning
@@ -46,7 +46,7 @@ The core idea is *local attribution*: rather than tracing influence across the e
     - **Cumulative Return Objective** $f_{\text{return}}(\theta) = \mathbb{E}_{\tau\sim\pi_{\text{ref}}} [\log\pi_\theta(a|s) \hat{A}_{\text{ref}}(s,a)]$: Evaluates each record's contribution to overall return. This elegantly uses the current iteration's policy $\pi_{\theta^{(k)}}$ as the reference policy and the rollout buffer itself as the validation set, avoiding policy-dependent distribution shift and high-variance issues. This objective is structurally equivalent to the REINFORCE objective with a baseline.
 
 3. **TracIn-Based Attribution**: For each record $z_i$ in the buffer, an influence score is computed as:
-   $$I_i = \sum_{j: z_i \in \mathcal{B}_j^{(k)}} \langle \nabla_\theta f(\theta_j^{(k)}), \nabla_\theta \mathcal{L}_{\text{PPO}}(\theta_j^{(k)}, z_i) \rangle$$
+    $I_i = \sum_{j: z_i \in \mathcal{B}_j^{(k)}} \langle \nabla_\theta f(\theta_j^{(k)}), \nabla_\theta \mathcal{L}_{\text{PPO}}(\theta_j^{(k)}, z_i) \rangle$
    i.e., the sum of inner products between the objective gradient and the training loss gradient. Positive scores indicate beneficial records (top records); negative scores indicate harmful ones (bottom records).
 
 ### Three Applications
@@ -118,11 +118,11 @@ Building on the success of targeted intervention, single-iteration filtering is 
 
 ## Related Papers
 
+- [\[ICML 2025\] Gradual Transition from Bellman Optimality Operator to Bellman Operator in Online Reinforcement Learning](../../ICML2025/robotics/gradual_transition_from_bellman_optimality_operator_to_bellman_operator_in_onlin.md)
 - [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
+- [\[ICLR 2026\] CE-Nav: Flow-Guided Reinforcement Refinement for Cross-Embodiment Local Navigation](../../ICLR2026/robotics/ce-nav_flow-guided_reinforcement_refinement_for_cross-embodiment_local_navigatio.md)
 
 </div>
 

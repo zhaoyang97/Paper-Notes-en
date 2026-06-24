@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Ensemble Framework for Unbiased Language Model Watermarking
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes ENS, an ensemble framework that **concatenates and compounds** multiple unbiased logits watermarks with independent keys. By injecting a subtle, imperceptible weak signal at each layer and aggregating scores from $n$ keys at the detection end, the SNR is boosted by approximately $\sqrt{n}$. This sig
+  [ICLR 2026][LLM Safety][Unbiased watermarking] This paper proposes ENS, an ensemble framework that **concatenates and compounds** multiple unbiased logits watermarks with independent keys. By injecting a subtle, imperceptible weak signal at each layer and aggregating scores from $n$ keys at the detection end, the SNR is boosted by approximately $\sqrt{n}$. This significantly enhances detection power and robustness against rewriting while strictly keeping the output distributi…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Unbiased watermarking"
+  - "ensemble framework"
+  - "logits reweighting"
+  - "signal detection"
+  - "robustness"
 date: 2026-05-08
-content_hash: 4bfde165cc82020e
+content_hash: 41293107b6a94b5a
 ---
+
 # An Ensemble Framework for Unbiased Language Model Watermarking
 
 **Conference**: ICLR 2026  

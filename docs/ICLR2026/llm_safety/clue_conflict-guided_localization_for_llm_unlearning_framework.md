@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CLUE: Conflict-guided Localization for LLM Unlearning Framework
 description: >-
-  [ICLR 2026][LLM Safety][LLM unlearning] Utilizing "circuit discovery" from mechanistic interpretability, CLUE extracts logic circuits for the forget and retain sets, converts them into Conjunctive Normal Form (CNF), and employs a SAT solver to categorize each node as forget, retain, or conflict. By applying specific fine-tuning objectives to different node c
+  [ICLR2026][LLM Safety][LLM unlearning] Utilizing "circuit discovery" from mechanistic interpretability, CLUE extracts logic circuits for the forget and retain sets, converts them into Conjunctive Normal Form (CNF), and employs a SAT solver to categorize each node as forget, retain, or conflict. By applying specific fine-tuning objectives to different node categories, the framework achieves stronger unlearning and utility retention with significantly fewer parameter modificati…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM unlearning
+  - "ICLR2026"
+  - "LLM Safety"
+  - "LLM unlearning"
+  - "circuit discovery"
+  - "CNF satisfiability"
+  - "neuron localization"
+  - "conflict nodes"
 date: 2026-05-08
-content_hash: a99af361678e731b
+content_hash: b4c95a49eef83bff
 ---
+
 # CLUE: Conflict-guided Localization for LLM Unlearning Framework
 
 **Conference**: ICLR2026  
@@ -142,15 +147,15 @@ Notably, CLUE modifies fewer parameters (~55–58%) than baselines (e.g., WAGLE'
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](../../ACL2026/llm_safety/representation-guided_parameter-efficient_llm_unlearning.md)
+- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
 - [\[ICLR 2026\] DUET: Distilled LLM Unlearning from an Efficiently Contextualized Teacher](duet_distilled_llm_unlearning_from_an_efficiently_contextualized_teacher.md)
 - [\[ICLR 2026\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
 - [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](ofmu_optimization-driven_framework_for_machine_unlearning.md)
-- [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Physics-informed learning under mixing: How physical knowledge speeds up learning
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Ours derives high-probability and expectation bounds for excess risk of "empirical risk minimization with physics-informed regularization" under **non-i.i.d. (dependent/mixing) data**. It proves that as long as the physical prior is "aligned" with the ground truth ($\|D(f^\star)\|_{L^2}^2\simeq 0$), the learning rate a
+  [ICLR 2026][Learning Theory][Physics-informed regularization] Ours derives high-probability and expectation bounds for excess risk of "empirical risk minimization with physics-informed regularization" under **non-i.i.d. (dependent/mixing) data**. It proves that as long as the physical prior is "aligned" with the ground truth ($\|D(f^\star)\|_{L^2}^2\simeq 0$), the learning rate accelerates from the slow Sobolev minimax rate $O(T^{-d})$ to the $O(1/T)$ rate consistent with the…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Statistical Learning"
+  - "Physics-informed regularization"
+  - "dependent data"
+  - "excess risk bound"
+  - "Sobolev minimax rate"
+  - "martingale offset complexity"
 date: 2026-05-08
-content_hash: 44e087ceeb893f2c
+content_hash: a75b503438c4e45e
 ---
+
 # Physics-informed learning under mixing: How physical knowledge speeds up learning
 
 **Conference**: ICLR 2026  

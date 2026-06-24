@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A2ASecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper presents the first systematic evaluation of the security of Agent-to-Agent (A2A) protocol-driven multi-agent systems. The authors propose a threat taxonomy covering two major categories—"supply-chain manipulations" and "protocol-logic weaknesses"—comprising 6 protocol-aware attacks. Based on this, they const
+  [ICLR 2026][LLM Safety][A2A Protocol] This paper presents the first systematic evaluation of the security of Agent-to-Agent (A2A) protocol-driven multi-agent systems. The authors propose a threat taxonomy covering two major categories—"supply-chain manipulations" and "protocol-logic weaknesses"—comprising 6 protocol-aware attacks. Based on this, they construct A2ASecBench, the first dedicated security benchmark for A2A. By utilizing dynamic adapters to migrate attacks across…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "A2A Protocol"
+  - "Multi-Agent Systems"
+  - "Security Evaluation"
+  - "Threat Modeling"
+  - "Protocol-Aware Attacks"
 date: 2026-05-08
-content_hash: ce53414aac2a4338
+content_hash: c85ea4d26d47f769
 ---
+
 # A2ASecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems
 
 **Conference**: ICLR 2026  
@@ -147,8 +153,8 @@ Defense effectiveness using NVIDIA NeMo Guardrails as a safety gateway (Table 4,
 - [\[ICLR 2026\] Optimizing Agent Planning for Security and Autonomy](optimizing_agent_planning_for_security_and_autonomy.md)
 - [\[ICLR 2026\] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning](from_static_benchmarks_to_dynamic_protocol_agent-centric_text_anomaly_detection_.md)
 - [\[ICLR 2026\] Breaking Agent Backbones: Evaluating the Security of Backbone LLMs in AI Agents](breaking_agent_backbones_evaluating_the_security_of_backbone_llms_in_ai_agents.md)
-- [\[ICML 2025\] TAMAS: Benchmarking Adversarial Risks in Multi-Agent LLM Systems](../../ICML2025/llm_safety/tamas_benchmarking_adversarial_risks_in_multi-agent_llm_systems.md)
 - [\[ICLR 2026\] RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents](redcodeagent_automatic_red-teaming_agent_against_diverse_code_agents.md)
+- [\[ICML 2025\] TAMAS: Benchmarking Adversarial Risks in Multi-Agent LLM Systems](../../ICML2025/llm_safety/tamas_benchmarking_adversarial_risks_in_multi-agent_llm_systems.md)
 
 </div>
 

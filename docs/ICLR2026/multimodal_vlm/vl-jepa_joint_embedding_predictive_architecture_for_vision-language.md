@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VL-JEPA: Joint Embedding Predictive Architecture for Vision-language
 description: >-
-  [ICLR 2026][Multimodal VLM][JEPA] VL-JEPA replaces the traditional autoregressive token generation of VLMs with non-autoregressive prediction of semantic embeddings for target text. Under identical training settings, it consumes fewer parameters and converges faster than token-space VLMs, while naturally supporting selective decoding for classification
+  [ICLR2026][Multimodal VLM][JEPA] VL-JEPA replaces the traditional autoregressive token generation of VLMs with non-autoregressive prediction of semantic embeddings for target text. Under identical training settings, it consumes fewer parameters and converges faster than token-space VLMs, while naturally supporting selective decoding for classification, retrieval, VQA, and online video scenarios.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - JEPA
-  - Vision-Language Model
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "JEPA"
+  - "VLM"
+  - "continuous representation prediction"
+  - "selective decoding"
+  - "video understanding"
 date: 2026-05-08
-content_hash: 6a8e3cc233c8f9aa
+content_hash: ad6fd7cea31e9cb8
 ---
+
 # VL-JEPA: Joint Embedding Predictive Architecture for Vision-language
 
 **Conference**: ICLR2026  
@@ -165,11 +169,11 @@ Ablations indicate that VL-JEPA's gains result from the synergy of pre-training,
 
 ## Related Papers
 
-- [\[ICML 2026\] CHARM: 用 Multimodal JEPA + 通道描述做时间序列 foundation embedding](../../ICML2026/multimodal_vlm/giving_sensors_a_voice_multimodal_jepa_for_semantic_time-series_embeddings.md)
-- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](../../CVPR2026/multimodal_vlm/vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
-- [\[NeurIPS 2025\] HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models](../../NeurIPS2025/multimodal_vlm/hope_hybrid_of_position_embedding_for_long_context_visionlan.md)
+- [\[ICML 2026\] CHARM: Using Multimodal JEPA + Channel Descriptions for Time Series Foundation Embedding](../../ICML2026/multimodal_vlm/giving_sensors_a_voice_multimodal_jepa_for_semantic_time-series_embeddings.md)
+- [\[CVPR 2026\] VL-RouterBench: A Benchmark for Vision-Language Model Routing](../../CVPR2026/multimodal_vlm/vl-routerbench_a_benchmark_for_vision-language_model_routing.md)
 - [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
-- [\[ICLR 2026\] Delving into Spectral Clustering with Vision-Language Representations](delving_into_spectral_clustering_with_vision-language_representations.md)
+- [\[ICML 2025\] M3-JEPA: Multimodal Alignment via Multi-gate MoE based on JEPA](../../ICML2025/multimodal_vlm/m3-jepa_multimodal_alignment_via_multi-gate_moe_based_on_the_joint-embedding_pre.md)
+- [\[ICLR 2026\] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](omnivinci_enhancing_architecture_and_data_for_omni-modal_understanding_llm.md)
 
 </div>
 

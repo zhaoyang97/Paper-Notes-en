@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Modeling of Discrete Latent Structures via Dynamic Policy Gradients
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] GReinSS employs a **reward dynamically rescaled by parameters**, $r(\tau)=\sum_i \Pr(X_i\mid\tau)/\Pr(X_i\mid\theta)$, to transform policy gradients into an unbiased gradient ascent of the "observed data log-likelihood." This enables generative modeling and inference across combinatorially exploding discrete latent spa
+  [ICML2026][Computational Biology][Policy Gradients] GReinSS employs a **reward dynamically rescaled by parameters**, $r(\tau)=\sum_i \Pr(X_i\mid\tau)/\Pr(X_i\mid\theta)$, to transform policy gradients into an unbiased gradient ascent of the "observed data log-likelihood." This enables generative modeling and inference across combinatorially exploding discrete latent spaces. It consistently outperforms GFlowNets, naive policy gradients, and VAE/Diffusion/Autoregressive GEM bas…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML2026"
+  - "Computational Biology"
+  - "Policy Gradients"
+  - "Dynamic Rewards"
+  - "Discrete Latent States"
+  - "Maximum Likelihood"
+  - "RNA Isoform Reconstruction"
 date: 2026-05-08
 content_hash: 2f760bf83f972b3c
 ---
+
 # Generative Modeling of Discrete Latent Structures via Dynamic Policy Gradients
 
 **Conference**: ICML2026  
@@ -143,11 +149,11 @@ In the RNA task, GReinSS used short-read junction counts as input and long-read 
 
 ## Related Papers
 
-- [\[ICML 2026\] Towards A Generative Protein Evolution Machine with DPLM-Evo](towards_a_generative_protein_evolution_machine_with_dplm-evo.md)
-- [\[ICML 2026\] Disentangling Latent Risk Pathways via Bayesian Hypergraph Inference](disentangling_latent_risk_pathways_via_bayesian_hypergraph_inference.md)
-- [\[ICML 2026\] On the Collapse of Generative Paths: A Criterion and Correction for Diffusion Steering](on_the_collapse_of_generative_paths_a_criterion_and_correction_for_diffusion_ste.md)
-- [\[ICML 2026\] TD3B: Transition-Directed Discrete Diffusion for Allosteric Binder Generation](td3b_transition-directed_discrete_diffusion_for_allosteric_binder_generation.md)
-- [\[ICML 2026\] Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction](plug-and-play_guidance_for_discrete_diffusion_models_via_gradient-informed_logit.md)
+- [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](../../NeurIPS2025/computational_biology/generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
+- [\[AAAI 2026\] MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging](../../AAAI2026/computational_biology/mergedna_context-aware_genome_modeling_with_dynamic_tokenization_through_token_m.md)
+- [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](../../NeurIPS2025/computational_biology/towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
+- [\[ICML 2026\] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models](neural_estimation_of_pairwise_mutual_information_in_masked_discrete_sequence_mod.md)
+- [\[ICLR 2026\] MarS-FM: Generative Modeling of Molecular Dynamics via Markov State Models](../../ICLR2026/computational_biology/mars-fm_generative_modeling_of_molecular_dynamics_via_markov_state_models.md)
 
 </div>
 

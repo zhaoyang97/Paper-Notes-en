@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Benchmarking LLMs for Political Science: A United Nations Perspective
 description: >-
-  [AAAI 2026][LLM Evaluation][UN Security Council] This paper presents UNBench, the first comprehensive LLM evaluation benchmark for political science grounded in UN Security Council records from 1994 to 2024. It encompass…
+  [AAAI 2026 Oral][LLM Evaluation][UN Security Council] This paper presents UNBench, the first comprehensive LLM evaluation benchmark for political science grounded in UN Security Council records from 1994 to 2024. It encompasses four interrelated tasks—resolution drafting, voting simulation, adoption prediction, and representative statement generation—to systematically assess LLMs' ability to understand and simulate complex political dynamics.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Evaluation"
   - "UN Security Council"
   - "political science benchmark"
@@ -12,7 +12,7 @@ tags:
   - "resolution prediction"
   - "diplomatic text generation"
 date: 2026-05-08
-content_hash: 4b68681130a93bcd
+content_hash: e7fd06130e428958
 ---
 
 # Benchmarking LLMs for Political Science: A United Nations Perspective
@@ -130,10 +130,10 @@ Dataset statistics: 30-year span, 515 adopted resolutions, 98 non-adopted resolu
 ## Related Papers
 
 - [\[ACL 2026\] PolitNuggets: Benchmarking Agentic Discovery of Long-Tail Political Facts](../../ACL2026/llm_evaluation/politnuggets_benchmarking_agentic_discovery_of_long-tail_political_facts.md)
-- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](../../ICLR2026/llm_evaluation/dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
 - [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](../../ICML2026/llm_evaluation/politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
+- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](../../ICLR2026/llm_evaluation/dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
+- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](../../ICLR2026/llm_evaluation/sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
 - [\[ICLR 2026\] Benchmarking Overton Pluralism in LLMs](../../ICLR2026/llm_evaluation/benchmarking_overton_pluralism_in_llms.md)
-- [\[AAAI 2026\] Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy](do_llms_really_struggle_at_nl-fol_translation_revealing_their_strengths_via_a_no.md)
 
 </div>
 

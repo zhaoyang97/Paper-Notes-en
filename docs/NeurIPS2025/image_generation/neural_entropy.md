@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Entropy
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Models] This paper explores the connection between deep learning and information theory through the lens of diffusion models…
+  [NeurIPS 2025][Image Generation][Diffusion Models] This paper explores the connection between deep learning and information theory through the lens of diffusion models, introducing a "neural entropy" measure to quantify the amount of information stored in neural networks during the diffusion process, revealing that image diffusion models achieve remarkably high compression efficiency on structured data.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Data Compression"
   - "Neural Networks"
 date: 2026-05-08
-content_hash: 0edb1570520bde5f
+content_hash: fd8f466d13d631e1
 ---
 
 # Neural Entropy
@@ -152,8 +152,8 @@ Neural entropy measurements across different image datasets:
 - [\[NeurIPS 2025\] EVODiff: Entropy-aware Variance Optimized Diffusion Inference](evodiff_entropy-aware_variance_optimized_diffusion_inference.md)
 - [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
-- [\[ICCV 2025\] Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!](../../ICCV2025/image_generation/attention_to_neural_plagiarism_diffusion_models_can_plagiarize_your_copyrighted_.md)
-- [\[ICLR 2026\] NeuralOS: Towards Simulating Operating Systems via Neural Generative Models](../../ICLR2026/image_generation/neuralos_towards_simulating_operating_systems_via_neural_generative_models.md)
+- [\[CVPR 2025\] DNF: Unconditional 4D Generation with Dictionary-Based Neural Fields](../../CVPR2025/image_generation/dnf_unconditional_4d_generation_with_dictionary-based_neural_fields.md)
+- [\[ICML 2025\] ContinualFlow: Learning and Unlearning with Neural Flow Matching](../../ICML2025/image_generation/continualflow_learning_and_unlearning_with_neural_flow_matching.md)
 
 </div>
 

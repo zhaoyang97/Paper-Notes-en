@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EgoProx: Evaluating MLLMs on Egocentric 3D Proximity Reasoning Across a Cognitive Hierarchy
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] EgoProx is the first benchmark to evaluate whether Multimodal Large Language Models (MLLMs) can perform "body-object" 3D proximity reasoning from a first-person perspective. It organizes tasks into four categories based on the human cognitive hierarchy: Intention, Exploration, Exploitation, and Chain-of-Actions. Utiliz
+  [CVPR 2026][VLM Reasoning][First-person perspective] EgoProx is the first benchmark to evaluate whether Multimodal Large Language Models (MLLMs) can perform "body-object" 3D proximity reasoning from a first-person perspective. It organizes tasks into four categories based on the human cognitive hierarchy: Intention, Exploration, Exploitation, and Chain-of-Actions. Utilizing an agent-based data engine with Gemini-2.5-Pro as the controller to orchestrate various 3D tools…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "First-person perspective"
+  - "3D Proximity Reasoning"
+  - "Cognitive Hierarchy"
+  - "Agent Data Engine"
+  - "Spatial VQA"
 date: 2026-05-08
-content_hash: d4e2b1e64d2f9d28
+content_hash: f55aef6f7990cc4a
 ---
+
 # EgoProx: Evaluating MLLMs on Egocentric 3D Proximity Reasoning Across a Cognitive Hierarchy
 
 **Conference**: CVPR 2026  
@@ -121,14 +127,15 @@ Tuning on one dataset (e.g., ADT) improves proximity reasoning on another (e.g.,
 - **Value**: ⭐⭐⭐⭐⭐ Provides a quantifiable measure for embodied spatial intelligence with direct implications for AR and robotics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map](lasar_towards_spatio-temporal_reasoning_with_latent_cognitive_map.md)
 - [\[CVPR 2026\] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](think_360_evaluating_the_width-centric_reasoning_capability_of_mllms_beyond_dept.md)
-- [\[ICLR 2026\] EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning](../../ICLR2026/multimodal_vlm/egohandicl_egocentric_3d_hand_reconstruction_with_in-context_learning.md)
-- [\[CVPR 2026\] EgoSound: Benchmarking Sound Understanding in Egocentric Videos](egosound_benchmarking_sound_understanding_in_egocentric_videos.md)
+- [\[ACL 2026\] Do MLLMs Understand Pointing? Benchmarking and Enhancing Referential Reasoning in Egocentric Vision](../../ACL2026/vlm_reasoning/do_mllms_understand_pointing_benchmarking_and_enhancing_referential_reasoning_in.md)
+- [\[CVPR 2026\] Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](prototypical_action_reasoning_facilitated_by_vision-language_alignment_for_egoce.md)
+- [\[CVPR 2026\] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning](clivis_unleashing_cognitive_map_through_linguistic-visual_synergy_for_embodied_v.md)
 - [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
 
 </div>

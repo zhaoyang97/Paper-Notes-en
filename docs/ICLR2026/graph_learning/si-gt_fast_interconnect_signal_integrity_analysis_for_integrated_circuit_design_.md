@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Si-GT: Fast Interconnect Signal Integrity Analysis for Integrated Circuit Design via Graph Transformers
 description: >-
-  [ICLR 2026][Graph Learning][EDA] Si-GT models chip interconnects as coupled RC circuit graphs. It utilizes a graph Transformer customized for crosstalk effects (mesh structural encoding + virtual NET tokens + intra/inter-net attention bias) to directly predict crosstalk delay and glitches. The accuracy surpasses existing GNNs and graph Transformers, w
+  [ICLR 2026][Graph Learning][Signal Integrity] Si-GT models chip interconnects as coupled RC circuit graphs. It utilizes a graph Transformer customized for crosstalk effects (mesh structural encoding + virtual NET tokens + intra/inter-net attention bias) to directly predict crosstalk delay and glitches. The accuracy surpasses existing GNNs and graph Transformers, with an inference time of only 4ms, which is two orders of magnitude faster than SPICE simulation.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - EDA
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Signal Integrity"
+  - "Crosstalk"
+  - "Interconnect Modeling"
+  - "Graph Transformer"
+  - "EDA"
 date: 2026-05-08
-content_hash: b7ebafda933c4433
+content_hash: e4e2cb5a554213cb
 ---
+
 # Si-GT: Fast Interconnect Signal Integrity Analysis for Integrated Circuit Design via Graph Transformers
 
 **Conference**: ICLR 2026  
@@ -137,13 +142,14 @@ Evaluation of NET tokens, MPE (mesh structural encoding), and IIN:
 - Value: ⭐⭐⭐⭐ Provides a scalable proxy model for EDA crosstalk analysis.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](graph_tokenization_for_bridging_graphs_and_transformers.md)
 - [\[ACL 2025\] Fast-and-Frugal Text-Graph Transformers are Effective Link Predictors](../../ACL2025/graph_learning/fast-and-frugal_text-graph_transformers_are_effective_link_predictors.md)
 - [\[ICLR 2026\] Graph Signal Processing Meets Mamba2: Adaptive Filter Bank via Delta Modulation](graph_signal_processing_meets_mamba2_adaptive_filter_bank_via_delta_modulation.md)
+- [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](graph_tokenization_for_bridging_graphs_and_transformers.md)
 - [\[ICLR 2026\] Topology Matters in RTL Circuit Representation Learning](topology_matters_in_rtl_circuit_representation_learning.md)
 - [\[NeurIPS 2025\] FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design](../../NeurIPS2025/graph_learning/falcon_an_ml_framework_for_fully_automated_layout-constrained_analog_circuit_des.md)
 

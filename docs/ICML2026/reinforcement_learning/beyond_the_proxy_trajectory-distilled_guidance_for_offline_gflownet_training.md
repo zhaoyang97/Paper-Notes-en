@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training
 description: >-
-  [ICML 2026][Reinforcement Learning][GFlowNet] The paper proposes TD-GFN, an offline GFlowNet training framework that eliminates the need for proxy reward models. It extracts edge-level rewards from offline trajectories via inverse reinforcement learning, followed by indirect policy guidance through DAG pruning and prioritized backward sampling. This approach ensur
+  [ICML2026][Reinforcement Learning][GFlowNet] The paper proposes TD-GFN, an offline GFlowNet training framework that eliminates the need for proxy reward models. It extracts edge-level rewards from offline trajectories via inverse reinforcement learning, followed by indirect policy guidance through DAG pruning and prioritized backward sampling. This approach ensures that gradient updates rely exclusively on ground-truth terminal rewards, significantly outperforming existing ba…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GFlowNet
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "GFlowNet"
+  - "offline training"
+  - "inverse reinforcement learning"
+  - "DAG pruning"
+  - "proxy-free rewards"
 date: 2026-05-08
-content_hash: bc4a74be5b6f9a58
+content_hash: 8afdcda9b4b9b82e
 ---
+
 # Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training
 
 **Conference**: ICML2026  
@@ -134,10 +139,10 @@ The policy can be trained using any GFlowNet objective (FM, TB, SubTB, DB). Expe
 
 ## Related Papers
 
+- [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
 - [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
-- [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
 - [\[ICML 2026\] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement](counterfactual_transport_flows_for_offline_conservative_trajectory_refinement.md)
-- [\[ICLR 2026\] Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty](../../ICLR2026/reinforcement_learning/beyond_binary_rewards_training_lms_to_reason_about_their_uncertainty.md)
+- [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
 - [\[ICML 2026\] Beyond Scalar Rewards: Dense Feedback for LLM Policy Synthesis in Sequential Social Dilemmas](beyond_scalar_rewards_dense_feedback_for_llm_policy_synthesis_in_sequential_soci.md)
 
 </div>

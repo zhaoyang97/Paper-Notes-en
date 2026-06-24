@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation
 description: >-
-  [ICLR 2026][Pretraining][GRPO] OptimSyn transforms the manual task of "writing rubrics for synthetic data" into a learnable policy. It utilizes gradient-based influence scores to measure the actual contribution of each synthetic QA pair to target model training. These scores serve as rewards to train a rubric generator via GRPO, consistently achievi
+  [ICLR 2026][LLM Pretraining][Synthetic Data] OptimSyn transforms the manual task of "writing rubrics for synthetic data" into a learnable policy. It utilizes gradient-based influence scores to measure the actual contribution of each synthetic QA pair to target model training. These scores serve as rewards to train a rubric generator via GRPO, consistently achieving higher downstream accuracy in knowledge-intensive fields like humanities, social sciences (HSS)…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - GRPO
-  - SFT
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Synthetic Data"
+  - "Influence Function"
+  - "Rubric Optimization"
+  - "GRPO"
+  - "SFT"
 date: 2026-05-08
-content_hash: aa998fbce265058e
+content_hash: 394ab8024ed30acb
 ---
+
 # OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation
 
 **Conference**: ICLR 2026  

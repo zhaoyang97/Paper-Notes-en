@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Training Language Models to Reason Efficiently
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Efficient Reasoning] By incorporating a length penalty term into the RL reward—multiplying the correctness reward by $(1 - \alpha \cdot \sigma(\text{norm\_len}))$—and using a single…
+  [NeurIPS 2025][Reinforcement Learning][Efficient Reasoning] By incorporating a length penalty term into the RL reward—multiplying the correctness reward by $(1 - \alpha \cdot \sigma(\text{norm\_len}))$—and using a single hyperparameter $\alpha$ to control the token–accuracy trade-off curve, this work achieves a 50% reduction in token usage with less than 5% accuracy degradation on 7B reasoning models after only 100 RL training steps.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Length Penalty"
   - "Test-Time Compute"
 date: 2026-05-08
-content_hash: fd4c8a454c87ddaa
+content_hash: 6049649e5f785a7c
 ---
 
 # Training Language Models to Reason Efficiently
@@ -125,11 +125,11 @@ Base model: DeepSeek-R1-Distill-Qwen-7B.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Reason Efficiently with Discounted Reinforcement Learning](../../ICLR2026/reinforcement_learning/learning_to_reason_efficiently_with_discounted_reinforcement_learning.md)
 - [\[NeurIPS 2025\] RePIC: Reinforced Post-Training for Personalizing Multi-Modal Language Models](repic_reinforced_post-training_for_personalizing_multi-modal_language_models.md)
+- [\[ICLR 2026\] Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](../../ICLR2026/reinforcement_learning/learn_to_reason_efficiently_with_adaptive_length-based_reward_shaping.md)
 - [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](checklists_are_better_than_reward_models_for_aligning_langua.md)
-- [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
 
 </div>
 

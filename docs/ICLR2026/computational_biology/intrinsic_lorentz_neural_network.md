@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Computational Biology][hyperbolic neural network] The paper proposes ILNN, a fully intrinsic hyperbolic neural network where all operations are conducted within the Lorentz model. This eliminates the geometric inconsistency found in existing methods that mix Euclidean operations, achieving SOTA results in image classification, genomics, and graph classification.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - hyperbolic neural network
-  - Lorentz model
-  - intrinsic operations
-  - batch normalization
-  - geometric deep learning
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "hyperbolic neural network"
+  - "Lorentz model"
+  - "intrinsic operations"
+  - "batch normalization"
+  - "geometric deep learning"
 date: 2026-05-08
-content_hash: 03563909ae0f3106
+content_hash: 64f8914fe80d0cab
 ---
+
 # Intrinsic Lorentz Neural Network
 
 **Conference**: ICLR 2026  
@@ -146,7 +147,7 @@ The Lorentz model uses an $(n+1)$-dimensional ambient space where coordinates $(
 - [\[ICLR 2026\] h-MINT: Modeling Pocket-Ligand Binding with Hierarchical Molecular Interaction Network](h-mint_modeling_pocket-ligand_binding_with_hierarchical_molecular_interaction_ne.md)
 - [\[ICML 2026\] Demystifying Multimodal Biomolecular Co-design with Intrinsic Geodesic Coupling](../../ICML2026/computational_biology/demystifying_multimodal_biomolecular_co-design_with_intrinsic_geodesic_coupling.md)
 - [\[ICLR 2026\] Temporally Detailed Hypergraph Neural ODEs for Disease Progression Modeling](temporally_detailed_hypergraph_neural_ode_for_disease_progression_modeling.md)
-- [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
+- [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
 
 </div>
 

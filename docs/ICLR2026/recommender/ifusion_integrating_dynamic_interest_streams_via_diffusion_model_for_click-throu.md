@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] iFusion: Integrating Dynamic Interest Streams via Diffusion Model for Click-Through Rate Prediction
 description: >-
-  [ICLR 2026][Recommender Systems][Diffusion Model] iFusion reformulates "long-short term user interest fusion" as a conditional generation problem—utilizing short-term interests as guidance to perform diffusion denoising on long-term interest representations. This approach bypasses the assumptions of traditional linear fusion (concatenation/attention/gating), achieving
+  [ICLR 2026][Recommender Systems][CTR Prediction] iFusion reformulates "long-short term user interest fusion" as a conditional generation problem—utilizing short-term interests as guidance to perform diffusion denoising on long-term interest representations. This approach bypasses the assumptions of traditional linear fusion (concatenation/attention/gating), achieving CTR improvements across public datasets, industrial datasets, and online A/B tests.
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "CTR Prediction"
+  - "Long-Short Term Interest Fusion"
+  - "Diffusion Models"
+  - "Classifier-Free Guidance"
+  - "Autoregressive Denoising"
 date: 2026-05-08
-content_hash: afac3c40cacfba84
+content_hash: 2a111694a70ea8f2
 ---
+
 # iFusion: Integrating Dynamic Interest Streams via Diffusion Model for Click-Through Rate Prediction
 
 **Conference**: ICLR 2026  
@@ -132,8 +137,8 @@ iFusion leads across all four datasets. On the industrial set, the RelaImpr comp
 - [\[AAAI 2026\] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction](../../AAAI2026/recommender/length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_.md)
 - [\[ICLR 2026\] Steering Diffusion Models Towards Credible Content Recommendation](steering_diffusion_models_towards_credible_content_recommendation.md)
 - [\[ICLR 2026\] Discrete Diffusion for Bundle Construction](discrete_diffusion_for_bundle_construction.md)
+- [\[ICLR 2026\] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)
 - [\[ICLR 2026\] GoalRank: Group-Relative Optimization for a Large Ranking Model](goalrank_group-relative_optimization_for_a_large_ranking_model.md)
-- [\[ICLR 2026\] ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation](propersim_developing_proactive_and_personalized_ai_assistants_through_user-assis.md)
 
 </div>
 

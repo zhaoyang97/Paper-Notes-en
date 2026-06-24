@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distilling Diffusion Models to Efficient 3D LiDAR Scene Completion
 description: >-
-  [ICCV 2025 (Oral)][Autonomous Driving][LiDAR scene completion] This paper proposes ScoreLiDAR, a diffusion model distillation framework for 3D LiDAR scene completion. By incorporating scene-wise and point-wise structural…
+  [ICCV 2025 (Oral)][Autonomous Driving][LiDAR scene completion] This paper proposes ScoreLiDAR, a diffusion model distillation framework for 3D LiDAR scene completion. By incorporating scene-wise and point-wise structural losses to guide distillation, it reduces completion time from 30.55 seconds to 5.37 seconds (>5× speedup) while surpassing all state-of-the-art methods on SemanticKITTI.
 tags:
   - "ICCV 2025 (Oral)"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "point cloud reconstruction"
   - "autonomous driving perception"
 date: 2026-05-08
-content_hash: 2bb03c0f1622c10c
+content_hash: aec2fb34d7435451
 ---
 
 # Distilling Diffusion Models to Efficient 3D LiDAR Scene Completion
@@ -136,9 +136,9 @@ The total loss is the sum of three terms: $\mathcal{L} = \mathcal{L}_\text{score
 ## Related Papers
 
 - [\[AAAI 2026\] LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures](../../AAAI2026/autonomous_driving/linext_revisiting_lidar_completion_with_efficient_non-diffusion_architectures.md)
+- [\[CVPR 2025\] Distilling Monocular Foundation Model for Fine-grained Depth Completion](../../CVPR2025/autonomous_driving/distilling_monocular_foundation_model_for_fine-grained_depth_completion.md)
 - [\[NeurIPS 2025\] Towards Foundational LiDAR World Models with Efficient Latent Flow Matching](../../NeurIPS2025/autonomous_driving/towards_foundational_lidar_world_models_with_efficient_latent_flow_matching.md)
 - [\[NeurIPS 2025\] Neurosymbolic Diffusion Models](../../NeurIPS2025/autonomous_driving/neurosymbolic_diffusion_models.md)
-- [\[ICCV 2025\] Decoupled Diffusion Sparks Adaptive Scene Generation](decoupled_diffusion_sparks_adaptive_scene_generation.md)
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](../../CVPR2026/autonomous_driving/colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learnable Fractional Reaction-Diffusion Dynamics for Under-Display ToF Imaging and Beyond
 description: >-
-  [ICCV 2025][Interpretability][Under-display ToF imaging] LFRD² proposes a hybrid framework that combines learnable time-fractional reaction-diffusion equations with neural networks for under-display ToF (UD-ToF) depth ma…
+  [ICCV 2025][Interpretability][Under-display ToF imaging] LFRD² proposes a hybrid framework that combines learnable time-fractional reaction-diffusion equations with neural networks for under-display ToF (UD-ToF) depth map restoration. The approach captures long-range memory dependencies across iterations via fractional calculus and introduces an efficient continuous convolution operator to replace discrete convolution, achieving state-of-the-art performance on UD-ToF depth re…
 tags:
   - "ICCV 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "depth restoration"
   - "physics-driven"
 date: 2026-05-08
-content_hash: 408a2669f09cb3cc
+content_hash: 6e05c3c44dd129d7
 ---
 
 # Learnable Fractional Reaction-Diffusion Dynamics for Under-Display ToF Imaging and Beyond
@@ -182,11 +182,11 @@ LFRD² consists of two stages:
 
 ## Related Papers
 
+- [\[ICML 2025\] Reactivation: Empirical NTK Dynamics Under Task Shifts](../../ICML2025/interpretability/reactivation_empirical_ntk_dynamics_under_task_shifts.md)
 - [\[AAAI 2026\] PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics](../../AAAI2026/interpretability/pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic.md)
+- [\[ICLR 2026\] Patronus: Interpretable Diffusion Models with Prototypes](../../ICLR2026/interpretability/patronus_interpretable_diffusion_models_with_prototypes.md)
 - [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](../../NeurIPS2025/interpretability/beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
 - [\[ACL 2026\] Diffusion-CAM: Faithful Visual Explanations for dMLLMs](../../ACL2026/interpretability/diffusion-cam_faithful_visual_explanations_for_dmllms.md)
-- [\[ICML 2026\] Beyond Additive Decompositions: Interpretability Through Separability](../../ICML2026/interpretability/beyond_additive_decompositions_interpretability_through_separability.md)
-- [\[NeurIPS 2025\] Dynamic Algorithm for Explainable k-medians Clustering under lp Norm](../../NeurIPS2025/interpretability/dynamic_algorithm_for_explainable_k-medians_clustering_under_lp_norm.md)
 
 </div>
 

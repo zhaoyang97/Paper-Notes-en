@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)
 description: >-
-  [ICCV 2025][Image Restoration][Low-light enhancement] RetinEV proposes exploiting *temporal-mapping events* (triggered by transmittance modulation) rather than conventional motion events for illumination estimation. Comb…
+  [ICCV 2025][Image Restoration][Low-light enhancement] RetinEV proposes exploiting *temporal-mapping events* (triggered by transmittance modulation) rather than conventional motion events for illumination estimation. Combined with Retinex theory, it decomposes low-light images into illumination and reflectance components, and employs an Illumination-guided Reflectance Enhancement (IRE) module to achieve high-quality low-light image enhancement…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -13,7 +13,7 @@ tags:
   - "illumination estimation"
   - "reflectance enhancement"
 date: 2026-05-08
-content_hash: 6ca9c41ba81353a3
+content_hash: 13f6126a068362f7
 ---
 
 # Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)
@@ -150,11 +150,11 @@ Comprehensive evaluation on 5 synthetic datasets and the EvLowLight real-world d
 
 ## Related Papers
 
+- [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](../../CVPR2026/image_restoration/event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
+- [\[ECCV 2024\] Towards Real-world Event-guided Low-light Video Enhancement and Deblurring](../../ECCV2024/image_restoration/towards_real-world_event-guided_low-light_video_enhancement_and_deblurring.md)
 - [\[ICCV 2025\] CWNet: Causal Wavelet Network for Low-Light Image Enhancement](cwnet_causal_wavelet_network_for_low-light_image_enhancement.md)
-- [\[CVPR 2026\] UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation](../../CVPR2026/image_restoration/udapose_unsupervised_domain_adaptation_for_low_light_human_pose_estimation.md)
-- [\[AAAI 2026\] ICLR: Inter-Chrominance and Luminance Interaction for Natural Color Restoration in Low-Light Image Enhancement](../../AAAI2026/image_restoration/iclr_inter-chrominance_and_luminance_interaction_for_natural_color_restoration_i.md)
-- [\[NeurIPS 2025\] Luminance-Aware Statistical Quantization: Unsupervised Hierarchical Learning for Illumination Enhancement](../../NeurIPS2025/image_restoration/luminance-aware_statistical_quantization_unsupervised_hierarchical_learning_for_.md)
-- [\[ICCV 2025\] Generic Event Boundary Detection via Denoising Diffusion (DiffGEBD)](generic_event_boundary_detection_via_denoising_diffusion.md)
+- [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](../../CVPR2026/image_restoration/bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
+- [\[CVPR 2025\] HVI: A New Color Space for Low-light Image Enhancement](../../CVPR2025/image_restoration/hvi_a_new_color_space_for_low-light_image_enhancement.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Alethia: A Foundational Encoder for Voice Deepfakes
 description: >-
-  [ICML 2026][Audio & Speech][voice deepfake] Alethia proposes a "bottleneck masked embedding prediction + flow-matching spectrogram generation" dual-branch pretraining paradigm to develop the first foundational encoder specifically for voice deepfake detection, localization, and attribution. It significantly outperforms general SFMs like Wav2vec2, HuBERT, and Wav
+  [ICML 2026][Audio & Speech][voice deepfake] Alethia proposes a "bottleneck masked embedding prediction + flow-matching spectrogram generation" dual-branch pretraining paradigm to develop the first foundational encoder specifically for voice deepfake detection, localization, and attribution. It significantly outperforms general SFMs like Wav2vec2, HuBERT, and WavLM across 56 datasets in 5 task categories and exhibits strong zero-shot robustness against unseen singing voice dee…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - voice deepfake
-  - Flow Matching
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "voice deepfake"
+  - "voice foundation model"
+  - "masked embedding prediction"
+  - "Flow Matching"
+  - "spectrogram reconstruction"
 date: 2026-05-08
-content_hash: 587902c77101ef52
+content_hash: 605ecfaef05fa925
 ---
+
 # Alethia: A Foundational Encoder for Voice Deepfakes
 
 **Conference**: ICML 2026  
@@ -139,11 +143,11 @@ Zero-shot singing voice deepfake detection (SVDD, CtrSVDD test split, no singing
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learnable Fractional Superlets with a Spectro-Temporal Emotion Encoder for Speech Emotion Recognition](../../ICLR2026/audio_speech/learnable_fractional_superlets_with_a_spectro-temporal_emotion_encoder_for_speec.md)
 - [\[ACL 2025\] MultiMed: Multilingual Medical Speech Recognition via Attention Encoder Decoder](../../ACL2025/audio_speech/multimed_multilingual_medical_speech_recognition_via_attention_encoder_decoder.md)
 - [\[ACL 2026\] Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages](../../ACL2026/audio_speech/indic-codecfake_meets_satyam_towards_detecting_neural_audio_codec_synthesized_sp.md)
 - [\[ACL 2025\] Finding A Voice: Exploring the Potential of African American Dialect and Voice Generation for Chatbots](../../ACL2025/audio_speech/aae_voice_chatbot.md)
-- [\[ICLR 2026\] SiNGER: A Clearer Voice Distills Vision Transformers Further](../../ICLR2026/audio_speech/singer_a_clearer_voice_distills_vision_transformers_further.md)
-- [\[NeurIPS 2025\] Adapting Speech Language Model to Singing Voice Synthesis](../../NeurIPS2025/audio_speech/adapting_speech_language_model_to_singing_voice_synthesis.md)
+- [\[ICLR 2026\] WearVox: An Egocentric Multichannel Voice Assistant Benchmark for Wearables](../../ICLR2026/audio_speech/wearvox_an_egocentric_multichannel_voice_assistant_benchmark_for_wearables.md)
 
 </div>
 

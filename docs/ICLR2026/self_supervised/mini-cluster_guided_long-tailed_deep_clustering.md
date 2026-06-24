@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mini-cluster Guided Long-tailed Deep Clustering
 description: >-
-  [ICLR 2026][Self-Supervised Learning][mini-cluster] This paper proposes MiniClustering, which utilizes an auxiliary "fine-grained over-clustering" head to estimate how many mini-clusters each target cluster occupies. Under **purely unsupervised** conditions, it infers head/tail attributes for each class to re-weight the self-training loss, systematically introducing the
+  [ICLR 2026][Self-Supervised Learning][Deep Clustering] This paper proposes MiniClustering, which utilizes an auxiliary "fine-grained over-clustering" head to estimate how many mini-clusters each target cluster occupies. Under **purely unsupervised** conditions, it infers head/tail attributes for each class to re-weight the self-training loss, systematically introducing the re-weighting concept from supervised long-tailed learning into deep clustering for the first time.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - mini-cluster
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Deep Clustering"
+  - "Long-tailed Distribution"
+  - "Unsupervised Re-weighting"
+  - "mini-cluster"
+  - "Self-labeling"
 date: 2026-05-08
-content_hash: 273da789143f3533
+content_hash: 542af91972863a8f
 ---
+
 # Mini-cluster Guided Long-tailed Deep Clustering
 
 **Conference**: ICLR 2026  
@@ -124,11 +129,11 @@ CIFAR-10, imbalance ratio = 10.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Samples Are Not Equal: A Sample Selection Approach for Deep Clustering](samples_are_not_equal_a_sample_selection_approach_for_deep_clustering.md)
 - [\[CVPR 2026\] Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model](../../CVPR2026/self_supervised/nonparametric_deep_fine-grained_clustering_with_low-rank_guided_vision-language_.md)
 - [\[ICLR 2026\] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition](guide_gated_uncertainty-informed_disentangled_experts_for_long-tailed_recognitio.md)
 - [\[ICLR 2026\] Learning Dynamics of Logits Debiasing for Long-Tailed Semi-Supervised Learning](learning_dynamics_of_logits_debiasing_for_long-tailed_semi-supervised_learning.md)
-- [\[ICLR 2026\] CoLA: Co-Calibrated Logit Adjustment for Long-Tailed Semi-Supervised Learning](cola_co-calibrated_logit_adjustment_for_long-tailed_semi-supervised_learning.md)
-- [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](../../CVPR2026/self_supervised/reframing_long-tailed_learning_via_loss_landscape_geometry.md)
+- [\[ICLR 2026\] SCAD: Super-Class-Aware Debiasing for Long-Tailed Semi-Supervised Learning](scad_super-class-aware_debiasing_for_long-tailed_semi-supervised_learning.md)
 
 </div>
 

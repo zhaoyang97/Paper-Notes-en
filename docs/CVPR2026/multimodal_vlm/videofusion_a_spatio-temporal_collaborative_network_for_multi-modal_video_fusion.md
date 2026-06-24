@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes VideoFusion, the first large-scale infrared-visible video fusion framework. By integrating Cross-modal Differential Representation Enhancement (CmDRM), Complete Modality Guided Fusion (CMGF), and Bidirectional Temporal Collaborative Attention Mechanisms (BiCAM), it jointly models cross-modal complementari
+  [CVPR2026][Multimodal VLM][multi-modal video fusion] Ours proposes VideoFusion, the first large-scale infrared-visible video fusion framework. By integrating Cross-modal Differential Representation Enhancement (CmDRM), Complete Modality Guided Fusion (CMGF), and Bidirectional Temporal Collaborative Attention Mechanisms (BiCAM), it jointly models cross-modal complementarity and temporal dynamics to generate spatio-temporally consistent high-quality fused videos. Additionally…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "multi-modal video fusion"
+  - "infrared-visible fusion"
+  - "temporal consistency"
+  - "cross-modal attention"
+  - "video dataset"
 date: 2026-05-08
-content_hash: 2ad26d6acff3327c
+content_hash: cb73a3657130ee38
 ---
+
 # VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion
 
 **Conference**: CVPR2026  
@@ -186,8 +192,8 @@ VideoFusion achieves best performance on MI, SSIM, VIF, and flowD. Notably, flow
 
 - [\[CVPR 2026\] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map](lasar_towards_spatio-temporal_reasoning_with_latent_cognitive_map.md)
 - [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
-- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
-- [\[CVPR 2026\] CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models](comp_collaborative_multi-mode_pruning_for_vision-language_models.md)
+- [\[CVPR 2026\] ReCoFuse: Ultra-Robust Image Fusion via Restorative Multi-Modal Diffusion Reciprocal Coupling](recofuse_ultra-robust_image_fusion_via_restorative_multi-modal_diffusion_recipro.md)
+- [\[CVPR 2026\] SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs](sparrow_learning_spatial_precision_and_temporal_referential_consistency_in_pixel.md)
 - [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
 
 </div>

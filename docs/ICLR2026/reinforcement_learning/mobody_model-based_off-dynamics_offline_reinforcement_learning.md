@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] MOBODY shifts focus in "off-dynamics offline RL" from "filtering/penalizing high-offset source data" to "directly learning an accurate target domain dynamics model for rollout exploration." It employs dual action encoders with shared state/transition functions to learn target dynamics, combined with target Q-weighted b
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] MOBODY shifts focus in "off-dynamics offline RL" from "filtering/penalizing high-offset source data" to "directly learning an accurate target domain dynamics model for rollout exploration." It employs dual action encoders with shared state/transition functions to learn target dynamics, combined with target Q-weighted behavior cloning for policy optimization, achieving average improvements of 25%–44% on MuJoCo…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Dynamics Mismatch"
+  - "Model-based RL"
+  - "Representation Learning"
+  - "Behavior Cloning"
 date: 2026-05-08
-content_hash: f183886d7d8488e2
+content_hash: 21ffd6bfea579e1a
 ---
+
 # MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -127,9 +133,9 @@ This **upweights actions with high target Q-values**, pushing the policy toward 
 
 - [\[ICLR 2026\] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts](dual-robust_cross-domain_offline_reinforcement_learning_against_dynamics_shifts.md)
 - [\[ICLR 2026\] Masked Skill Token Training for Hierarchical Off-Dynamics Transfer](masked_skill_token_training_for_hierarchical_off-dynamics_transfer.md)
-- [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
+- [\[ICLR 2026\] ADM-v2: Pursuing Full-Horizon Roll-out in Dynamics Models for Offline Policy Learning and Evaluation](adm-v2_pursuing_full-horizon_roll-out_in_dynamics_models_for_offline_policy_lear.md)
 - [\[ICLR 2026\] Squeeze the Soaked Sponge: Efficient Off-Policy RFT for Large Language Model](squeeze_the_soaked_sponge_efficient_off-policy_rft_for_large_language_model.md)
-- [\[ICLR 2026\] In-Context Compositional Q-Learning for Offline Reinforcement Learning](in-context_compositional_q-learning_for_offline_reinforcement_learning.md)
 
 </div>
 

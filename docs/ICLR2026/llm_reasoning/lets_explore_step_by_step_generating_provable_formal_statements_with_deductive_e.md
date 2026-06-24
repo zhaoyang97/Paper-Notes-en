@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Let's Explore Step by Step: Generating Provable Formal Statements with Deductive Exploration
 description: >-
-  [ICLR 2026][LLM Reasoning][Lean 4] This paper proposes DExploration, which transforms mathematical problem synthesis from "one-shot generation" into "incremental deductive exploration in Lean 4." By using three atomic actions (introducing variables/hypotheses, deducing new facts, and submitting conclusions) with step-by-step verification, it generates n
+  [ICLR 2026][Reasoning][Formal Proof] This paper proposes DExploration, which transforms mathematical problem synthesis from "one-shot generation" into "incremental deductive exploration in Lean 4." By using three atomic actions (introducing variables/hypotheses, deducing new facts, and submitting conclusions) with step-by-step verification, it generates naturally provable, broad-coverage, and high-difficulty formal statements. Furthermore, an Exploratory Transformation is use…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Lean 4
-  - Data Distillation
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Formal Proof"
+  - "Lean 4"
+  - "Problem Synthesis"
+  - "Deductive Exploration"
+  - "Data Distillation"
 date: 2026-05-08
-content_hash: 26d01422e2dcbd1c
+content_hash: dfed85230131d02f
 ---
+
 # Let's Explore Step by Step: Generating Provable Formal Statements with Deductive Exploration
 
 **Conference**: ICLR 2026  
@@ -134,11 +138,11 @@ The framework itself (DExploration) and the interleaved reordering (Exploratory 
 
 ## Related Papers
 
+- [\[ACL 2025\] Entropy-based Exploration Conduction for Multi-step Reasoning](../../ACL2025/llm_reasoning/entropy-based_exploration_conduction_for_multi-step_reasoning.md)
+- [\[ACL 2026\] Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards](../../ACL2026/llm_reasoning/process_reward_models_meet_planning_generating_precise_and_scalable_datasets_for.md)
 - [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)
 - [\[ICLR 2026\] Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy](making_slow_thinking_faster_compressing_llm_chain-of-thought_via_step_entropy.md)
 - [\[ICLR 2026\] TRIM: Hybrid Inference via Targeted Stepwise Routing in Multi-Step Reasoning Tasks](trim_hybrid_inference_via_targeted_stepwise_routing_in_multi-step_reasoning_task.md)
-- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](agentic_reinforcement_learning_with_implicit_step_rewards.md)
-- [\[ICLR 2026\] Hilbert: Recursively Building Formal Proofs with Informal Reasoning](hilbert_recursively_building_formal_proofs_with_informal_reasoning.md)
 
 </div>
 

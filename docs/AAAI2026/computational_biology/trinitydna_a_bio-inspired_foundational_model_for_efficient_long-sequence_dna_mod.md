@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TrinityDNA: A Bio-Inspired Foundational Model for Efficient Long-Sequence DNA Modeling
 description: >-
-  [AAAI 2026][Computational Biology][DNA foundation model] TrinityDNA is a bio-inspired DNA foundation model integrating three innovations: a Groove Fusion module for capturing major/minor groove structural features…
+  [AAAI 2026][Computational Biology][DNA foundation model] TrinityDNA is a bio-inspired DNA foundation model integrating three innovations: a Groove Fusion module for capturing major/minor groove structural features, a Gated Reverse Complement mechanism for handling double-strand complementary symmetry, and Sliding Multi-Window Attention for multi-scale long-range dependency modeling. Combined with an Evolutionary Training Strategy (ETS) progressing from prokaryotes to eukaryot…
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -13,7 +13,7 @@ tags:
   - "multi-window attention"
   - "evolutionary training strategy"
 date: 2026-05-08
-content_hash: fce35b6511d94b2e
+content_hash: dc3145f2c633cd83
 ---
 
 # TrinityDNA: A Bio-Inspired Foundational Model for Efficient Long-Sequence DNA Modeling
@@ -177,11 +177,11 @@ The depth of biological knowledge integration is outstanding, the design philoso
 
 ## Related Papers
 
+- [\[ICML 2025\] eccDNAMamba: A Pre-Trained Model for Ultra-Long eccDNA Sequence Analysis](../../ICML2025/computational_biology/eccdnamamba_a_pre-trained_model_for_ultra-long_eccdna_sequence_analysis.md)
 - [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](../../ICLR2026/computational_biology/antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
-- [\[NeurIPS 2025\] JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model](../../NeurIPS2025/computational_biology/janusdna_a_powerful_bi-directional_hybrid_dna_foundation_model.md)
 - [\[AAAI 2026\] Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows](efficient_chromosome_parallelization_for_precision_medicine_genomic_workflows.md)
-- [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
-- [\[ICML 2026\] DNAChunker: Learnable Tokenization for DNA Language Models](../../ICML2026/computational_biology/dnachunker_learnable_tokenization_for_dna_language_models.md)
+- [\[NeurIPS 2025\] JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model](../../NeurIPS2025/computational_biology/janusdna_a_powerful_bi-directional_hybrid_dna_foundation_model.md)
+- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](../../ICLR2026/computational_biology/flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
 
 </div>
 

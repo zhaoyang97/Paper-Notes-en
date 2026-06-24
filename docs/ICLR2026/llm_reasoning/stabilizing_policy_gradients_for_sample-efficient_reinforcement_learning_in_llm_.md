@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper proposes CAPO (Curvature-Aware Policy Optimization), which stabilizes training under aggressive hyperparameters (5× learning rate, 1/12 batch size) by modeling second-order geometry in the final LM head layer to predict and filter token updates that lead to policy collapse. It achieves a 30× improvement in s
+  [ICLR 2026][Reasoning][Policy Gradient] This paper proposes CAPO (Curvature-Aware Policy Optimization), which stabilizes training under aggressive hyperparameters (5× learning rate, 1/12 batch size) by modeling second-order geometry in the final LM head layer to predict and filter token updates that lead to policy collapse. It achieves a 30× improvement in sample efficiency on MATH compared to standard GRPO.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Policy Gradient"
+  - "Curvature-Aware"
+  - "Sample Efficiency"
+  - "GRPO"
+  - "Second-order Optimization"
 date: 2026-05-08
-content_hash: 844866d8338cf84a
+content_hash: feef6e5b10db2d72
 ---
+
 # Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -130,15 +135,14 @@ The objective function is identical to GRPO—using a clipped surrogate with KL 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[ICLR 2026\] On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning](on_the_design_of_kl-regularized_policy_gradient_algorithms_for_llm_reasoning.md)
 - [\[ICLR 2026\] ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution](shinkaevolve_towards_open-ended_and_sample-efficient_program_evolution.md)
+- [\[ICLR 2026\] GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning](gpg_a_simple_and_strong_reinforcement_learning_baseline_for_model_reasoning.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
-- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
 
 </div>
 

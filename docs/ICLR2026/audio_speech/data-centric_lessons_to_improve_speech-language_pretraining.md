@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Data-Centric Lessons To Improve Speech-Language Pretraining
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This paper systematically migrates mature "data-centric" methodologies from the language/vision domains to speech-language pretraining. Through controlled ablations, it addresses three questions: how to chunk raw audio, how to generate synthetic data, and how to sample interleaved data. These insights are distilled int
+  [ICLR 2026][Audio & Speech][Spoken QA] This paper systematically migrates mature "data-centric" methodologies from the language/vision domains to speech-language pretraining. Through controlled ablations, it addresses three questions: how to chunk raw audio, how to generate synthetic data, and how to sample interleaved data. These insights are distilled into a 3.8B SpeechLM (SpeLangy), which outperforms models three times its size by 10.2% on Spoken Question-Answering (SQA).
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Spoken QA"
+  - "Data Engineering"
+  - "Speech-Text Interleaving"
+  - "Synthetic Data"
+  - "Modality Alignment"
 date: 2026-05-08
-content_hash: 60d4ea5437363ef7
+content_hash: fbed96b8f465aa23
 ---
+
 # Data-Centric Lessons To Improve Speech-Language Pretraining
 
 **Conference**: ICLR 2026  
@@ -137,7 +143,7 @@ Individual gains from data interventions (SQA avg):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -145,7 +151,7 @@ Individual gains from data interventions (SQA avg):
 - [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
 - [\[ACL 2026\] How Tokenization Limits Phonological Knowledge Representation in Language Models and How to Improve Them](../../ACL2026/audio_speech/how_tokenization_limits_phonological_knowledge_representation_in_language_models.md)
 - [\[ICCV 2025\] 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining](../../ICCV2025/audio_speech/25_years_in_class_a_multimodal_textbook_for_visionlanguage_p.md)
-- [\[ICLR 2026\] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)
+- [\[ICCV 2025\] Lyra: An Efficient and Speech-Centric Framework for Omni-Cognition](../../ICCV2025/audio_speech/lyra_an_efficient_and_speechcentric_framework_for_omnicognit.md)
 
 </div>
 

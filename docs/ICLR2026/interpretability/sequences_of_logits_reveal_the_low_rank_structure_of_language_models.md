@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sequences of Logits Reveal the Low Rank Structure of Language Models
 description: >-
-  [ICLR 2026][Interpretability][ISAN] This paper proposes the "extended logit matrix" as a model-agnostic object of study. It empirically finds that the logit matrices of modern autoregressive LLMs remain approximately low-rank on long sequence scales (with a singular value power law exponent $\alpha$ slightly greater than $1/2$). Based on this, the author
+  [ICLR 2026][Interpretability][Low-rank structure] This paper proposes the "extended logit matrix" as a model-agnostic object of study. It empirically finds that the logit matrices of modern autoregressive LLMs remain approximately low-rank on long sequence scales (with a singular value power law exponent $\alpha$ slightly greater than $1/2$). Based on this, the authors design the LINGEN program, which generates target continuations using linear combinations of irrelevant or n…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - ISAN
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Low-rank structure"
+  - "extended logit matrix"
+  - "linear representation"
+  - "ISAN"
+  - "model interpretability"
 date: 2026-05-08
-content_hash: 245b6bb34edd431d
+content_hash: 9f0c3d83c84d08ae
 ---
+
 # Sequences of Logits Reveal the Low Rank Structure of Language Models
 
 **Conference**: ICLR 2026  
@@ -128,15 +133,16 @@ The authors define **low logit rank**: if $\operatorname{rank}L_M(H,F)\le d$ for
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Understanding the Nature of Attention with Low-Rank Sparse Decomposition](towards_understanding_the_nature_of_attention_with_low-rank_sparse_decomposition.md)
 - [\[ICLR 2026\] Escaping Low-Rank Traps: Interpretable Visual Concept Learning via Implicit Vector Quantization](escaping_low-rank_traps_interpretable_visual_concept_learning_via_implicit_vecto.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[ICLR 2026\] Low-Pass Filtering Improves Behavioral Alignment of Vision Models](low-pass_filtering_improves_behavioral_alignment_of_vision_models.md)
 - [\[ICLR 2026\] LORE: Jointly Learning the Intrinsic Dimensionality and Relative Similarity Structure from Ordinal Data](lore_jointly_learning_the_intrinsic_dimensionality_and_relative_similarity_struc.md)
-- [\[ICLR 2026\] Language Models are Injective and Hence Invertible](language_models_are_injective_and_hence_invertible.md)
 
 </div>
 

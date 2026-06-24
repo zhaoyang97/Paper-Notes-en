@@ -2,10 +2,9 @@
 title: >-
   [Paper Note] Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology
 description: >-
-  [AAAI 2026][Medical NLP][Medical LLM] This paper systematically evaluates six small open-source medical LLMs (<10B parameters) in pediatric endocrinology…
+  [AAAI 2026][Medical LLM][Small Model Evaluation] This paper systematically evaluates six small open-source medical LLMs (<10B parameters) in pediatric endocrinology, demonstrating that accuracy alone is insufficient to characterize model reliability: semantically neutral prompt variations lead to significant output shifts (Stuart-Maxwell $p < 10^{-4}$), high consistency does not imply correctness, and even differences in CUDA versions can induce statistically significant outp…
 tags:
   - "AAAI 2026"
-  - "Medical NLP"
   - "Medical LLM"
   - "Small Model Evaluation"
   - "Stability"
@@ -14,7 +13,7 @@ tags:
   - "Pediatric Endocrinology"
   - "Self-Evaluation Bias"
 date: 2026-05-08
-content_hash: 54f64244f8847e60
+content_hash: e30569012959f4b2
 ---
 
 # Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology
@@ -170,10 +169,10 @@ This is the first work to systematically evaluate small medical LLMs from the pe
 ## Related Papers
 
 - [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](../../ACL2026/medical_nlp/beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
+- [\[AAAI 2026\] CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records](clicare_grounding_large_language_models_in_clinical_guidelines_for_decision_supp.md)
 - [\[ACL 2026\] MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts](../../ACL2026/medical_nlp/medfact_benchmarking_the_fact-checking_capabilities_of_large_language_models_on_.md)
 - [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](../../ACL2026/medical_nlp/text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
-- [\[AAAI 2026\] CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records](clicare_grounding_large_language_models_in_clinical_guidelines_for_decision_supp.md)
-- [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](../../ACL2026/medical_nlp/reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
+- [\[NeurIPS 2025\] HealthSLM-Bench: Benchmarking Small Language Models for Mobile and Wearable Healthcare Monitoring](../../NeurIPS2025/medical_nlp/healthslm-bench_benchmarking_small_language_models_for_mobile_and_wearable_healt.md)
 
 </div>
 

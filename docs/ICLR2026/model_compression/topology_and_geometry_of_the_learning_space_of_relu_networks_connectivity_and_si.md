@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This work systematically investigates the connectivity and singularity of the parameter space for feedforward ReLU networks based on general Directed Acyclic Graph (DAG) architectures from the perspectives of algebraic geometry and algebraic topology. It reveals the critical roles of bottleneck nodes and balance condit
+  [ICLR 2026][Model Compression][ReLU networks] This work systematically investigates the connectivity and singularity of the parameter space for feedforward ReLU networks based on general Directed Acyclic Graph (DAG) architectures from the perspectives of algebraic geometry and algebraic topology. It reveals the critical roles of bottleneck nodes and balance conditions in determining the topology of the parameter space and establishes a theoretical link between singularities a…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "ReLU networks"
+  - "parameter space topology"
+  - "connectivity"
+  - "singularity"
+  - "DAG architecture"
+  - "differentiable pruning"
 date: 2026-05-08
-content_hash: 62744a768e167fc4
+content_hash: 81d6a9497c3ccd47
 ---
+
 # Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size
 
 **Conference**: ICLR 2026  
@@ -115,6 +122,7 @@ As a theoretical contribution, numerical experiments serve as validation.
 *   Value: ⭐⭐⭐⭐ — Significant fundamental theory contribution with practical implications for pruning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -123,7 +131,7 @@ As a theoretical contribution, numerical experiments serve as validation.
 - [\[NeurIPS 2025\] Global Minimizers of ℓp-Regularized Objectives Yield the Sparsest ReLU Neural Networks](../../NeurIPS2025/model_compression/global_minimizers_of_ellp-regularized_objectives_yield_the_sparsest_relu_neural_.md)
 - [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
 - [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
-- [\[ICLR 2026\] Alignment-Enhanced Integration of Connectivity and Spectral Sparsity in Dynamic Sparse Training of LLM](alignment-enhanced_integration_of_connectivity_and_spectral_sparsity_in_dynamic_.md)
+- [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
 
 </div>
 

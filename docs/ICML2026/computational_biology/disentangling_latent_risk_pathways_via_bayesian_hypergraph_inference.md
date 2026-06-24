@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Disentangling Latent Risk Pathways via Bayesian Hypergraph Inference
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] To address the modeling challenges of "multi-disease, long-tail/rare diseases, and shared risk factors" in Electronic Health Records (EHR), the authors reformulate multi-disease risk as "risk-factor-modulated latent disease pathways." They employ a **latent hypergraph** (where hyperedges represent subsets of diseases s
+  [ICML 2026][Computational Biology][Bayesian Hypergraph] To address the modeling challenges of "multi-disease, long-tail/rare diseases, and shared risk factors" in Electronic Health Records (EHR), the authors reformulate multi-disease risk as "risk-factor-modulated latent disease pathways." They employ a **latent hypergraph** (where hyperedges represent subsets of diseases sharing risk factors) to express high-order structures, coupled with a **repulsive prior** to ensure spar…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Bayesian Hypergraph"
+  - "Multi-disease Modeling"
+  - "Structured Variational Inference"
+  - "Repulsive Prior"
+  - "Electronic Health Records"
 date: 2026-05-08
-content_hash: f1e385da9824e20c
+content_hash: 590c2d67960c65c1
 ---
+
 # Disentangling Latent Risk Pathways via Bayesian Hypergraph Inference
 
 **Conference**: ICML 2026  
@@ -140,10 +146,10 @@ BHPI matches or slightly outperforms Optimal Logistic regression in prediction A
 ## Related Papers
 
 - [\[ICML 2026\] iLoRA: Bayesian Low-Rank Adaptation with Latent Interaction Graphs for Microbiome Diagnosis](ilora_bayesian_low-rank_adaptation_with_latent_interaction_graphs_for_microbiome.md)
-- [\[AAAI 2026\] ProtSAE: Disentangling and Interpreting Protein Language Models via Semantically-Guided Sparse Autoencoders](../../AAAI2026/computational_biology/protsae_disentangling_and_interpreting_protein_language_models_via_semantically-.md)
+- [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](../../ICLR2026/computational_biology/coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
 - [\[ICML 2026\] Transformed Latent Variable Multi-Output Gaussian Processes](transformed_latent_variable_multi-output_gaussian_processes.md)
-- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
 - [\[ICML 2026\] Towards Universal Gene Regulatory Network Inference: Unlocking Generalizable Regulatory Knowledge in Single-cell Foundation Models](towards_universal_gene_regulatory_network_inference_unlocking_generalizable_regu.md)
+- [\[ICLR 2026\] Temporally Detailed Hypergraph Neural ODEs for Disease Progression Modeling](../../ICLR2026/computational_biology/temporally_detailed_hypergraph_neural_ode_for_disease_progression_modeling.md)
 
 </div>
 

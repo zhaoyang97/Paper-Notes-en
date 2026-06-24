@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper introduces the VRR-QA benchmark, containing 1K meticulously annotated video question-answer pairs specifically designed to test model capabilities in reasoning about implicit visual relations (e.g., off-screen events, cross-frame causality, and spatial inference). It reveals that current state-of-the-art Vid
+  [CVPR 2026][VLM Reasoning][Video Question Answering] This paper introduces the VRR-QA benchmark, containing 1K meticulously annotated video question-answer pairs specifically designed to test model capabilities in reasoning about implicit visual relations (e.g., off-screen events, cross-frame causality, and spatial inference). It reveals that current state-of-the-art VideoQA models (including GPT-O3) exhibit significant deficiencies in implicit reasoning—the best model achiev…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Question Answering"
+  - "Implicit Reasoning"
+  - "Visual Relational Reasoning"
+  - "Benchmark"
+  - "Multimodal Understanding"
 date: 2026-05-08
-content_hash: 3b80f427aa8093fa
+content_hash: 178c463a69ddccea
 ---
+
 # VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues
 
 **Conference**: CVPR 2026  
@@ -124,11 +130,11 @@ Simply stating that "models cannot perform implicit reasoning" is too vague to l
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking](beyond_explicit_language_plug-and-play_visual-to-linguistic_modeling_toward_gene.md)
-- [\[CVPR 2026\] CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization](cinesrd_leveraging_visual_acoustic_and_linguistic_cues_for_open-world_visual_med.md)
-- [\[CVPR 2026\] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)
-- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)
-- [\[CVPR 2026\] Beyond Caption-Based Queries in Video Moment Retrieval](beyond_caption-based_queries_in_video_moment_retrieval.md)
+- [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
+- [\[CVPR 2026\] Don't Show Pixels, Show Cues: Unlocking Visual Tool Reasoning in Language Models via Perception Programs](dont_show_pixels_show_cues_unlocking_visual_tool_reasoning_in_language_models_vi.md)
+- [\[CVPR 2026\] See Further, Think Deeper: Advancing VLM's Reasoning Ability with Low-level Visual Cues and Reflection](see_further_think_deeper_advancing_vlms_reasoning_ability_with_low-level_visual_.md)
+- [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)
+- [\[ICLR 2026\] VideoAnchor: Reinforcing Subspace-Structured Visual Cues for Coherent Visual-Spatial Reasoning](../../ICLR2026/vlm_reasoning/videoanchor_reinforcing_subspace-structured_visual_cues_for_coherent_visual-spat.md)
 
 </div>
 

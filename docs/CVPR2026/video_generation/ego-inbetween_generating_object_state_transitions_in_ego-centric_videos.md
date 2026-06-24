@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos
 description: >-
-  [CVPR 2026][Video Generation][Vision-Language Model] Addressing the new task of "generating intermediate frames to smoothly transition an object from an initial to a final state given an initial frame, a target frame, and an action instruction" (EIVST), EgoIn first uses a fine-tuned TransitionVLM to reason through the number of steps and their respective time intervals.
+  [CVPR 2026][Video Generation][Egocentric video] Addressing the new task of "generating intermediate frames to smoothly transition an object from an initial to a final state given an initial frame, a target frame, and an action instruction" (EIVST), EgoIn first uses a fine-tuned TransitionVLM to reason through the number of steps and their respective time intervals. These conditions are then injected frame-by-frame into a diffusion interpolation model…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Egocentric video"
+  - "object state transition"
+  - "video interpolation"
+  - "vision-language model"
+  - "frame-level condition injection"
 date: 2026-05-08
-content_hash: 1337d8f7b13f7137
+content_hash: 76f7a5e6128f7072
 ---
+
 # Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ Ablation of step count $K$ (Epic100 FVD): $K{=}1$ had insufficient context (247.
 
 ## Related Papers
 
+- [\[CVPR 2026\] Generating Humanless Environment Walkthroughs from Egocentric Walking Tour Videos](generating_humanless_environment_walkthroughs_from_egocentric_walking_tour_video.md)
 - [\[CVPR 2026\] VideoRealBench: A Chain-of-Thought Realism Evaluation Benchmark for Generated Human-Centric Videos](videorealbench_a_chain-of-thought_realism_evaluation_benchmark_for_generated_hum.md)
 - [\[ACL 2026\] OSCBench: Benchmarking Object State Change in Text-to-Video Generation](../../ACL2026/video_generation/oscbench_benchmarking_object_state_change_in_text-to-video_generation.md)
-- [\[CVPR 2026\] OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens](omnilottie_generating_vector_animations_via_parameterized_lottie_tokens.md)
-- [\[CVPR 2026\] ShotDirector: Directorially Controllable Multi-Shot Video Generation with Cinematographic Transitions](shotdirector_directorially_controllable_multi-shot_video_generation_with_cinemat.md)
 - [\[CVPR 2026\] HandWorld: Hand-Centric Unified Video Action Generation](handworld_hand-centric_unified_video_action_generation.md)
+- [\[CVPR 2026\] GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection](genhoi_towards_object-consistent_hand-object_interaction_with_temporally_balance.md)
 
 </div>
 

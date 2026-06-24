@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] In Defense of Information Leakage in Concept-based Models
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This is a position paper: the authors defend "information leakage" in concept models, an often-criticized phenomenon. They point out that when concept annotations are naturally incomplete in real-world scenarios, **moderate "benign leakage" is actually a necessary condition for building accurate and intervenable models
+  [ICML 2026][Interpretability][Concept Bottleneck Models] This is a position paper: the authors defend "information leakage" in concept models, an often-criticized phenomenon. They point out that when concept annotations are naturally incomplete in real-world scenarios, **moderate "benign leakage" is actually a necessary condition for building accurate and intervenable models**, and they provide a loss $\mathcal{L}_{\text{int}}$, requiring only one extra forward pass…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Information Leakage"
+  - "Concept Intervention"
+  - "Mutual Information"
+  - "Simplicity Bias"
 date: 2026-05-08
-content_hash: 91b80171862466b8
+content_hash: 60bab3b206fbcf14
 ---
+
 # In Defense of Information Leakage in Concept-based Models
 
 **Conference**: ICML 2026  
@@ -126,10 +132,10 @@ In incomplete settings, the leaky model leads task accuracy by approximately **2
 ## Related Papers
 
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](../../ICLR2026/interpretability/concepts_information_bottleneck_models.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
+- [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
 - [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](../../CVPR2026/interpretability/rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
-- [\[ECCV 2024\] Improving Intervention Efficacy via Concept Realignment in Concept Bottleneck Models](../../ECCV2024/interpretability/improving_intervention_efficacy_via_concept_realignment_in_concept_bottleneck_mo.md)
-- [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 
 </div>
 

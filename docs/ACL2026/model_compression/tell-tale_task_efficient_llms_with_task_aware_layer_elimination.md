@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination
 description: >-
-  [ACL 2026][Model Compression][Inference Acceleration] TALE utilizes a retraining-free greedy search process to directly eliminate "impeding" Transformer layers for specific downstream tasks, simultaneously enhancing task accuracy and reducing inference costs across five open-source LLMs and nine benchmarks.
+  [ACL 2026 Findings][Model Compression][Task-aware Pruning] TALE utilizes a retraining-free greedy search process to directly eliminate "impeding" Transformer layers for specific downstream tasks, simultaneously enhancing task accuracy and reducing inference costs across five open-source LLMs and nine benchmarks.
 tags:
-  - ACL 2026
-  - Model Compression
-  - Inference Acceleration
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Task-aware Pruning"
+  - "Layer Elimination"
+  - "Inference Acceleration"
+  - "Validation Set Search"
+  - "Retraining-free"
 date: 2026-05-08
-content_hash: eb7fa35f5f1b4a74
+content_hash: b1b7028396d9b915
 ---
+
 # TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination
 
 **Conference**: ACL 2026 Findings  
@@ -152,8 +157,8 @@ TALE is not just for inference-time pruning; it is also complementary to LoRA fi
 
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
 - [\[ACL 2026\] Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs](task-stratified_knowledge_scaling_laws_for_post-training_quantized_large_languag.md)
-- [\[ACL 2026\] LEAP: Layer-wise Exit-Aware Pretraining for Efficient Transformer Inference](leap_layer-wise_exit-aware_pretraining_for_efficient_transformer_inference.md)
 - [\[CVPR 2026\] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](../../CVPR2026/model_compression/discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)
+- [\[ACL 2026\] LEAP: Layer-wise Exit-Aware Pretraining for Efficient Transformer Inference](leap_layer-wise_exit-aware_pretraining_for_efficient_transformer_inference.md)
 - [\[ACL 2026\] ProActor: Timing-Aware Reinforcement Learning for Proactive Task Scheduling Agents](proactor_timing-aware_reinforcement_learning_for_proactive_task_scheduling_agent.md)
 
 </div>

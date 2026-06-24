@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Expressive Power of Low Precision Softmax Transformers with (Summarized) Chain-of-Thought
 description: >-
-  [ICML 2026][LLM Reasoning][Chain-of-Thought] This paper provides the first proof that a standard Transformer decoder using softmax attention and bfloat16-level precision (where both activations and attention weights are rounded) can simulate any Turing machine using CoT, provided its depth and width grow logarithmically with the context. It further proves that Su
+  [ICML 2026][Reasoning][Low-precision softmax] This paper provides the first proof that a standard Transformer decoder using softmax attention and bfloat16-level precision (where both activations and attention weights are rounded) can simulate any Turing machine using CoT, provided its depth and width grow logarithmically with the context. It further proves that Summarized CoT (SCoT) reduces the required scale from a time bound $\hat{t}$ to a space bound $\hat{s}$. Empirical r…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - Summarized CoT
+  - "ICML 2026"
+  - "Reasoning"
+  - "Low-precision softmax"
+  - "Chain-of-Thought"
+  - "Turing Machine Simulation"
+  - "Ternary Activation"
+  - "Summarized CoT"
 date: 2026-05-08
-content_hash: 2ccce3e47368d9d7
+content_hash: b0d3617c6a0f8f1f
 ---
+
 # The Expressive Power of Low Precision Softmax Transformers with (Summarized) Chain-of-Thought
 
 **Conference**: ICML 2026  
@@ -138,11 +142,11 @@ Performance saturates at $L=6$. A CoT model of the same size under $N=2^{14}$ tr
 
 ## Related Papers
 
-- [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
-- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
-- [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](modeling_hierarchical_thinking_in_large_reasoning_models.md)
+- [\[NeurIPS 2025\] Exact Expressive Power of Transformers with Padding](../../NeurIPS2025/llm_reasoning/exact_expressive_power_of_transformers_with_padding.md)
 - [\[ICML 2026\] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning](clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn.md)
-- [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
+- [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
+- [\[ICML 2026\] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models](when_the_chain_of_thought_knows_better_failure_modes_in_multi-turn_reasoning_mod.md)
+- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
 
 </div>
 

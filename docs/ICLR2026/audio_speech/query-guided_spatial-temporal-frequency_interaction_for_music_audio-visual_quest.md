@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Audio & Speech][Audio-Visual QA] The QSTar framework is proposed, which embeds Query Guidance throughout the entire processing pipeline and introduces a spatial-temporal-frequency interaction module (specifically utilizing spectral features to distinguish timbre), significantly enhancing Music Audio-Visual Question Answering (Music AVQA) performance.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Audio-Visual QA
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Audio-Visual QA"
+  - "Frequency-domain Interaction"
+  - "Query Guidance"
+  - "Spatial-Temporal Awareness"
+  - "Multimodal Reasoning"
 date: 2026-05-08
-content_hash: 5d8ed8a56fc266da
+content_hash: 23fae93c3c6880c0
 ---
+
 # Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering
 
 **Conference**: ICLR 2026  

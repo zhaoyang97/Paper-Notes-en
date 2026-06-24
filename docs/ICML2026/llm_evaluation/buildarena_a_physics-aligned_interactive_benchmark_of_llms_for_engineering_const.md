@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BuildArena: A Physics-Aligned Interactive Benchmark of LLMs for Engineering Construction
 description: >-
-  [ICML 2026][LLM Evaluation][Besiege] BuildArena places LLMs into the physical sandbox game Besiege, requiring them to use natural language to build bridges, vehicles, and rockets brick by brick. By using a physics engine for simulation and scoring, it systematically evaluates for the first time the engineering construction capability of LLMs to "translate
+  [ICML2026][LLM Evaluation][LLM Benchmark] BuildArena places LLMs into the physical sandbox game Besiege, requiring them to use natural language to build bridges, vehicles, and rockets brick by brick. By using a physics engine for simulation and scoring, it systematically evaluates for the first time the engineering construction capability of LLMs to "translate language into functional physical structures." Results indicate that only GPT-5 is marginally competent on hard tasks…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - Besiege
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "LLM Benchmark"
+  - "Physics Simulation"
+  - "3D Construction"
+  - "Agent Workflow"
+  - "Besiege"
 date: 2026-05-08
-content_hash: 2af56f487bc1f045
+content_hash: 16b6265f411832d3
 ---
+
 # BuildArena: A Physics-Aligned Interactive Benchmark of LLMs for Engineering Construction
 
 **Conference**: ICML2026  
@@ -124,9 +129,9 @@ GPT-5 maintains a 10.9% success rate on Support Hard, whereas most other frontie
 
 - [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](../../NeurIPS2025/llm_evaluation/toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
 - [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](../../ACL2026/llm_evaluation/beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
+- [\[ICLR 2026\] PRISM-Physics: Causal DAG-Based Process Evaluation for Physics Reasoning](../../ICLR2026/llm_evaluation/prism-physics_causal_dag-based_process_evaluation_for_physics_reasoning.md)
 - [\[ACL 2025\] PhysReason: A Comprehensive Benchmark towards Physics-Based Reasoning](../../ACL2025/llm_evaluation/physreason_a_comprehensive_benchmark_towards_physics-based_reasoning.md)
 - [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](../../ACL2026/llm_evaluation/engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
-- [\[ACL 2026\] CLARITY: A Framework and Benchmark for Conversational Language Ambiguity and Unanswerability in Interactive NL2SQL Systems](../../ACL2026/llm_evaluation/clarity_a_framework_and_benchmark_for_conversational_language_ambiguity_and_unan.md)
 
 </div>
 

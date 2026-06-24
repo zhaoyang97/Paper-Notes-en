@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] ExpGuard: LLM Content Moderation in Specialized Domains
 description: >-
-  [ICLR 2026][LLM Safety][guardrail model] Ours proposes ExpGuard, a safety guardrail model oriented towards specialized domains such as finance, medicine, and law, along with the accompanying ExpGuardMix dataset (58,928 samples). On domain-specific test sets, the prompt classification F1 exceeds WildGuard by 8.9% and response classification by 15.3%, while mai
+  [ICLR2026][LLM Safety][guardrail model] Ours proposes ExpGuard, a safety guardrail model oriented towards specialized domains such as finance, medicine, and law, along with the accompanying ExpGuardMix dataset (58,928 samples). On domain-specific test sets, the prompt classification F1 exceeds WildGuard by 8.9% and response classification by 15.3%, while maintaining SOTA performance on general safety benchmarks.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - guardrail model
-  - content moderation
-  - domain-specific
-  - financial/medical/legal
+  - "ICLR2026"
+  - "LLM Safety"
+  - "guardrail model"
+  - "content moderation"
+  - "domain-specific"
+  - "financial/medical/legal"
 date: 2026-05-08
-content_hash: 300f08b8135199c0
+content_hash: 0e3c8902092fc18c
 ---
+
 # ExpGuard: LLM Content Moderation in Specialized Domains
 
 **Conference**: ICLR2026  

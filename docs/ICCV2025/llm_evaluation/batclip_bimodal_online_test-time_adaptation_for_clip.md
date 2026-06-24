@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP
 description: >-
-  [ICCV 2025][LLM Evaluation][CLIP] This paper proposes BATCLIP, a bimodal online test-time adaptation (TTA) method for CLIP that simultaneously adapts the LayerNorm parameters of both the visual and text encoders. By intr…
+  [ICCV 2025][LLM Evaluation][CLIP] This paper proposes BATCLIP, a bimodal online test-time adaptation (TTA) method for CLIP that simultaneously adapts the LayerNorm parameters of both the visual and text encoders. By introducing a projection matching loss and an inter-class separability loss to enhance vision-text feature alignment and class discriminability, BATCLIP achieves state-of-the-art performance on CIFAR-10C, CIFAR-100C, and ImageNet-C.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "robustness to image corruption"
   - "vision-language models"
 date: 2026-05-08
-content_hash: e101ee58b8639ec9
+content_hash: 4e5ed83c677382eb
 ---
 
 # BATCLIP: Bimodal Online Test-Time Adaptation for CLIP
@@ -143,11 +143,11 @@ BATCLIP operates in an online TTA setting: test batches arrive sequentially, and
 
 ## Related Papers
 
+- [\[ECCV 2024\] Distribution Alignment for Fully Test-Time Adaptation with Dynamic Online Data Streams](../../ECCV2024/llm_evaluation/distribution_alignment_for_fully_test-time_adaptation_with_dynamic_online_data_s.md)
 - [\[ICCV 2025\] Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting](rethinking_few_shot_clip_benchmarks_a_critical_analysis_in_the_inductive_setting.md)
 - [\[ICCV 2025\] Imbalance in Balance: Online Concept Balancing in Generation Models](imbalance_in_balance_online_concept_balancing_in_generation_models.md)
 - [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](../../AAAI2026/llm_evaluation/test-time_diverse_reasoning_by_riemannian_activation_steering.md)
 - [\[NeurIPS 2025\] Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking](../../NeurIPS2025/llm_evaluation/time_travel_is_cheating_going_live_with_deepfund_for_real-time_fund_investment_b.md)
-- [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](../../AAAI2026/llm_evaluation/optscale_probabilistic_optimality_for_inference-time_scaling.md)
 
 </div>
 

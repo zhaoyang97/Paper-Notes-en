@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hybrid Token Compression for Vision-Language Models
 description: >-
-  [CVPR 2026][Model Compression][VLM] Addressing the dilemma where "continuous compression loses semantics and discrete quantization loses details" when visual tokens are compressed to 1, HTC-VLM utilizes a dual-path decoupling of a continuous channel (ViT patches for details) and a discrete channel (MGVQ for 4 semantic anchors). Through a decoupled attent
+  [CVPR 2026][Multimodal Efficiency][Visual token compression] Addressing the dilemma where "continuous compression loses semantics and discrete quantization loses details" when visual tokens are compressed to 1, HTC-VLM utilizes a dual-path decoupling of a continuous channel (ViT patches for details) and a discrete channel (MGVQ for 4 semantic anchors). Through a decoupled attention mask and a `<voco>` bottleneck, 580 tokens are compressed into 1…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token compression"
+  - "VLM"
+  - "Discrete quantization"
+  - "Semantic-appearance decoupling"
+  - "Single token bottleneck"
 date: 2026-05-08
-content_hash: b7eb8f24e3dde0c5
+content_hash: a402f20afc24d156
 ---
+
 # Hybrid Token Compression for Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -123,11 +128,11 @@ At the same 580→1 compression ratio, HTC-VLM increases the average retention r
 
 ## Related Papers
 
+- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
+- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
 - [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
-- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
 - [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
-- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
 
 </div>
 

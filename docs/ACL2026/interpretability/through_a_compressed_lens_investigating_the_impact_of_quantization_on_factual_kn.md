@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall
 description: >-
-  [ACL 2026][Interpretability][Quantization] This paper systematically evaluates the impact of weight quantization (e.g., GPTQ, AWQ, BitsAndBytes) on the factual knowledge recall of LLMs. It finds that quantization generally causes information loss and weakens knowledge retrieval, particularly harming smaller models and unsaturated relations; however, 8-bit/BitsA
+  [ACL 2026][Interpretability][Quantization] This paper systematically evaluates the impact of weight quantization (e.g., GPTQ, AWQ, BitsAndBytes) on the factual knowledge recall of LLMs. It finds that quantization generally causes information loss and weakens knowledge retrieval, particularly harming smaller models and unsaturated relations; however, 8-bit/BitsAndBytes tend to preserve capabilities well, and some quantizations even enhance multi-hop factual recall.
 tags:
-  - ACL 2026
-  - Interpretability
-  - Quantization
-  - Model Compression
+  - "ACL 2026"
+  - "Interpretability"
+  - "Quantization"
+  - "Factual Knowledge Recall"
+  - "Knowledge Neurons"
+  - "Implicit Multi-hop Reasoning"
+  - "Model Compression"
 date: 2026-05-08
-content_hash: eea81964919f2253
+content_hash: ef896a45fb5797b2
 ---
+
 # Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall
 
 **Conference**: ACL 2026  
@@ -137,9 +141,9 @@ TwoHop-Fact results demonstrate that quantization has the greatest impact on the
 
 - [\[ACL 2026\] Interpretable Traces, Unexpected Outcomes: Investigating the Disconnect in Trace-Based Knowledge Distillation](interpretable_traces_unexpected_outcomes_investigating_the_disconnect_in_trace-b.md)
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](tracing_relational_knowledge_recall_in_large_language_models.md)
-- [\[ACL 2025\] Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models](../../ACL2025/interpretability/degenerate_knowledge_neurons.md)
 - [\[ACL 2025\] An Empirical Study of Mechanistic Interpretability Approaches for Factual Recall](../../ACL2025/interpretability/an_empirical_study_of_mechanistic_interpretability_approaches_for_factual_recall.md)
-- [\[ACL 2026\] Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective](investigating_more_explainable_and_partition-free_compositionality_estimation_fo.md)
+- [\[ACL 2025\] Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models](../../ACL2025/interpretability/degenerate_knowledge_neurons.md)
+- [\[ICLR 2026\] Dynamic Weight Grafting: Localizing Finetuned Factual Knowledge in Transformers](../../ICLR2026/interpretability/dynamic_weight_grafting_localizing_finetuned_factual_knowledge_in_transformers.md)
 
 </div>
 

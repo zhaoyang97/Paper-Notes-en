@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LingOly-TOO: Disentangling Reasoning from Knowledge with Templatised Orthographic Obfuscation
 description: >-
-  [ICLR 2026][LLM Reasoning][reasoning benchmark] The LingOly-TOO benchmark is proposed to disentangle reasoning from knowledge by applying expert-designed grapheme-level permutations to Linguistics Olympiad problems. This obfuscation preserves reasoning logic while eliminating knowledge/memory shortcuts, reducing the top score of 15 frontier models from 0.59 to 0.48
+  [ICLR 2026][Reasoning][reasoning benchmark] The LingOly-TOO benchmark is proposed to disentangle reasoning from knowledge by applying expert-designed grapheme-level permutations to Linguistics Olympiad problems. This obfuscation preserves reasoning logic while eliminating knowledge/memory shortcuts, reducing the top score of 15 frontier models from 0.59 to 0.48 and systematically quantifying the extent to which LLM reasoning capabilities are overestimated due to knowledge eff…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - reasoning benchmark
-  - orthographic obfuscation
-  - linguistics olympiad
-  - knowledge contamination
-  - LLM evaluation
+  - "ICLR 2026"
+  - "Reasoning"
+  - "reasoning benchmark"
+  - "orthographic obfuscation"
+  - "linguistics olympiad"
+  - "knowledge contamination"
+  - "LLM evaluation"
 date: 2026-05-08
-content_hash: e85c4286e37906b9
+content_hash: a201eed66d2492c5
 ---
+
 # LingOly-TOO: Disentangling Reasoning from Knowledge with Templatised Orthographic Obfuscation
 
 **Conference**: ICLR 2026  
@@ -140,16 +141,16 @@ GPT-5 performance by difficulty ($M_{obf}$): Breakthrough = 0.81, Round 2 = 0.31
 - Value: ⭐⭐⭐⭐⭐ Provides a milestone methodology for contamination-resistant LLM reasoning evaluation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs](vog_enhancing_llm_reasoning_through_stepwise_verification_on_knowledge_graphs.md)
+- [\[ICLR 2026\] Enhancing LLMs for Knowledge Base Question Answering by Chain-of-Decomposition](enhancing_llms_for_knowledge_base_question_answering_by_chain-of-decomposition.md)
 - [\[ICLR 2026\] Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distillation](explain_in_your_own_words_improving_reasoning_via_token-selective_dual_knowledge.md)
 - [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
 - [\[ICLR 2026\] Diagnosing and Remedying Knowledge Deficiencies in LLMs via Label-free Curricular Meaningful Learning](diagnosing_and_remedying_knowledge_deficiencies_in_llms_via_label-free_curricula.md)
-- [\[ACL 2025\] Commonsense Abductive Reasoning using Knowledge from Multiple Sources](../../ACL2025/llm_reasoning/commonsense_abductive_reasoning_using_knowledge_from_multiple_sources.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MORE-STEM: Long-Short MemOry REcall and Spatio-TEmporal Consistency Model for Query-Driven 3D/4D Point Cloud Segmentation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the limitation that language-driven 3D segmentation only handles static single frames and fails to understand dynamic scenes, MORE-STEM extends query-driven segmentation from 3D to 4D point cloud sequences. It integrates cross-frame text-visual alignment, spatio-temporal consistency modeling (State Space Mod
+  [CVPR 2026][3D Vision][4D Point Cloud Segmentation] Addressing the limitation that language-driven 3D segmentation only handles static single frames and fails to understand dynamic scenes, MORE-STEM extends query-driven segmentation from 3D to 4D point cloud sequences. It integrates cross-frame text-visual alignment, spatio-temporal consistency modeling (State Space Model + Sparse Transformer), and long-short term memory recall. Additionally, it introduces InstructKITTI…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Point Cloud Segmentation"
+  - "Instruction Segmentation"
+  - "Spatio-Temporal Consistency"
+  - "Memory Mechanism"
+  - "Cross-Modal Alignment"
 date: 2026-05-08
-content_hash: 4a9e2f7b80442eaa
+content_hash: 42e746a02db1edea
 ---
+
 # MORE-STEM: Long-Short MemOry REcall and Spatio-TEmporal Consistency Model for Query-Driven 3D/4D Point Cloud Segmentation
 
 **Conference**: CVPR 2026  
@@ -120,10 +126,10 @@ On the InstructKITTI 4D benchmark, the model achieves 42.19 Acc@50 and 40.67 mIo
 ## Related Papers
 
 - [\[AAAI 2026\] MR-CoSMo: Visual-Text Memory Recall and Direct Cross-Modal Alignment Method for Query-Driven 3D Segmentation](../../AAAI2026/3d_vision/mr-cosmo_visual-text_memory_recall_and_direct_cross-modal_alignment_method_for_q.md)
-- [\[CVPR 2026\] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding](sts_mixer_4d_point_cloud.md)
 - [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
 - [\[CVPR 2026\] SuP: Sub-cloud Driven Point Cloud Registration](sup_sub-cloud_driven_point_cloud_registration.md)
-- [\[CVPR 2026\] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)
+- [\[CVPR 2026\] PQDT: Pseudo-Query Dual Transformer for Robust Point Cloud Restoration](pqdt_pseudo-query_dual_transformer_for_robust_point_cloud_restoration.md)
+- [\[CVPR 2026\] LangField4D: Learning Identity-Adaptive and Spatio-Temporal Continuous 4D Language Fields for Dynamic Scenes](langfield4d_learning_identity-adaptive_and_spatio-temporal_continuous_4d_languag.md)
 
 </div>
 

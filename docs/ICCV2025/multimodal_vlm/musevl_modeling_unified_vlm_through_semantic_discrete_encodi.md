@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MUSE-VL: Modeling Unified VLM through Semantic Discrete Encoding
 description: >-
-  [ICCV 2025][Multimodal VLM][unified VLM] This paper proposes a Semantic Discrete Encoding (SDE) visual tokenizer that augments VQGAN with SigLIP semantic feature constraints…
+  [ICCV 2025][Multimodal VLM][unified VLM] This paper proposes a Semantic Discrete Encoding (SDE) visual tokenizer that augments VQGAN with SigLIP semantic feature constraints, enabling discrete visual tokens to align semantically with language tokens. Built upon SDE, a unified autoregressive VLM (MUSE-VL) is constructed that, using only 24M training samples, outperforms Emu3 by 4.8% on understanding benchmarks, surpasses the specialist model LLaVA-NeXT 34B by 3.7%…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "autoregressive"
   - "image generation"
 date: 2026-05-08
-content_hash: 3fad1b402a799387
+content_hash: 9126024422428168
 ---
 
 # MUSE-VL: Modeling Unified VLM through Semantic Discrete Encoding
@@ -135,11 +135,11 @@ Tokenizer comparison (same LLM: Yi-1.5-9B; same data):
 
 ## Related Papers
 
-- [\[ACL 2026\] STELLA: A Multimodal LLM for Protein Functional Annotation via Unified Sequence-Structure Encoding](../../ACL2026/multimodal_vlm/stella_a_multimodal_llm_for_protein_functional_annotation_via_unified_sequence-s.md)
-- [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](../../ICLR2026/multimodal_vlm/unified_vision-language_modeling_via_concept_space_alignment.md)
+- [\[ICCV 2025\] Unified Multimodal Understanding via Byte-Pair Visual Encoding](unified_multimodal_understanding_via_byte-pair_visual_encoding.md)
+- [\[CVPR 2026\] ORION: ORthonormal Text Encoding for Universal VLM Adaptation](../../CVPR2026/multimodal_vlm/orion_orthonormal_text_encoding_for_universal_vlm_adaptation.md)
+- [\[ACL 2025\] CART: A Generative Cross-Modal Retrieval Framework with Coarse-To-Fine Semantic Modeling](../../ACL2025/multimodal_vlm/cart_a_generative_cross-modal_retrieval_framework_with_coarse-to-fine_semantic_m.md)
+- [\[ECCV 2024\] ArtVLM: Attribute Recognition Through Vision-Based Prefix Language Modeling](../../ECCV2024/multimodal_vlm/artvlm_attribute_recognition_through_vision-based_prefix_language_modeling.md)
 - [\[ICCV 2025\] Background Invariance Testing According to Semantic Proximity](background_invariance_testing_according_to_semantic_proximity.md)
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
-- [\[CVPR 2026\] Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens](../../CVPR2026/multimodal_vlm/cubic_discrete_diffusion_discrete_visual_generation_on_high-dimensional_represen.md)
 
 </div>
 

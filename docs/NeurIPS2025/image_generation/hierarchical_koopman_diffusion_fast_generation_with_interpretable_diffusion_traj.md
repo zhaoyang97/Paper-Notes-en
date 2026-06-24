@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hierarchical Koopman Diffusion: Fast Generation with Interpretable Diffusion Trajectory
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion model acceleration] Grounded in Koopman operator theory, this work lifts the nonlinear denoising dynamics of diffusion models into a linear Koopman space…
+  [NeurIPS 2025][Image Generation][Diffusion model acceleration] Grounded in Koopman operator theory, this work lifts the nonlinear denoising dynamics of diffusion models into a linear Koopman space, enabling one-step sampling through hierarchical decomposition while preserving the interpretability and controllability of intermediate generation states.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "hierarchical dynamics"
   - "spectral analysis"
 date: 2026-05-08
-content_hash: c0d7928f0123efe8
+content_hash: b09078602c09a59c
 ---
 
 # Hierarchical Koopman Diffusion: Fast Generation with Interpretable Diffusion Trajectory

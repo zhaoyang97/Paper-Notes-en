@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][Adaptive Caching] This paper proposes Foresight, a training-free adaptive layer reuse framework that establishes per-layer MSE thresholds during a warmup phase and dynamically decides at…
+  [NeurIPS 2025][Video Generation][Adaptive Caching] This paper proposes Foresight, a training-free adaptive layer reuse framework that establishes per-layer MSE thresholds during a warmup phase and dynamically decides at inference time whether to reuse cached features or recompute each layer. Evaluated on 5 video generation models, Foresight achieves superior quality and speed trade-offs compared to static methods, with up to 2.23× acceleration.
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Text-to-Video Generation"
   - "Training-Free"
 date: 2026-05-08
-content_hash: 87d6ddf499fee694
+content_hash: 29f993f16e27ec27
 ---
 
 # Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation
@@ -134,10 +134,10 @@ The authors prove that the error introduced by Foresight's reuse is bounded and 
 ## Related Papers
 
 - [\[CVPR 2026\] Free-Lunch Long Video Generation via Layer-Adaptive O.O.D Correction](../../CVPR2026/video_generation/free-lunch_long_video_generation_via_layer-adaptive_ood_correction.md)
+- [\[CVPR 2025\] OSV: One Step is Enough for High-Quality Image to Video Generation](../../CVPR2025/video_generation/osv_one_step_is_enough_for_high-quality_image_to_video_generation.md)
 - [\[ICCV 2025\] Dual-Expert Consistency Model for Efficient and High-Quality Video Generation](../../ICCV2025/video_generation/dual-expert_consistency_model_for_efficient_and_high-quality_video_generation.md)
 - [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](../../ICCV2025/video_generation/motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
 - [\[ICCV 2025\] DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation](../../ICCV2025/video_generation/dh-facevid-1k_a_large-scale_high-quality_dataset_for_face_video_generation.md)
-- [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](../../ICCV2025/video_generation/magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
 
 </div>
 

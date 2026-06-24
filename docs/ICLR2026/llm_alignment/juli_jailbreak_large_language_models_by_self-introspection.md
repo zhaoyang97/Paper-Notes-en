@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] JULI: Jailbreak Large Language Models by Self-Introspection
 description: >-
-  [ICLR 2026][Alignment & RLHF][jailbreak] This paper reveals the knowledge leakage issue where top-k token log probabilities of aligned LLMs still contain harmful information. It proposes JULI—a BiasNet plugin with less than 1% of the target model's parameters that manipulates logit bias. In API scenarios with access to only top-5 token probabilities, it succe
+  [ICLR 2026][LLM Alignment][jailbreak] This paper reveals the knowledge leakage issue where top-k token log probabilities of aligned LLMs still contain harmful information. It proposes JULI—a BiasNet plugin with less than 1% of the target model's parameters that manipulates logit bias. In API scenarios with access to only top-5 token probabilities, it successfully jailbreaks Gemini-2.5-Pro (Harmful Info Score 4.19/5), achieving a 140x speedup over LINT while doubling the harmf…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - jailbreak
-  - logit bias
-  - API attack
-  - token log probability
-  - BiasNet
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "jailbreak"
+  - "logit bias"
+  - "API attack"
+  - "token log probability"
+  - "BiasNet"
 date: 2026-05-08
-content_hash: 0f013636e75ae23d
+content_hash: e6a0d638377b5448
 ---
+
 # JULI: Jailbreak Large Language Models by Self-Introspection
 
 **Conference**: ICLR 2026  
@@ -145,9 +146,9 @@ Since only the intermediate transformation layer is trained, the cost is negligi
 ## Related Papers
 
 - [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
-- [\[ICLR 2026\] Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts](sysformer_safeguarding_frozen_large_language_models_with_adaptive_system_prompts.md)
 - [\[AAAI 2026\] BiasJailbreak: Analyzing Ethical Biases and Jailbreak Vulnerabilities in Large Language Models](../../AAAI2026/llm_alignment/biasjailbreakanalyzing_ethical_biases_and_jailbreak_vulnerabilities_in_large_lan.md)
 - [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
+- [\[ICLR 2026\] Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts](sysformer_safeguarding_frozen_large_language_models_with_adaptive_system_prompts.md)
 - [\[ICLR 2026\] Test-Time Alignment for Large Language Models via Textual Model Predictive Control](test-time_alignment_for_large_language_models_via_textual_model_predictive_contr.md)
 
 </div>

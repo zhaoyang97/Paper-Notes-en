@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Alignment-Aware Decoding
 description: >-
-  [ICML 2026][Alignment & RLHF][alignment-aware decoding] Alignment-Aware Decoding (AAD) directly leverages the token probability ratio of a DPO model relative to an SFT reference model as an implicit alignment reward during inference. Without additional training or external reward models, it generates high-quality aligned responses more stably than greedy, Bo2, and EFT decod
+  [ICML 2026][LLM Alignment][alignment-aware decoding] Alignment-Aware Decoding (AAD) directly leverages the token probability ratio of a DPO model relative to an SFT reference model as an implicit alignment reward during inference. Without additional training or external reward models, it generates high-quality aligned responses more stably than greedy, Bo2, and EFT decoding, while also serving as a mechanism to generate synthetic preference data for iterative DPO improvement.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - alignment-aware decoding
-  - DPO
-  - token-level reward
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "alignment-aware decoding"
+  - "DPO"
+  - "inference-time alignment"
+  - "token-level reward"
+  - "preference optimization"
 date: 2026-05-08
-content_hash: d1c5737a4cca7c50
+content_hash: 3dd6bec57e77cbe4
 ---
+
 # Alignment-Aware Decoding
 
 **Conference**: ICML 2026  
@@ -127,11 +130,11 @@ The paper analyzes external evaluation, human preference, reference choice, data
 
 ## Related Papers
 
+- [\[ICLR 2026\] Keep the Best, Forget the Rest: Reliable Alignment with Order-Aware Preference Optimization](../../ICLR2026/llm_alignment/keep_the_best_forget_the_rest_reliable_alignment_with_order-aware_preference_opt.md)
 - [\[ICLR 2026\] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment](../../ICLR2026/llm_alignment/semantic-aware_wasserstein_policy_regularization_for_large_language_model_alignm.md)
 - [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
-- [\[ICML 2026\] Implicit Preference Alignment for Human Image Animation](implicit_preference_alignment_for_human_image_animation.md)
+- [\[ICLR 2026\] Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization](../../ICLR2026/llm_alignment/sharpness-aware_minimization_in_logit_space_efficiently_enhances_direct_preferen.md)
 - [\[CVPR 2026\] Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models](../../CVPR2026/llm_alignment/uncertainty-aware_exploratory_direct_preference_optimization_for_multimodal_larg.md)
-- [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
 
 </div>
 

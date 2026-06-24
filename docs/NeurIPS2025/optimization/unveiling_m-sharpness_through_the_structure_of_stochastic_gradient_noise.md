@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise
 description: >-
-  [NeurIPS 2025][Optimization][SAM] This paper reveals the theoretical mechanism underlying m-sharpness in SAM through an extended stochastic differential equation (SDE) framework — smaller micro-batch size $m$ induces str…
+  [NeurIPS 2025][Optimization][SAM] This paper reveals the theoretical mechanism underlying m-sharpness in SAM through an extended stochastic differential equation (SDE) framework — smaller micro-batch size $m$ induces stronger implicit regularization via the covariance of stochastic gradient noise (SGN) — and proposes a parallelizable Reweighted SAM (RW-SAM) method based on this insight.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "SDE approximation"
   - "generalization"
 date: 2026-05-08
-content_hash: 024eefd777cc1983
+content_hash: 1f32de4710b12d80
 ---
 
 # Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise
@@ -73,7 +73,7 @@ By approximating discrete iterations as continuous SDEs, the paper compares the 
 5. **Reweighted SAM (RW-SAM)**: Motivated by the theoretical analysis, this parallelizable method is designed to simulate the effect of m-SAM. Core idea: samples with larger gradient norms carry stronger SGN and should receive higher weights.
 
    The optimization objective for the perturbation direction is:
-   $$\max_{P \in \Delta} \max_{\|\epsilon\| \leq 1} \langle \sum_i p_i \nabla f_i, \epsilon \rangle + \mathbb{H}(P)/\lambda$$
+    $\max_{P \in \Delta} \max_{\|\epsilon\| \leq 1} \langle \sum_i p_i \nabla f_i, \epsilon \rangle + \mathbb{H}(P)/\lambda$
 
    Solving the relaxation yields Gibbs distribution weights: $p_i^* = \frac{\exp(\lambda\|\nabla f_i\|)}{\sum_j \exp(\lambda\|\nabla f_j\|)}$
 
@@ -165,8 +165,8 @@ RW-SAM converges to minima with the smallest SGN covariance, empirically validat
 - [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
 - [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
 - [\[NeurIPS 2025\] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis](nonlinearly_preconditioned_gradient_methods_momentum_and_stochastic_analysis.md)
-- [\[NeurIPS 2025\] Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training](unveiling_the_power_of_multiple_gossip_steps_a_stability-based_generalization_an.md)
-- [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](improving_the_straight-through_estimator_with_zeroth-order_information.md)
+- [\[ICML 2025\] Tilted Sharpness-Aware Minimization](../../ICML2025/optimization/tilted_sharpness-aware_minimization.md)
+- [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](a_unified_approach_to_submodular_maximization_under_noise.md)
 
 </div>
 

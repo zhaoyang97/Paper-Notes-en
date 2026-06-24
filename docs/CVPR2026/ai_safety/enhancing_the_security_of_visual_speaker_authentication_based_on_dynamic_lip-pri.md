@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing the Security of Visual Speaker Authentication Based on Dynamic Lip-Print Analysis
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Ours proposes "viseme combinations" as the analysis unit for Visual Speaker Authentication (VSA), extracting unique sequential viseme speaking habits as "dynamic lip-prints." Combined with a multi-layer dynamic enhancement encoder using layer-wise frame differences, the system expands authentication prompt sets without
+  [CVPR 2026][AI Safety][Visual Speaker Authentication] Ours proposes "viseme combinations" as the analysis unit for Visual Speaker Authentication (VSA), extracting unique sequential viseme speaking habits as "dynamic lip-prints." Combined with a multi-layer dynamic enhancement encoder using layer-wise frame differences, the system expands authentication prompt sets without retraining or re-recording user videos. It significantly enhances resistance to replay attacks and variou…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Visual Speaker Authentication"
+  - "Dynamic Lip-Prints"
+  - "Viseme Analysis"
+  - "DeepFake Defense"
+  - "Scalable Prompt Sets"
 date: 2026-05-08
-content_hash: 5f74264b3be08b1a
+content_hash: eaeb58f9c86f3152
 ---
+
 # Enhancing the Security of Visual Speaker Authentication Based on Dynamic Lip-Print Analysis
 
 **Conference**: CVPR 2026  
@@ -137,14 +143,14 @@ VSA, unified-prompts (Table 3, AUC):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference](../../ACL2026/ai_safety/on_the_in-security_of_the_shuffling_defense_in_the_transformer_secure_inference.md)
 - [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
-- [\[CVPR 2026\] Mitigating Simplicity Bias in OOD Detection through Object Co-occurrence Analysis](mitigating_simplicity_bias_in_ood_detection_through_object_co-occurrence_analysi.md)
 - [\[CVPR 2026\] RaPA: Enhancing Transferable Targeted Attacks via Random Parameter Pruning](rapa_enhancing_transferable_targeted_attacks_via_random_parameter_pruning.md)
+- [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
 - [\[CVPR 2026\] Phantom: Physical Object Interactions as Dynamic Triggers for NMS-Exploited Backdoors](phantom_physical_object_interactions_as_dynamic_triggers_for_nms-exploited_backd.md)
 
 </div>

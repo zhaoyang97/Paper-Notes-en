@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] LongStream is proposed as a gauge-decoupled streaming visual geometry model. By utilizing keyframe-relative pose prediction, orthogonal scale learning, and cache-consistent training, it achieves stable metric-scale scene reconstruction for thousand-frame sequences in real-time (18 FPS).
+  [CVPR 2026][3D Vision][Streaming 3D Reconstruction] LongStream is proposed as a gauge-decoupled streaming visual geometry model. By utilizing keyframe-relative pose prediction, orthogonal scale learning, and cache-consistent training, it achieves stable metric-scale scene reconstruction for thousand-frame sequences in real-time (18 FPS).
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Streaming 3D Reconstruction"
+  - "Autoregressive Models"
+  - "Pose Estimation"
+  - "KV Cache"
+  - "Long Sequence"
 date: 2026-05-08
-content_hash: 855d731ed30aa6cb
+content_hash: f46430e08fc6106d
 ---
+
 # LongStream: Long-Sequence Streaming Autoregressive Visual Geometry
 
 **Conference**: CVPR 2026  
@@ -159,11 +165,11 @@ Note: 18 FPS real-time inference; memory and latency remain stable over long seq
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
-- [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
-- [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
-- [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
+- [\[ICCV 2025\] LONG3R: Long Sequence Streaming 3D Reconstruction](../../ICCV2025/3d_vision/long3r_long_sequence_streaming_3d_reconstruction.md)
+- [\[ICLR 2026\] Streaming Visual Geometry Transformer](../../ICLR2026/3d_vision/streaming_visual_geometry_transformer.md)
+- [\[CVPR 2026\] AutoRegressive Generation with B-rep Holistic Token Sequence Representation](autoregressive_generation_with_b-rep_holistic_token_sequence_representation.md)
+- [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
+- [\[CVPR 2026\] Stabilizing Streaming Video Geometry via Dynamic Feature Normalization](stabilizing_streaming_video_geometry_via_dynamic_feature_normalization.md)
 
 </div>
 

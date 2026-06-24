@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers
 description: >-
-  [NeurIPS 2025][LLM Reasoning][log-depth transformer] This paper proves that increasing Transformer depth from a constant to $\Theta(\log n)$ unlocks the ability to recognize regular languages and solve graph connectivity…
+  [NeurIPS 2025][Reasoning][log-depth transformer] This paper proves that increasing Transformer depth from a constant to $\Theta(\log n)$ unlocks the ability to recognize regular languages and solve graph connectivity — two problems provably beyond the reach of fixed-depth Transformers — and that depth scaling is strictly more efficient than width scaling (which requires super-polynomial growth) or Chain-of-Thought (CoT) steps (which requires super-logarithmic growth).
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "log-depth transformer"
   - "expressive power"
   - "regular language recognition"
   - "graph connectivity"
   - "computational complexity"
 date: 2026-05-08
-content_hash: a4f9a485e50a0354
+content_hash: dedda6334e564c44
 ---
 
 # A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers
@@ -121,10 +121,10 @@ The paper's analysis of depth vs. CoT suggests an interesting direction: since i
 ## Related Papers
 
 - [\[NeurIPS 2025\] Exact Expressive Power of Transformers with Padding](exact_expressive_power_of_transformers_with_padding.md)
+- [\[ICLR 2026\] MoDr: Mixture-of-Depth-Recurrent Transformers for Test-Time Reasoning](../../ICLR2026/llm_reasoning/modr_mixture-of-depth-recurrent_transformers_for_test-time_reasoning.md)
 - [\[ICML 2026\] The Expressive Power of Low Precision Softmax Transformers with (Summarized) Chain-of-Thought](../../ICML2026/llm_reasoning/the_expressive_power_of_low_precision_softmax_transformers_with_summarized_chain.md)
 - [\[NeurIPS 2025\] Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones](let_me_think_a_long_chainofthought_can_be_worth_exponentiall.md)
 - [\[NeurIPS 2025\] Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization](transformers_provably_learn_chain-of-thought_reasoning_with_length_generalizatio.md)
-- [\[NeurIPS 2025\] Unlabeled Data Can Provably Enhance In-Context Learning of Transformers](unlabeled_data_can_provably_enhance_in-context_learning_of_transformers.md)
 
 </div>
 

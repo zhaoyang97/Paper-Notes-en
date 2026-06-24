@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LEAP: Layer-wise Exit-Aware Pretraining for Efficient Transformer Inference
 description: >-
-  [ACL 2026][Model Compression][MiniLM] The authors theoretically and empirically demonstrate that "layer-wise alignment distillation" and "convergence-based early exit" are **systemically incompatible** under standard deployment—distilled models utilize every layer efficiently, leaving no redundancy for early exit. They propose LEAP, a zero-additional-param
+  [ACL 2026 (Industry Track · Emerging)][Model Compression][Early Exit] The authors theoretically and empirically demonstrate that "layer-wise alignment distillation" and "convergence-based early exit" are **systemically incompatible** under standard deployment—distilled models utilize every layer efficiently, leaving no redundancy for early exit. They propose LEAP, a zero-additional-parameter auxiliary training objective that forces intermediate layers to approximate the final…
 tags:
-  - ACL 2026
-  - Model Compression
-  - MiniLM
-  - Inference Acceleration
+  - "ACL 2026 (Industry Track · Emerging)"
+  - "Model Compression"
+  - "Early Exit"
+  - "Layer-wise Distillation"
+  - "MiniLM"
+  - "Sentence Embeddings"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 44a3b7ba9aaaf69c
+content_hash: d07df129c6959081
 ---
+
 # LEAP: Layer-wise Exit-Aware Pretraining for Efficient Transformer Inference
 
 **Conference**: ACL 2026 (Industry Track · Emerging)  

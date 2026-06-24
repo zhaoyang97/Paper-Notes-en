@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency
 description: >-
-  [NeurIPS 2025][LLM Alignment][Jailbreak Attack] This paper proposes JAIL-CON, a jailbreak attack framework based on task concurrency. By interleaving harmful and benign tasks at the word level…
+  [NeurIPS 2025][LLM Alignment][Jailbreak Attack] This paper proposes JAIL-CON, a jailbreak attack framework based on task concurrency. By interleaving harmful and benign tasks at the word level, it exploits LLMs' ability to handle concurrent tasks to bypass safety mechanisms, while the resulting concurrent outputs exhibit stronger evasiveness against guardrails.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "Guardrail Bypass"
   - "Adversarial Robustness"
 date: 2026-05-08
-content_hash: 1d701475653ab7e6
+content_hash: aaabdddc3d484596
 ---
 
 # Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency
@@ -177,11 +177,11 @@ Detection rates of generated content from each attack method after applying guar
 
 ## Related Papers
 
+- [\[ACL 2025\] QueryAttack: Jailbreaking Aligned Large Language Models Using Structured Non-natural Query Language](../../ACL2025/llm_alignment/queryattack_jailbreaking_aligned_large_language_models_using_structured_non-natu.md)
+- [\[ACL 2025\] Tempest: Autonomous Multi-Turn Jailbreaking of Large Language Models with Tree Search](../../ACL2025/llm_alignment/tempest_autonomous_multi-turn_jailbreaking_of_large_language_models_with_tree_se.md)
+- [\[ACL 2025\] Red Queen: Safeguarding Large Language Models against Concealed Multi-Turn Jailbreaking](../../ACL2025/llm_alignment/red_queen_safeguarding_large_language_models_against_concealed_multi-turn_jailbr.md)
 - [\[NeurIPS 2025\] Alignment of Large Language Models with Constrained Learning](alignment_of_large_language_models_with_constrained_learning.md)
 - [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
-- [\[NeurIPS 2025\] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models](reinforcement_learning_finetunes_small_subnetworks_in_large_language_models.md)
-- [\[NeurIPS 2025\] GASP: Efficient Black-Box Generation of Adversarial Suffixes for Jailbreaking LLMs](gasp_efficient_black-box_generation_of_adversarial_suffixes_for_jailbreaking_llm.md)
-- [\[ICCV 2025\] Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models](../../ICCV2025/llm_alignment/heuristic-induced_multimodal_risk_distribution_jailbreak_attack_for_multimodal_l.md)
 
 </div>
 

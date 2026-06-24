@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] DRiffusion: Draft-and-Refine Process Parallelizes Diffusion Models with Ease
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] DRiffusion formalizes "skipping intermediate timesteps" in diffusion sampling as a **local operator**. It first uses this operator to draft approximate states for the next $k$ timesteps at once, feeds these drafts into the original denoising network **in parallel** to obtain noises, and then refines them along the orig
+  [CVPR 2026][Image Generation][Diffusion models] DRiffusion formalizes "skipping intermediate timesteps" in diffusion sampling as a **local operator**. It first uses this operator to draft approximate states for the next $k$ timesteps at once, feeds these drafts into the original denoising network **in parallel** to obtain noises, and then refines them along the original trajectory. Without modifying pretrained models or samplers, it achieves a 1.4×–3.7× wall-clock speedup usi…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - Inference Acceleration
-  - draft-and-refine
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "parallel sampling"
+  - "inference acceleration"
+  - "jump transformation"
+  - "draft-and-refine"
 date: 2026-05-08
-content_hash: 9d9295fdc2b2bc95
+content_hash: b81a6d062f3e8a99
 ---
+
 # DRiffusion: Draft-and-Refine Process Parallelizes Diffusion Models with Ease
 
 **Conference**: CVPR 2026  
@@ -136,10 +139,20 @@ DRiffusion consistently outperforms AsyncDiff in PickScore at similar accelerati
 - Value: ⭐⭐⭐⭐ Plug-and-play and memory-friendly; high practical value for interactive diffusion deployment on multi-GPU systems.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Scale Space Diffusion: Integrating Scale Space into the Diffusion Process](scale_space_diffusion.md)
+- [\[ICML 2025\] Review, Remask, Refine (R3): Process-Guided Block Diffusion for Text Generation](../../ICML2025/image_generation/review_remask_refine_r3_process-guided_block_diffusion_for_text_generation.md)
+- [\[CVPR 2026\] ProcessMaker: A Generalized Process Visualization Framework with Adaptive Sequence Steps on Diffusion Transformers](processmaker_a_generalized_process_visualization_framework_with_adaptive_sequenc.md)
+- [\[CVPR 2026\] Reviving ConvNeXt for Efficient Convolutional Diffusion Models](reviving_convnext_for_efficient_convolutional_diffusion_models.md)
+- [\[CVPR 2026\] Visual Diffusion Models are Geometric Solvers](visual_diffusion_models_are_geometric_solvers.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2025\] Review, Remask, Refine (R3): Process-Guided Block Diffusion for Text Generation](../../ICML2025/image_generation/review_remask_refine_r3_process-guided_block_diffusion_for_text_generation.md)

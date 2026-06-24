@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Journey to the Centre of Cluster: Harnessing Interior Nodes for A/B Testing under Network Interference
 description: >-
-  [ICLR 2026][Causal Inference][A/B testing] To address the high variance issue in GATE estimation during A/B testing under network interference, this paper proposes the Mean-in-Interior (MII) estimator, which averages results only for nodes inside clusters to significantly reduce variance. Furthermore, an augmented AMII estimator is developed using a counterfact
+  [ICLR2026][Causal Inference][A/B testing] To address the high variance issue in GATE estimation during A/B testing under network interference, this paper proposes the Mean-in-Interior (MII) estimator, which averages results only for nodes inside clusters to significantly reduce variance. Furthermore, an augmented AMII estimator is developed using a counterfactual predictor for covariate shift correction, achieving both low bias and low variance.
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - A/B testing
-  - network interference
-  - cluster randomization
-  - GATE estimation
+  - "ICLR2026"
+  - "Causal Inference"
+  - "A/B testing"
+  - "network interference"
+  - "cluster randomization"
+  - "GATE estimation"
 date: 2026-05-08
-content_hash: 2c300724c72c3ec0
+content_hash: 4437e2b5fa2de2e6
 ---
+
 # Journey to the Centre of Cluster: Harnessing Interior Nodes for A/B Testing under Network Interference
 
 **Conference**: ICLR2026  
@@ -140,10 +141,10 @@ Comparison with the PPI framework (Angelopoulos et al., 2023): PPI assumes label
 ## Related Papers
 
 - [\[ICLR 2026\] Modeling Interference for Treatment Effect Estimation in Network Dynamic Environment](modeling_interference_for_treatment_effect_estimation_in_network_dynamic_environ.md)
-- [\[ICLR 2026\] Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement](resisting_contextual_interference_in_rag_via_parametric-knowledge_reinforcement.md)
 - [\[ICLR 2026\] Designing Time Series Experiments in A/B Testing with Transformer Reinforcement Learning](designing_time_series_experiments_in_ab_testing_with_transformer_reinforcement_l.md)
-- [\[ICLR 2026\] Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding](causal_imitation_learning_under_expert-observable_and_expert-unobservable_confou.md)
+- [\[ICLR 2026\] Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement](resisting_contextual_interference_in_rag_via_parametric-knowledge_reinforcement.md)
 - [\[ICML 2026\] Toward Scalable and Valid Conditional Independence Testing with Spectral Representations](../../ICML2026/causal_inference/toward_scalable_and_valid_conditional_independence_testing_with_spectral_represe.md)
+- [\[ICLR 2026\] Efficient and Sharp Off-Policy Learning under Unobserved Confounding](efficient_and_sharp_off-policy_learning_under_unobserved_confounding.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] An Information-Theoretic Framework For Optimizing Experimental Design To Distinguish Probabilistic Neural Codes
 description: >-
-  [ICLR 2026][Others][Information Gap] Ours proposes **information gap**, an information-theoretic metric that quantitatively evaluates the ability of a given experimental design to distinguish between two probabilistic neural coding hypotheses. This is achieved by deriving analytical expressions for the cross-entropy performance difference of decoders unde
+  [ICLR 2026][Information Gap] Ours proposes **information gap**, an information-theoretic metric that quantitatively evaluates the ability of a given experimental design to distinguish between two probabilistic neural coding hypotheses. This is achieved by deriving analytical expressions for the cross-entropy performance difference of decoders under likelihood and posterior coding hypotheses (essentially the KL divergence between the true posterior and a task-marginalized prox…
 tags:
-  - ICLR 2026
-  - Others
-  - Information Gap
+  - "ICLR 2026"
+  - "Information Gap"
+  - "Probabilistic coding hypothesis"
+  - "Likelihood coding"
+  - "Posterior coding"
+  - "Optimal experimental design"
 date: 2026-05-08
-content_hash: e96bf8b4e72d0a58
+content_hash: 1e60366be0f29bab
 ---
+
 # An Information-Theoretic Framework For Optimizing Experimental Design To Distinguish Probabilistic Neural Codes
 
 **Conference**: ICLR 2026  
@@ -153,7 +157,7 @@ In a single context (uniform prior), the theoretical info gap is predicted to be
 - [\[ICLR 2026\] Homeostatic Adaptation of Optimal Population Codes under Metabolic Stress](homeostatic_adaptation_of_optimal_population_codes_under_metabolic_stress.md)
 - [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](probabilistic_kernel_function_for_fast_angle_testing.md)
 - [\[ICLR 2026\] OSIRIS: Bridging Analog Circuit Design and Machine Learning with Scalable Dataset Generation](osiris_bridging_analog_circuit_design_and_machine_learning_with_scalable_dataset.md)
-- [\[AAAI 2026\] DeepRWCap: Neural-Guided Random-Walk Capacitance Solver for IC Design](../../AAAI2026/others/deeprwcap_neural-guided_random-walk_capacitance_solver_for_ic_design.md)
+- [\[ICLR 2026\] Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute](scaling_atomistic_protein_binder_design_with_generative_pretraining_and_test-tim.md)
 
 </div>
 

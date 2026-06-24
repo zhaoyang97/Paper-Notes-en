@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Riemannian Zeroth-Order Gradient Estimation with Structure-Preserving Metrics for Geodesically Incomplete Manifolds
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] To address the failure of zeroth-order estimators on Riemannian manifolds where "geodesic incompleteness" causes the exponential map to push perturbed points out of the manifold, this paper constructs a conformally equivalent metric $g'$ that is geodesically complete while preserving the original stationary point struc
+  [ICLR 2026][Optimization][Riemannian zeroth-order optimization] To address the failure of zeroth-order estimators on Riemannian manifolds where "geodesic incompleteness" causes the exponential map to push perturbed points out of the manifold, this paper constructs a conformally equivalent metric $g'$ that is geodesically complete while preserving the original stationary point structure. From a purely intrinsic perspective (independent of embeddings)…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Riemannian zeroth-order optimization"
+  - "geodesic completeness"
+  - "structure-preserving metrics"
+  - "sectional curvature"
+  - "rejection sampling"
 date: 2026-05-08
-content_hash: 17f9b2d72fc40baf
+content_hash: c7820552f6d5aa1b
 ---
+
 # Riemannian Zeroth-Order Gradient Estimation with Structure-Preserving Metrics for Geodesically Incomplete Manifolds
 
 **Conference**: ICLR 2026  
@@ -132,8 +138,8 @@ The task is to optimize $20\times20$ coarse grid node positions to approximate t
 - [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](strongly_convex_sets_in_riemannian_manifolds.md)
 - [\[ICLR 2026\] Adaptive gradient descent on Riemannian manifolds and its applications to Gaussian variational inference](adaptive_gradient_descent_on_riemannian_manifolds_and_its_applications_to_gaussi.md)
 - [\[ICLR 2026\] Scalable Second-Order Riemannian Optimization for K-means Clustering](scalable_second-order_riemannian_optimization_for_k-means_clustering.md)
+- [\[ICLR 2026\] Riemannian Federated Learning via Averaging Gradient Streams](riemannian_federated_learning_via_averaging_gradient_streams.md)
 - [\[ICLR 2026\] Unbiased Gradient Estimation for Event Binning via Functional Backpropagation](unbiased_gradient_estimation_for_event_binning_via_functional_backpropagation.md)
-- [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
 
 </div>
 

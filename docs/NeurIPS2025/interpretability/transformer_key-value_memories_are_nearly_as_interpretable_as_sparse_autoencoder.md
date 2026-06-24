@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders
 description: >-
-  [NeurIPS 2025][Interpretability][Sparse Autoencoders] This paper systematically compares the interpretability of features derived from Transformer feed-forward (FF) layer key-value memories with those learned by sparse a…
+  [NeurIPS 2025][Interpretability][Sparse Autoencoders] This paper systematically compares the interpretability of features derived from Transformer feed-forward (FF) layer key-value memories with those learned by sparse autoencoders (SAEs), finding the two approaches perform comparably on existing evaluation metrics—with FF-KV outperforming SAEs on certain dimensions—thereby questioning the necessity of SAEs as a feature discovery tool.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Key-Value Memories"
   - "Feature Discovery"
 date: 2026-05-08
-content_hash: 0299c78830e19d91
+content_hash: 1722a2e1b92321ed
 ---
 
 # Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders
@@ -131,10 +131,10 @@ FF-KV methods require **no training whatsoever** (they directly use the model's 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Steering Information Utility in Key-Value Memory for Language Model Post-Training](steering_information_utility_in_key-value_memory_for_language_model_post-trainin.md)
+- [\[ICML 2026\] Query Lens: Interpreting Sparse Key-Value Features with Indirect Effects](../../ICML2026/interpretability/query_lens_interpreting_sparse_key-value_features_with_indirect_effects.md)
+- [\[NeurIPS 2025\] From Flat to Hierarchical: Extracting Sparse Representations with Matching Pursuit](from_flat_to_hierarchical_extracting_sparse_representations_with_matching_pursui.md)
+- [\[ICML 2026\] Ensembling Sparse Autoencoders](../../ICML2026/interpretability/ensembling_sparse_autoencoders.md)
 - [\[NeurIPS 2025\] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders](a_is_for_absorption_studying_feature_splitting_and_absorption_in_sparse_autoenco.md)
-- [\[ICML 2026\] Sparse Autoencoders are Topic Models](../../ICML2026/interpretability/sparse_autoencoders_are_topic_models.md)
-- [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
-- [\[ACL 2026\] AdaptiveK: Complexity-Driven Sparse Autoencoders for Interpretable Language Model Representations](../../ACL2026/interpretability/adaptivek_complexity-driven_sparse_autoencoders_for_interpretable_language_model.md)
 
 </div>
 

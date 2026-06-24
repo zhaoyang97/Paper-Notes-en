@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Large Language Models Should Learn Personalized Rather Than Aggregated Human Preferences
 description: >-
-  [ICML 2026][Alignment & RLHF][RLHF] This position paper argues that current RLHF practices, which aggregate diverse human preferences into a single reward signal, essentially optimize for a "representative average" user who does not actually exist. Drawing from social choice theory and cross-demographic empirical evidence, the authors advocate for person
+  [ICML 2026][LLM Alignment][Preference Aggregation] This position paper argues that current RLHF practices, which aggregate diverse human preferences into a single reward signal, essentially optimize for a "representative average" user who does not actually exist. Drawing from social choice theory and cross-demographic empirical evidence, the authors advocate for personalized alignment. They propose a "bounded personalization" framework that maintains universal safety constrai…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Preference Aggregation"
+  - "Personalized Alignment"
+  - "RLHF"
+  - "Social Choice Theory"
+  - "Bounded Personalization"
 date: 2026-05-08
-content_hash: 4b15bc65f0ccb90b
+content_hash: 6626f653cacc7a26
 ---
+
 # Large Language Models Should Learn Personalized Rather Than Aggregated Human Preferences
 
 **Conference**: ICML 2026  
@@ -126,14 +131,15 @@ This position paper aggregates existing evidence to support its claims.
 - Value: ⭐⭐⭐⭐ (Crucial meta-question: "Aligned for whom?")
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](../../ACL2026/llm_alignment/bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
-- [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](../../ACL2026/llm_alignment/why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
 - [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](towards_context-invariant_safety_alignment_for_large_language_models.md)
+- [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](../../ACL2026/llm_alignment/bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
 - [\[ICML 2026\] VALUEFLOW: Toward Pluralistic and Steerable Value-based Alignment in Large Language Models](valueflow_toward_pluralistic_and_steerable_value-based_alignment_in_large_langua.md)
+- [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](../../ACL2026/llm_alignment/why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
 - [\[AAAI 2026\] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](../../AAAI2026/llm_alignment/when_human_preferences_flip_an_instance-dependent_robust_loss_for_rlhf.md)
 
 </div>

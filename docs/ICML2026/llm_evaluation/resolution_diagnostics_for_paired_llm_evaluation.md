@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Resolution Diagnostics for Paired LLM Evaluation
 description: >-
-  [ICML 2026][LLM Evaluation][McNemar] This paper treats the "Model A is 0.X pp higher than B" rankings on LLM leaderboards as a paired hypothesis testing problem. By inverting the level-$\alpha$ / power-$(1-\beta)$ test, it defines the "Resolution Ratio" $q=N/N^\star$. The authors prove that the common shortcut of multiplying the single-arm Cohen-$h$ formu
+  [ICML 2026][LLM Evaluation][Paired Testing] This paper treats the "Model A is 0.X pp higher than B" rankings on LLM leaderboards as a paired hypothesis testing problem. By inverting the level-$\alpha$ / power-$(1-\beta)$ test, it defines the "Resolution Ratio" $q=N/N^\star$. The authors prove that the common shortcut of multiplying the single-arm Cohen-$h$ formula by $(1-\rho)$ systematically underestimates the required sample size by half under small effects. Empirical resul…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - McNemar
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Paired Testing"
+  - "McNemar"
+  - "Resolution Ratio"
+  - "Minimum Detectable Effect"
+  - "Leaderboard Multiple Comparisons"
 date: 2026-05-08
-content_hash: 84a87476a5802cfc
+content_hash: 5deb5f10f5fa8fff
 ---
+
 # Resolution Diagnostics for Paired LLM Evaluation
 
 **Conference**: ICML 2026  
@@ -132,10 +137,10 @@ In the clustering row, the Rank 4 vs 5 comparison jumped from an IID $N^\star=43
 
 ## Related Papers
 
+- [\[ICML 2026\] Nonparametric LLM Evaluation from Preference Data](nonparametric_llm_evaluation_from_preference_data.md)
 - [\[ACL 2026\] Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation](../../ACL2026/llm_evaluation/beyond_reproduction_a_paired-task_framework_for_assessing_llm_comprehension_and_.md)
 - [\[ICML 2026\] Discovering Ordinary Differential Equations with LLM-Based Qualitative and Quantitative Evaluation](discovering_ordinary_differential_equations_with_llm-based_qualitative_and_quant.md)
 - [\[AAAI 2026\] ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions](../../AAAI2026/llm_evaluation/coninstruct_evaluating_large_language_models_on_conflict_detection_and_resolutio.md)
-- [\[ICML 2026\] Nonparametric LLM Evaluation from Preference Data](nonparametric_llm_evaluation_from_preference_data.md)
 - [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
 
 </div>

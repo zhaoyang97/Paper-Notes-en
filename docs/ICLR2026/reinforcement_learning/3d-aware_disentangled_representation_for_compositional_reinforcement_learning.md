@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] 3D-aware Disentangled Representation for Compositional Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][object-centric representation] This work extends the structured decomposition of "object attributes $\rightarrow$ discrete blocks" from 2D to 3D multi-view space. By utilizing a policy network with block-level cross-attention for goal-conditioned reinforcement learning, it enables a robot to stably push objects to target positions even under unseen
+  [ICLR 2026][Reinforcement Learning][object-centric representation] This work extends the structured decomposition of "object attributes $\rightarrow$ discrete blocks" from 2D to 3D multi-view space. By utilizing a policy network with block-level cross-attention for goal-conditioned reinforcement learning, it enables a robot to stably push objects to target positions even under unseen attribute combinations and novel viewpoints.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - object-centric representation
-  - 3D disentanglement
-  - block-slot attention
-  - goal-conditioned RL
-  - compositional generalization
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "object-centric representation"
+  - "3D disentanglement"
+  - "block-slot attention"
+  - "goal-conditioned RL"
+  - "compositional generalization"
 date: 2026-05-08
-content_hash: 8489093fd43344d3
+content_hash: 0ed2f1180eb69055
 ---
+
 # 3D-aware Disentangled Representation for Compositional Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -136,7 +137,7 @@ The 2D baseline collapses to ~0.05 when viewpoints change (due to over-fitting p
 - [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
 - [\[ICLR 2026\] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning](arm-fm_automated_reward_machines_via_foundation_models_for_compositional_reinfor.md)
 - [\[ICML 2026\] Decoupling Skeleton and Flesh: Efficient Multimodal Table Reasoning with Disentangled Alignment and Structure-aware Guidance](../../ICML2026/reinforcement_learning/decoupling_skeleton_and_flesh_efficient_multimodal_table_reasoning_with_disentan.md)
-- [\[ICLR 2026\] A$^2$Search: Ambiguity-Aware Question Answering with Reinforcement Learning](a2search_ambiguity-aware_question_answering_with_reinforcement_learning.md)
+- [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Continuous Uniqueness and Novelty Metrics for Generative Modeling of Inorganic Crystals
 description: >-
-  [NeurIPS 2025 (AI4Mat Workshop)][Image Generation][crystal generation] This paper identifies four critical flaws in the widely adopted discrete distance function (StructureMatcher) used to evaluate inorganic crystal gene…
+  [NeurIPS 2025 (AI4Mat Workshop)][Image Generation][crystal generation] This paper identifies four critical flaws in the widely adopted discrete distance function (StructureMatcher) used to evaluate inorganic crystal generative models, and proposes continuous distance functions based on Magpie fingerprints (composition) and AMD vectors (structure) to achieve more reliable uniqueness and novelty metrics.
 tags:
   - "NeurIPS 2025 (AI4Mat Workshop)"
   - "Image Generation"
@@ -14,7 +14,7 @@ tags:
   - "Magpie"
   - "StructureMatcher"
 date: 2026-05-08
-content_hash: 0271c37391b93234
+content_hash: f3e8a24ab11bcf3a
 ---
 
 # Continuous Uniqueness and Novelty Metrics for Generative Modeling of Inorganic Crystals
@@ -132,10 +132,10 @@ The uniqueness score of $d_{\text{smat}}$ is not permutation-invariant because i
 ## Related Papers
 
 - [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
-- [\[NeurIPS 2025\] Coupling Generative Modeling and an Autoencoder with the Causal Bridge](coupling_generative_modeling_and_an_autoencoder_with_the_causal_bridge.md)
+- [\[ICML 2025\] Generative Audio Language Modeling with Continuous-Valued Tokens and Masked Next-Token Prediction](../../ICML2025/image_generation/generative_audio_language_modeling_with_continuous-valued_tokens_and_masked_next.md)
+- [\[ICML 2025\] Position: All Current Generative Fidelity and Diversity Metrics are Flawed](../../ICML2025/image_generation/position_all_current_generative_fidelity_and_diversity_metrics_are_flawed.md)
 - [\[NeurIPS 2025\] Evolve to Inspire: Novelty Search for Diverse Image Generation](evolve_to_inspire_novelty_search_for_diverse_image_generation.md)
-- [\[NeurIPS 2025\] Boosting Generative Image Modeling via Joint Image-Feature Synthesis](boosting_generative_image_modeling_via_joint_imagefeature_sy.md)
-- [\[NeurIPS 2025\] Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation](evaluating_the_evaluators_metrics_for_compositional_text-to-image_generation.md)
+- [\[CVPR 2025\] UniCom: Unified Multimodal Modeling via Compressed Continuous Semantic Representations](../../CVPR2025/image_generation/unicom_unified_multimodal_modeling_via_compressed_continuous_semantic_representa.md)
 
 </div>
 

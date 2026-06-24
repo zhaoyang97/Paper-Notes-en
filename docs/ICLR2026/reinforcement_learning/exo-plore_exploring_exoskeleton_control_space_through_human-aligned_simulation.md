@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Exo-Plore: Exploring Exoskeleton Control Space through Human-Aligned Simulation
 description: >-
-  [ICLR 2026][Reinforcement Learning][exoskeleton optimization] Ours proposes the Exo-plore framework, which combines neuromechanical simulation with deep reinforcement learning to optimize hip exoskeleton control parameters without human trials, enabling generalization to pathological gait scenarios.
+  [ICLR2026][Reinforcement Learning][exoskeleton optimization] Ours proposes the Exo-plore framework, which combines neuromechanical simulation with deep reinforcement learning to optimize hip exoskeleton control parameters without human trials, enabling generalization to pathological gait scenarios.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - exoskeleton optimization
-  - neuromechanical simulation
-  - deep reinforcement learning
-  - human-in-the-loop
-  - surrogate optimization
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "exoskeleton optimization"
+  - "neuromechanical simulation"
+  - "deep reinforcement learning"
+  - "human-in-the-loop"
+  - "surrogate optimization"
 date: 2026-05-08
-content_hash: 0078a18f8bcf9cbc
+content_hash: 6c75e71452c2081a
 ---
+
 # Exo-Plore: Exploring Exoskeleton Control Space through Human-Aligned Simulation
 
 **Conference**: ICLR2026  

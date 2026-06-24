@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Tabular foundation models] This paper presents the first systematic study of design principles for synthetic priors, identifying diversity, distinctiveness…
+  [NeurIPS 2025][Self-Supervised Learning][Tabular foundation models] This paper presents the first systematic study of design principles for synthetic priors, identifying diversity, distinctiveness, and real-data alignment as critical attributes. Based on these findings, the authors propose Mitra — a tabular foundation model trained on a carefully selected mixture of synthetic priors — which consistently outperforms TabPFNv2 and TabICL on both classification and regression ben…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "TabPFN"
   - "prior mixture"
 date: 2026-05-08
-content_hash: e7aa171c060d0b8c
+content_hash: 67179e7d99b304a1
 ---
 
 # Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models
@@ -175,8 +175,8 @@ Mitra's advantage is most pronounced in the low-data regime, suggesting that the
 ## Related Papers
 
 - [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
+- [\[ICML 2025\] Towards Benchmarking Foundation Models for Tabular Data With Text](../../ICML2025/self_supervised/towards_benchmarking_foundation_models_for_tabular_data_with_text.md)
 - [\[AAAI 2026\] Robust Tabular Foundation Models](../../AAAI2026/self_supervised/robust_tabular_foundation_models.md)
-- [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
 - [\[NeurIPS 2025\] Implicit Modeling for Transferability Estimation of Vision Foundation Models](implicit_modeling_for_transferability_estimation_of_vision_foundation_models.md)
 - [\[NeurIPS 2025\] Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition](foundation_models_for_scientific_discovery_from_paradigm_enhancement_to_paradigm.md)
 

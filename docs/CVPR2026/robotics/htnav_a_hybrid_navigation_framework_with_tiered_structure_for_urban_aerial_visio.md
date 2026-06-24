@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] HTNav establishes a foundation for urban UAV vision-language navigation using a hybrid training paradigm of "IL pre-training + PPO fine-tuning," layered with a tiered decision-making mechanism ("Macro planification of waypoints + Micro action selection") and a residual map encoding module. It doubles the success rate o
+  [CVPR 2026][Robotics][Aerial VLN] HTNav establishes a foundation for urban UAV vision-language navigation using a hybrid training paradigm of "IL pre-training + PPO fine-tuning," layered with a tiered decision-making mechanism ("Macro planification of waypoints + Micro action selection") and a residual map encoding module. It doubles the success rate on unseen test scenarios in CityNav from 9.70% to 25.49%.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Aerial VLN"
+  - "UAV Navigation"
+  - "Imitation Learning + Reinforcement Learning"
+  - "Tiered Decision-making"
+  - "Map Representation Learning"
 date: 2026-05-08
-content_hash: 98d567ff0cbe5455
+content_hash: 76c1bc2871cfd4bd
 ---
+
 # HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation
 
 **Conference**: CVPR 2026  
@@ -144,8 +150,8 @@ Two additional key ablations: (1) **RL Weight** $\lambda_{RL}$: Increasing from 
 
 - [\[CVPR 2026\] AURA: Multi-modal Shared Autonomy for Urban Navigation](aura_multi-modal_shared_autonomy_for_urban_navigation.md)
 - [\[CVPR 2026\] Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation](memory-augmented_scene_understanding_and_exploration_for_open-world_aerial_objec.md)
-- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
 - [\[CVPR 2026\] Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory](parse_search_and_confirmation_training-free_aerial_vision-and-dialog_navigation_.md)
+- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
 - [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
 
 </div>

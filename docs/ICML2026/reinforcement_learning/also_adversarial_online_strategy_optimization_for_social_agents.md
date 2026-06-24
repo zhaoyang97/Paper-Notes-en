@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ALSO: Adversarial Online Strategy Optimization for Social Agents
 description: >-
-  [ICML 2026][Reinforcement Learning][Sotopia] ALSO models dynamic strategy selection in LLM social intelligence simulations as an adversarial online bandit. It utilizes a lightweight reward surrogate model to generalize sparse feedback from dialogue history, improving the overall score on Sotopia-Hard from 3.02 to 3.53, with significant gains in the relationship d
+  [ICML 2026][Reinforcement Learning][LLM Social Intelligence] ALSO models dynamic strategy selection in LLM social intelligence simulations as an adversarial online bandit. It utilizes a lightweight reward surrogate model to generalize sparse feedback from dialogue history, improving the overall score on Sotopia-Hard from 3.02 to 3.53, with significant gains in the relationship dimension.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Sotopia
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "LLM Social Intelligence"
+  - "Multi-Agent Simulation"
+  - "Online Strategy Optimization"
+  - "Adversarial Multi-Armed Bandit"
+  - "Sotopia"
 date: 2026-05-08
-content_hash: 82aeee3f677f9798
+content_hash: 61fa56529bf6a497
 ---
+
 # ALSO: Adversarial Online Strategy Optimization for Social Agents
 
 **Conference**: ICML 2026  
@@ -126,10 +131,10 @@ Ablations on Sotopia-Hard removed or replaced key components of ALSO.
 ## Related Papers
 
 - [\[ACL 2026\] Breaking the Impasse: Dual-Scale Evolutionary Policy Training for Social Language Agents](../../ACL2026/reinforcement_learning/breaking_the_impasse_dual-scale_evolutionary_policy_training_for_social_language.md)
-- [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](../../ACL2026/reinforcement_learning/dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
-- [\[ICML 2026\] Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning](interaction-breaking_adversarial_learning_framework_for_robust_multi-agent_reinf.md)
-- [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/online_optimization_for_offline_safe_reinforcement_learning.md)
-- [\[ICML 2026\] Data- and Variance-dependent Regret Bounds for Online Tabular MDPs](data-_and_variance-dependent_regret_bounds_for_online_tabular_mdps.md)
+- [\[ICLR 2026\] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization](../../ICLR2026/reinforcement_learning/on_the_tension_between_optimality_and_adversarial_robustness_in_policy_optimizat.md)
+- [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](../../ICLR2026/reinforcement_learning/group_verification-based_policy_optimization_for_interactive_coding_agents.md)
+- [\[ICLR 2026\] Improving Human-AI Coordination through Online Adversarial Training and Generative Models](../../ICLR2026/reinforcement_learning/improving_human-ai_coordination_through_online_adversarial_training_and_generati.md)
+- [\[ICLR 2026\] ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents](../../ICLR2026/reinforcement_learning/computerrl_scaling_end-to-end_online_reinforcement_learning_for_computer_use_age.md)
 
 </div>
 

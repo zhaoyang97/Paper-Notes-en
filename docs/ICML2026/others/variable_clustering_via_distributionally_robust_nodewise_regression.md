@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] 通过分布式鲁棒逐节点回归的变量聚类
+  [Paper Note] Variable Clustering via Distributionally Robust Nodewise Regression
 description: >-
-  [ICML 2026][Others][Paper Note] The study utilizes a Distributionally Robust Optimization (DRO) framework to transform the parameter tuning problem of nodewise regression into a convex optimization problem with spectral norm regularization—achieving a parameter-free clustering method that significantly outperforms Lasso sparse clustering on simulated
+  [ICML 2026][Variable Clustering] The study utilizes a Distributionally Robust Optimization (DRO) framework to transform the parameter tuning problem of nodewise regression into a convex optimization problem with spectral norm regularization—achieving a parameter-free clustering method that significantly outperforms Lasso sparse clustering on simulated, facial, and financial data.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Variable Clustering"
+  - "Subspace Clustering"
+  - "Nodewise Regression"
+  - "Distributionally Robust Optimization"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: be01467bbd62a065
+content_hash: 426ec240ff6d5efd
 ---
+
 # Variable Clustering via Distributionally Robust Nodewise Regression
 
 **Conference**: ICML 2026  
@@ -131,11 +136,11 @@ S&P 500 stock portfolio construction—the DRO-ACC combined method (first cluste
 
 ## Related Papers
 
-- [\[ICML 2026\] Position: Age Estimation Models Do Not Process Biometric Data](position_age_estimation_models_do_not_process_biometric_data.md)
-- [\[ICML 2026\] Structure-Induced Information for Rerooting Levin Tree Search](structure-induced_information_for_rerooting_levin_tree_search.md)
-- [\[ICML 2026\] Complexity as Advantage: A Regret-Based Perspective on Emergent Structure](complexity_as_advantage_a_regret-based_perspective_on_emergent_structure.md)
-- [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](private_and_stable_test-time_adaptation_with_differential_privacy.md)
-- [\[ICML 2026\] Networked Information Aggregation for Binary Classification](networked_information_aggregation_for_binary_classification.md)
+- [\[NeurIPS 2025\] Distributionally Robust Feature Selection](../../NeurIPS2025/others/distributionally_robust_feature_selection.md)
+- [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](../../ICLR2026/others/distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
+- [\[ICLR 2026\] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](../../ICLR2026/others/mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)
+- [\[CVPR 2026\] Large-scale Robust Enhanced Ensemble Clustering via Outlier Decoupling](../../CVPR2026/others/large-scale_robust_enhanced_ensemble_clustering_via_outlier_decoupling.md)
+- [\[ICML 2026\] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach](markov_chain_monte_carlo_without_evaluating_the_target_an_auxiliary_variable_app.md)
 
 </div>
 

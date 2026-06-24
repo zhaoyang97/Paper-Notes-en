@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] This paper proposes the first framework to perform cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By establishing a unified IR-VIS atomic space via a shared convolutional dictionary, it completes VIS→IR reasoning and adaptive fusion within the coefficient do
+  [CVPR 2026][Interpretability][Infrared-visible image fusion] This paper proposes the first framework to perform cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By establishing a unified IR-VIS atomic space via a shared convolutional dictionary, it completes VIS→IR reasoning and adaptive fusion within the coefficient domain. Combined with a frozen LLM providing weak semantic priors for thermal information completion…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Infrared-visible image fusion"
+  - "missing modality"
+  - "convolutional dictionary learning"
+  - "coefficient domain reasoning"
+  - "LLM prior"
 date: 2026-05-08
-content_hash: c6a12e661eb58c4c
+content_hash: 84df039f6eabb28c
 ---
+
 # Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared
 
 **Conference**: CVPR 2026  
@@ -134,16 +140,16 @@ Downstream Tasks:
 - **Value**: ⭐⭐⭐⭐ Successfully addresses missing infrared fusion with practical potential; the dictionary paradigm is generalizable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion](neurodynamics-driven_coupled_neural_p_systems_for_multi-focus_image_fusion.md)
-- [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](../../ICLR2026/interpretability/cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
+- [\[ICLR 2026\] Priors in Time: Missing Inductive Biases for Language Model Interpretability](../../ICLR2026/interpretability/priors_in_time_missing_inductive_biases_for_language_model_interpretability.md)
 - [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
+- [\[ICLR 2026\] Inferring the Invisible: Neuro-Symbolic Rule Discovery for Missing Value Imputation](../../ICLR2026/interpretability/inferring_the_invisible_neuro-symbolic_rule_discovery_for_missing_value_imputati.md)
 - [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
-- [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)
 
 </div>
 

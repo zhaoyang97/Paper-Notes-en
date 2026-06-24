@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] Latent Fourier Transform
 description: >-
-  [ICLR 2026][Others][diffusion autoencoder] The LatentFT framework is proposed to apply Discrete Fourier Transform (DFT) on the latent time-series representation of a diffusion autoencoder to separate musical patterns by timescale. During training, a stochastic correlated log-frequency mask is used to enable the decoder to reconstruct from partial spectra. Durin
+  [ICLR 2026 Oral][diffusion autoencoder] The LatentFT framework is proposed to apply Discrete Fourier Transform (DFT) on the latent time-series representation of a diffusion autoencoder to separate musical patterns by timescale. During training, a stochastic correlated log-frequency mask is used to enable the decoder to reconstruct from partial spectra. During inference, users selectively retain or mix musical elements at different timescales by specifying frequency masks. Lat…
 tags:
-  - ICLR 2026
-  - Others
-  - diffusion autoencoder
-  - Fourier transform
-  - music generation
-  - latent frequency
-  - timescale control
-  - controllable generation
+  - "ICLR 2026 Oral"
+  - "diffusion autoencoder"
+  - "Fourier transform"
+  - "music generation"
+  - "latent frequency"
+  - "timescale control"
+  - "controllable generation"
 date: 2026-05-08
-content_hash: 62876e6ca202a7b7
+content_hash: 0218ac39b3e9fa4e
 ---
+
 # Latent Fourier Transform
 
 **Conference**: ICLR 2026 Oral  

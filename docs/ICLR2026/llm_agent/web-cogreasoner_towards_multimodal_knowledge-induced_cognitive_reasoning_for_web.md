@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] By drawing on Bloom's Taxonomy, this paper decouples Web Agent capabilities into two stages: "Knowledge Content Learning" and "Cognitive Processes." It constructs a three-layered Web-CogKnowledge system (Factual/Conceptual/Procedural), a supporting Web-CogDataset, and a Web-CogBench. Through three-stage curriculum lear
+  [ICLR 2026][LLM Agent][Web Agent] By drawing on Bloom's Taxonomy, this paper decouples Web Agent capabilities into two stages: "Knowledge Content Learning" and "Cognitive Processes." It constructs a three-layered Web-CogKnowledge system (Factual/Conceptual/Procedural), a supporting Web-CogDataset, and a Web-CogBench. Through three-stage curriculum learning and knowledge-induced CoT, Web-CogReasoner is trained. With only 7B parameters, it surpasses open-source agents of the sa…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Bloom's Taxonomy"
+  - "Knowledge-induced CoT"
+  - "Curriculum Learning"
+  - "Multimodal"
 date: 2026-05-08
-content_hash: 895f848afb150fa8
+content_hash: efd945c6ded709b7
 ---
+
 # Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents
 
 **Conference**: ICLR 2026  
@@ -155,8 +160,8 @@ The role of KCoT (WebVoyager 4-site subset): S1+S2+S3 **w/o KCoT** scored 25.35%
 - [\[ACL 2025\] Explorer: Scaling Exploration-Driven Web Trajectory Synthesis for Multimodal Web Agents](../../ACL2025/llm_agent/explorer_scaling_exploration-driven_web_trajectory_synthesis_for_multimodal_web_.md)
 - [\[ICLR 2026\] WALT: Web Agents that Learn Tools](walt_web_agents_that_learn_tools.md)
 - [\[ICLR 2026\] How Dark Patterns Manipulate Web Agents](how_dark_patterns_manipulate_web_agents.md)
+- [\[CVPR 2026\] Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration](../../CVPR2026/llm_agent/learning_to_adapt_self-improving_web_agent_via_cognitive-aware_exploration.md)
 - [\[ICLR 2026\] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents](webarbiter_a_principle-guided_reasoning_process_reward_model_for_web_agents.md)
-- [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
 
 </div>
 

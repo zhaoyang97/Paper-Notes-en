@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SORA: Free Second-Order Attacks in Fast Adversarial Training
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper revisits catastrophic overfitting (CO) in single-step adversarial training from a second-order perspective. It proposes a zero-cost curvature metric, PertAlign, to provide early warning of CO. Based on this, the authors derive SORA: an adaptive fast adversarial training algorithm that estimates the Hessian f
+  [ICML 2026][AI Safety][Fast Adversarial Training] This paper revisits catastrophic overfitting (CO) in single-step adversarial training from a second-order perspective. It proposes a zero-cost curvature metric, PertAlign, to provide early warning of CO. Based on this, the authors derive SORA: an adaptive fast adversarial training algorithm that estimates the Hessian for free using gradients from the previous backpropagation and performs per-channel randomized sampling of the…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Fast Adversarial Training"
+  - "Catastrophic Overfitting"
+  - "Second-Order Optimization"
+  - "Adaptive Step-Size"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 6ffe38da205db178
+content_hash: 7ab6df0edc1d3443
 ---
+
 # SORA: Free Second-Order Attacks in Fast Adversarial Training
 
 **Conference**: ICML 2026  
@@ -116,16 +122,16 @@ SORA is the only single-step method that avoids CO across all 6 datasets while a
 - **vs ELLE**: ELLE explicitly regularizes loss surface linearity; SORA allows the attack to adapt to the current curvature rather than forcing linearity.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Mitigating Error Amplification in Fast Adversarial Training](../../CVPR2026/ai_safety/mitigating_error_amplification_in_fast_adversarial_training.md)
+- [\[ECCV 2024\] Preventing Catastrophic Overfitting in Fast Adversarial Training: A Bi-level Optimization Perspective](../../ECCV2024/ai_safety/preventing_catastrophic_overfitting_in_fast_adversarial_training_a_bi-level_opti.md)
 - [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](training-free_coverless_multi-image_steganography_with_access_control.md)
 - [\[ICML 2026\] Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling](rotation-invariant_spherical_watermarking_via_third-order_so3_representation_cou.md)
-- [\[ECCV 2024\] Preventing Catastrophic Overfitting in Fast Adversarial Training: A Bi-level Optimization Perspective](../../ECCV2024/ai_safety/preventing_catastrophic_overfitting_in_fast_adversarial_training_a_bi-level_opti.md)
-- [\[NeurIPS 2025\] Distributional Adversarial Attacks and Training in Deep Hedging](../../NeurIPS2025/ai_safety/distributional_adversarial_attacks_and_training_in_deep_hedging.md)
+- [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
 
 </div>
 

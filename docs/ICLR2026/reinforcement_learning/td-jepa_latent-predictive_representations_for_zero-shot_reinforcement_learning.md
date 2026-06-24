@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][latent prediction] TD-JEPA transforms JEPA-style latent prediction from an "auxiliary one-step prediction loss" into a "multi-policy, multi-step, TD-trained core objective." By simultaneously learning a state encoder, task encoder, successor-feature predictor, and latent policy on reward-free offline data, it enables zero-shot strategy s
+  [ICLR 2026][Reinforcement Learning][Zero-shot Reinforcement Learning] TD-JEPA transforms JEPA-style latent prediction from an "auxiliary one-step prediction loss" into a "multi-policy, multi-step, TD-trained core objective." By simultaneously learning a state encoder, task encoder, successor-feature predictor, and latent policy on reward-free offline data, it enables zero-shot strategy selection using only a few reward samples at test time.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - latent prediction
-  - successor features
-  - temporal difference
-  - reward-free offline RL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Zero-shot Reinforcement Learning"
+  - "latent prediction"
+  - "successor features"
+  - "temporal difference"
+  - "reward-free offline RL"
 date: 2026-05-08
-content_hash: 23cd4aedb48920fe
+content_hash: 73ddd2b759ddcb71
 ---
+
 # TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -155,6 +157,7 @@ Zero-shot performance was evaluated across 13 datasets and 65 tasks, including l
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -162,8 +165,8 @@ Zero-shot performance was evaluated across 13 datasets and 65 tasks, including l
 - [\[ICLR 2026\] Wavelet Predictive Representations for Non-Stationary Reinforcement Learning](wavelet_predictive_representations_for_non-stationary_reinforcement_learning.md)
 - [\[ICLR 2026\] Zero-Shot Adaptation of Behavioral Foundation Models to Unseen Dynamics](zero-shot_adaptation_of_behavioral_foundation_models_to_unseen_dynamics.md)
 - [\[ICLR 2026\] Predictive CVaR Q-Learning](predictive_cvar_q-learning.md)
+- [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
 - [\[NeurIPS 2025\] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization](../../NeurIPS2025/reinforcement_learning/dynamics-aligned_latent_imagination_in_contextual_world_models_for_zero-shot_gen.md)
-- [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
 
 </div>
 

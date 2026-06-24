@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents
 description: >-
-  [ICLR 2026][Remote Sensing][benchmark] Earth-Agent is the first Earth Observation (EO) Agent framework based on the Model Context Protocol (MCP) tool ecosystem. it unifies RGB and spectral remote sensing data, achieving cross-modal, multi-step, and quantitative spatio-temporal reasoning by dynamically invoking 104 expert tools. The proposed Earth-Bench benc
+  [ICLR 2026][Remote Sensing][Earth Observation] Earth-Agent is the first Earth Observation (EO) Agent framework based on the Model Context Protocol (MCP) tool ecosystem. it unifies RGB and spectral remote sensing data, achieving cross-modal, multi-step, and quantitative spatio-temporal reasoning by dynamically invoking 104 expert tools. The proposed Earth-Bench benchmark includes 248 expert tasks and 13,729 images. Experiments demonstrate that Earth-Agent significantly outperf…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - benchmark
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Earth Observation"
+  - "Agent Framework"
+  - "MCP Tool Ecosystem"
+  - "Multimodal Remote Sensing"
+  - "benchmark"
 date: 2026-05-08
-content_hash: af6069cab84ed15d
+content_hash: 38bb4bd472dd9c90
 ---
+
 # Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents
 
 **Conference**: ICLR 2026  
@@ -132,11 +137,11 @@ Performance of different LLM backends on Earth-Bench:
 
 ## Related Papers
 
-- [\[CVPR 2026\] RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation](../../CVPR2026/remote_sensing/ramen_resolution-adjustable_multimodal_encoder_for_earth_observation.md)
 - [\[ICLR 2026\] Measuring the Intrinsic Dimension of Earth Representations](measuring_the_intrinsic_dimension_of_earth_representations.md)
+- [\[CVPR 2026\] RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation](../../CVPR2026/remote_sensing/ramen_resolution-adjustable_multimodal_encoder_for_earth_observation.md)
+- [\[ICLR 2026\] TerraFM: A Scalable Foundation Model for Unified Multisensor Earth Observation](terrafm_a_scalable_foundation_model_for_unified_multisensor_earth_observation.md)
 - [\[CVPR 2026\] OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation](../../CVPR2026/remote_sensing/olmoearth_stable_latent_image_modeling_for_multimodal_earth_observation.md)
 - [\[CVPR 2026\] NeighborMAE: Exploiting Spatial Dependencies between Neighboring Earth Observation Images in Masked Autoencoders Pretraining](../../CVPR2026/remote_sensing/neighbormae_exploiting_spatial_dependencies_between_neighboring_earth_observatio.md)
-- [\[CVPR 2026\] TESSERA: Temporal Embeddings of Surface Spectra for Earth Representation and Analysis](../../CVPR2026/remote_sensing/tessera_temporal_embeddings_of_surface_spectra_for_earth_representation_and_anal.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening
 description: >-
-  [AAAI 2026][Computational Biology][Virtual screening] This paper proposes S2Drug, a two-stage contrastive learning framework. Stage 1 performs large-scale protein sequence–ligand contrastive pre-training on ChemBL with a…
+  [AAAI 2026][Computational Biology][Virtual screening] This paper proposes S2Drug, a two-stage contrastive learning framework. Stage 1 performs large-scale protein sequence–ligand contrastive pre-training on ChemBL with a bilateral data sampling strategy to reduce noise and redundancy. Stage 2 fine-tunes on PDBBind by fusing sequence and 3D structural information via a residue-level gating module and incorporating a binding site prediction auxiliary task. S2Drug substantially…
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -14,7 +14,7 @@ tags:
   - "binding site prediction"
   - "drug discovery"
 date: 2026-05-08
-content_hash: cd36305f4008ea89
+content_hash: c52362aacba2aff3
 ---
 
 # S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening
@@ -179,10 +179,10 @@ S2Drug also demonstrates competitive binding site prediction performance on thre
 ## Related Papers
 
 - [\[NeurIPS 2025\] AANet: Virtual Screening under Structural Uncertainty via Alignment and Aggregation](../../NeurIPS2025/computational_biology/aanet_virtual_screening_under_structural_uncertainty_via_alignment_and_aggregati.md)
+- [\[ICLR 2026\] SubDyve: Subgraph-Driven Dynamic Propagation for Virtual Screening Enhancement](../../ICLR2026/computational_biology/subdyve_subgraph-driven_dynamic_propagation_for_virtual_screening_enhancement_co.md)
 - [\[ICML 2026\] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition](../../ICML2026/computational_biology/learning_protein_structure-function_relationships_through_knowledge-guided_repre.md)
 - [\[ICML 2026\] SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning](../../ICML2026/computational_biology/sigma_structure-invariant_generative_molecular_alignment_for_chemical_language_m.md)
-- [\[AAAI 2026\] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics](dual-path_knowledge-augmented_contrastive_alignment_network_for_spatially_resolv.md)
-- [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](../../CVPR2026/computational_biology/cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
+- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](../../ICLR2026/computational_biology/flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
 
 </div>
 

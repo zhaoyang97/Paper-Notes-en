@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FuXi-RTM: A Physics-Guided Prediction Framework with Radiative Transfer Modeling
 description: >-
-  [ICCV 2025][Video Generation][Physics-guided deep learning] This paper proposes FuXi-RTM, the first hybrid physics-guided weather forecasting framework that integrates a deep learning radiative transfer model (DLRTM) as…
+  [ICCV 2025][Video Generation][Physics-guided deep learning] This paper proposes FuXi-RTM, the first hybrid physics-guided weather forecasting framework that integrates a deep learning radiative transfer model (DLRTM) as a differentiable physical regularizer, outperforming the unconstrained baseline on 88.51% of variable–lead-time combinations.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "spatiotemporal sequence prediction"
   - "physical consistency"
 date: 2026-05-08
-content_hash: 85de239dc125209d
+content_hash: c2a4899b289dcc14
 ---
 
 # FuXi-RTM: A Physics-Guided Prediction Framework with Radiative Transfer Modeling
@@ -151,10 +151,10 @@ Evaluated on a 5-year test set (2018–2022), initialized at 00/12 UTC daily wit
 ## Related Papers
 
 - [\[ICCV 2025\] OCK: Unsupervised Dynamic Video Prediction with Object-Centric Kinematics](ock_unsupervised_dynamic_video_prediction_with_object-centric_kinematics.md)
+- [\[CVPR 2025\] PhyT2V: LLM-Guided Iterative Self-Refinement for Physics-Grounded Text-to-Video Generation](../../CVPR2025/video_generation/phyt2v_llm-guided_iterative_self-refinement_for_physics-grounded_text-to-video_g.md)
 - [\[ICCV 2025\] VSRM: A Robust Mamba-Based Framework for Video Super-Resolution](vsrm_a_robust_mamba-based_framework_for_video_super-resolution.md)
 - [\[NeurIPS 2025\] PhysCtrl: Generative Physics for Controllable and Physics-Grounded Video Generation](../../NeurIPS2025/video_generation/physctrl_generative_physics_for_controllable_and_physicsgrou.md)
 - [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](../../CVPR2026/video_generation/phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
-- [\[ICCV 2025\] Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer](decouple_and_track_benchmarking_and_improving_video_diffusion_transformers_for_m.md)
 
 </div>
 

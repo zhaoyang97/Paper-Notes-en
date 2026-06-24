@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] IQA-Spider: Unifying Multi-Granularity Image Quality Assessment with Reasoning, Grounding and Referring
 description: >-
-  [ICML 2026][Interpretability][LMM] This paper proposes IQA-Spider, a multi-granularity image quality assessment method that unifies four types of tasks—"global quality description + local quality description + pixel-level grounding + region-level referring"—into a single LMM framework. Accompanied by a multi-task dataset of 33K scale, it introduces a tr
+  [ICML 2026][Interpretability][Multi-granularity IQA] This paper proposes IQA-Spider, a multi-granularity image quality assessment method that unifies four types of tasks—"global quality description + local quality description + pixel-level grounding + region-level referring"—into a single LMM framework. Accompanied by a multi-task dataset of 33K scale, it introduces a training-free text-to-point paradigm that directly maps location word logits from the language model to point…
 tags:
-  - ICML 2026
-  - Interpretability
-  - LMM
-  - text-to-point
+  - "ICML 2026"
+  - "Interpretability"
+  - "Multi-granularity IQA"
+  - "LMM"
+  - "Pixel-level grounding"
+  - "text-to-point"
+  - "training-free"
 date: 2026-05-08
-content_hash: ed825210ef7c40f1
+content_hash: a2d7d14cd3b4332d
 ---
+
 # IQA-Spider: Unifying Multi-Granularity Image Quality Assessment with Reasoning, Grounding and Referring
 
 **Conference**: ICML 2026  
@@ -139,8 +143,8 @@ Additionally, regarding text-to-point vs. EVF-SAM (Fig. 5): the authors fed EVF-
 - [\[AAAI 2026\] DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment](../../AAAI2026/interpretability/drexperts_differential_refinement_of_distortion-aware_experts_for_blind_image_qu.md)
 - [\[CVPR 2025\] KVQ: Boosting Video Quality Assessment via Saliency-Guided Local Perception](../../CVPR2025/interpretability/kvq_boosting_video_quality_assessment_via_saliency-guided_local_perception.md)
 - [\[CVPR 2026\] VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension](../../CVPR2026/interpretability/viro_robust_and_efficient_neuro-symbolic_reasoning_with_verification_for_referri.md)
+- [\[ICML 2026\] Vision-Language Asymmetry in Bistable Image Captioning](vision-language_asymmetry_in_bistable_image_captioning.md)
 - [\[ICML 2026\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
-- [\[CVPR 2026\] Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion](../../CVPR2026/interpretability/neurodynamics-driven_coupled_neural_p_systems_for_multi-focus_image_fusion.md)
 
 </div>
 

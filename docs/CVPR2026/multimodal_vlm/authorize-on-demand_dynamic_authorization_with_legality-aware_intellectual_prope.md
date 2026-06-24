@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Authorize-on-Demand: Dynamic Authorization with Legality-Aware Intellectual Property Protection for VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM] AoD-IP adds three lightweight projectors to a frozen CLIP and uses a "credential token" to lock authorized domains so they can only be activated with a specific key. This allows on-demand hot-swapping of new authorized domains after deployment without retraining the backbone, while outputting a "legality signal" during
+  [CVPR 2026][Multimodal VLM][Model IP Protection] AoD-IP adds three lightweight projectors to a frozen CLIP and uses a "credential token" to lock authorized domains so they can only be activated with a specific key. This allows on-demand hot-swapping of new authorized domains after deployment without retraining the backbone, while outputting a "legality signal" during each inference to detect unauthorized access. It achieves near-zero loss on authorized domains and significant…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model IP Protection"
+  - "VLM"
+  - "Dynamic Authorization"
+  - "Credential Token"
+  - "Non-transferable Learning"
 date: 2026-05-08
-content_hash: 6b4964ee5068cd04
+content_hash: 0151cb1e64a2ade4
 ---
+
 # Authorize-on-Demand: Dynamic Authorization with Legality-Aware Intellectual Property Protection for VLMs
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ HNTL can suppress unauthorized accuracy but causes authorized accuracy to collap
 
 ## Related Papers
 
-- [\[ICLR 2026\] Empowering Small VLMs to Think with Dynamic Memorization and Exploration](../../ICLR2026/multimodal_vlm/empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)
 - [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
-- [\[CVPR 2026\] Let VLMs Grade Their Own Thoughts: A Self-Quantification Approach to Reasoning-Aware Reward Modeling](let_vlms_grade_their_own_thoughts_a_self-quantification_approach_to_reasoning-aw.md)
 - [\[ACL 2026\] CARES: Context-Aware Resolution Selector for VLMs](../../ACL2026/multimodal_vlm/cares_context-aware_resolution_selector_for_vlms.md)
-- [\[CVPR 2026\] Unbiased Dynamic Multimodal Fusion](unbiased_dynamic_multimodal_fusion.md)
+- [\[CVPR 2026\] Echoes of Ownership: Adversarial-Guided Dual Injection for Copyright Protection in MLLMs](echoes_of_ownership_adversarial-guided_dual_injection_for_copyright_protection_i.md)
+- [\[ICML 2026\] Task-Aware Structured Memory for Dynamic Multi-modal In-Context Learning](../../ICML2026/multimodal_vlm/task-aware_structured_memory_for_dynamic_multi-modal_in-context_learning.md)
+- [\[CVPR 2025\] Vision-Language Model IP Protection via Prompt-based Learning](../../CVPR2025/multimodal_vlm/vision-language_model_ip_protection_via_prompt-based_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CAMILA: Context-Aware Masking for Image Editing with Language Alignment
 description: >-
-  [NeurIPS 2025][Image Generation][context-aware editing] This paper proposes CAMILA, a context-aware image editing method that leverages a multimodal large language model (MLLM) to automatically determine whether a given…
+  [NeurIPS 2025][Image Generation][context-aware editing] This paper proposes CAMILA, a context-aware image editing method that leverages a multimodal large language model (MLLM) to automatically determine whether a given instruction is executable on the input image. It introduces dedicated [MASK] and [NEG] tokens to distinguish editable regions from regions that should remain unchanged, enabling precise multi-instruction editing while effectively filtering out non-executable i…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "MLLM"
   - "diffusion model editing"
 date: 2026-05-08
-content_hash: d1a7a33565fb1cba
+content_hash: 94bd4b6ed7b1c7d4
 ---
 
 # CAMILA: Context-Aware Masking for Image Editing with Language Alignment
@@ -130,9 +130,9 @@ Experiments replacing the Token Decoder with SAM show that the trained Token Dec
 
 - [\[NeurIPS 2025\] ICEdit: Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer](in-context_edit_enabling_instructional_image_editing_with_in-context_generation_.md)
 - [\[NeurIPS 2025\] SAO-Instruct: Free-form Audio Editing using Natural Language Instructions](sao-instruct_free-form_audio_editing_using_natural_language_instructions.md)
+- [\[CVPR 2026\] Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing](../../CVPR2026/image_generation/re-align_structured_reasoning-guided_alignment_for_in-context_image_generation_a.md)
 - [\[NeurIPS 2025\] Beyond Masked and Unmasked: Discrete Diffusion Models via Partial Masking](beyond_masked_and_unmasked_discrete_diffusion_models_via_par.md)
-- [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](../../ACL2026/image_generation/multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
-- [\[ICCV 2025\] Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent](../../ICCV2025/image_generation/describe_dont_dictate_semantic_image_editing_with_natural_language_intent.md)
+- [\[NeurIPS 2025\] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking](a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PAINET: A Principled Efficient Transformer for 3D Dynamics Modeling
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] PAINET formulates unobserved long-range all-to-all interactions in 3D multi-body systems as an energy minimization problem. From this, it derives an equivariant Transformer encoder with particle-type adaptive mapping, followed by a parallel EGNN to decode future trajectories. It achieves lower prediction errors at near
+  [ICLR 2026][3D Vision][3D Dynamics] PAINET formulates unobserved long-range all-to-all interactions in 3D multi-body systems as an energy minimization problem. From this, it derives an equivariant Transformer encoder with particle-type adaptive mapping, followed by a parallel EGNN to decode future trajectories. It achieves lower prediction errors at nearly identical computational costs across human motion, small/large molecules, and protein dynamics.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Dynamics"
+  - "SE(3) Equivariance"
+  - "All-to-all Interaction"
+  - "Physics-inspired Attention"
+  - "Multi-body Systems"
 date: 2026-05-08
-content_hash: 2f494912f2dcf0fb
+content_hash: 6da1bae10e8cccb4
 ---
+
 # PAINET: A Principled Efficient Transformer for 3D Dynamics Modeling
 
 **Conference**: ICLR 2026  
@@ -163,14 +169,17 @@ The paper evaluates PAINET on 11 datasets, covering human motion capture, MD17 s
 
 <div class="related-papers" markdown="1">
 
-- **EGNN**: En equivariant graph neural networks, ICML 2021.
-- **EGNO**: Equivariant Graph Neural Operator for Modeling Multi-body Dynamics, NeurIPS 2023.
-- **GF-NODE**: Graph Fourier Neural Ordinary Differential Equations for Dynamics Modeling, 2024.
+## Related Papers
+
+- [\[ICLR 2026\] DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics](diffwind_physics-informed_differentiable_modeling_of_wind-driven_object_dynamics.md)
+- [\[CVPR 2026\] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations](../../CVPR2026/3d_vision/rng_a_unified_transformer_for_complete_3d_modeling_from_partial_observations.md)
+- [\[CVPR 2026\] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](../../CVPR2026/3d_vision/modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)
+- [\[ICLR 2026\] STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer](stream3r_scalable_sequential_3d_reconstruction_with_causal_transformer.md)
+- [\[ICLR 2026\] Streaming Visual Geometry Transformer](streaming_visual_geometry_transformer.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics](diffwind_physics-informed_differentiable_modeling_of_wind-driven_object_dynamics.md)

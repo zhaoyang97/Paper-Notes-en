@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] STRIDE-QA: Visual Question Answering Dataset for Spatiotemporal Reasoning in Urban Driving Scenes
 description: >-
-  [AAAI 2026][Autonomous Driving][VQA] This paper constructs STRIDE-QA, the largest spatiotemporal reasoning VQA dataset in autonomous driving (270K frames, 16M QA pairs)…
+  [AAAI 2026 Oral][Autonomous Driving][VQA] This paper constructs STRIDE-QA, the largest spatiotemporal reasoning VQA dataset in autonomous driving (270K frames, 16M QA pairs), defines three categories of spatiotemporal reasoning tasks (object-centric spatial / ego-centric spatial / ego-centric spatiotemporal), and demonstrates that fine-tuning a VLM raises localization success rate from near zero to 55% and temporal localization consistency from 0 to 28.4%.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Autonomous Driving"
   - "VQA"
   - "spatiotemporal reasoning"
@@ -12,7 +12,7 @@ tags:
   - "3D annotation"
   - "VLM fine-tuning"
 date: 2026-05-08
-content_hash: 3420ab979f4124a9
+content_hash: d4c97a0b813b906f
 ---
 
 # STRIDE-QA: Visual Question Answering Dataset for Spatiotemporal Reasoning in Urban Driving Scenes
@@ -130,9 +130,9 @@ Input consists of 4 front-view frames (532×336 resolution) annotated with Regio
 
 - [\[AAAI 2026\] RoadSceneVQA: Benchmarking Visual Question Answering in Roadside Perception Systems for Intelligent Transportation System](roadscenevqa_benchmarking_visual_question_answering_in_roadside_perception_syste.md)
 - [\[AAAI 2026\] Understanding Dynamic Scenes in Egocentric 4D Point Clouds](understanding_dynamic_scenes_in_ego_centric_4d_point_clouds.md)
+- [\[CVPR 2026\] HybridDriveVLA: Vision-Language-Action Model with Visual CoT reasoning and ToT Evaluation for Autonomous Driving](../../CVPR2026/autonomous_driving/hybriddrivevla_vision-language-action_model_with_visual_cot_reasoning.md)
+- [\[CVPR 2026\] TopoHR: Hierarchical Centerline Representation for Cyclic Topology Reasoning in Driving Scenes with Point-to-Instance Relations](../../CVPR2026/autonomous_driving/topohr_hierarchical_centerline_representation_for_cyclic_topology_reasoning_in_d.md)
 - [\[AAAI 2026\] Fine-Grained Representation for Lane Topology Reasoning](fine-grained_representation_for_lane_topology_reasoning.md)
-- [\[CVPR 2026\] MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving](../../CVPR2026/autonomous_driving/minddriver_introducing_progressive_multimodal_reasoning_for_autonomous_driving.md)
-- [\[AAAI 2026\] FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning](fastdrivevla_efficient_end-to-end_driving_via_plug-and-play_.md)
 
 </div>
 

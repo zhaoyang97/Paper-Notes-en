@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents
 description: >-
-  [ICLR 2026][AI Safety][Computer-Use Agent] The authors construct VPI-Bench (306 samples), the first comprehensive visual prompt injection attack benchmark, systematically evaluating the security of Computer-Use and Browser-Use Agents across 5 platforms. Findings reveal that Browser-Use Agents are extremely fragile (100% AR on Amazon/Booking), and even Anthropic
+  [ICLR 2026][AI Safety][Visual Injection Attacks] The authors construct VPI-Bench (306 samples), the first comprehensive visual prompt injection attack benchmark, systematically evaluating the security of Computer-Use and Browser-Use Agents across 5 platforms. Findings reveal that Browser-Use Agents are extremely fragile (100% AR on Amazon/Booking), and even Anthropic's CUA exhibits serious vulnerabilities (up to 59% AR), with system prompt defenses proving ineffective.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Computer-Use Agent
-  - Browser-Use Agent
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Visual Injection Attacks"
+  - "Computer-Use Agent"
+  - "Browser-Use Agent"
+  - "Security Benchmark"
+  - "System-level Threat"
 date: 2026-05-08
-content_hash: 7c7c3b15f0935614
+content_hash: b5b02f5e96dcbdeb
 ---
+
 # VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents
 
 **Conference**: ICLR 2026  
@@ -139,9 +143,9 @@ Determining an attack requires distinguishing if an Agent "intended" or "succeed
 
 - [\[ICML 2026\] When Benign Inputs Lead to Severe Harms: Eliciting Unsafe Unintended Behaviors of Computer-Use Agents](../../ICML2026/ai_safety/when_benign_inputs_lead_to_severe_harms_eliciting_unsafe_unintended_behaviors_of.md)
 - [\[ICML 2026\] Hiding in Plain Floats: Steganographic Carriers for Indirect Prompt and Content Injection](../../ICML2026/ai_safety/hiding_in_plain_floats_steganographic_carriers_for_indirect_prompt_and_content_i.md)
+- [\[ICLR 2026\] Closing the Safety Gap: Surgical Concept Erasure in Visual Autoregressive Models](closing_the_safety_gap_surgical_concept_erasure_in_visual_autoregressive_models.md)
 - [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](../../CVPR2026/ai_safety/seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
 - [\[ICML 2026\] The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection](../../ICML2026/ai_safety/the_injection_paradox_brand-level_suppression_in_safety-trained_llm_recommendati.md)
-- [\[ICLR 2026\] Protection against Source Inference Attacks in Federated Learning](protection_against_source_inference_attacks_in_federated_learning.md)
 
 </div>
 

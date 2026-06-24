@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] How Many Code and Test Cases Are Enough? Evaluating Test Cases Generation from a Binary-Matrix Perspective
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper formalizes the evaluation of test case generation methods as finding a "diagnostic basis"—a subset with a rank equal to the matrix rank and maximized internal diversity—within a binary matrix of "Wrong Code × Test Cases." Based on this, it constructs TC-Bench, a compact benchmark resistant to score inflation
+  [ICLR 2026][LLM Evaluation][Test case generation] This paper formalizes the evaluation of test case generation methods as finding a "diagnostic basis"—a subset with a rank equal to the matrix rank and maximized internal diversity—within a binary matrix of "Wrong Code × Test Cases." Based on this, it constructs TC-Bench, a compact benchmark resistant to score inflation, revealing that even the strongest methods achieve a HackRate of only approximately 60%.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Test case generation"
+  - "Binary matrix"
+  - "Matrix rank"
+  - "Diagnostic basis"
+  - "Score inflation"
+  - "Competitive programming"
 date: 2026-05-08
-content_hash: d4e85dd8e4be7c67
+content_hash: d833b4c044fb74b1
 ---
+
 # How Many Code and Test Cases Are Enough? Evaluating Test Cases Generation from a Binary-Matrix Perspective
 
 **Conference**: ICLR 2026  
@@ -121,9 +128,9 @@ The strongest combination, Claude4 + HT, achieves a HackRate of only ~63%, revea
 
 - [\[ICLR 2026\] Train-before-Test Harmonizes Language Model Rankings](train-before-test_harmonizes_language_model_rankings.md)
 - [\[ICLR 2026\] Towards Self-Evolving Agent Benchmarks: Validatable Agent Trajectory via Test-Time Exploration](towards_self-evolving_agent_benchmarks_validatable_agent_trajectory_via_test-tim.md)
-- [\[ICLR 2026\] From Reproduction to Replication: Evaluating Research Agents with Progressive Code Masking](from_reproduction_to_replication_evaluating_research_agents_with_progressive_cod.md)
-- [\[ACL 2026\] MultiFileTest: A Multi-File-Level LLM Unit Test Generation Benchmark and Impact of Error Fixing Mechanisms](../../ACL2026/llm_evaluation/multifiletest_a_multi-file-level_llm_unit_test_generation_benchmark_and_impact_o.md)
 - [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
+- [\[ACL 2026\] MultiFileTest: A Multi-File-Level LLM Unit Test Generation Benchmark and Impact of Error Fixing Mechanisms](../../ACL2026/llm_evaluation/multifiletest_a_multi-file-level_llm_unit_test_generation_benchmark_and_impact_o.md)
+- [\[ICLR 2026\] From Reproduction to Replication: Evaluating Research Agents with Progressive Code Masking](from_reproduction_to_replication_evaluating_research_agents_with_progressive_cod.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EigenBench: A Comparative Behavioral Measure of Value Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][EigenTrust] EigenBench proposes a black-box, ground-truth-free value alignment measurement method: a population of language models evaluates each other's responses under a given "constitution" (value criteria). EigenTrust is used to aggregate these pairwise evaluations into a consensus score vector, where "more aligned models rece
+  [ICLR 2026][LLM Alignment][Value Alignment] EigenBench proposes a black-box, ground-truth-free value alignment measurement method: a population of language models evaluates each other's responses under a given "constitution" (value criteria). EigenTrust is used to aggregate these pairwise evaluations into a consensus score vector, where "more aligned models receive higher evaluative weight," ultimately outputting an Elo ranking of alignment for each model relative to that val…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - EigenTrust
-  - Bradley-Terry
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Value Alignment"
+  - "Evaluation Benchmark"
+  - "Peer Review"
+  - "EigenTrust"
+  - "Bradley-Terry"
 date: 2026-05-08
-content_hash: a17c3e353cee333a
+content_hash: ef895c2b087bfdaf
 ---
+
 # EigenBench: A Comparative Behavioral Measure of Value Alignment
 
 **Conference**: ICLR 2026  

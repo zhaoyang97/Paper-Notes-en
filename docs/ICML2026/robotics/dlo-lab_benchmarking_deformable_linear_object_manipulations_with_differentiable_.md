@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DLO-Lab: Benchmarking Deformable Linear Object Manipulations with Differentiable Physics
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Discrete Elastic Rods] DLO-Lab develops a differentiable simulator based on Taichi on the Genesis platform, utilizing Discrete Elastic Rods (DER) as its core. It supports bidirectional coupling, bending plasticity, and closed-loop topology. The platform includes 10 benchmark tasks for rope/cable/elastic bands and a specialized agent using VL
+  [ICML 2026][Robotics][Deformable Linear Objects] DLO-Lab develops a differentiable simulator based on Taichi on the Genesis platform, utilizing Discrete Elastic Rods (DER) as its core. It supports bidirectional coupling, bending plasticity, and closed-loop topology. The platform includes 10 benchmark tasks for rope/cable/elastic bands and a specialized agent using VLM for "grasp proposal + task decomposition." It evaluates various policy learning algorithms (PPO/SAC/SHAC/SAPO…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Discrete Elastic Rods
+  - "ICML 2026"
+  - "Robotics"
+  - "Deformable Linear Objects"
+  - "Differentiable Simulation"
+  - "Robot Benchmark"
+  - "Discrete Elastic Rods"
+  - "Grasp Proposal"
 date: 2026-05-08
-content_hash: a588b38d3c93010c
+content_hash: 3cafd1503efd30d7
 ---
+
 # DLO-Lab: Benchmarking Deformable Linear Object Manipulations with Differentiable Physics
 
 **Conference**: ICML 2026  
@@ -161,9 +166,9 @@ CMA-ES achieved the best results in 6/8 tasks. FO-MBRL (SHAC/SAPO) significantly
 
 - [\[ICML 2026\] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)
 - [\[AAAI 2026\] Distributionally Robust Online Markov Game with Linear Function Approximation](../../AAAI2026/robotics/distributionally_robust_online_markov_game_with_linear_function_approximation.md)
-- [\[ICML 2026\] Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation](plan_in_sandbox_navigate_in_open_worlds_learning_physics-grounded_abstracted_exp.md)
-- [\[ACL 2025\] Vulnerability of LLMs to Vertically Aligned Text Manipulations](../../ACL2025/robotics/vulnerability_of_llms_to_vertically_aligned_text_manipulations.md)
 - [\[CVPR 2025\] Coordinated Manipulation of Hybrid Deformable-Rigid Objects in Constrained Environments](../../CVPR2025/robotics/coordinated_manipulation_hybrid_deformable_rigid_objects.md)
+- [\[ICLR 2026\] Efficient Differentiable Contact Model with Long-range Influence](../../ICLR2026/robotics/efficient_differentiable_contact_model_with_long-range_influence.md)
+- [\[ICML 2026\] Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation](plan_in_sandbox_navigate_in_open_worlds_learning_physics-grounded_abstracted_exp.md)
 
 </div>
 

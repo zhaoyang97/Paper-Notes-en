@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] This paper proposes SFTMix, a Mixup-based instruction tuning method. By partitioning SFT datasets into high-confidence and low-confidence subsets through training dynamics, it performs linear interpolation in the hidden representation space and applies Mixup regularization. SFTMix consistently improves instruction-foll
+  [ACL 2026][LLM Alignment][Instruction Tuning] This paper proposes SFTMix, a Mixup-based instruction tuning method. By partitioning SFT datasets into high-confidence and low-confidence subsets through training dynamics, it performs linear interpolation in the hidden representation space and applies Mixup regularization. SFTMix consistently improves instruction-following capabilities across different LLM families and dataset scales without relying on high-quality dataset curati…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Instruction Tuning"
+  - "Mixup Regularization"
+  - "Training Dynamics"
+  - "Confidence Partitioning"
+  - "Data Utilization Efficiency"
 date: 2026-05-08
-content_hash: 3397b529df9d0901
+content_hash: 0b33ef3e503e2ab5
 ---
+
 # SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe
 
 **Conference**: ACL 2026  
@@ -156,9 +162,9 @@ Standard NTP cross-entropy loss + Mixup cross-entropy regularization, $\mu=0.2$,
 
 - [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
 - [\[ACL 2025\] Federated Data-Efficient Instruction Tuning for Large Language Models](../../ACL2025/llm_alignment/federated_data-efficient_instruction_tuning_for_large_language_models.md)
-- [\[ICML 2026\] GIST: 用梯度子空间投影做 instruction tuning 的 targeted 数据选择](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
 - [\[ACL 2025\] Rethinking Table Instruction Tuning](../../ACL2025/llm_alignment/rethinking_table_instruction_tuning.md)
 - [\[ICML 2025\] Instruction Tuning of Large Language Models for Tabular Data Generation—in One Day](../../ICML2025/llm_alignment/instruction_tuning_of_large_language_models_for_tabular_data_generation-in_one_d.md)
+- [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
 
 </div>
 

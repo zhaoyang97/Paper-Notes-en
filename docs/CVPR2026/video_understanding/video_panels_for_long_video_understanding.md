@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Video Panels for Long Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] The authors propose tiling multiple adjacent video frames together into a single "comic-style" panel image to trade spatial resolution for temporal resolution. This approach improves the long video understanding capabilities of existing VLMs—increasing VideoLLaMA 3's QA accuracy by 19.4% on the TimeScope (Long) benchma
+  [CVPR 2026][Video Understanding][Long Video Understanding] The authors propose tiling multiple adjacent video frames together into a single "comic-style" panel image to trade spatial resolution for temporal resolution. This approach improves the long video understanding capabilities of existing VLMs—increasing VideoLLaMA 3's QA accuracy by 19.4% on the TimeScope (Long) benchmark—without modifying architectures, additional training, or adding parameters.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Long Video Understanding"
+  - "Visual Prompting"
+  - "Temporal Resolution"
+  - "Training-free"
+  - "Video QA"
 date: 2026-05-08
-content_hash: 1b740ef9c4786a5d
+content_hash: 95b7fb0166c7480c
 ---
+
 # Video Panels for Long Video Understanding
 
 **Conference**: CVPR 2026  
@@ -156,9 +162,9 @@ The most significant gain occurs in **TimeScope (Long)** (longest videos): Video
 
 - [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
 - [\[CVPR 2026\] VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding](virtuebench_evaluating_trustworthiness_under_uncertainty_in_long_video_understan.md)
-- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] META: Meta Evolution of Tool Trajectory Adaptation for Long-Video Understanding](meta_meta_evolution_of_tool_trajectory_adaptation_for_long-video_understanding.md)
-- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[CVPR 2026\] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)
+- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](../../ICLR2026/video_understanding/focus_efficient_keyframe_selection_for_long_video_understanding.md)
 
 </div>
 

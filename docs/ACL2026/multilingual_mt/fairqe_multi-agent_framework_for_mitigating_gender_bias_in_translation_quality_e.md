@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FairQE: Multi-Agent Framework for Mitigating Gender Bias in Translation Quality Estimation
 description: >-
-  [ACL 2026][Multilingual & Translation][Multi-Agent] Proposes FairQE, a multi-agent framework that effectively mitigates systematic gender bias in QE models through gender cue detection, gender-flipped variant generation, and a dynamic bias-aware score aggregation mechanism, without sacrificing the accuracy of translation quality assessment.
+  [ACL 2026][Multilingual & Machine Translation][Translation Quality Estimation] Proposes FairQE, a multi-agent framework that effectively mitigates systematic gender bias in QE models through gender cue detection, gender-flipped variant generation, and a dynamic bias-aware score aggregation mechanism, without sacrificing the accuracy of translation quality assessment.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Translation Quality Estimation"
+  - "Gender Bias"
+  - "Multi-Agent"
+  - "Fairness"
+  - "Bias Mitigation"
 date: 2026-05-08
-content_hash: 628e4786423347c4
+content_hash: 96ecae553672afe8
 ---
+
 # FairQE: Multi-Agent Framework for Mitigating Gender Bias in Translation Quality Estimation
 
 **Conference**: ACL 2026  
@@ -136,11 +141,11 @@ FairQE does not involve training; it is a plug-and-play framework for inference.
 
 ## Related Papers
 
-- [\[ACL 2026\] Mitigating Extrinsic Gender Bias for Bangla Classification Tasks](mitigating_extrinsic_gender_bias_for_bangla_classification_tasks.md)
 - [\[ACL 2025\] Watching the Watchers: Exposing Gender Disparities in Machine Translation Quality Estimation](../../ACL2025/multilingual_mt/watching_the_watchers_exposing_gender_disparities_in_machine_translation_quality.md)
+- [\[ACL 2026\] Mitigating Extrinsic Gender Bias for Bangla Classification Tasks](mitigating_extrinsic_gender_bias_for_bangla_classification_tasks.md)
 - [\[ACL 2026\] TransLaw: A Large-Scale Dataset and Multi-Agent Benchmark Simulating Professional Translation of Hong Kong Case Law](translaw_a_large-scale_dataset_and_multi-agent_benchmark_simulating_professional.md)
+- [\[ACL 2025\] Alleviating Distribution Shift in Synthetic Data for Machine Translation Quality Estimation](../../ACL2025/multilingual_mt/alleviating_distribution_shift_in_synthetic_data_for_machine_translation_quality.md)
 - [\[ACL 2026\] LQM: Linguistically Motivated Multidimensional Quality Metrics for Machine Translation](lqm_linguistically_motivated_multidimensional_quality_metrics_for_machine_transl.md)
-- [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
 
 </div>
 

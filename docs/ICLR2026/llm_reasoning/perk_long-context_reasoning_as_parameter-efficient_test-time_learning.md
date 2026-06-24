@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][LoRA] PERK reformulates long-context reasoning as "test-time learning": instead of cramming ultra-long text into the context window during inference, it uses gradient descent to "write" the context into a LoRA adapter, allowing the model to recall and reason from this parameterized memory. Combined with a bi-level meta-learn
+  [ICLR 2026][Reasoning][Long-context reasoning] PERK reformulates long-context reasoning as "test-time learning": instead of cramming ultra-long text into the context window during inference, it uses gradient descent to "write" the context into a LoRA adapter, allowing the model to recall and reason from this parameterized memory. Combined with a bi-level meta-learning framework and truncated gradient unrolling, a 0.5B Qwen model achieves a ~20% average improvement in long-con…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - LoRA
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Long-context reasoning"
+  - "test-time learning"
+  - "meta-learning"
+  - "LoRA"
+  - "truncated gradient unrolling"
 date: 2026-05-08
-content_hash: 8a5fcccef8a2ff3e
+content_hash: 867a84f907b846c5
 ---
+
 # PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning
 
 **Conference**: ICLR 2026  

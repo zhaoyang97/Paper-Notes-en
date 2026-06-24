@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators
 description: >-
-  [ICML 2026][AIGC Detection][DeBERTa-v3] This paper systematically exposes the vulnerability of AI text detectors under cross-dataset and cross-generator shifts using a "single-threshold fixed protocol." It proposes fusing hand-crafted linguistic features—weighted by learnable dynamic attention—with transformer [CLS] representations. Built on a DeBERTa-v3 bac
+  [ICML 2026][AIGC Detection][AI text detection] This paper systematically exposes the vulnerability of AI text detectors under cross-dataset and cross-generator shifts using a "single-threshold fixed protocol." It proposes fusing hand-crafted linguistic features—weighted by learnable dynamic attention—with transformer [CLS] representations. Built on a DeBERTa-v3 backbone, the method achieves 85.9% balanced accuracy on the M4 multi-domain multi-generator benchmark…
 tags:
-  - ICML 2026
-  - AIGC Detection
-  - DeBERTa-v3
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "AI text detection"
+  - "DeBERTa-v3"
+  - "feature attention"
+  - "distribution shift"
+  - "fixed threshold protocol"
 date: 2026-05-08
-content_hash: bb3e255491b897dc
+content_hash: 5fdb4323b7268232
 ---
+
 # Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators
 
 **Conference**: ICML 2026  
@@ -138,11 +143,11 @@ Standard binary cross-entropy is used for training on HC3 PLUS. Feature attentio
 
 ## Related Papers
 
-- [\[ICML 2026\] On the Salience of Low-Probability Tokens for AI-Generated Text Detection: A Multiscale Uncertainty Perspective](on_the_salience_of_low-probability_tokens_for_ai-generated_text_detection_a_mult.md)
-- [\[ICML 2026\] Generating Robust Portfolios of Optimization Models using Large Language Models](generating_robust_portfolios_of_optimization_models_using_large_language_models.md)
-- [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
-- [\[ICML 2026\] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection](core_conflict-oriented_reasoning_for_general_multimodal_manipulation_detection.md)
 - [\[ACL 2026\] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](../../ACL2026/aigc_detection/when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)
+- [\[ICML 2026\] On the Salience of Low-Probability Tokens for AI-Generated Text Detection: A Multiscale Uncertainty Perspective](on_the_salience_of_low-probability_tokens_for_ai-generated_text_detection_a_mult.md)
+- [\[ACL 2025\] People who frequently use ChatGPT for writing tasks are accurate and robust detectors of AI-generated text](../../ACL2025/aigc_detection/chatgpt_user_ai_text_detection.md)
+- [\[ICML 2026\] Generating Robust Portfolios of Optimization Models using Large Language Models](generating_robust_portfolios_of_optimization_models_using_large_language_models.md)
+- [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
 
 </div>
 

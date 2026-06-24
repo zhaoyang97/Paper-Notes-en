@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Your Students Don't Use LLMs Like You Wish They Did
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] This paper proposes six computational behavioral metrics for educational AI dialogues and reveals, across 500 real student-AI conversations, that students frequently utilize LLM tools as answer extractors instead of learning aids. Furthermore, the mode of deployment influences this misalignment more significantly than
+  [ACL2026][Dialogue Systems][Educational AI] This paper proposes six computational behavioral metrics for educational AI dialogues and reveals, across 500 real student-AI conversations, that students frequently utilize LLM tools as answer extractors instead of learning aids. Furthermore, the mode of deployment influences this misalignment more significantly than system design or student preference.
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL2026"
+  - "Dialogue Systems"
+  - "Educational AI"
+  - "Dialogue Evaluation"
+  - "Learning Orientation"
+  - "Scaffolding Resistance"
+  - "Crisis Usage"
 date: 2026-05-08
-content_hash: 255d58b50a32a19c
+content_hash: 87c4cf87c5862787
 ---
+
 # Your Students Don't Use LLMs Like You Wish They Did
 
 **Conference**: ACL2026  
@@ -150,12 +156,11 @@ The "ablation" in this paper is reflected through evaluation granularity, deploy
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives](../../ICML2026/dialogue/is_your_llm_overcharging_you_tokenization_transparency_and_incentives.md)
 - [\[ACL 2026\] Simulated Students in Tutoring Dialogues: Substance or Illusion?](simulated_students_in_tutoring_dialogues_substance_or_illusion.md)
+- [\[ICML 2026\] Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives](../../ICML2026/dialogue/is_your_llm_overcharging_you_tokenization_transparency_and_incentives.md)
 - [\[ACL 2025\] Know You First and Be You Better: Modeling Human-Like User Simulators via Implicit Profiles](../../ACL2025/dialogue/know_you_first_and_be_you_better_modeling_human-like_user_simulators_via_implici.md)
 - [\[ACL 2026\] Reasoning Gets Harder for LLMs Inside A Dialogue](reasoning_gets_harder_for_llms_inside_a_dialogue.md)
 - [\[ACL 2026\] Preference Learning Unlocks LLMs' Psycho-Counseling Skills](preference_learning_unlocks_llms_psycho-counseling_skills.md)

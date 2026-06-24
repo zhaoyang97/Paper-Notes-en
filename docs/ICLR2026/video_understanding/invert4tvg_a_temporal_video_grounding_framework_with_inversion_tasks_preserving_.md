@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Invert4TVG: A Temporal Video Grounding Framework with Inversion Tasks Preserving Action Understanding Ability
 description: >-
-  [ICLR 2026][Video Understanding][Reinforcement Learning] To address the "action understanding degradation" caused by optimizing only for IoU in Temporal Video Grounding (TVG) models, this paper inverts the input and output of the TVG task to construct three Invert-TVG auxiliary tasks (Verb Completion / Action Recognition / Video Description) that share the same annotations.
+  [ICLR 2026][Video Understanding][Temporal Video Grounding] To address the "action understanding degradation" caused by optimizing only for IoU in Temporal Video Grounding (TVG) models, this paper inverts the input and output of the TVG task to construct three Invert-TVG auxiliary tasks (Verb Completion / Action Recognition / Video Description) that share the same annotations. These tasks are trained alternately with low probability within the GRPO reinforcement learning frame…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Temporal Video Grounding"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Action Understanding"
+  - "Self-supervised Auxiliary Tasks"
 date: 2026-05-08
-content_hash: 105be94b6ca46db3
+content_hash: 0b049d90393155c8
 ---
+
 # Invert4TVG: A Temporal Video Grounding Framework with Inversion Tasks Preserving Action Understanding Ability
 
 **Conference**: ICLR 2026  
@@ -138,11 +142,11 @@ Reward form comparison (Table 3): Binary 0/1 rewards (80.8/69.0/44.0) significan
 
 ## Related Papers
 
+- [\[ICLR 2026\] VidBridge-R1: Bridging QA and Captioning for RL-based Video Understanding Models with Intermediate Proxy Tasks](vidbridge-r1_bridging_qa_and_captioning_for_rl-based_video_understanding_models_.md)
 - [\[CVPR 2026\] SARL-STG: A Spatially Aware Reinforcement Learning Framework for Refining MLLMs in Spatio-Temporal Video Grounding](../../CVPR2026/video_understanding/sarl-stg_a_spatially_aware_reinforcement_learning_framework_for_refining_mllms_i.md)
+- [\[ICLR 2026\] HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding](hitea_hierarchical_temporal_alignment_for_training-free_long-video_temporal_grou.md)
 - [\[ICLR 2026\] OmniSTVG: Toward Spatio-Temporal Omni-Object Video Grounding](omnistvg_toward_spatio-temporal_omni-object_video_grounding.md)
 - [\[AAAI 2026\] StegaVAR: Privacy-Preserving Video Action Recognition via Steganographic Domain Analysis](../../AAAI2026/video_understanding/stegavar_privacy-preserving_video_action_recognition_via_steganographic_domain_a.md)
-- [\[CVPR 2026\] VideoITG: Multimodal Video Understanding with Instructed Temporal Grounding](../../CVPR2026/video_understanding/videoitg_multimodal_video_understanding_with_instructed_temporal_grounding.md)
-- [\[ICML 2026\] VideoTemp-o3: Harmonizing Temporal Grounding and Video Understanding in Agentic Thinking](../../ICML2026/video_understanding/videotemp-o3_harmonizing_temporal_grounding_and_video_understanding_in_agentic_t.md)
 
 </div>
 

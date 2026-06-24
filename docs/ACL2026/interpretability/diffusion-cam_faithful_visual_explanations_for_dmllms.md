@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diffusion-CAM: Faithful Visual Explanations for dMLLMs
 description: >-
-  [ACL 2026][Interpretability][Paper Note] Diffusion-CAM is proposed as the first interpretability method specifically designed for diffusion-based Multimodal Large Language Models (dMLLMs). By extracting structurally valid intermediate representations from denoising trajectories and employing four post-processing modules (Adaptive Kernel Denoising, Distributio
+  [ACL 2026][Interpretability][Diffusion Multimodal Large Language Models] Diffusion-CAM is proposed as the first interpretability method specifically designed for diffusion-based Multimodal Large Language Models (dMLLMs). By extracting structurally valid intermediate representations from denoising trajectories and employing four post-processing modules (Adaptive Kernel Denoising, Distribution-aware Confidence Gating, Contextual Background Attenuation…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Diffusion Multimodal Large Language Models"
+  - "Class Activation Mapping"
+  - "Visual Explanation"
+  - "Explainable AI"
+  - "Parallel Generation"
 date: 2026-05-08
-content_hash: 2803a6f99319955e
+content_hash: 9494c789d81cf22a
 ---
+
 # Diffusion-CAM: Faithful Visual Explanations for dMLLMs
 
 **Conference**: ACL 2026  
@@ -127,11 +133,11 @@ The multi-step denoising of diffusion models accumulates various noise sources. 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Patronus: Interpretable Diffusion Models with Prototypes](../../ICLR2026/interpretability/patronus_interpretable_diffusion_models_with_prototypes.md)
+- [\[ICLR 2026\] Learning for Highly Faithful Explainability](../../ICLR2026/interpretability/learning_for_highly_faithful_explainability.md)
 - [\[ACL 2026\] Evian: Towards Explainable Visual Instruction-tuning Data Auditing](evian_towards_explainable_visual_instruction-tuning_data_auditing.md)
 - [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
 - [\[CVPR 2026\] Making the Classification Explanation Faithful to the Confidence Score](../../CVPR2026/interpretability/making_the_classification_explanation_faithful_to_the_confidence_score.md)
-- [\[ICML 2026\] DLLM-JEPA: Joint Embedding Predictive Architectures for Masked Diffusion Language Models](../../ICML2026/interpretability/dllm-jepa_joint_embedding_predictive_architectures_for_masked_diffusion_language.md)
-- [\[AAAI 2026\] Using Certifying Constraint Solvers for Generating Step-wise Explanations](../../AAAI2026/interpretability/using_certifying_constraint_solvers_for_generating_step-wise_explanations.md)
 
 </div>
 

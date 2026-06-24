@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAMTok: Representing Any Mask with Two Words
 description: >-
-  [CVPR 2026][Segmentation][mask tokenizer] SAMTok compresses any region mask into two discrete text tokens, enabling standard MLLMs (like QwenVL) to understand and generate masks just like text via next-token prediction. It requires no specialized segmentation heads or custom losses, and by turning masks into "text," it allows reinforcement learning with pure c
+  [CVPR 2026][Segmentation][mask tokenizer] SAMTok compresses any region mask into two discrete text tokens, enabling standard MLLMs (like QwenVL) to understand and generate masks just like text via next-token prediction. It requires no specialized segmentation heads or custom losses, and by turning masks into "text," it allows reinforcement learning with pure character-matching rewards for the first time.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - mask tokenizer
+  - "CVPR 2026"
+  - "Segmentation"
+  - "mask tokenizer"
+  - "residual vector quantization"
+  - "pixel-level MLLM"
+  - "referring expression segmentation"
+  - "text-reward RL"
 date: 2026-05-08
-content_hash: 0f38d4b447a89fa1
+content_hash: 4704f17f2352770c
 ---
+
 # SAMTok: Representing Any Mask with Two Words
 
 **Conference**: CVPR 2026  
@@ -157,9 +162,9 @@ where $\mathcal{N}_{\text{TP}}$ is the number of correctly predicted masks, $\ma
 ## Related Papers
 
 - [\[ICCV 2025\] Refer to Any Segmentation Mask Group With Vision-Language Prompts](../../ICCV2025/segmentation/refer_to_any_segmentation_mask_group_with_vision-language_prompts.md)
-- [\[CVPR 2026\] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation](spar_single-pass_any-resolution_vit_for_open-vocabulary_segmentation.md)
 - [\[CVPR 2026\] GenMask: Adapting DiT for Segmentation via Direct Mask Generation](genmask_adapting_dit_for_segmentation_via_direct_mask_generation.md)
-- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](videomama_mask-guided_video_matting_via_generative_prior.md)
+- [\[CVPR 2026\] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation](spar_single-pass_any-resolution_vit_for_open-vocabulary_segmentation.md)
+- [\[CVPR 2026\] Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction](learning_cross-view_object_correspondence_via_cycle-consistent_mask_prediction.md)
 - [\[CVPR 2026\] From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction](from_2d_alignment_to_3d_plausibility_unifying_heterogeneous_2d_priors_and_penetr.md)
 
 </div>

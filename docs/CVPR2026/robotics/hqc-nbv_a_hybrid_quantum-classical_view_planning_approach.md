@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HQC-NBV: A Hybrid Quantum-Classical View Planning Approach
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Next-Best-View] The "Next-Best-View" (NBV) problem in robotic exploration is reformulated as finding the ground state of a quantum Hamiltonian. Using a 10-qubit variational circuit with VQE/SPSA to simultaneously evaluate multiple movement directions, the approach leverages quantum superposition and entanglement to escape local optima
+  [CVPR 2026][Robotics][Next-Best-View] The "Next-Best-View" (NBV) problem in robotic exploration is reformulated as finding the ground state of a quantum Hamiltonian. Using a 10-qubit variational circuit with VQE/SPSA to simultaneously evaluate multiple movement directions, the approach leverages quantum superposition and entanglement to escape local optima common in classical heuristics or sampling methods. In 2D exploration scenarios, it improves exploration efficiency by 7.…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Next-Best-View
+  - "CVPR 2026"
+  - "Robotics"
+  - "Next-Best-View"
+  - "View Planning"
+  - "Hybrid Quantum-Classical"
+  - "Variational Quantum Circuits"
+  - "Robotic Exploration"
 date: 2026-05-08
-content_hash: faf98fb482080a3a
+content_hash: 312442b0df180acc
 ---
+
 # HQC-NBV: A Hybrid Quantum-Classical View Planning Approach
 
 **Conference**: CVPR 2026  
@@ -128,15 +133,16 @@ Ablations were conducted on entanglement architectures (Full, No entanglement, I
 - **Value**: ⭐⭐⭐⭐ Significant directional value for quantum computing in robotic perception.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Learning to Act Robustly with View-Invariant Latent Actions](learning_to_act_robustly_with_view-invariant_latent_actions.md)
+- [\[CVPR 2026\] AirSim360: A Panoramic Simulation Platform within Drone View](airsim360_a_panoramic_simulation_platform_within_drone_view.md)
+- [\[CVPR 2026\] Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](hoi_-_a_multimodal_dataset_for_force-grounded_cross-view_articulated_manipulatio.md)
 - [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
 - [\[CVPR 2026\] A Cross-view Fusion Framework for Robust 6-DoF Grasp Pose Estimation](a_cross-view_fusion_framework_for_robust_6-dof_grasp_pose_estimation.md)
-- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
-- [\[CVPR 2026\] HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation](htnav_a_hybrid_navigation_framework_with_tiered_structure_for_urban_aerial_visio.md)
 
 </div>
 

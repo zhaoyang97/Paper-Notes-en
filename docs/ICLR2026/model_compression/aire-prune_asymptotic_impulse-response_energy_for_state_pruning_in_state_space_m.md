@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AIRE-Prune: Asymptotic Impulse-Response Energy for State Pruning in State Space Models
 description: >-
-  [ICLR 2026][Model Compression][State Space Model] AIRE-Prune calculates a closed-form "infinite-horizon impulse response energy" score for each state of diagonal State Space Models (SSMs). By using prefix normalization to align scores across different layers to a common scale, it prunes an average of 60.8% of states using only a single global threshold without retrain
+  [ICLR2026][Model Compression][State Space Models] AIRE-Prune calculates a closed-form "infinite-horizon impulse response energy" score for each state of diagonal State Space Models (SSMs). By using prefix normalization to align scores across different layers to a common scale, it prunes an average of 60.8% of states using only a single global threshold without retraining, while maintaining accuracy within a 0.29 percentage point drop.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - State Space Model
+  - "ICLR2026"
+  - "Model Compression"
+  - "State Space Models"
+  - "Structured Pruning"
+  - "Model Order Reduction"
+  - "Impulse Response Energy"
+  - "Post-Training Compression"
 date: 2026-05-08
-content_hash: 860188136d2b8e45
+content_hash: c156869fc86cb99c
 ---
+
 # AIRE-Prune: Asymptotic Impulse-Response Energy for State Pruning in State Space Models
 
 **Conference**: ICLR2026  
@@ -141,7 +146,7 @@ Evaluation was conducted on S5 (MIMO) backbones across six Long Range Arena (LRA
 - [\[ACL 2025\] State-offset Tuning: State-based Parameter-Efficient Fine-Tuning for State Space Models](../../ACL2025/model_compression/state_offset_tuning_ssm_peft.md)
 - [\[ICML 2025\] Parameter-Efficient Fine-Tuning of State Space Models](../../ICML2025/model_compression/parameter-efficient_fine-tuning_of_state_space_models.md)
 - [\[ICLR 2026\] SSDi8: Accurate and Efficient 8-bit Quantization for State Space Duality](ssdi8_accurate_and_efficient_8-bit_quantization_for_state_space_duality.md)
-- [\[CVPR 2025\] Mamba-Adaptor: State Space Model Adaptor for Visual Recognition](../../CVPR2025/model_compression/mamba-adaptor_state_space_model_adaptor_for_visual_recognition.md)
+- [\[CVPR 2025\] EfficientViM: Efficient Vision Mamba with Hidden State Mixer based State Space Duality](../../CVPR2025/model_compression/efficientvim_efficient_vision_mamba_with_hidden_state_mixer_based_state_space_du.md)
 
 </div>
 

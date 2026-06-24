@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes a framework for evaluating LLM representativeness beyond marginal distributions. By simultaneously examining marginal response distributions and cross-question correlation structures to evaluate demographic-aligned models, it reveals that while fine-tuning and persona prompting improve marginal dist
+  [ACL 2026 Findings][LLM Evaluation][Demographic Alignment] This paper proposes a framework for evaluating LLM representativeness beyond marginal distributions. By simultaneously examining marginal response distributions and cross-question correlation structures to evaluate demographic-aligned models, it reveals that while fine-tuning and persona prompting improve marginal distribution approximation, neither faithfully reproduces the multivariate correlation patterns found in…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Demographic Alignment"
+  - "Correlation Structure"
+  - "Marginal Distributions"
+  - "Value Surveys"
+  - "Representativeness Evaluation"
 date: 2026-05-08
-content_hash: c59b5913cf28bd57
+content_hash: e9f2598ea9b4c9bd
 ---
+
 # Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs
 
 **Conference**: ACL 2026 Findings  
@@ -140,10 +146,10 @@ The paper focuses on evaluation rather than training; the evaluated OpinionGPT i
 ## Related Papers
 
 - [\[ACL 2026\] Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation](beyond_reproduction_a_paired-task_framework_for_assessing_llm_comprehension_and_.md)
-- [\[ACL 2026\] Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions](large_language_models_are_bad_dice_players_llms_struggle_to_generate_random_numb.md)
 - [\[ICML 2026\] BuildArena: A Physics-Aligned Interactive Benchmark of LLMs for Engineering Construction](../../ICML2026/llm_evaluation/buildarena_a_physics-aligned_interactive_benchmark_of_llms_for_engineering_const.md)
+- [\[ACL 2026\] Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions](large_language_models_are_bad_dice_players_llms_struggle_to_generate_random_numb.md)
+- [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](../../ICLR2026/llm_evaluation/rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)
 - [\[AAAI 2026\] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents](../../AAAI2026/llm_evaluation/beyond_accuracy_a_cognitive_load_framework_for_mapping_the_c.md)
-- [\[ACL 2026\] Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation](beyond_the_singular_revealing_the_value_of_multiple_generations_in_benchmark_eva.md)
 
 </div>
 

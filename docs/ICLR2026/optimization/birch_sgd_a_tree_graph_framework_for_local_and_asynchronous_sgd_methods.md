@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Birch SGD: A Tree Graph Framework for Local and Asynchronous SGD Methods
 description: >-
-  [ICLR 2026][Optimization & Theory][Local SGD] The paper represents every distributed/asynchronous SGD method as a weighted directed "computation tree" and reduces convergence analysis to "measuring distances on the tree" via a geometric master theorem. This framework provides a unified explanation for existing methods and facilitates the batch design of 8 new meth
+  [ICLR 2026][Optimization][Distributed optimization] The paper represents every distributed/asynchronous SGD method as a weighted directed "computation tree" and reduces convergence analysis to "measuring distances on the tree" via a geometric master theorem. This framework provides a unified explanation for existing methods and facilitates the batch design of 8 new methods (at least 6 of which achieve optimal computational time complexity).
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Local SGD
+  - "ICLR 2026"
+  - "Optimization"
+  - "Distributed optimization"
+  - "Asynchronous SGD"
+  - "Local SGD"
+  - "Federated Learning"
+  - "Convergence analysis"
+  - "Computation tree"
+  - "Time complexity"
 date: 2026-05-08
-content_hash: 0c1913e757fbf6a8
+content_hash: 6ac8eb037988432a
 ---
+
 # Birch SGD: A Tree Graph Framework for Local and Asynchronous SGD Methods
 
 **Conference**: ICLR 2026  
@@ -122,11 +129,11 @@ Reading Guide: No single row is all ✓—asynchrony trades AllReduce compatibil
 
 ## Related Papers
 
+- [\[ICLR 2026\] Ringleader ASGD: The First Asynchronous SGD with Optimal Time Complexity under Data Heterogeneity](ringleader_asgd_the_first_asynchronous_sgd_with_optimal_time_complexity_under_da.md)
 - [\[ICLR 2026\] Implicit Regularization of SGD Reduces Shortcut Learning](implicit_regularization_of_sgd_reduces_shortcut_learning.md)
 - [\[ICLR 2026\] High-Probability Bounds for the Last Iterate of Clipped SGD](high-probability_bounds_for_the_last_iterate_of_clipped_sgd.md)
 - [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
-- [\[ICLR 2026\] Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting](hinge_regression_tree_a_newton_method_for_oblique_regression_tree_splitting.md)
-- [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
+- [\[ICLR 2026\] Sign-SGD via Parameter-Free Optimization](sign-sgd_via_parameter-free_optimization.md)
 
 </div>
 

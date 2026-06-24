@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Defines and formalizes the task of temporally sparse 4D indoor semantic instance segmentation (4DSIS). The proposed ReScene4D method extends 3D instance segmentation architectures to the 4D dimension through three temporal information sharing strategies: spatio-temporal contrastive loss, spatio-temporal mask pooling, a
+  [CVPR 2026][Autonomous Driving][4D Semantic Instance Segmentation] Defines and formalizes the task of temporally sparse 4D indoor semantic instance segmentation (4DSIS). The proposed ReScene4D method extends 3D instance segmentation architectures to the 4D dimension through three temporal information sharing strategies: spatio-temporal contrastive loss, spatio-temporal mask pooling, and spatio-temporal serialization. It achieves SOTA on the 3RScan dataset and introduces the n…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "4D Semantic Instance Segmentation"
+  - "Temporal Consistency"
+  - "Indoor Scene Changes"
+  - "Contrastive Learning"
+  - "Spatio-Temporal Queries"
 date: 2026-05-08
-content_hash: 2a4ea1b2c6a82963
+content_hash: a9273f2553d6e522
 ---
+
 # ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes
 
 **Conference**: CVPR 2026  
@@ -162,15 +168,16 @@ Designed for PTv3-style backbones (Sonata/Concerto), where attention is built on
 - Value: ⭐⭐⭐⭐ Provides a systematic foundation for long-term indoor dynamic understanding.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)](monocular_open_vocabulary_occupancy_prediction_for_indoor_scenes.md)
 - [\[CVPR 2026\] TopoHR: Hierarchical Centerline Representation for Cyclic Topology Reasoning in Driving Scenes with Point-to-Instance Relations](topohr_hierarchical_centerline_representation_for_cyclic_topology_reasoning_in_d.md)
-- [\[CVPR 2026\] CogDriver: Integrating Cognitive Inertia for Temporally Coherent Planning in Autonomous Driving](cogdriver_integrating_cognitive_inertia_for_temporally_coherent_planning_in_auto.md)
-- [\[CVPR 2026\] EditSSC: Toward Editable Semantic Occupancy Scenes with Unconditional Diffusion Models](editssc_toward_editable_semantic_occupancy_scenes_with_unconditional_diffusion_m.md)
 - [\[ECCV 2024\] Monocular Occupancy Prediction for Scalable Indoor Scenes](../../ECCV2024/autonomous_driving/monocular_occupancy_prediction_for_scalable_indoor_scenes.md)
+- [\[CVPR 2026\] CogDriver: Integrating Cognitive Inertia for Temporally Coherent Planning in Autonomous Driving](cogdriver_integrating_cognitive_inertia_for_temporally_coherent_planning_in_auto.md)
+- [\[CVPR 2026\] Test-Time Training for LiDAR Semantic Segmentation under Corruption via Geometric Inlier Discrimination](test-time_training_for_lidar_semantic_segmentation_under_corruption_via_geometri.md)
 
 </div>
 

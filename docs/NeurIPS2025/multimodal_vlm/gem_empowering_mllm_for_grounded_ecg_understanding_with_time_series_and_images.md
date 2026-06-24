@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GEM: Empowering MLLM for Grounded ECG Understanding with Time Series and Images
 description: >-
-  [NeurIPS 2025][Multimodal VLM][ECG understanding] GEM is proposed as the first multimodal large language model that unifies ECG time series, 12-lead ECG images, and text. Through a dual-encoder framework…
+  [NeurIPS 2025][Multimodal VLM][ECG understanding] GEM is proposed as the first multimodal large language model that unifies ECG time series, 12-lead ECG images, and text. Through a dual-encoder framework, cross-modal alignment, and knowledge-guided instruction data generation, GEM achieves grounded ECG diagnosis based on quantifiable physiological features, improving diagnostic accuracy by 7.4%, interpretability by 22.7%, and grounding capability by 25.3%.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "grounded diagnosis"
   - "electrocardiogram"
 date: 2026-05-08
-content_hash: 98f888c91fc3ca57
+content_hash: b536968fcd65f5b8
 ---
 
 # GEM: Empowering MLLM for Grounded ECG Understanding with Time Series and Images
@@ -143,10 +143,10 @@ Single-step training (unlike most MLLMs that pre-train the projector before fine
 ## Related Papers
 
 - [\[AAAI 2026\] anyECG-chat: A Generalist ECG-MLLM for Flexible ECG Input and Multi-Task Understanding](../../AAAI2026/multimodal_vlm/anyecg-chat_a_generalist_ecg-mllm_for_flexible_ecg_input_and.md)
-- [\[NeurIPS 2025\] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](rtv_bench_benchmarking_mllm_continuous_perception_through_realtime_video.md)
 - [\[ICML 2026\] ECG-R1: Protocol-Guided and Modality-Agnostic MLLM for Reliable ECG Interpretation](../../ICML2026/multimodal_vlm/ecg-r1_protocol-guided_and_modality-agnostic_mllm_for_reliable_ecg_interpretatio.md)
 - [\[NeurIPS 2025\] In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting](in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
 - [\[NeurIPS 2025\] SITCOM: Scaling Inference-Time COMpute for VLAs](sitcom_scaling_inference-time_compute_for_vlas.md)
+- [\[ICML 2026\] CHARM: Using Multimodal JEPA + Channel Descriptions for Time Series Foundation Embedding](../../ICML2026/multimodal_vlm/giving_sensors_a_voice_multimodal_jepa_for_semantic_time-series_embeddings.md)
 
 </div>
 

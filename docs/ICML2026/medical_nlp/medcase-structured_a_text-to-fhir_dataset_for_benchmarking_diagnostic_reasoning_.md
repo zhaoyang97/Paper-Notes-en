@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings
 description: >-
-  [ICML 2026][Medical NLP][FHIR] The authors propose a "multi-stage LLM + terminology grounding + repair loop" pipeline to convert free-text medical cases into HL7 FHIR R4 standard bundles. Using this, they construct the MedCase-Structured dataset (1,408 cases, 82.5% success rate) from MedCaseReasoning. Experiments demonstrate that diagnostic accuracy
+  [ICML2026][Medical LLM][FHIR] The authors propose a "multi-stage LLM + terminology grounding + repair loop" pipeline to convert free-text medical cases into HL7 FHIR R4 standard bundles. Using this, they construct the MedCase-Structured dataset (1,408 cases, 82.5% success rate) from MedCaseReasoning. Experiments demonstrate that diagnostic accuracy for GPT-5.4, Gemini-3.1-Pro, and Claude-Opus-4.6 consistently drops by 4–23% when using structured FHIR inputs compared to raw te…
 tags:
-  - ICML 2026
-  - Medical NLP
-  - FHIR
+  - "ICML2026"
+  - "Medical LLM"
+  - "FHIR"
+  - "Clinical Decision Support"
+  - "Terminology Grounding"
+  - "Synthetic EHR"
+  - "Diagnostic Reasoning"
 date: 2026-05-08
-content_hash: e2dcee1a033c1913
+content_hash: 814c1ac1da87a2d1
 ---
+
 # MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings
 
 **Conference**: ICML2026  
@@ -152,9 +157,9 @@ The study categorized pipeline failures on MedCaseReasoning as follows:
 
 - [\[ACL 2026\] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](../../ACL2026/medical_nlp/dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)
 - [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](../../ACL2026/medical_nlp/reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
-- [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](../../ACL2026/medical_nlp/multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
-- [\[ACL 2025\] Evaluation of LLMs in Medical Text Summarization: The Role of Vocabulary Adaptation in High OOV Settings](../../ACL2025/medical_nlp/evaluation_of_llms_in_medical_text_summarization_the_role_of_vocabulary_adaptati.md)
 - [\[ICLR 2026\] From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents](../../ICLR2026/medical_nlp/from_conversation_to_query_execution_benchmarking_user_and_tool_interactions_for.md)
+- [\[ACL 2025\] Evaluation of LLMs in Medical Text Summarization: The Role of Vocabulary Adaptation in High OOV Settings](../../ACL2025/medical_nlp/evaluation_of_llms_in_medical_text_summarization_the_role_of_vocabulary_adaptati.md)
+- [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](../../ACL2026/medical_nlp/multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
 
 </div>
 

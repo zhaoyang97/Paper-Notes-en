@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect
 description: >-
-  [AAAI 2026][Explanatory Interactive Learning] This paper systematically evaluates the impact of **order effects** on Explanatory Interactive Learning (XIL) through two large-scale user studies (713 participants in total)…
+  [AAAI 2026][Explanatory Interactive Learning] This paper systematically evaluates the impact of **order effects** on Explanatory Interactive Learning (XIL) through two large-scale user studies (713 participants in total). The findings show that order effects have a **limited and inconsistent** influence on user feedback quality, with a statistically significant but weak effect observed only within sessions (not between sessions). The overall conclusion is that order effects d…
 tags:
   - "AAAI 2026"
   - "Explanatory Interactive Learning"
@@ -11,7 +11,7 @@ tags:
   - "User Study"
   - "XIL"
 date: 2026-05-08
-content_hash: 8aa46a46359298a1
+content_hash: 7563fb6b2af04e95
 ---
 
 # Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect
@@ -199,11 +199,11 @@ Mixed linear models are employed, with fixed effects including order condition, 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Higher-Order Responsibility](higher-order_responsibility.md)
 - [\[AAAI 2026\] A Phase Transition for Opinion Dynamics with Competing Biases](a_phase_transition_for_opinion_dynamics_with_competing_biase.md)
-- [\[AAAI 2026\] Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration](align_when_they_want_complement_when_they_need_human-centere.md)
+- [\[AAAI 2026\] Higher-Order Responsibility](higher-order_responsibility.md)
+- [\[CVPR 2026\] MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics](../../CVPR2026/others/moocap_a_multi-view_benchmark_for_cow-object-human_interaction_and_behavior_dyna.md)
 - [\[AAAI 2026\] PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks](piphen_physical_interaction_prediction_with_hamiltonian_energy_networks.md)
-- [\[ICCV 2025\] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](../../ICCV2025/others/syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)
+- [\[AAAI 2026\] Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration](align_when_they_want_complement_when_they_need_human-centere.md)
 
 </div>
 

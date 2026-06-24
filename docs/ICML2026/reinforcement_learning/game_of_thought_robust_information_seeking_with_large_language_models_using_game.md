@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory
 description: >-
-  [ICML 2026][Reinforcement Learning][20 Questions] This paper models active information seeking (e.g., 20 Questions, medical diagnosis, troubleshooting) as a two-player zero-sum Extensive-Form Game (EFG) and proposes Game of Thought (GoT). By using depth-limited subgame construction and applying Counterfactual Regret Minimization (CFR) to solve for Nash Equilibrium (NE
+  [ICML 2026][Reinforcement Learning][20 Questions] This paper models active information seeking (e.g., 20 Questions, medical diagnosis, troubleshooting) as a two-player zero-sum Extensive-Form Game (EFG) and proposes Game of Thought (GoT). By using depth-limited subgame construction and applying Counterfactual Regret Minimization (CFR) to solve for Nash Equilibrium (NE), GoT generates "randomized questioning strategies." It significantly reduces worst-case interaction rounds a…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - 20 Questions
-  - Nash equilibrium
-  - EFG
-  - subgame search
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "20 Questions"
+  - "Nash equilibrium"
+  - "EFG"
+  - "subgame search"
+  - "worst-case optimization"
 date: 2026-05-08
-content_hash: 80144c2d83d7c67f
+content_hash: e2aacc9d0fcdca49
 ---
+
 # Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory
 
 **Conference**: ICML 2026  

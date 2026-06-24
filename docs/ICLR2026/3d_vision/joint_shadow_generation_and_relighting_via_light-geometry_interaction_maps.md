@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Joint Shadow Generation and Relighting via Light-Geometry Interaction Maps
 description: >-
-  [ICLR 2026][3D Vision][shadow generation] This paper proposes Light-Geometry Interaction (LGI) maps, a 2.5D representation encoding light-occlusion relationships from monocular depth estimation. These maps are embedded into a bridge matching generation framework to achieve joint modeling of shadow generation and object relighting, attaining SOTA performance on
+  [ICLR2026][3D Vision][shadow generation] This paper proposes Light-Geometry Interaction (LGI) maps, a 2.5D representation encoding light-occlusion relationships from monocular depth estimation. These maps are embedded into a bridge matching generation framework to achieve joint modeling of shadow generation and object relighting, attaining SOTA performance on both synthetic and real images.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - shadow generation
-  - relighting
-  - light-geometry interaction
-  - bridge matching
-  - monocular depth
+  - "ICLR2026"
+  - "3D Vision"
+  - "shadow generation"
+  - "relighting"
+  - "light-geometry interaction"
+  - "bridge matching"
+  - "monocular depth"
 date: 2026-05-08
-content_hash: 2f41993c8469db93
+content_hash: 59a5f3d0e8dedd25
 ---
+
 # Joint Shadow Generation and Relighting via Light-Geometry Interaction Maps
 
 **Conference**: ICLR2026  
@@ -136,15 +137,16 @@ RMSE in shadow regions decreased from 0.1543 to 0.0898 (**42% improvement**), an
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](../../CVPR2026/3d_vision/lumimotion_gaussian_relighting_dynamics.md)
 - [\[ICLR 2026\] DreamCS: Geometry-Aware Text-to-3D Generation with Unpaired 3D Reward Supervision](dreamcs_geometry-aware_text-to-3d_generation_with_unpaired_3d_reward_supervision.md)
 - [\[ICLR 2026\] SSD-GS: Scattering and Shadow Decomposition for Relightable 3D Gaussian Splatting](ssd-gs_scattering_and_shadow_decomposition_for_relightable_3d_gaussian_splatting.md)
 - [\[ECCV 2024\] JointDreamer: Ensuring Geometry Consistency and Text Congruence in Text-to-3D Generation via Joint Score Distillation](../../ECCV2024/3d_vision/jointdreamer_ensuring_geometry_consistency_and_text_congruence_in_text-to-3d_gen.md)
 - [\[ICLR 2026\] LiTo: Surface Light Field Tokenization](lito_surface_light_field_tokenization.md)
-- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](../../CVPR2026/3d_vision/regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
 
 </div>
 

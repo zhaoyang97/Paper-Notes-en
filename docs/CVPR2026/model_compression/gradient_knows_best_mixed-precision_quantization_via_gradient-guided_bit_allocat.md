@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Gradient Knows Best: Mixed-Precision Quantization via Gradient-Guided Bit Allocation for Super-Resolution
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] For post-training mixed-precision quantization (PTQ-MPQ) of super-resolution (SR) models, this paper moves beyond using static statistics like activation standard deviation for layer-wise sensitivity estimation. Instead, it directly uses the "gradient of loss with respect to bit-width" for bit allocation, paired with a
+  [CVPR 2026][Model Compression][Super-Resolution] For post-training mixed-precision quantization (PTQ-MPQ) of super-resolution (SR) models, this paper moves beyond using static statistics like activation standard deviation for layer-wise sensitivity estimation. Instead, it directly uses the "gradient of loss with respect to bit-width" for bit allocation, paired with a non-learning Dynamic Activation Normalization (DAN) to solve the activation range drift caused by the removal…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Super-Resolution"
+  - "Mixed-Precision Quantization"
+  - "Post-Training Quantization"
+  - "Gradient-Guided Bit Allocation"
+  - "Activation Normalization"
 date: 2026-05-08
-content_hash: 413d0a2b34ff8e69
+content_hash: adff48fd0a2664b8
 ---
+
 # Gradient Knows Best: Mixed-Precision Quantization via Gradient-Guided Bit Allocation for Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,20 @@ EDSR 4-bit ×4 (Gain relative to baseline):
 - Value: ⭐⭐⭐⭐ Seconds-level, GT-free MPQ is highly practical for SR edge deployment.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED_PAPERS_GO_HERE -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] SPR$^2$Q: Static Priority-based Rectifier Routing Quantization for Image Super-Resolution](../../ICLR2026/model_compression/spr2q_static_priority-based_rectifier_routing_quantization_for_image_super-resol.md)
+- [\[AAAI 2026\] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache](../../AAAI2026/model_compression/kvmix_gradient-based_layer_importance-aware_mixed-precision_.md)
+- [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
+- [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](../../ICLR2026/model_compression/stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
+- [\[CVPR 2026\] Beyond Soft Label: Dataset Distillation via Orthogonal Gradient Matching](beyond_soft_label_dataset_distillation_via_orthogonal_gradient_matching.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache](../../AAAI2026/model_compression/kvmix_gradient-based_layer_importance-aware_mixed-precision_.md)

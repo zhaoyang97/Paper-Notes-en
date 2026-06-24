@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment
 description: >-
-  [AAAI 2026][LLM Evaluation][Answer Matching] This paper systematically evaluates three text manipulation strategies—verbosity, strategic multi-answer embedding…
+  [AAAI 2026][LLM Evaluation][Answer Matching] This paper systematically evaluates three text manipulation strategies—verbosity, strategic multi-answer embedding, and correct-answer-first with contradictory suffix—against LLM-based answer-matching judges. The results show that these manipulations **do not improve scores and often reduce them**. Binary scoring proves more robust than continuous scoring, demonstrating that answer matching is resistant to low-cost text manipulatio…
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -11,7 +11,7 @@ tags:
   - "Robustness"
   - "Automated Judgment"
 date: 2026-05-08
-content_hash: a324013114248831
+content_hash: 33725cfc1f6ac036
 ---
 
 # Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment
@@ -162,11 +162,11 @@ Two-proportion $z$-tests compare average alignment between attack conditions and
 
 ## Related Papers
 
-- [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](../../ACL2026/llm_evaluation/question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
-- [\[AAAI 2026\] MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search](mcts-sql_light-weight_llms_can_master_the_text-to-sql_through_monte_carlo_tree_s.md)
 - [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](../../ACL2026/llm_evaluation/sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
-- [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](../../ACL2026/llm_evaluation/comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
+- [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](../../ACL2026/llm_evaluation/question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
+- [\[ICLR 2026\] ProfBench: Multi-Domain Rubrics requiring Professional Knowledge to Answer and Judge](../../ICLR2026/llm_evaluation/profbench_multi-domain_rubrics_requiring_professional_knowledge_to_answer_and_ju.md)
+- [\[ACL 2026\] Automated Creativity Evaluation of Language Models Across Open-Ended Tasks](../../ACL2026/llm_evaluation/automated_creativity_evaluation_of_language_models_across_open-ended_tasks.md)
 
 </div>
 

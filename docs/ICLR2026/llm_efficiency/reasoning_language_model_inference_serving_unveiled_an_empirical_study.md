@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reasoning Language Model Inference Serving Unveiled: An Empirical Study
 description: >-
-  [ICLR 2026][LLM Efficiency][KV Cache] This is the first empirical study systematically characterizing the serving behavior of "Reasoning Large Language Models (RLLMs)" in online inference. The authors propose the ASU evaluation framework and ASU-Perf benchmark suite, identifying four significant differences between RLLMs and standard LLMs (intense VRAM flu
+  [ICLR 2026][LLM Efficiency][Reasoning LLMs] This is the first empirical study systematically characterizing the serving behavior of "Reasoning Large Language Models (RLLMs)" in online inference. The authors propose the ASU evaluation framework and ASU-Perf benchmark suite, identifying four significant differences between RLLMs and standard LLMs (intense VRAM fluctuations, straggler requests, difficulty-adaptive runtime, and domain preferences). The study further evaluates whe…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV Cache
-  - Quantization
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Reasoning LLMs"
+  - "Inference Serving"
+  - "KV Cache"
+  - "Quantization"
+  - "Speculative Decoding"
 date: 2026-05-08
-content_hash: 317c5f541979c291
+content_hash: 47591e72b9ae8365
 ---
+
 # Reasoning Language Model Inference Serving Unveiled: An Empirical Study
 
 **Conference**: ICLR 2026  
@@ -121,10 +125,10 @@ The token budget experiments found that $4096 \sim 8192$ tokens suffice for most
 ## Related Papers
 
 - [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
-- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
 - [\[ICLR 2026\] DiffAdapt: Difficulty-Adaptive Reasoning for Token-Efficient LLM Inference](diffadapt_difficulty-adaptive_reasoning_for_token-efficient_llm_inference.md)
+- [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)
+- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
 - [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
-- [\[ICLR 2026\] Cartridges: Lightweight and General-Purpose Long Context Representations via Self-Study](cartridges_lightweight_and_general-purpose_long_context_representations_via_self.md)
 
 </div>
 

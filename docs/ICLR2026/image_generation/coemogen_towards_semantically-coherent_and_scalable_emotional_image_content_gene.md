@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CoEmoGen: Towards Semantically-Coherent and Scalable Emotional Image Content Generation
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] CoEmoGen transforms abstract emotions into sentence-level, contextually coherent visual semantic descriptions. By utilizing hierarchical LoRA within Stable Diffusion, it simultaneously models polarity-shared low-level visual styles and specific emotion-unique high-level semantics, leading to images that align better wi
+  [ICLR2026][Image Generation][Emotional Image Generation] CoEmoGen transforms abstract emotions into sentence-level, contextually coherent visual semantic descriptions. By utilizing hierarchical LoRA within Stable Diffusion, it simultaneously models polarity-shared low-level visual styles and specific emotion-unique high-level semantics, leading to images that align better with target emotions and exhibit more natural semantics and scalability than methods like EmoGen.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - HiLoRA
+  - "ICLR2026"
+  - "Image Generation"
+  - "Emotional Image Generation"
+  - "Diffusion Models"
+  - "Semantic Coherence"
+  - "MLLM Labeling"
+  - "HiLoRA"
 date: 2026-05-08
-content_hash: 993e4509151b885d
+content_hash: bf4b82fbcd6c7741
 ---
+
 # CoEmoGen: Towards Semantically-Coherent and Scalable Emotional Image Content Generation
 
 **Conference**: ICLR2026  
@@ -148,10 +152,18 @@ The semantic loss $L_{SEM}$ is the most critical: without it, Emo-A drops from 8
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Anchoring and Rescaling Attention for Semantically Coherent Inbetweening](../../CVPR2026/image_generation/anchoring_and_rescaling_attention_for_semantically_coherent_inbetweening.md)
+- [\[CVPR 2026\] LumiX: Structured and Coherent Text-to-Intrinsic Generation](../../CVPR2026/image_generation/lumix_structured_and_coherent_text-to-intrinsic_generation.md)
+- [\[ICCV 2025\] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model](../../ICCV2025/image_generation/emoticrafter_text-to-emotional-image_generation_based_on_valence-arousal_model.md)
+- [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](../../CVPR2026/image_generation/guiding_diffusion_models_with_semantically_degraded_conditions.md)
+- [\[ICLR 2026\] Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation](scalable_energy-based_models_via_adversarial_training_unifying_discrimination_an.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Anchoring and Rescaling Attention for Semantically Coherent Inbetweening](../../CVPR2026/image_generation/anchoring_and_rescaling_attention_for_semantically_coherent_inbetweening.md)

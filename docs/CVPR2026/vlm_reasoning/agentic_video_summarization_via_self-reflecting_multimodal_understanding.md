@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agentic Video Summarization via Self-Reflecting Multimodal Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] Reinterprets video summarization from a "one-time importance score regression" into a "predict-verify-reflect" closed-loop workflow composed of three MLLM agents: Summarizer, Verifier, and Reflector. This allows the model to self-correct and retrieve missed keyframes, outperforming previous SOTA on SumMe and TVSum in K
+  [CVPR 2026][VLM Reasoning][Video Summarization] Reinterprets video summarization from a "one-time importance score regression" into a "predict-verify-reflect" closed-loop workflow composed of three MLLM agents: Summarizer, Verifier, and Reflector. This allows the model to self-correct and retrieve missed keyframes, outperforming previous SOTA on SumMe and TVSum in Kendall's $\tau$ and Spearman's $\rho$.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Summarization"
+  - "Agentic Workflow"
+  - "MLLM"
+  - "Self-Reflection"
+  - "Importance Scoring"
 date: 2026-05-08
-content_hash: c800038293339c13
+content_hash: 1243a019ffb797e2
 ---
+
 # Agentic Video Summarization via Self-Reflecting Multimodal Understanding
 
 **Conference**: CVPR 2026  
@@ -137,11 +142,11 @@ Design choices within V2I Alignment (on SumMe):
 
 ## Related Papers
 
-- [\[CVPR 2026\] EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval](evograph-r1_self-evolving_multimodal_knowledge_hypergraphs_for_agentic_retrieval.md)
+- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)
 - [\[CVPR 2026\] Chain-of-Frames: Advancing Video Understanding in Multimodal LLMs via Frame-Aware Reasoning](chain-of-frames_advancing_video_understanding_in_multimodal_llms_via_frame-aware.md)
-- [\[CVPR 2026\] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding](see_what_i_mean_aligning_vision_and_language_representations_for_video_fine-grai.md)
-- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
-- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](self-critical_distillation_network_for_video-based_commonsense_captioning.md)
 
 </div>
 

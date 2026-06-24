@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inference-Time Scaling for Flow Models via Stochastic Generation and Rollover Budget Forcing
 description: >-
-  [NeurIPS2025][Image Generation][Flow Models] This paper proposes inference-time scaling methods for flow models: stochasticity is introduced via ODE→SDE conversion to enable particle sampling…
+  [NeurIPS2025][Image Generation][Flow Models] This paper proposes inference-time scaling methods for flow models: stochasticity is introduced via ODE→SDE conversion to enable particle sampling; the search space is expanded through linear→VP interpolant conversion; and a Rollover Budget Forcing (RBF) strategy is designed to adaptively allocate the computational budget. The approach substantially outperforms all existing methods on compositional text-to-image generation and quan…
 tags:
   - "NeurIPS2025"
   - "Image Generation"
@@ -14,7 +14,7 @@ tags:
   - "Rollover Budget Forcing"
   - "FLUX"
 date: 2026-05-08
-content_hash: 3b4c37611636ab2a
+content_hash: fd03b1c111b81176
 ---
 
 # Inference-Time Scaling for Flow Models via Stochastic Generation and Rollover Budget Forcing
@@ -250,11 +250,11 @@ When the reward function is **differentiable** (e.g., Aesthetic Score), RBF can 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Tiny Inference-Time Scaling with Latent Verifiers](../../CVPR2026/image_generation/tiny_inference-time_scaling_with_latent_verifiers.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](../../ICLR2026/image_generation/inference-time_scaling_of_diffusion_models_through_classical_search.md)
+- [\[ICML 2025\] Performance Plateaus in Inference-Time Scaling for Text-to-Image Diffusion Without External Models](../../ICML2025/image_generation/performance_plateaus_in_inference-time_scaling_for_text-to-image_diffusion_witho.md)
+- [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](../../CVPR2026/image_generation/rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
+- [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](../../ICLR2026/image_generation/compositional_visual_planning_via_inference-time_diffusion_scaling.md)
 - [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
-- [\[ICML 2026\] Simple Approximation and Derivative Free Inference-Time Scaling for Diffusion Models via Sequential Monte Carlo on Path Measures](../../ICML2026/image_generation/simple_approximation_and_derivative_free_inference-time_scaling_for_diffusion_mo.md)
-- [\[NeurIPS 2025\] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants](boltznce_learning_likelihoods_for_boltzmann_generation_with_stochastic_interpola.md)
-- [\[NeurIPS 2025\] Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models](psi-sampler_initial_particle_sampling_for_smc-based_inference-time_reward_alignm.md)
 
 </div>
 

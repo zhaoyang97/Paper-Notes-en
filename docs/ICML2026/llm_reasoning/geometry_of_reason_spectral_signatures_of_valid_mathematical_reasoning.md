@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geometry of Reason: Spectral Signatures of Valid Mathematical Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] The authors treat each Transformer attention matrix as a token-weighted graph and extract four parameter-free spectral diagnostics: Fiedler value, HFER, spectral entropy, and smoothness. They discover that "valid mathematical reasoning" leaves measurable fingerprints on the attention spectrum (Cohen’s $d$ up to 3.30),
+  [ICML2026][Reasoning][Spectral Graph Theory] The authors treat each Transformer attention matrix as a token-weighted graph and extract four parameter-free spectral diagnostics: Fiedler value, HFER, spectral entropy, and smoothness. They discover that "valid mathematical reasoning" leaves measurable fingerprints on the attention spectrum (Cohen’s $d$ up to 3.30), allowing the model to distinguish between true reasoning and pattern matching with 85–96% accuracy **without any tr…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Spectral Graph Theory"
+  - "Attention Graphs"
+  - "Reasoning Verification"
+  - "Training-free Probes"
+  - "Induction Heads"
 date: 2026-05-08
-content_hash: b91688e0d320f7ec
+content_hash: 70e5ea591a2ae22f
 ---
+
 # Geometry of Reason: Spectral Signatures of Valid Mathematical Reasoning
 
 **Conference**: ICML2026  
@@ -142,15 +148,15 @@ While HFER's AUC is slightly lower than log-prob, its Pass@1 is higher because l
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Inference-Time Conformal Reasoning with Valid Factuality Control for Large Language Models](inference-time_conformal_reasoning_with_valid_factuality_control_for_large_langu.md)
 - [\[ACL 2026\] LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals](../../ACL2026/llm_reasoning/llm_reasoning_as_trajectories_step-specific_representation_geometry_and_correctn.md)
+- [\[ICLR 2026\] Learning to Reason via Mixture-of-Thought for Logical Reasoning](../../ICLR2026/llm_reasoning/learning_to_reason_via_mixture-of-thought_for_logical_reasoning.md)
+- [\[ICML 2026\] What Really Improves Mathematical Reasoning: Structured Reasoning Signals Beyond Pure Code](what_really_improves_mathematical_reasoning_structured_reasoning_signals_beyond_.md)
 - [\[ICLR 2026\] Native Reasoning Models: Training Language Models to Reason on Unverifiable Data](../../ICLR2026/llm_reasoning/native_reasoning_models_training_language_models_to_reason_on_unverifiable_data.md)
-- [\[ACL 2026\] Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment](../../ACL2026/llm_reasoning/which_reasoning_trajectories_teach_students_to_reason_better_a_simple_metric_of_.md)
-- [\[ICLR 2026\] Achieving Olympia-Level Geometry Large Language Model Agent via Complexity Boosting Reinforcement Learning](../../ICLR2026/llm_reasoning/achieving_olympia-level_geometry_large_language_model_agent_via_complexity_boost.md)
 
 </div>
 

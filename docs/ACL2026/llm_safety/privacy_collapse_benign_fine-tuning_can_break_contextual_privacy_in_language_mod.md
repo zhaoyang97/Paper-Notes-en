@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes "Privacy Collapse," a novel failure mode where seemingly benign fine-tuning causes systematic degradation of an LLM's contextual privacy norms, while standard safety and capability metrics remain largely unaffected.
+  [ACL 2026][LLM Safety][Contextual Privacy] This paper proposes "Privacy Collapse," a novel failure mode where seemingly benign fine-tuning causes systematic degradation of an LLM's contextual privacy norms, while standard safety and capability metrics remain largely unaffected.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Contextual Privacy"
+  - "Benign Fine-Tuning"
+  - "Agent Security"
+  - "Persistent Memory"
+  - "Representation Drift"
 date: 2026-05-08
-content_hash: e91261abbf45d3c9
+content_hash: bdfcd67f24ffb85a
 ---
+
 # Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models
 
 **Conference**: ACL 2026  
@@ -138,9 +144,9 @@ The paper does not propose a new training loss but uses standard Supervised Fine
 
 - [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
 - [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](../../ICLR2026/llm_safety/secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
-- [\[ACL 2025\] Estimating Privacy Leakage of Augmented Contextual Knowledge in Language Models](../../ACL2025/llm_safety/estimating_privacy_leakage_of_augmented_contextual_knowledge_in_language_models.md)
 - [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
-- [\[ACL 2026\] APPSI-139: A Parallel Corpus of English Application Privacy Policy Summarization and Interpretation](appsi-139_a_parallel_corpus_of_english_application_privacy_policy_summarization_.md)
+- [\[ACL 2025\] Estimating Privacy Leakage of Augmented Contextual Knowledge in Language Models](../../ACL2025/llm_safety/estimating_privacy_leakage_of_augmented_contextual_knowledge_in_language_models.md)
+- [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](../../ICLR2026/llm_safety/rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
 
 </div>
 

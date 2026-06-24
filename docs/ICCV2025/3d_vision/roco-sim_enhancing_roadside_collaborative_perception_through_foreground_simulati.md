@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RoCo-Sim: Enhancing Roadside Collaborative Perception through Foreground Simulation
 description: >-
-  [ICCV 2025][3D Vision][roadside collaborative perception] RoCo-Sim is proposed as the first simulation framework for roadside collaborative perception. By integrating extrinsic parameter optimization…
+  [ICCV 2025][3D Vision][roadside collaborative perception] RoCo-Sim is proposed as the first simulation framework for roadside collaborative perception. By integrating extrinsic parameter optimization, occlusion-aware 3D asset placement, DepthSAM-based depth modeling, and style-transfer post-processing, it generates multi-view consistent simulation data from single images, achieving over 83% improvement in roadside 3D detection performance.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D detection"
   - "multi-view consistency"
 date: 2026-05-08
-content_hash: 66e1998c42b3c2f8
+content_hash: 0e1cccb3d10cf122
 ---
 
 # RoCo-Sim: Enhancing Roadside Collaborative Perception through Foreground Simulation
@@ -120,11 +120,11 @@ RoCo-Sim is a simulation framework and does not involve training. The generated 
 
 ## Related Papers
 
-- [\[ICCV 2025\] EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device](embodiedsplat_personalized_real-to-sim-to-real_navigation_with_gaussian_splats_f.md)
+- [\[CVPR 2026\] GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception](../../CVPR2026/3d_vision/gsv2x_geometry-aware_uncertainty_modeling_and_orthogonal_fusion_for_robust_roads.md)
 - [\[ICCV 2025\] RoboPearls: Editable Video Simulation for Robot Manipulation](robopearls_editable_video_simulation_for_robot_manipulation.md)
-- [\[CVPR 2026\] SoPE: Spherical Coordinate-Based Positional Embedding for Enhancing Spatial Perception of 3D LVLMs](../../CVPR2026/3d_vision/sope_spherical_coordinate-based_positional_embedding_for_enhancing_spatial_perce.md)
-- [\[ICCV 2025\] Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation](seeing_and_seeing_through_the_glass_real_and_synthetic_data_for_multi-layer_dept.md)
-- [\[NeurIPS 2025\] Learning Generalizable Shape Completion with SIM(3) Equivariance](../../NeurIPS2025/3d_vision/learning_generalizable_shape_completion_with_sim3_equivariance.md)
+- [\[ICCV 2025\] EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device](embodiedsplat_personalized_real-to-sim-to-real_navigation_with_gaussian_splats_f.md)
+- [\[ICCV 2025\] JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers](jointdit_enhancing_rgb-depth_joint_modeling_with_diffusion_transformers.md)
+- [\[CVPR 2026\] UniPR: Unified Object-level Real-to-Sim Perception and Reconstruction from a Single Stereo Pair](../../CVPR2026/3d_vision/unipr_unified_object-level_real-to-sim_perception_and_reconstruction_from_a_sing.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] Ours proposes Gspell, a lightweight post-hoc explanation framework that projects GNN node embeddings into the LLM embedding space and constructs hybrid prompts (soft prompts + text). This enables LLMs to directly reason over GNN internal representations to generate natural language explanations and explanatory subgraph
+  [ACL 2026][Graph Learning][GNN Explainability] Ours proposes Gspell, a lightweight post-hoc explanation framework that projects GNN node embeddings into the LLM embedding space and constructs hybrid prompts (soft prompts + text). This enables LLMs to directly reason over GNN internal representations to generate natural language explanations and explanatory subgraphs, achieving a favorable balance between faithfulness and interpretability on Text-Attributed Graphs (TAGs).
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "GNN Explainability"
+  - "LLM Explainer"
+  - "Soft Prompt"
+  - "Text-attributed Graphs (TAGs)"
+  - "Natural Language Explanation"
 date: 2026-05-08
-content_hash: b0da51077f740a37
+content_hash: d1bf91efabc7c849
 ---
+
 # From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context
 
 **Conference**: ACL 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sharpness-Aware Minimization with Z-Score Gradient Filtering
 description: >-
-  [NeurIPS 2025 (OPT Workshop)][Sharpness-Aware Minimization] This paper proposes Z-Score Filtered SAM (ZSAM), which applies per-layer Z-Score statistical filtering to gradient vectors…
+  [NeurIPS 2025 (OPT Workshop)][Sharpness-Aware Minimization] This paper proposes Z-Score Filtered SAM (ZSAM), which applies per-layer Z-Score statistical filtering to gradient vectors, retaining only the most statistically significant gradient components for the perturbation ascent step. This guides the optimizer toward flat minima more effectively, achieving consistent improvements in test accuracy across multiple datasets and architectures.
 tags:
   - "NeurIPS 2025 (OPT Workshop)"
   - "Sharpness-Aware Minimization"
@@ -11,7 +11,7 @@ tags:
   - "Generalization"
   - "Flat Minima"
 date: 2026-05-08
-content_hash: 4362af9593213250
+content_hash: fd522bf17e60ecba
 ---
 
 # Sharpness-Aware Minimization with Z-Score Gradient Filtering
@@ -150,11 +150,11 @@ Per-layer filtering consistently outperforms global filtering, validating the de
 
 ## Related Papers
 
+- [\[CVPR 2025\] ZO-SAM: Zero-Order Sharpness-Aware Minimization for Efficient Sparse Training](../../CVPR2025/others/zo-sam_zero-order_sharpness-aware_minimization_for_efficient_sparse_training.md)
 - [\[ICLR 2026\] Revisiting Sharpness-Aware Minimization: A More Faithful and Effective Implementation](../../ICLR2026/others/revisiting_sharpness-aware_minimization_a_more_faithful_and_effective_implementa.md)
+- [\[ICML 2025\] FEDTAIL: Federated Long-Tailed Domain Generalization with Sharpness-Guided Gradient Matching](../../ICML2025/others/fedtail_federated_long-tailed_domain_generalization_with_sharpness-guided_gradie.md)
 - [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
 - [\[NeurIPS 2025\] Manipulating Feature Visualizations with Gradient Slingshots](manipulating_feature_visualizations_with_gradient_slingshots.md)
-- [\[NeurIPS 2025\] Hessian-guided Perturbed Wasserstein Gradient Flows for Escaping Saddle Points](hessian-guided_perturbed_wasserstein_gradient_flows_for_escaping_saddle_points.md)
-- [\[NeurIPS 2025\] SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures](sad_neural_networks_divergent_gradient_flows_and_asymptotic_optimality_via_o-min.md)
 
 </div>
 

@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] A Faster Parameter-Free Regret Matching Algorithm
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes a parameter-free regret matching variant **MI-SPRM+**. By using a technique called "Adaptive Regret Domain (ARD)" to monotonically raise the lower bound of the cumulative regret's 1-norm, it **preserves the parameter-free property while achieving an $O(1/T)$ theoretical convergence rate** in two-pla
+  [ICLR2026][Learning Theory][Regret Matching] This paper proposes a parameter-free regret matching variant **MI-SPRM+**. By using a technique called "Adaptive Regret Domain (ARD)" to monotonically raise the lower bound of the cumulative regret's 1-norm, it **preserves the parameter-free property while achieving an $O(1/T)$ theoretical convergence rate** in two-player zero-sum games—making it the first RM-type algorithm known to achieve both simultaneously.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Game Solving"
+  - "Online Learning"
+  - "Regret Matching"
+  - "Nash Equilibrium"
+  - "Convergence Rate"
+  - "Parameter-Free Algorithm"
+  - "Adaptive Stepsize"
 date: 2026-05-08
-content_hash: 0894f2b897815800
+content_hash: 8279705924d7ffcd
 ---
+
 # A Faster Parameter-Free Regret Matching Algorithm
 
 **Conference**: ICLR2026  
@@ -127,11 +135,11 @@ MI-SPRM+, **without any tuning**, achieves a duality gap smaller than even the o
 
 ## Related Papers
 
+- [\[ICLR 2026\] Dimension-Free Decision Calibration for Nonlinear Loss Functions](dimension-free_decision_calibration_for_nonlinear_loss_functions.md)
 - [\[ICLR 2026\] Bandit Learning in Matching Markets Robust to Adversarial Corruptions](bandit_learning_in_matching_markets_robust_to_adversarial_corruptions.md)
 - [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
-- [\[ICLR 2026\] Dimension-Free Decision Calibration for Nonlinear Loss Functions](dimension-free_decision_calibration_for_nonlinear_loss_functions.md)
-- [\[ICLR 2026\] Convergence Dynamics of Over-Parameterized Score Matching for a Single Gaussian](convergence_dynamics_of_over-parameterized_score_matching_for_a_single_gaussian.md)
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
+- [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
 
 </div>
 

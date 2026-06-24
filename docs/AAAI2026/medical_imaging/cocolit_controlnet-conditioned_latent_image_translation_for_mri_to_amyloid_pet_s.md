@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CoCoLIT: ControlNet-Conditioned Latent Image Translation for MRI to Amyloid PET Synthesis
 description: >-
-  [AAAI 2026][Medical Imaging][MRI-to-PET synthesis] This paper proposes CoCoLIT, a ControlNet-conditioned latent diffusion framework for synthesizing amyloid PET images from structural MRI. Through a Weighted Image Space…
+  [AAAI 2026][Medical Imaging][MRI-to-PET synthesis] This paper proposes CoCoLIT, a ControlNet-conditioned latent diffusion framework for synthesizing amyloid PET images from structural MRI. Through a Weighted Image Space Loss (WISL) and Latent Averaging Stabilization (LAS), CoCoLIT substantially outperforms existing methods.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Alzheimer's disease"
   - "amyloid"
 date: 2026-05-08
-content_hash: 04e5733cbd58cc9a
+content_hash: f50966ae766d32c4
 ---
 
 # CoCoLIT: ControlNet-Conditioned Latent Image Translation for MRI to Amyloid PET Synthesis
@@ -163,11 +163,11 @@ CoCoLIT achieves even stronger performance on the external test set: SSIM = 0.94
 
 ## Related Papers
 
+- [\[CVPR 2025\] Multiscale Structure-Guided Latent Diffusion for Multimodal MRI Translation](../../CVPR2025/medical_imaging/multiscale_structure-guided_latent_diffusion_for_multimodal_mri_translation.md)
 - [\[AAAI 2026\] MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss](maisi-v2_accelerated_3d_high-resolution_medical_image_synthesis_with_rectified_f.md)
-- [\[NeurIPS 2025\] Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing](../../NeurIPS2025/medical_imaging/unpaired_image-to-image_translation_for_segmentation_and_signal_unmixing.md)
-- [\[ICLR 2026\] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](../../ICLR2026/medical_imaging/adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)
+- [\[CVPR 2025\] Latent Drifting in Diffusion Models for Counterfactual Medical Image Synthesis](../../CVPR2025/medical_imaging/latent_drifting_in_diffusion_models_for_counterfactual_medical_image_synthesis.md)
 - [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
-- [\[ICCV 2025\] ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis](../../ICCV2025/medical_imaging/victr_vital_consistency_transfer_for_pathology_aware_image_synthesis.md)
+- [\[ECCV 2024\] Co-synthesis of Histopathology Nuclei Image-Label Pairs using a Context-Conditioned Joint Diffusion Model](../../ECCV2024/medical_imaging/co-synthesis_of_histopathology_nuclei_image-label_pairs_using_a_context-conditio.md)
 
 </div>
 

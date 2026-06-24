@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] The paper proposes Adaptive Action Chunking (AAC), which utilizes action entropy as a cue to dynamically determine the optimal chunk size during inference without additional training or architectural modifications. It consistently improves success rates for GR00T N1.5 and π0.5 on benchmarks such as RoboCasa and LIBERO.
+  [CVPR 2026][Robotics][Action Chunking] The paper proposes Adaptive Action Chunking (AAC), which utilizes action entropy as a cue to dynamically determine the optimal chunk size during inference without additional training or architectural modifications. It consistently improves success rates for GR00T N1.5 and π0.5 on benchmarks such as RoboCasa and LIBERO.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Action Chunking"
+  - "VLA Models"
+  - "Adaptive Inference"
+  - "Action Entropy"
+  - "Robotic Manipulation"
 date: 2026-05-08
-content_hash: b86f4f2e29479985
+content_hash: 0de0e1b93407eb6d
 ---
+
 # Adaptive Action Chunking at Inference-time for Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -142,9 +148,9 @@ LIBERO-Long (Hardest subset): 88.8% $\rightarrow$ **92.8%** (+4.0% Gain)
 
 - [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models](test-time_perturbation_tuning_with_delayed_feedback_for_vision-language-action_m.md)
-- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
 - [\[ICLR 2026\] Real-Time Robot Execution with Masked Action Chunking](../../ICLR2026/robotics/real-time_robot_execution_with_masked_action_chunking.md)
-- [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](sapave_active_perception_manipulation_vla_roboti.md)
+- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
+- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 
 </div>
 

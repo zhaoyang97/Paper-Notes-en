@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes ADMesh (a high-quality 3D model library with 15K+ assets) and CarlaOcc (a panoptic occupancy dataset with 100k frames and 0.05m precision). It provides the first instance-level annotations and physically consistent ground truth for 3D panoptic occupancy prediction in autonomous driving, along with occupan
+  [CVPR 2026][Autonomous Driving][Panoptic Occupancy Prediction] Ours proposes ADMesh (a high-quality 3D model library with 15K+ assets) and CarlaOcc (a panoptic occupancy dataset with 100k frames and 0.05m precision). It provides the first instance-level annotations and physically consistent ground truth for 3D panoptic occupancy prediction in autonomous driving, along with occupancy quality evaluation metrics and a systematic benchmark.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Panoptic Occupancy Prediction"
+  - "3D Mesh Library"
+  - "CARLA Simulation"
+  - "Instance-level Annotation"
+  - "Occupancy Dataset Quality"
 date: 2026-05-08
-content_hash: f8a06715d2ae0046
+content_hash: 6995ca0dae3cc5cd
 ---
+
 # An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -125,10 +131,10 @@ Ours defines two metrics to characterize label quality beyond simple resolution.
 ## Related Papers
 
 - [\[CVPR 2026\] PanDA: Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation in Autonomous Driving](panda_unsupervised_domain_adaptation_for_multimodal_3d_panoptic_segmentation_in_.md)
-- [\[CVPR 2026\] Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots](panoramic_multimodal_semantic_occupancy_prediction.md)
-- [\[CVPR 2026\] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs](m2-occ_resilient_3d_semantic_occupancy_prediction_for_autonomous_driving_with_in.md)
 - [\[ICCV 2025\] UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving](../../ICCV2025/autonomous_driving/uniocc_a_unified_benchmark_for_occupancy_forecasting_and_prediction_in_autonomou.md)
 - [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
+- [\[CVPR 2026\] E3AD: An Emotion-Aware Vision-Language-Action Model for Human-Centric End-to-End Autonomous Driving](e3ad_an_emotion-aware_vision-language-action_model_for_human-centric_end-to-end_.md)
+- [\[CVPR 2026\] TopoHR: Hierarchical Centerline Representation for Cyclic Topology Reasoning in Driving Scenes with Point-to-Instance Relations](topohr_hierarchical_centerline_representation_for_cyclic_topology_reasoning_in_d.md)
 
 </div>
 

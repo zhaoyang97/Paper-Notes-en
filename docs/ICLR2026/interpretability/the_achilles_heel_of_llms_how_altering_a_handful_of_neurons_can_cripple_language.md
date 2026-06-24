@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Achilles' Heel of LLMs: How Altering a Handful of Neurons Can Cripple Language Abilities
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes a "perturbation-based causal identification of critical neurons" method. Across 21 LLMs ranging from 0.5B to 72B, it is discovered that zeroing out only approximately 3 neurons can cause a 72B model with 110 billion neurons to collapse entirely (perplexity soaring by up to 20 orders of magnitude). T
+  [ICLR 2026][Interpretability][Critical neurons] This paper proposes a "perturbation-based causal identification of critical neurons" method. Across 21 LLMs ranging from 0.5B to 72B, it is discovered that zeroing out only approximately 3 neurons can cause a 72B model with 110 billion neurons to collapse entirely (perplexity soaring by up to 20 orders of magnitude). These critical neurons are highly concentrated in the `down_proj` of outer MLP layers…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Critical neurons"
+  - "Causal identification"
+  - "Perturbation analysis"
+  - "Phase transition"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 6c22a3d7d8713836
+content_hash: 6277359e8c0026b0
 ---
+
 # The Achilles' Heel of LLMs: How Altering a Handful of Neurons Can Cripple Language Abilities
 
 **Conference**: ICLR 2026  
@@ -144,7 +150,6 @@ The precision of the method and the localization source of the collapse were ver
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

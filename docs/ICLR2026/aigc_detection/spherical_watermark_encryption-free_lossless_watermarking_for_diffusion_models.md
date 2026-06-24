@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spherical Watermark: Encryption-Free, Lossless Watermarking for Diffusion Models
 description: >-
-  [ICLR 2026][AIGC Detection][Diffusion Model] This paper proposes Spherical Watermark: an encryption-free, lossless watermarking framework for diffusion models. It mixes binary watermarks into high-entropy codes, which are then precisely transformed into standard Gaussian noise via "projection to the unit sphere → orthogonal rotation → Chi-squared radius scaling"
+  [ICLR 2026][AIGC Detection][Lossless Watermarking] This paper proposes Spherical Watermark: an encryption-free, lossless watermarking framework for diffusion models. It mixes binary watermarks into high-entropy codes, which are then precisely transformed into standard Gaussian noise via "projection to the unit sphere → orthogonal rotation → Chi-squared radius scaling" to serve as the initial noise. This method requires no weight modification or per-image key storage…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - Diffusion Model
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Lossless Watermarking"
+  - "Diffusion Models"
+  - "Spherical Mapping"
+  - "Content Provenance"
+  - "Encryption-Free"
 date: 2026-05-08
-content_hash: c9e70857f0f03e00
+content_hash: 3d7c78ea4973a956
 ---
+
 # Spherical Watermark: Encryption-Free, Lossless Watermarking for Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -132,7 +137,6 @@ Ours achieves >95% accuracy in clean/post-processing scenarios and significantly
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] The EffectErase framework is proposed, which jointly learns video object insertion as an inverse auxiliary task for removal. A large-scale VOR dataset containing 60K video pairs is constructed to achieve high-quality erasing of objects and their visual side effects, including occlusions, shadows, reflections, lighting
+  [CVPR 2026][Image Generation][Video Object Removal] The EffectErase framework is proposed, which jointly learns video object insertion as an inverse auxiliary task for removal. A large-scale VOR dataset containing 60K video pairs is constructed to achieve high-quality erasing of objects and their visual side effects, including occlusions, shadows, reflections, lighting changes, and deformations.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - Dataset
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Object Removal"
+  - "Visual Side Effects"
+  - "Diffusion Models"
+  - "Dual Learning"
+  - "Dataset"
 date: 2026-05-08
-content_hash: 20367f3c1a1fafb2
+content_hash: cc4785406c774a01
 ---
+
 # EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing
 
 **Conference**: CVPR 2026  
@@ -144,7 +148,7 @@ $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{denoise}}^{\text{remove}} + \m
 - [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
 - [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
-- [\[ICCV 2025\] OmniPaint: Mastering Object-Oriented Editing via Disentangled Insertion-Removal Inpainting](../../ICCV2025/image_generation/omnipaint_mastering_object-oriented_editing_via_disentangled_insertion-removal_i.md)
+- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
 - [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
 
 </div>

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] MoReBench proposes evaluating the **structural quality of the reasoning process** (rather than the correctness of the final conclusion) of reasoning models across 1,000 moral dilemmas using 23,018 expert-written rubric criteria. The study finds that neither scaling laws nor performance on math/code benchmarks can predi
+  [ICLR 2026][AI Safety][Moral Reasoning] MoReBench proposes evaluating the **structural quality of the reasoning process** (rather than the correctness of the final conclusion) of reasoning models across 1,000 moral dilemmas using 23,018 expert-written rubric criteria. The study finds that neither scaling laws nor performance on math/code benchmarks can predict a model's moral reasoning capabilities.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Moral Reasoning"
+  - "Process Evaluation"
+  - "Rubric Scoring"
+  - "Pluralistic Values"
+  - "Normative Ethics"
+  - "Reasoning Models"
 date: 2026-05-08
-content_hash: ca8a1b8a9f058ea2
+content_hash: 98c643e1b9896471
 ---
+
 # MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes
 
 **Conference**: ICLR 2026  
@@ -124,8 +131,8 @@ This yields **MoReBench-Hard**, forcing models to be both comprehensive and effi
 - [\[ICLR 2026\] Tug-of-War No More: Harmonizing Accuracy and Robustness in Vision-Language Models via Stability-Aware Task Vector Merging](tug-of-war_no_more_harmonizing_accuracy_and_robustness_in_vision-language_models.md)
 - [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](../../ICML2026/ai_safety/coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
 - [\[ICLR 2026\] Formalising Human-in-the-Loop: Computational Reductions, Failure Modes, and Legal–Moral Responsibility](formalising_human-in-the-loop_computational_reductions_failure_modes_and_legal-m.md)
+- [\[ICML 2026\] Position: Stop Chasing the C-index when Evaluating Survival Analysis Models](../../ICML2026/ai_safety/position_stop_chasing_the_c-index_when_evaluating_survival_analysis_models.md)
 - [\[ICLR 2026\] Adaptive Logit Adjustment for Debiasing Multimodal Language Models](adaptive_logit_adjustment_for_debiasing_multimodal_language_models.md)
-- [\[ICLR 2026\] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models](identifying_robust_neural_pathways_few-shot_adversarial_mask_tuning_for_vision-l.md)
 
 </div>
 

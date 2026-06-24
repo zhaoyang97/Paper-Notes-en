@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model
 description: >-
-  [ICCV 2025][Segmentation][Hierarchical Mask Tokenization] This paper proposes HiMTok (Hierarchical Mask Tokenizer), which represents segmentation masks as up to 32 coarse-to-fine discrete tokens…
+  [ICCV 2025][Segmentation][Hierarchical Mask Tokenization] This paper proposes HiMTok (Hierarchical Mask Tokenizer), which represents segmentation masks as up to 32 coarse-to-fine discrete tokens, enabling LMMs to directly generate segmentation results in the same manner as text generation — without any additional image-conditioned mask decoder — achieving state-of-the-art performance across multiple segmentation benchmarks.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -11,7 +11,7 @@ tags:
   - "Vector Quantization"
   - "Visual Grounding"
 date: 2026-05-08
-content_hash: fdb07da5caef5bed
+content_hash: 7253c87830547447
 ---
 
 # HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model
@@ -169,11 +169,11 @@ Mask tokens serving as a visual chain-of-thought significantly improve high-prec
 
 ## Related Papers
 
+- [\[CVPR 2025\] F-LMM: Grounding Frozen Large Multimodal Models](../../CVPR2025/segmentation/f-lmm_grounding_frozen_large_multimodal_models.md)
 - [\[ICCV 2025\] Hierarchical Visual Prompt Learning for Continual Video Instance Segmentation](hierarchical_visual_prompt_learning_for_continual_video_instance_segmentation.md)
 - [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
-- [\[ICCV 2025\] O-MaMa: Learning Object Mask Matching between Egocentric and Exocentric Views](o-mama_learning_object_mask_matching_between_egocentric_and_exocentric_views.md)
-- [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
 - [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](enhancing_transformers_through_conditioned_embedded_tokens.md)
+- [\[ICCV 2025\] O-MaMa: Learning Object Mask Matching between Egocentric and Exocentric Views](o-mama_learning_object_mask_matching_between_egocentric_and_exocentric_views.md)
 
 </div>
 

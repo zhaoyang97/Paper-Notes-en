@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Can Large Language Models Match the Conclusions of Systematic Reviews?
 description: >-
-  [ICLR 2026][Medical NLP][LLM Evaluation] The authors constructed the **MedEvidence** benchmark—rewriting conclusions from 100 Cochrane Systematic Reviews (SRs) into 284 closed-ended questions paired with their source studies. This allows LLMs to replicate expert conclusions under "same material" controlled conditions. Evaluating 25 LLMs revealed: reasoning mo
+  [ICLR 2026][Medical LLM][Systematic Reviews] The authors constructed the **MedEvidence** benchmark—rewriting conclusions from 100 Cochrane Systematic Reviews (SRs) into 284 closed-ended questions paired with their source studies. This allows LLMs to replicate expert conclusions under "same material" controlled conditions. Evaluating 25 LLMs revealed: reasoning models are not necessarily better, marginal gains diminish with model size, and medical fine-tuning often decreases p…
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - LLM Evaluation
-  - MedEvidence
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Systematic Reviews"
+  - "Evidence-based Medicine"
+  - "LLM Evaluation"
+  - "Evidence Synthesis"
+  - "Scientific Skepticism"
+  - "MedEvidence"
 date: 2026-05-08
-content_hash: 6062f0134347bf07
+content_hash: b05fb0a4229fb202
 ---
+
 # Can Large Language Models Match the Conclusions of Systematic Reviews?
 
 **Conference**: ICLR 2026  
@@ -119,9 +124,9 @@ Models differ from human experts: they collapse when facing **conflicting eviden
 
 - [\[ICLR 2026\] Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre.md)
 - [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
-- [\[ICLR 2026\] Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine](knowledgeable_language_models_as_black-box_optimizers_for_personalized_medicine.md)
-- [\[ICLR 2026\] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?](can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare.md)
 - [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](../../ACL2026/medical_nlp/beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
+- [\[ACL 2026\] Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?](../../ACL2026/medical_nlp/can_continual_pre-training_bridge_the_performance_gap_between_general-purpose_an.md)
+- [\[ICLR 2026\] Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine](knowledgeable_language_models_as_black-box_optimizers_for_personalized_medicine.md)
 
 </div>
 

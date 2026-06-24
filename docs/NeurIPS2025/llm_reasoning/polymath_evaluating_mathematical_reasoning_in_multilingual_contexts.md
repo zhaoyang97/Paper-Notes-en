@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Value model] This paper proposes Value-Guided Search (VGS), which employs a token-level value model to guide block-level beam search without requiring predefined "steps." VGS achieves a +14.…
+  [NeurIPS 2025][Reasoning][Value model] This paper proposes Value-Guided Search (VGS), which employs a token-level value model to guide block-level beam search without requiring predefined "steps." VGS achieves a +14.5% relative accuracy improvement over majority voting on competition mathematics while reducing inference computation by 30%, outperforming existing PRM-based approaches.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Value model"
   - "block-level search"
   - "beam search"
   - "VGS"
   - "inference efficiency"
 date: 2026-05-08
-content_hash: d46f109981d94c19
+content_hash: 179449afd1d0247a
 ---
 
 # Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning
@@ -141,7 +141,7 @@ $$\text{WMV}: \arg\max_{p_k}\sum_{y_i∈p_k}w_i, \quad w_i = V(x,y_i)$$
 - [\[NeurIPS 2025\] Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning](re-forc_adaptive_reward_prediction_for_efficient_chain-of-thought_reasoning.md)
 - [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](../../AAAI2026/llm_reasoning/jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
 - [\[NeurIPS 2025\] Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context](self-evaluating_llms_for_multi-step_tasks_stepwise_confidence_estimation_for_fai.md)
-- [\[NeurIPS 2025\] SQL-of-Thought: Multi-agentic Text-to-SQL with Guided Error Correction](sql-of-thought_multi-agentic_text-to-sql_with_guided_error_correction.md)
+- [\[NeurIPS 2025\] Note 1: Is CoT a Hallucination? A Data Distribution Perspective](is_chain-of-thought_reasoning_of_llms_a_mirage_a_data_distribution_lens.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] On the Expressive Power of GNNs to Solve Linear SDPs
 description: >-
-  [ICML 2026][Optimization & Theory][Weisfeiler-Leman] This paper characterizes for the first time the minimum GNN expressive power required to learn solutions for linear SDPs from the perspective of the Weisfeiler–Leman (WL) hierarchy. It proves that standard variable-constraint bipartite message passing (VC-WL) and higher-order VC-2-WL are insufficient. In contrast, the
+  [ICML 2026][Optimization][Semidefinite Programming] This paper characterizes for the first time the minimum GNN expressive power required to learn solutions for linear SDPs from the perspective of the Weisfeiler–Leman (WL) hierarchy. It proves that standard variable-constraint bipartite message passing (VC-WL) and higher-order VC-2-WL are insufficient. In contrast, the VC-2-FWL architecture, equivalent to 2-FWL, is shown to be sufficient for simulating the update steps of the…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Weisfeiler-Leman
-  - PDHG
-  - warm-start
+  - "ICML 2026"
+  - "Optimization"
+  - "Semidefinite Programming"
+  - "GNN Expressive Power"
+  - "Weisfeiler-Leman"
+  - "PDHG"
+  - "warm-start"
 date: 2026-05-08
-content_hash: 58f48163fddf16f2
+content_hash: a55bc84d1150fe16
 ---
+
 # On the Expressive Power of GNNs to Solve Linear SDPs
 
 **Conference**: ICML 2026  
@@ -130,11 +133,11 @@ Across synthetic SDPs and multiple SDPLIB benchmarks, the VC-2-FWL architecture 
 
 ## Related Papers
 
+- [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
 - [\[ICLR 2026\] Learning to Solve Orienteering Problem with Time Windows and Variable Profits](../../ICLR2026/optimization/learning_to_solve_orienteering_problem_with_time_windows_and_variable_profits.md)
+- [\[ICLR 2026\] Learning from Algorithm Feedback: One-Shot SAT Solver Guidance with GNNs](../../ICLR2026/optimization/learning_from_algorithm_feedback_one-shot_sat_solver_guidance_with_gnns.md)
+- [\[ICLR 2026\] LMask: Learn to Solve Constrained Routing Problems with Lazy Masking](../../ICLR2026/optimization/lmask_learn_to_solve_constrained_routing_problems_with_lazy_masking.md)
 - [\[ICML 2026\] Provably Data-Driven Lagrangian Relaxation for Mixed Integer Linear Programming](provably_data-driven_lagrangian_relaxation_for_mixed_integer_linear_programming.md)
-- [\[CVPR 2026\] The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers](../../CVPR2026/optimization/the_power_of_decaying_steps_enhancing_attack_stability_and_transferability_for_s.md)
-- [\[ICML 2026\] Distilling Linearized Behavior into Non-Linear Fine-Tuning for Effective Task Arithmetic](distilling_linearized_behavior_into_non-linear_fine-tuning_for_effective_task_ar.md)
-- [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ConTextTab: A Semantics-Aware Tabular In-Context Learner
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Tabular Learning] ConTextTab integrates semantic embeddings (text encodings of column names and categorical values) into a table-native ICL architecture…
+  [NeurIPS 2025 Spotlight][LLM Evaluation][Tabular Learning] ConTextTab integrates semantic embeddings (text encodings of column names and categorical values) into a table-native ICL architecture, and pretrains on large-scale real-world tabular data (T4, ~2.18M tables). It achieves a new state of the art on the semantics-rich CARTE benchmark while remaining competitive with existing methods on non-semantic benchmarks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Evaluation"
   - "Tabular Learning"
   - "In-Context Learning"
@@ -12,7 +12,7 @@ tags:
   - "Foundation Models"
   - "Zero-Shot Prediction"
 date: 2026-05-08
-content_hash: 66dd5454392e1d3b
+content_hash: ce8cb2f72df3d5cc
 ---
 
 # ConTextTab: A Semantics-Aware Tabular In-Context Learner
@@ -142,11 +142,11 @@ Evaluation spans **91 regression + 112 classification tasks**, with dataset size
 
 ## Related Papers
 
+- [\[ICML 2025\] Sample Efficient Demonstration Selection for In-Context Learning](../../ICML2025/llm_evaluation/sample_efficient_demonstration_selection_for_in-context_learning.md)
 - [\[ICLR 2026\] In-Context Learning for Pure Exploration](../../ICLR2026/llm_evaluation/in-context_learning_for_pure_exploration.md)
 - [\[ACL 2026\] TabReX: Tabular Referenceless eXplainable Evaluation](../../ACL2026/llm_evaluation/tabrex_tabular_referenceless_explainable_evaluation.md)
-- [\[ICLR 2026\] In-Context Learning of Temporal Point Processes with Foundation Inference Models](../../ICLR2026/llm_evaluation/in-context_learning_of_temporal_point_processes_with_foundation_inference_models.md)
+- [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](../../ICLR2026/llm_evaluation/detecting_data_contamination_in_llms_via_in-context_learning.md)
 - [\[ICLR 2026\] Human-LLM Collaborative Feature Engineering for Tabular Learning](../../ICLR2026/llm_evaluation/human-llm_collaborative_feature_engineering_for_tabular_data.md)
-- [\[ACL 2026\] CUB: Benchmarking Context Utilisation Techniques for Language Models](../../ACL2026/llm_evaluation/cub_benchmarking_context_utilisation_techniques_for_language_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Avoid Catastrophic Forgetting with Rank-1 Fisher from Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper discovers that per-sample gradients of diffusion models at low SNR timesteps are approximately collinear, causing the empirical Fisher Information Matrix (FIM) to be essentially rank-1. Consequently, a rank-1 EWC penalty is proposed—which is as computationally cheap as diagonal approximation yet captures the
+  [ICLR 2026][Image Generation][Catastrophic Forgetting] This paper discovers that per-sample gradients of diffusion models at low SNR timesteps are approximately collinear, causing the empirical Fisher Information Matrix (FIM) to be essentially rank-1. Consequently, a rank-1 EWC penalty is proposed—which is as computationally cheap as diagonal approximation yet captures the principal curvature direction—combined with generative distillation to nearly eliminate forgetting in cl…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Catastrophic Forgetting"
+  - "Elastic Weight Consolidation"
+  - "Fisher Information Matrix"
+  - "Diffusion Models"
+  - "Class-Incremental Generation"
 date: 2026-05-08
-content_hash: c7b844c7bd49cad6
+content_hash: f65db8a45887a88b
 ---
+
 # Avoid Catastrophic Forgetting with Rank-1 Fisher from Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -130,15 +135,14 @@ Ours leads across all datasets: forgetting in MNIST/FMNIST is nearly zero ($F=0.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Low-Rank Residual Diffusion Models](../../CVPR2026/image_generation/low-rank_residual_diffusion_models.md)
+- [\[ICML 2026\] Forgetting in Diffusion Models: A Unified Framework via KL Divergence and Likelihood Constraints](../../ICML2026/image_generation/unlearning_in_diffusion_models_a_unified_framework_with_kl_divergence_and_likeli.md)
 - [\[ICML 2025\] IntLoRA: Integral Low-rank Adaptation of Quantized Diffusion Models](../../ICML2025/image_generation/intlora_integral_low-rank_adaptation_of_quantized_diffusion_models.md)
-- [\[ICLR 2026\] D-AR: Diffusion via Autoregressive Models](d-ar_diffusion_via_autoregressive_models.md)
-- [\[ECCV 2024\] Diffusion-Driven Data Replay: A Novel Approach to Combat Forgetting in Federated Class Continual Learning](../../ECCV2024/image_generation/diffusion-driven_data_replay_a_novel_approach_to_combat_forgetting_in_federated_.md)
 - [\[ICLR 2026\] Why Adversarially Train Diffusion Models?](why_adversarially_train_diffusion_models.md)
+- [\[ECCV 2024\] Diffusion-Driven Data Replay: A Novel Approach to Combat Forgetting in Federated Class Continual Learning](../../ECCV2024/image_generation/diffusion-driven_data_replay_a_novel_approach_to_combat_forgetting_in_federated_.md)
 
 </div>
 

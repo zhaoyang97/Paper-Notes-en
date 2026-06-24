@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Dynamic Token Reweighting for Robust Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM safety] This paper proposes Dtr (Dynamic Token Reweighting), the first inference-time defense method that optimizes the VLM's KV cache to counter multimodal jailbreak attacks. By defining "Reverse Safety Shift" (RSS), Dtr identifies vision tokens that cause safety degradation and dynamically adjusts their weights to restore sa
+  [CVPR 2026][Multimodal Efficiency][VLM safety] This paper proposes Dtr (Dynamic Token Reweighting), the first inference-time defense method that optimizes the VLM's KV cache to counter multimodal jailbreak attacks. By defining "Reverse Safety Shift" (RSS), Dtr identifies vision tokens that cause safety degradation and dynamically adjusts their weights to restore safety alignment while maintaining performance on benign tasks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM safety
-  - jailbreak defense
-  - KV cache optimization
-  - token reweighting
-  - refusal direction
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "VLM safety"
+  - "jailbreak defense"
+  - "KV cache optimization"
+  - "token reweighting"
+  - "refusal direction"
 date: 2026-05-08
-content_hash: 2ad04e36ef3c2e76
+content_hash: 6c5481776aa08bb3
 ---
+
 # Dynamic Token Reweighting for Robust Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -138,11 +139,11 @@ This is entirely an inference-time method requiring no training. It uses the Ada
 
 ## Related Papers
 
-- [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
-- [\[ICLR 2026\] Directional Embedding Smoothing for Robust Vision Language Models](../../ICLR2026/multimodal_vlm/directional_embedding_smoothing_for_robust_vision_language_models.md)
 - [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
-- [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
-- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
+- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
+- [\[CVPR 2026\] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)
+- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
 
 </div>
 

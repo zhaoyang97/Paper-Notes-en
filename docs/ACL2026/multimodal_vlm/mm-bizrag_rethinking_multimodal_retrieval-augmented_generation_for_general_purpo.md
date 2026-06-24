@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MM-BizRAG: Rethinking Multimodal Retrieval-Augmented Generation for General Purpose Enterprise Q&A
 description: >-
-  [ACL 2026][Multimodal VLM][MM-RAG] MM-BizRAG demonstrates that enterprise multimodal RAG should not solely rely on page screenshots and vision embeddings. Instead, it should differentiate between reports and slides based on document structure, followed by explicit parsing of text, tables, and images. By assembling multimodal contexts during inference, i
+  [ACL2026][Multimodal VLM][MM-RAG] MM-BizRAG demonstrates that enterprise multimodal RAG should not solely rely on page screenshots and vision embeddings. Instead, it should differentiate between reports and slides based on document structure, followed by explicit parsing of text, tables, and images. By assembling multimodal contexts during inference, it significantly outperforms vision-centric baselines on SlideVQA, FinRAGBench-V, and internal enterprise data.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - MM-RAG
-  - FastRAGEval
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "MM-RAG"
+  - "Enterprise Documents"
+  - "Structure-Aware Parsing"
+  - "Multimodal Retrieval"
+  - "FastRAGEval"
 date: 2026-05-08
-content_hash: c420d4140b0fc902
+content_hash: 5907b57b2b828929
 ---
+
 # MM-BizRAG: Rethinking Multimodal Retrieval-Augmented Generation for General Purpose Enterprise Q&A
 
 **Conference**: ACL2026  
@@ -140,11 +144,11 @@ This paper does not train a specific retriever or generative model; the focus is
 
 ## Related Papers
 
+- [\[ACL 2026\] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora](universalrag_retrieval-augmented_generation_over_corpora_of_diverse_modalities_a.md)
 - [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
+- [\[ICLR 2026\] RAG4DMC: Retrieval-Augmented Generation for Data-Level Modality Completion](../../ICLR2026/multimodal_vlm/rag4dmc_retrieval-augmented_generation_for_data-level_modality_completion.md)
 - [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](../../NeurIPS2025/multimodal_vlm/windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
 - [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](../../NeurIPS2025/multimodal_vlm/benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
-- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](../../AAAI2026/multimodal_vlm/knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
-- [\[ACL 2025\] REAL-MM-RAG: A Real-World Multi-Modal Retrieval Benchmark](../../ACL2025/multimodal_vlm/real-mm-rag_a_real-world_multi-modal_retrieval_benchmark.md)
 
 </div>
 

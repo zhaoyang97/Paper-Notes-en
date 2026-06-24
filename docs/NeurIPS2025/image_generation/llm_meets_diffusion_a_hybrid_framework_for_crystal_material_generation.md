@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Crystal Material Generation] This paper proposes CrysLLMGen, a hybrid framework that combines the complementary strengths of LLMs in discrete atom type prediction and diffusion models in…
+  [NeurIPS 2025][Image Generation][Crystal Material Generation] This paper proposes CrysLLMGen, a hybrid framework that combines the complementary strengths of LLMs in discrete atom type prediction and diffusion models in continuous coordinate/lattice parameter modeling, achieving high structural validity and compositional validity simultaneously in crystal material generation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Hybrid Framework"
   - "Conditional Generation"
 date: 2026-05-08
-content_hash: bdd3b4a7d667b7b2
+content_hash: 5e045a32d247ece8
 ---
 
 # LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation
@@ -130,10 +130,10 @@ During inference, approximately 2–5% of LLM-generated samples are filtered out
 ## Related Papers
 
 - [\[NeurIPS 2025\] ObCLIP: Oblivious Cloud-Device Hybrid Image Generation with Privacy Preservation](obclip_oblivious_cloud-device_hybrid_image_generation_with_privacy_preservation.md)
+- [\[ICML 2025\] DDIS: When Model Knowledge Meets Diffusion Model](../../ICML2025/image_generation/when_model_knowledge_meets_diffusion_model_diffusion-assisted_data-free_image_synthesis.md)
 - [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
-- [\[ICML 2026\] Latent Diffusion Pretraining for Crystal Property Prediction](../../ICML2026/image_generation/latent_diffusion_pretraining_for_crystal_property_prediction.md)
-- [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](../../ICCV2025/image_generation/dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
-- [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](../../ICCV2025/image_generation/a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
+- [\[CVPR 2025\] MARBLE: Material Recomposition and Blending in CLIP-Space](../../CVPR2025/image_generation/marble_material_recomposition_and_blending_in_clip-space.md)
+- [\[CVPR 2025\] LumiNet: Latent Intrinsics Meets Diffusion Models for Indoor Scene Relighting](../../CVPR2025/image_generation/luminet_latent_intrinsics_meets_diffusion_models_for_indoor_scene_relighting.md)
 
 </div>
 

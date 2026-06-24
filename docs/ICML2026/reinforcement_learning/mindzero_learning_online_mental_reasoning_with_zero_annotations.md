@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MindZero: Learning Online Mental Reasoning with Zero Annotations
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] MindZero reformulates Bayesian Inverse Planning (BIP) into a "self-supervised RL" objective for multimodal LLMs. The reward maximizes the likelihood of observed human actions given the generated mental hypotheses. Trained via GRPO, the model achieves single-forward, fast, and robust online mental reasoning without requ
+  [ICML2026][Reinforcement Learning][Mental Reasoning] MindZero reformulates Bayesian Inverse Planning (BIP) into a "self-supervised RL" objective for multimodal LLMs. The reward maximizes the likelihood of observed human actions given the generated mental hypotheses. Trained via GRPO, the model achieves single-forward, fast, and robust online mental reasoning without requiring any manual mental annotations.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Mental Reasoning"
+  - "GRPO"
+  - "Self-Supervised RL"
+  - "Variational Inference"
+  - "Proactive Assistance"
 date: 2026-05-08
-content_hash: 90eb3263f539e382
+content_hash: f6e24c4a6bc38105
 ---
+
 # MindZero: Learning Online Mental Reasoning with Zero Annotations
 
 **Conference**: ICML2026  
@@ -140,11 +145,11 @@ Evaluations were conducted on GridWorld QA, GridWorld Proactive Assistance, Hous
 
 ## Related Papers
 
+- [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](../../ICLR2026/reinforcement_learning/r-zero_self-evolving_reasoning_llm_from_zero_data.md)
 - [\[ICML 2026\] Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards](unlocking_zero-shot_geospatial_reasoning_via_indirect_rewards.md)
 - [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](../../ICLR2026/reinforcement_learning/rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
-- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](../../ICLR2026/reinforcement_learning/spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
 - [\[ICML 2026\] Bilevel Optimization over Saddle Points of Zero-Sum Markov Games](bilevel_optimization_over_saddle_points_of_zero-sum_markov_games.md)
-- [\[ICLR 2026\] LongWriter-Zero: Mastering Ultra-Long Text Generation via Reinforcement Learning](../../ICLR2026/reinforcement_learning/longwriter-zero_mastering_ultra-long_text_generation_via_reinforcement_learning.md)
+- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](../../ICLR2026/reinforcement_learning/spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
 
 </div>
 

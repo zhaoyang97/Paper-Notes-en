@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Embodied AI] Ours proposes R²VLM, which processes local video segments step-by-step through a recurrent reasoning framework and maintains a dynamically updated CoT to record task decomposition and completion status. Combined with multi-dimensional RL rewards, it achieves SOTA in long-horizon embodied task progress estimation and su
+  [CVPR 2026][Robotics][Task Progress Estimation] Ours proposes R²VLM, which processes local video segments step-by-step through a recurrent reasoning framework and maintains a dynamically updated CoT to record task decomposition and completion status. Combined with multi-dimensional RL rewards, it achieves SOTA in long-horizon embodied task progress estimation and supports downstream applications such as policy learning, reward modeling, and active assistance.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Embodied AI
-  - Chain-of-Thought
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Robotics"
+  - "Task Progress Estimation"
+  - "Embodied AI"
+  - "Recurrent Reasoning"
+  - "Chain-of-Thought"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: faf12c369c19a7e7
+content_hash: 3ebac41ee4c8341e
 ---
+
 # Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress
 
 **Conference**: CVPR 2026  
@@ -144,11 +147,11 @@ Consider an ALFRED trajectory for "Heat a cup in the microwave." At round 0, wit
 
 ## Related Papers
 
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
 - [\[CVPR 2026\] RoboAgent: Chaining Basic Capabilities for Embodied Task Planning](roboagent_chaining_basic_capabilities_for_embodied_task_planning.md)
+- [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](../../ICLR2026/robotics/conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
+- [\[ICLR 2026\] MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Models for Embodied Task Planning](../../ICLR2026/robotics/momagraph_state-aware_unified_scene_graphs_with_vision-language_models_for_embod.md)
+- [\[CVPR 2026\] DextER: Language-driven Dexterous Grasp Generation with Embodied Reasoning](dexter_language-driven_dexterous_grasp_generation_with_embodied_reasoning.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
-- [\[CVPR 2026\] SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models](srpo_self-referential_policy_optimization_for_vision-language-action_models.md)
 
 </div>
 

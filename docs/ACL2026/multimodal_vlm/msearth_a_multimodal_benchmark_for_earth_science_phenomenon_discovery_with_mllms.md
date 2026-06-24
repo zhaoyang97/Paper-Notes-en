@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MSEarth: A Multimodal Benchmark for Earth Science Phenomenon Discovery with MLLMs
 description: >-
-  [ACL 2026][Multimodal VLM][Refined Caption] This work extracts 289K images from 64,560 CC-BY open-source Earth science papers and synthesizes "refined captions" using "raw captions + body context." Through 5-model multi-agent voting and three-stage PhD expert validation, it generates a 7,195-item graduate-level test set (including captioning / MCQ / open-ended).
+  [ACL 2026][Multimodal VLM][Earth Science Benchmark] This work extracts 289K images from 64,560 CC-BY open-source Earth science papers and synthesizes "refined captions" using "raw captions + body context." Through 5-model multi-agent voting and three-stage PhD expert validation, it generates a 7,195-item graduate-level test set (including captioning / MCQ / open-ended). The study systematically reveals a 20+ point "perception >> reasoning" gap in SOTA MLLMs regarding multi-im…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Refined Caption
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Earth Science Benchmark"
+  - "MLLM Evaluation"
+  - "Refined Caption"
+  - "Graduate-level VQA"
+  - "Multi-agent Voting"
 date: 2026-05-08
-content_hash: 8b685ad9e502a5c4
+content_hash: a2d837f01914131e
 ---
+
 # MSEarth: A Multimodal Benchmark for Earth Science Phenomenon Discovery with MLLMs
 
 **Conference**: ACL 2026  
@@ -133,10 +138,20 @@ Ablations on raw caption input, CoT prompting, and multi-agent voting quality:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
+- [\[ICLR 2026\] SpatialViz-Bench: A Cognitive Science-Driven Benchmark for Diagnosing the Spatial Visualization Capabilities of MLLMs](../../ICLR2026/multimodal_vlm/spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
+- [\[NeurIPS 2025\] The Transparent Earth: A Multimodal Foundation Model for the Earth's Subsurface](../../NeurIPS2025/multimodal_vlm/the_transparent_earth_a_multimodal_foundation_model_for_the_earths_subsurface.md)
+- [\[ACL 2026\] From Charts to Code: A Hierarchical Benchmark for Multimodal Models](from_charts_to_code_a_hierarchical_benchmark_for_multimodal_models.md)
+- [\[ACL 2026\] CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language](cnsl-bench_benchmarking_the_sign_language_understanding_capabilities_of_mllms_on.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)

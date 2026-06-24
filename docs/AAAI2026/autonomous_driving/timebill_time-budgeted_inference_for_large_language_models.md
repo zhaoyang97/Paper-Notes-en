@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TimeBill: Time-Budgeted Inference for Large Language Models
 description: >-
-  [AAAI 2026][Autonomous Driving][Time-budgeted inference] This paper proposes TimeBill, a framework that adaptively adjusts the KV cache eviction ratio under a given time budget via a fine-grained Response Length Predicto…
+  [AAAI 2026][Autonomous Driving][Time-budgeted inference] This paper proposes TimeBill, a framework that adaptively adjusts the KV cache eviction ratio under a given time budget via a fine-grained Response Length Predictor (RLP) and a workload-guided Execution Time Estimator (ETE), simultaneously maximizing LLM response quality while guaranteeing inference completion rate.
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "execution time estimation"
   - "real-time systems"
 date: 2026-05-08
-content_hash: d915dfa4d364d4c1
+content_hash: 73ba09b918b8f8f8
 ---
 
 # TimeBill: Time-Budgeted Inference for Large Language Models
@@ -197,11 +197,11 @@ Experiments are conducted on Qwen2.5-7B-Instruct with the LongBench dataset on a
 
 ## Related Papers
 
+- [\[CVPR 2026\] TrafficAlign: Aligning Large Language Models for Traffic Scenario Generation](../../CVPR2026/autonomous_driving/trafficalign_aligning_large_language_models_for_traffic_scenario_generation.md)
+- [\[ACL 2025\] Embracing Large Language Models in Traffic Flow Forecasting](../../ACL2025/autonomous_driving/embracing_large_language_models_in_traffic_flow_forecasting.md)
 - [\[AAAI 2026\] TawPipe: Topology-Aware Weight Pipeline Parallelism for Accelerating Long-Context Large Models Training](tawpipe_topology-aware_weight_pipeline_parallelism_for_accelerating_long-context.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](../../CVPR2026/autonomous_driving/vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
-- [\[ICML 2026\] Threshold-Based Exclusive Batching for LLM Inference](../../ICML2026/autonomous_driving/threshold-based_exclusive_batching_for_llm_inference.md)
-- [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](../../CVPR2026/autonomous_driving/vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
-- [\[ICML 2026\] TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models](../../ICML2026/autonomous_driving/tsrbench_a_comprehensive_multi-task_multi-modal_time_series_reasoning_benchmark_.md)
+- [\[CVPR 2025\] Distilling Multi-modal Large Language Models for Autonomous Driving](../../CVPR2025/autonomous_driving/distilling_multi-modal_large_language_models_for_autonomous_driving.md)
+- [\[ECCV 2024\] Navigation Instruction Generation with BEV Perception and Large Language Models](../../ECCV2024/autonomous_driving/navigation_instruction_generation_with_bev_perception_and_large_language_models.md)
 
 </div>
 

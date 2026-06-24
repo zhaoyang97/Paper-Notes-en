@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Visual Diffusion Models are Geometric Solvers
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] The authors discover that a standard visual diffusion model (U-Net denoiser) can directly approximate a set of NP-hard geometric problems (Inscribed Square, Steiner Minimum Tree, Maximum Area Simple Polygon) in pixel space. By representing geometric challenges as images and treating diffusion sampling as the process of
+  [CVPR 2026][Image Generation][Diffusion models] The authors discover that a standard visual diffusion model (U-Net denoiser) can directly approximate a set of NP-hard geometric problems (Inscribed Square, Steiner Minimum Tree, Maximum Area Simple Polygon) in pixel space. By representing geometric challenges as images and treating diffusion sampling as the process of "generating a valid solution from noise," three distinct problems share the same architecture…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "geometric solving"
+  - "pixel-space reasoning"
+  - "inscribed squares"
+  - "Steiner trees"
 date: 2026-05-08
-content_hash: 701d899bca7e76e2
+content_hash: 8ec4935b2b6a738a
 ---
+
 # Visual Diffusion Models are Geometric Solvers
 
 **Conference**: CVPR 2026  
@@ -145,9 +150,9 @@ Key Finding: Within training (7-12 points), 57.4% of instances **exactly hit the
 
 - [\[CVPR 2026\] UniPercept: A Unified Diffusion Model for Generalizable Visual Perception](unipercept_a_unified_diffusion_model_for_generalizable_visual_perception.md)
 - [\[CVPR 2026\] RebRL: Reinforcing Discrete Visual Diffusion Models with Rebalanced Timestep Credits](rebrl_reinforcing_discrete_visual_diffusion_models_with_rebalanced_timestep_cred.md)
+- [\[ICLR 2026\] Reconciling Visual Perception and Generation in Diffusion Models](../../ICLR2026/image_generation/reconciling_visual_perception_and_generation_in_diffusion_models.md)
 - [\[ICML 2026\] Information-Geometric Adaptive Sampling for Graph Diffusion](../../ICML2026/image_generation/information-geometric_adaptive_sampling_for_graph_diffusion.md)
-- [\[CVPR 2026\] Image Generation as a Visual Planner for Robotic Manipulation](image_generation_as_a_visual_planner_for_robotic_manipulation.md)
-- [\[AAAI 2026\] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution](../../AAAI2026/image_generation/gewdiff_geometric_enhanced_wavelet-based_diffusion_model_for_hyperspectral_image.md)
+- [\[NeurIPS 2025\] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms](../../NeurIPS2025/image_generation/fast_solvers_for_discrete_diffusion_models_theory_and_applications_of_high-order.md)
 
 </div>
 

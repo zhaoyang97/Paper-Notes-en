@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MASFIN: A Multi-Agent System for Decomposed Financial Reasoning and Forecasting
 description: >-
-  [NeurIPS 2025][Multi-Agent][multi-agent system] This paper proposes MASFIN, a multi-agent system that decomposes financial forecasting into multiple sub-tasks (macroeconomic analysis, industry analysis…
+  [NeurIPS 2025][Multi-Agent][multi-agent system] This paper proposes MASFIN, a multi-agent system that decomposes financial forecasting into multiple sub-tasks (macroeconomic analysis, industry analysis, technical analysis, sentiment analysis, etc.), with specialized LLM agents collaborating to produce more accurate and interpretable financial predictions than single-model approaches.
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "LLM agent"
   - "time-series analysis"
 date: 2026-05-08
-content_hash: 05e982ddf1ae7ce0
+content_hash: 3c072d5b62a330dd
 ---
 
 # MASFIN: A Multi-Agent System for Decomposed Financial Reasoning and Forecasting
@@ -116,11 +116,11 @@ No training is required. Each agent performs in-context reasoning using pre-trai
 
 ## Related Papers
 
+- [\[ICLR 2026\] PixelCraft: A Multi-Agent System for High-Fidelity Visual Reasoning on Structured Images](../../ICLR2026/multi_agent/pixelcraft_a_multi-agent_system_for_high-fidelity_visual_reasoning_on_structured.md)
+- [\[ICLR 2026\] From What to Why: A Multi-Agent System for Evidence-based Chemical Reaction Condition Reasoning](../../ICLR2026/multi_agent/from_what_to_why_a_multi-agent_system_for_evidence-based_chemical_reaction_condi.md)
+- [\[ACL 2025\] DocAgent: A Multi-Agent System for Automated Code Documentation Generation](../../ACL2025/multi_agent/docagent_a_multi-agent_system_for_automated_code_documentation_generation.md)
 - [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
 - [\[AAAI 2026\] Thucy: An LLM-based Multi-Agent System for Claim Verification across Relational Databases](../../AAAI2026/multi_agent/thucy_an_llm-based_multi-agent_system_for_claim_verification_across_relational_d.md)
-- [\[NeurIPS 2025\] Adaptive Coopetition: Leveraging Coarse Verifier Signals for Resilient Multi-Agent LLM Reasoning](adaptive_coopetition_leveraging_coarse_verifier_signals_for_resilient_multi-agen.md)
-- [\[ICLR 2026\] MAC-AMP: A Closed-Loop Multi-Agent Collaboration System for Multi-Objective Antimicrobial Peptide Design](../../ICLR2026/multi_agent/mac-amp_a_closed-loop_multi-agent_collaboration_system_for_multi-objective_antim.md)
-- [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](../../AAAI2026/multi_agent/lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
 
 </div>
 

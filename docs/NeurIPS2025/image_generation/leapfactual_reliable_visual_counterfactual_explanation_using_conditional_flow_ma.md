@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LeapFactual: Reliable Visual Counterfactual Explanation Using Conditional Flow Matching
 description: >-
-  [NeurIPS 2025][Image Generation][Counterfactual Explanation] This paper proposes LeapFactual, a counterfactual explanation algorithm based on Conditional Flow Matching (CFM)…
+  [NeurIPS 2025][Image Generation][Counterfactual Explanation] This paper proposes LeapFactual, a counterfactual explanation algorithm based on Conditional Flow Matching (CFM), which bridges flattened and structured latent spaces via a "Lift-Land" (Leap) mechanism to generate reliable, in-distribution counterfactual samples that remain effective even when the learned decision boundary deviates from the true boundary.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Model-Agnostic"
   - "Information Blending"
 date: 2026-05-08
-content_hash: 29132396399a7ea9
+content_hash: bfb9055916665792
 ---
 
 # LeapFactual: Reliable Visual Counterfactual Explanation Using Conditional Flow Matching
@@ -141,8 +141,8 @@ Using standard counterfactuals as training data degrades performance, whereas re
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Improving Posterior Inference of Galaxy Properties with Image-Based Conditional Flow Matching](improving_posterior_inference_of_galaxy_properties_with_image-based_conditional_.md)
 - [\[NeurIPS 2025\] V-CECE: Visual Counterfactual Explanations via Conceptual Edits](v-cece_visual_counterfactual_explanations_via_conceptual_edits.md)
+- [\[NeurIPS 2025\] Improving Posterior Inference of Galaxy Properties with Image-Based Conditional Flow Matching](improving_posterior_inference_of_galaxy_properties_with_image-based_conditional_.md)
 - [\[ICCV 2025\] Looking in the Mirror: A Faithful Counterfactual Explanation Method for Interpreting Deep Image Classification Models](../../ICCV2025/image_generation/looking_in_the_mirror_a_faithful_counterfactual_explanation_method_for_interpret.md)
 - [\[ICLR 2026\] FlowCast: Advancing Precipitation Nowcasting with Conditional Flow Matching](../../ICLR2026/image_generation/flowcast_advancing_precipitation_nowcasting_with_conditional_flow_matching.md)
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)

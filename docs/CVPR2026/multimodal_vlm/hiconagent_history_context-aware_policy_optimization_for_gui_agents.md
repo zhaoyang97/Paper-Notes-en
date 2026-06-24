@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HiconAgent: History Context-aware Policy Optimization for GUI Agents
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] HiconAgent utilizes a History Context-aware Policy Optimization (HCPO) reinforcement fine-tuning framework to train GUI navigation agents. During the sampling phase, it dynamically varies history lengths to teach the model to use history "on demand." In the update phase, history screenshots are discarded while history
+  [CVPR 2026][Multimodal VLM][GUI Agent] HiconAgent utilizes a History Context-aware Policy Optimization (HCPO) reinforcement fine-tuning framework to train GUI navigation agents. During the sampling phase, it dynamically varies history lengths to teach the model to use history "on demand." In the update phase, history screenshots are discarded while history action tokens are retained as anchors, with an all-history branch used for alignment distillation. The 3B model outperfor…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "GUI Agent"
+  - "History Context"
+  - "Reinforcement Fine-tuning"
+  - "GRPO"
+  - "Visual History Compression"
 date: 2026-05-08
-content_hash: 115a77ab2c82bbfd
+content_hash: 5b08088baea409a8
 ---
+
 # HiconAgent: History Context-aware Policy Optimization for GUI Agents
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ Component Ablation (SR, Compression enabled):
 
 ## Related Papers
 
-- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
-- [\[NeurIPS 2025\] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation](../../NeurIPS2025/multimodal_vlm/gui-rise_structured_reasoning_and_history_summarization_for_gui_navigation.md)
 - [\[CVPR 2026\] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More](sketchvl_policy_optimization_via_fine-grained_credit_assignment_for_chart_unders.md)
-- [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
+- [\[ICLR 2026\] Multimodal Policy Internalization for Conversational Agents](../../ICLR2026/multimodal_vlm/multimodal_policy_internalization_for_conversational_agents.md)
 - [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](dynamics-aware_preference_optimization_for_vision-language_models.md)
+- [\[CVPR 2026\] GUI-SAGE: Enhancing GUI Automation with Self-Explanatory Learning](gui-sage_enhancing_gui_automation_with_self-explanatory_learning.md)
+- [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
 
 </div>
 

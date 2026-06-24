@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoKR: Towards Knowledge- and Reasoning-Intensive Video Understanding
 description: >-
-  [ICML 2026][vlm_reasoning][Paper Note] VideoKR is the first large-scale post-training corpus specifically oriented towards "knowledge- and reasoning-intensive video understanding." It features 145,000 newly collected CC-licensed professional domain long videos and 315,000 synthesized QAs with Chain-of-Thought (CoT) reasoning. The "human-in-the-loop + skill-
+  [ICML 2026][VLM Reasoning][Video Understanding] VideoKR is the first large-scale post-training corpus specifically oriented towards "knowledge- and reasoning-intensive video understanding." It features 145,000 newly collected CC-licensed professional domain long videos and 315,000 synthesized QAs with Chain-of-Thought (CoT) reasoning. The "human-in-the-loop + skill-oriented" synthesis pipeline ensures difficulty, diversity, and reliability. Additionally…
 tags:
-  - ICML 2026
-  - vlm_reasoning
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Video Understanding"
+  - "Knowledge-Intensive Reasoning"
+  - "Post-training Corpus"
+  - "Skill-oriented QA Synthesis"
+  - "CoT Supervision"
 date: 2026-05-08
-content_hash: bff6edc95ed0c82f
+content_hash: b8d1f640a62acd0d
 ---
+
 # VideoKR: Towards Knowledge- and Reasoning-Intensive Video Understanding
 
 **Conference**: ICML 2026  
@@ -133,11 +139,11 @@ Standardized on Qwen2.5-VL-7B, 128 frames, SFT 80K/1 epoch (RL at 50K/1 epoch GR
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](../../CVPR2026/vlm_reasoning/towards_sparse_video_understanding_and_reasoning.md)
 - [\[ICML 2026\] 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding](3d-rft_reinforcement_fine-tuning_for_video-based_3d_scene_understanding.md)
+- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](../../CVPR2026/vlm_reasoning/towards_sparse_video_understanding_and_reasoning.md)
+- [\[ICLR 2026\] ExpVid: A Benchmark for Experiment Video Understanding & Reasoning](../../ICLR2026/vlm_reasoning/expvid_a_benchmark_for_experiment_video_understanding_reasoning.md)
 - [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](../../CVPR2026/vlm_reasoning/reinforcing_structured_chain-of-thought_for_video_understanding.md)
-- [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](../../CVPR2026/vlm_reasoning/agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
-- [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](../../CVPR2026/vlm_reasoning/graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
+- [\[ICLR 2026\] VideoMathQA: Benchmarking Mathematical Reasoning via Multimodal Understanding in Video](../../ICLR2026/vlm_reasoning/videomathqa_benchmarking_mathematical_reasoning_via_multimodal_understanding_in_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The authors propose Truncated Polynomial Classifiers (TPC), which achieve dynamic safety monitoring through order-by-order training and truncated evaluation of polynomials in the LLM activation space. This allows for fast decisions on simple inputs using low-order (≈linear probe) terms and stronger protection for diffi
+  [ICLR 2026][Interpretability][Truncated Polynomial Classifier] The authors propose Truncated Polynomial Classifiers (TPC), which achieve dynamic safety monitoring through order-by-order training and truncated evaluation of polynomials in the LLM activation space. This allows for fast decisions on simple inputs using low-order (≈linear probe) terms and stronger protection for difficult inputs by adding high-order terms. TPC matches or surpasses MLP baselines on WildGuardMix an…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Truncated Polynomial Classifier"
+  - "Safety Monitoring"
+  - "Dynamic Inference"
+  - "Linear Probes"
+  - "Activation Space"
 date: 2026-05-08
-content_hash: 495be35b73d585c4
+content_hash: fd184afdb0cb85b5
 ---
+
 # Beyond Linear Probes: Dynamic Safety Monitoring for Language Models
 
 **Conference**: ICLR 2026  
@@ -148,7 +154,7 @@ Unlike black-box MLPs, TPC's polynomial form is naturally attributable. Taking a
 - [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
 - [\[ICLR 2026\] Rethinking Layer Relevance in Large Language Models Beyond Cosine Similarity](rethinking_layer_relevance_in_large_language_models_beyond_cosine_similarity.md)
 - [\[ACL 2026\] Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States](../../ACL2026/interpretability/linear_probes_detect_task_format_not_reasoning_mode_in_language_model_hidden_sta.md)
-- [\[ICML 2026\] What Linear Probes Miss: Multi-View Probing for Weight-Space Learning](../../ICML2026/interpretability/what_linear_probes_miss_multi-view_probing_for_weight-space_learning.md)
+- [\[ICLR 2026\] Watch the Weights: Unsupervised Monitoring and Control of Fine-tuned LLMs](watch_the_weights_unsupervised_monitoring_and_control_of_fine-tuned_llms.md)
 
 </div>
 

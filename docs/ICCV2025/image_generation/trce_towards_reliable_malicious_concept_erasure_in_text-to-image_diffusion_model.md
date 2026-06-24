@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models
 description: >-
-  [Image Generation] This paper proposes TRCE, a two-stage concept erasure strategy—textual semantic erasure followed by denoising trajectory steering—that reliably removes malicious concepts while minimizing degradation o…
+  [Image Generation] This paper proposes TRCE, a two-stage concept erasure strategy—textual semantic erasure followed by denoising trajectory steering—that reliably removes malicious concepts while minimizing degradation of the model's general generation capability.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 1c8e70ded503499e
+content_hash: 80a63c3bfaafb3e5
 ---
 
 # TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models
@@ -143,11 +143,11 @@ Key findings:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models](../../CVPR2025/image_generation/fine-grained_erasure_in_text-to-image_diffusion-based_foundation_models.md)
 - [\[ICCV 2025\] FlowTok: Flowing Seamlessly Across Text and Image Tokens](flowtok_flowing_seamlessly_across_text_and_image_tokens.md)
 - [\[ICCV 2025\] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model](emoticrafter_text-to-emotional-image_generation_based_on_valence-arousal_model.md)
-- [\[ICCV 2025\] What Makes for Text to 360-degree Panorama Generation with Stable Diffusion?](what_makes_for_text_to_360-degree_panorama_generation_with_stable_diffusion.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](joint_diffusion_models_in_continual_learning.md)
-- [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
+- [\[ICCV 2025\] What Makes for Text to 360-degree Panorama Generation with Stable Diffusion?](what_makes_for_text_to_360-degree_panorama_generation_with_stable_diffusion.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One-Step Diffusion-Based Image Compression with Semantic Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Image Compression] This paper proposes OneDC—the first one-step diffusion-based generative image codec—which replaces text with the hyperprior as the semantic conditioning signal for the…
+  [NeurIPS 2025][Model Compression][Image Compression] This paper proposes OneDC—the first one-step diffusion-based generative image codec—which replaces text with the hyperprior as the semantic conditioning signal for the diffusion model and enhances its representational capacity via semantic distillation, achieving state-of-the-art perceptual quality with 39% bitrate savings and 20× decoding speedup over multi-step diffusion codecs.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Hyperprior"
   - "Generative Codec"
 date: 2026-05-08
-content_hash: 8825f15cc6de840c
+content_hash: e5a9735920f0f484
 ---
 
 # One-Step Diffusion-Based Image Compression with Semantic Distillation
@@ -133,11 +133,11 @@ The diffusion generator is built on the SD1.5 U-Net, initialized from a DMD2-pre
 
 ## Related Papers
 
-- [\[CVPR 2026\] Adversarial Concept Distillation for One-Step Diffusion Personalization](../../CVPR2026/model_compression/adversarial_concept_distillation_for_one-step_diffusion_personalization.md)
-- [\[CVPR 2026\] On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors](../../CVPR2026/model_compression/on_the_robustness_of_diffusion-based_image_compression_to_bit-flip_errors.md)
+- [\[CVPR 2025\] Layered Image Vectorization via Semantic Simplification](../../CVPR2025/model_compression/layered_image_vectorization_via_semantic_simplification.md)
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
-- [\[NeurIPS 2025\] Uni-LoRA: One Vector is All You Need](uni-lora_one_vector_is_all_you_need.md)
-- [\[NeurIPS 2025\] AdmTree: Compressing Lengthy Context with Adaptive Semantic Trees](admtree_compressing_lengthy_context_with_adaptive_semantic_trees.md)
+- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](../../CVPR2026/model_compression/cadc_content_adaptive_diffusion-based_generative_image_compression.md)
+- [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](../../CVPR2026/model_compression/dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
+- [\[ICCV 2025\] DLF: Extreme Image Compression with Dual-generative Latent Fusion](../../ICCV2025/model_compression/dlf_extreme_image_compression_with_dual-generative_latent_fusion.md)
 
 </div>
 

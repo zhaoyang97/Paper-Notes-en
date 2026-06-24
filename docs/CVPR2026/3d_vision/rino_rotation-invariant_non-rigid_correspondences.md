@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RINO: Rotation-Invariant Non-Rigid Correspondences
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] RINO utilizes vector neurons to transform DiffusionNet into an end-to-end SO(3)-invariant point feature extractor called RINONet. This is combined with Complex Functional Maps (CFMaps), which encode only orientation-preserving mappings, and a set of coupled unsupervised losses. This allows learning non-rigid shape corr
+  [CVPR 2026][3D Vision][Non-rigid shape correspondence] RINO utilizes vector neurons to transform DiffusionNet into an end-to-end SO(3)-invariant point feature extractor called RINONet. This is combined with Complex Functional Maps (CFMaps), which encode only orientation-preserving mappings, and a set of coupled unsupervised losses. This allows learning non-rigid shape correspondences directly from raw xyz coordinates without pre-alignment or handcrafted descriptors. It establ…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Non-rigid shape correspondence"
+  - "rotation-invariant"
+  - "vector neurons"
+  - "complex functional maps"
+  - "unsupervised matching"
 date: 2026-05-08
-content_hash: d5776395ac9b226b
+content_hash: 6d4f59b078dced69
 ---
+
 # RINO: Rotation-Invariant Non-Rigid Correspondences
 
 **Conference**: CVPR 2026  
@@ -172,8 +178,8 @@ RINO outperforms the supervised EchoMatch on partial matching, demonstrating tha
 
 ## Related Papers
 
-- [\[CVPR 2026\] RI-Mamba: Rotation-Invariant Mamba for Robust Text-to-Shape Retrieval](ri-mamba_rotation-invariant_mamba_for_robust_text-to-shape_retrieval.md)
 - [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
+- [\[CVPR 2026\] RI-Mamba: Rotation-Invariant Mamba for Robust Text-to-Shape Retrieval](ri-mamba_rotation-invariant_mamba_for_robust_text-to-shape_retrieval.md)
 - [\[CVPR 2026\] Topology-aware Feature Propagation for Unsupervised Non-rigid Point Cloud Correspondence](topology-aware_feature_propagation_for_unsupervised_non-rigid_point_cloud_corres.md)
 - [\[AAAI 2026\] Enhancing Rotation-Invariant 3D Learning with Global Pose Awareness and Attention Mechanisms](../../AAAI2026/3d_vision/enhancing_rotation-invariant_3d_learning_with_global_pose_awareness_and_attentio.md)
 - [\[CVPR 2025\] 4DTAM: Non-Rigid Tracking and Mapping via Dynamic Surface Gaussians](../../CVPR2025/3d_vision/4dtam_non-rigid_tracking_and_mapping_via_dynamic_surface_gaussians.md)

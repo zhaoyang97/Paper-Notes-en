@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][latent thinking] LatentChem replaces "explicit CoT text chains" with "continuous latent thinking vectors + dynamic molecular-aware updates" in chemical LLMs. Under GRPO outcome-only rewards, the model was observed to **spontaneously abandon text CoT** in favor of latent reasoning. It achieved a non-tie win rate of 59.88% against explic
+  [ICML 2026][Reasoning][chemical reasoning] LatentChem replaces "explicit CoT text chains" with "continuous latent thinking vectors + dynamic molecular-aware updates" in chemical LLMs. Under GRPO outcome-only rewards, the model was observed to **spontaneously abandon text CoT** in favor of latent reasoning. It achieved a non-tie win rate of 59.88% against explicit CoT baselines on ChemCoTBench, with an average 10.84x reduction in reasoning steps and a 5.96x wall-clock speedup.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - latent thinking
-  - GRPO
-  - modality mismatch
+  - "ICML 2026"
+  - "Reasoning"
+  - "chemical reasoning"
+  - "latent thinking"
+  - "continuous thinking vectors"
+  - "GRPO"
+  - "modality mismatch"
 date: 2026-05-08
-content_hash: 24de38beb3592918
+content_hash: 11e90e3ddae91e04
 ---
+
 # LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning
 
 **Conference**: ICML 2026  
@@ -144,10 +147,10 @@ Four-stage curriculum training gradually moves reasoning from text to latents. *
 ## Related Papers
 
 - [\[ACL 2026\] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning](../../ACL2026/llm_reasoning/render-of-thought_rendering_textual_chain-of-thought_as_images_for_visual_latent.md)
-- [\[ICML 2026\] Conformal Thinking: Risk Control for Reasoning on a Compute Budget](conformal_thinking_risk_control_for_reasoning_on_a_compute_budget.md)
+- [\[ICLR 2026\] The CoT Encyclopedia: Analyzing, Predicting, and Controlling the Thinking Process of Reasoning Models](../../ICLR2026/llm_reasoning/the_cot_encyclopedia_analyzing_predicting_and_controlling_how_a_reasoning_model_.md)
+- [\[ICLR 2026\] Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking](../../ICLR2026/llm_reasoning/latent-guided_reasoning_empowering_small_llms_with_large-model_thinking.md)
 - [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
-- [\[ICML 2026\] TRACE: 用 Toulmin 论证模型评 LLM CoT 推理过程质量](trace_toulmin-based_reasoning_assessment_through_constructive_elements_for_llm_c.md)
-- [\[AAAI 2026\] L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention](../../AAAI2026/llm_reasoning/l2v-cot_cross-modal_transfer_of_chain-of-thought_reasoning_v.md)
+- [\[ICML 2026\] Conformal Thinking: Risk Control for Reasoning on a Compute Budget](conformal_thinking_risk_control_for_reasoning_on_a_compute_budget.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Can Local Learning Match Self-Supervised Backpropagation?
 description: >-
-  [ICML 2026][Self-Supervised Learning][CLAPP++] This paper theoretically proves that local self-supervised learning (local-SSL) can precisely achieve the gradient updates of global backpropagation (BP-SSL) in deep linear networks. Based on this insight, the authors propose CLAPP++ (introducing 2D spatial dependence and direct feedback), which achieves performance co
+  [ICML 2026][Self-Supervised Learning][Local learning rules] This paper theoretically proves that local self-supervised learning (local-SSL) can precisely achieve the gradient updates of global backpropagation (BP-SSL) in deep linear networks. Based on this insight, the authors propose CLAPP++ (introducing 2D spatial dependence and direct feedback), which achieves performance comparable to global BP-SSL on CIFAR-10/STL-10/Tiny ImageNet, setting a new SOTA for local-SSL.
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - CLAPP++
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Local learning rules"
+  - "backpropagation approximation"
+  - "CLAPP++"
+  - "biological plausibility"
 date: 2026-05-08
-content_hash: 37e3dc9d3a6df65a
+content_hash: 17d127ac224840af
 ---
+
 # Can Local Learning Match Self-Supervised Backpropagation?
 
 **Conference**: ICML 2026  
@@ -113,10 +117,10 @@ Original CLAPP uses Global Average Pooling (GAP) before calculating loss $\mathc
 ## Related Papers
 
 - [\[ICML 2026\] Understanding Self-Supervised Learning via Latent Distribution Matching](understanding_self-supervised_learning_via_latent_distribution_matching.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](../../ICLR2026/self_supervised/on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
 - [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](../../CVPR2026/self_supervised/videossr_video_self-supervised_reinforcement_learning.md)
+- [\[ICLR 2026\] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods](../../ICLR2026/self_supervised/understanding_the_learning_phases_in_self-supervised_learning_via_critical_perio.md)
 - [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](../../ICLR2026/self_supervised/soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](../../NeurIPS2025/self_supervised/self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
-- [\[AAAI 2026\] Self-Supervised Inductive Logic Programming](../../AAAI2026/self_supervised/self-supervised_inductive_logic_programming.md)
 
 </div>
 

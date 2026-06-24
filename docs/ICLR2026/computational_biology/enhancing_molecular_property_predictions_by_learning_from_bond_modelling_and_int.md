@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions
 description: >-
-  [ICLR 2026][Computational Biology][molecular representation] The authors propose DeMol, a dual-graph enhanced multi-scale interaction framework. By utilizing parallel atom-centric and bond-centric graph channels along with Double-Helix Blocks, the model explicitly accounts for atom-atom, atom-bond, and bond-bond interactions, achieving SOTA results on benchmarks including PCQM4M
+  [ICLR 2026][Computational Biology][molecular representation] The authors propose DeMol, a dual-graph enhanced multi-scale interaction framework. By utilizing parallel atom-centric and bond-centric graph channels along with Double-Helix Blocks, the model explicitly accounts for atom-atom, atom-bond, and bond-bond interactions, achieving SOTA results on benchmarks including PCQM4Mv2, OC20, and QM9.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - molecular representation
-  - dual-graph
-  - bond modeling
-  - GNN
-  - property prediction
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "molecular representation"
+  - "dual-graph"
+  - "bond modeling"
+  - "GNN"
+  - "property prediction"
 date: 2026-05-08
-content_hash: 0ba58f06cd707e73
+content_hash: 887a53b53f5aec39
 ---
+
 # Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions
 
 **Conference**: ICLR 2026  

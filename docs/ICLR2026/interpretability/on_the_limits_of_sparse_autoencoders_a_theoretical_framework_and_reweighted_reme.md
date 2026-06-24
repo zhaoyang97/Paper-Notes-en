@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Limits of Sparse Autoencoders: A Theoretical Framework and Reweighted Remedy
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper derives the first closed-form optimal solution for Sparse Autoencoders (SAEs), theoretically proving that SAEs generally fail to fully recover true monosemantic features from superimposed polysemantic features (resulting in feature shrinking and vanishing), except under conditions of extreme sparsity. For ge
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This paper derives the first closed-form optimal solution for Sparse Autoencoders (SAEs), theoretically proving that SAEs generally fail to fully recover true monosemantic features from superimposed polysemantic features (resulting in feature shrinking and vanishing), except under conditions of extreme sparsity. For general sparsity levels, the authors propose WSAE, which adaptively reweights dimensions based on their degree…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Superposition Hypothesis"
+  - "Feature Identifiability"
+  - "Monosemanticity"
+  - "Reweighting"
 date: 2026-05-08
-content_hash: 6590a3d3a928b864
+content_hash: 7bf44404b75f72aa
 ---
+
 # On the Limits of Sparse Autoencoders: A Theoretical Framework and Reweighted Remedy
 
 **Conference**: ICLR 2026  
@@ -135,7 +141,7 @@ Synthetic data follows the toy model by Elhage et al. ($n=200, n_p=20, n_m=200$)
 - [\[ICLR 2026\] AbsTopK: Rethinking Sparse Autoencoders For Bidirectional Features](abstopk_rethinking_sparse_autoencoders_for_bidirectional_features.md)
 - [\[ICLR 2026\] Sparse Autoencoders Trained on the Same Data Learn Different Features](sparse_autoencoders_trained_on_the_same_data_learn_different_features.md)
 - [\[ICLR 2026\] Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders](uncovering_conceptual_blindspots_in_generative_image_models_using_sparse_autoenc.md)
-- [\[ICLR 2026\] Learning Multimodal Dictionary Decompositions with Group-Sparse Autoencoders](learning_multimodal_dictionary_decompositions_with_group-sparse_autoencoders.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](the_price_of_amortized_inference_in_sparse_autoencoders.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] On the Wasserstein Geodesic Principal Component Analysis of probability measures
 description: >-
-  [ICLR 2026][learning_theory][Geodesic PCA] This paper advances Principal Component Analysis (PCA) on sets of probability measures from tangent space approximations to true Wasserstein geodesic optimization. For Gaussian measures, it utilizes Bures-Wasserstein geometry lifted to the space of invertible matrices; for general absolutely continuous measures, it emp
+  [ICLR 2026][Learning Theory][Wasserstein space] This paper advances Principal Component Analysis (PCA) on sets of probability measures from tangent space approximations to true Wasserstein geodesic optimization. For Gaussian measures, it utilizes Bures-Wasserstein geometry lifted to the space of invertible matrices; for general absolutely continuous measures, it employs Otto parametrization and neural networks to learn principal geodesics, demonstrating a superior capability…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Geodesic PCA
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Wasserstein Geometry"
+  - "Wasserstein space"
+  - "Measure PCA"
+  - "Geodesic PCA"
+  - "Optimal Transport"
+  - "Riemannian Geometry"
 date: 2026-05-08
-content_hash: 93cbb3990607c646
+content_hash: bf1704d1826036d4
 ---
+
 # On the Wasserstein Geodesic Principal Component Analysis of probability measures
 
 **Conference**: ICLR 2026  
@@ -136,8 +142,8 @@ The paper employs geometric counter-examples to analyze necessary designs.
 - Value: ⭐⭐⭐⭐☆ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

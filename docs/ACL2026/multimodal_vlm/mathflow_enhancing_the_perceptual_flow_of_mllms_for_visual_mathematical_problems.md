@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MathFlow: Enhancing the Perceptual Flow of MLLMs for Visual Mathematical Problems
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This work introduces the FlowVerse benchmark (decomposing mathematical problem information into four components: DI/EI/RP/OQ to construct six variants) and the MathFlow modular pipeline (decoupling perception and reasoning into independent stages). By training a specialized perception model, MathFlow-P-7B, to extract k
+  [ACL 2026][Multimodal VLM][Visual Mathematical Reasoning] This work introduces the FlowVerse benchmark (decomposing mathematical problem information into four components: DI/EI/RP/OQ to construct six variants) and the MathFlow modular pipeline (decoupling perception and reasoning into independent stages). By training a specialized perception model, MathFlow-P-7B, to extract key information from mathematical diagrams, the approach significantly enhances the visual mathematical…
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Visual Mathematical Reasoning"
+  - "Multimodal Large Language Models"
+  - "Decoupling Perception and Reasoning"
+  - "Mathematical Diagram Understanding"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: c292943867f210f1
+content_hash: 87a7a4def7b54721
 ---
+
 # MathFlow: Enhancing the Perceptual Flow of MLLMs for Visual Mathematical Problems
 
 **Conference**: ACL 2026  
@@ -145,6 +151,7 @@ Structured Description Quality Assessment (F1 Score):
 - Value: ⭐⭐⭐⭐⭐ Provides both a diagnostic tool (FlowVerse) and a solution (MathFlow) for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -153,7 +160,7 @@ Structured Description Quality Assessment (F1 Score):
 - [\[CVPR 2026\] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](../../CVPR2026/multimodal_vlm/if-bench_benchmarking_and_enhancing_mllms_for_infrared_images_with_generative_vi.md)
 - [\[ICML 2026\] Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling](../../ICML2026/multimodal_vlm/mitigating_perceptual_judgment_bias_in_multimodal_llm-as-a-judge_via_perceptual_.md)
 - [\[ICML 2026\] VEENA: Interpreting and Enhancing Emotional Circuits in Large Vision-Language Models via Cross-Modal Information Flow](../../ICML2026/multimodal_vlm/interpreting_and_enhancing_emotional_circuits_in_large_vision-language_models_vi.md)
-- [\[ACL 2026\] Enhancing Multimodal Large Language Models for Ancient Chinese Character Evolution Analysis via Glyph-Driven Fine-Tuning](enhancing_multimodal_large_language_models_for_ancient_chinese_character_evoluti.md)
+- [\[ECCV 2024\] MathVerse: Does Your Multi-modal LLM Truly See the Diagrams in Visual Math Problems?](../../ECCV2024/multimodal_vlm/mathverse_does_your_multi-modal_llm_truly_see_the_diagrams_in_visual_math_proble.md)
 
 </div>
 

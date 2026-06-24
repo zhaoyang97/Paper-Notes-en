@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning
 description: >-
-  [ICCV 2025][Video Generation][Visual Reinforcement Learning] This paper proposes DisWM, a framework that pre-trains disentangled representations from "distracting videos" offline…
+  [ICCV 2025][Video Generation][Visual Reinforcement Learning] This paper proposes DisWM, a framework that pre-trains disentangled representations from "distracting videos" offline, then transfers semantic knowledge to downstream world models via offline-to-online latent space distillation, improving sample efficiency and robustness of visual reinforcement learning under environmental variations.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Transfer"
   - "Latent Space Distillation"
 date: 2026-05-08
-content_hash: 5969c8342089649e
+content_hash: 5c1cc568266ad7c2
 ---
 
 # Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning
@@ -123,11 +123,11 @@ DisWM consistently achieves optimal or near-optimal sample efficiency and final 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](../../CVPR2026/video_generation/goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
-- [\[ICCV 2025\] Long-Context State-Space Video World Models](long-context_state-space_video_world_models.md)
 - [\[NeurIPS 2025\] DisMo: Disentangled Motion Representations for Open-World Motion Transfer](../../NeurIPS2025/video_generation/dismo_disentangled_motion_representations_for_openworld_moti.md)
-- [\[ICCV 2025\] NormalCrafter: Learning Temporally Consistent Normals from Video Diffusion Priors](normalcrafter_learning_temporally_consistent_normals_from_video_diffusion_priors.md)
 - [\[NeurIPS 2025\] RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation](../../NeurIPS2025/video_generation/rlgf_reinforcement_learning_with_geometric_feedback_for_autonomous_driving_video.md)
+- [\[ICCV 2025\] NormalCrafter: Learning Temporally Consistent Normals from Video Diffusion Priors](normalcrafter_learning_temporally_consistent_normals_from_video_diffusion_priors.md)
+- [\[ICCV 2025\] Long-Context State-Space Video World Models](long-context_state-space_video_world_models.md)
+- [\[CVPR 2026\] NS-Diff: Fluid Navier-Stokes Guided Video Diffusion via Reinforcement Learning](../../CVPR2026/video_generation/ns-diff_fluid_navier-stokes_guided_video_diffusion_via_reinforcement_learning.md)
 
 </div>
 

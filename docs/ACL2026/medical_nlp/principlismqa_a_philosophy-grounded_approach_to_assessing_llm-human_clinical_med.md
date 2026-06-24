@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] This paper constructs the PrinciplismQA benchmark (3,648 questions, including knowledge MCQA and open-ended clinical ethical dilemmas) based on Principlism (the four principles of Autonomy, Non-maleficence, Beneficence, and Justice), the international gold standard for medical ethics. Supported by an expert-calibrated
+  [ACL 2026 Findings][Medical LLM][Medical Ethics] This paper constructs the PrinciplismQA benchmark (3,648 questions, including knowledge MCQA and open-ended clinical ethical dilemmas) based on Principlism (the four principles of Autonomy, Non-maleficence, Beneficence, and Justice), the international gold standard for medical ethics. Supported by an expert-calibrated evaluation pipeline, the study reveals that high accuracy on knowledge benchmarks does not equate to clinical e…
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Medical Ethics"
+  - "Principlism"
+  - "Clinical Decision Alignment"
+  - "LLM Ethical Reasoning"
+  - "Benchmark Evaluation"
 date: 2026-05-08
-content_hash: 21477afbcb06d486
+content_hash: 8968daff2be84211
 ---
+
 # PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment
 
 **Conference**: ACL 2026 Findings  
@@ -146,10 +152,10 @@ PrinciplismQA is an evaluation benchmark and does not involve training. Evaluati
 
 ## Related Papers
 
+- [\[ICLR 2026\] From Medical Records to Diagnostic Dialogues: A Clinical-Grounded Approach and Dataset for Psychiatric Comorbidity](../../ICLR2026/medical_nlp/from_medical_records_to_diagnostic_dialogues_a_clinical-grounded_approach_and_da.md)
 - [\[ACL 2026\] ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)
 - [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
 - [\[ACL 2026\] ReMedi: Reasoner for Medical Clinical Prediction](remedi_reasoner_for_medical_clinical_prediction.md)
-- [\[ACL 2025\] A Modular Approach for Clinical SLMs Driven by Synthetic Data with Pre-Instruction Tuning, Model Merging, and Clinical-Tasks Alignment](../../ACL2025/medical_nlp/a_modular_approach_for_clinical_slms_driven_by_synthetic_data_with_pre-instructi.md)
 - [\[ACL 2026\] Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence](faithfulness_vs_safety_evaluating_llm_behavior_under_counterfactual_medical_evid.md)
 
 </div>

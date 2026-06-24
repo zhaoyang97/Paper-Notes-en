@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DISTIL: Data-Free Inversion of Suspicious Trojan Inputs via Latent Diffusion
 description: >-
-  [ICCV 2025][Object Detection][Backdoor defense] DISTIL proposes a data-free trojan trigger inversion method that searches for trigger patterns in the latent space of a pretrained guided diffusion model—rather than in pix…
+  [ICCV 2025][Object Detection][Backdoor defense] DISTIL proposes a data-free trojan trigger inversion method that searches for trigger patterns in the latent space of a pretrained guided diffusion model—rather than in pixel space—and injects uniform noise regularization at each step to effectively distinguish genuine backdoor triggers from adversarial perturbations, achieving up to 7.1% accuracy improvement on BackdoorBench.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "zero-shot detection"
   - "model security"
 date: 2026-05-08
-content_hash: e674a48d423e0403
+content_hash: c238763db1418a01
 ---
 
 # DISTIL: Data-Free Inversion of Suspicious Trojan Inputs via Latent Diffusion
@@ -176,7 +176,7 @@ Key findings:
 - [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](../../CVPR2026/object_detection/invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
 - [\[ICCV 2025\] EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision](evrt-detr_latent_space_adaptation_of_image_detectors_for_event-based_vision.md)
 - [\[ICCV 2025\] SFUOD: Source-Free Unknown Object Detection](sfuod_source-free_unknown_object_detection.md)
-- [\[ICCV 2025\] Visual Modality Prompt for Adapting Vision-Language Object Detectors](visual_modality_prompt_for_adapting_vision-language_object_detectors.md)
+- [\[CVPR 2025\] Generalized Diffusion Detector: Mining Robust Features from Diffusion Models for Domain-Generalized Detection](../../CVPR2025/object_detection/generalized_diffusion_detector_mining_robust_features_from_diffusion_models_for_.md)
 
 </div>
 

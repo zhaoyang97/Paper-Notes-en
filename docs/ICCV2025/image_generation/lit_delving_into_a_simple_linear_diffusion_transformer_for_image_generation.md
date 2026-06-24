@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation
 description: >-
-  [Image Generation] > This paper systematically investigates how to safely and efficiently convert a pretrained DiT into a linear attention variant called LiT. It proposes five practical guidelines—depth-wise convolution…
+  [Image Generation] > This paper systematically investigates how to safely and efficiently convert a pretrained DiT into a linear attention variant called LiT. It proposes five practical guidelines—depth-wise convolution augmentation, fewer heads, weight inheritance, selective parameter loading, and hybrid distillation—achieving comparable performance with only 20% of DiT's training steps.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 0b1f08f0eb3443f4
+content_hash: 4323cd3ccc3ef301
 ---
 
 # LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation
@@ -200,9 +200,9 @@ LiT converted from PixArt-Σ maintains comparable GenEval scores, demonstrating 
 
 - [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
 - [\[ICCV 2025\] OminiControl: Minimal and Universal Control for Diffusion Transformer](ominicontrol_minimal_and_universal_control_for_diffusion_transformer.md)
+- [\[CVPR 2025\] Dual Diffusion for Unified Image Generation and Understanding](../../CVPR2025/image_generation/dual_diffusion_for_unified_image_generation_and_understanding.md)
 - [\[ICCV 2025\] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model](emoticrafter_text-to-emotional-image_generation_based_on_valence-arousal_model.md)
 - [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
-- [\[ICCV 2025\] What Makes for Text to 360-degree Panorama Generation with Stable Diffusion?](what_makes_for_text_to_360-degree_panorama_generation_with_stable_diffusion.md)
 
 </div>
 

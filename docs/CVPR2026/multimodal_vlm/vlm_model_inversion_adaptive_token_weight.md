@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] This paper presents the first systematic study of Model Inversion (MI) attacks on VLMs. It proposes a set of inversion strategies tailored for token generation characteristics (TMI/TMI-C/SMI) and the SMI-AW method, which dynamically weights token gradient contributions based on visual attention intensity. The approach
+  [CVPR 2026][Multimodal VLM][Model Inversion Attack] This paper presents the first systematic study of Model Inversion (MI) attacks on VLMs. It proposes a set of inversion strategies tailored for token generation characteristics (TMI/TMI-C/SMI) and the SMI-AW method, which dynamically weights token gradient contributions based on visual attention intensity. The approach achieves a human-evaluated attack accuracy of up to 61.21% across 4 VLMs and 3 datasets…
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model Inversion Attack"
+  - "VLM Privacy Leakage"
+  - "Adaptive Token Weighting"
+  - "Visual Attention Guidance"
+  - "Training Data Reconstruction"
 date: 2026-05-08
-content_hash: cfd1ce137ef908bc
+content_hash: 7325238c1dfc05bb
 ---
+
 # Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks
 
 **Conference**: CVPR 2026  
@@ -147,15 +153,15 @@ While SMI treats all tokens equally, the authors observe that tokens vary in vis
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] ⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization](oslash_source_models_leak_what_they_shouldnt_nrightarrow_unlearning_zero-shot_tr.md)
-- [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](phantasia_context-adaptive_backdoors_in_vision_language_models.md)
-- [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](../../ICLR2026/llm_safety/do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
-- [\[ACL 2026\] Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](../../ACL2026/llm_safety/do_multimodal_rag_systems_leak_data_a_comprehensive_evaluation_of_membership_inf.md)
-- [\[CVPR 2026\] Interpretable Debiasing of Vision-Language Models for Social Fairness](interpretable_debiasing_of_vision-language_models_for_social_fairness.md)
+- [\[CVPR 2026\] Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation](where_mllms_attend_and_what_they_rely_on_explaining_autoregressive_token_generat.md)
+- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](aif_adaptive_information_flow_vlm.md)
+- [\[CVPR 2026\] From Where Things Are to What They Are For: Benchmarking Spatial–Functional Intelligence in Multimodal LLMs](from_where_things_are_to_what_they_are_for_benchmarking_spatial-functional_intel.md)
+- [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
+- [\[ACL 2026\] What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?](../../ACL2026/multimodal_vlm/what_do_vision-language_models_encode_for_personalized_image_aesthetics_assessme.md)
 
 </div>
 

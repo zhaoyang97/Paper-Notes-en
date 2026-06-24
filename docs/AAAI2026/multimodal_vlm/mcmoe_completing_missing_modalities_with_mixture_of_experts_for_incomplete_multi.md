@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment
 description: >-
-  [AAAI 2026][Multimodal VLM][Incomplete multimodal learning] This paper presents the first exploration of incomplete multimodal action quality assessment (AQA)…
+  [AAAI 2026][Multimodal VLM][Incomplete multimodal learning] This paper presents the first exploration of incomplete multimodal action quality assessment (AQA), proposing the MCMoE framework. An Adaptive Gated Modality Generator (AGMG) completes missing modalities, while a Mixture of Experts (MoE) module with soft routing dynamically fuses unimodal and cross-modal joint representations within a unified single-stage training paradigm. MCMoE achieves state-of-the-art performance…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "modality completion"
   - "cross-modal fusion"
 date: 2026-05-08
-content_hash: 1603538f3cbc120a
+content_hash: 88610916abbe6236
 ---
 
 # MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment
@@ -147,8 +147,8 @@ Random masking is applied during training to simulate incomplete scenarios. The 
 - [\[CVPR 2026\] BriMA: Bridged Modality Adaptation for Multi-Modal Continual Action Quality Assessment](../../CVPR2026/multimodal_vlm/brima_bridged_modality_adaptation_for_multi-modal_continual_action_quality_asses.md)
 - [\[ICCV 2025\] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition](../../ICCV2025/multimodal_vlm/a_qualityguided_mixture_of_scorefusion_experts_framework_for.md)
 - [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](../../ICML2026/multimodal_vlm/calibrated_multimodal_representation_learning_with_missing_modalities.md)
-- [\[ICLR 2026\] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](../../ICLR2026/multimodal_vlm/visjudge-bench_aesthetics_and_quality_assessment_of_visualizations.md)
 - [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](../../ICLR2026/multimodal_vlm/capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
+- [\[ICLR 2026\] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](../../ICLR2026/multimodal_vlm/visjudge-bench_aesthetics_and_quality_assessment_of_visualizations.md)
 
 </div>
 

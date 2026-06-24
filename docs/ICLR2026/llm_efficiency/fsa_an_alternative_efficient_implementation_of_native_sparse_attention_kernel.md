@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel
 description: >-
-  [ICLR 2026][LLM Efficiency][Native Sparse Attention] FSA reorders the NSA sparse attention kernel from "outer loop query token, inner loop KV block" to "outer loop KV block, inner loop query token." This eliminates padding waste in mainstream LLMs with few query heads per GQA group, reducing kernel latency by up to 3.5× and accelerating end-to-end training by up to 1.25×
+  [ICLR 2026][LLM Efficiency][Native Sparse Attention] FSA reorders the NSA sparse attention kernel from "outer loop query token, inner loop KV block" to "outer loop KV block, inner loop query token." This eliminates padding waste in mainstream LLMs with few query heads per GQA group, reducing kernel latency by up to 3.5× and accelerating end-to-end training by up to 1.25×.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Native Sparse Attention
-  - GQA
-  - Triton
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Native Sparse Attention"
+  - "GQA"
+  - "Attention Kernel"
+  - "Long Context"
+  - "Triton"
+  - "Loop Reordering"
 date: 2026-05-08
-content_hash: bfbd168e8cdb7748
+content_hash: fc562f6146a07dbf
 ---
+
 # FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel
 
 **Conference**: ICLR 2026  
@@ -118,11 +122,11 @@ flowchart TD
 
 ## Related Papers
 
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
 - [\[ICLR 2026\] InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation](infllm-v2_dense-sparse_switchable_attention_for_seamless_short-to-long_adaptatio.md)
 - [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
-- [\[ACL 2025\] Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](../../ACL2025/llm_efficiency/native_sparse_attention.md)
 - [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](../../ACL2026/llm_efficiency/native_hybrid_attention_for_efficient_sequence_modeling.md)
+- [\[ACL 2025\] Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](../../ACL2025/llm_efficiency/native_sparse_attention.md)
 
 </div>
 

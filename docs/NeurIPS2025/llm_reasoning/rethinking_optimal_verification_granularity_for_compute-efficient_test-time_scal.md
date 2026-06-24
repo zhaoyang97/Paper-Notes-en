@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling
 description: >-
-  [NeurIPS 2025][LLM Reasoning][test-time scaling] This paper proposes Variable Granularity Search (VG-Search), which unifies Beam Search and Best-of-N under a tunable verification granularity parameter $g$. It demonstrate…
+  [NeurIPS 2025][Reasoning][test-time scaling] This paper proposes Variable Granularity Search (VG-Search), which unifies Beam Search and Best-of-N under a tunable verification granularity parameter $g$. It demonstrates that conventional per-step verification is suboptimal, and that adaptively adjusting $g$ can improve accuracy by 3%+ while reducing computation by 52%+.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "test-time scaling"
   - "verification granularity"
   - "beam search"
   - "process reward model"
   - "compute efficiency"
 date: 2026-05-08
-content_hash: a6dadfbc77a45e02
+content_hash: 8cbf183e18f83d85
 ---
 
 # Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling
@@ -129,8 +129,8 @@ Final results of Adaptive VG-Search:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
+- [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](../../ICLR2026/llm_reasoning/optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
 - [\[NeurIPS 2025\] LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling](limopro_reasoning_refinement_for_efficient_and_effective_test-time_scaling.md)
-- [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
 - [\[NeurIPS 2025\] Atom of Thoughts for Markov LLM Test-Time Scaling](atom_of_thoughts_for_markov_llm_testtime_scaling.md)
 - [\[NeurIPS 2025\] Provable Scaling Laws for the Test-Time Compute of Large Language Models](provable_scaling_laws_for_the_testtime_compute_of_large_lang.md)
 

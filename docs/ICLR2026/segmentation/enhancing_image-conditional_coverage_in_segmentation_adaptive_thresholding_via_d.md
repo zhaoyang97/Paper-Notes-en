@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Segmentation][conformal prediction] The COAT framework is proposed to learn image-adaptive threshold predictors end-to-end using a differentiable sigmoid soft TPR approximation as a loss function, significantly reducing the per-image Coverage Gap in Conformal Risk Control for image segmentation.
 tags:
-  - ICLR 2026
-  - Segmentation
-  - conformal prediction
-  - image-conditional coverage
-  - adaptive thresholding
-  - differentiable miscoverage loss
-  - uncertainty quantification
+  - "ICLR 2026"
+  - "Segmentation"
+  - "conformal prediction"
+  - "image-conditional coverage"
+  - "adaptive thresholding"
+  - "differentiable miscoverage loss"
+  - "uncertainty quantification"
 date: 2026-05-08
-content_hash: 504f56cbcfad46ce
+content_hash: cfaf438c8ef585d5
 ---
+
 # Enhancing Image-Conditional Coverage in Segmentation: Adaptive Thresholding via Differentiable Miscoverage Loss
 
 **Conference**: ICLR 2026  

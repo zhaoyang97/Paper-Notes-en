@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction
 description: >-
-  [NeurIPS 2025][Audio & Speech][multimodal LLM] VITA-1.5 proposes a carefully designed three-stage progressive training strategy that incrementally integrates visual and speech capabilities into an LLM…
+  [NeurIPS 2025 Spotlight][Audio & Speech][multimodal LLM] VITA-1.5 proposes a carefully designed three-stage progressive training strategy that incrementally integrates visual and speech capabilities into an LLM, achieving end-to-end vision-speech real-time interaction without relying on standalone ASR/TTS modules, while attaining state-of-the-art performance among open-source models on image, video, and speech benchmarks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Audio & Speech"
   - "multimodal LLM"
   - "vision-speech interaction"
@@ -12,7 +12,7 @@ tags:
   - "three-stage training"
   - "omni model"
 date: 2026-05-08
-content_hash: 4e4cb5095baac5f4
+content_hash: a3d7f3fab3b7ee12
 ---
 
 # VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction
@@ -179,10 +179,10 @@ The VITA-1.5 model architecture comprises:
 ## Related Papers
 
 - [\[ACL 2026\] RTCFake: Speech Deepfake Detection in Real-Time Communication](../../ACL2026/audio_speech/rtcfake_speech_deepfake_detection_in_real-time_communication.md)
-- [\[NeurIPS 2025\] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models](e-bats_efficient_backpropagation-free_test-time_adaptation_for_speech_foundation.md)
 - [\[AAAI 2026\] HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding](../../AAAI2026/audio_speech/hpsu_a_benchmark_for_human-level_perception_in_real-world_spoken_speech_understa.md)
 - [\[NeurIPS 2025\] Instance-Specific Test-Time Training for Speech Editing in the Wild](instance-specific_test-time_training_for_speech_editing_in_the_wild.md)
-- [\[NeurIPS 2025\] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time](textttavrobustbench_benchmarking_the_robustness_of_audio-visual_recognition_mode.md)
+- [\[NeurIPS 2025\] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models](e-bats_efficient_backpropagation-free_test-time_adaptation_for_speech_foundation.md)
+- [\[ACL 2025\] OmniFlatten: An End-to-end GPT Model for Seamless Voice Conversation](../../ACL2025/audio_speech/omniflatten_an_end-to-end_gpt_model_for_seamless_voice_conversation.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] PoSh: Using Scene Graphs to Guide LLMs-as-a-Judge for Detailed Image Descriptions
 description: >-
-  [ICLR 2026][Interpretability][detailed image description] The paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) = \langle O(d), E(d), K(d) \rangle$ from both generated and reference descriptions to serve as structured rubrics. These rubrics guide an open-source 14B LLM (Qwen3-14B) in performing QA-style fine-grained error localization. PoSh outperform
+  [ICLR 2026][Interpretability][detailed image description] The paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) = \langle O(d), E(d), K(d) \rangle$ from both generated and reference descriptions to serve as structured rubrics. These rubrics guide an open-source 14B LLM (Qwen3-14B) in performing QA-style fine-grained error localization. PoSh outperforms GPT-4o-as-Judge by +0.05 Spearman $\rho$ on the DOCENT artwork benchmark and CapArena while remainin…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - detailed image description
-  - scene graph
-  - LLM-as-Judge
-  - fine-grained evaluation
-  - assistive text
+  - "ICLR 2026"
+  - "Interpretability"
+  - "detailed image description"
+  - "scene graph"
+  - "LLM-as-Judge"
+  - "fine-grained evaluation"
+  - "assistive text"
 date: 2026-05-08
-content_hash: 8ce28712bcde7f90
+content_hash: 4170d2349f35b4ba
 ---
+
 # PoSh: Using Scene Graphs to Guide LLMs-as-a-Judge for Detailed Image Descriptions
 
 **Conference**: ICLR 2026  
@@ -133,6 +134,7 @@ PoSh is an inference-time metric with no training phase. The QA scorer $\Psi$ us
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

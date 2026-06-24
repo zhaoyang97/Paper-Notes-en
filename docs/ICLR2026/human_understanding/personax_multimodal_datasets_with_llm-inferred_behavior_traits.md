@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] PersonaX: Multimodal Datasets with LLM-Inferred Behavior Traits
 description: >-
-  [ICLR 2026][Human Understanding][multimodal dataset] Ours constructs the PersonaX multimodal dataset (containing LLM-inferred Big Five behavior traits, facial embeddings, and biographical metadata) and proposes a two-layer analysis framework: structured independence testing + unstructured causal representation learning (with identifiability theoretical guarantees) to rev
+  [ICLR2026][Human Understanding][multimodal dataset] Ours constructs the PersonaX multimodal dataset (containing LLM-inferred Big Five behavior traits, facial embeddings, and biographical metadata) and proposes a two-layer analysis framework: structured independence testing + unstructured causal representation learning (with identifiability theoretical guarantees) to reveal cross-modal causal structures.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - multimodal dataset
-  - behavior traits
-  - Big Five
-  - causal representation learning
-  - LLM
-  - identifiability
+  - "ICLR2026"
+  - "Human Understanding"
+  - "multimodal dataset"
+  - "behavior traits"
+  - "Big Five"
+  - "causal representation learning"
+  - "LLM"
+  - "identifiability"
 date: 2026-05-08
-content_hash: 3abb428cd142a649
+content_hash: e151fe27c10a848c
 ---
+
 # PersonaX: Multimodal Datasets with LLM-Inferred Behavior Traits
 
 **Conference**: ICLR2026  
@@ -136,8 +137,8 @@ The uniqueness of PersonaX lies in: (1) largest scale (9444+4181), (2) the only 
 - Value: ⭐⭐⭐⭐ — Dataset and method offer long-term value to the multimodal causal inference community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

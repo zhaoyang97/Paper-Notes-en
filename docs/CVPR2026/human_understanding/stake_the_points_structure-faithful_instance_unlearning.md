@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Stake the Points: Structure-Faithful Instance Unlearning
 description: >-
-  [CVPR 2026][Human Understanding][machine unlearning] Structguard is proposed to maintain the semantic relationship structure between retained instances during the unlearning process through semantic anchors, preventing structural collapse. It achieves average improvements of 32.9%, 19.3%, and 22.5% in image classification, face recognition, and retrieval tasks, respectiv
+  [CVPR2026][Human Understanding][machine unlearning] Structguard is proposed to maintain the semantic relationship structure between retained instances during the unlearning process through semantic anchors, preventing structural collapse. It achieves average improvements of 32.9%, 19.3%, and 22.5% in image classification, face recognition, and retrieval tasks, respectively.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - machine unlearning
-  - instance-level unlearning
-  - structural preservation
-  - semantic anchors
-  - CLIP
+  - "CVPR2026"
+  - "Human Understanding"
+  - "machine unlearning"
+  - "instance-level unlearning"
+  - "structural preservation"
+  - "semantic anchors"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 6f4d5a660846286c
+content_hash: 143310531c1ffb22
 ---
+
 # Stake the Points: Structure-Faithful Instance Unlearning
 
 **Conference**: CVPR2026  
@@ -170,10 +171,10 @@ Ours is the first instance-level unlearning method to simultaneously satisfy "No
 ## Related Papers
 
 - [\[CVPR 2026\] Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)
-- [\[CVPR 2026\] Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](humanoid-gpt_scaling_data_and_structure_for_zero-shot_motion_tracking.md)
+- [\[ICLR 2026\] GenCape: Structure-Inductive Generative Modeling for Category-Agnostic Pose Estimation](../../ICLR2026/human_understanding/gencape_structure-inductive_generative_modeling_for_category-agnostic_pose_estim.md)
 - [\[CVPR 2025\] Structure-Aware Correspondence Learning for Relative Pose Estimation](../../CVPR2025/human_understanding/structure-aware_correspondence_learning_for_relative_pose_estimation.md)
-- [\[CVPR 2026\] BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition](barbiegait_an_identity-consistent_synthetic_human_dataset_with_versatile_cloth-c.md)
-- [\[CVPR 2026\] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On](mofa-vton_more_fashion_possibilities_with_fine-grained_adaptations_in_virtual_tr.md)
+- [\[ICML 2026\] Learning Instance-Adaptive Low-Rank Orthogonal Subspaces for Clothes-Changing Person Re-Identification](../../ICML2026/human_understanding/learning_instance-adaptive_low-rank_orthogonal_subspaces_for_clothes-changing_pe.md)
+- [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](../../ICLR2026/human_understanding/link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
 
 </div>
 

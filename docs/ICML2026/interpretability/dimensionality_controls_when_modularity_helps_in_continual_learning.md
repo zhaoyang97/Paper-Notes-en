@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Dimensionality Controls When Modularity Helps in Continual Learning
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper systematically compares "task-blocked modular recurrent networks" with "single networks" using an A→B→A sequential learning paradigm. It finds that modularity is not always beneficial—only when the initialization scale $\gamma$ compresses representations into the **low-dimensional "rich" regime** does modula
+  [ICML2026][Interpretability][Continual Learning] This paper systematically compares "task-blocked modular recurrent networks" with "single networks" using an A→B→A sequential learning paradigm. It finds that modularity is not always beneficial—only when the initialization scale $\gamma$ compresses representations into the **low-dimensional "rich" regime** does modularity lead to lower interference and spontaneously organize a gradient geometry where "similar tasks overlap in…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "Compositionality"
+  - "Representation Dimensionality"
+  - "Modularity"
+  - "Stability-Plasticity"
 date: 2026-05-08
-content_hash: ddf0b0ecf9de97fa
+content_hash: f4cb4e3c48da08fb
 ---
+
 # Dimensionality Controls When Modularity Helps in Continual Learning
 
 **Conference**: ICML2026  
@@ -123,10 +130,10 @@ Conclusion: Structural isolation **does not provide consistent benefits**—in h
 ## Related Papers
 
 - [\[ICML 2026\] Prompt Optimization Is a Coin Flip: Diagnosing When It Helps in Compound AI Systems](prompt_optimization_is_a_coin_flip_diagnosing_when_it_helps_in_compound_ai_syste.md)
-- [\[ICLR 2026\] LORE: Jointly Learning the Intrinsic Dimensionality and Relative Similarity Structure from Ordinal Data](../../ICLR2026/interpretability/lore_jointly_learning_the_intrinsic_dimensionality_and_relative_similarity_struc.md)
-- [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
-- [\[ICLR 2026\] Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer](../../ICLR2026/interpretability/towards_understanding_subliminal_learning_when_and_how_hidden_biases_transfer.md)
 - [\[CVPR 2025\] Language Guided Concept Bottleneck Models for Interpretable Continual Learning](../../CVPR2025/interpretability/language_guided_concept_bottleneck_models_for_interpretable_continual_learning.md)
+- [\[ICLR 2026\] LORE: Jointly Learning the Intrinsic Dimensionality and Relative Similarity Structure from Ordinal Data](../../ICLR2026/interpretability/lore_jointly_learning_the_intrinsic_dimensionality_and_relative_similarity_struc.md)
+- [\[ICLR 2026\] Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer](../../ICLR2026/interpretability/towards_understanding_subliminal_learning_when_and_how_hidden_biases_transfer.md)
+- [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
 
 </div>
 

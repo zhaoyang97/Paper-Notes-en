@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Broad Exploration to Stable Synthesis: Entropy-Guided Optimization for Autoregressive Image Generation
 description: >-
-  [ICLR 2026][Image Generation][GRPO] This paper quantifies the division of labor between CoT and RL in autoregressive T2I using "entropy"—CoT expands the exploration space while RL contracts it toward high-reward regions. Observing that reward is strongly negatively correlated with the mean and variance of image token entropy, the authors propose EG-GRPO:
+  [ICLR 2026][Image Generation][Text-to-Image Generation] This paper quantifies the division of labor between CoT and RL in autoregressive T2I using "entropy"—CoT expands the exploration space while RL contracts it toward high-reward regions. Observing that reward is strongly negatively correlated with the mean and variance of image token entropy, the authors propose EG-GRPO: reallocating optimization budgets based on token entropy (low-entropy tokens follow KL for stability…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - GRPO
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Text-to-Image Generation"
+  - "Autoregressive Generation"
+  - "GRPO"
+  - "Entropy"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 1846eb4d15472362
+content_hash: 8718fafa73fbc47c
 ---
+
 # From Broad Exploration to Stable Synthesis: Entropy-Guided Optimization for Autoregressive Image Generation
 
 **Conference**: ICLR 2026  
@@ -146,7 +150,7 @@ Notably, `w/ only tok` (79.25) is worse than `w/o All` (82.58), suggesting that 
 - [\[ICLR 2026\] Group Critical-token Policy Optimization for Autoregressive Image Generation](group_critical-token_policy_optimization_for_autoregressive_image_generation.md)
 - [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
-- [\[ICLR 2026\] VisualPrompter: Semantic-Aware Prompt Optimization with Visual Feedback for Text-to-Image Synthesis](visualprompter_semantic-aware_prompt_optimization_with_visual_feedback_for_text-.md)
+- [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
 
 </div>
 

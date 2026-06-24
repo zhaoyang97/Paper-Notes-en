@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distribution-Aware Multi-Granularity Phase Coding: Towards Lower Conversion Error for Spike-Driven Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] To address the conversion error caused by the "uniform discretization of non-uniform activations" in Spiking LLMs, this paper proposes **Distribution-Aware Multi-Granularity Phase Coding**. It uses multiple learnable phase bases to align discrete value density with activation distributions, coupled with an alternating
+  [ICLR2026][Model Compression][Spiking LLMs] To address the conversion error caused by the "uniform discretization of non-uniform activations" in Spiking LLMs, this paper proposes **Distribution-Aware Multi-Granularity Phase Coding**. It uses multiple learnable phase bases to align discrete value density with activation distributions, coupled with an alternating optimization paradigm that trains only neurons without updating weights. On LLaMA-2-7B and LLaMA-3-8B…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR2026"
+  - "Model Compression"
+  - "Spiking LLMs"
+  - "ANN-to-SNN Conversion"
+  - "Phase Coding"
+  - "Activation Distribution Alignment"
+  - "Energy Efficiency"
 date: 2026-05-08
-content_hash: faa3dbf58dc873b5
+content_hash: 30fbb579aea601f0
 ---
+
 # Distribution-Aware Multi-Granularity Phase Coding: Towards Lower Conversion Error for Spike-Driven Large Language Models
 
 **Conference**: ICLR2026  

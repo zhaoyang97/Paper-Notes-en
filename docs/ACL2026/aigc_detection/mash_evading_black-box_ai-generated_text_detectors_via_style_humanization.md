@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization
 description: >-
-  [ACL 2026][AIGC Detection][Paper Note] This paper proposes MASH (Multi-Stage Style Humanization Alignment), which utilizes a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time refinement. By training a rewriter with only 0.1B parameters, it evades AI text detectors with an average attack success rate of 92% in black-box
+  [ACL 2026 Findings][AIGC Detection][AI-generated text detection] This paper proposes MASH (Multi-Stage Style Humanization Alignment), which utilizes a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time refinement. By training a rewriter with only 0.1B parameters, it evades AI text detectors with an average attack success rate of 92% in black-box settings while maintaining excellent linguistic quality.
 tags:
-  - ACL 2026
-  - AIGC Detection
+  - "ACL 2026 Findings"
+  - "AIGC Detection"
+  - "AI-generated text detection"
+  - "black-box adversarial attack"
+  - "style transfer"
+  - "text humanization"
+  - "DPO alignment"
 date: 2026-05-08
-content_hash: 5a1b126ad6d7cac9
+content_hash: 7d6902e0ed1a30a6
 ---
+
 # MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization
 
 **Conference**: ACL 2026 Findings  
@@ -141,11 +147,11 @@ SFT helps the model identify the "target style" but not "how far the detection b
 
 ## Related Papers
 
+- [\[ICLR 2026\] D&R: Recovery-based AI-Generated Text Detection via a Single Black-box LLM Call](../../ICLR2026/aigc_detection/dr_recovery-based_ai-generated_text_detection_via_a_single_black-box_llm_call.md)
 - [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](../../ICML2026/aigc_detection/black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
 - [\[ACL 2026\] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)
+- [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
 - [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
-- [\[ACL 2026\] mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection](mdok-style_at_semeval-2026_task_10_finetuning_llms_for_conspiracy_detection.md)
-- [\[ACL 2026\] REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control](reflex_self-refining_explainable_fact-checking_via_verdict-anchored_style_contro.md)
 
 </div>
 

@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Neyman-Pearson Classification under Both Null and Alternative Distributions Shift
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes the first Neyman-Pearson (NP) transfer learning process for scenarios where **both class-conditional distributions $\mu_0, \mu_1$ shift between source and target domains**. This method ensures improved Type-I/Type-II errors when the source is useful, avoids negative transfer by falling back to targe
+  [ICLR 2026][Learning Theory][Distribution shift] This paper proposes the first Neyman-Pearson (NP) transfer learning process for scenarios where **both class-conditional distributions $\mu_0, \mu_1$ shift between source and target domains**. This method ensures improved Type-I/Type-II errors when the source is useful, avoids negative transfer by falling back to target-only data when it is not, and provides polynomial-time computational guarantees by reducing the problem to a…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transfer Learning"
+  - "Neyman-Pearson Classification"
+  - "Distribution shift"
+  - "Type-I/Type-II error"
+  - "Adaptation"
+  - "Avoiding negative transfer"
+  - "Convex programming"
 date: 2026-05-08
-content_hash: bf69eab72118d795
+content_hash: cd4d782e0c44d33a
 ---
+
 # Neyman-Pearson Classification under Both Null and Alternative Distributions Shift
 
 **Conference**: ICLR 2026  
@@ -112,15 +120,14 @@ Experiments were conducted on two real-world climate datasets for heavy rain det
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Probability Distributions Computed by Autoregressive Transformers](probability_distributions_computed_by_autoregressive_transformers.md)
-- [\[ICLR 2026\] When Shift Happens - Confounding is to Blame](when_shift_happens_-_confounding_is_to_blame.md)
 - [\[ICML 2026\] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](../../ICML2026/learning_theory/expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)
-- [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
-- [\[ICLR 2026\] Practical Estimation of the Optimal Classification Error with Soft Labels and Calibration](practical_estimation_of_the_optimal_classification_error_with_soft_labels_and_ca.md)
+- [\[ICLR 2026\] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits](efficient_best-of-both-worlds_algorithms_for_contextual_combinatorial_semi-bandi.md)
+- [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
+- [\[ICLR 2026\] FACT: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations](fact_a_first-principles_alternative_to_the_neural_feature_ansatz_for_how_network.md)
 
 </div>
 

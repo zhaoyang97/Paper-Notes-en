@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Inter-Agent Relative Representations for Multi-Agent Option Discovery
 description: >-
-  [ICLR 2026][Reinforcement Learning][option discovery] This paper proposes a **relative representation focused on inter-agent relationships** for joint state abstraction. It first estimates a "Fermat state" that minimizes team-wide alignment costs, then utilizes dimension-wise temporal distances from each agent to this state as a new representation. Upon this representatio
+  [ICLR 2026][Reinforcement Learning][Multi-Agent RL] This paper proposes a **relative representation focused on inter-agent relationships** for joint state abstraction. It first estimates a "Fermat state" that minimizes team-wide alignment costs, then utilizes dimension-wise temporal distances from each agent to this state as a new representation. Upon this representation, Graph Laplacian eigenoption decomposition is performed to discover a smaller number of highly coordinated…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - option discovery
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-Agent RL"
+  - "option discovery"
+  - "joint state abstraction"
+  - "Fermat states"
+  - "Graph Laplacian eigenoptions"
+  - "temporal distance"
 date: 2026-05-08
-content_hash: 5250f84a48f9baff
+content_hash: 356299489f2e69c6
 ---
+
 # Inter-Agent Relative Representations for Multi-Agent Option Discovery
 
 **Conference**: ICLR 2026  
@@ -123,9 +129,9 @@ Scanning different numbers of options in complex scenarios (15 seeds, 64 evaluat
 
 - [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](multi-agent_guided_policy_optimization.md)
 - [\[ICLR 2026\] Correlated Policy Optimization in Multi-Agent Subteams](correlated_policy_optimization_in_multi-agent_subteams.md)
+- [\[ICLR 2026\] Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent RL](retaining_suboptimal_actions_to_follow_shifting_optima_in_multi-agent_reinforcem.md)
 - [\[ICLR 2026\] Ego-Foresight: Self-supervised Learning of Agent-Aware Representations for Improved RL](ego-foresight_self-supervised_learning_of_agent-aware_representations_for_improv.md)
 - [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
-- [\[ICLR 2026\] Optimal Robust Subsidy Policies for Irrational Agent in Principal-Agent MDPs](optimal_robust_subsidy_policies_for_irrational_agent_in_principal-agent_mdps.md)
 
 </div>
 

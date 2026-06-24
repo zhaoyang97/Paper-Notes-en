@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TeethGenerator: A Two-Stage Framework for Paired Pre- and Post-Orthodontic 3D Dental Data Generation
 description: >-
-  [ICCV 2025][Medical Imaging][orthodontic data generation] This paper proposes TeethGenerator, a two-stage framework for generating paired pre- and post-orthodontic 3D dental point cloud models. Stage I employs a VQ-VAE c…
+  [ICCV 2025][Medical Imaging][orthodontic data generation] This paper proposes TeethGenerator, a two-stage framework for generating paired pre- and post-orthodontic 3D dental point cloud models. Stage I employs a VQ-VAE combined with a diffusion model to generate post-treatment tooth morphology, while Stage II uses a Transformer conditioned on a style model to generate the corresponding pre-treatment dental arrangement.
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model"
   - "paired data synthesis"
 date: 2026-05-08
-content_hash: 8d9ba2bb12441347
+content_hash: 7438139cca017930
 ---
 
 # TeethGenerator: A Two-Stage Framework for Paired Pre- and Post-Orthodontic 3D Dental Data Generation
@@ -156,7 +156,7 @@ Performance improves consistently as the amount of synthetic data ($n \times 720
 - [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](../../AAAI2026/medical_imaging/a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
 - [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
 - [\[ICML 2026\] CASCADE Conformal Prediction: Uncertainty-Adaptive Prediction Intervals for Two-Stage Clinical Decision Support](../../ICML2026/medical_imaging/cascade_conformal_prediction_uncertainty-adaptive_prediction_intervals_for_two-s.md)
-- [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](radgpt_constructing_3d_image-text_tumor_datasets.md)
+- [\[CVPR 2025\] Revisiting MAE Pre-Training for 3D Medical Image Segmentation](../../CVPR2025/medical_imaging/revisiting_mae_pre-training_for_3d_medical_image_segmentation.md)
 
 </div>
 

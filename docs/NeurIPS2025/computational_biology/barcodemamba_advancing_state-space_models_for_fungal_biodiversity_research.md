@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research
 description: >-
-  [NeurIPS 2025][Computational Biology][DNA barcoding] BarcodeMamba+ is an SSM-based foundation model for fungal ITS DNA barcode classification. By adopting a pretrain-then-finetune paradigm to leverage large-scale unlabel…
+  [NeurIPS 2025][Computational Biology][DNA barcoding] BarcodeMamba+ is an SSM-based foundation model for fungal ITS DNA barcode classification. By adopting a pretrain-then-finetune paradigm to leverage large-scale unlabeled sequences, and incorporating three enhancements—hierarchical label smoothing, inverse square-root weighted loss, and multi-head outputs—it substantially outperforms BLAST, CNN, and Transformer baselines across all taxonomic ranks on three test sets…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "foundation models"
   - "hierarchical classification"
 date: 2026-05-08
-content_hash: 4bb5ec0302111ed1
+content_hash: 31912075be34330e
 ---
 
 # BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research
@@ -152,11 +152,11 @@ Pretraining yields more pronounced gains under k-mer tokenization (77.0% → 81.
 
 ## Related Papers
 
+- [\[ICML 2025\] Elucidating the Design Space of Multimodal Protein Language Models](../../ICML2025/computational_biology/elucidating_the_design_space_of_multimodal_protein_language_models.md)
 - [\[NeurIPS 2025\] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space](manipulating_3d_molecules_in_a_fixed-dimensional_e3-equivariant_latent_space.md)
+- [\[ICLR 2026\] MarS-FM: Generative Modeling of Molecular Dynamics via Markov State Models](../../ICLR2026/computational_biology/mars-fm_generative_modeling_of_molecular_dynamics_via_markov_state_models.md)
 - [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
 - [\[NeurIPS 2025\] Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning](generative_distribution_embeddings_lifting_autoencoders_to_the_space_of_distribu.md)
-- [\[ICML 2026\] SwitchCraft: A Programmatic Framework for Designing State-Switching Proteins](../../ICML2026/computational_biology/switchcraft_a_programmatic_framework_for_designing_state-switching_proteins.md)
-- [\[NeurIPS 2025\] Fractional Diffusion Bridge Models](fractional_diffusion_bridge_models.md)
 
 </div>
 

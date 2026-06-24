@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CRISP: Compressing Redundancy in Chain-of-Thought via Intrinsic Saliency Pruning
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper proposes the CRISP framework, discovering that the attention patterns of the `</think>` token can reliably distinguish between critical and redundant steps in a reasoning chain. Based on this, a greedy search compression pipeline with four atomic operations is designed, reducing token usage by 50-60% while m
+  [ACL 2026 Findings][Reasoning][Chain-of-Thought Compression] This paper proposes the CRISP framework, discovering that the attention patterns of the `</think>` token can reliably distinguish between critical and redundant steps in a reasoning chain. Based on this, a greedy search compression pipeline with four atomic operations is designed, reducing token usage by 50-60% while maintaining accuracy.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Chain-of-Thought Compression"
+  - "Attention Saliency"
+  - "Inference Redundancy"
+  - "Greedy Search"
+  - "Efficient Inference"
 date: 2026-05-08
-content_hash: d043e68723452901
+content_hash: 69acf63f7422d014
 ---
+
 # CRISP: Compressing Redundancy in Chain-of-Thought via Intrinsic Saliency Pruning
 
 **Conference**: ACL 2026 Findings  
@@ -139,11 +145,11 @@ A standard autoregressive negative log-likelihood loss is used, training on a mi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy](../../ICLR2026/llm_reasoning/making_slow_thinking_faster_compressing_llm_chain-of-thought_via_step_entropy.md)
+- [\[ICLR 2026\] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization](../../ICLR2026/llm_reasoning/pruning_long_chain-of-thought_of_large_reasoning_models_via_small-scale_preferen.md)
 - [\[NeurIPS 2025\] Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals](../../NeurIPS2025/llm_reasoning/inference-time_chain-of-thought_pruning_with_latent_informativeness_signals.md)
-- [\[ACL 2026\] Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective](decoupling_the_effect_of_chain-of-thought_reasoning_a_human_label_variation_pers.md)
-- [\[ACL 2026\] DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models](drp_distilled_reasoning_pruning_with_skill-aware_step_decomposition_for_efficien.md)
-- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
 - [\[ACL 2026\] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning](render-of-thought_rendering_textual_chain-of-thought_as_images_for_visual_latent.md)
+- [\[ACL 2026\] Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective](decoupling_the_effect_of_chain-of-thought_reasoning_a_human_label_variation_pers.md)
 
 </div>
 

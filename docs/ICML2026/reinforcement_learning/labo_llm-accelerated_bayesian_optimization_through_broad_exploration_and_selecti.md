@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LABO: LLM-Accelerated Bayesian Optimization through Broad Exploration and Selective Experimentation
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper proposes LABO, which integrates LLMs as "low-fidelity" evaluation sources into the Bayesian Optimization loop. It decomposes the ground-truth experiment $f_R$ using a Kennedy–O'Hagan joint Gaussian Process into a scaled LLM prediction $\rho f_L$ plus a residual process $\delta$. A "Difference Dominance Ratio
+  [ICML 2026][Reinforcement Learning][Bayesian Optimization] This paper proposes LABO, which integrates LLMs as "low-fidelity" evaluation sources into the Bayesian Optimization loop. It decomposes the ground-truth experiment $f_R$ using a Kennedy–O'Hagan joint Gaussian Process into a scaled LLM prediction $\rho f_L$ plus a residual process $\delta$. A "Difference Dominance Ratio" $p_\Delta = \sigma_\delta^2/(\rho^2\sigma_L^2 + \sigma_\delta^2)$ is used as a gating mechanism to…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Bayesian Optimization"
+  - "LLM Prior"
+  - "Multi-fidelity"
+  - "KOH Model"
+  - "Gating Criterion"
 date: 2026-05-08
-content_hash: c961793e800aeb50
+content_hash: 1d68647ab9bdbffe
 ---
+
 # LABO: LLM-Accelerated Bayesian Optimization through Broad Exploration and Selective Experimentation
 
 **Conference**: ICML 2026  
@@ -138,10 +144,10 @@ LABO is optimal across all 6 scientific tasks with significantly lower variance 
 ## Related Papers
 
 - [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](../../ACL2026/reinforcement_learning/dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
-- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](../../ACL2026/reinforcement_learning/semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
-- [\[NeurIPS 2025\] Gradient-Variation Online Adaptivity for Accelerated Optimization with Hölder Smoothness](../../NeurIPS2025/reinforcement_learning/gradient-variation_online_adaptivity_for_accelerated_optimization_with_hölder_sm.md)
+- [\[ICLR 2026\] Selective Expert Guidance for Effective and Diverse Exploration in Reinforcement Learning of LLMs](../../ICLR2026/reinforcement_learning/selective_expert_guidance_for_effective_and_diverse_exploration_in_reinforcement.md)
 - [\[ACL 2026\] Efficient Hyperparameter Optimization for LLM Reinforcement Learning](../../ACL2026/reinforcement_learning/efficient_hyperparameter_optimization_for_llm_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Optimizing the Unknown: Black Box Bayesian Optimization with Energy-Based Model and Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/optimizing_the_unknown_black_box_bayesian_optimization_with_energy-based_model_a.md)
+- [\[NeurIPS 2025\] Improved Regret Bounds for GP-UCB in Bayesian Optimization](../../NeurIPS2025/reinforcement_learning/improved_regret_bounds_for_gaussian_process_upper_confidence_bound_in_bayesian_o.md)
+- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](../../ACL2026/reinforcement_learning/semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
 
 </div>
 

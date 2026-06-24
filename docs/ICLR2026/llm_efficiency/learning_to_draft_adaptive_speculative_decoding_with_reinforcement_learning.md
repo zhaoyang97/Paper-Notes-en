@@ -4,14 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][LLM Efficiency][speculative decoding] LTD models "how deep to draft" and "how many candidate tokens to verify" in tree-based speculative decoding as two collaborative reinforcement learning policies. By directly using the throughput of each draft-and-verify cycle as the reward, it consistently improves LLM inference speed on Eagle3.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - speculative decoding
-  - draft tree
-  - PPO
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "speculative decoding"
+  - "LLM inference acceleration"
+  - "draft tree"
+  - "PPO"
+  - "throughput optimization"
 date: 2026-05-08
-content_hash: fc6a40960c2f220d
+content_hash: 434595640de67b0d
 ---
+
 # Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -151,15 +154,16 @@ The ablation study addresses the individual utility of policies, the necessity o
 - Value: ⭐⭐⭐⭐⭐ Highly practical improvement for speculative decoding stacks with low implementation friction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
 - [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
+- [\[ACL 2025\] Tetris: Optimal Draft Token Selection for Batch Speculative Decoding](../../ACL2025/llm_efficiency/tetris_optimal_draft_token_selection_for_batch_speculative_decoding.md)
 - [\[ICLR 2026\] Flatter Tokens are More Valuable for Speculative Draft Model Training](flatter_tokens_are_more_valuable_for_speculative_draft_model_training.md)
-- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
-- [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](expert_divergence_learning_for_moe-based_language_models.md)
+- [\[ACL 2025\] Accelerating Speculative Decoding via Efficient Context-Aware Draft Generation](../../ACL2025/llm_efficiency/accelerating_speculative_decoding_via_efficient_context-aware_draft_generation.md)
 
 </div>
 

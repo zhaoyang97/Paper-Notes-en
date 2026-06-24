@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM unlearning] This paper identifies that reference model bias in NPO (Negative Preference Optimization) leads to uneven optimization power allocation across forget data and early-stage gradie…
+  [NeurIPS 2025][LLM Safety][LLM unlearning] This paper identifies that reference model bias in NPO (Negative Preference Optimization) leads to uneven optimization power allocation across forget data and early-stage gradient weight smoothing failure. The proposed SimNPO eliminates reference model dependency and adopts length-normalized rewards, improving FQ from 0.79 to 0.99 on TOFU and consistently outperforming NPO across all benchmarks.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "reference model bias"
   - "length normalization"
 date: 2026-05-08
-content_hash: 3fe1e95a0e9f3fd8
+content_hash: f7551a2ee7151df6
 ---
 
 # Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning
@@ -172,9 +172,9 @@ NPO over-forgets weakly memorized data and under-forgets strongly memorized data
 
 - [\[NeurIPS 2025\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
 - [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](../../ACL2026/llm_safety/cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
-- [\[NeurIPS 2025\] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM](unlearned_but_not_forgotten_data_extraction_after_exact_unlearning_in_llm.md)
 - [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](on_the_sample_complexity_of_differentially_private_policy_optimization.md)
-- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](../../ICLR2026/llm_safety/llm_unlearning_with_llm_beliefs.md)
+- [\[NeurIPS 2025\] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM](unlearned_but_not_forgotten_data_extraction_after_exact_unlearning_in_llm.md)
+- [\[ICLR 2026\] AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization](../../ICLR2026/llm_safety/adpo_enhancing_the_adversarial_robustness_of_large_vision-language_models_with_p.md)
 
 </div>
 

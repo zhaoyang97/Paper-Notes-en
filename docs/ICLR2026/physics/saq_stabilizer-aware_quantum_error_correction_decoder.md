@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAQ: Stabilizer-Aware Quantum Error Correction Decoder
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Transformer] SAQ-Decoder utilizes a stabilizer-aware dual-stream Transformer to learn the mapping from syndromes to logical error classes and physical correction operations. By incorporating Constraint-Projected Nullspace Descent (CPND) post-processing to ensure syndrome consistency, it pushes the thresholds for independent and dep
+  [ICLR2026][Physics & Scientific Computing][Quantum Error Correction] SAQ-Decoder utilizes a stabilizer-aware dual-stream Transformer to learn the mapping from syndromes to logical error classes and physical correction operations. By incorporating Constraint-Projected Nullspace Descent (CPND) post-processing to ensure syndrome consistency, it pushes the thresholds for independent and depolarizing noise on toric codes to 10.99% and 18.6%, respectively…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Transformer
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Quantum Error Correction"
+  - "Stabilizer Codes"
+  - "Neural Decoder"
+  - "Transformer"
+  - "Logical Error Rate"
 date: 2026-05-08
-content_hash: 527184a5c73666ee
+content_hash: 2b84b27dc38367bc
 ---
+
 # SAQ: Stabilizer-Aware Quantum Error Correction Decoder
 
 **Conference**: ICLR2026  

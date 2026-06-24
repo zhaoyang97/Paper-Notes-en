@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unifying Formal Explanations: A Complexity-Theoretic Perspective
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Proposes a unified framework reducing sufficient and contrastive reasons (local/global, probabilistic/non-probabilistic) to a minimization problem of a unified probability value function. It reveals that global value functions possess key combinatorial optimization properties like monotonicity, submodularity, and super
+  [ICLR 2026][Optimization][Explainable AI] Proposes a unified framework reducing sufficient and contrastive reasons (local/global, probabilistic/non-probabilistic) to a minimization problem of a unified probability value function. It reveals that global value functions possess key combinatorial optimization properties like monotonicity, submodularity, and supermodularity, proving that global explanations are computable in polynomial time—even when the corresponding local expla…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Explainable AI"
+  - "Computational Complexity"
+  - "Sufficient Reasons"
+  - "Contrastive Reasons"
+  - "Submodular/Supermodular Functions"
 date: 2026-05-08
-content_hash: 3891093c9c7895bf
+content_hash: 4b7648784620fa1c
 ---
+
 # Unifying Formal Explanations: A Complexity-Theoretic Perspective
 
 **Conference**: ICLR 2026  
@@ -139,8 +145,8 @@ This is a theoretical work; the core contributions are complexity analysis resul
 - [\[ICLR 2026\] Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs](directional_sheaf_hypergraph_networks_unifying_learning_on_directed_and_undirect.md)
 - [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
 - [\[ICML 2026\] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective](../../ICML2026/optimization/learning_dynamics_of_zeroth-order_optimization_a_kernel_perspective.md)
+- [\[ICLR 2026\] Ringleader ASGD: The First Asynchronous SGD with Optimal Time Complexity under Data Heterogeneity](ringleader_asgd_the_first_asynchronous_sgd_with_optimal_time_complexity_under_da.md)
 - [\[ICML 2025\] Learning Mixtures of Experts with EM: A Mirror Descent Perspective](../../ICML2025/optimization/learning_mixtures_of_experts_with_em_a_mirror_descent_perspective.md)
-- [\[ICML 2026\] Rethinking the Flow-Based Gradual Domain Adaptation: A Semi-Dual Optimal Transport Perspective](../../ICML2026/optimization/rethinking_the_flow-based_gradual_domain_adaptation_a_semi-dual_optimal_transpor.md)
 
 </div>
 

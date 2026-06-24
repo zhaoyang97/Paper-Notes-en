@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OFMU: Optimization-Driven Framework for Machine Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Machine unlearning is modeled as a bi-level optimization problem: the inner layer maximizes forget loss while employing gradient decorrelation to prevent retention set damage, and the outer layer minimizes retain loss with a penalty term to enforce inner-layer stationarity. On the TOFU benchmark, it simultaneously achi
+  [ICLR 2026][LLM Safety][Machine Unlearning] Machine unlearning is modeled as a bi-level optimization problem: the inner layer maximizes forget loss while employing gradient decorrelation to prevent retention set damage, and the outer layer minimizes retain loss with a penalty term to enforce inner-layer stationarity. On the TOFU benchmark, it simultaneously achieves high forget quality and model utility, surpassing existing GA/GradDiff/NPO/RMU methods in balancing trade-offs.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Bi-level Optimization"
+  - "Gradient Decorrelation"
+  - "Forget-Retain Trade-off"
+  - "LLM Privacy"
 date: 2026-05-08
-content_hash: 749303ba449a5c16
+content_hash: a98a360ef85e7c4a
 ---
+
 # OFMU: Optimization-Driven Framework for Machine Unlearning
 
 **Conference**: ICLR 2026  
@@ -118,11 +124,11 @@ The landscape of $F$ is highly non-convex. OFMU uses a two-loop strategy for sta
 
 ## Related Papers
 
-- [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](reinforcement_unlearning_via_group_relative_policy_optimization.md)
-- [\[CVPR 2026\] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](../../CVPR2026/llm_safety/machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)
-- [\[ICLR 2026\] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning](safety_mirage_how_spurious_correlations_undermine_vlm_safety_fine-tuning_and_can.md)
-- [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](../../NeurIPS2025/llm_safety/a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
 - [\[ICLR 2026\] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs](model_collapse_is_not_a_bug_but_a_feature_in_machine_unlearning_for_llms.md)
+- [\[CVPR 2026\] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](../../CVPR2026/llm_safety/machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)
+- [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](reinforcement_unlearning_via_group_relative_policy_optimization.md)
+- [\[ICLR 2026\] PLAGUE: A Plug-and-Play Framework for Multi-Turn Jailbreaking Driven by Lifelong Learning](plague_plug-and-play_framework_for_lifelong_adaptive_generation_of_multi-turn_ja.md)
+- [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](../../NeurIPS2025/llm_safety/a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
 
 </div>
 

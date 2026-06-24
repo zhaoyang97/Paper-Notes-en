@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CLEAR: Context-Aware Learning with End-to-End Mask-Free Inference for Adaptive Video Subtitle Removal
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper proposes CLEAR for video subtitle removal: a two-stage training approach (Stage I learns self-supervised subtitle prior masks using a dual encoder with orthogonal decoupling; Stage II adds LoRA and an occlusion head to the Wan2.1 video diffusion model for adaptive weighting). The inference requires no masks
+  [ICML 2026 Spotlight][Image Generation][Video Subtitle Removal] This paper proposes CLEAR for video subtitle removal: a two-stage training approach (Stage I learns self-supervised subtitle prior masks using a dual encoder with orthogonal decoupling; Stage II adds LoRA and an occlusion head to the Wan2.1 video diffusion model for adaptive weighting). The inference requires no masks or text detectors. By training only 0.77% of parameters, it achieves a PSNR of 26.80 dB on a Chi…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - LoRA
+  - "ICML 2026 Spotlight"
+  - "Image Generation"
+  - "Video Subtitle Removal"
+  - "Diffusion Models"
+  - "LoRA"
+  - "Self-Supervised Prior"
+  - "Mask-Free Inference"
 date: 2026-05-08
-content_hash: 0801e7a341763092
+content_hash: 32b72ca177729e74
 ---
+
 # CLEAR: Context-Aware Learning with End-to-End Mask-Free Inference for Adaptive Video Subtitle Removal
 
 **Conference**: ICML 2026 Spotlight  
@@ -145,7 +149,7 @@ Ours achieves PSNR +6.77 dB, VFID -74.7%, and Flow Variance -93.0% compared to P
 - [\[ICML 2026\] AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression](adaeraser_training-free_object_removal_via_adaptive_attention_suppression.md)
 - [\[ICCV 2025\] End-to-End Multi-Modal Diffusion Mamba](../../ICCV2025/image_generation/end-to-end_multi-modal_diffusion_mamba.md)
 - [\[NeurIPS 2025\] LinEAS: End-to-end Learning of Activation Steering with a Distributional Loss](../../NeurIPS2025/image_generation/lineas_end-to-end_learning_of_activation_steering_with_a_distributional_loss.md)
-- [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](../../CVPR2026/image_generation/deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
+- [\[ICLR 2026\] There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training](../../ICLR2026/image_generation/there_is_no_vae_end-to-end_pixel-space_generative_modeling_via_self-supervised_p.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MMR-V: What's Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos
 description: >-
-  [ICLR 2026][vlm_reasoning][Chain-of-Thought] MMR-V is an evaluation benchmark for "deep video reasoning" that emphasizes long-range multi-frame evidence mining and implicit reasoning of "what's left unsaid." It reveals that even the strongest Gemini-2.5-pro achieves only 64.3% accuracy, while CoT and test-time scaling are largely ineffective in this domain.
+  [ICLR 2026][VLM Reasoning][Video Reasoning] MMR-V is an evaluation benchmark for "deep video reasoning" that emphasizes long-range multi-frame evidence mining and implicit reasoning of "what's left unsaid." It reveals that even the strongest Gemini-2.5-pro achieves only 64.3% accuracy, while CoT and test-time scaling are largely ineffective in this domain.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Video Reasoning"
+  - "Multi-frame Reasoning"
+  - "Implicit Reasoning"
+  - "MLLM Evaluation"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 9db739da294beba7
+content_hash: a2fad4ff245ceab4
 ---
+
 # MMR-V: What's Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos
 
 **Conference**: ICLR 2026  

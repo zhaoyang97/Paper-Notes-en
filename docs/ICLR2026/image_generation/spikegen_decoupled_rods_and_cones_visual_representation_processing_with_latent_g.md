@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SpikeGen：用隐空间生成框架解耦「视杆-视锥」视觉表征
+  [Paper Note] SpikeGen: Decoupling "Rod-Cone" Visual Representations with a Latent Generative Framework
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] SpikeGen encodes visual information from spike cameras (rods, high temporal resolution) and RGB cameras (cones, high color/spatial resolution) into a shared VAE latent space. It then utilizes a modified MAR + per-token diffusion framework for generative fusion within this latent space. A single pre-trained model simult
+  [ICLR 2026][Image Generation][Spike Camera] SpikeGen encodes visual information from spike cameras (rods, high temporal resolution) and RGB cameras (cones, high color/spatial resolution) into a shared VAE latent space. It then utilizes a modified MAR + per-token diffusion framework for generative fusion within this latent space. A single pre-trained model simultaneously achieves or exceeds SOTA performance across three tasks: conditional deblurring…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Spike Camera"
+  - "Latent Generative Models"
+  - "Multimodal Fusion"
+  - "Image Deblurring"
+  - "Frame Reconstruction"
 date: 2026-05-08
-content_hash: ed8a7e0b0b72bbd2
+content_hash: b320e8b7cd5bee1a
 ---
+
 # SpikeGen: Decoupling "Rod-Cone" Visual Representations with a Latent Generative Framework
 
 **Conference**: ICLR 2026  
@@ -136,15 +142,17 @@ Dense Frame Reconstruction (SREDS) and New-View Synthesis (Blender, average):
 
 <div class="related-papers" markdown="1">
 
-[1] **S-SDM**: Spike-based Super-resolution Diffusion Model for High-speed Image Reconstruction (NeurIPS 2024)  
-[2] **STIR**: Spatiotemporal Interaction for Spike-stream Reconstruction (NeurIPS 2023)  
-[3] **SpikeGS**: High-Speed New View Synthesis via Spike-Camera and Gaussian Splatting (arXiv 2024)  
-[4] **MAR**: Autoregressive Model is Actually a Masked Autoencoder (CVPR 2024)
+## Related Papers
+
+- [\[ICLR 2026\] Synthetic History: Evaluating Visual Representations of the Past in Diffusion Models](synthetic_history_evaluating_visual_representations_of_the_past_in_diffusion_mod.md)
+- [\[ICLR 2026\] Adapting Self-Supervised Representations as a Latent Space for Efficient Generation](adapting_self-supervised_representations_as_a_latent_space_for_efficient_generat.md)
+- [\[NeurIPS 2025\] CORAL: Disentangling Latent Representations in Long-Tailed Diffusion](../../NeurIPS2025/image_generation/coral_disentangling_latent_representations_in_longtailed_dif.md)
+- [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
+- [\[ICLR 2026\] Latent Stochastic Interpolants](latent_stochastic_interpolants.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)

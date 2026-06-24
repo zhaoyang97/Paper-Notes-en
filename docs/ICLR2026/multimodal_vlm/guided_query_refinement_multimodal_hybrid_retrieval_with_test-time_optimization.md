@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Guided Query Refinement: Multimodal Hybrid Retrieval with Test-Time Optimization
 description: >-
-  [ICLR 2026][Multimodal VLM][Visual Document Retrieval] The paper proposes **Guided Query Refinement (GQR)**: an approach that uses scores from a lightweight text retriever as guidance signals at test-time to iteratively refine the query embeddings of a visual retriever (ColPali series) via gradient descent. This allows ColPali models to approach or even exceed the retrieva
+  [ICLR 2026][Multimodal VLM][Visual Document Retrieval] The paper proposes **Guided Query Refinement (GQR)**: an approach that uses scores from a lightweight text retriever as guidance signals at test-time to iteratively refine the query embeddings of a visual retriever (ColPali series) via gradient descent. This allows ColPali models to approach or even exceed the retrieval quality of significantly larger models while maintaining a small representation footprint…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Visual Document Retrieval
-  - Hybrid Retrieval
-  - Test-Time Optimization
-  - ColPali
-  - Query Refinement
-  - Late Interaction
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Visual Document Retrieval"
+  - "Hybrid Retrieval"
+  - "Test-Time Optimization"
+  - "ColPali"
+  - "Query Refinement"
+  - "Late Interaction"
 date: 2026-05-08
-content_hash: fe1b3dbbffabef4e
+content_hash: 93a2ac604705db8d
 ---
+
 # Guided Query Refinement: Multimodal Hybrid Retrieval with Test-Time Optimization
 
 **Conference**: ICLR 2026  
@@ -127,9 +128,9 @@ GQR achieves the highest gain with the lowest standard deviation. It is the only
 
 - [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](flatness_guided_test-time_adaptation_for_vision-language_models.md)
 - [\[CVPR 2026\] Intra-class Distribution-guided Generative Hashing with Neighbor Refinement for Cross-modal Retrieval](../../CVPR2026/multimodal_vlm/intra-class_distribution-guided_generative_hashing_with_neighbor_refinement_for_.md)
+- [\[CVPR 2026\] Evo-Retriever: LLM-Guided Curriculum Evolution with Viewpoint-Pathway Collaboration for Multimodal Document Retrieval](../../CVPR2026/multimodal_vlm/evo-retriever_llm-guided_curriculum_evolution_with_viewpoint-pathway_collaborati.md)
 - [\[ICLR 2026\] A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models](a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi.md)
-- [\[ICLR 2026\] Manzano: A Simple and Scalable Unified Multimodal Model with a Hybrid Vision Tokenizer](manzano_a_simple_and_scalable_unified_multimodal_model_with_a_hybrid_vision_toke.md)
-- [\[ICLR 2026\] Bilateral Information-aware Test-time Adaptation for Vision-Language Models](bilateral_information-aware_test-time_adaptation_for_vision-language_models.md)
+- [\[ICLR 2026\] Long-tailed Test-Time Adaptation for Vision-Language Models](long-tailed_test-time_adaptation_for_vision-language_models.md)
 
 </div>
 

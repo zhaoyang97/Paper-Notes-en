@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing without Pixels: Perception from Camera Trajectories
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper systematically promotes camera pose trajectories (6DoF pose sequences) as a standalone video perception modality for the first time. By training a lightweight Transformer encoder, CamFormer, through a contrastive learning framework, camera trajectories are mapped into a joint embedding space aligned with tex
+  [CVPR 2026][Human Understanding][Camera Trajectory] This paper systematically promotes camera pose trajectories (6DoF pose sequences) as a standalone video perception modality for the first time. By training a lightweight Transformer encoder, CamFormer, through a contrastive learning framework, camera trajectories are mapped into a joint embedding space aligned with text. Experiments across 10 downstream tasks on 5 datasets demonstrate that camera trajectories are both lightw…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Camera Trajectory"
+  - "Contrastive Learning"
+  - "Video Perception"
+  - "Modality Fusion"
+  - "Action Understanding"
 date: 2026-05-08
-content_hash: 7ddb5b2674315689
+content_hash: bacbe8ca57d91676
 ---
+
 # Seeing without Pixels: Perception from Camera Trajectories
 
 **Conference**: CVPR 2026  
@@ -138,9 +144,9 @@ The training loss is the InfoNCE contrastive loss (including a temperature hyper
 
 - [\[CVPR 2026\] Pose-guided Enriched Feature Learning for Federated-by-camera Person Re-identification](pose-guided_enriched_feature_learning_for_federated-by-camera_person_re-identifi.md)
 - [\[CVPR 2026\] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation](superman_unifying_skeleton_and_vision_for_human_motion_perception_and_generation.md)
+- [\[ICLR 2026\] DenseMarks: Learning Canonical Embeddings for Head Images via Point Trajectories](../../ICLR2026/human_understanding/densemarks_learning_canonical_embeddings_for_human_heads_images_via_point_tracks.md)
+- [\[CVPR 2026\] Towards Storytelling Animations: Joint Synthesis of Human and Camera Motions](towards_storytelling_animations_joint_synthesis_of_human_and_camera_motions.md)
 - [\[CVPR 2026\] Learning Effective Sign Features without Text for Gloss-free Sign Language Translation](learning_effective_sign_features_without_text_for_gloss-free_sign_language_trans.md)
-- [\[CVPR 2026\] LAMP: Localization Aware Multi-camera People Tracking in Metric 3D World](lamp_localization_aware_multi-camera_people_tracking_in_metric_3d_world.md)
-- [\[ECCV 2024\] ADen: Adaptive Density Representations for Sparse-view Camera Pose Estimation](../../ECCV2024/human_understanding/aden_adaptive_density_representations_for_sparseview_camera.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Can Editing LLMs Inject Harm?
 description: >-
-  [AAAI2026][LLM Safety][knowledge editing] This paper reframes knowledge editing as a novel LLM security threat termed *Editing Attack*…
+  [AAAI2026][LLM Safety][knowledge editing] This paper reframes knowledge editing as a novel LLM security threat termed *Editing Attack*, systematically investigating the feasibility of injecting misinformation and bias into LLMs via three editing methods—ROME, FT, and ICE—and demonstrating that such attacks are both highly effective and remarkably stealthy.
 tags:
   - "AAAI2026"
   - "LLM Safety"
@@ -11,7 +11,7 @@ tags:
   - "Misinformation Injection"
   - "Bias Injection"
 date: 2026-05-08
-content_hash: 1c54e43b52dcf813
+content_hash: c0bd7d10ac54b7db
 ---
 
 # Can Editing LLMs Inject Harm?
@@ -129,10 +129,10 @@ Knowledge editing is modeled as a triple transformation: modifying existing know
 ## Related Papers
 
 - [\[ACL 2026\] DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training](../../ACL2026/llm_safety/dart_mitigating_harm_drift_in_difference-aware_llms_via_distill-audit-repair_tra.md)
+- [\[ICLR 2026\] LLMs Can Hide Text in Other Text of the Same Length](../../ICLR2026/llm_safety/llms_can_hide_text_in_other_text_of_the_same_length.md)
+- [\[ICLR 2026\] Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs](../../ICLR2026/llm_safety/strategic_dishonesty_can_undermine_ai_safety_evaluations_of_frontier_llms.md)
 - [\[AAAI 2026\] Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models](cross-modal_unlearning_via_influential_neuron_path_editing_i.md)
-- [\[ICLR 2026\] Inoculation Prompting: Eliciting Traits from LLMs during Training Can Suppress Them at Test-Time](../../ICLR2026/llm_safety/inoculation_prompting_eliciting_traits_from_llms_during_training_can_suppress_th.md)
 - [\[ACL 2026\] Can Persona-Prompted LLMs Emulate Subgroup Values? An Empirical Analysis of Generalisability and Fairness in Cultural Alignment](../../ACL2026/llm_safety/can_persona-prompted_llms_emulate_subgroup_values_an_empirical_analysis_of_gener.md)
-- [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](../../NeurIPS2025/llm_safety/virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
 
 </div>
 

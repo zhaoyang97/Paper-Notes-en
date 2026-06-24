@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Model Internal Sleuthing: Finding Lexical Identity and Inflectional Features in Modern Language Models
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper systematically probes 25 Transformer language models (ranging from BERT Base to Qwen2.5-7B) and discovers that lexical identity (lexeme) is linearly decodable in early layers but decays with depth, whereas inflectional features remains stable and readable across all layers, occupying a compact and controllab
+  [ACL 2026][Interpretability][Linguistic Probing] This paper systematically probes 25 Transformer language models (ranging from BERT Base to Qwen2.5-7B) and discovers that lexical identity (lexeme) is linearly decodable in early layers but decays with depth, whereas inflectional features remains stable and readable across all layers, occupying a compact and controllable subspace.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Linguistic Probing"
+  - "Lexical Identity"
+  - "Inflectional Features"
+  - "Representation Geometry"
+  - "Cross-lingual Analysis"
 date: 2026-05-08
-content_hash: b4579ec02df2723b
+content_hash: 3397b31f1de3e04b
 ---
+
 # Model Internal Sleuthing: Finding Lexical Identity and Inflectional Features in Modern Language Models
 
 **Conference**: ACL 2026  
@@ -121,8 +127,6 @@ Linear probes use closed-form solutions for ridge regression. MLP probes are two
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Discretization for Consistency Models
 description: >-
-  [NeurIPS 2025][Image Restoration][Consistency Model] This paper proposes ADCM, which formalizes the discretization step size of consistency models as a constrained optimization problem balancing local consistency (traina…
+  [NeurIPS 2025][Image Restoration][Consistency Model] This paper proposes ADCM, which formalizes the discretization step size of consistency models as a constrained optimization problem balancing local consistency (trainability) and global consistency (stability), derives a closed-form solution via the Gauss-Newton method, and achieves adaptive discretization that surpasses all prior CMs on CIFAR-10 using less than 25% of the training budget.
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Single-Step Generation"
   - "Lagrange Multiplier Method"
 date: 2026-05-08
-content_hash: e0f1679799461ada
+content_hash: 5117090be4ea71b6
 ---
 
 # Adaptive Discretization for Consistency Models
@@ -147,11 +147,11 @@ ADCM (2×, 12.8M) already surpasses ECM (2×, 12.8M) and approaches iCT-deep (2�
 
 ## Related Papers
 
-- [\[ICCV 2025\] Enhancing Image Restoration Transformer via Adaptive Translation Equivariance](../../ICCV2025/image_restoration/enhancing_image_restoration_transformer_via_adaptive_translation_equivariance.md)
-- [\[ICCV 2025\] Metric Convolutions: A Unifying Theory to Adaptive Image Convolutions](../../ICCV2025/image_restoration/metric_convolutions_a_unifying_theory_to_adaptive_image_convolutions.md)
+- [\[CVPR 2026\] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems](../../CVPR2026/image_restoration/pnp-cm_consistency_models_as_plug-and-play_priors_for_inverse_problems.md)
+- [\[ICLR 2026\] Optimizing ID Consistency in Multimodal Large Models: Facial Restoration via Alignment, Entanglement, and Disentanglement](../../ICLR2026/image_restoration/optimizing_id_consistency_in_multimodal_large_models_facial_restoration_via_alig.md)
+- [\[CVPR 2026\] ZeroIDIR: Zero-Reference Illumination Degradation Image Restoration with Perturbed Consistency Diffusion Models](../../CVPR2026/image_restoration/zeroidir_zero-reference_illumination_degradation_image_restoration_with_perturbe.md)
 - [\[NeurIPS 2025\] Audio Super-Resolution with Latent Bridge Models](audio_super-resolution_with_latent_bridge_models.md)
 - [\[NeurIPS 2025\] Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates](rethinking_circuit_completeness_in_language_models_and_or_and_adder_gates.md)
-- [\[NeurIPS 2025\] Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics](elucidated_rolling_diffusion_models_for_probabilistic_forecasting_of_complex_dyn.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Test-Time RL] The Self-Harmony framework is proposed, where a single model plays two roles (Solver solving the original problem + Reframer restating the problem). The harmonic mean score of the answer under both original and reframed perspectives is used as the pseudo-label selection criterion, replacing traditional majority voting.
+  [ICLR 2026][Reinforcement Learning][Test-Time RL] The Self-Harmony framework is proposed, where a single model plays two roles (Solver solving the original problem + Reframer restating the problem). The harmonic mean score of the answer under both original and reframed perspectives is used as the pseudo-label selection criterion, replacing traditional majority voting. It achieves SOTA in 28 out of 30 experimental settings with zero training failures.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Test-Time RL
-  - Self-Play
-  - Pseudo-Label
-  - Harmonic Mean
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Test-Time RL"
+  - "Self-Play"
+  - "Pseudo-Label"
+  - "Harmonic Mean"
+  - "LLM Reasoning"
 date: 2026-05-08
-content_hash: 76a605da3d691147
+content_hash: 6d1036f7cdfa5c0d
 ---
+
 # Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -151,10 +152,10 @@ Significant improvement for Qwen3-4B: MATH500 increased from 60.2% to 78.5%
 ## Related Papers
 
 - [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
-- [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](r-zero_self-evolving_reasoning_llm_from_zero_data.md)
+- [\[ICLR 2026\] Beyond Pass@1: Self-Play with Variational Problem Synthesis Sustains RLVR](beyond_pass_1_self-play_with_variational_problem_synthesis_sustains_rlvr.md)
+- [\[ICLR 2026\] LaSeR: Reinforcement Learning with Last-Token Self-Rewarding](laser_reinforcement_learning_with_last-token_self-rewarding.md)
 - [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
 - [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
-- [\[ICLR 2026\] Self-Aligned Reward: Towards Effective and Efficient Reasoners](self-aligned_reward_towards_effective_and_efficient_reasoners.md)
 
 </div>
 

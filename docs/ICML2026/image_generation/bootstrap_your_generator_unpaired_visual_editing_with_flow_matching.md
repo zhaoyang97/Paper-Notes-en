@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching
 description: >-
-  [ICML 2026][Image Generation][flow matching] The authors propose Bootstrap Your Generator (ByG), an editing training framework for flow matching that does not require paired data. It extracts editing direction priors from a frozen base model, maintains source structure via cycle consistency, and bridges the training-inference gap using gradient routing. It outper
+  [ICML2026][Image Generation][Unpaired training] The authors propose Bootstrap Your Generator (ByG), an editing training framework for flow matching that does not require paired data. It extracts editing direction priors from a frozen base model, maintains source structure via cycle consistency, and bridges the training-inference gap using gradient routing. It outperforms supervised baselines trained on millions of paired samples in both image and video editing.
 tags:
-  - ICML 2026
-  - Image Generation
-  - flow matching
-  - Image Editing
-  - Video Editing
-  - cycle consistency
+  - "ICML2026"
+  - "Image Generation"
+  - "Unpaired training"
+  - "flow matching"
+  - "image editing"
+  - "video editing"
+  - "cycle consistency"
 date: 2026-05-08
-content_hash: aeb480b015af7f25
+content_hash: f4ce93fe3c74e212
 ---
+
 # Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching
 
 **Conference**: ICML2026  
@@ -144,8 +146,8 @@ Ours (ByG) was trained on ~330 unpaired videos, while Ditto was trained on milli
 - [\[ICML 2026\] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing](shifting_the_breaking_point_of_flow_matching_for_multi-instance_editing.md)
 - [\[ICML 2026\] A Kinetic Energy Perspective of Flow Matching](a_kinetic_energy_perspective_of_flow_matching.md)
 - [\[ICML 2026\] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization](principled_rl_for_flow_matching_emerges_from_the_chunk-level_policy_optimization.md)
+- [\[ICML 2026\] (HB-ARFM) History-Bootstrapped Flow Matching for Inverse Boiling Reconstruction](hb-arfm_history-bootstrapped_flow_matching_for_inverse_boiling_reconstruction.md)
 - [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](../../CVPR2026/image_generation/bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
-- [\[ICML 2026\] Stable Velocity: A Variance Perspective on Flow Matching](stable_velocity_a_variance_perspective_on_flow_matching.md)
 
 </div>
 

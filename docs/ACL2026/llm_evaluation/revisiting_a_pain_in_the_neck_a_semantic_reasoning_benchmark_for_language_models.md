@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][SEMANTICQA] This paper proposes SEMANTICQA, which unifies idioms, lexical collocations, noun compounds, and verbal multiword expressions into classification, extraction, interpretation, and sequential composition tasks. It finds that while strong LLMs perform well in open-ended interpretation, they remain significantly unstable in
+  [ACL2026 Oral][LLM Evaluation][SEMANTICQA] This paper proposes SEMANTICQA, which unifies idioms, lexical collocations, noun compounds, and verbal multiword expressions into classification, extraction, interpretation, and sequential composition tasks. It finds that while strong LLMs perform well in open-ended interpretation, they remain significantly unstable in structured extraction, fine-grained semantic classification, and cascaded workflows.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - SEMANTICQA
-  - semantic phrase
-  - multiword expression
-  - benchmark
-  - task composition
+  - "ACL2026 Oral"
+  - "LLM Evaluation"
+  - "SEMANTICQA"
+  - "semantic phrase"
+  - "multiword expression"
+  - "benchmark"
+  - "task composition"
 date: 2026-05-08
-content_hash: 31132646ec64ad6a
+content_hash: c08a522fe6e5d14a
 ---
+
 # Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models
 
 **Conference**: ACL2026 Oral  
@@ -119,8 +120,8 @@ SEMANTICQA is an evaluation benchmark and does not involve training new models. 
 - [\[ACL 2026\] Revisiting the Reliability of Language Models in Instruction-Following](revisiting_the_reliability_of_language_models_in_instruction-following.md)
 - [\[ACL 2026\] Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models](challenging_the_boundaries_of_reasoning_an_olympiad-level_math_benchmark_for_lar.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
+- [\[ICLR 2026\] Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry](../../ICLR2026/llm_evaluation/rethinking_llm-as-a-judge_representation-as-a-judge_with_small_language_models_v.md)
 - [\[ACL 2026\] Evaluating Reasoning Models for Queries with Presuppositions](evaluating_reasoning_models_for_queries_with_presuppositions.md)
-- [\[ACL 2025\] Com2: A Causal-Guided Benchmark for Exploring Complex Commonsense Reasoning in Large Language Models](../../ACL2025/llm_evaluation/com2_causal_commonsense.md)
 
 </div>
 

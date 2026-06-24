@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] A Study on PAVE Specification for Learnware
 description: >-
-  [ICLR 2026][Others][Paper Note] Addressing the challenge of identifying useful models from a massive repository without accessing training data in the "Learnware = Model + Specification" paradigm, this paper systematically investigates the PArameter VEctor specification (PAVE). By encoding model capabilities and task requirements via parameter update
+  [ICLR 2026][Learnware] Addressing the challenge of identifying useful models from a massive repository without accessing training data in the "Learnware = Model + Specification" paradigm, this paper systematically investigates the PArameter VEctor specification (PAVE). By encoding model capabilities and task requirements via parameter updates induced by fine-tuning, the authors prove its homology with the classic RKME specification from an NTK perspective. Leveraging LoRA-sty…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Learnware"
+  - "parameter vector specification"
+  - "model identification"
+  - "Neural Tangent Kernel (NTK)"
+  - "low-rank approximation"
 date: 2026-05-08
-content_hash: 9e7f53876f16650c
+content_hash: 96a26153982cf50b
 ---
+
 # A Study on PAVE Specification for Learnware
 
 **Conference**: ICLR 2026  
@@ -140,6 +145,7 @@ On tasks like GTSRB, PAVE closely tracks the Oracle (0.987 vs 0.894), while PAVE
 - Value: ⭐⭐⭐⭐ Provides a practical, privacy-preserving, and compute-efficient identification solution for model markets.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -148,7 +154,7 @@ On tasks like GTSRB, PAVE closely tracks the Oracle (0.987 vs 0.894), while PAVE
 - [\[ACL 2025\] Anything Goes? A Crosslinguistic Study of (Im)possible Language Learning in LMs](../../ACL2025/others/anything_goes_a_crosslinguistic_study_of_impossible_language_learning_in_lms.md)
 - [\[ACL 2025\] What Matters in Evaluating Book-Length Stories? A Systematic Study of Long Story Evaluation](../../ACL2025/others/what_matters_in_evaluating_book-length_stories_a_systematic_study_of_long_story_.md)
 - [\[ACL 2025\] Understanding Common Ground Misalignment in Goal-Oriented Dialog: A Case-Study with Ubuntu Chat Logs](../../ACL2025/others/understanding_common_ground_misalignment_in_goal-oriented_dialog_a_case-study_wi.md)
-- [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
+- [\[ICLR 2026\] IC-Custom: Diverse Image Customization via In-Context Learning](ic-custom_diverse_image_customization_via_in-context_learning.md)
 
 </div>
 

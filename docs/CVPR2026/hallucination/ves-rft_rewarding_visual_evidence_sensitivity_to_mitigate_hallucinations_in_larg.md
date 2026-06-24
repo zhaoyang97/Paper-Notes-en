@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Hallucination Detection][GRPO] VES-RFT defines the "change in model decision entropy before and after providing an image" as a label-free Visual Evidence Sensitivity (VES) reward. Combined with a verifiable reward that automatically checks whether generated objects actually exist in the image, the model is jointly optimized using critic-free GRPO. T
+  [CVPR 2026][Hallucination Detection][Object Hallucination] VES-RFT defines the "change in model decision entropy before and after providing an image" as a label-free Visual Evidence Sensitivity (VES) reward. Combined with a verifiable reward that automatically checks whether generated objects actually exist in the image, the model is jointly optimized using critic-free GRPO. This allows the VLM to learn to be "confident because it saw the image" rather than "blindly confident…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - GRPO
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Object Hallucination"
+  - "Visual Evidence Sensitivity"
+  - "Reinforcement Fine-Tuning"
+  - "GRPO"
+  - "Verifiable Rewards"
 date: 2026-05-08
-content_hash: d7107a8016770fb3
+content_hash: 9d80a8d16a5e8871
 ---
+
 # VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -162,8 +167,8 @@ Removing components (Average settings):
 - [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
 - [\[CVPR 2026\] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models](causallens_sensitivity-guided_multi-head_causal_intervention_for_hallucination_m.md)
+- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
 - [\[ACL 2025\] Visual Evidence Prompting Mitigates Hallucinations in Large Vision-Language Models](../../ACL2025/hallucination/visual_evidence_prompting.md)
-- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
 
 </div>
 

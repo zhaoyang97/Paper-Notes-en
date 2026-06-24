@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On the Generalization Gap in Self-Evolving Language Model Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][DPO] Under the strict closed-loop setting of "unlabeled prompts + base model" only, this paper systematically compares four self-evolution (SE) strategies (single-round verification, multi-round revision, iterative training, curriculum learning) against oracle supervision. It finds that on Knights & Knaves logical reasoning
+  [ICML 2026][Reasoning][Closed-loop self-evolution] Under the strict closed-loop setting of "unlabeled prompts + base model" only, this paper systematically compares four self-evolution (SE) strategies (single-round verification, multi-round revision, iterative training, curriculum learning) against oracle supervision. It finds that on Knights & Knaves logical reasoning, SE improves Gemma 3 4B from 31.0% to 44.8%, yet a persistent gap of 8–13% remains relative to the oracle's…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - DPO
-  - Knights & Knaves
+  - "ICML 2026"
+  - "Reasoning"
+  - "Closed-loop self-evolution"
+  - "DPO"
+  - "Generator-Verifier Game"
+  - "Knights & Knaves"
+  - "Reasoning Generalization"
 date: 2026-05-08
-content_hash: c7341e8a870896dd
+content_hash: f9aee5f5f9f0daf4
 ---
+
 # On the Generalization Gap in Self-Evolving Language Model Reasoning
 
 **Conference**: ICML 2026  
@@ -128,11 +132,11 @@ Standard DPO is used throughout, with the reference policy fixed as the base mod
 
 ## Related Papers
 
+- [\[ICLR 2026\] StepORLM: A Self-Evolving Framework with Generative Process Supervision for Operations Research Language Models](../../ICLR2026/llm_reasoning/steporlm_a_self-evolving_framework_with_generative_process_supervision_for_opera.md)
 - [\[AAAI 2026\] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement](../../AAAI2026/llm_reasoning/incorporating_self-rewriting_into_large_language_model_reasoning_reinforcement.md)
+- [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](../../ICLR2026/llm_reasoning/on_the_thinking-language_modeling_gap_in_large_language_models.md)
 - [\[ICML 2026\] SmartThinker: Progressive Chain-of-Thought Length Calibration for Efficient Large Language Model Reasoning](smartthinker_progressive_chain-of-thought_length_calibration_for_efficient_large.md)
-- [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
-- [\[ICML 2026\] GRPO is Secretly a Process Reward Model](grpo_is_secretly_a_process_reward_model.md)
-- [\[ACL 2026\] Dissecting Failure Dynamics in Large Language Model Reasoning](../../ACL2026/llm_reasoning/dissecting_failure_dynamics_in_large_language_model_reasoning.md)
+- [\[ICML 2026\] DyCon: Dynamic Reasoning Control via Evolving Difficulty Modeling](dycon_dynamic_reasoning_control_via_evolving_difficulty_modeling.md)
 
 </div>
 

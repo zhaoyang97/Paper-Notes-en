@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] D2C: Accelerating Diffusion Model Training under Minimal Budgets via Condensation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This work is the first to apply Dataset Condensation (DC) to diffusion model training, proposing the two-stage D2C framework. The Select stage uses a diffusion difficulty score and interval sampling to select a compact subset, while the Attach stage appends textual and visual representations to each sample. Using only
+  [CVPR 2026][Image Generation][Diffusion model training] This work is the first to apply Dataset Condensation (DC) to diffusion model training, proposing the two-stage D2C framework. The Select stage uses a diffusion difficulty score and interval sampling to select a compact subset, while the Attach stage appends textual and visual representations to each sample. Using only 0.8% of ImageNet (10K images), it achieves an FID of 4.3 in 40K steps, which is 100× faster than REPA an…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion model training"
+  - "Dataset Condensation"
+  - "Difficulty Scoring"
+  - "Interval Sampling"
+  - "REPA acceleration"
 date: 2026-05-08
-content_hash: 2839168b429a7338
+content_hash: bd0c84651586bc3b
 ---
+
 # D2C: Accelerating Diffusion Model Training under Minimal Budgets via Condensation
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ D2C also works on 512² and CIFAR-10: CIFAR-10 gFID 3.95 (vs. random 9.72).
 
 ## Related Papers
 
+- [\[ICML 2026\] Geometry-Aware Dataset Condensation for Diffusion Model Training](../../ICML2026/image_generation/geometry-aware_dataset_condensation_for_diffusion_model_training.md)
 - [\[CVPR 2026\] Understanding, Accelerating, and Improving MeanFlow Training](understanding_accelerating_and_improving_meanflow_training.md)
 - [\[CVPR 2026\] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation](vde_training-free_accelerating_rectified_flow_model_via_velocity_decomposition_a.md)
 - [\[CVPR 2026\] SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching](sencache_accelerating_diffusion_model_inference_via_sensitivity-aware_caching.md)
 - [\[CVPR 2026\] One Model, Many Budgets: Elastic Latent Interfaces for Diffusion Transformers](one_model_many_budgets_elastic_latent_interfaces_for_diffusion_transformers.md)
-- [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](../../AAAI2026/image_generation/specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)
 
 </div>
 

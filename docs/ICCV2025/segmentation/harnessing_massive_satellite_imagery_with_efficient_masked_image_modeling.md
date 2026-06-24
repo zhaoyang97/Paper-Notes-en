@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Harnessing Massive Satellite Imagery with Efficient Masked Image Modeling
 description: >-
-  [ICCV 2025][Segmentation][Remote Sensing Foundation Model] This paper proposes a remote sensing model pre-training pipeline comprising OpticalRS-13M, a dataset of 13 million optical remote sensing images…
+  [ICCV 2025][Segmentation][Remote Sensing Foundation Model] This paper proposes a remote sensing model pre-training pipeline comprising OpticalRS-13M, a dataset of 13 million optical remote sensing images, and SelectiveMAE, an efficient MIM method that selectively encodes and reconstructs patches based on semantic richness. Using only 40% of image patches, SelectiveMAE achieves performance comparable to full-patch training while delivering more than 2× speedup.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Efficient Pre-training"
   - "SelectiveMAE"
 date: 2026-05-08
-content_hash: 6b1c602d4841a374
+content_hash: 00f91dfc46ca76c6
 ---
 
 # Harnessing Massive Satellite Imagery with Efficient Masked Image Modeling
@@ -149,11 +149,11 @@ As a parameter-free method, HOG substantially outperforms learning-based alterna
 
 ## Related Papers
 
+- [\[ECCV 2024\] SeiT++: Masked Token Modeling Improves Storage-Efficient Training](../../ECCV2024/segmentation/seit_masked_token_modeling_improves_storage-efficient_training.md)
+- [\[ICML 2025\] Alberta Wells Dataset: Pinpointing Oil and Gas Wells from Satellite Imagery](../../ICML2025/segmentation/alberta_wells_dataset_pinpointing_oil_and_gas_wells_from_satellite_imagery.md)
 - [\[AAAI 2026\] Generalizable Slum Detection from Satellite Imagery with Mixture-of-Experts](../../AAAI2026/segmentation/generalizable_slum_detection_from_satellite_imagery_with_mixture-of-experts.md)
+- [\[ICML 2025\] Using Multiple Input Modalities Can Improve Data-Efficiency and O.O.D. Generalization for ML with Satellite Imagery](../../ICML2025/segmentation/using_multiple_input_modalities_can_improve_data-efficiency_and_ood_generalizati.md)
 - [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](../../CVPR2026/segmentation/mrm_masked_representation_modeling_domain_adaptive.md)
-- [\[ICCV 2025\] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation](exploring_probabilistic_modeling_beyond_domain_generalization_for_semantic_segme.md)
-- [\[NeurIPS 2025\] Seg-VAR: Image Segmentation with Visual Autoregressive Modeling](../../NeurIPS2025/segmentation/seg-var_image_segmentation_with_visual_autoregressive_modeling.md)
-- [\[ICCV 2025\] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation](inter2former_dynamic_hybrid_attention_for_efficient_high-precision_interactive_s.md)
 
 </div>
 

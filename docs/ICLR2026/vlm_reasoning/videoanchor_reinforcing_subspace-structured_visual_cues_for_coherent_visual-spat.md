@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoAnchor: Reinforcing Subspace-Structured Visual Cues for Coherent Visual-Spatial Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] VideoAnchor is a training-free test-time plugin that identifies "visual anchors" stable across frames from video or multi-view image tokens using Sparse Subspace Clustering (SSC). These anchors are converted into Q/K/V attention scaling factors to mitigate the over-reliance of VLMs on textual priors, providing consiste
+  [ICLR 2026][VLM Reasoning][Video Spatial Reasoning] VideoAnchor is a training-free test-time plugin that identifies "visual anchors" stable across frames from video or multi-view image tokens using Sparse Subspace Clustering (SSC). These anchors are converted into Q/K/V attention scaling factors to mitigate the over-reliance of VLMs on textual priors, providing consistent improvements for multiple MLLMs on spatial tasks like VSI-Bench, All-Angles-Bench, SPAR-Bench…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Video Spatial Reasoning"
+  - "Attention Reinforcement"
+  - "Sparse Subspace Clustering"
+  - "Test-time Plugin"
+  - "Visual Anchors"
 date: 2026-05-08
-content_hash: aa44d7949acc8a45
+content_hash: ff259ee2e284fa69
 ---
+
 # VideoAnchor: Reinforcing Subspace-Structured Visual Cues for Coherent Visual-Spatial Reasoning
 
 **Conference**: ICLR 2026  
@@ -176,6 +182,7 @@ Ablations on Q/K/V positions show that value amplification is the primary driver
 - **Value**: ⭐⭐⭐⭐☆ Highly practical for spatial grounding in video/multi-view VLMs, especially where re-training is not feasible.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

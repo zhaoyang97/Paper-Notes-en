@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Knowledge Exchange with Confidence: Cost-Effective LLM Integration for Reliable and Efficient Visual Question Answering
 description: >-
-  [ICLR 2026][Multimodal VLM][VQA] A **well-calibrated small VQA model** outputs reliable confidence scores to route questions into three tiers: high (VQA answers directly), medium (LLM acts as a "consultant" using candidate answers), or low (LLM acts as a "teacher" via full delegation). This significantly cuts expensive LLM calls while maintaining or e
+  [ICLR 2026][Multimodal VLM][VQA] A **well-calibrated small VQA model** outputs reliable confidence scores to route questions into three tiers: high (VQA answers directly), medium (LLM acts as a "consultant" using candidate answers), or low (LLM acts as a "teacher" via full delegation). This significantly cuts expensive LLM calls while maintaining or even improving accuracy.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VQA
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VQA"
+  - "LLM-VQA collaboration"
+  - "confidence calibration"
+  - "uncertainty"
+  - "diverse ensemble"
+  - "dynamic delegation"
 date: 2026-05-08
-content_hash: a746ee02a1328128
+content_hash: 1a040b8a9b4aba38
 ---
+
 # Knowledge Exchange with Confidence: Cost-Effective LLM Integration for Reliable and Efficient Visual Question Answering
 
 **Conference**: ICLR 2026  
@@ -120,8 +126,8 @@ To match LLM-only accuracy, Uni-VQA requires significantly fewer LLM calls. For 
 
 - [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
 - [\[ACL 2026\] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering](../../ACL2026/multimodal_vlm/wikiseeker_rethinking_the_role_of_vision-language_models_in_knowledge-based_visu.md)
-- [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
 - [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](../../CVPR2026/multimodal_vlm/cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
+- [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
 - [\[ACL 2025\] MAGIC-VQA: Multimodal and Grounded Inference with Commonsense Knowledge for Visual Question Answering](../../ACL2025/multimodal_vlm/magic-vqa_multimodal_and_grounded_inference_with_commonsense_knowledge_for_visua.md)
 
 </div>

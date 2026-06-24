@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Addressing the issue where "input pre-filtering" LLM unlearning methods fail almost completely under prefix or composite question attacks, this paper proposes the PoRT framework. It uses In-Context Learning to clean adversarial inputs, performs confidence-based post-judgment on the "cleaned Q&A pairs," and triggers mul
+  [ICLR 2026][LLM Safety][LLM Unlearning] Addressing the issue where "input pre-filtering" LLM unlearning methods fail almost completely under prefix or composite question attacks, this paper proposes the PoRT framework. It uses In-Context Learning to clean adversarial inputs, performs confidence-based post-judgment on the "cleaned Q&A pairs," and triggers multi-round self-correction only for non-compliant or low-confidence outputs. This ensures high robustness under adversaria…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Unlearning"
+  - "Adversarial Robustness"
+  - "Input Pre-filtering"
+  - "Post Judgment"
+  - "Selective Classification"
 date: 2026-05-08
-content_hash: 811367869b162860
+content_hash: c1f1f9641e35e6be
 ---
+
 # Robust LLM Unlearning via Post Judgment and Multi-Round Thinking
 
 **Conference**: ICLR 2026  
@@ -147,11 +153,11 @@ TOFU 10% split under noise prefix attack:
 
 ## Related Papers
 
+- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
 - [\[ICLR 2026\] Dual-Space Smoothness for Robust and Balanced LLM Unlearning](dual-space_smoothness_for_robust_and_balanced_llm_unlearning.md)
 - [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
-- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
-- [\[ICML 2025\] Robust Multi-bit Text Watermark with LLM-based Paraphrasers](../../ICML2025/llm_safety/robust_multi-bit_text_watermark_with_llm-based_paraphrasers.md)
 - [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
+- [\[ICML 2025\] Robust Multi-bit Text Watermark with LLM-based Paraphrasers](../../ICML2025/llm_safety/robust_multi-bit_text_watermark_with_llm-based_paraphrasers.md)
 
 </div>
 

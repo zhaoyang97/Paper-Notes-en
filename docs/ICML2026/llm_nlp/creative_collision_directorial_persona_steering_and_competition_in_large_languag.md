@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Creative Collision: Directorial Persona Steering and Competition in Large Language Models
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] Two semantically opposing "directorial persona" steering vectors (Spielberg's optimistic redemption vs. Scorsese's dark moral ambiguity) are simultaneously injected into the residual stream of an LLM. This study systematically characterizes the moral tone, coherence, and geometric changes during the competition between
+  [ICML2026][LLM (Other)][Activation Steering] Two semantically opposing "directorial persona" steering vectors (Spielberg's optimistic redemption vs. Scorsese's dark moral ambiguity) are simultaneously injected into the residual stream of an LLM. This study systematically characterizes the moral tone, coherence, and geometric changes during the competition between these two directions, discovering three counter-intuitive phenomena: "directional dominance," "coherence trough…
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Activation Steering"
+  - "Representation Engineering"
+  - "Vector Competition"
+  - "Moral Tone"
+  - "Residual Stream Geometry"
 date: 2026-05-08
-content_hash: 572923a5419ea52f
+content_hash: eea34c6e1ce69518
 ---
+
 # Creative Collision: Directorial Persona Steering and Competition in Large Language Models
 
 **Conference**: ICML2026  
@@ -119,11 +125,11 @@ For each $(\alpha,\lambda)$ condition, $G=50$ segments (200 tokens, temperature 
 
 ## Related Papers
 
-- [\[ACL 2025\] Sample-Efficient Human Evaluation of Large Language Models via Maximum Discrepancy Competition](../../ACL2025/llm_nlp/sample-efficient_human_evaluation_of_large_language_models_via_maximum_discrepan.md)
 - [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](the_cylindrical_representation_hypothesis_for_language_model_steering.md)
-- [\[ACL 2025\] Steering off Course: Reliability Challenges in Steering Language Models](../../ACL2025/llm_nlp/steering_off_course_reliability_challenges_in_steering_language_models.md)
 - [\[ACL 2026\] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models](../../ACL2026/llm_nlp/costomcausal-oriented_steering_for_intrinsic_theory-of-mind_alignment_in_large_l.md)
-- [\[ACL 2026\] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models](../../ACL2026/llm_nlp/personaarena_dynamic_simulation_for_evaluating_and_enhancing_persona-level_role-.md)
+- [\[ICML 2026\] Emergence of Hierarchical Emotion Organization in Large Language Models](emergence_of_hierarchical_emotion_organization_in_large_language_models.md)
+- [\[ACL 2025\] Sample-Efficient Human Evaluation of Large Language Models via Maximum Discrepancy Competition](../../ACL2025/llm_nlp/sample-efficient_human_evaluation_of_large_language_models_via_maximum_discrepan.md)
+- [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](../../ICLR2026/llm_nlp/fine-grained_activation_steering_steering_less_achieving_more.md)
 
 </div>
 

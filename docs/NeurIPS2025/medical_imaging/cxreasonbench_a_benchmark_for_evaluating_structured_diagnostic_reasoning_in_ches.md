@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays
 description: >-
-  [NeurIPS 2025][Medical Imaging][chest X-ray] This paper proposes CheXStruct and CXReasonBench — a structured diagnostic reasoning evaluation framework for chest X-rays that employs multi-path…
+  [NeurIPS 2025][Medical Imaging][chest X-ray] This paper proposes CheXStruct and CXReasonBench — a structured diagnostic reasoning evaluation framework for chest X-rays that employs multi-path, multi-stage assessment to reveal critical deficiencies in existing LVLMs at intermediate reasoning steps.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "structured evaluation"
 date: 2026-05-08
-content_hash: 63260f53fda1bb57
+content_hash: 1fbb8c793c357114
 ---
 
 # CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays
@@ -157,11 +157,11 @@ The system comprises two complementary components:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Temporal Inversion for Learning Interval Change in Chest X-Rays](../../CVPR2026/medical_imaging/temporal_inversion_for_learning_interval_change_in_chest_x-rays.md)
+- [\[ECCV 2024\] CheX: Interactive Localization and Region Description in Chest X-rays](../../ECCV2024/medical_imaging/chex_interactive_localization_and_region_description_in_chest_x-rays.md)
 - [\[CVPR 2026\] Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset](../../CVPR2026/medical_imaging/instruction-guided_lesion_segmentation_for_chest_x-rays_with_automatically_gener.md)
-- [\[ICCV 2025\] GEMeX: A Large-Scale, Groundable, and Explainable Medical VQA Benchmark for Chest X-ray Diagnosis](../../ICCV2025/medical_imaging/gemex_a_large-scale_groundable_and_explainable_medical_vqa_benchmark_for_chest_x.md)
 - [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
 - [\[NeurIPS 2025\] Mind the (Data) Gap: Evaluating Vision Systems in Small Data Applications](mind_the_data_gap_evaluating_vision_systems_in_small_data_applications.md)
-- [\[NeurIPS 2025\] RadZero: Similarity-Based Cross-Attention for Explainable Vision-Language Alignment in Chest X-ray](radzero_similarity-based_cross-attention_for_explainable_vision-language_alignme.md)
 
 </div>
 

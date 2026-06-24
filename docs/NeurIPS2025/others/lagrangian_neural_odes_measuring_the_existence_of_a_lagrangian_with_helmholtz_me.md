@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lagrangian neural ODEs: Measuring the existence of a Lagrangian with Helmholtz metrics
 description: >-
-  [NeurIPS 2025][Neural ODE] This paper proposes Helmholtz metrics — differentiable metrics derived from the Helmholtz conditions — to quantify how closely a given ODE approximates the Euler-Lagrange equations. These metri…
+  [NeurIPS 2025][Neural ODE] This paper proposes Helmholtz metrics — differentiable metrics derived from the Helmholtz conditions — to quantify how closely a given ODE approximates the Euler-Lagrange equations. These metrics are incorporated as regularization terms into second-order Neural ODE training, forming Lagrangian Neural ODEs that guide the model toward true physical laws with zero additional inference overhead.
 tags:
   - "NeurIPS 2025"
   - "Neural ODE"
@@ -11,7 +11,7 @@ tags:
   - "physics regularization"
   - "Euler-Lagrange equations"
 date: 2026-05-08
-content_hash: d89f4b38bc22a8ac
+content_hash: ae0f62c18c852b8e
 ---
 
 # Lagrangian neural ODEs: Measuring the existence of a Lagrangian with Helmholtz metrics
@@ -126,11 +126,11 @@ Comparison of 40 pairs of regularized vs. unregularized models (MSE ratio $R = \
 
 ## Related Papers
 
+- [\[ACL 2025\] A Measure of the System Dependence of Automated Metrics](../../ACL2025/others/a_measure_of_the_system_dependence_of_automated_metrics.md)
+- [\[ACL 2025\] An Analysis of Datasets, Metrics and Models in Keyphrase Generation](../../ACL2025/others/an_analysis_of_datasets_metrics_and_models_in_keyphrase_generation.md)
 - [\[ICLR 2026\] Measuring Uncertainty Calibration](../../ICLR2026/others/measuring_uncertainty_calibration.md)
-- [\[AAAI 2026\] Measuring Model Performance in the Presence of an Intervention](../../AAAI2026/others/measuring_model_performance_in_the_presence_of_an_intervention.md)
 - [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
-- [\[ICLR 2026\] TabStruct: Measuring Structural Fidelity of Tabular Data](../../ICLR2026/others/tabstruct_measuring_structural_fidelity_of_tabular_data.md)
-- [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
+- [\[AAAI 2026\] Measuring Model Performance in the Presence of an Intervention](../../AAAI2026/others/measuring_model_performance_in_the_presence_of_an_intervention.md)
 
 </div>
 

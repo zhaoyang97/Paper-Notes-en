@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens
 description: >-
-  [CVPR 2026][Human Understanding][Mixture-of-Transformers] LLaMo extends pretrained LLMs into a unified large model capable of both "motion-to-text" (understanding) and "text-to-motion" (generation) using "modality-split Mixture-of-Transformers + continuous causal motion tokens + flow matching decoding heads + exit heads." The key is **freezing text modules to preserve the ori
+  [CVPR 2026][Human Understanding][Human Motion] LLaMo extends pretrained LLMs into a unified large model capable of both "motion-to-text" (understanding) and "text-to-motion" (generation) using "modality-split Mixture-of-Transformers + continuous causal motion tokens + flow matching decoding heads + exit heads." The key is **freezing text modules to preserve the original language capabilities of the LLM**, while supporting real-time (≥30 FPS) streaming generation of arbitrary…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Mixture-of-Transformers
-  - Flow Matching
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human Motion"
+  - "Unified Multi-modal"
+  - "Mixture-of-Transformers"
+  - "Continuous Autoregressive"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: b96d98dedce99fd2
+content_hash: b5f6a236a41baae0
 ---
+
 # LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens
 
 **Conference**: CVPR 2026  
@@ -139,10 +143,10 @@ Note: MPJPE/MPJRE are average joint position/rotation errors; sJPE measures reco
 
 ## Related Papers
 
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
+- [\[CVPR 2026\] Bridging Facial Understanding and Animation via Language Models](bridging_facial_understanding_and_animation_via_language_models.md)
 - [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
 - [\[CVPR 2026\] HandX: Scaling Bimanual Motion and Interaction Generation](handx_scaling_bimanual_motion_and_interaction_generation.md)
-- [\[CVPR 2026\] Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](humanoid-gpt_scaling_data_and_structure_for_zero-shot_motion_tracking.md)
-- [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
 - [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](unified_number-free_text-to-motion_generation_via_flow_matching.md)
 
 </div>

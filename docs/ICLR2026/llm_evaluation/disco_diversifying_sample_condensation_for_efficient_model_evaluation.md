@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DISCO: Diversifying Sample Condensation for Efficient Model Evaluation
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] DISCO proposes a minimalist criterion—"selecting samples where models disagree most"—to condense evaluation sets. Coupled with a "model signature + simple regression" approach to directly predict full-set performance, it reduces evaluation costs by 99% using only 100 samples on MMLU/HellaSwag/Winogrande/ARC with an err
+  [ICLR 2026][LLM Evaluation][Efficient Evaluation] DISCO proposes a minimalist criterion—"selecting samples where models disagree most"—to condense evaluation sets. Coupled with a "model signature + simple regression" approach to directly predict full-set performance, it reduces evaluation costs by 99% using only 100 samples on MMLU/HellaSwag/Winogrande/ARC with an error of approximately 1 percentage point, setting a new SOTA for efficient evaluation.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Efficient Evaluation"
+  - "Sample Condensation"
+  - "Model Disagreement"
+  - "Performance Prediction"
+  - "Anchor Selection"
 date: 2026-05-08
-content_hash: 589b6e6adffc8cce
+content_hash: 3999eb053fd092ff
 ---
+
 # DISCO: Diversifying Sample Condensation for Efficient Model Evaluation
 
 **Conference**: ICLR 2026  

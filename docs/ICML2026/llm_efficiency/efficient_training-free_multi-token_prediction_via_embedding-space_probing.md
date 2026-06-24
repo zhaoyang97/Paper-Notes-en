@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] This paper proposes ESP (Embedding-Space Probing): without modifying any weights or training auxiliary models, it injects "mean prompt embeddings" as mask tokens into the input sequence of a frozen LLM. It probes multiple future tokens simultaneously in a single forward pass and uses the base model itself for lossless
+  [ICML 2026][LLM Efficiency][Multi-token prediction] This paper proposes ESP (Embedding-Space Probing): without modifying any weights or training auxiliary models, it injects "mean prompt embeddings" as mask tokens into the input sequence of a frozen LLM. It probes multiple future tokens simultaneously in a single forward pass and uses the base model itself for lossless speculative verification. On LLaMA3 / Qwen3, it achieves 7–11% higher average acceptance length and 15–19% h…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Multi-token prediction"
+  - "training-free"
+  - "embedding-space probing"
+  - "speculative decoding"
+  - "dynamic draft tree"
 date: 2026-05-08
-content_hash: 541b6799cf5cef27
+content_hash: e14e5c7eae481b83
 ---
+
 # Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing
 
 **Conference**: ICML 2026  
@@ -143,9 +149,9 @@ Ours (ESP) achieves the highest (or tied for highest) $\tau$ and S/R across 4 mo
 
 - [\[NeurIPS 2025\] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models](../../NeurIPS2025/llm_efficiency/l-mtp_leap_multi-token_prediction_beyond_adjacent_context_for_large_language_mod.md)
 - [\[NeurIPS 2025\] Efficient Training-Free Online Routing for High-Volume Multi-LLM Serving](../../NeurIPS2025/llm_efficiency/efficient_training-free_online_routing_for_high-volume_multi-llm_serving.md)
+- [\[ICLR 2026\] Training-Free Loosely Speculative Decoding: Accepting Semantically Correct Drafts Beyond Exact Match](../../ICLR2026/llm_efficiency/training-free_loosely_speculative_decoding_accepting_semantically_correct_drafts.md)
+- [\[ICLR 2026\] TrimR: Validator-based, Training-free Thinking Trimming for Efficient Test-time Scaling](../../ICLR2026/llm_efficiency/trimr_verifier-based_training-free_thinking_trimming_for_efficient_test-time_sca.md)
 - [\[ICML 2026\] Sparser Block-Sparse Attention via Token Permutation](sparser_block-sparse_attention_via_token_permutation.md)
-- [\[ICML 2026\] Training-Inference Consistent Segmented Execution for Long-Context LLMs](training-inference_consistent_segmented_execution_for_long-context_llms.md)
-- [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection](../../ICLR2026/llm_efficiency/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_selection.md)
 
 </div>
 

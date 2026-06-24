@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Online Dense Point Tracking with Streaming Memory
 description: >-
-  [ICCV 2025][Video Understanding][Dense point tracking] This paper proposes SPOT, a framework for online dense long-range point tracking via a customized memory readout module, sensory memory…
+  [ICCV 2025][Video Understanding][Dense point tracking] This paper proposes SPOT, a framework for online dense long-range point tracking via a customized memory readout module, sensory memory, and visibility-guided splatting. SPOT achieves state-of-the-art performance on the CVO benchmark with 10× fewer parameters and 2× faster speed, while matching or surpassing offline methods on multiple sparse tracking benchmarks.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "online processing"
   - "visibility estimation"
 date: 2026-05-08
-content_hash: 5d01e5b7d322f259
+content_hash: f658202f76140c5b
 ---
 
 # Online Dense Point Tracking with Streaming Memory
@@ -206,7 +206,7 @@ Training video length: 7 frames → 10 frames → 24 frames, EPE improves from 7
 - [\[ICCV 2025\] VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges](videollamb_long_streaming_video_understanding_with_recurrent_memory_bridges.md)
 - [\[ICCV 2025\] Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding](hierarchical_event_memory_for_accurate_and_low-latency_online_video_temporal_gro.md)
 - [\[ICCV 2025\] ResidualViT for Efficient Temporally Dense Video Encoding](residualvit_for_efficient_temporally_dense_video_encoding.md)
-- [\[ICCV 2025\] OVG-HQ: Online Video Grounding with Hybrid-modal Queries](ovg-hq_online_video_grounding_with_hybrid-modal_queries.md)
+- [\[CVPR 2025\] Context-Enhanced Memory-Refined Transformer for Online Action Detection](../../CVPR2025/video_understanding/context-enhanced_memory-refined_transformer_for_online_action_detection.md)
 
 </div>
 

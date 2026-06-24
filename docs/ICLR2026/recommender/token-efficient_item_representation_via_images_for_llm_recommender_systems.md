@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Token-Efficient Item Representation via Images for LLM Recommender Systems
 description: >-
-  [ICLR 2026][Recommender Systems][Paper Note] The authors propose I-LLMRec, which utilizes item images instead of lengthy text descriptions to represent item semantics in recommendation systems. Through the RISA alignment module and RERI retrieval module, the framework represents an item with only a single token while preserving rich semantics. It achieves an appr
+  [ICLR 2026][Recommender Systems][LLM Recommender Systems] The authors propose I-LLMRec, which utilizes item images instead of lengthy text descriptions to represent item semantics in recommendation systems. Through the RISA alignment module and RERI retrieval module, the framework represents an item with only a single token while preserving rich semantics. It achieves an approximate 2.93x inference speedup and outperforms text-description-based methods in recommendation perfo…
 tags:
-  - ICLR 2026
-  - Recommender Systems
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "LLM Recommender Systems"
+  - "Image Representation"
+  - "Token Efficiency"
+  - "Multimodal Alignment"
+  - "Retrieval-based Recommendation"
 date: 2026-05-08
-content_hash: 312957f9579d28fa
+content_hash: c015f935631eec0e
 ---
+
 # Token-Efficient Item Representation via Images for LLM Recommender Systems
 
 **Conference**: ICLR 2026  
@@ -149,9 +155,9 @@ I-LLMRec outperforms TRSR (description-based) across nearly all datasets and met
 
 ## Related Papers
 
+- [\[ICLR 2026\] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)
 - [\[ICLR 2026\] Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning](rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme.md)
 - [\[ICLR 2026\] Continual Low-Rank Adapters for LLM-based Generative Recommender Systems](continual_low-rank_adapters_for_llm-based_generative_recommender_systems.md)
-- [\[ACL 2025\] CoVE: Compressed Vocabulary Expansion Makes Better LLM-based Recommender Systems](../../ACL2025/recommender/cove_compressed_vocabulary_expansion_makes_better_llm-based_recommender_systems.md)
 - [\[AAAI 2026\] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems](../../AAAI2026/recommender/rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati.md)
 - [\[ICLR 2026\] Catalog-Native LLM: Speaking Item-ID dialect with Less Entanglement for Recommendation](catalog-native_llm_speaking_item-id_dialect_with_less_entanglement_for_recommend.md)
 

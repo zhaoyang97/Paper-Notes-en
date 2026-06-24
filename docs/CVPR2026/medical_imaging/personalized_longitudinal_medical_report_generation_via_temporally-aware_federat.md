@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This paper proposes "Federated Temporal Adaptation" (FTA), a federated learning setting that treats temporal evolution as a first-class citizen. Using the FedTAR framework—featuring demographic-driven personalized LoRA and meta-learned temporal residual aggregation—it models longitudinal changes in patient follow-ups u
+  [CVPR 2026][Medical Imaging][Longitudinal Medical Report Generation] This paper proposes "Federated Temporal Adaptation" (FTA), a federated learning setting that treats temporal evolution as a first-class citizen. Using the FedTAR framework—featuring demographic-driven personalized LoRA and meta-learned temporal residual aggregation—it models longitudinal changes in patient follow-ups under privacy constraints. It improves linguistic accuracy, temporal coherence…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Longitudinal Medical Report Generation"
+  - "Federated Learning"
+  - "Temporal Drift"
+  - "Personalized LoRA"
+  - "Meta-Learning Aggregation"
 date: 2026-05-08
-content_hash: 76ac9879cab1ec09
+content_hash: 0a77b474dae7f5ab
 ---
+
 # Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation
 
 **Conference**: CVPR 2026  
@@ -125,6 +131,7 @@ CIDEr improved from 31.70 (best baseline) to 42.80, showing that temporal and de
 - Value: ⭐⭐⭐⭐ (Directly applicable to privacy-sensitive clinical longitudinal modeling)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -132,8 +139,8 @@ CIDEr improved from 31.70 (best baseline) to 42.80, showing that temporal and de
 - [\[CVPR 2026\] TIM: Temporal Decoupling with Iterative Mutual-Refinement Model for Longitudinal Radiology Report Generation](tim_temporal_decoupling_with_iterative_mutual-refinement_model_for_longitudinal_.md)
 - [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 - [\[CVPR 2026\] OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging](omnifm_toward_modality-robust_and_task-agnostic_federated_learning_for_heterogen.md)
+- [\[ICML 2026\] Shift-Dependent Asymmetry: Orthogonal Inverse Low-Rank Adaptation for Federated Medical Segmentation](../../ICML2026/medical_imaging/shift-dependent_asymmetry_orthogonal_inverse_low-rank_adaptation_for_federated_m.md)
 - [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
-- [\[CVPR 2026\] SHAPE: Structure-aware Hierarchical Unsupervised Domain Adaptation with Plausibility Evaluation for Medical Image Segmentation](shape_structure-aware_hierarchical_unsupervised_domain_adaptation_with_plausibil.md)
 
 </div>
 

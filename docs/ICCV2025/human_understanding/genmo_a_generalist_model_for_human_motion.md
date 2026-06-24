@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GENMO: A GENeralist Model for Human MOtion
 description: >-
-  [ICCV 2025][Human Understanding][Human motion modeling] This paper proposes GENMO, the first generalist model that unifies human motion estimation (recovering motion from video/2D keypoints) and motion generation (synthe…
+  [ICCV 2025][Human Understanding][Human motion modeling] This paper proposes GENMO, the first generalist model that unifies human motion estimation (recovering motion from video/2D keypoints) and motion generation (synthesizing motion from text/music/keyframes) within a single framework. Through a dual-mode training paradigm (regression + diffusion), GENMO achieves both precise estimation and diverse generation in a single model.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "multimodal conditioning"
 date: 2026-05-08
-content_hash: 39eb07f741265eba
+content_hash: 111f29bac77b2ba4
 ---
 
 # GENMO: A GENeralist Model for Human MOtion
@@ -175,10 +175,10 @@ corresponding to gravity-view orientation (6D), root velocity (3D), SMPL joint a
 ## Related Papers
 
 - [\[ICCV 2025\] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation](genm3_generative_pretrained_multi-path_motion_model_for_text_conditional_human_m.md)
-- [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
+- [\[ECCV 2024\] Large Motion Model for Unified Multi-Modal Motion Generation](../../ECCV2024/human_understanding/large_motion_model_for_unified_multi-modal_motion_generation.md)
+- [\[ECCV 2024\] HUMOS: Human Motion Model Conditioned on Body Shape](../../ECCV2024/human_understanding/humos_human_motion_model_conditioned_on_body_shape.md)
 - [\[ICCV 2025\] EgoAgent: A Joint Predictive Agent Model in Egocentric Worlds](egoagent_a_joint_predictive_agent_model_in_egocentric_worlds.md)
-- [\[NeurIPS 2025\] MOSPA: Human Motion Generation Driven by Spatial Audio](../../NeurIPS2025/human_understanding/mospa_human_motion_generation_driven_by_spatial_audio.md)
-- [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](../../AAAI2026/human_understanding/kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
+- [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
 
 </div>
 

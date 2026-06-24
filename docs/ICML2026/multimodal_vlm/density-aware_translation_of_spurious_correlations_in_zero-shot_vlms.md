@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors observe that CLIP embeddings exhibit an anisotropic ellipsoidal distribution on the hypersphere, where spurious samples cluster near the mean. They propose DAT: estimating a local density $D_{y,a}(z)$ using a reference set for each (class, spurious attribute) group, and rescaling the original cosine similar
+  [ICML 2026][Multimodal VLM][Zero-shot classification] The authors observe that CLIP embeddings exhibit an anisotropic ellipsoidal distribution on the hypersphere, where spurious samples cluster near the mean. They propose DAT: estimating a local density $D_{y,a}(z)$ using a reference set for each (class, spurious attribute) group, and rescaling the original cosine similarity via $\tilde s_{y,a}(x)=s_{y,a}(x)/(D_{y,a}(z)+\varepsilon)^{\lambda}$ based on whether a sample reside…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Zero-shot classification"
+  - "Spurious correlations"
+  - "CLIP anisotropy"
+  - "Local density"
+  - "Group robustness"
 date: 2026-05-08
-content_hash: ff09915c8d5ffb69
+content_hash: e245f17fd67de3b1
 ---
+
 # Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs
 
 **Conference**: ICML 2026  
@@ -147,14 +153,15 @@ Ablations focus on DAT* vs DAT, the scaling factor $\lambda$, neighborhood $k$, 
 - Value: ⭐⭐⭐⭐ Practical, zero-shot, and easy to apply to any frozen VLM.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Label-Free Mitigation of Spurious Correlations in VLMs using Sparse Autoencoders](../../ICLR2026/multimodal_vlm/label-free_mitigation_of_spurious_correlations_in_vlms_using_sparse_autoencoders.md)
+- [\[ICLR 2026\] CARPRT: Class-Aware Zero-Shot Prompt Reweighting for Vision-Language Model](../../ICLR2026/multimodal_vlm/carprt_class-aware_zero-shot_prompt_reweighting_for_vision-language_model.md)
 - [\[ICML 2025\] The Devil Is in the Details: Tackling Unimodal Spurious Correlations for Generalizable Multimodal Reward Models](../../ICML2025/multimodal_vlm/the_devil_is_in_the_details_tackling_unimodal_spurious_correlations_for_generali.md)
-- [\[CVPR 2025\] Locality-Aware Zero-Shot Human-Object Interaction Detection](../../CVPR2025/multimodal_vlm/locality-aware_zero-shot_human-object_interaction_detection.md)
-- [\[CVPR 2026\] SOTA: Self-adaptive Optimal Transport for Zero-Shot Classification with Multiple Foundation Models](../../CVPR2026/multimodal_vlm/sota_self-adaptive_optimal_transport_for_zero-shot_classification_with_multiple_.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](../../CVPR2026/multimodal_vlm/explaining_clip_zero-shot_predictions_through_concepts.md)
 - [\[ICML 2026\] Deep Pre-Alignment for VLMs](deep_pre-alignment_for_vlms.md)
 
 </div>

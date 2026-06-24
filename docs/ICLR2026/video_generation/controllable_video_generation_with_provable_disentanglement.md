@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Controllable Video Generation with Provable Disentanglement
 description: >-
-  [ICLR 2026][Video Generation][GAN] This paper proposes CoVoGAN, which models static content variables and time-varying dynamic style variables separately. It provides identifiability guarantees through the principle of minimal change, sufficient change properties, and temporal conditional independence constraints, enabling more independent control over
+  [ICLR2026][Video Generation][Controllable Video Generation] This paper proposes CoVoGAN, which models static content variables and time-varying dynamic style variables separately. It provides identifiability guarantees through the principle of minimal change, sufficient change properties, and temporal conditional independence constraints, enabling more independent control over factors such as head movement, blinking, and camera displacement in video generation.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - GAN
+  - "ICLR2026"
+  - "Video Generation"
+  - "Controllable Video Generation"
+  - "Representation Disentanglement"
+  - "Identifiability"
+  - "Temporal Dynamic Modeling"
+  - "GAN"
 date: 2026-05-08
-content_hash: b7e47d039152e2c9
+content_hash: 8296b924699543dd
 ---
+
 # Controllable Video Generation with Provable Disentanglement
 
 **Conference**: ICLR2026  
@@ -156,7 +161,7 @@ The ablation study focuses on validating the two core components of the Temporal
 - [\[CVPR 2025\] ConMo: Controllable Motion Disentanglement and Recomposition for Zero-Shot Motion Transfer](../../CVPR2025/video_generation/conmo_controllable_motion_disentanglement_and_recomposition_for_zero-shot_motion.md)
 - [\[CVPR 2026\] PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing](../../CVPR2026/video_generation/performrecast_expression_and_head_pose_disentanglement_for_portrait_video_editin.md)
 - [\[AAAI 2026\] OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding](../../AAAI2026/video_generation/omnivdiff_omni_controllable_video_diffusion_for_generation_and_understanding.md)
-- [\[ICLR 2026\] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation](3d_scene_prompting_for_scene-consistent_camera-controllable_video_generation.md)
+- [\[ICLR 2026\] Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine-tuning.md)
 
 </div>
 

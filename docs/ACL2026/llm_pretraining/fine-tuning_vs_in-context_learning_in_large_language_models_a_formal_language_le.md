@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective
 description: >-
-  [ACL 2026][Pretraining][Fine-tuning] The authors utilize Probabilistic Hierarchical Context-Free Grammar (HPCFG) to construct a set of "contamination-free, bounded, and precisely samplable" formal languages as controlled testbeds. They propose the "Discriminative AUC Test" as a unified metric to systematically compare FT and ICL across 18 LLMs from 6 fami
+  [ACL 2026][LLM Pretraining][Formal Languages] The authors utilize Probabilistic Hierarchical Context-Free Grammar (HPCFG) to construct a set of "contamination-free, bounded, and precisely samplable" formal languages as controlled testbeds. They propose the "Discriminative AUC Test" as a unified metric to systematically compare FT and ICL across 18 LLMs from 6 families on 6 languages. The study finds that FT consistently outperforms ICL in-distribution…
 tags:
-  - ACL 2026
-  - Pretraining
-  - Fine-tuning
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Formal Languages"
+  - "Fine-tuning"
+  - "In-context Learning"
+  - "Discriminative Evaluation"
+  - "Probabilistic Context-Free Grammar"
 date: 2026-05-08
-content_hash: fef956fd95b8c7de
+content_hash: a6e9f656b88f058d
 ---
+
 # Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective
 
 **Conference**: ACL 2026  
@@ -133,15 +138,16 @@ After 512 training strings, all FT models achieve AUC > 0.99; ICL performance va
 - **Value**: ⭐⭐⭐⭐ Provides a credible bottom-line for the FT vs. ICL debate; the AUC tool is widely applicable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](../../NeurIPS2025/llm_pretraining/ricl_temporal_credit.md)
+- [\[ACL 2025\] Data Whisperer: Efficient Data Selection for Task-Specific LLM Fine-Tuning via Few-Shot In-Context Learning](../../ACL2025/llm_pretraining/data_whisperer_data_selection.md)
 - [\[ACL 2026\] FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](forever_forgetting_curve-inspired_memory_replay_for_language_model_continual_lea.md)
 - [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](../../ICLR2026/llm_pretraining/pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
-- [\[ACL 2025\] Data Whisperer: Efficient Data Selection for Task-Specific LLM Fine-Tuning via Few-Shot In-Context Learning](../../ACL2025/llm_pretraining/data_whisperer_data_selection.md)
-- [\[ACL 2026\] Compact Example-Based Explanations for Language Models](compact_example-based_explanations_for_language_models.md)
+- [\[ICLR 2026\] Distilled Pretraining: A modern lens of Data, In-Context Learning and Test-Time Scaling](../../ICLR2026/llm_pretraining/distilled_pretraining_a_modern_lens_of_data_in-context_learning_and_test-time_sc.md)
 
 </div>
 

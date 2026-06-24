@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Detecting the Future: All-at-Once Event Sequence Forecasting with Horizon Matching
 description: >-
-  [AAAI 2026][Time Series][Event sequence forecasting] This paper proposes DEF (Detection-based Event Forecasting), which draws on the set-matching idea from DETR in object detection and employs the Hungarian algorithm to…
+  [AAAI 2026][Time Series][Event sequence forecasting] This paper proposes DEF (Detection-based Event Forecasting), which draws on the set-matching idea from DETR in object detection and employs the Hungarian algorithm to align predicted and ground-truth event sequences, achieving high-accuracy and high-diversity long-horizon event forecasting with state-of-the-art results on five datasets.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "long-horizon forecasting"
   - "Hungarian algorithm"
 date: 2026-05-08
-content_hash: 090213b995514a73
+content_hash: fd3525071c1a28a1
 ---
 
 # Detecting the Future: All-at-Once Event Sequence Forecasting with Horizon Matching
@@ -168,11 +168,11 @@ DEF achieves state-of-the-art results in 9 out of 10 comparisons.
 
 ## Related Papers
 
-- [\[ICML 2026\] HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series](../../ICML2026/time_series/hepa_a_self-supervised_horizon-conditioned_event_predictive_architecture_for_tim.md)
+- [\[ICML 2026\] Once-for-All: Scalable Simultaneous Forecasting via Equilibrium State Estimation](../../ICML2026/time_series/once-for-all_scalable_simultaneous_forecasting_via_equilibrium_state_estimation.md)
 - [\[AAAI 2026\] Optimal Look-back Horizon for Time Series Forecasting in Federated Learning](optimal_look-back_horizon_for_time_series_forecasting_in_federated_learning.md)
 - [\[AAAI 2026\] A Theoretical Analysis of Detecting Large Model-Generated Time Series](a_theoretical_analysis_of_detecting_large_model-generated_time_series.md)
-- [\[ACL 2026\] ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning](../../ACL2026/time_series/odtqa-fore_an_open-domain_tabular_question_answering_dataset_for_future_data_for.md)
-- [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](../../ICML2026/time_series/distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
+- [\[ICML 2026\] HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series](../../ICML2026/time_series/hepa_a_self-supervised_horizon-conditioned_event_predictive_architecture_for_tim.md)
+- [\[ICLR 2026\] Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting](../../ICLR2026/time_series/bridging_past_and_future_distribution-aware_alignment_for_time_series_forecastin.md)
 
 </div>
 

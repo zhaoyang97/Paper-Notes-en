@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that predicts Gaussians directly in 3D space using 3D geometric priors (sparse point clouds) as anchors. It achieves SOTA performance on ScanNet++ v2 (PSNR 21.48) with approximately 20x fewer Gaussians and half the reconstruction time, while providing s
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that predicts Gaussians directly in 3D space using 3D geometric priors (sparse point clouds) as anchors. It achieves SOTA performance on ScanNet++ v2 (PSNR 21.48) with approximately 20x fewer Gaussians and half the reconstruction time, while providing superior depth estimation accuracy.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Feed-forward reconstruction"
+  - "Anchor-aligned"
+  - "Geometric priors"
+  - "Novel view synthesis"
 date: 2026-05-08
-content_hash: c04c735008d68e6b
+content_hash: d1d12e250d811cf6
 ---
+
 # AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ This plug-and-play module can be attached to any feed-forward 3DGS to improve bo
 
 ## Related Papers
 
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
+- [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
+- [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
+- [\[CVPR 2026\] SparseSplat: Towards Applicable Feed-Forward 3D Gaussian Splatting with Pixel-Unaligned Prediction](sparsesplat_towards_applicable_feed-forward_3d_gaussian_splatting_with_pixel-una.md)
+- [\[CVPR 2026\] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting](sr3r_rethinking_super-resolution_3d_reconstruction_with_feed-forward_gaussian_sp.md)
 
 </div>
 

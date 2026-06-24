@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cut Less, Fold More: Model Compression through the Lens of Projection Geometry
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Structured pruning and model folding are unified into an orthogonal projection framework—where pruning is axis-aligned projection and folding is cluster-subspace projection. It is proven that under the condition of a rank difference of 1, folding's parameter reconstruction error is strictly smaller. Validation across 1
+  [ICLR 2026][Model Compression][Model Folding] Structured pruning and model folding are unified into an orthogonal projection framework—where pruning is axis-aligned projection and folding is cluster-subspace projection. It is proven that under the condition of a rank difference of 1, folding's parameter reconstruction error is strictly smaller. Validation across 1000+ checkpoints shows folding typically outperforms pruning at medium-to-high compression rates.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model Folding"
+  - "Structured Pruning"
+  - "Orthogonal Projection"
+  - "Calibration-free Compression"
+  - "Projection Geometry"
 date: 2026-05-08
-content_hash: 0a7af82e82ebac80
+content_hash: 2247fec5d828f3cc
 ---
+
 # Cut Less, Fold More: Model Compression through the Lens of Projection Geometry
 
 **Conference**: ICLR 2026  
@@ -117,10 +123,18 @@ The entire compression process is calibration-free with no training loss; foldin
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
+- [\[CVPR 2025\] Less is More: Efficient Model Merging with Binary Task Switch](../../CVPR2025/model_compression/less_is_more_efficient_model_merging_with_binary_task_switch.md)
+- [\[ACL 2026\] Quantize What Counts: More for Keys, Less for Values](../../ACL2026/model_compression/quantize_what_counts_more_for_keys_less_for_values.md)
+- [\[NeurIPS 2025\] Less is More but Where: Dynamic Token Compression via LLM-Guided Keyframe Prior](../../NeurIPS2025/model_compression/less_is_more_but_where_dynamic_token_compression_via_llm-guided_keyframe_prior.md)
+- [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](quantized_gradient_projection_for_memory-efficient_continual_learning.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] Less is More: Efficient Model Merging with Binary Task Switch](../../CVPR2025/model_compression/less_is_more_efficient_model_merging_with_binary_task_switch.md)

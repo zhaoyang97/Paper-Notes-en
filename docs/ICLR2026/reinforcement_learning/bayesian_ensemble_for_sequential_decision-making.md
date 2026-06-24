@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Bayesian Ensemble for Sequential Decision-Making
 description: >-
-  [ICLR 2026][Reinforcement Learning][Thompson Sampling] This paper proposes Bayesian Ensemble, which models the choice of "which ensemble member to select" as an inner bandit with Bayesian updates. By dynamically adjusting the sampling distribution of ensemble members using reward feedback in contextual bandits and DQN, the method significantly reduces regret and enhances c
+  [ICLR2026][Reinforcement Learning][Bayesian Ensemble] This paper proposes Bayesian Ensemble, which models the choice of "which ensemble member to select" as an inner bandit with Bayesian updates. By dynamically adjusting the sampling distribution of ensemble members using reward feedback in contextual bandits and DQN, the method significantly reduces regret and enhances cumulative returns in MiniGrid reinforcement learning tasks with negligible overhead compared to standard e…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Thompson Sampling
-  - DQN
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Bayesian Ensemble"
+  - "Thompson Sampling"
+  - "Contextual Bandit"
+  - "DQN"
+  - "Uncertainty Modeling"
 date: 2026-05-08
-content_hash: c95a8828a8fe1f38
+content_hash: 143e7acc54b222a4
 ---
+
 # Bayesian Ensemble for Sequential Decision-Making
 
 **Conference**: ICLR2026  

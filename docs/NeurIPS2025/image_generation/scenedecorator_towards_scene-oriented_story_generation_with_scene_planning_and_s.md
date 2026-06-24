@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency
 description: >-
-  [NeurIPS 2025][Image Generation][scene consistency] SceneDecorator presents a training-free framework that, for the first time, systematically addresses scene planning and scene consistency in story generation via VLM-gu…
+  [NeurIPS 2025][Image Generation][scene consistency] SceneDecorator presents a training-free framework that, for the first time, systematically addresses scene planning and scene consistency in story generation via VLM-guided global-to-local scene planning and a long-term scene-sharing attention mechanism, achieving significant improvements over existing methods on scene alignment and consistency metrics.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "attention mechanism"
 date: 2026-05-08
-content_hash: dce886ecdcbbc202
+content_hash: 2d4de78f9e894022
 ---
 
 # SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency
@@ -144,9 +144,9 @@ No training is required; all modules are plug-and-play at inference time. Hyperp
 
 - [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](../../ICCV2025/image_generation/lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
 - [\[ICCV 2025\] Free4D: Tuning-free 4D Scene Generation with Spatial-Temporal Consistency](../../ICCV2025/image_generation/free4d_tuning-free_4d_scene_generation_with_spatial-temporal_consistency.md)
-- [\[ICLR 2026\] Consistent Text-to-Image Generation via Scene De-Contextualization](../../ICLR2026/image_generation/consistent_text-to-image_generation_via_scene_de-contextualization.md)
+- [\[ECCV 2024\] EchoScene: Indoor Scene Generation via Information Echo over Scene Graph Diffusion](../../ECCV2024/image_generation/echoscene_indoor_scene_generation_via_information_echo_over_scene_graph_diffusio.md)
+- [\[CVPR 2025\] ShowHowTo: Generating Scene-Conditioned Step-by-Step Visual Instructions](../../CVPR2025/image_generation/showhowto_generating_scene-conditioned_step-by-step_visual_instructions.md)
 - [\[ICLR 2026\] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training](../../ICLR2026/image_generation/generate_any_scene_scene_graph_driven_data_synthesis_for_visual_generation_train.md)
-- [\[AAAI 2026\] MDiff4STR: Mask Diffusion Model for Scene Text Recognition](../../AAAI2026/image_generation/mdiff4str_mask_diffusion_model_for_scene_text_recognition.md)
 
 </div>
 

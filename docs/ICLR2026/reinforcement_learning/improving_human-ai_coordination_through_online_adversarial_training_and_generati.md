@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Improving Human-AI Coordination through Online Adversarial Training and Generative Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Generative Model] GOAT integrates a **frozen cooperative policy generative model (VAE)** into an online adversarial training loop, where the adversary searches for "regret-maximizing" partners within the latent space of the generative model. This approach continuously exposes the weaknesses of the cooperative agent without degrading int
+  [ICLR 2026][Reinforcement Learning][Zero-Shot Coordination] GOAT integrates a **frozen cooperative policy generative model (VAE)** into an online adversarial training loop, where the adversary searches for "regret-maximizing" partners within the latent space of the generative model. This approach continuously exposes the weaknesses of the cooperative agent without degrading into self-sabotage, achieving SOTA results in human evaluations on Overcooked.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Generative Model
-  - regret
-  - Overcooked
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Zero-Shot Coordination"
+  - "Adversarial Training"
+  - "Generative Models"
+  - "Regret"
+  - "Curriculum Learning"
+  - "Overcooked"
 date: 2026-05-08
-content_hash: 38da21bafad9ad39
+content_hash: a154ffbb54c6e580
 ---
+
 # Improving Human-AI Coordination through Online Adversarial Training and Generative Models
 
 **Conference**: ICLR 2026  
@@ -116,7 +120,7 @@ Three types of environments: One-Step Cooperative Matrix Game (CMG), Cooperative
 - [\[ICLR 2026\] GAR: Generative Adversarial Reinforcement Learning for Formal Theorem Proving](gar_generative_adversarial_reinforcement_learning_for_formal_theorem_proving.md)
 - [\[ICLR 2026\] Critique-RL: Training Language Models for Critiquing Through Two-Stage Reinforcement Learning](critique-rl_training_language_models_for_critiquing_through_two-stage_reinforcem.md)
 - [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
-- [\[ICLR 2026\] Shop-R1: Rewarding LLMs to Simulate Human Behavior in Online Shopping via Reinforcement Learning](shop-r1_rewarding_llms_to_simulate_human_behavior_in_online_shopping_via_reinfor.md)
+- [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
 
 </div>
 

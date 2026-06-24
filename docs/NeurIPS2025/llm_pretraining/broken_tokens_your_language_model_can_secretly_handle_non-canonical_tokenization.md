@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization
 description: >-
-  [NeurIPS 2025][LLM Pretraining][non-canonical tokenization] This paper reveals that LLMs can secretly handle non-canonical tokenizations (e.g.…
+  [NeurIPS 2025 Spotlight][LLM Pretraining][non-canonical tokenization] This paper reveals that LLMs can secretly handle non-canonical tokenizations (e.g., splitting "Hello" into "He"+"llo" instead of the canonical whole-word token)—even when the input token sequence differs from training, models exhibit surprising robustness. This capability stems from the property that sub-word embeddings in the embedding space can linearly combine to approximate whole-word embeddings.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Pretraining"
   - "non-canonical tokenization"
   - "character-level"
@@ -12,7 +12,7 @@ tags:
   - "embedding space"
   - "vocabulary attack"
 date: 2026-05-08
-content_hash: 5bfbcfe23077c0e8
+content_hash: c7d12dc8917254b2
 ---
 
 # Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization
@@ -126,11 +126,11 @@ Performance retention rates of various models under random splitting:
 
 ## Related Papers
 
+- [\[ACL 2025\] Tokenization is Sensitive to Language Variation](../../ACL2025/llm_pretraining/tokenization_is_sensitive_to_language_variation.md)
+- [\[ICML 2025\] Language Models over Canonical Byte-Pair Encodings](../../ICML2025/llm_pretraining/language_models_over_canonical_byte-pair_encodings.md)
+- [\[ICLR 2026\] Learned Meta-Tokens for Language Modeling](../../ICLR2026/llm_pretraining/learned_meta-tokens_for_language_modeling.md)
+- [\[ACL 2025\] Retrofitting Large Language Models with Dynamic Tokenization](../../ACL2025/llm_pretraining/retrofitting_large_language_models_with_dynamic_tokenization.md)
 - [\[NeurIPS 2025\] Differentiable Hierarchical Visual Tokenization](differentiable_hierarchical_visual_tokenization.md)
-- [\[NeurIPS 2025\] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training](through_the_river_understanding_the_benefit_of_schedule-free_methods_for_languag.md)
-- [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)
-- [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
-- [\[ICML 2026\] Incremental BPE Tokenization](../../ICML2026/llm_pretraining/incremental_bpe_tokenization.md)
 
 </div>
 

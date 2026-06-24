@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GAP utilizes a pre-trained 3D geometric foundation model (π³) to extract 3D features, fuses 2D semantics and proprioception, and jointly predicts future action sequences and future 3D pointmaps via conditional diffusion, achieving SOTA in RoboTwin 2.0 and real-world bimanual experiments.
+  [CVPR2026][3D Vision][Bimanual manipulation] GAP utilizes a pre-trained 3D geometric foundation model (π³) to extract 3D features, fuses 2D semantics and proprioception, and jointly predicts future action sequences and future 3D pointmaps via conditional diffusion, achieving SOTA in RoboTwin 2.0 and real-world bimanual experiments.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Bimanual manipulation"
+  - "3D geometric prior"
+  - "Diffusion policy"
+  - "Point cloud prediction"
+  - "Imitation learning"
 date: 2026-05-08
-content_hash: a51f68def294a04d
+content_hash: e193b71760e397c1
 ---
+
 # GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
 
 **Conference**: CVPR2026  
@@ -152,11 +158,11 @@ where $\lambda, \gamma$ are weights for the 3D latent and pointmap terms. Traini
 
 ## Related Papers
 
-- [\[CVPR 2026\] Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](actiongeometry_prediction_with_3d_geometric_prior.md)
+- [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
 - [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
-- [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](action-guided_generation_of_3d_functionality_segmentation_data.md)
+- [\[CVPR 2026\] Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning](flow3r_factored_flow_prediction_for_scalable_visual_geometry_learning.md)
 - [\[CVPR 2026\] GenSplat: Bridging the Generalization Gap in 3DGS Language Comprehension](gensplat_bridging_the_generalization_gap_in_3dgs_language_comprehension.md)
-- [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](dynamic_visual_slam_using_a_general_3d_prior.md)
+- [\[ICLR 2026\] G4Splat: Geometry-Guided Gaussian Splatting with Generative Prior](../../ICLR2026/3d_vision/g4splat_geometry-guided_gaussian_splatting_with_generative_prior.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Modeling Interference for Treatment Effect Estimation in Network Dynamic Environment
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] Addressing the dual challenges of "dynamic networks + neighbor interference," this paper defines a new identifiable estimator, CATE-ID, and proposes the DSPNET framework. It utilizes GCN+RNN to capture time-varying hidden confounders, models spillover effects with data-driven interference representations, and balances
+  [ICLR 2026][Causal Inference][Treatment Effect Estimation] Addressing the dual challenges of "dynamic networks + neighbor interference," this paper defines a new identifiable estimator, CATE-ID, and proposes the DSPNET framework. It utilizes GCN+RNN to capture time-varying hidden confounders, models spillover effects with data-driven interference representations, and balances confounding representations via a Gradient Reversal Layer (GRL) to achieve unbiased estimation of ind…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Treatment Effect Estimation"
+  - "Interference (Spillover)"
+  - "Dynamic Networks"
+  - "Hidden Confounding"
+  - "Causal Identifiability"
 date: 2026-05-08
-content_hash: 5ce6ce6dceb226f8
+content_hash: 365a8f5affd2c44b
 ---
+
 # Modeling Interference for Treatment Effect Estimation in Network Dynamic Environment
 
 **Conference**: ICLR 2026  

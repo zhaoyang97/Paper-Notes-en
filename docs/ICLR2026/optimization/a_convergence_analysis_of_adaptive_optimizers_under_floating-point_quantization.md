@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization
 description: >-
-  [ICLR 2026][Optimization & Theory][Adam] This paper establishes the first theoretical framework for analyzing the convergence of adaptive optimizers under floating-point quantization. By applying a relative error quantization model simultaneously to gradients, weights, and optimizer states (momentum and second moments), it proves that quantized Adam and Muon
+  [ICLR 2026][Optimization][Low-precision training] This paper establishes the first theoretical framework for analyzing the convergence of adaptive optimizers under floating-point quantization. By applying a relative error quantization model simultaneously to gradients, weights, and optimizer states (momentum and second moments), it proves that quantized Adam and Muon maintain the same $\tilde{O}(T^{-1/4})$ convergence rate as full-precision versions when the mantissa length g…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Adam
-  - Muon
+  - "ICLR 2026"
+  - "Optimization"
+  - "Low-precision training"
+  - "Adam"
+  - "Muon"
+  - "Floating-point quantization"
+  - "Convergence analysis"
 date: 2026-05-08
-content_hash: f1509e654553d943
+content_hash: b2182a33d50b1025
 ---
+
 # A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization
 
 **Conference**: ICLR 2026  
@@ -152,10 +156,10 @@ Both theorems share a set of standard assumptions: unbiased stochastic gradients
 ## Related Papers
 
 - [\[ICLR 2026\] A Tale of Two Geometries: Adaptive Optimizers and Non-Euclidean Descent](a_tale_of_two_geometries_adaptive_optimizers_and_non-euclidean_descent.md)
+- [\[ICLR 2026\] Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis](sobolev_gradient_ascent_for_optimal_transport_barycenter_optimization_and_conver.md)
 - [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
 - [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
 - [\[ICLR 2026\] New Hybrid Fine-Tuning Paradigm for LLMs: Algorithm Design and Convergence Analysis Framework](new_hybrid_fine-tuning_paradigm_for_llms_algorithm_design_and_convergence_analys.md)
-- [\[ICLR 2026\] Towards Dynamic Interleaving Optimizers](towards_dynamic_interleaving_optimizers.md)
 
 </div>
 

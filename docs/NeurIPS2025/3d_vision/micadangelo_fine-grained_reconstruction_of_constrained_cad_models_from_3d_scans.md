@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] MiCADangelo: Fine-Grained Reconstruction of Constrained CAD Models from 3D Scans
 description: >-
-  [NeurIPS 2025][CAD reverse engineering] MiCADangelo emulates the reverse engineering workflow of human CAD designers: it extracts 2D patterns via multi-plane cross-section analysis…
+  [NeurIPS 2025][3D Vision][CAD reverse engineering] MiCADangelo emulates the reverse engineering workflow of human CAD designers: it extracts 2D patterns via multi-plane cross-section analysis, predicts constrained parametric sketches, and optimizes extrusion parameters, achieving for the first time complete parametric model reconstruction with sketch constraints in 3D CAD reverse engineering.
 tags:
   - "NeurIPS 2025"
+  - "3D Vision"
   - "CAD reverse engineering"
   - "sketch constraints"
   - "cross-sectional slicing"
   - "differentiable extrusion optimization"
   - "parametric modeling"
 date: 2026-05-08
-content_hash: 4a5a7a5a72317bfd
+content_hash: dded30d3917a144f
 ---
 
 # MiCADangelo: Fine-Grained Reconstruction of Constrained CAD Models from 3D Scans
@@ -147,9 +148,9 @@ $$\mathcal{L}_{extr} = \frac{1}{n_M} \sum_{l=1}^{n_M} d(\mathbf{q}_l, \rho_{min}
 
 - [\[NeurIPS 2025\] Linearly Constrained Diffusion Implicit Models](linearly_constrained_diffusion_implicit_models.md)
 - [\[NeurIPS 2025\] Mesh-RFT: Enhancing Mesh Generation via Fine-Grained Reinforcement Fine-Tuning](mesh-rft_enhancing_mesh_generation_via_fine-grained_reinforcement_fine-tuning.md)
-- [\[CVPR 2026\] FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing](../../CVPR2026/3d_vision/fishuman_fine-grained_single-image_3d_human_reconstruction_via_multi-view_4d_rem.md)
+- [\[CVPR 2025\] Eval3D: Interpretable and Fine-grained Evaluation for 3D Generation](../../CVPR2025/3d_vision/eval3d_interpretable_and_fine-grained_evaluation_for_3d_generation.md)
+- [\[ECCV 2024\] FastCAD: Real-Time CAD Retrieval and Alignment from Scans and Videos](../../ECCV2024/3d_vision/fastcad_real-time_cad_retrieval_and_alignment_from_scans_and_videos.md)
 - [\[CVPR 2026\] iSplat: Iterative Learning for Fine-Grained Gaussian Splatting](../../CVPR2026/3d_vision/isplat_iterative_learning_for_fine-grained_gaussian_splatting.md)
-- [\[NeurIPS 2025\] SyncHuman: Synchronizing 2D and 3D Generative Models for Single-View Human Reconstruction](synchuman_synchronizing_2d_and_3d_generative_models_for_single-view_human_recons.md)
 
 </div>
 

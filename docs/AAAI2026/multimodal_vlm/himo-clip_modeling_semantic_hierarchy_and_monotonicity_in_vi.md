@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Vision-language alignment] This paper proposes HiMo-CLIP, which applies in-batch PCA decomposition (HiDe) to text embeddings to extract multi-granularity semantic components…
+  [AAAI 2026 Oral][Multimodal VLM][Vision-language alignment] This paper proposes HiMo-CLIP, which applies in-batch PCA decomposition (HiDe) to text embeddings to extract multi-granularity semantic components, combined with a dual-branch monotonicity-aware contrastive loss (MoLo). Without modifying the encoder, the model learns that "more complete text should yield higher alignment scores" — a property termed semantic monotonicity — and significantly outperforms existing method…
 tags:
-  - "AAAI 2026"
-  - "Information Retrieval & RAG"
+  - "AAAI 2026 Oral"
+  - "Multimodal VLM"
   - "Vision-language alignment"
   - "semantic hierarchy"
   - "semantic monotonicity"
   - "contrastive learning"
   - "long-text retrieval"
 date: 2026-05-08
-content_hash: e48ff87d5194390f
+content_hash: f98ec3e47bd893b5
 ---
 
 # HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment
@@ -168,11 +168,11 @@ Potential extensions include replacing HiDe's batch PCA with non-linear decompos
 
 ## Related Papers
 
-- [\[ICLR 2026\] Revela: Dense Retriever Learning via Language Modeling](../../ICLR2026/information_retrieval/revela_dense_retriever_learning_via_language_modeling.md)
-- [\[AAAI 2026\] Magnitude Matters: A Superior Class of Similarity Metrics for Holistic Semantic Understanding](magnitude_matters_a_superior_class_of_similarity_metrics_for_holistic_semantic_u.md)
-- [\[AAAI 2026\] Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation](cog-rag_cognitive-inspired_dual-hypergraph_with_theme_alignment_retrieval-augmen.md)
-- [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](../../ICLR2026/information_retrieval/efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
-- [\[ICCV 2025\] ViLU: Learning Vision-Language Uncertainties for Failure Prediction](../../ICCV2025/information_retrieval/vilu_learning_vision-language_uncertainties_for_failure_prediction.md)
+- [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](../../CVPR2026/multimodal_vlm/b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
+- [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](../../ICLR2026/multimodal_vlm/unified_vision-language_modeling_via_concept_space_alignment.md)
+- [\[CVPR 2026\] Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment](../../CVPR2026/multimodal_vlm/proxy3d_efficient_3d_representations_for_vision-language_models_via_semantic_clu.md)
+- [\[AAAI 2026\] UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment](unifit_towards_universal_virtual_try-on_with_mllm-guided_semantic_alignment.md)
+- [\[AAAI 2026\] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)
 
 </div>
 

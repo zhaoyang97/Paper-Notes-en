@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation
 description: >-
-  [ICLR 2026][Code Intelligence][dLLM] This paper trains a 7B masked diffusion code model, DiffuCoder, proposes a local/global AR-ness metric system to characterize the "non-autoregressive" decoding behavior of diffusion LLMs (dLLMs), and designs coupled-GRPO (a diffusion-native RL method using complementary mask coupled sampling), achieving a 4.4% improvem
+  [ICLR 2026][Code Intelligence][Masked Diffusion Models] This paper trains a 7B masked diffusion code model, DiffuCoder, proposes a local/global AR-ness metric system to characterize the "non-autoregressive" decoding behavior of diffusion LLMs (dLLMs), and designs coupled-GRPO (a diffusion-native RL method using complementary mask coupled sampling), achieving a 4.4% improvement on EvalPlus.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - dLLM
-  - GRPO
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Masked Diffusion Models"
+  - "dLLM"
+  - "Code Generation"
+  - "GRPO"
+  - "Coupled Sampling"
 date: 2026-05-08
-content_hash: 8b7edc067ac22706
+content_hash: 2822a14b9f24a255
 ---
+
 # DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation
 
 **Conference**: ICLR 2026  

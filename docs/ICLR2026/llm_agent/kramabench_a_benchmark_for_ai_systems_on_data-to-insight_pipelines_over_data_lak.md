@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KRAMABENCH: A Benchmark for AI Systems on Data-to-Insight Pipelines over Data Lakes
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] KRAMABENCH constructs an end-to-end data science benchmark that bridges the gap from "dirty data lakes" to "insights" using 6 real-world domains, 24 data sources, 1700+ files, and 104 human-curated tasks. Accompanied by a three-tier evaluation system (End-to-End / Pipeline Design / Sub-task Implementation), the results
+  [ICLR 2026][LLM Agent][Data Lakes] KRAMABENCH constructs an end-to-end data science benchmark that bridges the gap from "dirty data lakes" to "insights" using 6 real-world domains, 24 data sources, 1700+ files, and 104 human-curated tasks. Accompanied by a three-tier evaluation system (End-to-End / Pipeline Design / Sub-task Implementation), the results show that the strongest system achieves only 55.83% accuracy under full data lake conditions…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Data Lakes"
+  - "End-to-End Data Science"
+  - "Agentic Systems"
+  - "Pipeline Design"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: a986ea3a5bada52d
+content_hash: a6e1aba42a718801
 ---
+
 # KRAMABENCH: A Benchmark for AI Systems on Data-to-Insight Pipelines over Data Lakes
 
 **Conference**: ICLR 2026  

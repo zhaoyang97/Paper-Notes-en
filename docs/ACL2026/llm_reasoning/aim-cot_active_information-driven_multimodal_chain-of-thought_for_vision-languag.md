@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] The AIM-CoT framework is proposed to address two core issues in Interleaved Multimodal Chain-of-Thought (I-MCoT)—"what to see" and "when to see"—through Information Foraging Theory-driven Active Visual Probing (AVP) and an attention-shift-based Dynamic Attention-shift Trigger (DAT).
+  [ACL 2026][Reasoning][Interleaved Multimodal Chain-of-Thought] The AIM-CoT framework is proposed to address two core issues in Interleaved Multimodal Chain-of-Thought (I-MCoT)—"what to see" and "when to see"—through Information Foraging Theory-driven Active Visual Probing (AVP) and an attention-shift-based Dynamic Attention-shift Trigger (DAT).
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Interleaved Multimodal Chain-of-Thought"
+  - "Information Foraging Theory"
+  - "Active Visual Probing"
+  - "Dynamic Triggering"
+  - "Visual Question Answering"
 date: 2026-05-08
-content_hash: 2ee769711d012d7a
+content_hash: e07899028e8c2f5e
 ---
+
 # AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning
 
 **Conference**: ACL 2026  
@@ -135,11 +141,11 @@ AIM-CoT is a entirely training-free framework that runs directly on frozen VLMs.
 
 ## Related Papers
 
-- [\[ICLR 2026\] AIMCoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ICLR2026/llm_reasoning/aimcot_active_information-driven_multimodal_chain-of-thought_for_vision-language.md)
+- [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](../../ICLR2026/llm_reasoning/uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
+- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](../../ICLR2026/llm_reasoning/vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
 - [\[ACL 2026\] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models](legaldrill_diagnosis-driven_synthesis_for_legal_reasoning_in_small_language_mode.md)
-- [\[ACL 2026\] CoAct: Co-Active LLM Preference Learning with Human-AI Synergy](coact_co-active_llm_preference_learning_with_human-ai_synergy.md)
-- [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
-- [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](efficient_process_reward_modeling_via_contrastive_mutual_information.md)
+- [\[AAAI 2026\] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models](../../AAAI2026/llm_reasoning/chain-of-thought_driven_adversarial_scenario_extrapolation_for_robust_language_m.md)
+- [\[ACL 2025\] Improve Vision Language Model Chain-of-thought Reasoning](../../ACL2025/llm_reasoning/improve_vlm_cot_reasoning.md)
 
 </div>
 

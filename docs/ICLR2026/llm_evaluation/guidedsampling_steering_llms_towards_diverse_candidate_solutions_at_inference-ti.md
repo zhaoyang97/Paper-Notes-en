@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time
 description: >-
-  [ICLR 2026][LLM Evaluation][inference-time scaling] Ours proposes GuidedSampling, an inference algorithm that explicitly decouples the implicit exploration and generation processes of Repeated Sampling (RS) into two stages: first iteratively generating diverse problem-solving concepts/theorems, and then generating candidate solutions based on each concept. This achieves
+  [ICLR 2026][LLM Evaluation][inference-time scaling] Ours proposes GuidedSampling, an inference algorithm that explicitly decouples the implicit exploration and generation processes of Repeated Sampling (RS) into two stages: first iteratively generating diverse problem-solving concepts/theorems, and then generating candidate solutions based on each concept. This achieves an average improvement of approximately 21.6% on pass@50 and 9.7% on pass@5 after fine-tuning.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - inference-time scaling
-  - repeated sampling
-  - diversity
-  - concept exploration
-  - pass@k
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "inference-time scaling"
+  - "repeated sampling"
+  - "diversity"
+  - "concept exploration"
+  - "pass@k"
 date: 2026-05-08
-content_hash: c7474880f7521397
+content_hash: 399f8c8c0e3c6835
 ---
+
 # GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time
 
 **Conference**: ICLR 2026  
@@ -150,8 +151,8 @@ Diversity Analysis: RS produces 4.04 unique concepts on average vs. GuidedSampli
 ## Related Papers
 
 - [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](../../AAAI2026/llm_evaluation/test-time_diverse_reasoning_by_riemannian_activation_steering.md)
-- [\[ICLR 2026\] Harnessing Temporal Databases for Systematic Evaluation of Factual Time-Sensitive Question-Answering in LLMs](harnessing_temporal_databases_for_systematic_evaluation_of_factual_time-sensitiv.md)
 - [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](../../AAAI2026/llm_evaluation/optscale_probabilistic_optimality_for_inference-time_scaling.md)
+- [\[ICLR 2026\] Harnessing Temporal Databases for Systematic Evaluation of Factual Time-Sensitive Question-Answering in LLMs](harnessing_temporal_databases_for_systematic_evaluation_of_factual_time-sensitiv.md)
 - [\[ICML 2025\] Bounded Rationality for LLMs: Satisficing Alignment at Inference-Time](../../ICML2025/llm_evaluation/bounded_rationality_for_llms_satisficing_alignment_at_inference-time.md)
 - [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
 

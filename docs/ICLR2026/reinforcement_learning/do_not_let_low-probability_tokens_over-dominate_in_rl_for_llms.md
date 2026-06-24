@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Do Not Let Low-Probability Tokens Over-Dominate in RL for LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] This paper points out that during RL training for LLMs (such as GRPO), low-probability tokens dominate parameter updates due to excessively large gradient magnitudes, suppressing equally important high-probability tokens. The authors propose two simple methods—Advantage Reweighting (linearly scaling down low-probabilit
+  [ICLR 2026][Reinforcement Learning][GRPO] This paper points out that during RL training for LLMs (such as GRPO), low-probability tokens dominate parameter updates due to excessively large gradient magnitudes, suppressing equally important high-probability tokens. The authors propose two simple methods—Advantage Reweighting (linearly scaling down low-probability token weights based on probability) and Lopti (updating low-probability tokens before high-probability tokens)—impro…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Gradient Bias"
+  - "Low-probability tokens"
+  - "token weighting"
 date: 2026-05-08
-content_hash: 0fa74586e87aebb4
+content_hash: 38ced38349b15443
 ---
+
 # Do Not Let Low-Probability Tokens Over-Dominate in RL for LLMs
 
 **Conference**: ICLR 2026  
@@ -138,13 +142,14 @@ Math tasks (Qwen2.5-7B, DSR-Uniform / ORZ datasets, average of 5 benchmarks):
 - Value: ⭐⭐⭐⭐⭐ High practical value due to simplicity, low cost, and portability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] QeRL: Quantization-enhanced Low-rank Reinforcement Learning for LLMs](qerl_beyond_efficiency_-_quantization-enhanced_reinforcement_learning_for_llms.md)
 - [\[ICLR 2026\] Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective](principled_rl_for_diffusion_llms_emerges_from_a_sequence-level_perspective.md)
-- [\[ICLR 2026\] From f(x) and g(x) to f(g(x)): LLMs Learn New Skills in RL by Composing Old Ones](from_fx_and_gx_to_fgx_llms_learn_new_skills_in_rl_by_composing_old_ones.md)
+- [\[ICLR 2026\] From $f(x)$ and $g(x)$ to $f(g(x))$: LLMs Learn New Skills in RL by Composing Old Ones](from_fx_and_gx_to_fgx_llms_learn_new_skills_in_rl_by_composing_old_ones.md)
 - [\[ICLR 2026\] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models](task_tokens_a_flexible_approach_to_adapting_behavior_foundation_models.md)
 - [\[ICLR 2026\] Online Prediction of Stochastic Sequences with High Probability Regret Bounds](online_prediction_of_stochastic_sequences_with_high_probability_regret_bounds.md)
 

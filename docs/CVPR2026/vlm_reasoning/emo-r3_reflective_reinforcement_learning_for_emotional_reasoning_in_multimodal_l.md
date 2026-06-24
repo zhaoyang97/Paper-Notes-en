@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] Ours proposes EMO-R3, which guides MLLMs to perform step-by-step emotional reasoning through Structured Emotional Thought (SET) and designs Reflective Emotional Reward (RER) to allow the model to re-evaluate the vision-text consistency and emotional coherence of its reasoning, significantly enhancing the interpretabili
+  [CVPR 2026][VLM Reasoning][Emotional Reasoning] Ours proposes EMO-R3, which guides MLLMs to perform step-by-step emotional reasoning through Structured Emotional Thought (SET) and designs Reflective Emotional Reward (RER) to allow the model to re-evaluate the vision-text consistency and emotional coherence of its reasoning, significantly enhancing the interpretability and accuracy of multimodal emotion understanding.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Emotional Reasoning"
+  - "GRPO"
+  - "Structured Thought"
+  - "Reflective Reward"
+  - "Multimodal Emotion Understanding"
 date: 2026-05-08
-content_hash: 6d8cdbefe8c3a21d
+content_hash: 6a068387b9802db8
 ---
+
 # EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -141,9 +146,9 @@ The overall reward is a weighted sum: $\mathcal{R}_{\text{overall}} = (1-\lambda
 
 ## Related Papers
 
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
+- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
 - [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
-- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
+- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
 - [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
 - [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
 

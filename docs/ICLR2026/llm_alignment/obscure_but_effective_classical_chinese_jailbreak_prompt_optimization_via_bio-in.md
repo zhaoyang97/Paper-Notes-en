@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Obscure but Effective: Classical Chinese Jailbreak Prompt Optimization via Bio-Inspired Search
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] Ours proposes the CC-BOS framework, which leverages the semantic compression and ambiguity of Classical Chinese, combined with the Fruit Fly Optimization Algorithm (FOA), to search for optimal jailbreak prompts within an eight-dimensional strategy space, achieving near 100% attack success rates across six mainstream LL
+  [ICLR 2026][LLM Alignment][LLM Safety] Ours proposes the CC-BOS framework, which leverages the semantic compression and ambiguity of Classical Chinese, combined with the Fruit Fly Optimization Algorithm (FOA), to search for optimal jailbreak prompts within an eight-dimensional strategy space, achieving near 100% attack success rates across six mainstream LLMs.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "LLM Safety"
+  - "Jailbreak Attack"
+  - "Classical Chinese"
+  - "Bio-inspired Optimization"
+  - "Black-box Attack"
 date: 2026-05-08
-content_hash: 8bbcbf42b2f8b849
+content_hash: 877c1077e32ce1ac
 ---
+
 # Obscure but Effective: Classical Chinese Jailbreak Prompt Optimization via Bio-Inspired Search
 
 **Conference**: ICLR 2026  
@@ -135,8 +141,8 @@ The entire process is black-box and gradient-free. "Training" refers to the sear
 - [\[ICLR 2026\] SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks](sema_simple_yet_effective_learning_for_multi-turn_jailbreak_attacks.md)
 - [\[ICLR 2026\] Towards Self-Robust LLMs: Intrinsic Prompt Noise Resistance via CoIPO](towards_self-robust_llms_intrinsic_prompt_noise_resistance_via_coipo.md)
 - [\[ICLR 2026\] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model.md)
-- [\[ICLR 2026\] JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks](jailnewsbench_multi-lingual_and_regional_benchmark_for_fake_news_generation_unde.md)
-- [\[ICLR 2026\] No Prompt Left Behind: Exploiting Zero-Variance Prompts in LLM Reinforcement Learning via Entropy-Guided Advantage Shaping](no_prompt_left_behind_exploiting_zero-variance_prompts_in_llm_reinforcement_lear.md)
+- [\[ICLR 2026\] GuidedBench: Measuring and Mitigating the Evaluation Discrepancies of In-the-wild LLM Jailbreak Methods](guidedbench_measuring_and_mitigating_the_evaluation_discrepancies_of_in-the-wild.md)
+- [\[NeurIPS 2025\] EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization](../../NeurIPS2025/llm_alignment/evorefuse_evolutionary_prompt_optimization_for_evaluation_and_mitigation_of_llm_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages
 description: >-
-  [AAAI 2026][Multilingual & Machine Translation][Multilingual Safety] This paper synthesizes multiple empirical studies to reveal critical failures of LLM safety mechanisms in low-resource and code-mixed settings…
+  [AAAI 2026][Multilingual & Machine Translation][Multilingual Safety] This paper synthesizes multiple empirical studies to reveal critical failures of LLM safety mechanisms in low-resource and code-mixed settings, and proposes a resource-aware blueprint grounded in parameter-efficient safety steering, culturally driven preference data, and community-participatory alignment.
 tags:
   - "AAAI 2026"
   - "Multilingual & Machine Translation"
@@ -12,7 +12,7 @@ tags:
   - "Low-Resource Languages"
   - "Code-Mixing"
 date: 2026-05-08
-content_hash: b3c99dd6770a17b1
+content_hash: b1f090cb86d82d5f
 ---
 
 # Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages
@@ -157,11 +157,11 @@ Functional parameter steering: updating ~3% of parameters yields comprehensive s
 
 ## Related Papers
 
-- [\[AAAI 2026\] How Does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective](how_does_alignment_enhance_llms_multilingual_capabilities_a_language_neurons_per.md)
+- [\[ACL 2025\] Implicit Cross-Lingual Rewarding for Efficient Multilingual Preference Alignment](../../ACL2025/multilingual_mt/implicit_cross-lingual_rewarding_for_efficient_multilingual_preference_alignment.md)
+- [\[AAAI 2026\] GloCTM: Cross-Lingual Topic Modeling via a Global Context Space](gloctm_cross-lingual_topic_modeling_via_a_global_context_space.md)
 - [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](../../ACL2026/multilingual_mt/emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
 - [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
-- [\[AAAI 2026\] GloCTM: Cross-Lingual Topic Modeling via a Global Context Space](gloctm_cross-lingual_topic_modeling_via_a_global_context_space.md)
-- [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](../../ACL2026/multilingual_mt/morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
+- [\[AAAI 2026\] NADIR: Differential Attention Flow for Non-Autoregressive Transliteration in Indic Languages](nadir_differential_attention_flow_for_non-autoregressive_transliteration_in_indi.md)
 
 </div>
 

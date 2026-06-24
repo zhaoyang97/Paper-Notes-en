@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] When Bias Meets Trainability: Connecting Theories of Initialization
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This work demonstrates a rigorous mathematical equivalence between the core quantities of two independent theories characterizing randomly initialized wide networks: **Mean-Field (MF) theory**, which analyzes gradient stability/trainability, and **Initial Guessing Bias (IGB) theory**, which analyzes initial prediction
+  [ICLR 2026][Learning Theory][Mean-Field Theory] This work demonstrates a rigorous mathematical equivalence between the core quantities of two independent theories characterizing randomly initialized wide networks: **Mean-Field (MF) theory**, which analyzes gradient stability/trainability, and **Initial Guessing Bias (IGB) theory**, which analyzes initial prediction preferences. It derives the counter-intuitive conclusion that the "Edge of Chaos" initialization…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Neural Network Initialization"
+  - "Mean-Field Theory"
+  - "Initial Guessing Bias (IGB)"
+  - "Edge of Chaos (EOC)"
+  - "Trainability"
+  - "Vanishing/Exploding Gradients"
 date: 2026-05-08
-content_hash: 8ff0e6e4ba7ed208
+content_hash: c3a9f1a4d929f0a3
 ---
+
 # When Bias Meets Trainability: Connecting Theories of Initialization
 
 **Conference**: ICLR 2026  
@@ -141,9 +148,9 @@ Theory validation (Fig. 2): In an MLP with width 10,000 and depth 100, the analy
 ## Related Papers
 
 - [\[ICML 2026\] When Sample Selection Bias Precipitates Model Collapse](../../ICML2026/learning_theory/when_sample_selection_bias_precipitates_model_collapse.md)
-- [\[ICLR 2026\] When Shift Happens - Confounding is to Blame](when_shift_happens_-_confounding_is_to_blame.md)
-- [\[ICLR 2026\] Overparametrization bends the landscape: BBP transitions at initialization in simple Neural Networks](overparametrization_bends_the_landscape_bbp_transitions_at_initialization_in_sim.md)
+- [\[ICLR 2026\] A New Initialization to Control Gradients in Sinusoidal Neural Networks](a_new_initialization_to_control_gradients_in_sinusoidal_neural_networks.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
+- [\[ICLR 2026\] Overparametrization bends the landscape: BBP transitions at initialization in simple Neural Networks](overparametrization_bends_the_landscape_bbp_transitions_at_initialization_in_sim.md)
 - [\[ICLR 2026\] Know When to Abstain: Optimal Selective Classification with Likelihood Ratios](know_when_to_abstain_optimal_selective_classification_with_likelihood_ratios.md)
 
 </div>

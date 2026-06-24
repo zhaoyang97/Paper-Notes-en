@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SkyEvents: A Large-Scale Event-Enhanced UAV Dataset for Robust 3D Scene Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper introduces SkyEvents, the first "Event + RGB + LiDAR" multimodal dataset for large-scale UAV 3D scene reconstruction (45 sequences, >8 hours, 0.72 km² point cloud). It proposes a Geometric Timestamp Alignment (GTA) module and a Region-level Event Rendering (RER) loss, demonstrating that incorporating the eve
+  [ICLR 2026][3D Vision][Event Camera] This paper introduces SkyEvents, the first "Event + RGB + LiDAR" multimodal dataset for large-scale UAV 3D scene reconstruction (45 sequences, >8 hours, 0.72 km² point cloud). It proposes a Geometric Timestamp Alignment (GTA) module and a Region-level Event Rendering (RER) loss, demonstrating that incorporating the event modality significantly enhances the texture and geometric fidelity of 3DGS reconstruction under extreme conditions such…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Event Camera"
+  - "UAV"
+  - "3D Scene Reconstruction"
+  - "Multimodal Dataset"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: f0d132cc1208219c
+content_hash: 0f90cd1630f6d4a1
 ---
+
 # SkyEvents: A Large-Scale Event-Enhanced UAV Dataset for Robust 3D Scene Reconstruction
 
 **Conference**: ICLR 2026  
@@ -134,10 +139,10 @@ The dataset includes benchmarks for exploratory tasks where existing models stru
 ## Related Papers
 
 - [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
+- [\[ICLR 2026\] ULTRA-360: Unconstrained Dataset for Large-scale Temporal 3D Reconstruction across Altitudes and Omnidirectional Views](ultra-360_unconstrained_dataset_for_large-scale_temporal_3d_reconstruction_acros.md)
 - [\[ICLR 2026\] Point-MoE: Large-Scale Multi-Dataset Training with Mixture-of-Experts for 3D Semantic Segmentation](point-moe_large-scale_multi-dataset_training_with_mixture-of-experts_for_3d_sema.md)
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](../../CVPR2026/3d_vision/aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
 - [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](../../CVPR2026/3d_vision/3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
-- [\[CVPR 2026\] SpatialVID: A Large-Scale Video Dataset with Spatial Annotations](../../CVPR2026/3d_vision/spatialvid_a_large-scale_video_dataset_with_spatial_annotations.md)
 
 </div>
 

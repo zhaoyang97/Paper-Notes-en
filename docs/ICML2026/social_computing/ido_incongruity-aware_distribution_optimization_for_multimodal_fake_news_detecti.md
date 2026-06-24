@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection
 description: >-
-  [ICML 2026][Social Computing][Paper Note] IDO leverages **explicit modeling of cross-modal incongruity** as a learnable distribution optimization target—simultaneously pulling multimodal embeddings of real news closer while pushing the incongruity of fake news further apart. Ours achieves a 3-7% F1 Gain over Prev. SOTA on Weibo / Twitter / Fakeddit and signifi
+  [ICML 2026][Social Computing][Multimodal Fake News] IDO leverages **explicit modeling of cross-modal incongruity** as a learnable distribution optimization target—simultaneously pulling multimodal embeddings of real news closer while pushing the incongruity of fake news further apart. Ours achieves a 3-7% F1 Gain over Prev. SOTA on Weibo / Twitter / Fakeddit and significantly enhances generalization to unseen fake news.
 tags:
-  - ICML 2026
-  - Social Computing
+  - "ICML 2026"
+  - "Social Computing"
+  - "Multimodal Fake News"
+  - "Cross-modal Incongruity"
+  - "Distribution Optimization"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: 71889cf4d6a48050
+content_hash: d8ab6acbc1a019df
 ---
+
 # IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection
 
 **Conference**: ICML 2026  

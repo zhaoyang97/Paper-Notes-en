@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vascular Anatomy-aware Self-supervised Pre-training for X-ray Angiogram Analysis
 description: >-
-  [AAAI 2026][Medical Imaging][X-ray angiography] This paper proposes VasoMIM, a domain-specific self-supervised pre-training framework for X-ray angiograms. It introduces an anatomy-guided masking strategy that prioritize…
+  [AAAI 2026][Medical Imaging][X-ray angiography] This paper proposes VasoMIM, a domain-specific self-supervised pre-training framework for X-ray angiograms. It introduces an anatomy-guided masking strategy that prioritizes vessel regions, an anatomical consistency loss to preserve vascular topology in reconstructed images, and a newly constructed XA-170K pre-training dataset — the largest of its kind. VasoMIM comprehensively outperforms both general-purpose and medical SSL met…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -14,7 +14,7 @@ tags:
   - "vessel segmentation"
   - "stenosis detection"
 date: 2026-05-08
-content_hash: f3973de9ad39c64b
+content_hash: 759019362a36e1c9
 ---
 
 # Vascular Anatomy-aware Self-supervised Pre-training for X-ray Angiogram Analysis
@@ -175,10 +175,10 @@ The method is elegantly designed with clear motivation and effective integration
 ## Related Papers
 
 - [\[AAAI 2026\] PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation](priorrg_prior-guided_contrastive_pre-training_and_coarse-to-fine_decoding_for_ch.md)
+- [\[CVPR 2026\] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training](../../CVPR2026/medical_imaging/invcoss_inversion-driven_continual_self-supervised_learning_in_medical_multi-mod.md)
 - [\[AAAI 2026\] MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging](mirnet_integrating_constrained_graph-based_reasoning_with_pre-training_for_diagn.md)
-- [\[CVPR 2026\] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](../../CVPR2026/medical_imaging/ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)
-- [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
 - [\[AAAI 2026\] Self-supervised Multiplex Consensus Mamba for General Image Fusion](self-supervised_multiplex_consensus_mamba_for_general_image_fusion.md)
+- [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
 
 </div>
 

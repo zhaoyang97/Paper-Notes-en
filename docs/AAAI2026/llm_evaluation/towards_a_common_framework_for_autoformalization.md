@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards a Common Framework for Autoformalization
 description: >-
-  [AAAI 2026][LLM Evaluation][autoformalization] This paper systematically surveys existing work on autoformalization across mathematics, logical reasoning, planning, and knowledge representation…
+  [AAAI 2026][LLM Evaluation][autoformalization] This paper systematically surveys existing work on autoformalization across mathematics, logical reasoning, planning, and knowledge representation, and proposes a unified cross-disciplinary definitional framework. Autoformalization is defined as the semantically equivalent transformation from informal language to formal reasoning languages, with the goal of facilitating methodology sharing across research communities and accelera…
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "semantic parsing"
   - "formal verification"
 date: 2026-05-08
-content_hash: a23a9e69e90f62b4
+content_hash: 85740839230dd3eb
 ---
 
 # Towards a Common Framework for Autoformalization
@@ -185,7 +185,7 @@ This is a survey and framework paper and does not include quantitative experimen
 - [\[ACL 2026\] Common to Whom? Regional Cultural Commonsense and LLM Bias in India](../../ACL2026/llm_evaluation/common_to_whom_regional_cultural_commonsense_and_llm_bias_in_india.md)
 - [\[AAAI 2026\] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents](beyond_accuracy_a_cognitive_load_framework_for_mapping_the_c.md)
 - [\[AAAI 2026\] Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy](do_llms_really_struggle_at_nl-fol_translation_revealing_their_strengths_via_a_no.md)
-- [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](../../ACL2026/llm_evaluation/beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
+- [\[ICLR 2026\] Cost-of-Pass: An Economic Framework for Evaluating Language Models](../../ICLR2026/llm_evaluation/cost-of-pass_an_economic_framework_for_evaluating_language_models.md)
 
 </div>
 

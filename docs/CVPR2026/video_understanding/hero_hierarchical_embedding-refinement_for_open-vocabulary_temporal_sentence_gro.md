@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HERO: Hierarchical Embedding-Refinement for Open-Vocabulary Temporal Sentence Grounding in Videos
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper proposes the new task of "Open-Vocabulary Temporal Sentence Grounding in Videos" (OV-TSGV) and constructs two benchmarks, Charades-OV and ActivityNet-OV. It introduces HERO, a plug-and-play framework that captures multi-granularity semantics via hierarchical text embeddings and enhances alignment through par
+  [CVPR 2026][Video Understanding][Temporal Sentence Grounding] This paper proposes the new task of "Open-Vocabulary Temporal Sentence Grounding in Videos" (OV-TSGV) and constructs two benchmarks, Charades-OV and ActivityNet-OV. It introduces HERO, a plug-and-play framework that captures multi-granularity semantics via hierarchical text embeddings and enhances alignment through parallel semantic-guided visual filtering and contrastive masked text refinement…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Temporal Sentence Grounding"
+  - "Open-Vocabulary"
+  - "Hierarchical Text Embedding"
+  - "Cross-modal Refinement"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 0743d1b4a268f8aa
+content_hash: 84fbbfc73aad5f2b
 ---
+
 # HERO: Hierarchical Embedding-Refinement for Open-Vocabulary Temporal Sentence Grounding in Videos
 
 **Conference**: CVPR 2026  
@@ -136,15 +142,14 @@ Component-wise ablation on Charades-OV test-ov (HEM; CFRE = SGVF + CMTR):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
-- [\[CVPR 2026\] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection](decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp.md)
 - [\[CVPR 2026\] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](omnivtg_a_large-scale_dataset_and_training_paradigm_for_open-world_video_tempora.md)
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
 - [\[NeurIPS 2025\] DualGround: Structured Phrase and Sentence-Level Temporal Grounding](../../NeurIPS2025/video_understanding/dualground_phrase_temporal.md)
+- [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
 
 </div>
 

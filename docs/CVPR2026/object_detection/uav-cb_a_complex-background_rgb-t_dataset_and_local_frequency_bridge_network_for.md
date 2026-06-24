@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UAV-CB: A Complex-Background RGB-T Dataset and Local Frequency Bridge Network for UAV Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Aiming at the challenges of UAV detection in low-altitude complex backgrounds—characterized by "low contrast, weak boundaries, and high confusion with cluttered textures"—this paper constructs the UAV-CB dataset (3,442 image pairs, 5 background categories) with deliberately sampled camouflaged/complex scenes. It furthe
+  [CVPR 2026][Object Detection][UAV detection] Aiming at the challenges of UAV detection in low-altitude complex backgrounds—characterized by "low contrast, weak boundaries, and high confusion with cluttered textures"—this paper constructs the UAV-CB dataset (3,442 image pairs, 5 background categories) with deliberately sampled camouflaged/complex scenes. It further proposes LFBNet, which performs alignment in the **local frequency domain**: first unifying the amplitude and pha…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "UAV detection"
+  - "RGB-T fusion"
+  - "Frequency domain modeling"
+  - "Complex background"
+  - "Camouflaged targets"
 date: 2026-05-08
-content_hash: 963c348988243b3f
+content_hash: e0535ce023014521
 ---
+
 # UAV-CB: A Complex-Background RGB-T Dataset and Local Frequency Bridge Network for UAV Detection
 
 **Conference**: CVPR 2026  
@@ -148,9 +154,9 @@ Module-wise stacking on UAV-CB validation set (AP(0.5:0.95), %):
 
 - [\[CVPR 2026\] Tri-Modal Fusion Transformers for UAV-based Object Detection](tri-modal_fusion_transformers_for_uav-based_object_detection.md)
 - [\[CVPR 2026\] Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](visual_prototype_conditioned_focal_region_generation_for_uav-based_object_detect.md)
-- [\[CVPR 2026\] UAVGen: Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](uavgen_visual_prototype_conditioned_focal_region_generation_for_uav_based_object_detection.md)
 - [\[AAAI 2026\] AerialMind: Towards Referring Multi-Object Tracking in UAV Scenarios](../../AAAI2026/object_detection/aerialmind_towards_referring_multi-object_tracking_in_uav_sc.md)
 - [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
+- [\[CVPR 2026\] Beyond Duality: A Hybrid Framework of Leveraging Shared and Private Features for RGB-Event Object Detection](beyond_duality_a_hybrid_framework_of_leveraging_shared_and_private_features_for_.md)
 
 </div>
 

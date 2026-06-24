@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HarmoVid: Relightful Video Portrait Harmonization
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] HarmoVid adopts a two-stage data and model scheme consisting of "frame-wise harmonization → deflickering → dual-path training." In the absence of real paired data, it harmonizes the lighting, shadows, and tones of foreground portrait videos to match target backgrounds, achieving temporal stability, clean boundaries, an
+  [CVPR 2026][Video Generation][Video Harmonization] HarmoVid adopts a two-stage data and model scheme consisting of "frame-wise harmonization → deflickering → dual-path training." In the absence of real paired data, it harmonizes the lighting, shadows, and tones of foreground portrait videos to match target backgrounds, achieving temporal stability, clean boundaries, and expressive relighting performance.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Harmonization"
+  - "Relighting"
+  - "Temporal Consistency"
+  - "Deflickering"
+  - "Video Diffusion"
 date: 2026-05-08
-content_hash: 5e82d546c80f0a56
+content_hash: f5913aae6d382152
 ---
+
 # HarmoVid: Relightful Video Portrait Harmonization
 
 **Conference**: CVPR 2026  
@@ -157,9 +163,9 @@ HarmoVid leads in all objective metrics: PSNR 17.91 (vs 15.89, +2.02) and Motion
 
 - [\[CVPR 2026\] PersonaLive! Expressive Portrait Image Animation for Live Streaming](personalive_expressive_portrait_image_animation_for_live_streaming.md)
 - [\[CVPR 2026\] PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing](performrecast_expression_and_head_pose_disentanglement_for_portrait_video_editin.md)
-- [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
 - [\[CVPR 2026\] FlashPortrait: 6× Faster Infinite Portrait Animation with Adaptive Latent Prediction](flashportrait_6x_faster_infinite_portrait_animation_with_adaptive_latent_predict.md)
-- [\[CVPR 2026\] UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation](unitalking_a_unified_audio-video_framework_for_talking_portrait_generation.md)
+- [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
+- [\[CVPR 2026\] Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs](real-time_generation_of_streamable_talking_portrait_video_with_reference-guided_.md)
 
 </div>
 

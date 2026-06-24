@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DeepDiver: Adaptive Search Intensity Scaling via Open-Web Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][search intensity scaling] DeepDiver is an RL-driven search-reasoning framework that trains LLMs for information-seeking in real open-web environments…
+  [NeurIPS 2025 Spotlight][Reinforcement Learning][search intensity scaling] DeepDiver is an RL-driven search-reasoning framework that trains LLMs for information-seeking in real open-web environments, giving rise to an emergent behavior termed *Search Intensity Scaling* (SIS)—enabling a 7B model to match DeepSeek-R1 (671B) on knowledge-intensive tasks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Reinforcement Learning"
   - "search intensity scaling"
   - "information retrieval"
   - "large language models"
   - "open-web question answering"
 date: 2026-05-08
-content_hash: 0f54d40b17c441ec
+content_hash: 0368d51cd36ade20
 ---
 
 # DeepDiver: Adaptive Search Intensity Scaling via Open-Web Reinforcement Learning
@@ -172,11 +172,11 @@ After removing questions answerable from internal knowledge alone:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](reinforcement_learning_teachers_of_test_time_scaling.md)
 - [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
+- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](reinforcement_learning_teachers_of_test_time_scaling.md)
 - [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
-- [\[NeurIPS 2025\] TensorRL-QAS: Reinforcement Learning with Tensor Networks for Improved Quantum Architecture Search](tensorrl-qas_reinforcement_learning_with_tensor_networks_for_improved_quantum_ar.md)
-- [\[NeurIPS 2025\] Complexity Scaling Laws for Neural Models using Combinatorial Optimization](complexity_scaling_laws_for_neural_models_using_combinatorial_optimization.md)
+- [\[NeurIPS 2025\] Reinforcement Learning for Long-Horizon Multi-Turn Search Agents](reinforcement_learning_for_long-horizon_multi-turn_search_agents.md)
 
 </div>
 

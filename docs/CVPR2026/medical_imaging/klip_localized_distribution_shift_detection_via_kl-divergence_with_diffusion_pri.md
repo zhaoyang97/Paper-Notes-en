@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KLIP: localized distribution shift detection via KL-divergence with diffusion priors in Inverse Problems
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] In the process of solving inverse problems (e.g., sparse-view CT, Gaussian deblurring) using diffusion priors, the "KL divergence between the prior distribution $p(x)$ and the posterior distribution $p(x|y)$" is utilized as an OOD signal. By restricting this signal to spatial blocks and specific sampling time windows,
+  [CVPR 2026][Medical Imaging][Distribution Shift Detection] In the process of solving inverse problems (e.g., sparse-view CT, Gaussian deblurring) using diffusion priors, the "KL divergence between the prior distribution $p(x)$ and the posterior distribution $p(x|y)$" is utilized as an OOD signal. By restricting this signal to spatial blocks and specific sampling time windows, the method detects and **localizes** subtle, local, yet diagnostically significant distribution shift…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Distribution Shift Detection"
+  - "KL-Divergence"
+  - "Diffusion Priors"
+  - "Posterior Sampling"
+  - "Localized Abnormality Localization"
 date: 2026-05-08
-content_hash: 08fce7f614a33480
+content_hash: 88ffcd80182d1aa3
 ---
+
 # KLIP: localized distribution shift detection via KL-divergence with diffusion priors in Inverse Problems
 
 **Conference**: CVPR 2026  
@@ -137,15 +143,16 @@ Hyperparameter Sensitivity: Tuning on star yields 0.78 / 0.88 for Tumor; re-tuni
 - Value: ⭐⭐⭐⭐ Addresses a genuine need for "calibration-free, localizable" OOD detection in medical imaging.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors](solving_a_nonlinear_blind_inverse_problem_for_tagged_mri_with_physics_and_deep_g.md)
+- [\[CVPR 2026\] Efficient Unrolled Networks for Large-Scale 3D Inverse Problems](efficient_unrolled_networks_for_large-scale_3d_inverse_problems.md)
 - [\[CVPR 2026\] The Invisible Gorilla Effect in Out-of-distribution Detection](the_invisible_gorilla_effect_in_out-of-distribution_detection.md)
+- [\[CVPR 2026\] Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors](solving_a_nonlinear_blind_inverse_problem_for_tagged_mri_with_physics_and_deep_g.md)
+- [\[CVPR 2026\] Anatomica: Localized Control over Geometric and Topological Properties for Anatomical Diffusion Models](anatomica_localized_control_over_geometric_and_topological_properties_for_anatom.md)
 - [\[ICLR 2026\] Distributional Consistency Loss: Beyond Pointwise Data Terms in Inverse Problems](../../ICLR2026/medical_imaging/distributional_consistency_loss_beyond_pointwise_data_terms_in_inverse_problems.md)
-- [\[ICLR 2026\] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](../../ICLR2026/medical_imaging/adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)
-- [\[CVPR 2026\] PETAR: Localized Findings Generation with Mask-Aware Vision-Language Modeling for PET Automated Reporting](petar_localized_findings_generation_with_mask-aware_vision-language_modeling_for.md)
 
 </div>
 

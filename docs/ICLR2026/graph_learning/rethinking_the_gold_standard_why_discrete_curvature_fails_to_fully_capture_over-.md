@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Rethinking the Gold Standard: Why Discrete Curvature Fails to Fully Capture Over-squashing in GNNs?
 description: >-
-  [ICLR 2026][Graph Learning][over-squashing] This paper systematically refutes the "high negative curvature = over-squashing" gold standard in graph learning. By constructing a counterexample graph family, it proves that high negative curvature is a **sufficient but not necessary** condition for over-squashing. The authors propose the MOSR metric to quantify that
+  [ICLR 2026][Graph Learning][over-squashing] This paper systematically refutes the "high negative curvature = over-squashing" gold standard in graph learning. By constructing a counterexample graph family, it proves that high negative curvature is a **sufficient but not necessary** condition for over-squashing. The authors propose the MOSR metric to quantify that curvature misses 30%–40% of squashed edges and introduce a new weighted curvature, WAF3…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - over-squashing
-  - MinHash
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "over-squashing"
+  - "discrete curvature"
+  - "Forman curvature"
+  - "graph rewiring"
+  - "MinHash"
 date: 2026-05-08
-content_hash: f9905b5833974872
+content_hash: 2e8028dc3cabb8ba
 ---
+
 # Rethinking the Gold Standard: Why Discrete Curvature Fails to Fully Capture Over-squashing in GNNs?
 
 **Conference**: ICLR 2026  
@@ -132,8 +136,20 @@ Experiments cover 3 mainstream curvatures across 3 GNNs on 21 datasets.
 - Value: ⭐⭐⭐⭐⭐ Corrects a long-standing assumption in the community.
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] gLSTM: Mitigating Over-Squashing by Increasing Storage Capacity](glstm_mitigating_over-squashing_by_increasing_storage_capacity.md)
+- [\[ICLR 2026\] CORDS - Continuous Representations of Discrete Structures](cords_-_continuous_representations_of_discrete_structures.md)
+- [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](../../NeurIPS2025/graph_learning/over-squashing_in_spatiotemporal_graph_neural_networks.md)
+- [\[ICLR 2026\] Discrete Bayesian Sample Inference for Graph Generation](discrete_bayesian_sample_inference_for_graph_generation.md)
+- [\[ICLR 2026\] GRAPHITE: Graph Homophily Booster — Reimagining the Role of Discrete Features in Heterophilic Graph Learning](graph_homophily_booster_reimagining_the_role_of_discrete_features_in_heterophili.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] gLSTM: Mitigating Over-Squashing by Increasing Storage Capacity](glstm_mitigating_over-squashing_by_increasing_storage_capacity.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Video Safety] This paper presents Video-SafetyBench, the first comprehensive benchmark for safety evaluation of video LVLMs. It comprises 2…
+  [NeurIPS 2025][Multimodal VLM][Video Safety] This paper presents Video-SafetyBench, the first comprehensive benchmark for safety evaluation of video LVLMs. It comprises 2,264 video-text pairs spanning 48 fine-grained unsafe categories, constructed via a controllable video generation pipeline. A confidence-based evaluation metric, RJScore, is proposed to assess model outputs. Large-scale evaluation across 24 LVLMs reveals an average attack success rate of 67.2% under benign qu…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Safety Benchmark"
   - "RJScore"
 date: 2026-05-08
-content_hash: c6caf255fa4d3ba1
+content_hash: 65ac749ec1a0a2c8
 ---
 
 # Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs
@@ -141,11 +141,11 @@ Attack success rate (ASR) evaluated across 24 LVLMs (7 closed-source + 17 open-s
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
 - [\[NeurIPS 2025\] Learning Skill-Attributes for Transferable Assessment in Video](learning_skill-attributes_for_transferable_assessment_in_video.md)
 - [\[NeurIPS 2025\] Training-free Online Video Step Grounding](training-free_online_video_step_grounding.md)
+- [\[ICLR 2026\] IWR-Bench: Can LVLMs Reconstruct Interactive Webpage from a User Interaction Video?](../../ICLR2026/multimodal_vlm/iwr-bench_can_lvlms_reconstruct_interactive_webpage_from_a_user_interaction_vide.md)
+- [\[CVPR 2026\] Breaking Multimodal LLM Safety via Video-Driven Prompting](../../CVPR2026/multimodal_vlm/breaking_multimodal_llm_safety_via_video-driven_prompting.md)
 - [\[NeurIPS 2025\] MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios](mme-videoocr_evaluating_ocr-based_capabilities_of_multimodal_llms_in_video_scena.md)
-- [\[NeurIPS 2025\] iFinder: Structured Zero-Shot VLM Grounding for Dash-Cam Video Reasoning](ifinder_structured_zero-shot_vision-based_llm_grounding_for_dash-cam_video_reaso.md)
 
 </div>
 

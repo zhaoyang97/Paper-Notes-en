@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Normalization in Attention Dynamics
 description: >-
-  [NeurIPS 2025][Layer Normalization] This paper unifies various normalization schemes (Post-LN, Pre-LN, Mix-LN, Peri-LN, nGPT, sqrt-scaling) under a single framework of velocity modulation in an interacting particle syste…
+  [NeurIPS 2025][Layer Normalization] This paper unifies various normalization schemes (Post-LN, Pre-LN, Mix-LN, Peri-LN, nGPT, sqrt-scaling) under a single framework of velocity modulation in an interacting particle system on the sphere. It theoretically characterizes how each scheme affects token clustering dynamics and representation collapse, identifying Peri-LN as the theoretically optimal choice.
 tags:
   - "NeurIPS 2025"
   - "Layer Normalization"
@@ -11,7 +11,7 @@ tags:
   - "Interacting Particle Systems"
   - "Velocity Modulation"
 date: 2026-05-08
-content_hash: 8a4cb9434ff16690
+content_hash: f1ec6842bf703741
 ---
 
 # Normalization in Attention Dynamics
@@ -136,10 +136,10 @@ where $s_j(t)$ is a velocity modulation factor determined by the normalization s
 ## Related Papers
 
 - [\[NeurIPS 2025\] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)
+- [\[ICLR 2026\] Neural Dynamics Self-Attention for Spiking Transformers](../../ICLR2026/others/neural_dynamics_self-attention_for_spiking_transformers.md)
 - [\[NeurIPS 2025\] Learning Dynamics of RNNs in Closed-Loop Environments](learning_dynamics_of_rnns_in_closed-loop_environments.md)
 - [\[NeurIPS 2025\] Alias-Free ViT: Fractional Shift Invariance via Linear Attention](alias-free_vit_fractional_shift_invariance_via_linear_attention.md)
 - [\[NeurIPS 2025\] Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge](modeling_cell_dynamics_and_interactions_with_unbalanced_mean_field_schrödinger_b.md)
-- [\[NeurIPS 2025\] The Geometry of Cortical Computation: Manifold Disentanglement and Predictive Dynamics in VCNet](the_geometry_of_cortical_computation_manifold_disentanglement_and_predictive_dyn.md)
 
 </div>
 

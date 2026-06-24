@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniCorrn: Unified Correspondence Transformer Across 2D and 3D
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] UniCorrn unifies three types of geometric correspondence—image-image (2D-2D), image-point cloud (2D-3D), and point cloud-point cloud (3D-3D)—into a single "query keypoint $\rightarrow$ regress correspondence coordinate" task using a **weight-sharing** Transformer. It achieves stackable end-to-end matching via a **dual-
+  [CVPR 2026][3D Vision][Geometric correspondence] UniCorrn unifies three types of geometric correspondence—image-image (2D-2D), image-point cloud (2D-3D), and point cloud-point cloud (3D-3D)—into a single "query keypoint $\rightarrow$ regress correspondence coordinate" task using a **weight-sharing** Transformer. It achieves stackable end-to-end matching via a **dual-stream attention decoder** (where appearance and position streams share the same attention matrix). It matches…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Geometric correspondence"
+  - "cross-modal matching"
+  - "dual-stream attention"
+  - "point cloud registration"
+  - "unified model"
 date: 2026-05-08
-content_hash: f44eaad5c1786d39
+content_hash: 4c814e42c2ad4175
 ---
+
 # UniCorrn: Unified Correspondence Transformer Across 2D and 3D
 
 **Conference**: CVPR 2026  
@@ -131,7 +137,7 @@ Comparison of matching paradigms (Small model, RR/IR):
 - [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
 - [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
 - [\[CVPR 2026\] Best Segmentation Buddies for Image-Shape Correspondence](best_segmentation_buddies_for_image-shape_correspondence.md)
-- [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
+- [\[CVPR 2026\] 3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)
 
 </div>
 

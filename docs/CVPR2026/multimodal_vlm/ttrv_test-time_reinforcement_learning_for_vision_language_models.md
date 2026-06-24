@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TTRV: Test-Time Reinforcement Learning for Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] TTRV enables off-the-shelf decoder-based VLMs to perform reinforcement learning directly on **unlabeled** test data during the inference stage. Driven by two self-supervised rewards—"frequency of the model's own output" and "entropy of the output distribution"—through GRPO, it achieves an average 24.6% improvement in o
+  [CVPR 2026][Multimodal VLM][Test-Time Reinforcement Learning] TTRV enables off-the-shelf decoder-based VLMs to perform reinforcement learning directly on **unlabeled** test data during the inference stage. Driven by two self-supervised rewards—"frequency of the model's own output" and "entropy of the output distribution"—through GRPO, it achieves an average 24.6% improvement in object recognition and 10.0% in VQA across 16 datasets. It even pushes the ImageNet recognition of…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Test-Time Reinforcement Learning"
+  - "GRPO"
+  - "Unsupervised Rewards"
+  - "VLM Adaptation"
+  - "Entropy Regularization"
 date: 2026-05-08
-content_hash: cb1520a6b1f0541a
+content_hash: 6fd32ced5c558fbd
 ---
+
 # TTRV: Test-Time Reinforcement Learning for Vision Language Models
 
 **Conference**: CVPR 2026  
@@ -158,7 +163,7 @@ Table 3 decomposes the two rewards and compares them with TTRL's majority voting
 - [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
 - [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
+- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](test-time_attention_purification_for_backdoored_large_vision_language_models.md)
 - [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
 
 </div>

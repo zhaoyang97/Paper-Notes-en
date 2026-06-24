@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Interaction-Merged Motion Planning: Effectively Leveraging Diverse Motion Datasets for Robust Planning
 description: >-
-  [ICCV 2025][Robotics][Motion Planning] This paper proposes IMMP (Interaction-Merged Motion Planning), a two-stage strategy — Interaction-Conserving Pre-Merging (constructing a multi-metric checkpoint pool) and Interactio…
+  [ICCV 2025][Robotics][Motion Planning] This paper proposes IMMP (Interaction-Merged Motion Planning), a two-stage strategy — Interaction-Conserving Pre-Merging (constructing a multi-metric checkpoint pool) and Interaction Transfer with Merging (task-vector-based weighted merging grouped by interaction modules) — to transfer agent behavior and interaction knowledge from diverse trajectory datasets to a target domain, effectively improving cross-domain adaptability of motion pl…
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Autonomous Driving"
   - "Task Vectors"
 date: 2026-05-08
-content_hash: e5c82f303805f2d1
+content_hash: b12b316cdb21f66c
 ---
 
 # Interaction-Merged Motion Planning: Effectively Leveraging Diverse Motion Datasets for Robust Planning
@@ -178,8 +178,8 @@ IMMP consists of two stages:
 - [\[ICCV 2025\] Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos](moto_latent_motion_token_as_the_bridging_language_for_learning_robot_manipulatio.md)
 - [\[ICLR 2026\] Experience-based Knowledge Correction for Robust Planning in Minecraft](../../ICLR2026/robotics/experience-based_knowledge_correction_for_robust_planning_in_minecraft.md)
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](../../NeurIPS2025/robotics/adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
-- [\[NeurIPS 2025\] VolleyBots: A Testbed for Multi-Drone Volleyball Game Combining Motion Control and Strategic Play](../../NeurIPS2025/robotics/volleybots_a_testbed_for_multi-drone_volleyball_game_combining_motion_control_an.md)
-- [\[CVPR 2026\] DAWN: Pixel Motion Diffusion is What We Need for Robot Control](../../CVPR2026/robotics/dawn_pixel_motion_diffusion_robot_control.md)
+- [\[ICML 2026\] LIMMT: Less is More for Motion Tracking](../../ICML2026/robotics/limmt_less_is_more_for_motion_tracking.md)
+- [\[CVPR 2025\] Neural Motion Simulator: Pushing the Limit of World Models in Reinforcement Learning](../../CVPR2025/robotics/neural_motion_simulator_pushing_the_limit_of_world_models_in_reinforcement_learn.md)
 
 </div>
 

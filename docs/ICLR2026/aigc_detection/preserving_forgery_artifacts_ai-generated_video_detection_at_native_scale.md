@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Preserving Forgery Artifacts: AI-Generated Video Detection at Native Scale
 description: >-
-  [ICLR 2026][AIGC Detection][Qwen2.5-ViT] Addressing the issue where existing AI-generated video detectors destroy critical forgery artifacts by scaling or cropping input frames to a fixed low resolution (e.g., 224×224), this paper proposes a "native-scale" detection framework. Based on Qwen2.5-VL, the visual Transformer directly processes videos at arbitrary
+  [ICLR 2026][AIGC Detection][AI-Generated Video Detection] Addressing the issue where existing AI-generated video detectors destroy critical forgery artifacts by scaling or cropping input frames to a fixed low resolution (e.g., 224×224), this paper proposes a "native-scale" detection framework. Based on Qwen2.5-VL, the visual Transformer directly processes videos at arbitrary original resolutions and durations. The work also constructs a 140k training set covering 15 generator…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - Qwen2.5-ViT
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "AI-Generated Video Detection"
+  - "Native Resolution"
+  - "Forgery Artifacts"
+  - "Qwen2.5-ViT"
+  - "Dataset Construction"
 date: 2026-05-08
-content_hash: d2d7f0fd122c2dc7
+content_hash: eed76299a25fd250
 ---
+
 # Preserving Forgery Artifacts: AI-Generated Video Detection at Native Scale
 
 **Conference**: ICLR 2026  
@@ -164,11 +169,11 @@ Ablation on spatial resolution, temporal frames, and fine-tuning (Magic and GenV
 
 ## Related Papers
 
-- [\[ICLR 2026\] No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection](no_pixel_left_behind_a_detail-preserving_architecture_for_robust_high-resolution.md)
 - [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
+- [\[ICLR 2026\] No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection](no_pixel_left_behind_a_detail-preserving_architecture_for_robust_high-resolution.md)
 - [\[ICLR 2026\] Exploring Specular Reflection Inconsistency for Generalizable Face Forgery Detection](exploring_specular_reflection_inconsistency_for_generalizable_face_forgery_detec.md)
 - [\[ICLR 2026\] RelayFormer: A Unified Local-Global Attention Framework for Scalable Image and Video Manipulation Localization](relayformer_a_unified_local-global_attention_framework_for_scalable_image_and_vi.md)
-- [\[ICLR 2026\] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images](semantic_visual_anomaly_detection_and_reasoning_in_ai-generated_images.md)
+- [\[CVPR 2026\] Learning Forgery-Aware Lip Representations Without Forgery Priors](../../CVPR2026/aigc_detection/learning_forgery-aware_lip_representations_without_forgery_priors.md)
 
 </div>
 

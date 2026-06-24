@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion
 description: >-
-  [ICLR 2026][LLM Efficiency][Diffusion Language Model] Two training-free techniques—FreeCache, which reuses stable KV projections, and Guided Diffusion, which uses consistency signals from small AR models to guide parallel demasking—enable a 7B/8B diffusion language model to achieve an average end-to-end speedup of 12x, bringing diffusion LLM latency comparable to or even
+  [ICLR 2026][LLM Efficiency][Diffusion Language Model] Two training-free techniques—FreeCache, which reuses stable KV projections, and Guided Diffusion, which uses consistency signals from small AR models to guide parallel demasking—enable a 7B/8B diffusion language model to achieve an average end-to-end speedup of 12x, bringing diffusion LLM latency comparable to or even faster than same-sized autoregressive models for the first time.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - KV Cache
-  - Guided Diffusion
-  - Speculative Decoding
-  - Training-free Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Model"
+  - "KV Cache"
+  - "Guided Diffusion"
+  - "Speculative Decoding"
+  - "Training-free Acceleration"
 date: 2026-05-08
-content_hash: e69683f920e65c36
+content_hash: dff10d7f89af4158
 ---
+
 # FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion
 
 **Conference**: ICLR 2026  
@@ -125,11 +126,11 @@ Latency is now on par with same-sized AR models, while accuracy is primarily pre
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](../../ICML2026/llm_efficiency/dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
 - [\[ICLR 2026\] Reasoning Language Model Inference Serving Unveiled: An Empirical Study](reasoning_language_model_inference_serving_unveiled_an_empirical_study.md)
-- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
+- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](../../ICML2026/llm_efficiency/dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
+- [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
+- [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)
 
 </div>
 

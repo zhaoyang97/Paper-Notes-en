@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Demystifying Language Model Forgetting with Low-Rank Example Associations
 description: >-
-  [NeurIPS 2025][LLM Safety][Catastrophic Forgetting] This paper discovers that the association matrix between upstream sample forgetting and newly learned tasks exhibits a low-rank structure (rank-3 achieves $R^2 > 0.69$)…
+  [NeurIPS 2025][LLM Safety][Catastrophic Forgetting] This paper discovers that the association matrix between upstream sample forgetting and newly learned tasks exhibits a low-rank structure (rank-3 achieves $R^2 > 0.69$) after LLM fine-tuning, and leverages matrix completion to predict forgetting induced by unseen tasks, thereby guiding selective replay to mitigate forgetting.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Forgetting Prediction"
   - "Selective Replay"
 date: 2026-05-08
-content_hash: 50c05459af2a379a
+content_hash: 4bbd76aa5fdf168c
 ---
 
 # Demystifying Language Model Forgetting with Low-Rank Example Associations
@@ -127,9 +127,9 @@ The low-rank structure holds universally across 7 models from 4 model families.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
-- [\[NeurIPS 2025\] Self-Refining Language Model Anonymizers via Adversarial Distillation](self-refining_language_model_anonymizers_via_adversarial_distillation.md)
+- [\[ACL 2025\] Exploring Forgetting in Large Language Model Pre-Training](../../ACL2025/llm_safety/exploring_forgetting_in_large_language_model_pre-training.md)
+- [\[CVPR 2025\] Low-Rank Adaptation in Multilinear Operator Networks for Security-Preserving Incremental Learning](../../CVPR2025/llm_safety/low-rank_adaptation_in_multilinear_operator_networks_for_security-preserving_inc.md)
 - [\[ACL 2026\] Decomposed Trust: Privacy, Adversarial Robustness, Ethics, and Fairness in Low-Rank LLMs](../../ACL2026/llm_safety/decomposed_trust_privacy_adversarial_robustness_ethics_and_fairness_in_low-rank_.md)
-- [\[NeurIPS 2025\] Attention! Your Vision Language Model Could Be Maliciously Manipulated](attention_your_vision_language_model_could_be_maliciously_manipulated.md)
 - [\[NeurIPS 2025\] InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy](invisibleink_high-utility_and_low-cost_text_generation_with_differential_privacy.md)
 
 </div>

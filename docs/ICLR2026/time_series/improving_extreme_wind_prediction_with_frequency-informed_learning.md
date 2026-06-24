@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Improving Extreme Wind Prediction with Frequency-Informed Learning
 description: >-
-  [ICLR 2026][Time Series][ERA5] This paper theoretically proves from a frequency domain perspective that the "MSE training + pattern shift → high-frequency amplitude contraction" mechanism is the root cause of the systematic underestimation of extreme wind speeds by data-driven models. Accordingly, it proposes a triad of **gradient penalty loss + NS
+  [ICLR 2026][Time Series][Extreme wind speed prediction] This paper theoretically proves from a frequency domain perspective that the "MSE training + pattern shift → high-frequency amplitude contraction" mechanism is the root cause of the systematic underestimation of extreme wind speeds by data-driven models. Accordingly, it proposes a triad of **gradient penalty loss + NS physical embedding structure + frequency-separated reweighting**, which significantly enhances extreme w…
 tags:
-  - ICLR 2026
-  - Time Series
-  - ERA5
+  - "ICLR 2026"
+  - "Time Series"
+  - "Extreme wind speed prediction"
+  - "Frequency domain analysis"
+  - "Gradient penalty loss"
+  - "Navier-Stokes physical embedding"
+  - "Frequency separation reweighting"
+  - "ERA5"
 date: 2026-05-08
-content_hash: 2f4d0861f72465da
+content_hash: 4457831a0533fa5f
 ---
+
 # Improving Extreme Wind Prediction with Frequency-Informed Learning
 
 **Conference**: ICLR 2026  

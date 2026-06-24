@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Soft Label: Dataset Distillation via Orthogonal Gradient Matching
 description: >-
-  [CVPR 2026][Model Compression][ImageNet-1K] Addressing the issue where existing ImageNet-1K dataset distillation methods rely excessively on BN statistics matching and suffer performance collapse without soft labels, this paper argues from a gradient perspective that BN matching only aligns gradient "scales" while ignoring the "directions" that determine trainin
+  [CVPR 2026][Model Compression][Dataset Distillation] Addressing the issue where existing ImageNet-1K dataset distillation methods rely excessively on BN statistics matching and suffer performance collapse without soft labels, this paper argues from a gradient perspective that BN matching only aligns gradient "scales" while ignoring the "directions" that determine training. The authors propose Orthogonal Gradient Matching (OGM), which performs SVD on real/synthetic gradients…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - ImageNet-1K
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Gradient Direction Matching"
+  - "Singular Vectors"
+  - "Hard Label"
+  - "ImageNet-1K"
 date: 2026-05-08
-content_hash: 24f4cd905d8612df
+content_hash: ba1bd94830525b22
 ---
+
 # Beyond Soft Label: Dataset Distillation via Orthogonal Gradient Matching
 
 **Conference**: CVPR 2026  

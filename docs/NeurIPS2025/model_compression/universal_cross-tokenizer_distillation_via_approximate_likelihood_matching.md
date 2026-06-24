@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching
 description: >-
-  [NeurIPS 2025][Model Compression][cross-tokenizer distillation] This paper proposes Approximate Likelihood Matching (ALM), a principled cross-tokenizer distillation method based on binarized f-divergence…
+  [NeurIPS 2025][Model Compression][cross-tokenizer distillation] This paper proposes Approximate Likelihood Matching (ALM), a principled cross-tokenizer distillation method based on binarized f-divergence, which for the first time enables effective distillation and pure distillation across fundamentally different tokenizers (e.g., subword → byte-level).
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "f-divergence"
   - "LLM distillation"
 date: 2026-05-08
-content_hash: 3d95cc0bb40be63b
+content_hash: cc91bcb72ea9fa79
 ---
 
 # Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching
@@ -128,11 +128,11 @@ This paper elevates cross-tokenizer distillation from heuristic approaches to a 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Cross-Tokenizer Likelihood Scoring Algorithms for Language Model Distillation](../../ICLR2026/model_compression/cross-tokenizer_likelihood_scoring_algorithms_for_language_model_distillation.md)
 - [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](../../AAAI2026/model_compression/ctpd_cross_tokenizer_preference_distillation.md)
-- [\[NeurIPS 2025\] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)
 - [\[NeurIPS 2025\] Explaining and Mitigating Crosslingual Tokenizer Inequities](explaining_and_mitigating_crosslingual_tokenizer_inequities.md)
+- [\[NeurIPS 2025\] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)
 - [\[NeurIPS 2025\] Learning to Factorize and Adapt: A Versatile Approach Toward Universal Spatio-Temporal Foundation Models](learning_to_factorize_and_adapt_a_versatile_approach_toward_universal_spatio-tem.md)
-- [\[ICCV 2025\] Cross-Architecture Distillation Made Simple with Redundancy Suppression](../../ICCV2025/model_compression/cross-architecture_distillation_made_simple_with_redundancy_suppression.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Efficient Token Compression Framework for Visual Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] To address the visual token explosion and redundancy in multi-frame template tracking, ETCTrack utilizes a learnable Adaptive Token Compressor (ATC) to compress historical template frames into a refined subset. This is followed by a Hierarchical Interaction Block (HIBlock) for deep interaction with the search region. I
+  [CVPR 2026][Video Understanding][Visual Object Tracking] To address the visual token explosion and redundancy in multi-frame template tracking, ETCTrack utilizes a learnable Adaptive Token Compressor (ATC) to compress historical template frames into a refined subset. This is followed by a Hierarchical Interaction Block (HIBlock) for deep interaction with the search region. It sets new state-of-the-art accuracy across 7 benchmarks while reducing computation (template tokens re…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Visual Object Tracking"
+  - "Token Compression"
+  - "Multi-frame Template"
+  - "Spatiotemporal Redundancy"
+  - "Attention Interaction"
 date: 2026-05-08
-content_hash: cd86ff9a3c2942f0
+content_hash: fa4d92f475394aa2
 ---
+
 # An Efficient Token Compression Framework for Visual Object Tracking
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,11 @@ Impact of Keep Ratio $r$ (ETCTrack-B224):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
-- [\[CVPR 2026\] Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking](beyond_explicit_language_plug-and-play_visual-to-linguistic_modeling_toward_gene.md)
-- [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
-- [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](../../ICCV2025/video_understanding/general_compression_framework_for_efficient_transformer_object_tracking.md)
 - [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
+- [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
+- [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
+- [\[CVPR 2026\] Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking](beyond_explicit_language_plug-and-play_visual-to-linguistic_modeling_toward_gene.md)
 
 </div>
 

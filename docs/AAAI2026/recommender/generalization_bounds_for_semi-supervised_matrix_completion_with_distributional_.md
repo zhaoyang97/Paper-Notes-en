@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalization Bounds for Semi-supervised Matrix Completion with Distributional Side Information
 description: >-
-  [AAAI 2026][Recommender Systems][Semi-supervised matrix completion] This paper proposes the first semi-supervised matrix completion learning paradigm: assuming that the sampling distribution $P$ and the ground-truth matr…
+  [AAAI 2026][Recommender Systems][Semi-supervised matrix completion] This paper proposes the first semi-supervised matrix completion learning paradigm: assuming that the sampling distribution $P$ and the ground-truth matrix $G$ share a low-rank subspace, and given a large amount of unlabeled data $M$ and a small amount of labeled data $N$, it proves that the generalization error can be decomposed into two independent terms $\tilde{O}(\sqrt{nd/M}) + \tilde{O}(\sqrt{dr/N})$…
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -13,7 +13,7 @@ tags:
   - "explicit feedback"
   - "nuclear norm constraint"
 date: 2026-05-08
-content_hash: e852f049e78c14e1
+content_hash: 0df3060e408b36bd
 ---
 
 # Generalization Bounds for Semi-supervised Matrix Completion with Distributional Side Information
@@ -133,8 +133,8 @@ On a $200 \times 200$ matrix ($d=r=4$) with $M \in [10000, 100000]$, $N \in [50,
 ## Related Papers
 
 - [\[AAAI 2026\] Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling](semi-supervised_synthetic_data_generation_with_fine-grained_relevance_control_fo.md)
-- [\[AAAI 2026\] FreqRec: Exploiting Inter-Session Information with Frequency-enhanced Dual-Path Networks for Sequential Recommendation](exploiting_inter-session_information_with_frequency-enhanced_dual-path_networks_.md)
 - [\[NeurIPS 2025\] PAC-Bayes Bounds for Multivariate Linear Regression and Linear Autoencoders](../../NeurIPS2025/recommender/pac-bayes_bounds_for_multivariate_linear_regression_and_linear_autoencoders.md)
+- [\[AAAI 2026\] FreqRec: Exploiting Inter-Session Information with Frequency-enhanced Dual-Path Networks for Sequential Recommendation](exploiting_inter-session_information_with_frequency-enhanced_dual-path_networks_.md)
 - [\[ICLR 2026\] CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation](../../ICLR2026/recommender/collectivekv_decoupling_and_sharing_collaborative_information_in_sequential_reco.md)
 - [\[ICML 2026\] GCIB: Graph Contrastive Information Bottleneck for Multi-Behavior Recommendation](../../ICML2026/recommender/gcib_graph_contrastive_information_bottleneck_for_multi-behavior_recommendation.md)
 

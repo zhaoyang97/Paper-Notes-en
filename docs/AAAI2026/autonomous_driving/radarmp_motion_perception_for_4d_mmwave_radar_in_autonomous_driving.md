@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][4D mmWave radar] This paper proposes RadarMP — the first unified architecture that jointly addresses mmWave radar object detection and scene flow estimation. It leverages energy flow consi…
+  [AAAI 2026][Autonomous Driving][4D mmWave radar] This paper proposes RadarMP — the first unified architecture that jointly addresses mmWave radar object detection and scene flow estimation. It leverages energy flow consistency across adjacent-frame radar echo signals (tesseracts) for self-supervised training, achieving a detection probability of 69.5% (far exceeding the prior best of 44.1%) while enabling accurate 3D scene motion perception.
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "self-supervised learning"
   - "motion perception"
 date: 2026-05-08
-content_hash: deebdf573fbd9e58
+content_hash: a9a9cc3e33aacf38
 ---
 
 # RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving
@@ -205,10 +205,10 @@ All three loss components are indispensable: removing the segmentation energy lo
 ## Related Papers
 
 - [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](../../NeurIPS2025/autonomous_driving/v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
-- [\[AAAI 2026\] AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving](decoupling_scene_perception_and_ego_status_a_multi-context_fusion_approach_for_e.md)
+- [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](../../CVPR2026/autonomous_driving/hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
+- [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](../../CVPR2026/autonomous_driving/rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
 - [\[CVPR 2026\] AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception](../../CVPR2026/autonomous_driving/adaradar_rate_adaptive_spectral_compression_for_radar-based_perception.md)
-- [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
-- [\[AAAI 2026\] ExpertAD: Enhancing Autonomous Driving Systems with Mixture of Experts](expertad_enhancing_autonomous_driving_systems_with_mixture_of_experts.md)
+- [\[CVPR 2026\] DrivePI: Spatial-aware 4D MLLM for Unified Autonomous Driving Understanding, Perception, Prediction and Planning](../../CVPR2026/autonomous_driving/drivepi_spatial-aware_4d_mllm_for_unified_autonomous_driving_understanding_perce.md)
 
 </div>
 

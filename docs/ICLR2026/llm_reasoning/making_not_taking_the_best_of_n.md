@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Making, Not Taking, the Best of N
 description: >-
-  [ICLR 2026][LLM Reasoning][Best-of-N] The authors shift the paradigm of LLM output aggregation from "selecting the best one from N candidates" (Best-of-N selection) to "using a fusor model to synthesize the merits of N candidates into a superior answer" (Fusion-of-N synthesis). This approach consistently outperforms BON in both test-time scaling and synthe
+  [ICLR 2026][Reasoning][Best-of-N] The authors shift the paradigm of LLM output aggregation from "selecting the best one from N candidates" (Best-of-N selection) to "using a fusor model to synthesize the merits of N candidates into a superior answer" (Fusion-of-N synthesis). This approach consistently outperforms BON in both test-time scaling and synthetic data generation, even surpassing the oracle upper bound.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Best-of-N
-  - LLM-as-judge
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Best-of-N"
+  - "Generation Fusion"
+  - "Test-time Scaling"
+  - "Synthetic Data Generation"
+  - "Multilingual"
+  - "LLM-as-judge"
 date: 2026-05-08
-content_hash: eb23a4d91dd6fb4b
+content_hash: fedda99ca40bc963
 ---
+
 # Making, Not Taking, the Best of N
 
 **Conference**: ICLR 2026  
@@ -131,9 +136,9 @@ The student fine-tuned on FUSION data not only outperforms the base model (Accur
 
 - [\[ICLR 2026\] Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy](making_slow_thinking_faster_compressing_llm_chain-of-thought_via_step_entropy.md)
 - [\[ICLR 2026\] Sample Smart, Not Hard: Correctness-First Decoding for Better Reasoning in LLMs](sample_smart_not_hard_correctness-first_decoding_for_better_reasoning_in_llms.md)
-- [\[ICLR 2026\] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping](smarter_not_harder_generative_process_evaluation_with_intrinsic-signal_driving_a.md)
+- [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](../../NeurIPS2025/llm_reasoning/sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
 - [\[NeurIPS 2025\] Scalable Best-of-N Selection for Large Language Models via Self-Certainty](../../NeurIPS2025/llm_reasoning/scalable_best-of-n_selection_for_large_language_models_via_self-certainty.md)
-- [\[ICML 2026\] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn](../../ICML2026/llm_reasoning/many-shot_cot-icl_making_in-context_learning_truly_learn.md)
+- [\[ICLR 2026\] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping](smarter_not_harder_generative_process_evaluation_with_intrinsic-signal_driving_a.md)
 
 </div>
 

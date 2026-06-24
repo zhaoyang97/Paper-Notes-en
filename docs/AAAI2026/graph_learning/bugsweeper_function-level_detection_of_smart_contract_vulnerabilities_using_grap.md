@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BugSweeper: Function-Level Detection of Smart Contract Vulnerabilities Using Graph Neural Networks
 description: >-
-  [AAAI2026][Graph Learning][Smart Contract] This paper proposes BugSweeper, which constructs function-level abstract syntax graphs (FLAG) and designs a two-stage GNN architecture to enable end-to-end smart contract vulner…
+  [AAAI2026][Graph Learning][Smart Contract] This paper proposes BugSweeper, which constructs function-level abstract syntax graphs (FLAG) and designs a two-stage GNN architecture to enable end-to-end smart contract vulnerability detection without expert-defined rules, achieving an F1 of 98.57% on reentrancy attack detection.
 tags:
   - "AAAI2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Abstract Syntax Tree"
   - "Pooling"
 date: 2026-05-08
-content_hash: 244f801b3702a523
+content_hash: 6e8dfbf0b0d65dc9
 ---
 
 # BugSweeper: Function-Level Detection of Smart Contract Vulnerabilities Using Graph Neural Networks
@@ -158,10 +158,10 @@ Best configuration SAGE + GAT:
 ## Related Papers
 
 - [\[ICML 2026\] Learnable Kernel Density Estimation for Graphs and Its Application to Graph-Level Anomaly Detection](../../ICML2026/graph_learning/learnable_kernel_density_estimation_for_graphs_and_its_application_to_graph-leve.md)
+- [\[ICLR 2026\] FS-KAN: Permutation Equivariant Kolmogorov-Arnold Networks via Function Sharing](../../ICLR2026/graph_learning/fs-kan_permutation_equivariant_kolmogorov-arnold_networks_via_function_sharing.md)
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](adaptive_riemannian_graph_neural_networks.md)
 - [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
-- [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](../../ICLR2026/graph_learning/are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HoloCine: Holistic Generation of Cinematic Multi-Shot Long Video Narratives
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Based on DiT video diffusion models like Wan2.2, HoloCine employs "Window Cross-Attention" to align each shot with its storyboard text and "Sparse Inter-Shot Self-Attention" to reduce the quadratic complexity of full-sequence self-attention to near-linear. This enables the **holistic, one-pass generation** of minute-lo
+  [CVPR 2026][Video Generation][Multi-shot video generation] Based on DiT video diffusion models like Wan2.2, HoloCine employs "Window Cross-Attention" to align each shot with its storyboard text and "Sparse Inter-Shot Self-Attention" to reduce the quadratic complexity of full-sequence self-attention to near-linear. This enables the **holistic, one-pass generation** of minute-long, character-consistent cinematic narratives with precise transition control.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-shot video generation"
+  - "holistic generation"
+  - "window cross-attention"
+  - "sparse inter-shot self-attention"
+  - "minute-level long video"
 date: 2026-05-08
-content_hash: 2cd12a65b423da6b
+content_hash: 1b69285d90e34d3a
 ---
+
 # HoloCine: Holistic Generation of Cinematic Multi-Shot Long Video Narratives
 
 **Conference**: CVPR 2026  

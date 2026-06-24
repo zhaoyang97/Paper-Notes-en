@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding
 description: >-
-  [AAAI 2026][Video Understanding][Video Anomaly Understanding] This paper proposes the FineVAU benchmark, which decomposes Video Anomaly Understanding (VAU) into three dimensions — Event (What), Entity (Who)…
+  [AAAI 2026][Video Understanding][Video Anomaly Understanding] This paper proposes the FineVAU benchmark, which decomposes Video Anomaly Understanding (VAU) into three dimensions — Event (What), Entity (Who), and Location (Where) — introduces the FV-Score metric with high alignment to human perception, and constructs the FineW³ dataset via a fully automated LVLM-assisted pipeline. Experiments reveal critical shortcomings of current LVLMs in fine-grained anomalous event percept…
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Fine-Grained Evaluation"
   - "Human Alignment"
 date: 2026-05-08
-content_hash: 5d29809e7e4acf4e
+content_hash: c94951c90b269834
 ---
 
 # FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding
@@ -148,11 +148,11 @@ FineVAU comprises three core contributions:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Text-guided Fine-Grained Video Anomaly Understanding](../../CVPR2026/video_understanding/text-guided_fine-grained_video_anomaly_understanding.md)
-- [\[AAAI 2026\] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)
-- [\[AAAI 2026\] LiViBench: An Omnimodal Benchmark for Interactive Livestream Video Understanding](livibench_an_omnimodal_benchmark_for_interactive_livestream_video_understanding.md)
+- [\[ICLR 2026\] CaReBench: A Fine-grained Benchmark for Video Captioning and Retrieval](../../ICLR2026/video_understanding/carebench_a_fine-grained_benchmark_for_video_captioning_and_retrieval.md)
+- [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](../../CVPR2026/video_understanding/fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)
 - [\[CVPR 2026\] Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding](../../CVPR2026/video_understanding/frame2freq_spectral_adapters_for_fine-grained_video_understanding.md)
-- [\[AAAI 2026\] FineTec: Fine-Grained Action Recognition Under Temporal Corruption via Skeleton Decomposition and Sequence Completion](finetec_fine-grained_action_recognition_under_temporal_corruption_via_skeleton_d.md)
+- [\[AAAI 2026\] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)
+- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](../../CVPR2026/video_understanding/ma-bench_towards_fine-grained_micro-action_understanding.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Aurora: Towards Universal Generative Multimodal Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Flow Matching] Aurora is the first **multimodal time series foundation model**: it is pre-trained on a cross-domain corpus of "time series + textual description + endogenous images." It utilizes modality-guided attention to inject domain knowledge from text/images into time series modeling and employs "prototype-guided flow matching"
+  [ICLR2026][Time Series][Time Series Forecasting] Aurora is the first **multimodal time series foundation model**: it is pre-trained on a cross-domain corpus of "time series + textual description + endogenous images." It utilizes modality-guided attention to inject domain knowledge from text/images into time series modeling and employs "prototype-guided flow matching" for generative probabilistic forecasting. This allows it to achieve SOTA performance in both deterministic and…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Flow Matching
+  - "ICLR2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Multimodal Foundation Models"
+  - "Flow Matching"
+  - "Zero-shot Prediction"
+  - "Cross-domain Generalization"
 date: 2026-05-08
-content_hash: 514431647de694c0
+content_hash: 9e56b1204aec0abc
 ---
+
 # Aurora: Towards Universal Generative Multimodal Time Series Forecasting
 
 **Conference**: ICLR2026  
@@ -136,15 +141,15 @@ Table 5 shows module ablation (MSE) across 9 domains in TimeMMD:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] GAICo: A Deployed and Extensible Framework for Evaluating Diverse and Multimodal Generative AI Outputs](../../AAAI2026/time_series/gaico_a_deployed_and_extensible_framework_for_evaluating_diverse_and_multimodal_.md)
-- [\[ICLR 2026\] Characteristic Root Analysis and Regularization for Linear Time Series Forecasting](characteristic_root_analysis_and_regularization_for_linear_time_series_forecasti.md)
+- [\[ICLR 2026\] GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables](gcgnet_graph-consistent_generative_network_for_time_series_forecasting_with_exog.md)
 - [\[ICLR 2026\] Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction](towards_multimodal_time_series_anomaly_detection_with_semantic_alignment_and_con.md)
 - [\[ICLR 2026\] Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting](bridging_past_and_future_distribution-aware_alignment_for_time_series_forecastin.md)
-- [\[ICLR 2026\] Long-range Modeling and Processing of Multimodal Event Sequences](long-range_modeling_and_processing_of_multimodal_event_sequences.md)
+- [\[ICLR 2026\] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting](cosa_context-aware_output-space_adapter_for_test-time_adaptation_in_time_series_.md)
 
 </div>
 

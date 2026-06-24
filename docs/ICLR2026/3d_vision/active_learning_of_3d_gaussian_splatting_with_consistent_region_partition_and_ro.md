@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Active Learning of 3D Gaussian Splatting with Consistent Region Partition and Robust Pose Estimation
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper proposes an online active learning algorithm for 3D Gaussian Splatting (3DGS). It guides users by suggesting the "next best view" during training. The system partitions the model into consistent regions using visibility features, identifies the most under-reconstructed areas via semantic feature variance, an
+  [ICLR2026][3D Vision][3D Gaussian Splatting] This paper proposes an online active learning algorithm for 3D Gaussian Splatting (3DGS). It guides users by suggesting the "next best view" during training. The system partitions the model into consistent regions using visibility features, identifies the most under-reconstructed areas via semantic feature variance, and directly generates the next optimal pose using a von Mises-Fisher distribution. It also incorporates a robust pos…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Active Reconstruction"
+  - "Next Best View"
+  - "Consistent Region Partition"
+  - "Robust Pose Estimation"
 date: 2026-05-08
-content_hash: 499afeb3e690b2b5
+content_hash: 1df9bf724dbffb2e
 ---
+
 # Active Learning of 3D Gaussian Splatting with Consistent Region Partition and Robust Pose Estimation
 
 **Conference**: ICLR2026  
@@ -148,11 +154,11 @@ Blender (8 scenes), 10 total views:
 
 ## Related Papers
 
-- [\[CVPR 2026\] WildPose: A Unified Framework for Robust Pose Estimation in the Wild](../../CVPR2026/3d_vision/wildpose_a_unified_framework_for_robust_pose_estimation_in_the_wild.md)
-- [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](../../CVPR2026/3d_vision/compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
 - [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](learning_unified_representation_of_3d_gaussian_splatting.md)
 - [\[ICLR 2026\] NGS-Marker: Robust Native Watermarking for 3D Gaussian Splatting](ngs-marker_robust_native_watermarking_for_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] Pose-Free Omnidirectional Gaussian Splatting for 360-Degree Videos with Consistent Depth Priors](../../CVPR2026/3d_vision/pose-free_omnidirectional_gaussian_splatting_for_360-degree_videos_with_consiste.md)
+- [\[CVPR 2026\] WildPose: A Unified Framework for Robust Pose Estimation in the Wild](../../CVPR2026/3d_vision/wildpose_a_unified_framework_for_robust_pose_estimation_in_the_wild.md)
+- [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](../../CVPR2026/3d_vision/compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
+- [\[ECCV 2024\] Learning 3D Geometry and Feature Consistent Gaussian Splatting for Object Removal](../../ECCV2024/3d_vision/learning_3d_geometry_and_feature_consistent_gaussian_splatting_for_object_remova.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MACS: Modality-Aware Capacity Scaling for Efficient Multimodal MoE Inference
 description: >-
-  [ACL 2026][vlm_efficiency][MoE MLLM] To address the "straggler" problem where Multimodal MoE models are bottlenecked by the "slowest expert" during Expert Parallelism (EP) inference, MACS re-estimates expert load using the Shannon entropy of visual tokens as semantic importance weights. It dynamically scales expert capacity based on the real-time modality
+  [ACL2026][Multimodal Efficiency][MoE MLLM] To address the "straggler" problem where Multimodal MoE models are bottlenecked by the "slowest expert" during Expert Parallelism (EP) inference, MACS re-estimates expert load using the Shannon entropy of visual tokens as semantic importance weights. It dynamically scales expert capacity based on the real-time modality composition of the batch. MACS is a training-free inference framework that maintains nearly identical performance (a…
 tags:
-  - ACL 2026
-  - vlm_efficiency
-  - MoE MLLM
+  - "ACL2026"
+  - "Multimodal Efficiency"
+  - "MoE MLLM"
+  - "Expert Parallelism"
+  - "straggler effect"
+  - "entropy-weighted load"
+  - "training-free inference"
 date: 2026-05-08
-content_hash: aa9665f40329e3a1
+content_hash: e2cc52631f7d561a
 ---
+
 # MACS: Modality-Aware Capacity Scaling for Efficient Multimodal MoE Inference
 
 **Conference**: ACL2026  

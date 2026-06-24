@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] This paper reframes the task of "predicting spatial gene expression from pathology slides" from a spot-wise regression task to a dense prediction task. It proposes PixNet: first, a pathology foundation model extracts pyramid features; then, a U-Net-style decoder progressively generates a full-image dense gene expressio
+  [CVPR 2026][Computational Biology][Spatial Transcriptomics] This paper reframes the task of "predicting spatial gene expression from pathology slides" from a spot-wise regression task to a dense prediction task. It proposes PixNet: first, a pathology foundation model extracts pyramid features; then, a U-Net-style decoder progressively generates a full-image dense gene expression map; finally, expression values for spots of any position or radius are obtained through circular…
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Spatial Transcriptomics"
+  - "Gene Expression Prediction"
+  - "Dense Prediction"
+  - "Histology Images"
+  - "Multi-scale Decoding"
 date: 2026-05-08
-content_hash: faf536020773e88e
+content_hash: 8c93dd497e54daf4
 ---
+
 # From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images
 
 **Conference**: CVPR 2026  
@@ -171,9 +177,9 @@ Training spot size ablation (Tab. 6): Training on 16µm/8µm/2µm individually y
 
 - [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
 - [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
-- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
 - [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
-- [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
+- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
+- [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](../../AAAI2026/computational_biology/hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
 
 </div>
 

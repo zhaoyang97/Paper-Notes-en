@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning
 description: >-
-  [CVPR 2026][Federated Learning][LoRA] HiLoRA decomposes the LoRA update of each client into a three-layer orthogonal subspace structure consisting of "root-cluster-leaf," which respectively capture global consensus, subgroup commonalities, and client personalization. Combined with an adaptive clustering mechanism based on LoRA subspace similarity, it achie
+  [CVPR 2026][Federated Learning][LoRA] HiLoRA decomposes the LoRA update of each client into a three-layer orthogonal subspace structure consisting of "root-cluster-leaf," which respectively capture global consensus, subgroup commonalities, and client personalization. Combined with an adaptive clustering mechanism based on LoRA subspace similarity, it achieves SOTA performance in both personalization and generalization to new clients on CIFAR-100 and DomainNet.
 tags:
-  - CVPR 2026
-  - Federated Learning
-  - LoRA
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "LoRA"
+  - "Personalization"
+  - "Hierarchical Adaptation"
+  - "Subspace Clustering"
 date: 2026-05-08
-content_hash: 9711ca84db72db3d
+content_hash: 9d4420378b283cf3
 ---
+
 # HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning
 
 **Conference**: CVPR 2026  
@@ -139,9 +143,11 @@ Component ablation (Table 4):
 
 ## Related Papers
 
+- [\[CVPR 2026\] FedARA: Resource-adaptive Low-rank Personalized Federated Learning via Anchor-driven Representation Alignment on Heterogeneous Edge Devices](fedara_resource-adaptive_low-rank_personalized_federated_learning_via_anchor-dri.md)
+- [\[CVPR 2026\] SubFLOT: Efficient Personalized Federated Learning via Optimal Transport-based Submodel Extraction](submodel_extraction_for_efficient_and_personalized_federated_learning_via_optima.md)
+- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
 - [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
-- [\[CVPR 2026\] GDFA: Geometry-Driven Federated Unlearning with Directional Task Vector Alignment](gdfa_geometry-driven_federated_unlearning_with_directional_task_vector_alignment.md)
-- [\[CVPR 2026\] Fully Decentralized Certified Unlearning](fully_decentralized_certified_unlearning.md)
+- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
 
 </div>
 

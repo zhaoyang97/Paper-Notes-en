@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RI-Mamba: Rotation-Invariant Mamba for Robust Text-to-Shape Retrieval
 description: >-
-  [CVPR 2026][3D Vision][State Space Model] Addressing the retrieval challenges of 3D objects with arbitrary orientations and diverse categories in real-world scenarios, this paper proposes RI-Mamba, the first pure-Mamba rotation-invariant point cloud model. It decouples pose from geometry using local and global reference frames, constructs rotation-invariant to
+  [CVPR 2026][3D Vision][Text-to-shape retrieval] Addressing the retrieval challenges of 3D objects with arbitrary orientations and diverse categories in real-world scenarios, this paper proposes RI-Mamba, the first pure-Mamba rotation-invariant point cloud model. It decouples pose from geometry using local and global reference frames, constructs rotation-invariant token sequences via Hilbert curves, and recovers discarded pose information through linear-time orientation embedd…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - State Space Model
-  - Mamba
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Text-to-shape retrieval"
+  - "rotation invariant"
+  - "state space models"
+  - "Mamba"
+  - "point cloud"
 date: 2026-05-08
-content_hash: c45dda5732961064
+content_hash: 9b9bc375a08577e3
 ---
+
 # RI-Mamba: Rotation-Invariant Mamba for Robust Text-to-Shape Retrieval
 
 **Conference**: CVPR 2026  
@@ -156,6 +160,7 @@ Removing components (Omni3D, ShapeNet pre-trained, RR@1 metric):
 - Value: ⭐⭐⭐⭐⭐ (Moves text-to-shape retrieval toward real-world application)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -163,8 +168,8 @@ Removing components (Omni3D, ShapeNet pre-trained, RR@1 metric):
 - [\[CVPR 2026\] RINO: Rotation-Invariant Non-Rigid Correspondences](rino_rotation-invariant_non-rigid_correspondences.md)
 - [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
 - [\[CVPR 2026\] VIMCAN: Visual-Inertial 3D Human Pose Estimation with Hybrid Mamba-Cross-Attention Network](vimcan_visual-inertial_3d_human_pose_estimation_with_hybrid_mamba-cross-attentio.md)
-- [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
 - [\[CVPR 2025\] Spectral Informed Mamba for Robust Point Cloud Processing](../../CVPR2025/3d_vision/spectral_informed_mamba_for_robust_point_cloud_processing.md)
+- [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
 
 </div>
 

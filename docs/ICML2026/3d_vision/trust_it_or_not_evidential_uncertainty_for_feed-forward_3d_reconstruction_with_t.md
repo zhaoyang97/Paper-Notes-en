@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Trust3R: Evidential Uncertainty for Feed-Forward 3D Reconstruction
 description: >-
-  [ICML 2026][3D Vision][Paper Note] Trust3R introduces a probabilistic evidential learning framework for feed-forward 3D reconstruction models like MASt3R. By utilizing a Normal-Inverse-Wishart prior to predict a closed-form multivariate Student-t distribution for each 3D point, it replaces heuristic confidence scores. This allows for the output of proba
+  [ICML 2026][3D Vision][Evidential Learning] Trust3R introduces a probabilistic evidential learning framework for feed-forward 3D reconstruction models like MASt3R. By utilizing a Normal-Inverse-Wishart prior to predict a closed-form multivariate Student-t distribution for each 3D point, it replaces heuristic confidence scores. This allows for the output of probabilistically interpretable point-wise uncertainty in a single forward pass, reducing AURC by 25% and AUSE by 41% on…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026"
+  - "3D Vision"
+  - "Evidential Learning"
+  - "Uncertainty Quantification"
+  - "3D Reconstruction"
+  - "Point Maps"
+  - "Geometric Foundation Models"
 date: 2026-05-08
-content_hash: 03911b6e65c658f2
+content_hash: 5d649b7584d08295
 ---
+
 # Trust3R: Evidential Uncertainty for Feed-Forward 3D Reconstruction
 
 **Conference**: ICML 2026  

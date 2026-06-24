@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CI-VID: A Coherent Interleaved Text-Video Dataset
 description: >-
-  [CVPR 2026][Video Generation][T&V2V] CI-VID constructs an "interleaved text-video" dataset of 340,000 samples—each sample is a semantically coherent multi-shot video sequence paired with interleaved captions that describe both individual shots and the "continuation/change" between adjacent shots. This allows models to transition from "isolated text → vide
+  [CVPR 2026][Video Generation][Text-video dataset] CI-VID constructs an "interleaved text-video" dataset of 340,000 samples—each sample is a semantically coherent multi-shot video sequence paired with interleaved captions that describe both individual shots and the "continuation/change" between adjacent shots. This allows models to transition from "isolated text → video" to "text + preceding video → subsequent video," enabling the generation of multi-shot videos with storytell…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - T&V2V
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-video dataset"
+  - "multi-shot video generation"
+  - "interleaved text-video"
+  - "data construction pipeline"
+  - "T&V2V"
 date: 2026-05-08
-content_hash: 48f7def3c2482c66
+content_hash: 2dd2608bb027cabf
 ---
+
 # CI-VID: A Coherent Interleaved Text-Video Dataset
 
 **Conference**: CVPR 2026  
@@ -127,16 +132,16 @@ VLM evaluation (Qwen2.5-VL-72B-Instruct, 0–5 scale):
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] TV2TV: A Unified Framework for Interleaved Language and Video Generation](tv2tv_a_unified_framework_for_interleaved_language_and_video_generation.md)
 - [\[CVPR 2026\] OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory](onestory_coherent_multi-shot_video_generation_with_adaptive_memory.md)
+- [\[CVPR 2026\] CamDirector: Towards Long-Term Coherent Video Trajectory Editing](camdirector_towards_long-term_coherent_video_trajectory_editing.md)
+- [\[CVPR 2026\] Scaling Instruction-Based Video Editing with a High-Quality Synthetic Dataset](scaling_instruction-based_video_editing_with_a_high-quality_synthetic_dataset.md)
 - [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
-- [\[CVPR 2026\] EgoEdit: Dataset, Real-Time Streaming Model, and Benchmark for Egocentric Video Editing](egoedit_dataset_real-time_streaming_model_and_benchmark_for_egocentric_video_edi.md)
-- [\[CVPR 2026\] CineBrain: A Large-Scale Multi-Modal Audiovisual Brain Dataset for Brain-Conditioned Video Generation](cinebrain_a_large-scale_multi-modal_audiovisual_brain_dataset_for_brain-conditio.md)
 
 </div>
 

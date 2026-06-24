@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Large Language Models Are Overconfident in Their Own Responses
 description: >-
-  [ACL 2026][Alignment & RLHF][instruction tuning] This paper discovers that instruction-tuned LLMs exhibit a significant ownership bias when evaluating "answers they generated themselves," and proposes a simple inference-time strategy of rewriting the answer as a user input before asking for confidence to reduce overconfidence without retraining.
+  [ACL2026 Findings][LLM Alignment][confidence calibration] This paper discovers that instruction-tuned LLMs exhibit a significant ownership bias when evaluating "answers they generated themselves," and proposes a simple inference-time strategy of rewriting the answer as a user input before asking for confidence to reduce overconfidence without retraining.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - instruction tuning
-  - chat template
-  - ownership bias
-  - inference-time mitigation
+  - "ACL2026 Findings"
+  - "LLM Alignment"
+  - "confidence calibration"
+  - "instruction tuning"
+  - "chat template"
+  - "ownership bias"
+  - "inference-time mitigation"
 date: 2026-05-08
-content_hash: 7056c9e2c7c0a29d
+content_hash: 3d6648289f463120
 ---
+
 # Large Language Models Are Overconfident in Their Own Responses
 
 **Conference**: ACL2026 Findings  
@@ -123,11 +125,11 @@ A similar trend was observed on GPT-5.2: the ΔECE for P(True), Percentage, and 
 
 ## Related Papers
 
+- [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
 - [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
 - [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
 - [\[ICLR 2026\] JULI: Jailbreak Large Language Models by Self-Introspection](../../ICLR2026/llm_alignment/juli_jailbreak_large_language_models_by_self-introspection.md)
 - [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](../../ICML2026/llm_alignment/towards_context-invariant_safety_alignment_for_large_language_models.md)
-- [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
 
 </div>
 

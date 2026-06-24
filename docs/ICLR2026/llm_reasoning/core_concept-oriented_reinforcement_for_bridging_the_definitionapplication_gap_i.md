@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CORE: Concept-Oriented Reinforcement for Bridging the Definition–Application Gap in Mathematical Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] Addressing the issue where LLMs "can recite definitions but fail to apply concepts," CORE utilizes a clean linear algebra textbook to construct concept-aligned problems. During RL (GRPO) training, when a set of sampled trajectories are entirely incorrect, concept text is injected for correction. This is achieved either
+  [ICLR 2026][Reasoning][Concept Reasoning] Addressing the issue where LLMs "can recite definitions but fail to apply concepts," CORE utilizes a clean linear algebra textbook to construct concept-aligned problems. During RL (GRPO) training, when a set of sampled trajectories are entirely incorrect, concept text is injected for correction. This is achieved either by directly replacing failed trajectories (CORE-CR) or by using forward KL to distill the "concept-guided" reasoning…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Concept Reasoning"
+  - "Verifiable Reward RL"
+  - "GRPO"
+  - "Mathematical Reasoning"
+  - "Definition-application Gap"
 date: 2026-05-08
-content_hash: c92d6567a0a7dd95
+content_hash: 698ed43883229b5f
 ---
+
 # CORE: Concept-Oriented Reinforcement for Bridging the Definition–Application Gap in Mathematical Reasoning
 
 **Conference**: ICLR 2026  
@@ -130,10 +135,10 @@ In-domain Textbook saw a gain of up to +9.3% (46.4→55.7, CORE-KL), and Theorem
 ## Related Papers
 
 - [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
-- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
-- [\[ICLR 2026\] Hybrid Reinforcement: When Reward Is Sparse, Better to Be Dense](hybrid_reinforcement_when_reward_is_sparse_better_to_be_dense.md)
-- [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](../../NeurIPS2025/llm_reasoning/mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)
+- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
+- [\[ICLR 2026\] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](thor_tool-integrated_hierarchical_optimization_via_rl_for_mathematical_reasoning.md)
+- [\[ICLR 2026\] Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation](harder_is_better_boosting_mathematical_reasoning_via_difficulty-aware_grpo_and_m.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders
 description: >-
-  [ICCV 2025][LLM Safety][concept unlearning] SAUCE leverages sparse autoencoders (SAEs) to identify and selectively suppress features associated with target concepts in VLM intermediate representations…
+  [ICCV 2025][LLM Safety][concept unlearning] SAUCE leverages sparse autoencoders (SAEs) to identify and selectively suppress features associated with target concepts in VLM intermediate representations, enabling fine-grained concept unlearning without weight updates. Evaluated across 60 concepts, it surpasses the previous SOTA in forgetting quality by 18%.
 tags:
   - "ICCV 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "machine unlearning"
   - "fine-grained control"
 date: 2026-05-08
-content_hash: 75e49df643e4a526
+content_hash: fd93a420751e3764
 ---
 
 # SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders
@@ -138,10 +138,10 @@ Experiments are conducted on two VLMs (LLaVA-v1.5-7B and LLaMA-3.2-11B-Vision-In
 ## Related Papers
 
 - [\[ACL 2026\] CRISP: Persistent Concept Unlearning via Sparse Autoencoders](../../ACL2026/llm_safety/crisp_persistent_concept_unlearning_via_sparse_autoencoders.md)
+- [\[ICML 2025\] SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability](../../ICML2025/llm_safety/saebench_a_comprehensive_benchmark_for_sparse_autoencoders_in_language_model_int.md)
 - [\[NeurIPS 2025\] Approximate Domain Unlearning for Vision-Language Models](../../NeurIPS2025/llm_safety/approximate_domain_unlearning_for_visionlanguage_models.md)
-- [\[ICCV 2025\] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning](latte_collaborative_test-time_adaptation_of_vision-language_models_in_federated_.md)
 - [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](../../NeurIPS2025/llm_safety/simu_selective_influence_machine_unlearning.md)
-- [\[ICCV 2025\] Geminio: Language-Guided Gradient Inversion Attacks in Federated Learning](geminio_language-guided_gradient_inversion_attacks_in_federated_learning.md)
+- [\[ICCV 2025\] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning](latte_collaborative_test-time_adaptation_of_vision-language_models_in_federated_.md)
 
 </div>
 

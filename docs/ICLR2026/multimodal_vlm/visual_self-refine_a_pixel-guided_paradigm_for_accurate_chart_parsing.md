@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Addressing the issues of missing points, misalignment, and hallucinations in vision-intensive chart parsing, this paper proposes the "Visual Self-Refine" (VSR) paradigm. The model first outputs pixel-level coordinates, visualizes these marks back onto the image for iterative error correction, and finally uses verified
+  [ICLR 2026][Multimodal VLM][Chart Parsing] Addressing the issues of missing points, misalignment, and hallucinations in vision-intensive chart parsing, this paper proposes the "Visual Self-Refine" (VSR) paradigm. The model first outputs pixel-level coordinates, visualizes these marks back onto the image for iterative error correction, and finally uses verified coordinates as "finger anchors" to parse numerical values. A 3B model outperforms Gemini-2.5-Pro on the self-construc…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Chart Parsing"
+  - "Visual Self-Refine"
+  - "Pixel-level Localization"
+  - "Visual Feedback"
+  - "Visual Perception"
 date: 2026-05-08
-content_hash: 85d91b4f875dd4e2
+content_hash: 1822efe6a6b32ea9
 ---
+
 # Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing
 
 **Conference**: ICLR 2026  
@@ -143,15 +149,16 @@ Iterative correction capability (Table 5):
 - Value: ⭐⭐⭐⭐ Practical paradigm and benchmarks transferable to other vision tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] RxnCaption: Reformulating Reaction Diagram Parsing as Visual Prompt Guided Captioning](../../CVPR2026/multimodal_vlm/rxncaption_reformulating_reaction_diagram_parsing_as_visual_prompt_guided_captio.md)
 - [\[ICLR 2026\] ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Models](viper_empowering_the_self-evolution_of_visual_perception_abilities_in_vision-lan.md)
+- [\[ICLR 2026\] DaVinci: Reinforcing Visual-Structural Syntax in MLLMs for Generalized Scientific Diagram Parsing](davinci_reinforcing_visual-structural_syntax_in_mllms_for_generalized_scientific.md)
 - [\[ICLR 2026\] PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning](psp_prompt-guided_self-training_sampling_policy_for_active_prompt_learning.md)
 - [\[ICLR 2026\] Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs](uni-dpo_a_unified_paradigm_for_dynamic_preference_optimization_of_llms.md)
-- [\[ICLR 2026\] When MLLMs Meet Compression Distortion: A Coding Paradigm Tailored to MLLMs](when_mllms_meet_compression_distortion_a_coding_paradigm_tailored_to_mllms.md)
 
 </div>
 

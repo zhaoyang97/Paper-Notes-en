@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Teaming LLMs to Detect and Mitigate Hallucinations
 description: >-
-  [NeurIPS 2025][Hallucination Detection][multi-model consistency] This paper generalizes single-model consistency methods (Self-Consistency + Semantic Entropy) to a multi-model "consortium" setting comprising heterogeneou…
+  [NeurIPS 2025][Hallucination Detection][multi-model consistency] This paper generalizes single-model consistency methods (Self-Consistency + Semantic Entropy) to a multi-model "consortium" setting comprising heterogeneous LLMs. By aggregating responses from models with diverse training backgrounds, the approach breaks the consistent hallucinations that arise within a single model. Evaluating a large number of consortium combinations over a pool of 15 LLMs…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -11,7 +11,7 @@ tags:
   - "ensemble voting"
   - "inference cost"
 date: 2026-05-08
-content_hash: 9197ed99b3c71226
+content_hash: 1e624d0c604b80b8
 ---
 
 # Teaming LLMs to Detect and Mitigate Hallucinations
@@ -138,11 +138,11 @@ Experiments use a pool of 15 LLMs (6B–141B parameters, spanning LLaMA, Mistral
 
 ## Related Papers
 
+- [\[ACL 2025\] Mixture of Decoding: An Attention-Inspired Adaptive Decoding Strategy to Mitigate Hallucination in Multimodal LLMs](../../ACL2025/hallucination/mixture_of_decoding_an_attention-inspired_adaptive_decoding_strategy_to_mitigate.md)
+- [\[ACL 2025\] DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination](../../ACL2025/hallucination/drag_distilling_rag_slm.md)
+- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](../../CVPR2026/hallucination/same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
 - [\[NeurIPS 2025\] Robust Hallucination Detection in LLMs via Adaptive Token Selection](robust_hallucination_detection_in_llms_via_adaptive_token_selection.md)
-- [\[ICLR 2026\] Copy-Paste to Mitigate Large Language Model Hallucinations](../../ICLR2026/hallucination/copy-paste_to_mitigate_large_language_model_hallucinations.md)
 - [\[NeurIPS 2025\] Benford's Curse: Tracing Digit Bias to Numerical Hallucination in LLMs](benfords_curse_tracing_digit_bias_to_numerical_hallucination_in_llms.md)
-- [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](../../ACL2026/hallucination/meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
-- [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](../../ACL2026/hallucination/understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
 
 </div>
 

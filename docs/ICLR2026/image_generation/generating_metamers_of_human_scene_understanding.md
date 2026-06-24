@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Generating Metamers of Human Scene Understanding
 description: >-
-  [ICLR 2026][Image Generation][DINOv2] MetamerGen utilizes a dual-stream (foveal + peripheral) conditioned latent diffusion model to synthesize "scenes as understood by the human brain" from a small number of fixation points during free viewing. Through "same/different" behavioral experiments, the authors identify **scene metamers**—images judged as "identi
+  [ICLR 2026][Image Generation][Scene Metamer] MetamerGen utilizes a dual-stream (foveal + peripheral) conditioned latent diffusion model to synthesize "scenes as understood by the human brain" from a small number of fixation points during free viewing. Through "same/different" behavioral experiments, the authors identify **scene metamers**—images judged as "identical" by human observers—to decompose which levels of visual features determine human scene understanding.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - DINOv2
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Scene Metamer"
+  - "Gaze-guided Generation"
+  - "Latent Diffusion"
+  - "DINOv2"
+  - "Foveal-peripheral Vision"
+  - "Behavioral Experiment"
 date: 2026-05-08
-content_hash: f7c3c336fe94744a
+content_hash: 59fb42305582a311
 ---
+
 # Generating Metamers of Human Scene Understanding
 
 **Conference**: ICLR 2026  

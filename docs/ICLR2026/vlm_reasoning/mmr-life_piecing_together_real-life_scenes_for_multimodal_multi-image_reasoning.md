@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] This paper proposes the MMR-Life benchmark (2,646 5-way multiple-choice questions based on 19,108 real images, covering 7 reasoning types and 21 tasks) to systematically evaluate the multi-image reasoning capabilities of MLLMs in real-life scenarios. The study finds that the strongest model, GPT-5, achieves only 58.69%
+  [ICLR 2026][VLM Reasoning][Multimodal Reasoning] This paper proposes the MMR-Life benchmark (2,646 5-way multiple-choice questions based on 19,108 real images, covering 7 reasoning types and 21 tasks) to systematically evaluate the multi-image reasoning capabilities of MLLMs in real-life scenarios. The study finds that the strongest model, GPT-5, achieves only 58.69% accuracy—14% behind human performance—and reveals key insights such as the failure of reasoning enhancement me…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Multi-image Reasoning"
+  - "Real-life Scenes"
+  - "Reasoning Types"
+  - "Benchmark Evaluation"
 date: 2026-05-08
-content_hash: 432af03889df2dd1
+content_hash: b54ebfdd494fb1de
 ---
+
 # MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning
 
 **Conference**: ICLR 2026  
@@ -152,15 +158,16 @@ This paper presents an evaluation benchmark rather than a new model; therefore, 
 MMR-Life is the first multimodal multi-image reasoning benchmark oriented toward real-life scenes, systematically covering 7 reasoning types and 21 tasks. Large-scale evaluation of 37 MLLMs reveals significant bottlenecks in spatial, temporal, and causal reasoning (GPT-5 achieves 58.69% vs. human 72.28%). Key insights include the failure of reasoning enhancement methods on large models and the insufficient generalization of open-source thinking models. This benchmark provides a foundation for evaluating and improving next-generation multimodal reasoning systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] SpaCE-Eval: A Benchmark for Real-World Multi-Modal Reasoning](space-eval_a_benchmark_for_real-world_multi-modal_reasoning.md)
 - [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
 - [\[ICLR 2026\] MMR-V: What's Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos](mmr-v_whats_left_unsaid_a_benchmark_for_multimodal_deep_reasoning_in_videos.md)
 - [\[ICLR 2026\] LLMs as Rules Oracles: Exploring Real-World Multimodal Reasoning in Tabletop Strategy Game Environments](llms_as_rules_oracles_exploring_real-world_multimodal_reasoning_in_tabletop_stra.md)
 - [\[ICLR 2026\] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs](iv-bench_a_benchmark_for_image-grounded_video_perception_and_reasoning_in_multim.md)
-- [\[ICLR 2026\] Reasoning-Aligned Perception Decoupling for Scalable Multi-modal Reasoning](reasoning-aligned_perception_decoupling_for_scalable_multi-modal_reasoning.md)
 
 </div>
 

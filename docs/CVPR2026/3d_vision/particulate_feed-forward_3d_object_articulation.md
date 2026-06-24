@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Particulate: Feed-Forward 3D Object Articulation
 description: >-
-  [CVPR 2026][3D Vision][Transformer] Particulate proposes a feed-forward model that infers a complete articulated structure (part segmentation, kinematic tree, and motion constraints) from a static 3D mesh within seconds. Trained end-to-end on public datasets using a Part Articulation Transformer, it significantly outperforms existing methods that require
+  [CVPR 2026][3D Vision][Articulated objects] Particulate proposes a feed-forward model that infers a complete articulated structure (part segmentation, kinematic tree, and motion constraints) from a static 3D mesh within seconds. Trained end-to-end on public datasets using a Part Articulation Transformer, it significantly outperforms existing methods that require per-object optimization and can be integrated with 3D generative models to enable articulation generation from sing…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated objects"
+  - "3D part segmentation"
+  - "motion constraint prediction"
+  - "feed-forward inference"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 3e92e0ad439d6803
+content_hash: 85812c42cab1ae4a
 ---
+
 # Particulate: Feed-Forward 3D Object Articulation
 
 **Conference**: CVPR 2026  
@@ -146,10 +151,10 @@ A multi-task loss is used: $\mathcal{L} = \mathcal{L}_S + \mathcal{L}_K + \mathc
 ## Related Papers
 
 - [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
-- [\[CVPR 2026\] FUSER: Feed-Forward Multiview 3D Registration Transformer and SE(3)$^N$ Diffusion Refinement](fuser_feed-forward_multiview_3d_registration_transformer_and_se3n_diffusion_refi.md)
-- [\[CVPR 2026\] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
 - [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
 - [\[CVPR 2026\] PhysGM: Large Physical Gaussian Model for Feed-Forward 4D Synthesis](physgm_large_physical_gaussian_4d_synthesis.md)
+- [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
 
 </div>
 

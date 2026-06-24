@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Estimation and Inference in Semi-parametric Heterogeneous Clustered Multitask Learning via Neyman Orthogonality
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper bridges Double Machine Learning (DML) and clustered multitask learning by proposing an adaptive framework that combines Neyman orthogonality with a data-driven pairwise fusion penalty. In semi-parametric settings with heterogeneous (potentially infinite-dimensional) nuisance parameters, it accurately recover
+  [ICML 2026][Optimization][Neyman Orthogonality] This paper bridges Double Machine Learning (DML) and clustered multitask learning by proposing an adaptive framework that combines Neyman orthogonality with a data-driven pairwise fusion penalty. In semi-parametric settings with heterogeneous (potentially infinite-dimensional) nuisance parameters, it accurately recovers latent task clusters, achieves oracle-level aggregation rates, and establishes asymptotic normality for valid…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Neyman Orthogonality"
+  - "Adaptive Fusion"
+  - "Latent Clustering"
+  - "Heterogeneous Noise"
+  - "Asymptotic Normality"
 date: 2026-05-08
-content_hash: 353d7860e43f44ef
+content_hash: 9413c740293ce59a
 ---
+
 # Adaptive Estimation and Inference in Semi-parametric Heterogeneous Clustered Multitask Learning via Neyman Orthogonality
 
 **Conference**: ICML 2026  
@@ -166,8 +172,8 @@ Clustered groups align with climate and geography, validating the effectiveness 
 - [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](../../ICLR2026/optimization/feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
 - [\[NeurIPS 2025\] Robust Estimation Under Heterogeneous Corruption Rates](../../NeurIPS2025/optimization/robust_estimation_under_heterogeneous_corruption_rates.md)
 - [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](../../ICLR2026/optimization/incentives_in_federated_learning_with_heterogeneous_agents.md)
+- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](../../ICLR2026/optimization/masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](../../CVPR2026/optimization/ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
-- [\[ICML 2026\] Adaptive Preconditioners Trigger Loss Spikes in Adam](adaptive_preconditioners_trigger_loss_spikes_in_adam.md)
 
 </div>
 

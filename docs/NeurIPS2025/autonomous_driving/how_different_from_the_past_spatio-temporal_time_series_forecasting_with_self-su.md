@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Different from the Past? Spatio-Temporal Time Series Forecasting with Self-Supervised Deviation Learning
 description: >-
-  [NeurIPS 2025][Autonomous Driving][spatio-temporal forecasting] This paper proposes ST-SSDL, a framework that captures dynamic deviations between current inputs and historical patterns via self-supervised deviation learn…
+  [NeurIPS 2025][Autonomous Driving][spatio-temporal forecasting] This paper proposes ST-SSDL, a framework that captures dynamic deviations between current inputs and historical patterns via self-supervised deviation learning (SSDL). It discretizes the latent space using learnable prototypes and enforces relative distance consistency through a contrastive loss and a deviation loss, achieving state-of-the-art performance on six spatio-temporal benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "prototype learning"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 43ba6fd156806abc
+content_hash: bd11eb9bd4e0b18a
 ---
 
 # How Different from the Past? Spatio-Temporal Time Series Forecasting with Self-Supervised Deviation Learning
@@ -164,9 +164,9 @@ ST-SSDL achieves the best or tied-best results across all 6 datasets and all pre
 
 - [\[NeurIPS 2025\] DBLoss: Decomposition-based Loss Function for Time Series Forecasting](dbloss_decomposition-based_loss_function_for_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Self-Supervised Learning of Graph Representations for Network Intrusion Detection](self-supervised_learning_of_graph_representations_for_network_intrusion_detectio.md)
-- [\[NeurIPS 2025\] FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving](futuresightdrive_thinking_visually_with_spatiotemporal_cot_f.md)
-- [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](../../AAAI2026/autonomous_driving/dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
+- [\[CVPR 2025\] PSA-SSL: Pose and Size-aware Self-Supervised Learning on LiDAR Point Clouds](../../CVPR2025/autonomous_driving/psa-ssl_pose_and_size-aware_self-supervised_learning_on_lidar_point_clouds.md)
 - [\[NeurIPS 2025\] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset](chronograph_a_real-world_graph-based_multivariate_time_series_dataset.md)
+- [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](../../AAAI2026/autonomous_driving/dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
 
 </div>
 

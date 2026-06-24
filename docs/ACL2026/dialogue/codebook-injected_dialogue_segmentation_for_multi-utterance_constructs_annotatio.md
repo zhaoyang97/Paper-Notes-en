@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Codebook-Injected Dialogue Segmentation for Multi-Utterance Constructs Annotation: LLM-Assisted and Gold-Label-Free Evaluation
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] The paper reformulates dialogue act annotation as a two-step "segment-then-label" problem. It proposes two approaches: codebook-injected LLM segmentation (System 1) and Dial-Start with DA-aware retrieval augmentation (System 2). It further introduces three categories of evaluation metrics that do not require gold bound
+  [ACL 2026][Dialogue Systems][dialogue act annotation] The paper reformulates dialogue act annotation as a two-step "segment-then-label" problem. It proposes two approaches: codebook-injected LLM segmentation (System 1) and Dial-Start with DA-aware retrieval augmentation (System 2). It further introduces three categories of evaluation metrics that do not require gold boundaries (within-segment consistency, adjacent segment divergence, and human-AI distribution alignment). Expe…
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "dialogue act annotation"
+  - "codebook-injected segmentation"
+  - "LLM annotation"
+  - "gold-free evaluation"
+  - "educational dialogue"
 date: 2026-05-08
-content_hash: e70653b7f2cbbf5b
+content_hash: 3792f66d51f56d6a
 ---
+
 # Codebook-Injected Dialogue Segmentation for Multi-Utterance Constructs Annotation: LLM-Assisted and Gold-Label-Free Evaluation
 
 **Conference**: ACL 2026  
@@ -139,6 +145,7 @@ TalkMoves dataset (63 K-12 math transcripts, 6 talk moves):
 - Value: ⭐⭐⭐⭐ Highly transferable suite for any annotation task where labels span multiple turns.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

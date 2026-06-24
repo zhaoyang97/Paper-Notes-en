@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] In-Context Algorithm Emulation in Fixed-Weight Transformers
 description: >-
-  [ICLR 2026][learning_theory][in-context learning] The authors provide a constructive proof demonstrating that a **fixed-weight minimalist softmax Transformer can emulate a broad class of algorithms solely by modifying the prompt**. A single-head single-layer attention can approximate algorithms in the form of $f(w^\top x-y)x$ (e.g., gradient descent, linear/ridge regr
+  [ICLR 2026][Learning Theory][softmax attention] The authors provide a constructive proof demonstrating that a **fixed-weight minimalist softmax Transformer can emulate a broad class of algorithms solely by modifying the prompt**. A single-head single-layer attention can approximate algorithms in the form of $f(w^\top x-y)x$ (e.g., gradient descent, linear/ridge regression), while a fixed two-layer attention module further encodes target algorithm weights into tokens. This ena…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - in-context learning
-  - softmax attention
-  - algorithm emulation
-  - prompt programming
-  - universality
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Expressivity"
+  - "In-Context Learning"
+  - "softmax attention"
+  - "algorithm emulation"
+  - "prompt programming"
+  - "universality"
 date: 2026-05-08
-content_hash: c73052d24d1cd906
+content_hash: fc325ae7dda99221
 ---
+
 # In-Context Algorithm Emulation in Fixed-Weight Transformers
 
 **Conference**: ICLR 2026  
@@ -111,11 +113,11 @@ On synthetic data (50,000 points, sequence length 20, input dim 24, hidden dim 4
 
 ## Related Papers
 
-- [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
+- [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 - [\[ICLR 2026\] Adversarially Pretrained Transformers May Be Universally Robust In-Context Learners](adversarially_pretrained_transformers_may_be_universally_robust_in-context_learn.md)
 - [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
-- [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
+- [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
 
 </div>
 

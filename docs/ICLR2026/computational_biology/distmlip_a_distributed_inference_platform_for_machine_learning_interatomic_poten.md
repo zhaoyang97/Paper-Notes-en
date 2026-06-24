@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DistMLIP: A Distributed Inference Platform for Machine Learning Interatomic Potentials
 description: >-
-  [ICLR 2026][Computational Biology][MLIP] Ours proposes DistMLIP, a distributed inference platform based on a zero-redundancy graph-level parallelization strategy. It addresses the lack of multi-GPU support in existing machine learning interatomic potentials (MLIPs), achieving simulations of nearly one million atoms on 8 GPUs. This approach is up to 8x faster
+  [ICLR 2026][Computational Biology][MLIP] Ours proposes DistMLIP, a distributed inference platform based on a zero-redundancy graph-level parallelization strategy. It addresses the lack of multi-GPU support in existing machine learning interatomic potentials (MLIPs), achieving simulations of nearly one million atoms on 8 GPUs. This approach is up to 8x faster and can simulate systems 3.4x larger than traditional spatial partitioning methods.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - MLIP
-  - distributed inference
-  - graph neural networks
-  - molecular dynamics
-  - GPU parallelization
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "MLIP"
+  - "distributed inference"
+  - "graph neural networks"
+  - "molecular dynamics"
+  - "GPU parallelization"
 date: 2026-05-08
-content_hash: aeb767ad45379b8c
+content_hash: 7e021435f4fb8fbb
 ---
+
 # DistMLIP: A Distributed Inference Platform for Machine Learning Interatomic Potentials
 
 **Conference**: ICLR 2026  
@@ -160,10 +161,10 @@ Unlike traditional spatial partitioning that replicates ghost atoms and performs
 ## Related Papers
 
 - [\[ICLR 2026\] Representing Local Protein Environments with Machine Learning Force Fields](representing_local_protein_environments_with_machine_learning_force_fields.md)
+- [\[ICLR 2026\] PepBenchmark: A Standardized Benchmark for Peptide Machine Learning](pepbenchmark_a_standardized_benchmark_for_peptide_machine_learning.md)
 - [\[ICLR 2026\] Multifidelity Simulation-based Inference for Computationally Expensive Simulators](multifidelity_simulation-based_inference_for_computationally_expensive_simulator.md)
-- [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
 - [\[ICLR 2026\] DriftLite: Lightweight Drift Control for Inference-Time Scaling of Diffusion Models](driftlite_lightweight_drift_control_for_inference-time_scaling_of_diffusion_mode.md)
-- [\[ICML 2025\] Neural Graph Matching Improves Retrieval Augmented Generation in Molecular Machine Learning](../../ICML2025/computational_biology/neural_graph_matching_improves_retrieval_augmented_generation_in_molecular_machi.md)
+- [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Benign Inputs Lead to Severe Harms: Eliciting Unsafe Unintended Behaviors of Computer-Use Agents
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper investigates the overlooked risk where Computer-Use Agents (CUAs) exhibit severe unsafe behaviors under **completely benign** inputs. It establishes a conceptual framework for unintended behaviors (four criteria + two harm categories) and proposes **AutoElicit**—an agentic framework that iteratively perturbs
+  [ICML 2026][AI Safety][Computer-Use Agents] This paper investigates the overlooked risk where Computer-Use Agents (CUAs) exhibit severe unsafe behaviors under **completely benign** inputs. It establishes a conceptual framework for unintended behaviors (four criteria + two harm categories) and proposes **AutoElicit**—an agentic framework that iteratively perturbs benign instructions using execution feedback to automatically elicit and evaluate harmful behaviors. AutoElicit suc…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Computer-Use Agents"
+  - "Unintended Unsafe Behaviors"
+  - "Automated Elicitation"
+  - "Red Teaming"
+  - "Agent Safety"
 date: 2026-05-08
-content_hash: 7f30f0a2444288f0
+content_hash: c861a905316b196f
 ---
+
 # When Benign Inputs Lead to Severe Harms: Eliciting Unsafe Unintended Behaviors of Computer-Use Agents
 
 **Conference**: ICML 2026  
@@ -115,15 +121,16 @@ AutoElicit consistently elicited harms across frontier CUAs, with **$9.2\%–10.
 - Value: ⭐⭐⭐⭐⭐ Provides a scalable, transferable red teaming tool and benchmark for CUA safety.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents](../../ICLR2026/ai_safety/vpi-bench_visual_prompt_injection_attacks_for_computer-use_agents.md)
-- [\[CVPR 2026\] When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters](../../CVPR2026/ai_safety/when_lora_betrays_backdooring_text-to-image_models_by_masquerading_as_benign_ada.md)
 - [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
 - [\[ICML 2026\] Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks](ai_researchers_must_help_lead_arms_control_to_mitigate_military_ai_risks.md)
-- [\[ICML 2026\] Position: Stop Chasing the C-index when Evaluating Survival Analysis Models](position_stop_chasing_the_c-index_when_evaluating_survival_analysis_models.md)
+- [\[CVPR 2026\] When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters](../../CVPR2026/ai_safety/when_lora_betrays_backdooring_text-to-image_models_by_masquerading_as_benign_ada.md)
+- [\[ICML 2026\] Helpful to a Fault: Measuring Illicit Assistance in Multi-Turn, Multilingual LLM Agents](helpful_to_a_fault_measuring_illicit_assistance_in_multi-turn_multilingual_llm_a.md)
 
 </div>
 

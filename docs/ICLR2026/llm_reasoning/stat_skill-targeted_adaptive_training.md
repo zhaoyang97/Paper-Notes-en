@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] STAT: Skill-Targeted Adaptive Training
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] Utilizing a stronger LLM as a "teacher" to diagnose **exactly which skills** a student model lacks in mathematics, followed by reweighting or synthesizing training data for SFT. This allows small models already "saturated" on MATH to continue improving (+7.5% max on MATH, +4.6% avg OOD) and shows additive benefits when
+  [ICLR 2026][Reasoning][Skill-targeted training] Utilizing a stronger LLM as a "teacher" to diagnose **exactly which skills** a student model lacks in mathematics, followed by reweighting or synthesizing training data for SFT. This allows small models already "saturated" on MATH to continue improving (+7.5% max on MATH, +4.6% avg OOD) and shows additive benefits when combined with subsequent GRPO reinforcement learning.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Skill-targeted training"
+  - "Missing skill profile"
+  - "SFT saturation"
+  - "Meta-cognitive teacher"
+  - "Mathematical reasoning"
 date: 2026-05-08
-content_hash: f835a28fc55d10a9
+content_hash: b516999e9bd5c333
 ---
+
 # STAT: Skill-Targeted Adaptive Training
 
 **Conference**: ICLR 2026  
@@ -139,10 +145,10 @@ Notably, while GRPO alone was nearly ineffective on Llama series models (≤2.4%
 ## Related Papers
 
 - [\[ICLR 2026\] TRIM: Hybrid Inference via Targeted Stepwise Routing in Multi-Step Reasoning Tasks](trim_hybrid_inference_via_targeted_stepwise_routing_in_multi-step_reasoning_task.md)
-- [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[ICLR 2026\] RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems](rlad_training_llms_to_discover_abstractions_for_solving_reasoning_problems.md)
+- [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[ICLR 2026\] Zero-Overhead Introspection for Adaptive Test-Time Compute](zero-overhead_introspection_for_adaptive_test-time_compute.md)
-- [\[ICLR 2026\] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping](smarter_not_harder_generative_process_evaluation_with_intrinsic-signal_driving_a.md)
+- [\[ICLR 2026\] Training Large Reasoning Models Efficiently via Progressive Thought Encoding](training_large_reasoning_models_efficiently_via_progressive_thought_encoding.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints
 description: >-
-  [NeurIPS 2025][Optimization][Online convex optimization] This paper studies Constrained Online Convex Optimization (COCO) with adversarial constraints and introduces a tunable parameter $\beta$ to achieve a precise trade…
+  [NeurIPS 2025][Optimization][Online convex optimization] This paper studies Constrained Online Convex Optimization (COCO) with adversarial constraints and introduces a tunable parameter $\beta$ to achieve a precise tradeoff between $\tilde{O}(T^\beta)$ regret and $\tilde{O}(T^{1-\beta})$ cumulative constraint violation (CCV), surpassing the previously known optimal bound of $\tilde{O}(\sqrt{T})$ constraint violation.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "regret-violation tradeoff"
   - "safety constraints"
 date: 2026-05-08
-content_hash: bc728fcf4df67c8c
+content_hash: 036816452f5d5d32
 ---
 
 # Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints
@@ -143,10 +143,10 @@ The paper adopts a hierarchical algorithmic design. It first addresses a special
 ## Related Papers
 
 - [\[NeurIPS 2025\] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives](effective_policy_learning_for_multi-agent_online_coordination_beyond_submodular_.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](../../ICLR2026/optimization/derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
+- [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
 - [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
 - [\[NeurIPS 2025\] Non-Stationary Bandit Convex Optimization: A Comprehensive Study](non-stationary_bandit_convex_optimization_a_comprehensive_study.md)
-- [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
-- [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](online_two-stage_submodular_maximization.md)
 
 </div>
 

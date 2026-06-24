@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiffuMatch: Category-Agnostic Spectral Diffusion Priors for Robust Non-rigid Shape Matching
 description: >-
-  [ICCV 2025][Image Generation][Functional Maps] This paper proposes training an unconditional diffusion model in the spectral domain of Functional Maps, and replacing hand-crafted axiomatic regularizers (e.g.…
+  [ICCV 2025][Image Generation][Functional Maps] This paper proposes training an unconditional diffusion model in the spectral domain of Functional Maps, and replacing hand-crafted axiomatic regularizers (e.g., Laplacian commutativity, orthogonality) with distilled structural priors, enabling zero-shot non-rigid shape matching across categories.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Score Distillation"
   - "Zero-shot Generalization"
 date: 2026-05-08
-content_hash: 9c1299fbe4ad17fe
+content_hash: fb1676e422a00562
 ---
 
 # DiffuMatch: Category-Agnostic Spectral Diffusion Priors for Robust Non-rigid Shape Matching
@@ -56,8 +56,8 @@ The pipeline consists of two stages: (1) training a spectral diffusion model on 
     - Traditional methods derive sparse masks $M_{reg}$ via Laplacian commutativity; this paper directly distills masks from the score function of the diffusion model.
     - Assuming the functional map likelihood is $p(C_\sigma;\sigma) \propto \exp(-\|M_\sigma \cdot C_\sigma\|^2)$, its score is $s(C_\sigma;\sigma) = -2M_\sigma^2 \cdot C_\sigma$.
     - Combined with the diffusion model's score estimate $(D(C_\sigma;\sigma) - C_\sigma)/\sigma^2$, the mask is computed as:
-   $$M_\sigma^2 = \mathbb{E}_{n_\sigma \sim \mathcal{N}(0,\sigma^2 I), n_\sigma > 0}\left[\frac{|C|_\sigma - D(|C|_\sigma;\sigma)}{2\sigma^2 |C|_\sigma}\right]$$
-   - Only positive noise samples $n_\sigma > 0$ are used to avoid division-by-zero instability.
+    $M_\sigma^2 = \mathbb{E}_{n_\sigma \sim \mathcal{N}(0,\sigma^2 I), n_\sigma > 0}\left[\frac{|C|_\sigma - D(|C|_\sigma;\sigma)}{2\sigma^2 |C|_\sigma}\right]$
+    - Only positive noise samples $n_\sigma > 0$ are used to avoid division-by-zero instability.
 
 3. **Zero-shot Matching Pipeline**:
 
@@ -140,11 +140,11 @@ Metric: geodesic error (lower is better). DiffuMatch significantly outperforms l
 
 ## Related Papers
 
-- [\[ICCV 2025\] Spectral Image Tokenizer](spectral_image_tokenizer.md)
-- [\[ICCV 2025\] Unlocking the Potential of Diffusion Priors in Blind Face Restoration](unlocking_the_potential_of_diffusion_priors_in_blind_face_restoration.md)
-- [\[ICCV 2025\] Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization](efficient_autoregressive_shape_generation_via_octree-based_adaptive_tokenization.md)
-- [\[ICCV 2025\] Dual Recursive Feedback on Generation and Appearance Latents for Pose-Robust Text-to-Image Diffusion](dual_recursive_feedback_on_generation_and_appearance_latents_for_pose-robust_tex.md)
+- [\[CVPR 2025\] SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularization](../../CVPR2025/image_generation/sgmatch_semantic-guided_non-rigid_shape_matching_with_flow_regularization.md)
 - [\[ICCV 2025\] Learning Few-Step Diffusion Models by Trajectory Distribution Matching](learning_few-step_diffusion_models_by_trajectory_distribution_matching.md)
+- [\[ICCV 2025\] Spectral Image Tokenizer](spectral_image_tokenizer.md)
+- [\[ICCV 2025\] Dual Recursive Feedback on Generation and Appearance Latents for Pose-Robust Text-to-Image Diffusion](dual_recursive_feedback_on_generation_and_appearance_latents_for_pose-robust_tex.md)
+- [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](balanced_image_stylization_with_style_matching_score.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards High-Quality Image Segmentation: Improving Topology Accuracy by Penalizing Neighbor Pixels
 description: >-
-  [CVPR 2026][Segmentation][SCNP] Ours proposes Same Class Neighbor Penalization (SCNP), which significantly improves the topological accuracy of segmentation at an extremely low cost (only 3 lines of code, a few milliseconds/iteration). By replacing each pixel's logit with its worst neighbor prediction within the same class during training, the model
+  [CVPR2026][Segmentation][Topology-preserving segmentation] Ours proposes Same Class Neighbor Penalization (SCNP), which significantly improves the topological accuracy of segmentation at an extremely low cost (only 3 lines of code, a few milliseconds/iteration). By replacing each pixel's logit with its worst neighbor prediction within the same class during training, the model is forced to prioritize fixing weak pixels in the neighborhood.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SCNP
+  - "CVPR2026"
+  - "Segmentation"
+  - "Topology-preserving segmentation"
+  - "Neighborhood Penalization"
+  - "SCNP"
+  - "Loss Function"
+  - "Connected Components"
 date: 2026-05-08
-content_hash: 7faba6f4e35cbc93
+content_hash: cfc5ada707d043fb
 ---
+
 # Towards High-Quality Image Segmentation: Improving Topology Accuracy by Penalizing Neighbor Pixels
 
 **Conference**: CVPR2026  
@@ -130,8 +135,8 @@ Integrating SCNP into 8 loss functions on the FIVES dataset: **$\beta_{0e}$ decr
 - [\[CVPR 2026\] Hilbert Curve-Based Attention Enabling Topology-Preserving Image Tensor Representation for Semantic Segmentation Network](hilbert_curve-based_attention_enabling_topology-preserving_image_tensor_represen.md)
 - [\[CVPR 2025\] The Devil is in Temporal Token: High Quality Video Reasoning Segmentation](../../CVPR2025/segmentation/the_devil_is_in_temporal_token_high_quality_video_reasoning_segmentation.md)
 - [\[CVPR 2026\] 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion](3m-ti_high-quality_mobile_thermal_imaging_via_calibration-free_multi-camera_cros.md)
-- [\[CVPR 2026\] High-Precision Dichotomous Image Segmentation via Depth Integrity-Prior and Fine-Grained Patch Strategy](high-precision_dichotomous_image_segmentation_via_depth_integrity-prior_and_fine.md)
 - [\[CVPR 2026\] MatAnyone 2: Scaling Video Matting via a Learned Quality Evaluator](matanyone_2_scaling_video_matting_via_a_learned_quality_evaluator.md)
+- [\[CVPR 2026\] High-Precision Dichotomous Image Segmentation via Depth Integrity-Prior and Fine-Grained Patch Strategy](high-precision_dichotomous_image_segmentation_via_depth_integrity-prior_and_fine.md)
 
 </div>
 

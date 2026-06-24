@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CIMemories: A Compositional Benchmark For Contextual Integrity In LLMs
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] CIMemories is a compositional benchmark designed to evaluate whether memory-augmented LLMs leak private attributes in inappropriate contexts. By pairing synthetic user personas (100+ attributes each) with dozens of social tasks and labeling each (attribute, task) pair as "appropriate/inappropriate" to disclose, the stu
+  [ICLR 2026][LLM Safety][Contextual Integrity] CIMemories is a compositional benchmark designed to evaluate whether memory-augmented LLMs leak private attributes in inappropriate contexts. By pairing synthetic user personas (100+ attributes each) with dozens of social tasks and labeling each (attribute, task) pair as "appropriate/inappropriate" to disclose, the study reveals that frontier models exhibit up to 69% attribute-level violations. Furthermore…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Contextual Integrity"
+  - "Memory-Augmented LLMs"
+  - "Privacy Leakage"
+  - "Compositional Benchmark"
+  - "Information Flow Control"
 date: 2026-05-08
-content_hash: 52c622799dd654c2
+content_hash: cf2a323a94e01b49
 ---
+
 # CIMemories: A Compositional Benchmark For Contextual Integrity In LLMs
 
 **Conference**: ICLR 2026  
@@ -118,15 +124,15 @@ Evaluation of Violation@5 (lower is better) and Completeness (higher is better) 
 - **Value**: ⭐⭐⭐⭐⭐ Provides a critical benchmark for the safety of persistent memory systems in LLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
-- [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](../../ACL2026/llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
 - [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](../../NeurIPS2025/llm_safety/contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
-- [\[ACL 2026\] AgentCoMa: A Compositional Benchmark Mixing Commonsense and Mathematical Reasoning in Real-World Scenarios](../../ACL2026/llm_safety/agentcoma_a_compositional_benchmark_mixing_commonsense_and_mathematical_reasonin.md)
+- [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](../../ACL2026/llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
 - [\[ICLR 2026\] VoxPrivacy: A Benchmark for Evaluating Interactional Privacy of Speech Language Models](voxprivacy_a_benchmark_for_evaluating_interactional_privacy_of_speech_language_m.md)
 
 </div>

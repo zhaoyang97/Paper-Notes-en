@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text
 description: >-
-  [3D Vision] This work constructs the large-scale rap dataset RapVerse and proposes a unified autoregressive transformer framework that, for the first time…
+  [3D Vision] This work constructs the large-scale rap dataset RapVerse and proposes a unified autoregressive transformer framework that, for the first time, simultaneously generates coherent singing vocals and whole-body 3D motion from lyric text.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 4dd1e2a1b2e8ff0b
+content_hash: a4c9e3715210f87d
 ---
 
 # RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text
@@ -144,7 +144,7 @@ Vocal tokens are placed before motion tokens because: (1) vocals are directly co
 - [\[ICCV 2025\] Unleashing Vecset Diffusion Model for Fast Shape Generation (FlashVDM)](unleashing_vecset_diffusion_model_for_fast_shape_generation.md)
 - [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
 - [\[ICCV 2025\] MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing](meshpad_interactive_sketch-conditioned_artist-reminiscent_mesh_generation_and_ed.md)
-- [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](../../CVPR2026/3d_vision/tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
+- [\[CVPR 2025\] Dyn-HaMR: Recovering 4D Interacting Hand Motion from a Dynamic Camera](../../CVPR2025/3d_vision/dyn-hamr_recovering_4d_interacting_hand_motion_from_a_dynamic_camera.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hyperbolic Gramian Volumes for Multimodal Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the "volume collapse" issue (where $\det \approx 1$ and variance is near 0) of Euclidean Gramian volumes under L2 normalization, this paper translates Gramian volume alignment to hyperbolic (Lorentz model) space to preserve variance. By using a learnable scalar $\alpha$ to perform a convex combination of Euc
+  [CVPR 2026][Multimodal VLM][Gramian Volume] To address the "volume collapse" issue (where $\det \approx 1$ and variance is near 0) of Euclidean Gramian volumes under L2 normalization, this paper translates Gramian volume alignment to hyperbolic (Lorentz model) space to preserve variance. By using a learnable scalar $\alpha$ to perform a convex combination of Euclidean and hyperbolic volumes, the proposed HyperGRAM achieves a zero-shot T2V Recall@1 improvement of +1.8% to +2.9…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Gramian Volume"
+  - "Hyperbolic Geometry"
+  - "Video-Text Retrieval"
+  - "Contrastive Learning"
+  - "Mixed Geometry"
 date: 2026-05-08
-content_hash: 9907721cf3d7eb1c
+content_hash: 73065fe99207760e
 ---
+
 # Hyperbolic Gramian Volumes for Multimodal Alignment
 
 **Conference**: CVPR 2026  
@@ -128,15 +134,13 @@ Hyperbolic volume variance is 20–25 times higher than Euclidean. In semantic r
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
+- [\[ICLR 2026\] Modality Alignment across Trees on Heterogeneous Hyperbolic Manifolds](../../ICLR2026/multimodal_vlm/modality_alignment_across_trees_on_heterogeneous_hyperbolic_manifolds.md)
 - [\[CVPR 2026\] Uncertainty-guided Compositional Alignment with Part-to-Whole Semantic Representativeness in Hyperbolic Vision-Language Models](uncertainty-guided_compositional_alignment_with_part-to-whole_semantic_represent.md)
 - [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
-- [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](../../ICML2026/multimodal_vlm/hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
-- [\[CVPR 2026\] Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning](anchor-guided_gradient_alignment_for_incomplete_multimodal_learning.md)
 - [\[CVPR 2026\] Linguistic Priors for Visual Decoupling: Towards Symmetric Vision-Brain Alignment](linguistic_priors_for_visual_decoupling_towards_symmetric_vision-brain_alignment.md)
+- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
 
 </div>
 

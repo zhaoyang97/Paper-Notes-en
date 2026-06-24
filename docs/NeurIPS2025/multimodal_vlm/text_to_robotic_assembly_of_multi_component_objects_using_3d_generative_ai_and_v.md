@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Text to Robotic Assembly of Multi Component Objects using 3D Generative AI and Vision Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM reasoning] This paper proposes an end-to-end pipeline that converts natural language input into 3D mesh models via 3D generative AI…
+  [NeurIPS 2025][Multimodal VLM][VLM reasoning] This paper proposes an end-to-end pipeline that converts natural language input into 3D mesh models via 3D generative AI, then leverages zero-shot multimodal reasoning of VLMs to automatically decompose the mesh into multi-component 3D models (structural components + panel components), which are subsequently assembled into physical objects by a robotic arm. The system also supports interactive user feedback through dialogue to adj…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "multi-component objects"
   - "human-robot collaboration"
 date: 2026-05-08
-content_hash: cb46c5009fcdb1e7
+content_hash: 82018ca7800f5968
 ---
 
 # Text to Robotic Assembly of Multi Component Objects using 3D Generative AI and Vision Language Models
@@ -129,11 +129,11 @@ All comparisons remain significant after Bonferroni correction ($p^* < 0.017$).
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Scene-Aware Urban Design: A Human-AI Recommendation Framework Using Co-Occurrence Embeddings and Vision-Language Models](scene-aware_urban_design_a_human-ai_recommendation_framework_using_co-occurrence.md)
 - [\[NeurIPS 2025\] Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging](better_tokens_for_better_3d_advancing_vision-language_modeling_in_3d_medical_ima.md)
+- [\[NeurIPS 2025\] Scene-Aware Urban Design: A Human-AI Recommendation Framework Using Co-Occurrence Embeddings and Vision-Language Models](scene-aware_urban_design_a_human-ai_recommendation_framework_using_co-occurrence.md)
 - [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
-- [\[ICCV 2025\] Instruction-Grounded Visual Projectors for Continual Learning of Generative Vision-Language Models](../../ICCV2025/multimodal_vlm/instruction-grounded_visual_projectors_for_continual_learning_of_generative_visi.md)
 - [\[NeurIPS 2025\] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models](vamp_variational_multi-modal_prompt_learning_for_vision-language_models.md)
+- [\[NeurIPS 2025\] T-Rex: Task-Adaptive Spatial Representation Extraction for Robotic Manipulation with VLMs](t-rex_task-adaptive_spatial_representation_extraction_for_robotic_manipulation_w.md)
 
 </div>
 

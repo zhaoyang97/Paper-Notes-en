@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling
 description: >-
-  [Multimodal VLM] This paper proposes MaTVLM, which replaces a portion of Transformer layers in a pretrained VLM with Mamba-2 layers and trains the resulting model via single-stage knowledge distillation…
+  [Multimodal Efficiency] This paper proposes MaTVLM, which replaces a portion of Transformer layers in a pretrained VLM with Mamba-2 layers and trains the resulting model via single-stage knowledge distillation, achieving 3.6× inference speedup and 27.5% memory reduction while maintaining competitive performance.
 tags:
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
 date: 2026-05-08
-content_hash: edf6090a406cd111
+content_hash: 8289c86bf07b1997
 ---
 
 # MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling
@@ -153,11 +153,11 @@ Combining both distillation losses yields the best results. Among the two losses
 
 ## Related Papers
 
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
-- [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
-- [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](../../AAAI2026/multimodal_vlm/ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
-- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
-- [\[ICCV 2025\] OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM](orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)
+- [\[ACL 2025\] MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference](../../ACL2025/vlm_efficiency/madakv_adaptive_modality-perception_kv_cache_eviction_for_efficient_multimodal_l.md)
+- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/vlm_efficiency/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](../../CVPR2026/vlm_efficiency/timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
+- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](../../CVPR2026/vlm_efficiency/hybrid_token_compression_for_vision-language_models.md)
+- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
 
 </div>
 

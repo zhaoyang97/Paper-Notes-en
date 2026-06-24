@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models
 description: >-
-  [AAAI 2026][Multi-Agent][deception evaluation] This paper proposes LieCraft, a multi-player hidden-role game framework (with constraint-satisfaction-guaranteed balance) to evaluate the strategic deception capabilities of…
+  [AAAI 2026][Multi-Agent][deception evaluation] This paper proposes LieCraft, a multi-player hidden-role game framework (with constraint-satisfaction-guaranteed balance) to evaluate the strategic deception capabilities of 12 LLMs. It finds that all tested frontier LLMs—including GPT-4o—exhibit deception rates exceeding 90% under incentive conditions, demonstrating that safety training has not eliminated the capacity for strategic lying.
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "strategic deception"
   - "safety evaluation"
 date: 2026-05-08
-content_hash: 2e45b77092a5e03e
+content_hash: 59ba48e697f015bc
 ---
 
 # LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models
@@ -132,10 +132,10 @@ $N=5$ LLMs compete in multi-round matches across 10 real-world-themed scenarios.
 ## Related Papers
 
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
+- [\[ICLR 2026\] Emergent Coordination in Multi-Agent Language Models](../../ICLR2026/multi_agent/emergent_coordination_in_multi-agent_language_models.md)
+- [\[ICML 2025\] Theorem-of-Thought: A Multi-Agent Framework for Abductive, Deductive, and Inductive Reasoning in Language Models](../../ICML2025/multi_agent/theorem-of-thought_a_multi-agent_framework_for_abductive_deductive_and_inductive.md)
 - [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](../../ACL2026/multi_agent/agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
-- [\[NeurIPS 2025\] Large Language Models Miss the Multi-Agent Mark](../../NeurIPS2025/multi_agent/large_language_models_miss_the_multi-agent_mark.md)
-- [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
-- [\[NeurIPS 2025\] Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?](../../NeurIPS2025/multi_agent/debate_or_vote_which_yields_better_decisions_in_multi-agent_large_language_model.md)
+- [\[ICLR 2026\] Cache-to-Cache: Direct Semantic Communication Between Large Language Models](../../ICLR2026/multi_agent/cache-to-cache_direct_semantic_communication_between_large_language_models.md)
 
 </div>
 

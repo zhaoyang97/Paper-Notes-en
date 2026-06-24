@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Find, Fix, Reason: Context Repair for Video Reasoning
 description: >-
-  [ICML 2026][vlm_reasoning][GRPO] Addressing the dilemma in video reasoning where "on-policy RL stagnates at capacity ceilings and off-policy distillation suffers from entropy collapse," this paper introduces a frozen, tool-integrated large teacher model. When a student's rollout fails, the teacher inserts minimal "evidence patches" (e.g., key-frame in
+  [ICML 2026][VLM Reasoning][Video Reasoning] Addressing the dilemma in video reasoning where "on-policy RL stagnates at capacity ceilings and off-policy distillation suffers from entropy collapse," this paper introduces a frozen, tool-integrated large teacher model. When a student's rollout fails, the teacher inserts minimal "evidence patches" (e.g., key-frame intervals, error types), enabling the student to re-attempt the same question. These repaired trajectories are then in…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - GRPO
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Video Reasoning"
+  - "GRPO"
+  - "Tool-Integrated Teacher"
+  - "Context Repair"
+  - "Spatio-Temporal Dependency"
 date: 2026-05-08
-content_hash: 07c72028548019b3
+content_hash: 9365156884fd6bd9
 ---
+
 # Find, Fix, Reason: Context Repair for Video Reasoning
 
 **Conference**: ICML 2026  
@@ -137,14 +142,17 @@ Significantly, the 7B student outperforms GPT-4o by 10 points on Video-Holmes (c
 
 <div class="related-papers" markdown="1">
 
-- **Video-RFT**: DeepSeek-style RL applied to video logic.
-- **LUFFY**: Hybrid RL for multimodal reasoning with trajectory buffers.
-- **GLM-4.5V**: The backbone teacher model used for diagnostic patches.
+## Related Papers
+
+- [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](../../CVPR2026/vlm_reasoning/reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
+- [\[ICML 2026\] Reason, Then Re-reason: Cross-view Revisiting Improves Spatial Reasoning](reason_then_re-reason_cross-view_revisiting_improves_spatial_reasoning.md)
+- [\[CVPR 2026\] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning](../../CVPR2026/vlm_reasoning/select_less_reason_more_prioritizing_evidence_purity_for_video_reasoning.md)
+- [\[NeurIPS 2025\] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning](../../NeurIPS2025/vlm_reasoning/can_llms_reason_over_non-text_modalities_in_a_training-free_manner_a_case_study_.md)
+- [\[ICML 2026\] 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding](3d-rft_reinforcement_fine-tuning_for_video-based_3d_scene_understanding.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](../../CVPR2026/vlm_reasoning/reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)

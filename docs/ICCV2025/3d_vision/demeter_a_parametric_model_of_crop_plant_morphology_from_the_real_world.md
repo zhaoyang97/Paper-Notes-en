@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Demeter: A Parametric Model of Crop Plant Morphology from the Real World
 description: >-
-  [3D Vision] Demeter is a data-driven parametric plant morphology model that decomposes plant shape into four factors — topology, articulation, shape, and deformation — supporting shape generation, 3D reconstruction…
+  [3D Vision] Demeter is a data-driven parametric plant morphology model that decomposes plant shape into four factors — topology, articulation, shape, and deformation — supporting shape generation, 3D reconstruction, and biophysical simulation.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 12463f541383d813
+content_hash: e8906ba6ab5780c4
 ---
 
 # Demeter: A Parametric Model of Crop Plant Morphology from the Real World

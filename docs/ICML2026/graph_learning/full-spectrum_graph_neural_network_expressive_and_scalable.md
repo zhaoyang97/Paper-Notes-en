@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Full-Spectrum Graph Neural Network: Expressive and Scalable
 description: >-
-  [ICML 2026][Graph Learning][Local 2-GNN] This paper generalizes the univariate eigenvalue filter $g(\lambda_i)$ of classical spectral GNNs to a bivariate filter $g(\lambda_i,\lambda_j)$, lifting signals from the node domain to the node-pair domain. Theoretically, this approach can approximate Local 2-GNNs (surpassing 1-WL). By utilizing low-rank tensor decomp
+  [ICML 2026][Graph Learning][Spectral GNNs] This paper generalizes the univariate eigenvalue filter $g(\lambda_i)$ of classical spectral GNNs to a bivariate filter $g(\lambda_i,\lambda_j)$, lifting signals from the node domain to the node-pair domain. Theoretically, this approach can approximate Local 2-GNNs (surpassing 1-WL). By utilizing low-rank tensor decomposition, it avoids explicit $n^2\times n^2$ calculations, achieving strong results in heterophilic graph node classif…
 tags:
-  - ICML 2026
-  - Graph Learning
-  - Local 2-GNN
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Spectral GNNs"
+  - "Node-pair Domain"
+  - "Bivariate Filtering"
+  - "Heterophilic Graphs"
+  - "Local 2-GNN"
+  - "Kronecker Product"
 date: 2026-05-08
-content_hash: ec376a637fc7c302
+content_hash: ba7cd724851b6375
 ---
+
 # Full-Spectrum Graph Neural Network: Expressive and Scalable
 
 **Conference**: ICML 2026  
@@ -131,10 +137,10 @@ Three variants of Ours pushed the SOTA on Squirrel from 30.80 to 39.57 (+8.77) a
 ## Related Papers
 
 - [\[AAAI 2026\] On Stealing Graph Neural Network Models](../../AAAI2026/graph_learning/on_stealing_graph_neural_network_models.md)
+- [\[ICLR 2026\] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning](../../ICLR2026/graph_learning/canonical_tree_cover_neural_networks_for_expressive_and_invariant_graph_learning.md)
 - [\[ICML 2026\] Beyond Model Base Retrieval: Weaving Knowledge to Master Fine-grained Neural Network Design](beyond_model_base_retrieval_weaving_knowledge_to_master_fine-grained_neural_netw.md)
-- [\[ICML 2025\] Mitigating Over-Squashing in Graph Neural Networks by Spectrum-Preserving Sparsification](../../ICML2025/graph_learning/mitigating_over-squashing_in_graph_neural_networks_by_spectrum-preserving_sparsi.md)
-- [\[ICML 2026\] Physics-Informed Coarsening for Multigrid Graph Neural Surrogates](physics-informed_coarsening_for_multigrid_graph_neural_surrogates.md)
-- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
+- [\[ICLR 2026\] AdaSpec: Adaptive Spectrum for Enhanced Node Distinguishability](../../ICLR2026/graph_learning/adaspec_adaptive_spectrum_for_enhanced_node_distinguishability.md)
+- [\[ICLR 2026\] AdS-GNN - a Conformally Equivariant Graph Neural Network](../../ICLR2026/graph_learning/ads-gnn_-_a_conformally_equivariant_graph_neural_network.md)
 
 </div>
 

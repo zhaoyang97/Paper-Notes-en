@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal large language models] This paper proposes the **Instruction-oriented Preference Alignment (IPA)** framework…
+  [ICCV 2025][Multimodal VLM][Multimodal large language models] This paper proposes the **Instruction-oriented Preference Alignment (IPA)** framework, which anchors alignment signals to **instruction completion efficacy** rather than hallucination factors alone, via an automated preference construction mechanism and a progressive preference data collection pipeline. IPA achieves consistent improvements on Qwen2VL-7B across 9 benchmarks spanning hallucination evaluation…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "hallucination mitigation"
 date: 2026-05-08
-content_hash: 953bd787eafa06c6
+content_hash: 1363ccd97adac2b7
 ---
 
 # Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs
@@ -187,9 +187,9 @@ Key findings:
 
 - [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](../../NeurIPS2025/multimodal_vlm/guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
 - [\[ICCV 2025\] Spatial Preference Rewarding for MLLMs Spatial Understanding](spatial_preference_rewarding_for_mllms_spatial_understanding.md)
+- [\[ACL 2025\] OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference](../../ACL2025/multimodal_vlm/omnialign-v_towards_enhanced_alignment_of_mllms_with_human_preference.md)
+- [\[ACL 2025\] Enhancing Multimodal Continual Instruction Tuning with BranchLoRA](../../ACL2025/multimodal_vlm/branchlora_continual_instruction.md)
 - [\[ICCV 2025\] Bidirectional Likelihood Estimation with Multi-Modal Large Language Models for Text-Video Retrieval](bidirectional_likelihood_estimation_with_multi-modal_large_language_models_for_t.md)
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](scaling_inference-time_search_with_vision_value_model_for_improved_visual_compre.md)
 
 </div>
 

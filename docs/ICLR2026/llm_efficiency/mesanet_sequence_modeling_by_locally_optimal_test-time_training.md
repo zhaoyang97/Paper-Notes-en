@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training
 description: >-
-  [ICLR 2026][LLM Efficiency][Mesa layer] MesaNet pushes "Test-Time Training" to its optimum: unlike DeltaNet which takes a single gradient step per token, it **optimally solves** the cumulative regularized squared error of "fitting a linear model using context" at every time step. Through a Conjugate Gradient (CG) solver and block-parallelism, the Mesa layer—
+  [ICLR 2026][LLM Efficiency][Mesa layer] MesaNet pushes "Test-Time Training" to its optimum: unlike DeltaNet which takes a single gradient step per token, it **optimally solves** the cumulative regularized squared error of "fitting a linear model using context" at every time step. Through a Conjugate Gradient (CG) solver and block-parallelism, the Mesa layer—previously restricted to serial execution and numerically unstable—can be scaled to billion-parameter training on GPU/TP…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Mesa layer
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mesa layer"
+  - "linear RNN"
+  - "Test-Time Training"
+  - "Conjugate Gradient"
+  - "block-parallelism"
+  - "Dynamic Test-Time Computation"
 date: 2026-05-08
-content_hash: f4c49268a5161bc8
+content_hash: f8803a659269f218
 ---
+
 # MesaNet: Sequence Modeling by Locally Optimal Test-Time Training
 
 **Conference**: ICLR 2026  
@@ -117,11 +123,11 @@ The insight for readers: when a recurrent layer can be formulated as an optimal 
 
 ## Related Papers
 
+- [\[ICLR 2026\] In-Place Test-Time Training](in-place_test-time_training.md)
 - [\[ICLR 2026\] Test-Time Training Done Right](test-time_training_done_right.md)
+- [\[ICLR 2026\] MoM: Linear Sequence Modeling with Mixture-of-Memories](mom_linear_sequence_modeling_with_mixture-of-memories.md)
 - [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
 - [\[ICLR 2026\] Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression](local_linear_attention_an_optimal_interpolation_of_linear_and_softmax_attention_.md)
-- [\[ICLR 2026\] MoM: Linear Sequence Modeling with Mixture-of-Memories](mom_linear_sequence_modeling_with_mixture-of-memories.md)
-- [\[ICLR 2026\] Scaling Up, Speeding Up: A Benchmark of Speculative Decoding for Efficient LLM Test-Time Scaling](scaling_up_speeding_up_a_benchmark_of_speculative_decoding_for_efficient_llm_tes.md)
 
 </div>
 

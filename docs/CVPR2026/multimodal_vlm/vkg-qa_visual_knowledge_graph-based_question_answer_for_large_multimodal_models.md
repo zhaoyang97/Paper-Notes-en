@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VKG-QA: Visual Knowledge Graph-based Question Answer for Large Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] By **visualizing Knowledge Graphs as images** and tasking Large Multimodal Models (LMMs) with "looking at the graph" for question answering, the authors constructed the VKG-QA benchmark covering 3 categories, 14 subtasks, and 3,205 questions. Evaluations of 19 LMMs reveal that current models generally struggle to "unde
+  [CVPR 2026][Multimodal VLM][Visual Knowledge Graph] By **visualizing Knowledge Graphs as images** and tasking Large Multimodal Models (LMMs) with "looking at the graph" for question answering, the authors constructed the VKG-QA benchmark covering 3 categories, 14 subtasks, and 3,205 questions. Evaluations of 19 LMMs reveal that current models generally struggle to "understand graph structures," with structural perception (degree, direction, connectivity) being the most promin…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Knowledge Graph"
+  - "Multimodal Benchmark"
+  - "Structured Reasoning"
+  - "Large Multimodal Models"
+  - "Graph Understanding"
 date: 2026-05-08
-content_hash: 27f1826d09710e08
+content_hash: 292f899b2bf89678
 ---
+
 # VKG-QA: Visual Knowledge Graph-based Question Answer for Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -141,10 +147,10 @@ Visual input consistently outperforms textual input in structural tasks, particu
 ## Related Papers
 
 - [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
-- [\[CVPR 2026\] StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering](star-kvqa_structured_reasoning_traces_for_implicit-knowledge_visual_question_ans.md)
 - [\[CVPR 2026\] 4DP-QA: Scalable QA for 4D Perception in Vision Language Models](4dp-qa_scalable_qa_for_4d_perception_in_vision_language_models.md)
+- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
+- [\[CVPR 2026\] AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models](ag-vas_anchor-guided_zero-shot_visual_anomaly_segmentation_with_large_multimodal.md)
 - [\[ACL 2026\] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering](../../ACL2026/multimodal_vlm/wikiseeker_rethinking_the_role_of_vision-language_models_in_knowledge-based_visu.md)
-- [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
 
 </div>
 

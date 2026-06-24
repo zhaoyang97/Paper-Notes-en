@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MarkushGrapher-2: End-to-end Multimodal Recognition of Chemical Structures
 description: >-
-  [CVPR 2026][Multimodal VLM][OCR] MarkushGrapher-2 proposes an end-to-end multimodal chemical structure recognition model. By co-encoding image, text, and layout information through a dedicated chemical OCR module and combining a two-stage training strategy (adapting OCSR features then fusing multimodal encoding), it significantly outperforms existing
+  [CVPR 2026][Multimodal VLM][Chemical structure recognition] MarkushGrapher-2 proposes an end-to-end multimodal chemical structure recognition model. By co-encoding image, text, and layout information through a dedicated chemical OCR module and combining a two-stage training strategy (adapting OCSR features then fusing multimodal encoding), it significantly outperforms existing methods in Markush structure recognition (M2S accuracy 56% vs 38%) while remaining competitive in mo…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - OCR
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chemical structure recognition"
+  - "Markush structures"
+  - "multimodal encoding"
+  - "patent document analysis"
+  - "OCR"
 date: 2026-05-08
-content_hash: 140740d2547682c1
+content_hash: 84d0d95378aa6f91
 ---
+
 # MarkushGrapher-2: End-to-end Multimodal Recognition of Chemical Structures
 
 **Conference**: CVPR 2026  
@@ -141,7 +146,6 @@ The model employs standard autoregressive cross-entropy loss: Phase 1 supervises
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -149,7 +153,7 @@ The model employs standard autoregressive cross-entropy loss: Phase 1 supervises
 - [\[ACL 2026\] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition](../../ACL2026/multimodal_vlm/e2e-gmner_end-to-end_generative_grounded_multimodal_named_entity_recognition.md)
 - [\[AAAI 2026\] SpeakerLM: End-to-End Versatile Speaker Diarization and Recognition with Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/speakerlm_end-to-end_versatile_speaker_diarization_and_recognition_with_multimod.md)
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
-- [\[CVPR 2026\] RetFormer: Multimodal Retrieval for Enhancing Image Recognition](retformer_multimodal_retrieval_for_enhancing_image_recognition.md)
+- [\[ICLR 2026\] LEGATO: Large-scale End-to-end Generalizable Approach to Typeset OMR](../../ICLR2026/multimodal_vlm/legato_large-scale_end-to-end_generalizable_approach_to_typeset_omr.md)
 
 </div>
 

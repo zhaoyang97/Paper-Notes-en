@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Light Differentiable Logic Gate Networks
 description: >-
-  [ICLR 2026][Model Compression][Differentiable Logic Gate Networks] This paper identifies that the root causes of gradient vanishing, discretization errors, and high training costs in Differentiable Logic Gate Networks (DLGN) lie in the "function-wise enumeration" parametrization of logic gate neurons. It proposes a non-redundant Input-Wise Parametrization (IWP), reducing the parameter
+  [ICLR 2026][Model Compression][Differentiable Logic Gate Networks] This paper identifies that the root causes of gradient vanishing, discretization errors, and high training costs in Differentiable Logic Gate Networks (DLGN) lie in the "function-wise enumeration" parametrization of logic gate neurons. It proposes a non-redundant Input-Wise Parametrization (IWP), reducing the parameter count per gate from $2^{2^n}$ to $2^n$ ($4\times$ reduction for binary inputs). Combined wit…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Differentiable Logic Gate Networks
-  - FPGA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Differentiable Logic Gate Networks"
+  - "Reparameterization"
+  - "Gradient Vanishing"
+  - "Discretization Error"
+  - "Hardware-Efficient Inference"
+  - "FPGA"
 date: 2026-05-08
-content_hash: e398da2a9924a795
+content_hash: 1de431ffff12194c
 ---
+
 # Light Differentiable Logic Gate Networks
 
 **Conference**: ICLR 2026  
@@ -133,7 +138,7 @@ OP collapses (17-18%) when replacing Adam, while IWP remains stable above 30% fo
 - [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
 - [\[ICLR 2026\] Lookup multivariate Kolmogorov-Arnold Networks](lookup_multivariate_kolmogorov-arnold_networks.md)
 - [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
-- [\[NeurIPS 2025\] Bézier Splatting for Fast and Differentiable Vector Graphics Rendering](../../NeurIPS2025/model_compression/bezier_splatting_for_fast_and_differentiable_vector_graphics_rendering.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 
 </div>
 

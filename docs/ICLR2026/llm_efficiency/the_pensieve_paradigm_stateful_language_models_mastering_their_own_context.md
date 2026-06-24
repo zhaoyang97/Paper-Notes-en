@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Pensieve Paradigm: Stateful Language Models Mastering Their Own Context
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper proposes StateLM—a class of foundation models endowed with the ability to "edit their own context." By utilizing a set of memory tools (deleting context, indexing, note-taking), the model reads, records key points, and deletes original text during multi-turn reasoning. This maintains a "sawtooth" context len
+  [ICLR 2026][LLM Efficiency][Long Context] This paper proposes StateLM—a class of foundation models endowed with the ability to "edit their own context." By utilizing a set of memory tools (deleting context, indexing, note-taking), the model reads, records key points, and deletes original text during multi-turn reasoning. This maintains a "sawtooth" context length rather than monotonic accumulation, allowing StateLM to significantly outperform standard LLMs on long-document QA…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long Context"
+  - "Autonomous Context Engineering"
+  - "Memory Management"
+  - "Tool Use"
+  - "Stateful Reasoning"
 date: 2026-05-08
-content_hash: f99af33cdd029b5f
+content_hash: a89f8adb828ed518
 ---
+
 # The Pensieve Paradigm: Stateful Language Models Mastering Their Own Context
 
 **Conference**: ICLR 2026  
@@ -146,10 +152,10 @@ In Needle-in-a-Haystack (NIAH, without search tools), standard Qwen3 collapsed t
 ## Related Papers
 
 - [\[ICLR 2026\] Extending the Context of Pretrained LLMs by Dropping Their Positional Embedding](extending_the_context_of_pretrained_llms_by_dropping_their_positional_embedding.md)
-- [\[ICML 2026\] RePo: Language Models with Context Re-Positioning](../../ICML2026/llm_efficiency/repo_language_models_with_context_re-positioning.md)
+- [\[ICLR 2026\] SinkTrack: Attention Sink based Context Anchoring for Large Language Models](sinktrack_attention_sink_based_context_anchoring_for_large_language_models.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
 - [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
-- [\[ICLR 2026\] Equilibrium Language Models](equilibrium_language_models.md)
-- [\[ICLR 2026\] Developmental Federated Tuning: A Cognitive-Inspired Paradigm for Efficient LLM Adaptation](developmental_federated_tuning_a_cognitive-inspired_paradigm_for_efficient_llm_a.md)
+- [\[ICML 2026\] RePo: Language Models with Context Re-Positioning](../../ICML2026/llm_efficiency/repo_language_models_with_context_re-positioning.md)
 
 </div>
 

@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Reinforcement Learning] Aiming at the issue where geometric rewards in RL+GRPO training for Reasoning Segmentation (RS) fail to constrain whether the reasoning chain focuses on unique attributes of the target, the DPAD method is proposed. It generates a reasoning chain + geometric localization + anchored description. By introducing a CLIP-bas
+  [CVPR 2026][VLM Reasoning][Reasoning Segmentation] Aiming at the issue where geometric rewards in RL+GRPO training for Reasoning Segmentation (RS) fail to constrain whether the reasoning chain focuses on unique attributes of the target, the DPAD method is proposed. It generates a reasoning chain + geometric localization + anchored description. By introducing a CLIP-based Discriminative Perception Reward to compare similarity differences between the description and ROI/AOI…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Reinforcement Learning
-  - GRPO
-  - CLIP
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Reasoning Segmentation"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Discriminative Perception"
+  - "CLIP"
+  - "Anchored Description"
+  - "Reward Design"
 date: 2026-05-08
-content_hash: 36cc7fcff8613dac
+content_hash: 4ee3fd5c35c827ba
 ---
+
 # DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation
 
 **Conference**: CVPR 2026  
@@ -129,12 +134,17 @@ Training follows a standard RL pipeline, using a GRPO sampling group size of $G$
 
 <div class="related-papers" markdown="1">
 
-No related papers cited in the snippet.
+## Related Papers
+
+- [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)
+- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
+- [\[CVPR 2026\] SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation](segcompass_exploring_interpretable_alignment_with_sparse_autoencoders_for_enhanc.md)
+- [\[CVPR 2026\] CARE What Fails: Contrastive Anchored-REflection for Verifiable Multimodal Reasoning](care_what_fails_contrastive_anchored-reflection_for_verifiable_multimodal_reason.md)
+- [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)

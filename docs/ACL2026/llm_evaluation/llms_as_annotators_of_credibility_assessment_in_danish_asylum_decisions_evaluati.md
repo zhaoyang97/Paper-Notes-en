@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LLMs as annotators of credibility assessment in Danish asylum decisions: evaluating classification performance and errors beyond aggregated metrics
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-annotator] The RAB-Cred expert-annotated dataset for three-class ("Absent / Positive / Negative") credibility assessment was constructed using 273 asylum decision documents from the Danish Refugee Appeals Board (RAB). A systematic evaluation of 21 open-source LLMs across 30 system×user prompt combinations reveals that prompt desi
+  [ACL 2026][LLM Evaluation][LLM-as-annotator] The RAB-Cred expert-annotated dataset for three-class ("Absent / Positive / Negative") credibility assessment was constructed using 273 asylum decision documents from the Danish Refugee Appeals Board (RAB). A systematic evaluation of 21 open-source LLMs across 30 system×user prompt combinations reveals that prompt design is more significant than model selection. While Phi-4 (14B) achieved a 94.7% F1 in a zero-shot setting…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-annotator
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "LLM-as-annotator"
+  - "Refugee Asylum"
+  - "Credibility Assessment"
+  - "Prompt Engineering"
+  - "Error Analysis"
+  - "Ensemble Voting"
 date: 2026-05-08
-content_hash: 9bea8f68648b2863
+content_hash: 3791a17e7cb10ff3
 ---
+
 # LLMs as annotators of credibility assessment in Danish asylum decisions: evaluating classification performance and errors beyond aggregated metrics
 
 **Conference**: ACL 2026  
@@ -128,10 +134,10 @@ Error structure and component contributions (Test set, 200 cases):
 ## Related Papers
 
 - [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](scan_structured_capability_assessment_and_navigation_for_llms.md)
+- [\[ACL 2026\] Beyond Case Law: Evaluating Structure-Aware Retrieval and Safety in Statute-Centric Legal QA](beyond_case_law_evaluating_structure-aware_retrieval_and_safety_in_statute-centr.md)
 - [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
+- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
 - [\[ACL 2025\] Where Are We? Evaluating LLM Performance on African Languages](../../ACL2025/llm_evaluation/where_are_we_evaluating_llm_performance_on_african_languages.md)
-- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
-- [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
 
 </div>
 

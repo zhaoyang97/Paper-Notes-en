@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] By decomposing ligands into "rigid fragments," the generation task is transformed from predicting torsion angles to predicting SE(3) rigid-body transformations for each fragment. Using SE(3) Riemannian diffusion to reassemble these fragments into the binding pocket, SigmaDock achieves a 79.9% Top-1 success rate (RMSD <
+  [ICLR 2026][Computational Biology][Molecular Docking] By decomposing ligands into "rigid fragments," the generation task is transformed from predicting torsion angles to predicting SE(3) rigid-body transformations for each fragment. Using SE(3) Riemannian diffusion to reassemble these fragments into the binding pocket, SigmaDock achieves a 79.9% Top-1 success rate (RMSD < 2 Å and PB-valid) on PoseBusters, making it the first deep learning docking model to outperform classical…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Docking"
+  - "SE(3) Diffusion"
+  - "Rigid-body Fragments"
+  - "Riemannian Diffusion"
+  - "Drug Discovery"
 date: 2026-05-08
-content_hash: f9786a3966b0508a
+content_hash: d38289a91c6e90e7
 ---
+
 # SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion
 
 **Conference**: ICLR 2026  
@@ -139,14 +145,14 @@ SigmaDock's PB-validity is 6.3x higher than DiffDock. On the "unseen protein" su
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics](scalable_spatio-temporal_se3_diffusion_for_long-horizon_protein_dynamics.md)
-- [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](graph_diffusion_transformers_are_in-context_molecular_designers.md)
 - [\[ICLR 2026\] PoseX: AI Defeats Physics-based Methods on Protein Ligand Cross-Docking](posex_ai_defeats_physics-based_methods_on_protein_ligand_cross-docking.md)
 - [\[ICLR 2026\] FACET: A Fragment-Aware Conformer Ensemble Transformer](facet_a_fragment-aware_conformer_ensemble_transformer.md)
+- [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](graph_diffusion_transformers_are_in-context_molecular_designers.md)
 - [\[ICLR 2026\] Enhancing Diffusion-Based Sampling with Molecular Collective Variables](enhancing_diffusion-based_sampling_with_molecular_collective_variables.md)
 
 </div>

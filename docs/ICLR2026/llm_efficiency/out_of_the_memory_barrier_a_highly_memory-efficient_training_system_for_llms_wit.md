@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Out of the Memory Barrier: A Highly Memory-Efficient Training System for LLMs with Million-Token Contexts
 description: >-
-  [ICLR 2026][LLM Efficiency][KV Cache] OOMB transforms million-token context LLM training into a system that proceeds serially by chunks, discards activations immediately, and recomputes them during the backward pass. It utilizes paged KV cache, asynchronous CPU offloading, and page-level sparse attention to manage the states that truly grow with sequence l
+  [ICLR2026][LLM Efficiency][Long-context training] OOMB transforms million-token context LLM training into a system that proceeds serially by chunks, discards activations immediately, and recomputes them during the backward pass. It utilizes paged KV cache, asynchronous CPU offloading, and page-level sparse attention to manage the states that truly grow with sequence length, enabling Qwen2.5-7B to be trained with 4M token contexts on a single H200.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV Cache
-  - CPU Offload
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Long-context training"
+  - "memory optimization"
+  - "KV Cache"
+  - "sparse attention"
+  - "CPU Offload"
 date: 2026-05-08
-content_hash: bd304afaf90bfb6d
+content_hash: 815763bd2a53bef5
 ---
+
 # Out of the Memory Barrier: A Highly Memory-Efficient Training System for LLMs with Million-Token Contexts
 
 **Conference**: ICLR2026  

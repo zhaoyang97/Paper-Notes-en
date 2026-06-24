@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Biases in the Blind Spot: Detecting What LLMs Fail to Mention
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper proposes a fully automated black-box pipeline to detect "unverbalized biases"—implicit factors that systematically influence model decisions but are never mentioned in Chain-of-Thought (CoT) reasoning. By utilizing LLMs to automatically generate conceptual hypotheses, counterfactual input variants, and seque
+  [ICML2026][Reasoning][Bias Detection] This paper proposes a fully automated black-box pipeline to detect "unverbalized biases"—implicit factors that systematically influence model decisions but are never mentioned in Chain-of-Thought (CoT) reasoning. By utilizing LLMs to automatically generate conceptual hypotheses, counterfactual input variants, and sequential statistical tests, the method discovered known biases such as gender and race across three decision-making tasks…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Bias Detection"
+  - "Chain-of-Thought Faithfulness"
+  - "Counterfactual Testing"
+  - "Black-box Auditing"
+  - "LLM Fairness"
 date: 2026-05-08
-content_hash: 30b5ecaf990b0554
+content_hash: d8ef773541a16a8a
 ---
+
 # Biases in the Blind Spot: Detecting What LLMs Fail to Mention
 
 **Conference**: ICML2026  
@@ -119,11 +125,11 @@ Evaluated on three decision tasks (Resume Screening: 1,336 inputs; Loan Approval
 
 ## Related Papers
 
+- [\[ICLR 2026\] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics](../../ICLR2026/llm_reasoning/from_abstract_to_contextual_what_llms_still_cannot_do_in_math_word_problem_solvi.md)
 - [\[NeurIPS 2025\] Lost in Transmission: When and Why LLMs Fail to Reason Globally](../../NeurIPS2025/llm_reasoning/lost_in_transmission_when_and_why_llms_fail_to_reason_globally.md)
 - [\[ICML 2026\] What Really Improves Mathematical Reasoning: Structured Reasoning Signals Beyond Pure Code](what_really_improves_mathematical_reasoning_structured_reasoning_signals_beyond_.md)
-- [\[ICLR 2026\] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics](../../ICLR2026/llm_reasoning/from_abstract_to_contextual_what_llms_still_cannot_do_in_math_word_problem_solvi.md)
-- [\[ICML 2026\] Diagnosing Multi-step Reasoning Failures in Black-box LLMs via Stepwise Confidence Attribution](diagnosing_multi-step_reasoning_failures_in_black-box_llms_via_stepwise_confiden.md)
-- [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](evaluating_relational_reasoning_in_llms_with_rel.md)
+- [\[ICLR 2026\] Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort](../../ICLR2026/llm_reasoning/is_it_thinking_or_cheating_detecting_implicit_reward_hacking_by_measuring_reason.md)
+- [\[ICML 2026\] Aligning Tree-Search Policies with Fixed Token Budgets in Test-Time Scaling of LLMs](aligning_tree-search_policies_with_fixed_token_budgets_in_test-time_scaling_of_l.md)
 
 </div>
 

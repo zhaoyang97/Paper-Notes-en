@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning
 description: >-
-  [CVPR 2026][Image Generation][GRPO] Addressing complex prompts with "multi-subject + hierarchical attributes," HiCoGen moves away from monolithic single-step generation. Instead, it utilizes an LLM to decompose prompts into minimal semantic units following a "Chain of Synthesis (CoS)," where each step generates a unit using previous images as visual cont
+  [CVPR 2026][Image Generation][Compositional T2I] Addressing complex prompts with "multi-subject + hierarchical attributes," HiCoGen moves away from monolithic single-step generation. Instead, it utilizes an LLM to decompose prompts into minimal semantic units following a "Chain of Synthesis (CoS)," where each step generates a unit using previous images as visual context. Combined with Group Relative Policy Optimization (GRPO) featuring hierarchical rewards and a decaying stoc…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Compositional T2I"
+  - "Chain of Synthesis"
+  - "Diffusion RL"
+  - "GRPO"
+  - "Hierarchical Reward"
 date: 2026-05-08
-content_hash: 917a6c7a7e0eeac5
+content_hash: 6f702da480d3860a
 ---
+
 # HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -143,13 +148,17 @@ Reward Component Ablation (Tab. 3):
 
 <div class="related-papers" markdown="1">
 
-- **UNO**: [Unified No-reference Object-centric generative models for subject-driven T2I](https://arxiv.org/abs/2410.12345)
-- **Flow-GRPO**: [Group Relative Policy Optimization for Rectified Flow Transformers](https://arxiv.org/abs/2412.00000)
+## Related Papers
+
+- [\[CVPR 2026\] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation](synthetic_curriculum_reinforces_compositional_text-to-image_generation.md)
+- [\[CVPR 2026\] The Image as Its Own Reward: Reinforcement Learning with Adversarial Reward for Image Generation](the_image_as_its_own_reward_reinforcement_learning_with_adversarial_reward_for_i.md)
+- [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
+- [\[CVPR 2026\] PaCo-RL: Advancing Reinforcement Learning for Consistent Image Generation with Pairwise Reward Modeling](paco-rl_advancing_reinforcement_learning_for_consistent_image_generation_with_pa.md)
+- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation](synthetic_curriculum_reinforces_compositional_text-to-image_generation.md)

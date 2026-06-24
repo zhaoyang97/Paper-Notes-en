@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sheaf Cohomology of Linear Predictive Coding Networks
 description: >-
-  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Predictive Coding] This paper formalizes linear predictive coding (PC) networks as cellular sheaves…
+  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Predictive Coding] This paper formalizes linear predictive coding (PC) networks as cellular sheaves, proves that PC inference is equivalent to diffusion under the sheaf Laplacian, and employs the Hodge decomposition to factorize supervisory signals into eliminable errors (removed via inference) and irreducible errors (characterized by the cohomology of cyclic topology). This framework precisely explain…
 tags:
   - "NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)"
   - "Predictive Coding"
@@ -11,7 +11,7 @@ tags:
   - "Hodge Theory"
   - "Sheaf Laplacian"
 date: 2026-05-08
-content_hash: c0a5fe216d62adc5
+content_hash: 620e421c129018a7
 ---
 
 # Sheaf Cohomology of Linear Predictive Coding Networks
@@ -128,11 +128,11 @@ The paper constructs a 10-layer linear network with feedback connections at each
 
 ## Related Papers
 
+- [\[ICLR 2026\] Stable and Scalable Deep Predictive Coding Networks with Meta-Prediction Errors](../../ICLR2026/others/stable_and_scalable_deep_predictive_coding_networks_with_meta-prediction_errors.md)
 - [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
 - [\[NeurIPS 2025\] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)
 - [\[NeurIPS 2025\] The Geometry of Cortical Computation: Manifold Disentanglement and Predictive Dynamics in VCNet](the_geometry_of_cortical_computation_manifold_disentanglement_and_predictive_dyn.md)
 - [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](generalized_linear_mode_connectivity_for_transformers.md)
-- [\[NeurIPS 2025\] On a Geometry of Interbrain Networks](on_a_geometry_of_interbrain_networks.md)
 
 </div>
 

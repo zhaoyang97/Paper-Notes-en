@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Bits Leaked per Query: Information-Theoretic Bounds on Adversarial Attacks Against LLMs
 description: >-
-  [NeurIPS 2025][LLM Safety][information leakage] This paper models adversarial attacks on LLMs as an information channel problem — defining the "bits leaked per query" $I(Z…
+  [NeurIPS 2025 Spotlight][LLM Safety][information leakage] This paper models adversarial attacks on LLMs as an information channel problem — defining the "bits leaked per query" $I(Z;T)$ as the mutual information between the attack target attribute $T$ and the observable signal $Z$, and proving that the minimum number of queries required to achieve error $\varepsilon$ is $\log(1/\varepsilon)/I(Z;T)$. Validated across 7 LLMs: exposing only answer tokens requires ~1000 queries…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Safety"
   - "information leakage"
   - "adversarial attacks"
@@ -12,7 +12,7 @@ tags:
   - "query complexity lower bounds"
   - "information channel model"
 date: 2026-05-08
-content_hash: 203275b260b051f2
+content_hash: 055d232480ff07ce
 ---
 
 # Bits Leaked per Query: Information-Theoretic Bounds on Adversarial Attacks Against LLMs
@@ -130,10 +130,10 @@ Scatter plot fitting of $\log N$ vs. $\log I(Z;T)$ across 7 LLMs and 3 attack sc
 ## Related Papers
 
 - [\[NeurIPS 2025\] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks](on_the_robustness_of_verbal_confidence_of_llms_in_adversarial_attacks.md)
-- [\[NeurIPS 2025\] MixAT: Combining Continuous and Discrete Adversarial Training for LLMs](mixat_combining_continuous_and_discrete_adversarial_training_for_llms.md)
-- [\[NeurIPS 2025\] Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties](trans-env_a_framework_for_evaluating_the_linguistic_robustness_of_llms_against_e.md)
-- [\[NeurIPS 2025\] CoreGuard: Safeguarding Foundational Capabilities of LLMs Against Model Stealing in Edge Deployment](coreguard_safeguarding_foundational_capabilities_of_llms_against_model_stealing_.md)
-- [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](../../ACL2026/llm_safety/evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
+- [\[ACL 2025\] TIP of the Iceberg: Task-in-Prompt Adversarial Attacks on LLMs](../../ACL2025/llm_safety/tip_iceberg_adversarial_attacks.md)
+- [\[ICLR 2026\] Information-Theoretic Membership Inference for Granular Quantification of Memorization](../../ICLR2026/llm_safety/information-theoretic_membership_inference_for_granular_quantification_of_memori.md)
+- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](../../ICLR2026/llm_safety/sampling-aware_adversarial_attacks_against_large_language_models.md)
+- [\[ACL 2025\] Bias in the Mirror: Are LLMs' Opinions Robust to Their Own Adversarial Attacks](../../ACL2025/llm_safety/bias_in_the_mirror_are_llms_opinions_robust_to_their_own_adversarial_attacks.md)
 
 </div>
 

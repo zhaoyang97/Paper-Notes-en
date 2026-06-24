@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages
 description: >-
-  [ICML 2026][Multilingual & Translation][Paper Note] LiRA inserts a lightweight fine-tuning module featuring "anchoring + consistency regularization" between a frozen multilingual encoder and an English LLM. It constrains the sentence vectors of low-resource languages into a shared English semantic space through two theoretically controllable quantities: $\epsilon_1$ (an
+  [ICML 2026][Multilingual & Machine Translation][Low-resource languages] LiRA inserts a lightweight fine-tuning module featuring "anchoring + consistency regularization" between a frozen multilingual encoder and an English LLM. It constrains the sentence vectors of low-resource languages into a shared English semantic space through two theoretically controllable quantities: $\epsilon_1$ (anchoring error) and $\epsilon_2$ (translation KL distance)…
 tags:
-  - ICML 2026
-  - Multilingual & Translation
+  - "ICML 2026"
+  - "Multilingual & Machine Translation"
+  - "Low-resource languages"
+  - "Cross-lingual alignment"
+  - "Anchored representation"
+  - "Translation noise"
+  - "LLM adaptation"
 date: 2026-05-08
-content_hash: 13cdc67b833f0481
+content_hash: e59e2fd9c4a86485
 ---
+
 # Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages
 
 **Conference**: ICML 2026  

@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning
 description: >-
-  [AAAI 2026][LLM Reasoning][RLVR] This paper identifies the **Beginning Lock-in Effect (BLE)** in LLM reasoning — the initial reasoning steps significantly determine subsequent trajectories and final outcomes. Based on th…
+  [AAAI 2026][Reasoning][LLM Reasoning] This paper identifies the **Beginning Lock-in Effect (BLE)** in LLM reasoning — the initial reasoning steps significantly determine subsequent trajectories and final outcomes. Based on this finding, the paper proposes PPPO, a method that optimizes only prefix tokens (approximately 26% of all tokens), achieving accuracy improvements of up to 18.02% while reducing output token counts by up to 18.35%.
 tags:
   - "AAAI 2026"
+  - "Reasoning"
   - "LLM Reasoning"
   - "RLVR"
   - "Prefix Optimization"
   - "Path Dependence"
   - "GRPO"
 date: 2026-05-08
-content_hash: bcb330e004a31f99
+content_hash: 336983f942703948
 ---
 
 # Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning
@@ -204,11 +205,11 @@ $$R_i = \sum_{j=1}^{G} \mathbb{1}(\hat{y}_{\mathbf{c}_j} = a) + \mathbb{1}(\hat{
 
 ## Related Papers
 
-- [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](../../ACL2026/llm_reasoning/revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
 - [\[ICLR 2026\] $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving](../../ICLR2026/llm_reasoning/textbfre2_unlocking_llm_reasoning_via_reinforcement_learning_with_re-solving.md)
-- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](../../ICLR2026/llm_reasoning/stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
-- [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](../../ICLR2026/llm_reasoning/temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](../../ICLR2026/llm_reasoning/reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
+- [\[ICML 2026\] Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling](../../ICML2026/llm_reasoning/blending_supervised_and_reinforcement_fine-tuning_with_prefix_sampling.md)
+- [\[ICLR 2026\] TRAPO: Enhancing LLM Reasoning with Semi-supervised Reinforcement Learning](../../ICLR2026/llm_reasoning/trapo_a_semi-supervised_reinforcement_learning_framework_for_boosting_llm_reason.md)
+- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
 
 </div>
 

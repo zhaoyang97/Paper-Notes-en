@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RGMem: Renormalization Group-Inspired Memory Evolution for Language Agents
 description: >-
-  [ICML 2026][Recommender Systems][Paper Note] RGMem draws inspiration from the Renormalization Group (RG) in statistical physics to model the long-term dialogue memory of language agents as a multi-scale system ("Event Layer → Relation Layer → Concept Layer"). It employs threshold-triggered non-linear operators to coarse-grain fragmented dialogues into stable user
+  [ICML 2026][Recommender Systems][Renormalization Group] RGMem draws inspiration from the Renormalization Group (RG) in statistical physics to model the long-term dialogue memory of language agents as a multi-scale system ("Event Layer → Relation Layer → Concept Layer"). It employs threshold-triggered non-linear operators to coarse-grain fragmented dialogues into stable user profiles, thereby breaking the "stability vs. plasticity" trade-off.
 tags:
-  - ICML 2026
-  - Recommender Systems
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Renormalization Group"
+  - "Multi-scale Memory"
+  - "User Profile Evolution"
+  - "Threshold Phase Transition"
+  - "Stability-Plasticity"
 date: 2026-05-08
-content_hash: e32f3e5542312ac4
+content_hash: 486932d527f19f73
 ---
+
 # RGMem: Renormalization Group-Inspired Memory Evolution for Language Agents
 
 **Conference**: ICML 2026  
@@ -152,7 +158,7 @@ RGMem improves over the second-best baseline by 7.08 / 8.98 points on PersonaMem
 - [\[ICML 2026\] Learning Design Skills as Memory Policies for Agentic Photonic Inverse Design](learning_design_skills_as_memory_policies_for_agentic_photonic_inverse_design.md)
 - [\[ICLR 2026\] In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations](../../ICLR2026/recommender/in_agents_we_trust_but_who_do_agents_trust_latent_source_preferences_steer_llm_g.md)
 - [\[ICLR 2026\] GoalRank: Group-Relative Optimization for a Large Ranking Model](../../ICLR2026/recommender/goalrank_group-relative_optimization_for_a_large_ranking_model.md)
-- [\[ACL 2026\] MemRec: Collaborative Memory-Augmented Agentic Recommender System](../../ACL2026/recommender/memrec_collaborative_memory-augmented_agentic_recommender_system.md)
+- [\[ACL 2026\] HSUGA: LLM-Enhanced Recommendation with Hierarchical Semantic Understanding and Group-Aware Alignment](../../ACL2026/recommender/hsuga_llm-enhanced_recommendation_with_hierarchical_semantic_understanding_and_g.md)
 
 </div>
 

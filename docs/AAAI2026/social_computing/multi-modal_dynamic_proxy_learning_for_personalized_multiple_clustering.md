@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-modal Dynamic Proxy Learning for Personalized Multiple Clustering
 description: >-
-  [AAAI 2026][Social Computing][Multiple Clustering] This paper proposes the Multi-DProxy framework, which leverages learnable textual proxies for personalized multiple clustering through three key innovations: gated cross…
+  [AAAI 2026][Social Computing][Multiple Clustering] This paper proposes the Multi-DProxy framework, which leverages learnable textual proxies for personalized multiple clustering through three key innovations: gated cross-modal fusion, dual-constraint proxy optimization, and dynamic candidate management, achieving state-of-the-art performance on all public benchmarks.
 tags:
   - "AAAI 2026"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Candidate Management"
   - "CLIP"
 date: 2026-05-08
-content_hash: 37eabd546d51b709
+content_hash: 633a5030e2c8e3fb
 ---
 
 # Multi-modal Dynamic Proxy Learning for Personalized Multiple Clustering
@@ -181,8 +181,8 @@ Training runs for 1,000 epochs using the Adam optimizer (momentum 0.9) on an RTX
 - [\[AAAI 2026\] Cross-modal Prompting for Balanced Incomplete Multi-modal Emotion Recognition](cross-modal_prompting_for_balanced_incomplete_multi-modal_emotion_recognition.md)
 - [\[ICCV 2025\] Learning Visual Proxy for Compositional Zero-Shot Learning](../../ICCV2025/social_computing/learning_visual_proxy_for_compositional_zero-shot_learning.md)
 - [\[ACL 2026\] MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection](../../ACL2026/social_computing/mm-stancedet_retrieval-augmented_multi-modal_multi-agent_stance_detection.md)
-- [\[ICML 2026\] The Geometric Mechanics of Contrastive Representation Learning: Alignment Potentials, Entropic Dispersion, and Cross-modal Divergence](../../ICML2026/social_computing/the_geometric_mechanics_of_contrastive_representation_learning_alignment_potenti.md)
 - [\[ICML 2026\] MIND: Multi-Rationale Integrated Discriminative Reasoning Framework for Multi-Modal Fake News](../../ICML2026/social_computing/mind_multi-rationale_integrated_discriminative_reasoning_framework_for_multi-mod.md)
+- [\[ICML 2026\] The Geometric Mechanics of Contrastive Representation Learning: Alignment Potentials, Entropic Dispersion, and Cross-modal Divergence](../../ICML2026/social_computing/the_geometric_mechanics_of_contrastive_representation_learning_alignment_potenti.md)
 
 </div>
 

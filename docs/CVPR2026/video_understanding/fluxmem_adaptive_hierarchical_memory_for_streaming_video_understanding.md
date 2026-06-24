@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][training-free] FluxMem is a training-free streaming video understanding framework that utilizes a hierarchical memory design (Short/Medium/Long-term) and two adaptive token compression modules (TAS for temporal redundancy + SDC for spatial redundancy). It achieves new SOTA on StreamingBench and OVO-Bench while discarding 60-70% of vi
+  [CVPR 2026][Video Understanding][Streaming Video Understanding] FluxMem is a training-free streaming video understanding framework that utilizes a hierarchical memory design (Short/Medium/Long-term) and two adaptive token compression modules (TAS for temporal redundancy + SDC for spatial redundancy). It achieves new SOTA on StreamingBench and OVO-Bench while discarding 60-70% of visual tokens.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - training-free
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Streaming Video Understanding"
+  - "Hierarchical Memory"
+  - "Visual Token Compression"
+  - "Adaptive Threshold"
+  - "training-free"
 date: 2026-05-08
-content_hash: 86a52b048599b5df
+content_hash: 57df2e6d8d875a5b
 ---
+
 # FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding
 
 **Conference**: CVPR 2026  
@@ -187,11 +192,11 @@ FluxMem outperforms all training-based methods on online tasks (76.4 on Streamin
 
 ## Related Papers
 
-- [\[CVPR 2026\] OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning](oasis_on-demand_hierarchical_event_memory_for_streaming_video_reasoning.md)
-- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
-- [\[CVPR 2026\] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding](question-guided_visual_compression_with_memory_feedback_for_long-term_video_unde.md)
-- [\[CVPR 2026\] Spk2VidNet: A Hierarchical Recurrent Architecture for High-Fidelity Video Reconstruction from Long Spike-Camera Streams](spk2vidnet_a_hierarchical_recurrent_architecture_for_high-fidelity_video_reconstr.md)
-- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
+- [\[NeurIPS 2025\] InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding](../../NeurIPS2025/video_understanding/infinipot-v_memory-constrained_kv_cache_compression_for_streaming_video_understa.md)
+- [\[CVPR 2026\] EarlyTom: Early Token Compression Completes Fast Video Understanding](earlytom_early_token_compression_completes_fast_video_understanding.md)
+- [\[ICLR 2026\] QueryStream: Advancing Streaming Video Understanding with Query-Aware Pruning and Proactive Response](../../ICLR2026/video_understanding/querystream_advancing_streaming_video_understanding_with_query-aware_pruning_and.md)
+- [\[ICCV 2025\] VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges](../../ICCV2025/video_understanding/videollamb_long_streaming_video_understanding_with_recurrent_memory_bridges.md)
 
 </div>
 

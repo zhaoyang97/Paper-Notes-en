@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] Ours proposes the Omni-MMSI task—understanding multi-person social interactions from raw audio-visual inputs rather than pre-processed oracle social cues. It designs the Omni-MMSI-R reference-guided pipeline, achieving accurate social interaction understanding through tool-generated identity-attributed social cues comb
+  [CVPR 2026][Audio & Speech][Social Interaction Understanding] Ours proposes the Omni-MMSI task—understanding multi-person social interactions from raw audio-visual inputs rather than pre-processed oracle social cues. It designs the Omni-MMSI-R reference-guided pipeline, achieving accurate social interaction understanding through tool-generated identity-attributed social cues combined with Chain-of-Thought (CoT) reasoning.
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Social Interaction Understanding"
+  - "Identity Attribution"
+  - "Multimodal Reasoning"
+  - "Chain-of-Thought"
+  - "Reference-guided"
 date: 2026-05-08
-content_hash: dd54be8d21d45383
+content_hash: 5fa607b291763372
 ---
+
 # Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding
 
 **Conference**: CVPR 2026  
@@ -179,11 +185,11 @@ Raw references and tool-extracted cues are complementary; joint usage yields opt
 
 ## Related Papers
 
-- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
 - [\[ICLR 2026\] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding](../../ICLR2026/audio_speech/human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde.md)
 - [\[CVPR 2026\] OmniRet: Efficient and High-Fidelity Omni Modality Retrieval](omniret_efficient_and_high-fidelity_omni_modality_retrieval.md)
 - [\[ICML 2026\] Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition](../../ICML2026/audio_speech/towards_understanding_modality_interaction_in_multimodal_language_models_via_par.md)
-- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
+- [\[CVPR 2026\] AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding](amuse_audio-visual_benchmark_and_alignment_framework_for_agentic_multi-speaker_u.md)
+- [\[ICLR 2026\] Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](../../ICLR2026/audio_speech/query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)
 
 </div>
 

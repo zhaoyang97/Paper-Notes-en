@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Emotion and Personality Profiling for Multimodal Deception Detection
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper highlights that existing deception detection datasets only provide participant-level emotion/personality labels (shared across all samples from the same person). It proposes a sample-level dynamic annotation scheme and a reliability-weighted multimodal fusion framework, Rel-DDEP. This approach achieves gains
+  [ACL 2026][Multimodal VLM][Deception Detection] This paper highlights that existing deception detection datasets only provide participant-level emotion/personality labels (shared across all samples from the same person). It proposes a sample-level dynamic annotation scheme and a reliability-weighted multimodal fusion framework, Rel-DDEP. This approach achieves gains of 2.53% in deception detection F1, 2.66% in emotion detection, and 9.30% in personality detection.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Deception Detection"
+  - "Dynamic Emotion Labeling"
+  - "Personality Traits"
+  - "Reliability-weighted Fusion"
+  - "Multimodal"
 date: 2026-05-08
-content_hash: 7c80f2d48fd41816
+content_hash: 73fcaf32f89e1394
 ---
+
 # Dynamic Emotion and Personality Profiling for Multimodal Deception Detection
 
 **Conference**: ACL 2026  
@@ -131,10 +137,10 @@ The model is trained jointly for three tasks using weighted cross-entropy. Uncer
 ## Related Papers
 
 - [\[ACL 2025\] Hidden in Plain Sight: Evaluation of the Deception Detection Capabilities of LLMs in Multimodal Settings](../../ACL2025/multimodal_vlm/hidden_in_plain_sight_evaluation_of_the_deception_detection_capabilities_of_llms.md)
+- [\[ICLR 2026\] Seeing Through Deception: Uncovering Misleading Creator Intent in Multimodal News with Vision-Language Models](../../ICLR2026/multimodal_vlm/seeing_through_deception_uncovering_misleading_creator_intent_in_multimodal_news.md)
 - [\[ICCV 2025\] Dynamic Group Detection using VLM-augmented Temporal Groupness Graph](../../ICCV2025/multimodal_vlm/dynamic_group_detection_using_vlm-augmented_temporal_groupness_graph.md)
-- [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](../../CVPR2026/multimodal_vlm/beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
-- [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](../../CVPR2026/multimodal_vlm/towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
-- [\[ACL 2025\] Donate or Create? Comparing Data Collection Strategies for Emotion-labeled Multimodal Social Media Posts](../../ACL2025/multimodal_vlm/donate_or_create_comparing_data_collection.md)
+- [\[ACL 2026\] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora](universalrag_retrieval-augmented_generation_over_corpora_of_diverse_modalities_a.md)
+- [\[ICML 2026\] VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning](../../ICML2026/multimodal_vlm/visionpulse_dynamic_visual_sparsity_for_efficient_multimodal_reasoning.md)
 
 </div>
 

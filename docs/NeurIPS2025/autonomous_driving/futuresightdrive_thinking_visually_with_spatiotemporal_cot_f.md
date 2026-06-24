@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Visual CoT] FSDrive enables VLAs to "think visually" — first acting as a world model to generate a unified visual CoT frame that integrates future lane lines, 3D detection boxes…
+  [NeurIPS 2025 Spotlight][Autonomous Driving][Visual CoT] FSDrive enables VLAs to "think visually" — first acting as a world model to generate a unified visual CoT frame that integrates future lane lines, 3D detection boxes, and scene predictions, then acting as an inverse dynamics model to perform trajectory planning based on current observations and the visual CoT. This approach activates the visual generation capability of MLLMs using only a minimal amount of data (~0.3%).
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Autonomous Driving"
   - "Visual CoT"
   - "Trajectory Planning"
@@ -12,7 +12,7 @@ tags:
   - "VLA"
   - "Future Frame Prediction"
 date: 2026-05-08
-content_hash: 942ab4d39fea4705
+content_hash: daf50e19bbd03535
 ---
 
 # FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving
@@ -125,11 +125,11 @@ FSDrive outperforms baselines on both L2 displacement error and collision rate, 
 
 ## Related Papers
 
+- [\[CVPR 2026\] HybridDriveVLA: Vision-Language-Action Model with Visual CoT reasoning and ToT Evaluation for Autonomous Driving](../../CVPR2026/autonomous_driving/hybriddrivevla_vision-language-action_model_with_visual_cot_reasoning.md)
 - [\[NeurIPS 2025\] How Different from the Past? Spatio-Temporal Time Series Forecasting with Self-Supervised Deviation Learning](how_different_from_the_past_spatio-temporal_time_series_forecasting_with_self-su.md)
-- [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
 - [\[ICCV 2025\] SparseLaneSTP: Leveraging Spatio-Temporal Priors with Sparse Transformers for 3D Lane Detection](../../ICCV2025/autonomous_driving/sparselanestp_leveraging_spatio-temporal_priors_with_sparse_transformers_for_3d_.md)
-- [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
-- [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](../../ICLR2026/autonomous_driving/resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
+- [\[ICLR 2026\] DriveAgent-R1: Advancing VLM-based Autonomous Driving with Active Perception and Hybrid Thinking](../../ICLR2026/autonomous_driving/driveagent-r1_advancing_vlm-based_autonomous_driving_with_active_perception_and_.md)
+- [\[AAAI 2026\] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception](../../AAAI2026/autonomous_driving/rethinking_the_spatio-temporal_alignment_of_end-to-end_3d_perception.md)
 
 </div>
 

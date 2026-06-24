@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Improving Semantic Proximity in Information Retrieval through Cross-Lingual Alignment
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Max@R] Targeting real-world retrieval scenarios where "documents in two languages coexist," this paper reveals that mainstream multilingual embeddings blindly rank irrelevant English documents ahead of relevant documents in the target language. It proposes a new evaluation scenario and the Max@R metric to quantify this bias,
+  [ICLR 2026][Information Retrieval & RAG][Cross-Lingual Retrieval] Targeting real-world retrieval scenarios where "documents in two languages coexist," this paper reveals that mainstream multilingual embeddings blindly rank irrelevant English documents ahead of relevant documents in the target language. It proposes a new evaluation scenario and the Max@R metric to quantify this bias, while utilizing JSD distribution-level alignment and InfoNCE retrieval losses to significantly…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Max@R
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Cross-Lingual Retrieval"
+  - "Semantic Alignment"
+  - "Jensen-Shannon Divergence"
+  - "English Bias"
+  - "Max@R"
 date: 2026-05-08
-content_hash: 33bae6ee8051b65a
+content_hash: 93e64d7dbd0d3b87
 ---
+
 # Improving Semantic Proximity in Information Retrieval through Cross-Lingual Alignment
 
 **Conference**: ICLR 2026  
@@ -147,9 +152,9 @@ Max@R$_{norm}$ (English/Target queries) results on Belebele (Multi scenario), co
 
 - [\[ACL 2025\] Cross-Lingual Relevance Transfer for Document Retrieval](../../ACL2025/information_retrieval/cross-lingual_relevance_transfer_for_document_retrieval.md)
 - [\[ICLR 2026\] Mapping Semantic & Syntactic Relationships with Geometric Rotation](mapping_semantic_syntactic_relationships_with_geometric_rotation.md)
+- [\[ICLR 2026\] Seeing Through Words: Controlling Visual Retrieval Quality with Language Models](seeing_through_words_controlling_visual_retrieval_quality_with_language_models.md)
 - [\[ICLR 2026\] Deep Global-sense Hard-negative Discriminative Generation Hashing for Cross-modal Retrieval](deep_global-sense_hard-negative_discriminative_generation_hashing_for_cross-moda.md)
 - [\[ICLR 2026\] Lean Finder: Semantic Search for Mathlib That Understands User Intents](lean_finder_semantic_search_for_mathlib_that_understands_user_intents.md)
-- [\[ACL 2025\] Multilingual Retrieval Augmented Generation for Culturally-Sensitive Tasks: A Benchmark for Cross-lingual Robustness](../../ACL2025/information_retrieval/multilingual_retrieval_augmented_generation_for_culturally-sensitive_tasks_a_ben.md)
 
 </div>
 

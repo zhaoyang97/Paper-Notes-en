@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rank-Guided Pseudo-Bias Learning for Robust Black-Box Adaptation
 description: >-
-  [CVPR 2026][Others][Paper Note] PLD-Debias attaches a lightweight adapter to a completely frozen, parameter-invisible pre-trained vision encoder. It first "amplifies" latent spurious correlation directions via rank regularization and performs clustering to obtain pseudo-bias labels with 90%+ fidelity. Finally, it purifies representations using a dual
+  [CVPR 2026][Model Compression][Black-box debiasing] PLD-Debias attaches a lightweight adapter to a completely frozen, parameter-invisible pre-trained vision encoder. It first "amplifies" latent spurious correlation directions via rank regularization and performs clustering to obtain pseudo-bias labels with 90%+ fidelity. Finally, it purifies representations using a dual loss approach of contrastive alignment and cluster-adaptive margins, achieving SOTA worst-group accuracy on…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Black-box debiasing"
+  - "Worst-group accuracy"
+  - "Rank regularization"
+  - "Pseudo-bias labels"
+  - "Adaptive margin"
 date: 2026-05-08
-content_hash: 78329eb6aa77a232
+content_hash: 0c6058fcc6f192cd
 ---
+
 # Rank-Guided Pseudo-Bias Learning for Robust Black-Box Adaptation
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ On CelebA, the worst-group accuracy of **Ours** is 44.2 points higher than ERM a
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bias In, Bias Out? Finding Unbiased Subnetworks in Vanilla Models](bias_in_bias_out_finding_unbiased_subnetworks_in_vanilla_models.md)
-- [\[CVPR 2026\] Bias at the End of the Score](bias_at_the_end_of_the_score.md)
-- [\[CVPR 2026\] Data-Centric Meta-Learning for Robust Few-Shot Generalization](data-centric_meta-learning_for_robust_few-shot_generalization.md)
-- [\[CVPR 2026\] Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning](revisiting_sparsity_constraint_under_high-rank_property_in_partial_multi-label_l.md)
-- [\[NeurIPS 2025\] The Persistence of Neural Collapse Despite Low-Rank Bias](../../NeurIPS2025/others/the_persistence_of_neural_collapse_despite_low-rank_bias.md)
+- [\[NeurIPS 2025\] Matryoshka Pilot: Learning to Drive Black-Box LLMs with LLMs](../../NeurIPS2025/model_compression/matryoshka_pilot_learning_to_drive_black-box_llms_with_llms.md)
+- [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](../../ICLR2026/model_compression/flexlora_entropy-guided_flexible_low-rank_adaptation.md)
+- [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](../../ICML2026/model_compression/energy-structured_low-rank_adaptation_for_continual_learning.md)
+- [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](../../ICLR2026/model_compression/stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
+- [\[ICLR 2026\] E²LoRA: Efficient and Effective Low-Rank Adaptation with Entropy-Guided Adaptive Sharing](../../ICLR2026/model_compression/e²lora_efficient_and_effective_low-rank_adaptation_with_entropy-guided_adaptive_.md)
 
 </div>
 

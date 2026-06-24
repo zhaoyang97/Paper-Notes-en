@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Practical Estimation of the Optimal Classification Error with Soft Labels and Calibration
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper makes two contributions to binary Bayes error (optimal error rate) estimation: first, it provides a much tighter bias bound that adaptively accelerates based on the "separability" of the two class distributions; second, it proposes applying isotonic calibration before the estimation formula when soft labels
+  [ICLR 2026][Learning Theory][Bayes Error] This paper makes two contributions to binary Bayes error (optimal error rate) estimation: first, it provides a much tighter bias bound that adaptively accelerates based on the "separability" of the two class distributions; second, it proposes applying isotonic calibration before the estimation formula when soft labels are contaminated, achieving statistical consistency as long as the "order" of soft labels remains intact.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Bayes Error Estimation"
+  - "Statistical Consistency"
+  - "Bayes Error"
+  - "Soft Labels"
+  - "Calibration"
+  - "Isotonic Regression"
+  - "Bias Analysis"
 date: 2026-05-08
-content_hash: 42466fa29e05bfb5
+content_hash: 6a672103d6ba0855
 ---
+
 # Practical Estimation of the Optimal Classification Error with Soft Labels and Calibration
 
 **Conference**: ICLR 2026  
@@ -136,11 +144,11 @@ In the FeeBee framework (injecting synthetic noise and measuring if the estimato
 
 ## Related Papers
 
+- [\[ICLR 2026\] Smooth Calibration Error: Uniform Convergence and Functional Gradient Analysis](smooth_calibration_error_uniform_convergence_and_functional_gradient_analysis.md)
 - [\[ICLR 2026\] Minimax-Optimal Aggregation for Density Ratio Estimation](minimax-optimal_aggregation_for_density_ratio_estimation.md)
 - [\[ICLR 2026\] Know When to Abstain: Optimal Selective Classification with Likelihood Ratios](know_when_to_abstain_optimal_selective_classification_with_likelihood_ratios.md)
 - [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
-- [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
-- [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
+- [\[ICLR 2026\] Trained on Tokens, Calibrated on Concepts: The Emergence of Semantic Calibration in LLMs](trained_on_tokens_calibrated_on_concepts_the_emergence_of_semantic_calibration_i.md)
 
 </div>
 

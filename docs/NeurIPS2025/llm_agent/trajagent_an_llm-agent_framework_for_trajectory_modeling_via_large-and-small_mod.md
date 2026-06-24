@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration
 description: >-
-  [NeurIPS 2025][LLM Agent][trajectory modeling] This paper proposes TrajAgent — an LLM-agent-based framework for trajectory modeling that achieves automated, cross-task…
+  [NeurIPS 2025][LLM Agent][trajectory modeling] This paper proposes TrajAgent — an LLM-agent-based framework for trajectory modeling that achieves automated, cross-task, and cross-dataset trajectory modeling through a unified environment (UniEnv), an automated workflow, and a collaborative learning schema between large and small models, outperforming baseline methods by 2.38%–69.91% across multiple tasks.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "automated machine learning"
   - "data augmentation"
 date: 2026-05-08
-content_hash: ade540276dc7b2fc
+content_hash: 53f8601de77be042
 ---
 
 # TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration
@@ -172,7 +172,7 @@ The paper presents a complete and systematic LLM agent framework for trajectory 
 - [\[NeurIPS 2025\] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks](agenttts_large_language_model_agent_for_testtime_computeopti.md)
 - [\[NeurIPS 2025\] Distilling LLM Agent into Small Models with Retrieval and Code Tools](distilling_llm_agent_into_small_models_with_retrieval_and_co.md)
 - [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
-- [\[NeurIPS 2025\] BTL-UI: Blink-Think-Link Reasoning Model for GUI Agent](btlui_blinkthinklink_reasoning_model_for_gui_agent.md)
+- [\[ICLR 2026\] Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration](../../ICLR2026/llm_agent/collaborative_gym_a_framework_for_enabling_and_evaluating_human-agent_collaborat.md)
 
 </div>
 

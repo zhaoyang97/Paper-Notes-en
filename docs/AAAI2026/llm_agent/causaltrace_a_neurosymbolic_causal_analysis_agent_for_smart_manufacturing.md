@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CausalTrace: A Neurosymbolic Causal Analysis Agent for Smart Manufacturing
 description: >-
-  [AAAI 2026][LLM Agent][Neurosymbolic Systems] This paper proposes CausalTrace — a neurosymbolic causal analysis agent integrated into an industrial CoPilot (SmartPilot) that combines data-driven causal discovery with ind…
+  [AAAI 2026][LLM Agent][Neurosymbolic Systems] This paper proposes CausalTrace — a neurosymbolic causal analysis agent integrated into an industrial CoPilot (SmartPilot) that combines data-driven causal discovery with industrial ontologies and knowledge graphs, enabling real-time root cause analysis, counterfactual reasoning, and interpretable decision support.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Graph"
   - "Industrial CoPilot"
 date: 2026-05-08
-content_hash: 6b23c5fa760e8ee5
+content_hash: 80c0d9b5c80a03cc
 ---
 
 # CausalTrace: A Neurosymbolic Causal Analysis Agent for Smart Manufacturing
@@ -130,10 +130,10 @@ The system engineering is comprehensive, covering causal discovery, knowledge au
 ## Related Papers
 
 - [\[AAAI 2026\] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs](llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr.md)
+- [\[ACL 2025\] Enhancing LLM Agent Safety via Causal Influence Prompting](../../ACL2025/llm_agent/enhancing_llm_agent_safety_via_causal_influence_prompting.md)
 - [\[AAAI 2026\] Promoting Sustainable Web Agents: Benchmarking and Estimating Energy Consumption Through Empirical and Theoretical Analysis](promoting_sustainable_web_agents_benchmarking_and_estimating_energy_consumption_.md)
 - [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](../../ICLR2026/llm_agent/simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
-- [\[ACL 2026\] What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search](../../ACL2026/llm_agent/what_makes_an_llm_a_good_optimizer_a_trajectory_analysis_of_llm-guided_evolution.md)
-- [\[AAAI 2026\] Agent-SAMA: State-Aware Mobile Assistant](agent-sama_state-aware_mobile_assistant.md)
+- [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](../../CVPR2026/llm_agent/sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
 
 </div>
 

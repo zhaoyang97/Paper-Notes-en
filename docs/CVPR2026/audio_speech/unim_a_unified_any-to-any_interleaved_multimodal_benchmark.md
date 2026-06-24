@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniM: A Unified Any-to-Any Interleaved Multimodal Benchmark
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] This paper introduces UniM, the first unified any-to-any interleaved multimodal benchmark (31K samples, 7 modalities, 30 domains), along with a three-dimensional evaluation suite and an agentic baseline UniMA based on traceable reasoning. The study reveals significant deficiencies in existing MLLMs under the interleave
+  [CVPR 2026][Audio & Speech][Multimodal Benchmark] This paper introduces UniM, the first unified any-to-any interleaved multimodal benchmark (31K samples, 7 modalities, 30 domains), along with a three-dimensional evaluation suite and an agentic baseline UniMA based on traceable reasoning. The study reveals significant deficiencies in existing MLLMs under the interleaved multimodal paradigm.
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Multimodal Benchmark"
+  - "Any-to-Any"
+  - "Interleaved Multimodal"
+  - "Evaluation Suite"
+  - "Agent Models"
 date: 2026-05-08
-content_hash: c73aceced076ff2c
+content_hash: a01b43c15e2c2eb7
 ---
+
 # UniM: A Unified Any-to-Any Interleaved Multimodal Benchmark
 
 **Conference**: CVPR 2026  
@@ -175,10 +181,10 @@ UniMA is an agentic framework rather than an end-to-end trained model; it does n
 ## Related Papers
 
 - [\[CVPR 2025\] Contextual AD Narration with Interleaved Multimodal Sequence](../../CVPR2025/audio_speech/contextual_ad_narration_with_interleaved_multimodal_sequence.md)
-- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
 - [\[AAAI 2026\] Cross-Space Synergy: A Unified Framework for Multimodal Emotion Recognition in Conversation](../../AAAI2026/audio_speech/cross-space_synergy_a_unified_framework_for_multimodal_emotion_recognition_in_co.md)
-- [\[CVPR 2026\] AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding](amuse_audio-visual_benchmark_and_alignment_framework_for_agentic_multi-speaker_u.md)
 - [\[CVPR 2026\] Tri-Subspaces Disentanglement for Multimodal Sentiment Analysis](tri-subspaces_disentanglement_for_multimodal_sentiment_analysis.md)
+- [\[CVPR 2026\] AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding](amuse_audio-visual_benchmark_and_alignment_framework_for_agentic_multi-speaker_u.md)
+- [\[CVPR 2026\] Pushing the Frontier of Audiovisual Perception with Large-Scale Multimodal Correspondence Learning](pushing_the_frontier_of_audiovisual_perception_with_large-scale_multimodal_corre.md)
 
 </div>
 

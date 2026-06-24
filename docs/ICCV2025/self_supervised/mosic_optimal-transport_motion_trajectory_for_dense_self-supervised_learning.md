@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning
 description: >-
-  [ICCV 2025][Self-Supervised Learning][Dense self-supervised learning] MoSiC extracts long-range motion trajectories via an offline point tracker and propagates cluster assignments along the temporal dimension through an…
+  [ICCV 2025][Self-Supervised Learning][Dense self-supervised learning] MoSiC extracts long-range motion trajectories via an offline point tracker and propagates cluster assignments along the temporal dimension through an Optimal Transport (Sinkhorn-Knopp)-based clustering mechanism. This enables learning spatially and temporally consistent dense representations from video data, improving DINOv2 by 1%–6% across multiple image and video benchmarks using only video for training.
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "spatiotemporal consistency"
   - "video segmentation"
 date: 2026-05-08
-content_hash: b71f6ebfbd93fe82
+content_hash: 80c04e6d6cd23c11
 ---
 
 # MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning
@@ -146,8 +146,8 @@ MoSiC-B14 (85M parameters) further improves results: Pascal VOC in-context (1/12
 - [\[CVPR 2026\] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](../../CVPR2026/self_supervised/an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)
 - [\[CVPR 2026\] Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild](../../CVPR2026/self_supervised/shape-of-you_fused_gromov-wasserstein_optimal_transport_for_semantic_corresponde.md)
 - [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](../../NeurIPS2025/self_supervised/self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
-- [\[NeurIPS 2025\] T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning](../../NeurIPS2025/self_supervised/t-regs_minimum_spanning_tree_regularization_for_self-supervised_learning.md)
-- [\[NeurIPS 2025\] Understanding Ice Crystal Habit Diversity with Self-Supervised Learning](../../NeurIPS2025/self_supervised/understanding_ice_crystal_habit_diversity_with_self-supervised_learning.md)
+- [\[ICML 2025\] ReSA: Clustering Properties of Self-Supervised Learning](../../ICML2025/self_supervised/clustering_properties_of_self-supervised_learning.md)
+- [\[CVPR 2025\] SMILE: Infusing Spatial and Motion Semantics in Masked Video Learning](../../CVPR2025/self_supervised/smile_infusing_spatial_and_motion_semantics_in_masked_video_learning.md)
 
 </div>
 

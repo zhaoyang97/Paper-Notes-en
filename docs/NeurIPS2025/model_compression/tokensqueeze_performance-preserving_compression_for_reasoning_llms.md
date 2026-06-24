@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TokenSqueeze: Performance-Preserving Compression for Reasoning LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][Reasoning Compression] TokenSqueeze proposes a three-stage pipeline — adaptive reasoning depth selection, intra-step linguistic refinement (with KL divergence constraints)…
+  [NeurIPS 2025][Model Compression][Reasoning Compression] TokenSqueeze proposes a three-stage pipeline — adaptive reasoning depth selection, intra-step linguistic refinement (with KL divergence constraints), and length-aware preference optimization — achieving 50% token compression of reasoning chains without accuracy degradation, using only self-generated data.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Long2Short"
   - "Large Language Models"
 date: 2026-05-08
-content_hash: 28d15b6a98b8e47e
+content_hash: 2a09d7dfa17994ed
 ---
 
 # TokenSqueeze: Performance-Preserving Compression for Reasoning LLMs
@@ -138,8 +138,8 @@ Compared with Kimi-k1.5 (DPO), Sky-T1-Flash, DAST, L1, and other methods, TokenS
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
 - [\[NeurIPS 2025\] A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings](a-thought_efficient_reasoning_via_bidirectional_compression_for_low-resource_set.md)
 - [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](../../ICML2026/model_compression/semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
-- [\[NeurIPS 2025\] Matryoshka Pilot: Learning to Drive Black-Box LLMs with LLMs](matryoshka_pilot_learning_to_drive_black-box_llms_with_llms.md)
-- [\[NeurIPS 2025\] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks](spiking_brain_compression_post-training_second-order_compression_for_spiking_neu.md)
+- [\[ACL 2025\] Compression in Transformer Language Models Has a Surprising Relationship with Performance](../../ACL2025/model_compression/compression_in_transformer_language_models_has_a_surprising_relationship_with_pe.md)
+- [\[CVPR 2025\] MambaIC: State Space Models for High-Performance Learned Image Compression](../../CVPR2025/model_compression/mambaic_state_space_models_for_high-performance_learned_image_compression.md)
 
 </div>
 

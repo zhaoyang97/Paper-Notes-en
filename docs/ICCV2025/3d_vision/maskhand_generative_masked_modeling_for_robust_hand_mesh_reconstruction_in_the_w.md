@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MaskHand: Generative Masked Modeling for Robust Hand Mesh Reconstruction in the Wild
 description: >-
-  [ICCV 2025][3D Vision][hand mesh reconstruction] This paper proposes MaskHand, the first method to introduce generative masked modeling into 3D hand mesh reconstruction. It discretizes continuous hand poses into tokens v…
+  [ICCV 2025][3D Vision][hand mesh reconstruction] This paper proposes MaskHand, the first method to introduce generative masked modeling into 3D hand mesh reconstruction. It discretizes continuous hand poses into tokens via VQ-MANO, then employs a context-guided masked Transformer to learn the probability distribution of 2D-to-3D mappings. During inference, confidence-guided iterative sampling is used to generate high-precision hand meshes, achieving a 19.5% reduction in PA-MP…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "confidence-guided sampling"
   - "uncertainty quantification"
 date: 2026-05-08
-content_hash: 98fda7d9601bbea5
+content_hash: efb3c426417a6390
 ---
 
 # MaskHand: Generative Masked Modeling for Robust Hand Mesh Reconstruction in the Wild
@@ -187,11 +187,11 @@ MaskHand follows a two-stage training pipeline. The first stage trains VQ-MANO t
 
 ## Related Papers
 
+- [\[CVPR 2025\] MEGA: Masked Generative Autoencoder for Human Mesh Recovery](../../CVPR2025/3d_vision/mega_masked_generative_autoencoder_for_human_mesh_recovery.md)
 - [\[ICCV 2025\] 3D Mesh Editing using Masked LRMs](3d_mesh_editing_using_masked_lrms.md)
 - [\[ICCV 2025\] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts](learning_robust_stereo_matching_in_the_wild_with_selective_mixture-of-experts.md)
 - [\[ICCV 2025\] HORT: Monocular Hand-held Objects Reconstruction with Transformers](hort_monocular_hand-held_objects_reconstruction_with_transformers.md)
-- [\[ICCV 2025\] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction](moga_3d_generative_avatar_prior_for_monocular_gaussian_avatar_reconstruction.md)
-- [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
+- [\[CVPR 2026\] TokenHand: Discrete Token Representation for Efficient Hand Mesh Reconstruction](../../CVPR2026/3d_vision/tokenhand_discrete_token_representation_for_efficient_hand_mesh_reconstruction.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box Large Language Reasoning Models
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper targets the vulnerability of Large Reasoning Models (LRMs) to "logically incomplete inputs" that trigger overthinking. It proposes a Hierarchical Genetic Algorithm (HGA) that treats structured problem decompositions as genes under pure black-box conditions. Through sentence-level/question-level crossover and
+  [ICML 2026][Reasoning][Overthinking] This paper targets the vulnerability of Large Reasoning Models (LRMs) to "logically incomplete inputs" that trigger overthinking. It proposes a Hierarchical Genetic Algorithm (HGA) that treats structured problem decompositions as genes under pure black-box conditions. Through sentence-level/question-level crossover and addition/deletion mutations, it searches for adversarial samples with logical fractures. This method amplifies response le…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Overthinking"
+  - "DoS Attack"
+  - "Genetic Algorithm"
+  - "Reasoning Models"
+  - "Black-box Attack"
 date: 2026-05-08
-content_hash: 33085dfe5e1f9629
+content_hash: bd58aef985559615
 ---
+
 # Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box Large Language Reasoning Models
 
 **Conference**: ICML 2026  
@@ -134,8 +140,8 @@ HGA significantly outperforms BASE and MIP across all benchmarks; the maximum am
 
 - [\[ICML 2026\] DecepChain: Inducing Deceptive Reasoning in Large Language Models](decepchain_inducing_deceptive_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Merlin's Whisper: Enabling Efficient Reasoning in Large Language Models via Black-box Persuasive Prompting](../../ACL2026/llm_reasoning/merlin39s_whisper_enabling_efficient_reasoning_in_large_language_models_via_blac.md)
-- [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](modeling_hierarchical_thinking_in_large_reasoning_models.md)
 - [\[ICML 2026\] Diagnosing Multi-step Reasoning Failures in Black-box LLMs via Stepwise Confidence Attribution](diagnosing_multi-step_reasoning_failures_in_black-box_llms_via_stepwise_confiden.md)
+- [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](modeling_hierarchical_thinking_in_large_reasoning_models.md)
 - [\[ICML 2026\] Internalizing Safety Understanding in Large Reasoning Models via Verification](internalizing_safety_understanding_in_large_reasoning_models_via_verification.md)
 
 </div>

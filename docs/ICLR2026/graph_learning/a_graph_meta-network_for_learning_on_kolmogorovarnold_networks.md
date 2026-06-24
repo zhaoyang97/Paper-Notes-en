@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Graph Meta-Network for Learning on Kolmogorov–Arnold Networks
 description: >-
-  [ICLR 2026][Graph Learning][KAN] This paper demonstrates that Kolmogorov–Arnold Networks (KAN) share the same neuron permutation symmetries as MLPs. Based on this, it encodes trained KANs into "KAN-graphs" (where nodes represent neurons and edges carry parameters of 1D functions). It proposes WS-KAN, the first weight-space architecture designed for KA
+  [ICLR 2026][Graph Learning][Weight-space models] This paper demonstrates that Kolmogorov–Arnold Networks (KAN) share the same neuron permutation symmetries as MLPs. Based on this, it encodes trained KANs into "KAN-graphs" (where nodes represent neurons and edges carry parameters of 1D functions). It proposes WS-KAN, the first weight-space architecture designed for KANs using a bidirectional message-passing GNN, which significantly outperforms symmetry-agnostic baselines in ta…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - KAN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Weight-space models"
+  - "KAN"
+  - "Graph meta-networks"
+  - "Permutation symmetry"
+  - "Equivariant GNNs"
 date: 2026-05-08
-content_hash: 65a9dc5b33df554e
+content_hash: 402462e448eb01bb
 ---
+
 # A Graph Meta-Network for Learning on Kolmogorov–Arnold Networks
 
 **Conference**: ICLR 2026  
@@ -148,10 +153,10 @@ For the equivariant pruning task, WS-KAN dominates in Accuracy and ROC-AUC. It y
 ## Related Papers
 
 - [\[ICLR 2026\] FS-KAN: Permutation Equivariant Kolmogorov-Arnold Networks via Function Sharing](fs-kan_permutation_equivariant_kolmogorov-arnold_networks_via_function_sharing.md)
+- [\[ICML 2025\] GrokFormer: Graph Fourier Kolmogorov-Arnold Transformers](../../ICML2025/graph_learning/grokformer_graph_fourier_kolmogorov-arnold_transformers.md)
+- [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
 - [\[ICLR 2026\] Latent Geometry-Driven Network Automata for Complex Network Dismantling](latent_geometry-driven_network_automata_for_complex_network_dismantling.md)
-- [\[ICLR 2026\] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning](canonical_tree_cover_neural_networks_for_expressive_and_invariant_graph_learning.md)
 - [\[ICLR 2026\] Federated Graph-Level Clustering Network with Dual Knowledge Separation](federated_graph-level_clustering_network_with_dual_knowledge_separation.md)
-- [\[ICLR 2026\] FlowSymm: Physics–Aware, Symmetry–Preserving Graph Attention for Network Flow Completion](flowsymm_physicsaware_symmetrypreserving_graph_attention_for_network_flow_comple.md)
 
 </div>
 

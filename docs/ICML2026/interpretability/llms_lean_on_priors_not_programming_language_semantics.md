@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLMs Lean on Priors, Not Programming Language Semantics
 description: >-
-  [ICML 2026][Interpretability][Paper Note] The authors construct PLSemanticsBench—pairing a featherweight C language $\text{C}^{\star}$ with two formal systems: small-step operational semantics $\mathbb{S}$ and K semantics $\mathbb{K}$. By systematically perturbing semantics through KeywordSwap (swapping operators like `+`/`-`) and KeywordObf (replacing them wi
+  [ICML 2026][Interpretability][Formal Semantics] The authors construct PLSemanticsBench—pairing a featherweight C language $\text{C}^{\star}$ with two formal systems: small-step operational semantics $\mathbb{S}$ and K semantics $\mathbb{K}$. By systematically perturbing semantics through KeywordSwap (swapping operators like `+`/`-`) and KeywordObf (replacing them with rare Caucasian-Albanian symbols), the study evaluates 11 frontier LLMs. Findings show that while models achie…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Formal Semantics"
+  - "Program Execution"
+  - "Rule Conditioning"
+  - "Semantic Perturbation"
+  - "Code Understanding"
 date: 2026-05-08
-content_hash: 104cf55fc43f0fbb
+content_hash: 311b8f61464e50c3
 ---
+
 # LLMs Lean on Priors, Not Programming Language Semantics
 
 **Conference**: ICML 2026  
@@ -129,9 +135,9 @@ No training is performed. The study uses zero-shot / one-shot prompting. Non-rea
 
 - [\[ICML 2026\] Adaptive Querying with AI Persona Priors](adaptive_querying_with_ai_persona_priors.md)
 - [\[ICML 2026\] Expand Neurons, Not Parameters](expand_neurons_not_parameters.md)
+- [\[ICLR 2026\] Priors in Time: Missing Inductive Biases for Language Model Interpretability](../../ICLR2026/interpretability/priors_in_time_missing_inductive_biases_for_language_model_interpretability.md)
 - [\[ACL 2026\] Interpretable Coreference Resolution Evaluation Using Explicit Semantics](../../ACL2026/interpretability/interpretable_coreference_resolution_evaluation_using_explicit_semantics.md)
-- [\[ACL 2026\] Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States](../../ACL2026/interpretability/linear_probes_detect_task_format_not_reasoning_mode_in_language_model_hidden_sta.md)
-- [\[ICML 2026\] Position: Zeroth-Order Optimization in Deep Learning Is Underexplored, Not Underpowered](position_zeroth-order_optimization_in_deep_learning_is_underexplored_not_underpo.md)
+- [\[ICLR 2026\] Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training](../../ICLR2026/interpretability/learning_to_see_before_seeing_demystifying_llm_visual_priors_from_language_pre-t.md)
 
 </div>
 

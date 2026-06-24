@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] C2LIP proposes a contrastive fine-tuning scheme that does not rely on hard negatives. By decomposing text into noun phrase concepts and introducing cross-modal attention pooling, it achieves SOTA on SugarCrepe/SugarCrepe++ compositionality benchmarks while maintaining or improving zero-shot and retrieval performance.
+  [CVPR 2026][Multimodal VLM][Compositional Understanding] C2LIP proposes a contrastive fine-tuning scheme that does not rely on hard negatives. By decomposing text into noun phrase concepts and introducing cross-modal attention pooling, it achieves SOTA on SugarCrepe/SugarCrepe++ compositionality benchmarks while maintaining or improving zero-shot and retrieval performance.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Compositional Understanding"
+  - "Contrastive Learning"
+  - "CLIP Fine-tuning"
+  - "Noun Phrases"
+  - "Zero-shot Generalization"
 date: 2026-05-08
-content_hash: cd8a1c2b32ca7a67
+content_hash: 0257a08413a53d70
 ---
+
 # No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models
 
 **Conference**: CVPR 2026  
@@ -168,11 +174,11 @@ Attribute binding breakdown (SugarCrepe + SugarCrepe++ attribute subsets):
 
 ## Related Papers
 
-- [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
-- [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
 - [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
-- [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
+- [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
 - [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
+- [\[ECCV 2024\] The Hard Positive Truth About Vision-Language Compositionality](../../ECCV2024/multimodal_vlm/the_hard_positive_truth_about_visionlanguage_compositionalit.md)
+- [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
 
 </div>
 

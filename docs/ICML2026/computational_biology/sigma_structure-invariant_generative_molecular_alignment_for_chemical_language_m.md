@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning
 description: >-
-  [ICML 2026][Computational Biology][SMILES] SIGMA uses token-level contrastive loss to force the hidden states of different SMILES permutations of the same molecule onto the same trajectory. It further introduces IsoBeam to prune isomorphic redundant paths during the decoding stage, enabling sequence models to truly "think by graph rather than by string" in chem
+  [ICML 2026][Computational Biology][SMILES] SIGMA uses token-level contrastive loss to force the hidden states of different SMILES permutations of the same molecule onto the same trajectory. It further introduces IsoBeam to prune isomorphic redundant paths during the decoding stage, enabling sequence models to truly "think by graph rather than by string" in chemical space.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - SMILES
+  - "ICML 2026"
+  - "Computational Biology"
+  - "SMILES"
+  - "Contrastive Learning"
+  - "Trajectory Alignment"
+  - "Isomorphism Beam Search"
+  - "Molecular Generation"
 date: 2026-05-08
-content_hash: afcf19ab40c3db14
+content_hash: 5b507e6ebfb6cf43
 ---
+
 # SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning
 
 **Conference**: ICML 2026  
@@ -124,6 +129,7 @@ The paper benchmarks SIGMA against strong baselines (standard ChemLM, Randomized
 - Value: ⭐⭐⭐⭐⭐ Simultaneously improves training and inference, offering direct value to the ChemLM community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -132,7 +138,7 @@ The paper benchmarks SIGMA against strong baselines (standard ChemLM, Randomized
 - [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](protein_autoregressive_modeling_via_multiscale_structure_generation.md)
 - [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](../../AAAI2026/computational_biology/s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
 - [\[AAAI 2026\] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics](../../AAAI2026/computational_biology/dual-path_knowledge-augmented_contrastive_alignment_network_for_spatially_resolv.md)
-- [\[NeurIPS 2025\] Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations](../../NeurIPS2025/computational_biology/beyond_chemical_qa_evaluating_llms_chemical_reasoning_with_modular_chemical_oper.md)
+- [\[ICML 2026\] Supervised Graph Contrastive Learning for Gene Regulatory Networks](supervised_graph_contrastive_learning_for_gene_regulatory_networks.md)
 
 </div>
 

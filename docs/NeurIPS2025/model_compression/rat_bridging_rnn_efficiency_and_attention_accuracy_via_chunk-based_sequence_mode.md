@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling
 description: >-
-  [NeurIPS 2025][Model Compression][Efficient Sequence Modeling] This paper proposes RAT (Recurrence And aTtention), a chunk-based intermediate architecture that models local dependencies within chunks via linear RNNs and…
+  [NeurIPS 2025][Model Compression][Efficient Sequence Modeling] This paper proposes RAT (Recurrence And aTtention), a chunk-based intermediate architecture that models local dependencies within chunks via linear RNNs and enables global access across chunks via softmax attention. At $L=16$, RAT achieves a 9× single-layer decoding speedup and 10× maximum throughput improvement over standard attention with comparable performance; a hybrid variant alternating with sliding window a…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Long Context"
   - "Linear Complexity"
 date: 2026-05-08
-content_hash: e747bbb5af1d9cb9
+content_hash: b65437770bcd2be1
 ---
 
 # RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling
@@ -144,10 +144,10 @@ A 1.3B model is pretrained from scratch on the FineWeb-Edu dataset for 100B toke
 ## Related Papers
 
 - [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](linear_attention_for_efficient_bidirectional_sequence_modeling.md)
-- [\[NeurIPS 2025\] Adaptive Prediction-Powered AutoEval with Reliability and Efficiency Guarantees](adaptive_predictionpowered_autoeval_with_reliability_and_eff.md)
 - [\[NeurIPS 2025\] LT-Soups: Bridging Head and Tail Classes via Subsampled Model Soups](lt-soups_bridging_head_and_tail_classes_via_subsampled_model_soups.md)
 - [\[NeurIPS 2025\] SpecAttn: Speculating Sparse Attention](specattn_speculating_sparse_attention.md)
 - [\[NeurIPS 2025\] Spark Transformer: Reactivating Sparsity in FFN and Attention](spark_transformer_reactivating_sparsity_in_ffn_and_attention.md)
+- [\[CVPR 2025\] LALIC: Linear Attention Modeling for Learned Image Compression](../../CVPR2025/model_compression/linear_attention_modeling_for_learned_image_compression.md)
 
 </div>
 

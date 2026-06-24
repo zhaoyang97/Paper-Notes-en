@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Spikingformer: A Key Foundation Model for Spiking Neural Networks
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Spiking Neural Networks] This paper proposes Spikingformer, which integrates MS Residual with Self-Attention in a spike-driven manner to address the non-spike computation introduced…
+  [AAAI 2026 Oral][Self-Supervised Learning][Spiking Neural Networks] This paper proposes Spikingformer, which integrates MS Residual with Self-Attention in a spike-driven manner to address the non-spike computation introduced by SEW Residual in Spikformer, while preserving global modeling capability.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Self-Supervised Learning"
   - "Spiking Neural Networks"
   - "Transformer"
@@ -12,7 +12,7 @@ tags:
   - "residual connection"
   - "energy-efficient AI"
 date: 2026-05-08
-content_hash: 18c977f198b79ce6
+content_hash: afff07aae0045a53
 ---
 
 # Spikingformer: A Key Foundation Model for Spiking Neural Networks
@@ -133,11 +133,11 @@ where $SOP^l = fr \times T \times FLOPs^l$ (fr denotes firing rate). Only the fi
 
 ## Related Papers
 
+- [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](../../CVPR2026/self_supervised/robust_spiking_neural_networks_by_temporal_mutual_information.md)
+- [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](../../CVPR2026/self_supervised/on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)
+- [\[CVPR 2026\] Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses](../../CVPR2026/self_supervised/reconstructing_spiking_neural_networks_using_a_single_neuron_with_autapses.md)
+- [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](../../ICLR2026/self_supervised/prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
 - [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](../../ICML2026/self_supervised/how_neural_is_a_neural_foundation_model.md)
-- [\[ICLR 2026\] Maximizing Asynchronicity in Event-based Neural Networks](../../ICLR2026/self_supervised/maximizing_asynchronicity_in_event-based_neural_networks.md)
-- [\[AAAI 2026\] CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds](catformer_when_continual_learning_meets_spiking_transformers_with_dynamic_thresh.md)
-- [\[NeurIPS 2025\] Manifolds and Modules: How Function Develops in a Neural Foundation Model](../../NeurIPS2025/self_supervised/manifolds_and_modules_how_function_develops_in_a_neural_foundation_model.md)
-- [\[AAAI 2026\] Robust Tabular Foundation Models](robust_tabular_foundation_models.md)
 
 </div>
 

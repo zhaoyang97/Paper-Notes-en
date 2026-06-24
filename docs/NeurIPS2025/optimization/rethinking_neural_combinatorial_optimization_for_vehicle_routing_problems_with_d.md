@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees
 description: >-
-  [NeurIPS 2025][Optimization][Neural Combinatorial Optimization] This paper reveals that existing NCO methods severely overfit to fixed constraint tightness (e.g., fixed vehicle capacity $C=50$ in CVRP)…
+  [NeurIPS 2025][Optimization][Neural Combinatorial Optimization] This paper reveals that existing NCO methods severely overfit to fixed constraint tightness (e.g., fixed vehicle capacity $C=50$ in CVRP), and proposes a Variable Constraint Tightness (VCT) training scheme along with a Multiple Expert Module (MEM), enabling models to effectively handle the full spectrum of constraints from extremely tight to extremely loose.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Multiple Expert Module"
   - "Generalization"
 date: 2026-05-08
-content_hash: 07063d7742dbbcdd
+content_hash: 6880aa7b3e627caf
 ---
 
 # Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees
@@ -138,10 +138,10 @@ Model configuration: embedding dimension 192, FFN hidden size 512, query dimensi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning to Insert for Constructive Neural Vehicle Routing Solver](learning_to_insert_for_constructive_neural_vehicle_routing_solver.md)
+- [\[ICLR 2026\] Learning to Segment for Vehicle Routing Problems](../../ICLR2026/optimization/learning_to_segment_for_vehicle_routing_problems.md)
 - [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)
 - [\[AAAI 2026\] Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation](../../AAAI2026/optimization/bridging_synthetic_and_real_routing_problems_via_llm-guided_instance_generation_.md)
 - [\[NeurIPS 2025\] Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints](beyond_tildeosqrtt_constraint_violation_for_online_convex_optimization_with_adve.md)
-- [\[NeurIPS 2025\] Extragradient Method for $(L_0, L_1)$-Lipschitz Root-finding Problems](extragradient_method_for_l_0_l_1-lipschitz_root-finding_problems.md)
 
 </div>
 

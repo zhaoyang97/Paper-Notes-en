@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] TerraScope enables remote sensing VLMs to generate segmentation masks at each reasoning step and reinject visual features of masked regions into the reasoning chain ("thinking with pixels"). It features a 1-million-sample pixel-masked CoT dataset named Terra-CoT and the first benchmark evaluating both "answer + mask qu
+  [CVPR 2026][VLM Reasoning][Remote Sensing VLM] TerraScope enables remote sensing VLMs to generate segmentation masks at each reasoning step and reinject visual features of masked regions into the reasoning chain ("thinking with pixels"). It features a 1-million-sample pixel-masked CoT dataset named Terra-CoT and the first benchmark evaluating both "answer + mask quality," TerraScope-Bench. It significantly outperforms existing VLMs on fine-grained geospatial tasks such as lan…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Remote Sensing VLM"
+  - "Pixel-level Reasoning"
+  - "Interleaved CoT"
+  - "Multimodal Fusion"
+  - "Segmentation Grounding"
 date: 2026-05-08
-content_hash: fff7d5365f6ba754
+content_hash: 27d0bf525d60be69
 ---
+
 # TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation
 
 **Conference**: CVPR 2026  
@@ -143,16 +149,16 @@ Comparison of CoT strategies (Tab. 2, "Original" is the pre-trained base):
 - Value: ⭐⭐⭐⭐⭐ Provides a unified framework, 1M CoT dataset, and a new benchmark with dual metrics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs](sparrow_learning_spatial_precision_and_temporal_referential_consistency_in_pixel.md)
-- [\[CVPR 2026\] CodePercept: Code-Grounded Visual STEM Perception for MLLMs](codepercept_code-grounded_visual_stem_perception_for_mllms.md)
-- [\[CVPR 2026\] Granulon: Awakening Pixel-Level Visual Encoders with Adaptive Multi-Granularity Semantics for MLLM](granulon_awakening_pixel-level_visual_encoders_with_adaptive_multi-granularity_s.md)
-- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
+- [\[ICLR 2026\] VGR: Visual Grounded Reasoning](../../ICLR2026/vlm_reasoning/vgr_visual_grounded_reasoning.md)
+- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
+- [\[ICLR 2026\] Composition-Grounded Data Synthesis for Visual Reasoning](../../ICLR2026/vlm_reasoning/composition-grounded_data_synthesis_for_visual_reasoning.md)
 - [\[CVPR 2026\] Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models](thinking_diffusion_penalize_and_guide_visual-grounded_reasoning_in_diffusion_mul.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
 
 </div>
 

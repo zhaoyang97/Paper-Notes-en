@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] GlobeDiff: State Diffusion Process for Partial Observability in Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][Dec-POMDP] This paper reformulates "global state inference" under multi-agent partial observability as a **conditional diffusion denoising process**. By introducing a latent variable $z$ as a "mode selector," it explicitly models the one-to-many ambiguity where a single local observation corresponds to multiple plausible global s
+  [ICLR 2026][Multi-Agent][Dec-POMDP] This paper reformulates "global state inference" under multi-agent partial observability as a **conditional diffusion denoising process**. By introducing a latent variable $z$ as a "mode selector," it explicitly models the one-to-many ambiguity where a single local observation corresponds to multiple plausible global states. This approach avoids the mode collapse inherent in discriminative methods, enabling agents to reconstruct high-fideli…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Dec-POMDP
-  - CTDE
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Dec-POMDP"
+  - "Partial Observability"
+  - "Conditional Diffusion Model"
+  - "Global State Inference"
+  - "Multimodal Generation"
+  - "CTDE"
 date: 2026-05-08
-content_hash: e2bee92946e6a5e7
+content_hash: 33f0191e8b42ca21
 ---
+
 # GlobeDiff: State Diffusion Process for Partial Observability in Multi-Agent Systems
 
 **Conference**: ICLR 2026  

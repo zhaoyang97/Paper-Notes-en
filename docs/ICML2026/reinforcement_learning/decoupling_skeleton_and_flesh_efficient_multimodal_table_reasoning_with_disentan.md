@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decoupling Skeleton and Flesh: Efficient Multimodal Table Reasoning with Disentangled Alignment and Structure-aware Guidance
 description: >-
-  [ICML 2026][Reinforcement Learning][LVLM] This paper proposes a dual-component suite for multimodal table reasoning: during training, DiSCo decouples "skeleton" and "flesh" alignment targets via structure anonymization, allowing LVLMs to learn layouts with only 10K table images; during inference, Table-GLS compresses full-image QA into the minimal verifiable s
+  [ICML 2026 Spotlight][Reinforcement Learning][LVLM] This paper proposes a dual-component suite for multimodal table reasoning: during training, DiSCo decouples "skeleton" and "flesh" alignment targets via structure anonymization, allowing LVLMs to learn layouts with only 10K table images; during inference, Table-GLS compresses full-image QA into the minimal verifiable sub-table through a "global structure exploration $\to$ self-refined sub-table extraction $\to$ evidence-grou…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - LVLM
+  - "ICML 2026 Spotlight"
+  - "Reinforcement Learning"
+  - "LVLM"
+  - "Table image understanding"
+  - "Structure-content decoupling"
+  - "Global-to-local reasoning"
+  - "Sub-table evidence"
 date: 2026-05-08
-content_hash: 14a470bc8fb9a42b
+content_hash: 6f7cf4e870fc549c
 ---
+
 # Decoupling Skeleton and Flesh: Efficient Multimodal Table Reasoning with Disentangled Alignment and Structure-aware Guidance
 
 **Conference**: ICML 2026 Spotlight  
@@ -142,11 +147,11 @@ On Qwen3-VL-32B, DiSCo improves OOD TCL from 65.91 to 74.10. For smaller models 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Metis-SPECS: Decoupling Multimodal Learning via Self-distilled Preference-based Cold Start](../../ICLR2026/reinforcement_learning/metis-specs_decoupling_multimodal_learning_via_self-distilled_preference-based_c.md)
+- [\[ICLR 2026\] 3D-aware Disentangled Representation for Compositional Reinforcement Learning](../../ICLR2026/reinforcement_learning/3d-aware_disentangled_representation_for_compositional_reinforcement_learning.md)
+- [\[ICLR 2026\] AlphaSAGE: Structure-Aware Alpha Mining via GFlowNets for Robust Exploration](../../ICLR2026/reinforcement_learning/alphasage_structure-aware_alpha_mining_via_gflownets_for_robust_exploration.md)
 - [\[ICLR 2026\] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning](../../ICLR2026/reinforcement_learning/fapo_flawed-aware_policy_optimization_for_efficient_and_reliable_reasoning.md)
 - [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](../../ICLR2026/reinforcement_learning/rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
 - [\[ICLR 2026\] Reasoning Boosts Opinion Alignment in LLMs](../../ICLR2026/reinforcement_learning/reasoning_boosts_opinion_alignment_in_llms.md)
-- [\[AAAI 2026\] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision](../../AAAI2026/reinforcement_learning/stelar-vision_self-topology-aware_efficient_learning_for_aligned_reasoning_in_vi.md)
 
 </div>
 

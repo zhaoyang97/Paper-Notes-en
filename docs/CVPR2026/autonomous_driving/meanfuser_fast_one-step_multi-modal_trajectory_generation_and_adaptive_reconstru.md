@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][MeanFlow] The MeanFuser end-to-end autonomous driving framework is proposed. It uses Gaussian Mixture Noise (GMN) to replace discrete trajectory vocabularies for continuous multi-modal trajectory modeling. By leveraging MeanFlow Identity, it achieves error-free one-step sampling, and an Adaptive Reconstruction Module (ARM) is de
+  [CVPR 2026][Autonomous Driving][End-to-End Planning] The MeanFuser end-to-end autonomous driving framework is proposed. It uses Gaussian Mixture Noise (GMN) to replace discrete trajectory vocabularies for continuous multi-modal trajectory modeling. By leveraging MeanFlow Identity, it achieves error-free one-step sampling, and an Adaptive Reconstruction Module (ARM) is designed to implicitly decide between selecting existing proposals or reconstructing new trajectories. Using…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - MeanFlow
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-End Planning"
+  - "MeanFlow"
+  - "Gaussian Mixture Noise"
+  - "One-Step Sampling"
+  - "Adaptive Trajectory Reconstruction"
 date: 2026-05-08
-content_hash: b92d3e5b0e1b2c0b
+content_hash: 2d1d158a1fd04a26
 ---
+
 # MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving
 
 **Conference**: CVPR 2026  

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][auto-thinking] R-4B teaches a 4B Multimodal Large Language Model (MLLM) to "think only when necessary." By first using **bi-mode annealing** to train a single backbone to master both "reasoning" and "direct-answering" modes, and then applying **Bi-mode Policy Optimization (BPO)**—which forces simultaneous sampling of thinking and non
+  [CVPR 2026][VLM Reasoning][Multimodal Large Models] R-4B teaches a 4B Multimodal Large Language Model (MLLM) to "think only when necessary." By first using **bi-mode annealing** to train a single backbone to master both "reasoning" and "direct-answering" modes, and then applying **Bi-mode Policy Optimization (BPO)**—which forces simultaneous sampling of thinking and non-thinking response pairs for joint optimization—it achieves SOTA performance across 25 benchmarks using simp…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - auto-thinking
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Large Models"
+  - "Adaptive Reasoning"
+  - "auto-thinking"
+  - "Reinforcement Learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 708bbbf274f6b680
+content_hash: c97e4743c35bf3ac
 ---
+
 # R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning
 
 **Conference**: CVPR 2026  
@@ -145,11 +148,11 @@ RL comparison (R-4B-Base vs R-4B-RL, Average over 6 reasoning benchmarks):
 
 ## Related Papers
 
-- [\[CVPR 2026\] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models](mupo_all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vlms.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
+- [\[ICLR 2026\] Mixture-of-Visual-Thoughts: Exploring Context-Adaptive Reasoning Mode Selection for General Visual Reasoning](../../ICLR2026/vlm_reasoning/mixture-of-visual-thoughts_exploring_context-adaptive_reasoning_mode_selection_f.md)
+- [\[CVPR 2026\] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)
+- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](../../ICLR2026/vlm_reasoning/deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
 - [\[CVPR 2026\] All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models](all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vision-language_model.md)
-- [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
-- [\[CVPR 2026\] POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs](points-long_adaptive_dual-mode_visual_reasoning_in_mllms.md)
-- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
 
 </div>
 

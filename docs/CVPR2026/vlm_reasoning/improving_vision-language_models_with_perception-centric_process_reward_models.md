@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Improving Vision-language Models with Perception-centric Process Reward Models
 description: >-
-  [CVPR 2026][LLM Reasoning][RLVR] Addressing the limitation in VLM reinforcement learning where result-only rewards fail to locate specific errors, this paper introduces Perceval, a perception-centric Process Reward Model. Perceval verifies vision-language consistency step-by-step and identifies hallucinated tokens. These signals are used both during t
+  [CVPR 2026][VLM Reasoning][Process Reward Model] Addressing the limitation in VLM reinforcement learning where result-only rewards fail to locate specific errors, this paper introduces Perceval, a perception-centric Process Reward Model. Perceval verifies vision-language consistency step-by-step and identifies hallucinated tokens. These signals are used both during training (via token-level advantage redistribution in GRPO) and inference (via truncate-regeneration). The metho…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Process Reward Model"
+  - "Perceptual Hallucination"
+  - "RLVR"
+  - "GRPO"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 0d25277bc7444158
+content_hash: c813d34c28e56e05
 ---
+
 # Improving Vision-language Models with Perception-centric Process Reward Models
 
 **Conference**: CVPR 2026  
@@ -124,11 +128,11 @@ Truncate-Regenerate outperformed majority voting under the same sampling budget,
 
 ## Related Papers
 
-- [\[CVPR 2026\] Revisiting the Necessity of Lengthy Chain-of-Thought in Vision-centric Reasoning Generalization](revisiting_the_necessity_of_lengthy_chain-of-thought_in_vision-centric_reasoning.md)
-- [\[CVPR 2026\] Think-as-You-See: Streaming Chain-of-Thought Reasoning for Large Vision-Language Models](think-as-you-see_streaming_chain-of-thought_reasoning_for_large_vision-language_.md)
-- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](../../ICLR2026/llm_reasoning/vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[ACL 2026\] Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards](../../ACL2026/llm_reasoning/process_reward_models_meet_planning_generating_precise_and_scalable_datasets_for.md)
-- [\[ICML 2025\] Improving Rationality in the Reasoning Process of Language Models through Self-playing Game](../../ICML2025/llm_reasoning/improving_rationality_in_the_reasoning_process_of_language_models_through_self-p.md)
+- [\[CVPR 2026\] Hierarchical Process Reward Models are Symbolic Vision Learners](hierarchical_process_reward_models_are_symbolic_vision_learners.md)
+- [\[CVPR 2026\] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning](pdcr_perception-decomposed_confidence_reward_for_vision-language_reasoning.md)
+- [\[CVPR 2026\] All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models](all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vision-language_model.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
+- [\[ICLR 2026\] VisualPRM400K: An Effective Dataset for Training Multimodal Process Reward Models](../../ICLR2026/vlm_reasoning/visualprm400k_an_effective_dataset_for_training_multimodal_process_reward_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Critical Distillation Network for Video-based Commonsense Captioning
 description: >-
-  [CVPR 2026][Video Understanding][Knowledge Distillation] SCD-Net addresses two major problems caused by the "video → content description → commonsense" reasoning chain: the lack of visual grounding and the isolation of different commonsense categories. It employs self-critical reinforcement learning to strengthen visual reasoning and a joint reasoning distillation framework
+  [CVPR 2026][VLM Reasoning][Video Commonsense Captioning] SCD-Net addresses two major problems caused by the "video → content description → commonsense" reasoning chain: the lack of visual grounding and the isolation of different commonsense categories. It employs self-critical reinforcement learning to strengthen visual reasoning and a joint reasoning distillation framework (cascaded teacher decoder + student + language adaptive wrapper distillation) to establish inter-class…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Commonsense Captioning"
+  - "Self-critical Reinforcement Learning"
+  - "Knowledge Distillation"
+  - "Cascaded Decoder"
+  - "Visual Grounding"
 date: 2026-05-08
-content_hash: fb3b987b4b7d5b73
+content_hash: 21a4a9a9fd82c57c
 ---
+
 # Self-Critical Distillation Network for Video-based Commonsense Captioning
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ Table 2 breaks down the two main components (SC = Self-Critical, Dis = Joint Rea
 
 ## Related Papers
 
-- [\[CVPR 2026\] Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation](self-paced_and_self-corrective_masked_prediction_for_movie_trailer_generation.md)
-- [\[CVPR 2026\] Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation](bootstrapping_video_semantic_segmentation_model_via_distillation-assisted_test-t.md)
-- [\[CVPR 2026\] Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning](stay_in_your_lane_role_specific_queries_with_overlap_suppression_loss_for_dense_.md)
-- [\[CVPR 2026\] Boosting Self-Supervised Tracking with Contextual Prompts and Noise Learning](boosting_self-supervised_tracking_with_contextual_prompts_and_noise_learning.md)
-- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
+- [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
+- [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
+- [\[AAAI 2026\] SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios](../../AAAI2026/vlm_reasoning/stola_self-adaptive_touch-language_framework_with_tactile_commonsense_reasoning_.md)
+- [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
+- [\[ICLR 2026\] CompoDistill: Attention Distillation for Compositional Reasoning in Multimodal LLMs](../../ICLR2026/vlm_reasoning/compodistill_attention_distillation_for_compositional_reasoning_in_multimodal_ll.md)
 
 </div>
 

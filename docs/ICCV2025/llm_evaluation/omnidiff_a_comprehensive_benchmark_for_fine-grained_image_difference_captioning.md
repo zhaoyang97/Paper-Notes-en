@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning
 description: >-
-  [ICCV 2025][LLM Evaluation][image difference captioning] This paper introduces OmniDiff, a fine-grained image difference captioning dataset comprising 324 diverse scenes (real-world and 3D synthetic)…
+  [ICCV 2025][LLM Evaluation][image difference captioning] This paper introduces OmniDiff, a fine-grained image difference captioning dataset comprising 324 diverse scenes (real-world and 3D synthetic), and proposes a plug-and-play Multi-scale Differential Perception (MDP) module integrated into an MLLM to build the M3Diff model, achieving state-of-the-art performance on OmniDiff and multiple public benchmarks.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "change detection"
   - "benchmark"
 date: 2026-05-08
-content_hash: ad44ce24174d22c0
+content_hash: 7567f94b72c1aca7
 ---
 
 # OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning
@@ -156,10 +156,10 @@ M3Diff is built upon the LLaVA-OneVision-7B architecture. An MDP module is incor
 ## Related Papers
 
 - [\[ICCV 2025\] 3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark](3dsrbench_a_comprehensive_3d_spatial_reasoning_benchmark.md)
-- [\[ICCV 2025\] ForCenNet: Foreground-Centric Network for Document Image Rectification](forcennet_foreground-centric_network_for_document_image_rectification.md)
-- [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](../../ACL2026/llm_evaluation/rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
-- [\[ACL 2026\] K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology](../../ACL2026/llm_evaluation/k-metbench_a_multi-dimensional_benchmark_for_fine-grained_evaluation_of_expert_r.md)
-- [\[ICCV 2025\] On the Robustness Tradeoff in Fine-Tuning](on_the_robustness_tradeoff_in_fine-tuning.md)
+- [\[ACL 2025\] TripCraft: A Benchmark for Spatio-Temporally Fine Grained Travel Planning](../../ACL2025/llm_evaluation/tripcraft_a_benchmark_for_spatio-temporally_fine_grained_travel_planning.md)
+- [\[ACL 2025\] PhysReason: A Comprehensive Benchmark towards Physics-Based Reasoning](../../ACL2025/llm_evaluation/physreason_a_comprehensive_benchmark_towards_physics-based_reasoning.md)
+- [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](../../ICLR2026/llm_evaluation/reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
+- [\[ACL 2025\] EditInspector: A Benchmark for Evaluation of Text-Guided Image Edits](../../ACL2025/llm_evaluation/editinspector_a_benchmark_for_evaluation_of_text-guided_image_edits.md)
 
 </div>
 

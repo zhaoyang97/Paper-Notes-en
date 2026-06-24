@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to See Inside Opaque Liquid Containers using Speckle Vibrometry
 description: >-
-  [ICCV 2025][Audio & Speech][Speckle vibrometry] This paper proposes a non-contact system based on laser speckle vibrometry that simultaneously senses micro-vibrations on the surfaces of multiple opaque containers via a 2…
+  [ICCV 2025][Audio & Speech][Speckle vibrometry] This paper proposes a non-contact system based on laser speckle vibrometry that simultaneously senses micro-vibrations on the surfaces of multiple opaque containers via a 2D grid, then employs a Vibration Transformer to infer container type and hidden liquid fill level from vibration spectra — establishing "seeing inside opaque containers" as a novel computer vision task.
 tags:
   - "ICCV 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "2D grid sensing"
   - "non-contact detection"
 date: 2026-05-08
-content_hash: 06f4d366ce993776
+content_hash: bd5796d4e03966d2
 ---
 
 # Learning to See Inside Opaque Liquid Containers using Speckle Vibrometry
@@ -138,11 +138,11 @@ Results on a self-collected container vibration dataset (23 container types, 5,9
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Inductive Transfer Learning for Graph-Based Recommenders](../../NeurIPS2025/audio_speech/inductive_transfer_learning_for_graph-based_recommenders.md)
+- [\[CVPR 2025\] EMoVA: Empowering Language Models to See, Hear and Speak with Vivid Emotions](../../CVPR2025/audio_speech/emova_empowering_language_models_to_see_hear_and_speak_with_vivid_emotions.md)
 - [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
-- [\[ICLR 2026\] PACE: Pretrained Audio Continual Learning](../../ICLR2026/audio_speech/pace_pretrained_audio_continual_learning.md)
-- [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](../../ACL2026/audio_speech/privacy-preserving_prosody_representation_learning.md)
-- [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](../../ICML2026/audio_speech/algorithmic_recourse_of_in-context_learning_for_tabular_data.md)
+- [\[CVPR 2025\] Learning to Highlight Audio by Watching Movies](../../CVPR2025/audio_speech/learning_to_highlight_audio_by_watching_movies.md)
+- [\[NeurIPS 2025\] Inductive Transfer Learning for Graph-Based Recommenders](../../NeurIPS2025/audio_speech/inductive_transfer_learning_for_graph-based_recommenders.md)
+- [\[CVPR 2025\] LiveCC: Learning Video LLM with Streaming Speech Transcription at Scale](../../CVPR2025/audio_speech/livecc_learning_video_llm_with_streaming_speech_transcription_at_scale.md)
 
 </div>
 

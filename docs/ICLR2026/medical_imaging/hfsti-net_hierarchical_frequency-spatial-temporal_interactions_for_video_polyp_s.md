@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] HFSTI-Net: Hierarchical Frequency-spatial-temporal Interactions for Video Polyp Segmentation
 description: >-
-  [ICLR 2026][Medical Imaging][Video Polyp Segmentation] HFSTI-Net integrates "frequency-spatial" dual-path interaction and "mask-guided recurrent memory propagation" into a single network. It addresses two persistent challenges in colonoscopy video polyp segmentation: **shape collapse** caused by low contrast in single frames and **episodic amnesia** due to target fluctuati
+  [ICLR 2026][Medical Imaging][Video Polyp Segmentation] HFSTI-Net integrates "frequency-spatial" dual-path interaction and "mask-guided recurrent memory propagation" into a single network. It addresses two persistent challenges in colonoscopy video polyp segmentation: **shape collapse** caused by low contrast in single frames and **episodic amnesia** due to target fluctuations in long sequences. It achieves SOTA performance on SUN-SEG and CVC-612 while maintaining real-time in…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Video Polyp Segmentation
-  - Frequency Learning
-  - Spatiotemporal Modeling
-  - Memory Bank
-  - Colonoscopy
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Video Polyp Segmentation"
+  - "Frequency Learning"
+  - "Spatiotemporal Modeling"
+  - "Memory Bank"
+  - "Colonoscopy"
 date: 2026-05-08
-content_hash: 7547af5071283deb
+content_hash: 572e234868cb2533
 ---
+
 # HFSTI-Net: Hierarchical Frequency-spatial-temporal Interactions for Video Polyp Segmentation
 
 **Conference**: ICLR 2026  
@@ -125,8 +126,8 @@ HFSI sub-component ablation (Hard Dice): Removing IFB results in the most signif
 - **Value**: ⭐⭐⭐⭐ — Achieves SOTA under real-time constraints, with high reference value for medical video segmentation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

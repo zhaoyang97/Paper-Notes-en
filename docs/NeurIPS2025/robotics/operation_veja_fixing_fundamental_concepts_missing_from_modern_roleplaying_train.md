@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Operation Veja: Fixing Fundamental Concepts Missing from Modern Roleplaying Training Paradigms
 description: >-
-  [NeurIPS 2025][Robotics][Role-playing] This paper systematically critiques four dominant paradigms in role-playing (RP) model training—RAG, fact-value specification, literary data…
+  [NeurIPS 2025][Robotics][Role-playing] This paper systematically critiques four dominant paradigms in role-playing (RP) model training—RAG, fact-value specification, literary data, and synthetic data—arguing that none can produce characters with genuine depth. It proposes the VEJA framework (Values–Experiences–Judgments–Abilities) as a structured basis for character definition and data curation. In an LLM-judged A/B test, VEJA-guided human-curated data significantly outperfor…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "data curation"
   - "character consistency"
 date: 2026-05-08
-content_hash: f65fbbd954e830bc
+content_hash: 3f99a5501edf2646
 ---
 
 # Operation Veja: Fixing Fundamental Concepts Missing from Modern Roleplaying Training Paradigms
@@ -137,9 +137,9 @@ No ablation study on individual VEJA components is conducted (the authors acknow
 
 - [\[NeurIPS 2025\] HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data](himacon_discovering_hierarchical_manipulation_concepts_from_unlabeled_multi-moda.md)
 - [\[NeurIPS 2025\] The Impact of Scaling Training Data on Adversarial Robustness](the_impact_of_scaling_training_data_on_adversarial_robustness.md)
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
 - [\[NeurIPS 2025\] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts](zero-shot_context_generalization_in_reinforcement_learning_from_few_training_con.md)
+- [\[ICML 2025\] Sketch-Plan-Generalize: Learning and Planning with Neuro-Symbolic Programmatic Representations for Inductive Spatial Concepts](../../ICML2025/robotics/sketch-plan-generalize_learning_and_planning_with_neuro-symbolic_programmatic_re.md)
 
 </div>
 

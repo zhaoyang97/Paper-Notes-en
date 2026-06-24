@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Physics-Constrained Fine-Tuning of Flow-Matching Models for Generation and Inverse Problems
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Flow Matching] This paper proposes a **post-training framework** that fine-tunes a flow-matching generative model, trained solely on observational data, into a "physics-consistent" model. By using weak-form PDE residuals as rewards and leveraging Adjoint Matching to reformulate fine-tuning as a stochastic optimal control problem, the
+  [ICLR 2026][Physics & Scientific Computing][Flow Matching] This paper proposes a **post-training framework** that fine-tunes a flow-matching generative model, trained solely on observational data, into a "physics-consistent" model. By using weak-form PDE residuals as rewards and leveraging Adjoint Matching to reformulate fine-tuning as a stochastic optimal control problem, the framework introduces an auxiliary "latent parameter" evolution flow. This allows the model to both g…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Flow Matching
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Flow Matching"
+  - "PDE Constraints"
+  - "Adjoint Matching"
+  - "Inverse Problems"
+  - "Post-training Fine-tuning"
 date: 2026-05-08
-content_hash: 5edcfc687f176d79
+content_hash: 07512fefca6eaea8
 ---
+
 # Physics-Constrained Fine-Tuning of Flow-Matching Models for Generation and Inverse Problems
 
 **Conference**: ICLR 2026  
@@ -151,8 +156,8 @@ Ours achieves the lowest residuals while minimizing distribution drift. PBFM sho
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](../../NeurIPS2025/physics/physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
 - [\[ICLR 2026\] Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints](physics_vs_distributions_pareto_optimal_flow_matching_with_physics_constraints.md)
+- [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](../../NeurIPS2025/physics/physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
 - [\[ICLR 2026\] Robust and Interpretable Adaptation of Equivariant Materials Foundation Models via Sparsity-promoting Fine-tuning](robust_and_interpretable_adaptation_of_equivariant_materials_foundation_models_v.md)
 - [\[ICLR 2026\] PRO-MOF: Policy Optimization with Universal Atomistic Models for Controllable MOF Generation](pro-mof_policy_optimization_with_universal_atomistic_models_for_controllable_mof.md)
 - [\[ICML 2026\] Spectrally Regularized Latent Flow Matching for Turbulence Generation](../../ICML2026/physics/spectrally_regularized_latent_flow_matching_for_turbulence_generation.md)

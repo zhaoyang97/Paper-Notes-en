@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Model] SwitchCraft is a training-free multi-event video generation framework that achieves clear temporal transitions and scene consistency without modifying model weights. It introduces Event-Aligned Query Steering (EAQS) to align frame-level attention with corresponding event prompts and an Auto-Balance Strength Solver (ABS
+  [CVPR 2026][Video Generation][Multi-Event Video Generation] SwitchCraft is a training-free multi-event video generation framework that achieves clear temporal transitions and scene consistency without modifying model weights. It introduces Event-Aligned Query Steering (EAQS) to align frame-level attention with corresponding event prompts and an Auto-Balance Strength Solver (ABSS) to adaptively balance guidance intensity.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-Event Video Generation"
+  - "Attention Control"
+  - "Training-Free Framework"
+  - "Diffusion Models"
+  - "Temporal Alignment"
 date: 2026-05-08
-content_hash: 1846e72afbe0bd4d
+content_hash: 264a0a5f973b2867
 ---
+
 # SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls
 
 **Conference**: CVPR 2026  
@@ -163,15 +168,14 @@ Ours significantly leads in text alignment (CLIP-T +7.4%, T2V Align +24%) while 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
-- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
+- [\[ICLR 2026\] TS-Attn: Temporal-wise Separable Attention for Multi-Event Video Generation](../../ICLR2026/video_generation/ts-attn_temporal-wise_separable_attention_for_multi-event_video_generation.md)
+- [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
+- [\[CVPR 2026\] FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement](flowportal_residual-corrected_flow_for_training-free_video_relighting_and_backgr.md)
 - [\[CVPR 2026\] LinVideo: A Post-Training Framework towards O(n) Attention in Efficient Video Generation](linvideo_a_post-training_framework_towards_on_attention_in_efficient_video_gener.md)
 - [\[CVPR 2025\] Mind the Time: Temporally-Controlled Multi-Event Video Generation](../../CVPR2025/video_generation/mind_the_time_temporally-controlled_multi-event_video_generation.md)
-- [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
 
 </div>
 

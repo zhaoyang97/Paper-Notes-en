@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][data synthesis] This paper proposes Design Logic—reusable meta-knowledge reverse-engineered from authentic exam questions—to guide the synthesis of multidisciplinary reasoning problems from raw text. The authors constructed 4.7 million reasoning questions across 75 disciplines; base models fine-tuned on this data (SFT) even surpass of
+  [ICLR 2026][Reasoning][data synthesis] This paper proposes Design Logic—reusable meta-knowledge reverse-engineered from authentic exam questions—to guide the synthesis of multidisciplinary reasoning problems from raw text. The authors constructed 4.7 million reasoning questions across 75 disciplines; base models fine-tuned on this data (SFT) even surpass official models that underwent full post-training.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - data synthesis
-  - design logic
-  - multidisciplinary reasoning
-  - question generation
-  - SFT
+  - "ICLR 2026"
+  - "Reasoning"
+  - "data synthesis"
+  - "design logic"
+  - "multidisciplinary reasoning"
+  - "question generation"
+  - "SFT"
 date: 2026-05-08
-content_hash: 42660672a3372983
+content_hash: 10d0625f8ff27156
 ---
+
 # DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -140,10 +141,10 @@ The base model SFT-ed only with DLR data **surpasses** the official models that 
 ## Related Papers
 
 - [\[ICLR 2026\] On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning](on_the_design_of_kl-regularized_policy_gradient_algorithms_for_llm_reasoning.md)
-- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
-- [\[ICLR 2026\] A Balanced Neuro-Symbolic Approach for Commonsense Abductive Logic](a_balanced_neuro-symbolic_approach_for_commonsense_abductive_logic.md)
+- [\[ACL 2026\] MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis](../../ACL2026/llm_reasoning/mathagent_adversarial_evolution_of_constraint_graphs_for_mathematical_reasoning_.md)
 - [\[ICML 2026\] An Information-Theoretic Criterion for Efficient Data Synthesis](../../ICML2026/llm_reasoning/an_information-theoretic_criterion_for_efficient_data_synthesis.md)
-- [\[ICLR 2026\] HardcoreLogic: Challenging Large Reasoning Models with Long-tail Logic Puzzle Games](hardcorelogic_challenging_large_reasoning_models_with_long-tail_logic_puzzle_gam.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
+- [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](../../ACL2026/llm_reasoning/efficient_prm_training_data_synthesis_via_formal_verification.md)
 
 </div>
 

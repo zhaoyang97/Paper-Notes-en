@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] UNICBench: UNIfied Counting Benchmark for MLLM
 description: >-
-  [CVPR 2026][Multimodal VLM][counting benchmark] Introducing UNICBench, the first unified cross-modal (Image/Text/Audio) multi-level counting benchmark, containing 14,301 QA pairs (5,508+5,888+2,905) categorized by three capability levels (Pattern/Semantic/Reasoning) × three difficulty levels (Easy/Medium/Hard). Systematic evaluation of 45 SOTA MLLMs reveals that bas
+  [CVPR 2026][Multimodal VLM][counting benchmark] Introducing UNICBench, the first unified cross-modal (Image/Text/Audio) multi-level counting benchmark, containing 14,301 QA pairs (5,508+5,888+2,905) categorized by three capability levels (Pattern/Semantic/Reasoning) × three difficulty levels (Easy/Medium/Hard). Systematic evaluation of 45 SOTA MLLMs reveals that basic counting tasks are approaching human level, while significant gaps remain in reasoning-level and difficult ta…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - counting benchmark
-  - multimodal LLM
-  - image-text-audio
-  - unified evaluation
-  - stratified difficulty
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "counting benchmark"
+  - "multimodal LLM"
+  - "image-text-audio"
+  - "unified evaluation"
+  - "stratified difficulty"
 date: 2026-05-08
-content_hash: 5adade62777f9d4d
+content_hash: 099c6d50fd8887bc
 ---
+
 # UNICBench: UNIfied Counting Benchmark for MLLM
 
 **Conference**: CVPR 2026  
@@ -158,11 +159,11 @@ UNICBench is an evaluation benchmark and does not involve model training. Core m
 
 ## Related Papers
 
-- [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
 - [\[CVPR 2026\] CountGD++: Generalized Prompting for Open-World Counting](countgd_generalized_prompting_for_open-world_counting.md)
+- [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
 - [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
-- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
 - [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
+- [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
 
 </div>
 

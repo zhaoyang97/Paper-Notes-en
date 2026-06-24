@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Generalized Multimodal Homography Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the issue where homography estimation models fail when switching modalities, this paper utilizes style transfer to synthesize misaligned image pairs from a single image with varying textures/colors but identical structures (with ground truth offsets). This allows supervised training on synthetic data to gene
+  [CVPR 2026][3D Vision][Homography Estimation] Addressing the issue where homography estimation models fail when switching modalities, this paper utilizes style transfer to synthesize misaligned image pairs from a single image with varying textures/colors but identical structures (with ground truth offsets). This allows supervised training on synthetic data to generalize zero-shot to unseen modalities. Simultaneously, CCNet is designed to fuse cross-scale information and decou…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Homography Estimation"
+  - "Multimodal Registration"
+  - "Zero-shot Generalization"
+  - "Data Synthesis"
+  - "Style Transfer"
 date: 2026-05-08
-content_hash: 50f1050ad4440bd1
+content_hash: 973c824297a618d0
 ---
+
 # Towards Generalized Multimodal Homography Estimation
 
 **Conference**: CVPR 2026  
@@ -162,9 +168,9 @@ In the same-dataset setting, CCNet outperforms others by up to 29.50%. In zero-s
 
 - [\[CVPR 2026\] Omni-3DEdit: Generalized Versatile 3D Editing in One-Pass](omni-3dedit_generalized_versatile_3d_editing_in_one-pass.md)
 - [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
+- [\[CVPR 2026\] RelightAnyone: A Generalized Relightable 3D Gaussian Head Model](relightanyone_a_generalized_relightable_3d_gaussian_head_model.md)
+- [\[CVPR 2026\] GeCo: Geometry-Consistent Regularization for Domain Generalized Semantic Segmentation](geco_geometry-consistent_regularization_for_domain_generalized_semantic_segmenta.md)
 - [\[CVPR 2026\] ORD: Object-Relation Decoupling for Generalized 3D Visual Grounding](ord_object-relation_decoupling_for_generalized_3d_visual_grounding.md)
-- [\[CVPR 2026\] Multimodal Semantic Bias Mitigation for Diverse Text-To-3D Generation](multimodal_semantic_bias_mitigation_for_diverse_text-to-3d_generation.md)
-- [\[ICLR 2026\] MultiMat: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models](../../ICLR2026/3d_vision/multimat_multimodal_program_synthesis_for_procedural_materials_using_large_multi.md)
 
 </div>
 

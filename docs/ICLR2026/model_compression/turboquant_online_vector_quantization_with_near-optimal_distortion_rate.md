@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] TurboQuant is a data-oblivious (requires no calibration, ready for online use) vector quantization algorithm: it first applies a random rotation to "transform" the coordinates of any input vector into nearly independent Beta distributions, then applies pre-solved Max-Lloyd optimal scalar quantizers to each coordinate.
+  [ICLR 2026][Model Compression][Vector Quantization] TurboQuant is a data-oblivious (requires no calibration, ready for online use) vector quantization algorithm: it first applies a random rotation to "transform" the coordinates of any input vector into nearly independent Beta distributions, then applies pre-solved Max-Lloyd optimal scalar quantizers to each coordinate. This keeps MSE distortion within a constant factor ($\approx 2.7$) of the information-theoretic lower bound…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Vector Quantization"
+  - "KV Cache Compression"
+  - "Approximate Nearest Neighbor"
+  - "Unbiased Inner Product Estimation"
+  - "Distortion-Rate Bound"
 date: 2026-05-08
-content_hash: 7289f7feac54f31c
+content_hash: 884f783634e351e0
 ---
+
 # TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate
 
 **Conference**: ICLR 2026  

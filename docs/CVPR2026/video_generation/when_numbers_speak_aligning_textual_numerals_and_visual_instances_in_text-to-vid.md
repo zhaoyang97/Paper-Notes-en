@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models
 description: >-
-  [CVPR 2026][Video Generation][Text-to-Video] The core idea of NUMINA is to avoid retraining video diffusion models by extracting a "countable instance layout" from DiT attention during inference. It detects inconsistencies between the numeral prompt and the current layout, applies conservative layout modifications (additions or deletions), and uses the corrected
+  [CVPR 2026][Video Generation][Quantity Alignment] The core idea of NUMINA is to avoid retraining video diffusion models by extracting a "countable instance layout" from DiT attention during inference. It detects inconsistencies between the numeral prompt and the current layout, applies conservative layout modifications (additions or deletions), and uses the corrected layout to guide re-generation, significantly improving the adherence of text-to-video models to numerical cons…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Text-to-Video
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Quantity Alignment"
+  - "Text-to-Video"
+  - "Training-free"
+  - "Attention Head Selection"
+  - "Layout-guided Generation"
 date: 2026-05-08
-content_hash: 267f9459c17fbf9a
+content_hash: 32f865bfd4a92aad
 ---
+
 # When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -151,16 +156,16 @@ Analyses were conducted on layout sources, cost components, and head selection.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] TempoControl: Temporal Attention Guidance for Text-to-Video Models](tempocontrol_temporal_attention_guidance_for_text-to-video_models.md)
 - [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](../../ICCV2025/video_generation/vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
-- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
-- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](p-flow_prompting_visual_effects_generation.md)
 - [\[CVPR 2026\] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models](tear_temporal-aware_automated_red-teaming_for_text-to-video_models.md)
+- [\[CVPR 2026\] M4V: Multimodal Mamba for Efficient Text-to-Video Generation](m4v_multimodal_mamba_for_efficient_text-to-video_generation.md)
+- [\[CVPR 2026\] Ref4D-VideoBench: Four-Dimensional Reference-Based Evaluation of Text-to-Video Generative Models](ref4d-videobench_four-dimensional_reference-based_evaluation_of_text-to-video_ge.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] One Step Further with Monte-Carlo Sampler to Guide Diffusion Better
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] To address the systematic gradient bias in training-free guidance (DPS family) caused by approximating the conditional expectation $\mathbb{E}_{x_0|x_t}[f(x_0)]$ with a single point $\hat{x}_0(x_t)$, this paper proposes ABMS. By taking an additional backward denoising step and performing Monte Carlo sampling on the int
+  [ICLR 2026][Image Generation][Diffusion Posterior Sampling] To address the systematic gradient bias in training-free guidance (DPS family) caused by approximating the conditional expectation $\mathbb{E}_{x_0|x_t}[f(x_0)]$ with a single point $\hat{x}_0(x_t)$, this paper proposes ABMS. By taking an additional backward denoising step and performing Monte Carlo sampling on the intermediate state before averaging, ABMS obtains more accurate guidance gradients. It is plug-and-play…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Posterior Sampling"
+  - "Training-free Guidance"
+  - "Monte-Carlo Sampling"
+  - "Estimation Bias"
+  - "Inverse Problems"
 date: 2026-05-08
-content_hash: 09e3c805686fa494
+content_hash: 3822e2ba6817f7b4
 ---
+
 # One Step Further with Monte-Carlo Sampler to Guide Diffusion Better
 
 **Conference**: ICLR 2026  
@@ -135,10 +141,20 @@ Molecular Inverse Design (QM9, MAE compared under similar MS): ABMS outperforms 
 - Value: ⭐⭐⭐⭐ Plug-and-play with broad applicability to the DPS family.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Efficient Approximate Posterior Sampling with Annealed Langevin Monte Carlo](efficient_approximate_posterior_sampling_with_annealed_langevin_monte_carlo.md)
+- [\[ICLR 2026\] Quasi-Monte Carlo Methods Enable Extremely Low-Dimensional Deep Generative Models](quasi-monte_carlo_methods_enable_extremely_low-dimensional_deep_generative_model.md)
+- [\[ICLR 2026\] On the Design of One-Step Diffusion via Shortcutting Flow Paths](on_the_design_of_one-step_diffusion_via_shortcutting_flow_paths.md)
+- [\[ICLR 2026\] FARI: Robust One-Step Inversion for Watermarking in Diffusion Models](fari_robust_one-step_inversion_for_watermarking_in_diffusion_models.md)
+- [\[ICLR 2026\] Learn to Guide Your Diffusion Model](learn_to_guide_your_diffusion_model.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Approximate Posterior Sampling with Annealed Langevin Monte Carlo](efficient_approximate_posterior_sampling_with_annealed_langevin_monte_carlo.md)

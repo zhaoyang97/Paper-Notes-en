@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Towards Training-Free Scene Text Editing
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Diffusion Model] TextFlow is proposed as a training-free scene text editing framework. By utilizing Flow Manifold Steering (FMS) in the early denoising stages to maintain style consistency and Attention Boost (AttnBoost) in the later stages to enhance text rendering accuracy, it achieves editing quality comparable to or even better tha
+  [CVPR 2026][Robotics][Scene Text Editing] TextFlow is proposed as a training-free scene text editing framework. By utilizing Flow Manifold Steering (FMS) in the early denoising stages to maintain style consistency and Attention Boost (AttnBoost) in the later stages to enhance text rendering accuracy, it achieves editing quality comparable to or even better than training-based methods without requiring task-specific training.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Diffusion Model
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "Scene Text Editing"
+  - "Training-Free"
+  - "Diffusion Models"
+  - "Attention Enhancement"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 68f375ad55c10322
+content_hash: e2b1925e4c9dc447
 ---
+
 # Towards Training-Free Scene Text Editing
 
 **Conference**: CVPR 2026  
@@ -155,7 +159,7 @@ TextFlow is entirely training-free, with no fine-tuning or loss functions. All c
 - [\[CVPR 2026\] DemoFunGrasp: Universal Dexterous Functional Grasping via Demonstration-Editing Reinforcement Learning](demofungrasp_universal_dexterous_functional_grasping_via_demonstration-editing_r.md)
 - [\[CVPR 2026\] Cross from Left to Right Brain: Adaptive Text Dreamer for Vision-and-Language Navigation](cross_from_left_to_right_brain_adaptive_text_dreamer_for_vision-and-language_nav.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
-- [\[CVPR 2026\] Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation](memory-augmented_scene_understanding_and_exploration_for_open-world_aerial_objec.md)
+- [\[CVPR 2026\] SocialNav: Training Human-Inspired Foundation Model for Socially-Aware Embodied Navigation](socialnav_training_human-inspired_foundation_model_for_socially-aware_embodied_n.md)
 
 </div>
 

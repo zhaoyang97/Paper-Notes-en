@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][vessel power prediction] A hybrid modeling framework combining a physics baseline with a data-driven residual is proposed. The sea trial power curve (propeller law $P=cV^n$) se…
+  [AAAI 2026][Physics & Scientific Computing][vessel power prediction] A hybrid modeling framework combining a physics baseline with a data-driven residual is proposed. The sea trial power curve (propeller law $P=cV^n$) serves as the baseline, and XGBoost/NN/PINN models learn the residual correction, significantly improving extrapolation stability and physical consistency in sparse data regions.
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -13,7 +13,7 @@ tags:
   - "XGBoost"
   - "extrapolation generalization"
 date: 2026-05-08
-content_hash: 10429ed06498c35f
+content_hash: b02f55001bb002c8
 ---
 
 # Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study
@@ -169,7 +169,7 @@ Extrapolation behavior is evaluated across the speed range of 8–17 kn under ba
 - [\[NeurIPS 2025\] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](../../NeurIPS2025/physics/physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)
 - [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](../../NeurIPS2025/physics/f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
 - [\[AAAI 2026\] Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness](adaptive_fidelity_estimation_for_quantum_programs_with_graph.md)
-- [\[ICLR 2026\] Learning-guided Kansa Collocation for Forward and Inverse PDE Problems](../../ICLR2026/physics/learning-guided_kansa_collocation_for_forward_and_inverse_pde_problems.md)
+- [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](../../ICLR2026/physics/learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
 
 </div>
 

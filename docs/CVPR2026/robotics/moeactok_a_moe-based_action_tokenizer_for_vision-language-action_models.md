@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] MoEActok decomposes a single action tokenizer into "skill-clustered multi-expert VQ-VAEs," where each expert is responsible only for one category of action skill (e.g., translation / grasping). Combined with a coarse-to-fine training paradigm that "first predicts the skill category, then generates action tokens," it si
+  [CVPR 2026][Robotics][VLA] MoEActok decomposes a single action tokenizer into "skill-clustered multi-expert VQ-VAEs," where each expert is responsible only for one category of action skill (e.g., translation / grasping). Combined with a coarse-to-fine training paradigm that "first predicts the skill category, then generates action tokens," it significantly outperforms existing discretization methods such as Binning, FAST, VQ-BET, and VQ-VLA in RoboTwin…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - VQ-VAE
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Action Discretization"
+  - "Mixture-of-Experts"
+  - "VQ-VAE"
+  - "Skill Decoupling"
 date: 2026-05-08
-content_hash: e1bace3b3e9c1658
+content_hash: c33145e5e53f4d72
 ---
+
 # MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -164,15 +168,14 @@ Real-world zero-shot transfer (AgileX Cobot Magic, direct deployment of RoboTwin
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
 - [\[CVPR 2026\] SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models](srpo_self-referential_policy_optimization_for_vision-language-action_models.md)
-- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
-- [\[CVPR 2026\] Closed-Loop Neural Activation Control in Vision-Language-Action Models](closed-loop_neural_activation_control_in_vision-language-action_models.md)
+- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
+- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
 
 </div>
 

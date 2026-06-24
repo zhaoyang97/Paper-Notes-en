@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RxnCaption: Reformulating Reaction Diagram Parsing as Visual Prompt Guided Captioning
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] RxnCaption reformulates "Reaction Diagram Parsing (RxnDP)" from predicting molecular bounding box coordinates to an "image captioning" task. It utilizes a specialized molecular detector, MolYOLO, to pre-annotate molecular boxes and indices on the diagram, allowing the LVLM to describe reactions by simply referencing th
+  [CVPR 2026][Multimodal VLM][Chemical Reaction Diagram Parsing] RxnCaption reformulates "Reaction Diagram Parsing (RxnDP)" from predicting molecular bounding box coordinates to an "image captioning" task. It utilizes a specialized molecular detector, MolYOLO, to pre-annotate molecular boxes and indices on the diagram, allowing the LVLM to describe reactions by simply referencing these indices in natural language. Combined with the newly created U-RxnDiagram-15k real-world data…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chemical Reaction Diagram Parsing"
+  - "Visual Prompt"
+  - "Large Vision-Language Model"
+  - "Information Extraction"
+  - "AI for Chemistry"
 date: 2026-05-08
-content_hash: 4fcd05565a99d79c
+content_hash: fbb10baeeec92383
 ---
+
 # RxnCaption: Reformulating Reaction Diagram Parsing as Visual Prompt Guided Captioning
 
 **Conference**: CVPR 2026  
@@ -143,15 +148,13 @@ With identical training data, simply switching strategies to BIVP improves Soft-
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[CVPR 2026\] PaddleOCR-VL: Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](paddleocr_vl_coarse_to_fine_document_parsing.md)
+- [\[ICLR 2026\] DaVinci: Reinforcing Visual-Structural Syntax in MLLMs for Generalized Scientific Diagram Parsing](../../ICLR2026/multimodal_vlm/davinci_reinforcing_visual-structural_syntax_in_mllms_for_generalized_scientific.md)
 - [\[CVPR 2026\] Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](boosting_document_parsing_efficiency_and_performance_with_coarse-to-fine_visual_.md)
-- [\[CVPR 2026\] Dual-Modality Anchor-Guided Filtering for Test-time Prompt Tuning](dual-modality_anchor-guided_filtering_for_test-time_prompt_tuning.md)
-- [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
-- [\[ICLR 2026\] Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts](../../ICLR2026/multimodal_vlm/revisit_visual_prompt_tuning_the_expressiveness_of_prompt_experts.md)
+- [\[ICLR 2026\] Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing](../../ICLR2026/multimodal_vlm/visual_self-refine_a_pixel-guided_paradigm_for_accurate_chart_parsing.md)
+- [\[CVPR 2026\] Diagram2Structure: Unlocking LLMs' Diagram Comprehension through DiagramDiff, a Framework for Structuring Offline Diagrams](diagram2structure_unlocking_llms_diagram_comprehension_through_diagramdiff_a_fra.md)
+- [\[CVPR 2026\] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs](hugging_visual_prompt_and_segmentation_tokens_consistency_learning_for_fine-grai.md)
 
 </div>
 

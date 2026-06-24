@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Lipschitz Bandits with Stochastic Delayed Feedback
 description: >-
-  [ICLR 2026][learning_theory][Lipschitz bandit] This paper presents the first systematic study of the learning problem for Lipschitz bandits in continuous arm spaces under stochastic delayed feedback. It proposes the Delayed Zooming algorithm for bounded delays (maintaining a sub-optimality gap bound of $\Delta(x) \leq 6r_t(x)$ via a lazy update mechanism) and the D
+  [ICLR 2026][Online Learning][Lipschitz bandit] This paper presents the first systematic study of the learning problem for Lipschitz bandits in continuous arm spaces under stochastic delayed feedback. It proposes the Delayed Zooming algorithm for bounded delays (maintaining a sub-optimality gap bound of $\Delta(x) \leq 6r_t(x)$ via a lazy update mechanism) and the DLPP phased pruning strategy for unbounded delays (where regret is linked to the delay quantile $Q(p)$). Furthermo…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Lipschitz bandit
+  - "ICLR 2026"
+  - "Online Learning"
+  - "Bandit Algorithms"
+  - "Lipschitz bandit"
+  - "delayed feedback"
+  - "zooming algorithm"
+  - "phased pruning"
+  - "regret lower bounds"
+  - "quantiles"
 date: 2026-05-08
-content_hash: 23d3505bab22c6d9
+content_hash: c4dd2a17a966a8bd
 ---
+
 # Lipschitz Bandits with Stochastic Delayed Feedback
 
 **Conference**: ICLR 2026  
@@ -144,11 +151,11 @@ Both algorithms are theoretical and do not require gradient-based training. Key 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Enabling Fine-Tuning of Direct Feedback Alignment via Feedback-Weight Matching](enabling_fine-tuning_of_direct_feedback_alignment_via_feedback-weight_matching.md)
 - [\[ICLR 2026\] Bi-Lipschitz Autoencoder With Injectivity Guarantee](bi-lipschitz_autoencoder_with_injectivity_guarantee.md)
 - [\[ICLR 2026\] Online Learning and Equilibrium Computation with Ranking Feedback](online_learning_and_equilibrium_computation_with_ranking_feedback.md)
-- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
-- [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
 - [\[ICLR 2026\] Data-to-Energy Stochastic Dynamics](data-to-energy_stochastic_dynamics.md)
+- [\[ICLR 2026\] Combinatorial Rising Bandits](combinatorial_rising_bandits.md)
 
 </div>
 

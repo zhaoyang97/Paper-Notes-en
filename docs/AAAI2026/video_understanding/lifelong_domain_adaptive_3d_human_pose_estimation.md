@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lifelong Domain Adaptive 3D Human Pose Estimation
 description: >-
-  [AAAI2026][Video Understanding][3D human pose estimation] This paper introduces a new task of lifelong domain adaptive 3D HPE, and proposes a GAN framework incorporating pose-aware, temporal-aware…
+  [AAAI2026][Video Understanding][3D human pose estimation] This paper introduces a new task of lifelong domain adaptive 3D HPE, and proposes a GAN framework incorporating pose-aware, temporal-aware, and domain-aware encodings. A diffusion sampler is employed to generate domain-aware priors to mitigate catastrophic forgetting, achieving significant improvements over existing methods across multiple cross-scene/cross-dataset adaptation tasks.
 tags:
   - "AAAI2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "GAN"
   - "diffusion model"
 date: 2026-05-08
-content_hash: d014110d6b0fd869
+content_hash: 466d2a7c3aa1fd3a
 ---
 
 # Lifelong Domain Adaptive 3D Human Pose Estimation
@@ -100,11 +100,11 @@ Ablation studies confirm that domain-aware embedding (DE) is the most critical c
 
 ## Related Papers
 
+- [\[CVPR 2026\] Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation](../../CVPR2026/video_understanding/beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human.md)
 - [\[CVPR 2026\] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](../../CVPR2026/video_understanding/egoxtreme_a_dataset_for_robust_object_pose_estimation_in_egocentric_views_under_.md)
-- [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](../../ICCV2025/video_understanding/emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
 - [\[AAAI 2026\] StegaVAR: Privacy-Preserving Video Action Recognition via Steganographic Domain Analysis](stegavar_privacy-preserving_video_action_recognition_via_steganographic_domain_a.md)
-- [\[NeurIPS 2025\] Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition](../../NeurIPS2025/video_understanding/grounding_foundational_vision_models_with_3d_human_poses_for_robust_action_recog.md)
-- [\[NeurIPS 2025\] EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes](../../NeurIPS2025/video_understanding/eag3r_event-augmented_3d_geometry_estimation_for_dynamic_and_extreme-lighting_sc.md)
+- [\[ECCV 2024\] Benchmarks and Challenges in Pose Estimation for Egocentric Hand Interactions with Objects](../../ECCV2024/video_understanding/benchmarks_and_challenges_in_pose_estimation_for_egocentric_hand_interactions_wi.md)
+- [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](../../ICCV2025/video_understanding/emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
 
 </div>
 

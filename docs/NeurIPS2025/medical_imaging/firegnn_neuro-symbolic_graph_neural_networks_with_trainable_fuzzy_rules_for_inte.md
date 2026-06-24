@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FireGNN: Neuro-Symbolic Graph Neural Networks with Trainable Fuzzy Rules for Interpretable Medical Image Classification
 description: >-
-  [NeurIPS 2025][Medical Imaging][Graph Neural Networks] This paper proposes FireGNN, which for the first time embeds trainable fuzzy rules into the GNN forward pass. Using three topological descriptors—node degree…
+  [NeurIPS 2025][Medical Imaging][Graph Neural Networks] This paper proposes FireGNN, which for the first time embeds trainable fuzzy rules into the GNN forward pass. Using three topological descriptors—node degree, clustering coefficient, and label consistency—FireGNN achieves endogenous interpretability for medical image classification, outperforming standard GCN/GAT/GIN and auxiliary-task baselines on 5 MedMNIST datasets and MorphoMNIST.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "MedMNIST"
   - "Topological Descriptors"
 date: 2026-05-08
-content_hash: 1795b04bf31257e1
+content_hash: 8ea15a9f3a7b534f
 ---
 
 # FireGNN: Neuro-Symbolic Graph Neural Networks with Trainable Fuzzy Rules for Interpretable Medical Image Classification

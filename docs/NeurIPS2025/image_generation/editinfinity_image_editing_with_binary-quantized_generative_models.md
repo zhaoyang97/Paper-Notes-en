@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EditInfinity: Image Editing with Binary-Quantized Generative Models
 description: >-
-  [NeurIPS 2025][Image Generation][Binary-quantized generative models] This paper proposes EditInfinity, the first work to apply the classical "image inversion–image editing" paradigm to binary-quantized autoregressive gen…
+  [NeurIPS 2025][Image Generation][Binary-quantized generative models] This paper proposes EditInfinity, the first work to apply the classical "image inversion–image editing" paradigm to binary-quantized autoregressive generative models (Infinity). By leveraging the inherent property of quantized representations that enables exact intermediate supervision, EditInfinity achieves high-fidelity image inversion. Combined with a piecewise linear smoothing kernel for seamless editing…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "piecewise linear smoothing"
   - "multi-scale autoregressive editing"
 date: 2026-05-08
-content_hash: 9d72a6fb2f407b26
+content_hash: 22db9297489d3904
 ---
 
 # EditInfinity: Image Editing with Binary-Quantized Generative Models
@@ -199,8 +199,8 @@ Inversion overhead is moderately high, but single editing takes only 3.6 seconds
 - [\[NeurIPS 2025\] BitMark: Watermarking Bitwise Autoregressive Image Generative Models](bitmark_watermarking_bitwise_autoregressive_image_generative_models.md)
 - [\[ICLR 2026\] QVGen: Pushing the Limit of Quantized Video Generative Models](../../ICLR2026/image_generation/qvgen_pushing_the_limit_of_quantized_video_generative_models.md)
 - [\[NeurIPS 2025\] ThermalGen: Style-Disentangled Flow-Based Generative Models for RGB-to-Thermal Image Translation](thermalgen_style-disentangled_flow-based_generative_models_for_rgb-to-thermal_im.md)
-- [\[NeurIPS 2025\] SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing](splitflow_flow_decomposition_for_inversion-free_text-to-image_editing.md)
-- [\[NeurIPS 2025\] CAMILA: Context-Aware Masking for Image Editing with Language Alignment](camila_contextaware_masking_for_image_editing_with_language.md)
+- [\[NeurIPS 2025\] Image Super-Resolution with Guarantees via Conformalized Generative Models](image_super-resolution_with_guarantees_via_conformalized_generative_models.md)
+- [\[NeurIPS 2025\] PID-controlled Langevin Dynamics for Faster Sampling of Generative Models](pid-controlled_langevin_dynamics_for_faster_sampling_of_generative_models.md)
 
 </div>
 

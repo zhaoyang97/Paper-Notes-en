@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][GRPO] The authors propose ETR (Entropy Trend Reward), which incorporates momentum-weighted stepwise entropy reduction as a reward shaping term in GRPO. This constraint forces the LLM's CoT to converge adaptively under a "global entropy decay" objective, reducing average CoT length by 35–65% with maintained accuracy. On DeepS
+  [ACL 2026][Reasoning][Chain-of-thought efficiency] The authors propose ETR (Entropy Trend Reward), which incorporates momentum-weighted stepwise entropy reduction as a reward shaping term in GRPO. This constraint forces the LLM's CoT to converge adaptively under a "global entropy decay" objective, reducing average CoT length by 35–65% with maintained accuracy. On DeepSeek-R1-Distill-7B, it achieves a +9.9% accuracy gain while reducing tokens by 67%.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - GRPO
+  - "ACL 2026"
+  - "Reasoning"
+  - "Chain-of-thought efficiency"
+  - "entropy trend reward"
+  - "GRPO"
+  - "momentum"
+  - "adaptive early exit"
 date: 2026-05-08
-content_hash: 5ecb215c6bf3794a
+content_hash: d0ebf72a1f95c864
 ---
+
 # ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning
 
 **Conference**: ACL 2026  
@@ -159,15 +164,14 @@ Comparison of different entropy reward designs on DeepSeek-R1-Distill-7B:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](efficient_process_reward_modeling_via_contrastive_mutual_information.md)
-- [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
-- [\[NeurIPS 2025\] Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning](../../NeurIPS2025/llm_reasoning/re-forc_adaptive_reward_prediction_for_efficient_chain-of-thought_reasoning.md)
+- [\[ICLR 2026\] PEAR: Phase Entropy Aware Reward for Efficient Reasoning](../../ICLR2026/llm_reasoning/pear_phase_entropy_aware_reward_for_efficient_reasoning.md)
 - [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
+- [\[ICLR 2026\] Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy](../../ICLR2026/llm_reasoning/making_slow_thinking_faster_compressing_llm_chain-of-thought_via_step_entropy.md)
 - [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
+- [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 
 </div>
 

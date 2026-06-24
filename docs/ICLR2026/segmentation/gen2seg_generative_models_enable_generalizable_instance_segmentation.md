@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] gen2seg: Generative Models Enable Generalizable Instance Segmentation
 description: >-
-  [ICLR 2026][Segmentation][Stable Diffusion] By fine-tuning Stable Diffusion or MAE as "instance colorers" using synthetic mask supervision from only two narrow domains—indoor furniture and vehicles—this method achieves zero-shot generalization to unseen object categories and styles (e.g., humans, animals, artistic paintings, X-rays). Its performance approaches,
+  [ICLR 2026][Segmentation][Instance Segmentation] By fine-tuning Stable Diffusion or MAE as "instance colorers" using synthetic mask supervision from only two narrow domains—indoor furniture and vehicles—this method achieves zero-shot generalization to unseen object categories and styles (e.g., humans, animals, artistic paintings, X-rays). Its performance approaches, and on fine structures even exceeds, SAM models supervised by 1.1 billion masks.
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Stable Diffusion
-  - MAE
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Instance Segmentation"
+  - "Generative Prior"
+  - "Stable Diffusion"
+  - "MAE"
+  - "Zero-shot Generalization"
+  - "Class-agnostic Segmentation"
 date: 2026-05-08
-content_hash: f62c5415495a5c1c
+content_hash: b97d77554e0df41e
 ---
+
 # gen2seg: Generative Models Enable Generalizable Instance Segmentation
 
 **Conference**: ICLR 2026  
@@ -115,10 +120,10 @@ The SD version matches or exceeds SAM on large objects and **outperforms SAM by 
 ## Related Papers
 
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/gkd_generalizable_knowledge_distillation_vfm.md)
-- [\[ICCV 2025\] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](../../ICCV2025/segmentation/can_generative_geospatial_diffusion_models_excel_as_discriminative_geospatial_fo.md)
 - [\[ICLR 2026\] S3OD: Towards Generalizable Salient Object Detection with Synthetic Data](s3od_towards_generalizable_salient_object_detection_with_synthetic_data.md)
+- [\[ICCV 2025\] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](../../ICCV2025/segmentation/can_generative_geospatial_diffusion_models_excel_as_discriminative_geospatial_fo.md)
 - [\[CVPR 2025\] Foveated Instance Segmentation](../../CVPR2025/segmentation/foveated_instance_segmentation.md)
-- [\[ICLR 2026\] TRACE: Your Diffusion Model is Secretly an Instance Edge Detector](trace_your_diffusion_model_is_secretly_an_instance_edge_detector.md)
+- [\[ICLR 2026\] How Well Does GPT-4o Understand Vision? Evaluating Multimodal Foundation Models on Standard Computer Vision Tasks](how_well_does_gpt-4o_understand_vision_evaluating_multimodal_foundation_models_o.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Tokens: Enhancing RTL Quality Estimation via Structural Graph Learning
 description: >-
-  [ICML 2026][Model Compression][Knowledge Distillation] StructRTL is proposed for structural-aware graph self-supervised pre-training (Masked Node Modeling + Edge Prediction) on Control Data Flow Graphs (CDFG) of RTL designs. Combined with knowledge distillation from post-mapping netlists to CDFGs, it significantly outperforms LLM-based and handcrafted feature methods in ar
+  [ICML 2026][Model Compression][RTL Quality Estimation] StructRTL is proposed for structural-aware graph self-supervised pre-training (Masked Node Modeling + Edge Prediction) on Control Data Flow Graphs (CDFG) of RTL designs. Combined with knowledge distillation from post-mapping netlists to CDFGs, it significantly outperforms LLM-based and handcrafted feature methods in area and delay prediction tasks.
 tags:
-  - ICML 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICML 2026"
+  - "Model Compression"
+  - "RTL Quality Estimation"
+  - "Graph Self-Supervised Learning"
+  - "Control Data Flow Graph"
+  - "Knowledge Distillation"
+  - "Hardware Design Automation"
 date: 2026-05-08
-content_hash: e351078d9c8133ca
+content_hash: f73d050c3b61c140
 ---
+
 # Beyond Tokens: Enhancing RTL Quality Estimation via Structural Graph Learning
 
 **Conference**: ICML 2026  
@@ -128,8 +133,8 @@ RTL is several layers of abstraction away from final area/delay (separated by sy
 
 ## Related Papers
 
-- [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
 - [\[ACL 2025\] LLMSR@XLLM25: Less is More: Enhancing Structured Multi-Agent Reasoning via Quality-Guided Distillation](../../ACL2025/model_compression/llmsrxllm25_less_is_more_enhancing_structured_multi-agent_reasoning_via_quality-.md)
+- [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
 - [\[NeurIPS 2025\] Enhancing Semi-supervised Learning with Zero-shot Pseudolabels](../../NeurIPS2025/model_compression/enhancing_semi-supervised_learning_with_zero-shot_pseudolabels.md)
 - [\[ICML 2025\] Toward Data-centric Directed Graph Learning: An Entropy-driven Approach](../../ICML2025/model_compression/toward_data-centric_directed_graph_learning_an_entropy-driven_approach.md)
 - [\[ICML 2026\] Global Convergence of Adaptive Sensing for Principal Eigenvector Estimation](global_convergence_of_adaptive_sensing_for_principal_eigenvector_estimation.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FREE-Merging: Fourier Transform for Efficient Model Merging
 description: >-
-  [ICCV 2025][Model Compression][Model Merging] This paper is the first to identify the frequency-domain manifestation of task interference in model merging. It proposes FR-Merging…
+  [ICCV 2025][Model Compression][Model Merging] This paper is the first to identify the frequency-domain manifestation of task interference in model merging. It proposes FR-Merging, which removes low-frequency interference via high-pass filtering to construct a high-quality merged backbone, and combines it with lightweight task expert modules (FREE-Merging) to achieve an optimal performance–cost trade-off across vision, language, and multimodal tasks.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Frequency-Domain Analysis"
   - "Lightweight Expert"
 date: 2026-05-08
-content_hash: 06872d9526e05d1d
+content_hash: b51d975bd30949e2
 ---
 
 # FREE-Merging: Fourier Transform for Efficient Model Merging
@@ -155,9 +155,9 @@ Cross-domain validation (language models; average over RoBERTa / T0-3B / Qwen-14
 
 - [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](task_vector_quantization_for_memory-efficient_model_merging.md)
 - [\[NeurIPS 2025\] Weight Weaving: Parameter Pooling for Data-Free Model Merging](../../NeurIPS2025/model_compression/weight_weaving_parameter_pooling_for_data-free_model_merging.md)
-- [\[ICLR 2026\] RAIN-Merging: A Gradient-Free Method to Enhance Instruction Following Through Model Merging](../../ICLR2026/model_compression/rain-merging_a_gradient-free_method_to_enhance_instruction_following_through_mod.md)
-- [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](../../NeurIPS2025/model_compression/accurate_and_efficient_low-rank_model_merging_in_core_space.md)
-- [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
+- [\[CVPR 2025\] Task Singular Vectors: Reducing Task Interference in Model Merging](../../CVPR2025/model_compression/task_singular_vectors_reducing_task_interference_in_model_merging.md)
+- [\[ACL 2025\] Unraveling LoRA Interference: Orthogonal Subspaces for Robust Model Merging](../../ACL2025/model_compression/osrm_lora_merging_orthogonal.md)
+- [\[CVPR 2025\] Less is More: Efficient Model Merging with Binary Task Switch](../../CVPR2025/model_compression/less_is_more_efficient_model_merging_with_binary_task_switch.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Talking Points: Describing and Localizing Pixels
 description: >-
-  [ICLR 2026][Multimodal VLM][VLM] This paper introduces TalkingPoints, which utilizes a Point Descriptor to describe individual pixels or keypoints in an image using coarse-to-fine natural language, and a Point Localizer to regress pixel coordinates from descriptions. It evaluates and trains "whether a point is clearly described" based on localization
+  [ICLR2026][Multimodal VLM][Pixel-level grounding] This paper introduces TalkingPoints, which utilizes a Point Descriptor to describe individual pixels or keypoints in an image using coarse-to-fine natural language, and a Point Localizer to regress pixel coordinates from descriptions. It evaluates and trains "whether a point is clearly described" based on localization accuracy.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VLM
-  - GRPO
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Pixel-level grounding"
+  - "Keypoint description"
+  - "VLM"
+  - "Point localization"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 5c063db60afec7b9
+content_hash: 185dc8282db805a6
 ---
+
 # Talking Points: Describing and Localizing Pixels
 
 **Conference**: ICLR2026  
@@ -173,7 +177,7 @@ Cross-category RL experiments show modest but consistent gains. Training on Bovi
 - [\[ICLR 2026\] From Pixels to Words -- Towards Native Vision-Language Primitives at Scale](from_pixels_to_words_--_towards_native_vision-language_primitives_at_scale.md)
 - [\[CVPR 2025\] Ground-V: Teaching VLMs to Ground Complex Instructions in Pixels](../../CVPR2025/multimodal_vlm/ground-v_teaching_vlms_to_ground_complex_instructions_in_pixels.md)
 - [\[CVPR 2026\] Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision](../../CVPR2026/multimodal_vlm/pixels_dont_lie_but_your_detector_might_bootstrapping_mllm-as-a-judge_for_trustw.md)
-- [\[ICLR 2026\] CapRL: Stimulating Dense Image Caption Capabilities via Reinforcement Learning](caprl_stimulating_dense_image_caption_capabilities_via_reinforcement_learning.md)
+- [\[ICLR 2026\] CapRL: Stimulating Dense Image Capabilities via Reinforcement Learning](caprl_stimulating_dense_image_caption_capabilities_via_reinforcement_learning.md)
 - [\[ICLR 2026\] SPECS: Decoupling Multimodal Learning via Self-distilled Preference-based Cold Start](specs_decoupling_multimodal_learning_via_self-distilled_preference-based_cold_st.md)
 
 </div>

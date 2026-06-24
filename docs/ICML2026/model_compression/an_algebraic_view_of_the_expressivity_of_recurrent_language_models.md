@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] An Algebraic View of the Expressivity of Recurrent Language Models
 description: >-
-  [ICML 2026][Model Compression][State Space Model] This paper unifies the formal language expressivity of RNNs/SSMs as an algebraic problem: once numerical semantics are fixed, the languages a model can recognize are determined by its hierarchical transition monoids and their wreath products. Furthermore, the same architecture yields entirely different counting capabil
+  [ICML2026][Model Compression][Recurrent Language Models] This paper unifies the formal language expressivity of RNNs/SSMs as an algebraic problem: once numerical semantics are fixed, the languages a model can recognize are determined by its hierarchical transition monoids and their wreath products. Furthermore, the same architecture yields entirely different counting capabilities under floating-point versus unsigned integer semantics.
 tags:
-  - ICML 2026
-  - Model Compression
-  - State Space Model
+  - "ICML2026"
+  - "Model Compression"
+  - "Recurrent Language Models"
+  - "Formal Languages"
+  - "Transition Monoids"
+  - "Finite Precision"
+  - "State Space Models"
 date: 2026-05-08
-content_hash: e7c40047a7e84874
+content_hash: 957d103841657d8f
 ---
+
 # An Algebraic View of the Expressivity of Recurrent Language Models
 
 **Conference**: ICML2026  
@@ -144,7 +149,7 @@ The following table serves as an ablation of arithmetic semantics: keeping the d
 - [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](../../CVPR2026/model_compression/cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
 - [\[ICML 2026\] Procedural Pretraining: Warming Up Language Models with Abstract Data](procedural_pretraining_warming_up_language_models_with_abstract_data.md)
 - [\[CVPR 2026\] Neural Differentiation in Deep Networks: A Theoretical Framework for Expressivity and Representational Diversity](../../CVPR2026/model_compression/neural_differentiation_in_deep_networks_a_theoretical_framework_for_expressivity.md)
-- [\[ICML 2026\] WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points](winq_accelerating_quantization-aware_training_of_language_models_around_saddle_p.md)
+- [\[ICML 2026\] LEAP: Learnable End-to-End Adaptive Pruning of Large Language Models](leap_learnable_end-to-end_adaptive_pruning_of_large_language_models.md)
 
 </div>
 

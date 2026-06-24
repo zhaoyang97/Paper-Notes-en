@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Learning (Approximately) Equivariant Networks via Constrained Optimization
 description: >-
-  [NeurIPS 2025][equivariance] This paper proposes ACE (Adaptive Constrained Equivariance), a framework that formulates equivariant neural network training as a constrained optimization problem. Via dual methods…
+  [NeurIPS 2025 Oral][equivariance] This paper proposes ACE (Adaptive Constrained Equivariance), a framework that formulates equivariant neural network training as a constrained optimization problem. Via dual methods, ACE automatically and progressively transitions from a flexible non-equivariant model to an equivariant one, adapting to both fully and partially symmetric data without manual hyperparameter tuning.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "equivariance"
   - "constrained optimization"
   - "homotopy methods"
   - "approximate symmetry"
   - "dual methods"
 date: 2026-05-08
-content_hash: 2cb40df4e4473032
+content_hash: ca468843e88434b6
 ---
 
 # Learning (Approximately) Equivariant Networks via Constrained Optimization
@@ -134,9 +134,9 @@ N-Body physical simulation: SEGNN + ACE outperforms standard SEGNN in both valid
 
 - [\[NeurIPS 2025\] FSNet: Feasibility-Seeking Neural Network for Constrained Optimization with Guarantees](fsnet_feasibility-seeking_neural_network_for_constrained_optimization_with_guara.md)
 - [\[NeurIPS 2025\] On Universality Classes of Equivariant Networks](on_universality_classes_of_equivariant_networks.md)
-- [\[NeurIPS 2025\] Semi-infinite Nonconvex Constrained Min-Max Optimization](semi-infinite_nonconvex_constrained_min-max_optimization.md)
 - [\[ICML 2026\] Identifiable Equivariant Networks are Layerwise Equivariant](../../ICML2026/others/identifiable_equivariant_networks_are_layerwise_equivariant.md)
-- [\[ICML 2026\] How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks](../../ICML2026/others/how_the_optimizer_shapes_learned_solutions_in_equivariant_neural_networks.md)
+- [\[NeurIPS 2025\] Semi-infinite Nonconvex Constrained Min-Max Optimization](semi-infinite_nonconvex_constrained_min-max_optimization.md)
+- [\[ICML 2025\] Permutation Equivariant Neural Networks for Symmetric Tensors](../../ICML2025/others/permutation_equivariant_neural_networks_for_symmetric_tensors.md)
 
 </div>
 

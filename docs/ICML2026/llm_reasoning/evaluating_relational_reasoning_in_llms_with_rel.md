@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Evaluating Relational Reasoning in LLMs with REL
 description: >-
-  [ICML 2026][LLM Reasoning][Raven's Progressive Tensor] The authors adopt "Relational Complexity" (RC) from cognitive science — the number of independent variables that must be simultaneously bound in a single reasoning step — as a unified axis for measuring task difficulty. They construct REL, a generative benchmark spanning algebra, biology, and chemistry. Findings indica
+  [ICML 2026][Reasoning][Relational Complexity] The authors adopt "Relational Complexity" (RC) from cognitive science — the number of independent variables that must be simultaneously bound in a single reasoning step — as a unified axis for measuring task difficulty. They construct REL, a generative benchmark spanning algebra, biology, and chemistry. Findings indicate that the accuracy of frontier LLMs (Claude Opus 4.5 / Gemini 3 Pro / GPT-5.2) monotonically decreases as RC inc…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Raven's Progressive Tensor
+  - "ICML 2026"
+  - "Reasoning"
+  - "Relational Complexity"
+  - "Raven's Progressive Tensor"
+  - "Homoplasy"
+  - "Molecular Isomers"
+  - "High-arity binding"
 date: 2026-05-08
-content_hash: aa03b3a71c200f58
+content_hash: c4fad9a64c8649f6
 ---
+
 # Evaluating Relational Reasoning in LLMs with REL
 
 **Conference**: ICML 2026  
@@ -124,11 +129,11 @@ Frontier LLMs (Claude Opus 4.5, Gemini 3 Pro Preview, GPT-5.2) are evaluated. RE
 
 ## Related Papers
 
-- [\[ACL 2025\] FineReason: Evaluating and Improving LLMs' Deliberate Reasoning through Reflective Puzzle Solving](../../ACL2025/llm_reasoning/finereason_evaluating_and_improving_llms_deliberate_reasoning_through_reflective.md)
+- [\[ICLR 2026\] OptimalThinkingBench: Evaluating Over and Underthinking in LLMs](../../ICLR2026/llm_reasoning/optimalthinkingbench_evaluating_over_and_underthinking_in_llms.md)
+- [\[ICLR 2026\] OpenEstimate: Evaluating LLMs on Reasoning Under Uncertainty with Real-World Data](../../ICLR2026/llm_reasoning/openestimate_evaluating_llms_on_reasoning_under_uncertainty_with_real-world_data.md)
+- [\[ICML 2026\] TRACE: Evaluating LLM CoT Reasoning Process Quality with the Toulmin Argumentation Model](trace_toulmin-based_reasoning_assessment_through_constructive_elements_for_llm_c.md)
 - [\[ACL 2026\] Self-Reinforcing Controllable Synthesis of Rare Relational Data via Bayesian Calibration](../../ACL2026/llm_reasoning/self-reinforcing_controllable_synthesis_of_rare_relational_data_via_bayesian_cal.md)
 - [\[ICML 2026\] FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations](floorplanqa_a_benchmark_for_spatial_reasoning_in_llms_using_structured_represent.md)
-- [\[NeurIPS 2025\] Self-Evaluating LLMs for Multi-Step Tasks: Stepwise Confidence Estimation for Failure Detection](../../NeurIPS2025/llm_reasoning/self-evaluating_llms_for_multi-step_tasks_stepwise_confidence_estimation_for_fai.md)
-- [\[AAAI 2026\] Evaluating, Synthesizing, and Enhancing for Customer Support Conversation](../../AAAI2026/llm_reasoning/evaluating_synthesizing_and_enhancing_for_customer_support_conversation.md)
 
 </div>
 

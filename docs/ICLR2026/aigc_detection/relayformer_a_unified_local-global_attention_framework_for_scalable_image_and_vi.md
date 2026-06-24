@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RelayFormer: A Unified Local-Global Attention Framework for Scalable Image and Video Manipulation Localization
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] RelayFormer partitions images/videos of arbitrary resolutions into fixed-size sub-images and utilizes a small set of [GLR] relay tokens to propagate scene-level global consistency cues across sub-images. Without interpolation or dense full-resolution attention, this unified architecture achieves SOTA performance on bot
+  [ICLR 2026][AIGC Detection][Visual manipulation localization] RelayFormer partitions images/videos of arbitrary resolutions into fixed-size sub-images and utilizes a small set of [GLR] relay tokens to propagate scene-level global consistency cues across sub-images. Without interpolation or dense full-resolution attention, this unified architecture achieves SOTA performance on both image and video manipulation localization benchmarks, with FLOPs that scale dynamically with the…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Visual manipulation localization"
+  - "local-global relay attention"
+  - "resolution adaptation"
+  - "unified image-video modeling"
+  - "parameter efficient"
 date: 2026-05-08
-content_hash: 17a8117917035056
+content_hash: 5e1bc1c88698bf25
 ---
+
 # RelayFormer: A Unified Local-Global Attention Framework for Scalable Image and Video Manipulation Localization
 
 **Conference**: ICLR 2026  
@@ -144,9 +150,9 @@ GLRA Spatial-Temporal Ablation (MOSE100, Table 6): Pure local F1=0.6124; + Spati
 
 - [\[ICLR 2026\] Omni-IML: Towards Unified Interpretable Image Manipulation Localization](omni-iml_towards_unified_interpretable_image_manipulation_localization.md)
 - [\[ICLR 2026\] Preserving Forgery Artifacts: AI-Generated Video Detection at Native Scale](preserving_forgery_artifacts_ai-generated_video_detection_at_native_scale.md)
+- [\[ICLR 2026\] A Rich Knowledge Space for Scalable Deepfake Detection](a_rich_knowledge_space_for_scalable_deepfake_detection.md)
+- [\[ICLR 2026\] Attack-Resistant Watermarking for AIGC Image Forensics via Diffusion-based Semantic Deflection](attack-resistant_watermarking_for_aigc_image_forensics_via_diffusion-based_seman.md)
 - [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
-- [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
-- [\[ICLR 2026\] HSIC Bottleneck for Cross-Generator and Domain-Incremental Synthetic Image Detection](hsic_bottleneck_for_cross-generator_and_domain-incremental_synthetic_image_detec.md)
 
 </div>
 

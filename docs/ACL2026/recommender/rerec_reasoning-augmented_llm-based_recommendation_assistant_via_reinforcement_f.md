@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] This paper proposes ReRec, a Reinforcement Fine-tuning (RFT) framework for recommendation assistants. It provides fine-grained reward signals through dual-graph augmented reward shaping, differentiated supervision of reasoning steps via Reasoning-Aware Advantage Estimation (RAAE), and dynamic adjustment of training dif
+  [ACL 2026][Recommender Systems][Recommendation Assistant] This paper proposes ReRec, a Reinforcement Fine-tuning (RFT) framework for recommendation assistants. It provides fine-grained reward signals through dual-graph augmented reward shaping, differentiated supervision of reasoning steps via Reasoning-Aware Advantage Estimation (RAAE), and dynamic adjustment of training difficulty via an online curriculum scheduler. ReRec enables LLMs to handle complex multi-step reasoning…
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Recommendation Assistant"
+  - "Reinforcement Fine-tuning"
+  - "Reasoning Augmentation"
+  - "Reward Shaping"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 51df662473ffeb91
+content_hash: d9f245e0579015e0
 ---
+
 # ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning
 
 **Conference**: ACL 2026  
@@ -141,10 +147,10 @@ The framework uses the GRPO objective function with a clipped probability ratio:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning](../../NeurIPS2025/recommender/transformer_copilot_learning_from_the_mistake_log_in_llm_fine-tuning.md)
+- [\[ICLR 2026\] Reinforced Latent Reasoning for LLM-based Recommendation](../../ICLR2026/recommender/reinforced_latent_reasoning_for_llm-based_recommendation.md)
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
 - [\[ACL 2026\] Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation](where_and_what_reasoning_dynamic_and_implicit_preferences_in_situated_conversati.md)
 - [\[AAAI 2026\] TraveLLaMA: A Multimodal Travel Assistant with Large-Scale Dataset and Structured Reasoning](../../AAAI2026/recommender/travellama_a_multimodal_travel_assistant_with_large-scale_dataset_and_structured.md)
-- [\[AAAI 2026\] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation](../../AAAI2026/recommender/tool4poi_a_tool-augmented_llm_framework_for_next_poi_recommendation.md)
 
 </div>
 

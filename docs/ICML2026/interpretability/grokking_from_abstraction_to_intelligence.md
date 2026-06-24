@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Grokking: From Abstraction to Intelligence
 description: >-
-  [ICML 2026][Interpretability][grokking] This paper provides a unified explanation of the grokking phenomenon through the lens of structural simplification (Occam's Razor). It demonstrates that during training, models undergo four synchronized "internal consolidations": causal mediation degradation, manifold collapse to a $\mathbb{Z}_{97}$ circle, spectral en
+  [ICML 2026][Interpretability][grokking] This paper provides a unified explanation of the grokking phenomenon through the lens of structural simplification (Occam's Razor). It demonstrates that during training, models undergo four synchronized "internal consolidations": causal mediation degradation, manifold collapse to a $\mathbb{Z}_{97}$ circle, spectral energy concentration into sparse Fourier modes, and a sharp drop in BDM algorithmic complexity. Using an analytically trac…
 tags:
-  - ICML 2026
-  - Interpretability
-  - grokking
+  - "ICML 2026"
+  - "Interpretability"
+  - "grokking"
+  - "Occam's Razor"
+  - "Singular Learning Theory"
+  - "Kolmogorov complexity"
+  - "modular arithmetic"
 date: 2026-05-08
-content_hash: ab154465d8ec29fe
+content_hash: fa6fd0f6a0fe146d
 ---
+
 # Grokking: From Abstraction to Intelligence
 
 **Conference**: ICML 2026  
@@ -119,11 +124,11 @@ The real Transformer uses standard Cross-Entropy + AdamW (48-layer GPT-2, $d_{\t
 
 ## Related Papers
 
-- [\[ICLR 2026\] Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test](../../ICLR2026/interpretability/grokking_in_llm_pretraining_monitor_memorization-to-generalization_without_test.md)
 - [\[ICML 2026\] AI Engram: In Search of Memory Traces in Artificial Intelligence](ai_engram_in_search_of_memory_traces_in_artificial_intelligence.md)
+- [\[ICLR 2026\] Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test](../../ICLR2026/interpretability/grokking_in_llm_pretraining_monitor_memorization-to-generalization_without_test.md)
 - [\[ICML 2025\] Explaining, Fast and Slow: Abstraction and Refinement of Provable Explanations](../../ICML2025/interpretability/explaining_fast_and_slow_abstraction_and_refinement_of_provable_explanations.md)
 - [\[NeurIPS 2025\] The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?](../../NeurIPS2025/interpretability/the_non-linear_representation_dilemma_is_causal_abstraction_enough_for_mechanist.md)
-- [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](block-em_preventing_emergent_misalignment_via_latent_blocking.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 
 </div>
 

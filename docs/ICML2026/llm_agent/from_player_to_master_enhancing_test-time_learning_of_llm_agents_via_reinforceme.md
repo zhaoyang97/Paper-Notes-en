@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory
+  [Paper Note] Limitations & Future Work
 description: >-
-  [ICML 2026][LLM Agent][multi-turn GRPO] MemoPilot is a plug-and-play "memory co-pilot"—it keeps the player LLM frozen but trains a separate memory model. It treats "how to update memory after each interaction" as an end-to-end optimizable multi-turn decision problem using multi-turn GRPO. With turn-level rewards and turn-level normalized advantage estimation
+  [ICML2026][LLM Agent][Test-time Learning] MemoPilot is a plug-and-play "memory co-pilot"—it keeps the player LLM frozen but trains a separate memory model. It treats "how to update memory after each interaction" as an end-to-end optimizable multi-turn decision problem using multi-turn GRPO. With turn-level rewards and turn-level normalized advantage estimation, a frozen player truly becomes "stronger through play" in repetitive games. It achieves the highest Elo on both Rock-…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - multi-turn GRPO
+  - "ICML2026"
+  - "LLM Agent"
+  - "Test-time Learning"
+  - "Memory Update"
+  - "multi-turn GRPO"
+  - "Credit Assignment"
+  - "Plug-and-play Memory"
 date: 2026-05-08
-content_hash: 966024e385df0801
+content_hash: 4aaf6c5a9a318995
 ---
+
 # From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory
 
 **Conference**: ICML2026  
@@ -138,11 +143,11 @@ Two strategic game testbeds: multi-turn Rock-Paper-Scissors (RPS, 6 rounds per g
 
 ## Related Papers
 
+- [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](../../ICLR2026/llm_agent/evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
 - [\[ICML 2026\] AdaMEM: Test-Time Adaptive Memory for Language Agents](adamem_test-time_adaptive_memory_for_language_agents.md)
 - [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
-- [\[ICML 2026\] Position: Modular Memory is the Key to Continual Learning Agents](position_modular_memory_is_the_key_to_continual_learning_agents.md)
 - [\[ICML 2026\] Agentic Monte Carlo: Simulating Reinforcement Learning for Black-Box Agents](agentic_monte_carlo_simulating_reinforcement_learning_for_black-box_agents.md)
-- [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](../../ACL2026/llm_agent/hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
+- [\[ICLR 2026\] Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICLR2026/llm_agent/reducing_belief_deviation_in_reinforcement_learning_for_active_reasoning.md)
 
 </div>
 

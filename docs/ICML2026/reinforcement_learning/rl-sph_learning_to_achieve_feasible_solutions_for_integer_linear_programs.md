@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] RL-SPH: Learning to Achieve Feasible Solutions for Integer Linear Programs
 description: >-
-  [ICML 2026][Reinforcement Learning][Start Primal Heuristic] This paper proposes RL-SPH — an end-to-end Reinforcement Learning (RL) heuristic that does not rely on external ILP solvers and independently produces 100% feasible solutions. By utilizing "feasibility rewards + two-phase strategy + feasibility-aware neighborhood search," the Graph Transformer agent reduces the average
+  [ICML 2026][Reinforcement Learning][Integer Linear Programming] This paper proposes RL-SPH — an end-to-end Reinforcement Learning (RL) heuristic that does not rely on external ILP solvers and independently produces 100% feasible solutions. By utilizing "feasibility rewards + two-phase strategy + feasibility-aware neighborhood search," the Graph Transformer agent reduces the average primal gap by 28.6x on ILPs containing non-binary integer variables.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Start Primal Heuristic
-  - Graph Transformer
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Integer Linear Programming"
+  - "Start Primal Heuristic"
+  - "Graph Transformer"
+  - "Feasibility Reward"
 date: 2026-05-08
-content_hash: 2abbf9062e9ffb63
+content_hash: 8ed86bd317e918a1
 ---
+
 # RL-SPH: Learning to Achieve Feasible Solutions for Integer Linear Programs
 
 **Conference**: ICML 2026  
@@ -128,10 +131,10 @@ RL-SPH was compared against 4 types of SPH (FP / RENS / DHF / RHF) and 3 E2EPH (
 ## Related Papers
 
 - [\[AAAI 2026\] DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs](../../AAAI2026/reinforcement_learning/deepprooflog_efficient_proving_in_deep_stochastic_logic_programs.md)
-- [\[ACL 2026\] A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions](../../ACL2026/reinforcement_learning/a_survey_of_reinforcement_learning_for_large_language_models_under_data_scarcity.md)
-- [\[ICML 2026\] MoMa QL: 用矩匹配加速扩散/流匹配策略的离线 + 离线-在线 RL](moment_matching_q-learning.md)
 - [\[ICLR 2026\] Breaking Safety Paradox with Feasible Dual Policy Iteration](../../ICLR2026/reinforcement_learning/breaking_safety_paradox_with_feasible_dual_policy_iteration.md)
+- [\[ACL 2026\] A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions](../../ACL2026/reinforcement_learning/a_survey_of_reinforcement_learning_for_large_language_models_under_data_scarcity.md)
 - [\[ICML 2025\] Actor-Critics Can Achieve Optimal Sample Efficiency](../../ICML2025/reinforcement_learning/actor-critics_can_achieve_optimal_sample_efficiency.md)
+- [\[ICLR 2026\] Frozen Policy Iteration: Computationally Efficient RL under Linear $Q^{\pi}$ Realizability for Deterministic Dynamics](../../ICLR2026/reinforcement_learning/frozen_policy_iteration_computationally_efficient_rl_under_linear_qpi_realizabil.md)
 
 </div>
 

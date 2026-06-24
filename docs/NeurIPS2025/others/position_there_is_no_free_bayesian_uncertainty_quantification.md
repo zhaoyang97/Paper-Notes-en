@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Position: There Is No Free Bayesian Uncertainty Quantification
 description: >-
-  [NeurIPS 2025][Bayesian Inference] This paper challenges the validity of Bayesian uncertainty quantification (UQ) from a frequentist perspective…
+  [NeurIPS 2025][Bayesian Inference] This paper challenges the validity of Bayesian uncertainty quantification (UQ) from a frequentist perspective, reinterprets Bayesian updating as an optimization problem over model ensembles, and proposes a PAC-framework-based calibration algorithm for constructing prediction intervals with frequentist guarantees.
 tags:
   - "NeurIPS 2025"
   - "Bayesian Inference"
@@ -11,7 +11,7 @@ tags:
   - "PAC-Bayes"
   - "Prediction Intervals"
 date: 2026-05-08
-content_hash: 4e1760d12e8addb2
+content_hash: c49bc3d35b842f83
 ---
 
 # Position: There Is No Free Bayesian Uncertainty Quantification
@@ -165,11 +165,11 @@ The central takeaway of this paper is: **the Bayesian posterior should not be di
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Asymmetric Duos: Sidekicks Improve Uncertainty](asymmetric_duos_sidekicks_improve_uncertainty.md)
 - [\[NeurIPS 2025\] Adjusted Count Quantification Learning on Graphs](adjusted_count_quantification_learning_on_graphs.md)
-- [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](uncertainty_estimation_by_flexible_evidential_deep_learning.md)
+- [\[NeurIPS 2025\] Asymmetric Duos: Sidekicks Improve Uncertainty](asymmetric_duos_sidekicks_improve_uncertainty.md)
+- [\[CVPR 2026\] HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](../../CVPR2026/others/hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)
 - [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](../../ICLR2026/others/bayesian_influence_functions_for_hessian-free_data_attribution.md)
-- [\[NeurIPS 2025\] Depth-Supervised Fusion Network for Seamless-Free Image Stitching](depth-supervised_fusion_network_for_seamless-free_image_stitching.md)
+- [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](uncertainty_estimation_by_flexible_evidential_deep_learning.md)
 
 </div>
 

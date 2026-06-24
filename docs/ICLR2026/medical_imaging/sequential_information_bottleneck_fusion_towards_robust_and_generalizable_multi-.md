@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sequential Information Bottleneck Fusion: Towards Robust and Generalizable Multi-Modal Brain Tumor Segmentation
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] Addressing the common "missing modality" issue in multi-modal MRI brain tumor segmentation, this paper proposes **Sequential Information Bottleneck Fusion** to progressively compress information from various modalities into a shared latent representation. From an information-theoretic perspective, it is demonstrated th
+  [ICLR 2026][Medical Imaging][Brain Tumor Segmentation] Addressing the common "missing modality" issue in multi-modal MRI brain tumor segmentation, this paper proposes **Sequential Information Bottleneck Fusion** to progressively compress information from various modalities into a shared latent representation. From an information-theoretic perspective, it is demonstrated that this approach is more robust and provides a tighter generalization upper bound than mainstream paralle…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Brain Tumor Segmentation"
+  - "Missing Modality"
+  - "Information Bottleneck"
+  - "Sequential Fusion"
+  - "Multi-modal MRI"
 date: 2026-05-08
-content_hash: 5c3a462139c20824
+content_hash: 96c62b1d98a93016
 ---
+
 # Sequential Information Bottleneck Fusion: Towards Robust and Generalizable Multi-Modal Brain Tumor Segmentation
 
 **Conference**: ICLR 2026  
@@ -154,9 +160,9 @@ Removing IBFM, the specific feature extraction module, orthogonal loss, or recon
 ## Related Papers
 
 - [\[CVPR 2026\] Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities](../../CVPR2026/medical_imaging/uni-encoder_meets_multi-encoders_representation_before_fusion_for_brain_tumor_se.md)
+- [\[CVPR 2025\] Federated Modality-specific Encoders and Partially Personalized Fusion Decoder for Multimodal Brain Tumor Segmentation](../../CVPR2025/medical_imaging/federated_modality-specific_encoders_and_partially_personalized_fusion_decoder_f.md)
 - [\[ICLR 2026\] Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization](frequency-balanced_retinal_representation_learning_with_mutual_information_regul.md)
 - [\[ICCV 2025\] M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast](../../ICCV2025/medical_imaging/m-net_mri_brain_tumor_sequential_segmentation_network_via_mesh-cast.md)
-- [\[CVPR 2026\] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities](../../CVPR2026/medical_imaging/virtual_nodes_guided_dynamic_graph_neural_network_for_brain_tumor_segmentation_w.md)
 - [\[ICLR 2026\] Histopathology-Genomics Multi-modal Structural Representation Learning for Data-Efficient Precision Oncology](histopathology-genomics_multi-modal_structural_representation_learning_for_data-.md)
 
 </div>

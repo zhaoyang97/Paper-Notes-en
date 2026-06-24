@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LaTo: Landmark-tokenized Diffusion Transformer for Fine-grained Human Face Editing
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] LaTo quantizes facial landmark coordinates directly into discrete tokens using VQ-VAE for injection into a DiT (rather than rendering them as images for a VAE). Combined with position-mapped embeddings and landmark-aware CFG, it achieves instruction-driven, fine-grained controllable face editing with strong identity pr
+  [ICLR 2026][Image Generation][Face Editing] LaTo quantizes facial landmark coordinates directly into discrete tokens using VQ-VAE for injection into a DiT (rather than rendering them as images for a VAE). Combined with position-mapped embeddings and landmark-aware CFG, it achieves instruction-driven, fine-grained controllable face editing with strong identity preservation.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Face Editing"
+  - "Landmark Tokenization"
+  - "Diffusion Transformer"
+  - "Identity Preservation"
+  - "Instruction-based Editing"
 date: 2026-05-08
-content_hash: d787c6502ed8491b
+content_hash: 835b1c9ffe7fb012
 ---
+
 # LaTo: Landmark-tokenized Diffusion Transformer for Fine-grained Human Face Editing
 
 **Conference**: ICLR 2026  
@@ -116,14 +121,17 @@ LaTo outperforms Bagel by 4.6% in semantic consistency and FLUX.1-Kontext by 7.8
 
 <div class="related-papers" markdown="1">
 
-- **SeedEdit3**: [https://arxiv.org/abs/2410.11763](https://arxiv.org/abs/2410.11763)
-- **Step1X-Edit**: [https://github.com/stepfun-ai/step1x-edit](https://github.com/stepfun-ai/step1x-edit)
-- **OmniGen**: [https://arxiv.org/abs/2409.11340](https://arxiv.org/abs/2409.11340)
+## Related Papers
+
+- [\[ICLR 2026\] EdiVal-Agent: An Object-Centric Framework for Automated, Fine-Grained Evaluation of Multi-Turn Editing](edival-agent_an_object-centric_framework_for_automated_fine-grained_evaluation_o.md)
+- [\[ICLR 2026\] OmniPortrait: Fine-Grained Personalized Portrait Synthesis via Pivotal Optimization](omniportrait_fine-grained_personalized_portrait_synthesis_via_pivotal_optimizati.md)
+- [\[CVPR 2026\] SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control](../../CVPR2026/image_generation/slideredit_continuous_image_editing_with_fine-grained_instruction_control.md)
+- [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](../../CVPR2026/image_generation/cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
+- [\[CVPR 2026\] BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling](../../CVPR2026/image_generation/beautygrpo_aesthetic_alignment_for_face_retouching_via_dynamic_path_guidance_and.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] OmniPortrait: Fine-Grained Personalized Portrait Synthesis via Pivotal Optimization](omniportrait_fine-grained_personalized_portrait_synthesis_via_pivotal_optimizati.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Silent Vote: Improving Zero-Shot LLM Reliability by Aggregating Semantic Neighborhoods
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper points out that constrained softmax in zero-shot LLM classification discards probability mass near label synonyms. It proposes a training-free Semantic Softmax that aggregates the "silent votes" of top-K vocabulary tokens back to target labels, significantly reducing ECE and Brier Score while improving AUROC
+  [ACL 2026][LLM Evaluation][Semantic Softmax] This paper points out that constrained softmax in zero-shot LLM classification discards probability mass near label synonyms. It proposes a training-free Semantic Softmax that aggregates the "silent votes" of top-K vocabulary tokens back to target labels, significantly reducing ECE and Brier Score while improving AUROC/F1.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Semantic Softmax"
+  - "Calibration Error"
+  - "Constrained Decoding"
+  - "Semantic Neighborhoods"
+  - "Uncertainty Estimation"
 date: 2026-05-08
-content_hash: c6004e9975315458
+content_hash: e8fa7de32b996522
 ---
+
 # The Silent Vote: Improving Zero-Shot LLM Reliability by Aggregating Semantic Neighborhoods
 
 **Conference**: ACL 2026  
@@ -137,11 +143,11 @@ The appendix provides a sensitivity analysis for $K$ and $\tau$. Key findings: a
 
 ## Related Papers
 
-- [\[ACL 2026\] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns](humanllm_benchmarking_and_improving_llm_anthropomorphism_via_human_cognitive_pat.md)
 - [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](zero-shot_large_language_models_for_automatic_readability_assessment.md)
+- [\[ACL 2026\] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns](humanllm_benchmarking_and_improving_llm_anthropomorphism_via_human_cognitive_pat.md)
 - [\[ACL 2025\] Language Complexity Measurement as a Noisy Zero-Shot Proxy for Evaluating LLM Performance](../../ACL2025/llm_evaluation/language_complexity_measurement_as_a_noisy_zero-shot_proxy_for_evaluating_llm_pe.md)
-- [\[ACL 2026\] Revisiting the Reliability of Language Models in Instruction-Following](revisiting_the_reliability_of_language_models_in_instruction-following.md)
 - [\[ICCV 2025\] A Conditional Probability Framework for Compositional Zero-shot Learning](../../ICCV2025/llm_evaluation/a_conditional_probability_framework_for_compositional_zerosh.md)
+- [\[CVPR 2025\] UniGoal: Towards Universal Zero-shot Goal-oriented Navigation](../../CVPR2025/llm_evaluation/unigoal_towards_universal_zero-shot_goal-oriented_navigation.md)
 
 </div>
 

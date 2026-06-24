@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Monocular Normal Estimation via Shading Sequence Estimation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper proposes RoSE, a method that reformulates monocular normal estimation as a shading sequence estimation problem. It leverages image-to-video (I2V) generation models to predict shading sequences under multiple illuminations and then converts these sequences into normal maps via a simple least squares method, a
+  [ICLR 2026 (Oral)][Image Generation][Normal Estimation] This paper proposes RoSE, a method that reformulates monocular normal estimation as a shading sequence estimation problem. It leverages image-to-video (I2V) generation models to predict shading sequences under multiple illuminations and then converts these sequences into normal maps via a simple least squares method, achieving SOTA performance on real-world benchmarks.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026 (Oral)"
+  - "Image Generation"
+  - "Normal Estimation"
+  - "Shading Sequence"
+  - "Video Generation Models"
+  - "Least Squares Solving"
+  - "Monocular 3D Reconstruction"
 date: 2026-05-08
-content_hash: 4ed2373bde21f664
+content_hash: db1c1f520be1d84b
 ---
+
 # Monocular Normal Estimation via Shading Sequence Estimation
 
 **Conference**: ICLR 2026 (Oral)  
@@ -148,8 +154,8 @@ The video diffusion model is trained using the standard denoising loss, with all
 - [\[ICLR 2026\] Learning a Distance Measure from the Information-Estimation Geometry of Data](learning_a_distance_measure_from_the_information-estimation_geometry_of_data.md)
 - [\[ICLR 2026\] Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection](sample-efficient_evidence_estimation_of_score_based_priors_for_model_selection.md)
 - [\[ICML 2026\] DiScoFormer: Plug-In Density and Score Estimation with Transformers](../../ICML2026/image_generation/discoformer_plug-in_density_and_score_estimation_with_transformers.md)
-- [\[CVPR 2025\] Can Generative Video Models Help Pose Estimation?](../../CVPR2025/image_generation/can_generative_video_models_help_pose_estimation.md)
 - [\[ICLR 2026\] Any-step Generation via N-th Order Recursive Consistent Velocity Field Estimation](any-step_generation_via_n-th_order_recursive_consistent_velocity_field_estimatio.md)
+- [\[ICLR 2026\] Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts](multi-subspace_multi-modal_modeling_for_diffusion_models_estimation_convergence_.md)
 
 </div>
 

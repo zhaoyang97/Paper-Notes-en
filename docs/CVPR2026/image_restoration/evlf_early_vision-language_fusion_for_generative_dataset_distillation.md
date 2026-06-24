@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation
 description: >-
-  [CVPR 2026][Image Restoration][Diffusion Model] Ours proposes EVLF, a plug-and-play method for early vision-language fusion at the encoder-backbone interface, addressing text over-dominance and visual fidelity degradation caused by late semantic injection in diffusion model dataset distillation.
+  [CVPR 2026][Image Restoration][Dataset Distillation] Ours proposes EVLF, a plug-and-play method for early vision-language fusion at the encoder-backbone interface, addressing text over-dominance and visual fidelity degradation caused by late semantic injection in diffusion model dataset distillation.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Dataset Distillation"
+  - "Diffusion Models"
+  - "Vision-Language Fusion"
+  - "Early Fusion"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: b2e31f3ec8cb60be
+content_hash: eea60d9b757b70be
 ---
+
 # EVLF: Early Vision-Language Fusion for Generative Dataset Distillation
 
 **Conference**: CVPR 2026  
@@ -150,7 +155,7 @@ The entire EVLF mechanism is encapsulated at the encoder-backbone interface, ind
 
 ## Related Papers
 
-- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
+- [\[CVPR 2026\] HiDRA: Hierarchical Degradation Representation and Adaptation with Generative Priors for Enhancing Infrared Vision](hidra_hierarchical_degradation_representation_and_adaptation_with_generative_pri.md)
 - [\[CVPR 2026\] UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization](unirain_unified_image_deraining_rag_dataset_distillation.md)
 - [\[CVPR 2026\] Human-Centric Multi-Exposure Fusion: Benchmark and Bi-level Cognition Distillation Framework](human-centric_multi-exposure_fusion_benchmark_and_bi-level_cognition_distillatio.md)
 - [\[CVPR 2026\] White-Balance First, Adjust Later: Cross-Camera Color Constancy via Vision-Language Evaluation](white-balance_first_adjust_later_cross-camera_color_constancy_via_vision-languag.md)

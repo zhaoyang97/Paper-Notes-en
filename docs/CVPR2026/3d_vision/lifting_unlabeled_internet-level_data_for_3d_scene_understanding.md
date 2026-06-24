@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Lifting Unlabeled Internet-level Data for 3D Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This work presents SceneVerse++, an automated data engine that generates 3D scene understanding training data from 6,687 unlabeled internet videos. It demonstrates the feasibility of advancing 3D scene understanding using internet-level data across three tasks: 3D object detection (+20.6 F1@.25), spatial VQA (+14.9%),
+  [CVPR 2026][3D Vision][3D Scene Understanding] This work presents SceneVerse++, an automated data engine that generates 3D scene understanding training data from 6,687 unlabeled internet videos. It demonstrates the feasibility of advancing 3D scene understanding using internet-level data across three tasks: 3D object detection (+20.6 F1@.25), spatial VQA (+14.9%), and vision-language navigation (+14% SR).
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Scene Understanding"
+  - "Internet Videos"
+  - "Automatic Data Engine"
+  - "Vision-Language Navigation"
+  - "Spatial Reasoning"
 date: 2026-05-08
-content_hash: f41621e8c21d7b54
+content_hash: f1a2e8488e012f96
 ---
+
 # Lifting Unlabeled Internet-level Data for 3D Scene Understanding
 
 **Conference**: CVPR 2026  
@@ -144,8 +150,8 @@ Reconstructed scenes provide different supervision for downstream tasks. Detecti
 - [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
 - [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
 - [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
+- [\[CVPR 2026\] Long-Tail Internet Photo Reconstruction](long-tail_internet_photo_reconstruction.md)
 - [\[CVPR 2026\] PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding](pointtpa_dynamic_network_parameter_adaptation_for_3d_scene_understanding.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
 
 </div>
 

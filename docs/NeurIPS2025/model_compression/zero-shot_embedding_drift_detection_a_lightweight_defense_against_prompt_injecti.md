@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zero-Shot Embedding Drift Detection: A Lightweight Defense Against Prompt Injections in LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][Prompt injection detection] This paper proposes ZEDD (Zero-shot Embedding Drift Detection), which detects prompt injection attacks by measuring semantic drift between benign and suspicio…
+  [NeurIPS 2025][Model Compression][Prompt injection detection] This paper proposes ZEDD (Zero-shot Embedding Drift Detection), which detects prompt injection attacks by measuring semantic drift between benign and suspicious inputs in the embedding space. It leverages GMM/KDE to automatically determine detection thresholds, achieving >93% detection accuracy with <3% false positive rate across multiple LLM architectures.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LLM security"
   - "lightweight defense"
 date: 2026-05-08
-content_hash: 4ad7bd2db356eb80
+content_hash: 09eb56bfd34e4abd
 ---
 
 # Zero-Shot Embedding Drift Detection: A Lightweight Defense Against Prompt Injections in LLMs
@@ -134,11 +134,11 @@ The fine-tuning stage employs a binary classification loss: clean-clean pairs ar
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Enhancing Semi-supervised Learning with Zero-shot Pseudolabels](enhancing_semi-supervised_learning_with_zero-shot_pseudolabels.md)
 - [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
-- [\[ICLR 2026\] Boomerang Distillation Enables Zero-Shot Model Size Interpolation](../../ICLR2026/model_compression/boomerang_distillation_enables_zero-shot_model_size_interpolation.md)
 - [\[NeurIPS 2025\] Graph Your Own Prompt](graph_your_own_prompt.md)
-- [\[NeurIPS 2025\] Knowledge Distillation Detection for Open-weights Models](knowledge_distillation_detection_for_open-weights_models.md)
-- [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](ai-generated_video_detection_via_perceptual_straightening.md)
+- [\[ECCV 2024\] Improving Zero-Shot Generalization for CLIP with Variational Adapter](../../ECCV2024/model_compression/improving_zero-shot_generalization_for_clip_with_variational_adapter.md)
+- [\[ACL 2025\] Graph-guided Cross-composition Feature Disentanglement for Compositional Zero-shot Learning](../../ACL2025/model_compression/graph-guided_cross-composition_feature_disentanglement_for_compositional_zero-sh.md)
 
 </div>
 

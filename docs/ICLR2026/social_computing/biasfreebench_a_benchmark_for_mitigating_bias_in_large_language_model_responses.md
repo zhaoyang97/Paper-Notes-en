@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses
 description: >-
-  [ICLR 2026][Social Computing][bias mitigation] This paper constructs the BiasFreeBench benchmark, which systematically compares eight mainstream debiasing methods (four prompting + four training) within a unified framework for the first time. Focusing on bias evaluation at the LLM response level, it proposes the Bias-Free Score metric and finds that prompting metho
+  [ICLR 2026][Social Computing][bias mitigation] This paper constructs the BiasFreeBench benchmark, which systematically compares eight mainstream debiasing methods (four prompting + four training) within a unified framework for the first time. Focusing on bias evaluation at the LLM response level, it proposes the Bias-Free Score metric and finds that prompting methods (especially CoT) generally outperform training methods, while DPO shows outstanding generalization across bias…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - bias mitigation
-  - debiasing
-  - LLM fairness
-  - benchmark
-  - Bias-Free Score
+  - "ICLR 2026"
+  - "Social Computing"
+  - "bias mitigation"
+  - "debiasing"
+  - "LLM fairness"
+  - "benchmark"
+  - "Bias-Free Score"
 date: 2026-05-08
-content_hash: ff9b14dd44edb931
+content_hash: 85a20144484bf5ec
 ---
+
 # BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses
 
 **Conference**: ICLR 2026  
@@ -145,14 +146,14 @@ A higher BFS represents more successful debiasing, and as a response-level metri
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Measuring and Mitigating Rapport Bias of Large Language Models under Multi-Agent Social Interactions](measuring_and_mitigating_rapport_bias_of_large_language_models_under_multi-agent.md)
 - [\[ICML 2025\] OR-Bench: An Over-Refusal Benchmark for Large Language Models](../../ICML2025/social_computing/or-bench_an_over-refusal_benchmark_for_large_language_models.md)
+- [\[ICLR 2026\] Language and Experience: A Computational Model of Social Learning in Complex Tasks](language_and_experience_a_computational_model_of_social_learning_in_complex_task.md)
 - [\[NeurIPS 2025\] Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector](../../NeurIPS2025/social_computing/any_large_language_model_can_be_a_reliable_judge_debiasing_w.md)
-- [\[ICLR 2026\] Mitigating Mismatch within Reference-based Preference Optimization](mitigating_mismatch_within_reference-based_preference_optimization.md)
 - [\[ACL 2025\] Translate With Care: Addressing Gender Bias, Neutrality, and Reasoning in Large Language Model Translations](../../ACL2025/social_computing/translate_with_care_addressing_gender_bias_neutrality_and_reasoning_in_large_lan.md)
 
 </div>

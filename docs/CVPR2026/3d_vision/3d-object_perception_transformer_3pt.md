@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3D-Object Perception Transformer (3PT)
 description: >-
-  [CVPR 2026][Others][Paper Note] 3PT replaces the existing zero-shot 3D object perception pipelines—often characterized by "assembled frozen foundation models + depth dependency"—with a unified, end-to-end trained Transformer framework (detection + object grouping + iterative refinement) directly conditioned on CAD models. Relying solely on multi-view
+  [CVPR 2026][3D Vision][Zero-shot 6DoF Pose Estimation] 3PT replaces the existing zero-shot 3D object perception pipelines—often characterized by "assembled frozen foundation models + depth dependency"—with a unified, end-to-end trained Transformer framework (detection + object grouping + iterative refinement) directly conditioned on CAD models. Relying solely on multi-view RGB, it significantly outperforms SOTA in detection and 6DoF pose on BOP benchmarks (with a relative imp…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Zero-shot 6DoF Pose Estimation"
+  - "3D Object Detection"
+  - "Multi-view RGB"
+  - "Early-fusion Detection"
+  - "Industrial Robot Grasping"
 date: 2026-05-08
-content_hash: 68f435137141b377
+content_hash: 88ec1f378d6b43a2
 ---
+
 # 3D-Object Perception Transformer (3PT)
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Scale Ablation:
 
 ## Related Papers
 
-- [\[CVPR 2026\] AniMimic: Imitating 3D Animation from Video Priors](animimic_imitating_3d_animation_from_video_priors.md)
-- [\[ICML 2026\] Vision Transformer 微调中的非光滑分量优势](../../ICML2026/others/vision_transformer_finetuning_benefits_from_non-smooth_components.md)
-- [\[CVPR 2026\] Efficient Unrolled Networks for Large-Scale 3D Inverse Problems](efficient_unrolled_networks_for_large-scale_3d_inverse_problems.md)
-- [\[CVPR 2026\] 4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models](4dworldbench_a_comprehensive_evaluation_framework_for_3d4d_world_generation_mode.md)
-- [\[CVPR 2026\] MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics](moocap_a_multi-view_benchmark_for_cow-object-human_interaction_and_behavior_dyna.md)
+- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
+- [\[CVPR 2026\] PE3R: Perception-Efficient 3D Reconstruction](pe3r_perception-efficient_3d_reconstruction.md)
+- [\[CVPR 2026\] UniPR: Unified Object-level Real-to-Sim Perception and Reconstruction from a Single Stereo Pair](unipr_unified_object-level_real-to-sim_perception_and_reconstruction_from_a_sing.md)
+- [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
+- [\[CVPR 2025\] SphereUFormer: A U-Shaped Transformer for Spherical 360 Perception](../../CVPR2025/3d_vision/sphereuformer_a_u-shaped_transformer_for_spherical_360_perception.md)
 
 </div>
 

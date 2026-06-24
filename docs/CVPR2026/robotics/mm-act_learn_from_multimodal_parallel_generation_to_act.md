@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MM-ACT: Learn from Multimodal Parallel Generation to Act
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] MM-ACT represents text, images, and actions within a unified set of discrete tokens, utilizing a masked token predictor with bidirectional attention for unified parallel decoding (multi-step re-masking for text/images, and one-step generation for actions). Through Context-Shared multimodal learning, task planning and f
+  [CVPR 2026][Robotics][VLA] MM-ACT represents text, images, and actions within a unified set of discrete tokens, utilizing a masked token predictor with bidirectional attention for unified parallel decoding (multi-step re-masking for text/images, and one-step generation for actions). Through Context-Shared multimodal learning, task planning and future image prediction enhance action generation. It achieves 96.3% on LIBERO, 52.38% on eight tasks in RoboTwin2.0 (with a +9.25% ga…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Unified Discrete Tokens"
+  - "Parallel Decoding"
+  - "Discrete Diffusion"
+  - "Cross-modal Joint Training"
 date: 2026-05-08
-content_hash: 4944c44f2d49379f
+content_hash: e5aed4cefc9098ad
 ---
+
 # MM-ACT: Learn from Multimodal Parallel Generation to Act
 
 **Conference**: CVPR 2026  
@@ -151,10 +156,10 @@ MM-ACT reaches 96.3% on LIBERO, outperforming all baselines. On the OOD RoboTwin
 ## Related Papers
 
 - [\[CVPR 2026\] Learning to Act Robustly with View-Invariant Latent Actions](learning_to_act_robustly_with_view-invariant_latent_actions.md)
+- [\[ICLR 2026\] End-to-end Listen, Look, Speak and Act](../../ICLR2026/robotics/end-to-end_listen_look_speak_and_act.md)
 - [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
 - [\[NeurIPS 2025\] Act to See, See to Act: Diffusion-Driven Perception-Action Interplay for Adaptive Policies](../../NeurIPS2025/robotics/act_to_see_see_to_act_diffusion-driven_perception-action_interplay_for_adaptive_.md)
 - [\[CVPR 2026\] Diagnose, Correct, and Learn from Manipulation Failures via Visual Symbols](diagnose_correct_and_learn_from_manipulation_failures_via_visual_symbols.md)
-- [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
 
 </div>
 

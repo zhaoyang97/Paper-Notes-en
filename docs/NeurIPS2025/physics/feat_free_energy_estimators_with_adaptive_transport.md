@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FEAT: Free Energy Estimators with Adaptive Transport
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Free energy estimation] This paper proposes the FEAT framework, which employs stochastic interpolants to learn transport maps between two thermodynamic systems. Building on…
+  [NeurIPS 2025][Physics & Scientific Computing][Free energy estimation] This paper proposes the FEAT framework, which employs stochastic interpolants to learn transport maps between two thermodynamic systems. Building on the escorted Jarzynski equality and the controlled Crooks theorem, FEAT provides consistent, minimum-variance free energy difference estimators along with variational upper and lower bounds, thereby unifying equilibrium and non-equilibrium approaches.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Crooks theorem"
   - "variational bounds"
 date: 2026-05-08
-content_hash: c45f82408bcb7d1d
+content_hash: 1dbff8bdb395204e
 ---
 
 # FEAT: Free Energy Estimators with Adaptive Transport
@@ -135,11 +135,11 @@ The core pipeline of FEAT:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning Escorted Protocols For Multistate Free-Energy Estimation](../../ICLR2026/physics/learning_escorted_protocols_for_multistate_free-energy_estimation.md)
 - [\[NeurIPS 2025\] Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling](adaptive_stochastic_coefficients_for_accelerating_diffusion_sampling.md)
 - [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
 - [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
 - [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
-- [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](../../ICML2026/physics/teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
 
 </div>
 

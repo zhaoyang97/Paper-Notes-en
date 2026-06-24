@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Time Series Forecasting via Instance-aware Post-hoc Revision (PIR)
 description: >-
-  [NeurIPS 2025][Time Series][Instance-level revision] PIR proposes an instance-aware post-hoc revision framework that identifies poorly predicted instances via uncertainty estimation and applies a residual combination of…
+  [NeurIPS 2025][Time Series][Instance-level revision] PIR proposes an instance-aware post-hoc revision framework that identifies poorly predicted instances via uncertainty estimation and applies a residual combination of local correction (covariate + exogenous variable Transformer) and global correction (retrieval-based weighted average over similar training instances) as a plug-and-play module, reducing SparseTSF MSE by 25.87% and PatchTST MSE by 8.99%.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "post-hoc processing"
   - "long-tail distribution"
 date: 2026-05-08
-content_hash: 88130e55a957e93a
+content_hash: 9c2162ee21171239
 ---
 
 # Improving Time Series Forecasting via Instance-aware Post-hoc Revision (PIR)
@@ -118,11 +118,11 @@ Baseline model predicts $\bar{y}$ → **Uncertainty Estimation** $\delta = f_{ue
 
 ## Related Papers
 
-- [\[AAAI 2026\] ReCast: Reliability-aware Codebook Assisted Lightweight Time Series Forecasting](../../AAAI2026/time_series/recast_reliability-aware_codebook_assisted_lightweight_time_series_forecasting.md)
+- [\[ICLR 2026\] The Forecast After the Forecast: A Post-Processing Shift in Time Series](../../ICLR2026/time_series/the_forecast_after_the_forecast_a_post-processing_shift_in_time_series.md)
 - [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment](time-o1_time-series_forecasting_needs_transformed_label_alignment.md)
+- [\[ICML 2025\] TimePro: Efficient Multivariate Long-term Time Series Forecasting with Variable- and Time-Aware Hyper-state](../../ICML2025/time_series/timepro_efficient_multivariate_long-term_time_series_forecasting_with_variable-_.md)
 - [\[NeurIPS 2025\] How Foundational are Foundation Models for Time Series Forecasting?](how_foundational_are_foundation_models_for_time_series_forecasting.md)
-- [\[NeurIPS 2025\] SEMPO: Lightweight Foundation Models for Time Series Forecasting](sempo_lightweight_foundation_models_for_time_series_forecasting.md)
 
 </div>
 

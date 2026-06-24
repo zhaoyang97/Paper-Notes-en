@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition
 description: >-
-  [ICLR 2026][Multimodal VLM][Missing Modality] MoRA utilizes a set of "modality-shared + modality-specific" low-rank parameters to enable vision and text encoders to maintain cross-modal alignment while independently adapting to downstream tasks during fine-tuning. This approach significantly outperforms prompt-based methods in missing modality scenarios with zero
+  [ICLR 2026][Multimodal VLM][Missing Modality] MoRA utilizes a set of "modality-shared + modality-specific" low-rank parameters to enable vision and text encoders to maintain cross-modal alignment while independently adapting to downstream tasks during fine-tuning. This approach significantly outperforms prompt-based methods in missing modality scenarios with zero additional inference overhead.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Missing Modality
-  - LoRA
-  - PEFT
-  - Cross-modal Interaction
-  - Gram Matrix
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Missing Modality"
+  - "LoRA"
+  - "PEFT"
+  - "Cross-modal Interaction"
+  - "Gram Matrix"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 1713c4d11a34296d
+content_hash: 8892f882a8571774
 ---
+
 # MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition
 
 **Conference**: ICLR 2026  
@@ -129,15 +130,16 @@ Removing specific terms or Gram interaction leads to significant degradation. Fu
 - **Value**: ⭐⭐⭐⭐ — Zero inference overhead combined with significant robustness makes it highly valuable for deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICCV 2025\] Synergistic Prompting for Robust Visual Recognition with Missing Modalities](../../ICCV2025/multimodal_vlm/synergistic_prompting_for_robust_visual_recognition_with_missing_modalities.md)
 - [\[ICCV 2025\] Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation](../../ICCV2025/multimodal_vlm/sparsity_outperforms_low-rank_projections_in_few-shot_adaptation.md)
+- [\[ICCV 2025\] Synergistic Prompting for Robust Visual Recognition with Missing Modalities](../../ICCV2025/multimodal_vlm/synergistic_prompting_for_robust_visual_recognition_with_missing_modalities.md)
 - [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](../../CVPR2026/multimodal_vlm/parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
+- [\[ICML 2026\] AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning](../../ICML2026/multimodal_vlm/aoept_breaking_the_implicit_modality-reduction_bottleneck_in_modality-missing_pr.md)
 - [\[AAAI 2026\] BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning](../../AAAI2026/multimodal_vlm/bofa_bridge-layer_orthogonal_low-rank_fusion_for_clip-based_.md)
-- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](exploring_cross-modal_flows_for_few-shot_learning.md)
 
 </div>
 

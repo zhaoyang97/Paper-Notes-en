@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity
 description: >-
-  [AAAI 2026][Robotics][grid-based storage] For the problem of uncertain retrieval order in fully loaded 2D grid-based storage systems, this paper proposes the k-bounded perturbation uncertainty model…
+  [AAAI 2026][Robotics][grid-based storage] For the problem of uncertain retrieval order in fully loaded 2D grid-based storage systems, this paper proposes the k-bounded perturbation uncertainty model, proves that $\Theta(k)$ columns is both necessary and sufficient for zero relocation, and presents an efficient robust storage solver and greedy retrieval strategy. The approach nearly eliminates relocations when $k \leq 0.5c$ and still reduces relocations by 50%+ when $k$ reache…
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -13,7 +13,7 @@ tags:
   - "robust storage"
   - "relocation minimization"
 date: 2026-05-08
-content_hash: 479d3de85a53fdc1
+content_hash: 62aea70a7e5c3a2f
 ---
 
 # Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity
@@ -143,11 +143,11 @@ Both RobustS and ImpR complete within 1 minute and 1 second, respectively, acros
 
 ## Related Papers
 
-- [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](../../ICML2026/robotics/spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
+- [\[ICML 2025\] Maximum Total Correlation Reinforcement Learning](../../ICML2025/robotics/maximum_total_correlation_reinforcement_learning.md)
 - [\[AAAI 2026\] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception](touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept.md)
-- [\[AAAI 2026\] SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation](spatialactor_exploring_disentangled_spatial_representations_for_robust_robotic_m.md)
+- [\[ICML 2026\] Moving Out: Physically-grounded Human-AI Collaboration](../../ICML2026/robotics/moving_out_physically-grounded_human-ai_collaboration.md)
 - [\[AAAI 2026\] Distributionally Robust Online Markov Game with Linear Function Approximation](distributionally_robust_online_markov_game_with_linear_function_approximation.md)
-- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization](../../ICLR2026/robotics/distributionally_robust_cooperative_multi-agent_reinforcement_learning_via_robus.md)
+- [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](../../ICML2026/robotics/spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
 
 </div>
 

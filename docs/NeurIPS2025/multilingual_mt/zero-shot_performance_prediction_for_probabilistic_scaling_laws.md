@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zero-Shot Performance Prediction for Probabilistic Scaling Laws
 description: >-
-  [NeurIPS 2025][Multilingual & Machine Translation][scaling laws] This paper frames NLP learning curve prediction as a multi-task learning problem…
+  [NeurIPS 2025][Multilingual & Machine Translation][scaling laws] This paper frames NLP learning curve prediction as a multi-task learning problem, employing a latent-variable multi-output Gaussian process (MaGP) to capture the bi-level hierarchical structure of datasets and inter-task correlations, enabling zero-shot prediction of learning curves and deriving probabilistic scaling laws via Monte Carlo simulation.
 tags:
   - "NeurIPS 2025"
   - "Multilingual & Machine Translation"
@@ -14,7 +14,7 @@ tags:
   - "active learning"
   - "multi-task learning"
 date: 2026-05-08
-content_hash: 11a45150a452926f
+content_hash: bf3050f413a33096
 ---
 
 # Zero-Shot Performance Prediction for Probabilistic Scaling Laws
@@ -226,10 +226,10 @@ On the bilingual translation dataset (mBART50 + Transformer):
 ## Related Papers
 
 - [\[ICLR 2026\] ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality](../../ICLR2026/multilingual_mt/atlas_adaptive_transfer_scaling_laws_for_multilingual_pretraining_finetuning_and.md)
-- [\[NeurIPS 2025\] Adaptive Originality Filtering: Rejection-Based Prompting and RiddleScore for Culturally Grounded Multilingual Riddle Generation](adaptive_originality_filtering_rejection_based_prompting_and_riddlescore_for_cul.md)
-- [\[NeurIPS 2025\] Exploring the Translation Mechanism of Large Language Models](exploring_the_translation_mechanism_of_large_language_models.md)
-- [\[NeurIPS 2025\] How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs](how_data_mixing_shapes_in-context_learning_asymptotic_equivalence_for_transforme.md)
-- [\[NeurIPS 2025\] MERIT: Multilingual Semantic Retrieval with Interleaved Multi-Condition Query](merit_multilingual_semantic_retrieval_with_interleaved_multi-condition_query.md)
+- [\[ACL 2025\] Machine Translation Models are Zero-Shot Detectors of Translation Direction](../../ACL2025/multilingual_mt/machine_translation_models_are_zero-shot_detectors_of_translation_direction.md)
+- [\[ACL 2025\] Translation and Fusion Improves Zero-shot Cross-lingual Information Extraction](../../ACL2025/multilingual_mt/translation_and_fusion_improves_cross-lingual_information_extraction.md)
+- [\[ACL 2025\] A Case Study of Cross-Lingual Zero-Shot Generalization for Classical Languages in LLMs](../../ACL2025/multilingual_mt/a_case_study_of_cross-lingual_zero-shot_generalization_for_classical_languages_i.md)
+- [\[CVPR 2025\] SMTPD: A New Benchmark for Temporal Prediction of Social Media Popularity](../../CVPR2025/multilingual_mt/smtpd_a_new_benchmark_for_temporal_prediction_of_social_media_popularity.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] System Prompt Optimization with Meta-Learning
 description: >-
-  [NeurIPS 2025][LLM/NLP][system prompt optimization] This paper formulates system prompt optimization as a bilevel problem and proposes MetaSPO…
+  [NeurIPS 2025][LLM (Other)][system prompt optimization] This paper formulates system prompt optimization as a bilevel problem and proposes MetaSPO, a meta-learning framework that optimizes system prompts for cross-task generalization in the outer loop while optimizing task-specific user prompts in the inner loop. The resulting system prompts significantly outperform baselines across 14 unseen tasks.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "system prompt optimization"
   - "meta-learning"
   - "bilevel optimization"
   - "prompt engineering"
   - "cross-task generalization"
 date: 2026-05-08
-content_hash: c9e190bc41741b15
+content_hash: 94834f7621b49e3a
 ---
 
 # System Prompt Optimization with Meta-Learning
@@ -168,11 +168,11 @@ With the system prompt fixed and user prompts additionally optimized:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Prompt-MII: Meta-Learning Instruction Induction for LLMs](../../ICLR2026/llm_nlp/prompt-mii_meta-learning_instruction_induction_for_llms.md)
+- [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](../../ICLR2026/llm_nlp/sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
+- [\[ACL 2025\] GAPO: Learning Preferential Prompt through Generative Adversarial Policy Optimization](../../ACL2025/llm_nlp/gapo_preferential_prompt.md)
 - [\[NeurIPS 2025\] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)
-- [\[ACL 2026\] Model-Agnostic Meta Learning for Class Imbalance Adaptation](../../ACL2026/llm_nlp/model-agnostic_meta_learning_for_class_imbalance_adaptation.md)
-- [\[ACL 2026\] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges](../../ACL2026/llm_nlp/when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
-- [\[NeurIPS 2025\] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)
-- [\[NeurIPS 2025\] PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs](presto_preimage-informed_instruction_optimization_for_prompting_black-box_llms.md)
+- [\[ICML 2025\] Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence](../../ICML2025/llm_nlp/beyond_induction_heads_in-context_meta_learning_induces_multi-phase_circuit_emer.md)
 
 </div>
 

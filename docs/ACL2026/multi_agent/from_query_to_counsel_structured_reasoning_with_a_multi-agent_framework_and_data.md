@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper constructs JurisCQAD—a large-scale dataset containing 43,000+ real Chinese legal consultations—and proposes the JurisMA multi-agent framework. By utilizing legal element graphs for structured task decomposition and dynamic multi-agent collaboration (Manager Agent + Format Check + Law Search), it significantl
+  [ACL 2026][Multi-Agent][Legal consultation Q&A] This paper constructs JurisCQAD—a large-scale dataset containing 43,000+ real Chinese legal consultations—and proposes the JurisMA multi-agent framework. By utilizing legal element graphs for structured task decomposition and dynamic multi-agent collaboration (Manager Agent + Format Check + Law Search), it significantly outperforms general and legal-specific LLMs on LawBench.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Legal consultation Q&A"
+  - "legal element graph"
+  - "task decomposition"
+  - "Chinese law"
 date: 2026-05-08
-content_hash: 0558007ecfe6ea73
+content_hash: d48c790533e3b5a9
 ---
+
 # From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation
 
 **Conference**: ACL 2026  
@@ -126,11 +131,11 @@ Supervised Fine-Tuning (SFT) is performed on JurisCQAD with inputs augmented by 
 
 ## Related Papers
 
+- [\[ICLR 2026\] PixelCraft: A Multi-Agent System for High-Fidelity Visual Reasoning on Structured Images](../../ICLR2026/multi_agent/pixelcraft_a_multi-agent_system_for_high-fidelity_visual_reasoning_on_structured.md)
 - [\[AAAI 2026\] FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](../../AAAI2026/multi_agent/finrpt_dataset_evaluation_system_and_llm-based_multi-agent_framework_for_equity_.md)
 - [\[ACL 2026\] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection](debating_the_unspoken_role-anchored_multi-agent_reasoning_for_half-truth_detecti.md)
 - [\[ACL 2026\] Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling](multi-agent_reasoning_improves_compute_efficiency_pareto-optimal_test-time_scali.md)
-- [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
-- [\[ACL 2026\] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing](masfactory_a_graph-centric_framework_for_orchestrating_llm-based_multi-agent_sys.md)
+- [\[ICLR 2026\] From EduVisBench to EduVisAgent: A Benchmark and Multi-Agent Framework for Reasoning-Driven Pedagogical Visualization](../../ICLR2026/multi_agent/from_eduvisbench_to_eduvisagent_a_benchmark_and_multi-agent_framework_for_reason.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Eigenstructures of Unstructured Data Manifolds
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] This paper moves away from the traditional "select operator, discretize, then decompose" pipeline. Instead, it uses a neural network to directly learn spectral bases from unstructured data of arbitrary dimensions (point clouds, image manifolds). Rooted in optimal approximation theory, the network simultaneously recover
+  [CVPR 2026][Self-Supervised Learning][Spectral Basis] This paper moves away from the traditional "select operator, discretize, then decompose" pipeline. Instead, it uses a neural network to directly learn spectral bases from unstructured data of arbitrary dimensions (point clouds, image manifolds). Rooted in optimal approximation theory, the network simultaneously recovers spectral bases, implicit metrics (sampling density), and eigenvalues by minimizing the reconstruction er…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Spectral Basis"
+  - "Laplacian Operator"
+  - "Optimal Approximation Theory"
+  - "Point Clouds"
+  - "Manifold Learning"
 date: 2026-05-08
-content_hash: 351cca22c70da0f2
+content_hash: ed2cf9761f7365fd
 ---
+
 # Learning Eigenstructures of Unstructured Data Manifolds
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Images are treated as points on a manifold using DINOv2/CLIP features ($d=768/51
 
 ## Related Papers
 
-- [\[CVPR 2026\] Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty](few-shot_hybrid_incremental_learningcontinually_learning_under_data_scarcity_and.md)
-- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
 - [\[NeurIPS 2025\] Manifolds and Modules: How Function Develops in a Neural Foundation Model](../../NeurIPS2025/self_supervised/manifolds_and_modules_how_function_develops_in_a_neural_foundation_model.md)
+- [\[ICLR 2026\] Equivariant Splitting: Self-supervised learning from incomplete data](../../ICLR2026/self_supervised/equivariant_splitting_self-supervised_learning_from_incomplete_data.md)
 - [\[ICML 2026\] Data Augmentation of Contrastive Learning is Estimating Positive-incentive Noise](../../ICML2026/self_supervised/data_augmentation_of_contrastive_learning_is_estimating_positive-incentive_noise.md)
-- [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](../../NeurIPS2025/self_supervised/tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
+- [\[ICML 2026\] Towards One-for-All Anomaly Detection for Tabular Data](../../ICML2026/self_supervised/towards_one-for-all_anomaly_detection_for_tabular_data.md)
+- [\[ICLR 2026\] AutoDV: An End-to-End Deep Learning Model for High-Dimensional Data Visualization](../../ICLR2026/self_supervised/autodv_an_end-to-end_deep_learning_model_for_high-dimensional_data_visualization.md)
 
 </div>
 

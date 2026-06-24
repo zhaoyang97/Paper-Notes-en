@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Perturbation-Induced Linearization: Constructing Unlearnable Data with Solely Linear Classifiers
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The PIL method is proposed, using only a bias-free linear classifier as a surrogate model to generate unlearnable perturbations. By inducing deep models to linearize, it prevents them from learning semantic features. It is over 100x faster than existing methods (less than 1 minute of GPU time on CIFAR-10).
+  [ICLR 2026][LLM Safety][Unlearnable Examples] The PIL method is proposed, using only a bias-free linear classifier as a surrogate model to generate unlearnable perturbations. By inducing deep models to linearize, it prevents them from learning semantic features. It is over 100x faster than existing methods (less than 1 minute of GPU time on CIFAR-10).
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Unlearnable Examples"
+  - "Data Protection"
+  - "Linearization"
+  - "Shortcut Learning"
+  - "Adversarial Perturbations"
 date: 2026-05-08
-content_hash: 3dd8f496026f935b
+content_hash: fc1bc97cdbb6335e
 ---
+
 # Perturbation-Induced Linearization: Constructing Unlearnable Data with Solely Linear Classifiers
 
 **Conference**: ICLR 2026  
@@ -133,9 +139,9 @@ Directly compared with unlearnable example methods like EM, REM, TAP, and NTGA. 
 
 - [\[ICLR 2026\] When Priors Backfire: On the Vulnerability of Unlearnable Examples to Pretraining](when_priors_backfire_on_the_vulnerability_of_unlearnable_examples_to_pretraining.md)
 - [\[ICCV 2025\] Temporal Unlearnable Examples: Preventing Personal Video Data from Unauthorized Exploitation](../../ICCV2025/llm_safety/temporal_unlearnable_examples_preventing_personal_video_data_from_unauthorized_e.md)
+- [\[ICLR 2026\] Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks](constitutional_classifiers_efficient_production-grade_defenses_against_universal.md)
+- [\[ICLR 2026\] WaterDrum: Watermark-based Data-centric Unlearning Metric](waterdrum_watermark-based_data-centric_unlearning_metric.md)
 - [\[ICLR 2026\] Operationalizing Data Minimization for Privacy-Preserving LLM Prompting](operationalizing_data_minimization_for_privacy-preserving_llm_prompting.md)
-- [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
-- [\[AAAI 2026\] From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions](../../AAAI2026/llm_safety/from_single_to_societal_analyzing_persona-induced_bias_in_multi-agent_interactio.md)
 
 </div>
 

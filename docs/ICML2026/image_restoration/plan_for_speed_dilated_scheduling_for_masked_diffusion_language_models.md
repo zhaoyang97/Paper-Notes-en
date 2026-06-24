@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Plan for Speed: Dilated Scheduling for Masked Diffusion Language Models
 description: >-
-  [ICML 2026][Image Restoration][Masked Diffusion] This paper proposes the Dilated Unmasking Scheduler (DUS): it uses predefined "equidistant gaps" to determine the unmasking order independent of model confidence. This reduces the number of denoiser calls per block of $B$ tokens from $\mathcal O(B)$ to $\mathcal O(\log B)$, achieving a 5.8× wall-clock speedup on LLaDA
+  [ICML 2026][Image Restoration][Masked Diffusion] This paper proposes the Dilated Unmasking Scheduler (DUS): it uses predefined "equidistant gaps" to determine the unmasking order independent of model confidence. This reduces the number of denoiser calls per block of $B$ tokens from $\mathcal O(B)$ to $\mathcal O(\log B)$, achieving a 5.8× wall-clock speedup on LLaDA / Dream / DiffuCoder while outperforming confidence-based parallel planners in quality.
 tags:
-  - ICML 2026
-  - Image Restoration
-  - Masked Diffusion
-  - Dilated Scheduling
-  - Joint Entropy
-  - Parallel Decoding
-  - Inference-only
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Masked Diffusion"
+  - "Dilated Scheduling"
+  - "Joint Entropy"
+  - "Parallel Decoding"
+  - "Inference-only"
 date: 2026-05-08
-content_hash: 2f094a04157baed1
+content_hash: 0483c2a1b6328cf3
 ---
+
 # Plan for Speed: Dilated Scheduling for Masked Diffusion Language Models
 
 **Conference**: ICML 2026  
@@ -127,10 +128,10 @@ Accuracy degradation for DUS is slow and predictable as $B$ increases; Conf. col
 ## Related Papers
 
 - [\[ICML 2026\] Consistent Diffusion Language Models](consistent_diffusion_language_models.md)
-- [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
-- [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
 - [\[ICML 2026\] Early Decisions Matter: Proximity Bias and Initial Trajectory Shaping in Non-Autoregressive Diffusion Language Models](early_decisions_matter_proximity_bias_and_initial_trajectory_shaping_in_non-auto.md)
-- [\[ICML 2026\] Structured Diffusion Bridges: Inductive Bias for Denoising Diffusion Bridges](structured_diffusion_bridges_inductive_bias_for_denoising_diffusion_bridges.md)
+- [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
+- [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](../../NeurIPS2025/image_restoration/encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
+- [\[ICML 2026\] DAPD: Dependency-Aware Parallel Decoding via Attention for Diffusion LLMs](dapd_dependency-aware_parallel_decoding_via_attention_for_diffusion_llms.md)
 
 </div>
 

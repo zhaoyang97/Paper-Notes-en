@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SegTune: Structured and Fine-Grained Control for Song Generation
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] The authors propose SegTune, a song generation framework based on Diffusion Transformer. It achieves fine-grained temporal control over song structure and musical attributes through hierarchical text conditions (global + segment-level prompts) and an LLM-based duration predictor.
+  [ACL 2026 Best Paper Oral][Audio & Speech][Song Generation] The authors propose SegTune, a song generation framework based on Diffusion Transformer. It achieves fine-grained temporal control over song structure and musical attributes through hierarchical text conditions (global + segment-level prompts) and an LLM-based duration predictor.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026 Best Paper Oral"
+  - "Audio & Speech"
+  - "Song Generation"
+  - "Segmented Control"
+  - "Diffusion Transformer"
+  - "Duration Prediction"
+  - "Hierarchical Conditioning"
 date: 2026-05-08
-content_hash: 1965f3bc407ab82b
+content_hash: 7d60430716819d4f
 ---
+
 <!-- Generated automatically by src/gen_stubs.py -->
 # SegTune: Structured and Fine-Grained Control for Song Generation
 
@@ -142,8 +148,8 @@ Training occurs in three stages: Pre-training (~370k songs, ~27k hours, 20 epoch
 - [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](../../CVPR2026/audio_speech/foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
 - [\[AAAI 2026\] MF-Speech: Achieving Fine-Grained and Compositional Control in Speech Generation via Factor Disentanglement](../../AAAI2026/audio_speech/mf-speech_achieving_fine-grained_and_compositional_control_in_speech_generation_.md)
 - [\[ACL 2026\] FIGMA: Towards Fine-Grained Music Retrieval](figma_towards_fine-grained_music_retrieval.md)
+- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
 - [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
-- [\[ICML 2026\] MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks](../../ICML2026/audio_speech/mecat_a_multi-experts_constructed_benchmark_for_fine-grained_audio_understanding.md)
 
 </div>
 

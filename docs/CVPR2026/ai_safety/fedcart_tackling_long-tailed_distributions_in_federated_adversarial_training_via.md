@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedCART: Tackling Long-Tailed Distributions in Federated Adversarial Training via Classifier Refinement
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address the performance collapse of Federated Adversarial Training (FAT) under long-tailed data, FedCART decomposes the global model into a "shared feature extractor + dual classifiers." Clients utilize contrastive loss to align natural and adversarial features for robustness. The server synthesizes class-balanced v
+  [CVPR 2026][AI Safety][Federated Adversarial Training] To address the performance collapse of Federated Adversarial Training (FAT) under long-tailed data, FedCART decomposes the global model into a "shared feature extractor + dual classifiers." Clients utilize contrastive loss to align natural and adversarial features for robustness. The server synthesizes class-balanced virtual features using aggregated gradient prototypes and retrains an auxiliary classifier for de-biasing.…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Adversarial Training"
+  - "Long-Tailed Distribution"
+  - "Classifier Calibration"
+  - "Gradient Prototype"
+  - "Contrastive Feature Alignment"
 date: 2026-05-08
-content_hash: e2609c2eb1aee7b4
+content_hash: 697691c4859411f9
 ---
+
 # FedCART: Tackling Long-Tailed Distributions in Federated Adversarial Training via Classifier Refinement
 
 **Conference**: CVPR 2026  
@@ -159,11 +165,11 @@ Ablation on CIFAR10-LT (✓ indicates enabled) confirms that every component is 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fine-Tuning Impairs the Balancedness of Foundation Models in Long-tailed Personalized Federated Learning](fine-tuning_impairs_the_balancedness_of_foundation_models_in_long-tailed_persona.md)
 - [\[CVPR 2026\] Taming the Long Tail: Rebalancing Adversarial Training via Adaptive Perturbation](taming_the_long_tail_rebalancing_adversarial_training_via_adaptive_perturbation.md)
+- [\[ICLR 2026\] FaLW: A Forgetting-aware Loss Reweighting for Long-tailed Unlearning](../../ICLR2026/ai_safety/falw_a_forgetting-aware_loss_reweighting_for_long-tailed_unlearning.md)
 - [\[CVPR 2026\] Mitigating Error Amplification in Fast Adversarial Training](mitigating_error_amplification_in_fast_adversarial_training.md)
 - [\[ICML 2025\] Rethinking the Bias of Foundation Model under Long-tailed Distribution](../../ICML2025/ai_safety/rethinking_the_bias_of_foundation_model_under_long-tailed_distribution.md)
-- [\[CVPR 2026\] SafeLogo: Turning Your Logos into Jailbreak Shields via Micro-Regional Adversarial Training](safelogo_turning_your_logos_into_jailbreak_shields_via_micro-regional_adversaria.md)
+- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
 
 </div>
 

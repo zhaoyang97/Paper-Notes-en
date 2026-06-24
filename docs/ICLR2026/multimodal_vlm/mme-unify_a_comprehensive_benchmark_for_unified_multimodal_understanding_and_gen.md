@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models
 description: >-
-  [ICLR 2026][Multimodal VLM][benchmark] MME-Unify proposes a comprehensive evaluation benchmark for Unified Multimodal Large Language Models (U-MLLMs), placing understanding, generation, and hybrid tasks that require "understanding-then-generation" within a single reproducible scoring framework. The findings reveal that even the top-performing U-MLLMs achiev
+  [ICLR 2026][Multimodal VLM][Unified Multimodal Models] MME-Unify proposes a comprehensive evaluation benchmark for Unified Multimodal Large Language Models (U-MLLMs), placing understanding, generation, and hybrid tasks that require "understanding-then-generation" within a single reproducible scoring framework. The findings reveal that even the top-performing U-MLLMs achieve an overall score of only approximately 50, with significant weaknesses remaining in complex instruction…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - benchmark
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Unified Multimodal Models"
+  - "Multimodal Evaluation"
+  - "Interleaved Image-Text Generation"
+  - "Visual Reasoning"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: d762cf04452e8fa0
+content_hash: affd8a32d642f4ab
 ---
+
 # MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models
 
 **Conference**: ICLR 2026  
@@ -126,15 +131,16 @@ The evaluation analyzed the effectiveness of the design rather than architectura
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
-- [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
-- [\[ICLR 2026\] Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation](lavida-o_elastic_large_masked_diffusion_models_for_unified_multimodal_understand.md)
+- [\[ICLR 2026\] UniLIP: Revamping CLIP to Unify Multimodal Understanding, Generation, and Editing](unilip_adapting_clip_for_unified_multimodal_understanding_generation_and_editing.md)
 - [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
+- [\[ICLR 2026\] Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation](lavida-o_elastic_large_masked_diffusion_models_for_unified_multimodal_understand.md)
 - [\[ICLR 2026\] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models](mme-emotion_a_holistic_evaluation_benchmark_for_emotional_intelligence_in_multim.md)
+- [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
 
 </div>
 

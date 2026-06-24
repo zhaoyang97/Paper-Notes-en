@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FM-Steer: Enhance Generalist Policies with Value-Guided Cascaded Denoising
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Test-Time Compute] FM-Steer introduces a test-time computation framework for flow-matching (FM) VLA generalist policies. It employs an intermediate flow verifier to estimate Q-values for "semi-denoised" candidate actions and selects the optimal one via Best-of-N. Subsequently, a lightweight Lite-Flow denoiser asynchronously completes the
+  [CVPR 2026][Robotics][Test-time computation] FM-Steer introduces a test-time computation framework for flow-matching (FM) VLA generalist policies. It employs an intermediate flow verifier to estimate Q-values for "semi-denoised" candidate actions and selects the optimal one via Best-of-N. Subsequently, a lightweight Lite-Flow denoiser asynchronously completes the remaining denoising steps. This approach enhances π0 performance by +4.4%, +25.9%, and +12.9% on LIBERO, Simpler…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Test-Time Compute
+  - "CVPR 2026"
+  - "Robotics"
+  - "Test-time computation"
+  - "flow-matching VLA"
+  - "value-guided sampling"
+  - "cascaded denoising"
+  - "robotic manipulation"
 date: 2026-05-08
-content_hash: 649fba57edc223d4
+content_hash: d38001d593c007b5
 ---
+
 # FM-Steer: Enhance Generalist Policies with Value-Guided Cascaded Denoising
 
 **Conference**: CVPR 2026  
@@ -137,8 +142,8 @@ FM-Steer(π0) achieves the highest average SR (98.6%), outperforming the base π
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -146,7 +151,7 @@ FM-Steer(π0) achieves the highest average SR (98.6%), outperforming the base π
 - [\[ICLR 2026\] Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow](../../ICLR2026/robotics/scalable_exploration_for_high-dimensional_continuous_control_via_value-guided_fl.md)
 - [\[CVPR 2026\] OctoNav: Towards Generalist Embodied Navigation](octonav_towards_generalist_embodied_navigation.md)
 - [\[CVPR 2026\] InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](interndata-a1_pioneering_high-fidelity_synthetic_data_for_pre-training_generalis.md)
-- [\[CVPR 2026\] FloVerse: Floor Plan-Guided Multi-Modal Navigation](floverse_floor_plan-guided_multi-modal_navigation.md)
+- [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](reach_explicit_recovery_behavior_for_diffusion_policies.md)
 
 </div>
 

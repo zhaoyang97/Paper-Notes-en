@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Guiding Diffusion Models with Semantically Degraded Conditions
 description: >-
-  [CVPR 2026][Image Generation][Classifier-Free Guidance] Condition-Degradation Guidance (CDG) is proposed to replace the null prompt $\emptyset$ in CFG with a semantically degraded condition $\boldsymbol{c}_{\text{deg}}$. This shifts the guidance from a coarse "good vs. empty" contrast to a fine-grained "good vs. slightly worse" comparison. By employing a hierarchical degrad
+  [CVPR2026][Image Generation][Classifier-Free Guidance] Condition-Degradation Guidance (CDG) is proposed to replace the null prompt $\emptyset$ in CFG with a semantically degraded condition $\boldsymbol{c}_{\text{deg}}$. This shifts the guidance from a coarse "good vs. empty" contrast to a fine-grained "good vs. slightly worse" comparison. By employing a hierarchical degradation strategy (degrading content tokens followed by context-aggregating tokens) to construct adaptive ne…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Classifier-Free Guidance
-  - Text-to-Image
-  - Diffusion Model
+  - "CVPR2026"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "Semantically Degraded Guidance"
+  - "Text-to-Image"
+  - "Diffusion Models"
+  - "Compositional Generation"
 date: 2026-05-08
-content_hash: b81fc77e2a1160b8
+content_hash: 52e2ae2312553530
 ---
+
 # Guiding Diffusion Models with Semantically Degraded Conditions
 
 **Conference**: CVPR2026  
@@ -154,10 +157,10 @@ CDG shows the most significant gains in Differentiation (+3.64) and Comparison (
 
 ## Related Papers
 
-- [\[CVPR 2026\] Exploring Conditions for Diffusion Models in Robotic Control](exploring_conditions_for_diffusion_models_in_robotic_control.md)
-- [\[CVPR 2026\] Guiding Diffusion Models with Fine-Grained Conditions and Semantics-Preserving Sampling for One-Shot Federated Learning](guiding_diffusion_models_with_fine-grained_conditions_and_semantics-preserving_s.md)
 - [\[CVPR 2026\] Guiding Token-Sparse Diffusion Models](guiding_token-sparse_diffusion_models.md)
-- [\[CVPR 2026\] Anchoring and Rescaling Attention for Semantically Coherent Inbetweening](anchoring_and_rescaling_attention_for_semantically_coherent_inbetweening.md)
+- [\[CVPR 2026\] Guiding Diffusion Models with Fine-Grained Conditions and Semantics-Preserving Sampling for One-Shot Federated Learning](guiding_diffusion_models_with_fine-grained_conditions_and_semantics-preserving_s.md)
+- [\[CVPR 2026\] Exploring Conditions for Diffusion Models in Robotic Control](exploring_conditions_for_diffusion_models_in_robotic_control.md)
+- [\[CVPR 2026\] GenErase: Generalizable and Semantically-Aware Concept Erasure in Diffusion Models](generase_generalizable_and_semantically-aware_concept_erasure_in_diffusion_model.md)
 - [\[CVPR 2026\] Guiding a Diffusion Transformer with the Internal Dynamics of Itself](guiding_a_diffusion_transformer_with_the_internal_dynamics_of_itself.md)
 
 </div>

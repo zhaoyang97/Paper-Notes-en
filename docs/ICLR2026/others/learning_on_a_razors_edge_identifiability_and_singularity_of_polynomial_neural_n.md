@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper utilizes algebraic geometry tools to systematically analyze MLPs and CNNs with polynomial activations: it proves the finite identifiability of MLPs and the unique identifiability of CNNs, reveals that sparse subnetworks correspond to singularities on the neuromanifold, and provides a geometric explanation fo
+  [ICLR 2026][Identifiability] This paper utilizes algebraic geometry tools to systematically analyze MLPs and CNNs with polynomial activations: it proves the finite identifiability of MLPs and the unique identifiability of CNNs, reveals that sparse subnetworks correspond to singularities on the neuromanifold, and provides a geometric explanation for the sparse bias in MLPs through the lens of "critical exposure"—a property that CNNs do not possess.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Identifiability"
+  - "Neuromanifold Singularity"
+  - "Polynomial Neural Networks"
+  - "Sparse Bias"
+  - "Algebraic Geometry"
 date: 2026-05-08
-content_hash: 26a854a0d690af07
+content_hash: 05a52ef5482f6ebd
 ---
+
 # Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks
 
 **Conference**: ICLR 2026  
@@ -145,7 +150,7 @@ As this is a purely theoretical paper, there are no large-scale experiments. How
 - [\[ICLR 2026\] Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)
 - [\[ICLR 2026\] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks](online_pseudo-zeroth-order_training_of_neuromorphic_spiking_neural_networks.md)
 - [\[ICLR 2026\] A Brain-Inspired Gating Mechanism Unlocks Robust Computation in Spiking Neural Networks](a_brain-inspired_gating_mechanism_unlocks_robust_computation_in_spiking_neural_n.md)
-- [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](../../ICML2026/others/on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
+- [\[ICLR 2026\] A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction](a_scalable_inter-edge_correlation_modeling_in_copulagnn_for_link_sign_prediction.md)
 
 </div>
 

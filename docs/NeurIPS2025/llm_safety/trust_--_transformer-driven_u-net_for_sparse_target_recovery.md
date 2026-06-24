@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TRUST -- Transformer-Driven U-Net for Sparse Target Recovery
 description: >-
-  [NeurIPS 2025][LLM Safety][Sparse Recovery] This paper proposes the TRUST architecture, which integrates the Transformer attention mechanism with a U-Net decoder to jointly learn the sensing operator and reconstruct spar…
+  [NeurIPS 2025][LLM Safety][Sparse Recovery] This paper proposes the TRUST architecture, which integrates the Transformer attention mechanism with a U-Net decoder to jointly learn the sensing operator and reconstruct sparse signals under unknown sensing matrices, achieving significant improvements over conventional methods in SSIM and PSNR.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Inverse Problems"
   - "Sensing Matrix Learning"
 date: 2026-05-08
-content_hash: 1f21e7c94f9ff403
+content_hash: b3eb39e0d4ccdc4e
 ---
 
 # TRUST -- Transformer-Driven U-Net for Sparse Target Recovery
@@ -150,10 +150,10 @@ The three terms correspond to reconstruction error, sparsity regularization, and
 ## Related Papers
 
 - [\[NeurIPS 2025\] SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders](saemark_steering_personalized_multilingual_llm_watermarks_with_sparse_autoencode.md)
-- [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](../../ICML2026/llm_safety/gradient_transformer_learning_to_generate_updates_for_llms.md)
+- [\[ICML 2025\] Sorbet: A Neuromorphic Hardware-Compatible Transformer-Based Spiking Language Model](../../ICML2025/llm_safety/sorbet_a_neuromorphic_hardware-compatible_transformer-based_spiking_language_mod.md)
 - [\[AAAI 2026\] Ghost in the Transformer: Detecting Model Reuse with Invariant Spectral Signatures](../../AAAI2026/llm_safety/ghost_in_the_transformer_detecting_model_reuse_with_invariant_spectral_signature.md)
-- [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](../../ICLR2026/llm_safety/ofmu_optimization-driven_framework_for_machine_unlearning.md)
-- [\[ICCV 2025\] SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders](../../ICCV2025/llm_safety/sauce_selective_concept_unlearning_in_vision-language_models_with_sparse_autoenc.md)
+- [\[ACL 2025\] Faithful and Robust LLM-Driven Theorem Proving for NLI Explanations](../../ACL2025/llm_safety/faithful_and_robust_llm-driven_theorem_proving_for_nli_explanations.md)
+- [\[ICML 2025\] SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability](../../ICML2025/llm_safety/saebench_a_comprehensive_benchmark_for_sparse_autoencoders_in_language_model_int.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data
 description: >-
-  [ICLR 2026][Time Series][Transformer] The paper proposes the Relational Transformer (RT) architecture. Through task table prompting, cell tokenization, and Relational Attention mechanisms, the model can be pre-trained on multiple relational databases and transferred zero-shot to unseen datasets and tasks. A 22M parameter model achieves a zero-shot AUROC of
+  [ICLR 2026][Time Series][Relational Databases] The paper proposes the Relational Transformer (RT) architecture. Through task table prompting, cell tokenization, and Relational Attention mechanisms, the model can be pre-trained on multiple relational databases and transferred zero-shot to unseen datasets and tasks. A 22M parameter model achieves a zero-shot AUROC of 93% compared to fully supervised methods, significantly outperforming a 27B LLM (84%).
 tags:
-  - ICLR 2026
-  - Time Series
-  - Transformer
+  - "ICLR 2026"
+  - "Time Series"
+  - "Relational Databases"
+  - "Zero-Shot Learning"
+  - "Transformer"
+  - "Foundation Models"
+  - "Relational Attention"
 date: 2026-05-08
-content_hash: b5e2ff74d7459746
+content_hash: 86084a7ad8b9cf8c
 ---
+
 # Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data
 
 **Conference**: ICLR 2026  
@@ -125,8 +130,8 @@ The process involves three stages: joint **Pre-training** on multiple RelBench d
 - [\[ICLR 2026\] Zero-shot Forecasting by Simulation Alone](zero-shot_forecasting_by_simulation_alone.md)
 - [\[ICLR 2026\] Relational Feature Caching for Accelerating Diffusion Transformers](relational_feature_caching_for_accelerating_diffusion_transformers.md)
 - [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
-- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 - [\[ICLR 2026\] GARLIC: Graph Attention-based Relational Learning of Multivariate Time Series in Intensive Care](garlic_graph_attention-based_relational_learning_of_multivariate_time_series_in_.md)
+- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 
 </div>
 

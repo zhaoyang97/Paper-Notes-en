@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ContextBench: Modifying Contexts for Targeted Latent Activation and Behaviour Elicitation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper formalises the task of "automatically generating fluent, natural inputs that precisely trigger specific internal features or behaviours of a model" as **context modification**. It proposes **ContextBench**, a benchmark containing 715 tasks across three categories (SAE activation, story inpainting, and backdo
+  [ICLR 2026][Image Generation][Context Modification] This paper formalises the task of "automatically generating fluent, natural inputs that precisely trigger specific internal features or behaviours of a model" as **context modification**. It proposes **ContextBench**, a benchmark containing 715 tasks across three categories (SAE activation, story inpainting, and backdoor trigger recovery). Based on the white-box method EPO, it introduces two improvements—LLM-assisted mutatio…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Context Modification"
+  - "SAE Latents"
+  - "Behaviour Elicitation"
+  - "Prompt Optimisation"
+  - "Fluency-Activation Trade-off"
 date: 2026-05-08
-content_hash: f83442832f010291
+content_hash: 321486dbc73e0240
 ---
+
 # ContextBench: Modifying Contexts for Targeted Latent Activation and Behaviour Elicitation
 
 **Conference**: ICLR 2026  
@@ -119,10 +125,20 @@ Baselines include white-box GCG (strength only), standard EPO (state-of-the-art 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)
+- [\[AAAI 2026\] Targeted Data Protection for Diffusion Model by Matching Training Trajectory](../../AAAI2026/image_generation/targeted_data_protection_for_diffusion_model_by_matching_training_trajectory.md)
+- [\[ICLR 2026\] Latent Stochastic Interpolants](latent_stochastic_interpolants.md)
+- [\[ICLR 2026\] Latent Denoising Makes Good Tokenizers](latent_denoising_makes_good_tokenizers.md)
+- [\[ICCV 2025\] Penalizing Boundary Activation for Object Completeness in Diffusion Models](../../ICCV2025/image_generation/penalizing_boundary_activation_for_object_completeness_in_diffusion_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)

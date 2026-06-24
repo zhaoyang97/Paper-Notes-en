@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] MCIF: Multimodal Crosslingual Instruction-Following Benchmark from Scientific Talks
 description: >-
-  [ICLR 2026][Multimodal VLM][Speech] MCIF is the first human-annotated crosslingual multimodal instruction-following benchmark that covers three modalities (speech/video/text), four languages (EN/DE/IT/ZH), and both long/short contexts, with full parallel alignment across all dimensions. Derived from ACL scientific talk videos, evaluations of 23 mainstrea
+  [ICLR 2026][Multimodal VLM][Multimodal LLM] MCIF is the first human-annotated crosslingual multimodal instruction-following benchmark that covers three modalities (speech/video/text), four languages (EN/DE/IT/ZH), and both long/short contexts, with full parallel alignment across all dimensions. Derived from ACL scientific talk videos, evaluations of 23 mainstream models reveal significant gaps in current MLLMs regarding long-context summarization…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Speech
-  - benchmark
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal LLM"
+  - "Crosslingual"
+  - "Instruction Following"
+  - "Speech"
+  - "Video"
+  - "Benchmark"
+  - "Long Context"
 date: 2026-05-08
-content_hash: 22d5416b15155915
+content_hash: 0b30cabb5f0700b2
 ---
+
 # MCIF: Multimodal Crosslingual Instruction-Following Benchmark from Scientific Talks
 
 **Conference**: ICLR 2026  
@@ -113,8 +119,8 @@ graph LR
 - [\[ACL 2025\] CrafText Benchmark: Advancing Instruction Following in Complex Multimodal Open-Ended World](../../ACL2025/multimodal_vlm/craftext_benchmark_advancing_instruction_following_in_complex_multimodal_open-en.md)
 - [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](../../ICCV2025/multimodal_vlm/mm-ifengine_towards_multimodal_instruction_following.md)
 - [\[CVPR 2026\] ARGUS: Defending Against Multimodal Indirect Prompt Injection via Steering Instruction-Following Behavior](../../CVPR2026/multimodal_vlm/argus_defending_against_multimodal_indirect_prompt_injection_via_steering_instru.md)
-- [\[ICLR 2026\] PCLR: Progressively Compressed LoRA for Multimodal Continual Instruction Tuning](pclr_progressively_compressed_lora_for_multimodal_continual_instruction_tuning.md)
-- [\[CVPR 2026\] Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following](../../CVPR2026/multimodal_vlm/multi-crit_benchmarking_multimodal_judges_on_pluralistic_criteria-following.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
+- [\[ECCV 2024\] Efficient Inference of Vision Instruction-Following Models with Elastic Cache](../../ECCV2024/multimodal_vlm/efficient_inference_of_vision_instruction-following_models_with_elastic_cache.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes BIT, an end-to-end brain-computer interface (BCI) that translates cortical neural activity directly into full sentences. It utilizes a Transformer neural encoder pre-trained via cross-species (human + monkey) and cross-task self-supervised masked modeling. This encoder is then fine-tuned with contra
+  [ICLR 2026][Computational Biology][Speech BCI] This paper proposes BIT, an end-to-end brain-computer interface (BCI) that translates cortical neural activity directly into full sentences. It utilizes a Transformer neural encoder pre-trained via cross-species (human + monkey) and cross-task self-supervised masked modeling. This encoder is then fine-tuned with contrastive alignment to an Audio LLM, reducing the Word Error Rate (WER) of previous end-to-end methods from 24.69% to…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Speech BCI"
+  - "Neural Foundation Model"
+  - "Cross-species Pre-training"
+  - "End-to-End Decoding"
+  - "Audio LLM"
 date: 2026-05-08
-content_hash: e029c6422d402e4b
+content_hash: a2e42e12697d8559
 ---
+
 # A Cross-Species Neural Foundation Model for End-to-End Speech Decoding
 
 **Conference**: ICLR 2026  

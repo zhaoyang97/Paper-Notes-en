@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] HEIST: A Graph Foundation Model for Spatial Transcriptomics and Proteomics Data
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] HEIST models tissue as a two-layer hierarchical graph consisting of a "spatial cell graph + intracellular gene co-expression networks." Through cross-level directed attention, gene representations are modulated by the spatial microenvironment while cell representations are shaped by internal transcriptional states. Thi
+  [ICLR 2026][Computational Biology][Spatial transcriptomics] HEIST models tissue as a two-layer hierarchical graph consisting of a "spatial cell graph + intracellular gene co-expression networks." Through cross-level directed attention, gene representations are modulated by the spatial microenvironment while cell representations are shaped by internal transcriptional states. This approach overcomes fixed gene vocabularies, enables zero-shot migration to proteomics…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Spatial transcriptomics"
+  - "spatial proteomics"
+  - "hierarchical graph Transformer"
+  - "gene co-expression network"
+  - "cross-level message passing"
+  - "self-supervised pre-training"
 date: 2026-05-08
-content_hash: 6f234cc733a43da7
+content_hash: fdcdefb2e068a0c1
 ---
+
 # HEIST: A Graph Foundation Model for Spatial Transcriptomics and Proteomics Data
 
 **Conference**: ICLR 2026  
@@ -139,8 +146,8 @@ Cell Type Annotation (F1): HEIST was best in four out of five datasets, with sig
 
 - [\[ICML 2025\] SToFM: a Multi-scale Foundation Model for Spatial Transcriptomics](../../ICML2025/computational_biology/stofm_a_multi-scale_foundation_model_for_spatial_transcriptomics.md)
 - [\[ICLR 2026\] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation](protdyn_a_foundation_protein_language_model_for_thermodynamics_and_dynamics_gene.md)
+- [\[ICLR 2026\] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding](a_cross-species_neural_foundation_model_for_end-to-end_speech_decoding.md)
 - [\[ICLR 2026\] A Foundation Model with Multi-Variate Parallel Attention to Generate Neuronal Activity](a_foundation_model_with_multi-variate_parallel_attention_to_generate_neuronal_ac.md)
-- [\[ICLR 2026\] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction](towards_all-atom_foundation_models_for_biomolecular_binding_affinity_prediction.md)
 - [\[CVPR 2026\] FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics](../../CVPR2026/computational_biology/feast_fully_connected_expressive_attention_for_spatial_transcriptomics.md)
 
 </div>

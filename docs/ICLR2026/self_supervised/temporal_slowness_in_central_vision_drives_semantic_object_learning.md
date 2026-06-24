@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Temporal Slowness in Central Vision Drives Semantic Object Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][central vision] By simulating human central vision (fixation-based cropping) and the temporal slowness principle (temporal contrastive learning), this work trains an SSL model on Ego4D data. The findings suggest that the combination of these two effectively enhances semantic object representations—central vision strengthens foreground
+  [ICLR2026][Self-Supervised Learning][central vision] By simulating human central vision (fixation-based cropping) and the temporal slowness principle (temporal contrastive learning), this work trains an SSL model on Ego4D data. The findings suggest that the combination of these two effectively enhances semantic object representations—central vision strengthens foreground extraction, while temporal slowness distills semantic information during fixations.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - central vision
-  - temporal slowness
-  - Ego4D
-  - semantic representation
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "central vision"
+  - "temporal slowness"
+  - "Ego4D"
+  - "semantic representation"
 date: 2026-05-08
-content_hash: 4739ef079d9aaa54
+content_hash: f5d9fcdac7c0fc93
 ---
+
 # Temporal Slowness in Central Vision Drives Semantic Object Learning
 
 **Conference**: ICLR2026  

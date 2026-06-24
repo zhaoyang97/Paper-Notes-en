@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Teaching Metric Distance to Discrete Autoregressive Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][DIST2Loss] This paper proposes DIST2Loss, which transforms metric distances between tokens—such as numerical values, coordinates, angles, and VQ codes—into distance-weighted soft target distributions. This allows discrete autoregressive language models to learn structural priors that "near misses are better than far misses" while
+  [ICLR 2026][LLM (Other)][distance-aware supervision] This paper proposes DIST2Loss, which transforms metric distances between tokens—such as numerical values, coordinates, angles, and VQ codes—into distance-weighted soft target distributions. This allows discrete autoregressive language models to learn structural priors that "near misses are better than far misses" while maintaining the next-token training format, improving data efficiency and downstream performance in visual…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - DIST2Loss
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "distance-aware supervision"
+  - "discrete autoregressive models"
+  - "soft target distribution"
+  - "metric space"
+  - "DIST2Loss"
 date: 2026-05-08
-content_hash: 1619ad56385d71e8
+content_hash: 2590299e2369aa2d
 ---
+
 # Teaching Metric Distance to Discrete Autoregressive Language Models
 
 **Conference**: ICLR 2026  
@@ -180,11 +185,20 @@ Reward modeling is a noteworthy cross-domain validation. The model generates ove
 - Value: ⭐⭐⭐⭐⭐ A low-intrusion, highly transferable objective with direct utility for any task involving tokenized continuous or ordered data.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] Language-Codec: Bridging Discrete Codec Representations and Speech Language Models](../../ACL2025/llm_nlp/language_codec_bridging_discrete_codec_speech_language_models.md)
+- [\[ACL 2025\] Comparing Linguistic Acceptability Judgments of Autoregressive Language Models](../../ACL2025/llm_nlp/comparing_linguistic_acceptability_judgments_of_autoregressive_language_models.md)
+- [\[ACL 2025\] Analyzing and Mitigating Inconsistency in Discrete Speech Tokens for Neural Codec Language Models](../../ACL2025/llm_nlp/analyzing_and_mitigating_inconsistency_in_discrete_speech_tokens_for_neural_code.md)
+- [\[ACL 2025\] Detecting Referring Expressions in Visually Grounded Dialogue with Autoregressive Language Models](../../ACL2025/llm_nlp/detecting_referring_expressions_in_visually_grounded_dialogue_with_autoregressiv.md)
+- [\[ICML 2025\] Generalized Interpolating Discrete Diffusion](../../ICML2025/llm_nlp/generalized_interpolating_discrete_diffusion.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] Comparing Linguistic Acceptability Judgments of Autoregressive Language Models](../../ACL2025/llm_nlp/comparing_linguistic_acceptability_judgments_of_autoregressive_language_models.md)

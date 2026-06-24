@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Label Noise Suppression with Optimal Teacher Pool for Facial Expression Recognition
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] To address the prevalent label noise in Facial Expression Recognition (FER) datasets, this paper proposes the OTP-NS framework. It replaces a single EMA teacher with an "Optimal Teacher Pool" to break parameter coupling and noise accumulation between the teacher and student. Additionally, two sample-level denoising com
+  [CVPR 2026][Human Understanding][Facial Expression Recognition] To address the prevalent label noise in Facial Expression Recognition (FER) datasets, this paper proposes the OTP-NS framework. It replaces a single EMA teacher with an "Optimal Teacher Pool" to break parameter coupling and noise accumulation between the teacher and student. Additionally, two sample-level denoising components, Similarity-Aware Label Smoothing (SALS) and Centroid Confidence Weighting (CWL)…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Facial Expression Recognition"
+  - "Learning with Noisy Labels"
+  - "Teacher-Student Network"
+  - "Label Smoothing"
+  - "Confidence Weighting"
 date: 2026-05-08
-content_hash: e3eec1c2ecadd2fa
+content_hash: 2eb412bbe5a52734
 ---
+
 # Dynamic Label Noise Suppression with Optimal Teacher Pool for Facial Expression Recognition
 
 **Conference**: CVPR 2026  
@@ -157,10 +163,10 @@ OTP internal components (RAF-DB, 30% symmetric noise):
 ## Related Papers
 
 - [\[CVPR 2026\] CLEX: Complementary Label Exchange Learning for Noisy Facial Expression Recognition](clex_complementary_label_exchange_learning_for_noisy_facial_expression_recogniti.md)
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
 - [\[CVPR 2026\] D³FER: Dual Channel and Dual Branch Network for Robust Facial Expression Recognition under Dual Challenges](d3fer_dual_channel_and_dual_branch_network_for_robust_facial_expression_recognit.md)
 - [\[ECCV 2024\] Generalizable Facial Expression Recognition](../../ECCV2024/human_understanding/generalizable_facial_expression_recognition.md)
 - [\[CVPR 2026\] Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)
+- [\[ICCV 2025\] SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data](../../ICCV2025/human_understanding/synfer_towards_boosting_facial_expression_recognition_with_synthetic_data.md)
 
 </div>
 

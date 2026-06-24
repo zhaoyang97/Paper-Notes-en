@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Ghost in the Transformer: Detecting Model Reuse with Invariant Spectral Signatures
 description: >-
-  [LLM Safety] This paper proposes GhostSpec, a data-free, white-box method that does not modify model behavior. It extracts spectral fingerprints by applying SVD to invariant matrix products of attention weight matrices…
+  [LLM Safety] This paper proposes GhostSpec, a data-free, white-box method that does not modify model behavior. It extracts spectral fingerprints by applying SVD to invariant matrix products of attention weight matrices, enabling robust verification of LLM lineage under fine-tuning, pruning, merging, expansion, and even adversarial transformations.
 tags:
   - "LLM Safety"
 date: 2026-05-08
-content_hash: 35f402da980573a0
+content_hash: d6196211f30e5300
 ---
 
 # Ghost in the Transformer: Detecting Model Reuse with Invariant Spectral Signatures
@@ -157,10 +157,10 @@ The problem is important and practically relevant; the method offers mathematica
 ## Related Papers
 
 - [\[AAAI 2026\] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models](multi-faceted_attack_exposing_cross-model_vulnerabilities_in_defense-equipped_vi.md)
+- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](../../ICLR2026/llm_safety/invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
 - [\[ICLR 2026\] Unlearning Evaluation through Subset Statistical Independence](../../ICLR2026/llm_safety/unlearning_evaluation_through_subset_statistical_independence.md)
-- [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](../../ICML2026/llm_safety/gradient_transformer_learning_to_generate_updates_for_llms.md)
-- [\[ACL 2026\] Gap-K%: Measuring Top-1 Prediction Gap for Detecting Pretraining Data](../../ACL2026/llm_safety/gap-k_measuring_top-1_prediction_gap_for_detecting_pretraining_data.md)
-- [\[ACL 2026\] Detecting RAG Extraction Attack via Dual-Path Runtime Integrity Game](../../ACL2026/llm_safety/detecting_rag_extraction_attack_via_dual-path_runtime_integrity_game.md)
+- [\[ICLR 2026\] Jailbreak Transferability Emerges from Shared Representations](../../ICLR2026/llm_safety/jailbreak_transferability_emerges_from_shared_representations.md)
+- [\[ICLR 2026\] GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance](../../ICLR2026/llm_safety/genebreaker_jailbreak_attacks_against_dna_language_models_with_pathogenicity_gui.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] The authors propose CES (Coordinator-Executor-State Tracker), a multi-agent framework and phased execution-feedback reinforcement learning algorithm. By decoupling high-level task planning from low-level execution through specialized training of the Coordinator and State Tracker, the framework significantly enhances th
+  [CVPR2026][Multimodal VLM][GUI Automation] The authors propose CES (Coordinator-Executor-State Tracker), a multi-agent framework and phased execution-feedback reinforcement learning algorithm. By decoupling high-level task planning from low-level execution through specialized training of the Coordinator and State Tracker, the framework significantly enhances the planning and state management capabilities of GUI agents in long-horizon tasks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "GUI Automation"
+  - "Long-Horizon Tasks"
+  - "Multi-Agent Framework"
+  - "Reinforcement Learning"
+  - "State Tracking"
+  - "Task Scheduling"
 date: 2026-05-08
-content_hash: ce6c5ee436a586ca
+content_hash: aa96f91c66cb39da
 ---
+
 # Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation
 
 **Conference**: CVPR2026  
@@ -149,10 +155,10 @@ Removing any component or RL stage leads to significant performance drops, valid
 ## Related Papers
 
 - [\[CVPR 2026\] GUI-SAGE: Enhancing GUI Automation with Self-Explanatory Learning](gui-sage_enhancing_gui_automation_with_self-explanatory_learning.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/multimodal_vlm/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
+- [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
 - [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
-- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
 - [\[CVPR 2026\] Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration](explore_with_long-term_memory_a_benchmark_and_multimodal_llm-based_reinforcement.md)
+- [\[ICLR 2026\] GuirlVG: Incentivize GUI Visual Grounding via Empirical Exploration on Reinforcement Learning](../../ICLR2026/multimodal_vlm/guirlvg_incentivize_gui_visual_grounding_via_empirical_exploration_on_reinforcem.md)
 
 </div>
 

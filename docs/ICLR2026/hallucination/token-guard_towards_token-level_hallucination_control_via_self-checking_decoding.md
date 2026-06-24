@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Token-Guard: Towards Token-Level Hallucination Control via Self-Checking Decoding
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] Ours proposes Token-Guard, a token-level hallucination control method based on self-checking decoding. Through token-level/segment-level scoring in latent space and an iterative refinement mechanism, it detects and suppresses hallucination generation during the decoding process, achieving an average F1 improvement of 1
+  [ICLR 2026][Hallucination Detection][LLM Hallucination Control] Ours proposes Token-Guard, a token-level hallucination control method based on self-checking decoding. Through token-level/segment-level scoring in latent space and an iterative refinement mechanism, it detects and suppresses hallucination generation during the decoding process, achieving an average F1 improvement of 16.3%.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "LLM Hallucination Control"
+  - "Token-level Decoding"
+  - "Self-Checking"
+  - "Segment-level Scoring"
+  - "Iterative Refinement"
 date: 2026-05-08
-content_hash: 37191f9adc00e08e
+content_hash: 9569e882c64f6618
 ---
+
 # Token-Guard: Towards Token-Level Hallucination Control via Self-Checking Decoding
 
 **Conference**: ICLR 2026  

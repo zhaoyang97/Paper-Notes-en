@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Addressing the lack of long-tail data in autonomous driving, this paper utilizes 4DGS to inverse-render real AV logs into "dashcam-style" videos to **self-generate paired data**. A conditional diffusion model is then trained to convert monocular dashcam videos into the complete multi-view camera + LiDAR sensor suite of
+  [CVPR 2026][Autonomous Driving][Cross-embodiment sensor conversion] Addressing the lack of long-tail data in autonomous driving, this paper utilizes 4DGS to inverse-render real AV logs into "dashcam-style" videos to **self-generate paired data**. A conditional diffusion model is then trained to convert monocular dashcam videos into the complete multi-view camera + LiDAR sensor suite of a target vehicle. It achieves an FID of 6.47 and reduces the Chamfer distance by 13.4% comp…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Cross-embodiment sensor conversion"
+  - "4D Gaussian Splatting"
+  - "Multi-modal diffusion"
+  - "LiDAR generation"
+  - "Dashcam"
 date: 2026-05-08
-content_hash: ba41be5d22a20008
+content_hash: 0f5f3827886559e7
 ---
+
 # Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -118,14 +124,20 @@ Metrics include FID↓/FVD↓ for realism and PSNR↑/SSIM↑/LPIPS↓ for paire
 -   Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **GAIA-1**: Generative AI for Autonomy (Wayve)
-- **X-Drive**: Cross-modality sensor generation for autonomous driving
-- **DriveDreamer**: A world model for autonomous driving
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
+- [\[ICML 2026\] RoCA: Robust Cross-Domain End-to-End Autonomous Driving](../../ICML2026/autonomous_driving/roca_robust_cross-domain_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] x2-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space](x2-fusion_cross-modality_and_cross-dimension_flow_estimation_in_event_edge_space.md)
+- [\[CVPR 2026\] Spatial Retrieval Augmented Autonomous Driving](spatial_retrieval_augmented_autonomous_driving.md)
+- [\[CVPR 2026\] SpaceDrive: Infusing Spatial Awareness into VLM-based Autonomous Driving](spacedrive_infusing_spatial_awareness_into_vlm-based_autonomous_driving.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)

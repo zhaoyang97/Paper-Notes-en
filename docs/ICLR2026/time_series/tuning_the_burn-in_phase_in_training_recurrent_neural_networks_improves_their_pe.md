@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tuning the burn-in phase in training recurrent neural networks improves their performance
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This work provides a theoretical proof of the critical impact of burn-in phase length $m$ on Truncated Backpropagation Through Time (TBPTT) performance in RNN training. It establishes upper bound estimates for training regret and validates through system identification and time series prediction experiments that proper
+  [ICLR 2026][Time Series][Recurrent Neural Networks] This work provides a theoretical proof of the critical impact of burn-in phase length $m$ on Truncated Backpropagation Through Time (TBPTT) performance in RNN training. It establishes upper bound estimates for training regret and validates through system identification and time series prediction experiments that proper tuning of the burn-in phase can reduce prediction error by over 60%.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Recurrent Neural Networks"
+  - "Truncated Backpropagation"
+  - "Burn-in Phase"
+  - "Time Series Prediction"
+  - "System Identification"
 date: 2026-05-08
-content_hash: 2e3423dab830157d
+content_hash: c6bef442585caec7
 ---
+
 # Tuning the burn-in phase in training recurrent neural networks improves their performance
 
 **Conference**: ICLR 2026  
@@ -112,10 +118,10 @@ Solid theory, sufficient experimentation, and strong practicality. It elevates a
 ## Related Papers
 
 - [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](weight-space_linear_recurrent_neural_networks.md)
+- [\[ICLR 2026\] SuperMAN: Interpretable and Expressive Networks over Temporally Sparse Heterogeneous Data](superman_interpretable_and_expressive_networks_over_temporally_sparse_heterogene.md)
+- [\[ICLR 2026\] DeNOTS: Stable Deep Neural ODEs for Time Series](denots_stable_deep_neural_odes_for_time_series.md)
 - [\[ICLR 2026\] Quadratic Direct Forecast for Training Multi-Step Time-Series Forecast Models](quadratic_direct_forecast_for_training_multi-step_time-series_forecast_models.md)
 - [\[CVPR 2026\] Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks](../../CVPR2026/time_series/stable_spike_dual_consistency_optimization_via_bitwise_and_operations_for_spikin.md)
-- [\[AAAI 2026\] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports](../../AAAI2026/time_series/urban_incident_prediction_with_graph_neural_networks_integrating_government_rati.md)
-- [\[ICLR 2026\] Online Time Series Prediction Using Feature Adjustment](online_time_series_prediction_using_feature_adjustment.md)
 
 </div>
 

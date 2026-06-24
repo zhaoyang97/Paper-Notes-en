@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering
 description: >-
-  [AAAI2026][Medical NLP][RAG] This paper constructs EMSQA, the first multiple-choice QA dataset for the emergency medical services domain (24.3K questions, 10 clinical topics, 4 certification levels)…
+  [AAAI2026][Medical LLM][RAG] This paper constructs EMSQA, the first multiple-choice QA dataset for the emergency medical services domain (24.3K questions, 10 clinical topics, 4 certification levels), and proposes the Expert-CoT and ExpertRAG frameworks to inject domain expertise into LLM reasoning and retrieval, achieving up to 4.59% accuracy improvement over standard RAG.
 tags:
   - "AAAI2026"
-  - "Medical NLP"
+  - "Medical LLM"
   - "RAG"
   - "chain-of-thought"
   - "EMS"
   - "domain expertise"
   - "MCQA"
 date: 2026-05-08
-content_hash: 6e4a8a6c03787cf1
+content_hash: 449fe587e8ecc48a
 ---
 
 # Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering
@@ -130,11 +130,11 @@ The Filter classifier uses AdamW optimizer (weight decay 0.01) with LoRA paramet
 
 ## Related Papers
 
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](../../ICLR2026/medical_nlp/counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
 - [\[ACL 2026\] HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks](../../ACL2026/medical_nlp/heterorag_a_heterogeneous_retrieval-augmented_generation_framework_for_medical_v.md)
+- [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](../../ICLR2026/medical_nlp/medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
+- [\[ACL 2025\] Towards Omni-RAG: Comprehensive Retrieval-Augmented Generation for Large Language Models in Medical Applications](../../ACL2025/medical_nlp/omni_rag_medical.md)
 - [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](../../ACL2026/medical_nlp/sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
-- [\[ACL 2026\] Query Pipeline Optimization for Cancer Patient Question Answering Systems](../../ACL2026/medical_nlp/query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)
-- [\[ACL 2026\] HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering](../../ACL2026/medical_nlp/hypehr_hyperbolic_modeling_of_electronic_health_records_for_efficient_question_a.md)
-- [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](../../ACL2026/medical_nlp/ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual Distillation for Few-Shot Anomaly Detection
 description: >-
-  [ICLR 2026][Object Detection][Paper Note] Proposed D24FAD, a dual-distillation framework combining Teacher-Student Distillation (TSD) on query images and Student Self-Distillation (SSD) on support images, supplemented by a Learn-to-Weight (L2W) mechanism for adaptive support evaluation. It achieves 100% AUROC using 2-shot on the APTOS fundus dataset.
+  [ICLR 2026][Object Detection][Few-Shot Anomaly Detection] Proposed D24FAD, a dual-distillation framework combining Teacher-Student Distillation (TSD) on query images and Student Self-Distillation (SSD) on support images, supplemented by a Learn-to-Weight (L2W) mechanism for adaptive support evaluation. It achieves 100% AUROC using 2-shot on the APTOS fundus dataset.
 tags:
-  - ICLR 2026
-  - Object Detection
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Few-Shot Anomaly Detection"
+  - "Dual Distillation"
+  - "Teacher-Student"
+  - "Self-Distillation"
+  - "Medical Imaging"
 date: 2026-05-08
-content_hash: 258443990457d0a5
+content_hash: cbc73d80a3b5847b
 ---
+
 # Dual Distillation for Few-Shot Anomaly Detection
 
 **Conference**: ICLR 2026  
@@ -131,8 +137,8 @@ The total loss is a linear combination of the two distillation paths: $L = \lamb
 
 ## Related Papers
 
-- [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](../../CVPR2026/object_detection/subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
 - [\[AAAI 2026\] Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory](../../AAAI2026/object_detection/commonality_in_few_few-shot_multimodal_anomaly_detection_via_hypergraph-enhanced.md)
+- [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](../../CVPR2026/object_detection/subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
 - [\[ICLR 2026\] OD3: Optimization-Free Dataset Distillation for Object Detection](od3_optimization-free_dataset_distillation_for_object_detection.md)
 - [\[ICLR 2026\] FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion](fsod-vfm_few-shot_object_detection_with_vision_foundation_models_and_graph_diffu.md)
 - [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](../../CVPR2026/object_detection/fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)

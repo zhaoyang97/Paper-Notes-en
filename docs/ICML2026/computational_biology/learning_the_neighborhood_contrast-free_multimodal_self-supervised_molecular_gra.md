@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning the Neighborhood: Contrast-Free Multimodal Self-Supervised Molecular Graph Pretraining
 description: >-
-  [ICML 2026][Computational Biology][Ego-Net] C-FREE decomposes molecules into $k$-EgoNet subgraphs with fixed radii. It encodes 2D topology and multiple 3D conformations using GINE, PaiNN, and Transformer architectures, followed by pretraining via JEPA-style latent space prediction. Without negative samples, data augmentation, or positional encodings, it outperfo
+  [ICML 2026][Computational Biology][Multimodal Molecular Graphs] C-FREE decomposes molecules into $k$-EgoNet subgraphs with fixed radii. It encodes 2D topology and multiple 3D conformations using GINE, PaiNN, and Transformer architectures, followed by pretraining via JEPA-style latent space prediction. Without negative samples, data augmentation, or positional encodings, it outperforms multimodal baselines like UniMol and MolFM (trained on 19M–77M molecules) on 8 MoleculeNet t…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Ego-Net
-  - JEPA
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Multimodal Molecular Graphs"
+  - "Ego-Net"
+  - "JEPA"
+  - "Contrast-Free"
+  - "3D Conformations"
 date: 2026-05-08
-content_hash: bb66b8dcd42b6a1a
+content_hash: c96e9037234b3d98
 ---
+
 # Learning the Neighborhood: Contrast-Free Multimodal Self-Supervised Molecular Graph Pretraining
 
 **Conference**: ICML 2026  
@@ -174,11 +178,11 @@ Pretraining advantage is significant in low-label scenarios but levels off with 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](../../ICLR2026/computational_biology/animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
 - [\[ICML 2026\] Supervised Graph Contrastive Learning for Gene Regulatory Networks](supervised_graph_contrastive_learning_for_gene_regulatory_networks.md)
+- [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](../../ICLR2026/computational_biology/animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
+- [\[ICLR 2026\] CryoLVM: Self-supervised Learning from Cryo-EM Density Maps with Large Vision Models](../../ICLR2026/computational_biology/cryolvm_self-supervised_learning_from_cryo-em_density_maps_with_large_vision_mod.md)
+- [\[ICLR 2026\] CellDuality: Unlocking Biological Reasoning in LLMs with Self-Supervised RLVR](../../ICLR2026/computational_biology/cellduality_unlocking_biological_reasoning_in_llms_with_self-supervised_rlvr.md)
 - [\[ICML 2025\] scSSL-Bench: Benchmarking Self-Supervised Learning for Single-Cell Data](../../ICML2025/computational_biology/scssl-bench_benchmarking_self-supervised_learning_for_single-cell_data.md)
-- [\[ICML 2026\] SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning](sigma_structure-invariant_generative_molecular_alignment_for_chemical_language_m.md)
-- [\[ICML 2026\] CARD: Coarse-to-fine Autoregressive Modeling with Radix-based Decomposition for Transferable Free Energy Estimation](card_coarse-to-fine_autoregressive_modeling_with_radix-based_decomposition_for_t.md)
 
 </div>
 

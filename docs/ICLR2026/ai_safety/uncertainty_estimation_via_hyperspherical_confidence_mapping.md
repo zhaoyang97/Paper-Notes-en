@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uncertainty Estimation via Hyperspherical Confidence Mapping
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper proposes Hyperspherical Confidence Mapping (HCM), which decomposes network outputs into "magnitude $R$ + unit direction vector $\hat{d}$" and treats the degree of deviation of $\hat{d}$ from the unit sphere as uncertainty. This achieves **sampling-free, distribution-assumption-free** deterministic uncertaint
+  [ICLR 2026][AI Safety][Uncertainty Quantification] This paper proposes Hyperspherical Confidence Mapping (HCM), which decomposes network outputs into "magnitude $R$ + unit direction vector $\hat{d}$" and treats the degree of deviation of $\hat{d}$ from the unit sphere as uncertainty. This achieves **sampling-free, distribution-assumption-free** deterministic uncertainty estimation, matching or even exceeding Deep Ensembles and Evidential Learning in classification and regress…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Uncertainty Quantification"
+  - "Hyperspherical Decomposition"
+  - "Calibration"
+  - "OOD Detection"
+  - "Sampling-free Inference"
 date: 2026-05-08
-content_hash: bc1b791b279076bf
+content_hash: 4f7a46b5524924a2
 ---
+
 # Uncertainty Estimation via Hyperspherical Confidence Mapping
 
 **Conference**: ICLR 2026  
@@ -161,9 +167,9 @@ The gap is further amplified on industrial noisy data: baseline correlations are
 
 - [\[AAAI 2026\] Credal Ensemble Distillation for Uncertainty Quantification](../../AAAI2026/ai_safety/credal_ensemble_distillation_for_uncertainty_quantification.md)
 - [\[ICLR 2026\] Fair Decision Utility in Human-AI Collaboration: Interpretable Confidence Adjustment for Humans with Cognitive Disparities](fair_decision_utility_in_human-ai_collaboration_interpretable_confidence_adjustm.md)
+- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](../../ICML2026/ai_safety/position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
 - [\[ICLR 2026\] RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility](resfl_an_uncertainty-aware_framework_for_responsible_federated_learning_by_balan.md)
-- [\[ICML 2026\] Calibrating Uncertainty for Zero-Shot Adversarial CLIP](../../ICML2026/ai_safety/calibrating_uncertainty_for_zero-shot_adversarial_clip.md)
-- [\[AAAI 2026\] Matrix-Free Two-to-Infinity and One-to-Two Norms Estimation](../../AAAI2026/ai_safety/matrix-free_two-to-infinity_and_one-to-two_norms_estimation.md)
+- [\[ICML 2026\] Memory as a Markov Matrix: Sample Efficient Knowledge Expansion via Token-to-Dictionary Mapping](../../ICML2026/ai_safety/memory_as_a_markov_matrix_sample_efficient_knowledge_expansion_via_token-to-dict.md)
 
 </div>
 

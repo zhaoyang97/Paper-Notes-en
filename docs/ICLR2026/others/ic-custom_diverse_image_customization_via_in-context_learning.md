@@ -52,11 +52,11 @@ TBD after in-depth reading
 
 ## Related Papers
 
+- [\[ICLR 2026\] a representer theorem for hawkes processes via penalized least squares minimizat](a_representer_theorem_for_hawkes_processes_via_penalized_least_squares_minimizat.md)
 - [\[ICLR 2026\] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)
-- [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](active_learning_for_decision_trees_with_provable_guarantees.md)
-- [\[ICLR 2026\] Forget Forgetting: Continual Learning in a World of Abundant Memory](forget_forgetting_continual_learning_in_a_world_of_abundant_memory.md)
-- [\[ICLR 2026\] Layerwise Federated Learning for Heterogeneous Quantum Clients using Quorus](layerwise_federated_learning_for_heterogeneous_quantum_clients_using_quorus.md)
-- [\[ICLR 2026\] Scaling Direct Feedback Learning with Jacobian Alignment Guarantees](scaling_direct_feedback_learning_with_jacobian_alignment_guarantees.md)
+- [\[ICLR 2026\] P3D: Highly Scalable 3D Neural Surrogates for Physics Simulations with Global Context](p3d_highly_scalable_3d_neural_surrogates_for_physics_simulations_with_global_con.md)
+- [\[CVPR 2026\] Learning What Helps: Task-Aligned Context Selection for Vision Tasks](../../CVPR2026/others/learning_what_helps_task-aligned_context_selection_for_vision_tasks.md)
+- [\[AAAI 2026\] Finding Diverse Solutions Parameterized by Cliquewidth](../../AAAI2026/others/finding_diverse_solutions_parameterized_by_cliquewidth.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Measuring Agents in Production
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] This is the first systematic empirical study investigating "how LLM agents in production are actually built and evaluated." Through 20 in-depth case studies and 306 practitioner surveys (filtering 86 deployed/pilot systems) across 26 domains, the authors find that production agents generally follow a "simple and contro
+  [ICML 2026][LLM Agent][Production agents] This is the first systematic empirical study investigating "how LLM agents in production are actually built and evaluated." Through 20 in-depth case studies and 306 practitioner surveys (filtering 86 deployed/pilot systems) across 26 domains, the authors find that production agents generally follow a "simple and controllable" route ($68\%$ execute $\le 10$ steps before human intervention, $70\%$ directly prompt off-the-shelf models wi…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Production agents"
+  - "empirical survey"
+  - "deployment practices"
+  - "reliability"
+  - "system-level design"
 date: 2026-05-08
-content_hash: d0c12df9db766a4e
+content_hash: 50c9edf7358e9025
 ---
+
 # Measuring Agents in Production
 
 **Conference**: ICML 2026  
@@ -122,8 +128,8 @@ The paper answers RQ1–RQ4 through dual-track data. The following table summari
 - [\[ICML 2026\] Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
 - [\[NeurIPS 2025\] AgentMisalignment: Measuring the Propensity for Misaligned Behaviour in LLM-Based Agents](../../NeurIPS2025/llm_agent/agentmisalignment_measuring_the_propensity_for_misaligned_behaviour_in_llm-based.md)
 - [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](../../ACL2026/llm_agent/implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](../../ACL2026/llm_agent/topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 - [\[NeurIPS 2025\] EU-Agent-Bench: Measuring Illegal Behavior of LLM Agents Under EU Law](../../NeurIPS2025/llm_agent/eu-agent-bench_measuring_illegal_behavior_of_llm_agents_under_eu_law.md)
-- [\[ICML 2026\] LLM Agents Are the Antidote to Walled Gardens](llm_agents_are_the_antidote_to_walled_gardens.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Token Compression] This paper proposes GlobalCom², a **plug-and-play, training-free** token compression framework tailored for high-resolution VLMs with dynamic cropping architectures. It leve…
+  [AAAI 2026][Multimodal Efficiency][Token Compression] This paper proposes GlobalCom², a **plug-and-play, training-free** token compression framework tailored for high-resolution VLMs with dynamic cropping architectures. It leverages the global thumbnail as a "commander" to guide differentiated compression across local crop regions, achieving >90% of original performance while compressing 90% of visual tokens.
 tags:
   - "AAAI 2026"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Token Compression"
   - "High-Resolution VLM"
   - "Dynamic Cropping"
   - "Plug-and-Play Acceleration"
   - "Global-Local Guidance"
 date: 2026-05-08
-content_hash: df7ca19a4dd05e11
+content_hash: ba0bc7f02045c0ad
 ---
 
 # Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models
@@ -157,11 +157,11 @@ The fundamental distinction from FastV/SparseVLM lies in the compression stage a
 
 ## Related Papers
 
-- [\[AAAI 2026\] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit](llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[CVPR 2026\] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving](../../CVPR2026/multimodal_vlm/prune2drive_a_plug-and-play_framework_for_accelerating_vision-language_models_in.md)
-- [\[AAAI 2026\] PlantTraitNet: An Uncertainty-Aware Multimodal Framework for Global-Scale Plant Trait Inference from Citizen Science Data](planttraitnet_an_uncertainty-aware_multimodal_framework_for_global-scale_plant_t.md)
-- [\[ACL 2026\] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects](../../ACL2026/multimodal_vlm/efficient_inference_for_large_vision-language_models_bottlenecks_techniques_and_.md)
+- [\[CVPR 2026\] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving](../../CVPR2026/vlm_efficiency/prune2drive_a_plug-and-play_framework_for_accelerating_vision-language_models_in.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](../../CVPR2026/vlm_efficiency/accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
+- [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](../../ICLR2026/vlm_efficiency/ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
+- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](../../CVPR2026/vlm_efficiency/omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
+- [\[ACL 2025\] EffiVLM-Bench: A Comprehensive Benchmark for Evaluating Training-Free Acceleration in Large Vision-Language Models](../../ACL2025/vlm_efficiency/effivlm_bench_vlm_acceleration.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS
 description: >-
-  [NeurIPS 2025][3D Vision][3D language field] By treating each 3D Gaussian as a sparse code over a global dictionary, LangSplatV2 replaces the heavyweight decoder with a sparse coefficient field…
+  [NeurIPS 2025][3D Vision][3D language field] By treating each 3D Gaussian as a sparse code over a global dictionary, LangSplatV2 replaces the heavyweight decoder with a sparse coefficient field, achieving 476.2 FPS high-dimensional feature splatting and 384.6 FPS 3D open-vocabulary querying — a 47× speedup over LangSplat.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "real-time inference"
   - "open-vocabulary query"
 date: 2026-05-08
-content_hash: 63dbff030349fa57
+content_hash: 8c4978e06049d773
 ---
 
 # LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS

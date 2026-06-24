@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension
 description: >-
-  [NeurIPS 2025][Learning Theory / Domain Generalization][Domain Generalization] This paper introduces the *Domain Shattering Dimension* (Gdim), a novel combinatorial measure that tightly characterizes the number of domain…
+  [NeurIPS 2025][Learning Theory][Domain Shattering Dimension] This paper introduces the *Domain Shattering Dimension* (Gdim), a novel combinatorial measure that tightly characterizes the number of domains required for domain generalization (i.e., the domain sample complexity), and establishes its relationship to the classical VC dimension as $\Theta(d \log(1/\alpha))$.
 tags:
   - "NeurIPS 2025"
-  - "Learning Theory / Domain Generalization"
+  - "Learning Theory"
   - "Domain Generalization"
   - "Domain Shattering Dimension"
   - "Sample Complexity"
   - "VC Dimension"
   - "Min-Max ERM"
 date: 2026-05-08
-content_hash: d9ae29f34c591727
+content_hash: 008dbffa879654ab
 ---
 
 # How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension
@@ -136,11 +136,11 @@ This is a purely theoretical work. The core theoretical results are summarized a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Unlearning During Training: Domain-Specific Gradient Ascent for Domain Generalization](../../ICLR2026/learning_theory/unlearning_during_training_domain-specific_gradient_ascent_for_domain_generaliza.md)
 - [\[NeurIPS 2025\] The Parameterized Complexity of Computing the VC-Dimension](the_parameterized_complexity_of_computing_the_vc-dimension.md)
-- [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](../../ICML2026/learning_theory/semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
 - [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
-- [\[AAAI 2026\] Generalizing Analogical Inference from Boolean to Continuous Domains](../../AAAI2026/learning_theory/generalizing_analogical_inference_from_boolean_to_continuous_domains.md)
 - [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
+- [\[ICML 2025\] Theoretical Performance Guarantees for Partial Domain Adaptation via Partial Optimal Transport](../../ICML2025/learning_theory/theoretical_performance_guarantees_for_partial_domain_adaptation_via_partial_opt.md)
 
 </div>
 

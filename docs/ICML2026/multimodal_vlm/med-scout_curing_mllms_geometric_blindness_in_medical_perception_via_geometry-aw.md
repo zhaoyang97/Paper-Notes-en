@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training
 description: >-
-  [ICML 2026][Multimodal VLM][GRPO] Med-Scout defines the systematic failure of medical MLLMs to adhere to image geometric constraints during lesion localization as "geometric blindness." It utilizes three geometric proxy tasks (Hierarchical Scale Localization / Topological Jigsaw / Anomaly Consistency) that do not require expert annotation, combined wit
+  [ICML 2026][Multimodal VLM][Medical MLLM] Med-Scout defines the systematic failure of medical MLLMs to adhere to image geometric constraints during lesion localization as "geometric blindness." It utilizes three geometric proxy tasks (Hierarchical Scale Localization / Topological Jigsaw / Anomaly Consistency) that do not require expert annotation, combined with Dense Geometric Rewards (DGR) under the GRPO framework for post-training. The authors also release Med-Scout-Bench f…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - GRPO
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Medical MLLM"
+  - "GRPO"
+  - "Geometry-Aware"
+  - "Proxy Tasks"
+  - "Dense Reward"
 date: 2026-05-08
-content_hash: fbaf6abfeccae79a
+content_hash: 0ade2de96f7f0ae9
 ---
+
 # Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training
 
 **Conference**: ICML 2026  
@@ -137,11 +142,11 @@ Reference proprietary model performance: GPT-5 Rad-VQA 59.1 / VQA-RAD 66.4, Gemi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](../../ICLR2026/multimodal_vlm/visual_jigsaw_post-training_improves_mllms.md)
 - [\[CVPR 2026\] Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training](../../CVPR2026/multimodal_vlm/why_does_rl_generalize_better_than_sft_a_data-centric_perspective_on_vlm_post-tr.md)
+- [\[ICML 2026\] ACTIVE-o3: Empowering MLLMs with Active Perception via Pure Reinforcement Learning](active-o3_empowering_mllms_with_active_perception_via_pure_reinforcement_learnin.md)
 - [\[ICML 2026\] FreeRet: MLLMs as Training-Free Retrievers](freeret_mllms_as_training-free_retrievers.md)
 - [\[AAAI 2026\] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View](../../AAAI2026/multimodal_vlm/revisiting_the_data_sampling_in_multimodal_post-training_from_a_difficulty-disti.md)
-- [\[CVPR 2026\] Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models](../../CVPR2026/multimodal_vlm/bias_is_a_subspace_not_a_coordinate_a_geometric_rethinking_of_post-hoc_debiasing.md)
-- [\[ICLR 2026\] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images](../../ICLR2026/multimodal_vlm/how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images.md)
 
 </div>
 

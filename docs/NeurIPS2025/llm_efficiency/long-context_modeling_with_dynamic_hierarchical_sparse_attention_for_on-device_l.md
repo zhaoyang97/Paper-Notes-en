@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs
 description: >-
-  [NeurIPS 2025][LLM Efficiency][sparse attention] This paper proposes Dynamic Hierarchical Sparse Attention (DHSA), a hierarchical framework that replaces dense attention with sparse attention via adaptive chunk segmentat…
+  [NeurIPS 2025][LLM Efficiency][sparse attention] This paper proposes Dynamic Hierarchical Sparse Attention (DHSA), a hierarchical framework that replaces dense attention with sparse attention via adaptive chunk segmentation, chunk-level similarity prediction, and upsampling to token level — without retraining the base model. On Gemma2/3, DHSA achieves accuracy on par with dense attention while reducing prefill latency by 20–60% and peak memory by 35%.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -14,7 +14,7 @@ tags:
   - "chunk representation"
   - "boundary detection"
 date: 2026-05-08
-content_hash: 5cc149129e72e94d
+content_hash: 81220f94dc19c784
 ---
 
 # Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs
@@ -152,10 +152,10 @@ DHSA is embedded as a plug-in module in each Transformer layer. Given the token 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
-- [\[NeurIPS 2025\] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM](hierarchical_balance_packing_towards_efficient_supervised_fine-tuning_for_long-c.md)
-- [\[ACL 2026\] Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention](../../ACL2026/llm_efficiency/threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l.md)
+- [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](../../ICLR2026/llm_efficiency/tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
+- [\[ICML 2025\] Long-Short Alignment for Effective Long-Context Modeling in LLMs](../../ICML2025/llm_efficiency/long-short_alignment_for_effective_long-context_modeling_in_llms.md)
 - [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[NeurIPS 2025\] The Emergence of Sparse Attention: Impact of Data Distribution and Benefits of Repetition](the_emergence_of_sparse_attention_impact_of_data_distribution_and_benefits_of_re.md)
+- [\[NeurIPS 2025\] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM](hierarchical_balance_packing_towards_efficient_supervised_fine-tuning_for_long-c.md)
 
 </div>
 

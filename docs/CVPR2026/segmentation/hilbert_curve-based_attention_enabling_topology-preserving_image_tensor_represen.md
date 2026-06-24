@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hilbert Curve-Based Attention Enabling Topology-Preserving Image Tensor Representation for Semantic Segmentation Network
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Aiming at building surface defect segmentation from UAV images, this paper proposes TPSegformer. Before the attention calculation in the decoder, it utilizes the **Hilbert curve** instead of traditional row-major flattening to compress 2D features into 1D sequences, thereby preserving the spatial adjacency of pixels du
+  [CVPR 2026][Segmentation][Building Defect Segmentation] Aiming at building surface defect segmentation from UAV images, this paper proposes TPSegformer. Before the attention calculation in the decoder, it utilizes the **Hilbert curve** instead of traditional row-major flattening to compress 2D features into 1D sequences, thereby preserving the spatial adjacency of pixels during dimensionality reduction. Combined with dual-branch feature enhancement, high-low resolution fusion…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Building Defect Segmentation"
+  - "Hilbert Curve"
+  - "Topology Preservation"
+  - "Self-Attention"
+  - "UAV Inspection"
 date: 2026-05-08
-content_hash: f58120368901c3ef
+content_hash: eb8a6ca4f8ca0f77
 ---
+
 # Hilbert Curve-Based Attention Enabling Topology-Preserving Image Tensor Representation for Semantic Segmentation Network
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,10 @@ Backbone suitability (Table 5): Swin series performed best (Swin-T 79.49 → Swi
 ## Related Papers
 
 - [\[CVPR 2026\] Towards High-Quality Image Segmentation: Improving Topology Accuracy by Penalizing Neighbor Pixels](towards_high-quality_image_segmentation_improving_topology_accuracy_by_penalizin.md)
-- [\[CVPR 2026\] SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation](saqn_semantic-based_adaptive_query_network_for_3d_referring_expression_segmentat.md)
+- [\[CVPR 2026\] Revisiting Geometric Obfuscation with Dual Convergent Lines for Privacy-Preserving Image Queries in Visual Localization](revisiting_geometric_obfuscation_with_dual_convergent_lines_for_privacy-preservi.md)
 - [\[CVPR 2026\] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion](rel-sf4pass_panoramic_semantic_segmentation_with_rel_depth_representation_and_sp.md)
-- [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](mrm_masked_representation_modeling_domain_adaptive.md)
 - [\[CVPR 2026\] MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models](marss_radar_semantic_segmentation_via_modular_attention_and_state_space_models.md)
+- [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](mrm_masked_representation_modeling_domain_adaptive.md)
 
 </div>
 

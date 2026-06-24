@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] M³E: Continual Vision-and-Language Navigation via Mixture of Macro and Micro Experts
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLN] M³E replaces the FFN layers of an LLM navigation agent with "Macro + Micro" dual-routed MoE-LoRA layers. The macro-router employs a GNN on a cognitive map for topology-aware scene-level expert selection, while the micro-router performs instruction-level expert selection based on token hidden states. Combined with a dyn
+  [ICLR 2026][Robotics][VLN] M³E replaces the FFN layers of an LLM navigation agent with "Macro + Micro" dual-routed MoE-LoRA layers. The macro-router employs a GNN on a cognitive map for topology-aware scene-level expert selection, while the micro-router performs instruction-level expert selection based on token hidden states. Combined with a dynamic momentum update strategy that freezes or aggressively updates different experts, this approach achieves cross-environment contin…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLN
-  - Continual Learning
-  - Mixture-of-Experts
-  - Replay-free
-  - Catastrophic Forgetting
-  - MoE-LoRA
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLN"
+  - "Continual Learning"
+  - "Mixture-of-Experts"
+  - "Replay-free"
+  - "Catastrophic Forgetting"
+  - "MoE-LoRA"
 date: 2026-05-08
-content_hash: 89d1b9241f121587
+content_hash: 154db3f397d93807
 ---
+
 # M³E: Continual Vision-and-Language Navigation via Mixture of Macro and Micro Experts
 
 **Conference**: ICLR 2026  
@@ -149,10 +150,10 @@ Full combinations of the three components (Micro / Macro / Momentum) on R2R (sel
 ## Related Papers
 
 - [\[ICLR 2026\] Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies](abstracting_robot_manipulation_skills_via_mixture-of-experts_diffusion_policies.md)
-- [\[ACL 2026\] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](../../ACL2026/robotics/breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)
 - [\[ACL 2025\] Task-aware MoILE: Hierarchical-Task-Aware Multi-modal Mixture of Incremental LoRA Experts for Embodied Continual Learning](../../ACL2025/robotics/hierarchical-task-aware_multi-modal_mixture_of_incremental_lora_experts_for_embo.md)
+- [\[ACL 2026\] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](../../ACL2026/robotics/breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)
+- [\[ICLR 2026\] All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation](all-day_multi-scenes_lifelong_vision-and-language_navigation_with_tucker_adaptat.md)
 - [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
-- [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
 
 </div>
 

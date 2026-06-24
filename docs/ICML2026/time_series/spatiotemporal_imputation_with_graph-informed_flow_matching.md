@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatiotemporal Imputation with Graph-Informed Flow Matching
 description: >-
-  [ICML 2026][Time Series][Flow Matching] To address the issues of "error accumulation in iterative RNN/GNN propagation" and "problem-agnostic Gaussian priors and slow sampling in diffusion models" for spatiotemporal imputation, this paper proposes GiFlow. By constructing a "Graph Prior" through spatiotemporal filtering of observed signals to replace the Gauss
+  [ICML2026][Time Series][Spatiotemporal Imputation] To address the issues of "error accumulation in iterative RNN/GNN propagation" and "problem-agnostic Gaussian priors and slow sampling in diffusion models" for spatiotemporal imputation, this paper proposes GiFlow. By constructing a "Graph Prior" through spatiotemporal filtering of observed signals to replace the Gaussian prior, the starting point of Flow Matching is moved closer to the target distribution with a shorter tran…
 tags:
-  - ICML 2026
-  - Time Series
-  - Flow Matching
+  - "ICML2026"
+  - "Time Series"
+  - "Spatiotemporal Imputation"
+  - "Flow Matching"
+  - "Graph Prior"
+  - "Spatiotemporal Filtering"
+  - "Graph Neural Networks"
 date: 2026-05-08
-content_hash: 98a7edf48aa62588
+content_hash: 8539d66bacf97d7e
 ---
+
 # Spatiotemporal Imputation with Graph-Informed Flow Matching
 
 **Conference**: ICML2026  
@@ -124,15 +129,16 @@ Performance under two noise levels:
 - Value: ⭐⭐⭐⭐ High utility for large-scale ST data due to deterministic single-pass sampling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](../../ICLR2026/time_series/time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
+- [\[ICLR 2026\] TrajFlow: Nationwide Pseudo GPS Trajectory Generation with Flow Matching Models](../../ICLR2026/time_series/trajflow_nation-wide_pseudo_gps_trajectory_generation_with_flow_matching_models.md)
 - [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
-- [\[CVPR 2026\] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](../../CVPR2026/time_series/probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)
 - [\[ICML 2026\] HELIX: Hybrid Encoding with Learnable Identity and Cross-dimensional Synthesis for Time Series Imputation](helix_hybrid_encoding_with_learnable_identity_and_cross-dimensional_synthesis_fo.md)
-- [\[ICLR 2026\] SRT: Super-Resolution for Time Series via Disentangled Rectified Flow](../../ICLR2026/time_series/srt_super-resolution_for_time_series_via_disentangled_rectified_flow.md)
-- [\[ACL 2026\] STK-Adapter: Incorporating Evolving Graph and Event Chain for Temporal Knowledge Graph Extrapolation](../../ACL2026/time_series/stk-adapter_incorporating_evolving_graph_and_event_chain_for_temporal_knowledge_.md)
+- [\[ICLR 2026\] Improving Extreme Wind Prediction with Frequency-Informed Learning](../../ICLR2026/time_series/improving_extreme_wind_prediction_with_frequency-informed_learning.md)
 
 </div>
 

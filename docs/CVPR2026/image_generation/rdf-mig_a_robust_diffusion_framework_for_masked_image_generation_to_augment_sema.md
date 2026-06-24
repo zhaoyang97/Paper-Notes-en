@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RDF-MIG: A Robust Diffusion Framework for Masked Image Generation to Augment Semantic Segmentation and Change Detection
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address the scarcity of annotations for semantic segmentation (SS) and change detection (CD) in remote sensing—compounded by the task-specific nature of existing generation methods, lack of multispectral support, and sensitivity to noisy samples—this paper proposes RDF-MIG. By utilizing Feature Compression Fusion (F
+  [CVPR 2026][Image Generation][Masked image generation] To address the scarcity of annotations for semantic segmentation (SS) and change detection (CD) in remote sensing—compounded by the task-specific nature of existing generation methods, lack of multispectral support, and sensitivity to noisy samples—this paper proposes RDF-MIG. By utilizing Feature Compression Fusion (FCF), multispectral images and masks are integrated into a three-channel tensor for joint diffusion genera…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Masked image generation"
+  - "robust diffusion loss"
+  - "correntropy"
+  - "multispectral remote sensing"
+  - "change detection"
 date: 2026-05-08
-content_hash: a1db204d0765af70
+content_hash: 0872dbf207a281c3
 ---
+
 # RDF-MIG: A Robust Diffusion Framework for Masked Image Generation to Augment Semantic Segmentation and Change Detection
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ Downstream performance (IoU) of RDF-MIG trained with different losses:
 ## Related Papers
 
 - [\[CVPR 2026\] Semantic Scale Space: A Framework for Controllable Image Abstraction](semantic_scale_space_a_framework_for_controllable_image_abstraction.md)
+- [\[CVPR 2026\] UniGenDet: A Unified Generative-Discriminative Framework for Co-evolutionary Generation and Detection](unigendet_a_unified_generative-discriminative_framework_for_co-evolutionary_imag.md)
 - [\[CVPR 2026\] UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization](universe_a_unified_modulation_framework_for_segmentation-free_disentangled_multi.md)
 - [\[CVPR 2026\] OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery](opendpr_open-vocabulary_change_detection_via_vision-centric_diffusion-guided_pro.md)
-- [\[CVPR 2026\] MaskFocus: Focusing Policy Optimization on Critical Steps for Masked Image Generation](maskfocus_focusing_policy_optimization_on_critical_steps_for_masked_image_genera.md)
-- [\[CVPR 2026\] MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale](mrt_masked_region_transformer_for_layered_image_generation_and_editing_at_scale.md)
+- [\[CVPR 2026\] MacTok: Robust Continuous Tokenization for Image Generation](mactok_robust_continuous_tokenization_for_image_generation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][Benchmark] OMHBench constructs an omni-modal three-hop reasoning benchmark with 6,144 questions covering text, image, and speech contexts. Through entity-attribute chains and 6 balanced reasoning paths, it exposes systematic shortcomings of current MLLMs in speech grounding, path robustness, and cross-modal grounding.
+  [ACL 2026 Findings][VLM Reasoning][Omni-modal reasoning] OMHBench constructs an omni-modal three-hop reasoning benchmark with 6,144 questions covering text, image, and speech contexts. Through entity-attribute chains and 6 balanced reasoning paths, it exposes systematic shortcomings of current MLLMs in speech grounding, path robustness, and cross-modal grounding.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - Benchmark
+  - "ACL 2026 Findings"
+  - "VLM Reasoning"
+  - "Omni-modal reasoning"
+  - "multi-hop QA"
+  - "speech understanding"
+  - "path balance"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 77d184da92ff3874
+content_hash: 63cef838029bc66f
 ---
+
 # OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -151,14 +156,14 @@ Rather than model ablations, the authors perform diagnostic experiments:
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2025\] FCMR: Robust Evaluation of Financial Cross-Modal Multi-Hop Reasoning](../../ACL2025/vlm_reasoning/fcmr_robust_evaluation_of_financial_cross-modal_multi-hop_reasoning.md)
-- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](../../CVPR2026/vlm_reasoning/crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
 - [\[ICLR 2026\] ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding](../../ICLR2026/vlm_reasoning/thinkomni_lifting_textual_reasoning_to_omni-modal_scenarios_via_guidance_decodin.md)
+- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](../../CVPR2026/vlm_reasoning/crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
 - [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](../../ICML2026/vlm_reasoning/native_active_perception_as_reasoning_for_omni-modal_understanding.md)
 - [\[ACL 2026\] Structured and Abstractive Reasoning on Multi-modal Relational Knowledge Images](structured_and_abstractive_reasoning_on_multi-modal_relational_knowledge_images.md)
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Jailbreak to Protect: Buffering and Reinforcing via Temporary Jailbreaking for Safe Fine-Tuning in Large Language Models
 description: >-
-  [ICML 2026][Model Compression][BufferLoRA] In the Fine-tuning-as-a-Service (FaaS) scenario, the authors reinterpret the strategy of "temporarily jailbreaking a model before user fine-tuning" as a gradient saturation mechanism. Based on this observation, they design the Buffer-and-Reinforce framework: a removable BufferLoRA is used to absorb harmful gradients du
+  [ICML 2026 Spotlight][Model Compression][Harmful Fine-tuning Defense] In the Fine-tuning-as-a-Service (FaaS) scenario, the authors reinterpret the strategy of "temporarily jailbreaking a model before user fine-tuning" as a gradient saturation mechanism. Based on this observation, they design the Buffer-and-Reinforce framework: a removable BufferLoRA is used to absorb harmful gradients during user fine-tuning, followed by a ReinforceLoRA that restores safety via QR orthogonal…
 tags:
-  - ICML 2026
-  - Model Compression
-  - BufferLoRA
-  - ReinforceLoRA
+  - "ICML 2026 Spotlight"
+  - "Model Compression"
+  - "Harmful Fine-tuning Defense"
+  - "Temporary Jailbreaking"
+  - "BufferLoRA"
+  - "ReinforceLoRA"
+  - "QR Orthogonal Merging"
 date: 2026-05-08
-content_hash: ce57d5bd583f186b
+content_hash: e9dc30e79cd86e13
 ---
+
 # Jailbreak to Protect: Buffering and Reinforcing via Temporary Jailbreaking for Safe Fine-Tuning in Large Language Models
 
 **Conference**: ICML 2026 Spotlight  
@@ -142,11 +146,11 @@ Cross-task comparisons show low HS across all tasks. HS for GSM8K dropped from 7
 
 ## Related Papers
 
-- [\[ICML 2026\] The Shape of Addition: Geometric Structures of Arithmetic in Large Language Models](the_shape_of_addition_geometric_structures_of_arithmetic_in_large_language_model.md)
-- [\[ICML 2026\] UB-SMoE: Universally Balanced Sparse Mixture-of-Experts for Resource-Adaptive Federated Fine-tuning of Foundation Models](ub-smoe_universally_balanced_sparse_mixture-of-experts_for_resource-adaptive_fed.md)
-- [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
-- [\[ICML 2026\] Decomposing the Basic Abilities of Large Language Models: Mitigating Cross-Task Interference in Multi-Task Instruct-Tuning](decomposing_the_basic_abilities_of_large_language_models_mitigating_cross-task_i.md)
-- [\[ICML 2026\] Bounded Hyperbolic Tangent: A Stable and Efficient Alternative to Pre-Layer Normalization in Large Language Models](bounded_hyperbolic_tangent_a_stable_and_efficient_alternative_to_pre-layer_norma.md)
+- [\[ICML 2025\] Weak-to-Strong Jailbreaking on Large Language Models](../../ICML2025/model_compression/weak-to-strong_jailbreaking_on_large_language_models.md)
+- [\[CVPR 2026\] Masking Teacher and Reinforcing Student for Distilling Vision-Language Models](../../CVPR2026/model_compression/masking_teacher_and_reinforcing_student_for_distilling_vision-language_models.md)
+- [\[ICLR 2026\] QWHA: Quantization-Aware Walsh-Hadamard Adaptation for Parameter-Efficient Fine-Tuning on Large Language Models](../../ICLR2026/model_compression/qwha_quantization-aware_walsh-hadamard_adaptation_for_parameter-efficient_fine-t.md)
+- [\[AAAI 2026\] Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation](../../AAAI2026/model_compression/consensus-aligned_neuron_efficient_fine-tuning_large_language_models_for_multi-d.md)
+- [\[ACL 2025\] Outlier-Safe Pre-Training for Robust 4-Bit Quantization of Large Language Models](../../ACL2025/model_compression/outlier-safe_pre-training_for_robust_4-bit_quantization_of_large_language_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multifidelity Simulation-based Inference for Computationally Expensive Simulators
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] The authors propose MF-(TS)NPE: pre-training a neural density estimator using cheap low-fidelity simulations followed by fine-tuning with a small number of expensive high-fidelity simulations, reducing the required high-fidelity simulation budget for Bayesian inference by up to two orders of magnitude.
+  [ICLR 2026][Computational Biology][Multi-fidelity] The authors propose MF-(TS)NPE: pre-training a neural density estimator using cheap low-fidelity simulations followed by fine-tuning with a small number of expensive high-fidelity simulations, reducing the required high-fidelity simulation budget for Bayesian inference by up to two orders of magnitude.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Multi-fidelity"
+  - "Neural Posterior Estimation"
+  - "Transfer Learning"
+  - "Active Learning"
+  - "Computational Neuroscience"
 date: 2026-05-08
-content_hash: 1fe53a8a7cc983e6
+content_hash: fdf7158b2d10035e
 ---
+
 # Multifidelity Simulation-based Inference for Computationally Expensive Simulators
 
 **Conference**: ICLR 2026  

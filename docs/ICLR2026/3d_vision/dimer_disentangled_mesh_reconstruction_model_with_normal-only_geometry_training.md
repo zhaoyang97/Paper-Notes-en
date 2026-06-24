@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiMeR: Disentangled Mesh Reconstruction Model with Normal-only Geometry Training
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] DiMeR decomposes feed-forward mesh reconstruction from sparse views into two non-interfering branches: geometry relies solely on normal maps, while texture relies solely on RGB images. By equipping the geometry branch with a streamlined FlexiCubes extractor and genuine 3D supervision (eikonal + GT SDF + PBR expectation
+  [ICLR2026][3D Vision][Mesh Reconstruction] DiMeR decomposes feed-forward mesh reconstruction from sparse views into two non-interfering branches: geometry relies solely on normal maps, while texture relies solely on RGB images. By equipping the geometry branch with a streamlined FlexiCubes extractor and genuine 3D supervision (eikonal + GT SDF + PBR expectation loss), it reduces Chamfer Distance by over 30% on GSO and OmniObject3D.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Mesh Reconstruction"
+  - "Geometry-Texture Disentanglement"
+  - "Normal Maps"
+  - "Feed-forward LRM"
+  - "3D Supervision"
 date: 2026-05-08
-content_hash: 9b10e91780a76e87
+content_hash: 6c2faad66ceeee3c
 ---
+
 # DiMeR: Disentangled Mesh Reconstruction Model with Normal-only Geometry Training
 
 **Conference**: ICLR2026  
@@ -146,8 +152,8 @@ FlexiCubes MLP ablation (Table 5): CD/F1 remained almost unchanged (0.045→0.04
 ## Related Papers
 
 - [\[ICLR 2026\] YoNoSplat: You Only Need One Model for Feedforward 3D Gaussian Splatting](yonosplat_you_only_need_one_model_for_feedforward_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] PAGE-4D: VGGT-4D Perception via Disentangled Pose and Geometry Estimation](page-4d_vggt-4d_perception_via_disentangled_pose_and_geometry_estimation.md)
 - [\[ICML 2026\] Future Dynamic 3D Reconstruction: A 3D World Model with Disentangled Ego-Motion](../../ICML2026/3d_vision/future_dynamic_3d_reconstruction_a_3d_world_model_with_disentangled_ego-motion.md)
+- [\[ICLR 2026\] PAGE-4D: VGGT-4D Perception via Disentangled Pose and Geometry Estimation](page-4d_vggt-4d_perception_via_disentangled_pose_and_geometry_estimation.md)
 - [\[CVPR 2025\] Feature-Preserving Mesh Decimation for Normal Integration](../../CVPR2025/3d_vision/feature-preserving_mesh_decimation_for_normal_integration.md)
 - [\[ICLR 2026\] ReLi3D: Relightable Multi-View 3D Reconstruction with Disentangled Illumination](reli3d_relightable_multi-view_3d_reconstruction_with_disentangled_illumination.md)
 

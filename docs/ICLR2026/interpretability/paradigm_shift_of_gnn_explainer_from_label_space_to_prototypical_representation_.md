@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Paradigm Shift of GNN Explainer from Label Space to Prototypical Representation Space
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] To address the issue of insufficient utilization of structural information caused by long-term alignment in the "graph label space" by post-hoc instance-level GNN explainers, IDEA migrates explainer optimization from the label space to the "prototypical representation space" for the first time. It uses a hierarchical g
+  [ICLR 2026][Interpretability][GNN Explainer] To address the issue of insufficient utilization of structural information caused by long-term alignment in the "graph label space" by post-hoc instance-level GNN explainers, IDEA migrates explainer optimization from the label space to the "prototypical representation space" for the first time. It uses a hierarchical graph tokenizer to decouple explanatory substructures and aligns the prototypical assignment distributions of the in…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "GNN Explainer"
+  - "Prototypical Representation Space"
+  - "Structural Decoupling"
+  - "Vector Quantization"
+  - "Wasserstein Distance"
 date: 2026-05-08
-content_hash: 5d3899eb5a7386aa
+content_hash: 2ba8573e243c849f
 ---
+
 # Paradigm Shift of GNN Explainer from Label Space to Prototypical Representation Space
 
 **Conference**: ICLR 2026  
@@ -150,11 +156,11 @@ IDEA-enhanced PGExplainer (0.8856) slightly outperformed the strongest current b
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
 - [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
 - [\[ICLR 2026\] Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning](domain_expansion_a_latent_space_construction_framework_for_multi-task_learning.md)
 - [\[ICLR 2026\] Emotions Where Art Thou: Understanding and Characterizing the Emotional Latent Space of Large Language Models](emotions_where_art_thou_understanding_and_characterizing_the_emotional_latent_sp.md)
-- [\[ICLR 2026\] The Deleuzian Representation Hypothesis](the_deleuzian_representation_hypothesis.md)
-- [\[ICLR 2026\] Composable Sparse Subnetworks via Maximum-Entropy Principle](composable_sparse_subnetworks_via_maximum-entropy_principle.md)
+- [\[ICLR 2026\] TimeSeg: An Information-Theoretic Segment-Wise Explainer for Time-Series Predictions](timeseg_an_information-theoretic_segment-wise_explainer_for_time-series_predicti.md)
 
 </div>
 

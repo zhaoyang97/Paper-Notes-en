@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Safeguarding Multimodal Knowledge Copyright in the RAG-as-a-Service Environment
 description: >-
-  [ICLR 2026][LLM Safety][RAG-as-a-Service] AQUA targets multimodal image knowledge bases unauthorizedly integrated by platforms in RAG-as-a-Service environments. It designs two types of semantic watermark images that are retrievable and manifest in textual responses without significantly disrupting normal services. Using a small number of probe queries, it stat
+  [ICLR2026][LLM Safety][Multimodal RAG] AQUA targets multimodal image knowledge bases unauthorizedly integrated by platforms in RAG-as-a-Service environments. It designs two types of semantic watermark images that are retrievable and manifest in textual responses without significantly disrupting normal services. Using a small number of probe queries, it statistically determines whether a black-box multimodal RAG utilizes the copyright owner's data.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - RAG-as-a-Service
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Multimodal RAG"
+  - "Data Copyright"
+  - "Image Watermarking"
+  - "RAG-as-a-Service"
+  - "Black-box Auditing"
 date: 2026-05-08
-content_hash: bee57f8c3a2d2c03
+content_hash: 494a5ed3409cba3e
 ---
+
 # Safeguarding Multimodal Knowledge Copyright in the RAG-as-a-Service Environment
 
 **Conference**: ICLR2026  
@@ -129,6 +134,7 @@ Ours differs from text-based RAG watermarking (like WARD or RAG-WM) by focusing 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Steer Like the LLM: Activation Steering that Mimics Prompting
 description: >-
-  [ICML 2026][Interpretability][activation steering] This paper reinterprets "prompt steering" as a form of activation steering implemented by the LLM itself. By distilling activation differences injected by prompts using a **token-specific ReLU probe**, the authors develop the PSR (Prompt Steering Replacement) module. PSR outperforms existing activation steering methods
+  [ICML 2026][Interpretability][activation steering] This paper reinterprets "prompt steering" as a form of activation steering implemented by the LLM itself. By distilling activation differences injected by prompts using a **token-specific ReLU probe**, the authors develop the PSR (Prompt Steering Replacement) module. PSR outperforms existing activation steering methods (CAA, ReFT-R1, Stolfo, etc.) across three benchmarks and matches or surpasses prompting in AxBench and perso…
 tags:
-  - ICML 2026
-  - Interpretability
-  - activation steering
-  - prompt steering
-  - ReLU probe
-  - PSR
+  - "ICML 2026"
+  - "Interpretability"
+  - "activation steering"
+  - "prompt steering"
+  - "token-specific coefficient"
+  - "ReLU probe"
+  - "PSR"
 date: 2026-05-08
-content_hash: 065086400204ab1e
+content_hash: b34f35ff1ded6d1b
 ---
+
 # Steer Like the LLM: Activation Steering that Mimics Prompting
 
 **Conference**: ICML 2026  
@@ -167,11 +169,11 @@ A-PSR$_{MSE}$ achieves **SOTA** on both subsets, outperforming prompting and LoR
 
 ## Related Papers
 
-- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
 - [\[ICLR 2026\] Activation Steering with a Feedback Controller](../../ICLR2026/interpretability/activation_steering_with_a_feedback_controller.md)
-- [\[ICML 2025\] To Steer or Not to Steer? Mechanistic Error Reduction with Abstention for Language Models](../../ICML2025/interpretability/to_steer_or_not_to_steer_mechanistic_error_reduction_with_abstention_for_languag.md)
-- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](../../NeurIPS2025/interpretability/cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
 - [\[ICML 2026\] Closing the Loop: PID Feedback Control for Interpretable Activation Steering in Symbolic Music Generation](closing_the_loop_pid_feedback_control_for_interpretable_activation_steering_in_s.md)
+- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
+- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](../../NeurIPS2025/interpretability/cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
+- [\[ICML 2025\] To Steer or Not to Steer? Mechanistic Error Reduction with Abstention for Language Models](../../ICML2025/interpretability/to_steer_or_not_to_steer_mechanistic_error_reduction_with_abstention_for_languag.md)
 
 </div>
 

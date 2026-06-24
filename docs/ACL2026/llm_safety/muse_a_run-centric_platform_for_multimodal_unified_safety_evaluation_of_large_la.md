@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][LLM-as-Judge] MUSE integrates cross-modal payload generation, multi-turn red teaming attacks, unified model routing, and a five-level safety judge into a run-centric reproducible experimental platform. Through approximately 3,700 experiments, the study demonstrates that multi-turn strategies can breach multimodal LLMs that otherwise
+  [ACL 2026][LLM Safety][Multimodal Safety Evaluation] MUSE integrates cross-modal payload generation, multi-turn red teaming attacks, unified model routing, and a five-level safety judge into a run-centric reproducible experimental platform. Through approximately 3,700 experiments, the study demonstrates that multi-turn strategies can breach multimodal LLMs that otherwise show near-perfect refusal in single-turn settings. Furthermore, inter-turn modality switching acts more as…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - LLM-as-Judge
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Multimodal Safety Evaluation"
+  - "Automated Red Teaming"
+  - "Multi-turn Jailbreaking"
+  - "Cross-modal Attack"
+  - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: 29bbab100a8daac6
+content_hash: c6ecb901cfee441a
 ---
+
 # MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models
 
 **Conference**: ACL 2026  
@@ -158,10 +163,20 @@ Conclusion: Gemini is more vulnerable to non-text inputs, whereas Qwen becomes m
 - **Value**: ⭐⭐⭐⭐⭐ (Practical for auditing multimodal LLMs and highlighting provider-specific modality risks.)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](piarena_a_platform_for_prompt_injection_evaluation.md)
+- [\[ACL 2026\] ACIArena: Toward Unified Evaluation for Agent Cascading Injection](aciarena_toward_unified_evaluation_for_agent_cascading_injection.md)
+- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
+- [\[ACL 2026\] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models](gambit_a_gamified_jailbreak_framework_for_multimodal_large_language_models.md)
+- [\[ACL 2026\] Preventing Safety Drift in Large Language Models via Coupled Weight and Activation Constraints](preventing_safety_drift_in_large_language_models_via_coupled_weight_and_activati.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](piarena_a_platform_for_prompt_injection_evaluation.md)

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] One-Shot Exemplars for Class Grounding in Self-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper proposes the OSESSL (One-Shot Exemplar SSL) setting—providing only one labeled image per class to "ground" self-supervised features into the real class space. The method constructs class prototypes using labeled exemplars and discriminative neighbors to align unlabeled data, while employing interpolation con
+  [ICLR 2026][Self-Supervised Learning][Class Grounding] This paper proposes the OSESSL (One-Shot Exemplar SSL) setting—providing only one labeled image per class to "ground" self-supervised features into the real class space. The method constructs class prototypes using labeled exemplars and discriminative neighbors to align unlabeled data, while employing interpolation consistency to smooth decision boundaries. On CIFAR-100 and ImageNet-100, k-NN accuracy improves by approxim…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Class Grounding"
+  - "One-Shot Annotation"
+  - "Prototype Learning"
+  - "Interpolation Consistency"
 date: 2026-05-08
-content_hash: 728b2da1d1ffd380
+content_hash: 3920d07069528009
 ---
+
 # One-Shot Exemplars for Class Grounding in Self-Supervised Learning
 
 **Conference**: ICLR 2026  
@@ -133,6 +138,7 @@ Transfer and semi-supervised validation (ResNet-50, ImageNet-1K pre-trained):
 - Value: ⭐⭐⭐⭐⭐ (Significant gains for extremely low cost)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

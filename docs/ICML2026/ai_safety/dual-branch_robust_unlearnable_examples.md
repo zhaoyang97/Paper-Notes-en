@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dual-branch Robust Unlearnable Examples
 description: >-
-  [ICML 2026][AI Safety][Unlearnable Examples] This paper proposes DUNE, which extends the perturbation of Unlearnable Examples (UEs) from a single spatial domain to a "spatial + color" dual-domain optimization. By aligning perturbation features with shift-induced labels and utilizing pre-trained model ensembles, DUNE maintains robustness against 7 mainstream defen
+  [ICML 2026][AI Safety][Unlearnable Examples] This paper proposes DUNE, which extends the perturbation of Unlearnable Examples (UEs) from a single spatial domain to a "spatial + color" dual-domain optimization. By aligning perturbation features with shift-induced labels and utilizing pre-trained model ensembles, DUNE maintains robustness against 7 mainstream defenses (including ECLIPSE, ISS-J, and COIN) on CIFAR-10 / ImageNet. The average test accuracy is further reduced by 14…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Unlearnable Examples
+  - "ICML 2026"
+  - "AI Safety"
+  - "Unlearnable Examples"
+  - "Data Poisoning"
+  - "Spatial-Color Dual-Domain"
+  - "Ensemble Perturbation"
+  - "Robust Defense"
 date: 2026-05-08
-content_hash: 4dfbd2aa60bf59f7
+content_hash: 5e790010ae265eed
 ---
+
 # Dual-branch Robust Unlearnable Examples
 
 **Conference**: ICML 2026  
@@ -148,9 +153,9 @@ VGG19 cross-architecture evaluation (surrogate=ResNet18) also shows DUNE leading
 
 - [\[ICLR 2026\] Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information](../../ICLR2026/ai_safety/why_do_unlearnable_examples_work_a_novel_perspective_of_mutual_information.md)
 - [\[ICML 2026\] Exposing Vulnerabilities in Explanation for Time Series Classifiers via Dual-Target Adversarial Attack](exposing_vulnerabilities_in_explanation_for_time_series_classifiers_via_dual-tar.md)
-- [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
 - [\[ICML 2026\] Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio](hidden_in_plain_tokens_simply_robust_gradient-free_watermark_for_synthetic_audio.md)
-- [\[ICML 2026\] Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance](stable-gflownet_toward_diverse_and_robust_llm_red-teaming_via_contrastive_trajec.md)
+- [\[ICML 2026\] From Prompts to Responses: Dual-Sided Data Leakage and Defense in Split Large Language Models](from_prompts_to_responses_dual-sided_data_leakage_and_defense_in_split_large_lan.md)
+- [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](../../CVPR2026/ai_safety/verifying_neural_network_robustness_with_dual_perturbations.md)
 
 </div>
 

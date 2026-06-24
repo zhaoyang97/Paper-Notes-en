@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Hyperparameter Transfer with Mixture-of-Experts Layers
 description: >-
-  [ICML 2026][LLM Efficiency][μP] This paper extends the maximal update parametrization (μP/CompleteP) to sparse MoE Transformers. It defines initialization and learning rate (LR) scaling rules for routers, expert up/down projections, and expert biases when model width, depth, number of experts, and expert width are simultaneously scaled. Using a three
+  [ICML 2026][LLM Efficiency][μP] This paper extends the maximal update parametrization (μP/CompleteP) to sparse MoE Transformers. It defines initialization and learning rate (LR) scaling rules for routers, expert up/down projections, and expert biases when model width, depth, number of experts, and expert width are simultaneously scaled. Using a three-level Mean-Field Dynamical Mean Field Theory (DMFT), the authors prove that this parametrization possesses a scale-invariant li…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - μP
-  - CompleteP
-  - MoE scaling
-  - DMFT
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "μP"
+  - "CompleteP"
+  - "MoE scaling"
+  - "DMFT"
+  - "Zero-shot hyperparameter transfer"
 date: 2026-05-08
-content_hash: 9dff41cb0ec073b0
+content_hash: b07c9fa539b571bd
 ---
+
 # Hyperparameter Transfer with Mixture-of-Experts Layers
 
 **Conference**: ICML 2026  
@@ -121,8 +123,8 @@ The foundation is standard Adam and AdamW. The router uses sigmoid routing with 
 - [\[ICML 2026\] L$^3$: Large Lookup Layers](l3_large_lookup_layers.md)
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
 - [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
+- [\[ICML 2026\] SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs](softmoe_soft_differentiable_routing_for_mixture-of-experts_in_llms.md)
 - [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
-- [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
 
 </div>
 

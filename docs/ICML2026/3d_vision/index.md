@@ -83,7 +83,7 @@ item_total: 30
 
 **🧪 ICML2026** · **30** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (646)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (201)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (751)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (197)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md) · [🧪 ICML2025 (17)](../../ICML2025/3d_vision/index.md)
 
 🔥 **Top topics:** Point Cloud ×4 · 3D Reconstruction ×3 · Segmentation ×2 · Image Restoration ×2 · Few-/Zero-Shot Learning ×2
 

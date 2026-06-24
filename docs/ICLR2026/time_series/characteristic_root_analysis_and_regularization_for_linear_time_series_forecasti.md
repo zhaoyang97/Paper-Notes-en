@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Characteristic Root Analysis and Regularization for Linear Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Denoising] This paper revisits linear time series forecasting models through the **characteristic root** theory of classical linear difference equations. It proves that noise leads models to learn "spurious roots" and that suppressing such noise requires disproportionately more data. Consequently, it proposes two types of "root r
+  [ICLR 2026][Time Series][Time series forecasting] This paper revisits linear time series forecasting models through the **characteristic root** theory of classical linear difference equations. It proves that noise leads models to learn "spurious roots" and that suppressing such noise requires disproportionately more data. Consequently, it proposes two types of "root reconstruction" regularization methods for the weight matrix—Reduced-Rank Reduction (RRR / DWRR) and an adaptiv…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Denoising
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time series forecasting"
+  - "characteristic roots"
+  - "linear models"
+  - "low-rank regularization"
+  - "denoising"
 date: 2026-05-08
-content_hash: b8cbca98360df1cf
+content_hash: e96d1d28ca36ee89
 ---
+
 # Characteristic Root Analysis and Regularization for Linear Time Series Forecasting
 
 **Conference**: ICLR 2026  
@@ -136,11 +141,11 @@ The paper validates theoretical properties across three dimensions:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](reasoning_on_time-series_for_financial_technical_analysis.md)
-- [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](../../AAAI2026/time_series/freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
 - [\[ICLR 2026\] TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification](timesliver_symbolic-linear_decomposition_for_explainable_time_series_classificat.md)
-- [\[ICLR 2026\] Aurora: Towards Universal Generative Multimodal Time Series Forecasting](aurora_towards_universal_generative_multimodal_time_series_forecasting.md)
-- [\[ACL 2026\] TSAQA: Time Series Analysis Question And Answering Benchmark](../../ACL2026/time_series/tsaqa_time_series_analysis_question_and_answering_benchmark.md)
+- [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
+- [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](../../AAAI2026/time_series/freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
+- [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](reasoning_on_time-series_for_financial_technical_analysis.md)
+- [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](weight-space_linear_recurrent_neural_networks.md)
 
 </div>
 

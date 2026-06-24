@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] GEM: A Gym for Agentic LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][agentic LLM] GEM is an open-source "environment simulator" for the LLM agent era—comparable to OpenAI-Gym—providing a unified environment-agent interface, asynchronous vectorized execution, rich tools, and 24 standardized multi-turn environments. It also introduces a REINFORCE + Return Batch Normalization (ReBN) baseline algorithm
+  [ICLR 2026][Reinforcement Learning][agentic LLM] GEM is an open-source "environment simulator" for the LLM agent era—comparable to OpenAI-Gym—providing a unified environment-agent interface, asynchronous vectorized execution, rich tools, and 24 standardized multi-turn environments. It also introduces a REINFORCE + Return Batch Normalization (ReBN) baseline algorithm compatible with dense step-wise rewards and arbitrary discount factors.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - agentic LLM
-  - RL environment
-  - multi-turn RL
-  - REINFORCE
-  - return normalization
-  - tool use
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "agentic LLM"
+  - "RL environment"
+  - "multi-turn RL"
+  - "REINFORCE"
+  - "return normalization"
+  - "tool use"
 date: 2026-05-08
-content_hash: 476cf470b980e289
+content_hash: 808db321fb343e82
 ---
+
 # GEM: A Gym for Agentic LLMs
 
 **Conference**: ICLR 2026  
@@ -119,10 +120,10 @@ A head-to-head comparison of GRPO / PPO / REINFORCE / REINFORCE+ReBN on 8 repres
 ## Related Papers
 
 - [\[ICLR 2026\] Learn the Ropes, Then Trust the Wins: Self-imitation with Progressive Exploration for Agentic Reinforcement Learning](learn_the_ropes_then_trust_the_wins_self-imitation_with_progressive_exploration_.md)
+- [\[ICLR 2026\] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs](tips_turn-level_information-potential_reward_shaping_for_search-augmented_llms.md)
 - [\[ICLR 2026\] Reasoning Boosts Opinion Alignment in LLMs](reasoning_boosts_opinion_alignment_in_llms.md)
 - [\[ICLR 2026\] Routing, Cascades, and User Choice for LLMs](routing_cascades_and_user_choice_for_llms.md)
 - [\[ICLR 2026\] Reward is Enough: LLMs are In-Context Reinforcement Learners](reward_is_enough_llms_are_in-context_reinforcement_learners.md)
-- [\[ICLR 2026\] The Art of Scaling Reinforcement Learning Compute for LLMs](the_art_of_scaling_reinforcement_learning_compute_for_llms.md)
 
 </div>
 

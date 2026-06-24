@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency
 description: >-
-  [CVPR 2026][Interpretability][CLIP] To address four common issues in No-Reference Image Quality Assessment (NR-IQA)—forced resizing to accommodate pre-trained resolutions, poor generalization across resolutions, difficulty in joint training due to inconsistent MOS scales, and computational explosion for UHD images—this paper proposes ReLIQS. It samples f
+  [CVPR 2026][AIGC Detection][No-reference IQA] To address four common issues in No-Reference Image Quality Assessment (NR-IQA)—forced resizing to accommodate pre-trained resolutions, poor generalization across resolutions, difficulty in joint training due to inconsistent MOS scales, and computational explosion for UHD images—this paper proposes ReLIQS. It samples fixed-size patches from the original resolution and its scaled variants, encoding them with CLIP. A lightweight "Pe…
 tags:
-  - CVPR 2026
-  - Interpretability
-  - CLIP
+  - "CVPR 2026"
+  - "AIGC Detection"
+  - "No-reference IQA"
+  - "resolution-agnostic"
+  - "IQA saliency"
+  - "multi-scale patch"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 9d3ad467e6890647
+content_hash: 926f72e2688c1e8c
 ---
+
 # Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency
 
 **Conference**: CVPR 2026  
@@ -147,11 +152,11 @@ ReLIQS significantly updates the SOTA on the UHD benchmark with much lower compu
 
 ## Related Papers
 
-- [\[AAAI 2026\] DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment](../../AAAI2026/interpretability/drexperts_differential_refinement_of_distortion-aware_experts_for_blind_image_qu.md)
-- [\[CVPR 2025\] KVQ: Boosting Video Quality Assessment via Saliency-Guided Local Perception](../../CVPR2025/interpretability/kvq_boosting_video_quality_assessment_via_saliency-guided_local_perception.md)
-- [\[ICML 2026\] IQA-Spider: Unifying Multi-Granularity Image Quality Assessment with Reasoning, Grounding and Referring](../../ICML2026/interpretability/iqa-spider_unifying_multi-granularity_image_quality_assessment_with_reasoning_gr.md)
-- [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
-- [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)
+- [\[ACL 2026\] From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment](../../ACL2026/aigc_detection/from_scoring_to_explanations_evaluating_shap_and_llm_rationales_for_rubric-based.md)
+- [\[CVPR 2026\] Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks](fine-grained_image_aesthetic_assessment_learning_discriminative_scores_from_rela.md)
+- [\[CVPR 2026\] Learning Forgery-Aware Lip Representations Without Forgery Priors](learning_forgery-aware_lip_representations_without_forgery_priors.md)
+- [\[CVPR 2026\] Inconsistency-aware Multimodal Schrodinger Bridge for Deepfake Localization](inconsistency-aware_multimodal_schrodinger_bridge_for_deepfake_localization.md)
+- [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
 
 </div>
 

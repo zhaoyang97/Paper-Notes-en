@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Randomized Antipodal Search Done Right for Data Pareto Improvement of LLM Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][LLM unlearning] This paper argues that the true bottleneck of LLM unlearning lies not in the optimizer, but in "retrieving the forget set to be erased and the retain set to be preserved from massive corpora." It proposes RASLIK—utilizing permutation-projection hashing to compress gradients into low-dimensional sketches, followed by an
+  [ICLR 2026][LLM Safety][LLM unlearning] This paper argues that the true bottleneck of LLM unlearning lies not in the optimizer, but in "retrieving the forget set to be erased and the retain set to be preserved from massive corpora." It proposes RASLIK—utilizing permutation-projection hashing to compress gradients into low-dimensional sketches, followed by antipodal search to simultaneously retrieve aligned samples (forget) and anti-aligned samples (retain). This reduces retri…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM unlearning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM unlearning"
+  - "Data retrieval"
+  - "Influence kernel"
+  - "Randomized hashing"
+  - "Pareto frontier"
 date: 2026-05-08
-content_hash: aad0bd726a459de4
+content_hash: 4318b31fb3d4acb4
 ---
+
 # Randomized Antipodal Search Done Right for Data Pareto Improvement of LLM Unlearning
 
 **Conference**: ICLR 2026  
@@ -119,15 +124,13 @@ RASLIK sits on the Pareto frontier in all 8 blocks and typically pushes the fron
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](../../CVPR2026/llm_safety/elastic_weight_consolidation_done_right_for_continual_learning.md)
-- [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
 - [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
-- [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
-- [\[ICLR 2026\] Operationalizing Data Minimization for Privacy-Preserving LLM Prompting](operationalizing_data_minimization_for_privacy-preserving_llm_prompting.md)
+- [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
+- [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
+- [\[ICLR 2026\] WaterDrum: Watermark-based Data-centric Unlearning Metric](waterdrum_watermark-based_data-centric_unlearning_metric.md)
 
 </div>
 

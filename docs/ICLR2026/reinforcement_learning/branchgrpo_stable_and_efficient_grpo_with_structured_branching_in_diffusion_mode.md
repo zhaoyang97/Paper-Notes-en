@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BranchGRPO: Stable and Efficient GRPO with Structured Branching in Diffusion Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] BranchGRPO transforms the "independent sequential sampling" of GRPO in diffusion/flow models into a structured branching tree with shared prefixes. This tree structure simultaneously addresses two issues: prefix reuse amortizes sampling costs, and leaf-reward backward fusion provides depth-normalized dense step-level a
+  [ICLR2026][Reinforcement Learning][GRPO] BranchGRPO transforms the "independent sequential sampling" of GRPO in diffusion/flow models into a structured branching tree with shared prefixes. This tree structure simultaneously addresses two issues: prefix reuse amortizes sampling costs, and leaf-reward backward fusion provides depth-normalized dense step-level advantages. Combined with width/depth pruning to backpropagate gradients only on valuable subsets…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Diffusion Model Alignment"
+  - "Tree-based rollout"
+  - "Dense rewards"
+  - "Credit assignment"
 date: 2026-05-08
-content_hash: b02ad43d22efd521
+content_hash: 3a4d94b81ed33501
 ---
+
 # BranchGRPO: Stable and Efficient GRPO with Structured Branching in Diffusion Models
 
 **Conference**: ICLR2026  
@@ -150,9 +155,9 @@ The depth pruning variant achieved the best alignment across all metrics (HPS-v2
 
 - [\[ICLR 2026\] Balancing the Experts: Unlocking LoRA-MoE for GRPO via Mechanism-Aware Rewards](balancing_the_experts_unlocking_lora-moe_for_grpo_via_mechanism-aware_rewards.md)
 - [\[ICLR 2026\] Composition of Memory Experts for Diffusion World Models](composition_of_memory_experts_for_diffusion_world_models.md)
-- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
 - [\[ICLR 2026\] SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models](spg_sandwiched_policy_gradient_for_masked_diffusion_language_models.md)
 - [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](../../ICML2026/reinforcement_learning/learning_unmasking_policies_for_diffusion_language_models.md)
+- [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
 
 </div>
 

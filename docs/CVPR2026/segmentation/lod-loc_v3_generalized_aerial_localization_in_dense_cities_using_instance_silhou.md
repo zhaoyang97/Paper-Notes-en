@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LoD-Loc v3: Generalized Aerial Localization in Dense Cities using Instance Silhouette Alignment
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] This paper proposes LoD-Loc v3, which addresses poor cross-scene generalization and pose ambiguity in dense cities for LoD-based UAV localization. By constructing a large-scale synthetic instance segmentation dataset (InsLoD-Loc) containing 100,000 images and upgrading the localization paradigm from semantic to instanc
+  [CVPR 2026][Segmentation][UAV localization] This paper proposes LoD-Loc v3, which addresses poor cross-scene generalization and pose ambiguity in dense cities for LoD-based UAV localization. By constructing a large-scale synthetic instance segmentation dataset (InsLoD-Loc) containing 100,000 images and upgrading the localization paradigm from semantic to instance silhouette alignment, it achieves a 2000% precision improvement (2m, 2°) on the dense Tokyo-LoDv3 scene compared t…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "UAV localization"
+  - "LoD city models"
+  - "instance segmentation"
+  - "synthetic data"
+  - "silhouette alignment"
 date: 2026-05-08
-content_hash: ad59b1094a146515
+content_hash: 3e9436521c4cf090
 ---
+
 # LoD-Loc v3: Generalized Aerial Localization in Dense Cities using Instance Silhouette Alignment
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ The instance segmenter is trained with a multi-task loss $L = L_{rpn} + L_{roi}$
 
 ## Related Papers
 
-- [\[CVPR 2026\] Phrase-Instance Alignment for Generalized Referring Segmentation](phrase-instance_alignment_for_generalized_referring_segmentation.md)
+- [\[ICLR 2026\] QPrompt-R1: Real-Time Reasoning for Domain-Generalized Semantic Segmentation via Group-Relative Query Alignment](../../ICLR2026/segmentation/qprompt-r1_real-time_reasoning_for_domain-generalized_semantic_segmentation_via_.md)
 - [\[CVPR 2026\] GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings](geosurge_geo-localization_using_semantic_fusion_with_hierarchy_of_geographic_emb.md)
-- [\[CVPR 2026\] GeCo: Geometry-Consistent Regularization for Domain Generalized Semantic Segmentation](geco_geometry-consistent_regularization_for_domain_generalized_semantic_segmenta.md)
 - [\[CVPR 2026\] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts](souple_enhancing_audio-visual_localization_and_segmentation_with_learnable_promp.md)
 - [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
+- [\[CVPR 2026\] Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning](follow_the_saliency_supervised_saliency_for_retrieval-augmented_dense_video_capt.md)
 
 </div>
 

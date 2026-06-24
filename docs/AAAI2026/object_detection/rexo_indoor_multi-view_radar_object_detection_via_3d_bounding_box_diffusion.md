@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] REXO: Indoor Multi-View Radar Object Detection via 3D Bounding Box Diffusion
 description: >-
-  [AAAI 2026][Object Detection][Radar Perception] This paper extends the 2D bounding box diffusion paradigm of DiffusionDet to 3D radar space…
+  [AAAI 2026][Object Detection][Radar Perception] This paper extends the 2D bounding box diffusion paradigm of DiffusionDet to 3D radar space, proposing the REXO framework. It enables explicit cross-view radar feature association guided by noisy 3D bounding box projections, and introduces a ground-level constraint to reduce the diffusion parameter space. REXO surpasses the state of the art by +4.22 AP and +11.02 AP on the HIBER and MMVR indoor radar datasets, respectively.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -13,7 +13,7 @@ tags:
   - "Indoor Human Detection"
   - "Cross-View Feature Association"
 date: 2026-05-08
-content_hash: fdc356f2412674bd
+content_hash: 80dab9ad33fae2f2
 ---
 
 # REXO: Indoor Multi-View Radar Object Detection via 3D Bounding Box Diffusion
@@ -138,11 +138,11 @@ On the most challenging split P2S2 (completely unseen environments), REXO improv
 
 ## Related Papers
 
+- [\[ECCV 2024\] Adaptive Bounding Box Uncertainties via Two-Step Conformal Prediction](../../ECCV2024/object_detection/adaptive_bounding_box_uncertainties_via_twostep_conformal_pr.md)
 - [\[CVPR 2026\] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning](../../CVPR2026/object_detection/gs-clip_zero-shot_3d_anomaly_detection_by_geometry-aware_prompt_and_synergistic_.md)
-- [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](../../CVPR2026/object_detection/a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
 - [\[AAAI 2026\] AerialMind: Towards Referring Multi-Object Tracking in UAV Scenarios](aerialmind_towards_referring_multi-object_tracking_in_uav_sc.md)
+- [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](../../CVPR2026/object_detection/a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
 - [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
-- [\[NeurIPS 2025\] MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling](../../NeurIPS2025/object_detection/mstar_box-free_multi-query_scene_text_retrieval_with_attention_recycling.md)
 
 </div>
 

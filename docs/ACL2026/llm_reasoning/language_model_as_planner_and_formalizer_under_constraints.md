@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Language Model as Planner and Formalizer under Constraints
 description: >-
-  [ACL 2026][LLM Reasoning][LLM-as-Planner] This paper proposes the CoPE benchmark, which injects formally classified natural language constraints into classic planning environments. It reveals that a single constraint can halve the planning performance of current state-of-the-art LLMs, exposing a severe lack of robustness in LLM planning.
+  [ACL 2026][Reasoning][Constrained Planning] This paper proposes the CoPE benchmark, which injects formally classified natural language constraints into classic planning environments. It reveals that a single constraint can halve the planning performance of current state-of-the-art LLMs, exposing a severe lack of robustness in LLM planning.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - LLM-as-Planner
-  - LLM-as-Formalizer
-  - PDDL
+  - "ACL 2026"
+  - "Reasoning"
+  - "Constrained Planning"
+  - "LLM-as-Planner"
+  - "LLM-as-Formalizer"
+  - "Benchmarking"
+  - "PDDL"
 date: 2026-05-08
-content_hash: f0f4485df57b8ff6
+content_hash: da9cc9554d09ed8e
 ---
+
 # Language Model as Planner and Formalizer under Constraints
 
 **Conference**: ACL 2026  
@@ -118,7 +121,7 @@ As an evaluation-focused work, no model training is involved. The core metric is
 - [\[ACL 2026\] Dissecting Failure Dynamics in Large Language Model Reasoning](dissecting_failure_dynamics_in_large_language_model_reasoning.md)
 - [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](../../ICLR2026/llm_reasoning/why_is_your_language_model_a_poor_implicit_reward_model.md)
 - [\[ICML 2026\] On the Generalization Gap in Self-Evolving Language Model Reasoning](../../ICML2026/llm_reasoning/on_the_generalization_gap_in_self-evolving_language_model_reasoning.md)
-- [\[ICLR 2026\] Estimating the Empowerment of Language Model Agents](../../ICLR2026/llm_reasoning/estimating_the_empowerment_of_language_model_agents.md)
+- [\[AAAI 2026\] Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning](../../AAAI2026/llm_reasoning/beyond_react_a_planner-centric_framework_for_complex_tool-au.md)
 - [\[AAAI 2026\] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement](../../AAAI2026/llm_reasoning/incorporating_self-rewriting_into_large_language_model_reasoning_reinforcement.md)
 
 </div>

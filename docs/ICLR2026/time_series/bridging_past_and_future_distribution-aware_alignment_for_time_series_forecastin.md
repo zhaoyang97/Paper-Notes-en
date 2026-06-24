@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Paper Note] To address the distribution mismatch in time series forecasting caused by "forcing historical statistical patterns onto future distributions," this paper proposes TimeAlign—a plug-and-play dual-branch framework. It utilizes a "future reconstruction" branch (present only during training) to provide a target distribution
+  [ICLR2026][Time Series][Time series forecasting] To address the distribution mismatch in time series forecasting caused by "forcing historical statistical patterns onto future distributions," this paper proposes TimeAlign—a plug-and-play dual-branch framework. It utilizes a "future reconstruction" branch (present only during training) to provide a target distribution for alignment. By employing global and local alignment, the prediction branch's representation is pulled towar…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Time series forecasting"
+  - "distribution alignment"
+  - "reconstruction"
+  - "representation learning"
+  - "frequency domain"
 date: 2026-05-08
-content_hash: b3d25d5b9c8c3ed8
+content_hash: 84bc6c3837a13131
 ---
+
 # Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting
 
 **Conference**: ICLR2026  
@@ -147,6 +153,7 @@ Compared to the runner-up TVNet, TimeAlign reduces MSE/MAE by **3.27%/5.20%** on
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -155,7 +162,7 @@ Compared to the runner-up TVNet, TimeAlign reduces MSE/MAE by **3.27%/5.20%** on
 - [\[ICLR 2026\] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting](cosa_context-aware_output-space_adapter_for_test-time_adaptation_in_time_series_.md)
 - [\[ICLR 2026\] CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter](cora_boosting_time_series_foundation_models_for_multivariate_forecasting_through.md)
 - [\[ICLR 2026\] Aurora: Towards Universal Generative Multimodal Time Series Forecasting](aurora_towards_universal_generative_multimodal_time_series_forecasting.md)
-- [\[ICLR 2026\] Characteristic Root Analysis and Regularization for Linear Time Series Forecasting](characteristic_root_analysis_and_regularization_for_linear_time_series_forecasti.md)
+- [\[ICML 2026\] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering](../../ICML2026/time_series/patra_pattern-aware_alignment_and_balanced_reasoning_for_time_series_question_an.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models
 description: >-
-  [ICCV2025][3D Vision][multi-view generation] This paper presents SpinMeRound, an identity-conditioned multi-view diffusion model that generates 360° full-head portraits with consistent identity and corresponding normal m…
+  [ICCV2025][3D Vision][multi-view generation] This paper presents SpinMeRound, an identity-conditioned multi-view diffusion model that generates 360° full-head portraits with consistent identity and corresponding normal maps from a single or few face images, surpassing existing multi-view diffusion methods on face novel view synthesis benchmarks.
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "normal estimation"
   - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: 5e859199b7266967
+content_hash: b960c8479ca66f61
 ---
 
 # SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models
@@ -176,8 +176,8 @@ All three components—input image, identity embedding, and normal generation—
 ## Related Papers
 
 - [\[ICCV 2025\] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models](mvgbench_a_comprehensive_benchmark_for_multi-view_generation_models.md)
-- [\[ICCV 2025\] MV-Adapter: Multi-view Consistent Image Generation Made Easy](mv-adapter_multi-view_consistent_image_generation_made_easy.md)
 - [\[ICCV 2025\] Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework](bridging_diffusion_models_and_3d_representations_a_3d_consistent_super-resolutio.md)
+- [\[ICCV 2025\] MV-Adapter: Multi-view Consistent Image Generation Made Easy](mv-adapter_multi-view_consistent_image_generation_made_easy.md)
 - [\[ICCV 2025\] FlexGen: Flexible Multi-View Generation from Text and Image Inputs](flexgen_flexible_multi-view_generation_from_text_and_image_inputs.md)
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images](auto-regressively_generating_multi-view_consistent_images.md)
 

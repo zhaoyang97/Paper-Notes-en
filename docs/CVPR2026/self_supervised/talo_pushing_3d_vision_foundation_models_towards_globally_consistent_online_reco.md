@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Thin Plate Spline] Ours proposes TALO, a high-degree-of-freedom alignment framework based on Thin Plate Spline (TPS). By propagating global control points and utilizing a point-agnostic submap registration design, it corrects spatially-varying inconsistencies of 3D vision foundation models in online reconstruction. It is compatible with
+  [CVPR 2026][Self-Supervised Learning][3D Vision Foundation Models] Ours proposes TALO, a high-degree-of-freedom alignment framework based on Thin Plate Spline (TPS). By propagating global control points and utilizing a point-agnostic submap registration design, it corrects spatially-varying inconsistencies of 3D vision foundation models in online reconstruction. It is compatible with various foundation models and camera configurations, significantly reducing trajectory errors…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Thin Plate Spline
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "3D Vision Foundation Models"
+  - "Online Reconstruction"
+  - "Thin Plate Spline"
+  - "Submap Alignment"
+  - "Autonomous Driving"
 date: 2026-05-08
-content_hash: a6aa6b95563dfd0a
+content_hash: 32b801afc2e08186
 ---
+
 # TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction
 
 **Conference**: CVPR 2026  
@@ -149,9 +153,9 @@ The high degrees of freedom in TPS allow it to correct spatially-varying distort
 
 - [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](scaling_parallel_sequence_models_to_vision_foundation_models.md)
 - [\[CVPR 2026\] How Much 3D Do Video Foundation Models Encode?](how_much_3d_do_video_foundation_models_encode.md)
-- [\[CVPR 2026\] Robustness of Vision Foundation Models to Common Perturbations](robustness_of_vision_foundation_models_to_common_perturbations.md)
 - [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](com_pt_chain_of_models_pretraining.md)
-- [\[CVPR 2026\] MuM: Multi-View Masked Image Modeling for 3D Vision](mum_multi-view_masked_image_modeling_for_3d_vision.md)
+- [\[CVPR 2026\] Harnessing the Power of Foundation Models for Accurate Material Classification](harnessing_the_power_of_foundation_models_for_accurate_material_classification.md)
+- [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
 
 </div>
 

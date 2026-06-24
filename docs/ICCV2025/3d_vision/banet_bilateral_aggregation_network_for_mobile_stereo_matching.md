@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BANet: Bilateral Aggregation Network for Mobile Stereo Matching
 description: >-
-  [ICCV 2025][3D Vision][stereo matching] This paper proposes BANet, a Bilateral Aggregation Network that decomposes the cost volume into a high-frequency detail volume and a low-frequency smooth volume via spatial attenti…
+  [ICCV 2025][3D Vision][stereo matching] This paper proposes BANet, a Bilateral Aggregation Network that decomposes the cost volume into a high-frequency detail volume and a low-frequency smooth volume via spatial attention and aggregates them separately. Using only 2D convolutions, BANet runs in real time on mobile devices while substantially outperforming MobileStereoNet-2D (35.3% accuracy improvement on KITTI 2015). Its 3D variant achieves the highest accuracy among real-ti…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "2D convolution"
   - "spatial attention"
 date: 2026-05-08
-content_hash: 762b848fcdb4459f
+content_hash: b23d5cbb023d2d94
 ---
 
 # BANet: Bilateral Aggregation Network for Mobile Stereo Matching
@@ -47,15 +47,15 @@ BANet consists of four stages: (1) feature extraction with MobileNetV2, (2) corr
 
 1. **Bilateral Aggregation**:
    The core idea is divide-and-conquer. A spatial attention map $\mathbf{A}$ decomposes the full correlation volume $\mathbf{C}_{cor}$ into two components:
-   $$\mathbf{C}_d = \mathbf{A} \odot \mathbf{C}_{cor}, \quad \mathbf{C}_s = (1 - \mathbf{A}) \odot \mathbf{C}_{cor}$$
+    $\mathbf{C}_d = \mathbf{A} \odot \mathbf{C}_{cor}, \quad \mathbf{C}_s = (1 - \mathbf{A}) \odot \mathbf{C}_{cor}$
    where $\mathbf{C}_d$ focuses on high-frequency details and edges, and $\mathbf{C}_s$ focuses on low-frequency smooth and textureless regions. Two independent aggregation branches $\mathbf{G}_d$ and $\mathbf{G}_s$ process each component separately, and their outputs are fused by weighted summation:
-   $$\mathbf{C}_{agg} = \mathbf{A} \odot \mathbf{C}_d' + (1 - \mathbf{A}) \odot \mathbf{C}_s'$$
+    $\mathbf{C}_{agg} = \mathbf{A} \odot \mathbf{C}_d' + (1 - \mathbf{A}) \odot \mathbf{C}_s'$
    Both branches share the same architecture but do not share weights. Each branch consists of inverted residual blocks from MobileNetV2: 4 blocks at 1/4 resolution, 6 blocks at 1/8 resolution, and 8 blocks at 1/16 resolution, with channel counts of 32/64/128 respectively.
 
 2. **Scale-aware Spatial Attention**:
    Accurately distinguishing high-frequency from low-frequency regions is essential for bilateral aggregation. The authors observe that **fine-scale features capture more high-frequency details, while coarse-scale features encode more low-frequency smooth information**. Accordingly, multi-scale features are fused to generate the attention map:
-   $$\mathbf{S} = \text{Concat}[\text{Conv}(\mathbf{F}_{l,16}^{up}), \text{Conv}(\mathbf{F}_{l,8}^{up}), \text{Conv}(\mathbf{F}_{l,4})]$$
-   $$\mathbf{A} = \sigma(\text{Conv}(\mathbf{S}))$$
+    $\mathbf{S} = \text{Concat}[\text{Conv}(\mathbf{F}_{l,16}^{up}), \text{Conv}(\mathbf{F}_{l,8}^{up}), \text{Conv}(\mathbf{F}_{l,4})]$
+    $\mathbf{A} = \sigma(\text{Conv}(\mathbf{S}))$
    Features from three scales (1/16, 1/8, 1/4 resolution) are upsampled to 1/4 resolution, concatenated, and passed through a convolution followed by sigmoid to produce the spatial attention map.
 
 3. **3D Extension (BANet-3D)**:
@@ -144,8 +144,8 @@ BANet consists of four stages: (1) feature extraction with MobileNetV2, (2) corr
 - [\[ICCV 2025\] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts](learning_robust_stereo_matching_in_the_wild_with_selective_mixture-of-experts.md)
 - [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
 - [\[ICCV 2025\] Stereo Any Video: Temporally Consistent Stereo Matching](stereo_any_video_temporally_consistent_stereo_matching.md)
+- [\[CVPR 2025\] DEFOM-Stereo: Depth Foundation Model Based Stereo Matching](../../CVPR2025/3d_vision/defom-stereo_depth_foundation_model_based_stereo_matching.md)
 - [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](zerostereo_zero-shot_stereo_matching_from_single_images.md)
-- [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
 
 </div>
 

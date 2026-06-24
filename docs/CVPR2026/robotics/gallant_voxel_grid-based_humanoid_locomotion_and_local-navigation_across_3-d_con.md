@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Gallant voxelizes vehicle-grade LiDAR point clouds into robot-centric occupancy grids, utilizing a lightweight 2D CNN that treats the z-axis as channels for end-to-end mapping to whole-body control strategies. By incorporating high-fidelity LiDAR simulation that accounts for the robot's own limbs, a single policy achie
+  [CVPR 2026][Robotics][Humanoid Robots] Gallant voxelizes vehicle-grade LiDAR point clouds into robot-centric occupancy grids, utilizing a lightweight 2D CNN that treats the z-axis as channels for end-to-end mapping to whole-body control strategies. By incorporating high-fidelity LiDAR simulation that accounts for the robot's own limbs, a single policy achieves zero-shot sim-to-real transfer. It marks the first instance of achieving >90% success rates in tasks like stair climb…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Humanoid Robots"
+  - "Perceptual-Motor Control"
+  - "Voxel Grid"
+  - "LiDAR Simulation"
+  - "Local Navigation"
 date: 2026-05-08
-content_hash: 5d23100e3593cfc5
+content_hash: bf5b5eae6727b496
 ---
+
 # Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains
 
 **Conference**: CVPR 2026  
@@ -134,15 +140,15 @@ Success rate $E_{\text{succ}}$ (%, higher is better); selected key terrains acro
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control](do_you_have_freestyle_expressive_humanoid_locomotion_via_audio_control.md)
+- [\[ICLR 2026\] From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance](../../ICLR2026/robotics/from_language_to_locomotion_retargeting-free_humanoid_control_via_motion_latent_.md)
 - [\[AAAI 2026\] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](../../AAAI2026/robotics/coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)
+- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](../../NeurIPS2025/robotics/adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
-- [\[CVPR 2026\] Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots](towards_motion_turing_test_evaluating_human-likeness_in_humanoid_robots.md)
-- [\[CVPR 2026\] D3D-VLP: Dynamic 3D Vision-Language-Planning Model for Embodied Grounding and Navigation](d3d-vlp_dynamic_3d_vision-language-planning_model_for_embodied_grounding_and_nav.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sampling-aware Adversarial Attacks against Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper points out that existing LLM adversarial attacks only consider whether "single-point greedy generation" is harmful, systematically underestimating model risks. The authors reformulate the attack as a compute allocation problem between "optimizing prompts" and "repeatedly sampling outputs." They demonstrate t
+  [ICLR 2026][LLM Safety][Adversarial attacks] This paper points out that existing LLM adversarial attacks only consider whether "single-point greedy generation" is harmful, systematically underestimating model risks. The authors reformulate the attack as a compute allocation problem between "optimizing prompts" and "repeatedly sampling outputs." They demonstrate that by treating sampling as a first-class attack vector, the attack success rate can be increased by up to 37 perce…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Adversarial attacks"
+  - "Jailbreak"
+  - "Sampling"
+  - "Compute allocation"
+  - "Entropy maximization objective"
 date: 2026-05-08
-content_hash: b542eff854c55ae7
+content_hash: 8fb721b1ed265bbc
 ---
+
 # Sampling-aware Adversarial Attacks against Large Language Models
 
 **Conference**: ICLR 2026  
@@ -128,15 +134,16 @@ The entropy objective is weaker than the affirmative objective in single-sample 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] VEAttack: Downstream-Agnostic Vision Encoder Attack Against Large Vision Language Models](veattack_downstream-agnostic_vision_encoder_attack_against_large_vision_language.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 - [\[ACL 2026\] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models](../../ACL2026/llm_safety/ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack.md)
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
 - [\[ICLR 2026\] GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance](genebreaker_jailbreak_attacks_against_dna_language_models_with_pathogenicity_gui.md)
-- [\[ICLR 2026\] Efficient Adversarial Attacks on High-dimensional Offline Bandits](efficient_adversarial_attacks_on_high-dimensional_offline_bandits.md)
+- [\[ICLR 2026\] Time-To-Inconsistency: A Survival Analysis of Large Language Model Robustness to Adversarial Attacks](time-to-inconsistency_a_survival_analysis_of_large_language_model_robustness_to_.md)
 
 </div>
 

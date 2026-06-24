@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BluRef: Unsupervised Image Deblurring with Dense-Matching References
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Ours proposes BluRef, the first unsupervised framework that utilizes unpaired reference sharp images through dense matching to generate pseudo ground truth for training deblurring networks, achieving performance close to or even surpassing supervised methods.
+  [CVPR 2026][Image Restoration][Unsupervised Deblurring] Ours proposes BluRef, the first unsupervised framework that utilizes unpaired reference sharp images through dense matching to generate pseudo ground truth for training deblurring networks, achieving performance close to or even surpassing supervised methods.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Unsupervised Deblurring"
+  - "Dense Matching"
+  - "Pseudo-Sharp Image Generation"
+  - "Reference Images"
+  - "Iterative Optimization"
 date: 2026-05-08
-content_hash: ae4a2b2456813c69
+content_hash: 4b3aeb015f94de08
 ---
+
 # BluRef: Unsupervised Image Deblurring with Dense-Matching References
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ The optimal range is 6-8 frames. Too few references result in insufficient cover
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features](rethinking_diffusion_model-based_video_super-resolution_leveraging_dense_guidanc.md)
-- [\[CVPR 2026\] Gyro-based Deep Video Deblurring](gyro-based_deep_video_deblurring.md)
+- [\[CVPR 2026\] DeSpike: Defocus Deblurring and Image Reconstruction for Spike Camera](seeing_through_blur_tackling_defocus_in_spike-based_imaging.md)
+- [\[ICLR 2026\] Flower: A Flow-Matching Solver for Inverse Problems](../../ICLR2026/image_restoration/flower_a_flow-matching_solver_for_inverse_problems.md)
 - [\[CVPR 2026\] UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation](udapose_unsupervised_domain_adaptation_for_low_light_human_pose_estimation.md)
-- [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](selfhvd_self-supervised_handheld_video_deblurring.md)
-- [\[CVPR 2026\] MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring](motionaware_animatable_gaussian_avatars_deblurring.md)
+- [\[CVPR 2026\] Gyro-based Deep Video Deblurring](gyro-based_deep_video_deblurring.md)
 
 </div>
 

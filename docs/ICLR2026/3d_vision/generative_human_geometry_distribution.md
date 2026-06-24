@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Generative Human Geometry Distribution
 description: >-
-  [ICLR 2026][3D Vision][Flow Matching] The authors upgrade "Geometry Distribution" from representing a single object to a "generative model scalable to datasets." By replacing network weights with 2D feature maps and using the SMPL template as the source distribution for Flow Matching instead of a Gaussian, this work enables large-scale 3D human generation
+  [ICLR 2026][3D Vision][Geometry Distribution] The authors upgrade "Geometry Distribution" from representing a single object to a "generative model scalable to datasets." By replacing network weights with 2D feature maps and using the SMPL template as the source distribution for Flow Matching instead of a Gaussian, this work enables large-scale 3D human generation with geometry distributions for the first time, achieving a 57% improvement in geometry quality over the SOTA.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Flow Matching
-  - SMPL
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Geometry Distribution"
+  - "Flow Matching"
+  - "SMPL"
+  - "3D Human Generation"
+  - "Clothing Details"
+  - "Feature Map Representation"
 date: 2026-05-08
-content_hash: b6c9052030485b40
+content_hash: 93202bdbd15caa55
 ---
+
 # Generative Human Geometry Distribution
 
 **Conference**: ICLR 2026  
@@ -119,10 +124,20 @@ Architecture comparison (Surface Distance ↓):
 - **Value**: ⭐⭐⭐⭐ The 57% geometry improvement and the "geometry-first" approach are highly valuable for 3D digital humans and virtual try-ons.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Human Geometry Distribution for 3D Animation Generation](../../CVPR2026/3d_vision/human_geometry_distribution_for_3d_animation_generation.md)
+- [\[ICLR 2026\] G4Splat: Geometry-Guided Gaussian Splatting with Generative Prior](g4splat_geometry-guided_gaussian_splatting_with_generative_prior.md)
+- [\[ICLR 2026\] H2OFlow: Grounding Human-Object Affordances with 3D Generative Models and Dense Diffused Flows](h2oflow_grounding_human-object_affordances_with_3d_generative_models_and_dense_d.md)
+- [\[ICLR 2026\] GOOD: Geometry-guided Out-of-Distribution Modeling for Open-set Test-time Adaptation in Point Cloud Semantic Segmentation](good_geometry-guided_out-of-distribution_modeling_for_open-set_test-time_adaptat.md)
+- [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](holopart_generative_3d_part_amodal_segmentation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Human Geometry Distribution for 3D Animation Generation](../../CVPR2026/3d_vision/human_geometry_distribution_for_3d_animation_generation.md)

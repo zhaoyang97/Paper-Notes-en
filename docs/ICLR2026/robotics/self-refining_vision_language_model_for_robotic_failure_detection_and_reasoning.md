@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Refining Vision Language Model for Robotic Failure Detection and Reasoning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Vision-Language Model] ARMOR decomposes robotic failure understanding into two collaborative tasks: binary detection and natural language explanation. By utilizing multi-round self-refinement, a hybrid of sparse/dense label training, and entropy-based trajectory selection, it simultaneously improves failure detection accuracy and explanation
+  [ICLR 2026][Robotics][Robotic Failure Detection] ARMOR decomposes robotic failure understanding into two collaborative tasks: binary detection and natural language explanation. By utilizing multi-round self-refinement, a hybrid of sparse/dense label training, and entropy-based trajectory selection, it simultaneously improves failure detection accuracy and explanation quality on both simulated and real-world warehouse robotic data.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Robotics"
+  - "Robotic Failure Detection"
+  - "Vision-Language Model"
+  - "Self-refinement"
+  - "Heterogeneous Supervision"
+  - "Open-ended Failure Explanation"
 date: 2026-05-08
-content_hash: 4ac714c6915adf87
+content_hash: abfba543f17915a5
 ---
+
 # Self-Refining Vision Language Model for Robotic Failure Detection and Reasoning
 
 **Conference**: ICLR 2026  
@@ -153,8 +158,8 @@ A key observation is that general open-source VLMs are near-random on these fail
 - [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
 - [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 - [\[NeurIPS 2025\] SAFE: Multitask Failure Detection for Vision-Language-Action Models](../../NeurIPS2025/robotics/safe_multitask_failure_detection_for_vision-language-action_models.md)
-- [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
 - [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](../../CVPR2026/robotics/awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
+- [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
 
 </div>
 

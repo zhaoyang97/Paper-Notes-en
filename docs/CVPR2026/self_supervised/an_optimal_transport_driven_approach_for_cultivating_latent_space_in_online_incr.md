@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] This paper proposes an online mixture model learning framework (MMOT) based on Optimal Transport theory. By maintaining multiple adaptive centroids for each category, it precisely characterizes the multimodal nature of online data streams. Combined with a dynamic preservation strategy to enhance category discriminabili
+  [CVPR 2026][Self-Supervised Learning][Online Class-Incremental Learning] This paper proposes an online mixture model learning framework (MMOT) based on Optimal Transport theory. By maintaining multiple adaptive centroids for each category, it precisely characterizes the multimodal nature of online data streams. Combined with a dynamic preservation strategy to enhance category discriminability, it effectively mitigates catastrophic forgetting in Online Class-Incremental Learni…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Online Class-Incremental Learning"
+  - "Optimal Transport"
+  - "Gaussian Mixture Model"
+  - "Catastrophic Forgetting"
+  - "Latent Space"
 date: 2026-05-08
-content_hash: 27f01efc58f5bceb
+content_hash: 9857724a2c276ef6
 ---
+
 # An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning
 
 **Conference**: CVPR 2026  
@@ -139,8 +145,8 @@ The total loss consists of three terms corresponding to the three pipeline steps
 - [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
 - [\[CVPR 2026\] Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild](shape-of-you_fused_gromov-wasserstein_optimal_transport_for_semantic_corresponde.md)
 - [\[CVPR 2026\] Assignment-Driven Hash Learning in a Hyper-Semantic Space for On-the-Fly Category Discovery](assignment-driven_hash_learning_in_a_hyper-semantic_space_for_on-the-fly_categor.md)
+- [\[CVPR 2026\] Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model](rethinking_snn_online_training_and_deployment_grad.md)
 - [\[CVPR 2026\] Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)
-- [\[ICCV 2025\] MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning](../../ICCV2025/self_supervised/mosic_optimal-transport_motion_trajectory_for_dense_self-supervised_learning.md)
 
 </div>
 

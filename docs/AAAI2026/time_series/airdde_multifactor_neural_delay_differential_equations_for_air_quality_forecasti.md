@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AirDDE: Multifactor Neural Delay Differential Equations for Air Quality Forecasting
 description: >-
-  [AAAI2026][Time Series][air quality forecasting] The first framework to introduce Neural Delay Differential Equations (NDDE) into air quality forecasting. By incorporating a memory-augmented attention module and a physic…
+  [AAAI2026][Time Series][air quality forecasting] The first framework to introduce Neural Delay Differential Equations (NDDE) into air quality forecasting. By incorporating a memory-augmented attention module and a physics-guided delay evolution function, it models delay effects in the continuous-time propagation of pollutants, achieving an average MAE reduction of 8.79% across three datasets.
 tags:
   - "AAAI2026"
   - "Time Series"
@@ -11,7 +11,7 @@ tags:
   - "physics-guided"
   - "spatiotemporal graph"
 date: 2026-05-08
-content_hash: 5f6ed315c09ef7e4
+content_hash: 8d22e8f659680539
 ---
 
 # AirDDE: Multifactor Neural Delay Differential Equations for Air Quality Forecasting
@@ -166,11 +166,11 @@ The combination of **NDDE + physical priors** represents a valuable extension di
 
 ## Related Papers
 
+- [\[ICLR 2026\] Random Controlled Differential Equations](../../ICLR2026/time_series/random_controlled_differential_equations.md)
+- [\[ICML 2026\] Learning Manifold and Itô Dynamics with Branched Neural Rough Differential Equations](../../ICML2026/time_series/learning_manifold_and_itô_dynamics_with_branched_neural_rough_differential_equat.md)
+- [\[CVPR 2026\] Real-Time Long Horizon Air Quality Forecasting via Group-Relative Policy Optimization](../../CVPR2026/time_series/real-time_long_horizon_air_quality_forecasting_via_group-relative_policy_optimiz.md)
 - [\[NeurIPS 2025\] In-Context Learning of Stochastic Differential Equations with Foundation Inference Models](../../NeurIPS2025/time_series/in-context_learning_of_stochastic_differential_equations_with_foundation_inferen.md)
-- [\[AAAI 2026\] Sonnet: Spectral Operator Neural Network for Multivariable Time Series Forecasting](sonnet_spectral_operator_neural_network_for_multivariable_time_series_forecastin.md)
 - [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](../../ICLR2026/time_series/rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
-- [\[AAAI 2026\] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports](urban_incident_prediction_with_graph_neural_networks_integrating_government_rati.md)
-- [\[ICLR 2026\] TSRating: Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](../../ICLR2026/time_series/tsrating_time_series_quality_llm.md)
 
 </div>
 

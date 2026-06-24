@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models
 description: >-
-  [LLM Safety] This paper proposes MFA, a Multi-Faceted Attack framework that systematically exposes security vulnerabilities in VLMs equipped with multi-layered defenses (including commercial models such as GPT-4o and Gem…
+  [LLM Safety] This paper proposes MFA, a Multi-Faceted Attack framework that systematically exposes security vulnerabilities in VLMs equipped with multi-layered defenses (including commercial models such as GPT-4o and Gemini) through three complementary dimensions: Attention Transfer Attack (ATA) to bypass alignment, adversarial signatures to evade content moderation, and visual encoder attack to overwrite system prompts. The overall attack success rate reaches 58.5%.
 tags:
   - "LLM Safety"
 date: 2026-05-08
-content_hash: 84df4a49baee214c
+content_hash: bf08e02eb5bd6f17
 ---
 
 # Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models
@@ -152,10 +152,10 @@ $$\mathbf{x}_{\text{adv}}^{t+1} = \mathbf{x}_{\text{adv}}^{t} + \alpha \cdot \te
 ## Related Papers
 
 - [\[AAAI 2026\] Ghost in the Transformer: Detecting Model Reuse with Invariant Spectral Signatures](ghost_in_the_transformer_detecting_model_reuse_with_invariant_spectral_signature.md)
+- [\[ICLR 2026\] GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance](../../ICLR2026/llm_safety/genebreaker_jailbreak_attacks_against_dna_language_models_with_pathogenicity_gui.md)
+- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](../../ICLR2026/llm_safety/invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
 - [\[ICLR 2026\] Unlearning Evaluation through Subset Statistical Independence](../../ICLR2026/llm_safety/unlearning_evaluation_through_subset_statistical_independence.md)
-- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](../../CVPR2026/llm_safety/multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
-- [\[ACL 2026\] DualGuard: Dual-stream Large Language Model Watermarking Defense against Paraphrase and Spoofing Attack](../../ACL2026/llm_safety/dualguard_dual-stream_large_language_model_watermarking_defense_against_paraphra.md)
-- [\[AAAI 2026\] StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak](stylebreak_revealing_alignment_vulnerabilities_in_large_audio-language_models_vi.md)
+- [\[ICLR 2026\] Jailbreak Transferability Emerges from Shared Representations](../../ICLR2026/llm_safety/jailbreak_transferability_emerges_from_shared_representations.md)
 
 </div>
 

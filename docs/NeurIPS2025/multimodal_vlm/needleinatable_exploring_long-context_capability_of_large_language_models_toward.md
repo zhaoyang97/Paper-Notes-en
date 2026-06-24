@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NeedleInATable: Exploring Long-Context Capability of Large Language Models towards Long-Structured Tables
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Long-context understanding] This paper proposes NeedleInATable (NIAT), a benchmark that treats each table cell as a "needle" to evaluate the fine-grained perception capability of LLMs over…
+  [NeurIPS 2025][Multimodal VLM][Long-context understanding] This paper proposes NeedleInATable (NIAT), a benchmark that treats each table cell as a "needle" to evaluate the fine-grained perception capability of LLMs over long structured tables. It reveals that strong performance of existing models on complex downstream tasks may stem from dataset shortcuts rather than genuine table understanding.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "table perception"
   - "data synthesis"
 date: 2026-05-08
-content_hash: 0ca4b15ef73bdcdb
+content_hash: 436bea442c21afcc
 ---
 
 # NeedleInATable: Exploring Long-Context Capability of Large Language Models towards Long-Structured Tables
@@ -135,9 +135,9 @@ The NIAT benchmark comprises 750 tables and 287K test samples, covering three ta
 
 - [\[NeurIPS 2025\] HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models](hope_hybrid_of_position_embedding_for_long_context_visionlan.md)
 - [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
-- [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/multimodal_vlm/docseeker_long_document_understanding.md)
-- [\[NeurIPS 2025\] Context Informs Pragmatic Interpretation in Vision-Language Models](context_informs_pragmatic_interpretation_in_vision-language_models.md)
 - [\[NeurIPS 2025\] VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions](vitrix-clipin_enhancing_fine-grained_visual_understanding_in_clip_via_instructio.md)
+- [\[NeurIPS 2025\] Context Informs Pragmatic Interpretation in Vision-Language Models](context_informs_pragmatic_interpretation_in_vision-language_models.md)
+- [\[ICLR 2026\] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](../../ICLR2026/multimodal_vlm/videochat-flash_hierarchical_compression_for_long-context_video_modeling.md)
 
 </div>
 

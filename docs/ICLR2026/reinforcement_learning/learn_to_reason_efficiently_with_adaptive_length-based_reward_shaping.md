@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learn to Reason Efficiently with Adaptive Length-based Reward Shaping
 description: >-
-  [ICLR 2026][Reinforcement Learning][RL] Ours unify various RL methods for "compressing long reasoning chains" into a "Length-based Reward Shaping" framework. From this perspective, a step-wise reward LASER and its dynamic, difficulty-aware version LASER-D are proposed. Across five reasoning models (1.5B–32B), these methods simultaneously improve accuracy and
+  [ICLR 2026][Reinforcement Learning][Length Reward Shaping] Ours unify various RL methods for "compressing long reasoning chains" into a "Length-based Reward Shaping" framework. From this perspective, a step-wise reward LASER and its dynamic, difficulty-aware version LASER-D are proposed. Across five reasoning models (1.5B–32B), these methods simultaneously improve accuracy and token efficiency (e.g., +5.3 accuracy and -64% tokens on AIME24).
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Length Reward Shaping"
+  - "Over-thinking"
+  - "RL"
+  - "CoT Compression"
+  - "Difficulty-aware"
+  - "Dynamic Target Length"
 date: 2026-05-08
-content_hash: f56f801c8c568097
+content_hash: 27c2c1fd9f74a309
 ---
+
 # Learn to Reason Efficiently with Adaptive Length-based Reward Shaping
 
 **Conference**: ICLR 2026  
@@ -127,9 +133,9 @@ On the 7B model, LASER-D increases AIME accuracy by 5.2 points and cuts tokens f
 ## Related Papers
 
 - [\[ICLR 2026\] Learning to Reason Efficiently with Discounted Reinforcement Learning](learning_to_reason_efficiently_with_discounted_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](../../NeurIPS2025/reinforcement_learning/training_language_models_to_reason_efficiently.md)
 - [\[ICLR 2026\] Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty](stop_unnecessary_reflection_training_lrms_for_efficient_reasoning_with_adaptive_.md)
 - [\[ICLR 2026\] Causally Robust Reward Learning from Reason-Augmented Preference Feedback](causally_robust_reward_learning_from_reason-augmented_preference_feedback.md)
-- [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](../../NeurIPS2025/reinforcement_learning/training_language_models_to_reason_efficiently.md)
 - [\[ICLR 2026\] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs](tips_turn-level_information-potential_reward_shaping_for_search-augmented_llms.md)
 
 </div>

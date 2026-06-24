@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Ours proposes PALM, a unified VLA framework that uses structured fine-grained affordance predictions (global, local, spatial, and dynamic) as implicit reasoning anchors, combined with continuous sub-task progress estimation for seamless task switching. It achieves an average completion length of 4.48 on CALVIN ABCD (su
+  [CVPR 2026][Object Detection][Long-horizon manipulation] Ours proposes PALM, a unified VLA framework that uses structured fine-grained affordance predictions (global, local, spatial, and dynamic) as implicit reasoning anchors, combined with continuous sub-task progress estimation for seamless task switching. It achieves an average completion length of 4.48 on CALVIN ABCD (surpassing Prev. SOTA by 12.5%), a 91.8% success rate on LIBERO-LONG, and over 2x the baseline performanc…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Long-horizon manipulation"
+  - "affordance reasoning"
+  - "progress-awareness"
+  - "vision-language-action model"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: 4cd362b7a7543ec8
+content_hash: 73884d14d4b53d6a
 ---
+
 # PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -164,11 +170,11 @@ Real-world long-horizon generalization (6-step continuous tasks):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress](recurrent_reasoning_with_vision-language_models_for_estimating_long-horizon_embo.md)
-- [\[CVPR 2026\] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning](agile_learning_robust_long-horizon_manipulation_via_affordance-grounded_bidirect.md)
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
-- [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](../../AAAI2026/robotics/manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
-- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
+- [\[CVPR 2026\] RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation](rc-nf_robot-conditioned_normalizing_flow_for_real-time_anomaly_detection_in_robo.md)
+- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
+- [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
+- [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
+- [\[CVPR 2026\] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning](gs-clip_zero-shot_3d_anomaly_detection_by_geometry-aware_prompt_and_synergistic_.md)
 
 </div>
 

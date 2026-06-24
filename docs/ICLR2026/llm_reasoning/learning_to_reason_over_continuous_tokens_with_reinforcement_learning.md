@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)
 description: >-
-  [ICLR 2026][LLM Reasoning][Hybrid Reasoning] HyRea enables LLMs to **autonomously and dynamically switch between "explicit token reasoning" and "implicit embedding reasoning"** during inference. By replacing low-entropy CoT steps with continuous embeddings through entropy-guided cold-start SFT, and training the model with GRPO reinforcement learning to learn opti
+  [ICLR 2026][Reasoning][Hybrid Reasoning] HyRea enables LLMs to **autonomously and dynamically switch between "explicit token reasoning" and "implicit embedding reasoning"** during inference. By replacing low-entropy CoT steps with continuous embeddings through entropy-guided cold-start SFT, and training the model with GRPO reinforcement learning to learn optimal switching timing, it reduces output tokens by approximately 50% in mathematical reasoning while maintaining near-id…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Hybrid Reasoning
-  - Latent Reasoning
-  - Continuous Token
-  - Chain-of-Thought
-  - GRPO
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Hybrid Reasoning"
+  - "Latent Reasoning"
+  - "Continuous Token"
+  - "Chain-of-Thought"
+  - "GRPO"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: d391252e5fcbb47e
+content_hash: 3a9115e8b70c1c62
 ---
+
 # Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)
 
 **Conference**: ICLR 2026  
@@ -122,8 +123,8 @@ Entropy guidance results in the fewest tokens and more stable accuracy across al
 
 - [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 - [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
-- [\[ICLR 2026\] Learning to Reason via Mixture-of-Thought for Logical Reasoning](learning_to_reason_via_mixture-of-thought_for_logical_reasoning.md)
 - [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
+- [\[ICLR 2026\] Learning to Reason via Mixture-of-Thought for Logical Reasoning](learning_to_reason_via_mixture-of-thought_for_logical_reasoning.md)
 - [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
 
 </div>

@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] SpatialLadder：用渐进式训练为视觉-语言模型构建空间推理能力
+  [Paper Note] SpatialLadder: Building Spatial Reasoning Capabilities for Vision-Language Models via Progressive Training
 description: >-
-  [ICLR 2026][vlm_reasoning][GRPO] This paper proposes SpatialLadder, which first constructs a 26k spatial dataset covering localization, single-image, multi-view, and video using ScanNet reconstruction. It then employs a three-stage progressive training strategy: "Perception-Localization → Spatial Understanding → Reinforced Reasoning." This approach tr
+  [ICLR 2026][VLM Reasoning][Spatial Reasoning] This paper proposes SpatialLadder, which first constructs a 26k spatial dataset covering localization, single-image, multi-view, and video using ScanNet reconstruction. It then employs a three-stage progressive training strategy: "Perception-Localization → Spatial Understanding → Reinforced Reasoning." This approach trains a 3B Qwen2.5-VL to reach spatial reasoning SOTA, achieving a 23.4% overall improvement over the base model an…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - GRPO
-  - VLM
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Spatial Reasoning"
+  - "Progressive Training"
+  - "GRPO"
+  - "Curriculum Learning"
+  - "VLM"
 date: 2026-05-08
-content_hash: e2ab013efcd9f100
+content_hash: 224f1e4b6e28d7a5
 ---
+
 # SpatialLadder: Building Spatial Reasoning Capabilities for Vision-Language Models via Progressive Training
 
 **Conference**: ICLR 2026  
@@ -144,11 +148,11 @@ Ours achieves 45.0% OOD overall, exceeding GPT-4o (42.7%) and gaining 6.9% over 
 
 ## Related Papers
 
-- [\[ICLR 2026\] More Thought, Less Accuracy? On the Dual Nature of Reasoning in Vision-Language Models](more_thought_less_accuracy_on_the_dual_nature_of_reasoning_in_vision-language_mo.md)
-- [\[ICLR 2026\] Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning](game-rl_synthesizing_multimodal_verifiable_game_data_to_boost_vlms_general_reaso.md)
-- [\[ICLR 2026\] MetaSpatial: Reinforcing 3D Spatial Reasoning in VLMs for the Metaverse](metaspatial_reinforcing_3d_spatial_reasoning_in_vlms_for_the_metaverse.md)
-- [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](reasoning-driven_multimodal_llm_for_domain_generalization.md)
-- [\[ICLR 2026\] We-Math 2.0: A Versatile MathBook System for Incentivizing Visual Mathematical Reasoning](we-math_20_a_versatile_mathbook_system_for_incentivizing_visual_mathematical_rea.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
+- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/vlm_reasoning/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
+- [\[ICLR 2026\] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)
+- [\[ICLR 2026\] InternSpatial: A Comprehensive Dataset for Spatial Reasoning in Vision-Language Models](internspatial_a_comprehensive_dataset_for_spatial_reasoning_in_vision-language_m.md)
 
 </div>
 

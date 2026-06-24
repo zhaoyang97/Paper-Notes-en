@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HAD: Heterogeneity-Aware Distillation for Lifelong Heterogeneous Learning
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper extends lifelong learning from "homogeneous task streams" to "heterogeneous task streams" (LHL) and instantiates it in dense prediction scenarios (LHL4DP). It proposes HAD (Heterogeneity-Aware Distillation), an exemplar-free method that utilizes a frozen teacher to generate pseudo-labels for self-distillatio
+  [CVPR 2026][Self-Supervised Learning][Lifelong Learning] This paper extends lifelong learning from "homogeneous task streams" to "heterogeneous task streams" (LHL) and instantiates it in dense prediction scenarios (LHL4DP). It proposes HAD (Heterogeneity-Aware Distillation), an exemplar-free method that utilizes a frozen teacher to generate pseudo-labels for self-distillation. Two complementary terms, Distribution-Balanced HAD (DB-HAD) and Saliency-Guided HAD (SG-HAD)…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Lifelong Learning"
+  - "Catastrophic Forgetting"
+  - "Heterogeneous Tasks"
+  - "Self-distillation"
+  - "Dense Prediction"
 date: 2026-05-08
-content_hash: 05574f2eea629e16
+content_hash: feb054a9ec7378f9
 ---
+
 # HAD: Heterogeneity-Aware Distillation for Lifelong Heterogeneous Learning
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ Baselines include EWC, LwF, iCaRL, DER, SPG, SGP, along with Naive Sequential Tr
 
 ## Related Papers
 
-- [\[CVPR 2026\] Anti-Degradation Lifelong Multi-View Clustering](anti-degradation_lifelong_multi-view_clustering.md)
-- [\[CVPR 2026\] FEAT: Federated Geometry-Aware Correction for Exemplar Replay under Continual Dynamic Heterogeneity](feat_federated_geometry_aware_correction_for_exemplar_replay_under_continual_dynamic_heterogeneity.md)
-- [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](cluster-aware_anchor_learning_for_multi-view_clustering.md)
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
+- [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
+- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)
 - [\[CVPR 2026\] PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning](paf_perturbation-aware_filtering_for_open-set_semi-supervised_learning.md)
+- [\[CVPR 2026\] Smart Replay: Adaptive Scheduling of Memory Rehearsal for Computational Resource-Aware Incremental Learning](smart_replay_adaptive_scheduling_of_memory_rehearsal_for_computational_resource-.md)
+- [\[CVPR 2026\] CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning](cue_concept-aware_multi-label_expansion_to_mitigate_concept_confusion_in_long-ta.md)
 
 </div>
 

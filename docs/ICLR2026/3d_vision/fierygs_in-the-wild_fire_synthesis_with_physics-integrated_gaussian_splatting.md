@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FieryGS: In-the-Wild Fire Synthesis with Physics-Integrated Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Gaussian Splatting] FieryGS integrates 3D Gaussian Splatting (3DGS) reconstruction of real-world scenes, MLLM-based material property reasoning, controllable combustion simulation, and unified volume rendering. This pipeline allows users to automatically synthesize dynamic fire, smoke, and charring effects that are visually realistic and
+  [ICLR2026][3D Vision][Gaussian Splatting] FieryGS integrates 3D Gaussian Splatting (3DGS) reconstruction of real-world scenes, MLLM-based material property reasoning, controllable combustion simulation, and unified volume rendering. This pipeline allows users to automatically synthesize dynamic fire, smoke, and charring effects that are visually realistic and adhere to material and geometric constraints in multi-view scenes captured in-the-wild.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Gaussian Splatting
+  - "ICLR2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Fire Synthesis"
+  - "Physics Simulation"
+  - "Material Reasoning"
+  - "Volume Rendering"
 date: 2026-05-08
-content_hash: 9fee142d05282c8f
+content_hash: 1948377f02ef5544
 ---
+
 # FieryGS: In-the-Wild Fire Synthesis with Physics-Integrated Gaussian Splatting
 
 **Conference**: ICLR2026  
@@ -137,16 +142,16 @@ FieryGS significantly outperformed baselines in user studies for both perceptual
 - **Value**: ⭐⭐⭐⭐⭐ (Direct impact on AR/VR, robotics data augmentation, and digital twins.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Fracture-GS: Dynamic Fracture Simulation with Physics-Integrated Gaussian Splatting](fracture-gs_dynamic_fracture_simulation_with_physics-integrated_gaussian_splatti.md)
 - [\[ICLR 2026\] CylinderSplat: 3D Gaussian Splatting with Cylindrical Triplanes for Panoramic Novel View Synthesis](cylindersplat_3d_gaussian_splatting_with_cylindrical_triplanes_for_panoramic_nov.md)
-- [\[ICLR 2026\] PAT3D: Physics-Augmented Text-to-3D Scene Generation](pat3d_physics-augmented_text-to-3d_scene_generation.md)
-- [\[ICLR 2026\] G4Splat: Geometry-Guided Gaussian Splatting with Generative Prior](g4splat_geometry-guided_gaussian_splatting_with_generative_prior.md)
-- [\[ICLR 2026\] Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields](learning_physics-grounded_4d_dynamics_with_neural_gaussian_force_fields.md)
+- [\[CVPR 2026\] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting](../../CVPR2026/3d_vision/hierarchical_visual_relocalization_with_nearest_view_synthesis_from_feature_gaus.md)
+- [\[CVPR 2026\] Scene Grounding In the Wild](../../CVPR2026/3d_vision/scene_grounding_in_the_wild.md)
+- [\[ICLR 2026\] Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field](station2radar_query_conditioned_gaussian_splatting_for_precipitation_field.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FSI2P: A Hierarchical Focus–Sweep Registration Network with Dynamically Allocated Depth
 description: >-
-  [ICML 2026][3D Vision][Mamba/SSM] This paper abstracts the human observation process of "glancing first, then examining block-by-block" into a two-stage Focus-Sweep paradigm. It replaces Transformer with Mamba for image-to-point cloud interaction and utilizes reinforcement learning to dynamically determine the number of interaction layers at each scale
+  [ICML 2026][3D Vision][Image-to-Point Cloud Registration] This paper abstracts the human observation process of "glancing first, then examining block-by-block" into a two-stage Focus-Sweep paradigm. It replaces Transformer with Mamba for image-to-point cloud interaction and utilizes reinforcement learning to dynamically determine the number of interaction layers at each scale, achieving SOTA performance in I2P registration on RGB-D Scenes V2 and 7-Scenes.
 tags:
-  - ICML 2026
-  - 3D Vision
-  - Mamba/SSM
-  - Focus-Sweep
+  - "ICML 2026"
+  - "3D Vision"
+  - "Image-to-Point Cloud Registration"
+  - "Mamba/SSM"
+  - "RL Layer Selection"
+  - "Focus-Sweep"
+  - "Multi-scale Interaction"
 date: 2026-05-08
-content_hash: 3671e435cfdca3c1
+content_hash: 1a740723babdbf18
 ---
+
 # FSI2P: A Hierarchical Focus–Sweep Registration Network with Dynamically Allocated Depth
 
 **Conference**: ICML 2026  
@@ -134,8 +138,8 @@ Improvements are particularly significant on Scene-11 / Scene-12 (highly repetit
 
 - [\[ICCV 2025\] CA-I2P: Channel-Adaptive Registration Network with Global Optimal Selection](../../ICCV2025/3d_vision/ca-i2p_channel-adaptive_registration_network_with_global_optimal_selection.md)
 - [\[CVPR 2026\] Rethinking 2D-3D Registration: A Novel Network for High-Value Zone Selection and Representation Consistency Alignment](../../CVPR2026/3d_vision/rethinking_2d-3d_registration_a_novel_network_for_high-value_zone_selection_and_.md)
-- [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](../../CVPR2026/3d_vision/mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
 - [\[NeurIPS 2025\] DualFocus: Depth from Focus with Spatio-Focal Dual Variational Constraints](../../NeurIPS2025/3d_vision/dualfocus_depth_from_focus_with_spatio-focal_dual_variational_constraints.md)
+- [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](../../CVPR2026/3d_vision/mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
 - [\[ECCV 2024\] Equi-GSPR: Equivariant SE(3) Graph Network Model for Sparse Point Cloud Registration](../../ECCV2024/3d_vision/equi-gspr_equivariant_se3_graph_network_model_for_sparse_point_cloud_registratio.md)
 
 </div>

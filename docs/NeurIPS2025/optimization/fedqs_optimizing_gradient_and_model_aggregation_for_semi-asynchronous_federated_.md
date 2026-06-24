@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedQS: Optimizing Gradient and Model Aggregation for Semi-Asynchronous Federated Learning
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes FedQS, the first framework to simultaneously optimize both gradient aggregation and model aggregation strategies in semi-asynchronous federated learnin…
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes FedQS, the first framework to simultaneously optimize both gradient aggregation and model aggregation strategies in semi-asynchronous federated learning (SAFL). By partitioning clients into four categories and adaptively adjusting training strategies, FedQS achieves comprehensive improvements over baselines in accuracy, convergence speed, and stability.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Model Aggregation"
   - "Divide-and-Conquer"
 date: 2026-05-08
-content_hash: 7a682d45a4444900
+content_hash: 9fc71bc24eccdc3b
 ---
 
 # FedQS: Optimizing Gradient and Model Aggregation for Semi-Asynchronous Federated Learning
@@ -179,10 +179,10 @@ Under extreme heterogeneity (200 clients, speed ratio 1:100), FedQS-SGD still ac
 ## Related Papers
 
 - [\[NeurIPS 2025\] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning](layer-wise_update_aggregation_with_recycling_for_communication-efficient_federat.md)
+- [\[ICLR 2026\] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning](../../ICLR2026/optimization/beyond_aggregation_guiding_clients_in_heterogeneous_federated_learning.md)
 - [\[NeurIPS 2025\] Streaming Federated Learning with Markovian Data](streaming_federated_learning_with_markovian_data.md)
-- [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
-- [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
-- [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
+- [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](../../ICLR2026/optimization/byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
+- [\[CVPR 2025\] Model Poisoning Attacks to Federated Learning via Multi-Round Consistency](../../CVPR2025/optimization/model_poisoning_attacks_to_federated_learning_via_multi-round_consistency.md)
 
 </div>
 

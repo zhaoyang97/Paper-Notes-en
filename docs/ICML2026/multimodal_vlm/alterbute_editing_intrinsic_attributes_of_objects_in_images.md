@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Alterbute: Editing Intrinsic Attributes of Objects in Images
 description: >-
-  [ICML 2026][Multimodal VLM][Image Editing] Alterbute utilizes VLMs to automatically mine Visual Named Entity (VNE) identity clusters and jointly conditions a diffusion model on identity references, attribute text, background, and masks. This approach provides a unified framework for editing object color, texture, material, and shape while preserving object iden
+  [ICML 2026][Multimodal VLM][Image Editing] Alterbute utilizes VLMs to automatically mine Visual Named Entity (VNE) identity clusters and jointly conditions a diffusion model on identity references, attribute text, background, and masks. This approach provides a unified framework for editing object color, texture, material, and shape while preserving object identity and scene context.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Image Editing
-  - Diffusion Model
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Image Editing"
+  - "Intrinsic Attribute Editing"
+  - "Diffusion Models"
+  - "Visual Named Entities"
+  - "Identity Preservation"
 date: 2026-05-08
-content_hash: 461169e7dec0b70e
+content_hash: 4780d6067e31f0df
 ---
+
 # Alterbute: Editing Intrinsic Attributes of Objects in Images
 
 **Conference**: ICML 2026  
@@ -145,9 +149,9 @@ The analysis focused on identity definition, conditioning methods, and training 
 
 - [\[CVPR 2026\] Enhancing Descriptive Captions with Visual Attributes for Multimodal Perception](../../CVPR2026/multimodal_vlm/enhancing_descriptive_captions_with_visual_attributes_for_multimodal_perception.md)
 - [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](../../CVPR2026/multimodal_vlm/unified_personalized_understanding_generating_and_editing.md)
+- [\[ICLR 2026\] UniLIP: Revamping CLIP to Unify Multimodal Understanding, Generation, and Editing](../../ICLR2026/multimodal_vlm/unilip_adapting_clip_for_unified_multimodal_understanding_generation_and_editing.md)
 - [\[ICML 2026\] Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models](debate_with_images_detecting_deceptive_behaviors_in_multimodal_large_language_mo.md)
 - [\[ICCV 2025\] Advancing Textual Prompt Learning with Anchored Attributes](../../ICCV2025/multimodal_vlm/advancing_textual_prompt_learning_with_anchored_attributes.md)
-- [\[NeurIPS 2025\] Learning Skill-Attributes for Transferable Assessment in Video](../../NeurIPS2025/multimodal_vlm/learning_skill-attributes_for_transferable_assessment_in_video.md)
 
 </div>
 

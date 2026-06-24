@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] Addressing the issue where existing Federated Prototypical Learning methods destroy inter-class semantic relations, the proposed FedTSP method utilizes pre-trained language models to construct textual prototypes that preserve semantic structures, significantly improving performance and accelerating convergence in heter
+  [CVPR 2026 Highlight][Optimization][Federated Learning] Addressing the issue where existing Federated Prototypical Learning methods destroy inter-class semantic relations, the proposed FedTSP method utilizes pre-trained language models to construct textual prototypes that preserve semantic structures, significantly improving performance and accelerating convergence in heterogeneous federated learning.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026 Highlight"
+  - "Optimization"
+  - "Federated Learning"
+  - "Prototypical Learning"
+  - "Semantic Relations"
+  - "Pre-trained Language Models"
+  - "Data Heterogeneity"
 date: 2026-05-08
-content_hash: a30d7c0d9c280ba0
+content_hash: 5798e666d698de4f
 ---
+
 # Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning
 
 **Conference**: CVPR 2026 Highlight  
@@ -128,10 +134,10 @@ The server uses InfoNCE loss to update the trainable prompt, aligning textual pr
 ## Related Papers
 
 - [\[ICML 2026\] Learning Context-Conditioned Predicate Semantics via Prototype Feedback](../../ICML2026/optimization/learning_context-conditioned_predicate_semantics_via_prototype_feedback.md)
-- [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
 - [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](../../ICLR2026/optimization/incentives_in_federated_learning_with_heterogeneous_agents.md)
-- [\[CVPR 2026\] HyperNAS: Enhancing Architecture Representation for NAS Predictor via Hypernetwork](hypernas_enhancing_architecture_representation_for_nas_predictor_via_hypernetwor.md)
-- [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](../../AAAI2026/optimization/smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
+- [\[ICLR 2026\] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning](../../ICLR2026/optimization/beyond_aggregation_guiding_clients_in_heterogeneous_federated_learning.md)
+- [\[ICLR 2026\] Enhancing Communication Compression via Discrepancy-aware Calibration for Federated Learning](../../ICLR2026/optimization/enhancing_communication_compression_via_discrepancy-aware_calibration_for_federa.md)
+- [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](../../ICLR2026/optimization/feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
 
 </div>
 

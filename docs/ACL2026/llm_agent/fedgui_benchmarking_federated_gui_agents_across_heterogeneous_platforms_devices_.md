@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] FedGUI is the first comprehensive federated learning benchmark for cross-platform GUI agents, containing six datasets covering mobile, web, and desktop platforms. It systematically investigates the impact of four dimensions of heterogeneity—platform, device, operating system, and data source—on the training of federate
+  [ACL 2026 Findings][LLM Agent][Federated Learning] FedGUI is the first comprehensive federated learning benchmark for cross-platform GUI agents, containing six datasets covering mobile, web, and desktop platforms. It systematically investigates the impact of four dimensions of heterogeneity—platform, device, operating system, and data source—on the training of federated GUI agents.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Federated Learning"
+  - "GUI Agents"
+  - "Cross-platform Heterogeneity"
+  - "Privacy Protection"
+  - "Distributed Training"
 date: 2026-05-08
-content_hash: 9c237c214e43bb71
+content_hash: e22dc3f0f74748d5
 ---
+
 # FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems
 
 **Conference**: ACL 2026 Findings  
@@ -106,11 +112,11 @@ Standard federated learning setup: Local training utilizes cross-entropy loss, w
 
 ## Related Papers
 
-- [\[AAAI 2026\] ProBench: Benchmarking GUI Agents with Accurate Process Information](../../AAAI2026/llm_agent/probench_benchmarking_gui_agents_with_accurate_process_infor.md)
-- [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](../../ICML2026/llm_agent/scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
+- [\[ICLR 2026\] Helmsman: Autonomous Synthesis of Federated Learning Systems via Collaborative LLM Agents](../../ICLR2026/llm_agent/helmsman_autonomous_synthesis_of_federated_learning_systems_via_collaborative_ll.md)
 - [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](../../ICML2026/llm_agent/recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
+- [\[AAAI 2026\] ProBench: Benchmarking GUI Agents with Accurate Process Information](../../AAAI2026/llm_agent/probench_benchmarking_gui_agents_with_accurate_process_infor.md)
 - [\[ACL 2026\] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration](towards_scalable_lightweight_gui_agents_via_multi-role_orchestration.md)
-- [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](../../AAAI2026/llm_agent/d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
+- [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](../../ICML2026/llm_agent/scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
 
 </div>
 

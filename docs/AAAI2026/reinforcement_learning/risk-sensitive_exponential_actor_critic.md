@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Risk-Sensitive Exponential Actor Critic
 description: >-
-  [AAAI2026][Reinforcement Learning][risk-sensitive RL] To address the high variance and numerical instability of policy gradients under the entropic risk measure…
+  [AAAI2026][Reinforcement Learning][risk-sensitive RL] To address the high variance and numerical instability of policy gradients under the entropic risk measure, this paper derives a complete set of on/off-policy risk-sensitive policy gradient theorems and proposes the rsEAC algorithm, which achieves stable risk-sensitive continuous control via log-domain critic parameterization and gradient normalization-clipping mechanisms.
 tags:
   - "AAAI2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "actor-critic"
   - "numerical stability"
 date: 2026-05-08
-content_hash: 96f93756ffb64a8f
+content_hash: 1704c345983fc154
 ---
 
 # Risk-Sensitive Exponential Actor Critic
@@ -126,11 +126,11 @@ Stochastic noise risk regions are introduced ($\mathcal{N}(0,10^2)$ or $\mathcal
 
 ## Related Papers
 
+- [\[ICLR 2026\] Risk-Sensitive Reinforcement Learning for Alleviating Exploration Dilemmas in Large Language Models](../../ICLR2026/reinforcement_learning/risk-sensitive_reinforcement_learning_for_alleviating_exploration_dilemmas_in_la.md)
 - [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](../../ICLR2026/reinforcement_learning/flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](../../NeurIPS2025/reinforcement_learning/global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
-- [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
-- [\[AAAI 2026\] Behaviour Policy Optimization: Provably Lower Variance Return Estimates for Off-Policy Reinforcement Learning](behaviour_policy_optimization_provably_lower_variance_return_estimates_for_off-p.md)
-- [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
+- [\[ICLR 2026\] Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns](../../ICLR2026/reinforcement_learning/chunking_the_critic_a_transformer-based_soft_actor-critic_with_n-step_returns.md)
+- [\[ICLR 2026\] Simplicial Embeddings Improve Sample Efficiency in Actor-Critic Agents](../../ICLR2026/reinforcement_learning/simplicial_embeddings_improve_sample_efficiency_in_actorcritic_agents.md)
+- [\[ICLR 2026\] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning](../../ICLR2026/reinforcement_learning/neuralsymbolic_approaches_for_interpretable_actor-critic_reinforcement_learning.md)
 
 </div>
 

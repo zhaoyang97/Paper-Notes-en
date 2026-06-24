@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mobile-VTON: High-Fidelity On-Device Virtual Try-On
 description: >-
-  [CVPR 2026][Human Understanding][Knowledge Distillation] The first fully offline mobile-side diffusion-based virtual try-on framework, based on the TeacherNet-GarmentNet-TryonNet (TGT) architecture. Through Feature-Guided Adversarial Distillation (FGA), the capabilities of SD3.5 Large are transferred to a lightweight student network with 415M parameters. It matches or even e
+  [CVPR 2026][Human Understanding][Virtual Try-On] The first fully offline mobile-side diffusion-based virtual try-on framework, based on the TeacherNet-GarmentNet-TryonNet (TGT) architecture. Through Feature-Guided Adversarial Distillation (FGA), the capabilities of SD3.5 Large are transferred to a lightweight student network with 415M parameters. It matches or even exceeds server-side baselines on VITON-HD and DressCode at 1024×768 resolution…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Knowledge Distillation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Virtual Try-On"
+  - "Mobile Deployment"
+  - "Knowledge Distillation"
+  - "Diffusion Models"
+  - "Privacy Protection"
 date: 2026-05-08
-content_hash: 5ffce3cb509b4189
+content_hash: 02d910886c1b5724
 ---
+
 # Mobile-VTON: High-Fidelity On-Device Virtual Try-On
 
 **Conference**: CVPR 2026  
@@ -130,7 +134,7 @@ Large CLIP visual encoders are too heavy for mobile devices. Light-Adapter repla
 - [\[CVPR 2025\] VTON 360: High-Fidelity Virtual Try-On from Any Viewing Direction](../../CVPR2025/human_understanding/vton_360_high-fidelity_virtual_try-on_from_any_viewing_direction.md)
 - [\[CVPR 2026\] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On](mofa-vton_more_fashion_possibilities_with_fine-grained_adaptations_in_virtual_tr.md)
 - [\[CVPR 2026\] 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction](textit4dsurf_high-fidelity_dynamic_scene_surface_reconstruction.md)
-- [\[CVPR 2026\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
+- [\[CVPR 2026\] MV-Fashion: Towards Enabling Virtual Try-On and Size Estimation with Multi-View Paired Data](mv-fashion_towards_enabling_virtual_try-on_and_size_estimation_with_multi-view_p.md)
 
 </div>
 

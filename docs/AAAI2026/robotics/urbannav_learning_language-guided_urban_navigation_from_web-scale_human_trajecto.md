@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories
 description: >-
-  [AAAI 2026][Robotics][Urban Navigation] This paper proposes UrbanNav, which leverages web-scale urban walking videos (1,500+ hours from YouTube…
+  [AAAI 2026][Robotics][Urban Navigation] This paper proposes UrbanNav, which leverages web-scale urban walking videos (1,500+ hours from YouTube, yielding 3 million instruction–trajectory–landmark triplets) to train a language-guided urban navigation policy via an automated annotation pipeline and robust filtering mechanism, achieving an 83.3% navigation success rate in real-world deployment.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Imitation Learning"
   - "Landmark Detection"
 date: 2026-05-08
-content_hash: 3f028740de107b68
+content_hash: b437b07ed973e2af
 ---
 
 # UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories
@@ -206,11 +206,11 @@ The FiLM module is critical for performance gains (removing it raises AOE from 9
 
 ## Related Papers
 
-- [\[ACL 2026\] Mango: Multi-Agent Web Navigation via Global-View Optimization](../../ACL2026/robotics/mango_multi-agent_web_navigation_via_global-view_optimization.md)
+- [\[CVPR 2025\] CityWalker: Learning Embodied Urban Navigation from Web-Scale Videos](../../CVPR2025/robotics/citywalker_learning_embodied_urban_navigation_from_web-scale_videos.md)
 - [\[AAAI 2026\] Realistic Synthetic Household Data Generation at Scale](realistic_synthetic_household_data_generation_at_scale.md)
 - [\[AAAI 2026\] RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms](rlslm_a_hybrid_reinforcement_learning_framework_aligning_rule-based_social_locom.md)
 - [\[AAAI 2026\] Theory of Mind for Explainable Human-Robot Interaction](theory_of_mind_for_explainable_human-robot_interaction.md)
-- [\[ICLR 2026\] ST4VLA: Spatially Guided Training for Vision-Language-Action Models](../../ICLR2026/robotics/st4vla_spatially_guided_training_for_vision-language-action_models.md)
+- [\[CVPR 2026\] HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation](../../CVPR2026/robotics/htnav_a_hybrid_navigation_framework_with_tiered_structure_for_urban_aerial_visio.md)
 
 </div>
 

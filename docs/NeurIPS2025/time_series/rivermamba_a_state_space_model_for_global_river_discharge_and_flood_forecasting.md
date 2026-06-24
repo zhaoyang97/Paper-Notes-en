@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RiverMamba: A State Space Model for Global River Discharge and Flood Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][River discharge forecasting] The first deep learning model capable of 7-day river discharge forecasting on a 0.05° (~5.5 km) global grid — global grid points are serialized via space-filling c…
+  [NeurIPS 2025][Time Series][River discharge forecasting] The first deep learning model capable of 7-day river discharge forecasting on a 0.05° (~5.5 km) global grid — global grid points are serialized via space-filling curves into 3D spatiotemporal point sequences fed into bidirectional Mamba blocks, driven by ECMWF HRES meteorological forecasts, achieving F1 = 0.459 on flood detection across 1.5–500-year return periods, surpassing LSTM (0.358) and the physical model GloFAS.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -13,7 +13,7 @@ tags:
   - "global scale"
   - "GloFAS"
 date: 2026-05-08
-content_hash: 9fbc2065e386007f
+content_hash: 74349d24a090b19e
 ---
 
 # RiverMamba: A State Space Model for Global River Discharge and Flood Forecasting
@@ -194,11 +194,11 @@ Advantages are pronounced at lead times >48h.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
 - [\[NeurIPS 2025\] DemandCast: Global hourly electricity demand forecasting](demandcast_global_hourly_electricity_demand_forecasting.md)
+- [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
+- [\[ICML 2025\] A Generalizable Physics-Enhanced State Space Model for Long-Term Dynamics Forecasting in Complex Environments](../../ICML2025/time_series/a_generalizable_physics-enhanced_state_space_model_for_long-term_dynamics_foreca.md)
+- [\[ICLR 2026\] ConvT3: Structured State Kernels for Convolutional State Space Models](../../ICLR2026/time_series/convt3_structured_state_kernels_for_convolutional_state_space_models.md)
 - [\[NeurIPS 2025\] Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling](parallelization_of_non-linear_state-space_models_scaling_up_liquid-resistance_li.md)
-- [\[ICML 2026\] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences](../../ICML2026/time_series/fractal_ssm_with_fractional_recurrent_architecture_for_computational_temporal_an.md)
-- [\[NeurIPS 2025\] Graph-based Neural Space Weather Forecasting](graph-based_neural_space_weather_forecasting.md)
 
 </div>
 

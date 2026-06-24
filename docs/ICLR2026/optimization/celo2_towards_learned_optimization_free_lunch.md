@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Celo2: Towards Learned Optimization Free Lunch
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Ours proposes Celo2—a learned optimizer meta-trained in only 4.5 GPU hours. Through simple recipes such as normalized MLP update rules and task augmentation, it achieves stable generalization to billion-parameter models (GPT-3 XL 1.3B), which is 6 orders of magnitude larger than the meta-training distribution. Performa
+  [ICLR 2026][Optimization][Learned Optimizer] Ours proposes Celo2—a learned optimizer meta-trained in only 4.5 GPU hours. Through simple recipes such as normalized MLP update rules and task augmentation, it achieves stable generalization to billion-parameter models (GPT-3 XL 1.3B), which is 6 orders of magnitude larger than the meta-training distribution. Performance surpasses the previous VeLO, which consumed 4000 TPU-months, and carefully tuned AdamW baselines.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Learned Optimizer"
+  - "Meta-learning"
+  - "Meta-generalization"
+  - "Normalized Update Rules"
+  - "AdamW Alternative"
 date: 2026-05-08
-content_hash: 074e88f01cc724ab
+content_hash: 8c283e1284ccc981
 ---
+
 # Celo2: Towards Learned Optimization Free Lunch
 
 **Conference**: ICLR 2026  
@@ -179,10 +185,10 @@ VeLO exhibited training stagnation across all RL tasks (consistent with VeLO ori
 ## Related Papers
 
 - [\[ICLR 2026\] $\mu$LO: Compute-Efficient Meta-Generalization of Learned Optimizers](mulo_compute-efficient_meta-generalization_of_learned_optimizers.md)
+- [\[ICLR 2026\] Sign-SGD via Parameter-Free Optimization](sign-sgd_via_parameter-free_optimization.md)
 - [\[NeurIPS 2025\] Better NTK Conditioning: A Free Lunch from ReLU Nonlinear Activation in Wide Neural Networks](../../NeurIPS2025/optimization/better_ntk_conditioning_a_free_lunch_from_relu_nonlinear_activation_in_wide_neur.md)
 - [\[CVPR 2026\] DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors](../../CVPR2026/optimization/dabo_difficulty-aware_bayesian_optimization_with_diffusion-learned_priors.md)
 - [\[ICLR 2026\] WSM: Decay-free Learning Rate Schedule via Checkpoint Merging for LLM Pre-training](wsm_decay-free_learning_rate_schedule_via_checkpoint_merging_for_llm_pre-trainin.md)
-- [\[ICLR 2026\] Cutting the Skip: Training Residual-Free Transformers](cutting_the_skip_training_residual-free_transformers.md)
 
 </div>
 

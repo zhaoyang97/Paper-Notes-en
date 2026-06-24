@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] One Protein Is All You Need
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes ProteinTTT, which applies Test-Time Training (TTT) to protein language models. Given a target protein sequence, the backbone network undergoes several dozen steps of self-supervised fine-tuning using a masked language modeling objective on that single sequence before inference. This process reduces
+  [ICLR 2026][Computational Biology][Protein Language Models] This paper proposes ProteinTTT, which applies Test-Time Training (TTT) to protein language models. Given a target protein sequence, the backbone network undergoes several dozen steps of self-supervised fine-tuning using a masked language modeling objective on that single sequence before inference. This process reduces the model's perplexity and improves representations, thereby enhancing structure, fitness…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Language Models"
+  - "Test-Time Training"
+  - "Self-supervised Customization"
+  - "Structure Prediction"
+  - "Perplexity Minimization"
 date: 2026-05-08
-content_hash: a7dba5887f8f4ff6
+content_hash: b7bf662f4bfab5ff
 ---
+
 # One Protein Is All You Need
 
 **Conference**: ICLR 2026  
@@ -147,11 +153,11 @@ The paper uses cross-comparisons between backbones and scales as ablations, with
 
 ## Related Papers
 
+- [\[ICLR 2026\] Triangle Multiplication is All You Need for Biomolecular Structure Representations](triangle_multiplication_is_all_you_need_for_biomolecular_structure_representatio.md)
 - [\[ICLR 2026\] Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction](extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda.md)
 - [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](../../NeurIPS2025/computational_biology/is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
 - [\[ICLR 2026\] SimpleFold: Folding Proteins is Simpler Than You Think](simplefold_folding_proteins_is_simpler_than_you_think.md)
 - [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](towards_understanding_the_shape_of_representations_in_protein_language_models.md)
-- [\[ICLR 2026\] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation](protdyn_a_foundation_protein_language_model_for_thermodynamics_and_dynamics_gene.md)
 
 </div>
 

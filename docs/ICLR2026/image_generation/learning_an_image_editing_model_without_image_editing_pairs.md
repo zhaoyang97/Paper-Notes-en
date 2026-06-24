@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning an Image Editing Model without Image Editing Pairs
 description: >-
-  [ICLR 2026][Image Generation][Image Editing] Ours proposes NP-Edit (No-Pair Edit), a training paradigm that **requires no "before-after" image pairs**. It unrolls a few-step diffusion generator during training, utilizes differentiable gradient feedback from a Vision-Language Model (VLM) to judge instruction following and content preservation, and employs Distribu
+  [ICLR 2026][Image Generation][Image editing] Ours proposes NP-Edit (No-Pair Edit), a training paradigm that **requires no "before-after" image pairs**. It unrolls a few-step diffusion generator during training, utilizes differentiable gradient feedback from a Vision-Language Model (VLM) to judge instruction following and content preservation, and employs Distribution Matching Distillation (DMD) to pull outputs back to the real image manifold. Under a 4-step sampling setting…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Image Editing
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Image editing"
+  - "unpaired training"
+  - "VLM feedback"
+  - "distribution matching distillation"
+  - "few-step diffusion"
 date: 2026-05-08
-content_hash: cf0bd3603b541fd2
+content_hash: 5e35b204014071b2
 ---
+
 # Learning an Image Editing Model without Image Editing Pairs
 
 **Conference**: ICLR 2026  
@@ -130,6 +135,7 @@ Training Objective Ablation (GEdit-Bench):
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the data bottleneck in the editing field with a scalable approach.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

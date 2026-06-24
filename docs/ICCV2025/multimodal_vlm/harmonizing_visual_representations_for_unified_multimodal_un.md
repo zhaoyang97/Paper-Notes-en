@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation
 description: >-
-  [ICCV 2025][Multimodal VLM][MAR encoder] This work identifies that the encoder of masked autoregressive (MAR) models inherently possesses both the fine-grained image features required for generation and the high-level se…
+  [ICCV 2025][Multimodal VLM][MAR encoder] This work identifies that the encoder of masked autoregressive (MAR) models inherently possesses both the fine-grained image features required for generation and the high-level semantic representations required for understanding. Based on this observation, Harmon is proposed — an autoregressive framework that unifies image generation and understanding via a shared MAR encoder. Through three-stage progressive training…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "image generation and understanding"
   - "three-stage training"
 date: 2026-05-08
-content_hash: 917fd05f2e9e8c04
+content_hash: ae19e0b705960c8b
 ---
 
 # Harmonizing Visual Representations for Unified Multimodal Understanding and Generation
@@ -152,10 +152,10 @@ Synergistic effects of the shared encoder:
 ## Related Papers
 
 - [\[NeurIPS 2025\] UniTok: A Unified Tokenizer for Visual Generation and Understanding](../../NeurIPS2025/multimodal_vlm/unitok_a_unified_tokenizer_for_visual_generation_and_understanding.md)
+- [\[ICCV 2025\] Unified Multimodal Understanding via Byte-Pair Visual Encoding](unified_multimodal_understanding_via_byte-pair_visual_encoding.md)
 - [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
-- [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
-- [\[ICCV 2025\] DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning](dwim_towards_tool-aware_visual_reasoning_via_discrepancy-aware_workflow_generati.md)
-- [\[ICCV 2025\] AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs](autocompose_automatic_generation_of_pose_transition_descriptions_for_composed_po.md)
+- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](../../CVPR2026/multimodal_vlm/tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
+- [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](../../CVPR2026/multimodal_vlm/rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
 
 </div>
 

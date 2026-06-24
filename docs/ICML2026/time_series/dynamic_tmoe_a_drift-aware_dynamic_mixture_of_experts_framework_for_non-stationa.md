@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series
 description: >-
-  [ICML 2026][Time Series][Paper Note] By utilizing **MMD to detect distribution drifts** and dynamically expanding a heterogeneous expert pool combined with a **Temporal Memory Router** to ensure selection consistency, Dynamic-TMoE achieves new SOTA results across nine time-series benchmarks—reducing MSE by 10.4% and MAE by 7.8% on average compared to all
+  [ICML 2026][Time Series][Time Series Forecasting] By utilizing **MMD to detect distribution drifts** and dynamically expanding a heterogeneous expert pool combined with a **Temporal Memory Router** to ensure selection consistency, Dynamic-TMoE achieves new SOTA results across nine time-series benchmarks—reducing MSE by 10.4% and MAE by 7.8% on average compared to all baselines.
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Dynamic Experts"
+  - "Distribution Drift Detection"
+  - "Mixture-of-Experts (MoE)"
+  - "Non-stationary Data"
 date: 2026-05-08
-content_hash: 08771ec64a86ab43
+content_hash: 4105969f7ba55d57
 ---
+
 # Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series
 
 **Conference**: ICML 2026  
@@ -132,9 +138,9 @@ Of 18 metrics, Ours ranked in the top 2 sixteen times (11 first place, 5 second 
 
 - [\[ICML 2026\] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting](parametric_prior_mapping_framework_for_non-stationary_probabilistic_time_series_.md)
 - [\[AAAI 2026\] Task-Aware Retrieval Augmentation for Dynamic Recommendation](../../AAAI2026/time_series/task-aware_retrieval_augmentation_for_dynamic_recommendation.md)
-- [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
+- [\[ICLR 2026\] Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants](../../ICLR2026/time_series/perturbed_dynamic_time_warping_a_probabilistic_framework_and_generalized_variant.md)
 - [\[AAAI 2026\] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing](../../AAAI2026/time_series/towards_non-stationary_time_series_forecasting_with_temporal_stabilization_and_f.md)
-- [\[AAAI 2026\] M2FMoE: Multi-Resolution Multi-View Frequency Mixture-of-Experts for Extreme-Adaptive Time Series Forecasting](../../AAAI2026/time_series/m2fmoe_multi-resolution_multi-view_frequency_mixture-of-experts_for_extreme-adap.md)
+- [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
 
 </div>
 

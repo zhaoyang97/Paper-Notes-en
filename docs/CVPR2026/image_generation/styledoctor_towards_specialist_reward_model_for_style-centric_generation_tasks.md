@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StyleDoctor: Towards Specialist Reward Model for Style-centric Generation Tasks
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] StyleDoctor replaces general human preference reward models with a "specialist style reward model" based on a multimodal large language model (Qwen2.5-VL-3B). By constructing SPRData, a style preference dataset containing 400,000 "quadruplets," and employing a three-stage training process, the model learns to perceive
+  [CVPR 2026][Image Generation][Style Reward Model] StyleDoctor replaces general human preference reward models with a "specialist style reward model" based on a multimodal large language model (Qwen2.5-VL-3B). By constructing SPRData, a style preference dataset containing 400,000 "quadruplets," and employing a three-stage training process, the model learns to perceive both image style and text style semantics. It ultimately serves as a reward signal for the reinforcement fine-…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Style Reward Model"
+  - "Style Consistency"
+  - "Reinforcement Fine-tuning"
+  - "Multimodal Large Language Models (MLLM)"
+  - "Preference Learning"
 date: 2026-05-08
-content_hash: e76621ef12850717
+content_hash: bbada0656a7733cc
 ---
+
 # StyleDoctor: Towards Specialist Reward Model for Style-centric Generation Tasks
 
 **Conference**: CVPR 2026  
@@ -150,16 +156,16 @@ Decomposing GSF (Global Style Feature) and UPL (Unified Preference Learning, den
 - Value: ⭐⭐⭐⭐ Provides a missing reward model for RL alignment in style generation, supported by a large-scale dataset.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
+- [\[CVPR 2026\] RegionRoute: Regional Style Transfer with Diffusion Model](regionroute_regional_style_transfer_with_diffusion_model.md)
 - [\[CVPR 2026\] A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space](a_style_is_worth_one_code_unlocking_code-to-style_image_generation_with_discrete.md)
-- [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
+- [\[CVPR 2026\] The Image as Its Own Reward: Reinforcement Learning with Adversarial Reward for Image Generation](the_image_as_its_own_reward_reinforcement_learning_with_adversarial_reward_for_i.md)
 - [\[CVPR 2026\] Unified Customized Generation by Disentangled Reward Modeling](unified_customized_generation_by_disentangled_reward_modeling.md)
-- [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 
 </div>
 

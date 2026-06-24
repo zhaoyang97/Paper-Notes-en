@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Few-shot FGVR] Fine-R1 surpasses CLIP and general/reasoning MLLMs in fine-grained visual recognition (FGVR) using only 4-shot training, achieved through CoT Supervised Fine-Tuning (structured reasoning chain: "Visual Analysis → Candidate Subclasses → Comparison → Prediction") and Triplet Augmentation Policy Optimization (TAPO), which
+  [ICLR 2026][Reasoning][Fine-grained recognition] Fine-R1 surpasses CLIP and general/reasoning MLLMs in fine-grained visual recognition (FGVR) using only 4-shot training, achieved through CoT Supervised Fine-Tuning (structured reasoning chain: "Visual Analysis → Candidate Subclasses → Comparison → Prediction") and Triplet Augmentation Policy Optimization (TAPO), which utilizes intra-class augmentation for robustness and inter-class augmentation for discriminative power.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Few-shot FGVR
-  - DAPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Fine-grained recognition"
+  - "CoT reasoning"
+  - "Triplet Augmentation Policy Optimization"
+  - "Few-shot FGVR"
+  - "DAPO"
 date: 2026-05-08
-content_hash: 474be927eab33904
+content_hash: 81f5fac413ac4e41
 ---
+
 # Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning
 
 **Conference**: ICLR 2026  
@@ -149,11 +153,11 @@ By maximizing the KL divergence $D_{KL}[\pi_\theta \,\|\, \pi_\theta^{neg}]$ bet
 
 ## Related Papers
 
+- [\[ACL 2025\] RSVP: Reasoning Segmentation via Visual Prompting and Multi-modal Chain-of-Thought](../../ACL2025/llm_reasoning/rsvp_reasoning_segmentation_via_visual_prompting_and_multi-modal_chain-of-though.md)
 - [\[CVPR 2026\] E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought](../../CVPR2026/llm_reasoning/e-comiq-zh_a_human-aligned_dataset_and_benchmark_for_fine-grained_evaluation_of_.md)
 - [\[CVPR 2026\] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought](../../CVPR2026/llm_reasoning/rationale-enhanced_decoding_for_multi-modal_chain-of-thought.md)
-- [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
-- [\[ACL 2025\] RSVP: Reasoning Segmentation via Visual Prompting and Multi-modal Chain-of-Thought](../../ACL2025/llm_reasoning/rsvp_reasoning_segmentation_via_visual_prompting_and_multi-modal_chain-of-though.md)
-- [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
+- [\[ACL 2026\] ToolPRM: Fine-Grained Inference Scaling of Structured Outputs for Function Calling](../../ACL2026/llm_reasoning/toolprm_fine-grained_inference_scaling_of_structured_outputs_for_function_callin.md)
+- [\[ACL 2025\] Beyond the Answer: Advancing Multi-Hop QA with Fine-Grained Graph Reasoning and Evaluation](../../ACL2025/llm_reasoning/beyond_the_answer_advancing_multi-hop_qa_with_fine-grained_graph_reasoning_and_e.md)
 
 </div>
 

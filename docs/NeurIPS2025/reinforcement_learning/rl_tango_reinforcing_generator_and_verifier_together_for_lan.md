@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][generator-verifier co-training] Tango proposes a framework that alternately trains a generator and a verifier via RL — the verifier is a generative process-level LLM that evaluates…
+  [NeurIPS 2025][Reinforcement Learning][generator-verifier co-training] Tango proposes a framework that alternately trains a generator and a verifier via RL — the verifier is a generative process-level LLM that evaluates reasoning step by step in natural language, trained solely with outcome-level correctness rewards (no step-level annotations), and mutually reinforced through co-evolution with the generator. On 7B/8B-scale models, Tango achieves SOTA…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "co-evolution"
   - "generative verifier"
 date: 2026-05-08
-content_hash: 172a3104ae68a0e2
+content_hash: cb7fefd7f40770f2
 ---
 
 # RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning
@@ -133,8 +133,8 @@ Generator: standard GRPO/RLOO/REINFORCE++ with two-level advantages. Verifier: G
 - [\[NeurIPS 2025\] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation](noisyrollout_reinforcing_visual_reasoning_with_data_augmenta.md)
 - [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
 - [\[NeurIPS 2025\] When Less Language is More: Language-Reasoning Disentanglement Makes LLMs Better Multilingual Reasoners](when_less_language_is_more_language-reasoning_disentanglement_makes_llms_better_.md)
-- [\[ACL 2026\] Verifier-Free RL for LLMs via Intrinsic Gradient-Norm Reward](../../ACL2026/reinforcement_learning/verifier-free_rl_for_llms_via_intrinsic_gradient-norm_reward.md)
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
+- [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
 
 </div>
 

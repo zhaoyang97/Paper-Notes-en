@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary
 description: >-
-  [ICLR 2026][Alignment & RLHF][Bradley-Terry] This paper proposes SMORM, which jointly trains a Bradley–Terry (BT) single-objective reward head and a multi-objective regression head on a shared embedding. The authors theoretically prove that the two are complementary: the regression head helps the single-objective head resist reward hacking under OOD conditions, w
+  [ICLR 2026][LLM Alignment][Reward modeling] This paper proposes SMORM, which jointly trains a Bradley–Terry (BT) single-objective reward head and a multi-objective regression head on a shared embedding. The authors theoretically prove that the two are complementary: the regression head helps the single-objective head resist reward hacking under OOD conditions, while the BT head "lifts" the weaker multi-objective head. Consequently, a 7B model outperforms a 70B baseline.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Bradley-Terry
-  - reward hacking
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward modeling"
+  - "Bradley-Terry"
+  - "Multi-objective reward"
+  - "reward hacking"
+  - "OOD robustness"
 date: 2026-05-08
-content_hash: e5ed03392a7fd387
+content_hash: c2b1e8549141ee58
 ---
+
 # Bradley–Terry and Multi-Objective Reward Modeling Are Complementary
 
 **Conference**: ICLR 2026  
@@ -147,10 +151,10 @@ Reward hacking robustness in RLHF (PPO / BoN, checking if gold scores collapse a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](robust_reward_modeling_via_causal_rubrics.md)
 - [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
 - [\[ICLR 2026\] OrthAlign: Orthogonal Subspace Decomposition for Non-Interfering Multi-Objective Alignment](orthalign_orthogonal_subspace_decomposition_for_non-interfering_multi-objective_.md)
 - [\[ICLR 2026\] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences](omni-reward_towards_generalist_omni-modal_reward_modeling_with_free-form_prefere.md)
-- [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](robust_reward_modeling_via_causal_rubrics.md)
 - [\[ACL 2026\] AdaJudge: Adaptive Multi-Perspective Judging for Reward Modeling](../../ACL2026/llm_alignment/adajudge_adaptive_multi-perspective_judging_for_reward_modeling.md)
 
 </div>

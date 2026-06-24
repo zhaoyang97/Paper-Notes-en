@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GenHancer: Imperfect Generative Models are Secretly Strong Vision-Centric Enhancers
 description: >-
-  [ICCV 2025][Image Generation][CLIP Enhancement] This work identifies that "perfect image reconstruction does not always yield the best visual representations…
+  [ICCV 2025][Image Generation][CLIP Enhancement] This work identifies that "perfect image reconstruction does not always yield the best visual representations," and proposes GenHancer — a two-stage post-training method that uses only a lightweight randomly initialized denoiser (~1/10 the parameters of pretrained heavy denoisers) conditioned solely on the global [CLS] token. Through self-supervised reconstruction, GenHancer enhances CLIP's fine-grained visual perception…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Feedback"
   - "Lightweight Denoiser"
 date: 2026-05-08
-content_hash: bc1105c2ac5f99e7
+content_hash: 3a3156750b4492f1
 ---
 
 # GenHancer: Imperfect Generative Models are Secretly Strong Vision-Centric Enhancers

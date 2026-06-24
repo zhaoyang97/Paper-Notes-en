@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] TG-DP decouples "masked reconstruction" and "contrastive alignment" in audio-visual pre-training into two independent forward passes (each with its own mask ratio). It uses a full-view teacher network to select visible tokens for the contrastive branch and distill global representations, eliminating semantic noise from
+  [CVPR 2026][Multimodal VLM][Audio-Visual Pre-training] TG-DP decouples "masked reconstruction" and "contrastive alignment" in audio-visual pre-training into two independent forward passes (each with its own mask ratio). It uses a full-view teacher network to select visible tokens for the contrastive branch and distill global representations, eliminating semantic noise from previous single-pass coupling and achieving SOTA on zero-shot retrieval and linear probing for AudioSet…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Audio-Visual Pre-training"
+  - "Contrastive Learning"
+  - "Masked Autoencoder"
+  - "Self-Distillation"
+  - "Cross-Modal Retrieval"
 date: 2026-05-08
-content_hash: 652ede6b5487027a
+content_hash: 376ee0dea6ee37c3
 ---
+
 # Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning
 
 **Conference**: CVPR 2026  
@@ -138,15 +144,16 @@ The gains are particularly significant in the **Audio→Visual** direction (+9.2
 - Value: ⭐⭐⭐⭐ The "decoupling conflicting objectives" paradigm is highly transferable to other multi-modal self-supervised tasks with zero inference overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
-- [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](../../ACL2026/audio_speech/privacy-preserving_prosody_representation_learning.md)
-- [\[ACL 2026\] Retrieving to Recover: Towards Incomplete Audio-Visual Question Answering via Semantic-consistent Purification](../../ACL2026/audio_speech/retrieving_to_recover_towards_incomplete_audio-visual_question_answering_via_sem.md)
-- [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
+- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
+- [\[CVPR 2026\] Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery](multi-modal_representation_learning_via_semi-supervised_rate_reduction_for_gener.md)
 - [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](egoavu_egocentric_audio-visual_understanding.md)
+- [\[ACL 2025\] DALR: Dual-level Alignment Learning for Multimodal Sentence Representation Learning](../../ACL2025/multimodal_vlm/dalr_dual-level_alignment_learning_for_multimodal_sentence_representation_learni.md)
+- [\[CVPR 2026\] Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)
 
 </div>
 

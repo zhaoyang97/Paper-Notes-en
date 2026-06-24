@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] To address the issue where ultra-low-bit ($\le$ 2 bit) quantization severely degrades reasoning capabilities, this paper proposes a two-stage QAT pipeline for reasoning LLMs. The first stage performs block-wise quantization calibration using "80% Reasoning + 20% Pre-training" mixed-domain data, and the second stage emp
+  [ICLR 2026][Model Compression][Quantization-Aware Training] To address the issue where ultra-low-bit ($\le$ 2 bit) quantization severely degrades reasoning capabilities, this paper proposes a two-stage QAT pipeline for reasoning LLMs. The first stage performs block-wise quantization calibration using "80% Reasoning + 20% Pre-training" mixed-domain data, and the second stage employs a teacher-guided reward rectification loss for fine-tuning. The 2-bit quantized Qwen3-8B outper…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Quantization-Aware Training"
+  - "Ultra-Low-Bit Quantization"
+  - "Reasoning LLM"
+  - "Mixed-Domain Calibration"
+  - "Reward Rectification Loss"
 date: 2026-05-08
-content_hash: 768fe7290748f872
+content_hash: 809d63286903408f
 ---
+
 # Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs
 
 **Conference**: ICLR 2026  
@@ -126,15 +132,15 @@ Table 4: Dissecting block-wise calibration (C) and loss selection (S for standar
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](compute-optimal_quantization-aware_training.md)
 - [\[AAAI 2026\] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization](../../AAAI2026/model_compression/specquant_spectral_decomposition_and_adaptive_truncation_for_ultra-low-bit_llms_.md)
+- [\[ICLR 2026\] CAR-LoRA: Training Compression-Aware and Robust LoRA Adapters for Evolving LLMs](car-lora_training_compression-aware_and_robust_lora_adapters_for_evolving_llms.md)
 - [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
 - [\[ICLR 2026\] Metis: Training LLMs with FP4 Quantization](metis_training_llms_with_fp4_quantization.md)
-- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 
 </div>
 

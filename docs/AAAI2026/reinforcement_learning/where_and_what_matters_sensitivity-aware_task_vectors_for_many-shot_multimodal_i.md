@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Where and What Matters: Sensitivity-Aware Task Vectors for Many-Shot Multimodal In-Context Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][Multimodal In-Context Learning] This paper proposes the STV framework, which identifies attention head positions sensitive to in-context information via activation deltas…
+  [AAAI 2026][Reinforcement Learning][Multimodal In-Context Learning] This paper proposes the STV framework, which identifies attention head positions sensitive to in-context information via activation deltas, and leverages reinforcement learning to select optimal task vectors from a pre-clustered activation bank for insertion—enabling efficient many-shot multimodal in-context learning without increasing input length.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Attention Head Sensitivity"
   - "Activation Space Modulation"
 date: 2026-05-08
-content_hash: 45e6997dd3cbe541
+content_hash: b680882e7a19522e
 ---
 
 # Where and What Matters: Sensitivity-Aware Task Vectors for Many-Shot Multimodal In-Context Learning
@@ -188,11 +188,11 @@ Comparison with parameter fine-tuning methods:
 
 ## Related Papers
 
+- [\[ICLR 2026\] What Matters for Batch Online Reinforcement Learning in Robotics?](../../ICLR2026/reinforcement_learning/what_matters_for_batch_online_reinforcement_learning_in_robotics.md)
+- [\[ICLR 2026\] Learning What Matters Now: Dynamic Preference Inference under Contextual Shifts](../../ICLR2026/reinforcement_learning/learning_what_matters_now_dynamic_preference_inference_under_contextual_shifts.md)
 - [\[ICLR 2026\] Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs](../../ICLR2026/reinforcement_learning/chain-of-context_learning_dynamic_constraint_understanding_for_multi-task_vrps.md)
-- [\[ICLR 2026\] Scalable In-Context Q-Learning](../../ICLR2026/reinforcement_learning/scalable_in-context_q-learning.md)
 - [\[AAAI 2026\] MMhops-R1: Multimodal Multi-hop Reasoning](mmhops-r1_multimodal_multi-hop_reasoning.md)
-- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](../../ICLR2026/reinforcement_learning/longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
-- [\[ICML 2026\] Safe In-Context Reinforcement Learning](../../ICML2026/reinforcement_learning/safe_in-context_reinforcement_learning.md)
+- [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](object-centric_world_models_for_causality-aware_reinforcement_learning.md)
 
 </div>
 

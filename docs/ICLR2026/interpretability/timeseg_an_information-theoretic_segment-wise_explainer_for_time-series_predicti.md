@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TimeSeg: An Information-Theoretic Segment-Wise Explainer for Time-Series Predictions
 description: >-
-  [ICLR 2026][Interpretability][PPO] TimeSeg redefines "explaining black-box time-series models" as selecting a set of continuous sub-sequences that maximize the joint mutual information with the model's prediction. By using the chain rule, this intractable joint optimization is decomposed into a sequential decision-making problem solved via reinforcement
+  [ICLR 2026][Interpretability][Time-series explanation] TimeSeg redefines "explaining black-box time-series models" as selecting a set of continuous sub-sequences that maximize the joint mutual information with the model's prediction. By using the chain rule, this intractable joint optimization is decomposed into a sequential decision-making problem solved via reinforcement learning. This allows for producing variable-length segment explanations with high alignment to ground t…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - PPO
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Time-series explanation"
+  - "segment-wise explanation"
+  - "mutual information"
+  - "conditional mutual information"
+  - "PPO"
 date: 2026-05-08
-content_hash: 3d398f3fb822fbb8
+content_hash: 64861a12488c9da0
 ---
+
 # TimeSeg: An Information-Theoretic Segment-Wise Explainer for Time-Series Predictions
 
 **Conference**: ICLR 2026  
@@ -143,6 +148,7 @@ In occlusion analysis on real-world data **without ground truth** (Sufficiency S
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -151,7 +157,7 @@ In occlusion analysis on real-world data **without ground truth** (Sufficiency S
 - [\[ICLR 2026\] Paradigm Shift of GNN Explainer from Label Space to Prototypical Representation Space](paradigm_shift_of_gnn_explainer_from_label_space_to_prototypical_representation_.md)
 - [\[NeurIPS 2025\] Benchmarking Probabilistic Time Series Forecasting Models on Neural Activity](../../NeurIPS2025/interpretability/benchmarking_probabilistic_time_series_forecasting_models_on_neural_activity.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
-- [\[ICLR 2026\] Multi-ReduNet: Interpretable Class-Wise Decomposition of ReduNet](multi-redunet_interpretable_class-wise_decomposition_of_redunet.md)
+- [\[ICLR 2026\] Information Shapes Koopman Representation](information_shapes_koopman_representation.md)
 
 </div>
 

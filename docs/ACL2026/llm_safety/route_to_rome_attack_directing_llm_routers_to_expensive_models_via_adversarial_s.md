@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Route to Rome Attack: Directing LLM Routers to Expensive Models via Adversarial Suffixes
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes R2A (Route to Rome Attack). By constructing mixed ensemble proxy routers and optimizing universal adversarial suffixes under a black-box setting, it directs LLM routing decisions from cheap weak models to expensive strong models. On 7 open-source routers and 2 commercial routers (GPT-5-Auto, OpenRou
+  [ACL 2026][LLM Safety][LLM routing attack] This paper proposes R2A (Route to Rome Attack). By constructing mixed ensemble proxy routers and optimizing universal adversarial suffixes under a black-box setting, it directs LLM routing decisions from cheap weak models to expensive strong models. On 7 open-source routers and 2 commercial routers (GPT-5-Auto, OpenRouter), the average Attack Success Rate (ASR) increases by 49%, with inference costs rising by 2.7-2.9 times.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "LLM routing attack"
+  - "adversarial suffixes"
+  - "black-box attack"
+  - "proxy router"
+  - "inference cost"
 date: 2026-05-08
-content_hash: 7481abf00a1c132e
+content_hash: 837d6109292edc41
 ---
+
 # Route to Rome Attack: Directing LLM Routers to Expensive Models via Adversarial Suffixes
 
 **Conference**: ACL 2026  
@@ -151,7 +157,7 @@ Proxy training uses cross-entropy to align with target router decisions $\mathca
 - [\[AAAI 2026\] GraphTextack: A Realistic Black-Box Node Injection Attack on LLM-Enhanced GNNs](../../AAAI2026/llm_safety/graphtextack_a_realistic_black-box_node_injection_attack_on_llm-enhanced_gnns.md)
 - [\[CVPR 2026\] Omni-Attack: Adversarial Attacks on Open-Ended VQA in Black-Box Multimodal LLMs](../../CVPR2026/llm_safety/omni-attack_adversarial_attacks_on_open-ended_vqa_in_black-box_multimodal_llms.md)
 - [\[NeurIPS 2025\] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text](../../NeurIPS2025/llm_safety/adversarial_paraphrasing_a_universal_attack_for_humanizing_ai-generated_text.md)
-- [\[ACL 2026\] Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking](seeing_no_evil_blinding_large_vision-language_models_to_safety_instructions_via_.md)
+- [\[ICLR 2026\] Fewer Weights, More Problems: A Practical Attack on LLM Pruning](../../ICLR2026/llm_safety/fewer_weights_more_problems_a_practical_attack_on_llm_pruning.md)
 
 </div>
 

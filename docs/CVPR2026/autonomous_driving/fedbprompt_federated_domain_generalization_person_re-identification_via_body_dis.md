@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FedBPrompt: Federated Domain Generalization Person Re-Identification via Body Distribution Aware Visual Prompts
 description: >-
-  [CVPR 2026][Autonomous Driving][FedDG-ReID] The FedBPrompt framework is proposed, which splits prompts into Body Part Alignment Prompts and Holistic Full Body Prompts via the Body Distribution Aware Visual Prompts Mechanism (BAPM). Coupled with the Prompt-based Fine-Tuning Strategy (PFTS), the ViT backbone is frozen while only lightweight prompts are trained (re
+  [CVPR 2026][Autonomous Driving][FedDG-ReID] The FedBPrompt framework is proposed, which splits prompts into Body Part Alignment Prompts and Holistic Full Body Prompts via the Body Distribution Aware Visual Prompts Mechanism (BAPM). Coupled with the Prompt-based Fine-Tuning Strategy (PFTS), the ViT backbone is frozen while only lightweight prompts are trained (reducing communication overhead to ~1%). It achieves average gains of 3.3% mAP and 4.9% Rank-1 in FedDG-ReID tasks.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - FedDG-ReID
-  - ViT
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "FedDG-ReID"
+  - "Visual Prompts"
+  - "Body Part Alignment"
+  - "Parameter-Efficient Fine-Tuning"
+  - "ViT"
+  - "Federated Aggregation"
 date: 2026-05-08
-content_hash: 9fea6f9969e7199d
+content_hash: 0312c8af56f3a1c1
 ---
+
 # FedBPrompt: Federated Domain Generalization Person Re-Identification via Body Distribution Aware Visual Prompts
 
 **Conference**: CVPR 2026  

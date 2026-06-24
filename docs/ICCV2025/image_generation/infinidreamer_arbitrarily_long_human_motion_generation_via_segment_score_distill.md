@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation
 description: >-
-  [ICCV 2025][Image Generation][Long-sequence motion generation] InfiniDreamer leverages a pretrained short-sequence motion diffusion model as a prior and proposes Segment Score Distillation (SSD)…
+  [ICCV 2025][Image Generation][Long-sequence motion generation] InfiniDreamer leverages a pretrained short-sequence motion diffusion model as a prior and proposes Segment Score Distillation (SSD), an optimization method that iteratively refines overlapping short segments within a coarsely initialized long motion sequence, enabling arbitrarily long human motion generation without requiring additional long-sequence training data.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "motion diffusion model"
 date: 2026-05-08
-content_hash: f3fe79d3dd3ba7a2
+content_hash: 73bf1a0a22cf3e41
 ---
 
 # InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation
@@ -139,8 +139,8 @@ The total loss is $\mathcal{L}_{ssd} = \mathcal{L}_{align} + \lambda_{pos}\mathc
 ## Related Papers
 
 - [\[ICCV 2025\] PINO: Person-Interaction Noise Optimization for Long-Duration and Customizable Motion Generation of Arbitrary-Sized Groups](pino_person-interaction_noise_optimization_for_long-duration_and_customizable_mo.md)
-- [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
 - [\[ICCV 2025\] LUSD: Localized Update Score Distillation for Text-Guided Image Editing](lusd_localized_update_score_distillation_for_text-guided_image_editing.md)
+- [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
 - [\[ICCV 2025\] HPSv3: Towards Wide-Spectrum Human Preference Score](hpsv3_towards_wide-spectrum_human_preference_score.md)
 - [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
 

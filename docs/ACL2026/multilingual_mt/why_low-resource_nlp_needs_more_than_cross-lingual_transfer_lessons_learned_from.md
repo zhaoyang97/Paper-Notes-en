@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] Using Luxembourgish—theoretically an ideal case for cross-lingual transfer—as a "best-case" scenario, this paper argues that low-resource NLP cannot rely solely on the spontaneous transfer of multilingual models. Instead, it must integrate cross-lingual scaffolding with target-language-specific data cleaning, resource
+  [ACL2026][Multilingual & Machine Translation][Low-resource languages] Using Luxembourgish—theoretically an ideal case for cross-lingual transfer—as a "best-case" scenario, this paper argues that low-resource NLP cannot rely solely on the spontaneous transfer of multilingual models. Instead, it must integrate cross-lingual scaffolding with target-language-specific data cleaning, resource construction, and task design.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Low-resource languages"
+  - "cross-lingual transfer"
+  - "Luxembourgish"
+  - "data quality"
+  - "language-specific resources"
 date: 2026-05-08
-content_hash: 62499312e250af7c
+content_hash: c106de43ccacef61
 ---
+
 # Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish
 
 **Conference**: ACL2026  
@@ -114,8 +120,8 @@ The paper offers empirical comparisons across studies rather than traditional mo
 - Value: ⭐⭐⭐⭐☆ Highly instructive for designing resource pipelines and evaluating low-resource models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -123,7 +129,7 @@ The paper offers empirical comparisons across studies rather than traditional mo
 - [\[ACL 2025\] Dictionaries to the Rescue: Cross-Lingual Vocabulary Transfer for Low-Resource Languages Using Bilingual Dictionaries](../../ACL2025/multilingual_mt/dictionaries_to_the_rescue_cross-lingual_vocabulary_transfer_for_low-resource_la.md)
 - [\[ACL 2025\] Cross-Lingual Transfer of Cultural Knowledge: An Asymmetric Phenomenon](../../ACL2025/multilingual_mt/cross-lingual_transfer_of_cultural_knowledge_an_asymmetric_phenomenon.md)
 - [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
-- [\[ACL 2026\] Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax](reinforcement_learning_with_semantic_rewards_enables_low-resource_language_expan.md)
+- [\[ACL 2025\] Middle-Layer Representation Alignment for Cross-Lingual Transfer in Fine-Tuned LLMs](../../ACL2025/multilingual_mt/mid_layer_crosslingual_alignment.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoopDiff: A Diffusion-Guided Approach for Cooperation under Corruptions
 description: >-
-  [CVPR 2026][Autonomous Driving][V2X] CoopDiff reformulates the "corruption robustness" problem in multi-agent cooperative perception as a **feature-space diffusion denoising** task. A quality-aware teacher generates clean supervisory features, which a dual-branch diffusion student reconstructs from noisy inputs. This approach consistently outperforms exis
+  [CVPR 2026][Autonomous Driving][Cooperative Perception] CoopDiff reformulates the "corruption robustness" problem in multi-agent cooperative perception as a **feature-space diffusion denoising** task. A quality-aware teacher generates clean supervisory features, which a dual-branch diffusion student reconstructs from noisy inputs. This approach consistently outperforms existing SOTA across six types of corruption, including fog, motion blur, and EMI.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - V2X
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Cooperative Perception"
+  - "V2X"
+  - "Diffusion Denoising"
+  - "Robust Fusion"
+  - "Teacher-Student Distillation"
 date: 2026-05-08
-content_hash: d31634506a632ffb
+content_hash: 0ea8be858f17dc34
 ---
+
 # CoopDiff: A Diffusion-Guided Approach for Cooperation under Corruptions
 
 **Conference**: CVPR 2026  
@@ -153,11 +158,11 @@ Incremental component analysis (OPV2V / DAIR-V2X, AP@0.5 / AP@0.7):
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
-- [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
-- [\[CVPR 2026\] Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift](query2uncertainty_robust_uncertainty_quantification_and_calibration_for_3d_objec.md)
 - [\[CVPR 2026\] Test-Time Training for LiDAR Semantic Segmentation under Corruption via Geometric Inlier Discrimination](test-time_training_for_lidar_semantic_segmentation_under_corruption_via_geometri.md)
+- [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
+- [\[CVPR 2026\] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System](knowval_a_knowledge-augmented_and_value-guided_autonomous_driving_system.md)
+- [\[CVPR 2026\] L3DR: 3D-aware LiDAR Diffusion and Rectification](l3dr_3d-aware_lidar_diffusion_and_rectification.md)
 
 </div>
 

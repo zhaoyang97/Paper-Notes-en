@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Q-Delta: Beyond Key–Value Associative State Evolution
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] This paper challenges the implicit assumption in linear attention that "queries are only responsible for read-out and do not participate in state evolution." It demonstrates that query read-out $\hat{o}_t=S_{t-1}q_t$ itself constitutes a structured value prediction (complementary to key retrieval). Based on this, it pr
+  [ICML2026][LLM Efficiency][Linear attention] This paper challenges the implicit assumption in linear attention that "queries are only responsible for read-out and do not participate in state evolution." It demonstrates that query read-out $\hat{o}_t=S_{t-1}q_t$ itself constitutes a structured value prediction (complementary to key retrieval). Based on this, it proposes **Q-Delta**, which injects the hybrid prediction errors of both keys and queries into the delta rule state u…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Linear attention"
+  - "delta rule"
+  - "query-conditioned feedback"
+  - "state evolution"
+  - "long-context retrieval"
 date: 2026-05-08
-content_hash: cca9b0a78a45195a
+content_hash: aa27c3709ad1de69
 ---
+
 # Q-Delta: Beyond Key–Value Associative State Evolution
 
 **Conference**: ICML2026  
@@ -144,9 +150,9 @@ Ablation of query feedback coefficient $\lambda$ and gating (340M). Learnable $\
 
 - [\[CVPR 2025\] Associative Transformer](../../CVPR2025/llm_efficiency/associative_transformer.md)
 - [\[ICML 2026\] Kalman Linear Attention: Parallel Bayesian Filtering For Efficient Language Modelling and State Tracking](kalman_linear_attention_parallel_bayesian_filtering_for_efficient_language_model.md)
-- [\[ICLR 2026\] EvoEngineer: Mastering Automated CUDA Kernel Code Evolution with Large Language Models](../../ICLR2026/llm_efficiency/evoengineer_mastering_automated_cuda_kernel_code_evolution_with_large_language_m.md)
+- [\[ICLR 2026\] Scaling Linear Attention Capacity with Sparse State Expansion](../../ICLR2026/llm_efficiency/scaling_linear_attention_capacity_with_sparse_state_expansion.md)
+- [\[ICLR 2026\] MeSH: Memory-as-State-Highways for Recursive Transformers](../../ICLR2026/llm_efficiency/mesh_memory-as-state-highways_for_recursive_transformers.md)
 - [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
-- [\[ACL 2026\] Beyond Accuracy: Unveiling Inefficiency Patterns in Tool-Integrated Reasoning](../../ACL2026/llm_efficiency/beyond_accuracy_unveiling_inefficiency_patterns_in_tool-integrated_reasoning.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Community-Aware Assessment of Social Textual Engagement and Resonance: A Human-Centric Perspective on User-Generated Content Evaluation
 description: >-
-  [ACL 2026][Reinforcement Learning][Social-CoT] This paper introduces the CASTER task and CASTER-Bench, proposing MEDEA to simulate community responses via Social-CoT, SFT, and process-supervised Reinforcement Learning (RL) with Social Alignment Reward. MEDEA improves High-Quality F1 to 0.650 and Macro-F1 to 0.749 on CASTER-Bench, significantly outperforming traditi
+  [ACL2026][Reinforcement Learning][UGC Quality Assessment] This paper introduces the CASTER task and CASTER-Bench, proposing MEDEA to simulate community responses via Social-CoT, SFT, and process-supervised Reinforcement Learning (RL) with Social Alignment Reward. MEDEA improves High-Quality F1 to 0.650 and Macro-F1 to 0.749 on CASTER-Bench, significantly outperforming traditional VQA and general LMM baselines.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Social-CoT
-  - GRPO
+  - "ACL2026"
+  - "Reinforcement Learning"
+  - "UGC Quality Assessment"
+  - "Social-CoT"
+  - "Community Resonance"
+  - "GRPO"
+  - "Multimodal Reasoning"
 date: 2026-05-08
-content_hash: 967e9e9960a722b2
+content_hash: bf62aef34b123c3a
 ---
+
 # Community-Aware Assessment of Social Textual Engagement and Resonance: A Human-Centric Perspective on User-Generated Content Evaluation
 
 **Conference**: ACL2026  
@@ -139,16 +143,16 @@ Due to the long-tail distribution of High-Quality samples in CASTER-Bench, High-
 - Value: ⭐⭐⭐⭐☆ Highly insightful for UGC recommendation and social reasoning, despite inference cost challenges.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](../../AAAI2026/reinforcement_learning/object-centric_world_models_for_causality-aware_reinforcement_learning.md)
-- [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](../../AAAI2026/reinforcement_learning/a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
+- [\[ICLR 2026\] SocialJax: An Evaluation Suite for Multi-Agent Reinforcement Learning in Sequential Social Dilemmas](../../ICLR2026/reinforcement_learning/socialjax_an_evaluation_suite_for_multi-agent_reinforcement_learning_in_sequenti.md)
 - [\[AAAI 2026\] G-UBS: Towards Robust Understanding of Implicit Feedback via Group-Aware User Behavior Simulation](../../AAAI2026/reinforcement_learning/g-ubs_towards_robust_understanding_of_implicit_feedback_via_group-aware_user_beh.md)
+- [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](../../AAAI2026/reinforcement_learning/a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
 - [\[ACL 2026\] The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games](the_stackelberg_speaker_optimizing_persuasive_communication_in_social_deduction_.md)
-- [\[ICLR 2026\] PreferThinker: Reasoning-based Personalized Image Preference Assessment](../../ICLR2026/reinforcement_learning/preferthinker_reasoning-based_personalized_image_preference_assessment.md)
 
 </div>
 

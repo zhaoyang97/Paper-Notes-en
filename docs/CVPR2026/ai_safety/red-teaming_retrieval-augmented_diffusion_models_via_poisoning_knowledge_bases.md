@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Addressing Retrieval-Augmented Diffusion Models (RAG-DMs), this paper proposes JOB (Jointly Optimized Backdoor), the first backdoor attack for **black-box** scenarios. By injecting a minimal number of target-class poisoned images into the knowledge base and jointly optimizing a trigger word via reinforcement learning,
+  [CVPR 2026][AI Safety][Backdoor Attack] Addressing Retrieval-Augmented Diffusion Models (RAG-DMs), this paper proposes JOB (Jointly Optimized Backdoor), the first backdoor attack for **black-box** scenarios. By injecting a minimal number of target-class poisoned images into the knowledge base and jointly optimizing a trigger word via reinforcement learning, JOB ensures that queries with the trigger retrieve poisoned images and drive the diffusion model to generate target-clas…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Backdoor Attack"
+  - "Retrieval-Augmented Diffusion Models"
+  - "Knowledge Base Poisoning"
+  - "Black-box Attack"
+  - "RL-based Trigger"
 date: 2026-05-08
-content_hash: 59e881ca25f01bdd
+content_hash: fb16fbc1953218df
 ---
+
 # Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases
 
 **Conference**: CVPR 2026  
@@ -132,9 +138,9 @@ Even on commercial systems, JOB maintains significant attack success rates, prov
 ## Related Papers
 
 - [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
-- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 - [\[CVPR 2026\] GROW: Watermark Generation with Progressive Guidance for Diffusion Models](grow_watermark_generation_with_progressive_guidance_for_diffusion_models.md)
+- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Batman: Benign Knowledge Alignment Through Malicious Null Space in Federated Backdoor Attack](batman_benign_knowledge_alignment_through_malicious_null_space_in_federated_back.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlashDepth: Real-time Streaming Video Depth Estimation at 2K Resolution
 description: >-
-  [ICCV 2025][3D Vision][video depth estimation] FlashDepth augments Depth Anything v2 with a Mamba recurrent module for cross-frame scale consistency…
+  [ICCV 2025][3D Vision][video depth estimation] FlashDepth augments Depth Anything v2 with a Mamba recurrent module for cross-frame scale consistency, and introduces a Small-Large hybrid architecture that achieves real-time streaming video depth estimation at 2K resolution and 24 FPS with significantly sharper boundaries than existing methods.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Mamba recurrent network"
   - "hybrid model"
 date: 2026-05-08
-content_hash: a711f4c87507ce94
+content_hash: e9fb9c3aa1a08a48
 ---
 
 # FlashDepth: Real-time Streaming Video Depth Estimation at 2K Resolution
@@ -179,9 +179,9 @@ A highly practical contribution. The method strikes an excellent balance in the 
 ## Related Papers
 
 - [\[AAAI 2026\] StreamSTGS: Streaming Spatial and Temporal Gaussian Grids for Real-Time Free-Viewpoint Video](../../AAAI2026/3d_vision/streamstgs_streaming_spatial_and_temporal_gaussian_grids_for_real-time_free-view.md)
+- [\[CVPR 2025\] Video Depth Anything: Consistent Depth Estimation for Super-Long Videos](../../CVPR2025/3d_vision/video_depth_anything_consistent_depth_estimation_for_super-long_videos.md)
 - [\[ICCV 2025\] Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation](seeing_and_seeing_through_the_glass_real_and_synthetic_data_for_multi-layer_dept.md)
 - [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
-- [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
 - [\[ICCV 2025\] Radiant Foam: Real-Time Differentiable Ray Tracing](radiant_foam_real-time_differentiable_ray_tracing.md)
 
 </div>

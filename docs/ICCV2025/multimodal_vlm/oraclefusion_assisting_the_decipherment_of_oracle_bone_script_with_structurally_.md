@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography
 description: >-
-  [ICCV 2025][Multimodal VLM][oracle bone script] This paper proposes OracleFusion, a two-stage semantic typography framework. Stage 1 employs MLLM-enhanced Spatial Awareness Reasoning (SAR) to analyze the glyph structure…
+  [ICCV 2025][Multimodal VLM][oracle bone script] This paper proposes OracleFusion, a two-stage semantic typography framework. Stage 1 employs MLLM-enhanced Spatial Awareness Reasoning (SAR) to analyze the glyph structure of oracle bone script (OBS) and localize key components. Stage 2 introduces Structural Oracle Vector Fusion (SOVF), which generates semantically enriched vector glyphs through glyph structure constraints and skeleton-preserving losses…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "spatial awareness reasoning"
   - "score distillation"
 date: 2026-05-08
-content_hash: 4d5c72d8b2310ebd
+content_hash: c69b3c8ec2a8fa37
 ---
 
 # OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography
@@ -176,11 +176,11 @@ SAR improves performance across all metrics, with the largest gains in mIoU, dem
 
 ## Related Papers
 
+- [\[CVPR 2026\] Geometrically-Constrained Agent for Spatial Reasoning](../../CVPR2026/multimodal_vlm/geometrically-constrained_agent_for_spatial_reasoning.md)
 - [\[ICCV 2025\] Background Invariance Testing According to Semantic Proximity](background_invariance_testing_according_to_semantic_proximity.md)
 - [\[ICCV 2025\] MUSE-VL: Modeling Unified VLM through Semantic Discrete Encoding](musevl_modeling_unified_vlm_through_semantic_discrete_encodi.md)
 - [\[CVPR 2026\] GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks](../../CVPR2026/multimodal_vlm/guide_a_benchmark_for_understanding_and_assisting_users_in_open-ended_gui_tasks.md)
 - [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](../../AAAI2026/multimodal_vlm/aligning_the_true_semantics_constrained_decoupling_and_distr.md)
-- [\[AAAI 2026\] UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment](../../AAAI2026/multimodal_vlm/unifit_towards_universal_virtual_try-on_with_mllm-guided_semantic_alignment.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps
 description: >-
-  [ACL 2026][Hallucination Detection][Paper Note] Ours proposes four audio-attention-based metrics (AudioRatio, AudioConsistency, AudioEntropy, TextEntropy) to train a lightweight logistic regression classifier for detecting hallucinations in SpeechLLMs during inference, achieving a PR-AUC improvement of up to +0.23 on in-domain data.
+  [ACL 2026 Findings][Hallucination Detection][Speech Large Language Models] Ours proposes four audio-attention-based metrics (AudioRatio, AudioConsistency, AudioEntropy, TextEntropy) to train a lightweight logistic regression classifier for detecting hallucinations in SpeechLLMs during inference, achieving a PR-AUC improvement of up to +0.23 on in-domain data.
 tags:
-  - ACL 2026
-  - Hallucination Detection
+  - "ACL 2026 Findings"
+  - "Hallucination Detection"
+  - "Speech Large Language Models"
+  - "Attention Maps"
+  - "Inference-time Detection"
+  - "Lightweight Classifiers"
 date: 2026-05-08
-content_hash: 180a07e7b9cb8dd1
+content_hash: d6fd4732b1a3427d
 ---
+
 # Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps
 
 **Conference**: ACL 2026 Findings  
@@ -138,11 +143,11 @@ A logistic regression classifier is employed, with L2 regularization used for fe
 
 ## Related Papers
 
+- [\[ICLR 2026\] Leveraging Pretrained Knowledge at Inference Time: LoRA-Gated Contrastive Decoding for Multilingual Factual Language Generation in Adapted LLMs](../../ICLR2026/hallucination/leveraging_pretrained_knowledge_at_inference_time_lora-gated_contrastive_decodin.md)
 - [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
 - [\[ACL 2026\] FaithLens: Detecting and Explaining Faithfulness Hallucination](faithlens_detecting_and_explaining_faithfulness_hallucination.md)
 - [\[ACL 2026\] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG](tpa_next_token_probability_attribution_for_detecting_hallucinations_in_rag.md)
 - [\[ACL 2026\] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification](finground_detecting_and_grounding_financial_hallucinations_via_atomic_claim_veri.md)
-- [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
 
 </div>
 

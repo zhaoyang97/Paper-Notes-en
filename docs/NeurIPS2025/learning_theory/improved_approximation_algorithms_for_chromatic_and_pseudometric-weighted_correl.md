@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering
 description: >-
-  [NeurIPS 2025][Theoretical Computer Science / Combinatorial Optimization][Correlation Clustering] For two important generalizations of Correlation Clustering—Chromatic CC and pseudometric-weighted CC—this paper achieves…
+  [NeurIPS 2025][Theoretical Computer Science][Correlation Clustering] For two important generalizations of Correlation Clustering—Chromatic CC and pseudometric-weighted CC—this paper achieves a 2.15-approximation and a tight 10/3-approximation, respectively, via LP relaxation and carefully designed rounding functions, significantly improving upon the previous best results of 2.5 and 6.
 tags:
   - "NeurIPS 2025"
-  - "Theoretical Computer Science / Combinatorial Optimization"
+  - "Theoretical Computer Science"
+  - "Combinatorial Optimization"
   - "Correlation Clustering"
   - "Approximation Algorithms"
   - "LP Rounding"
   - "Chromatic CC"
   - "Pseudometric"
 date: 2026-05-08
-content_hash: d6071bf12160f9f6
+content_hash: 909d792758264382
 ---
 
 # Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering
@@ -116,10 +117,10 @@ LP-Pivot Algorithm (Algorithm 1): (1) randomly select a pivot node $v$; (2) for 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
+- [\[ICLR 2026\] Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds](../../ICLR2026/learning_theory/efficient_testing_for_correlation_clustering_improved_algorithms_and_optimal_bou.md)
 - [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](../../ICML2026/learning_theory/simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
+- [\[ICML 2025\] Sparse-Pivot: Dynamic Correlation Clustering for Node Insertions](../../ICML2025/learning_theory/sparse-pivot_dynamic_correlation_clustering_for_node_insertions.md)
 - [\[ICML 2026\] Estimating Correlation Clustering Cost in Node-Arrival Stream](../../ICML2026/learning_theory/estimating_correlation_clustering_cost_in_node-arrival_stream.md)
-- [\[NeurIPS 2025\] Reliably Detecting Model Failures in Deployment Without Labels](reliably_detecting_model_failures_in_deployment_without_labels.md)
-- [\[NeurIPS 2025\] Revisiting Agnostic Boosting](revisiting_agnostic_boosting.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation
 description: >-
-  [AAAI2026][Video Understanding][event camera] This paper proposes the Bidirectional Adaptive Temporal Correlation (BAT) framework, which converts temporally dense motion cues from event cameras into spatially dense cues…
+  [AAAI2026][Video Understanding][event camera] This paper proposes the Bidirectional Adaptive Temporal Correlation (BAT) framework, which converts temporally dense motion cues from event cameras into spatially dense cues, achieving high-accuracy event-based optical flow estimation and ranking first on the DSEC-Flow benchmark.
 tags:
   - "AAAI2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "deformable attention"
   - "event-based vision"
 date: 2026-05-08
-content_hash: 871920318ce6911e
+content_hash: 78b12a6b56ce7082
 ---
 
 # BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation
@@ -141,11 +141,11 @@ The "temporally dense → spatially dense" conversion paradigm is generalizable 
 
 ## Related Papers
 
+- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](../../CVPR2026/video_understanding/one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
+- [\[CVPR 2026\] From Contrast to Consistency: Rethinking Event-based Continuous-Time Optical Flow Estimation](../../CVPR2026/video_understanding/from_contrast_to_consistency_rethinking_event-based_continuous-time_optical_flow.md)
+- [\[CVPR 2026\] Efficient All-Pairs Correlation Volume Sampling for Optical Flow Estimation](../../CVPR2026/video_understanding/efficient_all-pairs_correlation_volume_sampling_for_optical_flow_estimation.md)
 - [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](../../ICCV2025/video_understanding/unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
 - [\[CVPR 2026\] LAOF: Robust Latent Action Learning with Optical Flow Constraints](../../CVPR2026/video_understanding/laof_robust_latent_action_learning_with_optical_flow_constraints.md)
-- [\[CVPR 2026\] U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation](../../CVPR2026/video_understanding/u2flow_uncertainty_aware_unsupervised_optical_flow_estimation.md)
-- [\[AAAI 2026\] Lifelong Domain Adaptive 3D Human Pose Estimation](lifelong_domain_adaptive_3d_human_pose_estimation.md)
-- [\[AAAI 2026\] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition](task-specific_distance_correlation_matching_for_few-shot_action_recognition.md)
 
 </div>
 

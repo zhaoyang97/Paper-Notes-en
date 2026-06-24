@@ -2,13 +2,22 @@
 title: >-
   [Paper Note] Bound by Semanticity: Universal Laws Governing the Generalization-Identification Tradeoff
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper demonstrates a fundamental contradiction between "broad generalization" and "precise identification": any system with **finite semantic resolution** $\varepsilon$ in its similarity computation (ranging from small ReLU networks to VLMs to the human brain) must reside on a **universal Pareto frontier** and exh
+  [ICLR 2026][Learning Theory][Generalization-Identification Tradeoff] This paper demonstrates a fundamental contradiction between "broad generalization" and "precise identification": any system with **finite semantic resolution** $\varepsilon$ in its similarity computation (ranging from small ReLU networks to VLMs to the human brain) must reside on a **universal Pareto frontier** and exhibits a $1/n$ collapse in identification capacity as the number of co-occurring objects $n$…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Representation Geometry"
+  - "Cognitive Science"
+  - "Generalization-Identification Tradeoff"
+  - "Semantic Resolution"
+  - "Pareto Frontier"
+  - "Representation Capacity"
+  - "Binding Problem"
+  - "Multi-object Processing"
 date: 2026-05-08
-content_hash: 75ed99ffd8aee23a
+content_hash: 19e4108afc36ca72
 ---
+
 # Bound by Semanticity: Universal Laws Governing the Generalization-Identification Tradeoff
 
 **Conference**: ICLR 2026  

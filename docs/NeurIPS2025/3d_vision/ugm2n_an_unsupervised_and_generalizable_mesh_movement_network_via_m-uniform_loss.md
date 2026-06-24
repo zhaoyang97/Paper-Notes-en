@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss
 description: >-
-  [NeurIPS 2025][3D Vision][mesh movement] UGM2N is an unsupervised mesh movement network that achieves zero-shot generalization across PDE types and mesh geometries—without requiring pre-adapted mesh data—through a locali…
+  [NeurIPS 2025][3D Vision][mesh movement] UGM2N is an unsupervised mesh movement network that achieves zero-shot generalization across PDE types and mesh geometries—without requiring pre-adapted mesh data—through a localized Node Patch representation and an M-Uniform loss function, while guaranteeing freedom from mesh tangling.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "zero-shot generalization"
   - "equidistribution"
 date: 2026-05-08
-content_hash: 6f9406256030cc2f
+content_hash: 7e82c27382a52a1f
 ---
 
 # UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss
@@ -127,8 +127,8 @@ The model adopts a lightweight design: node and edge features are encoded by sep
 - [\[NeurIPS 2025\] Mesh Interpolation Graph Network for Dynamic and Spatially Irregular Global Weather Forecasting](mesh_interpolation_graph_network_for_dynamic_and_spatially_irregular_global_weat.md)
 - [\[NeurIPS 2025\] U-CAN: Unsupervised Point Cloud Denoising with Consistency-Aware Noise2Noise Matching](u-can_unsupervised_point_cloud_denoising_with_consistency-aware_noise2noise_matc.md)
 - [\[NeurIPS 2025\] Flux4D: Flow-based Unsupervised 4D Reconstruction](flux4d_flow-based_unsupervised_4d_reconstruction.md)
-- [\[NeurIPS 2025\] Mesh-RFT: Enhancing Mesh Generation via Fine-Grained Reinforcement Fine-Tuning](mesh-rft_enhancing_mesh_generation_via_fine-grained_reinforcement_fine-tuning.md)
 - [\[NeurIPS 2025\] Learning Generalizable Shape Completion with SIM(3) Equivariance](learning_generalizable_shape_completion_with_sim3_equivariance.md)
+- [\[CVPR 2026\] ResiHMR: Residual-Limb Aware Single-Image 3D Human Mesh Recovery for Individuals with Limb Loss](../../CVPR2026/3d_vision/resihmr_residual-limb_aware_single-image_3d_human_mesh_recovery_for_individuals_.md)
 
 </div>
 

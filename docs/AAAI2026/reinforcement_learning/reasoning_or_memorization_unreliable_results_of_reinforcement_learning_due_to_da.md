@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination
 description: >-
-  [AAAI 2026][Reinforcement Learning][Data Contamination] This paper conducts a systematic data leakage audit revealing severe data contamination of the Qwen2.5 series on standard math benchmarks such as MATH-500. It demon…
+  [AAAI 2026][Reinforcement Learning][Data Contamination] This paper conducts a systematic data leakage audit revealing severe data contamination of the Qwen2.5 series on standard math benchmarks such as MATH-500. It demonstrates that recent findings claiming "spurious rewards can improve mathematical reasoning" are artifacts of contamination, and constructs a fully uncontaminated benchmark, RandomCalculation, to verify that only correct reward signals yield genuine reasoning i…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "RLVR"
   - "Math Reasoning Evaluation"
 date: 2026-05-08
-content_hash: 7e5b4e1256d6a4a0
+content_hash: f298c66e43dd6c0c
 ---
 
 # Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination
@@ -189,7 +189,7 @@ For medium-probability tokens ($\pi_{\text{old}} = 0.5$, typical of RandomCalcul
 - [\[AAAI 2026\] Reasoning with Exploration: An Entropy Perspective](reasoning_with_exploration_an_entropy_perspective.md)
 - [\[ICML 2026\] CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning](../../ICML2026/reinforcement_learning/cpmobius_iterative_coach-player_reasoning_for_data-free_reinforcement_learning.md)
 - [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
-- [\[ACL 2026\] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment](../../ACL2026/reinforcement_learning/learnalign_data_selection_for_llm_reinforcement_learning_with_improved_gradient_.md)
+- [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](../../ICLR2026/reinforcement_learning/towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
 
 </div>
 

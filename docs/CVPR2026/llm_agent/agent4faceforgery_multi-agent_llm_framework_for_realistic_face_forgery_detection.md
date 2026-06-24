@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agent4FaceForgery: Multi-Agent LLM Framework for Realistic Face Forgery Detection
 description: >-
-  [CVPR 2026][Multi-Agent][deepfake] A multi-agent system driven by LLMs is used to "act" as both forgers and social network observers, simulating the complete life cycle of face forgery from creation to propagation. It synthesizes training data with text-image consistency annotations, leading to significant performance gains for deepfake detectors in cro
+  [CVPR 2026][LLM Agent][Face Forgery Detection] A multi-agent system driven by LLMs is used to "act" as both forgers and social network observers, simulating the complete life cycle of face forgery from creation to propagation. It synthesizes training data with text-image consistency annotations, leading to significant performance gains for deepfake detectors in cross-domain and cross-algorithm real-world scenarios (e.g., Celeb-DF AUC improved from the 70% range to 87.1%).
 tags:
-  - CVPR 2026
-  - Multi-Agent
-  - deepfake
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Face Forgery Detection"
+  - "Multi-Agent LLM"
+  - "Data Synthesis"
+  - "Deepfake"
+  - "Social Simulation"
 date: 2026-05-08
-content_hash: ed8db16980c38485
+content_hash: 54b003d1386996ec
 ---
+
 # Agent4FaceForgery: Multi-Agent LLM Framework for Realistic Face Forgery Detection
 
 **Conference**: CVPR 2026  
@@ -161,11 +166,11 @@ Ablation of social simulation agent count (diminishing returns):
 
 ## Related Papers
 
-- [\[CVPR 2026\] AgentDet: A Shared-Blackboard Multi-Agent Framework for Zero-/Few-Shot Object Detection](agentdet_a_shared-blackboard_multi-agent_framework_for_zero-few-shot_object_dete.md)
-- [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](../../ICML2026/multi_agent/omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
-- [\[ICML 2025\] Is Your LLM-Based Multi-Agent a Reliable Real-World Planner? Exploring Fraud Detection in Travel Planning](../../ICML2025/multi_agent/is_your_llm-based_multi-agent_a_reliable_real-world_planner_exploring_fraud_dete.md)
-- [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](../../AAAI2026/multi_agent/beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
-- [\[ACL 2026\] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection](../../ACL2026/multi_agent/debating_the_unspoken_role-anchored_multi-agent_reasoning_for_half-truth_detecti.md)
+- [\[ACL 2025\] MIND: A Multi-agent Framework for Zero-shot Harmful Meme Detection](../../ACL2025/llm_agent/mind_a_multi-agent_framework_for_zero-shot_harmful_meme_detection.md)
+- [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
+- [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
+- [\[CVPR 2026\] WebGym: Scaling Training Environments for Long-Horizon Visual Web Agents with Realistic Tasks](webgym_scaling_training_environments_for_long-horizon_visual_web_agents_with_rea.md)
+- [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
 
 </div>
 

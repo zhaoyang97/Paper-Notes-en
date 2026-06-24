@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LA-Pose: Latent Action Pretraining Meets Pose Estimation
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] LA-Pose repurposes the Genie-style "inverse dynamics latent action"—originally used to drive world models or robotic policies—as input features for camera pose estimation. By performing self-supervised pretraining on 10 million unlabeled driving videos to learn latent actions, followed by post-training a lightweight po
+  [CVPR 2026][Autonomous Driving][Self-supervised pretraining] LA-Pose repurposes the Genie-style "inverse dynamics latent action"—originally used to drive world models or robotic policies—as input features for camera pose estimation. By performing self-supervised pretraining on 10 million unlabeled driving videos to learn latent actions, followed by post-training a lightweight pose head on a minimal amount of 3D-annotated data, the method achieves over 10% higher pose accuracy…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Self-supervised pretraining"
+  - "latent action"
+  - "inverse dynamics"
+  - "camera pose"
+  - "ego-motion"
 date: 2026-05-08
-content_hash: 067365c6fa069405
+content_hash: f41a32ccac34fa79
 ---
+
 # LA-Pose: Latent Action Pretraining Meets Pose Estimation
 
 **Conference**: CVPR 2026  

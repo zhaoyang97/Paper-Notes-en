@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Self-Supervised Learning] MDAE applies dual corruptions—spatial masking and diffusion noise—simultaneously to 3D brain MRI volumes. This allows a time-conditioned network to concurrently learn to reconstruct masked regions (capturing holistic anatomical structures) and denoise visible regions (capturing fine-grained tissue textures). It achieve
+  [CVPR 2026][Medical Imaging][3D Medical Imaging] MDAE applies dual corruptions—spatial masking and diffusion noise—simultaneously to 3D brain MRI volumes. This allows a time-conditioned network to concurrently learn to reconstruct masked regions (capturing holistic anatomical structures) and denoise visible regions (capturing fine-grained tissue textures). It achieves an average AUROC of 73.6% in-domain and 78.6% cross-modality across 16 clinical benchmarks for self-supervise…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "3D Medical Imaging"
+  - "Self-Supervised Learning"
+  - "Masked Autoencoding"
+  - "Diffusion Denoising"
+  - "Representation Learning"
 date: 2026-05-08
-content_hash: 16968ae006ab9b6b
+content_hash: a4b9df5eb2ba2272
 ---
+
 # Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning
 
 **Conference**: CVPR 2026  
@@ -135,11 +140,11 @@ Ablations were performed on a 10% subset of OpenMind for 100 epochs, evaluated u
 
 ## Related Papers
 
-- [\[CVPR 2026\] Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)](diffusion_mri_transformer_with_a_diffusion_space_rotary_positional_embedding_d-r.md)
+- [\[ICLR 2026\] MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning](../../ICLR2026/medical_imaging/medgmae_gaussian_masked_autoencoders_for_medical_volumetric_representation_learn.md)
 - [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
-- [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
+- [\[CVPR 2026\] Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis](focus-to-perceive_representation_learning_a_cognition-inspired_hierarchical_fram.md)
 - [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](../../ICCV2025/medical_imaging/an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
-- [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
+- [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
 
 </div>
 

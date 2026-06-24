@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Nemotron-CC-Math: A 133 Billion-Token-Scale High Quality Math Pretraining Dataset
 description: >-
-  [ICLR 2026][Pretraining][Common Crawl] A domain-agnostic pipeline utilizing "lynx layout rendering + lightweight LLM cleaning" is proposed to reliably extract and standardize math/code content from Common Crawl. This constructs Nemotron-CC-Math (133B tokens), the highest-quality open-source math pre-training corpus to date, which consistently outperforms Fi
+  [ICLR 2026][LLM Pretraining][Math Pre-training Corpus] A domain-agnostic pipeline utilizing "lynx layout rendering + lightweight LLM cleaning" is proposed to reliably extract and standardize math/code content from Common Crawl. This constructs Nemotron-CC-Math (133B tokens), the highest-quality open-source math pre-training corpus to date, which consistently outperforms FineMath, MegaMath, and OpenWebMath across math, code, and general knowledge tasks.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Common Crawl
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Math Pre-training Corpus"
+  - "Common Crawl"
+  - "HTML Extraction"
+  - "LaTeX Standardization"
+  - "Data Cleaning"
 date: 2026-05-08
-content_hash: 2402ffbda64b72d1
+content_hash: 63ba614ecb779cec
 ---
+
 # Nemotron-CC-Math: A 133 Billion-Token-Scale High Quality Math Pretraining Dataset
 
 **Conference**: ICLR 2026  

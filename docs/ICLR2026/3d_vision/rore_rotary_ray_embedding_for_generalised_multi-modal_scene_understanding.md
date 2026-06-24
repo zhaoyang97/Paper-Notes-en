@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RoRE: Rotary Ray Embedding for Generalised Multi-Modal Scene Understanding
 description: >-
-  [ICLR 2026][3D Vision][RoPE] RoRE directly encodes image patches as "rays" and injects them into a Transformer via learnable Rotary Positional Embedding (RoPE). Combined with asymmetric rotation and modality-shared ray embeddings, this allows a **single network** to handle arbitrary camera geometries and modalities—such as perspective, fisheye, an
+  [ICLR 2026][3D Vision][Ray Embedding] RoRE directly encodes image patches as "rays" and injects them into a Transformer via learnable Rotary Positional Embedding (RoPE). Combined with asymmetric rotation and modality-shared ray embeddings, this allows a **single network** to handle arbitrary camera geometries and modalities—such as perspective, fisheye, and RGB-Thermal—without retraining, significantly improving generalization and consistency across geometries and modalities.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - RoPE
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Ray Embedding"
+  - "RoPE"
+  - "Multi-modal Scene Understanding"
+  - "Camera Geometry Generalization"
+  - "RGB-Thermal"
 date: 2026-05-08
-content_hash: 5cddabc4bf05ddad
+content_hash: 6138795387230345
 ---
+
 # RoRE: Rotary Ray Embedding for Generalised Multi-Modal Scene Understanding
 
 **Conference**: ICLR 2026  

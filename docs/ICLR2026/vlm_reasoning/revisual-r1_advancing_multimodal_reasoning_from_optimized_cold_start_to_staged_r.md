@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] This paper systematically deconstructs the training pipeline of Multimodal Large Language Models (MLLMs). It discovers that a three-stage curriculum—consisting of "high-difficulty text-only cold start + multimodal RL + text RL"—is the key to activating complex reasoning. Furthermore, it proposes the PAD sampling mechan
+  [ICLR 2026][VLM Reasoning][Multimodal Reasoning] This paper systematically deconstructs the training pipeline of Multimodal Large Language Models (MLLMs). It discovers that a three-stage curriculum—consisting of "high-difficulty text-only cold start + multimodal RL + text RL"—is the key to activating complex reasoning. Furthermore, it proposes the PAD sampling mechanism to address "gradient stagnation" in multimodal GRPO. ReVisual-R1-7B achieves open-source SOTA across nine r…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Cold Start"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Curriculum Training"
 date: 2026-05-08
-content_hash: 7f9f3f4c87545b08
+content_hash: 5947f2fccac2e0c2
 ---
+
 # ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -154,8 +158,8 @@ PAD Component Ablation (CS+MRL setting):
 - [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
 - [\[ICLR 2026\] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning](visionreasoner_unified_reasoning-integrated_visual_perception_via_reinforcement_.md)
 - [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
+- [\[ICLR 2026\] STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning](stvg-r1_incentivizing_instance-level_reasoning_and_grounding_in_videos_via_reinf.md)
 - [\[ICLR 2026\] MedVR: Annotation-Free Medical Visual Reasoning via Agentic Reinforcement Learning](medvr_annotation-free_medical_visual_reasoning_via_agentic_reinforcement_learnin.md)
-- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
 
 </div>
 

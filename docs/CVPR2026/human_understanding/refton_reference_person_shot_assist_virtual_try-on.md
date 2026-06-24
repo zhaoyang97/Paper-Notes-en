@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RefTon: Reference Person Shot Assist Virtual Try-on
 description: >-
-  [CVPR 2026][Human Understanding][Flux-Kontext] This paper proposes RefTon, a human-to-human virtual try-on framework based on Flux-Kontext. It introduces additional reference images (photos of others wearing the target garment) to provide more accurate clothing details. Through a two-stage training strategy and a rescaled position indexing mechanism, it achieves en
+  [CVPR 2026][Human Understanding][Virtual try-on] This paper proposes RefTon, a human-to-human virtual try-on framework based on Flux-Kontext. It introduces additional reference images (photos of others wearing the target garment) to provide more accurate clothing details. Through a two-stage training strategy and a rescaled position indexing mechanism, it achieves end-to-end try-on without auxiliary conditions (e.g., DensePose, segmentation masks)…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Flux-Kontext
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Virtual try-on"
+  - "reference image guidance"
+  - "Flux-Kontext"
+  - "mask-free try-on"
+  - "diffusion models"
 date: 2026-05-08
-content_hash: 40b31704c34a4850
+content_hash: 229a1bc2c8f2e179
 ---
+
 # RefTon: Reference Person Shot Assist Virtual Try-on
 
 **Conference**: CVPR 2026  
@@ -134,10 +138,10 @@ Standard flow matching loss is used for training. Flux-Kontext encoders and deco
 ## Related Papers
 
 - [\[CVPR 2026\] Mobile-VTON: High-Fidelity On-Device Virtual Try-On](mobile_vton_ondevice_virtual_tryon.md)
-- [\[CVPR 2026\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
+- [\[CVPR 2025\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](../../CVPR2025/human_understanding/reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
 - [\[CVPR 2026\] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On](mofa-vton_more_fashion_possibilities_with_fine-grained_adaptations_in_virtual_tr.md)
+- [\[CVPR 2026\] MV-Fashion: Towards Enabling Virtual Try-On and Size Estimation with Multi-View Paired Data](mv-fashion_towards_enabling_virtual_try-on_and_size_estimation_with_multi-view_p.md)
 - [\[ECCV 2024\] Wear-Any-Way: Manipulable Virtual Try-on via Sparse Correspondence Alignment](../../ECCV2024/human_understanding/wear-any-way_manipulable_virtual_try-on_via_sparse_correspondence_alignment.md)
-- [\[CVPR 2025\] VTON 360: High-Fidelity Virtual Try-On from Any Viewing Direction](../../CVPR2025/human_understanding/vton_360_high-fidelity_virtual_try-on_from_any_viewing_direction.md)
 
 </div>
 

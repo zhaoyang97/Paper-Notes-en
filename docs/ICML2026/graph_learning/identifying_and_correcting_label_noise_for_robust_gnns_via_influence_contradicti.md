@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Identifying and Correcting Label Noise for Robust GNNs via Influence Contradiction
 description: >-
-  [ICML 2026][Graph Learning][GMM] ICGNN defines the "Influence Contradiction Score" (ICS) on graph diffusion matrices to measure the suspicion of node labels from both structural and attribute perspectives. It utilizes a Gaussian Mixture Model (GMM) soft thresholding to identify dirty labels and performs convex combination soft correction based on neig
+  [ICML 2026][Graph Learning][Graph Neural Networks] ICGNN defines the "Influence Contradiction Score" (ICS) on graph diffusion matrices to measure the suspicion of node labels from both structural and attribute perspectives. It utilizes a Gaussian Mixture Model (GMM) soft thresholding to identify dirty labels and performs convex combination soft correction based on neighbor predictions, outperforming specialized methods such as NRGNN, RTGNN, CGNN…
 tags:
-  - ICML 2026
-  - Graph Learning
-  - GMM
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Noisy Labels"
+  - "Influence Contradiction"
+  - "Graph Diffusion"
+  - "GMM"
 date: 2026-05-08
-content_hash: 4cfe54c7f4ac7f25
+content_hash: 331b5fe9665a600d
 ---
+
 # Identifying and Correcting Label Noise for Robust GNNs via Influence Contradiction
 
 **Conference**: ICML 2026  
@@ -131,9 +136,9 @@ ICGNN achieves state-of-the-art results in all 12 settings (6 datasets × 2 nois
 
 - [\[ICML 2026\] An Approximation Algorithm for Graph Label Selection](an_approximation_algorithm_for_graph_label_selection.md)
 - [\[AAAI 2026\] Posterior Label Smoothing for Node Classification](../../AAAI2026/graph_learning/posterior_label_smoothing_for_node_classification.md)
-- [\[AAAI 2026\] Logical Characterizations of GNNs with Mean Aggregation](../../AAAI2026/graph_learning/logical_characterizations_of_gnns_with_mean_aggregation.md)
-- [\[ICML 2026\] Fixed Aggregation Features Can Rival GNNs](fixed_aggregation_features_can_rival_gnns.md)
-- [\[ACL 2026\] Collaboration of Fusion and Independence: Hypercomplex-driven Robust Multi-Modal Knowledge Graph Completion](../../ACL2026/graph_learning/collaboration_of_fusion_and_independence_hypercomplex-driven_robust_multi-modal_.md)
+- [\[ICLR 2026\] Towards a Foundation Model for Crowdsourced Label Aggregation](../../ICLR2026/graph_learning/towards_a_foundation_model_for_crowdsourced_label_aggregation.md)
+- [\[ICLR 2026\] PRISM: Partial-label Relational Inference with Spatial and Spectral Cues](../../ICLR2026/graph_learning/prism_partial-label_relational_inference_with_spatial_and_spectral_cues.md)
+- [\[ICLR 2026\] Temporal Graph Thumbnail: Robust Representation Learning with Global Evolutionary Skeleton](../../ICLR2026/graph_learning/temporal_graph_thumbnail_robust_representation_learning_with_global_evolutionary.md)
 
 </div>
 

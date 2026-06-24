@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Failures to Surface Harmful Contents in Video Large Language Models
 description: >-
-  [AAAI 2026][Model Compression][VideoLLM] This paper presents the first systematic security analysis of VideoLLMs, identifying three structural design flaws — sparse temporal sampling, spatial token downsampling…
+  [AAAI 2026][Model Compression][VideoLLM] This paper presents the first systematic security analysis of VideoLLMs, identifying three structural design flaws — sparse temporal sampling, spatial token downsampling, and modality fusion imbalance — that cause clearly visible harmful content in videos to be omitted from model-generated textual summaries (omission rate exceeding 90%). Three zero-query black-box attacks are designed to empirically validate the severity of these vulne…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Black-box Attack"
   - "Multimodal Safety"
 date: 2026-05-08
-content_hash: 539ad7a571b8c6a6
+content_hash: 47576815f87da6c6
 ---
 
 # Failures to Surface Harmful Contents in Video Large Language Models
@@ -142,8 +142,8 @@ Rather than proposing a solution, the paper presents a systematic vulnerability 
 
 - [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
 - [\[AAAI 2026\] First-Order Error Matters: Accurate Compensation for Quantized Large Language Models](first-order_error_matters_accurate_compensation_for_quantized_large_language_mod.md)
+- [\[CVPR 2025\] DyCoke: Dynamic Compression of Tokens for Fast Video Large Language Models](../../CVPR2025/model_compression/dycoke_dynamic_compression_of_tokens_for_fast_video_large_language_models.md)
 - [\[AAAI 2026\] PocketLLM: Ultimate Compression of Large Language Models via Meta Networks](pocketllm_ultimate_compression_of_large_language_models_via_meta_networks.md)
-- [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](../../ACL2026/model_compression/lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 - [\[AAAI 2026\] SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping](skipcat_rank-maximized_low-rank_compression_of_large_language_models_via_shared_.md)
 
 </div>

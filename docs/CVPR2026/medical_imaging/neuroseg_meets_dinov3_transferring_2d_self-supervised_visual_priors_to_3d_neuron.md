@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization
 description: >-
-  [CVPR 2026][Medical Imaging][DINOv3] NeurINO proposes to initialize 3D neuron segmentation models by inflating 2D kernels pre-trained by DINOv3 into 3D operators, while introducing a Topology-Aware Skeleton Loss (TASL) to explicitly supervise skeleton-level structural fidelity. It achieves average improvements of 2.9% in ESA, 2.8% in DSA, and 3.8% in PDS
+  [CVPR 2026][Medical Imaging][Neuron Segmentation] NeurINO proposes to initialize 3D neuron segmentation models by inflating 2D kernels pre-trained by DINOv3 into 3D operators, while introducing a Topology-Aware Skeleton Loss (TASL) to explicitly supervise skeleton-level structural fidelity. It achieves average improvements of 2.9% in ESA, 2.8% in DSA, and 3.8% in PDS across four neuroimaging datasets.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - DINOv3
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Neuron Segmentation"
+  - "DINOv3"
+  - "2D-3D Transfer"
+  - "Topology-Aware Loss"
+  - "Data-Efficient Learning"
 date: 2026-05-08
-content_hash: 7efa1964ffd4addc
+content_hash: f57c0c60b10e9853
 ---
+
 # NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization
 
 **Conference**: CVPR 2026  
@@ -160,10 +165,10 @@ Reconstruction metrics (Drosophila + SmartTracing):
 ## Related Papers
 
 - [\[CVPR 2026\] Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification](revisiting_2d_foundation_models_for_scalable_3d_medical_image_classification.md)
-- [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
 - [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](../../AAAI2026/medical_imaging/neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
-- [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
+- [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
 - [\[CVPR 2026\] Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities](uni-encoder_meets_multi-encoders_representation_before_fusion_for_brain_tumor_se.md)
+- [\[CVPR 2026\] SPECTRE: Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers](scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
 
 </div>
 

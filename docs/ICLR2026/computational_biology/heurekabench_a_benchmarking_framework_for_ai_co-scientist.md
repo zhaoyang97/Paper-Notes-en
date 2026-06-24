@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] HeurekaBench: A Benchmarking Framework for AI Co-scientist
 description: >-
-  [ICLR 2026][Computational Biology][AI co-scientist] Ours proposes HeurekaBench, a framework for building evaluation benchmarks based on real-world scientific workflows. It extracts verifiable scientific insights from papers through a multi-LLM pipeline and generates open-ended research questions to evaluate the end-to-end capabilities of AI co-scientists in data-driven
+  [ICLR 2026][Computational Biology][AI co-scientist] Ours proposes HeurekaBench, a framework for building evaluation benchmarks based on real-world scientific workflows. It extracts verifiable scientific insights from papers through a multi-LLM pipeline and generates open-ended research questions to evaluate the end-to-end capabilities of AI co-scientists in data-driven discovery.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - AI co-scientist
-  - benchmark
-  - scientific agents
-  - single-cell biology
-  - open-ended evaluation
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "AI co-scientist"
+  - "benchmark"
+  - "scientific agents"
+  - "single-cell biology"
+  - "open-ended evaluation"
 date: 2026-05-08
-content_hash: d845ca678787273a
+content_hash: e54460e551c46db2
 ---
+
 # HeurekaBench: A Benchmarking Framework for AI Co-scientist
 
 **Conference**: ICLR 2026  
@@ -140,9 +141,9 @@ In the single-cell biology domain, this is instantiated as **sc-HeurekaBench**: 
 
 - [\[ICLR 2026\] PoseX: AI Defeats Physics-based Methods on Protein Ligand Cross-Docking](posex_ai_defeats_physics-based_methods_on_protein_ligand_cross-docking.md)
 - [\[ICLR 2026\] Drugging the Undruggable: Benchmarking and Modeling Fragment-Based Screening](drugging_the_undruggable_benchmarking_and_modeling_fragment-based_screening.md)
-- [\[ICLR 2026\] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design](a_joint_diffusion_model_with_pre-trained_priors_for_rna_sequence-structure_co-de.md)
-- [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
 - [\[ICML 2026\] Protein Fold Classification at Scale: Benchmarking and Pretraining](../../ICML2026/computational_biology/protein_fold_classification_at_scale_benchmarking_and_pretraining.md)
+- [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
+- [\[ICLR 2026\] SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention](save_a_generalizable_framework_for_multi-condition_single-cell_generation_with_g.md)
 
 </div>
 

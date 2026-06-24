@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GroupToM-Bench: Benchmarking Group Theory of Mind and Nonlinear Social Emergence in MLLMs
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper introduces GroupToM-Bench, which utilizes 240 expert-designed multimodal group interaction scenarios and a 7-layer cognitive audit framework to evaluate whether MLLMs can reason from individual beliefs/desires/intentions to group tensions, structural constraints, and nonlinear collective outcomes. Results in
+  [ACL2026][Multimodal VLM][Group Theory of Mind] This paper introduces GroupToM-Bench, which utilizes 240 expert-designed multimodal group interaction scenarios and a 7-layer cognitive audit framework to evaluate whether MLLMs can reason from individual beliefs/desires/intentions to group tensions, structural constraints, and nonlinear collective outcomes. Results indicate a significant "group cognitive gap" in current models.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Group Theory of Mind"
+  - "Multimodal Evaluation"
+  - "Social World Models"
+  - "Nonlinear Emergence"
+  - "Structural Constraints"
 date: 2026-05-08
-content_hash: 2b6a5d0bf464d057
+content_hash: e6850bd238c0ec93
 ---
+
 # GroupToM-Bench: Benchmarking Group Theory of Mind and Nonlinear Social Emergence in MLLMs
 
 **Conference**: ACL2026  
@@ -130,7 +136,7 @@ The most significant break occurs between L3 and L4/L6: models maintain relative
 - [\[ACL 2026\] CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language](cnsl-bench_benchmarking_the_sign_language_understanding_capabilities_of_mllms_on.md)
 - [\[CVPR 2026\] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](../../CVPR2026/multimodal_vlm/if-bench_benchmarking_and_enhancing_mllms_for_infrared_images_with_generative_vi.md)
 - [\[ICML 2025\] From Black Boxes to Transparent Minds: Evaluating and Enhancing the Theory of Mind in Multimodal Large Language Models](../../ICML2025/multimodal_vlm/from_black_boxes_to_transparent_minds_evaluating_and_enhancing_the_theory_of_min.md)
-- [\[ACL 2026\] Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding](do_mllms_capture_how_interfaces_guide_user_behavior_a_benchmark_for_multimodal_u.md)
+- [\[ICLR 2026\] HSSBench: Benchmarking Humanities and Social Sciences Ability for Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/hssbench_benchmarking_humanities_and_social_sciences_ability_for_multimodal_larg.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Learning Linear State-Space Models with Sparse System Matrices
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper introduces sparsity-inducing priors (Student's t-distribution) to the system matrices $A, B, C, D$ of Linear State-Space Models (LSSM). By employing EM combined with block coordinate descent for MAP estimation, the method bypasses the unidentifiability caused by "similarity transformations," **learning spars
+  [ICLR 2026][Time Series][Linear State-Space Models] This paper introduces sparsity-inducing priors (Student's t-distribution) to the system matrices $A, B, C, D$ of Linear State-Space Models (LSSM). By employing EM combined with block coordinate descent for MAP estimation, the method bypasses the unidentifiability caused by "similarity transformations," **learning sparse system matrices that are both accurate and capable of preserving the true topology between variables.**
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Linear State-Space Models"
+  - "Sparse System Matrices"
+  - "Sparse Bayesian Learning"
+  - "EM Algorithm"
+  - "Similarity Transformation"
+  - "System Identification"
 date: 2026-05-08
-content_hash: 0b264b6e5253f7bf
+content_hash: c9f338fcdd8861ad
 ---
+
 # Learning Linear State-Space Models with Sparse System Matrices
 
 **Conference**: ICLR 2026  
@@ -113,13 +120,20 @@ This work sits at the intersection of: (1) Least squares/PEM—sensitive to nois
 - **Value**: ⭐⭐⭐⭐ — High utility for industrial processes and systems biology needing interpretable matrices.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Tipping, M. E. (2001). Sparse Bayesian learning and the relevance vector machine. JMLR.
-- Shumway, R. H., & Stoffer, D. S. (1982). An approach to time series smoothing and forecasting using the EM algorithm. Journal of Time Series Analysis.
-- Yu, S., et al. (2020). Identifiability of sparse linear systems. 
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](../../NeurIPS2025/time_series/structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
+- [\[ICLR 2026\] ConvT3: Structured State Kernels for Convolutional State Space Models](convt3_structured_state_kernels_for_convolutional_state_space_models.md)
+- [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](weight-space_linear_recurrent_neural_networks.md)
+- [\[ICLR 2026\] Learning Mixtures of Linear Dynamical Systems via Hybrid Tensor-EM Method](learning_mixtures_of_linear_dynamical_systems_via_hybrid_tensor-em_method.md)
+- [\[ICLR 2026\] Learning Koopman Representations with Controllability Guarantees](learning_koopman_representations_with_controllability_guarantees.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](../../NeurIPS2025/time_series/structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)

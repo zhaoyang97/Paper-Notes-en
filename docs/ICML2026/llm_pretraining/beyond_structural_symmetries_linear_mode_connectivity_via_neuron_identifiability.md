@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Structural Symmetries: Linear Mode Connectivity via Neuron Identifiability
 description: >-
-  [ICML 2026][Pretraining][Paper Note] This paper proposes a theoretical framework of "effective function classes" and "neuron identifiability," revealing that breaking structural symmetry does not equate to breaking effective symmetry—even if permutation symmetry in the parameter space is eliminated, data-dependent approximate symmetries may still make neu
+  [ICML 2026][LLM Pretraining][Parameter Symmetry] This paper proposes a theoretical framework of "effective function classes" and "neuron identifiability," revealing that breaking structural symmetry does not equate to breaking effective symmetry—even if permutation symmetry in the parameter space is eliminated, data-dependent approximate symmetries may still make neuron swapping costs extremely low. Based on this, it provides sufficient conditions for achieving Linear Mode Co…
 tags:
-  - ICML 2026
-  - Pretraining
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "Parameter Symmetry"
+  - "Neuron Identifiability"
+  - "Linear Mode Connectivity"
+  - "Model Merging"
+  - "Loss Landscape"
 date: 2026-05-08
-content_hash: 123553a9f01a2fb1
+content_hash: 9b360171065d4f35
 ---
+
 # Beyond Structural Symmetries: Linear Mode Connectivity via Neuron Identifiability
 
 **Conference**: ICML 2026  
@@ -109,8 +115,8 @@ The final step is translating neuron identifiability into the existence of LMC. 
 - [\[ICML 2026\] Annotations Mitigate Post-Training Mode Collapse](annotations_mitigate_post-training_mode_collapse.md)
 - [\[ICCV 2025\] FlowMo: Flow to the Mode — Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization](../../ICCV2025/llm_pretraining/flow_to_the_mode_mode-seeking_diffusion_autoencoders_for_state-of-the-art_image_.md)
 - [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](../../ICLR2026/llm_pretraining/a_law_of_data_reconstruction_for_random_features_and_beyond.md)
-- [\[NeurIPS 2025\] Beyond Benign Overfitting in Nadaraya-Watson Interpolators](../../NeurIPS2025/llm_pretraining/beyond_benign_overfitting_in_nadaraya-watson_interpolators.md)
-- [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](../../AAAI2026/llm_pretraining/beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
+- [\[ICLR 2026\] Beyond Multi-Token Prediction: Pretraining LLMs with Future Summaries](../../ICLR2026/llm_pretraining/beyond_multi-token_prediction_pretraining_llms_with_future_summaries.md)
+- [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](../../ICLR2026/llm_pretraining/beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
 
 </div>
 

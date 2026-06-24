@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Delving into Cascaded Instability: A Lipschitz Continuity View on Image Restoration and Object Detection Synergy
 description: >-
-  [NeurIPS 2025][Object Detection][Adverse Condition Detection] This paper analyzes the root cause of instability in cascaded image restoration and object detection frameworks from a Lipschitz continuity perspective. It id…
+  [NeurIPS 2025][Object Detection][Adverse Condition Detection] This paper analyzes the root cause of instability in cascaded image restoration and object detection frameworks from a Lipschitz continuity perspective. It identifies an order-of-magnitude smoothness gap between the two networks and proposes LR-YOLO, which integrates the restoration task into the detection backbone's feature learning to regularize the detector's Lipschitz constant, consistently improving detection…
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "YOLO"
   - "Regularization"
 date: 2026-05-08
-content_hash: 636d81350fdddf90
+content_hash: d0ec2524dbd54ee3
 ---
 
 # Delving into Cascaded Instability: A Lipschitz Continuity View on Image Restoration and Object Detection Synergy
@@ -114,11 +114,11 @@ $\mathcal{L}_{total} = \mathcal{L}_{det} + \lambda \mathcal{L}_{res} + \lambda_p
 
 ## Related Papers
 
+- [\[ECCV 2024\] Shifted Autoencoders for Point Annotation Restoration in Object Counting](../../ECCV2024/object_detection/shifted_autoencoders_for_point_annotation_restoration_in_object_counting.md)
 - [\[ICCV 2025\] YOLO-Count: Differentiable Object Counting for Text-to-Image Generation](../../ICCV2025/object_detection/yolo-count_differentiable_object_counting_for_text-to-image_generation.md)
-- [\[AAAI 2026\] REXO: Indoor Multi-View Radar Object Detection via 3D Bounding Box Diffusion](../../AAAI2026/object_detection/rexo_indoor_multi-view_radar_object_detection_via_3d_bounding_box_diffusion.md)
 - [\[ICML 2026\] Testing the Test: Score-Direction Instability in Class-Split Anomaly Detection](../../ICML2026/object_detection/testing_the_test_score-direction_instability_in_class-split_anomaly_detection.md)
-- [\[NeurIPS 2025\] Test-Time Adaptive Object Detection with Foundation Model](test-time_adaptive_object_detection_with_foundation_model.md)
-- [\[NeurIPS 2025\] FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies](flexevent_towards_flexible_event-frame_object_detection_at_varying_operational_f.md)
+- [\[CVPR 2025\] Search and Detect: Training-Free Long Tail Object Detection via Web-Image Retrieval](../../CVPR2025/object_detection/search_and_detect_training-free_long_tail_object_detection_via_web-image_retriev.md)
+- [\[AAAI 2026\] REXO: Indoor Multi-View Radar Object Detection via 3D Bounding Box Diffusion](../../AAAI2026/object_detection/rexo_indoor_multi-view_radar_object_detection_via_3d_bounding_box_diffusion.md)
 
 </div>
 

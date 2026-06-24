@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] COPF: An Online Framework for Deployment-Stable Counterfactual Fairness in Evolving Graphs
 description: >-
-  [ICML 2026][AI Safety][performative prediction] COPF treats "online link recommendation on evolving graphs" as a performative decision process by adding a **decision-layer wrapper** outside the backbone scorer. It ensures counterfactual identifiability via an online logging protocol with explicit exploration, estimates the "exposed vs. unexposed" counterfactual grou
+  [ICML 2026][AI Safety][Counterfactual Fairness] COPF treats "online link recommendation on evolving graphs" as a performative decision process by adding a **decision-layer wrapper** outside the backbone scorer. It ensures counterfactual identifiability via an online logging protocol with explicit exploration, estimates the "exposed vs. unexposed" counterfactual group gap using a graph-aware doubly robust (GA-DR) estimator, and suppresses fairness spikes post-deployment using…
 tags:
-  - ICML 2026
-  - AI Safety
-  - performative prediction
+  - "ICML 2026"
+  - "AI Safety"
+  - "Counterfactual Fairness"
+  - "performative prediction"
+  - "doubly robust estimation"
+  - "online multicalibration"
+  - "link prediction"
 date: 2026-05-08
-content_hash: 74dc5783034f6e54
+content_hash: 795f34642323f4c1
 ---
+
 # COPF: An Online Framework for Deployment-Stable Counterfactual Fairness in Evolving Graphs
 
 **Conference**: ICML 2026  
@@ -142,15 +147,16 @@ On TGB real streams, changes were more localized (as the default ID-mod2 placebo
 - Value: ⭐⭐⭐⭐ (Decoupled wrapper design is highly transferable to various recommendation scenarios).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
 - [\[NeurIPS 2025\] Fairness-Regularized Online Optimization with Switching Costs](../../NeurIPS2025/ai_safety/fairness-regularized_online_optimization_with_switching_costs.md)
 - [\[ICLR 2026\] Fairness via Independence: A General Regularization Framework for Machine Learning](../../ICLR2026/ai_safety/fairness_via_independence_a_general_regularization_framework_for_machine_learnin.md)
-- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
-- [\[ICML 2026\] Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking](fairness_in_aggregation_optimal_top-k_and_improved_full_ranking.md)
-- [\[ACL 2025\] Gender Inclusivity Fairness Index (GIFI): A Multilevel Framework](../../ACL2025/ai_safety/gifi_gender_fairness.md)
+- [\[ICML 2026\] Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance](stable-gflownet_toward_diverse_and_robust_llm_red-teaming_via_contrastive_trajec.md)
+- [\[ICML 2026\] HEDP: A Hybrid Energy-Distance Prompt-based Framework for Domain Incremental Learning](hedp_a_hybrid_energy-distance_prompt-based_framework_for_domain_incremental_lear.md)
 
 </div>
 

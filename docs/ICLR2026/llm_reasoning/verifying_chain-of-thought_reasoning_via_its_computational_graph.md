@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Verifying Chain-of-Thought Reasoning via Its Computational Graph
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] Proposes CRV (Circuit-based Reasoning Verification), which constructs interpretable attribution graphs by replacing LLM MLPs with transcoders. It extracts "fingerprints" of reasoning errors from the structural features of these graphs to achieve white-box CoT reasoning verification and enables correcting erroneous reas
+  [ICLR 2026 Oral][Reasoning][Chain-of-Thought] Proposes CRV (Circuit-based Reasoning Verification), which constructs interpretable attribution graphs by replacing LLM MLPs with transcoders. It extracts "fingerprints" of reasoning errors from the structural features of these graphs to achieve white-box CoT reasoning verification and enables correcting erroneous reasoning through causal intervention.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - Transcoder
+  - "ICLR 2026 Oral"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "Attribution Graph"
+  - "Transcoder"
+  - "Reasoning Verification"
+  - "Causal Intervention"
 date: 2026-05-08
-content_hash: a0dbc3f02bc767ef
+content_hash: d59f5e5987f8e120
 ---
+
 # Verifying Chain-of-Thought Reasoning via Its Computational Graph
 
 **Conference**: ICLR 2026 Oral  
@@ -124,11 +128,11 @@ Node influence statistics represent the most critical feature category.
 
 ## Related Papers
 
-- [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
 - [\[ICML 2026\] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning](../../ICML2026/llm_reasoning/clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn.md)
+- [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
-- [\[ICLR 2026\] SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes](scenecot_eliciting_grounded_chain-of-thought_reasoning_in_3d_scenes.md)
-- [\[ICLR 2026\] FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning](faithcot-bench_benchmarking_instance-level_faithfulness_of_chain-of-thought_reas.md)
+- [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](../../ICML2026/llm_reasoning/verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
 
 </div>
 

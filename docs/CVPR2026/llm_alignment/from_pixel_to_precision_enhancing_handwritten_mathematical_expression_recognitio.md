@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Pixel to Precision: Enhancing Handwritten Mathematical Expression Recognition with Image-Level Reward
 description: >-
-  [CVPR 2026][Others][GRPO] Addressing the fundamental misalignment in handwritten mathematical expression recognition where "LaTeX text similarity $\neq$ rendered image similarity," this paper proposes Image Matching Score (IMS)—a lightweight image-level reward based on column projection encoding and Levenshtein distance. This reward drives IMPO
+  [CVPR 2026][LLM Alignment][Handwritten Mathematical Expression Recognition] Addressing the fundamental misalignment in handwritten mathematical expression recognition where "LaTeX text similarity $\neq$ rendered image similarity," this paper proposes Image Matching Score (IMS)—a lightweight image-level reward based on column projection encoding and Levenshtein distance. This reward drives IMPO, a GRPO reinforcement learning framework without a value network. Across CROHME…
 tags:
-  - CVPR 2026
-  - Others
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Handwritten Mathematical Expression Recognition"
+  - "Image-Level Reward"
+  - "GRPO"
+  - "Visual Fidelity"
+  - "Edit Distance"
 date: 2026-05-08
-content_hash: d2e729ece1f9f744
+content_hash: 89b7adc7bea74bfe
 ---
+
 # From Pixel to Precision: Enhancing Handwritten Mathematical Expression Recognition with Image-Level Reward
 
 **Conference**: CVPR 2026  
@@ -139,15 +144,16 @@ Ablations on CoMER/CROHME 2014 (IMS-HDiv: using horizontal division; IMS-KBC: ke
 - Value: ⭐⭐⭐⭐ The methodology is transferable to other renderable generation tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniMERNet: A Universal Network for Real-World Mathematical Expression Recognition](unimernet_a_universal_network_for_real-world_mathematical_expression_recognition.md)
-- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
-- [\[CVPR 2026\] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding](artimuse_fine-grained_image_aesthetics_assessment_with_joint_scoring_and_expert-.md)
-- [\[CVPR 2026\] UPLiFT: Efficient Pixel-Dense Feature Upsampling with Local Attenders](uplift_efficient_pixel-dense_feature_upsampling_with_local_attenders.md)
-- [\[CVPR 2025\] On the Generalization of Handwritten Text Recognition Models](../../CVPR2025/others/on_the_generalization_of_handwritten_text_recognition_models.md)
+- [\[CVPR 2026\] MorphSeek: Fine-grained Latent Representation-Level Policy Optimization for Deformable Image Registration](morphseek_fine-grained_latent_representation-level_policy_optimization_for_defor.md)
+- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
+- [\[ICLR 2026\] ContextIF: Enhancing Instruction-Following through Context Reward](../../ICLR2026/llm_alignment/contextif_enhancing_instruction-following_through_context_reward.md)
+- [\[ICML 2025\] TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization](../../ICML2025/llm_alignment/tgdpo_harnessing_token-level_reward_guidance_for_enhancing_direct_preference_opt.md)
+- [\[CVPR 2026\] Unlocking Token Rewards via Training-Free Reward Attribution](unlocking_token_rewards_via_training-free_reward_attribution.md)
 
 </div>
 

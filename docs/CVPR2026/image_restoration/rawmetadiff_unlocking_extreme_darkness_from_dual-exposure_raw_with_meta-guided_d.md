@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion
 description: >-
-  [CVPR 2026][Image Restoration][Diffusion Model] RawMetaDiff reframes the fragile explicit registration of "short/long exposure frames" as a "conditional generation" problem. It uses noisy short-exposure RAW as the diffusion initialization, references a potentially misaligned long-exposure RAW, and is guided by RAW metadata (ISO/CCM/exposure) for one-step latent diff
+  [CVPR 2026][Image Restoration][Extreme Dark RAW Restoration] RawMetaDiff reframes the fragile explicit registration of "short/long exposure frames" as a "conditional generation" problem. It uses noisy short-exposure RAW as the diffusion initialization, references a potentially misaligned long-exposure RAW, and is guided by RAW metadata (ISO/CCM/exposure) for one-step latent diffusion. Utilizing MACT for global color transfer and MNCA for shadow detail injection…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Extreme Dark RAW Restoration"
+  - "Dual-Exposure"
+  - "Diffusion Models"
+  - "RAW Metadata"
+  - "Cross-Exposure Alignment"
 date: 2026-05-08
-content_hash: 4ccf8e6bae0c8bbf
+content_hash: 1a44e1e1218a66c7
 ---
+
 # RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion
 
 **Conference**: CVPR 2026  
@@ -151,10 +156,10 @@ First place in all five no-reference metrics, with significant leads in MUSIQ an
 ## Related Papers
 
 - [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
-- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
 - [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
+- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](dual_ascent_diffusion_for_inverse_problems.md)
+- [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
 - [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
-- [\[CVPR 2026\] Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution](dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut.md)
 
 </div>
 

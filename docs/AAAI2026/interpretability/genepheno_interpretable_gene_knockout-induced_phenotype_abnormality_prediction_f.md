@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] GenePheno: Interpretable Gene Knockout-Induced Phenotype Abnormality Prediction Framework
 description: >-
-  [AAAI 2026][Interpretability][Gene sequence] This paper proposes GenePheno, the first interpretable multi-label prediction framework for end-to-end prediction of gene knockout-induced phenotype abnormalities directly fro…
+  [AAAI 2026 Oral][Interpretability][Gene sequence] This paper proposes GenePheno, the first interpretable multi-label prediction framework for end-to-end prediction of gene knockout-induced phenotype abnormalities directly from gene sequences. The framework captures inter-phenotype correlations via contrastive multi-label learning, enforces biological consistency through exclusivity regularization, and provides interpretability via a Gene Ontology (GO) bottleneck layer. GenePh…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Interpretability"
   - "Gene sequence"
   - "phenotype abnormality prediction"
@@ -12,7 +12,7 @@ tags:
   - "exclusivity regularization"
   - "gene ontology bottleneck layer"
 date: 2026-05-08
-content_hash: 3720f014a8c89553
+content_hash: 70a1bdb868f08a05
 ---
 
 # GenePheno: Interpretable Gene Knockout-Induced Phenotype Abnormality Prediction Framework
@@ -148,10 +148,10 @@ Evaluation is conducted on four datasets (MPO, HPO, GWAS, CAFA2 wPPI), stratifie
 ## Related Papers
 
 - [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](../../ACL2026/interpretability/preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
+- [\[ICLR 2026\] I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?](../../ICLR2026/interpretability/i_predict_therefore_i_am_is_next_token_prediction_enough_to_learn_human-interpre.md)
+- [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights into Reasoning-Induced Misalignment](../../ICLR2026/interpretability/when_thinking_backfires_mechanistic_insights_into_reason-induced_misalignment.md)
 - [\[ACL 2026\] IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration](../../ACL2026/interpretability/idea_an_interpretable_and_editable_decision-making_framework_for_llms_via_verbal.md)
-- [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights Into Reasoning-Induced Misalignment](../../ICLR2026/interpretability/when_thinking_backfires_mechanistic_insights_into_reasoning-induced_misalignment.md)
 - [\[ICML 2026\] Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions](../../ICML2026/interpretability/bridging_the_knowledge-prediction_gap_in_llms_on_multiple-choice_questions.md)
-- [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
 
 </div>
 

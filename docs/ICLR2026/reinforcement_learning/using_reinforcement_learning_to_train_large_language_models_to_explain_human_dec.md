@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] The authors post-train an LLM using outcome-based reinforcement learning (GRPO) to predict human risky decision proportions while explicitly generating reasoning as a Chain-of-Thought (CoT). these CoT sequences serve as "interpretable cognitive theories" of human decision-making, achieving predictive accuracy comparabl
+  [ICLR 2026][Reinforcement Learning][GRPO] The authors post-train an LLM using outcome-based reinforcement learning (GRPO) to predict human risky decision proportions while explicitly generating reasoning as a Chain-of-Thought (CoT). these CoT sequences serve as "interpretable cognitive theories" of human decision-making, achieving predictive accuracy comparable to Supervised Fine-Tuning (SFT) while providing natural language explanations unattainable through SFT.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Cognitive Model"
+  - "Chain-of-Thought"
+  - "Risky Decision Making"
 date: 2026-05-08
-content_hash: 1fb0c1c172c8828e
+content_hash: 1475c304416b8732
 ---
+
 # Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions
 
 **Conference**: ICLR 2026  
@@ -136,11 +139,11 @@ Significance tests: SFT vs Centaur ($t(2923)=-1.31, p=0.19$), SFT vs RL ($t(2923
 
 ## Related Papers
 
+- [\[ICLR 2026\] Risk-Sensitive Reinforcement Learning for Alleviating Exploration Dilemmas in Large Language Models](risk-sensitive_reinforcement_learning_for_alleviating_exploration_dilemmas_in_la.md)
 - [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
 - [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
 - [\[ICLR 2026\] TROLL: Trust Regions improve Reinforcement Learning for Large Language Models](troll_trust_regions_improve_reinforcement_learning_for_large_language_models.md)
-- [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](robust_multi-objective_controlled_decoding_of_large_language_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] EvoGraph-R1 redefines the knowledge hypergraph in multimodal GraphRAG from a static data structure—"built offline, queried once"—into an MDP environment that co-evolves with the reasoning process. Agents continuously perform four actions: "Query Graph / Web Search / Edit Graph / Answer" to insert, refine, and prune the
+  [CVPR 2026][Multimodal VLM][Multimodal GraphRAG] EvoGraph-R1 redefines the knowledge hypergraph in multimodal GraphRAG from a static data structure—"built offline, queried once"—into an MDP environment that co-evolves with the reasoning process. Agents continuously perform four actions: "Query Graph / Web Search / Edit Graph / Answer" to insert, refine, and prune the hypergraph. Optimized end-to-end with GRPO, the system achieves SOTA performance on both multimodal VQA and te…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal GraphRAG"
+  - "Self-evolving Knowledge Graph"
+  - "Hypergraph"
+  - "MDP/Reinforcement Learning"
+  - "Agentic Retrieval"
 date: 2026-05-08
-content_hash: 20914f039bea3d62
+content_hash: 4af7c4aa0275efde
 ---
+
 # EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ Ablations on 2Wiki (F1) and E-VQA (Acc) with average retrieval rounds (efficienc
 
 ## Related Papers
 
-- [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
 - [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
-- [\[CVPR 2026\] EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards](evolmm_self_evolving_lmm_continuous_rewards.md)
-- [\[CVPR 2026\] OVOD-Agent: A Markov-Bandit Framework for Proactive Visual Reasoning and Self-Evolving Detection](ovod-agent_a_markov-bandit_framework_for_proactive_visual_reasoning_and_self-evo.md)
-- [\[CVPR 2026\] Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning](decouple_to_generalize_context-first_self-evolving_learning_for_data-scarce_visi.md)
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval](air-know_arbiter-calibrated_knowledge-internalizing_robust_network_for_composed_.md)
+- [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](../../ICLR2026/multimodal_vlm/self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
+- [\[ICML 2026\] SOLAR: Self-supervised Joint Learning for Symmetric Multimodal Retrieval](../../ICML2026/multimodal_vlm/solar_self-supervised_joint_learning_for_symmetric_multimodal_retrieval.md)
 
 </div>
 

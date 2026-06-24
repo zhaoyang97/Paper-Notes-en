@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Benchmarking Large Vision-Language Models on Fine-Grained Image Tasks: A Comprehensive Evaluation
 description: >-
-  [ICLR 2026][Multimodal VLM][FG-BMK] This paper constructs the first large-scale evaluation benchmark for fine-grained image tasks, FG-BMK (1.01 million questions, 280,000 images). It systematically interrogates 12 mainstream LVLMs/VLMs from two perspectives: "human-oriented dialogue" and "machine-oriented features." The study reveals how contrastive trai
+  [ICLR 2026][Multimodal VLM][Fine-grained Vision] This paper constructs the first large-scale evaluation benchmark for fine-grained image tasks, FG-BMK (1.01 million questions, 280,000 images). It systematically interrogates 12 mainstream LVLMs/VLMs from two perspectives: "human-oriented dialogue" and "machine-oriented features." The study reveals how contrastive training paradigms, modality alignment, perturbation robustness, and hierarchical category reasoning influence fine…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - FG-BMK
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Fine-grained Vision"
+  - "LVLM Evaluation"
+  - "FG-BMK"
+  - "Feature Discriminativeness"
+  - "Modality Alignment"
 date: 2026-05-08
-content_hash: 104e6539cef22209
+content_hash: 311c54b6452ef289
 ---
+
 # Benchmarking Large Vision-Language Models on Fine-Grained Image Tasks: A Comprehensive Evaluation
 
 **Conference**: ICLR 2026  

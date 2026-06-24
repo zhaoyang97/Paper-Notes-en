@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation
 description: >-
-  [ACL 2026][NLP Understanding][RLVR] BoundRL reframes structured text segmentation as a boundary generation task—generating only the starting tokens for each segment rather than the full text. This reduces output tokens by 90% and eliminates hallucination risks. Combined with a dual-objective reward function and a selective perturbation strategy for RLVR
+  [ACL 2026 Findings][NLP Understanding][Structured Text Segmentation] BoundRL reframes structured text segmentation as a boundary generation task—generating only the starting tokens for each segment rather than the full text. This reduces output tokens by 90% and eliminates hallucination risks. Combined with a dual-objective reward function and a selective perturbation strategy for RLVR training, it enables a 1.7B small model to outperform the few-shot performance of Claude-4…
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - RLVR
+  - "ACL 2026 Findings"
+  - "NLP Understanding"
+  - "Structured Text Segmentation"
+  - "Boundary Generation"
+  - "RLVR"
+  - "Entropy Collapse"
+  - "Intermediate Candidates"
 date: 2026-05-08
-content_hash: 74f629ad9285cf6f
+content_hash: bbfe9cd12e04192a
 ---
+
 # BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation
 
 **Conference**: ACL 2026 Findings  
@@ -147,10 +152,10 @@ The SFT phase uses standard cross-entropy loss for 1 epoch. The RLVR phase emplo
 
 ## Related Papers
 
-- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
 - [\[ACL 2026\] Accurate and Efficient Statistical Testing for Word Semantic Breadth](accurate_and_efficient_statistical_testing_for_word_semantic_breadth.md)
 - [\[ACL 2026\] Exploring Concreteness Through a Figurative Lens](exploring_concreteness_through_a_figurative_lens.md)
-- [\[ACL 2026\] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines](llm-guided_semantic_bootstrapping_for_interpretable_text_classification_with_tse.md)
+- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
+- [\[ACL 2026\] Revealing Temporal Framing in News Text](uncovering_temporal_framing_in_the_news.md)
 - [\[ACL 2026\] Agree, Disagree, Explain: Decomposing Human Label Variation in NLI through the Lens of Explanations](agree_disagree_explain_decomposing_human_label_variation_in_nli_through_the_lens.md)
 
 </div>

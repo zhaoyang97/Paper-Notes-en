@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)
 description: >-
-  [AAAI 2026][Knowledge Editing][Orthogonal Transformation] This paper proposes MOSE (Multiplicative Orthogonal Sequential Editing), which injects new knowledge by left-multiplying the parameter matrix with an orthogonal m…
+  [AAAI 2026][Knowledge Editing][Orthogonal Transformation] This paper proposes MOSE (Multiplicative Orthogonal Sequential Editing), which injects new knowledge by left-multiplying the parameter matrix with an orthogonal matrix (rather than via additive updates), strictly preserving the Frobenius norm and condition number of the edited matrix. MOSE achieves a 12.08% performance improvement in sequential editing while retaining 95.73% of general capabilities.
 tags:
   - "AAAI 2026"
   - "Knowledge Editing"
@@ -11,7 +11,7 @@ tags:
   - "Numerical Stability"
   - "Model Editing"
 date: 2026-05-08
-content_hash: 3ed5e63531e25601
+content_hash: afa82472b5562c33
 ---
 
 # Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)
@@ -126,11 +126,11 @@ No additional training is required. $R$ is obtained in a single step via a close
 
 ## Related Papers
 
+- [\[ACL 2025\] Neuron-Level Sequential Editing for Large Language Models](../../ACL2025/knowledge_editing/neuron-level_sequential_editing_for_large_language_models.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
 - [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
-- [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
 - [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](../../ICML2026/knowledge_editing/revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
-- [\[ACL 2026\] Aligning Language Models with Real-time Knowledge Editing](../../ACL2026/knowledge_editing/aligning_language_models_with_real-time_knowledge_editing.md)
+- [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
 
 </div>
 

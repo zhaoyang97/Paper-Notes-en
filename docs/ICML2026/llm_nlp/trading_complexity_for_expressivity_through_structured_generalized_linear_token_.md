@@ -1,18 +1,21 @@
 ---
 title: >-
-  [Paper Note] 结构化广义线性 token mixing：用 SND + Kronecker 在复杂度与表达力之间换挡
+  [Paper Note] Structured Generalized Linear Token Mixing: Shifting Gears Between Complexity and Expressivity with SND + Kronecker
 description: >-
-  [ICML 2026][LLM (Other)][token mixing] The paper proposes a unified "direct input mixing $\mathbf{A}$ + output recursive mixing $\mathbf{B}$" framework $Y = (I - B)^{-1} A X$ that encompasses attention, SSMs, linear recurrence, and high-order recurrence. It proves that the sparsity pattern of $A$ and $B$ directly controls the complexity gradient from $\math
+  [ICML 2026][LLM (Other)][token mixing] The paper proposes a unified "direct input mixing $\mathbf{A}$ + output recursive mixing $\mathbf{B}$" framework $Y = (I - B)^{-1} A X$ that encompasses attention, SSMs, linear recurrence, and high-order recurrence. It proves that the sparsity pattern of $A$ and $B$ directly controls the complexity gradient from $\mathcal{O}(n \log n)$ to $\mathcal{O}(n^2)$. Two translation-invariant modes, $f(k) = 2^k$ and $f(k) = k^2+1$…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - token mixing
-  - attention
-  - SSM
-  - cache size
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "token mixing"
+  - "attention"
+  - "SSM"
+  - "high-order recurrence"
+  - "time complexity"
+  - "cache size"
 date: 2026-05-08
-content_hash: 69955c87ebcfd4dc
+content_hash: 63c8c237c97761c4
 ---
+
 # Structured Generalized Linear Token Mixing: Shifting Gears Between Complexity and Expressivity with SND + Kronecker
 
 **Conference**: ICML 2026  
@@ -126,11 +129,11 @@ While translation-invariant patterns reduce computation, the cache usually remai
 
 ## Related Papers
 
+- [\[ICML 2026\] Why Are Linear RNNs More Parallelizable?](why_are_linear_rnns_more_parallelizable.md)
 - [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](token-efficient_change_detection_in_llm_apis.md)
-- [\[ICML 2026\] Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs](express_your_doubts_--_probabilistic_world_modeling_should_not_be_based_on_token.md)
-- [\[ICML 2025\] Interchangeable Token Embeddings for Extendable Vocabulary and Alpha-Equivalence](../../ICML2025/llm_nlp/interchangeable_token_embeddings_for_extendable_vocabulary_and_alpha-equivalence.md)
-- [\[ACL 2025\] Token Prepending: A Training-Free Approach for Eliciting Better Sentence Embeddings from LLMs](../../ACL2025/llm_nlp/token_prepending_training_free.md)
-- [\[ACL 2025\] The Impact of Token Granularity on the Predictive Power of Language Model Surprisal](../../ACL2025/llm_nlp/token_granularity_impact.md)
+- [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
+- [\[ICML 2025\] Generalized Interpolating Discrete Diffusion](../../ICML2025/llm_nlp/generalized_interpolating_discrete_diffusion.md)
+- [\[NeurIPS 2025\] Composing Linear Layers from Irreducibles](../../NeurIPS2025/llm_nlp/composing_linear_layers_from_irreducibles.md)
 
 </div>
 

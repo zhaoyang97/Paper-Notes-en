@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Fourier Neural Operator] This paper introduces two restrained structural extensions to the Fourier Neural Operator (FNO): a lightweight hypernetwork to inject physical parameters into each layer's hidden representation, and a Fourier-domain encoder-decoder to mix multiple physical fields. These modifications significantly reduce errors in para
+  [ICLR2026][Physics & Scientific Computing][Fourier Neural Operator] This paper introduces two restrained structural extensions to the Fourier Neural Operator (FNO): a lightweight hypernetwork to inject physical parameters into each layer's hidden representation, and a Fourier-domain encoder-decoder to mix multiple physical fields. These modifications significantly reduce errors in parameterized and coupled PDE predictions while largely preserving the model scale and training…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Fourier Neural Operator
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Fourier Neural Operator"
+  - "Parameterized PDE"
+  - "Coupled Systems"
+  - "Spectral Domain Coupling"
+  - "Plasma Simulation"
 date: 2026-05-08
-content_hash: cb058b14ad611ad9
+content_hash: 0eb71ab7ee65614a
 ---
+
 # Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs
 
 **Conference**: ICLR2026  
@@ -161,14 +166,17 @@ Parameter modulation ablation shows that "shift-only" is a robust trade-off. Sim
 
 <div class="related-papers" markdown="1">
 
-- **Fourier Neural Operator for Parametric Partial Differential Equations**, arXiv:2010.08895 (Original FNO)
-- **Hyperparameter-generalized Fourier Neural Operators**, arXiv:2305.15124 (Comparison with HyperFNO)
-- **Coupled Fourier Neural Operator**, OpenReview:rtUT5Wic10 (Context for CFNO)
+## Related Papers
+
+- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
+- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](../../ICML2026/physics/eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
+- [\[ICLR 2026\] Adaptive Mamba Neural Operators](adaptive_mamba_neural_operators.md)
+- [\[ICLR 2026\] Iterative Training of Physics-Informed Neural Networks with Fourier-enhanced Features](iterative_training_of_physics-informed_neural_networks_with_fourier-enhanced_fea.md)
+- [\[ICLR 2026\] Tucker-FNO: Tensor Tucker-Fourier Neural Operator and its Universal Approximation Theory](tucker-fno_tensor_tucker-fourier_neural_operator_and_its_universal_approximation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)

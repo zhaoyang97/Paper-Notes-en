@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning
 description: >-
-  [AAAI 2026][Multi-Agent][Big Five Personality Theory] This paper proposes MAPS, a five-agent collaborative reasoning framework that assigns distinct "personalities" to four functional agents based on the Big Five persona…
+  [AAAI 2026][Multi-Agent][Big Five Personality Theory] This paper proposes MAPS, a five-agent collaborative reasoning framework that assigns distinct "personalities" to four functional agents based on the Big Five personality theory — Interpreter (Openness), Aligner (Agreeableness), Scholar (Conscientiousness), and Solver (Extraversion) — to achieve heterogeneous collaboration, complemented by a Critic Agent (Neuroticism → Socratic reflection) for iterative refinement. MAPS su…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Scientific Reasoning"
   - "Personality Shaping"
 date: 2026-05-08
-content_hash: 3dd3d1160c3635cd
+content_hash: 157bbdbe041a6af5
 ---
 
 # MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning
@@ -136,8 +136,8 @@ Five agents operate in a four-step sequential reasoning pipeline followed by a c
 - [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
 - [\[ACL 2026\] Collaborative Multi-Agent Scripts Generation for Enhancing Imperfect-Information Reasoning in Murder Mystery Games](../../ACL2026/multi_agent/collaborative_multi-agent_scripts_generation_for_enhancing_imperfect-information.md)
 - [\[AAAI 2026\] EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation](ecoagent_an_efficient_device-cloud_collaborative_multi-agent.md)
-- [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[AAAI 2026\] COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis](coach_collaborative_agents_for_contextual_highlighting_--_a_multi-agent_framewor.md)
+- [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WildIFEval: Instruction Following in the Wild
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-judge] WildIFEval is a single-turn constraint generation benchmark extracted from real-world user conversations, comprising 7,523 tasks and 24,731 constraints. It automatically decomposes each user instruction into fine-grained constraints categorized into 8 major classes and employs an LLM-as-judge for "strict/soft" dual sco
+  [ACL2026][LLM Evaluation][Instruction Following] WildIFEval is a single-turn constraint generation benchmark extracted from real-world user conversations, comprising 7,523 tasks and 24,731 constraints. It automatically decomposes each user instruction into fine-grained constraints categorized into 8 major classes and employs an LLM-as-judge for "strict/soft" dual scoring. This work characterizes the distribution and co-occurrence of constraints in real-world instructions for…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-judge
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Instruction Following"
+  - "Constraint Generation"
+  - "Real-world User Data"
+  - "Constraint Decomposition"
+  - "LLM-as-judge"
 date: 2026-05-08
-content_hash: 105681205d4807f3
+content_hash: 34b80b98257cec76
 ---
+
 # WildIFEval: Instruction Following in the Wild
 
 **Conference**: ACL2026  
@@ -132,7 +137,7 @@ WildIFEval is currently the largest English instruction-following benchmark comp
 - [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
 - [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
 - [\[ACL 2025\] StructFlowBench: A Structured Flow Benchmark for Multi-turn Instruction Following](../../ACL2025/llm_evaluation/structflowbench_a_structured_flow_benchmark_for_multi-turn_instruction_following.md)
-- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](../../ICLR2026/llm_evaluation/benchmarking_llm_tool-use_in_the_wild.md)
+- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](../../ICLR2026/llm_evaluation/dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
 
 </div>
 

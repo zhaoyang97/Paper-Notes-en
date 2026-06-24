@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] UDAPose achieves a 56.4% AP improvement on low-light hard sets through Stable Diffusion-based low-light image synthesis (preserving high-frequency low-light features) and a Dynamic Attention Control module (adaptively balancing visual cues with pose priors).
+  [CVPR 2026][Image Restoration][Low-light human pose estimation] UDAPose achieves a 56.4% AP improvement on low-light hard sets through Stable Diffusion-based low-light image synthesis (preserving high-frequency low-light features) and a Dynamic Attention Control module (adaptively balancing visual cues with pose priors).
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Low-light human pose estimation"
+  - "Domain adaptation"
+  - "Stable Diffusion"
+  - "Attention control"
+  - "High-frequency injection"
 date: 2026-05-08
-content_hash: 9325644a827e102b
+content_hash: 809cba9d05b284d8
 ---
+
 # UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -136,15 +142,15 @@ The frequency domain loss uses sine weighting to emphasize mid-to-high frequenci
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] 2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition](2-shots_in_the_dark_low-light_denoising_with_minimal_data_acquisition.md)
-- [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](../../ICCV2025/image_restoration/low-light_image_enhancement_using_event-based_illumination_estimation.md)
 - [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
 - [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
-- [\[CVPR 2026\] VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment](vsrell_a_simple_baseline_for_video_super-resolution_and_enhancement_in_low-light.md)
+- [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](../../ICCV2025/image_restoration/low-light_image_enhancement_using_event-based_illumination_estimation.md)
+- [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
 
 </div>
 

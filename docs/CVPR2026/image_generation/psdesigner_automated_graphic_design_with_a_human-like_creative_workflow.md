@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow
 description: >-
-  [CVPR 2026][Image Generation][Reinforcement Learning] This paper proposes PSDesigner, an automated graphic design system that simulates the creative workflow of human designers. By coordinating three modules—AssetCollector (resource collection), GraphicPlanner (planning tool calls), and ToolExecutor (executing PSD operations)—and training on CreativePSD, the first design
+  [CVPR 2026][Image Generation][Automated Graphic Design] This paper proposes PSDesigner, an automated graphic design system that simulates the creative workflow of human designers. By coordinating three modules—AssetCollector (resource collection), GraphicPlanner (planning tool calls), and ToolExecutor (executing PSD operations)—and training on CreativePSD, the first design dataset in PSD format, the model learns professional design processes and directly generates editable PS…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Automated Graphic Design"
+  - "PSD File Manipulation"
+  - "Tool Calling"
+  - "Reinforcement Learning"
+  - "Creative Workflow"
 date: 2026-05-08
-content_hash: 49cc6495b98ec59f
+content_hash: 1b26bbcf9d3d30c6
 ---
+
 # PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ Standard auto-regressive cross-entropy loss is used during the SFT phase. In the
 
 ## Related Papers
 
-- [\[CVPR 2026\] PosterReward: Unlocking Accurate Evaluation for High-Quality Graphic Design Generation](posterreward_unlocking_accurate_evaluation_for_high-quality_graphic_design_gener.md)
+- [\[ICLR 2026\] CreatiDesign: A Unified Multi-Conditional Diffusion Transformer for Creative Graphic Design](../../ICLR2026/image_generation/creatidesign_a_unified_multi-conditional_diffusion_transformer_for_creative_grap.md)
 - [\[CVPR 2026\] CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions](creval_an_automated_interpretable_evaluation_for_creative_image_manipulation_und.md)
+- [\[CVPR 2026\] PosterReward: Unlocking Accurate Evaluation for High-Quality Graphic Design Generation](posterreward_unlocking_accurate_evaluation_for_high-quality_graphic_design_gener.md)
 - [\[CVPR 2026\] ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement](showtable_unlocking_creative_table_visualization_with_collaborative_reflection_a.md)
-- [\[CVPR 2025\] From Elements to Design: A Layered Approach for Automatic Graphic Design Composition](../../CVPR2025/image_generation/from_elements_to_design_a_layered_approach_for_automatic_graphic_design_composit.md)
-- [\[ICCV 2025\] Rethinking Layered Graphic Design Generation with a Top-Down Approach](../../ICCV2025/image_generation/rethinking_layered_graphic_design_generation_with_a_top-down_approach.md)
+- [\[CVPR 2026\] Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation](ar2can_an_architect_and_an_artist_leveraging_a_canvas_for_multi-human_generation.md)
 
 </div>
 

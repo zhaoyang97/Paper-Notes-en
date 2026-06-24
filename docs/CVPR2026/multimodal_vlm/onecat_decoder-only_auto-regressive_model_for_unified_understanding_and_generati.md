@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] OneCAT: Decoder-Only Auto-Regressive Model for Unified Understanding and Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][Decoder-only] OneCAT integrates "understanding + generation + editing" into **the same decoder-only Transformer**. By utilizing a Modality-MoE with hard routing (text, understanding, and generation specialists), it achieves encoder-free inference. It also introduces **multi-scale auto-regressive generation** into LLMs via a Scale-Aw
+  [CVPR 2026][Multimodal VLM][Unified Multimodality] OneCAT integrates "understanding + generation + editing" into **the same decoder-only Transformer**. By utilizing a Modality-MoE with hard routing (text, understanding, and generation specialists), it achieves encoder-free inference. It also introduces **multi-scale auto-regressive generation** into LLMs via a Scale-Aware Adapter, attaining SOTA performance in a unified model while delivering approximately 10× faster generati…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Decoder-only
-  - Modality-MoE
-  - Next-Scale Prediction
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Unified Multimodality"
+  - "Decoder-only"
+  - "Auto-regressive Generation"
+  - "Modality-MoE"
+  - "Next-Scale Prediction"
 date: 2026-05-08
-content_hash: 4e538e6c5e7194d4
+content_hash: 9b5ec7269e38f90a
 ---
+
 # OneCAT: Decoder-Only Auto-Regressive Model for Unified Understanding and Generation
 
 **Conference**: CVPR 2026  
@@ -155,11 +158,11 @@ Inference Efficiency (H800):
 
 ## Related Papers
 
-- [\[CVPR 2026\] HBridge: H-Shape Bridging of Heterogeneous Experts for Unified Multimodal Understanding and Generation](hbridge_h-shape_bridging_of_heterogeneous_experts_for_unified_multimodal_underst.md)
+- [\[CVPR 2026\] Unified Multimodal Models as Auto-Encoders](unified_multimodal_models_as_auto-encoders.md)
 - [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
-- [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
-- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
 - [\[ICCV 2025\] GenDoP: Auto-regressive Camera Trajectory Generation as a Director of Photography](../../ICCV2025/multimodal_vlm/gendop_auto-regressive_camera_trajectory_generation_as_a_director_of_photography.md)
+- [\[CVPR 2026\] HBridge: H-Shape Bridging of Heterogeneous Experts for Unified Multimodal Understanding and Generation](hbridge_h-shape_bridging_of_heterogeneous_experts_for_unified_multimodal_underst.md)
+- [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](../../ICLR2026/multimodal_vlm/unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
 
 </div>
 

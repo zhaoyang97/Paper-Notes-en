@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] The Primacy of Magnitude in Low-Rank Adaptation
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][LoRA] This paper reveals that weight update magnitude is the fundamental driver of performance in LoRA, unifying the influence of learning rate, scaling factor…
+  [NeurIPS 2025 Spotlight][Physics & Scientific Computing][LoRA] This paper reveals that weight update magnitude is the fundamental driver of performance in LoRA, unifying the influence of learning rate, scaling factor, and initialization strategy under a single framework. It further proposes LoRAM—an efficient initialization method based on deterministic orthogonal bases and magnitude scaling—that matches or surpasses spectral initialization methods without requiring SVD.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Physics & Scientific Computing"
   - "LoRA"
   - "parameter-efficient fine-tuning"
@@ -12,7 +12,7 @@ tags:
   - "weight update magnitude"
   - "low-rank adaptation"
 date: 2026-05-08
-content_hash: b1d40a115c5ad56a
+content_hash: d382d65296f680d5
 ---
 
 # The Primacy of Magnitude in Low-Rank Adaptation
@@ -174,8 +174,8 @@ Analytical Framework (Magnitude Principle) → Mechanistic Analysis (Demystifyin
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
 - [\[NeurIPS 2025\] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC](knowledge_is_overrated_a_zero-knowledge_machine_learning_and_cryptographic_hashi.md)
 - [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](../../ICML2026/physics/distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
-- [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
-- [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
+- [\[ICLR 2026\] Robust and Interpretable Adaptation of Equivariant Materials Foundation Models via Sparsity-promoting Fine-tuning](../../ICLR2026/physics/robust_and_interpretable_adaptation_of_equivariant_materials_foundation_models_v.md)
+- [\[NeurIPS 2025\] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon](stable_minima_of_relu_neural_networks_suffer_from_the_curse_of_dimensionality_th.md)
 
 </div>
 

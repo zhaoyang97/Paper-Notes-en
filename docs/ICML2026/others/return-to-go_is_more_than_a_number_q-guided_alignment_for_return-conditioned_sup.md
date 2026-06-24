@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Return-to-Go is More Than a Number: Q-Guided Alignment for Return-Conditioned Supervised Learning
 description: >-
-  [ICML 2026][Others][Decision Transformer] Addressing the insufficient return-to-go (RTG) alignment in conditional sequence models (like Decision Transformer), this paper proposes the Q-align DT framework. By combining an RTG-to-behavior alignment loss (enforcing monotonic correspondence between RTG and Q-value shifts) with Q-function co-training under RTG pert
+  [ICML 2026][Offline RL] Addressing the insufficient return-to-go (RTG) alignment in conditional sequence models (like Decision Transformer), this paper proposes the Q-align DT framework. By combining an RTG-to-behavior alignment loss (enforcing monotonic correspondence between RTG and Q-value shifts) with Q-function co-training under RTG perturbation, it creates a positive feedback loop that achieves SOTA performance on D4RL and significantly reduces alignment errors (68.9 vs…
 tags:
-  - ICML 2026
-  - Others
-  - Decision Transformer
+  - "ICML 2026"
+  - "Offline RL"
+  - "Conditional Sequence Models"
+  - "Return Alignment"
+  - "Q-Learning"
+  - "Decision Transformer"
 date: 2026-05-08
-content_hash: 04df77c92cedfcb6
+content_hash: 2b545eac2caa611b
 ---
+
 # Return-to-Go is More Than a Number: Q-Guided Alignment for Return-Conditioned Supervised Learning
 
 **Conference**: ICML 2026  
@@ -128,9 +132,20 @@ Alignment loss depends on reliable return ranking from the Q-function. However, 
 - Value: ⭐⭐⭐⭐⭐ (Solves a practical problem of RTG insensitivity and opens a research direction for conditional policy alignment with high application potential.)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] More Than Irrational: Modeling Belief-Biased Agents](../../AAAI2026/others/more_than_irrational_modeling_belief-biased_agents.md)
+- [\[ACL 2025\] PopAlign: Diversifying Contrasting Patterns for a More Comprehensive Alignment](../../ACL2025/others/popalign_diversifying_contrasting_patterns_for_a_more_comprehensive_alignment.md)
+- [\[ICML 2026\] Over-Alignment vs Over-Fitting: The Role of Feature Learning Strength in Generalization](over-alignment_vs_over-fitting_the_role_of_feature_learning_strength_in_generali.md)
+- [\[ACL 2025\] Are Any-to-Any Models More Consistent Across Modality Transfers Than Specialists?](../../ACL2025/others/are_any-to-any_models_more_consistent_across_modality_transfers_than_specialists.md)
+- [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](../../AAAI2026/others/sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] More Than Irrational: Modeling Belief-Biased Agents](../../AAAI2026/others/more_than_irrational_modeling_belief-biased_agents.md)

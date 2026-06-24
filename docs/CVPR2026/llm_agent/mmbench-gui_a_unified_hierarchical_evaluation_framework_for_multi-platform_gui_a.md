@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents
 description: >-
-  [CVPR 2026][LLM Agent][GUI Agent] MMBench-GUI organizes GUI agent evaluation into four progressive levels: "Content Understanding → Element Grounding → Single-app Automation → Cross-app Collaboration." It covers 8,000+ tasks across six platforms (Windows, macOS, Linux, iOS, Android, Web) and introduces the EQA metric to evaluate both success rate and a
+  [CVPR 2026][LLM Agent][GUI Agent] MMBench-GUI organizes GUI agent evaluation into four progressive levels: "Content Understanding → Element Grounding → Single-app Automation → Cross-app Collaboration." It covers 8,000+ tasks across six platforms (Windows, macOS, Linux, iOS, Android, Web) and introduces the EQA metric to evaluate both success rate and action redundancy. The study systematically reveals six diagnostic findings, notably that precise visual grounding is the criti…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Hierarchical Evaluation"
+  - "Multi-Platform"
+  - "Efficiency Metric"
+  - "Visual Grounding"
 date: 2026-05-08
-content_hash: 90a767846e00561d
+content_hash: 93c100ab21111c1a
 ---
+
 # MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents
 
 **Conference**: CVPR 2026  
@@ -118,15 +123,15 @@ The synthesis of L1–L4 results led to six diagnostic findings:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">...</div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] OS-Oracle: A Comprehensive Framework for Cross-Platform GUI Critic Models](os-oracle_a_comprehensive_framework_for_cross-platform_gui_critic_models.md)
 - [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
+- [\[CVPR 2026\] iSHIFT: Lightweight Slow-Fast GUI Agent with Adaptive Perception](ishift_lightweight_slow-fast_gui_agent_with_adaptive_perception.md)
+- [\[ICLR 2026\] LongHorizonUI: A Unified Framework for Robust Long-Horizon Task Automation of GUI Agent](../../ICLR2026/llm_agent/longhorizonui_a_unified_framework_for_robust_long-horizon_task_automation_of_gui.md)
 - [\[CVPR 2026\] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents](hats_hardness-aware_trajectory_synthesis_for_gui_agents.md)
-- [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
-- [\[CVPR 2026\] AdapAction: Adaptive Target Action Backdoor Attack against GUI Agents](adapaction_adaptive_target_action_backdoor_attack_against_gui_agents.md)
 
 </div>
 

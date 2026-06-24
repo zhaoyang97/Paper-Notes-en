@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] From Pixels to Words -- Towards Native Vision-Language Primitives at Scale
 description: >-
-  [ICLR 2026][Multimodal VLM][native VLM] This paper introduces NEO, a family of **native (monolithic) VLMs** built from first principles. It integrates visual encoding, cross-modal alignment, and reasoning into a single decoder-only backbone using unified "native primitives." By leveraging Native-RoPE (which decouples T/H/W), mixed image-text attention, and a
+  [ICLR 2026][Multimodal VLM][native VLM] This paper introduces NEO, a family of **native (monolithic) VLMs** built from first principles. It integrates visual encoding, cross-modal alignment, and reasoning into a single decoder-only backbone using unified "native primitives." By leveraging Native-RoPE (which decouples T/H/W), mixed image-text attention, and a reusable pre-Buffer, NEO significantly narrows the gap between native VLMs and top-tier modular VLMs of the same scale…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - native VLM
-  - early fusion
-  - Native-RoPE
-  - mixed attention
-  - pre-Buffer
-  - monolithic backbone
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "native VLM"
+  - "early fusion"
+  - "Native-RoPE"
+  - "mixed attention"
+  - "pre-Buffer"
+  - "monolithic backbone"
 date: 2026-05-08
-content_hash: 8c3467c50fb1a3d0
+content_hash: 3a8e22c3657b06ff
 ---
+
 # From Pixels to Words -- Towards Native Vision-Language Primitives at Scale
 
 **Conference**: ICLR 2026  
@@ -136,9 +137,9 @@ Attention mode × RoPE design (pre-Buffer depth 4, post-LLM = Qwen3-1.7B, Avg. a
 
 - [\[ICLR 2026\] Pay Less Attention to Function Words for Free Robustness of Vision-Language Models](pay_less_attention_to_function_words_for_free_robustness_of_vision-language_mode.md)
 - [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
+- [\[ICLR 2026\] Talking Points: Describing and Localizing Pixels](talking_points_describing_and_localizing_pixels.md)
 - [\[ICLR 2026\] One Patch Doesn't Fit All: Adaptive Patching for Native-Resolution Multimodal Large Language Models](one_patch_doesnt_fit_all_adaptive_patching_for_native-resolution_multimodal_larg.md)
 - [\[CVPR 2025\] Words or Vision: Do Vision-Language Models Have Blind Faith in Text?](../../CVPR2025/multimodal_vlm/words_or_vision_do_vision-language_models_have_blind_faith_in_text.md)
-- [\[ICCV 2025\] Scaling Laws for Native Multimodal Models](../../ICCV2025/multimodal_vlm/scaling_laws_for_native_multimodal_models.md)
 
 </div>
 

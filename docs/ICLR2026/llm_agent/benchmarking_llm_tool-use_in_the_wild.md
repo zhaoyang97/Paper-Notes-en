@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Benchmarking LLM Tool-Use in the Wild
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] WildToolBench extracts three characteristics of "wild" dialogues—composite tasks, hidden intentions, and instruction switching—from real user logs to construct a multi-turn, multi-step tool-use benchmark comprising 1024 tasks across 256 scenarios. Evaluations of 57 mainstream LLMs reveal that no model exceeds 15% sessi
+  [ICLR 2026][LLM Agent][Tool Calling] WildToolBench extracts three characteristics of "wild" dialogues—composite tasks, hidden intentions, and instruction switching—from real user logs to construct a multi-turn, multi-step tool-use benchmark comprising 1024 tasks across 256 scenarios. Evaluations of 57 mainstream LLMs reveal that no model exceeds 15% session accuracy, indicating that current agentic capabilities are significantly weaker than leaderboard inflated scores suggest…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool Calling"
+  - "Multi-turn Dialogue"
+  - "Agent Evaluation"
+  - "Real-world User Behavior"
+  - "Tool Orchestration"
 date: 2026-05-08
-content_hash: a566d57bfc3d5f14
+content_hash: 1e4a71511afc9b14
 ---
+
 # Benchmarking LLM Tool-Use in the Wild
 
 **Conference**: ICLR 2026  
@@ -124,16 +130,16 @@ The strongest open-source models (GLM-4.5, Kimi-K2) approach the top closed-sour
 - Value: ⭐⭐⭐⭐⭐ Highly practical guidance for agent evaluation; effectively exposes the "reliability gap."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
 - [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
+- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
 - [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
-- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
-- [\[ICLR 2026\] Empowering LLM Tool Invocation with Tool-call Reward Model](empowering_llm_tool_invocation_with_tool-call_reward_model.md)
+- [\[ICLR 2026\] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](in-the-flow_agentic_system_optimization_for_effective_planning_and_tool_use.md)
 
 </div>
 

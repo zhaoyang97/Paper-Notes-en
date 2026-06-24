@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VideoLucy: Deep Memory Backtracking for Long Video Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][Long video understanding] This paper proposes VideoLucy, a framework that simulates the human coarse-to-fine recall process via a hierarchical memory structure and an agent-based itera…
+  [NeurIPS 2025][Video Understanding][Long video understanding] This paper proposes VideoLucy, a framework that simulates the human coarse-to-fine recall process via a hierarchical memory structure and an agent-based iterative backtracking mechanism. VideoLucy substantially outperforms existing methods on multiple long video understanding benchmarks, surpassing even commercial models such as GPT-4o.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "memory backtracking"
   - "video question answering"
 date: 2026-05-08
-content_hash: 49eae87b8b6f95fc
+content_hash: 11cb89aaff5ed193
 ---
 
 # VideoLucy: Deep Memory Backtracking for Long Video Understanding
@@ -143,9 +143,9 @@ VideoLucy is a training-free inference-time agent system that directly leverages
 
 ## Related Papers
 
+- [\[CVPR 2025\] ReWind: Understanding Long Videos with Instructed Learnable Memory](../../CVPR2025/video_understanding/rewind_understanding_long_videos_with_instructed_learnable_memory.md)
 - [\[ICCV 2025\] VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges](../../ICCV2025/video_understanding/videollamb_long_streaming_video_understanding_with_recurrent_memory_bridges.md)
 - [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
-- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 - [\[NeurIPS 2025\] AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](adavideorag_omnicontextual_adaptive_retrievalaugmented_effic.md)
 - [\[NeurIPS 2025\] InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding](infinipot-v_memory-constrained_kv_cache_compression_for_streaming_video_understa.md)
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper constructs SciImpact—the first large-scale scientific impact prediction benchmark spanning 19 disciplines and 7 impact dimensions (citations, awards, patents, media, code, datasets, and models). It contains 215,928 comparative paper pairs, and multi-task fine-tuning enables a 4B model to outperform large mod
+  [ACL 2026 Findings][LLM Evaluation][Scientific impact prediction] This paper constructs SciImpact—the first large-scale scientific impact prediction benchmark spanning 19 disciplines and 7 impact dimensions (citations, awards, patents, media, code, datasets, and models). It contains 215,928 comparative paper pairs, and multi-task fine-tuning enables a 4B model to outperform large models such as o4-mini.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Scientific impact prediction"
+  - "multi-dimensional benchmark"
+  - "citation prediction"
+  - "academic awards"
+  - "multi-task instruction tuning"
 date: 2026-05-08
-content_hash: bcd7f6ed78532cb4
+content_hash: e8cf11cdfaaba9c5
 ---
+
 # SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction
 
 **Conference**: ACL 2026 Findings  

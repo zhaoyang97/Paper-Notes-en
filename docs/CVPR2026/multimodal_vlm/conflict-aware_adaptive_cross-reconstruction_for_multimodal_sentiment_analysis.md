@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the overlooked pain point where "linguistic, visual, and acoustic sentiment polarities contradict each other within the same sample," CACR first quantifies sentiment conflict scores in a shared subspace, then employs a **conflict-weighted cross-reconstruction module** to implicitly align shared semantics and
+  [CVPR 2026][Multimodal VLM][Multimodal sentiment analysis] Addressing the overlooked pain point where "linguistic, visual, and acoustic sentiment polarities contradict each other within the same sample," CACR first quantifies sentiment conflict scores in a shared subspace, then employs a **conflict-weighted cross-reconstruction module** to implicitly align shared semantics and suppress conflicting modalities. By supplementing textual semantics with fine-grained sentiment refi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal sentiment analysis"
+  - "Decoupled representation"
+  - "Sentiment conflict"
+  - "Cross-reconstruction"
+  - "Adaptive weighting"
 date: 2026-05-08
-content_hash: d2df00d8a321be9b
+content_hash: cb2d9cce20e8a833
 ---
+
 # Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis
 
 **Conference**: CVPR 2026  
@@ -156,7 +162,7 @@ Ablation of core components on MOSI:
 - [\[CVPR 2026\] Factorize, Reconstruct, Enhance: A Unified Framework for Multimodal Sentiment Analysis](factorize_reconstruct_enhance_a_unified_framework_for_multimodal_sentiment_analy.md)
 - [\[CVPR 2026\] Prototype-as-Prompt: Multimodal Sentiment Prototypes Endowing Large Language Models the Capability to Perform Multimodal Sentiment Analysis](prototype-as-prompt_multimodal_sentiment_prototypes_endowing_large_language_mode.md)
 - [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
-- [\[CVPR 2026\] EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](ebmc_multimodal_sentiment_analysis.md)
+- [\[CVPR 2026\] Multi-Metric Representation Learning Strategy Based on Clustering for Fine-Grained Multimodal Sentiment Analysis](multi-metric_representation_learning_strategy_based_on_clustering_for_fine-grain.md)
 
 </div>
 

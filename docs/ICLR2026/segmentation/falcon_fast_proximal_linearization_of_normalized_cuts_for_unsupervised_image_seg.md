@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Falcon: Fast Proximal Linearization of Normalized Cuts for Unsupervised Image Segmentation
 description: >-
-  [ICLR 2026][Segmentation][Normalized Cut] Falcon reformulates the classic Normalized Cut (NCut) in zero-shot unsupervised segmentation—moving away from the traditional "spectral relaxation + recursive bisection + rounding" routine—into a **solver that directly performs proximal linearization on discrete K-way one-hot labels**. This approach ensures linear conv
+  [ICLR 2026][Segmentation][Normalized Cut] Falcon reformulates the classic Normalized Cut (NCut) in zero-shot unsupervised segmentation—moving away from the traditional "spectral relaxation + recursive bisection + rounding" routine—into a **solver that directly performs proximal linearization on discrete K-way one-hot labels**. This approach ensures linear convergence under the KL framework, improves inference speed by nearly an order of magnitude…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Normalized Cut
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Normalized Cut"
+  - "Proximal Gradient"
+  - "Discrete Optimization"
+  - "KL Convergence"
+  - "Vision Foundation Models"
+  - "Zero-shot Segmentation"
 date: 2026-05-08
-content_hash: 772ef4a5aa0f9ac2
+content_hash: c1db9115ca4c8a14
 ---
+
 # Falcon: Fast Proximal Linearization of Normalized Cuts for Unsupervised Image Segmentation
 
 **Conference**: ICLR 2026  
@@ -130,7 +136,7 @@ Runtime (End-to-end, single RTX 4094090, DINOv3-B / Cityscapes): Falcon reduces 
 
 - [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](../../NeurIPS2025/segmentation/towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
 - [\[ICLR 2026\] AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation](amlris_alignment-aware_masked_learning_for_referring_image_segmentation.md)
-- [\[ICML 2026\] Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models](../../ICML2026/segmentation/geometry-preserving_unsupervised_alignment_for_heterogeneous_foundation_models.md)
+- [\[ICML 2026\] Unsupervised Hierarchical Skill Discovery](../../ICML2026/segmentation/unsupervised_hierarchical_skill_discovery.md)
 - [\[ICLR 2026\] Enhancing Image-Conditional Coverage in Segmentation: Adaptive Thresholding via Differentiable Miscoverage Loss](enhancing_image-conditional_coverage_in_segmentation_adaptive_thresholding_via_d.md)
 - [\[ICLR 2026\] VINCIE: Unlocking In-context Image Editing from Video](vincie_unlocking_in-context_image_editing_from_video.md)
 

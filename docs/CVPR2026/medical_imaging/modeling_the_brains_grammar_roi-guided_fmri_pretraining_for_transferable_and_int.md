@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Modeling the Brain's Grammar: ROI-Guided fMRI Pretraining for Transferable and Interpretable Vision Decoding
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] ROITok replaces the basic unit of cross-subject fMRI pretraining from "whole-brain features" to "ROI tokens." By utilizing sparse ROI context fusion to learn functional synergies between brain regions and Matryoshka-style compression to rank tokens by information content, it achieves superior low-level reconstruction f
+  [CVPR 2026][Medical Imaging][fMRI Pretraining] ROITok replaces the basic unit of cross-subject fMRI pretraining from "whole-brain features" to "ROI tokens." By utilizing sparse ROI context fusion to learn functional synergies between brain regions and Matryoshka-style compression to rank tokens by information content, it achieves superior low-level reconstruction fidelity and few-shot transfer capabilities on NSD/GOD. It also provides quantifiable contributions for each brain…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "fMRI Pretraining"
+  - "Brain ROI"
+  - "Vision Decoding"
+  - "Matryoshka Representation"
+  - "Cross-subject Transfer"
 date: 2026-05-08
-content_hash: 0061f8007d5f6b5f
+content_hash: e3aa759229f264e1
 ---
+
 # Modeling the Brain's Grammar: ROI-Guided fMRI Pretraining for Transferable and Interpretable Vision Decoding
 
 **Conference**: CVPR 2026  
@@ -139,9 +145,9 @@ ROITok achieved the **highest low-level reconstruction fidelity** (PixCorr jumpe
 
 - [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
 - [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](../../ICLR2026/medical_imaging/towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
-- [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/medical_imaging/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
 - [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
+- [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
+- [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/medical_imaging/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
 
 </div>
 

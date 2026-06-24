@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Addressing Exacerbated Attention Sink for Source-Free Cross-Domain Few-Shot Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][attention sink] The authors observe that in source-free cross-domain few-shot learning (CDFSL) scenarios, standard few-shot fine-tuning on the target domain **significantly exacerbates the attention sink of CLIP**. The model concentrates attention on "simple tokens" that are inherently associated with all classes, leading to a loss of
+  [CVPR2026][Multimodal VLM][Cross-domain Few-shot] The authors observe that in source-free cross-domain few-shot learning (CDFSL) scenarios, standard few-shot fine-tuning on the target domain **significantly exacerbates the attention sink of CLIP**. The model concentrates attention on "simple tokens" that are inherently associated with all classes, leading to a loss of inter-class discriminability. To address this, TIR (Token Importance Recalibration) is proposed. It linearly…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - attention sink
-  - source-free
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Cross-domain Few-shot"
+  - "attention sink"
+  - "CLIP Fine-tuning"
+  - "token reweighting"
+  - "source-free"
 date: 2026-05-08
-content_hash: 3c5d443eac7fc884
+content_hash: dfb40213042e569a
 ---
+
 # Addressing Exacerbated Attention Sink for Source-Free Cross-Domain Few-Shot Learning
 
 **Conference**: CVPR2026  
@@ -135,11 +139,11 @@ In 1-shot, TIR outperforms the previous SOTA (REAP 56.04) by **+2.16** and its o
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
+- [\[ICML 2026\] ATHA: Improving CLIP Adaptation on Source-Free Cross-Domain Few-Shot Learning by Breaking Tail Alignment](../../ICML2026/multimodal_vlm/improving_clip_adaptation_by_breaking_tail_alignment_for_source-free_cross-domai.md)
 - [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
-- [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
 - [\[CVPR 2026\] Towards Multimodal Domain Generalization with Few Labels](towards_multimodal_domain_generalization_with_few_labels.md)
-- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
+- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](../../ICLR2026/multimodal_vlm/exploring_cross-modal_flows_for_few-shot_learning.md)
+- [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
 
 </div>
 

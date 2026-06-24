@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] CompassNav: Steering From Path Imitation to Decision Understanding In Navigation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Goal Navigation] CompassNav shifts the goal navigation training paradigm from "imitating a single expert trajectory" to "decision understanding." By scoring all candidate actions at each step using A\* geodesic distances to construct dense supervision, and combining it with a gap-aware hybrid reward for GRPO fine-tuning, the 7B Qwen2.5
+  [ICLR 2026][Robotics][Goal Navigation] CompassNav shifts the goal navigation training paradigm from "imitating a single expert trajectory" to "decision understanding." By scoring all candidate actions at each step using A\* geodesic distances to construct dense supervision, and combining it with a gap-aware hybrid reward for GRPO fine-tuning, the 7B Qwen2.5-VL learns to evaluate the "relative merits of each move," outperforming GPT-4o and even o4-mini on HM3D/MP3D.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Goal Navigation
-  - LVLM
-  - Decision Understanding
-  - GRPO
-  - Reward Design
-  - Object-Goal
+  - "ICLR 2026"
+  - "Robotics"
+  - "Goal Navigation"
+  - "LVLM"
+  - "Decision Understanding"
+  - "GRPO"
+  - "Reward Design"
+  - "Object-Goal"
 date: 2026-05-08
-content_hash: ee12d75f63a1d896
+content_hash: b286069b9f5d72ff
 ---
+
 # CompassNav: Steering From Path Imitation to Decision Understanding In Navigation
 
 **Conference**: ICLR 2026  

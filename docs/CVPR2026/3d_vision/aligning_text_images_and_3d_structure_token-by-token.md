@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Aligning Text, Images and 3D Structure Token-by-Token
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes Kyvo—a decoder-only autoregressive LLM (based on Llama-3.2-1B) that treats "structured 3D scenes" as a third modality within the same token space as text and images. Through a systematic "cookbook," it provides key recipes for 3D shape tokenization, coordinate encoding, and sequence design, enabling
+  [CVPR 2026][3D Vision][Structured 3D Modality] This paper proposes Kyvo—a decoder-only autoregressive LLM (based on Llama-3.2-1B) that treats "structured 3D scenes" as a third modality within the same token space as text and images. Through a systematic "cookbook," it provides key recipes for 3D shape tokenization, coordinate encoding, and sequence design, enabling a single model to perform four types of 3D tasks: rendering, single-image 3D reconstruction/recognition…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Structured 3D Modality"
+  - "Autoregressive Multimodal LLM"
+  - "3D Tokenization"
+  - "Single-image 3D Reconstruction"
+  - "Unified Token Space"
 date: 2026-05-08
-content_hash: 01b827873a03cbd0
+content_hash: f9d6f2bb12929196
 ---
+
 # Aligning Text, Images and 3D Structure Token-by-Token
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ Ours significantly outperforms the specialized detector on Objectron and remains
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
+- [\[CVPR 2026\] SceneTok: A Compressed, Diffusable Token Space for 3D Scenes](scenetok_a_compressed_diffusable_token_space_for_3d_scenes.md)
+- [\[CVPR 2026\] AutoRegressive Generation with B-rep Holistic Token Sequence Representation](autoregressive_generation_with_b-rep_holistic_token_sequence_representation.md)
+- [\[CVPR 2026\] Geometry-Guided 3D Visual Token Pruning for Video-Language Models](geometry-guided_3d_visual_token_pruning_for_video-language_models.md)
+- [\[CVPR 2026\] TokenHand: Discrete Token Representation for Efficient Hand Mesh Reconstruction](tokenhand_discrete_token_representation_for_efficient_hand_mesh_reconstruction.md)
 - [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
-- [\[CVPR 2026\] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](gaussiangrow_geometry-aware_gaussian_growing_from_3d_point_clouds_with_text_guid.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper proposes MTR-DuplexBench, a comprehensive benchmark for evaluating Full-Duplex Speech Language Models (FD-SLMs) in multi-round scenarios. By introducing an innovative turn segmentation method to address blurred turn boundaries and context inconsistency, the framework evaluates four dimensions: conversational
+  [ACL 2026 Findings][Audio & Speech][Full-duplex speech models] This paper proposes MTR-DuplexBench, a comprehensive benchmark for evaluating Full-Duplex Speech Language Models (FD-SLMs) in multi-round scenarios. By introducing an innovative turn segmentation method to address blurred turn boundaries and context inconsistency, the framework evaluates four dimensions: conversational features, conversation quality, instruction following, and safety. Experiments reveal that exist…
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Full-duplex speech models"
+  - "multi-round conversation evaluation"
+  - "turn segmentation"
+  - "conversation quality"
+  - "safety evaluation"
 date: 2026-05-08
-content_hash: 8a460b662c2fab7e
+content_hash: 67fa4ad3192d157b
 ---
+
 # MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models
 
 **Conference**: ACL 2026 Findings  

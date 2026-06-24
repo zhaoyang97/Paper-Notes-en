@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks
 description: >-
-  [ACL 2026][LLM Agent][Reinforcement Learning] Shopping Companion constructs an e-commerce task benchmark with long-term user preference memory and a real product library. It employs a two-stage agent with dual rewards and tool-level rewards to jointly optimize preference identification and product recommendation, enabling a 4B model to approach the performance of
+  [ACL2026][LLM Agent][Long-term memory] Shopping Companion constructs an e-commerce task benchmark with long-term user preference memory and a real product library. It employs a two-stage agent with dual rewards and tool-level rewards to jointly optimize preference identification and product recommendation, enabling a 4B model to approach the performance of strong closed-source models.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ACL2026"
+  - "LLM Agent"
+  - "Long-term memory"
+  - "E-commerce Agent"
+  - "Preference Identification"
+  - "Tool use"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 1d825c541fb0350f
+content_hash: 13a94dae22dd7a91
 ---
+
 # Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks
 
 **Conference**: ACL2026  
@@ -156,11 +161,11 @@ The final model achieved an average success rate of 63.5, close to GPT-5's 64.5,
 
 ## Related Papers
 
-- [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
+- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](../../ICLR2026/llm_agent/vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
 - [\[ACL 2026\] MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools](mcp-flow_facilitating_llm_agents_to_master_real-world_diverse_and_scaling_mcp_to.md)
-- [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](../../ICLR2026/llm_agent/openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
-- [\[ACL 2026\] AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts](agencybench_benchmarking_the_frontiers_of_autonomous_agents_in_1m-token_real-wor.md)
-- [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](../../AAAI2026/llm_agent/d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
+- [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
+- [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](../../ICLR2026/llm_agent/mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
+- [\[ACL 2026\] Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces](benchmarking_web_agent_safety_under_e-commerce_deceptive_interfaces.md)
 
 </div>
 

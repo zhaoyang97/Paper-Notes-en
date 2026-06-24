@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GradPower: Powering Gradients for Faster Language Model Pre-Training
 description: >-
-  [ICML 2026][Model Compression][AdamW] GradPower applies an element-wise "sign-preserving power" transformation $\varphi_p(g_i)=\mathrm{sign}(g_i)\,|g_i|^p$ to raw gradients before feeding them into any gradient-based optimizer. With just one additional line of code and without altering internal AdamW/Muon logic or hyperparameters, it consistently achieves
+  [ICML 2026][Model Compression][Gradient Transformation] GradPower applies an element-wise "sign-preserving power" transformation $\varphi_p(g_i)=\mathrm{sign}(g_i)\,|g_i|^p$ to raw gradients before feeding them into any gradient-based optimizer. With just one additional line of code and without altering internal AdamW/Muon logic or hyperparameters, it consistently achieves lower final loss across multiple scales of LLaMA and Qwen2MoE (66M to 2B). The gains are most significan…
 tags:
-  - ICML 2026
-  - Model Compression
-  - AdamW
-  - Muon
+  - "ICML 2026"
+  - "Model Compression"
+  - "Gradient Transformation"
+  - "AdamW"
+  - "Muon"
+  - "MoE Pre-training"
+  - "wsd scheduling"
 date: 2026-05-08
-content_hash: 0b2a145ae592dd55
+content_hash: ce3ce589538c756e
 ---
+
 # GradPower: Powering Gradients for Faster Language Model Pre-Training
 
 **Conference**: ICML 2026  
@@ -129,8 +133,8 @@ A clear trend is observed: **the larger the batch (lower noise), the smaller the
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
 - [\[ICML 2026\] Turning Stale Gradients into Stable Gradients: Coherent Coordinate Descent with Implicit Landscape Smoothing for Lightweight Zeroth-Order Optimization](turning_stale_gradients_into_stable_gradients_coherent_coordinate_descent_with_i.md)
 - [\[ICML 2026\] Bounded Hyperbolic Tangent: A Stable and Efficient Alternative to Pre-Layer Normalization in Large Language Models](bounded_hyperbolic_tangent_a_stable_and_efficient_alternative_to_pre-layer_norma.md)
+- [\[ICLR 2026\] INSTANT: Compressing Gradients and Activations for Resource-Efficient Training](../../ICLR2026/model_compression/instant_compressing_gradients_and_activations_for_resource-efficient_training.md)
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
-- [\[ICML 2026\] Don't Ignore the Tail: Decoupling top-K Probabilities for Efficient Language Model Distillation](dont_ignore_the_tail_decoupling_top-k_probabilities_for_efficient_language_model.md)
 
 </div>
 

@@ -20,7 +20,7 @@ item_total: 1
 
 **📹 ICCV2025** · **1** paper notes
 
-📌 **Same area in other venues:** [🔬 ICLR2026 (12)](../../ICLR2026/nlp_generation/index.md) · [💬 ACL2026 (17)](../../ACL2026/nlp_generation/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/nlp_generation/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (12)](../../ICLR2026/nlp_generation/index.md) · [💬 ACL2026 (17)](../../ACL2026/nlp_generation/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/nlp_generation/index.md) · [🧪 ICML2025 (1)](../../ICML2025/nlp_generation/index.md) · [💬 ACL2025 (27)](../../ACL2025/nlp_generation/index.md)
 
 **[Beyond Isolated Words: Diffusion Brush for Handwritten Text-Line Generation](beyond_isolated_words_diffusion_brush_for_handwritten_text-line_generation.md)**
 

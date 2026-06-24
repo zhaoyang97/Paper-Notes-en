@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] This paper systematically analyzes the root causes of hallucinations in Multimodal CoT (MCoT) models. It discovers that hallucinations most frequently occur during reasoning steps involving associative free play (termed "divergent thinking"). Consequently, the authors propose a training-free detection and decoding inte
+  [CVPR 2026][Hallucination Detection][Multimodal Hallucination] This paper systematically analyzes the root causes of hallucinations in Multimodal CoT (MCoT) models. It discovers that hallucinations most frequently occur during reasoning steps involving associative free play (termed "divergent thinking"). Consequently, the authors propose a training-free detection and decoding intervention strategy based on visual entropy. This approach reduces CHAIRS by over 30% on Object Hal…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Multimodal Hallucination"
+  - "Chain-of-Thought Reasoning"
+  - "Divergent Thinking"
+  - "Visual Entropy"
+  - "Decoding Intervention"
 date: 2026-05-08
-content_hash: 8f43fe586615eac8
+content_hash: af61f68ddc83ec75
 ---
+
 # Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ This method is entirely training-free and introduces no additional training stag
 
 ## Related Papers
 
-- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
-- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
 - [\[CVPR 2026\] Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection](mitigating_multimodal_hallucinations_via_gradient-based_self-reflection.md)
 - [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
+- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
+- [\[CVPR 2026\] Reallocating Attention Across Layers to Reduce Multimodal Hallucination](reallocating_attention_across_layers_to_reduce_multimodal_hallucination.md)
 
 </div>
 

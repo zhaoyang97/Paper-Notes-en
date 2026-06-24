@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GC4NC: A Benchmark Framework for Graph Condensation on Node Classification with New Insights
 description: >-
-  [NeurIPS 2025][Image Restoration][Graph Condensation] This paper proposes GC4NC—the first systematic benchmark framework for graph condensation (GC)—which evaluates multiple GC methods across 8 dimensions (performance /…
+  [NeurIPS 2025][Image Restoration][Graph Condensation] This paper proposes GC4NC—the first systematic benchmark framework for graph condensation (GC)—which evaluates multiple GC methods across 8 dimensions (performance / efficiency / privacy protection / denoising / NAS effectiveness / transferability, etc.), finding that trajectory matching methods achieve the best performance, structure-free methods are most efficient, and graph condensation significantly outperforms image c…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Benchmark Evaluation"
   - "Privacy Protection"
 date: 2026-05-08
-content_hash: a3e11eb62c053955
+content_hash: 960ab2ab25e1c158
 ---
 
 # GC4NC: A Benchmark Framework for Graph Condensation on Node Classification with New Insights
@@ -131,9 +131,9 @@ Node classification accuracy of various methods on standard datasets (1% condens
 
 - [\[NeurIPS 2025\] RGB-to-Polarization Estimation: A New Task and Benchmark Study](rgb-to-polarization_estimation_a_new_task_and_benchmark_study.md)
 - [\[NeurIPS 2025\] Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark](enhancing_infrared_vision_progressive_prompt_fusion_network_and_benchmark.md)
+- [\[ECCV 2024\] A New Dataset and Framework for Real-World Blurred Images Super-Resolution](../../ECCV2024/image_restoration/a_new_dataset_and_framework_for_real-world_blurred_images_super-resolution.md)
+- [\[CVPR 2026\] Human-Centric Multi-Exposure Fusion: Benchmark and Bi-level Cognition Distillation Framework](../../CVPR2026/image_restoration/human-centric_multi-exposure_fusion_benchmark_and_bi-level_cognition_distillatio.md)
 - [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](../../CVPR2026/image_restoration/real_iisr_infrared_image_super_resolution_autoregressive.md)
-- [\[ICCV 2025\] Consistent Time-of-Flight Depth Denoising via Graph-Informed Geometric Attention](../../ICCV2025/image_restoration/consistent_time-of-flight_depth_denoising_via_graph-informed_geometric_attention.md)
-- [\[ICCV 2025\] MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration](../../ICCV2025/image_restoration/mp-hsir_a_multi-prompt_framework_for_universal_hyperspectral_image_restoration.md)
 
 </div>
 

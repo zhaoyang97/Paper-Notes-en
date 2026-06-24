@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][GraphRAG] Addressing the contradiction that GraphRAG often underperforms relative to basic RAG on real-world tasks, this paper proposes GraphRAG-Bench. This benchmark covers the entire pipeline from graph construction to retrieval and generation, featuring tasks across four difficulty levels. It systematically answers "when and
+  [ICLR 2026][Information Retrieval & RAG][GraphRAG] Addressing the contradiction that GraphRAG often underperforms relative to basic RAG on real-world tasks, this paper proposes GraphRAG-Bench. This benchmark covers the entire pipeline from graph construction to retrieval and generation, featuring tasks across four difficulty levels. It systematically answers "when and why to use graphs": basic RAG suffices for simple fact retrieval, while graph structures provide substantial…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - GraphRAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "GraphRAG"
+  - "Retrieval-Augmented Generation"
+  - "Benchmark"
+  - "Multi-hop Reasoning"
+  - "Graph-structured Retrieval"
 date: 2026-05-08
-content_hash: af4ee057733ddc71
+content_hash: 4b1b261b2d236ffa
 ---
+
 # When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation
 
 **Conference**: ICLR 2026  
@@ -138,10 +143,10 @@ HippoRAG2 constructs significantly denser graphs, which correlates with higher r
 ## Related Papers
 
 - [\[ICLR 2026\] LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora](linearrag_linear_graph_retrieval_augmented_generation_on_large-scale_corpora.md)
+- [\[ACL 2025\] Pandora's Box or Aladdin's Lamp: A Comprehensive Analysis Revealing the Role of RAG Noise in Large Language Models](../../ACL2025/information_retrieval/pandora_box_rag_noise.md)
 - [\[ICLR 2026\] Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning](youtu-graphrag_vertically_unified_agents_for_graph_retrieval-augmented_complex_r.md)
+- [\[ICLR 2026\] The Topology of Reasoning: Augmenting Generation with Retrieved Cell Complexes for Text-Graph QA](topology_of_reasoning_retrieved_cell_complex-augmented_generation_for_textual_gr.md)
 - [\[ACL 2025\] Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs](../../ACL2025/information_retrieval/gor_rag_long_context_summary.md)
-- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
-- [\[ACL 2026\] Beyond Chunks and Graphs: Retrieval-Augmented Generation through Triplet-Driven Thinking](../../ACL2026/information_retrieval/beyond_chunks_and_graphs_retrieval-augmented_generation_through_triplet-driven_t.md)
 
 </div>
 

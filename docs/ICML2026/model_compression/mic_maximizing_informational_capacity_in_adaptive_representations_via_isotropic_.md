@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MIC: Maximizing Informational Capacity in Adaptive Representations via Isotropic Subspace Alignment
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper proposes MIC, which adds two geometric regularizations—SCR (limiting correlation between prefix/residual subspaces) and SIR (enforcing uniform variance for prefixes + hyperspherical uniformity)—on top of Matryoshka Representation Learning (MRL). This allows the model to maintain high discriminativeness even
+  [ICML 2026][Model Compression][Matryoshka Representations] This paper proposes MIC, which adds two geometric regularizations—SCR (limiting correlation between prefix/residual subspaces) and SIR (enforcing uniform variance for prefixes + hyperspherical uniformity)—on top of Matryoshka Representation Learning (MRL). This allows the model to maintain high discriminativeness even when truncated to extremely low dimensions such as 16/32/64, on average surpassing baselines like MRL…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Matryoshka Representations"
+  - "Embedding Compression"
+  - "Subspace Alignment"
+  - "Spectral Isotropy"
+  - "Self-Distillation"
 date: 2026-05-08
-content_hash: dfe60998d6636bc6
+content_hash: 7b5ab222f6235f28
 ---
+
 # MIC: Maximizing Informational Capacity in Adaptive Representations via Isotropic Subspace Alignment
 
 **Conference**: ICML 2026  
@@ -152,11 +158,11 @@ In high-dimensional regions (256/512/768), MIC is on par with or slightly ahead 
 
 ## Related Papers
 
+- [\[ICLR 2026\] MASS: MoErging through Adaptive Subspace Selection](../../ICLR2026/model_compression/mass_moerging_through_adaptive_subspace_selection.md)
 - [\[ICML 2026\] LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws](llms_as_noisy_channels_a_shannon_perspective_on_model_capacity_and_scaling_laws.md)
-- [\[AAAI 2026\] Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval](../../AAAI2026/model_compression/prototype-based_semantic_consistency_alignment_for_domain_adaptive_retrieval.md)
 - [\[ICML 2026\] Event2Vec: Processing Neuromorphic Events Directly by Representations in Vector Space](event2vec_processing_neuromorphic_events_directly_by_representations_in_vector_s.md)
+- [\[AAAI 2026\] Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval](../../AAAI2026/model_compression/prototype-based_semantic_consistency_alignment_for_domain_adaptive_retrieval.md)
 - [\[CVPR 2026\] UniComp: Rethinking Video Compression Through Informational Uniqueness](../../CVPR2026/model_compression/unicomp_rethinking_video_compression_through_informational_uniqueness.md)
-- [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
 
 </div>
 

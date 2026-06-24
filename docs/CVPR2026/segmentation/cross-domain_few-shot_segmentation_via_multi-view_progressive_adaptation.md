@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] To address the dilemma in Cross-Domain Few-Shot Segmentation (CD-FSS) where "scarcity of target samples + large domain gap weakens the few-shot capability of source models," this paper proposes Multi-view Progressive Adaptation (MPA). It performs "easy-to-hard" adaptation from both **data** and **strategy** perspective
+  [CVPR 2026][Segmentation][Cross-domain few-shot segmentation] To address the dilemma in Cross-Domain Few-Shot Segmentation (CD-FSS) where "scarcity of target samples + large domain gap weakens the few-shot capability of source models," this paper proposes Multi-view Progressive Adaptation (MPA). It performs "easy-to-hard" adaptation from both **data** and **strategy** perspectives—generating increasingly complex multi-views via Hybrid Progressive Augmentation (HPA) and fully…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Cross-domain few-shot segmentation"
+  - "progressive adaptation"
+  - "multi-view"
+  - "cumulative data augmentation"
+  - "dual-chain prediction"
 date: 2026-05-08
-content_hash: 141849b17ad8ce97
+content_hash: 3ff3319e17b616b1
 ---
+
 # Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation
 
 **Conference**: CVPR 2026  
@@ -140,7 +146,7 @@ Augmentation type ablation (Tab.8): Simple 51.3/67.9 → Single complex replacem
 ## Related Papers
 
 - [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
-- [\[CVPR 2026\] PrAda: Few-Shot Visual Adaptation for Text-Prompted Segmentation](prada_few-shot_visual_adaptation_for_text-prompted_segmentation.md)
+- [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](../../AAAI2026/segmentation/bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
 - [\[CVPR 2026\] V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence](v2-sam_marrying_sam2_with_multi-prompt_experts_for_cross-view_object_corresponde.md)
 - [\[CVPR 2025\] The Devil is in Low-Level Features for Cross-Domain Few-Shot Segmentation](../../CVPR2025/segmentation/the_devil_is_in_low-level_features_for_cross-domain_few-shot_segmentation.md)
 - [\[CVPR 2025\] Dual-Agent Optimization framework for Cross-Domain Few-Shot Segmentation](../../CVPR2025/segmentation/dual-agent_optimization_framework_for_cross-domain_few-shot_segmentation.md)

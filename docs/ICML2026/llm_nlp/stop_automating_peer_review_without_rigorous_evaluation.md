@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stop Automating Peer Review Without Rigorous Evaluation
 description: >-
-  [ICML 2026][LLM (Other)][Paper Laundering] This is a position paper: through empirical measurements of real ICLR 2026 reviews and 60 simulated reviews, the authors identify two major failures in current LLM reviewing: the hivemind effect (high convergence) and paper laundering (zero-shot paraphrasing alone can increase scores by 0.45). Consequently, they argue
+  [ICML 2026 Spotlight][LLM (Other)][AI Review] This is a position paper: through empirical measurements of real ICLR 2026 reviews and 60 simulated reviews, the authors identify two major failures in current LLM reviewing: the hivemind effect (high convergence) and paper laundering (zero-shot paraphrasing alone can increase scores by 0.45). Consequently, they argue that "LLMs should not directly generate review comments without rigorous evaluation" and call for the establishmen…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Paper Laundering
+  - "ICML 2026 Spotlight"
+  - "LLM (Other)"
+  - "AI Review"
+  - "Hivemind effect"
+  - "Paper Laundering"
+  - "Algorithmic monoculture"
+  - "Review diversity"
 date: 2026-05-08
-content_hash: 0a17c1c3185de347
+content_hash: b4a766490244d067
 ---
+
 # Stop Automating Peer Review Without Rigorous Evaluation
 
 **Conference**: ICML 2026 Spotlight  

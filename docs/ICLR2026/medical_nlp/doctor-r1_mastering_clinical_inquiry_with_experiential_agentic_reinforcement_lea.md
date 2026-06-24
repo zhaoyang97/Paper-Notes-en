@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning
 description: >-
-  [ICLR 2026][Medical NLP][Agentic RL] Doctor-R1 models outpatient inquiry as a partially observable multi-turn decision-making process. By utilizing a "multi-agent interaction environment + two-level reward architecture + experience memory" for experiential agentic reinforcement learning, an 8B doctor agent learns to ask questions strategically and empathe
+  [ICLR 2026][Medical LLM][Clinical Inquiry] Doctor-R1 models outpatient inquiry as a partially observable multi-turn decision-making process. By utilizing a "multi-agent interaction environment + two-level reward architecture + experience memory" for experiential agentic reinforcement learning, an 8B doctor agent learns to ask questions strategically and empathetically while maintaining diagnostic accuracy. It outperforms 32B open-source models and closed-source models like GP…
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - Agentic RL
-  - GRPO
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Clinical Inquiry"
+  - "Agentic RL"
+  - "Multi-objective Reward"
+  - "Experience Memory"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 316fb73c1d630950
+content_hash: 9084ace2dceacdbc
 ---
+
 # Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -149,9 +153,9 @@ Doctor-R1 8B outperforms Baichuan-M2-32B (which is 4x larger) on average (36.29 
 
 - [\[ACL 2026\] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](../../ACL2026/medical_nlp/dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)
 - [\[ACL 2026\] RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings](../../ACL2026/medical_nlp/rads_reinforcement_learning-based_sample_selection_improves_transfer_learning_in.md)
-- [\[ICLR 2026\] GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine](galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra.md)
 - [\[ACL 2026\] CURE-Med: Curriculum-Informed Reinforcement Learning for Multilingual Medical Reasoning](../../ACL2026/medical_nlp/cure-med_curriculum-informed_reinforcement_learning_for_multilingual_medical_rea.md)
 - [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](../../ACL2026/medical_nlp/eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
+- [\[ICLR 2026\] GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine](galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra.md)
 
 </div>
 

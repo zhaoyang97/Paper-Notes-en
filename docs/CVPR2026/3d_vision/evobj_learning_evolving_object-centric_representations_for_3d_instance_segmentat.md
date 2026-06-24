@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the issue where "synthetic object priors cannot generalize to real-world scans" in unsupervised 3D instance segmentation, EvObj integrates two modules into the RL discovery framework of GrabS: an identification network that evolves throughout the discovery process and a point cloud completion network to reco
+  [CVPR 2026][3D Vision][Unsupervised 3D Instance Segmentation] Addressing the issue where "synthetic object priors cannot generalize to real-world scans" in unsupervised 3D instance segmentation, EvObj integrates two modules into the RL discovery framework of GrabS: an identification network that evolves throughout the discovery process and a point cloud completion network to recover partial candidates. By adapting synthetic priors to real-world point clouds…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Unsupervised 3D Instance Segmentation"
+  - "Object-centric Prior"
+  - "Domain Gap"
+  - "Candidate Evolution"
+  - "Point Cloud Completion"
 date: 2026-05-08
-content_hash: bb4d5b6593598eb4
+content_hash: ac2dc9a092e1fd81
 ---
+
 # EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ On the ScanNet hidden test set, EvObj-VAE achieves an AP of 34.0, nearly matchin
 
 ## Related Papers
 
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
-- [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
-- [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
+- [\[CVPR 2026\] 2D-LFM: Lifting Foundation Model without 3D Supervision](2d-lfm_lifting_foundation_model_without_3d_supervision.md)
+- [\[CVPR 2026\] CrossHOI: Learning Cross-View Representations for Monocular 3D Human-Object Interaction Reconstruction](crosshoi_learning_cross-view_representations_for_monocular_3d_human-object_inter.md)
+- [\[CVPR 2026\] Towards Foundation Models for 3D Scene Understanding: Instance-Aware Self-Supervised Learning for Point Clouds](towards_foundation_models_for_3d_scene_understanding_instance-aware_self-supervi.md)
+- [\[CVPR 2025\] Sketchy Bounding-Box Supervision for 3D Instance Segmentation](../../CVPR2025/3d_vision/sketchy_bounding-box_supervision_for_3d_instance_segmentation.md)
+- [\[CVPR 2026\] Grounded Latents for Entity-Centric 4D Scene Generation](grounded_latents_for_entity-centric_4d_scene_generation.md)
 
 </div>
 

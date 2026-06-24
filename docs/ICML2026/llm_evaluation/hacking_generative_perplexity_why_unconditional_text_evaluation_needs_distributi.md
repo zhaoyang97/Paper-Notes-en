@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Hacking Generative Perplexity: Why Unconditional Text Evaluation Needs Distributional Metrics
 description: >-
-  [ICML 2026][LLM Evaluation][Diffusion Language Model] This work demonstrates that the generative perplexity (gen-PPL, i.e., the per-token negative log-likelihood of samples under a frozen AR scorer like gpt2-large)—the almost exclusively relied-upon metric for current diffusion/continuous flow language models—is **unreliable**. The authors use a set of **zero-parameter, i
+  [ICML 2026][LLM Evaluation][Generative Perplexity] This work demonstrates that the generative perplexity (gen-PPL, i.e., the per-token negative log-likelihood of samples under a frozen AR scorer like gpt2-large)—the almost exclusively relied-upon metric for current diffusion/continuous flow language models—is **unreliable**. The authors use a set of **zero-parameter, intentionally nonsensical samplers** (structurally incoherent by construction) to achieve "SOTA gen-PPL" on LM…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - Diffusion Language Model
-  - MAUVE
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Generative Perplexity"
+  - "Evaluation Metrics"
+  - "Diffusion Language Models"
+  - "Distributional Distance"
+  - "MAUVE"
 date: 2026-05-08
-content_hash: c85621926eefffea
+content_hash: dff041eeb36405ff
 ---
+
 # Hacking Generative Perplexity: Why Unconditional Text Evaluation Needs Distributional Metrics
 
 **Conference**: ICML 2026  
@@ -125,14 +129,17 @@ Comparison of the discriminative power of different metrics between "trained mod
 
 <div class="related-papers" markdown="1">
 
-- 2024. [Diffusion Models for Text Generation](https://arxiv.org/abs/2400.00000)
-- 2021. [MAUVE: Measuring the Gap Between Neural Text and Human Text using Divergence Frontiers](https://arxiv.org/abs/2102.01454)
-- 2023. [SEDD: Discrete Diffusion via Score-based Generative Modeling](https://arxiv.org/abs/2311.13540)
+## Related Papers
+
+- [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](../../ACL2026/llm_evaluation/comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
+- [\[ICML 2026\] Rethinking Psychometric Evaluation of LLMs: When and Why Self-Reports Predict Behavior](rethinking_psychometric_evaluation_of_llms_when_and_why_self-reports_predict_beh.md)
+- [\[ICLR 2026\] Mapping Overlaps in Benchmarks through Perplexity in the Wild](../../ICLR2026/llm_evaluation/mapping_overlaps_in_benchmarks_through_perplexity_in_the_wild.md)
+- [\[ICCV 2025\] Generative Zoo](../../ICCV2025/llm_evaluation/generative_zoo.md)
+- [\[ICML 2026\] Nonparametric LLM Evaluation from Preference Data](nonparametric_llm_evaluation_from_preference_data.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](../../ACL2026/llm_evaluation/comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)

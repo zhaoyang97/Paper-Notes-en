@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FSLoRA: Harmonizing Detection and Re-Identification via Freq-Spatial Low-Rank Adapter for One-Stage Person Search
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] FSLoRA utilizes LoRA as a "layer-wise feature decoupler" integrated into the entire backbone. By employing Spatial MoE Routing (SLM) and Frequency-domain decomposition (FLM), the model separates shared detection features and ReID identity features at the bottom layers. This plug-and-play approach achieves new SOTA perf
+  [CVPR 2026][Object Detection][Person Search] FSLoRA utilizes LoRA as a "layer-wise feature decoupler" integrated into the entire backbone. By employing Spatial MoE Routing (SLM) and Frequency-domain decomposition (FLM), the model separates shared detection features and ReID identity features at the bottom layers. This plug-and-play approach achieves new SOTA performance across multiple one-stage person search frameworks with <2% additional parameters.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Person Search"
+  - "Detection-ReID Conflict"
+  - "LoRA Adapter"
+  - "Mixture of Experts"
+  - "Frequency Domain Decoupling"
 date: 2026-05-08
-content_hash: 71c79493eb79b7c5
+content_hash: 6e0e829404f29266
 ---
+
 # FSLoRA: Harmonizing Detection and Re-Identification via Freq-Spatial Low-Rank Adapter for One-Stage Person Search
 
 **Conference**: CVPR 2026  
@@ -149,6 +155,7 @@ FLM Positioning (PRW):
 - **Value**: ⭐⭐⭐⭐ (Practical plug-and-play module for one-stage person search).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

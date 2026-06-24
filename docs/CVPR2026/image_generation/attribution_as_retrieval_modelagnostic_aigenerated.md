@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution
 description: >-
-  [CVPR 2026][Image Generation][deepfake attribution] The attribution of AI-generated images is redefined from a classification paradigm to an instance retrieval paradigm. A model-agnostic framework, LIDA, based on low-bit plane fingerprints is proposed. Through unsupervised pre-training and few-shot attribution adaptation, SOTA performance in Deepfake detection and image
+  [CVPR 2026][Image Generation][deepfake attribution] The attribution of AI-generated images is redefined from a classification paradigm to an instance retrieval paradigm. A model-agnostic framework, LIDA, based on low-bit plane fingerprints is proposed. Through unsupervised pre-training and few-shot attribution adaptation, SOTA performance in Deepfake detection and image attribution is achieved under zero-shot and few-shot settings.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - deepfake attribution
-  - image retrieval
-  - bit-plane
-  - model-agnostic
-  - few-shot
+  - "CVPR 2026"
+  - "Image Generation"
+  - "deepfake attribution"
+  - "image retrieval"
+  - "bit-plane"
+  - "model-agnostic"
+  - "few-shot"
 date: 2026-05-08
-content_hash: 0754c89c1ed0167f
+content_hash: 0475a43c907974e5
 ---
+
 # Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution
 
 **Conference**: CVPR 2026  

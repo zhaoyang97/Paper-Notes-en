@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Partial Weakly-Supervised Oriented Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper introduces the new setting of "Partial Weakly-Supervised Oriented Object Detection (PWOOD)"—utilizing only a small amount of weak annotations (Horizontal Boxes or single points) combined with a large amount of unlabeled data. By employing a teacher-student framework (OS-Student) capable of learning orientati
+  [CVPR 2026][Object Detection][Oriented object detection] This paper introduces the new setting of "Partial Weakly-Supervised Oriented Object Detection (PWOOD)"—utilizing only a small amount of weak annotations (Horizontal Boxes or single points) combined with a large amount of unlabeled data. By employing a teacher-student framework (OS-Student) capable of learning orientation and scale from weak labels and a Class-agnostic Pseudo-label Filtering (CPF) mechanism based on Gaus…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Oriented object detection"
+  - "partial weakly-supervised"
+  - "teacher-student framework"
+  - "pseudo-label filtering"
+  - "annotation cost"
 date: 2026-05-08
-content_hash: 53ceb2fa5619d9ed
+content_hash: c10ad0d3fdc2efb9
 ---
+
 # Partial Weakly-Supervised Oriented Object Detection
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,14 @@ PWOOD using **HBox** equals or surpasses the SOOD baseline using expensive rotat
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection](../../ICLR2026/object_detection/spwood_sparse_partial_weakly-supervised_oriented_object_detection.md)
 - [\[CVPR 2026\] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](fourier_angle_alignment_for_oriented_object_detection_in_remote_sensing.md)
-- [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting (WS-COC)](../../ICLR2026/object_detection/bootstrapping_mllm_for_weakly-supervised_class-agnostic_object_counting.md)
+- [\[CVPR 2026\] Expert-Teacher-Student Collaborative Learning for Domain Adaptive Object Detection](expert-teacher-student_collaborative_learning_for_domain_adaptive_object_detecti.md)
+- [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting](../../ICLR2026/object_detection/bootstrapping_mllm_for_weaklysupervised_classagnostic_object_counting.md)
 - [\[CVPR 2026\] From Detection to Association: Learning Discriminative Object Embeddings for Multi-Object Tracking](from_detection_to_association_learning_discriminative_object_embeddings_for_mult.md)
-- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
 
 </div>
 

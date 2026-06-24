@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ActiShade: Activating Overshadowed Knowledge to Guide Multi-Hop Reasoning in Large Language Models
 description: >-
-  [AAAI 2026][LLM Reasoning][Knowledge Overshadowing] This paper proposes ActiShade, a framework that detects "overshadowed" key phrases in LLM multi-hop reasoning via Gaussian noise perturbation…
+  [AAAI 2026][Reasoning][Knowledge Overshadowing] This paper proposes ActiShade, a framework that detects "overshadowed" key phrases in LLM multi-hop reasoning via Gaussian noise perturbation, retrieves supplementary documents using a customized contrastive learning retriever, and iteratively reformulates queries to mitigate error accumulation caused by knowledge overshadowing. ActiShade significantly outperforms DRAGIN and other state-of-the-art methods on HotpotQA, 2WikiMQA…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Knowledge Overshadowing"
   - "Multi-Hop Reasoning"
   - "Retrieval-Augmented Generation"
   - "Gaussian Perturbation Detection"
   - "Contrastive Learning Retriever"
 date: 2026-05-08
-content_hash: 128fe46d411d4354
+content_hash: dc611e12ce306d81
 ---
 
 # ActiShade: Activating Overshadowed Knowledge to Guide Multi-Hop Reasoning in Large Language Models
@@ -126,8 +126,8 @@ The fine-grained three-level contrastive loss design (positive/semi-positive/neg
 - [\[AAAI 2026\] The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models](the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua.md)
 - [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
 - [\[ACL 2026\] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck](../../ACL2026/llm_reasoning/failure_modes_in_multi-hop_qa_the_weakest_link_effect_and_the_recognition_bottle.md)
-- [\[ICML 2026\] Reasoning Structure of Large Language Models](../../ICML2026/llm_reasoning/reasoning_structure_of_large_language_models.md)
 - [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
+- [\[ICML 2026\] Reasoning Structure of Large Language Models](../../ICML2026/llm_reasoning/reasoning_structure_of_large_language_models.md)
 
 </div>
 

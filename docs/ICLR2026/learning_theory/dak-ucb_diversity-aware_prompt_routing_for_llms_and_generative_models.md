@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DAK-UCB: Diversity-Aware Prompt Routing for LLMs and Generative Models
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes DAK-UCB, an online model selection algorithm that explicitly incorporates "diversity" into Kernelized UCB contextual bandits. By using joint kernel scores (JKD / I-JRKE) that can be decomposed into two-sample expectations as diversity rewards, it balances fidelity and diversity when routing generati
+  [ICLR 2026][Learning Theory][Kernelized UCB] This paper proposes DAK-UCB, an online model selection algorithm that explicitly incorporates "diversity" into Kernelized UCB contextual bandits. By using joint kernel scores (JKD / I-JRKE) that can be decomposed into two-sample expectations as diversity rewards, it balances fidelity and diversity when routing generative models for a stream of prompts, providing regret bound guarantees.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Contextual Bandits"
+  - "Generative Model Selection"
+  - "Kernelized UCB"
+  - "Diversity Metrics"
+  - "Prompt Routing"
 date: 2026-05-08
-content_hash: ff4365027ffd5ae5
+content_hash: 7bec6fd33e681dc3
 ---
+
 # DAK-UCB: Diversity-Aware Prompt Routing for LLMs and Generative Models
 
 **Conference**: ICLR 2026  

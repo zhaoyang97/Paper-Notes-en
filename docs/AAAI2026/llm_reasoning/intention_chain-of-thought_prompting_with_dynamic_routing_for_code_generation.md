@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation
 description: >-
-  [AAAI 2026][LLM Reasoning][Intention Chain] This paper proposes RoutingGen — a difficulty-aware code generation framework grounded in the principle of cognitive economy. A Qwen3-8B classifier dynamically routes tasks to…
+  [AAAI 2026][Reasoning][Intention Chain] This paper proposes RoutingGen — a difficulty-aware code generation framework grounded in the principle of cognitive economy. A Qwen3-8B classifier dynamically routes tasks to either a simple path (few-shot direct generation) or a complex path (Intention CoT = specification constraints + algorithmic intent + complexity analysis), achieving a +45.15% improvement on McEval while reducing average token consumption by 46.37%.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Intention Chain"
   - "Dynamic Routing"
   - "Code Generation"
   - "Cognitive Economy"
   - "Difficulty-Awareness"
 date: 2026-05-08
-content_hash: d635201058fe8ab3
+content_hash: aed0ee54e60d4a08
 ---
 
 # Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation
@@ -126,10 +126,10 @@ An input programming problem is fed to a Qwen3-8B difficulty classifier (Simple/
 ## Related Papers
 
 - [\[AAAI 2026\] RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation](rpm-mcts_knowledge-retrieval_as_process_reward_model_with_monte_carlo_tree_searc.md)
+- [\[ECCV 2024\] Controllable Navigation Instruction Generation with Chain of Thought Prompting](../../ECCV2024/llm_reasoning/controllable_navigation_instruction_generation_with_chain_of_thought_prompting.md)
 - [\[ICLR 2026\] String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation](../../ICLR2026/llm_reasoning/string_seed_of_thought_prompting_llms_for_distribution-faithful_and_diverse_gene.md)
 - [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](../../ACL2026/llm_reasoning/learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
 - [\[AAAI 2026\] Deep Hidden Cognition Facilitates Reliable Chain-of-Thought Reasoning](deep_hidden_cognition_facilitates_reliable_chain-of-thought_.md)
-- [\[AAAI 2026\] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models](chain-of-thought_driven_adversarial_scenario_extrapolation_for_robust_language_m.md)
 
 </div>
 

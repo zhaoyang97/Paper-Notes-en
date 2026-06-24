@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement
 description: >-
-  [NeurIPS 2025][Image Restoration][UHD Image Restoration] This paper proposes Latent Harmony, a two-stage framework that constructs a generalizable VAE (LH-VAE) via latent space regularization…
+  [NeurIPS 2025][Image Restoration][UHD Image Restoration] This paper proposes Latent Harmony, a two-stage framework that constructs a generalizable VAE (LH-VAE) via latent space regularization, and introduces a high-frequency-guided controllable LoRA fine-tuning mechanism, achieving flexible fidelity-perceptual quality trade-offs in unified multi-degradation UHD image restoration while preserving structural integrity.
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Fidelity-Perceptual Quality Trade-off"
   - "All-in-One"
 date: 2026-05-08
-content_hash: b50707a111e2575b
+content_hash: db6b08fc3f46fae3
 ---
 
 # Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement

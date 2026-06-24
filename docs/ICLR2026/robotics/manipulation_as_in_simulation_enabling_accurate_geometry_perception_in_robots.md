@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Manipulation as in Simulation: Enabling Accurate Geometry Perception in Robots
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][sim-to-real] This paper proposes camera-specific Camera Depth Models (CDM) to calibrate noisy RGB-D inputs from real depth cameras into high-quality metric depth similar to simulation. This allows robotic manipulation policies trained solely on clean simulation depth to transfer to real-world long-horizon tasks with zero fine-tunin
+  [ICLR 2026][Robotics][Robotic Manipulation] This paper proposes camera-specific Camera Depth Models (CDM) to calibrate noisy RGB-D inputs from real depth cameras into high-quality metric depth similar to simulation. This allows robotic manipulation policies trained solely on clean simulation depth to transfer to real-world long-horizon tasks with zero fine-tuning.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - sim-to-real
+  - "ICLR 2026"
+  - "Robotics"
+  - "Robotic Manipulation"
+  - "Depth Camera"
+  - "Metric Depth Estimation"
+  - "sim-to-real"
+  - "Geometric Perception"
 date: 2026-05-08
-content_hash: a375b526dc8f4b28
+content_hash: fe12369408f142fe
 ---
+
 # Manipulation as in Simulation: Enabling Accurate Geometry Perception in Robots
 
 **Conference**: ICLR 2026  
@@ -139,6 +144,7 @@ In real robot tasks, raw depth baseline often results in total failure, whereas 
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical; provides a clean geometric entry point for simulation-trained policies.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -146,8 +152,8 @@ In real robot tasks, raw depth baseline often results in total failure, whereas 
 - [\[CVPR 2026\] CycleManip: Enabling Cycle-based Manipulation via Effective History Perception and Understanding](../../CVPR2026/robotics/cyclemanip_enabling_cycle-based_manipulation_via_effective_history_perception_an.md)
 - [\[ICLR 2026\] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots](robocasa365_a_large-scale_simulation_framework_for_training_and_benchmarking_gen.md)
 - [\[ICLR 2026\] Geometry-Aware Policy Imitation](geometry-aware_policy_imitation.md)
-- [\[CVPR 2026\] GeoPredict: Leveraging Predictive Kinematics and 3D Gaussian Geometry for Precise VLA Manipulation](../../CVPR2026/robotics/geopredict_leveraging_predictive_kinematics_and_3d_gaussian_geometry_for_precise.md)
 - [\[ICLR 2026\] Virtual Community: An Open World for Humans, Robots, and Society](virtual_community_an_open_world_for_humans_robots_and_society.md)
+- [\[ICLR 2026\] UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos](urbanverse_scaling_urban_simulation_by_watching_city-tour_videos.md)
 
 </div>
 

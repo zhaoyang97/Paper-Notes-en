@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Language-Free Generative Editing from One Visual Example
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] This paper reveals that text-guided diffusion models suffer from severe text-visual alignment failures regarding simple visual transformations such as rain, fog, and blur. It proposes the VDC framework, which learns pure visual conditioning signals to guide diffusion editing using only a single pair of visual examples
+  [CVPR 2026][Image Generation][Image Editing] This paper reveals that text-guided diffusion models suffer from severe text-visual alignment failures regarding simple visual transformations such as rain, fog, and blur. It proposes the VDC framework, which learns pure visual conditioning signals to guide diffusion editing using only a single pair of visual examples (before and after transformation). The method requires no text and no training, surpassing both text-based and fine…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Diffusion Models"
+  - "Visual Conditioning"
+  - "Language-Free"
+  - "Training-Free"
 date: 2026-05-08
-content_hash: 7df48d55e7be49a2
+content_hash: 71e06b14c8386d91
 ---
+
 # Language-Free Generative Editing from One Visual Example
 
 **Conference**: CVPR 2026  
@@ -144,9 +148,9 @@ Ours (VDC) sets new SOTAs across all 6 benchmarks, surpassing training-free and 
 
 - [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
 - [\[CVPR 2026\] VisionDirector: Vision-Language Guided Closed-Loop Refinement for Generative Image Synthesis](visiondirector_vision-language_guided_closed-loop_refinement_for_generative_imag.md)
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
 - [\[CVPR 2026\] Group Editing: Edit Multiple Images in One Go](group_editing_edit_multiple_images_in_one_go.md)
 - [\[CVPR 2026\] Evaluating Generative Models via One-Dimensional Code Distributions](evaluating_generative_models_via_one-dimensional_code_distributions.md)
-- [\[CVPR 2026\] Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge](quantization_with_unified_adaptive_distillation_to_enable_multi-lora_based_one-f.md)
 
 </div>
 

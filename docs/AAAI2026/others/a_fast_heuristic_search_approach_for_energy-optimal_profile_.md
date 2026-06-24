@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles
 description: >-
-  [AAAI 2026][Electric vehicle routing] This paper proposes Pr-A*, a label-setting method based on multi-objective A* search for efficiently solving energy-optimal profile routing for electric vehicles (EVs) when the initi…
+  [AAAI 2026][Electric vehicle routing] This paper proposes Pr-A*, a label-setting method based on multi-objective A* search for efficiently solving energy-optimal profile routing for electric vehicles (EVs) when the initial state of charge (SoC) is unknown. By using profile dominance pruning, the method avoids the complex profile merge operations required by traditional approaches, achieving performance close to standard A* with known initial SoC on large-scale road networks.
 tags:
   - "AAAI 2026"
   - "Electric vehicle routing"
@@ -11,7 +11,7 @@ tags:
   - "energy profile"
   - "multi-objective search"
 date: 2026-05-08
-content_hash: 676b006173c20bb2
+content_hash: 2ed59fedb7b958db
 ---
 
 # A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles
@@ -111,10 +111,10 @@ Experiments use 10 DIMACS large-scale road networks (the largest, Central USA, c
 ## Related Papers
 
 - [\[AAAI 2026\] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach](approximation_algorithm_for_constrained_k-center_clustering_.md)
-- [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
 - [\[AAAI 2026\] PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks](piphen_physical_interaction_prediction_with_hamiltonian_energy_networks.md)
-- [\[AAAI 2026\] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach](variance_computation_for_weighted_model_counting_with_knowledge_compilation_appr.md)
+- [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
 - [\[AAAI 2026\] Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets](intermediate_n-gramming_deterministic_and_fast_n-grams_for_large_n_and_large_dat.md)
+- [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
 
 </div>
 

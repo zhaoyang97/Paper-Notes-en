@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Depth Any Endoscopy: Towards Self-Supervised Generalizable Depth Estimation in Monocular Endoscopy
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] DAE transforms a Vision Foundation Model (Depth Anything v2) into a unified self-supervised endoscopic depth network through "Dual-layer MoE adaptation + Learnable Gradient Harmonization + Semantic Distribution Calibration." Without depth annotations, it achieves State-of-the-Art (SOTA) performance in both zero-shot an
+  [CVPR 2026][Medical Imaging][Endoscopic depth estimation] DAE transforms a Vision Foundation Model (Depth Anything v2) into a unified self-supervised endoscopic depth network through "Dual-layer MoE adaptation + Learnable Gradient Harmonization + Semantic Distribution Calibration." Without depth annotations, it achieves State-of-the-Art (SOTA) performance in both zero-shot and in-domain depth estimation across diverse procedures like laparoscopy and colonoscopy.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Endoscopic depth estimation"
+  - "self-supervised"
+  - "cross-domain generalization"
+  - "Mixture-of-Experts (MoE)"
+  - "Vision Foundation Model (VFM) adaptation"
 date: 2026-05-08
-content_hash: 35c6f1fcbf1301ec
+content_hash: 75f980d16b69f8b6
 ---
+
 # Depth Any Endoscopy: Towards Self-Supervised Generalizable Depth Estimation in Monocular Endoscopy
 
 **Conference**: CVPR 2026  
@@ -170,15 +176,16 @@ Component-wise analysis (SCARED, ID 0 is vanilla-LoRA baseline):
 - Value: ⭐⭐⭐⭐⭐ High clinical value for navigation/reconstruction using a unified model without needing ground-truth depth.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Real2Sim2Real: RetinalDepth-64K for Depth Estimation in Posterior Segment Ophthalmic Surgery](real2sim2real_retinaldepth-64k_for_depth_estimation_in_posterior_segment_ophthal.md)
+- [\[CVPR 2026\] SPECTRE: Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers](scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
 - [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
 - [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
-- [\[CVPR 2026\] Virtual Full-stack Scanning of Brain MRI via Imputing Any Quantised Code](virtual_full-stack_scanning_of_brain_mri_via_imputing_any_quantised_code.md)
-- [\[CVPR 2026\] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training](invcoss_inversion-driven_continual_self-supervised_learning_in_medical_multi-mod.md)
+- [\[CVPR 2026\] Virtual Full-stack Scanning of Brain MRI via Imputing Any Quantized Code](virtual_full-stack_scanning_of_brain_mri_via_imputing_any_quantised_code.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] In the context of online 3DGS reconstruction for streaming dynamic scenes, MoRGS explicitly supervises "per-Gaussian motion" using sparse key-view optical flow. It overlays a learnable per-Gaussian motion offset field to correct view inconsistencies in sparse flow and utilizes per-Gaussian motion confidence to apply re
+  [CVPR 2026][3D Vision][Online 4D Reconstruction] In the context of online 3DGS reconstruction for streaming dynamic scenes, MoRGS explicitly supervises "per-Gaussian motion" using sparse key-view optical flow. It overlays a learnable per-Gaussian motion offset field to correct view inconsistencies in sparse flow and utilizes per-Gaussian motion confidence to apply residual updates only to truly moving Gaussians. This approach achieves state-of-the-art (SOTA) rendering quality…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Online 4D Reconstruction"
+  - "Gaussian Splatting"
+  - "Per-Gaussian Motion"
+  - "Optical Flow Supervision"
+  - "Streaming Reconstruction"
 date: 2026-05-08
-content_hash: 2d9b9cb60ab34ad6
+content_hash: 4cf2852852da1a54
 ---
+
 # MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes
 
 **Conference**: CVPR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stabilizing Self-Consuming Diffusion Models with Latent Space Filtering
 description: >-
-  [AAAI2026][Image Generation][self-consuming training] This paper proposes Latent Space Filtering (LSF), a method that analyzes the degradation of low-dimensional structure in the latent representations of self-consuming…
+  [AAAI2026][Image Generation][self-consuming training] This paper proposes Latent Space Filtering (LSF), a method that analyzes the degradation of low-dimensional structure in the latent representations of self-consuming diffusion models and uses confidence scores from a probing classifier to filter low-quality synthetic data. Under a fixed training budget, LSF effectively mitigates model collapse without requiring additional real data or an enlarged training set.
 tags:
   - "AAAI2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "latent space filtering"
   - "data quality"
 date: 2026-05-08
-content_hash: 1f46d9c6310132c7
+content_hash: ca6a558794a5adf5
 ---
 
 # Stabilizing Self-Consuming Diffusion Models with Latent Space Filtering
@@ -162,11 +162,11 @@ The latent space quality assessment paradigm can be generalized to self-consumin
 
 ## Related Papers
 
-- [\[ICCV 2025\] What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization](../../ICCV2025/image_generation/whats_in_a_latent_leveraging_diffusion_latent_space_for_domain_generalization.md)
-- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](../../ICLR2026/image_generation/generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
-- [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](../../CVPR2026/image_generation/dip_taming_diffusion_models_in_pixel_space.md)
-- [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
-- [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](../../CVPR2026/image_generation/self-corrected_image_generation_with_explainable_latent_rewards.md)
+- [\[ICML 2026\] Evaluating the Representation Space of Diffusion Models via Self-Supervised Principles](../../ICML2026/image_generation/evaluating_the_representation_space_of_diffusion_models_via_self-supervised_prin.md)
+- [\[ICLR 2026\] Adapting Self-Supervised Representations as a Latent Space for Efficient Generation](../../ICLR2026/image_generation/adapting_self-supervised_representations_as_a_latent_space_for_efficient_generat.md)
+- [\[CVPR 2026\] Latent Diffusion Inversion Requires Understanding the Latent Space](../../CVPR2026/image_generation/latent_diffusion_inversion_requires_understanding_the_latent_space.md)
+- [\[ICML 2025\] Hessian Geometry of Latent Space in Generative Models](../../ICML2025/image_generation/hessian_geometry_of_latent_space_in_generative_models.md)
+- [\[CVPR 2025\] Probability Density Geodesics in Image Diffusion Latent Space](../../CVPR2025/image_generation/probability_density_geodesics_in_image_diffusion_latent_space.md)
 
 </div>
 

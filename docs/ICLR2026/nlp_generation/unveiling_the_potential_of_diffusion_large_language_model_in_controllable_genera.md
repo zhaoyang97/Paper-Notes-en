@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation
 description: >-
-  [ICLR 2026][Text Generation][Schema Scaffolding] This paper proposes **Self-adaptive Schema Scaffolding (S3)**—a training-free method that injects a structure template (schema) as a "semi-denoised initial state" directly into the output context of a Diffusion Large Language Model (dLLM). Augmented with `null` placeholders for adaptive length, S3 allows dLLMs to stabl
+  [ICLR 2026][Text Generation][Diffusion Large Language Model] This paper proposes **Self-adaptive Schema Scaffolding (S3)**—a training-free method that injects a structure template (schema) as a "semi-denoised initial state" directly into the output context of a Diffusion Large Language Model (dLLM). Augmented with `null` placeholders for adaptive length, S3 allows dLLMs to stably generate valid structured outputs like JSON with fewer denoising steps. It improves structure com…
 tags:
-  - ICLR 2026
-  - Text Generation
-  - Schema Scaffolding
+  - "ICLR 2026"
+  - "Text Generation"
+  - "Diffusion Large Language Model"
+  - "Controllable Generation"
+  - "Structured Output"
+  - "Schema Scaffolding"
+  - "Training-free"
 date: 2026-05-08
-content_hash: be38708d8e37edc1
+content_hash: 4f3e04f7258fbbec
 ---
+
 # Unveiling the Potential of Diffusion Large Language Model in Controllable Generation
 
 **Conference**: ICLR 2026  
@@ -144,8 +149,8 @@ Comparing progressively enhanced baselines across different steps (Table 2, exce
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
 - [\[ACL 2025\] Unveiling Attractor Cycles in Large Language Models: A Dynamical Systems View of Successive Paraphrasing](../../ACL2025/nlp_generation/unveiling_attractor_cycles_in_large_language_models_a_dynamical_systems_view_of_.md)
 - [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/nlp_generation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
+- [\[ICLR 2026\] Planner Aware Path Learning in Diffusion Language Models Training](planner_aware_path_learning_in_diffusion_language_models_training.md)
 - [\[ICLR 2026\] Rainbow Padding: Mitigating Early Termination in Instruction-Tuned Diffusion LLMs](rainbow_padding_mitigating_early_termination_in_instruction-tuned_diffusion_llms.md)
-- [\[ACL 2026\] Difficulty-Controllable Cloze Question Distractor Generation](../../ACL2026/nlp_generation/difficulty-controllable_cloze_question_distractor_generation.md)
 
 </div>
 

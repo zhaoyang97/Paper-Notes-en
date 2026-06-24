@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Test-time Ego-Exo-centric Adaptation for Action Anticipation via Multi-Label Prototype Growing and Dual-Clue Consistency
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][test-time adaptation] This work identifies the Test-time Ego-Exo Adaptation for Action Anticipation (TE2A3) task for the first time. It proposes the DCPGN network, which utilizes multi-label prototype growing and dual-clue (visual + textual) consistency to adapt a model trained on a source view to a target view online during inference, sign
+  [CVPR2026][Robotics][test-time adaptation] This work identifies the Test-time Ego-Exo Adaptation for Action Anticipation (TE2A3) task for the first time. It proposes the DCPGN network, which utilizes multi-label prototype growing and dual-clue (visual + textual) consistency to adapt a model trained on a source view to a target view online during inference, significantly outperforming existing TTA methods.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - test-time adaptation
-  - Ego-Exo
-  - Action Anticipation
-  - Multi-Label
-  - Prototype Learning
-  - CLIP
+  - "CVPR2026"
+  - "Robotics"
+  - "test-time adaptation"
+  - "Ego-Exo"
+  - "Action Anticipation"
+  - "Multi-Label"
+  - "Prototype Learning"
+  - "CLIP"
+  - "Dual-Clue Consistency"
 date: 2026-05-08
-content_hash: 0c75ed67d567b0d3
+content_hash: c8341c77f39ad099
 ---
+
 # Test-time Ego-Exo-centric Adaptation for Action Anticipation via Multi-Label Prototype Growing and Dual-Clue Consistency
 
 **Conference**: CVPR2026  
@@ -156,11 +158,11 @@ ML-PGM adds almost zero computational overhead, and the narrator is extremely li
 
 ## Related Papers
 
-- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
 - [\[CVPR 2026\] Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency](learning_a_unified_latent_action_space_from_videos_with_action-centric_cycle_con.md)
+- [\[ICLR 2026\] VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models](../../ICLR2026/robotics/vita_zero-shot_value_functions_via_test-time_adaptation_of_visionlanguage_models.md)
 - [\[CVPR 2026\] Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models](test-time_perturbation_tuning_with_delayed_feedback_for_vision-language-action_m.md)
-- [\[CVPR 2026\] Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation](global_prior_meets_local_consistency_dual-memory_augmented_vision-language-actio.md)
-- [\[ICCV 2025\] PacGDC: Label-Efficient Generalizable Depth Completion with Projection Ambiguity and Consistency](../../ICCV2025/robotics/pacgdc_label-efficient_generalizable_depth_completion_with_projection_ambiguity_.md)
+- [\[ICLR 2026\] Verifier-Free Test-Time Sampling for Vision-Language-Action Models](../../ICLR2026/robotics/verifier-free_test-time_sampling_for_vision-language-action_models.md)
+- [\[ICML 2026\] Test-Time Training for Visual Foresight Vision-Language-Action Models](../../ICML2026/robotics/test-time_training_for_visual_foresight_vision-language-action_models.md)
 
 </div>
 

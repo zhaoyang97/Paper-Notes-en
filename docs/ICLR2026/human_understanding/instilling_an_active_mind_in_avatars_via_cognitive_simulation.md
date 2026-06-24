@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Instilling an Active Mind in Avatars via Cognitive Simulation
 description: >-
-  [ICLR 2026][Human Understanding][Video Avatar] This paper attributes the "monotonous lip-syncing and movements" of digital humans to the exclusive simulation of human "System 1 (Fast Thinking)." It proposes using an MLLM agent as "System 2 (Slow Thinking)" to generate high-level semantic plans. Furthermore, a symmetric MMDiT with a Pseudo Last Frame is designed to
+  [ICLR 2026][Human Understanding][Video Avatar] This paper attributes the "monotonous lip-syncing and movements" of digital humans to the exclusive simulation of human "System 1 (Fast Thinking)." It proposes using an MLLM agent as "System 2 (Slow Thinking)" to generate high-level semantic plans. Furthermore, a symmetric MMDiT with a Pseudo Last Frame is designed to integrate text, audio, and image modalities without conflict, enabling avatars to achieve accurate lip-syncing al…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Video Avatar
-  - Audio-Driven Animation
-  - MLLM Agent
-  - System 1/System 2
-  - MMDiT
-  - Pseudo Last Frame
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Video Avatar"
+  - "Audio-Driven Animation"
+  - "MLLM Agent"
+  - "System 1/System 2"
+  - "MMDiT"
+  - "Pseudo Last Frame"
 date: 2026-05-08
-content_hash: 2f751348eddd6c48
+content_hash: bbfa8f90a7f1f85d
 ---
+
 # Instilling an Active Mind in Avatars via Cognitive Simulation
 
 **Conference**: ICLR 2026  

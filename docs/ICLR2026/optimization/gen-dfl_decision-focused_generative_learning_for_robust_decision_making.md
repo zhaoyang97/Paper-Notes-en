@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Gen-DFL: Decision-Focused Generative Learning for Robust Decision Making
 description: >-
-  [ICLR 2026][Optimization & Theory][Generative Model] Gen-DFL replaces the traditional "point prediction" in Decision-Focused Learning (DFL) with a conditional generative model. This allows the model to directly learn the full conditional distribution of optimization parameters and sample from high-risk tail regions. By using a CVaR objective for end-to-end training, it s
+  [ICLR 2026][Optimization][Decision-Focused Learning] Gen-DFL replaces the traditional "point prediction" in Decision-Focused Learning (DFL) with a conditional generative model. This allows the model to directly learn the full conditional distribution of optimization parameters and sample from high-risk tail regions. By using a CVaR objective for end-to-end training, it significantly reduces decision regret in high-dimensional, risk-sensitive decision-making problems.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Generative Model
-  - CVaR
+  - "ICLR 2026"
+  - "Optimization"
+  - "Decision-Focused Learning"
+  - "Robust Optimization"
+  - "Generative Models"
+  - "CVaR"
+  - "Uncertainty Modeling"
 date: 2026-05-08
-content_hash: bb6a2ea42746ed18
+content_hash: 29c84eab8c1c2e92
 ---
+
 # Gen-DFL: Decision-Focused Generative Learning for Robust Decision Making
 
 **Conference**: ICLR 2026  

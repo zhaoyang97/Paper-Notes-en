@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Genomic Modeling Through Optical Character Recognition
 description: >-
-  [ICML 2026][Computational Biology][OCR] OpticalDNA **renders 1D DNA sequences into multi-page "document images"**, which are then "read" by an OCR-style vision-language model. By compressing nucleotide content into a few reconstructible visual tokens, it outperforms genomic foundation models that are $985\times$ larger on long-sequence tasks of up to 450k ba
+  [ICML 2026][Computational Biology][Genomic Modeling] OpticalDNA **renders 1D DNA sequences into multi-page "document images"**, which are then "read" by an OCR-style vision-language model. By compressing nucleotide content into a few reconstructible visual tokens, it outperforms genomic foundation models that are $985\times$ larger on long-sequence tasks of up to 450k bases, using approximately $20\times$ fewer effective tokens and only 256K trainable parameters.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - OCR
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Genomic Modeling"
+  - "OCR"
+  - "Visual Token Compression"
+  - "Long Sequences"
+  - "eQTL Prediction"
 date: 2026-05-08
-content_hash: 57e2c0457ec2276d
+content_hash: 320927a3f0e94bbe
 ---
+
 # Rethinking Genomic Modeling Through Optical Character Recognition
 
 **Conference**: ICML 2026  
@@ -138,10 +143,10 @@ OpticalDNA was compared against its backbone, DeepSeek-OCR, using the same proto
 ## Related Papers
 
 - [\[AAAI 2026\] MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging](../../AAAI2026/computational_biology/mergedna_context-aware_genome_modeling_with_dynamic_tokenization_through_token_m.md)
-- [\[AAAI 2026\] Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows](../../AAAI2026/computational_biology/efficient_chromosome_parallelization_for_precision_medicine_genomic_workflows.md)
 - [\[ICML 2026\] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition](learning_protein_structure-function_relationships_through_knowledge-guided_repre.md)
+- [\[AAAI 2026\] Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows](../../AAAI2026/computational_biology/efficient_chromosome_parallelization_for_precision_medicine_genomic_workflows.md)
+- [\[ICCV 2025\] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild](../../ICCV2025/computational_biology/molparser_end-to-end_visual_recognition_of_molecule_structures_in_the_wild.md)
 - [\[ICML 2025\] ExLM: Rethinking the Impact of \[MASK\] Tokens in Masked Language Models](../../ICML2025/computational_biology/exlm_rethinking_the_impact_of_mask_tokens_in_masked_language_models.md)
-- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](protein_autoregressive_modeling_via_multiscale_structure_generation.md)
 
 </div>
 

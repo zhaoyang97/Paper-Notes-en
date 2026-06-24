@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLoVE: Personalized Federated Learning through Clustering of Loss Vector Embeddings
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] CLoVE utilizes the "loss vector of each client across all candidate models" as a client embedding for Clustered Federated Learning (CFL). Based on the observation that "clients in the same cluster share similar loss patterns while those in different clusters exhibit significantly different patterns," the method recover
+  [ICML 2026][Optimization][Clustered Federated Learning] CLoVE utilizes the "loss vector of each client across all candidate models" as a client embedding for Clustered Federated Learning (CFL). Based on the observation that "clients in the same cluster share similar loss patterns while those in different clusters exhibit significantly different patterns," the method recovers correct client clusters and trains cluster-specific models within a few communication rounds without r…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Clustered Federated Learning"
+  - "Personalized Federated Learning"
+  - "Loss Vector Embedding"
+  - "Client Clustering"
+  - "Non-IID"
 date: 2026-05-08
-content_hash: fffd0251c77d061f
+content_hash: fa1a5143f501f581
 ---
+
 # CLoVE: Personalized Federated Learning through Clustering of Loss Vector Embeddings
 
 **Conference**: ICML 2026  
@@ -128,8 +134,8 @@ On 3 types of tasks across 6 datasets (MNIST / FMNIST / CIFAR-10 / FEMNIST / Ama
 ## Related Papers
 
 - [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](../../CVPR2026/optimization/few-for-many_personalized_federated_learning.md)
+- [\[ICLR 2026\] Personalized Collaborative Learning with Affinity-Based Variance Reduction](../../ICLR2026/optimization/personalized_collaborative_learning_with_affinity-based_variance_reduction.md)
 - [\[CVPR 2025\] SCOPE: Semantic Coreset with Orthogonal Projection Embeddings for Federated Learning](../../CVPR2025/optimization/scope_semantic_coreset_with_orthogonal_projection_embeddings_for_federated_learn.md)
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 - [\[ICLR 2026\] Learning to Recall with Transformers Beyond Orthogonal Embeddings](../../ICLR2026/optimization/learning_to_recall_with_transformers_beyond_orthogonal_embeddings.md)
 - [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](../../NeurIPS2025/optimization/personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
 

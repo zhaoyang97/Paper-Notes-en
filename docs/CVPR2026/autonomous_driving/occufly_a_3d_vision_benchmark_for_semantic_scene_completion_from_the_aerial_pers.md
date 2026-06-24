@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] OccuFly introduces the first real-world camera-based Semantic Scene Completion (SSC) benchmark from an aerial perspective. It contains over 20,000 samples and 21 semantic categories, covering urban, industrial, and rural scenes across various seasons and altitudes, while revealing the fundamental limitations of current
+  [CVPR 2026 (Oral)][Autonomous Driving][Semantic Scene Completion] OccuFly introduces the first real-world camera-based Semantic Scene Completion (SSC) benchmark from an aerial perspective. It contains over 20,000 samples and 21 semantic categories, covering urban, industrial, and rural scenes across various seasons and altitudes, while revealing the fundamental limitations of current vision foundation models in aerial environments.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026 (Oral)"
+  - "Autonomous Driving"
+  - "Semantic Scene Completion"
+  - "Aerial Perspective"
+  - "UAV"
+  - "Benchmark Dataset"
+  - "Depth Estimation"
 date: 2026-05-08
-content_hash: c1212aacb64ca2f9
+content_hash: e8702dbb08389f26
 ---
+
 # OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective
 
 **Conference**: CVPR 2026 (Oral)  
@@ -132,15 +138,13 @@ OccuFly serves as a benchmark dataset and does not propose a new training method
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion](sparsity-aware_voxel_attention_and_foreground_modulation_for_3d_semantic_scene_c.md)
 - [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](../../AAAI2026/autonomous_driving/towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
 - [\[AAAI 2026\] Unleashing Semantic and Geometric Priors for 3D Scene Completion](../../AAAI2026/autonomous_driving/unleashing_semantic_and_geometric_priors_for_3d_scene_completion.md)
+- [\[AAAI 2026\] HD2-SSC: High-Dimension High-Density Semantic Scene Completion for Autonomous Driving](../../AAAI2026/autonomous_driving/hd2-ssc_high-dimension_high-density_semantic_scene_completion_for_autonomous_dri.md)
 - [\[ECCV 2024\] Hierarchical Temporal Context Learning for Camera-based Semantic Scene Completion](../../ECCV2024/autonomous_driving/hierarchical_temporal_context_learning_for_camera-based_semantic_scene_completio.md)
-- [\[ECCV 2024\] GaussianFormer: Scene as Gaussians for Vision-Based 3D Semantic Occupancy Prediction](../../ECCV2024/autonomous_driving/gaussianformer_scene_as_gaussians_for_vision-based_3d_semantic_occupancy_predict.md)
 
 </div>
 

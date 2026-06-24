@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning
 description: >-
-  [ICLR 2026][Others][Paper Note] The authors propose NcPU, a non-contrastive PU learning framework. By applying a square root transformation to the standard non-contrastive loss (NoiSNCL), gradients are dominated by clean pairs. Combined with PhantomGate for conservative negative supervision and regret-based recovery, the two modules interact iterativ
+  [ICLR 2026][PU Learning] The authors propose NcPU, a non-contrastive PU learning framework. By applying a square root transformation to the standard non-contrastive loss (NoiSNCL), gradients are dominated by clean pairs. Combined with PhantomGate for conservative negative supervision and regret-based recovery, the two modules interact iteratively within an EM framework. Without relying on auxiliary negative samples or estimated class priors…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "PU Learning"
+  - "Non-contrastive Representation Learning"
+  - "Noisy-pair Robustness"
+  - "Pseudo-label Disambiguation"
+  - "EM Framework"
 date: 2026-05-08
-content_hash: 1e04bc4b8eb0ceb1
+content_hash: 09d7978f96ae2d46
 ---
+
 # Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning
 
 **Conference**: ICLR 2026  
@@ -136,8 +141,8 @@ NcPU outperformed supervised learning on CIFAR-10 (97.36 vs 96.96) and stayed wi
 - [\[ICLR 2026\] Regulating Internal Alignment Flows for Robust Learning Under Spurious Correlations](regulating_internal_alignment_flows_for_robust_learning_under_spurious_correlati.md)
 - [\[ICLR 2026\] Learning in Prophet Inequalities with Noisy Observations](learning_in_prophet_inequalities_with_noisy_observations.md)
 - [\[ICLR 2026\] Scaling Direct Feedback Learning with Jacobian Alignment Guarantees](scaling_direct_feedback_learning_with_jacobian_alignment_guarantees.md)
+- [\[ICLR 2026\] Robust Equation Structure Learning with Adaptive Refinement (RESTART)](robust_equation_structure_learning_with_adaptive_refinement.md)
 - [\[ICLR 2026\] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)
-- [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
 
 </div>
 

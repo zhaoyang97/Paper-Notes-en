@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LSA: Layer-wise Sparsity Allocation for Large Language Model Pruning Based on Minimal Linear Reconstruction Error
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] LSA directly characterizes the redundancy of Transformer layers using the "minimal linear reconstruction error assuming 50% least important weights are pruned." This approach bypasses Wanda-style weight scoring and manual reduce functions, enabling non-uniform sparsity allocation across layers (and even blocks/projecti
+  [ICLR 2026][Model Compression][Layer-wise Sparsity Allocation] LSA directly characterizes the redundancy of Transformer layers using the "minimal linear reconstruction error assuming 50% least important weights are pruned." This approach bypasses Wanda-style weight scoring and manual reduce functions, enabling non-uniform sparsity allocation across layers (and even blocks/projections), outperforming methods like OWL and DLP under 70% high sparsity.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Layer-wise Sparsity Allocation"
+  - "Linear Reconstruction Error"
+  - "Non-uniform Sparsity"
+  - "Training-free Pruning"
+  - "Large Language Models"
 date: 2026-05-08
-content_hash: dfb2058ed5934703
+content_hash: 5ef2ce37759767ad
 ---
+
 # LSA: Layer-wise Sparsity Allocation for Large Language Model Pruning Based on Minimal Linear Reconstruction Error
 
 **Conference**: ICLR 2026  
@@ -120,10 +126,10 @@ Key Observation: When OWL/DLP move from layer to block/projection level, PPL exp
 ## Related Papers
 
 - [\[ICLR 2026\] Large Language Model Compression with Global Rank and Sparsity Optimization](large_language_model_compression_with_global_rank_and_sparsity_optimization.md)
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
 - [\[ICLR 2026\] RCPU: Rotation-Constrained Error Compensation for Structured Pruning of Large Language Models](rcpu_rotation-constrained_error_compensation_for_structured_pruning_of_large_lan.md)
-- [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
-- [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
 - [\[ICLR 2026\] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization](serq_saliency-aware_low-rank_error_reconstruction_for_llm_quantization.md)
+- [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Don't Shift the Trigger: Robust Gradient Ascent for Backdoor Unlearning
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] The authors discover that using Gradient Ascent (GA) for backdoor unlearning does not truly "erase" the trigger but instead shifts its influence to **another class** (termed "Trigger Drift"). They propose Robust Gradient Ascent (RGA), which utilizes an adaptive weight based on KL divergence to automatically shut down G
+  [ICLR2026][AI Safety][Backdoor Unlearning] The authors discover that using Gradient Ascent (GA) for backdoor unlearning does not truly "erase" the trigger but instead shifts its influence to **another class** (termed "Trigger Drift"). They propose Robust Gradient Ascent (RGA), which utilizes an adaptive weight based on KL divergence to automatically shut down GA once the backdoor is neutralized, combined with $L_2$ anchoring regularization to stabilize optimization…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Backdoor Unlearning"
+  - "Gradient Ascent"
+  - "Machine Unlearning"
+  - "Trigger Drift"
+  - "Text Classification"
 date: 2026-05-08
-content_hash: 7d79c612898fb7af
+content_hash: 0d07dc60fadd0f9e
 ---
+
 # Don't Shift the Trigger: Robust Gradient Ascent for Backdoor Unlearning
 
 **Conference**: ICLR2026  
@@ -132,15 +138,16 @@ Comparison of DGA (Adaptive GA + Utility) vs. Full RGA on Llama2-7B:
 - **Value**: ⭐⭐⭐⭐⭐ Provides a low-cost, deployable improvement and evaluation protocol for a core security task.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
 - [\[ICLR 2026\] Robust Adversarial Attacks Against Unknown Disturbances via Inverse Gradient Sample](robust_adversarial_attacks_against_unknown_disturbance_via_inverse_gradient_samp.md)
-- [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](label_smoothing_improves_machine_unlearning.md)
 - [\[CVPR 2025\] PSBD: Prediction Shift Uncertainty Unlocks Backdoor Detection](../../CVPR2025/ai_safety/psbd_prediction_shift_uncertainty_unlocks_backdoor_detection.md)
-- [\[ICLR 2026\] Decoupling the Class Label and the Target Concept in Machine Unlearning](decoupling_the_class_label_and_the_target_concept_in_machine_unlearning.md)
+- [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](label_smoothing_improves_machine_unlearning.md)
+- [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](../../AAAI2026/ai_safety/easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
 
 </div>
 

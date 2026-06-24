@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the fragility of encoding cameras as Plücker rays in feed-forward view synthesis, this paper adopts "target-view point cloud projections" as conditional inputs. This reformulates fragile geometric regression into a stable image-to-image translation task. Combined with MAE self-supervised pre-training, the me
+  [CVPR 2026][3D Vision][Feed-forward view synthesis] To address the fragility of encoding cameras as Plücker rays in feed-forward view synthesis, this paper adopts "target-view point cloud projections" as conditional inputs. This reformulates fragile geometric regression into a stable image-to-image translation task. Combined with MAE self-supervised pre-training, the method outperforms ray-conditioned baselines on standard NVS benchmarks and a custom view-consistency benchmar…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward view synthesis"
+  - "projective conditioning"
+  - "point cloud rasterization"
+  - "masked auto-encoder pre-training"
+  - "geometric consistency"
 date: 2026-05-08
-content_hash: 96e04b1ec46f2d47
+content_hash: d74d3c7f662a103e
 ---
+
 # From Rays to Projections: Better Inputs for Feed-Forward View Synthesis
 
 **Conference**: CVPR 2026  
@@ -143,10 +149,10 @@ Component-wise ablation (DL3DV pre-training + RealEstate10K):
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
+- [\[CVPR 2026\] FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation](flashmesh_faster_and_better_autoregressive_mesh_synthesis_via_structured_specula.md)
+- [\[CVPR 2026\] PhysGM: Large Physical Gaussian Model for Feed-Forward 4D Synthesis](physgm_large_physical_gaussian_4d_synthesis.md)
+- [\[CVPR 2026\] Reliev3R: Relieving Feed-forward 3D Reconstruction from Multi-View Geometric Annotations](reliev3r_relieving_feed-forward_3d_reconstruction_from_multi-view_geometric_annot.md)
 
 </div>
 

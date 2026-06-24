@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Counting Stacked Objects
 description: >-
-  [ICCV 2025][Autonomous Driving][3D object counting] The paper decomposes the stacked object counting problem into two sub-problems — volume estimation and occupancy ratio estimation — solving the former via multi-view 3D…
+  [ICCV 2025][Autonomous Driving][3D object counting] The paper decomposes the stacked object counting problem into two sub-problems — volume estimation and occupancy ratio estimation — solving the former via multi-view 3D reconstruction and the latter via a depth-map-driven neural network that infers interior occupancy from visible surfaces. This is the first method to accurately count largely invisible stacked objects, significantly outperforming humans.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "3D Gaussian Splatting"
   - "depth estimation"
 date: 2026-05-08
-content_hash: 83d24f5fc2bc2017
+content_hash: 62ac627a7baa8036
 ---
 
 # Counting Stacked Objects
@@ -151,9 +151,9 @@ On real-world data, 3DC achieves 40% lower NAE than human voting (0.36 vs. 0.60)
 
 - [\[ICCV 2025\] Referring Expression Comprehension for Small Objects](referring_expression_comprehension_for_small_objects.md)
 - [\[CVPR 2026\] Plant Taxonomy Meets Plant Counting: A Fine-Grained, Taxonomic Dataset for Counting Hundreds of Plant Species](../../CVPR2026/autonomous_driving/plant_taxonomy_meets_plant_counting_a_fine-grained_taxonomic_dataset_for_countin.md)
-- [\[CVPR 2026\] SABER: Spatially Consistent 3D Universal Adversarial Objects for BEV Detectors](../../CVPR2026/autonomous_driving/saber_spatially_consistent_3d_universal_adversarial_objects_for_bev_detectors.md)
-- [\[ICCV 2025\] 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation](3d_gaussian_splatting_driven_multiview_robust_physical_adver.md)
-- [\[ICCV 2025\] EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting](emd_explicit_motion_modeling_for_high-quality_street_gaussian_splatting.md)
+- [\[CVPR 2025\] Point-to-Region Loss for Semi-Supervised Point-Based Crowd Counting](../../CVPR2025/autonomous_driving/point-to-region_loss_for_semi-supervised_point-based_crowd_counting.md)
+- [\[CVPR 2025\] Learning to Detect Objects from Multi-Agent LiDAR Scans without Manual Labels](../../CVPR2025/autonomous_driving/learning_to_detect_objects_from_multi-agent_lidar_scans_without_manual_labels.md)
+- [\[CVPR 2026\] Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation](../../CVPR2026/autonomous_driving/learning_to_identify_out-of-distribution_objects_for_3d_lidar_anomaly_segmentati.md)
 
 </div>
 

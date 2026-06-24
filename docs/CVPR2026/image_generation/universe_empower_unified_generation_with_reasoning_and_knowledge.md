@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UniVerse: Empower Unified Generation with Reasoning and Knowledge
 description: >-
-  [CVPR 2026][Image Generation][Chain-of-Thought] Addressing the issue where unified multimodal models "understand complex prompts but fail to generate correctly," this paper constructs UniVerse—a dataset of 120k samples consisting of "implicit prompt → reasoning chain → explicit prompt" triplets paired with ground-truth images. By proposing CoT injection training to
+  [CVPR 2026][Image Generation][Unified Multimodal Model] Addressing the issue where unified multimodal models "understand complex prompts but fail to generate correctly," this paper constructs UniVerse—a dataset of 120k samples consisting of "implicit prompt → reasoning chain → explicit prompt" triplets paired with ground-truth images. By proposing CoT injection training to explicitly integrate the reasoning process into the generation pipeline…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Chain-of-Thought
-  - Dataset
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Unified Multimodal Model"
+  - "Text-to-Image (T2I)"
+  - "Reasoning Enhancement"
+  - "Chain-of-Thought (CoT)"
+  - "Dataset"
 date: 2026-05-08
-content_hash: a2a2ae792fcf1202
+content_hash: dc9832c3a6e38d79
 ---
+
 # UniVerse: Empower Unified Generation with Reasoning and Knowledge
 
 **Conference**: CVPR 2026  
@@ -143,11 +147,11 @@ Table 2 compares training effects using different data categories on WISE (With 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation](thinking-while-generating_interleaving_textual_reasoning_throughout_visual_gener.md)
 - [\[CVPR 2026\] UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization](universe_a_unified_modulation_framework_for_segmentation-free_disentangled_multi.md)
-- [\[CVPR 2026\] ParaUni: Enhance Generation in Unified Multimodal Model with Reinforcement-driven Hierarchical Parallel Information Interaction](parauni_enhance_generation_in_unified_multimodal_model_with_reinforcement-driven.md)
-- [\[CVPR 2026\] Evaluating Reasoning Fidelity in Visual Text Generation](evaluating_reasoning_fidelity_in_visual_text_generation.md)
 - [\[CVPR 2026\] ReasonEdit: Towards Reasoning-Enhanced Image Editing Models](reasonedit_towards_reasoning-enhanced_image_editing_models.md)
+- [\[CVPR 2026\] UnicEdit-10M: A Dataset and Benchmark Breaking the Scale-Quality Barrier via Unified Verification for Reasoning-Enriched Edits](unicedit-10m_a_dataset_and_benchmark_breaking_the_scale-quality_barrier_via_unif.md)
+- [\[CVPR 2026\] Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation](thinking-while-generating_interleaving_textual_reasoning_throughout_visual_gener.md)
+- [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](../../ICCV2025/image_generation/a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Resolving the Stability-Plasticity Dilemma in Reinforcement Learning via Complementary Continual Critics
 description: >-
-  [CVPR 2026][Reinforcement Learning][Paper Note] To address the "Stability-Plasticity Dilemma"—the need for both fast adaptation and no forgetting—in visual RL, this paper proposes CD-CCA: it equips one "plastic critic" with Continual Backpropagation (CBP) and one "stable critic" with Elastic Weight Consolidation (EWC), then adaptively fuses their Q-values based on o
+  [CVPR 2026][Reinforcement Learning][Visual RL] To address the "Stability-Plasticity Dilemma"—the need for both fast adaptation and no forgetting—in visual RL, this paper proposes CD-CCA: it equips one "plastic critic" with Continual Backpropagation (CBP) and one "stable critic" with Elastic Weight Consolidation (EWC), then adaptively fuses their Q-values based on observations via a cross-attention mechanism. It simultaneously improves sample efficiency and convergence stabili…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Visual RL"
+  - "Stability-Plasticity Dilemma"
+  - "Continual Learning"
+  - "Dual Critics"
+  - "Cross-Attention Fusion"
 date: 2026-05-08
-content_hash: 80f45c9233b27b8a
+content_hash: 6f910ce36955b9e0
 ---
+
 # Resolving the Stability-Plasticity Dilemma in Reinforcement Learning via Complementary Continual Critics
 
 **Conference**: CVPR 2026  
@@ -159,15 +165,14 @@ Furthermore, extending the mechanism to standard actor–critic: four critics in
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2025\] Mitigating Plasticity Loss in Continual Reinforcement Learning by Reducing Churn](../../ICML2025/reinforcement_learning/mitigating_plasticity_loss_in_continual_reinforcement_learning_by_reducing_churn.md)
 - [\[ICML 2026\] Position: Deployed Reinforcement Learning should be Continual](../../ICML2026/reinforcement_learning/position_deployed_reinforcement_learning_should_be_continual.md)
-- [\[CVPR 2026\] TSTM: Temporal Segmentation for Task-relevant Mask in Visual Reinforcement Learning Generalization](tstm_temporal_segmentation_for_task-relevant_mask_in_visual_reinforcement_learni.md)
-- [\[ICML 2026\] SPHERE: Mitigating the Loss of Spectral Plasticity in Mixture-of-Experts for Deep Reinforcement Learning](../../ICML2026/reinforcement_learning/sphere_mitigating_the_loss_of_spectral_plasticity_in_mixture-of-experts_for_deep.md)
 - [\[ICML 2026\] Shapley Neuron Values for Continual Learning: Which Neurons Matter Most?](../../ICML2026/reinforcement_learning/shapley_neuron_values_for_continual_learning_which_neurons_matter_most.md)
+- [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](../../NeurIPS2025/reinforcement_learning/temporal-difference_variational_continual_learning.md)
+- [\[ICML 2026\] SPHERE: Mitigating the Loss of Spectral Plasticity in Mixture-of-Experts for Deep Reinforcement Learning](../../ICML2026/reinforcement_learning/sphere_mitigating_the_loss_of_spectral_plasticity_in_mixture-of-experts_for_deep.md)
 
 </div>
 

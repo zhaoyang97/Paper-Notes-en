@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FrankenMotion: Part-level Human Motion Generation and Composition
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] Addressing the limitation where text-to-human motion generation only allows sequence or action-level control but lacks control over individual body parts, this paper first utilizes an LLM agent (FrankenAgent) to automatically label existing mocap datasets into a three-level, temporally aligned fine-grained dataset name
+  [CVPR 2026][Human Understanding][Human motion generation] Addressing the limitation where text-to-human motion generation only allows sequence or action-level control but lacks control over individual body parts, this paper first utilizes an LLM agent (FrankenAgent) to automatically label existing mocap datasets into a three-level, temporally aligned fine-grained dataset named FrankenStein (Sequence / Atomic Action / Body Part). Subsequently, a diffusion-based model called Fr…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human motion generation"
+  - "part-level control"
+  - "spatio-temporal composition"
+  - "diffusion models"
+  - "LLM annotation"
 date: 2026-05-08
-content_hash: 93458b1cfbecb2ef
+content_hash: 67607d8ec824ff43
 ---
+
 # FrankenMotion: Part-level Human Motion Generation and Composition
 
 **Conference**: CVPR 2026  
@@ -143,9 +148,9 @@ Hierarchical text conditions were incrementally added to observe the change in p
 
 - [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
 - [\[CVPR 2026\] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis](party_part-guidance_for_expressive_text-to-motion_synthesis.md)
+- [\[CVPR 2026\] Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization](towards_highly-constrained_human_motion_generation_with_retrieval-guided_diffusi.md)
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
 - [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
-- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
 
 </div>
 

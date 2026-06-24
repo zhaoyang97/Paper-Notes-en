@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis
 description: >-
-  [ICCV 2025][3D Vision][point cloud analysis] This paper proposes UPP, a unified point-level prompting framework that reformulates point cloud denoising and completion as prompting mechanisms for downstream tasks. It intr…
+  [ICCV 2025][3D Vision][point cloud analysis] This paper proposes UPP, a unified point-level prompting framework that reformulates point cloud denoising and completion as prompting mechanisms for downstream tasks. It introduces a Rectification Prompter to filter noise, a Completion Prompter to recover missing regions, and a Shape-Aware Unit to capture geometry-sensitive features. With only 6.3% of the parameters, UPP surpasses full fine-tuning on noisy and incomplete point clo…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "completion"
   - "prompt learning"
 date: 2026-05-08
-content_hash: fbe797bbe14b84d3
+content_hash: b8228ff4b6ac6881
 ---
 
 # UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis
@@ -173,9 +173,9 @@ Each component individually contributes 1.5–2 percentage points; their combina
 
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
 - [\[ICCV 2025\] TurboReg: TurboClique for Robust and Efficient Point Cloud Registration](turboreg_turboclique_for_robust_and_efficient_point_cloud_registration.md)
+- [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](../../ICLR2026/3d_vision/spiking_discrepancy_transformer_for_point_cloud_analysis.md)
+- [\[CVPR 2025\] Spectral Informed Mamba for Robust Point Cloud Processing](../../CVPR2025/3d_vision/spectral_informed_mamba_for_robust_point_cloud_processing.md)
 - [\[ICCV 2025\] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling](ust-ssm_unified_spatio-temporal_state_space_models_for_point_cloud_video_modelin.md)
-- [\[ICCV 2025\] Noise2Score3D: Tweedie's Approach for Unsupervised Point Cloud Denoising](noise2score3d_tweedies_approach_for_unsupervised_point_cloud_denoising.md)
-- [\[ICCV 2025\] Revisiting Point Cloud Completion: Are We Ready For The Real-World?](revisiting_point_cloud_completion_are_we_ready_for_the_real-world.md)
 
 </div>
 

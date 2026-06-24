@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] DreamStereo models the "monocular-to-stereo video" conversion as an **occlusion inpainting** problem. It utilizes gradient-aware backward warping to generate clean training data and a sparse strategy that limits diffusion calculations solely to tokens in occluded regions. This achieves 25 FPS real-time HD stereo inpain
+  [CVPR 2026][Image Generation][Monocular-to-Stereo] DreamStereo models the "monocular-to-stereo video" conversion as an **occlusion inpainting** problem. It utilizes gradient-aware backward warping to generate clean training data and a sparse strategy that limits diffusion calculations solely to tokens in occluded regions. This achieves 25 FPS real-time HD stereo inpainting (768×1280) on a single A100 GPU (NFE=1, PSNR 30.5 dB).
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Monocular-to-Stereo"
+  - "Stereo Inpainting"
+  - "Backward Warping"
+  - "Sparse Token"
+  - "Real-Time Diffusion"
 date: 2026-05-08
-content_hash: 74948eea641afd0d
+content_hash: 812b08fae49898bb
 ---
+
 # DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos
 
 **Conference**: CVPR 2026  
@@ -121,15 +127,16 @@ Data strategy (Fixed architecture, dense inference, 576×1024):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
+- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
 - [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
+- [\[CVPR 2026\] FlashIn: Fast and Accurate Image Inversion for Real-time Image Editing](flashin_fast_and_accurate_image_inversion_for_real-time_image_editing.md)
 - [\[CVPR 2026\] PortraitDirector: A Hierarchical Disentanglement Framework for Controllable and Real-time Facial Reenactment](portraitdirector_a_hierarchical_disentanglement_framework_for_controllable_and_r.md)
-- [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
-- [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
-- [\[CVPR 2026\] NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration](nanosd_edge_efficient_foundation_model_for_real_time_image_restoration.md)
 
 </div>
 

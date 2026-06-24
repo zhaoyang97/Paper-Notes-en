@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LongLive: Real-time Interactive Long Video Generation
 description: >-
-  [ICLR 2026][Video Generation][KV-recache] LongLive utilizes a frame-level causal autoregressive framework combined with a trio of features—KV-recache, streaming long training (train-long-test-long), and short-window attention with frame-level attention sinks. It fine-tunes a 1.3B short-video model within 32 GPU-days into an interactive long-video generator cap
+  [ICLR 2026][Video Generation][Long video generation] LongLive utilizes a frame-level causal autoregressive framework combined with a trio of features—KV-recache, streaming long training (train-long-test-long), and short-window attention with frame-level attention sinks. It fine-tunes a 1.3B short-video model within 32 GPU-days into an interactive long-video generator capable of real-time generation (20.7 FPS) on a single H100, supporting real-time prompt switching and video l…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - KV-recache
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Long video generation"
+  - "frame-level autoregression"
+  - "KV-recache"
+  - "streaming long training"
+  - "attention sink"
+  - "real-time interaction"
 date: 2026-05-08
-content_hash: 843160874e929a1a
+content_hash: 22104ade36577174
 ---
+
 # LongLive: Real-time Interactive Long Video Generation
 
 **Conference**: ICLR 2026  
@@ -131,10 +137,10 @@ Short Window + Frame Sink ablation: 9 local + 3 sink (effective window 12) achie
 ## Related Papers
 
 - [\[ICLR 2026\] MotionStream: Real-Time Video Generation with Interactive Motion Controls](motionstream_real-time_video_generation_with_interactive_motion_controls.md)
+- [\[ICLR 2026\] Rolling Forcing: Autoregressive Long Video Diffusion in Real Time](rolling_forcing_autoregressive_long_video_diffusion_in_real_time.md)
 - [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](../../CVPR2026/video_generation/endless_world_real-time_3d-aware_long_video_generation.md)
 - [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
 - [\[ICLR 2026\] Real-Time Motion-Controllable Autoregressive Video Diffusion](real-time_motion-controllable_autoregressive_video_diffusion.md)
-- [\[ICLR 2026\] Mixture of Contexts for Long Video Generation](mixture_of_contexts_for_long_video_generation.md)
 
 </div>
 

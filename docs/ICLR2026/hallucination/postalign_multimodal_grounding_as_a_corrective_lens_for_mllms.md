@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PostAlign: Multimodal Grounding as a Corrective Lens for MLLMs
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] PostAlign treats "visual grounding (localization boxes/masks) + textual grounding (reasoning rationale)" as a **corrective lens** post-positioned on MLLMs. It uses a `<REJ>` rejection token to empower the model to reject non-existent objects and employs `<SIMPLE>/<COMPLEX>` routing signals to decide whether to generate
+  [ICLR 2026][Hallucination Detection][Multimodal Alignment] PostAlign treats "visual grounding (localization boxes/masks) + textual grounding (reasoning rationale)" as a **corrective lens** post-positioned on MLLMs. It uses a `<REJ>` rejection token to empower the model to reject non-existent objects and employs `<SIMPLE>/<COMPLEX>` routing signals to decide whether to generate intermediate reasoning based on question difficulty, significantly reducing hallucinations on benchm…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Multimodal Alignment"
+  - "Hallucination Mitigation"
+  - "Visual Grounding"
+  - "Negative Sample Rejection"
+  - "Selective Reasoning"
 date: 2026-05-08
-content_hash: 604dc56c96d6b3f4
+content_hash: b8504bd16359250f
 ---
+
 # PostAlign: Multimodal Grounding as a Corrective Lens for MLLMs
 
 **Conference**: ICLR 2026  
@@ -168,10 +174,10 @@ Comparison of three textual grounding strategies on ReasonSeg (LLaVA-1.5-7B + SA
 ## Related Papers
 
 - [\[ICLR 2026\] Grounding or Guessing? Visual Signals for Detecting Hallucinations in Sign Language Translation](grounding_or_guessing_visual_signals_for_detecting_hallucinations_in_sign_langua.md)
-- [\[ICLR 2026\] EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models](emotionhallucer_evaluating_emotion_hallucinations_in_multimodal_large_language_m.md)
-- [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
-- [\[ICLR 2026\] Look Carefully: Adaptive Visual Reinforcements in Multimodal Large Language Models for Hallucination Mitigation](look_carefully_adaptive_visual_reinforcements_in_multimodal_large_language_model.md)
+- [\[ICML 2026\] Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models](../../ICML2026/hallucination/instruction_lens_score_your_instruction_contributes_a_powerful_object_hallucinat.md)
 - [\[ICLR 2026\] FREAK: A Fine-grained Hallucination Evaluation Benchmark for Advanced MLLMs](freak_a_fine-grained_hallucination_evaluation_benchmark_for_advanced_mllms.md)
+- [\[ICLR 2026\] P2-DPO: Grounding Hallucination in Perceptual Processing via Calibration Direct Preference Optimization](p2-dpo_grounding_hallucination_in_perceptual_processing_via_calibration_direct_p.md)
+- [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
 
 </div>
 

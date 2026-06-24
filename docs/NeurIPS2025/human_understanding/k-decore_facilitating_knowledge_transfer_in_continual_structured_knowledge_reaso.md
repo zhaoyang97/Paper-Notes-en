@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] K-DeCore: Facilitating Knowledge Transfer in Continual Structured Knowledge Reasoning
 description: >-
-  [NeurIPS 2025][Human Understanding][Continual Learning] This paper proposes K-DeCore, a framework that decouples structured knowledge reasoning into two stages — task-agnostic schema filtering and task-specific query con…
+  [NeurIPS 2025][Human Understanding][Continual Learning] This paper proposes K-DeCore, a framework that decouples structured knowledge reasoning into two stages — task-agnostic schema filtering and task-specific query construction — and combines dual-perspective memory construction with structure-guided pseudo-data synthesis to enable effective knowledge transfer across heterogeneous SKR tasks under a fixed parameter budget.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Memory Replay"
   - "Text-to-SQL"
 date: 2026-05-08
-content_hash: c3cd4185557eb731
+content_hash: 9371d5d2f836cc4b
 ---
 
 # K-DeCore: Facilitating Knowledge Transfer in Continual Structured Knowledge Reasoning
@@ -181,9 +181,9 @@ Training hyperparameters: batch size 12, lr $5 \times 10^{-5}$, 5 epochs, single
 
 - [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](../../ICCV2025/human_understanding/one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
 - [\[NeurIPS 2025\] Foundation Cures Personalization: Improving Personalized Models' Prompt Consistency via Hidden Foundation Knowledge](foundation_cures_personalization_improving_personalized_models_prompt_consistenc.md)
+- [\[CVPR 2025\] ESC: Erasing Space Concept for Knowledge Deletion](../../CVPR2025/human_understanding/esc_erasing_space_concept_for_knowledge_deletion.md)
 - [\[ICCV 2025\] CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation](../../ICCV2025/human_understanding/cleanpose_category-level_object_pose_estimation_via_causal_learning_and_knowledg.md)
 - [\[NeurIPS 2025\] Part-Aware Bottom-Up Group Reasoning for Fine-Grained Social Interaction Detection](part-aware_bottom-up_group_reasoning_for_fine-grained_social_interaction_detecti.md)
-- [\[NeurIPS 2025\] OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild](omnigaze_reward-inspired_generalizable_gaze_estimation_in_the_wild.md)
 
 </div>
 

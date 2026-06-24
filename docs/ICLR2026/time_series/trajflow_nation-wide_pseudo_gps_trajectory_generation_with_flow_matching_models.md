@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TrajFlow: Nationwide Pseudo GPS Trajectory Generation with Flow Matching Models
 description: >-
-  [ICLR 2026][Time Series][Flow Matching] TrajFlow introduces Flow Matching to GPS trajectory generation for the first time. Combined with a "per-trajectory normalization + RDP compression + OD condition normalization" strategy, it stably generates pseudo GPS trajectories across city, metropolitan, and national scales using approximately 10 ODE integration ste
+  [ICLR 2026][Time Series][Pseudo GPS Trajectory Generation] TrajFlow introduces Flow Matching to GPS trajectory generation for the first time. Combined with a "per-trajectory normalization + RDP compression + OD condition normalization" strategy, it stably generates pseudo GPS trajectories across city, metropolitan, and national scales using approximately 10 ODE integration steps. It outperforms diffusion and other deep generative baselines on a dataset covering millions of re…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Flow Matching
+  - "ICLR 2026"
+  - "Time Series"
+  - "Pseudo GPS Trajectory Generation"
+  - "Flow Matching"
+  - "Multi-scale"
+  - "Trajectory Normalization"
+  - "OD Condition"
 date: 2026-05-08
-content_hash: a825652b56dcb6c7
+content_hash: 68df3c7ae6c66b7e
 ---
+
 # TrajFlow: Nationwide Pseudo GPS Trajectory Generation with Flow Matching Models
 
 **Conference**: ICLR 2026  
@@ -132,8 +137,8 @@ Observations: At the city scale, the Flow Matching backbone (w/o RDP&OD) is suff
 - Value: ⭐⭐⭐⭐⭐ High utility for privacy-preserving nationwide movement modeling in urban planning and disaster response.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -141,7 +146,7 @@ Observations: At the city scale, the Flow Matching backbone (w/o RDP&OD) is suff
 - [\[ICML 2026\] Spatiotemporal Imputation with Graph-Informed Flow Matching](../../ICML2026/time_series/spatiotemporal_imputation_with_graph-informed_flow_matching.md)
 - [\[ICLR 2026\] Latent-to-Data Cascaded Diffusion Models for Unconditional Time Series Generation](latent-to-data_cascaded_diffusion_models_for_unconditional_time_series_generatio.md)
 - [\[ICLR 2026\] A Unified Federated Framework for Trajectory Data Preparation via LLMs](a_unified_federated_framework_for_trajectory_data_preparation_via_llms.md)
-- [\[ICLR 2026\] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning](trident_cross-domain_trajectory_spatio-temporal_representation_via_distance-pres.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 
 </div>
 

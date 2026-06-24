@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CMT: A Cascade MAR with Topology Predictor for Multimodal Conditional CAD Generation
 description: >-
-  [ICCV 2025][3D Vision][CAD generation] This paper proposes CMT, the first multimodal CAD generation framework based on B-Rep representation. By employing a cascade MAR (edges first, then faces) and a topology predictor…
+  [ICCV 2025][3D Vision][CAD generation] This paper proposes CMT, the first multimodal CAD generation framework based on B-Rep representation. By employing a cascade MAR (edges first, then faces) and a topology predictor, CMT achieves accurate topology and geometry generation. The authors also construct mmABC, a multimodal CAD dataset of over 1.3 million models.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "topology prediction"
   - "multimodal conditional generation"
 date: 2026-05-08
-content_hash: f6952cc2a0058c42
+content_hash: 3b82af88773f7cfb
 ---
 
 # CMT: A Cascade MAR with Topology Predictor for Multimodal Conditional CAD Generation
@@ -152,11 +152,11 @@ Training: unconditional generation for 2100 epochs + conditional generation for 
 
 ## Related Papers
 
-- [\[ICCV 2025\] AnyI2V: Animating Any Conditional Image with Motion Control](anyi2v_animating_any_conditional_image_with_motion_control.md)
 - [\[ICCV 2025\] SHeaP: Self-Supervised Head Geometry Predictor Learned via 2D Gaussians](sheap_self-supervised_head_geometry_predictor_learned_via_2d_gaussians.md)
+- [\[ICCV 2025\] AnyI2V: Animating Any Conditional Image with Motion Control](anyi2v_animating_any_conditional_image_with_motion_control.md)
+- [\[CVPR 2025\] MAR-3D: Progressive Masked Auto-regressor for High-Resolution 3D Generation](../../CVPR2025/3d_vision/mar-3d_progressive_masked_auto-regressor_for_high-resolution_3d_generation.md)
+- [\[CVPR 2025\] CADDreamer: CAD Object Generation from Single-view Images](../../CVPR2025/3d_vision/caddreamer_cad_object_generation_from_single-view_images.md)
 - [\[ICCV 2025\] Zero-Shot Inexact CAD Model Alignment from a Single Image](zero-shot_inexact_cad_model_alignment_from_a_single_image.md)
-- [\[ICLR 2026\] Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk](../../ICLR2026/3d_vision/topology-preserved_auto-regressive_mesh_generation_in_the_manner_of_weaving_silk.md)
-- [\[ICCV 2025\] EgoM2P: Egocentric Multimodal Multitask Pretraining](egom2p_egocentric_multimodal_multitask_pretraining.md)
 
 </div>
 

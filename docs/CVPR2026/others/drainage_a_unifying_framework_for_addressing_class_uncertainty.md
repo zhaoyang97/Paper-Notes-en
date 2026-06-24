@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Drainage: A Unifying Framework for Addressing Class Uncertainty
 description: >-
-  [CVPR 2026][Others][Paper Note] By adding an extra "drainage node" to the output layer and a "drainage loss" generalized from cross-entropy, the framework allows ambiguous, out-of-distribution, or mislabeled samples to direct their probability mass into this node rather than being forced into an incorrect class. This approach achieves up to 10% highe
+  [CVPR 2026][Label Noise] By adding an extra "drainage node" to the output layer and a "drainage loss" generalized from cross-entropy, the framework allows ambiguous, out-of-distribution, or mislabeled samples to direct their probability mass into this node rather than being forced into an incorrect class. This approach achieves up to 10% higher accuracy in high-noise scenarios compared to existing robust losses and directly serves as a rejector for open-set recognition.
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Label Noise"
+  - "Class Uncertainty"
+  - "Drainage Node"
+  - "Robust Loss"
+  - "Open-Set Recognition"
 date: 2026-05-08
-content_hash: 3b3a168cf777942a
+content_hash: 1d477169bb23f8e8
 ---
+
 # Drainage: A Unifying Framework for Addressing Class Uncertainty
 
 **Conference**: CVPR 2026  
@@ -148,10 +153,20 @@ With $\alpha=\beta=1$ and constant $z_d$, the method outperforms the CE-MSP base
 - Value: ⭐⭐⭐⭐ A near-zero-cost drop-in robust loss with significant gains in high-noise, large-class-space settings.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] NexusFlow: Unifying Disparate Tasks under Partial Supervision via Invertible Flow Networks](nexusflow_unifying_disparate_tasks_under_partial_supervision_via_invertible_flow.md)
+- [\[CVPR 2026\] RaUF: Learning the Spatial Uncertainty Field of Radar](rauf_learning_the_spatial_uncertainty_field_of_radar.md)
+- [\[CVPR 2026\] MUFASA: A Multi-Layer Framework for Slot Attention](mufasa_a_multi-layer_framework_for_slot_attention.md)
+- [\[CVPR 2026\] Evidential Deep Partial Label Learning to Quantify Disambiguation Uncertainty](evidential_deep_partial_label_learning_to_quantify_disambiguation_uncertainty.md)
+- [\[ICML 2026\] Comprehensive AI Governance Requires Addressing Non-Model Gains](../../ICML2026/others/comprehensive_ai_governance_requires_addressing_non-model_gains.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] NexusFlow: Unifying Disparate Tasks under Partial Supervision via Invertible Flow Networks](nexusflow_unifying_disparate_tasks_under_partial_supervision_via_invertible_flow.md)

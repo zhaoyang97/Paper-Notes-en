@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast
 description: >-
-  [ICCV 2025][Medical Imaging][MRI brain tumor segmentation] M-Net reinterprets the spatial continuity between adjacent MRI slices as "quasi-temporal" data…
+  [ICCV 2025][Medical Imaging][MRI brain tumor segmentation] M-Net reinterprets the spatial continuity between adjacent MRI slices as "quasi-temporal" data, and proposes the Mesh-Cast mechanism to seamlessly integrate arbitrary sequential models (LSTM, Transformer, Mamba SSM, etc.) into both channel and temporal information processing. Combined with a Two-Phase Sequential training strategy (TPS), M-Net achieves state-of-the-art segmentation performance on BraTS2019 and BraTS202…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "spatiotemporal correlation"
   - "two-phase training"
 date: 2026-05-08
-content_hash: a0ad46e2996ca90c
+content_hash: bddd061c0c503eb7
 ---
 
 # M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast
@@ -141,8 +141,8 @@ Ablation of different sequential models and training strategies on BraTS 2019:
 - [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](../../CVPR2026/medical_imaging/pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
 - [\[ICCV 2025\] Scaling Tumor Segmentation: Best Lessons from Real and Synthetic Data](scaling_tumor_segmentation_best_lessons_from_real_and_synthetic_data.md)
 - [\[ICCV 2025\] MRGen: Segmentation Data Engine for Underrepresented MRI Modalities](mrgen_segmentation_data_engine_for_underrepresented_mri_modalities.md)
-- [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](radgpt_constructing_3d_image-text_tumor_datasets.md)
 - [\[ICCV 2025\] UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation](ukbob_one_billion_mri_labeled_masks_for_generalizable_3d_medical_image_segmentat.md)
+- [\[ICLR 2026\] Sequential Information Bottleneck Fusion: Towards Robust and Generalizable Multi-Modal Brain Tumor Segmentation](../../ICLR2026/medical_imaging/sequential_information_bottleneck_fusion_towards_robust_and_generalizable_multi-.md)
 
 </div>
 

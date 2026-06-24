@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Chain-of-Thought Guided Multi-Modal Object Re-Identification
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] CoT-ReID enables multimodal large models to "reason while looking" at RGB/NIR/TIR trimodal objects. It decomposes reasoning chain text into three levels—early, late, and decision-making—to guide visual feature learning, setting new SOTA benchmarks (e.g., MSVR310 mAP 71.7%) across four multispectral ReID datasets.
+  [CVPR 2026][VLM Reasoning][Multimodal Object Re-ID] CoT-ReID enables multimodal large models to "reason while looking" at RGB/NIR/TIR trimodal objects. It decomposes reasoning chain text into three levels—early, late, and decision-making—to guide visual feature learning, setting new SOTA benchmarks (e.g., MSVR310 mAP 71.7%) across four multispectral ReID datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
-  - DINOv3
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Object Re-ID"
+  - "Chain-of-Thought (CoT)"
+  - "Cross-modal Consistency"
+  - "MLLM"
+  - "DINOv3"
 date: 2026-05-08
-content_hash: 010cc0dddf057144
+content_hash: 9c0cd031f298b475
 ---
+
 # Chain-of-Thought Guided Multi-Modal Object Re-Identification
 
 **Conference**: CVPR 2026  
@@ -136,15 +140,15 @@ CT-CMC component ablation (WMVeID863):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning](../../ICLR2026/vlm_reasoning/rex-thinker_grounded_object_referring_via_chain-of-thought_reasoning.md)
 - [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
-- [\[NeurIPS 2025\] MDReID: Modality-Decoupled Learning for Any-to-Any Multi-Modal Object Re-Identification](../../NeurIPS2025/multimodal_vlm/mdreid_modality-decoupled_learning_for_any-to-any_multi-modal_object_re-identifi.md)
-- [\[CVPR 2026\] Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection](beyond_weak_supervision_mllms-guided_graded_knowledge_distillation_for_unsupervi.md)
-- [\[CVPR 2026\] Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models](fuel_gauge_estimating_chain-of-thought_length_ahead_of_time_in_large_multimodal_.md)
 
 </div>
 

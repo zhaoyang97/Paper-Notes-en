@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SAIR: Enabling Deep Learning for Protein-Ligand Interactions with a Synthetic Structural Dataset
 description: >-
-  [ICLR 2026][Computational Biology][cofolding] SAIR utilizes the Boltz-1x cofolding model to fold 1.049 million protein-ligand complexes curated from ChEMBL/BindingDB, constructing the largest 3D protein-ligand structural dataset to date with experimental activity labels (5.24 million structures). Based on this, a systematic evaluation of various binding affinity p
+  [ICLR 2026][Computational Biology][Binding Affinity Prediction] SAIR utilizes the Boltz-1x cofolding model to fold 1.049 million protein-ligand complexes curated from ChEMBL/BindingDB, constructing the largest 3D protein-ligand structural dataset to date with experimental activity labels (5.24 million structures). Based on this, a systematic evaluation of various binding affinity prediction methods reveals that existing models lack generalization capabilities on synthetic str…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - cofolding
-  - IC50
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Binding Affinity Prediction"
+  - "Protein-Ligand Complexes"
+  - "Synthetic Structural Data"
+  - "cofolding"
+  - "IC50"
 date: 2026-05-08
-content_hash: 43a49008039bc4bb
+content_hash: dab465f52c5e902b
 ---
+
 # SAIR: Enabling Deep Learning for Protein-Ligand Interactions with a Synthetic Structural Dataset
 
 **Conference**: ICLR 2026  
@@ -133,11 +137,11 @@ Key finding from the affinity benchmark (Fig. 5): GNN (AEV-PLIG) > CNN (Onionnet
 
 ## Related Papers
 
-- [\[ICLR 2026\] PSDNorm: Temporal Normalization for Deep Learning in Sleep Staging](psdnorm_temporal_normalization_for_deep_learning_in_sleep_staging.md)
 - [\[ICLR 2026\] Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions](enhancing_molecular_property_predictions_by_learning_from_bond_modelling_and_int.md)
-- [\[ICLR 2026\] Meta-Learning Theory-Informed Inductive Biases using Deep Kernel Gaussian Processes](meta-learning_theory-informed_inductive_biases_using_deep_kernel_gaussian_proces.md)
+- [\[ICLR 2026\] PSDNorm: Temporal Normalization for Deep Learning in Sleep Staging](psdnorm_temporal_normalization_for_deep_learning_in_sleep_staging.md)
 - [\[ICLR 2026\] TetraGT: Tetrahedral Geometry-Driven Explicit Token Interactions with Graph Transformer for Molecular Representation Learning](tetragt_tetrahedral_geometry-driven_explicit_token_interactions_with_graph_trans.md)
 - [\[ICLR 2026\] PoseX: AI Defeats Physics-based Methods on Protein Ligand Cross-Docking](posex_ai_defeats_physics-based_methods_on_protein_ligand_cross-docking.md)
+- [\[ICLR 2026\] Meta-Learning Theory-Informed Inductive Biases using Deep Kernel Gaussian Processes](meta-learning_theory-informed_inductive_biases_using_deep_kernel_gaussian_proces.md)
 
 </div>
 

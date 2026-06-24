@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Surprising Effectiveness of Negative Reinforcement in LLM Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][RLVR decomposition] This paper decomposes reinforcement learning with verifiable rewards (RLVR) into positive sample reinforcement (PSR…
+  [NeurIPS 2025][Reasoning][RLVR decomposition] This paper decomposes reinforcement learning with verifiable rewards (RLVR) into positive sample reinforcement (PSR, which increases the probability of correct responses) and negative sample reinforcement (NSR, which penalizes incorrect responses). It finds that NSR alone consistently improves reasoning performance across the full Pass@k spectrum and typically matches or surpasses PPO/GRPO. Based on this finding…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "RLVR decomposition"
   - "negative sample reinforcement"
   - "positive sample reinforcement"
   - "Pass@k"
   - "Weighted-REINFORCE"
 date: 2026-05-08
-content_hash: 2670a3193af6e035
+content_hash: e2f4d9920d460177
 ---
 
 # The Surprising Effectiveness of Negative Reinforcement in LLM Reasoning
@@ -138,8 +138,8 @@ The training set consists of 7,500 MATH problems; the prompt batch size is 1,024
 - [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](../../ICML2026/llm_reasoning/resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
 - [\[NeurIPS 2025\] SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](swe-rl_advancing_llm_reasoning_via_reinforcement_learning_on_open_software_evolu.md)
-- [\[NeurIPS 2025\] Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning](beyond_accuracy_dissecting_mathematical_reasoning_for_llms_u.md)
-- [\[NeurIPS 2025\] ExPO: Unlocking Hard Reasoning with Self-Explanation-Guided Reinforcement Learning](expo_unlocking_hard_reasoning_with_self-explanation-guided_reinforcement_learnin.md)
+- [\[NeurIPS 2025\] Beyond the 80/20 Rule: High-Entropy Minority Tokens Drive Effective Reinforcement Learning for LLM Reasoning](beyond_the_8020_rule_highentropy_minority_tokens_drive_effec.md)
+- [\[ACL 2025\] Towards Better Chain-of-Thought: A Reflection on Effectiveness and Faithfulness](../../ACL2025/llm_reasoning/towards_better_chain-of-thought_a_reflection_on_effectiveness_and_faithfulness.md)
 
 </div>
 

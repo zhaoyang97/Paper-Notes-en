@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Driving World Model as Synthetic Data Generator for Perception Tasks
 description: >-
-  [ICLR 2026][Autonomous Driving][Video Editing] This paper points out that previous experiments using driving world models for synthetic data were based on "unfair training epochs." It proposes Dream4Drive—which decomposes real videos into dense 3D-aware guidance maps and renders 3D assets into them to fine-tune a world model for multi-view edited video generation.
+  [ICLR 2026][Autonomous Driving][Driving World Model] This paper points out that previous experiments using driving world models for synthetic data were based on "unfair training epochs." It proposes Dream4Drive—which decomposes real videos into dense 3D-aware guidance maps and renders 3D assets into them to fine-tune a world model for multi-view edited video generation. Under fair comparison with aligned epochs, adding less than 2% synthetic samples consistently improves 3D d…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Video Editing
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Driving World Model"
+  - "Synthetic Data"
+  - "3D Perception"
+  - "Video Editing"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: d3aa1f9532bb4cfa
+content_hash: 39f6159f8799dcfc
 ---
+
 # Rethinking Driving World Model as Synthetic Data Generator for Perception Tasks
 
 **Conference**: ICLR 2026  

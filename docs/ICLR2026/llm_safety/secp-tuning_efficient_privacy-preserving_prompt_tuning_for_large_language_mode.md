@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC
 description: >-
-  [ICLR 2026][LLM Safety][Prompt Tuning] Ours proposes SecP-Tuning, the first privacy-preserving prompt tuning framework based on Secure Multi-Party Computation (MPC). By eliminating backpropagation overhead through Forward-only Tuning (FoT) and reducing communication complexity with Privacy-Preserving Random Feature Attention (RFA) to replace softmax, it ach
+  [ICLR 2026][LLM Safety][Privacy-Preserving] Ours proposes SecP-Tuning, the first privacy-preserving prompt tuning framework based on Secure Multi-Party Computation (MPC). By eliminating backpropagation overhead through Forward-only Tuning (FoT) and reducing communication complexity with Privacy-Preserving Random Feature Attention (RFA) to replace softmax, it achieves approximately 12-16x speedup and 17-20x reduction in communication volume.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Prompt Tuning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Privacy-Preserving"
+  - "Secure Multi-Party Computation"
+  - "Prompt Tuning"
+  - "Forward-only Tuning"
+  - "Random Feature Attention"
 date: 2026-05-08
-content_hash: ce0d8e93cf7b5656
+content_hash: b64327d517bdcd9c
 ---
+
 # SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC
 
 **Conference**: ICLR 2026  
@@ -136,11 +141,11 @@ After removing backpropagation, softmax attention in the forward pass becomes th
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models](../../NeurIPS2025/llm_safety/fedrw_efficient_privacy-preserving_data_reweighting_for_enhancing_federated_lear.md)
 - [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
-- [\[ICLR 2026\] Operationalizing Data Minimization for Privacy-Preserving LLM Prompting](operationalizing_data_minimization_for_privacy-preserving_llm_prompting.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
 - [\[ACL 2026\] Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models](../../ACL2026/llm_safety/privacy_collapse_benign_fine-tuning_can_break_contextual_privacy_in_language_mod.md)
-- [\[ICLR 2026\] SHE-LoRA: Selective Homomorphic Encryption for Federated Tuning with Heterogeneous LoRA](she-lora_selective_homomorphic_encryption_for_federated_tuning_with_heterogeneou.md)
+- [\[NeurIPS 2025\] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models](../../NeurIPS2025/llm_safety/fedrw_efficient_privacy-preserving_data_reweighting_for_enhancing_federated_lear.md)
+- [\[CVPR 2025\] TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in Vision-Language Models](../../CVPR2025/llm_safety/tapt_test-time_adversarial_prompt_tuning_for_robust_inference_in_vision-language.md)
 
 </div>
 

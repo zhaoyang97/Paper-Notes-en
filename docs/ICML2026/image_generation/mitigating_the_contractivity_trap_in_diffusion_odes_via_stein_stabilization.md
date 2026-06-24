@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mitigating the Contractivity Trap in Diffusion ODEs via Stein Stabilization
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] To address the issue in diffusion model Probability Flow ODE (PF-ODE) where "high-expressivity denoisers + aggressive step sizes destroy the contractivity stability certificate, leading to amplified errors and trajectory divergence" (named the **contractivity trap** by the authors), SteinDiff utilizes Stein's identity
+  [ICML2026][Image Generation][Diffusion Models] To address the issue in diffusion model Probability Flow ODE (PF-ODE) where "high-expressivity denoisers + aggressive step sizes destroy the contractivity stability certificate, leading to amplified errors and trajectory divergence" (named the **contractivity trap** by the authors), SteinDiff utilizes Stein's identity to transform the uncomputable "alignment with clean target" term into a computable divergence term. It derives a…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICML2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Probability Flow ODE"
+  - "Few-step Sampling"
+  - "Stein Correction"
+  - "Contractivity Trap"
 date: 2026-05-08
-content_hash: b7806d766c6f4f3d
+content_hash: 1c2ce8e2641d5b3b
 ---
+
 # Mitigating the Contractivity Trap in Diffusion ODEs via Stein Stabilization
 
 **Conference**: ICML2026  
@@ -134,15 +139,14 @@ At the most aggressive 5 NFE, FID drops significantly from a baseline of 18.61 t
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] GAS: Improving Discretization of Diffusion ODEs via Generalized Adversarial Solver](../../ICLR2026/image_generation/gas_improving_discretization_of_diffusion_odes_via_generalized_adversarial_solve.md)
 - [\[NeurIPS 2025\] Learning to Integrate Diffusion ODEs by Averaging the Derivatives](../../NeurIPS2025/image_generation/learning_to_integrate_diffusion_odes_by_averaging_the_derivatives.md)
+- [\[ICML 2026\] Temporal Difference Learning for Diffusion Models](temporal_difference_learning_for_diffusion_models.md)
 - [\[CVPR 2026\] Designing Instance-Level Sampling Schedules via REINFORCE with James-Stein Shrinkage](../../CVPR2026/image_generation/designing_instance-level_sampling_schedules_via_reinforce_with_james-stein_shrin.md)
-- [\[ICLR 2026\] Detecting and Mitigating Memorization in Diffusion Models through Anisotropy of the Log-Probability](../../ICLR2026/image_generation/detecting_and_mitigating_memorization_in_diffusion_models_through_anisotropy_of_.md)
-- [\[CVPR 2025\] Dissecting and Mitigating Diffusion Bias via Mechanistic Interpretability](../../CVPR2025/image_generation/dissecting_and_mitigating_diffusion_bias_via_mechanistic_interpretability.md)
-- [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](../../CVPR2026/image_generation/grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
+- [\[ICLR 2026\] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance](../../ICLR2026/image_generation/mitigating_noise_shift_in_denoising_generative_models_with_noise_awareness_guida.md)
 
 </div>
 

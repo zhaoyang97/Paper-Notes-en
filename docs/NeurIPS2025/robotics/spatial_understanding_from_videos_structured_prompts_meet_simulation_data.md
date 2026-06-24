@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data
 description: >-
-  [NeurIPS 2025][Robotics][Visual-spatial understanding] This paper proposes a two-pronged approach combining the SpatialMind structured prompting strategy and the ScanForgeQA synthetic QA dataset to substantially enhance…
+  [NeurIPS 2025 Spotlight][Robotics][Visual-spatial understanding] This paper proposes a two-pronged approach combining the SpatialMind structured prompting strategy and the ScanForgeQA synthetic QA dataset to substantially enhance VLMs' ability to perform 3D spatial reasoning from scanned videos, without modifying the underlying model architecture.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Robotics"
   - "Visual-spatial understanding"
   - "chain-of-thought prompting"
@@ -12,7 +12,7 @@ tags:
   - "vision-language models"
   - "3D reasoning"
 date: 2026-05-08
-content_hash: 78306eccede004e3
+content_hash: d5d0ea4ffeb32479
 ---
 
 # Spatial Understanding from Videos: Structured Prompts Meet Simulation Data
@@ -50,9 +50,9 @@ The framework consists of two main components: (1) **SpatialMind** — a structu
 1. **Scene Decomposition**
 
    Scene decomposition proceeds in three steps:
-   - **Local Modeling**: For each video frame, a VLM detects candidate target objects and estimates their local 3D coordinates $\mathbf{p}_{ij}^{\text{local}} \in \mathbb{R}^3$ relative to a reference object, constructing a local 3D map $\mathcal{L}_i$.
-   - **Coordinate Mapping**: The VLM infers the relative rotation $\mathbf{R}_{k,k-1}$ and translation $\mathbf{t}_{k,k-1}$ between adjacent frames, accumulating the global transform for each frame as $\mathbf{T}_i = \prod_{k=1}^{i} \begin{bmatrix} \mathbf{R}_{k,k-1} & \mathbf{t}_{k,k-1} \\ \mathbf{0} & 1 \end{bmatrix}$, and converting local coordinates to global coordinates via homogeneous transformation. Repeated detections across frames are merged based on spatial proximity and semantic consistency to yield a global 3D map $\mathcal{G}$.
-   - **Cognition Generation**: Three scene representations are explored: a 3D map, a 2D spatial grid (mapping objects to discrete cells $(i_k,j_k) = (\lfloor x_k/s \rfloor, \lfloor y_k/s \rfloor)$), and natural-language positional descriptions. Experiments show that VLMs comprehend textual descriptions most effectively.
+    - **Local Modeling**: For each video frame, a VLM detects candidate target objects and estimates their local 3D coordinates $\mathbf{p}_{ij}^{\text{local}} \in \mathbb{R}^3$ relative to a reference object, constructing a local 3D map $\mathcal{L}_i$.
+    - **Coordinate Mapping**: The VLM infers the relative rotation $\mathbf{R}_{k,k-1}$ and translation $\mathbf{t}_{k,k-1}$ between adjacent frames, accumulating the global transform for each frame as $\mathbf{T}_i = \prod_{k=1}^{i} \begin{bmatrix} \mathbf{R}_{k,k-1} & \mathbf{t}_{k,k-1} \\ \mathbf{0} & 1 \end{bmatrix}$, and converting local coordinates to global coordinates via homogeneous transformation. Repeated detections across frames are merged based on spatial proximity and semantic consistency to yield a global 3D map $\mathcal{G}$.
+    - **Cognition Generation**: Three scene representations are explored: a 3D map, a 2D spatial grid (mapping objects to discrete cells $(i_k,j_k) = (\lfloor x_k/s \rfloor, \lfloor y_k/s \rfloor)$), and natural-language positional descriptions. Experiments show that VLMs comprehend textual descriptions most effectively.
 
 2. **Question Decomposition**
 
@@ -61,9 +61,9 @@ The framework consists of two main components: (1) **SpatialMind** — a structu
 3. **ScanForgeQA Dataset Construction**
 
    The dataset is built via a three-stage pipeline:
-   - **Scene Construction**: (a) 34,116 single-room scenes are extracted from the 3D-FRONT dataset; (b) 160 additional scenes are synthesized using HoloDeck guided by an LLM.
-   - **Scan Generation**: Scan videos are simulated in the Unity engine using two strategies: orbital scanning (circular trajectory at fixed height, one frame every 5°, 72 frames per revolution) and navigation scanning (paths planned in walkable areas with 360° rotations at start and end points, 72 frames per path).
-   - **QA Generation**: Three question types are generated automatically — attribute estimation (object count, size, room area), spatial reasoning (relative distance, absolute distance, direction, contact relations), and hypothetical analysis (action feasibility). The final dataset comprises 34,276 scenes, 103K scan videos, and 925K QA pairs.
+    - **Scene Construction**: (a) 34,116 single-room scenes are extracted from the 3D-FRONT dataset; (b) 160 additional scenes are synthesized using HoloDeck guided by an LLM.
+    - **Scan Generation**: Scan videos are simulated in the Unity engine using two strategies: orbital scanning (circular trajectory at fixed height, one frame every 5°, 72 frames per revolution) and navigation scanning (paths planned in walkable areas with 360° rotations at start and end points, 72 frames per path).
+    - **QA Generation**: Three question types are generated automatically — attribute estimation (object count, size, room area), spatial reasoning (relative distance, absolute distance, direction, contact relations), and hypothetical analysis (action feasibility). The final dataset comprises 34,276 scenes, 103K scan videos, and 925K QA pairs.
 
 ### Loss & Training
 
@@ -145,10 +145,10 @@ Standard supervised fine-tuning (SFT) is applied to train VLMs on ScanForgeQA. T
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rethinking the Simulation vs. Rendering Dichotomy: No Free Lunch in Spatial World Modelling](rethinking_the_simulation_vs_rendering_dichotomy_no_free_lunch_in_spatial_world_.md)
+- [\[ECCV 2024\] Hierarchically Structured Neural Bones for Reconstructing Animatable Objects from Casual Videos](../../ECCV2024/robotics/hierarchically_structured_neural_bones_for_reconstructing_animatable_objects_fro.md)
 - [\[ICLR 2026\] UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos](../../ICLR2026/robotics/urbanverse_scaling_urban_simulation_by_watching_city-tour_videos.md)
-- [\[NeurIPS 2025\] Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning](asymptotically_stable_quaternion-valued_hopfield-structured_neural_network_with_.md)
-- [\[NeurIPS 2025\] Learning Spatial-Aware Manipulation Ordering](learning_spatial-aware_manipulation_ordering.md)
-- [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
+- [\[NeurIPS 2025\] Talk2Event: Grounded Understanding of Dynamic Scenes from Event Cameras](talk2event_grounded_understanding_of_dynamic_scenes_from_event_cameras.md)
+- [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](../../CVPR2026/robotics/spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
 
 </div>
 

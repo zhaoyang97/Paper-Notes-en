@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] 3DSMT: A Hybrid Spiking Mamba-Transformer for Point Cloud Analysis
 description: >-
-  [ICLR 2026][3D Vision][Mamba] 3DSMT integrates the event-driven low-power characteristics of Spiking Neural Networks (SNNs) with the local modeling of Transformers and the linear-complexity global modeling of Mamba into a hybrid architecture. By utilizing "Spiking Local Offset Attention + Spiking Mamba Blocks," it achieves SOTA results among SNN me
+  [ICLR2026][3D Vision][Point cloud analysis] 3DSMT integrates the event-driven low-power characteristics of Spiking Neural Networks (SNNs) with the local modeling of Transformers and the linear-complexity global modeling of Mamba into a hybrid architecture. By utilizing "Spiking Local Offset Attention + Spiking Mamba Blocks," it achieves SOTA results among SNN methods in classification, few-shot, and segmentation tasks, with energy consumption being dozens of times lower than…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Mamba
+  - "ICLR2026"
+  - "3D Vision"
+  - "Point cloud analysis"
+  - "Spiking Neural Networks"
+  - "Mamba"
+  - "Local Offset Attention"
+  - "Energy efficiency"
 date: 2026-05-08
-content_hash: 06248113130b7e91
+content_hash: d8b9c018543452c2
 ---
+
 # 3DSMT: A Hybrid Spiking Mamba-Transformer for Point Cloud Analysis
 
 **Conference**: ICLR2026  

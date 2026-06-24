@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Inference Time Optimization with Confidence Dynamics
 description: >-
-  [ICML 2026][LLM Reasoning][Best-of-N] The authors observe that during LLM multi-sample inference, the confidence of correct trajectories systematically increases along the reasoning chain, while incorrect trajectories decay or decrease. Based on this, they propose CDG (Confidence Dynamic Gain) voting—using "tail confidence − head confidence" as an addition
+  [ICML2026][Reasoning][Confidence Dynamics] The authors observe that during LLM multi-sample inference, the confidence of correct trajectories systematically increases along the reasoning chain, while incorrect trajectories decay or decrease. Based on this, they propose CDG (Confidence Dynamic Gain) voting—using "tail confidence − head confidence" as an additional discriminative signal embedded in Best-of-N weighted voting. Across four open-source reasoning models and four mat…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Best-of-N
-  - GRPO
+  - "ICML2026"
+  - "Reasoning"
+  - "Confidence Dynamics"
+  - "Best-of-N"
+  - "Voting Aggregation"
+  - "GRPO"
+  - "Inference-time Scaling"
 date: 2026-05-08
-content_hash: 4acf1a2579914242
+content_hash: 1a330dbb56b92de4
 ---
+
 # Inference Time Optimization with Confidence Dynamics
 
 **Conference**: ICML2026  
@@ -134,11 +138,11 @@ CDG achieved the highest average scores across all models, outperforming DeepCon
 
 ## Related Papers
 
-- [\[ICML 2026\] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models](stabilizing_recurrent_dynamics_for_test-time_scalable_latent_reasoning_in_looped.md)
 - [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
-- [\[NeurIPS 2025\] Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals](../../NeurIPS2025/llm_reasoning/inference-time_chain-of-thought_pruning_with_latent_informativeness_signals.md)
 - [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](../../ICLR2026/llm_reasoning/fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
+- [\[ICML 2026\] UniScale: Adaptive Unified Inference Scaling through Online Joint Optimization of Model Routing and Test-Time Scaling](uniscale_adaptive_unified_inference_scaling_via_online_joint_optimization_of_mod.md)
 - [\[ICML 2026\] Inference-Time Conformal Reasoning with Valid Factuality Control for Large Language Models](inference-time_conformal_reasoning_with_valid_factuality_control_for_large_langu.md)
+- [\[NeurIPS 2025\] Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals](../../NeurIPS2025/llm_reasoning/inference-time_chain-of-thought_pruning_with_latent_informativeness_signals.md)
 
 </div>
 

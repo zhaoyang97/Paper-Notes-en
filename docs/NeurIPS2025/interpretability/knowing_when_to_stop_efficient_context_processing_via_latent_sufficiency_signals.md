@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Knowing When to Stop: Efficient Context Processing via Latent Sufficiency Signals
 description: >-
-  [NeurIPS 2025][Interpretability][Dynamic context cutoff] This paper proposes dynamic context cutoff, which trains lightweight classifiers to detect "information sufficiency signals" encoded in specific Transformer attent…
+  [NeurIPS 2025][Interpretability][Dynamic context cutoff] This paper proposes dynamic context cutoff, which trains lightweight classifiers to detect "information sufficiency signals" encoded in specific Transformer attention heads, enabling the model to determine when sufficient context has been gathered and terminate processing early. On 6 QA datasets, the method achieves an average accuracy improvement of 3.4% while reducing token consumption by 1.33×.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "inference efficiency"
   - "KV cache"
 date: 2026-05-08
-content_hash: 9577fae8684cdd73
+content_hash: 46364aa61c898cba
 ---
 
 # Knowing When to Stop: Efficient Context Processing via Latent Sufficiency Signals
@@ -137,11 +137,11 @@ The probing method substantially outperforms competing approaches across all mod
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] A Controllable Examination for Long-Context Language Models](a_controllable_examination_for_longcontext_language_models.md)
-- [\[NeurIPS 2025\] Latent Principle Discovery for Language Model Self-Improvement](latent_principle_discovery_for_language_model_self-improvement.md)
-- [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
-- [\[NeurIPS 2025\] Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions](partial_information_decomposition_via_normalizing_flows_in_latent_gaussian_distr.md)
+- [\[ICLR 2026\] Latent Thinking Optimization: Your Latent Reasoning Language Model Secretly Encodes Reward Signals in Its Latent Thoughts](../../ICLR2026/interpretability/latent_thinking_optimization_your_latent_reasoning_language_model_secretly_encod.md)
 - [\[NeurIPS 2025\] Base Models Know How to Reason, Thinking Models Learn When](base_models_know_how_to_reason_thinking_models_learn_when.md)
+- [\[NeurIPS 2025\] H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition](h-splid_hsic-based_saliency_preserving_latent_information_decomposition.md)
+- [\[NeurIPS 2025\] Latent Principle Discovery for Language Model Self-Improvement](latent_principle_discovery_for_language_model_self-improvement.md)
+- [\[NeurIPS 2025\] Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions](partial_information_decomposition_via_normalizing_flows_in_latent_gaussian_distr.md)
 
 </div>
 

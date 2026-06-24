@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] This paper explains the "squeezing effect" in DPO training (where the probability of preferred responses paradoxically decreases) from the perspective of logit space dynamics, identifying that negative gradients cause residuals to expand wildly along high-curvature directions. The authors prove that the curvature regul
+  [ICLR 2026][LLM Alignment][DPO] This paper explains the "squeezing effect" in DPO training (where the probability of preferred responses paradoxically decreases) from the perspective of logit space dynamics, identifying that negative gradients cause residuals to expand wildly along high-curvature directions. The authors prove that the curvature regularization of SAM effectively suppresses this expansion and implement a near-zero-overhead "logits-SAM" by perturbing only the ou…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
-  - squeezing effect
-  - Sharpness-Aware Minimization
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "DPO"
+  - "squeezing effect"
+  - "Sharpness-Aware Minimization"
+  - "logit space"
+  - "curvature regularization"
 date: 2026-05-08
-content_hash: fac810b9652e55db
+content_hash: b4e2da4bb310d572
 ---
+
 # Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization
 
 **Conference**: ICLR 2026  
@@ -156,8 +159,6 @@ Efficiency (Pythia-2.8B / TL;DR, 2×A100 DDP): logits-SAM vs AdamW is 72min vs 7
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

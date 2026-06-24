@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DetectiumFire: A Comprehensive Multi-modal Dataset Bridging Vision and Language for Fire Understanding
 description: >-
-  [NeurIPS 2025][Object Detection][Fire Detection] DetectiumFire constructs the largest multi-modal fire understanding dataset — 14.5K real images + 2.5K videos + 8K synthetic images + 12K RLHF preference pairs — with a lo…
+  [NeurIPS 2025][Object Detection][Fire Detection] DetectiumFire constructs the largest multi-modal fire understanding dataset — 14.5K real images + 2.5K videos + 8K synthetic images + 12K RLHF preference pairs — with a low duplication rate (0.03 PHash vs. D-Fire 0.15), a 4-level severity classification scheme, and detailed scene descriptions. Fine-tuning YOLOv11m achieves mAP 43.74, and fine-tuning LLaMA-3.2-11B yields 83.84% accuracy on fire severity classification.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "RLHF"
   - "Vision-Language Model"
 date: 2026-05-08
-content_hash: 608ff3b5754e2231
+content_hash: 8d3738809336c77d
 ---
 
 # DetectiumFire: A Comprehensive Multi-modal Dataset Bridging Vision and Language for Fire Understanding
@@ -130,11 +130,11 @@ DetectiumFire constructs the largest multi-modal fire understanding dataset — 
 
 ## Related Papers
 
-- [\[CVPR 2026\] SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection](../../CVPR2026/object_detection/steeldefectx_a_coarse-to-fine_vision-language_dataset_and_benchmark_for_generali.md)
-- [\[NeurIPS 2025\] MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling](mstar_box-free_multi-query_scene_text_retrieval_with_attention_recycling.md)
+- [\[CVPR 2025\] T2ICount: Enhancing Cross-modal Understanding for Zero-Shot Counting](../../CVPR2025/object_detection/t2icount_enhancing_cross-modal_understanding_for_zero-shot_counting.md)
 - [\[ICCV 2025\] Visual Modality Prompt for Adapting Vision-Language Object Detectors](../../ICCV2025/object_detection/visual_modality_prompt_for_adapting_vision-language_object_detectors.md)
-- [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](../../CVPR2026/object_detection/unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
-- [\[AAAI 2026\] SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection](../../AAAI2026/object_detection/sm3det_a_unified_model_for_multi-modal_remote_sensing_object_detection.md)
+- [\[NeurIPS 2025\] MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling](mstar_box-free_multi-query_scene_text_retrieval_with_attention_recycling.md)
+- [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](../../CVPR2026/object_detection/thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
+- [\[NeurIPS 2025\] BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes](burstdeflicker_a_benchmark_dataset_for_flicker_removal_in_dynamic_scenes.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] ERMoE proposes reparameterizing MoE expert weights within an orthogonal eigenbasis and substituting traditional routing logits with eigenbasis alignment scores (cosine similarity), enabling stable routing and interpretable expert specialization without the need for auxiliary load balancing losses.
+  [CVPR 2026][Interpretability][Mixture-of-Experts] ERMoE proposes reparameterizing MoE expert weights within an orthogonal eigenbasis and substituting traditional routing logits with eigenbasis alignment scores (cosine similarity), enabling stable routing and interpretable expert specialization without the need for auxiliary load balancing losses.
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Mixture-of-Experts"
+  - "Eigen-reparameterization"
+  - "Routing Stability"
+  - "Expert Specialization"
+  - "Vision Transformer"
 date: 2026-05-08
-content_hash: 9c9569d314ffff05
+content_hash: b8f2302671bc1a26
 ---
+
 # ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization
 
 **Conference**: CVPR 2026  
@@ -111,10 +117,10 @@ The model uses only standard classification or regression losses without any aux
 
 ## Related Papers
 
+- [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](../../ICLR2026/interpretability/understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
 - [\[ICML 2026\] The Expert Strikes Back: Interpreting Mixture-of-Experts Language Models at Expert Level](../../ICML2026/interpretability/the_expert_strikes_back_interpreting_mixture-of-experts_language_models_at_exper.md)
+- [\[ICLR 2026\] Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization](../../ICLR2026/interpretability/mixture_of_cognitive_reasoners_modular_reasoning_with_brain-like_specialization.md)
 - [\[CVPR 2026\] Draft and Refine with Visual Experts](draft_and_refine_with_visual_experts.md)
-- [\[AAAI 2026\] DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment](../../AAAI2026/interpretability/drexperts_differential_refinement_of_distortion-aware_experts_for_blind_image_qu.md)
-- [\[ACL 2025\] IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory](../../ACL2025/interpretability/irt_router_multi_llm.md)
 - [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
 
 </div>

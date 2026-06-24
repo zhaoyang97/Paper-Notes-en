@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Debiasing Diffusion Priors via 3D Attention for Consistent Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes the TD-Attn framework, which addresses multi-view inconsistency (the Janus problem) caused by prior-view bias in T2I diffusion models for 3D generation an…
+  [AAAI 2026][3D Vision][3D Gaussian Splatting] This work proposes the TD-Attn framework, which integrates two modules—3D-Aware Attention Guidance (3D-AAG) and Hierarchical Attention Modulation (HAM)—to resolve the multi-view inconsistency (Janus problem) in 3D generation/editing caused by prior viewpoint bias in T2I diffusion models. It can be integrated into existing 3DGS frameworks as a plug-and-play module.
 tags:
   - "AAAI 2026"
   - "3D Vision"
@@ -12,82 +12,84 @@ tags:
   - "Janus Problem"
   - "Attention Modulation"
 date: 2026-05-08
-content_hash: ddb56e793a502493
+content_hash: 7dc585252298513f
 ---
 
 # Debiasing Diffusion Priors via 3D Attention for Consistent Gaussian Splatting
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2512.07345](https://arxiv.org/abs/2512.07345)  
 **Code**: None  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: 3D Gaussian Splatting, Diffusion Models, Multi-view Consistency, Janus Problem, Attention Modulation
 
 ## TL;DR
 
-This paper proposes the TD-Attn framework, which addresses multi-view inconsistency (the Janus problem) caused by prior-view bias in T2I diffusion models for 3D generation and editing. The framework comprises two modules—3D-Aware Attention Guidance (3D-AAG) and Hierarchical Attention Modulation (HAM)—and can be integrated as a general-purpose plugin into existing 3DGS pipelines.
+This work proposes the TD-Attn framework, which integrates two modules—3D-Aware Attention Guidance (3D-AAG) and Hierarchical Attention Modulation (HAM)—to resolve the multi-view inconsistency (Janus problem) in 3D generation/editing caused by prior viewpoint bias in T2I diffusion models. It can be integrated into existing 3DGS frameworks as a plug-and-play module.
 
 ## Background & Motivation
 
-3D generation and editing tasks that distill T2I diffusion models face a fundamental challenge: **multi-view inconsistency** (the Janus problem), which manifests as conflicting facial features, limbs, or textures when a 3D object is rendered from different viewpoints.
+3D generation and editing tasks based on T2I diffusion model distillation face a fundamental challenge: **multi-view inconsistency** (the Janus problem). This manifests as conflicting faces, limbs, or textures when rendering 3D objects from different perspectives.
 
-The authors provide a mathematical analysis to identify the root causes:
+The authors reveal the root causes through mathematical analysis:
 
-**Training data distribution bias**: T2I models are trained on datasets heavily skewed toward prior views (e.g., frontal views): $p_{\mathcal{D}}(v_{prior}|y_{obj}) \gg p_{\mathcal{D}}(v_{other}|y_{obj})$
+**Training Data Distribution Bias**: The training data of T2I models contains far more samples of prior viewpoints (such as the front view) than other perspectives: $p_{\mathcal{D}}(v_{prior}|y_{obj}) \gg p_{\mathcal{D}}(v_{other}|y_{obj})$
 
-**Subject-token attention bias**: When the probability ratio $\mathcal{R} = \frac{p(v_{prior}|Y)}{p(v^*|Y)} \gg 1$, subject-word tokens preferentially activate prior-view features, overriding the target-view conditioning.
+**Subject Word Attention Bias**: When the probability ratio is $\mathcal{R} = \frac{p(v_{prior}|Y)}{p(v^*|Y)} \gg 1$, the subject token preferentially activates prior viewpoint features, overriding the target viewpoint conditions.
 
-**Gradient interference**: At viewpoints far from the prior view, $\nabla_{z_\phi}\log C \ll 0$ produces strong negative gradient effects that disrupt the 3D optimization process.
+**Gradient Interference**: When far from the prior viewpoint, $\nabla_{z_\phi}\log C \ll 0$ produces a strong negative gradient effect, disrupting the 3D optimization process.
 
-**Layer-wise heterogeneity**: Different layers of the UNet respond to prior-view bias to varying degrees.
+**Inter-layer Heterogeneity**: Different layers of the UNet respond differently to the prior viewpoint preference.
 
 ## Method
 
 ### Overall Architecture
 
-TD-Attn consists of two core modules:
+TD-Attn comprises two core modules:
 
-1. **3D-Aware Attention Guidance Module (3D-AAG)**: Constructs a view-consistent 3D attention Gaussian field to constrain 2D attention maps.
-2. **Hierarchical Attention Modulation Module (HAM)**: Uses a semantically guided tree to locate and modulate high-response cross-attention (CA) layers.
+1. **3D-Aware Attention Guidance Module (3D-AAG)**: Constructs view-consistent 3D attention Gaussians to constrain 2D attention maps.
+2. **Hierarchical Attention Modulation Module (HAM)**: Pinpoints and modulates highly responsive cross-attention (CA) layers via a semantic guidance tree.
 
-The framework operates as a plugin for different 3D tasks. For generation, training proceeds in three stages (HAM only → HAM + 3D-AAG → 3D-AAG only); for editing, two stages are used.
+The framework is utilized as a plug-in for various 3D tasks. The generation task is split into three stages (HAM only $\to$ HAM+3D-AAG $\to$ 3D-AAG only), and the editing task is divided into two stages.
 
 ### Key Designs
 
 #### 3D-AAG: 3D-Aware Attention Guidance
 
-The core idea is to exploit the explicit representation of 3DGS by back-projecting multi-view 2D attention maps into 3D space, constructing a view-consistent 3D attention Gaussian field.
+The core idea is to leverage the explicit nature of 3DGS to back-project multi-view 2D attention maps into 3D space, establishing view-consistent 3D attention Gaussians.
 
-1. **Attention accumulation**: For each Gaussian $i$, multi-view 2D attention weights are accumulated:
-   $w_i = \sum_{v \in \Lambda}\sum_{p \in \mathcal{I}(\mathcal{S}_{2D}^v)}[o_i(p)T_i^v(p)\mathcal{I}(\mathcal{S}(p)_{2D}^v)]$
-   where $o_i$ is opacity, $T_i^v$ is transmittance, and $\mathcal{S}_{2D}^v$ is the CA map of the subject token.
+1. **Attention Accumulation**: For each Gaussian $i$, accumulate 2D attention weights from multiple views:
+    $w_i = \sum_{v \in \Lambda}\sum_{p \in \mathcal{I}(\mathcal{S}_{2D}^v)}[o_i(p)T_i^v(p)\mathcal{I}(\mathcal{S}(p)_{2D}^v)]$
+   where $o_i$ is the opacity, $T_i^v$ is the transmittance, and $\mathcal{S}_{2D}^v$ is the CA map of the subject word token.
 
-2. **2D CA map computation**:
-   $\mathcal{S}_{2D}^v = \text{Softmax}\left(\frac{Q_v K_{sbj}^T}{\sqrt{d}}\right)$
+2. **2D CA Map Computation**:
+    $\mathcal{S}_{2D}^v = \text{Softmax}\left(\frac{Q_v K_{sbj}^T}{\sqrt{d}}\right)$
 
-3. **Attention guidance loss**: KL divergence is used to enforce consistency between the 2D CA map and the rendered 3D attention Gaussian field:
-   $\mathcal{L}_{attn} = KL(\text{Softmax}(\widetilde{\mathcal{S}}_{2D}^v) \| \mathcal{I}(\mathcal{S}_{2D}^v))$
+3. **Attention Guidance Loss**: Use KL divergence to constrain consistency between the 2D CA maps and the rendered results of the 3D attention Gaussians:
+    $\mathcal{L}_{attn} = KL(\text{Softmax}(\widetilde{\mathcal{S}}_{2D}^v) \| \mathcal{I}(\mathcal{S}_{2D}^v))$
 
-4. **Synchronization with 3DGS densification**: The 3D attention Gaussian field is updated synchronously with the adaptive splitting and cloning operations of 3DGS.
+4. **Synchronization with 3DGS Densification**: The 3D attention Gaussians are updated synchronously with the adaptive splitting/cloning operations of 3DGS.
 
 #### HAM: Hierarchical Attention Modulation
 
-HAM performs fine-grained modulation to account for the heterogeneous response of different UNet layers to view bias:
+HAM performs fine-grained modulation tailored to the heterogeneity in viewpoint preferences across different UNet layers:
 
-1. **Semantic Guided Tree (SGT) construction**: An LLM is used to construct a three-level hierarchy:
-    - Root: $M$ semantic categories (Object, Attribute, etc.)
-    - Intermediate: $F$ subcategories
-    - Leaf nodes: $F$ instance words
+1. **Semantic Guidance Tree (SGT) Construction**: Build a three-level hierarchical structure utilizing LLMs.
 
-2. **Semantic Response Profiling (SRP)**:
-    - **Head level**: Computes a response score $W_h^f$ of each CA head to each subcategory.
-    - **Layer level**: Computes a response score $W_l^m$ of each UNet layer to each semantic category.
+    - Root: $M$ semantic classes (e.g., Object, Attribute)
+    - Middle layer: $F$ subclasses
+    - Leaves: $F$ instance words
 
-3. **Attention modulation**:
-   $\hat{\mathcal{A}}_h = \lambda W_l^{m^*} W_h^{f^*} \mathcal{A}_h$
-   This selectively amplifies responses to target semantics (e.g., viewpoint) while suppressing prior-view bias.
+2. **Semantic Response Analysis (SRP)**:
 
-4. **Semantic editing capability**: Beyond viewpoint semantics, HAM can also locate and control color, material, and other semantic attributes, enabling fine-grained 3D editing.
+    - **Head level**: Calculate the response score $W_h^f$ of CA Heads to subclasses.
+    - **Layer level**: Calculate the response score $W_l^m$ of UNet layers to semantic classes.
+
+3. **Attention Modulation**:
+    $\hat{\mathcal{A}}_h = \lambda W_l^{m^*} W_h^{f^*} \mathcal{A}_h$
+   Selectively enhance responses to the target semantics (such as viewpoint) and suppress prior bias.
+
+4. **Semantic Editing Capability**: HAM not only tracks viewpoint semantics but also localizes and controls semantics like color and material to achieve fine-grained 3D editing.
 
 ### Loss & Training
 
@@ -95,11 +97,13 @@ Generation task: $\mathcal{L} = \mathcal{L}_{Gen} + \lambda_1 \mathcal{L}_{attn}
 
 Editing task: $\mathcal{L} = \mathcal{L}_{Edit} + \lambda_2 \mathcal{L}_{attn}$, where $\lambda_2 = 10$
 
-Generation proceeds in three stages: Stage 1 (0–200 iter, HAM only) → Stage 2 (200–2000, HAM + 3D-AAG) → Stage 3 (2000–4000, 3D-AAG only, for stabilizing fine details).
+Generation is conducted in three stages: Stage 1 (0-200 iter, HAM only) $\to$ Stage 2 (200-2000, HAM+3D-AAG) $\to$ Stage 3 (2000-4000, 3D-AAG only for stabilizing details).
 
 ## Key Experimental Results
 
-### Main Results (3D Generation)
+### Main Results
+
+**3D Generation:**
 
 | Method | ImageReward↑ | CLIPsim↑ | Quality↑ | Consistency↑ | f_mf(%)↓ | f_inc(%)↓ |
 |------|-------------|----------|----------|-------------|----------|-----------|
@@ -117,7 +121,7 @@ Generation proceeds in three stages: Stage 1 (0–200 iter, HAM only) → Stage 
 
 ### Ablation Study
 
-**Generation task:**
+**Generation Task:**
 
 | Method | CLIPsim↑ | f_mf(%)↓ | f_inc(%)↓ |
 |------|----------|----------|-----------|
@@ -127,43 +131,43 @@ Generation proceeds in three stages: Stage 1 (0–200 iter, HAM only) → Stage 
 | + 3D-AAG | 0.313 | 24.4 | 44.4 |
 | **TD-Attn** | **0.314** | **17.8** | **37.8** |
 
-**HAM view generation success rate**: Under back-view conditioning, Stable Diffusion achieves a success rate of only 32.4%; with HAM, this increases to 75.2% (+42.8 pp).
+**HAM Viewpoint Generation Success Rate**: Under back-view conditions, the success rate of Stable Diffusion is only 32.4%. After incorporating HAM, it increases to 75.2% (+42.8pp).
 
 ### Key Findings
 
-- TD-Attn reduces the Janus problem frequency by approximately 50% on average.
-- Anomalously high CLIPsim scores reflect the Janus problem rather than genuine quality—viewpoint distribution analysis is a more reliable evaluation criterion than aggregate scores.
-- HAM and 3D-AAG are complementary: HAM produces view-enhanced CA maps, which 3D-AAG leverages to construct a more consistent 3D attention Gaussian field.
+- TD-Attn reduces the frequency of the Janus problem by approximately 50% on average.
+- The abnormally high CLIPsim scores reflect the Janus problem rather than true quality—viewpoint distribution analysis is more reliable than average scores.
+- HAM and 3D-AAG are complementary: HAM provides viewpoint-enhanced CA maps, and 3D-AAG utilizes this information to construct more consistent 3D attention Gaussians.
 
 ## Highlights & Insights
 
-1. **Theory-driven design**: The method is derived from a probabilistic analysis of the mathematical root causes of prior-view bias, enabling targeted solutions.
-2. **Universal plugin architecture**: The framework integrates into diverse pipelines—DreamScene, LucidDreamer, GCS-BEG, EditSplat—without retraining the diffusion model.
-3. **Semantic Guided Tree** is an elegant design that leverages LLM knowledge to construct a structured semantic space for attention analysis.
-4. **Discovery of the CLIPsim evaluation pitfall**: The authors demonstrate that the Janus problem can inflate CLIPsim scores, and propose viewpoint distribution analysis as a more reliable alternative.
-5. HAM's **semantic-level control** enables fine-grained 3D editing (e.g., disambiguating the color sense vs. botanical sense of "apricot").
+1. **Theory-Driven Method Design**: Derives the mathematical root causes of prior viewpoint bias from probabilistic analysis, and subsequently designs targeted solutions.
+2. **General Plug-and-Play Architecture**: Can be integrated into multiple frameworks like DreamScene, LucidDreamer, GCS-BEG, and EditSplat without retraining the diffusion model.
+3. **The Semantic Guidance Tree** is a clever design, employing LLM knowledge to construct a structured semantic space to guide attention analysis.
+4. **Discovery of the CLIPsim Evaluation Pitfall**: Pointing out that the Janus problem counterintuitively leads to high CLIPsim scores, the authors propose viewpoint distribution analysis as a more reliable evaluation method.
+5. HAM's **semantic-level control capability** enables fine-grained 3D editing (e.g., distinguishing between the color and botanical meanings of "apricot").
 
 ## Limitations & Future Work
 
-1. Validation is limited to Stable Diffusion v2.1/v1.4; applicability to newer models such as SDXL and FLUX remains unclear.
-2. The three-stage training pipeline increases hyperparameter tuning complexity.
-3. The Semantic Guided Tree relies on LLM generation, whose quality is not fully controllable.
-4. The experimental scale is relatively small (100 user study participants), and quantitative geometric quality metrics (e.g., 3D IoU, LPIPS) are absent.
-5. Performance on extreme viewpoints (directly above or below) has not been evaluated.
+1. Only validated on Stable Diffusion v2.1/v1.4; whether it generalizes to newer models such as SDXL or FLUX remains unverified.
+2. The three-stage training pipeline increases the complexity of hyperparameter tuning.
+3. The semantic guidance tree relies on LLM generation, making its quality less controllable.
+4. The experiment scale is relatively small (100 users for human evaluation), and there is a lack of quantitative evaluations of geometry quality (e.g., 3D IoU, LPIPS).
+5. The performance under extreme viewpoints (directly below/directly above) has not been validated.
 
 ## Related Work & Insights
 
-- **MVDream/Zero-1-to-3**: Address consistency by fine-tuning diffusion models on multi-view data, but incur additional training costs.
-- **GaussianEditor**: A predecessor for back-projecting CA maps into 3DGS; TD-Attn builds upon this to construct 3D attention Gaussians.
-- **HRV (park2024cross)**: Inspiration for the SRP module, though TD-Attn additionally accounts for lexical ambiguity in natural language.
-- **Key insight**: Attention maps serve not only as diagnostic tools but can be inversely applied to guide 3D geometry optimization—establishing a new research paradigm for diffusion-guided 3D tasks.
+- **MVDream/Zero-1-to-3**: Address consistency issues by fine-tuning diffusion models on multi-view datasets, but require additional training overhead.
+- **GaussianEditor**: A pioneering work that projects CA maps back to 3DGS. TD-Attn builds upon this to construct 3D attention Gaussians.
+- **HRV (park2024cross)**: Represents the source of inspiration for the SRP module, but TD-Attn additionally accounts for the polysemy of natural language.
+- Insight: Attention maps are not merely diagnostic tools but can also be inversely utilized to guide 3D geometric optimization—forming a new research paradigm for diffusion-guided 3D tasks.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (Deep theoretical analysis; novel designs of the 3D attention Gaussian field and Semantic Guided Tree)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Validated on both generation and editing tasks with multiple baselines and ablations, but lacks geometric quantitative metrics)
-- Writing Quality: ⭐⭐⭐⭐ (Mathematical derivations are clear, though the paper is lengthy)
-- Value: ⭐⭐⭐⭐⭐ (The universal plugin approach offers significant practical value to the 3DGS community)
+- Novelty: ⭐⭐⭐⭐⭐ (In-depth theoretical analysis; the designs of 3D attention Gaussians and semantic guidance tree are novel)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Validated on both generation and editing tasks with multiple baselines compared and abated, but lacks geometric quantitative metrics)
+- Writing Quality: ⭐⭐⭐⭐ (Mathematical derivations are clear, but the manuscript is quite long)
+- Value: ⭐⭐⭐⭐⭐ (The universal plug-and-play approach has substantial practical value for the 3DGS community)
 
 <!-- RELATED:START -->
 
@@ -171,11 +175,11 @@ Generation proceeds in three stages: Stage 1 (0–200 iter, HAM only) → Stage 
 
 ## Related Papers
 
+- [\[ECCV 2024\] GaussCtrl: Multi-View Consistent Text-Driven 3D Gaussian Splatting Editing](../../ECCV2024/3d_vision/gaussctrl_multi-view_consistent_text-driven_3d_gaussian_splatting_editing.md)
 - [\[ICCV 2025\] Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework](../../ICCV2025/3d_vision/bridging_diffusion_models_and_3d_representations_a_3d_consistent_super-resolutio.md)
 - [\[AAAI 2026\] Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion](simba_towards_high-fidelity_and_geometrically-consistent_point_cloud_completion_.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](../../CVPR2026/3d_vision/3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
-- [\[ICCV 2025\] RI3D: Few-Shot Gaussian Splatting With Repair and Inpainting Diffusion Priors](../../ICCV2025/3d_vision/ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md)
-- [\[AAAI 2026\] Gaussian Blending: Rethinking Alpha Blending in 3D Gaussian Splatting](gaussian_blending_rethinking_alpha_blending_in_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](../../CVPR2026/3d_vision/orbital_video_3d_foundation_priors.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](../../CVPR2026/3d_vision/anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
 
 </div>
 

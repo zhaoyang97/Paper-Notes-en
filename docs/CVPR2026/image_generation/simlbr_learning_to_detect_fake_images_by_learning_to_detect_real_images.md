@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images
 description: >-
-  [CVPR 2026][Image Generation][DINOv3] This paper proposes SimLBR, which uses Latent-space Blending Regularization (LBR) to mix sparse fake image information into real image embeddings within the DINOv3 latent space. This forces the detector to learn a compact decision boundary around the real image distribution, achieving strong generalization to unseen ge
+  [CVPR 2026][Image Generation][Fake Image Detection] This paper proposes SimLBR, which uses Latent-space Blending Regularization (LBR) to mix sparse fake image information into real image embeddings within the DINOv3 latent space. This forces the detector to learn a compact decision boundary around the real image distribution, achieving strong generalization to unseen generators. It reaches an average accuracy of 94.54% on GenImage and improves accuracy by 25% and recall by 70…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DINOv3
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Fake Image Detection"
+  - "AI-Generated Images"
+  - "Latent-space Blending Regularization"
+  - "Cross-Generator Generalization"
+  - "DINOv3"
 date: 2026-05-08
-content_hash: 597d7e82988ea23a
+content_hash: 85e3ca8042c20272
 ---
+
 # SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images
 
 **Conference**: CVPR 2026  

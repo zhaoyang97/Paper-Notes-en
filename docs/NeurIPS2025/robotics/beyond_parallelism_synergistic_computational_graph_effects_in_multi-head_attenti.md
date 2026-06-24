@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Parallelism: Synergistic Computational Graph Effects in Multi-Head Attention
 description: >-
-  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Robotics][multi-head attention] This paper reframes multi-head attention as a system of multiple feedforward DAGs sharing a common sink node…
+  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Robotics][multi-head attention] This paper reframes multi-head attention as a system of multiple feedforward DAGs sharing a common sink node, and theoretically demonstrates that multiple heads can achieve synergistic effects through cross-head paths—reducing mixing time and amplifying minimax fidelity—with empirical validation on sequential operation tasks.
 tags:
   - "NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)"
   - "Robotics"
@@ -13,7 +13,7 @@ tags:
   - "minimax fidelity"
   - "synergistic effects"
 date: 2026-05-08
-content_hash: 73f89e5c6ca705a8
+content_hash: 788f29ccc5200b34
 ---
 
 # Beyond Parallelism: Synergistic Computational Graph Effects in Multi-Head Attention
@@ -151,7 +151,7 @@ The paper combines theoretical analysis with empirical validation:
 - [\[NeurIPS 2025\] MaNGO: Adaptable Graph Network Simulators via Meta-Learning](mango_-_adaptable_graph_network_simulators_via_meta-learning.md)
 - [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
 - [\[ICLR 2026\] Nonparametric Teaching of Attention Learners](../../ICLR2026/robotics/nonparametric_teaching_of_attention_learners.md)
-- [\[NeurIPS 2025\] VIKI-R: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning](viki-r_coordinating_embodied_multi-agent_cooperation_via_reinforcement_learning.md)
+- [\[ICML 2025\] Graph-Assisted Stitching for Offline Hierarchical Reinforcement Learning](../../ICML2025/robotics/graph-assisted_stitching_for_offline_hierarchical_reinforcement_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Forget-It-All: Multi-Concept Machine Unlearning via Concept-Aware Neuron Masking
 description: >-
-  [ICML 2026][Image Generation][Paper Note] This paper proposes FIA, a training-free multi-concept unlearning framework. By utilizing "contrastive concept saliency + spatio-temporal sparse selection," it locates concept-sensitive neurons for each target concept. When fusing multi-concept masks, it explicitly preserves "concept-agnostic neurons" that respond to m
+  [ICML 2026][Image Generation][Multi-concept machine unlearning] This paper proposes FIA, a training-free multi-concept unlearning framework. By utilizing "contrastive concept saliency + spatio-temporal sparse selection," it locates concept-sensitive neurons for each target concept. When fusing multi-concept masks, it explicitly preserves "concept-agnostic neurons" that respond to multiple concepts simultaneously, pruning only concept-exclusive connections. On SD v1.5/v1.4…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Multi-concept machine unlearning"
+  - "Text-to-image diffusion"
+  - "Concept-sensitive neurons"
+  - "Neuron masking"
+  - "Training-free"
 date: 2026-05-08
-content_hash: e9effa4079772e24
+content_hash: 3af935f65c9f7eda
 ---
+
 # Forget-It-All: Multi-Concept Machine Unlearning via Concept-Aware Neuron Masking
 
 **Conference**: ICML 2026  
@@ -151,11 +157,11 @@ The entire process is training-free, requiring only three sparsity rates—tempo
 
 ## Related Papers
 
+- [\[ICLR 2026\] Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models](../../ICLR2026/image_generation/forget_many_forget_right_scalable_and_precise_concept_unlearning_in_diffusion_mo.md)
 - [\[ECCV 2024\] Challenging Forgets: Unveiling the Worst-Case Forget Sets in Machine Unlearning](../../ECCV2024/image_generation/challenging_forgets_unveiling_the_worst-case_forget_sets_in_machine_unlearning.md)
-- [\[CVPR 2026\] GenErase: Generalizable and Semantically-Aware Concept Erasure in Diffusion Models](../../CVPR2026/image_generation/generase_generalizable_and_semantically-aware_concept_erasure_in_diffusion_model.md)
 - [\[ICML 2026\] Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers](diagnosing_and_correcting_concept_omission_in_multimodal_diffusion_transformers.md)
+- [\[CVPR 2026\] GenErase: Generalizable and Semantically-Aware Concept Erasure in Diffusion Models](../../CVPR2026/image_generation/generase_generalizable_and_semantically-aware_concept_erasure_in_diffusion_model.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](../../CVPR2026/image_generation/neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
-- [\[ICML 2026\] Orthogonal Concept Erasure for Diffusion Models](orthogonal_concept_erasure_for_diffusion_models.md)
 
 </div>
 

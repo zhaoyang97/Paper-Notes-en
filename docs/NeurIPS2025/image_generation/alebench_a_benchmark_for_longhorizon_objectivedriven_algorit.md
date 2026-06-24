@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ALE-Bench: A Benchmark for Long-Horizon Objective-Driven Algorithm Engineering
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks Track)][Image Generation][Algorithm Engineering Benchmark] This paper introduces ALE-Bench, the first AI benchmark targeting scored algorithm engineering contests (AtCoder Heuristic C…
+  [NeurIPS 2025 (Datasets & Benchmarks Track)][Image Generation][Algorithm Engineering Benchmark] This paper introduces ALE-Bench, the first AI benchmark targeting scored algorithm engineering contests (AtCoder Heuristic Contest). It curates 40 NP-hard optimization problems and provides an interactive agent evaluation framework. The strongest model, o3-high, achieves only human-average performance in a one-shot setting, with significant gaps between AI and human experts in cros…
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks Track)"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Iterative Optimization"
   - "LLM Agent"
 date: 2026-05-08
-content_hash: 248db1ea0c215c13
+content_hash: 2d817dfbbe3ef229
 ---
 
 # ALE-Bench: A Benchmark for Long-Horizon Objective-Driven Algorithm Engineering
@@ -126,11 +126,11 @@ As an evaluation benchmark, no training is involved. ALE-Agent employs an iterat
 
 ## Related Papers
 
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](../../CVPR2026/image_generation/i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 - [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](../../AAAI2026/image_generation/longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
+- [\[ICML 2025\] Quantum Algorithms for Finite-horizon Markov Decision Processes](../../ICML2025/image_generation/quantum_algorithms_for_finite-horizon_markov_decision_processes.md)
 - [\[NeurIPS 2025\] CORAL: Disentangling Latent Representations in Long-Tailed Diffusion](coral_disentangling_latent_representations_in_longtailed_dif.md)
 - [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](../../ICCV2025/image_generation/ale_attribute_leakage_free_editing.md)
-- [\[NeurIPS 2025\] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](overt_a_benchmark_for_over-refusal_evaluation_on_text-to-image_models.md)
-- [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
 
 </div>
 

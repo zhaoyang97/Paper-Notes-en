@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][CLIP] Addressing the issue where ViT self-attention acts as a low-pass filter, resulting in affinity that only diffuses within object interiors and loses boundaries, this paper proposes the Dual Frequency-Aware (DFA) framework. DFA uses low-frequency affinity to align internal semantics and high-frequency (inverse) affinity
+  [CVPR 2026][Segmentation][Weakly Supervised Semantic Segmentation] Addressing the issue where ViT self-attention acts as a low-pass filter, resulting in affinity that only diffuses within object interiors and loses boundaries, this paper proposes the Dual Frequency-Aware (DFA) framework. DFA uses low-frequency affinity to align internal semantics and high-frequency (inverse) affinity to correct object boundaries. By employing Optimal Transport-based Frequency-Guided CAM gener…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Weakly Supervised Semantic Segmentation"
+  - "CAM Refinement"
+  - "Frequency-Domain Affinity"
+  - "Optimal Transport"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 556f083ed0a7f256
+content_hash: a3e21a2e02dc2b5e
 ---
+
 # Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -167,15 +172,15 @@ Effectiveness of modules (VOC train, M for CAM mIoU%; E(⊙) for element-wise re
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation](leveraging_class_distributions_in_clip_for_weakly_supervised_semantic_segmentati.md)
 - [\[CVPR 2026\] Beyond Text: Visual Description Assembly by Probabilistic Model for CLIP-based Weakly Supervised Semantic Segmentation](beyond_text_visual_description_assembly_by_probabilistic_model_for_clip-based_we.md)
-- [\[CVPR 2026\] FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning](fcl-cod_weakly_supervised_camouflaged_object_detection_with_frequency-aware_and_.md)
 - [\[AAAI 2026\] SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation](../../AAAI2026/segmentation/ssr_semantic_and_spatial_rectification_for_clip-based_weakly_supervised_segmenta.md)
-- [\[CVPR 2026\] Hierarchical Action Learning for Weakly-Supervised Action Segmentation](hierarchical_action_learning_for_weakly-supervised_action_segmentation.md)
+- [\[CVPR 2025\] Exploring CLIP's Dense Knowledge for Weakly Supervised Semantic Segmentation](../../CVPR2025/segmentation/exploring_clips_dense_knowledge_for_weakly_supervised_semantic_segmentation.md)
+- [\[CVPR 2026\] Rethinking Box Supervision: Bias-Free Weakly Supervised Medical Segmentation](rethinking_box_supervision_bias-free_weakly_supervised_medical_segmentation.md)
 
 </div>
 

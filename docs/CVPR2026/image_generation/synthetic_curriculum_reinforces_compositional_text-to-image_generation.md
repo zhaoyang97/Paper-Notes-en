@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][GRPO] CompGen defines "compositional difficulty" through the structural complexity of scene graphs, utilizes adaptive MCMC to sample scene graphs within specified difficulty intervals to construct training prompts, and integrates "easy-to-hard" curriculum weights into the rewards of Group Relative Policy Optimization (GRPO).
+  [CVPR 2026][Image Generation][Compositional Generation] CompGen defines "compositional difficulty" through the structural complexity of scene graphs, utilizes adaptive MCMC to sample scene graphs within specified difficulty intervals to construct training prompts, and integrates "easy-to-hard" curriculum weights into the rewards of Group Relative Policy Optimization (GRPO). **Without requiring any ground-truth images**, this approach improves the compositional generation capa…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Compositional Generation"
+  - "Curriculum Learning"
+  - "Scene Graphs"
+  - "MCMC Sampling"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 6a851bf95e0e5f23
+content_hash: 085f6aac22c8ff4b
 ---
+
 # Synthetic Curriculum Reinforces Compositional Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -148,6 +153,7 @@ Performance scales linearly with the capability of the reward MLLM.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -156,7 +162,7 @@ Performance scales linearly with the capability of the reward MLLM.
 - [\[CVPR 2026\] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation](curriculum_group_policy_optimization_adaptive_sampling_for_unleashing_the_potent.md)
 - [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
 - [\[CVPR 2026\] HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning](hicogen_hierarchical_compositional_text-to-image_generation_in_diffusion_models_.md)
-- [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
+- [\[ICLR 2026\] Long-Text-to-Image Generation via Compositional Prompt Decomposition](../../ICLR2026/image_generation/long-text-to-image_generation_via_compositional_prompt_decomposition.md)
 
 </div>
 

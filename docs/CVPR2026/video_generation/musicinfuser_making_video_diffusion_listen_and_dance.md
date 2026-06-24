@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MusicInfuser: Making Video Diffusion Listen and Dance
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Instead of training an audio-video model from scratch, MusicInfuser injects zero-initialized music-video modules into a pre-trained text-to-video diffusion model (Mochi). It utilizes a "layer adaptability" criterion to select only a few DiT layers for cross-attention adaptation, enabling the video diffusion model to "d
+  [CVPR 2026][Video Generation][Music-driven dance generation] Instead of training an audio-video model from scratch, MusicInfuser injects zero-initialized music-video modules into a pre-trained text-to-video diffusion model (Mochi). It utilizes a "layer adaptability" criterion to select only a few DiT layers for cross-attention adaptation, enabling the video diffusion model to "dance to music" within one day on a single GPU while preserving the text control and image quality p…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Music-driven dance generation"
+  - "video diffusion adaptation"
+  - "layer adaptability"
+  - "zero-initialized cross-attention"
+  - "prior preservation"
 date: 2026-05-08
-content_hash: 9ebd06bd914b79be
+content_hash: 36b0270979dc7a74
 ---
+
 # MusicInfuser: Making Video Diffusion Listen and Dance
 
 **Conference**: CVPR 2026  

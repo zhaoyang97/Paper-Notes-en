@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] MotiMotion: Motion-Controlled Video Generation with Visual Reasoning
 description: >-
-  [ICML 2026][Video Generation][VLM] MotiMotion **transforms** sparse and imprecise user trajectories and text prompts into physically plausible and causally consistent motion trajectories and text descriptions using VLM reasoning. It then employs a **confidence-weighted** control strategy to guide the diffusion model in generating natural videos aligned
+  [ICML 2026][Video Generation][Motion Control] MotiMotion **transforms** sparse and imprecise user trajectories and text prompts into physically plausible and causally consistent motion trajectories and text descriptions using VLM reasoning. It then employs a **confidence-weighted** control strategy to guide the diffusion model in generating natural videos aligned with world knowledge and physical principles—achieving a physical realism score of 0.302 on MotiBench…
 tags:
-  - ICML 2026
-  - Video Generation
-  - VLM
+  - "ICML 2026"
+  - "Video Generation"
+  - "Motion Control"
+  - "Visual Reasoning"
+  - "VLM"
+  - "Physical Constraints"
 date: 2026-05-08
-content_hash: 9903f3019465155c
+content_hash: ea50a3579c198335
 ---
+
 # MotiMotion: Motion-Controlled Video Generation with Visual Reasoning
 
 **Conference**: ICML 2026  
@@ -132,9 +136,9 @@ Physical realism improved by 38% compared to Wan-Move and 92% compared to MagicM
 
 - [\[CVPR 2026\] EffectMaker: Unifying Reasoning and Generation for Customized Visual Effect Creation](../../CVPR2026/video_generation/effectmaker_unifying_reasoning_and_generation_for_customized_visual_effect_creat.md)
 - [\[CVPR 2026\] SynMotion: Semantic-Visual Adaptation for Motion Customized Video Generation](../../CVPR2026/video_generation/synmotion_semantic-visual_adaptation_for_motion_customized_video_generation.md)
-- [\[CVPR 2026\] MoReGen: Multi-Agent Motion-Reasoning Engine for Code-based Text-to-Video Synthesis](../../CVPR2026/video_generation/moregen_multi-agent_motion-reasoning_engine_for_code-based_text-to-video_synthes.md)
 - [\[ICML 2026\] Physics in 2-Steps: Locking Motion Priors Before Visual Refinement Erases Them](physics_in_2-steps_locking_motion_priors_before_visual_refinement_erases_them.md)
-- [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](../../CVPR2026/video_generation/unified_camera_positional_encoding_for_controlled_video_generation.md)
+- [\[ICLR 2026\] Time-to-Move: Training-Free Motion-Controlled Video Generation via Dual-Clock Denoising](../../ICLR2026/video_generation/time-to-move_training-free_motion-controlled_video_generation_via_dual-clock_den.md)
+- [\[CVPR 2026\] MoReGen: Multi-Agent Motion-Reasoning Engine for Code-based Text-to-Video Synthesis](../../CVPR2026/video_generation/moregen_multi-agent_motion-reasoning_engine_for_code-based_text-to-video_synthes.md)
 
 </div>
 

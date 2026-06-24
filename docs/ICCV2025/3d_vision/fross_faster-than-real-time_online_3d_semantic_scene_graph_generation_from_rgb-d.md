@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FROSS: Faster-than-Real-Time Online 3D Semantic Scene Graph Generation from RGB-D Images
 description: >-
-  [ICCV 2025][3D Vision][3D Scene Graph] This paper proposes FROSS, a method that lifts 2D scene graphs directly into 3D space and represents objects as Gaussian distributions…
+  [ICCV 2025][3D Vision][3D Scene Graph] This paper proposes FROSS, a method that lifts 2D scene graphs directly into 3D space and represents objects as Gaussian distributions, achieving faster-than-real-time (144 FPS) online 3D semantic scene graph generation without requiring precise point cloud reconstruction.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "RGB-D"
   - "Scene Understanding"
 date: 2026-05-08
-content_hash: 8272d72273da5000
+content_hash: 2e2727bc6d65fad8
 ---
 
 # FROSS: Faster-than-Real-Time Online 3D Semantic Scene Graph Generation from RGB-D Images
@@ -136,10 +136,10 @@ FROSS improves relationship recall by 19.7% and object recall by 16.0% over the 
 
 ## Related Papers
 
+- [\[CVPR 2025\] SLAM3R: Real-Time Dense Scene Reconstruction from Monocular RGB Videos](../../CVPR2025/3d_vision/slam3r_real-time_dense_scene_reconstruction_from_monocular_rgb_videos.md)
 - [\[ICCV 2025\] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images](spatialsplat_efficient_semantic_3d_from_sparse_unposed_images.md)
 - [\[ICCV 2025\] 3D Test-time Adaptation via Graph Spectral Driven Point Shift](3d_testtime_adaptation_via_graph_spectral_driven_point_shift.md)
 - [\[ICCV 2025\] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes](unified_category-level_object_detection_and_pose_estimation_from_rgb_images_usin.md)
-- [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](../../CVPR2026/3d_vision/changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
 - [\[ICCV 2025\] Open-Vocabulary Octree-Graph for 3D Scene Understanding](open-vocabulary_octree-graph_for_3d_scene_understanding.md)
 
 </div>

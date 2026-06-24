@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] S2D: Selective Spectral Decay for Quantization-Friendly Conditioning of Neural Activations
 description: >-
-  [CVPR 2026][Model Compression][SigLIP] S2D attributes the root cause of activation outliers to a few "bloated" principal singular values of the weight matrix. By applying selective spectral decay only to these largest singular values during the fine-tuning stage, the model is conditioned into a "quantization-friendly" state without requiring retraining from
+  [CVPR 2026][Multimodal Efficiency][Activation Outliers] S2D attributes the root cause of activation outliers to a few "bloated" principal singular values of the weight matrix. By applying selective spectral decay only to these largest singular values during the fine-tuning stage, the model is conditioned into a "quantization-friendly" state without requiring retraining from scratch. W4A4 PTQ on ImageNet achieves gains of up to 7%.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - SigLIP
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Activation Outliers"
+  - "Low-bit Quantization"
+  - "Spectral Regularization"
+  - "Singular Values"
+  - "SigLIP"
 date: 2026-05-08
-content_hash: 8eb23be0287218f1
+content_hash: 089f4328cbea6ed7
 ---
+
 # S2D: Selective Spectral Decay for Quantization-Friendly Conditioning of Neural Activations
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ QAT bit-widths: W3A4 improves from 59.9% to 62.4%, and W4A4 improves from 65.8% 
 
 ## Related Papers
 
-- [\[CVPR 2026\] SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](selectkd_selective_token-weighted_knowledge_distillation_for_llms.md)
-- [\[ICML 2025\] Sparse Spectral Training and Inference on Euclidean and Hyperbolic Neural Networks](../../ICML2025/model_compression/sparse_spectral_training_and_inference_on_euclidean_and_hyperbolic_neural_networ.md)
-- [\[ICML 2025\] Merge-Friendly Post-Training Quantization for Multi-Target Domain Adaptation](../../ICML2025/model_compression/merge-friendly_post-training_quantization_for_multi-target_domain_adaptation.md)
-- [\[AAAI 2026\] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization](../../AAAI2026/model_compression/specquant_spectral_decomposition_and_adaptive_truncation_for_ultra-low-bit_llms_.md)
-- [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](../../ICML2026/model_compression/selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
+- [\[CVPR 2026\] Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation](vision-oriented_lightweight_neural_architecture_search_with_budget-adaptive_eval.md)
+- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
+- [\[CVPR 2026\] VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction](vqrae_representation_quantization_autoencoders_for_multimodal_understanding_gene.md)
+- [\[CVPR 2026\] Rethinking Asymmetric Quantization: Hidden Symmetry in Vision Model Weights](rethinking_asymmetric_quantization_hidden_symmetry_in_vision_model_weights.md)
+- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
 
 </div>
 

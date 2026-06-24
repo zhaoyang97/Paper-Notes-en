@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] CoMind: Towards Community-Driven Agents for Machine Learning Engineering
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] The authors propose MLE-Live—the first real-time evaluation framework simulating the Kaggle research community—and CoMind—a multi-agent ML engineering system capable of systematically leveraging collective community knowledge. CoMind achieved a 36% medal rate across 75 historical Kaggle competitions and surpassed an av
+  [ICLR 2026][LLM Agent][Machine Learning Engineering] The authors propose MLE-Live—the first real-time evaluation framework simulating the Kaggle research community—and CoMind—a multi-agent ML engineering system capable of systematically leveraging collective community knowledge. CoMind achieved a 36% medal rate across 75 historical Kaggle competitions and surpassed an average of 79.2% of human participants (reaching 92.6% in updated versions) in 4 active competitions.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Machine Learning Engineering"
+  - "Kaggle Competitions"
+  - "Community Knowledge"
+  - "Multi-agent Collaboration"
 date: 2026-05-08
-content_hash: 10db500dfa138d54
+content_hash: cad1ef223b4a582d
 ---
+
 # CoMind: Towards Community-Driven Agents for Machine Learning Engineering
 
 **Conference**: ICLR 2026  
@@ -162,10 +167,10 @@ CoMind obtained 9 medals (5 gold), a 125% Gain over the Prev. SOTA (AIDE).
 ## Related Papers
 
 - [\[ICLR 2026\] Language Agents for Hypothesis-driven Clinical Decision Making with Reinforcement Learning](language_agents_for_hypothesis-driven_clinical_decision_making_with_reinforcemen.md)
+- [\[ICLR 2026\] Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine](huxley-godel_machine_human-level_coding_agent_development_by_an_approximation_of.md)
+- [\[ICLR 2026\] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents](darwin_gödel_machine_open-ended_evolution_of_self-improving_agents.md)
 - [\[ICLR 2026\] Programming with Pixels: Can Computer-Use Agents do Software Engineering?](programming_with_pixels_can_computer-use_agents_do_software_engineering.md)
 - [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
-- [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](../../NeurIPS2025/llm_agent/mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
-- [\[ICLR 2026\] Helmsman: Autonomous Synthesis of Federated Learning Systems via Collaborative LLM Agents](helmsman_autonomous_synthesis_of_federated_learning_systems_via_collaborative_ll.md)
 
 </div>
 

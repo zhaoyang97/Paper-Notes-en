@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset
 description: >-
-  [NEURIPS2025][Autonomous Driving][microservice telemetry] This paper presents ChronoGraph — the first real-world microservice dataset that simultaneously provides multivariate time series…
+  [NEURIPS2025][Autonomous Driving][microservice telemetry] This paper presents ChronoGraph — the first real-world microservice dataset that simultaneously provides multivariate time series, explicit service dependency graphs, and event-level anomaly labels (6 months / ~700 services / 5-dimensional metrics / 8005 timesteps). Benchmark results reveal substantial room for improvement in long-horizon forecasting and topology-aware modeling among existing methods.
 tags:
   - "NEURIPS2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "real-world dataset"
   - "service dependency graph"
 date: 2026-05-08
-content_hash: aeeabe363ab128a2
+content_hash: 24c2060e0a35da6e
 ---
 
 # ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset
@@ -151,10 +151,10 @@ Three major categories of methods are included:
 ## Related Papers
 
 - [\[NeurIPS 2025\] DBLoss: Decomposition-based Loss Function for Time Series Forecasting](dbloss_decomposition-based_loss_function_for_time_series_forecasting.md)
+- [\[CVPR 2026\] V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception](../../CVPR2026/autonomous_driving/v2u4real_a_real-world_large-scale_dataset_for_vehicle-to-uav_cooperative_percept.md)
 - [\[NeurIPS 2025\] How Different from the Past? Spatio-Temporal Time Series Forecasting with Self-Supervised Deviation Learning](how_different_from_the_past_spatio-temporal_time_series_forecasting_with_self-su.md)
-- [\[ICCV 2025\] LookOut: Real-World Humanoid Egocentric Navigation](../../ICCV2025/autonomous_driving/lookout_real-world_humanoid_egocentric_navigation.md)
 - [\[ICCV 2025\] RTMap: Real-Time Recursive Mapping with Change Detection and Localization](../../ICCV2025/autonomous_driving/rtmap_real-time_recursive_mapping_with_change_detection_and_localization.md)
-- [\[NeurIPS 2025\] Self-Supervised Learning of Graph Representations for Network Intrusion Detection](self-supervised_learning_of_graph_representations_for_network_intrusion_detectio.md)
+- [\[ICCV 2025\] LookOut: Real-World Humanoid Egocentric Navigation](../../ICCV2025/autonomous_driving/lookout_real-world_humanoid_egocentric_navigation.md)
 
 </div>
 

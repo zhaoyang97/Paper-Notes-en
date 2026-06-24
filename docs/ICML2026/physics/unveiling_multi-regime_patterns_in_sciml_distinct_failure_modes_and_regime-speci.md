@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] Unveiling Multi-Regime Patterns in SciML: 不同失败模式与域特异优化
+  [Paper Note] Unveiling Multi-Regime Patterns in SciML: Diverse Failure Modes and Domain-Specific Optimization
 description: >-
   [ICML 2026][Physics & Scientific Computing][SciML] Reveals three consistent failure modes in SciML models (PINNs, neural operators, etc.) through a systematic multi-domain diagnostic framework—and analyzes their loss landscape specificities to provide guidance for optimization method selection.
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - SciML
-  - PINN
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "SciML"
+  - "multi-domain analysis"
+  - "PINN"
+  - "failure modes"
+  - "loss landscape"
 date: 2026-05-08
-content_hash: d238bda24a1ad251
+content_hash: a50d38959debe68e
 ---
+
 # Unveiling Multi-Regime Patterns in SciML: Diverse Failure Modes and Domain-Specific Optimization
 
 **Conference**: ICML 2026  
@@ -107,11 +111,11 @@ Following the diagnosis, the framework addresses "how to select an optimizer." T
 
 ## Related Papers
 
-- [\[ICLR 2026\] Supervised Metric Regularization Through Alternating Optimization for Multi-Regime PINNs](../../ICLR2026/physics/supervised_metric_regularization_through_alternating_optimization_for_multi-regi.md)
-- [\[ICLR 2026\] MOSIV: Multi-Object System Identification from Videos](../../ICLR2026/physics/mosiv_multi-object_system_identification_from_videos.md)
-- [\[ICML 2026\] Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs](hermite-ngp_gradient-augmented_hash_encoding_for_learning_pdes.md)
+- [\[ICLR 2026\] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](../../ICLR2026/physics/operator_learning_with_domain_decomposition_for_geometry_generalization_in_pde_s.md)
+- [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](../../NeurIPS2025/physics/from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
+- [\[ICLR 2026\] VisionLaw: Inferring Interpretable Intrinsic Dynamics from Visual Observations via Bilevel Optimization](../../ICLR2026/physics/visionlaw_inferring_interpretable_intrinsic_dynamics_from_visual_observations_vi.md)
 - [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](../../AAAI2026/physics/pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
-- [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
+- [\[ICLR 2026\] PRO-MOF: Policy Optimization with Universal Atomistic Models for Controllable MOF Generation](../../ICLR2026/physics/pro-mof_policy_optimization_with_universal_atomistic_models_for_controllable_mof.md)
 
 </div>
 

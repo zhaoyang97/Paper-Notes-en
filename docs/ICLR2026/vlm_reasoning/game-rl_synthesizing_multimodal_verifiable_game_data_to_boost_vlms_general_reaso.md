@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][VLM] The game code is "distilled" into verifiable VQA data with step-by-step analysis (GameQA: 30 games / 158 tasks / 140,000 questions). By performing GRPO reinforcement learning solely on game data, multiple VLMs achieve consistent performance improvements across seven completely out-of-domain (OOD) general vision reasoni
+  [ICLR 2026][VLM Reasoning][VLM] The game code is "distilled" into verifiable VQA data with step-by-step analysis (GameQA: 30 games / 158 tasks / 140,000 questions). By performing GRPO reinforcement learning solely on game data, multiple VLMs achieve consistent performance improvements across seven completely out-of-domain (OOD) general vision reasoning benchmarks.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - VLM
-  - GRPO
-  - Code2Logic
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "VLM"
+  - "GRPO"
+  - "Verifiable Reward"
+  - "Game Data"
+  - "Code2Logic"
+  - "General Reasoning"
 date: 2026-05-08
-content_hash: da1eb7f31dd2e8bc
+content_hash: fbe2c78d8e18dc97
 ---
+
 # Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning
 
 **Conference**: ICLR 2026  

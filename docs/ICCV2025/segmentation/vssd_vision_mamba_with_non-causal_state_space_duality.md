@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VSSD: Vision Mamba with Non-Causal State Space Duality
 description: >-
-  [ICCV 2025][Segmentation][State Space Models] This paper proposes Non-Causal State Space Duality (NC-SSD), which transforms the SSD formulation of Mamba2 into a non-causal form by retaining the relative weights of token…
+  [ICCV 2025][Segmentation][State Space Models] This paper proposes Non-Causal State Space Duality (NC-SSD), which transforms the SSD formulation of Mamba2 into a non-causal form by retaining the relative weights of token contributions in lieu of the cumulative decay of hidden states. Built upon NC-SSD, the VSSD visual backbone surpasses existing SSM-based models across classification, detection, and segmentation benchmarks while achieving 20%–50% faster training speed.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Visual Backbone"
   - "Linear Complexity"
 date: 2026-05-08
-content_hash: ff50f1391ce3e3e8
+content_hash: ea0b90465d79cf46
 ---
 
 # VSSD: Vision Mamba with Non-Causal State Space Duality
@@ -163,11 +163,11 @@ VSSD-T outperforms Swin-T by +4.2 box AP and +3.3 mask AP.
 
 ## Related Papers
 
+- [\[CVPR 2025\] DefMamba: Deformable Visual State Space Model](../../CVPR2025/segmentation/defmamba_deformable_visual_state_space_model.md)
 - [\[ICCV 2025\] TinyViM: Frequency Decoupling for Tiny Hybrid Vision Mamba](tinyvim_frequency_decoupling_for_tiny_hybrid_vision_mamba.md)
-- [\[CVPR 2026\] RS-SSM: Refining Forgotten Specifics in State Space Model for Video Semantic Segmentation](../../CVPR2026/segmentation/rs-ssm_refining_forgotten_specifics_in_state_space_model_for_video_semantic_segm.md)
-- [\[AAAI 2026\] Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation](../../AAAI2026/segmentation/causal-tune_mining_causal_factors_from_vision_foundation_mod.md)
-- [\[ICCV 2025\] Stepping Out of Similar Semantic Space for Open-Vocabulary Segmentation](stepping_out_of_similar_semantic_space_for_open-vocabulary_segmentation.md)
-- [\[ICCV 2025\] LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity](legrad_an_explainability_method_for_vision_transformers_via_feature_formation_se.md)
+- [\[CVPR 2025\] Exploiting Temporal State Space Sharing for Video Semantic Segmentation](../../CVPR2025/segmentation/exploiting_temporal_state_space_sharing_for_video_semantic_segmentation.md)
+- [\[CVPR 2025\] GroupMamba: Efficient Group-Based Visual State Space Model](../../CVPR2025/segmentation/groupmamba_efficient_group-based_visual_state_space_model.md)
+- [\[CVPR 2025\] MambaOut: Do We Really Need Mamba for Vision?](../../CVPR2025/segmentation/mambaout_do_we_really_need_mamba_for_vision.md)
 
 </div>
 

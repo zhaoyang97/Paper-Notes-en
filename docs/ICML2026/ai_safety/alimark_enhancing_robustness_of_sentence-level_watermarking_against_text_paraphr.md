@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AliMark: Enhancing Robustness of Sentence-Level Watermarking Against Text Paraphrasing
 description: >-
-  [ICML 2026][AI Safety][Paper Note] AliMark reformulates sentence-level text watermarking from "prefix-conditioned sentence-by-sentence detection" to "global secret bit sequence encoding and alignment." By utilizing text reconstruction and adaptive block edit distance, it significantly enhances detection robustness against strong paraphrasing attacks suc
+  [ICML 2026][AI Safety][Sentence-level watermarking] AliMark reformulates sentence-level text watermarking from "prefix-conditioned sentence-by-sentence detection" to "global secret bit sequence encoding and alignment." By utilizing text reconstruction and adaptive block edit distance, it significantly enhances detection robustness against strong paraphrasing attacks such as DIPPER and GPT-3.5.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Sentence-level watermarking"
+  - "Paraphrasing robustness"
+  - "Sequence alignment"
+  - "Structural perturbation"
+  - "Watermark detection"
 date: 2026-05-08
-content_hash: 4fecd980d588b8e9
+content_hash: 1536ab79ada908ae
 ---
+
 # AliMark: Enhancing Robustness of Sentence-Level Watermarking Against Text Paraphrasing
 
 **Conference**: ICML 2026  
@@ -127,11 +133,20 @@ The authors analyze the impact of the embedder, candidate budget, and detection 
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] PECCAVI: Overcoming the Brittleness of AI Image Watermarking Under Visual Paraphrasing Attacks](../../CVPR2026/ai_safety/peccvai_overcoming_the_brittleness_of_ai_image_watermarking_under_visual_paraphr.md)
+- [\[NeurIPS 2025\] Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness](../../NeurIPS2025/ai_safety/bridging_symmetry_and_robustness_on_the_role_of_equivariance_in_enhancing_advers.md)
+- [\[ICLR 2026\] TrojanTO: Action-Level Backdoor Attacks Against Trajectory Optimization Models](../../ICLR2026/ai_safety/trojanto_action-level_backdoor_attacks_against_trajectory_optimization_models.md)
+- [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](../../NeurIPS2025/ai_safety/enhancing_graph_classification_robustness_with_singular_pooling.md)
+- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] PECCAVI: Overcoming the Brittleness of AI Image Watermarking Under Visual Paraphrasing Attacks](../../CVPR2026/ai_safety/peccvai_overcoming_the_brittleness_of_ai_image_watermarking_under_visual_paraphr.md)

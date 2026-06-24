@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EfficientFlow: Efficient Equivariant Flow Policy Learning for Embodied AI
 description: >-
-  [AAAI 2026][Image Generation][Flow Matching] This paper proposes EfficientFlow, which incorporates equivariance into the Flow Matching policy learning framework. It theoretically proves that an isotropic prior combined w…
+  [AAAI 2026][Image Generation][Flow Matching] This paper proposes EfficientFlow, which incorporates equivariance into the Flow Matching policy learning framework. It theoretically proves that an isotropic prior combined with an equivariant velocity network guarantees an equivariant action distribution, and introduces Flow Acceleration Upper Bound (FABO) regularization to accelerate sampling. On 12 tasks from MimicGen, EfficientFlow achieves 20–56× faster inference than EquiDif…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Acceleration Regularization"
   - "Robotic Manipulation"
 date: 2026-05-08
-content_hash: cc697d3c44ff068b
+content_hash: 3efbb78403f52f77
 ---
 
 # EfficientFlow: Efficient Equivariant Flow Policy Learning for Embodied AI
@@ -132,7 +132,7 @@ $\mathcal{L} = \mathcal{L}_{CFM} + \lambda \cdot \text{FABO}$. Evaluated on 12 t
 - [\[AAAI 2026\] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation](mp1_meanflow_tames_policy_learning_in_1-step_for_robotic_manipulation.md)
 - [\[NeurIPS 2025\] FreqPolicy: Efficient Flow-based Visuomotor Policy via Frequency Consistency](../../NeurIPS2025/image_generation/freqpolicy_efficient_flow-based_visuomotor_policy_via_frequency_consistency.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](../../NeurIPS2025/image_generation/equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
-- [\[AAAI 2026\] DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models](dogfit_domain-guided_fine-tuning_for_efficient_transfer_learning_of_diffusion_mo.md)
+- [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](../../CVPR2026/image_generation/learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
 
 </div>
 

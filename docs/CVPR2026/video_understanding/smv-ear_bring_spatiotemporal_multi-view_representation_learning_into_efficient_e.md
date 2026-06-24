@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SMV-EAR: Bring Spatiotemporal Multi-View Representation Learning into Efficient Event-Based Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] For Event-Based Action Recognition (EAR), rather than aggregating events into H-W frames along the temporal axis, this paper projects them along the H/W axes into two "temporal views" (T-H and T-W). It systematically re-engineers three stages: representation (translation-invariant TISM), fusion (dual-branch dynamic fus
+  [CVPR 2026][Video Understanding][Event Camera] For Event-Based Action Recognition (EAR), rather than aggregating events into H-W frames along the temporal axis, this paper projects them along the H/W axes into two "temporal views" (T-H and T-W). It systematically re-engineers three stages: representation (translation-invariant TISM), fusion (dual-branch dynamic fusion DDCF), and augmentation (diverse temporal warping DTW). Ours achieves Top-1 gains of +7.0%/+10.7%/+10.2% on t…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Event Camera"
+  - "Action Recognition"
+  - "Multi-view Representation"
+  - "Translation Invariance"
+  - "Dynamic Fusion"
 date: 2026-05-08
-content_hash: 67d3494571a894ca
+content_hash: ac01609232409414
 ---
+
 # SMV-EAR: Bring Spatiotemporal Multi-View Representation Learning into Efficient Event-Based Action Recognition
 
 **Conference**: CVPR 2026  
@@ -141,8 +147,8 @@ Ablation of DDCF internal fusion strategies (T-H/T-W dual-branch):
 ## Related Papers
 
 - [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
-- [\[CVPR 2026\] DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions](darkshake-dvs_event-based_human_action_recognition_under_low-light_and_shaking_c.md)
 - [\[CVPR 2026\] MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras](mer-tracker_towards_high-speed_3d_point_tracking_via_multi-view_event-rgb_hybrid.md)
+- [\[CVPR 2026\] DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions](darkshake-dvs_event-based_human_action_recognition_under_low-light_and_shaking_c.md)
 - [\[CVPR 2026\] SHANDS: A Multi-View Dataset and Benchmark for Surgical Hand-Gesture and Error Recognition Toward Medical Training](shands_a_multi-view_dataset_and_benchmark_for_surgical_hand-gesture_and_error_re.md)
 - [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](../../AAAI2026/video_understanding/sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
 

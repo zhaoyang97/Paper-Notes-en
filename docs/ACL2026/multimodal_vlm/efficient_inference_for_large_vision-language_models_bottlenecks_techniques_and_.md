@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] This paper proposes a systematic taxonomy for LVLM inference efficiency, analyzing bottlenecks along the encoding-prefilling-decoding pipeline. It reveals the systemic efficiency barrier caused by "vision token dominance" and summarizes a comprehensive technical map ranging from information density shaping and long-con
+  [ACL 2026 Findings][Multimodal VLM][Large Vision-Language Models] This paper proposes a systematic taxonomy for LVLM inference efficiency, analyzing bottlenecks along the encoding-prefilling-decoding pipeline. It reveals the systemic efficiency barrier caused by "vision token dominance" and summarizes a comprehensive technical map ranging from information density shaping and long-context attention management to memory bandwidth breakthroughs.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - Token Compression
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Large Vision-Language Models"
+  - "Inference Efficiency"
+  - "Vision Token Dominance"
+  - "KV Cache"
+  - "Token Compression"
 date: 2026-05-08
-content_hash: 975a1a603b7cdadd
+content_hash: 097d41b33523f9e7
 ---
+
 # Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects
 
 **Conference**: ACL 2026 Findings  
@@ -117,8 +121,8 @@ As a survey paper, it does not propose a specific training method but outlines f
 
 ## Related Papers
 
+- [\[ICML 2026\] Unveiling Visual Counting Bottlenecks in Vision-Language Models](../../ICML2026/multimodal_vlm/unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
 - [\[ECCV 2024\] Efficient Inference of Vision Instruction-Following Models with Elastic Cache](../../ECCV2024/multimodal_vlm/efficient_inference_of_vision_instruction-following_models_with_elastic_cache.md)
-- [\[ACL 2026\] Topology-Aware Layer Pruning for Large Vision-Language Models](topology-aware_layer_pruning_for_large_vision-language_models.md)
 - [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](../../ICLR2026/multimodal_vlm/efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
 - [\[ICLR 2026\] MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs](../../ICLR2026/multimodal_vlm/mmtok_multimodal_coverage_maximization_for_efficient_inference_of_vlms.md)
 - [\[ACL 2026\] Doc-PP: Document Policy Preservation Benchmark for Large Vision-Language Models](doc-pp_document_policy_preservation_benchmark_for_large_vision-language_models.md)

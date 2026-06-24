@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PI-CCA: Prompt-Invariant CCA Certificates for Replay-Free Continual Multimodal Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] PI-CCA redefines "forgetting" in Vision-Language Models (VLMs) as the drift of image-text alignment geometry. It employs a compact "CCA certificate" (top-k canonical correlation spectra + subspace sketches) as an invariant to constrain LoRA fine-tuning under replay-free, constant memory settings. By averaging across pr
+  [ICLR 2026][Multimodal VLM][Vision-Language Continual Learning] PI-CCA redefines "forgetting" in Vision-Language Models (VLMs) as the drift of image-text alignment geometry. It employs a compact "CCA certificate" (top-k canonical correlation spectra + subspace sketches) as an invariant to constrain LoRA fine-tuning under replay-free, constant memory settings. By averaging across prompt perturbations, it achieves prompt invariance, reaching SOTA performance among replay-free m…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Continual Learning"
+  - "Replay-Free"
+  - "Canonical Correlation Analysis (CCA)"
+  - "Prompt Robustness"
+  - "Zero-shot Retention"
 date: 2026-05-08
-content_hash: 6dda59bb4d09b192
+content_hash: 7ab8d1cf06b03ed6
 ---
+
 # PI-CCA: Prompt-Invariant CCA Certificates for Replay-Free Continual Multimodal Learning
 
 **Conference**: ICLR 2026  
@@ -137,10 +143,20 @@ PI-CCA achieved superior performance among replay-free methods across all tracks
 - Value: ⭐⭐⭐⭐ High practical value for VLM deployment under strict privacy/memory constraints.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
+- [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
+- [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](keeplora_continual_learning_with_residual_gradient_adaptation.md)
+- [\[ICLR 2026\] PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning](psp_prompt-guided_self-training_sampling_policy_for_active_prompt_learning.md)
+- [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)

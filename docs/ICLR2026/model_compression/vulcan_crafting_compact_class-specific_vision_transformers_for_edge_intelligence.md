@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Vulcan: 为边缘智能裁剪紧凑的类特定视觉 Transformer
+  [Paper Note] Vulcan: Tailoring Compact Class-Specific Vision Transformers for Edge Intelligence
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Vulcan discovers that the Feed-Forward Network (FFN) in a ViT stores "class-specific knowledge" while the Multi-Head Attention (MHA) stores "class-agnostic patterns." It proposes a "train-then-prune" post-training method that collapses FFN neurons toward high-activation anchor neurons and uses Truncated Nuclear Norm Re
+  [ICLR 2026][Model Compression][Vision Transformers] Vulcan discovers that the Feed-Forward Network (FFN) in a ViT stores "class-specific knowledge" while the Multi-Head Attention (MHA) stores "class-agnostic patterns." It proposes a "train-then-prune" post-training method that collapses FFN neurons toward high-activation anchor neurons and uses Truncated Nuclear Norm Regularization (TNNR) to compress MHA projection matrices into low-rank structures. This approach yields compa…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Vision Transformers"
+  - "Structured Pruning"
+  - "Class-Specific Models"
+  - "Edge Deployment"
+  - "Knowledge Decoupling"
 date: 2026-05-08
-content_hash: 4d599290d257117f
+content_hash: 2995880a96c6d62b
 ---
+
 # Vulcan: Tailoring Compact Class-Specific Vision Transformers for Edge Intelligence
 
 **Conference**: ICLR 2026  
@@ -129,11 +135,20 @@ Efficiency (Jetson Orin NX):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Faster Vision Transformers with Adaptive Patches](faster_vision_transformers_with_adaptive_patches.md)
+- [\[AAAI 2026\] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](../../AAAI2026/model_compression/compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)
+- [\[ICLR 2026\] Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers](thicker_and_quicker_the_jumbo_token_for_fast_plain_vision_transformers.md)
+- [\[ICLR 2026\] UNITE: Universal Knowledge Integration from Task-Specific Experts](unite_universal_knowledge_integration_from_task-specific_experts.md)
+- [\[ICLR 2026\] Learnable Sparsity for Vision Generative Models](learnable_sparsity_for_vision_generative_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] TP-Spikformer: Token Pruned Spiking Transformer](tp-spikformer_token_pruned_spiking_transformer.md)

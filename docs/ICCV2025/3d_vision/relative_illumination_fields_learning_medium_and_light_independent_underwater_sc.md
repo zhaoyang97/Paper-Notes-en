@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Relative Illumination Fields: Learning Medium and Light Independent Underwater Scenes
 description: >-
-  [3D Vision] This paper proposes Relative Illumination Fields (RIF), which models non-uniform illumination distributions in camera-local coordinates via an MLP and jointly optimizes a volumetric medium representation…
+  [3D Vision] This paper proposes Relative Illumination Fields (RIF), which models non-uniform illumination distributions in camera-local coordinates via an MLP and jointly optimizes a volumetric medium representation, enabling clean reconstruction of underwater scenes free from light source and medium effects.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 8ddfdd842b9543ee
+content_hash: c04926f5d8b7b85a
 ---
 
 # Relative Illumination Fields: Learning Medium and Light Independent Underwater Scenes

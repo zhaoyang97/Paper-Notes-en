@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][Mandela effect] This paper conducts the first systematic study of the Mandela Effect (collective false memory) in LLM-based multi-agent systems. It proposes the ManBench benchmark (4,838 questions, 5 interaction protocols) and finds that all 13 evaluated LLMs are susceptible to this effect. The authors further propose prompt-level and
+  [ICLR 2026][Multi-Agent][Mandela effect] This paper conducts the first systematic study of the Mandela Effect (collective false memory) in LLM-based multi-agent systems. It proposes the ManBench benchmark (4,838 questions, 5 interaction protocols) and finds that all 13 evaluated LLMs are susceptible to this effect. The authors further propose prompt-level and model-level mitigation strategies, reducing collective false memories by an average of 74.40%.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Mandela effect
-  - multi-agent systems
-  - collective false memory
-  - cognitive bias
-  - misinformation
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Mandela effect"
+  - "multi-agent systems"
+  - "collective false memory"
+  - "cognitive bias"
+  - "misinformation"
 date: 2026-05-08
-content_hash: 7f0271e6e0403b0a
+content_hash: 6d8e3a434a7848e5
 ---
+
 # When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems
 
 **Conference**: ICLR 2026  
@@ -146,15 +147,14 @@ This paper addresses a novel topic, providing the first systematic investigation
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](../../ICML2026/multi_agent/when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
+- [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
 - [\[ICLR 2026\] Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration](graph-of-agents_a_graph-based_framework_for_multi-agent_llm_collaboration.md)
 - [\[ICLR 2026\] Unlocking the Power of Multi-Agent LLM for Reasoning: From Lazy Agents to Deliberation](unlocking_the_power_of_multi-agent_llm_for_reasoning_from_lazy_agents_to_deliber.md)
-- [\[AAAI 2026\] Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems](../../AAAI2026/multi_agent/shadows_in_the_code_exploring_the_risks_and_defenses_of_llm-.md)
-- [\[ICLR 2026\] MARTI: A Framework for Multi-Agent LLM Systems Reinforced Training and Inference](marti_a_framework_for_multi-agent_llm_systems_reinforced_training_and_inference.md)
+- [\[ICLR 2026\] Aligned Agents, Biased Swarm: Measuring Bias Amplification in Multi-Agent Systems](aligned_agents_biased_swarm_measuring_bias_amplification_in_multi-agent_systems.md)
 
 </div>
 

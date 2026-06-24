@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IGen: Scalable Data Generation for Robot Learning from Open-World Images
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] IGen starts from a single open-world image and automatically generates large-scale vision-action training data through a pipeline of 3D scene reconstruction → VLM task planning → SE(3) action generation → point cloud synthesis → frame rendering. Policies trained solely on this generated data can successfully perform re
+  [CVPR 2026][Robotics][Robot learning] IGen starts from a single open-world image and automatically generates large-scale vision-action training data through a pipeline of 3D scene reconstruction → VLM task planning → SE(3) action generation → point cloud synthesis → frame rendering. Policies trained solely on this generated data can successfully perform real-world manipulation tasks.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot learning"
+  - "Data generation"
+  - "Open-world images"
+  - "Visuomotor policy"
+  - "3D reconstruction"
 date: 2026-05-08
-content_hash: 695f55407c3ca6b8
+content_hash: f87846508ddec242
 ---
+
 # IGen: Scalable Data Generation for Robot Learning from Open-World Images
 
 **Conference**: CVPR 2026  
@@ -130,7 +136,7 @@ The generated vision-action data is treated as standard demonstration data to tr
 - [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
 - [\[CVPR 2026\] Scalable Trajectory Generation for Whole-Body Mobile Manipulation](scalable_trajectory_generation_for_whole-body_mobile_manipulation.md)
 - [\[CVPR 2026\] RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](robowheel_a_data_engine_from_real-world_human_demonstrations_for_cross-embodimen.md)
-- [\[CVPR 2026\] Towards Human-Like Robot Handwriting via Contour-Aware Generation](towards_human-like_robot_handwriting_via_contour-aware_generation.md)
+- [\[CVPR 2026\] PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations](pvp_data-efficient_humanoid_robot_learning_with_proprioceptive-privileged_contra.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EvoCoT: Overcoming the Exploration Bottleneck in Reinforcement Learning for LLMs
 description: >-
-  [ACL 2026][Reinforcement Learning][RLVR] This paper proposes EvoCoT, a two-stage self-evolving curriculum learning framework. It first constrains the LLM with final answers to self-generate verifiable CoT trajectories, then progressively deletes reasoning steps from the tail to expand the exploration space. This enables stable RLVR training on hard problems w
+  [ACL 2026][Reinforcement Learning][RLVR] This paper proposes EvoCoT, a two-stage self-evolving curriculum learning framework. It first constrains the LLM with final answers to self-generate verifiable CoT trajectories, then progressively deletes reasoning steps from the tail to expand the exploration space. This enables stable RLVR training on hard problems with sparse rewards without relying on teacher models or human-written CoTs, significantly improving the accuracy of R1-…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - RLVR
-  - Chain-of-Thought
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Chain-of-Thought"
+  - "Curriculum Learning"
+  - "Self-Evolution"
+  - "Sparse Reward"
 date: 2026-05-08
-content_hash: de94a620cf45efa0
+content_hash: f6a2816c0fc36433
 ---
+
 # EvoCoT: Overcoming the Exploration Bottleneck in Reinforcement Learning for LLMs
 
 **Conference**: ACL 2026  
@@ -140,11 +144,11 @@ Self-evolution iteration (R1-Qwen-1.5B avg): iter0 = 63.6 → iter1 = 64.3 → *
 
 ## Related Papers
 
+- [\[ICLR 2026\] Selective Expert Guidance for Effective and Diverse Exploration in Reinforcement Learning of LLMs](../../ICLR2026/reinforcement_learning/selective_expert_guidance_for_effective_and_diverse_exploration_in_reinforcement.md)
 - [\[ACL 2026\] RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization](rl-plus_countering_capability_boundary_collapse_of_llms_in_reinforcement_learnin.md)
-- [\[ACL 2026\] Targeted Exploration via Unified Entropy Control for Reinforcement Learning](targeted_exploration_via_unified_entropy_control_for_reinforcement_learning.md)
+- [\[ICLR 2026\] DeepSearch: Overcome the Bottleneck of Reinforcement Learning with Verifiable Rewards via Tree-based Search](../../ICLR2026/reinforcement_learning/deepsearch_overcome_the_bottleneck_of_reinforcement_learning_with_verifiable_rew.md)
+- [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](../../ICLR2026/reinforcement_learning/reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
 - [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
-- [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
-- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper proves that when the data distribution is supported on a union of $M$ low-dimensional linear subspaces (UoS) and the distribution within each subspace is sub-Gaussian, a kernel density-based score estimator allows the score-based diffusion sampler to achieve a 1-Wasserstein error of $\varepsilon$ with $\wide
+  [ICML 2026][Image Generation][Diffusion models] This paper proves that when the data distribution is supported on a union of $M$ low-dimensional linear subspaces (UoS) and the distribution within each subspace is sub-Gaussian, a kernel density-based score estimator allows the score-based diffusion sampler to achieve a 1-Wasserstein error of $\varepsilon$ with $\widetilde{O}(\varepsilon^{-(k\vee 2)})$ samples (where $k$ is the maximum intrinsic dimension). This results achieve…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "sample complexity"
+  - "Union of Subspaces (UoS)"
+  - "multi-modal distributions"
+  - "minimax optimality"
 date: 2026-05-08
-content_hash: 956c6c4213bd5598
+content_hash: 61bb285998c3b27f
 ---
+
 # Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions
 
 **Conference**: ICML 2026  
@@ -133,9 +138,18 @@ The proposed method does not require training neural networks or gradient descen
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+## Related Papers
+
+- [\[ICML 2025\] Annealing Flow Generative Models Towards Sampling High-Dimensional and Multi-Modal Distributions](../../ICML2025/image_generation/annealing_flow_generative_models_towards_sampling_high-dimensional_and_multi-mod.md)
+- [\[ICML 2026\] Pareto-Guided Optimal Transport for Multi-Reward Alignment](pareto-guided_optimal_transport_for_multi-reward_alignment.md)
+- [\[CVPR 2026\] Evaluating Generative Models via One-Dimensional Code Distributions](../../CVPR2026/image_generation/evaluating_generative_models_via_one-dimensional_code_distributions.md)
+- [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](../../NeurIPS2025/image_generation/understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
+- [\[ICLR 2026\] Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts](../../ICLR2026/image_generation/multi-subspace_multi-modal_modeling_for_diffusion_models_estimation_convergence_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2025\] Annealing Flow Generative Models Towards Sampling High-Dimensional and Multi-Modal Distributions](../../ICML2025/image_generation/annealing_flow_generative_models_towards_sampling_high-dimensional_and_multi-mod.md)

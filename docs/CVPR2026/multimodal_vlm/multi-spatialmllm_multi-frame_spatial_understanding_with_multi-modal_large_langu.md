@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Addressing the issue where MLLMs are limited to single-image spatial reasoning and struggle with basic orientations, this paper utilizes annotated 3D/4D scene datasets to automatically generate 27 million multi-frame spatial question-answering pairs (MultiSPA). By injecting foundational capabilities of depth, visual co
+  [CVPR 2026][Multimodal VLM][Multi-frame spatial understanding] Addressing the issue where MLLMs are limited to single-image spatial reasoning and struggle with basic orientations, this paper utilizes annotated 3D/4D scene datasets to automatically generate 27 million multi-frame spatial question-answering pairs (MultiSPA). By injecting foundational capabilities of depth, visual correspondence, and dynamic perception into InternVL2, the trained Multi-SpatialMLLM improves by an…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-frame spatial understanding"
+  - "depth perception"
+  - "visual correspondence"
+  - "camera/object motion"
+  - "data engine"
 date: 2026-05-08
-content_hash: 8cf53de9fcc72332
+content_hash: 607d1247c26f58df
 ---
+
 # Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -134,11 +140,11 @@ Closed-source models perform only slightly above random (50–60%) on qualitativ
 
 ## Related Papers
 
-- [\[CVPR 2026\] FloVerse: Floor Plan-Guided Multi-Modal Navigation](floverse_floor_plan-guided_multi-modal_navigation.md)
-- [\[CVPR 2026\] AURA: Multi-modal Shared Autonomy for Urban Navigation](aura_multi-modal_shared_autonomy_for_urban_navigation.md)
-- [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
-- [\[NeurIPS 2025\] HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data](../../NeurIPS2025/robotics/himacon_discovering_hierarchical_manipulation_concepts_from_unlabeled_multi-moda.md)
-- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
+- [\[CVPR 2026\] M3DocDep: Multi-modal, Multi-page, Multi-document Dependency Chunking with Large Vision-Language Models](m3docdep_multi-modal_multi-page_multi-document_dependency_chunking_with_large_vi.md)
+- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
+- [\[CVPR 2026\] Point Cloud as a Foreign Language for Multi-modal Large Language Model](point_cloud_as_a_foreign_language_for_multi-modal_large_language_model.md)
+- [\[CVPR 2026\] M3Grounder: Mask-Based Multi-Span and Multi-Granular Grounding for Document QA](m3grounder_mask-based_multi-span_and_multi-granular_grounding_for_document_qa.md)
+- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
 
 </div>
 

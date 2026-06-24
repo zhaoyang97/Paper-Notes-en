@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Generalized Bisimulation Metric of State Similarity between Markov Decision Processes: From Theoretical Propositions to Applications
 description: >-
-  [NeurIPS 2025 (Poster)][Reinforcement Learning][bisimulation metric] This paper extends the classical bisimulation metric (BSM), which is limited to measuring state similarity within a single MDP…
+  [NeurIPS 2025 (Poster)][Reinforcement Learning][bisimulation metric] This paper extends the classical bisimulation metric (BSM), which is limited to measuring state similarity within a single MDP, to cross-MDP settings by proposing a Generalized Bisimulation Metric (GBSM). The authors rigorously prove three fundamental metric properties — symmetry, cross-MDP triangle inequality, and an upper bound on same-state distances — and derive tighter error bounds and closed-form sampl…
 tags:
   - "NeurIPS 2025 (Poster)"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "state aggregation"
   - "Wasserstein distance"
 date: 2026-05-08
-content_hash: bea747ddfaabfeb1
+content_hash: 3d3cab45ea48400f
 ---
 
 # A Generalized Bisimulation Metric of State Similarity between Markov Decision Processes: From Theoretical Propositions to Applications
@@ -129,11 +129,11 @@ The core distinction from Song et al. (2016): Song's Hausdorff metric is a simpl
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](structured_reinforcement_learning_for_combinatorial_decision-making.md)
+- [\[ICML 2025\] Learning Utilities from Demonstrations in Markov Decision Processes](../../ICML2025/reinforcement_learning/learning_utilities_from_demonstrations_in_markov_decision_processes.md)
+- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](../../ICLR2026/reinforcement_learning/solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
+- [\[ICLR 2026\] Geometry of Uncertainty: Learning Metric Spaces for Multimodal State Estimation in RL](../../ICLR2026/reinforcement_learning/geometry_of_uncertainty_learning_metric_spaces_for_multimodal_state_estimation_i.md)
 - [\[NeurIPS 2025\] Certifying Stability of Reinforcement Learning Policies using Generalized Lyapunov Functions](certifying_stability_of_reinforcement_learning_policies_using_generalized_lyapun.md)
-- [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
 - [\[NeurIPS 2025\] Generalized Linear Bandits: Almost Optimal Regret with One-Pass Update](generalized_linear_bandits_almost_optimal_regret_with_one-pass_update.md)
-- [\[NeurIPS 2025\] Feel-Good Thompson Sampling for Contextual Bandits: a Markov Chain Monte Carlo Showdown](feel-good_thompson_sampling_for_contextual_bandits_a_markov_chain_monte_carlo_sh.md)
 
 </div>
 

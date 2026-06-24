@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards
 description: >-
-  [ACL 2026][LLM Safety][Reinforcement Learning] This paper models automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail. By introducing two heuristic process rewards (penalty for excessive toxicity and semantic correlation progression), it alleviates the sparse supervision issue of outcome rewards, significantly i
+  [ACL 2026][LLM Safety][Multi-turn Jailbreak Attacks] This paper models automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail. By introducing two heuristic process rewards (penalty for excessive toxicity and semantic correlation progression), it alleviates the sparse supervision issue of outcome rewards, significantly improving attack success rates across multiple models and benchmarks.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Multi-turn Jailbreak Attacks"
+  - "Trajectory-Level Optimization"
+  - "Process Rewards"
+  - "Reinforcement Learning"
+  - "Red Teaming"
 date: 2026-05-08
-content_hash: 5f2db6fc2cce2b92
+content_hash: 7f2ec14042cd0c06
 ---
+
 # TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards
 
 **Conference**: ACL 2026  
@@ -148,10 +153,10 @@ The model is optimized using a multi-turn GRPO with PPO-style clipping and KL re
 ## Related Papers
 
 - [\[ACL 2026\] Multi-component Causal Tracing in Large Language Models](multi-component_causal_tracing_in_large_language_models.md)
+- [\[ICLR 2026\] PLAGUE: A Plug-and-Play Framework for Multi-Turn Jailbreaking Driven by Lifelong Learning](../../ICLR2026/llm_safety/plague_plug-and-play_framework_for_lifelong_adaptive_generation_of_multi-turn_ja.md)
 - [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
-- [\[ACL 2026\] Instant Personalized Large Language Model Adaptation via Hypernetwork](instant_personalized_large_language_model_adaptation_via_hypernetwork.md)
 - [\[NeurIPS 2025\] Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization](../../NeurIPS2025/llm_safety/learning_to_watermark_a_selective_watermarking_framework_for_large_language_mode.md)
-- [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)
+- [\[ACL 2026\] Instant Personalized Large Language Model Adaptation via Hypernetwork](instant_personalized_large_language_model_adaptation_via_hypernetwork.md)
 
 </div>
 

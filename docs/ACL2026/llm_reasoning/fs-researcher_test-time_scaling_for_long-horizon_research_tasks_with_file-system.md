@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper introduces FS-Researcher, a file-system-based dual-agent framework for deep research. By utilizing a Context Builder to construct a hierarchical knowledge base and a Report Writer for sectional reporting within a persistent workspace, it overcomes context window limitations. FS-Researcher achieves 53.94 RACE
+  [ACL 2026][Reasoning][Deep Research] This paper introduces FS-Researcher, a file-system-based dual-agent framework for deep research. By utilizing a Context Builder to construct a hierarchical knowledge base and a Report Writer for sectional reporting within a persistent workspace, it overcomes context window limitations. FS-Researcher achieves 53.94 RACE (SOTA) on the DeepResearch Bench and demonstrates a positive test-time scaling effect between context construction computa…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Deep Research"
+  - "File System"
+  - "Test-time Scaling"
+  - "Knowledge Base Construction"
+  - "Dual-Agent Framework"
 date: 2026-05-08
-content_hash: 8eb037866b68d6f7
+content_hash: 22e10809f47b58c2
 ---
+
 # FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents
 
 **Conference**: ACL 2026  
@@ -160,10 +166,10 @@ Where $T_i$, $A_i$, and $O_i$ represent the thought, action, and observation at 
 ## Related Papers
 
 - [\[ACL 2026\] SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks](sppo_sequence-level_ppo_for_long-horizon_reasoning_tasks.md)
-- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
-- [\[ACL 2026\] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models](scaling_test-time_compute_to_achieve_ioi_gold_medal_with_open-weight_models.md)
 - [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[ACL 2026\] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models](reprobe_efficient_test-time_scaling_of_multi-step_reasoning_by_probing_internal_.md)
+- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](../../ICLR2026/llm_reasoning/test-time_scaling_with_reflective_generative_model.md)
+- [\[ACL 2026\] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models](scaling_test-time_compute_to_achieve_ioi_gold_medal_with_open-weight_models.md)
 
 </div>
 

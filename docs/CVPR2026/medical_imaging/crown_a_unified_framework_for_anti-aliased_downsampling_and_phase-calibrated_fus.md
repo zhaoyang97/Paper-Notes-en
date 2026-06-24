@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] CROWn: 抗混叠下采样与相位校准融合的统一 3D 医学分割框架
+  [Paper Note] CROWn: A Unified 3D Medical Segmentation Framework Integrating Anti-Aliased Downsampling and Phase-Calibrated Fusion
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] CROWn integrates sampling theory into the two most information-prone stages of U-shaped segmentation networks—downsampling and skip connection fusion: using µPCAD for "pooling query × wavelet subband value" co-attention with explicit anti-aliasing low-pass filtering during extraction, and OCF to decompose high-resoluti
+  [CVPR 2026][Medical Imaging][3D Medical Segmentation] CROWn integrates sampling theory into the two most information-prone stages of U-shaped segmentation networks—downsampling and skip connection fusion: using µPCAD for "pooling query × wavelet subband value" co-attention with explicit anti-aliasing low-pass filtering during extraction, and OCF to decompose high-resolution skip connections into eight phase cosets followed by phase attention and edge-gated alignment. It achie…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "3D Medical Segmentation"
+  - "Anti-Aliased Downsampling"
+  - "Polyphase Analysis"
+  - "Phase Calibration"
+  - "Skip Connection Fusion"
 date: 2026-05-08
-content_hash: 03140d37c61c1484
+content_hash: e6bcd2dbc4ffb61f
 ---
+
 # CROWn: A Unified 3D Medical Segmentation Framework Integrating Anti-Aliased Downsampling and Phase-Calibrated Fusion
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ OCF Component Attribution (FLARE2022):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning](masked-diffusion_autoencoders_for_3d_medical_vision_representation_learning.md)
-- [\[CVPR 2026\] Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification](revisiting_2d_foundation_models_for_scalable_3d_medical_image_classification.md)
+- [\[CVPR 2026\] Bridging RGB and Hematoxylin Components: An Interleaved Guidance and Fusion Framework for Point Supervised Nuclei Segmentation](bridging_rgb_and_hematoxylin_components_an_interleaved_guidance_and_fusion_frame.md)
+- [\[CVPR 2025\] VISTA3D: A Unified Segmentation Foundation Model For 3D Medical Imaging](../../CVPR2025/medical_imaging/vista3d_a_unified_segmentation_foundation_model_for_3d_medical_imaging.md)
+- [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
+- [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
 - [\[CVPR 2026\] VoxTell: Free-Text Promptable Universal 3D Medical Image Segmentation](voxtell_free-text_promptable_universal_3d_medical_image_segmentation.md)
-- [\[CVPR 2026\] Any2Any 3D Diffusion Models with Knowledge Transfer: A Radiotherapy Planning Study](any2any_3d_diffusion_models_with_knowledge_transfer_a_radiotherapy_planning_stud.md)
-- [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
 
 </div>
 

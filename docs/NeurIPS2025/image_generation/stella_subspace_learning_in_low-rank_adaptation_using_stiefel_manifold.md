@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] StelLA: Subspace Learning in Low-rank Adaptation using Stiefel Manifold
 description: >-
-  [NeurIPS 2025][Image Generation][LoRA] This paper proposes StelLA, which decomposes the LoRA adaptation matrix into a three-factor form $USV^\top$ and constrains $U$ and $V$ to the Stiefel manifold for Riemannian optimiz…
+  [NeurIPS 2025 Spotlight][Image Generation][LoRA] This paper proposes StelLA, which decomposes the LoRA adaptation matrix into a three-factor form $USV^\top$ and constrains $U$ and $V$ to the Stiefel manifold for Riemannian optimization, enabling explicit subspace learning during training. StelLA consistently outperforms existing LoRA variants across multiple downstream tasks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "LoRA"
   - "Stiefel Manifold"
@@ -12,7 +12,7 @@ tags:
   - "Riemannian Optimization"
   - "Three-Factor Decomposition"
 date: 2026-05-08
-content_hash: 586ec745a509fc45
+content_hash: 5ea92ca3981b9128
 ---
 
 # StelLA: Subspace Learning in Low-rank Adaptation using Stiefel Manifold
@@ -136,10 +136,10 @@ FID reduction reaches up to 12 points.
 ## Related Papers
 
 - [\[NeurIPS 2025\] GraLoRA: Granular Low-Rank Adaptation for Parameter-Efficient Fine-Tuning](gralora_granular_low-rank_adaptation_for_parameter-efficient_fine-tuning.md)
+- [\[ICML 2025\] Flat-LoRA: Low-Rank Adaptation over a Flat Loss Landscape](../../ICML2025/image_generation/flat-lora_low-rank_adaptation_over_a_flat_loss_landscape.md)
+- [\[ICML 2025\] IntLoRA: Integral Low-rank Adaptation of Quantized Diffusion Models](../../ICML2025/image_generation/intlora_integral_low-rank_adaptation_of_quantized_diffusion_models.md)
 - [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](../../ICCV2025/image_generation/transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
-- [\[NeurIPS 2025\] What We Don't C: Manifold Disentanglement for Structured Discovery](what_we_dont_c_manifold_disentanglement_for_structured_discovery.md)
-- [\[NeurIPS 2025\] Generative Model Inversion Through the Lens of the Manifold Hypothesis](generative_model_inversion_through_the_lens_of_the_manifold_hypothesis.md)
-- [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
+- [\[CVPR 2026\] Low-Rank Residual Diffusion Models](../../CVPR2026/image_generation/low-rank_residual_diffusion_models.md)
 
 </div>
 

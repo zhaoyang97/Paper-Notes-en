@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DESIGN: Encrypted GNN Inference via Server-Side Input Graph Pruning
 description: >-
-  [NeurIPS 2025][AI Safety][Homomorphic Encryption] This paper proposes DESIGN, a framework that accelerates FHE-based GNN inference by approximately $2\times$ over the SEAL baseline through two-stage server-side optimizat…
+  [NeurIPS 2025][AI Safety][Homomorphic Encryption] This paper proposes DESIGN, a framework that accelerates FHE-based GNN inference by approximately $2\times$ over the SEAL baseline through two-stage server-side optimization—input graph pruning and adaptive polynomial activation degree allocation—while maintaining competitive accuracy.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Adaptive Polynomial Activation"
   - "Privacy-Preserving Computing"
 date: 2026-05-08
-content_hash: 5e897553adaef71c
+content_hash: 271c5152c9ecbc0e
 ---
 
 # DESIGN: Encrypted GNN Inference via Server-Side Input Graph Pruning
@@ -145,10 +145,10 @@ The homomorphic computation of a standard GNN layer is: $\tilde{\mathbf{Z}}^{(l+
 ## Related Papers
 
 - [\[NeurIPS 2025\] DictPFL: Efficient and Private Federated Learning on Encrypted Gradients](dictpfl_efficient_and_private_federated_learning_on_encrypted_gradients.md)
-- [\[NeurIPS 2025\] Brain-like Variational Inference](brain-like_variational_inference.md)
-- [\[NeurIPS 2025\] Robust Graph Condensation via Classification Complexity Mitigation](robust_graph_condensation_via_classification_complexity_mitigation.md)
+- [\[ICLR 2026\] ULD-Net: Enabling Ultra-Low-Degree Fully Polynomial Networks for Homomorphically Encrypted Inference](../../ICLR2026/ai_safety/uld-net_enabling_ultra-low-degree_fully_polynomial_networks_for_homomorphically_.md)
 - [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](enhancing_graph_classification_robustness_with_singular_pooling.md)
-- [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](../../AAAI2026/ai_safety/privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
+- [\[NeurIPS 2025\] Brain-like Variational Inference](brain-like_variational_inference.md)
+- [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
 
 </div>
 

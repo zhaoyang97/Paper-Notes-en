@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization
 description: >-
-  [ICCV 2025][LLM Reasoning][Visual CoT] This paper proposes UV-CoT, a framework that enables image-level chain-of-thought (Visual CoT) reasoning without any manual bounding box annotations…
+  [ICCV 2025][Reasoning][Visual CoT] This paper proposes UV-CoT, a framework that enables image-level chain-of-thought (Visual CoT) reasoning without any manual bounding box annotations, by automatically constructing preference data and introducing an improved Score-DPO loss. UV-CoT surpasses the supervised Visual-CoT method on 6 benchmarks.
 tags:
   - "ICCV 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Visual CoT"
   - "Preference Optimization"
   - "Unsupervised Learning"
   - "Multimodal Reasoning"
   - "Bounding Box"
 date: 2026-05-08
-content_hash: 65305fef1660f09c
+content_hash: 5ea76cb3484746c3
 ---
 
 # Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization
@@ -128,11 +128,11 @@ AdamW optimizer is used, with 4 training epochs per iteration, learning rate $5\
 
 ## Related Papers
 
+- [\[ICML 2025\] Self-Consistency Preference Optimization](../../ICML2025/llm_reasoning/self-consistency_preference_optimization.md)
+- [\[ICLR 2026\] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization](../../ICLR2026/llm_reasoning/pruning_long_chain-of-thought_of_large_reasoning_models_via_small-scale_preferen.md)
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](../../NeurIPS2025/llm_reasoning/latent_chain-of-thought_for_visual_reasoning.md)
+- [\[ACL 2025\] RSVP: Reasoning Segmentation via Visual Prompting and Multi-modal Chain-of-Thought](../../ACL2025/llm_reasoning/rsvp_reasoning_segmentation_via_visual_prompting_and_multi-modal_chain-of-though.md)
 - [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](../../NeurIPS2025/llm_reasoning/visual_thoughts_a_unified_perspective_of_understanding_multi.md)
-- [\[CVPR 2026\] Step-CoT: Stepwise Visual Chain-of-Thought for Medical Visual Question Answering](../../CVPR2026/llm_reasoning/step-cot_stepwise_visual_chain-of-thought_for_medical_visual_question_answering.md)
-- [\[ICCV 2025\] CoRVid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning](corvid_improving_multimodal_large_language_models_towards_chain-of-thought_reaso.md)
-- [\[ACL 2026\] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning](../../ACL2026/llm_reasoning/render-of-thought_rendering_textual_chain-of-thought_as_images_for_visual_latent.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM acceleration] This paper identifies a systematic positional bias in early visual token pruning for VLMs—caused by RoPE…
+  [ICCV 2025][Multimodal Efficiency][VLM acceleration] This paper identifies a systematic positional bias in early visual token pruning for VLMs—caused by RoPE, which tends to retain tokens from the bottom of the image—and proposes FEATHER, which addresses this issue via RoPE-free attention, uniform sampling, and multi-stage pruning, achieving over 5× performance improvement on visual grounding tasks.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "VLM acceleration"
   - "Visual Token Pruning"
   - "RoPE positional bias"
   - "visual grounding"
   - "FEATHER"
 date: 2026-05-08
-content_hash: ee94e71649246e6c
+content_hash: 60c00092476b2a8e
 ---
 
 # Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration
@@ -131,11 +131,11 @@ FEATHER outperforms FastV on grounding by **more than 5×** (5.9→35.6) and sur
 
 ## Related Papers
 
+- [\[ICML 2025\] SparseVLM: Visual Token Sparsification for Efficient Vision-Language Model Inference](../../ICML2025/vlm_efficiency/sparsevlm_visual_token_sparsification_for_efficient_vision-language_model_infere.md)
 - [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
-- [\[NeurIPS 2025\] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization](../../NeurIPS2025/multimodal_vlm/balanced_token_pruning_accelerating_vision_language_models_b.md)
 - [\[ICCV 2025\] Growing a Twig to Accelerate Large Vision-Language Models](growing_a_twig_to_accelerate_large_vision-language_models.md)
-- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/multimodal_vlm/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
-- [\[CVPR 2026\] Revisiting Model Stitching in the Foundation Model Era](../../CVPR2026/multimodal_vlm/revisiting_model_stitching_in_the_foundation_model.md)
+- [\[ICLR 2026\] SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration](../../ICLR2026/vlm_efficiency/sp-vla_a_joint_model_scheduling_and_token_pruning_approach_for_vla_model_acceler.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](../../CVPR2026/vlm_efficiency/transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
 
 </div>
 

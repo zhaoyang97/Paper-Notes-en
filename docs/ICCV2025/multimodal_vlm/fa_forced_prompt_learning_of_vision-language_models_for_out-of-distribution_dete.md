@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FA: Forced Prompt Learning of Vision-Language Models for Out-of-Distribution Detection
 description: >-
-  [ICCV 2025][Multimodal VLM][OOD detection] This paper proposes FA (Forced prompt leArning), which introduces a learnable "forced prompt" and trains it to produce higher ID-class matching scores than a frozen original pro…
+  [ICCV 2025][Multimodal VLM][OOD detection] This paper proposes FA (Forced prompt leArning), which introduces a learnable "forced prompt" and trains it to produce higher ID-class matching scores than a frozen original prompt, compelling it to capture richer ID class descriptions beyond label text semantics. FA achieves significant improvements in CLIP-based few-shot OOD detection without external auxiliary data or additional parameters.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "out-of-distribution detection"
   - "forced prompt"
 date: 2026-05-08
-content_hash: 0ac5c93ce625c792
+content_hash: 40e75ee4ce08d320
 ---
 
 # FA: Forced Prompt Learning of Vision-Language Models for Out-of-Distribution Detection
@@ -153,7 +153,7 @@ The FA framework contains two prompts — a frozen original prompt (reference ba
 - [\[ICCV 2025\] FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models](fedmvp_federated_multimodal_visual_prompt_tuning_for_vision-language_models.md)
 - [\[ICCV 2025\] PRO-VPT: Distribution-Adaptive Visual Prompt Tuning via Prompt Relocation](pro-vpt_distribution-adaptive_visual_prompt_tuning_via_prompt_relocation.md)
 - [\[ICCV 2025\] Exploiting Vision Language Model for Training-Free 3D Point Cloud OOD Detection](exploiting_vision_language_model_for_training-free_3d_point_cloud_ood_detection_.md)
-- [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
+- [\[CVPR 2025\] On the Out-of-Distribution Generalization of Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/on_the_out-of-distribution_generalization_of_large_multimodal_models.md)
 
 </div>
 

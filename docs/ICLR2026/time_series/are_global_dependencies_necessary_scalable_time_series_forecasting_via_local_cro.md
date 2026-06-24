@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Are Global Dependencies Necessary? Scalable Time Series Forecasting via Local Cross-Variate Modeling
 description: >-
-  [ICLR 2026][Time Series][Paper Note] Addressing the bottleneck in multivariate time series forecasting where global attention for modeling cross-variate dependencies leads to quadratic complexity growth relative to the number of variables, this paper proposes the "Local Sufficiency Hypothesis"—suggesting that in dense systems, a finite local neighborhood
+  [ICLR2026][Time Series][Multivariate Time Series Forecasting] Addressing the bottleneck in multivariate time series forecasting where global attention for modeling cross-variate dependencies leads to quadratic complexity growth relative to the number of variables, this paper proposes the "Local Sufficiency Hypothesis"—suggesting that in dense systems, a finite local neighborhood likely contains sufficient predictive signals. Based on this, VPNet is designed: it rearranges pat…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Multivariate Time Series Forecasting"
+  - "Cross-Variate Dependency"
+  - "Local Modeling"
+  - "Depthwise Separable Convolution"
+  - "Linear Complexity"
 date: 2026-05-08
-content_hash: 7ef6229cf99ce07c
+content_hash: 7d41863eae0cc4da
 ---
+
 # Are Global Dependencies Necessary? Scalable Time Series Forecasting via Local Cross-Variate Modeling
 
 **Conference**: ICLR2026  
@@ -142,15 +148,14 @@ On low-dimensional ETT datasets, VPNet consistently ranks in the top two, showin
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting](storm_synergistic_cross-scale_spatio-temporal_modeling_for_weather_forecasting.md)
 - [\[ICLR 2026\] PHAT: Modeling Period Heterogeneity for Multivariate Time Series Forecasting](phat_modeling_period_heterogeneity_for_multivariate_time_series_forecasting.md)
 - [\[CVPR 2025\] L2GTX: From Local to Global Time Series Explanations](../../CVPR2025/time_series/l2gtx_from_local_to_global_time_series_explanations.md)
 - [\[ICLR 2026\] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition](routing_channel-patch_dependencies_in_time_series_forecasting_with_graph_spectra.md)
 - [\[ICLR 2026\] Local Geometry Attention for Time Series Forecasting under Realistic Corruptions](local_geometry_attention_for_time_series_forecasting_under_realistic_corruptions.md)
-- [\[NeurIPS 2025\] Scalable Signature Kernel Computations for Long Time Series via Local Neumann Series Expansions](../../NeurIPS2025/time_series/scalable_signature_kernel_computations_for_long_time_series_via_local_neumann_se.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Addressing the issues of overfitting and pose misalignment in Pose-Agnostic Anomaly Detection (PAD) due to insufficient observations in sparse-view scenarios, this paper proposes Wave-Pose3D. The method migrates 3D Gaussian reconstruction, pose estimation, and anomaly scoring into the wavelet frequency domain, utilizin
+  [CVPR 2026][3D Vision][Pose-agnostic Anomaly Detection] Addressing the issues of overfitting and pose misalignment in Pose-Agnostic Anomaly Detection (PAD) due to insufficient observations in sparse-view scenarios, this paper proposes Wave-Pose3D. The method migrates 3D Gaussian reconstruction, pose estimation, and anomaly scoring into the wavelet frequency domain, utilizing low frequencies for global structure and high frequencies for details. SOTA performance is achieved un…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Pose-agnostic Anomaly Detection"
+  - "Sparse-View"
+  - "Wavelet Transform"
+  - "3D Gaussian Splatting"
+  - "Frequency Domain Localization"
 date: 2026-05-08
-content_hash: 0e5bab1d67c05649
+content_hash: 6775ed3f7f70f9d2
 ---
+
 # Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View
 
 **Conference**: CVPR 2026  
@@ -122,15 +128,16 @@ Breakdown on PIAD_synt(20%):
 - Value: ⭐⭐⭐⭐ Addresses the real-world pain point of sparse-view industrial detection with reusable frequency-domain insights.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
-- [\[CVPR 2026\] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning](gs-clip_zero-shot_3d_anomaly_detection_by_geometry-aware_prompt_and_synergistic_.md)
-- [\[CVPR 2026\] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision](reasoning-driven_anomaly_detection_and_localization_with_image-level_supervision.md)
+- [\[CVPR 2026\] Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction](revisiting_pose_sensitivity_in_splat-based_computed_tomography_under_sparse-view.md)
 - [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
-- [\[ICCV 2025\] VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions](../../ICCV2025/object_detection/voccl3d_a_video_benchmark_dataset_for_3d_human_pose_and_shape_estimation_under_r.md)
+- [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
+- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
+- [\[CVPR 2026\] PoseGaussian: 6D Pose Estimation for Unseen Objects via Sparse-View Object-Level 3D Gaussian Splatting](posegaussian_6d_pose_estimation_for_unseen_objects_via_sparse-view_object-level_.md)
 
 </div>
 

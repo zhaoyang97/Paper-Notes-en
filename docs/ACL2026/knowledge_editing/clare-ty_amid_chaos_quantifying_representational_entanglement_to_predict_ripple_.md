@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLaRE-ty Amid Chaos: Quantifying Representational Entanglement to Predict Ripple Effects in LLM Editing
 description: >-
-  [ACL 2026][Knowledge Editing][Paper Note] CLARE proposes a lightweight representational method that quantifies the degree of entanglement between facts through forward activations of a single intermediate layer. It is used to predict ripple effects in model editing, achieving an average improvement of 62.2% in Spearman correlation compared to gradient-based me
+  [ACL 2026 Findings][Knowledge Editing][Model editing] CLARE proposes a lightweight representational method that quantifies the degree of entanglement between facts through forward activations of a single intermediate layer. It is used to predict ripple effects in model editing, achieving an average improvement of 62.2% in Spearman correlation compared to gradient-based methods, while being 2.74x faster with 2.85x less memory consumption.
 tags:
-  - ACL 2026
-  - Knowledge Editing
+  - "ACL 2026 Findings"
+  - "Knowledge Editing"
+  - "Model editing"
+  - "ripple effects"
+  - "representational entanglement"
+  - "forward activations"
+  - "entanglement graph"
 date: 2026-05-08
-content_hash: a54a87d87097e5c3
+content_hash: 415050e147f4d142
 ---
+
 # CLaRE-ty Amid Chaos: Quantifying Representational Entanglement to Predict Ripple Effects in LLM Editing
 
 **Conference**: ACL 2026 Findings  
@@ -121,8 +127,8 @@ An individual entanglement score only describes a pair of facts. To serve global
 - [\[ACL 2025\] ChainEdit: Propagating Ripple Effects in LLM Knowledge Editing through Logical Rule-Guided Chains](../../ACL2025/knowledge_editing/chainedit_propagating_ripple_effects_in_llm.md)
 - [\[ACL 2026\] FABLE: Fine-grained Fact Anchoring for Unstructured Model Editing](fable_fine-grained_fact_anchoring_for_unstructured_model_editing.md)
 - [\[ICML 2026\] CrispEdit: Low-Curvature Projections for Scalable Non-Destructive LLM Editing](../../ICML2026/knowledge_editing/crispedit_low-curvature_projections_for_scalable_non-destructive_llm_editing.md)
-- [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
 - [\[ICML 2026\] From Backward Spreading to Forward Replay: Revisiting Target Construction in LLM Parameter Editing](../../ICML2026/knowledge_editing/from_backward_spreading_to_forward_replay_revisiting_target_construction_in_llm_.md)
+- [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
 
 </div>
 

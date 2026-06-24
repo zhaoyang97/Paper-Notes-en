@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spectral Characterization and Mitigation of Sequential Knowledge Editing Collapse
 description: >-
-  [ACL 2026][Knowledge Editing][REVIVE] The paper explains why sequential knowledge editing causes LLM general ability collapse from the perspective of SVD spectral structure and proposes REVIVE. By filtering update components that interfere with the dominant singular subspace within the singular vector basis of the original weights, REVIVE enables editors l
+  [ACL2026][Knowledge Editing][Sequential Knowledge Editing] The paper explains why sequential knowledge editing causes LLM general ability collapse from the perspective of SVD spectral structure and proposes REVIVE. By filtering update components that interfere with the dominant singular subspace within the singular vector basis of the original weights, REVIVE enables editors like MEMIT, RECT, and AlphaEdit to maintain both editing success rates and general capabilities under…
 tags:
-  - ACL 2026
-  - Knowledge Editing
-  - REVIVE
+  - "ACL2026"
+  - "Knowledge Editing"
+  - "Sequential Knowledge Editing"
+  - "Spectral Analysis"
+  - "Singular Subspace"
+  - "Model Collapse"
+  - "REVIVE"
 date: 2026-05-08
-content_hash: e998992f40fcf18c
+content_hash: 5c52895683dfbf4a
 ---
+
 # Spectral Characterization and Mitigation of Sequential Knowledge Editing Collapse
 
 **Conference**: ACL2026  
@@ -138,8 +143,8 @@ REVIVE is not a new training loss but a post-processing constraint for parameter
 
 ## Related Papers
 
-- [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
+- [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
 - [\[AAAI 2026\] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)](../../AAAI2026/knowledge_editing/multiplicative_orthogonal_sequential_editing_for_language_models.md)
 - [\[ACL 2025\] Neuron-Level Sequential Editing for Large Language Models](../../ACL2025/knowledge_editing/neuron-level_sequential_editing_for_large_language_models.md)
 - [\[ACL 2025\] Mitigating Negative Interference in Multilingual Sequential Knowledge Editing through Null-Space Constraints](../../ACL2025/knowledge_editing/mitigating_negative_interference_in_multilingual_sequential_knowledge_editing_th.md)

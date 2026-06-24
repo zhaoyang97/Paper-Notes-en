@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on Diverse Video Games
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] Orak encapsulates 12 real video games covering all 6 major genres into a unified benchmark using Model Context Protocol (MCP) plug-and-play interfaces. It enables systematic evaluation of LLM agentic modules (reflection/planning/tools) and provides a fine-tuning dataset of expert LLM gameplay trajectories to transform
+  [ICLR 2026][LLM Agent][Game Benchmark] Orak encapsulates 12 real video games covering all 6 major genres into a unified benchmark using Model Context Protocol (MCP) plug-and-play interfaces. It enables systematic evaluation of LLM agentic modules (reflection/planning/tools) and provides a fine-tuning dataset of expert LLM gameplay trajectories to transform general LLMs into effective game agents.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Game Benchmark"
+  - "MCP Interface"
+  - "Agentic Modules"
+  - "Fine-tuning Dataset"
 date: 2026-05-08
-content_hash: 57dd2aecaa545ffb
+content_hash: 02a9069b441de963
 ---
+
 # Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on Diverse Video Games
 
 **Conference**: ICLR 2026  
@@ -130,15 +135,16 @@ Fine-tuning Generalization (Llama-3.2-3B, ✗ No SFT / ✓ SFT):
 - Value: ⭐⭐⭐⭐⭐ (Provides plug-and-play architecture and transferable data recipes).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
-- [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
+- [\[ICLR 2026\] FutureX: An Advanced Live Benchmark for LLM Agents in Future Prediction](futurex_an_advanced_live_benchmark_for_llm_agents_in_future_prediction.md)
 - [\[ICLR 2026\] WebFactory: Automated Compression of Foundational Language Intelligence into Grounded Web Agents](webfactory_automated_compression_of_foundational_language_intelligence_into_grou.md)
-- [\[ICLR 2026\] Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions](evaluating_memory_in_llm_agents_via_incremental_multi-turn_interactions.md)
-- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
+- [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
+- [\[ICLR 2026\] Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents](agent_data_protocol_unifying_datasets_for_diverse_effective_fine-tuning_of_llm_a.md)
 
 </div>
 

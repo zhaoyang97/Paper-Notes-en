@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ADM-v2: Pursuing Full-Horizon Roll-out in Dynamics Models for Offline Policy Learning and Evaluation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] ADM-v2 structurally decouples the starting state of the "Any-step Dynamics Model" from the GRU loop. Combined with the parallel any-step roll-out algorithm PARoll, it enables dynamics models to reliably execute full-horizon roll-outs, achieving SOTA results in both offline policy evaluation (OPE) and offline policy opt
+  [ICLR2026][Reinforcement Learning][Offline Reinforcement Learning] ADM-v2 structurally decouples the starting state of the "Any-step Dynamics Model" from the GRU loop. Combined with the parallel any-step roll-out algorithm PARoll, it enables dynamics models to reliably execute full-horizon roll-outs, achieving SOTA results in both offline policy evaluation (OPE) and offline policy optimization on D4RL and NeoRL.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Model-based RL"
+  - "Dynamics Models"
+  - "Full-horizon roll-out"
+  - "Uncertainty Estimation"
 date: 2026-05-08
-content_hash: e1be2bbd70b23649
+content_hash: 99d12981847311e1
 ---
+
 # ADM-v2: Pursuing Full-Horizon Roll-out in Dynamics Models for Offline Policy Learning and Evaluation
 
 **Conference**: ICLR2026  
@@ -141,10 +147,10 @@ Regarding OPE, ADM-v2 significantly outperformed five model-free OPE methods (FQ
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond Penalization: Diffusion-based Out-of-Distribution Detection and Selective Regularization in Offline Reinforcement Learning](beyond_penalization_diffusion-based_out-of-distribution_detection_and_selective_.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](../../ICML2026/reinforcement_learning/offline_reinforcement_learning_with_universal_horizon_models.md)
 - [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
+- [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](../../ICML2026/reinforcement_learning/offline_reinforcement_learning_with_universal_horizon_models.md)
 - [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](enhancing_generative_auto-bidding_with_offline_reward_evaluation_and_policy_sear.md)
+- [\[ICLR 2026\] Efficient Offline Reinforcement Learning via Peer-Influenced Constraint](efficient_offline_reinforcement_learning_via_peer-influenced_constraint.md)
 
 </div>
 

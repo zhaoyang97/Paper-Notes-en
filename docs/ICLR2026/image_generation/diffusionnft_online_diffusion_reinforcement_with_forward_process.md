@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DiffusionNFT: Online Diffusion Reinforcement with Forward Process
 description: >-
-  [ICLR 2026][Image Generation][online RL] DiffusionNFT proposes a novel online RL paradigm for diffusion models: instead of performing policy optimization on the reverse sampling process (e.g., GRPO), it utilizes a contrastive training approach on the forward process via a flow matching objective for positive and negative samples. This defines an implicit poli
+  [ICLR 2026 Oral][Image Generation][online RL] DiffusionNFT proposes a novel online RL paradigm for diffusion models: instead of performing policy optimization on the reverse sampling process (e.g., GRPO), it utilizes a contrastive training approach on the forward process via a flow matching objective for positive and negative samples. This defines an implicit policy improvement direction, achieving 3-25× speedups over FlowGRPO while eliminating the need for CFG.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - online RL
-  - forward process
-  - negative-aware finetuning
-  - flow matching
-  - CFG-free
+  - "ICLR 2026 Oral"
+  - "Image Generation"
+  - "online RL"
+  - "forward process"
+  - "negative-aware finetuning"
+  - "flow matching"
+  - "CFG-free"
 date: 2026-05-08
-content_hash: cdea2f321a21af53
+content_hash: 98f81105a914988a
 ---
+
 # DiffusionNFT: Online Diffusion Reinforcement with Forward Process
 
 **Conference**: ICLR 2026 Oral  
@@ -150,8 +151,8 @@ Moving RL to the forward process does more than just changing the loss; it sheds
 - [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
 - [\[AAAI 2026\] ORVIT: Near-Optimal Online Distributionally Robust Reinforcement Learning](../../AAAI2026/image_generation/orvit_near-optimal_online_distributionally_robust_reinforcement_learning.md)
 - [\[ICLR 2026\] Forward-Learned Discrete Diffusion: Learning how to noise to denoise faster](forward-learned_discrete_diffusion_learning_how_to_noise_to_denoise_faster.md)
-- [\[ICLR 2026\] EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling](editscore_unlocking_online_rl_for_image_editing_via_high-fidelity_reward_modelin.md)
-- [\[CVPR 2026\] DRiffusion: Draft-and-Refine Process Parallelizes Diffusion Models with Ease](../../CVPR2026/image_generation/driffusion_draft-and-refine_process_parallelizes_diffusion_models_with_ease.md)
+- [\[ICLR 2026\] Dynamic Classifier-Free Diffusion Guidance via Online Feedback](dynamic_classifier-free_diffusion_guidance_via_online_feedback.md)
+- [\[CVPR 2026\] Scale Space Diffusion: Integrating Scale Space into the Diffusion Process](../../CVPR2026/image_generation/scale_space_diffusion.md)
 
 </div>
 

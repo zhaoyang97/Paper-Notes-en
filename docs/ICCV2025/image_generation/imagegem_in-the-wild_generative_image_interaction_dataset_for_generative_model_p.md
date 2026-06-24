@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ImageGem: In-the-wild Generative Image Interaction Dataset for Generative Model Personalization
 description: >-
-  [ICCV 2025][Image Generation][Generative model personalization] This paper introduces **ImageGem**, the first large-scale in-the-wild generative interaction dataset (57K users × 242K customized LoRAs × 3M text prompts ×…
+  [ICCV 2025][Image Generation][Generative model personalization] This paper introduces **ImageGem**, the first large-scale in-the-wild generative interaction dataset (57K users × 242K customized LoRAs × 3M text prompts × 5M generated images), enabling three applications via individual user preference annotations: **aggregate preference alignment** surpassing Pick-a-Pic, **personalized retrieval and generative recommendation** (with significant VLM reranking gains)…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "recommender systems"
   - "diffusion models"
 date: 2026-05-08
-content_hash: e74ba7b07a587772
+content_hash: e3bb9e695ac4ef1f
 ---
 
 # ImageGem: In-the-wild Generative Image Interaction Dataset for Generative Model Personalization
@@ -203,9 +203,9 @@ Multi-user personalization validation: three distinct preference directions are 
 
 - [\[ICCV 2025\] SummDiff: Generative Modeling of Video Summarization with Diffusion](summdiff_generative_modeling_of_video_summarization_with_diffusion.md)
 - [\[ICCV 2025\] Understanding Flatness in Generative Models: Its Role and Benefits](understanding_flatness_in_generative_models_its_role_and_benefits.md)
+- [\[NeurIPS 2025\] DeCaFlow: A Deconfounding Causal Generative Model](../../NeurIPS2025/image_generation/decaflow_a_deconfounding_causal_generative_model.md)
 - [\[ICCV 2025\] CaO2: Rectifying Inconsistencies in Diffusion-Based Dataset Distillation](cao2_rectifying_inconsistencies_in_diffusion-based_dataset_distillation.md)
-- [\[ICCV 2025\] Deeply Supervised Flow-Based Generative Models](deeply_supervised_flow-based_generative_models.md)
-- [\[ICCV 2025\] PLA: Prompt Learning Attack against Text-to-Image Generative Models](pla_prompt_learning_attack_against_text-to-image_generative_models.md)
+- [\[CVPR 2025\] Traversing Distortion-Perception Tradeoff Using a Single Score-Based Generative Model](../../CVPR2025/image_generation/traversing_distortion-perception_tradeoff_using_a_single_score-based_generative_.md)
 
 </div>
 

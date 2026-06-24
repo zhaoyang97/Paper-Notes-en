@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Energy-Based Transformers are Scalable Learners and Thinkers
 description: >-
-  [ICLR 2026][Pretraining][Energy-Based Models] This paper reformulates "prediction" as "gradient descent optimization on a learned verifier (energy function)" and proposes Energy-Based Transformers (EBTs). This architecture enables cross-modal and cross-task System 2 thinking capabilities (dynamic compute allocation + self-verification) to emerge purely through uns
+  [ICLR 2026][LLM Pretraining][Energy-Based Models] This paper reformulates "prediction" as "gradient descent optimization on a learned verifier (energy function)" and proposes Energy-Based Transformers (EBTs). This architecture enables cross-modal and cross-task System 2 thinking capabilities (dynamic compute allocation + self-verification) to emerge purely through unsupervised pre-training, outperforming Transformer++ and DiT in both language and vision domains.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Energy-Based Models
-  - Transformer
-  - System 2 Thinking
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Energy-Based Models"
+  - "Transformer"
+  - "Inference-time computation"
+  - "System 2 Thinking"
+  - "Unsupervised learning"
+  - "Scalability"
 date: 2026-05-08
-content_hash: 8e79ca6a1ecbed8a
+content_hash: 9e1e2a5714a93a3e
 ---
+
 # Energy-Based Transformers are Scalable Learners and Thinkers
 
 **Conference**: ICLR 2026  
@@ -121,7 +125,6 @@ Removing random step sizes nearly eliminates thinking benefits. Removing Langevi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

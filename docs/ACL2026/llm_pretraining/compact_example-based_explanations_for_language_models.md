@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compact Example-Based Explanations for Language Models
 description: >-
-  [ACL 2026][Pretraining][Paper Note] This paper proposes Selection Relevance Score, a re-training-free metric to evaluate the quality of training sample subsets as example-based explanations. It demonstrates that the common "select highest influence" strategy is often inferior to random selection and further introduces a new strategy that balances influen
+  [ACL 2026 Findings][LLM Pretraining][Training Data Influence] This paper proposes Selection Relevance Score, a re-training-free metric to evaluate the quality of training sample subsets as example-based explanations. It demonstrates that the common "select highest influence" strategy is often inferior to random selection and further introduces a new strategy that balances influence and representativeness.
 tags:
-  - ACL 2026
-  - Pretraining
+  - "ACL 2026 Findings"
+  - "LLM Pretraining"
+  - "Training Data Influence"
+  - "Example-based Explanation"
+  - "Selection Relevance"
+  - "Gradient Reconstruction"
+  - "Redundancy Elimination"
 date: 2026-05-08
-content_hash: 0afa26ff975e58ea
+content_hash: b99acfbc6d11891a
 ---
+
 # Compact Example-Based Explanations for Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -141,7 +147,7 @@ This work does not involve model training. The Selection Relevance Score is comp
 - [\[ACL 2026\] SCRIPT: A Subcharacter Compositional Representation Injection Module for Korean Pre-Trained Language Models](script_a_subcharacter_compositional_representation_injection_module_for_korean_p.md)
 - [\[NeurIPS 2025\] Learning in Compact Spaces with Approximately Normalized Transformer](../../NeurIPS2025/llm_pretraining/learning_in_compact_spaces_with_approximately_normalized_transformer.md)
 - [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
-- [\[ICLR 2026\] Steering Language Models with Weight Arithmetic](../../ICLR2026/llm_pretraining/steering_language_models_with_weight_arithmetic.md)
+- [\[ICLR 2026\] Soft-Masked Diffusion Language Models](../../ICLR2026/llm_pretraining/soft-masked_diffusion_language_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] TCD is proposed as a training-free inference-time decoding method: by contrasting the logit differences between original audio and a temporally blurred slow-path view, combined with stability-guided blurring windows and uncertainty gating, unified audio-language models better utilize transient acoustic cues. It achieve
+  [ACL 2026 Findings][Audio & Speech][Large Audio-Language Models] TCD is proposed as a training-free inference-time decoding method: by contrasting the logit differences between original audio and a temporally blurred slow-path view, combined with stability-guided blurring windows and uncertainty gating, unified audio-language models better utilize transient acoustic cues. It achieves consistent improvements on MMAU and AIR-Bench.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Large Audio-Language Models"
+  - "Contrastive Decoding"
+  - "Temporal Smoothing Bias"
+  - "Training-free Inference"
+  - "Gated Update"
 date: 2026-05-08
-content_hash: 267083aed8972e84
+content_hash: a3750057060cd3a8
 ---
+
 # Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -133,11 +139,11 @@ Completely training-free, introducing no learnable parameters. The cost is one a
 
 ## Related Papers
 
-- [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](../../AAAI2026/audio_speech/listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
 - [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
-- [\[ACL 2026\] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models](generalizable_prompt_tuning_for_audio-language_models_via_semantic_expansion.md)
+- [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](../../AAAI2026/audio_speech/listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
+- [\[ICLR 2026\] Measuring Audio's Impact on Correctness: Audio-Contribution-Aware Post-Training of Large Audio Language Models](../../ICLR2026/audio_speech/measuring_audios_impact_on_correctness_audio-contribution-aware_post-training_of.md)
+- [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
 - [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
-- [\[ACL 2026\] Do We Need Distinct Representations for Every Speech Token? Unveiling and Exploiting Redundancy in Large Speech Language Models](do_we_need_distinct_representations_for_every_speech_token_unveiling_and_exploit.md)
 
 </div>
 

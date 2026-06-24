@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models
 description: >-
-  [ICLR 2026][Audio & Speech][Speech Language Model] EchoMind is proposed as the first interrelated multi-level benchmark for empathetic dialogue. It systematically evaluates the ability of Speech Language Models (SLMs) to perceive non-verbal acoustic cues and generate empathetic responses through a cognitive workflow of "Understanding → Reasoning → Dialogue."
+  [ICLR2026][Audio & Speech][Speech Language Model] EchoMind is proposed as the first interrelated multi-level benchmark for empathetic dialogue. It systematically evaluates the ability of Speech Language Models (SLMs) to perceive non-verbal acoustic cues and generate empathetic responses through a cognitive workflow of "Understanding → Reasoning → Dialogue."
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Speech Language Model
-  - Empathetic Dialogue
-  - benchmark
-  - Vocal Cue
-  - Evaluation
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Speech Language Model"
+  - "Empathetic Dialogue"
+  - "benchmark"
+  - "Vocal Cue"
+  - "Evaluation"
 date: 2026-05-08
-content_hash: 071095741fc8b499
+content_hash: 0ab96e9535a5f5e6
 ---
+
 # EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models
 
 **Conference**: ICLR2026  
@@ -140,7 +141,7 @@ Comparison with existing benchmarks:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

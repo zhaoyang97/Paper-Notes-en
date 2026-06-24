@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] This paper reformulates the Bradley–Terry reward model as a generative process of Bayesian Non-negative Factor Analysis (NFA). By simultaneously modeling locally sparse instance latent variables $\bm{\theta}$ and a globally sparse reward dictionary $\Phi$, it suppresses reward hacking caused by shortcut features (e.g.,
+  [ICML 2026 Oral][LLM Alignment][Reward modeling] This paper reformulates the Bradley–Terry reward model as a generative process of Bayesian Non-negative Factor Analysis (NFA). By simultaneously modeling locally sparse instance latent variables $\bm{\theta}$ and a globally sparse reward dictionary $\Phi$, it suppresses reward hacking caused by shortcut features (e.g., length, style) via a "disentanglement-then-debiasing" mechanism. The entire framework is integrated into moder…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
+  - "ICML 2026 Oral"
+  - "LLM Alignment"
+  - "Reward modeling"
+  - "Reward hacking"
+  - "Bayesian non-negative factor analysis"
+  - "Variational inference"
+  - "Weibull distribution"
 date: 2026-05-08
-content_hash: 8052c32f16caf19c
+content_hash: 092a94cd39505b98
 ---
+
 # Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling
 
 **Conference**: ICML 2026 Oral  
@@ -136,10 +142,10 @@ BNRM remains competitive against 8B/70B discriminative RMs (specifically in Chat
 
 ## Related Papers
 
+- [\[ICLR 2026\] Truthful or Fabricated? Using Causal Attribution to Mitigate Reward Hacking in Explanations](../../ICLR2026/llm_alignment/truthful_or_fabricated_using_causal_attribution_to_mitigate_reward_hacking_in_ex.md)
+- [\[ICLR 2026\] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary](../../ICLR2026/llm_alignment/bradley-terry_and_multi-objective_reward_modeling_are_complementary.md)
 - [\[NeurIPS 2025\] Provably Efficient Online RLHF with One-Pass Reward Modeling](../../NeurIPS2025/llm_alignment/provably_efficient_online_rlhf_with_one-pass_reward_modeling.md)
-- [\[ACL 2026\] AgentV-RL: Scaling Reward Modeling with Agentic Verifier](../../ACL2026/llm_alignment/agentv-rl_scaling_reward_modeling_with_agentic_verifier.md)
-- [\[ACL 2025\] Dynamic Scaling of Unit Tests for Code Reward Modeling](../../ACL2025/llm_alignment/dynamic_scaling_of_unit_tests_for_code_reward_modeling.md)
-- [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](../../ACL2026/llm_alignment/aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)
+- [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](../../ICLR2026/llm_alignment/robust_reward_modeling_via_causal_rubrics.md)
 - [\[ACL 2025\] Reward Generalization in RLHF: A Topological Perspective](../../ACL2025/llm_alignment/reward_generalization_in_rlhf_a_topological_perspective.md)
 
 </div>

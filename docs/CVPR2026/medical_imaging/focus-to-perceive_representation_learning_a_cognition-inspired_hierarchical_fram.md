@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis
 description: >-
-  [CVPR 2026][Medical Imaging][Self-Supervised Learning] Ours proposes FPRL, a cognition-inspired hierarchical self-supervised framework that mitigates motion bias by first "focusing" on key static intra-frame semantics and then "perceiving" inter-frame contextual evolution, achieving SOTA on 11 endoscopic datasets.
+  [CVPR 2026][Medical Imaging][Self-supervised learning] Ours proposes FPRL, a cognition-inspired hierarchical self-supervised framework that mitigates motion bias by first "focusing" on key static intra-frame semantics and then "perceiving" inter-frame contextual evolution, achieving SOTA on 11 endoscopic datasets.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Self-Supervised Learning
-  - Mamba
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Self-supervised learning"
+  - "endoscopic video"
+  - "hierarchical semantic modeling"
+  - "masked reconstruction"
+  - "Mamba"
 date: 2026-05-08
-content_hash: 1089569f05df4631
+content_hash: 9c0fcf39f3a80dc9
 ---
+
 # Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis
 
 **Conference**: CVPR 2026  
@@ -177,7 +181,7 @@ Masking Strategy Ablation:
 - [\[CVPR 2026\] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction](h2-surv_hierarchical_hyperbolic_multimodal_representation_learning_for_survival_.md)
 - [\[CVPR 2026\] Unlocking Positive Transfer in Incrementally Learning Surgical Instruments: A Self-reflection Hierarchical Prompt Framework](unlocking_positive_transfer_in_incrementally_learning_surgical_instruments_a_sel.md)
 - [\[CVPR 2026\] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning](masked-diffusion_autoencoders_for_3d_medical_vision_representation_learning.md)
-- [\[CVPR 2026\] KAMP: Knowledge-Anchored Multimodal Pretraining Framework for Medical Image Representation](kamp_knowledge-anchored_multimodal_pretraining_framework_for_medical_image_repre.md)
+- [\[CVPR 2026\] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings](lemon_a_large_endoscopic_monocular_dataset_and_foundation_model_for_perception_in.md)
 
 </div>
 

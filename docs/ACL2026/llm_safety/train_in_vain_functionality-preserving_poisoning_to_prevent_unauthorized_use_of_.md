@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Train in Vain: Functionality-Preserving Poisoning to Prevent Unauthorized Use of Code Datasets
 description: >-
-  [ACL 2026][LLM Safety][CodeLLM] This paper proposes FunPoison, which injects execution-lazy weak-use fragments into real execution paths while keeping Java code compilable, executable, and functionally equivalent. Poisoning only 10% of the data significantly reduces the gains from unauthorized CodeLLM fine-tuning, demonstrating strong robustness agai
+  [ACL2026 Findings][LLM Safety][Code Data Protection] This paper proposes FunPoison, which injects execution-lazy weak-use fragments into real execution paths while keeping Java code compilable, executable, and functionally equivalent. Poisoning only 10% of the data significantly reduces the gains from unauthorized CodeLLM fine-tuning, demonstrating strong robustness against formatting, rewriting, static analysis, and detection-based cleaning.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - CodeLLM
+  - "ACL2026 Findings"
+  - "LLM Safety"
+  - "Code Data Protection"
+  - "Data Poisoning"
+  - "Functionality Preserving"
+  - "CodeLLM"
+  - "Unauthorized Fine-tuning"
 date: 2026-05-08
-content_hash: f730638c296a70b4
+content_hash: f278fd2a985c1b51
 ---
+
 # Train in Vain: Functionality-Preserving Poisoning to Prevent Unauthorized Use of Code Datasets
 
 **Conference**: ACL2026 Findings  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Diffusion-based Inverse Algorithms under Few-Step Constraint via Learnable Linear Extrapolation
 description: >-
-  [NeurIPS 2025][Image Restoration][Diffusion inverse problems] This paper proposes Learnable Linear Extrapolation (LLE), which combines current and historical clean data estimates via learnable linear coefficients to enha…
+  [NeurIPS 2025][Image Restoration][Diffusion inverse problems] This paper proposes Learnable Linear Extrapolation (LLE), which combines current and historical clean data estimates via learnable linear coefficients to enhance any diffusion inverse problem algorithm conforming to the Sampler-Corrector-Noiser paradigm under few-step (3–5 steps) constraints. The method requires only 50 training samples and a few minutes of training, yielding consistent improvements across 9+ algor…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "learnable coefficients"
   - "plug-and-play"
 date: 2026-05-08
-content_hash: 90ae36ac54dd1e96
+content_hash: 642c2974e1571cd4
 ---
 
 # Improving Diffusion-based Inverse Algorithms under Few-Step Constraint via Learnable Linear Extrapolation
@@ -125,8 +125,8 @@ $\mathcal{L} = \mathcal{L}_{MSE} + 0.1 \cdot \mathcal{L}_{LPIPS}$. Only 50 train
 - [\[NeurIPS 2025\] Rethinking Nighttime Image Deraining via Learnable Color Space Transformation](rethinking_nighttime_image_deraining_via_learnable_color_space_transformation.md)
 - [\[ICML 2026\] Learning Normalized Energy Models for Linear Inverse Problems](../../ICML2026/image_restoration/learning_normalized_energy_models_for_linear_inverse_problems.md)
 - [\[NeurIPS 2025\] Learning Cocoercive Conservative Denoisers via Helmholtz Decomposition for Poisson Inverse Problems](learning_cocoercive_conservative_denoisers_via_helmholtz_decomposition_for_poiss.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](../../CVPR2026/image_restoration/fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
-- [\[NeurIPS 2025\] DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance](dynaguide_steering_diffusion_polices_with_active_dynamic_guidance.md)
+- [\[ICLR 2026\] A Statistical Benchmark for Diffusion-Posterior-Sampling Algorithms](../../ICLR2026/image_restoration/a_statistical_benchmark_for_diffusion-posterior-sampling_algorithms.md)
+- [\[CVPR 2026\] Outlier-Robust Diffusion Solvers for Inverse Problems](../../CVPR2026/image_restoration/outlier-robust_diffusion_solvers_for_inverse_problems.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Speculative Decoding] This work challenges the prevailing belief that speculative decoding (SD) is ineffective for MoE models. Through theoretical analysis and experiments…
+  [NeurIPS 2025 Spotlight][LLM Efficiency][Speculative Decoding] This work challenges the prevailing belief that speculative decoding (SD) is ineffective for MoE models. Through theoretical analysis and experiments, it demonstrates that MoE models benefit more from SD than dense models at medium batch sizes. The paper introduces *target efficiency* as a system-level metric to quantify acceleration bottlenecks, constructs a reliable performance prediction model…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Efficiency"
   - "Speculative Decoding"
   - "MoE Inference"
@@ -12,7 +12,7 @@ tags:
   - "Target Efficiency"
   - "Performance Modeling"
 date: 2026-05-08
-content_hash: c1aaaa97d91028de
+content_hash: 00970e86a208b164
 ---
 
 # MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE
@@ -137,10 +137,10 @@ Mixtral-8×7B-Instruct + EAGLE speculation head:
 ## Related Papers
 
 - [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](../../ICLR2026/llm_efficiency/speculative_speculative_decoding.md)
+- [\[ACL 2025\] SAM Decoding: Speculative Decoding via Suffix Automaton](../../ACL2025/llm_efficiency/sam_decoding_speculative_decoding_via_suffix_automaton.md)
 - [\[NeurIPS 2025\] OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding](omnidraft_a_cross-vocabulary_online_adaptive_drafter_for_on-device_speculative_d.md)
-- [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](../../ACL2026/llm_efficiency/speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
-- [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)
-- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](../../ICML2026/llm_efficiency/minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
+- [\[ICML 2025\] Retraining-Free Merging of Sparse MoE via Hierarchical Clustering](../../ICML2025/llm_efficiency/retraining-free_merging_of_sparse_moe_via_hierarchical_clustering.md)
 
 </div>
 

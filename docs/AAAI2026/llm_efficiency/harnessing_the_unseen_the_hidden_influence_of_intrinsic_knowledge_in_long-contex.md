@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models
 description: >-
-  [AAAI 2026][LLM Efficiency][Long-context language models] This paper presents the first systematic study of how parametric knowledge influences generation in long-context language models (LCLMs)…
+  [AAAI 2026][LLM Efficiency][Long-context language models] This paper presents the first systematic study of how parametric knowledge influences generation in long-context language models (LCLMs), finding that such influence grows with context length and that methods designed to improve extrinsic retrieval suppress parametric recall. Based on these findings, the paper proposes the Hybrid Needle-in-a-Haystack (Hybrid NIAH) benchmark to jointly evaluate both capabilities.
 tags:
   - "AAAI 2026"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Needle-in-a-Haystack"
   - "knowledge conflict"
 date: 2026-05-08
-content_hash: 7b4b7341980265ee
+content_hash: 71d99f13ba94b383
 ---
 
 # Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models
@@ -142,11 +142,11 @@ The study is structured in three parts: (1) validating the role of parametric kn
 
 ## Related Papers
 
-- [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](../../ICLR2026/llm_efficiency/expert_divergence_learning_for_moe-based_language_models.md)
-- [\[NeurIPS 2025\] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models](../../NeurIPS2025/llm_efficiency/l-mtp_leap_multi-token_prediction_beyond_adjacent_context_for_large_language_mod.md)
-- [\[NeurIPS 2025\] Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context](../../NeurIPS2025/llm_efficiency/technical_debt_in_in-context_learning_diminishing_efficiency_in_long_context.md)
-- [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](../../ACL2026/llm_efficiency/are_large_language_models_economically_viable_for_industry_deployment.md)
-- [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](../../ACL2026/llm_efficiency/lizard_an_efficient_linearization_framework_for_large_language_models.md)
+- [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](../../ICLR2026/llm_efficiency/knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
+- [\[ICLR 2026\] ProtoKV: Knowledge in Long Context is Already Organized Before You Query](../../ICLR2026/llm_efficiency/protokv_long-context_knowledges_are_already_well-organized_before_your_query.md)
+- [\[ACL 2025\] Ref-Long: Benchmarking the Long-Context Referencing Capability of Long-Context Language Models](../../ACL2025/llm_efficiency/ref-long_benchmarking_the_long-context_referencing_capability_of_long-context_la.md)
+- [\[ACL 2025\] How to Train Long-Context Language Models (Effectively)](../../ACL2025/llm_efficiency/train_long_context_effectively.md)
+- [\[ACL 2025\] Literary Evidence Retrieval via Long-Context Language Models](../../ACL2025/llm_efficiency/literary_evidence_retrieval_via_long-context_language_models.md)
 
 </div>
 

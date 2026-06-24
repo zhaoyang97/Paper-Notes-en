@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design
 description: >-
-  [ACL 2026][Computational Biology][Reinforcement Learning] ProtoCycle proposes a **reflective agent framework** that uses an LLM as a planner combined with a lightweight tool environment for text-guided protein sequence design. It replaces one-shot text-to-sequence generation with a multi-round "plan-tool-evaluate-reflect" cycle. On Mol-Instructions, it improves ProTrek to 14.
+  [ACL 2026 (Findings)][Computational Biology][Protein Design] ProtoCycle proposes a **reflective agent framework** that uses an LLM as a planner combined with a lightweight tool environment for text-guided protein sequence design. It replaces one-shot text-to-sequence generation with a multi-round "plan-tool-evaluate-reflect" cycle. On Mol-Instructions, it improves ProTrek to 14.681 and Retrieval to 0.936, achieving language alignment that nears or exceeds specialized protein…
 tags:
-  - ACL 2026
-  - Computational Biology
-  - Reinforcement Learning
+  - "ACL 2026 (Findings)"
+  - "Computational Biology"
+  - "Protein Design"
+  - "Text-Guided"
+  - "Reflective Planning"
+  - "Tool Augmentation"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: b3b6785c41dcecdd
+content_hash: c0436f615d788d38
 ---
+
 # ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design
 
 **Conference**: ACL 2026 (Findings)  
@@ -149,9 +154,9 @@ ProtoCycle-RL excels in language alignment: ProTrek sees a Gain of 3.66% over Pi
 
 - [\[NeurIPS 2025\] Protein Design with Dynamic Protein Vocabulary](../../NeurIPS2025/computational_biology/protein_design_with_dynamic_protein_vocabulary.md)
 - [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
-- [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](../../NeurIPS2025/computational_biology/pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
+- [\[ICLR 2026\] Iterative Distillation for Reward-Guided Fine-Tuning of Diffusion Models in Biomolecular Design](../../ICLR2026/computational_biology/iterative_distillation_for_reward-guided_fine-tuning_of_diffusion_models_in_biom.md)
 - [\[ICML 2026\] From Feasible to Practical: Pareto-Optimal Synthesis Planning](../../ICML2026/computational_biology/from_feasible_to_practical_pareto-optimal_synthesis_planning.md)
-- [\[ACL 2026\] BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models](biotool_a_comprehensive_tool-calling_dataset_for_enhancing_biomedical_capabiliti.md)
+- [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](../../NeurIPS2025/computational_biology/pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
 
 </div>
 

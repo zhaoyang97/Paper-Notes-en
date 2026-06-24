@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MetaDefense: Defending Finetuning-based Jailbreak Attack Before and During Generation
 description: >-
-  [NeurIPS 2025][LLM Alignment][jailbreak defense] This paper proposes MetaDefense, a two-stage (pre-generation + mid-generation) defense framework that trains the LLM itself to predict the harmfulness of queries and parti…
+  [NeurIPS 2025][LLM Alignment][jailbreak defense] This paper proposes MetaDefense, a two-stage (pre-generation + mid-generation) defense framework that trains the LLM itself to predict the harmfulness of queries and partial responses, defending against finetuning-based jailbreak attacks without external classifiers, achieving 2× memory efficiency.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "LLM safety alignment"
   - "meta defense"
 date: 2026-05-08
-content_hash: ca40f00e2342ea7b
+content_hash: 6234202775d77f0c
 ---
 
 # MetaDefense: Defending Finetuning-based Jailbreak Attack Before and During Generation
@@ -191,11 +191,11 @@ $$\mathcal{L} = \mathcal{L}_{\text{safety}} + \lambda \mathcal{L}_{\text{utility
 
 ## Related Papers
 
+- [\[ACL 2025\] Chain-of-Jailbreak Attack for Image Generation Models via Editing Step by Step](../../ACL2025/llm_alignment/chain-of-jailbreak_attack_for_image_generation_models_via_editing_step_by_step.md)
 - [\[NeurIPS 2025\] Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs](attack_via_overfitting_10-shot_benign_fine-tuning_to_jailbreak_llms.md)
-- [\[ICML 2026\] SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection](../../ICML2026/llm_alignment/spard_defending_harmful_fine-tuning_attack_via_safety_projection_with_relevance-.md)
-- [\[ICCV 2025\] Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models](../../ICCV2025/llm_alignment/heuristic-induced_multimodal_risk_distribution_jailbreak_attack_for_multimodal_l.md)
 - [\[NeurIPS 2025\] Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks](short-length_adversarial_training_helps_llms_defend_long-length_jailbreak_attack.md)
 - [\[NeurIPS 2025\] SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism](safeptr_token-level_jailbreak_defense_in_multimodal_llms_via_prune-then-restore_.md)
+- [\[ICML 2026\] SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection](../../ICML2026/llm_alignment/spard_defending_harmful_fine-tuning_attack_via_safety_projection_with_relevance-.md)
 
 </div>
 

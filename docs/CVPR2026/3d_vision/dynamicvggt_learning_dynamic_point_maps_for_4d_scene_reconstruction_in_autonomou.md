@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] DynamicVGGT extends the static feed-forward 3D model VGGT to dynamic 4D reconstruction. By utilizing "Dynamic Point Maps" to predict point clouds for current and future frames within a unified learned coordinate system, combined with a parallel motion-aware temporal attention branch and a velocity-supervised dynamic 3D
+  [CVPR 2026][3D Vision][4D Scene Reconstruction] DynamicVGGT extends the static feed-forward 3D model VGGT to dynamic 4D reconstruction. By utilizing "Dynamic Point Maps" to predict point clouds for current and future frames within a unified learned coordinate system, combined with a parallel motion-aware temporal attention branch and a velocity-supervised dynamic 3D Gaussian head, it reconstructs temporally consistent dynamic driving scenes on Waymo and KITTI using only image…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Scene Reconstruction"
+  - "Dynamic Point Maps"
+  - "Feed-forward 3D Foundation Models"
+  - "Temporal Attention"
+  - "Dynamic Gaussian Splatting"
 date: 2026-05-08
-content_hash: 4f4ea72ab5921b43
+content_hash: 936060813a64b579
 ---
+
 # DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -165,11 +171,11 @@ Ours achieves the best monocular Acc. (0.070) on KITTI and leads significantly i
 
 ## Related Papers
 
-- [\[AAAI 2026\] Understanding Dynamic Scenes in Egocentric 4D Point Clouds](../../AAAI2026/autonomous_driving/understanding_dynamic_scenes_in_ego_centric_4d_point_clouds.md)
-- [\[CVPR 2026\] SGDrive: Scene-to-Goal Hierarchical World Cognition for Autonomous Driving](sgdrive_scene-to-goal_hierarchical_world_cognition_for_autonomous_driving.md)
-- [\[CVPR 2026\] Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures](unleashing_vla_potentials_in_autonomous_driving_via_explicit_learning_from_failu.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
-- [\[CVPR 2026\] DrivePTS: A Progressive Learning Framework with Textual and Structural Enhancement for Driving Scene Generation](drivepts_a_progressive_learning_framework_with_textual_and_structural_enhancemen.md)
+- [\[CVPR 2026\] V-DPM: 4D Video Reconstruction with Dynamic Point Maps](v-dpm_4d_video_reconstruction_with_dynamic_point_maps.md)
+- [\[CVPR 2026\] LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving](lidar_prompted_spatio-temporal_multi-view_stereo_for_autonomous_driving.md)
+- [\[CVPR 2026\] ReFlow: Self-correction Motion Learning for Dynamic Scene Reconstruction](reflow_self-correction_motion_learning_for_dynamic_scene_reconstruction.md)
+- [\[CVPR 2026\] Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks](mind_the_hitch_dynamic_calibration_and_articulated_perception_for_autonomous_tru.md)
+- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data
 description: >-
-  [ICCV 2025][Human Understanding][3D human pose estimation] This paper proposes the PoseSyn framework, which identifies hard samples for a target pose estimator (TPE) from in-the-wild 2D pose data via an Error Extraction…
+  [ICCV 2025][Human Understanding][3D human pose estimation] This paper proposes the PoseSyn framework, which identifies hard samples for a target pose estimator (TPE) from in-the-wild 2D pose data via an Error Extraction Module (EEM), then expands inaccurate pseudo-labels into diverse motion sequences via a Motion Synthesis Module (MSM). A human animation model subsequently renders these sequences into realistic training images with accurate 3D annotations…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "hard sample mining"
   - "data augmentation"
 date: 2026-05-08
-content_hash: 81b618bcae0a050a
+content_hash: e3ea84f769998ebd
 ---
 
 # PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data
@@ -166,7 +166,7 @@ Impact of MSM on TPE training (3DCrowdNet, Mean MPJPE↓):
 - [\[NeurIPS 2025\] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space](../../NeurIPS2025/human_understanding/pandapose_3d_human_pose_lifting_from_a_single_image_via_propagating_2d_pose_prio.md)
 - [\[ICCV 2025\] HccePose(BF): Predicting Front & Back Surfaces to Construct Ultra-Dense 2D-3D Correspondences for Pose Estimation](hcceposebf_predicting_front_back_surfaces_to_construct_ultra-dense_2d-3d_corresp.md)
 - [\[CVPR 2026\] ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data](../../CVPR2026/human_understanding/remogen_real-time_human_interaction-to-reaction_generation_via_modular_learning_.md)
-- [\[ICCV 2025\] Monocular Facial Appearance Capture in the Wild](monocular_facial_appearance_capture_in_the_wild.md)
+- [\[NeurIPS 2025\] Learning Dense Hand Contact Estimation from Imbalanced Data](../../NeurIPS2025/human_understanding/learning_dense_hand_contact_estimation_from_imbalanced_data.md)
 
 </div>
 

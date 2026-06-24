@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] LongWriter-Zero: Mastering Ultra-Long Text Generation via Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] LongWriter-Zero is proposed: starting from a base model and without relying on any annotated or synthetic data, ultra-long high-quality text generation capability emerges solely through GRPO reinforcement learning combined with a three-dimensional composite reward model (Length / Quality / Format). With 32B parameters,
+  [ICLR 2026 (Oral)][Reinforcement Learning][Ultra-long text generation] LongWriter-Zero is proposed: starting from a base model and without relying on any annotated or synthetic data, ultra-long high-quality text generation capability emerges solely through GRPO reinforcement learning combined with a three-dimensional composite reward model (Length / Quality / Format). With 32B parameters, it outperforms 100B+ models such as DeepSeek-R1 and Qwen3-235B on WritingBench.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026 (Oral)"
+  - "Reinforcement Learning"
+  - "Ultra-long text generation"
+  - "GRPO"
+  - "Composite Reward Model"
+  - "Test-time Reasoning"
 date: 2026-05-08
-content_hash: d5f7b4a88c9ce876
+content_hash: b772771096e99883
 ---
+
 # LongWriter-Zero: Mastering Ultra-Long Text Generation via Reinforcement Learning
 
 **Conference**: ICLR 2026 (Oral)  
@@ -138,6 +142,7 @@ SFT yields almost no benefit from continual pre-training (964 → 971) because p
 - Value: ⭐⭐⭐⭐⭐ — High practical value, open-souced weights, advances the RL+Writing direction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

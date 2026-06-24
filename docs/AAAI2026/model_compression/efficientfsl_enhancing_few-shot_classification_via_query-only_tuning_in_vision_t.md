@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EfficientFSL: Enhancing Few-Shot Classification via Query-Only Tuning in Vision Transformers
 description: >-
-  [AAAI 2026][Model Compression][Few-Shot Learning] This paper proposes EfficientFSL, a query-only parameter-efficient fine-tuning framework for ViT-based few-shot classification. Through three components — the Forward Blo…
+  [AAAI 2026][Model Compression][Few-Shot Learning] This paper proposes EfficientFSL, a query-only parameter-efficient fine-tuning framework for ViT-based few-shot classification. Through three components — the Forward Block (decoupled active/frozen sub-blocks), the Combine Block (adaptive multi-layer feature fusion), and the SQ Attention Block (support-query distribution alignment) — EfficientFSL achieves state-of-the-art performance on 4 in-domain and 6 cross-domain benchmark…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Query-Only Tuning"
   - "Prototypical Networks"
 date: 2026-05-08
-content_hash: 106de9e82dde5b03
+content_hash: dfd8c435b3f1ac4b
 ---
 
 # EfficientFSL: Enhancing Few-Shot Classification via Query-Only Tuning in Vision Transformers

@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety
 description: >-
-  [ICLR 2026][LLM Agent][AI agent safety] This paper introduces OpenAgentSafety, a comprehensive safety evaluation framework for AI agents. It features over 350 executable tasks, a suite of real-world tools (browser, terminal, file system, messaging platforms), and multi-turn, multi-user interaction scenarios. The study reveals that even state-of-the-art LLMs
+  [ICLR 2026][LLM Agent][AI agent safety] This paper introduces OpenAgentSafety, a comprehensive safety evaluation framework for AI agents. It features over 350 executable tasks, a suite of real-world tools (browser, terminal, file system, messaging platforms), and multi-turn, multi-user interaction scenarios. The study reveals that even state-of-the-art LLMs exhibit unsafe behaviors in 49%-73% of safety-sensitive tasks.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - AI agent safety
-  - benchmark
-  - multi-turn evaluation
-  - tool-use safety
-  - red teaming
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "AI agent safety"
+  - "benchmark"
+  - "multi-turn evaluation"
+  - "tool-use safety"
+  - "red teaming"
+  - "rule-based evaluation"
 date: 2026-05-08
-content_hash: b238f86bc3409290
+content_hash: d8650b74e1a4d790
 ---
+
 # OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety
 
 **Conference**: ICLR 2026  
@@ -177,6 +179,7 @@ Compared to SafeArena (Tur et al., 2025), OA-Safety adds multi-turn user interac
 -   Value: ⭐⭐⭐⭐⭐ (Direct instructional significance for safe agent deployment)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -185,7 +188,7 @@ Compared to SafeArena (Tur et al., 2025), OA-Safety adds multi-turn user interac
 - [\[ICLR 2026\] A Framework for Studying AI Agent Behavior: Evidence from Consumer Choice Experiments](a_framework_for_studying_ai_agent_behavior_evidence_from_consumer_choice_experim.md)
 - [\[ICLR 2026\] Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration](collaborative_gym_a_framework_for_enabling_and_evaluating_human-agent_collaborat.md)
 - [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](../../AAAI2026/llm_agent/d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
-- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
+- [\[ICML 2026\] MCP-Persona: Evaluating LLM Agent Capabilities in Real-World Personal Applications via Environment Simulation](../../ICML2026/llm_agent/mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] In Good GRACES: Principled Teacher Selection for Knowledge Distillation
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] The authors propose **GRACE**, a lightweight scoring metric that predicts which teacher is most compatible with a specific student and task before distillation. By analyzing the student's gradient distribution on teacher-generated data—without requiring verifiers, teacher logits, internal states, or test data—it achiev
+  [ICLR 2026][Model Compression][Knowledge Distillation] The authors propose **GRACE**, a lightweight scoring metric that predicts which teacher is most compatible with a specific student and task before distillation. By analyzing the student's gradient distribution on teacher-generated data—without requiring verifiers, teacher logits, internal states, or test data—it achieves up to 86% Spearman correlation with post-distillation performance on GSM8K/MATH.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Teacher Selection"
+  - "Gradient Cross-validation"
+  - "Data Diversity"
+  - "Conditional Mutual Information"
 date: 2026-05-08
-content_hash: 1e5ea0fdd14b00cb
+content_hash: 5c155b8edc3bac2a
 ---
+
 # In Good GRACES: Principled Teacher Selection for Knowledge Distillation
 
 **Conference**: ICLR 2026  

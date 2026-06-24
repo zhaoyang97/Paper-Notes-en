@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives
 description: >-
-  [NeurIPS 2025][Optimization][multi-agent coordination] This paper proposes two multi-agent online coordination algorithms, MA-SPL and MA-MPL…
+  [NeurIPS 2025][Optimization][multi-agent coordination] This paper proposes two multi-agent online coordination algorithms, MA-SPL and MA-MPL, which leverage a *policy-based continuous extension* technique to surpass the limitations of submodularity. For the first time, both algorithms achieve the optimal $(1 - c/e)$ approximation ratio under submodular and weakly submodular objectives, while supporting time-varying objectives and the practical constraint of local-only feedbac…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "online optimization"
   - "policy learning"
 date: 2026-05-08
-content_hash: 29b00708ad379787
+content_hash: 276d1bcf6fc615ac
 ---
 
 # Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives
@@ -138,8 +138,8 @@ This paper proposes two multi-agent online coordination algorithms, MA-SPL and M
 - [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](online_two-stage_submodular_maximization.md)
 - [\[NeurIPS 2025\] Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints](beyond_tildeosqrtt_constraint_violation_for_online_convex_optimization_with_adve.md)
 - [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](a_unified_approach_to_submodular_maximization_under_noise.md)
-- [\[NeurIPS 2025\] Optimistic Online-to-Batch Conversions for Accelerated Convergence and Universality](optimistic_online-to-batch_conversions_for_accelerated_convergence_and_universal.md)
 - [\[AAAI 2026\] Parametrized Multi-Agent Routing via Deep Attention Models](../../AAAI2026/optimization/parametrized_multi-agent_routing_via_deep_attention_models.md)
+- [\[NeurIPS 2025\] Optimistic Online-to-Batch Conversions for Accelerated Convergence and Universality](optimistic_online-to-batch_conversions_for_accelerated_convergence_and_universal.md)
 
 </div>
 

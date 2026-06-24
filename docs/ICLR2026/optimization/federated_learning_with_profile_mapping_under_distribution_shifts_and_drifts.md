@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Federated Learning with Profile Mapping under Distribution Shifts and Drifts
 description: >-
-  [ICLR 2026][Optimization & Theory][Federated Learning] FEROMA decouples "which models to aggregate with" from "client/cluster identity" to "data distribution profiles": each client extracts a lightweight, differentially private distribution profile. The similarity between profiles automatically determines whether the current round employs clustered aggregation, personaliza
+  [ICLR 2026][Optimization][Federated Learning] FEROMA decouples "which models to aggregate with" from "client/cluster identity" to "data distribution profiles": each client extracts a lightweight, differentially private distribution profile. The similarity between profiles automatically determines whether the current round employs clustered aggregation, personalization, or global aggregation. This enables robust operation under simultaneous distribution shift (between clients)…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Federated Learning
-  - Distribution Shift
-  - Distribution Drift
-  - Distribution Profile
-  - Clustered FL
-  - Personalized FL
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Distribution Shift"
+  - "Distribution Drift"
+  - "Distribution Profile"
+  - "Clustered FL"
+  - "Personalized FL"
+  - "Test-time Adaptation"
 date: 2026-05-08
-content_hash: 8e89c3d271a3ecb0
+content_hash: 276979b074c898d6
 ---
+
 # Federated Learning with Profile Mapping under Distribution Shifts and Drifts
 
 **Conference**: ICLR 2026  
@@ -121,15 +123,20 @@ FEROMA connects three main threads in FL heterogeneity: **CFL** (FedRC/FedEM/Fed
 - **Value**: ⭐⭐⭐⭐ —— Significant improvements in accuracy and stability for heterogeneous dynamic scenarios with FedAvg-level overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **FedDrift**: [arXiv:2303.13241](https://arxiv.org/abs/2303.13241) (Baseline for drift handling)
-- **IFCA**: [arXiv:2006.04088](https://arxiv.org/abs/2006.04088) (Classic Clustered FL)
-- **ATP**: [arXiv:2210.12644](https://arxiv.org/abs/2210.12644) (Test-time Adaptation in FL)
+## Related Papers
+
+- [\[NeurIPS 2025\] FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts](../../NeurIPS2025/optimization/flux_efficient_descriptor-driven_clustered_federated_learning_under_arbitrary_di.md)
+- [\[CVPR 2026\] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift](../../CVPR2026/optimization/fed-ade_adaptive_learning_rate_for_federated_post-adaptation_under_distribution_.md)
+- [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](incentives_in_federated_learning_with_heterogeneous_agents.md)
+- [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
+- [\[ICLR 2026\] Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity](unified_analyses_for_hierarchical_federated_learning_topology_selection_under_da.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift](../../CVPR2026/optimization/fed-ade_adaptive_learning_rate_for_federated_post-adaptation_under_distribution_.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fast Spatial Tracking with Visual Geometry Transformer
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper employs a feed-forward visual geometry Transformer to directly predict 2D/3D trajectories of arbitrary query points from monocular video. By replacing the traditional dependence on dense depth estimation and scene reconstruction with a dual-branch design of "global branch + frame-level branch + bidirectional
+  [CVPR 2026][3D Vision][3D point tracking] This paper employs a feed-forward visual geometry Transformer to directly predict 2D/3D trajectories of arbitrary query points from monocular video. By replacing the traditional dependence on dense depth estimation and scene reconstruction with a dual-branch design of "global branch + frame-level branch + bidirectional interaction," it achieves real-time speeds of 28 ms/frame and attains SOTA performance on TAPVid-3D with 19.0 AJ / 28…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D point tracking"
+  - "visual geometry Transformer"
+  - "dual-branch decoding"
+  - "monocular video"
+  - "real-time tracking"
 date: 2026-05-08
-content_hash: fb333f61cd118bbb
+content_hash: 127fcdb8dd8a23a0
 ---
+
 # Fast Spatial Tracking with Visual Geometry Transformer
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ On TAPVid-3D minival, components were added incrementally (Frame, Global, MLCA, 
 
 ## Related Papers
 
+- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
+- [\[ICLR 2026\] FastVGGT: Fast Visual Geometry Transformer](../../ICLR2026/3d_vision/fastvggt_fast_visual_geometry_transformer.md)
+- [\[CVPR 2026\] OmniVGGT: Omni-Modality Driven Visual Geometry Grounded Transformer](omnivggt_omni-modality_driven_visual_geometry_grounded_transformer.md)
 - [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
-- [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
+- [\[ICLR 2026\] Streaming Visual Geometry Transformer](../../ICLR2026/3d_vision/streaming_visual_geometry_transformer.md)
 
 </div>
 

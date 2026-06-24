@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Skill-Attributes for Transferable Assessment in Video
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Skill assessment] This paper proposes CrossTrainer, a method that discovers sport-agnostic skill attributes (e.g., balance, control…
+  [NeurIPS 2025][Multimodal VLM][Skill assessment] This paper proposes CrossTrainer, a method that discovers sport-agnostic skill attributes (e.g., balance, control, hand positioning) as intermediate representations to train a multimodal language model for generating actionable feedback and proficiency assessments from video. CrossTrainer achieves up to 60% relative improvement over the state of the art in zero-shot cross-sport transfer.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "multimodal LLM"
   - "actionable feedback"
 date: 2026-05-08
-content_hash: e807fa2855353f75
+content_hash: 20c4ca5e9bc314d9
 ---
 
 # Learning Skill-Attributes for Transferable Assessment in Video
@@ -155,10 +155,10 @@ Evaluated on three datasets: Ego-Exo4D (soccer/basketball/rock climbing), QEVD (
 ## Related Papers
 
 - [\[ICCV 2025\] Advancing Textual Prompt Learning with Anchored Attributes](../../ICCV2025/multimodal_vlm/advancing_textual_prompt_learning_with_anchored_attributes.md)
-- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
 - [\[NeurIPS 2025\] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](video-safetybench_a_benchmark_for_safety_evaluation_of_video_lvlms.md)
 - [\[NeurIPS 2025\] Training-free Online Video Step Grounding](training-free_online_video_step_grounding.md)
 - [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
+- [\[NeurIPS 2025\] MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios](mme-videoocr_evaluating_ocr-based_capabilities_of_multimodal_llms_in_video_scena.md)
 
 </div>
 

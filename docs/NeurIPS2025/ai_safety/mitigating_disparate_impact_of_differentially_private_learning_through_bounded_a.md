@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] By introducing a tunable lower bound into adaptive gradient clipping (bounded adaptive clipping)…
+  [NeurIPS 2025][AI Safety][Differential Privacy] By introducing a tunable lower bound into adaptive gradient clipping (bounded adaptive clipping), this work prevents the clipping bound from shrinking excessively during training, thereby improving accuracy for minority groups and mitigating algorithmic unfairness under DP constraints.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "DP-SGD"
   - "Disparate Impact"
 date: 2026-05-08
-content_hash: c0d8c86528b8c4da
+content_hash: eef321193ea6f897
 ---
 
 # Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping
@@ -129,11 +129,11 @@ Standard DP-SGD training is employed, where per-sample gradients are clipped to 
 
 ## Related Papers
 
+- [\[ICML 2025\] Improving the Variance of Differentially Private Randomized Experiments through Clustering](../../ICML2025/ai_safety/improving_the_variance_of_differentially_private_randomized_experiments_through_.md)
 - [\[NeurIPS 2025\] Differentially Private High-dimensional Variable Selection via Integer Programming](differentially_private_high-dimensional_variable_selection_via_integer_programmi.md)
 - [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
-- [\[NeurIPS 2025\] FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation](faircontrast_enhancing_fairness_through_contrastive_learning_and_customized_augm.md)
+- [\[ICLR 2026\] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning](../../ICLR2026/ai_safety/on_optimal_hyperparameters_for_differentially_private_deep_transfer_learning.md)
 - [\[AAAI 2026\] An Improved Privacy and Utility Analysis of Differentially Private SGD with Bounded Domain and Smooth Losses](../../AAAI2026/ai_safety/an_improved_privacy_and_utility_analysis_of_differentially_p.md)
-- [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing What's Not There: Negation Understanding Needs More Than Training
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] Addressing the persistent issue where CLIP-like vision-language models fail to understand "negation," this paper proposes a completely training-free zero-shot method. By using rules to extract negated concepts from sentences, it subtracts this semantic portion in the text embedding space via projection and adds back an
+  [ICLR 2026][Multimodal VLM][Negation understanding] Addressing the persistent issue where CLIP-like vision-language models fail to understand "negation," this paper proposes a completely training-free zero-shot method. By using rules to extract negated concepts from sentences, it subtracts this semantic portion in the text embedding space via projection and adds back an anchor bias. This improves vanilla CLIP's performance on NegBench MCQ from 25.5% to 67.0%…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Negation understanding"
+  - "CLIP"
+  - "Training-free"
+  - "Embedding modification"
+  - "Compositionality"
 date: 2026-05-08
-content_hash: ccc71ab18d1bcf2a
+content_hash: 95022cde9850b44c
 ---
+
 # Seeing What's Not There: Negation Understanding Needs More Than Training
 
 **Conference**: ICLR 2026  
@@ -124,9 +129,9 @@ The value of this work lies not just in high scores, but in its challenge to the
 
 - [\[CVPR 2025\] Vision-Language Models Do Not Understand Negation](../../CVPR2025/multimodal_vlm/vision-language_models_do_not_understand_negation.md)
 - [\[CVPR 2026\] More than the Sum: Panorama-Language Models for Adverse Omni-Scenes](../../CVPR2026/multimodal_vlm/more_than_the_sum_panorama-language_models_for_adverse_omni-scenes.md)
+- [\[ICCV 2025\] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation](../../ICCV2025/multimodal_vlm/is_less_more_exploring_token_condensation_as_training-free_test-time_adaptation.md)
 - [\[ACL 2025\] Exploring How Generative MLLMs Perceive More Than CLIP with the Same Vision Encoder](../../ACL2025/multimodal_vlm/exploring_how_generative_mllms_perceive_more.md)
 - [\[ICLR 2026\] RL Makes MLLMs See Better Than SFT](rl_makes_mllms_see_better_than_sft.md)
-- [\[ACL 2026\] "I See What You Did There": Can Large Vision-Language Models Understand Multimodal Puns?](../../ACL2026/multimodal_vlm/i_see_what_you_did_there_can_large_vision-language_models_understand_multimodal_.md)
 
 </div>
 

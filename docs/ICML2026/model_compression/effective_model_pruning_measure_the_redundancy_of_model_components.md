@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Effective Model Pruning: Measure the Redundancy of Model Components
 description: >-
-  [ICML 2026][Model Compression][Paper Note] Ours borrows the concept of "effective sample size" from particle filtering to map any scoring vector directly to an adaptive retention count $N_{\text{eff}} = \lfloor 1/\sum_i \omega_i^2 \rfloor$ as a pruning threshold. This approach avoids manual sparsity setting and provides a theoretical upper bound on the loss cha
+  [ICML 2026 Spotlight][Model Compression][Model Pruning] Ours borrows the concept of "effective sample size" from particle filtering to map any scoring vector directly to an adaptive retention count $N_{\text{eff}} = \lfloor 1/\sum_i \omega_i^2 \rfloor$ as a pruning threshold. This approach avoids manual sparsity setting and provides a theoretical upper bound on the loss change before and after pruning.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026 Spotlight"
+  - "Model Compression"
+  - "Model Pruning"
+  - "Effective Sample Size"
+  - "Inverse Simpson Index"
+  - "Adaptive Sparsity"
+  - "General Threshold"
 date: 2026-05-08
-content_hash: 320a4ea540236fed
+content_hash: 553741fbb47f2139
 ---
+
 # Effective Model Pruning: Measure the Redundancy of Model Components
 
 **Conference**: ICML 2026 Spotlight  
@@ -144,7 +150,7 @@ $\beta$ sensitivity was verified by scanning $\beta \in \{0.5, 0.75, 1, 1.25, 1.
 - [\[NeurIPS 2025\] Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement](../../NeurIPS2025/model_compression/towards_effective_federated_graph_foundation_model_via_mitigating_knowledge_enta.md)
 - [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](../../ICLR2026/model_compression/adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
 - [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)
-- [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](../../ICLR2026/model_compression/gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
 
 </div>
 

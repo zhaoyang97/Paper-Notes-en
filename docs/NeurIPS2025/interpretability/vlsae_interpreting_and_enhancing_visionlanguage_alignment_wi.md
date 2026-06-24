@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set
 description: >-
-  [NeurIPS 2025][Interpretability][Sparse Autoencoder] This paper proposes VL-SAE, a sparse autoencoder with a distance-based encoder and modality-specific decoders that maps the semantics of both visual and linguistic rep…
+  [NeurIPS 2025][Interpretability][Sparse Autoencoder] This paper proposes VL-SAE, a sparse autoencoder with a distance-based encoder and modality-specific decoders that maps the semantics of both visual and linguistic representations onto a unified concept set, thereby interpreting and enhancing the vision-language alignment mechanism of VLMs. The approach yields an average improvement of 0.6–0.9% on zero-shot classification and outperforms the dedicated method VCD on POPE hal…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "unified concept set"
   - "hallucination mitigation"
 date: 2026-05-08
-content_hash: 2247a39e529116db
+content_hash: d103930df80ec299
 ---
 
 # VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set
@@ -134,11 +134,11 @@ The triangle inequality trick of the distance-based encoder is transferable to o
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions](explaining_similarity_in_vision-language_encoders_with_weighted_banzhaf_interact.md)
 - [\[NeurIPS 2025\] Dense SAE Latents Are Features, Not Bugs](dense_sae_latents_are_features_not_bugs.md)
 - [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](probabilistic_token_alignment_for_large_language_model_fusion.md)
-- [\[NeurIPS 2025\] Efficient Vision-Language Reasoning via Adaptive Token Pruning](efficient_vision-language_reasoning_via_adaptive_token_pruning.md)
+- [\[NeurIPS 2025\] Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions](explaining_similarity_in_vision-language_encoders_with_weighted_banzhaf_interact.md)
 - [\[NeurIPS 2025\] Out of Control -- Why Alignment Needs Formal Control Theory (and an Alignment Control Stack)](out_of_control_--_why_alignment_needs_formal_control_theory_and_an_alignment_con.md)
+- [\[NeurIPS 2025\] Efficient Vision-Language Reasoning via Adaptive Token Pruning](efficient_vision-language_reasoning_via_adaptive_token_pruning.md)
 
 </div>
 

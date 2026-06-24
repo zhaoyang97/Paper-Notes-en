@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sparse Feature Coactivation Reveals Causal Semantic Modules in Large Language Models
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper automatically discovers semantic modules representing concepts and relations in LLMs via cross-layer co-activation graphs of SAE features from few prompts. It demonstrates that ablating or amplifying these modules allows for predictable manipulation of relational reasoning in Gemma 2 2B, achieving success ra
+  [ACL2026][Interpretability][Sparse Autoencoders] This paper automatically discovers semantic modules representing concepts and relations in LLMs via cross-layer co-activation graphs of SAE features from few prompts. It demonstrates that ablating or amplifying these modules allows for predictable manipulation of relational reasoning in Gemma 2 2B, achieving success rates up to 98% in single concept/relation scenarios and 90% in compositional scenarios.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Feature Co-activation"
+  - "Semantic Modules"
+  - "Causal Interventions"
+  - "Model Control"
 date: 2026-05-08
-content_hash: 8dcfe3206c76c7a9
+content_hash: bef0aeab293b1fcb
 ---
+
 # Sparse Feature Coactivation Reveals Causal Semantic Modules in Large Language Models
 
 **Conference**: ACL2026  
@@ -132,10 +138,10 @@ The paper does not train new models, utilizing Gemma 2 2B and pre-trained Gemma 
 ## Related Papers
 
 - [\[ACL 2026\] METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models](meter_evaluating_multi-level_contextual_causal_reasoning_in_large_language_model.md)
-- [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
-- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
+- [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](tracing_relational_knowledge_recall_in_large_language_models.md)
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 
 </div>
 

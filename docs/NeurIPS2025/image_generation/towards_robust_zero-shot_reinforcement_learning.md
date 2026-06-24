@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Robust Zero-Shot Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Image Generation][Zero-shot reinforcement learning] This paper proposes BREEZE, a framework that systematically addresses out-of-distribution (OOD) extrapolation errors and insufficient expressivity in FB-…
+  [NeurIPS 2025][Image Generation][Zero-shot reinforcement learning] This paper proposes BREEZE, a framework that systematically addresses out-of-distribution (OOD) extrapolation errors and insufficient expressivity in FB-based zero-shot RL through behavior-regularized representation guidance, task-conditioned diffusion policy extraction, and attention-enhanced representation modeling. BREEZE achieves state-of-the-art or near-state-of-the-art robust zero-shot generalization on…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion policy"
   - "attention architecture"
 date: 2026-05-08
-content_hash: 756cdd40d6d84c5c
+content_hash: 4cf581b409e8a98e
 ---
 
 # Towards Robust Zero-Shot Reinforcement Learning
@@ -150,7 +150,7 @@ In the low-data regime (100k transitions), BREEZE achieves 525 vs. FB's 264 on W
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
 - [\[NeurIPS 2025\] RLVR-World: Training World Models with Reinforcement Learning](rlvr-world_training_world_models_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Flex-Judge: Text-Only Reasoning Unleashes Zero-Shot Multimodal Evaluators](flex-judge_text-only_reasoning_unleashes_zero-shot_multimodal_evaluators.md)
-- [\[NeurIPS 2025\] Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data](composite_flow_matching_for_reinforcement_learning_with_shifted-dynamics_data.md)
+- [\[ICML 2025\] Sample Complexity of Distributionally Robust Off-Dynamics Reinforcement Learning with Online Interaction](../../ICML2025/image_generation/sample_complexity_of_distributionally_robust_off-dynamics_reinforcement_learning.md)
 
 </div>
 

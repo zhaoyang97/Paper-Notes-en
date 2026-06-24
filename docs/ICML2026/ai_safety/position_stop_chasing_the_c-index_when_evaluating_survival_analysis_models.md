@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Position: Stop Chasing the C-index when Evaluating Survival Analysis Models
 description: >-
-  [ICML 2026][AI Safety][C-index] The authors audited 92 survival analysis papers from 2023–2025 and found that approximately 72% of the works used evaluation metrics (especially the overused C-index) that were misaligned with their modeling goals and censoring assumptions. They proposed the "Ladder Hypothesis": models and metrics must stand on the sam
+  [ICML 2026 Spotlight][AI Safety][Survival Analysis] The authors audited 92 survival analysis papers from 2023–2025 and found that approximately 72% of the works used evaluation metrics (especially the overused C-index) that were misaligned with their modeling goals and censoring assumptions. They proposed the "Ladder Hypothesis": models and metrics must stand on the same level of "censoring assumption," otherwise reported performance and rankings may be biased artifacts.
 tags:
-  - ICML 2026
-  - AI Safety
-  - C-index
-  - Ladder Hypothesis
+  - "ICML 2026 Spotlight"
+  - "AI Safety"
+  - "Survival Analysis"
+  - "C-index"
+  - "Censoring Assumptions"
+  - "Evaluation Metrics"
+  - "Ladder Hypothesis"
 date: 2026-05-08
-content_hash: 2161952506196776
+content_hash: 0761034def800715
 ---
+
 # Position: Stop Chasing the C-index when Evaluating Survival Analysis Models
 
 **Conference**: ICML 2026 Spotlight  
@@ -127,10 +131,10 @@ Key Observation: **True model performance (oracle) decreases monotonically as de
 ## Related Papers
 
 - [\[ICML 2026\] When Should an AI Scientist Stop? Verifiable Experiment Steering and Refusal for Autonomous Discovery](when_should_an_ai_scientist_stop_verifiable_experiment_steering_and_refusal_for_.md)
-- [\[ICML 2026\] From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents](from_weak_cues_to_real_identities_evaluating_inference-driven_de-anonymization_i.md)
-- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
-- [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
+- [\[ICLR 2026\] MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes](../../ICLR2026/ai_safety/morebench_evaluating_procedural_and_pluralistic_moral_reasoning_in_language_mode.md)
 - [\[CVPR 2026\] When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters](../../CVPR2026/ai_safety/when_lora_betrays_backdooring_text-to-image_models_by_masquerading_as_benign_ada.md)
+- [\[ICML 2026\] From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents](from_weak_cues_to_real_identities_evaluating_inference-driven_de-anonymization_i.md)
+- [\[ICML 2026\] Position: 'AI Alignment' Encompasses Competing Technical Priorities](ai_alignment_encompasses_competing_technical_priorities.md)
 
 </div>
 

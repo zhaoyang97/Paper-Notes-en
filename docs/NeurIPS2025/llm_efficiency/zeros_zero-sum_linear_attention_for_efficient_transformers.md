@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ZeroS: Zero-Sum Linear Attention for Efficient Transformers
 description: >-
-  [NeurIPS 2025][LLM Efficiency][zero-sum attention] By removing the zeroth-order uniform term $1/t$ from softmax, ZeroS constructs a linear attention mechanism with zero-sum weights…
+  [NeurIPS 2025][LLM Efficiency][zero-sum attention] By removing the zeroth-order uniform term $1/t$ from softmax, ZeroS constructs a linear attention mechanism with zero-sum weights, breaking the limitation of convex combinations to purely additive mixing. This enables differential/contrastive operations within a single layer while maintaining $O(Nd^2)$ linear complexity, matching or surpassing standard softmax attention across multiple sequence modeling benchmarks.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "radial-angular decoupling"
   - "O(N) complexity"
 date: 2026-05-08
-content_hash: 8dac4527f7442a59
+content_hash: d75441505c5cde72
 ---
 
 # ZeroS: Zero-Sum Linear Attention for Efficient Transformers
@@ -148,10 +148,10 @@ ZeroS directly replaces the multi-head attention module in Transformers, leaving
 ## Related Papers
 
 - [\[NeurIPS 2025\] Tiled Flash Linear Attention: More Efficient Linear RNN and xLSTM Kernels](tiled_flash_linear_attention_more_efficient_linear_rnn_and_xlstm_kernels.md)
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training](../../ICLR2026/llm_efficiency/race_attention_a_strictly_linear-time_attention_for_long-sequence_training.md)
+- [\[ICML 2026\] Dynamic Linear Attention](../../ICML2026/llm_efficiency/dynamic_linear_attention.md)
+- [\[ICLR 2026\] Log-Linear Attention](../../ICLR2026/llm_efficiency/log-linear_attention.md)
 - [\[NeurIPS 2025\] Constant Bit-Size Transformers Are Turing Complete](constant_bit-size_transformers_are_turing_complete.md)
-- [\[NeurIPS 2025\] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search](jet-nemotron_efficient_language_model_with_post_neural_architecture_search.md)
-- [\[NeurIPS 2025\] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers](from_shortcut_to_induction_head_how_data_diversity_shapes_algorithm_selection_in.md)
+- [\[ICLR 2026\] Scaling Linear Attention Capacity with Sparse State Expansion](../../ICLR2026/llm_efficiency/scaling_linear_attention_capacity_with_sparse_state_expansion.md)
 
 </div>
 

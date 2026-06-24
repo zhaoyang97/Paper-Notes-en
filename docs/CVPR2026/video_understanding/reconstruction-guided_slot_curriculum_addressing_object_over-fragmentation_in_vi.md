@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reconstruction-Guided Slot Curriculum: Addressing Object Over-Fragmentation in Video Object-Centric Learning
 description: >-
-  [CVPR 2026][Video Understanding][Slot Attention] This paper proposes SlotCurri, a reconstruction-guided curriculum learning strategy for slot quantity. By starting training with minimal slots and incrementally expanding slot capacity only in regions with high reconstruction errors, combined with structure-aware loss and recurrent inference, it effectively addresses t
+  [CVPR 2026][Video Understanding][Object-Centric Representation] This paper proposes SlotCurri, a reconstruction-guided curriculum learning strategy for slot quantity. By starting training with minimal slots and incrementally expanding slot capacity only in regions with high reconstruction errors, combined with structure-aware loss and recurrent inference, it effectively addresses the over-fragmentation problem in video object-centric learning where a single object is incorrec…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Slot Attention
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Object-Centric Representation"
+  - "Over-Fragmentation"
+  - "Curriculum Learning"
+  - "Slot Attention"
+  - "Video Segmentation"
 date: 2026-05-08
-content_hash: b23001aa97541fe6
+content_hash: 14aa05c3fb4ea212
 ---
+
 # Reconstruction-Guided Slot Curriculum: Addressing Object Over-Fragmentation in Video Object-Centric Learning
 
 **Conference**: CVPR 2026  
@@ -155,8 +160,8 @@ Hyperparameter sensitivity:
 
 ## Related Papers
 
-- [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](../../ICLR2026/video_understanding/from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)
 - [\[CVPR 2025\] Temporally Consistent Object-Centric Learning by Contrasting Slots](../../CVPR2025/video_understanding/temporally_consistent_object-centric_learning_by_contrasting_slots.md)
+- [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](../../ICLR2026/video_understanding/from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)
 - [\[CVPR 2026\] TGTrack: Temporal Generative Learning for Unified Single Object Tracking](tgtrack_temporal_generative_learning_for_unified_single_object_tracking.md)
 - [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
 - [\[AAAI 2026\] Predicting Video Slot Attention Queries from Random Slot-Feature Pairs](../../AAAI2026/video_understanding/predicting_video_slot_attention_queries_from_random_slot-feature_pairs.md)

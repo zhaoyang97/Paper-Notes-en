@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Concept-based Adversarial Attack: a Probabilistic Perspective
 description: >-
-  [ICLR 2026][AI Safety][Diffusion Model] The adversarial attack is upgraded from "perturbing a single image" to "perturbing an entire concept distribution." A diffusion generative model is used to fit multi-pose and multi-view images of a specific identity (e.g., a specific Corgi) into a concept distribution. By sampling from the product of this concept distr
+  [ICLR2026][AI Safety][Adversarial Attack] The adversarial attack is upgraded from "perturbing a single image" to "perturbing an entire concept distribution." A diffusion generative model is used to fit multi-pose and multi-view images of a specific identity (e.g., a specific Corgi) into a concept distribution. By sampling from the product of this concept distribution and the victim classifier's distribution, the method generates adversarial samples that retain the original co…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Diffusion Model
+  - "ICLR2026"
+  - "AI Safety"
+  - "Adversarial Attack"
+  - "Probabilistic Perspective"
+  - "Concept Distribution"
+  - "Diffusion Model"
+  - "Unrestricted Attack"
 date: 2026-05-08
-content_hash: 3c4e0b3989f890cc
+content_hash: 0ff286a447934d20
 ---
+
 # Concept-based Adversarial Attack: a Probabilistic Perspective
 
 **Conference**: ICLR2026  
@@ -147,9 +152,9 @@ ProbAttack itself is a degenerate version of the proposed method where $|C_{ori}
 
 - [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)
 - [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](../../CVPR2026/ai_safety/a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
-- [\[ICLR 2026\] Decoupling the Class Label and the Target Concept in Machine Unlearning](decoupling_the_class_label_and_the_target_concept_in_machine_unlearning.md)
 - [\[NeurIPS 2025\] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](../../NeurIPS2025/ai_safety/understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)
 - [\[ICLR 2026\] Discrete Latent Features Ablate Adversarial Attack: A Robust Prompt Tuning Framework for VLMs](discrete_latent_features_ablate_adversarial_attack_a_robust_prompt_tuning_framew.md)
+- [\[ICLR 2026\] Certifying the Full YOLO Pipeline: A Probabilistic Verification Approach](certifying_the_full_yolo_pipeline_a_probabilistic_verification_approach.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering
 description: >-
-  [ICLR 2026][Graph Learning][Multi-View Clustering] The proposed MANGO framework uses "entropy-guided multi-scale graph diffusion" to dynamically fuse similarity matrices of different step lengths, balancing local and global structures. It further employs "random walk + $\beta$ power-smoothing" to correct false negatives in contrastive learning and mitigates the contrad
+  [ICLR 2026][Graph Learning][Multi-View Clustering] The proposed MANGO framework uses "entropy-guided multi-scale graph diffusion" to dynamically fuse similarity matrices of different step lengths, balancing local and global structures. It further employs "random walk + $\beta$ power-smoothing" to correct false negatives in contrastive learning and mitigates the contradiction between consistency and specificity through a shared structural embedding module…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Multi-View Clustering
-  - Graph Diffusion
-  - Contrastive Learning
-  - Random Walk
-  - False Negatives
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Multi-View Clustering"
+  - "Graph Diffusion"
+  - "Contrastive Learning"
+  - "Random Walk"
+  - "False Negatives"
 date: 2026-05-08
-content_hash: 307809992cbba91f
+content_hash: 85dc187a61a7cb87
 ---
+
 # Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering
 
 **Conference**: ICLR 2026  
@@ -117,9 +118,9 @@ Ablation on MSRC-v1 / Reuters (√ indicates enabled; random=False Negative Corr
 
 ## Related Papers
 
+- [\[ICLR 2026\] Dual-Branch Representations with Dynamic Gated Fusion and Triple-Granularity Alignment for Deep Multi-View Clustering](dual-branch_representations_with_dynamic_gated_fusion_and_triple-granularity_ali.md)
 - [\[ICLR 2026\] Constant Degree Matrix-Driven Incomplete Multi-View Clustering via Connectivity-Structure and Embedding Tensor Learning](constant_degree_matrix-driven_incomplete_multi-view_clustering_via_connectivity-.md)
 - [\[ICLR 2026\] Confident Block Diagonal Structure-Aware Invariable Graph Completion for Incomplete Multi-view Clustering](confident_block_diagonal_structure-aware_invariable_graph_completion_for_incompl.md)
-- [\[ICLR 2026\] Dual-Branch Representations with Dynamic Gated Fusion and Triple-Granularity Alignment for Deep Multi-View Clustering](dual-branch_representations_with_dynamic_gated_fusion_and_triple-granularity_ali.md)
 - [\[ICLR 2026\] Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment](learning_with_dual-level_noisy_correspondence_for_multi-modal_entity_alignment.md)
 - [\[ICLR 2026\] FLOCK: A Knowledge Graph Foundation Model via Learning on Random Walks](flock_a_knowledge_graph_foundation_model_via_learning_on_random_walks.md)
 

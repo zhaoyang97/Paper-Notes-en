@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adjusted Count Quantification Learning on Graphs
 description: >-
-  [NeurIPS 2025][Quantification Learning] This paper extends the classical Adjusted Classify & Count (ACC) quantification method to graph-structured data…
+  [NeurIPS 2025][Quantification Learning] This paper extends the classical Adjusted Classify & Count (ACC) quantification method to graph-structured data, proposing two techniques — Structural Importance Sampling (SIS) and Neighborhood-aware ACC (N-ACC) — to address structural covariate shift and non-homophilous edges in graph quantification, respectively.
 tags:
   - "NeurIPS 2025"
   - "Quantification Learning"
@@ -11,7 +11,7 @@ tags:
   - "Importance Sampling"
   - "Non-Homophily"
 date: 2026-05-08
-content_hash: 061936c9a2f8ac58
+content_hash: b0f01da4fd4c7d2d
 ---
 
 # Adjusted Count Quantification Learning on Graphs
@@ -164,10 +164,10 @@ Performance under varying degrees of covariate shift (ogbn-arxiv dataset):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](position_there_is_no_free_bayesian_uncertainty_quantification.md)
 - [\[NeurIPS 2025\] Optimized Learned Count-Min Sketch](optimized_learned_count-min_sketch.md)
-- [\[ICML 2026\] Torus Graphs for Large-Scale Neural Phase Analysis](../../ICML2026/others/torus_graphs_for_large_scale_neural_phase_analysis.md)
-- [\[ICLR 2026\] Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds](../../ICLR2026/others/non-clashing_teaching_in_graphs_algorithms_complexity_and_bounds.md)
+- [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](position_there_is_no_free_bayesian_uncertainty_quantification.md)
+- [\[ICML 2025\] Online Sparsification of Bipartite-Like Clusters in Graphs](../../ICML2025/others/online_sparsification_of_bipartite-like_clusters_in_graphs.md)
+- [\[ACL 2025\] A Practical Approach for Building Production-Grade Conversational Agents with Workflow Graphs](../../ACL2025/others/a_practical_approach_for_building_production-grade_conversational_agents_with_wo.md)
 - [\[NeurIPS 2025\] Look-Ahead Reasoning on Learning Platforms](look-ahead_reasoning_on_learning_platforms.md)
 
 </div>

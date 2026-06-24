@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robust In-Context Reinforcement Learning Under Reward Poisoning Attacks
 description: >-
-  [ICML 2026][AI Safety][Decision-Pretrained Transformer] This paper is the first to formalize "test-time reward poisoning" as a new attack surface for In-Context Reinforcement Learning (ICRL). It proposes an adversarial training framework, AT-DPT, which employs a population of attackers to continuously poison rewards during training, enabling the Decision-Pretrained Transfor
+  [ICML2026][AI Safety][In-Context Reinforcement Learning (ICRL)] This paper is the first to formalize "test-time reward poisoning" as a new attack surface for In-Context Reinforcement Learning (ICRL). It proposes an adversarial training framework, AT-DPT, which employs a population of attackers to continuously poison rewards during training, enabling the Decision-Pretrained Transformer (DPT) to learn an "in-context learning algorithm" that is inherently robust to contaminated…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Decision-Pretrained Transformer
+  - "ICML2026"
+  - "AI Safety"
+  - "In-Context Reinforcement Learning (ICRL)"
+  - "Reward Poisoning"
+  - "Adversarial Training"
+  - "Decision-Pretrained Transformer (DPT)"
+  - "Meta-RL"
 date: 2026-05-08
-content_hash: f0230b7ff139f3ec
+content_hash: 681f951f186129bd
 ---
+
 # Robust In-Context Reinforcement Learning Under Reward Poisoning Attacks
 
 **Conference**: ICML2026  
@@ -128,10 +133,10 @@ Comparison under adaptive vs. non-adaptive attackers ($\varepsilon=0.4$, $B=3$, 
 ## Related Papers
 
 - [\[ICLR 2026\] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](../../ICLR2026/ai_safety/beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea.md)
+- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
 - [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](../../CVPR2026/ai_safety/tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
-- [\[ICML 2026\] Rapid Poison: Practical Poisoning Attacks Against the Rapid Response Framework](rapid_poison_practical_poisoning_attacks_against_the_rapid_response_framework.md)
-- [\[ICML 2026\] FoeGlass: Simple In-Context Learning Is Enough for Red Teaming Audio Deepfake Detectors](foeglass_simple_in-context_learning_is_enough_for_red_teaming_audio_deepfake_det.md)
-- [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](../../ICLR2026/ai_safety/sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
+- [\[ICLR 2026\] Robust Optimization for Mitigating Reward Hacking with Correlated Proxies](../../ICLR2026/ai_safety/robust_optimization_for_mitigating_reward_hacking_with_correlated_proxies.md)
+- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](../../ICLR2026/ai_safety/retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
 
 </div>
 

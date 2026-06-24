@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning
 description: >-
-  [CVPR 2026][Model Compression][LoRA] Free Sinewich proposes a parameter-efficient multi-task learning framework based on frequency switching. By applying sine transformations $M_t = \sin(\omega_t \cdot M_{AWB})$ with different task-specific frequencies to a shared low-rank base matrix, it achieves true parameter reuse and task specialization at near-zero
+  [CVPR 2026][Model Compression][Parameter-Efficient Fine-Tuning] Free Sinewich proposes a parameter-efficient multi-task learning framework based on frequency switching. By applying sine transformations $M_t = \sin(\omega_t \cdot M_{AWB})$ with different task-specific frequencies to a shared low-rank base matrix, it achieves true parameter reuse and task specialization at near-zero cost, reaching SOTA on dense prediction benchmarks with minimal trainable parameters.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - LoRA
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Multi-Task Learning"
+  - "Frequency Switching"
+  - "Sine Transformation"
+  - "LoRA"
 date: 2026-05-08
-content_hash: fd7dcc212e4dba1b
+content_hash: 1694360baa4b7c84
 ---
+
 # Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ Training utilizes the standard multi-task weighted objective $\mathcal{L}_{MTL} 
 
 ## Related Papers
 
+- [\[CVPR 2026\] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)
 - [\[CVPR 2025\] TADFormer: Task-Adaptive Dynamic Transformer for Efficient Multi-Task Learning](../../CVPR2025/model_compression/tadformer_task-adaptive_dynamic_transformer_for_efficient_multi-task_learning.md)
 - [\[ACL 2025\] MoRE: A Mixture of Low-Rank Experts for Adaptive Multi-Task Learning](../../ACL2025/model_compression/more_a_mixture_of_low-rank_experts_for_adaptive_multi-task_learning.md)
 - [\[CVPR 2026\] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)
 - [\[CVPR 2026\] Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression](parallax_to_align_them_all_an_omniparallax_attention_mechanism_for_distributed_m.md)
-- [\[CVPR 2026\] Decompose, Mix, Adapt: A Unified Framework for Parameter-Efficient Neural Network Recombination and Compression](decompose_mix_adapt_a_unified_framework_for_parameter-efficient_neural_network_r.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] This paper systematically investigates hybrid multi-agent systems consisting of a cloud-based GPT-4o supervisor and on-device Qwen3 executors. It finds that PEVR and EVA have respective advantages in UI assistance and deep search. More cloud intervention is not necessarily better, while context resetting and summarizat
+  [ICML2026][Multi-Agent][Hybrid Multi-Agent Systems] This paper systematically investigates hybrid multi-agent systems consisting of a cloud-based GPT-4o supervisor and on-device Qwen3 executors. It finds that PEVR and EVA have respective advantages in UI assistance and deep search. More cloud intervention is not necessarily better, while context resetting and summarization significantly improve costs and KV-cache pressure for long-duration on-device tasks.
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML2026"
+  - "Multi-Agent"
+  - "Hybrid Multi-Agent Systems"
+  - "Cloud Models"
+  - "On-device Models"
+  - "Agent Evaluation"
+  - "Context Efficiency"
 date: 2026-05-08
-content_hash: e3a7c778b92947b1
+content_hash: e0cd654ccac911ef
 ---
+
 # When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems
 
 **Conference**: ICML2026  
@@ -147,16 +153,16 @@ The paper analyzes verifier misjudgment, role reversal, and context efficiency.
 - Value: ⭐⭐⭐⭐⭐ Extremely practical for deploying on-device agents with cloud assistance, especially the design principle of "limited cloud supervision + context management."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems](../../ICLR2026/multi_agent/when_agents_misremember_collectively_exploring_the_mandela_effect_in_llm-based_m.md)
 - [\[AAAI 2026\] EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation](../../AAAI2026/multi_agent/ecoagent_an_efficient_device-cloud_collaborative_multi-agent.md)
-- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](../../AAAI2026/multi_agent/scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
-- [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](../../ICLR2026/multi_agent/multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
-- [\[ICML 2026\] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions](engiagent_fully_connected_coordination_of_llm_agents_for_solving_open-ended_engi.md)
+- [\[ICML 2026\] Does Persona Make LLMs K-pop Fans? A Pilot Study of LLM-Based Online Concert Audience Agents](does_persona_make_llms_k-pop_fans_a_pilot_study_of_llm-based_online_concert_audi.md)
+- [\[ICLR 2026\] Aligned Agents, Biased Swarm: Measuring Bias Amplification in Multi-Agent Systems](../../ICLR2026/multi_agent/aligned_agents_biased_swarm_measuring_bias_amplification_in_multi-agent_systems.md)
+- [\[ICML 2026\] More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration](more_capable_less_cooperative_when_llms_fail_at_zero-cost_collaboration.md)
 
 </div>
 

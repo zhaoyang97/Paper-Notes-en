@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective
 description: >-
-  [NeurIPS 2025][Segmentation][Pseudo-label learning] This paper proposes ECOCSeg, which replaces one-hot encoding with Error-Correcting Output Codes (ECOC) to represent semantic categories. It decomposes an N-class classi…
+  [NeurIPS 2025][Segmentation][Pseudo-label learning] This paper proposes ECOCSeg, which replaces one-hot encoding with Error-Correcting Output Codes (ECOC) to represent semantic categories. It decomposes an N-class classification problem into K binary sub-tasks, and couples bit-level pseudo-label denoising with customized optimization losses to substantially improve the robustness of pseudo-label learning in UDA and SSL semantic segmentation.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "unsupervised domain adaptation"
   - "semi-supervised learning"
 date: 2026-05-08
-content_hash: 7f27f9c42075ee36
+content_hash: 8573243427d00d89
 ---
 
 # Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective
@@ -135,11 +135,11 @@ The total loss is $\mathcal{L}_{total} = \mathcal{L}_{bce} + \lambda_1 \mathcal{
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] OmniSegmentor: A Flexible Multi-Modal Learning Framework for Semantic Segmentation](omnisegmentor_a_flexible_multi-modal_learning_framework_for_semantic_segmentatio.md)
+- [\[ECCV 2024\] Learning Camouflaged Object Detection from Noisy Pseudo Label](../../ECCV2024/segmentation/learning_camouflaged_object_detection_from_noisy_pseudo_label.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
+- [\[NeurIPS 2025\] OmniSegmentor: A Flexible Multi-Modal Learning Framework for Semantic Segmentation](omnisegmentor_a_flexible_multi-modal_learning_framework_for_semantic_segmentatio.md)
 - [\[NeurIPS 2025\] Diffusion-Driven Two-Stage Active Learning for Low-Budget Semantic Segmentation](diffusion-driven_two-stage_active_learning_for_low-budget_semantic_segmentation.md)
-- [\[CVPR 2026\] EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection](../../CVPR2026/segmentation/erecu_pseudolabel_evolution_unsupervised_camouflage.md)
-- [\[NeurIPS 2025\] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention](robust_egocentric_referring_video_object_segmentation_via_dual-modal_causal_inte.md)
+- [\[NeurIPS 2025\] GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset](gtpbd_a_fine-grained_global_terraced_parcel_and_boundary_dataset.md)
 
 </div>
 

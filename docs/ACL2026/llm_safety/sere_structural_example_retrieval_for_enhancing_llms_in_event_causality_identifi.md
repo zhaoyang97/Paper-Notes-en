@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification
 description: >-
-  [ACL 2026][LLM Safety][ConceptNet] SERE posits that example selection in Event Causality Identification (ECI) should not rely solely on semantic similarity. Instead, it should retrieve examples with similar structural properties—including concept paths, syntax trees, and causal patterns—to reduce causal hallucinations (over-prediction) during few-shot i
+  [ACL2026 Findings][LLM Safety][Event Causality Identification (ECI)] SERE posits that example selection in Event Causality Identification (ECI) should not rely solely on semantic similarity. Instead, it should retrieve examples with similar structural properties—including concept paths, syntax trees, and causal patterns—to reduce causal hallucinations (over-prediction) during few-shot inference with LLMs.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - ConceptNet
+  - "ACL2026 Findings"
+  - "LLM Safety"
+  - "Event Causality Identification (ECI)"
+  - "Structural Retrieval"
+  - "In-Context Learning"
+  - "Causal Hallucination"
+  - "ConceptNet"
 date: 2026-05-08
-content_hash: 66dd18a8740b60be
+content_hash: 95232a12346b9be6
 ---
+
 # SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification
 
 **Conference**: ACL2026 Findings  
@@ -128,12 +133,20 @@ Experiments were conducted on ESC, CTB, and MAVEN-ERE datasets. The following ta
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Dr.ECI: Decomposing and Reasoning for Event Causality Identification (ACL 2023)
-- Deep Structural Causal Models for Tractable Counterfactual Inference (NeurIPS 2020)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICCV 2025\] Asynchronous Event Error-Minimizing Noise for Safeguarding Event Dataset](../../ICCV2025/llm_safety/asynchronous_event_error-minimizing_noise_for_safeguarding_event_dataset.md)
+- [\[ACL 2026\] ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs](astra_an_automated_framework_for_strategy_discovery_retrieval_and_evolution_for_.md)
+- [\[ACL 2026\] Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding](context-fidelity_boosting_enhancing_faithful_generation_through_watermark-inspir.md)
+- [\[ICLR 2026\] Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval](../../ICLR2026/llm_safety/pisces_cryptography-based_private_retrieval-augmented_generation_with_dual-path_.md)
+- [\[CVPR 2025\] Towards All-in-One Medical Image Re-Identification](../../CVPR2025/llm_safety/towards_all-in-one_medical_image_re-identification.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs](astra_an_automated_framework_for_strategy_discovery_retrieval_and_evolution_for_.md)

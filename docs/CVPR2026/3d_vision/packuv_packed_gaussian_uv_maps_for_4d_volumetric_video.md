@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PackUV: Packed Gaussian UV Maps for 4D Volumetric Video
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PackUV "packs" all attributes of 4D Gaussians (3DGS sequences) into a structured multi-scale 2D UV atlas. Combined with PackUV-GS—a method that performs fitting directly in the UV domain using optical flow keyframes and motion-static separation—it enables volumetric video to be stored and streamed losslessly using stan
+  [CVPR 2026][3D Vision][Volumetric Video] PackUV "packs" all attributes of 4D Gaussians (3DGS sequences) into a structured multi-scale 2D UV atlas. Combined with PackUV-GS—a method that performs fitting directly in the UV domain using optical flow keyframes and motion-static separation—it enables volumetric video to be stored and streamed losslessly using standard video codecs like HEVC or FFV1 for the first time. It outperforms all existing baselines in rendering quality for…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Volumetric Video"
+  - "3D Gaussians"
+  - "UV Atlas"
+  - "Video Coding"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: fb06e4855cfb36fa
+content_hash: 7fde5996296e6057
 ---
+
 # PackUV: Packed Gaussian UV Maps for 4D Volumetric Video
 
 **Conference**: CVPR 2026  
@@ -136,13 +142,20 @@ Ablation on PackUV-2B:
 - Value: ⭐⭐⭐⭐⭐ Directly applicable to AR/VR and volumetric content delivery.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **UVGS**: "UV Volumes for Real-Time Rendering of Dynamic Scenes," 2024.
-- **3DGStream**: "On-the-Fly Training for 3D Gaussian Splatting," 2024.
-- **GIFStream**: "Gaussian Interactive Fitting and Streaming," 2025.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Volumetric Functional Maps](volumetric_functional_maps.md)
+- [\[CVPR 2026\] V-DPM: 4D Video Reconstruction with Dynamic Point Maps](v-dpm_4d_video_reconstruction_with_dynamic_point_maps.md)
+- [\[CVPR 2026\] MV2UV: Generating High-quality UV Texture Maps with Multiview Prompts](mv2uv_generating_high-quality_uv_texture_maps_with_multiview_prompts.md)
+- [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
+- [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Volumetric Functional Maps](volumetric_functional_maps.md)

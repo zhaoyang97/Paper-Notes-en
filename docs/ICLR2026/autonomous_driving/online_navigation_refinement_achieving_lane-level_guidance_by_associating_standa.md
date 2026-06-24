@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Online Navigation Refinement: Achieving Lane-Level Guidance by Associating Standard-Definition and Online Perception Maps
 description: >-
-  [ICLR 2026][Autonomous Driving][Transformer] This paper proposes "Online Navigation Refinement" (ONR), a new task to refine road-level routes from SD maps into lane-level guidance. A lightweight Map Association Transformer (MAT) with path-aware and spatial attention is designed to perform "map-to-map" association between heterogeneous SD maps and on-vehicle onlin
+  [ICLR 2026][Autonomous Driving][Lane-level Navigation] This paper proposes "Online Navigation Refinement" (ONR), a new task to refine road-level routes from SD maps into lane-level guidance. A lightweight Map Association Transformer (MAT) with path-aware and spatial attention is designed to perform "map-to-map" association between heterogeneous SD maps and on-vehicle online perception maps. MAT outperforms all map-matching baselines on the self-built OMA dataset with a latenc…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Transformer
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Lane-level Navigation"
+  - "SD Map"
+  - "Online Perception Map"
+  - "Map Association"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 159fb2b2f2465ad7
+content_hash: f314956349c74748
 ---
+
 # Online Navigation Refinement: Achieving Lane-Level Guidance by Associating Standard-Definition and Online Perception Maps
 
 **Conference**: ICLR 2026  
@@ -145,14 +150,17 @@ MAT outperforms three categories of methods: map matching (HMM/DeepMM/MTrajRec/G
 
 <div class="related-papers" markdown="1">
 
-1. **MapTRv2**: An End-to-End Framework for Online Vectorized HD Map Construction.
-2. **TopoSD**: Leveraging SD Maps for Online HD Map Construction.
-3. **EAM3**: Enhanced Attribute Map Matching for Complex Urban Environments.
+## Related Papers
+
+- [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](../../NeurIPS2025/autonomous_driving/sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
+- [\[ICLR 2026\] Stability under Scrutiny: Benchmarking Representation Paradigms for Online HD Map Construction](stability_under_scrutiny_benchmarking_representation_paradigms_for_online_hd_map.md)
+- [\[CVPR 2026\] DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance](../../CVPR2026/autonomous_driving/drivergaze360_omnidirectional_driver_attention_with_object-level_guidance.md)
+- [\[CVPR 2025\] Online Video Understanding: OVBench and VideoChat-Online](../../CVPR2025/autonomous_driving/online_video_understanding_ovbench_and_videochat-online.md)
+- [\[AAAI 2026\] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors](../../AAAI2026/autonomous_driving/priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](../../NeurIPS2025/autonomous_driving/sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)

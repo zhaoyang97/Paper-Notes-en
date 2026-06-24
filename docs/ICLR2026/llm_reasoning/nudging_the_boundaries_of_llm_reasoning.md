@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Nudging the Boundaries of LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper identifies a fundamental limitation where GRPO fails to learn from hard problems that the model cannot solve at all (pass rate = 0%). It proposes NuRL, which injects self-generated abstract hints (without leaking answers) into hard problems during training to make them learnable, consistently outperforming G
+  [ICLR 2026][Reasoning][RL Reasoning] This paper identifies a fundamental limitation where GRPO fails to learn from hard problems that the model cannot solve at all (pass rate = 0%). It proposes NuRL, which injects self-generated abstract hints (without leaking answers) into hard problems during training to make them learnable, consistently outperforming GRPO across three models and six benchmarks and effectively raising the $pass@k$ capability ceiling.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RL Reasoning"
+  - "GRPO improvement"
+  - "Self-generated hint"
+  - "Breaking capability upper bounds"
+  - "Zone of Proximal Development"
 date: 2026-05-08
-content_hash: ea97f085ad9cf212
+content_hash: 8bf738a05d670bb4
 ---
+
 # Nudging the Boundaries of LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -120,11 +126,11 @@ The strategy follows a two-stage pipeline: Stage 1 runs standard GRPO until the 
 
 ## Related Papers
 
-- [\[ICLR 2026\] TRAPO：用半监督强化学习增强 LLM 推理](trapo_a_semi-supervised_reinforcement_learning_framework_for_boosting_llm_reason.md)
 - [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
 - [\[ICLR 2026\] FlowRL: Matching Reward Distributions for LLM Reasoning](flowrl_matching_reward_distributions_for_llm_reasoning.md)
 - [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Model](predicting_llm_reasoning_performance_with_small_proxy_model.md)
 - [\[ICLR 2026\] Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning](quantile_advantage_estimation_stabilizing_rlvr_for_llm_reasoning.md)
+- [\[ICLR 2026\] Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations](rethinking_llm_reasoning_from_explicit_trajectories_to_latent_representations.md)
 
 </div>
 

@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Virtual Full-stack Scanning of Brain MRI via Imputing Any Quantised Code
+  [Paper Note] Virtual Full-stack Scanning of Brain MRI via Imputing Any Quantized Code
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This paper proposes CodeBrain, which reformulates the any-to-any brain MRI modality completion problem as a region-level full-stack quantized code prediction task. Through a two-stage pipeline (scalar quantization reconstruction + grading loss code prediction), it achieves unified synthesis of missing modalities, surpa
+  [CVPR 2026][Medical Imaging][MRI modality completion] This paper proposes CodeBrain, which reformulates the any-to-any brain MRI modality completion problem as a region-level full-stack quantized code prediction task. Through a two-stage pipeline (scalar quantization reconstruction + grading loss code prediction), it achieves unified synthesis of missing modalities, surpassing five SOTA methods.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "MRI modality completion"
+  - "Finite Scalar Quantization"
+  - "Brain MRI"
+  - "Cross-modality synthesis"
+  - "Any-to-any"
 date: 2026-05-08
-content_hash: 92647c1a4831e6fc
+content_hash: 8031cee5c683cb3e
 ---
+
 # Virtual Full-stack Scanning of Brain MRI via Imputing Any Quantized Code
 
 **Conference**: CVPR 2026  

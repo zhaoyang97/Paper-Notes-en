@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multi-objective reinforcement learning] This work reformulates entropy-regularized max-min multi-objective reinforcement learning as a two-player zero-sum regularized game…
+  [NeurIPS 2025][Reinforcement Learning][Multi-objective reinforcement learning] This work reformulates entropy-regularized max-min multi-objective reinforcement learning as a two-player zero-sum regularized game, proposes the ERAM/ARAM algorithms with closed-form weight updates via mirror descent, and establishes global last-iterate convergence, substantially outperforming baselines across multiple MORL benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "mirror descent"
   - "last-iterate convergence"
 date: 2026-05-08
-content_hash: 0d12fb0e1f50f43a
+content_hash: dc6aaa2c44f26af1
 ---
 
 # Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach
@@ -139,8 +139,8 @@ The objective $\max_\pi \min_k V_{k,\tau}^\pi$ is reformulated as a two-player z
 
 - [\[NeurIPS 2025\] TRiCo: Triadic Game-Theoretic Co-Training for Robust Semi-Supervised Learning](trico_triadic_game-theoretic_co-training_for_robust_semi-supervised_learning.md)
 - [\[NeurIPS 2025\] Solving Neural Min-Max Games: The Role of Architecture, Initialization & Dynamics](solving_neural_min-max_games_the_role_of_architecture_initialization_dynamics.md)
-- [\[NeurIPS 2025\] A Differential and Pointwise Control Approach to Reinforcement Learning](a_differential_and_pointwise_control_approach_to_reinforceme.md)
 - [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
+- [\[NeurIPS 2025\] A Differential and Pointwise Control Approach to Reinforcement Learning](a_differential_and_pointwise_control_approach_to_reinforceme.md)
 - [\[NeurIPS 2025\] Confounding Robust Deep Reinforcement Learning: A Causal Approach](confounding_robust_deep_reinforcement_learning_a_causal_approach.md)
 
 </div>

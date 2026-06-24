@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reliable Clustering Number Estimation for Contrastive Multi-View Clustering
 description: >-
-  [CVPR 2026][Others][Reinforcement Learning] RCNMC utilizes a semantic-aware contrastive module with JSD adaptive weighting to mitigate representation degeneration—where low-quality views degrade high-quality ones. By modeling the "estimation of cluster number $K$" as a Markov Decision Process (MDP) and using Reinforcement Learning (RL) to automatically infer $K$
+  [CVPR 2026][Multimodal VLM][Contrastive Multi-view Clustering] RCNMC utilizes a semantic-aware contrastive module with JSD adaptive weighting to mitigate representation degeneration—where low-quality views degrade high-quality ones. By modeling the "estimation of cluster number $K$" as a Markov Decision Process (MDP) and using Reinforcement Learning (RL) to automatically infer $K$ within a single training session, the method achieves or exceeds the performance of contrastive…
 tags:
-  - CVPR 2026
-  - Others
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Contrastive Multi-view Clustering"
+  - "Clustering Number Estimation"
+  - "Reinforcement Learning"
+  - "Representation Degeneration"
+  - "JSD View Weighting"
 date: 2026-05-08
-content_hash: 394bfe245e3b2377
+content_hash: fb3f27f2e4e77b28
 ---
+
 # Reliable Clustering Number Estimation for Contrastive Multi-View Clustering
 
 **Conference**: CVPR 2026  
@@ -149,7 +154,7 @@ Ablation was performed on MNIST-USPS, BDGP, Prokaryotic, and Synthetic3d (the RL
 - [\[CVPR 2026\] Anti-Degradation Lifelong Multi-View Clustering](anti-degradation_lifelong_multi-view_clustering.md)
 - [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](cluster-aware_anchor_learning_for_multi-view_clustering.md)
 - [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
-- [\[CVPR 2026\] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance](scalable_multi-view_subspace_clustering_with_tensorized_anchor_guidance.md)
+- [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
 
 </div>
 

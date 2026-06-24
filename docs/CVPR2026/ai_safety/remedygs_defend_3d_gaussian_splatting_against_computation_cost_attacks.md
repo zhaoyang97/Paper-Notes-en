@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RemedyGS: Defend 3D Gaussian Splatting Against Computation Cost Attacks
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] RemedyGS proposes the first black-box defense framework against "computation cost attacks" on 3DGS (such as Poison-splat, which triggers Gaussian explosion by poisoning input images to exhaust GPU resources and cause Denial-of-Service). Utilizing a two-stage "detector + purifier + adversarial training" pipeline, it pur
+  [CVPR 2026][AI Safety][3D Gaussian Splatting] RemedyGS proposes the first black-box defense framework against "computation cost attacks" on 3DGS (such as Poison-splat, which triggers Gaussian explosion by poisoning input images to exhaust GPU resources and cause Denial-of-Service). Utilizing a two-stage "detector + purifier + adversarial training" pipeline, it purifies only images identified as poisoned, restoring computation costs to normal levels while maintaining reconstru…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "3D Gaussian Splatting"
+  - "Computation Cost Attacks"
+  - "DoS Defense"
+  - "Image Purification"
+  - "Adversarial Training"
 date: 2026-05-08
-content_hash: 746224a7a6a9a410
+content_hash: 8e22d392acc5c825
 ---
+
 # RemedyGS: Defend 3D Gaussian Splatting Against Computation Cost Attacks
 
 **Conference**: CVPR 2026  
@@ -132,11 +138,11 @@ The detector evaluated independently (Table 3) shows high accuracy: 0.9737 on NS
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
 - [\[CVPR 2026\] Good Can Sometimes be Bad: A Unified Attack against 3D Point Cloud Classifier by a Flexible Isotropic Resampling](good_can_sometimes_be_bad_a_unified_attack_against_3d_point_cloud_classifier_by_.md)
-- [\[CVPR 2026\] AntiStyler: Defending Object Detection Models Against Adversarial Patch Attacks Using Style Removal](antistyler_defending_object_detection_models_against_adversarial_patch_attacks_u.md)
-- [\[CVPR 2026\] Computation and Communication Efficient Federated Unlearning via On-server Gradient Conflict Mitigation and Expression](computation_and_communication_efficient_federated_unlearning_via_on-server_gradi.md)
-- [\[CVPR 2026\] PoInit-of-View: Poisoning Initialization of Views Transfers Across Multiple 3D Reconstruction Systems](poinit-of-view_poisoning_initialization_of_views_transfers_across_multiple_3d_re.md)
-- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
+- [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](../../ICML2026/ai_safety/byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
+- [\[ICLR 2026\] Fine-Grained Iterative Adversarial Attacks with Limited Computation Budget](../../ICLR2026/ai_safety/fine-grained_iterative_adversarial_attacks_with_limited_computation_budget.md)
+- [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](../../ICLR2026/ai_safety/a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)
 
 </div>
 

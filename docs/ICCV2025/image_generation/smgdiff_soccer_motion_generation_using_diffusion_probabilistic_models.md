@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SMGDiff: Soccer Motion Generation using Diffusion Probabilistic Models
 description: >-
-  [ICCV 2025][Image Generation][motion generation] This paper proposes SMGDiff, a two-stage diffusion model framework that generates high-quality, diverse soccer motion animations in real time from user control signals…
+  [ICCV 2025][Image Generation][motion generation] This paper proposes SMGDiff, a two-stage diffusion model framework that generates high-quality, diverse soccer motion animations in real time from user control signals, while refining ball-foot interaction details via a contact guidance module.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "human-object interaction"
   - "character control"
 date: 2026-05-08
-content_hash: 563f0d7d3ba3b73c
+content_hash: 97a247862360b5d2
 ---
 
 # SMGDiff: Soccer Motion Generation using Diffusion Probabilistic Models
@@ -210,7 +210,7 @@ Eight denoising steps achieve the best trade-off between inference speed and gen
 - [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
 - [\[ICCV 2025\] Less is More: Improving Motion Diffusion Models with Sparse Keyframes](less_is_more_improving_motion_diffusion_models_with_sparse_keyframes.md)
 - [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
-- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](../../CVPR2026/image_generation/causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
+- [\[CVPR 2025\] SyncSDE: A Probabilistic Framework for Diffusion Synchronization](../../CVPR2025/image_generation/syncsde_a_probabilistic_framework_for_diffusion_synchronization.md)
 - [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
 
 </div>

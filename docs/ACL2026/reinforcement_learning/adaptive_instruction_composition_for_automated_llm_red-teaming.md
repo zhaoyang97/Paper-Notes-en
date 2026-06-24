@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Instruction Composition for Automated LLM Red-Teaming
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] The Adaptive Instruction Composition (AIC) framework is proposed, utilizing Neural Thompson Sampling to adaptively select attack instructions within a combinatorial space of crowdsourced harmful queries and jailbreak tactics. By simultaneously optimizing attack success rate and diversity, it significantly outperforms e
+  [ACL 2026][Reinforcement Learning][LLM Red-teaming] The Adaptive Instruction Composition (AIC) framework is proposed, utilizing Neural Thompson Sampling to adaptively select attack instructions within a combinatorial space of crowdsourced harmful queries and jailbreak tactics. By simultaneously optimizing attack success rate and diversity, it significantly outperforms existing methods on Harmbench.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "LLM Red-teaming"
+  - "Adaptive Instruction Composition"
+  - "Contextual Bandits"
+  - "Jailbreak Attacks"
+  - "Diversity-Effectiveness Trade-off"
 date: 2026-05-08
-content_hash: 3085c0884e27f827
+content_hash: e390d5282501f020
 ---
+
 # Adaptive Instruction Composition for Automated LLM Red-Teaming
 
 **Conference**: ACL 2026  
@@ -127,11 +133,11 @@ The bandit network is trained online using squared loss with $\ell_2$ regulariza
 
 ## Related Papers
 
+- [\[ICLR 2026\] APC-RL: Exceeding Data-Driven Behavior Priors with Adaptive Policy Composition](../../ICLR2026/reinforcement_learning/apc-rl_exceeding_data-driven_behavior_priors_with_adaptive_policy_composition.md)
 - [\[AAAI 2026\] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization](../../AAAI2026/reinforcement_learning/mars_multi-agent_adaptive_reasoning_with_socratic_guidance_f.md)
 - [\[ACL 2026\] ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following](imprif_stronger_implicit_reasoning_leads_to_better_complex_instruction_following.md)
 - [\[ACL 2026\] LENS: Less Noise, More Voice — Reinforcement Learning for Reasoning via Instruction Purification](less_noise_more_voice_reinforcement_learning_for_reasoning_via_instruction_purif.md)
-- [\[ACL 2026\] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints](deliberative_searcher_improving_llm_reliability_via_reinforcement_learning_with_.md)
-- [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
+- [\[ICLR 2026\] Composition of Memory Experts for Diffusion World Models](../../ICLR2026/reinforcement_learning/composition_of_memory_experts_for_diffusion_world_models.md)
 
 </div>
 

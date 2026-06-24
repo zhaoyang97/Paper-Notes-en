@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] A Comprehensive Information-Decomposition Analysis of Large Vision-Language Models
 description: >-
-  [ICLR 2026][Interpretability][logit lens] This work pioneeringly uses Partial Information Decomposition (PID) to decompose the "decision-relevant information" of LVLMs into four non-negative atoms: redundant, unique visual, unique language, and synergistic. It constructs a model-agnostic estimation pipeline to quantitatively characterize whether LVLMs rely on
+  [ICLR 2026][Interpretability][Partial Information Decomposition (PID)] This work pioneeringly uses Partial Information Decomposition (PID) to decompose the "decision-relevant information" of LVLMs into four non-negative atoms: redundant, unique visual, unique language, and synergistic. It constructs a model-agnostic estimation pipeline to quantitatively characterize whether LVLMs rely on genuine cross-modal fusion or language priors across 26 models and 4 datasets from three…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - logit lens
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Partial Information Decomposition (PID)"
+  - "Large Vision-Language Models (LVLM)"
+  - "Synergy"
+  - "Multimodal Fusion"
+  - "Information Theory"
+  - "logit lens"
 date: 2026-05-08
-content_hash: 4d62a4e54e8d2381
+content_hash: 657aedac739a88b6
 ---
+
 # A Comprehensive Information-Decomposition Analysis of Large Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -126,11 +132,11 @@ The proportion of unique language $U_2$ does not systematically increase with sc
 
 ## Related Papers
 
+- [\[ICLR 2026\] To Sink or Not to Sink: Visual Information Pathways in Large Vision-Language Models](to_sink_or_not_to_sink_visual_information_pathways_in_large_vision-language_mode.md)
 - [\[ICLR 2026\] Neuron-Level Analysis of Cultural Understanding in Large Language Models](neuron-level_analysis_of_cultural_understanding_in_large_language_models.md)
 - [\[ICLR 2026\] Inducing Dyslexia in Vision Language Models](inducing_dyslexia_in_vision_language_models.md)
 - [\[ACL 2025\] Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models](../../ACL2025/interpretability/degenerate_knowledge_neurons.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
-- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
 
 </div>
 

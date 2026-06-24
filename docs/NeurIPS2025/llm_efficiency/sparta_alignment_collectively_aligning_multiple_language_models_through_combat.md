@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SPARTA Alignment: Collectively Aligning Multiple Language Models through Combat
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Collective Alignment] Multiple LLMs form a "Spartan tribe" to engage in mutual competition and peer evaluation. Preference pairs are generated via reputation-weighted judgment aggregation…
+  [NeurIPS 2025][LLM Efficiency][Collective Alignment] Multiple LLMs form a "Spartan tribe" to engage in mutual competition and peer evaluation. Preference pairs are generated via reputation-weighted judgment aggregation, and all models are iteratively trained with DPO. The approach surpasses self-alignment baselines such as Self-Rewarding on 10 out of 12 tasks, with an average improvement of 7%.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "Self-Alignment"
 date: 2026-05-08
-content_hash: 8eef255732268c31
+content_hash: 55c44c9c6508d3f9
 ---
 
 # SPARTA Alignment: Collectively Aligning Multiple Language Models through Combat
@@ -120,11 +120,11 @@ Ten Qwen2.5-7B-Instruct models are independently fine-tuned via SFT on different
 
 ## Related Papers
 
+- [\[ACL 2025\] GigaChat Family: Efficient Russian Language Modeling Through Mixture of Experts Architecture](../../ACL2025/llm_efficiency/gigachat_family_efficient_russian_language_modeling_through_mixture_of_experts_a.md)
 - [\[NeurIPS 2025\] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models](l-mtp_leap_multi-token_prediction_beyond_adjacent_context_for_large_language_mod.md)
-- [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](../../ICLR2026/llm_efficiency/expert_divergence_learning_for_moe-based_language_models.md)
-- [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](../../ACL2026/llm_efficiency/lizard_an_efficient_linearization_framework_for_large_language_models.md)
-- [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](../../ACL2026/llm_efficiency/are_large_language_models_economically_viable_for_industry_deployment.md)
-- [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)
+- [\[ACL 2025\] LongReward: Improving Long-context Large Language Models with AI Feedback](../../ACL2025/llm_efficiency/longreward_improving_long-context_large_language_models_with_ai_feedback.md)
+- [\[ICLR 2026\] Equilibrium Language Models](../../ICLR2026/llm_efficiency/equilibrium_language_models.md)
+- [\[ICML 2025\] Long-Short Alignment for Effective Long-Context Modeling in LLMs](../../ICML2025/llm_efficiency/long-short_alignment_for_effective_long-context_modeling_in_llms.md)
 
 </div>
 

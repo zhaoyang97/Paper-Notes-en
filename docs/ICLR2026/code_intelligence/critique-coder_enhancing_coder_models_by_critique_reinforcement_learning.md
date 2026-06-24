@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning
 description: >-
-  [ICLR 2026][Code Intelligence][GRPO] This paper proposes "Critique Reinforcement Learning" (CRL), which requires the model to make True/False judgments on "question-solution" pairs. The accuracy of these judgments serves as a verifiable reward. By mixing this with standard code RL at a 20%:80% ratio, the resulting Critique-Coder consistently outperforms p
+  [ICLR2026][Code Intelligence][Critique Reinforcement Learning] This paper proposes "Critique Reinforcement Learning" (CRL), which requires the model to make True/False judgments on "question-solution" pairs. The accuracy of these judgments serves as a verifiable reward. By mixing this with standard code RL at a 20%:80% ratio, the resulting Critique-Coder consistently outperforms pure RL models across multiple code benchmarks. The 8B model exceeds 60 on LiveCodeBench(v5) and t…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - GRPO
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Critique Reinforcement Learning"
+  - "Code Generation"
+  - "GRPO"
+  - "Verifiable Reward"
+  - "Reflection Ability"
 date: 2026-05-08
-content_hash: 15fcccf4ac6d471c
+content_hash: bae0011443f6159a
 ---
+
 # Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning
 
 **Conference**: ICLR2026  
@@ -143,8 +148,8 @@ Critique-Coder-4B improves LiveCodeBench by +4.8 over the baseline, even outperf
 - [\[NeurIPS 2025\] Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](../../NeurIPS2025/code_intelligence/co-evolving_llm_coder_and_unit_tester_via_reinforcement_learning.md)
 - [\[ICLR 2026\] ATGen: Adversarial Reinforcement Learning for Test Case Generation](atgen_adversarial_reinforcement_learning_for_test_case_generation.md)
 - [\[ICLR 2026\] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment](agnostics_learning_to_synthesize_code_in_any_programming_language_with_a_univers.md)
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 - [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](../../AAAI2026/code_intelligence/recode_updating_code_api_knowledge_with_reinforcement_learning.md)
-- [\[ICLR 2026\] WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning](webgen-agent_enhancing_interactive_website_generation_with_multi-level_feedback_.md)
 
 </div>
 

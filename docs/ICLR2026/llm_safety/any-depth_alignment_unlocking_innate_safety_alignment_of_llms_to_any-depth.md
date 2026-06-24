@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Any-Depth Alignment: Unlocking Innate Safety Alignment of LLMs to Any-Depth
 description: >-
-  [ICLR 2026][LLM Safety][Safety Token] Addressing the pain point where LLMs fail to maintain "shallow alignment" once harmful continuation begins, this paper discovers that safety signals are firmly anchored in "safety tokens" such as the assistant header and can be reactivated at any generation depth. The authors propose Any-Depth Alignment (ADA)—either re
+  [ICLR2026][LLM Safety][Shallow alignment] Addressing the pain point where LLMs fail to maintain "shallow alignment" once harmful continuation begins, this paper discovers that safety signals are firmly anchored in "safety tokens" such as the assistant header and can be reactivated at any generation depth. The authors propose Any-Depth Alignment (ADA)—either re-injecting the header into the generation stream to re-evoke the model's innate refusal (ADA-RK) or directly applying…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Safety Token
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Shallow alignment"
+  - "prefill attack"
+  - "Safety Token"
+  - "linear probe"
+  - "inference-time defense"
 date: 2026-05-08
-content_hash: 5603267573d56bf3
+content_hash: 2038468891864be3
 ---
+
 # Any-Depth Alignment: Unlocking Innate Safety Alignment of LLMs to Any-Depth
 
 **Conference**: ICLR2026  

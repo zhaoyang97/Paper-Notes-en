@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] JailbreakLoRA: Your Downloaded LoRA from Sharing Platforms might be Unsafe
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper identifies a poisoned supply chain risk in LoRA sharing platforms: attackers can train a malicious LoRA that is **both proficient in downstream tasks and capable of jailbreaking under specific trigger words**. By employing uncertainty weighting and gradient conflict mitigation for multi-objective optimizatio
+  [ICLR 2026][LLM Safety][LoRA Backdoor] This paper identifies a poisoned supply chain risk in LoRA sharing platforms: attackers can train a malicious LoRA that is **both proficient in downstream tasks and capable of jailbreaking under specific trigger words**. By employing uncertainty weighting and gradient conflict mitigation for multi-objective optimization, and leveraging trigger-affirmative prefix injection to exploit test-time hallucinations…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LoRA Backdoor"
+  - "Jailbreak Attack"
+  - "Multi-task Optimization"
+  - "Gradient Conflict"
+  - "Test-time Hallucination"
 date: 2026-05-08
-content_hash: b3fd9ccdac3853cd
+content_hash: e394fd75d0b318ee
 ---
+
 # JailbreakLoRA: Your Downloaded LoRA from Sharing Platforms might be Unsafe
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Do Different Prompting Methods Yield a Common Task Representation?
 description: >-
-  [NeurIPS 2025][Interpretability][Task representation] By generalizing the Function Vectors (FV) framework from few-shot demonstrations to text instructions…
+  [NeurIPS 2025][Interpretability][Task representation] By generalizing the Function Vectors (FV) framework from few-shot demonstrations to text instructions, this paper finds that different prompting methods do not induce a unified task representation within LLMs; instead, they activate partially overlapping but largely distinct attention head mechanisms.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "prompting methods"
   - "attention heads"
 date: 2026-05-08
-content_hash: a3e7981652e468fd
+content_hash: ae9e63804b8d1986
 ---
 
 # Do Different Prompting Methods Yield a Common Task Representation?
@@ -162,7 +162,7 @@ This paper generalizes the FV extraction pipeline of Todd et al. (2024) from few
 - [\[NeurIPS 2025\] SHAP Values via Sparse Fourier Representation](shap_values_via_sparse_fourier_representation.md)
 - [\[NeurIPS 2025\] Representation Consistency for Accurate and Coherent LLM Answer Aggregation](representation_consistency_for_accurate_and_coherent_llm_answer_aggregation.md)
 - [\[NeurIPS 2025\] Are Greedy Task Orderings Better Than Random in Continual Linear Regression?](are_greedy_task_orderings_better_than_random_in_continual_linear_regression.md)
-- [\[NeurIPS 2025\] The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?](the_non-linear_representation_dilemma_is_causal_abstraction_enough_for_mechanist.md)
+- [\[NeurIPS 2025\] How Do Transformers Learn Implicit Reasoning?](how_do_transformers_learn_implicit_reasoning.md)
 
 </div>
 

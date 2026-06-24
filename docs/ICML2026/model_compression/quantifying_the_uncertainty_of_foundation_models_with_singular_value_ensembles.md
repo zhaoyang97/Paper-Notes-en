@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles
 description: >-
-  [ICML 2026][Model Compression][Paper Note] Singular Value Ensemble (SVE) expresses "ensemble diversity" purely through the distinct re-weighting of SVD singular values—freezing the left and right singular vectors (shared "knowledge basis") of pre-trained weights while training an independent set of singular values for each ensemble member. With a parameter over
+  [ICML 2026][Model Compression][Uncertainty Quantification] Singular Value Ensemble (SVE) expresses "ensemble diversity" purely through the distinct re-weighting of SVD singular values—freezing the left and right singular vectors (shared "knowledge basis") of pre-trained weights while training an independent set of singular values for each ensemble member. With a parameter overhead of $\lesssim 1\%$, its calibration quality approaches that of a true Deep Ensemble…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Uncertainty Quantification"
+  - "Implicit Ensemble"
+  - "Singular Value Fine-tuning"
+  - "Parameter-efficient"
+  - "Calibration"
 date: 2026-05-08
-content_hash: 5a993632322d8475
+content_hash: 036d743552ac2062
 ---
+
 # Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles
 
 **Conference**: ICML 2026  

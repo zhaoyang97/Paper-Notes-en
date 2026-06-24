@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DevOps-Gym: Benchmarking AI Agents in Software DevOps Cycle
 description: >-
-  [ICLR 2026][Code Intelligence][DevOps] DevOps-Gym is the first end-to-end agent evaluation benchmark covering the full software DevOps lifecycle (build configuration, runtime monitoring, issue resolution, test generation). It semi-automatically collects 700+ tasks from 30+ real Java/Go projects and provides a dynamic execution environment with tool-calling
+  [ICLR 2026][Code Intelligence][DevOps] DevOps-Gym is the first end-to-end agent evaluation benchmark covering the full software DevOps lifecycle (build configuration, runtime monitoring, issue resolution, test generation). It semi-automatically collects 700+ tasks from 30+ real Java/Go projects and provides a dynamic execution environment with tool-calling interfaces. The evaluation reveals that even the strongest Claude Code + Claude-4-Sonnet only achieves 20%~50% success ra…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - DevOps
-  - AI Agent
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "DevOps"
+  - "AI Agent"
+  - "software engineering benchmark"
+  - "tool use"
+  - "long-horizon tasks"
 date: 2026-05-08
 content_hash: 302a153bf9f8a6a2
 ---
+
 # DevOps-Gym: Benchmarking AI Agents in Software DevOps Cycle
 
 **Conference**: ICLR 2026  
@@ -131,10 +135,10 @@ The strongest combination, Claude Code + Claude-4-Sonnet, only achieves 13.87%~5
 ## Related Papers
 
 - [\[ICLR 2026\] InnoGym: Benchmarking the Innovation Potential of AI Agents](innogym_benchmarking_the_innovation_potential_of_ai_agents.md)
+- [\[ICML 2025\] Training Software Engineering Agents and Verifiers with SWE-Gym](../../ICML2025/code_intelligence/training_software_engineering_agents_and_verifiers_with_swe-gym.md)
 - [\[ICLR 2026\] The Matthew Effect of AI Programming Assistants: A Hidden Bias in Software Evolution](the_matthew_effect_of_ai_programming_assistants_a_hidden_bias_in_software_evolut.md)
-- [\[ICLR 2026\] Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents](process-level_trajectory_evaluation_for_environment_configuration_in_software_en.md)
 - [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](swe-rm_execution-free_feedback_for_software_engineering_agents.md)
-- [\[ICLR 2026\] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization](boad_discovering_hierarchical_software_engineering_agents_via_bandit_optimizatio.md)
+- [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
 
 </div>
 

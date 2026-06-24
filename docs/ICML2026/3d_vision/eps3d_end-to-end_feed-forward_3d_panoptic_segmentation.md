@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EPS3D: End-to-End Feed-Forward 3D Panoptic Segmentation
 description: >-
-  [ICML 2026][3D Vision][Paper Note] EPS3D is the first end-to-end feed-forward open-vocabulary 3D panoptic segmentation framework. It directly predicts unified 3D panoptic Gaussians with semantic and instance attributes from unposed multi-view images in a single forward pass. By distilling 2D foundation models for supervision, it bypasses the need for 3D
+  [ICML2026][3D Vision][Open-vocabulary] EPS3D is the first end-to-end feed-forward open-vocabulary 3D panoptic segmentation framework. It directly predicts unified 3D panoptic Gaussians with semantic and instance attributes from unposed multi-view images in a single forward pass. By distilling 2D foundation models for supervision, it bypasses the need for 3D annotations. It introduces a semantic-instance mutual enhancement module for reciprocal calibration…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML2026"
+  - "3D Vision"
+  - "Open-vocabulary"
+  - "3D Panoptic Segmentation"
+  - "Feed-forward Reconstruction"
+  - "3D Gaussian"
+  - "Semantic-Instance Mutual Enhancement"
 date: 2026-05-08
-content_hash: ad96aa48a2190a69
+content_hash: 56e71e14f6029ce6
 ---
+
 # EPS3D: End-to-End Feed-Forward 3D Panoptic Segmentation
 
 **Conference**: ICML2026  
@@ -129,10 +135,10 @@ Evaluated on ScanNet and Replica for open-vocabulary semantic/instance segmentat
 ## Related Papers
 
 - [\[CVPR 2025\] Rethinking End-to-End 2D to 3D Scene Segmentation in Gaussian Splatting](../../CVPR2025/3d_vision/rethinking_end-to-end_2d_to_3d_scene_segmentation_in_gaussian_splatting.md)
+- [\[ICLR 2026\] Mesh Splatting for End-to-end Multiview Surface Reconstruction](../../ICLR2026/3d_vision/mesh_splatting_for_end-to-end_multiview_surface_reconstruction.md)
 - [\[CVPR 2025\] End-to-End Implicit Neural Representations for Classification](../../CVPR2025/3d_vision/end-to-end_implicit_neural_representations_for_classification.md)
 - [\[AAAI 2026\] FoundationSLAM: Unleashing the Power of Depth Foundation Models for End-to-End Dense Visual SLAM](../../AAAI2026/3d_vision/foundationslam_unleashing_the_power_of_depth_foundation_models_for.md)
 - [\[CVPR 2025\] End-to-End HOI Reconstruction Transformer with Graph-based Encoding](../../CVPR2025/3d_vision/end-to-end_hoi_reconstruction_transformer_with_graph-based_encoding.md)
-- [\[ICML 2026\] Trust3R: Evidential Uncertainty for Feed-Forward 3D Reconstruction](trust_it_or_not_evidential_uncertainty_for_feed-forward_3d_reconstruction_with_t.md)
 
 </div>
 

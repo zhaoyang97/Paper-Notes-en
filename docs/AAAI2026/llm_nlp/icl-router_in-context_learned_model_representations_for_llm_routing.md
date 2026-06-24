@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ICL-Router: In-Context Learned Model Representations for LLM Routing
 description: >-
-  [AAAI 2026][LLM/NLP][model routing] This paper proposes ICL-Router, a two-stage training framework (query reconstruction + ICL model routing) that encodes LLM capability profiles as in-context vectors…
+  [AAAI 2026][LLM (Other)][model routing] This paper proposes ICL-Router, a two-stage training framework (query reconstruction + ICL model routing) that encodes LLM capability profiles as in-context vectors, enabling scalable dynamic model routing. New models can be incorporated without retraining the router, achieving state-of-the-art performance on both in-distribution and out-of-distribution tasks.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "model routing"
   - "in-context vectors"
   - "capability profiling"
   - "scalability"
   - "LLM collaboration"
 date: 2026-05-08
-content_hash: 490e6b63dd58e4f6
+content_hash: d85fef4359d9668f
 ---
 
 # ICL-Router: In-Context Learned Model Representations for LLM Routing
@@ -159,7 +159,7 @@ ICL-Router achieves an average of 76.30, surpassing the best single model by 3.1
 
 ## Related Papers
 
-- [\[ICML 2026\] In-Context Routing (ICR): Train Once, Use Everywhere via Attention-Level Implicit ICL](../../ICML2026/llm_nlp/train_once_reuse_everywhere_generalizable_implicit_in-context_learning_by_routin.md)
+- [\[ICML 2026\] In-Context Routing (ICR): Train-Once, Use-Everywhere Attention-Level Implicit ICL](../../ICML2026/llm_nlp/train_once_reuse_everywhere_generalizable_implicit_in-context_learning_by_routin.md)
 - [\[AAAI 2026\] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization](irote_human-like_traits_elicitation_of_large_language_model_via_in-context_self-.md)
 - [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 - [\[AAAI 2026\] An Invariant Latent Space Perspective on Language Model Inversion](an_invariant_latent_space_perspective_on_language_model_inve.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SenseJudge: Human-Centric Preference-Driven Judgment Framework
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] This paper proposes SenseJudge, a customizable LLM judgment framework based on explicit human preferences, along with SenseBench, a real-world multi-turn conversation benchmark. In personalized judgment tasks, the framework achieves an average accuracy 16.08% higher than baselines, with model rankings consistent with r
+  [ACL 2026 Findings][Recommender Systems][LLM Evaluation] This paper proposes SenseJudge, a customizable LLM judgment framework based on explicit human preferences, along with SenseBench, a real-world multi-turn conversation benchmark. In personalized judgment tasks, the framework achieves an average accuracy 16.08% higher than baselines, with model rankings consistent with real human rankings.
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026 Findings"
+  - "Recommender Systems"
+  - "LLM Evaluation"
+  - "Personalized Judgment"
+  - "Preference-Driven"
+  - "Multi-turn Conversation"
+  - "Model Ranking"
 date: 2026-05-08
-content_hash: 1c9f0d9279065a24
+content_hash: fb9945555ef79329
 ---
+
 <!-- Generated automatically by src/gen_stubs.py -->
 # SenseJudge: Human-Centric Preference-Driven Judgment Framework
 
@@ -135,7 +141,7 @@ Judges often exhibit a tendency to favor the first or last response regardless o
 - [\[AAAI 2026\] Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback](../../AAAI2026/recommender/preference_is_more_than_comparisons_rethinking_dueling_bandits_with_augmented_hu.md)
 - [\[ACL 2026\] Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation](intent-driven_semantic_id_generation_for_grounded_conversational_news_recommenda.md)
 - [\[ACL 2026\] Quality Over Clicks: Intrinsic Quality-Driven Iterative RL for Cold-Start E-Commerce Query Suggestion](quality_over_clicks_intrinsic_quality-driven_iterative_reinforcement_learning_fo.md)
-- [\[ACL 2026\] Decisive: Guiding User Decisions with Optimal Preference Elicitation from Unstructured Documents](decisive_guiding_user_decisions_with_optimal_preference_elicitation_from_unstruc.md)
+- [\[AAAI 2026\] Evaluating LLMs for Police Decision-Making: A Framework Based on Police Action Scenarios](../../AAAI2026/recommender/evaluating_llms_for_police_decision-making_a_framework_based_on_police_action_sc.md)
 
 </div>
 

@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective
 description: >-
-  [ICML 2026][learning_theory][ϕ-mixing] This paper establishes the first theoretical framework for Test-Time Adaptation (TTA) learnability by introducing $(\epsilon, \delta)$-Recovery Complexity to measure the time required to reduce excess risk to $\epsilon$ after a distribution shift. By extending local recovery to non-stationary test streams via $(\epsilo
+  [ICML 2026][Learning Theory][TTA Learnability] This paper establishes the first theoretical framework for Test-Time Adaptation (TTA) learnability by introducing $(\epsilon, \delta)$-Recovery Complexity to measure the time required to reduce excess risk to $\epsilon$ after a distribution shift. By extending local recovery to non-stationary test streams via $(\epsilon, \rho)$-TTA Learnability and deriving matching minimax upper/lower bounds, the work reveals the intrinsic "adap…
 tags:
-  - ICML 2026
-  - learning_theory
-  - ϕ-mixing
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Test-Time Adaptation"
+  - "Non-stationary Online Learning"
+  - "TTA Learnability"
+  - "Recovery Complexity"
+  - "Wasserstein Quantization"
+  - "ϕ-mixing"
+  - "Minimax Lower Bounds"
 date: 2026-05-08
-content_hash: 590bfe18908acf91
+content_hash: 896df44e92074038
 ---
+
 # On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective
 
 **Conference**: ICML 2026  
@@ -125,10 +132,20 @@ The impact of shutting down various factors in the recovery complexity lower bou
 - Value: ⭐⭐⭐⭐ Provides a formal language and targets for future proxy loss and reset strategy designs.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](../../ICLR2026/learning_theory/sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
+- [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](../../ICLR2026/learning_theory/expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
+- [\[ICLR 2026\] Test-Time Verification via Optimal Transport: Coverage, ROC, & Sub-Optimality](../../ICLR2026/learning_theory/test-time_verification_via_optimal_transport_coverage_roc_sub-optimality.md)
+- [\[ICML 2026\] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation](catastrophic_forgetting_is_low-rank_a_function-space_theory_for_continual_adapta.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)

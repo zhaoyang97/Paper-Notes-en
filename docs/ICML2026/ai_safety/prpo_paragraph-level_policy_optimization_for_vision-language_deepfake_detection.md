@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection
 description: >-
-  [ICML 2026][AI Safety][deepfake detection] The authors utilize the DF-R5 dataset containing 115k reasoning-labeled samples and the DX-LLaVA architecture, which replaces CLIP ViT with ConvNeXT. They propose PRPO, a paragraph-level variant of GRPO, where each paragraph is rewarded based on CLIP Image-Text Similarity (Visual Consistency Reward, VCR) and Reasoning-
+  [ICML 2026][AI Safety][deepfake detection] The authors utilize the DF-R5 dataset containing 115k reasoning-labeled samples and the DX-LLaVA architecture, which replaces CLIP ViT with ConvNeXT. They propose PRPO, a paragraph-level variant of GRPO, where each paragraph is rewarded based on CLIP Image-Text Similarity (Visual Consistency Reward, VCR) and Reasoning-Conclusion Majority Vote Consistency (Prediction Consistency Reward, PCR). This approach improves cross-domain deepfa…
 tags:
-  - ICML 2026
-  - AI Safety
-  - deepfake detection
-  - GRPO
-  - paragraph-level reward
-  - visual grounding
-  - MLLM reasoning
+  - "ICML 2026"
+  - "AI Safety"
+  - "deepfake detection"
+  - "GRPO"
+  - "paragraph-level reward"
+  - "visual grounding"
+  - "MLLM reasoning"
 date: 2026-05-08
-content_hash: c27ed73b0dd211b9
+content_hash: 7f32ad7cd43fcdf5
 ---
+
 # PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection
 
 **Conference**: ICML 2026  
@@ -155,11 +156,11 @@ Average cross-domain F1 improved by 14.65 pp over SIDA, with a jump of 24.7 pp o
 
 ## Related Papers
 
-- [\[ICML 2026\] OmniVL-Guard: Towards Unified Vision-Language Forgery Detection and Grounding via Balanced RL](omnivl-guard_towards_unified_vision-language_forgery_detection_and_grounding_via.md)
-- [\[ICML 2026\] Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives](position_machine_learning_for_heart_transplant_allocation_policy_optimization_sh.md)
 - [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](../../CVPR2026/ai_safety/decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
+- [\[ICML 2026\] OmniVL-Guard: Towards Unified Vision-Language Forgery Detection and Grounding via Balanced RL](omnivl-guard_towards_unified_vision-language_forgery_detection_and_grounding_via.md)
 - [\[CVPR 2026\] Beyond \[CLS\] Token: Query-Driven Token-Level Forgery Purification for Generalizable Deepfake Detection](../../CVPR2026/ai_safety/beyond_cls_token_query-driven_token-level_forgery_purification_for_generalizable.md)
-- [\[ICML 2026\] The Unlearnability Phenomenon in RLVR for Language Models](the_unlearnability_phenomenon_in_rlvr_for_language_models.md)
+- [\[ICML 2026\] Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives](position_machine_learning_for_heart_transplant_allocation_policy_optimization_sh.md)
+- [\[ICML 2026\] Right Predictions, Misleading Explanations: On the Vulnerability of Vision-Language Model Explanations](right_predictions_misleading_explanations_on_the_vulnerability_of_vision-languag.md)
 
 </div>
 

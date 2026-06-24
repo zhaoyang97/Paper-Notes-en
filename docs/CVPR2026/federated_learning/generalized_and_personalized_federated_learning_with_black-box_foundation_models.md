@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] FEDOT treats frozen black-box foundation models (FM) as pure feature extractors. Each client stacks a **local orthogonal transformation** on the output embeddings for personalization, while all clients share and aggregate a **global classifier** for generalization. The authors prove that the orthogonal constraint (cond
+  [CVPR 2026][Federated Learning][Black-Box Foundation Models] FEDOT treats frozen black-box foundation models (FM) as pure feature extractors. Each client stacks a **local orthogonal transformation** on the output embeddings for personalization, while all clients share and aggregate a **global classifier** for generalization. The authors prove that the orthogonal constraint (condition number $\kappa=1$) minimizes the upper bound of cross-client gradient conflicts…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Black-Box Foundation Models"
+  - "Orthogonal Transformations"
+  - "Generalization and Personalization"
+  - "Dual Privacy"
 date: 2026-05-08
-content_hash: 046b0a66c7d16d15
+content_hash: 3ba8b598e0ca1977
 ---
+
 # Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ FEDOT with orthogonal constraints consistently maintained the highest and near-z
 
 ## Related Papers
 
-- [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](few-for-many_personalized_federated_learning.md)
-- [\[CVPR 2026\] SCOPE: Semantic Coreset with Orthogonal Projection Embeddings for Federated learning](scope_semantic_coreset_with_orthogonal_projection_embeddings_for_federated_learn.md)
-- [\[AAAI 2026\] Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering](../../AAAI2026/optimization/instance_generation_for_meta-black-box_optimization_through_latent_space_reverse.md)
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
-- [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](../../NeurIPS2025/optimization/personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
+- [\[CVPR 2026\] Fine-Tuning Impairs the Balancedness of Foundation Models in Long-tailed Personalized Federated Learning](fine-tuning_impairs_the_balancedness_of_foundation_models_in_long-tailed_persona.md)
+- [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
+- [\[CVPR 2026\] SubFLOT: Efficient Personalized Federated Learning via Optimal Transport-based Submodel Extraction](submodel_extraction_for_efficient_and_personalized_federated_learning_via_optima.md)
+- [\[CVPR 2026\] FedARA: Resource-adaptive Low-rank Personalized Federated Learning via Anchor-driven Representation Alignment on Heterogeneous Edge Devices](fedara_resource-adaptive_low-rank_personalized_federated_learning_via_anchor-dri.md)
 
 </div>
 

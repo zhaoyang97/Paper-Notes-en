@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Causal-Steer: Disentangled Continuous Style Control without Parallel Corpora
 description: >-
-  [ICLR 2026][Text Generation][activation steering] This paper proposes Causal-Steer: by treating LoRA as a "causal intervention," it computes the difference in activations with and without LoRA perturbations on the **same input**. This approach eliminates the need for parallel corpora and extracts a clean style vector. After PCA denoising and robust aggregation via geo
+  [ICLR 2026][Text Generation][activation steering] This paper proposes Causal-Steer: by treating LoRA as a "causal intervention," it computes the difference in activations with and without LoRA perturbations on the **same input**. This approach eliminates the need for parallel corpora and extracts a clean style vector. After PCA denoising and robust aggregation via geometric median, it achieves continuous, bidirectional, and linearly interpolatable style control for LLMs using…
 tags:
-  - ICLR 2026
-  - Text Generation
-  - activation steering
-  - style control
-  - LoRA
-  - causal intervention
-  - contrastive learning
-  - PCA denoising
+  - "ICLR 2026"
+  - "Text Generation"
+  - "activation steering"
+  - "style control"
+  - "LoRA"
+  - "causal intervention"
+  - "contrastive learning"
+  - "PCA denoising"
 date: 2026-05-08
-content_hash: 3dd02f1370f37f2f
+content_hash: 53a838bd8cc8bb4d
 ---
+
 # Causal-Steer: Disentangled Continuous Style Control without Parallel Corpora
 
 **Conference**: ICLR 2026  
@@ -122,15 +123,14 @@ Causal-Steer leads significantly in style differentiation (Diff./C-L) and achiev
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Can You Make It Sound Like You? Post-Editing LLM-Generated Text for Personal Style](../../ACL2026/nlp_generation/can_you_make_it_sound_like_you_post-editing_llm-generated_text_for_personal_styl.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
+- [\[ICLR 2026\] Diverse Text Decoding via Iterative Reweighting](diverse_text_decoding_via_iterative_reweighting.md)
 - [\[ICLR 2026\] Rethinking Uncertainty Estimation in LLMs: A Principled Single-Sequence Measure](rethinking_uncertainty_estimation_in_llms_a_principled_single-sequence_measure.md)
-- [\[ICLR 2026\] Rainbow Padding: Mitigating Early Termination in Instruction-Tuned Diffusion LLMs](rainbow_padding_mitigating_early_termination_in_instruction-tuned_diffusion_llms.md)
-- [\[ICLR 2026\] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation](unveiling_the_potential_of_diffusion_large_language_model_in_controllable_genera.md)
+- [\[ICLR 2026\] Improving Attributed Long-form Question Answering with Intent Awareness](improving_attributed_long-form_question_answering_with_intent_awareness.md)
 
 </div>
 

@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] TriC-Motion: 三域因果建模驱动的文本到动作生成
+  [Paper Note] TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation
 description: >-
-  [ICLR 2026][Human Understanding][Diffusion Model] TriC-Motion models human motion across **temporal, spatial, and frequency domains** in parallel within a diffusion denoising framework. It employs a score-guided gating mechanism for tri-domain fusion and introduces **causal counterfactual intervention** to strip away motion-irrelevant noise cues, achieving a new SOTA
+  [ICLR 2026][Human Understanding][Text-to-Motion] TriC-Motion models human motion across **temporal, spatial, and frequency domains** in parallel within a diffusion denoising framework. It employs a score-guided gating mechanism for tri-domain fusion and introduces **causal counterfactual intervention** to strip away motion-irrelevant noise cues, achieving a new SOTA R@1 of 0.612 on HumanML3D.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Text-to-Motion"
+  - "Diffusion Models"
+  - "Joint Spatio-Temporal-Frequency Modeling"
+  - "Causal Intervention"
+  - "Counterfactual Disentanglement"
 date: 2026-05-08
-content_hash: 7bb40fcc83e33944
+content_hash: f5f434605fa1c84b
 ---
+
 # TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation
 
 **Conference**: ICLR 2026  
@@ -131,11 +136,11 @@ On SnapMoGen (complex, long prompts), R@1 reaches 0.907, far exceeding MoMask++ 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](motion-aligned_word_embeddings_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] Open the Motion Door: Atomic Motion Decomposition and Recomposition for Open-Vocabulary Motion Generation](../../CVPR2026/human_understanding/open_the_motion_door_atomic_motion_decomposition_and_recomposition_for_open-voca.md)
-- [\[ICLR 2026\] Motion-R1: Enhancing Motion Generation with Decomposed Chain-of-Thought and RL Binding](motion-r1_enhancing_motion_generation_with_decomposed_chain-of-thought_and_rl_bi.md)
+- [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](../../CVPR2026/human_understanding/multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
 - [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](../../CVPR2026/human_understanding/causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
-- [\[ICLR 2026\] KinemaDiff: Towards Diffusion for Coherent and Physically Plausible Human Motion Prediction](kinemadiff_towards_diffusion_for_coherent_and_physically_plausible_human_motion_.md)
+- [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](motion-aligned_word_embeddings_for_text-to-motion_generation.md)
+- [\[ICLR 2026\] Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis](event-t2m_event-level_conditioning_for_complex_text-to-motion_synthesis.md)
+- [\[ICLR 2026\] UniHand: A Unified Model for Diverse Controlled 4D Hand Motion Modeling](unihand_a_unified_model_for_diverse_controlled_4d_hand_motion_modeling.md)
 
 </div>
 

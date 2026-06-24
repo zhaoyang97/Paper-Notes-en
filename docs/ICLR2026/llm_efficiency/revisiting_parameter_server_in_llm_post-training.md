@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting Parameter Server in LLM Post-Training
 description: >-
-  [ICLR 2026][LLM Efficiency][FSDP] Addressing the Extreme sequence length variance and severe device load imbalance in LLM post-training, this paper reintroduces the classic Parameter Server (PS) concept into modern sharded data parallelism. It proposes On-Demand Communication (ODC), replacing layer-wise all-gather/reduce-scatter in FSDP with point-to-p
+  [ICLR 2026][LLM Efficiency][Parameter Server] Addressing the Extreme sequence length variance and severe device load imbalance in LLM post-training, this paper reintroduces the classic Parameter Server (PS) concept into modern sharded data parallelism. It proposes On-Demand Communication (ODC), replacing layer-wise all-gather/reduce-scatter in FSDP with point-to-point gather/scatter-accumulate. By relaxing the synchronization granularity from "once per layer" to "once per min…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - FSDP
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Parameter Server"
+  - "FSDP"
+  - "P2P Communication"
+  - "Load Balancing"
+  - "Post-training"
 date: 2026-05-08
-content_hash: 7a95f2e5a0cc650d
+content_hash: f450f3afd0e336bb
 ---
+
 # Revisiting Parameter Server in LLM Post-Training
 
 **Conference**: ICLR 2026  
@@ -112,17 +117,13 @@ Experiments were conducted on DeepSeek-R1-Distill-Qwen series (1.5B–32B) using
 
 <div class="related-papers" markdown="1">
 
-... (Related papers would be listed here) ...
-
-</div>
-
 ## Related Papers
 
+- [\[ICLR 2026\] Revisiting Long-context Modeling from Context Denoising Perspective](revisiting_long-context_modeling_from_context_denoising_perspective.md)
 - [\[ICLR 2026\] CR-Net: Scaling Parameter-Efficient Training with Cross-Layer Low-Rank Structure](cr-net_scaling_parameter-efficient_training_with_cross-layer_low-rank_structure.md)
 - [\[ICLR 2026\] MiSS: Revisiting the Trade-off in LoRA with an Efficient Shard-Sharing Structure](miss_revisiting_the_trade-off_in_lora_with_an_efficient_shard-sharing_structure.md)
 - [\[ACL 2026\] Small Data, Big Noise: Adversarial Training for Robust Parameter-Efficient Fine-Tuning](../../ACL2026/llm_efficiency/small_data_big_noise_adversarial_training_for_robust_parameter-efficient_fine-tu.md)
 - [\[ICLR 2026\] AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism](autosp_unlocking_long-context_llm_training_via_compiler-based_sequence_paralleli.md)
-- [\[ICLR 2026\] SpareTrain: Fault-Tolerant LLM Training via Low-Cost Dual Modular Redundancy](sparetrain_fault-tolerant_llm_training_via_low-cost_dual_modular_redundancy.md)
 
 </div>
 

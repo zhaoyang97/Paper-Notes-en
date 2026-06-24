@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation
 description: >-
-  [ICLR 2026][Model Compression][LoRA] This work reveals that momentum EMA updates are equivalent to gradient descent for online linear regression. Based on this insight, the authors propose LoRA-Pre, which compresses optimizer momentum through low-rank decomposition to achieve memory-efficient LLM pre-training and fine-tuning, reaching optimal performance
+  [ICLR 2026 Oral][Model Compression][Low-rank Optimizer] This work reveals that momentum EMA updates are equivalent to gradient descent for online linear regression. Based on this insight, the authors propose LoRA-Pre, which compresses optimizer momentum through low-rank decomposition to achieve memory-efficient LLM pre-training and fine-tuning, reaching optimal performance across all model scales with only 1/8 the rank of baseline methods.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
-  - Adam
-  - Muon
+  - "ICLR 2026 Oral"
+  - "Model Compression"
+  - "Low-rank Optimizer"
+  - "Momentum Compression"
+  - "Pre-training Efficiency"
+  - "LoRA"
+  - "Adam"
+  - "Muon"
 date: 2026-05-08
-content_hash: 79abb341a79b16a4
+content_hash: 1eed273d13f1c25d
 ---
+
 # Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation
 
 **Conference**: ICLR 2026 Oral  
@@ -162,7 +166,7 @@ This compression relies only on the premise that the optimizer maintains momentu
 ## Related Papers
 
 - [\[ICLR 2026\] GlowQ: Group-Shared Low-Rank Approximation for Quantized LLMs](glowq_group-shared_low-rank_approximation_for_quantized_llms.md)
-- [\[ICLR 2026\] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Language Models](wsvd_weighted_low-rank_approximation_for_fast_and_efficient_execution_of_low-pre.md)
+- [\[ICLR 2026\] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Learning Models](wsvd_weighted_low-rank_approximation_for_fast_and_efficient_execution_of_low-pre.md)
 - [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](flexlora_entropy-guided_flexible_low-rank_adaptation.md)
 - [\[ICML 2026\] From Per-Image Low-Rank to Encoding Mismatch: Rethinking Feature Distillation in Vision Transformers](../../ICML2026/model_compression/from_per-image_low-rank_to_encoding_mismatch_rethinking_feature_distillation_in_.md)
 - [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)

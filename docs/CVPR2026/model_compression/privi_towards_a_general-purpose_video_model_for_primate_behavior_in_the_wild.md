@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PriVi: Towards a General-Purpose Video Model for Primate Behavior in the Wild
 description: >-
-  [CVPR 2026][Model Compression][V-JEPA] PriVi constructs a large-scale primate video pre-training dataset of 424 hours and performs **domain-level pre-training** (non-target dataset level) on V-JEPA. It demonstrates for the first time that domain-level pre-training for video models can generalize across datasets, outperforming specialized models with full fi
+  [CVPR 2026][Model Compression][Primate behavior recognition] PriVi constructs a large-scale primate video pre-training dataset of 424 hours and performs **domain-level pre-training** (non-target dataset level) on V-JEPA. It demonstrates for the first time that domain-level pre-training for video models can generalize across datasets, outperforming specialized models with full fine-tuning on four primate behavior recognition benchmarks using a frozen classifier with only 220K…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - V-JEPA
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Primate behavior recognition"
+  - "self-supervised pre-training"
+  - "V-JEPA"
+  - "domain-level pre-training"
+  - "data curation pipeline"
 date: 2026-05-08
-content_hash: 71d02b37fd0434f6
+content_hash: 74abdc45570d4e82
 ---
+
 # PriVi: Towards a General-Purpose Video Model for Primate Behavior in the Wild
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ Ours surpasses existing methods across all four datasets, including specialized 
 
 ## Related Papers
 
+- [\[CVPR 2026\] PyramidalWan: On Making Pretrained Video Model Pyramidal for Efficient Inference](pyramidalwan_on_making_pretrained_video_model_pyramidal_for_efficient_inference.md)
 - [\[ICML 2025\] LightGTS: A Lightweight General Time Series Forecasting Model](../../ICML2025/model_compression/lightgts_a_lightweight_general_time_series_forecasting_model.md)
 - [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
 - [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](generative_video_compression_with_one-dimensional_latent_representation.md)
 - [\[CVPR 2026\] UniComp: Rethinking Video Compression Through Informational Uniqueness](unicomp_rethinking_video_compression_through_informational_uniqueness.md)
-- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
 
 </div>
 

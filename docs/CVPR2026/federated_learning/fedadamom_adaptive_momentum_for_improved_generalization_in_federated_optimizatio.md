@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] This paper uses diffusion theory to explain the root cause of why "FedAdam converges fast but generalizes poorly"—the adaptive learning rate weakens the preference for flat minima. Based on this, FedAdamom is proposed: shifting the adaptive mechanism from the learning rate to the **momentum coefficient**. This preserve
+  [CVPR 2026][Federated Learning][Adaptive Optimization] This paper uses diffusion theory to explain the root cause of why "FedAdam converges fast but generalizes poorly"—the adaptive learning rate weakens the preference for flat minima. Based on this, FedAdamom is proposed: shifting the adaptive mechanism from the learning rate to the **momentum coefficient**. This preserves the ability to quickly escape saddle points while restoring the selection of flat minima…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Adaptive Optimization"
+  - "Adaptive Momentum"
+  - "Flat Minima"
+  - "Diffusion Theory"
 date: 2026-05-08
-content_hash: c50a45b5581f0fc0
+content_hash: 16a7f2ce47fc130b
 ---
+
 # FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization
 
 **Conference**: CVPR 2026  
@@ -161,11 +166,11 @@ Accuracy remains stable and high within the range of 0.01–0.3 for $\beta_2$, p
 
 ## Related Papers
 
-- [\[CVPR 2026\] Conditional Factuality Controlled LLMs with Generalization Certificates via Conformal Sampling](conditional_factuality_controlled_llms_with_generalization_certificates_via_conf.md)
-- [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
-- [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](few-for-many_personalized_federated_learning.md)
-- [\[CVPR 2026\] Single-Round Scalable Analytic Federated Learning](single-round_scalable_analytic_federated_learning.md)
+- [\[CVPR 2026\] FedARA: Resource-adaptive Low-rank Personalized Federated Learning via Anchor-driven Representation Alignment on Heterogeneous Edge Devices](fedara_resource-adaptive_low-rank_personalized_federated_learning_via_anchor-dri.md)
+- [\[CVPR 2026\] GDFA: Geometry-Driven Federated Unlearning with Directional Task Vector Alignment](gdfa_geometry-driven_federated_unlearning_with_directional_task_vector_alignment.md)
+- [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
 - [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
 
 </div>
 

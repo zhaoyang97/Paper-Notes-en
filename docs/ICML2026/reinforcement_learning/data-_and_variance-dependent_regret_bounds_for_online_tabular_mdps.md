@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Data- and Variance-dependent Regret Bounds for Online Tabular MDPs
 description: >-
-  [ICML 2026][Reinforcement Learning][best-of-both-worlds] For online episodic tabular MDPs with known transitions, this work designs a unified best-of-both-worlds algorithm based on optimistic follow-the-regularized-leader (OFTRL) with log-barrier. It provides first-order, second-order, and path-length data-dependent regret upper bounds in the adversarial regime, as well as v
+  [ICML 2026][Reinforcement Learning][Online MDP] For online episodic tabular MDPs with known transitions, this work designs a unified best-of-both-worlds algorithm based on optimistic follow-the-regularized-leader (OFTRL) with log-barrier. It provides first-order, second-order, and path-length data-dependent regret upper bounds in the adversarial regime, as well as variance-aware gap-independent and gap-dependent polylog bounds in the stochastic regime…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - best-of-both-worlds
-  - OFTRL
-  - log-barrier
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Online MDP"
+  - "best-of-both-worlds"
+  - "OFTRL"
+  - "log-barrier"
+  - "data-dependent regret"
+  - "variance-dependent regret"
 date: 2026-05-08
-content_hash: 4e46577ff4e5b9f2
+content_hash: 56a1b650c9afbb70
 ---
+
 # Data- and Variance-dependent Regret Bounds for Online Tabular MDPs
 
 **Conference**: ICML 2026  
@@ -111,15 +115,16 @@ This is a theoretical work without empirical data; results are presented as theo
 - **Insight**: Adapting bandit theory to MDPs requires redesigning estimators to align with MDP structures rather than just applying formulas. This methodology is valuable for future exploration of constrained or multi-agent MDPs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Online Prediction of Stochastic Sequences with High Probability Regret Bounds](../../ICLR2026/reinforcement_learning/online_prediction_of_stochastic_sequences_with_high_probability_regret_bounds.md)
+- [\[ICLR 2026\] Q-Learning with Fine-Grained Gap-Dependent Regret](../../ICLR2026/reinforcement_learning/q-learning_with_fine-grained_gap-dependent_regret.md)
 - [\[NeurIPS 2025\] Improved Regret Bounds for GP-UCB in Bayesian Optimization](../../NeurIPS2025/reinforcement_learning/improved_regret_bounds_for_gaussian_process_upper_confidence_bound_in_bayesian_o.md)
-- [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
 - [\[ICML 2026\] ALSO: Adversarial Online Strategy Optimization for Social Agents](also_adversarial_online_strategy_optimization_for_social_agents.md)
-- [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
+- [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
 
 </div>
 

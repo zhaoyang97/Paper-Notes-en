@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Online Prediction of Stochastic Sequences with High Probability Regret Bounds
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This work revisits the classic problem of universal prediction for stochastic sequences under a finite time horizon $T$. It provides the first vanishing regret bound that holds with high probability (in the form of $O(T^{-1/2}\delta^{-1/2})$), which is highly consistent with existing expected regret bounds of $O(T^{-1/
+  [ICLR 2026][Reinforcement Learning][Online prediction] This work revisits the classic problem of universal prediction for stochastic sequences under a finite time horizon $T$. It provides the first vanishing regret bound that holds with high probability (in the form of $O(T^{-1/2}\delta^{-1/2})$), which is highly consistent with existing expected regret bounds of $O(T^{-1/2})$. Furthermore, it proves that the exponent of $\delta$ cannot be improved without additional assumpti…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Online prediction"
+  - "stochastic sequences"
+  - "high-probability regret bounds"
+  - "universal prediction"
+  - "countable alphabets"
 date: 2026-05-08
-content_hash: d35b4fc5f876cb44
+content_hash: 72c35ca8819d7872
 ---
+
 # Online Prediction of Stochastic Sequences with High Probability Regret Bounds
 
 **Conference**: ICLR 2026  
@@ -124,10 +130,10 @@ As this is a pure theory contribution, the primary results are in the form of th
 ## Related Papers
 
 - [\[ICML 2026\] Data- and Variance-dependent Regret Bounds for Online Tabular MDPs](../../ICML2026/reinforcement_learning/data-_and_variance-dependent_regret_bounds_for_online_tabular_mdps.md)
+- [\[ICLR 2026\] Do Not Let Low-Probability Tokens Over-Dominate in RL for LLMs](do_not_let_low-probability_tokens_over-dominate_in_rl_for_llms.md)
 - [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
-- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
-- [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](../../NeurIPS2025/reinforcement_learning/bandit_and_delayed_feedback_in_online_structured_prediction.md)
+- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
 
 </div>
 

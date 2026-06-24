@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vid2World: Crafting Video Diffusion Models to Interactive World Models
 description: >-
-  [ICLR 2026][Video Generation][World Models] This paper proposes Vid2World, which systematically transforms a full-sequence, non-causal video diffusion model pre-trained on internet-scale videos into an interactive world model capable of autoregressive rollout and frame-by-frame action control through "causalization modification + causal action guidance." It outp
+  [ICLR 2026][Video Generation][World Models] This paper proposes Vid2World, which systematically transforms a full-sequence, non-causal video diffusion model pre-trained on internet-scale videos into an interactive world model capable of autoregressive rollout and frame-by-frame action control through "causalization modification + causal action guidance." It outperforms existing transfer methods and specialized world models in robot manipulation, 3D game simulation…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - World Models
+  - "ICLR 2026"
+  - "Video Generation"
+  - "World Models"
+  - "Video Diffusion"
+  - "Causalization"
+  - "Autoregressive Generation"
+  - "Action-Conditioning"
 date: 2026-05-08
-content_hash: 73137d20f8e8595e
+content_hash: 443dc7c7dabc7a11
 ---
+
 # Vid2World: Crafting Video Diffusion Models to Interactive World Models
 
 **Conference**: ICLR 2026  
@@ -135,11 +140,11 @@ Table 2 (uniform 30k step training due to compute limits) validates Weight Trans
 
 ## Related Papers
 
-- [\[ICLR 2026\] Target-Aware Video Diffusion Models](target-aware_video_diffusion_models.md)
+- [\[ICLR 2026\] Animating the Uncaptured: Humanoid Mesh Animation with Video Diffusion Models](animating_the_uncaptured_humanoid_mesh_animation_with_video_diffusion_models.md)
 - [\[ICLR 2026\] Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling](geometry_forcing_marrying_video_diffusion_and_3d_representation_for_consistent_w.md)
+- [\[ICLR 2026\] Target-Aware Video Diffusion Models](target-aware_video_diffusion_models.md)
 - [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
 - [\[ICLR 2026\] LikePhys: Evaluating Intuitive Physics Understanding in Video Diffusion Models via Likelihood Preference](likephys_evaluating_intuitive_physics_understanding_in_video_diffusion_models_vi.md)
-- [\[CVPR 2025\] Navigation World Models](../../CVPR2025/video_generation/navigation_world_models.md)
 
 </div>
 

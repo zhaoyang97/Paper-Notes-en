@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper introduces a new task, PP-VI-ReID (Privacy-Preserving Visible-Infrared Person Re-Identification), and proposes a PPA framework to address two major challenges: "anonymization destroying identity information" and "inconsistent anonymization distortion across modalities." The KPR module utilizes human pose pri
+  [CVPR 2026][Human Understanding][Privacy-preserving ReID] This paper introduces a new task, PP-VI-ReID (Privacy-Preserving Visible-Infrared Person Re-Identification), and proposes a PPA framework to address two major challenges: "anonymization destroying identity information" and "inconsistent anonymization distortion across modalities." The KPR module utilizes human pose priors for structure-aware precise anonymization, while the DCMA module treats anonymization perturbation…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Privacy-preserving ReID"
+  - "Visible-Infrared"
+  - "Cross-modal Alignment"
+  - "Keypoint Regularization"
+  - "Anonymization Offset"
 date: 2026-05-08
-content_hash: 7df4b2976132bcac
+content_hash: 9f60700494812602
 ---
+
 # Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification
 
 **Conference**: CVPR 2026  

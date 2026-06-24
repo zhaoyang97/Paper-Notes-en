@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] XTrack: Multimodal Training Boosts RGB-X Video Object Trackers
 description: >-
-  [ICCV 2025][Video Understanding][Multimodal Tracking] This paper proposes XTrack, which employs a Mixture of Modal Experts (MeME) framework and a soft-routing classifier to enable cross-modal knowledge sharing across RGB…
+  [ICCV 2025][Video Understanding][Multimodal Tracking] This paper proposes XTrack, which employs a Mixture of Modal Experts (MeME) framework and a soft-routing classifier to enable cross-modal knowledge sharing across RGB-D/T/E modalities, allowing inference with a single modality to benefit from multimodal training knowledge, achieving an average precision gain of 3%.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Video Object Tracking"
   - "RGB-X"
 date: 2026-05-08
-content_hash: cfddb8064c82aa34
+content_hash: 91210f68c2415f43
 ---
 
 # XTrack: Multimodal Training Boosts RGB-X Video Object Trackers
@@ -162,11 +162,11 @@ Gains from Multimodal Joint Training:
 
 ## Related Papers
 
-- [\[ICCV 2025\] An Empirical Study of Autoregressive Pre-training from Videos](an_empirical_study_of_autoregressive_pre-training_from_videos.md)
 - [\[ICCV 2025\] What You Have is What You Track: Adaptive and Robust Multimodal Tracking](what_you_have_is_what_you_track_adaptive_and_robust_multimodal_tracking.md)
-- [\[CVPR 2026\] Out of Sight, Out of Track: Adversarial Attacks on Propagation-based Multi-Object Trackers via Query State Manipulation](../../CVPR2026/video_understanding/out_of_sight_out_of_track_adversarial_attacks_on_propagation-based_multi-object_.md)
+- [\[CVPR 2026\] DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition](../../CVPR2026/video_understanding/darkact_a_rgb-thermal_dataset_and_fusion_framework_for_multimodal_low-light_acti.md)
+- [\[ICCV 2025\] An Empirical Study of Autoregressive Pre-training from Videos](an_empirical_study_of_autoregressive_pre-training_from_videos.md)
+- [\[CVPR 2026\] M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](../../CVPR2026/video_understanding/m4-sam_multi-modal_mixture-of-experts_with_memory-augmented_sam_for_rgb-d_video_.md)
 - [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
-- [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](../../NeurIPS2025/video_understanding/unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
 
 </div>
 

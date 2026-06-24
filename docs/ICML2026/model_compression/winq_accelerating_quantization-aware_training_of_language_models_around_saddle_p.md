@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points
 description: >-
-  [ICML 2026][Model Compression][Paper Note] WinQ attributes the slow convergence of low-bit language model QAT to weights being trapped near low-curvature saddle points. By utilizing periodic weight-quantization interpolation for re-initialization and noise perturbation for gradients, it accelerates 1-2 bit QAT by 1.5-4x with almost no additional training overhe
+  [ICML2026][Model Compression][Quantization-Aware Training] WinQ attributes the slow convergence of low-bit language model QAT to weights being trapped near low-curvature saddle points. By utilizing periodic weight-quantization interpolation for re-initialization and noise perturbation for gradients, it accelerates 1-2 bit QAT by 1.5-4x with almost no additional training overhead, improving perplexity and zero-shot accuracy across various LLaMA/Qwen quantization configurations…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML2026"
+  - "Model Compression"
+  - "Quantization-Aware Training"
+  - "Low-bit LLM"
+  - "Hessian Spectrum"
+  - "Saddle Point Optimization"
+  - "Noise Injection"
 date: 2026-05-08
-content_hash: 5195ed78a2cd8050
+content_hash: ec28666a62ed4851
 ---
+
 # WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points
 
 **Conference**: ICML2026  
@@ -130,15 +136,17 @@ Compared to PTQ methods, RTN/GPTQ/AWQ/SpinQuant often exhibit extreme PPL at 1-2
 
 <div class="related-papers" markdown="1">
 
-- **ParetoQ**: Stretching the limits of low-bit quantization, 2024
-- **QuEST**: Quantization-aware LLM training with rotations, 2025
-- **Jin et al.**: How to Escape Saddle Points Efficiently, 2017
-- **Gholami et al.**: Hessian-based analysis of large-scale models, 2019
+## Related Papers
+
+- [\[ICML 2026\] FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models](fair-calib_frontier-aware_instability-reweighted_calibration_for_post-training_q.md)
+- [\[ACL 2025\] EfficientQAT: Efficient Quantization-Aware Training for Large Language Models](../../ACL2025/model_compression/efficientqat.md)
+- [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](../../ICLR2026/model_compression/compute-optimal_quantization-aware_training.md)
+- [\[ICML 2026\] ReQAT: Achieving Full-Precision Reasoning Accuracy with 4-bit Floating-Point Quantization-Aware Training](reqat_achieving_full-precision_reasoning_accuracy_with_4-bit_floating-point_quan.md)
+- [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](entropy-aware_on-policy_distillation_of_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](../../ICLR2026/model_compression/compute-optimal_quantization-aware_training.md)

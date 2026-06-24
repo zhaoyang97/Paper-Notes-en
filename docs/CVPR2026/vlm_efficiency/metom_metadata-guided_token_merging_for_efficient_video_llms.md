@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs
 description: >-
-  [CVPR 2026][Model Compression][Inference Acceleration] MeToM utilizes "free" bitstream metadata from video codecs (residual energy, GoP packet size) as zero-cost proxies for spatio-temporal information density. It employs three modules—RPM, BTM, and MATM—to hierarchically merge visual tokens at "tokenization, pre-LLM, and intra-LLM" stages based on content complexity. With
+  [CVPR 2026][Multimodal Efficiency][Video Large Language Models] MeToM utilizes "free" bitstream metadata from video codecs (residual energy, GoP packet size) as zero-cost proxies for spatio-temporal information density. It employs three modules—RPM, BTM, and MATM—to hierarchically merge visual tokens at "tokenization, pre-LLM, and intra-LLM" stages based on content complexity. Without any training, it achieves 2.65× end-to-end inference acceleration across multiple Video LLMs…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Video Large Language Models"
+  - "Visual Token Compression"
+  - "Codec Metadata"
+  - "Training-free"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: be52f4bb79e158ed
+content_hash: 36683ca3c7881997
 ---
+
 # MeToM: Metadata-Guided Token Merging for Efficient Video LLMs
 
 **Conference**: CVPR 2026  
@@ -124,9 +129,9 @@ Efficiency Breakdown (Fig. 3, TTFT divided into Vision Tower / LLM Backbone / Ot
 
 - [\[CVPR 2026\] Merge3D: Efficient 3D Multimodal LLMs via Joint 2D-3D Token Merging](merge3d_efficient_3d_multimodal_llms_via_joint_2d-3d_token_merging.md)
 - [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
-- [\[CVPR 2026\] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)
-- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
-- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
+- [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](../../ICLR2026/vlm_efficiency/surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
+- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
+- [\[CVPR 2026\] CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs](core_compact_object-centric_representations_as_a_new_paradigm_for_token_merging_.md)
 
 </div>
 

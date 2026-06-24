@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] State-Covering Trajectory Stitching for Diffusion Planners
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion planner] This paper proposes SCoTS (State-Covering Trajectory Stitching), a reward-free trajectory augmentation framework that iteratively stitches short trajectory segments in…
+  [NeurIPS 2025][Image Generation][Diffusion planner] This paper proposes SCoTS (State-Covering Trajectory Stitching), a reward-free trajectory augmentation framework that iteratively stitches short trajectory segments in a temporal distance-preserving latent space to systematically expand state-space coverage, significantly improving the generalization of diffusion planners on long-horizon and out-of-distribution tasks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "offline reinforcement learning"
   - "data augmentation"
 date: 2026-05-08
-content_hash: 95855bcb5568d585
+content_hash: a8873c35066da525
 ---
 
 # State-Covering Trajectory Stitching for Diffusion Planners
@@ -151,10 +151,10 @@ Evaluated on the OGBench benchmark, covering Stitch and Explore datasets in Poin
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hierarchical Koopman Diffusion: Fast Generation with Interpretable Diffusion Trajectory](hierarchical_koopman_diffusion_fast_generation_with_interpretable_diffusion_traj.md)
+- [\[ICML 2025\] Multidimensional Adaptive Coefficient for Inference Trajectory Optimization in Flow and Diffusion](../../ICML2025/image_generation/multidimensional_adaptive_coefficient_for_inference_trajectory_optimization_in_f.md)
 - [\[ICCV 2025\] Learning Few-Step Diffusion Models by Trajectory Distribution Matching](../../ICCV2025/image_generation/learning_few-step_diffusion_models_by_trajectory_distribution_matching.md)
+- [\[CVPR 2025\] Unified Uncertainty-Aware Diffusion for Multi-Agent Trajectory Modeling](../../CVPR2025/image_generation/unified_uncertainty-aware_diffusion_for_multi-agent_trajectory_modeling.md)
 - [\[ICCV 2025\] AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction](../../ICCV2025/image_generation/animegamer_infinite_anime_life_simulation_with_next_game_state_prediction.md)
-- [\[ICML 2026\] Efficient Learning of Deep State Space Models via Importance Smoothing](../../ICML2026/image_generation/efficient_learning_of_deep_state_space_models_via_importance_smoothing.md)
-- [\[AAAI 2026\] Targeted Data Protection for Diffusion Model by Matching Training Trajectory](../../AAAI2026/image_generation/targeted_data_protection_for_diffusion_model_by_matching_training_trajectory.md)
 
 </div>
 

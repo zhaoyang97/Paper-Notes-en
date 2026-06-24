@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Lighthouse of Language: Enhancing LLM Agents via Critique-Guided Improvement
 description: >-
-  [NeurIPS 2025][LLM Agent][Natural language feedback] This paper proposes CGI (Critique-Guided Improvement), a dual-role framework that trains a dedicated Critic model to provide structured natural language feedback (disc…
+  [NeurIPS 2025][LLM Agent][Natural language feedback] This paper proposes CGI (Critique-Guided Improvement), a dual-role framework that trains a dedicated Critic model to provide structured natural language feedback (discrimination + correction suggestions) to an Actor Agent, and enables the Actor to learn to leverage such feedback through iterative action refinement. CGI achieves an average score of 74.20% across WebShop, ScienceWorld, and TextCraft…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Interactive environments"
   - "Agent training"
 date: 2026-05-08
-content_hash: cffa833673e33d7c
+content_hash: 4570682a24eb8395
 ---
 
 # The Lighthouse of Language: Enhancing LLM Agents via Critique-Guided Improvement
@@ -132,11 +132,11 @@ CGI outperforms Iterative SFT by +15.99% and GPT-4o by +28.74%.
 
 ## Related Papers
 
+- [\[ACL 2025\] LocAgent: Graph-Guided LLM Agents for Code Localization](../../ACL2025/llm_agent/locagent_graph-guided_llm_agents_for_code_localization.md)
+- [\[ACL 2025\] Enhancing LLM Agent Safety via Causal Influence Prompting](../../ACL2025/llm_agent/enhancing_llm_agent_safety_via_causal_influence_prompting.md)
+- [\[ACL 2025\] Enhancing Interpretable Image Classification Through LLM Agents and Conditional Concept Bottleneck Models](../../ACL2025/llm_agent/llm_agent_image_classification.md)
+- [\[ICLR 2026\] DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents](../../ICLR2026/llm_agent/dreamphase_offline_imagination_and_uncertainty-guided_planning_for_large-languag.md)
 - [\[NeurIPS 2025\] DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments](defenderbench_a_toolkit_for_evaluating_language_agents_in_cybersecurity_environm.md)
-- [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](../../ACL2026/llm_agent/higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
-- [\[NeurIPS 2025\] Enhancing Demand-Oriented Regionalization with Agentic AI and Local Heterogeneous Data for Adaptation Planning](enhancing_demand-oriented_regionalization_with_agentic_ai_and_local_heterogeneou.md)
-- [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
-- [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
 
 </div>
 

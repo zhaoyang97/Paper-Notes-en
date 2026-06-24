@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning
 description: >-
-  [ICLR 2026][Video Generation][Video Editing] This paper reinterprets the space-time mask in pre-trained Image-to-Video (I2V) models—originally used only for "preserving the first frame and generating subsequent frames"—as a spatially-varying "keep/regenerate" instruction. By combining this with LoRA fine-tuning on a single input video, the model learns the motion
+  [ICLR2026][Video Generation][Video Editing] This paper reinterprets the space-time mask in pre-trained Image-to-Video (I2V) models—originally used only for "preserving the first frame and generating subsequent frames"—as a spatially-varying "keep/regenerate" instruction. By combining this with LoRA fine-tuning on a single input video, the model learns the motion of the source video while capturing the target appearance from reference frames. This enables controllable propagat…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video Editing
+  - "ICLR2026"
+  - "Video Generation"
+  - "Video Editing"
+  - "First-Frame Guidance"
+  - "Space-Time Mask"
+  - "LoRA Fine-Tuning"
+  - "I2V Diffusion Models"
 date: 2026-05-08
-content_hash: ee71b8a97bd10b06
+content_hash: c7e196aed44f6b33
 ---
+
 # Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning
 
 **Conference**: ICLR2026  
@@ -153,11 +158,11 @@ In reference-guided editing, a user study with 35 participants ranked methods on
 
 ## Related Papers
 
+- [\[ICLR 2026\] Anchor Frame Bridging for Coherent First-Last Frame Video Generation](anchor_frame_bridging_for_coherent_first-last_frame_video_generation.md)
+- [\[ICLR 2026\] DreamSwapV: Mask-guided Subject Swapping for Any Customized Video Editing](dreamswapv_mask-guided_subject_swapping_for_any_customized_video_editing.md)
+- [\[CVPR 2026\] FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing](../../CVPR2026/video_generation/ffp-300k_scaling_first-frame_propagation_for_generalizable_video_editing.md)
 - [\[ICLR 2026\] MATRIX: Mask Track Alignment for Interaction-aware Video Generation](matrix_mask_track_alignment_for_interaction-aware_video_generation.md)
 - [\[ICLR 2026\] Pixel-Perfect Puppetry: Precision-Guided Enhancement for Face Image and Video Editing](pixel-perfect_puppetry_precision-guided_enhancement_for_face_image_and_video_edi.md)
-- [\[ICLR 2026\] DreamSwapV: Mask-guided Subject Swapping for Any Customized Video Editing](dreamswapv_mask-guided_subject_swapping_for_any_customized_video_editing.md)
-- [\[ICLR 2026\] Anchor Frame Bridging for Coherent First-Last Frame Video Generation](anchor_frame_bridging_for_coherent_first-last_frame_video_generation.md)
-- [\[CVPR 2026\] FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing](../../CVPR2026/video_generation/ffp-300k_scaling_first-frame_propagation_for_generalizable_video_editing.md)
 
 </div>
 

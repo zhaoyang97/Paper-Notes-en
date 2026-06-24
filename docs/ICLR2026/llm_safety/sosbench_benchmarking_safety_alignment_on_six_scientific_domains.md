@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SOSBench: Benchmarking Safety Alignment on Six Scientific Domains
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] SOSBench constructs the first safety benchmark **anchored in regulatory statutes and focused on real-world harms**. Utilizing 3,000 prompts across six high-risk scientific domains (Chemistry, Biology, Medicine, Pharmacology, Physics, and Psychology), it reveals that even frontier models claiming to be well-aligned stil
+  [ICLR 2026][LLM Safety][Safety Alignment] SOSBench constructs the first safety benchmark **anchored in regulatory statutes and focused on real-world harms**. Utilizing 3,000 prompts across six high-risk scientific domains (Chemistry, Biology, Medicine, Pharmacology, Physics, and Psychology), it reveals that even frontier models claiming to be well-aligned still output substantial non-compliant content in misuse scenarios requiring deep scientific knowledge (Deepseek-R1 Policy…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Safety Alignment"
+  - "Scientific Knowledge Misuse"
+  - "Safety Benchmark"
+  - "Regulatory Grounding"
+  - "Policy Violation Rate"
 date: 2026-05-08
-content_hash: e074d3d250715b41
+content_hash: 8cc2b377c17184ab
 ---
+
 # SOSBench: Benchmarking Safety Alignment on Six Scientific Domains
 
 **Conference**: ICLR 2026  
@@ -146,10 +152,10 @@ Even though GPT-4.1 can achieve a PVR as low as 0 on AdvBench, its violation rat
 ## Related Papers
 
 - [\[ICLR 2026\] The Alignment Waltz: Jointly Training Agents to Collaborate for Safety](the_alignment_waltz_jointly_training_agents_to_collaborate_for_safety.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
 - [\[ICLR 2026\] Any-Depth Alignment: Unlocking Innate Safety Alignment of LLMs to Any-Depth](any-depth_alignment_unlocking_innate_safety_alignment_of_llms_to_any-depth.md)
-- [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](../../ACL2026/llm_safety/reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
 - [\[ICLR 2026\] ExpGuard: LLM Content Moderation in Specialized Domains](expguard_llm_content_moderation_in_specialized_domains.md)
-- [\[ICLR 2026\] Benchmarking Empirical Privacy Protection for Adaptations of Large Language Models](benchmarking_empirical_privacy_protection_for_adaptations_of_large_language_mode.md)
+- [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](../../ACL2026/llm_safety/reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation
 description: >-
-  [ACL 2026][Multi-Agent][Poster Tree] PosterForest utilizes a Poster Tree, which simultaneously encodes the hierarchical semantics of a paper and the spatial layout of a poster, as an intermediate representation. It employs recursive collaborative optimization between Content, Layout, and Feedback agents to generate scientific posters in a training-free ma
+  [ACL2026][Multi-Agent][Scientific Poster Generation] PosterForest utilizes a Poster Tree, which simultaneously encodes the hierarchical semantics of a paper and the spatial layout of a poster, as an intermediate representation. It employs recursive collaborative optimization between Content, Layout, and Feedback agents to generate scientific posters in a training-free manner. In human evaluations, it achieved a 59.2% overall preference, significantly outperforming P2P and Pap…
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - Poster Tree
+  - "ACL2026"
+  - "Multi-Agent"
+  - "Scientific Poster Generation"
+  - "Hierarchical Document Understanding"
+  - "Multi-Agent Collaboration"
+  - "Layout Planning"
+  - "Poster Tree"
 date: 2026-05-08
-content_hash: ce483b48a592a0ea
+content_hash: 6125f0504fc34256
 ---
+
 # PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation
 
 **Conference**: ACL2026  
@@ -153,8 +158,8 @@ Human preference was significantly stronger for PosterForest.
 - Value: ⭐⭐⭐⭐☆ Highly practical for scientific communication and automated typesetting tools.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Normalized Energy Models for Linear Inverse Problems
 description: >-
-  [ICML 2026][Image Restoration][Paper Note] The authors reformulate "linear inverse problems" as "anisotropic denoising" and propose Anisotropic Covariance Score Matching (A-CSM) to train a **normalized** energy model $U_\theta(\mathbf{y},\boldsymbol{\Sigma})\approx -\log p(\mathbf{y}|\boldsymbol{\Sigma})$. A single model can handle inpainting, deblurring, and s
+  [ICML 2026][Image Restoration][Anisotropic Denoising] The authors reformulate "linear inverse problems" as "anisotropic denoising" and propose Anisotropic Covariance Score Matching (A-CSM) to train a **normalized** energy model $U_\theta(\mathbf{y},\boldsymbol{\Sigma})\approx -\log p(\mathbf{y}|\boldsymbol{\Sigma})$. A single model can handle inpainting, deblurring, and super-resolution while unlocking three new capabilities: energy-guided adaptive scheduling…
 tags:
-  - ICML 2026
-  - Image Restoration
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Anisotropic Denoising"
+  - "Covariance Score Matching"
+  - "Normalized Energy Models"
+  - "Posterior Sampling"
+  - "Blind Inverse Problems"
 date: 2026-05-08
-content_hash: 665c1606d78656e6
+content_hash: ff2163b40ad306ad
 ---
+
 # Learning Normalized Energy Models for Linear Inverse Problems
 
 **Conference**: ICML 2026  
@@ -115,9 +121,9 @@ A-CSM ablation (see §4.3 blind tasks): A pure A-DSM model without A-CSM fails t
 
 - [\[ICML 2026\] Solving Inverse Problems with Flow-based Models via Model Predictive Control](solving_inverse_problems_with_flow-based_models_via_model_predictive_control.md)
 - [\[CVPR 2026\] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems](../../CVPR2026/image_restoration/pnp-cm_consistency_models_as_plug-and-play_priors_for_inverse_problems.md)
+- [\[ICLR 2026\] Flower: A Flow-Matching Solver for Inverse Problems](../../ICLR2026/image_restoration/flower_a_flow-matching_solver_for_inverse_problems.md)
 - [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
 - [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](../../CVPR2026/image_restoration/dual_ascent_diffusion_for_inverse_problems.md)
-- [\[CVPR 2026\] Outlier-Robust Diffusion Solvers for Inverse Problems](../../CVPR2026/image_restoration/outlier-robust_diffusion_solvers_for_inverse_problems.md)
 
 </div>
 

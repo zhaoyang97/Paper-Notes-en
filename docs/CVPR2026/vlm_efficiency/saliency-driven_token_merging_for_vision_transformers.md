@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Saliency-Driven Token Merging for Vision Transformers
 description: >-
-  [CVPR 2026][Model Compression][Token Merging] SAD-TM observes that existing token merging methods rely only on "current-layer" attention parameters, which fluctuate drastically across layers. It proposes a **cross-layer consistent** criterion using saliency (via backpropagation) to identify "saliency outlier" tokens that deviate from the global gradient direction.
+  [CVPR 2026][Multimodal Efficiency][Token Merging] SAD-TM observes that existing token merging methods rely only on "current-layer" attention parameters, which fluctuate drastically across layers. It proposes a **cross-layer consistent** criterion using saliency (via backpropagation) to identify "saliency outlier" tokens that deviate from the global gradient direction. By fusing these with class attention and employing a "delayed merging" strategy that skips initial layers…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Token Merging
-  - Vision Transformer
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Token Merging"
+  - "Vision Transformer"
+  - "Saliency"
+  - "Training-free acceleration"
+  - "Class Attention"
 date: 2026-05-08
-content_hash: 2e88603bffe64746
+content_hash: 2f1ca4a39fe04445
 ---
+
 # Saliency-Driven Token Merging for Vision Transformers
 
 **Conference**: CVPR 2026  
@@ -122,15 +126,16 @@ On ImageNet, tested across DeiT-Tiny/Small/Base, MAE-Base/Large/Huge, and LV-ViT
 - Value: ⭐⭐⭐⭐ Training-free, plug-and-play, and achieves 23%~45% FLOPs reduction with minimal loss; highly practical for ViT deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
-- [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
 - [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
+- [\[CVPR 2026\] LiteVGGT: Boosting Vanilla VGGT via Geometry-aware Cached Token Merging](litevggt_boosting_vanilla_vggt_via_geometry-aware_cached_token_merging.md)
 - [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
+- [\[CVPR 2026\] CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs](core_compact_object-centric_representations_as_a_new_paradigm_for_token_merging_.md)
 
 </div>
 

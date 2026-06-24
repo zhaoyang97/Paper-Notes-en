@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Physics-Informed Coarsening for Multigrid Graph Neural Surrogates
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper trains an Encoder-Processor-Decoder multigrid GNN surrogate for finite element simulation in solid mechanics. The core innovation is replacing geometric heuristics (FPS) or learned attention in "coarsening (downsampling) node selection" with "TopK scoring based on the discrete residual of momentum conservati
+  [ICML 2026][Graph Learning][Multigrid GNN] This paper trains an Encoder-Processor-Decoder multigrid GNN surrogate for finite element simulation in solid mechanics. The core innovation is replacing geometric heuristics (FPS) or learned attention in "coarsening (downsampling) node selection" with "TopK scoring based on the discrete residual of momentum conservation equations." This concentrates coarse-layer computational resources on dynamically critical regions like stress con…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Multigrid GNN"
+  - "Physics Residual"
+  - "Solid Mechanics Surrogate"
+  - "Mesh Coarsening"
+  - "Long-term Rollout"
 date: 2026-05-08
-content_hash: 622dbb54703b0e9c
+content_hash: 25daee1aa49746f4
 ---
+
 # Physics-Informed Coarsening for Multigrid Graph Neural Surrogates
 
 **Conference**: ICML 2026  
@@ -145,11 +151,11 @@ Rollout error is nearly halved compared to UNISOMA (11.46 → 6.50), with the lo
 
 ## Related Papers
 
-- [\[ICML 2026\] Deep Neural Sheaf Diffusion](deep_neural_sheaf_diffusion.md)
+- [\[ICLR 2026\] UrbanGraph: Physics-Informed Spatio-Temporal Dynamic Heterogeneous Graphs for Urban Microclimate Prediction](../../ICLR2026/graph_learning/urbangraph_physics-informed_spatio-temporal_dynamic_heterogeneous_graphs_for_urb.md)
+- [\[ICML 2026\] Understanding Truncated Positional Encodings for Graph Neural Networks](understanding_truncated_positional_encodings_for_graph_neural_networks.md)
+- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
+- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](full-spectrum_graph_neural_network_expressive_and_scalable.md)
 - [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
-- [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
-- [\[ICML 2026\] Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves](polynomial_neural_sheaf_diffusion_a_spectral_filtering_approach_on_cellular_shea.md)
-- [\[ICML 2026\] Beyond Model Base Retrieval: Weaving Knowledge to Master Fine-grained Neural Network Design](beyond_model_base_retrieval_weaving_knowledge_to_master_fine-grained_neural_netw.md)
 
 </div>
 

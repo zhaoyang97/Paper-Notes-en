@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper introduces the LMEE benchmark and the MemoryExplorer framework, which unify the evaluation of embodied exploration processes and outcomes by combining multi-target navigation with memory-based question answering. By fine-tuning MLLMs with reinforcement learning to actively invoke memory retrieval tools, the
+  [CVPR 2026][Multimodal VLM][Embodied Exploration] This paper introduces the LMEE benchmark and the MemoryExplorer framework, which unify the evaluation of embodied exploration processes and outcomes by combining multi-target navigation with memory-based question answering. By fine-tuning MLLMs with reinforcement learning to actively invoke memory retrieval tools, the method achieves a 23.53% SR on LMEE-Bench (surpassing 3D-Mem's 16.91%) and a 46.40% SR on GOAT-Bench.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Embodied Exploration"
+  - "Long-term Memory"
+  - "Multi-target Navigation"
+  - "Reinforcement Learning Fine-tuning"
+  - "Memory Retrieval"
 date: 2026-05-08
-content_hash: 3c727cbe3734705f
+content_hash: e24787ecbbc754a5
 ---
+
 # Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration
 
 **Conference**: CVPR 2026  
@@ -156,15 +162,14 @@ Action reward $r_{\text{action}}$ and frontier reward $r_{\text{frontier}}$ are 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](personavlm_long_term_personalized_multimodal_llms.md)
-- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
-- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
-- [\[CVPR 2026\] CURVE: A Benchmark for Cultural and Multilingual Long Video Reasoning](curve_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
-- [\[CVPR 2026\] WeaveTime: Streaming from Earlier Frames into Emergent Memory in VideoLLMs](weavetime_streaming_from_earlier_frames_into_emergent_memory_in_videollms.md)
+- [\[CVPR 2026\] Learning to Focus and Precise Cropping: A Reinforcement Learning Framework with Information Gaps and Grounding Loss for MLLMs](learning_to_focus_and_precise_croppinga_reinforcement_learning_framework_with_in.md)
+- [\[ICLR 2026\] GuirlVG: Incentivize GUI Visual Grounding via Empirical Exploration on Reinforcement Learning](../../ICLR2026/multimodal_vlm/guirlvg_incentivize_gui_visual_grounding_via_empirical_exploration_on_reinforcem.md)
+- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
+- [\[CVPR 2026\] Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation](training_high-level_schedulers_with_execution-feedback_reinforcement_learning_fo.md)
 
 </div>
 

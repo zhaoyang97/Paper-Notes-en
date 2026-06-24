@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning
 description: >-
-  [NeurIPS 2025][CASH] This paper addresses the Combined Algorithm Selection and Hyperparameter Optimization (CASH) problem in AutoML. Through data-driven analysis…
+  [NeurIPS 2025][CASH] This paper addresses the Combined Algorithm Selection and Hyperparameter Optimization (CASH) problem in AutoML. Through data-driven analysis, it reveals that HPO reward distributions are bounded and left-skewed, and proposes MaxUCB—a bandit algorithm specifically tailored to this distributional property—achieving both theoretical and empirical improvements over existing methods.
 tags:
   - "NeurIPS 2025"
   - "CASH"
@@ -11,7 +11,7 @@ tags:
   - "AutoML"
   - "Upper Confidence Bound"
 date: 2026-05-08
-content_hash: a97b5a569e576d2a
+content_hash: b45d086cfc488570
 ---
 
 # Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning
@@ -141,7 +141,7 @@ MaxUCB and Quantile Bayes UCB are the only two methods that statistically signif
 - [\[NeurIPS 2025\] Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning](directional_non-commutative_monoidal_structures_for_compositional_embeddings_in_.md)
 - [\[NeurIPS 2025\] Semi-infinite Nonconvex Constrained Min-Max Optimization](semi-infinite_nonconvex_constrained_min-max_optimization.md)
 - [\[NeurIPS 2025\] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits](gaussian_process_upper_confidence_bound_achieves_nearly-optimal_regret_in_noise-.md)
-- [\[NeurIPS 2025\] Adjusted Count Quantification Learning on Graphs](adjusted_count_quantification_learning_on_graphs.md)
+- [\[ICML 2025\] AutoAL: Automated Active Learning with Differentiable Query Strategy Search](../../ICML2025/others/autoal_automated_active_learning_with_differentiable_query_strategy_search.md)
 
 </div>
 

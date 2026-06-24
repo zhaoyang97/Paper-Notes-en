@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Learn the Ropes, Then Trust the Wins: Self-imitation with Progressive Exploration for Agentic Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] SPEAR employs "curriculum-scheduled self-imitation learning + intrinsic reward shaping" to enable agentic LLMs to explore boldly through tool interactions in early training and exploit successful experiences robustly in later stages. It achieves a progressive exploration-exploitation balance without relying on external
+  [ICLR 2026][Reinforcement Learning][Self-imitation Learning] SPEAR employs "curriculum-scheduled self-imitation learning + intrinsic reward shaping" to enable agentic LLMs to explore boldly through tool interactions in early training and exploit successful experiences robustly in later stages. It achieves a progressive exploration-exploitation balance without relying on external expert demonstrations, adhering to the principle of "learning the ropes first…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Self-imitation Learning"
+  - "Progressive Exploration"
+  - "Intrinsic Reward Shaping"
+  - "Curriculum Scheduling"
+  - "Multi-turn Tool Calling"
+  - "Entropy Control"
 date: 2026-05-08
-content_hash: 2c9e454d1d94e5e8
+content_hash: 8ee742de52ff721e
 ---
+
 # Learn the Ropes, Then Trust the Wins: Self-imitation with Progressive Exploration for Agentic Reinforcement Learning
 
 **Conference**: ICLR 2026  

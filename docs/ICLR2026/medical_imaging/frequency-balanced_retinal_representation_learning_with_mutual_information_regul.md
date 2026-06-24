@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization
 description: >-
-  [ICLR 2026][Medical Imaging][Masked Autoencoder] The authors analyze Masked Autoencoders (MAE) from a spatial frequency perspective, discovering a preference for low-frequency backgrounds and an under-encoding of diagnostically critical high-frequency details. They propose RetMAE: a framework that, without modifying the architecture, introduces a High-Frequency Mutua
+  [ICLR 2026][Medical Imaging][Retinal fundus images] The authors analyze Masked Autoencoders (MAE) from a spatial frequency perspective, discovering a preference for low-frequency backgrounds and an under-encoding of diagnostically critical high-frequency details. They propose RetMAE: a framework that, without modifying the architecture, introduces a High-Frequency Mutual Information (HighFreqMI) regularization. This allows the retinal encoder to learn "frequency-balanced" rep…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Masked Autoencoder
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Retinal fundus images"
+  - "Masked Autoencoder"
+  - "frequency bias"
+  - "mutual information regularization"
+  - "information bottleneck"
 date: 2026-05-08
-content_hash: c9fb15f0c5a52c09
+content_hash: 7a85f27e9e7fd45b
 ---
+
 # Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization
 
 **Conference**: ICLR 2026  
@@ -122,10 +127,10 @@ Adding $\mathcal{L}_{hmi}$ consistently improves performance across all MAE vari
 ## Related Papers
 
 - [\[ICLR 2026\] MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning](medgmae_gaussian_masked_autoencoders_for_medical_volumetric_representation_learn.md)
-- [\[ECCV 2024\] Architecture-Agnostic Untrained Network Priors for Image Reconstruction with Frequency Regularization](../../ECCV2024/medical_imaging/architecture-agnostic_untrained_network_priors_for_image_reconstruction_with_fre.md)
+- [\[ICLR 2026\] Sequential Information Bottleneck Fusion: Towards Robust and Generalizable Multi-Modal Brain Tumor Segmentation](sequential_information_bottleneck_fusion_towards_robust_and_generalizable_multi-.md)
 - [\[ICLR 2026\] Lightweight Transformer for EEG Classification via Balanced Signed Graph Algorithm Unrolling](lightweight_transformer_for_eeg_classification_via_balanced_signed_graph_algorit.md)
+- [\[ECCV 2024\] Architecture-Agnostic Untrained Network Priors for Image Reconstruction with Frequency Regularization](../../ECCV2024/medical_imaging/architecture-agnostic_untrained_network_priors_for_image_reconstruction_with_fre.md)
 - [\[ICLR 2026\] Anatomy-aware Representation Learning for Medical Ultrasound](anatomy-aware_representation_learning_for_medical_ultrasound.md)
-- [\[ICLR 2026\] Histopathology-Genomics Multi-modal Structural Representation Learning for Data-Efficient Precision Oncology](histopathology-genomics_multi-modal_structural_representation_learning_for_data-.md)
 
 </div>
 

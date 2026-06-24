@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Turning Internal Gap into Self-Improvement: Promoting the Generation-Understanding Unification in MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper first validates that the generation branch of unified MLLMs is often weaker than the understanding branch using a "non-unification score" system. It then transforms this internal gap into a self-improvement signal without external reward models: the understanding branch filters generation candidates to const
+  [ICLR2026][Multimodal VLM][Unified Multimodal Models] This paper first validates that the generation branch of unified MLLMs is often weaker than the understanding branch using a "non-unification score" system. It then transforms this internal gap into a self-improvement signal without external reward models: the understanding branch filters generation candidates to construct SFT/DPO data, and curriculum replay is used to further exploit hard samples…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Unified Multimodal Models"
+  - "Text-to-Image Generation"
+  - "Generation-Understanding Unification"
+  - "Self-Improvement"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 9bfc1d98de8fc065
+content_hash: 453fd130af51ad39
 ---
+
 # Turning Internal Gap into Self-Improvement: Promoting the Generation-Understanding Unification in MLLMs
 
 **Conference**: ICLR2026  
@@ -143,15 +149,16 @@ On GenEval, Janus-Pro's Gen. improved from 79.36 to 80.87 (C-SFT). On Science-T2
 - Value: ⭐⭐⭐⭐⭐ Provides a reusable paradigm for multimodal self-training without external rewards by treating "strong understanding, weak generation" as a resource.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding vs. Generation: Navigating Optimization Dilemma in Multimodal Models](understanding_vs_generation_navigating_optimization_dilemma_in_multimodal_models.md)
-- [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](../../CVPR2026/multimodal_vlm/duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
 - [\[NeurIPS 2025\] HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation](../../NeurIPS2025/multimodal_vlm/hermesflow_seamlessly_closing_the_gap_in_multimodal_understanding_and_generation.md)
 - [\[ICLR 2026\] ChartGalaxy: A Dataset for Infographic Chart Understanding and Generation](chartgalaxy_a_dataset_for_infographic_chart_understanding_and_generation.md)
-- [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
+- [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](../../CVPR2026/multimodal_vlm/duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
+- [\[ICLR 2026\] UniLIP: Revamping CLIP to Unify Multimodal Understanding, Generation, and Editing](unilip_adapting_clip_for_unified_multimodal_understanding_generation_and_editing.md)
 
 </div>
 

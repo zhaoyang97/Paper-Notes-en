@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment
 description: >-
-  [AAAI 2026][Medical NLP][Cognitive Stimulation Therapy] This paper proposes the GCSD system for group Cognitive Stimulation Therapy (CST) targeting elderly individuals with cognitive impairment. The system integrates fou…
+  [AAAI 2026][Medical LLM][Cognitive Stimulation Therapy] This paper proposes the GCSD system for group Cognitive Stimulation Therapy (CST) targeting elderly individuals with cognitive impairment. The system integrates four modules — multi-speaker context control, dynamic participant state modeling (soft prompt), a cognitive stimulation attention loss, and a multi-dimensional reward policy optimization — built on a fine-tuned Qwen-2.5-3B backbone. Training is conducted on 500+…
 tags:
   - "AAAI 2026"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Cognitive Stimulation Therapy"
   - "Multi-party Dialogue"
   - "Dynamic User Modeling"
   - "Principle-Driven Policy"
   - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 44af582bf3acb977
+content_hash: 27964d2dd1462e18
 ---
 
 # A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment
@@ -181,9 +181,9 @@ Compared to the prior work of Jiang et al. (2023) from the same team, the core a
 
 - [\[ICLR 2026\] ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue](../../ICLR2026/medical_nlp/atpo_adaptive_tree_policy_optimization_for_multi-turn_medical_dialogue.md)
 - [\[ACL 2026\] Multi-View Attention Multiple-Instance Learning Enhanced by LLM Reasoning for Cognitive Distortion Detection](../../ACL2026/medical_nlp/multi-view_attention_multiple-instance_learning_enhanced_by_llm_reasoning_for_co.md)
+- [\[ACL 2025\] Adaptive-VP: A Framework for LLM-Based Virtual Patients that Adapts to Trainees' Dialogue to Facilitate Nurse Communication Training](../../ACL2025/medical_nlp/adaptive-vp_a_framework_for_llm-based_virtual_patients_that_adapts_to_trainees_d.md)
 - [\[AAAI 2026\] Real-Time Trust Verification for Safe Agentic Actions Using TrustBench](real-time_trust_verification_for_safe_agentic_actions_using_trustbench.md)
-- [\[ACL 2026\] IndicMedDialog: A Parallel Multi-Turn Medical Dialogue Dataset for Accessible Healthcare in Indic Languages](../../ACL2026/medical_nlp/indicmeddialog_a_parallel_multi-turn_medical_dialogue_dataset_for_accessible_hea.md)
-- [\[AAAI 2026\] BiCA: Effective Biomedical Dense Retrieval with Citation-Aware Hard Negatives](bica_effective_biomedical_dense_retrieval_with_citation-aware_hard_negatives.md)
+- [\[ICLR 2026\] KnowGuard: Knowledge-Driven Abstention for Multi-Round Clinical Reasoning](../../ICLR2026/medical_nlp/knowguard_knowledge-driven_abstention_for_multi-round_clinical_reasoning.md)
 
 </div>
 

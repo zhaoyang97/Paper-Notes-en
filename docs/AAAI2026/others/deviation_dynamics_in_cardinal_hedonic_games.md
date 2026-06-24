@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deviation Dynamics in Cardinal Hedonic Games
 description: >-
-  [AAAI 2026][Hedonic games] This paper establishes meta-theorems for deviation dynamics in cardinal hedonic games, showing that the computational complexity of determining whether deviation dynamics may or must converge c…
+  [AAAI 2026][Hedonic games] This paper establishes meta-theorems for deviation dynamics in cardinal hedonic games, showing that the computational complexity of determining whether deviation dynamics may or must converge can be derived directly from instances in which no stable outcome exists. The paper further proposes methods for finding individually rational and contractually individually stable partitions via deviation dynamics in additively separable hedonic games.
 tags:
   - "AAAI 2026"
   - "Hedonic games"
@@ -11,7 +11,7 @@ tags:
   - "computational complexity"
   - "individual rationality"
 date: 2026-05-08
-content_hash: 1871d33237f21e48
+content_hash: 960b71e7e7d14863
 ---
 
 # Deviation Dynamics in Cardinal Hedonic Games
@@ -131,10 +131,10 @@ This is a theoretical paper whose primary contributions are mathematical theorem
 ## Related Papers
 
 - [\[AAAI 2026\] Regular Games – an Automata-Based General Game Playing Language](regular_games_--_an_automata-based_general_game_playing_language.md)
+- [\[ACL 2025\] Persona Dynamics: Unveiling the Impact of Personality Traits on Agents in Text-Based Games](../../ACL2025/others/persona_dynamics_unveiling_the_impact_of_persona_traits_on_agents_in_text-based_.md)
 - [\[AAAI 2026\] A Phase Transition for Opinion Dynamics with Competing Biases](a_phase_transition_for_opinion_dynamics_with_competing_biase.md)
 - [\[NeurIPS 2025\] Evolutionary Prediction Games](../../NeurIPS2025/others/evolutionary_prediction_games.md)
 - [\[AAAI 2026\] Towards a Rigorous Understanding of the Population Dynamics of the NSGA-III: Tight Runtime Bounds](towards_a_rigorous_understanding_of_the_population_dynamics_of_the_nsga-iii_tigh.md)
-- [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](../../ICML2026/others/learning_permutation-invariant_macroscopic_dynamics.md)
 
 </div>
 

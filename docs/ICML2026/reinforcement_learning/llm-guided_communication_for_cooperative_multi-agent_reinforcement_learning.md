@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][CTDE] This paper proposes LMAC—using LLMs offline to design executable communication protocol code for cooperative MARL. Based on the "state reconstructability" metric, it performs two rounds of feedback iteration (first improving reconstruction accuracy, then reducing cross-agent imbalance). It significantly outperforms com
+  [ICML2026][Reinforcement Learning][Multi-agent RL] This paper proposes LMAC—using LLMs offline to design executable communication protocol code for cooperative MARL. Based on the "state reconstructability" metric, it performs two rounds of feedback iteration (first improving reconstruction accuracy, then reducing cross-agent imbalance). It significantly outperforms communication baselines such as TarMAC/SMS/T2MAC/MASIA on benchmarks like SMAC-Comm, LBF, GRF, and SMACv2…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - CTDE
-  - QMIX
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Multi-agent RL"
+  - "Cooperative Communication"
+  - "LLM Protocol Design"
+  - "CTDE"
+  - "QMIX"
 date: 2026-05-08
-content_hash: 8fa85f7597e9eb09
+content_hash: 3662a067a66f3bf3
 ---
+
 # LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning
 
 **Conference**: ICML2026  
@@ -147,13 +151,20 @@ Most baselines fail significantly on SMACv2, indicating LLM-designed protocols a
 - **Value**: ⭐⭐⭐⭐⭐ Provides a low-cost way to integrate LLM semantic power into MARL with deployable, interpretable results.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- T2MAC: Targeted Multi-Agent Communication with Evidence Fusion
-- MASIA: Multi-Agent State Information Augmented Communication
-- SMS: Shapley Message Selection for Multi-Agent Reinforcement Learning
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](../../ICLR2026/reinforcement_learning/distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
+- [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](../../ICLR2026/reinforcement_learning/multi-agent_guided_policy_optimization.md)
+- [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](../../ICLR2026/reinforcement_learning/potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)
+- [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](../../CVPR2026/reinforcement_learning/taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)

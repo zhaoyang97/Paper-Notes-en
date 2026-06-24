@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NaviMaster: Learning a Unified Policy for GUI and Embodied Navigation Tasks
 description: >-
-  [ACL 2026][Reinforcement Learning][GRPO] NaviMaster reformulates both GUI operations and embodied navigation into a unified MDP of "visual target localization + action execution." It trains a Qwen2.5-VL-7B policy using GRPO on mixed trajectories with distance-aware dense rewards, outperforming single-domain training and mainstream baselines in OOD GUI tasks,
+  [ACL2026][Reinforcement Learning][Unified Navigation Policy] NaviMaster reformulates both GUI operations and embodied navigation into a unified MDP of "visual target localization + action execution." It trains a Qwen2.5-VL-7B policy using GRPO on mixed trajectories with distance-aware dense rewards, outperforming single-domain training and mainstream baselines in OOD GUI tasks, spatial affordance prediction, and ObjectNav.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ACL2026"
+  - "Reinforcement Learning"
+  - "Unified Navigation Policy"
+  - "GUI Agent"
+  - "Embodied Navigation"
+  - "GRPO"
+  - "Dense Reward"
 date: 2026-05-08
-content_hash: 11462103f7b813c3
+content_hash: 84cc527de57d33f8
 ---
+
 # NaviMaster: Learning a Unified Policy for GUI and Embodied Navigation Tasks
 
 **Conference**: ACL2026  

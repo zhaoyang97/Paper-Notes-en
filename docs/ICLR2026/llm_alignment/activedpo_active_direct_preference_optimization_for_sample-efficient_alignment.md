@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ActiveDPO: Active Direct Preference Optimization for Sample-Efficient Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] ActiveDPO utilizes the "aligned LLM itself" as a reward model. Based on the gradient of its implicit reward, it derives a theoretically guaranteed uncertainty criterion to actively select the most valuable preference triplets for annotation. This allows the LLM to reach higher alignment levels using fewer human prefere
+  [ICLR2026][LLM Alignment][Active Preference Selection] ActiveDPO utilizes the "aligned LLM itself" as a reward model. Based on the gradient of its implicit reward, it derives a theoretically guaranteed uncertainty criterion to actively select the most valuable preference triplets for annotation. This allows the LLM to reach higher alignment levels using fewer human preference labels under a fixed annotation budget.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Active Preference Selection"
+  - "DPO"
+  - "Implicit Reward"
+  - "Gradient Uncertainty"
+  - "Sample-Efficient Alignment"
 date: 2026-05-08
-content_hash: f2ad62af7013ea42
+content_hash: 84d29783272605f6
 ---
+
 # ActiveDPO: Active Direct Preference Optimization for Sample-Efficient Alignment
 
 **Conference**: ICLR2026  
@@ -149,8 +154,8 @@ The theoretical portion requires an additional regularization term when training
 - [\[ICML 2026\] Autoregressive Direct Preference Optimization](../../ICML2026/llm_alignment/autoregressive_direct_preference_optimization.md)
 - [\[ICML 2026\] Boosting Direct Preference Optimization with Penalization](../../ICML2026/llm_alignment/boosting_direct_preference_optimization_with_penalization.md)
 - [\[ICLR 2026\] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety](safedpo_preference_optimization_safety.md)
+- [\[ICLR 2026\] Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization](sharpness-aware_minimization_in_logit_space_efficiently_enhances_direct_preferen.md)
 - [\[ICLR 2026\] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?](is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base.md)
-- [\[ICLR 2026\] Token-Importance Guided Direct Preference Optimization (TI-DPO)](token-importance_guided_direct_preference_optimization.md)
 
 </div>
 

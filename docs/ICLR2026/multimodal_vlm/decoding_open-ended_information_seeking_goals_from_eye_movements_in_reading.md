@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decoding Open-Ended Information Seeking Goals from Eye Movements in Reading
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper proposes a new task of decoding open-ended information retrieval goals from eye-tracking trajectories during reading. Using the OneStop eye-tracking dataset (360 subjects, 486 questions, 162 paragraphs), the authors develop discriminative and generative multimodal models. RoBERTEye-Fixations achieves 49.3% a
+  [ICLR2026][Multimodal VLM][Eye-tracking] This paper proposes a new task of decoding open-ended information retrieval goals from eye-tracking trajectories during reading. Using the OneStop eye-tracking dataset (360 subjects, 486 questions, 162 paragraphs), the authors develop discriminative and generative multimodal models. RoBERTEye-Fixations achieves 49.3% accuracy in a 3-choice target selection task (random baseline 33%) and 70.9% across different critical spans. DalEye-Lla…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Eye-tracking"
+  - "Reading Comprehension"
+  - "Information Seeking Goal Decoding"
+  - "Multimodal LLM"
+  - "Cognitive State Decoding"
 date: 2026-05-08
-content_hash: 956e73b18aba5516
+content_hash: 14fba131be07ee81
 ---
+
 # Decoding Open-Ended Information Seeking Goals from Eye Movements in Reading
 
 **Conference**: ICLR2026  
@@ -109,9 +115,9 @@ The model serves not just as a black-box predictor but as a probe to verify cogn
 ## Related Papers
 
 - [\[ECCV 2024\] Towards Open-ended Visual Quality Comparison](../../ECCV2024/multimodal_vlm/towards_open-ended_visual_quality_comparison.md)
+- [\[ICLR 2026\] MetaCaptioner: Towards Generalist Visual Captioning with Open-source Suites](metacaptioner_towards_generalist_visual_captioning_with_open-source_suites.md)
 - [\[CVPR 2026\] GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks](../../CVPR2026/multimodal_vlm/guide_a_benchmark_for_understanding_and_assisting_users_in_open-ended_gui_tasks.md)
 - [\[ICML 2026\] ECA: Efficient Continual Alignment for Open-Ended Image-to-Text Generation](../../ICML2026/multimodal_vlm/eca_efficient_continual_alignment_for_open-ended_image-to-text_generation.md)
-- [\[NeurIPS 2025\] Reading Recognition in the Wild](../../NeurIPS2025/multimodal_vlm/reading_recognition_in_the_wild.md)
 - [\[ICLR 2026\] Calibrated Information Bottleneck for Trusted Multi-modal Clustering](calibrated_information_bottleneck_for_trusted_multi-modal_clustering.md)
 
 </div>

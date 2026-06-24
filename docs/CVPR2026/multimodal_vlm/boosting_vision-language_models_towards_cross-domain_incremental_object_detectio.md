@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Boosting Vision-Language Models Towards Cross-Domain Incremental Object Detection
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM] To address the more realistic "Cross-Domain Incremental Object Detection" scenario, this paper establishes a CDIOD benchmark (involving sequential sub-tasks across natural, underwater, and remote sensing domains) and proposes the DGS framework. DGS dynamically groups tasks based on distribution similarity, shares subsp
+  [CVPR 2026][Multimodal VLM][Incremental Object Detection] To address the more realistic "Cross-Domain Incremental Object Detection" scenario, this paper establishes a CDIOD benchmark (involving sequential sub-tasks across natural, underwater, and remote sensing domains) and proposes the DGS framework. DGS dynamically groups tasks based on distribution similarity, shares subspaces via expandable LoRA adapters within groups, and performs inference with group-level routing. It a…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Incremental Object Detection"
+  - "Cross-domain Continual Learning"
+  - "VLM"
+  - "LoRA adapters"
+  - "Task Grouping"
 date: 2026-05-08
-content_hash: d31ca2ce140d64ca
+content_hash: ff72547babbee776
 ---
+
 # Boosting Vision-Language Models Towards Cross-Domain Incremental Object Detection
 
 **Conference**: CVPR 2026  
@@ -154,9 +159,9 @@ Breakdown on 10-step CDIOD (EPP = Extra Parameter Percentage):
 ## Related Papers
 
 - [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
+- [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
 - [\[CVPR 2026\] Mechanisms of Object Localization in Vision-Language Models](mechanisms_of_object_localization_in_vision-language_models.md)
 - [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](../../AAAI2026/multimodal_vlm/cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
-- [\[CVPR 2026\] BOP-Ask: Object-Interaction Reasoning for Vision-Language Models](bop-ask_object-interaction_reasoning_for_vision-language_models.md)
 - [\[CVPR 2026\] ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models](oric_benchmarking_object_recognition_under_contextual_incongruity_in_large_visio.md)
 
 </div>

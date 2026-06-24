@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models
 description: >-
-  [ICLR 2026][LLM Efficiency][PagedAttention] ThinKV observes that attention sparsity in the long Chain-of-Thought (CoT) of reasoning models can categorize tokens into three types: "Reasoning, Execution, and Transition." It assigns quantization precision based on thought importance and progressively evicts low-value thought segments when the reasoning trajectory c
+  [ICLR 2026][LLM Efficiency][KV Cache Compression] ThinKV observes that attention sparsity in the long Chain-of-Thought (CoT) of reasoning models can categorize tokens into three types: "Reasoning, Execution, and Transition." It assigns quantization precision based on thought importance and progressively evicts low-value thought segments when the reasoning trajectory changes. By pairing this with an extended PagedAttention kernel that reuses evicted memory slots in-place…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - PagedAttention
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV Cache Compression"
+  - "Reasoning Models"
+  - "Hybrid Quantization-Eviction"
+  - "Attention Sparsity"
+  - "PagedAttention"
 date: 2026-05-08
-content_hash: 24160a45b972fb00
+content_hash: 4b40abb5b854af7d
 ---
+
 # ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -162,9 +167,9 @@ ThinKV Components (Table 4, GPT-OSS-20B / LiveCodeBench, iso-batch=8):
 
 - [\[ICLR 2026\] IceCache: Memory-Efficient KV-cache Management for Long-Sequence LLMs](icecache_memory-efficient_kv-cache_management_for_long-sequence_llms.md)
 - [\[ICLR 2026\] MoL: Adaptive Mixture-of-Length Reasoning for Efficient Question Answering with Context](mol_adaptive_mixture-of-length_reasoning_for_efficient_question_answering_with_c.md)
-- [\[ICLR 2026\] LouisKV: Efficient KV Cache Retrieval for Long Input-Output Sequences](louiskv_efficient_kv_cache_retrieval_for_long_input-output_sequences.md)
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] DiffAdapt: Difficulty-Adaptive Reasoning for Token-Efficient LLM Inference](diffadapt_difficulty-adaptive_reasoning_for_token-efficient_llm_inference.md)
-- [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
+- [\[ICLR 2026\] LouisKV: Efficient KV Cache Retrieval for Long Input-Output Sequences](louiskv_efficient_kv_cache_retrieval_for_long_input-output_sequences.md)
 
 </div>
 

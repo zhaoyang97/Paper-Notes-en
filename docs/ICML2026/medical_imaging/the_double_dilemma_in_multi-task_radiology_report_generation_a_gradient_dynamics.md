@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CAME-Grad: The Double Dilemma in Multi-Task Radiology Report Generation — A Gradient Dynamics Analysis and Solution
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] This paper utilizes an SDE framework to analyze the dual nature of gradient conflicts between "report generation vs. clinical constraints" in Radiology Report Generation (RRG) — drift term deviation from Pareto optimality and diffusion term decay failing to escape local optima. The authors propose the CAME-Grad optimiz
+  [ICML 2026][Medical Imaging][Radiology Report Generation] This paper utilizes an SDE framework to analyze the dual nature of gradient conflicts between "report generation vs. clinical constraints" in Radiology Report Generation (RRG) — drift term deviation from Pareto optimality and diffusion term decay failing to escape local optima. The authors propose the CAME-Grad optimizer (Direction Rectification + Energy Injection + Adaptive Fusion) as a plug-and-play alternative to li…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Radiology Report Generation"
+  - "Multi-task Learning"
+  - "Gradient Conflict"
+  - "SDE Analysis"
+  - "Plug-and-play Optimizer"
 date: 2026-05-08
-content_hash: b4532c8c4dea0634
+content_hash: 2973a6bb6410c1ae
 ---
+
 # CAME-Grad: The Double Dilemma in Multi-Task Radiology Report Generation — A Gradient Dynamics Analysis and Solution
 
 **Conference**: ICML 2026  
@@ -135,10 +141,10 @@ Measuring the inner product between $\bm g_0$ (generation) and $\bm g_k$ (clinic
 ## Related Papers
 
 - [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](../../CVPR2026/medical_imaging/cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
-- [\[ICML 2026\] SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment](synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas.md)
-- [\[CVPR 2026\] TIM: Temporal Decoupling with Iterative Mutual-Refinement Model for Longitudinal Radiology Report Generation](../../CVPR2026/medical_imaging/tim_temporal_decoupling_with_iterative_mutual-refinement_model_for_longitudinal_.md)
+- [\[ICLR 2026\] Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings](../../ICLR2026/medical_imaging/rethinking_radiology_report_generation_from_narrative_flow_to_topic-guided_findi.md)
 - [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](../../CVPR2026/medical_imaging/orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
 - [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](../../CVPR2026/medical_imaging/biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
+- [\[ICML 2026\] SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment](synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas.md)
 
 </div>
 

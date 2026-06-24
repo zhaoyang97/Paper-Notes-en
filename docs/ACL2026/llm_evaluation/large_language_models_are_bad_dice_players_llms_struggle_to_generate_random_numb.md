@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper presents the first large-scale systematic audit of the native sampling capabilities of 11 frontier LLMs across 15 probability distributions. It reveals that LLMs severely lack intrinsic probability sampling mechanisms, and this deficiency translates into systematic biases in downstream applications.
+  [ACL 2026][LLM Evaluation][Probability Sampling] This paper presents the first large-scale systematic audit of the native sampling capabilities of 11 frontier LLMs across 15 probability distributions. It reveals that LLMs severely lack intrinsic probability sampling mechanisms, and this deficiency translates into systematic biases in downstream applications.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Probability Sampling"
+  - "Random Number Generation"
+  - "Distribution Fidelity"
+  - "LLM Intrinsic Capability"
+  - "Downstream Bias"
 date: 2026-05-08
-content_hash: 7111f2dc6030dd04
+content_hash: 87a0fbc52ddb6a7d
 ---
+
 # Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions
 
 **Conference**: ACL 2026  
@@ -111,10 +117,10 @@ As an evaluation-focused work, no training is involved. Statistical tests (KS/χ
 ## Related Papers
 
 - [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
+- [\[ICML 2026\] Estimating Tail Risks in Language Model Output Distributions](../../ICML2026/llm_evaluation/estimating_tail_risks_in_language_model_output_distributions.md)
 - [\[ACL 2026\] Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models](challenging_the_boundaries_of_reasoning_an_olympiad-level_math_benchmark_for_lar.md)
 - [\[ACL 2026\] E2EDev: Benchmarking Large Language Models in End-to-End Software Development Task](e2edev_benchmarking_large_language_models_in_end-to-end_software_development_tas.md)
 - [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
-- [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
 
 </div>
 

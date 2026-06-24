@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DVLA-RL: Dual-Level Vision-Language Alignment with Reinforcement Learning Gating for Few-Shot Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Ours proposes the DVLA-RL framework, which generates complementary low-level attributes and high-level descriptions through Dual-level Semantic Construction (DSC). It utilizes RL-based Gated Attention (RLA) to dynamically balance the contributions of self-attention and cross-attention across different network layers, a
+  [ICLR 2026][Reinforcement Learning][Few-Shot Learning] Ours proposes the DVLA-RL framework, which generates complementary low-level attributes and high-level descriptions through Dual-level Semantic Construction (DSC). It utilizes RL-based Gated Attention (RLA) to dynamically balance the contributions of self-attention and cross-attention across different network layers, achieving hierarchical vision-language alignment from low-level to high-level features and reaching SOTA o…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Few-Shot Learning"
+  - "Vision-Language Alignment"
+  - "RL Gating"
+  - "Dual-Level Semantics"
+  - "Cross-Modal Fusion"
 date: 2026-05-08
-content_hash: ac2b48bb507017f9
+content_hash: addecfbd37e708e2
 ---
+
 # DVLA-RL: Dual-Level Vision-Language Alignment with Reinforcement Learning Gating for Few-Shot Learning
 
 **Conference**: ICLR 2026  
@@ -153,10 +159,10 @@ Ablation experiments verify the necessity of each component:
 ## Related Papers
 
 - [\[ICLR 2026\] Object-Centric World Models from Few-Shot Annotations for Sample-Efficient Reinforcement Learning](object-centric_world_models_from_few-shot_annotations_for_sample-efficient_reinf.md)
+- [\[ICLR 2026\] SSVPO: Toward Effective Step-level Credit Assignment for Language Model RL Training](ssvpo_effective_step-level_credit_assignment_for_rl_training_of_language_models.md)
 - [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](../../ACL2026/reinforcement_learning/healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
 - [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](../../AAAI2026/reinforcement_learning/vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
 - [\[ICLR 2026\] Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective](principled_rl_for_diffusion_llms_emerges_from_a_sequence-level_perspective.md)
-- [\[ICML 2025\] Zero-Shot Generalization of Vision-Based RL Without Data Augmentation](../../ICML2025/reinforcement_learning/zero-shot_generalization_of_vision-based_rl_without_data_augmentation.md)
 
 </div>
 

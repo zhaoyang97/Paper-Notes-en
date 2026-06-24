@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DBLoss: Decomposition-based Loss Function for Time Series Forecasting
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Time Series Forecasting] This paper proposes DBLoss—a general-purpose loss function based on exponential moving average (EMA) decomposition. During loss computation…
+  [NeurIPS 2025][Autonomous Driving][Time Series Forecasting] This paper proposes DBLoss—a general-purpose loss function based on exponential moving average (EMA) decomposition. During loss computation, both predictions and ground-truth values are decomposed into seasonal and trend components within the forecasting horizon, and losses are computed separately for each component. DBLoss serves as a plug-and-play replacement for MSE and consistently improves any deep learning fore…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "EMA"
   - "General-Purpose Loss"
 date: 2026-05-08
-content_hash: df9b634397ef14fe
+content_hash: aa3b799f3ac535ec
 ---
 
 # DBLoss: Decomposition-based Loss Function for Time Series Forecasting
@@ -135,7 +135,7 @@ DBLoss outperforms MSE across **all** backbones and **the vast majority** of dat
 - [\[NeurIPS 2025\] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset](chronograph_a_real-world_graph-based_multivariate_time_series_dataset.md)
 - [\[NeurIPS 2025\] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion](layer-wise_modality_decomposition_for_interpretable_multimodal_sensor_fusion.md)
 - [\[ICML 2026\] TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models](../../ICML2026/autonomous_driving/tsrbench_a_comprehensive_multi-task_multi-modal_time_series_reasoning_benchmark_.md)
-- [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](../../ICCV2025/autonomous_driving/future-aware_interaction_network_for_motion_forecasting.md)
+- [\[CVPR 2025\] Point-to-Region Loss for Semi-Supervised Point-Based Crowd Counting](../../CVPR2025/autonomous_driving/point-to-region_loss_for_semi-supervised_point-based_crowd_counting.md)
 
 </div>
 

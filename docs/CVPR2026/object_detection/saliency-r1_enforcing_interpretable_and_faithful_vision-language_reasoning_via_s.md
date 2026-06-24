@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward
 description: >-
-  [CVPR 2026][Object Detection][Vision-Language Model] This paper proposes Saliency-R1, which leverages an efficient saliency map technique based on logit decomposition and Chain-of-Thought (CoT) bottleneck attention backtracking. By using the alignment between saliency maps and human-annotated bounding boxes as a GRPO reward, the model is trained to focus on task-relevant
+  [CVPR 2026][Object Detection][Vision-Language Models] This paper proposes Saliency-R1, which leverages an efficient saliency map technique based on logit decomposition and Chain-of-Thought (CoT) bottleneck attention backtracking. By using the alignment between saliency maps and human-annotated bounding boxes as a GRPO reward, the model is trained to focus on task-relevant image regions during inference, enhancing the interpretability and faithfulness of VLM reasoning.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Vision-Language Models"
+  - "Saliency Map"
+  - "GRPO Reinforcement Learning"
+  - "Interpretable Reasoning"
+  - "Attention Alignment"
 date: 2026-05-08
-content_hash: b96b7c26d5ee9a78
+content_hash: d841d2bbf349837e
 ---
+
 # Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward
 
 **Conference**: CVPR 2026  
@@ -146,7 +151,7 @@ On COCO Captions, the deletion metric is 5.46%/4.77%/2.57% lower than the second
 
 ## Related Papers
 
-- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
+- [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
 - [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
 - [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)

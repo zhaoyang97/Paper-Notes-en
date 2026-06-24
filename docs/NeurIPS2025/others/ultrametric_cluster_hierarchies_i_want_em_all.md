@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ultrametric Cluster Hierarchies: I Want 'em All!
 description: >-
-  [NeurIPS 2025][hierarchical clustering] This paper proves that for any reasonable cluster hierarchy tree, one can efficiently find the optimal solution to any center-based clustering objective (e.g., k-means)…
+  [NeurIPS 2025][hierarchical clustering] This paper proves that for any reasonable cluster hierarchy tree, one can efficiently find the optimal solution to any center-based clustering objective (e.g., k-means), and that these solutions are themselves hierarchical — thereby unlocking a large family of equally meaningful hierarchical structures from a single tree.
 tags:
   - "NeurIPS 2025"
   - "hierarchical clustering"
@@ -11,7 +11,7 @@ tags:
   - "optimal partition"
   - "dendrogram"
 date: 2026-05-08
-content_hash: 7d8a2a5c7d064bdc
+content_hash: 989c17d4ab30c8b7
 ---
 
 # Ultrametric Cluster Hierarchies: I Want 'em All!
@@ -155,11 +155,11 @@ where $\text{Cuts}(T)$ denotes the set of all valid $k$-partitions induced by cu
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)
 - [\[ICCV 2025\] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval](../../ICCV2025/others/learning_visual_hierarchies_in_hyperbolic_space_for_image_retrieval.md)
-- [\[AAAI 2026\] Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering](../../AAAI2026/others/break_the_tie_learning_cluster-customized_category_relationships_for_categorical.md)
-- [\[ICCV 2025\] A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition](../../ICCV2025/others/a_hyperdimensional_one_place_signature_to_represent_them_all_stackable_descripto.md)
-- [\[AAAI 2026\] Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration](../../AAAI2026/others/align_when_they_want_complement_when_they_need_human-centere.md)
+- [\[NeurIPS 2025\] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)
+- [\[ACL 2025\] CoAM: Corpus of All-Type Multiword Expressions](../../ACL2025/others/coam_corpus_of_all-type_multiword_expressions.md)
+- [\[ICML 2025\] Revisiting Instance-Optimal Cluster Recovery in the Labeled Stochastic Block Model](../../ICML2025/others/revisiting_instance-optimal_cluster_recovery_in_the_labeled_stochastic_block_mod.md)
+- [\[ACL 2025\] All That Glitters is Not Novel: Plagiarism in AI Generated Research](../../ACL2025/others/plagiarism_ai_generated_research.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching
 description: >-
-  [ICLR 2026][Computational Biology][Flow Matching] La-Proteina utilizes a "partially latent" representation—explicitly modeling $\alpha$-carbon coordinates while compressing other atomistic details and sequences into a fixed-dimension per-residue latent variable. This approach transforms the mixed discrete-continuous and variable-dimension challenge of all-atom protein
+  [ICLR 2026][Computational Biology][All-atom protein design] La-Proteina utilizes a "partially latent" representation—explicitly modeling $\alpha$-carbon coordinates while compressing other atomistic details and sequences into a fixed-dimension per-residue latent variable. This approach transforms the mixed discrete-continuous and variable-dimension challenge of all-atom protein modeling into a pure continuous, fixed-dimension problem. By applying flow matching to jointly gene…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Flow Matching
-  - motif scaffolding
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "All-atom protein design"
+  - "partially latent variables"
+  - "flow matching"
+  - "joint sequence-structure generation"
+  - "motif scaffolding"
 date: 2026-05-08
-content_hash: e46ef8d024a57439
+content_hash: bf15a0fdcd0db21a
 ---
+
 # La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching
 
 **Conference**: ICLR 2026  
@@ -126,9 +130,9 @@ Ours significantly outperforms all baselines in co-designability, designability,
 
 - [\[ICLR 2026\] Riemannian Variational Flow Matching for Material and Protein Design](riemannian_variational_flow_matching_for_material_and_protein_design.md)
 - [\[ICML 2026\] LineageFlow: Flow Matching for High-Fidelity Family-Aware Protein Sequence Generation](../../ICML2026/computational_biology/lineageflow_flow_matching_for_high-fidelity_family-aware_protein_sequence_genera.md)
+- [\[ICLR 2026\] Interpolation-Based Conditioning of Flow Matching Models for Bioisosteric Ligand Design](interpolation-based_conditioning_of_flow_matching_models_for_bioisosteric_ligand.md)
 - [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
 - [\[ICLR 2026\] Flow Autoencoders are Effective Protein Tokenizers](flow_autoencoders_are_effective_protein_tokenizers.md)
-- [\[ICLR 2026\] Multi-Marginal Flow Matching with Adversarially Learnt Interpolants](multi-marginal_flow_matching_with_adversarially_learnt_interpolants.md)
 
 </div>
 

@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Noise Tolerance of Distributionally Robust Learning
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper reveals that mainstream Wasserstein Distributionally Robust Learning (WDRL) provides no robustness gain against global additive noise when the regression function is non-convex or non-Lipschitz. Consequently, it proposes Wasserstein Batch Matching (WBM), which is independent of model architecture. WBM perfor
+  [ICLR 2026][Learning Theory][Wasserstein Distance] This paper reveals that mainstream Wasserstein Distributionally Robust Learning (WDRL) provides no robustness gain against global additive noise when the regression function is non-convex or non-Lipschitz. Consequently, it proposes Wasserstein Batch Matching (WBM), which is independent of model architecture. WBM performs optimal transport matching between the predicted distribution and the response distribution within a batch…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Distributionally Robust Optimization"
+  - "Noise-Robust Regression"
+  - "Wasserstein Distance"
+  - "Distributionally Robust Learning (WDRL)"
+  - "Additive Noise Robustness"
+  - "Operator Learning"
+  - "Noise Scale Analysis"
 date: 2026-05-08
-content_hash: 7b31ae6093c5f82e
+content_hash: 27f944a625e3dedf
 ---
+
 # Noise Tolerance of Distributionally Robust Learning
 
 **Conference**: ICLR 2026  

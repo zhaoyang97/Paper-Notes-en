@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Gradient-Direction-Aware Density Control for 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] GDAGS identifies that 3DGS density control considers only the "magnitude" of view-space gradients while ignoring the "direction." It proposes the Gradient Consistency Ratio (GCR) and a nonlinear dynamic weighting rule to prioritize splitting large Gaussians with direction conflicts and cloning small Gaussians with cons
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] GDAGS identifies that 3DGS density control considers only the "magnitude" of view-space gradients while ignoring the "direction." It proposes the Gradient Consistency Ratio (GCR) and a nonlinear dynamic weighting rule to prioritize splitting large Gaussians with direction conflicts and cloning small Gaussians with consistent directions. This simultaneously alleviates over-reconstruction and over-densification…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Adaptive Density Control"
+  - "Gradient Direction"
+  - "Over-reconstruction"
+  - "Over-densification"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: e0a4379709d7b810
+content_hash: 816a8258e95114ae
 ---
+
 # Gradient-Direction-Aware Density Control for 3D Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -122,10 +128,10 @@ Key Takeaway: On Mip-NeRF360, GDAGS ranks first across all metrics, with LPIPS s
 ## Related Papers
 
 - [\[ECCV 2024\] Pixel-GS: Density Control with Pixel-aware Gradient for 3D Gaussian Splatting](../../ECCV2024/3d_vision/pixel-gs_density_control_with_pixel-aware_gradient_for_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
 - [\[NeurIPS 2025\] DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting](../../NeurIPS2025/3d_vision/dc4gs_directional_consistency-driven_adaptive_density_control_for_3d_gaussian_sp.md)
-- [\[ICLR 2026\] Horseshoe Splatting: Handling Structural Sparsity for Uncertainty-Aware Gaussian-Splatting Radiance Field Rendering](horseshoe_splatting_handling_structural_sparsity_for_uncertainty-aware_gaussian-.md)
-- [\[ICLR 2026\] From Tokens to Nodes: Semantic-Guided Motion Control for Dynamic 3D Gaussian Splatting](from_tokens_to_nodes_semantic-guided_motion_control_for_dynamic_3d_gaussian_spla.md)
-- [\[ICLR 2026\] SMAGA: Secondary Motion-Aware 3D Clothed Gaussian Avatars from Monocular Videos](smaga_secondary_motion-aware_3d_clothed_gaussian_avatars_from_monocular_videos.md)
+- [\[CVPR 2026\] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction](../../CVPR2026/3d_vision/stavatar_soft_binding_and_temporal_density_control_for_monocular_3d_head_avatars.md)
+- [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
 
 </div>
 

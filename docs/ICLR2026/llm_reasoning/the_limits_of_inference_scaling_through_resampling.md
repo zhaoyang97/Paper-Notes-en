@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Limits of Inference Scaling Through Resampling
 description: >-
-  [ICLR 2026][LLM Reasoning][Test-Time Compute] This paper demonstrates both theoretically and empirically that when verifiers are imperfect (e.g., incomplete unit test coverage, non-zero false positive rates), scaling inference compute through "repeated sampling until passing a verifier" hits an **insurmountable accuracy ceiling**. Regardless of the compute budget
+  [ICLR 2026][Reasoning][Inference Scaling] This paper demonstrates both theoretically and empirically that when verifiers are imperfect (e.g., incomplete unit test coverage, non-zero false positive rates), scaling inference compute through "repeated sampling until passing a verifier" hits an **insurmountable accuracy ceiling**. Regardless of the compute budget allocated to a weak model, it cannot match the single-call accuracy of a sufficiently strong model…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Test-Time Compute
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Inference Scaling"
+  - "Resampling"
+  - "Imperfect Verifier"
+  - "False Positive"
+  - "Test-time Compute"
 date: 2026-05-08
-content_hash: a7cd1a8466abf86b
+content_hash: e6cbc43f9a978928
 ---
+
 # The Limits of Inference Scaling Through Resampling
 
 **Conference**: ICLR 2026  
@@ -134,11 +139,11 @@ This gap is **primarily driven by a small subset of tasks with poor unit tests**
 
 ## Related Papers
 
+- [\[ICML 2026\] UniScale: Adaptive Unified Inference Scaling through Online Joint Optimization of Model Routing and Test-Time Scaling](../../ICML2026/llm_reasoning/uniscale_adaptive_unified_inference_scaling_via_online_joint_optimization_of_mod.md)
 - [\[ICLR 2026\] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models](inftythink_breaking_the_length_limits_of_long-context_reasoning_in_large_languag.md)
 - [\[ACL 2026\] ToolPRM: Fine-Grained Inference Scaling of Structured Outputs for Function Calling](../../ACL2026/llm_reasoning/toolprm_fine-grained_inference_scaling_of_structured_outputs_for_function_callin.md)
+- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
 - [\[ICLR 2026\] Latent Veracity Inference for Identifying Errors in Stepwise Reasoning](latent_veracity_inference_for_identifying_errors_in_stepwise_reasoning.md)
-- [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
-- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 
 </div>
 

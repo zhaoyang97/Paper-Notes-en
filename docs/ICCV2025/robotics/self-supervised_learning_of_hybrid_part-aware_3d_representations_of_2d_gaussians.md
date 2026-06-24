@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-supervised Learning of Hybrid Part-aware 3D Representations of 2D Gaussians and Superquadrics
 description: >-
-  [ICCV 2025][Robotics][Part-aware reconstruction] This paper proposes PartGS, a self-supervised part-aware 3D reconstruction framework that hybridly couples 2D Gaussian Splatting with superquadrics. Through parameter shar…
+  [ICCV 2025][Robotics][Part-aware reconstruction] This paper proposes PartGS, a self-supervised part-aware 3D reconstruction framework that hybridly couples 2D Gaussian Splatting with superquadrics. Through parameter sharing and multiple regularization terms, PartGS achieves simultaneous high-quality geometric decomposition and texture reconstruction, outperforming state-of-the-art methods by 75.9% in reconstruction accuracy and 16.13 dB in PSNR on DTU, ShapeNet…
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "self-supervised"
   - "shape decomposition"
 date: 2026-05-08
-content_hash: edb6d08763dfcd0c
+content_hash: 099ce41c42a644d9
 ---
 
 # Self-supervised Learning of Hybrid Part-aware 3D Representations of 2D Gaussians and Superquadrics
@@ -171,9 +171,9 @@ PartGS demonstrates significant reconstruction accuracy advantages on ShapeNet a
 
 - [\[ICCV 2025\] Weakly-Supervised Learning of Dense Functional Correspondences](weakly-supervised_learning_of_dense_functional_correspondences.md)
 - [\[ICCV 2025\] Selective Contrastive Learning for Weakly Supervised Affordance Grounding](selective_contrastive_learning_for_weakly_supervised_affordance_grounding.md)
-- [\[ICCV 2025\] Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations](bridging_domain_generalization_to_multimodal_domain_generalization_via_unified_r.md)
+- [\[ICLR 2026\] PA3FF: Part-Aware Dense 3D Feature Fields for Generalizable Articulated Object Manipulation](../../ICLR2026/robotics/pa3fflearning_part-aware_dense_3d_feature_field_for_generalizable_articulated_ob.md)
+- [\[CVPR 2026\] Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions](../../CVPR2026/robotics/learning_to_control_physically-simulated_3d_characters_via_generating_and_mimick.md)
 - [\[ICCV 2025\] Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding](adaptive_articulated_object_manipulation_on_the_fly_with_foundation_model_reason.md)
-- [\[ICLR 2026\] OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning](../../ICLR2026/robotics/omnieva_embodied_versatile_planner_via_task-adaptive_3d-grounded_and_embodiment-.md)
 
 </div>
 

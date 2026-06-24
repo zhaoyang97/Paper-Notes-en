@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents
 description: >-
-  [ICML 2026][Dialogue Systems][GRPO] Addressing two major bottlenecks in post-training multi-turn interactive tool-using agents—expensive high-quality data and RL signal degradation from user simulation noise—the authors propose "AReaL-SEA," a self-evolving multi-agent data synthesis pipeline that generates executable verifiers as rewards. Combined with a
+  [ICML 2026][Dialogue Systems][Multi-turn Tool Use] Addressing two major bottlenecks in post-training multi-turn interactive tool-using agents—expensive high-quality data and RL signal degradation from user simulation noise—the authors propose "AReaL-SEA," a self-evolving multi-agent data synthesis pipeline that generates executable verifiers as rewards. Combined with an RL recipe featuring user model SFT, large batches, and dynamic filtering GRPO…
 tags:
-  - ICML 2026
-  - Dialogue Systems
-  - GRPO
+  - "ICML 2026"
+  - "Dialogue Systems"
+  - "Multi-turn Tool Use"
+  - "Verifiable Reward RL"
+  - "Synthetic Data Self-Evolution"
+  - "GRPO"
+  - "User Simulator Fine-tuning"
 date: 2026-05-08
-content_hash: 02265891bafb4a78
+content_hash: 477f15a17cf2f59f
 ---
+
 # From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents
 
 **Conference**: ICML 2026  
@@ -140,10 +145,10 @@ Qwen3-235B matches Gemini 3.0 Pro in Airline and outperforms all models in Telec
 ## Related Papers
 
 - [\[AAAI 2026\] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL](../../AAAI2026/dialogue/teaching_large_language_models_to_maintain_contextual_faithfulness_via_synthetic.md)
+- [\[ICML 2026\] Context-Driven Incremental Compression for Multi-Turn Dialogue Generation](context-driven_incremental_compression_for_multi-turn_dialogue_generation.md)
 - [\[ICLR 2026\] Non-Collaborative User Simulators for Tool Agents](../../ICLR2026/dialogue/non-collaborative_user_simulators_for_tool_agents.md)
-- [\[ACL 2026\] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling](../../ACL2026/dialogue/genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-.md)
 - [\[ICML 2026\] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving](not_all_prefills_are_equal_ppd_disaggregation_for_multi-turn_llm_serving.md)
-- [\[ACL 2025\] Sparse Rewards Can Self-Train Dialogue Agents](../../ACL2025/dialogue/sparse_rewards_can_self-train_dialogue_agents.md)
+- [\[ACL 2026\] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling](../../ACL2026/dialogue/genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-.md)
 
 </div>
 

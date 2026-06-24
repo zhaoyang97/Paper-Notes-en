@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] From Large to Small: Transferring CUDA Optimization Expertise via Reasoning Graph
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] ReGraphT organizes CUDA optimization trajectories accumulated by large models into a reusable "Reasoning Graph." It then uses Monte Carlo Graph Search (MCGS) to guide small models (SLMs) in selecting optimization techniques step-by-step. This allows 7B-scale models to approach the CUDA code generation performance of a
+  [ICLR 2026][Code Intelligence][CUDA Optimization] ReGraphT organizes CUDA optimization trajectories accumulated by large models into a reusable "Reasoning Graph." It then uses Monte Carlo Graph Search (MCGS) to guide small models (SLMs) in selecting optimization techniques step-by-step. This allows 7B-scale models to approach the CUDA code generation performance of a 671B model without training or cloud reliance, achieving an average speedup of 2.33×.
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "CUDA Optimization"
+  - "Small Language Models"
+  - "Reasoning Graph"
+  - "Monte Carlo Graph Search"
+  - "Retrieval-Augmented Generation"
+  - "Privacy-friendly Deployment"
 date: 2026-05-08
-content_hash: 9a406a3749bca977
+content_hash: 0665f17db1fe2674
 ---
+
 # From Large to Small: Transferring CUDA Optimization Expertise via Reasoning Graph
 
 **Conference**: ICLR 2026  
@@ -132,10 +139,10 @@ Across three SLMs, ReGraphT-MCGS achieved an average pass@k of 73.3%, outperform
 ## Related Papers
 
 - [\[ICLR 2026\] Evolving Graph Structured Programs for Circuit Generation with Large Language Models](evolving_graph_structured_programs_for_circuit_generation_with_large_language_mo.md)
+- [\[ICLR 2026\] RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation](rpg_a_repository_planning_graph_for_unified_and_scalable_codebase_generation.md)
 - [\[ICLR 2026\] A Problem-Oriented Perspective and Anchor Verification for Code Optimization](a_problem-oriented_perspective_and_anchor_verification_for_code_optimization.md)
-- [\[ACL 2025\] GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding](../../ACL2025/code_intelligence/galla_graph_aligned_large_language_models.md)
-- [\[ICLR 2026\] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](reasoningbank_scaling_agent_self-evolving_with_reasoning_memory.md)
 - [\[AAAI 2026\] SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models](../../AAAI2026/code_intelligence/span_benchmarking_and_improving_cross-calendar_temporal_reasoning_of_large_langu.md)
+- [\[ACL 2025\] GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding](../../ACL2025/code_intelligence/galla_graph_aligned_large_language_models.md)
 
 </div>
 

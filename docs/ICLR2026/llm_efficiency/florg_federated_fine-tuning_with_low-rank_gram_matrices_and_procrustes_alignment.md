@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment
 description: >-
-  [ICLR 2026][LLM Efficiency][LoRA] FLoRG reparameterizes the two low-rank matrices of LoRA into a single low-rank matrix and aggregates only its Gram matrix. This transforms server-side aggregation from a "biased bilinear operation" into an "unbiased linear operation." It then employs Procrustes alignment to resolve the drift caused by non-unique decomp
+  [ICLR 2026][LLM Efficiency][Federated Fine-tuning] FLoRG reparameterizes the two low-rank matrices of LoRA into a single low-rank matrix and aggregates only its Gram matrix. This transforms server-side aggregation from a "biased bilinear operation" into an "unbiased linear operation." It then employs Procrustes alignment to resolve the drift caused by non-unique decomposition, simultaneously eliminating aggregation errors, reducing communication overhead (up to 2041×)…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Federated Fine-tuning"
+  - "LoRA"
+  - "Gram Matrix"
+  - "Procrustes Alignment"
+  - "Communication Efficiency"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: 347683b559ce67d8
+content_hash: 9d5bee2507dd019c
 ---
+
 # FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment
 
 **Conference**: ICLR 2026  

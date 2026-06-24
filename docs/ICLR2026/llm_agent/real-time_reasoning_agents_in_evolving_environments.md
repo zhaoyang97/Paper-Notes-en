@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Real-Time Reasoning Agents in Evolving Environments
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] This paper introduces the new problem of "real-time reasoning"—where the environment continues to evolve while the agent is thinking—and constructs the Real-Time Reasoning Gym to measure it. Furthermore, it proposes AgileThinker, which runs a "planning thread" and a "reaction thread" in parallel. The reaction thread ca
+  [ICLR 2026][LLM Agent][Real-time reasoning] This paper introduces the new problem of "real-time reasoning"—where the environment continues to evolve while the agent is thinking—and constructs the Real-Time Reasoning Gym to measure it. Furthermore, it proposes AgileThinker, which runs a "planning thread" and a "reaction thread" in parallel. The reaction thread can read the ongoing intermediate thoughts of the planning thread, consistently outperforming single-paradigm agents a…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Real-time reasoning"
+  - "dynamic environments"
+  - "reactive agents"
+  - "planning agents"
+  - "dual-threading"
 date: 2026-05-08
-content_hash: 4acf2b39f9c3691e
+content_hash: 909ef068041a274a
 ---
+
 # Real-Time Reasoning Agents in Evolving Environments
 
 **Conference**: ICLR 2026  
@@ -145,11 +151,11 @@ Wall-clock time validation ($T_E=6$ minutes, approx. 8k tokens/step, using measu
 
 ## Related Papers
 
-- [\[ICLR 2026\] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments](gaia2_benchmarking_llm_agents_on_dynamic_and_asynchronous_environments.md)
 - [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
-- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
+- [\[ICLR 2026\] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments](gaia2_benchmarking_llm_agents_on_dynamic_and_asynchronous_environments.md)
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](reveal_self-evolving_code_agents_via_reliable_self-verification.md)
 - [\[ACL 2026\] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents](../../ACL2026/llm_agent/zara_training-free_motion_time-series_reasoning_via_evidence-grounded_llm_agents.md)
-- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
+- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
 
 </div>
 

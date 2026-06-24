@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization
 description: >-
-  [ACL 2026][Information Retrieval & RAG][GRPO] CW-GRPO redefines process supervision as "advantage redistribution": using an LLM judge to evaluate the retrieval utility and reasoning correctness of each search round, calculating contribution scores to scale outcome-based advantages. This achieves turn-level credit assignment without introducing unstable value funct
+  [ACL 2026][Information Retrieval & RAG][Search Agents] CW-GRPO redefines process supervision as "advantage redistribution": using an LLM judge to evaluate the retrieval utility and reasoning correctness of each search round, calculating contribution scores to scale outcome-based advantages. This achieves turn-level credit assignment without introducing unstable value functions, outperforming standard GRPO by 5.0% on Qwen3-8B.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - GRPO
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Search Agents"
+  - "GRPO"
+  - "Contribution Weighting"
+  - "Process Supervision"
+  - "Credit Assignment"
 date: 2026-05-08
-content_hash: 64b9472361a495fe
+content_hash: ad19240acf6ddd52
 ---
+
 # Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization
 
 **Conference**: ACL 2026  
@@ -124,8 +129,8 @@ The policy is optimized using the clipped surrogate objective $\mathcal{L}(\thet
 
 - [\[ACL 2026\] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning](end-to-end_optimization_of_llm-driven_multi-agent_search_systems_via_heterogeneo.md)
 - [\[ACL 2026\] Can Compact Language Models Search Like Agents? Distillation-Guided Policy Optimization for Preserving Agentic RAG Capabilities](can_compact_language_models_search_like_agents_distillation-guided_policy_optimi.md)
+- [\[ICLR 2026\] Bridging Draft Policy Misalignment: Group Tree Optimization for Speculative Decoding](../../ICLR2026/information_retrieval/bridging_draft_policy_misalignment_group_tree_optimization_for_speculative_decod.md)
 - [\[ACL 2026\] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines](from_relevance_to_authority_authority-aware_generative_retrieval_in_web_search_e.md)
-- [\[ICML 2026\] ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards](../../ICML2026/information_retrieval/reseek_a_self-correcting_framework_for_search_agents_with_instructive_rewards.md)
 - [\[ACL 2026\] Rerank Before You Reason: Analyzing Reranking Tradeoffs through Effective Token Cost in Deep Search Agents](rerank_before_you_reason_analyzing_reranking_tradeoffs_through_effective_token_c.md)
 
 </div>

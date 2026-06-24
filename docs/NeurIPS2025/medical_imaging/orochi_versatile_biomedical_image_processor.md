@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Orochi: Versatile Biomedical Image Processor
 description: >-
-  [NeurIPS 2025][Medical Imaging][Biomedical image processing] This paper proposes Orochi—the first general-purpose foundation model for low-level biomedical image processing. Through Task-related Joint-embedding Pre-train…
+  [NeurIPS 2025 Spotlight][Medical Imaging][Biomedical image processing] This paper proposes Orochi—the first general-purpose foundation model for low-level biomedical image processing. Through Task-related Joint-embedding Pre-training (TJP) and a Multi-head Hierarchy Mamba architecture, Orochi matches or surpasses task-specific state-of-the-art models across four tasks—registration, fusion, restoration, and super-resolution—with lightweight fine-tuning of fewer than 5% of para…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Medical Imaging"
   - "Biomedical image processing"
   - "general-purpose foundation model"
@@ -12,7 +12,7 @@ tags:
   - "Mamba"
   - "image registration/fusion/restoration/super-resolution"
 date: 2026-05-08
-content_hash: 0e58d597c637bd05
+content_hash: 8be2a94fc1957a36
 ---
 
 # Orochi: Versatile Biomedical Image Processor
@@ -168,10 +168,10 @@ TJP outperforms MAE by 12.4 Dice points on registration, strongly validating the
 ## Related Papers
 
 - [\[NeurIPS 2025\] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains](pancakes_consistent_multi-protocol_image_segmentation_across_biomedical_domains.md)
-- [\[NeurIPS 2025\] Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing](unpaired_image-to-image_translation_for_segmentation_and_signal_unmixing.md)
+- [\[CVPR 2026\] OralGPT-Omni: A Versatile Dental Multimodal Large Language Model](../../CVPR2026/medical_imaging/oralgpt-omni_a_versatile_dental_multimodal_large_language_model.md)
+- [\[ECCV 2024\] RadEdit: Stress-Testing Biomedical Vision Models via Diffusion Image Editing](../../ECCV2024/medical_imaging/radedit_stress-testing_biomedical_vision_models_via_diffusion_image_editing.md)
+- [\[CVPR 2026\] LLaDA-MedV: Exploring Large Language Diffusion Models for Biomedical Image Understanding](../../CVPR2026/medical_imaging/llada-medv_exploring_large_language_diffusion_models_for_biomedical_image_unders.md)
 - [\[ICCV 2025\] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance](../../ICCV2025/medical_imaging/multiverseg_scalable_interactive_segmentation_of_biomedical_imaging_datasets_wit.md)
-- [\[NeurIPS 2025\] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation](mamba_goes_home_hierarchical_soft_mixture-of-experts_for_3d_medical_image_segmen.md)
-- [\[NeurIPS 2025\] The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective](the_boundaries_of_fair_ai_in_medical_image_prognosis_a_causal_perspective.md)
 
 </div>
 

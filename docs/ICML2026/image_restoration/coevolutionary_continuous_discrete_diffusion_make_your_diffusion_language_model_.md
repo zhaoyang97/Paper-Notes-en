@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner
 description: >-
-  [ICML 2026][Image Restoration][Diffusion LM] This paper systematically compares continuous diffusion, discrete masked diffusion, and looped transformers across the dimensions of expressivity and trainability. It proves that "continuous diffusion" is strictly more expressive than discrete diffusion and can simulate looped transformers, but its practical performanc
+  [ICML 2026][Image Restoration][Diffusion LM] This paper systematically compares continuous diffusion, discrete masked diffusion, and looped transformers across the dimensions of expressivity and trainability. It proves that "continuous diffusion" is strictly more expressive than discrete diffusion and can simulate looped transformers, but its practical performance is limited by decoding and representation space. Consequently, the paper proposes **CCDD (Coevolutionary Continuo…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - Diffusion LM
-  - Latent Reasoning
-  - Looped Transformer
-  - CFG
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Diffusion LM"
+  - "Latent Reasoning"
+  - "Joint Continuous-Discrete Diffusion"
+  - "Looped Transformer"
+  - "CFG"
 date: 2026-05-08
-content_hash: e2163cfea3b84629
+content_hash: 11fc1782037234fd
 ---
+
 # Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner
 
 **Conference**: ICML 2026  
@@ -152,7 +154,7 @@ Comparison of 6M models on Sudoku / 3-SAT / Countdown reasoning tasks:
 - [\[ICML 2026\] Plan for Speed: Dilated Scheduling for Masked Diffusion Language Models](plan_for_speed_dilated_scheduling_for_masked_diffusion_language_models.md)
 - [\[CVPR 2026\] Language-Guided One-Step Diffusion Model for Nighttime Flare Removal](../../CVPR2026/image_restoration/language-guided_one-step_diffusion_model_for_nighttime_flare_removal.md)
 - [\[ICML 2026\] PODiff: Latent Diffusion in Proper Orthogonal Decomposition Space for Scientific Super-Resolution](podiff_latent_diffusion_in_proper_orthogonal_decomposition_space_for_scientific_.md)
-- [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
+- [\[ICML 2026\] Measurement-Consistent Langevin Corrector for Stabilizing Latent Diffusion Inverse Problem Solvers](measurement-consistent_langevin_corrector_for_stabilizing_latent_diffusion_inver.md)
 
 </div>
 

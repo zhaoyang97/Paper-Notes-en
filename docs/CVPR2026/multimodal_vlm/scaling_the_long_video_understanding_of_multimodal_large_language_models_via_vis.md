@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The authors propose FlexMem, a training-free visual memory mechanism that constructs a visual memory bank through iterative dual-path KV cache compression. Combined with encoding-based and fast-indexing memory retrieval strategies, it enables MLLMs to process long videos exceeding 1000 frames on a single NVIDIA RTX 309
+  [CVPR2026][Multimodal VLM][Long Video Understanding] The authors propose FlexMem, a training-free visual memory mechanism that constructs a visual memory bank through iterative dual-path KV cache compression. Combined with encoding-based and fast-indexing memory retrieval strategies, it enables MLLMs to process long videos exceeding 1000 frames on a single NVIDIA RTX 3090 GPU, significantly outperforming existing efficient video understanding methods.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Long Video Understanding"
+  - "Visual Memory"
+  - "KV Cache Compression"
+  - "Training-free"
+  - "Streaming Video"
 date: 2026-05-08
-content_hash: 683027513ad20252
+content_hash: 54f907dc2ef1270f
 ---
+
 # Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism
 
 **Conference**: CVPR2026  
@@ -137,10 +143,10 @@ A bottleneck in encoding-based retrieval is the need to re-run encoding for ever
 ## Related Papers
 
 - [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
-- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
 - [\[CVPR 2025\] Video-XL: Extra-Long Vision Language Model for Hour-Scale Video Understanding](../../CVPR2025/multimodal_vlm/video-xl_extra-long_vision_language_model_for_hour-scale_video_understanding.md)
 - [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
+- [\[CVPR 2026\] MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models](modix_a_training-free_multimodal_information-driven_positional_index_scaling_for.md)
+- [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
 
 </div>
 

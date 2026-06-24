@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Space-sampled Value Decay: Forgetting Mechanisms for Non-stationary Deep Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][DQN] For non-stationary reinforcement learning scenarios where the environment silently "drifts" without task IDs or context prompts, this paper proposes **Space-sampled Value Decay (SsVD)**. By sampling from the state space and continuously decaying the Q-values of "unvisited or stale" states toward a baseline, the agent a
+  [ICML2026 (EIML Workshop)][Reinforcement Learning][Non-stationary RL] For non-stationary reinforcement learning scenarios where the environment silently "drifts" without task IDs or context prompts, this paper proposes **Space-sampled Value Decay (SsVD)**. By sampling from the state space and continuously decaying the Q-values of "unvisited or stale" states toward a baseline, the agent actively forgets outdated knowledge, thereby maintaining high returns in dynamically changi…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - DQN
-  - SAC
+  - "ICML2026 (EIML Workshop)"
+  - "Reinforcement Learning"
+  - "Non-stationary RL"
+  - "Forgetting Mechanisms"
+  - "Value Decay"
+  - "DQN"
+  - "SAC"
 date: 2026-05-08
-content_hash: 36fbc738ab26ab62
+content_hash: 8abddec5a556c38d
 ---
+
 # Space-sampled Value Decay: Forgetting Mechanisms for Non-stationary Deep Reinforcement Learning
 
 **Conference**: ICML2026 (EIML Workshop)  
@@ -153,10 +157,10 @@ An interesting finding: when **gSDE exploration is disabled** in MountainCarCont
 ## Related Papers
 
 - [\[ICML 2026\] Tracking Drift: Variation-Aware Entropy Scheduling for Non-Stationary Reinforcement Learning](tracking_drift_variation-aware_entropy_scheduling_for_non-stationary_reinforceme.md)
+- [\[ICLR 2026\] Wavelet Predictive Representations for Non-Stationary Reinforcement Learning](../../ICLR2026/reinforcement_learning/wavelet_predictive_representations_for_non-stationary_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](../../NeurIPS2025/reinforcement_learning/solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
 - [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](../../NeurIPS2025/reinforcement_learning/forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
-- [\[ICML 2026\] Hista and Numca: Estimate State Value Effectively for LLM Reinforcement Learning](hista_and_numca_estimate_state_value_effectively_for_llm_reinforcement_learning.md)
-- [\[ICML 2025\] Non-stationary Online Learning for Curved Losses: Improved Dynamic Regret via Mixability](../../ICML2025/reinforcement_learning/non-stationary_online_learning_for_curved_losses_improved_dynamic_regret_via_mix.md)
+- [\[ICLR 2026\] The Rank and Gradient Lost in Non-stationarity: Sample Weight Decay for Mitigating Plasticity Loss in Reinforcement Learning](../../ICLR2026/reinforcement_learning/the_rank_and_gradient_lost_in_non-stationarity_sample_weight_decay_for_mitigatin.md)
 
 </div>
 

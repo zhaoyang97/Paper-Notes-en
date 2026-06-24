@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] The COG framework is proposed to model cross-view correspondences as a confidence-aware Optimal Transport (OT) problem. By predicting point-wise confidence as transport marginal constraints, it suppresses non-overlapping regions and outliers, achieving single-reference 6DoF pose estimation for novel objects under unsup
+  [CVPR2026][Human Understanding][Novel object pose estimation] The COG framework is proposed to model cross-view correspondences as a confidence-aware Optimal Transport (OT) problem. By predicting point-wise confidence as transport marginal constraints, it suppresses non-overlapping regions and outliers, achieving single-reference 6DoF pose estimation for novel objects under unsupervised conditions that is comparable to supervised methods.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Novel object pose estimation"
+  - "Optimal Transport"
+  - "Confidence learning"
+  - "Unsupervised learning"
+  - "Point cloud registration"
+  - "Visual Foundation Models"
 date: 2026-05-08
-content_hash: 87c47f8d0a175464
+content_hash: bc6178f4c7d6eac3
 ---
+
 # COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation
 
 **Conference**: CVPR2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SHOW3D: Capturing Scenes of 3D Hands and Objects in the Wild
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Ours presents SHOW3D, the first hand-object interaction dataset in true in-the-wild environments with precise 3D annotations. By designing a lightweight wearable multi-camera backpack system and an ego-exo fusion annotation pipeline, 4.3 million frames of multi-view data were collected. Both hands and objects achieve s
+  [CVPR 2026][Video Understanding][Hand-object interaction dataset] Ours presents SHOW3D, the first hand-object interaction dataset in true in-the-wild environments with precise 3D annotations. By designing a lightweight wearable multi-camera backpack system and an ego-exo fusion annotation pipeline, 4.3 million frames of multi-view data were collected. Both hands and objects achieve sub-centimeter annotation accuracy. Cross-dataset experiments validate the generalization advan…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Hand-object interaction dataset"
+  - "in-the-wild 3D annotation"
+  - "multi-camera acquisition"
+  - "egocentric vision"
+  - "hand pose estimation"
 date: 2026-05-08
-content_hash: 2394a5fb93e33935
+content_hash: 2bb98a538b692772
 ---
+
 # SHOW3D: Capturing Scenes of 3D Hands and Objects in the Wild
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ Text-driven 6DoF object trajectory prediction (Mean Translation Error mm↓):
 
 ## Related Papers
 
+- [\[CVPR 2026\] CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects](captionformer_unified_segmentation_tracking_and_captioning_for_spatio-temporal_o.md)
 - [\[NeurIPS 2025\] EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes](../../NeurIPS2025/video_understanding/eag3r_event-augmented_3d_geometry_estimation_for_dynamic_and_extreme-lighting_sc.md)
 - [\[CVPR 2026\] MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras](mer-tracker_towards_high-speed_3d_point_tracking_via_multi-view_event-rgb_hybrid.md)
 - [\[ICML 2026\] AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes](../../ICML2026/video_understanding/avtrack_audio-visual_tracking_in_human-centric_complex_scenes.md)
-- [\[CVPR 2026\] Temporally Consistent Long-Term Memory for 3D Single Object Tracking](chronotrack_temporally_consistent_long_term_memory_for_3d_single_object_tracking.md)
 - [\[ECCV 2024\] SemTrack: A Large-Scale Dataset for Semantic Tracking in the Wild](../../ECCV2024/video_understanding/semtrack_a_large-scale_dataset_for_semantic_tracking_in_the_wild.md)
 
 </div>

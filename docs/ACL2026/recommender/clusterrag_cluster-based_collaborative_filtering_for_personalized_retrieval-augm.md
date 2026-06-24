@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Recommender Systems][HDBSCAN] ClusterRAG introduces collaborative filtering into personalized RAG by constructing user representations from historical documents and clustering them with HDBSCAN. It hierarchically retrieves profile documents from both the target user and similar users to compose prompts, enabling the hybrid mode to outperform vanill
+  [ACL2026][Recommender Systems][Personalized RAG] ClusterRAG introduces collaborative filtering into personalized RAG by constructing user representations from historical documents and clustering them with HDBSCAN. It hierarchically retrieves profile documents from both the target user and similar users to compose prompts, enabling the hybrid mode to outperform vanillaRAG, LaMP-IPA, ROPG, and CFRAG across the LaMP multi-task benchmark.
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - HDBSCAN
-  - LaMP
+  - "ACL2026"
+  - "Recommender Systems"
+  - "Personalized RAG"
+  - "Collaborative Filtering"
+  - "User Clustering"
+  - "HDBSCAN"
+  - "LaMP"
 date: 2026-05-08
-content_hash: 43d11e093a7a5ea9
+content_hash: 41c0c0ee8d4fba79
 ---
+
 # ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation
 
 **Conference**: ACL2026  
@@ -137,14 +141,14 @@ The LaMP benchmark includes tasks like personalized citation, movie tagging, pro
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] MemRec: Collaborative Memory-Augmented Agentic Recommender System](memrec_collaborative_memory-augmented_agentic_recommender_system.md)
-- [\[AAAI 2026\] SlideTailor: Personalized Presentation Slide Generation for Scientific Papers](../../AAAI2026/recommender/slidetailor_personalized_presentation_slide_generation_for_scientific_papers.md)
 - [\[ICML 2026\] Rethinking Contrastive Learning for Graph Collaborative Filtering: Limitations and a Simple Remedy](../../ICML2026/recommender/rethinking_contrastive_learning_for_graph_collaborative_filtering_limitations_an.md)
 - [\[NeurIPS 2025\] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens](../../NeurIPS2025/recommender/face_a_general_framework_for_mapping_collaborative_filtering_embeddings_into_llm.md)
+- [\[AAAI 2026\] SlideTailor: Personalized Presentation Slide Generation for Scientific Papers](../../AAAI2026/recommender/slidetailor_personalized_presentation_slide_generation_for_scientific_papers.md)
 - [\[NeurIPS 2025\] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation](../../NeurIPS2025/recommender/semantic_retrieval_augmented_contrastive_learning_for_sequential_recommendation.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LacTokGen: Latent Consistency Tokenizer for 1024-pixel Image Generation by 256 Tokens
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The authors propose the LacTok tokenizer, which aligns discrete visual tokens with the compact latent space of a pretrained LDM. By utilizing consistency models to compress LDM decoder multi-step sampling into 1-2 steps for pixel-level supervision, it reconstructs or generates 1024×1024 images using only 256 tokens (16
+  [CVPR 2026][Image Generation][Discrete Tokenizer] The authors propose the LacTok tokenizer, which aligns discrete visual tokens with the compact latent space of a pretrained LDM. By utilizing consistency models to compress LDM decoder multi-step sampling into 1-2 steps for pixel-level supervision, it reconstructs or generates 1024×1024 images using only 256 tokens (16× more compression than VQGAN). An autoregressive transformer is then integrated to form the text-to-image mod…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Discrete Tokenizer"
+  - "Latent Consistency"
+  - "Autoregressive Generation"
+  - "High Resolution"
+  - "1024-pixel"
 date: 2026-05-08
-content_hash: ccae5af5d3060dc6
+content_hash: 26d49689432542fc
 ---
+
 # LacTokGen: Latent Consistency Tokenizer for 1024-pixel Image Generation by 256 Tokens
 
 **Conference**: CVPR 2026  
@@ -157,10 +163,10 @@ LacTokGen-L* achieves 0.73 on GenEval, surpassing LlamaGen by 0.41 points and SD
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control](beyond_pixel_simulation_pathology_image_generation_via_diagnostic_semantic_token.md)
-- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
 - [\[CVPR 2026\] Your Latent Mask is Wrong: Pixel-Equivalent Latent Compositing for Diffusion Models](your_latent_mask_is_wrong_pixel-equivalent_latent_compositing_for_diffusion_mode.md)
+- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
+- [\[CVPR 2026\] Camera Control for Text-to-Image Generation via Learning Viewpoint Tokens](camera_control_for_text-to-image_generation_via_learning_viewpoint_tokens.md)
 - [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
-- [\[CVPR 2026\] SpeeDiff: Scalable Pixel-Anchored End-to-End Latent Diffusion Model](speediff_scalable_pixel-anchored_end-to-end_latent_diffusion_model.md)
 
 </div>
 

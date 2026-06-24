@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dropping Just a Handful of Preferences Can Change Top Large Language Model Rankings
 description: >-
-  [ICLR 2026][Dialogue Systems][Bradley–Terry] This paper proposes an extremely fast robustness test: on LLM leaderboards based on the Bradley–Terry model (such as Chatbot Arena), removing a tiny **worst-case** subset (as few as 2 preferences or 0.003%) of human evaluations can change the top-ranked model. The method precisely identifies which specific preferences
+  [ICLR2026][Dialogue Systems][Leaderboard Robustness] This paper proposes an extremely fast robustness test: on LLM leaderboards based on the Bradley–Terry model (such as Chatbot Arena), removing a tiny **worst-case** subset (as few as 2 preferences or 0.003%) of human evaluations can change the top-ranked model. The method precisely identifies which specific preferences cause the flip.
 tags:
-  - ICLR 2026
-  - Dialogue Systems
-  - Bradley–Terry
-  - Chatbot Arena
+  - "ICLR2026"
+  - "Dialogue Systems"
+  - "Leaderboard Robustness"
+  - "Data Dropping"
+  - "Bradley–Terry"
+  - "Influence Functions"
+  - "Chatbot Arena"
 date: 2026-05-08
-content_hash: 525a3f336b3e3c37
+content_hash: 7c4464f42817b54b
 ---
+
 # Dropping Just a Handful of Preferences Can Change Top Large Language Model Rankings
 
 **Conference**: ICLR2026  

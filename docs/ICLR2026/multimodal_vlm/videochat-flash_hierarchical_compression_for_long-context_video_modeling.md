@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper proposes HiCo, a hierarchical video token compression method that reduces long video context from the clip level to the video level by approximately $1/50$ (averaging only 16 tokens per frame). Combined with a multi-stage short-to-long training strategy, the LongVid dataset containing 114K long videos, and a
+  [ICLR 2026][Multimodal VLM][Long Video Understanding] This paper proposes HiCo, a hierarchical video token compression method that reduces long video context from the clip level to the video level by approximately $1/50$ (averaging only 16 tokens per frame). Combined with a multi-stage short-to-long training strategy, the LongVid dataset containing 114K long videos, and a more challenging multi-hop NIAH evaluation, VideoChat-Flash achieves better performance than GPT-4o / Gem…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Long Video Understanding"
+  - "Video Token Compression"
+  - "MLLM"
+  - "Hierarchical Compression"
+  - "NIAH Evaluation"
 date: 2026-05-08
-content_hash: 008df307aabfa484
+content_hash: 61e08b6aa8fa2bb5
 ---
+
 # VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling
 
 **Conference**: ICLR 2026  
@@ -146,15 +152,13 @@ Incremental contribution of each design component:
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
+- [\[ICLR 2026\] Threading Keyframe with Narratives: MLLMs as Strong Long Video Comprehenders](threading_keyframe_with_narratives_mllms_as_strong_long_video_comprehenders.md)
 - [\[CVPR 2025\] Video-XL: Extra-Long Vision Language Model for Hour-Scale Video Understanding](../../CVPR2025/multimodal_vlm/video-xl_extra-long_vision_language_model_for_hour-scale_video_understanding.md)
-- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](../../CVPR2026/multimodal_vlm/scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
-- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](../../CVPR2026/multimodal_vlm/remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
 - [\[ICLR 2026\] When MLLMs Meet Compression Distortion: A Coding Paradigm Tailored to MLLMs](when_mllms_meet_compression_distortion_a_coding_paradigm_tailored_to_mllms.md)
+- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](../../CVPR2026/multimodal_vlm/scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
+- [\[ICLR 2026\] GeoBench: Rethinking Multimodal Geometric Problem-Solving via Hierarchical Evaluation](geobench_rethinking_multimodal_geometric_problem-solving_via_hierarchical_evalua.md)
 
 </div>
 

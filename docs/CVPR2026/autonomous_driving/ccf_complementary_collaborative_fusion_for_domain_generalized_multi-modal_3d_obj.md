@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] To address the modal imbalance issue in dual-branch multi-modal 3D detectors under domain shift, the CCF framework is proposed. It systematically improves camera query utilization and cross-domain robustness through three components: decoupled loss, LiDAR-guided depth priors, and complementary cross-modal masking.
+  [CVPR 2026][Autonomous Driving][Multi-modal 3D detection] To address the modal imbalance issue in dual-branch multi-modal 3D detectors under domain shift, the CCF framework is proposed. It systematically improves camera query utilization and cross-domain robustness through three components: decoupled loss, LiDAR-guided depth priors, and complementary cross-modal masking.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Multi-modal 3D detection"
+  - "Domain Generalization"
+  - "Modal Imbalance"
+  - "LiDAR-Camera Fusion"
+  - "Cross-domain Robustness"
 date: 2026-05-08
-content_hash: 913ebcb226a8e56a
+content_hash: 6982a1f9b29cd8c3
 ---
+
 # CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection
 
 **Conference**: CVPR 2026  
@@ -145,7 +151,6 @@ Even with proper supervision and depth, the decoder might still "blindly trust L
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

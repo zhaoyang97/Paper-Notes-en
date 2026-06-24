@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene
 description: >-
-  [NeurIPS 2025][3D Vision][Dynamic scene reconstruction] HAIF-GS proposes a dynamic 3DGS framework built upon sparse motion anchors, achieving state-of-the-art rendering quality on the NeRF-DS and D-NeRF benchmarks via th…
+  [NeurIPS 2025][3D Vision][Dynamic scene reconstruction] HAIF-GS proposes a dynamic 3DGS framework built upon sparse motion anchors, achieving state-of-the-art rendering quality on the NeRF-DS and D-NeRF benchmarks via three key mechanisms: an anchor filter that separates dynamic and static regions, a self-supervised induced scene flow that guides temporally consistent deformation, and hierarchical anchor densification that captures fine-grained non-rigid motion.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "scene flow"
   - "hierarchical deformation"
 date: 2026-05-08
-content_hash: 83991dfd28729815
+content_hash: 9cbe63c58e2d959b
 ---
 
 # HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene
@@ -144,7 +144,7 @@ Averaged across 7 scenes, HAIF-GS surpasses 4DGS by +0.45 dB in PSNR, improves M
 - [\[NeurIPS 2025\] VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment](va-gs_enhancing_the_geometric_representation_of_gaussian_splatting_via_view_alig.md)
 - [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](../../ICCV2025/3d_vision/beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
 - [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](../../CVPR2026/3d_vision/energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
-- [\[NeurIPS 2025\] DGH: Dynamic Gaussian Hair](dgh_dynamic_gaussian_hair.md)
+- [\[ICLR 2026\] ODE-GS: Latent ODEs for Dynamic Scene Extrapolation with 3D Gaussian Splatting](../../ICLR2026/3d_vision/ode-gs_latent_odes_for_dynamic_scene_extrapolation_with_3d_gaussian_splatting.md)
 
 </div>
 

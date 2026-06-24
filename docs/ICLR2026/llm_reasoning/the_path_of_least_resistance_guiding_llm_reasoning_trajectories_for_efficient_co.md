@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency
 description: >-
-  [ICLR 2026][LLM Reasoning][self-consistency] Proposes PoLR (Path of Least Resistance), the first inference-time method leveraging reasoning prefix consistency. By clustering short prefixes and only extending the dominant cluster, it serves as an efficient alternative to Self-Consistency, reducing token usage by up to 60% and latency by 50%.
+  [ICLR 2026][Reasoning][self-consistency] Proposes PoLR (Path of Least Resistance), the first inference-time method leveraging reasoning prefix consistency. By clustering short prefixes and only extending the dominant cluster, it serves as an efficient alternative to Self-Consistency, reducing token usage by up to 60% and latency by 50%.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - self-consistency
-  - inference efficiency
-  - prefix clustering
-  - reasoning
-  - token reduction
+  - "ICLR 2026"
+  - "Reasoning"
+  - "self-consistency"
+  - "inference efficiency"
+  - "prefix clustering"
+  - "token reduction"
 date: 2026-05-08
-content_hash: bb839a2538f45f14
+content_hash: b4a8d0d39bc3e518
 ---
+
 # The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency
 
 **Conference**: ICLR 2026  
@@ -150,10 +150,10 @@ The core insight of PoLR is that **the critical window for optimizing reasoning 
 ## Related Papers
 
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_with_prefix_cons.md)
+- [\[ICLR 2026\] Deep Think with Confidence](deep_think_with_confidence.md)
+- [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](../../ACL2026/llm_reasoning/reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
+- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
 - [\[ICLR 2026\] Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations](rethinking_llm_reasoning_from_explicit_trajectories_to_latent_representations.md)
-- [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
-- [\[ICLR 2026\] Off-Trajectory Reasoning: Can LLMs Collaborate on Reasoning Trajectories?](off-trajectory_reasoning_can_llms_collaborate_on_reasoning_trajectories.md)
-- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
 
 </div>
 

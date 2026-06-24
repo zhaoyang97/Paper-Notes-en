@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Attention Smoothing Is All You Need For Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The authors propose Attention Smoothing Unlearning (ASU), which constructs a forget-teacher by increasing the self-attention softmax temperature. This reformulates unlearning as a self-distillation task—smoothing attention distributions to weaken lexical and semantic associations. This approach erases memorized knowled
+  [ICLR 2026][LLM Safety][LLM unlearning] The authors propose Attention Smoothing Unlearning (ASU), which constructs a forget-teacher by increasing the self-attention softmax temperature. This reformulates unlearning as a self-distillation task—smoothing attention distributions to weaken lexical and semantic associations. This approach erases memorized knowledge while maintaining output coherence, outperforming existing unlearning methods on benchmarks such as TOFU, MUSE…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM unlearning"
+  - "attention smoothing"
+  - "self-distillation"
+  - "privacy protection"
+  - "knowledge unlearning"
 date: 2026-05-08
-content_hash: 16c4ed094d9863ad
+content_hash: e80c9641b9527300
 ---
+
 # Attention Smoothing Is All You Need For Unlearning
 
 **Conference**: ICLR 2026  
@@ -131,11 +137,11 @@ where $\theta_\tau$ is the forget-teacher and $\theta$ is the student. To mainta
 
 ## Related Papers
 
+- [\[ICLR 2026\] Train Once, Answer All: Many Pretraining Experiments for the Cost of One](train_once_answer_all_many_pretraining_experiments_for_the_cost_of_one.md)
+- [\[ICLR 2026\] All Code, No Thought: Language Models Struggle to Reason in Ciphered Language](all_code_no_thought_language_models_struggle_to_reason_in_ciphered_language.md)
+- [\[ICLR 2026\] Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness](understanding_sensitivity_of_differential_attention_through_the_lens_of_adversar.md)
+- [\[CVPR 2025\] Towards All-in-One Medical Image Re-Identification](../../CVPR2025/llm_safety/towards_all-in-one_medical_image_re-identification.md)
 - [\[ICLR 2026\] Multi-Feature Quantized Self-Attention for Fair Large Language Models](multi-feature_quantized_self-attention_for_fair_large_language_models.md)
-- [\[ICLR 2026\] Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models](unmasking_backdoors_an_explainable_defense_via_gradient-attention_anomaly_scorin.md)
-- [\[ICLR 2026\] Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs](unlearning_isnt_invisible_detecting_unlearning_traces_in_llms_from_model_outputs.md)
-- [\[ICLR 2026\] WaterDrum: Watermark-based Data-centric Unlearning Metric](waterdrum_watermark-based_data-centric_unlearning_metric.md)
-- [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](ofmu_optimization-driven_framework_for_machine_unlearning.md)
 
 </div>
 

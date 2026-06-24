@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Effect of Attention Head Count on Transformer Approximation
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proves from an approximation theory perspective that the number of attention heads in a Transformer is not merely an engineering hyperparameter. When the head count $h$ reaches the intrinsic task dimension $D$, generalized retrieval functions can be efficiently approximated. However, when $h < D$, the parame
+  [ICLR2026][Learning Theory][Transformer Approximation Theory] This paper proves from an approximation theory perspective that the number of attention heads in a Transformer is not merely an engineering hyperparameter. When the head count $h$ reaches the intrinsic task dimension $D$, generalized retrieval functions can be efficiently approximated. However, when $h < D$, the parameter count must deteriorate exponentially with the sequence length $T$. These phase transition phen…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Transformer Approximation Theory"
+  - "Number of Attention Heads"
+  - "Expressive Power Lower Bound"
+  - "Retrieval Tasks"
+  - "Sequence Modeling"
 date: 2026-05-08
-content_hash: 6f32242211ea2157
+content_hash: 0ce058bb5d3c5336
 ---
+
 # The Effect of Attention Head Count on Transformer Approximation
 
 **Conference**: ICLR2026  
@@ -197,12 +203,17 @@ Multiple additional settings were tested to confirm the phase transition is not 
 
 <div class="related-papers" markdown="1">
 
-No specific related papers provided.
+## Related Papers
+
+- [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
+- [\[ICLR 2026\] Poly-attention: a general scheme for higher-order self-attention](poly-attention_a_general_scheme_for_higher-order_self-attention.md)
+- [\[ICLR 2026\] Strong Correlations Induce Cause Only Predictions in Transformer Training](strong_correlations_induce_cause_only_predictions_in_transformer_training.md)
+- [\[ICLR 2026\] Subquadratic Algorithms and Hardness for Attention with Any Temperature](subquadratic_algorithms_and_hardness_for_attention_with_any_temperature.md)
+- [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] Addressing the issue where severe staleness of rollout data in asynchronous RL training for LLMs leads to performance degradation or training collapse, this paper first reveals the "Prosperity before Collapse" phenomenon—stale data is as informative as on-policy data, and the key lies in its utilization. The authors pr
+  [ICLR 2026][Reinforcement Learning][RLVR] Addressing the issue where severe staleness of rollout data in asynchronous RL training for LLMs leads to performance degradation or training collapse, this paper first reveals the "Prosperity before Collapse" phenomenon—stale data is as informative as on-policy data, and the key lies in its utilization. The authors propose M2PO, which uses the second moment $M_2$ of importance weights instead of $\epsilon$-clipping to constrain the t…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - importance sampling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Stale data"
+  - "Trust region"
+  - "Second moment"
+  - "Importance sampling"
 date: 2026-05-08
-content_hash: b7a08c1f6ae3dcdd
+content_hash: ccc014c68497c6d6
 ---
+
 # Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?
 
 **Conference**: ICLR 2026  
@@ -135,8 +139,8 @@ The clipping rate acts as a proxy for performance: M2PO reduces clipping to on-p
 - [\[ICLR 2026\] How Far Can Unsupervised RLVR Scale LLM Training?](how_far_can_unsupervised_rlvr_scale_llm_training.md)
 - [\[ICLR 2026\] RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?](rl_grokking_recipe_how_does_rl_unlock_and_transfer_new_algorithms_in_llms.md)
 - [\[ACL 2026\] RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization](../../ACL2026/reinforcement_learning/rl-plus_countering_capability_boundary_collapse_of_llms_in_reinforcement_learnin.md)
-- [\[ICLR 2026\] Mirage or Method? How Model–Task Alignment Induces Divergent RL Conclusions](mirage_or_method_how_modeltask_alignment_induces_divergent_rl_conclusions.md)
 - [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
+- [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
 
 </div>
 

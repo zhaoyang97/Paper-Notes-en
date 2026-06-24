@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sharing State Between Prompts and Programs
 description: >-
-  [ICLR 2026][Code Intelligence][Nightjar] The authors propose the abstraction of shared program state, allowing prompts to directly read/write program variables, manipulate heap objects, and control program flow. This is implemented as the Nightjar system (Python + prompt mixed programming), which reduces code volume by 39.6% while maintaining or improving acc
+  [ICLR 2026][Code Intelligence][Shared program state] The authors propose the abstraction of shared program state, allowing prompts to directly read/write program variables, manipulate heap objects, and control program flow. This is implemented as the Nightjar system (Python + prompt mixed programming), which reduces code volume by 39.6% while maintaining or improving accuracy (+4-19%).
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - Nightjar
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Shared program state"
+  - "Natural language programming"
+  - "prompt-program interoperability"
+  - "Nightjar"
+  - "Programming abstractions"
 date: 2026-05-08
-content_hash: e84b237673534afa
+content_hash: c4c47fca44dbf177
 ---
+
 # Sharing State Between Prompts and Programs
 
 **Conference**: ICLR 2026  

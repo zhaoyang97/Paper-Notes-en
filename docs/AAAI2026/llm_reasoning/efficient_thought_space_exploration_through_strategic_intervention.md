@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Efficient Thought Space Exploration Through Strategic Intervention
 description: >-
-  [AAAI 2026][LLM Reasoning][Reasoning Efficiency] This paper proposes the Hint-Practice Reasoning (HPR) framework, in which a large model (hinter) provides short hints at sparse critical tokens while a small model (practi…
+  [AAAI 2026][Reasoning][Reasoning Efficiency] This paper proposes the Hint-Practice Reasoning (HPR) framework, in which a large model (hinter) provides short hints at sparse critical tokens while a small model (practitioner) handles the majority of the reasoning. HPR achieves performance comparable to the self-consistency baseline using only 1/5 of the tokens, and improves accuracy by up to 5.1% under the same FLOPs budget.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Reasoning Efficiency"
   - "Large-Small Model Collaboration"
   - "Thought Space Exploration"
   - "Distributional Inconsistency"
   - "Tree-Structured Reasoning"
 date: 2026-05-08
-content_hash: 2a0110d69656c74e
+content_hash: ca16263b8161645f
 ---
 
 # Efficient Thought Space Exploration Through Strategic Intervention
@@ -186,9 +186,9 @@ The reasoning process is structured as a tree and expanded through an iterative 
 
 - [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](../../ACL2026/llm_reasoning/reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
 - [\[AAAI 2026\] L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention](l2v-cot_cross-modal_transfer_of_chain-of-thought_reasoning_v.md)
+- [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](../../ICLR2026/llm_reasoning/attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
 - [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](../../ICLR2026/llm_reasoning/continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
-- [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](../../ACL2026/llm_reasoning/long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](../../ICLR2026/llm_reasoning/towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
+- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](../../ACL2026/llm_reasoning/foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 
 </div>
 

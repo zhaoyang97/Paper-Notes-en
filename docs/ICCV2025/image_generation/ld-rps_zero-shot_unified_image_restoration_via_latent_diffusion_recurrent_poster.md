@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LD-RPS: Zero-Shot Unified Image Restoration via Latent Diffusion Recurrent Posterior Sampling
 description: >-
-  [ICCV 2025][Image Generation][Zero-shot image restoration] LD-RPS proposes a zero-shot, dataset-free unified image restoration method that performs recurrent posterior sampling via a pretrained latent diffusion model. It…
+  [ICCV 2025][Image Generation][Zero-shot image restoration] LD-RPS proposes a zero-shot, dataset-free unified image restoration method that performs recurrent posterior sampling via a pretrained latent diffusion model. It leverages multimodal large language models for semantic priors and a learnable F-PAM module to align the degradation domain, achieving high-quality blind restoration across diverse degradation types.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "recurrent refinement"
   - "multimodal prior"
 date: 2026-05-08
-content_hash: ed825afbae2a242c
+content_hash: ae51e4de3cdf22bb
 ---
 
 # LD-RPS: Zero-Shot Unified Image Restoration via Latent Diffusion Recurrent Posterior Sampling
@@ -180,10 +180,10 @@ Textual priors yield significant improvements across all tasks, most notably for
 ## Related Papers
 
 - [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
+- [\[CVPR 2025\] Zero-Shot Image Restoration Using Few-Step Guidance of Consistency Models (and Beyond)](../../CVPR2025/image_generation/zero-shot_image_restoration_using_few-step_guidance_of_consistency_models_and_be.md)
 - [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](anyportal_zero-shot_consistent_video_background_replacement.md)
 - [\[ICCV 2025\] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing](early_timestep_zero-shot_candidate_selection_for_instruction-guided_image_editin.md)
 - [\[ICCV 2025\] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability](dynamicid_zero-shot_multi-id_image_personalization_with_flexible_facial_editabil.md)
-- [\[ICCV 2025\] MotionDiff: Training-Free Zero-Shot Interactive Motion Editing via Flow-Assisted Multi-View Diffusion](motiondiff_training-free_zero-shot_interactive_motion_editing_via_flow-assisted_.md)
 
 </div>
 

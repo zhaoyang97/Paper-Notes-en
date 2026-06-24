@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Visual Compositional Tuning
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] COMPACT transforms visual instruction tuning samples from "single-visual-ability QA" into "natural combinations of multiple atomic visual abilities," achieving or even slightly exceeding the average performance of full visual instruction tuning using only 10% of the LLaVA-665K data volume.
+  [ICLR 2026][Multimodal VLM][Visual Compositional Tuning] COMPACT transforms visual instruction tuning samples from "single-visual-ability QA" into "natural combinations of multiple atomic visual abilities," achieving or even slightly exceeding the average performance of full visual instruction tuning using only 10% of the LLaVA-665K data volume.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Visual Compositional Tuning"
+  - "Multimodal Large Language Models"
+  - "Instruction Tuning"
+  - "Data Synthesis"
+  - "Compositional Generalization"
 date: 2026-05-08
-content_hash: 4cf7c47f4e0b34ff
+content_hash: ccdf9fa834dde611
 ---
+
 # Visual Compositional Tuning
 
 **Conference**: ICLR 2026  
@@ -145,10 +151,10 @@ The ability-specific ablation is also informative. Removing "scene understanding
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](../../NeurIPS2025/multimodal_vlm/visual_instruction_bottleneck_tuning.md)
 - [\[ICLR 2026\] Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts](revisit_visual_prompt_tuning_the_expressiveness_of_prompt_experts.md)
 - [\[NeurIPS 2025\] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning](../../NeurIPS2025/multimodal_vlm/advancing_compositional_awareness_in_clip_with_efficient_fin.md)
 - [\[ICLR 2026\] CoMem: Compositional Concept-Graph Memory for Vision-Language Adaptation](comem_compositional_concept-graph_memory_for_visionlanguage_adaptation.md)
-- [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](../../NeurIPS2025/multimodal_vlm/visual_instruction_bottleneck_tuning.md)
 - [\[CVPR 2026\] LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning](../../CVPR2026/multimodal_vlm/llada-v_large_language_diffusion_models_with_visual_instruction_tuning.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL
 description: >-
-  [NeurIPS 2025][NLP Understanding][Offline Reinforcement Learning] This paper proposes PNLC, a method that trains a lightweight goal-conditioned value function as a "natural language critic" to guide LLM agents in multi-t…
+  [NeurIPS 2025][NLP Understanding][Offline Reinforcement Learning] This paper proposes PNLC, a method that trains a lightweight goal-conditioned value function as a "natural language critic" to guide LLM agents in multi-turn planning and self-refinement at the thought-step level. Without direct fine-tuning or inference-time search, PNLC significantly outperforms existing methods on complex interactive tasks such as web navigation, social reasoning, and persuasion…
 tags:
   - "NeurIPS 2025"
   - "NLP Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Natural Language Critic"
   - "Multi-Turn Interactive Tasks"
 date: 2026-05-08
-content_hash: 59826b567732f3d4
+content_hash: e0418ba04e43a319
 ---
 
 # Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL
@@ -128,9 +128,9 @@ A goal-conditioned variant of IQL (Implicit Q-Learning) is used. The Q-function 
 
 - [\[ICLR 2026\] What's the Plan? Metrics for Implicit Planning in LLMs and Their Application to Rhyme Generation and Question Answering](../../ICLR2026/nlp_understanding/whats_the_plan_metrics_for_implicit_planning_in_llms_and_their_application_to_rh.md)
 - [\[ACL 2026\] Refining and Reusing Annotation Guidelines for LLM Annotation](../../ACL2026/nlp_understanding/refining_and_reusing_annotation_guidelines_for_llm_annotation.md)
-- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](../../ACL2026/nlp_understanding/reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
-- [\[ACL 2026\] Creating ConLangs to Probe the Metalinguistic Grammatical Knowledge of LLMs](../../ACL2026/nlp_understanding/creating_conlangs_to_probe_the_metalinguistic_grammatical_knowledge_of_llms.md)
-- [\[ACL 2026\] Can LLMs Estimate Cognitive Complexity of Reading Comprehension Items?](../../ACL2026/nlp_understanding/can_llms_estimate_cognitive_complexity_of_reading_comprehension_items.md)
+- [\[ACL 2025\] Active LLMs for Multi-hop Question Answering](../../ACL2025/nlp_understanding/active_llms_for_multi-hop_question_answering.md)
+- [\[ACL 2025\] Analyzing Political Bias in LLMs via Target-Oriented Sentiment Classification](../../ACL2025/nlp_understanding/analyzing_political_bias_in_llms_via_target-oriented_sentiment_classification.md)
+- [\[ACL 2025\] Adapting Psycholinguistic Research for LLMs: Gender-Inclusive Language in a Coreference Context](../../ACL2025/nlp_understanding/adapting_psycholinguistic_research_for_llms_gender-inclusive_language_in_a_coref.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ClaimDB: A Fact Verification Benchmark over Large Structured Data
 description: >-
-  [ACL 2026][Social Computing][Paper Note] ClaimDB is the first fact-verification benchmark to scale evidence to 80 real-world databases, averaging 11 tables / 4.6 million rows / 110 million tokens per claim. This forces methods to utilize executable programs (SQL) for compositional reasoning. Evaluations of tool-calling agents across 30 SOTA LLMs reveal that o
+  [ACL 2026][Social Computing][Fact-checking benchmark] ClaimDB is the first fact-verification benchmark to scale evidence to 80 real-world databases, averaging 11 tables / 4.6 million rows / 110 million tokens per claim. This forces methods to utilize executable programs (SQL) for compositional reasoning. Evaluations of tool-calling agents across 30 SOTA LLMs reveal that over half have an accuracy below 55%; closed models rarely "abstain," while open-source models over-abstain…
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Fact-checking benchmark"
+  - "Large-scale structured data"
+  - "Tool-calling agents"
+  - "NEI abstention capability"
+  - "SQL reasoning"
 date: 2026-05-08
-content_hash: 94ab717ea80b6003
+content_hash: 1281b11079db8a51
 ---
+
 # ClaimDB: A Fact Verification Benchmark over Large Structured Data
 
 **Conference**: ACL 2026  
@@ -136,16 +142,16 @@ Manual annotation of 64k claims is infeasible. A panel of three distinct small m
 - Value: ⭐⭐⭐⭐⭐ Provides a standard metric for trustworthy LLMs on big data.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
 - [\[ACL 2026\] VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking](veritas_the_first_dynamic_benchmark_for_multimodal_automated_fact-checking.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 - [\[ICLR 2026\] BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses](../../ICLR2026/social_computing/biasfreebench_a_benchmark_for_mitigating_bias_in_large_language_model_responses.md)
 - [\[ACL 2026\] SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models](smarter_a_data-efficient_framework_to_improve_toxicity_detection_with_explanatio.md)
-- [\[ICML 2025\] OR-Bench: An Over-Refusal Benchmark for Large Language Models](../../ICML2025/social_computing/or-bench_an_over-refusal_benchmark_for_large_language_models.md)
 
 </div>
 

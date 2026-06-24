@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TrafficAlign: Aligning Large Language Models for Traffic Scenario Generation
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] TrafficAlign automatically synthesizes traffic scenario descriptions from real-world driving videos, performs semantic verification and self-refinement using a Domain-Specific Language (DSL), and fine-tunes (aligns) an LLM with this data. This enables the LLM to generate scenarios reflecting the actual traffic distribu
+  [CVPR 2026][Autonomous Driving][Traffic scenario generation] TrafficAlign automatically synthesizes traffic scenario descriptions from real-world driving videos, performs semantic verification and self-refinement using a Domain-Specific Language (DSL), and fine-tunes (aligns) an LLM with this data. This enables the LLM to generate scenarios reflecting the actual traffic distribution of specific geographical regions. It induces 10.8% more collisions than the Prev. SOTA across…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Traffic scenario generation"
+  - "LLM alignment"
+  - "autonomous driving testing"
+  - "domain-specific language"
+  - "data synthesis"
 date: 2026-05-08
-content_hash: 1ac51e668444f9df
+content_hash: 68a8dd43aabafbc1
 ---
+
 # TrafficAlign: Aligning Large Language Models for Traffic Scenario Generation
 
 **Conference**: CVPR 2026  
@@ -139,6 +145,7 @@ Even against significantly larger models like GPT-5, the aligned 3B model wins a
 - Value: ⭐⭐⭐⭐ Proven utility for both safety testing and model improvement, with significant insights into LLM data alignment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -146,8 +153,8 @@ Even against significantly larger models like GPT-5, the aligned 3B model wins a
 - [\[ACL 2025\] Embracing Large Language Models in Traffic Flow Forecasting](../../ACL2025/autonomous_driving/embracing_large_language_models_in_traffic_flow_forecasting.md)
 - [\[ECCV 2024\] Navigation Instruction Generation with BEV Perception and Large Language Models](../../ECCV2024/autonomous_driving/navigation_instruction_generation_with_bev_perception_and_large_language_models.md)
 - [\[CVPR 2026\] Unifying Language-Action Understanding and Generation for Autonomous Driving](unifying_language-action_understanding_and_generation_for_autonomous_driving.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
 - [\[AAAI 2026\] TimeBill: Time-Budgeted Inference for Large Language Models](../../AAAI2026/autonomous_driving/timebill_time-budgeted_inference_for_large_language_models.md)
+- [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
 
 </div>
 

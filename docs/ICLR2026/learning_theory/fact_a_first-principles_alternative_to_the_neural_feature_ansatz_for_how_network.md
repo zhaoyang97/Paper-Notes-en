@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] FACT: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations
 description: >-
-  [ICLR 2026][learning_theory][Neural Feature Ansatz] This paper derives **FACT (Features at Convergence Theorem)** using first-order optimality conditions at training convergence. For networks with weight decay, it establishes a self-consistent formula $W^\top W = -\frac{1}{n\lambda}\sum_i (\nabla_h \ell_i) h(x_i)^\top$ at convergence points. This replaces the purely emp
+  [ICLR 2026][Deep Learning Theory][Neural Feature Ansatz] This paper derives **FACT (Features at Convergence Theorem)** using first-order optimality conditions at training convergence. For networks with weight decay, it establishes a self-consistent formula $W^\top W = -\frac{1}{n\lambda}\sum_i (\nabla_h \ell_i) h(x_i)^\top$ at convergence points. This replaces the purely empirical Neural Feature Ansatz (NFA), providing a better fit to converged features and explaining why NFA…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Neural Feature Ansatz
-  - AGOP
-  - Recursive Feature Machine
-  - grokking
+  - "ICLR 2026"
+  - "Deep Learning Theory"
+  - "Feature Learning"
+  - "Neural Feature Ansatz"
+  - "First-order Optimality"
+  - "AGOP"
+  - "Recursive Feature Machine"
+  - "grokking"
 date: 2026-05-08
-content_hash: 8db20b4244ed03b5
+content_hash: cdc05bb9a8435c94
 ---
+
 # FACT: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations
 
 **Conference**: ICLR 2026  

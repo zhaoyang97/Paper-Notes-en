@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness
 description: >-
-  [NeurIPS 2025][Multimodal VLM][perspective understanding] The first benchmark to systematically evaluate the perspective understanding capabilities of multimodal large language models (MLLMs)…
+  [NeurIPS 2025][VLM Reasoning][perspective understanding] The first benchmark to systematically evaluate the perspective understanding capabilities of multimodal large language models (MLLMs), comprising 10 tasks across 3 dimensions, 2,711 images, and 5,083 question–answer pairs. It reveals significant deficiencies in perspective reasoning and robustness across 43 state-of-the-art models.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "perspective understanding"
   - "multimodal large language models"
   - "benchmark"
   - "spatial reasoning"
   - "geometric perception"
 date: 2026-05-08
-content_hash: 8e80e19d9b395d2f
+content_hash: 8749c361bc75647b
 ---
 
 # MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness
@@ -139,10 +139,10 @@ The MMPerspective benchmark consists of three complementary hierarchical dimensi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
-- [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](../../ICLR2026/multimodal_vlm/spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
-- [\[NeurIPS 2025\] Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion](rethinking_multimodal_learning_from_the_perspective_of_mitig.md)
-- [\[NeurIPS 2025\] CAPability: A Comprehensive Visual Caption Benchmark for Evaluating Both Correctness and Thoroughness](capability_a_comprehensive_visual_caption_benchmark_for_eval.md)
-- [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](../../ICCV2025/multimodal_vlm/perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
+- [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](../../ICLR2026/vlm_reasoning/spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
+- [\[ACL 2026\] Do MLLMs Understand Pointing? Benchmarking and Enhancing Referential Reasoning in Egocentric Vision](../../ACL2026/vlm_reasoning/do_mllms_understand_pointing_benchmarking_and_enhancing_referential_reasoning_in.md)
+- [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](../../ICCV2025/vlm_reasoning/perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
+- [\[ICML 2025\] Why Is Spatial Reasoning Hard for VLMs? An Attention Mechanism Perspective on Focus Areas](../../ICML2025/vlm_reasoning/why_is_spatial_reasoning_hard_for_vlms_an_attention_mechanism_perspective_on_foc.md)
 
 </div>
 

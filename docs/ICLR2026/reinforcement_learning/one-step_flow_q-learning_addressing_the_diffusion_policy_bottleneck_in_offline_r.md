@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Diffusion Q-Learning] This paper transforms Diffusion Q-Learning (DQL)—the strongest but slowest and most fragile approach in offline RL—from a DDPM multi-step denoising process into a Flow Matching framework. By replacing marginal velocity with an "average velocity field," the policy generates actions in **one single step during both train
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] This paper transforms Diffusion Q-Learning (DQL)—the strongest but slowest and most fragile approach in offline RL—from a DDPM multi-step denoising process into a Flow Matching framework. By replacing marginal velocity with an "average velocity field," the policy generates actions in **one single step during both training and inference**. This achieves significant acceleration and outperforms multi-step DQL o…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Diffusion Q-Learning
-  - Flow Matching
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Diffusion Q-Learning"
+  - "Flow Matching"
+  - "Average Velocity Field"
+  - "One-step generation"
 date: 2026-05-08
-content_hash: f556ee2f6b94793d
+content_hash: 2f18985c5791525a
 ---
+
 # One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL
 
 **Conference**: ICLR 2026  
@@ -164,9 +168,9 @@ Only OFQL outperforms DQL under one-step conditions; DDIM one-step inference nea
 
 - [\[ICLR 2026\] Mean Flow Policy with Instantaneous Velocity Constraint for One-step Action Generation](mean_flow_policy_with_instantaneous_velocity_constraint_for_one-step_action_gene.md)
 - [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
 - [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[AAAI 2026\] One-Step Generative Policies with Q-Learning: A Reformulation of MeanFlow](../../AAAI2026/reinforcement_learning/one-step_generative_policies_with_q-learning_a_reformulation_of_meanflow.md)
-- [\[ICLR 2026\] Beyond Penalization: Diffusion-based Out-of-Distribution Detection and Selective Regularization in Offline Reinforcement Learning](beyond_penalization_diffusion-based_out-of-distribution_detection_and_selective_.md)
+- [\[ICML 2026\] Fast and Highly Expressive Policy Learning for Offline Reinforcement Learning via Bootstrapped Flow Q-Learning](../../ICML2026/reinforcement_learning/fast_and_highly_expressive_policy_learning_for_offline_reinforcement_learning_vi.md)
 
 </div>
 

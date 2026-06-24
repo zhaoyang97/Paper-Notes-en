@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This work provides the first **dimension-free** non-asymptotic convergence analysis for Preconditioned Annealed Langevin Dynamics (PALD)—reducing the sampling complexity for multimodal distributions from $\tilde{O}(d/\epsilon^2)$ to $\tilde{O}(1/\epsilon^2)$, liberating diffusion-based sampling algorithms from the "cur
+  [ICML 2026][Multimodal VLM][Annealed Langevin Dynamics] This work provides the first **dimension-free** non-asymptotic convergence analysis for Preconditioned Annealed Langevin Dynamics (PALD)—reducing the sampling complexity for multimodal distributions from $\tilde{O}(d/\epsilon^2)$ to $\tilde{O}(1/\epsilon^2)$, liberating diffusion-based sampling algorithms from the "curse of dimensionality" in high-dimensional settings.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Annealed Langevin Dynamics"
+  - "Multimodal Distributions"
+  - "Dimension-Free Convergence"
+  - "Hessian Preconditioning"
 date: 2026-05-08
-content_hash: bfc8d44ac13ea2aa
+content_hash: 203f76ec89abdd78
 ---
+
 # Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics
 
 **Conference**: ICML 2026  
@@ -116,10 +121,10 @@ PALD maintains high crossing rates in high dimensions, while ALD/LD degrade seve
 ## Related Papers
 
 - [\[ICML 2026\] Conditional Diffusion Sampling](conditional_diffusion_sampling.md)
-- [\[ICML 2026\] FreeRet: MLLMs as Training-Free Retrievers](freeret_mllms_as_training-free_retrievers.md)
 - [\[ICML 2025\] RollingQ: Reviving the Cooperation Dynamics in Multimodal Transformer](../../ICML2025/multimodal_vlm/rollingq_reviving_the_cooperation_dynamics_in_multimodal_transformer.md)
-- [\[ICML 2025\] Importance Corrected Neural JKO Sampling](../../ICML2025/multimodal_vlm/importance_corrected_neural_jko_sampling.md)
-- [\[ICML 2026\] Model-Dowser: Data-Free Importance Probing to Mitigate Catastrophic Forgetting in Multimodal Large Language Models](model-dowser_data-free_importance_probing_to_mitigate_catastrophic_forgetting_in.md)
+- [\[ICML 2026\] FreeRet: MLLMs as Training-Free Retrievers](freeret_mllms_as_training-free_retrievers.md)
+- [\[ICLR 2026\] Asynchronous Matching with Dynamic Sampling for Multimodal Dataset Distillation](../../ICLR2026/multimodal_vlm/asynchronous_matching_with_dynamic_sampling_for_multimodal_dataset_distillation.md)
+- [\[ICLR 2026\] Importance Sampling for Multi-Negative Multimodal Direct Preference Optimization](../../ICLR2026/multimodal_vlm/importance_sampling_for_multi-negative_multimodal_direct_preference_optimization.md)
 
 </div>
 

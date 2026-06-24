@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Proposes SouPLe (Sound-aware Prompt Learning), which enhances semantic correspondence between audio embedding tokens and visual features by replacing fixed text prompts in CLIP with learnable context tokens generated from image features. This achieves a 3.75 cIoU improvement on VGG-SS and a 6.32 cIoU improvement in ope
+  [CVPR 2026][Segmentation][Audio-visual localization] Proposes SouPLe (Sound-aware Prompt Learning), which enhances semantic correspondence between audio embedding tokens and visual features by replacing fixed text prompts in CLIP with learnable context tokens generated from image features. This achieves a 3.75 cIoU improvement on VGG-SS and a 6.32 cIoU improvement in open-set settings, outperforming previous methods.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Audio-visual localization"
+  - "prompt learning"
+  - "CLIP adaptation"
+  - "sound source segmentation"
+  - "contrastive learning"
 date: 2026-05-08
-content_hash: b825562ff1013193
+content_hash: de1598bd9623bb50
 ---
+
 # SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts
 
 **Conference**: CVPR 2026  
@@ -155,8 +161,8 @@ AVSBench S4 (Zero-shot): mIoU 62.89 (+3.13), F-Score 71.47 (+2.44).
 
 - [\[CVPR 2025\] Robust Audio-Visual Segmentation via Audio-Guided Visual Convergent Alignment](../../CVPR2025/segmentation/robust_audio-visual_segmentation_via_audio-guided_visual_convergent_alignment.md)
 - [\[CVPR 2026\] GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings](geosurge_geo-localization_using_semantic_fusion_with_hierarchy_of_geographic_emb.md)
-- [\[CVPR 2026\] Love Me, Love My Label: Rethinking the Role of Labels in Prompt Retrieval for Visual In-Context Learning](love_me_love_my_label_rethinking_the_role_of_labels_in_prompt_retrieval_for_visu.md)
 - [\[CVPR 2026\] BiPA: Bilevel Prompt Adaptation for Underwater Instance Segmentation](bipa_bilevel_prompt_adaptation_for_underwater_instance_segmentation.md)
+- [\[CVPR 2026\] Revisiting Geometric Obfuscation with Dual Convergent Lines for Privacy-Preserving Image Queries in Visual Localization](revisiting_geometric_obfuscation_with_dual_convergent_lines_for_privacy-preservi.md)
 - [\[CVPR 2026\] Bootstrap Your Own AV-Proxies: Adaptive Contrastive and Prototype Learning for Audio-Visual Segmentation](bootstrap_your_own_av-proxies_adaptive_contrastive_and_prototype_learning_for_au.md)
 
 </div>

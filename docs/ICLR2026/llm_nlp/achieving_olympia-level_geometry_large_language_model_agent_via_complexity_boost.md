@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Achieving Olympia-Level Geometry Large Language Model Agent via Complexity Boosting Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM (Other)][LLM Agent] This paper introduces InternGeometry—the first geometry LLM agent to achieve medal-winning performance. By treating a symbolic engine as a tool, it utilizes an ultra-long-range "Think-Construct/Propose-Verify-Reflect" interaction (over 200 steps per problem) to overcome the lack of heuristics in auxiliary line construc
+  [ICLR2026][LLM (Other)][Geometry Theorem Proving] This paper introduces InternGeometry—the first geometry LLM agent to achieve medal-winning performance. By treating a symbolic engine as a tool, it utilizes an ultra-long-range "Think-Construct/Propose-Verify-Reflect" interaction (over 200 steps per problem) to overcome the lack of heuristics in auxiliary line construction. Combined with Complexity-Boosting RL (CBRL) to progressively increase the difficulty of synthetic proble…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - LLM Agent
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "Geometry Theorem Proving"
+  - "LLM Agent"
+  - "Auxiliary Line Construction"
+  - "Long-range Interaction"
+  - "Complexity-Boosting Curriculum RL"
 date: 2026-05-08
-content_hash: 8f9edf6f781aba90
+content_hash: a27f5424964f3e42
 ---
+
 # Achieving Olympia-Level Geometry Large Language Model Agent via Complexity Boosting Reinforcement Learning
 
 **Conference**: ICLR2026  

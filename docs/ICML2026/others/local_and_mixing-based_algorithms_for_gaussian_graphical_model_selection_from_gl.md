@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Local and Mixing-Based Algorithms for Gaussian Graphical Model Selection from Glauber Dynamics
 description: >-
-  [ICML 2026][Others][Gaussian Graphical Model] The authors provide the first study on learning Gaussian Graphical Model (GGM) structures from a single Gaussian Glauber dynamics trajectory. They propose two complementary algorithms: LET-GL (local edge detection based on $i,i,j,i$ windows, perfectly parallelizable) and BTR-GL (decorrelating the trajectory into approx
+  [ICML 2026][Gaussian Graphical Model] The authors provide the first study on learning Gaussian Graphical Model (GGM) structures from a single Gaussian Glauber dynamics trajectory. They propose two complementary algorithms: LET-GL (local edge detection based on $i,i,j,i$ windows, perfectly parallelizable) and BTR-GL (decorrelating the trajectory into approximate i.i.d. samples via burn-in/thinning under the Dobrushin condition for consumption by off-the-shelf i.i.d. learners).…
 tags:
-  - ICML 2026
-  - Others
-  - Gaussian Graphical Model
-  - Glauber Dynamics
-  - Dobrushin Condition
-  - Burn-in/Thinning
-  - Total Variation Mixing
+  - "ICML 2026"
+  - "Gaussian Graphical Model"
+  - "Glauber Dynamics"
+  - "Dobrushin Condition"
+  - "Burn-in/Thinning"
+  - "Total Variation Mixing"
 date: 2026-05-08
-content_hash: 75ca6ac7570291bc
+content_hash: 8f4905f15b1cabf3
 ---
+
 # Local and Mixing-Based Algorithms for Gaussian Graphical Model Selection from Glauber Dynamics
 
 **Conference**: ICML 2026  
@@ -143,7 +143,7 @@ This is a theoretical and algorithmic paper without traditional training. Key hy
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

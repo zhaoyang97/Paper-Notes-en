@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes Self-NPO, a negative preference optimization method that requires neither external data annotation nor reward models. By leveraging Truncated Diffusion…
+  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes Self-NPO, a negative preference optimization method that requires neither external data annotation nor reward models. By leveraging Truncated Diffusion Fine-Tuning (TDFT), the model learns "what is bad" from its own low-quality generated data, and uses CFG to steer generation away from undesirable outputs. Self-NPO achieves comparable performance to Diffusion-NPO at less than 1% of the training cost.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Self-Learning"
   - "Training Efficiency"
 date: 2026-05-08
-content_hash: cf55dbed4341376c
+content_hash: 4d2bb7f260dff351
 ---
 
 # Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning
@@ -211,7 +211,7 @@ Self-NPO requires **less than 1%** of Diffusion-NPO's training cost (2 vs. 384 G
 - [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](../../ICLR2026/image_generation/stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
 - [\[AAAI 2026\] DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models](dogfit_domain-guided_fine-tuning_for_efficient_transfer_learning_of_diffusion_mo.md)
 - [\[AAAI 2026\] Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data](difficulty_controlled_diffusion_model_for_synthesizing_effec.md)
-- [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)
+- [\[AAAI 2026\] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement](rethinking_flow_and_diffusion_bridge_models_for_speech_enhancement.md)
 
 </div>
 

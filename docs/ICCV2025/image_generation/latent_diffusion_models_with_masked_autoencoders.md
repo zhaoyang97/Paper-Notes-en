@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Latent Diffusion Models with Masked AutoEncoders
 description: >-
-  [ICCV 2025][Image Generation][Latent Diffusion Models] This paper systematically analyzes three key properties that autoencoders in LDMs should possess (latent space smoothness, perceptual compression quality…
+  [ICCV 2025][Image Generation][Latent Diffusion Models] This paper systematically analyzes three key properties that autoencoders in LDMs should possess (latent space smoothness, perceptual compression quality, and reconstruction quality), identifies that existing autoencoders fail to satisfy all three simultaneously, and proposes Variational Masked AutoEncoders (VMAEs). By combining MAE's hierarchical features with VAE's probabilistic encoding…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Perceptual Compression"
   - "Latent Space Smoothness"
 date: 2026-05-08
-content_hash: 297c55c0c9d6fa8e
+content_hash: cd3da6f9860c5b59
 ---
 
 # Latent Diffusion Models with Masked AutoEncoders

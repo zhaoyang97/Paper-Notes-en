@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Loc²: Interpretable Cross-View Localization via Depth-Lifted Local Feature Matching
 description: >-
-  [ICLR 2026][Autonomous Driving][Interpretability] Loc² directly learns local feature correspondences on the **pixel planes of ground and aerial images**, lifts matched points to BEV using monocular depth, and analytically solves for 3-DoF pose and depth scale via **scale-aware Procrustes alignment**. Supervised only by weak camera poses without pixel-level labels, it
+  [ICLR 2026][Autonomous Driving][Cross-view Localization] Loc² directly learns local feature correspondences on the **pixel planes of ground and aerial images**, lifts matched points to BEV using monocular depth, and analytically solves for 3-DoF pose and depth scale via **scale-aware Procrustes alignment**. Supervised only by weak camera poses without pixel-level labels, it achieves SOTA results in challenging scenarios such as cross-area and unknown orientation…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Interpretability
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Cross-view Localization"
+  - "Local Feature Matching"
+  - "Monocular Depth"
+  - "Procrustes Alignment"
+  - "Weak Supervision"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: f14869540f3b8e1a
+content_hash: c087937c2eb59436
 ---
+
 # Loc²: Interpretable Cross-View Localization via Depth-Lifted Local Feature Matching
 
 **Conference**: ICLR 2026  
@@ -142,8 +148,8 @@ VIGOR same-area validation set, unknown orientation:
 - [\[CVPR 2026\] ELiC: Efficient LiDAR Geometry Compression via Cross-Bit-depth Feature Propagation and Bag-of-Encoders](../../CVPR2026/autonomous_driving/elic_efficient_lidar_geometry_compression_via_cross-bit-depth_feature_propagatio.md)
 - [\[ICLR 2026\] Map as a Prompt: Learning Multi-Modal Spatial-Signal Foundation Models for Cross-scenario Wireless Localization](map_as_a_prompt_learning_multi-modal_spatial-signal_foundation_models_for_cross-.md)
 - [\[ICCV 2025\] Where am I? Cross-View Geo-localization with Natural Language Descriptions](../../ICCV2025/autonomous_driving/where_am_i_cross-view_geo-localization_with_natural_language_descriptions.md)
+- [\[ICLR 2026\] GT-Space: Enhancing Heterogeneous Collaborative Perception with Ground Truth Feature Space](gt-space_enhancing_heterogeneous_collaborative_perception_with_ground_truth_feat.md)
 - [\[CVPR 2026\] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation](../../CVPR2026/autonomous_driving/vird_view-invariant_representation_through_dual-axis_transformation_for_cross-vi.md)
-- [\[ECCV 2024\] DVLO: Deep Visual-LiDAR Odometry with Local-to-Global Feature Fusion and Bi-directional Structure Alignment](../../ECCV2024/autonomous_driving/dvlo_deep_visual-lidar_odometry_with_local-to-global_feature_fusion_and_bi-direc.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamics of Spontaneous Topic Changes in Next Token Prediction with Self-Attention
 description: >-
-  [NeurIPS 2025][3D Vision][spontaneous thought] This paper investigates, both theoretically and empirically, the dynamics of spontaneous topic changes in self-attention models. For a single-layer self-attention model…
+  [NeurIPS 2025][3D Vision][spontaneous thought] This paper investigates, both theoretically and empirically, the dynamics of spontaneous topic changes in self-attention models. For a single-layer self-attention model, it establishes three results: (1) training on mixed topics preserves the token priority ordering of the original topic; (2) topic changes occur only when the number of low-priority tokens exceeds that of high-priority tokens; and (3) longer inputs and more ambigu…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "token priority graph"
   - "cognitive gap"
 date: 2026-05-08
-content_hash: 7c98f03cc84df6f3
+content_hash: 8192d31d5b522f3b
 ---
 
 # Dynamics of Spontaneous Topic Changes in Next Token Prediction with Self-Attention
@@ -127,7 +127,7 @@ RAG experiments on GPT-4o, Llama-3.3, Claude-3.7, and DeepSeek-V3 are conducted 
 - [\[NeurIPS 2025\] ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction](armesh_autoregressive_mesh_generation_via_next-level-of-detail_prediction.md)
 - [\[ICCV 2025\] TAR3D: Creating High-Quality 3D Assets via Next-Part Prediction](../../ICCV2025/3d_vision/tar3d_creating_high-quality_3d_assets_via_next-part_prediction.md)
 - [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](../../ICCV2025/3d_vision/ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
-- [\[NeurIPS 2025\] ELECTRA: A Cartesian Network for 3D Charge Density Prediction with Floating Orbitals](electra_a_cartesian_network_for_3d_charge_density_prediction_with_floating_orbit.md)
+- [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
 
 </div>
 

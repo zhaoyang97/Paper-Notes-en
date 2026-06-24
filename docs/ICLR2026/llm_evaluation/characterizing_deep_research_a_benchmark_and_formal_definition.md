@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Characterizing Deep Research: A Benchmark and Formal Definition
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper provides a formal definition for "Deep Research (DR)," a task frequently claimed by various models but never strictly defined. The core is identified as "high fan-out" during the search process rather than merely "outputting long reports." Accordingly, the authors constructed LIVEDRBENCH, a benchmark of 100
+  [ICLR2026][LLM Evaluation][Deep Research] This paper provides a formal definition for "Deep Research (DR)," a task frequently claimed by various models but never strictly defined. The core is identified as "high fan-out" during the search process rather than merely "outputting long reports." Accordingly, the authors constructed LIVEDRBENCH, a benchmark of 100 open-web tasks, using claim-based Precision/Recall for objective scoring. It reveals that the strongest current system…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Deep Research"
+  - "Formal Definition"
+  - "Claim Evaluation"
+  - "Problem Inversion"
+  - "Information Synthesis"
 date: 2026-05-08
-content_hash: 6928ff045fd044e3
+content_hash: 30f8a3719971a206
 ---
+
 # Characterizing Deep Research: A Benchmark and Formal Definition
 
 **Conference**: ICLR2026  
@@ -119,15 +125,16 @@ On the difficult NOVELDS Id.&Extraction category, DR systems significantly outpe
 - Value: ⭐⭐⭐⭐⭐ Sets an essential objective standard for a rapidly evolving field.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] DRBench: A Realistic Benchmark for Enterprise Deep Research](drbench_a_realistic_benchmark_for_enterprise_deep_research.md)
+- [\[ICLR 2026\] LiveResearchBench: A Live Benchmark for User-Centric Deep Research in the Wild](liveresearchbench_a_live_benchmark_for_user-centric_deep_research_in_the_wild.md)
 - [\[ICLR 2026\] An Open-Ended Benchmark and Formal Framework for Adjuvant Research with MLLM](an_open-ended_benchmark_and_formal_framework_for_adjuvant_research_with_mllm.md)
 - [\[ICLR 2026\] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents](deepresearch_bench_a_comprehensive_benchmark_for_deep_research_agents.md)
 - [\[ICLR 2026\] ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents](researchrubrics_a_benchmark_of_prompts_and_rubrics_for_evaluating_deep_research_.md)
-- [\[ICLR 2026\] LiveResearchBench: A Live Benchmark for User-Centric Deep Research in the Wild](liveresearchbench_a_live_benchmark_for_user-centric_deep_research_in_the_wild.md)
 
 </div>
 

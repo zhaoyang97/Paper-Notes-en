@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Post Hoc Regression Refinement via Pairwise Rankings
 description: >-
-  [NeurIPS 2025][Computational Biology][regression refinement] This paper proposes RankRefine, a model-agnostic post-processing regression refinement method that fuses predictions from a base regressor with estimates deriv…
+  [NeurIPS 2025][Computational Biology][regression refinement] This paper proposes RankRefine, a model-agnostic post-processing regression refinement method that fuses predictions from a base regressor with estimates derived from pairwise rankings via inverse-variance weighting. Without any retraining, the method achieves up to 10% relative MAE reduction in molecular property prediction using only 20 pairwise comparisons and a general-purpose LLM.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "LLM ranker"
   - "few-shot learning"
 date: 2026-05-08
-content_hash: 6ed341f9eb0bc15b
+content_hash: 11a8a264b8fa16ed
 ---
 
 # Post Hoc Regression Refinement via Pairwise Rankings
@@ -177,10 +177,10 @@ RankRefine outperforms the projection baseline across the practically feasible a
 ## Related Papers
 
 - [\[NeurIPS 2025\] Self Iterative Label Refinement via Robust Unlabeled Learning](self_iterative_label_refinement_via_robust_unlabeled_learning.md)
+- [\[ICLR 2026\] Continuous Multinomial Logistic Regression for Neural Decoding](../../ICLR2026/computational_biology/continuous_multinomial_logistic_regression_for_neural_decoding.md)
 - [\[ICML 2026\] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models](../../ICML2026/computational_biology/neural_estimation_of_pairwise_mutual_information_in_masked_discrete_sequence_mod.md)
-- [\[ICML 2026\] Influence-Guided Symbolic Regression: Scientific Discovery via LLM-Driven Equation Search with Granular Feedback](../../ICML2026/computational_biology/influence-guided_symbolic_regression_scientific_discovery_via_llm-driven_equatio.md)
-- [\[ICLR 2026\] CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints](../../ICLR2026/computational_biology/cryonetrefine_a_one-step_diffusion_model_for_rapid_refinement_of_structural_mode.md)
-- [\[NeurIPS 2025\] Learning Conformational Ensembles of Proteins Based on Backbone Geometry](learning_conformational_ensembles_of_proteins_based_on_backbone_geometry.md)
+- [\[ICML 2026\] STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories](../../ICML2026/computational_biology/stride_post-training_llms_to_reason_and_refine_bio-sequences_via_edit_trajectori.md)
+- [\[ICLR 2026\] Efficient Prediction of Large Protein Complexes via Subunit-Guided Hierarchical Refinement](../../ICLR2026/computational_biology/efficient_prediction_of_large_protein_complexes_via_subunit-guided_hierarchical_.md)
 
 </div>
 

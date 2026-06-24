@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Incentivized Exploration with Stochastic Covariates: A Two-Stage Mechanism Design for Recommender System
 description: >-
-  [ICML 2026][Recommender Systems][Paper Note] RCB integrates "exploration-exploitation" and "user incentive compatibility" into a contextual bandit problem under Dynamic Bayesian Incentive Compatibility (DBIC) constraints. It proposes a two-stage algorithm (Cold Start + IPGS), proves $\tilde{O}(\sqrt{KdT})$ regret in stochastic user covariate scenarios, allows for
+  [ICML 2026][Recommender Systems][Incentive Compatibility] RCB integrates "exploration-exploitation" and "user incentive compatibility" into a contextual bandit problem under Dynamic Bayesian Incentive Compatibility (DBIC) constraints. It proposes a two-stage algorithm (Cold Start + IPGS), proves $\tilde{O}(\sqrt{KdT})$ regret in stochastic user covariate scenarios, allows for the integration of any offline learning oracle, and quantifies the "incentive price" — showing that t…
 tags:
-  - ICML 2026
-  - Recommender Systems
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Incentive Compatibility"
+  - "Contextual Bandits"
+  - "Mechanism Design"
+  - "Cold Start"
+  - "Inverse Gap Sampling"
 date: 2026-05-08
-content_hash: fb6bd1ba2cb475b9
+content_hash: 3f8a79d5b5775014
 ---
+
 # Incentivized Exploration with Stochastic Covariates: A Two-Stage Mechanism Design for Recommender System
 
 **Conference**: ICML 2026  
@@ -142,8 +148,6 @@ Weighted risk score (+1 for correct / -1 for incorrect): The doctor baseline rem
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Handwritten document recognition] This paper systematically compares traditional OCR+machine translation (OCR-MT) pipelines against vision large language models (vLLMs) on the task of translat…
+  [AAAI 2026][Multimodal VLM][Handwritten document recognition] This paper systematically compares traditional OCR+machine translation (OCR-MT) pipelines against vision large language models (vLLMs) on the task of translating handwritten Marathi legal documents into English. The study finds that neither approach meets legal-grade deployment requirements: OCR-MT suffers severely from cascading errors, while vLLMs exhibit critical hallucination issues. Nevertheless…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "legal document translation"
   - "low-resource languages"
 date: 2026-05-08
-content_hash: 92b14824e0098a2c
+content_hash: 1a1e0e45e0450dfe
 ---
 
 # Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models
@@ -141,11 +141,11 @@ Rather than proposing a novel method, this work constructs a **systematic compar
 
 ## Related Papers
 
-- [\[CVPR 2026\] Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness](../../CVPR2026/multimodal_vlm/seeing_clearly_reasoning_confidently_plug-and-play_remedies_for_vision_language_.md)
+- [\[ACL 2025\] Improving MLLM's Document Image Machine Translation via Synchronously Self-reviewing Its OCR Proficiency](../../ACL2025/multimodal_vlm/improving_mllms_document_image_machine_translation_via_synchronously_self-review.md)
+- [\[CVPR 2025\] Unveiling the Ignorance of MLLMs: Seeing Clearly, Answering Incorrectly](../../CVPR2025/multimodal_vlm/unveiling_the_ignorance_of_mllms_seeing_clearly_answering_incorrectly.md)
 - [\[ACL 2026\] TeXOCR: Advancing Document OCR Models for Compilable Page-to-LaTeX Reconstruction](../../ACL2026/multimodal_vlm/texocr_advancing_document_ocr_models_for_compilable_page-to-latex_reconstruction.md)
 - [\[ACL 2026\] When Seeing Overrides Knowing: Disentangling Knowledge Conflicts in Vision-Language Models](../../ACL2026/multimodal_vlm/when_seeing_overrides_knowing_disentangling_knowledge_conflicts_in_vision-langua.md)
-- [\[AAAI 2026\] PatientVLM Meets DocVLM: Pre-Consultation Dialogue Between Vision-Language Models for Efficient Diagnosis](patientvlm_meets_docvlm_pre-consultation_dialogue_between_vision_language_models.md)
-- [\[AAAI 2026\] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit](llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit.md)
+- [\[ICLR 2026\] Seeing Through Deception: Uncovering Misleading Creator Intent in Multimodal News with Vision-Language Models](../../ICLR2026/multimodal_vlm/seeing_through_deception_uncovering_misleading_creator_intent_in_multimodal_news.md)
 
 </div>
 

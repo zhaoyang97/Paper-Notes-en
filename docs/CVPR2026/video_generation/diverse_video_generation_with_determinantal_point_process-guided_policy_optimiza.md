@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization
 description: >-
-  [CVPR 2026][Video Generation][GRPO] To address the diversity collapse issue where Text-to-Video (T2V) models produce highly similar results for the same prompt, this paper models "generating a set of diverse videos" as a set-level policy optimization. It uses the marginal gain of a Determinantal Point Process (DPP) to provide a "diminishing returns" dive
+  [CVPR 2026][Video Generation][Text-to-Video] To address the diversity collapse issue where Text-to-Video (T2V) models produce highly similar results for the same prompt, this paper models "generating a set of diverse videos" as a set-level policy optimization. It uses the marginal gain of a Determinantal Point Process (DPP) to provide a "diminishing returns" diversity reward for each new sample, combined with a relevance reward. A **prompt-rewriting policy model** (rather tha…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-to-Video"
+  - "Diverse Generation"
+  - "Determinantal Point Process (DPP)"
+  - "GRPO"
+  - "set-level policy optimization"
 date: 2026-05-08
-content_hash: d88eb1a4d70f9068
+content_hash: 40b3d71c14903ea9
 ---
+
 # Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization
 
 **Conference**: CVPR 2026  
@@ -156,14 +161,17 @@ Ours leads significantly across all diversity metrics (TCE/TIE/VENDI). Notably, 
 
 <div class="related-papers" markdown="1">
 
-1. **SPARKE: Boosting Diversity in Video Generation** (arXiv 2024): Iterative noise/latent modification.
-2. **Deep Determinantal Point Processes** (CVPR 2016): Foundation for learnable DPP kernels.
-3. **DeepSeek-V3/GRPO Technical Report**: Base for Group Relative Policy Optimization.
+## Related Papers
+
+- [\[CVPR 2026\] VIVA: VLM-Guided Instruction-Based Video Editing with Reward Optimization](viva_vlm-guided_instruction-based_video_editing_with_reward_optimization.md)
+- [\[CVPR 2026\] FlexTraj: Image-to-Video Generation with Flexible Point Trajectory Control](flextraj_image-to-video_generation_with_flexible_point_trajectory_control.md)
+- [\[CVPR 2026\] Generative Video Motion Editing with 3D Point Tracks](generative_video_motion_editing_with_3d_point_tracks.md)
+- [\[CVPR 2025\] Optical-Flow Guided Prompt Optimization for Coherent Video Generation](../../CVPR2025/video_generation/optical-flow_guided_prompt_optimization_for_coherent_video_generation.md)
+- [\[CVPR 2026\] DynamicsBoost: Dynamic Plausible Video Generation via Annotation-Free Continuation Preference Optimization](dynamicsboost_dynamic_plausible_video_generation_via_annotation-free_continuatio.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] VIVA: VLM-Guided Instruction-Based Video Editing with Reward Optimization](viva_vlm-guided_instruction-based_video_editing_with_reward_optimization.md)

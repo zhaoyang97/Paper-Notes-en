@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Ours proposes OpenMarcie, the largest multimodal action recognition dataset for industrial scenarios to date, integrating 8 sensing modalities from wearable sensors and vision data with 200+ channels and 37+ hours of recording. The superiority of inertial + vision fusion is validated across three benchmarks: HAR classi
+  [CVPR 2026][Video Understanding][Multimodal dataset] Ours proposes OpenMarcie, the largest multimodal action recognition dataset for industrial scenarios to date, integrating 8 sensing modalities from wearable sensors and vision data with 200+ channels and 37+ hours of recording. The superiority of inertial + vision fusion is validated across three benchmarks: HAR classification, open-vocabulary description, and cross-modal alignment.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multimodal dataset"
+  - "Human action recognition"
+  - "Industrial manufacturing"
+  - "Wearable sensors"
+  - "Cross-modal alignment"
 date: 2026-05-08
-content_hash: 18e9493cc3b6afd4
+content_hash: b2f259eea482092a
 ---
+
 # OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments
 
 **Conference**: CVPR 2026  
@@ -162,10 +168,17 @@ Cosine Similarity results for open-vocabulary description further validate modal
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition](darkact_a_rgb-thermal_dataset_and_fusion_framework_for_multimodal_low-light_acti.md)
+- [\[CVPR 2026\] VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition](videonet_a_large-scale_dataset_for_domain-specific_action_recognition.md)
+- [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
+- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+- [\[CVPR 2026\] SHANDS: A Multi-View Dataset and Benchmark for Surgical Hand-Gesture and Error Recognition Toward Medical Training](shands_a_multi-view_dataset_and_benchmark_for_surgical_hand-gesture_and_error_re.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition](darkact_a_rgb-thermal_dataset_and_fusion_framework_for_multimodal_low-light_acti.md)

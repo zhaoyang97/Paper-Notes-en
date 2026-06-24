@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Learning What Matters Now: Dynamic Preference Inference under Contextual Shifts
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This work models preference weights in multi-objective RL (MORL)—traditionally treated as "known constants"—as **latent variables that drift with context**. It maintains a posterior belief of "what matters now" via online variational inference and jointly trains this with a preference-conditioned actor–critic, enabling
+  [ICLR 2026][Reinforcement Learning][Multi-objective RL] This work models preference weights in multi-objective RL (MORL)—traditionally treated as "known constants"—as **latent variables that drift with context**. It maintains a posterior belief of "what matters now" via online variational inference and jointly trains this with a preference-conditioned actor–critic, enabling agents to rapidly reprioritize goals following event-driven distribution shifts.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-objective RL"
+  - "dynamic preferences"
+  - "variational inference"
+  - "preference-conditioned policy"
+  - "non-stationary environments"
+  - "Envelope operator"
 date: 2026-05-08
-content_hash: 3258623eaf511c4a
+content_hash: 66ef736f71cecdc0
 ---
+
 # Learning What Matters Now: Dynamic Preference Inference under Contextual Shifts
 
 **Conference**: ICLR 2026  

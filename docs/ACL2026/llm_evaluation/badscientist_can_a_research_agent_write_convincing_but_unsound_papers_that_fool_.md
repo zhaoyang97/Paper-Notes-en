@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BadScientist: Can a Research Agent Write Convincing but Unsound Papers that Fool LLM Reviewers?
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] The authors developed a "BadScientist" pipeline: a generation agent that conducts no real experiments uses five "performative fraud" strategies to write seemingly rigorous but fundamentally unsound papers. These are then fed to a multi-model reviewer agent composed of o3 / o4-mini / GPT-4.1. Results show that the accep
+  [ACL2026][LLM Evaluation][LLM Review] The authors developed a "BadScientist" pipeline: a generation agent that conducts no real experiments uses five "performative fraud" strategies to write seemingly rigorous but fundamentally unsound papers. These are then fed to a multi-model reviewer agent composed of o3 / o4-mini / GPT-4.1. Results show that the acceptance rate for fraudulent papers reaches up to **82%**. Furthermore, reviewers often point out integrity issues in their t…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "LLM Review"
+  - "Paper Fraud"
+  - "Research Integrity"
+  - "Agent Adversaries"
+  - "Threshold Calibration"
 date: 2026-05-08
-content_hash: 848784a158a4cb8e
+content_hash: 628ae5a4f2c6c007
 ---
+
 # BadScientist: Can a Research Agent Write Convincing but Unsound Papers that Fool LLM Reviewers?
 
 **Conference**: ACL2026  
@@ -131,9 +137,9 @@ The conflict is pervasive: o4-mini is most contradictory (100% acceptance for $s
 
 - [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
 - [\[ICML 2026\] Who can we trust? LLM-as-a-jury for Comparative Assessment](../../ICML2026/llm_evaluation/who_can_we_trust_llm-as-a-jury_for_comparative_assessment.md)
+- [\[ICLR 2026\] Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation](../../ICLR2026/llm_evaluation/holistic_agent_leaderboard_the_missing_infrastructure_for_ai_agent_evaluation.md)
+- [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](../../ICLR2026/llm_evaluation/rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)
 - [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](../../ICML2026/llm_evaluation/multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
-- [\[ACL 2026\] Beyond Fixed Psychological Personas: State Beats Trait, but Language Models are State-Blind](beyond_fixed_psychological_personas_state_beats_trait_but_language_models_are_st.md)
-- [\[ACL 2026\] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](aj-bench_benchmarking_agent-as-a-judge_for_environment-aware_evaluation.md)
 
 </div>
 

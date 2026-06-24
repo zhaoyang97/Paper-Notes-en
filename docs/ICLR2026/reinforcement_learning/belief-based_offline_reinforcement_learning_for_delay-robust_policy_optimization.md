@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Belief-Based Offline Reinforcement Learning for Delay-Robust Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][belief state] DT-CORL utilizes a Transformer belief model to predict the current latent state from delayed observations and historical actions. By embedding this belief representation directly into conservative offline policy iteration, the policy trained on delay-free offline data maintains stable control performance during deploym
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] DT-CORL utilizes a Transformer belief model to predict the current latent state from delayed observations and historical actions. By embedding this belief representation directly into conservative offline policy iteration, the policy trained on delay-free offline data maintains stable control performance during deployment under both deterministic and stochastic delays.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - belief state
-  - Transformer
-  - D4RL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Delay-Robust Control"
+  - "belief state"
+  - "Transformer"
+  - "D4RL"
 date: 2026-05-08
-content_hash: 7b309edccff94670
+content_hash: 239430db47338f99
 ---
+
 # Belief-Based Offline Reinforcement Learning for Delay-Robust Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -167,9 +170,9 @@ AntMaze results show that online delayed RL methods like DBPT-SAC collapse in pu
 
 - [\[ICLR 2026\] Preference-based Policy Optimization from Sparse-reward Offline Dataset](preference-based_policy_optimization_from_sparse-reward_offline_dataset.md)
 - [\[ICLR 2026\] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts](dual-robust_cross-domain_offline_reinforcement_learning_against_dynamics_shifts.md)
-- [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
+- [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
 - [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] GEPO: Group Expectation Policy Optimization for Stable Heterogeneous Reinforcement Learning](gepo_group_expectation_policy_optimization_for_stable_heterogeneous_reinforcemen.md)
+- [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
 
 </div>
 

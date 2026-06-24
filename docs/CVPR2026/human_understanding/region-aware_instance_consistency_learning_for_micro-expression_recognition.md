@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Region-Aware Instance Consistency Learning for Micro-Expression Recognition
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper views a micro-expression sequence as a multi-instance set composed of "onset frame + multiple middle frames." By using a Siamese network to force the alignment of attention maps across different instances (IRC) and employing learnable facial queries to uncover neglected weak activation regions (MRD), the met
+  [CVPR 2026][Human Understanding][Micro-Expression Recognition] This paper views a micro-expression sequence as a multi-instance set composed of "onset frame + multiple middle frames." By using a Siamese network to force the alignment of attention maps across different instances (IRC) and employing learnable facial queries to uncover neglected weak activation regions (MRD), the method completely eliminates the need for expensive apex frame annotations and outperforms state-of-…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Micro-Expression Recognition"
+  - "Apex-free"
+  - "Instance Consistency"
+  - "Attention Consistency"
+  - "Self-supervised"
 date: 2026-05-08
-content_hash: 8f3a936feab5d67b
+content_hash: 0c14255eca3a6f31
 ---
+
 # Region-Aware Instance Consistency Learning for Micro-Expression Recognition
 
 **Conference**: CVPR 2026  
@@ -151,15 +157,15 @@ Different sampling strategies (all with IRC+MRD):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] CLEX: Complementary Label Exchange Learning for Noisy Facial Expression Recognition](clex_complementary_label_exchange_learning_for_noisy_facial_expression_recogniti.md)
-- [\[CVPR 2026\] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning](active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_.md)
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
+- [\[ICLR 2026\] From Pixels to Semantics: Unified Facial Action Representation Learning for Micro-Expression Analysis](../../ICLR2026/human_understanding/from_pixels_to_semantics_unified_facial_action_representation_learning_for_micro.md)
 - [\[CVPR 2026\] OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition](omg-bench_a_new_challenging_benchmark_for_skeleton-based_online_micro_hand_gestu.md)
 - [\[CVPR 2026\] Dynamic Label Noise Suppression with Optimal Teacher Pool for Facial Expression Recognition](dynamic_label_noise_suppression_with_optimal_teacher_pool_for_facial_expression_.md)
+- [\[CVPR 2026\] D³FER: Dual Channel and Dual Branch Network for Robust Facial Expression Recognition under Dual Challenges](d3fer_dual_channel_and_dual_branch_network_for_robust_facial_expression_recognit.md)
 
 </div>
 

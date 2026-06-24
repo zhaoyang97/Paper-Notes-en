@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exposing the Cracks: Vulnerabilities of Retrieval-Augmented LLM-Based Machine Translation
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Retrieval-Augmented Translation] This work develops a controlled noise injection framework to systematically evaluate retrieval-augmented machine translation (REAL-MT)…
+  [AAAI 2026][Information Retrieval & RAG][Retrieval-Augmented Translation] This work develops a controlled noise injection framework to systematically evaluate retrieval-augmented machine translation (REAL-MT), introduces two new metrics—Fidelity and CAR—and reveals across 10 language pairs × 4 noise types that models blindly adopt retrieved context even when it is contradictory (CAR remains 65–78%). Large reasoning models (LRMs) are found to be even more vulnerable by "ration…
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Calibration"
   - "Multilingual"
 date: 2026-05-08
-content_hash: 52f48dd492733a20
+content_hash: 0f881de3a734b697
 ---
 
 # Exposing the Cracks: Vulnerabilities of Retrieval-Augmented LLM-Based Machine Translation
@@ -133,9 +133,9 @@ This is an evaluation study—no model training is performed. Open-source and cl
 
 - [\[ACL 2026\] AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation](../../ACL2026/information_retrieval/authoritybench_benchmarking_llm_authority_perception_for_reliable_retrieval-augm.md)
 - [\[ACL 2026\] Optimizing User Profiles via Contextual Bandits for Retrieval-Augmented LLM Personalization](../../ACL2026/information_retrieval/optimizing_user_profiles_via_contextual_bandits_for_retrieval-augmented_llm_pers.md)
-- [\[AAAI 2026\] Do Retrieval Augmented Language Models Know When They Don't Know?](do_retrieval_augmented_language_models_know_when_they_dont_know.md)
+- [\[ACL 2025\] Health-LLM: Personalized Retrieval-Augmented Disease Prediction System](../../ACL2025/information_retrieval/health-llm_personalized_retrieval-augmented_disease_prediction_system.md)
 - [\[AAAI 2026\] PRECISE: Reducing the Bias of LLM Evaluations Using Prediction-Powered Ranking Estimation](precise_reducing_the_bias_of_llm_evaluations_using_prediction-powered_ranking_es.md)
-- [\[AAAI 2026\] Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation](cog-rag_cognitive-inspired_dual-hypergraph_with_theme_alignment_retrieval-augmen.md)
+- [\[AAAI 2026\] Do Retrieval Augmented Language Models Know When They Don't Know?](do_retrieval_augmented_language_models_know_when_they_dont_know.md)
 
 </div>
 

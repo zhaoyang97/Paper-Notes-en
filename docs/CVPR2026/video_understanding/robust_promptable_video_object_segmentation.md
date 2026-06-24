@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robust Promptable Video Object Segmentation
 description: >-
-  [CVPR 2026][Video Understanding][SAM2] Addressing the performance collapse of promptable video object segmentation (PVOS) models like SAM2 under adverse weather and noise, this paper constructs the first RobustPVOS benchmark (351 real-world adverse videos + large-scale time-varying synthetic degradation data) and proposes MoGA. MoGA uses object pointers fro
+  [CVPR 2026][Video Understanding][Promptable Video Object Segmentation] Addressing the performance collapse of promptable video object segmentation (PVOS) models like SAM2 under adverse weather and noise, this paper constructs the first RobustPVOS benchmark (351 real-world adverse videos + large-scale time-varying synthetic degradation data) and proposes MoGA. MoGA uses object pointers from the memory bank to "condition" the gating of a shared low-rank adapter…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - SAM2
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Promptable Video Object Segmentation"
+  - "Robustness"
+  - "SAM2"
+  - "Memory-conditioned Adaptation"
+  - "Gated Low-rank Adaptation"
 date: 2026-05-08
-content_hash: 50bba52a2181d08d
+content_hash: 428dd564d39ba547
 ---
+
 # Robust Promptable Video Object Segmentation
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ Sensitivity to Rank $R$ (YouTube-VOS-C): 32 → 79.3, 64 → 79.4, **128 → 79.
 
 ## Related Papers
 
+- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
+- [\[CVPR 2026\] InterRVOS: Interaction-Aware Referring Video Object Segmentation](interrvos_interaction-aware_referring_video_object_segmentation.md)
 - [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
-- [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](scene-centric_unsupervised_video_panoptic_segmentation.md)
+- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
 - [\[CVPR 2026\] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](egoxtreme_a_dataset_for_robust_object_pose_estimation_in_egocentric_views_under_.md)
-- [\[CVPR 2026\] Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation](bootstrapping_video_semantic_segmentation_model_via_distillation-assisted_test-t.md)
-- [\[CVPR 2026\] Reconstruction-Guided Slot Curriculum: Addressing Object Over-Fragmentation in Video Object-Centric Learning](reconstruction-guided_slot_curriculum_addressing_object_over-fragmentation_in_vi.md)
 
 </div>
 

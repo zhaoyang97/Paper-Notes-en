@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] ReGenHOI unifies the "reconstruction" (restoring observed contacts from images) and "generation" (synthesizing future interactions from linguistic instructions) of 3D Human-Object Interaction (HOI) into a shared semantic-geometric latent space. By integrating direct 3D point cloud contact reasoning, iterative reasoning
+  [CVPR 2026][3D Vision][Human-Object Interaction] ReGenHOI unifies the "reconstruction" (restoring observed contacts from images) and "generation" (synthesizing future interactions from linguistic instructions) of 3D Human-Object Interaction (HOI) into a shared semantic-geometric latent space. By integrating direct 3D point cloud contact reasoning, iterative reasoning trajectories, and a gravitational field diffusion bridge for contact refinement…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human-Object Interaction"
+  - "Contact Reasoning"
+  - "Unified Reconstruction and Generation"
+  - "Diffusion Bridge"
+  - "Shared Latent Space"
 date: 2026-05-08
-content_hash: 614b9084ba48fe1e
+content_hash: eb093f42cd113086
 ---
+
 # ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding
 
 **Conference**: CVPR 2026  
@@ -137,15 +143,15 @@ Reconstruction accuracy and ablation on the PICO dataset:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation](superman_unifying_skeleton_and_vision_for_human_motion_perception_and_generation.md)
-- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
-- [\[CVPR 2026\] GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection](genhoi_towards_object-consistent_hand-object_interaction_with_temporally_balance.md)
-- [\[CVPR 2026\] RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised Human-Object Interaction Detection](regformer_transferable_relational_grounding_for_efficient_weakly-supervised_huma.md)
-- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
+- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
+- [\[CVPR 2026\] CrossHOI: Learning Cross-View Representations for Monocular 3D Human-Object Interaction Reconstruction](crosshoi_learning_cross-view_representations_for_monocular_3d_human-object_inter.md)
+- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
+- [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)
+- [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
 
 </div>
 

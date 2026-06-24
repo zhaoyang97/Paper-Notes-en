@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RNNs Perform Task Computations by Dynamically Warping Neural Representations
 description: >-
-  [NeurIPS 2025][RNN] This paper proposes a Riemannian geometric framework that pulls back the metric from the RNN state space onto the input manifold…
+  [NeurIPS 2025][RNN] This paper proposes a Riemannian geometric framework that pulls back the metric from the RNN state space onto the input manifold, demonstrating that RNNs perform computation by dynamically warping their representations of task variables—compressing task-irrelevant inputs and stretching space near decision boundaries. Crucially, this warping is not a byproduct of computation but constitutes computation itself.
 tags:
   - "NeurIPS 2025"
   - "RNN"
@@ -11,7 +11,7 @@ tags:
   - "dynamical systems"
   - "manifold warping"
 date: 2026-05-08
-content_hash: 734f3ffdbe9689c9
+content_hash: 8e444eeeeb6588fa
 ---
 
 # RNNs Perform Task Computations by Dynamically Warping Neural Representations
@@ -128,11 +128,11 @@ RNNs are trained with standard MSE loss on specific tasks (context-dependent dec
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Learning Dynamics of RNNs in Closed-Loop Environments](learning_dynamics_of_rnns_in_closed-loop_environments.md)
 - [\[NeurIPS 2025\] Exploiting Task Relationships in Continual Learning via Transferability-Aware Task Embeddings](exploiting_task_relationships_in_continual_learning_via_transferability-aware_ta.md)
 - [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
-- [\[NeurIPS 2025\] Learning Dynamics of RNNs in Closed-Loop Environments](learning_dynamics_of_rnns_in_closed-loop_environments.md)
-- [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
-- [\[ICML 2026\] Continual Learning of Domain-Invariant Representations](../../ICML2026/others/continual_learning_of_domain-invariant_representations.md)
+- [\[ICML 2025\] On the Importance of Gaussianizing Representations](../../ICML2025/others/on_the_importance_of_gaussianizing_representations.md)
+- [\[ICLR 2026\] Exploring State-Space Models for Data-Specific Neural Representations](../../ICLR2026/others/exploring_state-space_models_for_data-specific_neural_representations.md)
 
 </div>
 

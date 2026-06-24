@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Back to Square Roots: An Optimal Bound on the Matrix Factorization Error for Multi-Epoch Differentially Private SGD
 description: >-
-  [ICLR 2026][AI Safety][differential privacy] This paper proposes the Banded Inverse Square Root (BISR) matrix factorization method. By imposing a banded structure on the inverse correlation matrix (rather than the correlation matrix itself), it achieves the first asymptotically optimal factorization error bound for multi-epoch Differentially Private SGD, accompan
+  [ICLR 2026][AI Safety][differential privacy] This paper proposes the Banded Inverse Square Root (BISR) matrix factorization method. By imposing a banded structure on the inverse correlation matrix (rather than the correlation matrix itself), it achieves the first asymptotically optimal factorization error bound for multi-epoch Differentially Private SGD, accompanied by a low-storage optimized variant, BandInvMF.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - differential privacy
-  - matrix factorization
-  - DP-SGD
-  - multi-epoch participation
-  - banded factorization
-  - optimal error bounds
+  - "ICLR 2026"
+  - "AI Safety"
+  - "differential privacy"
+  - "matrix factorization"
+  - "DP-SGD"
+  - "multi-epoch participation"
+  - "banded factorization"
+  - "optimal error bounds"
 date: 2026-05-08
-content_hash: f1b723e5957ae8ce
+content_hash: a25d7f920403454e
 ---
+
 # Back to Square Roots: An Optimal Bound on the Matrix Factorization Error for Multi-Epoch Differentially Private SGD
 
 **Conference**: ICLR 2026  
@@ -116,8 +117,8 @@ BISR coefficients originate from a closed-form square root construction, which m
 
 ## Related Papers
 
-- [\[ICLR 2026\] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text](pe-sgd_differentially_private_deep_learning_via_evolution_of_gradient_subspace_f.md)
 - [\[ICLR 2026\] Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization](unified_privacy_guarantees_for_decentralized_learning_via_matrix_factorization.md)
+- [\[ICLR 2026\] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text](pe-sgd_differentially_private_deep_learning_via_evolution_of_gradient_subspace_f.md)
 - [\[ICLR 2026\] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning](on_optimal_hyperparameters_for_differentially_private_deep_transfer_learning.md)
 - [\[ICLR 2026\] Skirting Additive Error Barriers for Private Turnstile Streams](skirting_additive_error_barriers_for_private_turnstile_streams.md)
 - [\[AAAI 2026\] An Improved Privacy and Utility Analysis of Differentially Private SGD with Bounded Domain and Smooth Losses](../../AAAI2026/ai_safety/an_improved_privacy_and_utility_analysis_of_differentially_p.md)

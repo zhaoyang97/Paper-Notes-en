@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] AdaTooler-V: Adaptive Tool-Use for Images and Videos
 description: >-
-  [ACL 2026][Multimodal VLM][AT-GRPO] This paper identifies a widespread **blind tool-use** problem in existing "thinking with images" MLLMs—models tend to force zoom-in or frame extraction for all visual questions, resulting in overthinking that degrades accuracy and increases inference costs. To address this, the authors propose AdaTooler-V, which introd
+  [ACL 2026 Findings][Multimodal VLM][Multimodal Reasoning] This paper identifies a widespread **blind tool-use** problem in existing "thinking with images" MLLMs—models tend to force zoom-in or frame extraction for all visual questions, resulting in overthinking that degrades accuracy and increases inference costs. To address this, the authors propose AdaTooler-V, which introduces the AT-GRPO reinforcement learning algorithm. By using a sample-level Tool Benefit Score to dynam…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - AT-GRPO
-  - Tool Benefit Score
-  - V* bench
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Multimodal Reasoning"
+  - "Adaptive Tool-use"
+  - "AT-GRPO"
+  - "Tool Benefit Score"
+  - "V* bench"
 date: 2026-05-08
-content_hash: d3af6f3c086e5500
+content_hash: 4bf938f3a5c21589
 ---
+
 # AdaTooler-V: Adaptive Tool-Use for Images and Videos
 
 **Conference**: ACL 2026 Findings  
@@ -144,6 +147,7 @@ Covering 12 benchmarks across single-image (V*, MME, InfoVQA, MathVista), multi-
 - Value: ⭐⭐⭐⭐ Provides a practical roadmap for training deployable agentic VLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

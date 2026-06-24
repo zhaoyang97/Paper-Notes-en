@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper attributes the long-standing question of "when does a multi-agent team need division of labor" to a curvature criterion of the reward function. By decomposing the team reward into a two-step process—an "inner operator" aggregating agent efforts on individual tasks and an "outer operator" aggregating task sco
+  [ICLR 2026][Reinforcement Learning][Multi-agent reinforcement learning] This paper attributes the long-standing question of "when does a multi-agent team need division of labor" to a curvature criterion of the reward function. By decomposing the team reward into a two-step process—an "inner operator" aggregating agent efforts on individual tasks and an "outer operator" aggregating task scores—it proves that whenever the inner operator is Schur-convex (or the outer is Schur-co…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-agent reinforcement learning"
+  - "behavioral heterogeneity"
+  - "task allocation"
+  - "Schur-convexity"
+  - "reward design"
 date: 2026-05-08
-content_hash: 84e9a49b1dcb454d
+content_hash: 8649bfdb151feb93
 ---
+
 # When Is Diversity Rewarded in Cooperative Multi-Agent Learning?
 
 **Conference**: ICLR 2026  
@@ -126,10 +132,17 @@ The environment-side objective for HetGPS is the empirical heterogeneity gain $\
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
+- [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
+- [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)
+- [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](../../CVPR2026/reinforcement_learning/taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
+- [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](multi-agent_guided_policy_optimization.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)

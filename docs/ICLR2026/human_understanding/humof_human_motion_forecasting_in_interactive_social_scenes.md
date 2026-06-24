@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] HUMOF: Human Motion Forecasting in Interactive Social Scenes
 description: >-
-  [ICLR 2026][Human Understanding][DCT] HUMOF uniformly encodes "human-human interaction" (HHI) and "human-scene interaction" (HSI) in dynamic social scenes into hierarchical features (high-level semantics + low-level geometry). These features are injected layer-by-layer via a coarse-to-fine Transformer reasoning module, achieving state-of-the-art (SOTA) per
+  [ICLR 2026][Human Understanding][Human Motion Prediction] HUMOF uniformly encodes "human-human interaction" (HHI) and "human-scene interaction" (HSI) in dynamic social scenes into hierarchical features (high-level semantics + low-level geometry). These features are injected layer-by-layer via a coarse-to-fine Transformer reasoning module, achieving state-of-the-art (SOTA) performance on four public datasets.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - DCT
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Human Motion Prediction"
+  - "Human-Human Interaction"
+  - "Human-Scene Interaction"
+  - "Hierarchical Representation"
+  - "Coarse-to-Fine"
+  - "DCT"
 date: 2026-05-08
-content_hash: a8dd86e686a29c6e
+content_hash: 7b5987f2f317ad01
 ---
+
 # HUMOF: Human Motion Forecasting in Interactive Social Scenes
 
 **Conference**: ICLR 2026  
@@ -121,9 +127,9 @@ Additional ablations show: Coarse-to-fine injection outperforms single-level inj
 
 - [\[ICLR 2026\] SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual Dyadic Interactive Human Generation](speakervid-5m_a_large-scale_high-quality_dataset_for_audio-visual_dyadic_interac.md)
 - [\[ECCV 2024\] Human Motion Forecasting in Dynamic Domain Shifts: A Homeostatic Continual Test-Time Adaptation Framework](../../ECCV2024/human_understanding/human_motion_forecasting_in_dynamic_domain_shifts_a_homeostatic_continual_test-t.md)
+- [\[ICLR 2026\] Unified Multi-Modal Interactive and Reactive 3D Motion Generation via Rectified Flow](unified_multi-modal_interactive_and_reactive_3d_motion_generation_via_rectified_.md)
 - [\[ICLR 2026\] KinemaDiff: Towards Diffusion for Coherent and Physically Plausible Human Motion Prediction](kinemadiff_towards_diffusion_for_coherent_and_physically_plausible_human_motion_.md)
 - [\[CVPR 2025\] MotionMap: Representing Multimodality in Human Pose Forecasting](../../CVPR2025/human_understanding/motionmap_representing_multimodality_in_human_pose_forecasting.md)
-- [\[CVPR 2026\] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](../../CVPR2026/human_understanding/beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][Geometric Consistency] This paper is the first to systematically quantify geometric distortions in autonomous driving video generation. It proposes the RLGF framework…
+  [NeurIPS 2025][Video Generation][Geometric Consistency] This paper is the first to systematically quantify geometric distortions in autonomous driving video generation. It proposes the RLGF framework, which leverages hierarchical geometric rewards (vanishing point → lane lines → depth → occupancy) combined with a latent-space sliding window optimization strategy to improve 3D object detection mAP by 12.7 absolute percentage points (25.75→31.42)…
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Autonomous Driving Data Generation"
   - "3D Perception"
 date: 2026-05-08
-content_hash: e6302649e80efc5b
+content_hash: 59f0eec6a505ea9c
 ---
 
 # RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation
@@ -150,11 +150,11 @@ LoRA is applied to the Q/K/V projections of the DiT backbone attention layers; t
 
 ## Related Papers
 
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](../../CVPR2026/video_generation/goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
 - [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](../../ICCV2025/video_generation/magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
 - [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](../../ICCV2025/video_generation/disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
+- [\[CVPR 2026\] NS-Diff: Fluid Navier-Stokes Guided Video Diffusion via Reinforcement Learning](../../CVPR2026/video_generation/ns-diff_fluid_navier-stokes_guided_video_diffusion_via_reinforcement_learning.md)
 - [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](../../ICLR2026/video_generation/drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
-- [\[ICCV 2025\] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering](../../ICCV2025/video_generation/steerx_creating_any_camera-free_3d_and_4d_scenes_with_geometric_steering.md)
+- [\[CVPR 2026\] RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes](../../CVPR2026/video_generation/recedit-drive_3d_reconstruction-guided_spatiotemporal_video_editing_for_autonomo.md)
 
 </div>
 

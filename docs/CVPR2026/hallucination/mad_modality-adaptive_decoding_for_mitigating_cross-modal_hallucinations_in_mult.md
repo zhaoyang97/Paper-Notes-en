@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] To address "cross-modal hallucinations" in audio-visual large language models—where one modality incorrectly influences the generation of another—this paper proposes MAD (Modality-Adaptive Decoding). MAD is a training-free method that first extracts modality weights by having the model identify which modality is requir
+  [CVPR 2026][Hallucination Detection][Cross-modal hallucination] To address "cross-modal hallucinations" in audio-visual large language models—where one modality incorrectly influences the generation of another—this paper proposes MAD (Modality-Adaptive Decoding). MAD is a training-free method that first extracts modality weights by having the model identify which modality is required for a question, then uses these weights to adaptively weight a four-way contrastive decoding…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Cross-modal hallucination"
+  - "Contrastive decoding"
+  - "Training-free"
+  - "Modality self-assessment"
+  - "Audio-visual LLMs"
 date: 2026-05-08
-content_hash: 0cdf382ab2eb2d7c
+content_hash: 7a0722f902f2aca8
 ---
+
 # MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -150,9 +156,9 @@ MAD outperforms baselines across all models and datasets: VideoLLaMA2-AV improve
 
 - [\[CVPR 2026\] MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization](mod-dpo_towards_mitigating_cross-modal_hallucinations_in_omni_llms_using_modalit.md)
 - [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
-- [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
+- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
+- [\[CVPR 2026\] Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models](envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
-- [\[CVPR 2026\] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models](understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model.md)
 
 </div>
 

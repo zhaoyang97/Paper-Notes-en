@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ChartEditor: A Reinforcement Learning Framework for Robust Chart Editing
 description: >-
-  [AAAI2026][Reinforcement Learning][chart editing] This paper introduces the ChartEditVista benchmark (7,964 samples, 31 chart types) and the ChartEditor model. By combining a GRPO reinforcement learning framework with a…
+  [AAAI2026][Reinforcement Learning][chart editing] This paper introduces the ChartEditVista benchmark (7,964 samples, 31 chart types) and the ChartEditor model. By combining a GRPO reinforcement learning framework with a novel rendering reward, ChartEditor surpasses GPT-4o and several 72B-scale models on chart editing tasks using only 3B parameters.
 tags:
   - "AAAI2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "rendering reward"
   - "benchmark"
 date: 2026-05-08
-content_hash: 943fe2b4e0feabaa
+content_hash: 562519a3de66cd43
 ---
 
 # ChartEditor: A Reinforcement Learning Framework for Robust Chart Editing
@@ -144,7 +144,7 @@ The rendering reward paradigm is broadly applicable to other tasks involving cod
 - [\[AAAI 2026\] Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework](distilling_deep_reinforcement_learning_into_interpretable_fuzzy_rules_an_explain.md)
 - [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
 - [\[ICLR 2026\] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning](../../ICLR2026/reinforcement_learning/solving_parameter-robust_avoid_problems_with_unknown_feasibility_using_reinforce.md)
-- [\[AAAI 2026\] A Learning Framework For Cooperative Collision Avoidance of UAV Swarms Leveraging Domain Knowledge](a_learning_framework_for_cooperative_collision_avoidance_of_uav_swarms_leveragin.md)
+- [\[ICLR 2026\] GRACE: A Language Model Framework for Explainable Inverse Reinforcement Learning](../../ICLR2026/reinforcement_learning/grace_a_language_model_framework_for_explainable_inverse_reinforcement_learning.md)
 
 </div>
 

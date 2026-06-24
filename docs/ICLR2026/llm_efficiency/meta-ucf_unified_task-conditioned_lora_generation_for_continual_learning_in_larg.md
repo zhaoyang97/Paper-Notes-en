@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][LoRA] The authors utilize a shared hypernetwork to instantly translate lightweight task embeddings into full-layer LoRA updates. By employing meta-contrastive and orthogonal objectives to push task embeddings toward near-orthogonality, they achieve continual learning without forgetting while maintaining constant memory (equi
+  [ICLR 2026][LLM Efficiency][LoRA] The authors utilize a shared hypernetwork to instantly translate lightweight task embeddings into full-layer LoRA updates. By employing meta-contrastive and orthogonal objectives to push task embeddings toward near-orthogonality, they achieve continual learning without forgetting while maintaining constant memory (equivalent to the parameters of a single adapter).
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "LoRA"
+  - "Continual Learning"
+  - "Hypernetwork"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Meta-learning"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: e2d159162d87f416
+content_hash: 42e5f6dbbff5e655
 ---
+
 # Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -131,7 +137,7 @@ Single-factor ablation on Std-CL 5 / Long-CL 15:
 - [\[ICLR 2026\] PLoP: Precise LoRA Placement for Efficient Finetuning of Large Models](plop_precise_lora_placement_for_efficient_finetuning_of_large_models.md)
 - [\[ICLR 2026\] LoRAGen: Structure-Aware Weight Space Learning for LoRA Generation](loragen_structure-aware_weight_space_learning_for_lora_generation.md)
 - [\[ICLR 2026\] BA-LoRA: Bias-Alleviating Low-Rank Adaptation to Mitigate Catastrophic Inheritance in Large Language Models](ba-lora_bias-alleviating_low-rank_adaptation_to_mitigate_catastrophic_inheritanc.md)
-- [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
+- [\[ICLR 2026\] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning](one-prompt_strikes_back_sparse_mixture_of_experts_for_prompt-based_continual_lea.md)
 
 </div>
 

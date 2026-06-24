@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos
 description: >-
-  [ICML 2026][Pretraining][edge-of-chaos] The authors interpret dropout as an "external field" $h$ that breaks the $c^*=1$ perfect alignment fixed point in mean field signal propagation theory. They derive the Landau equation, two-parameter scaling collapse, and identify two distinct universality classes for smooth and kinked activations. This leads to a "zero
+  [ICML 2026][LLM Pretraining][Mean Field Theory] The authors interpret dropout as an "external field" $h$ that breaks the $c^*=1$ perfect alignment fixed point in mean field signal propagation theory. They derive the Landau equation, two-parameter scaling collapse, and identify two distinct universality classes for smooth and kinked activations. This leads to a "zero-overhead" practical conclusion: a **front-loaded schedule** reduces test loss by 18–35% in MLPs and ViTs compar…
 tags:
-  - ICML 2026
-  - Pretraining
-  - edge-of-chaos
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "Mean Field Theory"
+  - "edge-of-chaos"
+  - "dropout scheduling"
+  - "universality classes"
+  - "scaling laws"
 date: 2026-05-08
-content_hash: 646353aab5aa0149
+content_hash: bb870c76e281be44
 ---
+
 # Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos
 
 **Conference**: ICML 2026  
@@ -128,10 +133,10 @@ On ViT CIFAR-100, linear-decreasing reached 49.38% vs. constant 48.69% ($p<0.05$
 ## Related Papers
 
 - [\[ICML 2026\] Explaining Data Mixing Scaling Laws](explaining_data_mixing_scaling_laws.md)
+- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](../../ICLR2026/llm_pretraining/pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
 - [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](../../ICLR2026/llm_pretraining/scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 - [\[NeurIPS 2025\] Gemstones: A Model Suite for Multi-Faceted Scaling Laws](../../NeurIPS2025/llm_pretraining/gemstones_a_model_suite_for_multi-faceted_scaling_laws.md)
-- [\[ICML 2026\] XTransfer: Modality-Agnostic Few-Shot Model Transfer for Human Sensing at the Edge](xtransfer_modality-agnostic_few-shot_model_transfer_for_human_sensing_at_the_edg.md)
-- [\[ICML 2026\] Scaling Depth Capacity via Zero/One-Layer Model Expansion](scaling_depth_capacity_via_zeroone-layer_model_expansion.md)
 
 </div>
 

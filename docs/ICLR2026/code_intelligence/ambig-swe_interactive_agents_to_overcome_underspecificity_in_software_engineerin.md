@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering
 description: >-
-  [ICLR 2026][Code Intelligence][underspecification] The authors construct Ambig-SWE (an underspecified variant based on SWE-Bench Verified) to systematically evaluate the interaction capabilities of LLM programming agents across three dimensions: detecting underspecification, asking clarifying questions, and utilizing interactive information. They find that interaction
+  [ICLR 2026][Code Intelligence][underspecification] The authors construct Ambig-SWE (an underspecified variant based on SWE-Bench Verified) to systematically evaluate the interaction capabilities of LLM programming agents across three dimensions: detecting underspecification, asking clarifying questions, and utilizing interactive information. They find that interaction can improve resolution rates in underspecified scenarios by up to 74%, yet models default to non-interactive…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - underspecification
-  - interactive agent
-  - SWE-Bench
-  - clarification
-  - software engineering
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "underspecification"
+  - "interactive agent"
+  - "SWE-Bench"
+  - "clarification"
+  - "software engineering"
 date: 2026-05-08
-content_hash: d868a49e48021d9c
+content_hash: 35f24f8b1c510326
 ---
+
 # Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering
 
 **Conference**: ICLR 2026  
@@ -134,9 +135,9 @@ Models rarely interact by default. To determine if this is a capability gap or a
 
 - [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](swe-rm_execution-free_feedback_for_software_engineering_agents.md)
 - [\[ICML 2025\] Training Software Engineering Agents and Verifiers with SWE-Gym](../../ICML2025/code_intelligence/training_software_engineering_agents_and_verifiers_with_swe-gym.md)
+- [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](../../NeurIPS2025/code_intelligence/swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
 - [\[ICLR 2026\] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization](boad_discovering_hierarchical_software_engineering_agents_via_bandit_optimizatio.md)
 - [\[ICLR 2026\] Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents](process-level_trajectory_evaluation_for_environment_configuration_in_software_en.md)
-- [\[ICLR 2026\] Kimi-Dev: Agentless Training as Skill Prior for SWE-agents](kimi-dev_agentless_training_as_skill_prior_for_swe-agents.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] STARFlow-V introduces Normalizing Flows (NF) to the field of video generation. By employing a "global-local" invertible architecture for end-to-end maximum likelihood training and causal autoregressive inference, combined with a lightweight causal denoiser (flow-score matching) and video-aware Jacobi parallel solving,
+  [CVPR 2026][Video Generation][Normalizing Flows] STARFlow-V introduces Normalizing Flows (NF) to the field of video generation. By employing a "global-local" invertible architecture for end-to-end maximum likelihood training and causal autoregressive inference, combined with a lightweight causal denoiser (flow-score matching) and video-aware Jacobi parallel solving, it demonstrates for the first time that NF can achieve quality comparable to causal diffusion baselines on 480p…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Normalizing Flows"
+  - "Autoregressive Generation"
+  - "Causal Modeling"
+  - "Flow-Score Matching"
 date: 2026-05-08
-content_hash: eef299cab02d83e5
+content_hash: 07f7f63edfa90c2f
 ---
+
 # STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows
 
 **Conference**: CVPR 2026  
@@ -125,16 +130,16 @@ STARFlow-V is the only NF method on the leaderboard, reaching parity with recent
 - Value: ⭐⭐⭐⭐ High potential as a world model backbone, though short-term deployment is limited by latency.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] MoCha: End-to-End Video Character Replacement without Structural Guidance](mocha_end-to-end_video_character_replacement_without_structural_guidance.md)
-- [\[CVPR 2026\] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation](autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio.md)
+- [\[CVPR 2026\] EasyOmnimatte: Taming Pretrained Inpainting Diffusion Models for End-to-End Video Layered Decomposition](easyomnimatte_taming_pretrained_inpainting_diffusion_models_for_end-to-end_video.md)
+- [\[ICLR 2026\] MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation](../../ICLR2026/video_generation/moga_mixture-of-groups_attention_for_end-to-end_long_video_generation.md)
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](lottiegpt_vector_animation_generation.md)
 - [\[CVPR 2026\] A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)
-- [\[CVPR 2026\] GT-SVJ: Generative-Transformer-Based Self-Supervised Video Judge For Efficient Video Reward Modeling](gt-svj_generative-transformer-based_self-supervised_video_judge.md)
 
 </div>
 

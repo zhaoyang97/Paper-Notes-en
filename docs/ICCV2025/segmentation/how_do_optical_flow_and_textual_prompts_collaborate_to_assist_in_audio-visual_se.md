@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation?
 description: >-
-  [ICCV 2025][Segmentation][Audio-Visual Semantic Segmentation] This paper proposes the SSP (Stepping Stone Plus) framework, which employs optical flow as auxiliary mask prompts in conjunction with two types of textual pro…
+  [ICCV 2025][Segmentation][Audio-Visual Semantic Segmentation] This paper proposes the SSP (Stepping Stone Plus) framework, which employs optical flow as auxiliary mask prompts in conjunction with two types of textual prompts and a Visual-Textual Alignment (VTA) module, achieving state-of-the-art performance on the audio-visual semantic segmentation task.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Modal Alignment"
   - "AVSS"
 date: 2026-05-08
-content_hash: f23f7adea12d9970
+content_hash: 7b145b6454adde46
 ---
 
 # How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation?
@@ -153,8 +153,8 @@ Compared to the AAVS baseline, SSP achieves: S4 +2.2%/+1.9%, MS3 +5.0%/+7.0%, AV
 - [\[ICCV 2025\] Implicit Counterfactual Learning for Audio-Visual Segmentation](implicit_counterfactual_learning_for_audio-visual_segmentation.md)
 - [\[ICCV 2025\] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models](tavis_text-bridged_audio-visual_segmentation_with_foundation_models.md)
 - [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
-- [\[ICCV 2025\] Refer to Any Segmentation Mask Group With Vision-Language Prompts](refer_to_any_segmentation_mask_group_with_vision-language_prompts.md)
-- [\[ICML 2026\] LightAVSeg: Lightweight Audio-Visual Segmentation](../../ICML2026/segmentation/lightavseg_lightweight_audio-visual_segmentation.md)
+- [\[CVPR 2025\] Audio-Visual Instance Segmentation](../../CVPR2025/segmentation/audio-visual_instance_segmentation.md)
+- [\[CVPR 2025\] Robust Audio-Visual Segmentation via Audio-Guided Visual Convergent Alignment](../../CVPR2025/segmentation/robust_audio-visual_segmentation_via_audio-guided_visual_convergent_alignment.md)
 
 </div>
 

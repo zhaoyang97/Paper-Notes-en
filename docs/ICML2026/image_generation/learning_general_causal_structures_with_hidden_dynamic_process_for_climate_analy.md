@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning General Causal Structures with Hidden Dynamic Process for Climate Analysis
 description: >-
-  [ICML 2026][Image Generation][VAE] This paper proposes CaDRe, which utilizes a structurally constrained temporal VAE to jointly identify the "causal graph between observed variables" and the "latent dynamic processes driving observations" within a single non-parametric framework. It provides identifiability theorems for recovering both from temporal dat
+  [ICML 2026][Image Generation][Causal Discovery] This paper proposes CaDRe, which utilizes a structurally constrained temporal VAE to jointly identify the "causal graph between observed variables" and the "latent dynamic processes driving observations" within a single non-parametric framework. It provides identifiability theorems for recovering both from temporal data simultaneously. The theory is validated on synthetic data, while the model achieves causal graphs consistent w…
 tags:
-  - ICML 2026
-  - Image Generation
-  - VAE
+  - "ICML 2026"
+  - "Image Generation"
+  - "Causal Discovery"
+  - "Causal Representation Learning"
+  - "Hidden Dynamical Systems"
+  - "Nonlinear ICA"
+  - "VAE"
 date: 2026-05-08
-content_hash: 5d45c38edf015d4a
+content_hash: 8c35845149aefd2c
 ---
+
 # Learning General Causal Structures with Hidden Dynamic Process for Climate Analysis
 
 **Conference**: ICML 2026  

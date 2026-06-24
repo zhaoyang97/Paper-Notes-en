@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models
 description: >-
-  [ICCV 2025][LLM/NLP][LLM continual learning] This paper proposes the Analytic Subspace Routing (Any-SSR) framework, which eliminates inter-task interference by assigning each task an independent LoRA subspace…
+  [ICCV 2025][LLM (Other)][LLM continual learning] This paper proposes the Analytic Subspace Routing (Any-SSR) framework, which eliminates inter-task interference by assigning each task an independent LoRA subspace, and trains a zero-forgetting analytic router via a recursive least squares (RLS) closed-form solution, enabling replay-free continual learning for LLMs.
 tags:
   - "ICCV 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "LLM continual learning"
   - "catastrophic forgetting"
   - "recursive least squares"
   - "LoRA subspace routing"
   - "replay-free learning"
 date: 2026-05-08
-content_hash: 568320d958207821
+content_hash: c0ea31b1b79a7e9c
 ---
 
 # Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models
@@ -204,10 +204,10 @@ Without any replay, Any-SSR incurs only −1.26 degradation in general capabilit
 ## Related Papers
 
 - [\[ICCV 2025\] VA-GPT: Aligning Effective Tokens with Video Anomaly in Large Language Models](va_gpt_aligning_effective_tokens_video_anomaly.md)
+- [\[ACL 2025\] Recurrent Knowledge Identification and Fusion for Language Model Continual Learning](../../ACL2025/llm_nlp/recurrent_kif_continual_learning.md)
 - [\[ICCV 2025\] VIM: Versatile Interactive Motion-Language Model](vim_versatile_interactive_motion_language_model.md)
 - [\[ICCV 2025\] ShadowHack: Hacking Shadows via Luminance-Color Divide and Conquer](shadowhack_hacking_shadows_via_luminance-color_divide_and_conquer.md)
 - [\[ICCV 2025\] FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization](fw-merging_scaling_model_merging_with_frank-wolfe_optimization.md)
-- [\[NeurIPS 2025\] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](../../NeurIPS2025/llm_nlp/c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Compositional Generalization through Gradient Search in Nonparametric Latent Space
 description: >-
-  [ICLR 2026][Optimization & Theory][Dirichlet Process] This paper proposes the Abduction Transformer, which represents hidden rules in few-shot abstract reasoning tasks as variable-sized nonparametric latent mixture distributions. By performing gradient search on latent hypotheses at test time, it significantly improves OOD compositional generalization on 1-D ARC, SRAVEN,
+  [ICLR2026][Optimization][Compositional generalization] This paper proposes the Abduction Transformer, which represents hidden rules in few-shot abstract reasoning tasks as variable-sized nonparametric latent mixture distributions. By performing gradient search on latent hypotheses at test time, it significantly improves OOD compositional generalization on 1-D ARC, SRAVEN, and linguistic systematicity tasks.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Dirichlet Process
+  - "ICLR2026"
+  - "Optimization"
+  - "Compositional generalization"
+  - "nonparametric latent variables"
+  - "gradient search"
+  - "Dirichlet Process"
+  - "meta-learning"
 date: 2026-05-08
-content_hash: 373e83f66de05afd
+content_hash: 1c22c694aaea7fbb
 ---
+
 # Compositional Generalization through Gradient Search in Nonparametric Latent Space
 
 **Conference**: ICLR2026  

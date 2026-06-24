@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design
 description: >-
-  [NeurIPS 2025][Graph Learning][Analog Circuit Design] FALCON proposes an end-to-end framework for automated analog/RF circuit design via a three-stage pipeline: MLP-based topology selection…
+  [NeurIPS 2025][Graph Learning][Analog Circuit Design] FALCON proposes an end-to-end framework for automated analog/RF circuit design via a three-stage pipeline: MLP-based topology selection, edge-centric GNN performance prediction, and differentiable layout-constrained gradient inference. Trained on a million-scale Cadence simulation dataset, the framework achieves >99% topology selection accuracy, <10% performance prediction error, and sub-second per-instance inference.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Layout-Aware Optimization"
   - "Millimeter-Wave Circuits"
 date: 2026-05-08
-content_hash: b8368a0312ca51ff
+content_hash: 46ed4a1a3226c155
 ---
 
 # FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design
@@ -169,10 +169,10 @@ Input: target performance vector $y_{\text{target}} \in \mathbb{R}^{16}$ (16 ana
 ## Related Papers
 
 - [\[ACL 2026\] AutoPKG: An Automated Framework for Dynamic E-commerce Product-Attribute Knowledge Graph Construction](../../ACL2026/graph_learning/autopkg_an_automated_framework_for_dynamic_e-commerce_product-attribute_knowledg.md)
+- [\[ICLR 2026\] Si-GT: Fast Interconnect Signal Integrity Analysis for Integrated Circuit Design via Graph Transformers](../../ICLR2026/graph_learning/si-gt_fast_interconnect_signal_integrity_analysis_for_integrated_circuit_design_.md)
 - [\[NeurIPS 2025\] Unifying and Enhancing Graph Transformers via a Hierarchical Mask Framework](unifying_and_enhancing_graph_transformers_via_a_hierarchical_mask_framework.md)
-- [\[ICML 2026\] Beyond Model Base Retrieval: Weaving Knowledge to Master Fine-grained Neural Network Design](../../ICML2026/graph_learning/beyond_model_base_retrieval_weaving_knowledge_to_master_fine-grained_neural_netw.md)
-- [\[AAAI 2026\] Skill Path: Unveiling Language Skills from Circuit Graphs](../../AAAI2026/graph_learning/skill_path_unveiling_language_skills_from_circuit_graphs.md)
-- [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
+- [\[ICLR 2026\] Bridging ML and Algorithms: Comparison of Hyperbolic Embeddings](../../ICLR2026/graph_learning/bridging_ml_and_algorithms_comparison_of_hyperbolic_embeddings.md)
+- [\[ICML 2025\] Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models](../../ICML2025/graph_learning/graph-constrained_reasoning_faithful_reasoning_on_knowledge_graphs_with_large_la.md)
 
 </div>
 

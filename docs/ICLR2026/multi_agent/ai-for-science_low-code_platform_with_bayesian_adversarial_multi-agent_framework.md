@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AI-for-Science Low-code Platform with Bayesian Adversarial Multi-Agent Framework
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] The framework organizes "tasking-solving-scoring" agents into an adversarial loop and uses a **non-LLM Bayesian update rule** to evolve code, test cases, and prompts simultaneously. It enables 32B open-source models to outperform 235B models on scientific code generation benchmarks, shifting system reliability from "be
+  [ICLR 2026][Multi-Agent][Adversarial Co-evolution] The framework organizes "tasking-solving-scoring" agents into an adversarial loop and uses a **non-LLM Bayesian update rule** to evolve code, test cases, and prompts simultaneously. It enables 32B open-source models to outperform 235B models on scientific code generation benchmarks, shifting system reliability from "betting on a strong LLM" to "reducing uncertainty via Bayesian convergence."
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Adversarial Co-evolution"
+  - "Bayesian Optimization"
+  - "Science Code Generation"
+  - "Low-code Platform"
+  - "Hallucination Suppression"
 date: 2026-05-08
-content_hash: 4eb5dcb72c211be7
+content_hash: a74b3569097f6f47
 ---
+
 # AI-for-Science Low-code Platform with Bayesian Adversarial Multi-Agent Framework
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation
 description: >-
-  [AAAI2026][Recommender Systems][sequential recommendation] This paper proposes WEARec, a model that employs Dynamic Frequency Filtering (DFF) to adaptively generate personalized frequency-domain filters conditioned on us…
+  [AAAI2026][Recommender Systems][sequential recommendation] This paper proposes WEARec, a model that employs Dynamic Frequency Filtering (DFF) to adaptively generate personalized frequency-domain filters conditioned on user context for capturing global preferences, and Wavelet Feature Enhancement (WFE) to compensate for the inability of global DFT to resolve short-term fluctuations. WEARec outperforms all 9 baselines on four datasets, achieving up to 11.4% improvement on long-…
 tags:
   - "AAAI2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "dynamic filter"
   - "personalized recommendation"
 date: 2026-05-08
-content_hash: 3d62fc2b52dfdc59
+content_hash: 006c6de501c1b454
 ---
 
 # Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation
@@ -130,8 +130,8 @@ Long-sequence efficiency ($N=200$): WEARec 66.46s/epoch vs. BSARec 109.26s vs. S
 - [\[AAAI 2026\] FreqRec: Exploiting Inter-Session Information with Frequency-enhanced Dual-Path Networks for Sequential Recommendation](exploiting_inter-session_information_with_frequency-enhanced_dual-path_networks_.md)
 - [\[NeurIPS 2025\] TV-Rec: Time-Variant Convolutional Filter for Sequential Recommendation](../../NeurIPS2025/recommender/tv-rec_time-variant_convolutional_filter_for_sequential_recommendation.md)
 - [\[AAAI 2026\] HyMoERec: Hybrid Mixture-of-Experts for Sequential Recommendation](hymoerec_hybrid_mixture-of-experts_for_sequential_recommendation.md)
-- [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
 - [\[ICLR 2026\] CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation](../../ICLR2026/recommender/collectivekv_decoupling_and_sharing_collaborative_information_in_sequential_reco.md)
+- [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Makes a Representation Good for Single-Cell Perturbation Prediction?
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] This paper proposes PerturbedVAE, arguing that an effective representation for single-cell perturbation prediction must explicitly separate the dominant perturbation-invariant background programs from the sparse perturbation-response signals, while organizing the latter with a causal structure to better generalize to u
+  [ICML2026][Computational Biology][Single-cell] This paper proposes PerturbedVAE, arguing that an effective representation for single-cell perturbation prediction must explicitly separate the dominant perturbation-invariant background programs from the sparse perturbation-response signals, while organizing the latter with a causal structure to better generalize to unseen dual-gene combinatorial perturbations.
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML2026"
+  - "Computational Biology"
+  - "Single-cell"
+  - "Perturbation Prediction"
+  - "Variational Autoencoder"
+  - "Causal Representation"
+  - "Combinatorial Generalization"
 date: 2026-05-08
-content_hash: 6d53db6d3401547e
+content_hash: 292102b64f721434
 ---
+
 # What Makes a Representation Good for Single-Cell Perturbation Prediction?
 
 **Conference**: ICML2026  
@@ -133,10 +139,10 @@ The training objective consists of the negative ELBO and contrastive alignment. 
 ## Related Papers
 
 - [\[ICLR 2026\] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction](../../ICLR2026/computational_biology/scdfm_distributional_flow_matching_model_for_robust_single-cell_perturbation_pre.md)
-- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
 - [\[ICML 2026\] scCBGM: Interpretable Single-Cell Counterfactual Editing](sccbgm_interpretable_single-cell_counterfactual_editing.md)
-- [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](../../AAAI2026/computational_biology/gene_incremental_learning_for_single-cell_transcriptomics.md)
-- [\[ICML 2026\] Towards Universal Gene Regulatory Network Inference: Unlocking Generalizable Regulatory Knowledge in Single-cell Foundation Models](towards_universal_gene_regulatory_network_inference_unlocking_generalizable_regu.md)
+- [\[ICML 2026\] SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes](spatia_multimodal_generation_and_prediction_of_spatial_cell_phenotypes.md)
+- [\[ICLR 2026\] Doloris: Dual Conditional Diffusion Implicit Bridges with Sparsity Masking Strategy for Unpaired Single-Cell Perturbation Estimation](../../ICLR2026/computational_biology/doloris_dual_conditional_diffusion_implicit_bridges_with_sparsity_masking_strate.md)
+- [\[ICLR 2026\] Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction](../../ICLR2026/computational_biology/adaptive_data-knowledge_alignment_in_genetic_perturbation_prediction.md)
 
 </div>
 

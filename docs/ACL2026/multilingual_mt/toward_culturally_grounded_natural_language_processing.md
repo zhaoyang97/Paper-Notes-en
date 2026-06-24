@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Culturally Grounded Natural Language Processing
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This synthesis paper integrates over 50 works on multilingual and cultural NLP, pointing out that "language coverage" does not equate to "cultural competence," and proposes a layered evaluation protocol and research agenda centered on communicative ecologies.
+  [ACL2026][Multilingual & Machine Translation][Culturally Grounded NLP] This synthesis paper integrates over 50 works on multilingual and cultural NLP, pointing out that "language coverage" does not equate to "cultural competence," and proposes a layered evaluation protocol and research agenda centered on communicative ecologies.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Culturally Grounded NLP"
+  - "Multilingual Evaluation"
+  - "Cultural Alignment"
+  - "Community Validation"
+  - "Ecological Validity"
 date: 2026-05-08
-content_hash: c32ca7ef1c11ed4b
+content_hash: 8cd52352d0fc2eed
 ---
+
 # Toward Culturally Grounded Natural Language Processing
 
 **Conference**: ACL2026  
@@ -119,10 +125,17 @@ The paper lacks a traditional ablation study, but provides an evaluation protoco
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[NeurIPS 2025\] Adaptive Originality Filtering: Rejection-Based Prompting and RiddleScore for Culturally Grounded Multilingual Riddle Generation](../../NeurIPS2025/multilingual_mt/adaptive_originality_filtering_rejection_based_prompting_and_riddlescore_for_cul.md)
+- [\[ACL 2026\] Alexandria: A Multi-Domain Dialectal Arabic Machine Translation Dataset for Culturally Inclusive and Linguistically Diverse LLMs](alexandria_a_multi-domain_dialectal_arabic_machine_translation_dataset_for_cultu.md)
+- [\[AAAI 2026\] Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages](../../AAAI2026/multilingual_mt/bridging_the_multilingual_safety_divide_efficient_culturally-aware_alignment_for.md)
+- [\[ACL 2026\] Selective Contrastive Learning For Gloss Free Sign Language Translation](selective_contrastive_learning_for_gloss_free_sign_language_translation.md)
+- [\[ACL 2026\] Vocabulary Shapes Cross-Lingual Variation of Word-Order Learnability in Language Models](vocabulary_shapes_cross-lingual_variation_of_word-order_learnability_in_language.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[NeurIPS 2025\] Adaptive Originality Filtering: Rejection-Based Prompting and RiddleScore for Culturally Grounded Multilingual Riddle Generation](../../NeurIPS2025/multilingual_mt/adaptive_originality_filtering_rejection_based_prompting_and_riddlescore_for_cul.md)

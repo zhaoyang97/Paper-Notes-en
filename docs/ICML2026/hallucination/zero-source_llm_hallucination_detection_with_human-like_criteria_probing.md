@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Zero-source LLM Hallucination Detection with Human-like Criteria Probing
 description: >-
-  [ICML 2026][Hallucination Detection][GRPO] HCPD treats "zero-source hallucination detection" (where only Q&A pairs are available, without access to internal model states or external knowledge bases) as a multi-criteria probe mimicking human evaluation. An LLM agent adaptively generates a set of interpretable evaluation criteria, assigns weights, scores per crit
+  [ICML2026][Hallucination Detection][Zero-source constraints] HCPD treats "zero-source hallucination detection" (where only Q&A pairs are available, without access to internal model states or external knowledge bases) as a multi-criteria probe mimicking human evaluation. An LLM agent adaptively generates a set of interpretable evaluation criteria, assigns weights, scores per criterion, and computes a weighted trustworthiness score. Using weakly supervised semantic consistency…
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - GRPO
+  - "ICML2026"
+  - "Hallucination Detection"
+  - "Zero-source constraints"
+  - "Multi-criteria probing"
+  - "GRPO"
+  - "Weakly supervised alignment"
 date: 2026-05-08
-content_hash: a89c70da01f017d6
+content_hash: 1cae26b1914b1b4c
 ---
+
 # Zero-source LLM Hallucination Detection with Human-like Criteria Probing
 
 **Conference**: ICML2026  
@@ -132,7 +136,6 @@ HCPD achieves an average AUROC of 88.19% on LLaMA-3.1-8b using only $(q, a)$ inp
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

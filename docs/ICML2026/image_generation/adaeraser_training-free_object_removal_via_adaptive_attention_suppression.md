@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] AdaEraser adaptively modulates the self-attention suppression intensity of diffusion models based on the "object presence degree." It simultaneously improves object removal completeness and background reconstruction quality without training, outperforming both training-based and training-free object removal methods on
+  [ICML 2026][Image Generation][Object Removal] AdaEraser adaptively modulates the self-attention suppression intensity of diffusion models based on the "object presence degree." It simultaneously improves object removal completeness and background reconstruction quality without training, outperforming both training-based and training-free object removal methods on Mulan and OABench.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "Object Removal"
+  - "Training-Free Editing"
+  - "Self-Attention Suppression"
+  - "Diffusion Models"
+  - "Image Inpainting"
 date: 2026-05-08
-content_hash: f979ca301efb0643
+content_hash: 2db0e6ab397276c5
 ---
+
 # AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression
 
 **Conference**: ICML 2026  
@@ -131,8 +136,8 @@ Core ablations center on the suppression strategy and reference selection. Resul
 - [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](../../CVPR2026/image_generation/precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
 - [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](../../CVPR2026/image_generation/object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
 - [\[ICML 2026\] CLEAR: Context-Aware Learning with End-to-End Mask-Free Inference for Adaptive Video Subtitle Removal](clear_context-aware_learning_with_end-to-end_mask-free_inference_for_adaptive_vi.md)
+- [\[ICLR 2026\] ReFocusEraser: Refocusing for Small Object Removal with Robust Context-Shadow Repair](../../ICLR2026/image_generation/refocuseraser_refocusing_for_small_object_removal_with_robust_context-shadow_rep.md)
 - [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](../../AAAI2026/image_generation/melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
-- [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](../../CVPR2026/image_generation/tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hear What Matters! Text-conditioned Selective Video-to-Audio Generation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] SelVA introduces a text-conditioned selective video-to-audio (V2A) generation task. By utilizing learnable supplementary tokens [SUP] and a self-supervised video mixing strategy, the model selectively generates target sounds specified by text prompts from multi-source videos, outperforming existing methods in audio qua
+  [CVPR 2026][Video Understanding][Selective Audio Generation] SelVA introduces a text-conditioned selective video-to-audio (V2A) generation task. By utilizing learnable supplementary tokens [SUP] and a self-supervised video mixing strategy, the model selectively generates target sounds specified by text prompts from multi-source videos, outperforming existing methods in audio quality, semantic alignment, and temporal synchronization.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Selective Audio Generation"
+  - "Video-to-Audio"
+  - "Text-conditioned"
+  - "Cross-modal Attention"
+  - "Self-supervised Video Mixing"
 date: 2026-05-08
-content_hash: 7cc3238d09798be6
+content_hash: 5b51d13c09afe497
 ---
+
 # Hear What Matters! Text-conditioned Selective Video-to-Audio Generation
 
 **Conference**: CVPR 2026  
@@ -144,15 +150,16 @@ Ours achieves state-of-the-art or competitive performance across all metrics, pa
 - Value: ⭐⭐⭐⭐ (Addresses real-world Foley production needs)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] GoalForce: Teaching Video Models to Accomplish Physics-Conditioned Goals](goal_force_teaching_video_models_to_accomplish_physics-conditioned_goals.md)
+- [\[ICLR 2026\] OmniCVR: A Benchmark for Omni-Composed Video Retrieval with Vision, Audio, and Text](../../ICLR2026/video_understanding/omnicvr_a_benchmark_for_omni-composed_video_retrieval_with_vision_audio_and_text.md)
+- [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](gloria_consistent_character_video_generation_via_content_anchors.md)
 - [\[CVPR 2025\] Learning Audio-Guided Video Representation with Gated Attention for Video-Text Retrieval](../../CVPR2025/video_understanding/learning_audio-guided_video_representation_with_gated_attention_for_video-text_r.md)
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
-- [\[CVPR 2026\] StreamReady: Learning What to Answer and When in Long Streaming Videos](streamready_learning_what_to_answer_and_when_in_long_streaming_videos.md)
-- [\[CVPR 2026\] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering](do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri.md)
 
 </div>
 

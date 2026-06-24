@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Joint Selection for Large-Scale Pre-Training Data via Policy Gradient-based Mask Learning
 description: >-
-  [ICLR 2026][Pretraining][FineWeb] The trillion-token scale pre-training data selection problem is reformulated as a "learnable mask" task. By using grouped policy gradients to simultaneously optimize both quality and diversity metrics, the method is 98.9% faster than greedy algorithms. It selects 1.5T of FineWeb-Mask from the 15T FineWeb dataset, achie
+  [ICLR 2026][LLM Pretraining][Pre-training Data Selection] The trillion-token scale pre-training data selection problem is reformulated as a "learnable mask" task. By using grouped policy gradients to simultaneously optimize both quality and diversity metrics, the method is 98.9% faster than greedy algorithms. It selects 1.5T of FineWeb-Mask from the 15T FineWeb dataset, achieving average improvements of 3.2% and 1.9% on 1.5B and 7B models, respectively.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - FineWeb
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Pre-training Data Selection"
+  - "Quality-Diversity Joint Optimization"
+  - "Mask Learning"
+  - "Policy Gradient"
+  - "FineWeb"
 date: 2026-05-08
-content_hash: 87be108c31263e74
+content_hash: d2270b59c70352ec
 ---
+
 # Joint Selection for Large-Scale Pre-Training Data via Policy Gradient-based Mask Learning
 
 **Conference**: ICLR 2026  

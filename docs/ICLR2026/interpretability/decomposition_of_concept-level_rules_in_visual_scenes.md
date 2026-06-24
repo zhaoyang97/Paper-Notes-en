@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decomposition of Concept-Level Rules in Visual Scenes
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes the Concept-Rule Decomposition (CRD) framework, which utilizes pre-trained Large Vision-Language Models (LVLMs) as data-driven priors to automatically extract a set of "concepts" (e.g., color, object category) and the "rules" characterizing their spatial variations. Through a Metropolis-Hastings sam
+  [ICLR2026][Interpretability][Concept-Rule Decomposition] This paper proposes the Concept-Rule Decomposition (CRD) framework, which utilizes pre-trained Large Vision-Language Models (LVLMs) as data-driven priors to automatically extract a set of "concepts" (e.g., color, object category) and the "rules" characterizing their spatial variations. Through a Metropolis-Hastings sampling process with an LVLM-guided proposal distribution, the framework iteratively selects a parsimonio…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Concept-Rule Decomposition"
+  - "Large Vision-Language Models"
+  - "Gaussian Process"
+  - "Metropolis-Hastings Sampling"
+  - "Explainable Reasoning"
 date: 2026-05-08
-content_hash: 333a4479248f13f1
+content_hash: d1eb94ea83b8b693
 ---
+
 # Decomposition of Concept-Level Rules in Visual Scenes
 
 **Conference**: ICLR2026  
@@ -173,8 +179,8 @@ Components of the acceptance probability $\alpha(G,G')$ on InternVL-3.5-8B + CRD
 ## Related Papers
 
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
-- [\[ICLR 2026\] Escaping Low-Rank Traps: Interpretable Visual Concept Learning via Implicit Vector Quantization](escaping_low-rank_traps_interpretable_visual_concept_learning_via_implicit_vecto.md)
 - [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
+- [\[ICLR 2026\] Escaping Low-Rank Traps: Interpretable Visual Concept Learning via Implicit Vector Quantization](escaping_low-rank_traps_interpretable_visual_concept_learning_via_implicit_vecto.md)
 - [\[ICLR 2026\] Certified Evaluation of Model-Level Explanations for Graph Neural Networks](certified_evaluation_of_model-level_explanations_for_graph_neural_networks.md)
 - [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution](concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept_a.md)
 

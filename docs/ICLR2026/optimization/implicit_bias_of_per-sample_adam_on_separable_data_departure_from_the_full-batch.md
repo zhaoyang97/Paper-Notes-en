@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime
 description: >-
-  [ICLR 2026][Optimization & Theory][Adam] This paper provides the first proof that the implicit bias of mini-batch Adam differs from the full-batch regime. By constructing specific datasets, it demonstrates that per-sample Adam converges to the $\ell_2$ max-margin classifier (whereas full-batch Adam converges to $\ell_\infty$), and characterizes its data-adapt
+  [ICLR 2026][Optimization][Adam] This paper provides the first proof that the implicit bias of mini-batch Adam differs from the full-batch regime. By constructing specific datasets, it demonstrates that per-sample Adam converges to the $\ell_2$ max-margin classifier (whereas full-batch Adam converges to $\ell_\infty$), and characterizes its data-adaptive Mahalanobis norm margin maximization behavior on general datasets via the AdamProxy framework.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Adam
-  - Mini-batch
+  - "ICLR 2026"
+  - "Optimization"
+  - "Adam"
+  - "Implicit Bias"
+  - "Max-margin"
+  - "Mini-batch"
+  - "Mahalanobis Norm"
 date: 2026-05-08
-content_hash: 863ce6a122107b27
+content_hash: f2ebd1c69dbbc7fc
 ---
+
 # Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime
 
 **Conference**: ICLR 2026  
@@ -113,15 +117,14 @@ To exclude momentum or the sign operation as causes, the authors use Signum (Sig
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
 - [\[NeurIPS 2025\] Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data](../../NeurIPS2025/optimization/implicit_bias_of_spectral_descent_and_muon_on_multiclass_separable_data.md)
-- [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
 - [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](../../NeurIPS2025/optimization/the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
 - [\[ICLR 2026\] Hyperbolic Aware Minimization: Implicit Bias for Sparsity](hyperbolic_aware_minimization_implicit_bias_for_sparsity.md)
+- [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
 
 </div>
 

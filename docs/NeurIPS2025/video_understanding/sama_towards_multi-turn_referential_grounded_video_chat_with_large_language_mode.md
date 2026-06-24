@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models
 description: >-
-  [NeurIPS 2025][Video Understanding][Video grounding] This paper proposes the SAMA framework, which jointly models fine-grained spatio-temporal understanding and grounding in multi-turn referential video dialogue for the…
+  [NeurIPS 2025][Video Understanding][Video grounding] This paper proposes the SAMA framework, which jointly models fine-grained spatio-temporal understanding and grounding in multi-turn referential video dialogue for the first time, through the construction of a unified dataset (SAMA-239K), model (spatio-temporal context aggregator + SAM), and benchmark (SAMA-Bench).
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "SAM"
   - "Video LMM"
 date: 2026-05-08
-content_hash: 2e41e81aff32c382
+content_hash: 25595f12993ce9f5
 ---
 
 # SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models
@@ -152,11 +152,11 @@ SAMA addresses the above issues comprehensively along three core dimensions — 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] FastVID: Dynamic Density Pruning for Fast Video Large Language Models](fastvid_dynamic_density_pruning_for_fast_video_large_languag.md)
 - [\[NeurIPS 2025\] Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization](self-alignment_of_large_video_language_models_with_refined_regularized_preferenc.md)
 - [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
+- [\[NeurIPS 2025\] FastVID: Dynamic Density Pruning for Fast Video Large Language Models](fastvid_dynamic_density_pruning_for_fast_video_large_languag.md)
 - [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](../../ICCV2025/video_understanding/factorized_learning_for_temporally_grounded_video-language_models.md)
-- [\[NeurIPS 2025\] Seeing the Arrow of Time in Large Multimodal Models](seeing_the_arrow_of_time_in_large_multimodal_models.md)
+- [\[CVPR 2025\] Video Summarization with Large Language Models](../../CVPR2025/video_understanding/video_summarization_with_large_language_models.md)
 
 </div>
 

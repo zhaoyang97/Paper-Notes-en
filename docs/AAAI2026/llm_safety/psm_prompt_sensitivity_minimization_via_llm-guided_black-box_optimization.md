@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization
 description: >-
-  [AAAI 2026][LLM Safety][System Prompt Security] This paper proposes PSM, a framework that formalizes system prompt protection as a utility-constrained black-box optimization problem. By leveraging LLM-as-Optimizer…
+  [AAAI 2026][LLM Safety][System Prompt Security] This paper proposes PSM, a framework that formalizes system prompt protection as a utility-constrained black-box optimization problem. By leveraging LLM-as-Optimizer, PSM automatically searches for an optimal "shield" suffix that reduces prompt extraction attack success rates to near zero without degrading model functionality.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "LLM-as-Optimizer"
   - "Defense Shield"
 date: 2026-05-08
-content_hash: 603dd52e695e1873
+content_hash: 2a7bebba41f87e6a
 ---
 
 # PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization
@@ -205,10 +205,10 @@ All utility scores are ≥ 99.73%, with some exceeding 100% (indicating that the
 ## Related Papers
 
 - [\[AAAI 2026\] GraphTextack: A Realistic Black-Box Node Injection Attack on LLM-Enhanced GNNs](graphtextack_a_realistic_black-box_node_injection_attack_on_llm-enhanced_gnns.md)
+- [\[ICLR 2026\] Auditing Black-Box LLM APIs with a Rank-Based Uniformity Test](../../ICLR2026/llm_safety/auditing_black-box_llm_apis_with_a_rank-based_uniformity_test.md)
 - [\[ACL 2026\] Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework](../../ACL2026/llm_safety/rethinking_llm_watermark_detection_in_black-box_settings_a_non-intrusive_third-p.md)
 - [\[AAAI 2026\] Principles2Plan: LLM-Guided System for Operationalising Ethical Principles into Plans](principles2plan_llm-guided_system_for_operationalising_ethical_principles_into_p.md)
-- [\[ACL 2026\] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](../../ACL2026/llm_safety/slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)
-- [\[AAAI 2026\] ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs](alter_asymmetric_lora_for_token-entropy-guided_unlearning_of.md)
+- [\[ICLR 2026\] Bias Similarity Measurement: A Black-Box Audit of Fairness Across LLMs](../../ICLR2026/llm_safety/bias_similarity_measurement_a_black-box_audit_of_fairness_across_llms.md)
 
 </div>
 

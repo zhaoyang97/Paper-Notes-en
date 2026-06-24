@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Multiple-Prediction-Powered Inference
 description: >-
-  [ICLR 2026][learning_theory][Prediction-Powered Inference] MultiPPI formalizes the task of "efficiently estimating a mean using multiple predictors of varying costs/qualities under a fixed budget" as a convex optimization problem (specifically, a Second-Order Cone Program (SOCP) under a single constraint). It automatically determines which subsets of models to query, the numbe
+  [ICLR 2026][Statistical Inference][Prediction-Powered Inference] MultiPPI formalizes the task of "efficiently estimating a mean using multiple predictors of varying costs/qualities under a fixed budget" as a convex optimization problem (specifically, a Second-Order Cone Program (SOCP) under a single constraint). It automatically determines which subsets of models to query, the number of queries for each, and their corresponding weights. Theoretically…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Prediction-Powered Inference
-  - LLM Evaluation
-  - autorater
+  - "ICLR 2026"
+  - "Statistical Inference"
+  - "Learning Theory (Prediction-Powered Inference, Budget Allocation)"
+  - "Prediction-Powered Inference"
+  - "Optimal Budget Allocation"
+  - "Minimax Optimality"
+  - "Second-Order Cone Programming"
+  - "LLM Evaluation"
+  - "Autorater"
 date: 2026-05-08
-content_hash: 072a2da4e701c6e9
+content_hash: b198fe39a173c8f5
 ---
+
 # Multiple-Prediction-Powered Inference
 
 **Conference**: ICLR 2026  
@@ -107,10 +112,10 @@ Evaluation Setup: Estimating $\theta^* = \mathbb{E}[X_1]$ with budgets ranging f
 ## Related Papers
 
 - [\[ICLR 2026\] Revisiting Active Sequential Prediction-Powered Mean Estimation](revisiting_active_sequential_prediction-powered_mean_estimation.md)
-- [\[ICLR 2026\] Variational Inference for Cyclic Learning](variational_inference_for_cyclic_learning.md)
 - [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](../../NeurIPS2025/learning_theory/prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
-- [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
+- [\[ICLR 2026\] Variational Inference for Cyclic Learning](variational_inference_for_cyclic_learning.md)
 - [\[ICLR 2026\] Best-of-Majority: Minimax-Optimal Strategy for Pass@k Inference Scaling](best-of-majority_minimax-optimal_strategy_for_passk_inference_scaling.md)
+- [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
 
 </div>
 

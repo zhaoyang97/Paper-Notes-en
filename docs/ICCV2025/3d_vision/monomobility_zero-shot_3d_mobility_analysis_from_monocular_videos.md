@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos
 description: >-
-  [ICCV 2025][3D Vision][Articulated object analysis] MonoMobility presents the first framework for zero-shot analysis of moving parts and motion attributes (motion axis and motion type) of articulated objects from monocul…
+  [ICCV 2025][3D Vision][Articulated object analysis] MonoMobility presents the first framework for zero-shot analysis of moving parts and motion attributes (motion axis and motion type) of articulated objects from monocular video. It combines off-the-shelf tools—depth estimation, optical flow, and segmentation—for coarse initialization, and then refines the results via self-supervised optimization of a dynamic scene represented with 2D Gaussian splatting together with a specia…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "motion attribute estimation"
   - "2D Gaussian splatting"
 date: 2026-05-08
-content_hash: 2cac39b9973da50e
+content_hash: 34ea0730c4caeb1e
 ---
 
 # MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos
@@ -143,10 +143,10 @@ The authors construct a comprehensive evaluation dataset:
 ## Related Papers
 
 - [\[ICCV 2025\] Zero-Shot Inexact CAD Model Alignment from a Single Image](zero-shot_inexact_cad_model_alignment_from_a_single_image.md)
+- [\[CVPR 2025\] Zero-Shot Monocular Scene Flow Estimation in the Wild](../../CVPR2025/3d_vision/zero-shot_monocular_scene_flow_estimation_in_the_wild.md)
 - [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
 - [\[ICCV 2025\] Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling](diorama_unleashing_zeroshot_singleview_3d_indoor_scene_model.md)
 - [\[ICCV 2025\] Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning](accelerate_3d_object_detection_models_via_zero-shot_attention_key_pruning.md)
-- [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
 
 </div>
 

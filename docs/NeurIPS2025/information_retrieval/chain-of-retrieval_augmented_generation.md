@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Chain-of-Retrieval Augmented Generation (CoRAG)
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes CoRAG, a framework that automatically generates intermediate retrieval chains (sub-query → sub-answer) via rejection sampling…
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes CoRAG, a framework that automatically generates intermediate retrieval chains (sub-query → sub-answer) via rejection sampling, fine-tunes an LLM to learn iterative retrieval and reasoning, and supports diverse test-time decoding strategies (greedy / Best-of-N / tree search) for flexible compute scaling. CoRAG achieves 26+ EM improvement on multi-hop QA and attains state-of-the-art on 9/10 tasks of the KILT b…
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -13,7 +13,7 @@ tags:
   - "retrieval chain"
   - "test-time compute scaling"
 date: 2026-05-08
-content_hash: 3bdf9fa1327e9bc9
+content_hash: 92dbfa6f261ba8af
 ---
 
 # Chain-of-Retrieval Augmented Generation (CoRAG)
@@ -153,9 +153,9 @@ CoRAG-8B achieves state-of-the-art on 9/10 tasks: Entity Linking (AIDA 93.9), Sl
 
 - [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
 - [\[NeurIPS 2025\] Reliable Decision Making via Calibration Oriented Retrieval Augmented Generation](reliable_decision_making_via_calibration_oriented_retrieval_augmented_generation.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
 - [\[NeurIPS 2025\] Cooperative Retrieval-Augmented Generation for Question Answering: Mutual Information Exchange and Ranking by Contrasting Layers](cooperative_retrieval-augmented_generation_for_question_answering_mutual_informa.md)
-- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
+- [\[NeurIPS 2025\] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation](hypergraphrag_retrieval-augmented_generation_via_hypergraph-structured_knowledge.md)
+- [\[ACL 2025\] GeAR: Generation Augmented Retrieval](../../ACL2025/information_retrieval/gear_generation_augmented_retrieval.md)
 
 </div>
 

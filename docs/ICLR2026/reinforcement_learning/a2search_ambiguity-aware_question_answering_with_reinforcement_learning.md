@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Reinforcement Learning][Ambiguous QA] A$^2$Search proposes an **annotation-free** automatic pipeline to mine multiple valid answers for "ambiguous questions" from existing QA data. By employing a multi-answer friendly AnsF1 reward for GRPO reinforcement learning, a 7B model outperforms strong 32B baselines in multi-hop QA with only a single rollout.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Ambiguous QA
-  - GRPO
-  - Multi-hop QA
-  - Annotation-free
-  - AnsF1 Reward
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Ambiguous QA"
+  - "GRPO"
+  - "Multi-hop QA"
+  - "Annotation-free"
+  - "AnsF1 Reward"
 date: 2026-05-08
-content_hash: 4068b0bb59fe85ce
+content_hash: 1441b7a2a765c3fa
 ---
+
 # A$^2$Search: Ambiguity-Aware Question Answering with Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -151,10 +152,10 @@ $A_i$ is the group-relative advantage. Following recent practices, the KL penalt
 ## Related Papers
 
 - [\[ICLR 2026\] QuRL: Rubrics As Judge For Open-Ended Question Answering](qurl_rubrics_as_judge_for_open-ended_question_answering.md)
-- [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
 - [\[CVPR 2026\] ReAG: Reasoning-Augmented Generation for Knowledge-based Visual Question Answering](../../CVPR2026/reinforcement_learning/reag_reasoning-augmented_generation_for_knowledge-based_visual_question_answerin.md)
+- [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
+- [\[ICLR 2026\] QuestA: Expanding Reasoning Capacity in LLMs via Question Augmentation](questa_expanding_reasoning_capacity_in_llms_via_question_augmentation.md)
 - [\[ICLR 2026\] Erase to Improve: Erasable Reinforcement Learning for Search-Augmented LLMs](erase_to_improve_erasable_reinforcement_learning_for_search-augmented_llms.md)
-- [\[ICLR 2026\] Information Gain-based Policy Optimization: A Simple and Effective Approach for Multi-Turn Search Agents](information_gain-based_policy_optimization_a_simple_and_effective_approach_for_m.md)
 
 </div>
 

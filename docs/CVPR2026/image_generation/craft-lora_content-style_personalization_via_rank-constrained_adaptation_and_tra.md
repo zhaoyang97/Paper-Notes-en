@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CRAFT-LoRA: Content-Style Personalization via Rank-Constrained Adaptation and Training-Free Fusion
 description: >-
-  [CVPR 2026][Image Generation][Classifier-Free Guidance] CRAFT-LoRA employs a triad of "rank-constrained backbone fine-tuning (to create a decoupling-friendly initialization) + expert encoder branch routing (assigning content/style LoRAs to disjoint layers via prompt tokens) + temporal asymmetric CFG (stabilizing training-free fusion during inference)." This allows independe
+  [CVPR 2026][Image Generation][LoRA Fusion] CRAFT-LoRA employs a triad of "rank-constrained backbone fine-tuning (to create a decoupling-friendly initialization) + expert encoder branch routing (assigning content/style LoRAs to disjoint layers via prompt tokens) + temporal asymmetric CFG (stabilizing training-free fusion during inference)." This allows independently trained content and style LoRAs to combine cleanly, achieving SOTA in content similarity, style similarity…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Classifier-Free Guidance
+  - "CVPR 2026"
+  - "Image Generation"
+  - "LoRA Fusion"
+  - "Content-Style Decoupling"
+  - "Personalized Generation"
+  - "Classifier-Free Guidance"
+  - "Low-Rank Constraint"
 date: 2026-05-08
-content_hash: 0156baf5b534497c
+content_hash: 8f1f167587eadaf4
 ---
+
 # CRAFT-LoRA: Content-Style Personalization via Rank-Constrained Adaptation and Training-Free Fusion
 
 **Conference**: CVPR 2026  
@@ -135,11 +140,11 @@ Rank-FT provides the largest contribution (Content +0.08, Style +0.10). Router p
 
 ## Related Papers
 
+- [\[CVPR 2026\] SplitFlux: Learning to Decouple Content and Style from a Single Image](splitflux_learning_to_decouple_content_and_style_from_a_single_image.md)
 - [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
 - [\[CVPR 2026\] OrthoFuse: Training-free Riemannian Fusion of Orthogonal Style-Concept Adapters for Diffusion Models](orthofuse_training-free_riemannian_fusion_of_orthogonal_style-concept_adapters_f.md)
-- [\[CVPR 2026\] SplitFlux: Learning to Decouple Content and Style from a Single Image](splitflux_learning_to_decouple_content_and_style_from_a_single_image.md)
 - [\[CVPR 2025\] K-LoRA: Unlocking Training-Free Fusion of Any Subject and Style LoRAs](../../CVPR2025/image_generation/k-lora_unlocking_training-free_fusion_of_any_subject_and_style_loras.md)
-- [\[CVPR 2026\] StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References](stylegallery_training-free_and_semantic-aware_personalized_style_transfer_from_a.md)
+- [\[ECCV 2024\] Implicit Style-Content Separation using B-LoRA](../../ECCV2024/image_generation/implicit_style-content_separation_using_b-lora.md)
 
 </div>
 

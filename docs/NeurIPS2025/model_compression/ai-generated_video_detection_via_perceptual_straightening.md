@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AI-Generated Video Detection via Perceptual Straightening
 description: >-
-  [NeurIPS 2025][Model Compression][AI-generated video detection] This paper proposes ReStraV, a method grounded in the perceptual straightening hypothesis—which posits that real videos form straighter trajectories in neur…
+  [NeurIPS 2025][Model Compression][AI-generated video detection] This paper proposes ReStraV, a method grounded in the perceptual straightening hypothesis—which posits that real videos form straighter trajectories in neural representation space—to detect AI-generated videos. Using temporal curvature and step-size statistics extracted from DINOv2 feature space, a lightweight classifier is trained to distinguish real from generated content, achieving 97.17% accuracy and 98.63% A…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "temporal curvature"
   - "representation geometry"
 date: 2026-05-08
-content_hash: f288eeca16657513
+content_hash: a019bca13fd48741
 ---
 
 # AI-Generated Video Detection via Perceptual Straightening
@@ -143,7 +143,7 @@ ReStraV operates in three stages: (1) uniformly sample 24 frames from the input 
 - [\[ICML 2026\] Images as Tables: In-Context Learning with TabPFN for Low-Data Detection of AI-Generated Images](../../ICML2026/model_compression/images_as_tables_in-context_learning_with_tabpfn_for_low-data_detection_of_ai-ge.md)
 - [\[NeurIPS 2025\] Knowledge Distillation Detection for Open-weights Models](knowledge_distillation_detection_for_open-weights_models.md)
 - [\[NeurIPS 2025\] On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills](on_the_creation_of_narrow_ai_hierarchy_and_nonlocality_of_neural_network_skills.md)
-- [\[NeurIPS 2025\] Smooth Regularization for Efficient Video Recognition](smooth_regularization_for_efficient_video_recognition.md)
+- [\[NeurIPS 2025\] Navigating Simply, Aligning Deeply: Winning Solutions for Mouse vs. AI 2025](navigating_simply_aligning_deeply_winning_solutions_for_mouse_vs_ai_2025.md)
 
 </div>
 

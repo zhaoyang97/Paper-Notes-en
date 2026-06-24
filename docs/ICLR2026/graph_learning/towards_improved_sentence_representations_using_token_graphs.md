@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Improved Sentence Representations using Token Graphs
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] The authors propose Glot, a lightweight structure-aware pooling module that constructs latent similarity graphs from the token-level hidden states of frozen LLMs. These are refined via GNNs and aggregated into sentence representations, achieving performance competitive with fine-tuning on GLUE/MTEB while requiring 20×
+  [ICLR 2026][Graph Learning][Sentence Representations] The authors propose Glot, a lightweight structure-aware pooling module that constructs latent similarity graphs from the token-level hidden states of frozen LLMs. These are refined via GNNs and aggregated into sentence representations, achieving performance competitive with fine-tuning on GLUE/MTEB while requiring 20× fewer parameters and 100× faster training.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Sentence Representations"
+  - "Graph Neural Networks"
+  - "Token Graphs"
+  - "Pooling"
+  - "Frozen LLMs"
 date: 2026-05-08
-content_hash: 3bb877be1bb54192
+content_hash: 26fe2a6a932cd731
 ---
+
 # Towards Improved Sentence Representations using Token Graphs
 
 **Conference**: ICLR 2026  
@@ -122,10 +128,10 @@ Training utilizes task-specific losses—cross-entropy for classification and co
 
 ## Related Papers
 
-- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
 - [\[ICLR 2026\] CORDS - Continuous Representations of Discrete Structures](cords_-_continuous_representations_of_discrete_structures.md)
+- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
+- [\[ICLR 2026\] <SOG$_k$>: One LLM Token for Explicit Graph Structural Understanding](sog_k_one_llm_token_for_explicit_graph_structural_understanding.md)
 - [\[ACL 2026\] What Makes AI Research Replicable? Executable Knowledge Graphs as Scientific Knowledge Representations](../../ACL2026/graph_learning/what_makes_ai_research_replicable_executable_knowledge_graphs_as_scientific_know.md)
-- [\[ICLR 2026\] EvA: Evolutionary Attacks on Graphs](eva_evolutionary_attacks_on_graphs.md)
 - [\[ICML 2025\] Banyan: Improved Representation Learning with Explicit Structure](../../ICML2025/graph_learning/banyan_improved_representation_learning_with_explicit_structure.md)
 
 </div>

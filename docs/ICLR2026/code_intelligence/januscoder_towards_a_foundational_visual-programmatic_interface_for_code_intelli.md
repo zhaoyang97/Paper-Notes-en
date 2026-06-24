@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] JanusCoder: Towards a Foundational Visual-Programmatic Interface for Code Intelligence
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] Addressing the bottleneck of scarce "code + vision" multimodal corpora, this work introduces a data synthesis toolbox to construct JanusCode-800K, the largest multimodal code corpus to date. Unified models JanusCoder / JanusCoderV are trained to simultaneously cover text-side and vision-side tasks such as chart generat
+  [ICLR 2026][Code Intelligence][Visual-Programmatic Interface] Addressing the bottleneck of scarce "code + vision" multimodal corpora, this work introduces a data synthesis toolbox to construct JanusCode-800K, the largest multimodal code corpus to date. Unified models JanusCoder / JanusCoderV are trained to simultaneously cover text-side and vision-side tasks such as chart generation, web UI, animation, and scientific demonstrations, approaching or even surpassing GPT-4o at sc…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Visual-Programmatic Interface"
+  - "Multimodal Code"
+  - "Data Synthesis"
+  - "Reward Modeling"
+  - "Unified Model"
 date: 2026-05-08
-content_hash: 5e982c3d800c9aa8
+content_hash: bb4a05d7e99b9864
 ---
+
 # JanusCoder: Towards a Foundational Visual-Programmatic Interface for Code Intelligence
 
 **Conference**: ICLR 2026  

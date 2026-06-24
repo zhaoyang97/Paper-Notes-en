@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper proposes a data-efficient post-hoc calibration method that aligns the predicted distribution of uncertainty-aware gaze tracking models with the true observed distribution using isotonic regression. It introduces the Coverage Probability Error (CPE) metric to replace the unreliable Error-Uncertainty Correlati
+  [CVPR 2026][Video Understanding][Gaze tracking] This paper proposes a data-efficient post-hoc calibration method that aligns the predicted distribution of uncertainty-aware gaze tracking models with the true observed distribution using isotonic regression. It introduces the Coverage Probability Error (CPE) metric to replace the unreliable Error-Uncertainty Correlation (EUC) for evaluating uncertainty quality.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Gaze tracking"
+  - "uncertainty estimation"
+  - "post-hoc calibration"
+  - "domain shift"
+  - "coverage probability error"
 date: 2026-05-08
-content_hash: 51d66a73823f311e
+content_hash: 2bff9b66b0ee3654
 ---
+
 # Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration
 
 **Conference**: CVPR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GazeShift: Unsupervised Gaze Estimation and Dataset for VR
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Addressing the dilemma of "off-axis near-eye IR cameras + no reliable labels" in VR headsets, this work releases VRGaze (68 subjects, 2.1M frames), the first large-scale off-axis gaze dataset. It proposes GazeShift, which uses "gaze redirection between two frames of the same eye" as an unsupervised proxy task. By decou
+  [CVPR 2026][Human Understanding][Unsupervised Gaze Estimation] Addressing the dilemma of "off-axis near-eye IR cameras + no reliable labels" in VR headsets, this work releases VRGaze (68 subjects, 2.1M frames), the first large-scale off-axis gaze dataset. It proposes GazeShift, which uses "gaze redirection between two frames of the same eye" as an unsupervised proxy task. By decoupling gaze and appearance via standard cross-attention and using the model's own attention maps a…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Unsupervised Gaze Estimation"
+  - "VR Near-eye Imaging"
+  - "Gaze Redirection"
+  - "Cross-attention"
+  - "Off-axis Dataset"
 date: 2026-05-08
-content_hash: 9483edf6322872d5
+content_hash: 0ef928ed82f01246
 ---
+
 # GazeShift: Unsupervised Gaze Estimation and Dataset for VR
 
 **Conference**: CVPR 2026  
@@ -145,10 +151,20 @@ The lightweight version outperforms Cross-Encoder with 35× fewer FLOPs and 10×
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Render-to-Adapt: Unsupervised Personal Adaptation for Gaze Estimation](render-to-adapt_unsupervised_personal_adaptation_for_gaze_estimation.md)
+- [\[CVPR 2026\] Gaze Target Estimation Anywhere with Concepts](gaze_target_estimation_anywhere_with_concepts.md)
+- [\[CVPR 2026\] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)
+- [\[CVPR 2026\] EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR](egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr.md)
+- [\[CVPR 2026\] See Through the Noise: Improving Domain Generalization in Gaze Estimation](see_through_the_noise_improving_domain_generalization_in_gaze_estimation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Render-to-Adapt: Unsupervised Personal Adaptation for Gaze Estimation](render-to-adapt_unsupervised_personal_adaptation_for_gaze_estimation.md)

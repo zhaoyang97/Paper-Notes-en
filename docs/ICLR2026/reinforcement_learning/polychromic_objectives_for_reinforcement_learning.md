@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Polychromic Objectives for Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] To address the problem where Reinforcement Learning Fine-tuning (RLFT) tends to collapse the policy into a few high-reward behaviors and discard the diversity of the pre-trained model, this paper proposes "polychromic objectives." This method couples reward with diversity, assigning high scores only to sets of trajecto
+  [ICLR 2026][Reinforcement Learning][RL Fine-tuning] To address the problem where Reinforcement Learning Fine-tuning (RLFT) tends to collapse the policy into a few high-reward behaviors and discard the diversity of the pre-trained model, this paper proposes "polychromic objectives." This method couples reward with diversity, assigning high scores only to sets of trajectories that are both "successful and diverse." By integrating vine sampling and set-shared advantages into PPO…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RL Fine-tuning"
+  - "Entropy Collapse"
+  - "Diversity Exploration"
+  - "Set RL"
+  - "Vine Sampling"
+  - "PPO"
 date: 2026-05-08
-content_hash: 05446f3920022176
+content_hash: 817a8b2f93158b72
 ---
+
 # Polychromic Objectives for Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -142,6 +148,7 @@ Standard PPO collapses significantly under perturbation (e.g., 15.3 in Four Room
 - Value: ⭐⭐⭐⭐ (Directly addresses entropy collapse in RLFT with high potential for LLM application).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

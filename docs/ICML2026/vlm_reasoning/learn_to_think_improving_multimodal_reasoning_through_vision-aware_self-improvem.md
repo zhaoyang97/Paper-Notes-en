@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training
 description: >-
-  [ICML 2026][vlm_reasoning][prefix resampling] VISTA transforms self-improvement training for Multimodal Large Language Models (MLLMs) into a two-stage pipeline: "supplementing samples for difficult problems via prefix resampling" and "filtering pseudo-positives through Vision-aware Attention Score (VAS)." This approach achieves an average improvement of +13.66% in
+  [ICML 2026][VLM Reasoning][Multimodal reasoning] VISTA transforms self-improvement training for Multimodal Large Language Models (MLLMs) into a two-stage pipeline: "supplementing samples for difficult problems via prefix resampling" and "filtering pseudo-positives through Vision-aware Attention Score (VAS)." This approach achieves an average improvement of +13.66% in mathematical and medical multimodal reasoning on Qwen2.5-VL-3B.
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - prefix resampling
-  - DPO
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Multimodal reasoning"
+  - "Self-improvement training"
+  - "Visual attention"
+  - "prefix resampling"
+  - "DPO"
 date: 2026-05-08
-content_hash: 8481f0a5daf44c31
+content_hash: 08d8bcc582c0dbc5
 ---
+
 # Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training
 
 **Conference**: ICML 2026  
@@ -134,10 +138,10 @@ Consistent improvement across MLLMs: Single-round training on Qwen3-VL-2B and In
 ## Related Papers
 
 - [\[ICLR 2026\] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs](../../ICLR2026/vlm_reasoning/through_the_lens_of_contrast_self-improving_visual_reasoning_in_vlms.md)
+- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/vlm_reasoning/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
 - [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/vlm_reasoning/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
 - [\[ICML 2026\] From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models](from_seeing_to_thinking_decoupling_perception_and_reasoning_improves_post-traini.md)
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/vlm_reasoning/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
-- [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
+- [\[CVPR 2026\] Consensus Entropy: Harnessing Multi-VLM Agreement for Self-Verifying and Self-Improving OCR](../../CVPR2026/vlm_reasoning/consensus_entropy_harnessing_multi-vlm_agreement_for_self-verifying_and_self-imp.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition
 description: >-
-  [ICLR 2026][Time Series][Paper Note] Ours proposes xCPD, a plug-and-play plugin that refines modeling units from "channels" to "channel-patches" in multivariate time series. By utilizing shared graph Fourier bases for spectral embedding, it groups units by frequency energy response into low, medium, and high bands. Dynamic MoE routing adaptively selects f
+  [ICLR 2026][Time Series][Channel dependencies] Ours proposes xCPD, a plug-and-play plugin that refines modeling units from "channels" to "channel-patches" in multivariate time series. By utilizing shared graph Fourier bases for spectral embedding, it groups units by frequency energy response into low, medium, and high bands. Dynamic MoE routing adaptively selects frequency-specific filtering experts, enabling seamless integration into any existing CI/CD models to consistently…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Channel dependencies"
+  - "graph spectral decomposition"
+  - "frequency-aware"
+  - "MoE routing"
+  - "plug-and-play"
 date: 2026-05-08
-content_hash: e0fe7a3c2c4500ce
+content_hash: 832a2cc421870a4f
 ---
+
 # Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,7 @@ xCPD outperformed LIFT and CCM across all 9 datasets.
 - [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
 - [\[ICLR 2026\] TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification](timesliver_symbolic-linear_decomposition_for_explainable_time_series_classificat.md)
 - [\[ICLR 2026\] PMDformer: Patch-Mean Decoupling Information Transformer for Long-term Forecasting](pmdformer_patch-mean_decoupling_information_transformer_for_long-term_forecastin.md)
-- [\[ICLR 2026\] Are Global Dependencies Necessary? Scalable Time Series Forecasting via Local Cross-Variate Modeling](are_global_dependencies_necessary_scalable_time_series_forecasting_via_local_cro.md)
+- [\[ICLR 2026\] GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables](gcgnet_graph-consistent_generative_network_for_time_series_forecasting_with_exog.md)
 
 </div>
 

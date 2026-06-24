@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ChunQiuTR: Time-Keyed Temporal Retrieval in Classical Chinese Annals
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RAG] This paper proposes ChunQiuTR, the first time-keyed retrieval benchmark based on non-Gregorian calendars, constructed from the *Spring and Autumn Annals* and its commentary tradition. It introduces the Calendar-Temporal Dual-Encoder (CTD), which achieves time-aware retrieval through Fourier absolute calendar contexts a
+  [ACL 2026 Findings][Information Retrieval & RAG][Temporal Retrieval] This paper proposes ChunQiuTR, the first time-keyed retrieval benchmark based on non-Gregorian calendars, constructed from the *Spring and Autumn Annals* and its commentary tradition. It introduces the Calendar-Temporal Dual-Encoder (CTD), which achieves time-aware retrieval through Fourier absolute calendar contexts and relative offset biases, significantly outperforming pure semantic baselines.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Temporal Retrieval"
+  - "Classical Chinese"
+  - "Calendar Encoding"
+  - "Bi-Encoder"
+  - "RAG"
 date: 2026-05-08
-content_hash: 60de9f94395403ba
+content_hash: 86a3ddba1c8804c1
 ---
+
 # ChunQiuTR: Time-Keyed Temporal Retrieval in Classical Chinese Annals
 
 **Conference**: ACL 2026 Findings  
@@ -129,7 +134,7 @@ The primary loss utilizes interval-overlap multi-positive InfoNCE: treating temp
 - [\[ICML 2026\] Temporal Preference Optimization for Unsupervised Retrieval](../../ICML2026/information_retrieval/temporal_preference_optimization_for_unsupervised_retrieval.md)
 - [\[ACL 2026\] Test-Time Training for Zero-Resource Dense Retrieval Reranking](test-time_training_for_zero-resource_dense_retrieval_reranking.md)
 - [\[ACL 2026\] CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering](counterrefine_answer-conditioned_counterevidence_retrieval_for_inference-time_kn.md)
-- [\[AAAI 2026\] Towards Inference-Time Scaling for Continuous Space Reasoning](../../AAAI2026/information_retrieval/towards_inference-time_scaling_for_continuous_space_reasoning.md)
+- [\[ICLR 2026\] MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction](../../ICLR2026/information_retrieval/metaembed_scaling_multimodal_retrieval_at_test-time_with_flexible_late_interacti.md)
 
 </div>
 

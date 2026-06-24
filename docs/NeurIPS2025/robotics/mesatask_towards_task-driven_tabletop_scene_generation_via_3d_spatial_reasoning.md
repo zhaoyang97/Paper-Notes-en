@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning
 description: >-
-  [NeurIPS 2025][Robotics][Tabletop scene generation] This paper proposes the MesaTask framework, which decomposes task descriptions into a Spatial Reasoning Chain — object reasoning → spatial relationship reasoning → scen…
+  [NeurIPS 2025][Robotics][Tabletop scene generation] This paper proposes the MesaTask framework, which decomposes task descriptions into a Spatial Reasoning Chain — object reasoning → spatial relationship reasoning → scene graph construction → 3D layout — and combines a 10K+ manually annotated dataset with DPO optimization to generate physically plausible, task-aligned tabletop manipulation scenes.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "robotic manipulation"
 date: 2026-05-08
-content_hash: c3695f4605ac1cfa
+content_hash: dc94ec37bca29dc1
 ---
 
 # MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning
@@ -125,10 +125,10 @@ SFT stage: standard language modeling loss. DPO stage: $\mathcal{L}_{DPO} = -\lo
 ## Related Papers
 
 - [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
-- [\[ICLR 2026\] OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning](../../ICLR2026/robotics/omnieva_embodied_versatile_planner_via_task-adaptive_3d-grounded_and_embodiment-.md)
+- [\[CVPR 2026\] DextER: Language-driven Dexterous Grasp Generation with Embodied Reasoning](../../CVPR2026/robotics/dexter_language-driven_dexterous_grasp_generation_with_embodied_reasoning.md)
 - [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
-- [\[NeurIPS 2025\] Learning Spatial-Aware Manipulation Ordering](learning_spatial-aware_manipulation_ordering.md)
 - [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
+- [\[NeurIPS 2025\] Learning Spatial-Aware Manipulation Ordering](learning_spatial-aware_manipulation_ordering.md)
 
 </div>
 

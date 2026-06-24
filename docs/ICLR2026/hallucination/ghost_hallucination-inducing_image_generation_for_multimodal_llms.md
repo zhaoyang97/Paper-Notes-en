@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] GHOST: Hallucination-Inducing Image Generation for Multimodal LLMs
 description: >-
-  [ICLR 2026][Hallucination Detection][object hallucination] GHOST moves away from evaluating object hallucinations in Multimodal LLMs (MLLMs) using fixed static benchmarks. Instead, it **actively generates** a set of images that appear natural and object-free to humans but trick models into believing a target object is present. This approach increases the hallucination success
+  [ICLR 2026][Hallucination Detection][object hallucination] GHOST moves away from evaluating object hallucinations in Multimodal LLMs (MLLMs) using fixed static benchmarks. Instead, it **actively generates** a set of images that appear natural and object-free to humans but trick models into believing a target object is present. This approach increases the hallucination success rate from approximately 1% in existing methods to over 28% and reveals that these images are highly t…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - object hallucination
-  - MLLM
-  - stress-test
-  - CLIP embedding optimization
-  - diffusion
-  - transferability
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "object hallucination"
+  - "MLLM"
+  - "stress-test"
+  - "CLIP embedding optimization"
+  - "diffusion"
+  - "transferability"
 date: 2026-05-08
-content_hash: fdd963c9d7a4919c
+content_hash: 386217ccbbf549f2
 ---
+
 # GHOST: Hallucination-Inducing Image Generation for Multimodal LLMs
 
 **Conference**: ICLR 2026  
@@ -141,8 +142,8 @@ Images optimized for Qwen2.5-VL induce hallucinations in 66.5% of cases on GPT-4
 
 - [\[ACL 2025\] Automated Explanation Generation and Hallucination Detection for Heritage Image Retrieval](../../ACL2025/hallucination/automated_explanation_generation_and_hallucination_detection_for_heritage_image_.md)
 - [\[ICLR 2026\] Leveraging Pretrained Knowledge at Inference Time: LoRA-Gated Contrastive Decoding for Multilingual Factual Language Generation in Adapted LLMs](leveraging_pretrained_knowledge_at_inference_time_lora-gated_contrastive_decodin.md)
+- [\[CVPR 2026\] Fine-Grained Multi-Image Object Hallucination Benchmark](../../CVPR2026/hallucination/fine-grained_multi_image_object_hallucination_benchmark.md)
 - [\[ICLR 2026\] Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs](cat-po_cross-modal_adaptive_token-rewards_for_preference_optimization_in_truthfu.md)
-- [\[ICLR 2026\] HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs](halluguard_demystifying_data-driven_and_reasoning-driven_hallucinations_in_llms.md)
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
 
 </div>

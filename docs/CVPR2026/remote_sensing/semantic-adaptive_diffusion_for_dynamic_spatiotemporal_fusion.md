@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic-Adaptive Diffusion for Dynamic Spatiotemporal Fusion
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] SA-STF utilizes a residual diffusion framework constrained by low-resolution observations and decoupled through Taylor expansion to separate residuals from noise. Combined with Temporal Feature Alignment (TFA) and Semantic-Adaptive Fusion (SAF) modules, it fuses multi-source satellite imagery (e.g., MODIS/Landsat) into
+  [CVPR 2026][Remote Sensing][Spatiotemporal Fusion] SA-STF utilizes a residual diffusion framework constrained by low-resolution observations and decoupled through Taylor expansion to separate residuals from noise. Combined with Temporal Feature Alignment (TFA) and Semantic-Adaptive Fusion (SAF) modules, it fuses multi-source satellite imagery (e.g., MODIS/Landsat) into high-spatiotemporal resolution images, particularly excelling at recovering semantic changes in dynamic land…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Spatiotemporal Fusion"
+  - "Residual Diffusion"
+  - "Semantic Adaptation"
+  - "Temporal Alignment"
+  - "Remote Sensing Imagery"
 date: 2026-05-08
-content_hash: 127f52dfda70b0f7
+content_hash: 01dadaab5e838bdd
 ---
+
 # Semantic-Adaptive Diffusion for Dynamic Spatiotemporal Fusion
 
 **Conference**: CVPR 2026  
@@ -157,10 +163,10 @@ In CIA, where changes are minimal, the linear ESTARFM outperforms several deep m
 ## Related Papers
 
 - [\[CVPR 2026\] CrossEarth-Gate: Fisher-Guided Adaptive Tuning Engine for Efficient Adaptation of Cross-Domain Remote Sensing Semantic Segmentation](crossearth-gate_fisher-guided_adaptive_tuning_engine_for_efficient_adaptation_of.md)
-- [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
 - [\[CVPR 2025\] SGFormer: Satellite-Ground Fusion for 3D Semantic Scene Completion](../../CVPR2025/remote_sensing/sgformer_satellite-ground_fusion_for_3d_semantic_scene_completion.md)
-- [\[CVPR 2026\] Fast Kernel-Space Diffusion for Remote Sensing Pansharpening](fast_kernel-space_diffusion_for_remote_sensing_pansharpening.md)
 - [\[CVPR 2026\] GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding](geodit_a_diffusion-based_vision-language_model_for_geospatial_understanding.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
+- [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
 
 </div>
 

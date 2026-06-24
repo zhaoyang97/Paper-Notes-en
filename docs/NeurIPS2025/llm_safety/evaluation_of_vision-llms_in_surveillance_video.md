@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evaluation of Vision-LLMs in Surveillance Video
 description: >-
-  [NeurIPS 2025][LLM Safety][Vision-LLM] This paper proposes a training-free two-stage framework that leverages small Vision-LLMs to generate textual descriptions of video content…
+  [NeurIPS 2025][LLM Safety][Vision-LLM] This paper proposes a training-free two-stage framework that leverages small Vision-LLMs to generate textual descriptions of video content, followed by an NLI classifier for zero-shot scoring. It systematically evaluates the impact of prompting strategies and privacy-preserving filters on anomalous behavior recognition in surveillance videos.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Privacy Protection"
   - "Natural Language Inference"
 date: 2026-05-08
-content_hash: 498529d159f0e4ea
+content_hash: f106dc47fa7dfe72
 ---
 
 # Evaluation of Vision-LLMs in Surveillance Video
@@ -137,10 +137,10 @@ This method requires no training — both the VLM and the NLI classifier use fro
 ## Related Papers
 
 - [\[NeurIPS 2025\] VMDT: Decoding the Trustworthiness of Video Foundation Models](vmdt_decoding_the_trustworthiness_of_video_foundation_models.md)
+- [\[CVPR 2025\] Protecting Your Video Content: Disrupting Automated Video-Based LLM Annotations](../../CVPR2025/llm_safety/protecting_your_video_content_disrupting_automated_video-based_llm_annotations.md)
 - [\[NeurIPS 2025\] A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs](a_systematic_evaluation_of_preference_aggregation_in_federated_rlhf_for_pluralis.md)
 - [\[NeurIPS 2025\] Music Arena: Live Evaluation for Text-to-Music](music_arena_live_evaluation_for_text-to-music.md)
 - [\[NeurIPS 2025\] AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents](agentdam_privacy_leakage_evaluation_for_autonomous_web_agent.md)
-- [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
 
 </div>
 

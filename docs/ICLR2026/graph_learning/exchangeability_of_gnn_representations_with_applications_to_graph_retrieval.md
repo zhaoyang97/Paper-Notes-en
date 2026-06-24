@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exchangeability of GNN Representations with Applications to Graph Retrieval
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper discovers and proves a novel probabilistic symmetry: node embeddings of standardly trained GNNs are **exchangeable random variables** along the dimensional axis. Leveraging this property, the authors approximate high-dimensional transportation similarity as one-dimensional sorted Euclidean similarity, design
+  [ICLR 2026][Graph Learning][Exchangeability] This paper discovers and proves a novel probabilistic symmetry: node embeddings of standardly trained GNNs are **exchangeable random variables** along the dimensional axis. Leveraging this property, the authors approximate high-dimensional transportation similarity as one-dimensional sorted Euclidean similarity, designing GraphHash—the first unified LSH retrieval framework for asymmetric graph similarities.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Exchangeability"
+  - "GNN Representations"
+  - "Locality Sensitive Hashing (LSH)"
+  - "Optimal Transport Similarity"
+  - "Graph Retrieval"
 date: 2026-05-08
-content_hash: a1e486adb4062264
+content_hash: 49cf24a6e00a0490
 ---
+
 # Exchangeability of GNN Representations with Applications to Graph Retrieval
 
 **Conference**: ICLR 2026  
@@ -110,10 +116,10 @@ By Proposition 6 (joint exchangeability), dimensions are identically distributed
 ## Related Papers
 
 - [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
-- [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
-- [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](towards_improved_sentence_representations_using_token_graphs.md)
 - [\[ICLR 2026\] Directed Semi-Simplicial Learning with Applications to Brain Activity Decoding](directed_semi-simplicial_learning_with_applications_to_brain_activity_decoding.md)
+- [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](towards_improved_sentence_representations_using_token_graphs.md)
 - [\[ICLR 2026\] CORDS - Continuous Representations of Discrete Structures](cords_-_continuous_representations_of_discrete_structures.md)
+- [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Overtone: Cyclic Patch Modulation for Clean, Efficient, and Flexible Physics Emulators
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] Addressing two persistent issues in ViT-based PDE surrogate models—harmonic error accumulation due to fixed patch sizes and "locked-in" compute costs post-training—this paper proposes Overtone. By **cyclically switching patch/stride sizes** during autoregressive inference, Overtone disperses error from single harmonic
+  [ICLR 2026][Physics & Scientific Computing][PDE Surrogate Model] Addressing two persistent issues in ViT-based PDE surrogate models—harmonic error accumulation due to fixed patch sizes and "locked-in" compute costs post-training—this paper proposes Overtone. By **cyclically switching patch/stride sizes** during autoregressive inference, Overtone disperses error from single harmonic frequencies across the entire spectrum. This reduces long-term rollout error by up to 40% witho…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "PDE Surrogate Model"
+  - "Patching"
+  - "Autoregressive Rollout"
+  - "Harmonic Artifacts"
+  - "Compute-Adaptive"
 date: 2026-05-08
-content_hash: e21e330a2af597af
+content_hash: b1cbc45447a20fc8
 ---
+
 # Overtone: Cyclic Patch Modulation for Clean, Efficient, and Flexible Physics Emulators
 
 **Conference**: ICLR 2026  
@@ -128,10 +134,10 @@ A single flexible model **matched or exceeded** fixed models trained for each sp
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
-- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
-- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
+- [\[ICLR 2026\] Efficient Regression-based Training of Normalizing Flows for Boltzmann Generators](efficient_regression-based_training_of_normalizing_flows_for_boltzmann_generator.md)
 - [\[ICLR 2026\] MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials](matris_toward_reliable_and_efficient_pretrained_machine_learning_interatomic_pot.md)
-- [\[ICLR 2026\] Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints](physics_vs_distributions_pareto_optimal_flow_matching_with_physics_constraints.md)
+- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
+- [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
 
 </div>
 

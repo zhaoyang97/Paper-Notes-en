@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models
 description: >-
-  [CVPR 2026][AI Safety][Concept Erasure] This paper reveals a neglected security vulnerability in "pruning-based concept unlearning": the positions of pruned (zeroed-out) weights themselves leak conceptual information. The authors design a completely data-free and training-free attack framework that restores the recognition accuracy of erased concepts from an
+  [CVPR 2026][AI Safety][Machine Unlearning] This paper reveals a neglected security vulnerability in "pruning-based concept unlearning": the positions of pruned (zeroed-out) weights themselves leak conceptual information. The authors design a completely data-free and training-free attack framework that restores the recognition accuracy of erased concepts from an average of 8% to 54% within 7 minutes by merely recovering the signs of the weights.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Concept Erasure
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Concept Erasure"
+  - "Pruning"
+  - "Side-channel Attack"
+  - "Diffusion Model Security"
 date: 2026-05-08
-content_hash: 3985283fbc886ee2
+content_hash: b5dbbea49e10fcd8
 ---
+
 # Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -136,15 +141,14 @@ For NSFW revival, the attack increased nudity detection counts from 74/57/22 (af
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Mitigating Privacy Risk via Forget Set-Free Unlearning](../../ICLR2026/ai_safety/mitigating_privacy_risk_via_forget_set-free_unlearning.md)
+- [\[ICLR 2026\] Decoupling the Class Label and the Target Concept in Machine Unlearning](../../ICLR2026/ai_safety/decoupling_the_class_label_and_the_target_concept_in_machine_unlearning.md)
 - [\[CVPR 2026\] GROW: Watermark Generation with Progressive Guidance for Diffusion Models](grow_watermark_generation_with_progressive_guidance_for_diffusion_models.md)
 - [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases](red-teaming_retrieval-augmented_diffusion_models_via_poisoning_knowledge_bases.md)
-- [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
-- [\[CVPR 2026\] Selective Amnesia using Contrastive Subnet Erasure for Class Level Unlearning in Vision Models](selective_amnesia_using_contrastive_subnet_erasure_for_class_level_unlearning_in.md)
 
 </div>
 

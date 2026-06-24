@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bilateral Information-aware Test-time Adaptation for Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] To address the issue of Vision-Language Models (VLMs) like CLIP overfitting to atypical features during Test-time Adaptation (TTA) when using only a "fixed ratio of low-entropy samples," this paper proposes BITTA: it simultaneously "learns" core representations from a **dynamic ratio** of low-entropy samples and "unlea
+  [ICLR2026][Multimodal VLM][Test-time Adaptation] To address the issue of Vision-Language Models (VLMs) like CLIP overfitting to atypical features during Test-time Adaptation (TTA) when using only a "fixed ratio of low-entropy samples," this paper proposes BITTA: it simultaneously "learns" core representations from a **dynamic ratio** of low-entropy samples and "unlearns" atypical features from high-entropy samples. This approach consistently improves the average accuracy of v…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Test-time Adaptation"
+  - "CLIP"
+  - "Entropy Minimization"
+  - "Unlearning"
+  - "Robustness"
 date: 2026-05-08
-content_hash: b456eae280f81be3
+content_hash: 18b086813648d1b0
 ---
+
 # Bilateral Information-aware Test-time Adaptation for Vision-Language Models
 
 **Conference**: ICLR2026  
@@ -148,12 +153,11 @@ Calibration error (ECE) also decreased significantly (CIFAR-10-C, BAT ViT-B/16 a
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Long-tailed Test-Time Adaptation for Vision-Language Models](long-tailed_test-time_adaptation_for_vision-language_models.md)
 - [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](flatness_guided_test-time_adaptation_for_vision-language_models.md)
-- [\[CVPR 2025\] Realistic Test-Time Adaptation of Vision-Language Models](../../CVPR2025/multimodal_vlm/realistic_test-time_adaptation_of_vision-language_models.md)
 - [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](../../CVPR2026/multimodal_vlm/dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](../../CVPR2026/multimodal_vlm/star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)

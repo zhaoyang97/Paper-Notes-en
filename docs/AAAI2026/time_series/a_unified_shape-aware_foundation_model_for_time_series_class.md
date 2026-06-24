@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Unified Shape-Aware Foundation Model for Time Series Classification
 description: >-
-  [AAAI 2026][Time Series][Time Series Classification] This paper proposes UniShape — a foundation model for time series classification that adaptively aggregates multi-scale discriminative subsequences (shapelets) via a s…
+  [AAAI 2026][Time Series][Time Series Classification] This paper proposes UniShape — a foundation model for time series classification that adaptively aggregates multi-scale discriminative subsequences (shapelets) via a shape-aware adapter, and learns transferable shapelet representations at both instance and shape levels through prototype-based contrastive pretraining. With only 3.1M parameters, UniShape achieves state-of-the-art performance on 128 UCR datasets (average accur…
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Prototype Learning"
   - "Interpretability"
 date: 2026-05-08
-content_hash: 2dd87f0e8c7fb442
+content_hash: 9b99c28a9f689c63
 ---
 
 # A Unified Shape-Aware Foundation Model for Time Series Classification
@@ -132,11 +132,11 @@ The work validates the view that **task-specific FMs outperform general-purpose 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](../../ICLR2026/time_series/uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
+- [\[ICLR 2026\] UniCA: Unified Covariate Adaptation for Time Series Foundation Model](../../ICLR2026/time_series/unica_unified_covariate_adaptation_for_time_series_foundation_model.md)
+- [\[ICLR 2026\] Repurposing Foundation Model for Generalizable Medical Time Series Classification](../../ICLR2026/time_series/repurposing_foundation_model_for_generalizable_medical_time_series_classificatio.md)
 - [\[AAAI 2026\] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition](probfm_probabilistic_time_series_foundation_model_with_uncertainty_decomposition.md)
-- [\[AAAI 2026\] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification](counterfactual_explainable_ai_xai_method_for_deep_learning-based_multivariate_ti.md)
-- [\[AAAI 2026\] A Theoretical Analysis of Detecting Large Model-Generated Time Series](a_theoretical_analysis_of_detecting_large_model-generated_time_series.md)
-- [\[AAAI 2026\] ReCast: Reliability-aware Codebook Assisted Lightweight Time Series Forecasting](recast_reliability-aware_codebook_assisted_lightweight_time_series_forecasting.md)
+- [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](../../ICLR2026/time_series/uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
+- [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](../../ICLR2026/time_series/pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
 
 </div>
 

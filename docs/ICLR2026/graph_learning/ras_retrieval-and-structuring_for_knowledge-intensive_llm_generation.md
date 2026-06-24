@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] Ours proposes the RAS framework, which dynamically constructs query-specific knowledge graphs at inference time. Through a three-stage process of iterative retrieval planning, text-to-triple transformation, and graph-augmented answering, RAS achieves structured reasoning. It delivers improvements of up to 7.0% and 8.7%
+  [ICLR 2026][Graph Learning][Retrieval-Augmented Generation] Ours proposes the RAS framework, which dynamically constructs query-specific knowledge graphs at inference time. Through a three-stage process of iterative retrieval planning, text-to-triple transformation, and graph-augmented answering, RAS achieves structured reasoning. It delivers improvements of up to 7.0% and 8.7% for open-source and closed-source LLMs, respectively, across 7 knowledge-intensive benchmarks.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Retrieval-Augmented Generation"
+  - "Knowledge Graph Construction"
+  - "Iterative Retrieval"
+  - "Graph-Structured Reasoning"
+  - "LLM Generation"
 date: 2026-05-08
-content_hash: fa0d151b8099fdab
+content_hash: 1692febfdf9c9c17
 ---
+
 # RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation
 
 **Conference**: ICLR 2026  

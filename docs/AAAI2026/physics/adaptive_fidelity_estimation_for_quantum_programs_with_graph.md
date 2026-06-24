@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][Quantum fidelity estimation] This paper proposes QuFid, a framework that models quantum circuits as directed acyclic graphs (DAGs)…
+  [AAAI 2026][Physics & Scientific Computing][Quantum fidelity estimation] This paper proposes QuFid, a framework that models quantum circuits as directed acyclic graphs (DAGs), characterizes noise propagation via control-flow-aware random walks, quantifies circuit complexity through spectral features of the propagation operator, and achieves adaptive measurement budget allocation — significantly reducing the number of measurement shots while maintaining fidelity accuracy.
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "adaptive measurement"
   - "spectral complexity"
 date: 2026-05-08
-content_hash: e4a491ac4c6a9b5f
+content_hash: f5e6fb2193b6dd98
 ---
 
 # Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness
@@ -147,11 +147,11 @@ The fundamental distinction between QuFid and QuCT/QuEst lies in their objective
 
 ## Related Papers
 
-- [\[AAAI 2026\] Data Verification is the Future of Quantum Computing Copilots](data_verification_is_the_future_of_quantum_computing_copilots.md)
+- [\[ICLR 2026\] Learning Escorted Protocols For Multistate Free-Energy Estimation](../../ICLR2026/physics/learning_escorted_protocols_for_multistate_free-energy_estimation.md)
 - [\[AAAI 2026\] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study](scientific_knowledge-guided_machine_learning_for_vessel_power_prediction_a_compa.md)
-- [\[ICLR 2026\] HyperKKL: Enabling Non-Autonomous State Estimation through Dynamic Weight Conditioning](../../ICLR2026/physics/hyperkkl_enabling_non-autonomous_state_estimation_through_dynamic_weight_conditi.md)
+- [\[CVPR 2025\] ATP: Adaptive Threshold Pruning for Efficient Data Encoding in Quantum Neural Networks](../../CVPR2025/physics/atp_adaptive_threshold_pruning_for_efficient_data_encoding_in_quantum_neural_net.md)
 - [\[AAAI 2026\] Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction](knowledge-guided_masked_autoencoder_with_linear_spectral_mixing_and_spectral-ang.md)
-- [\[ICML 2026\] ANTIC: Adaptive Neural Temporal In-situ Compressor](../../ICML2026/physics/antic_adaptive_neural_temporal_in-situ_compressor.md)
+- [\[AAAI 2026\] Data Verification is the Future of Quantum Computing Copilots](data_verification_is_the_future_of_quantum_computing_copilots.md)
 
 </div>
 

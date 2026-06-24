@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Turbocharging Gaussian Process Inference with Approximate Sketch-and-Project
 description: >-
-  [NeurIPS 2025][Optimization][Gaussian Process] This paper proposes the ADASAP algorithm, which extends the sketch-and-project framework to large-scale GP inference via approximate subspace preconditioning…
+  [NeurIPS 2025][Optimization][Gaussian Process] This paper proposes the ADASAP algorithm, which extends the sketch-and-project framework to large-scale GP inference via approximate subspace preconditioning, distributed computation, and Nesterov acceleration. It is the first method to scale exact GP inference beyond $>3\times10^8$ samples, while theoretically establishing condition number-free convergence guarantees for the SAP family.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Distributed Computing"
   - "Nyström Approximation"
 date: 2026-05-08
-content_hash: bb953d5e0abd0568
+content_hash: 67f0f277a2454a14
 ---
 
 # Turbocharging Gaussian Process Inference with Approximate Sketch-and-Project
@@ -133,8 +133,8 @@ ADASAP is 45% faster than SDD-10 (saving 14 hours); PCG cannot run due to out-of
 - [\[NeurIPS 2025\] Quantitative Convergence of Trained Single Layer Neural Networks to Gaussian Processes](quantitative_convergence_of_trained_single_layer_neural_networks_to_gaussian_pro.md)
 - [\[NeurIPS 2025\] Learning Sparse Approximate Inverse Preconditioners for Conjugate Gradient Solvers on GPUs](learning_sparse_approximate_inverse_preconditioners_for_conjugate_gradient_solve.md)
 - [\[NeurIPS 2025\] Least Squares Variational Inference](least_squares_variational_inference.md)
+- [\[ICLR 2026\] Adaptive gradient descent on Riemannian manifolds and its applications to Gaussian variational inference](../../ICLR2026/optimization/adaptive_gradient_descent_on_riemannian_manifolds_and_its_applications_to_gaussi.md)
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
-- [\[NeurIPS 2025\] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference](neuro-symbolic_entity_alignment_via_variational_inference.md)
 
 </div>
 

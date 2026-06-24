@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding
 description: >-
-  [AAAI 2026][Image Generation][Layout-controlled generation] This paper proposes EchoGen, a unified framework for layout-to-image generation (L2I) and image-to-layout grounding (I2L)…
+  [AAAI 2026][Image Generation][Layout-controlled generation] This paper proposes EchoGen, a unified framework for layout-to-image generation (L2I) and image-to-layout grounding (I2L), trained through a progressive three-stage pipeline — parallel pre-training → dual-task joint optimization → cycle reinforcement learning (CycleRL) — which leverages the layout→image→layout cycle consistency as a self-supervised reward, achieving state-of-the-art results on MS-COCO and LayoutSAM.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "cycle consistency"
   - "reinforcement learning"
 date: 2026-05-08
-content_hash: 3270e9baa9a02496
+content_hash: 05db11493c3136e9
 ---
 
 # EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding
@@ -129,10 +129,10 @@ EchoGen surpasses all baselines across all metrics, including both generation-on
 ## Related Papers
 
 - [\[CVPR 2026\] Cycle-Consistent Tuning for Layered Image Decomposition](../../CVPR2026/image_generation/cycle-consistent_tuning_for_layered_image_decomposition.md)
+- [\[CVPR 2026\] High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning](../../CVPR2026/image_generation/high-fidelity_virtual_try-on_beyond_paired_data_scarcity_via_diffusion-based_cyc.md)
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](../../NeurIPS2025/image_generation/coreinforcement_learning_for_unified_multimodal_understandin.md)
 - [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](../../CVPR2026/image_generation/consistcompose_multimodal_layout_control.md)
 - [\[AAAI 2026\] Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models](symmetrical_flow_matching_unified_image_generation_segmentation_and_classificati.md)
-- [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](../../CVPR2026/image_generation/learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
 
 </div>
 

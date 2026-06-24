@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment
 description: >-
-  [CVPR 2026][Image Generation][MoE-LoRA] MultiCrafter decomposes "multi-subject customized generation" into two non-conflicting training phases: pre-training uses explicit positional supervision to constrain each subject's attention to correct spatial regions to eliminate attribute crosstalk and employs MoE-LoRA for complex layout capacity; post-training util
+  [CVPR 2026][Image Generation][Multi-subject generation] MultiCrafter decomposes "multi-subject customized generation" into two non-conflicting training phases: pre-training uses explicit positional supervision to constrain each subject's attention to correct spatial regions to eliminate attribute crosstalk and employs MoE-LoRA for complex layout capacity; post-training utilizes an online reinforcement learning framework with Hungarian matching for scoring to maximize aestheti…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MoE-LoRA
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-subject generation"
+  - "attention disentanglement"
+  - "identity preservation"
+  - "preference alignment"
+  - "MoE-LoRA"
 date: 2026-05-08
-content_hash: 995211dff084638f
+content_hash: a8d4ba39046ad504
 ---
+
 # MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Baseline is UNO (Flux + highly coupled objectives) on the multi-human benchmark:
 
 ## Related Papers
 
+- [\[ICLR 2026\] SIGMA-GEN: Structure and Identity Guided Multi-Subject Assembly for Image Generation](../../ICLR2026/image_generation/sigma-gen_structure_and_identity_guided_multi-subject_assembly_for_image_generat.md)
+- [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](../../ICLR2026/image_generation/mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
+- [\[CVPR 2026\] Semantic Alignment for Pose-Invariant Identity Preserving Diffusion](semantic_alignment_for_pose-invariant_identity_preserving_diffusion.md)
 - [\[CVPR 2026\] Correspondence-Attention Alignment for Multi-View Diffusion Models](correspondence-attention_alignment_for_multi-view_diffusion_models.md)
-- [\[CVPR 2026\] PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards](psr_scaling_multi-subject_personalized_image_generation_with_pairwise_subject-co.md)
-- [\[CVPR 2026\] DiT360: High-Fidelity Panoramic Image Generation via Hybrid Training](dit360_high-fidelity_panoramic_image_generation_via_hybrid_training.md)
-- [\[CVPR 2026\] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm](scaling_multi-identity_consistency_for_image_customization_via_multi-to-multi_ma.md)
-- [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
+- [\[CVPR 2026\] Towards High-resolution and Disentangled Reference-based Sketch Colorization](towards_high-resolution_and_disentangled_reference-based_sketch_colorization.md)
 
 </div>
 

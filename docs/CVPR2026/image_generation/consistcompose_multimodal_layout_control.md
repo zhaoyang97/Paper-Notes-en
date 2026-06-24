@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ConsistCompose: Unified Multimodal Layout Control for Image Composition
 description: >-
-  [CVPR 2026][Image Generation][LELG] The paper proposes ConsistCompose, achieving layout-controllable multi-instance image generation within a unified multimodal framework by directly embedding layout coordinates into language prompts (the LELG paradigm). It constructs the ConsistCompose3M dataset with 3.4 million samples to provide layout and identity su
+  [CVPR 2026][Image Generation][Layout-controlled generation] The paper proposes ConsistCompose, achieving layout-controllable multi-instance image generation within a unified multimodal framework by directly embedding layout coordinates into language prompts (the LELG paradigm). It constructs the ConsistCompose3M dataset with 3.4 million samples to provide layout and identity supervision. Coupled with a coordinate-aware CFG mechanism, it achieves a 7.2% mIoU Gain and a 13.7% A…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - LELG
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Layout-controlled generation"
+  - "Multi-instance image synthesis"
+  - "LELG"
+  - "Coordinate embedded prompt"
+  - "Identity preservation"
 date: 2026-05-08
-content_hash: 8126eac471c6b926
+content_hash: aa84c7b195f3d839
 ---
+
 # ConsistCompose: Unified Multimodal Layout Control for Image Composition
 
 **Conference**: CVPR 2026  

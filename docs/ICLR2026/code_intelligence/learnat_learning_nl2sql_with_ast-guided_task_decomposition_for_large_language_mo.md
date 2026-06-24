@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Code Intelligence][NL2SQL] LearNAT utilizes AST-guided MCTS search to automatically synthesize "verifiable" NL2SQL task decomposition data, followed by fine-grained multi-step preference optimization using margin-aware DPO, enabling a 7B small model to achieve performance comparable to GPT-4 in NL2SQL.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - NL2SQL
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "NL2SQL"
+  - "Task Decomposition"
+  - "Abstract Syntax Tree (AST)"
+  - "Monte Carlo Tree Search (MCTS)"
+  - "Direct Preference Optimization (DPO)"
 date: 2026-05-08
-content_hash: 100c2411d2f0d4a0
+content_hash: 65c8d258a56f1d7d
 ---
+
 # LearNAT: Learning NL2SQL with AST-guided Task Decomposition for Large Language Models
 
 **Conference**: ICLR 2026  

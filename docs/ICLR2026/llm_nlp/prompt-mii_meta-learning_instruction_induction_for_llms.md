@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prompt-MII: Meta-Learning Instruction Induction for LLMs
 description: >-
-  [ICLR 2026][LLM (Other)][Reinforcement Learning] This paper transforms the task of "writing a high-quality task instruction from a set of examples" into a learnable policy. By meta-training an instruction generator on 3,000+ classification datasets using reinforcement learning, the generator can output a refined instruction for any new task in a single forward pass.
+  [ICLR 2026][LLM (Other)][Instruction Induction] This paper transforms the task of "writing a high-quality task instruction from a set of examples" into a learnable policy. By meta-training an instruction generator on 3,000+ classification datasets using reinforcement learning, the generator can output a refined instruction for any new task in a single forward pass. The performance matches 100-shot In-Context Learning (ICL) while utilizing 3-13x fewer tokens.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Instruction Induction"
+  - "Prompt Optimization"
+  - "Meta-Learning"
+  - "Reinforcement Learning"
+  - "In-Context Learning"
 date: 2026-05-08
-content_hash: 0622690edd2cf2c2
+content_hash: bbb455feed283070
 ---
+
 # Prompt-MII: Meta-Learning Instruction Induction for LLMs
 
 **Conference**: ICLR 2026  
@@ -144,11 +149,11 @@ Prompt-MII significantly outperforms expensive iterative search methods in a sin
 
 ## Related Papers
 
+- [\[ICML 2025\] Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence](../../ICML2025/llm_nlp/beyond_induction_heads_in-context_meta_learning_induces_multi-phase_circuit_emer.md)
 - [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](../../NeurIPS2025/llm_nlp/system_prompt_optimization_with_meta-learning.md)
 - [\[ACL 2025\] Self-Instructed Derived Prompt Generation Meets In-Context Learning: Unlocking New Potential of Black-Box LLMs](../../ACL2025/llm_nlp/self-instructed_derived_prompt_generation_meets_in-context_learning_unlocking_ne.md)
-- [\[ACL 2026\] Model-Agnostic Meta Learning for Class Imbalance Adaptation](../../ACL2026/llm_nlp/model-agnostic_meta_learning_for_class_imbalance_adaptation.md)
 - [\[ICLR 2026\] SIPDO: Closed-Loop Prompt Optimization via Synthetic Data Feedback](sipdo_closed-loop_prompt_optimization_via_synthetic_data_feedback.md)
-- [\[ICML 2025\] Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence](../../ICML2025/llm_nlp/beyond_induction_heads_in-context_meta_learning_induces_multi-phase_circuit_emer.md)
+- [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
 
 </div>
 

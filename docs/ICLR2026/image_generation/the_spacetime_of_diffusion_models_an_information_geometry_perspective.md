@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Spacetime of Diffusion Models: An Information Geometry Perspective
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This work proposes the concept of "spacetime" for diffusion models from an information geometry perspective. It demonstrates that standard pullback geometry degenerates into straight lines in diffusion models, introduces spacetime geometry based on the Fisher-Rao metric, and derives practically computable Diffusion Edi
+  [ICLR 2026 Oral][Image Generation][Spacetime Geometry] This work proposes the concept of "spacetime" for diffusion models from an information geometry perspective. It demonstrates that standard pullback geometry degenerates into straight lines in diffusion models, introduces spacetime geometry based on the Fisher-Rao metric, and derives practically computable Diffusion Edited Distance (DiffED) and transition path sampling methods.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026 Oral"
+  - "Image Generation"
+  - "Spacetime Geometry"
+  - "Fisher-Rao Metric"
+  - "Pullback Geometry"
+  - "Diffusion Edited Distance"
+  - "Transition Path Sampling"
 date: 2026-05-08
-content_hash: 90df8a9a63ea6a1b
+content_hash: 0feb60dad905f90d
 ---
+
 # The Spacetime of Diffusion Models: An Information Geometry Perspective
 
 **Conference**: ICLR 2026 Oral  
@@ -152,8 +158,8 @@ Ours is closest to the lower bound with several orders of magnitude fewer energy
 - [\[ICLR 2026\] Learning a Distance Measure from the Information-Estimation Geometry of Data](learning_a_distance_measure_from_the_information-estimation_geometry_of_data.md)
 - [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
 - [\[ICLR 2026\] Dragging with Geometry: From Pixels to Geometry-Guided Image Editing](dragging_with_geometry_from_pixels_to_geometry-guided_image_editing.md)
+- [\[ICML 2026\] Information-Geometric Adaptive Sampling for Graph Diffusion](../../ICML2026/image_generation/information-geometric_adaptive_sampling_for_graph_diffusion.md)
 - [\[ICML 2026\] Geometry-Aware Tabular Diffusion](../../ICML2026/image_generation/geometry-aware_tabular_diffusion.md)
-- [\[ICML 2026\] Enhancing Membership Inference Attacks on Diffusion Models from a Frequency-Domain Perspective](../../ICML2026/image_generation/enhancing_membership_inference_attacks_on_diffusion_models_from_a_frequency-doma.md)
 
 </div>
 

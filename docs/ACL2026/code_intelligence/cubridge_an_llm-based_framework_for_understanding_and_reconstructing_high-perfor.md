@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels
 description: >-
-  [ACL 2026][Code Intelligence][CUDA] The authors transform the unreliable task of "modifying FlashAttention CUDA code directly via LLMs" into a three-stage workflow: "lifting to executable IR (CuIR) → transferring per PyTorch reference → differential lowering back to CUDA." This maintains 100% accuracy across 8 attention variants on A100/H100, achieving a
+  [ACL 2026][Code Intelligence][CUDA] The authors transform the unreliable task of "modifying FlashAttention CUDA code directly via LLMs" into a three-stage workflow: "lifting to executable IR (CuIR) → transferring per PyTorch reference → differential lowering back to CUDA." This maintains 100% accuracy across 8 attention variants on A100/H100, achieving an average speedup of 16.03× over PyTorch, 1.39× over FlexAttention, and 3.33× over the previous LLM-based method Qimeng-Atte…
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - CUDA
-  - Attention Kernel
-  - LLM Code Generation
-  - Intermediate Representation
-  - Lift-Transfer-Lower
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "CUDA"
+  - "Attention Kernel"
+  - "LLM Code Generation"
+  - "Intermediate Representation"
+  - "Lift-Transfer-Lower"
 date: 2026-05-08
-content_hash: 2493f6f827498163
+content_hash: f3d9faa4a59e871b
 ---
+
 # CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels
 
 **Conference**: ACL 2026  
@@ -129,10 +130,10 @@ Evaluation of the "CuIR" impact on H100 (96 cases):
 
 ## Related Papers
 
+- [\[ICLR 2026\] HARDTESTGEN: A High-Quality RL Verifier Generation Pipeline for LLM Algorithmic Coding](../../ICLR2026/code_intelligence/hardtestgen_a_high-quality_rl_verifier_generation_pipeline_for_llm_algorithmic_c.md)
 - [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
 - [\[NeurIPS 2025\] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions](../../NeurIPS2025/code_intelligence/a_stochastic_differential_equation_framework_for_multi-objective_llm_interaction.md)
 - [\[ACL 2026\] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding](sense_and_sensitivity_examining_the_influence_of_semantic_recall_on_long_context.md)
-- [\[ACL 2026\] QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions](qaq_bidirectional_semantic_coherence_for_selecting_high-quality_synthetic_code_i.md)
 - [\[ACL 2026\] Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4](discover_and_prove_an_open-source_agentic_framework_for_hard_mode_automated_theo.md)
 
 </div>

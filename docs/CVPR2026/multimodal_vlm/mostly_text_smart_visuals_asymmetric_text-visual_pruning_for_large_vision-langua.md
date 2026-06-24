@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][LVLM] MoT probe experiments reveal asymmetric pruning sensitivity between text and visual pathways in LVLMs—text pathways are highly sensitive and must be calibrated with text tokens, while visual pathways are highly redundant and can withstand 60% sparsity. Based on this, ATV-Pruning is proposed using all text tokens + a sm
+  [CVPR 2026][Multimodal VLM][Weight Pruning] MoT probe experiments reveal asymmetric pruning sensitivity between text and visual pathways in LVLMs—text pathways are highly sensitive and must be calibrated with text tokens, while visual pathways are highly redundant and can withstand 60% sparsity. Based on this, ATV-Pruning is proposed using all text tokens + a small number of layer-wise adaptively selected visual tokens to construct the calibration pool.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - LVLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Weight Pruning"
+  - "LVLM"
+  - "Modal Asymmetry"
+  - "Calibration Strategy"
+  - "Sparsification"
 date: 2026-05-08
-content_hash: 7f3f9e1891f66669
+content_hash: ccea997e1d4a57e0
 ---
+
 # Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -129,11 +134,11 @@ The intuition is simple: if a block significantly alters the representation of a
 
 ## Related Papers
 
-- [\[CVPR 2026\] Text-Printed Image：把文本「印」成图片来弥合图文模态鸿沟](text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
+- [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
 - [\[CVPR 2026\] TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment](tipsv2_patch_text_alignment.md)
 - [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
-- [\[CVPR 2026\] TANGO: Text-Anchored Guided Optimization for Robust Fine-tuning Vision-Language Models under Label Noise](tango_text-anchored_guided_optimization_for_robust_fine-tuning_vision-language_m.md)
-- [\[CVPR 2026\] Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image](multimodal_rewardbench_2_evaluating_omni_reward_models_for_interleaved_text_and_.md)
+- [\[ACL 2026\] Topology-Aware Layer Pruning for Large Vision-Language Models](../../ACL2026/multimodal_vlm/topology-aware_layer_pruning_for_large_vision-language_models.md)
 
 </div>
 

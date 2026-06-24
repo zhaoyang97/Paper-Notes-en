@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HTTM: Head-wise Temporal Token Merging for Faster VGGT
 description: >-
-  [CVPR 2026][Model Compression][token merging] HTTM is a training-free token merging method specifically tailored for VGGT global attention layers. By employing "head-wise independent merging + temporal reordered in-block merging + cross-head adaptive outlier filtering," it accelerates long-sequence 3D reconstruction inference by up to $7\times$ with negligible per
+  [CVPR 2026][Multimodal Efficiency][token merging] HTTM is a training-free token merging method specifically tailored for VGGT global attention layers. By employing "head-wise independent merging + temporal reordered in-block merging + cross-head adaptive outlier filtering," it accelerates long-sequence 3D reconstruction inference by up to $7\times$ with negligible performance degradation.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - token merging
-  - VGGT
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "token merging"
+  - "VGGT"
+  - "3D reconstruction"
+  - "attention acceleration"
+  - "training-free"
 date: 2026-05-08
-content_hash: 012fd50e24726174
+content_hash: f8ba3b2b40c1cbdb
 ---
+
 # HTTM: Head-wise Temporal Token Merging for Faster VGGT
 
 **Conference**: CVPR 2026  
@@ -133,10 +137,10 @@ Adaptive outlier filtering (NRGBD, three configurations to ensure same token cou
 
 ## Related Papers
 
-- [\[CVPR 2026\] HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT](hess_head_sensitivity_score_for_sparsity_redistribution_in_vggt.md)
 - [\[CVPR 2026\] LiteVGGT: Boosting Vanilla VGGT via Geometry-aware Cached Token Merging](litevggt_boosting_vanilla_vggt_via_geometry-aware_cached_token_merging.md)
+- [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
+- [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
 - [\[CVPR 2026\] Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)
-- [\[CVPR 2026\] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)
 - [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)
 
 </div>

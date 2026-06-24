@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Graph-Theoretical Perspective on Law Design for Multiagent Systems
 description: >-
-  [AAAI 2026][Multi-Agent][law design] This paper studies the law design problem in multiagent systems from a graph-theoretical perspective…
+  [AAAI 2026][Multi-Agent][law design] This paper studies the law design problem in multiagent systems from a graph-theoretical perspective, reducing the minimization of useful laws and gap-free laws to the vertex cover problem on hypergraphs, proving NP-hardness, and providing approximation algorithms.
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "hypergraph"
   - "responsibility gap"
 date: 2026-05-08
-content_hash: 270895477838c159
+content_hash: d573e09fd34fb841
 ---
 
 # A Graph-Theoretical Perspective on Law Design for Multiagent Systems
@@ -121,9 +121,9 @@ This is a purely theoretical paper with no experimental data. The core conclusio
 
 - [\[AAAI 2026\] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation](assemble_your_crew_automatic_multi-agent_communication_topol.md)
 - [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
-- [\[ACL 2026\] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing](../../ACL2026/multi_agent/masfactory_a_graph-centric_framework_for_orchestrating_llm-based_multi-agent_sys.md)
-- [\[ICLR 2026\] AgentTrace: Causal Graph Tracing for Root Cause Analysis in Deployed Multi-Agent Systems](../../ICLR2026/multi_agent/agenttrace_causal_graph_tracing_for_root_cause_analysis_in_deployed_multi-agent_.md)
+- [\[ICLR 2026\] Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration](../../ICLR2026/multi_agent/graph-of-agents_a_graph-based_framework_for_multi-agent_llm_collaboration.md)
 - [\[ICML 2026\] ProtocolBench: Which LLM MultiAgent Protocol to Choose?](../../ICML2026/multi_agent/protocolbench_which_llm_multiagent_protocol_to_choose.md)
+- [\[ACL 2026\] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing](../../ACL2026/multi_agent/masfactory_a_graph-centric_framework_for_orchestrating_llm-based_multi-agent_sys.md)
 
 </div>
 

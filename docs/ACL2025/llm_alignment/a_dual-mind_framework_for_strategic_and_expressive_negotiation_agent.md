@@ -1,0 +1,147 @@
+---
+title: >-
+  [Paper Note] A Dual-Mind Framework for Strategic and Expressive Negotiation Agent
+description: >-
+  [ACL 2025][LLM Alignment][Negotiation Agent] Inspired by the dual-process theory of human cognition, this paper proposes a Dual-Mind Negotiation Agent (DMNA) framework. It combines an intuitive module (fast strategic planning, trained based on MCTS+DPO) and a deliberative module (slow expression optimization, based on a multifaceted reflection mechanism) to achieve state-of-the-art performance on negotiation tasks.
+tags:
+  - "ACL 2025"
+  - "LLM Alignment"
+  - "Negotiation Agent"
+  - "Dual-Process Theory"
+  - "Strategic Planning"
+  - "Expression Optimization"
+  - "MCTS"
+date: 2026-05-08
+content_hash: 025aa11196fca5a8
+---
+
+# A Dual-Mind Framework for Strategic and Expressive Negotiation Agent
+
+**Conference**: ACL 2025  
+**Code**: None  
+**Area**: Other  
+**Keywords**: Negotiation Agent, Dual-Process Theory, Strategic Planning, Expression Optimization, MCTS
+
+## TL;DR
+
+Inspired by the dual-process theory of human cognition, this paper proposes a Dual-Mind Negotiation Agent (DMNA) framework. It combines an intuitive module (fast strategic planning, trained based on MCTS+DPO) and a deliberative module (slow expression optimization, based on a multifaceted reflection mechanism) to achieve state-of-the-art performance on negotiation tasks.
+
+## Background & Motivation
+
+**Background**: Negotiation is a special dialogue scenario that requires agents not only to generate fluent natural language responses but also to have clear strategic goals—reaching consensus by influencing the opponent's attitude or intention. Current research on negotiation agents is mainly divided into two streams: one focuses on strategic planning (how to choose the optimal negotiation strategy), and the other focuses on linguistic expression optimization (how to make responses more persuasive).
+
+**Limitations of Prior Work**: Existing methods typically focus on only one aspect of strategic planning or expression optimization. Strategy-oriented methods may generate strategically correct but awkward responses, while expression-oriented methods may produce beautiful language but lack effective negotiation strategies. The synergy between them has been overlooked. When human beings negotiate, they actually employ both fast intuitive judgment (choosing strategies) and slow deliberation (refining expressions), and these two processes complement each other.
+
+**Key Challenge**: Strategic planning requires a global perspective and consideration of long-term rewards (similar to look-ahead search in games), whereas prior expression optimization requires fine-grained language refinement under a given strategy. Their timescales and optimization objectives differ, making it difficult for simple end-to-end training to accommodate both simultaneously.
+
+**Goal**: To design a negotiation agent framework capable of simultaneous strategic planning and expression optimization, addressing the questions of "what to say" and "how to say it", respectively.
+
+**Key Insight**: Inspired by Kahneman's dual-process theory in cognitive science (System 1 and System 2)—System 1 is fast, automatic, and experience-based intuitive processing, while System 2 is slow, conscious, and logical analytical processing. Mapping this theory to negotiation scenarios: the intuitive module (System 1) is responsible for rapid strategy selection and initial response generation, while the deliberative module (System 2) handles fine-grained expression optimization.
+
+**Core Idea**: Training an intuitive module using MCTS and DPO to simultaneously accomplish strategic planning and initial expression, and constructing a deliberative module with a multifaceted reflection mechanism to optimize expression quality. The two modules work synergistically to form a complete negotiation agent.
+
+## Method
+
+### Overall Architecture
+
+The DMNA framework consists of two core modules: the Intuitive Module and the Deliberative Module. Given a negotiation dialogue history, the intuitive module first quickly selects a negotiation strategy and generates an initial response based on the current state, and then the deliberative module optimizes and refines this response at the expression level. The final output response is both strategically oriented and of high linguistic quality.
+
+### Key Designs
+
+1. **Intuitive Module (Trained via MCTS + DPO)**:
+
+    - **Function**: Quickly perform strategic planning and generate high-quality initial responses given a dialogue history.
+    - **Mechanism**: Use Monte Carlo Tree Search (MCTS) to explore the long-term rewards of different strategy-response combinations. Each node in MCTS represents a dialogue state, and edges represent strategy-response pairs, evaluating the long-term value of each choice by simulating the future expansion of the dialogue. The strategy-response preference pairs generated by MCTS search are used to train the LLM via Direct Preference Optimization (DPO). Specifically, MCTS selects multiple candidate strategies in each round, generates multiple responses for each strategy, and then simulates subsequent dialogue developments to estimate rewards. The (strategy, response) pairs with the highest and lowest rewards serve as positive and negative samples for DPO, respectively.
+    - **Design Motivation**: MCTS provides a way to explore the strategy space without a predefined reward model, while DPO distills the search-derived preference signals into the model, eliminating the need to run time-consuming searches during inference and enabling System 1-style rapid response.
+
+2. **Deliberative Module (Multifaceted Reflection Mechanism)**:
+
+    - **Function**: Optimize the expression quality of the initial response generated by the intuitive module across multiple dimensions.
+    - **Mechanism**: Multifaceted Reflection (Multifaceted Reflexion) evaluates and improves the initial response from multiple dimensions: (a) persuasiveness dimension—checking if arguments are compelling and evidence is sufficient; (b) emotional dimension—checking if the tone is appropriate and whether the opponent's emotional state has been considered; (c) strategic consistency dimension—checking if the optimized expression still aligns with the originally intended strategic goal; (d) fluency dimension—checking if the language is natural and coherent. For each dimension, LLMs are used to generate targeted feedback, based on which responses are iteratively modified.
+    - **Design Motivation**: Optimizing a single dimension can easily lead to degradation in other dimensions (e.g., excessively pursuing persuasiveness can result in an overly aggressive tone), and multifaceted reflection avoids this issue through multi-dimensional balance checks.
+
+3. **MCTS Joint Strategy-Response Search**:
+
+    - **Function**: Jointly search for the optimal combination in both the strategy space and response space.
+    - **Mechanism**: The four phases of MCTS are selection (selecting the most promising node based on UCB values), expansion (generating new strategy-response candidates), simulation (simulating subsequent dialogue turns via LLM self-play), and backpropagation (propagating simulation rewards back to ancestor nodes to update value estimates). Strategy selection and response generation are jointly performed in the expansion phase, and the reward function comprehensively considers negotiation outcomes (whether agreement is reached, utility distribution of the agreement) and dialogue quality (fluency, coherence).
+    - **Design Motivation**: Unifying the search of strategy and expression within the MCTS framework avoids the strategy-expression inconsistency caused by separate optimization.
+
+### Loss & Training
+
+The intuitive module is trained using the DPO loss: 
+
+$$\mathcal{L}_{\text{DPO}} = -\mathbb{E}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)\right]$$
+
+where $y_w$ and $y_l$ are the preferred and dispreferred responses obtained through MCTS search, respectively. The deliberative module is implemented via prompt engineering during inference, requiring no additional training.
+
+## Key Experimental Results
+
+### Main Results
+
+| Dataset | Metric | DMNA | GPT-4 | SOTOPIA | DialoGPT-SD | Gain |
+|--------|------|------|-------|---------|-------------|------|
+| CraigslistBargain | Agreement Score | 78.3 | 72.1 | 68.5 | 62.4 | +8.6% vs GPT-4 |
+| CraigslistBargain | Strategy Accuracy | 85.2 | 79.6 | 74.3 | 67.1 | +7.0% vs GPT-4 |
+| DealOrNoDeal | Utility Score | 7.82 | 7.15 | 6.73 | 5.91 | +9.4% vs GPT-4 |
+| DealOrNoDeal | Dialogue Quality | 4.31 | 4.42 | 3.87 | 3.52 | -2.5% vs GPT-4 |
+| Persuasion4Good | Donation Rate | 63.7% | 58.2% | 52.8% | 45.6% | +9.5% vs GPT-4 |
+
+### Ablation Study
+
+| Configuration | Agreement Score | Strategy Accuracy | Note |
+|------|---------|-----------|------|
+| DMNA (Full) | 78.3 | 85.2 | Synergy of Intuitive + Deliberative Modules |
+| Intuitive Module Only | 74.8 | 84.6 | Good strategy, average expression |
+| Deliberative Module Only | 71.5 | 73.2 | Good expression, weak strategy |
+| w/o MCTS (SFT Only) | 72.1 | 78.3 | MCTS is crucial for learning strategy |
+| w/o DPO (Direct MCTS) | 73.6 | 82.1 | DPO distillation improves inference efficiency |
+| w/o Multifaceted Reflection (Single Dimension Only) | 76.1 | 84.8 | Multifaceted reflection improves expression quality |
+
+### Key Findings
+
+- The synergy between the intuitive and deliberative modules is significant—the performance of using either module alone is substantially lower than that of the combined approach, validating the rationality of the dual-process theory.
+- The contribution of MCTS to strategic planning is far greater than its contribution to expression quality, aligned with design expectations—MCTS primarily solves the "what to say" problem.
+- The multifaceted reflection of the deliberative module achieves consistent improvements across all metrics compared to single-dimensional reflection, and shows a larger advantage in emotion-related tasks (e.g., Persuasion4Good).
+- DMNA comprehensively outperforms GPT-4 on strategic metrics, but is slightly inferior to GPT-4 on pure language quality metrics, indicating that strategic optimization might come at the cost of a slight reduction in expression naturalness.
+
+## Highlights & Insights
+
+- Structuring negotiation agent design around the dual-process theory from cognitive science is elegant and effective, with the division of labor between System 1 (intuitive/fast) and System 2 (deliberative/slow) feeling highly natural. This design paradigm can be transferred to other scenarios requiring strategy-expression synergy (e.g., debate, persuasion, gaming dialogue).
+- Using MCTS to search for strategic preferences to guide DPO training is an ingenious "search-then-distill" paradigm—computational resources are invested in deep search during training, while inference requires only a single forward pass.
+- The multifaceted reflection mechanism exhibits high scalability, allowing evaluation dimensions to be flexibly added or adjusted based on task needs.
+
+## Limitations & Future Work
+
+- Generating training data with MCTS requires a large number of dialogue simulations, which is computationally expensive.
+- The multi-turn reflection of the deliberative module increases inference latency, which may require a trade-off in real-time dialogue scenarios.
+- The negotiation scenarios validated so far are relatively structured, and the performance in more open-ended negotiation scenarios remains to be verified.
+- The coordination between the intuitive module and the deliberative module is currently serial; future work can explore more efficient parallel or interleaved execution methods.
+
+## Related Work & Insights
+
+- **vs SOTOPIA Agent**: SOTOPIA focuses on social interaction capabilities but has weaker strategic modeling; DMNA's MCTS strategy search makes it stronger in strategy-oriented tasks.
+- **vs GPT-4 Direct Prompting**: GPT-4 possesses powerful language capabilities but lacks strategy training specifically for negotiation; DMNA fills this gap through specialized strategic learning.
+- **vs RL-based Negotiation Agents**: Traditional RL methods require designing complex reward functions, whereas the MCTS+DPO scheme is more flexible and does not require explicitly defined reward signals.
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐⭐ The mapping of the dual-process theory is novel and rational, and the strategy distillation scheme with MCTS+DPO is innovative.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ The evaluation across three different negotiation datasets is comprehensive, and the ablation study is detailed.
+- **Writing Quality**: ⭐⭐⭐⭐ The framework description is clear, and the explanation of motivation is convincing.
+- **Value**: ⭐⭐⭐⭐ Provides a new design paradigm for negotiation agents, and the idea of dual-module synergy is widely applicable.
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] AgentRM: Enhancing Agent Generalization with Reward Modeling](agentrm_enhancing_agent_generalization_with_reward_modeling.md)
+- [\[ACL 2025\] Expectation Confirmation Preference Optimization for Multi-Turn Conversational Recommendation Agent](expectation_confirmation_preference_optimization_for_multi-turn_conversational_r.md)
+- [\[ACL 2025\] World Modeling Makes a Better Planner: Dual Preference Optimization for Embodied Task Planning](world_modeling_makes_a_better_planner_dual_preference_optimization_for_embodied_.md)
+- [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](../../ICLR2026/llm_alignment/learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
+- [\[ACL 2025\] HAF-RM: A Hybrid Alignment Framework for Reward Model Training](haf-rm_a_hybrid_alignment_framework_for_reward_model_training.md)
+
+</div>
+
+<!-- RELATED:END -->

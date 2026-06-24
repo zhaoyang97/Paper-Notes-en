@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement
 description: >-
-  [ICLR 2026][AI Safety][Nasty Training] This paper leverages Nasty Training, originally designed to "prevent model distillation," to enhance adversarial robustness. By utilizing a vanilla-trained "adversary model" for divergence regularization, the target model is forced to output a **sparse probability distribution**. This widens inter-class margins and inc
+  [ICLR 2026][AI Safety][Adversarial Training] This paper leverages Nasty Training, originally designed to "prevent model distillation," to enhance adversarial robustness. By utilizing a vanilla-trained "adversary model" for divergence regularization, the target model is forced to output a **sparse probability distribution**. This widens inter-class margins and increases decision boundary margins, achieving SOTA robustness on CIFAR / ImageNet with minimal overhead…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Nasty Training
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Adversarial Training"
+  - "Robustness"
+  - "Probability Sparsity"
+  - "Nasty Training"
+  - "Intellectual Property Protection"
+  - "Inter-class Margin"
 date: 2026-05-08
-content_hash: dbacccd14e03f3fb
+content_hash: 60a13f6c23574306
 ---
+
 # Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement
 
 **Conference**: ICLR 2026  
@@ -121,8 +127,8 @@ The first-order term is negligible as probabilities sum to 1. **The second-order
 - [\[ICLR 2026\] Concept-based Adversarial Attack: a Probabilistic Perspective](concept-based_adversarial_attack_a_probabilistic_perspective.md)
 - [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
 - [\[CVPR 2026\] Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats](../../CVPR2026/ai_safety/robustness_under_data_scarcity_few-shot_continual_adversarial_training_for_evolv.md)
-- [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
 - [\[CVPR 2026\] Taming the Long Tail: Rebalancing Adversarial Training via Adaptive Perturbation](../../CVPR2026/ai_safety/taming_the_long_tail_rebalancing_adversarial_training_via_adaptive_perturbation.md)
+- [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
 
 </div>
 

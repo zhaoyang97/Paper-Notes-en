@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs
 description: >-
-  [ICML 2026][LLM Evaluation][MaxFlip] The paper proposes a two-stage evaluation protocol centered on "providing counterarguments without social pressure," quantifying the probability (Answer Flip Rate) that an LLM "changes its mind" after answering correctly when challenged by an argument supporting a wrong option. It finds that flip rates across seven fro
+  [ICML2026][LLM Evaluation][Answer Stability] The paper proposes a two-stage evaluation protocol centered on "providing counterarguments without social pressure," quantifying the probability (Answer Flip Rate) that an LLM "changes its mind" after answering correctly when challenged by an argument supporting a wrong option. It finds that flip rates across seven frontier models diverge massively from 17.5% to 97.3%, and attributing arguments to the model's "own previous writing"…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - MaxFlip
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "Answer Stability"
+  - "Counterargument Challenges"
+  - "Sycophancy"
+  - "Self-Attribution"
+  - "MaxFlip"
 date: 2026-05-08
-content_hash: 0cd0e0aa39d4d963
+content_hash: 1b1b1326a9f2af4c
 ---
+
 # Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs
 
 **Conference**: ICML2026  
@@ -154,11 +159,11 @@ The most stable model (Qwen3.5-35B) still has a 17.5% flip rate, while Llama-3.1
 
 ## Related Papers
 
-- [\[ICML 2026\] Prescriptive Scaling Reveals the Evolution of Language Model Capabilities](prescriptive_scaling_reveals_the_evolution_of_language_model_capabilities.md)
-- [\[ICML 2026\] Estimating Tail Risks in Language Model Output Distributions](estimating_tail_risks_in_language_model_output_distributions.md)
-- [\[ICML 2026\] The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust](the_acute_protocol_operationalizing_language_model_activations_for_better_calibr.md)
+- [\[ICLR 2026\] Complementing Self-Consistency with Cross-Model Disagreement for Uncertainty Quantification](../../ICLR2026/llm_evaluation/complementing_self-consistency_with_cross-model_disagreement_for_uncertainty_qua.md)
+- [\[ACL 2025\] GuessArena: Guess Who I Am? A Self-Adaptive Framework for Evaluating LLMs in Domain-Specific Knowledge and Reasoning](../../ACL2025/llm_evaluation/guessarena_guess_who_i_am_a.md)
 - [\[ICML 2026\] Rethinking Psychometric Evaluation of LLMs: When and Why Self-Reports Predict Behavior](rethinking_psychometric_evaluation_of_llms_when_and_why_self-reports_predict_beh.md)
-- [\[ICML 2026\] Correcting Prompt Dependence in LLM Benchmarks: A Bayesian Hierarchical Model with Embedding-Space Clustering](correcting_prompt_dependence_in_llm_benchmarks_a_bayesian_hierarchical_model_wit.md)
+- [\[ICML 2026\] Who can we trust? LLM-as-a-jury for Comparative Assessment](who_can_we_trust_llm-as-a-jury_for_comparative_assessment.md)
+- [\[ICML 2026\] Prescriptive Scaling Reveals the Evolution of Language Model Capabilities](prescriptive_scaling_reveals_the_evolution_of_language_model_capabilities.md)
 
 </div>
 

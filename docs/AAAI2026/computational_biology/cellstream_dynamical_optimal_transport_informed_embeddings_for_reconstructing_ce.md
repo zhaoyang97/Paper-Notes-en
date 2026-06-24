@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data
 description: >-
-  [AAAI 2026][Computational Biology][single-cell RNA sequencing] This paper proposes CellStream, a deep learning framework that jointly learns an autoencoder and unbalanced dynamical optimal transport (OT) to simultaneousl…
+  [AAAI 2026 Oral][Computational Biology][single-cell RNA sequencing] This paper proposes CellStream, a deep learning framework that jointly learns an autoencoder and unbalanced dynamical optimal transport (OT) to simultaneously obtain low-dimensional embeddings and continuous cellular dynamics from discrete-time single-cell snapshot data, achieving significant improvements over existing methods in temporal consistency and velocity consistency.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Computational Biology"
   - "single-cell RNA sequencing"
   - "optimal transport"
@@ -12,7 +12,7 @@ tags:
   - "dimensionality reduction embedding"
   - "autoencoder"
 date: 2026-05-08
-content_hash: ff3184f1c015b55e
+content_hash: cef7edbe2d447c9c
 ---
 
 # CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data
@@ -175,11 +175,11 @@ Hyperparameter settings: $\lambda_{AE}=10, \lambda_{WFR}=1, \lambda_{Match}=5, \
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fast and Interpretable Protein Substructure Alignment via Optimal Transport](../../ICLR2026/computational_biology/fast_and_interpretable_protein_substructure_alignment_via_optimal_transport.md)
+- [\[ICLR 2026\] Optimal Transport Unlocks End-to-End Learning for Single-Molecule Localization](../../ICLR2026/computational_biology/optimal_transport_unlocks_end-to-end_learning_for_single-molecule_localization.md)
+- [\[ICLR 2026\] WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport](../../ICLR2026/computational_biology/wfr-fm_simulation-free_dynamic_unbalanced_optimal_transport.md)
+- [\[ICLR 2026\] KGOT: Unified Knowledge Graph and Optimal Transport Pseudo-Labeling for Molecule-Protein Interaction Prediction](../../ICLR2026/computational_biology/kgot_unified_knowledge_graph_and_optimal_transport_pseudo-labeling_for_molecule-.md)
 - [\[NeurIPS 2025\] Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action](../../NeurIPS2025/computational_biology/variational_regularized_unbalanced_optimal_transport_single_network_least_action.md)
-- [\[AAAI 2026\] Distributional Priors Guided Diffusion for Generating 3D Molecules in Low Data Regimes](distributional_priors_guided_diffusion_for_generating_3d_molecules_in_low_data_r.md)
-- [\[AAAI 2026\] Investigating Data Pruning for Pretraining Biological Foundation Models at Scale](investigating_data_pruning_for_pretraining_biological_foundation_models_at_scale.md)
-- [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](../../CVPR2026/computational_biology/cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
-- [\[ICML 2026\] From Feasible to Practical: Pareto-Optimal Synthesis Planning](../../ICML2026/computational_biology/from_feasible_to_practical_pareto-optimal_synthesis_planning.md)
 
 </div>
 

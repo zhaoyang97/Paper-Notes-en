@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Demystifying When Pruning Works via Representation Hierarchies
 description: >-
-  [ICML 2026][Model Compression][Paper Note] Starting from the three-level representation hierarchy of "embedding $\rightarrow$ logit $\rightarrow$ probability," this paper uses second-order Taylor expansion theory to prove: perturbations caused by pruning in the embedding and logit spaces are inherently small, but the non-linear softmax step amplifies these pert
+  [ICML 2026][Model Compression][Network Pruning] Starting from the three-level representation hierarchy of "embedding $\rightarrow$ logit $\rightarrow$ probability," this paper uses second-order Taylor expansion theory to prove: perturbations caused by pruning in the embedding and logit spaces are inherently small, but the non-linear softmax step amplifies these perturbations into the probability space by a factor of $\mathrm{Var}_r(\Delta z)/(2T^2)$. Combined with step-wise a…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Network Pruning"
+  - "Generative Task Degradation"
+  - "Softmax Amplification"
+  - "Representation Hierarchies"
+  - "KL Divergence"
 date: 2026-05-08
-content_hash: ba82903bdae665fb
+content_hash: 9f0283e5d0f88d93
 ---
+
 # Demystifying When Pruning Works via Representation Hierarchies
 
 **Conference**: ICML 2026  

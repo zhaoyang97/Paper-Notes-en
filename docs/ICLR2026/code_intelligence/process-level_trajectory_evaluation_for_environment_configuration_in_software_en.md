@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] Addressing the most fundamental yet failure-prone stage of "environment setup" for SWE agents, this paper proposes EnConda-Bench. By injecting six types of real-world errors into originally correct README files to automatically generate tasks, it decomposes the traditional black-box evaluation—which only checks "final
+  [ICLR 2026][Code Intelligence][Environment Configuration] Addressing the most fundamental yet failure-prone stage of "environment setup" for SWE agents, this paper proposes EnConda-Bench. By injecting six types of real-world errors into originally correct README files to automatically generate tasks, it decomposes the traditional black-box evaluation—which only checks "final build/test success"—into a process-level diagnosis of **Planning, Perception, Feedback…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Environment Configuration"
+  - "Process-level Evaluation"
+  - "Software Engineering Agents"
+  - "README Error Injection"
+  - "Automated Data Construction"
 date: 2026-05-08
-content_hash: 0c56cfc1f51336d4
+content_hash: b1eba1136c1f22c6
 ---
+
 # Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents
 
 **Conference**: ICLR 2026  
@@ -135,7 +141,7 @@ Results show that generated errors are statistically indistinguishable from real
 - [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
 - [\[ICML 2026\] MEnvAgent: Scalable Polyglot Environment Construction for Verifiable Software Engineering](../../ICML2026/code_intelligence/menvagent_scalable_polyglot_environment_construction_for_verifiable_software_eng.md)
 - [\[ICLR 2026\] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization](boad_discovering_hierarchical_software_engineering_agents_via_bandit_optimizatio.md)
-- [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](../../NeurIPS2025/code_intelligence/swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
+- [\[ACL 2026\] EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents](../../ACL2026/code_intelligence/eet_experience-driven_early_termination_for_cost-efficient_software_engineering_.md)
 
 </div>
 

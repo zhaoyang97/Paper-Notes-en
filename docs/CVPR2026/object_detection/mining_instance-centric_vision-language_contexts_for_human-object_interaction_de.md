@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection
 description: >-
-  [CVPR 2026][Object Detection][Vision-Language Model] This paper proposes InCoM-Net, which extracts three levels of context—intra-instance, inter-instance, and global—separately for each instance from VLM features. Through progressive context aggregation and fusion with detector features, it achieves SOTA results in HOI detection on HICO-DET (Full mAP 43.96) and V-COCO ($
+  [CVPR 2026][Object Detection][HOI Detection] This paper proposes InCoM-Net, which extracts three levels of context—intra-instance, inter-instance, and global—separately for each instance from VLM features. Through progressive context aggregation and fusion with detector features, it achieves SOTA results in HOI detection on HICO-DET (Full mAP 43.96) and V-COCO ($AP_{role}^{S1}$ 73.6).
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Vision-Language Model
-  - Attention
+  - "CVPR 2026"
+  - "Object Detection"
+  - "HOI Detection"
+  - "Vision-Language Models"
+  - "Instance-level Context"
+  - "Multi-context Features"
+  - "Attention Mechanisms"
 date: 2026-05-08
-content_hash: b9eba9443818b838
+content_hash: 6c1ca1cf86cd868d
 ---
+
 # Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection
 
 **Conference**: CVPR 2026  
@@ -150,7 +154,7 @@ Ablation of context types (based on ICR+ProCA):
 
 ## Related Papers
 
-- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
+- [\[CVPR 2026\] SL-HOI: Streamlined Open-Vocabulary Human-Object Interaction Detection](streamlined_open-vocabulary_human-object_interaction_detection.md)
 - [\[CVPR 2026\] Learning to Track Instance from Single Nature Language Description](learning_to_track_instance_from_single_nature_language_description.md)
 - [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
 - [\[CVPR 2026\] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward](saliency-r1_enforcing_interpretable_and_faithful_vision-language_reasoning_via_s.md)

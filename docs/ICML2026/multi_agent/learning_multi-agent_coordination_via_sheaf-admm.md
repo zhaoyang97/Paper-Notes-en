@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Sheaf-ADMM: Learning Multi-Agent Coordination via Sheaf-ADMM
 description: >-
-  [ICML 2026][Multi-Agent][cellular sheaf] Sheaf-ADMM formulates multi-agent coordination as an end-to-end differentiable ADMM unrolling: each agent observes a local patch, independently solves an ADMM subproblem ($\bm x$-update), negotiates consensus via "edge space projections" defined by a cellular sheaf ($\bm z$-update), and accumulates divergence using dua
+  [ICML 2026][Multi-Agent][ADMM Unrolling] Sheaf-ADMM formulates multi-agent coordination as an end-to-end differentiable ADMM unrolling: each agent observes a local patch, independently solves an ADMM subproblem ($\bm x$-update), negotiates consensus via "edge space projections" defined by a cellular sheaf ($\bm z$-update), and accumulates divergence using dual variables $\bm u$. Agents successfully solve global tasks in maze pathfinding, MNIST, and Sudoku…
 tags:
-  - ICML 2026
-  - Multi-Agent
-  - cellular sheaf
-  - sheaf Laplacian
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "ADMM Unrolling"
+  - "cellular sheaf"
+  - "multi-agent consensus"
+  - "sheaf Laplacian"
+  - "local view fusion"
 date: 2026-05-08
-content_hash: 363ad6387ec45915
+content_hash: 51195f9913b66587
 ---
+
 # Sheaf-ADMM: Learning Multi-Agent Coordination via Sheaf-ADMM
 
 **Conference**: ICML 2026  
@@ -144,16 +148,16 @@ While slightly weaker on clean data (−0.3), Sheaf-ADMM is significantly more r
 - Value: ⭐⭐⭐⭐ High theoretical and practical significance for MARL, collective robotics, and distributed inference.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] CoOT: Learning to Coordinate In-Context with Coordination Transformers](coot_learning_to_coordinate_in-context_with_coordination_transformers.md)
-- [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](../../AAAI2026/multi_agent/conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[ICML 2026\] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions](engiagent_fully_connected_coordination_of_llm_agents_for_solving_open-ended_engi.md)
+- [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](../../AAAI2026/multi_agent/conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[ICLR 2026\] Multi-agent Coordination via Flow Matching](../../ICLR2026/multi_agent/multi-agent_coordination_via_flow_matching.md)
-- [\[ACL 2026\] Explicit Trait Inference for Multi-Agent Coordination](../../ACL2026/multi_agent/explicit_trait_inference_for_multi-agent_coordination.md)
+- [\[ICML 2026\] Voting Protocols as Coordination Mechanisms for Role-Constrained Multi-Agent Tutoring Systems](voting_protocols_as_coordination_mechanisms_for_role-constrained_multi-agent_tut.md)
 
 </div>
 

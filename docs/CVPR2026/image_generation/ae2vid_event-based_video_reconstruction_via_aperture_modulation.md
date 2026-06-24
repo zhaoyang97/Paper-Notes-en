@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AE2VID: Event-based Video Reconstruction via Aperture Modulation
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Addressing the pain points where event-based video reconstruction fails in static regions and suffers from error accumulation when relying solely on sparse motion events, this paper actively modulates the aperture periodically. This "passively triggers" dense events even in static regions, allowing for the resolution o
+  [CVPR 2026][Image Generation][Event camera] Addressing the pain points where event-based video reconstruction fails in static regions and suffers from error accumulation when relying solely on sparse motion events, this paper actively modulates the aperture periodically. This "passively triggers" dense events even in static regions, allowing for the resolution of dense intensity reference maps. A dual-network architecture (AENet for aperture events and MENet for bidirectional…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Event camera"
+  - "video reconstruction"
+  - "aperture modulation"
+  - "bidirectional recurrent network"
+  - "high dynamic range"
 date: 2026-05-08
-content_hash: ec993d950ec371bf
+content_hash: 99326aaa2965db54
 ---
+
 # AE2VID: Event-based Video Reconstruction via Aperture Modulation
 
 **Conference**: CVPR 2026  
@@ -133,15 +139,16 @@ The gain on HQF is smaller because it features mostly global motion where dense 
 - Value: ⭐⭐⭐⭐ Provides a new sensing paradigm and the AMED dataset; highly practical for the event vision community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Time-Specialized Event-Image Alignment for Blur-to-Video Decomposition](time-specialized_event-image_alignment_for_blur-to-video_decomposition.md)
-- [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
-- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
-- [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
-- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
+- [\[CVPR 2026\] Texvent: Asynchronous Event Data Simulation via Text Prompt](texvent_asynchronous_event_data_simulation_via_text_prompt.md)
+- [\[CVPR 2026\] Spk2VidNet: A Hierarchical Recurrent Architecture for High-Fidelity Video Reconstruction from Long Spike-Camera Streams](spk2vidnet_a_hierarchical_recurrent_architecture_for_high-fidelity_video_reconstr.md)
+- [\[CVPR 2026\] gQIR: Generative Quanta Image Reconstruction](gqir_generative_quanta_image_reconstruc_tion.md)
+- [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](rectok_reconstruction_distillation_along_rectified_flow.md)
+- [\[CVPR 2025\] Efficient Long Video Tokenization via Coordinate-based Patch Reconstruction](../../CVPR2025/image_generation/efficient_long_video_tokenization_via_coordinate-based_patch_reconstruction.md)
 
 </div>
 

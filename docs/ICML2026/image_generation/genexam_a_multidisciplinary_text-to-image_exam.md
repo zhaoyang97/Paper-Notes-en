@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GenExam: A Multidisciplinary Text-to-Image Exam
 description: >-
-  [ICML 2026][Image Generation][MLLM-as-judge] GenExam adopts the "drawing exam" as the gold standard for measuring the integrated reasoning-understanding-generation capabilities of T2I models. By providing ground-truth images and fine-grained scoring points for 1000 questions across 10 disciplines, results reveal that even the strongest closed-source model, Nano B
+  [ICML 2026][Image Generation][Multidisciplinary Exam] GenExam adopts the "drawing exam" as the gold standard for measuring the integrated reasoning-understanding-generation capabilities of T2I models. By providing ground-truth images and fine-grained scoring points for 1000 questions across 10 disciplines, results reveal that even the strongest closed-source model, Nano Banana Pro, achieves only a 70.2% strict score, while most open-source T2I and unified MLLMs score below 3%…
 tags:
-  - ICML 2026
-  - Image Generation
-  - MLLM-as-judge
-  - GPT-Image-1.5
+  - "ICML 2026"
+  - "Image Generation"
+  - "Multidisciplinary Exam"
+  - "Text-to-Image Evaluation"
+  - "Scoring Points"
+  - "MLLM-as-judge"
+  - "GPT-Image-1.5"
 date: 2026-05-08
-content_hash: 00aaf7b5db410f60
+content_hash: 2d28470b6836c66a
 ---
+
 # GenExam: A Multidisciplinary Text-to-Image Exam
 
 **Conference**: ICML 2026  
@@ -140,9 +144,9 @@ The Mean Absolute Error (MAE) for various dimensions (Semantic: 0.10, Spelling: 
 
 - [\[ICML 2026\] WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation](wise_a_world_knowledge-informed_semantic_evaluation_for_text-to-image_generation.md)
 - [\[ICML 2026\] RAIGen: Rare Attribute Identification in Text-to-Image Generative Models](raigen_rare_attribute_identification_in_text-to-image_generative_models.md)
+- [\[ICML 2026\] Breaking the Lock-in: Diversifying Text-to-Image Generation via Representation Modulation](breaking_the_lock-in_diversifying_text-to-image_generation_via_representation_mo.md)
+- [\[ICLR 2026\] ImageDoctor: Diagnosing Text-to-Image Generation via Grounded Image Reasoning](../../ICLR2026/image_generation/imagedoctor_diagnosing_text-to-image_generation_via_grounded_image_reasoning.md)
 - [\[ICML 2026\] Restoring Initial Noise Sensitivity in Text-to-Image Distillation via Geometric Alignment](restoring_initial_noise_sensitivity_in_text-to-image_distillation_via_geometric_.md)
-- [\[ICML 2026\] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models](alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models.md)
-- [\[ICML 2026\] GASS: Geometry-Aware Spherical Sampling for Disentangled Diversity Enhancement in Text-to-Image Generation](gass_geometry-aware_spherical_sampling_for_disentangled_diversity_enhancement_in.md)
 
 </div>
 

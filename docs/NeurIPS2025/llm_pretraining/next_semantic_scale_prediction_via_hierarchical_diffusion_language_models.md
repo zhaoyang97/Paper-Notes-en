@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][discrete diffusion model] This paper proposes HDLM (Hierarchical Diffusion Language Model), which introduces cluster tokens with coarse-grained semantics as an intermediate hierarchy betwe…
+  [NeurIPS 2025][LLM Pretraining][discrete diffusion model] This paper proposes HDLM (Hierarchical Diffusion Language Model), which introduces cluster tokens with coarse-grained semantics as an intermediate hierarchy between clean tokens and mask tokens, enabling "next semantic scale prediction" in discrete diffusion language modeling. The method derives a closed-form ELBO, achieves consistently lower perplexity than MDLM/GIDD on OpenWebText, and reduces generation perplexity b…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "language modeling"
   - "CTMC"
 date: 2026-05-08
-content_hash: fff3559160fa8d8e
+content_hash: 805fb2c3ec2b69ff
 ---
 
 # Next Semantic Scale Prediction via Hierarchical Diffusion Language Models
@@ -156,9 +156,9 @@ Effect of stochastic perturbation (HDLM-64):
 
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
 - [\[ACL 2026\] Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement](../../ACL2026/llm_pretraining/toward_consistent_world_models_with_multi-token_prediction_and_latent_semantic_e.md)
+- [\[ACL 2025\] Pre-Training Curriculum for Multi-Token Prediction in Language Models](../../ACL2025/llm_pretraining/pre-training_curriculum_for_multi-token_prediction_in_language_models.md)
 - [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)
-- [\[NeurIPS 2025\] Memory Mosaics at Scale](memory_mosaics_at_scale.md)
-- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
+- [\[ICLR 2026\] SemHiTok: A Unified Image Tokenizer via Semantic-Guided Hierarchical Codebook](../../ICLR2026/llm_pretraining/semhitok_a_unified_image_tokenizer_via_semantic-guided_hierarchical_codebook_for.md)
 
 </div>
 

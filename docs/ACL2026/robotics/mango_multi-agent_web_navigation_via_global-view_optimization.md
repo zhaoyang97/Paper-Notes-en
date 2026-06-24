@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mango: Multi-Agent Web Navigation via Global-View Optimization
 description: >-
-  [ACL 2026][Robotics & Embodied AI][Thompson Sampling] Mango constructs a global approximate structure of a website before navigation and employs Thompson Sampling to dynamically allocate a limited navigation budget among candidate URLs. This prevents LLM web agents from blindly exploring from the homepage and significantly outperforms baselines such as AgentOccam and WebW
+  [ACL2026][Robotics][Web Navigation] Mango constructs a global approximate structure of a website before navigation and employs Thompson Sampling to dynamically allocate a limited navigation budget among candidate URLs. This prevents LLM web agents from blindly exploring from the homepage and significantly outperforms baselines such as AgentOccam and WebWalker on WebVoyager and WebWalkerQA.
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - Thompson Sampling
+  - "ACL2026"
+  - "Robotics"
+  - "Web Navigation"
+  - "Global Structure Analysis"
+  - "Multi-Armed Bandit"
+  - "Thompson Sampling"
+  - "Episodic Memory"
 date: 2026-05-08
-content_hash: 57965ee05036884f
+content_hash: 59e20ab9619851de
 ---
+
 # Mango: Multi-Agent Web Navigation via Global-View Optimization
 
 **Conference**: ACL2026  

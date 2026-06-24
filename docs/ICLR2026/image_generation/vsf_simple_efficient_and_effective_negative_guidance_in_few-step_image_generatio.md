@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VSF: Simple, Efficient, and Effective Negative Guidance in Few-Step Image Generation Models By Value Sign Flip
 description: >-
-  [ICLR 2026][Image Generation][MMDiT] To address the inability of distilled few-step (1-8 steps) diffusion/flow-matching models to utilize CFG for negative prompts, this paper proposes Value Sign Flip (VSF). By flipping the sign of negative prompt values within the attention mechanism, VSF achieves token-level, adaptive cancellation of undesirable content
+  [ICLR 2026][Image Generation][Negative Guidance] To address the inability of distilled few-step (1-8 steps) diffusion/flow-matching models to utilize CFG for negative prompts, this paper proposes Value Sign Flip (VSF). By flipping the sign of negative prompt values within the attention mechanism, VSF achieves token-level, adaptive cancellation of undesirable content across layers, steps, and regions. With nearly zero extra overhead, it improves negative compliance from 0.32–0…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - MMDiT
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Negative Guidance"
+  - "Few-step Diffusion"
+  - "Attention Modulation"
+  - "Value Sign Flip"
+  - "MMDiT"
 date: 2026-05-08
-content_hash: 54a90168b2c4b6b6
+content_hash: 0424ec952d6158a8
 ---
+
 # VSF: Simple, Efficient, and Effective Negative Guidance in Few-Step Image Generation Models By Value Sign Flip
 
 **Conference**: ICLR 2026  

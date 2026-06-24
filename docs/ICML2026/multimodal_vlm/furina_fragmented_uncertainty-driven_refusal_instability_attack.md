@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Furina: Fragmented Uncertainty-Driven Refusal Instability Attack
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper first utilizes multi-metric diagnostics to prove that "LLM safety decisions are not binary thresholds, but exist within a refusal instability band," discovering that this band is characterized by "rising external uncertainty while internal safety signals decrease." Based on this, it proposes Furina—a model-a
+  [ICML 2026][Multimodal VLM][Refusal Instability Band] This paper first utilizes multi-metric diagnostics to prove that "LLM safety decisions are not binary thresholds, but exist within a refusal instability band," discovering that this band is characterized by "rising external uncertainty while internal safety signals decrease." Based on this, it proposes Furina—a model-agnostic jailbreak attack that forces inputs into the instability band by breaking malicious intent into fr…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Refusal Instability Band"
+  - "Semantic Entropy"
+  - "Internal Safety Signal Decoupling"
+  - "Fragmented Prompts"
+  - "Cross-model Transfer"
 date: 2026-05-08
-content_hash: 92808f134ff4f841
+content_hash: e8cdfabfb81c3622
 ---
+
 # Furina: Fragmented Uncertainty-Driven Refusal Instability Attack
 
 **Conference**: ICML 2026  
@@ -142,9 +148,9 @@ Observation: Across all models, ASR and $H_\mathrm{tok}$ increase monotonically,
 
 - [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
 - [\[CVPR 2026\] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding](../../CVPR2026/multimodal_vlm/iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding.md)
-- [\[ACL 2026\] VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation](../../ACL2026/multimodal_vlm/vauq_vision-aware_uncertainty_quantification_for_lvlm_self-evaluation.md)
-- [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
-- [\[ICLR 2026\] Detecting Misbehaviors of Large Vision-Language Models by Evidential Uncertainty Quantification](../../ICLR2026/multimodal_vlm/detecting_misbehaviors_of_large_vision-language_models_by_evidential_uncertainty.md)
+- [\[ICML 2026\] Mitigating Manifold Departure: Uncertainty-Aware Subspace Rectification for Trustworthy MLLM Decoding](mitigating_manifold_departure_uncertainty-aware_subspace_rectification_for_trust.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](../../CVPR2026/multimodal_vlm/language-driven_fine-grained_retrieval.md)
+- [\[ICLR 2026\] Teaching VLMs to Admit Uncertainty in OCR from Lossy Visual Inputs](../../ICLR2026/multimodal_vlm/teaching_vlms_to_admit_uncertainty_in_ocr_from_lossy_visual_inputs.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stable Coresets via Posterior Sampling: Aligning Induced and Full Loss Landscapes
 description: >-
-  [NeurIPS 2025][Optimization][Coreset Selection] This paper proposes a coreset selection framework based on posterior sampling. By sampling weight perturbations on BatchNorm layers to smooth the loss landscape…
+  [NeurIPS 2025][Optimization][Coreset Selection] This paper proposes a coreset selection framework based on posterior sampling. By sampling weight perturbations on BatchNorm layers to smooth the loss landscape, it guarantees alignment between the coreset and full-dataset loss landscapes (including approximations of the Hessian and Newton step), significantly outperforming existing methods under high label noise.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Label Noise Robustness"
   - "SGD Convergence"
 date: 2026-05-08
-content_hash: b43dbabe76f610a7
+content_hash: a2b46c90c2929c29
 ---
 
 # Stable Coresets via Posterior Sampling: Aligning Induced and Full Loss Landscapes
@@ -53,9 +53,9 @@ The standard coreset selection objective of maximizing over domain $W$ is replac
 
 2. **Posterior sampling = implicit Hessian alignment (Theorem 3.2)**:
    If subset $S'$ is $(\sigma, \epsilon, w)$-stable, letting the Hessian discrepancy be $\mathcal{E} = H_{S',w} - H_{S,w}$, then:
-   - $\|\mathcal{E}\| \leq O(\epsilon^{1/2})$: spectral norm bounded
-   - $\text{tr}(\mathcal{E}^2) \leq O(\epsilon/\sigma)$: Frobenius norm bounded
-   - $\|H_{S'}^{-1}\nabla l_{S'} - H_S^{-1}\nabla l_S\| \leq O(\epsilon^{1/2})$: Newton step approximation
+    - $\|\mathcal{E}\| \leq O(\epsilon^{1/2})$: spectral norm bounded
+    - $\text{tr}(\mathcal{E}^2) \leq O(\epsilon/\sigma)$: Frobenius norm bounded
+    - $\|H_{S'}^{-1}\nabla l_{S'} - H_S^{-1}\nabla l_S\| \leq O(\epsilon^{1/2})$: Newton step approximation
 
    This means that through simple Gaussian sampling, the coreset's loss landscape (including curvature information) is guaranteed to align with the full dataset's, without ever explicitly computing the Hessian.
 
@@ -137,9 +137,9 @@ Settings: $\sigma_2^2 d = 1/(M\sqrt{T})$, learning rate $\eta = \min\{1/\sqrt{T}
 
 - [\[NeurIPS 2025\] Exploring Landscapes for Better Minima along Valleys](exploring_landscapes_for_better_minima_along_valleys.md)
 - [\[NeurIPS 2025\] FedRTS: Federated Robust Pruning via Combinatorial Thompson Sampling](fedrts_federated_robust_pruning_via_combinatorial_thompson_sampling.md)
+- [\[ICML 2026\] SVRG and Beyond via Posterior Correction](../../ICML2026/optimization/svrg_and_beyond_via_posterior_correction.md)
+- [\[ICML 2025\] Can Transformers Learn Full Bayesian Inference In Context?](../../ICML2025/optimization/can_transformers_learn_full_bayesian_inference_in_context.md)
 - [\[ICML 2026\] Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption](../../ICML2026/optimization/convex_basins_in_single-index_model_loss_landscapes_applications_to_robust_recov.md)
-- [\[NeurIPS 2025\] Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules](gradient_descent_as_loss_landscape_navigation_a_normative_framework_for_deriving.md)
-- [\[ICLR 2026\] The Affine Divergence: Aligning Activation Updates Beyond Normalisation](../../ICLR2026/optimization/the_affine_divergence_aligning_activation_updates_beyond_normalisation.md)
 
 </div>
 

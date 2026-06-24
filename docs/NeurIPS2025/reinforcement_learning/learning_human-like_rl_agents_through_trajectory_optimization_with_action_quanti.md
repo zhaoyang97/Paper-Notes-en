@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Human-like RL] This paper proposes MAQ (Motion-Action Quantization), a method that discretizes human actions into a finite set of motion primitives via VQ-VAE…
+  [NeurIPS 2025][Reinforcement Learning][Human-like RL] This paper proposes MAQ (Motion-Action Quantization), a method that discretizes human actions into a finite set of motion primitives via VQ-VAE, then performs trajectory optimization within the quantized action space to train RL agents whose behavioral patterns more closely resemble those of humans.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "VQ-VAE"
   - "behavior modeling"
 date: 2026-05-08
-content_hash: e557c51c96d0436e
+content_hash: 287b08d9b7264f02
 ---
 
 # Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization
@@ -128,8 +128,8 @@ VQ-VAE training: reconstruction loss + commitment loss. RL training: PPO/SAC in 
 
 - [\[NeurIPS 2025\] Enhancing Interpretability in Deep Reinforcement Learning through Semantic Clustering](enhancing_interpretability_in_deep_reinforcement_learning_through_semantic_clust.md)
 - [\[NeurIPS 2025\] Human-Inspired Multi-Level Reinforcement Learning](human-inspired_multi-level_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents](deep_rl_needs_deep_behavior_analysis_exploring_implicit_planning_by_model-free_a.md)
 - [\[AAAI 2026\] Know your Trajectory -- Trustworthy Reinforcement Learning Deployment through Importance-Based Trajectory Analysis](../../AAAI2026/reinforcement_learning/know_your_trajectory_--_trustworthy_reinforcement_learning_deployment_through_im.md)
+- [\[NeurIPS 2025\] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents](deep_rl_needs_deep_behavior_analysis_exploring_implicit_planning_by_model-free_a.md)
 - [\[NeurIPS 2025\] Mixing Expert Knowledge: Bring Human Thoughts Back to the Game of Go](mixing_expert_knowledge_bring_human_thoughts_back_to_the_game_of_go.md)
 
 </div>

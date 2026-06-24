@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] AutoEP: LLMs-Driven Automation of Hyperparameter Evolution for Metaheuristic Algorithms
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] AutoEP inputs "online Exploratory Landscape Analysis (ELA) quantitative metrics" into a multi-LLM reasoning chain, allowing LLMs to dynamically adjust hyperparameters of metaheuristics (e.g., GA, PSO, ACO) generation by generation under **zero-training** conditions. By "grounding" reasoning in data to suppress hallucin
+  [ICLR 2026][Optimization][Metaheuristic Algorithms] AutoEP inputs "online Exploratory Landscape Analysis (ELA) quantitative metrics" into a multi-LLM reasoning chain, allowing LLMs to dynamically adjust hyperparameters of metaheuristics (e.g., GA, PSO, ACO) generation by generation under **zero-training** conditions. By "grounding" reasoning in data to suppress hallucinations, an open-source 30B model can match the tuning performance of GPT-4.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Metaheuristic Algorithms"
+  - "Dynamic Hyperparameter Tuning"
+  - "Large Language Models"
+  - "Exploratory Landscape Analysis (ELA)"
+  - "Zero-shot Control"
+  - "Combinatorial Optimization"
 date: 2026-05-08
-content_hash: 87b2ef42a53ec871
+content_hash: 902800abb5038b9d
 ---
+
 # AutoEP: LLMs-Driven Automation of Hyperparameter Evolution for Metaheuristic Algorithms
 
 **Conference**: ICLR 2026  
@@ -125,8 +132,8 @@ Removing ELA leads to a loss of situational awareness and significant performanc
 - [\[ICLR 2026\] Bayesian Evidence-Driven Prototype Evolution for Federated Domain Adaptation](bayesian_evidence-driven_prototype_evolution_for_federated_domain_adaptation.md)
 - [\[ICLR 2026\] CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design](calm_co-evolution_of_algorithms_and_language_model_for_automatic_heuristic_desig.md)
 - [\[ICLR 2026\] Generalizable Heuristic Generation Through LLMs with Meta-Optimization](generalizable_heuristic_generation_through_llms_with_meta-optimization.md)
+- [\[ICLR 2026\] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport](hyperparameter_trajectory_inference_with_conditional_lagrangian_optimal_transpor.md)
 - [\[ICLR 2026\] Efficient Algorithms for Incremental Metric Bipartite Matching](efficient_algorithms_for_incremental_metric_bipartite_matching.md)
-- [\[ICLR 2026\] Completed Hyperparameter Transfer across Modules, Width, Depth, Batch and Duration](completed_hyperparameter_transfer_across_modules_width_depth_batch_and_duration.md)
 
 </div>
 

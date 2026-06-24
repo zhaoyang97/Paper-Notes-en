@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spectral Bellman Method: Unifying Representation and Exploration in RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] The paper proposes the Spectral Bellman Method (SBM), which originates from the zero Intrinsic Bellman Error (IBE) condition to discover the spectral link between the Bellman operator and feature covariance. It derives a novel representation learning objective and naturally unifies representation learning with Thompson
+  [ICLR 2026][Reinforcement Learning][Representation Learning] The paper proposes the Spectral Bellman Method (SBM), which originates from the zero Intrinsic Bellman Error (IBE) condition to discover the spectral link between the Bellman operator and feature covariance. It derives a novel representation learning objective and naturally unifies representation learning with Thompson Sampling exploration.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Representation Learning"
+  - "Exploration"
+  - "Bellman Error"
+  - "Spectral Decomposition"
+  - "Thompson Sampling"
 date: 2026-05-08
-content_hash: 4ed007d0d5606bbf
+content_hash: 5fbbf9b00d994183
 ---
+
 # Spectral Bellman Method: Unifying Representation and Exploration in RL
 
 **Conference**: ICLR 2026  
@@ -145,9 +151,9 @@ The complete algorithm (Algorithm 2) executes three stages alternatingly in each
 
 - [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[ICLR 2026\] Mirage or Method? How Model–Task Alignment Induces Divergent RL Conclusions](mirage_or_method_how_modeltask_alignment_induces_divergent_rl_conclusions.md)
+- [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
 - [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 - [\[ICLR 2026\] A Unifying View of Coverage in Linear Off-Policy Evaluation](a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)
-- [\[ICLR 2026\] SRFT: A Single-Stage Method with Supervised and Reinforcement Fine-Tuning for Reasoning](srft_a_single-stage_method_with_supervised_and_reinforcement_fine-tuning_for_rea.md)
 
 </div>
 

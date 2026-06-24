@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Atoms of Large Language Models
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper provides the first formal definition of the "fundamental representation units" of Large Language Models (LLMs)—termed **atoms**. It characterizes the intrinsic geometry of LLM hidden representations using a non-Euclidean "Atom Inner Product" and proves that threshold-activated SAEs can precisely recover the
+  [ICML2026][Interpretability][Atom theory] This paper provides the first formal definition of the "fundamental representation units" of Large Language Models (LLMs)—termed **atoms**. It characterizes the intrinsic geometry of LLM hidden representations using a non-Euclidean "Atom Inner Product" and proves that threshold-activated SAEs can precisely recover the set of atoms under appropriate conditions. Empirical tests on Gemma2 / Llama3.1 identify near-ideal atoms with $R^2 \a…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Atom theory"
+  - "Sparse Autoencoder"
+  - "Representation geometry"
+  - "Monosemanticity"
+  - "Fundamental units of representation"
 date: 2026-05-08
-content_hash: c895e06acc787506
+content_hash: 17f9185ca1eeafa0
 ---
+
 # Towards Atoms of Large Language Models
 
 **Conference**: ICML2026  
@@ -110,9 +116,9 @@ Across models of various scales, TSAE units achieve near-perfect scores on both 
 
 ## Related Papers
 
-- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](../../ACL2026/interpretability/knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 - [\[ICML 2026\] Scalable Circuit Learning for Interpreting Large Language Models](scalable_circuit_learning_for_interpreting_large_language_models.md)
-- [\[ACL 2026\] Sparse Feature Coactivation Reveals Causal Semantic Modules in Large Language Models](../../ACL2026/interpretability/sparse_feature_coactivation_reveals_causal_semantic_modules_in_large_language_mo.md)
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](../../ACL2026/interpretability/knowledge_vector_of_logical_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] Spilled Energy in Large Language Models](../../ICLR2026/interpretability/spilled_energy_in_large_language_models.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](../../ACL2026/interpretability/compositional_steering_of_large_language_models_with_steering_tokens.md)
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](../../ACL2026/interpretability/tracing_relational_knowledge_recall_in_large_language_models.md)
 

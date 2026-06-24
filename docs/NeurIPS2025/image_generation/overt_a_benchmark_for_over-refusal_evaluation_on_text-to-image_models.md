@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models
 description: >-
-  [NeurIPS 2025][Image Generation][over-refusal] This paper presents OVERT, the first large-scale benchmark for evaluating over-refusal in text-to-image (T2I) models, comprising 4,600 benign prompts and 1…
+  [NeurIPS 2025][Image Generation][over-refusal] This paper presents OVERT, the first large-scale benchmark for evaluating over-refusal in text-to-image (T2I) models, comprising 4,600 benign prompts and 1,785 harmful prompts across 9 safety categories. It systematically evaluates over-refusal behavior in 5 mainstream T2I models, revealing a strong correlated trade-off between safety and utility.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "safety-utility trade-off"
 date: 2026-05-08
-content_hash: ee8405368852e9f0
+content_hash: 3c8724c38ece6adf
 ---
 
 # OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models
@@ -131,11 +131,11 @@ Safe response rates (%) on OVERT-unsafe:
 
 ## Related Papers
 
-- [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](../../ICCV2025/image_generation/holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
 - [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](fast_data_attribution_for_text-to-image_models.md)
-- [\[AAAI 2026\] T2I-RiskyPrompt: A Benchmark for Safety Evaluation, Attack, and Defense on Text-to-Image Model](../../AAAI2026/image_generation/t2i-riskyprompt_a_benchmark_for_safety_evaluation_attack_and_defense_on_text-to-.md)
+- [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](../../CVPR2026/image_generation/gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
+- [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](../../ICCV2025/image_generation/holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
+- [\[NeurIPS 2025\] RAG-IGBench: Innovative Evaluation for RAG-based Interleaved Generation in Open-domain Question Answering](rag-igbench_innovative_evaluation_for_rag-based_interleaved_generation_in_open-d.md)
 - [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
-- [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
 
 </div>
 

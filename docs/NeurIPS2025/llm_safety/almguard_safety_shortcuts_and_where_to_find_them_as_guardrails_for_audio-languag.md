@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ALMGuard: Safety Shortcuts and Where to Find Them as Guardrails for Audio-Language Models
 description: >-
-  [NeurIPS 2025][LLM Safety][Audio jailbreak] The first defense framework against jailbreak attacks on audio-language models (ALMs). The work discovers that aligned ALMs possess latent safety shortcuts that can be activate…
+  [NeurIPS 2025][LLM Safety][Audio jailbreak] The first defense framework against jailbreak attacks on audio-language models (ALMs). The work discovers that aligned ALMs possess latent safety shortcuts that can be activated, and proposes a Mel Gradient Sparse Mask (M-GSM) to identify critical frequency bins. By applying Shortcut Activation Perturbations (SAP) to these bins, the average attack success rate is reduced from 41.6% to 4.6% with negligible degradation of normal task…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "acoustic perturbation"
   - "ALM defense"
 date: 2026-05-08
-content_hash: 7176a5a35d3b1a1b
+content_hash: 289a2c1d4a400a3b
 ---
 
 # ALMGuard: Safety Shortcuts and Where to Find Them as Guardrails for Audio-Language Models
@@ -131,11 +131,11 @@ M-GSM computation requires a single forward-backward pass. SAP optimization runs
 
 ## Related Papers
 
+- [\[ACL 2025\] SafeRoute: Adaptive Model Selection for Efficient and Accurate Safety Guardrails in Large Language Models](../../ACL2025/llm_safety/saferoute_adaptive_model_selection_for_efficient_and_accurate_safety_guardrails_.md)
 - [\[AAAI 2026\] StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak](../../AAAI2026/llm_safety/stylebreak_revealing_alignment_vulnerabilities_in_large_audio-language_models_vi.md)
 - [\[ICLR 2026\] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models](../../ICLR2026/llm_safety/audiotrust_benchmarking_the_multifaceted_trustworthiness_of_audio_large_language.md)
-- [\[NeurIPS 2025\] Securing the Language of Life: Inheritable Watermarks from DNA Language Models to Proteins](securing_the_language_of_life_inheritable_watermarks_from_dna_language_models_to.md)
-- [\[NeurIPS 2025\] Approximate Domain Unlearning for Vision-Language Models](approximate_domain_unlearning_for_visionlanguage_models.md)
-- [\[NeurIPS 2025\] Steering When Necessary: Flexible Steering Large Language Models with Backtracking](steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)
+- [\[ICLR 2026\] Trust The Typical: LLM Safety Guardrails as Out-of-Distribution Detection](../../ICLR2026/llm_safety/trust_the_typical.md)
+- [\[ICML 2025\] Learning Safety Constraints for Large Language Models](../../ICML2025/llm_safety/learning_safety_constraints_for_large_language_models.md)
 
 </div>
 

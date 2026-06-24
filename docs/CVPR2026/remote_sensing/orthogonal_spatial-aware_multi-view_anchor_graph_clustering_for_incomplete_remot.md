@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Orthogonal Spatial-Aware Multi-View Anchor Graph Clustering for Incomplete Remote Sensing Data
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] Addressing the novel scenario of incomplete remote sensing multi-view clustering where "certain views contain missing pixels," OSMAGC initializes multi-scale spatial-aware anchor graphs using superpixels. It then unifies multi-scale anchor graph learning, structure-aligned consensus feature learning, and orthogonal spa
+  [CVPR 2026][Remote Sensing][Multi-view clustering] Addressing the novel scenario of incomplete remote sensing multi-view clustering where "certain views contain missing pixels," OSMAGC initializes multi-scale spatial-aware anchor graphs using superpixels. It then unifies multi-scale anchor graph learning, structure-aligned consensus feature learning, and orthogonal spatial-aware regularization into a single objective function for alternating optimization. The method consisten…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Multi-view clustering"
+  - "Incomplete data"
+  - "Anchor graph learning"
+  - "Spectral-spatial structure"
 date: 2026-05-08
-content_hash: 85a72aa553234a1e
+content_hash: e7bfa6fcd93a97f8
 ---
+
 # Orthogonal Spatial-Aware Multi-View Anchor Graph Clustering for Incomplete Remote Sensing Data
 
 **Conference**: CVPR 2026  
@@ -172,11 +177,11 @@ OSMAGC is remarkably faster than all competitors, confirming the near-linear com
 
 ## Related Papers
 
-- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
-- [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
 - [\[CVPR 2026\] Remote Sensing Image Super-Resolution for Imbalanced Textures: A Texture-Aware Diffusion Framework](remote_sensing_image_super-resolution_for_imbalanced_textures_a_texture-aware_di.md)
-- [\[CVPR 2026\] Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)
+- [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
 - [\[CVPR 2026\] PhenoYieldNet: Learning Crop-Aware Phenological Responses for Multi-Crop Yield Prediction](phenoyieldnet_learning_crop-aware_phenological_responses_for_multi-crop_yield_pr.md)
+- [\[CVPR 2026\] QuCNet: Quantum Deep Learning Driven Multi-Circuit Network for Remote Sensing Image Classification](qucnet_quantum_deep_learning_driven_multi-circuit_network_for_remote_sensing_ima.md)
+- [\[ICCV 2025\] SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images](../../ICCV2025/remote_sensing/smarties_spectrum-aware_multi-sensor_auto-encoder_for_remote_sensing_images.md)
 
 </div>
 

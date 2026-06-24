@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Appearance: Camouflaged Object Detection via Geometric Structure
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] DepthSAM adapts the monocular depth estimation (MDE) foundation model, Depth Anything v2, for camouflaged object detection. By freezing the backbone and injecting Sparse Mixture-of-Experts Adapters (SMEA), it pivots the task from "reconstructing the entire scene geometry" to "highlighting camouflaged object geometry."
+  [CVPR 2026][Segmentation][Camouflaged Object Detection] DepthSAM adapts the monocular depth estimation (MDE) foundation model, Depth Anything v2, for camouflaged object detection. By freezing the backbone and injecting Sparse Mixture-of-Experts Adapters (SMEA), it pivots the task from "reconstructing the entire scene geometry" to "highlighting camouflaged object geometry." A Geometric-Semantic Fusion Module (GSFM) is then used to align geometric cues with semantic information…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Camouflaged Object Detection"
+  - "Monocular Depth Estimation"
+  - "Geometric Priors"
+  - "Sparse Mixture-of-Experts Adapter"
+  - "Frequency Domain Fusion"
 date: 2026-05-08
-content_hash: 78389d57e4966500
+content_hash: 113de1ab8948bf1f
 ---
+
 # Beyond Appearance: Camouflaged Object Detection via Geometric Structure
 
 **Conference**: CVPR 2026  
@@ -148,9 +154,9 @@ Baseline model ablation (Table 3): Porting DepthSAM components to the SAM founda
 ## Related Papers
 
 - [\[CVPR 2026\] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection](sddf_specificity-driven_dynamic_focusing_for_open-vocabulary_camouflaged_object.md)
+- [\[ICCV 2025\] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection](../../ICCV2025/segmentation/beyond_single_images_retrieval_self-augmented_unsupervised_camouflaged_object_de.md)
 - [\[ICML 2026\] Beyond Detection: A Structure-Aware Framework for Scene Text Tracking](../../ICML2026/segmentation/beyond_detection_a_structure-aware_framework_for_scene_text_tracking.md)
 - [\[CVPR 2026\] DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation](discover_segment_and_select_a_progressive_mechanism_for_zero-shot_camouflaged_ob.md)
-- [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
 - [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
 
 </div>

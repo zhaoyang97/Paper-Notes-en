@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DyCon: Dynamic Reasoning Control via Evolving Difficulty Modeling
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] DyCon discovers that "problem difficulty" evolves dynamically during the reasoning process and is linearly encoded in the step-level hidden representations of Large Reasoning Models (LRMs). It employs a lightweight linear regressor to estimate step-wise difficulty online and adjusts the logits of "reflection-related to
+  [ICML2026][Reasoning][Overthinking] DyCon discovers that "problem difficulty" evolves dynamically during the reasoning process and is linearly encoded in the step-level hidden representations of Large Reasoning Models (LRMs). It employs a lightweight linear regressor to estimate step-wise difficulty online and adjusts the logits of "reflection-related tokens" in real-time. This allows simple problems to converge early while difficult ones continue exploring…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Overthinking"
+  - "Difficulty Modeling"
+  - "Step-level Representation"
+  - "Logit Intervention"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 7e9c17e3b26d2d8b
+content_hash: 90fe6c245b513bd7
 ---
+
 # DyCon: Dynamic Reasoning Control via Evolving Difficulty Modeling
 
 **Conference**: ICML2026  
@@ -131,10 +137,10 @@ Simpler tasks (GSM8K, AMC23, MMLU-algebra) show higher savings (−27% to −39%
 ## Related Papers
 
 - [\[ICLR 2026\] EvolProver: Advancing Automated Theorem Proving by Evolving Formalized Problems via Symmetry and Difficulty](../../ICLR2026/llm_reasoning/evolprover_advancing_automated_theorem_proving_by_evolving_formalized_problems_v.md)
+- [\[ICLR 2026\] Dynamic Early Exit in Reasoning Models](../../ICLR2026/llm_reasoning/dynamic_early_exit_in_reasoning_models.md)
+- [\[ICML 2026\] Inference-Time Conformal Reasoning with Valid Factuality Control for Large Language Models](inference-time_conformal_reasoning_with_valid_factuality_control_for_large_langu.md)
 - [\[ACL 2025\] Dynamic and Generalizable Process Reward Modeling (DG-PRM)](../../ACL2025/llm_reasoning/dgprm_dynamic_process_reward.md)
-- [\[ICML 2026\] Conformal Thinking: Risk Control for Reasoning on a Compute Budget](conformal_thinking_risk_control_for_reasoning_on_a_compute_budget.md)
-- [\[ICML 2026\] On the Generalization Gap in Self-Evolving Language Model Reasoning](on_the_generalization_gap_in_self-evolving_language_model_reasoning.md)
-- [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](modeling_hierarchical_thinking_in_large_reasoning_models.md)
+- [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
 
 </div>
 

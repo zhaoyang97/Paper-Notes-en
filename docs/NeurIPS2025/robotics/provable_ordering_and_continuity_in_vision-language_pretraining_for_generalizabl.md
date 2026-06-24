@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents
 description: >-
-  [NeurIPS 2025][Robotics][Vision-language pretraining] This paper proposes AcTOL, which learns ordered and continuous vision-language representations via a visual-language ordering loss and a Brownian bridge constraint…
+  [NeurIPS 2025][Robotics][Vision-language pretraining] This paper proposes AcTOL, which learns ordered and continuous vision-language representations via a visual-language ordering loss and a Brownian bridge constraint, without relying on rigid goal-reaching assumptions, achieving significant improvements on downstream simulated and real-world robot manipulation tasks.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "temporal consistency"
   - "Brownian bridge"
 date: 2026-05-08
-content_hash: a1665bf199007675
+content_hash: 2d451a7fe6044887
 ---
 
 # Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents
@@ -102,9 +102,9 @@ This paper proposes AcTOL, which learns ordered and continuous vision-language r
 ## Related Papers
 
 - [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
 - [\[NeurIPS 2025\] Learning Spatial-Aware Manipulation Ordering](learning_spatial-aware_manipulation_ordering.md)
+- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
 
 </div>

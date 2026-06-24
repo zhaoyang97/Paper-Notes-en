@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reducing Peak Memory Usage for Modern Multimodal Large Language Model Pipelines
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] The paper shifts the memory bottleneck of Multimodal Large Language Models (MLLMs) from "long-context caching in the decoding stage" to the "peak visual token caching in the prefill stage." It proposes a structure-aware KV-cache framework that performs computation and compression concurrently during prefill, maintainin
+  [ACL 2026][Multimodal VLM][Multimodal Large Models] The paper shifts the memory bottleneck of Multimodal Large Language Models (MLLMs) from "long-context caching in the decoding stage" to the "peak visual token caching in the prefill stage." It proposes a structure-aware KV-cache framework that performs computation and compression concurrently during prefill, maintaining peak memory within a fixed budget while preserving image and video understanding capabilities.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multimodal Large Models"
+  - "KV Cache"
+  - "Prefill Compression"
+  - "Memory Optimization"
+  - "Visual Tokens"
 date: 2026-05-08
-content_hash: 377e09e2a7c302b7
+content_hash: c63bd856308af287
 ---
+
 # Reducing Peak Memory Usage for Modern Multimodal Large Language Model Pipelines
 
 **Conference**: ACL 2026  
@@ -161,9 +167,9 @@ Block size ablation confirms that structure alignment is a critical factor for c
 
 - [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](../../CVPR2026/multimodal_vlm/scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
 - [\[ACL 2026\] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck](from_verbatim_to_gist_distilling_pyramidal_multimodal_memory_via_semantic_inform.md)
-- [\[ACL 2026\] Enhancing Multimodal Large Language Models for Ancient Chinese Character Evolution Analysis via Glyph-Driven Fine-Tuning](enhancing_multimodal_large_language_models_for_ancient_chinese_character_evoluti.md)
 - [\[CVPR 2026\] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment](../../CVPR2026/multimodal_vlm/capt_confusion-aware_prompt_tuning_for_reducing_vision-language_misalignment.md)
-- [\[CVPR 2026\] MeteorPred: A Meteorological Multimodal Large Model and Dataset for Severe Weather Event Prediction](../../CVPR2026/multimodal_vlm/meteorpred_a_meteorological_multimodal_large_model_and_dataset_for_severe_weathe.md)
+- [\[ICML 2026\] Manga109-v2026: Revisiting Manga109 Annotations for Modern Manga Understanding](../../ICML2026/multimodal_vlm/manga109-v2026_revisiting_manga109_annotations_for_modern_manga_understanding.md)
+- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
 
 </div>
 

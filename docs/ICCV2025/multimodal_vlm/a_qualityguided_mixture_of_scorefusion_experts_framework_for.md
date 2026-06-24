@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition
 description: >-
-  [ICCV 2025][Multimodal VLM][Whole-body biometric recognition] This paper proposes a Quality-guided Mixture of score-fusion Experts (QME) framework that employs a quality-guided MoE strategy to perform learnable fusion of…
+  [ICCV 2025][Multimodal VLM][Whole-body biometric recognition] This paper proposes a Quality-guided Mixture of score-fusion Experts (QME) framework that employs a quality-guided MoE strategy to perform learnable fusion of similarity scores from heterogeneous biometric modalities (face, gait, body). Combined with a pseudo-quality loss and a score triplet loss, QME achieves state-of-the-art performance on multiple whole-body biometric recognition benchmarks.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "quality estimation"
   - "multimodal fusion"
 date: 2026-05-08
-content_hash: b2b743a0a475be56
+content_hash: 84081ed2ef8e4114
 ---
 
 # A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition
@@ -188,10 +188,10 @@ This design directly optimizes threshold-based evaluation metrics such as TAR@FA
 ## Related Papers
 
 - [\[AAAI 2026\] MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment](../../AAAI2026/multimodal_vlm/mcmoe_completing_missing_modalities_with_mixture_of_experts_for_incomplete_multi.md)
+- [\[ICLR 2026\] Massively Multimodal Foundation Models: A Framework for Capturing Interactions with Specialized Mixture-of-Experts](../../ICLR2026/multimodal_vlm/massively_multimodal_foundation_models_a_framework_for_capturing_interactions_wi.md)
 - [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](../../ICLR2026/multimodal_vlm/capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
+- [\[ICML 2025\] Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](../../ICML2025/multimodal_vlm/dynamic_mixture_of_curriculum_lora_experts_for_continual_multimodal_instruction_.md)
 - [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
-- [\[ICCV 2025\] Chimera: Improving Generalist Model with Domain-Specific Experts](chimera_improving_generalist_model_with_domain-specific_experts.md)
-- [\[ICCV 2025\] Synergistic Prompting for Robust Visual Recognition with Missing Modalities](synergistic_prompting_for_robust_visual_recognition_with_missing_modalities.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][MLLM] OmniEVA is proposed to address two major gaps in spatial MLLMs: poor geometric adaptability (2D-only or hard-coded 3D) and lack of embodiment constraints (producing theoretically feasible but physically unexecutable plans). It utilizes a task-adaptive gated router to dynamically inject 3D positional encodings only when
+  [ICLR 2026][Robotics][MLLM] OmniEVA is proposed to address two major gaps in spatial MLLMs: poor geometric adaptability (2D-only or hard-coded 3D) and lack of embodiment constraints (producing theoretically feasible but physically unexecutable plans). It utilizes a task-adaptive gated router to dynamically inject 3D positional encodings only when geometric reasoning is required and incorporates an embodiment-aware reasoning framework to integrate physical constraints into the…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - MLLM
-  - GRPO
+  - "ICLR 2026"
+  - "Robotics"
+  - "MLLM"
+  - "Task-Adaptive 3D Grounding"
+  - "Gated Routing"
+  - "Embodiment-aware Reasoning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: f976387b2939aa0f
+content_hash: 332fbc61eaa1ba32
 ---
+
 # OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning
 
 **Conference**: ICLR 2026  
@@ -124,9 +128,9 @@ Evaluation covers 8 public benchmarks (2D image, video, 3D) and 4 original skill
 
 - [\[ICLR 2026\] MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Models for Embodied Task Planning](momagraph_state-aware_unified_scene_graphs_with_vision-language_models_for_embod.md)
 - [\[ICLR 2026\] EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning](evlp_learning_unified_embodied_vision-language_planner_with_reinforced_supervise.md)
+- [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
 - [\[ICLR 2026\] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation](equact_an_se3-equivariant_multi-task_transformer_for_3d_robotic_manipulation.md)
 - [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
-- [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 
 </div>
 

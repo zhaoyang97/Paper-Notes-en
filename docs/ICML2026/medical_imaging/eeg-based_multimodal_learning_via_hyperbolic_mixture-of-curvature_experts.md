@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] EEG-Based Multimodal Learning via Hyperbolic Mixture-of-Curvature Experts
 description: >-
-  [ICML 2026][Medical Imaging][EEG] EEG-MoCE assigns a Lorentz manifold expert with **learnable curvature** to each modality in EEG-based multimodal learning (emotion/sleep/cognition). It utilizes curvature-aware attention, where "higher curvature signifies richer hierarchical structure and thus higher weight in fusion," to perform cross-modal integratio
+  [ICML 2026][Medical Imaging][EEG] EEG-MoCE assigns a Lorentz manifold expert with **learnable curvature** to each modality in EEG-based multimodal learning (emotion/sleep/cognition). It utilizes curvature-aware attention, where "higher curvature signifies richer hierarchical structure and thus higher weight in fusion," to perform cross-modal integration. This approach achieves cross-subject accuracy gains of +14.14%, +3.34%, and +7.98% on the EAV, ISRUC…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - EEG
-  - Mixture-of-Curvature
-  - δ-hyperbolicity
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "EEG"
+  - "Mixture-of-Curvature"
+  - "Lorentz Manifold"
+  - "Cross-subject generalization"
+  - "δ-hyperbolicity"
 date: 2026-05-08
-content_hash: 846cbe5d1eb945b8
+content_hash: 5cfbe7d0835da658
 ---
+
 # EEG-Based Multimodal Learning via Hyperbolic Mixture-of-Curvature Experts
 
 **Conference**: ICML 2026  
@@ -140,12 +143,20 @@ Modal contribution analysis (Table 2, EAV):
 - Value: ⭐⭐⭐⭐ Bridging the 60% to 75% accuracy gap in EEG emotion recognition is a significant step toward clinical viability.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-[1] Li et al. "HEEGNet: Hyperbolic EEG Network for Emotion Recognition" (2026)
-[2] Kang et al. "Hyper-MML: Hyperbolic Multimodal Learning" (2025)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] HEEGNet: Hyperbolic Embeddings for EEG](../../ICLR2026/medical_imaging/heegnet_hyperbolic_embeddings_for_eeg.md)
+- [\[ICML 2025\] I2MoE: Interpretable Multimodal Interaction-aware Mixture-of-Experts](../../ICML2025/medical_imaging/i2moe_interpretable_multimodal_interaction-aware_mixture-of-experts.md)
+- [\[CVPR 2026\] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction](../../CVPR2026/medical_imaging/h2-surv_hierarchical_hyperbolic_multimodal_representation_learning_for_survival_.md)
+- [\[ICLR 2026\] Mixture of Mini Experts: Overcoming the Linear Layer Bottleneck in Multiple Instance Learning](../../ICLR2026/medical_imaging/mixture_of_mini_experts_overcoming_the_linear_layer_bottleneck_in_multiple_insta.md)
+- [\[AAAI 2026\] SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition](../../AAAI2026/medical_imaging/semc_structure-enhanced_mixture-of-experts_contrastive_learning_for_ultrasound_s.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] HEEGNet: Hyperbolic Embeddings for EEG](../../ICLR2026/medical_imaging/heegnet_hyperbolic_embeddings_for_eeg.md)

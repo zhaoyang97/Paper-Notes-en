@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Beyond Sequential Tools: A Unified VLM Agent System for Photographic Post-Processing via Dynamic Multi-Expert Fusion
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM Agent] A VLM acts as the "brain" to diagnose multiple coupled degradations in an image and assign weights to corresponding expert LoRAs. These LoRAs are fused into a diffusion backbone once, enabling collaborative restoration (e.g., "deraining + dehazing + deblurring") in a **single forward pass**. This avoids the generalizat
+  [CVPR 2026][Multimodal VLM][VLM Agent] A VLM acts as the "brain" to diagnose multiple coupled degradations in an image and assign weights to corresponding expert LoRAs. These LoRAs are fused into a diffusion backbone once, enabling collaborative restoration (e.g., "deraining + dehazing + deblurring") in a **single forward pass**. This avoids the generalization issues of all-in-one models and the error accumulation inherent in sequential tool-calling agentic methods.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM Agent
-  - DPO
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM Agent"
+  - "Image Restoration"
+  - "LoRA Fusion"
+  - "DPO"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 85ea9aac396548d7
+content_hash: 62180e0df3fb9113
 ---
+
 # Beyond Sequential Tools: A Unified VLM Agent System for Photographic Post-Processing via Dynamic Multi-Expert Fusion
 
 **Conference**: CVPR 2026  
@@ -136,8 +139,21 @@ Evaluations on the **Real-1000** dataset (zero-shot) across three groups:
 - Value: ⭐⭐⭐⭐⭐ Provides a practical, extensible paradigm for VLMs in low-level vision.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
+- [\[CVPR 2026\] CoRiM: Conflict-driven Risk Minimization for Dynamic Multimodal Fusion](corim_conflict-driven_risk_minimization_for_dynamic_multimodal_fusion.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
+- [\[CVPR 2026\] ReCoFuse: Ultra-Robust Image Fusion via Restorative Multi-Modal Diffusion Reciprocal Coupling](recofuse_ultra-robust_image_fusion_via_restorative_multi-modal_diffusion_recipro.md)
+- [\[CVPR 2026\] DSCA: Dynamic Subspace Concept Alignment for Lifelong VLM Editing](dsca_dynamic_subspace_concept_alignment_for_lifelong_vlm_editing.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

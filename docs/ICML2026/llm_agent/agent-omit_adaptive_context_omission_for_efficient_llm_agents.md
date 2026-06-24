@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][GRPO] By quantifying which turn-level thoughts and observations are omittable via Monte-Carlo rollouts, an 8B agent is trained using cold-start SFT and dual-sampling omit-aware GRPO. This agent adaptively skips redundant thoughts and observations, significantly reducing token usage across five benchmarks while maintaining ac
+  [ICML 2026][LLM Agent][Context Management] By quantifying which turn-level thoughts and observations are omittable via Monte-Carlo rollouts, an 8B agent is trained using cold-start SFT and dual-sampling omit-aware GRPO. This agent adaptively skips redundant thoughts and observations, significantly reducing token usage across five benchmarks while maintaining accuracy comparable to seven state-of-the-art frontier models.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - GRPO
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Context Management"
+  - "Thought Omission"
+  - "Observation Omission"
+  - "GRPO"
+  - "Dual Sampling"
 date: 2026-05-08
-content_hash: 393309d7c768b913
+content_hash: 40113013cb13f4c8
 ---
+
 # Agent-Omit: Adaptive Context Omission for Efficient LLM Agents
 
 **Conference**: ICML 2026  
@@ -124,15 +129,16 @@ Evaluated across five agent environments (DeepSearch, WebShop, TextCraft, BabyAI
 - Value: ⭐⭐⭐⭐⭐ Directly applicable to real-world agent deployments—context cost is a major barrier, and this method provides a plug-and-play solution for RL pipelines.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
 - [\[ICML 2026\] Learning Efficient Guardrails for Compliance](learning_efficient_guardrails_for_compliance.md)
+- [\[ICML 2026\] AdaMEM: Test-Time Adaptive Memory for Language Agents](adamem_test-time_adaptive_memory_for_language_agents.md)
 - [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](../../AAAI2026/llm_agent/agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
 - [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
-- [\[ACL 2026\] AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](../../ACL2026/llm_agent/adarubric_task-adaptive_rubrics_for_reliable_llm_agent_evaluation_and_reward_lea.md)
 
 </div>
 

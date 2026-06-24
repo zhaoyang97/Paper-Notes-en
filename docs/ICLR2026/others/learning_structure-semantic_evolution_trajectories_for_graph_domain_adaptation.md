@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation
 description: >-
-  [ICLR 2026][Others][Diffusion Model] This paper proposes DiffGDA—the first method to introduce diffusion models into Graph Domain Adaptation (GDA). It models the joint continuous-time structure-semantic evolution from source graphs to target graphs using Stochastic Differential Equations (SDEs), driven by a density-ratio-based domain-aware guidance networ
+  [ICLR 2026][Graph Domain Adaptation] This paper proposes DiffGDA—the first method to introduce diffusion models into Graph Domain Adaptation (GDA). It models the joint continuous-time structure-semantic evolution from source graphs to target graphs using Stochastic Differential Equations (SDEs), driven by a density-ratio-based domain-aware guidance network toward the target domain. Theoretically proven to converge to the optimal adaptation path…
 tags:
-  - ICLR 2026
-  - Others
-  - Diffusion Model
-  - SDE
+  - "ICLR 2026"
+  - "Graph Domain Adaptation"
+  - "Diffusion Model"
+  - "SDE"
+  - "Continuous Evolution"
+  - "Domain-Aware Guidance"
 date: 2026-05-08
-content_hash: e5fa24f3dadcdbd8
+content_hash: eb9e3c3d00f717c6
 ---
+
 # Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation
 
 **Conference**: ICLR 2026  
@@ -186,9 +189,9 @@ DiffGDA reduces runtime by over 50% compared to GraphAlign (also a generative me
 
 - [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
 - [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
+- [\[ICLR 2026\] Robust Equation Structure Learning with Adaptive Refinement (RESTART)](robust_equation_structure_learning_with_adaptive_refinement.md)
 - [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
 - [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](../../AAAI2026/others/leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
-- [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](prior-free_tabular_test-time_adaptation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MemEIC: A Step Toward Continual and Compositional Knowledge Editing
 description: >-
-  [NEURIPS2025][Knowledge Editing][LVLM] This paper proposes MemEIC, a three-tier framework for continual and compositional knowledge editing in large vision-language models (LVLMs)…
+  [NEURIPS2025][Knowledge Editing][LVLM] This paper proposes MemEIC, a three-tier framework for continual and compositional knowledge editing in large vision-language models (LVLMs), combining an external dual-modal retrieval memory (Mem-E), an internal modality-decoupled LoRA adapter (Mem-I), and a brain-inspired Knowledge Connector. MemEIC substantially outperforms existing methods on the newly introduced CCKEB benchmark.
 tags:
   - "NEURIPS2025"
   - "Knowledge Editing"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "External Memory"
 date: 2026-05-08
-content_hash: 3fdcafa2a764fd96
+content_hash: bbc7def8263d6a2a
 ---
 
 # MemEIC: A Step Toward Continual and Compositional Knowledge Editing
@@ -164,11 +164,11 @@ MemEIC outperforms WISE by +16.94 on Visual Reliability and +32.35 on Compositio
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models](uniedit_a_unified_knowledge_editing_benchmark_for_large_language_models.md)
+- [\[ACL 2025\] Efficient Knowledge Editing via Minimal Precomputation](../../ACL2025/knowledge_editing/efficient_knowledge_editing.md)
+- [\[ACL 2025\] SAKE: Steering Activations for Knowledge Editing](../../ACL2025/knowledge_editing/sake_steering_activations_for_knowledge_editing.md)
+- [\[ACL 2025\] ScEdit: Script-based Assessment of Knowledge Editing](../../ACL2025/knowledge_editing/scedit_script-based_assessment_of_knowledge_editing.md)
 - [\[NeurIPS 2025\] Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs](edit_less_achieve_more_dynamic_sparse_neuron_masking_for_lifelong_knowledge_edit.md)
-- [\[NeurIPS 2025\] KScope: A Framework for Characterizing the Knowledge Status of Language Models](kscope_a_framework_for_characterizing_the_knowledge_status_of_language_models.md)
-- [\[ACL 2026\] Aligning Language Models with Real-time Knowledge Editing](../../ACL2026/knowledge_editing/aligning_language_models_with_real-time_knowledge_editing.md)
-- [\[ACL 2026\] Spectral Characterization and Mitigation of Sequential Knowledge Editing Collapse](../../ACL2026/knowledge_editing/spectral_characterization_and_mitigation_of_sequential_knowledge_editing_collaps.md)
+- [\[NeurIPS 2025\] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models](uniedit_a_unified_knowledge_editing_benchmark_for_large_language_models.md)
 
 </div>
 

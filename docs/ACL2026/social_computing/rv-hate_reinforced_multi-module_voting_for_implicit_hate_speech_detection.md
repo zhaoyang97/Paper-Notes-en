@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RV-HATE: Reinforced Multi-Module Voting for Implicit Hate Speech Detection
 description: >-
-  [ACL 2026][Social Computing][PPO] RV-HATE decomposes implicit hate speech detection into four BERT contrastive learning modules targeting different data characteristics and uses PPO to learn dataset-specific soft voting weights. It achieves an average macro-F1 of 84.47% across five benchmarks, outperforming SharedCon by an average of 1.8 percentage poi
+  [ACL2026][Social Computing][Implicit Hate Speech Detection] RV-HATE decomposes implicit hate speech detection into four BERT contrastive learning modules targeting different data characteristics and uses PPO to learn dataset-specific soft voting weights. It achieves an average macro-F1 of 84.47% across five benchmarks, outperforming SharedCon by an average of 1.8 percentage points.
 tags:
-  - ACL 2026
-  - Social Computing
-  - PPO
+  - "ACL2026"
+  - "Social Computing"
+  - "Implicit Hate Speech Detection"
+  - "Multi-module Ensemble"
+  - "PPO"
+  - "Soft Voting"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 9b33c3e7cedc98e0
+content_hash: a519379b92aa5dca
 ---
+
 # RV-HATE: Reinforced Multi-Module Voting for Implicit Hate Speech Detection
 
 **Conference**: ACL2026  

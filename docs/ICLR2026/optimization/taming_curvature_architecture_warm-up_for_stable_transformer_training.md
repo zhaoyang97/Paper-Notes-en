@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Taming Curvature: Architecture Warm-up for Stable Transformer Training
 description: >-
-  [ICLR 2026][Optimization & Theory][Edge of Stability] This paper employs "hot-start power iteration" to reduce the online tracking cost of the (preconditioned) Hessian's maximum eigenvalue for billion-parameter Transformers to $<5$ HVPs per step. It confirms that training loss spikes are accompanied by curvature surges and that curvature increases with depth. Consequently
+  [ICLR 2026][Optimization][Training stability] This paper employs "hot-start power iteration" to reduce the online tracking cost of the (preconditioned) Hessian's maximum eigenvalue for billion-parameter Transformers to $<5$ HVPs per step. It confirms that training loss spikes are accompanied by curvature surges and that curvature increases with depth. Consequently, it proposes "Architecture Warm-up"—freezing most layers as identity early in training and progressively unfreezi…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Edge of Stability
-  - Hessian
+  - "ICLR 2026"
+  - "Optimization"
+  - "Training stability"
+  - "Edge of Stability"
+  - "Curvature tracking"
+  - "Hessian"
+  - "Progressive depth"
 date: 2026-05-08
-content_hash: ec64f54d75021bce
+content_hash: 193d42fc9e124f93
 ---
+
 # Taming Curvature: Architecture Warm-up for Stable Transformer Training
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RNE: plug-and-play diffusion inference-time control and energy-based training
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] The Radon-Nikodym Estimator (RNE) is proposed. Based on the density ratio between path distributions, it reveals the fundamental connection between marginal densities and transition kernels, providing a unified plug-and-play framework for diffusion density estimation, inference-time control, and energy-based training.
+  [ICLR 2026][Image Generation][Diffusion models] The Radon-Nikodym Estimator (RNE) is proposed. Based on the density ratio between path distributions, it reveals the fundamental connection between marginal densities and transition kernels, providing a unified plug-and-play framework for diffusion density estimation, inference-time control, and energy-based training.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "density ratio estimation"
+  - "inference-time control"
+  - "energy-based training"
+  - "Radon-Nikodym derivative"
 date: 2026-05-08
-content_hash: fdaa9125e88fcb02
+content_hash: 1963bc688c55933d
 ---
+
 # RNE: plug-and-play diffusion inference-time control and energy-based training
 
 **Conference**: ICLR 2026  
@@ -146,11 +151,11 @@ RNE requires no additional training for inference-time control: pre-trained mode
 
 ## Related Papers
 
+- [\[ICLR 2026\] HiGS: History-Guided Sampling for Plug-and-Play Enhancement of Diffusion Models](higs_history-guided_sampling_for_plug-and-play_enhancement_of_diffusion_models.md)
 - [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
 - [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
 - [\[ICLR 2026\] Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation](scalable_energy-based_models_via_adversarial_training_unifying_discrimination_an.md)
 - [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](compositional_visual_planning_via_inference-time_diffusion_scaling.md)
-- [\[CVPR 2026\] PromptLoop: Plug-and-Play Prompt Refinement via Latent Feedback for Diffusion Model Alignment](../../CVPR2026/image_generation/promptloop_plug-and-play_prompt_refinement_via_latent_feedback_for_diffusion_mod.md)
 
 </div>
 

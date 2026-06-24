@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Testing Most Influential Sets
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Addressing the phenomenon where "a few samples can overturn model conclusions," this paper derives an exact closed-form formula for subset influence in linear least squares and characterizes the asymptotic distribution of the "maximum influence" using extreme value theory (heavy-tailed Fréchet for fixed-size subsets an
+  [ICLR 2026][Statistical Learning Theory][Most influential subsets] Addressing the phenomenon where "a few samples can overturn model conclusions," this paper derives an exact closed-form formula for subset influence in linear least squares and characterizes the asymptotic distribution of the "maximum influence" using extreme value theory (heavy-tailed Fréchet for fixed-size subsets and light-tailed Gumbel for growing subsets). This transforms empirical heuristics about whethe…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Statistical Learning Theory"
+  - "Robustness"
+  - "Interpretability"
+  - "Most influential subsets"
+  - "extreme value theory"
+  - "influence testing"
+  - "least squares"
+  - "Fréchet/Gumbel distributions"
 date: 2026-05-08
-content_hash: 10a2a7c1d6d90a22
+content_hash: c42a4191a9766eac
 ---
+
 # Testing Most Influential Sets
 
 **Conference**: ICLR 2026  

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DiffInk: Glyph- and Style-Aware Latent Diffusion Transformer for Text to Online Handwriting Generation
 description: >-
-  [ICLR 2026][Image Generation][online handwriting generation] This paper proposes DiffInk, the first Latent Diffusion Transformer framework designed for full-line handwriting generation. It comprises InkVAE, which learns a structured latent space through dual regularization (OCR + style classification), and InkDiT, which performs conditional denoising within this latent space. Di
+  [ICLR 2026][Image Generation][online handwriting generation] This paper proposes DiffInk, the first Latent Diffusion Transformer framework designed for full-line handwriting generation. It comprises InkVAE, which learns a structured latent space through dual regularization (OCR + style classification), and InkDiT, which performs conditional denoising within this latent space. DiffInk significantly outperforms Prev. SOTA on Chinese handwriting generation (AR 94.38% vs 91.48%)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - online handwriting generation
-  - latent diffusion transformer
-  - VAE regularization
-  - glyph-style disentanglement
-  - Chinese handwriting
+  - "ICLR 2026"
+  - "Image Generation"
+  - "online handwriting generation"
+  - "latent diffusion transformer"
+  - "VAE regularization"
+  - "glyph-style disentanglement"
+  - "Chinese handwriting"
 date: 2026-05-08
-content_hash: 3a98e1920a41bf33
+content_hash: 8c0878d788bc544c
 ---
+
 # DiffInk: Glyph- and Style-Aware Latent Diffusion Transformer for Text to Online Handwriting Generation
 
 **Conference**: ICLR 2026  
@@ -140,11 +141,11 @@ For controllable generation, the model must know "what to write" and "what style
 
 ## Related Papers
 
-- [\[ICLR 2026\] W-Edit: A Wavelet-based Frequency-aware Framework for Text-driven Image Editing](w-edit_a_wavelet-based_frequency-aware_framework_for_text-driven_image_editing.md)
-- [\[ICLR 2026\] Learning to Generate Stylized Handwritten Text via a Unified Representation of Style, Content, and Noise](learning_to_generate_stylized_handwritten_text_via_a_unified_representation_of_s.md)
-- [\[ICLR 2026\] LaTo: Landmark-tokenized Diffusion Transformer for Fine-grained Human Face Editing](lato_landmark-tokenized_diffusion_transformer_for_fine-grained_human_face_editin.md)
-- [\[ICLR 2026\] ColorCtrl: 基于多模态扩散 Transformer 的免训练文本引导颜色编辑](training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
-- [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
+- [\[ICLR 2026\] ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer](training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
+- [\[CVPR 2026\] Rethinking Glyph Spatial Information in Font Generation](../../CVPR2026/image_generation/rethinking_glyph_spatial_information_in_font_generation.md)
+- [\[CVPR 2025\] SALAD: Skeleton-aware Latent Diffusion for Text-driven Motion Generation and Editing](../../CVPR2025/image_generation/salad_skeleton-aware_latent_diffusion_for_text-driven_motion_generation_and_edit.md)
+- [\[ICLR 2026\] TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models](treegrpo_tree-advantage_grpo_for_online_rl_post-training_of_diffusion_models.md)
+- [\[ICLR 2026\] DiffusionNFT: Online Diffusion Reinforcement with Forward Process](diffusionnft_online_diffusion_reinforcement_with_forward_process.md)
 
 </div>
 

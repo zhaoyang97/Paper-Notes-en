@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes QD-PCQA, a quality-aware domain adaptation framework that transfers quality assessment priors from the image domain to the point cloud domain through two strategies: Rank-weighted Conditional Alignment and Quality-guided Feature Augmentation.
+  [CVPR 2026][3D Vision][Point cloud quality assessment] Ours proposes QD-PCQA, a quality-aware domain adaptation framework that transfers quality assessment priors from the image domain to the point cloud domain through two strategies: Rank-weighted Conditional Alignment and Quality-guided Feature Augmentation.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud quality assessment"
+  - "unsupervised domain adaptation"
+  - "quality-aware feature alignment"
+  - "cross-domain transfer"
 date: 2026-05-08
-content_hash: d62b5f1dabaadf2f
+content_hash: 3a5d515c72935dda
 ---
+
 # QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ The mixed version is applied with probability $p > 0.5$, otherwise the original 
 
 ## Related Papers
 
+- [\[CVPR 2026\] R3-PCQA: Ray-Reprojection-Reinforcement for No-Reference 3D Point Cloud Quality Assessment](r3-pcqa_ray-reprojection-reinforcement_for_no-reference_3d_point_cloud_quality_a.md)
 - [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
-- [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](../../AAAI2026/3d_vision/multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
-- [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
 - [\[CVPR 2026\] CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation](clipoint3d_language-grounded_few-shot_unsupervised_3d_point_cloud_domain_adaptat.md)
-- [\[CVPR 2026\] MV2UV: Generating High-quality UV Texture Maps with Multiview Prompts](mv2uv_generating_high-quality_uv_texture_maps_with_multiview_prompts.md)
+- [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
+- [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](../../AAAI2026/3d_vision/multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
 
 </div>
 

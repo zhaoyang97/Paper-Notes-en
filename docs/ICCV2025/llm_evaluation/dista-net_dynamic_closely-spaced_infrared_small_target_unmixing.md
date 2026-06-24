@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DISTA-Net: Dynamic Closely-Spaced Infrared Small Target Unmixing
 description: >-
-  [ICCV 2025][LLM Evaluation][Infrared small target] DISTA-Net proposes a dynamic deep unfolding network that replaces the static nonlinear transform and threshold parameters in ISTA-based sparse reconstruction with input-…
+  [ICCV 2025][LLM Evaluation][Infrared small target] DISTA-Net proposes a dynamic deep unfolding network that replaces the static nonlinear transform and threshold parameters in ISTA-based sparse reconstruction with input-adaptive counterparts, constituting the first deep learning method for closely-spaced infrared small target (CSIST) unmixing. The work also establishes the first open-source ecosystem encompassing a dataset, evaluation metrics, and a toolkit.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "sparse reconstruction"
   - "sub-pixel localization"
 date: 2026-05-08
-content_hash: 2f8e36053393a483
+content_hash: 8987d9eb5e1360cc
 ---
 
 # DISTA-Net: Dynamic Closely-Spaced Infrared Small Target Unmixing
@@ -140,10 +140,10 @@ Ablation over sampling grid ratios ($c=5, c=7$): DISTA-Net consistently outperfo
 ## Related Papers
 
 - [\[ICCV 2025\] InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild](intersyn_interleaved_learning_for_dynamic_motion_synthesis_in_the_wild.md)
+- [\[ICML 2025\] DataDecide: How to Predict Best Pretraining Data with Small Experiments](../../ICML2025/llm_evaluation/datadecide_how_to_predict_best_pretraining_data_with_small_experiments.md)
 - [\[NeurIPS 2025\] Small Language Models as Compiler Experts: Auto-Parallelization for Heterogeneous Systems](../../NeurIPS2025/llm_evaluation/small_language_models_as_compiler_experts_auto-parallelization_for_heterogeneous.md)
+- [\[ACL 2025\] Towards Dynamic Theory of Mind: Evaluating LLM Adaptation to Temporal Evolution of Human States](../../ACL2025/llm_evaluation/towards_dynamic_theory_of_mind_evaluating_llm_adaptation_to_temporal_evolution_o.md)
 - [\[NeurIPS 2025\] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments](../../NeurIPS2025/llm_evaluation/memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami.md)
-- [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](../../ACL2026/llm_evaluation/retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
-- [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](../../ACL2026/llm_evaluation/dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
 
 </div>
 

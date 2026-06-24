@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic Derivative Flow: Graph-Guided Diffusion for Controllable Instance Interactions
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The interaction relationship of "subject → predicate → object" is constructed as a directed acyclic interaction graph. A "Derivative Attention" mechanism is proposed to force predicate semantics to derive from the subject and object semantics to derive from the predicate. A region refinement module then back-injects vi
+  [CVPR 2026][Image Generation][Interaction Generation] The interaction relationship of "subject → predicate → object" is constructed as a directed acyclic interaction graph. A "Derivative Attention" mechanism is proposed to force predicate semantics to derive from the subject and object semantics to derive from the predicate. A region refinement module then back-injects visual features into graph nodes in real-time. This achieves semantically coherent and spatially reasonable…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Interaction Generation"
+  - "Graph-Guided Diffusion"
+  - "Derivative Attention"
+  - "Human-Object Interaction"
+  - "Layout Control"
 date: 2026-05-08
-content_hash: f37c3fe15d50b970
+content_hash: bdea8bfb50b66538
 ---
+
 # Semantic Derivative Flow: Graph-Guided Diffusion for Controllable Instance Interactions
 
 **Conference**: CVPR 2026  
@@ -136,16 +142,16 @@ Impact of removing components (FGAHOI Swin-Large, Default, Full):
 - Value: ⭐⭐⭐⭐ Provides a transferable graph-guided paradigm for structured conditional generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Semantic Scale Space: A Framework for Controllable Image Abstraction](semantic_scale_space_a_framework_for_controllable_image_abstraction.md)
 - [\[CVPR 2026\] Breaking Semantic Boundaries: Distribution-Guided Semantic Exploration for Creative Generation](breaking_semantic_boundaries_distribution-guided_semantic_exploration_for_creati.md)
 - [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] PoseD-Flow: Versatile and Guided Flow Matching Model of Human Pose](posed-flow_versatile_and_guided_flow_matching_model_of_human_pose.md)
 - [\[ICLR 2026\] HOG-Diff: Higher-Order Guided Diffusion for Graph Generation](../../ICLR2026/image_generation/hog-diff_higher-order_guided_diffusion_for_graph_generation.md)
-- [\[CVPR 2026\] Few-Step Diffusion Sampling Through Instance-Aware Discretizations](few-step_diffusion_sampling_through_instance-aware_discretizations.md)
 
 </div>
 

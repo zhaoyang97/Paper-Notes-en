@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Automatic Slide Updating with User-Defined Dynamic Templates and Natural Language Instructions
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] Defines the new task of "dynamic slide updating on user-defined templates based on natural language instructions," constructs the DynaSlide benchmark containing 20,036 instruction-execution triplets, and proposes SlideAgent as a strong reference baseline.
+  [ACL 2026 Findings][Multimodal VLM][Slide auto-updating] Defines the new task of "dynamic slide updating on user-defined templates based on natural language instructions," constructs the DynaSlide benchmark containing 20,036 instruction-execution triplets, and proposes SlideAgent as a strong reference baseline.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Slide auto-updating"
+  - "Dynamic templates"
+  - "Natural language instructions"
+  - "Multimodal Agent"
+  - "Data-driven reporting"
 date: 2026-05-08
-content_hash: 1efcf1206ba9c9b3
+content_hash: b29a6b59e0c098d9
 ---
+
 # Automatic Slide Updating with User-Defined Dynamic Templates and Natural Language Instructions
 
 **Conference**: ACL 2026 Findings  
@@ -160,8 +166,8 @@ The proposed method is primarily based on LLM reasoning rather than training. Ev
 - [\[CVPR 2026\] CodeMMR: Bridging Natural Language, Code, and Image for Unified Retrieval](../../CVPR2026/multimodal_vlm/codemmr_bridging_natural_language_code_and_image_for_unified_retrieval.md)
 - [\[CVPR 2026\] Interactive Episodic Memory with User Feedback](../../CVPR2026/multimodal_vlm/interactive_episodic_memory_with_user_feedback.md)
 - [\[ACL 2025\] Aria-UI: Visual Grounding for GUI Instructions](../../ACL2025/multimodal_vlm/aria-ui_visual_grounding_for_gui_instructions.md)
-- [\[AAAI 2026\] DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning](../../AAAI2026/multimodal_vlm/discode_distribution-aware_score_decoder_for_robust_automatic_evaluation_of_imag.md)
 - [\[ICCV 2025\] Global and Local Entailment Learning for Natural World Imagery](../../ICCV2025/multimodal_vlm/global_and_local_entailment_learning_for_natural_world_imagery.md)
+- [\[CVPR 2025\] Ground-V: Teaching VLMs to Ground Complex Instructions in Pixels](../../CVPR2025/multimodal_vlm/ground-v_teaching_vlms_to_ground_complex_instructions_in_pixels.md)
 
 </div>
 

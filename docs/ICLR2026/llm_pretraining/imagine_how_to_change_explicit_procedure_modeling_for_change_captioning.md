@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Imagine How To Change: Explicit Procedure Modeling for Change Captioning
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] Proposing the ProCap framework, which redefines change captioning from static image pair comparison to dynamic procedure modeling. The first stage trains a procedure encoder to learn spatio-temporal change dynamics through frame interpolation and masked reconstruction, while the second stage employs learnable procedure
+  [ICLR 2026][LLM Pretraining][Change Captioning] Proposing the ProCap framework, which redefines change captioning from static image pair comparison to dynamic procedure modeling. The first stage trains a procedure encoder to learn spatio-temporal change dynamics through frame interpolation and masked reconstruction, while the second stage employs learnable procedure queries to implicitly infer change processes, outperforming SOTA on three datasets.
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Change Captioning"
+  - "Procedure Modeling"
+  - "Frame Interpolation"
+  - "Masked Reconstruction"
+  - "Learnable Queries"
+  - "Vision-Language"
 date: 2026-05-08
-content_hash: 5333a671e55c74b1
+content_hash: e6b923955179fdf6
 ---
+
 # Imagine How To Change: Explicit Procedure Modeling for Change Captioning
 
 **Conference**: ICLR 2026  
@@ -174,7 +181,7 @@ The full combination provides a 13.0 improvement on StD compared to MSM only.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -182,7 +189,7 @@ The full combination provides a 13.0 improvement on StD compared to MSM only.
 - [\[ICLR 2026\] RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization](recon_robust_symmetry_discovery_via_explicit_canonical_orientation_normalization.md)
 - [\[ICLR 2026\] Learned Meta-Tokens for Language Modeling](learned_meta-tokens_for_language_modeling.md)
 - [\[ICLR 2026\] How to Train Data-Efficient LLMs](how_to_train_data-efficient_llms.md)
-- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ICLR 2026\] Should We Still Pretrain Encoders with Masked Language Modeling?](should_we_still_pretrain_encoders_with_masked_language_modeling.md)
 
 </div>
 

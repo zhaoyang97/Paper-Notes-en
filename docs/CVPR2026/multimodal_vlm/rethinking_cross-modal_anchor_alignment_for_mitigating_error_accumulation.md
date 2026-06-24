@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Cross-Modal Anchor Alignment for Mitigating Error Accumulation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing a long-ignored error source in "noisy correspondence learning" for image-text retrieval—where clean anchor pairs themselves exhibit cross-modal inconsistency (anchor correlation discrepancy)—this paper uses Fourier Transform to align anchor representations in the frequency domain. Based on this, it performs
+  [CVPR 2026][Multimodal VLM][Noisy Correspondence] Addressing a long-ignored error source in "noisy correspondence learning" for image-text retrieval—where clean anchor pairs themselves exhibit cross-modal inconsistency (anchor correlation discrepancy)—this paper uses Fourier Transform to align anchor representations in the frequency domain. Based on this, it performs geometry-aware soft label correction combined with a Semantic-Constrained Triplet loss to suppress error accum…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Noisy Correspondence"
+  - "Anchor Alignment"
+  - "Fourier Transform"
+  - "Soft Label Correction"
+  - "Triplet Loss"
 date: 2026-05-08
-content_hash: 716c39d914ee009e
+content_hash: c1ae5e8b18a5c46c
 ---
+
 # Rethinking Cross-Modal Anchor Alignment for Mitigating Error Accumulation
 
 **Conference**: CVPR 2026  
@@ -125,14 +131,14 @@ On Flickr30K with 40% noise:
 - Value: ⭐⭐⭐⭐ (Practical frequency alignment/angle-ratio correction modules)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
 - [\[CVPR 2026\] Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning](anchor-guided_gradient_alignment_for_incomplete_multimodal_learning.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/multimodal_vlm/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[CVPR 2026\] POGA: Paraphrased and Oppositional Graph Alignment for Fine-Grained Cross-Modal Retrieval](poga_paraphrased_and_oppositional_graph_alignment_for_fine-grained_cross-modal_r.md)
 - [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
 - [\[CVPR 2026\] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer](decoupled_and_reusable_adaptation_for_efficient_cross-modal_transfer.md)
 

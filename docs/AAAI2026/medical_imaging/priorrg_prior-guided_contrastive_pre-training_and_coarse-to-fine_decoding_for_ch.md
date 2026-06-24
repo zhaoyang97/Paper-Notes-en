@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation
 description: >-
-  [AAAI 2026][Medical Imaging][Chest X-ray report generation] PriorRG proposes a two-stage chest X-ray report generation framework that aligns clinical context with spatiotemporal visual features via prior-guided contrasti…
+  [AAAI 2026][Medical Imaging][Chest X-ray report generation] PriorRG proposes a two-stage chest X-ray report generation framework that aligns clinical context with spatiotemporal visual features via prior-guided contrastive pre-training, then progressively integrates clinical context, disease progression, and multi-level visual cues through prior-aware coarse-to-fine decoding, achieving a 3.6% improvement in BLEU-4 and a 3.8% improvement in F1 on MIMIC-CXR.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "coarse-to-fine decoding"
   - "spatiotemporal fusion"
 date: 2026-05-08
-content_hash: ba91f1473f0d913d
+content_hash: d145e960c3ce6e53
 ---
 
 # PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation
@@ -168,10 +168,10 @@ PriorRG achieves comprehensive superiority on long n-gram matching (B-4) and cli
 ## Related Papers
 
 - [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
+- [\[ICLR 2026\] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation](../../ICLR2026/medical_imaging/learning_self-critiquing_mechanisms_for_region-guided_chest_x-ray_report_generat.md)
+- [\[CVPR 2026\] Phrase-grounded APO for Improving Chest X-ray Report Generation](../../CVPR2026/medical_imaging/phrase-grounded_apo_for_improving_chest_x-ray_report_generation.md)
 - [\[AAAI 2026\] Vascular Anatomy-aware Self-supervised Pre-training for X-ray Angiogram Analysis](vascular_anatomy-aware_self-supervised_pre-training_for_x-ray_angiogram_analysis.md)
-- [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](../../CVPR2026/medical_imaging/cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
-- [\[AAAI 2026\] Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence](human-in-the-loop_interactive_report_generation_for_chronic_disease_adherence.md)
-- [\[AAAI 2026\] MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging](mirnet_integrating_constrained_graph-based_reasoning_with_pre-training_for_diagn.md)
+- [\[CVPR 2025\] Enhanced Contrastive Learning with Multi-view Longitudinal Data for Chest X-ray Report Generation](../../CVPR2025/medical_imaging/enhanced_contrastive_learning_with_multi-view_longitudinal_data_for_chest_x-ray_.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Influence without Confounding: Causal Discovery from Temporal Data with Long-term Carry-over Effects
 description: >-
-  [ICLR 2026][Causal Inference][Deep Q-Network] To address spurious causality caused by "ancient historical values directly influencing the present" (long-term carry-over confounding), this paper proves the equivalence between the "OLS score" and the "diagonal of the R matrix from QR decomposition" to identify the true topological order. It eliminates long-term conf
+  [ICLR 2026][Causal Inference][Temporal causal discovery] To address spurious causality caused by "ancient historical values directly influencing the present" (long-term carry-over confounding), this paper proves the equivalence between the "OLS score" and the "diagonal of the R matrix from QR decomposition" to identify the true topological order. It eliminates long-term confounding using residuals from limited-step historical regression and proposes the LEVER method…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Deep Q-Network
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Temporal causal discovery"
+  - "long-term carry-over effects"
+  - "QR decomposition"
+  - "topological order"
+  - "Deep Q-Network"
+  - "structural Hamming distance"
 date: 2026-05-08
-content_hash: 8f541247bd0ad6ec
+content_hash: 1406a4842d44be5b
 ---
+
 # Influence without Confounding: Causal Discovery from Temporal Data with Long-term Carry-over Effects
 
 **Conference**: ICLR 2026  
@@ -118,15 +124,15 @@ Robustness to assumption violations (randomly nullifying causal dependencies, re
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](../../AAAI2026/causal_inference/learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)
 - [\[ICLR 2026\] On Measuring Influence in Avoiding Undesired Future](on_measuring_influence_in_avoiding_undesired_future.md)
 - [\[ICLR 2026\] Topological Causal Effects](topological_causal_effects.md)
-- [\[ICLR 2026\] Matching without Group Barrier for Heterogeneous Treatment Effect Estimation](matching_without_group_barrier_for_heterogeneous_treatment_effect_estimation.md)
-- [\[ICLR 2026\] Theoretical Guarantees for Causal Discovery on Large Random Graphs](theoretical_guarantees_for_causal_discovery_on_large_random_graphs.md)
+- [\[ICLR 2026\] Independence Test for Linear Non-Gaussian Data and Applications in Causal Discovery](independence_test_for_linear_non-gaussian_data_and_applications_in_causal_discov.md)
+- [\[ICLR 2026\] Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding](causal_imitation_learning_under_expert-observable_and_expert-unobservable_confou.md)
 
 </div>
 

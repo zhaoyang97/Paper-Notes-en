@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Contact-Aware Amodal Completion for Human-Object Interaction via Multi-Regional Inpainting
 description: >-
-  [ICCV 2025][3D Vision][Amodal completion] This paper proposes the first amodal completion framework tailored for human-object interaction (HOI) scenes. It leverages human body topology and contact information to identify…
+  [ICCV 2025][3D Vision][Amodal completion] This paper proposes the first amodal completion framework tailored for human-object interaction (HOI) scenes. It leverages human body topology and contact information to identify occluded regions via convex hull operations, and employs a multi-regional inpainting strategy on a pretrained diffusion model to achieve high-quality occluded object completion without any additional training.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "contact estimation"
 date: 2026-05-08
-content_hash: 33e90e614089f07b
+content_hash: fca3a62dc4d64123
 ---
 
 # Contact-Aware Amodal Completion for Human-Object Interaction via Multi-Regional Inpainting
@@ -154,10 +154,10 @@ No training is required. The method is entirely inference-based on the pretraine
 ## Related Papers
 
 - [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
+- [\[CVPR 2025\] Open-World Amodal Appearance Completion](../../CVPR2025/3d_vision/open-world_amodal_appearance_completion.md)
+- [\[CVPR 2026\] CrossHOI: Learning Cross-View Representations for Monocular 3D Human-Object Interaction Reconstruction](../../CVPR2026/3d_vision/crosshoi_learning_cross-view_representations_for_monocular_3d_human-object_inter.md)
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](../../CVPR2026/3d_vision/cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
-- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](../../CVPR2026/3d_vision/human_interaction-aware_3d_reconstruction_from_a_single_image.md)
-- [\[ICCV 2025\] AJAHR: Amputated Joint Aware 3D Human Mesh Recovery](ajahr_amputated_joint_aware_3d_human_mesh_recovery.md)
+- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](../../CVPR2026/3d_vision/regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Midway Network: Learning Representations for Recognition and Motion from Latent Dynamics
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Segmentation] Midway Network transfers "latent dynamics modeling" from decision-making domains to natural videos. By employing a **midway top-down path** to infer latent motion variables between frames, combined with **dense forward prediction** and a **hierarchical structure**, it is the first method to successfully learn both "obj
+  [ICLR 2026][Self-Supervised Learning][Latent Space Dynamics] Midway Network transfers "latent dynamics modeling" from decision-making domains to natural videos. By employing a **midway top-down path** to infer latent motion variables between frames, combined with **dense forward prediction** and a **hierarchical structure**, it is the first method to successfully learn both "object recognition (semantic segmentation)" and "motion understanding (optical flow)" representations…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - Segmentation
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Latent Space Dynamics"
+  - "Inverse/Forward Dynamics"
+  - "Optical Flow"
+  - "Semantic Segmentation"
+  - "Natural Video"
 date: 2026-05-08
-content_hash: 741ad021a4a7fc21
+content_hash: 3504aa94eba05e93
 ---
+
 # Midway Network: Learning Representations for Recognition and Motion from Latent Dynamics
 
 **Conference**: ICLR 2026  

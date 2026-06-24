@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought
 description: >-
-  [ICLR 2026][Interpretability][Continuous CoT] This work provides a theoretical analysis of the training dynamics of a two-layer Transformer using continuous Chain-of-Thought (Coconut) on directed graph reachability problems. It reveals how the "superposition" mechanism naturally emerges: the index-matching logit grows initially but remains bounded, thereby achievi
+  [ICLR 2026][Interpretability][Continuous CoT] This work provides a theoretical analysis of the training dynamics of a two-layer Transformer using continuous Chain-of-Thought (Coconut) on directed graph reachability problems. It reveals how the "superposition" mechanism naturally emerges: the index-matching logit grows initially but remains bounded, thereby achieving a balance between exploration and exploitation.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Continuous CoT
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Continuous CoT"
+  - "Superposition"
+  - "Training Dynamics"
+  - "Transformer Theory"
+  - "Graph Reachability"
 date: 2026-05-08
-content_hash: e9b278be8e4860d2
+content_hash: dddc3706e1f1b11d
 ---
+
 # Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought
 
 **Conference**: ICLR 2026  
@@ -140,9 +145,9 @@ The graph reachability dataset is derived from a subset of ProsQA (Hao et al., 2
 
 - [\[NeurIPS 2025\] Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought](../../NeurIPS2025/interpretability/reasoning_by_superposition_a_theoretical_perspective_on_chain_of_continuous_thou.md)
 - [\[ICLR 2026\] Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability](temporal_geometry_of_deep_networks_hyperbolic_representations_of_training_dynami.md)
+- [\[ICLR 2026\] From Data Statistics to Feature Geometry: How Correlations Shape Superposition](from_data_statistics_to_feature_geometry_how_correlations_shape_superposition.md)
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)
-- [\[ICLR 2026\] Token Alignment Heads: Unveiling Attention's Role in LLM Multilingual Translation](token_alignment_heads_unveiling_attentions_role_in_llm_multilingual_translation.md)
-- [\[ICLR 2026\] Thought Branches: Interpreting LLM Reasoning Requires Resampling](thought_branches_interpreting_llm_reasoning_requires_resampling.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models
 description: >-
-  [NeurIPS 2025][Image Generation][Efficient Fine-Tuning] This paper proposes DEFT (Decompositional Efficient Fine-Tuning), which efficiently fine-tunes T2I models by decomposing weight updates into two components — subspa…
+  [NeurIPS 2025][Image Generation][Efficient Fine-Tuning] This paper proposes DEFT (Decompositional Efficient Fine-Tuning), which efficiently fine-tunes T2I models by decomposing weight updates into two components — subspace projection and low-rank adjustment — outperforming LoRA and PaRa on both personalized and general image generation tasks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Personalized Generation"
   - "General Image Generation"
 date: 2026-05-08
-content_hash: c423362c76ce4844
+content_hash: f465a48d14f3787f
 ---
 
 # DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models
@@ -145,10 +145,10 @@ General image generation performance on VisualCloze:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning](towards_resilient_safety-driven_unlearning_for_diffusion_models_against_downstre.md)
+- [\[ICML 2025\] Zero-Shot Adaptation of Parameter-Efficient Fine-Tuning in Diffusion Models](../../ICML2025/image_generation/zero-shot_adaptation_of_parameter-efficient_fine-tuning_in_diffusion_models.md)
+- [\[CVPR 2025\] Efficient Fine-Tuning and Concept Suppression for Pruned Diffusion Models](../../CVPR2025/image_generation/efficient_fine-tuning_and_concept_suppression_for_pruned_diffusion_models.md)
+- [\[CVPR 2025\] Focus-N-Fix: Region-Aware Fine-Tuning for Text-to-Image Generation](../../CVPR2025/image_generation/focus-n-fix_region-aware_fine-tuning_for_text-to-image_generation.md)
 - [\[NeurIPS 2025\] GraLoRA: Granular Low-Rank Adaptation for Parameter-Efficient Fine-Tuning](gralora_granular_low-rank_adaptation_for_parameter-efficient_fine-tuning.md)
-- [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](../../CVPR2026/image_generation/memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
-- [\[AAAI 2026\] DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models](../../AAAI2026/image_generation/dogfit_domain-guided_fine-tuning_for_efficient_transfer_learning_of_diffusion_mo.md)
-- [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
 
 </div>
 

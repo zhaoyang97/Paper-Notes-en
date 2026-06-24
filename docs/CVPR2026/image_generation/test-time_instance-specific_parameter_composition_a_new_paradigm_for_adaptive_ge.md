@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper proposes Composer, a plug-and-play meta-generator framework that dynamically generates low-rank parameter updates based on each input condition during inference and injects them into pre-trained model weights. With extremely low computational overhead (+0.2% time, +3.6% memory), it achieves instance-specific
+  [CVPR 2026][Image Generation][Adaptive Generative Models] This paper proposes Composer, a plug-and-play meta-generator framework that dynamically generates low-rank parameter updates based on each input condition during inference and injects them into pre-trained model weights. With extremely low computational overhead (+0.2% time, +3.6% memory), it achieves instance-specific adaptive high-quality image generation, significantly enhancing performance across scenarios such as…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Adaptive Generative Models"
+  - "Test-Time Parameter Composition"
+  - "Low-Rank Updating"
+  - "Dynamic Weights"
+  - "Meta-Generator"
 date: 2026-05-08
-content_hash: 529b28842830a279
+content_hash: c566fce3b4d55ef1
 ---
+
 # Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,10 @@ ImageNet 256×256 Class-Conditional Generation:
 ## Related Papers
 
 - [\[CVPR 2026\] From Scale to Speed: Adaptive Test-Time Scaling for Image Editing](from_scale_to_speed_adaptive_test-time_scaling_for_image_editing.md)
-- [\[CVPR 2026\] Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation](progress_by_pieces_test-time_scaling_for_autoregressive_image_generation.md)
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](generative_modeling_of_weights_generalization_or_memorization.md)
 - [\[ICLR 2026\] GenCP: Towards Generative Modeling Paradigm of Coupled Physics](../../ICLR2026/image_generation/gencp_towards_generative_modeling_paradigm_of_coupled_physics.md)
+- [\[CVPR 2026\] Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation](progress_by_pieces_test-time_scaling_for_autoregressive_image_generation.md)
 - [\[CVPR 2026\] Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation](test-time_alignment_of_text-to-image_diffusion_models_via_null-text_embedding_op.md)
-- [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](../../ICLR2026/image_generation/compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
 
 </div>
 

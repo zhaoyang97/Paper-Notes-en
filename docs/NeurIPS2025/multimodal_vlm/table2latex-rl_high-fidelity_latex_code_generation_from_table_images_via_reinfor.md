@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Table2LaTeX-RL: High-Fidelity LaTeX Code Generation from Table Images via Reinforced Multimodal Language Models
 description: >-
-  [NeurIPS 2025][Code Intelligence][Table Recognition] This paper proposes VSGRPO — a dual-reward reinforcement learning strategy based on GRPO — that jointly optimizes a structure-level reward (TEDS-Structure) and a visua…
+  [NeurIPS 2025][Multimodal VLM][Table Recognition] This paper proposes VSGRPO — a dual-reward reinforcement learning strategy based on GRPO — that jointly optimizes a structure-level reward (TEDS-Structure) and a visual fidelity reward (CW-SSIM on rendered images). The fine-tuned MLLM (only 3B parameters) surpasses GPT-4o and models with 72B+ parameters on the table-image-to-LaTeX generation task, with particularly significant gains on complex tables.
 tags:
   - "NeurIPS 2025"
-  - "Code Intelligence"
+  - "Multimodal VLM"
   - "Table Recognition"
   - "LaTeX Generation"
   - "GRPO Reinforcement Learning"
   - "Dual Reward Mechanism"
   - "Multimodal Large Language Models"
 date: 2026-05-08
-content_hash: dbd947ed343b028e
+content_hash: 0fac694df00dd492
 ---
 
 # Table2LaTeX-RL: High-Fidelity LaTeX Code Generation from Table Images via Reinforced Multimodal Language Models
@@ -62,7 +62,7 @@ A three-stage pipeline: (1) large-scale data collection — crawling 1.2 million
     - **Structure Reward**: Both the generated and ground-truth LaTeX are converted to HTML, and TEDS-Structure is computed. A reward of 1 is assigned if the score exceeds a threshold (0.9), and 0 otherwise. TEDS-Structure measures table structure alignment via minimum tree edit distance.
 
    The optimization objective is based on the GRPO framework:
-   $$J_{\text{RFT}}(\theta) = \mathbb{E}\left[\frac{1}{N}\sum_{i=1}^N \min\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{old}}(o_i|q)}A_i, \text{clip}(\cdot, 1-\varepsilon, 1+\varepsilon)A_i\right) - \beta D_{KL}(\pi_\theta \| \pi_{ref})\right]$$
+    $J_{\text{RFT}}(\theta) = \mathbb{E}\left[\frac{1}{N}\sum_{i=1}^N \min\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{old}}(o_i|q)}A_i, \text{clip}(\cdot, 1-\varepsilon, 1+\varepsilon)A_i\right) - \beta D_{KL}(\pi_\theta \| \pi_{ref})\right]$
 
    where the advantage function is $A_i = \frac{r_i - \text{mean}(\{r_j\})}{\text{std}(\{r_j\})}$, $\varepsilon=0.2$, and $\beta=0.02$.
 
@@ -151,11 +151,11 @@ A three-stage pipeline: (1) large-scale data collection — crawling 1.2 million
 
 ## Related Papers
 
-- [\[ACL 2026\] From Charts to Code: A Hierarchical Benchmark for Multimodal Models](../../ACL2026/code_intelligence/from_charts_to_code_a_hierarchical_benchmark_for_multimodal_models.md)
-- [\[NeurIPS 2025\] Embedding Alignment in Code Generation for Audio](embedding_alignment_in_code_generation_for_audio.md)
-- [\[NeurIPS 2025\] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning](codecrash_exposing_llm_fragility_to_misleading_natural_language_in_code_reasonin.md)
-- [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](../../CVPR2026/code_intelligence/geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
-- [\[ACL 2026\] Ro-SLM: Onboard Small Language Models for Robot Task Planning and Operation Code Generation](../../ACL2026/code_intelligence/ro-slm_onboard_small_language_models_for_robot_task_planning_and_operation_code_.md)
+- [\[CVPR 2025\] HiFICL: High-Fidelity In-Context Learning for Multimodal Tasks](../../CVPR2025/multimodal_vlm/hificl_high-fidelity_in-context_learning_for_multimodal_tasks.md)
+- [\[CVPR 2025\] StarVector: Generating Scalable Vector Graphics Code from Images and Text](../../CVPR2025/multimodal_vlm/starvector_generating_scalable_vector_graphics_code_from_images_and_text.md)
+- [\[ACL 2025\] ChartCoder: Advancing Multimodal Large Language Model for Chart-to-Code Generation](../../ACL2025/multimodal_vlm/chartcoder_chart_to_code.md)
+- [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
+- [\[NeurIPS 2025\] What Can RL Bring to VLA Generalization? An Empirical Study](what_can_rl_bring_to_vla_generalization_an_empirical_study.md)
 
 </div>
 

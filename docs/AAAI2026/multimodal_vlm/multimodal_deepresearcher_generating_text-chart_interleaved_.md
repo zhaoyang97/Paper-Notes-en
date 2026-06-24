@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Multimodal DeepResearcher: Generating Text-Chart Interleaved Reports From Scratch with Agentic Framework
 description: >-
-  [AAAI 2026 (Oral)][Information Retrieval & RAG][Deep Research Agent] This paper proposes Multimodal DeepResearcher, a four-stage agentic framework for generating text-chart interleaved research reports from scratch. It i…
+  [AAAI 2026 (Oral)][Multimodal VLM][Deep Research Agent] This paper proposes Multimodal DeepResearcher, a four-stage agentic framework for generating text-chart interleaved research reports from scratch. It introduces Formal Description of Visualization (FDV) to enable LLMs to learn and produce diverse charts, and employs an Actor-Critic iterative refinement mechanism (LLM generates D3.js code → browser rendering → multimodal LLM review). The system achieves an 82% overall win…
 tags:
   - "AAAI 2026 (Oral)"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "Deep Research Agent"
   - "Text-Chart Interleaved Reports"
   - "Formal Description of Visualization (FDV)"
   - "D3.js Chart Generation"
   - "Actor-Critic Chart Refinement"
 date: 2026-05-08
-content_hash: 4f91cc0c5193f593
+content_hash: 1ac56a47cc72313c
 ---
 
 # Multimodal DeepResearcher: Generating Text-Chart Interleaved Reports From Scratch with Agentic Framework
@@ -144,11 +144,11 @@ MultimodalReportBench: 100 diverse topics (technology, healthcare, education, cl
 
 ## Related Papers
 
-- [\[ICML 2026\] Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning](../../ICML2026/information_retrieval/graph-r1_towards_agentic_graphrag_framework_via_end-to-end_reinforcement_learnin.md)
-- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
-- [\[NeurIPS 2025\] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models](../../NeurIPS2025/information_retrieval/the_narrow_gate_localized_imagetext_communication_in_native.md)
-- [\[ACL 2026\] Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning](../../ACL2026/information_retrieval/agentic_conversational_search_with_contextualized_reasoning_via_reinforcement_le.md)
-- [\[ACL 2026\] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches](../../ACL2026/information_retrieval/is_agentic_rag_worth_it_an_experimental_comparison_of_rag_approaches.md)
+- [\[AAAI 2026\] Pharos-ESG: A Framework for Multimodal Parsing, Contextual Narration, and Hierarchical Labeling of ESG Reports](pharos-esg_a_framework_for_multimodal_parsing_contextual_narration_and_hierarchi.md)
+- [\[CVPR 2026\] Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image](../../CVPR2026/multimodal_vlm/multimodal_rewardbench_2_evaluating_omni_reward_models_for_interleaved_text_and_.md)
+- [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](../../ACL2026/multimodal_vlm/slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
+- [\[ICLR 2026\] A High Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation](../../ICLR2026/multimodal_vlm/a_high_quality_dataset_and_reliable_evaluation_for_interleaved_image-text_genera.md)
+- [\[ICLR 2026\] DeepEyesV2: Toward Agentic Multimodal Model](../../ICLR2026/multimodal_vlm/deepeyesv2_toward_agentic_multimodal_model.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Video-Based Optimal Transport for Feedback-Efficient Offline Preference-Based Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] To address the high annotation cost in Preference-based RL (PbRL), which typically requires thousands of human comparisons, VOTP encodes trajectory segments into a semantic space using Video Foundation Models (ViFM). It then applies Optimal Transport (OT) to align a "small labeled set" with a "large unlabeled set" to p
+  [ICML 2026][Reinforcement Learning][Preference-based RL] To address the high annotation cost in Preference-based RL (PbRL), which typically requires thousands of human comparisons, VOTP encodes trajectory segments into a semantic space using Video Foundation Models (ViFM). It then applies Optimal Transport (OT) to align a "small labeled set" with a "large unlabeled set" to propagate preferences and automatically generate pseudo-labels. With only 10 annotations…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Preference-based RL"
+  - "Optimal Transport"
+  - "Video Foundation Models"
+  - "Semi-supervised Pseudo-labeling"
+  - "Feedback Efficiency"
 date: 2026-05-08
-content_hash: a6fe910558bf27f8
+content_hash: 59bb04240799d242
 ---
+
 # Video-Based Optimal Transport for Feedback-Efficient Offline Preference-Based Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -132,11 +138,11 @@ VOTP effectively matches the Oracle (92.4) in locomotion and leads manipulation 
 
 ## Related Papers
 
-- [\[ICML 2026\] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement](counterfactual_transport_flows_for_offline_conservative_trajectory_refinement.md)
-- [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
-- [\[CVPR 2026\] EVA: Efficient Reinforcement Learning for End-to-End Video Agent](../../CVPR2026/reinforcement_learning/eva_efficient_reinforcement_learning_for_end-to-end_video_agent.md)
-- [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](safe_reinforcement_learning_with_preference-based_constraint_inference.md)
 - [\[ICML 2026\] Noise-Guided Transport: Imitation Learning from Random Priors](noise-guided_transport_for_imitation_learning.md)
+- [\[ICLR 2026\] OPRIDE: Efficient Offline Preference Reinforcement Learning via In-Dataset Exploration](../../ICLR2026/reinforcement_learning/opride_efficient_offline_preference-based_reinforcement_learning_via_in-dataset_.md)
+- [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
+- [\[ICML 2026\] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement](counterfactual_transport_flows_for_offline_conservative_trajectory_refinement.md)
+- [\[CVPR 2026\] EVA: Efficient Reinforcement Learning for End-to-End Video Agent](../../CVPR2026/reinforcement_learning/eva_efficient_reinforcement_learning_for_end-to-end_video_agent.md)
 
 </div>
 

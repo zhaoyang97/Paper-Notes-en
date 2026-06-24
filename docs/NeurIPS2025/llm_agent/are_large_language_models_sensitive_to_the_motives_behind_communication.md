@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Are Large Language Models Sensitive to the Motives Behind Communication?
 description: >-
-  [NeurIPS 2025][LLM Agent][motivational vigilance] Three progressive experiments systematically evaluate whether LLMs possess "motivational vigilance"—the ability to recognize the intentions and incentives of information…
+  [NeurIPS 2025][LLM Agent][motivational vigilance] Three progressive experiments systematically evaluate whether LLMs possess "motivational vigilance"—the ability to recognize the intentions and incentives of information sources and adjust trust accordingly. In controlled experiments, frontier non-reasoning LLMs perform close to the rational model (Pearson's $r > 0.9$) and resemble humans more than the rational model does; however, vigilance drops sharply in real-world YouTube…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "information credibility"
   - "rational model"
 date: 2026-05-08
-content_hash: fd3bbe09a9097d16
+content_hash: 30b09f48e2570765
 ---
 
 # Are Large Language Models Sensitive to the Motives Behind Communication?
@@ -121,11 +121,11 @@ Three progressive experiments: (1) *Basic capacity*—can LLMs distinguish inten
 
 ## Related Papers
 
+- [\[ACL 2025\] Adaptive Tool Use in Large Language Models with Meta-Cognition Trigger](../../ACL2025/llm_agent/meco_metacognition_tool_use.md)
+- [\[ICML 2026\] Towards Diverse Scientific Hypothesis Search with Large Language Models](../../ICML2026/llm_agent/towards_diverse_scientific_hypothesis_search_with_large_language_models.md)
 - [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
-- [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](../../ACL2026/llm_agent/implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
 - [\[NeurIPS 2025\] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks](agenttts_large_language_model_agent_for_testtime_computeopti.md)
-- [\[ACL 2026\] AnchorMem: Anchored Facts with Associative Contexts for Building Memory in Large Language Models](../../ACL2026/llm_agent/anchormem_anchored_facts_with_associative_contexts_for_building_memory_in_large_.md)
-- [\[ACL 2026\] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models](../../ACL2026/llm_agent/agent-gwo_collaborative_agents_for_dynamic_prompt_optimization_in_large_language.md)
+- [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](../../ACL2026/llm_agent/implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
 
 </div>
 

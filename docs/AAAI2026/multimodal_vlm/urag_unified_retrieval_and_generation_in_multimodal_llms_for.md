@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding
 description: >-
-  [AAAI 2026][Multimodal VLM][Long document understanding] URaG identifies a human-like "coarse-to-fine" reasoning pattern in MLLMs processing long documents—shallow layers exhibit uniformly distributed attention while dee…
+  [AAAI 2026 Oral][Multimodal VLM][Long document understanding] URaG identifies a human-like "coarse-to-fine" reasoning pattern in MLLMs processing long documents—shallow layers exhibit uniformly distributed attention while deep layers concentrate on evidence pages. Motivated by this insight, a lightweight cross-modal retrieval module is inserted at layer 6 (comprising only 0.05% of total parameters) to select the Top-5 relevant pages and discard the remainder…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multimodal VLM"
   - "Long document understanding"
   - "unified retrieval-generation"
@@ -12,7 +12,7 @@ tags:
   - "Transformer layer attention analysis"
   - "token efficiency"
 date: 2026-05-08
-content_hash: 8d53217556ca2fbd
+content_hash: 275c55906d37eed2
 ---
 
 # URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding
@@ -130,11 +130,11 @@ A single MLLM processes the long document: all pages pass through a visual encod
 
 ## Related Papers
 
-- [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/multimodal_vlm/docseeker_long_document_understanding.md)
-- [\[ICCV 2025\] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation](../../ICCV2025/multimodal_vlm/harmonizing_visual_representations_for_unified_multimodal_un.md)
-- [\[AAAI 2026\] FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation](finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do.md)
-- [\[ACL 2026\] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora](../../ACL2026/multimodal_vlm/universalrag_retrieval-augmented_generation_over_corpora_of_diverse_modalities_a.md)
+- [\[ACL 2026\] Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval](../../ACL2026/multimodal_vlm/sculpting_the_vector_space_towards_efficient_multi-vector_visual_document_retrie.md)
+- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](../../NeurIPS2025/multimodal_vlm/benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
+- [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](../../CVPR2026/multimodal_vlm/vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
 - [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](../../CVPR2026/multimodal_vlm/personavlm_long_term_personalized_multimodal_llms.md)
+- [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](../../CVPR2026/multimodal_vlm/rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] ExPose: Reinforcing Video Generation Models for Extreme Pose Estimation
 description: >-
-  [CVPR 2026][Video Generation][Flow-GRPO] Direct relative pose estimation often fails when two images have extreme viewpoint differences and minimal overlap; ExPose fine-tunes a video generation model using GRPO reinforcement learning into a "pose-reward-driven" generator. This allows it to interpolate **geometrically consistent** intermediate frames between t
+  [CVPR 2026][Video Generation][Extreme Viewpoint Pose Estimation] Direct relative pose estimation often fails when two images have extreme viewpoint differences and minimal overlap; ExPose fine-tunes a video generation model using GRPO reinforcement learning into a "pose-reward-driven" generator. This allows it to interpolate **geometrically consistent** intermediate frames between the two views, which are then processed by 3D foundation models like VGGT or MapAnything to sign…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Flow-GRPO
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Extreme Viewpoint Pose Estimation"
+  - "Flow-GRPO"
+  - "3D Foundation Models"
+  - "Intermediate Frame Interpolation"
 date: 2026-05-08
-content_hash: 86eb79c9f2f6046d
+content_hash: d0d8881c1f3fc0e8
 ---
+
 # ExPose: Reinforcing Video Generation Models for Extreme Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -157,6 +161,7 @@ Incremental component impact (DL3DV + LTX-Video + VGGT):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -164,8 +169,8 @@ Incremental component impact (DL3DV + LTX-Video + VGGT):
 - [\[NeurIPS 2025\] PoseCrafter: Extreme Pose Estimation with Hybrid Video Synthesis](../../NeurIPS2025/video_generation/posecrafter_extreme_pose_estimation_with_hybrid_video_synthesis.md)
 - [\[CVPR 2026\] BulletTime: Decoupled Control of Time and Camera Pose for Video Generation](bullettime_decoupled_control_of_time_and_camera_pose_for_video_generation.md)
 - [\[CVPR 2026\] PoseAnything: General Pose-guided Video Generation with Part-aware Temporal Coherence](poseanything_general_pose-guided_video_generation_with_part-aware_temporal_coher.md)
-- [\[CVPR 2026\] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation](pam_a_pose-appearance-motion_engine_for_sim-to-real_hoi_video_generation.md)
-- [\[ICML 2026\] World-R1: Reinforcing 3D Constraints for Text-to-Video Generation](../../ICML2026/video_generation/world-r1_reinforcing_3d_constraints_for_text-to-video_generation.md)
+- [\[CVPR 2026\] MultiAnimate: Pose-Guided Image Animation Made Extensible](multianimate_pose-guided_image_animation_made_extensible.md)
+- [\[CVPR 2026\] PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing](performrecast_expression_and_head_pose_disentanglement_for_portrait_video_editin.md)
 
 </div>
 

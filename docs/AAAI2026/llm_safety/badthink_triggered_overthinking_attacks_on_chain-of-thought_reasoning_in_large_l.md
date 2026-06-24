@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models
 description: >-
-  [AAAI 2026][LLM Safety][backdoor attack] This paper proposes BadThink — the first training-time backdoor attack targeting CoT reasoning efficiency. By iteratively optimizing verbose reasoning templates via an LLM…
+  [AAAI 2026][LLM Safety][backdoor attack] This paper proposes BadThink — the first training-time backdoor attack targeting CoT reasoning efficiency. By iteratively optimizing verbose reasoning templates via an LLM, it constructs poisoned data that causes the victim model, upon trigger activation, to generate reasoning chains inflated by over 17× (on MATH-500), while preserving final answer correctness and maintaining strong stealthiness.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "data poisoning"
   - "reasoning efficiency"
 date: 2026-05-08
-content_hash: 3996760bb4def705
+content_hash: 1667daf8dca5c626
 ---
 
 # BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models
@@ -130,11 +130,11 @@ BadThink proceeds in three steps: (1) constructing a verbose reasoning template 
 
 ## Related Papers
 
-- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](../../ICML2026/llm_safety/coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
-- [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](../../ICLR2026/llm_safety/advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
+- [\[ICLR 2026\] Distilling the Thought, Watermarking the Answer: A Principle Semantic Guided Watermark for Reasoning Large Language Models](../../ICLR2026/llm_safety/distilling_the_thought_watermarking_the_answer_a_principle_semantic_guided_water.md)
+- [\[ICLR 2026\] Output Supervision Can Obfuscate the Chain of Thought](../../ICLR2026/llm_safety/output_supervision_can_obfuscate_the_chain_of_thought.md)
 - [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](../../ACL2026/llm_safety/reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
-- [\[AAAI 2026\] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models](anti-adversarial_learning_desensitizing_prompts_for_large_la.md)
-- [\[AAAI 2026\] SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth](sproutbench_a_benchmark_for_safe_and_ethical_large_language_models_for_youth.md)
+- [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
 
 </div>
 

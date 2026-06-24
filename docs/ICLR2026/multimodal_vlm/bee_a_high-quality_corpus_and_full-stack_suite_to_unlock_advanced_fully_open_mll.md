@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bee: A High-Quality Corpus and Full-Stack Suite to Unlock Advanced Fully Open MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][Chain-of-Thought] Addressing the pain points of "poor SFT data quality and lack of complex reasoning data" in fully open-source multimodal large models, this paper utilizes an automated data curation pipeline (HoneyPipe) to clean and enrich approximately 24 million raw image-text pairs into Honey-Data-15M, a high-quality dataset of 15 m
+  [ICLR 2026][Multimodal VLM][Fully Open-Source MLLM] Addressing the pain points of "poor SFT data quality and lack of complex reasoning data" in fully open-source multimodal large models, this paper utilizes an automated data curation pipeline (HoneyPipe) to clean and enrich approximately 24 million raw image-text pairs into Honey-Data-15M, a high-quality dataset of 15 million samples with dual-layer CoT. By training on this dataset, the Bee-8B model achieves new SOTA among fu…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Fully Open-Source MLLM"
+  - "SFT Data"
+  - "Chain-of-Thought"
+  - "Data Curation Pipeline"
+  - "Data Quality"
 date: 2026-05-08
-content_hash: 39243d1d22d721a1
+content_hash: 67d4da2106c13d4b
 ---
+
 # Bee: A High-Quality Corpus and Full-Stack Suite to Unlock Advanced Fully Open MLLMs
 
 **Conference**: ICLR 2026  
@@ -140,7 +145,7 @@ Results show a clear hierarchy $D_{curated} > D_{no\text{-}CoT} > D_{raw}$. The 
 - [\[ICCV 2025\] OpenVision: A Fully-Open, Cost-Effective Family of Advanced Vision Encoders for Multimodal Learning](../../ICCV2025/multimodal_vlm/openvision_a_fully-open_cost-effective_family_of_advanced_vision_encoders_for_mu.md)
 - [\[ICLR 2026\] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach](customizing_visual_emotion_evaluation_for_mllms_an_open-vocabulary_multifaceted_.md)
 - [\[ICLR 2026\] FLARE: Fully Integration of Vision-Language Representations for Deep Cross-Modal Understanding](flare_fully_integration_of_vision-language_representations_for_deep_cross-modal_.md)
-- [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
+- [\[ICLR 2026\] ODI-Bench: Can MLLMs Understand Immersive Omnidirectional Environments?](odi-bench_can_mllms_understand_immersive_omnidirectional_environments.md)
 
 </div>
 

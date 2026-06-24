@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] TS²：训练用 Sparsemax+、测试用 Softmax，让 LLM 微调既准又多样
+  [Paper Note] TS²: Sparsemax+ for Training and Softmax for Testing for Accurate and Diverse LLM Fine-tuning
 description: >-
-  [ICLR 2026][Alignment & RLHF][Sparsemax] Addressing the issue where Cross-Entropy (CE) supervised fine-tuning collapses probability distributions into one-hot vectors and crushes output diversity, this paper proposes TS²: employing a Sparsemax+ loss with tail suppression (sparse support + explicit tail pruning) during training while reverting to softmax decod
+  [ICLR 2026][LLM Alignment][Supervised Fine-Tuning] Addressing the issue where Cross-Entropy (CE) supervised fine-tuning collapses probability distributions into one-hot vectors and crushes output diversity, this paper proposes TS²: employing a Sparsemax+ loss with tail suppression (sparse support + explicit tail pruning) during training while reverting to softmax decoding during inference. This approach enhances accuracy and diversity for Llama-3.1-8B / Qwen-2.5-7B across cha…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Sparsemax
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Supervised Fine-Tuning"
+  - "Output Diversity"
+  - "Sparsemax"
+  - "Fenchel-Young Loss"
+  - "Alignment Tax"
 date: 2026-05-08
-content_hash: 6735808601a98683
+content_hash: 10eb2b3bfb287be9
 ---
+
 # TS²: Sparsemax+ for Training and Softmax for Testing for Accurate and Diverse LLM Fine-tuning
 
 **Conference**: ICLR 2026  
@@ -141,11 +146,11 @@ TS² consists of three components: (1) sparsemax training, (2) softmax decoding,
 
 ## Related Papers
 
-- [\[ICLR 2026\] Capability-Based Scaling Trends for LLM-Based Red-Teaming](capability-based_scaling_trends_for_llm-based_red-teaming.md)
-- [\[ICLR 2026\] The Alignment Auditor: A Bayesian Framework for Verifying and Refining LLM Objectives](the_alignment_auditor_a_bayesian_framework_for_verifying_and_refining_llm_object.md)
-- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
-- [\[ICLR 2026\] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)
-- [\[ICLR 2026\] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment](inverse_reinforcement_learning_with_dynamic_reward_scaling_for_llm_alignment.md)
+- [\[ICLR 2026\] Anchored Supervised Fine-Tuning](anchored_supervised_fine-tuning.md)
+- [\[ICLR 2026\] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](spectrum_tuning_post-training_for_distributional_coverage_and_in-context_steerab.md)
+- [\[ICLR 2026\] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study](safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study.md)
+- [\[NeurIPS 2025\] Mechanism Design for LLM Fine-tuning with Multiple Reward Models](../../NeurIPS2025/llm_alignment/mechanism_design_for_llm_fine-tuning_with_multiple_reward_models.md)
+- [\[ICLR 2026\] Data Selection for LLM Alignment Using Fine-Grained Preferences](data_selection_for_llm_alignment_using_fine-grained_preferences.md)
 
 </div>
 

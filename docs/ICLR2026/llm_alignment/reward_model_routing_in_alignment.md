@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reward Model Routing in Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] This paper proposes **BayesianRouter**, a hybrid routing framework that **selects the most suitable reward model for each preference pair** during RLHF/Online DPO training. In the offline phase, a multi-task router is trained on preference data to learn the expertise areas of various reward models (RMs). During the onl
+  [ICLR 2026][LLM Alignment][Reward Model Routing] This paper proposes **BayesianRouter**, a hybrid routing framework that **selects the most suitable reward model for each preference pair** during RLHF/Online DPO training. In the offline phase, a multi-task router is trained on preference data to learn the expertise areas of various reward models (RMs). During the online phase, Bayesian Thompson Sampling is used to select models per query, injecting offline-learned strengths a…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Model Routing"
+  - "RLHF"
+  - "Online DPO"
+  - "Thompson Sampling"
+  - "Contextual Bandits"
 date: 2026-05-08
-content_hash: d691bfd93b584067
+content_hash: 440d4a358284cb77
 ---
+
 # Reward Model Routing in Alignment
 
 **Conference**: ICLR 2026  
@@ -137,9 +142,9 @@ Across instruction-following and reasoning benchmarks, BayesianRouter consistent
 
 - [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](rewardbench_2_advancing_reward_model_evaluation.md)
 - [\[ICML 2025\] On the Robustness of Reward Models for Language Model Alignment](../../ICML2025/llm_alignment/on_the_robustness_of_reward_models_for_language_model_alignment.md)
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 - [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
-- [\[ACL 2025\] HAF-RM: A Hybrid Alignment Framework for Reward Model Training](../../ACL2025/llm_alignment/haf-rm_a_hybrid_alignment_framework_for_reward_model_training.md)
 
 </div>
 

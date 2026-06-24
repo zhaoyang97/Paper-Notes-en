@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SimulMEGA: MoE Routers are Advanced Policy Makers for Simultaneous Speech Translation
 description: >-
-  [NeurIPS 2025][Audio & Speech][Simultaneous Speech Translation] This paper proposes SimulMEGA, a framework combining prefix training with a Mixture-of-Experts (MoE) refinement module to achieve unsupervised read/write po…
+  [NeurIPS 2025][Audio & Speech][Simultaneous Speech Translation] This paper proposes SimulMEGA, a framework combining prefix training with a Mixture-of-Experts (MoE) refinement module to achieve unsupervised read/write policy learning. A 500M-parameter model achieves <7% BLEU degradation at 1.5-second latency across simultaneous speech translation in 6 languages, and extends to streaming TTS.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Streaming TTS"
   - "Multilingual Translation"
 date: 2026-05-08
-content_hash: b4656b3ecf7dca32
+content_hash: dfebe9da45904f2f
 ---
 
 # SimulMEGA: MoE Routers are Advanced Policy Makers for Simultaneous Speech Translation
@@ -141,9 +141,9 @@ The MoE refinement module is not used at inference time, incurring zero addition
 
 - [\[AAAI 2026\] REINA: Regularized Entropy Information-Based Loss for Efficient Simultaneous Speech Translation](../../AAAI2026/audio_speech/reina_regularized_entropy_information-based_loss_for_efficient_simultaneous_spee.md)
 - [\[NeurIPS 2025\] MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction](mge-ldm_joint_latent_diffusion_for_simultaneous_music_generation_and_source_extr.md)
+- [\[ACL 2025\] Leveraging Unit Language Guidance to Advance Speech Modeling in Textless Speech-to-Speech Translation](../../ACL2025/audio_speech/leveraging_unit_language_guidance_to_advance_speech_modeling_in_textless_speech-.md)
+- [\[ACL 2025\] Improving Language and Modality Transfer in Translation by Character-level Modeling](../../ACL2025/audio_speech/improving_language_and_modality_transfer_in.md)
 - [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](../../ICLR2026/audio_speech/scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
-- [\[AAAI 2026\] DeepDebater: A Superpersuasive Autonomous Policy Debating System](../../AAAI2026/audio_speech/a_superpersuasive_autonomous_policy_debating_system.md)
-- [\[NeurIPS 2025\] Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis](shallow_flow_matching_for_coarse-to-fine_text-to-speech_synthesis.md)
 
 </div>
 

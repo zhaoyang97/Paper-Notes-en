@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Control Tax: The Price of Keeping AI in Check
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper introduces "Control Tax"—the operational and financial costs of integrating AI Control (AIC) measures into production pipelines. The authors empirically measure the ROC performance of frontier models acting as monitors on the APPS code backdoor task, translate these ROC curves into "safety probability under
+  [ICLR 2026][AI Safety][AI Control] This paper introduces "Control Tax"—the operational and financial costs of integrating AI Control (AIC) measures into production pipelines. The authors empirically measure the ROC performance of frontier models acting as monitors on the APPS code backdoor task, translate these ROC curves into "safety probability under a given auditing budget" using game theory, and finally plot the Pareto frontier of "Safety vs. Monitoring Cost…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "AI Control"
+  - "Trusted Monitoring"
+  - "Code Backdoor"
+  - "Game Theory"
+  - "Auditing Budget"
 date: 2026-05-08
-content_hash: 5c14c9448be88221
+content_hash: 635442d38781a2cb
 ---
+
 # Control Tax: The Price of Keeping AI in Check
 
 **Conference**: ICLR 2026  

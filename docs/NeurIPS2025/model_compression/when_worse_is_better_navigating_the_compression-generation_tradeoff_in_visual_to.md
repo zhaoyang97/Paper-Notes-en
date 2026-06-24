@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization
 description: >-
-  [NeurIPS 2025][Model Compression][Visual Tokenizer] This paper systematically investigates the trade-off between visual tokenizer compression rate and generation quality through scaling laws. It finds that more aggressiv…
+  [NeurIPS 2025 Spotlight][Model Compression][Visual Tokenizer] This paper systematically investigates the trade-off between visual tokenizer compression rate and generation quality through scaling laws. It finds that more aggressive compression—despite yielding worse reconstruction—benefits generation for smaller models. The paper proposes Causally Regularized Tokenization (CRT), which embeds autoregressive inductive bias into Stage 1 training…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "Visual Tokenizer"
   - "Compression-Generation Trade-off"
@@ -12,7 +12,7 @@ tags:
   - "Scaling Law"
   - "Autoregressive Generation"
 date: 2026-05-08
-content_hash: 101e056e332bc56a
+content_hash: 8449e7c47492e08f
 ---
 
 # When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization
@@ -129,11 +129,11 @@ The CRT regularizer adds only 5% training FLOPs (owing to the extremely lightwei
 
 ## Related Papers
 
+- [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](../../ICLR2026/model_compression/navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
 - [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](../../ICCV2025/model_compression/bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
 - [\[NeurIPS 2025\] Mixed Monotonicity Reachability Analysis of Neural ODE: A Trade-Off Between Tightness and Efficiency](mixed_monotonicity_reachability_analysis_of_neural_ode_a_trade-off_between_tight.md)
+- [\[ACL 2025\] Predicting Through Generation: Why Generation Is Better for Prediction](../../ACL2025/model_compression/predicting_through_generation_why_generation_is_better_for_prediction.md)
 - [\[NeurIPS 2025\] zip2zip: Inference-Time Adaptive Tokenization via Online Compression](zip2zip_inference-time_adaptive_tokenization_via_online_compression.md)
-- [\[NeurIPS 2025\] A Partition Cover Approach for Tokenization](a_partition_cover_approach_to_tokenization.md)
-- [\[NeurIPS 2025\] Navigating Simply, Aligning Deeply: Winning Solutions for Mouse vs. AI 2025](navigating_simply_aligning_deeply_winning_solutions_for_mouse_vs_ai_2025.md)
 
 </div>
 

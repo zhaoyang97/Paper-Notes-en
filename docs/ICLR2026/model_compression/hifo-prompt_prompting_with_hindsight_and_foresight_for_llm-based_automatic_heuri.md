@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HiFo-Prompt: Prompting with Hindsight and Foresight for LLM-based Automatic Heuristic Design
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The HiFo-Prompt framework is proposed, which enhances LLM-driven Automatic Heuristic Design (AHD) through two synergistic modules: Hindsight (retrospective knowledge pool) and Foresight (prospective evolutionary navigator), significantly outperforming existing methods on tasks such as TSP and FSSP.
+  [ICLR 2026][Model Compression][Automatic Heuristic Design] The HiFo-Prompt framework is proposed, which enhances LLM-driven Automatic Heuristic Design (AHD) through two synergistic modules: Hindsight (retrospective knowledge pool) and Foresight (prospective evolutionary navigator), significantly outperforming existing methods on tasks such as TSP and FSSP.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Automatic Heuristic Design"
+  - "LLM+Evolutionary Computation"
+  - "Knowledge Management"
+  - "Exploration-Exploitation Balance"
+  - "Combinatorial Optimization"
 date: 2026-05-08
-content_hash: 976c10cf1fea94a4
+content_hash: 067f821612628bf6
 ---
+
 # HiFo-Prompt: Prompting with Hindsight and Foresight for LLM-based Automatic Heuristic Design
 
 **Conference**: ICLR 2026  

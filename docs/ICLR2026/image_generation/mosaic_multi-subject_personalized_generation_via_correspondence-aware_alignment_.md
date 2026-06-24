@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] MOSAIC reformulates multi-subject personalized generation as a "representation optimization" problem. By utilizing the SemAlign-MS dataset with dense semantic correspondence annotations, it employs an "Alignment Loss" to force point-to-point alignment between reference and target attention, and a "Disentanglement Loss"
+  [ICLR 2026][Image Generation][Multi-subject Personalized Generation] MOSAIC reformulates multi-subject personalized generation as a "representation optimization" problem. By utilizing the SemAlign-MS dataset with dense semantic correspondence annotations, it employs an "Alignment Loss" to force point-to-point alignment between reference and target attention, and a "Disentanglement Loss" to push different subjects into orthogonal attention subspaces. This maintains high fideli…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multi-subject Personalized Generation"
+  - "Semantic Correspondence"
+  - "Attention Alignment"
+  - "Attention Disentanglement"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: 80c60ce679818817
+content_hash: e25e941b0f1d3c17
 ---
+
 # MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement
 
 **Conference**: ICLR 2026  

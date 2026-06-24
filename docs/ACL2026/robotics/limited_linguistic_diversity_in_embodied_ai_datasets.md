@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Limited Linguistic Diversity in Embodied AI Datasets
 description: >-
-  [ACL 2026][Robotics & Embodied AI][Open X-Embodiment] This paper performs a systematic "linguistic diversity audit" on mainstream VLA training corpora (RT-1, BRIDGE, TacoPlay, Language Table, LIBERO). By quantifying lexical, semantic, and syntactic dimensions, it reveals that VLA data contains **< 2% unique instructions, RT-1 has only 49 unique words in the entire corpus,
+  [ACL 2026][Robotics][VLA Dataset Audit] This paper performs a systematic "linguistic diversity audit" on mainstream VLA training corpora (RT-1, BRIDGE, TacoPlay, Language Table, LIBERO). By quantifying lexical, semantic, and syntactic dimensions, it reveals that VLA data contains **< 2% unique instructions, RT-1 has only 49 unique words in the entire corpus, and negation/conditional sentences account for < 1%**. This "template-based poverty" compared to instruction-tuning cor…
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - Open X-Embodiment
+  - "ACL 2026"
+  - "Robotics"
+  - "VLA Dataset Audit"
+  - "Lexical Diversity"
+  - "Semantic Diversity"
+  - "Syntactic Diversity"
+  - "Open X-Embodiment"
 date: 2026-05-08
-content_hash: 4e765667a586fe1f
+content_hash: e9cea2b0d16c1d39
 ---
+
 # Limited Linguistic Diversity in Embodied AI Datasets
 
 **Conference**: ACL 2026  
@@ -164,11 +169,11 @@ This study is a pure dataset audit/empirical research and does not train models.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Image Quality Assessment for Embodied AI](../../ICLR2026/robotics/image_quality_assessment_for_embodied_ai.md)
 - [\[ICLR 2026\] D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI](../../ICLR2026/robotics/d2e_scaling_vision-action_pretraining_on_desktop_data_for_transfer_to_embodied_a.md)
 - [\[ICLR 2026\] Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI](../../ICLR2026/robotics/grounding_generative_planners_in_verifiable_logic_a_hybrid_architecture_for_trus.md)
 - [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](../../ICLR2026/robotics/cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
 - [\[ICLR 2026\] Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning](../../ICLR2026/robotics/rethinking_policy_diversity_in_ensemble_policy_gradient_in_large-scale_reinforce.md)
-- [\[CVPR 2025\] Magma: A Foundation Model for Multimodal AI Agents](../../CVPR2025/robotics/magma_a_foundation_model_for_multimodal_ai_agents.md)
 
 </div>
 

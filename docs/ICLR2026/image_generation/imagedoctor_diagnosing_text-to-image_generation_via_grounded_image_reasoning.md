@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] ImageDoctor: Diagnosing Text-to-Image Generation via Grounded Image Reasoning
 description: >-
-  [ICLR 2026][Image Generation][GRPO] ImageDoctor upgrades text-to-image (T2I) quality evaluation from "providing a single score" to "clinical diagnosis." Built on a Multimodal Large Language Model (MLLM), it follows a "look-think-predict" workflow to locate defect regions, perform reasoning, and output four-dimensional scores (alignment, aesthetics, plaus
+  [ICLR 2026][Image Generation][Text-to-Image Evaluation] ImageDoctor upgrades text-to-image (T2I) quality evaluation from "providing a single score" to "clinical diagnosis." Built on a Multimodal Large Language Model (MLLM), it follows a "look-think-predict" workflow to locate defect regions, perform reasoning, and output four-dimensional scores (alignment, aesthetics, plausibility, overall) along with pixel-level defect heatmaps. This dense feedback is integrated into DenseFl…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Text-to-Image Evaluation"
+  - "Human Preference Model"
+  - "Multi-dimensional Scoring"
+  - "Defect Heatmap"
+  - "GRPO"
+  - "Dense Reward"
 date: 2026-05-08
-content_hash: cd0c209b1f11b257
+content_hash: 04c9a536334ce5e0
 ---
+
 # ImageDoctor: Diagnosing Text-to-Image Generation via Grounded Image Reasoning
 
 **Conference**: ICLR 2026  
@@ -133,9 +139,9 @@ Cross-dataset generalization (trained on RichHF-18K, zero-shot): GenAI-Bench Ric
 ## Related Papers
 
 - [\[ICLR 2026\] RePrompt: Reasoning-Augmented Reprompting for Text-to-Image Generation via Reinforcement Learning](reprompt_reasoning-augmented_reprompting_for_text-to-image_generation_via_reinfo.md)
+- [\[ICLR 2026\] Interleaving Reasoning for Better Text-to-Image Generation](interleaving_reasoning_for_better_text-to-image_generation.md)
 - [\[ICLR 2026\] MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning](milr_improving_multimodal_image_generation_via_test-time_latent_reasoning.md)
 - [\[ICML 2026\] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation](../../ICML2026/image_generation/occlusionformer_arranging_z-order_for_layout-grounded_image_generation.md)
-- [\[ICLR 2026\] Guidance Matters: Rethinking the Evaluation Pitfall for Text-to-Image Generation](guidance_matters_rethinking_the_evaluation_pitfall_for_text-to-image_generation.md)
 - [\[ICLR 2026\] FLUX-Reason-6M & PRISM-Bench: A Million-Scale Text-to-Image Reasoning Dataset and Comprehensive Benchmark](flux-reason-6m_prism-bench_a_million-scale_text-to-image_reasoning_dataset_and_c.md)
 
 </div>

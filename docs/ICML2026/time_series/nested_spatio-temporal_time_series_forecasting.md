@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Nested Spatio-Temporal Time Series Forecasting
 description: >-
-  [ICML 2026][Time Series][Paper Note] NeST treats "future macro-region trends" as top-down guidance. Combined with semantic regions constructed via spectral clustering and bidirectional cross-scale cross-attention, it achieves comprehensive improvements in accuracy, long-range stability, and near-linear complexity for node-level spatio-temporal forecasting
+  [ICML 2026][Time Series][Spatio-temporal forecasting] NeST treats "future macro-region trends" as top-down guidance. Combined with semantic regions constructed via spectral clustering and bidirectional cross-scale cross-attention, it achieves comprehensive improvements in accuracy, long-range stability, and near-linear complexity for node-level spatio-temporal forecasting on large-scale traffic networks.
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Spatio-temporal forecasting"
+  - "spectral clustering"
+  - "macro guidance"
+  - "cross-scale attention"
+  - "autoregressive rollout"
 date: 2026-05-08
-content_hash: 6a7dc98575330b40
+content_hash: b0648c231b8b9326
 ---
+
 # Nested Spatio-Temporal Time Series Forecasting
 
 **Conference**: ICML 2026  
@@ -135,6 +141,7 @@ Average improvements across three datasets: MAE +4.71%, RMSE +4.41%, MAPE +9.34%
 - **Value**: ⭐⭐⭐⭐ High industrial value due to significant MAPE improvements and $>2\times$ faster training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -142,8 +149,8 @@ Average improvements across three datasets: MAE +4.71%, RMSE +4.41%, MAPE +9.34%
 - [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
 - [\[NeurIPS 2025\] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting](../../NeurIPS2025/time_series/learning_with_calibration_exploring_test-time_computing_of_spatio-temporal_forec.md)
 - [\[ICLR 2026\] ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/astgi_adaptive_spatio-temporal_graph_interactions_for_irregular_multivariate_tim.md)
-- [\[ACL 2026\] STReasoner: Empowering LLMs for Spatio-Temporal Reasoning in Time Series via Spatial-Aware Reinforcement Learning](../../ACL2026/time_series/streasoner_empowering_llms_for_spatio-temporal_reasoning_in_time_series_via_spat.md)
-- [\[ICML 2026\] Ellipsoidal Time Series Forecasting](ellipsoidal_time_series_forecasting.md)
+- [\[ICLR 2026\] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting](../../ICLR2026/time_series/storm_synergistic_cross-scale_spatio-temporal_modeling_for_weather_forecasting.md)
+- [\[ICLR 2026\] A General Spatio-Temporal Backbone with Scalable Contextual Pattern Bank for Urban Continual Forecasting](../../ICLR2026/time_series/a_general_spatio-temporal_backbone_with_scalable_contextual_pattern_bank_for_urb.md)
 
 </div>
 

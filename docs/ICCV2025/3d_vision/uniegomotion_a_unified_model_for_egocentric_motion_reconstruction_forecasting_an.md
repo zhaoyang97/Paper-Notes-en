@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniEgoMotion: A Unified Model for Egocentric Motion Reconstruction, Forecasting, and Generation
 description: >-
-  [ICCV 2025][3D Vision][egocentric motion] This paper proposes UniEgoMotion, the first unified egocentric motion model that achieves 3D human motion reconstruction, forecasting…
+  [ICCV 2025][3D Vision][egocentric motion] This paper proposes UniEgoMotion, the first unified egocentric motion model that achieves 3D human motion reconstruction, forecasting, and generation from an egocentric perspective within a single model, via a conditional motion diffusion framework and a head-centric motion representation. The large-scale EE4D-Motion dataset is also released.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "motion generation"
   - "head-centric representation"
 date: 2026-05-08
-content_hash: a32e84a719d5d62d
+content_hash: f24b65b74b4cd144
 ---
 
 # UniEgoMotion: A Unified Model for Egocentric Motion Reconstruction, Forecasting, and Generation
@@ -150,10 +150,10 @@ UniEgoMotion achieves state-of-the-art performance across all metrics, reducing 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Gaze Beyond the Frame: Forecasting Egocentric 3D Visual Span](../../NeurIPS2025/3d_vision/gaze_beyond_the_frame_forecasting_egocentric_3d_visual_span.md)
+- [\[CVPR 2025\] HaWoR: World-Space Hand Motion Reconstruction from Egocentric Videos](../../CVPR2025/3d_vision/hawor_world-space_hand_motion_reconstruction_from_egocentric_videos.md)
+- [\[CVPR 2025\] A Unified Image-Dense Annotation Generation Model for Underwater Scenes](../../CVPR2025/3d_vision/a_unified_image-dense_annotation_generation_model_for_underwater_scenes.md)
+- [\[CVPR 2025\] Layered Motion Fusion: Lifting Motion Segmentation to 3D in Egocentric Videos](../../CVPR2025/3d_vision/layered_motion_fusion_lifting_motion_segmentation_to_3d_in_egocentric_videos.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
-- [\[ICCV 2025\] RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text](rapverse_coherent_vocals_and_whole-body_motion_generation_from_text.md)
-- [\[ICCV 2025\] Unleashing Vecset Diffusion Model for Fast Shape Generation (FlashVDM)](unleashing_vecset_diffusion_model_for_fast_shape_generation.md)
-- [\[ICCV 2025\] AnyI2V: Animating Any Conditional Image with Motion Control](anyi2v_animating_any_conditional_image_with_motion_control.md)
 
 </div>
 

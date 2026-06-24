@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SMAP: Semantic Route Planning with Map-Grounded Multimodal Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] SMAP feeds user queries, structured POI metadata, and a "north-up map tile marking only candidate POIs" into a multimodal large model for semantic route planning. It utilizes a "generator drafts, validator corrects via map" process to automatically create preference pairs, followed by training with Hallucination-Penali
+  [CVPR 2026][Multimodal VLM][Semantic route planning] SMAP feeds user queries, structured POI metadata, and a "north-up map tile marking only candidate POIs" into a multimodal large model for semantic route planning. It utilizes a "generator drafts, validator corrects via map" process to automatically create preference pairs, followed by training with Hallucination-Penalized DPO (HDPO). This boosts a 32B open-source model to match or exceed GPT-5 in route efficiency…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Semantic route planning"
+  - "multimodal alignment"
+  - "map grounding"
+  - "preference optimization"
+  - "hallucination suppression"
 date: 2026-05-08
-content_hash: fa893671394ce848
+content_hash: ec4c3cadb8746b6e
 ---
+
 # SMAP: Semantic Route Planning with Map-Grounded Multimodal Alignment
 
 **Conference**: CVPR 2026  

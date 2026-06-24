@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Conditional Probability Framework for Compositional Zero-shot Learning
 description: >-
-  [ICCV 2025][LLM Evaluation][conditional probability decomposition] This paper proposes a Conditional Probability Framework (CPF) that decomposes the compositional recognition probability into an object likelihood $p(o|x)…
+  [ICCV 2025][LLM Evaluation][conditional probability decomposition] This paper proposes a Conditional Probability Framework (CPF) that decomposes the compositional recognition probability into an object likelihood $p(o|x)$ and a conditional attribute likelihood $p(a|o,x)$. Two dedicated modules — Text-Enhanced Object learning (TEO) and Object-Guided Attribute learning (OGA) — explicitly model attribute-object dependencies, achieving state-of-the-art performance across three CZ…
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "cross-attention mechanism"
   - "text-enhanced features"
 date: 2026-05-08
-content_hash: 383af3c5960aa979
+content_hash: 434b8c690c26b6ea
 ---
 
 # A Conditional Probability Framework for Compositional Zero-shot Learning
@@ -203,11 +203,11 @@ $$\hat{c} = \arg\max_{c_{i,j} \in \mathcal{C}_{test}} p(c_{i,j}|x) + p(a_i|x, v_
 
 ## Related Papers
 
+- [\[CVPR 2025\] UniGoal: Towards Universal Zero-shot Goal-oriented Navigation](../../CVPR2025/llm_evaluation/unigoal_towards_universal_zero-shot_goal-oriented_navigation.md)
 - [\[NeurIPS 2025\] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection](../../NeurIPS2025/llm_evaluation/benchmarking_large_language_models_for_zero-shot_and_few-shot_phishing_url_detec.md)
+- [\[ACL 2025\] Language Complexity Measurement as a Noisy Zero-Shot Proxy for Evaluating LLM Performance](../../ACL2025/llm_evaluation/language_complexity_measurement_as_a_noisy_zero-shot_proxy_for_evaluating_llm_pe.md)
 - [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](../../ACL2026/llm_evaluation/zero-shot_large_language_models_for_automatic_readability_assessment.md)
 - [\[ICCV 2025\] Few-Shot Pattern Detection via Template Matching and Regression](few-shot_pattern_detection_via_template_matching_and_regression.md)
-- [\[ACL 2026\] The Silent Vote: Improving Zero-Shot LLM Reliability by Aggregating Semantic Neighborhoods](../../ACL2026/llm_evaluation/the_silent_vote_improving_zero-shot_llm_reliability_by_aggregating_semantic_neig.md)
-- [\[ICCV 2025\] Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting](rethinking_few_shot_clip_benchmarks_a_critical_analysis_in_the_inductive_setting.md)
 
 </div>
 

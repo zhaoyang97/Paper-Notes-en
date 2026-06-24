@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] OpenMMReasoner: Pushing the Frontiers in Multimodal Reasoning with an Open and General Recipe
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] OpenMMReasoner provide a **fully transparent and reproducible two-stage recipe** for training open-source multimodal large models into strong reasoning models: starting with an SFT cold start using 874k high-quality distilled data, followed by RL (GSPO) refinement with 74k data. Based on Qwen2.5-VL-7B, it achieves an a
+  [CVPR 2026][VLM Reasoning][Multimodal Reasoning] OpenMMReasoner provide a **fully transparent and reproducible two-stage recipe** for training open-source multimodal large models into strong reasoning models: starting with an SFT cold start using 874k high-quality distilled data, followed by RL (GSPO) refinement with 74k data. Based on Qwen2.5-VL-7B, it achieves an average improvement of 11.6% across nine multimodal reasoning benchmarks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - Data Distillation
-  - GSPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "SFT Cold Start"
+  - "Reinforcement Learning"
+  - "Data Distillation"
+  - "GSPO"
 date: 2026-05-08
-content_hash: 8be0d23cdacc1c5a
+content_hash: 43cdbc4e308f4fd8
 ---
+
 # OpenMMReasoner: Pushing the Frontiers in Multimodal Reasoning with an Open and General Recipe
 
 **Conference**: CVPR 2026  
@@ -133,10 +136,10 @@ The authors emphasize: compared to Qwen2.5-VL-7B-Instruct, OMR-7B achieves an **
 ## Related Papers
 
 - [\[CVPR 2026\] GThinker: Towards General Multimodal Reasoning via Cue-Guided Rethinking](gthinker_towards_general_multimodal_reasoning_via_cue-guided_rethinking.md)
-- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
 - [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
 - [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
-- [\[CVPR 2026\] UI-Lens: Assessing General MLLMs' Potential to Automate UI Display Quality Assurance](ui-lens_assessing_general_mllms_potential_to_automate_ui_display_quality_assuran.md)
+- [\[ICLR 2026\] PuzzleWorld: A Benchmark for Multimodal, Open-Ended Reasoning in Puzzlehunts](../../ICLR2026/vlm_reasoning/puzzleworld_a_benchmark_for_multimodal_open-ended_reasoning_in_puzzlehunts.md)
+- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Text to Talk: Audio-Language Model Needs Non-Autoregressive Joint Training
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] Addressing the fundamental mismatch in end-to-end speech dialogue models that use the same autoregressive objective for both text and audio, TtT unifies Autoregressive (AR) text generation with Non-Autoregressive (NAR) discrete diffusion for audio within a single Transformer. Leveraging the "arbitrary-order AR" propert
+  [ICLR 2026][Audio & Speech][Speech-to-Speech] Addressing the fundamental mismatch in end-to-end speech dialogue models that use the same autoregressive objective for both text and audio, TtT unifies Autoregressive (AR) text generation with Non-Autoregressive (NAR) discrete diffusion for audio within a single Transformer. Leveraging the "arbitrary-order AR" property of absorbing state diffusion, it establishes a unified training objective and introduces three training strategi…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech-to-Speech"
+  - "Audio-Language Model"
+  - "Discrete Diffusion"
+  - "Non-Autoregressive Generation"
+  - "Joint Training"
 date: 2026-05-08
-content_hash: d6ee0b02e82b619d
+content_hash: c5622d379d2377d3
 ---
+
 # From Text to Talk: Audio-Language Model Needs Non-Autoregressive Joint Training
 
 **Conference**: ICLR 2026  
@@ -104,10 +110,18 @@ Each strategy contributes positively. SST has the greatest impact; removing it c
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] SmartDJ: Declarative Audio Editing with Audio Language Model](smartdj_declarative_audio_editing_with_audio_language_model.md)
+- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/audio_speech/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
+- [\[ICLR 2026\] Measuring Audio's Impact on Correctness: Audio-Contribution-Aware Post-Training of Large Audio Language Models](measuring_audios_impact_on_correctness_audio-contribution-aware_post-training_of.md)
+- [\[ICLR 2026\] UALM: Unified Audio Language Model for Understanding, Generation and Reasoning](ualm_unified_audio_language_model_for_understanding_generation_and_reasoning.md)
+- [\[ICLR 2026\] Steering Autoregressive Music Generation with Recursive Feature Machines](steering_autoregressive_music_generation_with_recursive_feature_machines.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] SmartDJ: Declarative Audio Editing with Audio Language Model](smartdj_declarative_audio_editing_with_audio_language_model.md)

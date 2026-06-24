@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Conditional Diffusion Model for Multi-Agent Dynamic Task Decomposition
 description: >-
-  [AAAI 2026][Image Generation][Task Decomposition] This paper proposes CD3T, a two-level hierarchical MARL framework that employs a conditional diffusion model to learn action semantic representations $z_a^i$ (conditioned…
+  [AAAI 2026][Image Generation][Task Decomposition] This paper proposes CD3T, a two-level hierarchical MARL framework that employs a conditional diffusion model to learn action semantic representations $z_a^i$ (conditioned on observations and other agents' actions to predict next observations and rewards), obtains subtask partitions via k-means clustering, and uses a high-level subtask selector combined with a low-level policy operating over a restricted action space. CD3T sign…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Value Decomposition"
   - "CTDE"
 date: 2026-05-08
-content_hash: 83cf9c98a8d3dd15
+content_hash: 8302f30ff91c36ad
 ---
 
 # Conditional Diffusion Model for Multi-Agent Dynamic Task Decomposition
@@ -120,10 +120,10 @@ CD3T is a two-level hierarchical MARL framework: (1) a conditional diffusion mod
 ## Related Papers
 
 - [\[ICML 2026\] Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition](../../ICML2026/image_generation/offline_multi-agent_reinforcement_learning_via_sequential_score_decomposition.md)
-- [\[AAAI 2026\] Virtual Multiplex Staining for Histological Images Using a Marker-wise Conditioned Diffusion Model](virtual_multiplex_staining_for_histological_images_using_a_marker-wise_condition.md)
 - [\[ICML 2026\] Bayesian Tensor Decomposition with Diffusion Model Prior](../../ICML2026/image_generation/bayesian_tensor_decomposition_with_diffusion_model_prior.md)
+- [\[AAAI 2026\] Virtual Multiplex Staining for Histological Images Using a Marker-wise Conditioned Diffusion Model](virtual_multiplex_staining_for_histological_images_using_a_marker-wise_condition.md)
 - [\[AAAI 2026\] Backdoors in Conditional Diffusion: Threats to Responsible Synthetic Data Pipelines](backdoors_in_conditional_diffusion_threats_to_responsible_synthetic_data_pipelin.md)
-- [\[ICLR 2026\] JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation](../../ICLR2026/image_generation/jointdiff_bridging_continuous_and_discrete_in_multi-agent_trajectory_generation.md)
+- [\[CVPR 2026\] Taming Generative Diffusion Model for Task-Oriented Infrared Imaging](../../CVPR2026/image_generation/taming_generative_diffusion_model_for_task-oriented_infrared_imaging.md)
 
 </div>
 

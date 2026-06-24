@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reinforcement Learning for Long-Horizon Multi-Turn Search Agents
 description: >-
-  [NeurIPS 2025 Workshop][Reinforcement Learning][RL agent] This paper demonstrates that a 14B-parameter search agent trained with RL can surpass frontier models on legal document retrieval (85% vs. GPT o3's 81%) through m…
+  [NeurIPS 2025 Workshop][Reinforcement Learning][RL agent] This paper demonstrates that a 14B-parameter search agent trained with RL can surpass frontier models on legal document retrieval (85% vs. GPT o3's 81%) through multi-turn interaction, enabled by a carefully designed segmented reward structure and a sufficiently long interaction horizon.
 tags:
   - "NeurIPS 2025 Workshop"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "tool use"
 date: 2026-05-08
-content_hash: 43f4ec95c8d72b26
+content_hash: 68077a9fb6f93eaf
 ---
 
 # Reinforcement Learning for Long-Horizon Multi-Turn Search Agents
@@ -124,11 +124,11 @@ GRPO (Group Relative Policy Optimization). Base model: Qwen3-14B + LoRA adapter.
 
 ## Related Papers
 
-- [\[AAAI 2026\] Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction](../../AAAI2026/reinforcement_learning/thinker_training_llms_in_hierarchical_thinking_for_deep_search_via_multi-turn_in.md)
+- [\[ICLR 2026\] Information Gain-based Policy Optimization: A Simple and Effective Approach for Multi-Turn Search Agents](../../ICLR2026/reinforcement_learning/information_gain-based_policy_optimization_a_simple_and_effective_approach_for_m.md)
+- [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](../../ICLR2026/reinforcement_learning/rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
 - [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
-- [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](../../ICML2026/reinforcement_learning/long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
-- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](../../ICLR2026/reinforcement_learning/spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
-- [\[ICLR 2026\] Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning](../../ICLR2026/reinforcement_learning/strict_subgoal_execution_reliable_long-horizon_planning_in_hierarchical_reinforc.md)
+- [\[AAAI 2026\] Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction](../../AAAI2026/reinforcement_learning/thinker_training_llms_in_hierarchical_thinking_for_deep_search_via_multi-turn_in.md)
+- [\[ICLR 2026\] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs](../../ICLR2026/reinforcement_learning/tips_turn-level_information-potential_reward_shaping_for_search-augmented_llms.md)
 
 </div>
 

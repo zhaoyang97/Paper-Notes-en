@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learnable Fractional Superlets with a Spectro-Temporal Emotion Encoder for Speech Emotion Recognition
 description: >-
-  [ICLR 2026][Audio & Speech][speech emotion recognition] The classic "super-resolution wavelet" (superlet) is transformed into a fully differentiable, end-to-end learnable time-frequency front-end called LFST. It allows the frequency grid, the number of cycles per band, and the fractional mixture weights to be learned from data. Paired with a lightweight STEE encoder, it ach
+  [ICLR 2026][Audio & Speech][speech emotion recognition] The classic "super-resolution wavelet" (superlet) is transformed into a fully differentiable, end-to-end learnable time-frequency front-end called LFST. It allows the frequency grid, the number of cycles per band, and the fractional mixture weights to be learned from data. Paired with a lightweight STEE encoder, it achieves SOTA results on three speech emotion datasets with minimal parameter counts.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - speech emotion recognition
-  - learnable front-end
-  - fractional superlet
-  - time-frequency analysis
-  - phase congruency
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "speech emotion recognition"
+  - "learnable front-end"
+  - "fractional superlet"
+  - "time-frequency analysis"
+  - "phase congruency"
 date: 2026-05-08
-content_hash: 7661a9cc7d2928ef
+content_hash: 3e3f5b7bd39c8bb0
 ---
+
 # Learnable Fractional Superlets with a Spectro-Temporal Emotion Encoder for Speech Emotion Recognition
 
 **Conference**: ICLR 2026  
@@ -133,9 +134,9 @@ Under capacity-matched conditions (same STEE backbone and hyperparameters), perf
 
 ## Related Papers
 
+- [\[ICLR 2026\] EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning](emotionthinker_prosody-aware_reinforcement_learning_for_explainable_speech_emoti.md)
 - [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
 - [\[AAAI 2026\] Cross-Space Synergy: A Unified Framework for Multimodal Emotion Recognition in Conversation](../../AAAI2026/audio_speech/cross-space_synergy_a_unified_framework_for_multimodal_emotion_recognition_in_co.md)
-- [\[ICLR 2026\] EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning](emotionthinker_prosody-aware_reinforcement_learning_for_explainable_speech_emoti.md)
 - [\[AAAI 2026\] Do LLMs Feel? Teaching Emotion Recognition with Prompts, Retrieval, and Curriculum Learning](../../AAAI2026/audio_speech/do_llms_feel_teaching_emotion_recognition_with_prompts_retrieval_and_curriculum_.md)
 - [\[ICML 2026\] Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech](../../ICML2026/audio_speech/sparse_autoencoders_for_interpretable_emotion_control_in_text-to-speech.md)
 

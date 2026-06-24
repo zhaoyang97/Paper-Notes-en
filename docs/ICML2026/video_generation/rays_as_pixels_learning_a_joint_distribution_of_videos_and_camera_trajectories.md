@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rays as Pixels: Learning A Joint Distribution of Videos and Camera Trajectories
 description: >-
-  [ICML 2026][Video Generation][raxel] Ours packs per-pixel camera rays ("origin + direction") into a 3-channel "raxel" map with the same shape as RGB, allowing a pre-trained video VAE to function directly as a camera encoder. By using Decoupled Self-Cross Attention to jointly denoise raxel and video frames within a single Flow Matching DiT, this work for t
+  [ICML 2026][Video Generation][Video Diffusion] Ours packs per-pixel camera rays ("origin + direction") into a 3-channel "raxel" map with the same shape as RGB, allowing a pre-trained video VAE to function directly as a camera encoder. By using Decoupled Self-Cross Attention to jointly denoise raxel and video frames within a single Flow Matching DiT, this work for the first time supports pose estimation, camera-controllable video generation, and joint "video + trajectory" gene…
 tags:
-  - ICML 2026
-  - Video Generation
-  - raxel
+  - "ICML 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Camera Pose"
+  - "Joint Distribution"
+  - "raxel"
+  - "Decoupled Self-Cross Attention"
 date: 2026-05-08
-content_hash: 0ebcd9ea5796bf73
+content_hash: 3bc8b7c3e77be93d
 ---
+
 # Rays as Pixels: Learning A Joint Distribution of Videos and Camera Trajectories
 
 **Conference**: ICML 2026  
@@ -151,14 +156,17 @@ The cycle process involves sampling a trajectory $r' \sim p(r|z)$ from video, th
 
 <div class="related-papers" markdown="1">
 
-1. **Matrix3D**: "Matrix3D: Generating Comprehensive 3D Scenes from a Single Image," 2024.
-2. **VGGT**: "VGGT: Visual Geometry Grounded Transformer for Relative Pose Estimation," 2024.
-3. **Wan 2.1**: "Wan 2.1: A Comprehensive Family of Open-source Video Generation Models," 2025.
+## Related Papers
+
+- [\[ICML 2026\] EPiC: Efficient Video Camera Control Learning with Precise Anchor-Video Guidance](epic_efficient_video_camera_control_learning_with_precise_anchor-video_guidance.md)
+- [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](../../CVPR2026/video_generation/symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
+- [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](../../ICCV2025/video_generation/disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
+- [\[ICLR 2026\] Beyond Skeletons: Learning Animation Directly from Driving Videos with Same2X Training Strategy](../../ICLR2026/video_generation/beyond_skeletons_learning_animation_directly_from_driving_videos_with_same2x_tra.md)
+- [\[ICML 2026\] Explainable Forensics of Manipulated Segments in Untrimmed Long Videos](explainable_forensics_of_manipulated_segments_in_untrimmed_long_videos.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] EPiC: Efficient Video Camera Control Learning with Precise Anchor-Video Guidance](epic_efficient_video_camera_control_learning_with_precise_anchor-video_guidance.md)

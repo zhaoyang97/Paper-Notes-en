@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] "Are We Done Yet?": A Vision-Based Judge for Autonomous Task Completion of Computer Use Agents
 description: >-
-  [AAAI2026][Multimodal VLM][Computer Use Agent] This paper proposes a VLM-based autonomous task completion evaluation framework that judges whether a Computer Use Agent (CUA) has completed a task using only screenshots an…
+  [AAAI2026][Multimodal VLM][Computer Use Agent] This paper proposes a VLM-based autonomous task completion evaluation framework that judges whether a Computer Use Agent (CUA) has completed a task using only screenshots and task descriptions. Evaluation feedback is passed back to the agent for self-correction, achieving 73% evaluation accuracy and a 27% relative improvement in task success rate on macOS.
 tags:
   - "AAAI2026"
   - "Multimodal VLM"
@@ -11,7 +11,7 @@ tags:
   - "Vision-Language Model"
   - "Autonomous Feedback"
 date: 2026-05-08
-content_hash: 562a44f62833eca4
+content_hash: 420ebddbbf28352d
 ---
 
 # "Are We Done Yet?": A Vision-Based Judge for Autonomous Task Completion of Computer Use Agents
@@ -140,10 +140,10 @@ The following broader implications are noted:
 ## Related Papers
 
 - [\[ICML 2026\] AgentHijack: Benchmarking Computer Use Agent Robustness to Common Environment Corruptions](../../ICML2026/multimodal_vlm/agenthijack_benchmarking_computer_use_agent_robustness_to_common_environment_cor.md)
-- [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](../../CVPR2026/multimodal_vlm/understanding_task_transfer_in_vision-language_models.md)
+- [\[ACL 2025\] Attacking Vision-Language Computer Agents via Pop-ups](../../ACL2025/multimodal_vlm/attacking_vl_agents_popups.md)
 - [\[AAAI 2026\] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](vipact_visual-perception_enhancement_via_specialized_vlm_age.md)
-- [\[CVPR 2026\] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving](../../CVPR2026/multimodal_vlm/prune2drive_a_plug-and-play_framework_for_accelerating_vision-language_models_in.md)
-- [\[CVPR 2026\] TreeTeaming: Autonomous Red-Teaming of Vision-Language Models via Hierarchical Strategy Exploration](../../CVPR2026/multimodal_vlm/treeteaming_autonomous_red-teaming_of_vision-language_models_via_hierarchical_s.md)
+- [\[CVPR 2026\] DuoGen: Towards Autonomous Interleaved Multimodal Generation](../../CVPR2026/multimodal_vlm/duogen_towards_autonomous_interleaved_multimodal_generation.md)
+- [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](../../CVPR2026/multimodal_vlm/understanding_task_transfer_in_vision-language_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adversarial Attention Perturbations for Large Object Detection Transformers
 description: >-
-  [ICCV 2025][Object Detection][Adversarial Attack] This paper proposes AFOG (Attention-Focused Offensive Gradient), an architecture-agnostic adversarial attack method that leverages a learnable attention mechanism to conc…
+  [ICCV 2025][Object Detection][Adversarial Attack] This paper proposes AFOG (Attention-Focused Offensive Gradient), an architecture-agnostic adversarial attack method that leverages a learnable attention mechanism to concentrate perturbations on vulnerable image regions. With only 10 iterations and visually imperceptible perturbations, AFOG reduces the mAP of 12 detection Transformers by up to 37.8×, while also outperforming existing methods on CNN-based detectors.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -11,7 +11,7 @@ tags:
   - "Learnable Attention"
   - "Adversarial Robustness"
 date: 2026-05-08
-content_hash: a4a795c12fa13425
+content_hash: af5f4a24e9cdd351
 ---
 
 # Adversarial Attention Perturbations for Large Object Detection Transformers
@@ -138,7 +138,7 @@ Comparison with existing methods (DETR-R50):
 - [\[ICCV 2025\] LMM-Det: Make Large Multimodal Models Excel in Object Detection](lmm-det_make_large_multimodal_models_excel_in_object_detection.md)
 - [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
 - [\[ICCV 2025\] Large-scale Pre-training for Grounded Video Caption Generation](large-scale_pre-training_for_grounded_video_caption_generation.md)
-- [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](../../AAAI2026/object_detection/countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
+- [\[CVPR 2025\] Efficient Event-Based Object Detection: A Hybrid Neural Network with Spatial and Temporal Attention](../../CVPR2025/object_detection/efficient_event-based_object_detection_a_hybrid_neural_network_with_spatial_and_.md)
 
 </div>
 

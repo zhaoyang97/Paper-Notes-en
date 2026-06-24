@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Waking Up Blind: Cold-Start Optimization of Supervision-Free Agentic Trajectories
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes SPECTRA, a framework that requires no supervised trajectories. By utilizing cold-start Reinforcement Learning (GRPO) and soft-structured multi-round rollout topological constraints, it enables Small Vision-Language Models (SVLMs) to autonomously discover effective tool-calling and visual reasoning b
+  [ACL 2026 Findings][LLM Agent][Small VLM] This paper proposes SPECTRA, a framework that requires no supervised trajectories. By utilizing cold-start Reinforcement Learning (GRPO) and soft-structured multi-round rollout topological constraints, it enables Small Vision-Language Models (SVLMs) to autonomously discover effective tool-calling and visual reasoning behaviors through pure environment interaction. It achieves up to a 5% increase in task accuracy and a 9% improvement i…
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Small VLM"
+  - "Tool Calling"
+  - "Cold-start RL"
+  - "Multi-objective Reward"
+  - "Agent Trajectory Optimization"
 date: 2026-05-08
-content_hash: 3f59c3dc42488566
+content_hash: dec9fa56031ccfbd
 ---
+
 # Waking Up Blind: Cold-Start Optimization of Supervision-Free Agentic Trajectories
 
 **Conference**: ACL 2026 Findings  
@@ -148,11 +154,11 @@ GRPO Objective: $\mathcal{J}_{SPECTRA}(\theta) = \mathbb{E}[\frac{1}{G}\sum_i \f
 
 ## Related Papers
 
-- [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](synthagent_adapting_web_agents_with_synthetic_supervision.md)
+- [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](../../ICLR2026/llm_agent/tusoai_agentic_optimization_for_scientific_methods.md)
 - [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
-- [\[ICLR 2026\] Towards Scalable Oversight via Partitioned Human Supervision](../../ICLR2026/llm_agent/towards_scalable_oversight_via_partitioned_human_supervision.md)
+- [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](synthagent_adapting_web_agents_with_synthetic_supervision.md)
 - [\[ACL 2026\] Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception](your_llm_agents_are_temporally_blind_the_misalignment_between_tool_use_decisions.md)
-- [\[CVPR 2026\] BAMI: Training-Free Bias Mitigation in GUI Grounding](../../CVPR2026/llm_agent/bami_training-free_bias_mitigation_in_gui_grounding.md)
+- [\[ICLR 2026\] Towards Scalable Oversight via Partitioned Human Supervision](../../ICLR2026/llm_agent/towards_scalable_oversight_via_partitioned_human_supervision.md)
 
 </div>
 

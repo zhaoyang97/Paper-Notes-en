@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address the issue in diffusion-based human motion generation where "semantics, style, and history are entangled in a single conditional pathway, leading to long-sequence drift and loss of style control," MoCoDiff uses three lightweight "Injection Modulation Controllers (IMC)" to separately inject text, style, and hi
+  [CVPR 2026][Image Generation][Motion generation] To address the issue in diffusion-based human motion generation where "semantics, style, and history are entangled in a single conditional pathway, leading to long-sequence drift and loss of style control," MoCoDiff uses three lightweight "Injection Modulation Controllers (IMC)" to separately inject text, style, and history into a frozen backbone. By treating history as a "time-varying correction signal that directly rewrites d…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Motion generation"
+  - "stylization"
+  - "autoregressive diffusion"
+  - "multi-condition decoupling"
+  - "long-sequence consistency"
 date: 2026-05-08
-content_hash: dec6d36791985cfa
+content_hash: 648e1f1b76df8159
 ---
+
 # MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation
 
 **Conference**: CVPR 2026  
@@ -134,11 +140,11 @@ Style strength $\lambda$ (CFG) ablation: at $\lambda=0.5$, FID is lowest (1.99) 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
 - [\[CVPR 2026\] PhyCo: Learning Controllable Physical Priors for Generative Motion](phyco_learning_controllable_physical_priors_for_generative_motion.md)
 - [\[CVPR 2026\] ExpPortrait: Expressive Portrait Generation via Personalized Representation](expportrait_expressive_portrait_generation_via_personalized_representation.md)
 - [\[ECCV 2024\] MotionLCM: Real-time Controllable Motion Generation via Latent Consistency Model](../../ECCV2024/image_generation/motionlcm_real-time_controllable_motion_generation_via_latent_consistency_model.md)
 - [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](../../ICCV2025/image_generation/motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
+- [\[CVPR 2026\] ShapeAR: Generating Editable Shape Layers via Autoregressive Diffusion](shapear_generating_editable_shape_layers_via_autoregressive_diffusion.md)
 
 </div>
 

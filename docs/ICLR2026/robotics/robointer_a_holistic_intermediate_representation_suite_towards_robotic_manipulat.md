@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] The RoboInter manipulation suite is proposed as a unified resource for intermediate representation data, benchmarks, and models. It includes RoboInter-Tool (a semi-automatic annotation GUI), RoboInter-Data (dense frame-by-frame annotations for 230,000 episodes across 571 scenes with 10+ types of intermediate representa
+  [ICLR 2026][Robotics][Intermediate Representation] The RoboInter manipulation suite is proposed as a unified resource for intermediate representation data, benchmarks, and models. It includes RoboInter-Tool (a semi-automatic annotation GUI), RoboInter-Data (dense frame-by-frame annotations for 230,000 episodes across 571 scenes with 10+ types of intermediate representations), RoboInter-VQA (a benchmark featuring 29 types of embodied VQA tasks)…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - plan-then-execute
+  - "ICLR 2026"
+  - "Robotics"
+  - "Intermediate Representation"
+  - "VLA"
+  - "Manipulation Dataset"
+  - "Embodied VQA"
+  - "plan-then-execute"
 date: 2026-05-08
-content_hash: 40229125bf09fc40
+content_hash: 0212cd3c7fa0c8d1
 ---
+
 # RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation
 
 **Conference**: ICLR 2026  
@@ -154,6 +158,7 @@ EC-E2E performs best on OOD tasks and shows the smallest performance drop (only 
 RoboInter represents a milestone in robotic intermediate representation research. It provides the largest multi-type intermediate representation dataset to date and establishes a comprehensive experimental platform through its VQA benchmark and VLA framework. The ablation studies clearly reveal a hierarchy of representation value (Trace > Affordance > Object Box > Subtask), offering critical guidance for future embodied AI research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -162,7 +167,7 @@ RoboInter represents a milestone in robotic intermediate representation research
 - [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)](../../CVPR2026/robotics/lada_robotic_manipulation.md)
 - [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
 - [\[ICLR 2026\] Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation](genie_envisioner_a_unified_world_foundation_platform_for_robotic_manipulation.md)
-- [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
+- [\[ICLR 2026\] Scaling up Memory for Robotic Control via Experience Retrieval](scaling_up_memory_for_robotic_control_via_experience_retrieval.md)
 
 </div>
 

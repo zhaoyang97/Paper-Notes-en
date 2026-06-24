@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SemanticVLA: Towards Semantic Reasoning over Action Memorization via Synergistic Explicit Trace and Latent Action Planning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VQ-VAE] SemanticVLA adopts a dual-path design of "explicit trace reasoning + implicit action tokens" to effectively leverage the native spatial grounding capabilities of VLMs for robotic manipulation. It achieves a 97.0% success rate on LIBERO and 65.1% on SimplerEnv WidowX, demonstrating significantly higher stability in inst
+  [CVPR 2026][Robotics][Vision-Language-Action] SemanticVLA adopts a dual-path design of "explicit trace reasoning + implicit action tokens" to effectively leverage the native spatial grounding capabilities of VLMs for robotic manipulation. It achieves a 97.0% success rate on LIBERO and 65.1% on SimplerEnv WidowX, demonstrating significantly higher stability in instruction rewriting, long-horizon, and reasoning-intensive tasks compared to baselines.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VQ-VAE
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language-Action"
+  - "Explicit Trace Reasoning"
+  - "Implicit Action Token"
+  - "VQ-VAE"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 598666b25bf6b75e
+content_hash: fb6d6386de5061f8
 ---
+
 # SemanticVLA: Towards Semantic Reasoning over Action Memorization via Synergistic Explicit Trace and Latent Action Planning
 
 **Conference**: CVPR 2026  
@@ -152,11 +156,11 @@ Real-world verification of latent stability in traces across three generalizatio
 
 ## Related Papers
 
+- [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](../../ICLR2026/robotics/vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 - [\[CVPR 2026\] Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning](fast-thinkact_efficient_vision-language-action_reasoning_via_verbalizable_latent.md)
 - [\[CVPR 2026\] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models](trm-vla_temporal-aware_chain-of-thought_reasoning_and_memorization_for_vision-la.md)
 - [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
 - [\[CVPR 2026\] Motus: A Unified Latent Action World Model](motus_a_unified_latent_action_world_model.md)
-- [\[CVPR 2026\] Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency](learning_a_unified_latent_action_space_from_videos_with_action-centric_cycle_con.md)
 
 </div>
 

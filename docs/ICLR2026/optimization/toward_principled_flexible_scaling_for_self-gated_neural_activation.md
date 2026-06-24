@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Principled Flexible Scaling for Self-Gated Neural Activation
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] From a decision-making (multi-criteria scoring) perspective, this paper reveals the root cause of why self-gated activation functions underperform in layers already modeling fine-grained context (e.g., Transformers): gating function saturation leads to "trivially discriminative gating weights" for important features. T
+  [ICLR 2026][Optimization][Self-gated activation] From a decision-making (multi-criteria scoring) perspective, this paper reveals the root cause of why self-gated activation functions underperform in layers already modeling fine-grained context (e.g., Transformers): gating function saturation leads to "trivially discriminative gating weights" for important features. The authors propose FleS, which uses sign-sensitive channel statistics via a small MLP to generate adaptive "ver…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Self-gated activation"
+  - "non-local tension"
+  - "convergence limitation"
+  - "flexible scaling"
+  - "decision-making perspective"
 date: 2026-05-08
-content_hash: 11921efbc9aba05f
+content_hash: b203c5b9ce1bfc78
 ---
+
 # Toward Principled Flexible Scaling for Self-Gated Neural Activation
 
 **Conference**: ICLR 2026  

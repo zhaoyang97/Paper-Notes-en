@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization
 description: >-
-  [ICLR 2026][Reinforcement Learning][CTDE] This paper introduces distributionally robust reinforcement learning into cooperative multi-agent value factorization and proposes the DrIGM principle. This ensures that the robust greedy actions of individual agents can still be combined into a globally robust optimal joint action. Based on this, the authors implement
+  [ICLR 2026][Reinforcement Learning][Distributionally Robust Reinforcement Learning] This paper introduces distributionally robust reinforcement learning into cooperative multi-agent value factorization and proposes the DrIGM principle. This ensures that the robust greedy actions of individual agents can still be combined into a globally robust optimal joint action. Based on this, the authors implement robust versions of VDN, QMIX, and QTRAN that are more stable under environm…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - CTDE
-  - DrIGM
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Distributionally Robust Reinforcement Learning"
+  - "Multi-agent Cooperation"
+  - "Value Factorization"
+  - "CTDE"
+  - "DrIGM"
 date: 2026-05-08
-content_hash: e004864a1912584c
+content_hash: f1d5af0ec1452dec
 ---
+
 # Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization
 
 **Conference**: ICLR 2026  
@@ -162,15 +166,16 @@ Under the most severe "Climate + season" shift, "Robust TV" improves VDN from 0.
 - Value: ⭐⭐⭐⭐⭐ Highly practical for researchers using standard value factorization who need robustness to environmental shifts.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
-- [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)
 - [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
-- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
+- [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)
+- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 
 </div>
 

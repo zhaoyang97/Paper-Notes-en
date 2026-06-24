@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering
 description: >-
-  [ICLR 2026][Optimization & Theory][activation steering] The authors propose STARS (Stiefel-based Activation Steering for Diverse ReaSoning), a training-free inference-time activation steering method. By jointly optimizing $N$ parallel generation paths' orthogonal steering directions on the Stiefel manifold during each token's decoding to maximize the geometric volume of hid
+  [ICLR 2026][Optimization][activation steering] The authors propose STARS (Stiefel-based Activation Steering for Diverse ReaSoning), a training-free inference-time activation steering method. By jointly optimizing $N$ parallel generation paths' orthogonal steering directions on the Stiefel manifold during each token's decoding to maximize the geometric volume of hidden states, STARS promotes divergent activation trajectories. It consistently outperforms temperature sampling in…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - activation steering
-  - Stiefel manifold
-  - Riemannian optimization
-  - diverse generation
-  - inference-time intervention
+  - "ICLR 2026"
+  - "Optimization"
+  - "activation steering"
+  - "Stiefel manifold"
+  - "Riemannian optimization"
+  - "diverse generation"
+  - "inference-time intervention"
 date: 2026-05-08
-content_hash: 06e1a544d6f7f0f7
+content_hash: c7abe3fc01493d2c
 ---
+
 # Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering
 
 **Conference**: ICLR 2026  
@@ -148,15 +149,15 @@ The practical algorithm (Algorithm 3) collapses multiple iterations into a singl
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] SCRAPL: Scattering Transform with Random Paths for Machine Learning](scrapl_scattering_transform_with_random_paths_for_machine_learning.md)
+- [\[ICLR 2026\] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)
 - [\[ICLR 2026\] Exploring Mode Connectivity in Krylov Subspace for Domain Generalization](exploring_mode_connectivity_in_krylov_subspace_for_domain_generalization.md)
 - [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
 - [\[ICLR 2026\] Activation Function Design Sustains Plasticity in Continual Learning](activation_function_design_sustains_plasticity_in_continual_learning.md)
-- [\[ICLR 2026\] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)
 
 </div>
 

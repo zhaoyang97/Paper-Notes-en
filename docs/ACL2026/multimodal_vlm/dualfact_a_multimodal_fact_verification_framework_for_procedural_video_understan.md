@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding
 description: >-
-  [ACL 2026][Multimodal VLM][Hallucination/Saliency/Omission] The authors decompose the factual evaluation of procedural video captions (e.g., cooking, furniture making) into **dual-layer facts**: conceptual facts (abstract roles like Action/Ingredient/Tool/Location) and contextual facts (observable predicate–argument relations in the video, such as stir(soup, pot)). They constru
+  [ACL 2026 Findings][Multimodal VLM][Procedural video captioning] The authors decompose the factual evaluation of procedural video captions (e.g., cooking, furniture making) into **dual-layer facts**: conceptual facts (abstract roles like Action/Ingredient/Tool/Location) and contextual facts (observable predicate–argument relations in the video, such as stir(soup, pot)). They construct two benchmarks, YouCook3-Fact and CraftBench-Fact, which include annotations for Verifiable…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Hallucination/Saliency/Omission
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Procedural video captioning"
+  - "dual-layer facts"
+  - "implicit argument completion"
+  - "multimodal NLI"
+  - "Hallucination/Saliency/Omission"
 date: 2026-05-08
-content_hash: 521022e20f6e3284
+content_hash: 103bd4b106261a79
 ---
+
 # DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding
 
 **Conference**: ACL 2026 Findings  
@@ -155,10 +160,10 @@ Error Decomposition (Tab.7 YouCook3-Fact):
 ## Related Papers
 
 - [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
-- [\[ACL 2026\] Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding](response-g1_explicit_scene_graph_modeling_for_proactive_streaming_video_understa.md)
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
 - [\[ACL 2025\] SciVer: Evaluating Foundation Models for Multimodal Scientific Claim Verification](../../ACL2025/multimodal_vlm/sciver_evaluating_foundation_models_for_multimodal_scientific_claim_verification.md)
 - [\[ICLR 2026\] Procedural Mistake Detection via Action Effect Modeling](../../ICLR2026/multimodal_vlm/procedural_mistake_detection_via_action_effect_modeling.md)
+- [\[ACL 2026\] TRACE: Evidence Localization-based Multi-video Event Understanding and Claim Generation](trace_evidence_grounding-guided_multi-video_event_understanding_and_claim_genera.md)
 
 </div>
 

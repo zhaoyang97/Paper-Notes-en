@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ground What You See: Hallucination-Resistant MLLMs via Caption Feedback, Diversity-Aware Sampling, and Conflict Regularization
 description: >-
-  [AAAI2026][Hallucination Detection][MLLM hallucination] This paper identifies three root causes of hallucination in RL-based MLLM training—visual misinterpretation, limited exploration diversity…
+  [AAAI2026][Hallucination Detection][MLLM hallucination] This paper identifies three root causes of hallucination in RL-based MLLM training—visual misinterpretation, limited exploration diversity, and sample conflict—and addresses each with Caption Reward, reward-variance-guided sample selection, and NTK-similarity-based InfoNCE regularization, achieving significant hallucination reduction across multiple benchmarks.
 tags:
   - "AAAI2026"
   - "Hallucination Detection"
@@ -13,7 +13,7 @@ tags:
   - "NTK similarity"
   - "InfoNCE"
 date: 2026-05-08
-content_hash: 02d4fbd3ef9e26c5
+content_hash: cc08b2e6cf3460aa
 ---
 
 # Ground What You See: Hallucination-Resistant MLLMs via Caption Feedback, Diversity-Aware Sampling, and Conflict Regularization
@@ -161,10 +161,10 @@ The key distinction of this work lies in **simultaneously** addressing hallucina
 ## Related Papers
 
 - [\[ICML 2026\] TAG: Tangential Amplifying Guidance for Hallucination-Resistant Sampling](../../ICML2026/hallucination/tag_tangential_amplifying_guidance_for_hallucination-resistant_sampling.md)
-- [\[CVPR 2026\] FINER: MLLMs Hallucinate under Fine-grained Negative Queries](../../CVPR2026/hallucination/finer_mllms_hallucinate_under_fine-grained_negative_queries.md)
+- [\[ICLR 2026\] Seeing What's Wrong: A Trajectory-Guided Approach to Caption Error Detection](../../ICLR2026/hallucination/seeing_whats_wrong_a_trajectory-guided_approach_to_caption_error_detection.md)
 - [\[ICML 2026\] Building Reliable Long-Form Generation via Hallucination Rejection Sampling](../../ICML2026/hallucination/building_reliable_long-form_generation_via_hallucination_rejection_sampling.md)
-- [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](../../CVPR2026/hallucination/tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
-- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/hallucination/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
+- [\[CVPR 2026\] COPO: Causal-Oriented Policy Optimization for Hallucinations of MLLMs](../../CVPR2026/hallucination/copo_causal-oriented_policy_optimization_for_hallucinations_of_mllms.md)
+- [\[ICLR 2026\] BARREL: Boundary-Aware Reasoning for Factual and Reliable LRMs](../../ICLR2026/hallucination/barrel_boundary-aware_reasoning_for_factual_and_reliable_lrms.md)
 
 </div>
 

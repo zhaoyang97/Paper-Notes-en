@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] This paper identifies that LVLM hallucinations originate from "insufficient attention + forgetting during generation" regarding correct visual evidence. Observing a significant Inter-Layer Visual Attention Discrepancy (ILVAD) for visual evidence, the authors propose a train-free/plug-and-play method: constructing a vis
+  [ICML 2026][Hallucination Detection][Hallucination Mitigation] This paper identifies that LVLM hallucinations originate from "insufficient attention + forgetting during generation" regarding correct visual evidence. Observing a significant Inter-Layer Visual Attention Discrepancy (ILVAD) for visual evidence, the authors propose a train-free/plug-and-play method: constructing a visual evidence saliency map via inter-layer differentiation, then continuously weighting visual evi…
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Hallucination Mitigation"
+  - "Visual Attention"
+  - "Inter-Layer Discrepancy"
+  - "Saliency Map"
+  - "Train-free"
 date: 2026-05-08
-content_hash: 6c654a5b8367edd3
+content_hash: 97c50fe4b1672191
 ---
+
 # Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy
 
 **Conference**: ICML 2026  
@@ -119,8 +125,20 @@ Compared to greedy decoding, LLaVA-1.5-7B shows a 31.6% reduction in CHAIR$_S$. 
 - **Value**: ⭐⭐⭐⭐ The train-free and low-overhead nature makes it highly attractive for deployment, and the inter-layer consistency perspective is insightful for explainability research.
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
+- [\[ICLR 2026\] Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow](../../ICLR2026/hallucination/visual_multi-agent_system_mitigating_hallucination_snowballing_via_visual_flow.md)
+- [\[AAAI 2026\] Listen Like a Teacher: Mitigating Whisper Hallucinations using Adaptive Layer Attention and Knowledge Distillation](../../AAAI2026/hallucination/listen_like_a_teacher_mitigating_whisper_hallucinations_using_adaptive_layer_att.md)
+- [\[ICML 2026\] Automatic Layer Selection for Hallucination Detection](automatic_layer_selection_for_hallucination_detection.md)
+- [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] To address the unrealistic assumption in Exemplar-Free Class-Incremental Learning (EFCIL) that "semantic distribution and drift are uniform," this paper proposes a Mixture-of-Experts (MoE) estimator (modeling local semantic shift) and a Low-Rank (LoR) estimator (modeling global semantic shift) for decoupled compensatio
+  [CVPR 2026][Self-Supervised Learning][Exemplar-Free Class-Incremental Learning] To address the unrealistic assumption in Exemplar-Free Class-Incremental Learning (EFCIL) that "semantic distribution and drift are uniform," this paper proposes a Mixture-of-Experts (MoE) estimator (modeling local semantic shift) and a Low-Rank (LoR) estimator (modeling global semantic shift) for decoupled compensation. Both estimators are updated via closed-form solutions within a few iterations…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Exemplar-Free Class-Incremental Learning"
+  - "Drift Compensation"
+  - "Semantic Shift"
+  - "Mixture of Experts"
+  - "Low-Rank Estimation"
 date: 2026-05-08
-content_hash: b154d264acc28017
+content_hash: 75e0512f8eece724
 ---
+
 # Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning
 
 **Conference**: CVPR 2026  
@@ -153,7 +159,7 @@ Components verified on TinyImageNet (20 tasks):
 - [\[CVPR 2026\] DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning](dgs_dual_gradient_and_semantic-shift_guided_low-rank_adaptation_for_class_increm.md)
 - [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
 - [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
-- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
+- [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
 - [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
 
 </div>

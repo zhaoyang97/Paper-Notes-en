@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact
 description: >-
-  [ICLR 2026][Image Generation][masked diffusion] This paper derives the exact effects of CFG on 1D/2D masked diffusion toy models that allow for analytical solutions. It discovers that the partition function $Z_w$ in existing discrete CFG is erroneously coupled into the jump rates, leading to premature unmasking and quality degradation. The authors propose a "column
+  [ICLR 2026][Image Generation][masked diffusion] This paper derives the exact effects of CFG on 1D/2D masked diffusion toy models that allow for analytical solutions. It discovers that the partition function $Z_w$ in existing discrete CFG is erroneously coupled into the jump rates, leading to premature unmasking and quality degradation. The authors propose a "column normalization" fix (one line of code) and theoretically demonstrate that an increasing guidance schedule ("weak…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - masked diffusion
-  - classifier-free guidance
-  - guidance schedule
-  - column normalization
-  - discrete diffusion
+  - "ICLR 2026"
+  - "Image Generation"
+  - "masked diffusion"
+  - "classifier-free guidance"
+  - "guidance schedule"
+  - "column normalization"
+  - "discrete diffusion"
 date: 2026-05-08
-content_hash: 3a28d684bdb71661
+content_hash: 7d90616e33f610e4
 ---
+
 # Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact
 
 **Conference**: ICLR 2026  
@@ -114,15 +115,16 @@ graph LR
 > **Note**: The greatest takeaway is the research paradigm of "deconstructing black-box tricks using the simplest solvable models"—a strategy worth applying to any empirically tuned generative technique.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
 - [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
-- [\[CVPR 2026\] C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis](../../CVPR2026/image_generation/c2fg_control_classifier-free_guidance_via_score_discrepancy_analysis.md)
+- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
+- [\[AAAI 2026\] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective](../../AAAI2026/image_generation/studying_classifier-free_guidance_from_a_classifier-centric_perspective.md)
+- [\[ICLR 2026\] Dynamic Classifier-Free Diffusion Guidance via Online Feedback](dynamic_classifier-free_diffusion_guidance_via_online_feedback.md)
 - [\[CVPR 2026\] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](../../CVPR2026/image_generation/cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)
-- [\[ICLR 2026\] What Exactly Does Guidance Do in Masked Discrete Diffusion Models](what_exactly_does_guidance_do_in_masked_discrete_diffusion_models.md)
 
 </div>
 

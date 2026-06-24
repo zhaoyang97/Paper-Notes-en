@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tracking Drift: Variation-Aware Entropy Scheduling for Non-Stationary Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] AES projects the exploration intensity scheduling problem of maximum entropy RL into the dynamic regret framework of Online Convex Optimization (OCO), deriving a hard theoretical result that "entropy weight should be proportional to the square root of the environment drift magnitude." By using TD-error quantiles as an
+  [ICML 2026][Reinforcement Learning][Non-Stationary Reinforcement Learning] AES projects the exploration intensity scheduling problem of maximum entropy RL into the dynamic regret framework of Online Convex Optimization (OCO), deriving a hard theoretical result that "entropy weight should be proportional to the square root of the environment drift magnitude." By using TD-error quantiles as an observable drift proxy, it achieves a fully online, algorithm-agnostic entropy schedu…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Non-Stationary Reinforcement Learning"
+  - "Entropy Scheduling"
+  - "Variation Budget"
+  - "Exploration-Exploitation Tradeoff"
+  - "Adaptive"
 date: 2026-05-08
-content_hash: 475107ac1435f0b2
+content_hash: 568dddc4a35c9fa8
 ---
+
 # Tracking Drift: Variation-Aware Entropy Scheduling for Non-Stationary Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -148,11 +154,11 @@ Catastrophic recovery time is defined as the percentage of total environment int
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](../../NeurIPS2025/reinforcement_learning/forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
+- [\[ICLR 2026\] Wavelet Predictive Representations for Non-Stationary Reinforcement Learning](../../ICLR2026/reinforcement_learning/wavelet_predictive_representations_for_non-stationary_reinforcement_learning.md)
 - [\[ICML 2026\] Space-sampled Value Decay: Forgetting Mechanisms for Non-stationary Deep Reinforcement Learning](space-sampled_value_decay_forgetting_mechanisms_for_non-stationary_deep_reinforc.md)
+- [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](../../NeurIPS2025/reinforcement_learning/forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
 - [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](../../NeurIPS2025/reinforcement_learning/solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
 - [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
-- [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prototype Transformer: Towards Language Model Architectures Interpretable by Design
 description: >-
-  [ICML 2026][Interpretability][Paper Note] ProtoT replaces the $O(N^2)$ self-attention in Transformers with linear communication channels driven by $R$ learnable "prototype vectors" (composed of write/read gates + time-discounted prefix mean). This forces each prototype to automatically bind to a namable concept (e.g., "woman," "COVID," "New Zealand") during tr
+  [ICML 2026][Interpretability][Prototype Networks] ProtoT replaces the $O(N^2)$ self-attention in Transformers with linear communication channels driven by $R$ learnable "prototype vectors" (composed of write/read gates + time-discounted prefix mean). This forces each prototype to automatically bind to a namable concept (e.g., "woman," "COVID," "New Zealand") during training, enabling "surgical" concept-level editing of model behavior while achieving text generation Elo scores…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Prototype Networks"
+  - "Autoregressive LM"
+  - "Linear Attention Alternative"
+  - "Concept Disentanglement"
+  - "Behavioral Editing"
 date: 2026-05-08
-content_hash: ec2e03ae6a4554df
+content_hash: 813310811901a95a
 ---
+
 # Prototype Transformer: Towards Language Model Architectures Interpretable by Design
 
 **Conference**: ICML 2026  
@@ -144,6 +150,7 @@ Data: FineWeb-Edu subset, 250M tokens (default 18k documents × 10 epochs; large
 - Value: ⭐⭐⭐⭐⭐ Provides a scalable, editable template for "interpretable by design" architectures, directly benefiting alignment and safety research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -151,8 +158,8 @@ Data: FineWeb-Edu subset, 250M tokens (default 18k documents × 10 epochs; large
 - [\[ACL 2026\] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](../../ACL2026/interpretability/towards_intrinsic_interpretability_of_large_language_modelsa_survey_of_design_pr.md)
 - [\[ICML 2026\] DLLM-JEPA: Joint Embedding Predictive Architectures for Masked Diffusion Language Models](dllm-jepa_joint_embedding_predictive_architectures_for_masked_diffusion_language.md)
 - [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](../../CVPR2026/interpretability/prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
+- [\[ICML 2026\] ShaplEIG: Bayesian Experimental Design for Shapley Value Estimation](shapleig_bayesian_experimental_design_for_shapley_value_estimation.md)
 - [\[ICML 2026\] Discovering Implicit Large Language Model Alignment Objectives](discovering_implicit_large_language_model_alignment_objectives.md)
-- [\[ICML 2026\] A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents](a_behavioural_and_representational_evaluation_of_goal-directedness_in_language_m.md)
 
 </div>
 

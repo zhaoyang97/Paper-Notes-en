@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Closed-Loop Transfer for Weakly-supervised Affordance Grounding
 description: >-
-  [ICCV 2025][Image Restoration][weakly-supervised affordance grounding] This paper proposes LoopTrans, a closed-loop knowledge transfer framework that unifies exocentric and egocentric image activation via a shared CAM mo…
+  [ICCV 2025][Image Restoration][weakly-supervised affordance grounding] This paper proposes LoopTrans, a closed-loop knowledge transfer framework that unifies exocentric and egocentric image activation via a shared CAM module, refines coarse activations into precise localizations using pixel-level pseudo-masks, and feeds egocentric localization results back to enhance exocentric knowledge extraction through denoising distillation, achieving state-of-the-art performance across…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "denoising distillation"
   - "exocentric-egocentric transfer"
 date: 2026-05-08
-content_hash: 55bb794517c90a5c
+content_hash: 41645b7a51e4ec31
 ---
 
 # Closed-Loop Transfer for Weakly-supervised Affordance Grounding
@@ -174,10 +174,10 @@ Module ablation on AGD20K-Seen:
 ## Related Papers
 
 - [\[ICCV 2025\] Blind2Sound: Self-Supervised Image Denoising without Residual Noise](blind2sound_self-supervised_image_denoising_without_residual_noise.md)
-- [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](../../CVPR2026/image_restoration/selfhvd_self-supervised_handheld_video_deblurring.md)
+- [\[CVPR 2026\] Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective](../../CVPR2026/image_restoration/rethinking_knowledge_transfer_in_image_quality_assessment_a_perceptual_preferenc.md)
+- [\[CVPR 2025\] Rotation-Equivariant Self-Supervised Method in Image Denoising](../../CVPR2025/image_restoration/rotation-equivariant_self-supervised_method_in_image_denoising.md)
 - [\[NeurIPS 2025\] MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes](../../NeurIPS2025/image_restoration/moe-gyro_self-supervised_over-range_reconstruction_and_denoising_for_mems_gyrosc.md)
-- [\[ICML 2026\] Semi-Supervised Neural Super-Resolution for Mesh-Based Simulations](../../ICML2026/image_restoration/semi-supervised_neural_super-resolution_for_mesh-based_simulations.md)
-- [\[CVPR 2026\] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising](../../CVPR2026/image_restoration/tm-bsn_triangular-masked_blind-spot_network_for_real-world_self-supervised_image.md)
+- [\[CVPR 2025\] Generalized Recorrupted-to-Recorrupted: Self-Supervised Learning Beyond Gaussian Noise](../../CVPR2025/image_restoration/generalized_recorrupted-to-recorrupted_self-supervised_learning_beyond_gaussian_.md)
 
 </div>
 

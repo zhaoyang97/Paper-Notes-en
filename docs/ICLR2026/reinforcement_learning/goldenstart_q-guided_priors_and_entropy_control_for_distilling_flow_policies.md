@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] GoldenStart: Q-Guided Priors and Entropy Control for Distilling Flow Policies
 description: >-
-  [ICLR 2026][Reinforcement Learning][flow-matching policy] GoldenStart (GS-flow) enhances single-step distilled flow-matching policies by implementing two mechanisms: relocating the generated "starting noise" to high-value regions ("Golden Start") via a Q-guided conditional VAE, and transforming the deterministic actor into a controllable stochastic distribution using entropy
+  [ICLR 2026][Reinforcement Learning][flow-matching policy] GoldenStart (GS-flow) enhances single-step distilled flow-matching policies by implementing two mechanisms: relocating the generated "starting noise" to high-value regions ("Golden Start") via a Q-guided conditional VAE, and transforming the deterministic actor into a controllable stochastic distribution using entropy regularization. This addresses the challenges of "precise exploitation" and "online exploration" while…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - flow-matching policy
-  - policy distillation
-  - offline-to-online RL
-  - Q-guided prior
-  - entropy regularization
-  - conditional VAE
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "flow-matching policy"
+  - "policy distillation"
+  - "offline-to-online RL"
+  - "Q-guided prior"
+  - "entropy regularization"
+  - "conditional VAE"
 date: 2026-05-08
-content_hash: 1789288bde397d11
+content_hash: da095cedcde17222
 ---
+
 # GoldenStart: Q-Guided Priors and Entropy Control for Distilling Flow Policies
 
 **Conference**: ICLR 2026  
@@ -129,9 +130,9 @@ In Puzzle-4x4, a recognized hard-exploration task, GS-flow improved from 17% to 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Entropy Regularizing Activation: Boosting Continuous Control, Large Language Models, and Image Classification with Activation as Entropy Constraints](entropy_regularizing_activation_boosting_continuous_control_large_language_model.md)
 - [\[ICLR 2026\] Regret-Guided Search Control for Efficient Learning in AlphaZero](regret-guided_search_control_for_efficient_learning_in_alphazero.md)
 - [\[ICLR 2026\] Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies](multimodal_llm-assisted_evolutionary_search_for_programmatic_control_policies.md)
-- [\[ICLR 2026\] Entropy Regularizing Activation: Boosting Continuous Control, Large Language Models, and Image Classification with Activation as Entropy Constraints](entropy_regularizing_activation_boosting_continuous_control_large_language_model.md)
 - [\[ICML 2026\] Noise-Guided Transport: Imitation Learning from Random Priors](../../ICML2026/reinforcement_learning/noise-guided_transport_for_imitation_learning.md)
 - [\[ICLR 2026\] Safe Exploration via Policy Priors](safe_exploration_via_policy_priors.md)
 

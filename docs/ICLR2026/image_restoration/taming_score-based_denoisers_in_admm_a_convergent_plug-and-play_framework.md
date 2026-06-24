@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework
 description: >-
-  [ICLR 2026][Image Restoration][ADMM] This paper proposes the ADMM-PnP + AC-DC triple-stage denoiser. It employs "Auto-Correction (adding noise) + Directional Correction (Langevin-based)" to pull ADMM iterates back to the noise manifold where the score function was trained, before performing score-based denoising. This stabilizes the embedding of diffusion
+  [ICLR 2026][Image Restoration][Plug-and-Play] This paper proposes the ADMM-PnP + AC-DC triple-stage denoiser. It employs "Auto-Correction (adding noise) + Directional Correction (Langevin-based)" to pull ADMM iterates back to the noise manifold where the score function was trained, before performing score-based denoising. This stabilizes the embedding of diffusion priors into ADMM with dual variables and provides the first fixed-point convergence proof for this combination…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - ADMM
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Plug-and-Play"
+  - "ADMM"
+  - "score-based denoising"
+  - "manifold mismatch"
+  - "convergence analysis"
 date: 2026-05-08
-content_hash: 9e1d5dfaaa86d4b5
+content_hash: 59ca7248717827a6
 ---
+
 # Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework
 
 **Conference**: ICLR 2026  
@@ -138,8 +143,8 @@ On FFHQ and ImageNet (256×256), for tasks including super-resolution, deblurrin
 - [\[ICLR 2026\] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](adaptive_moments_are_surprisingly_effective_for_plug-and-play_diffusion_sampling.md)
 - [\[CVPR 2026\] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems](../../CVPR2026/image_restoration/pnp-cm_consistency_models_as_plug-and-play_priors_for_inverse_problems.md)
 - [\[ECCV 2024\] BrushNet: A Plug-and-Play Image Inpainting Model with Decomposed Dual-Branch Diffusion](../../ECCV2024/image_restoration/brushnet_a_plug-and-play_image_inpainting_model_with_decomposed_dual-branch_diff.md)
-- [\[NeurIPS 2025\] Learning Cocoercive Conservative Denoisers via Helmholtz Decomposition for Poisson Inverse Problems](../../NeurIPS2025/image_restoration/learning_cocoercive_conservative_denoisers_via_helmholtz_decomposition_for_poiss.md)
-- [\[ICLR 2026\] FAST-DIPS: Adjoint-Free Analytic Steps and Hard-Constrained Likelihood Correction for Diffusion-Prior Inverse Problems](fastdips_adjointfree_analytic_steps_and_hardconstrained_likelihood_correction_fo.md)
+- [\[ICLR 2026\] Taming Hierarchical Image Coding Optimization: A Spectral Regularization Perspective](taming_hierarchical_image_coding_optimization_a_spectral_regularization_perspect.md)
+- [\[NeurIPS 2025\] MAP Estimation with Denoisers: Convergence Rates and Guarantees](../../NeurIPS2025/image_restoration/map_estimation_with_denoisers_convergence_rates_and_guarantees.md)
 
 </div>
 

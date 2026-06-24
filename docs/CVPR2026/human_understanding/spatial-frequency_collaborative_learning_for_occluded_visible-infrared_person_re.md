@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Aiming at Occluded Visible-Infrared Person Re-Identification (Occluded VI-ReID), this paper proposes the SFCL framework: using FFT to decompose features into amplitude (encoding modality appearance) and phase (preserving identity structure). It aligns modalities in the frequency domain using Optimal Transport, injects
+  [CVPR 2026][Human Understanding][Visible-Infrared ReID] Aiming at Occluded Visible-Infrared Person Re-Identification (Occluded VI-ReID), this paper proposes the SFCL framework: using FFT to decompose features into amplitude (encoding modality appearance) and phase (preserving identity structure). It aligns modalities in the frequency domain using Optimal Transport, injects frequency structural cues back into spatial features, and employs a frequency-contrastive and semantic-c…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Visible-Infrared ReID"
+  - "Occlusion"
+  - "Frequency Domain Learning"
+  - "Amplitude-Phase Decomposition"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: 18fbe6676c93aa0b
+content_hash: 7c82811663841a03
 ---
+
 # Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification
 
 **Conference**: CVPR 2026  

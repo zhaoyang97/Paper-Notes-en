@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] The Tutor-Pupil Augmentation: Enhancing Learning and Interpretability via Input Corrections
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes the Tutor-Pupil augmentation framework: maintaining a fixed, interpretable "Pupil" model for the primary task, while training a flexible "Tutor" model to apply a minimal perturbation $\epsilon$ in the **input space** to "correct" samples the Pupil fails on. Since corrections occur at the input level
+  [ICLR 2026][Interpretability][Model Augmentation] This paper proposes the Tutor-Pupil augmentation framework: maintaining a fixed, interpretable "Pupil" model for the primary task, while training a flexible "Tutor" model to apply a minimal perturbation $\epsilon$ in the **input space** to "correct" samples the Pupil fails on. Since corrections occur at the input level and are constrained to be minimal, these corrections serve as a diagnostic map that reveals where and why the…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Model Augmentation"
+  - "Input Correction"
+  - "Residual Modeling"
+  - "Diagnostic Tools"
 date: 2026-05-08
-content_hash: 708d034237d0a70c
+content_hash: 20dc433084302967
 ---
+
 # The Tutor-Pupil Augmentation: Enhancing Learning and Interpretability via Input Corrections
 
 **Conference**: ICLR 2026  

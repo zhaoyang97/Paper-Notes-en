@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Random Wins All: Rethinking Grouping Strategies for Vision Tokens
 description: >-
-  [CVPR 2026][Object Detection][Vision Transformer] Ours proposes a minimalist random grouping strategy to replace various carefully designed token grouping methods in Vision Transformers. It achieves almost comprehensive superiority over all baselines across image classification, object detection, semantic segmentation, point cloud segmentation, and VLMs. The success i
+  [CVPR 2026][3D Vision][Vision Transformer] Ours proposes a minimalist random grouping strategy to replace various carefully designed token grouping methods in Vision Transformers. It achieves almost comprehensive superiority over all baselines across image classification, object detection, semantic segmentation, point cloud segmentation, and VLMs. The success is explained through four dimensions: positional information, head feature diversity, global receptive field…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Vision Transformer
-  - Attention
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Vision Transformer"
+  - "Token Grouping"
+  - "Random Grouping"
+  - "Attention Mechanism"
+  - "Efficiency Optimization"
 date: 2026-05-08
-content_hash: 7d1cbcead78ee873
+content_hash: 006ce9a207804f6b
 ---
+
 # Random Wins All: Rethinking Grouping Strategies for Vision Tokens
 
 **Conference**: CVPR 2026  
@@ -184,11 +188,11 @@ To demonstrate universality, backbones are classified into three types. For Plai
 
 ## Related Papers
 
-- [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
-- [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
-- [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
-- [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/object_detection/rethinking_evaluation_of_infrared_small_target_detection.md)
-- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
+- [\[CVPR 2026\] Scenes as Tokens: Multi-Scale Normal Distributions Transform Tokenizer for General 3D Vision-Language Understanding](scenes_as_tokens_multi-scale_normal_distributions_transform_tokenizer_for_genera.md)
+- [\[CVPR 2026\] Simple but Effective Triplet-Based Compression Strategies for Compact Visual Localization](simple_but_effective_triplet-based_compression_strategies_for_compact_visual_loc.md)
+- [\[CVPR 2026\] AVGGT: Rethinking Global Attention for Accelerating VGGT](avggt_rethinking_global_attention_for_accelerating_vggt.md)
+- [\[CVPR 2026\] Fast Markov Random Field Optimisation for Topologically Noisy 3D Shape Matching](fast_markov_random_field_optimisation_for_topologically_noisy_3d_shape_matching.md)
+- [\[CVPR 2026\] TokenGS: Decoupling 3D Gaussian Prediction from Pixels with Learnable Tokens](tokengs_decoupling_3d_gaussian_prediction_from_pixels_with_learnable_tokens.md)
 
 </div>
 

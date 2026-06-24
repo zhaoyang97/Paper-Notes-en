@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] TabMGP: Martingale Posterior with TabPFN
 description: >-
-  [ICML 2026][Others][TabPFN] This paper treats TabPFN, a pre-trained tabular Transformer, directly as a prediction rule for Martingale Posteriors (MGP). Through in-context forward rolling sampling, it obtains credible sets for parameters $\theta$ under arbitrary loss functions. This approach avoids manual design of priors/likelihoods and hyperpara
+  [ICML 2026][Martingale Posterior] This paper treats TabPFN, a pre-trained tabular Transformer, directly as a prediction rule for Martingale Posteriors (MGP). Through in-context forward rolling sampling, it obtains credible sets for parameters $\theta$ under arbitrary loss functions. This approach avoids manual design of priors/likelihoods and hyperparameter tuning, outperforming manual MGP and classical Bayes in both coverage and credible set area across 30 real/synthetic sce…
 tags:
-  - ICML 2026
-  - Others
-  - TabPFN
+  - "ICML 2026"
+  - "Martingale Posterior"
+  - "TabPFN"
+  - "Tabular Foundation Models"
+  - "Generalized Bayes"
+  - "Credible Sets"
 date: 2026-05-08
-content_hash: 28300ce087a922d9
+content_hash: abf0872ac0befa76
 ---
+
 # TabMGP: Martingale Posterior with TabPFN
 
 **Conference**: ICML 2026  
@@ -141,10 +145,10 @@ Evaluation across 30 setups (11 synthetic + 19 real OpenML/UCI). Target coverage
 ## Related Papers
 
 - [\[ICML 2026\] Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation](amortized_simulation-based_inference_in_generalized_bayes_via_neural_posterior_e.md)
+- [\[ICLR 2026\] Using maximal information auxiliary variables to improve synthetic data generation based on TabPFN foundation models](../../ICLR2026/others/using_maximal_information_auxiliary_variables_to_improve_synthetic_data_generati.md)
+- [\[ICML 2026\] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data](gotabpfn_from_feature_ordering_to_compact_tokenization_for_tabular_foundation_mo.md)
 - [\[ICML 2026\] Position: Age Estimation Models Do Not Process Biometric Data](position_age_estimation_models_do_not_process_biometric_data.md)
 - [\[ICML 2026\] Less Data, Faster Training: Repeating Smaller Datasets Speeds Up Learning via Sampling Biases](less_data_faster_training_repeating_smaller_datasets_speeds_up_learning_via_samp.md)
-- [\[ICML 2026\] Adaptive Multi-Round Allocation with Stochastic Arrivals](adaptive_multi-round_allocation_with_stochastic_arrivals.md)
-- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Real2Sim2Real: RetinalDepth-64K for Depth Estimation in Posterior Segment Ophthalmic Surgery
 description: >-
-  [CVPR 2026][Medical Imaging][Sim2Real] To address the lack of ground truth depth data in fundus (posterior segment) microsurgery, the authors developed a Real2Sim2Real pipeline using Blender to construct RetinalDepth, the first synthetic depth dataset for posterior ophthalmic surgery (44,800 stereo pairs, 896 scenes, with pixel-level depth/normals/instrumen
+  [CVPR 2026][Medical Imaging][Ophthalmic Surgery] To address the lack of ground truth depth data in fundus (posterior segment) microsurgery, the authors developed a Real2Sim2Real pipeline using Blender to construct RetinalDepth, the first synthetic depth dataset for posterior ophthalmic surgery (44,800 stereo pairs, 896 scenes, with pixel-level depth/normals/instrument segmentation/camera parameters). They also proposed the Temporal Depth Variance (TDV) metric to measure inter…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Sim2Real
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Ophthalmic Surgery"
+  - "Depth Estimation"
+  - "Synthetic Data"
+  - "Sim2Real"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: 5e4524e3ef1e95e0
+content_hash: 62e8815efc18c4be
 ---
+
 # Real2Sim2Real: RetinalDepth-64K for Depth Estimation in Posterior Segment Ophthalmic Surgery
 
 **Conference**: CVPR 2026  

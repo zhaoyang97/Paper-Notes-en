@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents
 description: >-
-  [ACL 2026][Code Intelligence][SWE-bench] Ours proposes EET—an experience-driven early termination method that identifies invalid iterations and terminates them early during the patch generation and selection stages. It reduces the total cost of SE Agents by 19%-55% (average 32%) while incurring almost no loss in task performance (maximum 0.2%).
+  [ACL 2026 Findings][Code Intelligence][Software Engineering Agents] Ours proposes EET—an experience-driven early termination method that identifies invalid iterations and terminates them early during the patch generation and selection stages. It reduces the total cost of SE Agents by 19%-55% (average 32%) while incurring almost no loss in task performance (maximum 0.2%).
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - SWE-bench
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Software Engineering Agents"
+  - "Cost Optimization"
+  - "Experience-Driven"
+  - "Early Termination Strategy"
+  - "SWE-bench"
 date: 2026-05-08
-content_hash: 2c41c4a88329aa78
+content_hash: 33b15160b74b65dc
 ---
+
 # EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents
 
 **Conference**: ACL 2026 Findings  
@@ -141,9 +146,9 @@ EET is an inference-time optimization method and does not involve training. Key 
 
 - [\[ICML 2025\] Training Software Engineering Agents and Verifiers with SWE-Gym](../../ICML2025/code_intelligence/training_software_engineering_agents_and_verifiers_with_swe-gym.md)
 - [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](../../ICLR2026/code_intelligence/ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
-- [\[ACL 2026\] Taming System Complexity: Demystifying Software Engineering Agents in Diagnosing Linux Kernel Faults](taming_system_complexity_demystifying_software_engineering_agents_in_diagnosing_.md)
 - [\[ICLR 2026\] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization](../../ICLR2026/code_intelligence/boad_discovering_hierarchical_software_engineering_agents_via_bandit_optimizatio.md)
-- [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](../../NeurIPS2025/code_intelligence/swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
+- [\[ICLR 2026\] Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents](../../ICLR2026/code_intelligence/process-level_trajectory_evaluation_for_environment_configuration_in_software_en.md)
+- [\[ACL 2026\] Taming System Complexity: Demystifying Software Engineering Agents in Diagnosing Linux Kernel Faults](taming_system_complexity_demystifying_software_engineering_agents_in_diagnosing_.md)
 
 </div>
 

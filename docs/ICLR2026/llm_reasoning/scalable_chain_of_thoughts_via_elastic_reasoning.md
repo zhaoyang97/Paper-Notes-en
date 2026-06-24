@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] Elastic Reasoning：通过弹性推理实现可扩展的思维链
+  [Paper Note] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper proposes Elastic Reasoning: explicitly splitting reasoning outputs into a "thought segment" and a "solution segment" with separate token budgets, combined with a budget-constrained rollout (integrated into GRPO) that trains the model to "answer correctly even when thinking is truncated." This allows large re
+  [ICLR 2026][Reasoning][Length control] This paper proposes Elastic Reasoning: explicitly splitting reasoning outputs into a "thought segment" and a "solution segment" with separate token budgets, combined with a budget-constrained rollout (integrated into GRPO) that trains the model to "answer correctly even when thinking is truncated." This allows large reasoning models to provide complete solutions stably under strict token budgets—with training costs at a fraction of L1…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Length control"
+  - "Test-time budget"
+  - "Efficient reasoning"
+  - "GRPO"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 6e3e5dc4c659ca8f
+content_hash: 1d6874afc871acc6
 ---
+
 # Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning
 
 **Conference**: ICLR 2026  
@@ -140,11 +144,11 @@ Ablation of thought budget $t^*$ (fixed $s^*=1$K, across five math benchmarks): 
 
 ## Related Papers
 
-- [\[ICLR 2026\] FROST: Filtering Reasoning Outliers with Attention for Efficient Reasoning](frost_filtering_reasoning_outliers_with_attention_for_efficient_reasoning.md)
-- [\[ICLR 2026\] PEAR: Phase Entropy Aware Reward for Efficient Reasoning](pear_phase_entropy_aware_reward_for_efficient_reasoning.md)
-- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_reasoning_interv.md)
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
+- [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
+- [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
+- [\[ICLR 2026\] SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes](scenecot_eliciting_grounded_chain-of-thought_reasoning_in_3d_scenes.md)
+- [\[ICLR 2026\] Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis](analytica_soft_propositional_reasoning_for_robust_and_scalable_llm-driven_analys.md)
+- [\[ICLR 2026\] FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning](faithcot-bench_benchmarking_instance-level_faithfulness_of_chain-of-thought_reas.md)
 
 </div>
 

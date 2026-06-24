@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] StyleGallery is a training-free semantic-aware style transfer framework. It first performs unsupervised semantic clustering on content images using intermediate diffusion features, then adaptively matches content regions with the most relevant regions from arbitrary style references across statistical, semantic, and ge
+  [CVPR 2026][Image Generation][Style Transfer] StyleGallery is a training-free semantic-aware style transfer framework. It first performs unsupervised semantic clustering on content images using intermediate diffusion features, then adaptively matches content regions with the most relevant regions from arbitrary style references across statistical, semantic, and geometric dimensions. Finally, it employs regional style loss to guide diffusion sampling…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Style Transfer"
+  - "Training-free"
+  - "Semantic-aware"
+  - "Diffusion Feature Clustering"
+  - "Regional Matching"
 date: 2026-05-08
-content_hash: 004e14b00cc97608
+content_hash: 3c957d2809d73b5a
 ---
+
 # StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References
 
 **Conference**: CVPR 2026  
@@ -130,14 +136,17 @@ StyleGallery achieves the best performance across all five metrics: highest Styl
 
 <div class="related-papers" markdown="1">
 
-1. **StyleID**: "Training-free Style Transfer with Diffusion Models" (CVPR 2024)
-2. **Attention Distillation**: "Style Transfer via Attention Distillation" (Coming CVPR 2025)
-3. **DIFT**: "Emergent Correspondence from Fearless Diffusion Features" (NIPS 2023)
+## Related Papers
+
+- [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
+- [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
+- [\[CVPR 2025\] SaMam: Style-aware State Space Model for Arbitrary Image Style Transfer](../../CVPR2025/image_generation/samam_style-aware_state_space_model_for_arbitrary_image_style_transfer.md)
+- [\[CVPR 2025\] HSI: A Holistic Style Injector for Arbitrary Style Transfer](../../CVPR2025/image_generation/hsi_a_holistic_style_injector_for_arbitrary_style_transfer.md)
+- [\[CVPR 2026\] Harmonic Canvas: Inversion-Free Editing for Visually-Guided Music Style Transfer](harmonic_canvas_inversion-free_editing_for_visually-guided_music_style_transfer.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)

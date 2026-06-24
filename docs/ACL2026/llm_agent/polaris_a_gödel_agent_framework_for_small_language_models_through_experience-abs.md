@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
 description: >-
-  [ACL 2026][LLM Agent][Gödel Agent] Polaris transforms the recursive self-improvement of Gödel Agents into a "failure analysis → experience abstraction → minimal code patch → execution validation" policy repair loop tailored for 7B/8B small models. This achieves interpretable, persistently reusable policy-level improvements on MGSM, DROP, GPQA, and LitBe
+  [ACL2026 Findings][LLM Agent][Gödel Agent] Polaris transforms the recursive self-improvement of Gödel Agents into a "failure analysis → experience abstraction → minimal code patch → execution validation" policy repair loop tailored for 7B/8B small models. This achieves interpretable, persistently reusable policy-level improvements on MGSM, DROP, GPQA, and LitBench.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Gödel Agent
+  - "ACL2026 Findings"
+  - "LLM Agent"
+  - "Gödel Agent"
+  - "Small Language Models"
+  - "Self-improvement"
+  - "Experience Abstraction"
+  - "Policy Repair"
 date: 2026-05-08
-content_hash: 5be673b7a6a48ea3
+content_hash: dea9a279528397a1
 ---
+
 # Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
 
 **Conference**: ACL2026 Findings  
@@ -135,10 +140,20 @@ The paper analyzes the necessity of designs by comparing original GA, different 
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
+- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
+- [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
+- [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
+- [\[ICML 2026\] Scaling Small Agents Through Strategy Auctions](../../ICML2026/llm_agent/scaling_small_agents_through_strategy_auctions.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)

@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] Weasel: 通过重要性-多样性数据选择实现 Web Agent 的域外泛化
+  [Paper Note] Weasel: Achieving Out-of-Distribution Generalization for Web Agents via Importance-Diversity Data Selection
 description: >-
-  [ICML 2026][LLM Agent][Web Agent] By combining goal-relevance and diversity in a trajectory step selection method, Weasel reduces training data to 20% of the original, achieving 9.7-12.5x training speedup and significantly improving Web Agent generalization on unseen domains.
+  [ICML 2026][LLM Agent][Data Selection] By combining goal-relevance and diversity in a trajectory step selection method, Weasel reduces training data to 20% of the original, achieving 9.7-12.5x training speedup and significantly improving Web Agent generalization on unseen domains.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Web Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Data Selection"
+  - "Web Agent"
+  - "OOD Generalization"
+  - "Trajectory Curation"
+  - "Training Efficiency"
 date: 2026-05-08
-content_hash: 0a3dc1dbb9ce10ca
+content_hash: 9a035d838d5009eb
 ---
+
 # Weasel: Achieving Out-of-Distribution Generalization for Web Agents via Importance-Diversity Data Selection
 
 **Conference**: ICML 2026  
@@ -132,11 +137,11 @@ Models like Qwen3 have acquired fixed reasoning styles during pre-training. Usin
 
 ## Related Papers
 
-- [\[ICML 2026\] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling](agent_jit_compilation_for_latency-optimizing_web_agent_planning_and_scheduling.md)
-- [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](../../CVPR2026/llm_agent/ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
-- [\[AAAI 2026\] Prune4Web: DOM Tree Pruning Programming for Web Agent](../../AAAI2026/llm_agent/prune4web_dom_tree_pruning_programming_for_web_agent.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
-- [\[NeurIPS 2025\] Web-Shepherd: Advancing PRMs for Reinforcing Web Agents](../../NeurIPS2025/llm_agent/web-shepherd_advancing_prms_for_reinforcing_web_agents.md)
+- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](self-evolving_llm_agents_with_in-distribution_optimization.md)
+- [\[ICML 2026\] It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents](its_a_trap_task-redirecting_agent_persuasion_benchmark_for_web_agents.md)
+- [\[AAAI 2026\] AutoTool: Efficient Tool Selection for Large Language Model Agents](../../AAAI2026/llm_agent/autotool_efficient_tool_selection_for_large_language_model_agents.md)
+- [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
+- [\[ICLR 2026\] From Single to Multi-Granularity: Toward Long-Term Memory Association and Selection of Conversational Agents](../../ICLR2026/llm_agent/from_single_to_multi-granularity_toward_long-term_memory_association_and_selecti.md)
 
 </div>
 

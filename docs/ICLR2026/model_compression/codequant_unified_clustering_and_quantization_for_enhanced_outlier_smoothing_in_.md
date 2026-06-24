@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CodeQuant: Unified Clustering and Quantization for Enhanced Outlier Smoothing in Low-Precision Mixture-of-Experts
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] CodeQuant unifies "learnable rotation to move activation outliers to the weight side" and "using clustering centroids to absorb weight outliers" into a post-training quantization (PTQ) framework designed specifically for MoE. Accompanied by a Look-Up Table (LUT) kernel for implementation, it improves the average accura
+  [ICLR2026][Model Compression][MoE Quantization] CodeQuant unifies "learnable rotation to move activation outliers to the weight side" and "using clustering centroids to absorb weight outliers" into a post-training quantization (PTQ) framework designed specifically for MoE. Accompanied by a Look-Up Table (LUT) kernel for implementation, it improves the average accuracy of Qwen3-30B-A3B by 11.3% compared to QuaRot under A4W4 settings and achieves up to a 4.15× inference speedup…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR2026"
+  - "Model Compression"
+  - "MoE Quantization"
+  - "Outlier Smoothing"
+  - "Weight Clustering"
+  - "Learnable Rotation"
+  - "LUT Kernel"
 date: 2026-05-08
-content_hash: a20070b8093cb466
+content_hash: 6f1d0cf51e668c2b
 ---
+
 # CodeQuant: Unified Clustering and Quantization for Enhanced Outlier Smoothing in Low-Precision Mixture-of-Experts
 
 **Conference**: ICLR2026  
@@ -152,7 +158,7 @@ On Qwen3-30B-A3B, CodeQuant outperforms QuaRot by 11.3% in average accuracy and 
 - [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
 - [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
 - [\[ICLR 2026\] UniQL: Unified Quantization and Low-Rank Compression for Adaptive Edge LLMs](uniql_unified_quantization_and_low-rank_compression_for_adaptive_edge_llms.md)
-- [\[ACL 2025\] MoQAE: Mixed-Precision Quantization for Long-Context LLM Inference via Mixture of Quantization-Aware Experts](../../ACL2025/model_compression/moqae_mixed_precision_kv_cache.md)
+- [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
 
 </div>
 

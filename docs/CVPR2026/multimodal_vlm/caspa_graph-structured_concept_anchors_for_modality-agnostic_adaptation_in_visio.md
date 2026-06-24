@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CASPA: Graph-Structured Concept Anchors for Modality-Agnostic Adaptation in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] CASPA reformulates CLIP downstream adaptation from "learning one prompt set per class" to "sharing a set of semantic anchors across all classes, with each class learning a soft distribution over these anchors." By using cross-modal consistency regularization to align text and visual anchors while freezing the backbone,
+  [CVPR 2026][Multimodal VLM][CLIP adaptation] CASPA reformulates CLIP downstream adaptation from "learning one prompt set per class" to "sharing a set of semantic anchors across all classes, with each class learning a soft distribution over these anchors." By using cross-modal consistency regularization to align text and visual anchors while freezing the backbone, CASPA adds only 1.1M parameters (0.73% of CLIP). It achieves or exceeds SOTA across 11 datasets in four settings:…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP adaptation"
+  - "concept anchors"
+  - "compositional generalization"
+  - "cross-modal consistency"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
-content_hash: e042c60c5f69c755
+content_hash: a1e4ace9f2f596bf
 ---
+
 # CASPA: Graph-Structured Concept Anchors for Modality-Agnostic Adaptation in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -171,11 +177,11 @@ Peak VRAM is only 1501 MB, and training time is reduced from hours to minutes co
 
 ## Related Papers
 
+- [\[ICLR 2026\] CoMem: Compositional Concept-Graph Memory for Vision-Language Adaptation](../../ICLR2026/multimodal_vlm/comem_compositional_concept-graph_memory_for_visionlanguage_adaptation.md)
 - [\[CVPR 2026\] Structural Graph Probing of Vision-Language Models](structural_graph_probing_of_vision-language_models.md)
-- [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
 - [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
-- [\[CVPR 2026\] EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models](evolving_prompt_adaptation_for_vision-language_models.md)
-- [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
+- [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
+- [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
 
 </div>
 

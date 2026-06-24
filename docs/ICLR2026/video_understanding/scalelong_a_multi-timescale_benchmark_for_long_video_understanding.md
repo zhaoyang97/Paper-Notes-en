@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] ScaleLong proposes the first benchmark that embeds questions across four timescales—Clip, Shot, Event, and Story—**into the same long video**. This allows for a direct comparison of MLLM capabilities across different temporal granularities while keeping content fixed, revealing a consistent U-shaped performance curve (
+  [ICLR 2026][Video Understanding][Long Video Understanding] ScaleLong proposes the first benchmark that embeds questions across four timescales—Clip, Shot, Event, and Story—**into the same long video**. This allows for a direct comparison of MLLM capabilities across different temporal granularities while keeping content fixed, revealing a consistent U-shaped performance curve (high at both ends, collapsed in the middle) across 23 models.
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Long Video Understanding"
+  - "Multi-Timescale"
+  - "MLLM Evaluation"
+  - "Intra-video QA"
+  - "U-shaped Curve"
 date: 2026-05-08
-content_hash: dd9d3bf677c52339
+content_hash: b95d19b6ea59b735
 ---
+
 # ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding
 
 **Conference**: ICLR 2026  
@@ -132,8 +138,8 @@ Ablations were conducted on the "total visual tokens" and their "frame count vs.
 
 ## Related Papers
 
-- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](focus_efficient_keyframe_selection_for_long_video_understanding.md)
 - [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](../../ICML2026/video_understanding/video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
+- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](focus_efficient_keyframe_selection_for_long_video_understanding.md)
 - [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
 - [\[CVPR 2026\] Seeing the Scene Matters: Revealing Forgetting in Video Understanding Models with a Scene-Aware Long-Video Benchmark](../../CVPR2026/video_understanding/seeing_the_scene_matters_revealing_forgetting_in_video_understanding_models_with.md)
 - [\[CVPR 2025\] MLVU: Benchmarking Multi-task Long Video Understanding](../../CVPR2025/video_understanding/mlvu_benchmarking_multi-task_long_video_understanding.md)

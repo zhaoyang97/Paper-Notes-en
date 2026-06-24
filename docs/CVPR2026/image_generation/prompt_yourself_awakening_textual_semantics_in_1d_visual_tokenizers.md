@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Prompt Yourself: Awakening Textual Semantics in 1D Visual Tokenizers
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] VLTok functionally splits 1D visual token sequences into "visual tokens + text tokens." During training, Self-Prompted Alignment (SPA) distills fine-grained semantics from a pretrained text encoder into text tokens; during inference, the text encoder is discarded to maintain a vision-only workflow. On ImageNet, VLTok r
+  [CVPR 2026][Image Generation][1D visual tokenizer] VLTok functionally splits 1D visual token sequences into "visual tokens + text tokens." During training, Self-Prompted Alignment (SPA) distills fine-grained semantics from a pretrained text encoder into text tokens; during inference, the text encoder is discarded to maintain a vision-only workflow. On ImageNet, VLTok reduces rFID by 11.1% and gFID by 18.7% compared to GigaTok with the same parameter count.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "1D visual tokenizer"
+  - "hybrid tokens"
+  - "self-prompted alignment"
+  - "image reconstruction"
 date: 2026-05-08
-content_hash: c26117fff7a0bf99
+content_hash: e027c0b3ff334568
 ---
+
 # Prompt Yourself: Awakening Textual Semantics in 1D Visual Tokenizers
 
 **Conference**: CVPR 2026  
@@ -119,8 +124,8 @@ Comparison of alignment methods (128 tokens, rFID): Pure visual (no alignment) 1
 - Value: ⭐⭐⭐⭐ Points toward "semantic injection" over "parameter scaling" for 1D tokenizers.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -128,7 +133,7 @@ Comparison of alignment methods (128 tokens, rFID): Pure visual (no alignment) 1
 - [\[CVPR 2026\] BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment](biovita_biological_dataset_model_and_benchmark_for_visual-textual-acoustic_align.md)
 - [\[CVPR 2026\] Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation](thinking-while-generating_interleaving_textual_reasoning_throughout_visual_gener.md)
 - [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
-- [\[ICLR 2026\] AlignTok: Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](../../ICLR2026/image_generation/aligntok_aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
+- [\[ICLR 2026\] Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](../../ICLR2026/image_generation/aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
 
 </div>
 

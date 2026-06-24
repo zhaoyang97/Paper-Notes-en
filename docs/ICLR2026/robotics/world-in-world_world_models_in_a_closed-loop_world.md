@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] World-In-World: World Models in a Closed-Loop World
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][World Models] This paper proposes World-In-World—the first open platform to evaluate generative world models in a **closed-loop embodied environment**. It utilizes a unified "Propose-Semulate-Revise" online planning strategy and a unified Action API to integrate various heterogeneous world models. Using **task success rate rather th
+  [ICLR 2026][Robotics][World models] This paper proposes World-In-World—the first open platform to evaluate generative world models in a **closed-loop embodied environment**. It utilizes a unified "Propose-Semulate-Revise" online planning strategy and a unified Action API to integrate various heterogeneous world models. Using **task success rate rather than visual quality** as the primary metric, the study reveals three counter-intuitive findings: high visual quality does not…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - World Models
-  - Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "World models"
+  - "closed-loop evaluation"
+  - "online planning"
+  - "embodied AI"
+  - "post-training"
 date: 2026-05-08
-content_hash: f416edf2fe13a2c1
+content_hash: 87b2e143892b3bda
 ---
+
 # World-In-World: World Models in a Closed-Loop World
 
 **Conference**: ICLR 2026  
@@ -122,15 +126,16 @@ World models consistently improve the baseline across four tasks, though the gai
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Empowering Multi-Robot Cooperation via Sequential World Models](empowering_multi-robot_cooperation_via_sequential_world_models.md)
-- [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
+- [\[ICLR 2026\] WorldGym: World Model as an Environment for Policy Evaluation](worldgym_world_model_as_an_environment_for_policy_evaluation.md)
 - [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Dexterous World Models](../../CVPR2026/robotics/dexterous_world_models.md)
-- [\[ICLR 2026\] WorldGym: World Model as an Environment for Policy Evaluation](worldgym_world_model_as_an_environment_for_policy_evaluation.md)
+- [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
 
 </div>
 

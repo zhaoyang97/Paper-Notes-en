@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing
 description: >-
-  [NeurIPS 2025][Medical Imaging][Unpaired image-to-image translation] This paper proposes Ui2i, a model built upon CycleGAN that achieves high content-fidelity unpaired image-to-image translation through four key innovati…
+  [NeurIPS 2025][Medical Imaging][Unpaired image-to-image translation] This paper proposes Ui2i, a model built upon CycleGAN that achieves high content-fidelity unpaired image-to-image translation through four key innovations: a UNet-based generator, approximate bidirectional spectral normalization (ABSN) as a replacement for feature normalization, channel-spatial attention, and scale augmentation. The model is successfully applied to two biomedical tasks: IHC→H&E domain adapta…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "CycleGAN"
   - "spectral normalization"
 date: 2026-05-08
-content_hash: ebf87d17f00f3927
+content_hash: 0b96fa7499f69499
 ---
 
 # Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing
@@ -137,11 +137,11 @@ Compared to MicroSplit (which requires paired data) — MicroMS-SSIM 0.978/0.951
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation](physiowave_a_multi-scale_wavelet-transformer_for_physiological_signal_representa.md)
 - [\[NeurIPS 2025\] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains](pancakes_consistent_multi-protocol_image_segmentation_across_biomedical_domains.md)
 - [\[NeurIPS 2025\] LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation](lomix_learnable_weighted_multi-scale_logits_mixing_for_medical_image_segmentatio.md)
-- [\[NeurIPS 2025\] PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation](physiowave_a_multi-scale_wavelet-transformer_for_physiological_signal_representa.md)
+- [\[ECCV 2024\] Unsupervised Multi-modal Medical Image Registration via Invertible Translation](../../ECCV2024/medical_imaging/unsupervised_multi-modal_medical_image_registration_via_invertible_translation.md)
 - [\[NeurIPS 2025\] VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation](vq-seg_vector-quantized_token_perturbation_for_semi-supervised_medical_image_seg.md)
-- [\[NeurIPS 2025\] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation](mamba_goes_home_hierarchical_soft_mixture-of-experts_for_3d_medical_image_segmen.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension
 description: >-
-  [ICLR 2026][Model Compression][DCT] FreqKV is proposed as a parameter-free, architecture-agnostic KV cache compression method. By iteratively compressing KV states in the frequency domain (preserving low frequencies and discarding high frequencies), it extends the context window of LLaMA-2-7B to 256K with only 8K length fine-tuning while maintaining stab
+  [ICLR 2026][Model Compression][KV Cache Compression] FreqKV is proposed as a parameter-free, architecture-agnostic KV cache compression method. By iteratively compressing KV states in the frequency domain (preserving low frequencies and discarding high frequencies), it extends the context window of LLaMA-2-7B to 256K with only 8K length fine-tuning while maintaining stable perplexity.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - DCT
+  - "ICLR 2026"
+  - "Model Compression"
+  - "KV Cache Compression"
+  - "Frequency Domain Transformation"
+  - "Context Window Extension"
+  - "DCT"
+  - "Long-context Inference"
 date: 2026-05-08
-content_hash: caec6a3a31c7fdd6
+content_hash: 320af8991a564a56
 ---
+
 # FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension
 
 **Conference**: ICLR 2026  
@@ -163,11 +168,11 @@ FreqKV is the first to introduce frequency domain learning into KV cache compres
 
 ## Related Papers
 
-- [\[ACL 2025\] SCOPE: Optimizing Key-Value Cache Compression in Long-context Generation](../../ACL2025/model_compression/scope_optimizing_key-value_cache_compression_in_long-context_generation.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
+- [\[ACL 2025\] SCOPE: Optimizing Key-Value Cache Compression in Long-context Generation](../../ACL2025/model_compression/scope_optimizing_key-value_cache_compression_in_long-context_generation.md)
+- [\[ICLR 2026\] LookaheadKV: Fast and Accurate KV Cache Eviction by Glimpsing into the Future without Generation](lookaheadkv_fast_and_accurate_kv_cache_eviction_by_glimpsing_into_the_future_wit.md)
+- [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
 - [\[ICLR 2026\] GmNet: Revisiting Gating Mechanisms From A Frequency View](gmnet_revisiting_gating_mechanisms_from_a_frequency_view.md)
-- [\[NeurIPS 2025\] QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression](../../NeurIPS2025/model_compression/qsvd_efficient_low-rank_approximation_for_unified_query-key-value_weight_compres.md)
-- [\[CVPR 2026\] FreqSIC: Frequency-aware Stereo Image Compression with Bi-directional Checkerboard Context Model](../../CVPR2026/model_compression/freqsic_frequency-aware_stereo_image_compression_with_bi-directional_checkerboar.md)
 
 </div>
 

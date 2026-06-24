@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reinforcement Learning via Value Gradient Flow
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes Value Gradient Flow (VGF), which reformulates "behavior-regularized RL" as an optimal transport problem from a reference distribution to a value-induced optimal distribution. By using particle gradient flow to transport initial actions along value gradients step-by-step, the method achieves implicit
+  [ICLR 2026][Reinforcement Learning][Behavior Regularization] This paper proposes Value Gradient Flow (VGF), which reformulates "behavior-regularized RL" as an optimal transport problem from a reference distribution to a value-induced optimal distribution. By using particle gradient flow to transport initial actions along value gradients step-by-step, the method achieves implicit control over deviation through a "transport budget" without explicit policy parameterization or re…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Behavior Regularization"
+  - "Optimal Transport"
+  - "Gradient Flow"
+  - "Implicit Policy"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: cda9476aa7ab8252
+content_hash: e644be10c9faa5a7
 ---
+
 # Reinforcement Learning via Value Gradient Flow
 
 **Conference**: ICLR 2026  
@@ -152,8 +158,8 @@ RLHF results (TL;DR + Anthropic-HH, GPT-4 win rate):
 
 - [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
 - [\[ICLR 2026\] floq: Training Critics via Flow-Matching for Scaling Compute in Value-Based RL](floq_training_critics_via_flow-matching_for_scaling_compute_in_value-based_rl.md)
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 - [\[ICLR 2026\] Relative Value Learning](relative_value_learning.md)
-- [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
 - [\[ICLR 2026\] Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces](convergence_of_an_actor-critic_gradient_flow_for_entropy_regularised_mdps_in_gen.md)
 
 </div>

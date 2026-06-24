@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MentisOculi: Revealing the Limits of Reasoning with Mental Imagery
 description: >-
-  [ICML 2026][vlm_reasoning][Paper Note] The authors developed MentisOculi, a procedural, hierarchically difficult multi-step visual reasoning benchmark consisting of five tasks that "can only be solved via internal mental imagery." By systematically testing whether frontier models can utilize "mental imagery" to assist in reasoning like humans, the study con
+  [ICML2026][VLM Reasoning][Mental Imagery] The authors developed MentisOculi, a procedural, hierarchically difficult multi-step visual reasoning benchmark consisting of five tasks that "can only be solved via internal mental imagery." By systematically testing whether frontier models can utilize "mental imagery" to assist in reasoning like humans, the study concludes that **current explicit visual strategies (latent tokens, generated images, video) fail to consistently outperf…
 tags:
-  - ICML 2026
-  - vlm_reasoning
+  - "ICML2026"
+  - "VLM Reasoning"
+  - "Mental Imagery"
+  - "Visual Reasoning"
+  - "Unified Multimodal Models (UMM)"
+  - "Procedural Benchmark"
+  - "Generation-Interpretation Error"
 date: 2026-05-08
-content_hash: 816dd1dc6bf35c14
+content_hash: ceae3abd16969fee
 ---
+
 # MentisOculi: Revealing the Limits of Reasoning with Mental Imagery
 
 **Conference**: ICML2026  
@@ -131,9 +137,9 @@ Overall conclusion: **No visual intervention reliably outperforms pure text base
 
 - [\[CVPR 2026\] Machine Mental Imagery: Empower Multimodal Reasoning with Latent Visual Tokens](../../CVPR2026/vlm_reasoning/machine_mental_imagery_empower_multimodal_reasoning_with_latent_visual_tokens.md)
 - [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](../../ICCV2025/vlm_reasoning/perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
-- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
 - [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](../../CVPR2026/vlm_reasoning/from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
-- [\[ICML 2026\] Efficient Reasoning with Hidden Thinking](efficient_reasoning_with_hidden_thinking.md)
+- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
+- [\[ICLR 2026\] MindCube: Spatial Mental Modeling from Limited Views](../../ICLR2026/vlm_reasoning/mindcube_spatial_mental_modeling_from_limited_views.md)
 
 </div>
 

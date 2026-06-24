@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] $\partial^\infty$-Grid: A Neural Differential Equation Solver with Differentiable Feature Grids
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][PINN] By replacing the common linear interpolation in feature grids with infinitely differentiable Radial Basis Function (RBF) interpolation, fast grid representations—originally designed for "signal fitting"—can stably compute high-order derivatives for the first time. This reduces the training time for solving differential
+  [ICLR 2026][Physics & Scientific Computing][Neural Differential Equation Solver] By replacing the common linear interpolation in feature grids with infinitely differentiable Radial Basis Function (RBF) interpolation, fast grid representations—originally designed for "signal fitting"—can stably compute high-order derivatives for the first time. This reduces the training time for solving differential equations such as Poisson, Helmholtz, and Kirchhoff-Love from hours to seconds…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - PINN
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Neural Differential Equation Solver"
+  - "Feature Grid"
+  - "Radial Basis Function Interpolation"
+  - "High-Order Differentiability"
+  - "Multi-Resolution Grid"
+  - "PINN"
 date: 2026-05-08
-content_hash: 96d319c473bee55d
+content_hash: cc49567725b3f825
 ---
+
 # $\partial^\infty$-Grid: A Neural Differential Equation Solver with Differentiable Feature Grids
 
 **Conference**: ICLR 2026  
@@ -119,15 +125,16 @@ RBF shape $\varepsilon$ and neighborhood rings $\rho$ (768×768 Gradient Image R
 - **Value**: ⭐⭐⭐⭐ — Compressing neural DE solving from hours to minutes is highly practical for physics-informed machine learning and graphics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](riesz_neural_operator_for_solving_partial_differential_equations.md)
 - [\[ICLR 2026\] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction](physics-informed_inference_time_scaling_for_solving_high-dimensional_partial_dif.md)
 - [\[ICLR 2026\] Disentangled Representation Learning for Parametric Partial Differential Equations](disentangled_representation_learning_for_parametric_partial_differential_equatio.md)
 - [\[ICLR 2026\] OrthoSolver: A Neural Proper Orthogonal Decomposition Solver For PDEs](orthosolver_a_neural_proper_orthogonal_decomposition_solver_for_pdes.md)
 - [\[ICLR 2026\] Neural Latent Arbitrary Lagrangian-Eulerian Grids for Fluid-Solid Interaction](neural_latent_arbitrary_lagrangian-eulerian_grids_for_fluid-solid_interaction.md)
-- [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
 
 </div>
 

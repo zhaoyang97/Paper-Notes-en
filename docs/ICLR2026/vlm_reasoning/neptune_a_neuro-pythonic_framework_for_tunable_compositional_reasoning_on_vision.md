@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] NePTune: A Neuro-Pythonic Framework for Tunable Compositional Reasoning on Vision-Language
 description: >-
-  [ICLR 2026][vlm_reasoning][VLM] NePTune enables LLMs to translate natural language questions into "hybrid Python programs"—combining imperative control flow with soft logic operators—executed by scoring atomic concepts with a VLM under uncertainty to achieve training-free yet fine-tunable compositional visual reasoning.
+  [ICLR 2026][VLM Reasoning][Compositional Reasoning] NePTune enables LLMs to translate natural language questions into "hybrid Python programs"—combining imperative control flow with soft logic operators—executed by scoring atomic concepts with a VLM under uncertainty to achieve training-free yet fine-tunable compositional visual reasoning.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - VLM
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Compositional Reasoning"
+  - "VLM"
+  - "Neuro-Symbolic"
+  - "Soft Logic"
+  - "Program Generation"
+  - "Visual Prompting"
+  - "Domain Adaptation"
 date: 2026-05-08
-content_hash: 370d9a3cfd2918de
+content_hash: 21cfd3e3bb90b29d
 ---
+
 # NePTune: A Neuro-Pythonic Framework for Tunable Compositional Reasoning on Vision-Language
 
 **Conference**: ICLR 2026  
@@ -133,8 +140,8 @@ NePTune bridges the gap between VisProg/ViperGPT (imperative program generation)
 - [\[ICLR 2026\] Test-Time Matching: Unlocking Compositional Reasoning in Multimodal Models](test-time_matching_unlocking_compositional_reasoning_in_multimodal_models.md)
 - [\[ICLR 2026\] CompoDistill: Attention Distillation for Compositional Reasoning in Multimodal LLMs](compodistill_attention_distillation_for_compositional_reasoning_in_multimodal_ll.md)
 - [\[CVPR 2026\] DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models](../../CVPR2026/vlm_reasoning/deepscan_a_training-free_framework_for_visually_grounded_reasoning_in_large_visi.md)
+- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/vlm_reasoning/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
 - [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](../../CVPR2026/vlm_reasoning/scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
-- [\[ICLR 2026\] More Thought, Less Accuracy? On the Dual Nature of Reasoning in Vision-Language Models](more_thought_less_accuracy_on_the_dual_nature_of_reasoning_in_vision-language_mo.md)
 
 </div>
 

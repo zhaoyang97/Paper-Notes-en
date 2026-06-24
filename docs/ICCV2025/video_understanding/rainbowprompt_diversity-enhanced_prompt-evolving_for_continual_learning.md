@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RainbowPrompt: Diversity-Enhanced Prompt-Evolving for Continual Learning
 description: >-
-  [ICCV 2025][Video Understanding][Continual Learning] This paper proposes RainbowPrompt, a prompt-evolving mechanism that integrates multiple task-specific prompts into a diversity-enhanced unified prompt via attention-ba…
+  [ICCV 2025][Video Understanding][Continual Learning] This paper proposes RainbowPrompt, a prompt-evolving mechanism that integrates multiple task-specific prompts into a diversity-enhanced unified prompt via attention-based transformation and task-guided alignment, achieving an average improvement of 8.23% over existing methods on image classification and video action recognition tasks.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Class-Incremental Learning"
   - "Video Action Recognition"
 date: 2026-05-08
-content_hash: c8190f5c20d4a3f8
+content_hash: 46d342ee0dc34923
 ---
 
 # RainbowPrompt: Diversity-Enhanced Prompt-Evolving for Continual Learning
@@ -149,11 +149,11 @@ Component ablation (ImageNet-R 10-task):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Affordance-First Decomposition for Continual Learning in Video–Language Understanding](../../CVPR2026/video_understanding/affordance-first_decomposition_for_continual_learning_in_video-language_understa.md)
 - [\[ICCV 2025\] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition](frequency-semantic_enhanced_variational_autoencoder_for_zero-shot_skeleton-based.md)
+- [\[CVPR 2025\] DivPrune: Diversity-Based Visual Token Pruning for Large Multimodal Models](../../CVPR2025/video_understanding/divprune_diversity-based_visual_token_pruning_for_large_multimodal_models.md)
+- [\[CVPR 2025\] MambaVLT: Time-Evolving Multimodal State Space Model for Vision-Language Tracking](../../CVPR2025/video_understanding/mambavlt_time-evolving_multimodal_state_space_model_for_vision-language_tracking.md)
 - [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](../../CVPR2026/video_understanding/skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
-- [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](factorized_learning_for_temporally_grounded_video-language_models.md)
-- [\[NeurIPS 2025\] INST-IT: Boosting Instance Understanding via Explicit Visual Prompt Instruction Tuning](../../NeurIPS2025/video_understanding/inst-it_boosting_instance_understanding_via_explicit_visual_prompt_instruction_t.md)
-- [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
 
 </div>
 

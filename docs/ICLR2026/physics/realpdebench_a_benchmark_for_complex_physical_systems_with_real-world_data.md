@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RealPDEBench: A Benchmark for Complex Physical Systems with Real-World Data
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][sim-to-real] RealPDEBench is the first scientific machine learning benchmark that packages **real-world experimental measurement data alongside paired numerical simulation data**. Covering 5 complex physical systems, 3 task categories, 9 metrics, and 10 baselines, it systematically reveals the significant gap between simulation and
+  [ICLR 2026][Physics & Scientific Computing][Real-world data] RealPDEBench is the first scientific machine learning benchmark that packages **real-world experimental measurement data alongside paired numerical simulation data**. Covering 5 complex physical systems, 3 task categories, 9 metrics, and 10 baselines, it systematically reveals the significant gap between simulation and real-world data and demonstrates that "pre-training on simulation followed by fine-tuning on real…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - sim-to-real
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Real-world data"
+  - "sim-to-real"
+  - "PDE solving"
+  - "fluid dynamics"
+  - "combustion"
 date: 2026-05-08
-content_hash: 868349985262415d
+content_hash: dd5ceedfcfcbe72d
 ---
+
 # RealPDEBench: A Benchmark for Complex Physical Systems with Real-World Data
 
 **Conference**: ICLR 2026  
@@ -122,8 +127,21 @@ Observations: (1) **Sim-training error is significantly higher than Real-trainin
 - Value: ⭐⭐⭐⭐⭐ Transforms the sim-to-real gap into a measurable research object for Scientific ML.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Spectral-Guided Physical Dynamics Distillation](spectral-guided_physical_dynamics_distillation.md)
+- [\[ICML 2025\] Erwin: A Tree-based Hierarchical Transformer for Large-scale Physical Systems](../../ICML2025/physics/erwin_a_tree-based_hierarchical_transformer_for_large-scale_physical_systems.md)
+- [\[ICLR 2026\] ComPhy: Composing Physical Models with end-to-end Alignment](comphy_composing_physical_models_with_end-to-end_alignment.md)
+- [\[ICLR 2026\] Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems](self-supervised_evolution_operator_learning_for_high-dimensional_dynamical_syste.md)
+- [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](../../NeurIPS2025/physics/deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

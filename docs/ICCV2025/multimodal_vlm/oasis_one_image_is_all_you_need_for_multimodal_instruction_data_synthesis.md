@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis
 description: >-
-  [ICCV 2025][Multimodal VLM][multimodal data synthesis] This paper proposes Oasis, a method that induces MLLMs to autoregressively generate high-quality multimodal instruction-following data using only an input image (wit…
+  [ICCV 2025][Multimodal VLM][multimodal data synthesis] This paper proposes Oasis, a method that induces MLLMs to autoregressively generate high-quality multimodal instruction-following data using only an input image (without any text prompt). Combined with a fine-grained instruction quality control mechanism, synthesizing 500K samples yields an average 3.1% overall performance gain for LLaVA-NeXT, surpassing other data synthesis methods.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "LLaVA"
   - "MLLM"
 date: 2026-05-08
-content_hash: 02d9c58b3dfd43b1
+content_hash: 30b0e0e2b395ae23
 ---
 
 # Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis
@@ -62,23 +62,23 @@ The Oasis pipeline consists of three steps:
    rather than the conventional $\text{Resp} = \Theta(\text{vision}, \text{instruction})$.
 
    Since only an image is provided, the MLLM autoregressively generates diverse instructions based on its own knowledge. The absence of manually crafted text prompts means:
-   - Generated instructions are not constrained by fixed-prompt biases.
-   - Coverage naturally spans 46 languages (LLaVA-NeXT covers only English).
-   - Root verb and noun-object distributions are more naturally diverse.
+    - Generated instructions are not constrained by fixed-prompt biases.
+    - Coverage naturally spans 46 languages (LLaVA-NeXT covers only English).
+    - Root verb and noun-object distributions are more naturally diverse.
 
 2. **Data Categorization**
 
    Among generated data, approximately 49.9% are descriptive (caption) and 50.1% are instruction-following. An LLM is used as a few-shot classifier to distinguish the two categories:
-   - Instruction-following data is retained and instructions are extracted.
-   - Descriptive data is first filtered out, then partially recovered via rule-based selection and LLM cleaning to yield 250K high-quality captions.
+    - Instruction-following data is retained and instructions are extracted.
+    - Descriptive data is first filtered out, then partially recovered via rule-based selection and LLM cleaning to yield 250K high-quality captions.
 
 3. **Instruction Quality Control**
 
    Four characteristic dimensions of high-quality instructions are identified, each scored on a 1–5 scale:
-   - **Solvability**: Whether the image provides sufficient information to answer the question.
-   - **Clarity**: Whether the question precisely conveys its intent.
-   - **Hallucination**: The alignment between question content and the actual image content.
-   - **Nonsense**: Grammatical correctness and semantic coherence.
+    - **Solvability**: Whether the image provides sufficient information to answer the question.
+    - **Clarity**: Whether the question precisely conveys its intent.
+    - **Hallucination**: The alignment between question content and the actual image content.
+    - **Nonsense**: Grammatical correctness and semantic coherence.
 
    The first three dimensions are evaluated by an MLLM (requiring visual information); the fourth is evaluated by an LLM (more sensitive to linguistic quality). The pass rate for high-quality instructions is approximately 50.9%.
 
@@ -173,11 +173,11 @@ Quality control yields an overall 1% improvement, with DocVQA and InfoVQA each g
 
 ## Related Papers
 
+- [\[CVPR 2025\] Distraction is All You Need for Multimodal Large Language Model Jailbreaking](../../CVPR2025/multimodal_vlm/distraction_is_all_you_need_for_multimodal_large_language_model_jailbreaking.md)
+- [\[CVPR 2026\] Foundation Encoders Are All You Need for Preference-Aware Personalization](../../CVPR2026/multimodal_vlm/foundation_encoders_are_all_you_need_for_preference-aware_personalization.md)
 - [\[ICCV 2025\] Effective Training Data Synthesis for Improving MLLM Chart Understanding](effective_training_data_synthesis_for_improving_mllm_chart_understanding.md)
-- [\[AAAI 2026\] ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration](../../AAAI2026/multimodal_vlm/clearair_a_human-visual-perception-inspired_all-in-one_image_restoration.md)
-- [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
-- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](mm-ifengine_towards_multimodal_instruction_following.md)
 - [\[ICCV 2025\] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models](aigi_holmes_towards_explainable_and_generalizable_ai_generated_image_detection_via_mllm.md)
+- [\[ICCV 2025\] MMOne: Representing Multiple Modalities in One Scene](mmone_representing_multiple_modalities_in_one_scene.md)
 
 </div>
 

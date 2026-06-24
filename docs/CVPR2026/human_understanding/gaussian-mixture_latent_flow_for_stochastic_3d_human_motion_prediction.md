@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction
 description: >-
-  [CVPR 2026][Human Understanding][Flow Matching] To address the long-standing issues in stochastic human motion prediction—sacrificing plausibility for accuracy and diversity and the inability to reliably quantify uncertainty—this paper learns a data-driven Gaussian Mixture Prior via EM in the latent space to decouple different motion modes. It then employs a fully i
+  [CVPR 2026][Human Understanding][Stochastic Motion Prediction] To address the long-standing issues in stochastic human motion prediction—sacrificing plausibility for accuracy and diversity and the inability to reliably quantify uncertainty—this paper learns a data-driven Gaussian Mixture Prior via EM in the latent space to decouple different motion modes. It then employs a fully invertible Latent Flow Matching (integrated with a skeleton-aware Transformer) for prediction. Thi…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Flow Matching
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Stochastic Motion Prediction"
+  - "Normalizing Flows"
+  - "Flow Matching"
+  - "Gaussian Mixture Prior"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: ee70876c46881c5d
+content_hash: fc66d550f6f7afa2
 ---
+
 # Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction
 
 **Conference**: CVPR 2026  
@@ -131,17 +136,16 @@ Ours achieves SOTA in ADE/FDE, with FDE improving by ~8.5% on Human3.6M and ~13%
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-...
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](unified_number-free_text-to-motion_generation_via_flow_matching.md)
-- [\[CVPR 2025\] Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic](../../CVPR2025/human_understanding/stochastic_human_motion_prediction_with_memory_of_action_transition_and_action_c.md)
-- [\[AAAI 2026\] Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction](../../AAAI2026/human_understanding/spatiotemporal-untrammelled_mixture_of_experts_for_multi-person_motion_predictio.md)
-- [\[CVPR 2026\] Anatomical Domain Shifts: Test-time Heterogeneous Adaptation for 3D Human Pose Prediction](anatomical_domain_shifts_test-time_heterogeneous_adaptation_for_3d_human_pose_pr.md)
 - [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
+- [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](unified_number-free_text-to-motion_generation_via_flow_matching.md)
+- [\[AAAI 2026\] Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction](../../AAAI2026/human_understanding/spatiotemporal-untrammelled_mixture_of_experts_for_multi-person_motion_predictio.md)
+- [\[CVPR 2025\] Stochastic Human Motion Prediction with Memory of Action Transition and Action Characteristic](../../CVPR2025/human_understanding/stochastic_human_motion_prediction_with_memory_of_action_transition_and_action_c.md)
+- [\[CVPR 2026\] DeX-Portrait: Disentangled and Expressive Portrait Animation via Explicit and Latent Motion Representations](dex-portrait_disentangled_and_expressive_portrait_animation_via_explicit_and_lat.md)
 
 </div>
 

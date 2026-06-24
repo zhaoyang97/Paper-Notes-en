@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WaveVerse: Scalable RF Simulation in Generative 4D Worlds
 description: >-
-  [ICML 2026][Human Understanding][Paper Note] WaveVerse integrates LLM-driven "4D indoor scene + human motion" generation with a physical ray tracer that preserves spatiotemporal phase coherence into a prompt-to-RF signal pipeline. It significantly enhances downstream RF imaging and activity recognition tasks using synthetic data, with performance scaling continuo
+  [ICML 2026][Human Understanding][RF Sensing] WaveVerse integrates LLM-driven "4D indoor scene + human motion" generation with a physical ray tracer that preserves spatiotemporal phase coherence into a prompt-to-RF signal pipeline. It significantly enhances downstream RF imaging and activity recognition tasks using synthetic data, with performance scaling continuously as simulation volume increases, unlike existing methods that saturate.
 tags:
-  - ICML 2026
-  - Human Understanding
+  - "ICML 2026"
+  - "Human Understanding"
+  - "RF Sensing"
+  - "mmWave"
+  - "Phase-Coherent Ray Tracing"
+  - "4D World Generation"
+  - "Human Motion Generation"
 date: 2026-05-08
-content_hash: b3933a054d991c6c
+content_hash: 7fb2ea1bacd11bb8
 ---
+
 # WaveVerse: Scalable RF Simulation in Generative 4D Worlds
 
 **Conference**: ICML 2026  
@@ -145,14 +151,15 @@ Removing masking degrades text alignment (R-Prec drops 14.8%), while removing st
 - **Value**: ⭐⭐⭐⭐⭐ Provides a "NeRF + ImageNet" style infrastructure for the data-starved RF sensing community, lowering the hardware barrier for future researchers in healthcare and HCI.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](../../CVPR2026/human_understanding/beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)
+- [\[ICLR 2026\] Instilling an Active Mind in Avatars via Cognitive Simulation](../../ICLR2026/human_understanding/instilling_an_active_mind_in_avatars_via_cognitive_simulation.md)
 - [\[ICCV 2025\] EgoAgent: A Joint Predictive Agent Model in Egocentric Worlds](../../ICCV2025/human_understanding/egoagent_a_joint_predictive_agent_model_in_egocentric_worlds.md)
+- [\[CVPR 2026\] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](../../CVPR2026/human_understanding/beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)
 - [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](../../CVPR2026/human_understanding/syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
-- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](../../CVPR2026/human_understanding/decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
 - [\[ECCV 2024\] Diffusion Model is a Good Pose Estimator from 3D RF-Vision](../../ECCV2024/human_understanding/diffusion_model_is_a_good_pose_estimator_from_3d_rf-vision.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration
 description: >-
-  [ACL 2026][Interpretability][Paper Note] The IDEA framework is proposed to extract decision-making knowledge from LLMs into interpretable parameterized models over semantic factors. By jointly learning verbal-to-numeric mappings and decision parameters via an EM algorithm, it achieves calibratable, editable, and interpretable LLM decision-making. Testing acro
+  [ACL 2026][Interpretability][Interpretable Decision Making] The IDEA framework is proposed to extract decision-making knowledge from LLMs into interpretable parameterized models over semantic factors. By jointly learning verbal-to-numeric mappings and decision parameters via an EM algorithm, it achieves calibratable, editable, and interpretable LLM decision-making. Testing across five datasets, IDEA (78.6%) using Qwen-3-32B outperforms DeepSeek R1 (68.1%) and GPT-5.2 (77.9%).
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Interpretable Decision Making"
+  - "Verbal Probability Calibration"
+  - "EM Algorithm"
+  - "Parameter Editing"
+  - "Human-AI Collaboration"
 date: 2026-05-08
-content_hash: 255d73dc23a4eb72
+content_hash: 0ece7122b8855993
 ---
+
 # IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration
 
 **Conference**: ACL 2026  
@@ -143,9 +149,9 @@ Binary decision accuracy (F1 score) was evaluated across five datasets (Complex:
 
 - [\[NeurIPS 2025\] ValuePilot: A Two-Phase Framework for Value-Driven Decision-Making](../../NeurIPS2025/interpretability/valuepilot_a_two-phase_framework_for_value-driven_decision-making.md)
 - [\[ACL 2026\] HistLens: Mapping Idea Change across Concepts and Corpora](histlens_mapping_idea_change_across_concepts_and_corpora.md)
+- [\[ICLR 2026\] Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment](../../ICLR2026/interpretability/towards_cognitively-faithful_decision-making_models_to_improve_ai_alignment.md)
 - [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
 - [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
-- [\[ACL 2026\] Flattery in Motion: Benchmarking and Analyzing Sycophancy in Video-LLMs](flattery_in_motion_benchmarking_and_analyzing_sycophancy_in_video-llms.md)
 
 </div>
 

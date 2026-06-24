@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Shuffling the Data, Stretching the Step-Size: Sharper Bias in Constant Step-Size SGD
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper rigorously combines two classic heuristics—**Random Reshuffling (RR1)** and **Richardson–Romberg Extrapolation (RR2)**—into a unified algorithm for the first time. It proves that on quasi-strongly monotone Variational Inequality Problems (VIPs), their synergy can compress the asymptotic bias of constant step
+  [ICLR 2026][Optimization][Constant Step-Size SGD] This paper rigorously combines two classic heuristics—**Random Reshuffling (RR1)** and **Richardson–Romberg Extrapolation (RR2)**—into a unified algorithm for the first time. It proves that on quasi-strongly monotone Variational Inequality Problems (VIPs), their synergy can compress the asymptotic bias of constant step-size SGD from $O(\gamma)$ to $O(\gamma^3)$, while maintaining the $O(\gamma^2)$ mean squared error (MSE) prov…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Constant Step-Size SGD"
+  - "Random Reshuffling"
+  - "Richardson-Romberg Extrapolation"
+  - "Variational Inequalities"
+  - "Bias Analysis"
 date: 2026-05-08
-content_hash: f41e547c589ccc37
+content_hash: 2d3ad56a7b5f46c6
 ---
+
 # Shuffling the Data, Stretching the Step-Size: Sharper Bias in Constant Step-Size SGD
 
 **Conference**: ICLR 2026  

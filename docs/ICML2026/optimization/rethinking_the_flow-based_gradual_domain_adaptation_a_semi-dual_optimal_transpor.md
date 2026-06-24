@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking the Flow-Based Gradual Domain Adaptation: A Semi-Dual Optimal Transport Perspective
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper reformulates flow-based Gradual Domain Adaptation (GDA), which typically constructs intermediate domains, as an Entropy-regularized Semi-dual Unbalanced Optimal Transport (E-SUOT) problem. By **bypassing explicit Probability Density Function (PDF) estimation** of the target domain and directly learning a seq
+  [ICML2026][Optimization][Gradual Domain Adaptation] This paper reformulates flow-based Gradual Domain Adaptation (GDA), which typically constructs intermediate domains, as an Entropy-regularized Semi-dual Unbalanced Optimal Transport (E-SUOT) problem. By **bypassing explicit Probability Density Function (PDF) estimation** of the target domain and directly learning a sequence of transport maps to push source samples toward the target, the method consistently outperforms existi…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Gradual Domain Adaptation"
+  - "Semi-Dual Optimal Transport"
+  - "Gradient Flow"
+  - "Entropy Regularization"
+  - "Adversarial Training Stability"
 date: 2026-05-08
-content_hash: 89bf9a1039ca486a
+content_hash: 1e279f8b6d1cadb4
 ---
+
 # Rethinking the Flow-Based Gradual Domain Adaptation: A Semi-Dual Optimal Transport Perspective
 
 **Conference**: ICML2026  
@@ -149,11 +155,11 @@ Ablations on training strategies and $f^\star$ functions across three GDA datase
 
 ## Related Papers
 
+- [\[ICLR 2026\] DADA: Dual Averaging with Distance Adaptation](../../ICLR2026/optimization/dada_dual_averaging_with_distance_adaptation.md)
 - [\[CVPR 2026\] HFedATM: Hierarchical Federated Domain Generalization via Optimal Transport and Regularized Mean Aggregation](../../CVPR2026/optimization/hfedatm_hierarchical_federated_domain_generalization_via_optimal_transport_and_r.md)
 - [\[ICML 2026\] Distribution Alignment for One-Shot Federated Learning via Optimal Transport](distribution_alignment_for_one-shot_federated_learning_via_optimal_transport.md)
-- [\[ICLR 2026\] A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport](../../ICLR2026/optimization/a_scalable_constant-factor_approximation_algorithm_for_w_p_optimal_transport.md)
-- [\[ICML 2026\] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective](learning_dynamics_of_zeroth-order_optimization_a_kernel_perspective.md)
-- [\[ICML 2025\] Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation](../../ICML2025/optimization/sparse_causal_discovery_with_generative_intervention_for_unsupervised_graph_doma.md)
+- [\[ICLR 2026\] Bayesian Evidence-Driven Prototype Evolution for Federated Domain Adaptation](../../ICLR2026/optimization/bayesian_evidence-driven_prototype_evolution_for_federated_domain_adaptation.md)
+- [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](../../ICLR2026/optimization/hota_hamiltonian_framework_for_optimal_transport_advection.md)
 
 </div>
 

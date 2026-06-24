@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs
 description: >-
-  [NeurIPS 2025][LLM Alignment][jailbreak attack] This paper proposes a two-stage fine-tuning attack: Stage 1 fine-tunes an LLM on 10 benign questions paired with identical refusal answers…
+  [NeurIPS 2025][LLM Alignment][jailbreak attack] This paper proposes a two-stage fine-tuning attack: Stage 1 fine-tunes an LLM on 10 benign questions paired with identical refusal answers, driving the model to overfit into a sharp loss landscape; Stage 2 fine-tunes the same 10 questions with normal answers, triggering catastrophic forgetting of safety alignment. Using entirely benign data, the method achieves a 94.84% attack success rate (ASR)…
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -13,7 +13,7 @@ tags:
   - "FaaS security"
   - "catastrophic forgetting"
 date: 2026-05-08
-content_hash: f2a50e4160f7d050
+content_hash: 694e6f257ac26630
 ---
 
 # Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs
@@ -133,9 +133,9 @@ A two-stage fine-tuning attack:
 
 - [\[NeurIPS 2025\] MetaDefense: Defending Finetuning-based Jailbreak Attack Before and During Generation](metadefense_defending_finetuning-based_jailbreak_attack_before_and_during_genera.md)
 - [\[NeurIPS 2025\] Mechanism Design for LLM Fine-tuning with Multiple Reward Models](mechanism_design_for_llm_fine-tuning_with_multiple_reward_models.md)
+- [\[ACL 2025\] Chain-of-Jailbreak Attack for Image Generation Models via Editing Step by Step](../../ACL2025/llm_alignment/chain-of-jailbreak_attack_for_image_generation_models_via_editing_step_by_step.md)
 - [\[NeurIPS 2025\] DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO](deepvideor1_video_reinforcement_finetuning_via_difficultyawa.md)
-- [\[ACL 2026\] Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs](../../ACL2026/llm_alignment/team-based_self-play_with_dual_adaptive_weighting_for_fine-tuning_llms.md)
-- [\[NeurIPS 2025\] SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism](safeptr_token-level_jailbreak_defense_in_multimodal_llms_via_prune-then-restore_.md)
+- [\[ICML 2026\] SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection](../../ICML2026/llm_alignment/spard_defending_harmful_fine-tuning_attack_via_safety_projection_with_relevance-.md)
 
 </div>
 

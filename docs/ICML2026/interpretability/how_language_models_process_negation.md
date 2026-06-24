@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How Language Models Process Negation
 description: >-
-  [ICML 2026][Interpretability][LogitLens] This paper employs mechanistic interpretability to dissect the internal circuits of Llama-3.1-8B and Mistral-7B when processing negation sentences like "X that is not Y is __". It discovers that models can actually "perform" negation (middle-layer attention constructs the $\bar Y$ representation directly at the final p
+  [ICML2026][Interpretability][Negation understanding] This paper employs mechanistic interpretability to dissect the internal circuits of Llama-3.1-8B and Mistral-7B when processing negation sentences like "X that is not Y is __". It discovers that models can actually "perform" negation (middle-layer attention constructs the $\bar Y$ representation directly at the final position, e.g., "not gas" → solid). However, this is suppressed by "shortcut" attention heads in later layer…
 tags:
-  - ICML 2026
-  - Interpretability
-  - LogitLens
+  - "ICML2026"
+  - "Interpretability"
+  - "Negation understanding"
+  - "Mechanistic Interpretability"
+  - "Attention shortcut"
+  - "Construction and Suppression"
+  - "LogitLens"
 date: 2026-05-08
-content_hash: 0f96a698637ddbcb
+content_hash: 665f0e9d200e70b1
 ---
+
 # How Language Models Process Negation
 
 **Conference**: ICML2026  
@@ -124,10 +129,10 @@ Dataset: 648 "X that is not Y is __" controlled items. Metrics: positive/negativ
 ## Related Papers
 
 - [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](query_circuits_explaining_how_language_models_answer_user_prompts.md)
+- [\[ICLR 2026\] Mixing Mechanisms: How Language Models Retrieve Bound Entities In-Context](../../ICLR2026/interpretability/mixing_mechanisms_how_language_models_retrieve_bound_entities_in-context.md)
+- [\[ICML 2026\] Scalable Circuit Learning for Interpreting Large Language Models](scalable_circuit_learning_for_interpreting_large_language_models.md)
+- [\[ICML 2026\] Textual Supervision Enhances Geospatial Representations in Vision-Language Models](textual_supervision_enhances_geospatial_representations_in_vision-language_model.md)
 - [\[ICML 2026\] Towards Atoms of Large Language Models](towards_atoms_of_large_language_models.md)
-- [\[ACL 2026\] How Language Models Conflate Logical Validity with Plausibility: A Representational Analysis of Content Effects](../../ACL2026/interpretability/how_language_models_conflate_logical_validity_with_plausibility_a_representation.md)
-- [\[NeurIPS 2025\] Base Models Know How to Reason, Thinking Models Learn When](../../NeurIPS2025/interpretability/base_models_know_how_to_reason_thinking_models_learn_when.md)
-- [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](../../ACL2026/interpretability/preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
 
 </div>
 

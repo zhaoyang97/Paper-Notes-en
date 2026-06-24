@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Constrained MDP] This paper proposes the Primal-Dual Natural Actor-Critic (PDNAC) algorithm, which achieves, for the first time…
+  [NeurIPS 2025][Reinforcement Learning][Constrained MDP] This paper proposes the Primal-Dual Natural Actor-Critic (PDNAC) algorithm, which achieves, for the first time, a global convergence rate of $\tilde{\mathcal{O}}(1/\sqrt{T})$ and a constraint violation rate of $\tilde{\mathcal{O}}(1/\sqrt{T})$ for average reward constrained MDPs under general parameterized policies, matching the theoretical lower bound.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Natural Policy Gradient"
   - "Global Convergence"
 date: 2026-05-08
-content_hash: 90c8a9662c8ef127
+content_hash: a99d454f75bdabbc
 ---
 
 # Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic
@@ -179,11 +179,11 @@ Precise control of the NPG bias and variance is achieved via the critic/actor co
 
 ## Related Papers
 
+- [\[ICLR 2026\] Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces](../../ICLR2026/reinforcement_learning/convergence_of_an_actor-critic_gradient_flow_for_entropy_regularised_mdps_in_gen.md)
 - [\[NeurIPS 2025\] Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning](finite-sample_analysis_of_policy_evaluation_for_robust_average_reward_reinforcem.md)
-- [\[AAAI 2026\] Risk-Sensitive Exponential Actor Critic](../../AAAI2026/reinforcement_learning/risk-sensitive_exponential_actor_critic.md)
-- [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](../../ICLR2026/reinforcement_learning/flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Actor-Free Continuous Control via Structurally Maximizable Q-Functions](actorfree_continuous_control_via_structurally_maximizable_qf.md)
-- [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
+- [\[ICLR 2026\] Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses](../../ICLR2026/reinforcement_learning/primal-dual_policy_optimization_for_linear_cmdps_with_adversarial_losses.md)
+- [\[NeurIPS 2025\] On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning](on_the_global_optimality_of_policy_gradient_methods_in_general_utility_reinforce.md)
+- [\[NeurIPS 2025\] Last Iterate Convergence in Monotone Mean Field Games](last_iterate_convergence_in_monotone_mean_field_games.md)
 
 </div>
 

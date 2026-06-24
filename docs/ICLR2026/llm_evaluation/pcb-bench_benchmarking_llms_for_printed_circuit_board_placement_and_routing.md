@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] PCB-Bench: Benchmarking LLMs for Printed Circuit Board Placement and Routing
 description: >-
-  [ICLR 2026][LLM Evaluation][EDA] PCB-Bench is the first comprehensive benchmark to systematically evaluate the capabilities of (multimodal) large language models in printed circuit board (PCB) placement and routing tasks. By utilizing three types of tasks—"pure text QA/CQ + image-text multimodal + real-world design understanding"—it covers approximate
+  [ICLR 2026][LLM Evaluation][PCB design] PCB-Bench is the first comprehensive benchmark to systematically evaluate the capabilities of (multimodal) large language models in printed circuit board (PCB) placement and routing tasks. By utilizing three types of tasks—"pure text QA/CQ + image-text multimodal + real-world design understanding"—it covers approximately 3,700 text-based questions, 500 image-text questions, and 174 real-world engineering projects…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - EDA
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "PCB design"
+  - "EDA"
+  - "multimodal reasoning"
+  - "benchmark dataset"
 date: 2026-05-08
-content_hash: 2fbadf13f2f292a6
+content_hash: ecf8dfaf7715c2bf
 ---
+
 # PCB-Bench: Benchmarking LLMs for Printed Circuit Board Placement and Routing
 
 **Conference**: ICLR 2026  
@@ -139,8 +143,8 @@ While the paper is a benchmark rather than a single model, it utilizes domain-sp
 - [\[ICLR 2026\] LMGame-Bench: How Good are LLMs at Playing Games?](lmgame-bench_how_good_are_llms_at_playing_games.md)
 - [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
 - [\[ICLR 2026\] Benchmarking Overton Pluralism in LLMs](benchmarking_overton_pluralism_in_llms.md)
+- [\[ICLR 2026\] LogiConBench: Benchmarking Logical Consistencies of LLMs](logiconbench_benchmarking_logical_consistencies_of_llms.md)
 - [\[ACL 2026\] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](../../ACL2026/llm_evaluation/aj-bench_benchmarking_agent-as-a-judge_for_environment-aware_evaluation.md)
-- [\[ICLR 2026\] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents](deepresearch_bench_a_comprehensive_benchmark_for_deep_research_agents.md)
 
 </div>
 

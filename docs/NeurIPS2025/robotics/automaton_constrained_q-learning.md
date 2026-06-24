@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Automaton Constrained Q-Learning
 description: >-
-  [NeurIPS 2025][Robotics][LTL] This paper proposes ACQL (Automaton Constrained Q-Learning), which translates Linear Temporal Logic (LTL) task specifications into automata and combines goal-conditioned learning with minima…
+  [NeurIPS 2025][Robotics][LTL] This paper proposes ACQL (Automaton Constrained Q-Learning), which translates Linear Temporal Logic (LTL) task specifications into automata and combines goal-conditioned learning with minimal safety constraints. ACQL is the first scalable method to simultaneously support sequential temporal goals and non-stationary safety constraints in continuous control environments.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Goal-Conditioned RL"
   - "CMDP"
 date: 2026-05-08
-content_hash: 2d0834d03a19597b
+content_hash: de8ff6519bf29bb8
 ---
 
 # Automaton Constrained Q-Learning
@@ -133,11 +133,11 @@ ACQL constructs an augmented product CMDP through the following steps:
 
 ## Related Papers
 
+- [\[ICML 2025\] Action-Constrained Imitation Learning](../../ICML2025/robotics/action-constrained_imitation_learning.md)
 - [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
+- [\[ICLR 2026\] When a Robot is More Capable than a Human: Learning from Constrained Demonstrators](../../ICLR2026/robotics/when_a_robot_is_more_capable_than_a_human_learning_from_constrained_demonstrator.md)
+- [\[CVPR 2025\] Coordinated Manipulation of Hybrid Deformable-Rigid Objects in Constrained Environments](../../CVPR2025/robotics/coordinated_manipulation_hybrid_deformable_rigid_objects.md)
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Policy Compatible Skill Incremental Learning via Lazy Learning Interface](policy_compatible_skill_incremental_learning_via_lazy_learning_interface.md)
-- [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
-- [\[NeurIPS 2025\] Learning Parameterized Skills from Demonstrations](learning_parameterized_skills_from_demonstrations.md)
 
 </div>
 

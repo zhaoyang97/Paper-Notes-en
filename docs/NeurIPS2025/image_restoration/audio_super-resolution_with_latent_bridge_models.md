@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Audio Super-Resolution with Latent Bridge Models
 description: >-
-  [NeurIPS 2025][Image Restoration][Audio super-resolution] This paper proposes AudioLBM, which compresses audio waveforms into a continuous latent space and employs a bridge model to realize a latent-to-latent generation…
+  [NeurIPS 2025][Image Restoration][Audio super-resolution] This paper proposes AudioLBM, which compresses audio waveforms into a continuous latent space and employs a bridge model to realize a latent-to-latent generation process from low-resolution to high-resolution. Combined with frequency-aware training for broader data utilization and a cascaded design to surpass the 48kHz ceiling, AudioLBM comprehensively outperforms methods such as AudioSR across speech, sound effects…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "cascaded super-resolution"
   - "any-to-192kHz"
 date: 2026-05-08
-content_hash: 5e3ab61e57f13f87
+content_hash: 70a0e82b212b34f2
 ---
 
 # Audio Super-Resolution with Latent Bridge Models
@@ -136,11 +136,11 @@ The base loss is noise prediction MSE. The frequency-aware variant adds frequenc
 
 ## Related Papers
 
+- [\[CVPR 2025\] Prior Does Matter: Visual Navigation via Denoising Diffusion Bridge Models](../../CVPR2025/image_restoration/prior_does_matter_visual_navigation_via_denoising_diffusion_bridge_models.md)
 - [\[NeurIPS 2025\] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement](latent_harmony_synergistic_unified_uhd_image_restoration_via_latent_space_regula.md)
-- [\[ICML 2026\] PODiff: Latent Diffusion in Proper Orthogonal Decomposition Space for Scientific Super-Resolution](../../ICML2026/image_restoration/podiff_latent_diffusion_in_proper_orthogonal_decomposition_space_for_scientific_.md)
-- [\[NeurIPS 2025\] Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution](implicit_augmentation_from_distributional_symmetry_in_turbulence_super-resolutio.md)
-- [\[NeurIPS 2025\] FIPER: Factorized Features for Robust Image Super-Resolution and Compression](fiper_factorized_features_for_robust_image_super-resolution_and_compression.md)
-- [\[CVPR 2026\] RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution](../../CVPR2026/image_restoration/rawdomain_degradation_models_smartphone_sr.md)
+- [\[ICLR 2026\] Energy-oriented Diffusion Bridge for Image Restoration with Foundational Diffusion Models](../../ICLR2026/image_restoration/energy-oriented_diffusion_bridge_for_image_restoration_with_foundational_diffusi.md)
+- [\[NeurIPS 2025\] Adaptive Discretization for Consistency Models](adaptive_discretization_for_consistency_models.md)
+- [\[ICLR 2026\] SFBD-OMNI: Bridge Models for Lossy Measurement Restoration with Limited Clean Samples](../../ICLR2026/image_restoration/sfbd-omni_bridge_models_for_lossy_measurement_restoration_with_limited_clean_sam.md)
 
 </div>
 

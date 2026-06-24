@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] GeoMMBench and GeoMMAgent: Toward Expert-Level Multimodal Intelligence in Geoscience and Remote Sensing
 description: >-
-  [CVPR 2026][Remote Sensing][geoscience] This paper introduces GeoMMBench (1,053 expert-level geoscience multiple-choice questions) and GeoMMAgent (a retrieval-perception-reasoning multi-agent framework). It systematically evaluates 36 MLLMs in the remote sensing domain, revealing systemic deficiencies in domain knowledge, perceptual grounding, and reasoning.
+  [CVPR 2026 Highlight][Remote Sensing][geoscience] This paper introduces GeoMMBench (1,053 expert-level geoscience multiple-choice questions) and GeoMMAgent (a retrieval-perception-reasoning multi-agent framework). It systematically evaluates 36 MLLMs in the remote sensing domain, revealing systemic deficiencies in domain knowledge, perceptual grounding, and reasoning.
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - geoscience
-  - benchmark
-  - multi-agent
-  - MLLM evaluation
+  - "CVPR 2026 Highlight"
+  - "Remote Sensing"
+  - "geoscience"
+  - "benchmark"
+  - "multi-agent"
+  - "MLLM evaluation"
 date: 2026-05-08
-content_hash: c6fcefb559856896
+content_hash: ad7c5c9157bc24a0
 ---
+
 # GeoMMBench and GeoMMAgent: Toward Expert-Level Multimodal Intelligence in Geoscience and Remote Sensing
 
 **Conference**: CVPR 2026 Highlight  
@@ -124,11 +125,11 @@ The val set (37 questions) assesses human expert performance, while the test set
 
 ## Related Papers
 
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
-- [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
+- [\[CVPR 2026\] WRIVINDER: Towards Spatial Intelligence for Geo-locating Ground Images onto Satellite Imagery](wrivinder_towards_spatial_intelligence_for_geo-locating_ground_images_onto_satel.md)
+- [\[CVPR 2026\] IMAIA: Interactive Maps AI Assistant for Travel Planning and Geo-Spatial Intelligence](imaia_interactive_maps_ai_assistant_for_travel_planning_and_geo-spatial_intellig.md)
 - [\[CVPR 2026\] GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective](geocot_towards_reliable_remote_sensing_reasoning_with_manifold_perspective.md)
-- [\[CVPR 2026\] Fast Kernel-Space Diffusion for Remote Sensing Pansharpening](fast_kernel-space_diffusion_for_remote_sensing_pansharpening.md)
-- [\[CVPR 2026\] RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation](ramen_resolution-adjustable_multimodal_encoder_for_earth_observation.md)
 
 </div>
 

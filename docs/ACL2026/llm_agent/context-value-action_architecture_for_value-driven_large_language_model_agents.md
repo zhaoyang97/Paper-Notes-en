@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Context-Value-Action Architecture for Value-Driven Large Language Model Agents
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] The CVA (Context-Value-Action) architecture is proposed based on the S-O-R psychological model and Schwartz Value Theory. By utilizing a Value Verifier trained on real human data to decouple behavior generation from cognitive reasoning, it effectively alleviates the behavior polarization issue in LLM agents, significan
+  [ACL 2026 (Findings)][LLM Agent][Value-driven agents] The CVA (Context-Value-Action) architecture is proposed based on the S-O-R psychological model and Schwartz Value Theory. By utilizing a Value Verifier trained on real human data to decouple behavior generation from cognitive reasoning, it effectively alleviates the behavior polarization issue in LLM agents, significantly outperforming baselines on CVABench which contains over 1.1 million real interaction trajectories.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 (Findings)"
+  - "LLM Agent"
+  - "Value-driven agents"
+  - "Behavior simulation"
+  - "Schwartz Value Theory"
+  - "Behavior polarization"
+  - "Verifier"
 date: 2026-05-08
-content_hash: 91ceb3ef66b36858
+content_hash: 6373a9700f2e9604
 ---
+
 # Context-Value-Action Architecture for Value-Driven Large Language Model Agents
 
 **Conference**: ACL 2026 (Findings)  
@@ -129,11 +135,11 @@ SFT employs standard autoregressive loss for fine-tuning on real trajectories; D
 
 ## Related Papers
 
-- [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
 - [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](../../AAAI2026/llm_agent/agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
+- [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
 - [\[AAAI 2026\] AutoTool: Efficient Tool Selection for Large Language Model Agents](../../AAAI2026/llm_agent/autotool_efficient_tool_selection_for_large_language_model_agents.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[AAAI 2026\] Time, Identity and Consciousness in Language Model Agents](../../AAAI2026/llm_agent/time_identity_and_consciousness_in_language_model_agents.md)
+- [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](../../ICLR2026/llm_agent/gtool_graph_enhanced_tool_planning_with_large_language_model.md)
 
 </div>
 

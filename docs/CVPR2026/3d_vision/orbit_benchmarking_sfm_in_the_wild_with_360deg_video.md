@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ORBIT: Benchmarking SfM in the Wild with 360° Video
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ORBIT utilizes online 360° panoramic videos as "reliable sources of ground truth." Because panoramic cameras observe all directions, have known intrinsics, and "hide" no stable features, a custom rig-based SfM can yield credible trajectories. These panoramas are then cropped and reprojected into perspective videos that
+  [CVPR 2026][3D Vision][SfM benchmark] ORBIT utilizes online 360° panoramic videos as "reliable sources of ground truth." Because panoramic cameras observe all directions, have known intrinsics, and "hide" no stable features, a custom rig-based SfM can yield credible trajectories. These panoramas are then cropped and reprojected into perspective videos that specifically target "difficult viewpoints," forming a benchmark of 100 real-world challenging cases. Results show that SO…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "SfM benchmark"
+  - "camera pose estimation"
+  - "360° panoramic video"
+  - "real-world dynamics"
+  - "failure mode diagnosis"
 date: 2026-05-08
-content_hash: b4139a3c05c40c1a
+content_hash: ff6035e9d763791c
 ---
+
 # ORBIT: Benchmarking SfM in the Wild with 360° Video
 
 **Conference**: CVPR 2026  
@@ -119,11 +125,11 @@ Even the best-performing MegaSaM only achieves a strict success rate of 38.46%. 
 
 ## Related Papers
 
-- [\[CVPR 2026\] HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation](humanorbit_3d_human_reconstruction_as_360_orbit_generation.md)
 - [\[CVPR 2026\] GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator](gaussfusion_improving_3d_reconstruction_in_the_wild_with_a_geometry-informed_vid.md)
 - [\[CVPR 2026\] Scene Grounding In the Wild](scene_grounding_in_the_wild.md)
 - [\[CVPR 2026\] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation](vggt-360_geometry-consistent_zero-shot_panoramic_depth_estimation.md)
 - [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
+- [\[CVPR 2026\] BA-GS: Bayesian Adaptive Gaussian Splatting for SFM-Free 3D Reconstruction](ba-gs_bayesian_adaptive_gaussian_splatting_for_sfm-free_3d_reconstruction.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PASS: Path-Selective State Space Model for Event-Based Recognition
 description: >-
-  [NeurIPS 2025][Video Understanding][Event Camera] PASS proposes the Path-selective Event Aggregation and Scan (PEAS) module and the Multi-faceted Selection Guiding (MSG) loss…
+  [NeurIPS 2025][Video Understanding][Event Camera] PASS proposes the Path-selective Event Aggregation and Scan (PEAS) module and the Multi-faceted Selection Guiding (MSG) loss, leveraging the linear complexity and frequency generalization capability of SSMs to perform event-based recognition across a broad distribution of event lengths from $10^6$ to $10^9$, while limiting performance degradation to only 8.62% under varying inference frequencies (compared to 20.69% for the bas…
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Long-Sequence Modeling"
   - "Mamba"
 date: 2026-05-08
-content_hash: f8a002efabf30f45
+content_hash: 2e3b89975cd73165
 ---
 
 # PASS: Path-Selective State Space Model for Event-Based Recognition
@@ -160,11 +160,11 @@ Event stream → Fixed-event-length sampling + frame aggregation → PEAS module
 
 ## Related Papers
 
-- [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](../../AAAI2026/video_understanding/state-space_hierarchical_compression_with_gated_attention_an.md)
-- [\[NeurIPS 2025\] EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes](eag3r_event-augmented_3d_geometry_estimation_for_dynamic_and_extreme-lighting_sc.md)
+- [\[ECCV 2024\] VideoMamba: Spatio-Temporal Selective State Space Model](../../ECCV2024/video_understanding/videomamba_spatio-temporal_selective_state_space_model.md)
+- [\[ECCV 2024\] VideoMamba: State Space Model for Efficient Video Understanding](../../ECCV2024/video_understanding/videomamba_state_space_model_for_efficient_video_understanding.md)
+- [\[CVPR 2025\] MambaVLT: Time-Evolving Multimodal State Space Model for Vision-Language Tracking](../../CVPR2025/video_understanding/mambavlt_time-evolving_multimodal_state_space_model_for_vision-language_tracking.md)
+- [\[CVPR 2025\] GG-SSMs: Graph-Generating State Space Models](../../CVPR2025/video_understanding/gg-ssms_graph-generating_state_space_models.md)
 - [\[NeurIPS 2025\] Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity](lattice_boltzmann_model_for_learning_real-world_pixel_dynamicity.md)
-- [\[NeurIPS 2025\] PreFM: Online Audio-Visual Event Parsing via Predictive Future Modeling](prefm_online_audio-visual_event_parsing_via_predictive_future_modeling.md)
-- [\[ICCV 2025\] MobileViCLIP: An Efficient Video-Text Model for Mobile Devices](../../ICCV2025/video_understanding/mobileviclip_an_efficient_video-text_model_for_mobile_devices.md)
 
 </div>
 

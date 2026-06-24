@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Robust Generalized Schrödinger Bridge via Sparse Variational Gaussian Processes
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] To address the issue of noisy stage costs in Generalized Schrödinger Bridge (GSB), this paper transforms the deterministic "pinned marginal path" optimization in GSBM into Bayesian inference. By imposing Gaussian Process (GP) priors on the mean and standard deviation functions of the path and treating the CondSOC objec
+  [ICLR 2026][Generative Modeling][Generalized Schrödinger Bridge] To address the issue of noisy stage costs in Generalized Schrödinger Bridge (GSB), this paper transforms the deterministic "pinned marginal path" optimization in GSBM into Bayesian inference. By imposing Gaussian Process (GP) priors on the mean and standard deviation functions of the path and treating the CondSOC objective as a (noisy) likelihood, the posterior path is inferred via sparse variational free energy…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Generative Modeling"
+  - "Probabilistic Inference"
+  - "Schrödinger Bridge"
+  - "Generalized Schrödinger Bridge"
+  - "Sparse Variational Gaussian Processes"
+  - "Conditional Stochastic Optimal Control"
+  - "Robust Path Modeling"
+  - "Bayesian Inference"
 date: 2026-05-08
-content_hash: 9943f956d0774a1a
+content_hash: 1e03f2d0211edf7c
 ---
+
 # Robust Generalized Schrödinger Bridge via Sparse Variational Gaussian Processes
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StereoWorld: Geometry-Aware Monocular-to-Stereo Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Ours directly "converts" a pre-trained monocular video diffusion model into a stereo video generator: using a minimalist conditioning approach by concatenating left and right views along the frame dimension, it forces the learning of authentic 3D structures through **disparity + depth dual geometry-aware regularization
+  [CVPR 2026][Video Generation][Monocular-to-Stereo] Ours directly "converts" a pre-trained monocular video diffusion model into a stereo video generator: using a minimalist conditioning approach by concatenating left and right views along the frame dimension, it forces the learning of authentic 3D structures through **disparity + depth dual geometry-aware regularization**. Combined with spatio-temporal tiling for high-resolution long videos and the first 11-million-frame stere…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Monocular-to-Stereo"
+  - "Video Diffusion"
+  - "Geometry-Aware Regularization"
+  - "Disparity/Depth Supervision"
+  - "XR Stereo Video"
 date: 2026-05-08
-content_hash: 2733a3998c5836d3
+content_hash: 5b9222a35fcef374
 ---
+
 # StereoWorld: Geometry-Aware Monocular-to-Stereo Video Generation
 
 **Conference**: CVPR 2026  
@@ -126,11 +132,11 @@ Toggle the two types of geometric supervision (on the main test set):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
+- [\[CVPR 2026\] Stereo World Model: Camera-Guided Stereo Video Generation](stereo_world_model_camera-guided_stereo_video_generation.md)
+- [\[CVPR 2026\] WorldReel: 4D Video Generation with Consistent Geometry and Motion Modeling](worldreel_4d_video_generation_with_consistent_geometry_and_motion_modeling.md)
 - [\[ICLR 2026\] Geometry-aware 4D Video Generation for Robot Manipulation](../../ICLR2026/video_generation/geometry-aware_4d_video_generation_for_robot_manipulation.md)
-- [\[CVPR 2026\] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion](pantheon360_taming_digital_twin_generation_via_3d-aware_360deg_video_diffusion.md)
-- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
-- [\[CVPR 2026\] Content-Aware Dynamic Patchification for Efficient Video Diffusion](content-aware_dynamic_patchification_for_efficient_video_diffusion.md)
+- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
+- [\[CVPR 2026\] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion](pantheon360_taming_digital_twin_generation_via_3d-aware_360_video_diffusion.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Compose and Fuse: Revisiting the Foundational Bottlenecks in Multimodal Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Interpretability] This paper employs an evaluation framework based on propositional logic and "six interaction modes" that split facts across modalities. It systematically demonstrates that the true bottleneck of Multimodal Large Language Model (MLLM) reasoning lies in "integration" rather than "perception." Through attention probes and
+  [ICLR 2026][VLM Reasoning][Multimodal reasoning] This paper employs an evaluation framework based on propositional logic and "six interaction modes" that split facts across modalities. It systematically demonstrates that the true bottleneck of Multimodal Large Language Model (MLLM) reasoning lies in "integration" rather than "perception." Through attention probes and causal interventions, two root causes are identified: the **task-composition bottleneck** (identification and…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Interpretability
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal reasoning"
+  - "modality fusion"
+  - "logical reasoning evaluation"
+  - "interpretability"
+  - "attention analysis"
 date: 2026-05-08
-content_hash: a85e521fe9e1958d
+content_hash: a42466949f19df5d
 ---
+
 # Compose and Fuse: Revisiting the Foundational Bottlenecks in Multimodal Reasoning
 
 **Conference**: ICLR 2026  
@@ -149,11 +154,11 @@ Preference ratios in Contradictory settings show distinct, "counter-intuitive" b
 
 ## Related Papers
 
+- [\[CVPR 2026\] Downscaling Intelligence: Exploring Perception and Reasoning Bottlenecks in Small VLMs](../../CVPR2026/vlm_reasoning/downscaling_intelligence_exploring_perception_and_reasoning_bottlenecks_in_small.md)
+- [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](../../ICML2026/vlm_reasoning/breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
+- [\[ICML 2026\] Reason, Then Re-reason: Cross-view Revisiting Improves Spatial Reasoning](../../ICML2026/vlm_reasoning/reason_then_re-reason_cross-view_revisiting_improves_spatial_reasoning.md)
 - [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](reasoning-driven_multimodal_llm_for_domain_generalization.md)
-- [\[ICLR 2026\] Efficient Multimodal Spatial Reasoning via Dynamic and Asymmetric Routing](efficient_multimodal_spatial_reasoning_via_dynamic_and_asymmetric_routing.md)
-- [\[ICLR 2026\] ThinkMorph: Emergent Properties in Multimodal Interleaved Chain-of-Thought Reasoning](thinkmorph_emergent_properties_in_multimodal_interleaved_chain-of-thought_reason.md)
-- [\[ICLR 2026\] SportR: A Benchmark for Multimodal Large Language Model Reasoning in Sports](sportr_a_benchmark_for_multimodal_large_language_model_reasoning_in_sports.md)
-- [\[ICLR 2026\] Generative Universal Verifier as Multimodal Meta-Reasoner](generative_universal_verifier_as_multimodal_meta-reasoner.md)
+- [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](perception-aware_policy_optimization_for_multimodal_reasoning.md)
 
 </div>
 

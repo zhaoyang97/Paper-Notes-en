@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SCOPE: Saliency-Coverage Oriented Token Pruning for Efficient Multimodal LLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Visual Token Pruning] This paper proposes SCOPE, a visual token pruning strategy that jointly models saliency and coverage. By iteratively selecting tokens with the highest SCOPE scores…
+  [NeurIPS 2025][Multimodal Efficiency][Visual Token Pruning] This paper proposes SCOPE, a visual token pruning strategy that jointly models saliency and coverage. By iteratively selecting tokens with the highest SCOPE scores, it preserves semantic completeness and retains 96% of LLaVA-1.5's performance under a 9× token reduction.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Visual Token Pruning"
   - "Multimodal LLM Inference Acceleration"
   - "Semantic Coverage"
   - "Submodular Functions"
   - "Training-Free"
 date: 2026-05-08
-content_hash: c1e405d7ec465d00
+content_hash: 002c06278afb968d
 ---
 
 # SCOPE: Saliency-Coverage Oriented Token Pruning for Efficient Multimodal LLMs
@@ -122,11 +122,11 @@ The method is entirely training-free and plug-and-play. Pruning is performed onc
 
 ## Related Papers
 
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](../../CVPR2026/vlm_efficiency/score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] Merge3D: Efficient 3D Multimodal LLMs via Joint 2D-3D Token Merging](../../CVPR2026/vlm_efficiency/merge3d_efficient_3d_multimodal_llms_via_joint_2d-3d_token_merging.md)
+- [\[CVPR 2026\] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](../../CVPR2026/vlm_efficiency/coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)
+- [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](../../CVPR2026/vlm_efficiency/metom_metadata-guided_token_merging_for_efficient_video_llms.md)
 - [\[NeurIPS 2025\] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization](balanced_token_pruning_accelerating_vision_language_models_b.md)
-- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](../../ICCV2025/multimodal_vlm/meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
-- [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](../../CVPR2026/multimodal_vlm/vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
-- [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](../../CVPR2026/multimodal_vlm/hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
-- [\[NeurIPS 2025\] FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models](flowcut_rethinking_redundancy_via_information_flow_for_effic.md)
 
 </div>
 

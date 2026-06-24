@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Weight Decay May Matter More Than µP for Learning Rate Transfer in Practice
 description: >-
-  [ICLR 2026][Optimization & Theory][µP] This paper revisits learning rate transfer in large model training through a unified "relative update" framework. It discovers that the alignment assumptions upon which µP relies quickly fail during actual training. What truly stabilizes cross-width feature learning and enables learning rate transfer throughout most of
+  [ICLR 2026][Optimization][µP] This paper revisits learning rate transfer in large model training through a unified "relative update" framework. It discovers that the alignment assumptions upon which µP relies quickly fail during actual training. What truly stabilizes cross-width feature learning and enables learning rate transfer throughout most of the training process is **independent weight decay**. The learning rate scaling of µP essentially serves only as an "implicit lea…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - µP
-  - weight decay
-  - AdamW
+  - "ICLR 2026"
+  - "Optimization"
+  - "µP"
+  - "Learning Rate Transfer"
+  - "weight decay"
+  - "AdamW"
+  - "Feature Learning"
 date: 2026-05-08
-content_hash: e0e0782b59b209f5
+content_hash: 352f03d1b114f5ff
 ---
+
 # Weight Decay May Matter More Than µP for Learning Rate Transfer in Practice
 
 **Conference**: ICLR 2026  

@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Acceleration] The TAP framework is proposed to adaptively select the optimal predictor (from the Taylor expansion family) for each token at every step through a first-layer probe. It achieves training-free diffusion acceleration, reaching a $6.24\times$ speedup on FLUX.1-dev with no perceptible quality loss.
+  [Image Generation] The TAP framework is proposed to adaptively select the optimal predictor (from the Taylor expansion family) for each token at every step through a first-layer probe. It achieves training-free diffusion acceleration, reaching a $6.24\times$ speedup on FLUX.1-dev with no perceptible quality loss.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Acceleration
-  - Token-Adaptive
-  - Training-Free
-  - Feature Caching
-  - Taylor Predictor
+  - "Image Generation"
 date: 2026-05-08
-content_hash: c50055ab9fd21758
+content_hash: cdbb82dbebbc9680
 ---
+
 # TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration
 
 ## Basic Information
@@ -168,7 +163,7 @@ Key Findings:
 - [\[ICCV 2025\] MatchDiffusion: Training-free Generation of Match-Cuts](../../ICCV2025/image_generation/matchdiffusion_training-free_generation_of_match-cuts.md)
 - [\[ICCV 2025\] LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models](../../ICCV2025/image_generation/loraverse_a_submodular_framework_to_retrieve_diverse_adapters_for_diffusion_mode.md)
 - [\[ICCV 2025\] PanoLlama: Generating Endless and Coherent Panoramas with Next-Token-Prediction LLMs](../../ICCV2025/image_generation/panollama_generating_endless_and_coherent_panoramas_with_next-token-prediction_l.md)
-- [\[ICCV 2025\] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model](../../ICCV2025/image_generation/freemorph_tuning-free_generalized_image_morphing_with_diffusion_model.md)
+- [\[CVPR 2025\] EasyCraft: A Robust and Efficient Framework for Automatic Avatar Crafting](../../CVPR2025/image_generation/easycraft_a_robust_and_efficient_framework_for_automatic_avatar_crafting.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CineTrans: Learning to Generate Videos with Cinematic Transitions via Masked Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] CineTrans observes that the attention maps of video diffusion models naturally exhibit a block-diagonal structure, characterized by "strong intra-shot and weak inter-shot correlation." By manipulating attention with a block-diagonal mask constructed directly from shot timestamps and fine-tuning on the self-constructed
+  [ICLR2026][Image Generation][Multi-shot video generation] CineTrans observes that the attention maps of video diffusion models naturally exhibit a block-diagonal structure, characterized by "strong intra-shot and weak inter-shot correlation." By manipulating attention with a block-diagonal mask constructed directly from shot timestamps and fine-tuning on the self-constructed Cine250K multi-shot dataset, the model can generate cinematic multi-shot transitions at any specified…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Multi-shot video generation"
+  - "cinematic transitions"
+  - "attention mask"
+  - "video diffusion models"
+  - "dataset construction"
 date: 2026-05-08
-content_hash: 280a653c1c937df6
+content_hash: 030525cea6669802
 ---
+
 # CineTrans: Learning to Generate Videos with Cinematic Transitions via Masked Diffusion Models
 
 **Conference**: ICLR2026  
@@ -148,8 +154,8 @@ CineTrans-Unet achieves a transition control score of 0.8598, nearly matching th
 - [\[CVPR 2026\] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data](../../CVPR2026/image_generation/dynavid_learning_to_generate_highly_dynamic_videos_using_synthetic_motion_data.md)
 - [\[ICLR 2026\] CreatiDesign: A Unified Multi-Conditional Diffusion Transformer for Creative Graphic Design](creatidesign_a_unified_multi-conditional_diffusion_transformer_for_creative_grap.md)
 - [\[ICLR 2026\] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models](consolidating_reinforcement_learning_for_multimodal_discrete_diffusion_models.md)
-- [\[ICLR 2026\] Learning to Generate Stylized Handwritten Text via a Unified Representation of Style, Content, and Noise](learning_to_generate_stylized_handwritten_text_via_a_unified_representation_of_s.md)
 - [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](../../CVPR2026/image_generation/learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
+- [\[ICLR 2026\] What Exactly Does Guidance Do in Masked Discrete Diffusion Models](what_exactly_does_guidance_do_in_masked_discrete_diffusion_models.md)
 
 </div>
 

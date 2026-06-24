@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] General Process Reward Modeling for Robotic Reinforcement Learning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Reinforcement Learning] Ours proposes Robo-Dopamine: first training a "step-wise, cross-task" general process reward model (GRM) using 3,400 hours of multi-view video, then feeding dense signals to RL through a theoretically guaranteed "policy-invariant reward shaping" mechanism. This enables real-robot policies to improve from near 0% to a 9
+  [CVPR 2026][Robotics][Process Reward Model] Ours proposes Robo-Dopamine: first training a "step-wise, cross-task" general process reward model (GRM) using 3,400 hours of multi-view video, then feeding dense signals to RL through a theoretically guaranteed "policy-invariant reward shaping" mechanism. This enables real-robot policies to improve from near 0% to a 95% success rate with a single demonstration and approximately 150 online rollouts (~1 hour).
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Robotics"
+  - "Process Reward Model"
+  - "Robot Manipulation"
+  - "Reinforcement Learning"
+  - "Reward Shaping"
+  - "Multi-view"
 date: 2026-05-08
-content_hash: 1bb9d803e86aa5a0
+content_hash: e443b794fd7a6437
 ---
+
 # General Process Reward Modeling for Robotic Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -143,7 +148,7 @@ Policy Performance: After one-shot adaptation, Dopamine-RL improved real-robot p
 - [\[ICLR 2026\] APPLE: Toward General Active Perception via Reinforcement Learning](../../ICLR2026/robotics/apple_toward_general_active_perception_via_reinforcement_learning.md)
 - [\[CVPR 2026\] DemoFunGrasp: Universal Dexterous Functional Grasping via Demonstration-Editing Reinforcement Learning](demofungrasp_universal_dexterous_functional_grasping_via_demonstration-editing_r.md)
 - [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](../../AAAI2026/robotics/actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
-- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
+- [\[ICLR 2026\] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation](../../ICLR2026/robotics/sarm_stage-aware_reward_modeling_for_long_horizon_robot_manipulation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ARFlow: Auto-regressive Optical Flow Estimation for Arbitrary-Length Videos via Progressive Next-Frame Forecasting
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] ARFlow transforms multi-frame optical flow estimation from "one-time estimation within a fixed-length clip" to "step-by-step auto-regressive prediction of next-frame flow." By using historical flow to initialize current estimates and fusing short-term and long-term motion cues through multi-stride temporal forecasting,
+  [ICLR 2026][Video Understanding][Auto-regressive optical flow] ARFlow transforms multi-frame optical flow estimation from "one-time estimation within a fixed-length clip" to "step-by-step auto-regressive prediction of next-frame flow." By using historical flow to initialize current estimates and fusing short-term and long-term motion cues through multi-stride temporal forecasting, it improves accuracy on benchmarks like Sintel, KITTI, and Spring with nearly constant memory us…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Auto-regressive optical flow"
+  - "multi-frame optical flow"
+  - "long-video modeling"
+  - "temporal Transformer"
+  - "motion prediction"
 date: 2026-05-08
-content_hash: 1792de7a920e69ef
+content_hash: d002e697a9ae2866
 ---
+
 # ARFlow: Auto-regressive Optical Flow Estimation for Arbitrary-Length Videos via Progressive Next-Frame Forecasting
 
 **Conference**: ICLR 2026  
@@ -140,7 +146,7 @@ Multi-stride analysis shows that using any single stride (1, 2, or 4) is inferio
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAFER: Risk-Constrained Sample-then-Filter in Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][conformal prediction] Addressing the issues in open-domain QA where LLMs may fail to sample the correct answer and candidate sets are often mixed with hallucinations, SAFER first employs abstention-aware sampling budget calibration to control the risk of "no acceptable answer in the candidate set." It then applies conformalized filtering to
+  [ICLR2026][LLM Safety][Risk-constrained generation] Addressing the issues in open-domain QA where LLMs may fail to sample the correct answer and candidate sets are often mixed with hallucinations, SAFER first employs abstention-aware sampling budget calibration to control the risk of "no acceptable answer in the candidate set." It then applies conformalized filtering to remove high-uncertainty answers. Experiments across multiple datasets and models verify that the two-stage…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - conformal prediction
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Risk-constrained generation"
+  - "conformal prediction"
+  - "uncertainty quantification"
+  - "abstention mechanism"
+  - "open-domain QA"
 date: 2026-05-08
-content_hash: b60ca560d1759b79
+content_hash: 878591d92a3cf6ab
 ---
+
 # SAFER: Risk-Constrained Sample-then-Filter in Large Language Models
 
 **Conference**: ICLR2026  

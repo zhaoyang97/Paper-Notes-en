@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Behavior Learning (BL)
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Inspired by behavioral science, this paper directly incorporates the assumption that "observations are solutions to an optimization problem" as a learnable module. Each module is a Utility Maximization Problem (UMP) expressible in symbolic form. These are hierarchically stacked into a composite utility function that in
+  [ICLR2026][Interpretability][Intrinsic Interpretability] Inspired by behavioral science, this paper directly incorporates the assumption that "observations are solutions to an optimization problem" as a learnable module. Each module is a Utility Maximization Problem (UMP) expressible in symbolic form. These are hierarchically stacked into a composite utility function that induces a Gibbs distribution for prediction/generation, simultaneously achieving strong predictive power…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Intrinsic Interpretability"
+  - "Identifiability"
+  - "Utility Maximization"
+  - "Inverse Optimization"
+  - "Energy-based Models"
 date: 2026-05-08
-content_hash: a6509087b81e009a
+content_hash: b8403cb656d4e848
 ---
+
 # Behavior Learning (BL)
 
 **Conference**: ICLR2026  

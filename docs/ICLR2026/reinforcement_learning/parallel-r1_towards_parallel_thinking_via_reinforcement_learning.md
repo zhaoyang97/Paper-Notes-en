@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Parallel-R1: Towards Parallel Thinking via Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Parallel-R1 proposes the first framework to inject "parallel thinking" capabilities into real-world mathematical reasoning tasks via reinforcement learning (RL) rather than pure SFT. By employing a progressive curriculum—"cold-start data generation via simple task prompts → SFT for format learning → simple-task RL for
+  [ICLR 2026][Reinforcement Learning][Parallel Thinking] Parallel-R1 proposes the first framework to inject "parallel thinking" capabilities into real-world mathematical reasoning tasks via reinforcement learning (RL) rather than pure SFT. By employing a progressive curriculum—"cold-start data generation via simple task prompts → SFT for format learning → simple-task RL for format stabilization → difficult-task RL for performance enhancement"—the framework bypasses cold-start c…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Parallel Thinking"
+  - "Curriculum Training"
+  - "Reward Design"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 020643ec4fc3a15c
+content_hash: ebd124b8666027eb
 ---
+
 # Parallel-R1: Towards Parallel Thinking via Reinforcement Learning
 
 **Conference**: ICLR 2026  

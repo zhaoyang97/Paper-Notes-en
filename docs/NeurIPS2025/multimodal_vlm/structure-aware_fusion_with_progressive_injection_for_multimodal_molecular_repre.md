@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal fusion] This paper proposes MuMo, a framework that fuses 2D topological and 3D geometric information into stable structural priors via a Structured Fusion Pipeline (SFP)…
+  [NeurIPS 2025][Multimodal VLM][multimodal fusion] This paper proposes MuMo, a framework that fuses 2D topological and 3D geometric information into stable structural priors via a Structured Fusion Pipeline (SFP), and asymmetrically integrates these priors into the sequence stream through a Progressive Injection (PI) mechanism, achieving an average improvement of 2.7% over competitive baselines across 29 molecular property prediction benchmarks and ranking first on 22 of them.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "drug discovery"
   - "conformational robustness"
 date: 2026-05-08
-content_hash: 45396f4af2a4bea3
+content_hash: 3b9951b44a8fe4b1
 ---
 
 # Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning
@@ -188,8 +188,8 @@ MuMo demonstrates substantially stronger robustness to conformational noise (onl
 - [\[NeurIPS 2025\] STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You](with_limited_data_for_multimodal_alignment_let_the_structure_guide_you.md)
 - [\[NeurIPS 2025\] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning](on_the_value_of_cross-modal_misalignment_in_multimodal_representation_learning.md)
 - [\[NeurIPS 2025\] Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment](aligning_by_misaligning_boundaryaware_curriculum_learning_fo.md)
+- [\[ACL 2025\] MIRe: Enhancing Multimodal Queries Representation via Fusion-Free Modality Interaction](../../ACL2025/multimodal_vlm/mire_enhancing_multimodal_queries_representation_via_fusion-free_modality_intera.md)
 - [\[NeurIPS 2025\] Multimodal Negative Learning](multimodal_negative_learning.md)
-- [\[NeurIPS 2025\] Efficient Multi-modal Large Language Models via Progressive Consistency Distillation](efficient_multi-modal_large_language_models_via_progressive_consistency_distilla.md)
 
 </div>
 

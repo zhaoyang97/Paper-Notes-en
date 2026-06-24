@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][plasma turbulence] This work presents GyroSwin, the first scalable 5D neural surrogate model for gyrokinetic plasma turbulence. It extends the Swin Transformer to the 5D gyr…
+  [NeurIPS 2025][Physics & Scientific Computing][plasma turbulence] This work presents GyroSwin, the first scalable 5D neural surrogate model for gyrokinetic plasma turbulence. It extends the Swin Transformer to the 5D gyrokinetic phase space, employs cross-attention for 3D↔5D interaction, and adopts channelwise mode separation to capture zonal flows. GyroSwin achieves higher accuracy than conventional quasilinear methods while being three orders of magnitude faster than the nu…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Swin Transformer"
   - "nuclear fusion"
 date: 2026-05-08
-content_hash: 797851184007cbc6
+content_hash: 96220eed6986a43a
 ---
 
 # GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations

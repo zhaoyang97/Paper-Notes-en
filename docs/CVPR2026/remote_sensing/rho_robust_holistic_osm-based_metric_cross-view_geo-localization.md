@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization
 description: >-
-  [CVPR 2026][Remote Sensing][Cross-View Geo-Localization] This work presents CV-RHO, the first OSM-based metric-level cross-view localization benchmark targeting adverse weather and sensor noise (2.7M+ images). A dual-branch Pin-Pan architecture model, RHO, is proposed, incorporating Split-Undistort-Merge (SUM) and Position-Orientation Fusion (POF) mechanisms, achieving up to
+  [CVPR 2026][Remote Sensing][Cross-View Geo-Localization] This work presents CV-RHO, the first OSM-based metric-level cross-view localization benchmark targeting adverse weather and sensor noise (2.7M+ images). A dual-branch Pin-Pan architecture model, RHO, is proposed, incorporating Split-Undistort-Merge (SUM) and Position-Orientation Fusion (POF) mechanisms, achieving up to a 20% improvement in localization performance under various degradation conditions.
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Cross-View Geo-Localization
-  - OpenStreetMap
-  - Panorama
-  - Robustness
-  - BEV
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Cross-View Geo-Localization"
+  - "OpenStreetMap"
+  - "Panorama"
+  - "Robustness"
+  - "BEV"
 date: 2026-05-08
-content_hash: e70b5de74c67d0c4
+content_hash: 788542336be0a87c
 ---
+
 # RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization
 
 **Conference**: CVPR 2026  
@@ -167,14 +168,15 @@ Ours (RHO) shows almost no performance degradation under matching conditions, wi
 - **Value**: ⭐⭐⭐⭐ — High contribution via the benchmark dataset and robustness analysis.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization](singeo_unlock_single_models_potential_for_robust_cross-view_geo-localization.md)
-- [\[CVPR 2026\] PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence](paul_uncertainty-guided_partition_and_augmentation_for_robust_cross-view_geo-loc.md)
-- [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
 - [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
+- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
+- [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
 - [\[ECCV 2024\] ConGeo: Robust Cross-View Geo-Localization Across Ground View Variations](../../ECCV2024/remote_sensing/congeo_robust_cross-view_geo-localization_across_ground_view_variations.md)
 
 </div>

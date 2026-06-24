@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AtlasGS: Atlanta-world Guided Surface Reconstruction with Implicit Structured Gaussians
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] AtlasGS is proposed to achieve smooth, high-frequency-detail-preserving surface reconstruction in indoor and urban scenes by incorporating the Atlanta-world structural pri…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] AtlasGS is proposed to achieve smooth, high-frequency-detail-preserving surface reconstruction in indoor and urban scenes by incorporating the Atlanta-world structural prior into an implicit-structured Gaussian representation, comprehensively outperforming existing implicit and explicit methods.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "implicit representation"
   - "indoor/urban scenes"
 date: 2026-05-08
-content_hash: 1fef22cb804affc6
+content_hash: afeadccc7911cb06
 ---
 
 # AtlasGS: Atlanta-world Guided Surface Reconstruction with Implicit Structured Gaussians
@@ -158,11 +158,11 @@ where $\mathcal{L}_{\text{reg}} = \mathcal{L}_{3D} + \mathcal{L}_{2D}$; $\mathca
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] GeoSVR: Taming Sparse Voxels for Geometrically Accurate Surface Reconstruction](geosvr_taming_sparse_voxels_for_geometrically_accurate_surface_reconstruction.md)
+- [\[ECCV 2024\] A Probability-guided Sampler for Neural Implicit Surface Rendering](../../ECCV2024/3d_vision/a_probabilityguided_sampler_for_neural_implicit_surface_rend.md)
 - [\[ICCV 2025\] RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians](../../ICCV2025/3d_vision/rayletdf_raylet_distance_fields_for_generalizable_3d_surface_reconstruction_from.md)
+- [\[NeurIPS 2025\] GeoSVR: Taming Sparse Voxels for Geometrically Accurate Surface Reconstruction](geosvr_taming_sparse_voxels_for_geometrically_accurate_surface_reconstruction.md)
+- [\[CVPR 2025\] GauSTAR: Gaussian Surface Tracking and Reconstruction](../../CVPR2025/3d_vision/gaustar_gaussian_surface_tracking_and_reconstruction.md)
 - [\[NeurIPS 2025\] Linearly Constrained Diffusion Implicit Models](linearly_constrained_diffusion_implicit_models.md)
-- [\[CVPR 2026\] NTK-Guided Implicit Neural Teaching](../../CVPR2026/3d_vision/ntk-guided_implicit_neural_teaching.md)
-- [\[ICCV 2025\] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting](../../ICCV2025/3d_vision/surfacesplat_connecting_surface_reconstruction_and_gaussian_splatting.md)
 
 </div>
 

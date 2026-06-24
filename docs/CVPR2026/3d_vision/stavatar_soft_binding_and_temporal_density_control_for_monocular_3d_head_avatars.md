@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][3D Head Avatar] Ours proposes STAvatar, a framework for reconstructing high-fidelity, drivable 3D head avatars from monocular video. By utilizing a UV-adaptive soft binding framework and a temporal adaptive density control strategy, it significantly outperforms existing methods in handling occluded areas (e.g., mouth interior, eyelids
+  [CVPR2026][3D Vision][3D Head Avatar] Ours proposes STAvatar, a framework for reconstructing high-fidelity, drivable 3D head avatars from monocular video. By utilizing a UV-adaptive soft binding framework and a temporal adaptive density control strategy, it significantly outperforms existing methods in handling occluded areas (e.g., mouth interior, eyelids) and fine details.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Head Avatar
-  - 3D Gaussian Splatting
-  - Soft Binding
-  - Adaptive Density Control
-  - Monocular Reconstruction
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Head Avatar"
+  - "3D Gaussian Splatting"
+  - "Soft Binding"
+  - "Adaptive Density Control"
+  - "Monocular Reconstruction"
 date: 2026-05-08
-content_hash: 67becb334f713f42
+content_hash: 84980b3db80f086c
 ---
+
 # STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction
 
 **Conference**: CVPR2026  
@@ -151,11 +152,11 @@ Evaluation was performed on 22 identities across 4 datasets (INSTA, PointAvatar,
 
 ## Related Papers
 
-- [\[CVPR 2026\] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image](zero-shot_reconstruction_of_animatable_3d_avatars_with_cloth_dynamics_from_a_sin.md)
+- [\[ICLR 2026\] Gradient-Direction-Aware Density Control for 3D Gaussian Splatting](../../ICLR2026/3d_vision/gradient-direction-aware_density_control_for_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
-- [\[CVPR 2026\] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation](flexavatar_flexible_large_reconstruction_model_for_animatable_gaussian_head_avat.md)
 - [\[NeurIPS 2025\] DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting](../../NeurIPS2025/3d_vision/dc4gs_directional_consistency-driven_adaptive_density_control_for_3d_gaussian_sp.md)
-- [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
+- [\[CVPR 2026\] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image](zero-shot_reconstruction_of_animatable_3d_avatars_with_cloth_dynamics_from_a_sin.md)
+- [\[CVPR 2025\] Steepest Descent Density Control for Compact 3D Gaussian Splatting](../../CVPR2025/3d_vision/steepest_descent_density_control_for_compact_3d_gaussian_splatting.md)
 
 </div>
 

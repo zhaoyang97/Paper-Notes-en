@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][RoPE] RoPE++ reclaims the negative imaginary part discarded in standard RoPE complex attention and utilizes it as a parallel imaginary attention head, enhancing long-context modeling capabilities without increasing KV cache or while directly halving the cache configuration.
+  [ICLR2026][LLM Efficiency][Long Context] RoPE++ reclaims the negative imaginary part discarded in standard RoPE complex attention and utilizes it as a parallel imaginary attention head, enhancing long-context modeling capabilities without increasing KV cache or while directly halving the cache configuration.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - RoPE
-  - KV Cache
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Long Context"
+  - "RoPE"
+  - "Position Embedding"
+  - "KV Cache"
+  - "Length Extrapolation"
 date: 2026-05-08
-content_hash: 281dd02a4426babd
+content_hash: 8d6ba567594fd444
 ---
+
 # Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs
 
 **Conference**: ICLR2026  
@@ -178,10 +182,10 @@ Ablations mainly analyze whether "imaginary attention truly handles long-context
 
 ## Related Papers
 
-- [\[ICLR 2026\] Group Representational Position Encoding (GRAPE)](group_representational_position_encoding.md)
-- [\[ICLR 2026\] Extending the Context of Pretrained LLMs by Dropping Their Positional Embedding](extending_the_context_of_pretrained_llms_by_dropping_their_positional_embedding.md)
 - [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
 - [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
+- [\[ICLR 2026\] Group Representational Position Encoding (GRAPE)](group_representational_position_encoding.md)
+- [\[ICML 2026\] Training-Inference Consistent Segmented Execution for Long-Context LLMs](../../ICML2026/llm_efficiency/training-inference_consistent_segmented_execution_for_long-context_llms.md)
 - [\[ICLR 2026\] SoLoPO: Unlocking Long-Context Capabilities in LLMs via Short-to-Long Preference Optimization](solopo_unlocking_long-context_capabilities_in_llms_via_short-to-long_preference_.md)
 
 </div>

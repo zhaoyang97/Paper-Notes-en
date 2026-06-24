@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DMesh++: An Efficient Differentiable Mesh for Complex Shapes
 description: >-
-  [ICCV 2025][3D Vision][Differentiable mesh] This paper proposes DMesh++, which replaces weighted Delaunay triangulation (WDT) with a Minimum-Ball algorithm as the tessellation function for differentiable meshes…
+  [ICCV 2025][3D Vision][Differentiable mesh] This paper proposes DMesh++, which replaces weighted Delaunay triangulation (WDT) with a Minimum-Ball algorithm as the tessellation function for differentiable meshes, reducing computational complexity from $O(N)$ to $O(\log N)$. The method achieves up to 32× speedup on complex shapes while preserving desirable properties such as no self-intersections and few degenerate triangles.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "multi-view reconstruction"
   - "Minimum-Ball algorithm"
 date: 2026-05-08
-content_hash: f27cd077bf6cf171
+content_hash: a6b5712d9614d56a
 ---
 
 # DMesh++: An Efficient Differentiable Mesh for Complex Shapes
@@ -55,15 +55,15 @@ Reconstruction follows a multi-stage optimization: (1) initialize point features
     - *Mechanism*: Validity of a face is reduced to a nearest-neighbor search. Given the center $B_F^c$ and radius $B_F^r$ of $B_F$, find the nearest neighbor of $B_F^c$ in $\mathbb{P} - F$:
 $$d(B_F, \mathbb{P}) = \min_{p \in \mathbb{P}-F} \|p - B_F^c\| - B_F^r$$
 $$F \in \mathbb{F}_{min} \Leftrightarrow d(B_F, \mathbb{P}) > 0$$
-   - *Design Motivation*: Nearest-neighbor search is highly parallelizable on GPUs (via KD-tree), whereas WDT is nearly impossible to parallelize due to inherent race conditions.
+    - *Design Motivation*: Nearest-neighbor search is highly parallelizable on GPUs (via KD-tree), whereas WDT is nearly impossible to parallelize due to inherent race conditions.
 
 2. **Differentiable Probability Computation**:
 
     - *Function*: Soften the discrete Minimum-Ball condition into a continuous probability using a sigmoid function.
     - *Mechanism*:
 $$\Lambda_{min}(F) = \sigma\!\left(d(B_F, \mathbb{P}) \cdot \alpha_{min}\right)$$
-     where $\alpha_{min}$ is a sharpness constant. The center and radius of $B_F$ are computed in a differentiable manner by solving geometric equations.
-   - *Design Motivation*: Gradient propagation is maintained so that mesh topology can dynamically change during optimization of point positions.
+      where $\alpha_{min}$ is a sharpness constant. The center and radius of $B_F$ are computed in a differentiable manner by solving geometric equations.
+    - *Design Motivation*: Gradient propagation is maintained so that mesh topology can dynamically change during optimization of point positions.
 
 3. **Theoretical Guarantees**:
 

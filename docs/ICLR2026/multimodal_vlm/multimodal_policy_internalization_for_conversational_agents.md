@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Multimodal Policy Internalization for Conversational Agents
 description: >-
-  [ICLR 2026][Multimodal VLM][Multimodal Policy Internalization] The authors propose "Multimodal Policy Internalization (MPI)," a new task for internalizing lengthy and complex multimodal policies (decision rules, tool-use protocols, and even demonstration images) from in-context prompts into model parameters. Using the three-stage training framework **TriMPI** (Visual Masked Contin
+  [ICLR 2026][Multimodal VLM][Multimodal Policy Internalization] The authors propose "Multimodal Policy Internalization (MPI)," a new task for internalizing lengthy and complex multimodal policies (decision rules, tool-use protocols, and even demonstration images) from in-context prompts into model parameters. Using the three-stage training framework **TriMPI** (Visual Masked Continued Pre-training + CoT-SFT + RL with PolicyRollout), models achieve high compliance without provi…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Multimodal Policy Internalization
-  - TriMPI
-  - PolicyRollout
-  - VM-CPT
-  - GRPO/DAPO
-  - Tool-Use Agent
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Policy Internalization"
+  - "TriMPI"
+  - "PolicyRollout"
+  - "VM-CPT"
+  - "GRPO/DAPO"
+  - "Tool-Use Agent"
 date: 2026-05-08
-content_hash: f604e30145047800
+content_hash: 10531058ab9f4490
 ---
+
 # Multimodal Policy Internalization for Conversational Agents
 
 **Conference**: ICLR 2026  
@@ -120,10 +121,17 @@ Ours achieves up to **70.7%** absolute improvement over the CoT-SFT baseline and
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](../../CVPR2026/multimodal_vlm/hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)
+- [\[CVPR 2026\] DialogueVPR: Towards Conversational Visual Place Recognition](../../CVPR2026/multimodal_vlm/dialoguevpr_towards_conversational_visual_place_recognition.md)
+- [\[ICLR 2026\] PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning](psp_prompt-guided_self-training_sampling_policy_for_active_prompt_learning.md)
+- [\[ICLR 2026\] DAVE: A VLM Vision Encoder for Document Understanding and Web Agents](dave_a_vlm_vision_encoder_for_document_understanding_and_web_agents.md)
+- [\[CVPR 2026\] Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining](../../CVPR2026/multimodal_vlm/tackling_alignment_ambiguity_in_person_retrieval_through_conversational_attribut.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](../../CVPR2026/multimodal_vlm/hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)

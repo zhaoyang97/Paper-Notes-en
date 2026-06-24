@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Local Rules Create Global Order: Self-Organized Representation Learning for Latent Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper points out that the quality of Latent Diffusion Models (LDM) depends on whether the VAE latent space simultaneously satisfies "local smoothness" and "global dispersion." It proposes SORL—a bottom-up training paradigm that utilizes two simple local rules, "local attraction" and "local repulsion," to allow the
+  [CVPR 2026][Image Generation][Latent Diffusion Models] This paper points out that the quality of Latent Diffusion Models (LDM) depends on whether the VAE latent space simultaneously satisfies "local smoothness" and "global dispersion." It proposes SORL—a bottom-up training paradigm that utilizes two simple local rules, "local attraction" and "local repulsion," to allow these two global structures to emerge spontaneously, thereby simultaneously improving reconstruction fidelit…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Latent Diffusion Models"
+  - "Self-Organization"
+  - "Representation Learning"
+  - "Local Attraction and Repulsion"
+  - "VAE Latent Space"
 date: 2026-05-08
-content_hash: 8502de24b7e916d5
+content_hash: e149bdb2636d8c4e
 ---
+
 # When Local Rules Create Global Order: Self-Organized Representation Learning for Latent Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ On CelebA-HQ, PSNR is more than 3 dB higher than the VAE baseline, and FID dropp
 
 ## Related Papers
 
+- [\[CVPR 2026\] LogCD: Local-to-global Consistency Distillation for Few-step Image Generation](logcd_local-to-global_consistency_distillation_for_few-step_image_generation.md)
 - [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
 - [\[CVPR 2026\] SRA 2: Variational Autoencoder Self-Representation Alignment for Efficient Diffusion Training](sra_2_variational_autoencoder_self-representation_alignment_for_efficient_diffus.md)
-- [\[ICLR 2026\] When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models](../../ICLR2026/image_generation/when_one_modality_rules_them_all_backdoor_modality_collapse_in_multimodal_diffus.md)
-- [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](self-corrected_image_generation_with_explainable_latent_rewards.md)
-- [\[CVPR 2026\] 2ndMatch: Finetuning Pruned Diffusion Models via Second-Order Jacobian Matching](2ndmatch_finetuning_pruned_diffusion_models_via_second-order_jacobian_matching.md)
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
+- [\[ICML 2026\] Evaluating the Representation Space of Diffusion Models via Self-Supervised Principles](../../ICML2026/image_generation/evaluating_the_representation_space_of_diffusion_models_via_self-supervised_prin.md)
 
 </div>
 

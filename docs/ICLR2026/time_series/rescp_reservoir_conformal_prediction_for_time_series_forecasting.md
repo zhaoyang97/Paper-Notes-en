@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ResCP: Reservoir Conformal Prediction for Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][conformal prediction] This paper introduces Reservoir Computing (Echo State Network) into Conformal Prediction for the first time. By encoding temporal dynamics of residual sequences using a randomly initialized ESN and utilizing state similarity to adaptively reweight historical residuals, it constructs local prediction intervals. Without
+  [ICLR 2026][Time Series][conformal prediction] This paper introduces Reservoir Computing (Echo State Network) into Conformal Prediction for the first time. By encoding temporal dynamics of residual sequences using a randomly initialized ESN and utilizing state similarity to adaptively reweight historical residuals, it constructs local prediction intervals. Without any training, it achieves SOTA Winkler scores on four real-world datasets and is 20-80× faster than HopCPT.
 tags:
-  - ICLR 2026
-  - Time Series
-  - conformal prediction
-  - reservoir computing
-  - echo state network
-  - prediction interval
-  - training-free
+  - "ICLR 2026"
+  - "Time Series"
+  - "conformal prediction"
+  - "reservoir computing"
+  - "echo state network"
+  - "prediction interval"
+  - "training-free"
 date: 2026-05-08
-content_hash: dc0f468d0a6e9933
+content_hash: a4319d67be9d4449
 ---
+
 # ResCP: Reservoir Conformal Prediction for Time Series Forecasting
 
 **Conference**: ICLR 2026  
@@ -149,11 +150,11 @@ Prediction intervals are approximated via Monte Carlo sampling and optimized usi
 
 ## Related Papers
 
-- [\[AAAI 2026\] HydroDCM: Hydrological Domain-Conditioned Modulation for Cross-Reservoir Inflow Prediction](../../AAAI2026/time_series/hydrodcm_hydrological_domain-conditioned_modulation_for_cross-reservoir_inflow_p.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 - [\[ICML 2026\] Simulation-Augmented Multi-Step Split Conformal Prediction for Aggregated Forecasts](../../ICML2026/time_series/simulation-augmented_multi-step_split_conformal_prediction_for_aggregated_foreca.md)
+- [\[AAAI 2026\] HydroDCM: Hydrological Domain-Conditioned Modulation for Cross-Reservoir Inflow Prediction](../../AAAI2026/time_series/hydrodcm_hydrological_domain-conditioned_modulation_for_cross-reservoir_inflow_p.md)
 - [\[ICLR 2026\] Online Time Series Prediction Using Feature Adjustment](online_time_series_prediction_using_feature_adjustment.md)
 - [\[ICLR 2026\] JAPAN: Joint Adaptive Prediction Areas with Normalising-Flows](japan_joint_adaptive_prediction_areas_with_normalising_flow.md)
-- [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
 
 </div>
 

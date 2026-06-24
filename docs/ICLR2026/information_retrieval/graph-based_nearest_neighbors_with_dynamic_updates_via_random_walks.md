@@ -4,13 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Information Retrieval & RAG][HNSW] This paper proposes a novel theoretical framework based on random walks for the HNSW graph index and designs the **SPatch** deletion algorithm—which "clique-ies then sparsifies" in the neighborhood after node deletion—achieving an optimal trade-off across recall, query speed, deletion latency, and memory footprint.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - HNSW
-  - RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "HNSW"
+  - "Vector Deletion"
+  - "Random Walk"
+  - "Graph Sparsification"
+  - "Hitting Time"
+  - "RAG"
 date: 2026-05-08
-content_hash: 5fe53693b31ce717
+content_hash: c9c7ae219a6839df
 ---
+
 # Graph-based Nearest Neighbors with Dynamic Updates via Random Walks
 
 **Conference**: ICLR 2026  

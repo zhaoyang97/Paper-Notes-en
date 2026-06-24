@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization
 description: >-
-  [CVPR 2026][AI Safety][Machine Unlearning] To address the issues of "uniform treatment of all samples/categories" and "gradient conflicts between forgetting and retaining objectives" in machine unlearning, this paper proposes **Adaptive Gradient Reweighting** (weighting based on sample memory depth/category vulnerability) combined with **Three-stage Objective O
+  [CVPR 2026][LLM Safety][Machine Unlearning] To address the issues of "uniform treatment of all samples/categories" and "gradient conflicts between forgetting and retaining objectives" in machine unlearning, this paper proposes **Adaptive Gradient Reweighting** (weighting based on sample memory depth/category vulnerability) combined with **Three-stage Objective Optimization** (direction rectification → temporal smoothing → adaptive combination). On CIFAR-10/100 and Tiny-ImageN…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Machine Unlearning
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Adaptive Gradient Reweighting"
+  - "Multi-objective Optimization"
+  - "Gradient Conflict"
+  - "Forgetting-Retaining Trade-off"
 date: 2026-05-08
-content_hash: 17c92abfd2799a4a
+content_hash: 8ec01eb6dfdcd77e
 ---
+
 # Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization
 
 **Conference**: CVPR 2026  
@@ -125,11 +130,11 @@ Single-class unlearning (evaluating H-Mean = harmonic mean of retain accuracy $A
 
 ## Related Papers
 
-- [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](../../ICML2026/ai_safety/how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
-- [\[CVPR 2026\] Computation and Communication Efficient Federated Unlearning via On-server Gradient Conflict Mitigation and Expression](computation_and_communication_efficient_federated_unlearning_via_on-server_gradi.md)
-- [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](../../NeurIPS2025/ai_safety/efficient_verified_machine_unlearning_for_distillation.md)
-- [\[CVPR 2025\] MOS-Attack: A Scalable Multi-Objective Adversarial Attack Framework](../../CVPR2025/ai_safety/mos-attack_a_scalable_multi-objective_adversarial_attack_framework.md)
-- [\[CVPR 2026\] Bypassing the Transport Plan: Dynamic Reweighting for Out-of-Distribution Detection with Optimal Transport](bypassing_the_transport_plan_dynamic_reweighting_for_out-of-distribution_detecti.md)
+- [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](../../ICLR2026/llm_safety/ofmu_optimization-driven_framework_for_machine_unlearning.md)
+- [\[CVPR 2026\] SineProject: Machine Unlearning for Stable Vision–Language Alignment](sineproject_machine_unlearning_for_stable_vision_language_alignment.md)
+- [\[NeurIPS 2025\] Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization](../../NeurIPS2025/llm_safety/learning_to_watermark_a_selective_watermarking_framework_for_large_language_mode.md)
+- [\[CVPR 2026\] pH-Strips for Selective Forgetting: A Blunt but Fast Diagnostic Baseline for Machine Unlearning](ph-strips_for_selective_forgetting_a_blunt_but_fast_diagnostic_baseline_for_mach.md)
+- [\[ICCV 2025\] MUNBa: Machine Unlearning via Nash Bargaining](../../ICCV2025/llm_safety/munba_machine_unlearning_via_nash_bargaining.md)
 
 </div>
 

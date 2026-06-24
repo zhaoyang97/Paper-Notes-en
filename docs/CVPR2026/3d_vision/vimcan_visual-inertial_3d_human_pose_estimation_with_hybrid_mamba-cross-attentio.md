@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VIMCAN: Visual-Inertial 3D Human Pose Estimation with Hybrid Mamba-Cross-Attention Network
 description: >-
-  [CVPR 2026][3D Vision][Mamba] VIMCAN integrates Mamba's linear complexity for temporal modeling with Cross-Attention's cross-modal spatial reasoning into a hybrid architecture. By fusing RGB keypoints and wearable IMU data, it achieves 17.2 mm MPJPE on TotalCapture while supporting real-time inference at 60+ FPS on consumer-grade hardware.
+  [CVPR 2026][3D Vision][Visual-Inertial Fusion] VIMCAN integrates Mamba's linear complexity for temporal modeling with Cross-Attention's cross-modal spatial reasoning into a hybrid architecture. By fusing RGB keypoints and wearable IMU data, it achieves 17.2 mm MPJPE on TotalCapture while supporting real-time inference at 60+ FPS on consumer-grade hardware.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Mamba
-  - Cross-Attention
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Visual-Inertial Fusion"
+  - "3D Human Pose"
+  - "Mamba"
+  - "Cross-Attention"
+  - "Real-time Inference"
 date: 2026-05-08
-content_hash: 682ff2cc828549e7
+content_hash: 38a46bbb82d75b0d
 ---
+
 # VIMCAN: Visual-Inertial 3D Human Pose Estimation with Hybrid Mamba-Cross-Attention Network
 
 **Conference**: CVPR 2026  
@@ -169,10 +173,10 @@ VIMCAN-B achieves the highest accuracy while using only ~29% of Wang's memory wi
 
 ## Related Papers
 
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
+- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
 - [\[CVPR 2026\] RI-Mamba: Rotation-Invariant Mamba for Robust Text-to-Shape Retrieval](ri-mamba_rotation-invariant_mamba_for_robust_text-to-shape_retrieval.md)
+- [\[ICLR 2026\] 3DSMT: A Hybrid Spiking Mamba-Transformer for Point Cloud Analysis](../../ICLR2026/3d_vision/3dsmt_a_hybrid_spiking_mamba-transformer_for_point_cloud_analysis.md)
 - [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] CaliTex: Geometry-Calibrated Attention for View-Coherent 3D Texture Generation](calitex_geometry-calibrated_attention_for_view-coherent_3d_texture_generation.md)
 - [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
 
 </div>

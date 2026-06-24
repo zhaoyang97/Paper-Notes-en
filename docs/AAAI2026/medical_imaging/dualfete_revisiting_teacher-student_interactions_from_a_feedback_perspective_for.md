@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Semi-supervised medical image segmentation] A feedback mechanism is introduced into the teacher-student semi-supervised learning framework…
+  [AAAI 2026][Medical Imaging][Semi-supervised medical image segmentation] A feedback mechanism is introduced into the teacher-student semi-supervised learning framework, enabling the student to feed back to the teacher information on whether pseudo-label-guided updates are consistent with the direction of supervision from labeled data. This feedback dynamic is further enhanced within a dual-teacher architecture, effectively suppressing error accumulation and confirmation bias…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "confirmation bias"
   - "dual-teacher framework"
 date: 2026-05-08
-content_hash: d79007491dbb4b3a
+content_hash: 4a2221a6703e8b6d
 ---
 
 # DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation
@@ -188,9 +188,9 @@ Table 3 further verifies that the feedback loss is not equivalent to consistency
 
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
 - [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
+- [\[CVPR 2025\] Weakly Supervised Teacher-Student Framework with Progressive Pseudo-mask Refinement for Gland Segmentation](../../CVPR2025/medical_imaging/weakly_supervised_teacher-student_framework_with_progressive_pseudo-mask_refinem.md)
+- [\[ECCV 2024\] Alternate Diverse Teaching for Semi-supervised Medical Image Segmentation](../../ECCV2024/medical_imaging/alternate_diverse_teaching_for_semi-supervised_medical_image_segmentation.md)
 - [\[ICML 2026\] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](../../ICML2026/medical_imaging/are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semantic_class_distribution_learning_for_debiasing.md)
-- [\[AAAI 2026\] Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation](graph-theoretic_consistency_for_robust_and_topology-aware_semi-supervised_histop.md)
 
 </div>
 

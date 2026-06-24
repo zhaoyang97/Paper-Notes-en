@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multimodal Negative Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal Fusion] This paper proposes the Multimodal Negative Learning (MNL) paradigm, in which dominant modalities guide weaker modalities to suppress non-target classes—rather than enfor…
+  [NeurIPS 2025][Multimodal VLM][Multimodal Fusion] This paper proposes the Multimodal Negative Learning (MNL) paradigm, in which dominant modalities guide weaker modalities to suppress non-target classes—rather than enforcing alignment on target classes—thereby stabilizing the decision space, preserving modality-specific information, and theoretically tightening the robustness lower bound of multimodal fusion.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Robustness"
   - "Decision Fusion"
 date: 2026-05-08
-content_hash: 2cbc805ef3ee1fb1
+content_hash: ebdb64e23e5d07a5
 ---
 
 # Multimodal Negative Learning
@@ -152,7 +152,7 @@ MNL yields substantial gains for static fusion (LF)—e.g., +10.57% on MVSA at �
 - [\[NeurIPS 2025\] MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning](midas_misalignment-based_data_augmentation_strategy_for_imbalanced_multimodal_le.md)
 - [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](continual_multimodal_contrastive_learning.md)
 - [\[NeurIPS 2025\] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning](structure-aware_fusion_with_progressive_injection_for_multimodal_molecular_repre.md)
-- [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](../../ICCV2025/multimodal_vlm/g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
+- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](generalized_contrastive_learning_for_universal_multimodal_re.md)
 
 </div>
 

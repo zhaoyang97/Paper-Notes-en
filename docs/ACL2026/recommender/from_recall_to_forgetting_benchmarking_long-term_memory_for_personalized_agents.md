@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents
 description: >-
-  [ACL 2026][Recommender Systems][Memora] This paper proposes the Memora benchmark and the FAMA metric, extending long-term memory evaluation from shallow factual retrieval to memory consolidation and mutation handling across weeks to months, revealing systemic failures of existing LLMs and memory agents in handling frequent knowledge updates.
+  [ACL 2026 Findings][Recommender Systems][Long-term memory benchmark] This paper proposes the Memora benchmark and the FAMA metric, extending long-term memory evaluation from shallow factual retrieval to memory consolidation and mutation handling across weeks to months, revealing systemic failures of existing LLMs and memory agents in handling frequent knowledge updates.
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Memora
+  - "ACL 2026 Findings"
+  - "Recommender Systems"
+  - "Long-term memory benchmark"
+  - "memory consolidation"
+  - "memory mutation"
+  - "forgetting-aware evaluation"
+  - "personalized agent"
+  - "Memora"
+  - "FAMA"
 date: 2026-05-08
-content_hash: 0824a689675d0cc4
+content_hash: 9d5cbb634ce34aec
 ---
+
 # From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents
 
 **Conference**: ACL 2026 Findings  
@@ -146,10 +153,10 @@ where $\text{MPA}$ (memory presence accuracy) measures whether valid memories th
 ## Related Papers
 
 - [\[ACL 2026\] IceBreaker for Conversational Agents: Breaking the First-Message Barrier with Personalized Starters](icebreaker_for_conversational_agents_breaking_the_first-message_barrier_with_per.md)
+- [\[ICLR 2026\] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](../../ICLR2026/recommender/token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)
 - [\[ICML 2026\] RGMem: Renormalization Group-Inspired Memory Evolution for Language Agents](../../ICML2026/recommender/rgmem_renormalization_group-inspired_memory_evolution_for_language_agents.md)
+- [\[ICLR 2026\] Beyond Markovian Drifts: Action-Biased Geometric Walks with Memory for Personalized Summarization](../../ICLR2026/recommender/beyond_markovian_drifts_action-biased_geometric_walks_with_memory_for_personaliz.md)
 - [\[ACL 2026\] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders](bridging_language_and_items_for_retrieval_and_recommendation_benchmarking_llms_a.md)
-- [\[ACL 2026\] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction](learning_to_retrieve_user_history_and_generate_user_profiles_for_personalized_pe.md)
-- [\[ACL 2026\] MemRec: Collaborative Memory-Augmented Agentic Recommender System](memrec_collaborative_memory-augmented_agentic_recommender_system.md)
 
 </div>
 

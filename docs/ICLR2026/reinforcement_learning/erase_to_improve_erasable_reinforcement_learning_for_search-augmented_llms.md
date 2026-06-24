@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Erase to Improve: Erasable Reinforcement Learning for Search-Augmented LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes **Erasable Reinforcement Learning (ERL)**. In the multi-hop reasoning trajectories of search-augmented LLMs, faulty sub-queries or sub-answers are identified through dense process rewards, then **erased in-place and regenerated**. This transforms fragile "one-error-ruins-all" trajectories into recov
+  [ICLR 2026][Reinforcement Learning][Search-augmented LLM] This paper proposes **Erasable Reinforcement Learning (ERL)**. In the multi-hop reasoning trajectories of search-augmented LLMs, faulty sub-queries or sub-answers are identified through dense process rewards, then **erased in-place and regenerated**. This transforms fragile "one-error-ruins-all" trajectories into recoverable robust processes. The resulting ESearch model achieves new SOTA performance across four multi-h…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Search-augmented LLM"
+  - "multi-hop reasoning"
+  - "erasable RL"
+  - "process rewards"
+  - "self-correction"
 date: 2026-05-08
-content_hash: f9cd445375c43f7a
+content_hash: 1c407a8c8a68c633
 ---
+
 # Erase to Improve: Erasable Reinforcement Learning for Search-Augmented LLMs
 
 **Conference**: ICLR 2026  

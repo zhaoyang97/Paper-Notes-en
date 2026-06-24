@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Event Stream Filtering via Probability Flux Estimation
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper reinterprets the event camera imaging process as a "stochastic process of log-irradiance trajectories crossing contrast thresholds," where events are samples of "probability flux" leaking at the thresholds. Accordingly, a generative filter, EDFilter, is proposed. It utilizes temporal kernel density estimatio
+  [CVPR 2026][3D Vision][Event Camera] This paper reinterprets the event camera imaging process as a "stochastic process of log-irradiance trajectories crossing contrast thresholds," where events are samples of "probability flux" leaking at the thresholds. Accordingly, a generative filter, EDFilter, is proposed. It utilizes temporal kernel density estimation + motion-aware spatial smoothing + asynchronous resampling to reconstruct a clean, continuous…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event Camera"
+  - "Event Denoising"
+  - "Probability Flux"
+  - "Stochastic Differential Equation"
+  - "Real-time Filtering"
 date: 2026-05-08
-content_hash: 0c53688219952236
+content_hash: 94e42d445f81b8e9
 ---
+
 # Event Stream Filtering via Probability Flux Estimation
 
 **Conference**: CVPR 2026  
@@ -137,16 +143,16 @@ Key conclusions from ablation:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
+- [\[CVPR 2026\] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting](idesplat_iterative_depth_probability_estimation_for_generalizable_3d_gaussian_sp.md)
+- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
+- [\[CVPR 2026\] Unsupervised 3D Motion Estimation Using Event Camera](unsupervised_3d_motion_estimation_using_event_camera.md)
 - [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
-- [\[CVPR 2026\] Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)
-- [\[CVPR 2025\] Full-DoF Egomotion Estimation for Event Cameras Using Geometric Solvers](../../CVPR2025/others/full-dof_egomotion_estimation_for_event_cameras_using_geometric_solvers.md)
-- [\[CVPR 2026\] Adaptive Spatial-Temporal Window: Unlocking the Potential of Event Cameras in Heterogeneous Velocity Scenarios](adaptive_spatial-temporal_window_unlocking_the_potential_of_event_cameras_in_het.md)
-- [\[CVPR 2026\] NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering](naf_zero-shot_feature_upsampling_via_neighborhood_attention_filtering.md)
 
 </div>
 

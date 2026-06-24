@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] QLCoder: A Query Synthesizer For Static Analysis of Security Vulnerabilities
 description: >-
-  [ICLR 2026][Code Intelligence][CodeQL] QLCoder embeds an LLM-Agent into an iterative loop of "candidate query generation $\to$ CodeQL execution scoring $\to$ feedback-based patching." It constrains reasoning using a custom MCP toolkit (CodeQL Language Server for syntax consistency + RAG vector database for semantic grounding) to automatically synthesize Cod
+  [ICLR 2026][Code Intelligence][CodeQL] QLCoder embeds an LLM-Agent into an iterative loop of "candidate query generation $\to$ CodeQL execution scoring $\to$ feedback-based patching." It constrains reasoning using a custom MCP toolkit (CodeQL Language Server for syntax consistency + RAG vector database for semantic grounding) to automatically synthesize CodeQL queries from CVE metadata that "alert on vulnerable versions and stay silent on fixed versions." It achieved a 53.4%…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - CodeQL
-  - Agentic
-  - MCP
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "CodeQL"
+  - "Vulnerability Detection"
+  - "Query Synthesis"
+  - "Agentic"
+  - "MCP"
+  - "Execution Feedback"
 date: 2026-05-08
-content_hash: b276cd01899b50ec
+content_hash: 6d1a53f6181e8239
 ---
+
 # QLCoder: A Query Synthesizer For Static Analysis of Security Vulnerabilities
 
 **Conference**: ICLR 2026  
@@ -116,6 +120,7 @@ QLCoder achieved an overall success rate of 53.4% (compilation success 100%). St
 - **vs. Vanilla Agents**: Standard coding Agents fail primarily at patch discrimination; QLCoder proves that the framework and constraints are more important than the underlying model's base capabilities.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

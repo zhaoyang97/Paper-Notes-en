@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes two complementary metrics, RPS and AGS, to quantify distillation-induced homogenization in LLM Agent tool-use behaviors. By distinguishing between mandatory and optional behaviors, cross-family behavioral inheritance patterns are revealed across 18 models. Notably, the behavioral similarity between
+  [ACL 2026][LLM Agent][Model Distillation] This paper proposes two complementary metrics, RPS and AGS, to quantify distillation-induced homogenization in LLM Agent tool-use behaviors. By distinguishing between mandatory and optional behaviors, cross-family behavioral inheritance patterns are revealed across 18 models. Notably, the behavioral similarity between Kimi-K2 and Claude Sonnet 4.5 is found to exceed even that of Anthropic's own models.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Model Distillation"
+  - "Behavioral Homogenization"
+  - "Tool-use"
+  - "Agent Evaluation"
+  - "Behavioral Similarity"
 date: 2026-05-08
-content_hash: c1b7d49d68fa4acd
+content_hash: e46a86462c68c3a6
 ---
+
 # When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors
 
 **Conference**: ACL 2026  
@@ -127,11 +133,11 @@ Identifying dependency edges solely via string matching produces false positives
 
 ## Related Papers
 
-- [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
+- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](../../ICLR2026/llm_agent/benchmarking_llm_tool-use_in_the_wild.md)
 - [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
+- [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
 - [\[ACL 2026\] ToolGrad: Efficient Tool-use Dataset Generation with Textual "Gradients"](toolgrad_efficient_tool-use_dataset_generation_with_textual_gradients.md)
-- [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
 
 </div>
 

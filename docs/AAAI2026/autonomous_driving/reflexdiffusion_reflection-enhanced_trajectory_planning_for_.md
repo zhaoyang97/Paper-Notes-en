@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReflexDiffusion: Reflexion-Enhanced Trajectory Planning for High Lateral Acceleration in Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][Diffusion Planning] This paper proposes ReflexDiffusion, which introduces a physics-aware reflection mechanism during the inference stage of diffusion models. By injecting gradients to enf…
+  [AAAI 2026][Autonomous Driving][Diffusion Planning] This paper proposes ReflexDiffusion, which introduces a physics-aware reflection mechanism during the inference stage of diffusion models. By injecting gradients to enforce curvature-velocity-acceleration coupling constraints ($a_y = \kappa v^2$), the method achieves a 14.1% improvement in driving score on nuPlan high-lateral-acceleration long-tail scenarios. The architecture-agnostic design allows direct deployment on exist…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Curvature-Velocity Coupling"
   - "Classifier-Free Guidance"
 date: 2026-05-08
-content_hash: 01aed1b93eeaa777
+content_hash: 644266616c69689f
 ---
 
 # ReflexDiffusion: Reflexion-Enhanced Trajectory Planning for High Lateral Acceleration in Autonomous Driving

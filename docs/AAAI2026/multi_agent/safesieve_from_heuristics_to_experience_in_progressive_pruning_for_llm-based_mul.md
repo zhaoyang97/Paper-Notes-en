@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-agent systems] SafeSieve is proposed as a progressive adaptive multi-agent communication pruning framework. Through a two-stage edge scoring mechanism combining semantic-heuristic initializ…
+  [AAAI 2026][Multi-Agent][Multi-agent systems] SafeSieve is proposed as a progressive adaptive multi-agent communication pruning framework. Through a two-stage edge scoring mechanism combining semantic-heuristic initialization and history-feedback-driven refinement, together with 0-extension clustering, SafeSieve achieves 94.01% average accuracy across 6 benchmarks while reducing token consumption by 12.4%–27.8%, and demonstrates inherent robustness against prompt injection at…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "LLM collaboration"
   - "adversarial robustness"
 date: 2026-05-08
-content_hash: 7aecd78857bd161a
+content_hash: 9486a5522ada3a75
 ---
 
 # SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication
@@ -171,7 +171,7 @@ $$\hat{E}_{ij}(t) = \frac{E_{ij}(t) - \mu_t}{\sigma_t + \varepsilon}, \quad \hat
 ## Related Papers
 
 - [\[ACL 2026\] CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems](../../ACL2026/multi_agent/cia_inferring_the_communication_topology_from_llm-based_multi-agent_systems.md)
-- [\[AAAI 2026\] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation](assemble_your_crew_automatic_multi-agent_communication_topol.md)
+- [\[ICLR 2026\] Benefits and Limitations of Communication in Multi-Agent Reasoning](../../ICLR2026/multi_agent/benefits_and_limitations_of_communication_in_multi-agent_reasoning.md)
 - [\[ICLR 2026\] KVComm: Enabling Efficient LLM Communication through Selective KV Sharing](../../ICLR2026/multi_agent/kvcomm_enabling_efficient_llm_communication_through_selective_kv_sharing.md)
 - [\[ACL 2026\] MAGEO: From Experience to Skill — Multi-Agent Generative Engine Optimization via Reusable Strategy Learning](../../ACL2026/multi_agent/from_experience_to_skill_multi-agent_generative_engine_optimization_via_reusable.md)
 - [\[AAAI 2026\] Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems](parallelism_meets_adaptiveness_scalable_documents_understanding_in_multi-agent_l.md)

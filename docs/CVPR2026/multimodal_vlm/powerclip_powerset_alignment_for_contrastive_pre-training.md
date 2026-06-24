@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PowerCLIP: Powerset Alignment for Contrastive Pre-Training
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] PowerCLIP performs exhaustive local-to-global alignment between the "powerset of image region subsets" and "textual syntax tree phrases." It utilizes a linear-complexity Nonlinear Aggregator (NLA) to reduce the exponential overhead of powerset alignment to $O(M)$. On 28 zero-shot benchmarks, it outperforms existing CLI
+  [CVPR 2026][Multimodal VLM][Contrastive Pre-training] PowerCLIP performs exhaustive local-to-global alignment between the "powerset of image region subsets" and "textual syntax tree phrases." It utilizes a linear-complexity Nonlinear Aggregator (NLA) to reduce the exponential overhead of powerset alignment to $O(M)$. On 28 zero-shot benchmarks, it outperforms existing CLIP-like methods in 22 cases, showing significant gains in compositionality and robustness.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Contrastive Pre-training"
+  - "Local-to-Global Alignment"
+  - "Powerset"
+  - "Syntax Tree"
+  - "Compositionality"
 date: 2026-05-08
-content_hash: b0b9fca8bebc14a8
+content_hash: 0f7e3fec7eb3ac08
 ---
+
 # PowerCLIP: Powerset Alignment for Contrastive Pre-Training
 
 **Conference**: CVPR 2026  
@@ -127,8 +133,8 @@ Mask generation ablation: SAM masks are generally superior to random masks, with
 
 - [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](../../ICCV2025/multimodal_vlm/scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
 - [\[CVPR 2026\] VITAL: Vision-Encoder-centered Pre-training for LMMs in Visual Quality Assessment](vital_vision-encoder-centered_pre-training_for_lmms_in_visual_quality_assessment.md)
-- [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
 - [\[CVPR 2026\] From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings](from_observation_to_action_latent_action-based_primitive_segmentation_for_vla_pr.md)
+- [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
 - [\[ICML 2026\] Deep Pre-Alignment for VLMs](../../ICML2026/multimodal_vlm/deep_pre-alignment_for_vlms.md)
 
 </div>

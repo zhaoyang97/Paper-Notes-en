@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hard Labels In! Rethinking the Role of Hard Labels in Mitigating Local Semantic Drift
 description: >-
-  [ICML 2026][Model Compression][SRe2L] Addressing the exorbitant storage costs of "storing massive soft labels per image" in large-scale dataset distillation, this paper demonstrates that **Local View Semantic Drift (LVSD)** occurs when the number of soft labels per image $s$ is restricted. A three-stage training paradigm, HALD (soft→hard→soft), is proposed
+  [ICML 2026][Model Compression][Dataset Distillation] Addressing the exorbitant storage costs of "storing massive soft labels per image" in large-scale dataset distillation, this paper demonstrates that **Local View Semantic Drift (LVSD)** occurs when the number of soft labels per image $s$ is restricted. A three-stage training paradigm, HALD (soft→hard→soft), is proposed to use smoothed hard labels as semantic anchors to pull training back on track. On ImageNet-1K…
 tags:
-  - ICML 2026
-  - Model Compression
-  - SRe2L
+  - "ICML 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Soft Label Compression"
+  - "Local Semantic Drift"
+  - "Hard Label Calibration"
+  - "SRe2L"
 date: 2026-05-08
-content_hash: 67b2f84dadb1e06f
+content_hash: 739ca6fca9201d84
 ---
+
 # Hard Labels In! Rethinking the Role of Hard Labels in Mitigating Local Semantic Drift
 
 **Conference**: ICML 2026  
@@ -139,7 +144,6 @@ Key Observation: The smaller the SLI (higher storage savings), the larger the pe
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

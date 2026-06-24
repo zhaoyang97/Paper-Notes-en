@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][artist-ready] The study proposes PixARMesh, the first autoregressive framework for single-view scene reconstruction in native mesh space (rather than SDF). By enhancing point cloud encoders with pixel-aligned image features and global scene context, and predicting object poses and meshes simultaneously within a unified token sequenc
+  [CVPR 2026][3D Vision][Single-view scene reconstruction] The study proposes PixARMesh, the first autoregressive framework for single-view scene reconstruction in native mesh space (rather than SDF). By enhancing point cloud encoders with pixel-aligned image features and global scene context, and predicting object poses and meshes simultaneously within a unified token sequence, it achieves scene-level SOTA on 3D-FRONT while outputting compact, editable, artist-ready meshes.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - artist-ready
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-view scene reconstruction"
+  - "autoregressive mesh generation"
+  - "native mesh"
+  - "artist-ready"
+  - "compositional 3D"
 date: 2026-05-08
-content_hash: e1d06186eb57dc48
+content_hash: d684026e584a397c
 ---
+
 # PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction
 
 **Conference**: CVPR 2026  
@@ -147,14 +152,17 @@ The model uses standard next-token cross-entropy: $\mathcal{L}_{\text{ce}} = -\s
 
 <div class="related-papers" markdown="1">
 
-[1] **MeshGPT: Generating Triangle Meshes with Graph-Convolutional Tokenizers**, CVPR 2024.
-[2] **EdgeRunner: Auto-regressive 3D Mesh Generation with 1D Tokenizer**, arXiv 2024.
-[3] **BPT: Binary Partition Trees for Visualizing and Generating 3D Meshes**, arXiv 2025.
+## Related Papers
+
+- [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
+- [\[CVPR 2026\] MeshWeaver: Sparse-Voxel-Guided Surface Weaving for Autoregressive Mesh Generation](meshweaver_sparse-voxel-guided_surface_weaving_for_autoregressive_mesh_generatio.md)
+- [\[CVPR 2026\] FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation](flashmesh_faster_and_better_autoregressive_mesh_synthesis_via_structured_specula.md)
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
+- [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)

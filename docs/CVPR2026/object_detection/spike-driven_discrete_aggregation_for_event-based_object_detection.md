@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spike-driven Discrete Aggregation for Event-based Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] For event-based object detection, this paper proposes a "Discrete Aggregation" approach—utilizing the threshold-firing mechanism of spiking neurons to adaptively select and aggregate only informative events (SDA module + Gated Recurrent Spiking Neuron + Multi-Timescale Fusion). It achieves 43.4% mAP50:95 on Gen1 with f
+  [CVPR 2026][Object Detection][Event Camera] For event-based object detection, this paper proposes a "Discrete Aggregation" approach—utilizing the threshold-firing mechanism of spiking neurons to adaptively select and aggregate only informative events (SDA module + Gated Recurrent Spiking Neuron + Multi-Timescale Fusion). It achieves 43.4% mAP50:95 on Gen1 with fewer parameters, outperforming the previous fully spiking SOTA by 4.5%.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Event Camera"
+  - "Spiking Neural Networks"
+  - "Discrete Aggregation"
+  - "Gated Recurrent Spiking Neuron"
+  - "Multi-Timescale Fusion"
 date: 2026-05-08
-content_hash: 84f59c5e2ba6e302
+content_hash: d26c4952c4954a3a
 ---
+
 # Spike-driven Discrete Aggregation for Event-based Object Detection
 
 **Conference**: CVPR 2026  
@@ -142,14 +148,17 @@ Gen1 + Fully Spiking YOLOX-M:
 
 <div class="related-papers" markdown="1">
 
-- [CVPR 2024] EAS-SNN: End-to-End Adaptive Sampling and Aggregation for Spiking Neural Networks
-- [ICCV 2023] RVT: Recurrent Vision Transformers for Object Detection with Event Cameras
-- [CVPR 2024] SpikeYOLO: A Fully Spiking Network for Real-time Event-based Object Detection
+## Related Papers
+
+- [\[CVPR 2026\] Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection](towards_persistence_learning_topological_constraints_for_event-based_small_objec.md)
+- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
+- [\[CVPR 2026\] Beyond Duality: A Hybrid Framework of Leveraging Shared and Private Features for RGB-Event Object Detection](beyond_duality_a_hybrid_framework_of_leveraging_shared_and_private_features_for_.md)
+- [\[CVPR 2026\] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision](reasoning-driven_anomaly_detection_and_localization_with_image-level_supervision.md)
+- [\[NeurIPS 2025\] FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies](../../NeurIPS2025/object_detection/flexevent_towards_flexible_event-frame_object_detection_at_varying_operational_f.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection](towards_persistence_learning_topological_constraints_for_event-based_small_objec.md)

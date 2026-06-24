@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Vision-and-Language Navigation] The DecoVLN framework is proposed to decouple the three processes of observation, reasoning, and error correction in VLN tasks. By utilizing an adaptive memory optimization mechanism and a state-action pair-based correction fine-tuning strategy, the framework achieves state-of-the-art (SOTA) performance on R2R-CE and R
+  [CVPR2026][Human Understanding][Vision-and-Language Navigation] The DecoVLN framework is proposed to decouple the three processes of observation, reasoning, and error correction in VLN tasks. By utilizing an adaptive memory optimization mechanism and a state-action pair-based correction fine-tuning strategy, the framework achieves state-of-the-art (SOTA) performance on R2R-CE and RxR-CE using only egocentric RGB input.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Vision-and-Language Navigation
-  - POMDP
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Vision-and-Language Navigation"
+  - "Adaptive Memory Optimization"
+  - "Correction Fine-tuning"
+  - "POMDP"
+  - "Long-term Navigation"
 date: 2026-05-08
-content_hash: 6e655fa425360861
+content_hash: 20eb89d6981341f2
 ---
+
 # DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation
 
 **Conference**: CVPR2026  
@@ -147,11 +151,11 @@ A deviation threshold $\tau$ is established: when $0 < DM(s_t) \leq \tau$, the a
 
 ## Related Papers
 
-- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
-- [\[ICLR 2026\] JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation](../../ICLR2026/robotics/janusvln_decoupling_semantics_and_spatiality_with_dual_implicit_memory_for_visio.md)
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
-- [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
-- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
+- [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](unleashing_vision-language_semantics_for_deepfake_video_detection.md)
+- [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
+- [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](../../ICLR2026/human_understanding/link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
+- [\[CVPR 2026\] FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing](facecot_cot_reasoning_face_anti_spoofing.md)
+- [\[CVPR 2026\] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation](superman_unifying_skeleton_and_vision_for_human_motion_perception_and_generation.md)
 
 </div>
 

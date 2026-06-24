@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TD-MoE: Tensor Decomposition for MoE Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] TD-MoE stacks all expert weights in an MoE layer into a three-dimensional tensor for joint Tucker decomposition, combined with multilinear whitening and adaptive 3D rank allocation. This captures "inter-expert structural redundancy" ignored by expert-wise methods, achieving nearly lossless performance at 20% compressio
+  [ICLR 2026][Model Compression][MoE Compression] TD-MoE stacks all expert weights in an MoE layer into a three-dimensional tensor for joint Tucker decomposition, combined with multilinear whitening and adaptive 3D rank allocation. This captures "inter-expert structural redundancy" ignored by expert-wise methods, achieving nearly lossless performance at 20% compression and outperforming SVD-based SOTA by 11%~14% at 40%/60% compression.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "MoE Compression"
+  - "Tensor Decomposition"
+  - "Tucker Decomposition"
+  - "Inter-expert Redundancy"
+  - "Whitening"
 date: 2026-05-08
-content_hash: 4fd867f2b326ee08
+content_hash: dc108836030a01bd
 ---
+
 # TD-MoE: Tensor Decomposition for MoE Models
 
 **Conference**: ICLR 2026  

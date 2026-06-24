@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Concept Regions Matter: Benchmarking CLIP with a New Cluster-Importance Approach
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The paper proposes a training-free CLIP explanation method called CCI (clustering image patches into semantic clusters, masking attention by cluster, and quantifying contributions via similarity drops). This method reveals that "most CLIP errors are fine-grained confusion rather than background dependency." Additionall
+  [CVPR 2026][Multimodal VLM][CLIP Interpretability] The paper proposes a training-free CLIP explanation method called CCI (clustering image patches into semantic clusters, masking attention by cluster, and quantifying contributions via similarity drops). This method reveals that "most CLIP errors are fine-grained confusion rather than background dependency." Additionally, the authors build the COVAR benchmark to systematically evaluate the spurious correlation tendencies of 18…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP Interpretability"
+  - "Spurious Correlation"
+  - "Background Dependency"
+  - "Concept Clustering"
+  - "Robustness Benchmark"
 date: 2026-05-08
-content_hash: e2daeaba3ad6f703
+content_hash: c117b7e98e64c49b
 ---
+
 # Concept Regions Matter: Benchmarking CLIP with a New Cluster-Importance Approach
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Notably, CCI improves Del-IR@5 by **over 2x** compared to the runner-up Grad-ECL
 
 ## Related Papers
 
-- [\[CVPR 2026\] CLIP-Free, Label-Free, Unsupervised Concept Bottleneck Models](clip-free_label_free_unsupervised_concept_bottleneck_models.md)
-- [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
-- [\[CVPR 2026\] World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models](world_in_a_frame_understanding_culture_mixing_as_a_new_challenge_for_vision-lang.md)
+- [\[CVPR 2026\] Differences That Matter: Auditing Models for Capability Gap Discovery and Rectification](differences_that_matter_auditing_models_for_capability_gap_discovery_and_rectifi.md)
+- [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](cluster-aware_anchor_learning_for_multi-view_clustering.md)
 - [\[CVPR 2026\] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions](seeing_through_touch_tactile_localization.md)
-- [\[CVPR 2026\] Cluster-Aware Neural Collapse Prompt Tuning for Long-Tailed Generalization of Vision-Language Models](cluster-aware_neural_collapse_prompt_tuning_for_long-tailed_generalization_of_vi.md)
+- [\[CVPR 2026\] World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models](world_in_a_frame_understanding_culture_mixing_as_a_new_challenge_for_vision-lang.md)
+- [\[CVPR 2026\] Role-SynthCLIP: A Role-Play Driven Diverse Synthetic Data Approach](role-synthclip_a_role-play_driven_diverse_synthetic_data_approach.md)
 
 </div>
 

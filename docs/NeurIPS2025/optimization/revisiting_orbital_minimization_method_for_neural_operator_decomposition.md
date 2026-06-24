@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revisiting Orbital Minimization Method for Neural Operator Decomposition
 description: >-
-  [NeurIPS 2025][Optimization][Spectral Decomposition] This paper revisits the classical Orbital Minimization Method (OMM) originating from computational chemistry, provides a concise linear-algebraic consistency proof…
+  [NeurIPS 2025][Optimization][Spectral Decomposition] This paper revisits the classical Orbital Minimization Method (OMM) originating from computational chemistry, provides a concise linear-algebraic consistency proof, reveals its deep connections to Sanger's rule and streaming PCA, and generalizes it into a unified framework for training neural networks to perform spectral decomposition of positive semidefinite operators.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Neural Operator"
   - "Self-Supervised Learning"
 date: 2026-05-08
-content_hash: 4dc083fead906146
+content_hash: dfae3ca50b4f0584
 ---
 
 # Revisiting Orbital Minimization Method for Neural Operator Decomposition
@@ -139,10 +139,10 @@ This minimizes the trace of the squared residual projection matrix $(I - VV^\top
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Single-Index Models via Harmonic Decomposition](learning_single-index_models_via_harmonic_decomposition.md)
+- [\[ICML 2025\] Revisiting Unbiased Implicit Variational Inference](../../ICML2025/optimization/revisiting_unbiased_implicit_variational_inference.md)
 - [\[NeurIPS 2025\] Extragradient Method for $(L_0, L_1)$-Lipschitz Root-finding Problems](extragradient_method_for_l_0_l_1-lipschitz_root-finding_problems.md)
 - [\[ICML 2026\] FOAM: Frequency and Operator Error-Based Adaptive Damping Method for Reducing Staleness-Oriented Error for Shampoo](../../ICML2026/optimization/foam_frequency_and_operator_error-based_adaptive_damping_method_for_reducing_sta.md)
 - [\[NeurIPS 2025\] Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models](fantastic_features_and_where_to_find_them_a_probing_method_to_combine_features_f.md)
-- [\[NeurIPS 2025\] OrthoGrad Improves Neural Calibration](orthograd_improves_neural_calibration.md)
 
 </div>
 

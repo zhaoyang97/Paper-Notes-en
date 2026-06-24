@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multiple Instance Learning] This paper proposes HiVE-MIL, a hierarchical vision-language MIL framework that constructs a unified heterogeneous graph to model cross-scale hierarchical relat…
+  [NeurIPS 2025][Medical Imaging][Multiple Instance Learning] This paper proposes HiVE-MIL, a hierarchical vision-language MIL framework that constructs a unified heterogeneous graph to model cross-scale hierarchical relationships (5× and 20×) and intra-scale multimodal alignment. Combined with a text-guided dynamic filtering mechanism and a hierarchical contrastive loss, HiVE-MIL consistently outperforms existing methods under the 16-shot setting on three TCGA datasets (lung…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "Few-Shot Classification"
   - "Pathology"
 date: 2026-05-08
-content_hash: 9240438f465fca80
+content_hash: b3f2f894277dd4be
 ---
 
 # Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling
@@ -138,9 +138,9 @@ HiVE-MIL achieves state-of-the-art performance consistently across three patholo
 
 ## Related Papers
 
+- [\[ICML 2025\] Context Matters: Query-aware Dynamic Long Sequence Modeling of Gigapixel Images](../../ICML2025/medical_imaging/context_matters_query-aware_dynamic_long_sequence_modeling_of_gigapixel_images.md)
 - [\[NeurIPS 2025\] RadZero: Similarity-Based Cross-Attention for Explainable Vision-Language Alignment in Chest X-ray](radzero_similarity-based_cross-attention_for_explainable_vision-language_alignme.md)
 - [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](../../ICCV2025/medical_imaging/aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
-- [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](../../ICCV2025/medical_imaging/boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](../../CVPR2026/medical_imaging/interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
 - [\[ICCV 2025\] GECKO: Gigapixel Vision-Concept Contrastive Pretraining in Histopathology](../../ICCV2025/medical_imaging/gecko_gigapixel_vision-concept_contrastive_pretraining_in_histopathology.md)
 

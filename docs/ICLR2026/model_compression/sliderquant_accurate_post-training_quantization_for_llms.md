@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SliderQuant: Accurate Post-Training Quantization for LLMs
 description: >-
-  [ICLR 2026][Model Compression][LLM] SliderQuant observes that shallow/deep layers (especially the first and last) of LLMs are significantly more sensitive to quantization than middle layers. It proposes an adaptive sliding quantization framework incorporating "inter-layer sliding windows (progressive expansion for shallow, fixed for middle, progressive c
+  [ICLR 2026][Model Compression][Post-Training Quantization] SliderQuant observes that shallow/deep layers (especially the first and last) of LLMs are significantly more sensitive to quantization than middle layers. It proposes an adaptive sliding quantization framework incorporating "inter-layer sliding windows (progressive expansion for shallow, fixed for middle, progressive contraction for deep) + intra-layer incremental quantization." This approach significantly outperforms…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LLM
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "LLM"
+  - "Sliding Window"
+  - "Layer Sensitivity"
+  - "Low-bit Quantization"
 date: 2026-05-08
-content_hash: 8f1ba13bb05e2715
+content_hash: 67c6bad1527c7cc4
 ---
+
 # SliderQuant: Accurate Post-Training Quantization for LLMs
 
 **Conference**: ICLR 2026  
@@ -128,15 +133,17 @@ Llama2-7B, using fixed window $\{s=2, i=1\}$ as baseline:
 
 <div class="related-papers" markdown="1">
 
-1. **GPTQ**: Accurate Post-Training Quantization for Generative Pre-trained Transformers, ICLR 2023.
-2. **OmniQuant**: Omnidirectionally Calibrated Quantization for Large Language Models, ICLR 2024.
-3. **CBQ**: Cross-Block Quantization for Large Language Models, ArXiv 2024.
-4. **QuaRot**: Outlier-Free 4-bit Inference in Quantized LLMs, ArXiv 2024.
+## Related Papers
+
+- [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
+- [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
+- [\[ICLR 2026\] LogART: Pushing the Limit of Efficient Logarithmic Post-Training Quantization](logart_pushing_the_limit_of_efficient_logarithmic_post-training_quantization.md)
+- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
+- [\[ICLR 2026\] Qronos: Correcting the Past by Shaping the Future... in Post-Training Quantization](qronos_correcting_the_past_by_shaping_the_future_in_post-training_quantization.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)

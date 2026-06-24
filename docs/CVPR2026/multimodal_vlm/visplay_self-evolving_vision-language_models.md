@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] VisPlay: Self-Evolving Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] VisPlay enables a single base VLM to simultaneously act as both a "Questioner" and a "Responder." Using only unlabeled images, the system automatically scores questions based on the responder's answer uncertainty and generates pseudo-labels via majority voting. The two roles evolve alternately through self-play using G
+  [CVPR 2026][Multimodal VLM][Self-evolution] VisPlay enables a single base VLM to simultaneously act as both a "Questioner" and a "Responder." Using only unlabeled images, the system automatically scores questions based on the responder's answer uncertainty and generates pseudo-labels via majority voting. The two roles evolve alternately through self-play using GRPO. VisPlay achieves consistent performance gains across 8 visual reasoning benchmarks…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Self-evolution"
+  - "Vision-Language Models"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Self-play"
 date: 2026-05-08
-content_hash: 356112dbf11908ef
+content_hash: 30f110363658845c
 ---
+
 # VisPlay: Self-Evolving Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -153,10 +156,10 @@ The authors verified contributions through dynamic co-evolution analysis (Challe
 ## Related Papers
 
 - [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
-- [\[CVPR 2026\] Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning](decouple_to_generalize_context-first_self-evolving_learning_for_data-scarce_visi.md)
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
-- [\[CVPR 2026\] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models](mupo_all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vlms.md)
 - [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](../../ICLR2026/multimodal_vlm/self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
+- [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
+- [\[CVPR 2026\] EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval](evograph-r1_self-evolving_multimodal_knowledge_hypergraphs_for_agentic_retrieval.md)
+- [\[CVPR 2026\] VisMem: Latent Vision Memory Unlocks Potential of Vision-Language Models](vismem_latent_vision_memory_unlocks_potential_of_vision-language_models.md)
 
 </div>
 

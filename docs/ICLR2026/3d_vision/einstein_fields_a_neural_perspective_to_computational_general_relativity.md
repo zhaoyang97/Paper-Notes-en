@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Einstein Fields: A Neural Perspective To Computational General Relativity
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] The authors propose EinFields, the first framework to apply neural implicit representations to the compression of 4D General Relativity simulations. By encoding the metric tensor field into compact neural network weights, it achieves $4000\times$ storage compression and 5-7 bit numerical precision, while tensor derivat
+  [ICLR 2026][3D Vision][Neural Fields] The authors propose EinFields, the first framework to apply neural implicit representations to the compression of 4D General Relativity simulations. By encoding the metric tensor field into compact neural network weights, it achieves $4000\times$ storage compression and 5-7 bit numerical precision, while tensor derivatives obtained via automatic differentiation are five orders of magnitude more accurate than finite difference methods.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Neural Fields"
+  - "General Relativity"
+  - "Tensor Field Compression"
+  - "Numerical Relativity"
+  - "Automatic Differentiation"
 date: 2026-05-08
-content_hash: 2200bbd0640a5292
+content_hash: 4188a1946d0f69f7
 ---
+
 # Einstein Fields: A Neural Perspective To Computational General Relativity
 
 **Conference**: ICLR 2026  
@@ -156,7 +162,7 @@ The training objective is the Sobolev loss described above. A Cosine learning ra
 - [\[ICLR 2026\] Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields](learning_physics-grounded_4d_dynamics_with_neural_gaussian_force_fields.md)
 - [\[ECCV 2024\] Omni-Recon: Harnessing Image-Based Rendering for General-Purpose Neural Radiance Fields](../../ECCV2024/3d_vision/omni-recon_harnessing_image-based_rendering_for_general-purpose_neural_radiance_.md)
 - [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
-- [\[ICLR 2026\] Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting](augmented_radiance_field_a_general_framework_for_enhanced_gaussian_splatting.md)
+- [\[CVPR 2026\] Evidential Neural Radiance Fields](../../CVPR2026/3d_vision/evidential_neural_radiance_fields.md)
 
 </div>
 

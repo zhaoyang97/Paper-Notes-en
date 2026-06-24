@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LiMuon: Light and Fast Muon Optimizer for Large Models
 description: >-
-  [ICML 2026][Optimization & Theory][Muon] LiMuon integrates STORM-style momentum variance reduction with Randomized SVD (RSVD) into the Muon optimizer. It compresses matrix parameter momentum from $m \times n$ to $(m+n)\hat{r}$ while reducing the SFO complexity for finding $\epsilon$-stationary points from $\mathcal{O}(\epsilon^{-4})$ to $\mathcal{O}(\epsilon^
+  [ICML 2026][Optimization][Muon] LiMuon integrates STORM-style momentum variance reduction with Randomized SVD (RSVD) into the Muon optimizer. It compresses matrix parameter momentum from $m \times n$ to $(m+n)\hat{r}$ while reducing the SFO complexity for finding $\epsilon$-stationary points from $\mathcal{O}(\epsilon^{-4})$ to $\mathcal{O}(\epsilon^{-3})$. It simultaneously achieves lower perplexity/higher accuracy and reduced GPU memory on Mamba-130M / Qwen2.5-0.5B / ViT.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Muon
-  - Newton-Schulz
+  - "ICML 2026"
+  - "Optimization"
+  - "Muon"
+  - "STORM Variance Reduction"
+  - "Randomized SVD"
+  - "Low-rank Momentum"
+  - "Generalized Smoothness"
+  - "Newton-Schulz"
 date: 2026-05-08
-content_hash: 77ecde568ebe8c53
+content_hash: 71387767d94e80e9
 ---
+
 # LiMuon: Light and Fast Muon Optimizer for Large Models
 
 **Conference**: ICML 2026  
@@ -142,9 +147,9 @@ All experiments were conducted on NVIDIA A100-SXM4-80GB, with baselines includin
 
 ## Related Papers
 
+- [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](../../ICLR2026/optimization/fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
+- [\[ICLR 2026\] LoRA meets Riemannion: Muon Optimizer for Parametrization-independent Low-Rank Adapters](../../ICLR2026/optimization/lora_meets_riemannion_muon_optimizer_for_parametrization-independent_low-rank_ad.md)
 - [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
-- [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](../../AAAI2026/optimization/pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
-- [\[ICLR 2026\] Convergence of Muon with Newton-Schulz](../../ICLR2026/optimization/convergence_of_muon_with_newton-schulz.md)
 - [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Neural QAOA$^2$: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization
 description: >-
-  [ICML 2026][Optimization & Theory][QAOA] A generative-evaluative neural network (GEN) is proposed to jointly differentiate "graph partitioning + quantum circuit parameter initialization" for QAOA². The evaluator learns a high-fidelity quantum performance surrogate, while the generator outputs discrete partitions and initial parameters guided by its gradients.
+  [ICML 2026][Optimization][QAOA] A generative-evaluative neural network (GEN) is proposed to jointly differentiate "graph partitioning + quantum circuit parameter initialization" for QAOA². The evaluator learns a high-fidelity quantum performance surrogate, while the generator outputs discrete partitions and initial parameters guided by its gradients. Straight-Through Estimator (STE) and an Orthogonal Complement Head (OCH) enable end-to-end training. The method surpasses heuri…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - QAOA
-  - divide-and-conquer
+  - "ICML 2026"
+  - "Optimization"
+  - "QAOA"
+  - "divide-and-conquer"
+  - "differentiable graph partitioning"
+  - "parameter warm-start"
+  - "zero-shot generalization"
 date: 2026-05-08
-content_hash: 35f7c2519bf17657
+content_hash: 3955d72b68ab82a9
 ---
+
 # Neural QAOA$^2$: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization
 
 **Conference**: ICML 2026  
@@ -130,15 +134,16 @@ The SOTA zero-shot performance on Ising topologies (not present in the training 
 - Value: ⭐⭐⭐⭐ (Directly applicable to quantum combinatorial optimization deployment in the NISQ era)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](../../NeurIPS2025/optimization/probing_neural_combinatorial_optimization_models.md)
+- [\[ICLR 2026\] Bayesian Parameter Shift Rules in Variational Quantum Eigensolvers](../../ICLR2026/optimization/bayesian_parameter_shift_rules_in_variational_quantum_eigensolvers.md)
 - [\[ICML 2026\] A Fully First-Order Layer for Differentiable Optimization](a_fully_first-order_layer_for_differentiable_optimization.md)
-- [\[ICLR 2026\] Gradient-Based Diversity Optimization with Differentiable Top-$k$ Objective](../../ICLR2026/optimization/gradient-based_diversity_optimization_with_differentiable_top-k_objective.md)
-- [\[ICLR 2026\] Conditioned Initialization for Attention](../../ICLR2026/optimization/conditioned_initialization_for_attention.md)
-- [\[ICML 2025\] Quantum Optimization via Gradient-Based Hamiltonian Descent](../../ICML2025/optimization/quantum_optimization_via_gradient-based_hamiltonian_descent.md)
+- [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](../../ICLR2026/optimization/multi-action_self-improvement_for_neural_combinatorial_optimization.md)
+- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](../../NeurIPS2025/optimization/probing_neural_combinatorial_optimization_models.md)
+- [\[ICML 2026\] URS: Unified Neural Routing Solver](urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
 
 </div>
 

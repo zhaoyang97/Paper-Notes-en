@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ScaleBox: Enabling High-Fidelity and Scalable Code Verification for Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][special judge] ScaleBox improves verification accuracy and throughput in LLM code training and evaluation through automated special judge synthesis, unified verification workflows, and distributed fine-grained parallelism, yielding more stable Pass@1 gains in LiveCodeBench RLVR experiments.
+  [ACL2026][LLM Evaluation][Code Sandbox] ScaleBox improves verification accuracy and throughput in LLM code training and evaluation through automated special judge synthesis, unified verification workflows, and distributed fine-grained parallelism, yielding more stable Pass@1 gains in LiveCodeBench RLVR experiments.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - special judge
-  - RLVR
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Code Sandbox"
+  - "special judge"
+  - "RLVR"
+  - "reward noise"
+  - "distributed evaluation"
 date: 2026-05-08
-content_hash: 71ad6ffb206ca097
+content_hash: 4496771dd923b152
 ---
+
 # ScaleBox: Enabling High-Fidelity and Scalable Code Verification for Large Language Models
 
 **Conference**: ACL2026  
@@ -141,11 +145,11 @@ ScaleBox is a verification system and does not propose a new loss function. In i
 
 ## Related Papers
 
+- [\[ICLR 2026\] AutoCodeBench: Large Language Models are Automatic Code Benchmark Generators](../../ICLR2026/llm_evaluation/autocodebench_large_language_models_are_automatic_code_benchmark_generators.md)
 - [\[ACL 2025\] CodeMEnv: Benchmarking Large Language Models on Code Migration](../../ACL2025/llm_evaluation/codemenv_benchmarking_large_language_models_on_code_migration.md)
 - [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](zero-shot_large_language_models_for_automatic_readability_assessment.md)
 - [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
 - [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
-- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast
 description: >-
-  [AAAI 2026][radar heartbeat sensing] This paper proposes Radar-APLANC, the first unsupervised learning framework for radar-based heartbeat sensing. Through a noise contrastive triplet (NCT) loss and an augmented pseudo-l…
+  [AAAI 2026][radar heartbeat sensing] This paper proposes Radar-APLANC, the first unsupervised learning framework for radar-based heartbeat sensing. Through a noise contrastive triplet (NCT) loss and an augmented pseudo-label generator, it achieves two-stage unsupervised training without requiring expensive physiological signal annotations, attaining performance approaching supervised methods.
 tags:
   - "AAAI 2026"
   - "radar heartbeat sensing"
@@ -11,7 +11,7 @@ tags:
   - "noise contrastive learning"
   - "FMCW radar"
 date: 2026-05-08
-content_hash: 085fa215b127cdb7
+content_hash: 80fd8be72e8e4252
 ---
 
 # Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast
@@ -179,11 +179,11 @@ Augmented pseudo-label generator ablation:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](../../NeurIPS2025/others/radar_benchmarking_language_models_on_imperfect_tabular_data.md)
+- [\[CVPR 2026\] RaUF: Learning the Spatial Uncertainty Field of Radar](../../CVPR2026/others/rauf_learning_the_spatial_uncertainty_field_of_radar.md)
+- [\[ICLR 2026\] RADAR: Learning to Route with Asymmetry-aware Distance Representations](../../ICLR2026/others/radar_learning_to_route_with_asymmetry-aware_distance_representations.md)
 - [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
+- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](../../NeurIPS2025/others/radar_benchmarking_language_models_on_imperfect_tabular_data.md)
 - [\[AAAI 2026\] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer](enhancing_noise_resilience_in_face_clustering_via_sparse_differential_transforme.md)
-- [\[AAAI 2026\] Predict and Resist: Long-Term Accident Anticipation under Sensor Noise](predict_and_resist_long-term_accident_anticipation_under_sensor_noise.md)
-- [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](../../ICLR2026/others/noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
 
 </div>
 

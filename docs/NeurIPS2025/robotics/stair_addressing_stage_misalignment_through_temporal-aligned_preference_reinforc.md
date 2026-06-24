@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STAIR: Addressing Stage Misalignment through Temporal-Aligned Preference Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Robotics][Preference-based Reinforcement Learning] This paper identifies and formalizes the "stage misalignment" problem in Preference-based Reinforcement Learning (PbRL)—wherein comparing behavior segment…
+  [NeurIPS 2025][Robotics][Preference-based Reinforcement Learning] This paper identifies and formalizes the "stage misalignment" problem in Preference-based Reinforcement Learning (PbRL)—wherein comparing behavior segments from different task stages produces uninformative feedback—and proposes STAIR, a method that learns temporal distances via contrastive learning to approximate stage discrepancy. By employing a quadrilateral distance metric for stage-aligned query selection…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "Multi-Stage Tasks"
 date: 2026-05-08
-content_hash: cb5ea030b1400aca
+content_hash: e122e47feb6bce8a
 ---
 
 # STAIR: Addressing Stage Misalignment through Temporal-Aligned Preference Reinforcement Learning

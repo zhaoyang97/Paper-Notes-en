@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Early exit mechanism] UAT (Unsupervised Adaptive Thresholding) designs a reliability function for early-exit DNNs to assess the quality of intermediate layer outputs…
+  [NeurIPS 2025][Multimodal Efficiency][Early exit mechanism] UAT (Unsupervised Adaptive Thresholding) designs a reliability function for early-exit DNNs to assess the quality of intermediate layer outputs, and employs a multi-armed bandit (MAB) algorithm to dynamically learn optimal exit thresholds at inference time, achieving 1.7–2.1× speedup with less than 2% performance degradation while remaining robust to distribution shift.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Early exit mechanism"
   - "risk control"
   - "multi-armed bandit"
   - "reliability function"
   - "adaptive thresholding"
 date: 2026-05-08
-content_hash: 661b26e4ac1f263e
+content_hash: d6c7db6f5077c90c
 ---
 
 # Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability
@@ -133,11 +133,11 @@ Two phases: **Offline phase**—a reliability function $g(p_i, i)$ is learned jo
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Towards Evaluating Proactive Risk Awareness of Multimodal Language Models](towards_evaluating_proactive_risk_awareness_of_multimodal_language_models.md)
-- [\[ICLR 2026\] HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit](../../ICLR2026/multimodal_vlm/hidrop_hierarchical_vision_token_reduction_in_mllms_via_late_injection_concave_p.md)
-- [\[NeurIPS 2025\] Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding](enhancing_visionlanguage_model_reliability_with_uncertaintyg.md)
-- [\[NeurIPS 2025\] FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models](flexac_towards_flexible_control_of_associative_reasoning_in_multimodal_large_lan.md)
+- [\[ICLR 2026\] HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit](../../ICLR2026/vlm_efficiency/hidrop_hierarchical_vision_token_reduction_in_mllms_via_late_injection_concave_p.md)
 - [\[NeurIPS 2025\] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization](balanced_token_pruning_accelerating_vision_language_models_b.md)
+- [\[ICML 2026\] Less Precise Can Be More Reliable: A Systematic Evaluation of Quantization's Impact on VLMs Beyond Accuracy](../../ICML2026/vlm_efficiency/less_precise_can_be_more_reliable_a_systematic_evaluation_of_quantizations_impac.md)
+- [\[NeurIPS 2025\] PrefixKV: Adaptive Prefix KV Cache is What Vision Instruction-Following Models Need for Efficient Generation](prefixkv_adaptive_prefix_kv_cache_is_what_vision_instruction.md)
+- [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
 
 </div>
 

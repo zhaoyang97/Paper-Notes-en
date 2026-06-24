@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Enhancing Hallucination Detection through Noise Injection
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] By injecting uniform noise into the MLP activations of intermediate LLM layers to approximate the Bayesian posterior, this method captures epistemic uncertainty. It complements aleatoric uncertainty captured via sampling temperature, improving the hallucination detection AUROC on GSM8K from 71.56 to 76.14.
+  [ICLR 2026][Hallucination Detection][Noise Injection] By injecting uniform noise into the MLP activations of intermediate LLM layers to approximate the Bayesian posterior, this method captures epistemic uncertainty. It complements aleatoric uncertainty captured via sampling temperature, improving the hallucination detection AUROC on GSM8K from 71.56 to 76.14.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Noise Injection"
+  - "Epistemic Uncertainty"
+  - "Bayesian Approximation"
+  - "Intermediate Representations"
 date: 2026-05-08
-content_hash: d62e0cb55433052d
+content_hash: 21bb6b8d33eb3c39
 ---
+
 # Enhancing Hallucination Detection through Noise Injection
 
 **Conference**: ICLR 2026  
@@ -134,7 +139,7 @@ where $p(a_j)$ is the frequency of the $j$-th answer. If the model is genuinely 
 - [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](../../ACL2026/hallucination/enhancing_hallucination_detection_via_future_context.md)
 - [\[ICLR 2026\] NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection](ndad_negative-direction_aware_decoding_for_large_language_models_via_controllabl.md)
 - [\[ICLR 2026\] High Accuracy, Less Talk (HALT): Reliable LLMs through Capability-Aligned Finetuning](high_accuracy_less_talk_halt_reliable_llms_through_capability-aligned_finetuning.md)
-- [\[ICLR 2026\] Learning to Reason for Hallucination Span Detection](learning_to_reason_for_hallucination_span_detection.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
 - [\[ICLR 2026\] Neural Message-Passing on Attention Graphs for Hallucination Detection](neural_message-passing_on_attention_graphs_for_hallucination_detection.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AutoBio: A Simulation and Benchmark for Robotic Automation in Digital Biology Laboratory
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] AutoBio transforms "robotic experimentation in biological laboratories" into a suite of simulatable, demonstration-generatable, and evaluatable benchmarks: it digitalizes real instruments using 3D Gaussian Splatting, augments MuJoCo with laboratory-specific physics (threads, detents, eccentricity, liquid surfaces), and
+  [ICLR2026][Robotics][VLA Model] AutoBio transforms "robotic experimentation in biological laboratories" into a suite of simulatable, demonstration-generatable, and evaluatable benchmarks: it digitalizes real instruments using 3D Gaussian Splatting, augments MuJoCo with laboratory-specific physics (threads, detents, eccentricity, liquid surfaces), and resolves transparent container and liquid rendering via Blender PBR. Ultimately, it evaluates mainstream VLA models like π0…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "VLA Model"
+  - "Bio-lab Automation"
+  - "Robot Simulation"
+  - "MuJoCo Physics Plugin"
+  - "Transparent Material Rendering"
 date: 2026-05-08
-content_hash: 366f5292d8b4165d
+content_hash: 8f0ce584ce0a5450
 ---
+
 # AutoBio: A Simulation and Benchmark for Robotic Automation in Digital Biology Laboratory
 
 **Conference**: ICLR2026  
@@ -153,7 +159,7 @@ DP/ACT lacks language input and requires structured numerical observations for t
 - [\[ICLR 2026\] Differentiable Simulation of Hard Contacts with Soft Gradients for Learning and Control](differentiable_simulation_of_hard_contacts_with_soft_gradients_for_learning_and_.md)
 - [\[ICLR 2026\] Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning](memory_benchmark_robots_a_benchmark_for_solving_complex_tasks_with_reinforcement.md)
 - [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](../../NeurIPS2025/robotics/labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
-- [\[ICLR 2026\] UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos](urbanverse_scaling_urban_simulation_by_watching_city-tour_videos.md)
+- [\[ICLR 2026\] Manipulation as in Simulation: Enabling Accurate Geometry Perception in Robots](manipulation_as_in_simulation_enabling_accurate_geometry_perception_in_robots.md)
 
 </div>
 

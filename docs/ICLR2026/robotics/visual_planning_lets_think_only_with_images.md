@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Visual Planning: Let's Think Only with Images
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][GRPO] This paper proposes Visual Planning—the first pure visual reasoning paradigm: the planning process is entirely expressed by image sequences (without text mediation), using a Large Vision Model to autoregressively generate step-by-step state images. It introduces the VPRL two-stage RL framework (random trajectory initia
+  [ICLR 2026 Oral][Robotics][Visual Planning] This paper proposes Visual Planning—the first pure visual reasoning paradigm: the planning process is entirely expressed by image sequences (without text mediation), using a Large Vision Model to autoregressively generate step-by-step state images. It introduces the VPRL two-stage RL framework (random trajectory initialization for exploration + GRPO with progress reward optimization), achieving an average EM that exceeds text-based…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - GRPO
-  - Reinforcement Learning
+  - "ICLR 2026 Oral"
+  - "Robotics"
+  - "Visual Planning"
+  - "Pure Visual Reasoning"
+  - "Large Vision Model"
+  - "GRPO"
+  - "Reinforcement Learning"
+  - "Navigation"
 date: 2026-05-08
-content_hash: 0296a99aaaa0ef51
+content_hash: f36e11eb018e3761
 ---
+
 # Visual Planning: Let's Think Only with Images
 
 **Conference**: ICLR 2026 Oral  

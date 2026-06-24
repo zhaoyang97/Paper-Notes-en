@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Tree-Structured Orthonormal Decomposition of the Aitchison Simplex
 description: >-
-  [ICML 2026][learning_theory][Paper Note] PolyILR constructs a **canonical, complete, and orthonormal** Aitchison simplex coordinate system for any tree structure (including polytomies). Each internal node contributes $k_u-1$ contrast coordinates through weighted inner products, Helmert contrasts, and expansion by subtree size, ensuring a valid isometric ILR b
+  [ICML2026][Learning Theory][Aitchison Geometry] PolyILR constructs a **canonical, complete, and orthonormal** Aitchison simplex coordinate system for any tree structure (including polytomies). Each internal node contributes $k_u-1$ contrast coordinates through weighted inner products, Helmert contrasts, and expansion by subtree size, ensuring a valid isometric ILR basis where every coordinate corresponds to a specific location on the tree.
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "Compositional Data Analysis"
+  - "Aitchison Geometry"
+  - "ILR Coordinates"
+  - "Orthonormal Decomposition"
+  - "Polytomous Trees"
+  - "Isometric Isomorphism"
 date: 2026-05-08
-content_hash: e95fb657310163cb
+content_hash: a53a0c9cd4038da0
 ---
+
 # Tree-Structured Orthonormal Decomposition of the Aitchison Simplex
 
 **Conference**: ICML2026  
@@ -128,11 +135,11 @@ Performance remains consistent across ILR variants, as expected for isometric tr
 
 ## Related Papers
 
+- [\[ICLR 2026\] Deep Learning with Learnable Product-Structured Activations](../../ICLR2026/learning_theory/deep_learning_with_learnable_product-structured_activations.md)
+- [\[ICLR 2026\] Tree-sliced Sobolev IPM](../../ICLR2026/learning_theory/tree-sliced_sobolev_ipm.md)
 - [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
-- [\[ICLR 2026\] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion](../../ICLR2026/learning_theory/better_learning-augmented_spanning_tree_algorithms_via_metric_forest_completion.md)
-- [\[ICML 2026\] Finite-Width Neural Tangent Kernels from Feynman Diagrams](finite-width_neural_tangent_kernels_from_feynman_diagrams.md)
-- [\[ICML 2026\] When Sample Selection Bias Precipitates Model Collapse](when_sample_selection_bias_precipitates_model_collapse.md)
-- [\[ICML 2026\] Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts](geometric_and_stochastic_analysis_of_discontinuities_in_sparse_mixture-of-expert.md)
+- [\[ICLR 2026\] Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles](../../ICLR2026/learning_theory/data-aware_and_scalable_sensitivity_analysis_for_decision_tree_ensembles.md)
+- [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](../../ICLR2026/learning_theory/understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
 
 </div>
 

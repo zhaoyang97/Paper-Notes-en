@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing Depth Through Frequency and Motion: A Progressive Training Paradigm for Monocular Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the issues where blurred boundaries stem from downsampling frequency aliasing and PoseNets lack sufficient cross-frame motion modeling, this paper proposes the plug-and-play Frequency-Guided Sampling (FGS) module to preserve high-frequency details and the PoseQuery Network (PQNet) using channel-aligned atten
+  [CVPR 2026][3D Vision][Self-supervised monocular depth] Addressing the issues where blurred boundaries stem from downsampling frequency aliasing and PoseNets lack sufficient cross-frame motion modeling, this paper proposes the plug-and-play Frequency-Guided Sampling (FGS) module to preserve high-frequency details and the PoseQuery Network (PQNet) using channel-aligned attention for cross-frame motion modeling. Combined with a progressive three-stage decoupled training paradig…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Self-supervised monocular depth"
+  - "frequency aliasing"
+  - "frequency-guided sampling"
+  - "pose estimation"
+  - "progressive training"
 date: 2026-05-08
-content_hash: 9bb9760b195858cd
+content_hash: 9c7253771b8d49c6
 ---
+
 # Seeing Depth Through Frequency and Motion: A Progressive Training Paradigm for Monocular Depth Estimation
 
 **Conference**: CVPR 2026  

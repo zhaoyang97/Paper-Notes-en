@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System
 description: >-
-  [CVPR 2026][Multi-Agent][Paper Note] SciEducator transforms the Deming Cycle (Plan–Do–Study–Act) from management science into a self-evolving multi-agent closed loop. By iteratively performing "planning–execution–review–improvement," the system understands scientific experiment videos and generates multi-modal educational handbooks for children. On the se
+  [CVPR 2026][LLM Agent][Multi-Agent System] SciEducator transforms the Deming Cycle (Plan–Do–Study–Act) from management science into a self-evolving multi-agent closed loop. By iteratively performing "planning–execution–review–improvement," the system understands scientific experiment videos and generates multi-modal educational handbooks for children. On the self-constructed SciVBench, it significantly outperforms closed-source MLLMs like GPT-4o and Gemini…
 tags:
-  - CVPR 2026
-  - Multi-Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Multi-Agent System"
+  - "Scientific Video Understanding"
+  - "Deming Cycle (PDSA)"
+  - "Self-Evolving Workflow"
+  - "Science Education Content Generation"
 date: 2026-05-08
-content_hash: 9bd36e0c5184c894
+content_hash: fbbf427948aa3ec7
 ---
+
 # SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,10 @@ Study stage $K_{new}$ and failure analysis $F$ ablation (Tab. 5):
 ## Related Papers
 
 - [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
+- [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
 - [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
-- [\[CVPR 2026\] MOTOR-Bench: A Real-world Dataset and Multi-agent Framework for Zero-shot Human Mental State Understanding](motor-bench_a_real-world_dataset_and_multi-agent_framework_for_zero-shot_human_m.md)
+- [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
 - [\[CVPR 2026\] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper](paper2figure_a_multi-agent_collaborative_system_for_figure_generation_towards_ac.md)
-- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
 
 </div>
 

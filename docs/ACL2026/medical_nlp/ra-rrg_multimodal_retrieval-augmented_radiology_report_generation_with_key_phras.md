@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] The RA-RRG framework is proposed to extract clinical key phrases from radiology reports via LLMs to construct a retrieval database. Given chest X-ray images, relevant phrases are retrieved and input into an LLM to generate reports. This effectively suppresses hallucinations without requiring LLM fine-tuning, achieving
+  [ACL 2026 Findings][Medical LLM][Radiology Report Generation] The RA-RRG framework is proposed to extract clinical key phrases from radiology reports via LLMs to construct a retrieval database. Given chest X-ray images, relevant phrases are retrieved and input into an LLM to generate reports. This effectively suppresses hallucinations without requiring LLM fine-tuning, achieving SOTA on CheXbert metrics with only 18 GPU hours of training.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Radiology Report Generation"
+  - "Retrieval-Augmented Generation"
+  - "Key Phrase Extraction"
+  - "Hallucination Suppression"
+  - "Multi-view"
 date: 2026-05-08
-content_hash: b85baaca359b25ec
+content_hash: ac774288567ad16c
 ---
+
 # RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction
 
 **Conference**: ACL 2026 Findings  
@@ -142,10 +148,10 @@ MIMIC-CXR single-view RRG (FINDINGS section):
 ## Related Papers
 
 - [\[ACL 2026\] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)
-- [\[ACL 2026\] HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks](heterorag_a_heterogeneous_retrieval-augmented_generation_framework_for_medical_v.md)
-- [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
 - [\[ACL 2025\] Automated Structured Radiology Report Generation](../../ACL2025/medical_nlp/automated_structured_radiology_report_generation.md)
+- [\[ACL 2026\] HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks](heterorag_a_heterogeneous_retrieval-augmented_generation_framework_for_medical_v.md)
 - [\[ACL 2025\] Online Iterative Self-Alignment for Radiology Report Generation](../../ACL2025/medical_nlp/oisa_radiology_report_gen.md)
+- [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
 
 </div>
 

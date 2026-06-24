@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark
 description: >-
-  [ICCV 2025][LLM Evaluation][3D Spatial Reasoning] This paper introduces 3DSRBench, the first comprehensive 3D spatial reasoning benchmark comprising 2…
+  [ICCV 2025][LLM Evaluation][3D Spatial Reasoning] This paper introduces 3DSRBench, the first comprehensive 3D spatial reasoning benchmark comprising 2,772 manually annotated VQA pairs across 12 question types. Through balanced data distribution and a novel FlipEval strategy, the benchmark enables robust evaluation. Results reveal that state-of-the-art LMMs—including GPT-4o and Gemini—fall far short of human performance on 3D spatial reasoning (≈52% vs. 95.7%)…
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "visual question answering"
   - "Camera Viewpoint Robustness"
 date: 2026-05-08
-content_hash: ea4617b6b10832cc
+content_hash: 43f3c35bf5083e00
 ---
 
 # 3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark
@@ -150,11 +150,11 @@ A total of 672 synthetic VQA pairs (1,692 after augmentation) are organized into
 
 ## Related Papers
 
+- [\[ACL 2025\] PhysReason: A Comprehensive Benchmark towards Physics-Based Reasoning](../../ACL2025/llm_evaluation/physreason_a_comprehensive_benchmark_towards_physics-based_reasoning.md)
 - [\[ICCV 2025\] OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning](omnidiff_a_comprehensive_benchmark_for_fine-grained_image_difference_captioning.md)
-- [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](../../ICLR2026/llm_evaluation/anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
 - [\[ICCV 2025\] SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting](sketchsplat_3d_edge_reconstruction_via_differentiable_multi-view_sketch_splattin.md)
-- [\[ICCV 2025\] HiERO: Understanding the Hierarchy of Human Behavior Enhances Reasoning on Egocentric Videos](hiero_understanding_the_hierarchy_of_human_behavior_enhances_reasoning_on_egocen.md)
-- [\[NeurIPS 2025\] BLINK-Twice: You See But Do You Observe? A Reasoning Benchmark on Visual Perception](../../NeurIPS2025/llm_evaluation/blink-twice_you_see_but_do_you_observe_a_reasoning_benchmark_on_visual_perceptio.md)
+- [\[ACL 2025\] Revisiting 3D LLM Benchmarks: Are We Really Testing 3D Capabilities?](../../ACL2025/llm_evaluation/revisiting_3d_llm_benchmarks_are_we_really_testing_3d_capabilities.md)
+- [\[ACL 2025\] FinanceReasoning: Benchmarking Financial Numerical Reasoning More Credible, Comprehensive and Challenging](../../ACL2025/llm_evaluation/financereasoning_benchmarking_financial_numerical_reasoning_more.md)
 
 </div>
 

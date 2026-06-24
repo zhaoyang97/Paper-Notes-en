@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Proxy3D clusters semantic features and geometric point clouds from video frames into a compact set of 3D "proxy" tokens based on "semantic groups." By utilizing the SpaceSpan dataset for multi-stage alignment training, the VLM achieves performance comparable to or better than SOTA in 3D QA, visual grounding, and spatia
+  [CVPR 2026][Multimodal VLM][3D Spatial Intelligence] Proxy3D clusters semantic features and geometric point clouds from video frames into a compact set of 3D "proxy" tokens based on "semantic groups." By utilizing the SpaceSpan dataset for multi-stage alignment training, the VLM achieves performance comparable to or better than SOTA in 3D QA, visual grounding, and spatial reasoning using only 700 visual tokens (less than 1/10 of competitors).
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "3D Spatial Intelligence"
+  - "Visual Token Compression"
+  - "Semantic Clustering"
+  - "Representation Alignment"
+  - "Multi-stage Training"
 date: 2026-05-08
-content_hash: 19001243258e8e5d
+content_hash: 1797356bd2bcda98
 ---
+
 # Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment
 
 **Conference**: CVPR 2026  
@@ -166,9 +172,9 @@ Dynamic Proxy Allocation (Table 5, Scan2Cap, proxies per object): 2 -> C 73.3; *
 
 - [\[CVPR 2026\] GaussianVision: Vision-Language Alignment from Compressed Image Representations using 2D Gaussian Splatting](gaussianvision_vision-language_alignment_from_compressed_image_representations_u.md)
 - [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
+- [\[ICLR 2026\] Delving into Spectral Clustering with Vision-Language Representations](../../ICLR2026/multimodal_vlm/delving_into_spectral_clustering_with_vision-language_representations.md)
+- [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
 - [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
-- [\[CVPR 2026\] Uncertainty-guided Compositional Alignment with Part-to-Whole Semantic Representativeness in Hyperbolic Vision-Language Models](uncertainty-guided_compositional_alignment_with_part-to-whole_semantic_represent.md)
-- [\[CVPR 2026\] SMAP: Semantic Route Planning with Map-Grounded Multimodal Alignment](smap_semantic_route_planning_with_map-grounded_multimodal_alignment.md)
 
 </div>
 

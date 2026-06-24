@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][RLVR] Addressing the defect in RLVR training for Vision-Language Models that "only verifies textual answers while allowing upstream visual perception errors to go unchecked," PEARL utilizes a "perception checklist" derived from the original problem to add a set of verifiable perception sub-questions to each reasoning task. I
+  [CVPR 2026][VLM Reasoning][RLVR] Addressing the defect in RLVR training for Vision-Language Models that "only verifies textual answers while allowing upstream visual perception errors to go unchecked," PEARL utilizes a "perception checklist" derived from the original problem to add a set of verifiable perception sub-questions to each reasoning task. It employs the perception reward as both a direct supervision signal and a "fidelity gate" to release reasoning updates…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RLVR
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "RLVR"
+  - "Vision-Language Model"
+  - "Perception-Reasoning Synergy"
+  - "Reward Hacking"
+  - "Multimodal Reasoning"
 date: 2026-05-08
-content_hash: 01fb3f4428fa6883
+content_hash: f441a8cd58f9f6bb
 ---
+
 # Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning
 
 **Conference**: CVPR 2026  
@@ -127,15 +131,15 @@ Perception checklist design ablation (Tab.3, 7B): The QA-Anchored checklist (47.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Conan: Progressive Learning to Reason Like a Detective over Multi-Scale Visual Evidence](conan_progressive_learning_to_reason_like_a_detective_over_multi-scale_visual_ev.md)
 - [\[CVPR 2026\] CARE What Fails: Contrastive Anchored-REflection for Verifiable Multimodal Reasoning](care_what_fails_contrastive_anchored-reflection_for_verifiable_multimodal_reason.md)
 - [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] Conan: Progressive Learning to Reason Like a Detective over Multi-Scale Visual Evidence](conan_progressive_learning_to_reason_like_a_detective_over_multi-scale_visual_ev.md)
 - [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
-- [\[CVPR 2026\] Stable and Efficient Single-Rollout RL for Multimodal Reasoning](stable_and_efficient_single-rollout_rl_for_multimodal_reasoning.md)
+- [\[CVPR 2026\] DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation](discriminative_perception_via_anchored_description_for_reasoning_segmentation.md)
 
 </div>
 

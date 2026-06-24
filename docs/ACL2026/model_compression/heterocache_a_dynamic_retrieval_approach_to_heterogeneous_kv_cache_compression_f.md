@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference
 description: >-
-  [ACL 2026][Model Compression][Paper Note] HeteroCache is proposed as a training-free dynamic KV cache compression framework. Based on the temporal heterogeneity (stable heads vs. drifting heads) and intra-layer redundancy (clustering of similar heads) of attention heads, it implements a fine-grained role assignment strategy—allocating larger cache budgets to d
+  [ACL 2026][Model Compression][KV Cache Compression] HeteroCache is proposed as a training-free dynamic KV cache compression framework. Based on the temporal heterogeneity (stable heads vs. drifting heads) and intra-layer redundancy (clustering of similar heads) of attention heads, it implements a fine-grained role assignment strategy—allocating larger cache budgets to drifting heads and utilizing representative heads for sparse monitoring of attention drift to trigger asynchr…
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "KV Cache Compression"
+  - "Attention Head Heterogeneity"
+  - "Dynamic Retrieval"
+  - "Intra-layer Redundancy"
+  - "Asynchronous Prefetching"
 date: 2026-05-08
-content_hash: 49cc062e01c8b061
+content_hash: f23496e51255155d
 ---
+
 # HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference
 
 **Conference**: ACL 2026  
@@ -140,10 +146,10 @@ This is a training-free method. It uses a small-scale calibration dataset for a 
 ## Related Papers
 
 - [\[ACL 2026\] DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing](dash-kv_accelerating_long-context_llm_inference_via_asymmetric_kv_cache_hashing.md)
-- [\[ICML 2025\] RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](../../ICML2025/model_compression/rocketkv_accelerating_long-context_llm_inference_via_two-stage_kv_cache_compress.md)
-- [\[ACL 2026\] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](../../NeurIPS2025/model_compression/chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
-- [\[NeurIPS 2025\] Homogeneous Keys, Heterogeneous Values: Exploiting Local KV Cache Asymmetry for Long-Context LLMs](../../NeurIPS2025/model_compression/homogeneous_keys_heterogeneous_values_exploiting_local_kv_cache_asymmetry_for_lo.md)
+- [\[ICML 2025\] RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](../../ICML2025/model_compression/rocketkv_accelerating_long-context_llm_inference_via_two-stage_kv_cache_compress.md)
+- [\[ACL 2026\] The Pitfalls of KV Cache Compression](the_pitfalls_of_kv_cache_compression.md)
+- [\[ACL 2026\] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)
 
 </div>
 

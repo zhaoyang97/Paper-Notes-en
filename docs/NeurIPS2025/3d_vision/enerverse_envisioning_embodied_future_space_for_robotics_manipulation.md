@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EnerVerse: Envisioning Embodied Future Space for Robotics Manipulation
 description: >-
-  [NeurIPS 2025][3D Vision][embodied AI] EnerVerse is a generative robotic foundation model that constructs a 4D embodied space via chunk-wise autoregressive video diffusion, sparse context memory…
+  [NeurIPS 2025][3D Vision][embodied AI] EnerVerse is a generative robotic foundation model that constructs a 4D embodied space via chunk-wise autoregressive video diffusion, sparse context memory, and multi-view generation priors. Combined with a 4DGS data flywheel to narrow the Sim2Real gap, it translates 4D world representations into physical actions through a policy head, achieving state-of-the-art performance on the LIBERO benchmark.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "robotic manipulation"
   - "4D Gaussian Splatting"
 date: 2026-05-08
-content_hash: d10bba0be2069f23
+content_hash: 465b298c544cb9d4
 ---
 
 # EnerVerse: Envisioning Embodied Future Space for Robotics Manipulation
@@ -146,9 +146,9 @@ Visual features $E$ are extracted from the first denoising step of the UNet inte
 
 - [\[NeurIPS 2025\] DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation](dynarend_learning_3d_dynamics_via_masked_future_rendering_for_robotic_manipulati.md)
 - [\[NeurIPS 2025\] MVSMamba: Multi-View Stereo with State Space Model](mvsmamba_multi-view_stereo_with_state_space_model.md)
-- [\[CVPR 2026\] EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents](../../CVPR2026/3d_vision/embodmocap_in-the-wild_4d_human-scene_reconstruction_for_embodied_agents.md)
 - [\[NeurIPS 2025\] SoFar: Language-Grounded Orientation Bridges Spatial Reasoning and Object Manipulation](sofar_language-grounded_orientation_bridges_spatial_reasoning_and_object_manipul.md)
 - [\[ICCV 2025\] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation](../../ICCV2025/3d_vision/robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md)
+- [\[ICLR 2026\] Towards Physically Executable 3D Gaussian for Embodied Navigation](../../ICLR2026/3d_vision/towards_physically_executable_3d_gaussian_for_embodied_navigation.md)
 
 </div>
 

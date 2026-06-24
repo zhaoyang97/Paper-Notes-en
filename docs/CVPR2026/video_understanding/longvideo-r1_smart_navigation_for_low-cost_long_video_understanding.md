@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Reinforcement Learning] LongVideo-R1 is proposed as a multimodal Agent equipped with reasoning capabilities. Utilizing a hierarchical video tree structure and an intelligent navigation strategy, it achieves efficient long video question answering with an average of only 10.5 tool calls, significantly outperforming exhaustive methods in the ac
+  [CVPR2026][Video Understanding][Long Video Understanding] LongVideo-R1 is proposed as a multimodal Agent equipped with reasoning capabilities. Utilizing a hierarchical video tree structure and an intelligent navigation strategy, it achieves efficient long video question answering with an average of only 10.5 tool calls, significantly outperforming exhaustive methods in the accuracy-efficiency trade-off.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Reinforcement Learning
-  - Chain-of-Thought
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Long Video Understanding"
+  - "Intelligent Navigation"
+  - "Multimodal Agent"
+  - "Hierarchical Reasoning"
+  - "Reinforcement Learning"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 823dc7beae4dfa93
+content_hash: 633757c37092c84c
 ---
+
 # LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding
 
 **Conference**: CVPR2026  
@@ -154,8 +159,8 @@ For data, 800 videos and 5.6K QA pairs from CG-Bench (with clue-grounded annotat
 - [\[CVPR 2026\] Toward Low-Cost yet Effective Temporal Learning for UAV Tracking](toward_low-cost_yet_effective_temporal_learning_for_uav_tracking.md)
 - [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
 - [\[CVPR 2026\] Dual-Agent Reinforcement Learning for Adaptive and Cost-Aware Visual-Inertial Odometry](dual-agent_reinforcement_learning_for_adaptive_and_cost-aware_visual-inertial_od.md)
-- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
+- [\[CVPR 2026\] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Token Warping Helps MLLMs Look from Nearby Viewpoints
 description: >-
-  [CVPR 2026][Multimodal VLM][token warping] This paper proposes performing spatial warping on ViT image tokens of MLLMs (rather than traditional pixel-level warping) to simulate viewpoint changes. Backward token warping is found to maintain semantic consistency while remaining robust to depth estimation noise, significantly outperforming pixel-level warping, spe
+  [CVPR 2026][Multimodal VLM][Viewpoint transformation] This paper proposes performing spatial warping on ViT image tokens of MLLMs (rather than traditional pixel-level warping) to simulate viewpoint changes. Backward token warping is found to maintain semantic consistency while remaining robust to depth estimation noise, significantly outperforming pixel-level warping, specialized spatial reasoning MLLMs, and generative warping methods on the self-constructed ViewBench.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - token warping
-  - MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Viewpoint transformation"
+  - "token warping"
+  - "spatial reasoning"
+  - "mental imagery"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 633a1557b1d3751d
+content_hash: 4ab3dbfbb159bfc4
 ---
+
 # Token Warping Helps MLLMs Look from Nearby Viewpoints
 
 **Conference**: CVPR 2026  
@@ -137,10 +141,10 @@ Experiments were conducted on the self-built ViewBench based on ScanNet real ind
 ## Related Papers
 
 - [\[ICLR 2026\] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping](../../ICLR2026/multimodal_vlm/constructive_distortion_improving_mllms_with_attention-guided_image_warping.md)
-- [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
-- [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
-- [\[CVPR 2026\] Asking like Socrates: Socrates helps VLMs understand remote sensing images](asking_like_socrates_socrates_helps_vlms_understand_remote_sensing_images.md)
 - [\[CVPR 2026\] Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation](where_mllms_attend_and_what_they_rely_on_explaining_autoregressive_token_generat.md)
+- [\[ICLR 2026\] Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs](../../ICLR2026/multimodal_vlm/patch-as-decodable-token_towards_unified_multi-modal_vision_tasks_in_mllms.md)
+- [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](../../ICLR2026/multimodal_vlm/sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
+- [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
 
 </div>
 

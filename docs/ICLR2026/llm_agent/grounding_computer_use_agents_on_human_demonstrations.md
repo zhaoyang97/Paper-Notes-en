@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Grounding Computer Use Agents on Human Demonstrations
 description: >-
-  [ICLR 2026][LLM Agent][desktop grounding] The authors construct GROUNDCUA, the largest desktop GUI grounding dataset to date (87 applications, 56k screenshots, 3.56M human-annotated elements), using expert human demonstrations. By utilizing only one-tenth of the training data compared to prior methods, the GROUNDNEXT series models achieve SOTA performance acro
+  [ICLR 2026][LLM Agent][desktop grounding] The authors construct GROUNDCUA, the largest desktop GUI grounding dataset to date (87 applications, 56k screenshots, 3.56M human-annotated elements), using expert human demonstrations. By utilizing only one-tenth of the training data compared to prior methods, the GROUNDNEXT series models achieve SOTA performance across five grounding benchmarks. This demonstrates that "high-quality dense supervision" is a more effective driver for r…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - desktop grounding
-  - computer-use agent
-  - Vision-Language Model
-  - SFT+RL
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "desktop grounding"
+  - "computer-use agent"
+  - "human demonstrations"
+  - "vision-language model"
+  - "SFT+RL"
+  - "data efficiency"
 date: 2026-05-08
-content_hash: a35fbafa5ecd03b5
+content_hash: 4d09ea2d5782ad41
 ---
+
 # Grounding Computer Use Agents on Human Demonstrations
 
 **Conference**: ICLR 2026  
@@ -126,10 +129,10 @@ In the OSWorld-Verified agent setting (o3 as planner): GROUNDNEXT-3B achieved a 
 
 ## Related Papers
 
-- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
 - [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
-- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
 - [\[ICLR 2026\] R-WoM: Retrieval-augmented World Model for Computer-use Agents](r-wom_retrieval-augmented_world_model_for_computer-use_agents.md)
+- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
+- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
 - [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reasoning With a Star: A Heliophysics Dataset and Benchmark for Agentic Scientific Reasoning
 description: >-
-  [NeurIPS 2025][Earth Science][scientific reasoning] This paper introduces Reasoning With a Star (RWS), a 158-question scientific reasoning benchmark derived from NASA heliophysics summer school problem sets…
+  [NeurIPS 2025][Earth Science][scientific reasoning] This paper introduces Reasoning With a Star (RWS), a 158-question scientific reasoning benchmark derived from NASA heliophysics summer school problem sets, spanning three answer types (numeric/symbolic/textual). Paired with a unit-aware grader, it evaluates four multi-agent coordination paradigms (HMAW/PACE/PHASE/SCHEMA) and finds that no single paradigm dominates across all tasks — the systems-engineering-inspired SCHEMA ac…
 tags:
   - "NeurIPS 2025"
   - "Earth Science"
@@ -12,7 +12,7 @@ tags:
   - "systems engineering"
   - "benchmark"
 date: 2026-05-08
-content_hash: 68cfe251992ffc12
+content_hash: 9e582a26fccd47a9
 ---
 
 # Reasoning With a Star: A Heliophysics Dataset and Benchmark for Agentic Scientific Reasoning
@@ -128,11 +128,11 @@ No training is performed. All paradigms use Gemini 2.5 Pro as the base model. A 
 
 ## Related Papers
 
+- [\[CVPR 2026\] SIGMA: A Physics-Based Benchmark for Gas Chimney Understanding in Seismic Images](../../CVPR2026/earth_science/sigma_a_physics-based_benchmark_for_gas_chimney_understanding_in_seismic_images.md)
 - [\[NeurIPS 2025\] Power Ensemble Aggregation for Improved Extreme Event AI Prediction](power_ensemble_aggregation_for_improved_extreme_event_ai_prediction.md)
 - [\[NeurIPS 2025\] ControlFusion: A Controllable Image Fusion Framework with Language-Vision Degradation Prompts](controlfusion_a_controllable_image_fusion_framework_with_language-vision_degrada.md)
 - [\[NeurIPS 2025\] Adaptive Online Emulation for Accelerating Complex Physical Simulations](adaptive_online_emulation_for_accelerating_complex_physical_simulations.md)
 - [\[NeurIPS 2025\] Predicting Public Health Impacts of Electricity Usage](predicting_public_health_impacts_of_electricity_usage.md)
-- [\[NeurIPS 2025\] A Probabilistic U-Net Approach to Downscaling Climate Simulations](a_probabilistic_unet_approach_to_downscaling_climate_simulat.md)
 
 </div>
 

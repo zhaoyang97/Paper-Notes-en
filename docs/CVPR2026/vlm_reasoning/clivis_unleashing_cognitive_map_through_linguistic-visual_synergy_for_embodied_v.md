@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] CLiViS decomposes egocentric video question answering into a training-free loop where the "LLM acts as a planner and the VLM acts as a perceptual executor." Together, they maintain a **dynamic cognitive map** (navigation graph + relationship graph) that evolves during reasoning. This bridges fine-grained perception and
+  [CVPR 2026][VLM Reasoning][Embodied Visual Reasoning] CLiViS decomposes egocentric video question answering into a training-free loop where the "LLM acts as a planner and the VLM acts as a perceptual executor." Together, they maintain a **dynamic cognitive map** (navigation graph + relationship graph) that evolves during reasoning. This bridges fine-grained perception and high-level reasoning through structured scene representations, achieving SOTA results on OpenEQA…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Embodied Visual Reasoning"
+  - "LLM-VLM Synergy"
+  - "Cognitive Map"
+  - "Egocentric Video"
+  - "Training-free Framework"
 date: 2026-05-08
-content_hash: 7ff7aceba7607cd6
+content_hash: 85af25d7ae250ead
 ---
+
 # CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,11 @@ On EgoTempo (InternVL3 + Qwen2.5-Max):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
-- [\[CVPR 2026\] STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation](strnet_visual_navigation_with_spatio-temporal_representation_through_dynamic_gra.md)
-- [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
-- [\[CVPR 2026\] Visual-RRT: Finding Paths toward Visual-Goals via Differentiable Rendering](visual-rrt_finding_paths_toward_visual-goals_via_differentiable_rendering.md)
-- [\[CVPR 2026\] Rethinking Visual Rearrangement from A Diffusion Perspective](rethinking_visual_rearrangement_from_a_diffusion_perspective.md)
+- [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
+- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
+- [\[CVPR 2026\] Think Visually, Reason Textually: Vision-Language Synergy in Abstract Reasoning](think_visually_reason_textually_vision-language_synergy_in_abstract_reasoning.md)
+- [\[CVPR 2026\] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents](mindpower_enabling_theoryofmind_reasoning_in_vlmba.md)
+- [\[ICML 2026\] CSMR (Look on Demand): A Cognitive Scheduling Framework for Visual Evidence Acquisition in Multimodal Reasoning](../../ICML2026/vlm_reasoning/look_on_demand_a_cognitive_scheduling_framework_for_visual_evidence_acquisition_.md)
 
 </div>
 

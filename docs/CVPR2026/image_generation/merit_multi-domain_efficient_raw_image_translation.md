@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MERIT: Multi-domain Efficient RAW Image Translation
 description: >-
-  [CVPR 2026][Image Generation][GAN] MERIT is the first unified framework to achieve multi-camera RAW-to-RAW translation using a single model. By conditioning on style embeddings, it enables translation from any source domain to any target domain. It explicitly aligns Poisson-Gaussian noise statistics through sensor-aware noise modeling and enhances RAW f
+  [CVPR 2026][Image Generation][RAW2RAW translation] MERIT is the first unified framework to achieve multi-camera RAW-to-RAW translation using a single model. By conditioning on style embeddings, it enables translation from any source domain to any target domain. It explicitly aligns Poisson-Gaussian noise statistics through sensor-aware noise modeling and enhances RAW feature representation with multi-scale large-kernel attention. The authors also release MDRAW…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GAN
+  - "CVPR 2026"
+  - "Image Generation"
+  - "RAW2RAW translation"
+  - "multi-domain generation"
+  - "sensor noise modeling"
+  - "large-kernel attention"
+  - "GAN"
 date: 2026-05-08
-content_hash: 748b5b7f26df15df
+content_hash: 39a6ec57e4ef3752
 ---
+
 # MERIT: Multi-domain Efficient RAW Image Translation
 
 **Conference**: CVPR 2026  
@@ -125,15 +130,15 @@ Across 20 non-diagonal domain pairs, a single MERIT model covers all combination
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
 - [\[CVPR 2026\] Decoupled Residual Denoising Diffusion Models for Unified and Data Efficient Image-to-Image Translation](decoupled_residual_denoising_diffusion_models_for_unified_and_data_efficient_ima.md)
+- [\[CVPR 2026\] MakeAnything: Harnessing Diffusion Transformers for Multi-Domain Procedural Sequence Generation](makeanything_harnessing_diffusion_transformers_for_multi-domain_procedural_seque.md)
 - [\[CVPR 2026\] SynthRGB-T: Language-Vision Guided Image Translation for Diversity Synthesis](synthrgb-t_language-vision_guided_image_translation_for_diversity_synthesis.md)
-- [\[CVPR 2026\] LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors](larp_efficient_multi-view_inpainting_with_latent_reprojection_priors.md)
 - [\[CVPR 2026\] DBMSolver: A Training-free Diffusion Bridge Sampler for High-Quality Image-to-Image Translation](dbmsolver_a_training-free_diffusion_bridge_sampler_for_high-quality_image-to-ima.md)
-- [\[CVPR 2026\] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm](scaling_multi-identity_consistency_for_image_customization_via_multi-to-multi_ma.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models
 description: >-
-  [AAAI 2026][Autonomous Driving][Differentiable Simulator] This paper proposes Analytic World Models (AWMs), which exploit the differentiability of differentiable simulators to design three world modeling tasks—relative o…
+  [AAAI 2026][Autonomous Driving][Differentiable Simulator] This paper proposes Analytic World Models (AWMs), which exploit the differentiability of differentiable simulators to design three world modeling tasks—relative odometry, optimal planners, and inverse optimal state estimation—enabling end-to-end efficient training of state predictors without trial-and-error search. The approach is validated on the Waymax autonomous driving simulator.
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Relative Odometry"
   - "Model Predictive Control"
 date: 2026-05-08
-content_hash: 47fb06fbe9ca5631
+content_hash: f65d971640fedbe5
 ---
 
 # Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models
@@ -219,11 +219,11 @@ $$\min_\phi \| \text{Sim}(\mathbf{s}_t + f_\phi^I(\mathbf{s}_t, \mathbf{a}_t), \
 
 ## Related Papers
 
+- [\[CVPR 2026\] MAD: Motion Appearance Decoupling for Efficient Driving World Models](../../CVPR2026/autonomous_driving/mad_motion_appearance_decoupling_for_efficient_driving_world_models.md)
 - [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
 - [\[NeurIPS 2025\] Towards Foundational LiDAR World Models with Efficient Latent Flow Matching](../../NeurIPS2025/autonomous_driving/towards_foundational_lidar_world_models_with_efficient_latent_flow_matching.md)
+- [\[CVPR 2026\] Neuro-Cognitive Reward Modeling for Human-Centered Autonomous Vehicle Control](../../CVPR2026/autonomous_driving/neuro-cognitive_reward_modeling_for_human-centered_autonomous_vehicle_control.md)
 - [\[CVPR 2026\] Efficient Equivariant Transformer for Self-Driving Agent Modeling](../../CVPR2026/autonomous_driving/efficient_equivariant_transformer_for_self-driving_agent_modeling.md)
-- [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](../../CVPR2026/autonomous_driving/u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](../../CVPR2026/autonomous_driving/vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
 
 </div>
 

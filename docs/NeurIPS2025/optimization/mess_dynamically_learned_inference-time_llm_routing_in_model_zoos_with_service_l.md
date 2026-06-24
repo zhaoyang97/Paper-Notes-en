@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MESS+: Dynamically Learned Inference-Time LLM Routing in Model Zoos with Service Level Guarantees
 description: >-
-  [NeurIPS 2025][Optimization][Cost Optimization] MESS+ is the first framework to formalize LLM request routing as a constrained stochastic optimization problem with SLA guarantees. By combining an online-learned request s…
+  [NeurIPS 2025][Optimization][Cost Optimization] MESS+ is the first framework to formalize LLM request routing as a constrained stochastic optimization problem with SLA guarantees. By combining an online-learned request satisfaction predictor with a virtual queue mechanism, it dynamically selects models per request. Across 3 reasoning and 5 question-answering benchmarks, MESS+ achieves an average 2× cost reduction while satisfying SLA constraints…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "SLA Guarantee"
   - "Online Learning"
 date: 2026-05-08
-content_hash: 4a10733a50b7bd1c
+content_hash: d124d21247a18178
 ---
 
 # MESS+: Dynamically Learned Inference-Time LLM Routing in Model Zoos with Service Level Guarantees
@@ -148,8 +148,8 @@ Average across 8 benchmarks (α=66%):
 
 - [\[NeurIPS 2025\] Preference Learning with Response Time: Robust Losses and Guarantees](preference_learning_with_response_time_robust_losses_and_guarantees.md)
 - [\[NeurIPS 2025\] Least Squares Variational Inference](least_squares_variational_inference.md)
-- [\[NeurIPS 2025\] Natural Gradient VI: Guarantees for Non-Conjugate Models](natural_gradient_vi_guarantees_for_non-conjugate_models.md)
 - [\[NeurIPS 2025\] Learning to Insert for Constructive Neural Vehicle Routing Solver](learning_to_insert_for_constructive_neural_vehicle_routing_solver.md)
+- [\[NeurIPS 2025\] Natural Gradient VI: Guarantees for Non-Conjugate Models](natural_gradient_vi_guarantees_for_non-conjugate_models.md)
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
 
 </div>

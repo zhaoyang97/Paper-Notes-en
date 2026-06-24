@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Scaling Depth Capacity via Zero/One-Layer Model Expansion
 description: >-
-  [ICML 2026][Pretraining][progressive training] This paper proposes "Zero/One-Layer Progressive Training"—first training an extremely shallow model with almost no Transformer layers, then expanding the depth to the target number of layers at a late stage of training ($\approx 80\%$ iterations). Combined with a Warmup-Stable-Decay (WSD) learning rate schedule and muP
+  [ICML 2026][LLM Pretraining][progressive training] This paper proposes "Zero/One-Layer Progressive Training"—first training an extremely shallow model with almost no Transformer layers, then expanding the depth to the target number of layers at a late stage of training ($\approx 80\%$ iterations). Combined with a Warmup-Stable-Decay (WSD) learning rate schedule and muP hyperparameter transfer, this approach saves approximately $80\%$ of computation ($\approx 5\times$ speedup)…
 tags:
-  - ICML 2026
-  - Pretraining
-  - progressive training
-  - zero/one-layer
-  - WSD schedule
-  - muP
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "progressive training"
+  - "depth expansion"
+  - "zero/one-layer"
+  - "WSD schedule"
+  - "muP"
 date: 2026-05-08
-content_hash: 29b5b8c3d1747934
+content_hash: 33b0a3049ad86c9f
 ---
+
 # Scaling Depth Capacity via Zero/One-Layer Model Expansion
 
 **Conference**: ICML 2026  
@@ -135,15 +137,16 @@ Scaling Law perspective: On Llama-3 (0.25B–2B) and DeepSeek-V3 (0.2B–0.5B ac
 - **Value**: ⭐⭐⭐⭐⭐ (Direct economic value for pre-training large-scale models).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Inverse Depth Scaling From Most Layers Being Similar](inverse_depth_scaling_from_most_layers_being_similar.md)
 - [\[ACL 2025\] Training Dynamics Underlying Language Model Scaling Laws: Loss Deceleration and Zero-Sum Learning](../../ACL2025/llm_pretraining/training_dynamics_underlying_language_model_scaling_laws_loss_deceleration_and_z.md)
+- [\[ICLR 2026\] Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training](../../ICLR2026/llm_pretraining/revisiting_the_scaling_properties_of_downstream_metrics_in_large_language_model_.md)
+- [\[ICLR 2026\] ADEPT: Continual Pretraining via Adaptive Expansion and Dynamic Decoupled Tuning](../../ICLR2026/llm_pretraining/adept_continual_pretraining_via_adaptive_expansion_and_dynamic_decoupled_tuning.md)
 - [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
-- [\[ICML 2026\] Predicting Large Model Test Losses with a Noisy Quadratic System](predicting_large_model_test_losses_with_a_noisy_quadratic_system.md)
-- [\[NeurIPS 2025\] Gemstones: A Model Suite for Multi-Faceted Scaling Laws](../../NeurIPS2025/llm_pretraining/gemstones_a_model_suite_for_multi-faceted_scaling_laws.md)
 
 </div>
 

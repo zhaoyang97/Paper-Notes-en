@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Machine-Learned Comorbidity Index
 description: >-
-  [ICML 2026][Medical NLP][HSIC] Traditional comorbidity scores (Charlson, Elixhauser) are linear rules with weights manually calibrated for mortality, performing poorly on other clinical outcomes. This paper utilizes neural networks to compress ICD codes from an admission into a scalar score, trained by **maximizing the normalized HSIC (kernel depend
+  [ICML2026][Medical LLM][Comorbidity Index] Traditional comorbidity scores (Charlson, Elixhauser) are linear rules with weights manually calibrated for mortality, performing poorly on other clinical outcomes. This paper utilizes neural networks to compress ICD codes from an admission into a scalar score, trained by **maximizing the normalized HSIC (kernel dependence) between this score and multiple clinical outcomes**. This ensures the single score provides consistent severity…
 tags:
-  - ICML 2026
-  - Medical NLP
-  - HSIC
+  - "ICML2026"
+  - "Medical LLM"
+  - "Comorbidity Index"
+  - "ICD Diagnosis Codes"
+  - "HSIC"
+  - "Multi-outcome Learning"
+  - "Patient Stratification"
 date: 2026-05-08
-content_hash: 6d5d6bc0cf4b631b
+content_hash: 3eb33ed59f4cb856
 ---
+
 # A Machine-Learned Comorbidity Index
 
 **Conference**: ICML2026  
@@ -119,15 +124,16 @@ MLCI ranks first across all outcomes in MIMIC-IV, with the largest gains in mort
 - Value: ⭐⭐⭐⭐ Provides a principled framework for learnable comorbidity scores in clinical stratification.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] From Medical Records to Diagnostic Dialogues: A Clinical-Grounded Approach and Dataset for Psychiatric Comorbidity](../../ICLR2026/medical_nlp/from_medical_records_to_diagnostic_dialogues_a_clinical-grounded_approach_and_da.md)
 - [\[ICML 2026\] Exploring Accurate and Transparent Domain Adaptation in Predictive Healthcare via Concept-Grounded Orthogonal Inference](exploring_accurate_and_transparent_domain_adaptation_in_predictive_healthcare_vi.md)
-- [\[ICML 2026\] ClinTutor-R1: Advancing Scalable and Robust One-to-Many Alignment in Clinical Socratic Education](clintutor-r1_advancing_scalable_and_robust_one-to-many_alignment_in_clinical_soc.md)
 - [\[ICML 2026\] MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings](medcase-structured_a_text-to-fhir_dataset_for_benchmarking_diagnostic_reasoning_.md)
-- [\[AAAI 2026\] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](../../AAAI2026/medical_nlp/voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)
-- [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_nlp/medagentgym_agentic_training_biomedical.md)
+- [\[ICML 2026\] ClinTutor-R1: Advancing Scalable and Robust One-to-Many Alignment in Clinical Socratic Education](clintutor-r1_advancing_scalable_and_robust_one-to-many_alignment_in_clinical_soc.md)
+- [\[AAAI 2026\] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs](../../AAAI2026/medical_nlp/gem_generative_entropy-guided_preference_modeling_for_few-shot_alignment_of_llms.md)
 
 </div>
 

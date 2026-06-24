@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Regret-Based Federated Causal Discovery with Unknown Interventions
 description: >-
-  [ICML 2026][AI Safety][Regret] This paper proposes I-PERI: a federated setting where client intervention targets are entirely unknown and only regret scalars can be shared. By employing a two-stage process of "directed-consensus masking + undirected-consensus masking," it recovers a new equivalence class Φ-MEC, which is tighter than the observationa
+  [ICML 2026][AI Safety][Causal Discovery] This paper proposes I-PERI: a federated setting where client intervention targets are entirely unknown and only regret scalars can be shared. By employing a two-stage process of "directed-consensus masking + undirected-consensus masking," it recovers a new equivalence class Φ-MEC, which is tighter than the observational MEC but looser than I-MEC, and provides $\epsilon$-differential privacy guarantees via Laplace noise.
 tags:
-  - ICML 2026
-  - AI Safety
-  - Regret
+  - "ICML 2026"
+  - "AI Safety"
+  - "Causal Discovery"
+  - "Federated Learning"
+  - "Unknown Interventions"
+  - "Φ-Markov Equivalence Class"
+  - "Regret"
+  - "Differential Privacy"
 date: 2026-05-08
-content_hash: 22f4b5b2ee891a74
+content_hash: 5e34eadc3144dcd5
 ---
+
 # Regret-Based Federated Causal Discovery with Unknown Interventions
 
 **Conference**: ICML 2026  
@@ -132,11 +138,20 @@ I-PERI achieved the best SHD in 4 out of 5 scales. Figure 7 shows I-PERI is **se
 - Value: ⭐⭐⭐⭐ Provides a practical baseline for cross-institution studies with clear privacy and intervention handling.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-...
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Missing Mass for Differentially Private Domain Discovery](../../ICLR2026/ai_safety/differentially_private_domain_discovery.md)
+- [\[ICML 2026\] Angel or Demon: Investigating the Plasticity Interventions' Impact on Backdoor Threats in Deep Reinforcement Learning](angel_or_demon_investigating_the_plasticity_interventions_impact_on_backdoor_thr.md)
+- [\[ICML 2026\] When Should an AI Scientist Stop? Verifiable Experiment Steering and Refusal for Autonomous Discovery](when_should_an_ai_scientist_stop_verifiable_experiment_steering_and_refusal_for_.md)
+- [\[ICLR 2026\] Robust Adversarial Attacks Against Unknown Disturbances via Inverse Gradient Sample](../../ICLR2026/ai_safety/robust_adversarial_attacks_against_unknown_disturbance_via_inverse_gradient_samp.md)
+- [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Angel or Demon: Investigating the Plasticity Interventions' Impact on Backdoor Threats in Deep Reinforcement Learning](angel_or_demon_investigating_the_plasticity_interventions_impact_on_backdoor_thr.md)

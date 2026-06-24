@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Closed-form $\ell_r$ norm scaling with data for overparameterized linear regression and diagonal linear networks under $\ell_p$ bias
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] For overparameterized linear regression (isotropic Gaussian design, minimal $\ell_p$ interpolation, $p\in(1,2]$), this paper utilizes a simple "dual ray" analysis to provide a **closed-form high-probability characterization** of the scaling of the entire family of parameter norms $\{\|\hat w_p\|_r\}_{r\in[1,p]}$ with s
+  [ICLR2026][Learning Theory][Overparameterization] For overparameterized linear regression (isotropic Gaussian design, minimal $\ell_p$ interpolation, $p\in(1,2]$), this paper utilizes a simple "dual ray" analysis to provide a **closed-form high-probability characterization** of the scaling of the entire family of parameter norms $\{\|\hat w_p\|_r\}_{r\in[1,p]}$ with sample size $n$. It identifies a data-dependent transition point $n^\star$ ("elbow point") and a universal thre…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Overparameterized Linear Regression"
+  - "Overparameterization"
+  - "Minimal $\\ell_p$ Interpolation"
+  - "Norm Scaling Laws"
+  - "Dual Ray Analysis"
+  - "Diagonal Linear Networks"
+  - "Implicit Bias"
 date: 2026-05-08
-content_hash: 99a48675d8714330
+content_hash: 651a46b2927948fa
 ---
+
 # Closed-form $\ell_r$ norm scaling with data for overparameterized linear regression and diagonal linear networks under $\ell_p$ bias
 
 **Conference**: ICLR2026  
@@ -128,8 +136,21 @@ Experiments verify theoretical curves rather than seeking SOTA.
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Covariate-Guided Clusterwise Linear Regression for Generalization to Unseen Data](covariate-guided_clusterwise_linear_regression_for_generalization_to_unseen_data.md)
+- [\[ICLR 2026\] Learning under Quantization for High-Dimensional Linear Regression](learning_under_quantization_for_high-dimensional_linear_regression.md)
+- [\[ICLR 2026\] Larger Datasets Can Be Repeated More: A Theoretical Analysis of Multi-Epoch Scaling in Linear Regression](larger_datasets_can_be_repeated_more_a_theoretical_analysis_of_multi-epoch_scali.md)
+- [\[ICLR 2026\] Implicit bias produces neural scaling laws in learning curves, from perceptrons to deep networks](implicit_bias_produces_neural_scaling_laws_in_learning_curves_from_perceptrons_t.md)
+- [\[ICLR 2026\] A New Approach to Controlling Linear Dynamical Systems](a_new_approach_to_controlling_linear_dynamical_systems.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

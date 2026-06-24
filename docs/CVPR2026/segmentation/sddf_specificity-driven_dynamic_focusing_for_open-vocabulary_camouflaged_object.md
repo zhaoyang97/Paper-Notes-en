@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection
 description: >-
-  [CVPR 2026][Segmentation][Vision-Language Model] SDDF proposes a new task, Open-Vocabulary Camouflaged Object Detection (OVCOD), and establishes the OVCOD-D benchmark. It achieves a 56.4 AP under open-set settings through a sub-description principal component contrastive fusion strategy to remove redundant textual noise, alongside specificity-guided regional weak ali
+  [CVPR 2026][Segmentation][Open-vocabulary object detection] SDDF proposes a new task, Open-Vocabulary Camouflaged Object Detection (OVCOD), and establishes the OVCOD-D benchmark. It achieves a 56.4 AP under open-set settings through a sub-description principal component contrastive fusion strategy to remove redundant textual noise, alongside specificity-guided regional weak alignment and dynamic focusing mechanisms to enhance the discriminative power between camouflaged targe…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary object detection"
+  - "Camouflaged object detection"
+  - "Vision-language models"
+  - "Fine-grained description"
+  - "Dynamic focusing"
 date: 2026-05-08
-content_hash: 085d559e94d61822
+content_hash: c89644e3b211abb7
 ---
+
 # SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection
 
 **Conference**: CVPR 2026  

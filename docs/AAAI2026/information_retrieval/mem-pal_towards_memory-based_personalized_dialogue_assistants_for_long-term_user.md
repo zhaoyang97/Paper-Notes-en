@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Mem-PAL: Towards Memory-based Personalized Dialogue Assistants for Long-term User-Agent Interaction
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Personalized Dialogue] This paper proposes H2Memory, a four-layer hierarchical heterogeneous memory structure (Log Graphs / Background Memory / Topic Outlines / Principles)…
+  [AAAI 2026 Oral][Information Retrieval & RAG][Personalized Dialogue] This paper proposes H2Memory, a four-layer hierarchical heterogeneous memory structure (Log Graphs / Background Memory / Topic Outlines / Principles), validated on the PAL-Set dataset (100 users × 8.4 months of interaction), improving BLEU-1 on demand paraphrasing and solution recommendation tasks from 13.59 to 26.67.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Information Retrieval & RAG"
   - "Personalized Dialogue"
   - "Long-term Memory"
@@ -12,7 +12,7 @@ tags:
   - "User Modeling"
   - "Dialogue Assistant"
 date: 2026-05-08
-content_hash: ae76ed5e6d16a7c4
+content_hash: 199a63a8d268b1f7
 ---
 
 # Mem-PAL: Towards Memory-based Personalized Dialogue Assistants for Long-term User-Agent Interaction
@@ -137,8 +137,8 @@ During retrieval, the top $k=3$ most similar entries (via paraphrase-multilingua
 - [\[ACL 2026\] HyperMem: Hypergraph Memory for Long-Term Conversations](../../ACL2026/information_retrieval/hypermem_hypergraph_memory_for_long-term_conversations.md)
 - [\[ICLR 2026\] AMemGym: Interactive Memory Benchmarking for Assistants in Long-Horizon Conversations](../../ICLR2026/information_retrieval/amemgym_interactive_memory_benchmarking_for_assistants_in_long-horizon_conversat.md)
 - [\[AAAI 2026\] ComoRAG: A Cognitive-Inspired Memory-Organized RAG for Stateful Long Narrative Reasoning](comorag_a_cognitive-inspired_memory-organized_rag_for_stateful_long_narrative_re.md)
+- [\[ICLR 2026\] Eigen-Agent: Adaptive Multi-Agent Scientific Reasoning with Monitor-Based RAG](../../ICLR2026/information_retrieval/eigen-agent_adaptive_multi-agent_scientific_reasoning_with_monitor-based_rag.md)
 - [\[AAAI 2026\] PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning](prime_planning_and_retrieval-integrated_memory_for_enhanced_reasoning.md)
-- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
 
 </div>
 

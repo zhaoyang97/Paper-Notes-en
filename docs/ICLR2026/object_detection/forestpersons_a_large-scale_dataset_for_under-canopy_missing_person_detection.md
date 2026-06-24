@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ForestPersons: A Large-Scale Dataset for Under-Canopy Missing Person Detection
 description: >-
-  [ICLR 2026][Object Detection][Dataset] ForestPersons is the first large-scale benchmark dataset specifically designed for detecting missing persons under the forest canopy (96,482 images + 204,078 annotations). By simulating micro aerial vehicle (MAV) low-altitude flight perspectives at 1.5–2.0 meters, it covers realistic search and rescue (SAR) conditions
+  [ICLR 2026][Object Detection][Person Detection] ForestPersons is the first large-scale benchmark dataset specifically designed for detecting missing persons under the forest canopy (96,482 images + 204,078 annotations). By simulating micro aerial vehicle (MAV) low-altitude flight perspectives at 1.5–2.0 meters, it covers realistic search and rescue (SAR) conditions across multiple seasons, weather conditions, poses, and occlusion levels, providing a solid foundation for the t…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Dataset
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Person Detection"
+  - "Forest Search and Rescue"
+  - "UAV"
+  - "Occlusion-aware"
+  - "Dataset"
 date: 2026-05-08
-content_hash: f1da9669e5f490a7
+content_hash: 567e2bb2e043e3ae
 ---
+
 # ForestPersons: A Large-Scale Dataset for Under-Canopy Missing Person Detection
 
 **Conference**: ICLR 2026  

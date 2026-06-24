@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] MonarchAttention: Zero-Shot Conversion to Fast, Hardware-Aware Structured Attention
 description: >-
-  [NeurIPS 2025][LLM/NLP][efficient attention] This paper proposes MonarchAttention, which leverages the structured properties of Monarch matrices and employs alternating optimization over a variational form of softmax to…
+  [NeurIPS 2025 Spotlight][LLM (Other)][efficient attention] This paper proposes MonarchAttention, which leverages the structured properties of Monarch matrices and employs alternating optimization over a variational form of softmax to approximate attention at $\Theta(N\sqrt{N}d)$ complexity. The method enables zero-shot replacement of attention layers in pretrained Transformers without any additional training, while achieving 1.4×–8.2× speedups over FlashAttention-2 on GPU.
 tags:
-  - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "NeurIPS 2025 Spotlight"
+  - "LLM (Other)"
   - "efficient attention"
   - "Monarch matrices"
   - "sub-quadratic attention"
@@ -13,7 +13,7 @@ tags:
   - "hardware-aware"
   - "zero-shot conversion"
 date: 2026-05-08
-content_hash: e6d5056d16bdadc4
+content_hash: df235356b83c9a01
 ---
 
 # MonarchAttention: Zero-Shot Conversion to Fast, Hardware-Aware Structured Attention
@@ -154,11 +154,11 @@ Effect of iteration count $T$ on ViT accuracy: larger $T \in \{1, 2, 3\}$ yields
 
 ## Related Papers
 
+- [\[ACL 2025\] Zero-Shot Belief: A Hard Problem for LLMs](../../ACL2025/llm_nlp/zero-shot_belief_a_hard_problem_for_llms.md)
+- [\[ACL 2025\] Bilingual Zero-Shot Stance Detection](../../ACL2025/llm_nlp/bilingual_zero-shot_stance_detection.md)
+- [\[ECCV 2024\] Zero-Shot Object Counting with Good Exemplars (VA-Count)](../../ECCV2024/llm_nlp/zeroshot_object_counting_with_good_exemplars.md)
+- [\[ACL 2025\] BIPro: Zero-shot Chinese Poem Generation via Block Inverse Prompting Constrained Generation Framework](../../ACL2025/llm_nlp/bipro_zero-shot_chinese_poem_generation_via_block_inverse_prompting_constrained_.md)
 - [\[AAAI 2026\] Soft Filtering: Guiding Zero-Shot Composed Image Retrieval with Prescriptive and Proscriptive Prompts](../../AAAI2026/llm_nlp/soft_filtering_guiding_zero-shot_composed_image_retrieval_with_prescriptive_and_.md)
-- [\[NeurIPS 2025\] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)
-- [\[ICML 2026\] SLAY: Geometry-Aware Spherical Linearized Attention with Yat-Kernel](../../ICML2026/llm_nlp/slay_geometry-aware_spherical_linearized_attention_with_yat-kernel.md)
-- [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](spectral_conditioning_of_attention_improves_transformer_performance.md)
-- [\[NeurIPS 2025\] Strassen Attention, Split VC Dimension and Compositionality in Transformers](strassen_attention_split_vc_dimension_and_compositionality_in_transformers.md)
 
 </div>
 

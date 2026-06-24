@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatiotemporal Pyramid Flow Matching for Climate Emulation
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] The "coarse-to-fine" pyramid flow matching is extended to both spatial and temporal dimensions, proposing Spatiotemporal Pyramid Flow (SPF). Using a DiT network for parallel sampling of decadal/yearly/monthly climate fields in pixel space, it achieves 15–28× faster speeds than autoregressive climate emulators while att
+  [CVPR 2026][Image Generation][Flow Matching] The "coarse-to-fine" pyramid flow matching is extended to both spatial and temporal dimensions, proposing Spatiotemporal Pyramid Flow (SPF). Using a DiT network for parallel sampling of decadal/yearly/monthly climate fields in pixel space, it achieves 15–28× faster speeds than autoregressive climate emulators while attaining superior CRPS/RMSE on ClimateBench.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Spatiotemporal Pyramid"
+  - "Climate Emulation"
+  - "Probabilistic Emulator"
+  - "Multi-time scale"
 date: 2026-05-08
-content_hash: 29b0e1b136e47233
+content_hash: 4c873849f673c9b0
 ---
+
 # Spatiotemporal Pyramid Flow Matching for Climate Emulation
 
 **Conference**: CVPR 2026  
@@ -133,15 +138,16 @@ Key takeaway: SPF achieves the **lowest Year-CRPS** across categories. Compared 
 - Value: ⭐⭐⭐⭐⭐ Provides a fast probabilistic paradigm and a significant new dataset (ClimateSuite) for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
-- [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](renderflow_single-step_neural_rendering_via_flow_matching.md)
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
 - [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
-- [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
-- [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
+- [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](renderflow_single-step_neural_rendering_via_flow_matching.md)
+- [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
 
 </div>
 

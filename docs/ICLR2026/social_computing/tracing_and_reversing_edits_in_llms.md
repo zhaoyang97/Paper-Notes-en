@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Tracing and Reversing Edits in LLMs
 description: >-
-  [ICLR 2026][Social Computing][knowledge editing] Addressing the dual-use risks of knowledge editing (KE), this paper proposes EditScope to infer edited target entities from weights (up to 99% accuracy) and a training-free edit reversal method based on SVD bottom-rank approximation (up to 94% reversal rate), relying solely on edited weights without requiring edit prom
+  [ICLR 2026][Social Computing][knowledge editing] Addressing the dual-use risks of knowledge editing (KE), this paper proposes EditScope to infer edited target entities from weights (up to 99% accuracy) and a training-free edit reversal method based on SVD bottom-rank approximation (up to 94% reversal rate), relying solely on edited weights without requiring edit prompts or original weight information.
 tags:
-  - ICLR 2026
-  - Social Computing
-  - knowledge editing
-  - model security
-  - SVD
-  - edit tracing
-  - edit reversal
+  - "ICLR 2026"
+  - "Social Computing"
+  - "knowledge editing"
+  - "model security"
+  - "SVD"
+  - "edit tracing"
+  - "edit reversal"
 date: 2026-05-08
-content_hash: 79cf175416f5e594
+content_hash: 932d990d00923085
 ---
+
 # Tracing and Reversing Edits in LLMs
 
 **Conference**: ICLR 2026  

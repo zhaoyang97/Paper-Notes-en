@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MTBBench: A Multimodal Sequential Clinical Decision-Making Benchmark in Oncology
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multimodal Benchmark] This paper introduces MTBBench—the first clinical benchmark simultaneously covering three dimensions: multimodality, longitudinal temporal sequencing…
+  [NeurIPS 2025][Medical Imaging][Multimodal Benchmark] This paper introduces MTBBench—the first clinical benchmark simultaneously covering three dimensions: multimodality, longitudinal temporal sequencing, and interactive agent workflows. It simulates the decision-making process of Molecular Tumor Boards (MTBs) to evaluate and enhance the multimodal longitudinal reasoning capabilities of AI agents in precision oncology.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Longitudinal Reasoning"
   - "Clinical Decision-Making Agent"
 date: 2026-05-08
-content_hash: b867453057093c06
+content_hash: 0edc234e8d6e169d
 ---
 
 # MTBBench: A Multimodal Sequential Clinical Decision-Making Benchmark in Oncology
@@ -129,11 +129,11 @@ MTBBench comprises two tracks—MTBBench-Multimodal and MTBBench-Longitudinal—
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SMMILE: An Expert-Driven Benchmark for Multimodal Medical In-Context Learning](smmile_an_expert-driven_benchmark_for_multimodal_medical_in-context_learning.md)
-- [\[NeurIPS 2025\] QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training](qoq-med_building_multimodal_clinical_foundation_models_with_domain-aware_grpo_tr.md)
 - [\[NeurIPS 2025\] Sequential Attention-based Sampling for Histopathological Analysis](sequential_attention-based_sampling_for_histopathological_analysis.md)
-- [\[ICML 2026\] CASCADE Conformal Prediction: Uncertainty-Adaptive Prediction Intervals for Two-Stage Clinical Decision Support](../../ICML2026/medical_imaging/cascade_conformal_prediction_uncertainty-adaptive_prediction_intervals_for_two-s.md)
-- [\[NeurIPS 2025\] Care-PD: A Multi-Site Anonymized Clinical Dataset for Parkinson's Disease Gait Assessment](care-pd_a_multi-site_anonymized_clinical_dataset_for_parkinsons_disease_gait_ass.md)
+- [\[NeurIPS 2025\] SMMILE: An Expert-Driven Benchmark for Multimodal Medical In-Context Learning](smmile_an_expert-driven_benchmark_for_multimodal_medical_in-context_learning.md)
+- [\[ICLR 2026\] MedLesionVQA: A Multimodal Benchmark Emulating Clinical Visual Diagnosis for Body Surface Health](../../ICLR2026/medical_imaging/medlesionvqa_a_multimodal_benchmark_emulating_clinical_visual_diagnosis_for_body.md)
+- [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](../../CVPR2026/medical_imaging/omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
+- [\[NeurIPS 2025\] QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training](qoq-med_building_multimodal_clinical_foundation_models_with_domain-aware_grpo_tr.md)
 
 </div>
 

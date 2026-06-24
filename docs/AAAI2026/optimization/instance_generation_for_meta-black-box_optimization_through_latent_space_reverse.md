@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering
 description: >-
-  [AAAI 2026][Optimization][Meta-Black-Box Optimization] This paper proposes the LSRE framework, which constructs a two-dimensional latent instance space for BBO problems via an autoencoder…
+  [AAAI 2026][Optimization][Meta-Black-Box Optimization] This paper proposes the LSRE framework, which constructs a two-dimensional latent instance space for BBO problems via an autoencoder, and employs enhanced genetic programming to reverse-engineer diverse synthetic optimization problem instances from this space, forming the Diverse-BBO benchmark that substantially improves the generalization performance of MetaBBO methods.
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Latent Space"
   - "Benchmark"
 date: 2026-05-08
-content_hash: 1452b4524d0bc781
+content_hash: 20474e19bb507cbb
 ---
 
 # Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering
@@ -188,11 +188,11 @@ Across three real-world problem suites — HPO (hyperparameter optimization), UA
 
 ## Related Papers
 
+- [\[ICLR 2026\] Generalizable Heuristic Generation Through LLMs with Meta-Optimization](../../ICLR2026/optimization/generalizable_heuristic_generation_through_llms_with_meta-optimization.md)
+- [\[ICLR 2026\] Compositional Generalization through Gradient Search in Nonparametric Latent Space](../../ICLR2026/optimization/compositional_generalization_through_gradient_search_in_nonparametric_latent_spa.md)
 - [\[AAAI 2026\] Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation](bridging_synthetic_and_real_routing_problems_via_llm-guided_instance_generation_.md)
-- [\[ICLR 2026\] Test-Time Meta-Adaptation with Self-Synthesis](../../ICLR2026/optimization/test-time_meta-adaptation_with_self-synthesis.md)
-- [\[AAAI 2026\] MOTIF: Multi-strategy Optimization via Turn-based Interactive Framework](motif_multi-strategy_optimization_via_turn-based_interactive_framework.md)
-- [\[ICLR 2026\] Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering](../../ICLR2026/optimization/exploring_diverse_generation_paths_via_inference-time_stiefel_activation_steerin.md)
-- [\[AAAI 2026\] Co-Layout: LLM-driven Co-optimization for Interior Layout](co-layout_llm-driven_co-optimization_for_interior_layout.md)
+- [\[ICLR 2026\] Online Black-Box Prompt Optimization with Regret Guarantees under Noisy Feedback](../../ICLR2026/optimization/online_black-box_prompt_optimization_with_regret_guarantees_under_noisy_feedback.md)
+- [\[ICLR 2026\] Binomial Gradient-Based Meta-Learning for Enhanced Meta-Gradient Estimation](../../ICLR2026/optimization/binomial_gradient-based_meta-learning_for_enhanced_meta-gradient_estimation.md)
 
 </div>
 

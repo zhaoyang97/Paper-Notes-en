@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Stable and Scalable Deep Predictive Coding Networks with Meta-Prediction Errors
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper diagnoses two root causes of instability in training deep Predictive Coding Networks (PCNs) using Dynamical Mean-Field Theory (DMFT)—prediction error imbalance and prediction error explosion/vanishing (EVPE). It proposes Meta-PCN: linearizing nonlinear inference via a "prediction error of the error" (meta-PE
+  [ICLR 2026][Predictive coding networks] This paper diagnoses two root causes of instability in training deep Predictive Coding Networks (PCNs) using Dynamical Mean-Field Theory (DMFT)—prediction error imbalance and prediction error explosion/vanishing (EVPE). It proposes Meta-PCN: linearizing nonlinear inference via a "prediction error of the error" (meta-PE) loss and suppressing weight spectral norms near 1 via variance normalization. Meta-PCN outperforms backpropagation in…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Predictive coding networks"
+  - "Meta-prediction errors"
+  - "Dynamical mean-field theory"
+  - "Backpropagation alternative"
+  - "Local learning"
 date: 2026-05-08
-content_hash: 41a7fc5b2bf4e754
+content_hash: 3a55c4e1b71ef49d
 ---
+
 # Stable and Scalable Deep Predictive Coding Networks with Meta-Prediction Errors
 
 **Conference**: ICLR 2026  

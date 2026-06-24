@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Larger Datasets Can Be Repeated More: A Theoretical Analysis of Multi-Epoch Scaling in Linear Regression
 description: >-
-  [ICLR 2026][learning_theory][SGD] Under the analytically tractable setting of linear regression with multi-epoch SGD, this paper defines and characterizes the "effective reuse rate" $E(K,N)$—the ratio of equivalent one-pass data size to the actual $N$ samples trained over $K$ epochs. It proves that $E(K,N)$ depends not only on the number of epochs $K$
+  [ICLR 2026][Learning Theory][Scaling laws] Under the analytically tractable setting of linear regression with multi-epoch SGD, this paper defines and characterizes the "effective reuse rate" $E(K,N)$—the ratio of equivalent one-pass data size to the actual $N$ samples trained over $K$ epochs. It proves that $E(K,N)$ depends not only on the number of epochs $K$ but also increases with the dataset size $N$ (saturation point at $\Theta(\log N)$ for strongly convex data and power…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - SGD
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Data Scaling Laws"
+  - "Scaling laws"
+  - "Multi-epoch training"
+  - "Data reuse"
+  - "SGD"
+  - "Linear regression"
+  - "Strongly convex"
+  - "Zipf distribution"
 date: 2026-05-08
-content_hash: 68774e892edfe4c4
+content_hash: c44c376ad4d4ccb5
 ---
+
 # Larger Datasets Can Be Repeated More: A Theoretical Analysis of Multi-Epoch Scaling in Linear Regression
 
 **Conference**: ICLR 2026  
@@ -129,8 +137,8 @@ When $K\ll\log N$, risk decays as $\Theta(\log T/T)$ (where $T=KN$), implying ea
 - [\[ICLR 2026\] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data](a_generalized_geometric_theoretical_framework_of_centroid_discriminant_analysis_.md)
 - [\[ICLR 2026\] Learning under Quantization for High-Dimensional Linear Regression](learning_under_quantization_for_high-dimensional_linear_regression.md)
 - [\[ICLR 2026\] Closed-form $\ell_r$ norm scaling with data for overparameterized linear regression and diagonal linear networks under $\ell_p$ bias](closed-form_ell_r_norm_scaling_with_data_for_overparameterized_linear_regression.md)
+- [\[ICLR 2026\] Why Less is More (Sometimes): A Theory of Data Curation](why_less_is_more_sometimes_a_theory_of_data_curation.md)
 - [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
-- [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
 
 </div>
 

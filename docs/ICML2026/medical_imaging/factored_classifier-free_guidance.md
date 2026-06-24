@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Factored Classifier-Free Guidance
 description: >-
-  [ICML 2026][Medical Imaging][Classifier-Free Guidance] This paper identifies the "attribute amplification" failure mode of Classifier-Free Guidance (CFG) in counterfactual generation—where a single global $\omega$ amplifies attributes that should remain unchanged. The authors propose FCFG: grouping attributes based on a causal graph and assigning independent guidance weigh
+  [ICML 2026][Medical Imaging][Classifier-Free Guidance] This paper identifies the "attribute amplification" failure mode of Classifier-Free Guidance (CFG) in counterfactual generation—where a single global $\omega$ amplifies attributes that should remain unchanged. The authors propose FCFG: grouping attributes based on a causal graph and assigning independent guidance weights to each group. This approach significantly reduces off-target attribute drift and improves counterfact…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - Classifier-Free Guidance
-  - DDIM
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Classifier-Free Guidance"
+  - "Counterfactual Generation"
+  - "Causal Intervention"
+  - "Attribute Amplification"
+  - "DDIM"
 date: 2026-05-08
-content_hash: c849b7e8187732c5
+content_hash: e6ffb060b81e3288
 ---
+
 # Factored Classifier-Free Guidance
 
 **Conference**: ICML 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Knowledge Distillation] This paper proposes ORPO-Distill, which reformulates cross-architecture LLM knowledge distillation as a preference optimization problem. The teacher model generat…
+  [NeurIPS 2025][Model Compression][Knowledge Distillation] This paper proposes ORPO-Distill, which reformulates cross-architecture LLM knowledge distillation as a preference optimization problem. The teacher model generates positive reasoning chains while the student model generates negative ones; an ORPO contrastive loss is used for training, augmented by a mixed-policy update strategy for student negative samples. The method consistently outperforms black-box KD baselines ac…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Mixed Policy"
   - "Cross-Architecture Distillation"
 date: 2026-05-08
-content_hash: 63b60338a83e9b9f
+content_hash: c81a2d61e3534d30
 ---
 
 # ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation
@@ -188,11 +188,11 @@ Teacher model (InternLM 2.5 7B-Chat) Zero-shot CoT average: 59.58%.
 
 ## Related Papers
 
+- [\[ICML 2025\] ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization](../../ICML2025/model_compression/confpo_exploiting_policy_model_confidence_for_critical_token_selection_in_prefer.md)
 - [\[ICCV 2025\] Cross-Architecture Distillation Made Simple with Redundancy Suppression](../../ICCV2025/model_compression/cross-architecture_distillation_made_simple_with_redundancy_suppression.md)
-- [\[NeurIPS 2025\] PPG-Distill: Efficient Photoplethysmography Signals Analysis via Foundation Model Distillation](ppg-distill_efficient_photoplethysmography_signals_analysis_via_foundation_model.md)
 - [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](../../AAAI2026/model_compression/ctpd_cross_tokenizer_preference_distillation.md)
+- [\[NeurIPS 2025\] PPG-Distill: Efficient Photoplethysmography Signals Analysis via Foundation Model Distillation](ppg-distill_efficient_photoplethysmography_signals_analysis_via_foundation_model.md)
 - [\[NeurIPS 2025\] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification](preference-driven_knowledge_distillation_for_few-shot_node_classification.md)
-- [\[NeurIPS 2025\] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching](universal_cross-tokenizer_distillation_via_approximate_likelihood_matching.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Goldstein stationarity] This paper demonstrates that in stochastic weakly convex optimization, the randomized interpolation or scaling required by O2NC can be removed. By taking stochastic subgradients directly at the current iterate and using online incremental learning with quadratic regularization, the optimal Goldstein stationarity comple
+  [ICLR2026][Optimization][Weakly convex optimization] This paper demonstrates that in stochastic weakly convex optimization, the randomized interpolation or scaling required by O2NC can be removed. By taking stochastic subgradients directly at the current iterate and using online incremental learning with quadratic regularization, the optimal Goldstein stationarity complexity is achieved. This further derives an SGDM variant that is nearly equivalent to periodic momentum resta…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Goldstein stationarity
-  - O2NC
-  - SGDM
+  - "ICLR2026"
+  - "Optimization"
+  - "Weakly convex optimization"
+  - "Goldstein stationarity"
+  - "O2NC"
+  - "SGDM"
+  - "Momentum restart"
 date: 2026-05-08
-content_hash: a8aef969cc0f5663
+content_hash: 09125aa0591d5816
 ---
+
 # Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization
 
 **Conference**: ICLR2026  
@@ -165,8 +168,8 @@ The ablation focuses on the sensitivity to restart frequency $T$, learning rate,
 
 - [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
 - [\[ICLR 2026\] Fast Frank–Wolfe Algorithms with Adaptive Bregman Step-Size for Weakly Convex Functions](fast_frankwolfe_algorithms_with_adaptive_bregman_step-size_for_weakly_convex_fun.md)
-- [\[ICLR 2026\] Non-Convex Federated Optimization under Cost-Aware Client Selection](non-convex_federated_optimization_under_cost-aware_client_selection.md)
 - [\[ICLR 2026\] Improving Online-to-Nonconvex Conversion for Smooth Optimization via Double Optimism](improving_online-to-nonconvex_conversion_for_smooth_optimization_via_double_opti.md)
+- [\[ICLR 2026\] Non-Convex Federated Optimization under Cost-Aware Client Selection](non-convex_federated_optimization_under_cost-aware_client_selection.md)
 - [\[NeurIPS 2025\] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization](../../NeurIPS2025/optimization/stochastic_momentum_methods_for_non-smooth_non-convex_finite-sum_coupled_composi.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On the Predictive Power of Representation Dispersion in Language Models
 description: >-
-  [ICLR 2026][Interpretability][kNN-LM] This paper discovers that the "spread" of language model hidden states (average pairwise cosine distance, termed representation dispersion) is strongly negatively correlated with perplexity—stronger models spread contexts further apart. This simple geometric metric is transformed into four zero-label practical tools: s
+  [ICLR 2026][Interpretability][Representation Dispersion] This paper discovers that the "spread" of language model hidden states (average pairwise cosine distance, termed representation dispersion) is strongly negatively correlated with perplexity—stronger models spread contexts further apart. This simple geometric metric is transformed into four zero-label practical tools: sample difficulty ranking, model selection, kNN-LM layer selection, and a push-away training loss that d…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - kNN-LM
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Representation Dispersion"
+  - "Embedding Geometry"
+  - "Perplexity"
+  - "Zero-label Diagnosis"
+  - "kNN-LM"
 date: 2026-05-08
-content_hash: a1a31b6b1324fb02
+content_hash: bf43e2241803e144
 ---
+
 # On the Predictive Power of Representation Dispersion in Language Models
 
 **Conference**: ICLR 2026  
@@ -158,7 +163,7 @@ The Attention sub-layer is consistently more dispersed and thus chosen as the kN
 - [\[ICLR 2026\] MICLIP: Learning to Interpret Representation in Vision Models](miclip_learning_to_interpret_representation_in_vision_models.md)
 - [\[ICML 2026\] DLLM-JEPA: Joint Embedding Predictive Architectures for Masked Diffusion Language Models](../../ICML2026/interpretability/dllm-jepa_joint_embedding_predictive_architectures_for_masked_diffusion_language.md)
 - [\[ICLR 2026\] The Deleuzian Representation Hypothesis](the_deleuzian_representation_hypothesis.md)
-- [\[ICLR 2026\] Gauge-invariant Representation Holonomy](gauge-invariant_representation_holonomy.md)
+- [\[ICLR 2026\] Information Shapes Koopman Representation](information_shapes_koopman_representation.md)
 
 </div>
 

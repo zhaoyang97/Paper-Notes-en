@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][ALFRED] This paper introduces the SafetyALFRED benchmark, incorporating six categories of kitchen safety hazards into ALFRED embodied tasks. It reveals a severe alignment gap where Multimodal Large Language Models (MLLMs) can identify hazards in static QA (up to 92%) but fail to actively mitigate them in embodied planning (<60
+  [ACL 2026 Findings][LLM Safety][Embodied Safety] This paper introduces the SafetyALFRED benchmark, incorporating six categories of kitchen safety hazards into ALFRED embodied tasks. It reveals a severe alignment gap where Multimodal Large Language Models (MLLMs) can identify hazards in static QA (up to 92%) but fail to actively mitigate them in embodied planning (<60%), advocating for a shift from QA evaluation paradigms to embodied safety evaluation.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - ALFRED
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Embodied Safety"
+  - "Hazard Mitigation"
+  - "Multimodal Evaluation"
+  - "Safety Planning"
+  - "ALFRED"
 date: 2026-05-08
-content_hash: 30c68f083146c945
+content_hash: ec2ee92899a14f08
 ---
+
 # SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -134,9 +139,9 @@ Performance comparison of 11 MLLMs in QA recognition vs. embodied mitigation.
 ## Related Papers
 
 - [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
+- [\[ICLR 2026\] PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach](../../ICLR2026/llm_safety/propensitybench_evaluating_latent_safety_risks_in_large_language_models_via_an_a.md)
 - [\[ACL 2026\] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models](gambit_a_gamified_jailbreak_framework_for_multimodal_large_language_models.md)
 - [\[ACL 2026\] Robust Multimodal Safety via Conditional Decoding](robust_multimodal_safety_via_conditional_decoding.md)
-- [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
 - [\[ACL 2026\] Topic-Based Watermarks for Large Language Models](topic-based_watermarks_for_large_language_models.md)
 
 </div>

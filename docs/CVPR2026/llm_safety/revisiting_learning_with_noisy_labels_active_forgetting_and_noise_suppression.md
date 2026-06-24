@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Learning with Noisy Labels: Active Forgetting and Noise Suppression
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] To address the overfitting bottleneck in noisy label learning (LNL) caused by long-term "clean sample selection," this paper proposes FINE, a plug-and-play framework. It uses Active Forgetting via Machine Unlearning (AFMU) to "actively forget" noise absorbed during early stages and Noise Suppression via Negative Learni
+  [CVPR 2026][LLM Safety][Noisy label learning] To address the overfitting bottleneck in noisy label learning (LNL) caused by long-term "clean sample selection," this paper proposes FINE, a plug-and-play framework. It uses Active Forgetting via Machine Unlearning (AFMU) to "actively forget" noise absorbed during early stages and Noise Suppression via Negative Learning (NSNL) to "suppress" overfitting in later stages. Integrated into existing SOTA methods like SED or ACT…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Noisy label learning"
+  - "Machine unlearning"
+  - "Negative learning"
+  - "Plug-and-play regularization"
+  - "Robust training"
 date: 2026-05-08
-content_hash: 9de969fd312c83e6
+content_hash: 7bd2b29e5777252f
 ---
+
 # Revisiting Learning with Noisy Labels: Active Forgetting and Noise Suppression
 
 **Conference**: CVPR 2026  
@@ -140,15 +146,16 @@ Ablation on SED (Test Accuracy %):
 - **Value**: ⭐⭐⭐⭐ Highly practical due to its plug-and-play and robust nature.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels](../../ICML2026/optimization/learning_locally_revising_globally_global_reviser_for_federated_learning_with_no.md)
-- [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
-- [\[CVPR 2026\] FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction](fedsdr_federated_graph_learning_with_structural_noise_detection_and_reconstructi.md)
-- [\[AAAI 2026\] Data Heterogeneity and Forgotten Labels in Split Federated Learning](../../AAAI2026/optimization/data_heterogeneity_and_forgotten_labels_in_split_federated_learning.md)
-- [\[NeurIPS 2025\] Near-Exponential Savings for Mean Estimation with Active Learning](../../NeurIPS2025/optimization/near-exponential_savings_for_mean_estimation_with_active_learning.md)
+- [\[ACL 2026\] Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks](../../ACL2026/llm_safety/before_forgetting_learn_to_remember_revisiting_foundational_learning_failures_in.md)
+- [\[CVPR 2026\] Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting](learning_from_oblivion_predicting_knowledge_overflowed_weights_via_retrodiction_.md)
+- [\[CVPR 2026\] pH-Strips for Selective Forgetting: A Blunt but Fast Diagnostic Baseline for Machine Unlearning](ph-strips_for_selective_forgetting_a_blunt_but_fast_diagnostic_baseline_for_mach.md)
+- [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](../../AAAI2026/llm_safety/learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
+- [\[AAAI 2026\] Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach](../../AAAI2026/llm_safety/uncovering_bias_paths_with_llm-guided_causal_discovery_an_active_learning_and_dy.md)
 
 </div>
 

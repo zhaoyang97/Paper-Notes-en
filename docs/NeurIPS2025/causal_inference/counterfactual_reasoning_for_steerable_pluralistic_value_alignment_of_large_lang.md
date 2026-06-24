@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models
 description: >-
-  [NEURIPS2025][Causal Inference][Value alignment] This paper proposes the COUPLE framework, which constructs a Structural Causal Model (SCM) to model the dependencies and priorities among multi-dimensional values…
+  [NEURIPS2025][Causal Inference][Value alignment] This paper proposes the COUPLE framework, which constructs a Structural Causal Model (SCM) to model the dependencies and priorities among multi-dimensional values, and leverages counterfactual reasoning to achieve steerable alignment of LLMs toward arbitrary fine-grained pluralistic value objectives.
 tags:
   - "NEURIPS2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "pluralistic values"
   - "LLM alignment"
 date: 2026-05-08
-content_hash: b4b200078148908b
+content_hash: 87f4ccf5a6459887
 ---
 
 # Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models
@@ -152,9 +152,9 @@ Evaluation metrics: MAE (absolute deviation) and Spearman rank correlation (prio
 
 - [\[NeurIPS 2025\] Revealing Multimodal Causality with Large Language Models](revealing_multimodal_causality_with_large_language_models.md)
 - [\[ACL 2026\] Evaluating Counterfactual Strategic Reasoning in Large Language Models](../../ACL2026/causal_inference/evaluating_counterfactual_strategic_reasoning_in_large_language_models.md)
-- [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](../../ICLR2026/causal_inference/on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
-- [\[NeurIPS 2025\] From Black-box to Causal-box: Towards Building More Interpretable Models](from_black-box_to_causal-box_towards_building_more_interpretable_models.md)
-- [\[NeurIPS 2025\] Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization](bi-level_decision-focused_causal_learning_for_large-scale_marketing_optimization.md)
+- [\[ACL 2025\] Counterfactual-Consistency Prompting for Relative Temporal Understanding in Large Language Models](../../ACL2025/causal_inference/counterfactual-consistency_prompting_for_relative_temporal_understanding_in_larg.md)
+- [\[ACL 2025\] On the Reliability of Large Language Models for Causal Discovery](../../ACL2025/causal_inference/llm_causal_discovery_reliability.md)
+- [\[ACL 2025\] CoA-Reasoning: Explorations on Counterfactual Analysis in Physical Reasoning of LVLMs](../../ACL2025/causal_inference/coa-reasoning_explorations_on_counterfactual_analysis_in_physical_reasoning_of_l.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Conan: Progressive Learning to Reason Like a Detective over Multi-Scale Visual Evidence
 description: >-
-  [CVPR 2026][Multimodal VLM][RLVR] Conan enables a 7B video multimodal large model to work like a detective: first classifying frames into evidence/context/distractor, then reasoning while deciding whether "evidence is sufficient to answer or more frames need to be retrieved." Developed via the self-constructed Conan-91k dataset, a three-stage cold star
+  [CVPR 2026][VLM Reasoning][Video Reasoning] Conan enables a 7B video multimodal large model to work like a detective: first classifying frames into evidence/context/distractor, then reasoning while deciding whether "evidence is sufficient to answer or more frames need to be retrieved." Developed via the self-constructed Conan-91k dataset, a three-stage cold start, and AIR RLVR with joint rewards, it achieves a 10.5% average improvement over the Qwen2.5-VL-7B base across six m…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RLVR
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Reasoning"
+  - "Evidence Localization"
+  - "RLVR"
+  - "Frame Retrieval"
+  - "Multi-step Reasoning"
 date: 2026-05-08
-content_hash: 9299a5eafe7358fe
+content_hash: ce0f7ed0d5da1d5c
 ---
+
 # Conan: Progressive Learning to Reason Like a Detective over Multi-Scale Visual Evidence
 
 **Conference**: CVPR 2026  
@@ -139,10 +144,10 @@ Process rewards are only unlocked if the answer is correct ($R_o > 0$), preventi
 ## Related Papers
 
 - [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] GUI-SAGE: Enhancing GUI Automation with Self-Explanatory Learning](gui-sage_enhancing_gui_automation_with_self-explanatory_learning.md)
 - [\[CVPR 2026\] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning](select_less_reason_more_prioritizing_evidence_purity_for_video_reasoning.md)
-- [\[CVPR 2026\] CLIP-like Model as a Foundational Density Ratio Estimator](clip-like_model_as_a_foundational_density_ratio_estimator.md)
-- [\[CVPR 2026\] CoVR-R: Reason-Aware Composed Video Retrieval](covr-rreason-aware_composed_video_retrieval.md)
+- [\[CVPR 2026\] Learning to Reason in 4D: Dynamic Spatial Understanding for Vision Language Models](learning_to_reason_in_4d_dynamic_spatial_understanding_for_vision_language_model.md)
+- [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](docseeker_long_document_understanding.md)
+- [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
 
 </div>
 

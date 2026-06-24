@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition
 description: >-
-  [AAAI 2026][Video Understanding][Few-Shot Action Recognition] This paper proposes TS-FSAR, a framework that employs α-distance correlation to capture nonlinear inter-frame dependencies and combines task-specific matching…
+  [AAAI 2026][Video Understanding][Few-Shot Action Recognition] This paper proposes TS-FSAR, a framework that employs α-distance correlation to capture nonlinear inter-frame dependencies and combines task-specific matching matrices for query-support matching. An adapted frozen CLIP guides the training of a ladder side network, achieving substantial improvements over prior methods on temporally sensitive datasets such as SSv2-Full.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Task-Specific Matching"
   - "Side-Tuning"
 date: 2026-05-08
-content_hash: 59df263621c18222
+content_hash: 57f2082f5a7544ca
 ---
 
 # Task-Specific Distance Correlation Matching for Few-Shot Action Recognition
@@ -136,11 +136,11 @@ The total loss is $\mathcal{L} = \mathcal{L}_{LSN} + \lambda_1 \mathcal{L}_{TS\t
 
 ## Related Papers
 
+- [\[CVPR 2025\] Temporal Alignment-Free Video Matching for Few-Shot Action Recognition](../../CVPR2025/video_understanding/temporal_alignment-free_video_matching_for_few-shot_action_recognition.md)
+- [\[CVPR 2026\] MPL: Match-guided Prototype Learning for Few-shot Action Recognition](../../CVPR2026/video_understanding/mpl_match-guided_prototype_learning_for_few-shot_action_recognition.md)
+- [\[ECCV 2024\] Efficient Few-Shot Action Recognition via Multi-Level Post-Reasoning](../../ECCV2024/video_understanding/efficient_few-shot_action_recognition_via_multi-level_post-reasoning.md)
 - [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](../../ICCV2025/video_understanding/beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
 - [\[ICCV 2025\] Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition](../../ICCV2025/video_understanding/trokens_semantic-aware_relational_trajectory_tokens_for_few-shot_action_recognit.md)
-- [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
-- [\[AAAI 2026\] FineTec: Fine-Grained Action Recognition Under Temporal Corruption via Skeleton Decomposition and Sequence Completion](finetec_fine-grained_action_recognition_under_temporal_corruption_via_skeleton_d.md)
-- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](../../CVPR2026/video_understanding/skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
 
 </div>
 

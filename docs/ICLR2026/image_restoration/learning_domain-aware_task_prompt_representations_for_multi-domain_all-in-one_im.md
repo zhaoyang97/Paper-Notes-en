@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] This work proposes DATPRL-IR, the first multi-domain all-in-one image restoration method. It learns domain-aware task prompt representations via a dual prompt pool (Task Prompt Pool + Domain Prompt Pool), distills domain priors from MLLMs, and guides restoration through adaptive gating fusion, significantly surpassing
+  [ICLR 2026][Image Restoration][All-in-One Image Restoration] This work proposes DATPRL-IR, the first multi-domain all-in-one image restoration method. It learns domain-aware task prompt representations via a dual prompt pool (Task Prompt Pool + Domain Prompt Pool), distills domain priors from MLLMs, and guides restoration through adaptive gating fusion, significantly surpassing SOTA across 9 tasks in natural, medical, and remote sensing domains.
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "All-in-One Image Restoration"
+  - "Multi-Domain Restoration"
+  - "Prompt Learning"
+  - "Dual Prompt Pool"
+  - "Cross-Modal Alignment"
 date: 2026-05-08
-content_hash: 29e1850d4a85d387
+content_hash: 11b36203d5d93863
 ---
+
 # Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration
 
 **Conference**: ICLR 2026  
@@ -124,11 +130,11 @@ The total loss is a weighted sum of six components: $\mathcal{L} = \lambda_{\tex
 
 ## Related Papers
 
+- [\[ICLR 2026\] RestoreVAR: Visual Autoregressive Generation for All-in-One Image Restoration](restorevar_visual_autoregressive_generation_for_all-in-one_image_restoration.md)
+- [\[ICLR 2026\] Rethinking Expressivity and Degradation-Awareness in Attention for All-in-One Blind Image Restoration](rethinking_expressivity_and_degradation-awareness_in_attention_for_all-in-one_bl.md)
 - [\[ICLR 2026\] Test-Time Domain Generalization for Image Super-Resolution](test-time_domain_generalization_for_image_super-resolution.md)
-- [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](../../CVPR2026/image_restoration/degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
 - [\[CVPR 2026\] FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration](../../CVPR2026/image_restoration/fape-ir_frequency-aware_planning_and_execution_framework_for_all-in-one_image_re.md)
 - [\[CVPR 2025\] Degradation-Aware Feature Perturbation for All-in-One Image Restoration](../../CVPR2025/image_restoration/degradation-aware_feature_perturbation_for_all-in-one_image_restoration.md)
-- [\[ICLR 2026\] Mechanism of Task-oriented Information Removal in In-context Learning](mechanism_of_task-oriented_information_removal_in_in-context_learning.md)
 
 </div>
 

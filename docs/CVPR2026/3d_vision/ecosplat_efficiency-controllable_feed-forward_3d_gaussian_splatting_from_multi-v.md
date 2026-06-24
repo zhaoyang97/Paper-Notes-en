@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] EcoSplat is the first "count-controllable" feed-forward 3D Gaussian Splatting framework. Given an arbitrary target primitive count $K$ at inference, it selects the $K$ most significant Gaussians via a single feed-forward pass. Under extreme constraints (RE10K 24-view, compressed to 5% primitives), it achieves a PSNR of
+  [CVPR 2026][3D Vision][Feed-forward 3DGS] EcoSplat is the first "count-controllable" feed-forward 3D Gaussian Splatting framework. Given an arbitrary target primitive count $K$ at inference, it selects the $K$ most significant Gaussians via a single feed-forward pass. Under extreme constraints (RE10K 24-view, compressed to 5% primitives), it achieves a PSNR of 24.7, significantly outperforming existing feed-forward methods that rely on threshold-based pruning.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward 3DGS"
+  - "Novel View Synthesis"
+  - "Controllable Gaussian Count"
+  - "Importance Ranking"
+  - "Multi-view Reconstruction"
 date: 2026-05-08
-content_hash: ff334d0fbb2bbfbe
+content_hash: 7654d724015ac7e1
 ---
+
 # EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images
 
 **Conference**: CVPR 2026  
@@ -156,15 +162,14 @@ RE10K 24-view:
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
+- [\[CVPR 2026\] SparseSplat: Towards Applicable Feed-Forward 3D Gaussian Splatting with Pixel-Unaligned Prediction](sparsesplat_towards_applicable_feed-forward_3d_gaussian_splatting_with_pixel-una.md)
+- [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
 - [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
+- [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)

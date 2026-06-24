@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning
 description: >-
-  [ICML 2026][Audio & Speech][ELBO] This paper proposes FLAIR: a framework that allows Full-Duplex Spoken Dialogue Models (SDLM) to replace the steps typically used for filling `<SIL>` placeholders while "listening to the user" with continuous latent reasoning. By employing an ELBO training objective and a non-causal "global expert" to provide the poster
+  [ICML 2026][Audio & Speech][Full-duplex SDLM] This paper proposes FLAIR: a framework that allows Full-Duplex Spoken Dialogue Models (SDLM) to replace the steps typically used for filling `<SIL>` placeholders while "listening to the user" with continuous latent reasoning. By employing an ELBO training objective and a non-causal "global expert" to provide the posterior, the causal LLM learns to "think while listening" through a sequence of embedding vectors…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - ELBO
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Full-duplex SDLM"
+  - "Latent Thinking"
+  - "ELBO"
+  - "Thinking while Listening"
+  - "Variational Inference"
 date: 2026-05-08
-content_hash: 8e5ed08a0fded5bc
+content_hash: 328842ab99829d0c
 ---
+
 # The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning
 
 **Conference**: ICML 2026  
@@ -133,6 +138,7 @@ Adding latent reasoning slightly increases turn-taking latency from 0.33s to 0.3
 - Value: ⭐⭐⭐⭐⭐ Provides a zero-latency solution to the wasted compute in full-duplex listening phases, representing a paradigm shift for real-time voice agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -140,8 +146,8 @@ Adding latent reasoning slightly increases turn-taking latency from 0.33s to 0.3
 - [\[ICML 2026\] MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models](moshirag_asynchronous_knowledge_retrieval_for_full-duplex_speech_language_models.md)
 - [\[ACL 2026\] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](../../ACL2026/audio_speech/full-duplex-bench-v2_a_multi-turn_evaluation_framework_for_duplex_dialogue_syste.md)
 - [\[ACL 2026\] SDiaReward: Modeling and Benchmarking Spoken Dialogue Rewards with Modality and Colloquialness](../../ACL2026/audio_speech/sdiareward_modeling_and_benchmarking_spoken_dialogue_rewards_with_modality_and_c.md)
-- [\[ICML 2025\] Aligning Spoken Dialogue Models from User Interactions](../../ICML2025/audio_speech/aligning_spoken_dialogue_models_from_user_interactions.md)
 - [\[ACL 2026\] MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models](../../ACL2026/audio_speech/mtr-duplexbench_towards_a_comprehensive_evaluation_of_multi-round_conversations_.md)
+- [\[ICML 2025\] Aligning Spoken Dialogue Models from User Interactions](../../ICML2025/audio_speech/aligning_spoken_dialogue_models_from_user_interactions.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Passing the Driving Knowledge Test
 description: >-
-  [ICCV 2025][Autonomous Driving][Driving Knowledge Test] This paper introduces DriveQA — the first large-scale text-and-visual dual-modality driving knowledge test benchmark (26K text QA + 448K image QA) — to systematical…
+  [ICCV 2025][Autonomous Driving][Driving Knowledge Test] This paper introduces DriveQA — the first large-scale text-and-visual dual-modality driving knowledge test benchmark (26K text QA + 448K image QA) — to systematically evaluate LLMs/MLLMs on driving knowledge including traffic regulations, sign recognition, and right-of-way judgment. The benchmark reveals significant deficiencies in numerical reasoning and complex right-of-way scenarios, and demonstrates that DriveQA pret…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -14,7 +14,7 @@ tags:
   - "benchmark"
   - "Fine-tuning"
 date: 2026-05-08
-content_hash: 821b7d263eac46fa
+content_hash: 09e51f495e34f9d6
 ---
 
 # Passing the Driving Knowledge Test
@@ -152,10 +152,10 @@ The fine-tuned Gemma-2 (9B) surpasses GPT-4o on reasoning quality metrics.
 ## Related Papers
 
 - [\[ICCV 2025\] DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving](drivex_omni_scene_modeling_for_learning_generalizable_world_knowledge_in_autonom.md)
-- [\[CVPR 2026\] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System](../../CVPR2026/autonomous_driving/knowval_a_knowledge-augmented_and_value-guided_autonomous_driving_system.md)
 - [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
+- [\[CVPR 2026\] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System](../../CVPR2026/autonomous_driving/knowval_a_knowledge-augmented_and_value-guided_autonomous_driving_system.md)
 - [\[CVPR 2026\] TT-Occ: Test-Time 3D Occupancy Prediction](../../CVPR2026/autonomous_driving/test-time_3d_occupancy_prediction.md)
-- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
+- [\[AAAI 2026\] Task Prototype-Based Knowledge Retrieval for Multi-Task Learning from Partially Annotated Data](../../AAAI2026/autonomous_driving/task_prototype-based_knowledge_retrieval_for_multi-task_lear.md)
 
 </div>
 

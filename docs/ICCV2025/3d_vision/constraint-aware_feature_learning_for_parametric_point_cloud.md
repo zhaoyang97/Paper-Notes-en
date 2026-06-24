@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CstNet: Constraint-Aware Feature Learning for Parametric Point Cloud
 description: >-
-  [ICCV 2025][3D Vision][CAD point cloud] This paper proposes CstNet, the first constraint-aware feature learning method for parametric point clouds. CAD constraints are encoded as point-level MAD-Adj-PT triplet representa…
+  [ICCV 2025][3D Vision][CAD point cloud] This paper proposes CstNet, the first constraint-aware feature learning method for parametric point clouds. CAD constraints are encoded as point-level MAD-Adj-PT triplet representations, and a two-stage network (constraint acquisition + constraint feature learning) achieves state-of-the-art results on the newly constructed Param20K dataset, with classification accuracy improved by +3.49% and rotation robustness improved by +26.17%.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "point cloud classification"
   - "rotation robustness"
 date: 2026-05-08
-content_hash: c807b6a4394d07ba
+content_hash: 2b44cb5967566257
 ---
 
 # CstNet: Constraint-Aware Feature Learning for Parametric Point Cloud
@@ -168,11 +168,11 @@ Rotation robustness: CstNet exhibits the smallest accuracy drop when the trainin
 
 ## Related Papers
 
+- [\[CVPR 2025\] Parametric Point Cloud Completion for Polygonal Surface Reconstruction](../../CVPR2025/3d_vision/parametric_point_cloud_completion_for_polygonal_surface_reconstruction.md)
 - [\[ICCV 2025\] Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction](curve-aware_gaussian_splatting_for_3d_parametric_curve_reconstruction.md)
 - [\[ICCV 2025\] StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning](strumamba3d_exploring_structural_mamba_for_self-supervised_point_cloud_represent.md)
 - [\[ICCV 2025\] DAP-MAE: Domain-Adaptive Point Cloud Masked Autoencoder for Effective Cross-Domain Learning](dap-mae_domain-adaptive_point_cloud_masked_autoencoder_for_effective_cross-domai.md)
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
-- [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
 
 </div>
 

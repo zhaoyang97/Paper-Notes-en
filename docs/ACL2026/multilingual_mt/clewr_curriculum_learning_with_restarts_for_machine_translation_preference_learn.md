@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CLewR: Curriculum Learning with Restarts for Machine Translation Preference Learning
 description: >-
-  [ACL 2026][Multilingual & Translation][DPO] This paper proposes CLewR (Curriculum Learning with Restarts), a strategy that sorts data from easy to hard during preference optimization and restarts the curriculum every epoch. This effectively mitigates catastrophic forgetting and consistently improves machine translation performance across multiple model families
+  [ACL 2026][Multilingual & Machine Translation][Curriculum Learning] This paper proposes CLewR (Curriculum Learning with Restarts), a strategy that sorts data from easy to hard during preference optimization and restarts the curriculum every epoch. This effectively mitigates catastrophic forgetting and consistently improves machine translation performance across multiple model families (Gemma2, Qwen2.5, Llama3.1) and preference optimization algorithms (DPO, CPO, ARPO).
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - DPO
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Curriculum Learning"
+  - "Preference Optimization"
+  - "Machine Translation"
+  - "Catastrophic Forgetting"
+  - "DPO"
 date: 2026-05-08
-content_hash: 41f0d8dcb3176f92
+content_hash: c4ea0edfefedd734
 ---
+
 # CLewR: Curriculum Learning with Restarts for Machine Translation Preference Learning
 
 **Conference**: ACL 2026  
@@ -148,7 +153,7 @@ CLewR is compatible with three preference optimization algorithms: DPOP (enhance
 - [\[ACL 2025\] Code-Switching Curriculum Learning for Multilingual Transfer in LLMs](../../ACL2025/multilingual_mt/code-switching_curriculum_learning_for_multilingual_transfer_in_llms.md)
 - [\[ACL 2026\] Selective Contrastive Learning For Gloss Free Sign Language Translation](selective_contrastive_learning_for_gloss_free_sign_language_translation.md)
 - [\[ACL 2025\] GrammaMT: Improving Machine Translation with Grammar-Informed In-Context Learning](../../ACL2025/multilingual_mt/grammamt_improving_machine_translation_with_grammar-informed_in-context_learning.md)
-- [\[ACL 2026\] Alexandria: A Multi-Domain Dialectal Arabic Machine Translation Dataset for Culturally Inclusive and Linguistically Diverse LLMs](alexandria_a_multi-domain_dialectal_arabic_machine_translation_dataset_for_cultu.md)
+- [\[ACL 2026\] From Fragments to Facts: A Curriculum-Driven DPO Approach for Generating Hindi News Veracity Explanations](from_fragments_to_facts_a_curriculum-driven_dpo_approach_for_generating_hindi_ne.md)
 
 </div>
 

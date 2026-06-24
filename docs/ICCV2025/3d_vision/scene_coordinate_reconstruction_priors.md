@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scene Coordinate Reconstruction Priors
 description: >-
-  [ICCV 2025][3D Vision][Scene Coordinate Regression] This paper proposes a probabilistic training framework for scene coordinate regression (SCR) that introduces hand-crafted depth distribution priors and a learned prior…
+  [ICCV 2025][3D Vision][Scene Coordinate Regression] This paper proposes a probabilistic training framework for scene coordinate regression (SCR) that introduces hand-crafted depth distribution priors and a learned prior based on a 3D point cloud diffusion model, significantly improving scene reconstruction quality, camera pose estimation, and downstream task performance under insufficient multi-view constraints.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Visual Relocalization"
   - "Structure from Motion"
 date: 2026-05-08
-content_hash: 7618a28a69276520
+content_hash: d64d1f72047db3f3
 ---
 
 # Scene Coordinate Reconstruction Priors
@@ -150,11 +150,11 @@ On the most challenging Stairs scene, the diffusion prior improves ACE's accurac
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning Scene Coordinate Reconstruction from Unposed Images via Pose Graph Optimization](../../CVPR2026/3d_vision/learning_scene_coordinate_reconstruction_from_unposed_images_via_pose_graph_opti.md)
 - [\[ICCV 2025\] SAS: Segment Any 3D Scene with Integrated 2D Priors](sas_segment_any_3d_scene_with_integrated_2d_priors.md)
 - [\[ICCV 2025\] Proactive Scene Decomposition and Reconstruction](proactive_scene_decomposition_and_reconstruction.md)
-- [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](../../CVPR2026/3d_vision/color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
-- [\[ICCV 2025\] Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction](back_on_track_bundle_adjustment_for_dynamic_scene_reconstruction.md)
-- [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
+- [\[CVPR 2025\] Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors](../../CVPR2025/3d_vision/pow3r_empowering_unconstrained_3d_reconstruction_with_camera_and_scene_priors.md)
+- [\[CVPR 2026\] Scene Reconstruction as Mapping Priors for 3D Detection](../../CVPR2026/3d_vision/scene_reconstruction_as_mapping_priors_for_3d_detection.md)
 
 </div>
 

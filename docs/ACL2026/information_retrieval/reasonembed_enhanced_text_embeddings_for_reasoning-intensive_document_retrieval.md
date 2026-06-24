@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] ReasonEmbed introduces three technical innovations—the ReMixer non-trivial synthetic data method (82K high-quality samples), Redapter adaptive reasoning-intensity weighted training, and multi-backbone implementations—achieving an nDCG@10 of 38.1 on the BRIGHT benchmark, significantly outperforming all existing text emb
+  [ACL 2026][Information Retrieval & RAG][Text Embeddings] ReasonEmbed introduces three technical innovations—the ReMixer non-trivial synthetic data method (82K high-quality samples), Redapter adaptive reasoning-intensity weighted training, and multi-backbone implementations—achieving an nDCG@10 of 38.1 on the BRIGHT benchmark, significantly outperforming all existing text embedding models by approximately 10 points.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Text Embeddings"
+  - "Reasoning-Intensive Retrieval"
+  - "Synthetic Data"
+  - "Adaptive Training"
+  - "BRIGHT Benchmark"
 date: 2026-05-08
-content_hash: b213367396417808
+content_hash: 7e6c32e242208f89
 ---
+
 # ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval
 
 **Conference**: ACL 2026  
@@ -137,10 +143,10 @@ Training utilizes the RI-InfoNCE loss $\mathcal{L}_{RI} = \sum_{s \in B} f(\text
 ## Related Papers
 
 - [\[ACL 2026\] A Survey of Reasoning-Intensive Retrieval: Progress and Challenges](a_survey_of_reasoning-intensive_retrieval_progress_and_challenges.md)
+- [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](../../ICLR2026/information_retrieval/retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
 - [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
-- [\[AAAI 2026\] PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning](../../AAAI2026/information_retrieval/prime_planning_and_retrieval-integrated_memory_for_enhanced_reasoning.md)
 - [\[ACL 2026\] Why Mean Pooling Works: Quantifying Second-Order Collapse in Text Embeddings](why_mean_pooling_works_quantifying_second-order_collapse_in_text_embeddings.md)
-- [\[ACL 2025\] Enhancing Lexicon-Based Text Embeddings with Large Language Models](../../ACL2025/information_retrieval/enhancing_lexicon-based_text_embeddings_with_large_language_models.md)
+- [\[AAAI 2026\] PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning](../../AAAI2026/information_retrieval/prime_planning_and_retrieval-integrated_memory_for_enhanced_reasoning.md)
 
 </div>
 

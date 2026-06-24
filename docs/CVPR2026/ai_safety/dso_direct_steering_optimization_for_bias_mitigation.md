@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DSO: Direct Steering Optimization for Bias Mitigation
 description: >-
-  [CVPR 2026][AI Safety][Reinforcement Learning] DSO uses reinforcement learning to learn a set of linear transformations (steering) applied to activations. By formulating the objective of "decoupling occupational judgments from gender stereotypes" as an optimizable fairness reward, it enables a continuous trade-off between bias reduction and capability preservation
+  [CVPR 2026][AI Safety][Activation Steering] DSO uses reinforcement learning to learn a set of linear transformations (steering) applied to activations. By formulating the objective of "decoupling occupational judgments from gender stereotypes" as an optimizable fairness reward, it enables a continuous trade-off between bias reduction and capability preservation at inference time via a tunable intensity parameter $\omega$. It achieves SOTA on the fairness-capability trade-off…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Activation Steering"
+  - "Bias Mitigation"
+  - "Reinforcement Learning"
+  - "Fairness-Capability Trade-off"
+  - "Inference-time Controllability"
 date: 2026-05-08
-content_hash: 614a0352df6440fd
+content_hash: 15baf2e44eaf55b2
 ---
+
 # DSO: Direct Steering Optimization for Bias Mitigation
 
 **Conference**: CVPR 2026  
@@ -160,11 +165,11 @@ Per-Occupation Bias dropped from 60.4% to 5.9%, while unambiguous accuracy actua
 
 ## Related Papers
 
+- [\[ICLR 2026\] Benchmarking Bias Mitigation Toward Fairness Without Harm from Vision to LVLMs](../../ICLR2026/ai_safety/benchmarking_bias_mitigation_toward_fairness_without_harm_from_vision_to_lvlms.md)
 - [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
-- [\[CVPR 2026\] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models](φ-dpo_fairness_direct_preference_optimization_approach_to_continual_learning_in_.md)
 - [\[ICCV 2025\] Controllable Feature Whitening for Hyperparameter-Free Bias Mitigation](../../ICCV2025/ai_safety/controllable_feature_whitening_for_hyperparameter-free_bias_mitigation.md)
-- [\[CVPR 2026\] Computation and Communication Efficient Federated Unlearning via On-server Gradient Conflict Mitigation and Expression](computation_and_communication_efficient_federated_unlearning_via_on-server_gradi.md)
-- [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
+- [\[CVPR 2026\] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models](φ-dpo_fairness_direct_preference_optimization_approach_to_continual_learning_in_.md)
+- [\[CVPR 2026\] Bias at the End of the Score](bias_at_the_end_of_the_score.md)
 
 </div>
 

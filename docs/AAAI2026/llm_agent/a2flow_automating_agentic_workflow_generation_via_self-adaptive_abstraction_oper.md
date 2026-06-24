@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators
 description: >-
-  [AAAI 2026][LLM Agent][Workflow Automation] This paper proposes A2Flow, a framework that automatically extracts reusable abstract execution operators from expert data via a three-stage pipeline (case generation → functio…
+  [AAAI 2026][LLM Agent][Workflow Automation] This paper proposes A2Flow, a framework that automatically extracts reusable abstract execution operators from expert data via a three-stage pipeline (case generation → functional clustering → deep extraction), replacing manually predefined operators. Combined with an operator memory mechanism that accumulates intermediate outputs to assist node decision-making, A2Flow outperforms AFLOW and other state-of-the-art methods across 8 be…
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Operator Memory Mechanism"
   - "Embodied Task Generalization"
 date: 2026-05-08
-content_hash: 87c12df6a8a80b4f
+content_hash: 042a78d59ec854f1
 ---
 
 # A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators
@@ -176,8 +176,8 @@ Initial operator generation contributes the most (-11.7%), followed by deep extr
 - [\[ICML 2026\] AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction](../../ICML2026/llm_agent/agentxray_white-boxing_agentic_systems_via_workflow_reconstruction.md)
 - [\[AAAI 2026\] Automating Complex Document Workflows via Stepwise and Rollback-Enabled Operations](automating_complex_document_workflows_via_stepwise_and_rollback-enabled_operatio.md)
 - [\[ACL 2026\] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](../../ACL2026/llm_agent/hag_hierarchical_demographic_tree-based_agent_generation_for_topic-adaptive_simu.md)
-- [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](../../ICML2026/llm_agent/towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
-- [\[ACL 2026\] Supplement Generation Training for Enhancing Agentic Task Performance](../../ACL2026/llm_agent/supplement_generation_training_for_enhancing_agentic_task_performance.md)
+- [\[ICLR 2026\] TaskCraft: Automated Generation of Agentic Tasks](../../ICLR2026/llm_agent/taskcraft_automated_generation_of_agentic_tasks.md)
+- [\[ICLR 2026\] MedAgent-Pro: Towards Evidence-based Multi-modal Medical Diagnosis via Reasoning Agentic Workflow](../../ICLR2026/llm_agent/medagent-pro_towards_evidence-based_multi-modal_medical_diagnosis_via_reasoning_.md)
 
 </div>
 

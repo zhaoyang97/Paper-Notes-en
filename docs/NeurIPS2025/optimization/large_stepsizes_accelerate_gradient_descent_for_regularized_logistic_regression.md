@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Large Stepsizes Accelerate Gradient Descent for Regularized Logistic Regression
 description: >-
-  [NeurIPS 2025][Optimization][gradient descent] This paper proves that applying GD with large stepsizes (entering the Edge of Stability regime) to $\ell_2$-regularized logistic regression on linearly separable data accele…
+  [NeurIPS 2025][Optimization][gradient descent] This paper proves that applying GD with large stepsizes (entering the Edge of Stability regime) to $\ell_2$-regularized logistic regression on linearly separable data accelerates the step complexity from the classical $\widetilde{O}(\kappa)$ to $\widetilde{O}(\sqrt{\kappa})$, matching the acceleration rate of Nesterov momentum in the small-regularization regime.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "acceleration"
   - "condition number"
 date: 2026-05-08
-content_hash: 0e001113c44a313f
+content_hash: 5d0aec9b8382f511
 ---
 
 # Large Stepsizes Accelerate Gradient Descent for Regularized Logistic Regression
@@ -150,11 +150,11 @@ The EoS phenomenon is ubiquitous in deep learning (Cohen et al. 2020); this pape
 
 ## Related Papers
 
+- [\[ICML 2025\] Benefits of Early Stopping in Gradient Descent for Overparameterized Logistic Regression](../../ICML2025/optimization/benefits_of_early_stopping_in_gradient_descent_for_overparameterized_logistic_re.md)
+- [\[ICML 2025\] Constant Stepsize Local GD for Logistic Regression: Acceleration by Instability](../../ICML2025/optimization/constant_stepsize_local_gd_for_logistic_regression_acceleration_by_instability.md)
 - [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)
 - [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
-- [\[NeurIPS 2025\] Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study](do_neural_networks_need_gradient_descent_to_generalize_a_theoretical_study.md)
-- [\[NeurIPS 2025\] Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules](gradient_descent_as_loss_landscape_navigation_a_normative_framework_for_deriving.md)
 
 </div>
 

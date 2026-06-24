@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Neural Gabor Splatting embeds a lightweight MLP (SIREN architecture) into each Gaussian primitive, enabling a single primitive to represent complex spatially varying color patterns. Combined with a frequency-aware densification strategy, it significantly improves high-frequency surface reconstruction quality under the
+  [CVPR 2026][3D Vision][Gaussian Splatting] Neural Gabor Splatting embeds a lightweight MLP (SIREN architecture) into each Gaussian primitive, enabling a single primitive to represent complex spatially varying color patterns. Combined with a frequency-aware densification strategy, it significantly improves high-frequency surface reconstruction quality under the same data budget.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "High-frequency Surface Reconstruction"
+  - "Neural Texture"
+  - "MLP Primitives"
+  - "Frequency-aware Densification"
 date: 2026-05-08
-content_hash: 9249b5792063b787
+content_hash: cb31a54c3a40f4d4
 ---
+
 # Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction
 
 **Conference**: CVPR 2026  
@@ -142,10 +148,10 @@ The training objective is the standard $\lambda L_1 + (1-\lambda) L_{SSIM}$. MLP
 ## Related Papers
 
 - [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[CVPR 2026\] Depth Peeling for High-Fidelity Gaussian-Enhanced Surfel Rendering](depth_peeling_for_high-fidelity_gaussian-enhanced_surfel_rendering.md)
 - [\[CVPR 2026\] NVGS: Neural Visibility for Occlusion Culling in 3D Gaussian Splatting](nvgs_neural_visibility_for_occlusion_culling_in_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
 - [\[CVPR 2026\] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction](manifoldneus_manifold-aware_view_optimizability_for_pose-free_neural_surface_rec.md)
-- [\[CVPR 2026\] Distilling Unsigned Distance Function for Surface Reconstruction from 3D Gaussian Splatting](distilling_unsigned_distance_function_for_surface_reconstruction_from_3d_gaussia.md)
 
 </div>
 

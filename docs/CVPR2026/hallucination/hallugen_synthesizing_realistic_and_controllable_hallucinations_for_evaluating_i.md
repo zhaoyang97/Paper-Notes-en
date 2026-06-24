@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HalluGen: Synthesizing Realistic and Controllable Hallucinations for Evaluating Image Restoration
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] HalluGen utilizes diffusion posterior sampling combined with masked gradient guidance to **proactively inject** "controllable type, location, and severity" realistic hallucinations into image restoration results. This enables the creation of the first hallucination dataset with ground-truth labels (4350 brain MRIs), es
+  [CVPR 2026][Hallucination Detection][Hallucination Synthesis] HalluGen utilizes diffusion posterior sampling combined with masked gradient guidance to **proactively inject** "controllable type, location, and severity" realistic hallucinations into image restoration results. This enables the creation of the first hallucination dataset with ground-truth labels (4350 brain MRIs), establishment of a benchmark, proposal of the hallucination-sensitive SHAFE metric…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Hallucination Synthesis"
+  - "Diffusion Posterior Sampling"
+  - "Controllable Hallucinations"
+  - "Medical Image Restoration"
+  - "Hallucination Evaluation Benchmark"
 date: 2026-05-08
-content_hash: a0e4d5e1c7193297
+content_hash: dd2c5907ef798ba6
 ---
+
 # HalluGen: Synthesizing Realistic and Controllable Hallucinations for Evaluating Image Restoration
 
 **Conference**: CVPR 2026  
@@ -152,10 +158,20 @@ All three dimensions can be adjusted independently while maintaining stable FID�
 - Value: ⭐⭐⭐⭐⭐ (Provides scalable infrastructure for evaluating hallucinations in safety-critical fields).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](exposing_and_evaluating_hallucinations_for_gui_grounding.md)
+- [\[ICML 2026\] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations](../../ICML2026/hallucination/realista_realistic_latent_adversarial_attacks_that_elicit_llm_hallucinations.md)
+- [\[CVPR 2026\] Fine-Grained Multi-Image Object Hallucination Benchmark](fine-grained_multi_image_object_hallucination_benchmark.md)
+- [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
+- [\[ICLR 2026\] EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models](../../ICLR2026/hallucination/emotionhallucer_evaluating_emotion_hallucinations_in_multimodal_large_language_m.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](exposing_and_evaluating_hallucinations_for_gui_grounding.md)

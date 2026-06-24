@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CoA-VLA: Improving Vision-Language-Action Models via Visual-Textual Chain-of-Affordance
 description: >-
-  [ICCV 2025][Multimodal VLM][VLA] This paper proposes the Chain-of-Affordance (CoA-VLA) framework, which injects four categories of robot affordances (object, grasp, spatial…
+  [ICCV 2025][Multimodal VLM][VLA] This paper proposes the Chain-of-Affordance (CoA-VLA) framework, which injects four categories of robot affordances (object, grasp, spatial, and movement) into the policy network of a VLA model in both textual and visual modalities. The approach achieves an 85.54% success rate on a real-robot multi-task benchmark spanning 7 tasks, outperforming OpenVLA by 30.65%, and demonstrates generalization to unseen object poses and obstacles.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "visual prompting"
   - "affordance reasoning"
 date: 2026-05-08
-content_hash: eda858958fb74461
+content_hash: 0257dd27be48be94
 ---
 
 # CoA-VLA: Improving Vision-Language-Action Models via Visual-Textual Chain-of-Affordance
@@ -138,11 +138,11 @@ LIBERO Simulation Benchmark:
 
 ## Related Papers
 
+- [\[ICCV 2025\] VQ-VLA: Improving Vision-Language-Action Models via Scaling Vector-Quantized Action Tokenizers](vq-vla_improving_vision-language-action_models_via_scaling_vector-quantized_acti.md)
 - [\[ICCV 2025\] Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy](dita_scaling_diffusion_transformer_for_generalist_visionlang.md)
 - [\[ICML 2026\] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models](../../ICML2026/multimodal_vlm/vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
 - [\[ICCV 2025\] CompCap: Improving Multimodal Large Language Models with Composite Captions](compcap_improving_multimodal_large_language_models_with_composite_captions.md)
 - [\[ICCV 2025\] Advancing Textual Prompt Learning with Anchored Attributes](advancing_textual_prompt_learning_with_anchored_attributes.md)
-- [\[ICCV 2025\] FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models](fedmvp_federated_multimodal_visual_prompt_tuning_for_vision-language_models.md)
 
 </div>
 

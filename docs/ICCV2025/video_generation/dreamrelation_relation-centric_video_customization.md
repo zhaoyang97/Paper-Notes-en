@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DreamRelation: Relation-Centric Video Customization
 description: >-
-  [ICCV 2025][Video Generation][Relation video customization] DreamRelation is proposed as the first relation-centric video customization method. Through a Relation LoRA Triplet combined with Hybrid Mask Training…
+  [ICCV 2025][Video Generation][Relation video customization] DreamRelation is proposed as the first relation-centric video customization method. Through a Relation LoRA Triplet combined with Hybrid Mask Training, it achieves disentanglement between relation and appearance, and enhances relational dynamics learning via a spatiotemporal relational contrastive loss, enabling animals to imitate human interactions.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "disentangled learning"
 date: 2026-05-08
-content_hash: 660e2a024241bed0
+content_hash: 4b27469e92ffa8b9
 ---
 
 # DreamRelation: Relation-Centric Video Customization
@@ -194,11 +194,11 @@ LoRA placement ablation:
 
 ## Related Papers
 
-- [\[ICCV 2025\] OCK: Unsupervised Dynamic Video Prediction with Object-Centric Kinematics](ock_unsupervised_dynamic_video_prediction_with_object-centric_kinematics.md)
 - [\[ICCV 2025\] DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization](dualreal_adaptive_joint_training_for_lossless_identity-motion_fusion_in_video_cu.md)
-- [\[CVPR 2026\] First Frame Is the Place to Go for Video Content Customization](../../CVPR2026/video_generation/first_frame_is_the_place_to_go_for_video_content_customization.md)
+- [\[ICCV 2025\] OCK: Unsupervised Dynamic Video Prediction with Object-Centric Kinematics](ock_unsupervised_dynamic_video_prediction_with_object-centric_kinematics.md)
+- [\[CVPR 2025\] TokenMotion: Decoupled Motion Control via Token Disentanglement for Human-centric Video Generation](../../CVPR2025/video_generation/tokenmotion_decoupled_motion_control_via_token_disentanglement_for_human-centric.md)
+- [\[CVPR 2026\] HandWorld: Hand-Centric Unified Video Action Generation](../../CVPR2026/video_generation/handworld_hand-centric_unified_video_action_generation.md)
 - [\[AAAI 2026\] Mask2IV: Interaction-Centric Video Generation via Mask Trajectories](../../AAAI2026/video_generation/mask2iv_interaction-centric_video_generation_via_mask_trajectories.md)
-- [\[CVPR 2026\] Chain of Event-Centric Causal Thought for Physically Plausible Video Generation](../../CVPR2026/video_generation/chain_of_event-centric_causal_thought_for_physically_plausible_video_generation.md)
 
 </div>
 

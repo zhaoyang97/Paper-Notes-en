@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Paper Note] The authors propose ReIMTS, which preserves the original sampling patterns of irregular multivariate time series (IMTS) through period-based recursive splitting (rather than resampling). Combined with an irregularity-aware representation fusion mechanism for multi-scale modeling, it achieves an average improvement of 2
+  [ICLR 2026][Time Series][Irregular Time Series] The authors propose ReIMTS, which preserves the original sampling patterns of irregular multivariate time series (IMTS) through period-based recursive splitting (rather than resampling). Combined with an irregularity-aware representation fusion mechanism for multi-scale modeling, it achieves an average improvement of 27.1% across six IMTS backbones as a plug-in.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Irregular Time Series"
+  - "Multi-scale Modeling"
+  - "Recursive Splitting"
+  - "Sampling Pattern Preservation"
+  - "Forecasting"
 date: 2026-05-08
-content_hash: 33cc0a93719b565b
+content_hash: 8be45cbc177631f5
 ---
+
 # Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting
 
 **Conference**: ICLR 2026  
@@ -138,11 +144,11 @@ Comparison with other multi-scale IMTS methods (using GraFITi as backbone):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reliable Probabilistic Forecasting of Irregular Time Series via Marginal Consistent Flows](reliable_probabilistic_forecasting_of_irregular_time_series_through_marginalizat.md)
 - [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
 - [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](../../ICML2026/time_series/latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
 - [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
 - [\[ICLR 2026\] Learning Koopman Representations with Controllability Guarantees](learning_koopman_representations_with_controllability_guarantees.md)
-- [\[ICLR 2026\] ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting](astgi_adaptive_spatio-temporal_graph_interactions_for_irregular_multivariate_tim.md)
 
 </div>
 

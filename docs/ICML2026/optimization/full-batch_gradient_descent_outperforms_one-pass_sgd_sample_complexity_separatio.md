@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Full-Batch Gradient Descent Outperforms One-Pass SGD: Sample Complexity Separation in Single-Index Learning
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper provides a rigorous proof in Gaussian single-index models with quadratic activation: while full-batch gradient descent (GD) "reusing all data" under naive quadratic activation is no more sample-efficient than one-pass SGD (both requiring $n\gtrsim d\log d$), simply **truncating** the activation allows full-b
+  [ICML2026][Optimization][Single-Index Models] This paper provides a rigorous proof in Gaussian single-index models with quadratic activation: while full-batch gradient descent (GD) "reusing all data" under naive quadratic activation is no more sample-efficient than one-pass SGD (both requiring $n\gtrsim d\log d$), simply **truncating** the activation allows full-batch GD to achieve weak or even strong recovery with $n\gtrsim d$ (linear sample size). This establishes a $\log d…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Single-Index Models"
+  - "Sample Complexity"
+  - "Full-Batch Gradient Descent"
+  - "Phase Retrieval"
+  - "BBP Phase Transition"
 date: 2026-05-08
-content_hash: c99786f3b6503136
+content_hash: 8019c537545e679a
 ---
+
 # Full-Batch Gradient Descent Outperforms One-Pass SGD: Sample Complexity Separation in Single-Index Learning
 
 **Conference**: ICML2026  
@@ -109,11 +115,11 @@ The spherical analysis has two blind spots: it cannot specify iteration steps du
 
 ## Related Papers
 
-- [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](../../ICLR2026/optimization/implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
 - [\[NeurIPS 2025\] Learning Single-Index Models via Harmonic Decomposition](../../NeurIPS2025/optimization/learning_single-index_models_via_harmonic_decomposition.md)
+- [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](../../ICLR2026/optimization/implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
 - [\[ICML 2025\] Nearly Optimal Sample Complexity for Learning with Label Proportions](../../ICML2025/optimization/nearly_optimal_sample_complexity_for_learning_with_label_proportions.md)
 - [\[ICML 2026\] Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption](convex_basins_in_single-index_model_loss_landscapes_applications_to_robust_recov.md)
-- [\[AAAI 2026\] Beyond the Mean: Fisher-Orthogonal Projection for Natural Gradient Descent in Large Batch Training](../../AAAI2026/optimization/beyond_the_mean_fisher-orthogonal_projection_for_natural_gradient_descent_in_lar.md)
+- [\[ICML 2025\] Improved Sample Complexity for Private Nonsmooth Nonconvex Optimization](../../ICML2025/optimization/improved_sample_complexity_for_private_nonsmooth_nonconvex_optimization.md)
 
 </div>
 

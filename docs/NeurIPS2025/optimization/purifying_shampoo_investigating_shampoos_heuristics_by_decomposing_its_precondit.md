@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Purifying Shampoo: Investigating Shampoo's Heuristics by Decomposing its Preconditioner
 description: >-
-  [NeurIPS 2025][Optimization][Shampoo optimizer] By decomposing Shampoo's preconditioner into eigenvalue and eigenbasis components, this work reveals that learning rate grafting essentially compensates for eigenvalue stal…
+  [NeurIPS 2025][Optimization][Shampoo optimizer] By decomposing Shampoo's preconditioner into eigenvalue and eigenbasis components, this work reveals that learning rate grafting essentially compensates for eigenvalue staleness and scaling bias, and proposes eigenvalue correction and adaptive eigenbasis update frequency as principled replacements for these heuristics.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "learning rate grafting"
   - "adaptive eigenbasis update"
 date: 2026-05-08
-content_hash: 062a5d0e5eae48d4
+content_hash: 0994d99827ffdcd1
 ---
 
 # Purifying Shampoo: Investigating Shampoo's Heuristics by Decomposing its Preconditioner
@@ -129,10 +129,10 @@ Standard neural network training objective $\min_{\boldsymbol{\theta}} \mathcal{
 ## Related Papers
 
 - [\[ICML 2026\] FOAM: Frequency and Operator Error-Based Adaptive Damping Method for Reducing Staleness-Oriented Error for Shampoo](../../ICML2026/optimization/foam_frequency_and_operator_error-based_adaptive_damping_method_for_reducing_sta.md)
+- [\[NeurIPS 2025\] From Average-Iterate to Last-Iterate Convergence in Games: A Reduction and Its Applications](from_average-iterate_to_last-iterate_convergence_in_games_a_reduction_and_its_ap.md)
 - [\[NeurIPS 2025\] Evaluating LLMs for Combinatorial Optimization: One-Phase and Two-Phase Heuristics for 2D Bin-Packing](evaluating_llms_for_combinatorial_optimization_one-phase_and_two-phase_heuristic.md)
 - [\[NeurIPS 2025\] Learning Sparse Approximate Inverse Preconditioners for Conjugate Gradient Solvers on GPUs](learning_sparse_approximate_inverse_preconditioners_for_conjugate_gradient_solve.md)
-- [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
-- [\[NeurIPS 2025\] The Trilemma of Truth in Large Language Models](the_trilemma_of_truth_in_large_language_models.md)
+- [\[ICLR 2026\] HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization](../../ICLR2026/optimization/heurigym_an_agentic_benchmark_for_llm-crafted_heuristics_in_combinatorial_optimi.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] SUIT: Knowledge Editing with Subspace-Aware Key-Value Mappings
 description: >-
-  [ICLR 2026][Knowledge Editing][locate-then-edit] SUIT constrains the "manually calculated" key vector $k$ and residual vector $\delta$ in locate-then-edit knowledge editing into low-dimensional subspaces truly relevant to the target edit. This significantly reduces damage to irrelevant knowledge without sacrificing editing success—doubling Specificity on LLaMA3 / GPT
+  [ICLR 2026][Knowledge Editing][locate-then-edit] SUIT constrains the "manually calculated" key vector $k$ and residual vector $\delta$ in locate-then-edit knowledge editing into low-dimensional subspaces truly relevant to the target edit. This significantly reduces damage to irrelevant knowledge without sacrificing editing success—doubling Specificity on LLaMA3 / GPT-J / Qwen2.5 compared to the strong baseline AlphaEdit.
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - locate-then-edit
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "locate-then-edit"
+  - "Linear Representation Hypothesis"
+  - "subspace constraints"
+  - "knowledge preservation"
 date: 2026-05-08
-content_hash: d53c285a64f6efea
+content_hash: 02953cdfbf25faff
 ---
+
 # SUIT: Knowledge Editing with Subspace-Aware Key-Value Mappings
 
 **Conference**: ICLR 2026  

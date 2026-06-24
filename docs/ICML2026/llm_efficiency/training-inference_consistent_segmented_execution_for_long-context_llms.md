@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Training-Inference Consistent Segmented Execution for Long-Context LLMs
 description: >-
-  [ICML 2026][LLM Efficiency][TBPTT] This paper proposes a long-context LLM framework that shares identical segmented forward execution semantics for both training and inference: it maintains a fixed-length differentiable KV tail across segments plus a forward-only retrieval bypass. On LLaMA2-7B 32K/80K, it achieves LongBench/RULER performance comparable
+  [ICML 2026][LLM Efficiency][Long Context] This paper proposes a long-context LLM framework that shares identical segmented forward execution semantics for both training and inference: it maintains a fixed-length differentiable KV tail across segments plus a forward-only retrieval bypass. On LLaMA2-7B 32K/80K, it achieves LongBench/RULER performance comparable to or better than full attention with approximately $6\times$ lower peak prefill memory.
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - TBPTT
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Long Context"
+  - "Segmented Execution"
+  - "Training-Inference Consistency"
+  - "TBPTT"
+  - "KV Cache"
 date: 2026-05-08
-content_hash: fe5ac60e37a18422
+content_hash: a3b4cbaadb5894f2
 ---
+
 # Training-Inference Consistent Segmented Execution for Long-Context LLMs
 
 **Conference**: ICML 2026  
@@ -132,10 +137,10 @@ In RULER length generalization tests (CWE/FWE, 4K→64K), Ours achieved CWE 46.3
 ## Related Papers
 
 - [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
+- [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](../../ICLR2026/llm_efficiency/lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
+- [\[ICLR 2026\] Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs](../../ICLR2026/llm_efficiency/beyond_real_imaginary_extension_of_rotary_position_embeddings_for_long-context_l.md)
+- [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](../../ICLR2026/llm_efficiency/tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
 - [\[ACL 2025\] LADM: Long-context Training Data Selection with Attention-based Dependency Measurement for LLMs](../../ACL2025/llm_efficiency/ladm_long_context_data.md)
-- [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
-- [\[ACL 2026\] StructKV: Preserving the Structural Skeleton for Scalable Long-Context Inference](../../ACL2026/llm_efficiency/structkv_preserving_the_structural_skeleton_for_scalable_long-context_inference.md)
-- [\[ICML 2025\] Long-Short Alignment for Effective Long-Context Modeling in LLMs](../../ICML2025/llm_efficiency/long-short_alignment_for_effective_long-context_modeling_in_llms.md)
 
 </div>
 

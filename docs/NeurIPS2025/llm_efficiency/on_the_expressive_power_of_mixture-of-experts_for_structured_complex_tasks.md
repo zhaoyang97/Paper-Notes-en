@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] On the Expressive Power of Mixture-of-Experts for Structured Complex Tasks
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Mixture-of-Experts] This paper presents the first systematic analysis of MoE expressive power on structured complex tasks. It proves that shallow MoE can overcome the curse of dimensionalit…
+  [NeurIPS 2025 Spotlight][LLM Efficiency][Mixture-of-Experts] This paper presents the first systematic analysis of MoE expressive power on structured complex tasks. It proves that shallow MoE can overcome the curse of dimensionality on low-dimensional manifolds (approximation rate governed by intrinsic dimension $d$ rather than ambient dimension $D$), and that deep MoE with $E$ experts × $L$ layers can efficiently approximate piecewise functions with $E^L$ pieces through hiera…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Efficiency"
   - "Mixture-of-Experts"
   - "expressive power"
@@ -15,7 +15,7 @@ tags:
   - "piecewise function"
   - "gating mechanism"
 date: 2026-05-08
-content_hash: ba13d90cad2cec2b
+content_hash: 90f6701cf9bc1693
 ---
 
 # On the Expressive Power of Mixture-of-Experts for Structured Complex Tasks
@@ -149,11 +149,11 @@ The target is a piecewise function with $3^2=9$ pieces. The 2-3-MoE error decrea
 
 ## Related Papers
 
+- [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
 - [\[NeurIPS 2025\] Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads](let_the_experts_speak_improving_survival_prediction_calibration_via_mixture-of-e.md)
+- [\[ICLR 2026\] DirMoE: Dirichlet-Routed Mixture of Experts](../../ICLR2026/llm_efficiency/dirmoe_dirichlet-routed_mixture_of_experts.md)
 - [\[AAAI 2026\] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](../../AAAI2026/llm_efficiency/how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)
-- [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](../../ICML2026/llm_efficiency/probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
-- [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](../../ICML2026/llm_efficiency/hyperparameter_transfer_with_mixture-of-expert_layers.md)
-- [\[ACL 2026\] The Hallucination of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models](../../ACL2026/llm_efficiency/the_illusion_of_specialization_unveiling_the_domain-invariant_34standing_committ.md)
+- [\[ICLR 2026\] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel](../../ICLR2026/llm_efficiency/understanding_the_mixture-of-experts_with_nadaraya-watson_kernel.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BioTamperNet: Affinity-Guided State-Space Model Detecting Tampered Biomedical Images
 description: >-
-  [ICLR 2026][Medical Imaging][State Space Model] BioTamperNet constructs a Siamese network using "Affinity-Guided Attention" approximated by State-Space Models (SSM) to jointly localize tampered duplicate regions (source and copied target regions) in biomedical papers. It improves the MCC from the previous best of approximately 0.43 to 0.70 on the BioFors real retrac
+  [ICLR2026][Medical Imaging][Biomedical Image Forensics] BioTamperNet constructs a Siamese network using "Affinity-Guided Attention" approximated by State-Space Models (SSM) to jointly localize tampered duplicate regions (source and copied target regions) in biomedical papers. It improves the MCC from the previous best of approximately 0.43 to 0.70 on the BioFors real retracted paper dataset, utilizing only 36.7M parameters and 29.6 GFLOPs.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - State Space Model
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Biomedical Image Forensics"
+  - "Duplicate Region Detection"
+  - "State-Space Models"
+  - "Affinity-Guided Attention"
+  - "Siamese Networks"
 date: 2026-05-08
-content_hash: 5bbf0aab8d44acab
+content_hash: 99a12d3892f8a1e5
 ---
+
 # BioTamperNet: Affinity-Guided State-Space Model Detecting Tampered Biomedical Images
 
 **Conference**: ICLR2026  
@@ -164,9 +169,9 @@ MCC across various modalities on EDD:
 
 - [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](../../CVPR2026/medical_imaging/geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)
 - [\[ICLR 2026\] Detecting Invariant Manifolds in ReLU-Based RNNs](detecting_invariant_manifolds_in_relu-based_rnns.md)
-- [\[NeurIPS 2025\] DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs](../../NeurIPS2025/medical_imaging/dyg-mamba_continuous_state_space_modeling_on_dynamic_graphs.md)
 - [\[NeurIPS 2025\] Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models](../../NeurIPS2025/medical_imaging/generalizable_real-time_neural_decoding_with_hybrid_state-space_models.md)
-- [\[ICLR 2026\] Characterizing Human Semantic Navigation in Concept Production as Trajectories in Embedding Space](characterizing_human_semantic_navigation_in_concept_production_as_trajectories_i.md)
+- [\[ICLR 2026\] K-Prism: A Knowledge-Guided and Prompt Integrated Universal Medical Image Segmentation Model](k-prism_a_knowledge-guided_and_prompt_integrated_universal_medical_image_segment.md)
+- [\[NeurIPS 2025\] DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs](../../NeurIPS2025/medical_imaging/dyg-mamba_continuous_state_space_modeling_on_dynamic_graphs.md)
 
 </div>
 

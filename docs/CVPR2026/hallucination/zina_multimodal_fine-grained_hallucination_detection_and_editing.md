@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Zina: Multimodal Fine-grained Hallucination Detection and Editing
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] Zina proposes a multimodal fine-grained hallucination detection and editing task, designing a two-stage system (detector MLLM + reviewer MLLM) that delegates token copying to a deterministic function to simplify the model burden. Additionally, the VisionHall dataset is constructed (6.9K manual annotations + 20K graph-s
+  [CVPR 2026][Hallucination Detection][Multimodal hallucination detection] Zina proposes a multimodal fine-grained hallucination detection and editing task, designing a two-stage system (detector MLLM + reviewer MLLM) that delegates token copying to a deterministic function to simplify the model burden. Additionally, the VisionHall dataset is constructed (6.9K manual annotations + 20K graph-structured synthetic data), exceeding GPT-4o by 15.8 points in detection F1.
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Multimodal hallucination detection"
+  - "fine-grained editing"
+  - "VLM evaluation"
+  - "synthetic data"
+  - "label taxonomy"
 date: 2026-05-08
-content_hash: 6d56518573fb7c64
+content_hash: 958360289f9a5d48
 ---
+
 # Zina: Multimodal Fine-grained Hallucination Detection and Editing
 
 **Conference**: CVPR 2026  
@@ -126,8 +132,8 @@ Real hallucinations are often not isolated—if a model hallucinates a non-exist
 - [\[CVPR 2026\] Fine-Grained Multi-Image Object Hallucination Benchmark](fine-grained_multi_image_object_hallucination_benchmark.md)
 - [\[CVPR 2026\] FINER: MLLMs Hallucinate under Fine-grained Negative Queries](finer_mllms_hallucinate_under_fine-grained_negative_queries.md)
 - [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
-- [\[ACL 2025\] Fine-grained Hallucination Detection and Mitigation in Long-form Question Answering](../../ACL2025/hallucination/localizing_and_mitigating_errors_in_long-form_question_answering.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
+- [\[ACL 2025\] Fine-grained Hallucination Detection and Mitigation in Long-form Question Answering](../../ACL2025/hallucination/localizing_and_mitigating_errors_in_long-form_question_answering.md)
 
 </div>
 

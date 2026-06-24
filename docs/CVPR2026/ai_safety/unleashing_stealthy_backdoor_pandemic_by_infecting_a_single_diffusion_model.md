@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unleashing Stealthy Backdoor Pandemic by Infecting a Single Diffusion Model
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] The authors propose Eidolon: by implanting a backdoor into a single text-to-image diffusion model (DM) once, the generated "synthetic training data" inherently carries triggers and is mislabeled into a target class. Any downstream classifier trained using these augmented data becomes "passively infected" (ASR generally
+  [CVPR 2026][AI Safety][Backdoor Attack] The authors propose Eidolon: by implanting a backdoor into a single text-to-image diffusion model (DM) once, the generated "synthetic training data" inherently carries triggers and is mislabeled into a target class. Any downstream classifier trained using these augmented data becomes "passively infected" (ASR generally 95–100%), achieving a "poison once, propagate infinitely" backdoor pandemic for the first time.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Backdoor Attack"
+  - "Diffusion Model"
+  - "Data Augmentation"
+  - "Contagious Backdoor"
+  - "Trigger Optimization"
 date: 2026-05-08
-content_hash: 663cbb8517543ac6
+content_hash: 2acc025280fbfb5a
 ---
+
 # Unleashing Stealthy Backdoor Pandemic by Infecting a Single Diffusion Model
 
 **Conference**: CVPR 2026  
@@ -150,15 +155,15 @@ Existing DM backdoors maintain clean accuracy but result in ASR near random (0�
 - Value: ⭐⭐⭐⭐⭐ Highlights a severe new attack surface in the common practice of synthetic data augmentation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach](towards_stealthy_and_effective_backdoor_attacks_on_lane_detection_a_naturalistic.md)
-- [\[CVPR 2026\] GROW: Watermark Generation with Progressive Guidance for Diffusion Models](grow_watermark_generation_with_progressive_guidance_for_diffusion_models.md)
+- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 - [\[AAAI 2026\] Towards Effective, Stealthy, and Persistent Backdoor Attacks Targeting Graph Foundation Models](../../AAAI2026/ai_safety/towards_effective_stealthy_and_persistent_backdoor_attacks_targeting_graph_found.md)
+- [\[ICLR 2026\] STEDiff: Unveiling Spatio-Temporal Redundancy in Backdoor Attacks on Text-to-Image Diffusion Models](../../ICLR2026/ai_safety/stediff_revealing_the_spatial_and_temporal_redundancy_of_backdoor_attacks_in_tex.md)
 - [\[CVPR 2026\] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases](red-teaming_retrieval-augmented_diffusion_models_via_poisoning_knowledge_bases.md)
 
 </div>

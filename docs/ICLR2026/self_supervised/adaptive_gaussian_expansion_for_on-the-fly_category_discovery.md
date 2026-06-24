@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Gaussian Expansion for On-the-fly Category Discovery
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper demonstrates that the "On-the-fly Category Discovery" (OCD) task possesses a performance lower bound overlooked by existing hashing methods. It subsequently decomposes OCD into two sub-tasks: "Open-Set Recognition + Real-time New Category Discovery." By employing soft thresholds to categorize known classes d
+  [ICLR2026][Self-Supervised Learning][On-the-fly Category Discovery] This paper demonstrates that the "On-the-fly Category Discovery" (OCD) task possesses a performance lower bound overlooked by existing hashing methods. It subsequently decomposes OCD into two sub-tasks: "Open-Set Recognition + Real-time New Category Discovery." By employing soft thresholds to categorize known classes directly and utilizing Adaptive Gaussian Expansion (AGE)—based on multivariate Gaussian densi…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "On-the-fly Category Discovery"
+  - "Open-Set Recognition"
+  - "Gaussian Density Estimation"
+  - "Online Incremental Clustering"
+  - "Covariance Shrinkage"
 date: 2026-05-08
-content_hash: 01005dcdf136ba97
+content_hash: 7d5169deb0acc844
 ---
+
 # Adaptive Gaussian Expansion for On-the-fly Category Discovery
 
 **Conference**: ICLR2026  
@@ -144,8 +150,8 @@ Numerical stability term $\varepsilon$ (Table 6): $10^{-5}$ is optimal; at $\var
 - [\[CVPR 2026\] Assignment-Driven Hash Learning in a Hyper-Semantic Space for On-the-Fly Category Discovery](../../CVPR2026/self_supervised/assignment-driven_hash_learning_in_a_hyper-semantic_space_for_on-the-fly_categor.md)
 - [\[ICCV 2025\] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery](../../ICCV2025/self_supervised/generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f.md)
 - [\[ECCV 2024\] PromptCCD: Learning Gaussian Mixture Prompt Pool for Continual Category Discovery](../../ECCV2024/self_supervised/promptccd_learning_gaussian_mixture_prompt_pool_for_continual_category_discovery.md)
+- [\[ICLR 2026\] Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery](bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery.md)
 - [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](../../CVPR2026/self_supervised/decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
-- [\[ICLR 2026\] PRISM: Progressive Robust Learning for Open-World Continual Category Discovery](prism_progressive_robust_learning_for_open-world_continual_category_discovery.md)
 
 </div>
 

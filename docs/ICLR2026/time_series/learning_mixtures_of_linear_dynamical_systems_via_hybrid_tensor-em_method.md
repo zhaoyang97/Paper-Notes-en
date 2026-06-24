@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Mixtures of Linear Dynamical Systems via Hybrid Tensor-EM Method
 description: >-
-  [ICLR 2026][Time Series][Kalman EM] This paper proposes a hybrid Tensor-EM framework for learning "Mixtures of Linear Dynamical Systems (MoLDS)." It utilizes a tensor method of moments based on Simultaneous Matrix Diagonalization (SMD) for globally consistent initialization, followed by a full Kalman filter-smoother EM for local refinement. This approach
+  [ICLR 2026][Time Series][Mixture of Linear Dynamical Systems (MoLDS)] This paper proposes a hybrid Tensor-EM framework for learning "Mixtures of Linear Dynamical Systems (MoLDS)." It utilizes a tensor method of moments based on Simultaneous Matrix Diagonalization (SMD) for globally consistent initialization, followed by a full Kalman filter-smoother EM for local refinement. This approach balances global identifiability with statistical optimality and marks the first successfu…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Kalman EM
+  - "ICLR 2026"
+  - "Time Series"
+  - "Mixture of Linear Dynamical Systems (MoLDS)"
+  - "Tensor Method of Moments"
+  - "Simultaneous Matrix Diagonalization (SMD)"
+  - "Kalman EM"
+  - "Neural Data Modeling"
 date: 2026-05-08
-content_hash: 82197f16f3d7cf59
+content_hash: 2475df60ba303aae
 ---
+
 # Learning Mixtures of Linear Dynamical Systems via Hybrid Tensor-EM Method
 
 **Conference**: ICLR 2026  
@@ -123,11 +128,11 @@ Subsequently, a Kalman smoother computes responsibility-weighted sufficient stat
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Spectral-Grassmann Wasserstein metric for operator representations of dynamical systems](a_spectral-grassmann_wasserstein_metric_for_operator_representations_of_dynamica.md)
 - [\[ICLR 2026\] Tensor learning with orthogonal, Lorentz, and symplectic symmetries](tensor_learning_with_orthogonal_lorentz_and_symplectic_symmetries.md)
 - [\[ICML 2026\] Embedding Hybrid Systems into Continuous Latent Vector Fields](../../ICML2026/time_series/embedding_hybrid_systems_into_continuous_latent_vector_fields.md)
 - [\[ICLR 2026\] Learning Linear State-Space Models with Sparse System Matrices](learning_linear_state-space_models_with_sparse_system_matrices.md)
 - [\[ICLR 2026\] SONATA: Synergistic Coreset Informed Adaptive Temporal Tensor Factorization](sonata_synergistic_coreset_informed_adaptive_temporal_tensor_factorization.md)
-- [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](weight-space_linear_recurrent_neural_networks.md)
 
 </div>
 

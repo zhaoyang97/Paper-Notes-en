@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling
 description: >-
-  [ACL 2026][Multi-Agent][Test-Time Compute] This paper compares self-consistency, self-refinement, multi-agent debate, and Mixture-of-Agents under a unified computational budget. It finds that multi-agent reasoning, particularly MoA, is more efficient on the Pareto front, improving MMLU-Pro accuracy from 64.3% to 71.4% at approximately 20x CoT budget.
+  [ACL 2026][Multi-Agent][Test-time computation] This paper compares self-consistency, self-refinement, multi-agent debate, and Mixture-of-Agents under a unified computational budget. It finds that multi-agent reasoning, particularly MoA, is more efficient on the Pareto front, improving MMLU-Pro accuracy from 64.3% to 71.4% at approximately 20x CoT budget.
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - Test-Time Compute
-  - Mixture-of-Agents
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Test-time computation"
+  - "Multi-agent reasoning"
+  - "Pareto front"
+  - "Mixture-of-Agents"
+  - "Compute efficiency"
 date: 2026-05-08
-content_hash: 4aaa3f164af48345
+content_hash: 722aba919f0be7e6
 ---
+
 # Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling
 
 **Conference**: ACL 2026  
@@ -174,9 +178,9 @@ The authors examined model size allocation in MoA (5 models/4 layers). With 70B 
 
 - [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
 - [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 - [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
 - [\[ACL 2026\] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection](debating_the_unspoken_role-anchored_multi-agent_reasoning_for_half-truth_detecti.md)
-- [\[ACL 2026\] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)
 
 </div>
 

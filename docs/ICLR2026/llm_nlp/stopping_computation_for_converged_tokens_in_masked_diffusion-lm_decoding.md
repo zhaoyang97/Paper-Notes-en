@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding
 description: >-
-  [ICLR 2026][LLM (Other)][Masked Diffusion LM] The paper proposes SureLock, which permanently locks token positions in Masked Diffusion LMs once their posterior distributions stabilize (skipping Q projection and FFN, while caching KV). This reduces the per-step attention complexity from $O(N^2d)$ to $O(MNd)$, achieving a 30-50% reduction in FLOPs on LLaDA-8B withou
+  [ICLR 2026][LLM (Other)][Masked Diffusion LM] The paper proposes SureLock, which permanently locks token positions in Masked Diffusion LMs once their posterior distributions stabilize (skipping Q projection and FFN, while caching KV). This reduces the per-step attention complexity from $O(N^2d)$ to $O(MNd)$, achieving a 30-50% reduction in FLOPs on LLaDA-8B without sacrificing generation quality.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Masked Diffusion LM
-  - Inference Acceleration
-  - Token Locking
-  - KV Cache
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Masked Diffusion LM"
+  - "Inference Acceleration"
+  - "Token Locking"
+  - "KL Divergence"
+  - "KV Cache"
 date: 2026-05-08
-content_hash: ddff63608d0b4793
+content_hash: a01dba9140bb0a70
 ---
+
 # Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding
 
 **Conference**: ICLR 2026  
@@ -137,11 +139,11 @@ SureLock is a **training-free** inference-time method that does not modify model
 
 ## Related Papers
 
-- [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
 - [\[ICLR 2026\] Constrained Decoding of Diffusion LLMs with Context-Free Grammars](constrained_decoding_of_diffusion_llms_with_context-free_grammars.md)
-- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
+- [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
+- [\[ACL 2026\] Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness](../../ACL2026/llm_nlp/masked_by_consensus_disentangling_privileged_knowledge_in_llm_correctness.md)
 - [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](../../ICML2026/llm_nlp/spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
-- [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
+- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
 
 </div>
 

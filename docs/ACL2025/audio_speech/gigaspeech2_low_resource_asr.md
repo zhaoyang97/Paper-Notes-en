@@ -1,0 +1,154 @@
+---
+title: >-
+  [Paper Note] GigaSpeech 2: An Evolving, Large-Scale and Multi-domain ASR Corpus for Low-Resource Languages
+description: >-
+  [ACL 2025][Audio & Speech][Automatic Speech Recognition] GigaSpeech 2 constructs a large-scale ASR corpus of approximately 30,000 hours for low-resource languages (Thai, Indonesian, and Vietnamese). Through an automated crawling-transcription-refinement pipeline, high-quality pseudo-labels are generated from unlabeled YouTube videos. The trained model reduces WER by 25%-40% compared to Whisper large-v3 while utilizing only 10% of its parameters.
+tags:
+  - "ACL 2025"
+  - "Audio & Speech"
+  - "Automatic Speech Recognition"
+  - "Low-Resource Languages"
+  - "Large-Scale Corpus"
+  - "Noisy Student Training"
+  - "Pseudo-Label Refinement"
+date: 2026-05-08
+content_hash: 5d5603a6fb5c2f61
+---
+
+# GigaSpeech 2: An Evolving, Large-Scale and Multi-domain ASR Corpus for Low-Resource Languages
+
+**Conference**: ACL 2025  
+**arXiv**: [2406.11546](https://arxiv.org/abs/2406.11546)  
+**Code**: None (Dataset publicly available)  
+**Area**: Speech Recognition / Low-Resource Languages  
+**Keywords**: Automatic Speech Recognition, Low-Resource Languages, Large-Scale Corpus, Noisy Student Training, Pseudo-Label Refinement
+
+## TL;DR
+GigaSpeech 2 constructs a large-scale ASR corpus of approximately 30,000 hours for low-resource languages (Thai, Indonesian, and Vietnamese). Through an automated crawling-transcription-refinement pipeline, high-quality pseudo-labels are generated from unlabeled YouTube videos. The trained model reduces WER by 25%-40% compared to Whisper large-v3 while utilizing only 10% of its parameters.
+
+## Background & Motivation
+
+**Background**: The ASR field has significantly benefited from large-scale annotated data, but high-quality annotated datasets are primarily concentrated in high-resource languages such as English. Whisper was trained on 680,000 hours of web data which remains unreleased, while MMS and Google USM also rely heavily on proprietary internal datasets.
+
+**Limitations of Prior Work**:
+   - Publicly annotated data for low-resource languages (such as Thai, Indonesian, and Vietnamese) is extremely scarce (e.g., in Common Voice, Thai has only 172 hours and Vietnamese has only 6 hours).
+   - Traditional corpus construction relies on manual annotation, which is expensive and slow.
+   - YODAS attempts to crawl from YouTube, but the quality of YouTube subtitles cannot be guaranteed.
+   - Existing evaluation datasets (Common Voice, FLEURS) only contain read speech, which does not match real-world scenarios.
+
+**Key Challenge**: Low-resource languages lack annotated data $\to$ poor model performance $\to$ yet manual annotation has extremely poor scalability. An automated corpus construction method that does not rely on paired data is urgently needed.
+
+**Goal**: Establish a fully automated pipeline for constructing large-scale, low-resource ASR corpora without relying on manual annotation.
+
+**Key Insight**: Focus solely on audio content without requiring pre-existing paired texts. The pipeline utilizes initial transcription by Whisper, forced alignment by MMS, multi-dimensional filtering, and iterative refinement of pseudo-labels via an improved version of NST.
+
+**Core Idea**: Build a large-scale ASR corpus from unlabeled YouTube audio using an automated pipeline, and iteratively refine pseudo-labels through an improved Noisy Student Training framework.
+
+## Method
+
+### Overall Architecture
+Pipeline flow: Audio crawling (YouTube) $\to$ Language detection $\to$ Whisper automatic transcription $\to$ MMS forced alignment $\to$ Text normalization $\to$ Multi-dimensional filtering $\to$ GigaSpeech 2 raw (~30K hours) $\to$ Improved NST iterative refinement $\to$ GigaSpeech 2 refined (~22K hours).
+
+### Key Designs
+
+1. **Automated Data Crawling and Partitioning**:
+
+    - **Function**: Systematically crawl low-resource language audio from YouTube.
+    - **Mechanism**: Manually define 19 topic categories + 8 content formats $\to$ select channels $\to$ download via yt-dlp $\to$ split TRAIN/DEV/TEST sets by channel (to ensure no speaker overlap) $\to$ manually transcribe 10 hours each for DEV and TEST.
+    - **Design Motivation**: Prioritize mainstream channels to guarantee audio quality and ethical compliance, and use diverse topic channels to reduce speaker overlap.
+
+2. **Multi-dimensional Filtering**:
+
+    - **Function**: Filter out low-quality samples from both text and audio dimensions.
+    - **Mechanism**: Character set filtering (keeping only target language characters) + language confidence filtering (fastText LID model) + audio duration filtering + repetition balancing.
+    - **Design Motivation**: Pseudo-labels transcribed by Whisper contain substantial errors, necessitating multi-dimensional filtering to ensure baseline quality.
+
+3. **Improved Noisy Student Training (NST)**:
+
+    - **Function**: Iteratively refine pseudo-labels generated by Whisper.
+    - **Mechanism**: Divide the data into $n$ subsets $\to$ Round 1 teaches the teacher model on the first subset $\to$ use CER filtering on subsequent subsets $\to$ expand data to train the student model (with capacity $\ge$ teacher size) $\to$ the student becomes the new teacher $\to$ *key improvement*: re-transcribe and re-filter all historical data in each round, rather than just adding new data.
+    - **Design Motivation**: Traditional NST relies on high-quality supervised data as seeds. This method requires absolutely no manually annotated data, utilizing Whisper's flawed pseudo-labels as a starting point for iterative refinement.
+
+4. **Noise Strategy**:
+
+    - **Function**: Introduce noise during NST training to improve model generalization.
+    - **Mechanism**: Input noise (SpecAugment) + model noise (stochastic depth bypass + feature masking).
+    - **Design Motivation**: Force the student to learn consistency with the teacher under noisy conditions, while the teacher generates pseudo-labels without noise.
+
+### Loss & Training
+Model architecture: Zipformer Transducer (M and L configurations). NST iterates for 3-4 rounds, with each round expanding data volume, scaling up the model size, and re-transcribing all historical data.
+
+## Key Experimental Results
+
+### Main Results
+
+Thai ASR Performance ($\text{CER} \downarrow$):
+
+| Model | Parameters | GigaSpeech2 TEST | Common Voice | FLEURS |
+|------|------|-----------------|--------------|--------|
+| Whisper large-v3 | 1550M | 16.42 | 10.96 | 17.69 |
+| Google API | - | 16.51 | 4.96 | 12.73 |
+| **GigaSpeech2 (NST-4)** | **152M** | **12.46** | **4.15** | **10.54** |
+
+Indonesian ASR Performance ($\text{WER} \downarrow$):
+
+| Model | Parameters | GigaSpeech2 TEST | Common Voice | FLEURS |
+|------|------|-----------------|--------------|--------|
+| Whisper large-v3 | 1550M | 19.42 | 17.87 | 15.28 |
+| **GigaSpeech2 (NST-3)** | **152M** | **14.92** | **13.83** | **13.77** |
+
+### Ablation Study
+
+NST Iteration Effects (Thai):
+
+| Iteration | Training Data | GigaSpeech2 TEST CER | Common Voice CER | Relative Reduction |
+|------|---------|---------------------|------------------|---------|
+| NST-1 | 4378h | 15.10 | 8.88 | baseline |
+| NST-2 | 3497h | 13.15 | 6.99 | -13%/-21% |
+| NST-3 | 7219h | 12.46 | 4.61 | -5%/-34% |
+| NST-4 | 10262h | 12.46 | 4.15 | 0%/-10% |
+
+### Key Findings
+- The GigaSpeech2 model reduces WER by 25%-40% compared to Whisper large-v3 on the real-world YouTube test set while using only about 10% of the parameters (152M vs 1550M).
+- The largest performance gains from NST iteration occur in the first 2-3 rounds, with diminishing returns in the 4th round.
+- Re-transcribing and re-filtering all historical data in each NST round is critical—it not only scales up the dataset but also continuously improves the quality of existing data.
+- The improvement is even more significant on Common Voice (read speech) (CER drops from 8.88 to 4.15), indicating strong generalization of the refined data.
+- Models trained on GigaSpeech2 outperform commercial ASR services from Google and Azure.
+
+## Highlights & Insights
+- **Zero-human-annotation ASR Corpus Construction**: Utilizing Whisper's pseudo-labels as a starting point, quality is bootstrapped and improved through iterative NST. This paradigm can be successfully migrated to any low-resource language.
+- **"Full-Re-transcription" Strategy for Improved NST**: Instead of merely processing new data, each round goes back to re-transcribe all historical data, establishing a continuous improvement cycle for data quality. Simple yet effective.
+- **Real-World Evaluation Datasets**: Compared to the read speech in Common Voice and FLEURS, the GigaSpeech 2 TEST set is much closer to real-world scenarios (conversational YouTube speech), filling a gap in evaluation resources for low-resource languages.
+
+## Limitations & Future Work
+- The corpus only covers three Southeast Asian languages; its applicability and scalability to other low-resource languages remain to be validated.
+- Issues regarding copyright and privacy of YouTube data are not sufficiently addressed.
+- Relying on Whisper as an initial transcription tool might fail for extremely low-resource languages where Whisper's default performance is already very poor.
+- NST iteration requires training large models across multiple rounds, which incurs considerable computational overhead.
+
+## Related Work & Insights
+- **vs YODAS**: YODAS relies on YouTube auto-subtitles (making the quality uncontrollable), whereas GigaSpeech2 depends entirely on model transcription coupled with iterative refinement, yielding superior quality.
+- **vs Whisper**: The GigaSpeech2 model outperforms Whisper large-v3 while utilizing only 10% of its parameters, demonstrating that high-quality domain-specific data is more critical than raw model capacity.
+- **vs MMS/USM**: While these industrial models are trained on massive, proprietary datasets, GigaSpeech2 provides a reproducible, open-source alternative.
+
+## Rating
+- **Novelty**: ⭐⭐⭐⭐ The automated pipeline and the improved NST are meaningful engineering innovations, though the core technologies themselves are not entirely novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Highly comprehensive, covering three languages, multiple evaluation datasets, detailed NST iterative analysis, and comparisons with commercial services.
+- **Writing Quality**: ⭐⭐⭐⭐ The pipeline is clearly described, though certain details (such as the choice of filtering thresholds) could be more detailed.
+- **Value**: ⭐⭐⭐⭐⭐ The open-sourced, large-scale, low-resource ASR corpus makes a tremendous contribution to the speech community.
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](../../ACL2026/audio_speech/multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
+- [\[NeurIPS 2025\] A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings](../../NeurIPS2025/audio_speech/a_multitask_benchmark_for_abusive_language_detection_in_lowr.md)
+- [\[ACL 2026\] Hard to Be Heard: Phoneme-Level ASR Analysis of Phonologically Complex, Low-Resource Endangered Languages](../../ACL2026/audio_speech/hard_to_be_heard_phoneme-level_asr_analysis_of_phonologically_complex_low-resour.md)
+- [\[ACL 2025\] On the Robust Approximation of ASR Metrics](on_the_robust_approximation_of_asr_metrics.md)
+- [\[ACL 2025\] UniCodec: Unified Audio Codec with Single Domain-Adaptive Codebook](unicodec_unified_audio_codec_with_single_domain-adaptive_codebook.md)
+
+</div>
+
+<!-- RELATED:END -->

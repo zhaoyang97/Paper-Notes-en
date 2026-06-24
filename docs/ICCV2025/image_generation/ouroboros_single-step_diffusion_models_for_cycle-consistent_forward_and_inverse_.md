@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ouroboros: Single-step Diffusion Models for Cycle-consistent Forward and Inverse Rendering
 description: >-
-  [ICCV 2025][Image Generation][Inverse Rendering] This paper presents Ouroboros, a unified framework comprising two single-step diffusion models (for inverse rendering RGB→X and forward rendering X→RGB respectively) that…
+  [ICCV 2025][Image Generation][Inverse Rendering] This paper presents Ouroboros, a unified framework comprising two single-step diffusion models (for inverse rendering RGB→X and forward rendering X→RGB respectively) that are jointly trained with cycle-consistency to enforce bidirectional rendering coherence. The method achieves state-of-the-art performance across multiple datasets while running 50× faster than multi-step diffusion baselines, and can be applied to video decompo…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Single-step Diffusion"
   - "Intrinsic Image Decomposition"
 date: 2026-05-08
-content_hash: 1cb9b0d4e9c0d198
+content_hash: 11cc2aa79a193c7f
 ---
 
 # Ouroboros: Single-step Diffusion Models for Cycle-consistent Forward and Inverse Rendering
@@ -171,11 +171,11 @@ Roughness and Metallicity (MatrixCity, PSNR↑):
 
 ## Related Papers
 
+- [\[CVPR 2025\] Uni-Renderer: Unifying Rendering and Inverse Rendering via Dual Stream Diffusion](../../CVPR2025/image_generation/uni-renderer_unifying_rendering_and_inverse_rendering_via_dual_stream_diffusion.md)
+- [\[CVPR 2025\] Channel-wise Noise Scheduled Diffusion for Inverse Rendering in Indoor Scenes](../../CVPR2025/image_generation/channel-wise_noise_scheduled_diffusion_for_inverse_rendering_in_indoor_scenes.md)
 - [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](../../CVPR2026/image_generation/renderflow_single-step_neural_rendering_via_flow_matching.md)
 - [\[CVPR 2026\] Cycle-Consistent Tuning for Layered Image Decomposition](../../CVPR2026/image_generation/cycle-consistent_tuning_for_layered_image_decomposition.md)
 - [\[ICCV 2025\] Cycle Consistency as Reward: Learning Image-Text Alignment without Human Preferences](cycle_consistency_as_reward_learning_imagetext_alignment_wit.md)
-- [\[ICCV 2025\] Omegance: A Single Parameter for Various Granularities in Diffusion-Based Synthesis](omegance_a_single_parameter_for_various_granularities_in_diffusion-based_synthes.md)
-- [\[ICCV 2025\] 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution](bridging_diffusion_models_and_3d_representations_a_3d_consis.md)
 
 </div>
 

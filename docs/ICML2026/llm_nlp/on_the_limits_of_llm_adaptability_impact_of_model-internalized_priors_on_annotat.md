@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Limits of LLM Adaptability: Impact of Model-Internalized Priors on Annotation
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] Through large-scale experiments on toxicity detection (9 models × 5 datasets), this paper finds that LLM annotation performance is primarily determined by **definition alignment** rather than text memorization. Model-internalized priors render the vast majority of zero-shot errors "resilient" to prompt-based correction
+  [ICML 2026 Oral Spotlight][LLM (Other)][LLM Annotation] Through large-scale experiments on toxicity detection (9 models × 5 datasets), this paper finds that LLM annotation performance is primarily determined by **definition alignment** rather than text memorization. Model-internalized priors render the vast majority of zero-shot errors "resilient" to prompt-based correction—even when explicit definitions and examples are provided, **two-thirds of errors** remain uncorrectable…
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML 2026 Oral Spotlight"
+  - "LLM (Other)"
+  - "LLM Annotation"
+  - "Model-Internalized Priors"
+  - "Decision Stickiness"
+  - "Prompt Steerability"
+  - "Confidence Calibration"
 date: 2026-05-08
-content_hash: de6021ef2eb2400e
+content_hash: 955f1b174e27533a
 ---
+
 # On the Limits of LLM Adaptability: Impact of Model-Internalized Priors on Annotation
 
 **Conference**: ICML 2026 Oral Spotlight  
@@ -121,10 +127,10 @@ DSF is the only metric that remains positively correlated with accuracy after co
 ## Related Papers
 
 - [\[ACL 2025\] The Impact of Token Granularity on the Predictive Power of Language Model Surprisal](../../ACL2025/llm_nlp/token_granularity_impact.md)
+- [\[ACL 2026\] SEF-CLGC at SemEval-2026 Task 11: Logical Notation Impact on Language Model Performance](../../ACL2026/llm_nlp/sef-clgc_at_semeval-2026_task_11_logical_notation_impact_on_language_model_perfo.md)
+- [\[ACL 2025\] Which Demographics Do LLMs Default to During Annotation?](../../ACL2025/llm_nlp/which_demographics_do_llms_default_to_during_annotation.md)
 - [\[ACL 2026\] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](../../ACL2026/llm_nlp/synthetic_eggs_in_many_baskets_the_impact_of_synthetic_data_diversity_on_llm_fin.md)
 - [\[NeurIPS 2025\] MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery](../../NeurIPS2025/llm_nlp/moose-chem2_exploring_llm_limits_in_fine-grained_scientific_hypothesis_discovery.md)
-- [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](../../ACL2026/llm_nlp/one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
-- [\[ICLR 2026\] Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors](../../ICLR2026/llm_nlp/breaking_the_correlation_plateau_on_the_optimization_and_capacity_limits_of_atte.md)
 
 </div>
 

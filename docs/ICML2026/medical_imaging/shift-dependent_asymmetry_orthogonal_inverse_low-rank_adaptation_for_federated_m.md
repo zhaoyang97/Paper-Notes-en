@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Shift-Dependent Asymmetry: Orthogonal Inverse Low-Rank Adaptation for Federated Medical Segmentation
 description: >-
-  [ICML 2026][Medical Imaging][LoRA] Addressing the issue of data heterogeneity across clients when using Federated LoRA to fine-tune large medical segmentation models, this paper discovers that encoders and decoders face fundamentally different sources of heterogeneity (encoders are dominated by appearance/acquisition shifts, while decoders are dominated
+  [ICML2026][Medical Imaging][Federated Learning] Addressing the issue of data heterogeneity across clients when using Federated LoRA to fine-tune large medical segmentation models, this paper discovers that encoders and decoders face fundamentally different sources of heterogeneity (encoders are dominated by appearance/acquisition shifts, while decoders are dominated by annotation/concept shifts). Consequently, it proposes IAT to **inversely allocate** shared/local LoRA factor…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - LoRA
+  - "ICML2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "LoRA"
+  - "Medical Segmentation"
+  - "Encoder-Decoder Asymmetry"
+  - "Subspace Orthogonality"
 date: 2026-05-08
-content_hash: fe748aa51132f211
+content_hash: 97a1d07f84d7dac8
 ---
+
 # Shift-Dependent Asymmetry: Orthogonal Inverse Low-Rank Adaptation for Federated Medical Segmentation
 
 **Conference**: ICML2026  
@@ -131,8 +136,8 @@ Gains were particularly significant on challenging subsets, such as Drishti-GS1 
 - [\[CVPR 2026\] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation](../../CVPR2026/medical_imaging/personalized_longitudinal_medical_report_generation_via_temporally-aware_federat.md)
 - [\[CVPR 2026\] KLIP: localized distribution shift detection via KL-divergence with diffusion priors in Inverse Problems](../../CVPR2026/medical_imaging/klip_localized_distribution_shift_detection_via_kl-divergence_with_diffusion_pri.md)
 - [\[AAAI 2026\] Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation](../../AAAI2026/medical_imaging/divide_conquer_and_unite_hierarchical_style-recalibrated_prototype_alignment_for.md)
+- [\[CVPR 2026\] OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging](../../CVPR2026/medical_imaging/omnifm_toward_modality-robust_and_task-agnostic_federated_learning_for_heterogen.md)
 - [\[CVPR 2026\] MedFG-VQA: Low-Frequency Memory and Graph Attention for Lightweight Medical VQA](../../CVPR2026/medical_imaging/medfg-vqa_low-frequency_memory_and_graph_attention_for_lightweight_medical_vqa.md)
-- [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](../../CVPR2026/medical_imaging/medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
 
 </div>
 

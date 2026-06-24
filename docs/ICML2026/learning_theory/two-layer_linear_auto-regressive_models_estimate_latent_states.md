@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Two-Layer Linear Auto-Regressive Models Estimate Latent States
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper theoretically proves that training a **two-layer linear autoregressive model** using empirical risk minimization on data from a partially observable linear dynamical system results in the hidden layer activations spontaneously approximating (up to a similarity transform) the optimal latent state estimates pr
+  [ICML2026][Learning Theory][Kalman filtering] This paper theoretically proves that training a **two-layer linear autoregressive model** using empirical risk minimization on data from a partially observable linear dynamical system results in the hidden layer activations spontaneously approximating (up to a similarity transform) the optimal latent state estimates provided by a Kalman filter. The model learns filtering "end-to-end" without being informed of system parameters or…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "System Identification"
+  - "Autoregressive Models"
+  - "Kalman filtering"
+  - "latent state recovery"
+  - "finite-sample guarantees"
+  - "non-convex optimization landscape"
 date: 2026-05-08
-content_hash: b6cd7fbe9a3779f7
+content_hash: b5fd4c5d49ce5917
 ---
+
 # Two-Layer Linear Auto-Regressive Models Estimate Latent States
 
 **Conference**: ICML2026  
@@ -140,11 +147,11 @@ Setting $h$ to the state dimension $n$ and fitting a linear mapping $\hat{S}$, $
 
 ## Related Papers
 
+- [\[ICLR 2026\] On the Convergence of Two-Layer Kolmogorov-Arnold Networks with First-Layer Training](../../ICLR2026/learning_theory/on_the_convergence_of_two-layer_kolmogorov-arnold_networks_with_first-layer_trai.md)
+- [\[ICLR 2026\] Navigating the Latent Space Dynamics of Neural Models](../../ICLR2026/learning_theory/navigating_the_latent_space_dynamics_of_neural_models.md)
+- [\[ICLR 2026\] Two-Layer Convolutional Autoencoders Trained on Normal Data Provably Detect Unseen Anomalies](../../ICLR2026/learning_theory/two-layer_convolutional_autoencoders_trained_on_normal_data_provably_detect_unse.md)
+- [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](../../ICLR2026/learning_theory/transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 - [\[ICML 2026\] A Perturbation Approach to Unconstrained Linear Bandits](a_perturbation_approach_to_unconstrained_linear_bandits.md)
-- [\[ICLR 2026\] Epistemic Uncertainty Quantification To Improve Decisions From Black-Box Models](../../ICLR2026/learning_theory/epistemic_uncertainty_quantification_to_improve_decisions_from_black-box_models.md)
-- [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](../../ICLR2026/learning_theory/expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
-- [\[ICLR 2026\] A Sharp KL Convergence Analysis for Diffusion Models under Minimal Assumptions](../../ICLR2026/learning_theory/a_sharp_kl_convergence_analysis_for_diffusion_models_under_minimal_assumptions.md)
-- [\[ICLR 2026\] A New Approach to Controlling Linear Dynamical Systems](../../ICLR2026/learning_theory/a_new_approach_to_controlling_linear_dynamical_systems.md)
 
 </div>
 

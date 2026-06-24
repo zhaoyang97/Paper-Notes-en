@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Social Agents: Collective Intelligence Improves LLM Predictions
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] This paper proposes **Social Agents**, which use different demographic/psychological personas to conditionalize a single LLM into a group of independent evaluators in a "virtual society." Each agent scores and provides rationales for stimuli (ads/webpages/videos), and these scores are aggregated by mean to bring the "W
+  [ICLR 2026][LLM Agent][Wisdom of Crowds] This paper proposes **Social Agents**, which use different demographic/psychological personas to conditionalize a single LLM into a group of independent evaluators in a "virtual society." Each agent scores and provides rationales for stimuli (ads/webpages/videos), and these scores are aggregated by mean to bring the "Wisdom of Crowds" into LLMs. On 11 behavior prediction tasks, it achieves improvements of up to 164% on low-level tasks…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Wisdom of Crowds"
+  - "Persona Agents"
+  - "Multi-agent Ensemble"
+  - "Behavior Prediction"
+  - "Collective Decision Making"
 date: 2026-05-08
-content_hash: 592b4df8811ee031
+content_hash: 3b85a5e8798b9dfc
 ---
+
 # Social Agents: Collective Intelligence Improves LLM Predictions
 
 **Conference**: ICLR 2026  

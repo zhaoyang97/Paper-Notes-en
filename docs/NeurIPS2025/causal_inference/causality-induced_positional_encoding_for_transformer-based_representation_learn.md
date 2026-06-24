@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causality-Induced Positional Encoding for Transformer-Based Representation Learning of Non-Sequential Features
 description: >-
-  [NeurIPS 2025][Causal Inference][positional encoding] CAPE learns the causal DAG structure among features from tabular data, embeds it into hyperbolic space to generate causality-aware rotary positional encodings (RoPE)…
+  [NeurIPS 2025][Causal Inference][positional encoding] CAPE learns the causal DAG structure among features from tabular data, embeds it into hyperbolic space to generate causality-aware rotary positional encodings (RoPE), enabling Transformers to process non-sequential yet causally structured feature data, with significant performance gains on downstream multi-omics tasks.
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "rotary position encoding"
   - "multi-omics"
 date: 2026-05-08
-content_hash: daad3f6930a6ae64
+content_hash: fb72fbdf9b2b571e
 ---
 
 # Causality-Induced Positional Encoding for Transformer-Based Representation Learning of Non-Sequential Features
@@ -132,9 +132,9 @@ Using scGPT as the backbone:
 
 - [\[NeurIPS 2025\] Revealing Multimodal Causality with Large Language Models](revealing_multimodal_causality_with_large_language_models.md)
 - [\[NeurIPS 2025\] LLM Interpretability with Identifiable Temporal-Instantaneous Representation](llm_interpretability_with_identifiable_temporal-instantaneous_representation.md)
-- [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
-- [\[NeurIPS 2025\] Domain-Adapted Granger Causality for Real-Time Cross-Slice Attack Attribution in 6G Networks](domain-adapted_granger_causality_for_real-time_cross-slice_attack_attribution_in.md)
-- [\[NeurIPS 2025\] A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning](a_principle_of_targeted_intervention_for_multi-agent_reinforcement_learning.md)
+- [\[ICLR 2026\] Designing Time Series Experiments in A/B Testing with Transformer Reinforcement Learning](../../ICLR2026/causal_inference/designing_time_series_experiments_in_ab_testing_with_transformer_reinforcement_l.md)
+- [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](../../ICLR2026/causal_inference/carl_preserving_causal_structure_in_representation_learning.md)
+- [\[ICML 2025\] Learning Time-Aware Causal Representation for Model Generalization in Evolving Domains](../../ICML2025/causal_inference/learning_time-aware_causal_representation_for_model_generalization_in_evolving_d.md)
 
 </div>
 

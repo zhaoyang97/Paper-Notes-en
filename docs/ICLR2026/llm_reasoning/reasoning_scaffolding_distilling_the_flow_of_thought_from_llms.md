@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reasoning Scaffolding: Distilling the Flow of Thought from LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper proposes **Reasoning Scaffolding**, which moves beyond verbatim cloning of teacher rationales. It abstracts the teacher's long chain-of-thought into a sequence of discrete, interpretable "semantic signals" (e.g., contrast, supplement, conclusion) acting as a scaffold. Small models are trained with a dual-tas
+  [ICLR 2026][Reasoning][Reasoning Distillation] This paper proposes **Reasoning Scaffolding**, which moves beyond verbatim cloning of teacher rationales. It abstracts the teacher's long chain-of-thought into a sequence of discrete, interpretable "semantic signals" (e.g., contrast, supplement, conclusion) acting as a scaffold. Small models are trained with a dual-task objective: "predict the next signal + generate the next step guided by the signal…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning Distillation"
+  - "Semantic Signals"
+  - "Flow of Thought"
+  - "Multi-task Learning"
+  - "Small Model Reasoning"
 date: 2026-05-08
-content_hash: ebb53ac8203f8468
+content_hash: 6d3fb250473e287d
 ---
+
 # Reasoning Scaffolding: Distilling the Flow of Thought from LLMs
 
 **Conference**: ICLR 2026  
@@ -145,10 +151,10 @@ The signal predictor achieves over 75% accuracy (83%+ on 14B), rising above 85% 
 ## Related Papers
 
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
+- [\[ACL 2025\] Unveiling the Key Factors for Distilling Chain-of-Thought Reasoning](../../ACL2025/llm_reasoning/unveiling_the_key_factors_for_distilling_chain-of-thought_reasoning.md)
 - [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
-- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
-- [\[ICLR 2026\] Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking](latent-guided_reasoning_empowering_small_llms_with_large-model_thinking.md)
-- [\[ICLR 2026\] String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation](string_seed_of_thought_prompting_llms_for_distribution-faithful_and_diverse_gene.md)
+- [\[ACL 2026\] Reasoning Fails Where Step Flow Breaks](../../ACL2026/llm_reasoning/reasoning_fails_where_step_flow_breaks.md)
+- [\[ACL 2026\] How Chain-of-Thought Works? Tracing Information Flow from Decoding, Projection, and Activation](../../ACL2026/llm_reasoning/how_chain-of-thought_works_tracing_information_flow_from_decoding_projection_and.md)
 
 </div>
 

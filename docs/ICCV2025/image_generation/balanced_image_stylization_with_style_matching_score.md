@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Balanced Image Stylization with Style Matching Score
 description: >-
-  [ICCV 2025][Image Generation][Style Transfer] This paper proposes Style Matching Score (SMS), which recasts image stylization as a style distribution matching problem. Through progressive spectrum regularization and sema…
+  [ICCV 2025][Image Generation][Style Transfer] This paper proposes Style Matching Score (SMS), which recasts image stylization as a style distribution matching problem. Through progressive spectrum regularization and semantic-aware gradient refinement, SMS achieves a superior balance between style alignment and content preservation, and can be distilled into a lightweight feed-forward network for one-step stylization.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "Frequency Domain Regularization"
 date: 2026-05-08
-content_hash: eb85ed1ed6f31b25
+content_hash: c33ed1b03fdbea07
 ---
 
 # Balanced Image Stylization with Style Matching Score
@@ -181,10 +181,10 @@ Feed-forward stylization (~43 MB model, real-time inference):
 ## Related Papers
 
 - [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
-- [\[ICCV 2025\] Domain Generalizable Portrait Style Transfer](domain_generalizable_portrait_style_transfer.md)
+- [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](../../CVPR2026/image_generation/mixture_of_style_experts_for_diverse_image_stylization.md)
 - [\[ICCV 2025\] LUSD: Localized Update Score Distillation for Text-Guided Image Editing](lusd_localized_update_score_distillation_for_text-guided_image_editing.md)
-- [\[NeurIPS 2025\] A Connection Between Score Matching and Local Intrinsic Dimension](../../NeurIPS2025/image_generation/a_connection_between_score_matching_and_local_intrinsic_dimension.md)
-- [\[ICCV 2025\] AIComposer: Any Style and Content Image Composition via Feature Integration](aicomposer_any_style_and_content_image_composition_via_feature_integration.md)
+- [\[ICCV 2025\] Domain Generalizable Portrait Style Transfer](domain_generalizable_portrait_style_transfer.md)
+- [\[ICCV 2025\] InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation](infinidreamer_arbitrarily_long_human_motion_generation_via_segment_score_distill.md)
 
 </div>
 

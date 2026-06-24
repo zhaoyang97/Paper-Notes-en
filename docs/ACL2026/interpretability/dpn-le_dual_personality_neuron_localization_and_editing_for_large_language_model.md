@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DPN-LE: Dual Personality Neuron Localization and Editing for Large Language Models
 description: >-
-  [ACL 2026][Interpretability][Big Five] This paper proposes DPN-LE, which locates mutually exclusive personality-related neurons by comparing MLP activations of high/low trait samples. By intervening in only approximately 0.5% of neurons, it achieves personality control while preserving general capabilities significantly better than existing large-scale neur
+  [ACL2026 Findings][Interpretability][Personality Editing] This paper proposes DPN-LE, which locates mutually exclusive personality-related neurons by comparing MLP activations of high/low trait samples. By intervening in only approximately 0.5% of neurons, it achieves personality control while preserving general capabilities significantly better than existing large-scale neuron editing methods.
 tags:
-  - ACL 2026
-  - Interpretability
-  - Big Five
+  - "ACL2026 Findings"
+  - "Interpretability"
+  - "Personality Editing"
+  - "Neuron Localization"
+  - "Sparse Intervention"
+  - "Big Five"
+  - "Representation Analysis"
 date: 2026-05-08
-content_hash: 9dcfb26a8de65769
+content_hash: 760e947947b5339a
 ---
+
 # DPN-LE: Dual Personality Neuron Localization and Editing for Large Language Models
 
 **Conference**: ACL2026 Findings  
@@ -124,11 +129,11 @@ DPN-LE involves no training loss and no model fine-tuning. It only uses 1,000 pa
 
 ## Related Papers
 
+- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](../../ICLR2026/interpretability/precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
+- [\[ICLR 2026\] Neuron-Level Analysis of Cultural Understanding in Large Language Models](../../ICLR2026/interpretability/neuron-level_analysis_of_cultural_understanding_in_large_language_models.md)
 - [\[ICML 2026\] Dual Mechanisms of Value Expression: Intrinsic vs. Prompted Values in Large Language Models](../../ICML2026/interpretability/dual_mechanisms_of_value_expression_intrinsic_vs_prompted_values_in_large_langua.md)
-- [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](tracing_relational_knowledge_recall_in_large_language_models.md)
 
 </div>
 

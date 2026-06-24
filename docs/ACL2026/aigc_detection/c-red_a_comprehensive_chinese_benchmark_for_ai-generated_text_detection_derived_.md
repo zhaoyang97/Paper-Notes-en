@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts
 description: >-
-  [ACL 2026][AIGC Detection][AUROC] C-ReD constructs a Chinese AI-generated text detection benchmark covering five writing scenarios, nine LLM generators, and real-world prompts. It demonstrates that detection difficulty depends heavily on the domain, generator, and prompt, while fine-tuning on C-ReD significantly enhances generalization to unseen models
+  [ACL2026 Findings][AIGC Detection][AI-generated text detection] C-ReD constructs a Chinese AI-generated text detection benchmark covering five writing scenarios, nine LLM generators, and real-world prompts. It demonstrates that detection difficulty depends heavily on the domain, generator, and prompt, while fine-tuning on C-ReD significantly enhances generalization to unseen models and external Chinese data.
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - AUROC
+  - "ACL2026 Findings"
+  - "AIGC Detection"
+  - "AI-generated text detection"
+  - "Chinese benchmark"
+  - "real-world prompts"
+  - "generator generalization"
+  - "AUROC"
 date: 2026-05-08
-content_hash: a5d55be600133086
+content_hash: a36beb127b52bc91
 ---
+
 # C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts
 
 **Conference**: ACL2026 Findings  
@@ -148,10 +153,10 @@ External M4 Chinese Q&A transfer verification demonstrates that fine-tuning only
 ## Related Papers
 
 - [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
+- [\[ICLR 2026\] TSM-Bench: Detecting LLM-Generated Text in Real-World Wikipedia Editing Practices](../../ICLR2026/aigc_detection/tsm-bench_detecting_llm-generated_text_in_real-world_wikipedia_editing_practices.md)
 - [\[ACL 2026\] Who Wrote This Line? Evaluating the Detection of LLM-Generated Classical Chinese Poetry](who_wrote_this_line_evaluating_the_detection_of_llm-generated_classical_chinese_.md)
 - [\[ACL 2026\] Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences](can_ai-generated_persuasion_be_detected_persuaficial_benchmark_and_ai_vs_human_l.md)
 - [\[ACL 2026\] AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)
-- [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
 
 </div>
 

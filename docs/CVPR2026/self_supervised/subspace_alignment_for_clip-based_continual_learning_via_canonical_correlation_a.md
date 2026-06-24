@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Subspace Alignment for CLIP-based Continual Learning via Canonical Correlation Analysis
 description: >-
-  [CVPR 2026][Others][CLIP] Addressing the issue where the "visual encoder drift is significantly greater than the text encoder drift" in CLIP-based continual learning (termed Asymmetric Drift by the authors), this paper proposes CCA-CL. It accumulates visual-text covariance statistics across tasks and employs closed-form Canonical Correlation An
+  [CVPR 2026][Self-Supervised Learning][CLIP] Addressing the issue where the "visual encoder drift is significantly greater than the text encoder drift" in CLIP-based continual learning (termed Asymmetric Drift by the authors), this paper proposes CCA-CL. It accumulates visual-text covariance statistics across tasks and employs closed-form Canonical Correlation Analysis (CCA) to solve for a shared subspace that maximizes cross-modal correlation. This pulls both modalities back…
 tags:
-  - CVPR 2026
-  - Others
-  - CLIP
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "CLIP"
+  - "Continual Learning"
+  - "Asymmetric Drift"
+  - "Canonical Correlation Analysis"
+  - "Subspace Alignment"
 date: 2026-05-08
-content_hash: eb905eb9ca20be20
+content_hash: 9de039459b055e9c
 ---
+
 # Subspace Alignment for CLIP-based Continual Learning via Canonical Correlation Analysis
 
 **Conference**: CVPR 2026  
@@ -142,15 +147,15 @@ Each component contributes positively: CCA Subspace Alignment is the primary dri
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Continuous Subspace Optimization for Continual Learning (CoSO)](../../NeurIPS2025/self_supervised/continuous_subspace_optimization_for_continual_learning.md)
 - [\[CVPR 2026\] A Faster Path to Continual Learning](a_faster_path_to_continual_learning.md)
 - [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](is_parameter_isolation_better_for_prompt-based_continual_learning.md)
 - [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](exemplar-free_continual_learning_for_state_space_models.md)
-- [\[CVPR 2026\] Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity](parameter-efficient_continual_learning_for_enhancing_plasticity_without_forgetti.md)
-- [\[CVPR 2026\] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)
 
 </div>
 

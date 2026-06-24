@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Single-View Sufficiency: CVBench for Cross-View Human Understanding
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Addressing the loophole in existing MLLM benchmarks that default to "single-view sufficiency" and only reward single-image recognition, this work constructs CVBench—3,000 human understanding questions where each item is verifiably "unsolvable via single-view, solvable via cross-view" (12 spatio-temporal tasks, 4-way sy
+  [CVPR 2026][Human Understanding][Cross-view understanding] Addressing the loophole in existing MLLM benchmarks that default to "single-view sufficiency" and only reward single-image recognition, this work constructs CVBench—3,000 human understanding questions where each item is verifiably "unsolvable via single-view, solvable via cross-view" (12 spatio-temporal tasks, 4-way synchronized cameras). Evaluation reveals that even the strongest models lag nearly 50 points behind hu…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Cross-view understanding"
+  - "MLLM evaluation benchmark"
+  - "Multi-view fusion"
+  - "Single-view bias"
+  - "Spatio-temporal reasoning"
 date: 2026-05-08
-content_hash: 9c7750749b5f1019
+content_hash: b4e8587af93c3bdc
 ---
+
 # Beyond Single-View Sufficiency: CVBench for Cross-View Human Understanding
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ A manual review of 500 failure cases (250 spatial + 250 temporal) categorized pr
 
 ## Related Papers
 
-- [\[CVPR 2026\] JUMP-Hand: Learning Joint-wise Uncertainty to Gate Mixture of View Experts for Multi-View 3D Hand Reconstruction](jump-hand_learning_joint-wise_uncertainty_to_gate_mixture_of_view_experts_for_mu.md)
 - [\[CVPR 2026\] Mocap-2-to-3: Multi-view Lifting for Monocular Motion Recovery with 2D Pretraining](mocap-2-to-3_multi-view_lifting_for_monocular_motion_recovery_with_2d_pretrainin.md)
 - [\[CVPR 2026\] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification](view-aware_semantic_alignment_for_aerial-ground_person_re-identification.md)
+- [\[CVPR 2026\] MV-Fashion: Towards Enabling Virtual Try-On and Size Estimation with Multi-View Paired Data](mv-fashion_towards_enabling_virtual_try-on_and_size_estimation_with_multi-view_p.md)
 - [\[ECCV 2024\] UPose3D: Uncertainty-Aware 3D Human Pose Estimation with Cross-View and Temporal Cues](../../ECCV2024/human_understanding/upose3d_uncertainty-aware_3d_human_pose_estimation_with_cross-view_and_temporal_.md)
-- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
+- [\[CVPR 2026\] Bridging Facial Understanding and Animation via Language Models](bridging_facial_understanding_and_animation_via_language_models.md)
 
 </div>
 

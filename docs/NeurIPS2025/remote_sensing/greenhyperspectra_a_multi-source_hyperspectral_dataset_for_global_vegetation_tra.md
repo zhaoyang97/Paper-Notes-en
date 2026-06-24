@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction
 description: >-
-  [NeurIPS 2025][Remote Sensing][Hyperspectral dataset] GreenHyperSpectra constructs a pretraining dataset of 140,000+ multi-source hyperspectral vegetation samples spanning proximal, airborne…
+  [NeurIPS 2025][Remote Sensing][Hyperspectral dataset] GreenHyperSpectra constructs a pretraining dataset of 140,000+ multi-source hyperspectral vegetation samples spanning proximal, airborne, and satellite platforms. Label-efficient regression models trained via semi-supervised and self-supervised methods (MAE, GAN, RTM-AE) comprehensively outperform fully supervised baselines on 7 plant trait prediction tasks, with particularly pronounced advantages under label-scarce and ou…
 tags:
   - "NeurIPS 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "cross-sensor generalization"
   - "masked autoencoder"
 date: 2026-05-08
-content_hash: 8a614c65630c1689
+content_hash: c56cd2b72730ba18
 ---
 
 # GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction
@@ -128,10 +128,10 @@ MAE uses MSE combined with weighted cosine similarity as the reconstruction loss
 ## Related Papers
 
 - [\[NeurIPS 2025\] Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction](connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)
-- [\[NeurIPS 2025\] ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning](chamaevit_unifying_channelaware_masked_autoencoders_and_mult.md)
+- [\[CVPR 2025\] MFogHub: Bridging Multi-Regional and Multi-Satellite Data for Global Marine Fog Detection and Forecasting](../../CVPR2025/remote_sensing/mfoghub_bridging_multi-regional_and_multi-satellite_data_for_global_marine_fog_d.md)
 - [\[NeurIPS 2025\] C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)
-- [\[NeurIPS 2025\] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)
-- [\[ICCV 2025\] SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images](../../ICCV2025/remote_sensing/smarties_spectrum-aware_multi-sensor_auto-encoder_for_remote_sensing_images.md)
+- [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](../../CVPR2026/remote_sensing/yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
+- [\[NeurIPS 2025\] ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning](chamaevit_unifying_channelaware_masked_autoencoders_and_mult.md)
 
 </div>
 

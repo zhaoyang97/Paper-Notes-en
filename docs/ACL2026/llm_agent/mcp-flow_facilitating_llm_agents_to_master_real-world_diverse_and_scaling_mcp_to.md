@@ -4,12 +4,16 @@ title: >-
 description: >-
   [ACL 2026][LLM Agent][Model Context Protocol] MCP-Flow proposes a Web Agent-based automated pipeline to collect tool information from 1166 real-world MCP servers and synthesize 68,733 high-quality training data points. This allows small-scale fine-tuned models (0.6B-8B) to outperform SOTA large models like GPT-4o in MCP tool utilization.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Model Context Protocol
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Model Context Protocol"
+  - "Tool Use"
+  - "Automated Data Construction"
+  - "Large-scale Benchmark"
 date: 2026-05-08
-content_hash: 49d8cb8ae9e1b3ee
+content_hash: 6199ab74fb6c6d2d
 ---
+
 # MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools
 
 **Conference**: ACL 2026  
@@ -151,11 +155,11 @@ Standard instruction fine-tuning is applied to train Qwen-0.6B/4B and Llama3.1-8
 
 ## Related Papers
 
-- [\[ICML 2026\] MCP-Persona: 用环境模拟评估 LLM agent 在真实个人化应用上的能力](../../ICML2026/llm_agent/mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
-- [\[ACL 2026\] AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts](agencybench_benchmarking_the_frontiers_of_autonomous_agents_in_1m-token_real-wor.md)
+- [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](../../ICLR2026/llm_agent/mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
+- [\[ICLR 2026\] MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use](../../ICLR2026/llm_agent/mcpmark_a_benchmark_for_stress-testing_realistic_and_comprehensive_mcp_use.md)
+- [\[ICML 2026\] MCP-Persona: Evaluating LLM Agent Capabilities in Real-World Personal Applications via Environment Simulation](../../ICML2026/llm_agent/mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
 - [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
-- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
-- [\[ACL 2026\] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors](when_agents_look_the_same_quantifying_distillation-induced_similarity_in_tool-us.md)
+- [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](../../ICLR2026/llm_agent/osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
 
 </div>
 

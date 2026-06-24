@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] X-WIN: Building Chest Radiograph World Model via Predictive Sensing
 description: >-
-  [CVPR 2026][Medical Imaging][World Models] The X-WIN chest radiograph world model is proposed, integrating 3D CT spatial knowledge into CXR representation learning for the first time. By learning to predict 2D projections of CT scans at various rotation angles, the model internalizes 3D anatomical structures. Combined with affinity-guided contrastive alignment
+  [CVPR 2026][Medical Imaging][World Model] The X-WIN chest radiograph world model is proposed, integrating 3D CT spatial knowledge into CXR representation learning for the first time. By learning to predict 2D projections of CT scans at various rotation angles, the model internalizes 3D anatomical structures. Combined with affinity-guided contrastive alignment and structure-preserving domain adaptation, it achieves SOTA results via linear probing across 6 CXR benchmarks.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - World Models
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "World Model"
+  - "Chest Radiograph Representation Learning"
+  - "CT Knowledge Distillation"
+  - "Contrastive Learning"
+  - "Domain Adaptation"
 date: 2026-05-08
-content_hash: 69864dd40d59a20e
+content_hash: 9ddecfa3554c69b9
 ---
+
 # X-WIN: Building Chest Radiograph World Model via Predictive Sensing
 
 **Conference**: CVPR 2026  
@@ -143,8 +148,8 @@ Using a VQ-GAN decoder and the FDK algorithm to reconstruct 3D CT volumes:
 - [\[CVPR 2026\] MRI Contrast Enhancement Kinetics World Model](mri_contrast_enhancement_kinetics_world_model.md)
 - [\[CVPR 2026\] Building Robust Vision Encoders for Cross-Dataset Evaluation in Immunofluorescent Microscopy](building_robust_vision_encoders_for_cross-dataset_evaluation_in_immunofluorescen.md)
 - [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](../../AAAI2026/medical_imaging/pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
-- [\[CVPR 2026\] Temporal Inversion for Learning Interval Change in Chest X-Rays](temporal_inversion_for_learning_interval_change_in_chest_x-rays.md)
 - [\[CVPR 2026\] Beyond the Static-World: Lifelong Learning for All-in-One Medical Image Restoration](beyond_the_static-world_lifelong_learning_for_all-in-one_medical_image_restorati.md)
+- [\[CVPR 2026\] Temporal Inversion for Learning Interval Change in Chest X-Rays](temporal_inversion_for_learning_interval_change_in_chest_x-rays.md)
 
 </div>
 

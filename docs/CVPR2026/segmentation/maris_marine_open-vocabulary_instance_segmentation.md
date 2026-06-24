@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MARIS: Marine Open-Vocabulary Instance Segmentation
 description: >-
-  [CVPR 2026][Segmentation][CLIP] This paper introduces MARIS, the first fine-grained underwater open-vocabulary instance segmentation benchmark (16K images, 158 fine-grained categories), and proposes a unified framework consisting of a Geometric Prior Enhancement Module (GPEM) and a Semantic Alignment Injection Mechanism (SAIM). By leveraging geometri
+  [CVPR 2026][Segmentation][Underwater Instance Segmentation] This paper introduces MARIS, the first fine-grained underwater open-vocabulary instance segmentation benchmark (16K images, 158 fine-grained categories), and proposes a unified framework consisting of a Geometric Prior Enhancement Module (GPEM) and a Semantic Alignment Injection Mechanism (SAIM). By leveraging geometric priors from depth maps to counter underwater visual degradation and employing underwater-aware tex…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Underwater Instance Segmentation"
+  - "Open-Vocabulary"
+  - "Geometric Priors"
+  - "Semantic Alignment"
+  - "CLIP"
 date: 2026-05-08
-content_hash: c4b091bd3aa02a81
+content_hash: bf4f7b7d3affc466
 ---
+
 # MARIS: Marine Open-Vocabulary Instance Segmentation
 
 **Conference**: CVPR 2026  
@@ -143,12 +148,12 @@ Adding either module improves performance, but their combination is essential fo
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation](seeing_both_sides_towards_bidirectional_semantic_alignment_for_open-vocabulary_c.md)
 - [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
 - [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
 - [\[CVPR 2026\] Mitigating Objectness Bias and Region-to-Text Misalignment for Open-Vocabulary Panoptic Segmentation](mitigating_objectness_bias_and_region-to-text_misalignment_for_open-vocabulary_p.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DP-Fusion: Token-Level Differentially Private Inference for Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] DP-Fusion provides provable token-level differential privacy for each generated token during LLM inference. It splits the context into a "public version" and multiple "private versions" that reveal sensitive information group by group for separate forward passes. It then uses binary search to find a mixing weight $\lam
+  [ICLR2026][LLM Safety][Differentially Private Inference] DP-Fusion provides provable token-level differential privacy for each generated token during LLM inference. It splits the context into a "public version" and multiple "private versions" that reveal sensitive information group by group for separate forward passes. It then uses binary search to find a mixing weight $\lambda$ such that the Rényi divergence between the mixed distribution and the public distribution is const…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Differentially Private Inference"
+  - "token-level privacy"
+  - "document sanitization"
+  - "Rényi divergence"
+  - "distribution mixing"
 date: 2026-05-08
-content_hash: 25342d65a1813ef4
+content_hash: 4f96fa1ecb41f9b0
 ---
+
 # DP-Fusion: Token-Level Differentially Private Inference for Large Language Models
 
 **Conference**: ICLR2026  
@@ -140,8 +146,8 @@ Key Conclusion: At comparable privacy levels, Ours provides approximately **6x**
 - [\[ICML 2025\] Cascade: Token-Sharded Private LLM Inference](../../ICML2025/llm_safety/cascade_token-sharded_private_llm_inference.md)
 - [\[ICLR 2026\] Secret-Protected Evolution for Differentially Private Synthetic Text Generation](secret-protected_evolution_for_differentially_private_synthetic_text_generation.md)
 - [\[ICLR 2026\] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction](hiddenecho_mitigating_noise_amplification_in_differentially_private_llms_with_hi.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](../../ACL2026/llm_safety/subject-level_inference_for_realistic_text_anonymization_evaluation.md)
-- [\[ICLR 2026\] AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization](adpo_enhancing_the_adversarial_robustness_of_large_vision-language_models_with_p.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations
 description: >-
-  [ICLR 2026][LLM Reasoning][latent representation] Addressing the "overthinking" problem in slow-thinking reasoning models that generate thousands of tokens, this paper empirically finds that reasoning trajectories are highly redundant (randomly deleting 50% of tokens results in only a 2-point accuracy drop). It proposes Latent Reasoning Tuning (LRT), which uses a ligh
+  [ICLR 2026][Reasoning][Efficient Reasoning] Addressing the "overthinking" problem in slow-thinking reasoning models that generate thousands of tokens, this paper empirically finds that reasoning trajectories are highly redundant (randomly deleting 50% of tokens results in only a 2-point accuracy drop). It proposes Latent Reasoning Tuning (LRT), which uses a lightweight reasoning network $G_\phi$ to map inputs into fixed-length implicit latent reasoning tokens via a **single f…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - latent representation
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Efficient Reasoning"
+  - "Implicit Reasoning"
+  - "latent representation"
+  - "overthinking"
+  - "reasoning network"
 date: 2026-05-08
-content_hash: fceebd0f9540a838
+content_hash: 0ec387020f405ca4
 ---
+
 # Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations
 
 **Conference**: ICLR 2026  
@@ -144,15 +149,14 @@ The gain in pass@4 is particularly significant, indicating that latent reasoning
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_with_prefix_cons.md)
-- [\[ICLR 2026\] ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
-- [\[ICLR 2026\] Off-Trajectory Reasoning: Can LLMs Collaborate on Reasoning Trajectories?](off-trajectory_reasoning_can_llms_collaborate_on_reasoning_trajectories.md)
 - [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](../../ICML2026/llm_reasoning/prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
+- [\[ICLR 2026\] Off-Trajectory Reasoning: Can LLMs Collaborate on Reasoning Trajectories?](off-trajectory_reasoning_can_llms_collaborate_on_reasoning_trajectories.md)
+- [\[ICLR 2026\] $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 
 </div>
 

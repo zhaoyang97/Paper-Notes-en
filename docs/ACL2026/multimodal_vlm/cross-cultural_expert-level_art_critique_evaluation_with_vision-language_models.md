@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][VLM-as-Judge] This paper proposes Vulca-Bench, a three-tier evaluation framework (Automated Metrics + Single-Judge Scoring + Human Sigmoid Calibration) covering 6 major art traditions, 165 cultural dimensions, and an L1–L5 "visual description → cultural interpretation" hierarchy. For the first time, it quantitatively reveals that ac
+  [ACL 2026][Multimodal VLM][Cross-cultural Evaluation] This paper proposes Vulca-Bench, a three-tier evaluation framework (Automated Metrics + Single-Judge Scoring + Human Sigmoid Calibration) covering 6 major art traditions, 165 cultural dimensions, and an L1–L5 "visual description → cultural interpretation" hierarchy. For the first time, it quantitatively reveals that across 15 VLMs, "model performance drops significantly in deep cultural interpretation…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - VLM-as-Judge
-  - Vulca-Bench
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Cross-cultural Evaluation"
+  - "Art Critique"
+  - "VLM-as-Judge"
+  - "Human Calibration"
+  - "Vulca-Bench"
 date: 2026-05-08
-content_hash: 7b2acd01b5e2dc14
+content_hash: cb1b3571574d6282
 ---
+
 # Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models
 
 **Conference**: ACL 2026  
@@ -160,8 +164,8 @@ Ours does not train the VLM but only trains the two sigmoid parameters $(a,b)$ i
 - [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
 - [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](cross-modal_taxonomic_generalization_in_vision-_language_models.md)
 - [\[ACL 2025\] MultiMM: Cultural Bias Matters — Cross-Cultural Benchmark for Multimodal Metaphors](../../ACL2025/multimodal_vlm/multimm_cultural_metaphor.md)
-- [\[ACL 2026\] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding](vulca-bench_a_multicultural_vision-language_benchmark_for_evaluating_cultural_un.md)
 - [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
+- [\[ACL 2026\] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding](vulca-bench_a_multicultural_vision-language_benchmark_for_evaluating_cultural_un.md)
 
 </div>
 

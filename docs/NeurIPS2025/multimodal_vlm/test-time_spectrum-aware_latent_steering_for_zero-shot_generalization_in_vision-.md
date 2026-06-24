@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Test-time adaptation] This paper proposes STS (Spectrum-Aware Test-Time Steering), a lightweight test-time adaptation method that extracts a low-dimensional semantic subspace via SVD decomp…
+  [NeurIPS 2025][Multimodal VLM][Test-time adaptation] This paper proposes STS (Spectrum-Aware Test-Time Steering), a lightweight test-time adaptation method that extracts a low-dimensional semantic subspace via SVD decomposition of text embeddings, and learns a small set of coefficients to steer text prototypes within this subspace to handle distribution shift. STS requires no backpropagation through large encoders, runs 8× faster than TPT with 12× less memory…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "text prototype steering"
   - "parameter efficiency"
 date: 2026-05-08
-content_hash: 377ed13f87b73555
+content_hash: a3da63a6fa28df82
 ---
 
 # Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models

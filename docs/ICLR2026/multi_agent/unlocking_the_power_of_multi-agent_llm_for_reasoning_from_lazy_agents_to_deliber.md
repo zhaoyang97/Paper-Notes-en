@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlocking the Power of Multi-Agent LLM for Reasoning: From Lazy Agents to Deliberation
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] This paper identifies the "lazy agent" phenomenon in multi-agent LLM reasoning frameworks (ReMA)—where one agent performs nearly all reasoning while the other merely repeats. It theoretically identifies the root cause as the $1/T$ normalization term in the multi-turn GRPO loss, which biases towards fewer turns. The aut
+  [ICLR 2026][Multi-Agent][Multi-agent reasoning] This paper identifies the "lazy agent" phenomenon in multi-agent LLM reasoning frameworks (ReMA)—where one agent performs nearly all reasoning while the other merely repeats. It theoretically identifies the root cause as the $1/T$ normalization term in the multi-turn GRPO loss, which biases towards fewer turns. The authors propose Dr. MAMR: removing this normalization + Shapley-style causal influence measurement + verifiable rew…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-agent reasoning"
+  - "lazy agents"
+  - "multi-turn GRPO"
+  - "causal influence"
+  - "verifiable reward"
 date: 2026-05-08
-content_hash: 541ee87868fb8668
+content_hash: 9ef3eb0531403849
 ---
+
 # Unlocking the Power of Multi-Agent LLM for Reasoning: From Lazy Agents to Deliberation
 
 **Conference**: ICLR 2026  

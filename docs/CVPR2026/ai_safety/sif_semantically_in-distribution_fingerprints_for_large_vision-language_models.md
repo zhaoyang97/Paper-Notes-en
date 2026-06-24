@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address the copyright tracking of misappropriated open-source Large Vision-Language Models (LVLMs), SIF first utilizes a Semantic Divergence Attack (SDA) to expose the fatal flaw of existing fingerprints—being "semantically anomalous and easily detected." It then proposes a non-intrusive fingerprinting scheme that d
+  [CVPR 2026][AI Safety][Model Fingerprinting] To address the copyright tracking of misappropriated open-source Large Vision-Language Models (LVLMs), SIF first utilizes a Semantic Divergence Attack (SDA) to expose the fatal flaw of existing fingerprints—being "semantically anomalous and easily detected." It then proposes a non-intrusive fingerprinting scheme that distills text decoding watermarks into trigger images and performs robust optimization against worst-case representa…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Model Fingerprinting"
+  - "Copyright Verification"
+  - "Vision-Language Models"
+  - "Text Watermark Distillation"
+  - "Adversarial Robustness"
 date: 2026-05-08
-content_hash: c10f0acfe03d828a
+content_hash: 99d96035c91b1762
 ---
+
 # SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -134,15 +140,16 @@ SIF remains effective under SDA, whereas Proflingo/IF drop to zero. SIF maintain
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
 - [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 - [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
+- [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
 - [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
-- [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
-- [\[CVPR 2026\] Unlearning without Forgetting: Securely Removing Targeted Concepts from Large-Scale Vision-Language Open-Vocabulary Detectors](unlearning_without_forgetting_securely_removing_targeted_concepts_from_large-sca.md)
 
 </div>
 

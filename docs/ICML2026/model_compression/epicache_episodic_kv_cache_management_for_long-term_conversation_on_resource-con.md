@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper proposes EpiCache, a training-free KV cache management framework. By employing block-wise prefilling to control memory bounds, episodic clustering to preserve topic-relevant context, and sensitivity-aware budget allocation for layer-wise optimization, it achieves near full-cache accuracy with 4-6x compressio
+  [ICML 2026][Model Compression][KV cache compression] This paper proposes EpiCache, a training-free KV cache management framework. By employing block-wise prefilling to control memory bounds, episodic clustering to preserve topic-relevant context, and sensitivity-aware budget allocation for layer-wise optimization, it achieves near full-cache accuracy with 4-6x compression and reduces peak memory by 3.7x across three long-conversation QA benchmarks.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "long-term conversation"
+  - "episodic management"
+  - "block-wise prefilling"
+  - "memory-constrained inference"
 date: 2026-05-08
-content_hash: bb7ce9c5cdaf581d
+content_hash: db581a176fac5fb5
 ---
+
 # EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments
 
 **Conference**: ICML 2026  
@@ -134,15 +140,16 @@ Consider a 90K token dialogue history covering "Travel Planning," "Healthy Eatin
 This work intersects with KV cache compression, retrieval-based dialogue memory, and cache retrieval methods. The key insight is that KV cache management should be **topic-aware** rather than just query-agnostic or query-dependent—organizing the cache by topic and retrieving relevant episodes balances generality and relevance. This logic could extend to multimodal long-context scenarios.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments](../../NeurIPS2025/model_compression/keydiff_key_similarity-based_kv_cache_eviction_for_long-context_llm_inference_in.md)
+- [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
 - [\[ICML 2026\] Memory-Efficient Partitioned DNN Inference on Resource-Constrained Android Crowds](memory-efficient_partitioned_dnn_inference_on_resource-constrained_android_crowd.md)
 - [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
-- [\[ICML 2026\] A Queueing-Theoretic Framework for Stability Analysis of LLM Inference with KV Cache Memory Constraints](a_queueing-theoretic_framework_for_stability_analysis_of_llm_inference_with_kv_c.md)
-- [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
+- [\[ACL 2026\] The Pitfalls of KV Cache Compression](../../ACL2026/model_compression/the_pitfalls_of_kv_cache_compression.md)
 
 </div>
 

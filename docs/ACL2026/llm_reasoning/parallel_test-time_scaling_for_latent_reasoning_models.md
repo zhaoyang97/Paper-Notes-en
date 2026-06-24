@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Parallel Test-Time Scaling for Latent Reasoning Models
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper introduces parallel test-time scaling (parallel TTS) to latent reasoning models for the first time. It proposes two stochastic sampling strategies based on uncertainty theory (MC-Dropout and Additive Gaussian Noise) and a Latent Reward Model (LatentRM) trained with step-level contrastive learning. This enabl
+  [ACL 2026 Main Conference][Reasoning][Test-time scaling] This paper introduces parallel test-time scaling (parallel TTS) to latent reasoning models for the first time. It proposes two stochastic sampling strategies based on uncertainty theory (MC-Dropout and Additive Gaussian Noise) and a Latent Reward Model (LatentRM) trained with step-level contrastive learning. This enables models reasoning in continuous vector spaces to achieve stable performance gains through parallel sa…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026 Main Conference"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "latent reasoning"
+  - "stochastic sampling"
+  - "reward models"
+  - "parallel inference"
 date: 2026-05-08
-content_hash: 3eb39de07242a073
+content_hash: 5a37f9730b01dfa4
 ---
+
 # Parallel Test-Time Scaling for Latent Reasoning Models
 
 **Conference**: ACL 2026 Main Conference  
@@ -138,9 +144,9 @@ Aggregation Strategy Comparison (COCONUT, GSM-Test, N=32):
 ## Related Papers
 
 - [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
-- [\[ACL 2026\] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models](scaling_test-time_compute_to_achieve_ioi_gold_medal_with_open-weight_models.md)
-- [\[NeurIPS 2025\] The Virtues of Brevity: Avoid Overthinking in Parallel Test-Time Reasoning](../../NeurIPS2025/llm_reasoning/the_virtues_of_brevity_avoid_overthinking_in_parallel_test-time_reasoning.md)
-- [\[ACL 2026\] Scaling Evaluation-Time Compute with Reasoning Models as Evaluators](scaling_evaluation-time_compute_with_reasoning_models_as_evaluators.md)
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
+- [\[ICLR 2026\] Generalized Parallel Scaling with Interdependent Generations](../../ICLR2026/llm_reasoning/generalized_parallel_scaling_with_interdependent_generations.md)
+- [\[ICML 2026\] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models](../../ICML2026/llm_reasoning/stabilizing_recurrent_dynamics_for_test-time_scalable_latent_reasoning_in_looped.md)
 - [\[ACL 2026\] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models](reprobe_efficient_test-time_scaling_of_multi-step_reasoning_by_probing_internal_.md)
 
 </div>

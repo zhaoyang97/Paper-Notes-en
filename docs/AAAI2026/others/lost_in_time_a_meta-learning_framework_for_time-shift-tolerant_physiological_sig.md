@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lost in Time? A Meta-Learning Framework for Time-Shift-Tolerant Physiological Signal Transformation
 description: >-
-  [AAAI 2026][Meta-Learning] This paper proposes ShiftSyncNet, a bi-level meta-learning optimization framework that trains a SyncNet to learn temporal offsets between training signal pairs and leverages the Fourier shift t…
+  [AAAI 2026][Meta-Learning] This paper proposes ShiftSyncNet, a bi-level meta-learning optimization framework that trains a SyncNet to learn temporal offsets between training signal pairs and leverages the Fourier shift theorem to automatically correct label alignment, achieving waveform transformation accuracy improvements of 9.4%, 6.0%, and 12.8% across three datasets respectively.
 tags:
   - "AAAI 2026"
   - "Meta-Learning"
@@ -11,7 +11,7 @@ tags:
   - "Noisy Label Learning"
   - "Physiological Signal Waveform Transformation"
 date: 2026-05-08
-content_hash: 660d9fc7d2299a65
+content_hash: d6218b1f154264ac
 ---
 
 # Lost in Time? A Meta-Learning Framework for Time-Shift-Tolerant Physiological Signal Transformation
@@ -150,11 +150,11 @@ ShiftSyncNet meets the AAMI standard (MAE < 5 mmHg), reducing SBP/DBP MAE by up 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Open Set Label Shift with Test Time Out-of-Distribution Reference](../../CVPR2025/others/open_set_label_shift_with_test_time_out-of-distribution_reference.md)
 - [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](../../ICML2026/others/tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
+- [\[ACL 2025\] Learning to Reason from Feedback at Test-Time](../../ACL2025/others/learning_to_reason_from_feedback_at_test-time.md)
 - [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
-- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
-- [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](../../NeurIPS2025/others/deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
-- [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](../../CVPR2026/others/vit3_unlocking_test_time_training_in_vision.md)
+- [\[CVPR 2026\] Bootstrapping Multi-view Learning for Test-time Noisy Correspondence](../../CVPR2026/others/bootstrapping_multi-view_learning_for_test-time_noisy_correspondence.md)
 
 </div>
 

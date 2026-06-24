@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Retrieving to Recover: Towards Incomplete Audio-Visual Question Answering via Semantic-consistent Purification
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper proposes the R2ScP framework, which shifts the missing modality handling paradigm in AVQA from traditional generative completion to retrieval-based recovery. By employing cross-modal retrieval and a context-aware adaptive purification mechanism to eliminate retrieval noise, it significantly improves question
+  [ACL 2026][Audio & Speech][Audio-Visual Question Answering] This paper proposes the R2ScP framework, which shifts the missing modality handling paradigm in AVQA from traditional generative completion to retrieval-based recovery. By employing cross-modal retrieval and a context-aware adaptive purification mechanism to eliminate retrieval noise, it significantly improves question-answering performance in scenarios with incomplete modalities.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Audio-Visual Question Answering"
+  - "Missing Modality"
+  - "Retrieval-based Recovery"
+  - "Semantic Purification"
+  - "Mixture-of-Experts"
 date: 2026-05-08
-content_hash: 75f27b3eba6c399d
+content_hash: 7a26e663dd3f16bf
 ---
+
 # Retrieving to Recover: Towards Incomplete Audio-Visual Question Answering via Semantic-consistent Purification
 
 **Conference**: ACL 2026  
@@ -141,7 +147,7 @@ In addition to the standard cross-entropy loss $\mathcal{L}_{task}$, a semantic 
 - [\[ICLR 2026\] Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](../../ICLR2026/audio_speech/query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)
 - [\[ACL 2026\] Jamendo-MT-QA: A Benchmark for Multi-Track Comparative Music Question Answering](jamendo-mt-qa_a_benchmark_for_multi-track_comparative_music_question_answering.md)
 - [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
-- [\[ACL 2025\] Sparsify: Learning Sparsity for Effective and Efficient Music Performance Question Answering](../../ACL2025/audio_speech/sparsify_music_avqa.md)
+- [\[ICML 2026\] Multimodal Fusion via Self-Consistent Task-Gradient Fields](../../ICML2026/audio_speech/multimodal_fusion_via_self-consistent_task-gradient_fields.md)
 
 </div>
 

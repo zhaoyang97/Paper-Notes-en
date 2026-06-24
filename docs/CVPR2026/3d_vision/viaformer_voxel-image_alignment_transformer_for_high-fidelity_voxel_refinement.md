@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VIAFormer: Voxel-Image Alignment Transformer for High-Fidelity Voxel Refinement
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] VIAFormer reformulates "repairing incomplete and noisy voxels" as a **Conditioned Voxel Refinement** task guided by multi-view images. It explicitly assigns 3D coordinates to 2D image tokens using an Image Index, learns a direct "dirty-to-clean" correction trajectory via Correctional Flow, and achieves bidirectional cr
+  [CVPR 2026][3D Vision][Voxel Refinement] VIAFormer reformulates "repairing incomplete and noisy voxels" as a **Conditioned Voxel Refinement** task guided by multi-view images. It explicitly assigns 3D coordinates to 2D image tokens using an Image Index, learns a direct "dirty-to-clean" correction trajectory via Correctional Flow, and achieves bidirectional cross-modal fusion with a Hybrid Stream Transformer. It reaches SOTA performance on both Vision Foundation Model (VFM) ou…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Voxel Refinement"
+  - "Multi-view Guidance"
+  - "Flow Matching"
+  - "Cross-modal Alignment"
+  - "3D Generation"
 date: 2026-05-08
-content_hash: 2d4b6fa672e07ac8
+content_hash: 85fb0e97b044da64
 ---
+
 # VIAFormer: Voxel-Image Alignment Transformer for High-Fidelity Voxel Refinement
 
 **Conference**: CVPR 2026  
@@ -139,9 +144,9 @@ VIAFormer improves IoU by 3.4%~5.0% on VFM output correction; the gain on synthe
 
 - [\[CVPR 2026\] Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow](easy3e_feed-forward_3d_asset_editing_via_rectified_voxel_flow.md)
 - [\[CVPR 2026\] DynamicTree: Interactive Real Tree Animation via Sparse Voxel Spectrum](dynamictree_interactive_real_tree_animation_via_sparse_voxel_spectrum.md)
+- [\[CVPR 2026\] LATTICE: Democratize High-Fidelity 3D Generation at Scale](lattice_democratize_high-fidelity_3d_generation_at_scale.md)
 - [\[CVPR 2026\] MeshWeaver: Sparse-Voxel-Guided Surface Weaving for Autoregressive Mesh Generation](meshweaver_sparse-voxel-guided_surface_weaving_for_autoregressive_mesh_generatio.md)
 - [\[CVPR 2026\] PatchScene: Patch-based Voxel Diffusion Model for Large-Scale Scene Completion](patchscene_patch-based_voxel_diffusion_model_for_large-scale_scene_completion.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
 
 </div>
 

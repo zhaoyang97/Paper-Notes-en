@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MixLinear: Extreme Low Resource Multivariate Time Series Forecasting with 0.1K Parameters
 description: >-
-  [ICLR 2026][Time Series][Paper Note] MixLinear employs a dual-pathway linear architecture of "temporal segmentation for local trends + frequency adaptive low-rank filtering for global trends," reducing long-term time series forecasting (LTSF) model parameters to only **0.1K (45–176)** while achieving accuracy comparable to or better than mainstream lightw
+  [ICLR 2026][Time Series][Long-term time series forecasting] MixLinear employs a dual-pathway linear architecture of "temporal segmentation for local trends + frequency adaptive low-rank filtering for global trends," reducing long-term time series forecasting (LTSF) model parameters to only **0.1K (45–176)** while achieving accuracy comparable to or better than mainstream lightweight models on 8 benchmarks.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Long-term time series forecasting"
+  - "Parameter-efficient"
+  - "Frequency domain filtering"
+  - "Low-rank decomposition"
+  - "Edge deployment"
 date: 2026-05-08
-content_hash: 06b115145fe70ac7
+content_hash: 1c263b9e2e8efcd3
 ---
+
 # MixLinear: Extreme Low Resource Multivariate Time Series Forecasting with 0.1K Parameters
 
 **Conference**: ICLR 2026  

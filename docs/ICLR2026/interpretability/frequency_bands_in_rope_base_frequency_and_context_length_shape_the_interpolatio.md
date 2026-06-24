@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Frequency Bands in RoPE: Base Frequency and Context Length Shape the Interpolation–Extrapolation Trade-off
 description: >-
-  [ICLR 2026][Interpretability][RoPE] This paper reveals the existence of "frequency bands" in RoPE, jointly determined by the base frequency $\theta$ and the training length $L_{train}$. These bands are formed early in pre-training and inherited during position interpolation. The study proves that low-frequency dimensions below the band are nearly equival
+  [ICLR 2026][Interpretability][RoPE] This paper reveals the existence of "frequency bands" in RoPE, jointly determined by the base frequency $\theta$ and the training length $L_{train}$. These bands are formed early in pre-training and inherited during position interpolation. The study proves that low-frequency dimensions below the band are nearly equivalent to NoPE, overturning the mainstream intuition that "increasing $\theta$ always benefits long contexts"—instead…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - RoPE
-  - base frequency θ
-  - NoPE
+  - "ICLR 2026"
+  - "Interpretability"
+  - "RoPE"
+  - "Frequency Band"
+  - "base frequency θ"
+  - "Long Context"
+  - "Interpolation-Extrapolation Trade-off"
+  - "NoPE"
 date: 2026-05-08
-content_hash: d6a867f97f8e1687
+content_hash: 07a2d5efec214ecb
 ---
+
 # Frequency Bands in RoPE: Base Frequency and Context Length Shape the Interpolation–Extrapolation Trade-off
 
 **Conference**: ICLR 2026  

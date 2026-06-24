@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VeriRole: Verifiable Role-Awareness through Hint-Guided Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] Focusing on the open-ended task of role-playing, which lacks standard answers and verifiable rewards, this paper introduces a **Hint mechanism** to extract deterministic cues from role profiles, dialogue history, and playing requirements. These cues serve as anchors for a designed **Verifiable Role-Awareness Reward (VR
+  [ICLR 2026][Reinforcement Learning][Role-playing dialogue] Focusing on the open-ended task of role-playing, which lacks standard answers and verifiable rewards, this paper introduces a **Hint mechanism** to extract deterministic cues from role profiles, dialogue history, and playing requirements. These cues serve as anchors for a designed **Verifiable Role-Awareness Reward (VRAR)** used in GRPO training. This approach improves Qwen2.5-32B's average score on RAIDEN by 18.9% an…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
-  - role-awareness
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Role-playing dialogue"
+  - "verifiable rewards"
+  - "Hint mechanism"
+  - "GRPO"
+  - "role-awareness"
 date: 2026-05-08
-content_hash: b76e313329be5d57
+content_hash: c74511cccc3892f6
 ---
+
 # VeriRole: Verifiable Role-Awareness through Hint-Guided Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -139,15 +143,16 @@ On CharacterEval, Qwen2.5-32B-GRPO scored 3.482 vs. 3.330 baseline (**+4.55%**),
 - Value: ⭐⭐⭐⭐⭐ Directly addresses persona consistency in industry RPCA; data is open-sourced and practical.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
-- [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
 - [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
 - [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
+- [\[ICLR 2026\] RLVER: Reinforcement Learning with Verifiable Emotion Rewards for Empathetic Agents](rlver_reinforcement_learning_with_verifiable_emotion_rewards_for_empathetic_agen.md)
 
 </div>
 

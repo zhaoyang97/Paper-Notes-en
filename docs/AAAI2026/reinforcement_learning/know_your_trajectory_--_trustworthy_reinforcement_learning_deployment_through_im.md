@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Know your Trajectory -- Trustworthy Reinforcement Learning Deployment through Importance-Based Trajectory Analysis
 description: >-
-  [AAAI 2026][Reinforcement Learning][Explainable RL] This paper proposes a trajectory-level explanation framework based on state importance metrics. By combining Q-value differences with a goal-affinity measure (radical t…
+  [AAAI 2026][Reinforcement Learning][Explainable RL] This paper proposes a trajectory-level explanation framework based on state importance metrics. By combining Q-value differences with a goal-affinity measure (radical term), trajectories are ranked by importance. Counterfactual rollouts are then used to verify the robust superiority of the selected optimal trajectory, providing trustworthy explanations for RL policies in the form of "why this path rather than that one?"
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Counterfactual Explanation"
   - "Trustworthy AI"
 date: 2026-05-08
-content_hash: 8966d16ae8f0d844
+content_hash: 87d9c956d9e03150
 ---
 
 # Know your Trajectory -- Trustworthy Reinforcement Learning Deployment through Importance-Based Trajectory Analysis
@@ -192,9 +192,9 @@ This paper does not involve training a new model; it is a post-hoc analysis fram
 
 - [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](../../ICML2026/reinforcement_learning/offline_reinforcement_learning_with_generative_trajectory_policies.md)
 - [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](../../ICML2026/reinforcement_learning/trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
 - [\[NeurIPS 2025\] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization](../../NeurIPS2025/reinforcement_learning/learning_human-like_rl_agents_through_trajectory_optimization_with_action_quanti.md)
-- [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](../../ICML2026/reinforcement_learning/darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
-- [\[ICML 2026\] Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training](../../ICML2026/reinforcement_learning/beyond_the_proxy_trajectory-distilled_guidance_for_offline_gflownet_training.md)
+- [\[ICML 2026\] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement](../../ICML2026/reinforcement_learning/counterfactual_transport_flows_for_offline_conservative_trajectory_refinement.md)
 
 </div>
 

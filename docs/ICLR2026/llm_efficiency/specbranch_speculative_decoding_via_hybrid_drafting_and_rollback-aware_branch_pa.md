@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpecBranch: Speculative Decoding via Hybrid Drafting and Rollback-Aware Branch Parallelism
 description: >-
-  [ICLR 2026][LLM Efficiency][Inference Acceleration] Inspired by CPU branch prediction, SpecBranch allows the draft model to generate multiple "speculative branches" in parallel during the target model's verification phase to hedge against rejections. Using a lightweight three-way classifier (H-RAD) that fuses explicit target features with implicit confidence, it adaptiv
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] Inspired by CPU branch prediction, SpecBranch allows the draft model to generate multiple "speculative branches" in parallel during the target model's verification phase to hedge against rejections. Using a lightweight three-way classifier (H-RAD) that fuses explicit target features with implicit confidence, it adaptively determines draft lengths and branch points. It reduces the rollback rate from 66–90% to below 40%…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Branch Parallelism"
+  - "Rollback-Aware"
+  - "Adaptive Draft Length"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: b2d9df35e2ad2547
+content_hash: 4230ceb76a5b2860
 ---
+
 # SpecBranch: Speculative Decoding via Hybrid Drafting and Rollback-Aware Branch Parallelism
 
 **Conference**: ICLR 2026  
@@ -150,11 +155,11 @@ SpecBranch outperforms PEARL in all configurations, achieving 1.8×∼4.5× spee
 
 ## Related Papers
 
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
 - [\[ICLR 2026\] Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding](overcoming_joint_intractability_with_lossless_hierarchical_speculative_decoding.md)
-- [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
-- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
-- [\[ICLR 2026\] Not-a-Bandit: Provably No-Regret Drafter Selection in Speculative Decoding for LLMs](not-a-bandit_provably_no-regret_drafter_selection_in_speculative_decoding_for_ll.md)
-- [\[ICLR 2026\] Self-Speculative Decoding Accelerates Lossless Inference in Any-Order and Any-Subset Autoregressive Models](self-speculative_decoding_accelerates_lossless_inference_in_any-order_and_any-su.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
+- [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](../../ACL2026/llm_efficiency/speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
+- [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
 
 </div>
 

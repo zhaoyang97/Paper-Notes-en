@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inductive Transfer Learning for Graph-Based Recommenders
 description: >-
-  [NeurIPS 2025][Audio & Speech][Graph Neural Networks] This paper proposes NBF-Rec, a graph-based recommendation model built upon the Neural Bellman-Ford Network…
+  [NeurIPS 2025][Audio & Speech][Graph Neural Networks] This paper proposes NBF-Rec, a graph-based recommendation model built upon the Neural Bellman-Ford Network, which supports inductive transfer learning across datasets with completely disjoint users and items, enabling zero-shot cross-domain recommendation and lightweight fine-tuning adaptation.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Inductive Inference"
   - "Zero-Shot Recommendation"
 date: 2026-05-08
-content_hash: 3b03e4df67812aea
+content_hash: 71438f266ce8aedf
 ---
 
 # Inductive Transfer Learning for Graph-Based Recommenders
@@ -195,10 +195,10 @@ Key observations:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Can LLMs Outshine Conventional Recommenders? A Comparative Evaluation](can_llms_outshine_conventional_recommenders_a_comparative_evaluation.md)
+- [\[ACL 2025\] Improving Language and Modality Transfer in Translation by Character-level Modeling](../../ACL2025/audio_speech/improving_language_and_modality_transfer_in.md)
 - [\[NeurIPS 2025\] Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping](enabling_differentially_private_federated_learning_for_speech_recognition_benchm.md)
+- [\[CVPR 2025\] Learning to Highlight Audio by Watching Movies](../../CVPR2025/audio_speech/learning_to_highlight_audio_by_watching_movies.md)
 - [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](../../ICLR2026/audio_speech/ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
-- [\[ICML 2026\] Polyphonia: Zero-Shot Timbre Transfer in Polyphonic Music with Acoustic-Informed Attention Calibration](../../ICML2026/audio_speech/polyphonia_zero-shot_timbre_transfer_in_polyphonic_music_with_acoustic-informed_.md)
-- [\[ICCV 2025\] Learning to See Inside Opaque Liquid Containers using Speckle Vibrometry](../../ICCV2025/audio_speech/learning_to_see_inside_opaque_liquid_containers_using_speckle_vibrometry.md)
 
 </div>
 

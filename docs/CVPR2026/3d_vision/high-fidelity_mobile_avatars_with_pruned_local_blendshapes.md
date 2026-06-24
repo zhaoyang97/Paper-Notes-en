@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] High-Fidelity Mobile Avatars with Pruned Local Blendshapes
 description: >-
-  [CVPR 2026][3D Vision][WebGPU] This work pushes the pose-dependent appearance decoding of 3DGS-based full-body digital humans to the extreme using "local linear blendshapes + 90% blendshape pruning." Through end-to-end training (without pre-trained large models), it achieves 2K resolution at 120 FPS in mobile browsers with a model size of only 19.4
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This work pushes the pose-dependent appearance decoding of 3DGS-based full-body digital humans to the extreme using "local linear blendshapes + 90% blendshape pruning." Through end-to-end training (without pre-trained large models), it achieves 2K resolution at 120 FPS in mobile browsers with a model size of only 19.4 MB.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - WebGPU
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Digital Human"
+  - "Blendshape Pruning"
+  - "Mobile Rendering"
+  - "WebGPU"
 date: 2026-05-08
-content_hash: 09da3649265a2ffb
+content_hash: b0ff6c0b659acbf9
 ---
+
 # High-Fidelity Mobile Avatars with Pruned Local Blendshapes
 
 **Conference**: CVPR 2026  
@@ -146,11 +151,11 @@ Overhead Comparison before and after Pruning (RTX 3050, 2K):
 
 ## Related Papers
 
-- [\[CVPR 2026\] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion](craftmesh_high-fidelity_generative_mesh_manipulation_via_poisson_seamless_fusion.md)
-- [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
 - [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
-- [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
+- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
+- [\[CVPR 2026\] TopoMesh: High-Fidelity Mesh Autoencoding via Topological Unification](topomesh_high-fidelity_mesh_autoencoding_via_topological_unification.md)
 
 </div>
 

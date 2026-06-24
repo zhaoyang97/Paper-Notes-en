@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] XIL: Cross-Expanding Incremental Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper proposes a novel continual learning setting, XIL, where class-incremental data originates from **evolving domains**. It requires the model to "fill" new classes back into old domains and "expand" old classes into new domains (Bi-directional Domain Transfer, BiDoT). The XEED framework is introduced, utilizing
+  [ICLR 2026][Self-Supervised Learning][Class-Incremental Learning] This paper proposes a novel continual learning setting, XIL, where class-incremental data originates from **evolving domains**. It requires the model to "fill" new classes back into old domains and "expand" old classes into new domains (Bi-directional Domain Transfer, BiDoT). The XEED framework is introduced, utilizing domain-specific prompts, diffusion models to generate cross-domain transfer samples…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Class-Incremental Learning"
+  - "Cross-Domain Transfer"
+  - "Domain-Specific Prompts"
+  - "Generative Replay"
+  - "Prototype Classification"
 date: 2026-05-08
-content_hash: 616e1e8ec06fae1d
+content_hash: 63211d6891ade6ad
 ---
+
 # XIL: Cross-Expanding Incremental Learning
 
 **Conference**: ICLR 2026  
@@ -134,11 +140,20 @@ Across all datasets: Standard accuracy +7.1% on average, BiDoT up to +31.41%. XE
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](../../CVPR2026/self_supervised/hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)
+- [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
+- [\[ICLR 2026\] Rethinking Unsupervised Cross-Modal Flow Estimation: Learning from Decoupled Optimization and Consistency Constraint](rethinking_unsupervised_cross-modal_flow_estimation_learning_from_decoupled_opti.md)
+- [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](../../CVPR2026/self_supervised/representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
+- [\[ICLR 2026\] Maximizing Incremental Information Entropy for Contrastive Learning](maximizing_incremental_information_entropy_for_contrastive_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](../../CVPR2026/self_supervised/hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)

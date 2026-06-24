@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual Mechanisms of Value Expression: Intrinsic vs. Prompted Values in Large Language Models
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper utilizes difference-in-means to extract "intrinsic" (no system prompt) and "prompted" (with value-based system prompts) directions representing 10 Schwartz values in the residual stream. Using SVD, these directions are decomposed into shared and unique axes. Causal evidence at both the vector and MLP neuron
+  [ICML 2026][Interpretability][Value vectors] This paper utilizes difference-in-means to extract "intrinsic" (no system prompt) and "prompted" (with value-based system prompts) directions representing 10 Schwartz values in the residual stream. Using SVD, these directions are decomposed into shared and unique axes. Causal evidence at both the vector and MLP neuron levels demonstrates that: the shared component carries true value semantics and generalizes across languages…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Value vectors"
+  - "value neurons"
+  - "Schwartz basic values"
+  - "residual stream direction"
+  - "instruction following"
 date: 2026-05-08
-content_hash: ea1bc8ca1e90db3a
+content_hash: 8845e7e35a745a53
 ---
+
 # Dual Mechanisms of Value Expression: Intrinsic vs. Prompted Values in Large Language Models
 
 **Conference**: ICML 2026  
@@ -131,8 +137,8 @@ Value vectors extracted in English transfer to other languages with minimal deca
 - [\[ACL 2026\] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](../../ACL2026/interpretability/towards_intrinsic_interpretability_of_large_language_modelsa_survey_of_design_pr.md)
 - [\[ACL 2026\] DPN-LE: Dual Personality Neuron Localization and Editing for Large Language Models](../../ACL2026/interpretability/dpn-le_dual_personality_neuron_localization_and_editing_for_large_language_model.md)
 - [\[ICML 2026\] Towards Atoms of Large Language Models](towards_atoms_of_large_language_models.md)
-- [\[ACL 2026\] Fine-Grained Analysis of Shared Syntactic Mechanisms in Language Models](../../ACL2026/interpretability/fine-grained_analysis_of_shared_syntactic_mechanisms_in_language_models.md)
-- [\[ICML 2026\] Discovering Implicit Large Language Model Alignment Objectives](discovering_implicit_large_language_model_alignment_objectives.md)
+- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](../../ICLR2026/interpretability/linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
+- [\[ICML 2026\] Scalable Circuit Learning for Interpreting Large Language Models](scalable_circuit_learning_for_interpreting_large_language_models.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learning in Structured Stackelberg Games
 description: >-
-  [ICML 2026][Reinforcement Learning][Stackelberg game] This paper introduces a structural assumption to "contextual Stackelberg games" (where the mapping context $\to$ follower type originates from a hypothesis class $\mathcal{H}$) and constructs two new types of learning-theoretic dimensions: the Stackelberg-Littlestone dimension (SLdim), which characterizes online regret
+  [ICML 2026 Spotlight][Reinforcement Learning][Stackelberg game] This paper introduces a structural assumption to "contextual Stackelberg games" (where the mapping context $\to$ follower type originates from a hypothesis class $\mathcal{H}$) and constructs two new types of learning-theoretic dimensions: the Stackelberg-Littlestone dimension (SLdim), which characterizes online regret bounds, and the $\gamma$-SG / $\gamma$-SN dimensions, which characterize lower and upper bounds…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Stackelberg game
-  - online learning
-  - Littlestone dimension
-  - PAC learning
-  - AI safety
+  - "ICML 2026 Spotlight"
+  - "Reinforcement Learning"
+  - "Stackelberg game"
+  - "online learning"
+  - "Littlestone dimension"
+  - "PAC learning"
+  - "AI safety"
 date: 2026-05-08
-content_hash: 90f2041bd6a15466
+content_hash: b75486c88f751823
 ---
+
 # Learning in Structured Stackelberg Games
 
 **Conference**: ICML 2026 Spotlight  

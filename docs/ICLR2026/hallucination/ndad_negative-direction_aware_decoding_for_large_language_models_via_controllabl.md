@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection
 description: >-
-  [ICLR 2026][Hallucination Detection][hallucination] NDAD takes an unconventional approach: instead of "mining" factual signals from early layers to boost, it actively masks important attention heads to **induce hallucination signals**. These signals are then used as a "negative direction" and subtracted from the final output distribution, enhancing the factual reliabili
+  [ICLR 2026][Hallucination Detection][hallucination] NDAD takes an unconventional approach: instead of "mining" factual signals from early layers to boost, it actively masks important attention heads to **induce hallucination signals**. These signals are then used as a "negative direction" and subtracted from the final output distribution, enhancing the factual reliability of LLMs without retraining or external knowledge.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - hallucination
-  - intervention decoding
-  - attention head masking
-  - contrastive decoding
-  - factuality
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "hallucination"
+  - "intervention decoding"
+  - "attention head masking"
+  - "contrastive decoding"
+  - "factuality"
 date: 2026-05-08
-content_hash: 32199812ef809abc
+content_hash: 9e3895a62abcf290
 ---
+
 # NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection
 
 **Conference**: ICLR 2026  

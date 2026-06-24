@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning
 description: >-
-  [ICLR 2026][Pretraining][Warmup-Stable-Only] This paper proposes the Warmup-Stable-Only (WSO) learning rate scheduling strategy, which completely eliminates the learning rate decay phase during pre-training. Although this results in worse pre-training metrics, it consistently outperforms all decay strategies after SFT. Loss landscape analysis reveals that the sup
+  [ICLR 2026][LLM Pretraining][Learning Rate Scheduling] This paper proposes the Warmup-Stable-Only (WSO) learning rate scheduling strategy, which completely eliminates the learning rate decay phase during pre-training. Although this results in worse pre-training metrics, it consistently outperforms all decay strategies after SFT. Loss landscape analysis reveals that the superiority of WSO stems from its ability to maintain flatter minima.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Warmup-Stable-Only
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Learning Rate Scheduling"
+  - "Pre-training"
+  - "Supervised Fine-Tuning"
+  - "Loss Landscape"
+  - "Warmup-Stable-Only"
 date: 2026-05-08
-content_hash: c217ed0fbfbbf041
+content_hash: ea5730a04bcdf3f6
 ---
+
 # Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -164,11 +169,11 @@ In the Over-training + Intermediate Training (2T + 500B tokens) scenario, the ad
 
 ## Related Papers
 
+- [\[ICLR 2026\] How Learning Rate Decay Wastes Your Best Data in Curriculum-Based LLM Pretraining](how_learning_rate_decay_wastes_your_best_data_in_curriculum-based_llm_pretrainin.md)
 - [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](token-level_data_selection_for_safe_llm_fine-tuning.md)
 - [\[ICLR 2026\] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning](sstoken_self-modulated_and_semantic-aware_token_selection_for_llm_fine-tuning.md)
-- [\[ICML 2026\] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning](../../ICML2026/llm_pretraining/data_difficulty_and_the_generalization--extrapolation_tradeoff_in_llm_fine-tunin.md)
 - [\[ICLR 2026\] Task-Aware Data Selection via Proxy-Label Enhanced Distribution Matching for LLM Fine-Tuning](task-aware_data_selection_via_proxy-label_enhanced_distribution_matching_for_llm.md)
-- [\[ICLR 2026\] Train on Validation (ToV): Fast Data Selection with Applications to Fine-Tuning](train_on_validation_tov_fast_data_selection_with_applications_to_fine-tuning.md)
+- [\[ICML 2026\] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning](../../ICML2026/llm_pretraining/data_difficulty_and_the_generalization--extrapolation_tradeoff_in_llm_fine-tunin.md)
 
 </div>
 

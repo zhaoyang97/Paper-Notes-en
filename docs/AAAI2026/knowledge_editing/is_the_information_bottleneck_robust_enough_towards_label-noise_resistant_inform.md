@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Is the Information Bottleneck Robust Enough? Towards Label-Noise Resistant Information Bottleneck Learning
 description: >-
-  [AAAI 2026][Knowledge Editing][Information Bottleneck] This paper identifies the inherent vulnerability of the Information Bottleneck (IB) principle under label noise and proposes LaT-IB…
+  [AAAI 2026][Knowledge Editing][Information Bottleneck] This paper identifies the inherent vulnerability of the Information Bottleneck (IB) principle under label noise and proposes LaT-IB, which decomposes representations into a clean-label subspace and a noisy-label subspace. Combined with a Minimal-Sufficient-Clean (MSC) criterion and a three-stage training framework, LaT-IB significantly outperforms existing IB methods across diverse noise conditions.
 tags:
   - "AAAI 2026"
   - "Knowledge Editing"
@@ -12,7 +12,7 @@ tags:
   - "Robustness"
   - "Mutual Information"
 date: 2026-05-08
-content_hash: 0f84829c5bef7ad6
+content_hash: 0a9d5e6bc9977d19
 ---
 
 # Is the Information Bottleneck Robust Enough? Towards Label-Noise Resistant Information Bottleneck Learning
@@ -140,10 +140,10 @@ LaT-IB achieves 73.40%, substantially outperforming GIB (64.30%) and various imp
 ## Related Papers
 
 - [\[ACL 2026\] HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning](../../ACL2026/knowledge_editing/hiedit_lifelong_model_editing_with_hierarchical_reinforcement_learning.md)
-- [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Training Examples](../../ICLR2026/knowledge_editing/rote_learning_considered_useful_generalizing_over_memorized_training_examples.md)
+- [\[ACL 2025\] Memorizing is Not Enough: Deep Knowledge Injection Through Reasoning](../../ACL2025/knowledge_editing/memorizing_is_not_enough_deep_knowledge_injection_through_reasoning.md)
+- [\[ACL 2025\] REP: Keys to Robust Edits — From Theoretical Insights to Practical Advances](../../ACL2025/knowledge_editing/rep_robust_knowledge_editing.md)
 - [\[ICLR 2026\] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](../../ICLR2026/knowledge_editing/eamet_robust_massive_model_editing_via_embedding_alignment_optimization.md)
 - [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](../../ACL2026/knowledge_editing/evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
-- [\[AAAI 2026\] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)](multiplicative_orthogonal_sequential_editing_for_language_models.md)
 
 </div>
 

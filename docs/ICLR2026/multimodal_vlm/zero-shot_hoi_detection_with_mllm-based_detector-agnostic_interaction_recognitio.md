@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition
 description: >-
-  [ICLR 2026][Multimodal VLM][HOI detection] Ours proposes DA-HOI, a zero-shot HOI detection framework that completely decouples object detection from interaction recognition. It leverages the VQA capabilities of MLLMs to replace traditional CLIP features for interaction recognition. The core contributions include Deterministic Generation (reaching 31.50 mAP trai
+  [ICLR 2026][Multimodal VLM][HOI detection] Ours proposes DA-HOI, a zero-shot HOI detection framework that completely decouples object detection from interaction recognition. It leverages the VQA capabilities of MLLMs to replace traditional CLIP features for interaction recognition. The core contributions include Deterministic Generation (reaching 31.50 mAP training-free), Spatial-Aware Pooling (SAP, introducing spatial priors and cross-attention)…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - HOI detection
-  - zero-shot
-  - MLLM
-  - interaction recognition
-  - detector-agnostic
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "HOI detection"
+  - "zero-shot"
+  - "MLLM"
+  - "interaction recognition"
+  - "detector-agnostic"
 date: 2026-05-08
-content_hash: 5f32557f224dadbe
+content_hash: edf488a7aa9f8392
 ---
+
 # Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition
 
 **Conference**: ICLR 2026  
@@ -179,10 +180,10 @@ Final confidence: $\hat{S}^i_v[k] = S^i_v[k] \cdot S^i_{\text{interactiveness}} 
 ## Related Papers
 
 - [\[CVPR 2025\] Locality-Aware Zero-Shot Human-Object Interaction Detection](../../CVPR2025/multimodal_vlm/locality-aware_zero-shot_human-object_interaction_detection.md)
+- [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](../../ICCV2025/multimodal_vlm/negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
+- [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](../../CVPR2026/multimodal_vlm/crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
 - [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
 - [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](../../CVPR2026/multimodal_vlm/from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
-- [\[CVPR 2026\] Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision](../../CVPR2026/multimodal_vlm/pixels_dont_lie_but_your_detector_might_bootstrapping_mllm-as-a-judge_for_trustw.md)
-- [\[ICLR 2026\] SpatialViz-Bench：一个认知科学驱动、用于诊断 MLLM 空间可视化能力的基准](spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
 
 </div>
 

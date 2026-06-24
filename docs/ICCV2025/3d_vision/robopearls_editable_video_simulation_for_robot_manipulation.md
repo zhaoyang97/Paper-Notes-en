@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RoboPearls: Editable Video Simulation for Robot Manipulation
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper presents RoboPearls, an editable video simulation framework built upon 3D Gaussian Splatting (3DGS) that constructs photorealistic simulation environments from dem…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper presents RoboPearls, an editable video simulation framework built upon 3D Gaussian Splatting (3DGS) that constructs photorealistic simulation environments from demonstration videos. It supports rich scene editing operations via Incremental Semantic Distillation (ISD) and a 3D-regularized NNFM loss, and employs a multi-LLM agent system to automate the simulation generation pipeline, forming a VLM-in-the-loop robot learni…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "LLM Agent"
   - "Sim-to-Real"
 date: 2026-05-08
-content_hash: 8a46b20dbba0f207
+content_hash: c2031763b1f64462
 ---
 
 # RoboPearls: Editable Video Simulation for Robot Manipulation
@@ -160,8 +160,8 @@ Real robot experiments (Kinova Gen3, 20 trials per task):
 
 - [\[ICCV 2025\] 4D Visual Pre-training for Robot Learning](4d_visual_pretraining_for_robot_learning.md)
 - [\[ICLR 2026\] Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints](../../ICLR2026/3d_vision/generalizable_coarse-to-fine_robot_manipulation_via_language-aligned_3d_keypoint.md)
+- [\[CVPR 2025\] Vid2Sim: Realistic and Interactive Simulation from Video for Urban Navigation](../../CVPR2025/3d_vision/vid2sim_realistic_and_interactive_simulation_from_video_for_urban_navigation.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
-- [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
 - [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
 
 </div>

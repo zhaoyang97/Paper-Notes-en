@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning
 description: >-
-  [ICLR 2026][Causal Inference][CLIP] This paper points out that large-scale multimodal data do not follow the generation assumption of a single Directed Acyclic Graph (DAG). It proposes a Latent Partial Causal Model utilizing "undirected edges to connect two sets of latent coupled variables." On both spherical and convex latent spaces, it is proven that r
+  [ICLR2026][Causal Inference][Latent Partial Causal Models] This paper points out that large-scale multimodal data do not follow the generation assumption of a single Directed Acyclic Graph (DAG). It proposes a Latent Partial Causal Model utilizing "undirected edges to connect two sets of latent coupled variables." On both spherical and convex latent spaces, it is proven that representations learned by Multimodal Contrastive Learning (MMCL), such as CLIP…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - CLIP
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Latent Partial Causal Models"
+  - "Multimodal Contrastive Learning"
+  - "Identifiability"
+  - "Decoupled Representations"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 5b1388ee26d8fc3d
+content_hash: c4c43a78825b8ff9
 ---
+
 # Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning
 
 **Conference**: ICLR2026  
@@ -129,15 +134,16 @@ Rather than traditional component removal, the paper uses **Hypothesis Violation
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Causal Discovery via Quantile Partial Effect](causal_discovery_via_quantile_partial_effect.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
 - [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
-- [\[ICLR 2026\] Characterization and Learning of Causal Graphs with Latent Confounders and Post-treatment Selection from Interventional Data](characterization_and_learning_of_causal_graphs_with_latent_confounders_and_post-.md)
 - [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
-- [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
-- [\[ICLR 2026\] Causal Score Conditioning for Multi-Resolution Latent Systems](causal_score_conditioning_for_multi-resolution_latent_systems.md)
+- [\[ICLR 2026\] Characterization and Learning of Causal Graphs with Latent Confounders and Post-treatment Selection from Interventional Data](characterization_and_learning_of_causal_graphs_with_latent_confounders_and_post-.md)
 
 </div>
 

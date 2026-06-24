@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] VisioMath is proposed as a benchmark containing 1800 K-12 mathematics problems where all options consist of highly visually similar charts. It reveals a core weakness of LMMs in multi-image-text alignment and explores three alignment strategies achieving a +12.6% gain.
+  [ICLR 2026][Reasoning][Mathematical reasoning benchmark] VisioMath is proposed as a benchmark containing 1800 K-12 mathematics problems where all options consist of highly visually similar charts. It reveals a core weakness of LMMs in multi-image-text alignment and explores three alignment strategies achieving a +12.6% gain.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Mathematical reasoning benchmark"
+  - "Multi-image reasoning"
+  - "Visual similarity"
+  - "Image-text alignment"
+  - "LMM evaluation"
 date: 2026-05-08
-content_hash: a4707e38c1bece60
+content_hash: e0e9b64b824e3a07
 ---
+
 # VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs
 
 **Conference**: ICLR 2026  

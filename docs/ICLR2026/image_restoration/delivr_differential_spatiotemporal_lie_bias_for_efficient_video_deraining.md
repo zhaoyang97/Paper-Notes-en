@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeLiVR: Differential Spatiotemporal Lie Bias for Efficient Video Deraining
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] DeLiVR integrates two types of geometric priors from the SO(2) Lie group—"per-frame rotation" and "inter-frame angular velocity differentiation"—directly into the Transformer attention scores as biases. It achieves geometrically consistent cross-frame alignment and temporal deraining without relying on optical flow, re
+  [ICLR2026][Image Restoration][Video deraining] DeLiVR integrates two types of geometric priors from the SO(2) Lie group—"per-frame rotation" and "inter-frame angular velocity differentiation"—directly into the Transformer attention scores as biases. It achieves geometrically consistent cross-frame alignment and temporal deraining without relying on optical flow, reaching SOTA performance on the real-world WeatherBench with only 2.64M parameters.
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Video deraining"
+  - "Lie group"
+  - "Geometric prior"
+  - "Attention bias"
+  - "Spatiotemporal alignment"
 date: 2026-05-08
-content_hash: 6ab7e6e3770dd11d
+content_hash: f03db057f6a9c089
 ---
+
 # DeLiVR: Differential Spatiotemporal Lie Bias for Efficient Video Deraining
 
 **Conference**: ICLR2026  
@@ -133,8 +139,8 @@ Stepwise addition of components on NTURain:
 - [\[AAAI 2026\] SpatioTemporal Difference Network for Video Depth Super-Resolution](../../AAAI2026/image_restoration/spatiotemporal_difference_network_for_video_depth_super-resolution.md)
 - [\[ICLR 2026\] Continuous Space-Time Video Super-Resolution with 3D Fourier Fields](continuous_space-time_video_super-resolution_with_3d_fourier_fields.md)
 - [\[ICLR 2026\] DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences](dealthdr_learning_hdr_video_reconstruction_from_degraded_alternating_exposure_se.md)
+- [\[ICLR 2026\] SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](seedvr2_one-step_video_restoration_via_diffusion_adversarial_post-training.md)
 - [\[CVPR 2026\] A Bit is All You Need! Efficient Video Capture via Single Bit Imaging](../../CVPR2026/image_restoration/a_bit_is_all_you_need_efficient_video_capture_via_single_bit_imaging.md)
-- [\[ICLR 2026\] DISK: Differentiable Sparse Kernel Complex for Efficient Spatially-Variant Convolution](disk_differentiable_sparse_kernel_complex_for_efficient_spatially-variant_convol.md)
 
 </div>
 

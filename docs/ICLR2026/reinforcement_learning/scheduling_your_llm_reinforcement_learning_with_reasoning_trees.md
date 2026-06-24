@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scheduling Your LLM Reinforcement Learning with Reasoning Trees
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes using "reasoning tree structure" rather than "answer accuracy" to measure the true learning difficulty of a problem for LLMs. It defines a new metric, Reasoning Score (r-score), and designs "Re-Schedule," a curriculum-based data scheduling algorithm, which improves average accuracy on six mathematic
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes using "reasoning tree structure" rather than "answer accuracy" to measure the true learning difficulty of a problem for LLMs. It defines a new metric, Reasoning Score (r-score), and designs "Re-Schedule," a curriculum-based data scheduling algorithm, which improves average accuracy on six mathematical reasoning benchmarks by up to 3.2%.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Reasoning Tree"
+  - "Data Scheduling"
+  - "Curriculum Learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 64ab016309b24c12
+content_hash: 6a6f030fa1fc37ed
 ---
+
 # Scheduling Your LLM Reinforcement Learning with Reasoning Trees
 
 **Conference**: ICLR 2026  
@@ -142,10 +146,17 @@ Cost-Benefit Tradeoff: Larger trees provide better approximations but are more e
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Getting Your LLMs Ready for Reinforcement Learning with Lightweight SFT](getting_your_llms_ready_for_reinforcement_learning_with_lightweight_sft.md)
+- [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](prompt_curriculum_learning_for_efficient_llm_post-training.md)
+- [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](r-zero_self-evolving_reasoning_llm_from_zero_data.md)
+- [\[ICLR 2026\] J1: Incentivizing Thinking in LLM-as-a-Judge via Reinforcement Learning](j1_incentivizing_thinking_in_llm-as-a-judge_via_reinforcement_learning.md)
+- [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Getting Your LLMs Ready for Reinforcement Learning with Lightweight SFT](getting_your_llms_ready_for_reinforcement_learning_with_lightweight_sft.md)

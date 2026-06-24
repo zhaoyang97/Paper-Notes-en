@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM alignment] This paper proposes DoRA (Distribution-aware Optimization for Robust Alignment), which trains a distribution classifier to assign calibrated weights to individual samples and…
+  [NeurIPS 2025][LLM Evaluation][LLM alignment] This paper proposes DoRA (Distribution-aware Optimization for Robust Alignment), which trains a distribution classifier to assign calibrated weights to individual samples and incorporates them into a KL-DRO framework to minimize worst-case loss. DoRA operates as a model-agnostic plug-and-play module that consistently improves the robustness of various alignment algorithms—including DPO, RRHF, and LIRE—under distribution shifts.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "preference optimization"
   - "calibration"
 date: 2026-05-08
-content_hash: fe5353dcea32170b
+content_hash: 2c4e8cca4b5dd32b
 ---
 
 # Leveraging Robust Optimization for LLM Alignment under Distribution Shifts
@@ -211,7 +211,7 @@ DoRA remains effective in self-training scenarios where the distribution continu
 - [\[NeurIPS 2025\] Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations](beyond_the_surface_enhancing_llm-as-a-judge_alignment_with_human_via_internal_re.md)
 - [\[NeurIPS 2025\] OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling](optitree_hierarchical_thoughts_generation_with_tree_search_for_llm_optimization_.md)
 - [\[NeurIPS 2025\] ComPO: Preference Alignment via Comparison Oracles](compo_preference_alignment_via_comparison_oracles.md)
-- [\[ICML 2026\] Whose Alignment? Comparing LLM Process Alignment Across Diverse Organizational Decision Contexts](../../ICML2026/llm_evaluation/whose_alignment_comparing_llm_process_alignment_across_diverse_organizational_de.md)
+- [\[ECCV 2024\] OGNI-DC: Robust Depth Completion with Optimization-Guided Neural Iterations](../../ECCV2024/llm_evaluation/ogni-dc_robust_depth_completion_with_optimization-guided_neural_iterations.md)
 
 </div>
 

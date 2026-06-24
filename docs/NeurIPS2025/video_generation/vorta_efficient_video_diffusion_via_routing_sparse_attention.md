@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VORTA: Efficient Video Diffusion via Routing Sparse Attention
 description: >-
-  [NeurIPS 2025][Video Generation][Video diffusion model acceleration] This paper proposes VORTA, a framework that achieves end-to-end 1.76× acceleration of video diffusion Transformers without quality degradation…
+  [NeurIPS 2025][Video Generation][Video diffusion model acceleration] This paper proposes VORTA, a framework that achieves end-to-end 1.76× acceleration of video diffusion Transformers without quality degradation, through bucketed coreset attention (for modeling long-range dependencies) and a signal-aware routing mechanism (for adaptively selecting sparse attention branches). Combined with caching and distillation methods, it achieves up to 14.41× acceleration.
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "routing mechanism"
   - "coreset selection"
 date: 2026-05-08
-content_hash: e04c1c175fdd5c7a
+content_hash: c29a0717f1a86e4c
 ---
 
 # VORTA: Efficient Video Diffusion via Routing Sparse Attention
@@ -176,8 +176,8 @@ where $\lambda_{\text{distill}} = 20$ and $\lambda_{\text{reg}} = 0.02$. The $L_
 - [\[NeurIPS 2025\] VSA: Faster Video Diffusion with Trainable Sparse Attention](vsa_faster_video_diffusion_with_trainable_sparse_attention.md)
 - [\[NeurIPS 2025\] Radial Attention: O(n log n) Sparse Attention with Energy Decay for Long Video Generation](radial_attention_onlog_n_sparse_attention_with_energy_decay_for_long_video_gener.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](../../ICML2026/video_generation/dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
+- [\[ICLR 2026\] DSA: Efficient Inference For Video Generation Models via Distributed Sparse Attention](../../ICLR2026/video_generation/dsa_efficient_inference_for_video_generation_models_via_distributed_sparse_atten.md)
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](../../ICML2026/video_generation/veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
-- [\[NeurIPS 2025\] S²Q-VDiT: Accurate Quantized Video Diffusion Transformer with Salient Data and Sparse Token Distillation](s2q-vdit_accurate_quantized_video_diffusion_transformer_with_salient_data_and_sp.md)
 
 </div>
 

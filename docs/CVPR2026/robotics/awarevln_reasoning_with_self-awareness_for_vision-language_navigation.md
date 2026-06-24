@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLN-CE] AwareVLN equips end-to-end VLN models with "self-aware reasoning" capabilities—sparsely triggering structured reasoning only at critical navigation nodes (subtask completion, path deviation, or stopping errors). It utilizes an automated data engine that requires no manual annotation to generate introspective supervisio
+  [CVPR 2026][Robotics][Vision-Language Navigation] AwareVLN equips end-to-end VLN models with "self-aware reasoning" capabilities—sparsely triggering structured reasoning only at critical navigation nodes (subtask completion, path deviation, or stopping errors). It utilizes an automated data engine that requires no manual annotation to generate introspective supervision, enabling a pure monocular RGB agent to significantly outperform previous SOTA models on R2R-CE and RxR-CE.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLN-CE
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "Self-aware Reasoning"
+  - "Sparse Reasoning"
+  - "Auto-Data Engine"
+  - "VLN-CE"
 date: 2026-05-08
-content_hash: 4c9d51c07cff492a
+content_hash: da64212107b968fe
 ---
+
 # AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation
 
 **Conference**: CVPR 2026  
@@ -156,11 +161,11 @@ Trained only on simulation data but leading in real-world quadruped tests, verif
 
 ## Related Papers
 
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
-- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
-- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
 - [\[CVPR 2026\] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning](towards_open_environments_and_instructions_general_vision-language_navigation_vi.md)
 - [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
+- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
+- [\[ICLR 2026\] Self-Refining Vision Language Model for Robotic Failure Detection and Reasoning](../../ICLR2026/robotics/self-refining_vision_language_model_for_robotic_failure_detection_and_reasoning.md)
+- [\[CVPR 2026\] GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation](ga-vln_geometry-aware_bev_representation_for_efficient_vision-language_navigatio.md)
 
 </div>
 

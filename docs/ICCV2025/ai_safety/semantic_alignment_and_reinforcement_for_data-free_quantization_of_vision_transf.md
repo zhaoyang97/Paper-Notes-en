@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers
 description: >-
-  [ICCV 2025][AI Safety][Data-free quantization] This paper proposes SARDFQ to address **semantic distortion** and **semantic insufficiency** in data-free quantization (DFQ) of ViTs. Attention Prior Alignment (APA) guides…
+  [ICCV 2025][AI Safety][Data-free quantization] This paper proposes SARDFQ to address **semantic distortion** and **semantic insufficiency** in data-free quantization (DFQ) of ViTs. Attention Prior Alignment (APA) guides synthetic images to match the attention patterns of real images, while Multi-Semantic Reinforcement (MSR) enriches local patch semantics. SARDFQ achieves a 15.52% Top-1 accuracy improvement on ImageNet W4A4 ViT-B.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "multi-semantic reinforcement"
   - "synthetic images"
 date: 2026-05-08
-content_hash: 91f649271b9904b5
+content_hash: e2f0798dddac5aca
 ---
 
 # Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers
@@ -177,10 +177,10 @@ Quantized network learning uses block-wise reconstruction loss $\mathcal{L}_l = 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Data-free Universal Adversarial Perturbation with Pseudo-Semantic Prior](../../CVPR2025/ai_safety/data-free_universal_adversarial_perturbation_with_pseudo-semantic_prior.md)
+- [\[CVPR 2025\] Split Adaptation for Pre-trained Vision Transformers](../../CVPR2025/ai_safety/split_adaptation_for_pre-trained_vision_transformers.md)
 - [\[NeurIPS 2025\] Model Inversion with Layer-Specific Modeling and Alignment for Data-Free Continual Learning](../../NeurIPS2025/ai_safety/model_inversion_with_layer-specific_modeling_and_alignment_for_data-free_continu.md)
 - [\[ICCV 2025\] Backdooring Self-Supervised Contrastive Learning by Noisy Alignment](backdooring_self-supervised_contrastive_learning_by_noisy_alignment.md)
-- [\[ICCV 2025\] Staining and Locking Computer Vision Models without Retraining](staining_and_locking_computer_vision_models_without_retraining.md)
-- [\[ICCV 2025\] Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment](towards_adversarial_robustness_via_debiased_high-confidence_logit_alignment.md)
 - [\[ICCV 2025\] Controllable Feature Whitening for Hyperparameter-Free Bias Mitigation](controllable_feature_whitening_for_hyperparameter-free_bias_mitigation.md)
 
 </div>

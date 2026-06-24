@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The first method to bring training-free high-resolution generation into the practical stage—by employing a partial inversion strategy to make few-step diffusion models viable for patch refinement, it generates 4K images in 20 seconds, representing a $10 \times$ to $35 \times$ speedup over existing methods with superior
+  [CVPR 2026][Image Generation][Training-free high-resolution generation] The first method to bring training-free high-resolution generation into the practical stage—by employing a partial inversion strategy to make few-step diffusion models viable for patch refinement, it generates 4K images in 20 seconds, representing a $10 \times$ to $35 \times$ speedup over existing methods with superior quality.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Training-free high-resolution generation"
+  - "patch-based inference"
+  - "partial inversion"
+  - "few-step diffusion"
+  - "Gaussian mixture"
 date: 2026-05-08
-content_hash: 126a8b6b7fd49fa1
+content_hash: 7e9333d6f17a23f6
 ---
+
 # PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,16 @@ Ours is entirely training-free. It uses pre-trained SDXL for base generation and
 - Value: ⭐⭐⭐⭐⭐ $10 \times$ to $35 \times$ acceleration, achieving practical usability for the first time.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)
-- [\[CVPR 2026\] DBMSolver: A Training-free Diffusion Bridge Sampler for High-Quality Image-to-Image Translation](dbmsolver_a_training-free_diffusion_bridge_sampler_for_high-quality_image-to-ima.md)
-- [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
-- [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
-- [\[CVPR 2026\] DiT360: High-Fidelity Panoramic Image Generation via Hybrid Training](dit360_high-fidelity_panoramic_image_generation_via_hybrid_training.md)
+- [\[CVPR 2026\] VINS-120K: Ultra High-Resolution Image Editing with A Large-Scale Dataset](vins-120k_ultra_high-resolution_image_editing_with_a_large-scale_dataset.md)
+- [\[CVPR 2026\] ImageRAGTurbo: Towards One-step Text-to-Image Generation with Retrieval-Augmented Diffusion Models](imageragturbo_towards_one-step_text-to-image_generation_with_retrieval-augmented.md)
+- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
+- [\[CVPR 2026\] InverFill: One-Step Inversion for Enhanced Few-Step Diffusion Inpainting](inverfill_one-step_inversion_for_enhanced_few-step_diffusion_inpainting.md)
 
 </div>
 

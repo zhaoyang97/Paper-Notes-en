@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection
 description: >-
-  [CVPR 2026][Object Detection][DETR] PaQ-DETR proposes dynamic query generation based on shared patterns (content-aware weighted combinations of shared base patterns) combined with quality-aware one-to-many assignment (adaptive positive sample selection based on localization-classification consistency). This uniformly addresses the imbalance in query repr
+  [CVPR 2026][Object Detection][DETR] PaQ-DETR proposes dynamic query generation based on shared patterns (content-aware weighted combinations of shared base patterns) combined with quality-aware one-to-many assignment (adaptive positive sample selection based on localization-classification consistency). This uniformly addresses the imbalance in query representation and supervision in DETR, achieving stable gains of 1.5%-4.2% mAP across various backbones.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - DETR
+  - "CVPR 2026"
+  - "Object Detection"
+  - "DETR"
+  - "Dynamic Queries"
+  - "Pattern Learning"
+  - "Quality-Aware Assignment"
 date: 2026-05-08
-content_hash: 09b4f933d3f7fb94
+content_hash: 4cca93c4fabf6b40
 ---
+
 # PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection
 
 **Conference**: CVPR 2026  
@@ -126,8 +130,8 @@ The total loss is $\mathcal{L}_{total} = \mathcal{L}_{1:m} + \mathcal{L}_{aux} +
 - [\[CVPR 2026\] Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images](balanced_hierarchical_contrastive_learning_with_decoupled_queries_for_fine-grain.md)
 - [\[CVPR 2026\] DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection](dyfclt_dynamic_frequency-decoupled_cross-modal_learning_transformer_for_multimod.md)
 - [\[CVPR 2026\] Beyond Caption-Based Queries for Video Moment Retrieval](beyond_caption-based_queries_for_video_moment_retrieval.md)
+- [\[ICLR 2026\] DeCo-DETR: Decoupled Cognition DETR for efficient Open-Vocabulary Object Detection](../../ICLR2026/object_detection/deco-detr_decoupled_cognition_detr_for_efficient_open-vocabulary_object_detectio.md)
 - [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
-- [\[CVPR 2026\] EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer](ew-detr_evolving_world_object_detection_via_incremental_low-rank_detection_trans.md)
 
 </div>
 

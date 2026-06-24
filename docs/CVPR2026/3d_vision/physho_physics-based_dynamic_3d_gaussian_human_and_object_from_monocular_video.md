@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhysHO: Physics-Based Dynamic 3D Gaussian Human and Object from Monocular Video
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PhysHO treats SMPL-driven Linear Blend Skinning (LBS) as an "internal driving force prior" for the human body and uses the Material Point Method (MPM) as a physics engine to propagate these forces to objects through contact. Combined with per-particle residual neural constitutive laws, it reconstructs physically plausi
+  [CVPR 2026][3D Vision][Physics Reconstruction] PhysHO treats SMPL-driven Linear Blend Skinning (LBS) as an "internal driving force prior" for the human body and uses the Material Point Method (MPM) as a physics engine to propagate these forces to objects through contact. Combined with per-particle residual neural constitutive laws, it reconstructs physically plausible "human push/pull object" dynamics from monocular videos and enables extrapolation for unseen motions.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Physics Reconstruction"
+  - "3D Gaussian"
+  - "Human-Object Interaction"
+  - "Material Point Method (MPM)"
+  - "Monocular Video"
 date: 2026-05-08
-content_hash: 7bb8c2aec9b423f7
+content_hash: 8330e1e5f43a061a
 ---
+
 # PhysHO: Physics-Based Dynamic 3D Gaussian Human and Object from Monocular Video
 
 **Conference**: CVPR 2026  
@@ -121,15 +127,16 @@ Key caveat: GART and 4D-Gaus sometimes show higher PSNR/SSIM because they **cont
 - Value: ⭐⭐⭐⭐ Provides a physical paradigm for monocular human-object reconstruction relevant to VR/AR and robotics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Recovering Physically Plausible Human-Object Interactions from Monocular Videos](recovering_physically_plausible_human-object_interactions_from_monocular_videos.md)
+- [\[CVPR 2026\] CrossHOI: Learning Cross-View Representations for Monocular 3D Human-Object Interaction Reconstruction](crosshoi_learning_cross-view_representations_for_monocular_3d_human-object_inter.md)
 - [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
+- [\[AAAI 2026\] MoBGS: Motion Deblurring Dynamic 3D Gaussian Splatting for Blurry Monocular Video](../../AAAI2026/3d_vision/mobgs_motion_deblurring_dynamic_3d_gaussian_splatting_for_blurry_monocular_video.md)
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] RHINO: Reconstructing Human Interactions with Novel Objects from Monocular Videos](rhino_reconstructing_human_interactions_with_novel_objects_from_monocular_videos.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
 
 </div>
 

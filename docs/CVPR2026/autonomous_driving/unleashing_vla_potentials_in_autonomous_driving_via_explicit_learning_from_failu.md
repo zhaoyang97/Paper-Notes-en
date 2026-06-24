@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures
 description: >-
-  [CVPR 2026][Autonomous Driving][VLA] ELF-VLA enables autonomous driving VLA models to overcome performance plateaus during Reinforcement Learning (RL). When sparse rewards in long-tail scenarios fail to provide guidance (where all rollouts receive zero scores), a teacher VLM generates a three-layer structured failure diagnosis ("planning/reasoning/executi
+  [CVPR 2026][Autonomous Driving][VLA] ELF-VLA enables autonomous driving VLA models to overcome performance plateaus during Reinforcement Learning (RL). When sparse rewards in long-tail scenarios fail to provide guidance (where all rollouts receive zero scores), a teacher VLM generates a three-layer structured failure diagnosis ("planning/reasoning/execution"). This guides the student to resample high-score corrected trajectories, which are reinjected into the GRPO training ba…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - VLA
-  - GRPO
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "VLA"
+  - "GRPO"
+  - "Failure Feedback"
+  - "Long-tail Scenarios"
 date: 2026-05-08
-content_hash: a0918c5053bf39ab
+content_hash: 5a82ce1abe49d5e5
 ---
+
 # Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures
 
 **Conference**: CVPR 2026  
@@ -153,11 +156,11 @@ Evaluated on NAVSIM (OpenScene-based planning dataset) using PDMS (v1) and EPDMS
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
+- [\[ICLR 2026\] AutoDrive-R²: Incentivizing Reasoning and Self-Reflection Capacity for VLA Model in Autonomous Driving](../../ICLR2026/autonomous_driving/autodrive-r²_incentivizing_reasoning_and_self-reflection_capacity_for_vla_model_.md)
+- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
-- [\[CVPR 2026\] DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving](dynamicvggt_learning_dynamic_point_maps_for_4d_scene_reconstruction_in_autonomou.md)
 - [\[CVPR 2026\] Unifying Language-Action Understanding and Generation for Autonomous Driving](unifying_language-action_understanding_and_generation_for_autonomous_driving.md)
-- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
+- [\[CVPR 2026\] EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving](ee-rl_vision_language_guided_reinforcement_learning_with_explorer_and_expert_mod.md)
 
 </div>
 

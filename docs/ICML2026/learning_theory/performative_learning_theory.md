@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Performative Learning Theory
 description: >-
-  [ICML 2026][learning_theory][performative prediction] This paper embeds the "performative prediction" phenomenon—where predictions change the very outcomes they intend to forecast—into statistical learning theory for the first time. It proves upper bounds for generalization error, generalization gap, and excess risk under three scenarios: sample-only, population-only, and
+  [ICML 2026][Learning Theory][Wasserstein distance] This paper embeds the "performative prediction" phenomenon—where predictions change the very outcomes they intend to forecast—into statistical learning theory for the first time. It proves upper bounds for generalization error, generalization gap, and excess risk under three scenarios: sample-only, population-only, and joint performative perturbations. The work reveals a fundamental tradeoff between "changing the world" and "…
 tags:
-  - ICML 2026
-  - learning_theory
-  - performative prediction
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Generalization Bounds"
+  - "Performative Prediction"
+  - "Wasserstein distance"
+  - "self-fulfilling/self-negating prediction"
+  - "distributionally robust optimization"
 date: 2026-05-08
-content_hash: 9aa12fbbff71ef86
+content_hash: 0b42b261016f6701
 ---
+
 # Performative Learning Theory
 
 **Conference**: ICML 2026  
@@ -111,10 +116,10 @@ Data originates from German Federal Employment Agency administrative records (19
 ## Related Papers
 
 - [\[ICML 2026\] AI4SLT: Empirical Processes in Lean 4 for Formal Statistical Learning Theory](ai4slt_empirical_processes_in_lean_4_for_formal_statistical_learning_theory.md)
-- [\[ICLR 2026\] A Statistical Theory of Overfitting for Imbalanced Classification](../../ICLR2026/learning_theory/a_statistical_theory_of_overfitting_for_imbalanced_classification.md)
+- [\[ICLR 2026\] Learning Admissible Heuristics for A*: Theory and Practice](../../ICLR2026/learning_theory/learning_admissible_heuristics_for_a_theory_and_practice.md)
+- [\[ICLR 2026\] Sharp Asymptotic Theory for Q-Learning with LD2Z Learning Rate and Its Generalization](../../ICLR2026/learning_theory/sharp_asymptotic_theory_for_q-learning_with_textttld2z_learning_rate_and_its_gen.md)
+- [\[ICLR 2026\] Almost Bayesian: Dynamics of SGD Through Singular Learning Theory](../../ICLR2026/learning_theory/almost_bayesian_dynamics_of_sgd_through_singular_learning_theory.md)
 - [\[ICML 2026\] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation](catastrophic_forgetting_is_low-rank_a_function-space_theory_for_continual_adapta.md)
-- [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)
-- [\[ICML 2026\] Bandit Social Learning with Exploration Episodes](bandit_social_learning_with_exploration_episodes.md)
 
 </div>
 

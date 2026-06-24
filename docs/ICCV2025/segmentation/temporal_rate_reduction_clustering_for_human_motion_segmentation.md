@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Temporal Rate Reduction Clustering for Human Motion Segmentation
 description: >-
-  [ICCV 2025][Segmentation][human motion segmentation] This paper proposes Temporal Rate Reduction Clustering (TR²C), which integrates the Maximal Coding Rate Reduction (MCR²) principle with temporal continuity regularizat…
+  [ICCV 2025][Segmentation][human motion segmentation] This paper proposes Temporal Rate Reduction Clustering (TR²C), which integrates the Maximal Coding Rate Reduction (MCR²) principle with temporal continuity regularization to jointly learn temporally consistent representations and affinity matrices conforming to the Union of Subspaces (UoS) distribution, achieving substantial state-of-the-art improvements on five HMS benchmarks.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "temporal consistency"
   - "unsupervised temporal clustering"
 date: 2026-05-08
-content_hash: 6b88ed957e18f8f9
+content_hash: c71d3e3cf8761565
 ---
 
 # Temporal Rate Reduction Clustering for Human Motion Segmentation

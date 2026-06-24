@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Discontinuity-aware Normal Integration for Generic Central Camera Models
 description: >-
-  [ICCV 2025 (Highlight)][LLM Evaluation][Normal Integration] This paper proposes a novel normal integration method that supports explicit discontinuity modeling and generic central camera models. By establishing constrain…
+  [ICCV 2025 (Highlight)][LLM Evaluation][Normal Integration] This paper proposes a novel normal integration method that supports explicit discontinuity modeling and generic central camera models. By establishing constraints between surface normals and ray directions under a local planarity assumption, the method achieves state-of-the-art performance on standard normal integration benchmarks and, for the first time, directly handles generic central cameras such as fisheye and p…
 tags:
   - "ICCV 2025 (Highlight)"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Surface Reconstruction"
   - "Photometric Stereo"
 date: 2026-05-08
-content_hash: af9f438d2983eb7c
+content_hash: 1ee56edf133062e3
 ---
 
 # Discontinuity-aware Normal Integration for Generic Central Camera Models
@@ -137,9 +137,9 @@ Optimization proceeds via alternating minimization: given fixed $w$, solve for $
 
 - [\[NeurIPS 2025\] Words That Unite The World: A Unified Framework for Deciphering Central Bank Communications Globally](../../NeurIPS2025/llm_evaluation/words_that_unite_the_world_a_unified_framework_for_deciphering_central_bank_comm.md)
 - [\[ICML 2026\] Spherical Steering: Geometry-Aware Activation Rotation for Language Models](../../ICML2026/llm_evaluation/spherical_steering_geometry-aware_activation_rotation_for_language_models.md)
+- [\[CVPR 2025\] PosterO: Structuring Layout Trees to Enable Language Models in Generalized Content-Aware Layout Generation](../../CVPR2025/llm_evaluation/postero_structuring_layout_trees_to_enable_language_models_in_generalized_conten.md)
 - [\[NeurIPS 2025\] ConTextTab: A Semantics-Aware Tabular In-Context Learner](../../NeurIPS2025/llm_evaluation/contexttab_a_semantics-aware_tabular_in-context_learner.md)
-- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home Agents](../../ICLR2026/llm_evaluation/simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_agents.md)
-- [\[ACL 2026\] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](../../ACL2026/llm_evaluation/aj-bench_benchmarking_agent-as-a-judge_for_environment-aware_evaluation.md)
+- [\[ICML 2026\] RouteJudge: An Open Platform for Reproducible and Preference-Aware LLM Routing](../../ICML2026/llm_evaluation/routejudge_an_open_platform_for_reproducible_and_preference-aware_llm_routing.md)
 
 </div>
 

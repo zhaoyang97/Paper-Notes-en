@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SWAN: Semantic Watermarking with Abstract Meaning Representation
 description: >-
-  [ACL 2026][LLM Safety][AMR] SWAN embeds watermarks into the semantic graph structure of sentences using Abstract Meaning Representation (AMR) templates rather than token or embedding regions. Consequently, after paraphrasing that preserves the original meaning, the watermark can still be detected through AMR parsing, template matching, and propor
+  [ACL2026][LLM Safety][Semantic Watermarking] SWAN embeds watermarks into the semantic graph structure of sentences using Abstract Meaning Representation (AMR) templates rather than token or embedding regions. Consequently, after paraphrasing that preserves the original meaning, the watermark can still be detected through AMR parsing, template matching, and proportion z-testing.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - AMR
-  - paraphrase robustness
-  - S2match
+  - "ACL2026"
+  - "LLM Safety"
+  - "Semantic Watermarking"
+  - "AMR"
+  - "paraphrase robustness"
+  - "S2match"
+  - "text provenance"
 date: 2026-05-08
-content_hash: 4e5a0fac97c1e6fc
+content_hash: ef30734510c707d6
 ---
+
 # SWAN: Semantic Watermarking with Abstract Meaning Representation
 
 **Conference**: ACL2026  
@@ -164,10 +167,10 @@ In terms of sampling efficiency, SWAN is slower than SemStamp, but most sentence
 ## Related Papers
 
 - [\[ICLR 2026\] PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints](../../ICLR2026/llm_safety/pmark_towards_robust_and_distortion-free_semantic-level_watermarking_with_channe.md)
+- [\[ICLR 2026\] Distilling the Thought, Watermarking the Answer: A Principle Semantic Guided Watermark for Reasoning Large Language Models](../../ICLR2026/llm_safety/distilling_the_thought_watermarking_the_answer_a_principle_semantic_guided_water.md)
 - [\[ACL 2026\] SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering](safeconstellations_mitigating_over-refusals_in_llms_through_task-aware_represent.md)
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](representation-guided_parameter-efficient_llm_unlearning.md)
 - [\[ACL 2026\] XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts](xmark_reliable_multi-bit_watermarking_for_llm-generated_texts.md)
-- [\[ACL 2026\] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation](agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification.md)
 
 </div>
 

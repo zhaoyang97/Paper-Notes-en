@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM Agent] VAGEN is a framework that structures the reasoning process of VLM agents into StateEstimation and TransitionModeling to build an internal world model…
+  [NeurIPS 2025][VLM Reasoning][VLM Agent] VAGEN is a framework that structures the reasoning process of VLM agents into StateEstimation and TransitionModeling to build an internal world model, and combines WorldModeling Reward with Bi-Level GAE for efficient multi-turn RL training. A 3B model trained under this framework (0.82) surpasses GPT-5 (0.75) and Gemini 2.5 Pro (0.67).
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "VLM Agent"
   - "World Model"
   - "Reinforcement Learning"
   - "POMDP"
   - "Multi-Turn Interaction"
 date: 2026-05-08
-content_hash: f9b744057f1aa736
+content_hash: 8a02790023d2076f
 ---
 
 # VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents
@@ -148,9 +148,9 @@ A PPO objective is used with observation token masking to prevent learning from 
 
 - [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
 - [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
-- [\[CVPR 2026\] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents](../../CVPR2026/multimodal_vlm/mindpower_enabling_theoryofmind_reasoning_in_vlmba.md)
-- [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
-- [\[ICCV 2025\] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models](../../ICCV2025/multimodal_vlm/multiverse_a_multi-turn_conversation_benchmark_for_evaluating_large_vision_and_l.md)
+- [\[ICLR 2026\] FrameThinker: Learning to Think with Long Videos via Multi-Turn Frame Spotlighting](../../ICLR2026/vlm_reasoning/framethinker_learning_to_think_with_long_videos_via_multi-turn_frame_spotlightin.md)
+- [\[CVPR 2026\] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents](../../CVPR2026/vlm_reasoning/mindpower_enabling_theoryofmind_reasoning_in_vlmba.md)
+- [\[ICML 2026\] What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)](../../ICML2026/vlm_reasoning/what_you_think_is_what_you_see_driving_exploration_in_vlm_agents_via_visual-ling.md)
 
 </div>
 

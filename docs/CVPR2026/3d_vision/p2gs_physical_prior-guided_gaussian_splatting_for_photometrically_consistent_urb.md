@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] P2GS: Physical Prior-guided Gaussian Splatting for Photometrically Consistent Urban Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] P2GS shifts the optimization of 3DGS from LDR pixel space to the linear HDR domain. Using only LDR images, it jointly solves for "view-independent HDR radiance + per-view exposure + per-view tone mapping," effectively eliminating exposure seams and photometric inconsistencies in multi-camera driving data to achieve exp
+  [CVPR 2026][3D Vision][Gaussian Splatting] P2GS shifts the optimization of 3DGS from LDR pixel space to the linear HDR domain. Using only LDR images, it jointly solves for "view-independent HDR radiance + per-view exposure + per-view tone mapping," effectively eliminating exposure seams and photometric inconsistencies in multi-camera driving data to achieve exposure-invariant reconstruction suitable for autonomous driving simulation.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "HDR Radiance Field"
+  - "Exposure Decoupling"
+  - "Autonomous Driving Simulation"
+  - "Photometric Consistency"
 date: 2026-05-08
-content_hash: e10309324306cc60
+content_hash: 67c34f8c6e3b46df
 ---
+
 # P2GS: Physical Prior-guided Gaussian Splatting for Photometrically Consistent Urban Reconstruction
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,10 @@ Ablation of loss components on Waymo:
 ## Related Papers
 
 - [\[CVPR 2026\] WeatherCity: Urban Scene Reconstruction with Controllable Multi-Weather Transformation](weathercity_urban_scene_reconstruction_with_controllable_multi-weather_transform.md)
+- [\[ICLR 2026\] G4Splat: Geometry-Guided Gaussian Splatting with Generative Prior](../../ICLR2026/3d_vision/g4splat_geometry-guided_gaussian_splatting_with_generative_prior.md)
+- [\[CVPR 2026\] GIFSplat: Generative Prior-Guided Iterative Feed-Forward 3D Gaussian Splatting from Sparse Views](gifsplat_generative_prior-guided_iterative_feed-forward_3d_gaussian_splatting_fr.md)
 - [\[CVPR 2026\] ParticleGS: Learning Neural Gaussian Particle Dynamics from Videos for Prior-free Physical Motion Extrapolation](particlegs_learning_neural_gaussian_particle_dynamics_from_videos_for_prior-free.md)
-- [\[CVPR 2026\] PhysGS: Bayesian-Inferred Gaussian Splatting for Physical Property Estimation](physgs_bayesian-inferred_gaussian_splatting_for_physical_property_estimation.md)
 - [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
-- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
 
 </div>
 

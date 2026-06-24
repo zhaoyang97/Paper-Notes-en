@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] SHAPO applies Sharpness-Aware Minimization (SAM) to policy updates: instead of taking the gradient at the current parameters $\theta_0$, it first identifies a nearby parameter $\theta_0+\epsilon_{\text{Down}}$ under Fisher/KL geometry that "worsens" the objective, and then uses the gradient from that point to update th
+  [ICLR 2026][Reinforcement Learning][Safe Exploration] SHAPO applies Sharpness-Aware Minimization (SAM) to policy updates: instead of taking the gradient at the current parameters $\theta_0$, it first identifies a nearby parameter $\theta_0+\epsilon_{\text{Down}}$ under Fisher/KL geometry that "worsens" the objective, and then uses the gradient from that point to update the policy. This maintains pessimism regarding the actor's epistemic uncertainty…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Safe Exploration"
+  - "Sharpness-Aware Optimization"
+  - "Epistemic Uncertainty"
+  - "Policy Optimization"
+  - "Fisher Information"
 date: 2026-05-08
-content_hash: 95e15e7d7963174f
+content_hash: ca5e33b372047520
 ---
+
 # SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration
 
 **Conference**: ICLR 2026  
@@ -129,9 +135,9 @@ Sweeping the initial multiplier $\lambda_{\text{init}}$ for PIDLag (Fig. 4) show
 
 - [\[ICLR 2026\] Safe Exploration via Policy Priors](safe_exploration_via_policy_priors.md)
 - [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
-- [\[ICLR 2026\] Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses](primal-dual_policy_optimization_for_linear_cmdps_with_adversarial_losses.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 - [\[ICLR 2026\] Deep SPI: Safe Policy Improvement via World Models](deep_spi_safe_policy_improvement_via_world_models.md)
-- [\[ICLR 2026\] GRACE: Generative Representation Learning via Contrastive Policy Optimization](grace_generative_representation_learning_via_contrastive_policy_optimization.md)
+- [\[ICLR 2026\] Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses](primal-dual_policy_optimization_for_linear_cmdps_with_adversarial_losses.md)
 
 </div>
 

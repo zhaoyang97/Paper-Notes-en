@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Regulating Internal Alignment Flows for Robust Learning Under Spurious Correlations
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper proposes Alignment-Gated Suppression (AGS): it computes a "class-conditional, confidence-weighted" alignment energy for each neuron during training. By applying multiplicative decay to connections at the quantile tail—those contributing most strongly to the ground-truth class (likely shortcuts)—it simultaneo
+  [ICLR 2026][Spurious correlation] This paper proposes Alignment-Gated Suppression (AGS): it computes a "class-conditional, confidence-weighted" alignment energy for each neuron during training. By applying multiplicative decay to connections at the quantile tail—those contributing most strongly to the ground-truth class (likely shortcuts)—it simultaneously improves average and worst-group accuracy **without group labels and with < 5% additional overhead**.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Spurious correlation"
+  - "Worst-group accuracy"
+  - "Neuron attribution"
+  - "Label-free"
+  - "Plug-and-play regularization"
 date: 2026-05-08
-content_hash: 75e0b0bad461baba
+content_hash: 035061313f9bc133
 ---
+
 # Regulating Internal Alignment Flows for Robust Learning Under Spurious Correlations
 
 **Conference**: ICLR 2026  
@@ -119,10 +124,20 @@ Ablations on Waterbirds (replacing core signals while keeping the pipeline intac
 - Value: ⭐⭐⭐⭐ Label-free, plug-and-play, and < 5% overhead makes it highly practical for debiasing.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)
+- [\[ICLR 2026\] Spurious Correlation-Aware Embedding Regularization for Worst-Group Robustness](spurious_correlation-aware_embedding_regularization_for_worst-group_robustness.md)
+- [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
+- [\[NeurIPS 2025\] Aggregation Hides OOD Generalization Failures from Spurious Correlations](../../NeurIPS2025/others/aggregation_hides_out-of-distribution_generalization_failures_from_spurious_corr.md)
+- [\[ICLR 2026\] Adaptive Conformal Guidance for Learning under Uncertainty](adaptive_conformal_guidance_for_learning_under_uncertainty.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)

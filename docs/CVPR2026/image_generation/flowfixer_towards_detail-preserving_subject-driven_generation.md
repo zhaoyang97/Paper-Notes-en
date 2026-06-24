@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlowFixer: Towards Detail-Preserving Subject-Driven Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] FlowFixer is a model-agnostic, prompt-free refiner. It does not re-generate the scene; instead, it takes images from any Subject-Driven Generation (SDG) model as input alongside the original subject image as a reference. Using a pure image-to-image dual-stream diffusion process, it restores high-frequency details such
+  [CVPR 2026][Image Generation][Subject-Driven Generation] FlowFixer is a model-agnostic, prompt-free refiner. It does not re-generate the scene; instead, it takes images from any Subject-Driven Generation (SDG) model as input alongside the original subject image as a reference. Using a pure image-to-image dual-stream diffusion process, it restores high-frequency details such as lost logos, text, and textures. Training data is synthesized via "one-step denoising" to create self…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Subject-Driven Generation"
+  - "Detail Fidelity"
+  - "Self-Supervised Pseudo-Pairs"
+  - "One-Step Denoising"
+  - "Keypoint Matching Evaluation"
 date: 2026-05-08
-content_hash: 2a2066953d26e7b1
+content_hash: c23de7e6333f6c08
 ---
+
 # FlowFixer: Towards Detail-Preserving Subject-Driven Generation
 
 **Conference**: CVPR 2026  

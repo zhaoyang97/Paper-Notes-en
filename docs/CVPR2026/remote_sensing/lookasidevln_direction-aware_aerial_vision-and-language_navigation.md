@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation
 description: >-
-  [CVPR 2026][Remote Sensing][Aerial VLN] Addressing the issues of "high ambiguity in landmark descriptions and expensive global scene graph maintenance" in UAV aerial navigation, LookasideVLN proposes a "lookaside" paradigm. It constructs a lightweight egocentric landmark graph using directional cues (left turn/right turn/ascend) naturally present in instruct
+  [CVPR2026][Remote Sensing][Aerial VLN] Addressing the issues of "high ambiguity in landmark descriptions and expensive global scene graph maintenance" in UAV aerial navigation, LookasideVLN proposes a "lookaside" paradigm. It constructs a lightweight egocentric landmark graph using directional cues (left turn/right turn/ascend) naturally present in instructions. By translating candidate paths into "instruction-like" text for MLLM semantic alignment…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Aerial VLN
+  - "CVPR2026"
+  - "Remote Sensing"
+  - "Aerial VLN"
+  - "Directional Cues"
+  - "Egocentric Graph"
+  - "MLLM Navigation"
+  - "Zero-shot"
 date: 2026-05-08
-content_hash: 5977236d43e4b556
+content_hash: d8fc99d658f282f1
 ---
+
 # LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation
 
 **Conference**: CVPR2026  
@@ -144,6 +149,7 @@ MLLM selection: LLaVA-7B failed (outputting only obs descriptions); Qwen2.5-VL-7
 - Value: ⭐⭐⭐⭐ Provides a portable "lightweight + direction-aware" paradigm for aerial navigation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TRCoRSurg: Temporal-Relational Co-Reasoning for Surgical Video Triplet Recognition
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] TRCoRSurg decomposes surgical video `<instrument, verb, target>` triplet recognition into two streams: "intra-frame label dependency" and "inter-frame temporal semantics." It constructs a label graph using GCN (where nodes fuse semantic priors with CAM visual evidence, and edges are adaptively learned via MS-CAMRE) and
+  [CVPR 2026][Medical Imaging][Surgical Triplet Recognition] TRCoRSurg decomposes surgical video `<instrument, verb, target>` triplet recognition into two streams: "intra-frame label dependency" and "inter-frame temporal semantics." It constructs a label graph using GCN (where nodes fuse semantic priors with CAM visual evidence, and edges are adaptively learned via MS-CAMRE) and utilizes a Bidirectional Temporal-Relational Fusion Attention (BTRFA) for mutual correction. It achi…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Surgical Triplet Recognition"
+  - "Label Correlation"
+  - "Temporal-Relational Co-Reasoning"
+  - "Co-occurrence Prior"
+  - "Consistency Evaluation"
 date: 2026-05-08
-content_hash: 6104b0a30f95b27b
+content_hash: 9f6c51930d3676ad
 ---
+
 # TRCoRSurg: Temporal-Relational Co-Reasoning for Surgical Video Triplet Recognition
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ On CholecT45, APIVT improved from 38.9 to 40.9 (+5.1% Gain), and TCERm decreased
 
 ## Related Papers
 
+- [\[CVPR 2026\] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning](active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_.md)
 - [\[CVPR 2026\] Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis](clinically-grounded_counterfactual_reasoning_for_medical_video_diagnosis.md)
+- [\[ICLR 2026\] ProstaTD: Bridging Surgical Triplet from Classification to Fully Supervised Detection](../../ICLR2026/medical_imaging/prostatd_bridging_surgical_triplet_from_classification_to_fully_supervised_detec.md)
 - [\[CVPR 2026\] SurgCoT: Advancing Spatiotemporal Reasoning in Surgical Videos through a Chain-of-Thought Benchmark](surgcot_advancing_spatiotemporal_reasoning_in_surgical_videos_through_a_chain-of.md)
 - [\[CVPR 2026\] Hyperbolic Relational Prompts for Intersectional Fairness in Medical VLMs](hyperbolic_relational_prompts_for_intersectional_fairness_in_medical_vlms.md)
-- [\[CVPR 2026\] Temporal Inversion for Learning Interval Change in Chest X-Rays](temporal_inversion_for_learning_interval_change_in_chest_x-rays.md)
-- [\[AAAI 2026\] Rethinking Surgical Smoke: A Smoke-Type-Aware Laparoscopic Video Desmoking Method and Dataset](../../AAAI2026/medical_imaging/rethinking_surgical_smoke_a_smoke-type-aware_laparoscopic_video_desmoking_method.md)
 
 </div>
 

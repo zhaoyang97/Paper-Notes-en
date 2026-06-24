@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Higher-Order Responsibility
 description: >-
-  [AAAI 2026][higher-order responsibility] This paper studies higher-order responsibility in sequential decision-making mechanisms and establishes two core theorems: (1) any mechanism with $n$ agents is necessarily $n$-gap…
+  [AAAI 2026][higher-order responsibility] This paper studies higher-order responsibility in sequential decision-making mechanisms and establishes two core theorems: (1) any mechanism with $n$ agents is necessarily $n$-gap-free (i.e., a responsible agent can always be found at some order); (2) determining whether a mechanism is $d$-gap-free is $\Pi_{2d+1}$-complete.
 tags:
   - "AAAI 2026"
   - "higher-order responsibility"
@@ -11,7 +11,7 @@ tags:
   - "computational complexity"
   - "polynomial hierarchy"
 date: 2026-05-08
-content_hash: 6915c3be11b59f56
+content_hash: df85687e15df0d66
 ---
 
 # Higher-Order Responsibility
@@ -148,8 +148,8 @@ This is a purely theoretical paper with no experiments. All core results are est
 - [\[AAAI 2026\] STEM Faculty Perspectives on Generative AI in Higher Education](stem_faculty_perspectives_on_generative_ai_in_higher_education.md)
 - [\[AAAI 2026\] Tractable Weighted First-Order Model Counting with Bounded Treewidth Binary Evidence](tractable_weighted_first-order_model_counting_with_bounded_treewidth_binary_evid.md)
 - [\[AAAI 2026\] Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect](human_cognitive_biases_in_explanation-based_interaction_the_case_of_within_and_b.md)
-- [\[AAAI 2026\] Description Logics with Two Types of Definite Descriptions: Complexity, Expressiveness, and Automated Deduction](description_logics_with_two_types_of_definite_descriptions_complexity_expressive.md)
-- [\[AAAI 2026\] How Hard is it to Explain Preferences Using Few Boolean Attributes?](how_hard_is_it_to_explain_preferences_using_few_boolean_attributes.md)
+- [\[ICLR 2026\] Fractional-Order Spiking Neural Network](../../ICLR2026/others/fractional-order_spiking_neural_network.md)
+- [\[CVPR 2025\] Order-One Rolling Shutter Cameras](../../CVPR2025/others/order-one_rolling_shutter_cameras.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VERIFY: A Novel Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic
 description: >-
-  [ICLR 2026][LLM (Other)][Dataset] VERIFY constructs the first large-scale (200k+ triplets, 13 domains) three-layer aligned dataset of "LTL Formula — Intermediate Technical Language (ITL) — Contextual Natural Language." By employing a pipeline including "enumeration + model checking + provably complete deterministic mapping + LLM generation + multi-leve
+  [ICLR 2026][LLM (Other)][Linear Temporal Logic] VERIFY constructs the first large-scale (200k+ triplets, 13 domains) three-layer aligned dataset of "LTL Formula — Intermediate Technical Language (ITL) — Contextual Natural Language." By employing a pipeline including "enumeration + model checking + provably complete deterministic mapping + LLM generation + multi-level verification," it ensures formal correctness and semantic fidelity. Baselines using T5/Llama/CodeLlama reveal…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Dataset
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Linear Temporal Logic"
+  - "Dataset"
+  - "Intermediate Representation"
+  - "Semantic Parsing"
+  - "LLM Generation"
 date: 2026-05-08
-content_hash: 02a51df72cabf399
+content_hash: c02538f0f72b3991
 ---
+
 # VERIFY: A Novel Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic
 
 **Conference**: ICLR 2026  

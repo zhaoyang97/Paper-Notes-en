@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Instance-level Visual Active Tracking with Occlusion-Aware Planning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] OA-VAT constructs discriminative "instance prototypes" offline from a single reference image to resist similar distractors. It utilizes online EMA-enhanced prototypes and confidence-adaptive Kalman filtering to maintain stable tracking, while training a target-box-conditioned diffusion trajectory planner to actively by
+  [CVPR 2026][Social Computing][Active Visual Tracking] OA-VAT constructs discriminative "instance prototypes" offline from a single reference image to resist similar distractors. It utilizes online EMA-enhanced prototypes and confidence-adaptive Kalman filtering to maintain stable tracking, while training a target-box-conditioned diffusion trajectory planner to actively bypass obstacles and recover the target upon occlusion—achieving an average SR of 0.93 on UnrealCV…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Social Computing"
+  - "Active Visual Tracking"
+  - "Instance-level Discrimination"
+  - "Occlusion Recovery"
+  - "Diffusion Policy Planning"
+  - "Prototype Matching"
 date: 2026-05-08
-content_hash: d3f858a5b273e38e
+content_hash: 80eb8c51f3cb9002
 ---
+
 # Instance-level Visual Active Tracking with Occlusion-Aware Planning
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ Ablation of modules on UnrealCV with distractors (average SR):
 
 ## Related Papers
 
-- [\[CVPR 2026\] UAST: Unified Active Search and Tracking for Arbitrary Targets with UAVs](uast_unified_active_search_and_tracking_for_arbitrary_targets_with_uavs.md)
-- [\[CVPR 2026\] ForeAct: Steering Your VLA with Efficient Visual Foresight Planning](foreact_steering_your_vla_with_efficient_visual_foresight_planning.md)
-- [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
-- [\[CVPR 2026\] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](flare_a_failure-aware_framework_for_autonomous_correction_and_recovery_in_visual.md)
-- [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
+- [\[CVPR 2026\] Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning](revisiting_unknowns_towards_effective_and_efficient_open-set_active_learning.md)
+- [\[ICML 2026\] FLIPS: Instance-Fingerprinting for LLMs via Pseudo-Random Sequences](../../ICML2026/social_computing/flips_instance-fingerprinting_for_llms_via_pseudo-random_sequences.md)
+- [\[ACL 2025\] STATE ToxiCN: A Benchmark for Span-level Target-Aware Toxicity Extraction in Chinese Hate Speech Detection](../../ACL2025/social_computing/state_toxicn_a_benchmark_for_span-level_target-aware_toxicity_extraction_in_chin.md)
+- [\[NeurIPS 2025\] VDRP: Visual Diversity and Region-aware Prompt Learning for Zero-shot HOI Detection](../../NeurIPS2025/social_computing/visual_diversity_and_region-aware_prompt_learning_for_zero-shot_hoi_detection.md)
+- [\[CVPR 2026\] Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification](bridging_pixels_and_words_mask-aware_local_semantic_fusion_for_multimodal_media_.md)
 
 </div>
 

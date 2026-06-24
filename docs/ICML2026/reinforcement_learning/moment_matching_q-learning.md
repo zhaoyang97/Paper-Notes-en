@@ -1,15 +1,21 @@
 ---
 title: >-
-  [Paper Note] MoMa QL: 用矩匹配加速扩散/流匹配策略的离线 + 离线-在线 RL
+  [Paper Note] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching
 description: >-
-  [ICML 2026][Reinforcement Learning][Flow Matching] MoMa QL replaces the standard BC loss with Maximum Mean Discrepancy (MMD), compressing the multi-step sampling of diffusion/flow matching policies into a single-step or few-step "marginal-preserving interpolation" sampler. It achieves a Gym normalized score of 95.5 on D4RL, significantly leading Diffusion-QL (87.9). Du
+  [ICML 2026][Reinforcement Learning][Offline RL] MoMa QL replaces the standard BC loss with Maximum Mean Discrepancy (MMD), compressing the multi-step sampling of diffusion/flow matching policies into a single-step or few-step "marginal-preserving interpolation" sampler. It achieves a Gym normalized score of 95.5 on D4RL, significantly leading Diffusion-QL (87.9). Due to much faster sampling, it shows greater gains in offline-to-online fine-tuning compared to Consistency AC an…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Flow Matching
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Diffusion Policy"
+  - "Flow Matching"
+  - "Maximum Mean Discrepancy"
+  - "Stochastic Interpolants"
+  - "Consistency Models"
 date: 2026-05-08
-content_hash: 96f8cbcc106803fb
+content_hash: 542159cc9e6b0c8e
 ---
+
 # MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching
 
 **Conference**: ICML 2026  
@@ -144,11 +150,11 @@ The largest improvement occurs in medium-replay tasks (HalfCheetah-mr +28% relat
 
 ## Related Papers
 
-- [\[ICML 2026\] RL-SPH: Learning to Achieve Feasible Solutions for Integer Linear Programs](rl-sph_learning_to_achieve_feasible_solutions_for_integer_linear_programs.md)
-- [\[ICML 2026\] MFPO: 用 Few-step MeanFlow Policy 把 MaxEnt RL 跑到接近 Gaussian policy 的速度](mean_flow_policy_optimization.md)
-- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](../../ICLR2026/reinforcement_learning/sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
-- [\[AAAI 2026\] CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments](../../AAAI2026/reinforcement_learning/chdp_cooperative_hybrid_diffusion_policies_for_reinforcement_learning_in_paramet.md)
-- [\[ICLR 2026\] Transitive RL: Value Learning via Divide and Conquer](../../ICLR2026/reinforcement_learning/transitive_rl_value_learning_via_divide_and_conquer.md)
+- [\[ICML 2026\] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies](reverse_flow_matching_a_unified_framework_for_online_reinforcement_learning_with.md)
+- [\[ICLR 2026\] Flow Matching Policy Gradients](../../ICLR2026/reinforcement_learning/flow_matching_policy_gradients.md)
+- [\[ICLR 2026\] Q-Learning with Adjoint Matching](../../ICLR2026/reinforcement_learning/q-learning_with_adjoint_matching.md)
+- [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](../../ICLR2026/reinforcement_learning/bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
+- [\[ICLR 2026\] Accelerating Diffusion Planners in Offline RL via Reward-Aware Consistency Trajectory Distillation](../../ICLR2026/reinforcement_learning/accelerating_diffusion_planners_in_offline_rl_via_reward-aware_consistency_traje.md)
 
 </div>
 

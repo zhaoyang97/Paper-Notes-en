@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] This paper proposes Structured Flow Autoencoders, which integrate structured latent variables from probabilistic graphical models into conditional continuous normalizing flows. By employing Structured Conditional Flow Matching, it simultaneously learns high-fidelity generative distributions and interpretable posterior
+  [ICLR 2026][Image Generation][Structured Flow Autoencoders] This paper proposes Structured Flow Autoencoders, which integrate structured latent variables from probabilistic graphical models into conditional continuous normalizing flows. By employing Structured Conditional Flow Matching, it simultaneously learns high-fidelity generative distributions and interpretable posterior representations, achieving a superior balance between generative quality, sample diversity…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Structured Flow Autoencoders"
+  - "Flow Matching"
+  - "Continuous Normalizing Flows"
+  - "Probabilistic Graphical Models"
+  - "Latent Variable Representation"
 date: 2026-05-08
-content_hash: 3af6486c5177a7f7
+content_hash: 68f2301fcef51d98
 ---
+
 # Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching
 
 **Conference**: ICLR 2026  
@@ -163,7 +168,7 @@ The paper covers four tasks: Pinwheel conditional density estimation, MNIST imag
 - [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
 - [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
+- [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](edit-based_flow_matching_for_temporal_point_processes.md)
 
 </div>
 

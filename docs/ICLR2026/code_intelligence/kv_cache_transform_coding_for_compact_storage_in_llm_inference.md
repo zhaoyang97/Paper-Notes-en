@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] KV Cache Transform Coding for Compact Storage in LLM Inference
 description: >-
-  [ICLR 2026][Code Intelligence][PCA] Ours proposes KVTC, a KV cache compression method inspired by classical media compression techniques (PCA feature decorrelation + adaptive quantization + entropy coding). It achieves up to 20× compression (40×+ in specific scenarios) on models like Llama 3, Mistral NeMo, and R1-Qwen 2.5, outforming baseline methods suc
+  [ICLR 2026][Code Intelligence][KV Cache Compression] Ours proposes KVTC, a KV cache compression method inspired by classical media compression techniques (PCA feature decorrelation + adaptive quantization + entropy coding). It achieves up to 20× compression (40×+ in specific scenarios) on models like Llama 3, Mistral NeMo, and R1-Qwen 2.5, outforming baseline methods such as token eviction, quantization, and SVD.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - PCA
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "KV Cache Compression"
+  - "Transform Coding"
+  - "PCA"
+  - "Adaptive Quantization"
+  - "Entropy Coding"
 date: 2026-05-08
-content_hash: 6e4370b79be59b95
+content_hash: 37143447fdf1e494
 ---
+
 # KV Cache Transform Coding for Compact Storage in LLM Inference
 
 **Conference**: ICLR 2026  

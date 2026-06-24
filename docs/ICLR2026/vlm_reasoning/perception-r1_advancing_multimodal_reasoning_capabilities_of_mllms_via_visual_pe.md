@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward
 description: >-
-  [ICLR 2026][vlm_reasoning][RLVR] Addressing the limitation where existing Reinforcement Learning from Verifiable Rewards (RLVR) only rewards final answer correctness and fails to improve visual perception, this paper proposes Perception-R1. By extracting atomic "visual annotations" from high-quality CoT trajectories as references, it employs a judge L
+  [ICLR 2026][VLM Reasoning][Multimodal Reasoning] Addressing the limitation where existing Reinforcement Learning from Verifiable Rewards (RLVR) only rewards final answer correctness and fails to improve visual perception, this paper proposes Perception-R1. By extracting atomic "visual annotations" from high-quality CoT trajectories as references, it employs a judge LLM to determine if the model's response faithfully describes these visual facts. Significant performance gains…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "RLVR"
+  - "Visual Perception Reward"
+  - "GRPO"
+  - "Data Efficiency"
 date: 2026-05-08
-content_hash: 257cc7edfc97b206
+content_hash: 84b38d78e1c7e222
 ---
+
 # Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward
 
 **Conference**: ICLR 2026  
@@ -133,8 +137,8 @@ Ours achieved 100x better data efficiency than Vision-R1. Significant improvemen
 - Value: ⭐⭐⭐⭐⭐ High data efficiency and a transferable methodology for adding intensive rewards to RLVR.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] The Geometric Mechanics of Contrastive Representation Learning: Alignment Potentials, Entropic Dispersion, and Cross-modal Divergence
 description: >-
-  [ICML 2026][Social Computing][InfoNCE] This paper employs a measure-theoretic framework to elevate the InfoNCE loss to a deterministic "population energy" over representation distributions. It demonstrates that the unimodal case is convex and converges to a unique Gibbs equilibrium, whereas the symmetric multimodal case exhibits a persistent negative symmet
+  [ICML 2026][Social Computing][InfoNCE] This paper employs a measure-theoretic framework to elevate the InfoNCE loss to a deterministic "population energy" over representation distributions. It demonstrates that the unimodal case is convex and converges to a unique Gibbs equilibrium, whereas the symmetric multimodal case exhibits a persistent negative symmetric KL coupling, showing that a modality gap is a geometric necessity.
 tags:
-  - ICML 2026
-  - Social Computing
-  - InfoNCE
-  - CLIP
-  - Modality Gap
-  - population energy
-  - Gibbs equilibrium
+  - "ICML 2026"
+  - "Social Computing"
+  - "InfoNCE"
+  - "CLIP"
+  - "Modality Gap"
+  - "population energy"
+  - "Gibbs equilibrium"
 date: 2026-05-08
-content_hash: 5ab2147b0df1d081
+content_hash: 17cd2f79da08ec84
 ---
+
 # The Geometric Mechanics of Contrastive Representation Learning: Alignment Potentials, Entropic Dispersion, and Cross-modal Divergence
 
 **Conference**: ICML 2026  

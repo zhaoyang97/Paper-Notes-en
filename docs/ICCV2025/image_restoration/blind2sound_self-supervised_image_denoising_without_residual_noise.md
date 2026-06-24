@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Blind2Sound: Self-Supervised Image Denoising without Residual Noise
 description: >-
-  [ICCV2025][Image Restoration][Self-supervised denoising] This paper proposes the Blind2Sound framework, which perceives noise levels and achieves personalized denoising via an adaptive re-visible loss…
+  [ICCV2025][Image Restoration][Self-supervised denoising] This paper proposes the Blind2Sound framework, which perceives noise levels and achieves personalized denoising via an adaptive re-visible loss, complemented by a Cramer Gaussian loss that improves noise parameter estimation accuracy. The framework eliminates residual noise in self-supervised blind denoising and outperforms all contemporary self-supervised methods and even some supervised baselines.
 tags:
   - "ICCV2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "residual noise elimination"
   - "noise awareness"
 date: 2026-05-08
-content_hash: 4b5ff770dbaffb4f
+content_hash: 7f5d7a2b592ee9a9
 ---
 
 # Blind2Sound: Self-Supervised Image Denoising without Residual Noise
@@ -187,11 +187,11 @@ On BSD68 (grayscale) and CBSD68 (sRGB), the Cramer Gaussian loss compared to FBI
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes](../../NeurIPS2025/image_restoration/moe-gyro_self-supervised_over-range_reconstruction_and_denoising_for_mems_gyrosc.md)
-- [\[CVPR 2026\] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising](../../CVPR2026/image_restoration/tm-bsn_triangular-masked_blind-spot_network_for_real-world_self-supervised_image.md)
-- [\[ICCV 2025\] Self-Calibrated Variance-Stabilizing Transformations for Real-World Image Denoising](self-calibrated_variance-stabilizing_transformations_for_real-world_image_denois.md)
-- [\[ICCV 2025\] Blind Noisy Image Deblurring Using Residual Guidance Strategy](blind_noisy_image_deblurring_using_residual_guidance_strateg.md)
-- [\[CVPR 2026\] Learning to Translate Noise for Robust Image Denoising](../../CVPR2026/image_restoration/learning_to_translate_noise_for_robust_image_denoising.md)
+- [\[CVPR 2026\] Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising](../../CVPR2026/image_restoration/convexity-aware_noise_calibration_a_self-supervised_framework_for_noise-level-un.md)
+- [\[CVPR 2025\] Rotation-Equivariant Self-Supervised Method in Image Denoising](../../CVPR2025/image_restoration/rotation-equivariant_self-supervised_method_in_image_denoising.md)
+- [\[CVPR 2025\] Generalized Recorrupted-to-Recorrupted: Self-Supervised Learning Beyond Gaussian Noise](../../CVPR2025/image_restoration/generalized_recorrupted-to-recorrupted_self-supervised_learning_beyond_gaussian_.md)
+- [\[ECCV 2024\] Asymmetric Mask Scheme for Self-supervised Real Image Denoising](../../ECCV2024/image_restoration/asymmetric_mask_scheme_for_self-supervised_real_image_denoising.md)
+- [\[CVPR 2026\] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising](../../CVPR2026/image_restoration/next-scale_prediction_a_self-supervised_approach_for_real-world_image_denoising.md)
 
 </div>
 

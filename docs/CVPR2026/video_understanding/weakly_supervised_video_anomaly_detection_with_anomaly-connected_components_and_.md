@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning
 description: >-
-  [CVPR 2026][Video Understanding][CLIP] The LAS-VAD framework is proposed, utilizing an Anomaly-Connected Components (ACC) mechanism to group video frames into semantically consistent clusters for pseudo-label generation to mitigate the lack of frame-level annotations. It further incorporates an Intention Awareness Mechanism (IAM) leveraging position-velocit
+  [CVPR 2026][Video Understanding][Weakly Supervised Video Anomaly Detection] The LAS-VAD framework is proposed, utilizing an Anomaly-Connected Components (ACC) mechanism to group video frames into semantically consistent clusters for pseudo-label generation to mitigate the lack of frame-level annotations. It further incorporates an Intention Awareness Mechanism (IAM) leveraging position-velocity-acceleration features to distinguish between normal and abnormal behaviors with si…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - CLIP
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Weakly Supervised Video Anomaly Detection"
+  - "Connected Components"
+  - "Intention Reasoning"
+  - "CLIP"
+  - "Multi-Instance Learning"
 date: 2026-05-08
-content_hash: 9de4f659809319ef
+content_hash: 37da7e34af2ff2b5
 ---
+
 # Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning
 
 **Conference**: CVPR 2026  
@@ -157,11 +162,11 @@ Fine-grained mAP (XD-Violence, avg IoU 0.1-0.5):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning from Noisy Supervision: A Denoising-Debiasing Framework for Weakly Supervised Video Anomaly Detection](learning_from_noisy_supervision_a_denoising-debiasing_framework_for_weakly_super.md)
 - [\[CVPR 2026\] Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection](joint_learning_of_general_and_diverse_patterns_with_mixture_of_memory_experts_fo.md)
 - [\[CVPR 2026\] The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection](the_road_less_seen_segment_exploration_for_weakly_supervised_video_anomaly_detec.md)
-- [\[CVPR 2026\] Learning from Noisy Supervision: A Denoising-Debiasing Framework for Weakly Supervised Video Anomaly Detection](learning_from_noisy_supervision_a_denoising-debiasing_framework_for_weakly_super.md)
+- [\[AAAI 2026\] Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment](../../AAAI2026/video_understanding/learning_to_tell_apart_weakly_supervised_video_anomaly_detection_via_disentangle.md)
 - [\[AAAI 2026\] RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection](../../AAAI2026/video_understanding/refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom.md)
-- [\[CVPR 2026\] TLMA: Mitigating the Impact of Weakly Labeled Information for Video Anomaly Detection](tlma_mitigating_the_impact_of_weakly_labeled_information_for_video_anomaly_detec.md)
 
 </div>
 

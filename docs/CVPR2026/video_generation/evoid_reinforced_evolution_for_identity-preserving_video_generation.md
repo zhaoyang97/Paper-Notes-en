@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EvoID: Reinforced Evolution for Identity-Preserving Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Reinforcement Learning] EvoID reformulates "identity-preserving video generation" from imitation learning into a reinforcement learning-driven self-evolution process. By employing a dual-path reward system (objective metrics + MLLM global preference) as an internal evaluator and anchoring exploration with a frozen T2V teacher, the generative
+  [CVPR 2026][Video Generation][Identity-Preserving Video Generation] EvoID reformulates "identity-preserving video generation" from imitation learning into a reinforcement learning-driven self-evolution process. By employing a dual-path reward system (objective metrics + MLLM global preference) as an internal evaluator and anchoring exploration with a frozen T2V teacher, the generative model actively balances identity fidelity, motion naturalness…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Identity-Preserving Video Generation"
+  - "Reinforcement Learning"
+  - "Dual-Path Reward"
+  - "Teacher-Student Framework"
+  - "MLLM Dynamic Weighting"
 date: 2026-05-08
-content_hash: a097af217929c312
+content_hash: bd6f273beba0752d
 ---
+
 # EvoID: Reinforced Evolution for Identity-Preserving Video Generation
 
 **Conference**: CVPR 2026  
@@ -155,15 +160,14 @@ Ablation of the dual-path mechanism (on top of PWR+TP):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
+- [\[CVPR 2026\] AnyID: Ultra-Fidelity Universal Identity-Preserving Video Generation from Any Visual References](anyid_ultra-fidelity_universal_identity-preserving_video_generation_from_any_vis.md)
 - [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
 - [\[CVPR 2026\] PLACID: Identity-Preserving Multi-Object Compositing via Video Diffusion with Synthetic Trajectories](placid_identity-preserving_multi-object_compositing_via_video_diffusion_with_syn.md)
 - [\[CVPR 2025\] Identity-Preserving Text-to-Video Generation by Frequency Decomposition](../../CVPR2025/video_generation/identity-preserving_text-to-video_generation_by_frequency_decomposition.md)
-- [\[CVPR 2026\] Stand-In: A Lightweight and Plug-and-Play Identity Control for Video Generation](stand-in_a_lightweight_and_plug-and-play_identity_control_for_video_generation.md)
+- [\[ICLR 2026\] ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask](../../ICLR2026/video_generation/consisdrive_identity-preserving_driving_world_models_for_video_generation_by_ins.md)
 
 </div>
 

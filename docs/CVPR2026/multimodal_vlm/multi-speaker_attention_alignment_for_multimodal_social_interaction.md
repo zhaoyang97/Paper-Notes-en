@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-speaker Attention Alignment for Multimodal Social Interaction
 description: >-
-  [CVPR 2026][Audio & Speech][MLLM] This paper discovers that Multimodal Large Language Models (MLLMs) suffer from severe cross-modal attention misalignment between "speaker text tokens and their corresponding visual regions" in multi-speaker dialogue scenarios. It proposes a **parameter-free and architecture-agnostic** attention alignment method: first,
+  [CVPR 2026][Multimodal VLM][Multi-party Social Understanding] This paper discovers that Multimodal Large Language Models (MLLMs) suffer from severe cross-modal attention misalignment between "speaker text tokens and their corresponding visual regions" in multi-speaker dialogue scenarios. It proposes a **parameter-free and architecture-agnostic** attention alignment method: first, dynamically selecting attention heads responsible for visual grounding…
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-party Social Understanding"
+  - "Cross-modal Attention"
+  - "Speaker Alignment"
+  - "Training-free Intervention"
+  - "MLLM"
 date: 2026-05-08
-content_hash: acd6d45e6738733d
+content_hash: 8378ee6463d6f4c9
 ---
+
 # Multi-speaker Attention Alignment for Multimodal Social Interaction
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ All three MLLMs showed consistent improvements. Gains on MMSI were higher than o
 
 ## Related Papers
 
-- [\[CVPR 2026\] Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding](omni-mmsi_toward_identity-attributed_social_interaction_understanding.md)
-- [\[CVPR 2026\] AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding](amuse_audio-visual_benchmark_and_alignment_framework_for_agentic_multi-speaker_u.md)
-- [\[CVPR 2025\] DualTalk: Dual-Speaker Interaction for 3D Talking Head Conversations](../../CVPR2025/audio_speech/dualtalk_dual-speaker_interaction_for_3d_talking_head_conversations.md)
-- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
-- [\[ICML 2026\] Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition](../../ICML2026/audio_speech/towards_understanding_modality_interaction_in_multimodal_language_models_via_par.md)
+- [\[CVPR 2026\] Information-Theoretic Decomposition for Multimodal Interaction Learning](information-theoretic_decomposition_for_multimodal_interaction_learning.md)
+- [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
+- [\[ICLR 2026\] Thinking as Society: Multi-Social-Agent Self-Distillation for Multimodal Misinformation Detection](../../ICLR2026/multimodal_vlm/thinking_as_society_multi-social-agent_self-distillation_for_multimodal_misinfor.md)
+- [\[CVPR 2026\] Spot The Ball: A Benchmark for Visual Social Inference](spot_the_ball_a_benchmark_for_visual_social_inference.md)
+- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](../../ICML2026/multimodal_vlm/seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
 
 </div>
 

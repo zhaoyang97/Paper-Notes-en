@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OrthoFuse: Training-free Riemannian Fusion of Orthogonal Style-Concept Adapters for Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The first training-free fusion method for **multiplicative orthogonal adapters** (OFT): it treats Group-and-Shuffle (GS) orthogonal matrices as points on a Riemannian manifold, synthesizes a "concept adapter" and a "style adapter" into one via block-level geodesic interpolation, and applies a spectral recovery transfor
+  [CVPR 2026][Image Generation][Orthogonal Fine-Tuning] The first training-free fusion method for **multiplicative orthogonal adapters** (OFT): it treats Group-and-Shuffle (GS) orthogonal matrices as points on a Riemannian manifold, synthesizes a "concept adapter" and a "style adapter" into one via block-level geodesic interpolation, and applies a spectral recovery transform to restore eigenvalues flattened by interpolation. This allows merging a specified subject with a specif…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Orthogonal Fine-Tuning"
+  - "Adapter Fusion"
+  - "Riemannian Manifold"
+  - "Geodesics"
+  - "Style-Concept Generation"
 date: 2026-05-08
-content_hash: 9e07ee781f9b0243
+content_hash: 27409ae18b62ae38
 ---
+
 # OrthoFuse: Training-free Riemannian Fusion of Orthogonal Style-Concept Adapters for Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -112,6 +118,7 @@ OrthoFuse achieves the highest Style Sim (0.61) and Geo.Mean (0.64). While conce
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -120,7 +127,7 @@ OrthoFuse achieves the highest Style Sim (0.61) and Geo.Mean (0.64). While conce
 - [\[ICML 2026\] Orthogonal Concept Erasure for Diffusion Models](../../ICML2026/image_generation/orthogonal_concept_erasure_for_diffusion_models.md)
 - [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
 - [\[CVPR 2026\] Efficient and Training-Free Single-Image Diffusion Models](efficient_and_training-free_single-image_diffusion_models.md)
-- [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
+- [\[CVPR 2026\] StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References](stylegallery_training-free_and_semantic-aware_personalized_style_transfer_from_a.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] GAPrune: Gradient-Alignment Pruning for Domain-Aware Embeddings
 description: >-
-  [ICLR 2026][Model Compression][Information Bottleneck] GAPrune measures parameter domain importance via Fisher Information and cross-domain alignment via the cosine similarity between general and domain gradients. These are fused into a Domain-Alignment Importance (DAI) score for one-shot pruning, ensuring compressed embedding models retain general language capabilities wh
+  [ICLR 2026][Model Compression][Model Pruning] GAPrune measures parameter domain importance via Fisher Information and cross-domain alignment via the cosine similarity between general and domain gradients. These are fused into a Domain-Alignment Importance (DAI) score for one-shot pruning, ensuring compressed embedding models retain general language capabilities while strengthening domain expertise on finance and chemistry benchmarks.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Information Bottleneck
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model Pruning"
+  - "Embedding Models"
+  - "Domain Adaptation"
+  - "Fisher Information"
+  - "Gradient Alignment"
+  - "Information Bottleneck"
 date: 2026-05-08
-content_hash: 7126276014ad746c
+content_hash: 91b795a40b696a66
 ---
+
 # GAPrune: Gradient-Alignment Pruning for Domain-Aware Embeddings
 
 **Conference**: ICLR 2026  
@@ -123,10 +129,10 @@ After retraining, GAPrune not only recovers but **surpasses** the dense model.
 ## Related Papers
 
 - [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[ICLR 2026\] Constraint-guided Hardware-aware NAS through Gradient Modification](constraint-guided_hardware-aware_nas_through_gradient_modification.md)
 - [\[AAAI 2026\] Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval](../../AAAI2026/model_compression/prototype-based_semantic_consistency_alignment_for_domain_adaptive_retrieval.md)
 - [\[ICLR 2026\] GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs](gradpruner_gradient-guided_layer_pruning_enabling_efficient_fine-tuning_and_infe.md)
-- [\[ICLR 2026\] Modality-free Graph In-context Alignment](modality-free_graph_in-context_alignment.md)
 
 </div>
 

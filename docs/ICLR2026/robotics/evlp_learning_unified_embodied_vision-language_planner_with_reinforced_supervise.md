@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][World Models] EVLP utilizes a unified multimodal generation framework to simultaneously model linguistic reasoning and visual imagination. Coupled with "Bidirectional Dynamic Perception Pre-training" and "Reinforced Supervised Fine-Tuning (RSFT)", the model generates the next linguistic action and sub-goal image from high-level inst
+  [ICLR 2026][Robotics][Embodied Planning] EVLP utilizes a unified multimodal generation framework to simultaneously model linguistic reasoning and visual imagination. Coupled with "Bidirectional Dynamic Perception Pre-training" and "Reinforced Supervised Fine-Tuning (RSFT)", the model generates the next linguistic action and sub-goal image from high-level instructions in one step, significantly outperforming various language, visual, and multimodal planning baselines in long-h…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - World Models
+  - "ICLR 2026"
+  - "Robotics"
+  - "Embodied Planning"
+  - "Unified Multimodal Generation"
+  - "Vision-Language Planning"
+  - "Reinforced Supervised Fine-Tuning"
+  - "World Model"
 date: 2026-05-08
-content_hash: 68978bed169b162c
+content_hash: 4cd566970b3cd3d3
 ---
+
 # EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -117,13 +122,14 @@ EVLP achieves SOTA performance across all tasks, typically leading the strongest
 - **Value**: ⭐⭐⭐⭐ Provides a robust template for unified multimodal embodied planners. RSFT + one-step sampling is a highly transferable paradigm for modern RL-based generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting](actions_as_language_fine-tuning_vlms_into_vlas_without_catastrophic_forgetting.md)
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
 - [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
-- [\[ICLR 2026\] Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](cosmos_policy_fine-tuning_video_models_for_visuomotor_control_and_planning.md)
 - [\[ICLR 2026\] Vision-Language-Action Instruction Tuning: From Understanding to Manipulation](vision-language-action_instruction_tuning_from_understanding_to_manipulation.md)
 - [\[ICLR 2026\] MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Models for Embodied Task Planning](momagraph_state-aware_unified_scene_graphs_with_vision-language_models_for_embod.md)
 

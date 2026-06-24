@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][Hybrid Operators] Nemotron-Flash constructs a latency-optimal family of small language models through systematic optimization of depth-width ratios…
+  [NeurIPS 2025][LLM (Other)][Hybrid Operators] Nemotron-Flash constructs a latency-optimal family of small language models through systematic optimization of depth-width ratios, evolutionary search over hybrid operator combinations (DeltaNet + Mamba2 + Attention), and weight-normalization-based training. Compared to Qwen3-1.7B/0.6B, it achieves 1.3×/1.9× latency reduction alongside a +5.5% average accuracy improvement.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Hybrid Operators"
   - "Depth-Width Ratio"
   - "Weight Normalization"
   - "Evolutionary Search"
 date: 2026-05-08
-content_hash: 71284b6cfd467c4a
+content_hash: f348d7a09999ca3b
 ---
 
 # Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models
@@ -152,10 +152,10 @@ Block-1 = DeltaNet-FFN-Mamba2-FFN; Block-2 = Attention-FFN-Mamba2-FFN. Training 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Q♯: Provably Optimal Distributional RL for LLM Post-Training](qsharp_provably_optimal_distributional_rl_for_llm_post-training.md)
-- [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](../../AAAI2026/llm_nlp/transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
-- [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](solving_inequality_proofs_with_large_language_models.md)
-- [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](scaling_up_active_testing_to_large_language_models.md)
-- [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
+- [\[ACL 2025\] Mixture of Small and Large Models for Chinese Spelling Check](../../ACL2025/llm_nlp/mixture_of_small_and_large_models_for_chinese_spelling_check.md)
+- [\[ACL 2025\] PiFi: Plug-in and Fine-tuning: Bridging the Gap between Small Language Models and Large Language Models](../../ACL2025/llm_nlp/plugin_finetuning_bridge.md)
+- [\[ACL 2025\] Are Optimal Algorithms Still Optimal? Rethinking Sorting in LLM-Based Pairwise Ranking with Batching and Caching](../../ACL2025/llm_nlp/are_optimal_algorithms_still_optimal_rethinking_sorting_in_llm-based_pairwise_ra.md)
+- [\[ICLR 2026\] COSMOS: A Hybrid Adaptive Optimizer for Efficient Training of Large Language Models](../../ICLR2026/llm_nlp/cosmos_a_hybrid_adaptive_optimizer_for_efficient_training_of_large_language_mode.md)
 
 </div>
 

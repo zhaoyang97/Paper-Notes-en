@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] G-CVO represents point clouds as continuous functions in RKHS, encodes local surface geometry using anisotropic kernels, and solves registration via second-order Gaussian-Newton with approximate Riemannian Hessian on the SE(3) manifold. This achieves correspondence-free registration robust to feature-sparse scenes, run
+  [CVPR 2026][3D Vision][Point cloud registration] G-CVO represents point clouds as continuous functions in RKHS, encodes local surface geometry using anisotropic kernels, and solves registration via second-order Gaussian-Newton with approximate Riemannian Hessian on the SE(3) manifold. This achieves correspondence-free registration robust to feature-sparse scenes, running approximately 10x faster than similar first-order RKHS methods.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud registration"
+  - "correspondence-free registration"
+  - "RKHS kernel embedding"
+  - "anisotropic kernels"
+  - "Riemannian optimization"
 date: 2026-05-08
-content_hash: 4273c090671f2709
+content_hash: 297b12ddd88ee531
 ---
+
 # Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ G-CVO-2 achieves the lowest translation/rotation drift in the most difficult fea
 
 ## Related Papers
 
-- [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
-- [\[CVPR 2026\] Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling](hyper-pcn_hypergraph-based_point_cloud_completion_via_high-order_correlation_mod.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
+- [\[CVPR 2026\] SuP: Sub-cloud Driven Point Cloud Registration](sup_sub-cloud_driven_point_cloud_registration.md)
+- [\[CVPR 2026\] Registration-Free Learnable Multi-View Capture of Faces in Dense Semantic Correspondence](registration-free_learnable_multi-view_capture_of_faces_in_dense_semantic_corres.md)
+- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
 - [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
-- [\[CVPR 2026\] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)
+- [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
 
 </div>
 

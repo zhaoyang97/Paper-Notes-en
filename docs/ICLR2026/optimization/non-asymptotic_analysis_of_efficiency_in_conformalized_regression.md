@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Non-Asymptotic Analysis of Efficiency in Conformalized Regression
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Establish the first non-asymptotic efficiency bounds for Conformalized Quantile Regression (CQR) and Conformalized Median Regression (CMR) under SGD training, explicitly characterizing the joint dependence of prediction set length deviation on training sample size $n$, calibration sample size $m$, and miscoverage rate
+  [ICLR 2026][Optimization][Conformal Prediction] Establish the first non-asymptotic efficiency bounds for Conformalized Quantile Regression (CQR) and Conformalized Median Regression (CMR) under SGD training, explicitly characterizing the joint dependence of prediction set length deviation on training sample size $n$, calibration sample size $m$, and miscoverage rate $\alpha$.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Conformal Prediction"
+  - "Quantile Regression"
+  - "Non-asymptotic Analysis"
+  - "Prediction Set Efficiency"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: 0be04b9dead2eede
+content_hash: 947acc40319b163d
 ---
+
 # Non-Asymptotic Analysis of Efficiency in Conformalized Regression
 
 **Conference**: ICLR 2026  
@@ -117,9 +123,9 @@ Using the MEPS Panel 19/20 dataset:
 
 - [\[ICLR 2026\] Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting](hinge_regression_tree_a_newton_method_for_oblique_regression_tree_splitting.md)
 - [\[ICML 2026\] Taming the Loss Landscape of PINNs with Noisy Feynman-Kac Supervision: Operator Preconditioning and Non-Asymptotic Error Bounds](../../ICML2026/optimization/taming_the_loss_landscape_of_pinns_with_noisy_feynman-kac_supervision_operator_p.md)
+- [\[ICLR 2026\] Improved ℓp Regression via Iteratively Reweighted Least Squares](improved_ell_p_regression_via_iteratively_reweighted_least_squares.md)
+- [\[CVPR 2025\] Test-Time Augmentation Improves Efficiency in Conformal Prediction](../../CVPR2025/optimization/test-time_augmentation_improves_efficiency_in_conformal_prediction.md)
 - [\[ICLR 2026\] Distributionally Robust Linear Regression with Block Lewis Weights](distributionally_robust_linear_regression_with_block_lewis_weights.md)
-- [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
-- [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Verification and Co-Alignment via Heterogeneous Consistency for Preference-Aligned LLM Annotations
 description: >-
-  [ICLR 2026][Alignment & RLHF][CAI Ratio] This paper proposes Heterogeneous-Consistency Co-Alignment (HCC), which utilizes the consistency/inconsistency relationship between LLMs and task-specific embedding models to verify the reliability of LLM annotations in reference-free semi-supervised NLU scenarios. It further rectifies preference-inconsistent samples t
+  [ICLR 2026][LLM Alignment][Heterogeneous Consistency] This paper proposes Heterogeneous-Consistency Co-Alignment (HCC), which utilizes the consistency/inconsistency relationship between LLMs and task-specific embedding models to verify the reliability of LLM annotations in reference-free semi-supervised NLU scenarios. It further rectifies preference-inconsistent samples through two rounds of co-alignment based on nearest neighbor voting.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - CAI Ratio
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Heterogeneous Consistency"
+  - "Preference Alignment Annotation"
+  - "CAI Ratio"
+  - "Semi-supervised NLU"
+  - "Training-free Calibration"
 date: 2026-05-08
-content_hash: 65a2e1722be3f2a9
+content_hash: 8bf0b17c4449b896
 ---
+
 # Verification and Co-Alignment via Heterogeneous Consistency for Preference-Aligned LLM Annotations
 
 **Conference**: ICLR 2026  

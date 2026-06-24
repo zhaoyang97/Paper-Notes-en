@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] TwinVLA introduces a modular framework that combines two pre-trained single-arm VLAs into a bimanual VLA using joint attention and MoE. It achieves performance levels comparable to $\pi_0$ (which utilizes 10,900h of private data and 1,000+ GPU-days) while requiring only ~800h of public single-arm data, 50 bimanual fine
+  [ICLR 2026][Robotics][Bimanual Manipulation] TwinVLA introduces a modular framework that combines two pre-trained single-arm VLAs into a bimanual VLA using joint attention and MoE. It achieves performance levels comparable to $\pi_0$ (which utilizes 10,900h of private data and 1,000+ GPU-days) while requiring only ~800h of public single-arm data, 50 bimanual fine-tuning episodes, and 25 H100 GPU-days.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICLR 2026"
+  - "Robotics"
+  - "Bimanual Manipulation"
+  - "VLA"
+  - "Modular Composition"
+  - "Joint Attention"
+  - "Data-efficient"
 date: 2026-05-08
-content_hash: 0cbf05e4a1a0db73
+content_hash: f975e35c607e48c8
 ---
+
 # TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models
 
 **Conference**: ICLR 2026  

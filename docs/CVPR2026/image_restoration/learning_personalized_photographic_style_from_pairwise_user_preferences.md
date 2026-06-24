@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Personalized Photographic Style from Pairwise User Preferences
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] This paper defines a new task called PPS (Personalized Photographic Style), which involves learning personalized aesthetic preferences from pairwise user judgments and applying them to new photos. The authors provide the PPSD dataset (approximately 60,000 preference judgments from 767 users), three baseline models, and
+  [CVPR 2026][Image Restoration][Personalized Photographic Style] This paper defines a new task called PPS (Personalized Photographic Style), which involves learning personalized aesthetic preferences from pairwise user judgments and applying them to new photos. The authors provide the PPSD dataset (approximately 60,000 preference judgments from 767 users), three baseline models, and a specialized evaluation metric, CQS, which balances "fidelity" and "preference alignment." The…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Personalized Photographic Style"
+  - "Pairwise Preferences"
+  - "Image Retouching"
+  - "Implicit Style Learning"
+  - "Preference Evaluation"
 date: 2026-05-08
-content_hash: 67a75ffbbeb37237
+content_hash: 588768a2eadc1f21
 ---
+
 # Learning Personalized Photographic Style from Pairwise User Preferences
 
 **Conference**: CVPR 2026  
@@ -149,16 +155,16 @@ The key takeaway is that **CMR is positive for all three baselines**, proving th
 - Value: ⭐⭐⭐⭐ High value as a foundational benchmark; PPSD and CQS are directly reusable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis](unicac_universal_computational_aberration_correction_benchmark.md)
-- [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
 - [\[CVPR 2025\] OptiFusion: Towards Universal Computational Aberration Correction in Photographic Cameras](../../CVPR2025/image_restoration/towards_universal_computational_aberration_correction_in_photographic_cameras_a_.md)
+- [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
+- [\[CVPR 2026\] Coordinate Denoising for Non-Equilibrium Molecular Representation Learning](coordinate_denoising_for_non-equilibrium_molecular_representation_learning.md)
 - [\[ECCV 2024\] Pairwise Distance Distillation for Unsupervised Real-World Image Super-Resolution](../../ECCV2024/image_restoration/pairwise_distance_distillation_for_unsupervised_real-world_image_super-resolutio.md)
-- [\[CVPR 2026\] Enhancing Unregistered Hyperspectral Image Super-Resolution via Unmixing-based Abundance Fusion Learning](enhancing_unregistered_hyperspectral_image_super-resolution_via_unmixing-based_a.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TV-Rec: Time-Variant Convolutional Filter for Sequential Recommendation
 description: >-
-  [NeurIPS 2025][Recommender Systems][Sequential recommendation] This paper proposes TV-Rec, a time-variant convolutional filter grounded in graph signal processing that replaces conventional fixed convolutions and self-at…
+  [NeurIPS 2025][Recommender Systems][Sequential recommendation] This paper proposes TV-Rec, a time-variant convolutional filter grounded in graph signal processing that replaces conventional fixed convolutions and self-attention mechanisms, achieving higher expressiveness for sequential recommendation with an average improvement of 7.49% across 6 benchmark datasets.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "attention replacement"
   - "user behavior modeling"
 date: 2026-05-08
-content_hash: d8579138623e5346
+content_hash: 4f8490ca0936b3ad
 ---
 
 # TV-Rec: Time-Variant Convolutional Filter for Sequential Recommendation
@@ -148,7 +148,7 @@ where $s_j$ denotes the predicted score for item $j$.
 - [\[NeurIPS 2025\] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation](semantic_retrieval_augmented_contrastive_learning_for_sequential_recommendation.md)
 - [\[NeurIPS 2025\] MMPB: It's Time for Multi-Modal Personalization](mmpb_its_time_for_multi-modal_personalization.md)
 - [\[AAAI 2026\] HyMoERec: Hybrid Mixture-of-Experts for Sequential Recommendation](../../AAAI2026/recommender/hymoerec_hybrid_mixture-of-experts_for_sequential_recommendation.md)
-- [\[NeurIPS 2025\] Inference-Time Reward Hacking in Large Language Models](inference-time_reward_hacking_in_large_language_models.md)
+- [\[ACL 2025\] Laser: Bi-Tuning with Collaborative Information for Controllable LLM-Based Sequential Recommendation](../../ACL2025/recommender/bi-tuning_with_collaborative_information_for_controllable_llm-based_sequential_r.md)
 
 </div>
 

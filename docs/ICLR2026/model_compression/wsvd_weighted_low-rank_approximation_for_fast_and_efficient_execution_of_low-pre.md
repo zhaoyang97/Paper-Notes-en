@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Language Models
+  [Paper Note] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Learning Models
 description: >-
-  [ICLR 2026][Model Compression][SVD] WSVD replaces traditional SVD performed on the entire K/V projection matrix with a "per-head" SVD approach, restores precision through Fisher importance-weighted fine-tuning, layers W8A8 quantization, and implements a Triton operator that fuses low-rank reconstruction directly into Flash Decoding. This achieves a real-
+  [ICLR 2026][Model Compression][Low-Rank Approximation] WSVD replaces traditional SVD performed on the entire K/V projection matrix with a "per-head" SVD approach, restores precision through Fisher importance-weighted fine-tuning, layers W8A8 quantization, and implements a Triton operator that fuses low-rank reconstruction directly into Flash Decoding. This achieves a real-world decoding speedup of over 1.8× compared to Flash Decoding for Vision-Language Models (VLMs) with alm…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - SVD
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Low-Rank Approximation"
+  - "SVD"
+  - "Weighted Fine-tuning"
+  - "Quantization-Aware Training"
+  - "VLM Decoding Acceleration"
 date: 2026-05-08
-content_hash: edda6235bfef0489
+content_hash: 92a08b2e8b542450
 ---
+
 # WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Learning Models
 
 **Conference**: ICLR 2026  
@@ -156,15 +161,16 @@ Compared to Flash Decoding, WSVD-noQ achieves 1.8×+ real decoding speedup.
 - Value: ⭐⭐⭐⭐ Provides a practical, measurable speedup for VLM deployment with an open-source implementation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] GlowQ: Group-Shared Low-Rank Approximation for Quantized LLMs](glowq_group-shared_low-rank_approximation_for_quantized_llms.md)
-- [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
-- [\[ICLR 2026\] Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation](taming_momentum_rethinking_optimizer_states_through_low-rank_approximation.md)
-- [\[ICLR 2026\] UniQL: Unified Quantization and Low-Rank Compression for Adaptive Edge LLMs](uniql_unified_quantization_and_low-rank_compression_for_adaptive_edge_llms.md)
 - [\[NeurIPS 2025\] QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression](../../NeurIPS2025/model_compression/qsvd_efficient_low-rank_approximation_for_unified_query-key-value_weight_compres.md)
+- [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](revisiting_weight_regularization_for_low-rank_continual_learning.md)
+- [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
+- [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
 
 </div>
 

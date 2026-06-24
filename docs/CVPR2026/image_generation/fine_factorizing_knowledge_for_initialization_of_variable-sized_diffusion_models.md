@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FINE: Factorizing Knowledge for Initialization of Variable-sized Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][learngene] FINE is a pre-training method for diffusion models: it formulates weights of each layer as $U_\star \Sigma^{(l)}_\star V_\star^\top$. The shared singular vectors $U_\star, V_\star$ (termed learngene) carry size-agnostic knowledge, while layer-specific singular values $\Sigma^{(l)}_\star$ adapt to each layer. For any ta
+  [CVPR 2026][Image Generation][Diffusion model initialization] FINE is a pre-training method for diffusion models: it formulates weights of each layer as $U_\star \Sigma^{(l)}_\star V_\star^\top$. The shared singular vectors $U_\star, V_\star$ (termed learngene) carry size-agnostic knowledge, while layer-specific singular values $\Sigma^{(l)}_\star$ adapt to each layer. For any target size, one can directly initialize by freezing the learngene and performing lightweight retrai…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - learngene
-  - DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion model initialization"
+  - "learngene"
+  - "weight factorization"
+  - "variable-sized models"
+  - "DiT"
 date: 2026-05-08
-content_hash: 72fdb594911c4e2e
+content_hash: 31c3fc9c1b35ba50
 ---
+
 # FINE: Factorizing Knowledge for Initialization of Variable-sized Diffusion Models
 
 **Conference**: CVPR 2026  

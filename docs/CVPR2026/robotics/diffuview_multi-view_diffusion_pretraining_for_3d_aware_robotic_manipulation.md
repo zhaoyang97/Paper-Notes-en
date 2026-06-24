@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] DiffuView treats "multi-view diffusion generation" as a 3D-consistent visual pretraining task—teaching the network to "generate a target view given source view observations and camera poses" to implicitly recover scene geometry. The pretrained diffusion UNet is then utilized as a visual backbone for a diffusion action
+  [CVPR 2026][Robotics][Multi-view diffusion pretraining] DiffuView treats "multi-view diffusion generation" as a 3D-consistent visual pretraining task—teaching the network to "generate a target view given source view observations and camera poses" to implicitly recover scene geometry. The pretrained diffusion UNet is then utilized as a visual backbone for a diffusion action policy, enabling stable robot arm manipulation even under camera view shifts. It achieves a success rate…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Multi-view diffusion pretraining"
+  - "visual representation"
+  - "imitation learning"
+  - "view robustness"
+  - "diffusion policy"
 date: 2026-05-08
-content_hash: 3d9fcb23364cd8c0
+content_hash: ec8044262f91e615
 ---
+
 # DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -146,10 +152,10 @@ On Libero-10, metrics represent success rate (%).
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
 - [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
+- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
 - [\[CVPR 2025\] 3D-MVP: 3D Multiview Pretraining for Robotic Manipulation](../../CVPR2025/robotics/3d-mvp_3d_multiview_pretraining_for_manipulation.md)
-- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
+- [\[CVPR 2026\] Expanding Spatial and Temporal Context for Robotic Imitation Learning With Scene Graphs](expanding_spatial_and_temporal_context_for_robotic_imitation_learning_with_scene.md)
 - [\[CVPR 2026\] CycleManip: Enabling Cycle-based Manipulation via Effective History Perception and Understanding](cyclemanip_enabling_cycle-based_manipulation_via_effective_history_perception_an.md)
 
 </div>

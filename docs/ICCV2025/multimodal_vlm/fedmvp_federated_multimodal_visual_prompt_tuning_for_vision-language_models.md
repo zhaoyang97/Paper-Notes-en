@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Federated Learning] This paper proposes FedMVP, which, under a federated learning setting, employs a PromptFormer network to fuse image visual features with LLM-generated category attribute te…
+  [ICCV 2025][Multimodal VLM][Federated Learning] This paper proposes FedMVP, which, under a federated learning setting, employs a PromptFormer network to fuse image visual features with LLM-generated category attribute text features, generating dynamic multimodal visual prompts injected into CLIP's visual encoder. FedMVP achieves substantial improvements of 1.57%–2.26% over existing federated prompt learning methods across 20 datasets and three generalization settings.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Visual Prompt Tuning"
   - "Cross-Domain Generalization"
 date: 2026-05-08
-content_hash: 51df0b14f18ea205
+content_hash: fcdf210bbb0dda8f
 ---
 
 # FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models
@@ -159,9 +159,9 @@ Each client locally trains a PromptFormer network (the sole trainable module), w
 
 - [\[ICCV 2025\] Attention to the Burstiness in Visual Prompt Tuning!](attention_to_the_burstiness_in_visual_prompt_tuning.md)
 - [\[ICCV 2025\] PRO-VPT: Distribution-Adaptive Visual Prompt Tuning via Prompt Relocation](pro-vpt_distribution-adaptive_visual_prompt_tuning_via_prompt_relocation.md)
+- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](../../CVPR2026/multimodal_vlm/fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
 - [\[ICCV 2025\] CVPT: Cross Visual Prompt Tuning](cvpt_cross_visual_prompt_tuning.md)
 - [\[ICCV 2025\] FA: Forced Prompt Learning of Vision-Language Models for Out-of-Distribution Detection](fa_forced_prompt_learning_of_vision-language_models_for_out-of-distribution_dete.md)
-- [\[ICLR 2026\] Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts](../../ICLR2026/multimodal_vlm/revisit_visual_prompt_tuning_the_expressiveness_of_prompt_experts.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Persona Features Control Emergent Misalignment
 description: >-
-  [ICLR 2026][Interpretability][Alignment] The authors perform "model diffing" on GPT-4o before and after fine-tuning using Sparse Autoencoders (SAEs). They find that a set of "misaligned persona" features (notably a "toxic persona" feature #10) is the primary internal cause of the "emergent misalignment" phenomenon—where fine-tuning on narrow-domain erroneous
+  [ICLR 2026][Interpretability][Emergent misalignment] The authors perform "model diffing" on GPT-4o before and after fine-tuning using Sparse Autoencoders (SAEs). They find that a set of "misaligned persona" features (notably a "toxic persona" feature #10) is the primary internal cause of the "emergent misalignment" phenomenon—where fine-tuning on narrow-domain erroneous data leads to broad-domain misalignment. Based on this, they achieve misalignment prediction…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Alignment
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Emergent misalignment"
+  - "Sparse Autoencoder"
+  - "model diffing"
+  - "persona features"
+  - "alignment"
 date: 2026-05-08
-content_hash: 4465541c70b215ce
+content_hash: 2e26e5e5f13c6afb
 ---
+
 # Persona Features Control Emergent Misalignment
 
 **Conference**: ICLR 2026  
@@ -124,11 +129,11 @@ Using "unsafe code triggering misalignment" as an example: Take clean GPT-4o ($M
 
 ## Related Papers
 
-- [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
 - [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](../../ICML2026/interpretability/block-em_preventing_emergent_misalignment_via_latent_blocking.md)
-- [\[ICLR 2026\] Sparse Autoencoders Trained on the Same Data Learn Different Features](sparse_autoencoders_trained_on_the_same_data_learn_different_features.md)
-- [\[ICLR 2026\] AbsTopK: Rethinking Sparse Autoencoders For Bidirectional Features](abstopk_rethinking_sparse_autoencoders_for_bidirectional_features.md)
+- [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
 - [\[ICLR 2026\] Emergent Discrete Controller Modules for Symbolic Planning in Transformers](emergent_discrete_controller_modules_for_symbolic_planning_in_transformers.md)
+- [\[ICLR 2026\] Features Emerge as Discrete States: The First Application of SAEs to 3D Representations](features_emerge_as_discrete_states_the_first_application_of_saes_to_3d_represent.md)
+- [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights into Reasoning-Induced Misalignment](when_thinking_backfires_mechanistic_insights_into_reason-induced_misalignment.md)
 
 </div>
 

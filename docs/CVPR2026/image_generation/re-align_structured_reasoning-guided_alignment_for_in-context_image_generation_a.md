@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing
 description: >-
-  [CVPR 2026][Image Generation][GRPO] Addressing the "misalignment" in unified multimodal models where reasoning capability fails to guide image generation, Re-Align utilizes structured In-Context Chain-of-Thought (decomposed into semantic guidance and reference association) to reduce complex interleaved tasks into text-to-image generation. By applying GRP
+  [CVPR 2026][Image Generation][Interleaved Image-Text Generation] Addressing the "misalignment" in unified multimodal models where reasoning capability fails to guide image generation, Re-Align utilizes structured In-Context Chain-of-Thought (decomposed into semantic guidance and reference association) to reduce complex interleaved tasks into text-to-image generation. By applying GRPO reinforcement learning with a CLIP similarity-based proxy reward…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Interleaved Image-Text Generation"
+  - "Structured Reasoning"
+  - "Chain-of-Thought"
+  - "GRPO"
+  - "Reasoning-Generation Alignment"
 date: 2026-05-08
-content_hash: 9a524390c92de734
+content_hash: b35840facb1d1154
 ---
+
 # Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,18 @@ Human evaluation (GSB) for reasoning paradigm: IC-CoT achieves a **20%** net win
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-<!-- Add related papers here if necessary -->
+
+## Related Papers
+
+- [\[CVPR 2026\] ReasonEdit: Towards Reasoning-Enhanced Image Editing Models](reasonedit_towards_reasoning-enhanced_image_editing_models.md)
+- [\[ICLR 2026\] ChronoEdit: Towards Temporal Reasoning for In-Context Image Editing and World Simulation](../../ICLR2026/image_generation/chronoedit_towards_temporal_reasoning_for_in-context_image_editing_and_world_sim.md)
+- [\[CVPR 2026\] Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation](disentangling_to_re-couple_resolving_the_similarity-controllability_paradox_in_s.md)
+- [\[CVPR 2026\] Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation](thinking-while-generating_interleaving_textual_reasoning_throughout_visual_gener.md)
+- [\[CVPR 2026\] Align Images Before You Generate](align_images_before_you_generate.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] ReasonEdit: Towards Reasoning-Enhanced Image Editing Models](reasonedit_towards_reasoning-enhanced_image_editing_models.md)

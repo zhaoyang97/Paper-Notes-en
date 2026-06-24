@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Token Perturbation Guidance for Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Training-free guidance] This paper proposes Token Perturbation Guidance (TPG), which constructs a negative score signal by applying norm-preserving shuffling perturbations to intermediate…
+  [NeurIPS 2025][Image Generation][Training-free guidance] This paper proposes Token Perturbation Guidance (TPG), which constructs a negative score signal by applying norm-preserving shuffling perturbations to intermediate token representations in diffusion models, enabling training-free, condition-agnostic guidance. TPG improves the FID of SDXL by nearly 2× in unconditional generation and approaches CFG-level performance in conditional generation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "CFG alternative"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 0b7b8434deb1c89a
+content_hash: 33bcfc3a0c7bda97
 ---
 
 # Token Perturbation Guidance for Diffusion Models

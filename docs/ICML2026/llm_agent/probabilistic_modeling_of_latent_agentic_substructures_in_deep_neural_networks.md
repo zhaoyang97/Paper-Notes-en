@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probabilistic Modeling of Latent Agentic Substructures in Deep Neural Networks
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] The authors formalize neural networks (specifically LLMs) as composite agents synthesized through the log-weighted pooling of multiple implicit sub-agents (each defined as a probability distribution over outcomes). Under the framework of epistemic utility $W_i(o)=\log P_i(o)$, it is proven that "strict unanimity" is im
+  [ICML 2026][LLM Agent][Sub-agent structures] The authors formalize neural networks (specifically LLMs) as composite agents synthesized through the log-weighted pooling of multiple implicit sub-agents (each defined as a probability distribution over outcomes). Under the framework of epistemic utility $W_i(o)=\log P_i(o)$, it is proven that "strict unanimity" is impossible under linear pooling or binary outcomes, but feasible when $|\mathcal O|\ge 3$. Consequently…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Sub-agent structures"
+  - "Log-pooling"
+  - "Epistemic utility"
+  - "Waluigi effect"
+  - "Alignment theory"
 date: 2026-05-08
-content_hash: 1a48cee2f8b41878
+content_hash: 756a39ff93780d01
 ---
+
 # Probabilistic Modeling of Latent Agentic Substructures in Deep Neural Networks
 
 **Conference**: ICML 2026  
@@ -111,13 +117,13 @@ Core Theorem for Alignment Application:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling](../../AAAI2026/llm_agent/bayesagent_bayesian_agentic_reasoning_under_uncertainty_via_.md)
 - [\[ICML 2026\] Hunt Instead of Wait: Evaluating Deep Data Research on Large Language Models](hunt_instead_of_wait_evaluating_deep_data_research_on_large_language_models.md)
-- [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](../../ICLR2026/llm_agent/a_benchmark_for_deep_information_synthesis.md)
+- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](../../ICLR2026/llm_agent/memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
 - [\[ICML 2026\] AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction](agentxray_white-boxing_agentic_systems_via_workflow_reconstruction.md)
 - [\[ICML 2026\] HawkesLLM: Semantic Uncertainty Propagation in Agentic Text Simulation](hawkesllm_semantic_uncertainty_propagation_in_agentic_text_simulation.md)
 

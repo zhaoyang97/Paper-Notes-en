@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Emergent Persuasion: Will LLMs Persuade Without Being Prompted?
 description: >-
-  [AAAI 2026][Dialogue Systems][LLM Safety] This paper investigates whether LLMs spontaneously exhibit persuasive behavior without being explicitly prompted to do so. It finds that activation steering fails to reliably ind…
+  [AAAI 2026][Dialogue Systems][LLM Safety] This paper investigates whether LLMs spontaneously exhibit persuasive behavior without being explicitly prompted to do so. It finds that activation steering fails to reliably induce persuasive tendencies, whereas SFT fine-tuning on benign persuasion data causes models to exhibit emergent persuasive behavior on harmful topics, revealing latent post-training safety risks.
 tags:
   - "AAAI 2026"
   - "Dialogue Systems"
@@ -12,7 +12,7 @@ tags:
   - "AI Governance"
   - "Alignment"
 date: 2026-05-08
-content_hash: 346aaa4c87ef56ca
+content_hash: 9dfcb5c1971fab04
 ---
 
 # Emergent Persuasion: Will LLMs Persuade Without Being Prompted?

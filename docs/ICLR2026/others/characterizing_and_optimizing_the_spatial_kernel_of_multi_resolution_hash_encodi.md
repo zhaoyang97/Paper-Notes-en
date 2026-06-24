@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings
 description: >-
-  [ICLR 2026][Others][multi-resolution hash encoding] Analyzes the Multi-Resolution Hash Encoding (MHE) of Instant-NGP from a physical system perspective, deriving a closed-form approximation of its Point Spread Function (PSF). It reveals that the effective resolution is determined by the average resolution $N_{\text{avg}}$ rather than the finest resolution $N_{\max}$, id
+  [ICLR2026][multi-resolution hash encoding] Analyzes the Multi-Resolution Hash Encoding (MHE) of Instant-NGP from a physical system perspective, deriving a closed-form approximation of its Point Spread Function (PSF). It reveals that the effective resolution is determined by the average resolution $N_{\text{avg}}$ rather than the finest resolution $N_{\max}$, identifies grid-induced anisotropy, and proposes a zero-overhead Rotated MHE (R-MHE) to eliminate anisotropy by rotatin…
 tags:
-  - ICLR 2026
-  - Others
-  - multi-resolution hash encoding
-  - neural radiance field
-  - point spread function
-  - spatial anisotropy
-  - Instant-NGP
+  - "ICLR2026"
+  - "multi-resolution hash encoding"
+  - "neural radiance field"
+  - "point spread function"
+  - "spatial anisotropy"
+  - "Instant-NGP"
 date: 2026-05-08
-content_hash: 20b17e34f229f971
+content_hash: c24f943ddd60f667
 ---
+
 # Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings
 
 **Conference**: ICLR2026  
@@ -141,7 +141,7 @@ Hyperparameters can also be calculated directly using this PSF analysis: by sett
 - [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
 - [\[ICML 2025\] K²IE: Kernel Method-based Kernel Intensity Estimators for Inhomogeneous Poisson Processes](../../ICML2025/others/k2ie_kernel_method-based_kernel_intensity_estimators_for_inhomogeneous_poisson_p.md)
 - [\[CVPR 2026\] FlashVSR: Towards Real-time Diffusion-Based Streaming Video Super Resolution](../../CVPR2026/others/flashvsr_towards_real-time_diffusion-based_streaming_video_super_resolution.md)
-- [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
+- [\[ICLR 2026\] Predicting Kernel Regression Learning Curves from Only Raw Data Statistics](predicting_kernel_regression_learning_curves_from_only_raw_data_statistics.md)
 
 </div>
 

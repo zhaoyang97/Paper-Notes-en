@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Demystifying Multimodal Biomolecular Co-design with Intrinsic Geodesic Coupling
 description: >-
-  [ICML 2026][Computational Biology][Flow Matching] The authors re-model the co-generation of heterogeneous modalities ("sequence + 3D structure") as a **Temporal Optimal Transport (TOT)** problem. By using bi-level optimization with a Gaussian Process surrogate (GeoCoupling), the model automatically learns **non-diagonal temporal coupling curves** during training (i.e.
+  [ICML 2026][Computational Biology][Biomolecular co-design] The authors re-model the co-generation of heterogeneous modalities ("sequence + 3D structure") as a **Temporal Optimal Transport (TOT)** problem. By using bi-level optimization with a Gaussian Process surrogate (GeoCoupling), the model automatically learns **non-diagonal temporal coupling curves** during training (i.e., allowing structure and sequence to denoise at their respective optimal paces). This approach outper…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Biomolecular co-design"
+  - "temporal coupling"
+  - "optimal transport"
+  - "Bayesian optimization"
+  - "flow matching"
 date: 2026-05-08
-content_hash: 6a6acfcad9b3f692
+content_hash: 2b845c4f1704c567
 ---
+
 # Demystifying Multimodal Biomolecular Co-design with Intrinsic Geodesic Coupling
 
 **Conference**: ICML 2026  
@@ -156,9 +161,9 @@ GeoCoupling leads in binding affinity (Vina Score/Dock) while maintaining high v
 
 - [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
 - [\[ICML 2026\] SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes](spatia_multimodal_generation_and_prediction_of_spatial_cell_phenotypes.md)
-- [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
-- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
-- [\[ICML 2026\] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes](flow_sampling_learning_to_sample_from_unnormalized_densities_via_denoising_condi.md)
+- [\[ICLR 2026\] Intrinsic Lorentz Neural Network](../../ICLR2026/computational_biology/intrinsic_lorentz_neural_network.md)
+- [\[ICLR 2026\] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design](../../ICLR2026/computational_biology/a_joint_diffusion_model_with_pre-trained_priors_for_rna_sequence-structure_co-de.md)
+- [\[ICML 2025\] Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](../../ICML2025/computational_biology/compositional_flows_for_3d_molecule_and_synthesis_pathway_co-design.md)
 
 </div>
 

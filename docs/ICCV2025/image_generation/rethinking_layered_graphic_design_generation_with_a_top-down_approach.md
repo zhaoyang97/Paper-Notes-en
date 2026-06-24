@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Rethinking Layered Graphic Design Generation with a Top-Down Approach
 description: >-
-  [Image Generation] This paper proposes Accordion, a top-down framework that converts AI-generated rasterized design images into editable layered designs (comprising background, foreground object…
+  [Image Generation] This paper proposes Accordion, a top-down framework that converts AI-generated rasterized design images into editable layered designs (comprising background, foreground object, and vectorized text layers), where a VLM plays distinct roles across three stages: reference creation, design planning, and layer generation.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 0e9ed3c8ead3f908
+content_hash: f9b740a44245ce09
 ---
 
 # Rethinking Layered Graphic Design Generation with a Top-Down Approach

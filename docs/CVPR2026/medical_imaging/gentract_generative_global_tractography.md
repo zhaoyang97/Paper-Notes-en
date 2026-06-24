@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GenTract: Generative Global Tractography
 description: >-
-  [CVPR 2026][Medical Imaging][Diffusion Model] GenTract reformulates brain white matter tractography from a local search of "step-by-step progression along local directions" into a global conditional generation task that "samples entire streamline coordinates in parallel, conditioned on whole-brain dMRI." By utilizing a VAE to encode fODF and a conditional Transfor
+  [CVPR 2026][Medical Imaging][White matter tractography] GenTract reformulates brain white matter tractography from a local search of "step-by-step progression along local directions" into a global conditional generation task that "samples entire streamline coordinates in parallel, conditioned on whole-brain dMRI." By utilizing a VAE to encode fODF and a conditional Transformer (Diffusion / Flow Matching), it achieves SOTA precision on high-quality data and outperforms the sec…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Diffusion Model
-  - Flow Matching
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "White matter tractography"
+  - "global tractography"
+  - "conditional generation"
+  - "diffusion models"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 148067abd1fbe4a4
+content_hash: a1f2018be928ac83
 ---
+
 # GenTract: Generative Global Tractography
 
 **Conference**: CVPR 2026  
@@ -152,7 +156,7 @@ Final selection: Diffusion + $M=8$ + $n=256$. For inference: 5 steps achieved on
 - [\[CVPR 2026\] Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors](solving_a_nonlinear_blind_inverse_problem_for_tagged_mri_with_physics_and_deep_g.md)
 - [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
 - [\[CVPR 2026\] A Supervised Multi-task Framework for Joint cryo-ET Restoration Enabled by Generative Physical Simulation](a_supervised_multi-task_framework_for_joint_cryo-et_restoration_enabled_by_gener.md)
-- [\[ICML 2026\] Marrying Generative Model of Healthcare Events with Digital Twin of Social Determinants of Health for Disease Reasoning](../../ICML2026/medical_imaging/marrying_generative_model_of_healthcare_events_with_digital_twin_of_social_deter.md)
+- [\[AAAI 2026\] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach](../../AAAI2026/medical_imaging/rethinking_bias_in_generative_data_augmentation_for_medical_ai_a_frequency_recal.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Property-Informed Diffusion-Based Text-to-Microstructure Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] PropDiff-TMG utilizes a self-conditioned 3D diffusion model to directly generate 3D metamaterial microstructures from natural language descriptions (augmented with physical quantities such as Young's modulus, anisotropy, and volume fraction). A dual-alignment mechanism—comprising "contrastive alignment during training
+  [CVPR 2026][Image Generation][Text-to-microstructure generation] PropDiff-TMG utilizes a self-conditioned 3D diffusion model to directly generate 3D metamaterial microstructures from natural language descriptions (augmented with physical quantities such as Young's modulus, anisotropy, and volume fraction). A dual-alignment mechanism—comprising "contrastive alignment during training + reward-guided alignment during testing"—ensures the generated structures are both semanticall…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-microstructure generation"
+  - "Metamaterial inverse design"
+  - "Self-conditioned diffusion"
+  - "Cross-modal alignment"
+  - "Test-time reward guidance"
 date: 2026-05-08
-content_hash: 849ffef9094bde69
+content_hash: d88d9f6d6fc78cfc
 ---
+
 # Property-Informed Diffusion-Based Text-to-Microstructure Generation
 
 **Conference**: CVPR 2026  
@@ -147,7 +153,6 @@ Ablation on Geometries 2000 (Table 4):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

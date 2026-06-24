@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering
 description: >-
-  [ICML 2026][learning_theory][Correlation Clustering] This paper provides two simple 2-approximation algorithms for the "Bad Triangle Transversal" (BTT) problem on signed graphs that require only a single LP solve. It proves a unified NP-hard inapproximability bound of $\tfrac{2137}{2136}$ for BTT, Correlation Clustering (CC), MinSTC, and Cluster Deletion on complete grap
+  [ICML 2026 Spotlight][Algorithm Theory][Bad Triangle Transversal] This paper provides two simple 2-approximation algorithms for the "Bad Triangle Transversal" (BTT) problem on signed graphs that require only a single LP solve. It proves a unified NP-hard inapproximability bound of $\tfrac{2137}{2136}$ for BTT, Correlation Clustering (CC), MinSTC, and Cluster Deletion on complete graphs. Additionally, it constructs a new pivot procedure to convert any feasible BTT cover into a…
 tags:
-  - ICML 2026
-  - learning_theory
-  - Correlation Clustering
-  - LP rounding
+  - "ICML 2026 Spotlight"
+  - "Algorithm Theory"
+  - "Approximation Algorithms"
+  - "Graph Clustering"
+  - "Bad Triangle Transversal"
+  - "Correlation Clustering"
+  - "LP rounding"
+  - "Hardness proof"
 date: 2026-05-08
-content_hash: 57ae3fd5023825d1
+content_hash: d96c5c4eb0abc98f
 ---
+
 # Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering
 
 **Conference**: ICML 2026 Spotlight  
@@ -119,9 +124,9 @@ This is a purely theoretical work. The table below summarizes the approximation 
 
 - [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](../../NeurIPS2025/learning_theory/improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
-- [\[ICML 2026\] Quantum Algorithms for Triangle Cut Sparsification](quantum_algorithms_for_triangle_cut_sparsification.md)
 - [\[ICML 2026\] Estimating Correlation Clustering Cost in Node-Arrival Stream](estimating_correlation_clustering_cost_in_node-arrival_stream.md)
-- [\[ICML 2025\] Sparse-Pivot: Dynamic Correlation Clustering for Node Insertions](../../ICML2025/learning_theory/sparse-pivot_dynamic_correlation_clustering_for_node_insertions.md)
+- [\[ICLR 2026\] Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds](../../ICLR2026/learning_theory/efficient_testing_for_correlation_clustering_improved_algorithms_and_optimal_bou.md)
+- [\[ICML 2026\] Quantum Algorithms for Triangle Cut Sparsification](quantum_algorithms_for_triangle_cut_sparsification.md)
 
 </div>
 

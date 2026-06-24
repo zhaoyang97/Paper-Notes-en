@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper investigates the non-clashing teaching of closed neighborhood concept classes in graphs. It provides matching algorithmic upper and lower bounds ($2^{\mathcal{O}(|E|)}$ tight bound for N-NCTD⁺), FPT algorithms parameterized by treedepth and vertex cover (including the first FPT result for negative labels), a
+  [ICLR 2026][Non-Clashing Teaching] This paper investigates the non-clashing teaching of closed neighborhood concept classes in graphs. It provides matching algorithmic upper and lower bounds ($2^{\mathcal{O}(|E|)}$ tight bound for N-NCTD⁺), FPT algorithms parameterized by treedepth and vertex cover (including the first FPT result for negative labels), and combinatorial upper bounds for planar and unit square graphs, comprehensively advancing the computational and combinatoria…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Non-Clashing Teaching"
+  - "Graph Concept Classes"
+  - "FPT Algorithms"
+  - "Teaching Dimension"
+  - "Combinatorial Complexity"
+  - "Parameterized Complexity"
 date: 2026-05-08
-content_hash: d0bfdb2ee0a201bc
+content_hash: 2c4cc95f3ac03dbe
 ---
+
 # Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds
 
 **Conference**: ICLR 2026  

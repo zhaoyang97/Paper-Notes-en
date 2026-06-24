@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Learning to Diversify and Focus: A Reinforcement Framework for Open-Vocabulary HOI Detection
 description: >-
-  [CVPR 2026][Human Understanding][Reinforcement Learning] To address the "query overfitting to seen classes" and "diffuse CLIP attention" issues in open-vocabulary human-object interaction (OV-HOI) detection, this paper proposes the SD-IF framework. It utilizes reinforcement learning (RL)-driven semantic perturbations to push queries out of seen semantic clusters and employs
+  [CVPR 2026][Human Understanding][Open-Vocabulary HOI Detection] To address the "query overfitting to seen classes" and "diffuse CLIP attention" issues in open-vocabulary human-object interaction (OV-HOI) detection, this paper proposes the SD-IF framework. It utilizes reinforcement learning (RL)-driven semantic perturbations to push queries out of seen semantic clusters and employs an actor-critic mechanism to "focus" attention on actual interaction regions. Experiments show t…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Reinforcement Learning
-  - Actor-Critic
-  - CLIP
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Open-Vocabulary HOI Detection"
+  - "Reinforcement Learning"
+  - "Semantic Diversification"
+  - "Actor-Critic"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 4dd6d812ebdaa530
+content_hash: cd0b1efb13beb140
 ---
+
 # Learning to Diversify and Focus: A Reinforcement Framework for Open-Vocabulary HOI Detection
 
 **Conference**: CVPR 2026  
@@ -127,15 +130,15 @@ Performed on SWIG-HOI (Full mAP).
 - Value: ⭐⭐⭐⭐ Significant gains in unseen metrics with modular potential.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] OSMO: Open-vocabulary Self-eMOtion Tracking](osmo_open-vocabulary_self-emotion_tracking.md)
 - [\[CVPR 2026\] Open the Motion Door: Atomic Motion Decomposition and Recomposition for Open-Vocabulary Motion Generation](open_the_motion_door_atomic_motion_decomposition_and_recomposition_for_open-voca.md)
-- [\[CVPR 2026\] AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video](avatar_reinforcement_learning_to_see_hear_and_reason_over_video.md)
 - [\[CVPR 2026\] RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised HOI Detection](regformer_transferable_relational_grounding_for_weakly-supervised_hoi_detection.md)
+- [\[CVPR 2026\] AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video](avatar_reinforcement_learning_to_see_hear_and_reason_over_video.md)
 - [\[CVPR 2026\] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)
 
 </div>

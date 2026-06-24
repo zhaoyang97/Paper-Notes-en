@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning
 description: >-
-  [ACL 2026][LLM Efficiency][Inference Acceleration] Tandem enables large models to generate only four types of short reasoning clues—Goal, Planning, Retrieval, and Action—while a small model uses perplexity and entropy to judge clue sufficiency and complete the answer. On MATH, GSM8K, and HumanEval, it achieves or exceeds the performance of standalone large models using
+  [ACL2026 Findings][LLM Efficiency][Large and small model collaboration] Tandem enables large models to generate only four types of short reasoning clues—Goal, Planning, Retrieval, and Action—while a small model uses perplexity and entropy to judge clue sufficiency and complete the answer. On MATH, GSM8K, and HumanEval, it achieves or exceeds the performance of standalone large models using approximately 60% of the computational cost.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Inference Acceleration
+  - "ACL2026 Findings"
+  - "LLM Efficiency"
+  - "Large and small model collaboration"
+  - "structured thought prompting"
+  - "reasoning acceleration"
+  - "uncertainty estimation"
+  - "cost-aware routing"
 date: 2026-05-08
-content_hash: 9be24e12786dc8c9
+content_hash: df282e0a633d7f4f
 ---
+
 # Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning
 
 **Conference**: ACL2026 Findings  
@@ -144,10 +149,10 @@ The stability of Tandem is evaluated across model sizes, API mentors, and cross-
 ## Related Papers
 
 - [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](lizard_an_efficient_linearization_framework_for_large_language_models.md)
-- [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
-- [\[ACL 2026\] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)
+- [\[ICLR 2026\] Cascadia: An Efficient Cascade Serving System for Large Language Models](../../ICLR2026/llm_efficiency/cascadia_an_efficient_cascade_serving_system_for_large_language_models.md)
 - [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](are_large_language_models_economically_viable_for_industry_deployment.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](../../ICML2026/llm_efficiency/dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
+- [\[ACL 2026\] Small Data, Big Noise: Adversarial Training for Robust Parameter-Efficient Fine-Tuning](small_data_big_noise_adversarial_training_for_robust_parameter-efficient_fine-tu.md)
+- [\[ICLR 2026\] ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models](../../ICLR2026/llm_efficiency/thinkv_thought-adaptive_kv_cache_compression_for_efficient_reasoning_models.md)
 
 </div>
 

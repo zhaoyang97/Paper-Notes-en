@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SR-KI: Scalable and Real-Time Knowledge Integration into LLMs via Supervised Attention
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Knowledge injection] This paper proposes SR-KI, a framework that injects structured knowledge bases into LLM KV caches via a two-stage training procedure (retrieval layer localiza…
+  [AAAI 2026][Information Retrieval & RAG][Knowledge injection] This paper proposes SR-KI, a framework that injects structured knowledge bases into LLM KV caches via a two-stage training procedure (retrieval layer localization + attention supervision loss). On a single A100 40GB GPU, SR-KI supports injection of up to 40K knowledge base entries, achieves a compression ratio of up to 99.75% via top-100 selection, and maintains an average Recall@10 above 88%.
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -14,7 +14,7 @@ tags:
   - "knowledge base compression"
   - "RAG alternative"
 date: 2026-05-08
-content_hash: 34d47faafdcc956a
+content_hash: 24f57cc2ec3dddb9
 ---
 
 # SR-KI: Scalable and Real-Time Knowledge Integration into LLMs via Supervised Attention
@@ -181,9 +181,9 @@ The discovery of architecturally universal retrieval layers may advance understa
 
 - [\[ICML 2026\] REAL: Resolving Knowledge Conflicts in Knowledge-Intensive Visual Question Answering via Reasoning-Pivot Alignment](../../ICML2026/information_retrieval/real_resolving_knowledge_conflicts_in_knowledge-intensive_visual_question_answer.md)
 - [\[AAAI 2026\] Towards Inference-Time Scaling for Continuous Space Reasoning](towards_inference-time_scaling_for_continuous_space_reasoning.md)
+- [\[ACL 2025\] ComRAG: Retrieval-Augmented Generation with Dynamic Vector Stores for Real-time Community Question Answering in Industry](../../ACL2025/information_retrieval/comrag_retrieval-augmented_generation_with_dynamic_vector_stores_for_real-time_c.md)
 - [\[ACL 2026\] CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering](../../ACL2026/information_retrieval/counterrefine_answer-conditioned_counterevidence_retrieval_for_inference-time_kn.md)
-- [\[AAAI 2026\] N2N-GQA: Noise-to-Narrative for Graph-Based Table-Text Question Answering Using LLMs](n2n-gqa_noise-to-narrative_for_graph-based_table-text_question_answering_using_l.md)
-- [\[ICLR 2026\] Summaries as Centroids for Interpretable and Scalable Text Clustering](../../ICLR2026/information_retrieval/summaries_as_centroids_for_interpretable_and_scalable_text_clustering.md)
+- [\[ICLR 2026\] Supervised Fine-Tuning or Contrastive Learning? Towards Better Multimodal LLM Reranking](../../ICLR2026/information_retrieval/supervised_fine-tuning_or_contrastive_learning_towards_better_multimodal_llm_rer.md)
 
 </div>
 

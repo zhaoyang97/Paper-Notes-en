@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scaling Image Geo-Localization to Continent Level
 description: >-
-  [NeurIPS 2025][Remote Sensing][geo-localization] A hybrid approach combining classification-learned prototypes with aerial image embeddings achieves 68%+ recall@1 within 200 m and 59.2% within 100 m across 433…
+  [NeurIPS 2025][Remote Sensing][geo-localization] A hybrid approach combining classification-learned prototypes with aerial image embeddings achieves 68%+ recall@1 within 200 m and 59.2% within 100 m across 433,000 km² of Western Europe — the first system to attain such precision at continental scale.
 tags:
   - "NeurIPS 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "aerial-ground matching"
   - "large-scale"
 date: 2026-05-08
-content_hash: ebdcd50fa21519a7
+content_hash: 6d2b94e90d34da26
 ---
 
 # Scaling Image Geo-Localization to Continent Level
@@ -125,11 +125,11 @@ Geo-localization is formulated as a hybrid retrieval problem. During training, a
 
 ## Related Papers
 
+- [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](../../CVPR2026/remote_sensing/geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
 - [\[ICCV 2025\] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration](../../ICCV2025/remote_sensing/geoexplorer_active_geo-localization_with_curiosity-driven_exploration.md)
-- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](../../CVPR2026/remote_sensing/rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
 - [\[NeurIPS 2025\] OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata](ortholoc_uav_6-dof_localization_and_calibration_using_orthographic_geodata.md)
-- [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
-- [\[ICCV 2025\] AstroLoc: Robust Space to Ground Image Localizer](../../ICCV2025/remote_sensing/astroloc_robust_space_to_ground_image_localizer.md)
+- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](../../CVPR2026/remote_sensing/unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
+- [\[ECCV 2024\] Weakly-Supervised Camera Localization by Ground-to-Satellite Image Registration](../../ECCV2024/remote_sensing/weakly-supervised_camera_localization_by_ground-to-satellite_image_registration.md)
 
 </div>
 

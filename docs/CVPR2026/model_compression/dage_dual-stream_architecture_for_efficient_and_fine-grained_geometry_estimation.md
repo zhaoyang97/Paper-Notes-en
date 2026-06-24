@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] The DAGE dual-stream Transformer architecture is proposed to decouple global consistency modeling (low-resolution stream) from fine-grained detail preservation (high-resolution stream). By fusing these via a lightweight Cross-Attention Adapter, high-quality depth/point map estimation and pose prediction are achieved on
+  [CVPR 2026][Model Compression][Multi-view Geometry Estimation] The DAGE dual-stream Transformer architecture is proposed to decouple global consistency modeling (low-resolution stream) from fine-grained detail preservation (high-resolution stream). By fusing these via a lightweight Cross-Attention Adapter, high-quality depth/point map estimation and pose prediction are achieved on 2K resolution and 1000-frame sequences. The method is $2\times$ to $28\times$ faster than Pi3 an…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Multi-view Geometry Estimation"
+  - "Dual-Stream Transformer"
+  - "Depth Estimation"
+  - "Knowledge Distillation"
+  - "High-Resolution Inference"
 date: 2026-05-08
-content_hash: fd83ff201a14fc11
+content_hash: 4740c70bf95e8479
 ---
+
 # DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation
 
 **Conference**: CVPR 2026  
@@ -160,10 +165,10 @@ Standard RoPE degrades when inference resolution exceeds training resolution. Si
 ## Related Papers
 
 - [\[CVPR 2026\] DiT-Distill: Open-Set Fine-Grained Retrieval via Generative Curriculum Knowledge](dit-distill_open-set_fine-grained_retrieval_via_generative_curriculum_knowledge.md)
-- [\[CVPR 2026\] Dual-branch Distilled Transformer for Efficient Asymmetric UAV Tracking](dual-branch_distilled_transformer_for_efficient_asymmetric_uav_tracking.md)
-- [\[CVPR 2026\] How to Choose Your Teacher for Fine Grained Image Recognition](how_to_choose_your_teacher_for_fine_grained_image_recognition.md)
 - [\[ACL 2026\] Efficient Learned Data Compression via Dual-Stream Feature Decoupling](../../ACL2026/model_compression/efficient_learned_data_compression_via_dual-stream_feature_decoupling.md)
+- [\[CVPR 2026\] Dual-branch Distilled Transformer for Efficient Asymmetric UAV Tracking](dual-branch_distilled_transformer_for_efficient_asymmetric_uav_tracking.md)
 - [\[CVPR 2026\] Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation](memory_efficient_transfer_learning_with_fading_side_networks.md)
+- [\[ACL 2026\] When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews](../../ACL2026/model_compression/when_reviews_disagree_fine-grained_contradiction_analysis_in_scientific_peer_rev.md)
 
 </div>
 

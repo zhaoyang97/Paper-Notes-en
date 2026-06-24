@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] One-Step Residual Shifting Diffusion for Image Super-Resolution via Distillation
 description: >-
-  [ICML 2026][Image Restoration][ResShift] To address the slow inference of diffusion SR models, this paper proposes RSD (Residual Shifting Distillation): distilling a 15-step ResShift teacher into a **one-step** student generator. The core mechanism involves "training the student so that a 'fake ResShift' trained on its output exactly matches the true teacher"
+  [ICML2026][Image Restoration][Real-world Image Super-Resolution] To address the slow inference of diffusion SR models, this paper proposes RSD (Residual Shifting Distillation): distilling a 15-step ResShift teacher into a **one-step** student generator. The core mechanism involves "training the student so that a 'fake ResShift' trained on its output exactly matches the true teacher"—which is equivalent to matching the **joint distribution** (rather than just marginals as in V…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - ResShift
+  - "ICML2026"
+  - "Image Restoration"
+  - "Real-world Image Super-Resolution"
+  - "Diffusion Distillation"
+  - "One-step Inference"
+  - "ResShift"
+  - "Fake Model Alignment"
 date: 2026-05-08
-content_hash: d628951622411419
+content_hash: 5abf582d061fc7fe
 ---
+
 # One-Step Residual Shifting Diffusion for Image Super-Resolution via Distillation
 
 **Conference**: ICML2026  
@@ -134,11 +139,11 @@ Key Findings: RSD **outperforms its teacher ResShift** in perceptual metrics lik
 
 ## Related Papers
 
+- [\[ICLR 2026\] VARestorer: One-Step VAR Distillation for Real-World Image Super-Resolution](../../ICLR2026/image_restoration/varestorer_one-step_var_distillation_for_real-world_image_super-resolution.md)
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](../../CVPR2026/image_restoration/one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
+- [\[ICLR 2026\] One-Step Flow for Image Super-Resolution with Tunable Fidelity-Realism Trade-offs](../../ICLR2026/image_restoration/one-step_flow_for_image_super-resolution_with_tunable_fidelity-realism_trade-off.md)
 - [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](../../CVPR2026/image_restoration/time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](../../CVPR2026/image_restoration/fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
 - [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](../../CVPR2026/image_restoration/ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
-- [\[CVPR 2026\] GDPO-SR: Group Direct Preference Optimization for One-Step Generative Image Super-Resolution](../../CVPR2026/image_restoration/gdpo-sr_group_direct_preference_optimization_for_one-step_generative_image_super.md)
 
 </div>
 

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] This paper proposes **K-step GUI Transition**, a self-supervised inverse dynamics task that predicts the first action to trigger a state transition given only a pair of screenshots $(S_t, S_{t+k})$, thereby eliminating the need for natural language instruction labels. By combining the GUI-Shift reinforcement learning f
+  [ICLR 2026][LLM Agent][GUI Agent] This paper proposes **K-step GUI Transition**, a self-supervised inverse dynamics task that predicts the first action to trigger a state transition given only a pair of screenshots $(S_t, S_{t+k})$, thereby eliminating the need for natural language instruction labels. By combining the GUI-Shift reinforcement learning framework (based on GRPO) with data filtering, multiple VLMs achieved up to an 11.2% Gain on GUI automation tasks using only 2K…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
-  - Self-Supervised Learning
-  - GRPO
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Self-supervised Learning"
+  - "Inverse Dynamics"
+  - "GRPO"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: efb1b408a9370138
+content_hash: 66f1e776c9701621
 ---
+
 # GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -159,7 +161,7 @@ Ours approached or exceeded the performance of models trained on hundreds of tho
 - [\[ICLR 2026\] WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](webseer_training_deeper_search_agents_through_reinforcement_learning_with_self-r.md)
 - [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](../../CVPR2026/llm_agent/cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
 - [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
-- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
+- [\[ICLR 2026\] GTA1: GUI Test-time Scaling Agent](gta1_gui_test-time_scaling_agent.md)
 
 </div>
 

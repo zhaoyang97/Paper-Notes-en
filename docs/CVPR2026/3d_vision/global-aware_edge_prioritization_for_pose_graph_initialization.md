@@ -4,12 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][Structure-from-Motion] A GNN-based global edge prioritization method is proposed, upgrading pose graph initialization from independent pairwise image retrieval to global structure-aware edge ranking and multi-MST construction, significantly improving SfM reconstruction accuracy in extremely sparse settings.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Structure-from-Motion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Structure-from-Motion"
+  - "Pose Graph Initialization"
+  - "Graph Neural Networks"
+  - "Minimum Spanning Tree"
+  - "Edge Ranking"
 date: 2026-05-08
-content_hash: 8455d0188505d879
+content_hash: 4febbd3813841b13
 ---
+
 # Global-Aware Edge Prioritization for Pose Graph Initialization
 
 **Conference**: CVPR 2026  
@@ -158,11 +163,11 @@ where $\bar{d}^{(m-1)}(i,j)$ is the normalized shortest path distance in the cur
 
 ## Related Papers
 
-- [\[CVPR 2026\] Global Structure-from-Motion Meets Feedforward Reconstruction](global_structure-from-motion_meets_feedforward_reconstruction.md)
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
-- [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
-- [\[CVPR 2026\] MOSAIC-GS: Monocular Scene Reconstruction via Advanced Initialization for Complex Dynamic Environments](mosaic-gs_monocular_scene_reconstruction_via_advanced_initialization_for_complex.md)
+- [\[CVPR 2026\] Learning Scene Coordinate Reconstruction from Unposed Images via Pose Graph Optimization](learning_scene_coordinate_reconstruction_from_unposed_images_via_pose_graph_opti.md)
+- [\[CVPR 2026\] HumanBA: Human-Aware Bundle Adjustment via Global Human-Camera Decoupling](humanba_human-aware_bundle_adjustment_via_global_human-camera_decoupling.md)
+- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
+- [\[CVPR 2026\] Foundry: Distilling 3D Foundation Models for the Edge](foundry_distilling_3d_foundation_models_for_the_edge.md)
 
 </div>
 

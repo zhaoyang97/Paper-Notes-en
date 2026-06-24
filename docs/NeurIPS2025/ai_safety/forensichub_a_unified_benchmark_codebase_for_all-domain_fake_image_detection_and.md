@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ForensicHub: A Unified Benchmark & Codebase for All-Domain Fake Image Detection and Localization
 description: >-
-  [NeurIPS 2025][AI Safety][Image forgery detection] ForensicHub introduces the first unified benchmark platform spanning all domains (Deepfake/IMDL/AIGC/Document Tampering) for fake image detection and localization…
+  [NeurIPS 2025][AI Safety][Image forgery detection] ForensicHub introduces the first unified benchmark platform spanning all domains (Deepfake/IMDL/AIGC/Document Tampering) for fake image detection and localization, encompassing 4 tasks, 23 datasets, 42 models, 6 backbone networks, and 11 GPU-accelerated evaluation metrics. Through a modular architecture and adapter design, it bridges domain silos and conducts 16 cross-domain evaluations to derive 8 key insights.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "AIGC detection"
   - "document tampering"
 date: 2026-05-08
-content_hash: 501fe330adaca1d9
+content_hash: 3f490aaf2da7530c
 ---
 
 # ForensicHub: A Unified Benchmark & Codebase for All-Domain Fake Image Detection and Localization
@@ -131,11 +131,11 @@ Full platform: 4 tasks, 23 datasets, 42 models (including 3 reproduced from scra
 
 ## Related Papers
 
+- [\[ECCV 2024\] Noise-Assisted Prompt Learning for Image Forgery Detection and Localization](../../ECCV2024/ai_safety/noise-assisted_prompt_learning_for_image_forgery_detection_and_localization.md)
+- [\[CVPR 2026\] Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection](../../CVPR2026/ai_safety/omni-fake_benchmarking_unified_multimodal_social_media_deepfake_detection.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
-- [\[ICML 2026\] OmniVL-Guard: Towards Unified Vision-Language Forgery Detection and Grounding via Balanced RL](../../ICML2026/ai_safety/omnivl-guard_towards_unified_vision-language_forgery_detection_and_grounding_via.md)
 - [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
 - [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
-- [\[NeurIPS 2025\] SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection](spurious-aware_prototype_refinement_for_reliable_out-of-distribution_detection.md)
 
 </div>
 

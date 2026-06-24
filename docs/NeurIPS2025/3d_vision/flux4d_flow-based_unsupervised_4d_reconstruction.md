@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Flux4D: Flow-based Unsupervised 4D Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][4D reconstruction] Flux4D is proposed as an unsupervised and generalizable 4D dynamic driving scene reconstruction framework. It employs a feed-forward network to directly predict 3D Gaussians a…
+  [NeurIPS 2025][3D Vision][4D reconstruction] Flux4D is proposed as an unsupervised and generalizable 4D dynamic driving scene reconstruction framework. It employs a feed-forward network to directly predict 3D Gaussians and their motion velocities, achieving large-scale scene reconstruction using only photometric loss and a static-preference regularization. The method surpasses all unsupervised approaches on PandaSet and Waymo while approaching the performance of supervised me…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "scene flow"
   - "autonomous driving"
 date: 2026-05-08
-content_hash: d1f74e86b3da3d36
+content_hash: 3f8290d02e1cb9bb
 ---
 
 # Flux4D: Flow-based Unsupervised 4D Reconstruction
@@ -145,11 +145,11 @@ On the Waymo dataset, Flux4D outperforms DrivingRecon by **+5.99 dB PSNR** and +
 
 ## Related Papers
 
+- [\[CVPR 2025\] Floxels: Fast Unsupervised Voxel Based Scene Flow Estimation](../../CVPR2025/3d_vision/floxels_fast_unsupervised_voxel_based_scene_flow_estimation.md)
 - [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
 - [\[NeurIPS 2025\] HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene](haif-gs_hierarchical_and_induced_flow-guided_gaussian_splatting_for_dynamic_scen.md)
 - [\[NeurIPS 2025\] Web-Scale Collection of Video Data for 4D Animal Reconstruction](web-scale_collection_of_video_data_for_4d_animal_reconstruction.md)
 - [\[NeurIPS 2025\] UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss](ugm2n_an_unsupervised_and_generalizable_mesh_movement_network_via_m-uniform_loss.md)
-- [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](../../ICCV2025/3d_vision/shape_of_motion_4d_reconstruction_from_a_single_video.md)
 
 </div>
 

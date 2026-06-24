@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Attribution to Action: Jointly ALIGNing Predictions and Explanations
 description: >-
-  [AAAI 2026][Segmentation][Explanation-Guided Learning] This paper proposes the ALIGN framework, which jointly trains a learnable masker and a classifier through alternating optimization to iteratively align model attribu…
+  [AAAI 2026][Segmentation][Explanation-Guided Learning] This paper proposes the ALIGN framework, which jointly trains a learnable masker and a classifier through alternating optimization to iteratively align model attribution maps with task-relevant region masks, simultaneously improving prediction accuracy and interpretability. ALIGN outperforms six strong baselines on the VLCS and Terra Incognita domain generalization benchmarks.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Grad-CAM"
   - "Mask Learning"
 date: 2026-05-08
-content_hash: ccf78032f0068934
+content_hash: 7fad60b8231e359f
 ---
 
 # From Attribution to Action: Jointly ALIGNing Predictions and Explanations
@@ -173,10 +173,10 @@ Key finding: Any external mask signal outperforms no EGL, but task-driven learne
 ## Related Papers
 
 - [\[AAAI 2026\] JoDiffusion: Jointly Diffusing Image with Pixel-Level Annotations for Semantic Segmentation Promotion](jodiffusion_jointly_diffusing_image_with_pixel-level_annotations_for_semantic_se.md)
+- [\[CVPR 2026\] Learning and Aligning Click-Aware Shape Prior for Interactive Amodal Instance Segmentation](../../CVPR2026/segmentation/learning_and_aligning_click-aware_shape_prior_for_interactive_amodal_instance_se.md)
+- [\[ICML 2025\] ActionPiece: Contextually Tokenizing Action Sequences for Generative Recommendation](../../ICML2025/segmentation/actionpiece_contextually_tokenizing_action_sequences_for_generative_recommendati.md)
 - [\[AAAI 2026\] Otter: Mitigating Background Distractions of Wide-Angle Few-Shot Action Recognition with Enhanced RWKV](otter_mitigating_background_distractions_of_wide-angle_few-shot_action_recogniti.md)
-- [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](../../ICCV2025/segmentation/joint_self-supervised_video_alignment_and_action_segmentation.md)
-- [\[ICCV 2025\] CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation](../../ICCV2025/segmentation/clot_closed_loop_optimal_transport_for_unsupervised_action_segmentation.md)
-- [\[ICCV 2025\] Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation](../../ICCV2025/segmentation/skeleton_motion_words_for_unsupervised_skeleton-based_temporal_action_segmentati.md)
+- [\[CVPR 2025\] Condensing Action Segmentation Datasets via Generative Network Inversion](../../CVPR2025/segmentation/condensing_action_segmentation_datasets_via_generative_network_inversion.md)
 
 </div>
 

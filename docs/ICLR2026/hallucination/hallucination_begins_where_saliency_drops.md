@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hallucination Begins Where Saliency Drops
 description: >-
-  [ICLR 2026][Hallucination Detection][Attention] Ours proposes the LVLMs-Saliency gradient-aware diagnostic framework to quantify the visual anchoring strength of each output token. It uncovers a critical pattern: "hallucination occurs when the saliency of previous output tokens regarding the next token prediction decreases." Based on this, a dual-mechanism inference
+  [ICLR 2026][Hallucination Detection][Hallucination mitigation] Ours proposes the LVLMs-Saliency gradient-aware diagnostic framework to quantify the visual anchoring strength of each output token. It uncovers a critical pattern: "hallucination occurs when the saliency of previous output tokens regarding the next token prediction decreases." Based on this, a dual-mechanism inference-time framework, SGRS (Saliency-Guided Rejection Sampling) + LocoRE (Local Consistency Restoratio…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - Attention
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Hallucination mitigation"
+  - "Large Vision-Language Models"
+  - "Saliency analysis"
+  - "Attention mechanism"
+  - "Inference-time intervention"
 date: 2026-05-08
-content_hash: e607b8b659077ee9
+content_hash: 1d01f0b3a441186f
 ---
+
 # Hallucination Begins Where Saliency Drops
 
 **Conference**: ICLR 2026  
@@ -150,8 +155,8 @@ Ablation of hyperparameters $\alpha$ (SGRS) and $\beta$ (LocoRE) on LLaVA-1.5-7B
 - [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](../../CVPR2026/hallucination/tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
 - [\[ACL 2025\] HALoGEN: Fantastic LLM Hallucinations and Where to Find Them](../../ACL2025/hallucination/halogen_hallucinations.md)
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
-- [\[ICLR 2026\] Neural Message-Passing on Attention Graphs for Hallucination Detection](neural_message-passing_on_attention_graphs_for_hallucination_detection.md)
-- [\[ICLR 2026\] NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection](ndad_negative-direction_aware_decoding_for_large_language_models_via_controllabl.md)
+- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
+- [\[ICLR 2026\] PostAlign: Multimodal Grounding as a Corrective Lens for MLLMs](postalign_multimodal_grounding_as_a_corrective_lens_for_mllms.md)
 
 </div>
 

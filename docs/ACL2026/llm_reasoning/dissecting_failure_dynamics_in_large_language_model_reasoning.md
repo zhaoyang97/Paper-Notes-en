@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dissecting Failure Dynamics in Large Language Model Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] Analysis of LLM reasoning trajectories reveals that errors cluster at key early turning points, after which models enter a "cognitive spiral"—extending trajectories in a locally coherent but globally erroneous manner. Based on this, the GUARD framework is proposed to perform short-range branch repair at high-risk turni
+  [ACL 2026][Reasoning][Reasoning Failure Analysis] Analysis of LLM reasoning trajectories reveals that errors cluster at key early turning points, after which models enter a "cognitive spiral"—extending trajectories in a locally coherent but globally erroneous manner. Based on this, the GUARD framework is proposed to perform short-range branch repair at high-risk turning points detected via entropy signals.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Reasoning Failure Analysis"
+  - "Entropy Signals"
+  - "Failure Early-onset"
+  - "Cognitive Spiral"
+  - "Inference-time Intervention"
 date: 2026-05-08
-content_hash: 4a8309227ed08d8d
+content_hash: 2c78fe1bdd2a51d5
 ---
+
 # Dissecting Failure Dynamics in Large Language Model Reasoning
 
 **Conference**: ACL 2026  
@@ -126,11 +132,11 @@ GUARD is a pure inference-time framework and involves no training. All branches 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](../../ICLR2026/llm_reasoning/variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
 - [\[ACL 2026\] Language Model as Planner and Formalizer under Constraints](language_model_as_planner_and_formalizer_under_constraints.md)
 - [\[AAAI 2026\] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement](../../AAAI2026/llm_reasoning/incorporating_self-rewriting_into_large_language_model_reasoning_reinforcement.md)
-- [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](selar_selective_latent_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck](failure_modes_in_multi-hop_qa_the_weakest_link_effect_and_the_recognition_bottle.md)
+- [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](selar_selective_latent_reasoning_in_large_language_models.md)
 
 </div>
 

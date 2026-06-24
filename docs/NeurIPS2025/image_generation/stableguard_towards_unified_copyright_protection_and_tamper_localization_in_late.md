@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StableGuard: Towards Unified Copyright Protection and Tamper Localization in Latent Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Latent Diffusion Models] StableGuard embeds global binary watermarks into the LDM generation pipeline (via MPW-VAE) and leverages changes in watermark perturbation patterns for tamper loc…
+  [NeurIPS 2025][Image Generation][Latent Diffusion Models] StableGuard embeds global binary watermarks into the LDM generation pipeline (via MPW-VAE) and leverages changes in watermark perturbation patterns for tamper localization (via MoE-GFN), achieving the first end-to-end unified framework for copyright protection and tamper detection.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Mixture of Experts"
   - "Self-Supervised Learning"
 date: 2026-05-08
-content_hash: 2fd10935063e39de
+content_hash: f39408d28c938bd0
 ---
 
 # StableGuard: Towards Unified Copyright Protection and Tamper Localization in Latent Diffusion Models

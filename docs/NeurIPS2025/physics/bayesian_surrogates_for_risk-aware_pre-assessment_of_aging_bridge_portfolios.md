@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bayesian Surrogates for Risk-Aware Pre-Assessment of Aging Bridge Portfolios
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Bayesian Neural Networks] A Bayesian neural network (BNN)-based surrogate model is proposed to replace expensive nonlinear finite element analysis (NLFEA), enabling rapid…
+  [NeurIPS 2025][Physics & Scientific Computing][Bayesian Neural Networks] A Bayesian neural network (BNN)-based surrogate model is proposed to replace expensive nonlinear finite element analysis (NLFEA), enabling rapid, uncertainty-aware structural safety pre-assessment of aging bridge portfolios. In a real-world railway case study, the approach saves approximately $370,000 per bridge.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Surrogate Models"
   - "Infrastructure Assessment"
 date: 2026-05-08
-content_hash: cb207798d61ef686
+content_hash: 41a4ac047f30e617
 ---
 
 # Bayesian Surrogates for Risk-Aware Pre-Assessment of Aging Bridge Portfolios
@@ -132,9 +132,9 @@ Results are reported within the safety-critical region $\eta \in [0.5, 1.5]$; ca
 
 - [\[NeurIPS 2025\] GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations](gyroswin_5d_surrogates_for_gyrokinetic_plasma_turbulence_simulations.md)
 - [\[NeurIPS 2025\] 3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization](3did_direct_3d_inverse_design_for_aerodynamics_with_physics-aware_optimization.md)
-- [\[CVPR 2026\] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training](../../CVPR2026/physics/nestor_a_nested_moe-based_neural_operator_for_large-scale_pde_pre-training.md)
-- [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](../../ICML2026/physics/distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
-- [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/physics/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
+- [\[ICLR 2026\] Geometric Autoencoder Priors for Bayesian Inversion: Learn First Observe Later](../../ICLR2026/physics/geometric_autoencoder_priors_for_bayesian_inversion_learn_first_observe_later.md)
+- [\[ICLR 2026\] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning](../../ICLR2026/physics/uncertainty-aware_diagnostics_for_physics-informed_machine_learning.md)
+- [\[ICLR 2026\] SAQ: Stabilizer-Aware Quantum Error Correction Decoder](../../ICLR2026/physics/saq_stabilizer-aware_quantum_error_correction_decoder.md)
 
 </div>
 

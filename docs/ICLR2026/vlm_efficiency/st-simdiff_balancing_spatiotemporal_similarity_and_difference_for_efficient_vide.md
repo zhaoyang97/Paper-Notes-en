@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ST-SimDiff: Balancing Spatiotemporal Similarity and Difference for Efficient Video Understanding with MLLMs
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] To address the visual token explosion in large multimodal models (LVLMs) when processing long videos, this paper proposes ST-SimDiff, a training-free framework. It constructs a spatiotemporal graph of all visual tokens and parallelly performs community detection via "similarity" to retain representative tokens and muta
+  [ICLR 2026][Multimodal Efficiency][Video token compression] To address the visual token explosion in large multimodal models (LVLMs) when processing long videos, this paper proposes ST-SimDiff, a training-free framework. It constructs a spatiotemporal graph of all visual tokens and parallelly performs community detection via "similarity" to retain representative tokens and mutation detection via "difference" to retain event tokens. Finally, it fine-tunes the token budget usin…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Video token compression"
+  - "Spatiotemporal graph"
+  - "Community detection"
+  - "Difference detection"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 7c487780963ca490
+content_hash: 684aa4bd5fc386d1
 ---
+
 # ST-SimDiff: Balancing Spatiotemporal Similarity and Difference for Efficient Video Understanding with MLLMs
 
 **Conference**: ICLR 2026  
@@ -127,10 +133,10 @@ Incremental improvements from an importance-pruning Baseline by adding similarit
 ## Related Papers
 
 - [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](../../CVPR2026/vlm_efficiency/timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
 - [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](../../ACL2026/vlm_efficiency/hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
+- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](../../CVPR2026/vlm_efficiency/timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
 - [\[ICLR 2026\] Photon: Speedup Volume Understanding with Efficient Multimodal Large Language Models](photon_speedup_volume_understanding_with_efficient_multimodal_large_language_mod.md)
-- [\[CVPR 2026\] MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data and Training Recipes](../../CVPR2026/vlm_efficiency/minicpm-v_45_cooking_efficient_mllms_via_architecture_data_and_training_recipe.md)
+- [\[ACL 2026\] APB-V: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention](../../ACL2026/vlm_efficiency/apb-v_accelerating_long-video_understanding_via_sequence-parallelism-aware_appro.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mitigating Privacy Risk via Forget Set-Free Unlearning
 description: >-
-  [ICLR 2026][AI Safety][forget set-free unlearning] This paper introduces the partially-blind unlearning setting and the RELOAD method, which replaces the original forget set with cached full-data gradients from the end of training. By utilizing a single-step reverse forget gradient, selective weight re-initialization, and fine-tuning on the retain set, it approximates
+  [ICLR 2026][AI Safety][Machine Unlearning] This paper introduces the partially-blind unlearning setting and the RELOAD method, which replaces the original forget set with cached full-data gradients from the end of training. By utilizing a single-step reverse forget gradient, selective weight re-initialization, and fine-tuning on the retain set, it approximates a from-scratch retrained model without retaining the samples to be deleted. The method achieves strong results across…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - forget set-free unlearning
-  - RELOAD
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Partially-Blind Unlearning"
+  - "Forget Set-Free Unlearning"
+  - "Privacy Risk"
+  - "RELOAD"
 date: 2026-05-08
-content_hash: a02449734b300f4b
+content_hash: 724fae7c1221a665
 ---
+
 # Mitigating Privacy Risk via Forget Set-Free Unlearning
 
 **Conference**: ICLR 2026  
@@ -170,9 +174,9 @@ Component analysis in the main text and ablation studies in the appendix emphasi
 
 - [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](machine_unlearning_under_retainforget_entanglement.md)
 - [\[ICLR 2026\] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution](remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md)
+- [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](../../AAAI2026/ai_safety/easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
 - [\[CVPR 2025\] Towards Source-Free Machine Unlearning](../../CVPR2025/ai_safety/towards_source-free_machine_unlearning.md)
 - [\[ICLR 2026\] Risk-Sensitive Agent Compositions](risk-sensitive_agent_compositions.md)
-- [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](label_smoothing_improves_machine_unlearning.md)
 
 </div>
 

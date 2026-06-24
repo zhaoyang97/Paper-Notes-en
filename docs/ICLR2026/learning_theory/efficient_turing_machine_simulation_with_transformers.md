@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Efficient Turing Machine Simulation with Transformers
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper demonstrates that constant-bit Transformers can simulate any multi-tape Turing Machine (TM) within an optimal $O(s(n))$ context window, utilizing only $O(s(n)^c)$ Chain-of-Thought (CoT) steps per TM step (where $c$ can be arbitrarily small). This effectively eliminates the $\Omega(s(n))$ overhead per step in
+  [ICLR 2026][Learning Theory][Turing Completeness] This paper demonstrates that constant-bit Transformers can simulate any multi-tape Turing Machine (TM) within an optimal $O(s(n))$ context window, utilizing only $O(s(n)^c)$ Chain-of-Thought (CoT) steps per TM step (where $c$ can be arbitrarily small). This effectively eliminates the $\Omega(s(n))$ overhead per step inherent in prior constructions and suggests that sparse attention with fixed geometric offsets is sufficient to…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Expressivity"
+  - "Turing Completeness"
+  - "Chain-of-Thought"
+  - "Constant-bit Transformer"
+  - "Sparse Attention"
+  - "Multi-queue Turing Machine"
 date: 2026-05-08
-content_hash: cd77b7b7f9afdd71
+content_hash: 68283ad7e6fcd0b5
 ---
+
 # Efficient Turing Machine Simulation with Transformers
 
 **Conference**: ICLR 2026  
@@ -122,7 +129,7 @@ This is a **pure theoretical paper** with no empirical experiments. The core con
 - [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)
 - [\[ICLR 2026\] Quantum Machine Learning Advantages Beyond Hardness of Evaluation](quantum_machine_learning_advantages_beyond_hardness_of_evaluation.md)
 - [\[ICLR 2026\] Probability Distributions Computed by Autoregressive Transformers](probability_distributions_computed_by_autoregressive_transformers.md)
-- [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
+- [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
 
 </div>
 

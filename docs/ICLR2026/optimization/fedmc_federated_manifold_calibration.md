@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FedMC: Federated Manifold Calibration
 description: >-
-  [ICLR 2026][Optimization & Theory][Federated Learning] Addressing the issue where local calibration using global linear geometric priors (points/ellipsoids) pushes samples off the manifold and generates OOD pseudo-samples in Federated Learning, FedMC utilizes local Kernel PCA on clients to learn non-linear manifold geometry. These are aggregated into a privacy-secure "Geom
+  [ICLR 2026][Optimization][Federated Learning] Addressing the issue where local calibration using global linear geometric priors (points/ellipsoids) pushes samples off the manifold and generates OOD pseudo-samples in Federated Learning, FedMC utilizes local Kernel PCA on clients to learn non-linear manifold geometry. These are aggregated into a privacy-secure "Geometry Dictionary" on the server, allowing clients to perform **manifold-aligned calibration** via table lookups. Th…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Federated Learning
-  - Data Heterogeneity
-  - Manifold Calibration
-  - Kernel PCA
-  - Federated Prompt Learning
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Data Heterogeneity"
+  - "Manifold Calibration"
+  - "Kernel PCA"
+  - "Federated Prompt Learning"
 date: 2026-05-08
-content_hash: d5b7895b8cbebdaa
+content_hash: e4e45e7162f67bca
 ---
+
 # FedMC: Federated Manifold Calibration
 
 **Conference**: ICLR 2026  
@@ -131,9 +132,9 @@ FedMC as a generic FL enhancement module (Office-Home-LDS, β=0.1, Accuracy %):
 
 - [\[ICLR 2026\] Enhancing Communication Compression via Discrepancy-aware Calibration for Federated Learning](enhancing_communication_compression_via_discrepancy-aware_calibration_for_federa.md)
 - [\[ICLR 2026\] Riemannian Optimization on Relaxed Indicator Matrix Manifold](riemannian_optimization_on_relaxed_indicator_matrix_manifold.md)
-- [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
 - [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
-- [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](incentives_in_federated_learning_with_heterogeneous_agents.md)
+- [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
+- [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][PbRL] This paper reformulates Offline Preference-Based Reinforcement Learning (PbRL) within the Forward-Backward (FB) representation space. It proves that under the FB framework, the standard Bradley-Terry preference loss is equivalent to the SimCLR contrastive loss. Consequently, it proposes FB-PbRL: first pretraining FB re
+  [ICML 2026][Reinforcement Learning][PbRL] This paper reformulates Offline Preference-Based Reinforcement Learning (PbRL) within the Forward-Backward (FB) representation space. It proves that under the FB framework, the standard Bradley-Terry preference loss is equivalent to the SimCLR contrastive loss. Consequently, it proposes FB-PbRL: first pretraining FB representations on reward-free offline data, then using a contrastive objective on preference data to search for the tas…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - PbRL
-  - Successor Measure
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "PbRL"
+  - "Forward-Backward Representation"
+  - "Contrastive Learning"
+  - "Zero-Shot RL"
+  - "Successor Measure"
 date: 2026-05-08
-content_hash: dd4a7e768e2a138e
+content_hash: 83f0126d00f97918
 ---
+
 # From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -154,11 +158,11 @@ Additionally, Fig. 5 shows: (a) Performance drops only ~10% when reducing prefer
 
 ## Related Papers
 
-- [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](safe_reinforcement_learning_with_preference-based_constraint_inference.md)
 - [\[ICML 2026\] Video-Based Optimal Transport for Feedback-Efficient Offline Preference-Based Reinforcement Learning](video-based_optimal_transport_for_feedback-efficient_offline_preference-based_re.md)
-- [\[NeurIPS 2025\] Reward-Aware Proto-Representations in Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/reward-aware_proto-representations_in_reinforcement_learning.md)
-- [\[ICLR 2026\] Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment](../../ICLR2026/reinforcement_learning/reasoning_as_representation_rethinking_visual_reinforcement_learning_in_image_qu.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](offline_reinforcement_learning_with_universal_horizon_models.md)
+- [\[ICLR 2026\] A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning](../../ICLR2026/reinforcement_learning/a_reward-free_viewpoint_on_multi-objective_reinforcement_learning.md)
+- [\[ICLR 2026\] Preference-based Policy Optimization from Sparse-reward Offline Dataset](../../ICLR2026/reinforcement_learning/preference-based_policy_optimization_from_sparse-reward_offline_dataset.md)
+- [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](safe_reinforcement_learning_with_preference-based_constraint_inference.md)
+- [\[ICLR 2026\] Offline Preference-based Value Optimization](../../ICLR2026/reinforcement_learning/offline_preference-based_value_optimization.md)
 
 </div>
 

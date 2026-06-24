@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] USF proposes a modular, lens-agnostic spherical vision frontend. By projecting arbitrary calibrated camera images onto a unit sphere and performing spatial-domain spherical resampling, convolution, and pooling, it naturally guarantees rotation equivariance using only distance-weighted kernels. It demonstrates zero-shot
+  [CVPR 2026][Segmentation][Spherical Convolution] USF proposes a modular, lens-agnostic spherical vision frontend. By projecting arbitrary calibrated camera images onto a unit sphere and performing spatial-domain spherical resampling, convolution, and pooling, it naturally guarantees rotation equivariance using only distance-weighted kernels. It demonstrates zero-shot generalization robustness to random rotations and cross-lens scenarios in classification, detection…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Spherical Convolution"
+  - "Rotation Equivariance"
+  - "Wide-angle Cameras"
+  - "Panoramic Images"
+  - "Lens-agnostic"
 date: 2026-05-08
-content_hash: a76a46c17e780d43
+content_hash: 25e2059d122f2574
 ---
+
 # Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera
 
 **Conference**: CVPR 2026  
@@ -136,6 +142,7 @@ Standard loss functions are used for each downstream task. The core strategy is 
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -143,8 +150,8 @@ Standard loss functions are used for each downstream task. The core strategy is 
 - [\[CVPR 2026\] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion](rel-sf4pass_panoramic_semantic_segmentation_with_rel_depth_representation_and_sp.md)
 - [\[CVPR 2026\] FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting](fov-net_rotation-invariant_cad_b-rep_learning_via_field-of-view_ray_casting.md)
 - [\[CVPR 2026\] SAMTok: Representing Any Mask with Two Words](samtok_representing_any_mask_with_two_words.md)
-- [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)
 - [\[CVPR 2026\] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation](spar_single-pass_any-resolution_vit_for_open-vocabulary_segmentation.md)
+- [\[CVPR 2026\] 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion](3m-ti_high-quality_mobile_thermal_imaging_via_calibration-free_multi-camera_cros.md)
 
 </div>
 

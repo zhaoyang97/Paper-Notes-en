@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Bridge-Garden Dilemma in LLM Distillation: Why Mixing Hard and Soft Labels Works
 description: >-
-  [ICML 2026][Model Compression][Knowledge Distillation] Authors find that a "linear mixture of soft and hard labels" consistently outperforms pure soft labels in LLM distillation. They shift the explanation from "hard labels facilitate optimization" to "hard labels suppress exposure bias." Using Bridge-Garden decomposition, they categorize sequence positions into "Bridges"
+  [ICML 2026][Model Compression][Knowledge Distillation] Authors find that a "linear mixture of soft and hard labels" consistently outperforms pure soft labels in LLM distillation. They shift the explanation from "hard labels facilitate optimization" to "hard labels suppress exposure bias." Using Bridge-Garden decomposition, they categorize sequence positions into "Bridges" (requiring precision) and "Gardens" (allowing flexibility), binding the mix coefficient to contextual ris…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICML 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Exposure Bias"
+  - "Hybrid Hard-Soft Labels"
+  - "Bridge-Garden Decomposition"
+  - "Risk Guidance"
 date: 2026-05-08
-content_hash: 22b766ae1bf18085
+content_hash: c0f2d6275956a87e
 ---
+
 # The Bridge-Garden Dilemma in LLM Distillation: Why Mixing Hard and Soft Labels Works
 
 **Conference**: ICML 2026  

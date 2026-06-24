@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mitigating Staleness in Asynchronous Pipeline Parallelism via Basis Rotation
 description: >-
-  [ICML 2026][LLM (Other)][Adam] The authors attribute the "culprit" of convergence collapse caused by delayed gradients in asynchronous pipeline parallelism (APP) training of LLMs to Adam's basis mismatch (where the Hessian eigenbasis is not aligned with coordinate axes). They propose performing basis rotation to the Hessian eigenbasis before executi
+  [ICML 2026][LLM (Other)][Asynchronous Pipeline Parallelism] The authors attribute the "culprit" of convergence collapse caused by delayed gradients in asynchronous pipeline parallelism (APP) training of LLMs to Adam's basis mismatch (where the Hessian eigenbasis is not aligned with coordinate axes). They propose performing basis rotation to the Hessian eigenbasis before executing Adam updates. On a 3B model, this reaches the same loss with 81.7% fewer iterations compared to t…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Adam
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Asynchronous Pipeline Parallelism"
+  - "Gradient Staleness"
+  - "Basis Rotation"
+  - "Adam"
+  - "Hessian Eigenbasis"
 date: 2026-05-08
-content_hash: 626952739cdf3474
+content_hash: b5491b7bed69d459
 ---
+
 # Mitigating Staleness in Asynchronous Pipeline Parallelism via Basis Rotation
 
 **Conference**: ICML 2026  

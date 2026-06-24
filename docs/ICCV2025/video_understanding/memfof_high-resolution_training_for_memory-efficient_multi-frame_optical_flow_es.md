@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation
 description: >-
-  [ICCV 2025][Video Understanding][Optical Flow Estimation] MEMFOF is the first memory-efficient multi-frame optical flow method. By reducing the correlation volume resolution and introducing a high-resolution training str…
+  [ICCV 2025][Video Understanding][Optical Flow Estimation] MEMFOF is the first memory-efficient multi-frame optical flow method. By reducing the correlation volume resolution and introducing a high-resolution training strategy, it achieves state-of-the-art accuracy on Spring, Sintel, and KITTI benchmarks while requiring only 2.09 GB of GPU memory for 1080p inference.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "High-Resolution Training"
   - "RAFT"
 date: 2026-05-08
-content_hash: 43df191e424b744e
+content_hash: 03e70ae88a5a2923
 ---
 
 # MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation
@@ -152,9 +152,9 @@ During video sequence processing, feature maps and correlation volumes can be re
 
 - [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](alltracker_efficient_dense_point_tracking_at_high_resolution.md)
 - [\[ICCV 2025\] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](q-frame_query-aware_frame_selection_and_multi-resolution_adaptation_for_video-ll.md)
+- [\[CVPR 2026\] Efficient All-Pairs Correlation Volume Sampling for Optical Flow Estimation](../../CVPR2026/video_understanding/efficient_all-pairs_correlation_volume_sampling_for_optical_flow_estimation.md)
 - [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
-- [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
-- [\[ICCV 2025\] PriOr-Flow: Enhancing Primitive Panoramic Optical Flow with Orthogonal View](prior-flow_enhancing_primitive_panoramic_optical_flow_with_orthogonal_view.md)
+- [\[CVPR 2025\] DPFlow: Adaptive Optical Flow Estimation with a Dual-Pyramid Framework](../../CVPR2025/video_understanding/dpflow_adaptive_optical_flow_estimation_with_a_dual-pyramid_framework.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProReGen: Progressive Residual Generation under Attribute Correlations
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] ProReGen reformulates correlated attribute conditions $x_1, x_2$ into orthogonal components $x_1, \gamma$. It first trains a backbone generator using abundant majority samples, then learns residual generation layers using sparse minority samples, thereby improving the generation accuracy of conditional VAEs, GANs, and
+  [ICLR2026][Image Generation][Attribute Correlations] ProReGen reformulates correlated attribute conditions $x_1, x_2$ into orthogonal components $x_1, \gamma$. It first trains a backbone generator using abundant majority samples, then learns residual generation layers using sparse minority samples, thereby improving the generation accuracy of conditional VAEs, GANs, and Diffusion Models on rare attribute combinations.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR2026"
+  - "Image Generation"
+  - "Attribute Correlations"
+  - "Conditional Generation"
+  - "Residual Generation"
+  - "Counterfactual Images"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 10446631bb3ea9b9
+content_hash: e39776a64fc01cbe
 ---
+
 # ProReGen: Progressive Residual Generation under Attribute Correlations
 
 **Conference**: ICLR2026  
@@ -135,6 +140,7 @@ The paper validates two-stage training, $m(x_1)$ estimation error, causal direct
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

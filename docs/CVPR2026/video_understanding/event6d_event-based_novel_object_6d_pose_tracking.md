@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Event6D: Event-based Novel Object 6D Pose Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] EventTrack6D proposes an event-depth fusion framework for 6D pose tracking. By reconstructing intensity and depth images at arbitrary timestamps, it bridges the gap between event cameras and low-frame-rate depth sensors. Trained exclusively on synthetic data, it achieves robust tracking of unseen objects at 120+ FPS.
+  [CVPR 2026][Video Understanding][Event camera] EventTrack6D proposes an event-depth fusion framework for 6D pose tracking. By reconstructing intensity and depth images at arbitrary timestamps, it bridges the gap between event cameras and low-frame-rate depth sensors. Trained exclusively on synthetic data, it achieves robust tracking of unseen objects at 120+ FPS.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Event camera"
+  - "6D pose tracking"
+  - "Unseen object generalization"
+  - "Dual-modality reconstruction"
+  - "Sim-to-real transfer"
 date: 2026-05-08
-content_hash: 76cfaaf2b3fed41d
+content_hash: 1cb8ae7a89927445
 ---
+
 # Event6D: Event-based Novel Object 6D Pose Tracking
 
 **Conference**: CVPR 2026  
@@ -126,9 +132,9 @@ Significantly outperforms traditional methods in high-dynamic scenarios.
 
 - [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
 - [\[CVPR 2026\] SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks](sdtrack_a_baseline_for_event-based_tracking_via_spiking_neural_networks.md)
+- [\[CVPR 2026\] Tracking through Severe Occlusion via Event-Derived Transient Cues](tracking_through_severe_occlusion_via_event-derived_transient_cues.md)
 - [\[CVPR 2026\] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](egoxtreme_a_dataset_for_robust_object_pose_estimation_in_egocentric_views_under_.md)
 - [\[CVPR 2026\] MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras](mer-tracker_towards_high-speed_3d_point_tracking_via_multi-view_event-rgb_hybrid.md)
-- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
 
 </div>
 

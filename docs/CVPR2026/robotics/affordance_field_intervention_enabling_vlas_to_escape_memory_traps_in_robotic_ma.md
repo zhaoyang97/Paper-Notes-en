@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] Addressing the "Memory Trap" issue where VLA models rigidly follow training trajectories towards old object locations under scene perturbations, this paper proposes a training-free 3D Spatial Affordance Field (SAF) as a plug-and-play plugin. The system uses proprioception to detect traps, rolls back to safe historical
+  [CVPR 2026][Robotics][VLA] Addressing the "Memory Trap" issue where VLA models rigidly follow training trajectories towards old object locations under scene perturbations, this paper proposes a training-free 3D Spatial Affordance Field (SAF) as a plug-and-play plugin. The system uses proprioception to detect traps, rolls back to safe historical poses, and employs SAF to sample waypoints and rerank VLA candidate trajectories based on cumulative affordance…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Spatial Affordance Field"
+  - "Memory Trap"
+  - "Distribution Shift"
+  - "Plug-and-play Intervention"
 date: 2026-05-08
-content_hash: 95d1a30a92223e4e
+content_hash: c45e2053b5a06671
 ---
+
 # Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -162,10 +167,10 @@ Overall, real-world OOD performance improved by 23.5%. Significant gains were ob
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data via Just-in-Time Intervention](beyond_success_refining_elegant_robot_manipulation_from_mixed-quality_data_via_j.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
 - [\[CVPR 2026\] CycleManip: Enabling Cycle-based Manipulation via Effective History Perception and Understanding](cyclemanip_enabling_cycle-based_manipulation_via_effective_history_perception_an.md)
-- [\[CVPR 2026\] CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception and Understanding](cyclemanip_enabling_cyclic_task_manipulation_via_effective_historical_percepti.md)
+- [\[CVPR 2026\] RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model](rehearsevla_simulated_post-training_for_vlas_with_physically-consistent_world_mo.md)
 - [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](../../ICLR2026/robotics/memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
+- [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
 
 </div>
 

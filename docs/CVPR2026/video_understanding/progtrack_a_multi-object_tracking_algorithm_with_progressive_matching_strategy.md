@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] ProgTrack mimics the human eye's tracking habit of "large first, small later, then fill gaps" by decomposing UAV multi-object tracking into a three-stage progressive matching process: "large objects use IoU, small objects use Context-Enhanced ReID, and remaining hard-to-match targets use relative inter-object positions
+  [CVPR 2026][Video Understanding][Multi-object tracking] ProgTrack mimics the human eye's tracking habit of "large first, small later, then fill gaps" by decomposing UAV multi-object tracking into a three-stage progressive matching process: "large objects use IoU, small objects use Context-Enhanced ReID, and remaining hard-to-match targets use relative inter-object positions." Coupled with a Pure Kalman Filter (PKF) that handles occlusions and missed detections…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multi-object tracking"
+  - "UAV"
+  - "Progressive matching"
+  - "Context-enhanced ReID"
+  - "Global motion information"
 date: 2026-05-08
-content_hash: 752490e553edf815
+content_hash: bf8989c6c769b492
 ---
+
 # ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy
 
 **Conference**: CVPR 2026  
@@ -130,7 +136,8 @@ Baseline: ByteTrack on VisDrone2019.
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

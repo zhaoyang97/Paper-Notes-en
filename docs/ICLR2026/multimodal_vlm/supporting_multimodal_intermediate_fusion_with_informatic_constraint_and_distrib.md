@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Supporting Multimodal Intermediate Fusion with Informatic Constraint and Distribution Coherence
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper re-analyzes the disparity between multimodal Intermediate Fusion (IF) and Late Fusion (LF) from the perspective of generalization error. It proposes IID, which employs informatic constraints to ensure the linear target mapping of IF meets theoretical conditions, and utilizes Wasserstein distribution coherenc
+  [ICLR2026][Multimodal VLM][Intermediate Fusion] This paper re-analyzes the disparity between multimodal Intermediate Fusion (IF) and Late Fusion (LF) from the perspective of generalization error. It proposes IID, which employs informatic constraints to ensure the linear target mapping of IF meets theoretical conditions, and utilizes Wasserstein distribution coherence with RIP dimensionality reduction to mitigate inter-modal distribution misalignment. The approach achieves con…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Intermediate Fusion"
+  - "Informatic Constraint"
+  - "Distribution Coherence"
+  - "Wasserstein Distance"
+  - "Multimodal Generalization"
 date: 2026-05-08
-content_hash: 66c1a161c8e275a6
+content_hash: b518341a8a0e33ca
 ---
+
 # Supporting Multimodal Intermediate Fusion with Informatic Constraint and Distribution Coherence
 
 **Conference**: ICLR2026  

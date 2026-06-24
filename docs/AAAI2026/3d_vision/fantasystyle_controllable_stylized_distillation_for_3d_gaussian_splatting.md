@@ -2,62 +2,62 @@
 title: >-
   [Paper Note] FantasyStyle: Controllable Stylized Distillation for 3D Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][3DGS style transfer] This paper presents FantasyStyle, the first 3DGS style transfer framework built entirely on diffusion model distillation. It introduces a Multi-View Frequency Consistency (MVFC…
+  [AAAI 2026][3D Vision][3DGS Style Transfer] This paper proposes FantasyStyle, the first 3DGS style transfer framework entirely based on diffusion model distillation. It utilizes a Multi-view Frequency Consistency (MVFC) mechanism to suppress low-frequency components and reduce inconsistencies between perspectives, and designs Controllable Stylized Distillation (CSD) to introduce negative guidance, eliminating content leakage from style images. It outperforms existing VGG and…
 tags:
   - "AAAI 2026"
   - "3D Vision"
-  - "3DGS style transfer"
-  - "diffusion model distillation"
-  - "multi-view consistency"
-  - "frequency analysis"
-  - "negative guidance"
+  - "3DGS Style Transfer"
+  - "Diffusion Model Distillation"
+  - "Multi-view Consistency"
+  - "Frequency Analysis"
+  - "Negative Guidance"
 date: 2026-05-08
-content_hash: 3db9da865ddd9c18
+content_hash: f9add36722c3011a
 ---
 
 # FantasyStyle: Controllable Stylized Distillation for 3D Gaussian Splatting
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2508.08136](https://arxiv.org/abs/2508.08136)  
 **Code**: [https://github.com/yangyt46/FantasyStyle](https://github.com/yangyt46/FantasyStyle)  
-**Area**: 3D Vision / Style Transfer
-**Keywords**: 3DGS style transfer, diffusion model distillation, multi-view consistency, frequency analysis, negative guidance
+**Area**: 3D Vision / Style Transfer  
+**Keywords**: 3DGS Style Transfer, Diffusion Model Distillation, Multi-view Consistency, Frequency Analysis, Negative Guidance
 
 ## TL;DR
-This paper presents FantasyStyle, the first 3DGS style transfer framework built entirely on diffusion model distillation. It introduces a Multi-View Frequency Consistency (MVFC) mechanism that suppresses low-frequency components to reduce cross-view conflicts, and designs Controllable Stylized Distillation (CSD) with negative guidance to eliminate content leakage from style images. The method surpasses existing VGG-based and diffusion-based approaches in both stylization quality and content preservation.
+This paper proposes FantasyStyle, the first 3DGS style transfer framework entirely based on diffusion model distillation. It utilizes a Multi-view Frequency Consistency (MVFC) mechanism to suppress low-frequency components and reduce inconsistencies between perspectives, and designs Controllable Stylized Distillation (CSD) to introduce negative guidance, eliminating content leakage from style images. It outperforms existing VGG and diffusion-based methods in both stylization quality and content preservation.
 
 ## Background & Motivation
-With the growing demand for artistic 3D content in VR/AR, 3D style transfer has become an active research area. 3D Gaussian Splatting (3DGS) has emerged as a prominent 3D representation owing to its fast rendering and high visual quality. However, existing 3DGS style transfer methods still face two core challenges:
+With the growing demand for artistic 3D content in VR/AR, 3D style transfer has become a research hotspot. 3D Gaussian Splatting (3DGS) has emerged as a promising 3D representation due to its fast rendering and high visual quality. However, existing 3DGS style transfer methods still face two core challenges:
 
-**Multi-view inconsistency**: When 2D diffusion priors are used to guide 3D stylization, stylized results from different viewpoints frequently exhibit style conflicts (inconsistent colors and brushstrokes), leading to gradient cancellation during optimization and ultimately resulting in blurriness and geometric distortion.
+**Multi-view Inconsistency**: When driving 3D stylization with 2D diffusion priors, stylized results from different perspectives often experience style conflicts (inconsistencies in color and brushstrokes). This leads to mutual cancellation during optimization, ultimately resulting in blurriness and geometric distortion.
 
-**Content leakage and over-stylization**: Mainstream methods rely on VGG feature extraction, yet VGG struggles to effectively decouple style from content. This causes content information from the style image (e.g., specific object shapes) to be incorrectly transferred to the target scene, while excessive low-level texture matching produces over-stylization that obscures structural details.
+**Content Leakage and Over-Stylization**: Mainstream methods rely on VGG feature extraction, but VGG struggles to effectively disentangle style and content. This causes the content information of the style image (such as specific object shapes) to be incorrectly transferred to the target scene, while over-matching of low-level textures produces over-stylization, concealing structural details.
 
-This work is the **first 3DGS style transfer framework built entirely on diffusion model distillation** (without any VGG features). The core approach addresses the above issues from two dimensions: the frequency domain and the guidance mechanism.
+This paper presents the **first 3DGS style transfer framework purely based on diffusion model distillation** (without using any VGG features). The core Key Insight is to address the aforementioned issues from two dimensions: the frequency domain and the guidance mechanism.
 
 ## Method
 
 ### Overall Architecture
-FantasyStyle adopts a dual-path architecture based on DDS (Delta Denoising Score): a Source Image path and a Rendered Image path. MVFC is applied to the rendered image path to enhance multi-view consistency. Style features are injected via IP-Adapter to obtain 2D stylization priors. Negative guidance suppresses content leakage. The final optimization updates only the color parameters of 3D Gaussians, keeping geometry fixed.
+FantasyStyle is based on a dual-path architecture of DDS (Delta Denoising Score): the Source Image path and the Rendered Image path. An MVFC mechanism is introduced to the rendered image path to enhance multi-view consistency. Style features are injected via IP-Adapter to obtain 2D stylization priors, and negative guidance is used to suppress content leakage. Finally, the color parameters of 3D Gaussians are optimized via CSD (while keeping the geometry fixed).
 
 ### Key Designs
 1. **Multi-View Frequency Consistency (MVFC)**:
 
-    - Function: Applies 3D frequency-domain filtering to multi-view latents after DDIM noise addition, improving cross-view consistency.
-    - Mechanism: A 3D FFT decomposes multi-view noisy latents into low- and high-frequency components. The key observation is that low-frequency components primarily reflect view-dependent local details with poor cross-view consistency, while high-frequency components more stably capture texture features with better cross-view consistency. Therefore, all high-frequency components are retained, while low-frequency components are selectively attenuated (controlled by coefficient $\gamma$), and cross-view shared low-frequency Gaussian noise is introduced to explicitly enhance consistency.
-    - Design Motivation: Inspired by FreeU and FreeInit's findings on the critical role of frequency components in image/video generation. Frequency-domain manipulation can effectively reduce cross-view style conflicts without degrading texture quality.
+    - **Function**: Performs 3D frequency-domain filtering on multi-view latents after DDIM noise addition to improve consistency across views.
+    - **Mechanism**: Uses 3D FFT to decompose multi-view noise latents into low-frequency and high-frequency components. A key observation is that low-frequency components mainly reflect view-dependent local details, exhibiting poor cross-view consistency, whereas high-frequency components more stably capture texture features, exhibiting good cross-view consistency. Therefore, all high-frequency components are retained, low-frequency components are selectively attenuated (controlled by a coefficient $\gamma$), and a cross-view shared low-frequency Gaussian noise is introduced to explicitly enhance consistency.
+    - **Design Motivation**: Inspired by the findings of FreeU and FreeInit regarding the key role of frequency components in image/video generation. Operations in the frequency domain can effectively reduce style conflicts between views without compromising textures.
 
 2. **Controllable Stylized Distillation (CSD)**:
 
-    - Function: Designs a novel distillation loss to optimize 3D scenes using 2D stylization priors.
-    - Mechanism: The failure of SDS and DDS is first analyzed — their reconstruction term $\delta_{z_t}^{recon}$ causes over-smoothing and loss of critical brushstroke details. CSD removes the reconstruction term entirely, retaining only the CFG guidance term. Additionally, the null-text condition in standard CFG is replaced by the content features of the style image as negative guidance, ensuring that the resulting stylization prior is free of content information.
-    - Design Motivation: In style transfer, only color parameters need to be modified without preserving geometry or identity; the reconstruction term thus becomes a limiting factor. Negative guidance actively excludes content information in the style image that should not be transferred.
+    - **Function**: Designs a new distillation loss function to optimize 3D scenes using 2D stylization priors.
+    - **Mechanism**: First analyzes why SDS and DDS fail—their reconstruction terms $\delta_{z_t}^{recon}$ cause over-smoothed outputs and loss of key brushstroke details. CSD addresses this by directly removing the reconstruction term and keeping only the CFG guidance term. Additionally, the empty-text condition in standard CFG is replaced with content features of the style image as negative guidance, ensuring the generated stylized prior is free of content information.
+    - **Design Motivation**: In style transfer tasks, only color parameters need to be modified without involving geometry or identity preservation, making the reconstruction term a limiting factor instead; negative guidance actively excludes unwanted content information from the style image.
 
 3. **IP-Adapter + ControlNet Integration**:
 
-    - Function: Injects style information while maintaining structural consistency.
-    - Mechanism: IP-Adapter-Instruct is used to separately extract style features $\text{IP}(I_r)^s$ and content features $\text{IP}(I_r)^c$ from the style image. Style features serve as positive guidance; content features serve as negative guidance. ControlNet provides structural guidance to compensate for geometric information lost during 2D prior generation.
-    - Design Motivation: Text prompts alone are insufficient to precisely describe the visual characteristics of style images; IP-Adapter provides a more direct and effective means of style injection.
+    - **Function**: Injects style information while maintaining structural consistency.
+    - **Mechanism**: Uses IP-Adapter-Instruct to extract style features $\text{IP}(I_r)^s$ and content features $\text{IP}(I_r)^c$ from the style image; style features are used for positive guidance, and content features are used for negative guidance. ControlNet guides structural information to compensate for the loss of geometric details when generating 2D priors.
+    - **Design Motivation**: Pure text prompts are insufficient to describe the visual features of style images accurately, and IP-Adapter provides a more direct and effective way of injecting style.
 
 ### Loss & Training
 CSD gradient formula:
@@ -68,7 +68,7 @@ where $\Phi^{tgt} = \beta(\epsilon_\phi(z_t^{tgt}, t, [\mathcal{P}, \text{IP}(I_
 
 $\Phi^{src} = \beta(\epsilon_\phi(z_t^{src}, t, \mathcal{P}) - \epsilon_\phi(z_t^{src}, t, \varnothing))$
 
-SDXL is used as the diffusion backbone with CFG scale $\beta=7.5$ and MVFC parameter $\gamma=0.9$. Timesteps are randomly sampled from a discrete set to simulate the DDIM denoising process. All experiments are conducted on 2×NVIDIA L20 (48GB) GPUs.
+SDXL is utilized as the backbone diffusion model, with a CFG scale of $\beta=7.5$ and an MVFC parameter of $\gamma=0.9$. Random sampling is performed from a discrete set of timesteps (simulating the DDIM denoising process). All experiments are conducted on 2×NVIDIA L20 (48GB) GPUs.
 
 ## Key Experimental Results
 
@@ -80,52 +80,52 @@ SDXL is used as the diffusion backbone with CFG scale $\beta=7.5$ and MVFC param
 | SGSST | 44.70 | 370.03 | 314.09 | 0.295 | 0.569 |
 | **FantasyStyle** | **43.52** | **347.61** | **261.71** | **0.285** | **0.529** |
 
-FantasyStyle achieves the best or second-best results on all key metrics, with FID_content reduced by approximately 50 relative to the second-best method.
+FantasyStyle achieves the best or second-best results across all key metrics, with FID_content reduced by approximately 50 compared to the second-best method.
 
 ### Ablation Study
 
-| Ablation | Short LPIPS↓ | Long LPIPS↓ |
+| Ablation Item | Short LPIPS↓ | Long LPIPS↓ |
 |--------|-------------|-------------|
 | w/o MVFC | 0.253 | 0.587 |
 | **Full Method** | **0.250** | **0.574** |
 
 | Optimization Strategy | Visual Effect |
 |---------|---------|
-| SDS | Color transfer succeeds but brushstroke textures are lost; over-smoothing |
-| DDS | Similar to SDS; brushstroke details lost |
-| **CSD** | **Brushstroke features preserved; best stylization quality** |
+| SDS | Color transfer is successful but brushstroke textures are lost, leading to over-smoothing |
+| DDS | Similar to SDS, losing brushstroke details |
+| **CSD** | **Preserves brushstroke features, achieving the best stylization quality** |
 
-The improvement from MVFC is more pronounced in long-range consistency, consistent with its design objective of enhancing multi-view consistency. Removing the reconstruction term renders the CFG scale less sensitive, reducing hyperparameter tuning complexity.
+The improvement from MVFC is more significant in long-term consistency (specifically designed for multi-view consistency). Removing the reconstruction term makes the CFG scale insensitive, reducing the complexity of hyperparameter tuning.
 
 ### Key Findings
-- **Low-frequency components are the root cause of cross-view inconsistency**: Moderate attenuation of low frequencies slightly reduces local detail but substantially improves multi-view consistency, whereas removing high-frequency components severely degrades texture.
-- **The reconstruction term in SDS/DDS is harmful for style transfer**: Since style transfer modifies only color without identity preservation, the reconstruction term causes over-smoothing and slows optimization.
-- **Fundamental limitations of VGG-based methods**: VGG focuses excessively on the appearance of style images rather than extracting transferable abstract style representations, leading to content leakage. Diffusion models extract higher-level style semantics.
-- **Method extensibility**: FantasyStyle can flexibly integrate other 2D style transfer methods (as shown in Figure 7), with improvements in 2D stylization quality directly translating to gains in 3D visual quality.
+- **Low-frequency components are the main culprit of view inconsistency**: Moderately attenuating low frequencies only slightly reduces local details but significantly improves multi-view consistency, whereas removing high-frequency components severely damages textures.
+- **The reconstruction term in SDS/DDS is harmful in style transfer**: Because style transfer only modifies color and does not involve identity preservation, the reconstruction term causes over-smoothing and slows down optimization.
+- **Fundamental limitation of VGG methods**: VGG over-focuses on the appearance of the style image rather than extracting a transferable abstract style representation, leading to content leakage. Diffusion models can extract higher-level style semantics.
+- **Method scalability**: FantasyStyle can flexibly integrate other 2D style transfer methods (as shown in Figure 7). The improvement in 2D stylization quality directly translates into an enhancement of 3D visual quality.
 
 ## Highlights & Insights
-- The first 3DGS style transfer framework built entirely on diffusion model distillation, bridging the gap between 2D and 3D diffusion-based style transfer.
-- Frequency-domain analysis reveals the underlying cause of multi-view inconsistency; the MVFC design is concise and elegant.
-- The combination of removing the reconstruction term and applying negative guidance in CSD elegantly resolves both content leakage and over-smoothing.
-- The architecture is highly extensible and can serve as a general bridge for adapting 2D style transfer methods to 3D scenes.
+- The first 3DGS style transfer framework entirely based on diffusion model distillation, bridging the gap in 2D-to-3D diffusion style transfer.
+- Frequency domain analysis reveals the underlying cause of multi-view inconsistency, with a simple and elegant MVFC design.
+- The combination of CSD removing the reconstruction term plus negative guidance cleverly solves both content leakage and over-smoothing issues.
+- The architectural design shows excellent scalability, serving as a general bridge for extending 2D style transfer to 3D scenes.
 
 ## Limitations & Future Work
-- The SDXL-based optimization pipeline is time-consuming, though this can be mitigated with smaller models, lower resolutions, or adjusted learning rates.
-- Only two baseline methods (StyleGaussian, SGSST) are included in quantitative comparisons; broader comparisons are desirable.
-- Validation on dynamic scenes (e.g., 4D Gaussians) has not been conducted.
-- The selection of parameter $\gamma$ in MVFC lacks an adaptive mechanism.
-- Stylization quality depends substantially on the feature extraction capability of IP-Adapter.
+- The SDXL-based optimization process is time-consuming, but this can be mitigated by smaller models, lower resolutions, or adjusting the learning rate.
+- There are only two baseline methods for quantitative comparison (StyleGaussian and SGSST); more comparisons could be added.
+- It has not been verified on dynamic scenes (e.g., 4D Gaussians).
+- The selection of the $\gamma$ parameter in MVFC lacks an adaptive mechanism.
+- Stylization quality heavily relies on the feature extraction capability of the IP-Adapter.
 
 ## Related Work & Insights
-- This work stands in sharp contrast to VGG-based methods: while diffusion models have largely replaced VGG in 2D style transfer, the 3DGS community still relies heavily on VGG. This paper advances the transition toward diffusion-based paradigms in 3DGS style transfer.
-- The CSD design (removing the reconstruction term + negative guidance) is generalizable to other 3D editing tasks.
-- The idea of controlling multi-view consistency via frequency-domain manipulation may also benefit other tasks such as 3D generation and NeRF/3DGS editing.
+- Sharp contrast with VGG methods: While VGG has been replaced by diffusion methods in 2D style transfer, it is still widely used in the 3DGS domain. Ours promotes the transition of 3DGS style transfer toward the diffusion paradigm.
+- The design of CSD (removing reconstruction terms + negative guidance) can be generalized to other 3D editing tasks.
+- The idea of controlling multi-view consistency in the frequency domain may also be valuable for other tasks such as 3D generation and NeRF/3DGS editing.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (first purely diffusion-distillation-based 3DGS style transfer + frequency-domain consistency control)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (thorough ablations but limited number of baselines)
-- Writing Quality: ⭐⭐⭐⭐⭐ (clear mathematical derivations, well-motivated analysis)
-- Value: ⭐⭐⭐⭐ (pioneering contribution to the 3DGS style transfer field)
+- Novelty: ⭐⭐⭐⭐⭐ (First pure-diffusion-distilled 3DGS style transfer + frequency-domain consistency control)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Thorough ablations but limited number of baselines)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear mathematical derivations, well-analyzed motivations)
+- Value: ⭐⭐⭐⭐ (Of pioneering significance in the field of 3DGS style transfer)
 
 <!-- RELATED:START -->
 
@@ -133,11 +133,11 @@ The improvement from MVFC is more pronounced in long-range consistency, consiste
 
 ## Related Papers
 
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](../../CVPR2026/3d_vision/ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
 - [\[AAAI 2026\] Debiasing Diffusion Priors via 3D Attention for Consistent Gaussian Splatting](debiasing_diffusion_priors_via_3d_attention_for_consistent_gaussian_splatting.md)
+- [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
+- [\[CVPR 2025\] DoF-Gaussian: Controllable Depth-of-Field for 3D Gaussian Splatting](../../CVPR2025/3d_vision/dof-gaussian_controllable_depth-of-field_for_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](../../CVPR2026/3d_vision/ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
 - [\[AAAI 2026\] Gaussian Blending: Rethinking Alpha Blending in 3D Gaussian Splatting](gaussian_blending_rethinking_alpha_blending_in_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation](../../CVPR2026/3d_vision/posemaster_a_unified_3d_native_framework_for_stylized_pose_generation.md)
-- [\[NeurIPS 2025\] Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles](../../NeurIPS2025/3d_vision/styl3r_instant_3d_stylized_reconstruction_for_arbitrary_scenes_and_styles.md)
 
 </div>
 

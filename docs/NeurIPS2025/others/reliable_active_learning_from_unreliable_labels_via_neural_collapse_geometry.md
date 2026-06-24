@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry
 description: >-
-  [NeurIPS 2025 (Workshop)][Active Learning] This paper proposes NCAL-R, which leverages the Neural Collapse (NC) geometry emerging in the terminal training phase of deep networks. Two scoring metrics—Class Mean Alignment…
+  [NeurIPS 2025 (Workshop)][Active Learning] This paper proposes NCAL-R, which leverages the Neural Collapse (NC) geometry emerging in the terminal training phase of deep networks. Two scoring metrics—Class Mean Alignment Perturbation (CMAP) and Feature Fluctuation (FF)—are designed for sample selection, making active learning more reliable under label noise and distribution shift. The method consistently outperforms conventional AL baselines on ImageNet-100 and CIFAR-100.
 tags:
   - "NeurIPS 2025 (Workshop)"
   - "Active Learning"
@@ -11,7 +11,7 @@ tags:
   - "Noise-Robust Learning"
   - "OOD Generalization"
 date: 2026-05-08
-content_hash: 0bef719509c76d02
+content_hash: ef66fd4d33fea12a
 ---
 
 # Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry
@@ -136,9 +136,9 @@ At each AL round, NCAL-R trains the model on the current labeled set until the N
 
 - [\[NeurIPS 2025\] The Persistence of Neural Collapse Despite Low-Rank Bias](the_persistence_of_neural_collapse_despite_low-rank_bias.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
-- [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](../../ICCV2025/others/joint_asymmetric_loss_for_learning_with_noisy_labels.md)
 - [\[NeurIPS 2025\] Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model](neural_collapse_in_cumulative_link_models_for_ordinal_regression_an_analysis_wit.md)
-- [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](../../ICLR2026/others/active_learning_for_decision_trees_with_provable_guarantees.md)
+- [\[NeurIPS 2025\] On a Geometry of Interbrain Networks](on_a_geometry_of_interbrain_networks.md)
+- [\[CVPR 2025\] Instance-wise Supervision-level Optimization in Active Learning](../../CVPR2025/others/instance-wise_supervision-level_optimization_in_active_learning.md)
 
 </div>
 

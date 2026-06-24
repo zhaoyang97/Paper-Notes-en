@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thyme: Think Beyond Images
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] Thyme enables Multimodal Large Language Models (MLLMs) to autonomously **generate and execute code** during reasoning for image operations (e.g., cropping, rotation, contrast enhancement) and mathematical calculations. This capability is activated through a two-stage training process: a "500k SFT cold start" followed b
+  [ICLR 2026][VLM Reasoning][Visual Thinking] Thyme enables Multimodal Large Language Models (MLLMs) to autonomously **generate and execute code** during reasoning for image operations (e.g., cropping, rotation, contrast enhancement) and mathematical calculations. This capability is activated through a two-stage training process: a "500k SFT cold start" followed by "GRPO-ATS reinforcement learning," consistently outperforming Qwen2.5-VL baselines across nearly 20 benchmarks…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Thinking"
+  - "Code Execution"
+  - "Image Manipulation"
+  - "Reinforcement Learning"
+  - "Adaptive Temperature Sampling"
 date: 2026-05-08
-content_hash: f2c55621d3a84652
+content_hash: cdf1fd44cc9ac7ef
 ---
+
 # Thyme: Think Beyond Images
 
 **Conference**: ICLR 2026  
@@ -139,6 +144,7 @@ Ours shows gains of >25% in challenging perception tasks (Monitoring, Auto-drivi
 - Value: ⭐⭐⭐⭐ (Provides a feature-rich paradigm for code-driven visual reasoning.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

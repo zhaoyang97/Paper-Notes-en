@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] This paper introduces OMIBench—the first large-scale benchmark for Olympiad-level multi-image reasoning. It covers over 1000 competition problems across biology, chemistry, mathematics, and physics. The study finds that even the strongest LVLM (Gemini-3-Pro) achieves only about 50% accuracy, representing a drop of over
+  [ACL 2026][VLM Reasoning][Multi-image reasoning] This paper introduces OMIBench—the first large-scale benchmark for Olympiad-level multi-image reasoning. It covers over 1000 competition problems across biology, chemistry, mathematics, and physics. The study finds that even the strongest LVLM (Gemini-3-Pro) achieves only about 50% accuracy, representing a drop of over 25% compared to single-image benchmarks.
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Multi-image reasoning"
+  - "Olympiad-level reasoning"
+  - "Vision-Language Model benchmark"
+  - "Cross-image association"
+  - "Scientific reasoning"
 date: 2026-05-08
-content_hash: 69849fec83c13d28
+content_hash: 3e5a3d3c0e82b5dd
 ---
+
 # OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models
 
 **Conference**: ACL 2026  
@@ -132,11 +138,11 @@ This work is a benchmark and does not involve model training.
 
 ## Related Papers
 
+- [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
+- [\[ICLR 2026\] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](../../ICLR2026/vlm_reasoning/lens_multi-level_evaluation_of_multimodal_reasoning_with_large_language_models.md)
+- [\[ICML 2026\] From Correspondence to Actions: Human-Like Multi-Image Spatial Reasoning in Multi-modal Large Language Models](../../ICML2026/vlm_reasoning/from_correspondence_to_actions_human-like_multi-image_spatial_reasoning_in_multi.md)
 - [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
 - [\[ACL 2026\] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization](addressing_overthinking_in_large_vision-language_models_via_gated_perception-rea.md)
-- [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
-- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
-- [\[ICML 2026\] From Correspondence to Actions: Human-Like Multi-Image Spatial Reasoning in Multi-modal Large Language Models](../../ICML2026/vlm_reasoning/from_correspondence_to_actions_human-like_multi-image_spatial_reasoning_in_multi.md)
 
 </div>
 

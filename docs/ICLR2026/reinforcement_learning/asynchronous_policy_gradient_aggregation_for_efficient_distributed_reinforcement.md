@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Asynchronous Policy Gradient Aggregation for Efficient Distributed Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][NIGT] This paper adapts normalized implicit gradient transport (NIGT) into an asynchronously aggregatable distributed policy gradient algorithm. It proposes Rennala NIGT for homogeneous environments and Malenia NIGT for heterogeneous environments. Both theoretical complexity and MuJoCo experiments demonstrate that these meth
+  [ICLR 2026][Reinforcement Learning][Asynchronous Policy Gradient] This paper adapts normalized implicit gradient transport (NIGT) into an asynchronously aggregatable distributed policy gradient algorithm. It proposes Rennala NIGT for homogeneous environments and Malenia NIGT for heterogeneous environments. Both theoretical complexity and MuJoCo experiments demonstrate that these methods better utilize fast workers, handle slow communication, and manage heterogeneous environme…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - NIGT
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Asynchronous Policy Gradient"
+  - "Distributed RL"
+  - "NIGT"
+  - "Communication Efficiency"
+  - "Heterogeneous Computing"
 date: 2026-05-08
-content_hash: 622e98c4ffd53289
+content_hash: beb6c685b7115034
 ---
+
 # Asynchronous Policy Gradient Aggregation for Efficient Distributed Reinforcement Learning
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning to Reason via Mixture-of-Thought for Logical Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Mixture-of-Thought] This paper proposes the Mixture-of-Thought (MoT) framework, allowing a single LLM to learn logical reasoning using three complementary paradigms: natural language, code, and the newly introduced "truth tables." Capabilities across modalities are jointly enhanced through self-evolution training, and fused via majority v
+  [ICLR 2026][Reasoning][Mixture-of-Thought] This paper proposes the Mixture-of-Thought (MoT) framework, allowing a single LLM to learn logical reasoning using three complementary paradigms: natural language, code, and the newly introduced "truth tables." Capabilities across modalities are jointly enhanced through self-evolution training, and fused via majority voting during inference, achieving a performance gain of up to +11.7pp over single Chain-of-Thought baselines on FOLIO…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Mixture-of-Thought
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Mixture-of-Thought"
+  - "Logical Reasoning"
+  - "Truth Table Reasoning"
+  - "Self-Evolution Training"
+  - "Multimodal Thought"
+  - "Majority Voting"
 date: 2026-05-08
-content_hash: 780ff7ed7e419aed
+content_hash: 3d73eddbd2bd4cac
 ---
+
 # Learning to Reason via Mixture-of-Thought for Logical Reasoning
 
 **Conference**: ICLR 2026  
@@ -133,7 +139,7 @@ Single-model MoT training (73.6 Avg / 78.9 Ensemble) outperforms the 3×9B appro
 - [\[ICLR 2026\] ActivationReasoning: Logical Reasoning in Latent Activation Spaces](activationreasoning_logical_reasoning_in_latent_activation_spaces.md)
 - [\[ICLR 2026\] MoDr: Mixture-of-Depth-Recurrent Transformers for Test-Time Reasoning](modr_mixture-of-depth-recurrent_transformers_for_test-time_reasoning.md)
 - [\[ICLR 2026\] VERICOT: Neuro-Symbolic Chain-of-Thought Validation via Logical Consistency Checks](vericot_neuro-symbolic_chain-of-thought_validation_via_logical_consistency_check.md)
-- [\[ICLR 2026\] TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture](tumix_multi-agent_test-time_scaling_with_tool-use_mixture.md)
+- [\[ACL 2026\] Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning](../../ACL2026/llm_reasoning/logical_phase_transitions_understanding_collapse_in_llm_logical_reasoning.md)
 
 </div>
 

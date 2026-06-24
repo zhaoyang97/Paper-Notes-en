@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Originality Filtering: Rejection-Based Prompting and RiddleScore for Culturally Grounded Multilingual Riddle Generation
 description: >-
-  [NeurIPS 2025][Multilingual & Machine Translation][Adaptive Originality Filtering] This paper proposes Adaptive Originality Filtering (AOF)—a semantic rejection-sampling prompting strategy that filters repetitive or temp…
+  [NeurIPS 2025][Multilingual & Machine Translation][Adaptive Originality Filtering] This paper proposes Adaptive Originality Filtering (AOF)—a semantic rejection-sampling prompting strategy that filters repetitive or templated outputs via MiniLM embedding cosine similarity, compelling LLMs to generate more novel, diverse, and culturally grounded multilingual riddles. It also introduces the RiddleScore composite evaluation metric (Novelty + Diversity + Fluency + Alignment)…
 tags:
   - "NeurIPS 2025"
   - "Multilingual & Machine Translation"
@@ -12,7 +12,7 @@ tags:
   - "rejection sampling"
   - "cultural adaptation"
 date: 2026-05-08
-content_hash: 7818255f04f681f5
+content_hash: 165e8d4f6e214b13
 ---
 
 # Adaptive Originality Filtering: Rejection-Based Prompting and RiddleScore for Culturally Grounded Multilingual Riddle Generation
@@ -128,10 +128,10 @@ Generation loop: LLM generates candidate riddle → MiniLM encoding → cosine s
 ## Related Papers
 
 - [\[ACL 2026\] Toward Culturally Grounded Natural Language Processing](../../ACL2026/multilingual_mt/toward_culturally_grounded_natural_language_processing.md)
-- [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](../../ACL2026/multilingual_mt/morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
+- [\[ACL 2025\] LexGen: Domain-aware Multilingual Lexicon Generation](../../ACL2025/multilingual_mt/lexgen_domain-aware_multilingual_lexicon_generation.md)
+- [\[ACL 2025\] Exploring In-context Example Generation for Machine Translation](../../ACL2025/multilingual_mt/exploring_in-context_example_generation_for_machine_translation.md)
 - [\[NeurIPS 2025\] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following](xifbench_evaluating_large_language_models_on_multilingual_instruction_following.md)
 - [\[NeurIPS 2025\] MERIT: Multilingual Semantic Retrieval with Interleaved Multi-Condition Query](merit_multilingual_semantic_retrieval_with_interleaved_multi-condition_query.md)
-- [\[ACL 2026\] No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs](../../ACL2026/multilingual_mt/no_one_fits_all_from_fixed_prompting_to_learned_routing_in_multilingual_llms.md)
 
 </div>
 

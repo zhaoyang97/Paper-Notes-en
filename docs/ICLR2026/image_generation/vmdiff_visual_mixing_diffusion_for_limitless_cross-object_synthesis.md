@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VMDiff: Visual Mixing Diffusion for Limitless Cross-Object Synthesis
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] Addressing the task of "fusing two object images into a brand-new hybrid object," this paper proposes VMDiff. It constructs semantic noise carrying dual-object information via guided denoising and inversion at the noise level (concatenation rather than interpolation), fuses two embeddings into a single coherent represe
+  [ICLR 2026][Image Generation][Visual Mixing] Addressing the task of "fusing two object images into a brand-new hybrid object," this paper proposes VMDiff. It constructs semantic noise carrying dual-object information via guided denoising and inversion at the noise level (concatenation rather than interpolation), fuses two embeddings into a single coherent representation using spherical interpolation at the latent level, and automatically tunes parameters through a similarity-…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Mixing"
+  - "Cross-Object Fusion"
+  - "Diffusion Models"
+  - "Noise Inversion"
+  - "Spherical Interpolation"
 date: 2026-05-08
-content_hash: 215a0fdd253647c6
+content_hash: 8f626232982da32e
 ---
+
 # VMDiff: Visual Mixing Diffusion for Limitless Cross-Object Synthesis
 
 **Conference**: ICLR 2026  
@@ -141,15 +146,16 @@ VMDiff leads in most metrics. Although MIP-Adapter achieves higher VQA$^{SCE}_{L
 - Value: ⭐⭐⭐⭐ Provides a controllable, training-free, and strong baseline for the under-explored task of visual mixing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] ViHOI: Human-Object Interaction Synthesis with Visual Priors](../../CVPR2026/image_generation/vihoi_human-object_interaction_synthesis_with_visual_priors.md)
 - [\[ICLR 2026\] Reconciling Visual Perception and Generation in Diffusion Models](reconciling_visual_perception_and_generation_in_diffusion_models.md)
+- [\[ICLR 2026\] VisualPrompter: Semantic-Aware Prompt Optimization with Visual Feedback for Text-to-Image Synthesis](visualprompter_semantic-aware_prompt_optimization_with_visual_feedback_for_text-.md)
 - [\[ICLR 2026\] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training](generate_any_scene_scene_graph_driven_data_synthesis_for_visual_generation_train.md)
-- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
-- [\[ICLR 2026\] PQGAN: Product-Quantised Image Representation for High-Quality Image Synthesis](pqgan_product-quantised_image_representation_for_high-quality_image_synthesis.md)
+- [\[ICML 2026\] Direct 3D-Aware Object Insertion via Decomposed Visual Proxies](../../ICML2026/image_generation/direct_3d-aware_object_insertion_via_decomposed_visual_proxies.md)
 
 </div>
 

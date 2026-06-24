@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cortical Policy: A Dual-Stream View Transformer for Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] Inspired by the division of labor in the human visual cortex—where the "ventral stream" perceives static scenes and the "dorsal stream" observes dynamic motion—this paper proposes Cortical Policy. It features a dual-stream View Transformer consisting of a static stream (using VGGT to supervise cross-view geometric cons
+  [ICLR2026][Robotics][View Transformer] Inspired by the division of labor in the human visual cortex—where the "ventral stream" perceives static scenes and the "dorsal stream" observes dynamic motion—this paper proposes Cortical Policy. It features a dual-stream View Transformer consisting of a static stream (using VGGT to supervise cross-view geometric consistency for 3D spatial reasoning) and a dynamic stream (using a pre-trained gaze estimation model to predict end-effector…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "View Transformer"
+  - "Dual-Stream Architecture"
+  - "Imitation Learning"
+  - "Cross-View Geometric Consistency"
+  - "Egocentric Gaze Estimation"
 date: 2026-05-08
-content_hash: 8810569cefec93d8
+content_hash: 5119a31e364ab702
 ---
+
 # Cortical Policy: A Dual-Stream View Transformer for Robotic Manipulation
 
 **Conference**: ICLR2026  

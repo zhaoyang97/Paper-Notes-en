@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On Code-Induced Reasoning in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper employs a data-centric controlled experimental framework (parallel instruction data for 10 programming languages + over ten types of structural/semantic perturbations + 3,331 experiments across 5 model families and 8 scales) to systematically dissect which specific parts of code data assist LLM reasoning. It
+  [ICLR 2026][Reasoning][Code training data] This paper employs a data-centric controlled experimental framework (parallel instruction data for 10 programming languages + over ten types of structural/semantic perturbations + 3,331 experiments across 5 model families and 8 scales) to systematically dissect which specific parts of code data assist LLM reasoning. It concludes that the **structural skeleton** of code—rather than verbose surface details—is crucial…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Code training data"
+  - "reasoning ability"
+  - "controlled perturbations"
+  - "data-centric analysis"
+  - "supervised fine-tuning"
 date: 2026-05-08
-content_hash: b6aa38343f6edd0c
+content_hash: e86c28b61080b395
 ---
+
 # On Code-Induced Reasoning in LLMs
 
 **Conference**: ICLR 2026  
@@ -118,15 +124,15 @@ Across 14 model bases, code-ft or mixed-ft achieved the best results in 64% of N
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Executable Counterfactuals: Improving LLMs' Causal Reasoning Through Code](executable_counterfactuals_improving_llms_causal_reasoning_through_code.md)
 - [\[ICLR 2026\] Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts](beyond_prompt-induced_lies_investigating_llm_deception_on_benign_prompts.md)
 - [\[ICML 2026\] Is Code Better Than Language for Algorithmic Reasoning?](../../ICML2026/llm_reasoning/is_code_better_than_language_for_algorithmic_reasoning.md)
+- [\[NeurIPS 2025\] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](../../NeurIPS2025/llm_reasoning/core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)
 - [\[ICLR 2026\] AceReason-Nemotron 1.1: Advancing Math and Code Reasoning through SFT and RL Synergy](acereason-nemotron_11_advancing_math_and_code_reasoning_through_sft_and_rl_syner.md)
-- [\[ICLR 2026\] Reasoning Scaffolding: Distilling the Flow of Thought from LLMs](reasoning_scaffolding_distilling_the_flow_of_thought_from_llms.md)
 
 </div>
 

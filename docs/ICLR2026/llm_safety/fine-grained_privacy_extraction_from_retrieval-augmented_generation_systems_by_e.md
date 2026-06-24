@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Fine-Grained Privacy Extraction from Retrieval-Augmented Generation Systems by Exploiting Knowledge Asymmetry
 description: >-
-  [ICLR 2026][LLM Safety][RAG] This paper proposes a black-box attack framework that utilizes the **knowledge asymmetry** between a "RAG system" and a "standard LLM" as a diagnostic signal. By segmenting RAG responses into sentences, calculating similarity features, and training a classifier, the framework **precisely localizes** which sentences ori
+  [ICLR 2026][LLM Safety][RAG] This paper proposes a black-box attack framework that utilizes the **knowledge asymmetry** between a "RAG system" and a "standard LLM" as a diagnostic signal. By segmenting RAG responses into sentences, calculating similarity features, and training a classifier, the framework **precisely localizes** which sentences originate from private knowledge bases. It achieves an ESR exceeding 90% in single-domain and 80% in multi-domain scenarios…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - RAG
-  - NLI
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "RAG"
+  - "Privacy Extraction"
+  - "Knowledge Asymmetry"
+  - "Black-box Attack"
+  - "NLI"
+  - "Sentence-level Localization"
 date: 2026-05-08
-content_hash: 81736dd65829bcab
+content_hash: e7bfc3f41bd0a514
 ---
+
 # Fine-Grained Privacy Extraction from Retrieval-Augmented Generation Systems by Exploiting Knowledge Asymmetry
 
 **Conference**: ICLR 2026  
@@ -134,11 +139,11 @@ Robustness to different standard LLMs and retrievers (on HCM):
 
 ## Related Papers
 
-- [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](../../AAAI2026/llm_safety/privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
+- [\[ICLR 2026\] Silent Leaks: Implicit Knowledge Extraction Attack on RAG Systems through Benign Queries](silent_leaks_implicit_knowledge_extraction_attack_on_rag_systems.md)
 - [\[ICLR 2026\] Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval](pisces_cryptography-based_private_retrieval-augmented_generation_with_dual-path_.md)
+- [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](../../AAAI2026/llm_safety/privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](../../ACL2026/llm_safety/differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](../../ACL2026/llm_safety/knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
-- [\[ICLR 2026\] Knowledge Externalization: Reversible Unlearning and Modular Retrieval in Multimodal Large Language Models](knowledge_externalization_reversible_unlearning_and_modular_retrieval_in_multimo.md)
 
 </div>
 

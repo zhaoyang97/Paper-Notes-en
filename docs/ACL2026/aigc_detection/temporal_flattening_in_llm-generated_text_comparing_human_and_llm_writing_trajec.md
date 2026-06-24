@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories
 description: >-
-  [ACL 2026][AIGC Detection][Paper Note] By constructing a longitudinal writing dataset spanning 12 years, this study discovers a "temporal flattening" phenomenon in LLM-generated text—while lexical diversity is high, temporal drift in semantic and cognitive-emotional dimensions is significantly lower than in humans. Human and LLM texts can be distinguished w
+  [ACL 2026 Findings][AIGC Detection][Temporal Flattening] By constructing a longitudinal writing dataset spanning 12 years, this study discovers a "temporal flattening" phenomenon in LLM-generated text—while lexical diversity is high, temporal drift in semantic and cognitive-emotional dimensions is significantly lower than in humans. Human and LLM texts can be distinguished with 94% accuracy based solely on temporal variation patterns.
 tags:
-  - ACL 2026
-  - AIGC Detection
+  - "ACL 2026 Findings"
+  - "AIGC Detection"
+  - "Temporal Flattening"
+  - "LLM-generated Text Detection"
+  - "Longitudinal Writing Analysis"
+  - "Cognitive-Emotional Features"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 734fb1a5e07ba198
+content_hash: 6f4c6daa8ce81410
 ---
+
 # Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories
 
 **Conference**: ACL 2026 Findings  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Metric Convolutions: A Unifying Theory to Adaptive Image Convolutions
 description: >-
-  [ICCV 2025][Image Restoration][Adaptive Convolution] This paper proposes a metric-geometric perspective that unifies existing adaptive convolution variants (standard, dilated, shifted, and deformable)…
+  [ICCV 2025][Image Restoration][Adaptive Convolution] This paper proposes a metric-geometric perspective that unifies existing adaptive convolution variants (standard, dilated, shifted, and deformable), and introduces Metric Convolution based on unit-ball sampling of an explicit Randers metric, achieving superior geometric regularization and generalization with substantially fewer parameters.
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Deformable Convolution"
   - "Denoising"
 date: 2026-05-08
-content_hash: 1997a8eedcc8719e
+content_hash: 5763cd41a8f6fa38
 ---
 
 # Metric Convolutions: A Unifying Theory to Adaptive Image Convolutions
@@ -160,7 +160,7 @@ The generalization gap of deformable convolution grows rapidly with $k$ (overfit
 - [\[ICCV 2025\] Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement](learning_pixel-adaptive_multi-layer_perceptrons_for_real-time_image_enhancement.md)
 - [\[ICML 2026\] Degradation-Aware Metric Prompting for Hyperspectral Image Restoration](../../ICML2026/image_restoration/degradation-aware_metric_prompting_for_hyperspectral_image_restoration.md)
 - [\[NeurIPS 2025\] Adaptive Discretization for Consistency Models](../../NeurIPS2025/image_restoration/adaptive_discretization_for_consistency_models.md)
-- [\[ICCV 2025\] Efficient Concertormer for Image Deblurring and Beyond](efficient_concertormer_for_image_deblurring_and_beyond.md)
+- [\[ECCV 2024\] Efficient Cascaded Multiscale Adaptive Network for Image Restoration](../../ECCV2024/image_restoration/efficient_cascaded_multiscale_adaptive_network_for_image_restoration.md)
 
 </div>
 

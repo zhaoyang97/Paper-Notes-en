@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)
 description: >-
-  [CVPR 2026][Human Understanding][LLM] MoTiGA addresses three primary shortcomings of LLM-based text-to-motion generation—fine-grained quantization errors, the representation mismatch between "causal LLMs" and "non-causal VQ-VAE," and the lack of human preference alignment. These are resolved through Causal Residual Quantization (Causal RVQ-VAE), time-lagge
+  [CVPR 2026][Human Understanding][Text-to-motion] MoTiGA addresses three primary shortcomings of LLM-based text-to-motion generation—fine-grained quantization errors, the representation mismatch between "causal LLMs" and "non-causal VQ-VAE," and the lack of human preference alignment. These are resolved through Causal Residual Quantization (Causal RVQ-VAE), time-lagged causal prediction, and Multi-level Hybrid weighted Preference Optimization (MHPO). This approach reduces the…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - LLM
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-to-motion"
+  - "LLM"
+  - "Causal Residual Quantization"
+  - "Preference Alignment"
+  - "Motion Generation"
 date: 2026-05-08
-content_hash: c707d0686ff12b86
+content_hash: 23f784b8cdf729d5
 ---
+
 # Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,10 @@ Comparison of quantization levels $V$: $V=4$ is optimal (FID 0.055), while exces
 ## Related Papers
 
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
 - [\[CVPR 2026\] FrankenMotion: Part-level Human Motion Generation and Composition](frankenmotion_part-level_human_motion_generation_and_composition.md)
-- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
+- [\[ICLR 2026\] TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation](../../ICLR2026/human_understanding/tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
 - [\[CVPR 2026\] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)
-- [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
 
 </div>
 

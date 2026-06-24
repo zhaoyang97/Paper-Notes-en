@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][Dynamic Gaussian Splatting] Proposes USplat4D, an uncertainty-aware dynamic Gaussian splatting framework that estimates time-varying uncertainty for each Gaussian and constructs an uncertainty-guided spatiotemporal graph to propagate reliable motion cues. This significantly improves monocular 4D reconstruction quality in occluded regions and unde
+  [ICLR2026][3D Vision][Dynamic Gaussian Splatting] Proposes USplat4D, an uncertainty-aware dynamic Gaussian splatting framework that estimates time-varying uncertainty for each Gaussian and constructs an uncertainty-guided spatiotemporal graph to propagate reliable motion cues. This significantly improves monocular 4D reconstruction quality in occluded regions and under extreme novel views.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Dynamic Gaussian Splatting
-  - uncertainty estimation
-  - 4D Reconstruction
-  - Monocular
-  - novel view synthesis
+  - "ICLR2026"
+  - "3D Vision"
+  - "Dynamic Gaussian Splatting"
+  - "uncertainty estimation"
+  - "4D Reconstruction"
+  - "Monocular"
+  - "novel view synthesis"
 date: 2026-05-08
-content_hash: ae98c428e5129b01
+content_hash: 15be139a970e3e13
 ---
+
 # Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction
 
 **Conference**: ICLR2026  
@@ -169,11 +170,11 @@ Removing uncertainty guidance for key node selection had the greatest impact, dr
 
 ## Related Papers
 
-- [\[ICLR 2026\] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos](mono4dgs-hdr_high_dynamic_range_4d_gaussian_splatting_from_alternating-exposure_.md)
-- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
-- [\[AAAI 2026\] Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction](../../AAAI2026/3d_vision/sparse4dgs_4d_gaussian_splatting_for_sparse-frame_dynamic_scene_reconstruction.md)
 - [\[ICLR 2026\] WorldTree: Towards 4D Dynamic Worlds from Monocular Video Using Tree-Chains](worldtree_towards_4d_dynamic_worlds_from_monocular_video_using_tree-chains.md)
-- [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
+- [\[ICLR 2026\] Frequency-Aware Dynamic Gaussian Splatting](frequency-aware_dynamic_gaussian_splatting.md)
+- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](../../CVPR2026/3d_vision/learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
+- [\[ICLR 2026\] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos](mono4dgs-hdr_high_dynamic_range_4d_gaussian_splatting_from_alternating-exposure_.md)
+- [\[CVPR 2026\] SharpTimeGS: Sharp and Stable Dynamic Gaussian Splatting via Lifespan Modulation](../../CVPR2026/3d_vision/sharptimegs_sharp_and_stable_dynamic_gaussian_splatting_via_lifespan_modulation.md)
 
 </div>
 

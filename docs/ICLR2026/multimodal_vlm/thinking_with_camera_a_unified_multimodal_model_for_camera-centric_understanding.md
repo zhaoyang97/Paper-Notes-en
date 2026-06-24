@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation
 description: >-
-  [ICLR 2026][Multimodal VLM][Chain-of-Thought] This paper proposes Puffin, which treats "camera parameters" as a language within a Large Multimodal Model (LMM). By utilizing a shared "thinking with camera" Chain-of-Thought (CoT), it simultaneously performs camera understanding (estimating roll/pitch/FoV from images) and camera-controllable generation (generating im
+  [ICLR 2026][Multimodal VLM][Camera Geometry] This paper proposes Puffin, which treats "camera parameters" as a language within a Large Multimodal Model (LMM). By utilizing a shared "thinking with camera" Chain-of-Thought (CoT), it simultaneously performs camera understanding (estimating roll/pitch/FoV from images) and camera-controllable generation (generating images from specific viewpoints), outperforming specialized models in both domains.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Camera Geometry"
+  - "Unified Multimodal Model"
+  - "Spatial Intelligence"
+  - "Chain-of-Thought"
+  - "Controllable Generation"
 date: 2026-05-08
-content_hash: 344ab13ff5b61c0b
+content_hash: e6fbfee080dd1118
 ---
+
 # Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation
 
 **Conference**: ICLR 2026  
@@ -139,15 +144,16 @@ Puffin significantly outperforms baselines in generation. General multimodal mod
 - Value: ⭐⭐⭐⭐⭐ Open-sourcing code, models, data pipelines, and benchmarks provides clear value for spatial intelligence research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
 - [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 - [\[ICLR 2026\] ORION: Decoupling and Alignment for Unified Autoregressive Understanding and Generation](orion_decoupling_and_alignment_for_unified_autoregressive_understanding_and_gene.md)
 - [\[ICCV 2025\] GenDoP: Auto-regressive Camera Trajectory Generation as a Director of Photography](../../ICCV2025/multimodal_vlm/gendop_auto-regressive_camera_trajectory_generation_as_a_director_of_photography.md)
-- [\[ICLR 2026\] Manzano: A Simple and Scalable Unified Multimodal Model with a Hybrid Vision Tokenizer](manzano_a_simple_and_scalable_unified_multimodal_model_with_a_hybrid_vision_toke.md)
 
 </div>
 

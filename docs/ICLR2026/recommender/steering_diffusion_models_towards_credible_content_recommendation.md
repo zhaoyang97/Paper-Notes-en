@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Steering Diffusion Models Towards Credible Content Recommendation
 description: >-
-  [ICLR 2026][Recommender Systems][Paper Note] Addressing the issue of diffusion models recommending untrustworthy content like fake news or misinformation, this paper proposes Disco: a "decoupled diffusion model" that separates user preference signals from untrustworthy signals. It suppresses untrustworthy content by projecting the diffusion target into the null s
+  [ICLR 2026][Recommender Systems][Diffusion Recommendation] Addressing the issue of diffusion models recommending untrustworthy content like fake news or misinformation, this paper proposes Disco: a "decoupled diffusion model" that separates user preference signals from untrustworthy signals. It suppresses untrustworthy content by projecting the diffusion target into the null space of untrustworthy features and progressively detects potential untrustworthy items to complete th…
 tags:
-  - ICLR 2026
-  - Recommender Systems
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "Diffusion Recommendation"
+  - "Content Credibility"
+  - "Information Disentanglement"
+  - "Null Space Projection"
+  - "Sequential Recommendation"
 date: 2026-05-08
-content_hash: 04450fa7ce6191bd
+content_hash: e9a604f878bb9d60
 ---
+
 # Steering Diffusion Models Towards Credible Content Recommendation
 
 **Conference**: ICLR 2026  

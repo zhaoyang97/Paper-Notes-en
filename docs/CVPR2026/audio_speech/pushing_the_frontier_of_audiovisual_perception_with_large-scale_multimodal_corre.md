@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pushing the Frontier of Audiovisual Perception with Large-Scale Multimodal Correspondence Learning
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] PEAV (Perception Encoder Audiovisual) is a family of unified "audio-visual-text" contrastive encoders proposed by Meta. It utilizes a two-stage synthetic caption data engine to generate high-quality captions across three categories (audio, visual, audiovisual) for O(100M) audiovisual pairs. By employing up to ten sets
+  [CVPR 2026][Audio & Speech][Audiovisual-Text Encoder] PEAV (Perception Encoder Audiovisual) is a family of unified "audio-visual-text" contrastive encoders proposed by Meta. It utilizes a two-stage synthetic caption data engine to generate high-quality captions across three categories (audio, visual, audiovisual) for O(100M) audiovisual pairs. By employing up to ten sets of cross-modal contrastive losses to align audio, video, and text into a single space…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Audiovisual-Text Encoder"
+  - "Contrastive Learning"
+  - "Synthetic Caption Data Engine"
+  - "Joint Embedding"
+  - "Zero-shot Retrieval"
 date: 2026-05-08
-content_hash: 26f25924421af753
+content_hash: ddef8ecd7ce4df95
 ---
+
 # Pushing the Frontier of Audiovisual Perception with Large-Scale Multimodal Correspondence Learning
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ With only 0.5B video encoder parameters, PEAV-L improves retrieval by +10.8 R@1 
 
 ## Related Papers
 
-- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
 - [\[ACL 2026\] DuIVRS-2: An LLM-based Interactive Voice Response System for Large-scale POI Attribute Acquisition](../../ACL2026/audio_speech/duivrs-2_an_llm-based_interactive_voice_response_system_for_large-scale_poi_attr.md)
 - [\[CVPR 2025\] LiveCC: Learning Video LLM with Streaming Speech Transcription at Scale](../../CVPR2025/audio_speech/livecc_learning_video_llm_with_streaming_speech_transcription_at_scale.md)
 - [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](../../ACL2026/audio_speech/multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
-- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
+- [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](../../ICLR2026/audio_speech/avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
+- [\[ACL 2025\] GigaSpeech 2: An Evolving, Large-Scale and Multi-domain ASR Corpus for Low-Resource Languages](../../ACL2025/audio_speech/gigaspeech2_low_resource_asr.md)
 
 </div>
 

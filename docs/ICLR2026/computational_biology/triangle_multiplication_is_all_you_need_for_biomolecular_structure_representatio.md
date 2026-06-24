@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Triangle Multiplication is All You Need for Biomolecular Structure Representations
 description: >-
-  [ICLR 2026][Computational Biology][Pairmixer] This paper proposes Pairmixer: an architectural simplification for AlphaFold3/Boltz-1-style co-folding models that removes expensive triangle attention and sequence updates. By retaining only triangle multiplication and FFNs on the pair representation, the model achieves structure prediction accuracy comparable to Pair
+  [ICLR2026][Computational Biology][Biomolecular structure prediction] This paper proposes Pairmixer: an architectural simplification for AlphaFold3/Boltz-1-style co-folding models that removes expensive triangle attention and sequence updates. By retaining only triangle multiplication and FFNs on the pair representation, the model achieves structure prediction accuracy comparable to Pairformer while significantly reducing computational overhead in training, inference…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Pairmixer
-  - triangle multiplication
-  - Pairformer
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Biomolecular structure prediction"
+  - "Pairmixer"
+  - "triangle multiplication"
+  - "Pairformer"
+  - "protein design"
 date: 2026-05-08
-content_hash: eb85c35eb7f02ed9
+content_hash: ab692dabd9a5ea6e
 ---
+
 # Triangle Multiplication is All You Need for Biomolecular Structure Representations
 
 **Conference**: ICLR2026  
@@ -144,6 +147,7 @@ Ablations show that while triangle attention and multiplication both contribute 
 - Value: ⭐⭐⭐⭐⭐ (Highly practical for large-scale structure prediction and design).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VQ-VA World: Towards High-Quality Visual Question-Visual Answering
 description: >-
-  [CVPR 2026][Multimodal VLM][Image Generation] This paper brings the capability of "visual question-visual answering" (VQ-VA)—originally exclusive to closed-source systems like GPT-Image or NanoBanana—to open-source models. It utilizes a five-agent pipeline to extract approximately 1.8 million training samples from web-based interleaved documents that "require worl
+  [CVPR 2026][Multimodal VLM][Visual Question Answering] This paper brings the capability of "visual question-visual answering" (VQ-VA)—originally exclusive to closed-source systems like GPT-Image or NanoBanana—to open-source models. It utilizes a five-agent pipeline to extract approximately 1.8 million training samples from web-based interleaved documents that "require world knowledge and reasoning to complete image transformations," accompanied by the manually annotated Intel…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Image Generation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Question Answering"
+  - "Image Generation"
+  - "Data Construction"
+  - "Agent Pipeline"
+  - "World Knowledge"
 date: 2026-05-08
-content_hash: 346700bc992af0e3
+content_hash: 998cd0cd6ac0ceb6
 ---
+
 # VQ-VA World: Towards High-Quality Visual Question-Visual Answering
 
 **Conference**: CVPR 2026  
@@ -128,11 +133,11 @@ Ours ranks first among fully open-source models (53.06 vs. 7.78 baseline, an **a
 
 ## Related Papers
 
-- [\[CVPR 2026\] StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering](star-kvqa_structured_reasoning_traces_for_implicit-knowledge_visual_question_ans.md)
 - [\[CVPR 2026\] SEA: Evaluating Sketch Abstraction Efficiency via Element-level Commonsense Visual Question Answering](sea_evaluating_sketch_abstraction_efficiency_via_element-level_commonsense_visua.md)
-- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
-- [\[CVPR 2026\] Does Language Shift Break Medical Vision-Language Models? Indonesian Radiology Visual Question Answering Case Study](does_language_shift_break_medical_vision-language_models_indonesian_radiology_vi.md)
-- [\[CVPR 2026\] Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models](visual-aware_cot_achieving_high-fidelity_visual_consistency_in_unified_models.md)
+- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](../../AAAI2026/multimodal_vlm/mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
+- [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](../../ICLR2026/multimodal_vlm/human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
+- [\[AAAI 2026\] MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering](../../AAAI2026/multimodal_vlm/macvqa_adaptive_memory_allocation_and_global_noise_filtering_for_continual_visua.md)
+- [\[NeurIPS 2025\] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](../../NeurIPS2025/multimodal_vlm/wearvqa_a_visual_question_answering_benchmark_for_wearables_in_egocentric_authen.md)
 
 </div>
 

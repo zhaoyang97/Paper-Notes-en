@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Segment Anything Across Shots: A Method and Benchmark
 description: >-
-  [AAAI 2026][Segmentation][multi-shot video segmentation] This paper proposes SAAS, a method for Multi-shot Video Object Segmentation (MVOS)…
+  [AAAI 2026][Segmentation][multi-shot video segmentation] This paper proposes SAAS, a method for Multi-shot Video Object Segmentation (MVOS), along with the Cut-VOS benchmark. SAAS achieves robust cross-shot segmentation via transition-simulating data augmentation (TMA), shot transition detection and understanding modules (TDM+TCH), and a local memory bank.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "shot transition detection"
   - "benchmark"
 date: 2026-05-08
-content_hash: 7f9d7fc6b05b5882
+content_hash: d5127f1796327941
 ---
 
 # Segment Anything Across Shots: A Method and Benchmark
@@ -199,9 +199,9 @@ SAAS-B+ vs. SAM2-B+: YouMVOS +5.9% $\mathcal{J\&F}$; Cut-VOS +5.5% $\mathcal{J\&
 
 - [\[AAAI 2026\] Segment and Matte Anything in a Unified Model (SAMA)](segment_and_matte_anything_in_a_unified_model.md)
 - [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
-- [\[ICML 2026\] Segment Anything with Robust Uncertainty-Accuracy Correlation](../../ICML2026/segmentation/segment_anything_with_robust_uncertainty-accuracy_correlation.md)
 - [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
-- [\[ICCV 2025\] OmniSAM: Omnidirectional Segment Anything Model for UDA in Panoramic Semantic Segmentation](../../ICCV2025/segmentation/omnisam_omnidirectional_segment_anything_model_for_uda_in_panoramic_semantic_seg.md)
+- [\[ICML 2026\] Segment Anything with Robust Uncertainty-Accuracy Correlation](../../ICML2026/segmentation/segment_anything_with_robust_uncertainty-accuracy_correlation.md)
+- [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](../../ICLR2026/segmentation/sam_3_segment_anything_with_concepts.md)
 
 </div>
 

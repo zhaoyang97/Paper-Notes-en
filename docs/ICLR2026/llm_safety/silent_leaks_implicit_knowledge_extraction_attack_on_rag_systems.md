@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Silent Leaks: Implicit Knowledge Extraction Attack on RAG Systems through Benign Queries
 description: >-
-  [ICLR 2026][LLM Safety][RAG] This paper proposes IKEA (Implicit Knowledge Extraction Attack), which utilizes a set of seemingly normal benign queries. By leveraging "anchor concepts" combined with two mechanisms—Experience Reflection (ER) sampling and Trust Region Directed Mutation (TRDM)—it covertly extracts internal knowledge bases from black-bo
+  [ICLR 2026][LLM Safety][RAG] This paper proposes IKEA (Implicit Knowledge Extraction Attack), which utilizes a set of seemingly normal benign queries. By leveraging "anchor concepts" combined with two mechanisms—Experience Reflection (ER) sampling and Trust Region Directed Mutation (TRDM)—it covertly extracts internal knowledge bases from black-box RAG systems equipped with input/output defenses. The extraction efficiency is over 80% higher and the success rate is over 90% hi…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - RAG
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "RAG"
+  - "Knowledge Extraction"
+  - "Anchor Concepts"
+  - "Stealthy Attack"
+  - "Black-box"
 date: 2026-05-08
-content_hash: f3d79e9771e0b2c5
+content_hash: 1b4bc57c3efbbe19
 ---
+
 # Silent Leaks: Implicit Knowledge Extraction Attack on RAG Systems through Benign Queries
 
 **Conference**: ICLR 2026  
@@ -128,9 +133,8 @@ Surrogate RAGs built with knowledge extracted by IKEA approach the original syst
 - Value: ⭐⭐⭐⭐⭐ Reveals a fundamental blind spot in existing RAG defenses with significant implications for copyright and privacy.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-...
-</div>
 
 ## Related Papers
 

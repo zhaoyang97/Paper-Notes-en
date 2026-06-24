@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] DenseMarks：通过点轨迹学习人头图像的规范嵌入
+  [Paper Note] DenseMarks: Learning Canonical Embeddings for Head Images via Point Trajectories
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] DenseMarks uses a ViT embedder to map **every pixel** of a head image to coordinates in a 3D canonical unit cube. Trained using automated pairs from off-the-shelf point trackers on in-the-wild talking head videos combined with contrastive loss, it achieves a cross-identity, cross-pose consistent, and interpretable dens
+  [ICLR2026][Human Understanding][Canonical Embeddings] DenseMarks uses a ViT embedder to map **every pixel** of a head image to coordinates in a 3D canonical unit cube. Trained using automated pairs from off-the-shelf point trackers on in-the-wild talking head videos combined with contrastive loss, it achieves a cross-identity, cross-pose consistent, and interpretable dense correspondence representation, reaching SOTA in geometry-aware point matching and monocular head trackin…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR2026"
+  - "Human Understanding"
+  - "Canonical Embeddings"
+  - "Dense Correspondence"
+  - "Point Trajectories"
+  - "Contrastive Learning"
+  - "Head Tracking"
 date: 2026-05-08
-content_hash: 70a509e21357396b
+content_hash: 14fe4f196c8d5f14
 ---
+
 # DenseMarks: Learning Canonical Embeddings for Head Images via Point Trajectories
 
 **Conference**: ICLR2026  
@@ -129,15 +135,16 @@ The canonical cube bottleneck is a major contributor: removing it nearly doubles
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Disentangled Hierarchical VAE for 3D Human-Human Interaction Generation](disentangled_hierarchical_vae_for_3d_human-human_interaction_generation.md)
-- [\[ICLR 2026\] GaitSnippet: Gait Recognition Beyond Unordered Sets and Ordered Sequences](gaitsnippet_gait_recognition_beyond_unordered_sets_and_ordered_sequences.md)
-- [\[ICLR 2026\] EasyTune: Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation](easytune_efficient_step-aware_fine-tuning_for_diffusion-based_motion_generation.md)
 - [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](motion-aligned_word_embeddings_for_text-to-motion_generation.md)
-- [\[ICLR 2026\] CLUTCH: Contextualized Language model for Unlocking Text-Conditioned Hand motion modelling in the wild](clutch_contextualized_language_model_for_unlocking_text-conditioned_hand_motion_.md)
+- [\[CVPR 2026\] Seeing without Pixels: Perception from Camera Trajectories](../../CVPR2026/human_understanding/seeing_without_pixels_perception_from_camera_trajectories.md)
+- [\[CVPR 2026\] FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision](../../CVPR2026/human_understanding/flexavatar_learning_complete_3d_head_avatars_with_partial_supervision.md)
+- [\[ICLR 2026\] Sparkle: A Robust and Versatile Representation for Point Cloud-based Human Motion Capture](sparkle_a_robust_and_versatile_representation_for_point_cloud-based_human_motion.md)
+- [\[ICLR 2026\] Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals](inverse_virtual_try-on_generating_multi-category_product-style_images_from_cloth.md)
 
 </div>
 

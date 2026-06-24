@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Quality-Utility Paradox: Why High-Reward Data Impairs Small Model Mathematical Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper reveals the "Quality-Utility Paradox" in small language model (SLM) mathematical reasoning distillation: training data refined by strong Oracles, which receives higher reward model scores, actually results in inferior downstream fine-tuning compared to lower-scoring data sampled by the SLMs themselves. This
+  [ICML2026][Reasoning][Small Model Distillation] This paper reveals the "Quality-Utility Paradox" in small language model (SLM) mathematical reasoning distillation: training data refined by strong Oracles, which receives higher reward model scores, actually results in inferior downstream fine-tuning compared to lower-scoring data sampled by the SLMs themselves. This is because Oracle refinement, while fixing logic, pushes reasoning traces away from the SLM's native distributio…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Small Model Distillation"
+  - "Reward Model"
+  - "Distribution Shift"
+  - "Rejection Sampling"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 03b447c09bcca22f
+content_hash: 80d9fc06e8f87c3d
 ---
+
 # The Quality-Utility Paradox: Why High-Reward Data Impairs Small Model Mathematical Reasoning
 
 **Conference**: ICML2026  
@@ -126,15 +132,15 @@ Reward score ranking is almost perfectly inverse to downstream utility.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](../../ICLR2026/llm_reasoning/why_is_your_language_model_a_poor_implicit_reward_model.md)
 - [\[ICML 2026\] GRPO is Secretly a Process Reward Model](grpo_is_secretly_a_process_reward_model.md)
+- [\[ICML 2026\] TRACE: Evaluating LLM CoT Reasoning Process Quality with the Toulmin Argumentation Model](trace_toulmin-based_reasoning_assessment_through_constructive_elements_for_llm_c.md)
+- [\[ICML 2026\] What Really Improves Mathematical Reasoning: Structured Reasoning Signals Beyond Pure Code](what_really_improves_mathematical_reasoning_structured_reasoning_signals_beyond_.md)
 - [\[ACL 2025\] An Efficient and Precise Training Data Construction Framework for Process-Supervised Reward Model in Mathematical Reasoning](../../ACL2025/llm_reasoning/an_efficient_and_precise_training_data_construction_framework_for_process-superv.md)
-- [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](../../NeurIPS2025/llm_reasoning/unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
-- [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Model](../../ICLR2026/llm_reasoning/predicting_llm_reasoning_performance_with_small_proxy_model.md)
 
 </div>
 

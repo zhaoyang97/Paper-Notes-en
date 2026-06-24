@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models
 description: >-
-  [NeurIPS 2025][Image Generation][Inference-time alignment] This paper proposes the Ψ-Sampler framework, which introduces initial particle sampling based on the preconditioned Crank-Nicolson Langevin (pCNL) algorithm into…
+  [NeurIPS 2025 Spotlight][Image Generation][Inference-time alignment] This paper proposes the Ψ-Sampler framework, which introduces initial particle sampling based on the preconditioned Crank-Nicolson Langevin (pCNL) algorithm into SMC-based inference-time reward alignment. By initializing particles from a reward-aware posterior distribution, the framework substantially improves alignment performance on layout-guided generation, quantity-aware generation…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "Inference-time alignment"
   - "Sequential Monte Carlo"
@@ -12,7 +12,7 @@ tags:
   - "MCMC"
   - "Preconditioned Crank-Nicolson"
 date: 2026-05-08
-content_hash: 6e4b5a19294820ce
+content_hash: c21fa71a74388a7e
 ---
 
 # Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models
@@ -51,18 +51,18 @@ This paper proposes the Ψ-Sampler framework, which introduces initial particle 
 
 1. **Reward-aware posterior distribution**:
    The optimal initial distribution is $\tilde{p}_1^*(\mathbf{x}_1) \propto p_1(\mathbf{x}_1) \exp(r(\mathbf{x}_{0|1})/\alpha)$, where $\mathbf{x}_{0|1}$ is the clean image estimated from $\mathbf{x}_1$ via the Tweedie formula. This is an unnormalized density of known form, amenable to MCMC sampling.
-   - Recent distillation techniques (e.g., rectified flow) straighten trajectories and enable earlier accurate Tweedie estimation, creating favorable conditions for effective reward evaluation from the fully noisy state.
-   - The regularization parameter $\alpha$ controls the trade-off between reward maximization and prior preservation.
+    - Recent distillation techniques (e.g., rectified flow) straighten trajectories and enable earlier accurate Tweedie estimation, creating favorable conditions for effective reward evaluation from the fully noisy state.
+    - The regularization parameter $\alpha$ controls the trade-off between reward maximization and prior preservation.
 
 2. **Preconditioned Crank-Nicolson Langevin (pCNL) algorithm**:
    The pCN algorithm is designed for infinite-dimensional / function-space settings, with a semi-implicit Euler discretization at its core:
-   $$\mathbf{x}' = \rho \mathbf{x} + \sqrt{1-\rho^2}\left(\mathbf{z} + \frac{\sqrt{\epsilon}}{2} \nabla \frac{r(\mathbf{x}_{0|1})}{\alpha}\right), \quad \rho = \frac{1-\epsilon/4}{1+\epsilon/4}$$
+    $\mathbf{x}' = \rho \mathbf{x} + \sqrt{1-\rho^2}\left(\mathbf{z} + \frac{\sqrt{\epsilon}}{2} \nabla \frac{r(\mathbf{x}_{0|1})}{\alpha}\right), \quad \rho = \frac{1-\epsilon/4}{1+\epsilon/4}$
 
    **Key differences from MALA**:
-   - The pCNL proposal distribution preserves the Gaussian prior (prior-preserving), so the acceptance rate does not degrade with dimensionality.
-   - In a 65536-dimensional space, MALA's acceptance rate drops to nearly zero at step sizes above 0.05, whereas pCNL maintains reasonable acceptance rates at step size 2.0.
-   - Larger pCNL step sizes yield faster mixing and more efficient exploration.
-   - pCNL also employs Metropolis-Hastings correction to guarantee convergence to the correct distribution.
+    - The pCNL proposal distribution preserves the Gaussian prior (prior-preserving), so the acceptance rate does not degrade with dimensionality.
+    - In a 65536-dimensional space, MALA's acceptance rate drops to nearly zero at step sizes above 0.05, whereas pCNL maintains reasonable acceptance rates at step size 2.0.
+    - Larger pCNL step sizes yield faster mixing and more efficient exploration.
+    - pCNL also employs Metropolis-Hastings correction to guarantee convergence to the correct distribution.
 
 3. **Initial particle sampling procedure**:
     - Sample the initial state from the prior.
@@ -141,10 +141,10 @@ This is a purely inference-time method requiring no training. The core computati
 ## Related Papers
 
 - [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
-- [\[NeurIPS 2025\] Learnable Sampler Distillation for Discrete Diffusion Models](learnable_sampler_distillation_for_discrete_diffusion_models.md)
 - [\[ICLR 2026\] GLASS Flows: Efficient Inference for Reward Alignment of Flow and Diffusion Models](../../ICLR2026/image_generation/glass_flows_reward_alignment_diffusion.md)
-- [\[NeurIPS 2025\] Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation](distilled_decoding_2_onestep_sampling_of_image_autoregressiv.md)
-- [\[NeurIPS 2025\] Blind Strong Gravitational Lensing Inversion: Joint Inference of Source and Lens Mass with Score-Based Models](blind_strong_gravitational_lensing_inversion_joint_inference_of_source_and_lens_.md)
+- [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](../../ICLR2026/image_generation/diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
+- [\[NeurIPS 2025\] Learnable Sampler Distillation for Discrete Diffusion Models](learnable_sampler_distillation_for_discrete_diffusion_models.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](../../ICLR2026/image_generation/inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
 
 </div>
 

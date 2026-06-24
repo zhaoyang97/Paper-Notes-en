@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Dichotomous image segmentation] This paper proposes LawDIS, a controllable dichotomous image segmentation framework built upon a latent diffusion model. It achieves high-quality foreground mask…
+  [ICCV 2025][Segmentation][Dichotomous image segmentation] This paper proposes LawDIS, a controllable dichotomous image segmentation framework built upon a latent diffusion model. It achieves high-quality foreground mask generation through the synergy of macro-level language control (LS) and micro-level window refinement (WR), comprehensively outperforming 11 state-of-the-art methods on the DIS5K benchmark.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "window refinement"
   - "high-precision segmentation"
 date: 2026-05-08
-content_hash: f28799fe155eb8e9
+content_hash: 2ad30a5ed2509063
 ---
 
 # LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation
@@ -182,8 +182,8 @@ comprising weighted binary cross-entropy loss and weighted IoU loss, respectivel
 
 ## Related Papers
 
+- [\[CVPR 2026\] FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching](../../CVPR2026/segmentation/flowdis_language-guided_dichotomous_image_segmentation_with_flow_matching.md)
 - [\[ICCV 2025\] Refer to Any Segmentation Mask Group With Vision-Language Prompts](refer_to_any_segmentation_mask_group_with_vision-language_prompts.md)
-- [\[AAAI 2026\] CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion](../../AAAI2026/segmentation/ctrlfuse_mask-prompt_guided_controllable_infrared_and_visible_image_fusion.md)
 - [\[ICCV 2025\] Exploiting Domain Properties in Language-Driven Domain Generalization for Semantic Segmentation](exploiting_domain_properties_in_language-driven_domain_generalization_for_semant.md)
 - [\[ICCV 2025\] Latent Expression Generation for Referring Image Segmentation and Grounding](latent_expression_generation_for_referring_image_segmentation_and_grounding.md)
 - [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)

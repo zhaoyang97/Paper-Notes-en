@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DPQuant: Efficient and Private Model Training via Dynamic Quantization Scheduling
 description: >-
-  [ICLR 2026][AI Safety][DP-SGD] DPQuant points out for the first time that "low-bit quantization causes much more severe accuracy collapse in Differential Privacy (DP) training than in standard training." It suppresses quantization variance by using "probabilistic rotation of layers to be quantized per epoch + a DP loss sensitivity estimator to prior
+  [ICLR2026][AI Safety][Differential Privacy] DPQuant points out for the first time that "low-bit quantization causes much more severe accuracy collapse in Differential Privacy (DP) training than in standard training." It suppresses quantization variance by using "probabilistic rotation of layers to be quantized per epoch + a DP loss sensitivity estimator to prioritize quantization of low-impact layers." It achieves accuracy drops of <2% on ResNet/DenseNet/BERT…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - DP-SGD
-  - Quantization
+  - "ICLR2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "DP-SGD"
+  - "Quantization"
+  - "Dynamic Scheduling"
+  - "Training Acceleration"
 date: 2026-05-08
-content_hash: cd40f61d1141696e
+content_hash: 021c723cf671958c
 ---
+
 # DPQuant: Efficient and Private Model Training via Dynamic Quantization Scheduling
 
 **Conference**: ICLR2026  
@@ -146,9 +150,9 @@ Across both $\varepsilon=4$ and $\varepsilon=8$, DPQuant outperforms the static 
 
 - [\[ICML 2025\] Private Model Personalization Revisited](../../ICML2025/ai_safety/private_model_personalization_revisited.md)
 - [\[ICLR 2026\] LiteGuard: Efficient Task-Agnostic Model Fingerprinting with Enhanced Generalization](liteguard_efficient_task-agnostic_model_fingerprinting_with_enhanced_generalizat.md)
+- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](../../ICML2026/ai_safety/differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 - [\[ICLR 2026\] Missing Mass for Differentially Private Domain Discovery](differentially_private_domain_discovery.md)
 - [\[ICLR 2026\] Differentially Private Two-Stage Gradient Descent for Instrumental Variable Regression](differentially_private_two-stage_gradient_descent_for_instrumental_variable_regr.md)
-- [\[ICLR 2026\] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text](pe-sgd_differentially_private_deep_learning_via_evolution_of_gradient_subspace_f.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CoG: Controllable Graph Reasoning via Relational Blueprints and Failure-Aware Refinement over Knowledge Graphs
 description: >-
-  [ACL 2026][Graph Learning][dual-process] CoG is a training-free KGQA framework that applies Kahneman's Dual-Process Theory to KG reasoning: System 1 distills SPARQL from the training set offline into a "Relational Blueprint" template library, which serves as a soft structural constraint online to guide the reranking and pruning of candidate relations; System
+  [ACL 2026][Graph Learning][Knowledge Graph Question Answering] CoG is a training-free KGQA framework that applies Kahneman's Dual-Process Theory to KG reasoning: System 1 distills SPARQL from the training set offline into a "Relational Blueprint" template library, which serves as a soft structural constraint online to guide the reranking and pruning of candidate relations; System 2 triggers evidence-conditioned reflection and targeted backtracking when search stalls…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - dual-process
-  - training-free agent
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Knowledge Graph Question Answering"
+  - "dual-process"
+  - "relational blueprints"
+  - "failure-aware backtracking"
+  - "training-free agent"
 date: 2026-05-08
-content_hash: 283ee61c452bc8b9
+content_hash: b9dfb8effdc6aae4
 ---
+
 # CoG: Controllable Graph Reasoning via Relational Blueprints and Failure-Aware Refinement over Knowledge Graphs
 
 **Conference**: ACL 2026  
@@ -150,10 +154,17 @@ Ours (GPT-4) F1 on CWQ is +27.1 points higher than PoG (69.2 vs 42.1), suggestin
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Controllable Logical Hypothesis Generation for Abductive Reasoning in Knowledge Graphs](../../ICLR2026/graph_learning/controllable_logical_hypothesis_generation_for_abductive_reasoning_in_knowledge_.md)
+- [\[ICML 2025\] Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models](../../ICML2025/graph_learning/graph-constrained_reasoning_faithful_reasoning_on_knowledge_graphs_with_large_la.md)
+- [\[ACL 2026\] Which bird does not have wings: Negative-constrained KGQA with Schema-guided Semantic Matching and Self-directed Refinement](which_bird_does_not_have_wings_negative-constrained_kgqa_with_schema-guided_sema.md)
+- [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](../../ICML2026/graph_learning/generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
+- [\[ICLR 2026\] Inductive Reasoning for Temporal Knowledge Graphs with Emerging Entities](../../ICLR2026/graph_learning/inductive_reasoning_for_temporal_knowledge_graphs_with_emerging_entities.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2025\] Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models](../../ICML2025/graph_learning/graph-constrained_reasoning_faithful_reasoning_on_knowledge_graphs_with_large_la.md)

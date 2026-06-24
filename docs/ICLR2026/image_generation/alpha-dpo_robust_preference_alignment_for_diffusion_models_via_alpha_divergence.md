@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] $\alpha$-DPO: Robust Preference Alignment for Diffusion Models via $\alpha$ Divergence
 description: >-
-  [ICLR 2026][Image Generation][Diffusion-DPO] This paper demonstrates from a distribution matching perspective that Diffusion-DPO is equivalent to minimizing the forward KL divergence and is therefore naturally sensitive to noisy preference pairs. It proposes replacing FKL with $\alpha$-divergence combined with a dynamic $\alpha$ schedule, making diffusion model p
+  [ICLR 2026][Image Generation][Diffusion-DPO] This paper demonstrates from a distribution matching perspective that Diffusion-DPO is equivalent to minimizing the forward KL divergence and is therefore naturally sensitive to noisy preference pairs. It proposes replacing FKL with $\alpha$-divergence combined with a dynamic $\alpha$ schedule, making diffusion model preference alignment significantly more robust under label-flipping noise.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion-DPO
-  - mode-seeking
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion-DPO"
+  - "Preference Alignment"
+  - "Noise Robustness"
+  - "$\\alpha$-divergence"
+  - "mode-seeking"
+  - "dynamic scheduling"
 date: 2026-05-08
-content_hash: 6e34a1add7262e1a
+content_hash: 672ccac61b1ff67c
 ---
+
 # $\alpha$-DPO: Robust Preference Alignment for Diffusion Models via $\alpha$ Divergence
 
 **Conference**: ICLR 2026  
@@ -123,10 +128,10 @@ Dataset: Pick-a-Pic v2 (851,293 pairs after removing ~12% ties, 58,960 prompts).
 ## Related Papers
 
 - [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
-- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 - [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Preference Alignment of Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_preference_alignment_of_image_.md)
-- [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](../../ICML2026/image_generation/a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
 - [\[ICLR 2026\] Towards Better Optimization for Listwise Preference in Diffusion Models](towards_better_optimization_for_listwise_preference_in_diffusion_models.md)
+- [\[ICLR 2026\] Follow-Your-Preference: Towards Preference-Aligned Image Inpainting](follow-your-preference_towards_preference-aligned_image_inpainting.md)
+- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 
 </div>
 

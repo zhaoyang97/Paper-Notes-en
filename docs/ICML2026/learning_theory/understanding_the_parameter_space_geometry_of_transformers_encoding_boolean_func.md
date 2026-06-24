@@ -2,15 +2,22 @@
 title: >-
   [Paper Note] Understanding the Parameter Space Geometry of Transformers Encoding Boolean Functions
 description: >-
-  [ICML 2026][learning_theory][Parity] This paper explains why Transformers fail to learn "sensitive" Boolean functions like Parity from the perspective of **parameter space geometry**. It proves that a randomly initialized Transformer almost surely computes functions containing a large number of strings with zero sensitivity. The parameters corresponding t
+  [ICML2026][Learning Theory][Sensitivity profile] This paper explains why Transformers fail to learn "sensitive" Boolean functions like Parity from the perspective of **parameter space geometry**. It proves that a randomly initialized Transformer almost surely computes functions containing a large number of strings with zero sensitivity. The parameters corresponding to functions like Parity or First, which lack zero-sensitivity strings, constitute only a **Lebesgue measure zer…
 tags:
-  - ICML 2026
-  - learning_theory
-  - Parity
-  - layer norm
+  - "ICML2026"
+  - "Learning Theory"
+  - "Transformer Expressivity and Learnability"
+  - "Formal Languages"
+  - "Sensitivity profile"
+  - "parameter space geometry"
+  - "measure theory"
+  - "learnability"
+  - "Parity"
+  - "layer norm"
 date: 2026-05-08
-content_hash: 24f51755895750ff
+content_hash: c54e1198d0db953c
 ---
+
 # Understanding the Parameter Space Geometry of Transformers Encoding Boolean Functions
 
 **Conference**: ICML2026  
@@ -120,11 +127,11 @@ Transformers were trained on Parity, Majority, First, and $m$-Sparse variants.
 
 ## Related Papers
 
-- [\[AAAI 2026\] Generalizing Analogical Inference from Boolean to Continuous Domains](../../AAAI2026/learning_theory/generalizing_analogical_inference_from_boolean_to_continuous_domains.md)
+- [\[ICLR 2026\] Understanding and Relaxing the Limitations of Transformers for Linear Algebra](../../ICLR2026/learning_theory/understanding_and_relaxing_the_limitations_of_transformers_for_linear_algebra.md)
+- [\[ICLR 2026\] Characterizing the Discrete Geometry of ReLU Networks](../../ICLR2026/learning_theory/characterizing_the_discrete_geometry_of_relu_networks.md)
+- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
 - [\[ICML 2026\] Task-Restricted Symmetries in Recurrent Weight Space](task-restricted_symmetries_in_recurrent_weight_space.md)
 - [\[ICLR 2026\] A Faster Parameter-Free Regret Matching Algorithm](../../ICLR2026/learning_theory/a_faster_parameter-free_regret_matching_algorithm.md)
-- [\[ICLR 2026\] Barriers for Learning in an Evolving World: Mathematical Understanding of Loss of Plasticity](../../ICLR2026/learning_theory/barriers_for_learning_in_an_evolving_world_mathematical_understanding_of_loss_of.md)
-- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
 
 </div>
 

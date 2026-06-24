@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] Ours proposes GACD (Gradient-based Influence-Aware Constrained Decoding), which utilizes first-order Taylor gradients to estimate the influence of each token on the output. It simultaneously mitigates multimodal hallucinations caused by text-visual bias and co-occurrence bias during the inference stage without requirin
+  [CVPR2026][Hallucination Detection][Multimodal Hallucination] Ours proposes GACD (Gradient-based Influence-Aware Constrained Decoding), which utilizes first-order Taylor gradients to estimate the influence of each token on the output. It simultaneously mitigates multimodal hallucinations caused by text-visual bias and co-occurrence bias during the inference stage without requiring auxiliary models or fine-tuning.
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR2026"
+  - "Hallucination Detection"
+  - "Multimodal Hallucination"
+  - "Gradient Attribution"
+  - "Constrained Decoding"
+  - "Co-occurrence Bias"
+  - "Text-Visual Bias"
+  - "Inference-stage Mitigation"
 date: 2026-05-08
-content_hash: 627fcd193645a2ec
+content_hash: e2dca4bdd6cc58a8
 ---
+
 <!-- Generated automatically by src/gen_stubs.py -->
 # Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection
 
@@ -172,8 +179,8 @@ GACD is an inference-stage method and does not involve training losses. The core
 
 - [\[CVPR 2026\] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models](understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model.md)
 - [\[ICML 2026\] From Flat Facts to Sharp Hallucinations: Detecting Stubborn Errors via Gradient Sensitivity](../../ICML2026/hallucination/from_flat_facts_to_sharp_hallucinations_detecting_stubborn_errors_via_gradient_s.md)
-- [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
 - [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
+- [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
 - [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](../../ICML2026/hallucination/learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
 
 </div>

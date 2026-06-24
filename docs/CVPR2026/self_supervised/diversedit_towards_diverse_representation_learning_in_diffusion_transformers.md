@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Image Generation] Systematic analysis reveals that representation diversity among DiT blocks is a key factor for effective learning. This paper proposes DiverseDiT: using long residual connections to diversify inputs and a representation diversity loss to explicitly promote feature differentiation between blocks, accelerating convergenc
+  [CVPR 2026][Self-Supervised Learning][Diffusion Transformer] Systematic analysis reveals that representation diversity among DiT blocks is a key factor for effective learning. This paper proposes DiverseDiT: using long residual connections to diversify inputs and a representation diversity loss to explicitly promote feature differentiation between blocks, accelerating convergence and improving generation quality without external guidance models.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Image Generation
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Diffusion Transformer"
+  - "Representation Diversity"
+  - "Long Residual Connection"
+  - "Diversity Loss"
+  - "Image Generation"
 date: 2026-05-08
-content_hash: f727c543b205de3c
+content_hash: 212645ecfbcfce4a
 ---
+
 # DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -205,11 +210,11 @@ Training: AdamW, lr=1e-4, batch size=256, 8×H800 GPUs. Minimal extra parameters
 
 ## Related Papers
 
-- [\[ICLR 2026\] No Other Representation Component Is Needed: Diffusion Transformers Can Provide Representation Guidance by Themselves](../../ICLR2026/self_supervised/no_other_representation_component_is_needed_diffusion_transformers_can_provide_r.md)
+- [\[ICLR 2026\] Representation Alignment for Diffusion Transformers without External Components](../../ICLR2026/self_supervised/representation_alignment_for_diffusion_transformers_without_external_components.md)
+- [\[ICLR 2026\] Diverse Dictionary Learning](../../ICLR2026/self_supervised/diverse_dictionary_learning.md)
 - [\[CVPR 2026\] Vision Transformers Need More Than Registers](vision_transformers_need_more_than_registers.md)
-- [\[CVPR 2026\] Representation Learning for Spatiotemporal Physical Systems](representation_learning_for_spatiotemporal_physica.md)
-- [\[CVPR 2026\] Finding Distributed Object-Centric Properties in Self-Supervised Transformers](finding_distributed_object-centric_properties_in_self-supervised_transformers.md)
-- [\[CVPR 2026\] TrackMAE: Video Representation Learning via Track, Mask, and Predict](trackmae_video_representation_learning_via_track_mask_and_predict.md)
+- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
+- [\[CVPR 2026\] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)
 
 </div>
 

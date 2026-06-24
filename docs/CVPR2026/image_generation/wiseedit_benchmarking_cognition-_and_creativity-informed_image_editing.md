@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WiseEdit: Benchmarking Cognition- and Creativity-Informed Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] WiseEdit decomposes instructive image editing into a three-level cognitive process of "Awareness—Interpretation—Imagination" paired with three categories of knowledge ("Declarative/Procedural/Metacognitive"). It constructs a challenging benchmark of 1,220 Chinese-English bilingual cases, including 26% multi-image input
+  [CVPR 2026][Image Generation][Image Editing] WiseEdit decomposes instructive image editing into a three-level cognitive process of "Awareness—Interpretation—Imagination" paired with three categories of knowledge ("Declarative/Procedural/Metacognitive"). It constructs a challenging benchmark of 1,220 Chinese-English bilingual cases, including 26% multi-image inputs. Using GPT-4o for scoring across five dimensions—including self-developed Knowledge Fidelity (KF) and Creative Fu…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Cognition and Creativity"
+  - "Knowledge-Intensive Evaluation"
+  - "Multi-image Input"
+  - "GPT-4o Evaluation"
 date: 2026-05-08
-content_hash: f1959ccfe45e0700
+content_hash: aafda6ca051f7549
 ---
+
 # WiseEdit: Benchmarking Cognition- and Creativity-Informed Image Editing
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,10 @@ The study uses several controlled analyses to validate the role of vision-driven
 ## Related Papers
 
 - [\[CVPR 2026\] Omni IIE Bench: Benchmarking the Practical Capabilities of Image Editing Models](omni_iie_bench_benchmarking_the_practical_capabilities_of_image_editing_models.md)
+- [\[CVPR 2026\] MotionEdit: Benchmarking and Learning Motion-Centric Image Editing](motionedit_benchmarking_and_learning_motion-centric_image_editing.md)
 - [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](compbench_benchmarking_complex_instruction-guided_image_editing.md)
 - [\[CVPR 2025\] GRADE: Benchmarking Discipline-Informed Reasoning in Image Editing](../../CVPR2025/image_generation/grade_benchmarking_discipline-informed_reasoning_in_image_editing.md)
-- [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
-- [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 
 </div>
 

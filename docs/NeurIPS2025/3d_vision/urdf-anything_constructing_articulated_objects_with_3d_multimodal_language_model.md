@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] URDF-Anything: Constructing Articulated Objects with 3D Multimodal Language Model
 description: >-
-  [NeurIPS 2025][3D Vision][Articulated Object Reconstruction] This paper proposes URDF-Anything, the first end-to-end articulated object reconstruction framework based on a 3D Multimodal Large Language Model (MLLM). By in…
+  [NeurIPS 2025][3D Vision][Articulated Object Reconstruction] This paper proposes URDF-Anything, the first end-to-end articulated object reconstruction framework based on a 3D Multimodal Large Language Model (MLLM). By introducing a [SEG] token mechanism, the framework jointly predicts geometric segmentation and kinematic parameters, achieving state-of-the-art performance in segmentation accuracy (mIoU +17%), parameter error (−29%), and physical executability (surpassing basel…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Digital Twin"
   - "Robot Simulation"
 date: 2026-05-08
-content_hash: 275fe9c5531376d4
+content_hash: b351833a2f08233c
 ---
 
 # URDF-Anything: Constructing Articulated Objects with 3D Multimodal Language Model
@@ -128,11 +128,11 @@ URDF-Anything consists of three stages: (1) **Input Representation** — dense 3
 
 ## Related Papers
 
+- [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](../../ICLR2026/3d_vision/part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
 - [\[CVPR 2026\] LAM: Language Articulated Object Modelers](../../CVPR2026/3d_vision/lam_language_articulated_object_modelers.md)
-- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](../../CVPR2026/3d_vision/artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
-- [\[NeurIPS 2025\] ROGR: Relightable 3D Objects using Generative Relighting](rogr_relightable_3d_objects_using_generative_relighting.md)
-- [\[NeurIPS 2025\] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects](onlinesplatter_pose-free_online_3d_reconstruction_for_free-moving_objects.md)
-- [\[NeurIPS 2025\] From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes](from_objects_to_anywhere_a_holistic_benchmark_for_multi-level_visual_grounding_i.md)
+- [\[CVPR 2025\] RigGS: Rigging of 3D Gaussians for Modeling Articulated Objects in Videos](../../CVPR2025/3d_vision/riggs_rigging_of_3d_gaussians_for_modeling_articulated_objects_in_videos.md)
+- [\[CVPR 2025\] IAAO: Interactive Affordance Learning for Articulated Objects in 3D Environments](../../CVPR2025/3d_vision/iaao_interactive_affordance_learning_for_articulated_objects_in_3d_environments.md)
+- [\[CVPR 2025\] Perception Tokens Enhance Visual Reasoning in Multimodal Language Models](../../CVPR2025/3d_vision/perception_tokens_enhance_visual_reasoning_in_multimodal_language_models.md)
 
 </div>
 

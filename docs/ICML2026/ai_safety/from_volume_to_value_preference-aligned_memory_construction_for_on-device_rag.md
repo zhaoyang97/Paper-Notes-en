@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Volume to Value: Preference-Aligned Memory Construction for On-Device RAG
 description: >-
-  [ICML 2026][AI Safety][on-device RAG] EPIC shifts the core bottleneck of on-device RAG from "how to use preferences during retrieval" forward to "what to store during indexing." It utilizes a three-stage pipeline involving "coarse filtering + fine verification + query steering" to retain only data aligned with user preferences and generates "instruction-it
+  [ICML 2026][AI Safety][on-device RAG] EPIC shifts the core bottleneck of on-device RAG from "how to use preferences during retrieval" forward to "what to store during indexing." It utilizes a three-stage pipeline involving "coarse filtering + fine verification + query steering" to retain only data aligned with user preferences and generates "instruction-item" pairs as indexing units. It reduces storage by 2404× while achieving an absolute improvement of 20.17 percentage point…
 tags:
-  - ICML 2026
-  - AI Safety
-  - on-device RAG
+  - "ICML 2026"
+  - "AI Safety"
+  - "on-device RAG"
+  - "user preference"
+  - "memory constraint"
+  - "instruction-based indexing"
+  - "query steering"
 date: 2026-05-08
-content_hash: ddd7ec9af78eb4de
+content_hash: 372de9e0adb4ba9e
 ---
+
 # From Volume to Value: Preference-Aligned Memory Construction for On-Device RAG
 
 **Conference**: ICML 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward
 description: >-
-  [ICLR 2026][vlm_reasoning][Trust-GRPO] SophiaVL-R1 is proposed to introduce a holistic-level thinking process reward when training MLLM reasoning with rule-based RL. Specifically, a Thinking Reward Model is trained to evaluate reasoning quality across five dimensions (e.g., logical consistency and redundancy). Trust-GRPO is then introduced to calculate a co
+  [ICLR 2026][VLM Reasoning][Thinking Reward] SophiaVL-R1 is proposed to introduce a holistic-level thinking process reward when training MLLM reasoning with rule-based RL. Specifically, a Thinking Reward Model is trained to evaluate reasoning quality across five dimensions (e.g., logical consistency and redundancy). Trust-GRPO is then introduced to calculate a confidence weight $\gamma$ based on the comparison of thinking rewards between correct and incorrect answer groups to…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Trust-GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Thinking Reward"
+  - "MLLM Reasoning"
+  - "Trust-GRPO"
+  - "Annealing Strategy"
+  - "Process Supervision"
 date: 2026-05-08
-content_hash: eeca9aa59ab3eb80
+content_hash: 9f893be7065f4a5e
 ---
+
 # SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward
 
 **Conference**: ICLR 2026  
@@ -162,9 +167,9 @@ These works rely solely on rule-based outcome rewards without supervising the re
 
 - [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
 - [\[ICLR 2026\] VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL](vidguard-r1_ai-generated_video_detection_and_explanation_via_reasoning_mllms_and.md)
-- [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](../../CVPR2026/vlm_reasoning/star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
 - [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/vlm_reasoning/video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[ICLR 2026\] MetaSpatial: Reinforcing 3D Spatial Reasoning in VLMs for the Metaverse](metaspatial_reinforcing_3d_spatial_reasoning_in_vlms_for_the_metaverse.md)
+- [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](../../CVPR2026/vlm_reasoning/star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
+- [\[ICLR 2026\] VisualPRM400K: An Effective Dataset for Training Multimodal Process Reward Models](visualprm400k_an_effective_dataset_for_training_multimodal_process_reward_models.md)
 
 </div>
 

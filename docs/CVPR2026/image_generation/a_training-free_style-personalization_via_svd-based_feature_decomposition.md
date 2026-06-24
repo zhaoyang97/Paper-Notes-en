@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Training-Free Style-Personalization via SVD-Based Feature Decomposition
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Based on the scale-wise autoregressive model Infinity, this work discovers that the **largest singular value component** of the 3rd feature $F_3$ in the generation process specifically encodes style information. Consequently, a training-free approach is proposed to inject the style of a reference image into this featur
+  [CVPR 2026][Image Generation][Style Personalization] Based on the scale-wise autoregressive model Infinity, this work discovers that the **largest singular value component** of the 3rd feature $F_3$ in the generation process specifically encodes style information. Consequently, a training-free approach is proposed to inject the style of a reference image into this feature step using SVD (Principal Feature Blending), while stabilizing the structure via attention maps from a co…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Style Personalization"
+  - "Training-Free"
+  - "SVD Feature Decomposition"
+  - "Scale-wise Autoregressive Model"
+  - "Attention Correction"
 date: 2026-05-08
-content_hash: 41826c18d738a721
+content_hash: d1a73debdf4162ad
 ---
+
 # A Training-Free Style-Personalization via SVD-Based Feature Decomposition
 
 **Conference**: CVPR 2026  
@@ -143,10 +149,10 @@ StyleAligned and IP-Adapter show high $S_{img}$ (0.72/0.76) but much lower $S_{t
 ## Related Papers
 
 - [\[CVPR 2026\] CRAFT-LoRA: Content-Style Personalization via Rank-Constrained Adaptation and Training-Free Fusion](craft-lora_content-style_personalization_via_rank-constrained_adaptation_and_tra.md)
+- [\[CVPR 2026\] StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References](stylegallery_training-free_and_semantic-aware_personalized_style_transfer_from_a.md)
 - [\[CVPR 2026\] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation](vde_training-free_accelerating_rectified_flow_model_via_velocity_decomposition_a.md)
 - [\[CVPR 2026\] OrthoFuse: Training-free Riemannian Fusion of Orthogonal Style-Concept Adapters for Diffusion Models](orthofuse_training-free_riemannian_fusion_of_orthogonal_style-concept_adapters_f.md)
-- [\[CVPR 2026\] StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References](stylegallery_training-free_and_semantic-aware_personalized_style_transfer_from_a.md)
-- [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
+- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
 
 </div>
 

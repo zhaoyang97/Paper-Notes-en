@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MapRoute: Semantic Routing for Precise Concept Erasure with Mapper
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] MapRoute inserts a set of lightweight "Mapper" modules after a frozen text encoder. Each Mapper learns a "conditional identity mapping" through two-stage training (mapping the target concept embedding to a surrogate concept while maintaining identity for others). During inference, a top-K semantic router dynamically se
+  [CVPR 2026][Image Generation][Concept Erasure] MapRoute inserts a set of lightweight "Mapper" modules after a frozen text encoder. Each Mapper learns a "conditional identity mapping" through two-stage training (mapping the target concept embedding to a surrogate concept while maintaining identity for others). During inference, a top-K semantic router dynamically selects and serially applies relevant Mappers based on the input prompt. This achieves thorough erasure of specifie…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Text-to-Image Diffusion"
+  - "Conditional Identity Mapping"
+  - "Semantic Routing"
+  - "Plug-and-Play Adapter"
 date: 2026-05-08
-content_hash: eeead79e416d16a5
+content_hash: 422d6067e0a4d5f6
 ---
+
 # MapRoute: Semantic Routing for Precise Concept Erasure with Mapper
 
 **Conference**: CVPR 2026  
@@ -153,9 +158,9 @@ MapRoute achieves GCDe near 0 for both single and multi-celebrity erasure, while
 
 - [\[CVPR 2026\] Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration](beyond_text_prompts_precise_concept_erasure_through_text-image_collaboration.md)
 - [\[CVPR 2026\] EMMA: Concept Erasure Benchmark with Comprehensive Semantic Metrics and Diverse Categories](emma_concept_erasure_benchmark_with_comprehensive_semantic_metrics_and_diverse_c.md)
+- [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
 - [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](closed-form_concept_erasure_via_double_projections.md)
 - [\[CVPR 2026\] Prototype-Guided Concept Erasure in Diffusion Models](prototype-guided_concept_erasure_in_diffusion_models.md)
-- [\[ICLR 2026\] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](../../ICLR2026/image_generation/speed_scalable_precise_and_efficient_concept_erasure_for_diffusion_models.md)
 
 </div>
 

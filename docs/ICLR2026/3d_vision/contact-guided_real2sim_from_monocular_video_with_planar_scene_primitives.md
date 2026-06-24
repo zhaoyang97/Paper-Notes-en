@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Contact-guided Real2Sim from Monocular Video with Planar Scene Primitives
 description: >-
-  [ICLR 2026][3D Vision][Reinforcement Learning] CRISP reconstructs "simulatable" human motions and scene geometry from monocular videos. The core idea involves clustering point clouds into approximately 50 clean, convex planar primitives and completing occluded supporting surfaces using human-scene contact cues. Validated by RL-driven humanoid controllers, this appr
+  [ICLR 2026][3D Vision][Monocular video] CRISP reconstructs "simulatable" human motions and scene geometry from monocular videos. The core idea involves clustering point clouds into approximately 50 clean, convex planar primitives and completing occluded supporting surfaces using human-scene contact cues. Validated by RL-driven humanoid controllers, this approach reduces motion tracking failure rates from 55.2% to 6.9% (an 8x improvement).
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Monocular video"
+  - "planar primitives"
+  - "human motion reconstruction"
+  - "contact modeling"
+  - "physics simulation"
+  - "reinforcement learning"
 date: 2026-05-08
-content_hash: afa4b22185a50258
+content_hash: d9dea4002c33d1de
 ---
+
 # Contact-guided Real2Sim from Monocular Video with Planar Scene Primitives
 
 **Conference**: ICLR 2026  
@@ -142,11 +148,11 @@ Compared to the concurrent work VideoMimic, planar primitives improve RL success
 
 ## Related Papers
 
-- [\[ICLR 2026\] SceneTransporter: Optimal Transport-Guided Compositional Latent Diffusion for Single-Image Structured 3D Scene Generation](scenetransporter_optimal_transport-guided_compositional_latent_diffusion_for_sin.md)
+- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](../../CVPR2026/3d_vision/illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
 - [\[ICLR 2026\] WorldTree: Towards 4D Dynamic Worlds from Monocular Video Using Tree-Chains](worldtree_towards_4d_dynamic_worlds_from_monocular_video_using_tree-chains.md)
-- [\[ICLR 2026\] MOSIV: Multi-Object System Identification from Video](multi-object_system_identification_from_videos.md)
-- [\[ICLR 2026\] EasyCreator: Empowering 4D Creation through Video Inpainting](easycreator_empowering_4d_creation_through_video_inpainting.md)
-- [\[ICLR 2026\] StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams](streamsplat_towards_online_dynamic_3d_reconstruction_from_uncalibrated_video_str.md)
+- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](../../CVPR2026/3d_vision/4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
+- [\[CVPR 2026\] Real-Time Dynamic Scene Rendering with Controlled Compressibility and Contact Awareness](../../CVPR2026/3d_vision/real-time_dynamic_scene_rendering_with_controlled_compressibility_and_contact_aw.md)
+- [\[ICLR 2026\] Splat the Net: Radiance Fields with Splattable Neural Primitives](splat_the_net_radiance_fields_with_splattable_neural_primitives.md)
 
 </div>
 

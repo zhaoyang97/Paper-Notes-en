@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This study utilizes LLM agents (DeepSeek/GPT series) to simulate multi-stage supply chains in the classic Beer Distribution Game. It systematically investigates the impact of cognitive heterogeneity (differences in reasoning capabilities) on system behavior, finding that LLM agents replicate human-like bullwhip effects
+  [ACL 2026][Social Computing][Supply Chain Simulation] This study utilizes LLM agents (DeepSeek/GPT series) to simulate multi-stage supply chains in the classic Beer Distribution Game. It systematically investigates the impact of cognitive heterogeneity (differences in reasoning capabilities) on system behavior, finding that LLM agents replicate human-like bullwhip effects and myopic behavior, while information sharing effectively mitigates these negative effects.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Supply Chain Simulation"
+  - "Cognitive Heterogeneity"
+  - "Bullwhip Effect"
+  - "LLM Agents"
+  - "Beer Distribution Game"
 date: 2026-05-08
-content_hash: af5dade7ff1f52b5
+content_hash: 6f88b64709d7d180
 ---
+
 # Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation
 
 **Conference**: ACL 2026  

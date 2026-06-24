@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Mitigating Mismatch within Reference-based Preference Optimization
 description: >-
-  [ICLR 2026][Social Computing][DPO] Reveals the "premature satisfaction" issue in DPO—where the gradient is unnecessarily decayed by pessimistic signals from the reference policy when it assigns a lower probability to the chosen response than the rejected one (~45% of pairs), even if the policy remains incorrect ($\Delta_\theta < 0$). Proposes HyPO (a on
+  [ICLR 2026][Social Computing][DPO] Reveals the "premature satisfaction" issue in DPO—where the gradient is unnecessarily decayed by pessimistic signals from the reference policy when it assigns a lower probability to the chosen response than the rejected one (~45% of pairs), even if the policy remains incorrect ($\Delta_\theta < 0$). Proposes HyPO (a one-line change: $\max(0, \Delta_{ref})$ to clip the reference margin), achieving a 41.2% relative improvement over DPO on Alpa…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - DPO
-  - reference policy
-  - pessimistic bias
-  - preference optimization
-  - HyPO
-  - premature satisfaction
+  - "ICLR 2026"
+  - "Social Computing"
+  - "DPO"
+  - "reference policy"
+  - "pessimistic bias"
+  - "preference optimization"
+  - "HyPO"
+  - "premature satisfaction"
 date: 2026-05-08
-content_hash: 3b23a7d7daa176a6
+content_hash: 4da0912214285c83
 ---
+
 # Mitigating Mismatch within Reference-based Preference Optimization
 
 **Conference**: ICLR 2026  
@@ -128,9 +129,9 @@ The total loss is $\mathcal{L}=\mathcal{L}_{HyPO}$, replacing the DPO loss direc
 
 - [\[ICLR 2026\] GRADIEND: Feature Learning within Neural Networks Exemplified through Biases](gradiend_feature_learning_within_neural_networks_exemplified_through_biases.md)
 - [\[ICLR 2026\] BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses](biasfreebench_a_benchmark_for_mitigating_bias_in_large_language_model_responses.md)
-- [\[ICLR 2026\] Measuring and Mitigating Rapport Bias of Large Language Models under Multi-Agent Social Interactions](measuring_and_mitigating_rapport_bias_of_large_language_models_under_multi-agent.md)
 - [\[ICML 2026\] IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection](../../ICML2026/social_computing/ido_incongruity-aware_distribution_optimization_for_multimodal_fake_news_detecti.md)
-- [\[ICLR 2026\] SAGE: Spatial-visual Adaptive Graph Exploration for Efficient Visual Place Recognition](sage_spatial-visual_adaptive_graph_exploration_for_efficient_visual_place_recogn.md)
+- [\[ICLR 2026\] Measuring and Mitigating Rapport Bias of Large Language Models under Multi-Agent Social Interactions](measuring_and_mitigating_rapport_bias_of_large_language_models_under_multi-agent.md)
+- [\[CVPR 2025\] Let Samples Speak: Mitigating Spurious Correlation by Exploiting the Clusterness of Samples](../../CVPR2025/social_computing/let_samples_speak_mitigating_spurious_correlation_by_exploiting_the_clusterness_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ZipMoE: Efficient On-Device MoE Serving via Lossless Compression and Cache-Affinity Scheduling
 description: >-
-  [ICML 2026][Model Compression][Paper Note] ZipMoE targets Large MoE model inference on mobile and edge devices. It decomposes BF16 expert parameters into compressible exponent bits and high-entropy sign-mantissa bits. Through lossless compression, hierarchical caching, and cache-affinity scheduling, it transforms the expert loading process—previously bottleneck
+  [ICML2026][Model Compression][MoE Inference] ZipMoE targets Large MoE model inference on mobile and edge devices. It decomposes BF16 expert parameters into compressible exponent bits and high-entropy sign-mantissa bits. Through lossless compression, hierarchical caching, and cache-affinity scheduling, it transforms the expert loading process—previously bottlenecked by SSD I/O—into a parallelized decompression and reconstruction pipeline hidden by multi-core CPUs. This reduces…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML2026"
+  - "Model Compression"
+  - "MoE Inference"
+  - "Lossless Compression"
+  - "Edge Deployment"
+  - "Cache Scheduling"
+  - "Unified Memory Architecture"
 date: 2026-05-08
-content_hash: ddb246fc775ff021
+content_hash: a7113d0d3c8a0619
 ---
+
 # ZipMoE: Efficient On-Device MoE Serving via Lossless Compression and Cache-Affinity Scheduling
 
 **Conference**: ICML2026  
@@ -137,10 +143,10 @@ The study decomposed caching strategies, comparing base eviction, heterogeneous 
 ## Related Papers
 
 - [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
+- [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](../../ICLR2026/model_compression/towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
 - [\[ACL 2026\] The Pitfalls of KV Cache Compression](../../ACL2026/model_compression/the_pitfalls_of_kv_cache_compression.md)
-- [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
-- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
-- [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
+- [\[ICLR 2026\] To Compress or Not? Pushing the Frontier of Lossless GenAI Model Weights Compression with Exponent Concentration](../../ICLR2026/model_compression/to_compress_or_not_pushing_the_frontier_of_lossless_genai_model_weights_compress.md)
+- [\[ICML 2026\] Semantic Cache Distillation: Efficient State Transfer via Reuse and Selective Patching](semantic_cache_distillation_efficient_state_transfer_via_reuse_and_selective_pat.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HACK: Head-Aware KV Cache Compression for Efficient Visual Autoregressive Modeling
 description: >-
-  [AAAI 2026][Image Generation][KV Cache Compression] This paper identifies that attention heads in VAR models naturally fall into two categories — Contextual Heads (semantic consistency…
+  [AAAI 2026][Image Generation][KV Cache Compression] This paper identifies that attention heads in VAR models naturally fall into two categories — Contextual Heads (semantic consistency, vertical attention patterns) and Structural Heads (spatial coherence, multi-diagonal patterns) — and proposes the HACK framework, which employs asymmetric budget allocation and pattern-specific compression strategies to achieve lossless generation quality at 70% compression…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Attention Head Classification"
   - "Next-Scale Prediction"
 date: 2026-05-08
-content_hash: f179f04cb2acdf28
+content_hash: 4cadd08bfb2cca0e
 ---
 
 # HACK: Head-Aware KV Cache Compression for Efficient Visual Autoregressive Modeling
@@ -108,10 +108,10 @@ Efficiency: Infinity-8B achieves 1.75× memory reduction (60.42→34.44 GB) and 
 ## Related Papers
 
 - [\[ICML 2026\] Visual Implicit Autoregressive Modeling](../../ICML2026/image_generation/visual_implicit_autoregressive_modeling.md)
-- [\[CVPR 2026\] Depth Adaptive Efficient Visual Autoregressive Modeling](../../CVPR2026/image_generation/depthvar_depth_adaptive_var.md)
 - [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](../../ICLR2026/image_generation/toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
 - [\[ICLR 2026\] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](../../ICLR2026/image_generation/mvar_visual_autoregressive_modeling_with_scale_and_spatial_markovian_conditionin.md)
 - [\[AAAI 2026\] HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models](hierarchicalprune_position-aware_compression_for_large-scale_diffusion_models.md)
+- [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](../../CVPR2026/image_generation/fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
 
 </div>
 

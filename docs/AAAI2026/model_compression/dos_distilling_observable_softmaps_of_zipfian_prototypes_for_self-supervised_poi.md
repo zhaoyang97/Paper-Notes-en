@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DOS: Distilling Observable Softmaps of Zipfian Prototypes for Self-Supervised Point Representation
 description: >-
-  [AAAI 2026][Model Compression][Self-Supervised Learning] DOS is a framework that distills semantic softmaps exclusively over observable (unmasked) points…
+  [AAAI 2026][Model Compression][Self-Supervised Learning] DOS is a framework that distills semantic softmaps exclusively over observable (unmasked) points, combined with Zipf-Sinkhorn regularization based on a Zipfian prior to handle the long-tail distribution of 3D semantics. It achieves state-of-the-art self-supervised learning performance on six 3D benchmarks, reaching 95% of supervised performance under linear probing.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Long-Tail Distribution"
   - "Semantic Softmap"
 date: 2026-05-08
-content_hash: 22ca459ec1aa110c
+content_hash: 09e029349f7305bc
 ---
 
 # DOS: Distilling Observable Softmaps of Zipfian Prototypes for Self-Supervised Point Representation
@@ -226,9 +226,9 @@ The Zipf prior primarily improves **medium- and low-frequency categories** (Comm
 
 - [\[NeurIPS 2025\] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models](../../NeurIPS2025/model_compression/vessa_video-based_object-centric_self-supervised_adaptation_for_visual_foundatio.md)
 - [\[AAAI 2026\] Distilling Cross-Modal Knowledge via Feature Disentanglement](distilling_cross-modal_knowledge_via_feature_disentanglement.md)
+- [\[CVPR 2025\] AutoSSVH: Exploring Automated Frame Sampling for Efficient Self-Supervised Video Hashing](../../CVPR2025/model_compression/autossvh_exploring_automated_frame_sampling_for_efficient_self-supervised_video_h.md)
 - [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](../../CVPR2026/model_compression/distilling_balanced_knowledge_from_a_biased_teacher.md)
 - [\[AAAI 2026\] From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging](from_parameter_to_representation_a_closed-form_approach_for_controllable_model_m.md)
-- [\[ICML 2026\] FedSDR: Federated Self-Distillation with Rectification](../../ICML2026/model_compression/fedsdr_federated_self-distillation_with_rectification.md)
 
 </div>
 

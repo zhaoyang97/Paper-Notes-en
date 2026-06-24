@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][MCoT] SPUR is the first benchmark designed for the "Perception $\rightarrow$ Understanding $\rightarrow$ Reasoning" three-stage evaluation of biomedical experimental images (multi-panel staining, Western blots, and statistical charts). It contains 4,264 expert-verified MCQs, revealing that current MLLMs (with Gemini 3 Pro Pr
+  [ACL 2026][VLM Reasoning][Experimental Images] SPUR is the first benchmark designed for the "Perception $\rightarrow$ Understanding $\rightarrow$ Reasoning" three-stage evaluation of biomedical experimental images (multi-panel staining, Western blots, and statistical charts). It contains 4,264 expert-verified MCQs, revealing that current MLLMs (with Gemini 3 Pro Preview barely exceeding 60%) generally perform 12.76%–31.41% lower in quantitative reasoning than in qualitative r…
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - MCoT
-  - PMC
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Experimental Images"
+  - "Multi-panel Understanding"
+  - "Quantitative Reasoning"
+  - "MCoT"
+  - "PMC"
 date: 2026-05-08
-content_hash: b693f32734f69a29
+content_hash: 237f9f0905dc621f
 ---
+
 # Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning
 
 **Conference**: ACL 2026  
@@ -145,11 +149,11 @@ Decoupled reasoning accuracy based on Perception correctness (Qwen3-VL-30B-A3B-I
 
 ## Related Papers
 
-- [\[ACL 2026\] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding](chemvlr_prioritizing_reasoning_in_perception_for_chemical_vision-language_unders.md)
+- [\[ICLR 2026\] GIR-Bench: Versatile Benchmark for Generating Images with Reasoning](../../ICLR2026/vlm_reasoning/gir-bench_versatile_benchmark_for_generating_images_with_reasoning.md)
 - [\[ACL 2026\] SciMDR: Advancing Scientific Multimodal Document Reasoning](scimdr_advancing_scientific_multimodal_document_reasoning.md)
-- [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
+- [\[ACL 2026\] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding](chemvlr_prioritizing_reasoning_in_perception_for_chemical_vision-language_unders.md)
+- [\[ICLR 2026\] ExpVid: A Benchmark for Experiment Video Understanding & Reasoning](../../ICLR2026/vlm_reasoning/expvid_a_benchmark_for_experiment_video_understanding_reasoning.md)
 - [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](../../ICML2026/vlm_reasoning/native_active_perception_as_reasoning_for_omni-modal_understanding.md)
-- [\[ACL 2026\] Structured and Abstractive Reasoning on Multi-modal Relational Knowledge Images](structured_and_abstractive_reasoning_on_multi-modal_relational_knowledge_images.md)
 
 </div>
 

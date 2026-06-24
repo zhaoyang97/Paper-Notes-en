@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adaptive Thinking: Large Language Models Know When to Think in Latent Space
 description: >-
-  [ICLR 2026][LLM Reasoning][Test-Time Compute] This paper proposes Sonata: using a lightweight MLP adapter to directly predict "self-consistency" from the last-layer hidden states of a query during the prefilling stage. This allows the model to decide whether and how much to think before decoding, reducing thinking tokens by 20%–60% while maintaining accuracy.
+  [ICLR 2026][Reasoning][Adaptive Thinking] This paper proposes Sonata: using a lightweight MLP adapter to directly predict "self-consistency" from the last-layer hidden states of a query during the prefilling stage. This allows the model to decide whether and how much to think before decoding, reducing thinking tokens by 20%–60% while maintaining accuracy.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Test-Time Compute
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Adaptive Thinking"
+  - "Self-consistency"
+  - "Latent Space Representation"
+  - "Test-time Compute"
+  - "Thinking Budget Allocation"
 date: 2026-05-08
-content_hash: 7106174178cb4952
+content_hash: f966ae3ecfc0a868
 ---
+
 # Adaptive Thinking: Large Language Models Know When to Think in Latent Space
 
 **Conference**: ICLR 2026  
@@ -143,8 +148,8 @@ Savings are particularly noticeable on simpler tasks: on GSM8K, Qwen3-8B/32B tok
 - [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
 - [\[ICLR 2026\] StreamingThinker: Large Language Models Can Think While Reading](streamingthinker_large_language_models_can_think_while_reading.md)
 - [\[ICLR 2026\] Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking](latent-guided_reasoning_empowering_small_llms_with_large-model_thinking.md)
-- [\[ICLR 2026\] ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 - [\[ICLR 2026\] Deep Think with Confidence](deep_think_with_confidence.md)
+- [\[ICLR 2026\] $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 
 </div>
 

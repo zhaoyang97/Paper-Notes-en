@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Perturbation Bounds for Low-Rank Inverse Approximations under Noise
 description: >-
-  [NeurIPS 2025][Model Compression][low-rank inverse approximation] This work derives the first non-asymptotic spectral norm perturbation bounds for low-rank inverse approximations $\|(\tilde{A}^{-1})_p - A_p^{-1}\|$ under…
+  [NeurIPS 2025][Model Compression][low-rank inverse approximation] This work derives the first non-asymptotic spectral norm perturbation bounds for low-rank inverse approximations $\|(\tilde{A}^{-1})_p - A_p^{-1}\|$ under noise, via a novel *contour bootstrapping* technique that handles the non-entire function $f(z) = 1/z$. Under favorable conditions, the proposed bounds improve upon classical bounds by a factor of $\sqrt{n}$.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "contour integration"
   - "eigengap"
 date: 2026-05-08
-content_hash: 3748a22ffca5500c
+content_hash: f81d0610b0d37404
 ---
 
 # Perturbation Bounds for Low-Rank Inverse Approximations under Noise
@@ -147,8 +147,8 @@ The first term corresponds to the classical scaling of the full inverse $\|E\|/\
 ## Related Papers
 
 - [\[NeurIPS 2025\] FiRA: Can We Achieve Full-Rank Training of LLMs Under Low-Rank Constraint?](fira_can_we_achieve_full-rank_training_of_llms_under_low-rank_constraint.md)
+- [\[NeurIPS 2025\] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning](mixture_of_noise_for_pre-trained_model-based_class-incremental_learning.md)
 - [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](gora_gradient-driven_adaptive_low_rank_adaptation.md)
-- [\[NeurIPS 2025\] Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization](tighter_cmi-based_generalization_bounds_via_stochastic_projection_and_quantizati.md)
 - [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
 - [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
 

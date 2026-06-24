@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RE-PO: Robust Enhanced Policy Optimization as a General Framework for LLM Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] RE-PO treats the "correctness" of each preference label as a latent variable, utilizing the EM algorithm during training to update the policy while simultaneously inferring the confidence of each data point to perform adaptive downweighting of noisy preference data. It unifies a broad class of preference losses (DPO, I
+  [ICLR 2026][LLM Alignment][Preference Alignment] RE-PO treats the "correctness" of each preference label as a latent variable, utilizing the EM algorithm during training to update the policy while simultaneously inferring the confidence of each data point to perform adaptive downweighting of noisy preference data. It unifies a broad class of preference losses (DPO, IPO, SimPO, CPO, etc.) into the same probabilistic framework, enabling them to be "robustified…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference Alignment"
+  - "Label Noise"
+  - "EM Algorithm"
+  - "Annotator Reliability"
+  - "DPO"
 date: 2026-05-08
-content_hash: 6d8a65f532da06b2
+content_hash: 457b376148cf783a
 ---
+
 # RE-PO: Robust Enhanced Policy Optimization as a General Framework for LLM Alignment
 
 **Conference**: ICLR 2026  

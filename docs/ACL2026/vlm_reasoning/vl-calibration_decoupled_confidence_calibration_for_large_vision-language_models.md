@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VL-Calibration: Decoupled Confidence Calibration for Large Vision-Language Models Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][Reinforcement Learning] VL-Calibration decouples the verbalized confidence of LVLMs into visual confidence and reasoning confidence. By utilizing image-perturbation KL divergence, token entropy, and token-level advantage reweighting for training, the model simultaneously reduces ECE and improves accuracy across 13 visual reasoning benchmarks.
+  [ACL2026][VLM Reasoning][Multimodal Calibration] VL-Calibration decouples the verbalized confidence of LVLMs into visual confidence and reasoning confidence. By utilizing image-perturbation KL divergence, token entropy, and token-level advantage reweighting for training, the model simultaneously reduces ECE and improves accuracy across 13 visual reasoning benchmarks.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ACL2026"
+  - "VLM Reasoning"
+  - "Multimodal Calibration"
+  - "Confidence Decoupling"
+  - "Visual Uncertainty"
+  - "Reinforcement Learning"
+  - "Hallucination Suppression"
 date: 2026-05-08
-content_hash: bf34deb1b0cc75be
+content_hash: 4aef9c4c86ced6e3
 ---
+
 # VL-Calibration: Decoupled Confidence Calibration for Large Vision-Language Models Reasoning
 
 **Conference**: ACL2026  
@@ -151,15 +156,16 @@ Ablations on Qwen3-VL-4B verify the contributions of "decoupling," "visual certa
 - Value: ⭐⭐⭐⭐⭐ Highly valuable for high-stakes multimodal applications by answering "did the model see it wrong" or "did it think it wrong."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] MMBoundary: Advancing MLLM Knowledge Boundary Awareness through Reasoning Step Confidence Calibration](../../ACL2025/vlm_reasoning/mmboundary_reasoning_step_confidence.md)
 - [\[ACL 2026\] PROGRESSLM: Towards Progress Reasoning in Vision-Language Models](progresslm_towards_progress_reasoning_in_vision-language_models.md)
+- [\[CVPR 2026\] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning](../../CVPR2026/vlm_reasoning/pdcr_perception-decomposed_confidence_reward_for_vision-language_reasoning.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](../../CVPR2026/vlm_reasoning/unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
 - [\[ACL 2026\] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization](addressing_overthinking_in_large_vision-language_models_via_gated_perception-rea.md)
-- [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
-- [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
 
 </div>
 

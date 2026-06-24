@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Proposes PTQ4ARVG, the first systematic PTQ framework tailored for AutoRegressive Visual Generation (ARVG) models. It addresses three unique quantization challenges in ARVG through Gain Projection Scaling (GPS), Static Token-wise Quantization (STWQ), and Distribution-Guided Calibration (DGC).
+  [ICLR 2026][Model Compression][Visual Generation] Proposes PTQ4ARVG, the first systematic PTQ framework tailored for AutoRegressive Visual Generation (ARVG) models. It addresses three unique quantization challenges in ARVG through Gain Projection Scaling (GPS), Static Token-wise Quantization (STWQ), and Distribution-Guided Calibration (DGC).
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Visual Generation"
+  - "Autoregressive Models"
+  - "Post-Training Quantization"
+  - "Activation Quantization"
+  - "Outlier Suppression"
 date: 2026-05-08
-content_hash: 76d6189b66a5b3df
+content_hash: 3f2b34a2bfab476e
 ---
+
 # PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models
 
 **Conference**: ICLR 2026  
@@ -136,11 +142,11 @@ The framework is training-free. GPS derives from a closed-form solution of conve
 
 ## Related Papers
 
+- [\[ICLR 2026\] Shift-and-Sum Quantization for Visual Autoregressive Models](shift-and-sum_quantization_for_visual_autoregressive_models.md)
+- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 - [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
-- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
-- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
-- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
+- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
 
 </div>
 

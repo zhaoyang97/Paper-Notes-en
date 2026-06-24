@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Multimodal Benchmark for Framing of Oil & Gas Advertising and Potential Greenwashing Detection
 description: >-
-  [NeurIPS 2025 (Datasets and Benchmarks Track)][Multimodal VLM][greenwashing detection] This work introduces the first multimodal framing analysis benchmark for oil and gas (O&G) industry video advertisements…
+  [NeurIPS 2025 (Datasets and Benchmarks Track)][Multimodal VLM][greenwashing detection] This work introduces the first multimodal framing analysis benchmark for oil and gas (O&G) industry video advertisements, comprising 706 videos, 13 framing categories, 50+ entities, and 20 countries. It systematically evaluates six VLMs on greenwashing-related framing detection, finding that GPT-4.1 achieves 79% F1 zero-shot on environmental labels but only 46% on green innovation…
 tags:
   - "NeurIPS 2025 (Datasets and Benchmarks Track)"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "vision-language models"
   - "oil and gas industry"
 date: 2026-05-08
-content_hash: 28650e81df6ac234
+content_hash: 302527c2e84a46fb
 ---
 
 # A Multimodal Benchmark for Framing of Oil & Gas Advertising and Potential Greenwashing Detection
@@ -137,10 +137,10 @@ No model training is involved—all VLMs are evaluated via zero-shot or few-shot
 ## Related Papers
 
 - [\[CVPR 2026\] A3: Towards Advertising Aesthetic Assessment](../../CVPR2026/multimodal_vlm/a3_towards_advertising_aesthetic_assessment.md)
-- [\[NeurIPS 2025\] MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agriculture](mirage_a_benchmark_for_multimodal_information-seeking_and_reasoning_in_agricultu.md)
-- [\[NeurIPS 2025\] Are Vision Language Models Ready for Clinical Diagnosis? A 3D Medical Benchmark for Tumor-centric Visual Question Answering](are_vision_language_models_ready_for_clinical_diagnosis_a_3d_medical_benchmark_f.md)
-- [\[ICCV 2025\] GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models](../../ICCV2025/multimodal_vlm/grab_a_challenging_graph_analysis_benchmark_for_large_multimodal_models.md)
-- [\[AAAI 2026\] OmniPT: Unleashing the Potential of Large Vision Language Models for Pedestrian Tracking and Understanding](../../AAAI2026/multimodal_vlm/omnipt_unleashing_the_potential_of_large_vision_language_models_for_pedestrian_t.md)
+- [\[CVPR 2026\] MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection](../../CVPR2026/multimodal_vlm/mmsd30_a_multi-image_benchmark_for_real-world_multimodal_sarcasm_detection.md)
+- [\[ICML 2025\] LEMoN: Label Error Detection using Multimodal Neighbors](../../ICML2025/multimodal_vlm/lemon_label_error_detection_using_multimodal_neighbors.md)
+- [\[CVPR 2026\] VisMem: Latent Vision Memory Unlocks Potential of Vision-Language Models](../../CVPR2026/multimodal_vlm/vismem_latent_vision_memory_unlocks_potential_of_vision-language_models.md)
+- [\[ACL 2025\] WikiMixQA: A Multimodal Benchmark for Question Answering over Tables and Charts](../../ACL2025/multimodal_vlm/wikimixqa_a_multimodal_benchmark_for_question_answering_over_tables_and_charts.md)
 
 </div>
 

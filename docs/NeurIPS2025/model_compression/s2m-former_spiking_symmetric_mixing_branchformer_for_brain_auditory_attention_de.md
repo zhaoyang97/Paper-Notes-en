@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] S2M-Former: Spiking Symmetric Mixing Branchformer for Brain Auditory Attention Detection
 description: >-
-  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper proposes S2M-Former, a spiking-driven symmetric mixing Branchformer framework that achieves SOTA-level accuracy on EEG-based auditory attention detect…
+  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper proposes S2M-Former, a spiking-driven symmetric mixing Branchformer framework that achieves SOTA-level accuracy on EEG-based auditory attention detection with only 0.06M parameters, via complementary learning across spatial-frequency dual branches and lightweight 1D token representations, while reducing energy consumption to 1/5.8 of dual-branch ANN counterparts.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Energy-Efficient Computing"
   - "EEG"
 date: 2026-05-08
-content_hash: 8689ebc71278a11b
+content_hash: 958014dcbd027652
 ---
 
 # S2M-Former: Spiking Symmetric Mixing Branchformer for Brain Auditory Attention Detection

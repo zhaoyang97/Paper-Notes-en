@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Sparse Imagination for Efficient Visual World Model Planning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][world model] This paper proposes Sparse Imagination, which achieves significant inference acceleration (reducing planning time by ~50% at a 50% dropout rate) in ViT patch token-based world model planning through random token dropout and random grouped attention training. A key finding is that simple random dropout outperforms compl
+  [ICLR 2026][Robotics][world model] This paper proposes Sparse Imagination, which achieves significant inference acceleration (reducing planning time by ~50% at a 50% dropout rate) in ViT patch token-based world model planning through random token dropout and random grouped attention training. A key finding is that simple random dropout outperforms complex token selection methods because static importance ranking suffers from a "blind spot problem" in dynamic planning scenario…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - world model
-  - sparse tokens
-  - MPC
-  - DINO
-  - VLA
-  - token dropout
+  - "ICLR 2026"
+  - "Robotics"
+  - "world model"
+  - "sparse tokens"
+  - "MPC"
+  - "DINO"
+  - "VLA"
+  - "token dropout"
+  - "planning efficiency"
 date: 2026-05-08
-content_hash: 9afcd2093575f621
+content_hash: 2ef600d974b9bc88
 ---
+
 # Sparse Imagination for Efficient Visual World Model Planning
 
 **Conference**: ICLR 2026  
@@ -152,8 +154,8 @@ For long-horizon tasks (LIBERO, Meta-World, real robot), blind random sampling i
 - [\[CVPR 2026\] ForeAct: Steering Your VLA with Efficient Visual Foresight Planning](../../CVPR2026/robotics/foreact_steering_your_vla_with_efficient_visual_foresight_planning.md)
 - [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
 - [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
+- [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](../../CVPR2026/robotics/chain_of_world_world_model_thinking_in_latent_motion.md)
 - [\[ICLR 2026\] WorldGym: World Model as an Environment for Policy Evaluation](worldgym_world_model_as_an_environment_for_policy_evaluation.md)
-- [\[ICLR 2026\] Efficient Differentiable Contact Model with Long-range Influence](efficient_differentiable_contact_model_with_long-range_influence.md)
 
 </div>
 

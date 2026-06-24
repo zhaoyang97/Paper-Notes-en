@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] This paper constructs CArtBench—a multi-task benchmark based on the collections of the Palace Museum—to evaluate four capabilities of VLMs in Chinese art understanding (evidence-based QA, structured appreciation, defensible re-interpretation, and authenticity discrimination). It finds that even the strongest models sho
+  [ACL 2026][Multimodal VLM][Chinese Art] This paper constructs CArtBench—a multi-task benchmark based on the collections of the Palace Museum—to evaluate four capabilities of VLMs in Chinese art understanding (evidence-based QA, structured appreciation, defensible re-interpretation, and authenticity discrimination). It finds that even the strongest models show significant performance degradation in evidence association and style-period reasoning…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Chinese Art"
+  - "Museum Benchmark"
+  - "Vision-Language Models"
+  - "Appreciation Ability"
+  - "Authenticity Discrimination"
 date: 2026-05-08
-content_hash: 24b117676bba50bd
+content_hash: d9b2d81e797995b1
 ---
+
 # CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity
 
 **Conference**: ACL 2026  

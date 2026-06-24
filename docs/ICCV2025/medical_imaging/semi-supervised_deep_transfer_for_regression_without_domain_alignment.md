@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semi-supervised Deep Transfer for Regression without Domain Alignment
 description: >-
-  [ICCV 2025][Medical Imaging][Source-free domain adaptation] This paper proposes CRAFT (Contradistinguisher-based Regularization Approach for Flexible Training)…
+  [ICCV 2025][Medical Imaging][Source-free domain adaptation] This paper proposes CRAFT (Contradistinguisher-based Regularization Approach for Flexible Training), a semi-supervised transfer learning framework that requires neither source data nor domain alignment, specifically designed for regression tasks. CRAFT jointly optimizes a supervised loss and an unsupervised Contradistinguisher-based regularization term to substantially improve prediction performance under label-scarc…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "EEG decoding"
   - "brain age prediction"
 date: 2026-05-08
-content_hash: 3749bb45d8a3670c
+content_hash: 813a96212e409732
 ---
 
 # Semi-supervised Deep Transfer for Regression without Domain Alignment
@@ -149,11 +149,11 @@ CRAFT improves over TL by approximately 4% and over the state-of-the-art SF-SSDA
 
 ## Related Papers
 
-- [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](../../CVPR2026/medical_imaging/interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
+- [\[ECCV 2024\] Is User Feedback Always Informative? Retrieval Latent Defending for Semi-Supervised Domain Adaptation without Source Data](../../ECCV2024/medical_imaging/is_user_feedback_always_informative_retrieval_latent_defending_for_semi-supervis.md)
 - [\[ICCV 2025\] ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis](victr_vital_consistency_transfer_for_pathology_aware_image_synthesis.md)
-- [\[NeurIPS 2025\] MATCH: Multi-faceted Adaptive Topo-Consistency for Semi-Supervised Histopathology Segmentation](../../NeurIPS2025/medical_imaging/match_multi-faceted_adaptive_topo-consistency_for_semi-supervised_histopathology.md)
-- [\[NeurIPS 2025\] VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation](../../NeurIPS2025/medical_imaging/vq-seg_vector-quantized_token_perturbation_for_semi-supervised_medical_image_seg.md)
+- [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
 - [\[ICCV 2025\] SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications](scivid_cross-domain_evaluation_of_video_models_in_scientific_applications.md)
+- [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
 
 </div>
 

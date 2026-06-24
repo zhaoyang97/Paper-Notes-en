@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OVSeg3R: Learn Open-vocabulary Instance Segmentation from 2D via 3D Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] OVSeg3R is a training scheme: it treats point clouds obtained from 3D reconstruction of 2D videos as input, lifts open-vocabulary 2D instance segmentation results to 3D as annotations using reconstructed 2D-3D correspondences, and stabilizes training with "View-level Instance Partitioning" (VIP) and "2D Instance Bounda
+  [ICLR 2026][3D Vision][Open-vocabulary 3D Instance Segmentation] OVSeg3R is a training scheme: it treats point clouds obtained from 3D reconstruction of 2D videos as input, lifts open-vocabulary 2D instance segmentation results to 3D as annotations using reconstructed 2D-3D correspondences, and stabilizes training with "View-level Instance Partitioning" (VIP) and "2D Instance Boundary-aware Superpoints" (IBSp). It extends a closed-set SOTA 3D segmenter into an open-vocabulary…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Open-vocabulary 3D Instance Segmentation"
+  - "3D Reconstruction"
+  - "2D-to-3D Lifting"
+  - "View-level Supervision"
+  - "Superpoints"
 date: 2026-05-08
-content_hash: c818db8a0f967f05
+content_hash: 2393156311e999c5
 ---
+
 # OVSeg3R: Learn Open-vocabulary Instance Segmentation from 2D via 3D Reconstruction
 
 **Conference**: ICLR 2026  
@@ -133,8 +139,8 @@ The gains primarily come from novel class generalization (+7.7 mAP).
 - Value: ⭐⭐⭐⭐ Provides a practical paradigm for low-cost training of open-vocabulary 3D segmentation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -142,7 +148,7 @@ The gains primarily come from novel class generalization (+7.7 mAP).
 - [\[ICLR 2026\] GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation](geopurify_a_data-efficient_geometric_distillation_framework_for_open-vocabulary_.md)
 - [\[CVPR 2026\] OVI-MAP: Open-Vocabulary Instance-Semantic Mapping](../../CVPR2026/3d_vision/ovi-map_open-vocabulary_instance-semantic_mapping.md)
 - [\[CVPR 2026\] Ov3R: Open-Vocabulary Semantic 3D Reconstruction from RGB Videos](../../CVPR2026/3d_vision/ov3r_open-vocabulary_semantic_3d_reconstruction_from_rgb_videos.md)
-- [\[ICCV 2025\] CutS3D: Cutting Semantics in 3D for 2D Unsupervised Instance Segmentation](../../ICCV2025/3d_vision/cuts3d_cutting_semantics_in_3d_for_2d_unsupervised_instance_segmentation.md)
+- [\[ICLR 2026\] Progressive Gaussian Transformer with Anisotropy-aware Sampling for Open Vocabulary Occupancy Prediction](progressive_gaussian_transformer_with_anisotropy-aware_sampling_for_open_vocabul.md)
 
 </div>
 

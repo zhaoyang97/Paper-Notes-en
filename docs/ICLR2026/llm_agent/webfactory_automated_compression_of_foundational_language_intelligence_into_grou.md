@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] WebFactory: Automated Compression of Foundational Language Intelligence into Grounded Web Agents
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] WebFactory redefines "training GUI agents" as a problem of distilling internet knowledge compressed within LLMs into executable grounded actions. By using a fully automated closed-loop pipeline—high-fidelity offline website synthesis via LLMs → knowledge-driven verifiable task generation → trajectory collection via str
+  [ICLR 2026][LLM Agent][GUI Agent] WebFactory redefines "training GUI agents" as a problem of distilling internet knowledge compressed within LLMs into executable grounded actions. By using a fully automated closed-loop pipeline—high-fidelity offline website synthesis via LLMs → knowledge-driven verifiable task generation → trajectory collection via strong LLMs → RL training with decomposed rewards—a 3B agent trained on only 10 synthetic websites achieves performance levels co…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
-  - Web Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Web Agent"
+  - "Offline Environment Synthesis"
+  - "Knowledge-driven Task Generation"
+  - "GRPO Reinforcement Learning"
 date: 2026-05-08
-content_hash: 75085fa16d34c1ce
+content_hash: 3a8a7fe440e87793
 ---
+
 # WebFactory: Automated Compression of Foundational Language Intelligence into Grounded Web Agents
 
 **Conference**: ICLR 2026  
@@ -155,8 +159,8 @@ Trajectory data quality ablation (SR=Success Rate, Steps=Avg Steps, VD=Valid Dat
 
 ## Related Papers
 
-- [\[ICLR 2026\] Social Agents: Collective Intelligence Improves LLM Predictions](social_agents_collective_intelligence_improves_llm_predictions.md)
 - [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](../../CVPR2026/llm_agent/ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
+- [\[ICLR 2026\] Social Agents: Collective Intelligence Improves LLM Predictions](social_agents_collective_intelligence_improves_llm_predictions.md)
 - [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
 - [\[ICLR 2026\] Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on Diverse Video Games](orak_a_foundational_benchmark_for_training_and_evaluating_llm_agents_on_diverse_.md)
 - [\[ICLR 2026\] WALT: Web Agents that Learn Tools](walt_web_agents_that_learn_tools.md)

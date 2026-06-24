@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Test-Time Training for Predicting Need for Invasive Mechanical Ventilation in Multi-Center Cohorts
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] The AdaTTT framework is proposed, achieving robust test-time adaptation on multi-center ICU EHR data through dynamic feature-aware self-supervised learning (adaptive masking strategy) and prototype-guided partial optimal transport alignment, utilized for predicting invasive mechanical ventilation (IMV) needs 24 hours i
+  [ICLR 2026][Self-Supervised Learning][Test-Time Training] The AdaTTT framework is proposed, achieving robust test-time adaptation on multi-center ICU EHR data through dynamic feature-aware self-supervised learning (adaptive masking strategy) and prototype-guided partial optimal transport alignment, utilized for predicting invasive mechanical ventilation (IMV) needs 24 hours in advance.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Test-Time Training"
+  - "Domain Shift"
+  - "Invasive Mechanical Ventilation Prediction"
+  - "Dynamic Feature Masking"
+  - "Partial Optimal Transport"
 date: 2026-05-08
-content_hash: 443dd0141d8858ac
+content_hash: 057c64d8ed4f13b0
 ---
+
 # Adaptive Test-Time Training for Predicting Need for Invasive Mechanical Ventilation in Multi-Center Cohorts
 
 **Conference**: ICLR 2026  
@@ -148,10 +154,10 @@ AdaTTT also achieved the best Brier scores (Site A: 0.086, Site B: 0.085, MIMIC-
 ## Related Papers
 
 - [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
+- [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
 - [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
 - [\[ICML 2025\] Test-Time Training Provably Improves Transformers as In-Context Learners](../../ICML2025/self_supervised/test-time_training_provably_improves_transformers_as_in-context_learners.md)
 - [\[ICLR 2026\] NEO — No-Optimization Test-Time Adaptation through Latent Re-Centering](neo_no-optimization_test-time_adaptation_through_latent_re-centering.md)
-- [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
 
 </div>
 

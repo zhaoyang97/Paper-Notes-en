@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scaling Offline RL via Efficient and Expressive Shortcut Models
 description: >-
-  [NeurIPS 2025][Image Generation][Offline RL] This paper proposes SORL, which leverages the self-consistency property of shortcut models to enable efficient single-stage training with variable inference steps for policy o…
+  [NeurIPS 2025][Image Generation][Offline RL] This paper proposes SORL, which leverages the self-consistency property of shortcut models to enable efficient single-stage training with variable inference steps for policy optimization in offline RL, while supporting both sequential and parallel test-time scaling.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Self-Consistency"
   - "Test-time Scaling"
 date: 2026-05-08
-content_hash: e071081584e40e49
+content_hash: a6c19513904e862e
 ---
 
 # Scaling Offline RL via Efficient and Expressive Shortcut Models
@@ -163,9 +163,9 @@ SORL achieves the best performance in 5 out of 8 environments.
 
 - [\[NeurIPS 2025\] Improved Training Technique for Shortcut Models (iSM)](improved_training_technique_for_shortcut_models.md)
 - [\[ICLR 2026\] SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning](../../ICLR2026/image_generation/flow-based_single-step_completion_for_efficient_and_expressive_policy_learning.md)
+- [\[ACL 2025\] R-VC: Rhythm Controllable and Efficient Zero-Shot Voice Conversion via Shortcut Flow Matching](../../ACL2025/image_generation/rvc_rhythm_voice_conversion.md)
 - [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](scaling_diffusion_transformers_efficiently_via_μp.md)
-- [\[NeurIPS 2025\] Scaling Can Lead to Compositional Generalization](scaling_can_lead_to_compositional_generalization.md)
-- [\[NeurIPS 2025\] FreqPolicy: Efficient Flow-based Visuomotor Policy via Frequency Consistency](freqpolicy_efficient_flow-based_visuomotor_policy_via_frequency_consistency.md)
+- [\[CVPR 2025\] Finite Difference Flow Optimization for RL Post-Training of Text-to-Image Models](../../CVPR2025/image_generation/finite_difference_flow_optimization_for_rl_post-training_of_text-to-image_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] ConRep4CO unifies diverse combinatorial optimization (CO) instance types by reducing them to a SAT format as an "intermediary modality." It employs augmentation-free contrastive pre-training using "original instance ↔ its SAT form" as positive pairs to learn cross-problem universal representations. When integrated into
+  [ICLR 2026][Optimization][Combinatorial Optimization] ConRep4CO unifies diverse combinatorial optimization (CO) instance types by reducing them to a SAT format as an "intermediary modality." It employs augmentation-free contrastive pre-training using "original instance ↔ its SAT form" as positive pairs to learn cross-problem universal representations. When integrated into specialized neural solvers for MVC, MIS, MC, and MDS, the optimality gap is reduced by an average of 32%…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Combinatorial Optimization"
+  - "Contrastive Pre-training"
+  - "SAT Reduction"
+  - "Cross-type Representation"
+  - "Graph Decision Problems"
 date: 2026-05-08
-content_hash: e1b4e841d804016c
+content_hash: 58b20789c436d468
 ---
+
 # ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types
 
 **Conference**: ICLR 2026  
@@ -152,8 +158,8 @@ Disabling cross-domain transfer leads to a drop in performance (most visible in 
 
 ## Related Papers
 
-- [\[ICLR 2026\] HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization](heurigym_an_agentic_benchmark_for_llm-crafted_heuristics_in_combinatorial_optimi.md)
 - [\[ICLR 2026\] FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization](frontierco_real-world_and_large-scale_evaluation_of_machine_learning_solvers_for.md)
+- [\[ICLR 2026\] HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization](heurigym_an_agentic_benchmark_for_llm-crafted_heuristics_in_combinatorial_optimi.md)
 - [\[ICLR 2026\] NExCO: Native Solution Expansion for Diffusion-based Combinatorial Optimization](nexco_native_solution_expansion_for_diffusion-based_combinatorial_optimization.md)
 - [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](multi-action_self-improvement_for_neural_combinatorial_optimization.md)
 - [\[ICML 2026\] Bayesian Gated Non-Negative Contrastive Learning](../../ICML2026/optimization/bayesian_gated_non-negative_contrastive_learning.md)

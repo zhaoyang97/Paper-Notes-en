@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Policy Gradient] GPG (Group Policy Gradient) returns to the most basic policy gradient, directly optimizing the original RL objective—eliminating the critic, reference model, KL constraints, and surrogate loss, while retaining only group-mean normalization and a gradient debiasing correction, consistently outperforming GRPO in math and
+  [ICLR 2026][Reasoning][Policy Gradient] GPG (Group Policy Gradient) returns to the most basic policy gradient, directly optimizing the original RL objective—eliminating the critic, reference model, KL constraints, and surrogate loss, while retaining only group-mean normalization and a gradient debiasing correction, consistently outperforming GRPO in math and multimodal reasoning tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Policy Gradient
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Policy Gradient"
+  - "GRPO"
+  - "Reasoning RL"
+  - "Gradient Estimation Bias"
+  - "RLHF Simplification"
 date: 2026-05-08
-content_hash: 8b2e161c4c26cfdb
+content_hash: 4ed8f831db6fb917
 ---
+
 # GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning
 
 **Conference**: ICLR 2026  
@@ -119,10 +123,10 @@ flowchart LR
 ## Related Papers
 
 - [\[ICLR 2026\] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models](a_simple_motivation_can_enhance_reinforcement_finetuning_of_large_reasoning_mode.md)
+- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
 - [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 - [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
 - [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
-- [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] A General Spatio-Temporal Backbone with Scalable Contextual Pattern Bank for Urban Continual Forecasting
 description: >-
-  [ICLR 2026][Time Series][Paper Note] STBP employs a general spatio-temporal backbone based on "frequency domain + linear graph attention" to extract stable and transferable representations, supplemented by an incrementally scalable "contextual pattern bank" acting as prompts. By freezing the backbone and expanding only the pattern bank, the model achieves
+  [ICLR 2026][Time Series][Continual Learning] STBP employs a general spatio-temporal backbone based on "frequency domain + linear graph attention" to extract stable and transferable representations, supplemented by an incrementally scalable "contextual pattern bank" acting as prompts. By freezing the backbone and expanding only the pattern bank, the model achieves anti-forgetting, robust modeling, and scalability on urban streaming data with growing nodes and shifting distribu…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Continual Learning"
+  - "Spatio-Temporal Graph Neural Networks"
+  - "Frequency Domain Analysis"
+  - "Linear Attention"
+  - "Catastrophic Forgetting"
+  - "Urban Traffic Prediction"
 date: 2026-05-08
-content_hash: 19c7d52316cef342
+content_hash: a402ed4d59efe70e
 ---
+
 # A General Spatio-Temporal Backbone with Scalable Contextual Pattern Bank for Urban Continual Forecasting
 
 **Conference**: ICLR 2026  
@@ -130,15 +137,16 @@ Tested five variants: ❶ Retrain (No pattern bank, retraining backbone); ❷ On
 - **Value**: ⭐⭐⭐⭐ — High practical value for real-world streaming deployment with privacy and scalability constraints.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization](../../NeurIPS2025/time_series/strap_spatio-temporal_pattern_retrieval_for_out-of-distribution_generalization.md)
+- [\[ICLR 2026\] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting](storm_synergistic_cross-scale_spatio-temporal_modeling_for_weather_forecasting.md)
+- [\[ICLR 2026\] TEN-DM: Topology-Enhanced Diffusion Model for Spatio-Temporal Event Prediction](ten-dm_topology-enhanced_diffusion_model_for_spatio-temporal_event_prediction.md)
 - [\[ICLR 2026\] ST-HHOL: Spatio-Temporal Hierarchical Hypergraph Online Learning for Crime Prediction](st-hhol_spatio-temporal_hierarchical_hypergraph_online_learning_for_crime_predic.md)
 - [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](../../ICML2026/time_series/nested_spatio-temporal_time_series_forecasting.md)
-- [\[ICLR 2026\] Enabling Arbitrary Inference in Spatio-Temporal Dynamic Systems: A Physics-Inspired Perspective](enabling_arbitrary_inference_in_spatio-temporal_dynamic_systems_a_physics-inspir.md)
-- [\[ICLR 2026\] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning](trident_cross-domain_trajectory_spatio-temporal_representation_via_distance-pres.md)
 
 </div>
 

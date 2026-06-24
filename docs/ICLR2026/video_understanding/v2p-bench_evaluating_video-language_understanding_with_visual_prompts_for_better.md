@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] V2P-Bench: Evaluating Video-Language Understanding with Visual Prompts for Better Human-Model Interaction
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] V2P-Bench constructs a human-model interaction evaluation benchmark for video visual prompt understanding. Using 980 videos and 1172 QA samples with manually annotated visual prompt frames, it systematically examines whether LVLMs can perform fine-grained video understanding based on user-indicated "targets/moments." T
+  [ICLR2026][Video Understanding][Video-Language Understanding] V2P-Bench constructs a human-model interaction evaluation benchmark for video visual prompt understanding. Using 980 videos and 1172 QA samples with manually annotated visual prompt frames, it systematically examines whether LVLMs can perform fine-grained video understanding based on user-indicated "targets/moments." The study finds that while current models exhibit zero-shot understanding of some visual prompts…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Video-Language Understanding"
+  - "Visual Prompts"
+  - "Human-Model Interaction"
+  - "Multimodal Evaluation"
+  - "Spatiotemporal Understanding"
 date: 2026-05-08
-content_hash: 335d59c23968f7d2
+content_hash: 35dcfa4bd0a0b853
 ---
+
 # V2P-Bench: Evaluating Video-Language Understanding with Visual Prompts for Better Human-Model Interaction
 
 **Conference**: ICLR2026  

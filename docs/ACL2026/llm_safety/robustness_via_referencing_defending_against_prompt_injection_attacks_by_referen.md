@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robustness via Referencing: Defending against Prompt Injection Attacks by Referencing the Executed Instruction
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes a defense method against prompt injection based on instruction referencing. Instead of suppressing the instruction-following capability of LLMs, it requires the model to reference the instruction currently being executed within its response. Responses unrelated to the original instruction are then r
+  [ACL 2026 Findings][LLM Safety][Prompt Injection Attacks] This paper proposes a defense method against prompt injection based on instruction referencing. Instead of suppressing the instruction-following capability of LLMs, it requires the model to reference the instruction currently being executed within its response. Responses unrelated to the original instruction are then removed through label filtering, reducing the Attack Success Rate (ASR) to nearly 0% in certain scenari…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Prompt Injection Attacks"
+  - "Instruction Referencing"
+  - "Defense Methods"
+  - "Black-box Defense"
+  - "LLM Security"
 date: 2026-05-08
-content_hash: 1b3ed3ed9d095e7d
+content_hash: 97ebf8a6cb55f734
 ---
+
 # Robustness via Referencing: Defending against Prompt Injection Attacks by Referencing the Executed Instruction
 
 **Conference**: ACL 2026 Findings  

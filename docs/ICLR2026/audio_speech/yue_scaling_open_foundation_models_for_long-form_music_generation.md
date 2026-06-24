@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] YuE: Scaling Open Foundation Models for Long-Form Music Generation
 description: >-
-  [ICLR 2026][Audio & Speech][X-Codec] YuE scales the LLaMA2 architecture to trillions of tokens to train the first open-source "lyrics-to-song" foundation model. By employing **dual-token track decoupling** (separate prediction of vocals/accompaniment), **structural progressive conditioning** (interleaving lyrics and audio by segments), and **re-designed m
+  [ICLR 2026][Audio & Speech][Long-form music generation] YuE scales the LLaMA2 architecture to trillions of tokens to train the first open-source "lyrics-to-song" foundation model. By employing **dual-token track decoupling** (separate prediction of vocals/accompaniment), **structural progressive conditioning** (interleaving lyrics and audio by segments), and **re-designed music in-context learning**, it generates songs up to 5 minutes long with aligned lyrics and vivid vocals…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - X-Codec
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Long-form music generation"
+  - "lyrics-to-song"
+  - "track decoupling"
+  - "in-context learning"
+  - "X-Codec"
 date: 2026-05-08
-content_hash: 92a6212fe16b2ef7
+content_hash: 70032adc1eea5fc9
 ---
+
 # YuE: Scaling Open Foundation Models for Long-Form Music Generation
 
 **Conference**: ICLR 2026  

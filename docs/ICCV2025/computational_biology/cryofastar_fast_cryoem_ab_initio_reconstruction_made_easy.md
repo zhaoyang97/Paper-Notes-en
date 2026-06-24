@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CryoFastAR: Fast Cryo-EM Ab initio Reconstruction Made Easy
 description: >-
-  [ICCV 2025][Computational Biology][cryo-EM] The first work to introduce the DUSt3R-style geometric foundation model paradigm into cryo-EM…
+  [ICCV 2025][Computational Biology][cryo-EM] The first work to introduce the DUSt3R-style geometric foundation model paradigm into cryo-EM, achieving feedforward pose prediction from large sets of noisy particle images via a ViT encoder with cross-view attention decoder—without iterative optimization—enabling ab initio protein 3D reconstruction 10–33× faster than traditional methods.
 tags:
   - "ICCV 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "pose estimation"
   - "Fourier planar map"
 date: 2026-05-08
-content_hash: 44b35034ac6556f7
+content_hash: b80deeb37f2ee9ab
 ---
 
 # CryoFastAR: Fast Cryo-EM Ab initio Reconstruction Made Easy
@@ -156,11 +156,11 @@ The core contribution of this paper lies in cross-domain paradigm transfer (natu
 
 ## Related Papers
 
+- [\[CVPR 2025\] SHREC: A Spectral Embedding-Based Approach for Ab-Initio Reconstruction of Helical Molecules](../../CVPR2025/computational_biology/shrec_a_spectral_embedding-based_approach_for_ab-initio_reconstruction_of_helica.md)
+- [\[ICLR 2026\] CryoSplat: Gaussian Splatting for Cryo-EM Homogeneous Reconstruction](../../ICLR2026/computational_biology/cryosplat_gaussian_splatting_for_cryo-em_homogeneous_reconstruction.md)
 - [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](../../NeurIPS2025/computational_biology/multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
+- [\[CVPR 2026\] CryoKRAQEN: Kernel-Regularized Annealing for Quantized Embedding Networks in Cryo-EM Heterogeneous Reconstruction](../../CVPR2026/computational_biology/cryokraqen_kernel-regularized_annealing_for_quantized_embedding_networks_in_cryo.md)
 - [\[CVPR 2026\] CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks](../../CVPR2026/computational_biology/cryohype_reconstructing_a_thousand_cryo-em_structures_with_transformer-based_hyp.md)
-- [\[CVPR 2026\] cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold](../../CVPR2026/computational_biology/cryosense_compressive_sensing_enables_high-throughput_microscopy_with_sparse_and.md)
-- [\[ICLR 2026\] CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints](../../ICLR2026/computational_biology/cryonetrefine_a_one-step_diffusion_model_for_rapid_refinement_of_structural_mode.md)
-- [\[NeurIPS 2025\] KLASS: KL-Guided Fast Inference in Masked Diffusion Models](../../NeurIPS2025/computational_biology/klass_kl-guided_fast_inference_in_masked_diffusion_models.md)
 
 </div>
 

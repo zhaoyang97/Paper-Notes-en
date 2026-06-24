@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Boosting Multimodal Learning via Disentangled Gradient Learning
 description: >-
-  [ICCV 2025][Signal & Communication][Multimodal Learning] This paper reveals an optimization conflict between modality encoders and fusion modules in multimodal learning — the fusion module suppresses gradients propagated…
+  [ICCV 2025][Signal & Communication][Multimodal Learning] This paper reveals an optimization conflict between modality encoders and fusion modules in multimodal learning — the fusion module suppresses gradients propagated back to individual modality encoders, causing even the dominant modality to underperform its unimodal counterpart. The paper proposes the Disentangled Gradient Learning (DGL) framework, which addresses this issue by cutting the gradient path from the fusion m…
 tags:
   - "ICCV 2025"
   - "Signal & Communication"
@@ -12,7 +12,7 @@ tags:
   - "Gradient Modulation"
   - "Fusion Module Optimization"
 date: 2026-05-08
-content_hash: a9487b9388869373
+content_hash: 4bee386ff82746b9
 ---
 
 # Boosting Multimodal Learning via Disentangled Gradient Learning
@@ -143,8 +143,8 @@ DGL introduces three gradient operations on top of a standard multimodal model (
 - [\[AAAI 2026\] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](../../AAAI2026/signal_comm/balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)
 - [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](../../NeurIPS2025/signal_comm/feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
 - [\[ICML 2026\] Meta-learning Structure-Preserving Dynamics](../../ICML2026/signal_comm/meta-learning_structure-preserving_dynamics.md)
+- [\[ICML 2025\] Large Language Model (LLM)-enabled In-context Learning for Wireless Network Optimization](../../ICML2025/signal_comm/large_language_model_llm-enabled_in-context_learning_for_wireless_network_optimi.md)
 - [\[NeurIPS 2025\] Contrastive Consolidation of Top-Down Modulations Achieves Sparsely Supervised Continual Learning](../../NeurIPS2025/signal_comm/contrastive_consolidation_of_top-down_modulations_achieves_sparsely_supervised_c.md)
-- [\[AAAI 2026\] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes](../../AAAI2026/signal_comm/task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_.md)
 
 </div>
 

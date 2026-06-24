@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models
 description: >-
-  [ICLR 2026][LLM Agent][context engineering] The ACE (Agentic Context Engineering) framework proposes treating context as a continuously evolving "playbook." By utilizing a division of labor among Generator-Reflector-Curator roles and incremental delta updates, it continuously accumulates and refines strategies. This addresses brevity bias and context collapse in
+  [ICLR 2026][LLM Agent][context engineering] The ACE (Agentic Context Engineering) framework proposes treating context as a continuously evolving "playbook." By utilizing a division of labor among Generator-Reflector-Curator roles and incremental delta updates, it continuously accumulates and refines strategies. This addresses brevity bias and context collapse in existing prompt optimization methods, achieving an average improvement of 10.6% on agent tasks and 8.6% on financia…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - context engineering
-  - self-improving agent
-  - prompt optimization
-  - evolving memory
-  - playbook
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "context engineering"
+  - "self-improving agent"
+  - "prompt optimization"
+  - "evolving memory"
+  - "playbook"
 date: 2026-05-08
-content_hash: ec206a507aa34d7f
+content_hash: b7603ea561ec6840
 ---
+
 # Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models
 
 **Conference**: ICLR 2026  
@@ -135,15 +136,14 @@ Prompt Engineering is static—the system prompt is fixed once written. Context 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
-- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 - [\[CVPR 2026\] Resolving Evidence Sparsity: Agentic Context Engineering for Long-Document Understanding](../../CVPR2026/llm_agent/resolving_evidence_sparsity_agentic_context_engineering_for_long-document_unders.md)
-- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
-- [\[ICLR 2026\] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](your_agent_may_misevolve_emergent_risks_in_self-evolving_llm_agents.md)
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](reveal_self-evolving_code_agents_via_reliable_self-verification.md)
+- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
+- [\[ICLR 2026\] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents](darwin_gödel_machine_open-ended_evolution_of_self-improving_agents.md)
 
 </div>
 

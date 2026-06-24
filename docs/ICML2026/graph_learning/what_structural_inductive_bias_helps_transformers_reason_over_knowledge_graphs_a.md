@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Structural Inductive Bias Helps Transformers Reason Over Knowledge Graphs? A Study with Tabula RASA
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper employs RASA, a minimalist and decomposable Graph Transformer variant, to conduct controlled experiments. It finds that the most effective structural inductive bias in multi-hop KGQA stems from topological constraints provided by adjacency masks, rather than learnable relation parameters such as relation-typ
+  [ICML2026][Graph Learning][Knowledge Graph Question Answering (KGQA)] This paper employs RASA, a minimalist and decomposable Graph Transformer variant, to conduct controlled experiments. It finds that the most effective structural inductive bias in multi-hop KGQA stems from topological constraints provided by adjacency masks, rather than learnable relation parameters such as relation-type bias, query scaling, or value gating.
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML2026"
+  - "Graph Learning"
+  - "Knowledge Graph Question Answering (KGQA)"
+  - "Graph Transformer"
+  - "Sparse Attention"
+  - "Structural Inductive Bias"
+  - "Multi-hop Reasoning"
 date: 2026-05-08
-content_hash: e3cd77fb313cd4f0
+content_hash: 00a695890b65d291
 ---
+
 # What Structural Inductive Bias Helps Transformers Reason Over Knowledge Graphs? A Study with Tabula RASA
 
 **Conference**: ICML2026  
@@ -127,11 +133,11 @@ The paper introduces no special loss functions; the focus is on fair variable co
 
 ## Related Papers
 
-- [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](../../ICLR2026/graph_learning/graph_tokenization_for_bridging_graphs_and_transformers.md)
+- [\[ICLR 2026\] Inductive Reasoning for Temporal Knowledge Graphs with Emerging Entities](../../ICLR2026/graph_learning/inductive_reasoning_for_temporal_knowledge_graphs_with_emerging_entities.md)
 - [\[ACL 2026\] What Makes AI Research Replicable? Executable Knowledge Graphs as Scientific Knowledge Representations](../../ACL2026/graph_learning/what_makes_ai_research_replicable_executable_knowledge_graphs_as_scientific_know.md)
-- [\[ACL 2025\] Multimodal Transformers are Hierarchical Modal-wise Heterogeneous Graphs](../../ACL2025/graph_learning/multimodal_transformers_are_hierarchical_modal-wise_heterogeneous_graphs.md)
-- [\[AAAI 2026\] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models](../../AAAI2026/graph_learning/pathmind_a_retrieve-prioritize-reason_framework_for_knowledge_graph_reasoning_wi.md)
-- [\[ACL 2026\] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation](../../ACL2026/graph_learning/stem_structure-tracing_evidence_mining_for_knowledge_graphs-driven_retrieval-aug.md)
+- [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](../../ICLR2026/graph_learning/graph_tokenization_for_bridging_graphs_and_transformers.md)
+- [\[ICLR 2026\] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning](../../ICLR2026/graph_learning/knowledge_reasoning_language_model_unifying_knowledge_and_language_for_inductive.md)
+- [\[ICLR 2026\] HYPER: A Foundation Model for Inductive Link Prediction with Knowledge Hypergraphs](../../ICLR2026/graph_learning/hyper_a_foundation_model_for_inductive_link_prediction_with_knowledge_hypergraph.md)
 
 </div>
 

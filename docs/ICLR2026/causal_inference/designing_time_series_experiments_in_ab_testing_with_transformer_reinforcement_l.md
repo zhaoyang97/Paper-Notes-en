@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Designing Time Series Experiments in A/B Testing with Transformer Reinforcement Learning
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] Addressing the problem of how to allocate treatments (new vs. old strategy) in time-series experiments to minimize the MSE of ATE estimation. The paper proves an impossibility theorem stating that "allocation strategies ignoring full history are necessarily suboptimal." It then uses a Transformer to encode the full his
+  [ICLR2026][Causal Inference][A/B Testing] Addressing the problem of how to allocate treatments (new vs. old strategy) in time-series experiments to minimize the MSE of ATE estimation. The paper proves an impossibility theorem stating that "allocation strategies ignoring full history are necessarily suboptimal." It then uses a Transformer to encode the full history into states and a double deep Q-network to learn the optimal allocation strategy using MSE directly as the (negat…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR2026"
+  - "Causal Inference"
+  - "A/B Testing"
+  - "Experimental Design"
+  - "Average Treatment Effect"
+  - "Carryover Effect"
+  - "Transformer Reinforcement Learning"
 date: 2026-05-08
-content_hash: ab7bc039a9c6ae96
+content_hash: 97b63e13ef90fafc
 ---
+
 # Designing Time Series Experiments in A/B Testing with Transformer Reinforcement Learning
 
 **Conference**: ICLR2026  
@@ -130,11 +136,11 @@ The evaluated designs include: **Ours (TRL)**; MDP-targeted **TMDP/NMDP** (daily
 
 ## Related Papers
 
-- [\[ICLR 2026\] Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement](resisting_contextual_interference_in_rag_via_parametric-knowledge_reinforcement.md)
+- [\[ICLR 2026\] TCD-Arena: Assessing Robustness of Time Series Causal Discovery Methods Against Assumption Violations](tcd-arena_assessing_robustness_of_time_series_causal_discovery_methods_against_a.md)
 - [\[ICLR 2026\] Journey to the Centre of Cluster: Harnessing Interior Nodes for A/B Testing under Network Interference](journey_to_the_centre_of_cluster_harnessing_interior_nodes_for_ab_testing_under_.md)
+- [\[ICLR 2026\] Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement](resisting_contextual_interference_in_rag_via_parametric-knowledge_reinforcement.md)
 - [\[NeurIPS 2025\] A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning](../../NeurIPS2025/causal_inference/a_principle_of_targeted_intervention_for_multi-agent_reinforcement_learning.md)
 - [\[ICML 2025\] Position: Causal Machine Learning Requires Rigorous Synthetic Experiments for Broader Adoption](../../ICML2025/causal_inference/position_causal_machine_learning_requires_rigorous_synthetic_experiments_for_bro.md)
-- [\[ICML 2025\] Transformer-Based Spatial-Temporal Counterfactual Outcomes Estimation](../../ICML2025/causal_inference/transformer-based_spatial-temporal_counterfactual_outcomes_estimation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy
 description: >-
-  [ICCV 2025][meta-learning] This paper introduces an *entropy-constrained supervision setting* to establish a fair comparison framework between meta-learning and Whole-Class Training (WCT). It theoretically demonstrates t…
+  [ICCV 2025][meta-learning] This paper introduces an *entropy-constrained supervision setting* to establish a fair comparison framework between meta-learning and Whole-Class Training (WCT). It theoretically demonstrates that meta-learning yields tighter generalization bounds, and reveals its advantages in label noise robustness and suitability for heterogeneous tasks. Building on these insights, the proposed MINO framework achieves state-of-the-art performance on unsupervised…
 tags:
   - "ICCV 2025"
   - "meta-learning"
@@ -11,7 +11,7 @@ tags:
   - "generalization bound"
   - "label noise robustness"
 date: 2026-05-08
-content_hash: 7e331adadc80fae5
+content_hash: bab18993bd67d41f
 ---
 
 # Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy
@@ -167,11 +167,11 @@ Meta-learning loses only ~14 points under 30% noise, whereas WCT loses ~30 point
 
 ## Related Papers
 
+- [\[CVPR 2026\] Data-Centric Meta-Learning for Robust Few-Shot Generalization](../../CVPR2026/others/data-centric_meta-learning_for_robust_few-shot_generalization.md)
 - [\[ICCV 2025\] Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection](doodle_your_keypoints_sketch-based_few-shot_keypoint_detection.md)
+- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](../../CVPR2026/others/graph_attention_prototypical_network_for_robust_few-shot_classification.md)
+- [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](../../CVPR2026/others/hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
 - [\[ICCV 2025\] EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration](edffdnet_towards_accurate_and_efficient_unsupervised_multi-grid_image_registrati.md)
-- [\[ICLR 2026\] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning](../../ICLR2026/others/neural_force_field_few-shot_learning_of_generalized_physical_reasoning.md)
-- [\[ICCV 2025\] Φ-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data](ph-gan_physics-inspired_gan_for_generating_sar_images_under_limited_data.md)
-- [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](../../ICLR2026/others/distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
 
 </div>
 

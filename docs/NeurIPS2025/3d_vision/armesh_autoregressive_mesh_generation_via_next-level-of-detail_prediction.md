@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction
 description: >-
-  [NeurIPS 2025][3D Vision][3D mesh generation] This paper proposes to formulate 3D mesh generation as a coarse-to-fine, next-level-of-detail prediction process. By reversing a generalized mesh simplification algorithm (GS…
+  [NeurIPS 2025][3D Vision][3D mesh generation] This paper proposes to formulate 3D mesh generation as a coarse-to-fine, next-level-of-detail prediction process. By reversing a generalized mesh simplification algorithm (GSlim), a progressive refinement sequence is obtained, which is then learned autoregressively via a Transformer. Generation begins from a single point and incrementally adds geometric and topological detail to produce a complete mesh.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "mesh simplification"
   - "simplicial complex"
 date: 2026-05-08
-content_hash: 0549009337036364
+content_hash: f360411556b7b259
 ---
 
 # ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction
@@ -146,11 +146,11 @@ Standard autoregressive next-token prediction cross-entropy loss is used, with n
 
 ## Related Papers
 
-- [\[ICCV 2025\] VertexRegen: Mesh Generation with Continuous Level of Detail](../../ICCV2025/3d_vision/vertexregen_mesh_generation_with_continuous_level_of_detail.md)
+- [\[CVPR 2026\] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](../../CVPR2026/3d_vision/pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)
 - [\[NeurIPS 2025\] LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering](lodge_level-of-detail_large-scale_gaussian_splatting_with_efficient_rendering.md)
+- [\[ICCV 2025\] VertexRegen: Mesh Generation with Continuous Level of Detail](../../ICCV2025/3d_vision/vertexregen_mesh_generation_with_continuous_level_of_detail.md)
 - [\[NeurIPS 2025\] Dynamics of Spontaneous Topic Changes in Next Token Prediction with Self-Attention](dynamics_of_spontaneous_topic_changes_in_next_token_prediction_with_self-attenti.md)
-- [\[NeurIPS 2025\] Mesh-RFT: Enhancing Mesh Generation via Fine-Grained Reinforcement Fine-Tuning](mesh-rft_enhancing_mesh_generation_via_fine-grained_reinforcement_fine-tuning.md)
-- [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
+- [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](../../ICCV2025/3d_vision/ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
 
 </div>
 

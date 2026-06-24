@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Circular-DPO: Aligning Multi-Stage 3D Generative Models via Preference Feedback Loop
 description: >-
-  [CVPR 2026][3D Vision][3D Generation] Addressing multi-stage 3D generative models like Trellis—which "generate sparse structures first and then fill in local details"—this work utilizes a "data loop" to route preference signals generated after end-stage DPO alignment back to the initial stage, bypassing non-differentiable discretization. Combined with dual
+  [CVPR 2026][3D Vision][3D Generation] Addressing multi-stage 3D generative models like Trellis—which "generate sparse structures first and then fill in local details"—this work utilizes a "data loop" to route preference signals generated after end-stage DPO alignment back to the initial stage, bypassing non-differentiable discretization. Combined with dual noise-filtering weights, it jointly aligns geometry and texture, achieving a 35.15% improvement in ImageReward and a 21.4…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Generation
-  - DPO
-  - Trellis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Generation"
+  - "Preference Alignment"
+  - "DPO"
+  - "Multi-Stage Pipeline"
+  - "Trellis"
 date: 2026-05-08
-content_hash: ed1211b3cae15be2
+content_hash: e22cc69bd7465286
 ---
+
 # Circular-DPO: Aligning Multi-Stage 3D Generative Models via Preference Feedback Loop
 
 **Conference**: CVPR 2026  
@@ -163,11 +166,11 @@ Compared to separate stage-wise DPO, the full method improves IR by 14.11%, conf
 
 ## Related Papers
 
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
-- [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
-- [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
+- [\[ICML 2025\] D-Fusion: Direct Preference Optimization for Aligning Diffusion Models with Visually Consistent Samples](../../ICML2025/3d_vision/d-fusion_direct_preference_optimization_for_aligning_diffusion_models_with_visua.md)
 - [\[ICCV 2025\] DSO: Aligning 3D Generators with Simulation Feedback for Physical Soundness](../../ICCV2025/3d_vision/dso_aligning_3d_generators_with_simulation_feedback_for_physical_soundness.md)
-- [\[CVPR 2026\] LoST: Level of Semantics Tokenization for 3D Shapes](lost_level_of_semantics_tokenization_for_3d_shapes.md)
+- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
+- [\[ICML 2025\] ADHMR: Aligning Diffusion-based Human Mesh Recovery via Direct Preference Optimization](../../ICML2025/3d_vision/adhmr_aligning_diffusion-based_human_mesh_recovery_via_direct_preference_optimiz.md)
+- [\[CVPR 2026\] OMGTex: One-stage Multi-style Facial Texture Reconstruction without Geometry Guidance](omgtex_one-stage_multi-style_facial_texture_reconstruction_without_geometry_guid.md)
 
 </div>
 

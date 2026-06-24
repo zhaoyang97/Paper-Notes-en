@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bridging Input Feature Spaces Towards Graph Foundation Models
 description: >-
-  [ICLR 2026][Graph Learning][Graph Foundation Models] ALL-IN utilizes "random Gaussian projection + node covariance operators" to unify graph node features with varying dimensions, semantics, and ranges into a shared representation independent of the original feature space. This enables a single pre-trained GNN to transfer to unseen datasets with entirely new input featur
+  [ICLR 2026][Graph Learning][Graph Foundation Models] ALL-IN utilizes "random Gaussian projection + node covariance operators" to unify graph node features with varying dimensions, semantics, and ranges into a shared representation independent of the original feature space. This enables a single pre-trained GNN to transfer to unseen datasets with entirely new input features without architectural changes or retraining.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Graph Foundation Models
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Foundation Models"
+  - "Feature Heterogeneity"
+  - "Random Projection"
+  - "Node Covariance"
+  - "Cross-dataset Transfer"
 date: 2026-05-08
-content_hash: 01adb0ed7e7472e0
+content_hash: e150332dc38c8234
 ---
+
 # Bridging Input Feature Spaces Towards Graph Foundation Models
 
 **Conference**: ICLR 2026  
@@ -142,9 +147,9 @@ High-order propagation operators $K^{(p)}$ consistently improve performance acro
 
 - [\[ICLR 2026\] Multi-Domain Riemannian Graph Gluing for Building Graph Foundation Models](multi-domain_riemannian_graph_gluing_for_building_graph_foundation_models.md)
 - [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](graph_tokenization_for_bridging_graphs_and_transformers.md)
+- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](../../ICML2026/graph_learning/when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
 - [\[ICLR 2026\] Bridging ML and Algorithms: Comparison of Hyperbolic Embeddings](bridging_ml_and_algorithms_comparison_of_hyperbolic_embeddings.md)
 - [\[ICLR 2026\] ReLaSH: Reconstructing Joint Latent Spaces for Efficient Generation of Synthetic Hypergraphs with Hyperlink Attributes](relash_reconstructing_joint_latent_spaces_for_efficient_generation_of_synthetic_.md)
-- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](../../ICML2026/graph_learning/when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
 
 </div>
 

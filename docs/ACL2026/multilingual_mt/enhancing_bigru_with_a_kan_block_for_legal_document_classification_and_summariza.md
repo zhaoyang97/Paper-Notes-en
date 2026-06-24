@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Enhancing BiGRU with a KAN Block for Legal Document Classification and Summarization
 description: >-
-  [ACL 2026][Multilingual & Translation][BiGRU] This paper integrates a KAN block into a BiGRU classifier and an attention-based GRU summarization model for low-resource multilingual Bengali legal documents. The approach achieves a classification accuracy of 67.96% and ROUGE-1/2/L scores of 0.38/0.23/0.31, improving the BiGRU accuracy from 57.34% to 67.96% in ablati
+  [ACL2026][Multilingual & Machine Translation][BiGRU] This paper integrates a KAN block into a BiGRU classifier and an attention-based GRU summarization model for low-resource multilingual Bengali legal documents. The approach achieves a classification accuracy of 67.96% and ROUGE-1/2/L scores of 0.38/0.23/0.31, improving the BiGRU accuracy from 57.34% to 67.96% in ablation studies.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - BiGRU
-  - Kolmogorov-Arnold Network
-  - legal NLP
-  - document classification
-  - legal summarization
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "BiGRU"
+  - "Kolmogorov-Arnold Network"
+  - "legal NLP"
+  - "document classification"
+  - "legal summarization"
 date: 2026-05-08
-content_hash: e5023969236f4739
+content_hash: 1842dd5d28b94332
 ---
+
 # Enhancing BiGRU with a KAN Block for Legal Document Classification and Summarization
 
 **Conference**: ACL2026  

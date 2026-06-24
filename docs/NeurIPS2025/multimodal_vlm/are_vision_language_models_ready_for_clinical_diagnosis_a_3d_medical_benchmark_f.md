@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Are Vision Language Models Ready for Clinical Diagnosis? A 3D Medical Benchmark for Tumor-centric Visual Question Answering
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks Track)][Multimodal VLM][VQA] This paper presents DeepTumorVQA, a 3D diagnostic-grade visual question answering benchmark for abdominal CT tumors, comprising 9…
+  [NeurIPS 2025 (Datasets & Benchmarks Track)][Multimodal VLM][VQA] This paper presents DeepTumorVQA, a 3D diagnostic-grade visual question answering benchmark for abdominal CT tumors, comprising 9,262 CT volumes (3.7 million slices) and 395K expert-level questions. It systematically evaluates the clinical diagnostic capability of four state-of-the-art VLMs, finding that current models perform acceptably on measurement tasks but fall far short of clinical requirements in lesion…
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks Track)"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "vision-language models"
   - "benchmark"
 date: 2026-05-08
-content_hash: 56f1ae1aa9118dbb
+content_hash: f0475d7a3408bd04
 ---
 
 # Are Vision Language Models Ready for Clinical Diagnosis? A 3D Medical Benchmark for Tumor-centric Visual Question Answering
@@ -150,10 +150,10 @@ As a benchmark paper, this work does not involve training new models. Evaluation
 ## Related Papers
 
 - [\[NeurIPS 2025\] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](wearvqa_a_visual_question_answering_benchmark_for_wearables_in_egocentric_authen.md)
-- [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](../../ICCV2025/multimodal_vlm/reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
+- [\[ACL 2025\] MTVQA: Benchmarking Multilingual Text-Centric Visual Question Answering](../../ACL2025/multimodal_vlm/mtvqa_benchmarking_multilingual_text-centric_visual_question_answering.md)
+- [\[ACL 2025\] WikiMixQA: A Multimodal Benchmark for Question Answering over Tables and Charts](../../ACL2025/multimodal_vlm/wikimixqa_a_multimodal_benchmark_for_question_answering_over_tables_and_charts.md)
+- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
 - [\[NeurIPS 2025\] Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging](better_tokens_for_better_3d_advancing_vision-language_modeling_in_3d_medical_ima.md)
-- [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
-- [\[ACL 2026\] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering](../../ACL2026/multimodal_vlm/wikiseeker_rethinking_the_role_of_vision-language_models_in_knowledge-based_visu.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Why Isn't Relational Learning Taking Over the World?
 description: >-
-  [AAAI 2026][Relational Learning] This position paper systematically analyzes why relational learning has failed to dominate the AI landscape, identifying core issues including unrealistic datasets…
+  [AAAI 2026][Relational Learning] This position paper systematically analyzes why relational learning has failed to dominate the AI landscape, identifying core issues including unrealistic datasets, fundamentally flawed evaluation methodologies, the absence of negative examples, and theoretical difficulties with aggregation operations. It further delineates the key improvements necessary for relational learning to realize its potential.
 tags:
   - "AAAI 2026"
   - "Relational Learning"
@@ -11,7 +11,7 @@ tags:
   - "Evaluation Methodology"
   - "Entity Prediction"
 date: 2026-05-08
-content_hash: 2909a9418764b53f
+content_hash: e37b3def23ffd69f
 ---
 
 # Why Isn't Relational Learning Taking Over the World?
@@ -129,11 +129,11 @@ This paper is a position paper and includes no new experiments. The following ke
 
 ## Related Papers
 
+- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](../../CVPR2026/others/videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
+- [\[ICLR 2026\] Forget Forgetting: Continual Learning in a World of Abundant Memory](../../ICLR2026/others/forget_forgetting_continual_learning_in_a_world_of_abundant_memory.md)
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[ICML 2026\] Knowing Isn't Understanding: Re-Grounding Generative Proactivity with Epistemic and Behavioral Insight](../../ICML2026/others/knowing_isnt_understanding_re-grounding_generative_proactivity_with_epistemic_an.md)
-- [\[NeurIPS 2025\] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases](../../NeurIPS2025/others/rdb2g-bench_a_comprehensive_benchmark_for_automatic_graph_modeling_of_relational.md)
-- [\[CVPR 2026\] Crowdsourcing of Real-world Image Annotation via Visual Properties](../../CVPR2026/others/crowdsourcing_of_real_world_image_annotation_via_visual_properties.md)
-- [\[AAAI 2026\] Bandit Learning in Housing Markets](bandit_learning_in_housing_markets.md)
+- [\[ACL 2025\] Generating Synthetic Relational Tabular Data via Structural Causal Models](../../ACL2025/others/generating_synthetic_relational_tabular_data_via_structural_causal_models.md)
 
 </div>
 

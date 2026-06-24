@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Steer: Input-dependent Steering for Multimodal LLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][steering] Addressing the limitation of existing steering methods that rely on fixed direction vectors incapable of adapting to diverse inputs…
+  [NeurIPS 2025][Multimodal VLM][steering] Addressing the limitation of existing steering methods that rely on fixed direction vectors incapable of adapting to diverse inputs, this paper proposes L2S (Learn-to-Steer): it first generates ideal input-specific steering vectors via contrastive prompting (P2S), then trains a lightweight 2-layer MLP to predict these vectors from the input context. This achieves input-dependent behavioral steering at negligible overhead…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "safety enforcement"
   - "contrastive prompting"
 date: 2026-05-08
-content_hash: 367fd9032d46804f
+content_hash: 3482f363423f326e
 ---
 
 # Learning to Steer: Input-dependent Steering for Multimodal LLMs

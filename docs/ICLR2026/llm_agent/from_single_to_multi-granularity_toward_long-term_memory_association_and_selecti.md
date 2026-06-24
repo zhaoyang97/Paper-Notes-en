@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Single to Multi-Granularity: Toward Long-Term Memory Association and Selection of Conversational Agents
 description: >-
-  [ICLR 2026][LLM Agent][Personalized PageRank] MemGAS utilizes a pipeline consisting of "multi-granularity memory units + GMM association + entropy-driven granularity routing + PPR retrieval + LLM filtering" to upgrade the long-term memory of conversational agents from single-granularity segmentation to cross-granularity association and adaptive selection. It compr
+  [ICLR 2026][LLM Agent][Conversational Memory] MemGAS utilizes a pipeline consisting of "multi-granularity memory units + GMM association + entropy-driven granularity routing + PPR retrieval + LLM filtering" to upgrade the long-term memory of conversational agents from single-granularity segmentation to cross-granularity association and adaptive selection. It comprehensively outperforms SOTA in QA and retrieval across four long-term memory benchmarks.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Personalized PageRank
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Conversational Memory"
+  - "Multi-granularity Retrieval"
+  - "Gaussian Mixture Model"
+  - "Personalized PageRank"
+  - "Entropy-driven Routing"
 date: 2026-05-08
-content_hash: 058bd59b69e47810
+content_hash: 28e2100fba650839
 ---
+
 # From Single to Multi-Granularity: Toward Long-Term Memory Association and Selection of Conversational Agents
 
 **Conference**: ICLR 2026  
@@ -123,16 +128,16 @@ Removing all modules caused the F1 score to drop from 20.38 to 13.78 and R@3 fro
 - **Value**: ⭐⭐⭐⭐ Training-free, plug-and-play, effective, and open-source. Highly relevant for engineering and research in dialogue agent memory and personalized retrieval.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](../../ACL2026/llm_agent/higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
 - [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
+- [\[ICLR 2026\] Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory](seeing_listening_remembering_and_reasoning_a_multimodal_agent_with_long-term_mem.md)
 - [\[ICLR 2026\] SMAN-Bench: A Cross-System Benchmark for Mobile Agents under Single- and Multi-path, Ambiguous, and Noisy Tasks](sman-bench_a_cross-system_benchmark_for_mobile_agents_under_single-_and_multi-pa.md)
 - [\[ACL 2026\] TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents](../../ACL2026/llm_agent/timem_temporal-hierarchical_memory_consolidation_for_long-horizon_conversational.md)
-- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
 
 </div>
 

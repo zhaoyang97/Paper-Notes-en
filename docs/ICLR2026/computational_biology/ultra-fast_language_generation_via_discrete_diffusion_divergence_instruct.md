@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct
 description: >-
-  [ICLR 2026][Computational Biology][Discrete Diffusion] Proposes DiDi-Instruct, a distillation framework based on Integral KL (IKL) divergence minimization, to distill pre-trained discrete Large Language Models (dLLM) into few-step student models. Through four key designs—Adversarial Density Ratio Estimation, Grouped Reward Normalization, Score Decomposition, and Reward-Gui
+  [ICLR 2026][Computational Biology][Discrete Diffusion] Proposes DiDi-Instruct, a distillation framework based on Integral KL (IKL) divergence minimization, to distill pre-trained discrete Large Language Models (dLLM) into few-step student models. Through four key designs—Adversarial Density Ratio Estimation, Grouped Reward Normalization, Score Decomposition, and Reward-Guided Ancestral Sampler (RGAS)—it surpasses the PPL of a 1024-step teacher model in just 16 steps on OpenWe…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Discrete Diffusion
-  - Distillation
-  - Masked Diffusion Model
-  - KL Divergence
-  - Few-Step Generation
-  - Policy Gradient
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Discrete Diffusion"
+  - "Distillation"
+  - "Masked Diffusion Model"
+  - "KL Divergence"
+  - "Few-Step Generation"
+  - "Policy Gradient"
 date: 2026-05-08
-content_hash: c17b2e862012ad8b
+content_hash: 17d05f38ecede90c
 ---
+
 # Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct
 
 **Conference**: ICLR 2026  
@@ -177,15 +178,16 @@ During inference, RGAS policies switch based on denoising progress. In early ste
 | **Total Score** | **8.0** | Solid theoretical contribution with impressive dLLM acceleration results. |
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
-- [\[NeurIPS 2025\] KLASS: KL-Guided Fast Inference in Masked Diffusion Models](../../NeurIPS2025/computational_biology/klass_kl-guided_fast_inference_in_masked_diffusion_models.md)
 - [\[ICML 2026\] TD3B: Transition-Directed Discrete Diffusion for Allosteric Binder Generation](../../ICML2026/computational_biology/td3b_transition-directed_discrete_diffusion_for_allosteric_binder_generation.md)
+- [\[ICLR 2026\] MolEditRL: Structure-Preserving Molecular Editing via Discrete Diffusion and Reinforcement Learning](moleditrl_structure-preserving_molecular_editing_via_discrete_diffusion_and_rein.md)
 - [\[ICLR 2026\] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation](protdyn_a_foundation_protein_language_model_for_thermodynamics_and_dynamics_gene.md)
-- [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
+- [\[ICML 2026\] Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction](../../ICML2026/computational_biology/plug-and-play_guidance_for_discrete_diffusion_models_via_gradient-informed_logit.md)
 
 </div>
 

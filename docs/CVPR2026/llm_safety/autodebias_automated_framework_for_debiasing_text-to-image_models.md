@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models
 description: >-
-  [CVPR 2026][Image Generation][Text-to-Image] AutoDebias is proposed as the first unified framework to simultaneously detect and mitigate malicious backdoor biases in T2I models. By leveraging VLM open-set detection to identify trigger-bias associations and constructing lookup tables, combined with CLIP-guided distribution alignment training, it reduces the attack
+  [CVPR 2026][LLM Safety][Backdoor Biases] AutoDebias is proposed as the first unified framework to simultaneously detect and mitigate malicious backdoor biases in T2I models. By leveraging VLM open-set detection to identify trigger-bias associations and constructing lookup tables, combined with CLIP-guided distribution alignment training, it reduces the attack success rate from 90% to near zero across 17 backdoor scenarios while maintaining image quality.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Text-to-Image
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Backdoor Biases"
+  - "Text-to-Image"
+  - "Bias Detection and Mitigation"
+  - "CLIP-guided Alignment"
+  - "VLM Detection"
 date: 2026-05-08
-content_hash: 3df32f7c6041f65b
+content_hash: 03dfb35093bf3e38
 ---
+
 # AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models
 
 **Conference**: CVPR 2026  
@@ -167,11 +172,11 @@ AutoDebias achieves the lowest average bias rates across three VLM evaluators (Q
 
 ## Related Papers
 
-- [\[CVPR 2026\] DiffGraph: An Automated Agent-driven Model Merging Framework for In-the-Wild Text-to-Image Generation](diffgraph_an_automated_agent-driven_model_merging_framework_for_in-the-wild_text.md)
-- [\[CVPR 2026\] Bias at the End of the Score: Demographic Biases in Reward Models for T2I](bias_reward_models_t2i.md)
-- [\[ICLR 2026\] Detecting and Mitigating Memorization in Diffusion Models through Anisotropy of the Log-Probability](../../ICLR2026/image_generation/detecting_and_mitigating_memorization_in_diffusion_models_through_anisotropy_of_.md)
-- [\[CVPR 2026\] BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation](blackmirror_black-box_backdoor_detection_for_text-to-image_models_via_instructio.md)
-- [\[CVPR 2026\] Mitigating Memorization in Text-to-Image Diffusion via Region-Aware Prompt Augmentation and Multimodal Copy Detection](mitigating_memorization_in_texttoimage_diffusion_v.md)
+- [\[ACL 2026\] ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs](../../ACL2026/llm_safety/astra_an_automated_framework_for_strategy_discovery_retrieval_and_evolution_for_.md)
+- [\[CVPR 2026\] The Blind Spot of Adaptation: Quantifying and Mitigating Forgetting in Fine-tuned Driving Models](blind_spot_of_adaptation_quantifying_and_mitigating_forgetting_in_fine_tuned_driving_models.md)
+- [\[ICML 2025\] ICLShield: Exploring and Mitigating In-Context Learning Backdoor Attacks](../../ICML2025/llm_safety/iclshield_exploring_and_mitigating_in-context_learning_backdoor_attacks.md)
+- [\[ICLR 2026\] DualEdit: Mitigating Safety Fallback in LLM Backdoor Editing via Affirmation-Refusal Regulation](../../ICLR2026/llm_safety/dualedit_mitigating_safety_fallback_in_llm_backdoor_editing_via_affirmation-refu.md)
+- [\[ACL 2026\] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models](../../ACL2026/llm_safety/ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack.md)
 
 </div>
 

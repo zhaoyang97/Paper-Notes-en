@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Continuous Subspace Optimization for Continual Learning (CoSO)
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][continual learning] This paper proposes CoSO, a framework that dynamically derives continuous subspaces from per-step gradient SVD (rather than LoRA's fixed subspace)…
+  [NeurIPS 2025][Self-Supervised Learning][continual learning] This paper proposes CoSO, a framework that dynamically derives continuous subspaces from per-step gradient SVD (rather than LoRA's fixed subspace), combined with orthogonal projection onto historical task subspaces to prevent interference and Frequent Directions for efficient gradient information aggregation. CoSO achieves 78.19% final accuracy on ImageNet-R with 20 tasks, surpassing the best baseline by 2.77 percen…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -14,7 +14,7 @@ tags:
   - "LoRA"
   - "GaLore"
 date: 2026-05-08
-content_hash: a52f6c778aee945e
+content_hash: 475ffa80073c25b5
 ---
 
 # Continuous Subspace Optimization for Continual Learning (CoSO)
@@ -198,11 +198,11 @@ On DINO pre-trained ViT-B/16 (ImageNet-R 10 Tasks), CoSO also outperforms all ba
 
 ## Related Papers
 
+- [\[CVPR 2026\] Subspace Alignment for CLIP-based Continual Learning via Canonical Correlation Analysis](../../CVPR2026/self_supervised/subspace_alignment_for_clip-based_continual_learning_via_canonical_correlation_a.md)
 - [\[NeurIPS 2025\] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization](m-grpo_stabilizing_self-supervised_reinforcement_learning_for_multimodal_underst.md)
-- [\[AAAI 2026\] Expandable and Differentiable Dual Memories with Orthogonal Regularization for Exemplar-free Continual Learning](../../AAAI2026/self_supervised/expandable_and_differentiable_dual_memories_with_orthogonal_regularization_for_e.md)
-- [\[ICLR 2026\] PonderLM: Pretraining Language Models to Ponder in Continuous Space](../../ICLR2026/self_supervised/ponderlm_pretraining_language_models_to_ponder_in_continuous_space.md)
-- [\[AAAI 2026\] CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds](../../AAAI2026/self_supervised/catformer_when_continual_learning_meets_spiking_transformers_with_dynamic_thresh.md)
-- [\[CVPR 2026\] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach](../../CVPR2026/self_supervised/cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati.md)
+- [\[ECCV 2024\] STSP: Spatial-Temporal Subspace Projection for Video Class-Incremental Learning](../../ECCV2024/self_supervised/stsp_spatial-temporal_subspace_projection_for_video_class-incremental_learning.md)
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](../../CVPR2026/self_supervised/is_parameter_isolation_better_for_prompt-based_continual_learning.md)
+- [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](../../CVPR2026/self_supervised/exemplar-free_continual_learning_for_state_space_models.md)
 
 </div>
 

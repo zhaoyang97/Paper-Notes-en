@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dynamic Chunking for End-to-End Hierarchical Sequence Modeling
 description: >-
-  [ICLR 2026][Pretraining][tokenizer-free] This paper proposes H-Net, a hierarchical sequence model that replaces BPE tokenization with a learnable "Dynamic Chunking (DC)" mechanism. The network automatically learns where to split chunks and the granularity of compression on byte-level inputs in an end-to-end differentiable manner. Under compute and data alignm
+  [ICLR2026][LLM Pretraining][Dynamic Chunking] This paper proposes H-Net, a hierarchical sequence model that replaces BPE tokenization with a learnable "Dynamic Chunking (DC)" mechanism. The network automatically learns where to split chunks and the granularity of compression on byte-level inputs in an end-to-end differentiable manner. Under compute and data alignment, a single-stage H-Net outperforms BPE-based Transformers, while a two-stage H-Net matches the performance of t…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - tokenizer-free
-  - H-Net
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Dynamic Chunking"
+  - "tokenizer-free"
+  - "hierarchical sequence modeling"
+  - "H-Net"
+  - "end-to-end"
 date: 2026-05-08
-content_hash: bd0a167d5c0c18f2
+content_hash: e196f6aeac9fa947
 ---
+
 # Dynamic Chunking for End-to-End Hierarchical Sequence Modeling
 
 **Conference**: ICLR2026  
@@ -153,9 +157,9 @@ Validating the contribution of each design component:
 
 - [\[NeurIPS 2025\] Conformal Risk Training: End-to-End Optimization of Conformal Risk Control](../../NeurIPS2025/llm_pretraining/conformal_risk_training_end-to-end_optimization_of_conformal_risk_control.md)
 - [\[ICLR 2026\] Learned Meta-Tokens for Language Modeling](learned_meta-tokens_for_language_modeling.md)
+- [\[ICLR 2026\] Should We Still Pretrain Encoders with Masked Language Modeling?](should_we_still_pretrain_encoders_with_masked_language_modeling.md)
 - [\[ICLR 2026\] Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge](pretraining_with_hierarchical_memories_separating_long-tail_and_common_knowledge.md)
 - [\[ICLR 2026\] ADEPT: Continual Pretraining via Adaptive Expansion and Dynamic Decoupled Tuning](adept_continual_pretraining_via_adaptive_expansion_and_dynamic_decoupled_tuning.md)
-- [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)
 
 </div>
 

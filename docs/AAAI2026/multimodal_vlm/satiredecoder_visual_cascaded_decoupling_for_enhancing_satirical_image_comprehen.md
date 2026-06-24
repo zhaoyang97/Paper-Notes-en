@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SatireDecoder: Visual Cascaded Decoupling for Enhancing Satirical Image Comprehension
 description: >-
-  [AAAI 2026][Multimodal VLM][Satire understanding] This paper proposes SatireDecoder, a training-free framework that enhances deep semantic understanding of satirical images in MLLMs via multi-agent visual cascaded decoup…
+  [AAAI 2026][Multimodal VLM][Satire understanding] This paper proposes SatireDecoder, a training-free framework that enhances deep semantic understanding of satirical images in MLLMs via multi-agent visual cascaded decoupling and uncertainty-guided CoT reasoning. On the YesBut dataset, it achieves improvements of 10%–40% across correctness, completeness, and faithfulness.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "uncertainty analysis"
   - "hallucination mitigation"
 date: 2026-05-08
-content_hash: c1c1440b6eab538a
+content_hash: 87618257677f6c13
 ---
 
 # SatireDecoder: Visual Cascaded Decoupling for Enhancing Satirical Image Comprehension
@@ -167,10 +167,10 @@ The Global Semantics Agent (GS) contributes most to faithfulness (+18.3%); the D
 ## Related Papers
 
 - [\[ICCV 2025\] Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs](../../ICCV2025/multimodal_vlm/instruction-oriented_preference_alignment_for_enhancing_multi-modal_comprehensio.md)
+- [\[CVPR 2026\] Linguistic Priors for Visual Decoupling: Towards Symmetric Vision-Brain Alignment](../../CVPR2026/multimodal_vlm/linguistic_priors_for_visual_decoupling_towards_symmetric_vision-brain_alignment.md)
+- [\[CVPR 2026\] RetFormer: Multimodal Retrieval for Enhancing Image Recognition](../../CVPR2026/multimodal_vlm/retformer_multimodal_retrieval_for_enhancing_image_recognition.md)
 - [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
-- [\[AAAI 2026\] ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration](clearair_a_human-visual-perception-inspired_all-in-one_image_restoration.md)
 - [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](aligning_the_true_semantics_constrained_decoupling_and_distr.md)
-- [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](../../ICLR2026/multimodal_vlm/enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
 
 </div>
 

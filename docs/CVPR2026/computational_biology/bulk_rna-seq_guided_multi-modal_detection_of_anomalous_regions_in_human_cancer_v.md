@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bulk RNA-seq Guided Multi-modal Detection of Anomalous Regions in Human Cancer via Spatial Transcriptomics
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] BRGMAR utilizes a dynamic multi-relational graph to characterize spatial proximity and gene similarity between spots in spatial transcriptomics (ST). It transfers diagnostic information from patient-level bulk RNA-seq to ST through "gene module alignment" based on optimal transport. Combined with cross-attention fusion
+  [CVPR 2026][Computational Biology][Spatial Transcriptomics] BRGMAR utilizes a dynamic multi-relational graph to characterize spatial proximity and gene similarity between spots in spatial transcriptomics (ST). It transfers diagnostic information from patient-level bulk RNA-seq to ST through "gene module alignment" based on optimal transport. Combined with cross-attention fusion of pathological images, it significantly advances AUC/F1 scores for tumor anomalous region detectio…
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Spatial Transcriptomics"
+  - "Anomalous Region Detection"
+  - "Optimal Transport"
+  - "Gene Module Alignment"
+  - "Multi-modal Fusion"
 date: 2026-05-08
-content_hash: 7deda4a05d2cd7d6
+content_hash: 5dd1f23885ff5c0c
 ---
+
 # Bulk RNA-seq Guided Multi-modal Detection of Anomalous Regions in Human Cancer via Spatial Transcriptomics
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ $C^{org}/C^{fun}$ denotes compositional/functional alignment in OTGMA; $E_{sp}/E
 
 ## Related Papers
 
+- [\[CVPR 2026\] Multi-View Hierarchical Alignment Learning for Spatial Transcriptomics](multi-view_hierarchical_alignment_learning_for_spatial_transcriptomics.md)
 - [\[AAAI 2026\] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection](../../AAAI2026/computational_biology/spacrd_multimodal_deep_fusion_of_histology_and_spatial_transcriptomics_for_cance.md)
-- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
 - [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
-- [\[CVPR 2026\] Deciphering Genotype-Phenotype Mechanisms from High-Content Profiling via Knowledge-Guided Multi-modal Graph Learning](deciphering_genotype-phenotype_mechanisms_from_high-content_profiling_via_knowle.md)
 - [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
+- [\[CVPR 2026\] FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics](feast_fully_connected_expressive_attention_for_spatial_transcriptomics.md)
 
 </div>
 

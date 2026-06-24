@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper identifies a dual entangled bias in soft labels within long-tailed dataset distillation — originating from both the distillation model and the distilled…
+  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper identifies a dual entangled bias in soft labels within long-tailed dataset distillation — originating from both the distillation model and the distilled images — and proposes ADSA, an Adaptive Soft-label Alignment module that eliminates this bias via post-hoc calibration in logit space. As a plug-and-play module, ADSA integrates seamlessly into existing distillation pipelines, achieving up to 11.8% accuracy im…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Generalization Bound"
   - "Logit Adjustment"
 date: 2026-05-08
-content_hash: 92741eaadb448542
+content_hash: 9ca7bcb247ad590e
 ---
 
 # Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation
@@ -171,11 +171,11 @@ Compatibility with alternative distillation and long-tailed methods (CIFAR-10-LT
 
 ## Related Papers
 
+- [\[CVPR 2025\] Distilling Long-tailed Datasets](../../CVPR2025/model_compression/distilling_long-tailed_datasets.md)
+- [\[CVPR 2026\] Beyond Soft Label: Dataset Distillation via Orthogonal Gradient Matching](../../CVPR2026/model_compression/beyond_soft_label_dataset_distillation_via_orthogonal_gradient_matching.md)
 - [\[AAAI 2026\] Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling](../../AAAI2026/model_compression/rethinking_long-tailed_dataset_distillation_a_uni-level_framework_with_unbiased_.md)
 - [\[NeurIPS 2025\] Hyperbolic Dataset Distillation](hyperbolic_dataset_distillation.md)
 - [\[ICCV 2025\] Heavy Labels Out! Dataset Distillation with Label Space Lightening](../../ICCV2025/model_compression/heavy_labels_out_dataset_distillation_with_label_space_lightening.md)
-- [\[NeurIPS 2025\] Beyond Random: Automatic Inner-Loop Optimization in Dataset Distillation](beyond_random_automatic_inner-loop_optimization_in_dataset_distillation.md)
-- [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
 
 </div>
 

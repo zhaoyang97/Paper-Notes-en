@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KASALv2: Fully Automatic 3D Rotational Symmetry Classification and Axis Localization
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] KASALv2 proposes a fully automatic framework that identifies rotational symmetry types, rotation orders, and all canonical axes of 3D objects at once without any reference geometry. It covers all 8 canonical rotational symmetry types, achieving 94.75% accuracy on 438 symmetric objects from GSO. Feeding the estimated sy
+  [CVPR 2026][3D Vision][Rotational Symmetry] KASALv2 proposes a fully automatic framework that identifies rotational symmetry types, rotation orders, and all canonical axes of 3D objects at once without any reference geometry. It covers all 8 canonical rotational symmetry types, achieving 94.75% accuracy on 438 symmetric objects from GSO. Feeding the estimated symmetry priors into FoundationPose training improves pose estimation accuracy by up to 0.9% across 5 BOP datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Rotational Symmetry"
+  - "6D Pose Estimation"
+  - "Axis Localization"
+  - "Geometric Prior"
+  - "Reference-free Analysis"
 date: 2026-05-08
-content_hash: 160a379898f3f350
+content_hash: 06373399fb58be7b
 ---
+
 # KASALv2: Fully Automatic 3D Rotational Symmetry Classification and Axis Localization
 
 **Conference**: CVPR 2026  
@@ -131,11 +137,11 @@ Investigation of the candidate order set $N$ on DSRSTO (optimal $r=10^\circ$ giv
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fusion of Depth and Semantics for Probabilistic Floorplan Localization](fusion_of_depth_and_semantics_for_probabilistic_floorplan_localization.md)
-- [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
+- [\[CVPR 2026\] Towards Visual Query Localization in the 3D World](towards_visual_query_localization_in_the_3d_world.md)
 - [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
-- [\[CVPR 2026\] 3D-IDE: 3D Implicit Depth Emergent](3d-ide_3d_implicit_depth_emergent.md)
-- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
+- [\[CVPR 2026\] Sparse-View Localization via Online Neural 3D Regression](sparse-view_localization_via_online_neural_3d_regression.md)
+- [\[CVPR 2026\] PP-Brep: Few-Shot B-rep Classification with Hybrid Graph Representation](pp-brep_few-shot_b-rep_classification_with_hybrid_graph_representation.md)
+- [\[ICML 2025\] Symmetry-Robust 3D Orientation Estimation](../../ICML2025/3d_vision/symmetry-robust_3d_orientation_estimation.md)
 
 </div>
 

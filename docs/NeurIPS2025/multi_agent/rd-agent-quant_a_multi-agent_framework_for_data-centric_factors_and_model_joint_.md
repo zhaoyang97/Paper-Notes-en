@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] R&D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization
 description: >-
-  [NeurIPS 2025][Multi-Agent][multi-agent framework] This paper proposes R&D-Agent(Q), a data-driven multi-agent framework that automates the joint optimization of factor mining and model innovation for quantitative strate…
+  [NeurIPS 2025][Multi-Agent][multi-agent framework] This paper proposes R&D-Agent(Q), a data-driven multi-agent framework that automates the joint optimization of factor mining and model innovation for quantitative strategies through five collaborative modules (Specification, Synthesis, Implementation, Validation, and Analysis), achieving approximately 2× the annualized return of traditional factor libraries in real stock markets at a cost of under $10.
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "data-driven"
   - "automated R&D"
 date: 2026-05-08
-content_hash: bb93639e181303f6
+content_hash: d0b0157b28fceda1
 ---
 
 # R&D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization
@@ -186,7 +186,7 @@ Evaluated on CSI 500 and NASDAQ 100 (test period 2024–2025), R&D-Agent(Q) main
 - [\[ACL 2026\] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing](../../ACL2026/multi_agent/masfactory_a_graph-centric_framework_for_orchestrating_llm-based_multi-agent_sys.md)
 - [\[NeurIPS 2025\] Lessons Learned: A Multi-Agent Framework for Code LLMs to Learn and Improve](lessons_learned_a_multi-agent_framework_for_code_llms_to_learn_and_improve.md)
 - [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](../../ICML2026/multi_agent/omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
-- [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
+- [\[ICML 2026\] Representational Similarity and Model Behavior in Multi-Agent Interaction](../../ICML2026/multi_agent/representational_similarity_and_model_behavior_in_multi-agent_interaction.md)
 
 </div>
 

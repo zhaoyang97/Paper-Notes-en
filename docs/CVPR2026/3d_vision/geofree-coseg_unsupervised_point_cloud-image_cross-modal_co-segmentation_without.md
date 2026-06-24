@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GeoFree-CoSeg proposes a new task: "Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation." Using a coarse-to-fine dual-branch framework, the method extracts coarse-grained common semantics from each modality, purifies them via cross-modal semantic graphs into Top-K point-patch correspondences, and finally achieve
+  [CVPR 2026][3D Vision][Cross-modal co-segmentation] GeoFree-CoSeg proposes a new task: "Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation." Using a coarse-to-fine dual-branch framework, the method extracts coarse-grained common semantics from each modality, purifies them via cross-modal semantic graphs into Top-K point-patch correspondences, and finally achieves mutual enhancement. Without **any geometric alignment or segmentation annotations**…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Cross-modal co-segmentation"
+  - "point cloud-image"
+  - "unsupervised"
+  - "semantic consistency"
+  - "graph sparsification"
 date: 2026-05-08
-content_hash: 17b2fab87c0a2986
+content_hash: 18cff3bc988eccd7
 ---
+
 # GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment
 
 **Conference**: CVPR 2026  
@@ -152,10 +158,10 @@ Notably, LogoSP also utilizes 2D features from DINOv2 but requires geometric ali
 ## Related Papers
 
 - [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
 - [\[CVPR 2026\] Geometric-Aware Hypergraph Reasoning for Novel Class Discovery in Point Cloud Segmentation](geometric-aware_hypergraph_reasoning_for_novel_class_discovery_in_point_cloud_se.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
-- [\[CVPR 2026\] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)
+- [\[CVPR 2026\] PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3D Gaussian Splatting](pointgs_semantic-consistent_unsupervised_3d_point_cloud_segmentation_with_3d_gau.md)
+- [\[CVPR 2026\] Image-to-Point Cloud Feature Back-Projection for Multimodal Training of 3D Semantic Segmentation](image-to-point_cloud_feature_back-projection_for_multimodal_training_of_3d_seman.md)
+- [\[CVPR 2026\] Topology-aware Feature Propagation for Unsupervised Non-rigid Point Cloud Correspondence](topology-aware_feature_propagation_for_unsupervised_non-rigid_point_cloud_corres.md)
 
 </div>
 

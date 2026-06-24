@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UNITE: Universal Knowledge Integration from Task-Specific Experts
 description: >-
-  [ICLR 2026][Model Compression][learngene] Addressing the issues of "fragmented and cross-layer redundant" expert knowledge in Mixture-of-Experts (MoE) models, UNITE first uses Fisher information to weighted-fuse multiple experts per layer into a single expert, then applies Tucker decomposition to decouple cross-layer shared low-rank input/output subspaces (as
+  [ICLR 2026][Model Compression][Mixture-of-Experts] Addressing the issues of "fragmented and cross-layer redundant" expert knowledge in Mixture-of-Experts (MoE) models, UNITE first uses Fisher information to weighted-fuse multiple experts per layer into a single expert, then applies Tucker decomposition to decouple cross-layer shared low-rank input/output subspaces (as "universal knowledge / learngene") from layer-specific coefficients. Finally…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - learngene
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "Universal Knowledge Extraction"
+  - "Tucker Decomposition"
+  - "Fisher Information"
+  - "learngene"
 date: 2026-05-08
-content_hash: 92ee5d0dca885809
+content_hash: b6d9ef388eac4c20
 ---
+
 # UNITE: Universal Knowledge Integration from Task-Specific Experts
 
 **Conference**: ICLR 2026  
@@ -138,11 +143,11 @@ Target model depth (Qwen3-based, sharing same universal knowledge): 2 layers (36
 
 ## Related Papers
 
-- [\[ICCV 2025\] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning](../../ICCV2025/model_compression/integrating_task-specific_and_universal_adapters_for_pre-trained_model-based_cla.md)
 - [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
-- [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](../../ACL2026/model_compression/samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
-- [\[ICLR 2026\] A universal compression theory for lottery ticket hypothesis and neural scaling laws](a_universal_compression_theory_for_lottery_ticket_hypothesis_and_neural_scaling_.md)
-- [\[ICLR 2026\] Alignment-Enhanced Integration of Connectivity and Spectral Sparsity in Dynamic Sparse Training of LLM](alignment-enhanced_integration_of_connectivity_and_spectral_sparsity_in_dynamic_.md)
+- [\[ICCV 2025\] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning](../../ICCV2025/model_compression/integrating_task-specific_and_universal_adapters_for_pre-trained_model-based_cla.md)
+- [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
+- [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
+- [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
 
 </div>
 

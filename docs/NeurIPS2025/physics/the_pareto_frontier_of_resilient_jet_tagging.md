@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Pareto Frontier of Resilient Jet Tagging
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][jet tagging] This work systematically evaluates the AUC–resilience trade-off across multiple architectures (DNN/PFN/EFN/ParT) for LHC jet tagging tasks…
+  [NeurIPS 2025][Physics & Scientific Computing][jet tagging] This work systematically evaluates the AUC–resilience trade-off across multiple architectures (DNN/PFN/EFN/ParT) for LHC jet tagging tasks, revealing that more complex models achieve higher AUC but exhibit stronger Monte Carlo model dependence. A Pareto frontier is constructed, and a case study demonstrates that low-resilience classifiers introduce bias in downstream parameter estimation even after calibration.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "model dependence"
   - "quark/gluon discrimination"
 date: 2026-05-08
-content_hash: 01ebb8bbdbb8f9bf
+content_hash: f1f7737868a40fc2
 ---
 
 # The Pareto Frontier of Resilient Jet Tagging
@@ -117,11 +117,11 @@ Pythia-8 generates training data → Multiple architectures are trained on q/g a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints](../../ICLR2026/physics/physics_vs_distributions_pareto_optimal_flow_matching_with_physics_constraints.md)
 - [\[NeurIPS 2025\] Why Is Attention Sparse in Particle Transformer?](why_is_attention_sparse_in_particle_transformer.md)
 - [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
 - [\[NeurIPS 2025\] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC](knowledge_is_overrated_a_zero-knowledge_machine_learning_and_cryptographic_hashi.md)
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
-- [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
 
 </div>
 

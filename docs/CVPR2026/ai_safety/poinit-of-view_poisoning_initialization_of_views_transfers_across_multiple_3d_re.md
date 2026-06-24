@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PoInit-of-View: Poisoning Initialization of Views Transfers Across Multiple 3D Reconstruction Systems
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper identifies that the geometric core of 3D reconstruction pipelines—the SfM initialization module—is a vulnerable "Achilles' heel." The authors propose PoInit-of-View, which injects perturbations nearly invisible to the human eye into multi-view input images to specifically disrupt the local gradient consisten
+  [CVPR 2026][AI Safety][Poisoning Attack] This paper identifies that the geometric core of 3D reconstruction pipelines—the SfM initialization module—is a vulnerable "Achilles' heel." The authors propose PoInit-of-View, which injects perturbations nearly invisible to the human eye into multi-view input images to specifically disrupt the local gradient consistency between views. This triggers a collapse in SfM feature matching, reducing camera registrations from nearly a hundred…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Poisoning Attack"
+  - "SfM Initialization"
+  - "Cross-View Inconsistency"
+  - "Black-box Transfer"
+  - "3D Reconstruction"
 date: 2026-05-08
-content_hash: db7940eb56ed7714
+content_hash: f8d71258170a1e9a
 ---
+
 # PoInit-of-View: Poisoning Initialization of Views Transfers Across Multiple 3D Reconstruction Systems
 
 **Conference**: CVPR 2026  
@@ -142,16 +148,16 @@ Ablation of proxy targets (T&T, Mip-Splatting):
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] RAVEN: Erasing Invisible Watermarks via Novel View Synthesis](raven_erasing_invisible_watermarks_via_novel_view_synthesis.md)
 - [\[CVPR 2026\] RemedyGS: Defend 3D Gaussian Splatting Against Computation Cost Attacks](remedygs_defend_3d_gaussian_splatting_against_computation_cost_attacks.md)
-- [\[CVPR 2026\] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases](red-teaming_retrieval-augmented_diffusion_models_via_poisoning_knowledge_bases.md)
 - [\[AAAI 2026\] Generalizing Fair Clustering to Multiple Groups: Algorithms and Applications](../../AAAI2026/ai_safety/generalizing_fair_clustering_to_multiple_groups_algorithms_and_applications.md)
-- [\[CVPR 2026\] Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach](towards_stealthy_and_effective_backdoor_attacks_on_lane_detection_a_naturalistic.md)
+- [\[CVPR 2026\] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases](red-teaming_retrieval-augmented_diffusion_models_via_poisoning_knowledge_bases.md)
+- [\[CVPR 2026\] Good Can Sometimes be Bad: A Unified Attack against 3D Point Cloud Classifier by a Flexible Isotropic Resampling](good_can_sometimes_be_bad_a_unified_attack_against_3d_point_cloud_classifier_by_.md)
 
 </div>
 

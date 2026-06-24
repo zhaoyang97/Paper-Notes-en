@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] ASMIL: Attention-Stabilized Multiple Instance Learning for Whole-Slide Imaging
 description: >-
-  [ICLR 2026][Medical Imaging][EMA] This paper identifies for the first time a failure mode called "Attention Dynamic Instability" in Attention-based MIL for Whole-Slide Imaging (WSI). It proposes ASMIL: a unified framework that stabilizes attention using an EMA-updated anchor model distillation, suppresses attention over-concentration with a normalized
+  [ICLR 2026][Medical Imaging][Whole-Slide Imaging] This paper identifies for the first time a failure mode called "Attention Dynamic Instability" in Attention-based MIL for Whole-Slide Imaging (WSI). It proposes ASMIL: a unified framework that stabilizes attention using an EMA-updated anchor model distillation, suppresses attention over-concentration with a normalized sigmoid, and mitigates overfitting via token random dropout, achieving up to 6.49% F1 improvement across multi…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - EMA
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Whole-Slide Imaging"
+  - "Multiple Instance Learning"
+  - "Attention Stabilization"
+  - "Anchor Model"
+  - "EMA"
+  - "Normalized Sigmoid"
 date: 2026-05-08
-content_hash: ba5549b769271dfc
+content_hash: 8467b47bcf770b9d
 ---
+
 # ASMIL: Attention-Stabilized Multiple Instance Learning for Whole-Slide Imaging
 
 **Conference**: ICLR 2026  
@@ -127,14 +133,17 @@ Plug-and-play Ablation: Adding Anchor + NSF to existing methods consistently imp
 
 <div class="related-papers" markdown="1">
 
-1. **Ilse et al.**, "Attention-based Deep Multiple Instance Learning," ICML 2018.
-2. **Shao et al.**, "TransMIL: Transformer-based Correlated Multiple Instance Learning for Whole Slide Image Classification," NeurIPS 2021.
-3. **Zhang et al.**, "ACMIL: All-Instances-Correlated Multiple Instance Learning for Whole Slide Image Classification," ECCV 2024.
+## Related Papers
+
+- [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](../../CVPR2026/medical_imaging/contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
+- [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](../../CVPR2026/medical_imaging/universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
+- [\[ICLR 2026\] Mixture of Mini Experts: Overcoming the Linear Layer Bottleneck in Multiple Instance Learning](mixture_of_mini_experts_overcoming_the_linear_layer_bottleneck_in_multiple_insta.md)
+- [\[ICML 2025\] Do Multiple Instance Learning Models Transfer?](../../ICML2025/medical_imaging/do_multiple_instance_learning_models_transfer.md)
+- [\[ECCV 2024\] Pathology-knowledge Enhanced Multi-instance Prompt Learning for Few-shot Whole Slide Image Classification](../../ECCV2024/medical_imaging/pathology-knowledge_enhanced_multi-instance_prompt_learning_for_few-shot_whole_s.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](../../CVPR2026/medical_imaging/contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)

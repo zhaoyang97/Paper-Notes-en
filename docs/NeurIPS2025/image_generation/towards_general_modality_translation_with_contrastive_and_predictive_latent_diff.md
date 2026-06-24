@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Bridge Models] This paper proposes LDDBM (Latent Denoising Diffusion Bridge Model), which extends denoising diffusion bridge models into a shared latent space and incorporates c…
+  [NeurIPS 2025][Image Generation][Diffusion Bridge Models] This paper proposes LDDBM (Latent Denoising Diffusion Bridge Model), which extends denoising diffusion bridge models into a shared latent space and incorporates contrastive alignment loss and predictive loss to achieve a general-purpose framework for arbitrary modality translation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Latent Space"
   - "Transformer"
 date: 2026-05-08
-content_hash: dbb1d72abfb354da
+content_hash: 6ee6d8a5eafa190d
 ---
 
 # Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge
@@ -151,9 +151,9 @@ Training employs an **alternating iteration strategy**—alternating optimizatio
 
 - [\[NeurIPS 2025\] System-Embedded Diffusion Bridge Models](system-embedded_diffusion_bridge_models.md)
 - [\[NeurIPS 2025\] CORAL: Disentangling Latent Representations in Long-Tailed Diffusion](coral_disentangling_latent_representations_in_longtailed_dif.md)
+- [\[CVPR 2026\] DBMSolver: A Training-free Diffusion Bridge Sampler for High-Quality Image-to-Image Translation](../../CVPR2026/image_generation/dbmsolver_a_training-free_diffusion_bridge_sampler_for_high-quality_image-to-ima.md)
+- [\[ECCV 2024\] EBDM: Exemplar-guided Image Translation with Brownian-bridge Diffusion Models](../../ECCV2024/image_generation/ebdm_exemplar-guided_image_translation_with_brownian-bridge_diffusion_models.md)
 - [\[NeurIPS 2025\] Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions](dynamic_diffusion_schrödinger_bridge_in_astrophysical_observational_inversions.md)
-- [\[NeurIPS 2025\] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges](grasp2grasp_vision-based_dexterous_grasp_translation_via_schrödinger_bridges.md)
-- [\[NeurIPS 2025\] Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation](predictive_feature_caching_for_training-free_acceleration_of_molecular_geometry_.md)
 
 </div>
 

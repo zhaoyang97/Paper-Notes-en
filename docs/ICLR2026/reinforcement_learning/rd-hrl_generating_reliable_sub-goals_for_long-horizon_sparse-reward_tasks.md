@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RD-HRL: Generating Reliable Sub-Goals for Long-Horizon Sparse-Reward Tasks
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Addressing the issue where high-level policies in offline hierarchical RL choose incorrect sub-goals due to value functions with generalization noise, this paper proposes RD-HRL. It extracts "transition regions" that connect multiple trajectories from offline data as a reliable decision space. A TI module then selects
+  [ICLR 2026][Reinforcement Learning][Hierarchical Reinforcement Learning] Addressing the issue where high-level policies in offline hierarchical RL choose incorrect sub-goals due to value functions with generalization noise, this paper proposes RD-HRL. It extracts "transition regions" that connect multiple trajectories from offline data as a reliable decision space. A TI module then selects **decision-level targets** from these regions for the high-level policy…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Hierarchical Reinforcement Learning"
+  - "Sub-goal Planning"
+  - "Offline Goal-Conditioned RL"
+  - "Value Generalization Error"
+  - "Long-Horizon Sparse Rewards"
 date: 2026-05-08
-content_hash: 58028f8960775e0f
+content_hash: f7f797a3b34814a6
 ---
+
 # RD-HRL: Generating Reliable Sub-Goals for Long-Horizon Sparse-Reward Tasks
 
 **Conference**: ICLR 2026  

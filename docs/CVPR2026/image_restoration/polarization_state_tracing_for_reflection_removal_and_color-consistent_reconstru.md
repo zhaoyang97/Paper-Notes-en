@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Polarization State Tracing for Reflection Removal and Color-Consistent Reconstruction
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Addressing the overlooked degradation problem of "ghosting artifacts + color bias" when photographing through colored glass, this paper introduces polarization imaging theory into modeling for the first time. It proposes a physical imaging model, PSTM (tracing multi-path propagation of polarized light + wavelength-sele
+  [CVPR 2026][Image Restoration][Polarization Imaging] Addressing the overlooked degradation problem of "ghosting artifacts + color bias" when photographing through colored glass, this paper introduces polarization imaging theory into modeling for the first time. It proposes a physical imaging model, PSTM (tracing multi-path propagation of polarized light + wavelength-selective absorption), and designs a polarization-aware network, PANet, featuring Channel Ring Attention. On th…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Polarization Imaging"
+  - "Colored Glass"
+  - "Reflection Removal"
+  - "Color-Consistent Reconstruction"
+  - "Stokes-Muller Physical Modeling"
 date: 2026-05-08
-content_hash: ea2b2605cce28356
+content_hash: 84f693d61e1e7072
 ---
+
 # Polarization State Tracing for Reflection Removal and Color-Consistent Reconstruction
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ Ablations performed on the real-world GlassPol set by removing modules (PANet Fu
 ## Related Papers
 
 - [\[CVPR 2025\] PolarFree: Polarization-based Reflection-Free Imaging](../../CVPR2025/image_restoration/polarfree_polarization-based_reflection-free_imaging.md)
+- [\[CVPR 2026\] GFRRN: Explore the Gaps in Single Image Reflection Removal](gfrrn_explore_the_gaps_in_single_image_reflection_removal.md)
 - [\[CVPR 2026\] LightRR: A Lightweight Network for Single Image Reflection Removal](lightrr_a_lightweight_network_for_single_image_reflection_removal.md)
+- [\[CVPR 2026\] Rectifying Latent Space for Generative Single-Image Reflection Removal](rectifying_latent_space_for_generative_single-image_reflection_removal.md)
 - [\[CVPR 2026\] VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba](vemamba_efficient_isotropic_reconstruction_of_volume_electron_microscopy_with_ax.md)
-- [\[CVPR 2026\] Reflection Separation from a Single Image via Joint Latent Diffusion](reflection_separation_from_a_single_image_via_joint_latent_diffusion.md)
-- [\[CVPR 2026\] ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation](reflexsplit_single_image_reflection_separation_via_layer_fusion-separation.md)
 
 </div>
 

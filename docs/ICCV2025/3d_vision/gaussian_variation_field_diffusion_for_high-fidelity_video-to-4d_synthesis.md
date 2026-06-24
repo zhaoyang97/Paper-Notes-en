@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis
 description: >-
-  [ICCV 2025][3D Vision][4D generation] This paper proposes a video-to-4D generation framework that encodes animation data directly into a compact Gaussian variation field latent space via a Direct 4DMesh-to-GS Variation F…
+  [ICCV 2025][3D Vision][4D generation] This paper proposes a video-to-4D generation framework that encodes animation data directly into a compact Gaussian variation field latent space via a Direct 4DMesh-to-GS Variation Field VAE, and trains a temporally-aware diffusion model to generate dynamic 3D content. The framework achieves high-fidelity 4D synthesis in 4.5 seconds and demonstrates strong generalization to real-world video inputs.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model"
   - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: 63c6d517f41ae74c
+content_hash: b2fe2660f4df4355
 ---
 
 # Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis
@@ -57,9 +57,9 @@ The framework comprises two main components: (1) the Direct 4DMesh-to-GS Variati
 1. **Direct 4DMesh-to-GS Variation Field VAE**:
 
    **Encoding**:
-   - Converts mesh animation sequences into point clouds $\mathcal{P} = \{P_t \in \mathbb{R}^{N \times 3}\}_{t=1}^T$ ($N = 8192$).
-   - Computes displacement fields $\Delta P_t = P_t - P_1$.
-   - Obtains canonical GS via a pretrained Mesh-to-GS encoder: $G_1 = \mathcal{D}_{GS}(\mathcal{E}_{GS}(M_1))$.
+    - Converts mesh animation sequences into point clouds $\mathcal{P} = \{P_t \in \mathbb{R}^{N \times 3}\}_{t=1}^T$ ($N = 8192$).
+    - Computes displacement fields $\Delta P_t = P_t - P_1$.
+    - Obtains canonical GS via a pretrained Mesh-to-GS encoder: $G_1 = \mathcal{D}_{GS}(\mathcal{E}_{GS}(M_1))$.
 
    **Mesh-guided Interpolation** (key innovation): For each canonical Gaussian position $\bm{p}_1^i$, K nearest neighbors are identified and the displacement field is interpolated using adaptive radius-based weighting:
 
@@ -74,9 +74,9 @@ The framework comprises two main components: (1) the Direct 4DMesh-to-GS Variati
 2. **Gaussian Variation Field Diffusion Model**:
 
    Built on a Diffusion Transformer (DiT) architecture, with the following core innovations:
-   - **Temporal self-attention layers**: Added alongside standard spatial self-attention to capture inter-frame motion coherence.
-   - **Dual conditioning injection**: Visual features $\mathcal{C}^v$ (extracted via DINOv2) and canonical GS geometric features $\mathcal{C}^{GS}$ are injected via cross-attention.
-   - **Positional prior embedding**: Positional encodings based on canonical GS positions $\bm{p}_1^{fps}$ to enhance the model's awareness of spatial position-to-variation-field correspondences.
+    - **Temporal self-attention layers**: Added alongside standard spatial self-attention to capture inter-frame motion coherence.
+    - **Dual conditioning injection**: Visual features $\mathcal{C}^v$ (extracted via DINOv2) and canonical GS geometric features $\mathcal{C}^{GS}$ are injected via cross-attention.
+    - **Positional prior embedding**: Positional encodings based on canonical GS positions $\bm{p}_1^{fps}$ to enhance the model's awareness of spatial position-to-variation-field correspondences.
 
    Velocity prediction parameterization is adopted, with training objective:
 
@@ -169,8 +169,8 @@ The proposed method achieves the best performance on all quality metrics: PSNR i
 
 - [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
 - [\[ICCV 2025\] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting](gazegaussian_high-fidelity_gaze_redirection_with_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
 - [\[ICCV 2025\] Not All Frame Features Are Equal: Video-to-4D Generation via Decoupling Dynamic-Static Features](not_all_frame_features_are_equal_video-to-4d_generation_via_decoupling_dynamic-s.md)
+- [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
 
 </div>

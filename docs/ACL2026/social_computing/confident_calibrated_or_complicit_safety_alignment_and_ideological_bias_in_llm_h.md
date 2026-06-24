@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Confident, Calibrated, or Complicit: Safety Alignment and Ideological Bias in LLM Hate Speech Detection
 description: >-
-  [ACL 2026][Social Computing][Paper Note] The authors evaluated 5 LLMs (strongly aligned vs. weakly aligned) under 4 political personas on the Latent Hatred benchmark using zero-shot classification. They found that strongly aligned models achieved higher strict accuracy (69.0%) compared to weakly aligned ones (64.1%) and were nearly immune to persona manipulat
+  [ACL 2026][Social Computing][Hate speech detection] The authors evaluated 5 LLMs (strongly aligned vs. weakly aligned) under 4 political personas on the Latent Hatred benchmark using zero-shot classification. They found that strongly aligned models achieved higher strict accuracy (69.0%) compared to weakly aligned ones (64.1%) and were nearly immune to persona manipulation. However, all models exhibited systematic failures in handling irony, target group fairness…
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Hate speech detection"
+  - "safety alignment"
+  - "political persona"
+  - "calibration"
+  - "fairness"
 date: 2026-05-08
-content_hash: 79f20804736a32a5
+content_hash: 9023202a92d69368
 ---
+
 # Confident, Calibrated, or Complicit: Safety Alignment and Ideological Bias in LLM Hate Speech Detection
 
 **Conference**: ACL 2026  
@@ -122,7 +128,7 @@ Error decomposition: Uncensored total error 35.9% (refusal 24.2% + misclass 11.7
 - [\[ACL 2026\] Explain the Flag: Contextualizing Hate Speech Beyond Censorship](explain_the_flag_contextualizing_hate_speech_beyond_censorship.md)
 - [\[ACL 2025\] ImpliHateVid: Implicit Hate Speech Detection in Videos](../../ACL2025/social_computing/implihatevid_video_hate.md)
 - [\[ACL 2026\] LiveFact: A Dynamic, Time-Aware Benchmark for LLM-Driven Fake News Detection](livefact_a_dynamic_time-aware_benchmark_for_llm-driven_fake_news_detection.md)
-- [\[ACL 2025\] Silencing Empowerment, Allowing Bigotry: Auditing the Moderation of Hate Speech on Twitch](../../ACL2025/social_computing/silencing_empowerment_allowing_bigotry_auditing_the_moderation_of_hate_speech_on.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 
 </div>
 

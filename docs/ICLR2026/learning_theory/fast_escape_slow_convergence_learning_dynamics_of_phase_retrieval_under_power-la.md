@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Fast Escape, Slow Convergence: Learning Dynamics of Phase Retrieval under Power-Law Data
 description: >-
-  [ICLR 2026][learning_theory][scaling laws] This paper provides the first rigorous characterization of learning dynamics for **anisotropic (power-law covariance) non-linear regression** (phase retrieval). It proves that the training trajectory consists of three phases: "fast escape from mediocrity—slow convergence—learning the spectral tail," and explicitly deri
+  [ICLR 2026][learning theory][scaling laws] This paper provides the first rigorous characterization of learning dynamics for **anisotropic (power-law covariance) non-linear regression** (phase retrieval). It proves that the training trajectory consists of three phases: "fast escape from mediocrity—slow convergence—learning the spectral tail," and explicitly derives the MSE scaling law from the spectral decay index $a$.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - scaling laws
-  - phase retrieval
-  - anisotropic data
-  - power-law spectrum
-  - gradient flow
-  - Volterra equation
+  - "ICLR 2026"
+  - "learning theory"
+  - "learning dynamics"
+  - "scaling laws"
+  - "phase retrieval"
+  - "anisotropic data"
+  - "power-law spectrum"
+  - "gradient flow"
+  - "Volterra equation"
 date: 2026-05-08
-content_hash: c5cfb09c3bea37c4
+content_hash: ffd96b1ee6f5ccc9
 ---
+
 # Fast Escape, Slow Convergence: Learning Dynamics of Phase Retrieval under Power-Law Data
 
 **Conference**: ICLR 2026  
@@ -113,9 +115,9 @@ flowchart TD
 ## Related Papers
 
 - [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
-- [\[ICLR 2026\] Data-to-Energy Stochastic Dynamics](data-to-energy_stochastic_dynamics.md)
 - [\[ICLR 2026\] Convergence Dynamics of Over-Parameterized Score Matching for a Single Gaussian](convergence_dynamics_of_over-parameterized_score_matching_for_a_single_gaussian.md)
-- [\[ICLR 2026\] Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence](escaping_model_collapse_via_synthetic_data_verification_near-term_improvements_a.md)
+- [\[ICLR 2026\] Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape](saddle-to-saddle_dynamics_in_deep_relu_networks_low-rank_bias_in_the_first_saddl.md)
+- [\[ICLR 2026\] Data-to-Energy Stochastic Dynamics](data-to-energy_stochastic_dynamics.md)
 - [\[ICLR 2026\] A Sharp KL Convergence Analysis for Diffusion Models under Minimal Assumptions](a_sharp_kl_convergence_analysis_for_diffusion_models_under_minimal_assumptions.md)
 
 </div>

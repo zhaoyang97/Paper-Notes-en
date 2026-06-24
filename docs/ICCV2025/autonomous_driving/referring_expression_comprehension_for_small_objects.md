@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Referring Expression Comprehension for Small Objects
 description: >-
-  [ICCV 2025][Autonomous Driving][Referring Expression Comprehension] This work proposes the SOREC dataset (100K referring expression–bounding box pairs for small objects) and the PIZA adapter module (Progressive-Iterative…
+  [ICCV 2025][Autonomous Driving][Referring Expression Comprehension] This work proposes the SOREC dataset (100K referring expression–bounding box pairs for small objects) and the PIZA adapter module (Progressive-Iterative Zooming Adapter), enabling pretrained models such as GroundingDINO to autoregressively zoom in on extremely small targets, achieving substantial accuracy gains for small-object REC in autonomous driving scenarios.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Progressive Zooming"
   - "GroundingDINO"
 date: 2026-05-08
-content_hash: aee92c06ba21d564
+content_hash: 72ace06b8d4b7a02
 ---
 
 # Referring Expression Comprehension for Small Objects
@@ -162,10 +162,10 @@ where $\mathbf{x}_i$ is the cropped image region at step $i$.
 ## Related Papers
 
 - [\[ICCV 2025\] Counting Stacked Objects](counting_stacked_objects.md)
+- [\[CVPR 2025\] Learning to Detect Objects from Multi-Agent LiDAR Scans without Manual Labels](../../CVPR2025/autonomous_driving/learning_to_detect_objects_from_multi-agent_lidar_scans_without_manual_labels.md)
+- [\[CVPR 2026\] Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation](../../CVPR2026/autonomous_driving/learning_to_identify_out-of-distribution_objects_for_3d_lidar_anomaly_segmentati.md)
 - [\[CVPR 2026\] SABER: Spatially Consistent 3D Universal Adversarial Objects for BEV Detectors](../../CVPR2026/autonomous_driving/saber_spatially_consistent_3d_universal_adversarial_objects_for_bev_detectors.md)
 - [\[ICCV 2025\] TrackAny3D: Transferring Pretrained 3D Models for Category-unified 3D Point Cloud Tracking](trackany3d_transferring_pretrained_3d_models_for_category-unified_3d_point_cloud.md)
-- [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
-- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
 
 </div>
 

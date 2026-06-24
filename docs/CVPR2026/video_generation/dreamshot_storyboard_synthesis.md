@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DreamShot: Personalized Storyboard Synthesis with Video Diffusion Prior
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] DreamShot is proposed to leverage the spatio-temporal priors of video diffusion models to generate multi-shot storyboards with consistent characters and coherent scenes. It addresses multi-character confusion via a Role-Attention Consistency Loss and provides unified support for Text-to-Shot, Reference-to-Shot, and Sho
+  [CVPR 2026][Video Generation][Storyboard Generation] DreamShot is proposed to leverage the spatio-temporal priors of video diffusion models to generate multi-shot storyboards with consistent characters and coherent scenes. It addresses multi-character confusion via a Role-Attention Consistency Loss and provides unified support for Text-to-Shot, Reference-to-Shot, and Shot-to-Shot modes.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Storyboard Generation"
+  - "Video Diffusion Model"
+  - "Character Consistency"
+  - "Multi-character Reference"
+  - "Attention Constraint"
 date: 2026-05-08
-content_hash: acce0775ef988852
+content_hash: 870967ec618dc20a
 ---
+
 # DreamShot: Personalized Storyboard Synthesis with Video Diffusion Prior
 
 **Conference**: CVPR 2026  
@@ -133,15 +139,15 @@ The paper emphasizes qualitative and quantitative comparisons with image-based m
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Generative Neural Video Compression via Video Diffusion Prior](generative_neural_video_compression_via_video_diffusion_prior.md)
+- [\[CVPR 2026\] Lynx: Towards High-Fidelity Personalized Video Generation](lynx_towards_high-fidelity_personalized_video_generation.md)
 - [\[CVPR 2026\] STAGE: Storyboard-Anchored Generation for Cinematic Multi-shot Narrative](stage_storyboard-anchored_generation_for_cinematic_multi-shot_narrative.md)
 - [\[ICLR 2026\] JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization](../../ICLR2026/video_generation/javisdit_joint_audio-video_diffusion_transformer_with_hierarchical_spatio-tempor.md)
-- [\[CVPR 2026\] NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing](nova_sparse_control_dense_synthesis_for_pair-free_video_editing.md)
-- [\[CVPR 2026\] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer](moviedrive_urban_scene_synthesis_with_multi-modal_multi-view_video_diffusion_tra.md)
+- [\[CVPR 2026\] MoReGen: Multi-Agent Motion-Reasoning Engine for Code-based Text-to-Video Synthesis](moregen_multi-agent_motion-reasoning_engine_for_code-based_text-to-video_synthes.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BARREL: Boundary-Aware Reasoning for Factual and Reliable LRMs
 description: >-
-  [ICLR 2026][Hallucination Detection][GRPO] Addressing the tendency of Large Reasoning Models (LRMs) to "hallucinate rather than admit ignorance" in factual QA, this paper identifies two pathological reasoning patterns triggered by "factual overthinking." It proposes BARREL, a three-stage training framework (Knowledge Boundary Labeling $\rightarrow$ Boundary-Awa
+  [ICLR 2026][Hallucination Detection][Large Reasoning Models] Addressing the tendency of Large Reasoning Models (LRMs) to "hallucinate rather than admit ignorance" in factual QA, this paper identifies two pathological reasoning patterns triggered by "factual overthinking." It proposes BARREL, a three-stage training framework (Knowledge Boundary Labeling $\rightarrow$ Boundary-Aware SFT $\rightarrow$ GRPO with Reliability Rewards). BARREL improves the reliability of DeepSeek-R1…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - GRPO
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Large Reasoning Models"
+  - "Knowledge Boundary"
+  - "Uncertainty Refusal"
+  - "Overthinking"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 43c0d9a0bfe665ff
+content_hash: e6c6bc49116f71c9
 ---
+
 # BARREL: Boundary-Aware Reasoning for Factual and Reliable LRMs
 
 **Conference**: ICLR 2026  
@@ -138,14 +143,15 @@ BARREL significantly boosts reliability across all models. Unlike post-processin
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 - [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
+- [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 - [\[ICLR 2026\] High Accuracy, Less Talk (HALT): Reliable LLMs through Capability-Aligned Finetuning](high_accuracy_less_talk_halt_reliable_llms_through_capability-aligned_finetuning.md)
-- [\[ICLR 2026\] HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs](halluguard_demystifying_data-driven_and_reasoning-driven_hallucinations_in_llms.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
 - [\[ICLR 2026\] Leveraging Pretrained Knowledge at Inference Time: LoRA-Gated Contrastive Decoding for Multilingual Factual Language Generation in Adapted LLMs](leveraging_pretrained_knowledge_at_inference_time_lora-gated_contrastive_decodin.md)
 
 </div>

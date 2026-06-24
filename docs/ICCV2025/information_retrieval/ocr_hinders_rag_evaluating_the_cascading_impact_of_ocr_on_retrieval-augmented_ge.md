@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OCR Hinders RAG: Evaluating the Cascading Impact of OCR on Retrieval-Augmented Generation
 description: >-
-  [ICCV 2025][Information Retrieval & RAG][OCR noise] This paper presents OHRBench—the first benchmark for evaluating the cascading impact of OCR on RAG systems. It comprises 8,561 document images across 7 domains and 8…
+  [ICCV 2025][Information Retrieval & RAG][OCR noise] This paper presents OHRBench—the first benchmark for evaluating the cascading impact of OCR on RAG systems. It comprises 8,561 document images across 7 domains and 8,498 QA pairs, and systematically reveals the distinct impact patterns of OCR-induced Semantic Noise and Formatting Noise on both the retrieval and generation stages.
 tags:
   - "ICCV 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "knowledge base quality"
   - "benchmark"
 date: 2026-05-08
-content_hash: bfbb07ec756f67ec
+content_hash: b41456e2b974b760
 ---
 
 # OCR Hinders RAG: Evaluating the Cascading Impact of OCR on Retrieval-Augmented Generation
@@ -167,11 +167,11 @@ This paper presents a benchmark and does not involve model training. Evaluation 
 
 ## Related Papers
 
-- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](../../NeurIPS2025/information_retrieval/benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
-- [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](../../ACL2026/information_retrieval/mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](../../NeurIPS2025/information_retrieval/chain-of-retrieval_augmented_generation.md)
-- [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](../../NeurIPS2025/information_retrieval/retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
+- [\[ACL 2025\] HoH: A Dynamic Benchmark for Evaluating the Impact of Outdated Information on Retrieval-Augmented Generation](../../ACL2025/information_retrieval/hoh_a_dynamic_benchmark_for_evaluating_the_impact_of_outdated_information_on_ret.md)
+- [\[ACL 2025\] MAIN-RAG: Multi-Agent Filtering Retrieval-Augmented Generation](../../ACL2025/information_retrieval/main-rag_multi-agent_filtering_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
+- [\[ACL 2025\] GeAR: Generation Augmented Retrieval](../../ACL2025/information_retrieval/gear_generation_augmented_retrieval.md)
+- [\[ACL 2025\] Typed-RAG: Type-Aware Decomposition of Non-Factoid Questions for Retrieval-Augmented Generation](../../ACL2025/information_retrieval/typed-rag_type-aware_decomposition_of_non-factoid_questions_for_retrieval-augmen.md)
 
 </div>
 

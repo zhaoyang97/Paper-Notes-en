@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] Ours proposes CORE (COncept-aware REfuser), a framework for continual unlearning in Large Vision-Language Models (LVLMs). By decomposing vision-language pairs to be deleted into fine-grained visual attributes and textual intent concepts, it utilizes a concept modulator to identify required concept combinations for reje
+  [CVPR 2026][Multimodal VLM][Continual Unlearning] Ours proposes CORE (COncept-aware REfuser), a framework for continual unlearning in Large Vision-Language Models (LVLMs). By decomposing vision-language pairs to be deleted into fine-grained visual attributes and textual intent concepts, it utilizes a concept modulator to identify required concept combinations for rejection. Subsequently, a Mixture of Refusers generates concept-aligned refusal responses. CORE achieves the best…
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Continual Unlearning"
+  - "Large Vision-Language Models"
+  - "Concept Decomposition"
+  - "Mixture of Refusers"
+  - "Selective Knowledge Erasure"
 date: 2026-05-08
-content_hash: c1a83a4156c2eaa6
+content_hash: 8b41a30aec7f87a5
 ---
+
 # Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -142,16 +148,16 @@ Training proceeds in two stages: (1) Concept modules and modulator ($\mathcal{L}
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models](../../AAAI2026/llm_safety/auvic_adversarial_unlearning_of_visual_concepts_for_multi-mo.md)
-- [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
-- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
+- [\[CVPR 2026\] Synthesizing Visual Concepts as Vision-Language Programs](synthesizing_visual_concepts_as_vision-language_programs.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
+- [\[CVPR 2026\] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition](from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_.md)
 - [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](test-time_attention_purification_for_backdoored_large_vision_language_models.md)
+- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
 
 </div>
 

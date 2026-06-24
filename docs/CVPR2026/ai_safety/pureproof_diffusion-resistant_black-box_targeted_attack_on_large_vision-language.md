@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] PureProof is the first black-box targeted attack capable of resisting "Diffusion-Based Purification (DBP)": it utilizes a diffusion proxy for single-step reverse prediction to align target semantics (SRA), uses timestep-adaptive re-noising to stabilize gradients (ARA), and applies self-consistency regularization for lo
+  [CVPR 2026][AI Safety][VLM Security] PureProof is the first black-box targeted attack capable of resisting "Diffusion-Based Purification (DBP)": it utilizes a diffusion proxy for single-step reverse prediction to align target semantics (SRA), uses timestep-adaptive re-noising to stabilize gradients (ARA), and applies self-consistency regularization for local coherence (SCR), ensuring adversarial images induce the attacker-specified target text even after being purified by fil…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "VLM Security"
+  - "Targeted Adversarial Attack"
+  - "Black-box Attack"
+  - "Diffusion Purification"
+  - "Adversarial Robustness"
 date: 2026-05-08
-content_hash: 40217ca92b79e920
+content_hash: e55b35ccf66939cc
 ---
+
 # PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -135,8 +141,8 @@ Commercial VLMs against DiffPure (CLIP / ASR-Target / ASR-Fool %):
 
 - [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
 - [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
+- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
 - [\[CVPR 2026\] What Your Features Reveal: Data-Efficient Black-Box Feature Inversion Attack for Split DNNs](what_your_features_reveal_data-efficient_black-box_feature_inversion_attack_for_.md)
-- [\[CVPR 2026\] Unlearning without Forgetting: Securely Removing Targeted Concepts from Large-Scale Vision-Language Open-Vocabulary Detectors](unlearning_without_forgetting_securely_removing_targeted_concepts_from_large-sca.md)
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
 
 </div>

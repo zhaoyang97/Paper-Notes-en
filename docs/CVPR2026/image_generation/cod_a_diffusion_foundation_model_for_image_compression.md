@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoD: A Diffusion Foundation Model for Image Compression
 description: >-
-  [CVPR 2026][Image Generation][rectified flow] Ours proposes CoD, the first compression-oriented diffusion foundation model. By learning joint end-to-end compression-generation optimization from scratch, it replaces Stable Diffusion in downstream diffusion codecs to achieve SOTA performance at ultra-low bitrates (0.0039 bpp), with training costs only 0.3% of SD.
+  [CVPR 2026][Image Generation][Compression-oriented Diffusion] Ours proposes CoD, the first compression-oriented diffusion foundation model. By learning joint end-to-end compression-generation optimization from scratch, it replaces Stable Diffusion in downstream diffusion codecs to achieve SOTA performance at ultra-low bitrates (0.0039 bpp), with training costs only 0.3% of SD.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - rectified flow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Compression-oriented Diffusion"
+  - "Foundation Model"
+  - "rectified flow"
+  - "Pixel-space Diffusion"
+  - "Rate-Distortion-Perception"
 date: 2026-05-08
-content_hash: e7e69fc9766d30f0
+content_hash: 84cebfffabf2d4b2
 ---
+
 # CoD: A Diffusion Foundation Model for Image Compression
 
 **Conference**: CVPR 2026  
@@ -157,10 +162,10 @@ Where $\mathcal{L}_{\text{REPA}}$ is the DINOv2 feature alignment loss, $\mathca
 ## Related Papers
 
 - [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](../../ICML2026/image_generation/compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
-- [\[CVPR 2026\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](ditic_aligned_diffusion_transformer_for_efficient.md)
 - [\[CVPR 2026\] MatPedia: A Universal Generative Foundation for High-Fidelity Material Synthesis](matpedia_a_universal_generative_foundation_for_high-fidelity_material_synthesis.md)
-- [\[CVPR 2026\] NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration](nanosd_edge_efficient_foundation_model_for_real_time_image_restoration.md)
+- [\[CVPR 2026\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](ditic_aligned_diffusion_transformer_for_efficient.md)
 - [\[CVPR 2026\] DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment](da-vae_plug-in_latent_compression_for_diffusion_via_detail_alignment.md)
+- [\[CVPR 2026\] UniPercept: A Unified Diffusion Model for Generalizable Visual Perception](unipercept_a_unified_diffusion_model_for_generalizable_visual_perception.md)
 
 </div>
 

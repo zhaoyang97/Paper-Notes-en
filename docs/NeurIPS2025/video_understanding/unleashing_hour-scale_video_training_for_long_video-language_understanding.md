@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unleashing Hour-Scale Video Training for Long Video-Language Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][Long Video Understanding] This work constructs VideoMarathon, the first large-scale hour-level video instruction-following dataset (9,700 hours, 3.3M QA pairs, 22 task types)…
+  [NeurIPS 2025][Video Understanding][Long Video Understanding] This work constructs VideoMarathon, the first large-scale hour-level video instruction-following dataset (9,700 hours, 3.3M QA pairs, 22 task types), and proposes Hour-LLaVA, a model that leverages a memory repository, forgetting mechanism, and MemAug module to enable efficient training and inference on hour-scale videos at 1 FPS, achieving state-of-the-art results among open-source models of comparable scale acros…
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Instruction-Following Dataset"
   - "Hour-Scale Video"
 date: 2026-05-08
-content_hash: 56599d5299034b6c
+content_hash: 11f0c08beff74f24
 ---
 
 # Unleashing Hour-Scale Video Training for Long Video-Language Understanding
@@ -137,9 +137,9 @@ Standard cross-entropy autoregressive loss. Learning rate 2e-5 with cosine annea
 
 - [\[ICCV 2025\] Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers](../../ICCV2025/video_understanding/vamba_understanding_hour-long_videos_with_hybrid_mamba-transformers.md)
 - [\[NeurIPS 2025\] VideoLucy: Deep Memory Backtracking for Long Video Understanding](videolucy_deep_memory_backtracking_for_long_video_understanding.md)
-- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 - [\[NeurIPS 2025\] AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](adavideorag_omnicontextual_adaptive_retrievalaugmented_effic.md)
 - [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](../../AAAI2026/video_understanding/apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
+- [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](../../ICLR2026/video_understanding/a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
 
 </div>
 

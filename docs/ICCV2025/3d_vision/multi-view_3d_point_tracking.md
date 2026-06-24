@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-View 3D Point Tracking
 description: >-
-  [ICCV 2025][3D Vision][multi-view 3D point tracking] This paper presents MVTracker—the first data-driven multi-view 3D point tracker. By back-projecting multi-view depth maps into a unified 3D feature point cloud and lev…
+  [ICCV 2025][3D Vision][multi-view 3D point tracking] This paper presents MVTracker—the first data-driven multi-view 3D point tracker. By back-projecting multi-view depth maps into a unified 3D feature point cloud and leveraging kNN association with Transformer-based iterative refinement, MVTracker achieves robust long-range 3D point trajectory estimation under a practical 4-camera configuration, attaining median trajectory errors of 3.1 cm and 2.0 cm on Panoptic Studio and De…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Transformer iterative refinement"
   - "occlusion handling"
 date: 2026-05-08
-content_hash: f314cf40466abcda
+content_hash: 16e4035ff60b152c
 ---
 
 # Multi-View 3D Point Tracking
@@ -182,9 +182,9 @@ Across different 4-camera layouts (opposing/adjacent placements), MVTracker cons
 ## Related Papers
 
 - [\[ICCV 2025\] TAPNext: Tracking Any Point (TAP) as Next Token Prediction](tapnext_tracking_any_point_tap_as_next_token_prediction.md)
+- [\[CVPR 2025\] HOT3D: Hand and Object Tracking in 3D from Egocentric Multi-View Videos](../../CVPR2025/3d_vision/hot3d_hand_and_object_tracking_in_3d_from_egocentric_multi-view_videos.md)
 - [\[NeurIPS 2025\] TAPIP3D: Tracking Any Point in Persistent 3D Geometry](../../NeurIPS2025/3d_vision/tapip3d_tracking_any_point_in_persistent_3d_geometry.md)
 - [\[ICCV 2025\] PanSt3R: Multi-view Consistent Panoptic Segmentation](panst3r_multi-view_consistent_panoptic_segmentation.md)
-- [\[ICCV 2025\] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos](trace_learning_3d_gaussian_physical_dynamics_from_multi-view_videos.md)
 - [\[ICCV 2025\] GSOT3D: Towards Generic 3D Single Object Tracking in the Wild](gsot3d_towards_generic_3d_single_object_tracking_in_the_wild.md)
 
 </div>

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MARL2Grid-TR: A Multi-Agent RL Benchmark in Power Grid Operations
 description: >-
-  [ICLR 2026][Reinforcement Learning][Dec-POMDP] This paper introduces MARL2Grid-TR, the first multi-agent RL benchmark for "topology optimization + redispatching/curtailment" control in realistic transmission grids. Based on the high-fidelity Grid2Op simulation platform from a French TSO, it models power grid control as a multi-agent collaborative task. Experiments
+  [ICLR 2026][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper introduces MARL2Grid-TR, the first multi-agent RL benchmark for "topology optimization + redispatching/curtailment" control in realistic transmission grids. Based on the high-fidelity Grid2Op simulation platform from a French TSO, it models power grid control as a multi-agent collaborative task. Experiments demonstrate that mainstream MARL methods fail significantly under realistic constraints…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Dec-POMDP
-  - Grid2Op
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-Agent Reinforcement Learning"
+  - "Power Grid Topology Optimization"
+  - "Redispatching and Curtailment"
+  - "Dec-POMDP"
+  - "Constrained MARL"
+  - "Grid2Op"
 date: 2026-05-08
-content_hash: b8fa673c5e5bd84a
+content_hash: c67948e608340fdc
 ---
+
 # MARL2Grid-TR: A Multi-Agent RL Benchmark in Power Grid Operations
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Diffusion-Classifier Synergy: Reward-Aligned Learning via Mutual Boosting Loop for FSCIL
 description: >-
-  [NEURIPS2025][Image Generation][Few-Shot Class-Incremental Learning] This paper proposes the Diffusion-Classifier Synergy (DCS) framework, which establishes a closed-loop mutual boosting cycle between a diffusion model a…
+  [NEURIPS2025][Image Generation][Few-Shot Class-Incremental Learning] This paper proposes the Diffusion-Classifier Synergy (DCS) framework, which establishes a closed-loop mutual boosting cycle between a diffusion model and a classifier. A multi-level reward function (feature-level + logits-level) guides the diffusion model to generate images most beneficial to the classifier, achieving state-of-the-art performance on FSCIL benchmarks.
 tags:
   - "NEURIPS2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Mutual Boosting Loop"
   - "data augmentation"
 date: 2026-05-08
-content_hash: 75a086c2bec9afb9
+content_hash: fd0f737796cf74d0
 ---
 
 # Diffusion-Classifier Synergy: Reward-Aligned Learning via Mutual Boosting Loop for FSCIL
@@ -150,10 +150,10 @@ The core idea of DCS is to establish a bidirectional mutual boosting loop betwee
 ## Related Papers
 
 - [\[NeurIPS 2025\] MMG: Mutual Information Estimation via the MMSE Gap in Diffusion](mmg_mutual_information_estimation_via_the_mmse_gap_in_diffusion.md)
+- [\[ECCV 2024\] Mutual Learning for Acoustic Matching and Dereverberation via Visual Scene-driven Diffusion](../../ECCV2024/image_generation/mutual_learning_for_acoustic_matching_and_dereverberation_via_visual_scene-drive.md)
 - [\[NeurIPS 2025\] Boosting Generative Image Modeling via Joint Image-Feature Synthesis](boosting_generative_image_modeling_via_joint_imagefeature_sy.md)
 - [\[NeurIPS 2025\] CADMorph: Geometry-Driven Parametric CAD Editing via a Plan-Generate-Verify Loop](cadmorph_geometry-driven_parametric_cad_editing_via_a_plan-generate-verify_loop.md)
-- [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](../../ICLR2026/image_generation/editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
-- [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
+- [\[CVPR 2025\] Reward Fine-Tuning Two-Step Diffusion Models via Learning Differentiable Latent-Space Surrogate Reward](../../CVPR2025/image_generation/reward_fine-tuning_two-step_diffusion_models_via_learning_differentiable_latent-.md)
 
 </div>
 

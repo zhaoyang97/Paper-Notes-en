@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] RESTORE: 通过矫正失真改进视觉 Token 缩减以提升 MLLM 推理效率
+  [Paper Note] RESTORE: Improving Visual Token Reduction via Distortion Correction for Enhanced MLLM Inference Efficiency
 description: >-
-  [ICML 2026][Multimodal VLM][LLaVA] RESTORE highlights two overlooked issues in existing Visual Token Reduction (VTR): "position distortion" and "attention decay." By introducing a distance-aware reverse compensation term for RoPE decay and improving token merging with an anchor selection strategy balancing representativeness and discriminativeness, it e
+  [ICML 2026][Multimodal VLM][Visual Token Reduction] RESTORE highlights two overlooked issues in existing Visual Token Reduction (VTR): "position distortion" and "attention decay." By introducing a distance-aware reverse compensation term for RoPE decay and improving token merging with an anchor selection strategy balancing representativeness and discriminativeness, it enables LLaVA-1.5-7B to approach full-token performance even at 64 tokens (~11% retention).
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - LLaVA
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Visual Token Reduction"
+  - "MLLM Acceleration"
+  - "RoPE Attention Calibration"
+  - "Anchor Token Selection"
+  - "LLaVA"
 date: 2026-05-08
-content_hash: 7971767c0cb6df2c
+content_hash: a61ae54dd0ed5589
 ---
+
 # RESTORE: Improving Visual Token Reduction via Distortion Correction for Enhanced MLLM Inference Efficiency
 
 **Conference**: ICML 2026  
@@ -127,15 +132,16 @@ At 64 tokens (11.1%), RESTORE pushes several VTR backbones to near full-token pe
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping](../../ICLR2026/multimodal_vlm/constructive_distortion_improving_mllms_with_attention-guided_image_warping.md)
+- [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](../../ICCV2025/multimodal_vlm/sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
 - [\[CVPR 2026\] Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token](../../CVPR2026/multimodal_vlm/rethinking_mllm_itself_as_a_segmenter_with_a_single_segmentation_token.md)
+- [\[CVPR 2026\] VISion On Request: Enhanced VLLM Efficiency with Sparse, Dynamically Selected, Vision-Language Interactions](../../CVPR2026/multimodal_vlm/vision_on_request_enhanced_vllm_efficiency_with_sparse_dynamically_selected_visi.md)
 - [\[ICML 2026\] V-LynX: Token Interface Alignment for VideoX LLMs](v-lynx_token_interface_alignment_for_videox_llms.md)
-- [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
-- [\[ICML 2026\] ECG-R1: Protocol-Guided and Modality-Agnostic MLLM for Reliable ECG Interpretation](ecg-r1_protocol-guided_and_modality-agnostic_mllm_for_reliable_ecg_interpretatio.md)
-- [\[ICML 2026\] Detached Skip-Links and $R$-Probe: Decoupling Feature Aggregation from Gradient Propagation for MLLM OCR](detached_skip-links_and_r-probe_decoupling_feature_aggregation_from_gradient_pro.md)
 
 </div>
 

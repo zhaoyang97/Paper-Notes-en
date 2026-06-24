@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Procedural Mistake Detection via Action Effect Modeling
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper proposes a dual-branch multimodal supervised action effect modeling framework. It combines a visual branch (extracting object states and spatial relationship features) with a text branch (utilizing GPT-4o generated scene graphs) to distill external supervision signals into learnable effect tokens, achieving
+  [ICLR 2026][Multimodal VLM][Procedural mistake detection] This paper proposes a dual-branch multimodal supervised action effect modeling framework. It combines a visual branch (extracting object states and spatial relationship features) with a text branch (utilizing GPT-4o generated scene graphs) to distill external supervision signals into learnable effect tokens, achieving SOTA mistake detection performance in egocentric procedural videos.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Procedural mistake detection"
+  - "action effect modeling"
+  - "first-person video"
+  - "scene graphs"
+  - "multimodal supervision"
 date: 2026-05-08
-content_hash: 2bb3e4560f63e416
+content_hash: 7bbf7e66481fa034
 ---
+
 # Procedural Mistake Detection via Action Effect Modeling
 
 **Conference**: ICLR 2026  
@@ -134,7 +140,7 @@ The total loss is defined as: $L = L_{seg} + L_{eff} + L_{CL} + L_{det}$. These 
 - [\[ICLR 2026\] On Discriminative vs. Generative Classifiers: Rethinking MLLMs for Action Understanding](on_discriminative_vs_generative_classifiers_rethinking_mllms_for_action_understa.md)
 - [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](unified_vision-language_modeling_via_concept_space_alignment.md)
 - [\[ICLR 2026\] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](videochat-flash_hierarchical_compression_for_long-context_video_modeling.md)
-- [\[CVPR 2026\] From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings](../../CVPR2026/multimodal_vlm/from_observation_to_action_latent_action-based_primitive_segmentation_for_vla_pr.md)
+- [\[ICLR 2026\] Revisiting Confidence Calibration for Misclassification Detection in VLMs](revisiting_confidence_calibration_for_misclassification_detection_in_vlms.md)
 
 </div>
 

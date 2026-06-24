@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learn to Guide Your Diffusion Model
 description: >-
-  [ICLR 2026][Image Generation][classifier-free guidance] This paper learns the manually set fixed guidance scale in Classifier-Free Guidance (CFG) as a function of the condition and the denoising time interval. The function is trained using self-consistency distribution matching. It achieves a better trade-off between sample quality, distribution matching, and prompt alignme
+  [ICLR2026][Image Generation][classifier-free guidance] This paper learns the manually set fixed guidance scale in Classifier-Free Guidance (CFG) as a function of the condition and the denoising time interval. The function is trained using self-consistency distribution matching. It achieves a better trade-off between sample quality, distribution matching, and prompt alignment in ImageNet, CelebA, and text-to-image generation compared to fixed CFG or limited interval guidance.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - classifier-free guidance
-  - MMD
+  - "ICLR2026"
+  - "Image Generation"
+  - "classifier-free guidance"
+  - "adaptive guidance"
+  - "self-consistency"
+  - "MMD"
+  - "text-to-image generation"
 date: 2026-05-08
-content_hash: 08599e9fd6c45ffe
+content_hash: 58b25b03bdb85f34
 ---
+
 # Learn to Guide Your Diffusion Model
 
 **Conference**: ICLR2026  
@@ -171,8 +175,6 @@ A counter-intuitive but important detail is that the training time interval $\de
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

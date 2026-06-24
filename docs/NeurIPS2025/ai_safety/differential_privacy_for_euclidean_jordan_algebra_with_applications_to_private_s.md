@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming
 description: >-
-  [NeurIPS 2025][AI Safety][differential privacy] This paper proposes a general Gaussian privacy mechanism based on Euclidean Jordan Algebra (EJA) and, building upon it…
+  [NeurIPS 2025][AI Safety][differential privacy] This paper proposes a general Gaussian privacy mechanism based on Euclidean Jordan Algebra (EJA) and, building upon it, designs the first differentially private algorithm for Symmetric Cone Programming (SCP), thereby resolving an important open problem on differentially private semidefinite programming posed by Hsu et al. (ICALP 2014).
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Semidefinite Programming"
   - "Gaussian Mechanism"
 date: 2026-05-08
-content_hash: 99c53f0394b28108
+content_hash: 85d309339c3c65d9
 ---
 
 # Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming
@@ -137,11 +137,11 @@ The EJA-based Gaussian mechanism is transferable to other settings requiring pri
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](sequentially_auditing_differential_privacy.md)
 - [\[NeurIPS 2025\] Differentially Private High-dimensional Variable Selection via Integer Programming](differentially_private_high-dimensional_variable_selection_via_integer_programmi.md)
+- [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](sequentially_auditing_differential_privacy.md)
 - [\[NeurIPS 2025\] Multi-Class Support Vector Machine with Differential Privacy](multi-class_support_vector_machine_with_differential_privacy.md)
-- [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
 - [\[NeurIPS 2025\] Spectral Perturbation Bounds for Low-Rank Approximation with Applications to Privacy](spectral_perturbation_bounds_for_low-rank_approximation_with_applications_to_pri.md)
+- [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper proposes a paradigm that treats the "second-view image (side-view) as a language modality." It introduces the first dual-view multi-modal security benchmark, DualXrayBench, and the GSXray dataset featuring `<top>/<side>/<conclusion>` Chain-of-Thought (CoT) supervision. The resulting GSR model improves overal
+  [CVPR 2026][VLM Reasoning][Dual-view X-ray] This paper proposes a paradigm that treats the "second-view image (side-view) as a language modality." It introduces the first dual-view multi-modal security benchmark, DualXrayBench, and the GSXray dataset featuring `<top>/<side>/<conclusion>` Chain-of-Thought (CoT) supervision. The resulting GSR model improves overall accuracy from 53.5 to 65.4 across eight cross-view reasoning tasks, nearly doubling the mIoU.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Dual-view X-ray"
+  - "Cross-view Reasoning"
+  - "Language-like Modality"
+  - "Chain-of-Thought Supervision"
+  - "Prohibited Item Detection"
 date: 2026-05-08
-content_hash: bc1de5665727bc3d
+content_hash: 812e6ff0911c4cb1
 ---
+
 # Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection
 
 **Conference**: CVPR 2026  
@@ -130,10 +136,20 @@ Table 5 shows the incremental effect of dual-view and structured reasoning compo
 - Value: ⭐⭐⭐⭐⭐ Establishes a foundational dual-view multi-modal benchmark for security.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Evaluating Cross-Modal Reasoning Ability and Problem Characteristics with Multimodal Item Response Theory](../../ICLR2026/vlm_reasoning/evaluating_cross-modal_reasoning_ability_and_problem_characteristics_with_multim.md)
+- [\[CVPR 2026\] ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation](realign_generalizable_image_forgery_detection_via_reasoning-aligned_representati.md)
+- [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
+- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
+- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)

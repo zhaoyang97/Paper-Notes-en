@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FloodDiffusion: Tailored Diffusion Forcing for Streaming Motion Generation
 description: >-
-  [CVPR 2026][Human Understanding][diffusion forcing] FloodDiffusion tails the diffusion forcing framework from the video domain for text-driven streaming human motion generation. Through three key modifications—lower-triangular time scheduling, bi-directional attention within an active window, and frame-level time-varying text conditioning—it achieves a SOTA streaming FI
+  [CVPR 2026][Human Understanding][Streaming Motion Generation] FloodDiffusion tails the diffusion forcing framework from the video domain for text-driven streaming human motion generation. Through three key modifications—lower-triangular time scheduling, bi-directional attention within an active window, and frame-level time-varying text conditioning—it achieves a SOTA streaming FID of 0.057 on HumanML3D, approaching the performance of non-streaming methods for the first time.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - diffusion forcing
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Streaming Motion Generation"
+  - "Diffusion Forcing"
+  - "Text-to-Motion"
+  - "Real-time Generation"
+  - "Causal VAE"
 date: 2026-05-08
-content_hash: 74a34d27c9522b89
+content_hash: 4439c79cf57934bd
 ---
+
 # FloodDiffusion: Tailored Diffusion Forcing for Streaming Motion Generation
 
 **Conference**: CVPR 2026  
@@ -131,10 +136,10 @@ Removing either component causes FID to crash to the 3.0+ range, proving both mo
 
 ## Related Papers
 
-- [\[AAAI 2026\] Streaming Generation of Co-Speech Gestures via Accelerated Rolling Diffusion](../../AAAI2026/human_understanding/streaming_generation_of_co-speech_gestures_via_accelerated_rolling_diffusion.md)
-- [\[CVPR 2026\] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation](avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa.md)
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
 - [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
-- [\[CVPR 2026\] Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances](ultra_diffusion_poser_diffusion-based_human_motion_tracking_from_sparse_inertial.md)
+- [\[CVPR 2026\] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation](avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa.md)
+- [\[AAAI 2026\] Streaming Generation of Co-Speech Gestures via Accelerated Rolling Diffusion](../../AAAI2026/human_understanding/streaming_generation_of_co-speech_gestures_via_accelerated_rolling_diffusion.md)
 - [\[CVPR 2026\] Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization](towards_highly-constrained_human_motion_generation_with_retrieval-guided_diffusi.md)
 
 </div>

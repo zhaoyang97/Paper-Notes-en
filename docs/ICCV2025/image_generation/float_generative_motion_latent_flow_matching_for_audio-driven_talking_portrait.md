@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FLOAT: Generative Motion Latent Flow Matching for Audio-driven Talking Portrait
 description: >-
-  [ICCV 2025][Image Generation][Flow Matching] This paper proposes FLOAT, an audio-driven talking portrait generation method based on Flow Matching…
+  [ICCV 2025][Image Generation][Flow Matching] This paper proposes FLOAT, an audio-driven talking portrait generation method based on Flow Matching, which employs a Transformer architecture to predict vector fields in an orthogonal motion latent space. The approach enables efficient (~10-step sampling), temporally consistent, high-quality talking video generation, with additional support for speech-driven emotion enhancement and test-time head pose editing.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Orthogonal Basis"
   - "Speech Emotion Enhancement"
 date: 2026-05-08
-content_hash: 329f6c59932b8e7f
+content_hash: c5a3b0119efee673
 ---
 
 # FLOAT: Generative Motion Latent Flow Matching for Audio-driven Talking Portrait
@@ -177,8 +177,8 @@ Effect of additional conditions:
 - [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](contrastive_flow_matching.md)
 - [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
 - [\[ICCV 2025\] Deeply Supervised Flow-Based Generative Models](deeply_supervised_flow-based_generative_models.md)
+- [\[ICML 2026\] From Talking to Singing: A New Challenge for Audio-Visual Deepfake Detection](../../ICML2026/image_generation/from_talking_to_singing_a_new_challenge_for_audio-visual_deepfake_detection.md)
 - [\[ICCV 2025\] Domain Generalizable Portrait Style Transfer](domain_generalizable_portrait_style_transfer.md)
-- [\[ICML 2026\] AG-REPA: Causal Layer Selection for Representation Alignment in Audio Flow Matching](../../ICML2026/image_generation/ag-repa_causal_layer_selection_for_representation_alignment_in_audio_flow_matchi.md)
 
 </div>
 

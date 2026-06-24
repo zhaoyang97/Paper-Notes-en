@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] BLM-Guard: Explainable Multimodal Ad Moderation with Chain-of-Thought and Policy-Aligned Rewards
 description: >-
-  [AAAI 2026][LLM Reasoning][Ad moderation] This paper proposes BLM-Guard, an explainable multimodal moderation framework for short-video commercial advertisements. It first establishes structured reasoning capability via…
+  [AAAI 2026][Reasoning][Ad moderation] This paper proposes BLM-Guard, an explainable multimodal moderation framework for short-video commercial advertisements. It first establishes structured reasoning capability via rule-driven ICoT data synthesis and SFT cold-start, then applies Self-Adaptive GRPO reinforcement learning (combining rule correctness rewards and a self-adaptive consistency reward SCA-R) to optimize policy alignment, achieving 91.4% strict accuracy and 0.845 rea…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Ad moderation"
   - "multimodal CoT reasoning"
   - "policy-aligned RL"
   - "GRPO"
   - "cross-modal inconsistency detection"
 date: 2026-05-08
-content_hash: 161b8625e50d6888
+content_hash: 599e10a75a124348
 ---
 
 # BLM-Guard: Explainable Multimodal Ad Moderation with Chain-of-Thought and Policy-Aligned Rewards
@@ -136,9 +136,9 @@ Total reward: $r = r_{\text{rule}} + r_{\text{format}} + r_{\text{scaR}}$. GRPO 
 ## Related Papers
 
 - [\[ICLR 2026\] TumorChain: Interleaved Multimodal Chain-of-Thought Reasoning for Traceable Clinical Tumor Analysis](../../ICLR2026/llm_reasoning/tumorchain_interleaved_multimodal_chain-of-thought_reasoning_for_traceable_clini.md)
+- [\[ACL 2025\] MM-Verify: Enhancing Multimodal Reasoning with Chain-of-Thought Verification](../../ACL2025/llm_reasoning/mm-verify_enhancing_multimodal_reasoning_with_chain-of-thought_verification.md)
+- [\[ICLR 2026\] Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards](../../ICLR2026/llm_reasoning/random_policy_valuation_is_enough_for_llm_reasoning_with_verifiable_rewards.md)
 - [\[CVPR 2026\] E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought](../../CVPR2026/llm_reasoning/e-comiq-zh_a_human-aligned_dataset_and_benchmark_for_fine-grained_evaluation_of_.md)
-- [\[ICLR 2026\] AIMCoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ICLR2026/llm_reasoning/aimcot_active_information-driven_multimodal_chain-of-thought_for_vision-language.md)
-- [\[ACL 2026\] CSRP: Chain-of-Thought Reasoning for Chinese Text Correction via Reinforcement Learning with Efficiency-Aware Rewards](../../ACL2026/llm_reasoning/csrp_chain-of-thought_reasoning_for_chinese_text_correction_via_reinforcement_le.md)
 - [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ACL2026/llm_reasoning/aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
 
 </div>

@@ -4,14 +4,19 @@ title: >-
 description: >-
   [ICLR 2026][Reinforcement Learning][RLVR] LATR replaces independent token-level stochastic sampling in RLVR with a "branching-lookahead simulation-pruning" tree-based rollout. This explicitly generates trajectory-level diversity under a fixed generation budget, accelerating GRPO/DAPO training by 131% and improving final pass@1 by 4.2%.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
-  - DAPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "GRPO"
+  - "DAPO"
+  - "Trajectory Diversity"
+  - "Tree Search"
+  - "Lookahead Simulation"
+  - "Rollout Exploration"
 date: 2026-05-08
-content_hash: 86a9bca955bc071f
+content_hash: f0e8e43f8fb1a1f6
 ---
+
 # Lookahead Tree-Based Rollouts for Enhanced Trajectory-Level Exploration in Reinforcement Learning with Verifiable Rewards
 
 **Conference**: ICLR 2026  
@@ -128,10 +133,10 @@ LATR consistently increases the number of "semantically distinct answers within 
 ## Related Papers
 
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
-- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
 - [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
+- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
 - [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
-- [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
+- [\[ICLR 2026\] DeepSearch: Overcome the Bottleneck of Reinforcement Learning with Verifiable Rewards via Tree-based Search](deepsearch_overcome_the_bottleneck_of_reinforcement_learning_with_verifiable_rew.md)
 
 </div>
 

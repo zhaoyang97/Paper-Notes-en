@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles
 description: >-
-  [ICLR 2026][LLM Efficiency][Diffusion Language Model] Addressing the issue that existing sampling strategies for Diffusion Large Language Models (dLLMs) have a "fixed speed that does not adjust with generation states," this paper summarizes three empirical laws (Certainty, Convergence, Locality). Based on these, it designs SlowFast Sampling, which dynamically switches bet
+  [ICLR 2026][LLM Efficiency][Diffusion Language Models] Addressing the issue that existing sampling strategies for Diffusion Large Language Models (dLLMs) have a "fixed speed that does not adjust with generation states," this paper summarizes three empirical laws (Certainty, Convergence, Locality). Based on these, it designs SlowFast Sampling, which dynamically switches between "Slow Phase Exploration" and "Fast Phase Acceleration." It can be orthogonally combined with dLLM-Ca…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Diffusion Language Model
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Parallel Decoding"
+  - "Sampling Acceleration"
+  - "Confidence"
+  - "Feature Caching"
 date: 2026-05-08
-content_hash: 29bc4d876963ae01
+content_hash: 0145811bd24f1fb2
 ---
+
 # Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles
 
 **Conference**: ICLR 2026  

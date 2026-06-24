@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing Through the PRISM: Compound & Controllable Restoration of Scientific Images
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] PRISM combines compound degradation samples, weighted contrastive disentangled CLIP representations, and text-conditional diffusion. This allows scientific images to undergo joint restoration of multiple mixed degradations in a single pass or selective correction based on expert prompts, outperforming existing all-in-o
+  [ICLR2026][Image Restoration][Compound Degradation] PRISM combines compound degradation samples, weighted contrastive disentangled CLIP representations, and text-conditional diffusion. This allows scientific images to undergo joint restoration of multiple mixed degradations in a single pass or selective correction based on expert prompts, outperforming existing all-in-one, diffusion, and composite restoration baselines in fidelity metrics, zero-shot compound restoration…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Compound Degradation"
+  - "Controllable Image Restoration"
+  - "Conditional Diffusion"
+  - "Contrastive Disentanglement"
+  - "Scientific Images"
 date: 2026-05-08
-content_hash: 5fec8d42c54c8495
+content_hash: aba82c83d846fe67
 ---
+
 # Seeing Through the PRISM: Compound & Controllable Restoration of Scientific Images
 
 **Conference**: ICLR2026  

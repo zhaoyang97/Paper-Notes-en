@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework
 description: >-
-  [AAAI 2026][Reinforcement Learning][Fuzzy Logic] This paper proposes a hierarchical Takagi-Sugeno-Kang (TSK) fuzzy classifier system that distills deep RL neural network policies into human-readable IF-THEN fuzzy rules.…
+  [AAAI 2026][Reinforcement Learning][Fuzzy Logic] This paper proposes a hierarchical Takagi-Sugeno-Kang (TSK) fuzzy classifier system that distills deep RL neural network policies into human-readable IF-THEN fuzzy rules. Three quantitative interpretability metrics are introduced (FRAD, FSC, ASG). On the Lunar Lander continuous control task, the proposed system achieves 81.48% fidelity, surpassing decision trees by 21 percentage points.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Explainable AI"
   - "Continuous Control"
 date: 2026-05-08
-content_hash: f6bdd0e22ed9aa6c
+content_hash: ba6670404e1af9c1
 ---
 
 # Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework
@@ -191,11 +191,11 @@ Ridge regularization prevents overfitting when rule support data is limited. $\l
 
 ## Related Papers
 
-- [\[AAAI 2026\] ChartEditor: A Reinforcement Learning Framework for Robust Chart Editing](charteditor_a_reinforcement_learning_framework_for_robust_chart_editing.md)
-- [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agent-Based Conversational AI Defense Against LLM Jailbreaking](../../ICLR2026/reinforcement_learning/toward_a_dynamic_stackelberg_game-theoretic_framework_for_agent-based_conversat.md)
+- [\[ICLR 2026\] GRACE: A Language Model Framework for Explainable Inverse Reinforcement Learning](../../ICLR2026/reinforcement_learning/grace_a_language_model_framework_for_explainable_inverse_reinforcement_learning.md)
 - [\[AAAI 2026\] DRMD: Deep Reinforcement Learning for Malware Detection under Concept Drift](drmd_deep_reinforcement_learning_for_malware_detection_under_concept_drift.md)
 - [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
 - [\[AAAI 2026\] ReGal: A First Look at PPO-based Legal AI for Judgment Prediction and Summarization in India](regal_a_first_look_at_ppo-based_legal_ai_for_judgment_prediction_and_summarizati.md)
+- [\[ICLR 2026\] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning](../../ICLR2026/reinforcement_learning/neuralsymbolic_approaches_for_interpretable_actor-critic_reinforcement_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Behavior Injection: Preparing Language Models for Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][RL fine-tuning] This paper identifies the root cause of inconsistent LLM responses to RL fine-tuning. Through per-step influence analysis…
+  [NeurIPS 2025][Reinforcement Learning][RL fine-tuning] This paper identifies the root cause of inconsistent LLM responses to RL fine-tuning. Through per-step influence analysis, it reveals that RL effectiveness depends on (1) the distribution of rollout accuracy (moderate is optimal) and (2) data co-influence magnitude. The proposed BRIDGE method injects exploration/exploitation behaviors during SFT, boosting subsequent RL gains from 6% to 46.6%.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "per-step influence"
   - "reasoning"
 date: 2026-05-08
-content_hash: 4651d0234b87c3b4
+content_hash: 4aa52dd694cdda6b
 ---
 
 # Behavior Injection: Preparing Language Models for Reinforcement Learning
@@ -133,8 +133,8 @@ SFT: standard cross-entropy loss (with BRIDGE-augmented data). RL: GRPO (standar
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
-- [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](training_language_models_to_reason_efficiently.md)
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
+- [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](training_language_models_to_reason_efficiently.md)
 - [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](checklists_are_better_than_reward_models_for_aligning_langua.md)
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
 

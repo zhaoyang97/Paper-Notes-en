@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Conformal Prediction for Long-Tailed Classification
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] To address the dilemma in long-tailed classification where prediction sets are either small but miss rare classes or have good coverage but are excessively large, this paper proposes two conformal prediction methods that maintain marginal coverage guarantees: a new scoring function, PAS (Prevalence-Adjusted Softmax, wh
+  [ICLR2026][Learning Theory][Long-tailed Classification] To address the dilemma in long-tailed classification where prediction sets are either small but miss rare classes or have good coverage but are excessively large, this paper proposes two conformal prediction methods that maintain marginal coverage guarantees: a new scoring function, PAS (Prevalence-Adjusted Softmax, which optimally trades off set size and macro-coverage), and a new procedure…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Uncertainty Quantification"
+  - "Conformal Prediction"
+  - "Long-tailed Classification"
+  - "Class-conditional Coverage"
+  - "Prediction Sets"
+  - "Coverage-size Trade-off"
 date: 2026-05-08
-content_hash: f8d8f9fc7d09c6fc
+content_hash: 4a2fda768df701d3
 ---
+
 # Conformal Prediction for Long-Tailed Classification
 
 **Conference**: ICLR2026  
@@ -150,15 +157,14 @@ Pl@ntNet-300K (Target 90% Marginal Coverage):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
-- [\[ICLR 2026\] Conformal Prediction with Corrupted Labels: Uncertain Imputation and Robust Re-weighting](conformal_prediction_with_corrupted_labels_uncertain_imputation_and_robust_re-we.md)
 - [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
+- [\[ICLR 2026\] Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity](adaptive_conformal_prediction_via_mixture-of-experts_gating_similarity.md)
 - [\[ICML 2026\] Enhancing Conformal Prediction via Class Similarity](../../ICML2026/learning_theory/enhancing_conformal_prediction_via_class_similarity.md)
-- [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
+- [\[ICLR 2026\] Softmax is not Enough (for Adaptive Conformal Classification)](softmax_is_not_enough_for_adaptive_conformal_classification.md)
 
 </div>
 

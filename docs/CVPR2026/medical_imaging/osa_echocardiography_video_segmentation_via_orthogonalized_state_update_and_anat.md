@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] OSA constrains the temporal memory updates of the left ventricle in echocardiography videos to the Stiefel manifold (Orthogonalized State Update) and incorporates a feature enhancement module that physically decouples anatomical structures from speckle noise. It achieves state-of-the-art segmentation accuracy and tempo
+  [CVPR 2026][Medical Imaging][Echocardiography] OSA constrains the temporal memory updates of the left ventricle in echocardiography videos to the Stiefel manifold (Orthogonalized State Update) and incorporates a feature enhancement module that physically decouples anatomical structures from speckle noise. It achieves state-of-the-art segmentation accuracy and temporal stability at real-time speeds on CAMUS and EchoNet-Dynamic.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Echocardiography"
+  - "Left Ventricle Segmentation"
+  - "Linear Recurrence"
+  - "Stiefel Manifold"
+  - "Rank Collapse"
 date: 2026-05-08
-content_hash: 67ac03278697bdae
+content_hash: 13e1e97f44ed3eee
 ---
+
 # OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement
 
 **Conference**: CVPR 2026  
@@ -128,7 +134,7 @@ Specialized stability metrics were provided (ColR = percentage of steps where $\
 - [\[CVPR 2026\] Semi-supervised Echocardiography Video Segmentation via Anchor Semantic Awareness and Continuous Pseudo-label Reforging](semi-supervised_echocardiography_video_segmentation_via_anchor_semantic_awarenes.md)
 - [\[CVPR 2026\] R2-Seg: Training-Free OOD Medical Tumor Segmentation via Anatomical Reasoning and Statistical Rejection](r2-seg_training-free_ood_medical_tumor_segmentation_via_anatomical_reasoning_and.md)
 - [\[CVPR 2026\] CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference](cofida-m_concept-aware_feature_modulation_for_cross-domain_adaptation_with_image.md)
-- [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)
+- [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
 
 </div>
 

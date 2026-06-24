@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness
 description: >-
-  [CVPR 2026][Segmentation][AttnLRP] Ours proposes CFT (Concept-Guided Fine-Tuning), which utilizes LLMs to generate category-level semantic concepts and obtains concept masks through GroundedSAM zero-shot segmentation. ViT is fine-tuned with the objective of aligning AttnLRP relevance maps with these concept regions. Using only 1500 images, it significan
+  [CVPR2026][Segmentation][Spurious Correlations] Ours proposes CFT (Concept-Guided Fine-Tuning), which utilizes LLMs to generate category-level semantic concepts and obtains concept masks through GroundedSAM zero-shot segmentation. ViT is fine-tuned with the objective of aligning AttnLRP relevance maps with these concept regions. Using only 1500 images, it significantly improves robustness across five OOD benchmarks.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - AttnLRP
+  - "CVPR2026"
+  - "Segmentation"
+  - "Spurious Correlations"
+  - "ViT Robustness"
+  - "Concept-Guided Fine-Tuning"
+  - "AttnLRP"
+  - "Zero-shot Segmentation"
+  - "OOD Generalization"
 date: 2026-05-08
-content_hash: c6926be4e99abdfc
+content_hash: 78cd4ac2c7c43bc4
 ---
+
 # Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness
 
 **Conference**: CVPR2026  

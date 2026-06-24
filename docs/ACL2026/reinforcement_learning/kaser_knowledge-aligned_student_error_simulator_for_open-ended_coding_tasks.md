@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] KASER: Knowledge-Aligned Student Error Simulator for Open-Ended Coding Tasks
 description: >-
-  [ACL 2026][Reinforcement Learning][GRPO] KASER first estimates student mastery of knowledge components, then trains a code generator using GRPO with a hybrid reward of "code similarity + error matching + diversity" to simulate programming errors consistent with the student's knowledge state.
+  [ACL2026][Reinforcement Learning][Student Modeling] KASER first estimates student mastery of knowledge components, then trains a code generator using GRPO with a hybrid reward of "code similarity + error matching + diversity" to simulate programming errors consistent with the student's knowledge state.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ACL2026"
+  - "Reinforcement Learning"
+  - "Student Modeling"
+  - "Programming Education"
+  - "Error Simulation"
+  - "GRPO"
+  - "Knowledge Tracing"
 date: 2026-05-08
-content_hash: 27e5de5618afde68
+content_hash: 328a16400f16045a
 ---
+
 # KASER: Knowledge-Aligned Student Error Simulator for Open-Ended Coding Tasks
 
 **Conference**: ACL2026  
@@ -128,11 +133,11 @@ Experiments utilize two real-world datasets: CodeWorkout (246 students, 50 Java 
 
 ## Related Papers
 
+- [\[ICLR 2026\] QuRL: Rubrics As Judge For Open-Ended Question Answering](../../ICLR2026/reinforcement_learning/qurl_rubrics_as_judge_for_open-ended_question_answering.md)
 - [\[ICLR 2026\] Helix: Evolutionary Reinforcement Learning for Open-Ended Scientific Problem Solving](../../ICLR2026/reinforcement_learning/helix_evolutionary_reinforcement_learning_for_open-ended_scientific_problem_solv.md)
 - [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](../../ICLR2026/reinforcement_learning/from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
 - [\[ACL 2026\] NaviMaster: Learning a Unified Policy for GUI and Embodied Navigation Tasks](navimaster_learning_a_unified_policy_for_gui_and_embodied_navigation_tasks.md)
-- [\[ACL 2026\] A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks (EAGLET)](a_goal_without_a_plan_is_just_a_wish_efficient_and_effective_global_planner_trai.md)
-- [\[ICLR 2026\] LadderSym: A Multimodal Interleaved Transformer for Music Practice Error Detection](../../ICLR2026/reinforcement_learning/laddersym_a_multimodal_interleaved_transformer_for_music_practice_error_detectio.md)
+- [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](../../ICLR2026/reinforcement_learning/group_verification-based_policy_optimization_for_interactive_coding_agents.md)
 
 </div>
 

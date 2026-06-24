@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] D3D-VLP: Dynamic 3D Vision-Language-Planning Model for Embodied Grounding and Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][3D Chain-of-Thought] D3D-VLP reformulates "planning, 3D grounding, and navigation" into a unified internal autoregressive 3D Chain-of-Thought (3D CoT) within a 3D-VLM, complemented by a CoT memory feedback loop for dynamic re-planning. By utilizing a "Fragmented Supervision" strategy, the model jointly trains on 10 million samples with inc
+  [CVPR 2026][Robotics][Embodied Navigation] D3D-VLP reformulates "planning, 3D grounding, and navigation" into a unified internal autoregressive 3D Chain-of-Thought (3D CoT) within a 3D-VLM, complemented by a CoT memory feedback loop for dynamic re-planning. By utilizing a "Fragmented Supervision" strategy, the model jointly trains on 10 million samples with incomplete annotations (e.g., navigation-only labels), achieving new SOTA results on multiple embodied navigation and gr…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - 3D Chain-of-Thought
+  - "CVPR 2026"
+  - "Robotics"
+  - "Embodied Navigation"
+  - "3D Vision-Language Model"
+  - "3D Chain-of-Thought"
+  - "Dynamic Re-planning"
+  - "Fragmented Supervision"
 date: 2026-05-08
-content_hash: 1ac0ee3444ec69b2
+content_hash: 6057eacafc6aa4ee
 ---
+
 # D3D-VLP: Dynamic 3D Vision-Language-Planning Model for Embodied Grounding and Navigation
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ Ablations on R2R-CE (Navigation) and SG3D (Grounding):
 
 ## Related Papers
 
+- [\[CVPR 2026\] NavForesee: A Unified Vision-Language World Model for Hierarchical Planning and Dual-Horizon Navigation Prediction](navforesee_a_unified_vision-language_world_model_for_hierarchical_planning_and_d.md)
 - [\[CVPR 2026\] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation](bridging_the_2d-3d_gap_a_hierarchical_semantic-geometric_map_for_vision_language.md)
+- [\[ICLR 2026\] Embodied Navigation Foundation Model](../../ICLR2026/robotics/embodied_navigation_foundation_model.md)
+- [\[CVPR 2026\] SocialNav: Training Human-Inspired Foundation Model for Socially-Aware Embodied Navigation](socialnav_training_human-inspired_foundation_model_for_socially-aware_embodied_n.md)
 - [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](../../ICLR2026/robotics/from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
-- [\[CVPR 2026\] OctoNav: Towards Generalist Embodied Navigation](octonav_towards_generalist_embodied_navigation.md)
-- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
-- [\[CVPR 2026\] HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation](htnav_a_hybrid_navigation_framework_with_tiered_structure_for_urban_aerial_visio.md)
 
 </div>
 

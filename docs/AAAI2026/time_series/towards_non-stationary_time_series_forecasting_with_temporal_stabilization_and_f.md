@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing
 description: >-
-  [AAAI 2026][Time Series][Non-stationary time series] This paper proposes DTAF, a dual-branch framework that extracts and removes heterogeneous non-stationary patterns via a non-stationary MoE filter in the temporal domai…
+  [AAAI 2026][Time Series][Non-stationary time series] This paper proposes DTAF, a dual-branch framework that extracts and removes heterogeneous non-stationary patterns via a non-stationary MoE filter in the temporal domain, tracks frequency drift via spectral differencing in the frequency domain, and fuses complementary information from both domains through dual-branch attention for robust non-stationary time series forecasting.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "dual-branch modeling"
   - "time series forecasting"
 date: 2026-05-08
-content_hash: 2327115f82aa2bc3
+content_hash: d561d118ef555bb1
 ---
 
 # Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing
@@ -201,9 +201,9 @@ Each module is indispensable: TFS impacts long-term dependency modeling, FWM aff
 ## Related Papers
 
 - [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
-- [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
 - [\[AAAI 2026\] IdealTSF: Can Non-Ideal Data Contribute to Enhancing Time Series Forecasting?](idealtsf_can_non-ideal_data_contribute_to_enhancing_the_performance_of_time_seri.md)
 - [\[ICML 2026\] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting](../../ICML2026/time_series/parametric_prior_mapping_framework_for_non-stationary_probabilistic_time_series_.md)
+- [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
 - [\[NeurIPS 2025\] Neural MJD: Neural Non-Stationary Merton Jump Diffusion for Time Series Prediction](../../NeurIPS2025/time_series/neural_mjd_neural_non-stationary_merton_jump_diffusion_for_time_series_predictio.md)
 
 </div>

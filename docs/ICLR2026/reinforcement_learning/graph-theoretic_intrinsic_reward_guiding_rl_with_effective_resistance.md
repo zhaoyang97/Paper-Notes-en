@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Graph-Theoretic Intrinsic Reward: Guiding RL with Effective Resistance
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] The agent's local perception is modeled as a time-evolving graph. The change in **Effective Resistance ($R_{eff}$)** between the "agent node" and "goal node" on this graph serves as a dense intrinsic reward. This provides a theoretically grounded, on-policy guiding signal for sparse reward exploration from a spectral g
+  [ICLR 2026][Reinforcement Learning][Effective Resistance] The agent's local perception is modeled as a time-evolving graph. The change in **Effective Resistance ($R_{eff}$)** between the "agent node" and "goal node" on this graph serves as a dense intrinsic reward. This provides a theoretically grounded, on-policy guiding signal for sparse reward exploration from a spectral graph theory perspective, without requiring pre-training.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Effective Resistance"
+  - "Intrinsic Reward"
+  - "Sparse Rewards"
+  - "Goal-Conditioned RL"
+  - "Spectral Graph Theory"
+  - "Exploration"
 date: 2026-05-08
-content_hash: 56b97d0177b8d69d
+content_hash: 59ef9b27cf8e29ee
 ---
+
 # Graph-Theoretic Intrinsic Reward: Guiding RL with Effective Resistance
 
 **Conference**: ICLR 2026  
@@ -120,11 +127,11 @@ where $\beta\gg0$ is a hyperparameter penalizing goal loss and rewarding its rec
 
 ## Related Papers
 
-- [\[ICLR 2026\] Self-Aligned Reward: Towards Effective and Efficient Reasoners](self-aligned_reward_towards_effective_and_efficient_reasoners.md)
-- [\[ICLR 2026\] GraphOmni: A Comprehensive and Extensible Benchmark Framework for Large Language Models on Graph-theoretic Tasks](graphomni_a_comprehensive_and_extensible_benchmark_framework_for_large_language_.md)
 - [\[ACL 2026\] Verifier-Free RL for LLMs via Intrinsic Gradient-Norm Reward](../../ACL2026/reinforcement_learning/verifier-free_rl_for_llms_via_intrinsic_gradient-norm_reward.md)
-- [\[ICLR 2026\] Preference-based Policy Optimization from Sparse-reward Offline Dataset](preference-based_policy_optimization_from_sparse-reward_offline_dataset.md)
-- [\[ICLR 2026\] Selective Expert Guidance for Effective and Diverse Exploration in Reinforcement Learning of LLMs](selective_expert_guidance_for_effective_and_diverse_exploration_in_reinforcement.md)
+- [\[ICLR 2026\] GraphOmni: A Comprehensive and Extensible Benchmark Framework for Large Language Models on Graph-theoretic Tasks](graphomni_a_comprehensive_and_extensible_benchmark_framework_for_large_language_.md)
+- [\[ICLR 2026\] Self-Aligned Reward: Towards Effective and Efficient Reasoners](self-aligned_reward_towards_effective_and_efficient_reasoners.md)
+- [\[ICLR 2026\] SSVPO: Toward Effective Step-level Credit Assignment for Language Model RL Training](ssvpo_effective_step-level_credit_assignment_for_rl_training_of_language_models.md)
+- [\[ICLR 2026\] Efficient Reinforcement Learning by Guiding World Models with Non-Curated Data](efficient_reinforcement_learning_by_guiding_world_models_with_non-curated_data.md)
 
 </div>
 

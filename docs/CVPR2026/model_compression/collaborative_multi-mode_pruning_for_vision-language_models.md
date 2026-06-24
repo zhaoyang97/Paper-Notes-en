@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Collaborative Multi-Mode Pruning for Vision-Language Models
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the simultaneous "parameter redundancy" and "token redundancy" in VLMs, CoMP introduces a Collaborative Importance Measure (CIM, eliminating interference between parameter and token pruning) and a Multi-mode Pruning Strategy (MPS, adaptively selecting the most cost-effective pruning mode at each step). It si
+  [CVPR 2026][Model Compression][VLM Pruning] Addressing the simultaneous "parameter redundancy" and "token redundancy" in VLMs, CoMP introduces a Collaborative Importance Measure (CIM, eliminating interference between parameter and token pruning) and a Multi-mode Pruning Strategy (MPS, adaptively selecting the most cost-effective pruning mode at each step). It significantly outperforms single-mode methods at high pruning rates (e.g., leading by 3.51% in test accuracy on NLVR2…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "VLM Pruning"
+  - "Parameter Pruning"
+  - "Token Pruning"
+  - "Joint Pruning"
+  - "Progressive Compression"
 date: 2026-05-08
-content_hash: bb90701417f4ae03
+content_hash: c2cd767f762389f3
 ---
+
 # Collaborative Multi-Mode Pruning for Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -174,11 +180,11 @@ CIM/MPS component breakdown:
 
 ## Related Papers
 
-- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
-- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
-- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
-- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
+- [\[CVPR 2026\] SigLino: Efficient Multi-Teacher Distillation for Agglomerative Vision Foundation Models](siglino_efficient_multi-teacher_distillation_for_agglomerative_vision_foundation.md)
 - [\[CVPR 2026\] Masking Teacher and Reinforcing Student for Distilling Vision-Language Models](masking_teacher_and_reinforcing_student_for_distilling_vision-language_models.md)
+- [\[ECCV 2024\] Isomorphic Pruning for Vision Models](../../ECCV2024/model_compression/isomorphic_pruning_for_vision_models.md)
+- [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
+- [\[CVPR 2026\] OneSparse: A Unified Framework for Sparse Activation Layers in Vision Models](onesparse_a_unified_framework_for_sparse_activation_layers_in_vision_models.md)
 
 </div>
 

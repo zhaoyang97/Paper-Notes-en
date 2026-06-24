@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Rule-Based Agents: Active Markov Games for Realistic Multi-Agent Interaction in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Multi-Agent] This paper models the driving environment as an "Active Markov Game" (AMG) where both state transitions and rewards depend on the current policies of all agents. By employing multi-agent co-evolutionary training, the ego policy plays against and evolves with a pool of diverse opponent strategies. This approach learns r
+  [CVPR 2026][Autonomous Driving][Autonomous Driving Decision-Making] This paper models the driving environment as an "Active Markov Game" (AMG) where both state transitions and rewards depend on the current policies of all agents. By employing multi-agent co-evolutionary training, the ego policy plays against and evolves with a pool of diverse opponent strategies. This approach learns robust interactive decision-making in CARLA unsignaled intersections and long-tail scenarios…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Multi-Agent
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Autonomous Driving Decision-Making"
+  - "Multi-Agent"
+  - "Active Markov Games"
+  - "Co-evolutionary Training"
+  - "Potential Field Reward Shaping"
 date: 2026-05-08
-content_hash: 0876cfdd6451160b
+content_hash: b3ea2bbc91d7a6fa
 ---
+
 # Beyond Rule-Based Agents: Active Markov Games for Realistic Multi-Agent Interaction in Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -162,11 +167,11 @@ Removing modules under the multi-agent setting:
 
 ## Related Papers
 
-- [\[CVPR 2026\] DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous Driving](drivecombo_benchmarking_compositional_traffic_rule_reasoning_in_autonomous_drivi.md)
 - [\[CVPR 2026\] RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning](rlftsim_realistic_and_controllable_multi-agent_traffic_simulation_via_reinforcem.md)
+- [\[CVPR 2026\] DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous Driving](drivecombo_benchmarking_compositional_traffic_rule_reasoning_in_autonomous_drivi.md)
 - [\[CVPR 2026\] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views](unsupervised_multi-agent_and_single-agent_perception_from_cooperative_views.md)
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
-- [\[CVPR 2026\] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling](f3dgs_federated_3d_gaussian_splatting_for_decentralized_multi-agent_world_modeli.md)
+- [\[ICLR 2026\] DecompGAIL: Learning Realistic Traffic Behaviors with Decomposed Multi-Agent Generative Adversarial Imitation Learning](../../ICLR2026/autonomous_driving/decompgail_learning_realistic_traffic_behaviors_with_decomposed_multi-agent_gene.md)
 
 </div>
 

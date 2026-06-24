@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Robotics][Distributionally robust optimization] This paper establishes the first finite-sample convergence guarantees for distributionally robust average-reward reinforcement learning (DR-AMDP)…
+  [NeurIPS 2025][Robotics][Distributionally robust optimization] This paper establishes the first finite-sample convergence guarantees for distributionally robust average-reward reinforcement learning (DR-AMDP), proposing two algorithms (discount reduction and anchoring) that achieve near-optimal sample complexity of $\widetilde{O}(|S||A|t_{\mathrm{mix}}^2\varepsilon^{-2})$ under both KL and $f_k$-divergence uncertainty sets.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Markov decision processes"
   - "KL divergence"
 date: 2026-05-08
-content_hash: 1e876891928083ea
+content_hash: ca467efa6e64f542
 ---
 
 # Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning
@@ -146,8 +146,8 @@ This paper improves the effective horizon dependence for DR-DMDP from $(1-\gamma
 ## Related Papers
 
 - [\[NeurIPS 2025\] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning](sample-efficient_tabular_self-play_for_offline_robust_reinforcement_learning.md)
-- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization](../../ICLR2026/robotics/distributionally_robust_cooperative_multi-agent_reinforcement_learning_via_robus.md)
 - [\[NeurIPS 2025\] Trust Region Reward Optimization and Proximal Inverse Reward Optimization Algorithm](trust_region_reward_optimization_and_proximal_inverse_reward_optimization_algori.md)
+- [\[AAAI 2026\] Distributionally Robust Online Markov Game with Linear Function Approximation](../../AAAI2026/robotics/distributionally_robust_online_markov_game_with_linear_function_approximation.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
 - [\[NeurIPS 2025\] Opinion: Towards Unified Expressive Policy Optimization for Robust Robot Learning](opinion_towards_unified_expressive_policy_optimization_for_robust_robot_learning.md)
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding
 description: >-
-  [CVPR 2026][LLM Agent][GUI Grounding] This paper presents the first systematic study of Discrete Diffusion Vision-Language Models (DVLM) for GUI Grounding. By adapting LLaDA-V for single-step action prediction and proposing a mixed mask scheduling strategy (linear + deterministic) to capture geometric hierarchical dependencies between bounding box coordina
+  [CVPR 2026][LLM Agent][GUI Grounding] This paper presents the first systematic study of Discrete Diffusion Vision-Language Models (DVLM) for GUI Grounding. By adapting LLaDA-V for single-step action prediction and proposing a mixed mask scheduling strategy (linear + deterministic) to capture geometric hierarchical dependencies between bounding box coordinates, the authors demonstrate the feasibility of diffusion models as a foundation for GUI Agents across Web, Desktop…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Grounding
-  - LLaDA-V
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Grounding"
+  - "Discrete Diffusion Models"
+  - "LLaDA-V"
+  - "Mixed Masking"
+  - "UI Understanding"
 date: 2026-05-08
-content_hash: 29b219731020f5ba
+content_hash: 13bf4e91dcd83334
 ---
+
 # Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding
 
 **Conference**: CVPR 2026  
@@ -180,9 +184,9 @@ SSR Gain of Mixed Masking vs Linear Masking:
 
 - [\[CVPR 2026\] BAMI: Training-Free Bias Mitigation in GUI Grounding](bami_training-free_bias_mitigation_in_gui_grounding.md)
 - [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](../../ICML2026/llm_agent/scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
-- [\[CVPR 2026\] ShowUI-π: Flow-based Generative Models as GUI Dexterous Hands](showui-p_flow-based_generative_models_as_gui_dexterous_hands.md)
-- [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
 - [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
+- [\[CVPR 2026\] OS-Oracle: A Comprehensive Framework for Cross-Platform GUI Critic Models](os-oracle_a_comprehensive_framework_for_cross-platform_gui_critic_models.md)
+- [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
 
 </div>
 

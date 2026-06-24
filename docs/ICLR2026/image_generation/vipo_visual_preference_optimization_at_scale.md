@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ViPO: Visual Preference Optimization at Scale
 description: >-
-  [ICLR 2026][Image Generation][Diffusion-DPO] Addressing the "scaling ceiling" of preference optimization in visual generation, this work advances both algorithms and data: it proposes Poly-DPO, requiring only two lines of code and one hyperparameter $\alpha$ to achieve "confidence-aware" training robust to noisy preferences, and constructs ViPO, a million-scale,
+  [ICLR 2026][Image Generation][Diffusion-DPO] Addressing the "scaling ceiling" of preference optimization in visual generation, this work advances both algorithms and data: it proposes Poly-DPO, requiring only two lines of code and one hyperparameter $\alpha$ to achieve "confidence-aware" training robust to noisy preferences, and constructs ViPO, a million-scale, category-balanced, 1024px preference dataset. The two components are mutually validating—Poly-DPO automatically deg…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion-DPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion-DPO"
+  - "Preference Optimization"
+  - "Polynomial Loss"
+  - "Large-scale Dataset"
+  - "Visual Generation"
 date: 2026-05-08
-content_hash: 7489b6c24651586c
+content_hash: 61e1b792f0eee6cf
 ---
+
 # ViPO: Visual Preference Optimization at Scale
 
 **Conference**: ICLR 2026  

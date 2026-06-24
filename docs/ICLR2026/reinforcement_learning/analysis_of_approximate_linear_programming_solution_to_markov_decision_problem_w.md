@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Analysis of Approximate Linear Programming Solution to Markov Decision Problem with Log Barrier Function
 description: >-
-  [ICLR 2026][Reinforcement Learning][DQN] This paper uses a log-barrier function to rewrite the Linear Programming (LP) formulation of MDPs from an inequality-constrained problem into an unconstrained strongly convex objective $f_\eta$. The authors prove a linear error bound between the approximate optimal Q-function and the barrier parameter $\eta$, show expo
+  [ICLR 2026][Reinforcement Learning][Linear Programming MDP] This paper uses a log-barrier function to rewrite the Linear Programming (LP) formulation of MDPs from an inequality-constrained problem into an unconstrained strongly convex objective $f_\eta$. The authors prove a linear error bound between the approximate optimal Q-function and the barrier parameter $\eta$, show exponential convergence for gradient descent, and design Log-barrier DQN / DDPG that eliminates the need…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - DQN
-  - DDPG
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Linear Programming MDP"
+  - "Log-barrier function"
+  - "Error bounds"
+  - "Convex optimization"
+  - "DQN"
+  - "DDPG"
 date: 2026-05-08
-content_hash: 150327c06b4e59a2
+content_hash: f88ff254e90cdbf5
 ---
+
 # Analysis of Approximate Linear Programming Solution to Markov Decision Problem with Log Barrier Function
 
 **Conference**: ICLR 2026  

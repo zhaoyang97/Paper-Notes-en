@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Multi-context visual grounding] This paper introduces Multi-Context Visual Grounding as a novel task and the MC-Bench benchmark—comprising 2,000 manually annotated samples…
+  [ICCV 2025][Multimodal VLM][Multi-context visual grounding] This paper introduces Multi-Context Visual Grounding as a novel task and the MC-Bench benchmark—comprising 2,000 manually annotated samples, 3 text description styles, and 20 practical skills—to evaluate 20+ MLLMs and foundation models. It reveals a substantial performance gap between current models and humans (human AP50=41.3% vs. best end-to-end model AP50=30.7%), and provides an agentic baseline combining GPT-4o a…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "MLLM benchmark"
   - "cross-image understanding"
 date: 2026-05-08
-content_hash: de2544c171e09fa1
+content_hash: 7a58629f72ffbef0
 ---
 
 # MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs
@@ -205,9 +205,9 @@ MC-Bench is an evaluation benchmark and does not involve training. The fine-tuni
 ## Related Papers
 
 - [\[ICCV 2025\] STI-Bench: Are MLLMs Ready for Precise Spatial-Temporal World Understanding?](sti-bench_are_mllms_ready_for_precise_spatial-temporal_world_understanding.md)
-- [\[ICCV 2025\] ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning](chartpoint_guiding_mllms_with_grounding_reflection_for_chart_reasoning.md)
-- [\[ICCV 2025\] From Easy to Hard: The MIR Benchmark for Progressive Interleaved Multi-Image Reasoning](from_easy_to_hard_the_mir_benchmark_for_progressive_interleaved_multi-image_reas.md)
-- [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
+- [\[ICCV 2025\] ViewSRD: 3D Visual Grounding via Structured Multi-View Decomposition](viewsrd_3d_visual_grounding_via_structured_multi-view_decomposition.md)
+- [\[CVPR 2026\] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](../../CVPR2026/multimodal_vlm/groundingme_exposing_the_visual_grounding_gap_in_mllms_through_multi-dimensional.md)
+- [\[ICCV 2025\] Visual Intention Grounding for Egocentric Assistants](visual_intention_grounding_for_egocentric_assistants.md)
 - [\[ICCV 2025\] DOGR: Towards Versatile Visual Document Grounding and Referring](dogr_towards_versatile_visual_document_grounding_and_referring.md)
 
 </div>

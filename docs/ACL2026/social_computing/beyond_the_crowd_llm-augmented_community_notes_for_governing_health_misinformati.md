@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond the Crowd: LLM-Augmented Community Notes for Governing Health Misinformation
 description: >-
-  [ACL 2026][Social Computing][Community Notes] The authors perform an empirical analysis of 30.8K health-related Community Notes from X, revealing systematic slow-response issues: a median delay of 17.6 hours for the first helpful verdict and 87.9% of notes remaining unrated. They propose the CrowdNotes+ framework, utilizing (1) **Evidence Augmentation** and (2) **
+  [ACL 2026][Social Computing][Community Notes] The authors perform an empirical analysis of 30.8K health-related Community Notes from X, revealing systematic slow-response issues: a median delay of 17.6 hours for the first helpful verdict and 87.9% of notes remaining unrated. They propose the CrowdNotes+ framework, utilizing (1) **Evidence Augmentation** and (2) **Utility-Guided Automation** modes for LLM-generated notes, paired with a "Relevance → Correctness → Helpfulness" t…
 tags:
-  - ACL 2026
-  - Social Computing
-  - Community Notes
-  - LLM-as-judge
+  - "ACL 2026"
+  - "Social Computing"
+  - "Community Notes"
+  - "Misinformation Governance"
+  - "Retrieval Augmentation"
+  - "Hierarchical Evaluation"
+  - "LLM-as-judge"
 date: 2026-05-08
-content_hash: b5bf954365fc4dcb
+content_hash: 1a6bab63307e4274
 ---
+
 # Beyond the Crowd: LLM-Augmented Community Notes for Governing Health Misinformation
 
 **Conference**: ACL 2026  
@@ -142,15 +146,16 @@ The generator models are not trained; instead, SFT is performed on HealthJudge (
 - Value: ⭐⭐⭐⭐⭐ Directly applicable to social governance; open-sourced HealthNotes and HealthJudge.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] Can Community Notes Replace Professional Fact-Checkers?](../../ACL2025/social_computing/can_community_notes_replace_professional_fact-checkers.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 - [\[ACL 2026\] MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection](mm-stancedet_retrieval-augmented_multi-modal_multi-agent_stance_detection.md)
 - [\[AAAI 2026\] T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search](../../AAAI2026/social_computing/t2agent_a_tool-augmented_multimodal_misinformation_detection_agent_with_monte_ca.md)
 - [\[ACL 2026\] Explain the Flag: Contextualizing Hate Speech Beyond Censorship](explain_the_flag_contextualizing_hate_speech_beyond_censorship.md)
-- [\[ACL 2026\] Estimating the Black-box LLM Uncertainty with Distribution-Aligned Adversarial Distillation](estimating_the_black-box_llm_uncertainty_with_distribution-aligned_adversarial_d.md)
 
 </div>
 

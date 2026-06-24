@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PriOr-Flow: Enhancing Primitive Panoramic Optical Flow with Orthogonal View
 description: >-
-  [ICCV 2025][Video Understanding][panoramic optical flow] This paper proposes PriOr-Flow, a dual-branch framework that leverages the low-distortion prior of orthogonal views to compensate for severe distortions in polar r…
+  [ICCV 2025][Video Understanding][panoramic optical flow] This paper proposes PriOr-Flow, a dual-branch framework that leverages the low-distortion prior of orthogonal views to compensate for severe distortions in polar regions of ERP panoramic images, achieving significant improvements in panoramic optical flow estimation — reducing EPE by 30.0% on MPFDataset and 29.6% on FlowScape.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "distortion compensation"
   - "orthogonal view"
 date: 2026-05-08
-content_hash: a5abd40e952a50f0
+content_hash: d3fe57f1cc4e64ea
 ---
 
 # PriOr-Flow: Enhancing Primitive Panoramic Optical Flow with Orthogonal View
@@ -201,7 +201,7 @@ PriOr-GMA achieves a 17.6% improvement with only 4 iterations, at virtually no a
 - [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
 - [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
 - [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
-- [\[ICCV 2025\] Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos](beyond_the_frame_generating_360deg_panoramic_videos_from_perspective_videos.md)
+- [\[CVPR 2026\] FlowFM: Advancing Dark Optical Flow Estimation with Flow Matching](../../CVPR2026/video_understanding/flowfm_advancing_dark_optical_flow_estimation_with_flow_matching.md)
 
 </div>
 

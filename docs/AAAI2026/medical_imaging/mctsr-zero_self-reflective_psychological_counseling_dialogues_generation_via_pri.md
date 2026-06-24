@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MCTSr-Zero: Self-Reflective Psychological Counseling Dialogues Generation via Principles and Adaptive Exploration
 description: >-
-  [AAAI 2026][Medical Imaging][Monte Carlo Tree Search] This paper proposes the MCTSr-Zero framework, which combines MCTS with domain-principle-based self-evaluation and a meta-prompt adaptive exploration mechanism to gene…
+  [AAAI 2026][Medical Imaging][Monte Carlo Tree Search] This paper proposes the MCTSr-Zero framework, which combines MCTS with domain-principle-based self-evaluation and a meta-prompt adaptive exploration mechanism to generate high-quality multi-turn psychological counseling dialogue data. The resulting PsyLLM, fine-tuned on this data, achieves state-of-the-art performance on the authors' PsyEval benchmark.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "self-reflection"
   - "domain alignment"
 date: 2026-05-08
-content_hash: 767503fd8c730823
+content_hash: 2744c1b13aa1be26
 ---
 
 # MCTSr-Zero: Self-Reflective Psychological Counseling Dialogues Generation via Principles and Adaptive Exploration
@@ -172,11 +172,11 @@ An iterative workflow: (1) initialize meta-prompt and generate initial response 
 
 ## Related Papers
 
-- [\[AAAI 2026\] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs](qa-flora_data-free_query-adaptive_fusion_of_loras_for_llms.md)
+- [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](../../CVPR2026/medical_imaging/sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
+- [\[ICLR 2026\] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation](../../ICLR2026/medical_imaging/learning_self-critiquing_mechanisms_for_region-guided_chest_x-ray_report_generat.md)
 - [\[AAAI 2026\] Self-supervised Multiplex Consensus Mamba for General Image Fusion](self-supervised_multiplex_consensus_mamba_for_general_image_fusion.md)
-- [\[AAAI 2026\] SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization](spa_achieving_consensus_in_llm_alignment_via_self-priority_optimization.md)
-- [\[AAAI 2026\] Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence](human-in-the-loop_interactive_report_generation_for_chronic_disease_adherence.md)
 - [\[AAAI 2026\] Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment](shrinking_the_teacher_an_adaptive_teaching_paradigm_for_asymmetric_eeg-vision_al.md)
+- [\[AAAI 2026\] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs](qa-flora_data-free_query-adaptive_fusion_of_loras_for_llms.md)
 
 </div>
 

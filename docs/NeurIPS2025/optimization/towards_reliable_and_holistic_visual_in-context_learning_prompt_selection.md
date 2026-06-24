@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Reliable and Holistic Visual In-Context Learning Prompt Selection
 description: >-
-  [NeurIPS 2025][Optimization][visual in-context learning] This paper proposes RH-Partial2Global, which for the first time employs Spearman rank correlation tests to demonstrate that the "similarity-first hypothesis" in VI…
+  [NeurIPS 2025][Optimization][visual in-context learning] This paper proposes RH-Partial2Global, which for the first time employs Spearman rank correlation tests to demonstrate that the "similarity-first hypothesis" in VICL is statistically significant yet exhibits extremely weak correlation strength ($\bar{\rho} \approx 0.03\text{-}0.05$). By constructing reliable candidate sets via Jackknife conformal prediction and achieving comprehensive uniform pairwise preference samplin…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "prompt selection"
   - "global ranking"
 date: 2026-05-08
-content_hash: 812ad73dd1202ac2
+content_hash: 4a2d2f61ee4ded79
 ---
 
 # Towards Reliable and Holistic Visual In-Context Learning Prompt Selection
@@ -118,11 +118,11 @@ The meta-learning training phase is identical to Partial2Global — training a t
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning Context-Conditioned Predicate Semantics via Prototype Feedback](../../ICML2026/optimization/learning_context-conditioned_predicate_semantics_via_prototype_feedback.md)
-- [\[ICCV 2025\] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data](../../ICCV2025/optimization/federated_prompt-tuning_with_heterogeneous_and_incomplete_multimodal_client_data.md)
+- [\[ICML 2025\] Training Dynamics of In-Context Learning in Linear Attention](../../ICML2025/optimization/training_dynamics_of_in-context_learning_in_linear_attention.md)
+- [\[ICML 2025\] On Understanding Attention-Based In-Context Learning for Categorical Data](../../ICML2025/optimization/on_understanding_attention-based_in-context_learning_for_categorical_data.md)
 - [\[NeurIPS 2025\] Clean First, Align Later: Benchmarking Preference Data Cleaning for Reliable LLM Alignment](clean_first_align_later_benchmarking_preference_data_cleaning_for_reliable_llm_a.md)
-- [\[ICML 2026\] Test time training enhances in-context learning of nonlinear functions](../../ICML2026/optimization/test_time_training_enhances_in-context_learning_of_nonlinear_functions.md)
-- [\[ICML 2026\] Automatic Unsupervised Ensemble Outlier Model Selection–Extended Version](../../ICML2026/optimization/automatic_unsupervised_ensemble_outlier_model_selection--extended_version.md)
+- [\[ICML 2026\] $α$-PFN: Fast Entropy Search via In-Context Learning](../../ICML2026/optimization/α-pfn_fast_entropy_search_via_in-context_learning.md)
+- [\[ICCV 2025\] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data](../../ICCV2025/optimization/federated_prompt-tuning_with_heterogeneous_and_incomplete_multimodal_client_data.md)
 
 </div>
 

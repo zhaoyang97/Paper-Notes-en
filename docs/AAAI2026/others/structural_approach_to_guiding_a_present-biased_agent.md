@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Structural Approach to Guiding a Present-Biased Agent
 description: >-
-  [AAAI 2026][Present Bias] This paper systematically investigates the parameterized complexity of the T-path-Editing problem within the principal-agent extension of the Kleinberg-Oren model. It presents FPT algorithms par…
+  [AAAI 2026][Present Bias] This paper systematically investigates the parameterized complexity of the T-path-Editing problem within the principal-agent extension of the Kleinberg-Oren model. It presents FPT algorithms parameterized by treewidth and path-cost diversity, establishes tight hardness results, and comprehensively characterizes the tractability-intractability boundary for guiding a present-biased agent to complete critical tasks.
 tags:
   - "AAAI 2026"
   - "Present Bias"
@@ -11,7 +11,7 @@ tags:
   - "Task Graph Modification"
   - "Principal-Agent Problem"
 date: 2026-05-08
-content_hash: dc04936f85c08349
+content_hash: 6af5bbd6e2393e24
 ---
 
 # Structural Approach to Guiding a Present-Biased Agent
@@ -132,8 +132,8 @@ Not applicable. However, Lemma 1 establishes relationships among parameters: $|L
 - [\[AAAI 2026\] More Than Irrational: Modeling Belief-Biased Agents](more_than_irrational_modeling_belief-biased_agents.md)
 - [\[AAAI 2026\] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis](bayesian_network_structural_consensus_via_greedy_min-cut_analysis.md)
 - [\[AAAI 2026\] An Epistemic Perspective on Agent Awareness](an_epistemic_perspective_on_agent_awareness.md)
-- [\[AAAI 2026\] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach](variance_computation_for_weighted_model_counting_with_knowledge_compilation_appr.md)
 - [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
+- [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
 
 </div>
 

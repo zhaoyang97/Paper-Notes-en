@@ -2,131 +2,131 @@
 title: >-
   [Paper Note] Truth, Justice, and Secrecy: Cake Cutting Under Privacy Constraints
 description: >-
-  [AAAI 2026][AI Safety][cake cutting] This paper proposes PP_CC_puv, the first privacy-preserving cake cutting protocol, which transforms Chen et al.'s strategyproof algorithm using secret sharing and secure multi-party c…
+  [AAAI 2026][AI Safety][Cake cutting] Proposes the first privacy-preserving cake-cutting protocol, PP_CC_puv, which adapts the strategyproof algorithm of Chen et al. using secret sharing and secure multi-party computation (MPC) technologies, preventing any party from learning others' preference information while maintaining envy-freeness, Pareto-optimality, and strategyproofness.
 tags:
   - "AAAI 2026"
   - "AI Safety"
-  - "cake cutting"
-  - "privacy preservation"
+  - "Cake cutting"
+  - "privacy-preserving"
   - "secure multi-party computation"
-  - "envy-free allocation"
+  - "envy-free division"
   - "strategyproofness"
 date: 2026-05-08
-content_hash: d157a981d6d7caeb
+content_hash: ae624fabaf9b5269
 ---
 
 # Truth, Justice, and Secrecy: Cake Cutting Under Privacy Constraints
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.09882](https://arxiv.org/abs/2511.09882)  
 **Code**: None  
-**Area**: AI Safety / Fair Division
-**Keywords**: cake cutting, privacy preservation, secure multi-party computation, envy-free allocation, strategyproofness
+**Area**: AI Safety / Fair Division  
+**Keywords**: Cake cutting, privacy-preserving, secure multi-party computation, envy-free division, strategyproofness
 
 ## TL;DR
 
-This paper proposes PP_CC_puv, the first privacy-preserving cake cutting protocol, which transforms Chen et al.'s strategyproof algorithm using secret sharing and secure multi-party computation (MPC). The protocol maintains envy-freeness, Pareto optimality, and strategyproofness while preventing any participant from learning others' preference information.
+Proposes the first privacy-preserving cake-cutting protocol, PP_CC_puv, which adapts the strategyproof algorithm of Chen et al. using secret sharing and secure multi-party computation (MPC) technologies, preventing any party from learning others' preference information while maintaining envy-freeness, Pareto-optimality, and strategyproofness.
 
 ## Background & Motivation
 
-**Background**: The cake cutting problem is a classical problem in fair division theory—how to fairly allocate a divisible resource (modeled as the interval $[0,1]$) among $n$ agents. Substantial progress has been made on fairness over the past two decades; Chen et al. (2010) proposed CC_puv, a deterministic algorithm that simultaneously achieves envy-freeness and strategyproofness for piecewise uniform valuation functions.
+**Background**: The cake cutting problem is a classic problem in fair division theory—how to fairly allocate a continuous resource (modeled as the interval $[0,1]$) among $n$ agents. Major progress in fairness has been made over the past two decades. Chen et al. (2010) proposed a deterministic algorithm, CC_puv, that simultaneously achieves envy-freeness and strategyproofness for piecewise uniform valuation functions.
 
-**Limitations of Prior Work**: Strategyproofness only resolves the issue of "no incentive to lie," but agents may be unwilling to truthfully report preferences due to privacy concerns—even when honesty is individually optimal, they may fear exposure. For instance, telecom companies bidding for spectrum may not wish to reveal future strategic directions; in advertising time allocation, preferences may disclose product launch plans; data protection regulations may also restrict the disclosure of preferences.
+**Limitations of Prior Work**: Strategyproofness only solves the issue of "lying is not profitable." However, agents may still be reluctant to report their true preferences due to privacy concerns—even if telling the truth is better than lying, they dread exposing their preferences. For example, when telecom companies bid for spectrum, revealing preferences might expose future strategic directions; in ad slot allocation, preferences might leak product launch schedules; data protection regulations may also restrict the publication of preferences.
 
-**Key Challenge**: Existing algorithms require agents to disclose their valuation functions to a central coordinator or other participants, but such disclosure may entail privacy risks. Strategyproofness and privacy preservation are two orthogonal dimensions of requirements.
+**Key Challenge**: Existing algorithms require agents to reveal their valuation functions to a central coordinator or other parties, which poses privacy risks. Strategyproofness and privacy preservation are two orthogonal dimensions of demands.
 
-**Goal**: Design a cake cutting protocol that simultaneously satisfies fairness (envy-free), efficiency (Pareto-optimal), strategyproofness, and privacy preservation.
+**Goal**: Design a cake cutting protocol that satisfies fairness (envy-freeness), efficiency (Pareto-optimality), strategyproofness, and privacy-preservation simultaneously.
 
-**Key Insight**: Replace the centralized computation in CC_puv with a distributed protocol based on Shamir secret sharing and secure multi-party computation, enabling agents to complete the allocation without revealing their preferences.
+**Key Insight**: Replace the centralized computation of the CC_puv algorithm with a distributed protocol based on Shamir secret sharing and secure multi-party computation, enabling agents to complete the allocation without exposing their preferences.
 
-**Core Idea**: Apply cryptographic secret sharing and secure multi-party computation to "privatize" an existing strategyproof cake cutting algorithm, so that agents neither have an incentive to misreport nor risk exposing their preferences.
+**Core Idea**: "Privatize" the existing strategyproof cake cutting algorithm using cryptographic secret sharing and secure multi-party computation techniques, ensuring that agents have no incentive to lie and do not expose their preferences.
 
 ## Method
 
 ### Overall Architecture
 
-The PP_CC_puv protocol faithfully simulates the logic of the original CC_puv algorithm, but performs all computations over secret-shared values. The overall procedure is divided into five phases: (1) agents secret-share their respective piecewise uniform valuation functions; (2) the cake is partitioned into an interval set $\mathcal{W}$; (3) preferences are encoded as binary vectors indicating which intervals are "desired" by which agents; (4) the agent subset with the minimum average demand is iteratively selected and allocated; (5) the final allocation results (in secret-shared form) are revealed to each agent.
+The protocol PP_CC_puv faithfully simulates the logic of the original CC_puv algorithm, but all computations are performed on secret-shared values. The overall process is divided into five phases: (1) agents secret-share their respective piecewise uniform valuation functions; (2) the cake is partitioned into a set of intervals $\mathcal{W}$; (3) binary vectors are used to encode which intervals are "desired" by which agents; (4) a subset of agents with the minimum average demand is iteratively selected and allocated; (5) the final interval allocation results (in secret-shared form) are revealed to the agents.
 
 ### Key Designs
 
 1. **Secret Sharing of Valuation Functions (SharingPrivateValuations)**:
 
-    - Function: Convert each agent's piecewise uniform valuation function into $(t,n)$-secret shares.
-    - Mechanism: Each agent's valuation is described by $\ell$ interval endpoints $(a_{i,j}, b_{i,j})$. Agents first negotiate a sufficiently large integer $Q = 10^d$ to losslessly discretize real-valued endpoints into integers, then each agent distributes $2\ell$ endpoints using Shamir's $(t,n)$-threshold secret sharing. An integrity check mechanism is included to prevent cheating. The sharing threshold is set to $t = \lfloor(n+1)/2\rfloor$, guaranteeing that an honest majority suffices to protect the secret.
-    - Design Motivation: Directly applying standard cryptography would leak side-channel information such as the number of intervals. By padding all agents to the same number $\ell$ of intervals—using empty intervals $[1,1)$ as fillers—this leakage channel is eliminated.
+    - **Function**: Convert each agent's piecewise uniform valuation function into a $(t,n)$-secret sharing.
+    - **Mechanism**: Each agent's valuation is described by $\ell$ interval endpoints $(a_{i,j}, b_{i,j})$. First, the agents agree on a sufficiently large integer $Q = 10^d$ to discretize real-numbered endpoints into integers (losslessly), and then each agent distributes the $2\ell$ endpoints using Shamir's $(t,n)$-threshold secret sharing scheme. To prevent cheating, the protocol includes an integrity check mechanism. The sharing threshold is set to $t = \lfloor(n+1)/2\rfloor$, ensuring that an honest majority protects the secrets.
+    - **Design Motivation**: Direct usage of standard cryptography would leak side-channel information such as the number of intervals; by padding all agents to the same number of intervals $\ell$ using empty intervals $[1,1)$, this leakage channel is eliminated.
 
-2. **Oblivious Maximum Flow over a Fixed Graph Structure (AssignCakeToSelectedAgents)**:
+2. **Oblivious Maximum Flow with Fixed Graph Structure (AssignCakeToSelectedAgents)**:
 
-    - Function: Complete the fair allocation of intervals to agents without revealing the graph structure.
-    - Mechanism: The original CC_puv constructs a different directed graph in each iteration and computes maximum flow; the graph structure directly reflects which agents desire which intervals. PP_CC_puv replaces the dynamic graph with a fixed complete graph whose edge weights are derived through cryptographic computation: weights of inactive edges are set to secret shares of zero, and allocation is performed via MPC. All operations—sorting, comparison, multiplication, division—are performed over secret shares using corresponding MPC sub-protocols.
-    - Design Motivation: Changes in graph topology during protocol execution would reveal associations between agent preferences and intervals; a fixed graph structure ensures that the structure itself carries no private information.
+    - **Function**: Accomplish the fair allocation of intervals to agents without leaking the graph structure.
+    - **Mechanism**: The original CC_puv constructs different directed graphs and solves maximum flow in each iteration. However, the structure of dynamic graphs leaks which agents desire which intervals. PP_CC_puv replaces the dynamic graphs with a **fixed, full graph**, where edge weights are cryptographically calculated: unrelated edges are set to secret-shared weights of 0, and allocation is performed via MPC. Thereby, the protocol remains "oblivious" to the graph structure.
+    - **Design Motivation**: Ensure that during protocol execution, the association between agent preferences and intervals is not leaked due to changes in graph structure.
 
-3. **Composition of Secure Arithmetic Primitives**:
+3. **Composition of Secure Basic Operations**:
 
-    - Function: Provide a complete set of secure computation primitives to support protocol execution.
-    - Mechanism: Affine combinations (zero communication overhead), multiplication (DN07 protocol), comparison ($[[1_{u<v}]]$), equality testing ($[[1_{u=0}]]$), minimum, OR operations, and division are all implemented over secret shares. These primitives are composed as needed to implement higher-level operations such as sorting, interval encoding, and demand computation.
-    - Design Motivation: All intermediate values—agent demands, interval selections, flow computations—exist in secret-shared form, preventing any single party from accessing plaintext information.
+    - **Function**: Provide a complete set of secure computation primitives to support protocol operations.
+    - **Mechanism**: Implement affine combination (zero communication cost), multiplication (DN07 protocol), comparisons ($[[1_{u<v}]]$), equality testing ($[[1_{u=0}]]$), minimum, OR operations, and division on secret-shared values. These primitives are composed as needed to implement high-level operations such as sorting, interval encoding, and demand calculation.
+    - **Design Motivation**: All intermediate values—agent demands, interval selection, flow computation—exist in secret-shared forms, preventing any single party from obtaining plaintext information.
 
 ### Loss & Training
 
-This paper presents a theoretical cryptographic protocol; no training is involved. Computational overhead amounts to $\mathcal{O}(1)$ times the complexity of the original algorithm, plus at most $\mathcal{O}(n^2)$ additional communication. Security is guaranteed at the information-theoretic level (without computational assumptions) and holds under the semi-honest model with an honest majority.
+This work is a theoretical cryptographic protocol with no training process. The computational overhead is an $\mathcal{O}(1)$ factor compared to the original algorithm's complexity, with at most $\mathcal{O}(n^2)$ extra communication cost. Security is guaranteed information-theoretically (non-computational hardness assumptions) and holds under the semi-honest model, requiring an honest majority.
 
 ## Key Experimental Results
 
 ### Main Results
 
-This paper is a theoretical work; results are established primarily through formal proofs. The core result is the following theorem-based guarantee:
+This work is a theoretical study, with experiments primarily focused on formal proofs. The core results are the theorem proofs:
 
-| Property | CC_puv (Original) | PP_CC_puv (Ours) | Remarks |
-|---|---|---|---|
-| Envy-free | ✓ | ✓ | Fully preserved |
-| Pareto optimal | ✓ | ✓ | Fully preserved |
-| Strategyproof | ✓ | ✓ | Fully preserved |
-| Privacy preservation | ✗ | ✓ | New—information-theoretic security |
-| Decentralized | ✗ | ✓ | New—no trusted third party required |
+| Property | CC_puv (Original) | PP_CC_puv (Ours) | Description |
+|------|-----------|----------------|------|
+| Envy-freeness | ✓ | ✓ | Fully maintained |
+| Pareto-optimality | ✓ | ✓ | Fully maintained |
+| Strategyproofness | ✓ | ✓ | Fully maintained |
+| Privacy-preservation | ✗ | ✓ | New—Information-theoretically secure |
+| Decentralization | ✗ | ✓ | New—No trusted third-party needed |
 
 ### Ablation Study
 
 | Protocol Component | Computational Cost | Communication Cost | Security Guarantee |
-|---|---|---|---|
-| Secret sharing of valuations | $\mathcal{O}(n\ell)$ | $\mathcal{O}(n^2\ell)$ | Hides valuations and interval count |
-| Secure sorting (interval partition) | $\mathcal{O}(m \log m)$ MPC rounds | $\mathcal{O}(m^2)$ | Hides endpoint permutation |
-| Oblivious maximum flow | $\mathcal{O}(1)$ relative to original | $\mathcal{O}(n^2)$ per round | Hides graph structure |
-| Final allocation reveal | $\mathcal{O}(m)$ | $\mathcal{O}(nm)$ | Optional: global or individual disclosure |
+|---------|---------|---------|---------|
+| Secret Sharing Valuations | $\mathcal{O}(n\ell)$ | $\mathcal{O}(n^2\ell)$ | Hides valuation + number of intervals |
+| Secure Sorting (Interval Partitioning) | $\mathcal{O}(m \log m)$ MPC rounds | $\mathcal{O}(m^2)$ | Hides arrangement of endpoints |
+| Oblivious Max Flow | $\mathcal{O}(1)$ relative to original | $\mathcal{O}(n^2)$ per round | Hides graph structure |
+| Final Allocation Revelation | $\mathcal{O}(m)$ | $\mathcal{O}(nm)$ | Optional: globally visible / own share only |
 
 ### Key Findings
 
-- Privacy preservation does not require sacrificing fairness or efficiency—all guarantees of the original algorithm are fully preserved.
-- The primary technical challenge is replacing the dynamic graph with a fixed graph to prevent structural leakage, which requires fundamental algorithmic reconstruction rather than simply "inserting encryption."
-- The communication complexity bottleneck lies in the secure sorting and maximum flow computation phases.
-- The protocol supports two disclosure modes: global visibility (all agents see the complete allocation) and restricted visibility (each agent sees only their own share).
+- Privacy preservation does not require sacrificing fairness or efficiency—all guarantees of the original algorithm are fully maintained.
+- The largest technical challenge is replacing dynamic graphs with fixed graphs to prevent structural leaks, which requires a fundamental algorithmic restructuring rather than a simple "plug-in encryption".
+- The main bottlenecks for communication complexity lie in the secure sorting and maximum flow calculation phases.
+- The protocol supports two revelation modes: globally visible (everyone sees the complete allocation) and restricted visibility (each person only sees their own share).
 
 ## Highlights & Insights
 
-- **First Privacy-Preserving Cake Cutting Protocol**: This work bridges fair division theory and cryptography, unifying "no incentive to lie" and "no risk of exposure" into a single protocol.
-- **Fixed-Graph Oblivious Maximum Flow**: Replacing a dynamic graph with a fixed-structure graph and cryptographically controlled edge weights avoids structural leakage—a technique generalizable to any setting requiring graph algorithms over secret data.
-- **Decentralization as a Byproduct**: An incidental benefit of the privacy protocol is the elimination of the need for a central coordinator; agents can execute the protocol autonomously, making it suitable for ad hoc settings without trusted infrastructure.
+- **First Privacy-Preserving Cake Cutting Protocol**: Bridges fair division theory and cryptography, unifying "having no incentive to lie" and "having no fear of exposure."
+- **Oblivious Max Flow with Fixed Graphs**: Uses fixed structural graphs combined with cryptographic edge weights instead of dynamic graphs to avoid structural leaks. This technique can be generalized to any scenario requiring graph algorithms over secret data.
+- **Decentralization By-product**: An unexpected benefit of the privacy protocol is the elimination of the need for a central coordinator; agents can execute the protocol themselves—suitable for ad-hoc scenarios with no trusted infrastructure.
 
 ## Limitations & Future Work
 
-- The protocol handles only **piecewise uniform valuation functions** and does not yet support piecewise linear or arbitrary valuation functions.
-- The security model assumes **semi-honest** agents—those who follow the protocol but attempt to infer others' information. Additional guarantees are required under a malicious adversary model.
-- The protocol requires an **honest majority** assumption (>50% honest participants); security fails when this condition is not met.
-- Communication complexity $\mathcal{O}(n^2)$ may become a bottleneck at scale.
-- The authors identify extending the techniques to general cake cutting algorithms (e.g., the Aziz–Mackenzie protocol supporting arbitrary valuations) as a natural future direction.
+- Only handles **piecewise uniform valuation functions**, not yet supporting more general piecewise linear or arbitrary valuation functions.
+- The security model assumes a **semi-honest** setting—agents follow the protocol but try to infer other parties' information. Additional safeguards are needed under malicious adversary models.
+- Requires the **honest majority** assumption ($&gt;50\%$ honest participants), failing which security is compromised.
+- Communication complexity of $\mathcal{O}(n^2)$ might become a bottleneck with a large number of participants.
+- The authors point out that expanding the technique to general cake-cutting algorithms (such as the Aziz-Mackenzie protocol supporting arbitrary valuation functions) is a natural direction.
 
 ## Related Work & Insights
 
-- **vs. Chen et al. (2010) CC_puv**: This paper directly augments CC_puv with a privacy layer, preserving all original properties at the cost of only a constant-factor increase in computation and polynomial communication overhead.
-- **vs. Aziz–Mackenzie (2016)**: AM16 resolved the open problem of envy-free cake cutting for $n>3$ agents but is neither strategyproof nor privacy-preserving. Porting the techniques of this paper to AM16 is an important future direction.
-- **Inspiration**: The approach of combining cryptography with game theory/mechanism design to "privatize" mechanism design algorithms is transferable to auctions, voting, and other settings in which agents are required to truthfully report preferences.
+- **vs Chen et al. (2010) CC_puv**: Ours directly adds a privacy layer base on it, keeping all original properties intact, at the cost of only constant-factor computational overhead and polynomial communication overhead.
+- **vs Aziz-Mackenzie (2016)**: AM16 solved the open problem of envy-free cake cutting for $n &gt; 3$, but is neither strategyproof nor privacy-preserving. Porting the techniques in this paper to AM16 is an important future direction.
+- **Insights**: The approach of integrating cryptography with game theory/mechanism design ("privatizing" mechanism design algorithms) can be extended to auctions, voting, etc., where any mechanism requiring agents to truthfully report preferences could benefit.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First privacy-preserving cake cutting protocol; outstanding theoretical contribution.
-- Experimental Thoroughness: ⭐⭐⭐ Primarily proof-based theoretical work; no empirical comparison of running times.
-- Writing Quality: ⭐⭐⭐⭐ Both cryptographic and fair division concepts are explained clearly, accessible to cross-disciplinary readers.
-- Value: ⭐⭐⭐⭐ In an era of increasing privacy concerns, this work opens a new direction for fair division theory.
+- Novelty: ⭐⭐⭐⭐⭐ The first privacy-preserving cake-cutting protocol, with outstanding theoretical contributions.
+- Experimental Thoroughness: ⭐⭐⭐ The theoretical work is primarily proof-based, lacking actual runtime comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Clear explanations of both cryptography and fair division theory, suited for cross-disciplinary readers.
+- Value: ⭐⭐⭐⭐ Opens up a new direction for fair division theory in an era where privacy is increasingly crucial.
 
 <!-- RELATED:START -->
 
@@ -137,8 +137,8 @@ This paper is a theoretical work; results are established primarily through form
 - [\[ICML 2026\] Optimal Transport under Group Fairness Constraints](../../ICML2026/ai_safety/optimal_transport_under_group_fairness_constraints.md)
 - [\[AAAI 2026\] Alternative Fairness and Accuracy Optimization in Criminal Justice](alternative_fairness_and_accuracy_optimization_in_criminal_j.md)
 - [\[NeurIPS 2025\] Reconstruction and Secrecy under Approximate Distance Queries](../../NeurIPS2025/ai_safety/reconstruction_and_secrecy_under_approximate_distance_queries.md)
+- [\[ICML 2025\] Accelerating Spectral Clustering under Fairness Constraints](../../ICML2025/ai_safety/accelerating_spectral_clustering_under_fairness_constraints.md)
 - [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
-- [\[AAAI 2026\] InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference](infodecom_decomposing_information_for_defending_against_privacy_leakage_in_split.md)
 
 </div>
 

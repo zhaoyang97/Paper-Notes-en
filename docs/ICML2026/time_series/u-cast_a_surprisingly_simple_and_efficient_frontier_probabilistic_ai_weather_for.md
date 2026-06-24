@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting
 description: >-
-  [ICML 2026][Time Series][U-Net] U-Cast uses a **simple U-Net backbone** + a **two-stage training curriculum** (MAE pre-training → CRPS fine-tuning) + **MC-Dropout** to achieve probabilistic weather forecasting capabilities comparable to complex professional models (GenCast), while reducing training computation and inference latency by 10×—disrupting
+  [ICML 2026][Time Series][Weather Forecasting] U-Cast uses a **simple U-Net backbone** + a **two-stage training curriculum** (MAE pre-training → CRPS fine-tuning) + **MC-Dropout** to achieve probabilistic weather forecasting capabilities comparable to complex professional models (GenCast), while reducing training computation and inference latency by 10×—disrupting the industry stereotype that "frontier performance must be complex."
 tags:
-  - ICML 2026
-  - Time Series
-  - U-Net
-  - MC-Dropout
+  - "ICML 2026"
+  - "Time Series"
+  - "Weather Forecasting"
+  - "Probabilistic Ensemble Forecasting"
+  - "U-Net"
+  - "CRPS Loss"
+  - "MC-Dropout"
 date: 2026-05-08
-content_hash: 182895f0dfbf0b51
+content_hash: 90075cbafd3f704c
 ---
+
 # U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting
 
 **Conference**: ICML 2026  
@@ -140,11 +144,11 @@ U-Cast occupies the Pareto frontier—requiring only 3 days on 4 H200s for train
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](../../ICLR2026/time_series/efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 - [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](../../NeurIPS2025/time_series/simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
 - [\[ICML 2026\] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting](parametric_prior_mapping_framework_for_non-stationary_probabilistic_time_series_.md)
-- [\[ICLR 2026\] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting](../../ICLR2026/time_series/from_samples_to_scenarios_a_new_paradigm_for_probabilistic_forecasting.md)
 - [\[CVPR 2026\] STCast: Adaptive Boundary Alignment for Global and Regional Weather Forecasting](../../CVPR2026/time_series/stcast_adaptive_boundary_alignment_for_global_and_regional_weather_forecasting.md)
-- [\[NeurIPS 2025\] Graph-based Neural Space Weather Forecasting](../../NeurIPS2025/time_series/graph-based_neural_space_weather_forecasting.md)
+- [\[ICLR 2026\] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting](../../ICLR2026/time_series/storm_synergistic_cross-scale_spatio-temporal_modeling_for_weather_forecasting.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Masking Teacher and Reinforcing Student for Distilling Vision-Language Models
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] Masters bridges the teacher-student capacity gap through a progressive strategy that masks teacher weights by magnitude and gradually restores them during training. This is combined with offline RL driven by accuracy and distillation transferability rewards, enabling compact VLMs to stably absorb knowledge and outperfo
+  [CVPR 2026][Model Compression][Knowledge Distillation] Masters bridges the teacher-student capacity gap through a progressive strategy that masks teacher weights by magnitude and gradually restores them during training. This is combined with offline RL driven by accuracy and distillation transferability rewards, enabling compact VLMs to stably absorb knowledge and outperform same-sized models across 13 multimodal benchmarks.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Vision-Language Models"
+  - "Weight Masking"
+  - "Progressive Distillation"
+  - "Offline Reinforcement Learning"
 date: 2026-05-08
-content_hash: edba0e5457545ba5
+content_hash: 7d09a331ccede290
 ---
+
 # Masking Teacher and Reinforcing Student for Distilling Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -127,9 +131,9 @@ Comparing distillation from a single large teacher versus using an intermediate-
 
 - [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](distilling_balanced_knowledge_from_a_biased_teacher.md)
 - [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
-- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
-- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
-- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] SigLino: Efficient Multi-Teacher Distillation for Agglomerative Vision Foundation Models](siglino_efficient_multi-teacher_distillation_for_agglomerative_vision_foundation.md)
+- [\[CVPR 2026\] Collaborative Multi-Mode Pruning for Vision-Language Models](collaborative_multi-mode_pruning_for_vision-language_models.md)
+- [\[ACL 2025\] Towards the Law of Capacity Gap in Distilling Language Models](../../ACL2025/model_compression/law_of_capacity_gap_distilling_language_models.md)
 
 </div>
 

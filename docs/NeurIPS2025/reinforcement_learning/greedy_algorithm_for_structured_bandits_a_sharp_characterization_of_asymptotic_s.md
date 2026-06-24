@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Greedy Algorithm for Structured Bandits: A Sharp Characterization of Asymptotic Success / Failure
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][structured bandits] This paper provides a complete theoretical characterization of the greedy algorithm in structured bandit problems…
+  [NeurIPS 2025][Reinforcement Learning][structured bandits] This paper provides a complete theoretical characterization of the greedy algorithm in structured bandit problems, proposing *self-identifiability* as a necessary and sufficient condition for the greedy algorithm to achieve sublinear regret, and extends the results to contextual bandits and the general interactive decision-making framework DMSO.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "self-identifiability"
   - "contextual bandits"
 date: 2026-05-08
-content_hash: c56880dbe5b79be2
+content_hash: d7ebe1da155ae295
 ---
 
 # Greedy Algorithm for Structured Bandits: A Sharp Characterization of Asymptotic Success / Failure
@@ -136,10 +136,10 @@ $$f_t = \arg\min_{f \in \mathcal{F}} \sum_{s \in [t]} (f(x_s,a_s) - r_s)^2, \qua
 ## Related Papers
 
 - [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
-- [\[NeurIPS 2025\] Sequential Multi-Agent Dynamic Algorithm Configuration](sequential_multi-agent_dynamic_algorithm_configuration.md)
 - [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
 - [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
-- [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](structured_reinforcement_learning_for_combinatorial_decision-making.md)
+- [\[NeurIPS 2025\] Tractable Multinomial Logit Contextual Bandits with Non-Linear Utilities](tractable_multinomial_logit_contextual_bandits_with_non-linear_utilities.md)
+- [\[NeurIPS 2025\] Sequential Multi-Agent Dynamic Algorithm Configuration](sequential_multi-agent_dynamic_algorithm_configuration.md)
 
 </div>
 

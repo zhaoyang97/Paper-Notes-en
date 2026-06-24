@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Contextual Dynamic Pricing with Heterogeneous Buyers
 description: >-
-  [NeurIPS 2025][Dynamic Pricing] This paper presents the first systematic study of contextual dynamic pricing with heterogeneous buyers of $K_\star$ unknown types. It proposes an Optimistic Posterior Sampling (OPS)-based…
+  [NeurIPS 2025][Dynamic Pricing] This paper presents the first systematic study of contextual dynamic pricing with heterogeneous buyers of $K_\star$ unknown types. It proposes an Optimistic Posterior Sampling (OPS)-based algorithm achieving an $\tilde{O}(K_\star\sqrt{dT})$ regret bound (optimal in $d$ and $T$), and further introduces ZoomV—a variance-aware adaptive discretization algorithm—achieving the optimal $\tilde{O}(\sqrt{K_\star T})$ regret in the non-contextual setting…
 tags:
   - "NeurIPS 2025"
   - "Dynamic Pricing"
@@ -12,7 +12,7 @@ tags:
   - "Disagreement Coefficient"
   - "Lipschitz Bandits"
 date: 2026-05-08
-content_hash: cc35052a3b8503b5
+content_hash: 450319efb494a746
 ---
 
 # Contextual Dynamic Pricing with Heterogeneous Buyers
@@ -129,10 +129,10 @@ When $d = 1$, variance-aware confidence intervals are combined with adaptive dis
 ## Related Papers
 
 - [\[NeurIPS 2025\] Brain-Like Processing Pathways Form in Models With Heterogeneous Experts](brain-like_processing_pathways_form_in_models_with_heterogeneous_experts.md)
+- [\[ACL 2025\] Contextual Experience Replay for Self-Improvement of Language Agents](../../ACL2025/others/contextual_experience_replay_for_self-improvement_of_language_agents.md)
+- [\[ICML 2025\] Learning Safe Strategies for Value Maximizing Buyers in Uniform Price Auctions](../../ICML2025/others/learning_safe_strategies_for_value_maximizing_buyers_in_uniform_price_auctions.md)
 - [\[NeurIPS 2025\] InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras](influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras.md)
-- [\[ICCV 2025\] You Share Beliefs, I Adapt: Progressive Heterogeneous Collaborative Perception](../../ICCV2025/others/you_share_beliefs_i_adapt_progressive_heterogeneous_collaborative_perception.md)
-- [\[ICCV 2025\] AdaptiveAE: An Adaptive Exposure Strategy for HDR Capturing in Dynamic Scenes](../../ICCV2025/others/adaptiveae_an_adaptive_exposure_strategy_for_hdr_capturing_i.md)
-- [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](../../AAAI2026/others/evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
+- [\[ACL 2025\] A New Formulation of Zipf's Meaning-Frequency Law through Contextual Diversity](../../ACL2025/others/a_new_formulation_of_zipfs_meaning-frequency_law_through_contextual_diversity.md)
 
 </div>
 

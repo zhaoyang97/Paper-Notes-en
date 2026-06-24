@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Underground Plant Exploration: Non-Destructive 3D Root Assessment with GPR Based on Point Graph Neural Network
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper reconstructs underground plant root systems as 3D point clouds non-destructively using Ground Penetrating Radar (GPR). The method first detects hyperbolas formed by root reflections on GPR B-scans and regresses their geometric parameters to obtain sparse 3D points. These points are then completed into a dens
+  [CVPR 2026][3D Vision][Ground Penetrating Radar (GPR)] This paper reconstructs underground plant root systems as 3D point clouds non-destructively using Ground Penetrating Radar (GPR). The method first detects hyperbolas formed by root reflections on GPR B-scans and regresses their geometric parameters to obtain sparse 3D points. These points are then completed into a dense root system using a Point Graph Neural Network (Point GNN) featuring residual graph convolutions and du…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Ground Penetrating Radar (GPR)"
+  - "3D Root Reconstruction"
+  - "Point Graph Neural Network"
+  - "Hyperbola Detection"
+  - "Point Cloud Upsampling"
 date: 2026-05-08
-content_hash: def1358ed313b102
+content_hash: d9a3d7309f42efd7
 ---
+
 # Underground Plant Exploration: Non-Destructive 3D Root Assessment with GPR Based on Point Graph Neural Network
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,15 @@ Ablation results highlight the contributions:
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment](qd-pcqa_quality-aware_domain_adaptation_for_point_cloud_quality_assessment.md)
+- [\[CVPR 2026\] R3-PCQA: Ray-Reprojection-Reinforcement for No-Reference 3D Point Cloud Quality Assessment](r3-pcqa_ray-reprojection-reinforcement_for_no-reference_3d_point_cloud_quality_a.md)
 - [\[CVPR 2026\] Topology-aware Feature Propagation for Unsupervised Non-rigid Point Cloud Correspondence](topology-aware_feature_propagation_for_unsupervised_non-rigid_point_cloud_corres.md)
 - [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
-- [\[CVPR 2026\] RINO: Rotation-Invariant Non-Rigid Correspondences](rino_rotation-invariant_non-rigid_correspondences.md)
 - [\[ECCV 2024\] Equi-GSPR: Equivariant SE(3) Graph Network Model for Sparse Point Cloud Registration](../../ECCV2024/3d_vision/equi-gspr_equivariant_se3_graph_network_model_for_sparse_point_cloud_registratio.md)
 
 </div>

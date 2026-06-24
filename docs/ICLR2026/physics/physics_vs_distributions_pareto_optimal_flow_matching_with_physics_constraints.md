@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Flow Matching] PBFM incorporates PDE residual constraints as a secondary objective during training. It replaces manual loss weighting with Conflict-free Gradients (ConFIG) and eliminates the Jensen gap by reconstructing clean samples through unrolling. This allows Flow Matching to simultaneously approach physics consistency and distr
+  [ICLR 2026][Physics & Scientific Computing][Flow Matching] PBFM incorporates PDE residual constraints as a secondary objective during training. It replaces manual loss weighting with Conflict-free Gradients (ConFIG) and eliminates the Jensen gap by reconstructing clean samples through unrolling. This allows Flow Matching to simultaneously approach physics consistency and distributional accuracy without increasing inference overhead, pushing the Pareto front of "Physics vs. Di…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Flow Matching
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Flow Matching"
+  - "Physics Constraints"
+  - "Multi-Objective Optimization"
+  - "Conflict-free Gradients"
+  - "Jensen Gap"
 date: 2026-05-08
-content_hash: 996f9e70b4f6e4c1
+content_hash: 390eff1a1670b513
 ---
+
 # Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints
 
 **Conference**: ICLR 2026  
@@ -148,8 +153,8 @@ PBFM leads across almost all metrics for conditional benchmarks. In Dynamic Stal
 - Value: ⭐⭐⭐⭐⭐ Easy to integrate, zero extra inference cost, and generalizes across tasks. Scientific ML toolbox addition.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

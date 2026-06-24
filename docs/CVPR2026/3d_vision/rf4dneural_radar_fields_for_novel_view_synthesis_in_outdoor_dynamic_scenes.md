@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] RF4D integrates mmWave radar into neural fields. By employing a "spatio-temporal radar field + scene flow temporal regularization + physics-informed power rendering," it achieves novel view synthesis (NVS) for radar in outdoor dynamic scenes for the first time. The synthesis and occupancy estimation accuracy significan
+  [CVPR 2026][3D Vision][Radar Neural Fields] RF4D integrates mmWave radar into neural fields. By employing a "spatio-temporal radar field + scene flow temporal regularization + physics-informed power rendering," it achieves novel view synthesis (NVS) for radar in outdoor dynamic scenes for the first time. The synthesis and occupancy estimation accuracy significantly outperform Radar Fields on two public radar datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Radar Neural Fields"
+  - "Novel View Synthesis"
+  - "Dynamic Scenes"
+  - "Scene Flow"
+  - "Occupancy Estimation"
 date: 2026-05-08
-content_hash: 85b6c1067e5d435d
+content_hash: 4a918618a62b9f79
 ---
+
 # RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,10 @@ Adding regularization terms on RobotCar (Scene1 / Scene3):
 ## Related Papers
 
 - [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
+- [\[CVPR 2026\] Charge: A Comprehensive Novel View Synthesis Benchmark and Dataset to Bind Them All](charge_a_comprehensive_novel_view_synthesis_benchmark_and_dataset_to_bind_them_a.md)
+- [\[CVPR 2026\] LagerNVS: Latent Geometry for Fully Neural Real-time Novel View Synthesis](lagernvs_latent_geometry_for_fully_neural_real-time_novel_view_synthesis.md)
 - [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
 - [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
-- [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
-- [\[CVPR 2026\] WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments](wildrayzer_self-supervised_large_view_synthesis_in_dynamic_environments.md)
 
 </div>
 

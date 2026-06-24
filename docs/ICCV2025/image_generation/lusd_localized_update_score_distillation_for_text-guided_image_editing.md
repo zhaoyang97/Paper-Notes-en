@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LUSD: Localized Update Score Distillation for Text-Guided Image Editing
 description: >-
-  [ICCV 2025][Image Generation][Score Distillation] LUSD addresses the failure modes of existing score distillation methods in image editing (particularly object insertion) through two simple modifications—attention-based…
+  [ICCV 2025][Image Generation][Score Distillation] LUSD addresses the failure modes of existing score distillation methods in image editing (particularly object insertion) through two simple modifications—attention-based spatial regularization and gradient filtering-normalization—which resolve instabilities caused by large disparities in gradient magnitude and spatial distribution, achieving a better balance between prompt fidelity and background preservation.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Gradient Normalization"
   - "Diffusion Prior"
 date: 2026-05-08
-content_hash: 253b5479ae2224c5
+content_hash: 0f18734155f207ed
 ---
 
 # LUSD: Localized Update Score Distillation for Text-Guided Image Editing
@@ -131,11 +131,11 @@ LUSD is compared against several state-of-the-art score distillation-based image
 
 ## Related Papers
 
-- [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](ale_attribute_leakage_free_editing.md)
 - [\[ICCV 2025\] InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation](infinidreamer_arbitrarily_long_human_motion_generation_via_segment_score_distill.md)
+- [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](ale_attribute_leakage_free_editing.md)
 - [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](balanced_image_stylization_with_style_matching_score.md)
-- [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
-- [\[ICCV 2025\] ADIEE: Automatic Dataset Creation and Scorer for Instruction-Guided Image Editing Evaluation](adiee_automatic_dataset_creation_and_scorer_for_instruction-guided_image_editing.md)
+- [\[ECCV 2024\] ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation](../../ECCV2024/image_generation/scaledreamer_scalable_text-to-3d_synthesis_with_asynchronous_score_distillation.md)
+- [\[NeurIPS 2025\] Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation](../../NeurIPS2025/image_generation/distilled_decoding_2_onestep_sampling_of_image_autoregressiv.md)
 
 </div>
 

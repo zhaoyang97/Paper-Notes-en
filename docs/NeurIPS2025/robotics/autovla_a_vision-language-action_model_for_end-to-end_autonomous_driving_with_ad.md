@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning
 description: >-
-  [NeurIPS 2025][Robotics][Vision-Language-Action Model] AutoVLA integrates physical action tokens directly into a pretrained VLM (Qwen2.5-VL-3B), equips the model with fast/slow dual-thinking modes via SFT…
+  [NeurIPS 2025][Robotics][Vision-Language-Action Model] AutoVLA integrates physical action tokens directly into a pretrained VLM (Qwen2.5-VL-3B), equips the model with fast/slow dual-thinking modes via SFT, and applies GRPO reinforcement fine-tuning to enable adaptive reasoning switching and optimize planning performance. The approach achieves competitive end-to-end driving performance across four major autonomous driving benchmarks: nuPlan, Waymo, nuScenes, and CARLA.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Reinforcement Fine-Tuning"
   - "Adaptive Reasoning"
 date: 2026-05-08
-content_hash: fed150ca592b61ea
+content_hash: 2f4ca0ac00927114
 ---
 
 # AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning
@@ -141,10 +141,10 @@ SFT stage: $\mathcal{L}^{SFT} = w_i \cdot (\mathcal{L}_{LM} + \lambda_a \mathcal
 ## Related Papers
 
 - [\[NeurIPS 2025\] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing](suturebot_a_precision_framework_benchmark_for_autonomous_end-to-end_suturing.md)
+- [\[CVPR 2025\] TinyNav: End-to-End TinyML for Real-Time Autonomous Navigation on Microcontrollers](../../CVPR2025/robotics/tinynav_end-to-end_tinyml_for_real-time_autonomous_navigation_on_microcontroller.md)
+- [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](../../CVPR2026/robotics/end-to-end_language-action_model_for_humanoid_whole_body_control.md)
 - [\[NeurIPS 2025\] PROFIT: A Specialized Optimizer for Deep Fine Tuning](profit_a_specialized_optimizer_for_deep_fine_tuning.md)
-- [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
-- [\[NeurIPS 2025\] ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning](thinkact_vision-language-action_reasoning_via_reinforced_visual_latent_planning.md)
+- [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](../../ICLR2026/robotics/onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
 
 </div>
 

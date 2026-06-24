@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lost in the Non-convex Loss Landscape: How to Fine-tune the Large Time Series Model?
 description: >-
-  [ICLR 2026][Time Series][Fine-tuning] By linearly interpolating the weights of a pre-trained large time series model with a randomly initialized "sparring" model, the smooth loss landscape of the latter is used to "level out" the sharp, non-convex landscape of the former. This allows full fine-tuning to truly benefit from pre-training without increasing an
+  [ICLR 2026][Time Series][Large Time Series Model (LTSM)] By linearly interpolating the weights of a pre-trained large time series model with a randomly initialized "sparring" model, the smooth loss landscape of the latter is used to "level out" the sharp, non-convex landscape of the former. This allows full fine-tuning to truly benefit from pre-training without increasing any memory or computational overhead.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Fine-tuning
+  - "ICLR 2026"
+  - "Time Series"
+  - "Large Time Series Model (LTSM)"
+  - "loss landscape smoothing"
+  - "weight interpolation"
+  - "fine-tuning"
+  - "sharp minima"
 date: 2026-05-08
-content_hash: 4bc9e31863f9dbb8
+content_hash: 85df2e1fbcfadf3b
 ---
+
 # Lost in the Non-convex Loss Landscape: How to Fine-tune the Large Time Series Model?
 
 **Conference**: ICLR 2026  

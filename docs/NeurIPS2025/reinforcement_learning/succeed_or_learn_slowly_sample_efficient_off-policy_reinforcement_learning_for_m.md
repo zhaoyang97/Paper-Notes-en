@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][mobile app control] This paper proposes the SoLS algorithm, which achieves sample-efficient RL fine-tuning of foundation models for mobile app control through an asymmetric policy u…
+  [NeurIPS 2025][Reinforcement Learning][mobile app control] This paper proposes the SoLS algorithm, which achieves sample-efficient RL fine-tuning of foundation models for mobile app control through an asymmetric policy update mechanism (aggressive learning on success, conservative regularization on failure) combined with Success Transition Replay (STR), attaining a 51.3% success rate on AndroidWorld.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "foundation model fine-tuning"
   - "sample efficiency"
 date: 2026-05-08
-content_hash: f75afa1de0ad6765
+content_hash: 66778d2210c013c0
 ---
 
 # Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control
@@ -50,7 +50,7 @@ The system adopts a two-stage pipeline: first, SFT pre-training on the AndroidCo
 
    SoLS is built on an off-policy actor-critic framework but applies entirely different update strategies to positive- and negative-advantage samples. The advantage function is defined as $A(s,a) = R - V^{\pi_\theta}(s)$, where $R$ is the Monte Carlo return. The policy gradient is:
 
-   $$\nabla\mathcal{L}_{ac} = \begin{cases} -\mathbb{E}_{s,a\sim\hat{D}}\left[A \cdot \frac{\nabla\pi_\theta(a|s)}{\pi_b(a|s)}\right] & \text{if } A > 0 \text{ or } 1-\epsilon \leq \frac{\pi_\theta(a|s)}{\pi_b(a|s)} \leq 1+\epsilon \\ 0 & \text{otherwise} \end{cases}$$
+    $\nabla\mathcal{L}_{ac} = \begin{cases} -\mathbb{E}_{s,a\sim\hat{D}}\left[A \cdot \frac{\nabla\pi_\theta(a|s)}{\pi_b(a|s)}\right] & \text{if } A > 0 \text{ or } 1-\epsilon \leq \frac{\pi_\theta(a|s)}{\pi_b(a|s)} \leq 1+\epsilon \\ 0 & \text{otherwise} \end{cases}$
 
    For positive-advantage samples, unconstrained updates via the importance sampling ratio are applied directly, maximizing learning efficiency from successful experiences. For negative-advantage samples, updates are permitted only when the importance sampling ratio falls within $[1-\epsilon, 1+\epsilon]$; otherwise, the update is skipped entirely. This design augments standard PPO with a two-sided constraint — whereas PPO clips only the lower bound of the ratio, SoLS also clips the upper bound, preventing excessive policy drift induced by negative samples.
 
@@ -58,7 +58,7 @@ The system adopts a two-stage pipeline: first, SFT pre-training on the AndroidCo
 
    To address the high cost of trajectory generation and extremely low success rates in open-world environments, STR uses a hash table to map each task to its list of successful action transitions. Up to 50 recent successful time steps are retained per task, and during training, $n$ successful transitions are sampled from each task and mixed with online data:
 
-   $$\mathcal{D} = \bigcup_{t \in \text{tasks}} \text{sample}(\mathcal{D}_{\text{STR}}(t), n) \cup \mathcal{D}_{on}$$
+    $\mathcal{D} = \bigcup_{t \in \text{tasks}} \text{sample}(\mathcal{D}_{\text{STR}}(t), n) \cup \mathcal{D}_{on}$
 
    STR bridges the SFT distribution and the target distribution by bootstrapping learning from sporadic successes, preventing the waste of scarce successful experiences.
 
@@ -66,7 +66,7 @@ The system adopts a two-stage pipeline: first, SFT pre-training on the AndroidCo
 
    The value network is implemented by appending an affine layer with sigmoid activation on top of the Transformer's final hidden layer, trained with a Monte Carlo target to avoid the need for a separate target network:
 
-   $$\mathcal{L}_{cr} = \mathbb{E}_{R,s\sim\mathcal{D}}\left[(R - V_\phi^{\pi_\theta}(s))^2\right]$$
+    $\mathcal{L}_{cr} = \mathbb{E}_{R,s\sim\mathcal{D}}\left[(R - V_\phi^{\pi_\theta}(s))^2\right]$
 
 ### Loss & Training
 

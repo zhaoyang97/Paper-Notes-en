@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OXtal: An All-Atom Diffusion Model for Organic Crystal Structure Prediction
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] OXtal is a 100M-parameter all-atom diffusion Transformer that directly samples experimentally realizable 3D crystal structures (molecular conformations + periodic packing) given only the 2D chemical graph of a molecule. By replacing explicit lattice parameterization and equivariant architectures with an "equilibrium-fr
+  [ICLR 2026][Physics & Scientific Computing][Crystal Structure Prediction] OXtal is a 100M-parameter all-atom diffusion Transformer that directly samples experimentally realizable 3D crystal structures (molecular conformations + periodic packing) given only the 2D chemical graph of a molecule. By replacing explicit lattice parameterization and equivariant architectures with an "equilibrium-free" stochastic shell sampling training scheme ($S^4$) and SE(3) data augmentation…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Crystal Structure Prediction"
+  - "All-atom Diffusion Model"
+  - "Molecular Crystals"
+  - "Periodic Packing"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: 87c8d4f5cdc2d1ac
+content_hash: 1bd33052f364902e
 ---
+
 # OXtal: An All-Atom Diffusion Model for Organic Crystal Structure Prediction
 
 **Conference**: ICLR 2026  
@@ -146,8 +152,8 @@ With only 30 samples, OXtal achieved the best or second-best results across thre
 - Value: ⭐⭐⭐⭐⭐ (Moves CSP from expensive DFT searches to efficient generative sampling.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

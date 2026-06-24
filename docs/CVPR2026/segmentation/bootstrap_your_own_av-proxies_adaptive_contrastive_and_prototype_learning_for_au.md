@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bootstrap Your Own AV-Proxies: Adaptive Contrastive and Prototype Learning for Audio-Visual Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Addressing the "intra-modal noise + audio-visual semantic gap" in audio-visual segmentation (AVS), this paper proposes BYOAVP. It utilizes BYOL-style negative-free contrastive learning (SSAE) to allow high-level visual semantics to supervise audio, suppressing off-screen/background noise. Additionally, it employs momen
+  [CVPR 2026][Segmentation][Audio-Visual Segmentation] Addressing the "intra-modal noise + audio-visual semantic gap" in audio-visual segmentation (AVS), this paper proposes BYOAVP. It utilizes BYOL-style negative-free contrastive learning (SSAE) to allow high-level visual semantics to supervise audio, suppressing off-screen/background noise. Additionally, it employs momentum-updated dynamic prototypes (DPC) for pixel-level classification and cross-modal reinforcement of soundi…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Audio-Visual Segmentation"
+  - "Self-supervised Contrastive Learning"
+  - "Prototype Learning"
+  - "Cross-modal Alignment"
+  - "Intra-modal Denoising"
 date: 2026-05-08
-content_hash: da229dadeea50d56
+content_hash: 43f77b0efe203510
 ---
+
 # Bootstrap Your Own AV-Proxies: Adaptive Contrastive and Prototype Learning for Audio-Visual Segmentation
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ SSAE Internal Design (CA=Pre-projection CMA, BN/GN=Normalization, MS3 J&F):
 
 ## Related Papers
 
-- [\[CVPR 2026\] AFRO: Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning](bootstrap_dynamic-aware_3d_visual_representation_for_scalable_robot_learning.md)
 - [\[ICCV 2025\] Implicit Counterfactual Learning for Audio-Visual Segmentation](../../ICCV2025/segmentation/implicit_counterfactual_learning_for_audio-visual_segmentation.md)
+- [\[CVPR 2026\] AFRO: Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning](bootstrap_dynamic-aware_3d_visual_representation_for_scalable_robot_learning.md)
+- [\[CVPR 2026\] Hyperbolic Prototype Learning with Uncertainty-Aware Consistency for Continual Test-Time Segmentation](hyperbolic_prototype_learning_with_uncertainty-aware_consistency_for_continual_t.md)
 - [\[CVPR 2026\] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts](souple_enhancing_audio-visual_localization_and_segmentation_with_learnable_promp.md)
-- [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
-- [\[ICML 2026\] LightAVSeg: Lightweight Audio-Visual Segmentation](../../ICML2026/segmentation/lightavseg_lightweight_audio-visual_segmentation.md)
+- [\[CVPR 2025\] Robust Audio-Visual Segmentation via Audio-Guided Visual Convergent Alignment](../../CVPR2025/segmentation/robust_audio-visual_segmentation_via_audio-guided_visual_convergent_alignment.md)
 
 </div>
 

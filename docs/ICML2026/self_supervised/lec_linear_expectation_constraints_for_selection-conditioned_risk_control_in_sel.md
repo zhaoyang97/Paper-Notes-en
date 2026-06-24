@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LEC: Linear Expectation Constraints for Selection-Conditioned Risk Control in Selective Prediction and Routing Systems
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] Addressing the long-standing issue in LLM selective prediction where "UCB risk bounds are too conservative and offer few usable thresholds," the authors rewrite the objective "post-selection error rate $\le \alpha$" as a **linear expectation constraint** involving indicator functions for selection and error. This leads
+  [ICML 2026][Self-Supervised Learning][Selective prediction] Addressing the long-standing issue in LLM selective prediction where "UCB risk bounds are too conservative and offer few usable thresholds," the authors rewrite the objective "post-selection error rate $\le \alpha$" as a **linear expectation constraint** involving indicator functions for selection and error. This leads to a finite-sample sufficient condition (Eq. 5) that depends only on the calibration set. This appr…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Selective prediction"
+  - "Risk control"
+  - "Conformal prediction"
+  - "Model routing"
+  - "Uncertainty quantification"
 date: 2026-05-08
-content_hash: 1da3850400d70fd2
+content_hash: 116e2fa49154ea2e
 ---
+
 # LEC: Linear Expectation Constraints for Selection-Conditioned Risk Control in Selective Prediction and Routing Systems
 
 **Conference**: ICML 2026  
@@ -136,9 +142,9 @@ At $\alpha=0.05$, LEC-Routing increases acceptance from 20.3% (single model) to 
 
 ## Related Papers
 
-- [\[ICML 2026\] Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts](scaling_continual_learning_to_300_tasks_with_bi-level_routing_mixture-of-experts.md)
 - [\[ICML 2026\] NITP: Next Implicit Token Prediction for LLM Pre-training](nitp_next_implicit_token_prediction_for_llm_pre-training.md)
-- [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
+- [\[ICLR 2026\] Unsupervised Representation Learning - An Invariant Risk Minimization Perspective](../../ICLR2026/self_supervised/unsupervised_representation_learning_-_an_invariant_risk_minimization_perspectiv.md)
+- [\[ICML 2026\] Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts](scaling_continual_learning_to_300_tasks_with_bi-level_routing_mixture-of-experts.md)
 - [\[CVPR 2026\] Energy Waveify and Redistribution for Test-Time Adaptation: A Control System Perspective](../../CVPR2026/self_supervised/energy_waveify_and_redistribution_for_test-time_adaptation_a_control_system_pers.md)
 - [\[CVPR 2025\] Representation Learning for Spatiotemporal Physical Systems](../../CVPR2025/self_supervised/representation_learning_for_spatiotemporal_physical_systems.md)
 

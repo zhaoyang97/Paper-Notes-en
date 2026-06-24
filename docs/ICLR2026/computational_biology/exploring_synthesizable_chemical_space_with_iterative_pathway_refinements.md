@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Exploring Synthesizable Chemical Space with Iterative Pathway Refinements
 description: >-
-  [ICLR 2026][Computational Biology][ReaSyn] ReaSyn models "finding synthesizable analogs for a given molecule" as a search/inference problem. It utilizes a single autoregressive Transformer to support both bottom-up and top-down synthesis tree generation, overlaid with a global discrete flow editor (Edit Bridge). Through an iterative cycle of "bottom-up decoding
+  [ICLR 2026][Computational Biology][Synthesizable projection] ReaSyn models "finding synthesizable analogs for a given molecule" as a search/inference problem. It utilizes a single autoregressive Transformer to support both bottom-up and top-down synthesis tree generation, overlaid with a global discrete flow editor (Edit Bridge). Through an iterative cycle of "bottom-up decoding $\rightarrow$ top-down decoding $\rightarrow$ global editing," it significantly improves the cover…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - ReaSyn
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Synthesizable projection"
+  - "synthesis pathway generation"
+  - "bidirectional autoregressive"
+  - "discrete flow editing"
+  - "ReaSyn"
 date: 2026-05-08
-content_hash: 2699d194a83d62a6
+content_hash: 7368e34457a6799d
 ---
+
 # Exploring Synthesizable Chemical Space with Iterative Pathway Refinements
 
 **Conference**: ICLR 2026  

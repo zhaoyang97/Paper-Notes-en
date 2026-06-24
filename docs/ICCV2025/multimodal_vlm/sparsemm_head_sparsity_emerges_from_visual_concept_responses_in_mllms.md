@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SparseMM: Head Sparsity Emerges from Visual Concept Responses in MLLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Head] This paper reveals a "visual head sparsity" phenomenon in Multimodal Large Language Models (MLLMs)…
+  [ICCV 2025][Multimodal VLM][Visual Head] This paper reveals a "visual head sparsity" phenomenon in Multimodal Large Language Models (MLLMs), where only approximately 5% of attention heads actively participate in visual understanding. It proposes a training-free visual head identification framework based on OCR tasks and introduces SparseMM — an acceleration strategy that asymmetrically allocates KV-Cache budgets across heads according to their visual scores — achieving 1.38×…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "Attention Analysis"
   - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 8d7040187ebe115e
+content_hash: bc5d1d9661f18dee
 ---
 
 # SparseMM: Head Sparsity Emerges from Visual Concept Responses in MLLMs
@@ -159,11 +159,11 @@ Visual head distributions identified from OCR datasets (MLT, CTW) are highly con
 
 ## Related Papers
 
-- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
 - [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](../../ICLR2026/multimodal_vlm/sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
 - [\[ICCV 2025\] Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation](sparsity_outperforms_low-rank_projections_in_few-shot_adaptation.md)
 - [\[ICCV 2025\] Spatial Preference Rewarding for MLLMs Spatial Understanding](spatial_preference_rewarding_for_mllms_spatial_understanding.md)
 - [\[ICCV 2025\] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](mc-bench_a_benchmark_for_multi-context_visual_grounding_in_the_era_of_mllms.md)
+- [\[ICCV 2025\] Visual-Oriented Fine-Grained Knowledge Editing for MultiModal Large Language Models](visual-oriented_fine-grained_knowledge_editing_for_multimodal_large_language_mod.md)
 
 </div>
 

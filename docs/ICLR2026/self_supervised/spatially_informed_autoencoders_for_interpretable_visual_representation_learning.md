@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spatially Informed Autoencoders for Interpretable Visual Representation Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper proposes **SI-VAE (Spatially Informed Variational Autoencoder)**, which utilizes the pseudo-likelihood of spatial point processes as a self-supervised objective to supervise the VAE latent space. This allows the model to learn statistically interpretable representations of "spatial arrangements between objec
+  [ICLR 2026][Self-Supervised Learning][Variational Autoencoders] This paper proposes **SI-VAE (Spatially Informed Variational Autoencoder)**, which utilizes the pseudo-likelihood of spatial point processes as a self-supervised objective to supervise the VAE latent space. This allows the model to learn statistically interpretable representations of "spatial arrangements between objects" rather than just pixel intensities. On synthetic data, it improves point pattern classificat…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Variational Autoencoders"
+  - "Spatial Point Processes"
+  - "Papangelou Conditional Intensity"
+  - "Pseudo-likelihood"
+  - "Interpretable Representations"
 date: 2026-05-08
-content_hash: 117a866715783d8b
+content_hash: ff584759ed1f61ed
 ---
+
 # Spatially Informed Autoencoders for Interpretable Visual Representation Learning
 
 **Conference**: ICLR 2026  
@@ -132,10 +138,10 @@ Standard VAE remains stuck at ~0.48, learning only global pixel intensity (homog
 ## Related Papers
 
 - [\[CVPR 2026\] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](../../CVPR2026/self_supervised/franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)
-- [\[ICLR 2026\] Unsupervised Representation Learning - An Invariant Risk Minimization Perspective](unsupervised_representation_learning_-_an_invariant_risk_minimization_perspectiv.md)
 - [\[ICLR 2026\] Beyond Hearing: Learning Task-Agnostic ExG Representations from Earphones via Physiology-Informed Tokenization](beyond_hearing_learning_task-agnostic_exg_representations_from_earphones_via_phy.md)
 - [\[ICLR 2026\] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition](guide_gated_uncertainty-informed_disentangled_experts_for_long-tailed_recognitio.md)
 - [\[ICCV 2025\] Scaling Language-Free Visual Representation Learning](../../ICCV2025/self_supervised/scaling_languagefree_visual_representation_learning.md)
+- [\[CVPR 2026\] Learning from Semantic Dictionaries: Discriminative Codebook Contrastive Learning for Unified Visual Representation and Generation](../../CVPR2026/self_supervised/learning_from_semantic_dictionaries_discriminative_codebook_contrastive_learning.md)
 
 </div>
 

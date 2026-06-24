@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation
 description: >-
-  [CVPR 2026][Signal & Communications][Paper Note] This paper proposes AcTTA, a test-time adaptation framework based on dynamic activation function modulation. By reparameterizing traditional fixed activation functions into a learnable form—incorporating activation center shifts and asymmetric gradient slopes—the model adaptively adjusts activation behavior during infe
+  [CVPR 2026][Signal & Communication][Test-Time Adaptation] This paper proposes AcTTA, a test-time adaptation framework based on dynamic activation function modulation. By reparameterizing traditional fixed activation functions into a learnable form—incorporating activation center shifts and asymmetric gradient slopes—the model adaptively adjusts activation behavior during inference to handle distribution shifts. AcTTA consistently outperforms normalization-based TTA methods on…
 tags:
-  - CVPR 2026
-  - Signal & Communications
+  - "CVPR 2026"
+  - "Signal & Communication"
+  - "Test-Time Adaptation"
+  - "Activation Function"
+  - "Distribution Shift"
+  - "Normalization Layer"
+  - "Dynamic Activation"
 date: 2026-05-08
-content_hash: d612cda538a58c8a
+content_hash: e263a73c472dc01c
 ---
+
 # AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation
 
 **Conference**: CVPR 2026  
@@ -132,8 +138,8 @@ The combination of AcTTA with other TTA baselines (ETA, SAR, DeYO, ROID, CMF) al
 - [\[ICLR 2026\] Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection](../../ICLR2026/signal_comm/enhancing_instruction_following_of_llms_via_activation_steering_with_dynamic_rej.md)
 - [\[ECCV 2024\] PYRA: Parallel Yielding Re-Activation for Training-Inference Efficient Task Adaptation](../../ECCV2024/signal_comm/pyra_parallel_yielding_re-activation_for_training-inference_efficient_task_adapt.md)
 - [\[CVPR 2025\] Continuous Space-Time Video Resampling with Invertible Motion Steganography](../../CVPR2025/signal_comm/continuous_space-time_video_resampling_with_invertible_motion_steganography.md)
+- [\[ICLR 2026\] Hystar: Hypernetwork-driven Style-adaptive Retrieval via Dynamic SVD Modulation](../../ICLR2026/signal_comm/hystar_hypernetwork-driven_style-adaptive_retrieval_via_dynamic_svd_modulation.md)
 - [\[NeurIPS 2025\] Angular Steering: Behavior Control via Rotation in Activation Space](../../NeurIPS2025/signal_comm/angular_steering_behavior_control_via_rotation_in_activation_space.md)
-- [\[CVPR 2026\] MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals](merlin_building_low-snr_robust_multimodal_llms_for_electromagnetic_signals.md)
 
 </div>
 

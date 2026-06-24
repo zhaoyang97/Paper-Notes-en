@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Paparazzo: Active Mapping of Moving 3D Objects
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Paparazzo introduces the novel task of "active reconstruction of moving objects" and proposes a training-free dual-mode framework. It utilizes an Extended Kalman Filter (EKF) to predict the trajectory of non-cooperative moving targets and selects optimal observation viewpoints using FisherRF information gain. By balanc
+  [CVPR 2026][3D Vision][Active Mapping] Paparazzo introduces the novel task of "active reconstruction of moving objects" and proposes a training-free dual-mode framework. It utilizes an Extended Kalman Filter (EKF) to predict the trajectory of non-cooperative moving targets and selects optimal observation viewpoints using FisherRF information gain. By balancing "high information but unreachable" views with "lower information but synchronizable" ones…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Active Mapping"
+  - "Moving Object Reconstruction"
+  - "Extended Kalman Filter"
+  - "Fisher Information"
+  - "Gaussian Splatting"
 date: 2026-05-08
-content_hash: 1be6227473b51c37
+content_hash: 3890936fe6846862
 ---
+
 # Paparazzo: Active Mapping of Moving 3D Objects
 
 **Conference**: CVPR 2026  
@@ -127,9 +133,9 @@ RIS serves as an ablation of Paparazzo removing the sync cost and feasibility re
 
 - [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
 - [\[CVPR 2026\] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping](magician_efficient_long-term_planning_with_imagined_gaussians_for_active_mapping.md)
+- [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
 - [\[CVPR 2025\] ActiveGAMER: Active GAussian Mapping through Efficient Rendering](../../CVPR2025/3d_vision/activegamer_active_gaussian_mapping_through_efficient_rendering.md)
-- [\[CVPR 2026\] Scene Reconstruction as Mapping Priors for 3D Detection](scene_reconstruction_as_mapping_priors_for_3d_detection.md)
-- [\[CVPR 2026\] SunFaded: Illumination-Aware Gaussian Splatting for Dark Scenes with Camera-Mounted Active Lighting](sunfaded_illumination-aware_gaussian_splatting_for_dark_scenes_with_camera-mount.md)
+- [\[CVPR 2026\] Moving Border Ownership for Event-based Motion Segmentation](moving_border_ownership_for_event-based_motion_segmentation.md)
 
 </div>
 

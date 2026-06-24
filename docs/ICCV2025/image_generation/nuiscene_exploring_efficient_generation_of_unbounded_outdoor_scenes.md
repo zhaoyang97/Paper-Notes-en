@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NuiScene: Exploring Efficient Generation of Unbounded Outdoor Scenes
 description: >-
-  [ICCV 2025][Image Generation][unbounded scene generation] NuiScene proposes an efficient vector set encoding scheme for scene chunks, paired with an explicitly trained outpainting diffusion model…
+  [ICCV 2025][Image Generation][unbounded scene generation] NuiScene proposes an efficient vector set encoding scheme for scene chunks, paired with an explicitly trained outpainting diffusion model, to enable fast unbounded outdoor scene generation. The work also curates NuiScene43, a high-quality outdoor scene dataset.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "outdoor scenes"
   - "3D generation"
 date: 2026-05-08
-content_hash: f3c9320e2561c056
+content_hash: bccec2399029add2
 ---
 
 # NuiScene: Exploring Efficient Generation of Unbounded Outdoor Scenes
@@ -143,8 +143,8 @@ The explicit outpainting approach is approximately 4.7× faster and maintains co
 - [\[ICCV 2025\] Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing](exploring_multimodal_diffusion_transformers_for_enhanced_prompt-based_image_edit.md)
 - [\[ICCV 2025\] Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization](efficient_autoregressive_shape_generation_via_octree-based_adaptive_tokenization.md)
 - [\[ICML 2026\] SceneSmith: Agentic Generation of Simulation-Ready Indoor Scenes](../../ICML2026/image_generation/scenesmith_agentic_generation_of_simulation-ready_indoor_scenes.md)
-- [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
 - [\[NeurIPS 2025\] Exploring Variational Graph Autoencoders for Distribution Grid Data Generation](../../NeurIPS2025/image_generation/exploring_variational_graph_autoencoders_for_distribution_grid_data_generation.md)
+- [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PAWS: Preference Learning with Advantage-Weighted Segments
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] PAWS identifies that the common practice in Preference-based RL (PbRL) of "training utility functions at the segment level but using them at the step level" causes distribution shifts. It proposes training advantage functions and updating policies **consistently at the segment level**. By using segment-level advantage
+  [ICML 2026][Reinforcement Learning][Preference RL] PAWS identifies that the common practice in Preference-based RL (PbRL) of "training utility functions at the segment level but using them at the step level" causes distribution shifts. It proposes training advantage functions and updating policies **consistently at the segment level**. By using segment-level advantage weighting with trust-region constrained weighted maximum likelihood, PAWS significantly improves preference s…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Preference RL"
+  - "Temporal Credit Assignment"
+  - "Advantage Function"
+  - "Trust Region"
+  - "Effective Sample Size"
 date: 2026-05-08
-content_hash: 4525473f826cd8d0
+content_hash: bf8206bbc1a93082
 ---
+
 # PAWS: Preference Learning with Advantage-Weighted Segments
 
 **Conference**: ICML 2026  
@@ -136,15 +142,16 @@ PAWS (both architectures) achieves the highest or tied-highest success rates for
 - Value: ⭐⭐⭐⭐ (The $n_{\mathrm{eff}}$ adaptation and segment-weighted approach are highly practical).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Heterogeneous Agent Q-weighted Policy Optimization](../../ICLR2026/reinforcement_learning/heterogeneous_agent_q-weighted_policy_optimization.md)
 - [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](safe_reinforcement_learning_with_preference-based_constraint_inference.md)
 - [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
 - [\[ICML 2026\] Video-Based Optimal Transport for Feedback-Efficient Offline Preference-Based Reinforcement Learning](video-based_optimal_transport_for_feedback-efficient_offline_preference-based_re.md)
 - [\[ICML 2026\] Randomized Advantage Transformation (RAT): Computing Natural Policy Gradients via Direct Backpropagation](randomized_advantage_transformation_rat_computing_natural_policy_gradients_via_d.md)
-- [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](../../ACL2026/reinforcement_learning/free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
 
 </div>
 

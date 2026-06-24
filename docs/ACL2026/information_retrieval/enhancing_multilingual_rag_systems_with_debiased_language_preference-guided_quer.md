@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper discovers that the "English preference" in multilingual RAG systems is primarily an artifact of structural priors in evaluation benchmarks (gold evidence concentrated in English, cultural priors) rather than an inherent model bias. It proposes DeLP, a debiased language preference metric, to reveal that retri
+  [ACL 2026 Findings][Information Retrieval & RAG][Multilingual RAG] This paper discovers that the "English preference" in multilingual RAG systems is primarily an artifact of structural priors in evaluation benchmarks (gold evidence concentrated in English, cultural priors) rather than an inherent model bias. It proposes DeLP, a debiased language preference metric, to reveal that retrievers actually prefer monolingual alignment. Based on this, the DELTA query enhancement frame…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Multilingual RAG"
+  - "English-centric bias"
+  - "Language preference"
+  - "Query fusion"
+  - "Debiased calibration"
 date: 2026-05-08
-content_hash: 76997602a454d25f
+content_hash: 43544c0a9a51c9e4
 ---
+
 # Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion
 
 **Conference**: ACL 2026 Findings  
@@ -139,9 +145,9 @@ This work does not involve model training; all conclusions are derived from off-
 
 - [\[ACL 2025\] Investigating Language Preference of Multilingual RAG Systems](../../ACL2025/information_retrieval/investigating_language_preference_of_multilingual_rag_systems.md)
 - [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
+- [\[ICML 2026\] Linguistic Nepotism: Trading-off Quality for Language Preference in Multilingual RAG](../../ICML2026/information_retrieval/linguistic_nepotism_trading-off_quality_for_language_preference_in_multilingual_.md)
 - [\[ACL 2026\] All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG](all_languages_matter_understanding_and_mitigating_language_bias_in_multilingual_.md)
 - [\[ACL 2026\] Multi-Faceted Self-Consistent Preference Alignment for Query Rewriting in Conversational Search](multi-faceted_self-consistent_preference_alignment_for_query_rewriting_in_conver.md)
-- [\[ACL 2026\] GIFT: Guided Fine-Tuning and Transfer for Enhancing Instruction-Tuned Language Models](gift_guided_fine-tuning_and_transfer_for_enhancing_instruction-tuned_language_mo.md)
 
 </div>
 

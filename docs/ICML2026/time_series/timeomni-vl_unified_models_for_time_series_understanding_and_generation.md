@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TimeOmni-VL: Unified Models for Time Series Understanding and Generation
 description: >-
-  [ICML 2026][Time Series][Paper Note] TimeOmni-VL achieves the industry's best performance in forecasting and imputation by converting time series into **high-fidelity images** (Bi-TSI) and introducing an **understanding-guided generation mechanism** (CoT as diffusion conditioning). This marks the first successful unified multimodal framework that simultan
+  [ICML 2026][Time Series][Time Series Forecasting] TimeOmni-VL achieves the industry's best performance in forecasting and imputation by converting time series into **high-fidelity images** (Bi-TSI) and introducing an **understanding-guided generation mechanism** (CoT as diffusion conditioning). This marks the first successful unified multimodal framework that simultaneously masters time series **understanding and generation** tasks.
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Time Series Imputation"
+  - "Unified Multimodality"
+  - "Visual Representation"
+  - "Understanding-Generation"
 date: 2026-05-08
-content_hash: bf96786051e799cb
+content_hash: 299ce738e7bc5590
 ---
+
 # TimeOmni-VL: Unified Models for Time Series Understanding and Generation
 
 **Conference**: ICML 2026  
@@ -132,7 +138,7 @@ To ensure the model truly learns temporal attributes, generative samples alone a
 - [\[ICML 2026\] CombinationTS: A Modular Framework for Understanding Time-Series Forecasting Models](combinationts_a_modular_framework_for_understanding_time-series_forecasting_mode.md)
 - [\[ICML 2026\] It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks](its_time_towards_the_next_generation_of_time_series_forecasting_benchmarks.md)
 - [\[ICLR 2026\] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models](../../ICLR2026/time_series/timeomni-1_incentivizing_complex_reasoning_with_time_series_in_large_language_mo.md)
-- [\[ICML 2026\] Interpretability in Deep Time Series Models Demands Semantic Alignment](interpretability_in_deep_time_series_models_demands_semantic_alignment.md)
+- [\[ICLR 2026\] Understanding the Implicit Biases of Design Choices for Time Series Foundation Models](../../ICLR2026/time_series/understanding_the_implicit_biases_of_design_choices_for_time_series_foundation_m.md)
 
 </div>
 

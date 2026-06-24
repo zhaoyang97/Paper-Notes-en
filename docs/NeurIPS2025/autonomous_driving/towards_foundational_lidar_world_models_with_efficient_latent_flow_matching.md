@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Foundational LiDAR World Models with Efficient Latent Flow Matching
 description: >-
-  [NeurIPS 2025][Autonomous Driving][LiDAR world model] This paper proposes the first **transferable LiDAR world model**, achieving a 192× compression ratio via a Swin Transformer VAE (state-of-the-art reconstruction accur…
+  [NeurIPS 2025][Autonomous Driving][LiDAR world model] This paper proposes the first **transferable LiDAR world model**, achieving a 192× compression ratio via a Swin Transformer VAE (state-of-the-art reconstruction accuracy), replacing diffusion models with Conditional Flow Matching (CFM) for state-of-the-art semantic occupancy prediction (using only 4.38% of prior work's FLOPs), and surpassing OccWorld trained on full annotations across three domain transfer tasks using only…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "VAE compression"
   - "foundation model"
 date: 2026-05-08
-content_hash: 47f944a090f5e049
+content_hash: eef4f15a2e5fa106
 ---
 
 # Towards Foundational LiDAR World Models with Efficient Latent Flow Matching
@@ -147,8 +147,8 @@ Cosmos is an RGB foundation world model targeting both indoor and outdoor scenes
 - [\[NeurIPS 2025\] Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling](flow_matching-based_autonomous_driving_planning_with_advanced_interactive_behavi.md)
 - [\[ICCV 2025\] Distilling Diffusion Models to Efficient 3D LiDAR Scene Completion](../../ICCV2025/autonomous_driving/distilling_diffusion_models_to_efficient_3d_lidar_scene_completion.md)
 - [\[ICCV 2025\] Towards Open-World Generation of Stereo Images and Unsupervised Matching](../../ICCV2025/autonomous_driving/towards_open-world_generation_of_stereo_images_and_unsupervised_matching.md)
+- [\[CVPR 2026\] MAD: Motion Appearance Decoupling for Efficient Driving World Models](../../CVPR2026/autonomous_driving/mad_motion_appearance_decoupling_for_efficient_driving_world_models.md)
 - [\[AAAI 2026\] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models](../../AAAI2026/autonomous_driving/unlocking_efficient_vehicle_dynamics_modeling_via_analytic_world_models.md)
-- [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Client2Vec: Improving Federated Learning by Distribution Shifts Aware Client Indexing
 description: >-
-  [ICCV 2025][AI Safety][Federated Learning] This paper proposes the Client2Vec mechanism, which leverages a CLIP encoder and a Distribution Shifts Aware Index Generation Network (DSA-IGN) to generate…
+  [ICCV 2025][AI Safety][Federated Learning] This paper proposes the Client2Vec mechanism, which leverages a CLIP encoder and a Distribution Shifts Aware Index Generation Network (DSA-IGN) to generate, prior to federated training, an index vector for each client that encodes both label and feature distribution information. The resulting indices are then used to improve three key stages of FL: client sampling, model aggregation, and local training.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "Non-IID Data"
 date: 2026-05-08
-content_hash: cfafd6622f0bdadf
+content_hash: b0be8db32bd1ad4d
 ---
 
 # Client2Vec: Improving Federated Learning by Distribution Shifts Aware Client Indexing
@@ -120,11 +120,11 @@ Gains are most pronounced on CIFAR10 (up to +33.37%) and exceed 10% on DomainNet
 
 ## Related Papers
 
+- [\[CVPR 2025\] FedAWA: Adaptive Optimization of Aggregation Weights in Federated Learning Using Client Vectors](../../CVPR2025/ai_safety/fedawa_adaptive_optimization_of_aggregation_weights_in_federated_learning_using_.md)
+- [\[CVPR 2025\] A Simple Data Augmentation for Feature Distribution Skewed Federated Learning](../../CVPR2025/ai_safety/a_simple_data_augmentation_for_feature_distribution_skewed_federated_learning.md)
 - [\[NeurIPS 2025\] MARS: A Malignity-Aware Backdoor Defense in Federated Learning](../../NeurIPS2025/ai_safety/mars_a_malignity-aware_backdoor_defense_in_federated_learning.md)
+- [\[ICML 2025\] Avoiding Leakage Poisoning: Concept Interventions Under Distribution Shifts](../../ICML2025/ai_safety/avoiding_leakage_poisoning_concept_interventions_under_distribution_shifts.md)
 - [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
-- [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
-- [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](../../CVPR2026/ai_safety/feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
-- [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Ours is the first work to simultaneously address train-time robustness (source-target dynamics mismatch) and test-time robustness (deployment environment dynamics shift) in cross-domain offline RL. The proposed DROCO algorithm centers on the Robust Cross-Domain Bellman (RCB) operator—applying robust Bellman updates to
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] Ours is the first work to simultaneously address train-time robustness (source-target dynamics mismatch) and test-time robustness (deployment environment dynamics shift) in cross-domain offline RL. The proposed DROCO algorithm centers on the Robust Cross-Domain Bellman (RCB) operator—applying robust Bellman updates to source data and standard in-sample updates to target data. Through dual reconstruction…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Cross-Domain Transfer"
+  - "Dynamics Shift"
+  - "Dual Robustness"
+  - "Bellman Operator"
 date: 2026-05-08
-content_hash: 4cfc9b1bd77abd4c
+content_hash: 40ef2222de2b4444
 ---
+
 # Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts
 
 **Conference**: ICLR 2026  
@@ -145,9 +151,17 @@ DROCO's degradation rates are significantly lower than baselines across all pert
 
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICML 2026\] Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning](../../ICML2026/reinforcement_learning/unifying_value_alignment_and_assignment_in_cross-domain_offline_reinforcement_le.md)
+- [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation](robust_deep_reinforcement_learning_against_adversarial_behavior_manipulation.md)
+- [\[ICLR 2026\] Belief-Based Offline Reinforcement Learning for Delay-Robust Policy Optimization](belief-based_offline_reinforcement_learning_for_delay-robust_policy_optimization.md)
+- [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)

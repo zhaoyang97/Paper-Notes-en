@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning
 description: >-
-  [ICLR 2026][Multi-Agent][multi-agent collaboration] MMedAgent-RL is proposed to optimize a multi-agent system simulating clinical consultation workflows (Triage → Specialist → Attending) via RL. The core innovation is Curriculum-guided Entropy-aware RL (C-MARL), which enables the Attending Physician agent to adopt distinct exploration-exploitation strategies when facing
+  [ICLR2026][Multi-Agent][multi-agent collaboration] MMedAgent-RL is proposed to optimize a multi-agent system simulating clinical consultation workflows (Triage → Specialist → Attending) via RL. The core innovation is Curriculum-guided Entropy-aware RL (C-MARL), which enables the Attending Physician agent to adopt distinct exploration-exploitation strategies when facing correct, conflicting, or incorrect specialist opinions, achieving SOTA performance across five in-domain and…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - multi-agent collaboration
-  - reinforcement learning
-  - medical VQA
-  - curriculum learning
-  - GRPO
-  - clinical reasoning
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "multi-agent collaboration"
+  - "reinforcement learning"
+  - "medical VQA"
+  - "curriculum learning"
+  - "GRPO"
+  - "clinical reasoning"
 date: 2026-05-08
-content_hash: 9a7c48bf934ce83b
+content_hash: 4b31a5e2ffe961b0
 ---
+
 # MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning
 
 **Conference**: ICLR2026  
@@ -137,10 +138,10 @@ The method design is elegant; the entropy-regulation strategy of C-MARL is both 
 ## Related Papers
 
 - [\[ACL 2026\] ConSensus: Multi-Agent Collaboration for Multimodal Sensing](../../ACL2026/multi_agent/consensus_multi-agent_collaboration_for_multimodal_sensing.md)
-- [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
 - [\[ICLR 2026\] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning](agentpo_enhancing_multi-agent_collaboration_via_reinforcement_learning.md)
+- [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
+- [\[NeurIPS 2025\] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks](../../NeurIPS2025/multi_agent/medagentboard_benchmarking_multi-agent_collaboration_with_conventional_methods_f.md)
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
-- [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
 
 </div>
 

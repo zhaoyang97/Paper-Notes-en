@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Alligat0R: Pre-Training through Covisibility Segmentation for Relative Camera Pose Regression
 description: >-
-  [NeurIPS 2025][Segmentation][Covisibility Segmentation] This paper replaces CroCo's cross-view completion with covisibility segmentation as a stereo vision pre-training task…
+  [NeurIPS 2025 Spotlight][Segmentation][Covisibility Segmentation] This paper replaces CroCo's cross-view completion with covisibility segmentation as a stereo vision pre-training task, predicting per-pixel labels of "co-visible / occluded / out-of-view" for each pixel. The approach significantly outperforms CroCo in low-overlap scenarios and achieves a first-place overall success rate of 60.3% on the RUBIK benchmark.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Segmentation"
   - "Covisibility Segmentation"
   - "Pre-Training"
@@ -12,7 +12,7 @@ tags:
   - "CroCo"
   - "ViT"
 date: 2026-05-08
-content_hash: 132783bbc1a198f7
+content_hash: f5651557c1218e07
 ---
 
 # Alligat0R: Pre-Training through Covisibility Segmentation for Relative Camera Pose Regression
@@ -123,11 +123,11 @@ RUBIK Benchmark: Overall success rate of 60.3% ranks first, surpassing DUSt3R (5
 
 ## Related Papers
 
+- [\[CVPR 2025\] COSMOS: Cross-Modality Self-Distillation for Vision Language Pre-training](../../CVPR2025/segmentation/cosmos_cross-modality_self-distillation_for_vision_language_pre-training.md)
+- [\[ECCV 2024\] DreamLIP: Language-Image Pre-training with Long Captions](../../ECCV2024/segmentation/dreamlip_language-image_pre-training_with_long_captions.md)
 - [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](../../ICCV2025/segmentation/enhancing_transformers_through_conditioned_embedded_tokens.md)
-- [\[CVPR 2026\] Live Interactive Training for Video Segmentation](../../CVPR2026/segmentation/live_interactive_training_for_video_segmentation.md)
+- [\[CVPR 2025\] MV-SSM: Multi-View State Space Modeling for 3D Human Pose Estimation](../../CVPR2025/segmentation/mv-ssm_multi-view_state_space_modeling_for_3d_human_pose_estimation.md)
 - [\[ICCV 2025\] What If: Understanding Motion Through Sparse Interactions](../../ICCV2025/segmentation/what_if_understanding_motion_through_sparse_interactions.md)
-- [\[NeurIPS 2025\] InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition](instructsam_a_training-free_framework_for_instruction-oriented_remote_sensing_ob.md)
-- [\[ICCV 2025\] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy](../../ICCV2025/segmentation/deris_decoupling_perception_and_cognition_for_enhanced_referring_image_segmentat.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][FNO] Complex PDEs are decomposed into "basic forms" (e.g., pure diffusion or pure convection terms). By training neural operators to simultaneously learn the original PDE and its low-cost basic forms, the model achieves lower error, stable long-term extrapolation, and stronger OOD/sim-to-real generalization using significan
+  [ICLR 2026][Physics & Scientific Computing][Neural Operators] Complex PDEs are decomposed into "basic forms" (e.g., pure diffusion or pure convection terms). By training neural operators to simultaneously learn the original PDE and its low-cost basic forms, the model achieves lower error, stable long-term extrapolation, and stronger OOD/sim-to-real generalization using significantly less simulation data.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - FNO
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Neural Operators"
+  - "PDE Surrogate Models"
+  - "Multi-physics training"
+  - "Data efficiency"
+  - "OOD Generalization"
+  - "FNO"
 date: 2026-05-08
-content_hash: a93f3dfa9d5edd9e
+content_hash: bf13504e1cf92ace
 ---
+
 # Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge
 
 **Conference**: ICLR 2026  
@@ -119,11 +125,11 @@ Trained on 3D Navier-Stokes simulations and transferred to real smoke plume obse
 
 ## Related Papers
 
-- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
-- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
 - [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
-- [\[ICLR 2026\] Overtone: Cyclic Patch Modulation for Clean, Efficient, and Flexible Physics Emulators](overtone_cyclic_patch_modulation_for_clean_efficient_and_flexible_physics_emulat.md)
-- [\[ICLR 2026\] Adaptive Mamba Neural Operators](adaptive_mamba_neural_operators.md)
+- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
+- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
+- [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](../../NeurIPS2025/physics/deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
+- [\[ICLR 2026\] CFO: Learning Continuous-Time PDE Dynamics via Flow-Matched Neural Operators](cfo_learning_continuous-time_pde_dynamics_via_flow-matched_neural_operators.md)
 
 </div>
 

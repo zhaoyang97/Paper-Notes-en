@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Continual Learning] This paper formalizes the Big World Hypothesis from a computationally-embedded perspective…
+  [NeurIPS 2025 Spotlight][Reinforcement Learning][Continual Learning] This paper formalizes the Big World Hypothesis from a computationally-embedded perspective, proves that agents embedded in universal-local environments are inherently capacity-constrained, proposes *interactivity* as a computational measure of continual adaptability, and empirically demonstrates that deep nonlinear networks fail to maintain interactivity while deep linear networks improve interactivity as ca…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Reinforcement Learning"
   - "Continual Learning"
   - "Big World Hypothesis"
@@ -12,7 +12,7 @@ tags:
   - "Algorithmic Information Theory"
   - "Interactivity"
 date: 2026-05-08
-content_hash: b0bdf8e6de1f5a57
+content_hash: 6df79b2ba3bcf76d
 ---
 
 # The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis
@@ -148,8 +148,8 @@ The value function uses linear parameterization $v(b_t; \mathbf{W}_t) := \mathbf
 
 - [\[NeurIPS 2025\] Meta-World+: An Improved, Standardized, RL Benchmark](meta-world_an_improved_standardized_rl_benchmark.md)
 - [\[NeurIPS 2025\] Bootstrap Off-policy with World Model (BOOM)](bootstrap_off-policy_with_world_model.md)
-- [\[NeurIPS 2025\] Open-World Drone Active Tracking with Goal-Centered Rewards](open-world_drone_active_tracking_with_goal-centered_rewards.md)
 - [\[NeurIPS 2025\] Emergent World Beliefs: Exploring Transformers in Stochastic Games](emergent_world_beliefs_exploring_transformers_in_stochastic_games.md)
+- [\[NeurIPS 2025\] Open-World Drone Active Tracking with Goal-Centered Rewards](open-world_drone_active_tracking_with_goal-centered_rewards.md)
 - [\[NeurIPS 2025\] Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds](foundation_models_as_world_models_a_foundational_study_in_text-based_gridworlds.md)
 
 </div>

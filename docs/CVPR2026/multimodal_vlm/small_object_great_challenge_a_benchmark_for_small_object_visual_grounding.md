@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][RefCOCO] Addressing the bias in existing Visual Grounding (VG) benchmarks toward large objects, this paper constructs the RefCOCOs benchmark (320k referring expressions) using an MLLM-based automated pipeline on COCO, where the average target area is only 1.60% of the image. A strong baseline, SoVG-Net, featuring a Hierarchical
+  [CVPR 2026][Multimodal VLM][Visual Grounding] Addressing the bias in existing Visual Grounding (VG) benchmarks toward large objects, this paper constructs the RefCOCOs benchmark (320k referring expressions) using an MLLM-based automated pipeline on COCO, where the average target area is only 1.60% of the image. A strong baseline, SoVG-Net, featuring a Hierarchical Text Injection (HTI) module, is proposed, achieving leading performance in Acc@0.5 and mIoU for small object loca…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RefCOCO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Grounding"
+  - "Small Objects"
+  - "RefCOCO"
+  - "Referring Expressions"
+  - "MLLM Auto-labeling"
 date: 2026-05-08
-content_hash: c581548321519e07
+content_hash: 8d4342f216419f49
 ---
+
 # Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding
 
 **Conference**: CVPR 2026  
@@ -147,10 +152,10 @@ Compared to EEVG, SoVG-Net is nearly 6% higher in Acc@0.5 on testB. Meanwhile, S
 ## Related Papers
 
 - [\[CVPR 2026\] Visual Grounding for Object Questions](visual_grounding_for_object_questions.md)
-- [\[CVPR 2026\] Downscaling Intelligence: Exploring Perception and Reasoning Bottlenecks in Small VLMs](downscaling_intelligence_exploring_perception_and_reasoning_bottlenecks_in_small.md)
 - [\[CVPR 2026\] From Failure to Feedback: Group Revision Unlocks Hard Cases in Object-Level Grounding](from_failure_to_feedback_group_revision_unlocks_hard_cases_in_object-level_groun.md)
 - [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
 - [\[CVPR 2026\] Mechanisms of Object Localization in Vision-Language Models](mechanisms_of_object_localization_in_vision-language_models.md)
+- [\[CVPR 2026\] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding](iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding.md)
 
 </div>
 

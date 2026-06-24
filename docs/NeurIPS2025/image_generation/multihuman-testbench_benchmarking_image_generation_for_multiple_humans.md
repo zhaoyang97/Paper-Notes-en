@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MultiHuman-Testbench: Benchmarking Image Generation for Multiple Humans
 description: >-
-  [NeurIPS 2025][Image Generation][Multi-human image generation] This paper introduces MultiHuman-Testbench, the first systematic benchmark for evaluating multi-human image generation. It comprises 1…
+  [NeurIPS 2025][Image Generation][Multi-human image generation] This paper introduces MultiHuman-Testbench, the first systematic benchmark for evaluating multi-human image generation. It comprises 1,800 test samples paired with 5,550 face images, a suite of multi-dimensional evaluation metrics including Hungarian-matching-based identity similarity, and proposes Regional Isolation and Implicit Region Assignment techniques to enhance existing methods without additional training.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "regional isolation"
 date: 2026-05-08
-content_hash: 5b8c289b36c24be7
+content_hash: db271f513de468ae
 ---
 
 # MultiHuman-Testbench: Benchmarking Image Generation for Multiple Humans
@@ -148,9 +148,9 @@ MH-IR-Diffusion achieves the best performance on both Count and Multi-ID, valida
 
 - [\[NeurIPS 2025\] AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models](accuquant_simulating_multiple_denoising_steps_for_quantizing.md)
 - [\[ICCV 2025\] CompSlider: Compositional Slider for Disentangled Multiple-Attribute Image Generation](../../ICCV2025/image_generation/compslider_compositional_slider_for_disentangled_multiple-attribute_image_genera.md)
+- [\[CVPR 2025\] Pippo: High-Resolution Multi-View Humans from a Single Image](../../CVPR2025/image_generation/pippo_high-resolution_multi-view_humans_from_a_single_image.md)
 - [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](../../CVPR2026/image_generation/micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
 - [\[ICCV 2025\] CNS-Bench: Benchmarking Image Classifier Robustness Under Continuous Nuisance Shifts](../../ICCV2025/image_generation/cns-bench_benchmarking_image_classifier_robustness_under_continuous_nuisance_shi.md)
-- [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
 
 </div>
 

@@ -1,15 +1,19 @@
 ---
 title: >-
-  [Paper Note] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely F₁
+  [Paper Note] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely $F_1$
 description: >-
-  [CVPR 2026][Others][F-score] This paper systematically investigates the properties of the $F_\beta$ score family as a ranking tradeoff between Precision and Recall from a ranking theory perspective. It proves that the rankings induced by $F_\beta$ constitute a geodesic (shortest path) between Precision and Recall rankings. Consequently, it propose
+  [CVPR 2026][F-score] This paper systematically investigates the properties of the $F_\beta$ score family as a ranking tradeoff between Precision and Recall from a ranking theory perspective. It proves that the rankings induced by $F_\beta$ constitute a geodesic (shortest path) between Precision and Recall rankings. Consequently, it proposes a closed-form formula to find the optimal $\beta$ value and demonstrates that the commonly used $F_1$ and skew-insensitive $F_1$ are not…
 tags:
-  - CVPR 2026
-  - Others
-  - F-score
+  - "CVPR 2026"
+  - "F-score"
+  - "ranking optimization"
+  - "Kendall distance"
+  - "Precision-Recall tradeoff"
+  - "performance evaluation theory"
 date: 2026-05-08
-content_hash: 1411c8654bbde10f
+content_hash: e9674b3bafe4e726
 ---
+
 # What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely $F_1$
 
 **Conference**: CVPR 2026  
@@ -128,9 +132,9 @@ This is a theoretical work with no training process. Implementation requires a s
 
 - [\[NeurIPS 2025\] What Does It Take to Build a Performant Selective Classifier?](../../NeurIPS2025/others/what_does_it_take_to_build_a_performant_selective_classifier.md)
 - [\[AAAI 2026\] How Hard Is It to Rig a Tournament When Few Players Can Beat or Be Beaten by the Favorite?](../../AAAI2026/others/how_hard_is_it_to_rig_a_tournament_when_few_players_can_beat_or_be_beaten_by_the.md)
-- [\[CVPR 2026\] Keep It Frozen: Domain-Routed Conditional Residual Modulation for Multi-Domain Vision Transformers](keep_it_frozen_domain-routed_conditional_residual_modulation_for_multi-domain_vi.md)
-- [\[CVPR 2026\] Bias at the End of the Score](bias_at_the_end_of_the_score.md)
 - [\[AAAI 2026\] How Hard is it to Explain Preferences Using Few Boolean Attributes?](../../AAAI2026/others/how_hard_is_it_to_explain_preferences_using_few_boolean_attributes.md)
+- [\[CVPR 2026\] Region-Wise Correspondence Prediction between Manga Line Art Images](region-wise_correspondence_prediction_between_manga_line_art_images.md)
+- [\[ICLR 2026\] It's All Just Vectorization: einx, a Universal Notation for Tensor Operations](../../ICLR2026/others/its_all_just_vectorization_einx_a_universal_notation_for_tensor_operations.md)
 
 </div>
 

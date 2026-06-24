@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention
 description: >-
-  [ICML 2026][Image Restoration][Diffusion Language Model] DyLLM is a training-free inference acceleration framework for diffusion LLMs. It identifies "salient tokens" by measuring the cosine similarity of attention contexts between adjacent denoising steps. By recalculating FFN and attention only for these tokens using salient-aware approximate attention, it increases through
+  [ICML2026][Image Restoration][Diffusion Language Models] DyLLM is a training-free inference acceleration framework for diffusion LLMs. It identifies "salient tokens" by measuring the cosine similarity of attention contexts between adjacent denoising steps. By recalculating FFN and attention only for these tokens using salient-aware approximate attention, it increases throughput to 7.6× / 9.6× on LLaDA / Dream with negligible performance loss.
 tags:
-  - ICML 2026
-  - Image Restoration
-  - Diffusion Language Model
-  - Inference Acceleration
+  - "ICML2026"
+  - "Image Restoration"
+  - "Diffusion Language Models"
+  - "Inference Acceleration"
+  - "Temporal Sparsity"
+  - "Salient Token Selection"
+  - "Approximate Attention"
 date: 2026-05-08
-content_hash: 5510eee3afa5e1d6
+content_hash: 5eb3d93469624352
 ---
+
 # DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention
 
 **Conference**: ICML2026  
@@ -134,10 +138,10 @@ Combined with confidence-aware parallel decoding (Tab 3, Dream GSM8K): DyLLM (τ
 ## Related Papers
 
 - [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](../../NeurIPS2025/image_restoration/encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
-- [\[ICLR 2026\] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs](../../ICLR2026/image_restoration/skip_to_the_good_part_representation_structure_inference-time_layer_skipping_in_.md)
 - [\[ECCV 2024\] Efficient Diffusion Transformer with Step-wise Dynamic Attention Mediators](../../ECCV2024/image_restoration/efficient_diffusion_transformer_with_step-wise_dynamic_attention_mediators.md)
 - [\[ICML 2026\] DAPD: Dependency-Aware Parallel Decoding via Attention for Diffusion LLMs](dapd_dependency-aware_parallel_decoding_via_attention_for_diffusion_llms.md)
 - [\[ICLR 2026\] Beyond Scattered Acceptance: Fast and Coherent Inference for DLMs via Longest Stable Prefixes](../../ICLR2026/image_restoration/beyond_scattered_acceptance_fast_and_coherent_inference_for_dlms_via_longest_sta.md)
+- [\[ICML 2026\] AnyMod-LLVE: Low-Light Video Enhancement with Modality-Agnostic Inference](anymod-llve_low-light_video_enhancement_with_modality-agnostic_inference.md)
 
 </div>
 

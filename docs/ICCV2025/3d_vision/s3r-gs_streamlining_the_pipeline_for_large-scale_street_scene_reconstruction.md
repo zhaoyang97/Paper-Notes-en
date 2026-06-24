@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction
 description: >-
-  [3D Vision] S3R-GS identifies three major computational redundancies in conventional street scene reconstruction pipelines—unnecessary local-to-global coordinate transformations, excessive 3D-to-2D projections…
+  [3D Vision] S3R-GS identifies three major computational redundancies in conventional street scene reconstruction pipelines—unnecessary local-to-global coordinate transformations, excessive 3D-to-2D projections, and inefficient rendering of distant content—and proposes instance-specific projection, temporal visibility filtering, and adaptive level-of-detail (LOD) strategies to reduce reconstruction time to 20%–50% of competing methods while maintaining state-of-the-art renderi…
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 468d6d6fdbd15f84
+content_hash: d611a0c7f92504bc
 ---
 
 # S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction
@@ -140,11 +140,11 @@ Instance-specific projection and temporal visibility filtering are the primary c
 
 ## Related Papers
 
-- [\[ICLR 2026\] UrbanGS: A Scalable and Efficient Architecture for Geometrically Accurate Large-Scene Reconstruction](../../ICLR2026/3d_vision/urbangs_a_scalable_and_efficient_architecture_for_geometrically_accurate_large-s.md)
 - [\[ICCV 2025\] Disentangling Instance and Scene Contexts for 3D Semantic Scene Completion](disentangling_instance_and_scene_contexts_for_3d_semantic_scene_completion.md)
 - [\[ICCV 2025\] Discretized Gaussian Representation for Tomographic Reconstruction](discretized_gaussian_representation_for_tomographic_reconstruction.md)
 - [\[ICCV 2025\] HORT: Monocular Hand-held Objects Reconstruction with Transformers](hort_monocular_hand-held_objects_reconstruction_with_transformers.md)
 - [\[ICCV 2025\] InstaScene: Towards Complete 3D Instance Decomposition and Reconstruction from Cluttered Scenes](instascene_towards_complete_3d_instance_decomposition_and_reconstruction_from_cl.md)
+- [\[CVPR 2025\] Multi-view Reconstruction via SfM-guided Monocular Depth Estimation](../../CVPR2025/3d_vision/multi-view_reconstruction_via_sfm-guided_monocular_depth_estimation.md)
 
 </div>
 

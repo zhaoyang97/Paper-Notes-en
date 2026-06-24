@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Sampling for Active Statistical Inference
 description: >-
-  [NeurIPS 2025][Active Inference] This paper proposes a robust sampling strategy based on budget-preserving paths that optimally interpolates between uniform sampling and active sampling…
+  [NeurIPS 2025][Active Inference] This paper proposes a robust sampling strategy based on budget-preserving paths that optimally interpolates between uniform sampling and active sampling, ensuring the resulting estimator's variance is never worse than either baseline. This addresses the performance degradation caused by inaccurate uncertainty estimation in active statistical inference.
 tags:
   - "NeurIPS 2025"
   - "Active Inference"
@@ -11,7 +11,7 @@ tags:
   - "Uncertainty Estimation"
   - "Inverse Probability Weighting"
 date: 2026-05-08
-content_hash: 701c1a14602e3cb0
+content_hash: 50eebda9497762d3
 ---
 
 # Robust Sampling for Active Statistical Inference

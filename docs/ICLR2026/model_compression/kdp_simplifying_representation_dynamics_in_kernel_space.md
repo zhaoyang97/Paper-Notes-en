@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] KDP: Simplifying Representation Dynamics in Kernel Space
 description: >-
-  [ICLR 2026][Model Compression][Layer Pruning] Viewing the forward propagation of LLMs as a discrete dynamical system, it is observed that representations become highly similar after adjacent layers enter a "slow manifold." By projecting representations into a kernel space—where non-linear inter-layer transformations can be linearly approximated—and using a simple
+  [ICLR 2026][Model Compression][Layer Pruning] Viewing the forward propagation of LLMs as a discrete dynamical system, it is observed that representations become highly similar after adjacent layers enter a "slow manifold." By projecting representations into a kernel space—where non-linear inter-layer transformations can be linearly approximated—and using a simple network for the inverse transformation, continuous Transformer layers can be folded. This achieves approximately 2…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Layer Pruning
-  - Kernel Method
-  - Random Fourier Features
-  - Slow Manifold
-  - LLM Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Layer Pruning"
+  - "Kernel Method"
+  - "Random Fourier Features"
+  - "Slow Manifold"
+  - "LLM Compression"
 date: 2026-05-08
-content_hash: f23093b70dee52fa
+content_hash: adeffca6e9df8f2d
 ---
+
 # KDP: Simplifying Representation Dynamics in Kernel Space
 
 **Conference**: ICLR 2026  
@@ -131,11 +132,11 @@ The retained performance of KDP exceeds the best baseline on the three models by
 
 ## Related Papers
 
-- [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
 - [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
 - [\[ICLR 2026\] NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks](nerve_nonlinear_eigenspectrum_dynamics_in_llm_feed-forward_networks.md)
 - [\[ICLR 2026\] Study of Training Dynamics for Memory-Constrained Fine-Tuning (TraDy)](study_of_training_dynamics_for_memory-constrained_fine-tuning.md)
-- [\[ICLR 2026\] LS-Merge: Merging Language Models in Latent Space](ls-merge_merging_language_models_in_latent_space.md)
+- [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
+- [\[ICML 2025\] Joker: Joint Optimization Framework for Lightweight Kernel Machines](../../ICML2025/model_compression/joker_joint_optimization_framework_for_lightweight_kernel_machines.md)
 
 </div>
 

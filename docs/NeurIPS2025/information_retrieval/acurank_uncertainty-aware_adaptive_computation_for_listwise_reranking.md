@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AcuRank: Uncertainty-Aware Adaptive Computation for Reranking
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][uncertainty estimation] AcuRank dynamically adjusts the reranking subset size and verification scope via TrueSkill-based uncertainty estimation…
+  [NeurIPS 2025][Information Retrieval & RAG][uncertainty estimation] AcuRank dynamically adjusts the reranking subset size and verification scope via TrueSkill-based uncertainty estimation, achieving a superior accuracy–efficiency trade-off while avoiding over-computation.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "reranking"
   - "context length optimization"
 date: 2026-05-08
-content_hash: 27ea812a7d47705b
+content_hash: 5e3027ce1de90b40
 ---
 
 # AcuRank: Uncertainty-Aware Adaptive Computation for Reranking
@@ -116,11 +116,11 @@ AcuRank employs an iterative refinement strategy: (1) initialize the TrueSkill m
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] Conformalized Hierarchical Calibration for Uncertainty-Aware Adaptive Hashing](../../ICLR2026/information_retrieval/conformalized_hierarchical_calibration_for_uncertainty-aware_adaptive_hashing.md)
+- [\[ACL 2025\] Reranking-based Generation for Unbiased Perspective Summarization](../../ACL2025/information_retrieval/reranking-based_generation_for_unbiased_perspective_summarization.md)
+- [\[ACL 2025\] SeaKR: Self-aware Knowledge Retrieval for Adaptive Retrieval Augmented Generation](../../ACL2025/information_retrieval/seakr_self-aware_knowledge_retrieval_for_adaptive_retrieval_augmented_generation.md)
 - [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](../../ICLR2026/information_retrieval/query-level_uncertainty_in_large_language_models.md)
 - [\[AAAI 2026\] RRRA: Resampling and Reranking through a Retriever Adapter](../../AAAI2026/information_retrieval/rrra_resampling_and_reranking_through_a_retriever_adapter.md)
-- [\[ACL 2026\] UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval](../../ACL2026/information_retrieval/unite_uncertainty-based_iterative_document_sampling_for_domain_adaptation_in_inf.md)
-- [\[ICLR 2026\] Embedding-Based Context-Aware Reranker](../../ICLR2026/information_retrieval/embedding-based_context-aware_reranker.md)
 
 </div>
 

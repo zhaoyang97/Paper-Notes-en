@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] The authors derive closed-form training dynamics for simplified single-layer linear attention Transformers, proving that regularization methods only alter convergence speed without shifting the convergence point (leading to inevitable failure in cFKA scenarios). In contrast, data replay directly modifies the convergenc
+  [ICML 2026][Optimization][Continual Pre-training] The authors derive closed-form training dynamics for simplified single-layer linear attention Transformers, proving that regularization methods only alter convergence speed without shifting the convergence point (leading to inevitable failure in cFKA scenarios). In contrast, data replay directly modifies the convergence point and amplifies oscillations to stabilize old knowledge. Based on these findings…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Continual Pre-training"
+  - "Catastrophic Forgetting"
+  - "Transformer Training Dynamics"
+  - "Data Replay"
+  - "Attention Attribution"
 date: 2026-05-08
-content_hash: 9ca6d3b4c8dc4b96
+content_hash: 3797c649671b1568
 ---
+
 # Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm
 
 **Conference**: ICML 2026  
@@ -137,10 +143,10 @@ In legal IndustryCorpus2 1B token trials, STOC outperformed LAMOL by 1–4 perce
 ## Related Papers
 
 - [\[ICLR 2026\] Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models](../../ICLR2026/optimization/adaptive_acquisition_selection_for_bayesian_optimization_with_large_language_mod.md)
-- [\[ICML 2026\] Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler](adaptive_sharpness-aware_minimization_with_a_polyak-type_step_size_a_theory-grou.md)
 - [\[ICLR 2026\] Bilevel Optimization with Lower-Level Uniform Convexity: Theory and Algorithm](../../ICLR2026/optimization/bilevel_optimization_with_lower-level_uniform_convexity_theory_and_algorithm.md)
+- [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](../../ICLR2026/optimization/generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
+- [\[ICML 2026\] Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler](adaptive_sharpness-aware_minimization_with_a_polyak-type_step_size_a_theory-grou.md)
 - [\[ICML 2026\] Towards Understanding Adam Convergence on Highly Degenerate Polynomials](towards_understanding_adam_convergence_on_highly_degenerate_polynomials.md)
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](limuon_light_and_fast_muon_optimizer_for_large_models.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MANSION: Multi-floor Language-to-3D Scene Generation for Long-horizon Tasks
 description: >-
-  [CVPR 2026][3D Vision][Embodied AI] MANSION utilizes a "hierarchical multi-agent MLLM + geometrically constrained growth solver" to transform a single natural language instruction into a complete multi-floor building directly executable in simulators. By treating vertical alignment as a hard constraint, the authors release the MansionWorld dataset contai
+  [CVPR 2026][3D Vision][Language-driven scene generation] MANSION utilizes a "hierarchical multi-agent MLLM + geometrically constrained growth solver" to transform a single natural language instruction into a complete multi-floor building directly executable in simulators. By treating vertical alignment as a hard constraint, the authors release the MansionWorld dataset containing 1000+ buildings and cross-floor task editing agents specifically designed to stress-test the long-…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Embodied AI
-  - Multi-Agent
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Language-driven scene generation"
+  - "Multi-floor buildings"
+  - "Embodied AI"
+  - "Floor plan generation"
+  - "Multi-agent"
 date: 2026-05-08
-content_hash: b5805e2ec49b3734
+content_hash: b935dd0133316dac
 ---
+
 # MANSION: Multi-floor Language-to-3D Scene Generation for Long-horizon Tasks
 
 **Conference**: CVPR 2026  

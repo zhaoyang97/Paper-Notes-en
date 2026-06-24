@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes the CCL-LGS framework, which employs a zero-shot tracker for cross-view mask association and a Contrastive Codebook Learning (CCL) module to dist…
+  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes the CCL-LGS framework, which employs a zero-shot tracker for cross-view mask association and a Contrastive Codebook Learning (CCL) module to distill semantically compact intra-class and discriminative inter-class features. The framework addresses cross-view semantic inconsistency in 2D-prior-based 3D semantic field reconstruction caused by occlusion, blur, and viewpoint variation.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Codebook Learning"
   - "Cross-View Consistency"
 date: 2026-05-08
-content_hash: 152a8b9ec9921a37
+content_hash: c25b771c317eeea7
 ---
 
 # CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting
@@ -163,8 +163,8 @@ Ablation of the CCL module on the LERF dataset:
 - [\[ICCV 2025\] 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation](3d_gaussian_splatting_driven_multiview_robust_physical_adver.md)
 - [\[ICCV 2025\] GaussRender: Learning 3D Occupancy with Gaussian Rendering](gaussrender_learning_3d_occupancy_with_gaussian_rendering.md)
 - [\[ICCV 2025\] EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting](emd_explicit_motion_modeling_for_high-quality_street_gaussian_splatting.md)
+- [\[CVPR 2025\] Generative Gaussian Splatting for Unbounded 3D City Generation](../../CVPR2025/autonomous_driving/generative_gaussian_splatting_for_unbounded_3d_city_generation.md)
 - [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
-- [\[ICCV 2025\] Splat-LOAM: Gaussian Splatting LiDAR Odometry and Mapping](splat-loam_gaussian_splatting_lidar_odometry_and_mapping.md)
 
 </div>
 

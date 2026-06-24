@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] A Biologically Plausible Dense Associative Memory with Exponential Capacity
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] By replacing the "winner-take-all" activation in the hidden layer of a dual-layer associative memory with a thresholded step activation, hidden neurons can participate in multiple memories simultaneously (distributed representation). This increases storage capacity from "linear in the number of hidden neurons" to "expo
+  [ICLR 2026][Learning Theory][Dense Associative Memory] By replacing the "winner-take-all" activation in the hidden layer of a dual-layer associative memory with a thresholded step activation, hidden neurons can participate in multiple memories simultaneously (distributed representation). This increases storage capacity from "linear in the number of hidden neurons" to "exponential in the number of hidden neurons" ($2^{N_h}$). The model was validated on MNIST/CIFAR-10…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Associative Memory"
+  - "Computational Neuroscience"
+  - "Dense Associative Memory"
+  - "Modern Hopfield Networks"
+  - "Exponential Capacity"
+  - "Distributed Representation"
+  - "Biological Plausibility"
 date: 2026-05-08
-content_hash: 51e7e26021251525
+content_hash: 39b307519b109687
 ---
+
 # A Biologically Plausible Dense Associative Memory with Exponential Capacity
 
 **Conference**: ICLR 2026  
@@ -138,9 +146,9 @@ Non-linear classifiers were trained on recalled representations and tested on **
 
 - [\[ICLR 2026\] Dynamical properties of dense associative memory](dynamical_properties_of_dense_associative_memory.md)
 - [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
+- [\[ICLR 2026\] Adaptive Hopfield Network: Rethinking Similarities in Associative Memory](adaptive_hopfield_network_rethinking_similarities_in_associative_memory.md)
 - [\[ICLR 2026\] Sublinear Spectral Clustering Oracle with Little Memory](sublinear_spectral_clustering_oracle_with_little_memory.md)
-- [\[ICLR 2026\] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization](memory-statistics_tradeoff_in_continual_learning_with_structural_regularization.md)
-- [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
+- [\[ICLR 2026\] Tversky Neural Networks: Psychologically Plausible Deep Learning with Differentiable Tversky Similarity](tversky_neural_networks_psychologically_plausible_deep_learning_with_differentia.md)
 
 </div>
 

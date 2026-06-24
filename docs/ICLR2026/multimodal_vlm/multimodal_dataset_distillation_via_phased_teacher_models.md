@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multimodal Dataset Distillation via Phased Teacher Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Shortcut Trajectory] Addressing the phenomenon in multimodal dataset distillation where the "teacher is only useful in the first 20–30% of the training phase and the trajectory becomes unstable later," this paper proposes PTM-ST. By using **Phased Teacher Models + Shortcut Interpolated Trajectories**, the distillation is decomposed into mu
+  [ICLR 2026][Multimodal VLM][Multimodal Dataset Distillation] Addressing the phenomenon in multimodal dataset distillation where the "teacher is only useful in the first 20–30% of the training phase and the trajectory becomes unstable later," this paper proposes PTM-ST. By using **Phased Teacher Models + Shortcut Interpolated Trajectories**, the distillation is decomposed into multiple sub-tasks with stabilized gradient directions, significantly outperforming SOTA on Flickr30k…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Shortcut Trajectory
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Dataset Distillation"
+  - "Trajectory Matching (MTT)"
+  - "Phased Teacher"
+  - "Shortcut Trajectory"
+  - "Image-Text Retrieval"
 date: 2026-05-08
-content_hash: 48efd92916b0d559
+content_hash: 0ad059012802638b
 ---
+
 # Multimodal Dataset Distillation via Phased Teacher Models
 
 **Conference**: ICLR 2026  

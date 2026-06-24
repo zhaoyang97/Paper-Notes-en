@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Singular Vectors of Attention Heads Align with Features
 description: >-
-  [ICML 2026][Interpretability][SVD] This paper demonstrates, through both theory and toy models, "why and when" the singular vectors of the attention head QK matrix $\Omega = W_Q^\top W_K$ align with the feature directions actually used by the model. It proposes "Sparse Attention Decomposition" (SAD) as an observable signal to verify this alignment in re
+  [ICML 2026][Interpretability][Attention Heads] This paper demonstrates, through both theory and toy models, "why and when" the singular vectors of the attention head QK matrix $\Omega = W_Q^\top W_K$ align with the feature directions actually used by the model. It proposes "Sparse Attention Decomposition" (SAD) as an observable signal to verify this alignment in real-world models (GPT-2 / Pythia).
 tags:
-  - ICML 2026
-  - Interpretability
-  - SVD
+  - "ICML 2026"
+  - "Interpretability"
+  - "Attention Heads"
+  - "SVD"
+  - "Feature Alignment"
+  - "Sparse Attention Decomposition"
+  - "Linear Representation Hypothesis"
 date: 2026-05-08
-content_hash: 6d7f8db4977e1aad
+content_hash: b8eae5b18c95e08b
 ---
+
 # Singular Vectors of Attention Heads Align with Features
 
 **Conference**: ICML 2026  
@@ -122,11 +127,11 @@ Total loss $\mathcal{L} = \mathcal{L}_{\text{recon}} + \lambda \mathcal{L}_{\tex
 
 ## Related Papers
 
+- [\[ICLR 2026\] Token Alignment Heads: Unveiling Attention's Role in LLM Multilingual Translation](../../ICLR2026/interpretability/token_alignment_heads_unveiling_attentions_role_in_llm_multilingual_translation.md)
 - [\[CVPR 2026\] CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers](../../CVPR2026/interpretability/cigma_causal_information-gain_mechanistic_attribution_of_attention_heads_in_visi.md)
 - [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](../../NeurIPS2025/interpretability/causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
 - [\[ACL 2026\] Retrieval Heads are Dynamic](../../ACL2026/interpretability/retrieval_heads_are_dynamic.md)
-- [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
-- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
+- [\[CVPR 2026\] Align Once to Explain: Feature Alignment for Scalable B-cosification of Foundational Vision Transformers](../../CVPR2026/interpretability/align_once_to_explain_feature_alignment_for_scalable_b-cosification_of_foundatio.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Best-of-N] This paper proposes Self-Truncation Best-of-N (ST-BoN), a decoding method that leverages a theoretical guarantee showing early hidden-state consistency predicts final consistency…
+  [NeurIPS 2025 Spotlight][Reasoning][Best-of-N] This paper proposes Self-Truncation Best-of-N (ST-BoN), a decoding method that leverages a theoretical guarantee showing early hidden-state consistency predicts final consistency, enabling identification and truncation of suboptimal samples at early decoding steps. ST-BoN reduces memory usage by over 80% and latency by ~50% while preserving standard BoN performance.
 tags:
-  - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "NeurIPS 2025 Spotlight"
+  - "Reasoning"
   - "Best-of-N"
   - "test-time scaling"
   - "early truncation"
   - "latent consistency"
   - "token efficiency"
 date: 2026-05-08
-content_hash: a623f43062284611
+content_hash: c60ec61113fe97c9
 ---
 
 # Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding
@@ -140,7 +140,7 @@ Performance gains under equal compute budget:
 - [\[NeurIPS 2025\] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling](rethinking_optimal_verification_granularity_for_compute-efficient_test-time_scal.md)
 - [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
 - [\[NeurIPS 2025\] Scalable Best-of-N Selection for Large Language Models via Self-Certainty](scalable_best-of-n_selection_for_large_language_models_via_self-certainty.md)
-- [\[NeurIPS 2025\] Atom of Thoughts for Markov LLM Test-Time Scaling](atom_of_thoughts_for_markov_llm_testtime_scaling.md)
+- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](../../ICLR2026/llm_reasoning/cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
 
 </div>
 

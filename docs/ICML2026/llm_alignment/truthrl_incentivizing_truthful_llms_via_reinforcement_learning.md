@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning
 description: >-
-  [ICML 2026][Alignment & RLHF][GRPO] Aiming to resolve the dilemma where optimizing solely for accuracy encourages blind guessing while forcing refusal leads to over-conservatism, TruthRL directly optimizes truthfulness using a ternary reward ("Correct / Hallucination / Refusal") via GRPO. It reduces hallucination rates from 43.5% to 19.4% and increases t
+  [ICML2026][LLM Alignment][Truthfulness] Aiming to resolve the dilemma where optimizing solely for accuracy encourages blind guessing while forcing refusal leads to over-conservatism, TruthRL directly optimizes truthfulness using a ternary reward ("Correct / Hallucination / Refusal") via GRPO. It reduces hallucination rates from 43.5% to 19.4% and increases truthfulness scores from 5.3% to 37.2%.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - GRPO
+  - "ICML2026"
+  - "LLM Alignment"
+  - "Truthfulness"
+  - "Hallucination Suppression"
+  - "Refusal"
+  - "GRPO"
+  - "Ternary Reward"
 date: 2026-05-08
-content_hash: ad967d3e7a84d634
+content_hash: 1e0b35c91475ba90
 ---
+
 # TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning
 
 **Conference**: ICML2026  
@@ -144,10 +149,10 @@ On Qwen2.5-7B without retrieval, TruthRL reduced the hallucination rate from ~43
 ## Related Papers
 
 - [\[ICLR 2026\] AlphaAlign: Incentivizing Safety Alignment with Extremely Simplified Reinforcement Learning](../../ICLR2026/llm_alignment/alphaalign_incentivizing_safety_alignment_with_extremely_simplified_reinforcemen.md)
-- [\[ACL 2026\] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](../../ACL2026/llm_alignment/persa_reinforcement_learning_for_professor-style_personalized_feedback_with_llms.md)
 - [\[ICML 2026\] Decoupling Reasoning and Confidence: Resurrecting Calibration in Reinforcement Learning from Verifiable Rewards](decoupling_reasoning_and_confidence_resurrecting_calibration_in_reinforcement_le.md)
+- [\[ACL 2026\] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](../../ACL2026/llm_alignment/persa_reinforcement_learning_for_professor-style_personalized_feedback_with_llms.md)
 - [\[ACL 2026\] Too Correct to Learn: Reinforcement Learning on Saturated Reasoning Data](../../ACL2026/llm_alignment/too_correct_to_learn_reinforcement_learning_on_saturated_reasoning_data.md)
-- [\[NeurIPS 2025\] Strategyproof Reinforcement Learning from Human Feedback](../../NeurIPS2025/llm_alignment/strategyproof_reinforcement_learning_from_human_feedback.md)
+- [\[ICLR 2026\] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment](../../ICLR2026/llm_alignment/inverse_reinforcement_learning_with_dynamic_reward_scaling_for_llm_alignment.md)
 
 </div>
 

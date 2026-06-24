@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Bridging Radiology and Pathology Foundation Models via Concept-Based Multimodal Co-Adaptation
 description: >-
-  [ICLR 2026][Medical Imaging][Prompt Tuning] This paper proposes the CTF (Concept Tuning and Fusing) framework, which utilizes a set of clinical concepts as a "shared semantic interface" between radiology and pathology foundation models. It enables cross-domain co-adaptation of concept representations before fusion by conditioning them on each other. By training
+  [ICLR 2026][Medical Imaging][Medical Foundation Models] This paper proposes the CTF (Concept Tuning and Fusing) framework, which utilizes a set of clinical concepts as a "shared semantic interface" between radiology and pathology foundation models. It enables cross-domain co-adaptation of concept representations before fusion by conditioning them on each other. By training only 0.15% additional parameters, it surpasses various latent space fusion baselines in survival analysi…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Prompt Tuning
-  - Interpretability
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Medical Foundation Models"
+  - "Radiology-Pathology Fusion"
+  - "Concept Bottleneck"
+  - "Prompt Tuning"
+  - "Interpretability"
+  - "Survival Analysis"
 date: 2026-05-08
-content_hash: cdc582954d9e0d0b
+content_hash: 27c0184ede01dae4
 ---
+
 # Bridging Radiology and Pathology Foundation Models via Concept-Based Multimodal Co-Adaptation
 
 **Conference**: ICLR 2026  
@@ -148,7 +153,7 @@ Ablation on Center1-GC (Δ indicates absolute change relative to full CTF):
 - [\[ICLR 2026\] CodeBrain: Bridging Decoupled Tokenizer and Multi-Scale Architecture for EEG Foundation Model](codebrain_bridging_decoupled_tokenizer_and_multi-scale_architecture_for_eeg_foun.md)
 - [\[AAAI 2026\] G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Efficient Fine-Tuning](../../AAAI2026/medical_imaging/g2lfrom_giga-scale_to_cancer-specific_large-scale_pathology_foundation_models_vi.md)
 - [\[ICLR 2026\] You Point, I Learn: Online Adaptation of Interactive Segmentation Models for Handling Distribution Shifts in Medical Imaging](you_point_i_learn_online_adaptation_of_interactive_segmentation_models_for_handl.md)
-- [\[CVPR 2026\] CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference](../../CVPR2026/medical_imaging/cofida-m_concept-aware_feature_modulation_for_cross-domain_adaptation_with_image.md)
+- [\[ICLR 2026\] MindMix: A Multimodal Foundation Model for Auditory Perception Decoding via Deep Neural-Acoustic Alignment](mindmix_a_multimodal_foundation_model_for_auditory_perception_decoding_via_deep_.md)
 
 </div>
 

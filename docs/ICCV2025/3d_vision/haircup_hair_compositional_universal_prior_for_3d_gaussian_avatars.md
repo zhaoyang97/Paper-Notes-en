@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars
 description: >-
-  [ICCV 2025][3D Vision][3D head modeling] This paper proposes HairCUP, a compositional universal prior model that decomposes head modeling into two independent latent spaces for face and hair. By leveraging a synthetic ha…
+  [ICCV 2025][3D Vision][3D head modeling] This paper proposes HairCUP, a compositional universal prior model that decomposes head modeling into two independent latent spaces for face and hair. By leveraging a synthetic hairless data creation pipeline for effective disentanglement, the model supports flexible face/hairstyle swapping and few-shot monocular adaptation.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Gaussian"
   - "avatar head"
 date: 2026-05-08
-content_hash: 10562ddd61b52ec6
+content_hash: fd745a299ff7d6b2
 ---
 
 # HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars
@@ -143,10 +143,10 @@ Few-shot monocular reconstruction evaluation:
 ## Related Papers
 
 - [\[ICCV 2025\] StrandHead: Text to Hair-Disentangled 3D Head Avatars Using Human-Centric Priors](strandhead_text_to_hair-disentangled_3d_head_avatars_using_human-centric_priors.md)
-- [\[ICCV 2025\] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction](moga_3d_generative_avatar_prior_for_monocular_gaussian_avatar_reconstruction.md)
+- [\[CVPR 2025\] LUCAS: Layered Universal Codec Avatars](../../CVPR2025/3d_vision/lucas_layered_universal_codec_avatars.md)
+- [\[CVPR 2025\] SimAvatar: Simulation-Ready Avatars with Layered Hair and Clothing](../../CVPR2025/3d_vision/simavatar_simulation-ready_avatars_with_layered_hair_and_clothing.md)
 - [\[ICCV 2025\] Sequential Gaussian Avatars with Hierarchical Motion Context](sequential_gaussian_avatars_with_hierarchical_motion_context.md)
-- [\[NeurIPS 2025\] DGH: Dynamic Gaussian Hair](../../NeurIPS2025/3d_vision/dgh_dynamic_gaussian_hair.md)
-- [\[ICCV 2025\] Textured 3D Regenerative Morphing with 3D Diffusion Prior](textured_3d_regenerative_morphing_with_3d_diffusion_prior.md)
+- [\[ICCV 2025\] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction](moga_3d_generative_avatar_prior_for_monocular_gaussian_avatar_reconstruction.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IMS3: Breaking Distributional Aggregation in Diffusion-Based Dataset Distillation
 description: >-
-  [CVPR 2026][Model Compression][Diffusion Model] Addressing the pain point where diffusion-based dataset distillation samples "over-aggregate in high-density regions and lack discriminative boundary samples," IMS3 leverages the instability of DDIM inversion for fine-tuning (Inversion-Matching, IM) to broaden the generated distribution toward low-density regions. It t
+  [CVPR 2026][Model Compression][Dataset Distillation] Addressing the pain point where diffusion-based dataset distillation samples "over-aggregate in high-density regions and lack discriminative boundary samples," IMS3 leverages the instability of DDIM inversion for fine-tuning (Inversion-Matching, IM) to broaden the generated distribution toward low-density regions. It then employs training-free Selective Subgroup Sampling (S3) to pick synthetic subsets that are both represen…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Diffusion Models"
+  - "DDIM Inversion"
+  - "Subgroup Sampling"
+  - "Distributional Coverage"
 date: 2026-05-08
-content_hash: 4a6fb79eea6205ab
+content_hash: f6f1a64fd03dd8f6
 ---
+
 # IMS3: Breaking Distributional Aggregation in Diffusion-Based Dataset Distillation
 
 **Conference**: CVPR 2026  
@@ -128,10 +133,10 @@ Component-wise ablation of IM and S3 (ImageWoof using ResNetAP-10, ImageNette us
 ## Related Papers
 
 - [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
+- [\[CVPR 2026\] ManifoldGD: Training-Free Hierarchical Manifold Guidance for Diffusion-Based Dataset Distillation](manifoldgd_training-free_hierarchical_manifold_guidance_for_diffusion-based_data.md)
 - [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](../../NeurIPS2025/model_compression/optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
-- [\[CVPR 2026\] Dataset Distillation by Influence Matching](dataset_distillation_by_influence_matching.md)
-- [\[CVPR 2026\] Beyond Soft Label: Dataset Distillation via Orthogonal Gradient Matching](beyond_soft_label_dataset_distillation_via_orthogonal_gradient_matching.md)
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](../../ICLR2026/model_compression/diffusion_models_as_dataset_distillation_priors.md)
 
 </div>
 

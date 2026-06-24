@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Thermally Activated Dual-Modal Adversarial Clothing against AI Surveillance Systems
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper presents a "normally black T-shirt" that reveals adversarial patterns after 50 seconds of heating. By combining thermochromic dyes with flexible heating pads, a polygon-shaped adversarial patch is hidden within the fabric. Heating triggers color changes to deceive visible light detectors and thermal distribu
+  [CVPR2026][AI Safety][Adversarial patch] This paper presents a "normally black T-shirt" that reveals adversarial patterns after 50 seconds of heating. By combining thermochromic dyes with flexible heating pads, a polygon-shaped adversarial patch is hidden within the fabric. Heating triggers color changes to deceive visible light detectors and thermal distribution changes to deceive infrared detectors, maintaining an Attack Success Rate (ASR) over 80% for pedestrian detection…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR2026"
+  - "AI Safety"
+  - "Adversarial patch"
+  - "physical adversarial attack"
+  - "visible-infrared dual-modal"
+  - "thermochromism"
+  - "privacy protection"
 date: 2026-05-08
-content_hash: c0c53245fc26360e
+content_hash: 7260d84357790bec
 ---
+
 # Thermally Activated Dual-Modal Adversarial Clothing against AI Surveillance Systems
 
 **Conference**: CVPR2026  
@@ -145,10 +151,10 @@ Infrared ASR (LLVIP Dataset, Ours vs. AdvIB):
 ## Related Papers
 
 - [\[CVPR 2026\] Physical Adversarial Clothing Evades Visible-Thermal Detectors via Non-Overlapping RGB-T Pattern](physical_adversarial_clothing_evades_visible-thermal_detectors_via_non-overlappi.md)
+- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
 - [\[AAAI 2026\] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems](../../AAAI2026/ai_safety/reference_recommendation_based_membership_inference_attack_against_hybrid-based_.md)
 - [\[CVPR 2026\] Cross-modal Representation Learning for Diffusion-generated Image Detection](cross-modal_representation_learning_for_diffusion-generated_image_detection.md)
-- [\[CVPR 2026\] SAIDO: 基于场景感知与重要性引导动态优化的可泛化 AI 生成图像检测](saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
-- [\[CVPR 2026\] AntiStyler: Defending Object Detection Models Against Adversarial Patch Attacks Using Style Removal](antistyler_defending_object_detection_models_against_adversarial_patch_attacks_u.md)
+- [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](verifying_neural_network_robustness_with_dual_perturbations.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] AgencyBench is proposed as a comprehensive benchmark comprising 138 real-world tasks to evaluate 6 core agent capabilities. Each scenario averages 90 tool calls and 1 million tokens, achieving fully automated evaluation via user simulation agents and Docker sandboxes.
+  [ACL 2026][LLM Agent][Autonomous Agents] AgencyBench is proposed as a comprehensive benchmark comprising 138 real-world tasks to evaluate 6 core agent capabilities. Each scenario averages 90 tool calls and 1 million tokens, achieving fully automated evaluation via user simulation agents and Docker sandboxes.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Autonomous Agents"
+  - "Long-horizon Tasks"
+  - "Real-world Benchmark"
+  - "User Simulation"
+  - "Docker Sandbox Evaluation"
 date: 2026-05-08
-content_hash: eb27f7e5b8892238
+content_hash: b27d38a3025fcb6d
 ---
+
 # AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts
 
 **Conference**: ACL 2026  
@@ -118,11 +124,11 @@ The quality of artifacts such as games or webpages cannot be judged by text alon
 
 ## Related Papers
 
+- [\[ICLR 2026\] Terminal-Bench: Benchmarking Agents on Difficult, Real-World Tasks in the Command Line Interface](../../ICLR2026/llm_agent/terminal-bench_benchmarking_agents_on_hard_realistic_tasks_in_command_line_inter.md)
+- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](../../ICLR2026/llm_agent/vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
 - [\[ACL 2026\] MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools](mcp-flow_facilitating_llm_agents_to_master_real-world_diverse_and_scaling_mcp_to.md)
 - [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](../../AAAI2026/llm_agent/d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
-- [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
-- [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](../../ICLR2026/llm_agent/openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
-- [\[CVPR 2026\] WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces](../../CVPR2026/llm_agent/webchain_a_large-scale_human-annotated_dataset_of_real-world_web_interaction_tra.md)
+- [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](../../ICLR2026/llm_agent/mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
 
 </div>
 

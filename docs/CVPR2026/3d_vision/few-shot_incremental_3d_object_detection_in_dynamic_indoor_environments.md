@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments
 description: >-
-  [CVPR 2026][3D Vision][Vision-Language Model] This paper proposes FI3Det, the first few-shot incremental 3D object detection framework. It utilizes a VLM-guided unknown object learning module during the base training phase to perceive potential novel classes in advance. In the incremental phase, it employs a gated multi-modal prototype casting module to fuse 2D se
+  [CVPR 2026][3D Vision][Few-shot incremental learning] This paper proposes FI3Det, the first few-shot incremental 3D object detection framework. It utilizes a VLM-guided unknown object learning module during the base training phase to perceive potential novel classes in advance. In the incremental phase, it employs a gated multi-modal prototype casting module to fuse 2D semantic and 3D geometric features for novel class detection. FI3Det achieves an average improvement of 17.3…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Few-shot incremental learning"
+  - "3D object detection"
+  - "Vision-Language Models"
+  - "Multi-modal prototypes"
+  - "Indoor scene understanding"
 date: 2026-05-08
-content_hash: cf55c89354fadb8b
+content_hash: bb2a50297e8a70fe
 ---
+
 # Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ SUN RGB-D Batch Incremental Setting (1-way 5-shot):
 
 ## Related Papers
 
-- [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
+- [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
 - [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
-- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
-- [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
+- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
+- [\[CVPR 2026\] Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift](query2uncertainty_robust_uncertainty_quantification_and_calibration_for_3d_objec.md)
+- [\[CVPR 2025\] SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation](../../CVPR2025/3d_vision/scope_scene-contextualized_incremental_few-shot_3d_segmentation.md)
 
 </div>
 

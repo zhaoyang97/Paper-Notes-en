@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization
 description: >-
-  [ICLR 2026][Video Generation][DiT] Ours proposes JavisDiT, a Joint Audio-Video Diffusion Transformer model that achieves fine-grained audio-visual spatio-temporal alignment through a Hierarchical Spatio-Temporal Prior Synchronizer (HiST-Sypo). Additionally, a new benchmark, JavisBench (comprising 10K complex scene samples), and a new evaluation metric,
+  [ICLR 2026][Video Generation][Joint Audio-Video Generation] Ours proposes JavisDiT, a Joint Audio-Video Diffusion Transformer model that achieves fine-grained audio-visual spatio-temporal alignment through a Hierarchical Spatio-Temporal Prior Synchronizer (HiST-Sypo). Additionally, a new benchmark, JavisBench (comprising 10K complex scene samples), and a new evaluation metric, JavisScore, are introduced.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - DiT
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Joint Audio-Video Generation"
+  - "DiT"
+  - "Spatio-Temporal Synchronization"
+  - "Contrastive Learning"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 8d2f9a03473ab901
+content_hash: ef61b5f2f9dfb729
 ---
+
 # JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization
 
 **Conference**: ICLR 2026  
@@ -141,8 +146,8 @@ JavisDiT significantly outperforms MM-Diffusion and cascade methods on tradition
 
 - [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
 - [\[ICLR 2026\] TPDiff: Temporal Pyramid Video Diffusion Model](tpdiff_temporal_pyramid_video_diffusion_model.md)
-- [\[ICLR 2026\] Syncphony: 用扩散 Transformer 实现音画同步的音频到视频生成](syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)
 - [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
+- [\[ICLR 2026\] Syncphony: Audio-to-Video Generation with Synchronized Visual Dynamics using Diffusion Transformers](syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)
 - [\[ICLR 2026\] SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer](sana-video_efficient_video_generation_with_block_linear_diffusion_transformer.md)
 
 </div>

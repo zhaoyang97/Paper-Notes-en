@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Learned Data Compression via Dual-Stream Feature Decoupling
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper proposes the FADE framework, which separates micro-syntax and macro-semantic features into parallel shallow streams using a Dual-stream Multi-scale Decoupler (replacing deep serial stacking). Combined with a Hierarchical Gated Refiner and a Concurrent Stream Parallel Pipeline, it achieves SOTA performance in
+  [ACL 2026][Model Compression][Learned Data Compression] This paper proposes the FADE framework, which separates micro-syntax and macro-semantic features into parallel shallow streams using a Dual-stream Multi-scale Decoupler (replacing deep serial stacking). Combined with a Hierarchical Gated Refiner and a Concurrent Stream Parallel Pipeline, it achieves SOTA performance in both compression ratio and throughput.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "Learned Data Compression"
+  - "Dual-Stream Feature Decoupling"
+  - "Probabilistic Modeling"
+  - "Concurrent Pipeline"
+  - "Lossless Compression"
 date: 2026-05-08
-content_hash: beefa0fefe2b1f45
+content_hash: 065ac72f2770a1b7
 ---
+
 # Efficient Learned Data Compression via Dual-Stream Feature Decoupling
 
 **Conference**: ACL 2026  
@@ -150,8 +156,8 @@ Cross-entropy loss is used to optimize probability prediction accuracy. Persiste
 
 - [\[CVPR 2026\] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation](../../CVPR2026/model_compression/dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation.md)
 - [\[ICML 2026\] Efficient Learned Image Compression without Entropy Coding](../../ICML2026/model_compression/efficient_learned_image_compression_without_entropy_coding.md)
-- [\[ACL 2026\] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)
 - [\[ICML 2026\] Learned Subspace Compression for Communication-Efficient Pipeline Parallelism](../../ICML2026/model_compression/learned_subspace_compression_for_communication-efficient_pipeline_parallelism.md)
+- [\[ACL 2026\] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)
 - [\[CVPR 2026\] What Matters in Practical Learned Image Compression](../../CVPR2026/model_compression/what_matters_in_practical_learned_image_compression.md)
 
 </div>

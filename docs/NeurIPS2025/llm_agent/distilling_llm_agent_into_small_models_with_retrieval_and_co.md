@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Distilling LLM Agent into Small Models with Retrieval and Code Tools
 description: >-
-  [NeurIPS 2025][LLM Agent][agent distillation] This paper proposes an Agent Distillation framework that distills the complete reason-act-observe interactive behaviors of LLM agents (rather than static CoT) into small mode…
+  [NeurIPS 2025 Spotlight][LLM Agent][agent distillation] This paper proposes an Agent Distillation framework that distills the complete reason-act-observe interactive behaviors of LLM agents (rather than static CoT) into small models ranging from 0.5B to 7B parameters. Combined with a first-thought prefix to improve teacher trajectory quality and self-consistent action generation to enhance inference robustness, the framework enables small models to achieve performance compara…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Agent"
   - "agent distillation"
   - "first-thought prefix"
@@ -12,7 +12,7 @@ tags:
   - "small language model"
   - "CodeAct"
 date: 2026-05-08
-content_hash: e7808a519a89a0ee
+content_hash: 3a852bbfcf446b36
 ---
 
 # Distilling LLM Agent into Small Models with Retrieval and Code Tools
@@ -124,10 +124,10 @@ Key finding: 0.5B Agent ≈ 1.5B CoT, 1.5B Agent ≈ 3B CoT, 3B Agent > 7B CoT, 
 ## Related Papers
 
 - [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](../../ACL2026/llm_agent/don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
-- [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](../../ACL2026/llm_agent/lightweight_llm_agent_memory_with_small_language_models.md)
-- [\[NeurIPS 2025\] Are Large Language Models Sensitive to the Motives Behind Communication?](are_large_language_models_sensitive_to_the_motives_behind_communication.md)
-- [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](groupingroup_policy_optimization_for_llm_agent_training.md)
+- [\[ACL 2025\] LLM Agents Making Agent Tools](../../ACL2025/llm_agent/llm_agents_making_agent_tools.md)
+- [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
+- [\[ACL 2025\] LocAgent: Graph-Guided LLM Agents for Code Localization](../../ACL2025/llm_agent/locagent_graph-guided_llm_agents_for_code_localization.md)
 
 </div>
 

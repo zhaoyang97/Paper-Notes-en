@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PHAT: Modeling Period Heterogeneity for Multivariate Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Paper Note] PHAT identifies that in real-world multivariate time series, different variables have distinct and dynamically changing period lengths (period heterogeneity). It first uses FFT to group variables into "period buckets" according to their primary periods and folds them into phase-aligned 2D tensors. Then, an "X-shaped" s
+  [ICLR 2026][Time Series][Multivariate Time Series Forecasting] PHAT identifies that in real-world multivariate time series, different variables have distinct and dynamically changing period lengths (period heterogeneity). It first uses FFT to group variables into "period buckets" according to their primary periods and folds them into phase-aligned 2D tensors. Then, an "X-shaped" self-attention mechanism with positive/negative decomposition and periodic modulation terms is use…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Multivariate Time Series Forecasting"
+  - "Period Heterogeneity"
+  - "Period Buckets"
+  - "Positive/Negative Attention"
+  - "Frequency Domain Analysis"
 date: 2026-05-08
-content_hash: 34b05ddbe601860d
+content_hash: b8a29674fb4943f3
 ---
+
 # PHAT: Modeling Period Heterogeneity for Multivariate Time Series Forecasting
 
 **Conference**: ICLR 2026  
@@ -123,9 +129,9 @@ PHAT's "Top1 hits" count is 71, significantly higher than second-place PDF (9) a
 
 ## Related Papers
 
+- [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
 - [\[ICLR 2026\] Are Global Dependencies Necessary? Scalable Time Series Forecasting via Local Cross-Variate Modeling](are_global_dependencies_necessary_scalable_time_series_forecasting_via_local_cro.md)
 - [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
-- [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
 - [\[ICLR 2026\] MixLinear: Extreme Low Resource Multivariate Time Series Forecasting with 0.1K Parameters](mixlinear_extreme_low_resource_multivariate_time_series_forecasting_with_01k_par.md)
 - [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VMoBA: Mixture-of-Block Attention for Video Diffusion Models
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] To address the quadratic complexity bottleneck of full attention in Video Diffusion Models (VDMs), VMoBA transforms the text-oriented MoBA block attention into a sparse attention mechanism tailored for video spatiotemporal characteristics. By employing "inter-layer cyclic 1D-2D-3D partitioning + global block selection
+  [ICLR 2026][Video Generation][Video Diffusion Models] To address the quadratic complexity bottleneck of full attention in Video Diffusion Models (VDMs), VMoBA transforms the text-oriented MoBA block attention into a sparse attention mechanism tailored for video spatiotemporal characteristics. By employing "inter-layer cyclic 1D-2D-3D partitioning + global block selection + threshold-based dynamic block count," it achieves $2.92\times$ FLOPs reduction and $1.48\times$ training…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Sparse Attention"
+  - "Block Attention"
+  - "Spatiotemporal Locality"
+  - "Training Acceleration"
 date: 2026-05-08
-content_hash: feaf543adfbad62b
+content_hash: e27742d20ea4201b
 ---
+
 # VMoBA: Mixture-of-Block Attention for Video Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -145,6 +151,7 @@ VMoBA achieves $1.35\times$ inference speedup on long sequences, outperforming M
 - Value: ⭐⭐⭐⭐ (Addresses long video training costs; $1.48\times$ training acceleration with high quality; open-sourced.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LoRA-S: An Efficient Low Rank Adaptation scheme via Sylvester equation
 description: >-
-  [ICLR 2026][LLM Efficiency][LoRA] This paper employs the "horizontal lift" theory from differential geometry to optimize LoRA's two low-rank factors on a quotient manifold. It derives a universal iterative framework that enables **any preconditioned optimizer** to automatically achieve "Efficient Feature Learning (EFL) / transformation invariance." Fur
+  [ICLR 2026][LLM Efficiency][LoRA] This paper employs the "horizontal lift" theory from differential geometry to optimize LoRA's two low-rank factors on a quotient manifold. It derives a universal iterative framework that enables **any preconditioned optimizer** to automatically achieve "Efficient Feature Learning (EFL) / transformation invariance." Furthermore, it replaces the hand-tuned weight decay hyperparameter with a decay matrix $K$ solved via the Sylvester equation…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "LoRA"
+  - "Efficient Feature Learning (EFL)"
+  - "Quotient Manifold Optimization"
+  - "Horizontal Lift"
+  - "Sylvester Equation"
+  - "Transformation Invariance"
 date: 2026-05-08
-content_hash: 0c632d94374776b9
+content_hash: edf42aca22f13971
 ---
+
 # LoRA-S: An Efficient Low Rank Adaptation scheme via Sylvester equation
 
 **Conference**: ICLR 2026  

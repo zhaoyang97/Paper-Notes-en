@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion
 description: >-
-  [ICLR 2026][Graph Learning][Few-Shot Node Classification] This work utilizes a node-level graph diffusion model, FGDM, to synthesize "realistic" support set nodes and their edges for augmenting few-shot tasks. It further incorporates a low-rank transductive classifier—inspired by the Low-Frequency Property (LFP) and backed by generalization bounds—to resist diffusion noise, a
+  [ICLR 2026][Graph Learning][Few-Shot Node Classification] This work utilizes a node-level graph diffusion model, FGDM, to synthesize "realistic" support set nodes and their edges for augmenting few-shot tasks. It further incorporates a low-rank transductive classifier—inspired by the Low-Frequency Property (LFP) and backed by generalization bounds—to resist diffusion noise, achieving SOTA performance in few-shot node classification.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Few-Shot Node Classification
-  - Graph Diffusion Model
-  - Latent Diffusion
-  - Low-Rank Regularization
-  - Transductive Classifier
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Few-Shot Node Classification"
+  - "Graph Diffusion Model"
+  - "Latent Diffusion"
+  - "Low-Rank Regularization"
+  - "Transductive Classifier"
 date: 2026-05-08
-content_hash: f04c93b4cb623b7f
+content_hash: 4461415873ff561d
 ---
+
 # Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion
 
 **Conference**: ICLR 2026  
@@ -122,7 +123,7 @@ Breakdown of COLA (LR-FGDM) components under 5-way 5-shot:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

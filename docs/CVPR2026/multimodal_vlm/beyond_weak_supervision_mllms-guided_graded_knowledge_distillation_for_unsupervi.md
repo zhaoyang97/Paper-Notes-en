@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] Addressing the two major pain points of Unsupervised Camouflaged Object Detection (UCOD)—"weak supervision signals" and "poor utilization of pseudo-labels"—this paper employs a frozen teacher model composed of MLLM and SAM to generate high-quality pseudo-labels. Through a trio of designs—Camouflage-Aware Chain-of-Thoug
+  [CVPR 2026][Multimodal VLM][Unsupervised Camouflaged Object Detection] Addressing the two major pain points of Unsupervised Camouflaged Object Detection (UCOD)—"weak supervision signals" and "poor utilization of pseudo-labels"—this paper employs a frozen teacher model composed of MLLM and SAM to generate high-quality pseudo-labels. Through a trio of designs—Camouflage-Aware Chain-of-Thought (CA-CoT), Graded Mask Evaluator (GME), and Graded Knowledge Distillation (GKD)—it ensu…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
-  - SAM
-  - Chain-of-Thought
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Unsupervised Camouflaged Object Detection"
+  - "MLLM"
+  - "SAM"
+  - "Chain-of-Thought"
+  - "Graded Knowledge Distillation"
 date: 2026-05-08
-content_hash: e85da44b0dfa03de
+content_hash: 73f77dd7326ae4f1
 ---
+
 # Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection
 
 **Conference**: CVPR 2026  
@@ -135,11 +138,11 @@ Compared to the previous SOTA UCOD-DPL, this method improves on average by 42.6%
 
 ## Related Papers
 
-- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
 - [\[CVPR 2026\] Boosting Vision-Language Models Towards Cross-Domain Incremental Object Detection](boosting_vision-language_models_towards_cross-domain_incremental_object_detectio.md)
+- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
 - [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
-- [\[ICML 2026\] ScreenParse: Moving Beyond Sparse Grounding with Complete Screen Parsing Supervision](../../ICML2026/multimodal_vlm/screenparse_moving_beyond_sparse_grounding_with_complete_screen_parsing_supervis.md)
-- [\[CVPR 2026\] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](think_360_evaluating_the_width-centric_reasoning_capability_of_mllms_beyond_dept.md)
+- [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
+- [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The authors propose PMark, a theoretically distortion-free and paraphrase-robust semantic-level watermarking method for LLMs. By performing cascaded binary filtering on candidate sentences through multi-channel orthogonal pivot vectors combined with median sampling, it ensures zero distortion while increasing watermark
+  [ICLR 2026][LLM Safety][LLM Watermarking] The authors propose PMark, a theoretically distortion-free and paraphrase-robust semantic-level watermarking method for LLMs. By performing cascaded binary filtering on candidate sentences through multi-channel orthogonal pivot vectors combined with median sampling, it ensures zero distortion while increasing watermark evidence density for enhanced robustness. It achieves a TP@FP1% of 95%+ under paraphrase attacks…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Watermarking"
+  - "Semantic-level Watermarking"
+  - "Distortion-free"
+  - "Multi-channel Constraints"
+  - "Robustness Theory"
 date: 2026-05-08
-content_hash: 0d07fe743c28b888
+content_hash: cd68cc23431f0c3c
 ---
+
 # PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints
 
 **Conference**: ICLR 2026  
@@ -129,9 +135,9 @@ Online detection requires resampling $N$ candidates to reconstruct the median, w
 
 - [\[ICLR 2026\] GraphShield: Graph-Theoretic Modeling of Network-Level Dynamics for Robust Jailbreak Detection](graphshield_graph-theoretic_modeling_of_network-level_dynamics_for_robust_jailbr.md)
 - [\[ACL 2026\] SWAN: Semantic Watermarking with Abstract Meaning Representation](../../ACL2026/llm_safety/swan_semantic_watermarking_with_abstract_meaning_representation.md)
+- [\[ICLR 2026\] Distilling the Thought, Watermarking the Answer: A Principle Semantic Guided Watermark for Reasoning Large Language Models](distilling_the_thought_watermarking_the_answer_a_principle_semantic_guided_water.md)
 - [\[ICLR 2026\] Watermarking Diffusion Language Models](watermarking_diffusion_language_models.md)
 - [\[ICLR 2026\] No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings](no_caption_no_problem_caption-free_membership_inference_via_model-fitted_embeddi.md)
-- [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
 
 </div>
 

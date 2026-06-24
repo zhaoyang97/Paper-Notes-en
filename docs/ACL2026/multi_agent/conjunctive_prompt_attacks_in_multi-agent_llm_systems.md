@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Conjunctive Prompt Attacks in Multi-Agent LLM Systems
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper investigates conjunctive prompt attacks in multi-agent LLM systems: trigger keys embedded in user queries and hidden templates in compromised remote agents appear harmless individually, but activate harmful behavior when routing brings them to the same agent. Existing defenses (PromptGuard, Llama-Guard, etc.
+  [ACL 2026][Multi-Agent][Prompt injection attacks] This paper investigates conjunctive prompt attacks in multi-agent LLM systems: trigger keys embedded in user queries and hidden templates in compromised remote agents appear harmless individually, but activate harmful behavior when routing brings them to the same agent. Existing defenses (PromptGuard, Llama-Guard, etc.) cannot reliably prevent these attacks.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Prompt injection attacks"
+  - "multi-agent security"
+  - "conjunctive activation"
+  - "topology-aware"
+  - "supply chain threats"
 date: 2026-05-08
-content_hash: b2c38bf31ac2456d
+content_hash: 5879b1996875ee89
 ---
+
 # Conjunctive Prompt Attacks in Multi-Agent LLM Systems
 
 **Conference**: ACL 2026  
@@ -128,7 +134,7 @@ Attack optimization utilizes a differentiable proxy objective. Discrete variable
 - [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
 - [\[ACL 2026\] CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems](cia_inferring_the_communication_topology_from_llm-based_multi-agent_systems.md)
 - [\[ACL 2026\] To Trust or Not to Trust: Attention-Based Trust Management for LLM Multi-Agent Systems](to_trust_or_not_to_trust_attention-based_trust_management_for_llm_multi-agent_sy.md)
-- [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
+- [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 
 </div>
 

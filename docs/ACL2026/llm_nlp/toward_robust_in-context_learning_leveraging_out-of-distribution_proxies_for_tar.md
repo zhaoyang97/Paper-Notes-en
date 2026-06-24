@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 面向稳健上下文学习的 OOD 代理演示检索方案
+  [Paper Note] OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] By constructing dual proxies for the source and target domains and calculating their perplexity difference as an OOD score, combined with Mahalanobis distance constraints for demonstration diversity, this method accurately filters demonstrations from the source domain aligned with target distributions under conditions
+  [ACL 2026][LLM (Other)][In-Context Learning] By constructing dual proxies for the source and target domains and calculating their perplexity difference as an OOD score, combined with Mahalanobis distance constraints for demonstration diversity, this method accurately filters demonstrations from the source domain aligned with target distributions under conditions where target samples are inaccessible, thereby enhancing the robustness of LLM In-Context Learning.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "In-Context Learning"
+  - "OOD Robustness"
+  - "Demonstration Retrieval"
+  - "Distribution Shift"
+  - "Proxy Estimation"
 date: 2026-05-08
-content_hash: 614b98d22bf29c16
+content_hash: b241329211e01cdf
 ---
+
 # OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning
 
 **Conference**: ACL 2026  
@@ -157,11 +163,11 @@ Performance across three task types:
 
 ## Related Papers
 
-- [\[ACL 2026\] Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities](think_in_sentences_explicit_sentence_boundaries_enhance_language_model39s_capabi.md)
-- [\[ACL 2026\] Understanding Structured Financial Data with LLMs: A Case Study on Fraud Detection](understanding_structured_financial_data_with_llms_a_case_study_on_fraud_detectio.md)
-- [\[ACL 2026\] 等等，还有出路：一个对话脱轨预测的决策机制](wait_theres_a_way_out_a_decision_mechanism_for_forecasting_conversational_derail.md)
-- [\[ACL 2026\] Automatic Combination of Sample Selection Strategies for Few-Shot Learning](automatic_combination_of_sample_selection_strategies_for_few-shot_learning.md)
+- [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
+- [\[CVPR 2025\] Imagine and Seek: Improving Composed Image Retrieval with an Imagined Proxy](../../CVPR2025/llm_nlp/imagine_and_seek_improving_composed_image_retrieval_with_an_imagined_proxy.md)
+- [\[ACL 2025\] Exploring Explanations Improves the Robustness of In-Context Learning](../../ACL2025/llm_nlp/exploring_explanations_improves_the_robustness_of_in-context_learning.md)
 - [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
+- [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 
 </div>
 

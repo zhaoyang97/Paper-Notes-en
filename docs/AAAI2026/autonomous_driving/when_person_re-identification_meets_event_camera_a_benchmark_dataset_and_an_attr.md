@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Person Re-Identification Meets Event Camera: A Benchmark Dataset and An Attribute-guided Re-Identification Framework
 description: >-
-  [AAAI2026][Autonomous Driving][person re-identification] This paper presents EvReID, the first large-scale RGB-Event person re-identification dataset (1,200 identities / 118,988 image pairs), and proposes TriPro-ReID…
+  [AAAI2026][Autonomous Driving][person re-identification] This paper presents EvReID, the first large-scale RGB-Event person re-identification dataset (1,200 identities / 118,988 image pairs), and proposes TriPro-ReID, a three-stage contrastive learning framework guided by pedestrian attributes. The framework leverages positive-negative attribute prompts and cross-modal prompt fusion to integrate RGB and Event modality features, achieving 69.3% mAP.
 tags:
   - "AAAI2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "pedestrian attributes"
   - "benchmark dataset"
 date: 2026-05-08
-content_hash: c3fd6619dcb73743
+content_hash: b1707c6871f68d1b
 ---
 
 # When Person Re-Identification Meets Event Camera: A Benchmark Dataset and An Attribute-guided Re-Identification Framework

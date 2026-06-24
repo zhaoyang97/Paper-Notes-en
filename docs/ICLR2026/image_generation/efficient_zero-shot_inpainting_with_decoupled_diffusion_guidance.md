@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Efficient Zero-shot Inpainting with Decoupled Diffusion Guidance
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper proposes DING (Decoupled INpainting Guidance), which decouples denoiser inputs from state variables in likelihood guidance to construct precisely samplable Gaussian posterior transitions, achieving faster, memory-efficient, and higher-quality zero-shot image inpainting without any task-specific fine-tuning.
+  [ICLR 2026][Image Generation][zero-shot inpainting] This paper proposes DING (Decoupled INpainting Guidance), which decouples denoiser inputs from state variables in likelihood guidance to construct precisely samplable Gaussian posterior transitions, achieving faster, memory-efficient, and higher-quality zero-shot image inpainting without any task-specific fine-tuning.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "zero-shot inpainting"
+  - "diffusion models"
+  - "posterior sampling"
+  - "decoupled guidance"
+  - "low-NFE inference"
 date: 2026-05-08
-content_hash: 095790f4b4f54666
+content_hash: 4c44897ecee4cabf
 ---
+
 # Efficient Zero-shot Inpainting with Decoupled Diffusion Guidance
 
 **Conference**: ICLR 2026  
@@ -136,13 +141,17 @@ The authors focused on two types of ablations: the necessity of the "dual forwar
 
 <div class="related-papers" markdown="1">
 
-- **[DPS]** Diffusion Posterior Sampling for General Inventory Problems, ICLR 2023.
-- **[DDNM]** Zero-Shot Image Restoration via Iterative Latent Variable Refinement, ICLR 2023.
+## Related Papers
+
+- [\[ICML 2025\] Zero-Shot Adaptation of Parameter-Efficient Fine-Tuning in Diffusion Models](../../ICML2025/image_generation/zero-shot_adaptation_of_parameter-efficient_fine-tuning_in_diffusion_models.md)
+- [\[ICLR 2026\] Sample Reward Soups: Query-efficient Multi-Reward Guidance for Text-to-Image Diffusion Models](sample_reward_soups_query-efficient_multi-reward_guidance_for_text-to-image_diff.md)
+- [\[CVPR 2026\] LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors](../../CVPR2026/image_generation/larp_efficient_multi-view_inpainting_with_latent_reprojection_priors.md)
+- [\[CVPR 2025\] Diffusion Self-Distillation for Zero-Shot Customized Image Generation](../../CVPR2025/image_generation/diffusion_self-distillation_for_zero-shot_customized_image_generation.md)
+- [\[ICLR 2026\] Guidance Watermarking for Diffusion Models](guidance_watermarking_for_diffusion_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2025\] Zero-Shot Adaptation of Parameter-Efficient Fine-Tuning in Diffusion Models](../../ICML2025/image_generation/zero-shot_adaptation_of_parameter-efficient_fine-tuning_in_diffusion_models.md)

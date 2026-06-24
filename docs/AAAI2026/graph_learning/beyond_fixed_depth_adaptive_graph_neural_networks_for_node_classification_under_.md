@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily
 description: >-
-  [AAAI2026][Graph Learning][GNN] This paper proposes AD-GNN, which theoretically analyzes node-level homophily/heterophily characteristics and adaptively assigns different aggregation depths to individual nodes…
+  [AAAI2026][Graph Learning][GNN] This paper proposes AD-GNN, which theoretically analyzes node-level homophily/heterophily characteristics and adaptively assigns different aggregation depths to individual nodes, enabling unified handling of node classification on both homophilic and heterophilic graphs within a single framework.
 tags:
   - "AAAI2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "node classification"
   - "homophily"
 date: 2026-05-08
-content_hash: 7343abd2ce537719
+content_hash: cd684d6d23568138
 ---
 
 # Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily
@@ -139,11 +139,11 @@ The "signal preservation factor" is a concise and powerful theoretical tool that
 
 ## Related Papers
 
-- [\[AAAI 2026\] Posterior Label Smoothing for Node Classification](posterior_label_smoothing_for_node_classification.md)
 - [\[NeurIPS 2025\] Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective](../../NeurIPS2025/graph_learning/making_classic_gnns_strong_baselines_across_varying_homophily_a_smoothness-gener.md)
+- [\[AAAI 2026\] Posterior Label Smoothing for Node Classification](posterior_label_smoothing_for_node_classification.md)
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](adaptive_riemannian_graph_neural_networks.md)
 - [\[CVPR 2026\] Adaptive Learned Image Compression with Graph Neural Networks](../../CVPR2026/graph_learning/adaptive_learned_image_compression_with_graph_neural_networks.md)
-- [\[ACL 2026\] Autonomous Knowledge Graph Exploration with Adaptive Breadth-Depth Retrieval](../../ACL2026/graph_learning/autonomous_knowledge_graph_exploration_with_adaptive_breadth-depth_retrieval.md)
+- [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](../../ICLR2026/graph_learning/forest-based_graph_learning_for_semi-supervised_node_classification.md)
 
 </div>
 

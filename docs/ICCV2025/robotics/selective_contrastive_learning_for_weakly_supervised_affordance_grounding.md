@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Selective Contrastive Learning for Weakly Supervised Affordance Grounding
 description: >-
-  [ICCV 2025][Robotics][Affordance Grounding] This paper proposes a selective contrastive learning approach for weakly supervised affordance grounding (WSAG). By combining prototypical contrastive learning and pixel-level…
+  [ICCV 2025][Robotics][Affordance Grounding] This paper proposes a selective contrastive learning approach for weakly supervised affordance grounding (WSAG). By combining prototypical contrastive learning and pixel-level contrastive learning, the method adaptively learns affordance-relevant cues at both object and part granularities, effectively preventing the model from attending to action-irrelevant salient features. The approach comprehensively outperforms competing methods…
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Part Discovery"
   - "CLIP"
 date: 2026-05-08
-content_hash: e04d7dc42f300e8c
+content_hash: 44a2b3a4879f41a1
 ---
 
 # Selective Contrastive Learning for Weakly Supervised Affordance Grounding
@@ -147,8 +147,8 @@ Performance comparison on AGD20K and HICO-IIF datasets:
 - [\[ICCV 2025\] Weakly-Supervised Learning of Dense Functional Correspondences](weakly-supervised_learning_of_dense_functional_correspondences.md)
 - [\[ICCV 2025\] Self-supervised Learning of Hybrid Part-aware 3D Representations of 2D Gaussians and Superquadrics](self-supervised_learning_of_hybrid_part-aware_3d_representations_of_2d_gaussians.md)
 - [\[ICCV 2025\] COSMO: Combination of Selective Memorization for Low-cost Vision-and-Language Navigation](cosmo_combination_of_selective_memorization_for_low-cost_vision-and-language_nav.md)
+- [\[CVPR 2025\] PanoAffordanceNet: Towards Holistic Affordance Grounding in 360° Indoor Environments](../../CVPR2025/robotics/panoaffordancenet_towards_holistic_affordance_grounding_in_360_indoor_environmen.md)
 - [\[ICCV 2025\] Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding](adaptive_articulated_object_manipulation_on_the_fly_with_foundation_model_reason.md)
-- [\[ICCV 2025\] Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning](rep-mtl_unleashing_the_power_of_representation-level_task_saliency_for_multi-tas.md)
 
 </div>
 

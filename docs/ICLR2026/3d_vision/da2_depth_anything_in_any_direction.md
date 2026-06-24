@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DA$^{2}$: Depth Anything in Any Direction
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] DA2 utilizes a "Perspective-to-Panorama" data engine to transform approximately 540,000 perspective RGB-D pairs into panoramic training data (increasing the total to approximately 607,000). Combined with the SphereViT backbone that explicitly injects spherical coordinates, it achieves end-to-end, single 360° panorama s
+  [ICLR2026][3D Vision][Panoramic Depth Estimation] DA2 utilizes a "Perspective-to-Panorama" data engine to transform approximately 540,000 perspective RGB-D pairs into panoramic training data (increasing the total to approximately 607,000). Combined with the SphereViT backbone that explicitly injects spherical coordinates, it achieves end-to-end, single 360° panorama scale-invariant distance prediction. In zero-shot settings, it improves AbsRel by approximately 38% over the st…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Panoramic Depth Estimation"
+  - "Zero-shot Generalization"
+  - "Spherical Distortion"
+  - "Data Engine"
+  - "Cross-Attention"
 date: 2026-05-08
-content_hash: 0ef733716147644b
+content_hash: b00ab0f05bfaca8c
 ---
+
 # DA$^{2}$: Depth Anything in Any Direction
 
 **Conference**: ICLR2026  
@@ -127,10 +133,10 @@ DA2 ranks first (Rank 1.00) across all three zero-shot benchmarks, reducing AbsR
 ## Related Papers
 
 - [\[ICLR 2026\] Depth Anything with Any Prior](depth_anything_with_any_prior.md)
+- [\[ICLR 2026\] Trace Anything: Representing Any Video in 4D via Trajectory Fields](trace_anything_representing_any_video_in_4d_via_trajectory_fields.md)
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](../../CVPR2026/3d_vision/depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
 - [\[CVPR 2025\] Depth Any Camera: Zero-Shot Metric Depth Estimation from Any Camera](../../CVPR2025/3d_vision/depth_any_camera_zero-shot_metric_depth_estimation_from_any_camera.md)
 - [\[ICCV 2025\] Find Any Part in 3D](../../ICCV2025/3d_vision/find_any_part_in_3d.md)
-- [\[CVPR 2026\] SAM 3D: 3Dfy Anything in Images](../../CVPR2026/3d_vision/sam_3d_3dfy_anything_in_images.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Seeing Overrides Knowing: Disentangling Knowledge Conflicts in Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] This paper constructs WHOOPS-AHA! to put VLM commonsense knowledge into direct conflict with counterfactual visual evidence, discovering that a small number of late-layer attention heads causally control whether the model relies on internal knowledge or visual input.
+  [ACL2026][Multimodal VLM][Vision-Language Models] This paper constructs WHOOPS-AHA! to put VLM commonsense knowledge into direct conflict with counterfactual visual evidence, discovering that a small number of late-layer attention heads causally control whether the model relies on internal knowledge or visual input.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Knowledge Conflict"
+  - "Mechanistic Interpretability"
+  - "Attention Heads"
+  - "Visual Attribution"
 date: 2026-05-08
-content_hash: 1044d2331375dee1
+content_hash: 0f521cbda18df4bc
 ---
+
 # When Seeing Overrides Knowing: Disentangling Knowledge Conflicts in Vision-Language Models
 
 **Conference**: ACL2026  
@@ -144,8 +149,8 @@ Ablations verify head selection, intervention strength, control tasks, and visua
 
 - [\[ACL 2025\] Insight Over Sight: Exploring the Vision-Knowledge Conflicts in Multimodal LLMs](../../ACL2025/multimodal_vlm/conflictvis_vision_knowledge_conflict.md)
 - [\[AAAI 2026\] Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models](../../AAAI2026/multimodal_vlm/seeing_justice_clearly_handwritten_legal_document_translation_with_ocr_and_visio.md)
+- [\[ICLR 2026\] Seeing Through Deception: Uncovering Misleading Creator Intent in Multimodal News with Vision-Language Models](../../ICLR2026/multimodal_vlm/seeing_through_deception_uncovering_misleading_creator_intent_in_multimodal_news.md)
 - [\[ACL 2026\] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering](wikiseeker_rethinking_the_role_of_vision-language_models_in_knowledge-based_visu.md)
-- [\[CVPR 2025\] Seeing the Abstract: Translating the Abstract Language for Vision Language Models](../../CVPR2025/multimodal_vlm/seeing_the_abstract_translating_the_abstract_language_for_vision_language_models.md)
 - [\[ACL 2026\] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding](vulca-bench_a_multicultural_vision-language_benchmark_for_evaluating_cultural_un.md)
 
 </div>

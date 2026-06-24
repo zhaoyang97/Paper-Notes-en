@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Watermarking Autoregressive Image Generation
 description: >-
-  [NeurIPS 2025][LLM Safety][Autoregressive image generation] This paper is the first to adapt LLM watermarking (KGW green/red scheme) to the token level of autoregressive image generation models. It identifies and address…
+  [NeurIPS 2025][LLM Safety][Autoregressive image generation] This paper is the first to adapt LLM watermarking (KGW green/red scheme) to the token level of autoregressive image generation models. It identifies and addresses the key challenge of insufficient Reverse Cycle Consistency (RCC) through tokenizer–detokenizer fine-tuning and a watermark synchronization layer, achieving robust image watermark detection with theoretical guarantees.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "token-level watermarking"
   - "LLM watermark adaptation"
 date: 2026-05-08
-content_hash: d781d35259212db7
+content_hash: a5a7fb8b60c0536b
 ---
 
 # Watermarking Autoregressive Image Generation
@@ -136,7 +136,7 @@ Fine-tuning substantially improves token match with negligible change in FID, co
 - [\[NeurIPS 2025\] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation](imagesentinel_protecting_visual_datasets_from_unauthorized_retrieval-augmented_i.md)
 - [\[NeurIPS 2025\] InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy](invisibleink_high-utility_and_low-cost_text_generation_with_differential_privacy.md)
 - [\[NeurIPS 2025\] Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization](learning_to_watermark_a_selective_watermarking_framework_for_large_language_mode.md)
-- [\[CVPR 2026\] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility](../../CVPR2026/llm_safety/unsafe2safe_controllable_image_anonymization_for_downstream_utility.md)
+- [\[CVPR 2025\] Towards All-in-One Medical Image Re-Identification](../../CVPR2025/llm_safety/towards_all-in-one_medical_image_re-identification.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](../../ACL2026/llm_safety/differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 
 </div>

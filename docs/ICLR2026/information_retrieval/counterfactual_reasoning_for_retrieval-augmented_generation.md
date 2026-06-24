@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Counterfactual Reasoning for Retrieval-Augmented Generation
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] CF-RAG embeds counterfactual query generation, dialectical evidence retrieval, and parallel evidence arbitration into the RAG inference process. It distinguishes between evidence that truly determines an answer and merely highly correlated distracting evidence by testing whether the evidence supports only the original
+  [ICLR2026][Information Retrieval & RAG][Counterfactual Reasoning] CF-RAG embeds counterfactual query generation, dialectical evidence retrieval, and parallel evidence arbitration into the RAG inference process. It distinguishes between evidence that truly determines an answer and merely highly correlated distracting evidence by testing whether the evidence supports only the original query and not similar counterfactual ones, significantly enhancing RAG robustness in multi-hop…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Counterfactual Reasoning"
+  - "Retrieval-Augmented Generation"
+  - "Evidence Arbitration"
+  - "Correlation Trap"
+  - "Robust QA"
 date: 2026-05-08
-content_hash: ad5a0caf1839af82
+content_hash: c8b732ac69fa4315
 ---
+
 # Counterfactual Reasoning for Retrieval-Augmented Generation
 
 **Conference**: ICLR2026  
@@ -143,11 +149,11 @@ CF-RAG (Llama-3-8B) reached 88.58 on HotpotQA, far exceeding the strongest basel
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Topology of Reasoning: Augmenting Generation with Retrieved Cell Complexes for Text-Graph QA](topology_of_reasoning_retrieved_cell_complex-augmented_generation_for_textual_gr.md)
 - [\[ACL 2025\] Toward Structured Knowledge Reasoning: Contrastive Retrieval-Augmented Generation on Experience](../../ACL2025/information_retrieval/toward_structured_knowledge_reasoning_contrastive_retrieval-augmented_generation.md)
 - [\[ICLR 2026\] CFT-RAG: An Entity Tree Based Retrieval Augmented Generation Algorithm With Cuckoo Filter](cft-rag_an_entity_tree_based_retrieval_augmented_generation_algorithm_with_cucko.md)
 - [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
 - [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](../../ACL2026/information_retrieval/chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
-- [\[ICLR 2026\] Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning](youtu-graphrag_vertically_unified_agents_for_graph_retrieval-augmented_complex_r.md)
 
 </div>
 

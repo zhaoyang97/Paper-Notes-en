@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Mitigating Semantic Collapse in Generative Personalization with Test-Time Embedding Adjustment
 description: >-
-  [ICLR 2026][Image Generation][Textual Inversion] This paper identifies and characterizes the "Semantic Collapsing Problem" (SCP) in generative personalization—where the learned personalized token $V^*$ expands in magnitude and shifts in direction within the embedding space, eventually overpowering all context in complex prompts. The authors propose a training-free Te
+  [ICLR 2026][Image Generation][Text-to-Image Diffusion Models] This paper identifies and characterizes the "Semantic Collapsing Problem" (SCP) in generative personalization—where the learned personalized token $V^*$ expands in magnitude and shifts in direction within the embedding space, eventually overpowering all context in complex prompts. The authors propose a training-free Test-time Embedding Adjustment (TEA) to pull the magnitude and direction of $V^*$ back toward the or…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Textual Inversion
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Text-to-Image Diffusion Models"
+  - "Generative Personalization"
+  - "Semantic Collapse"
+  - "Test-Time Adjustment"
+  - "Text Embedding"
+  - "Textual Inversion"
+  - "DreamBooth"
 date: 2026-05-08
-content_hash: 8c6210d77d0e051a
+content_hash: 417bcacfc69dbaf6
 ---
+
 # Mitigating Semantic Collapse in Generative Personalization with Test-Time Embedding Adjustment
 
 **Conference**: ICLR 2026  
@@ -108,10 +115,20 @@ TEA provides stable positive gains across almost all metrics and methods. In par
 - **Value**: ⭐⭐⭐⭐ — Highly practical due to its training-free, plug-and-play nature.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Visual Personalization Turing Test](../../CVPR2026/image_generation/visual_personalization_turing_test.md)
+- [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](test-time_iterative_error_correction_for_efficient_diffusion_models.md)
+- [\[CVPR 2026\] Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation](../../CVPR2026/image_generation/test-time_alignment_of_text-to-image_diffusion_models_via_null-text_embedding_op.md)
+- [\[ICLR 2026\] MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning](milr_improving_multimodal_image_generation_via_test-time_latent_reasoning.md)
+- [\[ICLR 2026\] VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model](vfscale_intrinsic_reasoning_through_verifier-free_test-time_scalable_diffusion_m.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Visual Personalization Turing Test](../../CVPR2026/image_generation/visual_personalization_turing_test.md)

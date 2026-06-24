@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MotionHiFlow: Text-to-Motion via Hierarchical Flow Matching
 description: >-
-  [CVPR 2026][Human Understanding][text-to-motion] MotionHiFlow decomposes text-to-3D human motion generation into a multi-stage flow matching process that is "coarse-to-fine and low-to-high temporal scale." It links flows across scales using a noise-consistent cross-scale transition. Combined with a dual-stream Text-Motion Diffusion Transformer (TMDiT) and joint-aware
+  [CVPR2026][Human Understanding][text-to-motion] MotionHiFlow decomposes text-to-3D human motion generation into a multi-stage flow matching process that is "coarse-to-fine and low-to-high temporal scale." It links flows across scales using a noise-consistent cross-scale transition. Combined with a dual-stream Text-Motion Diffusion Transformer (TMDiT) and joint-aware Joint RoPE, it achieves SOTA results on HumanML3D and KIT-ML (FID 0.032 / 0.135).
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - text-to-motion
+  - "CVPR2026"
+  - "Human Understanding"
+  - "text-to-motion"
+  - "hierarchical flow matching"
+  - "cross-scale transition"
+  - "diffusion transformer"
+  - "joint positional encoding"
 date: 2026-05-08
-content_hash: 4442ccb992f47215
+content_hash: a754fe2b7f845b92
 ---
+
 # MotionHiFlow: Text-to-Motion via Hierarchical Flow Matching
 
 **Conference**: CVPR2026  
@@ -146,9 +151,9 @@ Key components (HumanML3D, Table 3):
 ## Related Papers
 
 - [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](unified_number-free_text-to-motion_generation_via_flow_matching.md)
-- [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
 - [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
-- [\[CVPR 2026\] ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](projflow_projection_sampling_with_flow_matching_for_zero-shot_exact_spatial_moti.md)
+- [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
+- [\[CVPR 2026\] Pressure2Motion: Hierarchical Human Motion Reconstruction from Ground Pressure with Text Guidance](pressure2motion_hierarchical_human_motion_reconstruction_from_ground_pressure_wi.md)
 - [\[CVPR 2026\] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis](party_part-guidance_for_expressive_text-to-motion_synthesis.md)
 
 </div>

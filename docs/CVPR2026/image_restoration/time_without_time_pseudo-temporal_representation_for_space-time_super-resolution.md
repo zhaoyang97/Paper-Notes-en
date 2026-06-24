@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Pretraining] Addressing the lack of effective pre-training strategies for Space-Time Video Super-Resolution (STVSR), this paper proposes a method that "copies a single image into multiple frames + applies independent random zeroing per frame" to forge a video without real time. This allows the target STVSR network to undergo pre-tr
+  [CVPR 2026][Image Restoration][Space-Time Video Super-Resolution] Addressing the lack of effective pre-training strategies for Space-Time Video Super-Resolution (STVSR), this paper proposes a method that "copies a single image into multiple frames + applies independent random zeroing per frame" to forge a video without real time. This allows the target STVSR network to undergo pre-training by reconstructing clean high-spatio-temporal resolution outputs from degraded pseudo-te…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Pretraining
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Space-Time Video Super-Resolution"
+  - "Pre-training"
+  - "Pseudo-time"
+  - "Self-supervised"
+  - "Difficulty-adaptive loss"
 date: 2026-05-08
-content_hash: 62f77232dc4b2439
+content_hash: d9f93ea4fb120258
 ---
+
 # Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -132,15 +137,16 @@ Gains are larger with less data: Zooming gains +5.08dB on 1% of the data, which 
 - **Value**: ⭐⭐⭐⭐ Plug-and-play, image-only, high few-shot gains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
+- [\[ICLR 2026\] Continuous Space-Time Video Super-Resolution with 3D Fourier Fields](../../ICLR2026/image_restoration/continuous_space-time_video_super-resolution_with_3d_fourier_fields.md)
 - [\[CVPR 2026\] Time-Specialized Event-Image Alignment for Blur-to-Video Decomposition](time-specialized_event-image_alignment_for_blur-to-video_decomposition.md)
-- [\[ICML 2025\] TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation](../../ICML2025/image_restoration/timedart_a_diffusion_autoregressive_transformer_for_self-supervised_time_series_.md)
+- [\[ICLR 2026\] Test-Time Domain Generalization for Image Super-Resolution](../../ICLR2026/image_restoration/test-time_domain_generalization_for_image_super-resolution.md)
 - [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
-- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
 
 </div>
 

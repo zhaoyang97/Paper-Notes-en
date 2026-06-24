@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KaLM-Embedding-V2: Superior Training Techniques and Data Inspire A Versatile Embedding Model
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] This paper transforms a 0.5B Qwen2 decoder into a fully bidirectional encoder, coupled with a "Pre-training → Fine-tuning → Contrastive Distillation" three-stage pipeline, Focal-style reweighting, online hard negative mixing, and high-quality data engineering covering 100+ categories. This allows KaLM-Embedding-V2.5 to
+  [ICLR 2026][Information Retrieval & RAG][Text Embedding] This paper transforms a 0.5B Qwen2 decoder into a fully bidirectional encoder, coupled with a "Pre-training → Fine-tuning → Contrastive Distillation" three-stage pipeline, Focal-style reweighting, online hard negative mixing, and high-quality data engineering covering 100+ categories. This allows KaLM-Embedding-V2.5 to achieve SOTA results in the <1B parameter segment on MTEB Chinese and English benchmarks…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Text Embedding"
+  - "Contrastive Learning"
+  - "Contrastive Distillation"
+  - "Hard Negatives"
+  - "Multi-stage Training"
 date: 2026-05-08
-content_hash: 3a3b8fb363ff156d
+content_hash: ab081eb33347d350
 ---
+
 # KaLM-Embedding-V2: Superior Training Techniques and Data Inspire A Versatile Embedding Model
 
 **Conference**: ICLR 2026  
@@ -142,10 +148,10 @@ Compared to V1, V2 improves +4.37 MTK in Chinese and +2.53 MTK in English. V2.5 
 ## Related Papers
 
 - [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
-- [\[ACL 2026\] SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation](../../ACL2026/information_retrieval/skmteb_slovak_massive_text_embedding_benchmark_and_model_adaptation.md)
-- [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
 - [\[ICLR 2026\] Reusing Pre-training Data at Test Time is a Compute Multiplier](reusing_pre-training_data_at_test_time_is_a_compute_multiplier.md)
 - [\[ICLR 2026\] Uncertainty-driven Embedding Convolution](uncertainty-driven_embedding_convolution.md)
+- [\[ICLR 2026\] On the Theoretical Limitations of Embedding-Based Retrieval](on_the_theoretical_limitations_of_embedding-based_retrieval.md)
+- [\[ICLR 2026\] Embedding-Based Context-Aware Reranker](embedding-based_context-aware_reranker.md)
 
 </div>
 

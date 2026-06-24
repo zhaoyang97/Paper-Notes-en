@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Models for Embodied Task Planning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Reinforcement Learning] MomaGraph unifies spatial relationships, functional relationships, and part-level interaction nodes into a **task-oriented** scene graph. By training a 7B VLM with reinforcement learning to "graph then plan," it achieves a 71.6% accuracy on a self-built benchmark, surpassing the strongest baseline by 11.4 points.
+  [ICLR 2026][Robotics][Scene Graphs] MomaGraph unifies spatial relationships, functional relationships, and part-level interaction nodes into a **task-oriented** scene graph. By training a 7B VLM with reinforcement learning to "graph then plan," it achieves a 71.6% accuracy on a self-built benchmark, surpassing the strongest baseline by 11.4 points.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Reinforcement Learning
-  - Graph-then-Plan
+  - "ICLR 2026"
+  - "Robotics"
+  - "Scene Graphs"
+  - "Embodied Task Planning"
+  - "Mobile Manipulation"
+  - "Spatial-Functional Relationships"
+  - "Reinforcement Learning"
+  - "Graph-then-Plan"
 date: 2026-05-08
-content_hash: 7d1b983045facb50
+content_hash: de3afcaa3ea4e369
 ---
+
 # MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Models for Embodied Task Planning
 
 **Conference**: ICLR 2026  
@@ -115,7 +120,7 @@ In fair comparisons with fixed graph topologies, the unified spatial-functional 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

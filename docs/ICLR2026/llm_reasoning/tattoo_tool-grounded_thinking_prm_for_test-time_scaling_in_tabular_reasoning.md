@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] Aiming at the blind spots of general PRMs in tabular reasoning—specifically the inability to distinguish sub-table retrieval accuracy and the failure to capture long-distance schema dependencies—this paper proposes TATTOO. It is a generative PRM that decomposes rewards into "table operation rewards + intrinsic reasonin
+  [ICLR 2026][Reasoning][Process Reward Model] Aiming at the blind spots of general PRMs in tabular reasoning—specifically the inability to distinguish sub-table retrieval accuracy and the failure to capture long-distance schema dependencies—this paper proposes TATTOO. It is a generative PRM that decomposes rewards into "table operation rewards + intrinsic reasoning rewards" and invokes actual code/table-lookup tools during verification. Using 60k tool-augmented annotations for…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Process Reward Model"
+  - "Test-time Scaling"
+  - "Tabular Reasoning"
+  - "Tool Integration"
+  - "Reward Shaping"
 date: 2026-05-08
-content_hash: 770119ff0a0e3258
+content_hash: 7034f7e6d953bff2
 ---
+
 # TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning
 
 **Conference**: ICLR 2026  
@@ -139,10 +145,10 @@ TATTOO achieved the best or second-best results across almost all tasks with 8B 
 ## Related Papers
 
 - [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 - [\[ICLR 2026\] TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture](tumix_multi-agent_test-time_scaling_with_tool-use_mixture.md)
+- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
 - [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
-- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
-- [\[ICLR 2026\] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling](roc-n-reroll_how_verifier_imperfection_affects_test-time_scaling.md)
 
 </div>
 

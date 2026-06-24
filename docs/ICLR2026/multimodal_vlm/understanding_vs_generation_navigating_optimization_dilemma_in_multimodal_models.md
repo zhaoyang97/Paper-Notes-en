@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Understanding vs. Generation: Navigating Optimization Dilemma in Multimodal Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Reinforcement Learning] To address the optimization dilemma in unified multimodal models where "enhancing generation degrades understanding and vice versa," this paper proposes the Reason-Reflect-Refine (R3) framework. It reformulates single-step image generation into a multi-step chain process of "Reason → Generate → Reflect → Refine," makin
+  [ICLR2026][Multimodal VLM][Unified Multimodal Models] To address the optimization dilemma in unified multimodal models where "enhancing generation degrades understanding and vice versa," this paper proposes the Reason-Reflect-Refine (R3) framework. It reformulates single-step image generation into a multi-step chain process of "Reason → Generate → Reflect → Refine," making generation inherently dependent on the model's understanding capabilities. Combined with Tree-structured…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Unified Multimodal Models"
+  - "Understanding-Generation Trade-off"
+  - "Generative Chain-of-Thought"
+  - "Reinforcement Learning"
+  - "Self-Reflection"
 date: 2026-05-08
-content_hash: 9d88525503015884
+content_hash: c775f2302674366c
 ---
+
 # Understanding vs. Generation: Navigating Optimization Dilemma in Multimodal Models
 
 **Conference**: ICLR2026  
@@ -150,11 +155,11 @@ For understanding, the authors established ITA (Image-Text Alignment) and VQA (p
 
 ## Related Papers
 
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 - [\[ICLR 2026\] On Discriminative vs. Generative Classifiers: Rethinking MLLMs for Action Understanding](on_discriminative_vs_generative_classifiers_rethinking_mllms_for_action_understa.md)
-- [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
-- [\[ICLR 2026\] Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation](lavida-o_elastic_large_masked_diffusion_models_for_unified_multimodal_understand.md)
-- [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
-- [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
+- [\[ICLR 2026\] UniLIP: Revamping CLIP to Unify Multimodal Understanding, Generation, and Editing](unilip_adapting_clip_for_unified_multimodal_understanding_generation_and_editing.md)
+- [\[ICLR 2026\] Turning Internal Gap into Self-Improvement: Promoting the Generation-Understanding Unification in MLLMs](turning_internal_gap_into_self-improvement_promoting_the_generation-understandin.md)
+- [\[ICLR 2026\] ChartGalaxy: A Dataset for Infographic Chart Understanding and Generation](chartgalaxy_a_dataset_for_infographic_chart_understanding_and_generation.md)
 
 </div>
 

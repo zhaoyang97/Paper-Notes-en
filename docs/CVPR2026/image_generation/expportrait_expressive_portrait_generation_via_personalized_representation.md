@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ExpPortrait: Expressive Portrait Generation via Personalized Representation
 description: >-
-  [CVPR 2026][Image Generation][SMPL-X] Ours proposes high-fidelity personalized head representations (static identity offsets + dynamic expression offsets) to address the limited expressiveness of parametric models like SMPL-X. Combined with an identity-adaptive expression transfer module and a DiT generator, it achieves SOTA performance in both portrait vi
+  [CVPR 2026][Image Generation][Portrait Animation] Ours proposes high-fidelity personalized head representations (static identity offsets + dynamic expression offsets) to address the limited expressiveness of parametric models like SMPL-X. Combined with an identity-adaptive expression transfer module and a DiT generator, it achieves SOTA performance in both portrait video self-driven and cross-identity reenactment tasks.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - SMPL-X
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Portrait Animation"
+  - "Personalized Head Representation"
+  - "Expression Transfer"
+  - "Diffusion Transformer"
+  - "SMPL-X"
 date: 2026-05-08
-content_hash: 45ce8f16a0feac98
+content_hash: 536458be951d32e5
 ---
+
 # ExpPortrait: Expressive Portrait Generation via Personalized Representation
 
 **Conference**: CVPR 2026  
@@ -147,9 +152,9 @@ Achieved the best balance between expression accuracy (AED/APD) and identity pre
 
 - [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
 - [\[CVPR 2026\] MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation](mocodiff_a_controllable_autoregressive_diffusion_model_for_expressive_motion_gen.md)
+- [\[ICLR 2026\] OmniPortrait: Fine-Grained Personalized Portrait Synthesis via Pivotal Optimization](../../ICLR2026/image_generation/omniportrait_fine-grained_personalized_portrait_synthesis_via_pivotal_optimizati.md)
 - [\[CVPR 2026\] Unified Vector Floorplan Generation via Markup Representation](unified_vector_floorplan_generation_via_markup_representation.md)
 - [\[CVPR 2026\] Say Cheese! Detail-Preserving Portrait Collection Generation via Natural Language Edits](say_cheese_detail-preserving_portrait_collection_generation_via_natural_language.md)
-- [\[CVPR 2026\] Premier: Personalized Preference Modulation with Learnable User Embedding in Text-to-Image Generation](premier_personalized_preference_modulation_with_learnable_user_embedding_in_text.md)
 
 </div>
 

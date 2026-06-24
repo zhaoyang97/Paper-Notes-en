@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] PhysGM: Large Physical Gaussian Model for Feed-Forward 4D Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The first framework for feed-forward prediction of 3DGS and physical attributes (material category, Young's modulus, Poisson's ratio) from a single image. By employing a two-stage training process (supervised pre-training and DPO preference fine-tuning), it completely bypasses SDS and differentiable physics engines. Co
+  [CVPR 2026][3D Vision][4D Synthesis] The first framework for feed-forward prediction of 3DGS and physical attributes (material category, Young's modulus, Poisson's ratio) from a single image. By employing a two-stage training process (supervised pre-training and DPO preference fine-tuning), it completely bypasses SDS and differentiable physics engines. Combined with the 50K+ PhysAssets dataset, it generates high-fidelity 4D physical simulations in under 1 minute…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Synthesis"
+  - "Physics-Aware Gaussian"
+  - "Feed-Forward Inference"
+  - "DPO Alignment"
+  - "Single-Image-to-4D"
+  - "MPM Simulation"
 date: 2026-05-08
-content_hash: e334de1664edeb1e
+content_hash: 12e15612045b2930
 ---
+
 # PhysGM: Large Physical Gaussian Model for Feed-Forward 4D Synthesis
 
 **Conference**: CVPR 2026  
@@ -215,11 +222,11 @@ Two stages: Stage 1 involves large-scale supervised pre-training, jointly optimi
 
 ## Related Papers
 
-- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](any4d_unified_feed-forward_metric_4d_reconstruction.md)
 - [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
+- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
 - [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
-- [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
+- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
 
 </div>
 

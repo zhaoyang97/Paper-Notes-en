@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Moving Out: Physically-grounded Human-AI Collaboration
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Embodied AI] To address the lack of "physics-grounded constraints" in existing discrete/symbolic benchmarks, this paper introduces **Moving Out**, a collaborative environment based on a 2D rigid-body physics engine with continuous state-action spaces (e.g., two agents carrying heavy objects around corners). It proposes **BASS** (Be
+  [ICML 2026][Robotics][Human-AI Collaboration] To address the lack of "physics-grounded constraints" in existing discrete/symbolic benchmarks, this paper introduces **Moving Out**, a collaborative environment based on a 2D rigid-body physics engine with continuous state-action spaces (e.g., two agents carrying heavy objects around corners). It proposes **BASS** (Behavior Augmentation, Simulation, and Selection), which enables the AI to collaborate stably when facing unseen hum…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Embodied AI
-  - World Models
+  - "ICML 2026"
+  - "Robotics"
+  - "Human-AI Collaboration"
+  - "Embodied AI"
+  - "Behavior Augmentation"
+  - "World Models"
+  - "Imitation Learning"
 date: 2026-05-08
-content_hash: a0755e55583bbdaa
+content_hash: ddcdb2cb2b8eaf49
 ---
+
 # Moving Out: Physically-grounded Human-AI Collaboration
 
 **Conference**: ICML 2026  
@@ -140,9 +144,9 @@ The single-agent variant fails to maintain coordination, leading to a significan
 
 - [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
 - [\[NeurIPS 2025\] Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination](../../NeurIPS2025/robotics/inner_speech_as_behavior_guides_steerable_imitation_of_diverse_behaviors_for_hum.md)
+- [\[ICLR 2026\] Image Quality Assessment for Embodied AI](../../ICLR2026/robotics/image_quality_assessment_for_embodied_ai.md)
 - [\[CVPR 2026\] BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration](../../CVPR2026/robotics/bipremanip_learning_affordance-based_bimanual_preparatory_manipulation_through_a.md)
 - [\[AAAI 2026\] Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity](../../AAAI2026/robotics/robust_out-of-order_retrieval_for_grid-based_storage_at_maximum_capacity.md)
-- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](../../CVPR2026/robotics/beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
 
 </div>
 

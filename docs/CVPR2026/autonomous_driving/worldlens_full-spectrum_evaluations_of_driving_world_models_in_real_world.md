@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] WorldLens proposes a full-spectrum evaluation benchmark for driving world models covering five dimensions—"generation, reconstruction, action-following, downstream tasks, and human preference"—with a total of 24 fine-grained metrics. Along with the WorldLens-26K human-annotated dataset and the distilled interpretable a
+  [CVPR 2026][Autonomous Driving][Driving World Models] WorldLens proposes a full-spectrum evaluation benchmark for driving world models covering five dimensions—"generation, reconstruction, action-following, downstream tasks, and human preference"—with a total of 24 fine-grained metrics. Along with the WorldLens-26K human-annotated dataset and the distilled interpretable auto-evaluator WorldLens-Agent, it systematically reveals that current world models "look real but behave u…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Driving World Models"
+  - "Full-Spectrum Evaluation"
+  - "4D Reconstruction"
+  - "Closed-Loop Action-Following"
+  - "Human Preference Alignment"
 date: 2026-05-08
-content_hash: b50f792486943600
+content_hash: 51e3e1fd25372174
 ---
+
 # WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World
 
 **Conference**: CVPR 2026  
@@ -169,10 +175,10 @@ As a benchmark, "ablation" is reflected in the cross-dimensional decoupled analy
 ## Related Papers
 
 - [\[CVPR 2026\] MAD: Motion Appearance Decoupling for Efficient Driving World Models](mad_motion_appearance_decoupling_for_efficient_driving_world_models.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
 - [\[CVPR 2026\] Unposed-to-3D: Learning Simulation-Ready Vehicles from Real-World Images](unposed-to-3d_learning_simulation-ready_vehicles_from_real-world_images.md)
 - [\[CVPR 2026\] V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception](v2u4real_a_real-world_large-scale_dataset_for_vehicle-to-uav_cooperative_percept.md)
-- [\[CVPR 2026\] Real-World On-Vehicle Evaluation of Embedding-Based Anomaly Detection](real-world_on-vehicle_evaluation_of_embedding-based_anomaly_detection.md)
+- [\[CVPR 2026\] SimScale: Learning to Drive via Real-World Simulation at Scale](simscale_learning_to_drive_via_real-world_simulation_at_scale.md)
+- [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
 
 </div>
 

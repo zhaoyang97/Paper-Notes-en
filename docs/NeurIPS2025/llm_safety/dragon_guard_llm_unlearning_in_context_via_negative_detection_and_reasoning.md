@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM Unlearning] DRAGON proposes a systematic LLM unlearning framework that requires no fine-tuning of the base model. It employs a two-layer detection module to identify prompts subject to unle…
+  [NeurIPS 2025][LLM Safety][LLM Unlearning] DRAGON proposes a systematic LLM unlearning framework that requires no fine-tuning of the base model. It employs a two-layer detection module to identify prompts subject to unlearning, then uses a specially fine-tuned guard model to generate CoT reasoning instructions for in-context intervention, effectively removing private or harmful knowledge while preserving the model's general capabilities.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Black-Box Unlearning"
   - "Continual Unlearning"
 date: 2026-05-08
-content_hash: a7ef84d1ec3afaea
+content_hash: e76d3777709b62ed
 ---
 
 # DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning
@@ -147,10 +147,10 @@ DRAGON achieves the lowest deviation scores across all unlearning ratios while f
 ## Related Papers
 
 - [\[NeurIPS 2025\] Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning](simplicity_prevails_rethinking_negative_preference_optimization_for_llm_unlearni.md)
-- [\[NeurIPS 2025\] LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory](llm_strategic_reasoning_agentic_study_through_behavioral_gam.md)
-- [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
 - [\[NeurIPS 2025\] One Token Embedding Is Enough to Deadlock Your Large Reasoning Model](one_token_embedding_is_enough_to_deadlock_your_large_reasoning_model.md)
-- [\[NeurIPS 2025\] On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection](on_the_empirical_power_of_goodness-of-fit_tests_in_watermark_detection.md)
+- [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
+- [\[NeurIPS 2025\] LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory](llm_strategic_reasoning_agentic_study_through_behavioral_gam.md)
+- [\[NeurIPS 2025\] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM](unlearned_but_not_forgotten_data_extraction_after_exact_unlearning_in_llm.md)
 
 </div>
 

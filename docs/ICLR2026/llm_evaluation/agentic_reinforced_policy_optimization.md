@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agentic Reinforced Policy Optimization
 description: >-
-  [ICLR 2026][LLM Evaluation][Agentic RL] ARPO is a reinforcement learning algorithm tailored for multi-turn tool-calling agents. It identifies that the token entropy of LLMs spikes after each tool return. Consequently, it adaptively "forks" sampling at these high-entropy steps and employs advantage attribution to propagate the performance differences of branc
+  [ICLR2026][LLM Evaluation][Agentic RL] ARPO is a reinforcement learning algorithm tailored for multi-turn tool-calling agents. It identifies that the token entropy of LLMs spikes after each tool return. Consequently, it adaptively "forks" sampling at these high-entropy steps and employs advantage attribution to propagate the performance differences of branched paths back for learning. This achieves superior performance across 13 reasoning/deep-search benchmarks compared to tr…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Agentic RL
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Agentic RL"
+  - "Tool Calling"
+  - "Token Entropy"
+  - "Adaptive Rollout"
+  - "Advantage Attribution"
 date: 2026-05-08
-content_hash: d3c4ed6ea3d01505
+content_hash: aadbbfc22f9917e6
 ---
+
 # Agentic Reinforced Policy Optimization
 
 **Conference**: ICLR2026  
@@ -140,8 +145,21 @@ On difficult deep search tasks (GAIA, HLE), ARPO (Qwen3-14B) significantly outpe
 - Value: ⭐⭐⭐⭐⭐ High engineering value for reducing costs in real-world tool agent training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] ResiliBench: Evaluating Agentic Workflow Adaptation in Stochastic Environments](resilibench_evaluating_agentic_workflow_adaptation_in_stochastic_environments.md)
+- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
+- [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Models](prompt_and_parameter_co-optimization_for_large_language_models.md)
+- [\[ACL 2026\] Inverting the Shield: Systematically Generating Safety Tests from Policy Specifications](../../ACL2026/llm_evaluation/inverting_the_shield_systematically_generating_safety_tests_from_policy_specific.md)
+- [\[ACL 2026\] PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models](../../ACL2026/llm_evaluation/policyllm_towards_excellent_comprehension_of_public_policy_for_large_language_mo.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

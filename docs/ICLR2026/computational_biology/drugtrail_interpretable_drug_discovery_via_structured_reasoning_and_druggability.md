@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DrugTrail: Interpretable Drug Discovery via Structured Reasoning and Druggability‑Tailored Preference Optimization
 description: >-
-  [ICLR 2026][Computational Biology][GRPO] DrugTrail transforms general large language models into drug designers that "think like medicinal chemistry experts." It employs Clinical Chemistry-Informed Reasoning (CCIR) for lightweight SFT, followed by Druggability-Tailored Preference Optimization (DTPO) via GRPO—an online-computable reinforcement learning approac
+  [ICLR2026][Computational Biology][Drug discovery] DrugTrail transforms general large language models into drug designers that "think like medicinal chemistry experts." It employs Clinical Chemistry-Informed Reasoning (CCIR) for lightweight SFT, followed by Druggability-Tailored Preference Optimization (DTPO) via GRPO—an online-computable reinforcement learning approach that bypasses time-consuming docking scores. This allows 7B-level models to outperform large-scale models li…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - GRPO
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Drug discovery"
+  - "interpretable reasoning"
+  - "preference optimization"
+  - "GRPO"
+  - "druggability"
 date: 2026-05-08
-content_hash: 9d1863f9840ae7ae
+content_hash: 66764224f2e59f03
 ---
+
 # DrugTrail: Interpretable Drug Discovery via Structured Reasoning and Druggability‑Tailored Preference Optimization
 
 **Conference**: ICLR2026  
@@ -127,7 +132,7 @@ Across all model sizes (1.7B to 8B), the full DrugTrail model significantly outp
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

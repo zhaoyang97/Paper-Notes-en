@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Segment for Vehicle Routing Problems
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The authors observe that during the search process of iterative VRP solvers, a large number of edges become "stable and unchanged" early on, and repeatedly optimizing them wastes computational resources. They propose the First-Segment-Then-Aggregate (FSTA) decomposition framework to aggregate stable segments into super
+  [ICLR 2026][Optimization][Vehicle Routing Problem] The authors observe that during the search process of iterative VRP solvers, a large number of edges become "stable and unchanged" early on, and repeatedly optimizing them wastes computational resources. They propose the First-Segment-Then-Aggregate (FSTA) decomposition framework to aggregate stable segments into supernodes, allowing the solver to focus only on unstable parts. A neural network called L2Seg (with three variant…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Vehicle Routing Problem"
+  - "Neural Combinatorial Optimization"
+  - "Iterative Search Acceleration"
+  - "Problem Decomposition"
+  - "Autoregressive/Non-Autoregressive Models"
 date: 2026-05-08
 content_hash: 7877521de111cdd2
 ---
+
 # Learning to Segment for Vehicle Routing Problems
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,10 @@ The method also leads on VRPTW, with the advantage increasing with scale (-3.14%
 ## Related Papers
 
 - [\[ICLR 2026\] Combination-of-Experts with Knowledge Sharing for Cross-Task Vehicle Routing Problems](combination-of-experts_with_knowledge_sharing_for_cross-task_vehicle_routing_pro.md)
-- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
-- [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
-- [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](incentives_in_federated_learning_with_heterogeneous_agents.md)
-- [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
+- [\[ICLR 2026\] LMask: Learn to Solve Constrained Routing Problems with Lazy Masking](lmask_learn_to_solve_constrained_routing_problems_with_lazy_masking.md)
+- [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](../../NeurIPS2025/optimization/rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
+- [\[NeurIPS 2025\] Learning to Insert for Constructive Neural Vehicle Routing Solver](../../NeurIPS2025/optimization/learning_to_insert_for_constructive_neural_vehicle_routing_solver.md)
+- [\[AAAI 2026\] Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation](../../AAAI2026/optimization/bridging_synthetic_and_real_routing_problems_via_llm-guided_instance_generation_.md)
 
 </div>
 

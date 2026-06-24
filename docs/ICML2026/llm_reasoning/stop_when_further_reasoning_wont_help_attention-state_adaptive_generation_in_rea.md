@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stop When Further Reasoning Won't Help: Attention-State Adaptive Generation in Reasoning Models
 description: >-
-  [ICML 2026][LLM Reasoning][Test-Time Compute] ASAG is a training-free, plug-and-play early exit framework for reasoning. It monitors both model confidence and attention entropy at the switching points of each "reasoning action" in Large Reasoning Models (LRMs) to determine if reasoning has truly converged. It adaptively selects from four strategies—"early exit," "
+  [ICML2026][Reasoning][Overthinking] ASAG is a training-free, plug-and-play early exit framework for reasoning. It monitors both model confidence and attention entropy at the switching points of each "reasoning action" in Large Reasoning Models (LRMs) to determine if reasoning has truly converged. It adaptively selects from four strategies—"early exit," "logits injection for enhancement," "trap escape," or "continue"—improving average accuracy by 3.2% on Qwen3-8B while reducin…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Test-Time Compute
+  - "ICML2026"
+  - "Reasoning"
+  - "Overthinking"
+  - "early exit"
+  - "attention entropy"
+  - "test-time compute"
+  - "training-free"
 date: 2026-05-08
-content_hash: d5e157955818df01
+content_hash: 27e7cb73e922e21f
 ---
+
 # Stop When Further Reasoning Won't Help: Attention-State Adaptive Generation in Reasoning Models
 
 **Conference**: ICML2026  
@@ -125,15 +130,16 @@ On AIME2024, ASAG improves accuracy from 63.3 to 70.0 while reducing tokens from
 - Value: ⭐⭐⭐⭐⭐ Training-free and plug-and-play while increasing accuracy and saving 40% tokens; direct practical value for reasoning model deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](../../ICLR2026/llm_reasoning/a_state-transition_framework_for_efficient_llm_reasoning.md)
-- [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](../../ICLR2026/llm_reasoning/attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
-- [\[ICML 2026\] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models](when_the_chain_of_thought_knows_better_failure_modes_in_multi-turn_reasoning_mod.md)
-- [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](../../ICLR2026/llm_reasoning/adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
 - [\[ICML 2026\] SuCo: Sufficiency-guided Continuous Adaptive Reasoning](suco_sufficiency-guided_continuous_adaptive_reasoning.md)
+- [\[ICLR 2026\] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking](../../ICLR2026/llm_reasoning/your_models_have_thought_enough_training_large_reasoning_models_to_stop_overthin.md)
+- [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](../../NeurIPS2025/llm_reasoning/does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
+- [\[NeurIPS 2025\] ARM: Adaptive Reasoning Model](../../NeurIPS2025/llm_reasoning/arm_adaptive_reasoning_model.md)
 
 </div>
 

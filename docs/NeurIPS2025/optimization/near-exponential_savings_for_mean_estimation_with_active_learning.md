@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Near-Exponential Savings for Mean Estimation with Active Learning
 description: >-
-  [NeurIPS 2025][Optimization][Active Learning] This paper proposes the PartiBandits algorithm, which combines disagreement-based active learning with UCB-style stratified sampling to achieve near-exponential label savings…
+  [NeurIPS 2025][Optimization][Active Learning] This paper proposes the PartiBandits algorithm, which combines disagreement-based active learning with UCB-style stratified sampling to achieve near-exponential label savings for mean estimation when auxiliary information $X$ is predictive of the target variable $Y$.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "UCB Algorithm"
   - "Minimax Optimality"
 date: 2026-05-08
-content_hash: d0dd1021326c72f8
+content_hash: f834a71f44fda524
 ---
 
 # Near-Exponential Savings for Mean Estimation with Active Learning
@@ -125,11 +125,11 @@ PartiBandits is a two-phase algorithm:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Robust Estimation Under Heterogeneous Corruption Rates](robust_estimation_under_heterogeneous_corruption_rates.md)
 - [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
+- [\[NeurIPS 2025\] Robust Estimation Under Heterogeneous Corruption Rates](robust_estimation_under_heterogeneous_corruption_rates.md)
 - [\[NeurIPS 2025\] On Minimax Estimation of Parameters in Softmax-Contaminated Mixture of Experts](on_minimax_estimation_of_parameters_in_softmax-contaminated_mixture_of_experts.md)
-- [\[ICML 2026\] Mirror Mean-Field Langevin Dynamics](../../ICML2026/optimization/mirror_mean-field_langevin_dynamics.md)
-- [\[ICML 2026\] Adaptive Estimation and Inference in Semi-parametric Heterogeneous Clustered Multitask Learning via Neyman Orthogonality](../../ICML2026/optimization/adaptive_estimation_and_inference_in_semi-parametric_heterogeneous_clustered_mul.md)
+- [\[ICML 2025\] A Unified View on Learning Unnormalized Distributions via Noise-Contrastive Estimation](../../ICML2025/optimization/a_unified_view_on_learning_unnormalized_distributions_via_noise-contrastive_esti.md)
+- [\[ICML 2025\] FSL-SAGE: Accelerating Federated Split Learning via Smashed Activation Gradient Estimation](../../ICML2025/optimization/fsl-sage_accelerating_federated_split_learning_via_smashed_activation_gradient_e.md)
 
 </div>
 

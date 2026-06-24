@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MuonBP: Faster Muon via Block-Periodic Orthogonalization
 description: >-
-  [ICLR 2026][Optimization & Theory][Muon] MuonBP enables each device to perform orthogonalization only on local shards under tensor parallelism, executing global orthogonalization every $P$ steps. By using two distinct learning rates—"block step" and "full step"—it eliminates the throughput loss caused by inter-device communication in Muon. On an 8B model, it
+  [ICLR 2026][Optimization][Muon] MuonBP enables each device to perform orthogonalization only on local shards under tensor parallelism, executing global orthogonalization every $P$ steps. By using two distinct learning rates—"block step" and "full step"—it eliminates the throughput loss caused by inter-device communication in Muon. On an 8B model, it achieves approximately 8% speedup over Muon with even better convergence results.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Muon
+  - "ICLR 2026"
+  - "Optimization"
+  - "Muon"
+  - "Gradient Orthogonalization"
+  - "Model Parallelism"
+  - "Communication Efficiency"
+  - "LLM Pre-training"
+  - "Distributed Optimization"
 date: 2026-05-08
-content_hash: e2ac0a5bbbd9a1f9
+content_hash: 761b5ed20a3c824b
 ---
+
 # MuonBP: Faster Muon via Block-Periodic Orthogonalization
 
 **Conference**: ICLR 2026  
@@ -116,8 +122,8 @@ Reducing $P$ directly lowers loss across all TP degrees, particularly at higher 
 - [\[ICLR 2026\] Error Feedback for Muon and Friends](error_feedback_for_muon_and_friends.md)
 - [\[ICLR 2026\] Distributionally Robust Linear Regression with Block Lewis Weights](distributionally_robust_linear_regression_with_block_lewis_weights.md)
 - [\[ICLR 2026\] How Muon's Spectral Design Benefits Generalization: A Study on Imbalanced Data](how_muons_spectral_design_benefits_generalization_a_study_on_imbalanced_data.md)
-- [\[ICLR 2026\] Convergence of Muon with Newton-Schulz](convergence_of_muon_with_newton-schulz.md)
 - [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
+- [\[ICLR 2026\] Convergence of Muon with Newton-Schulz](convergence_of_muon_with_newton-schulz.md)
 
 </div>
 

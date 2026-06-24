@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SPECS: Decoupling Multimodal Learning via Self-distilled Preference-based Cold Start
 description: >-
-  [ICLR 2026][Multimodal VLM][DPO] SPECS redesigns the cold start phase of multimodal large models before entering RLVR: it first constructs preference pairs that distinguish only the output paradigm through self-distillation, then uses DPO+SFT loss for format pre-alignment, and finally applies GRPO for deep reasoning. This approach achieves better gene
+  [ICLR2026][Multimodal VLM][Multimodal reasoning] SPECS redesigns the cold start phase of multimodal large models before entering RLVR: it first constructs preference pairs that distinguish only the output paradigm through self-distillation, then uses DPO+SFT loss for format pre-alignment, and finally applies GRPO for deep reasoning. This approach achieves better generalization, training stability, and multimodal reasoning performance than traditional SFT cold starts.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - DPO
-  - GRPO
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Multimodal reasoning"
+  - "preference cold start"
+  - "self-distillation"
+  - "DPO"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 828e140c3a08056e
+content_hash: 21c605aef7247680
 ---
+
 # SPECS: Decoupling Multimodal Learning via Self-distilled Preference-based Cold Start
 
 **Conference**: ICLR2026  
@@ -180,7 +184,7 @@ Another key ablation is the cold start method itself. DPO-based GRPO outperforme
 - [\[ECCV 2024\] Decoupling Common and Unique Representations for Multimodal Self-supervised Learning](../../ECCV2024/multimodal_vlm/decoupling_common_and_unique_representations_for_multimodal_self-supervised_lear.md)
 - [\[ICLR 2026\] Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning](decoupling_primitive_with_experts_dynamic_feature_alignment_for_compositional_ze.md)
 - [\[ICLR 2026\] Thinking as Society: Multi-Social-Agent Self-Distillation for Multimodal Misinformation Detection](thinking_as_society_multi-social-agent_self-distillation_for_multimodal_misinfor.md)
-- [\[ICLR 2026\] CapRL: Stimulating Dense Image Caption Capabilities via Reinforcement Learning](caprl_stimulating_dense_image_caption_capabilities_via_reinforcement_learning.md)
+- [\[ICLR 2026\] CapRL: Stimulating Dense Image Capabilities via Reinforcement Learning](caprl_stimulating_dense_image_caption_capabilities_via_reinforcement_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training
 description: >-
-  [CVPR 2026][Physics & Scientific Computing][Paper Note] Ours proposes NESTOR, a nested MoE neural operator. It captures global features of different PDE types through image-level MoE and local correlations within physical fields through token-level Sub-MoE. It achieves large-scale pre-training across 12 PDE datasets and effectively transfers to downstream tasks.
+  [CVPR 2026][Scientific Computing][Neural Operator] Ours proposes NESTOR, a nested MoE neural operator. It captures global features of different PDE types through image-level MoE and local correlations within physical fields through token-level Sub-MoE. It achieves large-scale pre-training across 12 PDE datasets and effectively transfers to downstream tasks.
 tags:
-  - CVPR 2026
-  - Physics & Scientific Computing
+  - "CVPR 2026"
+  - "Scientific Computing"
+  - "Neural Operator"
+  - "Mixture of Experts (MoE)"
+  - "PDE Solving"
+  - "Large-Scale Pre-training"
+  - "Fourier Attention"
 date: 2026-05-08
-content_hash: 0be62cefdb0d793c
+content_hash: 922e0154487c0210
 ---
+
 # NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training
 
 **Conference**: CVPR 2026  
@@ -167,11 +173,8 @@ Introducing nested MoE into PDE neural operators is a significant innovation. Th
 
 ## Related Papers
 
-- [\[AAAI 2026\] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations](../../AAAI2026/physics/physicscorrect_a_training-free_approach_for_stable_neural_pde_simulations.md)
-- [\[ICLR 2026\] One Operator to Rule Them All? On Boundary-Indexed Operator Families in Neural PDE Solvers](../../ICLR2026/physics/one_operator_to_rule_them_all_on_boundary-indexed_operator_families_in_neural_pd.md)
-- [\[ICML 2026\] Topology-Preserving Neural Operator Learning via Hodge Decomposition](../../ICML2026/physics/topology-preserving_neural_operator_learning_via_hodge_decomposition.md)
-- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
-- [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](../../NeurIPS2025/physics/enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
+- [\[CVPR 2026\] EHETM: High-Quality and Efficient Turbulence Mitigation with Events](high-quality_and_efficient_turbulence_mitigation_with_events.md)
+- [\[CVPR 2026\] Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis](continuous_exposure-time_modeling_for_realistic_atmospheric_turbulence_synthesis.md)
 
 </div>
 

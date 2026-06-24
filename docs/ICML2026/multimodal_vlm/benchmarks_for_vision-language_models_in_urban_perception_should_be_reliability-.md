@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Benchmarks for Vision-Language Models in Urban Perception Should Be Reliability-Aware and Negotiated
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper proposes that VLM urban perception benchmarks should possess two key attributes: "reliability-aware" and "negotiated." By utilizing a benchmark comprising 100 Montreal street-view images, 12 community annotators, and 30 measurement dimensions, it reveals that model alignment is positively correlated with ann
+  [ICML2026][Multimodal VLM][VLM Evaluation] This paper proposes that VLM urban perception benchmarks should possess two key attributes: "reliability-aware" and "negotiated." By utilizing a benchmark comprising 100 Montreal street-view images, 12 community annotators, and 30 measurement dimensions, it reveals that model alignment is positively correlated with annotator consistency and that models exhibit systematic distributional biases compared to humans in subjective evaluati…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "VLM Evaluation"
+  - "Urban Perception"
+  - "Annotator Reliability"
+  - "Benchmark Negotiation"
+  - "Street-view Imagery"
 date: 2026-05-08
-content_hash: 340e2c615c237413
+content_hash: a98e616708b1e4d0
 ---
+
 # Benchmarks for Vision-Language Models in Urban Perception Should Be Reliability-Aware and Negotiated
 
 **Conference**: ICML2026  

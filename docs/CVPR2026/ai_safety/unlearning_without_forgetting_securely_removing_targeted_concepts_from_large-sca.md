@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlearning without Forgetting: Securely Removing Targeted Concepts from Large-Scale Vision-Language Open-Vocabulary Detectors
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] SafeDetect constrains the concept unlearning of open-vocabulary detectors (e.g., GroundingDINO, LLM-Det) to parameter updates within the "null space of the retained concept subspace." Combined with a one-step mean-flow unlearning target and cross-modal decoupling loss, it removes target concepts (such as faces or speci
+  [CVPR 2026][AI Safety][Machine Unlearning] SafeDetect constrains the concept unlearning of open-vocabulary detectors (e.g., GroundingDINO, LLM-Det) to parameter updates within the "null space of the retained concept subspace." Combined with a one-step mean-flow unlearning target and cross-modal decoupling loss, it removes target concepts (such as faces or specific individuals) with minimal damage to retained concepts and zero-shot generalization. It achieves a 64.75% improvem…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Open-Vocabulary Detection"
+  - "Null-space Projection"
+  - "Cross-modal Decoupling"
+  - "Privacy Compliance"
 date: 2026-05-08
-content_hash: 6152480f40148562
+content_hash: 9f869ecca9932406
 ---
+
 # Unlearning without Forgetting: Securely Removing Targeted Concepts from Large-Scale Vision-Language Open-Vocabulary Detectors
 
 **Conference**: CVPR 2026  
@@ -138,16 +144,16 @@ Ablation of core components (LLM-Det Swin-T, OD task):
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses real-world privacy/compliance needs for OvOD deployment with low computational cost and high security.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 - [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
 - [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
-- [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
-- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
+- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
+- [\[ICLR 2026\] Towards Privacy-Guaranteed Label Unlearning in Vertical Federated Learning: Few-Shot Forgetting without Disclosure](../../ICLR2026/ai_safety/towards_privacy-guaranteed_label_unlearning_in_vertical_federated_learning_few-s.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AviaSafe: A Physics-Informed Data-Driven Model for Aviation Safety-Critical Cloud Forecasts
 description: >-
-  [CVPR 2026][Physics & Scientific Computing][Paper Note] AviaSafe embeds the "localization before quantification" hierarchical strategy and the long-validated "Icing Condition (IC) index" into a Swin Transformer backbone. It achieves the first global, 6-hourly, phase-separable (ice/liquid/rain/snow) cloud microphysics forecast, outperforming the FuXi baseline on 93.7% of var
+  [CVPR 2026][Physics & Scientific Computing][PINN] AviaSafe embeds the "localization before quantification" hierarchical strategy and the long-validated "Icing Condition (IC) index" into a Swin Transformer backbone. It achieves the first global, 6-hourly, phase-separable (ice/liquid/rain/snow) cloud microphysics forecast, outperforming the FuXi baseline on 93.7% of variable-lead time combinations and matching or exceeding the operational NWP ECMWF HRES on key background variab…
 tags:
-  - CVPR 2026
-  - Physics & Scientific Computing
+  - "CVPR 2026"
+  - "Physics & Scientific Computing"
+  - "PINN"
+  - "Cloud Microphysics Forecasting"
+  - "Aviation Safety"
+  - "Hierarchical Architecture"
+  - "Icing Condition Index"
 date: 2026-05-08
-content_hash: 490efe183a992ac7
+content_hash: 93d79e6b8969452d
 ---
+
 # AviaSafe: A Physics-Informed Data-Driven Model for Aviation Safety-Critical Cloud Forecasts
 
 **Conference**: CVPR 2026  
@@ -137,15 +143,16 @@ Table reporting 5-day average RMSE (lower is better):
 - **Value**: ⭐⭐⭐⭐ Highly applicable to aviation risk assessment and route optimization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](../../NeurIPS2025/physics/physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
+- [\[ICLR 2026\] FM4NPP: A Scaling Foundation Model for Nuclear and Particle Physics](../../ICLR2026/physics/fm4npp_a_scaling_foundation_model_for_nuclear_and_particle_physics.md)
+- [\[ICLR 2026\] Iterative Training of Physics-Informed Neural Networks with Fourier-enhanced Features](../../ICLR2026/physics/iterative_training_of_physics-informed_neural_networks_with_fourier-enhanced_fea.md)
 - [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
-- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
-- [\[CVPR 2026\] PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation](physskin_real-time_and_generalizable_physics-based_animation_via_self-supervised.md)
-- [\[CVPR 2026\] AeroAgent: A Vision-Physics-Decision Framework for Aerodynamic Vehicle Design](aeroagent_a_vision-physics-decision_framework_for_aerodynamic_vehicle_design.md)
+- [\[ICLR 2026\] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning](../../ICLR2026/physics/uncertainty-aware_diagnostics_for_physics-informed_machine_learning.md)
 
 </div>
 

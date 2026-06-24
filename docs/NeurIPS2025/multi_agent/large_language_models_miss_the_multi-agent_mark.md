@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Large Language Models Miss the Multi-Agent Mark
 description: >-
-  [NeurIPS 2025][Multi-Agent][Multi-agent systems] This position paper systematically surveys 1,400+ papers to argue that current LLM-based multi-agent systems (MAS LLMs) deviate from foundational MAS theory along four dim…
+  [NeurIPS 2025][Multi-Agent][Multi-agent systems] This position paper systematically surveys 1,400+ papers to argue that current LLM-based multi-agent systems (MAS LLMs) deviate from foundational MAS theory along four dimensions: LLMs lack native social behavior, environment design is LLM-centric, asynchronous coordination and standard communication protocols are absent, and emergent behaviors lack quantification. The paper warns that the field risks reinventing the wheel whil…
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Asynchronous communication"
   - "Emergent behavior"
 date: 2026-05-08
-content_hash: af3b8cbde3d47805
+content_hash: e457bbe5bb753d63
 ---
 
 # Large Language Models Miss the Multi-Agent Mark
@@ -123,9 +123,9 @@ A survey of 60+ papers claiming to study emergent behavior finds that the vast m
 
 - [\[NeurIPS 2025\] Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?](debate_or_vote_which_yields_better_decisions_in_multi-agent_large_language_model.md)
 - [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](../../ACL2026/multi_agent/agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
+- [\[ICLR 2026\] Cache-to-Cache: Direct Semantic Communication Between Large Language Models](../../ICLR2026/multi_agent/cache-to-cache_direct_semantic_communication_between_large_language_models.md)
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
-- [\[NeurIPS 2025\] Communicating Plans, Not Percepts: Scalable Multi-Agent Coordination with Embodied World Models](communicating_plans_not_percepts_scalable_multi-agent_coordination_with_embodied.md)
-- [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
+- [\[ICLR 2026\] Emergent Coordination in Multi-Agent Language Models](../../ICLR2026/multi_agent/emergent_coordination_in_multi-agent_language_models.md)
 
 </div>
 

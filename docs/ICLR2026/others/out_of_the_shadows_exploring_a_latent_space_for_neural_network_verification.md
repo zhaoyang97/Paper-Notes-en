@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Out of the Shadows: Exploring a Latent Space for Neural Network Verification
 description: >-
-  [ICLR 2026][Others][zonotope] By treating a zonotope as a "projection (shadow)" of a high-dimensional hypercube, it is discovered that the input set and the output enclosure share the same latent space. Based on this, a specification-driven input refinement method is proposed to back-propagate unsafe constraints from the output to thin the input sp
+  [ICLR 2026][Neural Network Verification] By treating a zonotope as a "projection (shadow)" of a high-dimensional hypercube, it is discovered that the input set and the output enclosure share the same latent space. Based on this, a specification-driven input refinement method is proposed to back-propagate unsafe constraints from the output to thin the input space, reducing the number of branch-and-bound subproblems by 60-65%. All operations are matrix-based to achieve efficien…
 tags:
-  - ICLR 2026
-  - Others
-  - zonotope
+  - "ICLR 2026"
+  - "Neural Network Verification"
+  - "Latent Space"
+  - "Zonotope"
+  - "Branch-and-Bound"
+  - "Reachability Analysis"
 date: 2026-05-08
-content_hash: c276067fca2381f4
+content_hash: f227d79a70cf3bd5
 ---
+
 # Out of the Shadows: Exploring a Latent Space for Neural Network Verification
 
 **Conference**: ICLR 2026  
@@ -162,15 +166,15 @@ Latent space falsification finds **60.3%** more counterexamples than FGSM withou
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Exploring State-Space Models for Data-Specific Neural Representations](exploring_state-space_models_for_data-specific_neural_representations.md)
 - [\[ICLR 2026\] Fractional-Order Spiking Neural Network](fractional-order_spiking_neural_network.md)
-- [\[ICLR 2026\] From atom to space：面向材料空间性质的区域化读出函数 SpatialRead](from_atom_to_space_a_region-based_readout_function_for_spatial_properties_of_mat.md)
 - [\[AAAI 2026\] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details](../../AAAI2026/others/learning_compact_latent_space_for_representing_neural_signed_distance_functions_.md)
 - [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](../../CVPR2026/others/hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
+- [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
 
 </div>
 

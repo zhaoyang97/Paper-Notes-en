@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper proposes a two-phase continual fine-tuning (CFT) framework—fine-tuning on English instruction data first, followed by multilingual data—finding that the instruction similarity between datasets across phases is the key factor determining whether English proficiency degrades. It further effectively mitigates r
+  [ACL 2026 Findings][Multilingual & Machine Translation][Continual fine-tuning] This paper proposes a two-phase continual fine-tuning (CFT) framework—fine-tuning on English instruction data first, followed by multilingual data—finding that the instruction similarity between datasets across phases is the key factor determining whether English proficiency degrades. It further effectively mitigates representation drift and English forgetting caused by dissimilar datasets through…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026 Findings"
+  - "Multilingual & Machine Translation"
+  - "Continual fine-tuning"
+  - "multilingual adaptation"
+  - "catastrophic forgetting"
+  - "dataset similarity"
+  - "representation drift"
 date: 2026-05-08
-content_hash: 2095e5a7190c11f5
+content_hash: f5fb7a081636b104
 ---
+
 # Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -153,10 +159,10 @@ Full-parameter fine-tuning with bf16 precision. Phases 1 and 2 use full training
 ## Related Papers
 
 - [\[ACL 2025\] SIFT-50M: A Large-Scale Multilingual Dataset for Speech Instruction Fine-Tuning](../../ACL2025/multilingual_mt/sift-50m_a_large-scale_multilingual_dataset_for_speech_instruction_fine-tuning.md)
+- [\[ACL 2026\] Modular Monolingual Adaptation using Pretrained Language Models](modular_monolingual_adaptation_using_pretrained_language_models.md)
 - [\[NeurIPS 2025\] Exploring the Translation Mechanism of Large Language Models](../../NeurIPS2025/multilingual_mt/exploring_the_translation_mechanism_of_large_language_models.md)
 - [\[ACL 2026\] Mitigating Catastrophic Forgetting in Target Language Adaptation of LLMs via Source-Shielded Updates](mitigating_catastrophic_forgetting_in_target_language_adaptation_of_llms_via_sou.md)
 - [\[NeurIPS 2025\] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following](../../NeurIPS2025/multilingual_mt/xifbench_evaluating_large_language_models_on_multilingual_instruction_following.md)
-- [\[ACL 2026\] Modular Monolingual Adaptation using Pretrained Language Models](modular_monolingual_adaptation_using_pretrained_language_models.md)
 
 </div>
 

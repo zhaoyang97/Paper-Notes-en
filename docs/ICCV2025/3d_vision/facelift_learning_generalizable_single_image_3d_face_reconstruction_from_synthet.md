@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads
 description: >-
-  [ICCV 2025][3D Vision][3D face reconstruction] This paper presents FaceLift, a single-image 360° high-quality 3D human head reconstruction method trained exclusively on synthetic data yet generalizing well to real-world…
+  [ICCV 2025][3D Vision][3D face reconstruction] This paper presents FaceLift, a single-image 360° high-quality 3D human head reconstruction method trained exclusively on synthetic data yet generalizing well to real-world images. It generates identity-consistent multi-view images via a multi-view latent diffusion model, then feeds them into a Transformer-based reconstructor to produce pixel-aligned 3D Gaussian representations.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "single-image reconstruction"
   - "identity preservation"
 date: 2026-05-08
-content_hash: 96959ea788791448
+content_hash: 199aa42e96900720
 ---
 
 # FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads
@@ -190,10 +190,10 @@ The reconstructor is trained with a combination of **MSE loss and perceptual los
 ## Related Papers
 
 - [\[ICCV 2025\] CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from A Single-View Image](catsplat_contextaware_transformer_with_spatial_guidance_for.md)
+- [\[ICLR 2026\] Pixel3DMM: Versatile Screen-Space Priors for Single-Image 3D Face Reconstruction](../../ICLR2026/3d_vision/pixel3dmm_versatile_screen-space_priors_for_single-image_3d_face_reconstruction.md)
 - [\[ICCV 2025\] Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction](baking_gaussian_splatting_into_diffusion_denoiser_for_fast_and_scalable_single-s.md)
-- [\[ICCV 2025\] A Recipe for Generating 3D Worlds from a Single Image](a_recipe_for_generating_3d_worlds_from_a_single_image.md)
 - [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
-- [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
+- [\[CVPR 2025\] Wonderland: Navigating 3D Scenes from a Single Image](../../CVPR2025/3d_vision/wonderland_navigating_3d_scenes_from_a_single_image.md)
 
 </div>
 

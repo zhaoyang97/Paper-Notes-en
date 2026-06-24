@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SIR: Structured Image Representations for Explainable Robot Learning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Interpretability] SIR transforms robotic observations into a fully connected scene graph and employs an end-to-end learnable sparsification module to retain only task-relevant nodes. This "thinned subgraph" serves as the state representation for the policy—improving success rates on RoboCasa from 14.81% to 19.5% while providing intrinsi
+  [CVPR 2026][Robotics][Imitation Learning] SIR transforms robotic observations into a fully connected scene graph and employs an end-to-end learnable sparsification module to retain only task-relevant nodes. This "thinned subgraph" serves as the state representation for the policy—improving success rates on RoboCasa from 14.81% to 19.5% while providing intrinsic explainability. This allows for the identification of spurious correlations and positional biases within datasets.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Interpretability
+  - "CVPR 2026"
+  - "Robotics"
+  - "Imitation Learning"
+  - "Scene Graph"
+  - "Graph Sparsification"
+  - "Explainability"
+  - "Goal-Conditioned Policy"
 date: 2026-05-08
-content_hash: 14866e11b4e394ea
+content_hash: 5a3f26f0bfe20caf
 ---
+
 # SIR: Structured Image Representations for Explainable Robot Learning
 
 **Conference**: CVPR 2026  
@@ -131,15 +136,15 @@ Sparsification methods (RoboCasa, Avg-24 Success %):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations](pvp_data-efficient_humanoid_robot_learning_with_proprioceptive-privileged_contra.md)
 - [\[AAAI 2026\] Theory of Mind for Explainable Human-Robot Interaction](../../AAAI2026/robotics/theory_of_mind_for_explainable_human-robot_interaction.md)
 - [\[CVPR 2026\] Video2Robo: 3DGS-based Synthetic Data from One Video Enables Scalable Robot Learning](video2robo_3dgs-based_synthetic_data_from_one_video_enables_scalable_robot_learn.md)
+- [\[ICLR 2026\] Interleave-VLA: Enhancing Robot Manipulation with Image-Text Interleaved Instructions](../../ICLR2026/robotics/interleave-vla_enhancing_robot_manipulation_with_image-text_interleaved_instruct.md)
 - [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
-- [\[CVPR 2026\] DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation](dynbridge_bridging_imagination_and_control_through_interaction_dynamics_for_robo.md)
-- [\[CVPR 2026\] GeniNav: Generative Model Driven Image-Goal Navigation via Imagination-Guided Consistency Flow Matching](geninav_generative_model_driven_image-goal_navigation_via_imagination-guided_con.md)
 
 </div>
 

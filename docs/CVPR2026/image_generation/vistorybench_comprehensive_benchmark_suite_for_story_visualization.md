@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] ViStoryBench constructs a comprehensive benchmark comprising 80 multi-style stories, 344 characters, and 1,317 shots. It proposes 12 automated evaluation metrics (covering character consistency, style similarity, prompt alignment, copy-paste detection, etc.) to systematically evaluate over 25 open-source and commercial
+  [CVPR 2026][Image Generation][Story Visualization] ViStoryBench constructs a comprehensive benchmark comprising 80 multi-style stories, 344 characters, and 1,317 shots. It proposes 12 automated evaluation metrics (covering character consistency, style similarity, prompt alignment, copy-paste detection, etc.) to systematically evaluate over 25 open-source and commercial story visualization methods, filling the gap of unified evaluation standards in the field.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Story Visualization"
+  - "Benchmarking"
+  - "Character Consistency"
+  - "Multi-dimensional Evaluation"
+  - "Narrative Generation"
 date: 2026-05-08
-content_hash: 7c2037cfe3813805
+content_hash: ecad47a48cf078c8
 ---
+
 # ViStoryBench: Comprehensive Benchmark Suite for Story Visualization
 
 **Conference**: CVPR 2026  
@@ -119,16 +125,16 @@ ViStoryBench is an evaluation benchmark and does not involve model training. Its
 - Value: ⭐⭐⭐⭐⭐ Fills the gap of unified evaluation standards in story visualization, highly valuable for future research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
+- [\[CVPR 2026\] DreamingComics: A Story Visualization Pipeline via Subject and Layout Customized Generation using Video Models](dreamingcomics_a_story_visualization_pipeline_via_subject_and_layout_customized_.md)
+- [\[ICLR 2026\] Story-Iter: A Training-free Iterative Paradigm for Long Story Visualization](../../ICLR2026/image_generation/story-iter_a_training-free_iterative_paradigm_for_long_story_visualization.md)
 - [\[CVPR 2026\] EMMA: Concept Erasure Benchmark with Comprehensive Semantic Metrics and Diverse Categories](emma_concept_erasure_benchmark_with_comprehensive_semantic_metrics_and_diverse_c.md)
 - [\[CVPR 2026\] RealUnify: Do Unified Models Truly Benefit from Unification? A Comprehensive Benchmark](realunify_do_unified_models_truly_benefit_from_unification_a_comprehensive_bench.md)
-- [\[CVPR 2026\] ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement](showtable_unlocking_creative_table_visualization_with_collaborative_reflection_a.md)
-- [\[CVPR 2026\] ProcessMaker: A Generalized Process Visualization Framework with Adaptive Sequence Steps on Diffusion Transformers](processmaker_a_generalized_process_visualization_framework_with_adaptive_sequenc.md)
-- [\[CVPR 2026\] MICo-150K: A Comprehensive Dataset Advancing Multi-Image Composition](mico-150k_a_comprehensive_dataset_advancing_multi-image_composition.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation
 description: >-
-  [CVPR 2026][Autonomous Driving][3D Gaussian] GaussianDWM utilizes "Language-enhanced 3D Gaussians" as a unified scene representation. By embedding CLIP language features into each Gaussian ellipsoid, it achieves explicit alignment between text and 3D geometry. Through task-aware sampling, compact 3D tokens are fed into an LLM for scene understanding (description/
+  [CVPR 2026][Autonomous Driving][Driving World Model] GaussianDWM utilizes "Language-enhanced 3D Gaussians" as a unified scene representation. By embedding CLIP language features into each Gaussian ellipsoid, it achieves explicit alignment between text and 3D geometry. Through task-aware sampling, compact 3D tokens are fed into an LLM for scene understanding (description/2D-3D grounding/planning), while dual-condition diffusion performs RGB-D spatiotemporal generation. On the…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 3D Gaussian
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Driving World Model"
+  - "3D Gaussian"
+  - "Scene Understanding"
+  - "Multi-modal Generation"
+  - "Visual Question Answering"
 date: 2026-05-08
-content_hash: 312a45a7c5073d0b
+content_hash: e6e51149f746fe3b
 ---
+
 # GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation
 
 **Conference**: CVPR 2026  
@@ -148,8 +153,8 @@ Ours leads across $\pm 1m / \pm 2m$ offsets. Reconstruction-based methods (Stree
 
 - [\[ICCV 2025\] Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation](../../ICCV2025/autonomous_driving/hermes_a_unified_self-driving_world_model_for_simultaneous_3d_scene_understandin.md)
 - [\[CVPR 2026\] Unifying Language-Action Understanding and Generation for Autonomous Driving](unifying_language-action_understanding_and_generation_for_autonomous_driving.md)
-- [\[CVPR 2026\] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling](f3dgs_federated_3d_gaussian_splatting_for_decentralized_multi-agent_world_modeli.md)
-- [\[CVPR 2026\] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World](worldlens_full-spectrum_evaluations_of_driving_world_models_in_real_world.md)
+- [\[CVPR 2026\] GenieDrive: Towards Physics-Aware Driving World Model with 4D Occupancy Guided Video Generation](geniedrive_towards_physics-aware_driving_world_model_with_4d_occupancy_guided_vi.md)
+- [\[ICLR 2026\] GaussianFusion: Unified 3D Gaussian Representation for Multi-Modal Fusion Perception](../../ICLR2026/autonomous_driving/gaussianfusion_unified_3d_gaussian_representation_for_multi-modal_fusion_percept.md)
 - [\[CVPR 2026\] MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving](meanfuser_fast_one-step_multi-modal_trajectory_generation_and_adaptive_reconstru.md)
 
 </div>

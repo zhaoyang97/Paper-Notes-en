@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Frontier Exploration on Graphs with Applications to Network-Based Disease Testing
 description: >-
-  [NeurIPS 2025][Robotics][Gittins Index] This paper proposes the Adaptive Frontier Exploration on Graphs (AFEG) framework and designs a Gittins index-based policy that is provably optimal when the graph is a forest. On re…
+  [NeurIPS 2025][Robotics][Gittins Index] This paper proposes the Adaptive Frontier Exploration on Graphs (AFEG) framework and designs a Gittins index-based policy that is provably optimal when the graph is a forest. On real-world sexually transmitted disease testing networks, the method identifies nearly all HIV-positive individuals by testing only half the population, substantially outperforming greedy and DQN baselines.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Disease Testing"
   - "Markov Random Field"
 date: 2026-05-08
-content_hash: 3257c5e2d50f4da0
+content_hash: 62a4c237e3f6f36c
 ---
 
 # Adaptive Frontier Exploration on Graphs with Applications to Network-Based Disease Testing
@@ -125,9 +125,9 @@ The input consists of a graph $\mathcal{G}$, a joint label distribution $\mathca
 
 - [\[NeurIPS 2025\] MaNGO: Adaptable Graph Network Simulators via Meta-Learning](mango_-_adaptable_graph_network_simulators_via_meta-learning.md)
 - [\[NeurIPS 2025\] Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning](asymptotically_stable_quaternion-valued_hopfield-structured_neural_network_with_.md)
+- [\[ICLR 2026\] Rodrigues Network for Learning Robot Actions](../../ICLR2026/robotics/rodrigues_network_for_learning_robot_actions.md)
 - [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
 - [\[NeurIPS 2025\] Act to See, See to Act: Diffusion-Driven Perception-Action Interplay for Adaptive Policies](act_to_see_see_to_act_diffusion-driven_perception-action_interplay_for_adaptive_.md)
-- [\[NeurIPS 2025\] Memory-Augmented Potential Field Theory: A Framework for Adaptive Control in Non-Convex Domains](memory-augmented_potential_field_theory_a_framework_for_adaptive_control_in_non-.md)
 
 </div>
 

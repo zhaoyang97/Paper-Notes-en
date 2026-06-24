@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GTM: A General Time-series Model for Enhanced Representation Learning
 description: >-
-  [ICLR 2026][Time Series][Paper Note] GTM is proposed as a general time-series foundation model that captures time-granularity-aware features through a frequency-domain attention mechanism and unifies reconstruction and autoregressive pre-training objectives via hybrid masking. It achieves SOTA performance across multiple tasks, including forecasting, impu
+  [ICLR 2026][Time Series][Time-series foundation model] GTM is proposed as a general time-series foundation model that captures time-granularity-aware features through a frequency-domain attention mechanism and unifies reconstruction and autoregressive pre-training objectives via hybrid masking. It achieves SOTA performance across multiple tasks, including forecasting, imputation, anomaly detection, and classification.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time-series foundation model"
+  - "frequency-domain attention"
+  - "hybrid masking pre-training"
+  - "multi-task"
+  - "time-granularity-aware"
 date: 2026-05-08
-content_hash: a0d6744797a1ac76
+content_hash: 80c5c294d49945fa
 ---
+
 # GTM: A General Time-series Model for Enhanced Representation Learning
 
 **Conference**: ICLR 2026  
@@ -127,9 +133,9 @@ Average MSE/MAE, prediction length $T \in \{96, 192, 336, 720\}$:
 
 - [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
 - [\[ICLR 2026\] FeDaL: Federated Dataset Learning for General Time Series Foundation Models](fedal_federated_dataset_learning_for_general_time_series_foundation_models.md)
+- [\[ICLR 2026\] TEN-DM: Topology-Enhanced Diffusion Model for Spatio-Temporal Event Prediction](ten-dm_topology-enhanced_diffusion_model_for_spatio-temporal_event_prediction.md)
 - [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
 - [\[ICLR 2026\] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning](trident_cross-domain_trajectory_spatio-temporal_representation_via_distance-pres.md)
-- [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
 
 </div>
 

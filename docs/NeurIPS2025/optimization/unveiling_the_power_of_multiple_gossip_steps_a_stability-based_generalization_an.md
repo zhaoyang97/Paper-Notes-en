@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training
 description: >-
-  [NeurIPS 2025][Optimization][Decentralized SGD] This paper presents the first stability-based generalization analysis of Multiple Gossip Steps (MGS) in Decentralized SGD (DSGD)…
+  [NeurIPS 2025 Spotlight][Optimization][Decentralized SGD] This paper presents the first stability-based generalization analysis of Multiple Gossip Steps (MGS) in Decentralized SGD (DSGD), proving that MGS reduces optimization error at an exponential rate to tighten generalization bounds, while also establishing that even as the number of Gossip steps approaches infinity, DSGD cannot fully close the generalization gap with centralized training.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Optimization"
   - "Decentralized SGD"
   - "Gossip Communication"
@@ -12,7 +12,7 @@ tags:
   - "Algorithmic Stability"
   - "Data Heterogeneity"
 date: 2026-05-08
-content_hash: bc17f1ac884e3c7c
+content_hash: 4ea5104fea8f5ade
 ---
 
 # Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training
@@ -135,10 +135,10 @@ Verified on CIFAR-10 with ResNet-20 and a 5-node ring topology:
 ## Related Papers
 
 - [\[CVPR 2026\] The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers](../../CVPR2026/optimization/the_power_of_decaying_steps_enhancing_attack_stability_and_transferability_for_s.md)
+- [\[ICML 2025\] Enhancing Parallelism in Decentralized Stochastic Convex Optimization](../../ICML2025/optimization/enhancing_parallelism_in_decentralized_stochastic_convex_optimization.md)
+- [\[ICML 2026\] Improved Convergence Analysis of Topology Dependence in Decentralized SGD](../../ICML2026/optimization/improved_convergence_analysis_of_topology_dependence_in_decentralized_sgd.md)
 - [\[NeurIPS 2025\] A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias](a_unified_stability_analysis_of_sam_vs_sgd_role_of_data_cohe.md)
-- [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
-- [\[NeurIPS 2025\] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise](unveiling_m-sharpness_through_the_structure_of_stochastic_gradient_noise.md)
-- [\[NeurIPS 2025\] Problem-Parameter-Free Decentralized Bilevel Optimization](problem-parameter-free_decentralized_bilevel_optimization.md)
+- [\[NeurIPS 2025\] Escaping Saddle Points without Lipschitz Smoothness: The Power of Nonlinear Preconditioning](escaping_saddle_points_without_lipschitz_smoothness_the_power_of_nonlinear_preco.md)
 
 </div>
 

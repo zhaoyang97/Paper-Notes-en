@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] This paper highlights two types of overconfidence in semi-supervised 3D medical image segmentation: model overconfidence in pseudo-labels and overly optimistic evaluation protocols. It proposes TCSeg, which utilizes confidence-uncertainty dual-axis reliability and tri-space calibration (probability, feature, and image
+  [ICML 2026][Medical Imaging][Semi-supervised learning] This paper highlights two types of overconfidence in semi-supervised 3D medical image segmentation: model overconfidence in pseudo-labels and overly optimistic evaluation protocols. It proposes TCSeg, which utilizes confidence-uncertainty dual-axis reliability and tri-space calibration (probability, feature, and image spaces) to suppress confirmation bias. It also advocates for a rigorous evaluation protocol involving mul…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Semi-supervised learning"
+  - "3D medical image segmentation"
+  - "pseudo-label calibration"
+  - "uncertainty estimation"
+  - "multi-run evaluation"
 date: 2026-05-08
-content_hash: aafb19b44b4349af
+content_hash: 97abe671359f051f
 ---
+
 # Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?
 
 **Conference**: ICML 2026  
@@ -152,11 +158,11 @@ Both dual-axis reliability and tri-space calibration yield visible gains, partic
 
 ## Related Papers
 
-- [\[ECCV 2024\] Alternate Diverse Teaching for Semi-supervised Medical Image Segmentation](../../ECCV2024/medical_imaging/alternate_diverse_teaching_for_semi-supervised_medical_image_segmentation.md)
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](../../AAAI2026/medical_imaging/bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
 - [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
-- [\[CVPR 2025\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/semantic_class_distribution_learning_for_debiasing_semi-supervised_medical_image.md)
 - [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](../../AAAI2026/medical_imaging/propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
+- [\[ECCV 2024\] Alternate Diverse Teaching for Semi-supervised Medical Image Segmentation](../../ECCV2024/medical_imaging/alternate_diverse_teaching_for_semi-supervised_medical_image_segmentation.md)
+- [\[AAAI 2026\] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation](../../AAAI2026/medical_imaging/dualfete_revisiting_teacher-student_interactions_from_a_feedback_perspective_for.md)
 
 </div>
 

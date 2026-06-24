@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pay Less Attention to Function Words for Free Robustness of Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] The authors discover that "function words" (high-frequency words with minimal semantic content like *the*, *a*, *of*) are the vulnerability points of vision-language models under cross-modal adversarial attacks. They propose **Function-word De-Attention (FDA)**: calculating a parallel "function-word-to-image" cross-att
+  [ICLR 2026][Multimodal VLM][Vision-Language Models] The authors discover that "function words" (high-frequency words with minimal semantic content like *the*, *a*, *of*) are the vulnerability points of vision-language models under cross-modal adversarial attacks. They propose **Function-word De-Attention (FDA)**: calculating a parallel "function-word-to-image" cross-attention as a distraction within the fusion encoder, and differentially subtracting it from the original atten…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Adversarial Robustness"
+  - "Cross-modal Alignment"
+  - "Function Words"
+  - "Differential Attention"
 date: 2026-05-08
-content_hash: f4a1c1cd28a12661
+content_hash: 0485019a256fb207
 ---
+
 # Pay Less Attention to Function Words for Free Robustness of Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -136,10 +142,10 @@ Overview: In retrieval, FDA achieved average ASR reductions of 18/13/53% across 
 ## Related Papers
 
 - [\[ICLR 2026\] From Pixels to Words -- Towards Native Vision-Language Primitives at Scale](from_pixels_to_words_--_towards_native_vision-language_primitives_at_scale.md)
+- [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](../../CVPR2026/multimodal_vlm/agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
 - [\[ICCV 2025\] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation](../../ICCV2025/multimodal_vlm/is_less_more_exploring_token_condensation_as_training-free_test-time_adaptation.md)
 - [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
 - [\[ICLR 2026\] Error Notebook-Guided, Training-Free Part Retrieval in 3D CAD Assemblies via Vision-Language Models](error_notebook-guided_training-free_part_retrieval_in_3d_cad_assemblies_via_visi.md)
-- [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](../../ICML2026/multimodal_vlm/large_vision-language_models_get_lost_in_attention.md)
 
 </div>
 

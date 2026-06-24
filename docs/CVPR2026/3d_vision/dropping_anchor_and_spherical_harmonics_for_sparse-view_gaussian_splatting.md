@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] To address the overfitting issue of 3DGS in sparse-view scenarios, this paper proposes DropAnSH-GS: it uses Anchor-based Dropout (dropping anchor points and their neighboring Gaussian clusters) instead of independent random Dropout to disrupt the local redundancy compensation effect, while introducing Spherical Harmoni
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] To address the overfitting issue of 3DGS in sparse-view scenarios, this paper proposes DropAnSH-GS: it uses Anchor-based Dropout (dropping anchor points and their neighboring Gaussian clusters) instead of independent random Dropout to disrupt the local redundancy compensation effect, while introducing Spherical Harmonics (SH) Dropout to suppress high-order SH overfitting and support lossless compression after training.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Sparse-view"
+  - "Dropout Regularization"
+  - "Spherical Harmonics"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: d15ba2c9a2dc8572
+content_hash: fb2edfe83a936902
 ---
+
 # DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -147,11 +152,11 @@ Key: DropAnSH-GS is a pure regularization strategy. It imposes implicit constrai
 
 ## Related Papers
 
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
+- [\[CVPR 2026\] Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics](efficient_hybrid_se3-equivariant_visuomotor_flow_policy_via_spherical_harmonics_.md)
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[CVPR 2026\] GAI-GS: A Wireless Channel Prediction Framework Injecting Ray-Object Interaction into 3DGS via Geometric Algebra Attention](a_geometric_algebra-informed_3dgs_framework_for_wireless_channel_prediction.md)
-- [\[CVPR 2026\] Coverage Optimization for Camera View Selection](coverage_optimization_for_camera_view_selection.md)
+- [\[ECCV 2024\] CoR-GS: Sparse-View 3D Gaussian Splatting via Co-Regularization](../../ECCV2024/3d_vision/cor-gs_sparse-view_3d_gaussian_splatting_via_co-regularization.md)
+- [\[CVPR 2026\] TWINGS: Thin Plate Splines Warp-aligned Initialization for Sparse-View Gaussian Splatting](twings_thin_plate_splines_warp-aligned_initialization_for_sparse-view_gaussian_s.md)
+- [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
 
 </div>
 

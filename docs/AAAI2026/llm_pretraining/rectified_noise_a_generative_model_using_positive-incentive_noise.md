@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rectified Noise: A Generative Model Using Positive-incentive Noise
 description: >-
-  [AAAI 2026][LLM Pretraining][Rectified Flow] This paper proposes Rectified Noise (ΔRN), which leverages the positive-incentive noise (π-noise) framework to learn a set of beneficial noise signals and inject them into the…
+  [AAAI 2026][LLM Pretraining][Rectified Flow] This paper proposes Rectified Noise (ΔRN), which leverages the positive-incentive noise (π-noise) framework to learn a set of beneficial noise signals and inject them into the velocity field of a pretrained Rectified Flow model, achieving a reduction in FID from 10.16 to 9.05 on ImageNet-1k with only 0.39% additional parameters.
 tags:
   - "AAAI 2026"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "SiT"
   - "Generative Models"
 date: 2026-05-08
-content_hash: 2629c9ba48d5a05d
+content_hash: c33acfdb82bd15f9
 ---
 
 # Rectified Noise: A Generative Model Using Positive-incentive Noise
@@ -214,11 +214,11 @@ Effect of the number of additional SiT blocks ($\mathcal{N}(\mu,\Sigma)$):
 
 ## Related Papers
 
+- [\[ICML 2025\] On the Role of Label Noise in the Feature Learning Process](../../ICML2025/llm_pretraining/on_the_role_of_label_noise_in_the_feature_learning_process.md)
 - [\[AAAI 2026\] PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer](prefixgpt_prefix_adder_optimization_by_a_generative_pre-trained_transformer.md)
 - [\[ICLR 2026\] Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms](../../ICLR2026/llm_pretraining/accessible_realistic_and_fair_evaluation_of_positive-unlabeled_learning_algorith.md)
-- [\[NeurIPS 2025\] Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding](../../NeurIPS2025/llm_pretraining/learning_to_flow_from_generative_pretext_tasks_for_neural_architecture_encoding.md)
-- [\[ICML 2026\] Predicting Large Model Test Losses with a Noisy Quadratic System](../../ICML2026/llm_pretraining/predicting_large_model_test_losses_with_a_noisy_quadratic_system.md)
-- [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_pretraining/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
+- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](../../ICLR2026/llm_pretraining/pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
+- [\[AAAI 2026\] TRACE: A Generalizable Drift Detector for Streaming Data-Driven Optimization](trace_a_generalizable_drift_detector_for_streaming_data-driven_optimization.md)
 
 </div>
 

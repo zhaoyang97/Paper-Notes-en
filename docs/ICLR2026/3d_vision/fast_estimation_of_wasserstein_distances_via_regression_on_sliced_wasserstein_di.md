@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fast Estimation of Wasserstein Distances via Regression on Sliced Wasserstein Distances
 description: >-
-  [ICLR 2026][3D Vision][Sliced Wasserstein] By leveraging the mathematical property that Sliced Wasserstein (SW) variants provide lower bounds of the Wasserstein distance while lifted SW variants provide upper bounds, the authors construct a minimalist linear regression model (RG framework). Trained with a small number of accurate Wasserstein pairs as supervisio
+  [ICLR 2026][3D Vision][Wasserstein Distance] By leveraging the mathematical property that Sliced Wasserstein (SW) variants provide lower bounds of the Wasserstein distance while lifted SW variants provide upper bounds, the authors construct a minimalist linear regression model (RG framework). Trained with a small number of accurate Wasserstein pairs as supervision, this high-precision proxy estimator significantly outperforms the Transformer-based method, Wasserstein Wormhole…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Sliced Wasserstein
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Wasserstein Distance"
+  - "Sliced Wasserstein"
+  - "Optimal Transport"
+  - "Linear Regression"
+  - "Point Cloud Classification"
 date: 2026-05-08
-content_hash: 5c2b9d85071b6393
+content_hash: ff0bbc0da56c3f19
 ---
+
 # Fast Estimation of Wasserstein Distances via Regression on Sliced Wasserstein Distances
 
 **Conference**: ICLR 2026  
@@ -148,8 +153,8 @@ Wormhole fails on MERFISH ($R^2=-3.6$), whereas RG-se maintains 0.98.
 - Value: ⭐⭐⭐⭐⭐ Practical, zero-tuning acceleration for Wasserstein distances.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models
 description: >-
-  [ICLR 2026][AI Safety][CLIP] This paper proposes AdvMask: instead of modifying pre-trained CLIP weights, it learns a set of binary masks for the vision encoder to "unearth" an inherently attack-resistant robust neural pathway by deactivating parameters sensitive to adversarial perturbations. This is combined with a Layer-wise Adaptive Feature Alig
+  [ICLR 2026][AI Safety][CLIP] This paper proposes AdvMask: instead of modifying pre-trained CLIP weights, it learns a set of binary masks for the vision encoder to "unearth" an inherently attack-resistant robust neural pathway by deactivating parameters sensitive to adversarial perturbations. This is combined with a Layer-wise Adaptive Feature Alignment (LAFA) loss specifically designed for adversarial robust fine-tuning in few-shot scenarios.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - CLIP
+  - "ICLR 2026"
+  - "AI Safety"
+  - "CLIP"
+  - "Adversarial Robustness"
+  - "Binary Mask"
+  - "Few-Shot"
+  - "Robust Neural Pathways"
+  - "Feature Alignment"
 date: 2026-05-08
-content_hash: e93d86a6ef31dedc
+content_hash: a32a9aac48448203
 ---
+
 # Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -140,9 +146,9 @@ This paper connects two lines of research: first, adversarial robust fine-tuning
 
 - [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](../../CVPR2026/ai_safety/hierarchically_robust_zero-shot_vision-language_models.md)
 - [\[ICLR 2026\] Tug-of-War No More: Harmonizing Accuracy and Robustness in Vision-Language Models via Stability-Aware Task Vector Merging](tug-of-war_no_more_harmonizing_accuracy_and_robustness_in_vision-language_models.md)
-- [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](../../CVPR2026/ai_safety/ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
-- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
-- [\[ICLR 2026\] Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling](robust_fine-tuning_from_non-robust_pretrained_models_mitigating_suboptimal_trans.md)
+- [\[ICLR 2026\] Discrete Latent Features Ablate Adversarial Attack: A Robust Prompt Tuning Framework for VLMs](discrete_latent_features_ablate_adversarial_attack_a_robust_prompt_tuning_framew.md)
+- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/ai_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
+- [\[ICLR 2026\] Towards Privacy-Guaranteed Label Unlearning in Vertical Federated Learning: Few-Shot Forgetting without Disclosure](towards_privacy-guaranteed_label_unlearning_in_vertical_federated_learning_few-s.md)
 
 </div>
 

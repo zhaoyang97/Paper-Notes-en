@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SeeDNorm: Self-Rescaled Dynamic Normalization
 description: >-
-  [ICLR 2026][Model Compression][RMSNorm] SeeDNorm is proposed as an adaptive dynamic normalization layer that dynamically adjusts the scaling coefficient by using the input itself as a condition. This preserves input norm information during the forward pass while maintaining RMSNorm-like adaptive gradient adjustment capabilities during backpropagation. It con
+  [ICLR 2026][Model Compression][Normalization Layer] SeeDNorm is proposed as an adaptive dynamic normalization layer that dynamically adjusts the scaling coefficient by using the input itself as a condition. This preserves input norm information during the forward pass while maintaining RMSNorm-like adaptive gradient adjustment capabilities during backpropagation. It consistently outperforms RMSNorm, LayerNorm, and DyT across language modeling and vision tasks with minimal add…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - RMSNorm
-  - DyT
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Normalization Layer"
+  - "Dynamic Scaling"
+  - "RMSNorm"
+  - "DyT"
+  - "Large Language Models"
 date: 2026-05-08
-content_hash: ebf92791f343b724
+content_hash: 7ae02c2e7c8f0415
 ---
+
 # SeeDNorm: Self-Rescaled Dynamic Normalization
 
 **Conference**: ICLR 2026  
@@ -189,8 +193,8 @@ Parameter initialization follows the principle of "starting as RMSNorm, with dyn
 - [\[ICLR 2026\] Inconsistency Biases in Dynamic Data Pruning](inconsistency_biases_in_dynamic_data_pruning.md)
 - [\[ICLR 2026\] Dr.LLM: Dynamic Layer Routing in LLMs](drllm_dynamic_layer_routing_in_llms.md)
 - [\[NeurIPS 2025\] Dependency Parsing is More Parameter-Efficient with Normalization](../../NeurIPS2025/model_compression/dependency_parsing_is_more_parameter-efficient_with_normalization.md)
+- [\[ICLR 2026\] SAES-SVD: Self-Adaptive Suppression of Accumulated and Local Errors for SVD-based LLM Compression](saes-svd_self-adaptive_suppression_of_accumulated_and_local_errors_for_svd-based.md)
 - [\[ICLR 2026\] OrderDP: A Theoretically Guaranteed Lossless Dynamic Data Pruning Framework](orderdp_a_theoretically_guaranteed_lossless_dynamic_data_pruning_framework.md)
-- [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
 
 </div>
 

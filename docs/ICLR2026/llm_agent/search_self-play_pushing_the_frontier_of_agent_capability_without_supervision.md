@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Search Self-Play: Pushing the Frontier of Agent Capability without Supervision
 description: >-
-  [ICLR 2026][LLM Agent][RLVR] The same LLM plays both "proposer" and "solver" roles in a self-play framework for deep search tasks: the proposer generates increasingly difficult search queries with verifiable answers, while the solver attempts to answer them. RAG-based reverse verification using the proposer's retrieved pages ensures the validity o
+  [ICLR 2026][LLM Agent][Self-Play] The same LLM plays both "proposer" and "solver" roles in a self-play framework for deep search tasks: the proposer generates increasingly difficult search queries with verifiable answers, while the solver attempts to answer them. RAG-based reverse verification using the proposer's retrieved pages ensures the validity of the questions. This end-to-end process requires no human annotation and significantly improves search agent performance acro…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - RLVR
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Self-Play"
+  - "Deep Search Agent"
+  - "RLVR"
+  - "RAG Verification"
+  - "Unsupervised Training"
 date: 2026-05-08
-content_hash: 8a08ea731d71cf23
+content_hash: 8d797bdd1c227073
 ---
+
 # Search Self-Play: Pushing the Frontier of Agent Capability without Supervision
 
 **Conference**: ICLR 2026  
@@ -125,12 +130,20 @@ Evaluated on 7 QA benchmarks (NQ, TriviaQA, PopQA, HotpotQA, 2Wiki, MuSiQue, Bam
 - Value: ⭐⭐⭐⭐⭐ Provides a viable path for unsupervised, difficulty-adaptive agentic RL scaling.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **Search-R1**: Reinforcement Learning for Search-based Reasoning.
-- **ZeroSearch**: Scaling Up Search Agents with Verifiable Rewards.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] DeepScientist: Advancing Frontier-Pushing Scientific Findings Progressively](deepscientist_advancing_frontier-pushing_scientific_findings_progressively.md)
+- [\[ICLR 2026\] Expanding the Capability Frontier of LLM Agents with ZPD-Guided Data Synthesis](expanding_the_capability_frontier_of_llm_agents_with_zpd-guided_data_synthesis.md)
+- [\[ICLR 2026\] Repurposing Synthetic Data for Fine-grained Search Agent Supervision](repurposing_synthetic_data_for_fine-grained_search_agent_supervision.md)
+- [\[ICLR 2026\] Pushing Test-Time Scaling Limits of Deep Search with Asymmetric Verification](pushing_test-time_scaling_limits_of_deep_search_with_asymmetric_verification.md)
+- [\[ICLR 2026\] WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](webseer_training_deeper_search_agents_through_reinforcement_learning_with_self-r.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Pushing Test-Time Scaling Limits of Deep Search with Asymmetric Verification](pushing_test-time_scaling_limits_of_deep_search_with_asymmetric_verification.md)

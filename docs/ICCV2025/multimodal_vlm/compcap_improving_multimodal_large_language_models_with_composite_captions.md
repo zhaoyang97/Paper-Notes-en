@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CompCap: Improving Multimodal Large Language Models with Composite Captions
 description: >-
-  [ICCV 2025][Multimodal VLM][composite images] This paper proposes CompCap, an automated framework for synthesizing six categories of composite images (collages, image-text mixtures, charts, tables, code…
+  [ICCV 2025][Multimodal VLM][composite images] This paper proposes CompCap, an automated framework for synthesizing six categories of composite images (collages, image-text mixtures, charts, tables, code, and diagrams) along with high-quality captions. The resulting CompCap-118K dataset, when incorporated into the SFT stage, significantly improves MLLM comprehension of composite images.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "data synthesis"
   - "vision-language alignment"
 date: 2026-05-08
-content_hash: d765a0522105e966
+content_hash: 313d3b497160b186
 ---
 
 # CompCap: Improving Multimodal Large Language Models with Composite Captions
@@ -135,11 +135,11 @@ CompCap-118K is incorporated into the SFT stage of MLLM training. To ensure fair
 
 ## Related Papers
 
-- [\[ICCV 2025\] LLaVA-KD: A Framework of Distilling Multimodal Large Language Models](llava-kd_a_framework_of_distilling_multimodal_large_language_models.md)
 - [\[ICCV 2025\] Effective Training Data Synthesis for Improving MLLM Chart Understanding](effective_training_data_synthesis_for_improving_mllm_chart_understanding.md)
-- [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
-- [\[ICCV 2025\] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency](jailbreaking_multimodal_large_language_models_via_shuffle_inconsistency.md)
+- [\[ICCV 2025\] LLaVA-KD: A Framework of Distilling Multimodal Large Language Models](llava-kd_a_framework_of_distilling_multimodal_large_language_models.md)
+- [\[ECCV 2024\] ShareGPT4V: Improving Large Multi-Modal Models with Better Captions](../../ECCV2024/multimodal_vlm/sharegpt4v_improving_large_multi-modal_models_with_better_captions.md)
 - [\[ICCV 2025\] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models](aigi-holmes_towards_explainable_and_generalizable_ai-generated_image_detection_v.md)
+- [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
 
 </div>
 

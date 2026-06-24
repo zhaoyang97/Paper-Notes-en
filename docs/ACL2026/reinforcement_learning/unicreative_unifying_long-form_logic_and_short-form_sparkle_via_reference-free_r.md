@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniCreative: Unifying Long-form Logic and Short-form Sparkle via Reference-Free Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] This paper proposes the UniCreative framework, which unifies two creative writing modes—long-form (Plan $\rightarrow$ Write) and short-form (Direct Generation)—using Adaptive Constrained Preference Optimization (ACPO) and Adaptive Criteria Generative Reward Model (AC-GenRM). Without SFT or reference solutions, the mode
+  [ACL 2026 Findings][Reinforcement Learning][Creative Writing] This paper proposes the UniCreative framework, which unifies two creative writing modes—long-form (Plan $\rightarrow$ Write) and short-form (Direct Generation)—using Adaptive Constrained Preference Optimization (ACPO) and Adaptive Criteria Generative Reward Model (AC-GenRM). Without SFT or reference solutions, the model develops an emergent metacognitive ability to autonomously distinguish task types.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Reinforcement Learning"
+  - "Creative Writing"
+  - "Reference-Free RL"
+  - "Preference Optimization"
+  - "Generative Reward Model"
+  - "Metacognition"
 date: 2026-05-08
-content_hash: 35c95d0bee6ad768
+content_hash: b7372d4b31f8d147
 ---
+
 # UniCreative: Unifying Long-form Logic and Short-form Sparkle via Reference-Free Reinforcement Learning
 
 **Conference**: ACL 2026 Findings  
@@ -144,10 +150,10 @@ Qwen3-8B + RL approaches DeepSeek-R1-0528 on WritingBench and surpasses Claude-S
 ## Related Papers
 
 - [\[ACL 2026\] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations](lovec_reinforcement_learning_for_better_verbalized_confidence_in_long-form_gener.md)
+- [\[ICLR 2026\] RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks](../../ICLR2026/reinforcement_learning/rlac_reinforcement_learning_with_adversarial_critic_for_free-form_generation_tas.md)
 - [\[ICLR 2026\] Safe Continuous-time Multi-Agent Reinforcement Learning via Epigraph Form](../../ICLR2026/reinforcement_learning/safe_continuous-time_multi-agent_reinforcement_learning_via_epigraph_form.md)
+- [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](../../ICLR2026/reinforcement_learning/rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
 - [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
-- [\[ACL 2026\] Targeted Exploration via Unified Entropy Control for Reinforcement Learning](targeted_exploration_via_unified_entropy_control_for_reinforcement_learning.md)
-- [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](../../ICLR2026/reinforcement_learning/spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
 
 </div>
 

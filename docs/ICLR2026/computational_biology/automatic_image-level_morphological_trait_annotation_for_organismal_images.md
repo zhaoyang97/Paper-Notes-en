@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Automatic Image-Level Morphological Trait Annotation for Organismal Images
 description: >-
-  [ICLR 2026][Computational Biology][BIOSCAN] Sparse Autoencoders (SAEs) trained on foundation model features are utilized as "interpretable part detectors" to automatically localize biologically significant morphological structures in insect images. These localized regions are then processed by Multimodal Large Language Models (MLLMs) to generate trait descriptio
+  [ICLR 2026][Computational Biology][Sparse Autoencoders] Sparse Autoencoders (SAEs) trained on foundation model features are utilized as "interpretable part detectors" to automatically localize biologically significant morphological structures in insect images. These localized regions are then processed by Multimodal Large Language Models (MLLMs) to generate trait descriptions, eliminating the need for manual expert annotation and resulting in the BIOSCAN-TRAITS dataset contai…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - BIOSCAN
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Sparse Autoencoders"
+  - "Monosemantic Neurons"
+  - "Morphological Traits"
+  - "Multimodal Large Language Models (MLLMs)"
+  - "BIOSCAN"
+  - "Dataset Construction"
 date: 2026-05-08
-content_hash: 8feea11ea508a2c9
+content_hash: 740be2ac18cca570
 ---
+
 # Automatic Image-Level Morphological Trait Annotation for Organismal Images
 
 **Conference**: ICLR 2026  
@@ -120,7 +126,7 @@ Lower sparsity (smaller α, larger L0) performed better, as wider activation set
 - [\[ICLR 2026\] Learning Residue Level Protein Dynamics with Multiscale Gaussians](learning_residue_level_protein_dynamics_with_multiscale_gaussians.md)
 - [\[ICLR 2026\] CP-Agent: Context-Aware Multimodal Reasoning for Cellular Morphological Profiling under Chemical Perturbations](cp-agent_contextaware_multimodal_reasoning_for_cellular_morphological_profiling_.md)
 - [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
-- [\[CVPR 2025\] Semantic and Expressive Variation in Image Captions Across Languages](../../CVPR2025/computational_biology/semantic_and_expressive_variations_in_image_captions_across_languages.md)
+- [\[ICLR 2026\] Fast Proteome-Scale Protein Interaction Retrieval via Residue-Level Factorization](fast_proteome-scale_protein_interaction_retrieval_via_residue-level_factorizatio.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CompSlider: Compositional Slider for Disentangled Multiple-Attribute Image Generation
 description: >-
-  [ICCV 2025][Image Generation][attribute disentanglement] This paper proposes CompSlider, a compositional slider model that generates conditional priors to enable simultaneous, independent…
+  [ICCV 2025][Image Generation][attribute disentanglement] This paper proposes CompSlider, a compositional slider model that generates conditional priors to enable simultaneous, independent, and fine-grained control over multiple attributes in T2I foundation models. It addresses inter-attribute entanglement via a disentanglement loss and a structural consistency loss.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "conditional prior"
   - "multi-attribute manipulation"
 date: 2026-05-08
-content_hash: a88a88b823deeea2
+content_hash: 004c2058a744e5b5
 ---
 
 # CompSlider: Compositional Slider for Disentangled Multiple-Attribute Image Generation

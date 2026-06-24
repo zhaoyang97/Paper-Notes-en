@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Robust Graph Condensation via Classification Complexity Mitigation
 description: >-
-  [NeurIPS 2025][AI Safety][Graph Condensation] This paper reveals that graph condensation (GC) is fundamentally a process of reducing classification complexity…
+  [NeurIPS 2025 Spotlight][AI Safety][Graph Condensation] This paper reveals that graph condensation (GC) is fundamentally a process of reducing classification complexity, and that adversarial attacks precisely undermine this property. Based on this insight, the authors propose the MRGC framework, which enhances GC robustness through three manifold-based regularization modules: intrinsic dimensionality regularization, curvature-aware manifold smoothing…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "AI Safety"
   - "Graph Condensation"
   - "Adversarial Robustness"
@@ -12,7 +12,7 @@ tags:
   - "Manifold Learning"
   - "Graph Neural Networks"
 date: 2026-05-08
-content_hash: cd1fcf1c3b1f0a82
+content_hash: 60e0ab437e896beb
 ---
 
 # Robust Graph Condensation via Classification Complexity Mitigation
@@ -142,10 +142,10 @@ $$\mathcal{L} = \mathcal{L}_{GC} + \alpha\mathcal{L}_{dim} + \beta\mathcal{L}_{c
 ## Related Papers
 
 - [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](enhancing_graph_classification_robustness_with_singular_pooling.md)
+- [\[CVPR 2025\] Lyapunov Stable Graph Neural Flow](../../CVPR2025/ai_safety/lyapunov_stable_graph_neural_flow.md)
 - [\[NeurIPS 2025\] Influence Functions for Edge Edits in Non-Convex Graph Neural Networks](influence_functions_for_edge_edits_in_non-convex_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Improved Balanced Classification with Theoretically Grounded Loss Functions](improved_balanced_classification_with_theoretically_grounded_loss_functions.md)
-- [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
-- [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
+- [\[ICCV 2025\] Backdoor Mitigation by Distance-Driven Detoxification](../../ICCV2025/ai_safety/backdoor_mitigation_by_distance-driven_detoxification.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems
 description: >-
-  [ACL 2026][Multimodal VLM][Multi-Agent] This paper proposes MONETA, the first multimodal industry classification benchmark combining text (websites, Wikipedia, Wikidata) and geospatial data (OpenStreetMap, satellite imagery). It designs two training-free pipelines—Zero-Shot and Multi-Turn Multi-Agent—achieving 62.10%-74.10% accuracy across 20 NACE categories
+  [ACL 2026][Multimodal VLM][Industry Classification] This paper proposes MONETA, the first multimodal industry classification benchmark combining text (websites, Wikipedia, Wikidata) and geospatial data (OpenStreetMap, satellite imagery). It designs two training-free pipelines—Zero-Shot and Multi-Turn Multi-Agent—achieving 62.10%-74.10% accuracy across 20 NACE categories using open and closed-source MLLMs, with the multi-turn design providing gains of up to 22.80%.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Multi-Agent
-  - OpenStreetMap
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Industry Classification"
+  - "Geographic Information"
+  - "Multimodal LLM"
+  - "Multi-Agent Systems"
+  - "OpenStreetMap"
 date: 2026-05-08
-content_hash: 7b5f1366e4f4d801
+content_hash: 6818e3c2e060eb98
 ---
+
 # MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems
 
 **Conference**: ACL 2026  
@@ -139,11 +143,11 @@ This is a completely training-free framework. Evaluations were performed on open
 
 ## Related Papers
 
-- [\[ICLR 2026\] Why Keep Your Doubts to Yourself? Trading Visual Uncertainties in Multi-Agent Bandit Systems](../../ICLR2026/multimodal_vlm/why_keep_your_doubts_to_yourself_trading_visual_uncertainties_in_multi-agent_ban.md)
 - [\[CVPR 2026\] Tackling Model Bias via Game-theoretic Multi-agent Collaboration Framework for Hateful Meme Classification](../../CVPR2026/multimodal_vlm/tackling_model_bias_via_game-theoretic_multi-agent_collaboration_framework_for_h.md)
 - [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](../../CVPR2026/multimodal_vlm/hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
 - [\[ACL 2026\] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck](from_verbatim_to_gist_distilling_pyramidal_multimodal_memory_via_semantic_inform.md)
 - [\[ICLR 2026\] Multimodal Classification via Total Correlation Maximization](../../ICLR2026/multimodal_vlm/multimodal_classification_via_total_correlation_maximization.md)
+- [\[ICLR 2026\] Thinking as Society: Multi-Social-Agent Self-Distillation for Multimodal Misinformation Detection](../../ICLR2026/multimodal_vlm/thinking_as_society_multi-social-agent_self-distillation_for_multimodal_misinfor.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Adversarial Environments Mislead Agentic AI
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper formalizes the "Adversarial Environment Injection" (AEI) threat model, decomposing it into Breadth Attacks (poisoning retrieval results to induce cognitive drift) and Depth Attacks (injecting phantom nodes to construct navigation traps leading to policy collapse). Through 11,000+ experiments, the study revea
+  [ACL 2026 Findings][LLM Agent][Adversarial Environment Injection] This paper formalizes the "Adversarial Environment Injection" (AEI) threat model, decomposing it into Breadth Attacks (poisoning retrieval results to induce cognitive drift) and Depth Attacks (injecting phantom nodes to construct navigation traps leading to policy collapse). Through 11,000+ experiments, the study reveals that robustness against these two attacks is completely independent—a "robustness split" su…
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Adversarial Environment Injection"
+  - "Tool-Trust Gap"
+  - "Depth Attack"
+  - "Breadth Attack"
+  - "Robustness Split"
 date: 2026-05-08
-content_hash: f22685fa5edde721
+content_hash: 23df632f7dabb46f
 ---
+
 # How Adversarial Environments Mislead Agentic AI
 
 **Conference**: ACL 2026 Findings  
@@ -143,9 +149,9 @@ Potemkin is an evaluation framework and does not involve training. All tested ag
 
 - [\[ACL 2026\] FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments](fama_failure-aware_meta-agentic_framework_for_open-source_llms_in_interactive_to.md)
 - [\[ACL 2026\] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents](magma_a_multi-graph_based_agentic_memory_architecture_for_ai_agents.md)
+- [\[ICLR 2026\] How Dark Patterns Manipulate Web Agents](../../ICLR2026/llm_agent/how_dark_patterns_manipulate_web_agents.md)
 - [\[ICML 2026\] Position: Agentic AI Orchestration Should Be Bayes-Consistent](../../ICML2026/llm_agent/position_agentic_ai_orchestration_should_be_bayes-consistent.md)
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](../../ICLR2026/llm_agent/sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
-- [\[ICML 2025\] xChemAgents: Agentic AI for Explainable Quantum Chemistry](../../ICML2025/llm_agent/xchemagents_agentic_ai_for_explainable_quantum_chemistry.md)
 
 </div>
 

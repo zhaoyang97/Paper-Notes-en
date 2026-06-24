@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications
 description: >-
-  [ICLR 2026][LLM Agent][Agent Benchmark] VitaBench abstracts three major life service scenarios—food delivery, in-store consumption, and online travel—into a sophisticated "life service" simulation environment containing 66 tools and 400 tasks. It replaces domain policy documents with tool dependency graphs to force autonomous exploration by agents and employ
+  [ICLR 2026][LLM Agent][Agent Benchmark] VitaBench abstracts three major life service scenarios—food delivery, in-store consumption, and online travel—into a sophisticated "life service" simulation environment containing 66 tools and 400 tasks. It replaces domain policy documents with tool dependency graphs to force autonomous exploration by agents and employs a rubric sliding window evaluator for scoring. Results indicate that even the strongest models achieve only a 30% succ…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Agent Benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Agent Benchmark"
+  - "Tool Calling"
+  - "Multi-turn Interaction"
+  - "User Simulator"
+  - "Rubric Evaluation"
 date: 2026-05-08
-content_hash: 6aca039e815c0da6
+content_hash: c63aada8e84de4a1
 ---
+
 # VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications
 
 **Conference**: ICLR 2026  
@@ -126,15 +131,15 @@ Interaction complexity ablation: Comparing Default User, Neutral User, and Solo 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
-- [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](../../ACL2026/llm_agent/shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
+- [\[ICLR 2026\] Terminal-Bench: Benchmarking Agents on Difficult, Real-World Tasks in the Command Line Interface](terminal-bench_benchmarking_agents_on_hard_realistic_tasks_in_command_line_inter.md)
+- [\[ICML 2026\] MCP-Persona: Evaluating LLM Agent Capabilities in Real-World Personal Applications via Environment Simulation](../../ICML2026/llm_agent/mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
 - [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
-- [\[ICLR 2026\] TaskCraft: Automated Generation of Agentic Tasks](taskcraft_automated_generation_of_agentic_tasks.md)
-- [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
+- [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](../../ACL2026/llm_agent/shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
 
 </div>
 

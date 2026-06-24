@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MACS: Multi-source Audio-to-Image Generation with Contextual Significance and Semantic Alignment
 description: >-
-  [AAAI 2026][Image Generation][Audio-to-image generation] This paper proposes MACS, the first two-stage framework that explicitly separates multi-source audio prior to image generation. The framework combines weakly super…
+  [AAAI 2026][Image Generation][Audio-to-image generation] This paper proposes MACS, the first two-stage framework that explicitly separates multi-source audio prior to image generation. The framework combines weakly supervised sound source separation, CLAP-space semantic alignment (via ranking loss and contrastive loss), and decoupled cross-attention diffusion generation, achieving comprehensive state-of-the-art performance on multi-source, mixed-source…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal alignment"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 9893b5d82958a1d8
+content_hash: 9dceb3831e6413ee
 ---
 
 # MACS: Multi-source Audio-to-Image Generation with Contextual Significance and Semantic Alignment
@@ -199,7 +199,7 @@ Key insight: In cross-modal generation tasks, **explicit signal decomposition co
 - [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](multi-metric_preference_alignment_for_generative_speech_restoration.md)
 - [\[AAAI 2026\] Playmate2: Training-Free Multi-Character Audio-Driven Animation via Diffusion Transformer with Reward Feedback](playmate2_training-free_multi-character_audio-driven_animation_via_diffusion_tra.md)
 - [\[AAAI 2026\] FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting](freeinpaint_tuning-free_prompt_alignment_and_visual_rationality_enhancement_in_i.md)
-- [\[AAAI 2026\] DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation](dos_directional_object_separation_in_text_embeddings_for_mul.md)
+- [\[ICLR 2026\] ContextGen: Contextual Layout Anchoring for Identity-Consistent Multi-Instance Generation](../../ICLR2026/image_generation/contextgen_contextual_layout_anchoring_for_identity-consistent_multi-instance_ge.md)
 
 </div>
 

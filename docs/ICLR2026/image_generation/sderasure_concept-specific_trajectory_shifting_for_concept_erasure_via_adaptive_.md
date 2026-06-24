@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SDErasure: Concept-Specific Trajectory Shifting for Concept Erasure via Adaptive Diffusion Classifier
 description: >-
-  [ICLR 2026][Image Generation][Concept Erasure] SDErasure identifies that "the generation of each concept depends only on a small segment of critical denoising timesteps." It utilizes a Diffusion Classifier to adaptively select these critical steps for each concept to be erased. By performing trajectory shifting fine-tuning only on these steps and incorporating dual
+  [ICLR 2026][Image Generation][Concept Erasure] SDErasure identifies that "the generation of each concept depends only on a small segment of critical denoising timesteps." It utilizes a Diffusion Classifier to adaptively select these critical steps for each concept to be erased. By performing trajectory shifting fine-tuning only on these steps and incorporating dual-path quality regulation losses, the method achieves thorough concept erasure while reducing MSCOCO FID from 9.51…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Concept Erasure
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Text-to-Image Diffusion"
+  - "Denoising Trajectory"
+  - "Diffusion Classifier"
+  - "Timestep Selection"
 date: 2026-05-08
-content_hash: 99b42e03a5d642f1
+content_hash: b53436f079a2f7c2
 ---
+
 # SDErasure: Concept-Specific Trajectory Shifting for Concept Erasure via Adaptive Diffusion Classifier
 
 **Conference**: ICLR 2026  

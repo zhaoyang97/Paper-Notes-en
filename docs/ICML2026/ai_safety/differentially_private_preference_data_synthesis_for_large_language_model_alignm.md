@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Differentially Private Preference Data Synthesis for Large Language Model Alignment
 description: >-
-  [ICML 2026][AI Safety][Bradley-Terry] DPPrefSyn replaces "DP fine-tuning on private preference data" with "learning a distribution of DP preference reward models and synthesizing DP preference data using public prompts." By leveraging the geometric structure of Bradley-Terry linear rewards, DP-PCA, and DP-KMeans clustering to capture user preference hetero
+  [ICML 2026][AI Safety][Differential Privacy] DPPrefSyn replaces "DP fine-tuning on private preference data" with "learning a distribution of DP preference reward models and synthesizing DP preference data using public prompts." By leveraging the geometric structure of Bradley-Terry linear rewards, DP-PCA, and DP-KMeans clustering to capture user preference heterogeneity, it achieves a 56.5% GPT-4o win-rate on Anthropic-HH at $\varepsilon=2$, outperforming both non-private fin…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Bradley-Terry
-  - DP-PCA
-  - DPO/RLHF
+  - "ICML 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Preference Data Synthesis"
+  - "Bradley-Terry"
+  - "DP-PCA"
+  - "DPO/RLHF"
 date: 2026-05-08
-content_hash: 5eb1e9397d521249
+content_hash: 5d011982424dbd12
 ---
+
 # Differentially Private Preference Data Synthesis for Large Language Model Alignment
 
 **Conference**: ICML 2026  
@@ -143,11 +146,11 @@ DP-PCA provides the largest contribution (−4.7 points), and clustering for het
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Bayesian Nonparametric Framework for Private, Fair, and Balanced Tabular Data Synthesis](../../ICLR2026/ai_safety/a_bayesian_nonparametric_framework_for_private_fair_and_balanced_tabular_data_sy.md)
 - [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
 - [\[ICML 2026\] Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences](federated_variational_preference_alignment_with_gumbel-softmax_prior_for_persona.md)
-- [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
+- [\[ICLR 2026\] Secure Outlier-Aware Large Language Model Inference](../../ICLR2026/ai_safety/secure_outlier-aware_large_language_model_inference.md)
 - [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](prism_gauge-invariant_tangent-space_differentially_private_lora.md)
-- [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](../../CVPR2026/ai_safety/image-based_outlier_synthesis_with_training_data.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Variance-Based Pruning for Accelerating and Compressing Trained Networks
 description: >-
-  [Model Compression] This paper proposes Variance-Based Pruning (VBP), a one-shot structured pruning method that removes neurons with the smallest activation variance in MLP hidden layers and compensates their mean activa…
+  [Model Compression] This paper proposes Variance-Based Pruning (VBP), a one-shot structured pruning method that removes neurons with the smallest activation variance in MLP hidden layers and compensates their mean activations into the subsequent layer's bias. With only 10 epochs of fine-tuning, VBP recovers 99% of the original accuracy while reducing computation by 35% and parameters by 36%.
 tags:
   - "Model Compression"
 date: 2026-05-08
-content_hash: f8cf0570083141b9
+content_hash: 318fb8e6afa9b12c
 ---
 
 # Variance-Based Pruning for Accelerating and Compressing Trained Networks
@@ -148,11 +148,11 @@ Parameter reduction is more pronounced for ConvNeXt (>50%) due to the higher pro
 
 ## Related Papers
 
+- [\[ACL 2025\] Who Taught You That? Tracing Teachers in Model Distillation](../../ACL2025/model_compression/who_taught_you_that_tracing_teachers_in_model_distillation.md)
+- [\[ICML 2025\] Come Together, But Not Right Now: A Progressive Strategy to Boost Low-Rank Adaptation](../../ICML2025/model_compression/come_together_but_not_right_now_a_progressive_strategy_to_boost_low-rank_adaptat.md)
 - [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
 - [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](../../ICLR2026/model_compression/rethinking_continual_learning_with_progressive_neural_collapse.md)
 - [\[AAAI 2026\] StepFun-Formalizer: Unlocking the Autoformalization Potential of LLMs Through Knowledge-Reasoning Fusion](../../AAAI2026/model_compression/stepfun-formalizer_unlocking_the_autoformalization_potential_of_llms_through_kno.md)
-- [\[ICLR 2026\] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models](../../ICLR2026/model_compression/sere_similarity-based_expert_re-routing_for_efficient_batch_decoding_in_moe_mode.md)
-- [\[ICLR 2026\] S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion](../../ICLR2026/model_compression/s2r-hdr_a_large-scale_rendered_dataset_for_hdr_fusion.md)
 
 </div>
 

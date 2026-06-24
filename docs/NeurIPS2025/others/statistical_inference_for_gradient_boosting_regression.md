@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Statistical Inference for Gradient Boosting Regression
 description: >-
-  [NeurIPS 2025][Gradient Boosting] This paper proposes a unified statistical inference framework for gradient boosting regression. By integrating dropout and parallel training into the Boulevard regularization scheme…
+  [NeurIPS 2025][Gradient Boosting] This paper proposes a unified statistical inference framework for gradient boosting regression. By integrating dropout and parallel training into the Boulevard regularization scheme, the authors establish corresponding central limit theorems, enabling built-in confidence intervals, prediction intervals, and hypothesis tests for variable importance. A key finding is that increasing the dropout rate and the number of parallel trees substantiall…
 tags:
   - "NeurIPS 2025"
   - "Gradient Boosting"
@@ -11,7 +11,7 @@ tags:
   - "Hypothesis Testing"
   - "Random Forests"
 date: 2026-05-08
-content_hash: 93d7f753eedeb61a
+content_hash: fdb47d478649e456
 ---
 
 # Statistical Inference for Gradient Boosting Regression
@@ -165,9 +165,9 @@ Interval coverage evaluation (Friedman function):
 
 - [\[NeurIPS 2025\] Statistical Inference Under Performativity](statistical_inference_under_performativity.md)
 - [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
+- [\[ICML 2025\] Gradient Aligned Regression via Pairwise Losses](../../ICML2025/others/gradient_aligned_regression_via_pairwise_losses.md)
 - [\[NeurIPS 2025\] Regression Trees Know Calculus](regression_trees_know_calculus.md)
-- [\[NeurIPS 2025\] Manipulating Feature Visualizations with Gradient Slingshots](manipulating_feature_visualizations_with_gradient_slingshots.md)
-- [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
+- [\[ICML 2025\] Regression for the Mean: Auto-Evaluation and Inference with Few Labels through Post-hoc Regression](../../ICML2025/others/regression_for_the_mean_auto-evaluation_and_inference_with_few_labels_through_po.md)
 
 </div>
 

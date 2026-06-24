@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Language-guided Frequency Modulation for Large Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes a plug-and-play LFM (Language-guided Frequency Modulation) that shifts vision refinement—before feeding features into the LLM—from the spatial domain to the **frequency domain**. It uses text features to compute "emphasis maps" that selectively enhance critical frequency bands (high frequency for lo
+  [CVPR 2026][Multimodal VLM][Large Vision-Language Models (LVLMs)] This paper proposes a plug-and-play LFM (Language-guided Frequency Modulation) that shifts vision refinement—before feeding features into the LLM—from the spatial domain to the **frequency domain**. It uses text features to compute "emphasis maps" that selectively enhance critical frequency bands (high frequency for local details, low frequency for global context). Without adding extra trainable parameters (exc…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Large Vision-Language Models (LVLMs)"
+  - "Frequency Domain Modulation"
+  - "Language Guidance"
+  - "Fourier Transform"
+  - "Vision Refinement"
 date: 2026-05-08
-content_hash: 3cd4fd8831a9920d
+content_hash: 17199e91e90179b3
 ---
+
 # Language-guided Frequency Modulation for Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -124,10 +130,20 @@ Within the LLaVA framework, LFM consistently outperforms linear projection and D
 -   Value: ⭐⭐⭐⭐⭐ Plug-and-play, near zero-parameter, and stable gains make it highly practical.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Ego: Embedding-Guided Personalization of Vision-Language Models](ego_embedding-guided_personalization_of_vision-language_models.md)
+- [\[CVPR 2026\] Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models](diffusion_guided_chain-of-vision_for_large_autoregressive_vision_models.md)
+- [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
+- [\[ACL 2026\] Text-Guided Multi-Scale Frequency Representation Adaptation](../../ACL2026/multimodal_vlm/text-guided_multi-scale_frequency_representation_adaptation.md)
+- [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Ego: Embedding-Guided Personalization of Vision-Language Models](ego_embedding-guided_personalization_of_vision-language_models.md)

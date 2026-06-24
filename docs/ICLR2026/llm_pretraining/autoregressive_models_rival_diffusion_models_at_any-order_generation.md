@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Autoregressive Models Rival Diffusion Models at Any-Order Generation
 description: >-
-  [ICLR 2026][Pretraining][Autoregressive] This paper proposes **A3 (Any-order Any-subset Autoregressive modeling)**, which reintegrates the "any-order, any-subset" flexibility of diffusion language models into the autoregressive framework. By using group-wise factorization to preserve the multi-layer dependency modeling capabilities of AR, and employing two-st
+  [ICLR 2026][LLM Pretraining][Any-order generation] This paper proposes **A3 (Any-order Any-subset Autoregressive modeling)**, which reintegrates the "any-order, any-subset" flexibility of diffusion language models into the autoregressive framework. By using group-wise factorization to preserve the multi-layer dependency modeling capabilities of AR, and employing two-stream attention with a progressive curriculum to smoothly transform a pre-trained AR model into an any-order g…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Autoregressive
-  - Diffusion Language Model
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Any-order generation"
+  - "Autoregressive"
+  - "Diffusion language models"
+  - "Two-stream attention"
+  - "Progressive adaptation"
 date: 2026-05-08
-content_hash: 92e00275223ba3e6
+content_hash: c8a4b9c3c25e213d
 ---
+
 # Autoregressive Models Rival Diffusion Models at Any-Order Generation
 
 **Conference**: ICLR 2026  
@@ -140,9 +144,9 @@ Skipping the first two stages and training directly on arbitrary permutations le
 
 - [\[ICLR 2026\] Soft-Masked Diffusion Language Models](soft-masked_diffusion_language_models.md)
 - [\[ICLR 2026\] Time is a Feature: Exploiting Temporal Dynamics in Diffusion Language Models](time_is_a_feature_exploiting_temporal_dynamics_in_diffusion_language_models.md)
+- [\[ICLR 2026\] Scaling Behavior of Discrete Diffusion Language Models](scaling_behavior_of_discrete_diffusion_language_models.md)
 - [\[CVPR 2025\] ScaMo: Exploring the Scaling Law in Autoregressive Motion Generation Model](../../CVPR2025/llm_pretraining/scamo_exploring_the_scaling_law_in_autoregressive_motion_generation_model.md)
 - [\[CVPR 2025\] Improving Autoregressive Visual Generation with Cluster-Oriented Token Prediction](../../CVPR2025/llm_pretraining/improving_autoregressive_visual_generation_with_cluster-oriented_token_predictio.md)
-- [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](../../NeurIPS2025/llm_pretraining/composition_and_alignment_of_diffusion_models_using_constrai.md)
 
 </div>
 

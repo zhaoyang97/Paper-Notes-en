@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Benchmark] SVHalluc is the first benchmark to systematically evaluate whether audio-visual large models can align **speech content** with corresponding visual signals. By designing 3 coarse-to-fine tasks for both semantic and temporal dimensions (6 tasks, 2405 samples total), experiments reveal that current open-source audio-visu
+  [CVPR 2026][Hallucination Detection][Speech-vision hallucination] SVHalluc is the first benchmark to systematically evaluate whether audio-visual large models can align **speech content** with corresponding visual signals. By designing 3 coarse-to-fine tasks for both semantic and temporal dimensions (6 tasks, 2405 samples total), experiments reveal that current open-source audio-visual LLMs perform near random guessing on most tasks, while Gemini 2.5 Pro leads significantly—t…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Benchmark
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Speech-vision hallucination"
+  - "Audio-visual LLM"
+  - "Cross-modal alignment"
+  - "Temporal understanding"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: cb659f3cb7d56456
+content_hash: 9978a092fd6111dc
 ---
+
 # SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models
 
 **Conference**: CVPR 2026  
@@ -140,10 +145,18 @@ Analysis was performed using Qwen3-Omni under different input conditions (Acc, %
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](../../ACL2026/hallucination/benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
+- [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
+- [\[ACL 2026\] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models](../../ACL2026/hallucination/halluaudio_a_comprehensive_benchmark_for_hallucination_detection_in_large_audio-.md)
+- [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
+- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)

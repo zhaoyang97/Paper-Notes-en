@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Splits! Flexible Sociocultural Linguistic Investigation at Scale
 description: >-
-  [ACL 2026][Social Computing][Paper Note] The paper proposes a method to construct a sociolinguistic "sandbox." It introduces Splits!, a dataset of 9.7 million Reddit posts dual-segmented by demographic groups and discussion topics. A two-stage filtering process based on lift and triviality is designed to efficiently screen noteworthy sociocultural linguistic
+  [ACL 2026][Social Computing][Sociocultural linguistic phenomena] The paper proposes a method to construct a sociolinguistic "sandbox." It introduces Splits!, a dataset of 9.7 million Reddit posts dual-segmented by demographic groups and discussion topics. A two-stage filtering process based on lift and triviality is designed to efficiently screen noteworthy sociocultural linguistic phenomena from 23,000 LLM-generated candidate hypotheses.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Sociocultural linguistic phenomena"
+  - "Reddit dataset"
+  - "Hypothesis filtering"
+  - "Lexical analysis"
+  - "Demographics"
 date: 2026-05-08
-content_hash: 7330323f06c528f2
+content_hash: 024d169bd5081dcd
 ---
+
 # Splits! Flexible Sociocultural Linguistic Investigation at Scale
 
 **Conference**: ACL 2026  
@@ -133,9 +139,9 @@ Efficiency analysis of the two-stage filtering:
 
 - [\[ACL 2026\] Understanding the Sociocultural Dimensions of Mental Health Discourse in Arabic-Language X Communities](understanding_the_sociocultural_dimensions_of_mental_health_discourse_in_arabic-.md)
 - [\[CVPR 2025\] As Language Models Scale, Low-order Linear Depth Dynamics Emerge](../../CVPR2025/social_computing/as_language_models_scale_low-order_linear_depth_dynamics_emerge.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 - [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
 - [\[ACL 2026\] Beyond the Crowd: LLM-Augmented Community Notes for Governing Health Misinformation](beyond_the_crowd_llm-augmented_community_notes_for_governing_health_misinformati.md)
-- [\[ACL 2026\] Is this chart lying to me? Automating the detection of misleading visualizations](is_this_chart_lying_to_me_automating_the_detection_of_misleading_visualizations.md)
 
 </div>
 

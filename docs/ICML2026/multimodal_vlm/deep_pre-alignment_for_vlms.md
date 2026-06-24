@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deep Pre-Alignment for VLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors replace the standard "ViT + lightweight projector" visual module in VLMs with a small VLM (perceiver). This allows the depth-intensive task of modality alignment to be completed upstream within the small VLM, ensuring the downstream large LLM does not waste its initial layer depth on alignment. Results show
+  [ICML 2026][Multimodal VLM][Visual Encoder] The authors replace the standard "ViT + lightweight projector" visual module in VLMs with a small VLM (perceiver). This allows the depth-intensive task of modality alignment to be completed upstream within the small VLM, ensuring the downstream large LLM does not waste its initial layer depth on alignment. Results show a +1.9 point improvement for a 4B model across 8 multimodal benchmarks and +3.0 points for a 32B model…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Visual Encoder"
+  - "Modality Alignment"
+  - "Perception Model"
+  - "Catastrophic Forgetting"
+  - "VLM Architecture"
 date: 2026-05-08
-content_hash: e61dcb283133e907
+content_hash: f56b53bc29c96fe2
 ---
+
 # Deep Pre-Alignment for VLMs
 
 **Conference**: ICML 2026  
@@ -146,8 +152,8 @@ Comparison of different perceiver designs under the 4B Qwen3 configuration revea
 - [\[CVPR 2026\] PowerCLIP: Powerset Alignment for Contrastive Pre-Training](../../CVPR2026/multimodal_vlm/powerclip_powerset_alignment_for_contrastive_pre-training.md)
 - [\[ICML 2026\] Injecting Distributional Awareness into MLLMs via Reinforcement Learning for Deep Imbalanced Regression](injecting_distributional_awareness_into_mllms_via_reinforcement_learning_for_dee.md)
 - [\[CVPR 2025\] Post-pre-training for Modality Alignment in Vision-Language Foundation Models](../../CVPR2025/multimodal_vlm/post-pre-training_for_modality_alignment_in_vision-language_foundation_models.md)
+- [\[ACL 2026\] A Survey of Deep Learning for Geometry Problem Solving](../../ACL2026/multimodal_vlm/a_survey_of_deep_learning_for_geometry_problem_solving.md)
 - [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](../../CVPR2026/multimodal_vlm/towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
-- [\[ICML 2026\] Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs](density-aware_translation_of_spurious_correlations_in_zero-shot_vlms.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Quiet Feature Learning in Algorithmic Tasks
 description: >-
-  [AAAI 2026][Interpretability][Phase transition] Across 10 algorithmic tasks (18,544 training runs, $10^9$–$10^{16}$ FLOPs), this work demonstrates that loss plateaus in Transformer training do not indicate stalled learni…
+  [AAAI 2026 Oral][Interpretability][Phase transition] Across 10 algorithmic tasks (18,544 training runs, $10^9$–$10^{16}$ FLOPs), this work demonstrates that loss plateaus in Transformer training do not indicate stalled learning. During these plateaus, models quietly acquire "quiet features"—intermediate algorithmic subroutines that do not directly reduce output loss yet are causally necessary for final performance (ablating them reduces accuracy by 41–75%). This challenges th…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Interpretability"
   - "Phase transition"
   - "implicit features"
@@ -12,7 +12,7 @@ tags:
   - "loss plateau"
   - "Grokking"
 date: 2026-05-08
-content_hash: dcd14a6eddf55f11
+content_hash: acf71a4fb6fccb97
 ---
 
 # Quiet Feature Learning in Algorithmic Tasks
@@ -138,11 +138,11 @@ Discussions of emergent abilities lack mechanistic evidence from internal model 
 
 ## Related Papers
 
+- [\[ICML 2025\] Position: We Need An Algorithmic Understanding of Generative AI](../../ICML2025/interpretability/position_we_need_an_algorithmic_understanding_of_generative_ai.md)
+- [\[ICLR 2026\] xRFM: Accurate, scalable, and interpretable feature learning models for tabular data](../../ICLR2026/interpretability/xrfm_accurate_scalable_and_interpretable_feature_learning_models_for_tabular_dat.md)
+- [\[CVPR 2025\] Open Ad-Hoc Categorization with Contextualized Feature Learning](../../CVPR2025/interpretability/open_ad-hoc_categorization_with_contextualized_feature_learning.md)
 - [\[AAAI 2026\] Unsupervised Feature Selection Through Group Discovery](unsupervised_feature_selection_through_group_discovery.md)
-- [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
 - [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
-- [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](data_whitening_improves_sparse_autoencoder_learning.md)
-- [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](../../ICML2026/interpretability/polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
 
 </div>
 

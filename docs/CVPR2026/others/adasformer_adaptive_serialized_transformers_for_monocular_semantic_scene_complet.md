@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes AdaSFormer, a serialized Transformer framework for indoor Monocular Semantic Scene Completion (MSSC). By introducing three core designs—Adaptive Serialized Attention (with learnable offsets), Center Relative Position Encoding, and Convolution-Modulated Layer Normalization—it achieves SOTA performanc
+  [CVPR 2026][Semantic Scene Completion] This paper proposes AdaSFormer, a serialized Transformer framework for indoor Monocular Semantic Scene Completion (MSSC). By introducing three core designs—Adaptive Serialized Attention (with learnable offsets), Center Relative Position Encoding, and Convolution-Modulated Layer Normalization—it achieves SOTA performance on NYUv2 and Occ-ScanNet.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "Semantic Scene Completion"
+  - "Serialized Transformer"
+  - "Adaptive Attention"
+  - "Indoor Scenes"
+  - "Monocular RGB"
 date: 2026-05-08
-content_hash: ae4807f736e116a7
+content_hash: 6f6f9a82bec84c1c
 ---
+
 # AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments
 
 **Conference**: CVPR 2026  
@@ -137,11 +142,11 @@ Standard SSC losses (Cross-Entropy + Scene Completion IoU-related losses) are ut
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)
-- [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
-- [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
+- [\[NeurIPS 2025\] Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion](../../NeurIPS2025/others/incomplete_multi-view_clustering_via_hierarchical_semantic_alignment_and_coopera.md)
+- [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
+- [\[CVPR 2026\] DREAM: Document Recognition with Explicit Adaptive Memory](dream_document_recognition_with_explicit_adaptive_memory.md)
+- [\[CVPR 2026\] Adaptive Bayesian Early-Exit Networks for Efficient Non-Transferable Learning](adaptive_bayesian_early-exit_networks_for_efficient_non-transferable_learning.md)
+- [\[CVPR 2026\] HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)
 
 </div>
 

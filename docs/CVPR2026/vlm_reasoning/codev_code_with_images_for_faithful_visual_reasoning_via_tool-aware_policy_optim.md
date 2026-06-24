@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] This paper discovers that visual agents capable of "thinking with images" often **answer correctly but use tools unfaithfully** (e.g., cropping the wrong area but guessing the right answer). It proposes CodeV, which represents visual tools as executable Python code and utilizes Tool-Aware Policy Optimization (TAPO) on
+  [CVPR 2026][VLM Reasoning][Visual Agent] This paper discovers that visual agents capable of "thinking with images" often **answer correctly but use tools unfaithfully** (e.g., cropping the wrong area but guessing the right answer). It proposes CodeV, which represents visual tools as executable Python code and utilizes Tool-Aware Policy Optimization (TAPO) on top of GRPO. TAPO introduces a **process-level dense reward that only evaluates tool outputs without inspecting the cha…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual Agent"
+  - "Faithful Reasoning"
+  - "Tool-use Reward"
+  - "Process-level RL"
+  - "GRPO"
 date: 2026-05-08
-content_hash: fb64f85869f3c1f6
+content_hash: 38ef2b028f03f1bd
 ---
+
 # CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization
 
 **Conference**: CVPR 2026  
@@ -155,15 +160,16 @@ CodeV outperforms Pixel-Reasoner/DeepEyes by double digits, proving TAPO success
 - Value: ⭐⭐⭐⭐⭐ Quantifies the "correct but unfaithful" trap and provides a transferable paradigm for tool-using agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
+- [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](../../ICLR2026/vlm_reasoning/perception-aware_policy_optimization_for_multimodal_reasoning.md)
 - [\[CVPR 2026\] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](arm-thinker_reinforcing_multimodal_generative_reward_models_with_agentic_tool_us.md)
 - [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
 - [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
 
 </div>
 

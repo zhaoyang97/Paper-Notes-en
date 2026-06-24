@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causally Reliable Concept Bottleneck Models
 description: >-
-  [NeurIPS 2025][AI Safety][concept bottleneck models] This paper proposes C2BM (Causally reliable Concept Bottleneck Models), which organizes the concept bottleneck as a causal graph structure. By combining observational…
+  [NeurIPS 2025][AI Safety][concept bottleneck models] This paper proposes C2BM (Causally reliable Concept Bottleneck Models), which organizes the concept bottleneck as a causal graph structure. By combining observational data with background knowledge, C2BM automatically learns causal relationships, achieving significantly improved causal reliability, intervention responsiveness, and fairness while maintaining classification accuracy.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "interpretability"
   - "fairness"
 date: 2026-05-08
-content_hash: 3cf10cd4e9e79046
+content_hash: ea26da46939b2179
 ---
 
 # Causally Reliable Concept Bottleneck Models
@@ -137,11 +137,11 @@ LLM background knowledge effectively reduces erroneous edges in the causal graph
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Preserving Task-Relevant Information Under Linear Concept Removal](preserving_task-relevant_information_under_linear_concept_removal.md)
 - [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
 - [\[NeurIPS 2025\] SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection](spurious-aware_prototype_refinement_for_reliable_out-of-distribution_detection.md)
-- [\[NeurIPS 2025\] Factor Decorrelation Enhanced Data Removal from Deep Predictive Models](factor_decorrelation_enhanced_data_removal_from_deep_predictive_models.md)
-- [\[ICCV 2025\] Staining and Locking Computer Vision Models without Retraining](../../ICCV2025/ai_safety/staining_and_locking_computer_vision_models_without_retraining.md)
+- [\[ICML 2025\] Avoiding Leakage Poisoning: Concept Interventions Under Distribution Shifts](../../ICML2025/ai_safety/avoiding_leakage_poisoning_concept_interventions_under_distribution_shifts.md)
+- [\[NeurIPS 2025\] Preserving Task-Relevant Information Under Linear Concept Removal](preserving_task-relevant_information_under_linear_concept_removal.md)
+- [\[ICLR 2026\] Closing the Safety Gap: Surgical Concept Erasure in Visual Autoregressive Models](../../ICLR2026/ai_safety/closing_the_safety_gap_surgical_concept_erasure_in_visual_autoregressive_models.md)
 
 </div>
 

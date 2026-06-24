@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Adversarial Robustness] This paper proposes CART (Conservative Adversarially Robust Decision Transformer)…
+  [NeurIPS 2025][Reinforcement Learning][Adversarial Robustness] This paper proposes CART (Conservative Adversarially Robust Decision Transformer), the first method to enhance the adversarial robustness of Decision Transformers in stochastic games. By modeling stage games and estimating NashQ values, CART addresses the over-optimism of ARDT under stochastic state transitions, achieving more accurate minimax value estimation and superior worst-case returns.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "NashQ"
   - "Expectile Regression"
 date: 2026-05-08
-content_hash: f5824b945f29c51e
+content_hash: 58964efb1ff388aa
 ---
 
 # Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling
@@ -133,8 +133,8 @@ Worst-case returns in synthetic stochastic games are compared (data collected by
 - [\[NeurIPS 2025\] A Near-optimal, Scalable and Parallelizable Framework for Stochastic Bandits Robust to Adversarial Corruptions and Beyond](a_nearoptimal_scalable_and_parallelizable_framework_for_stoc.md)
 - [\[NeurIPS 2025\] Emergent World Beliefs: Exploring Transformers in Stochastic Games](emergent_world_beliefs_exploring_transformers_in_stochastic_games.md)
 - [\[ICLR 2026\] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation](../../ICLR2026/reinforcement_learning/robust_deep_reinforcement_learning_against_adversarial_behavior_manipulation.md)
-- [\[NeurIPS 2025\] Incremental Sequence Classification with Temporal Consistency](incremental_sequence_classification_with_temporal_consistency.md)
 - [\[NeurIPS 2025\] Confounding Robust Deep Reinforcement Learning: A Causal Approach](confounding_robust_deep_reinforcement_learning_a_causal_approach.md)
+- [\[NeurIPS 2025\] Oryx: a Scalable Sequence Model for Many-Agent Coordination in Offline MARL](oryx_a_scalable_sequence_model_for_many-agent_coordination_in_offline_marl.md)
 
 </div>
 

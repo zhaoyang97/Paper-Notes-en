@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Barriers for Learning in an Evolving World: Mathematical Understanding of Loss of Plasticity
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper redefines "Loss of Plasticity (LoP)" from a dynamical systems perspective as gradient trajectories being trapped within **invariant submanifolds** of the parameter space. It proves that frozen and cloned units form such "trap manifolds" and presents a counter-intuitive conclusion: the very low-rank compressi
+  [ICLR2026][Learning Theory][Loss of Plasticity] This paper redefines "Loss of Plasticity (LoP)" from a dynamical systems perspective as gradient trajectories being trapped within **invariant submanifolds** of the parameter space. It proves that frozen and cloned units form such "trap manifolds" and presents a counter-intuitive conclusion: the very low-rank compression mechanisms that promote generalization in static tasks are what drive the network into these plasticity-deple…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Continual Learning"
+  - "Optimization Dynamics"
+  - "Loss of Plasticity"
+  - "Invariant Manifold"
+  - "Gradient Dynamics"
+  - "Effective Rank"
+  - "Neural Collapse"
 date: 2026-05-08
-content_hash: 2aebe85e892aca84
+content_hash: 0f9c6a769fd5d3ce
 ---
+
 # Barriers for Learning in an Evolving World: Mathematical Understanding of Loss of Plasticity
 
 **Conference**: ICLR2026  

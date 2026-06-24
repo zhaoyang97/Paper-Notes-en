@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] MDPD proposes efficient fine-tuning through bidirectional knowledge distillation between a frozen backbone and a lightweight side network. The side network is discarded after training, achieving both parameter/memory efficiency during training and high speed during inference.
+  [CVPR 2026][Model Compression][Memory-Efficient Transfer Learning] MDPD proposes efficient fine-tuning through bidirectional knowledge distillation between a frozen backbone and a lightweight side network. The side network is discarded after training, achieving both parameter/memory efficiency during training and high speed during inference.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Memory-Efficient Transfer Learning"
+  - "Knowledge Distillation"
+  - "Side Networks"
+  - "Inference Acceleration"
+  - "Dual Path Distillation"
 date: 2026-05-08
-content_hash: 81f1979183635bf9
+content_hash: f1a877989318cd18
 ---
+
 # Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation
 
 **Conference**: CVPR 2026  
@@ -136,7 +140,7 @@ Backbone and side network are optimized alternately during training to minimize 
 - [\[CVPR 2026\] Dual-branch Distilled Transformer for Efficient Asymmetric UAV Tracking](dual-branch_distilled_transformer_for_efficient_asymmetric_uav_tracking.md)
 - [\[CVPR 2026\] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation](dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation.md)
 - [\[CVPR 2026\] WPT: World-to-Policy Transfer via Online World Model Distillation](wpt_world-to-policy_transfer_via_online_world_model_distillation.md)
-- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
+- [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](../../ICLR2026/model_compression/quantized_gradient_projection_for_memory-efficient_continual_learning.md)
 
 </div>
 

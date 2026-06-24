@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Object-Centric World Models for Causality-Aware Reinforcement Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][Object-centric world models] This paper proposes STICA, a framework that implements the world model, policy network…
+  [AAAI 2026][Reinforcement Learning][Object-centric world models] This paper proposes STICA, a framework that implements the world model, policy network, and value network through a unified object-centric Transformer architecture. The world model decomposes observations into independent per-object latent states for token-level dynamics prediction, while the policy and value networks estimate token-level causal relationships via a causal attention mechanism to enable causality-…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Slot Attention"
   - "Transformer"
 date: 2026-05-08
-content_hash: e66f649612ddf6de
+content_hash: 2ed7a3f4232df240
 ---
 
 # Object-Centric World Models for Causality-Aware Reinforcement Learning
@@ -178,11 +178,11 @@ Priority ranking of ablation findings:
 
 ## Related Papers
 
-- [\[ICLR 2026\] From Observations to Events: Event-Aware World Model for Reinforcement Learning](../../ICLR2026/reinforcement_learning/from_observations_to_events_event-aware_world_model_for_reinforcement_learning.md)
+- [\[ICLR 2026\] Object-Centric World Models from Few-Shot Annotations for Sample-Efficient Reinforcement Learning](../../ICLR2026/reinforcement_learning/object-centric_world_models_from_few-shot_annotations_for_sample-efficient_reinf.md)
+- [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](../../ICLR2026/reinforcement_learning/from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
 - [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](../../ICLR2026/reinforcement_learning/wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
-- [\[CVPR 2026\] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification](../../CVPR2026/reinforcement_learning/specificity-aware_reinforcement_learning_for_fine-grained_open-world_classificat.md)
-- [\[CVPR 2026\] GeoWorld: Geometric World Models](../../CVPR2026/reinforcement_learning/geoworld_geometric_world_models.md)
 - [\[AAAI 2026\] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization](provably_efficient_multi-objective_bandit_algorithms_under_preference-centric_cu.md)
+- [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
 
 </div>
 

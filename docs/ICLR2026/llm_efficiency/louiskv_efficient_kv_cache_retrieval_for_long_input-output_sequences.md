@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LouisKV: Efficient KV Cache Retrieval for Long Input-Output Sequences
 description: >-
-  [ICLR 2026][LLM Efficiency][KV Cache Retrieval] LouisKV observes that key KVs exhibit strong temporal locality during decoding and distinct distribution patterns across input and output sequences. By replacing "per-token retrieval + page-level management" with "semantic boundary-triggered retrieval + decoupled fine-grained management (input clustering/output segment
+  [ICLR 2026][LLM Efficiency][KV Cache Retrieval] LouisKV observes that key KVs exhibit strong temporal locality during decoding and distinct distribution patterns across input and output sequences. By replacing "per-token retrieval + page-level management" with "semantic boundary-triggered retrieval + decoupled fine-grained management (input clustering/output segmenting)," it achieves up to a 4.7× speedup over SOTA retrieval methods on various long-sequence tasks with near-zer…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV Cache Retrieval
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV Cache Retrieval"
+  - "Long-sequence Inference"
+  - "Temporal Locality"
+  - "Semantic Clustering"
+  - "Long-output Inference"
 date: 2026-05-08
-content_hash: edfb44de85b03fd1
+content_hash: 8e3894f8b9c7df40
 ---
+
 # LouisKV: Efficient KV Cache Retrieval for Long Input-Output Sequences
 
 **Conference**: ICLR 2026  
@@ -124,11 +129,11 @@ When $r_t$ falls below a preset threshold $\tau$, a semantic boundary is detecte
 
 ## Related Papers
 
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] IceCache: Memory-Efficient KV-cache Management for Long-Sequence LLMs](icecache_memory-efficient_kv-cache_management_for_long-sequence_llms.md)
 - [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
-- [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](../../ICML2026/llm_efficiency/criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
 - [\[ICLR 2026\] ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models](thinkv_thought-adaptive_kv_cache_compression_for_efficient_reasoning_models.md)
-- [\[ICLR 2026\] Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs](cache_what_lasts_token_retention_for_memory-bounded_kv_cache_in_llms.md)
+- [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](../../ICML2026/llm_efficiency/criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
 
 </div>
 

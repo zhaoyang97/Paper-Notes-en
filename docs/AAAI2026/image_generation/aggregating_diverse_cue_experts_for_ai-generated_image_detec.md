@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aggregating Diverse Cue Experts for AI-Generated Image Detection
 description: >-
-  [AAAI 2026][Image Generation][AI-generated image detection] This paper proposes the Multi-Cue Aggregation Network (MCAN), which unifies three complementary cues — raw image, high-frequency representation…
+  [AAAI 2026][Image Generation][AI-generated image detection] This paper proposes the Multi-Cue Aggregation Network (MCAN), which unifies three complementary cues — raw image, high-frequency representation, and a newly introduced Chromaticity Inconsistency (CI) — through a Mixture-of-Encoder Adapter (MoEA), enabling robust AI-generated image detection that generalizes across diverse generative models.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "mixture of experts"
   - "CLIP fine-tuning"
 date: 2026-05-08
-content_hash: ff5474e8fba037ce
+content_hash: 3c676c441cb276a4
 ---
 
 # Aggregating Diverse Cue Experts for AI-Generated Image Detection
@@ -126,10 +126,10 @@ Notable per-subset results on GenImage:
 ## Related Papers
 
 - [\[AAAI 2026\] Beyond Semantic Features: Pixel-Level Mapping for Generalized AI-Generated Image Detection](beyond_semantic_features_pixel-level_mapping_for_generalized_ai-generated_image_.md)
+- [\[CVPR 2025\] A Bias-Free Training Paradigm for More General AI-generated Image Detection](../../CVPR2025/image_generation/a_bias-free_training_paradigm_for_more_general_ai-generated_image_detection.md)
+- [\[ECCV 2024\] Zero-Shot Detection of AI-Generated Images](../../ECCV2024/image_generation/zero-shot_detection_of_ai-generated_images.md)
+- [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](../../CVPR2026/image_generation/mixture_of_style_experts_for_diverse_image_stylization.md)
 - [\[ICML 2026\] OmniAID: Decoupling Semantic and Artifacts for Universal AI-Generated Image Detection in the Wild](../../ICML2026/image_generation/omniaid_decoupling_semantic_and_artifacts_for_universal_ai-generated_image_detec.md)
-- [\[AAAI 2026\] AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction](aedr_training-free_ai-generated_image_attribution_via_autoen.md)
-- [\[NeurIPS 2025\] Epistemic Uncertainty for Generated Image Detection](../../NeurIPS2025/image_generation/epistemic_uncertainty_for_generated_image_detection.md)
-- [\[AAAI 2026\] CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection of Generated Images](causalclip_causally-informed_feature_disentanglement_and_filtering_for_generaliz.md)
 
 </div>
 

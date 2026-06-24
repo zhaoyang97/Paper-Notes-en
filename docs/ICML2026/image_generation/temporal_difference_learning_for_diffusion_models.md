@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Temporal Difference Learning for Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] The paper reformulates the diffusion denoising process as a Markov Reward Process (MRP) and treats training as policy evaluation in reinforcement learning. It proposes a Temporal Difference (TD) objective that enforces the model's "multi-step drift" along the denoising trajectory to match the true diffusion drift. As a
+  [ICML2026][Image Generation][Diffusion Models] The paper reformulates the diffusion denoising process as a Markov Reward Process (MRP) and treats training as policy evaluation in reinforcement learning. It proposes a Temporal Difference (TD) objective that enforces the model's "multi-step drift" along the denoising trajectory to match the true diffusion drift. As a plug-and-play regularizer added to baseline losses like EDM or Consistency Training…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Temporal Difference"
+  - "Reinforcement Learning"
+  - "Cross-time Consistency"
+  - "Few-step Sampling"
 date: 2026-05-08
-content_hash: 0a5945af4133e51c
+content_hash: 94ab652332aaf830
 ---
+
 # Temporal Difference Learning for Diffusion Models
 
 **Conference**: ICML2026  
@@ -151,10 +155,10 @@ $\lambda$ scanning shows small $\lambda$ (0.01–0.5) is optimal and stable. Str
 ## Related Papers
 
 - [\[ICLR 2026\] Temporal Concept Dynamics in Diffusion Models via Prompt-Conditioned Interventions](../../ICLR2026/image_generation/temporal_concept_dynamics_in_diffusion_models_via_prompt-conditioned_interventio.md)
-- [\[CVPR 2025\] Finite Difference Flow Optimization for RL Post-Training of Text-to-Image Models](../../CVPR2025/image_generation/finite_difference_flow_optimization_for_rl_post-training_of_text-to-image_models.md)
 - [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
+- [\[ECCV 2024\] Enhancing Diffusion Models with Text-Encoder Reinforcement Learning](../../ECCV2024/image_generation/enhancing_diffusion_models_with_text-encoder_reinforcement_learning.md)
+- [\[ICLR 2026\] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models](../../ICLR2026/image_generation/consolidating_reinforcement_learning_for_multimodal_discrete_diffusion_models.md)
 - [\[ICML 2026\] A Diffusive Classification Loss for Learning Energy-based Generative Models](a_diffusive_classification_loss_for_learning_energy-based_generative_models.md)
-- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](../../CVPR2026/image_generation/videocof_unified_video_editing_with_temporal_reasoner.md)
 
 </div>
 

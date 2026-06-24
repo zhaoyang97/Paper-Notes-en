@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching
 description: >-
-  [AAAI 2026][Optimization][Federated Learning] This paper proposes pFed1BS, a framework that achieves extreme bidirectional communication compression (>99% reduction) in federated learning via one-bit random sketching…
+  [AAAI 2026][Optimization][Federated Learning] This paper proposes pFed1BS, a framework that achieves extreme bidirectional communication compression (>99% reduction) in federated learning via one-bit random sketching, while introducing a sign-based regularizer for client model personalization. The framework simultaneously addresses communication bottlenecks and data heterogeneity in non-IID settings.
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "one-bit compression"
   - "random sketching"
 date: 2026-05-08
-content_hash: 5ddb247c41bde799
+content_hash: b4bc77606ac1fdd7
 ---
 
 # pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching
@@ -144,11 +144,11 @@ The paper fills a clear gap between communication compression and personalized f
 
 ## Related Papers
 
+- [\[ICLR 2026\] Enhancing Communication Compression via Discrepancy-aware Calibration for Federated Learning](../../ICLR2026/optimization/enhancing_communication_compression_via_discrepancy-aware_calibration_for_federa.md)
+- [\[ICLR 2026\] Unlocking the Potential of Weighting Methods in Federated Learning through Communication Compression](../../ICLR2026/optimization/unlocking_the_potential_of_weighting_methods_in_federated_learning_through_commu.md)
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](../../NeurIPS2025/optimization/multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
-- [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](../../NeurIPS2025/optimization/personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
+- [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](../../CVPR2026/optimization/few-for-many_personalized_federated_learning.md)
 - [\[NeurIPS 2025\] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning](../../NeurIPS2025/optimization/layer-wise_update_aggregation_with_recycling_for_communication-efficient_federat.md)
-- [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](../../ICML2026/optimization/delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
-- [\[AAAI 2026\] PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing](peoat_personalization-guided_evolutionary_question_assembly_for_one-shot_adaptiv.md)
 
 </div>
 

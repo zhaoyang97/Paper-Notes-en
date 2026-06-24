@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the "counting deficiency" in multimodal large language models (MLLMs), this work introduces CG-AV-Counting—the first interpretable counting benchmark for long videos across audio-visual modalities with fine-grained "counting clue" annotations. Simultaneously, it proposes AV-Reasoner, which leverages GRPO and
+  [CVPR 2026][VLM Reasoning][Audio-visual counting] Addressing the "counting deficiency" in multimodal large language models (MLLMs), this work introduces CG-AV-Counting—the first interpretable counting benchmark for long videos across audio-visual modalities with fine-grained "counting clue" annotations. Simultaneously, it proposes AV-Reasoner, which leverages GRPO and curriculum learning to **transfer** counting capabilities from related tasks such as localization and QA. Whi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Audio-visual counting"
+  - "Multimodal Large Language Models"
+  - "GRPO reinforcement learning"
+  - "Curriculum learning"
+  - "Clue-grounded evaluation"
 date: 2026-05-08
-content_hash: e3c0cba0e451d632
+content_hash: 92d6368a8596f758
 ---
+
 # AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Stage-by-stage decomposition (Tab. 5/6, OOD on CG-AV) demonstrates the necessity
 
 ## Related Papers
 
-- [\[CVPR 2026\] CodePercept: Code-Grounded Visual STEM Perception for MLLMs](codepercept_code-grounded_visual_stem_perception_for_mllms.md)
-- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
-- [\[CVPR 2026\] Benchmarking Single-Factor Physical Video-to-Audio Generation](benchmarking_single-factor_physical_video-to-audio_generation.md)
 - [\[CVPR 2026\] IPR-1: Interactive Physical Reasoner](ipr-1_interactive_physical_reasoner.md)
-- [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
+- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
+- [\[CVPR 2026\] TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation](terrascope_pixel-grounded_visual_reasoning_for_earth_observation.md)
+- [\[ICLR 2026\] JointAVBench: A Benchmark for Joint Audio-Visual Reasoning Evaluation](../../ICLR2026/vlm_reasoning/jointavbench_a_benchmark_for_joint_audio-visual_reasoning_evaluation.md)
+- [\[CVPR 2026\] InfiniBench: Infinite Benchmarking for Visual Spatial Reasoning with Customizable Scene Complexity](infinibench_infinite_benchmarking_for_visual_spatial_reasoning_with_customizable.md)
 
 </div>
 

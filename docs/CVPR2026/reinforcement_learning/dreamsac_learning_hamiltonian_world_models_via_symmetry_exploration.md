@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DreamSAC: Learning Hamiltonian World Models via Symmetry Exploration
 description: >-
-  [CVPR 2026][Reinforcement Learning][World Models] DreamSAC replaces the black-box dynamics of pixel-based world models (DreamerV3) with an SE(3)-invariant Hamiltonian dynamics prior and employs a "symmetry-breaking work" intrinsic curiosity to collect physically informative data. This allows the model to learn conservation laws rather than just pixel statistical corre
+  [CVPR 2026][Reinforcement Learning][World Models] DreamSAC replaces the black-box dynamics of pixel-based world models (DreamerV3) with an SE(3)-invariant Hamiltonian dynamics prior and employs a "symmetry-breaking work" intrinsic curiosity to collect physically informative data. This allows the model to learn conservation laws rather than just pixel statistical correlations, achieving 22%–163% higher extrapolative generalization on unseen physical parameters such as mass…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - World Models
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "World Models"
+  - "Hamiltonian Dynamics"
+  - "Intrinsic Curiosity"
+  - "Symmetry Exploration"
+  - "Extrapolative Generalization"
 date: 2026-05-08
-content_hash: 45defd30884a23f2
+content_hash: fe708866b542948f
 ---
+
 # DreamSAC: Learning Hamiltonian World Models via Symmetry Exploration
 
 **Conference**: CVPR 2026  
@@ -160,15 +165,16 @@ Gains in parametric OOD (gravity/friction) are most significant. Walker with 1.5
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] GeoWorld: Geometric World Models](geoworld_geometric_world_models.md)
-- [\[NeurIPS 2025\] Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds](../../NeurIPS2025/reinforcement_learning/foundation_models_as_world_models_a_foundational_study_in_text-based_gridworlds.md)
-- [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](../../AAAI2026/reinforcement_learning/object-centric_world_models_for_causality-aware_reinforcement_learning.md)
-- [\[ICML 2026\] Flow-Equivariant World Models: Memory for Partially Observed Dynamic Environments](../../ICML2026/reinforcement_learning/flow_equivariant_world_models_memory_for_partially_observed_dynamic_environments.md)
-- [\[ICLR 2026\] Deep SPI: Safe Policy Improvement via World Models](../../ICLR2026/reinforcement_learning/deep_spi_safe_policy_improvement_via_world_models.md)
+- [\[CVPR 2026\] Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models](cloning_deterministic_worlds_the_critical_role_of_latent_geometry_in_long-horizo.md)
+- [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](../../ICLR2026/reinforcement_learning/learning_massively_multitask_world_models_for_continuous_control.md)
+- [\[ICLR 2026\] One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration](../../ICLR2026/reinforcement_learning/one_life_to_learn_inferring_symbolic_world_models_for_stochastic_environments_fr.md)
+- [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](../../ICLR2026/reinforcement_learning/from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
 
 </div>
 

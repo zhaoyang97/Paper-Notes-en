@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Universal 3D Shape Matching via Coarse-to-Fine Language Guidance
 description: >-
-  [CVPR 2026][Segmentation][3D Shape Matching] Ours proposes UniMatch, a semantic-aware coarse-to-fine 3D shape matching framework. The coarse stage establishes part-level correspondence through category-agnostic 3D segmentation, MLLM naming, and FG-CLIP language embeddings. The fine stage learns dense correspondence within an extended functional map framework usin
+  [CVPR 2026][Segmentation][3D Shape Matching] Ours proposes UniMatch, a semantic-aware coarse-to-fine 3D shape matching framework. The coarse stage establishes part-level correspondence through category-agnostic 3D segmentation, MLLM naming, and FG-CLIP language embeddings. The fine stage learns dense correspondence within an extended functional map framework using a Group-wise Ranking Contrastive (RnC) Loss, achieving universal matching for cross-category and non-isometric sh…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - 3D Shape Matching
-  - Functional Maps
-  - Language Guidance
-  - Contrastive Learning
-  - Cross-Category Correspondence
+  - "CVPR 2026"
+  - "Segmentation"
+  - "3D Shape Matching"
+  - "Functional Maps"
+  - "Language Guidance"
+  - "Contrastive Learning"
+  - "Cross-Category Correspondence"
 date: 2026-05-08
-content_hash: 9faceb3681a55633
+content_hash: a46ef8ee9f2ed857
 ---
+
 # Universal 3D Shape Matching via Coarse-to-Fine Language Guidance
 
 **Conference**: CVPR 2026  
@@ -218,9 +219,9 @@ The refiner uses DiffusionNet based on the URSSM framework. MLLM prompts are use
 
 - [\[CVPR 2026\] SegGBC: Justifiable Coarse-to-Fine Granular-Ball Computing for Enhancing Clustering Image Segmentation](seggbc_justifiable_coarse-to-fine_granular-ball_computing_for_enhancing_clusteri.md)
 - [\[CVPR 2026\] FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching](flowdis_language-guided_dichotomous_image_segmentation_with_flow_matching.md)
-- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
 - [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
-- [\[CVPR 2026\] The Missing Point in Vision Transformers for Universal Image Segmentation](the_missing_point_in_vision_transformers_for_universal_image_segmentation.md)
+- [\[ECCV 2024\] Active Coarse-to-Fine Segmentation of Moveable Parts from Real Images](../../ECCV2024/segmentation/active_coarsetofine_segmentation_of_moveable_parts_from_real.md)
+- [\[CVPR 2026\] Learning and Aligning Click-Aware Shape Prior for Interactive Amodal Instance Segmentation](learning_and_aligning_click-aware_shape_prior_for_interactive_amodal_instance_se.md)
 
 </div>
 

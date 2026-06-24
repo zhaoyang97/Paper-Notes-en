@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond [CLS] Token: Query-Driven Token-Level Forgery Purification for Generalizable Deepfake Detection
 description: >-
-  [CVPR 2026][AI Safety][query token] Addressing the "Pre-trained Information Bias" (PIB) where the [CLS] token in ViT foundation models excessively focuses on global semantics and ignores local forgery traces during deepfake detection, this paper proposes the QTFP framework. By replacing [CLS] with a set of randomly initialized learnable query tokens to a
+  [CVPR 2026][AI Safety][Deepfake Detection] Addressing the "Pre-trained Information Bias" (PIB) where the [CLS] token in ViT foundation models excessively focuses on global semantics and ignores local forgery traces during deepfake detection, this paper proposes the QTFP framework. By replacing [CLS] with a set of randomly initialized learnable query tokens to aggregate local evidence, combined with "Forgery Likelihood Weighted Contrastive Loss" and "Real-Graph Attention Align…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - query token
-  - Generalizability
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Deepfake Detection"
+  - "Visual Foundation Models"
+  - "query token"
+  - "contrastive learning"
+  - "generalizability"
 date: 2026-05-08
-content_hash: c31380f2c9f5e79c
+content_hash: 2bf89e198924f809
 ---
+
 # Beyond [CLS] Token: Query-Driven Token-Level Forgery Purification for Generalizable Deepfake Detection
 
 **Conference**: CVPR 2026  
@@ -141,6 +145,7 @@ Based on Effort (rank-1) trained on FF++ (c23):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -148,8 +153,8 @@ Based on Effort (rank-1) trained on FF++ (c23):
 - [\[CVPR 2026\] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning](dfd-hr_generalizable_deepfake_detection_via_hierarchical_routing_learning.md)
 - [\[CVPR 2026\] TokenTrace: Multi-Concept Attribution through Watermarked Token Recovery](tokentrace_multi-concept_attribution_through_watermarked_token_recovery.md)
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
+- [\[ICML 2026\] PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection](../../ICML2026/ai_safety/prpo_paragraph-level_policy_optimization_for_vision-language_deepfake_detection.md)
 - [\[CVPR 2025\] Forensics Adapter: Adapting CLIP for Generalizable Face Forgery Detection](../../CVPR2025/ai_safety/forensics_adapter_adapting_clip_for_generalizable_face_forgery_detection.md)
-- [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
 
 </div>
 

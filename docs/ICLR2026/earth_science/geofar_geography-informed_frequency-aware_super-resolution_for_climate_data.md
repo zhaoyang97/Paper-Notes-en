@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoFAR: Geography-Informed Frequency-Aware Super-Resolution for Climate Data
 description: >-
-  [ICLR 2026][Earth Science][Paper Note] GeoFAR decomposes the low-frequency bias in climate super-resolution into two problems: "under-represented frequency components" and "missing geographical conditions." It utilizes DCT frequency convolutional kernels to extract fine-grained frequency band representations and modulates these representations pixel-wise us
+  [ICLR2026][Earth Science][Climate Downscaling] GeoFAR decomposes the low-frequency bias in climate super-resolution into two problems: "under-represented frequency components" and "missing geographical conditions." It utilizes DCT frequency convolutional kernels to extract fine-grained frequency band representations and modulates these representations pixel-wise using a geographic implicit representation (Geo-INR) composed of longitude, latitude…
 tags:
-  - ICLR 2026
-  - Earth Science
+  - "ICLR2026"
+  - "Earth Science"
+  - "Climate Downscaling"
+  - "Super-Resolution"
+  - "Frequency-Aware Representation"
+  - "Geographic Implicit Representation"
+  - "Complex Terrain"
 date: 2026-05-08
-content_hash: 8f8886815f1b4edd
+content_hash: 050521ba6b7de28f
 ---
+
 # GeoFAR: Geography-Informed Frequency-Aware Super-Resolution for Climate Data
 
 **Conference**: ICLR2026  
@@ -148,8 +154,8 @@ Ablations show that gains come from the combination of components. Residual pred
 - Value: ⭐⭐⭐⭐⭐ Highly instructive for tasks where high-frequency details are coupled with geography.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -157,7 +163,7 @@ Ablations show that gains come from the combination of components. Residual pred
 - [\[CVPR 2026\] PhyOceanCast: Global Ocean Forecasting with Physics-Informed Diffusion](../../CVPR2026/earth_science/phyoceancast_global_ocean_forecasting_with_physics-informed_diffusion.md)
 - [\[AAAI 2026\] RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways](../../AAAI2026/earth_science/renew_risk-_and_energy-aware_navigation_in_dynamic_waterways.md)
 - [\[AAAI 2026\] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics](../../AAAI2026/earth_science/mdaif_robust_one-stop_multi-degradation-aware_image_fusion_with_language-driven_.md)
-- [\[ICLR 2026\] 揭示连续表示全波形反演的机制：一个基于波的神经正切核框架](unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
+- [\[ICLR 2026\] Uncovering the Mechanism of Continuous Representation Full Waveform Inversion: A Wave-based Neural Tangent Kernel Framework](unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
 
 </div>
 

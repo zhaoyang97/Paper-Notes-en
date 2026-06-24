@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoCA: Robust Cross-Domain End-to-End Autonomous Driving
 description: >-
-  [ICML 2026][Autonomous Driving][Paper Note] RoCA attaches a plug-and-play module based on Gaussian Processes (GP) to end-to-end autonomous driving models. By learning a set of basis tokens and corresponding trajectories that cover diverse scenarios, it probabilistically infers future trajectories based on similarity for new scenarios. This approach uses GP uncer
+  [ICML 2026][Autonomous Driving][End-to-end autonomous driving] RoCA attaches a plug-and-play module based on Gaussian Processes (GP) to end-to-end autonomous driving models. By learning a set of basis tokens and corresponding trajectories that cover diverse scenarios, it probabilistically infers future trajectories based on similarity for new scenarios. This approach uses GP uncertainty for regularization to enhance generalization during source domain training and enables eff…
 tags:
-  - ICML 2026
-  - Autonomous Driving
+  - "ICML 2026"
+  - "Autonomous Driving"
+  - "End-to-end autonomous driving"
+  - "Gaussian Process"
+  - "Cross-domain adaptation"
+  - "Uncertainty"
+  - "Long-tail robustness"
 date: 2026-05-08
-content_hash: 16f6d624dd587a2f
+content_hash: d92cad17d6017718
 ---
+
 # RoCA: Robust Cross-Domain End-to-End Autonomous Driving
 
 **Conference**: ICML 2026  
@@ -155,8 +161,8 @@ RoCA(VAD-Tiny) zero-shot L2 of 0.85 and collision of 0.24 outperform baselines (
 - [\[CVPR 2026\] Percept-WAM: Perception-Enhanced World-Awareness-Action Model for Robust End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/percept-wam_perception-enhanced_world-awareness-action_model_for_robust_end-to-e.md)
 - [\[ICML 2026\] DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving](deepsight_long-horizon_world_modeling_via_latent_states_prediction_for_end-to-en.md)
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
-- [\[CVPR 2026\] CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention](../../CVPR2026/autonomous_driving/causalvad_de-confounding_end-to-end_autonomous_driving_via_causal_intervention.md)
 - [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](../../CVPR2026/autonomous_driving/scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
+- [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
 
 </div>
 

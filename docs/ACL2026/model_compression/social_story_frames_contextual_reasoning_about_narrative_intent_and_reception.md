@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Social Story Frames: Contextual Reasoning about Narrative Intent and Reception
 description: >-
-  [ACL 2026][Model Compression][Narrative Understanding] This paper proposes SocialStoryFrames, utilizing a reader response taxonomy with 10 dimensions and two distilled models to place Reddit stories back into community and conversational contexts. It infers narrative intent, reader sentiment, and value judgments, demonstrating a more granular analysis of community narrativ
+  [ACL2026][Model Compression][Narrative understanding] This paper proposes SocialStoryFrames, utilizing a reader response taxonomy with 10 dimensions and two distilled models to place Reddit stories back into community and conversational contexts. It infers narrative intent, reader sentiment, and value judgments, demonstrating a more granular analysis of community narrative practices across 6,140 social media stories compared to semantic similarity.
 tags:
-  - ACL 2026
-  - Model Compression
-  - Narrative Understanding
+  - "ACL2026"
+  - "Model Compression"
+  - "Narrative understanding"
+  - "reader response"
+  - "social media"
+  - "contextual reasoning"
+  - "model distillation"
 date: 2026-05-08
-content_hash: eacdf3f60d9f30ad
+content_hash: a7953e668e7b8829
 ---
+
 # Social Story Frames: Contextual Reasoning about Narrative Intent and Reception
 
 **Conference**: ACL2026  
@@ -132,7 +137,6 @@ The paper does not emphasize new training losses; the core strategy is teacher-s
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

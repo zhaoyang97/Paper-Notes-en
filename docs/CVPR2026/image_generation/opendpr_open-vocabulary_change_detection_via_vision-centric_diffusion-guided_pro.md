@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] OpenDPR proposes a training-free vision-centric framework that leverages diffusion models to offline generate diverse visual prototypes for target categories. During inference, it identifies open-vocabulary changes in remote sensing images through similarity retrieval in visual space, achieving SOTA performance on four
+  [CVPR 2026][Image Generation][Open-vocabulary change detection] OpenDPR proposes a training-free vision-centric framework that leverages diffusion models to offline generate diverse visual prototypes for target categories. During inference, it identifies open-vocabulary changes in remote sensing images through similarity retrieval in visual space, achieving SOTA performance on four benchmark datasets.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Open-vocabulary change detection"
+  - "remote sensing imagery"
+  - "diffusion models"
+  - "prototype retrieval"
+  - "vision foundation models"
 date: 2026-05-08
-content_hash: 0961a3144b387640
+content_hash: 1a3f6a8da7764cdc
 ---
+
 # OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ OpenDPR is primarily a training-free framework and does not require end-to-end t
 
 ## Related Papers
 
-- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
-- [\[CVPR 2026\] SHOE: Semantic HOI Open-Vocabulary Evaluation Metric](shoe_semantic_hoi_open-vocabulary_evaluation_metric.md)
 - [\[CVPR 2026\] Prototype-Guided Concept Erasure in Diffusion Models](prototype-guided_concept_erasure_in_diffusion_models.md)
 - [\[CVPR 2026\] Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization](omni-attribute_open-vocabulary_attribute_encoder_for_visual_concept_personalizat.md)
 - [\[CVPR 2026\] Imagine Before Concentration: Diffusion-Guided Registers Enhance Partially Relevant Video Retrieval](imagine_before_concentration_diffusion-guided_registers_enhance_partially_releva.md)
+- [\[CVPR 2026\] SynthRGB-T: Language-Vision Guided Image Translation for Diversity Synthesis](synthrgb-t_language-vision_guided_image_translation_for_diversity_synthesis.md)
+- [\[CVPR 2026\] RDF-MIG: A Robust Diffusion Framework for Masked Image Generation to Augment Semantic Segmentation and Change Detection](rdf-mig_a_robust_diffusion_framework_for_masked_image_generation_to_augment_sema.md)
 
 </div>
 

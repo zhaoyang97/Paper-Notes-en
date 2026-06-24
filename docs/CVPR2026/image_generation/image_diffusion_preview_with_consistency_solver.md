@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Image Diffusion Preview with Consistency Solver
 description: >-
-  [CVPR 2026][Image Generation][Reinforcement Learning] This paper proposes the Diffusion Preview paradigm and ConsistencySolver—a lightweight high-order ODE solver trained via reinforcement learning. It generates high-quality preview images during low-step sampling while ensuring consistency with full-step outputs. It achieves an FID comparable to Multistep DPM-Solver with
+  [CVPR 2026][Image Generation][Diffusion Model Acceleration] This paper proposes the Diffusion Preview paradigm and ConsistencySolver—a lightweight high-order ODE solver trained via reinforcement learning. It generates high-quality preview images during low-step sampling while ensuring consistency with full-step outputs. It achieves an FID comparable to Multistep DPM-Solver with 47% fewer steps and reduces user interaction time by nearly 50%.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model Acceleration"
+  - "ODE Solver"
+  - "Reinforcement Learning"
+  - "Preview-and-Refine"
+  - "Sampling Efficiency"
 date: 2026-05-08
-content_hash: 3330044a255cbe98
+content_hash: 711eb61c3f77c982
 ---
+
 # Image Diffusion Preview with Consistency Solver
 
 **Conference**: CVPR 2026  

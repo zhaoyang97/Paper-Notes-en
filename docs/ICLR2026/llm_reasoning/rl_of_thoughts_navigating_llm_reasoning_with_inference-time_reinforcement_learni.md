@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] RLoT models the multi-step reasoning of LLMs as a Markov Decision Process (MDP), training a "navigator" with fewer than $3\text{K}$ parameters using reinforcement learning. This navigator dynamically selects and concatenates five cognitively-inspired "basic logic blocks" based on the current state during inference to g
+  [ICLR 2026][Reasoning][Inference-time enhancement] RLoT models the multi-step reasoning of LLMs as a Markov Decision Process (MDP), training a "navigator" with fewer than $3\text{K}$ parameters using reinforcement learning. This navigator dynamically selects and concatenates five cognitively-inspired "basic logic blocks" based on the current state during inference to generate a task-specific logical structure on the fly. It achieves a maximum Gain of $13.4\%$ on benchmarks su…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Inference-time enhancement"
+  - "logical structure"
+  - "reinforcement learning"
+  - "process reward model"
+  - "transferability"
 date: 2026-05-08
-content_hash: 1757240a821ca796
+content_hash: d4216abaa395edce
 ---
+
 # RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -148,8 +153,8 @@ Removing individual logic blocks and retraining the navigator (Table 6):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Incentivizing LLM Reasoning via Reinforcement Learning with Functional Monte Carlo Tree Search](incentivizing_llm_reasoning_via_reinforcement_learning_with_functional_monte_car.md)
 - [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
+- [\[ICLR 2026\] Incentivizing LLM Reasoning via Reinforcement Learning with Functional Monte Carlo Tree Search](incentivizing_llm_reasoning_via_reinforcement_learning_with_functional_monte_car.md)
 - [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 - [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
 - [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)

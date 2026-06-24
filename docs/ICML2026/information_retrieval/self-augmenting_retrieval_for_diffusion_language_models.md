@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Augmenting Retrieval for Diffusion Language Models
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Diffusion Language Model] By leveraging "tentative predictions" provided simultaneously for all positions during the denoising process of Diffusion Language Models as look-ahead signals, the authors propose SARDI: a training-free and retriever-agnostic dynamic RAG framework. SARDI re-retrieves evidence using uncommitted tokens at each denoising
+  [ICML2026][Information Retrieval & RAG][Diffusion Language Models] By leveraging "tentative predictions" provided simultaneously for all positions during the denoising process of Diffusion Language Models as look-ahead signals, the authors propose SARDI: a training-free and retriever-agnostic dynamic RAG framework. SARDI re-retrieves evidence using uncommitted tokens at each denoising step, outperforming both diffusion and autoregressive training-free retrieval baselines on 5…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - Diffusion Language Model
+  - "ICML2026"
+  - "Information Retrieval & RAG"
+  - "Diffusion Language Models"
+  - "Dynamic Retrieval"
+  - "Multi-hop QA"
+  - "Parallel Decoding"
+  - "Training-free"
 date: 2026-05-08
-content_hash: a742f991091c09e6
+content_hash: bc2a435994cccaa0
 ---
+
 # Self-Augmenting Retrieval for Diffusion Language Models
 
 **Conference**: ICML2026  
@@ -135,11 +140,11 @@ SARDI significantly improves over static diffusion retrieval across all benchmar
 
 ## Related Papers
 
+- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](../../ICLR2026/information_retrieval/query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
 - [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](../../ICLR2026/information_retrieval/query-level_uncertainty_in_large_language_models.md)
+- [\[ICLR 2026\] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](../../ICLR2026/information_retrieval/synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)
 - [\[ICML 2026\] ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards](reseek_a_self-correcting_framework_for_search_agents_with_instructive_rewards.md)
-- [\[ICLR 2026\] AtlasKV: Augmenting LLMs with Billion-Scale Knowledge Graphs in 20GB VRAM](../../ICLR2026/information_retrieval/atlaskv_augmenting_llms_with_billion-scale_knowledge_graphs_in_20gb_vram.md)
-- [\[AAAI 2026\] Do Retrieval Augmented Language Models Know When They Don't Know?](../../AAAI2026/information_retrieval/do_retrieval_augmented_language_models_know_when_they_dont_know.md)
-- [\[ACL 2025\] RARE: Retrieval-Augmented Reasoning Enhancement for Large Language Models](../../ACL2025/information_retrieval/rare_retrieval_augmented_reasoning.md)
+- [\[ICLR 2026\] Seeing Through Words: Controlling Visual Retrieval Quality with Language Models](../../ICLR2026/information_retrieval/seeing_through_words_controlling_visual_retrieval_quality_with_language_models.md)
 
 </div>
 

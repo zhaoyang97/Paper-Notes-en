@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking
 description: >-
-  [ICLR 2026][LLM Reasoning][overthinking] Addressing the "overthinking" problem in Large Reasoning Models (LRMs), this paper proposes JET (Just-Enough Thinking). During the RL rollout phase, the model's self-generated long reasoning chains are **progressively truncated** and appended with a "stop-thinking" prompt to construct short reasoning samples consistent
+  [ICLR 2026][Reasoning][Efficient reasoning] Addressing the "overthinking" problem in Large Reasoning Models (LRMs), this paper proposes JET (Just-Enough Thinking). During the RL rollout phase, the model's self-generated long reasoning chains are **progressively truncated** and appended with a "stop-thinking" prompt to construct short reasoning samples consistent with the model's own distribution. Combined with a "correctness-first, brevity-second" quality-controlled length re…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - overthinking
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Efficient reasoning"
+  - "overthinking"
+  - "trajectory truncation"
+  - "length reward"
+  - "reinforcement learning"
 date: 2026-05-08
-content_hash: cb9747b88db2b67f
+content_hash: b6b74e2af1eaec5b
 ---
+
 # Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking
 
 **Conference**: ICLR 2026  
@@ -147,8 +151,8 @@ The paper's ablations are primarily visual (Figures 3/4/5); key comparisons are 
 ## Related Papers
 
 - [\[ICLR 2026\] Training Large Reasoning Models Efficiently via Progressive Thought Encoding](training_large_reasoning_models_efficiently_via_progressive_thought_encoding.md)
-- [\[ICLR 2026\] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization](pruning_long_chain-of-thought_of_large_reasoning_models_via_small-scale_preferen.md)
 - [\[ICLR 2026\] ProofOptimizer: Training Language Models to Simplify Proofs without Human Demonstrations](proofoptimizer_training_language_models_to_simplify_proofs_without_human_demonst.md)
+- [\[ICLR 2026\] The First Impression Problem: Internal Bias Triggers Overthinking in Reasoning Models](the_first_impression_problem_internal_bias_triggers_overthinking_in_reasoning_mo.md)
 - [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
 - [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
 

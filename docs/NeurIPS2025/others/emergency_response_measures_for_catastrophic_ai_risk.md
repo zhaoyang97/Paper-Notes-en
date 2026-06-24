@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Emergency Response Measures for Catastrophic AI Risk
 description: >-
-  [NeurIPS 2025][Catastrophic AI risk] This paper systematically analyzes how Frontier Safety Policies (FSPs) can be integrated into the first two stages of China's four-phase emergency response framework (prevention–early…
+  [NeurIPS 2025][Catastrophic AI risk] This paper systematically analyzes how Frontier Safety Policies (FSPs) can be integrated into the first two stages of China's four-phase emergency response framework (prevention–early warning–response–recovery), employing dangerous capability evaluations, tiered thresholds, and pre-established safety measures to address catastrophic AI risks. The analysis is further contextualized through comparisons with international practices such as th…
 tags:
   - "NeurIPS 2025"
   - "Catastrophic AI risk"
@@ -11,7 +11,7 @@ tags:
   - "AI governance"
   - "dangerous capability evaluation"
 date: 2026-05-08
-content_hash: 3bd5fed8dbde092a
+content_hash: 9d589816b30af89d
 ---
 
 # Emergency Response Measures for Catastrophic AI Risk
@@ -133,10 +133,10 @@ This paper contains no experiments; however, it provides a systematic comparativ
 ## Related Papers
 
 - [\[NeurIPS 2025\] Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment](evolutionary_learning_in_spatial_agent-based_models_for_physical_climate_risk_as.md)
+- [\[ICML 2025\] Randomized Dimensionality Reduction for Euclidean Maximization and Diversity Measures](../../ICML2025/others/randomized_dimensionality_reduction_for_euclidean_maximization_and_diversity_mea.md)
 - [\[NeurIPS 2025\] Military AI Needs Technically-Informed Regulation to Safeguard AI Research and its Applications](military_ai_needs_technically-informed_regulation_to_safeguard_ai_research_and_i.md)
-- [\[NeurIPS 2025\] Fostering the Ecosystem of AI for Social Impact Requires Expanding and Strengthening Evaluation Standards](fostering_the_ecosystem_of_ai_for_social_impact_requires_expanding_and_strengthe.md)
-- [\[NeurIPS 2025\] A Sustainable AI Economy Needs Data Deals That Work for Generators](a_sustainable_ai_economy_needs_data_deals_that_work_for_gene.md)
-- [\[ICML 2026\] Comprehensive AI Governance Requires Addressing Non-Model Gains](../../ICML2026/others/comprehensive_ai_governance_requires_addressing_non-model_gains.md)
+- [\[ACL 2025\] Theoretical Guarantees for Minimum Bayes Risk Decoding](../../ACL2025/others/theoretical_guarantees_for_minimum_bayes_risk_decoding.md)
+- [\[NeurIPS 2025\] Evaluating In Silico Creativity: An Expert Review of AI Chess Compositions](evaluating_in_silico_creativity_an_expert_review_of_ai_chess_compositions.md)
 
 </div>
 

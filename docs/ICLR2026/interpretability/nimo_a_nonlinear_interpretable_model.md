@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] NIMO: a Nonlinear Interpretable MOdel
 description: >-
-  [ICLR 2026][Interpretability][interpretable model] NIMO proposes a hybrid model $y = \sum_j x_j \beta_j (1 + g_{\mathbf{u}_j}(\mathbf{x}_{-j}))$. While maintaining the global interpretability of linear regression coefficients (via Mean Marginal Effects, MEM), it utilizes neural networks to provide instance-specific nonlinear corrections. The model uses a parameter elim
+  [ICLR 2026][Interpretability][interpretable model] NIMO proposes a hybrid model $y = \sum_j x_j \beta_j (1 + g_{\mathbf{u}_j}(\mathbf{x}_{-j}))$. While maintaining the global interpretability of linear regression coefficients (via Mean Marginal Effects, MEM), it utilizes neural networks to provide instance-specific nonlinear corrections. The model uses a parameter elimination method to efficiently optimize linear coefficients and network parameters jointly.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - interpretable model
-  - marginal effects
-  - linear regression
-  - neural networks
-  - feature effects
+  - "ICLR 2026"
+  - "Interpretability"
+  - "interpretable model"
+  - "marginal effects"
+  - "linear regression"
+  - "neural networks"
+  - "feature effects"
 date: 2026-05-08
-content_hash: 091ba08d4916ae60
+content_hash: 2fb9e2eb38d65f94
 ---
+
 # NIMO: a Nonlinear Interpretable MOdel
 
 **Conference**: ICLR 2026  

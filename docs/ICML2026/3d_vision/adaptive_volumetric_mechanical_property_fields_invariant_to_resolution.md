@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Volumetric Mechanical Property Fields Invariant to Resolution
 description: >-
-  [ICML 2026][3D Vision][Paper Note] AdaVoMP utilizes a "Sparse Adaptive Voxel Tree (SAV)" to simultaneously represent the input shape and output material field. A sparse Transformer encoder-decoder then autoregressively generates Young's modulus, Poisson's ratio, and density for each 3D object layer-by-layer. This approach scales the effective resolution
+  [ICML 2026][3D Vision][Volumetric Material Fields] AdaVoMP utilizes a "Sparse Adaptive Voxel Tree (SAV)" to simultaneously represent the input shape and output material field. A sparse Transformer encoder-decoder then autoregressively generates Young's modulus, Poisson's ratio, and density for each 3D object layer-by-layer. This approach scales the effective resolution of simulatable material fields from $64^3$ to $1024^3$ (a $16^3$ increase) while outperforming previous SOTA…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026"
+  - "3D Vision"
+  - "Volumetric Material Fields"
+  - "Sparse Adaptive Voxels"
+  - "Autoregressive Generation"
+  - "Physics Simulation"
+  - "Sparse Transformer"
 date: 2026-05-08
-content_hash: 49e2cbd0d78c3ce7
+content_hash: 4880267a7ff39626
 ---
+
 # Adaptive Volumetric Mechanical Property Fields Invariant to Resolution
 
 **Conference**: ICML 2026  
@@ -127,10 +133,10 @@ Evaluation on the GVT-Hard subset (challenging heterogeneous materials):
 
 ## Related Papers
 
-- [\[CVPR 2025\] Event Fields: Capturing Light Fields at High Speed, Resolution, and Dynamic Range](../../CVPR2025/3d_vision/event_fields_capturing_light_fields_at_high_speed_resolution_and_dynamic_range.md)
+- [\[ICLR 2026\] VoMP: Predicting Volumetric Mechanical Property Fields](../../ICLR2026/3d_vision/vomp_predicting_volumetric_mechanical_property_fields.md)
 - [\[CVPR 2026\] Turbo-GS: Accelerating 3D Gaussian Fitting for High-Resolution Radiance Fields](../../CVPR2026/3d_vision/turbo-gs_accelerating_3d_gaussian_fitting_for_high-quality_radiance_fields.md)
 - [\[CVPR 2026\] InfiniDepth: Arbitrary-Resolution and Fine-Grained Depth Estimation with Neural Implicit Fields](../../CVPR2026/3d_vision/infinidepth_arbitrary-resolution_and_fine-grained_depth_estimation_with_neural_i.md)
-- [\[ECCV 2024\] MeshFeat: Multi-Resolution Features for Neural Fields on Meshes](../../ECCV2024/3d_vision/meshfeat_multi-resolution_features_for_neural_fields_on_meshes.md)
+- [\[CVPR 2026\] LoG3D: Ultra-High-Resolution 3D Shape Modeling via Local-to-Global Partitioning](../../CVPR2026/3d_vision/log3d_ultra-high-resolution_3d_shape_modeling_via_local-to-global_partitioning.md)
 - [\[AAAI 2026\] Pb4U-GNet: Resolution-Adaptive Garment Simulation via Propagation-before-Update Graph Network](../../AAAI2026/3d_vision/pb4u-gnet_resolution-adaptive_garment_simulation_via_propagation-before-update_g.md)
 
 </div>

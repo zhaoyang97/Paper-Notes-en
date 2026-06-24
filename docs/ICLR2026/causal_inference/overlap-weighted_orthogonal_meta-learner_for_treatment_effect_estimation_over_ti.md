@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Overlap-Weighted Orthogonal Meta-Learner for Treatment Effect Estimation over Time
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes the WO-learner (overlap-weighted orthogonal meta-learner), which focuses estimation on samples that are truly likely to receive the target intervention sequences by applying an "overlap weight" to training samples. Combined with a Neyman-orthogonal weighted population risk function, it maintains sta
+  [ICLR 2026][Causal Inference][Heterogeneous Treatment Effects] This paper proposes the WO-learner (overlap-weighted orthogonal meta-learner), which focuses estimation on samples that are truly likely to receive the target intervention sequences by applying an "overlap weight" to training samples. Combined with a Neyman-orthogonal weighted population risk function, it maintains stability in low-overlap scenarios where "overlap probability decays exponentially with the predicti…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Heterogeneous Treatment Effects"
+  - "Neyman Orthogonality"
+  - "Overlap Weights"
+  - "Meta-Learner"
+  - "Time-Varying Confounding"
 date: 2026-05-08
-content_hash: f3d9c6ed96d96b51
+content_hash: ae198a2582243b68
 ---
+
 # Overlap-Weighted Orthogonal Meta-Learner for Treatment Effect Estimation over Time
 
 **Conference**: ICLR 2026  
@@ -125,15 +131,16 @@ Synthetic datasets isolated specific difficulties to verify the two mechanisms (
 - **Value**: ⭐⭐⭐⭐ Addresses the critical pain point of low overlap in longitudinal data with a model-agnostic solution.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Overlap-Adaptive Regularization for Conditional Average Treatment Effect Estimation](overlap-adaptive_regularization_for_conditional_average_treatment_effect_estimat.md)
+- [\[ICLR 2026\] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes](an_orthogonal_learner_for_individualized_outcomes_in_markov_decision_processes.md)
 - [\[ICML 2026\] Rank-Learner: Orthogonal Ranking of Treatment Effects](../../ICML2026/causal_inference/rank-learner_orthogonal_ranking_of_treatment_effects.md)
 - [\[ICLR 2026\] Modeling Interference for Treatment Effect Estimation in Network Dynamic Environment](modeling_interference_for_treatment_effect_estimation_in_network_dynamic_environ.md)
 - [\[ICLR 2026\] Matching without Group Barrier for Heterogeneous Treatment Effect Estimation](matching_without_group_barrier_for_heterogeneous_treatment_effect_estimation.md)
-- [\[ICLR 2026\] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes](an_orthogonal_learner_for_individualized_outcomes_in_markov_decision_processes.md)
 
 </div>
 

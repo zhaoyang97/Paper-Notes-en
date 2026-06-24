@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity
 description: >-
-  [ICLR 2026][LLM Efficiency][scaling laws] This paper systematically compares the scaling laws of xLSTM and Transformer, demonstrating that xLSTM consistently outperforms Transformers of the same scale in terms of the training loss-compute Pareto frontier, overtraining regime, and inference speed, with the advantage increasing as context length grows.
+  [ICLR2026][LLM Efficiency][scaling laws] This paper systematically compares the scaling laws of xLSTM and Transformer, demonstrating that xLSTM consistently outperforms Transformers of the same scale in terms of the training loss-compute Pareto frontier, overtraining regime, and inference speed, with the advantage increasing as context length grows.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - scaling laws
-  - xLSTM
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "scaling laws"
+  - "xLSTM"
+  - "linear complexity"
+  - "Transformer comparison"
+  - "inference efficiency"
 date: 2026-05-08
-content_hash: 7984ed16605be076
+content_hash: a661abf5c98fe593
 ---
+
 # xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity
 
 **Conference**: ICLR2026  
@@ -119,10 +123,10 @@ Beyond training scaling, inference latency is modeled as either compute-bound or
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs](scaling_laws_meet_model_architecture_toward_inference-efficient_llms.md)
+- [\[ICLR 2026\] Towards Greater Leverage: Scaling Laws for Efficient Mixture-of-Experts Language Models](towards_greater_leverage_scaling_laws_for_efficient_mixture-of-experts_language_.md)
+- [\[ICLR 2026\] Scaling Linear Attention Capacity with Sparse State Expansion](scaling_linear_attention_capacity_with_sparse_state_expansion.md)
 - [\[NeurIPS 2025\] Tiled Flash Linear Attention: More Efficient Linear RNN and xLSTM Kernels](../../NeurIPS2025/llm_efficiency/tiled_flash_linear_attention_more_efficient_linear_rnn_and_xlstm_kernels.md)
 - [\[ICLR 2026\] Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws](fast_catch-up_late_switching_optimal_batch_size_scheduling_via_functional_scalin.md)
-- [\[ICLR 2026\] Towards Greater Leverage: Scaling Laws for Efficient Mixture-of-Experts Language Models](towards_greater_leverage_scaling_laws_for_efficient_mixture-of-experts_language_.md)
-- [\[ICLR 2026\] Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression](local_linear_attention_an_optimal_interpolation_of_linear_and_softmax_attention_.md)
 
 </div>
 

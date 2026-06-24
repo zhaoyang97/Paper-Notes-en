@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mixed Signals: A Diverse Point Cloud Dataset for Heterogeneous LiDAR V2X Collaboration
 description: >-
-  [ICCV 2025][Autonomous Driving][V2X Collaborative Perception] Mixed Signals is the first real-world V2X dataset featuring heterogeneous LiDAR configurations (varying mounting heights and tilt angles)…
+  [ICCV 2025][Autonomous Driving][V2X Collaborative Perception] Mixed Signals is the first real-world V2X dataset featuring heterogeneous LiDAR configurations (varying mounting heights and tilt angles), collected by 3 autonomous vehicles and one roadside unit. It provides 45,100 point cloud frames and 240,600 annotated bounding boxes, and is also the first V2X dataset collected in a left-hand traffic country (Australia).
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "3D Object Detection"
   - "Vulnerable Road Users"
 date: 2026-05-08
-content_hash: 87c740b36e4e971b
+content_hash: 5a7f57a32e1aed5f
 ---
 
 # Mixed Signals: A Diverse Point Cloud Dataset for Heterogeneous LiDAR V2X Collaboration
@@ -187,11 +187,11 @@ The Laser vehicle achieves the best performance due to its horizontally mounted 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Unlocking Generalization Power in LiDAR Point Cloud Registration](../../CVPR2025/autonomous_driving/unlocking_generalization_power_in_lidar_point_cloud_registration.md)
 - [\[ICCV 2025\] TrackAny3D: Transferring Pretrained 3D Models for Category-unified 3D Point Cloud Tracking](trackany3d_transferring_pretrained_3d_models_for_category-unified_3d_point_cloud.md)
 - [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](../../NeurIPS2025/autonomous_driving/v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
+- [\[CVPR 2025\] WeatherGen: A Unified Diverse Weather Generator for LiDAR Point Clouds via Spider Mamba Diffusion](../../CVPR2025/autonomous_driving/weathergen_a_unified_diverse_weather_generator_for_lidar_point_clouds_via_spider.md)
 - [\[ICCV 2025\] DeSPITE: Exploring Contrastive Deep Skeleton-Pointcloud-IMU-Text Embeddings for Advanced Point Cloud Human Activity Understanding](despite_exploring_contrastive_deep_skeletonpointcloudimutext.md)
-- [\[ICCV 2025\] A Constrained Optimization Approach for Gaussian Splatting from Coarsely-posed Images and Noisy Lidar Point Clouds](a_constrained_optimization_approach_for_gaussian_splatting_from_coarsely-posed_i.md)
-- [\[CVPR 2026\] BuildAnyPoint: 3D Building Structured Abstraction from Diverse Point Clouds](../../CVPR2026/autonomous_driving/buildanypoint_3d_building_structured_abstraction_from_diverse_point_clouds.md)
 
 </div>
 

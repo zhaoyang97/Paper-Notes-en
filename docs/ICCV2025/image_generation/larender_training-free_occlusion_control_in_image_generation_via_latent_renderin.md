@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering
 description: >-
-  [ICCV 2025][Image Generation][Occlusion Control] This paper proposes LaRender, a training-free image generation method grounded in volume rendering principles. It precisely controls inter-object occlusion relationships b…
+  [ICCV 2025][Image Generation][Occlusion Control] This paper proposes LaRender, a training-free image generation method grounded in volume rendering principles. It precisely controls inter-object occlusion relationships by "rendering" object features in latent space. The method replaces only the cross-attention layers of a pretrained diffusion model without introducing any learnable parameters, significantly outperforming existing SOTA methods in occlusion accuracy while enabl…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Training-Free"
   - "Diffusion Models"
 date: 2026-05-08
-content_hash: 92fc8ae17a7868c1
+content_hash: 7a2ae465dbdd21be
 ---
 
 # LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering
@@ -158,9 +158,9 @@ Refining transmittance contours with attention maps improves occlusion accuracy 
 
 - [\[ICCV 2025\] Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing](anchor_token_matching_implicit_structure_locking_for_training-free_ar_image_edit.md)
 - [\[ICCV 2025\] MatchDiffusion: Training-free Generation of Match-Cuts](matchdiffusion_training-free_generation_of_match-cuts.md)
-- [\[ICCV 2025\] Fair Generation without Unfair Distortions: Debiasing Text-to-Image Generation with Entanglement-Free Attention](fair_generation_without_unfair_distortions_debiasing_text-to-image_generation_wi.md)
 - [\[ICCV 2025\] IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features](introstyle_training-free_introspective_style_attribution_using_diffusion_feature.md)
 - [\[CVPR 2026\] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation](../../CVPR2026/image_generation/sketchdeco_training-free_latent_composition_for_precise_sketch_colourisation.md)
+- [\[ICCV 2025\] FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion](freescale_unleashing_the_resolution_of_diffusion_models_via_tuning-free_scale_fu.md)
 
 </div>
 

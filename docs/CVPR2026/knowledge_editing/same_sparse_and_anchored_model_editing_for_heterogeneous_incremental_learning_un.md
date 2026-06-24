@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAME: Sparse and Anchored Model Editing for Heterogeneous Incremental Learning under Limited Data
 description: >-
-  [CVPR 2026][Knowledge Editing][Vision-Language Model] This work adapts the "locate-then-edit FFN key-value pairs" paradigm from Large Language Models (LLMs) to Vision-Language Models (VLMs) like CLIP. Under a newly proposed "Heterogeneous Incremental Learning (HIL)" setting—characterized by no task identities, cross-domain shifts, and few-shot data—the authors propose spa
+  [CVPR 2026][Knowledge Editing][Model Editing] This work adapts the "locate-then-edit FFN key-value pairs" paradigm from Large Language Models (LLMs) to Vision-Language Models (VLMs) like CLIP. Under a newly proposed "Heterogeneous Incremental Learning (HIL)" setting—characterized by no task identities, cross-domain shifts, and few-shot data—the authors propose sparse fine-tuning, dual-anchor constraints, and closed-form solutions to directly "write" new task knowledge into th…
 tags:
-  - CVPR 2026
-  - Knowledge Editing
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Knowledge Editing"
+  - "Model Editing"
+  - "Heterogeneous Incremental Learning"
+  - "Vision-Language Models"
+  - "Few-shot"
+  - "Dual-Anchor Constraints"
 date: 2026-05-08
-content_hash: 114537696656fc3b
+content_hash: a0347ba78150a5db
 ---
+
 # SAME: Sparse and Anchored Model Editing for Heterogeneous Incremental Learning under Limited Data
 
 **Conference**: CVPR 2026  
@@ -149,8 +154,8 @@ Notably, SAME's 80.9% on EuroSAT **exceeds the Oracle (66.2%)**, suggesting posi
 - [\[ACL 2026\] HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning](../../ACL2026/knowledge_editing/hiedit_lifelong_model_editing_with_hierarchical_reinforcement_learning.md)
 - [\[ACL 2025\] CompKe: Complex Question Answering under Knowledge Editing](../../ACL2025/knowledge_editing/compke_complex_question_answering_under_knowledge_editing.md)
 - [\[CVPR 2026\] Attribution-Guided Model Rectification of Unreliable Neural Network Behaviors](attribution-guided_model_rectification_of_unreliable_neural_network_behaviors.md)
-- [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Training Examples](../../ICLR2026/knowledge_editing/rote_learning_considered_useful_generalizing_over_memorized_training_examples.md)
-- [\[NeurIPS 2025\] Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs](../../NeurIPS2025/knowledge_editing/edit_less_achieve_more_dynamic_sparse_neuron_masking_for_lifelong_knowledge_edit.md)
+- [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](../../ICLR2026/knowledge_editing/fine-tuning_done_right_in_model_editing.md)
+- [\[AAAI 2026\] Is the Information Bottleneck Robust Enough? Towards Label-Noise Resistant Information Bottleneck Learning](../../AAAI2026/knowledge_editing/is_the_information_bottleneck_robust_enough_towards_label-noise_resistant_inform.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] The BALLAST algorithm is proposed to correct active learning utility estimates by sampling vector fields from the GP posterior and simulating future trajectories of Lagrangian observers. Additionally, the VaSE inference method is developed to increase GP posterior sampling efficiency by thousands of times, achieving ap
+  [ICML2026][Physics & Scientific Computing][Active Learning] The BALLAST algorithm is proposed to correct active learning utility estimates by sampling vector fields from the GP posterior and simulating future trajectories of Lagrangian observers. Additionally, the VaSE inference method is developed to increase GP posterior sampling efficiency by thousands of times, achieving approximately 16%-22% savings in deployment costs on synthetic and high-fidelity ocean flow fields.
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML2026"
+  - "Physics & Scientific Computing"
+  - "Active Learning"
+  - "Gaussian Processes"
+  - "Sea drifters"
+  - "Spatio-temporal vector fields"
+  - "Bayesian experimental design"
 date: 2026-05-08
-content_hash: fbb48b0c2db72256
+content_hash: ce2ef3006299fd14
 ---
+
 # BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields
 
 **Conference**: ICML2026  
@@ -149,10 +155,10 @@ Comparison of six strategies: Uniform Random (UNIF), Sobol Sequence (SOBOL), Dis
 ## Related Papers
 
 - [\[ICML 2026\] A Call to Lagrangian Action: Learning Population Mechanics from Temporal Snapshots](a_call_to_lagrangian_action_learning_population_mechanics_from_temporal_snapshot.md)
-- [\[ICML 2026\] Topology-Preserving Neural Operator Learning via Hodge Decomposition](topology-preserving_neural_operator_learning_via_hodge_decomposition.md)
 - [\[ICML 2026\] ANTIC: Adaptive Neural Temporal In-situ Compressor](antic_adaptive_neural_temporal_in-situ_compressor.md)
-- [\[ICML 2026\] Learning to Refine: Spectral-Decoupled Iterative Refinement Framework for Precipitation Nowcasting](learning_to_refine_spectral-decoupled_iterative_refinement_framework_for_precipi.md)
-- [\[ICML 2026\] From Geometry to Dynamics: Learning Overdamped Langevin Dynamics from Sparse Observations with Geometric Constraints](from_geometry_to_dynamics_learning_overdamped_langevin_dynamics_from_sparse_obse.md)
+- [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
+- [\[ICLR 2026\] Scaling Laws and Symmetry, Evidence from Neural Force Fields](../../ICLR2026/physics/scaling_laws_and_symmetry_evidence_from_neural_force_fields.md)
+- [\[ICLR 2026\] Geometric Autoencoder Priors for Bayesian Inversion: Learn First Observe Later](../../ICLR2026/physics/geometric_autoencoder_priors_for_bayesian_inversion_learn_first_observe_later.md)
 
 </div>
 

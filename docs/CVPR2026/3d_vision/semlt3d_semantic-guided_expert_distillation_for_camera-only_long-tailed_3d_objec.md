@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SemLT3D: Semantic-Guided Expert Distillation for Camera-only Long-Tailed 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][nuScenes] Addressing the "rare but safety-critical" categories (children, emergency vehicles, strollers) in camera-only multi-view 3D detection characterized by extreme data scarcity, intra-class diversity, and inter-class ambiguity, SemLT3D leverages language/visual priors from CLIP for two purposes—routing 3D queries to expert
+  [CVPR 2026][3D Vision][Camera-only 3D detection] Addressing the "rare but safety-critical" categories (children, emergency vehicles, strollers) in camera-only multi-view 3D detection characterized by extreme data scarcity, intra-class diversity, and inter-class ambiguity, SemLT3D leverages language/visual priors from CLIP for two purposes—routing 3D queries to experts based on semantic similarity (Language-guided MoE) and distilling 2D semantics from CLIP into 3D tokens (Sema…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - nuScenes
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Camera-only 3D detection"
+  - "Long-tailed distribution"
+  - "Language-guided MoE"
+  - "CLIP distillation"
+  - "nuScenes"
 date: 2026-05-08
-content_hash: c0e0b121681d4c2b
+content_hash: fb948c7cbda334dc
 ---
+
 # SemLT3D: Semantic-Guided Expert Distillation for Camera-only Long-Tailed 3D Object Detection
 
 **Conference**: CVPR 2026  
@@ -143,10 +148,20 @@ Component-wise additions (nuScenes val):
 - Value: ⭐⭐⭐⭐ Practical for safety-critical autonomous driving applications.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
+- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
+- [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self Iterative Label Refinement via Robust Unlabeled Learning
 description: >-
-  [NeurIPS 2025][Computational Biology][self-refinement] This paper proposes an iterative pipeline that leverages a robust unlabeled-unlabeled (UU) learning framework to refine LLM-generated pseudo-labels…
+  [NeurIPS 2025][Computational Biology][self-refinement] This paper proposes an iterative pipeline that leverages a robust unlabeled-unlabeled (UU) learning framework to refine LLM-generated pseudo-labels, surpassing the self-refinement approaches of GPT-4o and DeepSeek-R1 on both classification and generative safety alignment tasks with minimal human annotation.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "LLM alignment"
   - "weakly supervised classification"
 date: 2026-05-08
-content_hash: fa773208b6b0ebe5
+content_hash: 6274b938562d8e8f
 ---
 
 # Self Iterative Label Refinement via Robust Unlabeled Learning
@@ -134,11 +134,11 @@ On simple tasks, PIE and CCP completely fail on Saroco and Safety, whereas the p
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood](prospero_active_learning_for_robust_protein_design_beyond_wild-type_neighborhood.md)
 - [\[NeurIPS 2025\] Evaluating Multiple Models Using Labeled and Unlabeled Data](evaluating_multiple_models_using_labeled_and_unlabeled_data.md)
-- [\[NeurIPS 2025\] Iterative Foundation Model Fine-Tuning on Multiple Rewards](iterative_foundation_model_fine-tuning_on_multiple_rewards.md)
+- [\[NeurIPS 2025\] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood](prospero_active_learning_for_robust_protein_design_beyond_wild-type_neighborhood.md)
 - [\[NeurIPS 2025\] Post Hoc Regression Refinement via Pairwise Rankings](post_hoc_regression_refinement_via_pairwise_rankings.md)
-- [\[ICML 2026\] Learning the Neighborhood: Contrast-Free Multimodal Self-Supervised Molecular Graph Pretraining](../../ICML2026/computational_biology/learning_the_neighborhood_contrast-free_multimodal_self-supervised_molecular_gra.md)
+- [\[NeurIPS 2025\] Iterative Foundation Model Fine-Tuning on Multiple Rewards](iterative_foundation_model_fine-tuning_on_multiple_rewards.md)
+- [\[ICML 2025\] scSSL-Bench: Benchmarking Self-Supervised Learning for Single-Cell Data](../../ICML2025/computational_biology/scssl-bench_benchmarking_self-supervised_learning_for_single-cell_data.md)
 
 </div>
 

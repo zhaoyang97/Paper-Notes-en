@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][LLM Evaluation][data science benchmark] DARE-bench is a large-scale verifiable benchmark for data science tasks, containing 6,300 Kaggle-derived tasks. it supports two evaluation categories: ML modeling and instruction following. It provides training sets to support SFT and RL—improving Qwen3-32B by 1.83$\times$ via SFT and Qwen3-4B by over 8$\times$ via RL.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - data science benchmark
-  - instruction following
-  - ML modeling
-  - RLVR
-  - LLM agent
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "data science benchmark"
+  - "instruction following"
+  - "ML modeling"
+  - "RLVR"
+  - "LLM agent"
 date: 2026-05-08
-content_hash: 461192017e6e9c6f
+content_hash: 33ead5ed5f06f16a
 ---
+
 # DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science
 
 **Conference**: ICLR 2026  
@@ -134,11 +135,11 @@ RL training requires automated scoring without human intervention. Since the pre
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
 - [\[ICLR 2026\] LMGame-Bench: How Good are LLMs at Playing Games?](lmgame-bench_how_good_are_llms_at_playing_games.md)
 - [\[ICLR 2026\] PCB-Bench: Benchmarking LLMs for Printed Circuit Board Placement and Routing](pcb-bench_benchmarking_llms_for_printed_circuit_board_placement_and_routing.md)
 - [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)
-- [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](detecting_data_contamination_in_llms_via_in-context_learning.md)
-- [\[AAAI 2026\] Benchmarking LLMs for Political Science: A United Nations Perspective](../../AAAI2026/llm_evaluation/benchmarking_llms_for_political_science_a_united_nations_perspective.md)
+- [\[ICLR 2026\] EARTHSE: A Benchmark for Earth Science Knowledge Exploration](earthse_a_benchmark_evaluating_earth_scientific_exploration_capability_for_large.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees
 description: >-
-  [ICLR 2026][Interpretability][provable guarantees] This work introduces neural network (NN) verification into mechanistic interpretability, proposing the first circuit discovery framework with provable guarantees. It ensures circuit faithfulness across continuous input domains (input robustness) and continuous patching domains (patching robustness), and formalizes a hi
+  [ICLR 2026][Interpretability][Mechanistic Interpretability] This work introduces neural network (NN) verification into mechanistic interpretability, proposing the first circuit discovery framework with provable guarantees. It ensures circuit faithfulness across continuous input domains (input robustness) and continuous patching domains (patching robustness), and formalizes a hierarchy of four minimality levels (quasi → local → subset → cardinal)…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - provable guarantees
-  - minimality
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Circuit Discovery"
+  - "Neural Network Verification"
+  - "Provable Guarantees"
+  - "Minimality"
 date: 2026-05-08
-content_hash: 60643c52a2daf321
+content_hash: c7a5d258d73ace8f
 ---
+
 # Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees
 
 **Conference**: ICLR 2026  
@@ -130,10 +134,10 @@ The strongest level, cardinally-minimal (global minimum), is typically NP-hard a
 ## Related Papers
 
 - [\[ICML 2026\] Certified Circuits: Stability Guarantees for Mechanistic Circuits](../../ICML2026/interpretability/certified_circuits_stability_guarantees_for_mechanistic_circuits.md)
-- [\[ICLR 2026\] Automated Interpretability Metrics Do Not Distinguish Trained and Random Transformers](automated_interpretability_metrics_do_not_distinguish_trained_and_random_transfo.md)
-- [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](fame_formal_abstract_minimal_explanation_for_neural_networks.md)
 - [\[ACL 2025\] Position-aware Automatic Circuit Discovery](../../ACL2025/interpretability/position-aware_automatic_circuit_discovery.md)
-- [\[ICLR 2026\] Small Transformers Don't Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and Implications for Mechanistic Interpretability](small_transformers_dont_need_layernorm_at_inference_time_scaling_layernorm_remov.md)
+- [\[ICLR 2026\] Automated Interpretability Metrics Do Not Distinguish Trained and Random Transformers](automated_interpretability_metrics_do_not_distinguish_trained_and_random_transfo.md)
+- [\[ICLR 2026\] Circuit Insights: Towards Interpretability Beyond Activations](circuit_insights_towards_interpretability_beyond_activations.md)
+- [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](fame_formal_abstract_minimal_explanation_for_neural_networks.md)
 
 </div>
 

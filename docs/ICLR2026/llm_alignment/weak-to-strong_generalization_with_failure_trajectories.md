@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Weak-to-Strong Generalization with Failure Trajectories
 description: >-
-  [ICLR 2026][Alignment & RLHF][MCTS] This paper extends "Weak-to-Strong Generalization" (W2SG) from binary classification to multi-step interactive decision-making tasks. A weak model explores numerous action trajectories containing both successes and failures, which are merged into a "Trajectory Tree" based on common prefixes. Structured preference pairs
+  [ICLR 2026][LLM Alignment][Weak-to-Strong Generalization] This paper extends "Weak-to-Strong Generalization" (W2SG) from binary classification to multi-step interactive decision-making tasks. A weak model explores numerous action trajectories containing both successes and failures, which are merged into a "Trajectory Tree" based on common prefixes. Structured preference pairs (TreeDPO) or offline MCTS path search are then used to fine-tune a strong model. The resulting strong…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - MCTS
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Weak-to-Strong Generalization"
+  - "Failure Trajectories"
+  - "Trajectory Tree"
+  - "MCTS"
+  - "DPO"
 date: 2026-05-08
-content_hash: 006c8409b816d7d1
+content_hash: 7c9209fb6ed926ff
 ---
+
 # Weak-to-Strong Generalization with Failure Trajectories
 
 **Conference**: ICLR 2026  

@@ -4,16 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][Segmentation][panoptic scene graph generation] DSFlash improves panoptic scene graph generation speed to 56 FPS on an RTX 3090 while achieving SOTA performance with $mR@50=30.9$ on the PSG dataset by merging segmentation and relation prediction backbones, employing a bidirectional relation prediction head, and utilizing dynamic patch pruning.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - panoptic scene graph generation
-  - real-time inference
-  - bidirectional relation prediction
-  - token pruning
-  - low-latency
+  - "CVPR 2026"
+  - "Segmentation"
+  - "panoptic scene graph generation"
+  - "real-time inference"
+  - "bidirectional relation prediction"
+  - "token pruning"
+  - "low-latency"
 date: 2026-05-08
-content_hash: 277c252e0a1e9476
+content_hash: 8dea2742fa588abd
 ---
+
 # DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime
 
 **Conference**: CVPR 2026  
@@ -135,10 +136,10 @@ This is an orthogonal optimization applied to the backbone: ToMe-SD merges simil
 
 ## Related Papers
 
+- [\[ICCV 2025\] SPADE: Spatial-Aware Denoising Network for Open-vocabulary Panoptic Scene Graph Generation](../../ICCV2025/segmentation/spade_spatial-aware_denoising_network_for_open-vocabulary_panoptic_scene_graph_g.md)
 - [\[CVPR 2025\] Learning 4D Panoptic Scene Graph Generation from Rich 2D Visual Scene](../../CVPR2025/segmentation/learning_4d_panoptic_scene_graph_generation_from_rich_2d_visual_scene.md)
 - [\[ECCV 2024\] OpenPSG: Open-set Panoptic Scene Graph Generation via Large Multimodal Models](../../ECCV2024/segmentation/openpsg_open-set_panoptic_scene_graph_generation_via_large_multimodal_models.md)
-- [\[ICCV 2025\] SPADE: Spatial-Aware Denoising Network for Open-vocabulary Panoptic Scene Graph Generation](../../ICCV2025/segmentation/spade_spatial-aware_denoising_network_for_open-vocabulary_panoptic_scene_graph_g.md)
-- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
+- [\[ICLR 2026\] Panoptic Pairwise Distortion Graph](../../ICLR2026/segmentation/panoptic_pairwise_distortion_graph.md)
 - [\[CVPR 2026\] GenMask: Adapting DiT for Segmentation via Direct Mask Generation](genmask_adapting_dit_for_segmentation_via_direct_mask_generation.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RepoShapley: Shapley-Enhanced Context Filtering for Repository-Level Code Completion
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] RepoShapley is proposed as a coalition-aware context filtering framework based on Shapley values. It determines whether to retain or discard retrieved code snippets by estimating their interactive contributions within combinations, significantly improving the quality of repository-level code completion.
+  [ACL 2026 Findings][Code Intelligence][Shapley Value] RepoShapley is proposed as a coalition-aware context filtering framework based on Shapley values. It determines whether to retain or discard retrieved code snippets by estimating their interactive contributions within combinations, significantly improving the quality of repository-level code completion.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Shapley Value"
+  - "Context Filtering"
+  - "Repository-Level Code Completion"
+  - "Retrieval-Augmented Generation"
+  - "Coalitional Game"
 date: 2026-05-08
-content_hash: 3fcaa27916e12c94
+content_hash: 8d292b1df1673309
 ---
+
 # RepoShapley: Shapley-Enhanced Context Filtering for Repository-Level Code Completion
 
 **Conference**: ACL 2026 Findings  
@@ -130,8 +136,8 @@ RepoShapley outperforms all baseline methods (including No-Retrieve, Full-Retrie
 - [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](swe-qa_can_language_models_answer_repository-level_code_questions.md)
 - [\[ICML 2026\] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](../../ICML2026/code_intelligence/matchfixagent_language-agnostic_autonomous_repository-level_code_translation_val.md)
 - [\[ACL 2025\] FEA-Bench: A Benchmark for Evaluating Repository-Level Code Generation for Feature Implementation](../../ACL2025/code_intelligence/feabench_repo_code_gen.md)
-- [\[ICLR 2026\] Improving Code Localization with Repository Memory](../../ICLR2026/code_intelligence/improving_code_localization_with_repository_memory.md)
 - [\[ACL 2026\] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding](sense_and_sensitivity_examining_the_influence_of_semantic_recall_on_long_context.md)
+- [\[ICLR 2026\] Improving Code Localization with Repository Memory](../../ICLR2026/code_intelligence/improving_code_localization_with_repository_memory.md)
 
 </div>
 

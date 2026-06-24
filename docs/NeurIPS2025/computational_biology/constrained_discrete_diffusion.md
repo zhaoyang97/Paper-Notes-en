@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Constrained Discrete Diffusion
 description: >-
-  [NeurIPS 2025][Computational Biology][Discrete diffusion models] This paper proposes CDD (Constrained Discrete Diffusion), which embeds a differentiable constrained optimization projection operator into the denoising pro…
+  [NeurIPS 2025][Computational Biology][Discrete diffusion models] This paper proposes CDD (Constrained Discrete Diffusion), which embeds a differentiable constrained optimization projection operator into the denoising process of discrete diffusion models. Without retraining, CDD enforces sequence-level constraints at sampling time, achieving zero constraint violations across three task categories: toxic text generation, molecular design, and instruction following.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -13,7 +13,7 @@ tags:
   - "molecular generation"
   - "toxicity mitigation"
 date: 2026-05-08
-content_hash: 5b9087cc3153dd54
+content_hash: 635f203db7db0dae
 ---
 
 # Constrained Discrete Diffusion
@@ -172,10 +172,10 @@ The problem is precisely formulated, the technical solution is elegant, and the 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Split Gibbs Discrete Diffusion Posterior Sampling](split_gibbs_discrete_diffusion_posterior_sampling.md)
-- [\[NeurIPS 2025\] Remasking Discrete Diffusion Models with Inference-Time Scaling](remasking_discrete_diffusion_models_with_inference-time_scaling.md)
 - [\[NeurIPS 2025\] Why Masking Diffusion Works: Condition on the Jump Schedule for Improved Discrete Diffusion](why_masking_diffusion_works_condition_on_the_jump_schedule_for_improved_discrete.md)
-- [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](../../ICLR2026/computational_biology/discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
-- [\[NeurIPS 2025\] Graph Diffusion that can Insert and Delete](graph_diffusion_that_can_insert_and_delete.md)
+- [\[NeurIPS 2025\] Remasking Discrete Diffusion Models with Inference-Time Scaling](remasking_discrete_diffusion_models_with_inference-time_scaling.md)
+- [\[ICML 2025\] GenMol: A Drug Discovery Generalist with Discrete Diffusion](../../ICML2025/computational_biology/genmol_a_drug_discovery_generalist_with_discrete_diffusion.md)
+- [\[ICLR 2026\] Constrained Diffusion for Protein Design with Hard Structural Constraints](../../ICLR2026/computational_biology/constrained_diffusion_for_protein_design_with_hard_structural_constraints.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] E-MoFlow: Learning Egomotion and Optical Flow from Event Data via Implicit Regularization
 description: >-
-  [NeurIPS 2025][3D Vision][Event Camera] This paper proposes E-MoFlow, which models optical flow as an implicit neural representation and egomotion as a continuous spline…
+  [NeurIPS 2025][3D Vision][Event Camera] This paper proposes E-MoFlow, which models optical flow as an implicit neural representation and egomotion as a continuous spline, jointly optimizing both via differential geometric constraints under an unsupervised paradigm to achieve 6-DoF egomotion and dense optical flow estimation from event data.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Unsupervised Learning"
   - "Neural ODE"
 date: 2026-05-08
-content_hash: b34769888d16f0b1
+content_hash: ac53259c7eb73a55
 ---
 
 # E-MoFlow: Learning Egomotion and Optical Flow from Event Data via Implicit Regularization
@@ -163,11 +163,11 @@ The concept of implicit regularization is broadly applicable: selecting represen
 
 ## Related Papers
 
-- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](../../CVPR2026/3d_vision/flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
-- [\[NeurIPS 2025\] Linearly Constrained Diffusion Implicit Models](linearly_constrained_diffusion_implicit_models.md)
+- [\[CVPR 2026\] Optical Flow Matching: Reframing Optical Flow as Continuous Transport Dynamics](../../CVPR2026/3d_vision/optical_flow_matching_reframing_optical_flow_as_continuous_transport_dynamics.md)
+- [\[ICLR 2026\] WAFT: Warping-Alone Field Transforms for Optical Flow](../../ICLR2026/3d_vision/waft_warping-alone_field_transforms_for_optical_flow.md)
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
-- [\[NeurIPS 2025\] Flux4D: Flow-based Unsupervised 4D Reconstruction](flux4d_flow-based_unsupervised_4d_reconstruction.md)
-- [\[NeurIPS 2025\] AtlasGS: Atlanta-world Guided Surface Reconstruction with Implicit Structured Gaussians](atlasgs_atlanta-world_guided_surface_reconstruction_with_implicit_structured_gau.md)
+- [\[NeurIPS 2025\] Linearly Constrained Diffusion Implicit Models](linearly_constrained_diffusion_implicit_models.md)
+- [\[ICLR 2026\] RobustSpring: Benchmarking Robustness to Image Corruptions for Optical Flow, Scene Flow and Stereo](../../ICLR2026/3d_vision/robustspring_benchmarking_robustness_to_image_corruptions_for_optical_flow_scene.md)
 
 </div>
 

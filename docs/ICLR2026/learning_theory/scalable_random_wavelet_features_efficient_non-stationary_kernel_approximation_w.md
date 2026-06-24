@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees
 description: >-
-  [ICLR 2026][learning_theory][kernel methods] The paper proposes Random Wavelet Features (RWF), which construct scalable non-stationary kernel approximations by randomly sampling from wavelet families. This approach retains the linear time complexity of random features while providing guarantees for positive definiteness, unbiasedness, and uniform convergence.
+  The paper proposes Random Wavelet Features (RWF), which construct scalable non-stationary kernel approximations by randomly sampling from wavelet families. This approach retains the linear time complexity of random features while providing guarantees for positive definiteness, unbiasedness, and uniform convergence.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - kernel methods
-  - random features
-  - wavelets
-  - non-stationary
-  - Gaussian processes
-  - multi-resolution
+
 date: 2026-05-08
-content_hash: 3bed457c3ba8be80
+content_hash: 8ff246506f8a0034
 ---
+
 # Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees
 
 ## Meta Information
@@ -162,8 +156,8 @@ This implies that $D = O(B^4 / \epsilon^2)$ features are sufficient to guarantee
 - [\[ICLR 2026\] Online Inventory Optimization in Non-Stationary Environment](online_inventory_optimization_in_non-stationary_environment.md)
 - [\[ICML 2026\] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding](../../ICML2026/learning_theory/conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat.md)
 - [\[ICLR 2026\] Random-Projection Ensemble Dimension Reduction](random-projection_ensemble_dimension_reduction.md)
+- [\[ICLR 2026\] The Effect of Attention Head Count on Transformer Approximation](the_effect_of_attention_head_count_on_transformer_approximation.md)
 - [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
-- [\[ICLR 2026\] Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles](data-aware_and_scalable_sensitivity_analysis_for_decision_tree_ensembles.md)
 
 </div>
 

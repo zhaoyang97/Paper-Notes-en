@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Fast-MIA: Efficient and Scalable Membership Inference for LLMs
 description: >-
-  [ACL 2026][LLM Safety][Membership Inference] Fast-MIA integrates 9 mainstream LLM Membership Inference Attack (MIA) methods into a single vLLM batch inference engine with a cross-method log-prob cache layer. This setup accelerates evaluation by approximately $5\times$ overall (with SaMIA alone achieving $19.5\times$) on LLaMA-30B / WikiMIA while maintaining nearl
+  [ACL 2026][LLM Safety][Membership Inference] Fast-MIA integrates 9 mainstream LLM Membership Inference Attack (MIA) methods into a single vLLM batch inference engine with a cross-method log-prob cache layer. This setup accelerates evaluation by approximately $5\times$ overall (with SaMIA alone achieving $19.5\times$) on LLaMA-30B / WikiMIA while maintaining nearly identical AUC, making large-scale MIA auditing computationally feasible for the first time.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Membership Inference
-  - vLLM
-  - WikiMIA
-  - MIMIR
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Membership Inference"
+  - "vLLM"
+  - "Cross-method Caching"
+  - "WikiMIA"
+  - "MIMIR"
 date: 2026-05-08
-content_hash: 6ecc04ac13ab5601
+content_hash: 3ba8c69b7a92b402
 ---
+
 # Fast-MIA: Efficient and Scalable Membership Inference for LLMs
 
 **Conference**: ACL 2026  
@@ -129,11 +131,11 @@ The breakdown shows: vLLM batching reduces 17m51s to 5m18s ($\approx 3.4\times$ 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](../../ICLR2026/llm_safety/tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
 - [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](membership_inference_attacks_on_llm-based_recommender_systems.md)
+- [\[ICLR 2026\] Information-Theoretic Membership Inference for Granular Quantification of Memorization](../../ICLR2026/llm_safety/information-theoretic_membership_inference_for_granular_quantification_of_memori.md)
 - [\[ACL 2026\] Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](do_multimodal_rag_systems_leak_data_a_comprehensive_evaluation_of_membership_inf.md)
-- [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](../../ICLR2026/llm_safety/membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
-- [\[NeurIPS 2025\] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing](../../NeurIPS2025/llm_safety/cryptomoe_privacy-preserving_and_scalable_mixture_of_experts_inference_via_balan.md)
-- [\[ICLR 2026\] No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings](../../ICLR2026/llm_safety/no_caption_no_problem_caption-free_membership_inference_via_model-fitted_embeddi.md)
+- [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)
 
 </div>
 

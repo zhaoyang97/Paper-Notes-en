@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MaskControl: Spatio-Temporal Control for Masked Motion Synthesis
 description: >-
-  [ICCV 2025][Image Generation][Masked Motion Model] MaskControl is the first work to introduce spatial controllability into generative masked motion models. It manipulates the logits of the token classifier via two core c…
+  [ICCV 2025][Image Generation][Masked Motion Model] MaskControl is the first work to introduce spatial controllability into generative masked motion models. It manipulates the logits of the token classifier via two core components — Logits Regularizer (implicit alignment during training) and Logits Optimization (explicit optimization during inference) — simultaneously achieving high-quality motion generation (FID reduced by 77%) and high-precision joint control (average error…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Differentiable Sampling"
   - "Zero-Shot Goal Control"
 date: 2026-05-08
-content_hash: 68a57d2021e2663f
+content_hash: a121a16036a7a6e3
 ---
 
 # MaskControl: Spatio-Temporal Control for Masked Motion Synthesis
@@ -181,11 +181,11 @@ MaskControl achieves zero constraint error across all three HSI tasks while sign
 
 ## Related Papers
 
+- [\[CVPR 2025\] Self-Supervised ControlNet with Spatio-Temporal Mamba for Real-World Video Super-Resolution](../../CVPR2025/image_generation/self-supervised_controlnet_with_spatio-temporal_mamba_for_real-world_video_super.md)
 - [\[ICCV 2025\] Latent Diffusion Models with Masked AutoEncoders](latent_diffusion_models_with_masked_autoencoders.md)
 - [\[ICCV 2025\] Video Motion Graphs](video_motion_graphs.md)
 - [\[ICCV 2025\] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching](lazymar_accelerating_masked_autoregressive_models_via_feature_caching.md)
-- [\[ICCV 2025\] PolarAnything: Diffusion-based Polarimetric Image Synthesis](polaranything_diffusion-based_polarimetric_image_synthesis.md)
-- [\[ICCV 2025\] Free4D: Tuning-free 4D Scene Generation with Spatial-Temporal Consistency](free4d_tuning-free_4d_scene_generation_with_spatial-temporal_consistency.md)
+- [\[ICML 2025\] Broadband Ground Motion Synthesis by Diffusion Model with Minimal Condition](../../ICML2025/image_generation/broadband_ground_motion_synthesis_by_diffusion_model_with_minimal_condition.md)
 
 </div>
 

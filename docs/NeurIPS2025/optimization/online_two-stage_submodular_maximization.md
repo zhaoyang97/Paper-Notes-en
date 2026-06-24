@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Online Two-Stage Submodular Maximization
 description: >-
-  [NeurIPS 2025][Optimization][submodular maximization] This paper introduces the Online Two-Stage Submodular Maximization (O2SSM) problem for the first time…
+  [NeurIPS 2025][Optimization][submodular maximization] This paper introduces the Online Two-Stage Submodular Maximization (O2SSM) problem for the first time, and proposes the RAOCO algorithm for Weighted Threshold Potential (WTP) functions. By combining fractional relaxation with randomized pipage rounding, RAOCO achieves sublinear $(1-1/e)^2$-regret in polynomial time, while also improving the approximation ratio for the offline problem.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "regret minimization"
   - "matroid constraints"
 date: 2026-05-08
-content_hash: 5f6c935e1df6dda8
+content_hash: 2f2f519ce55720c2
 ---
 
 # Online Two-Stage Submodular Maximization
@@ -120,10 +120,10 @@ Across all datasets, all three RAOCO variants (OGA, FTRL-L2, FTRL-H) outperform 
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](a_unified_approach_to_submodular_maximization_under_noise.md)
-- [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](../../ICML2026/optimization/a_general_framework_for_dynamic_consistent_submodular_maximization.md)
 - [\[NeurIPS 2025\] Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning](train_with_perturbation_infer_after_merging_a_two-stage_framework_for_continual_.md)
 - [\[NeurIPS 2025\] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives](effective_policy_learning_for_multi-agent_online_coordination_beyond_submodular_.md)
-- [\[NeurIPS 2025\] Optimistic Online-to-Batch Conversions for Accelerated Convergence and Universality](optimistic_online-to-batch_conversions_for_accelerated_convergence_and_universal.md)
+- [\[ICML 2026\] Differentially Private Submodular Maximization with a Knapsack Constraint](../../ICML2026/optimization/differentially_private_submodular_maximization_with_a_knapsack_constraint.md)
+- [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](../../ICML2026/optimization/a_general_framework_for_dynamic_consistent_submodular_maximization.md)
 
 </div>
 

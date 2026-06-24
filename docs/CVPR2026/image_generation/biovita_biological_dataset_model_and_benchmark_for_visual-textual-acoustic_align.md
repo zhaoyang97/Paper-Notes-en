@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The BioVITA framework is proposed, comprising a million-scale tri-modal (image-text-audio) biological dataset, a two-stage alignment model, and a six-direction cross-modal species-level retrieval benchmark, achieving the first unified visual-textual-acoustic representation learning in the biological domain.
+  [CVPR 2026][Image Generation][visual-textual-acoustic alignment] The BioVITA framework is proposed, comprising a million-scale tri-modal (image-text-audio) biological dataset, a two-stage alignment model, and a six-direction cross-modal species-level retrieval benchmark, achieving the first unified visual-textual-acoustic representation learning in the biological domain.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "visual-textual-acoustic alignment"
+  - "cross-modal retrieval"
+  - "bioacoustics"
+  - "species identification"
+  - "multimodal representation learning"
 date: 2026-05-08
-content_hash: d93e86efa9400eec
+content_hash: 7c0e7702ff3c57e5
 ---
+
 # BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,10 @@ computational resources.
 ## Related Papers
 
 - [\[CVPR 2026\] Prompt Yourself: Awakening Textual Semantics in 1D Visual Tokenizers](prompt_yourself_awakening_textual_semantics_in_1d_visual_tokenizers.md)
-- [\[CVPR 2026\] StyleText: A Large-Scale Dataset and Benchmark for Stylized Scene Text Inpainting](styletext_a_large-scale_dataset_and_benchmark_for_stylized_scene_text_inpainting.md)
 - [\[CVPR 2026\] Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation](thinking-while-generating_interleaving_textual_reasoning_throughout_visual_gener.md)
+- [\[CVPR 2026\] UnicEdit-10M: A Dataset and Benchmark Breaking the Scale-Quality Barrier via Unified Verification for Reasoning-Enriched Edits](unicedit-10m_a_dataset_and_benchmark_breaking_the_scale-quality_barrier_via_unif.md)
 - [\[CVPR 2026\] POCA: Pareto-Optimal Curriculum Alignment for Visual Text Generation](poca_pareto-optimal_curriculum_alignment_for_visual_text_generation.md)
-- [\[CVPR 2026\] UniPercept: A Unified Diffusion Model for Generalizable Visual Perception](unipercept_a_unified_diffusion_model_for_generalizable_visual_perception.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 
 </div>
 

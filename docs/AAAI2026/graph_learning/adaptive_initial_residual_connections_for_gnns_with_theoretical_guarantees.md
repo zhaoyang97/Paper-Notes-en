@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Initial Residual Connections for GNNs with Theoretical Guarantees
 description: >-
-  [AAAI 2026][Graph Learning][Adaptive residual connections] This paper proposes Adaptive Initial Residual Connections (Adaptive IRC), which allows each node to have a personalized residual strength learned from its initia…
+  [AAAI 2026][Graph Learning][Adaptive residual connections] This paper proposes Adaptive Initial Residual Connections (Adaptive IRC), which allows each node to have a personalized residual strength learned from its initial features. It provides the first theoretical proof of a positive lower bound on the Dirichlet energy of initial residual connections with activation functions (guaranteeing the absence of over-smoothing), and introduces a PageRank-based heuristic variant that…
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -13,7 +13,7 @@ tags:
   - "heterophilic graphs"
   - "GNN depth"
 date: 2026-05-08
-content_hash: 6b19c318fefed8d3
+content_hash: 0394794441cbd343
 ---
 
 # Adaptive Initial Residual Connections for GNNs with Theoretical Guarantees
@@ -141,7 +141,7 @@ $O(|E|d + nd^2)$ per layer, identical to vanilla GCN.
 - [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](self-adaptive_graph_mixture_of_models.md)
 - [\[AAAI 2026\] Logical Characterizations of GNNs with Mean Aggregation](logical_characterizations_of_gnns_with_mean_aggregation.md)
 - [\[AAAI 2026\] Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation](enhancing_logical_expressiveness_in_graph_neural_networks_via_path-neighbor_aggr.md)
-- [\[ICLR 2026\] On the Expressive Power of GNNs for Boolean Satisfiability](../../ICLR2026/graph_learning/on_the_expressive_power_of_gnns_for_boolean_satisfiability.md)
+- [\[ACL 2026\] Overcoming the Impedance Mismatch: A Theoretical Roadmap for Fusing Foundation Models and Knowledge Graphs](../../ACL2026/graph_learning/overcoming_the_impedance_mismatch_a_theoretical_roadmap_for_fusing_foundation_mo.md)
 
 </div>
 

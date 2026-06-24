@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Linear Fundamental Matrix Estimation from 7 or 5 Points
 description: >-
-  [CVPR 2026][3D Vision][RANSAC] This paper provides an **elementary geometric explanation** for the phenomenon that "7-point fundamental matrix estimation is uniquely solvable under a specific point-line configuration (V-Umlaut: 5 points falling on two lines)" and proposes the first **linear solver** for this minimal problem. By treating it as a 5-po
+  [CVPR 2026][3D Vision][Fundamental Matrix] This paper provides an **elementary geometric explanation** for the phenomenon that "7-point fundamental matrix estimation is uniquely solvable under a specific point-line configuration (V-Umlaut: 5 points falling on two lines)" and proposes the first **linear solver** for this minimal problem. By treating it as a 5-point solver (supplemented by two virtual midpoints) and integrating it with Early Non-Minimal Refitting…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - RANSAC
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Fundamental Matrix"
+  - "Minimal Solver"
+  - "Two-view Geometry"
+  - "RANSAC"
+  - "Virtual Correspondences"
 date: 2026-05-08
-content_hash: 5d239b9411b5d6f2
+content_hash: 1e4ad6f80644b5db
 ---
+
 # Linear Fundamental Matrix Estimation from 7 or 5 Points
 
 **Conference**: CVPR 2026  
@@ -130,11 +135,11 @@ Using two camera intrinsics and scene geometries (Standard and WAMI), 10,000 tri
 
 ## Related Papers
 
+- [\[CVPR 2026\] PointCNN++: Performant Convolution on Native Points](pointcnn_performant_convolution_on_native_points.md)
+- [\[CVPR 2026\] TESO: Online Tracking of Essential Matrix by Stochastic Optimization](teso_online_tracking_of_essential_matrix_by_stochastic_optimization.md)
+- [\[CVPR 2026\] Solving Minimal Problems Without Matrix Inversion Using FFT-Based Interpolation](solving_minimal_problems_without_matrix_inversion_using_fft-based_interpolation.md)
 - [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
-- [\[CVPR 2026\] DepthFocus: Controllable Depth Estimation for See-Through Scenes](depthfocus_controllable_depth_estimation_for_see-through_scenes.md)
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
+- [\[CVPR 2026\] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](zipmap_linear-time_stateful_3d_reconstruction_via_test-time_training.md)
 
 </div>
 

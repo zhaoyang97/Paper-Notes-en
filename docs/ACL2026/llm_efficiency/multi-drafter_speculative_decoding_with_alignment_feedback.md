@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-Drafter Speculative Decoding with Alignment Feedback
 description: >-
-  [ACL 2026][LLM Efficiency][Inference Acceleration] This paper proposes MetaSD, a unified framework that integrates multiple heterogeneous drafters into speculative decoding. By modeling drafter selection as a Multi-Armed Bandit (MAB) problem and using Block Divergence as a reward signal, MetaSD dynamically selects the drafter most aligned with the target LLM. It consis
+  [ACL 2026 Findings][LLM Efficiency][Speculative Decoding] This paper proposes MetaSD, a unified framework that integrates multiple heterogeneous drafters into speculative decoding. By modeling drafter selection as a Multi-Armed Bandit (MAB) problem and using Block Divergence as a reward signal, MetaSD dynamically selects the drafter most aligned with the target LLM. It consistently outperforms single-drafter methods in both black-box and white-box configurations.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Inference Acceleration
+  - "ACL 2026 Findings"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Multi-Armed Bandit"
+  - "Multi-Drafters"
+  - "Alignment Feedback"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: b95801f94e053d81
+content_hash: fb268840ddf4b37f
 ---
+
 # Multi-Drafter Speculative Decoding with Alignment Feedback
 
 **Conference**: ACL 2026 Findings  
@@ -134,11 +139,11 @@ MetaSD is a training-free, inference-only algorithm. Drafters in the pool can be
 
 ## Related Papers
 
+- [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
 - [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
 - [\[ACL 2026\] RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding](racer_retrieval-augmented_contextual_rapid_speculative_decoding.md)
-- [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
+- [\[ICLR 2026\] Not-a-Bandit: Provably No-Regret Drafter Selection in Speculative Decoding for LLMs](../../ICLR2026/llm_efficiency/not-a-bandit_provably_no-regret_drafter_selection_in_speculative_decoding_for_ll.md)
 - [\[NeurIPS 2025\] OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding](../../NeurIPS2025/llm_efficiency/omnidraft_a_cross-vocabulary_online_adaptive_drafter_for_on-device_speculative_d.md)
-- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
 
 </div>
 

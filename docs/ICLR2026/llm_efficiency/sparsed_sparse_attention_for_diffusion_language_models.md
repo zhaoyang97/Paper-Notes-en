@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SparseD: Sparse Attention for Diffusion Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Diffusion Language Model] To address the quadratic explosion of bidirectional attention with context length and slow inference in Diffusion Language Models (DLMs), SparseD employs three strategies: using full attention in early steps, one-time pre-computation of head-specific sparse patterns reused across steps, and isolated selection for prefi
+  [ICLR 2026][LLM Efficiency][Diffusion Language Models] To address the quadratic explosion of bidirectional attention with context length and slow inference in Diffusion Language Models (DLMs), SparseD employs three strategies: using full attention in early steps, one-time pre-computation of head-specific sparse patterns reused across steps, and isolated selection for prefill/generation. It achieves up to 1.50× lossless acceleration relative to FlashAttention on 64k context an…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Sparse Attention"
+  - "Inference Acceleration"
+  - "Long Context"
+  - "Lossless Acceleration"
 date: 2026-05-08
-content_hash: 4868e410556093f7
+content_hash: 689c7b4cb93ee819
 ---
+
 # SparseD: Sparse Attention for Diffusion Language Models
 
 **Conference**: ICLR 2026  
@@ -132,11 +136,11 @@ Ablations on LLaDA-1.5 (Accuracy=RULER-4k, Latency=64k sample).
 
 ## Related Papers
 
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
 - [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](diffusion_language_model_knows_the_answer_before_it_decodes.md)
+- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
 - [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
 - [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
-- [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
+- [\[ICLR 2026\] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](accelerating_diffusion_large_language_models_with_slowfast_sampling_the_three_go.md)
 
 </div>
 

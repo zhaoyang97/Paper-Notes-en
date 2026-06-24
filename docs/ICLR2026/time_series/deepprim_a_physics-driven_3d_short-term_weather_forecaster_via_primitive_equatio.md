@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DeepPrim: a Physics-Driven 3D Short-term Weather Forecaster via Primitive Equation Learning
 description: >-
-  [ICLR 2026][Time Series][Neural ODE] DeepPrim explicitly incorporates advection, force terms, and source-sink terms from atmospheric primitive equations into a Neural ODE forecasting framework. By utilizing 3D-BiViT to learn the coupled dynamics across longitude, latitude, and pressure levels, it significantly outperforms most data-driven baselines in glo
+  [ICLR 2026][Time Series][Physics-driven weather forecasting] DeepPrim explicitly incorporates advection, force terms, and source-sink terms from atmospheric primitive equations into a Neural ODE forecasting framework. By utilizing 3D-BiViT to learn the coupled dynamics across longitude, latitude, and pressure levels, it significantly outperforms most data-driven baselines in global and regional weather forecasting for 6-24 hour horizons.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Neural ODE
+  - "ICLR 2026"
+  - "Time Series"
+  - "Physics-driven weather forecasting"
+  - "primitive equations"
+  - "Neural ODE"
+  - "3D atmospheric dynamics"
+  - "short-term forecasting"
 date: 2026-05-08
-content_hash: c67d62bf269afd5e
+content_hash: dbd7744af3f20f13
 ---
+
 # DeepPrim: a Physics-Driven 3D Short-term Weather Forecaster via Primitive Equation Learning
 
 **Conference**: ICLR 2026  
@@ -140,15 +145,17 @@ In the 1.40625° task, DeepPrim exceeds IFS on t850, t2m, and u10, reducing RMSE
 
 <div class="related-papers" markdown="1">
 
-- **GraphCast** (Google DeepMind, 2023)
-- **Pangu-Weather** (Huawei, 2023)
-- **ClimODE** (Arxiv, 2023)
-- **NeuralGCM** (Google Research, 2023)
+## Related Papers
+
+- [\[ICLR 2026\] STDDN: A Deep Learning Framework for Crowd Simulation Guided by the Fluid Continuity Equation](stddn_a_physics-guided_deep_learning_framework_for_crowd_simulation.md)
+- [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
+- [\[ICLR 2026\] Unlocking the Value of Text: Event-Driven Reasoning and Multi-Level Alignment for Time Series Forecasting](unlocking_the_value_of_text_event-driven_reasoning_and_multi-level_alignment_for.md)
+- [\[ICLR 2026\] Extreme Weather Nowcasting via Local Precipitation Pattern Prediction](extreme_weather_nowcasting_via_local_precipitation_pattern_prediction.md)
+- [\[ICML 2025\] A Generalizable Physics-Enhanced State Space Model for Long-Term Dynamics Forecasting in Complex Environments](../../ICML2025/time_series/a_generalizable_physics-enhanced_state_space_model_for_long-term_dynamics_foreca.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)

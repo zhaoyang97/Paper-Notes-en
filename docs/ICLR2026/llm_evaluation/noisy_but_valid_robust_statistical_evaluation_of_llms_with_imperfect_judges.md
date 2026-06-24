@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Noisy but Valid: Robust Statistical Evaluation of LLMs with Imperfect Judges
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-a-Judge] The paper utilizes a small set of human-annotated data to estimate the True Positive Rate and False Positive Rate (TPR/FPR) of an LLM-as-a-Judge. It constructs a "variance-corrected" critical threshold to process massive judge-generated labels, ensuring that the certification test maintains controlled Type-I error (avo
+  [ICLR 2026][LLM Evaluation][LLM-as-a-Judge] The paper utilizes a small set of human-annotated data to estimate the True Positive Rate and False Positive Rate (TPR/FPR) of an LLM-as-a-Judge. It constructs a "variance-corrected" critical threshold to process massive judge-generated labels, ensuring that the certification test maintains controlled Type-I error (avoiding misclassifying unsafe models as safe) even when the judge itself is imperfect.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
-  - Prediction-Powered Inference
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "Hypothesis Testing"
+  - "Model Certification"
+  - "Type-I Error Control"
+  - "Calibration"
+  - "Prediction-Powered Inference"
 date: 2026-05-08
-content_hash: 8a027a265c86d3ab
+content_hash: fc01573e9be78a5f
 ---
+
 # Noisy but Valid: Robust Statistical Evaluation of LLMs with Imperfect Judges
 
 **Conference**: ICLR 2026  
@@ -136,7 +141,7 @@ As the calibration set $n_M$ increases from 25 to 100 (Jigsaw, 1000 trials), the
 - [\[ICLR 2026\] When LLMs Get Significantly Worse: A Statistical Approach to Detect Model Degradations](when_llms_get_significantly_worse_a_statistical_approach_to_detect_model_degrada.md)
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
 - [\[ICLR 2026\] FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial Search and Reasoning](finsearchcomp_towards_a_realistic_expert-level_evaluation_of_financial_search_an.md)
-- [\[ICLR 2026\] Teach2Eval: An Interaction-Driven LLMs Evaluation Method via Teaching Effectiveness](teach2eval_an_interaction-driven_llms_evaluation_method_via_teaching_effectivene.md)
+- [\[ICLR 2026\] Addressing Pitfalls in the Evaluation of Uncertainty Estimation Methods for Natural Language Generation](addressing_pitfalls_in_the_evaluation_of_uncertainty_estimation_methods_for_natu.md)
 
 </div>
 

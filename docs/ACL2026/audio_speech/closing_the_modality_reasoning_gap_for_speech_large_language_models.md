@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Closing the Modality Reasoning Gap for Speech Large Language Models
 description: >-
-  [ACL 2026][Audio & Speech][Speech LLM] This paper introduces TARS (Trajectory Alignment for Reasoning in Speech), a reinforcement learning-based framework that aligns speech-conditioned reasoning trajectories with text-conditioned trajectories through two dense signals: representation alignment and behavior alignment. It achieves SOTA performance in 7B-scal
+  [ACL 2026][Audio & Speech][Speech LLM] This paper introduces TARS (Trajectory Alignment for Reasoning in Speech), a reinforcement learning-based framework that aligns speech-conditioned reasoning trajectories with text-conditioned trajectories through two dense signals: representation alignment and behavior alignment. It achieves SOTA performance in 7B-scale models, with the Modality Recovery Rate (MRR) approaching or even exceeding 100%.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Speech LLM
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Speech LLM"
+  - "Modality Reasoning Gap"
+  - "Reinforcement Learning"
+  - "Representation Alignment"
+  - "Trajectory Alignment"
 date: 2026-05-08
-content_hash: 2ecc8408eca63c48
+content_hash: a4e0503a2eb0e273
 ---
+
 # Closing the Modality Reasoning Gap for Speech Large Language Models
 
 **Conference**: ACL 2026  
@@ -140,11 +144,11 @@ A DAPO loss estimator (a Dr. GRPO variant) is used. The total reward is $R_{\tex
 
 ## Related Papers
 
+- [\[ICLR 2026\] Closing the Gap Between Text and Speech Understanding in LLMs](../../ICLR2026/audio_speech/closing_the_gap_between_text_and_speech_understanding_in_llms.md)
 - [\[ACL 2026\] VAPO: End-to-end Slide-Enhanced Speech Recognition with Omni-modal Large Language Models](vapo_end-to-end_slide-enhanced_speech_recognition_with_omni-modal_large_language.md)
-- [\[ACL 2025\] Mind the Gap! Static and Interactive Evaluations of Large Audio Models](../../ACL2025/audio_speech/mind_the_gap_static_and_interactive_evaluations_of_large_audio_models.md)
+- [\[ICLR 2026\] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models](../../ICLR2026/audio_speech/owl_geometry-aware_spatial_reasoning_for_audio_large_language_models.md)
 - [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
 - [\[ACL 2026\] Do We Need Distinct Representations for Every Speech Token? Unveiling and Exploiting Redundancy in Large Speech Language Models](do_we_need_distinct_representations_for_every_speech_token_unveiling_and_exploit.md)
-- [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
 
 </div>
 

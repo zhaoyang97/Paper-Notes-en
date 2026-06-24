@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation
+  [Paper Note] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Evaluation Evaluation
 description: >-
-  [ACL 2026][Multilingual & Translation][LLM-as-Judge] The authors construct MENT, a meta-evaluation dataset for non-literal translation (7,530 human annotations), revealing the unreliability of traditional metrics and LLM-as-Judge in non-literal scenarios. They propose the RATE agentic evaluation framework, which improves correlation with human judgment by over 3.2 points
+  [ACL 2026][Multilingual & Machine Translation][Machine Translation Evaluation] The authors construct MENT, a meta-evaluation dataset for non-literal translation (7,530 human annotations), revealing the unreliability of traditional metrics and LLM-as-Judge in non-literal scenarios. They propose the RATE agentic evaluation framework, which improves correlation with human judgment by over 3.2 points through a reflective core agent that dynamically invokes functional sub-agents.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - LLM-as-Judge
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Machine Translation Evaluation"
+  - "Non-Literal Translation"
+  - "Meta-Evaluation Benchmark"
+  - "Agentic Evaluation Framework"
+  - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: 8e6c5b3741e9a0af
+content_hash: c5748a27bc4367d0
 ---
+
 # Beyond Literal Mapping: Benchmarking and Improving Non-Literal Evaluation Evaluation
 
 **Conference**: ACL 2026  
@@ -139,10 +144,10 @@ RATE is a zero-shot agentic framework based on LLMs and requires no training. Th
 
 ## Related Papers
 
-- [\[ACL 2026\] XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics](xq-meval_a_dataset_with_cross-lingual_parallel_quality_for_benchmarking_translat.md)
 - [\[ACL 2025\] Beyond N-Grams: Rethinking Evaluation Metrics and Strategies for Multilingual Abstractive Summarization](../../ACL2025/multilingual_mt/beyond_n-grams_rethinking_evaluation_metrics_and_strategies_for_multilingual_abs.md)
-- [\[ACL 2026\] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition](prosody_as_supervision_bridging_the_non-verbal--verbal_for_multilingual_speech_e.md)
 - [\[ACL 2026\] PEAR: Pairwise Evaluation for Automatic Relative Scoring in Machine Translation](pear_pairwise_evaluation_for_automatic_relative_scoring_in_machine_translation.md)
+- [\[ACL 2026\] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition](prosody_as_supervision_bridging_the_non-verbal--verbal_for_multilingual_speech_e.md)
+- [\[ICLR 2026\] ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity](../../ICLR2026/multilingual_mt/assess_a_semantic_and_structural_evaluation_framework_for_statement_similarity.md)
 - [\[ACL 2025\] Accessible Machine Translation Evaluation For Low-Resource Languages](../../ACL2025/multilingual_mt/accessible_machine_translation_evaluation_for_low-resource_languages.md)
 
 </div>

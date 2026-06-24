@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MatSpray: Fusing 2D Material World Knowledge on 3D Geometry
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MatSpray "sprays" PBR maps (basecolor/roughness/metallic) estimated per view by arbitrary 2D diffusion material predictors onto 3D Gaussian geometry via Gaussian ray tracing. It then uses a softmax neural merger for cross-view fusion combined with PBR rendering loss supervision, yielding de-lighted, multi-view consiste
+  [CVPR 2026][3D Vision][PBR Materials] MatSpray "sprays" PBR maps (basecolor/roughness/metallic) estimated per view by arbitrary 2D diffusion material predictors onto 3D Gaussian geometry via Gaussian ray tracing. It then uses a softmax neural merger for cross-view fusion combined with PBR rendering loss supervision, yielding de-lighted, multi-view consistent, and relightable 3D material assets with a reconstruction speed approximately 3.5× faster than IRGS.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "PBR Materials"
+  - "Gaussian Ray Tracing"
+  - "Multi-view Consistency"
+  - "Neural Merger"
+  - "Relighting"
 date: 2026-05-08
-content_hash: 575b6445a5e58fd8
+content_hash: d5b2227d53aaf32e
 ---
+
 # MatSpray: Fusing 2D Material World Knowledge on 3D Geometry
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Cross-dataset generalization (PSNR, vs. LightSwitch and Neural Gaffer):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
+- [\[CVPR 2026\] MatMart: Material Reconstruction of 3D Objects via Diffusion](matmart_material_reconstruction_of_3d_objects_via_diffusion.md)
+- [\[CVPR 2026\] ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects](ictpolarreal_a_polarized_reflection_and_material_dataset_of_real_world_objects.md)
 - [\[CVPR 2026\] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)
 - [\[CVPR 2026\] Material Magic Wand: Material-Aware Grouping of 3D Parts in Untextured Meshes](material_magic_wand_material-aware_grouping_of_3d_parts_in_untextured_meshes.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
-- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
-- [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
 
 </div>
 

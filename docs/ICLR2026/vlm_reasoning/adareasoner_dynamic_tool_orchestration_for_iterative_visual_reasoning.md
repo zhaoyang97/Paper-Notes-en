@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AdaReasoner: Dynamic Tool Orchestration for Iterative Visual Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] AdaReasoner teaches Multimodal Large Language Models (MLLMs) to **dynamically orchestrate a set of visual tools** during multi-turn visual reasoning. Through a two-stage training process of "Tool Cold Start + Multi-turn Tool GRPO," it enables a 7B small model to autonomously select, discard, and adjust tool usage frequ
+  [ICLR2026][VLM Reasoning][Multimodal Reasoning] AdaReasoner teaches Multimodal Large Language Models (MLLMs) to **dynamically orchestrate a set of visual tools** during multi-turn visual reasoning. Through a two-stage training process of "Tool Cold Start + Multi-turn Tool GRPO," it enables a 7B small model to autonomously select, discard, and adjust tool usage frequency. It achieves an average performance gain of +38.7%, reaching a near-perfect score of 97.6% on VSP…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Tool Orchestration"
+  - "Multi-turn GRPO"
+  - "Visual Tools"
+  - "Adaptive Tool Use"
 date: 2026-05-08
-content_hash: f40ec8ba430d34ab
+content_hash: 03658cebaeff57f6
 ---
+
 # AdaReasoner: Dynamic Tool Orchestration for Iterative Visual Reasoning
 
 **Conference**: ICLR2026  
@@ -123,7 +129,7 @@ Evaluation across six benchmarks (VSPO, VSP, Jigsaw, etc.). TC = Tool Cold Start
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

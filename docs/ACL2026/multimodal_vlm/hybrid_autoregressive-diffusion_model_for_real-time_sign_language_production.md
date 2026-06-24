@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production
 description: >-
-  [ACL 2026][Multimodal VLM][Sign Language Production] This paper proposes HybridSign, which combines autoregressive frame-by-frame generation with flow-based diffusion refinement, incorporating a three-expert multi-scale pose representation and confidence-aware causal attention to achieve a superior quality-latency trade-off on PHOENIX14T and How2Sign.
+  [ACL2026][Multimodal VLM][Sign Language Production] This paper proposes HybridSign, which combines autoregressive frame-by-frame generation with flow-based diffusion refinement, incorporating a three-expert multi-scale pose representation and confidence-aware causal attention to achieve a superior quality-latency trade-off on PHOENIX14T and How2Sign.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Sign Language Production
-  - autoregressive diffusion
-  - HybridSign
-  - confidence-aware attention
-  - low latency
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Sign Language Production"
+  - "autoregressive diffusion"
+  - "HybridSign"
+  - "confidence-aware attention"
+  - "low latency"
 date: 2026-05-08
-content_hash: 5b6860c65af5019e
+content_hash: b6100d361f493137
 ---
+
 # Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production
 
 **Conference**: ACL2026  
@@ -169,9 +170,9 @@ HybridSign provides the strongest overall quality-efficiency trade-off. On the H
 
 - [\[ACL 2026\] CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language](cnsl-bench_benchmarking_the_sign_language_understanding_capabilities_of_mllms_on.md)
 - [\[CVPR 2026\] Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models](../../CVPR2026/multimodal_vlm/diffusion_guided_chain-of-vision_for_large_autoregressive_vision_models.md)
-- [\[CVPR 2026\] AutoTraces: Autoregressive Trajectory Forecasting via Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/autotraces_autoregressive_trajectory_forecasting_via_multimodal_large_language_m.md)
-- [\[ICML 2026\] Conditional Diffusion Sampling](../../ICML2026/multimodal_vlm/conditional_diffusion_sampling.md)
-- [\[CVPR 2026\] UVU: Improving Multimodal Understanding via Vision-Language Unified Autoregressive Paradigm](../../CVPR2026/multimodal_vlm/uvu_improving_multimodal_understanding_via_vision-language_unified_autoregressiv.md)
+- [\[ICLR 2026\] StreamingVLM: Real-Time Understanding for Infinite Video Streams](../../ICLR2026/multimodal_vlm/streamingvlm_real-time_understanding_for_infinite_video_streams.md)
+- [\[ICLR 2026\] Guided Query Refinement: Multimodal Hybrid Retrieval with Test-Time Optimization](../../ICLR2026/multimodal_vlm/guided_query_refinement_multimodal_hybrid_retrieval_with_test-time_optimization.md)
+- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
 
 </div>
 

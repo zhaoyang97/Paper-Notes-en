@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] AgentDet: A Shared-Blackboard Multi-Agent Framework for Zero-/Few-Shot Object Detection
 description: >-
-  [CVPR 2026][Multi-Agent][Paper Note] AgentDet decomposes zero-/few-shot object detection into four LLM agents: Scout, Pinner, Curator, and Judge. These agents collaborate via a "Shared Blackboard" and a patch-level "Knowledge Base" (KB). The framework fragments visual evidence into the KB, assembles them into holistic textual clues for LLM-based box predi
+  [CVPR 2026][Multi-Agent][Zero/Few-shot Detection] AgentDet decomposes zero-/few-shot object detection into four LLM agents: Scout, Pinner, Curator, and Judge. These agents collaborate via a "Shared Blackboard" and a patch-level "Knowledge Base" (KB). The framework fragments visual evidence into the KB, assembles them into holistic textual clues for LLM-based box prediction, and trains only the Judge agent. It achieves competitive results on PASCAL VOC and COCO for both ZSOD a…
 tags:
-  - CVPR 2026
-  - Multi-Agent
+  - "CVPR 2026"
+  - "Multi-Agent"
+  - "Zero/Few-shot Detection"
+  - "Shared Blackboard"
+  - "Knowledge Base"
+  - "Pseudo-incremental Learning"
 date: 2026-05-08
-content_hash: 94615d32518bf0fe
+content_hash: 2f2e447f7a5e948f
 ---
+
 # AgentDet: A Shared-Blackboard Multi-Agent Framework for Zero-/Few-Shot Object Detection
 
 **Conference**: CVPR 2026  
@@ -140,10 +145,20 @@ Module ablation (AgentDet-Qwen2.5/Llama, VOC 10-shot, mAP):
 - Value: ⭐⭐⭐⭐ A reusable multi-agent recipe for low-shot open-vocabulary detection.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](../../AAAI2026/multi_agent/learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
+- [\[ICML 2025\] Cross-environment Cooperation Enables Zero-shot Multi-agent Coordination](../../ICML2025/multi_agent/cross-environment_cooperation_enables_zero-shot_multi-agent_coordination.md)
+- [\[ICML 2026\] Searching for Synergy in Shared Workspace Human-AI Collaboration](../../ICML2026/multi_agent/searching_for_synergy_in_shared_workspace_human-ai_collaboration.md)
+- [\[NeurIPS 2025\] MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision](../../NeurIPS2025/multi_agent/maszero_designing_multiagent_systems_with_zero_supervision.md)
+- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] MOTOR-Bench: A Real-world Dataset and Multi-agent Framework for Zero-shot Human Mental State Understanding](motor-bench_a_real-world_dataset_and_multi-agent_framework_for_zero-shot_human_m.md)

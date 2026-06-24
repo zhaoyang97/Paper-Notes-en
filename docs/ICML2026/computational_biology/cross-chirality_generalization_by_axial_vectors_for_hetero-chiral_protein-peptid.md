@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] This paper proposes AFI (Axial Feature Injection), which injects axial vector features into the polar vector channels of $E(3)$-equivariant scalarized models via linear mixing to reduce them to $SE(3)$-equivariance and enable chirality sensitivity. By applying this to UniMoMo, the authors developed PepMirror, which gen
+  [ICML2026][Computational Biology][D-peptide design] This paper proposes AFI (Axial Feature Injection), which injects axial vector features into the polar vector channels of $E(3)$-equivariant scalarized models via linear mixing to reduce them to $SE(3)$-equivariance and enable chirality sensitivity. By applying this to UniMoMo, the authors developed PepMirror, which generates hetero-chiral (D-L) peptide binders in a zero-shot manner using only homo-chiral (L-L) training data.…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML2026"
+  - "Computational Biology"
+  - "D-peptide design"
+  - "axial vectors"
+  - "$SE(3)$ equivariance"
+  - "mirror enantiomers"
+  - "latent space diffusion"
 date: 2026-05-08
-content_hash: cb67f773d538eeb6
+content_hash: a15d2dda66bf6654
 ---
+
 # Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design
 
 **Conference**: ICML2026  
@@ -127,15 +133,16 @@ Latent space analysis shows that $\|c(X)-c(-X)\|$ jumps from $\sim 10^{-6}$ to $
 - Value: ⭐⭐⭐⭐⭐ Significant impact on de novo D-peptide drug discovery.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Molecular Chirality via Chiral Determinant Kernels](../../ICLR2026/computational_biology/learning_molecular_chirality_via_chiral_determinant_kernels.md)
 - [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
-- [\[ICML 2026\] Protein Circuit Tracing via Cross-layer Transcoders](protein_circuit_tracing_via_cross-layer_transcoders.md)
 - [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
-- [\[ICML 2026\] iLoRA: Bayesian Low-Rank Adaptation with Latent Interaction Graphs for Microbiome Diagnosis](ilora_bayesian_low-rank_adaptation_with_latent_interaction_graphs_for_microbiome.md)
+- [\[ICML 2026\] Protein Circuit Tracing via Cross-layer Transcoders](protein_circuit_tracing_via_cross-layer_transcoders.md)
+- [\[ICLR 2026\] Quantifying Cross-Attention Interaction in Transformers for Interpreting TCR-pMHC Binding](../../ICLR2026/computational_biology/quantifying_cross-attention_interaction_in_transformers_for_interpreting_tcr-pmh.md)
 
 </div>
 

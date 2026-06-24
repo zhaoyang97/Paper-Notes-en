@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][stable minima] This paper investigates the generalization properties of stable minima (flat minima) in two-layer overparameterized ReLU networks. It proves that while flatne…
+  [NeurIPS 2025 Spotlight][Physics & Scientific Computing][stable minima] This paper investigates the generalization properties of stable minima (flat minima) in two-layer overparameterized ReLU networks. It proves that while flatness does imply generalization, the convergence rate deteriorates exponentially with input dimension (i.e., the curse of dimensionality applies), forming an exponential separation from low-norm solutions (weight decay) that are immune to this curse. Th…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Physics & Scientific Computing"
   - "stable minima"
   - "ReLU networks"
@@ -12,7 +12,7 @@ tags:
   - "implicit bias"
   - "nonparametric estimation"
 date: 2026-05-08
-content_hash: 53b44455c1cf6485
+content_hash: 985a83d85c798080
 ---
 
 # Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon
@@ -133,10 +133,10 @@ A network of width 2048 is trained on noisy samples from 512 linear targets in 1
 ## Related Papers
 
 - [\[NeurIPS 2025\] Exoplanet Formation Inference Using Conditional Invertible Neural Networks](exoplanet_formation_inference_using_conditional_invertible_neural_networks.md)
-- [\[NeurIPS 2025\] A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction](a_variational_manifold_embedding_framework_for_nonlinear_dimensionality_reductio.md)
-- [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
 - [\[AAAI 2026\] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations](../../AAAI2026/physics/physicscorrect_a_training-free_approach_for_stable_neural_pde_simulations.md)
-- [\[NeurIPS 2025\] Neural Green's Functions](neural_greens_functions.md)
+- [\[ICML 2025\] Differentiable Stellar Atmospheres with Physics-Informed Neural Networks](../../ICML2025/physics/differentiable_stellar_atmospheres_with_physics-informed_neural_networks.md)
+- [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
+- [\[NeurIPS 2025\] A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction](a_variational_manifold_embedding_framework_for_nonlinear_dimensionality_reductio.md)
 
 </div>
 

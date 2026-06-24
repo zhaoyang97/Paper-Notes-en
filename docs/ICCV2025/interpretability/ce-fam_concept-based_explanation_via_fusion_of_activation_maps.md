@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CE-FAM: Concept-Based Explanation via Fusion of Activation Maps
 description: >-
-  [ICCV 2025][Interpretability][Concept explanation] CE-FAM is a concept explanation method that trains a branch network sharing activation maps with an image classifier to simulate VLM embeddings…
+  [ICCV 2025][Interpretability][Concept explanation] CE-FAM is a concept explanation method that trains a branch network sharing activation maps with an image classifier to simulate VLM embeddings, establishing a one-to-one correspondence among concept prediction → concept region (weighted sum of activation maps) → concept contribution (effect on classification score). The paper also introduces a novel NRA evaluation metric and surpasses existing methods on zero-shot concept re…
 tags:
   - "ICCV 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Grad-CAM"
   - "VLM knowledge transfer"
 date: 2026-05-08
-content_hash: 38d85b91fc0b5063
+content_hash: c404348ccd691c52
 ---
 
 # CE-FAM: Concept-Based Explanation via Fusion of Activation Maps
@@ -83,9 +83,9 @@ CE-FAM workflow:
 3. **Concept Contribution Quantification**
 
    Concept contribution can be quantified for any layer, not only the last:
-   - The computation mirrors the relevance score, but targets the class prediction score $p^c$.
-   - The most important channels are progressively masked, and the AUC of the $p^c$ drop curve is recorded.
-   - Negative contribution (score increases after masking) is also informative, indicating the concept has a negative influence on the prediction.
+    - The computation mirrors the relevance score, but targets the class prediction score $p^c$.
+    - The most important channels are progressively masked, and the AUC of the $p^c$ drop curve is recorded.
+    - Negative contribution (score increases after masking) is also informative, indicating the concept has a negative influence on the prediction.
 
 4. **NRA Evaluation Metric (Normalized Region Accuracy)**
 
@@ -184,9 +184,9 @@ Concept region evaluation under different configurations (ResNet50):
 
 - [\[ICCV 2025\] ArgoTweak: Towards Self-Updating HD Maps through Structured Priors](argotweak_towards_self-updating_hd_maps_through_structured_priors.md)
 - [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
+- [\[ICML 2025\] FastCAV: Efficient Computation of Concept Activation Vectors for Explaining Deep Neural Networks](../../ICML2025/interpretability/fastcav_efficient_computation_of_concept_activation_vectors_for_explaining_deep_.md)
+- [\[ACL 2025\] Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers](../../ACL2025/interpretability/separating_tongue_from_thought_activation_patching_reveals_language-agnostic_con.md)
 - [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](../../NeurIPS2025/interpretability/probabilistic_token_alignment_for_large_language_model_fusion.md)
-- [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
-- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](../../NeurIPS2025/interpretability/cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
 
 </div>
 

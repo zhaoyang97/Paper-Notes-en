@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BrowseNet: Graph-Based Associative Memory for Contextual Information Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][graph-of-chunks] BrowseNet organizes the corpus into a "graph-of-chunks" using named entities as edges and text chunks as nodes. By decomposing multi-hop questions into directed acyclic query-subgraphs and performing beam-search-like subgraph traversal along the graph to retrieve evidence, it achieves SOTA Exact Match and recall on Hot
+  [ICLR2026][Information Retrieval & RAG][Associative memory] BrowseNet organizes the corpus into a "graph-of-chunks" using named entities as edges and text chunks as nodes. By decomposing multi-hop questions into directed acyclic query-subgraphs and performing beam-search-like subgraph traversal along the graph to retrieve evidence, it achieves SOTA Exact Match and recall on HotpotQA, 2WikiMQA, and MuSiQue with only a single LLM call.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - graph-of-chunks
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Associative memory"
+  - "graph-of-chunks"
+  - "multi-hop QA"
+  - "subgraph traversal"
+  - "retrieval-augmented generation"
 date: 2026-05-08
-content_hash: 030c64999c00a0c6
+content_hash: c5c386f4e7b51475
 ---
+
 # BrowseNet: Graph-Based Associative Memory for Contextual Information Retrieval
 
 **Conference**: ICLR2026  
@@ -159,10 +164,10 @@ BrowseNet achieved the highest average scores across both tables. The improvemen
 ## Related Papers
 
 - [\[ICLR 2026\] AssoMem: Scalable Memory QA with Multi-Signal Associative Retrieval](assomem_scalable_memory_qa_with_multi-signal_associative_retrieval.md)
+- [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
 - [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
-- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
+- [\[ICLR 2026\] The Topology of Reasoning: Augmenting Generation with Retrieved Cell Complexes for Text-Graph QA](topology_of_reasoning_retrieved_cell_complex-augmented_generation_for_textual_gr.md)
 - [\[ACL 2026\] Optimizing User Profiles via Contextual Bandits for Retrieval-Augmented LLM Personalization](../../ACL2026/information_retrieval/optimizing_user_profiles_via_contextual_bandits_for_retrieval-augmented_llm_pers.md)
-- [\[ICLR 2026\] LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora](linearrag_linear_graph_retrieval_augmented_generation_on_large-scale_corpora.md)
 
 </div>
 

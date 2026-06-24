@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper proposes XBridge, an architecture that composes pretrained multilingual encoder-decoder translation models (e.g., NLLB) with English-centric LLMs. The encoder handles multilingual understanding, the LLM performs knowledge reasoning, and the decoder executes multilingual generation. Cross-model semantic bridg
+  [ACL 2026][Multilingual & Machine Translation][Multilingual LLMs] This paper proposes XBridge, an architecture that composes pretrained multilingual encoder-decoder translation models (e.g., NLLB) with English-centric LLMs. The encoder handles multilingual understanding, the LLM performs knowledge reasoning, and the decoder executes multilingual generation. Cross-model semantic bridging is achieved through lightweight mapping layers and optimal transport alignment…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual LLMs"
+  - "Model Composition"
+  - "Encoder-Decoder Translation Models"
+  - "Optimal Transport Alignment"
+  - "Low-Resource Languages"
 date: 2026-05-08
-content_hash: 8eaeeb9e7a8ac97a
+content_hash: 98ba242de5b92e73
 ---
+
 # Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality
 
 **Conference**: ACL 2026  
@@ -132,11 +138,11 @@ The total loss consists of three components: LLM English generation cross-entrop
 
 ## Related Papers
 
+- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
 - [\[ACL 2026\] Language Models Entangle Language and Culture](language_models_entangle_language_and_culture.md)
 - [\[ICML 2026\] Optimizing Language Models for Crosslingual Knowledge Consistency](../../ICML2026/multilingual_mt/optimizing_language_models_for_crosslingual_knowledge_consistency.md)
+- [\[ACL 2026\] Modular Monolingual Adaptation using Pretrained Language Models](modular_monolingual_adaptation_using_pretrained_language_models.md)
 - [\[ACL 2026\] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge](dfki-mlt_at_semeval-2026_task_7_steering_multilingual_models_towards_cultural_kn.md)
-- [\[ACL 2026\] NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs](niutranslmt_toward_inclusive_and_scalable_multilingual_machine_translation_with_.md)
-- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
 
 </div>
 

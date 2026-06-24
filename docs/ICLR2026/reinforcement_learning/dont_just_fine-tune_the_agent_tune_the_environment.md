@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Don't Just Fine-tune the Agent, Tune the Environment
 description: >-
-  [ICLR 2026][Reinforcement Learning][Environment Tuning] Proposes the Environment Tuning training paradigm, utilizing structured curricula, actionable environment-enhanced feedback, and fine-grained progress rewards to enable LLM agents to learn complex multi-turn tool use from scratch with only 400 training samples, while achieving superior out-of-distribution generalizatio
+  [ICLR 2026][Reinforcement Learning][Environment Tuning] Proposes the Environment Tuning training paradigm, utilizing structured curricula, actionable environment-enhanced feedback, and fine-grained progress rewards to enable LLM agents to learn complex multi-turn tool use from scratch with only 400 training samples, while achieving superior out-of-distribution generalization.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Environment Tuning
-  - LLM Agent
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Environment Tuning"
+  - "LLM Agent"
+  - "Multi-turn Tool Use"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 2c07bb0df2b10679
+content_hash: 00be99ccf576bd0b
 ---
+
 # Don't Just Fine-tune the Agent, Tune the Environment
 
 **Conference**: ICLR 2026  

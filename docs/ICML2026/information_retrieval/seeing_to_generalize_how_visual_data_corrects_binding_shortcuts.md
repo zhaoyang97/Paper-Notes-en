@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Seeing to Generalize: How Visual Data Corrects Binding Shortcuts
 description: >-
-  [ICML 2026][Information Retrieval & RAG][binding mechanism] This paper replicates the anomalous phenomenon of "VLMs outperforming their base LLMs on pure text tasks" using a controlled synthetic "color-shape-item" retrieval task. Mechanistic interpretability proves that image training shifts the model's variable binding strategy from "positional shortcuts" to "symbolic matching
+  [ICML 2026][Information Retrieval & RAG][Cross-modal training] This paper replicates the anomalous phenomenon of "VLMs outperforming their base LLMs on pure text tasks" using a controlled synthetic "color-shape-item" retrieval task. Mechanistic interpretability proves that image training shifts the model's variable binding strategy from "positional shortcuts" to "symbolic matching." This shift is retained upon returning to text-only inputs, increasing OOD retrieval accuracy f…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - binding mechanism
-  - symbolic vs positional
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Cross-modal training"
+  - "binding mechanism"
+  - "symbolic vs positional"
+  - "OOD generalization"
+  - "long-context retrieval"
 date: 2026-05-08
-content_hash: c1f4c9401b190703
+content_hash: 4bc2996301dca62a
 ---
+
 # Seeing to Generalize: How Visual Data Corrects Binding Shortcuts
 
 **Conference**: ICML 2026  
@@ -137,11 +141,11 @@ Symbolic / Positional ratio in dominant binding layers of the real Qwen family (
 
 ## Related Papers
 
+- [\[ICLR 2026\] Seeing Through Words: Controlling Visual Retrieval Quality with Language Models](../../ICLR2026/information_retrieval/seeing_through_words_controlling_visual_retrieval_quality_with_language_models.md)
 - [\[NeurIPS 2025\] How Should We Evaluate Data Deletion in Graph-Based ANN Indexes?](../../NeurIPS2025/information_retrieval/how_should_we_evaluate_data_deletion_in_graph-based_ann_indexes.md)
 - [\[ICML 2026\] How can embedding models bind concepts?](how_can_embedding_models_bind_concepts.md)
 - [\[ACL 2026\] How Retrieved Context Shapes Internal Representations in RAG](../../ACL2026/information_retrieval/how_retrieved_context_shapes_internal_representations_in_rag.md)
 - [\[ICML 2026\] REAL: Resolving Knowledge Conflicts in Knowledge-Intensive Visual Question Answering via Reasoning-Pivot Alignment](real_resolving_knowledge_conflicts_in_knowledge-intensive_visual_question_answer.md)
-- [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](../../ACL2026/information_retrieval/domain-specific_data_generation_framework_for_rag_adaptation.md)
 
 </div>
 

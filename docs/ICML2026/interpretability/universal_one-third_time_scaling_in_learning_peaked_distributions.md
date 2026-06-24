@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 学习尖峰分布中的通用 1/3 时间缩放
+  [Paper Note] Universal 1/3 Time Scaling in Learning Spiked Distributions
 description: >-
-  [ICML 2026][Interpretability][Paper Note] By analyzing the mathematical properties of softmax and cross-entropy when learning spiked probability distributions, this paper reveals the fundamental cause of the universal 1/3 power-law decay in LLM training loss—an optimization bottleneck at the architectural level independent of data structure.
+  [ICML 2026][Interpretability][Neural scaling laws] By analyzing the mathematical properties of softmax and cross-entropy when learning spiked probability distributions, this paper reveals the fundamental cause of the universal 1/3 power-law decay in LLM training loss—an optimization bottleneck at the architectural level independent of data structure.
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Neural scaling laws"
+  - "time scaling exponent"
+  - "power-law convergence"
+  - "softmax-cross entropy"
+  - "spiked distribution"
 date: 2026-05-08
-content_hash: acf592c6c348553b
+content_hash: 17036b575bab1ae3
 ---
+
 # Universal 1/3 Time Scaling in Learning Spiked Distributions
 
 **Conference**: ICML 2026  
@@ -102,11 +108,11 @@ While the theory is formulated via gradient flow, real training uses Adam and co
 
 ## Related Papers
 
-- [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](block-em_preventing_emergent_misalignment_via_latent_blocking.md)
-- [\[ICML 2026\] Verified SHAP: 神经网络精确 Shapley 值的可证明界](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
-- [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
-- [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
-- [\[ICML 2026\] Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path](circuit_fingerprints_how_answer_tokens_encode_their_geometrical_path.md)
+- [\[AAAI 2026\] Universal Safety Controllers with Learned Prophecies](../../AAAI2026/interpretability/universal_safety_controllers_with_learned_prophecies.md)
+- [\[ICLR 2026\] Small Transformers Don't Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and Implications for Mechanistic Interpretability](../../ICLR2026/interpretability/small_transformers_dont_need_layernorm_at_inference_time_scaling_layernorm_remov.md)
+- [\[ICLR 2026\] Tokenizing Single-Channel EEG with Time-Frequency Motif Learning](../../ICLR2026/interpretability/tokenizing_single-channel_eeg_with_time-frequency_motif_learning.md)
+- [\[NeurIPS 2025\] Superposition Yields Robust Neural Scaling](../../NeurIPS2025/interpretability/superposition_yields_robust_neural_scaling.md)
+- [\[ICLR 2026\] Universal Properties of Activation Sparsity in Modern Large Language Models](../../ICLR2026/interpretability/universal_properties_of_activation_sparsity_in_modern_large_language_models.md)
 
 </div>
 

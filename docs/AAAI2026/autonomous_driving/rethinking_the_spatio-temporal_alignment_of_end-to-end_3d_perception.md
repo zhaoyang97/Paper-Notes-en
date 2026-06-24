@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception
 description: >-
-  [AAAI2026][Autonomous Driving][Spatio-temporal alignment] This paper proposes HAT (multiple Hypotheses spAtio-Temporal alignment), a plug-and-play spatio-temporal alignment module that generates alignment hypotheses via…
+  [AAAI2026][Autonomous Driving][Spatio-temporal alignment] This paper proposes HAT (multiple Hypotheses spAtio-Temporal alignment), a plug-and-play spatio-temporal alignment module that generates alignment hypotheses via multiple explicit motion models and adaptively decodes the optimal alignment using motion cues latent in queries. HAT consistently improves multiple 3D temporal detectors and trackers on nuScenes, and reduces collision rates by 32–48% in end-to-end autonomous…
 tags:
   - "AAAI2026"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "multiple hypothesis motion models"
   - "multi-object tracking"
 date: 2026-05-08
-content_hash: 907a0ce383a219fe
+content_hash: 5f03f602635442dd
 ---
 
 # Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception
@@ -175,8 +175,8 @@ The central insight of this paper is that motion modeling deserves equal importa
 - [\[AAAI 2026\] AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving](decoupling_scene_perception_and_ego_status_a_multi-context_fusion_approach_for_e.md)
 - [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](../../ICLR2026/autonomous_driving/resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
 - [\[AAAI 2026\] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction](rast_a_retrieval_augmented_spatio-temporal_framework_for_traffic_prediction.md)
-- [\[AAAI 2026\] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)
-- [\[AAAI 2026\] DriveSuprim: Towards Precise Trajectory Selection for End-to-End Planning](drivesuprim_towards_precise_trajectory_selection_for_end-to-end_planning.md)
+- [\[CVPR 2026\] STUR3D: Spatio-Temporal Unified Representation Learning for 3D Object Detection](../../CVPR2026/autonomous_driving/stur3d_spatio-temporal_unified_representation_learning_for_3d_object_detection.md)
+- [\[ICLR 2026\] RAP: 3D Rasterization Augmented End-to-End Planning](../../ICLR2026/autonomous_driving/rap_3d_rasterization_augmented_end-to-end_planning.md)
 
 </div>
 

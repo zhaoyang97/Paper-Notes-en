@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Jailbreaking Vision-Language Models via Dissonance-Guided Suffix Optimization and Image-Phrase Injection
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] DGSIP utilizes an "unaligned guide model" and the **predictive distribution difference (dissonance)** at each token position relative to the target VLM to perform gradient-free searches for adversarial suffixes. When suffix optimization reaches a plateau, it switches to a visual injection mechanism that renders inducti
+  [CVPR 2026][AI Safety][VLM Jailbreak] DGSIP utilizes an "unaligned guide model" and the **predictive distribution difference (dissonance)** at each token position relative to the target VLM to perform gradient-free searches for adversarial suffixes. When suffix optimization reaches a plateau, it switches to a visual injection mechanism that renders induction phrases into the image. This alternating process achieves a 100% attack success rate on MiniGPT-4 and InstructBLIP usin…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "VLM Jailbreak"
+  - "Adversarial Suffix"
+  - "Predictive Dissonance"
+  - "Image-Phrase Injection"
+  - "Cross-model Transfer"
 date: 2026-05-08
-content_hash: 2c7aaff059345470
+content_hash: 319d7383b6072b80
 ---
+
 # Jailbreaking Vision-Language Models via Dissonance-Guided Suffix Optimization and Image-Phrase Injection
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,16 @@ Decomposition of modules on MiniGPT-4 (MM-SafetyBench subset):
 - Value: ⭐⭐⭐⭐ Reveals systematic weaknesses in VLM alignment with direct implications for defensive research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] JANUS: A Lightweight Framework for Jailbreaking Text-to-Image Models via Distribution Optimization](janus_a_lightweight_framework_for_jailbreaking_text-to-image_models_via_distribu.md)
 - [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](runawayevil_jailbreaking_the_image-to-video_generative_models.md)
-- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
+- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
-- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
+- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
 
 </div>
 

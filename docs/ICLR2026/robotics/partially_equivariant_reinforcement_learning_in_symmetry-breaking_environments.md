@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] A Partially Group Invariant MDP (PI-MDP) framework is proposed, utilizing a learnable gating function $\lambda(s,a)$ to point-wise switch between equivariant and standard Bellman updates in the state-action space. It is theoretically proven that local symmetry breaking is amplified $1/(1-\gamma)$ times through discount
+  [ICLR 2026][Robotics][Partial Equivariance] A Partially Group Invariant MDP (PI-MDP) framework is proposed, utilizing a learnable gating function $\lambda(s,a)$ to point-wise switch between equivariant and standard Bellman updates in the state-action space. It is theoretically proven that local symmetry breaking is amplified $1/(1-\gamma)$ times through discounted backup to produce global value function errors, whereas PI-MDP strictly confines errors within the symmetry-break…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Partial Equivariance"
+  - "Symmetry Breaking"
+  - "Group Invariant MDP"
+  - "Gating Strategy"
+  - "Bellman Error Propagation"
 date: 2026-05-08
-content_hash: 284a3bbfda9c1b63
+content_hash: 069c9c7c2de6bdc9
 ---
+
 # Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments
 
 **Conference**: ICLR 2026  
@@ -169,8 +175,8 @@ In the UR5e Reach task, PE-SAC is the only method to maintain stable high perfor
 - [\[AAAI 2026\] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](../../AAAI2026/robotics/coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)
 - [\[ICLR 2026\] RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras](raven_end-to-end_equivariant_robot_learning_with_rgb_cameras.md)
 - [\[ICLR 2026\] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation](equact_an_se3-equivariant_multi-task_transformer_for_3d_robotic_manipulation.md)
+- [\[ICLR 2026\] APPLE: Toward General Active Perception via Reinforcement Learning](apple_toward_general_active_perception_via_reinforcement_learning.md)
 - [\[ICLR 2026\] MVR: Multi-view Video Reward Shaping for Reinforcement Learning](mvr_multi-view_video_reward_shaping_for_reinforcement_learning.md)
-- [\[ICLR 2026\] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning](from_seeing_to_experiencing_scaling_navigation_foundation_models_with_reinforcem.md)
 
 </div>
 

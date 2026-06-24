@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls
 description: >-
-  [ICML 2026][Knowledge Editing][Paper Note] KORE injects new knowledge into LMMs through two-stage "knowledge-oriented controls": automatically expanding single facts into structured multi-turn conversations and instruction tasks (to enhance generalization), while initializing LoRA adapters using the null space of the covariance matrix of prior knowledge (to min
+  [ICML 2026][Knowledge Editing][Knowledge Injection] KORE injects new knowledge into LMMs through two-stage "knowledge-oriented controls": automatically expanding single facts into structured multi-turn conversations and instruction tasks (to enhance generalization), while initializing LoRA adapters using the null space of the covariance matrix of prior knowledge (to minimize interference with existing capabilities). It achieves both strong adaptation and strong retention on L…
 tags:
-  - ICML 2026
-  - Knowledge Editing
+  - "ICML 2026"
+  - "Knowledge Editing"
+  - "Knowledge Injection"
+  - "Multimodal Large Language Models"
+  - "Catastrophic Forgetting"
+  - "Null Space Projection"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: 3d90b561e3290204
+content_hash: 0d0f4687bdb1cc8a
 ---
+
 # KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls
 
 **Conference**: ICML 2026  
@@ -139,8 +145,8 @@ The same pattern holds for 13B and Qwen2.5-VL: HARS reaching 85.46 and 67.10 res
 ## Related Papers
 
 - [\[ICLR 2026\] When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations](../../ICLR2026/knowledge_editing/when_large_multimodal_models_confront_evolving_knowledge_challenges_and_explorat.md)
-- [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
 - [\[ACL 2025\] Structure-aware Domain Knowledge Injection for Large Language Models](../../ACL2025/knowledge_editing/structure-aware_domain_knowledge_injection_for_large_language_models.md)
+- [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
 - [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
 - [\[AAAI 2026\] Hybrid-DMKG: A Hybrid Reasoning Framework over Dynamic Multimodal Knowledge Graphs for Multimodal Multihop QA with Knowledge Editing](../../AAAI2026/knowledge_editing/hybrid-dmkg_a_hybrid_reasoning_framework_over_dynamic_multimodal_knowledge_graph.md)
 

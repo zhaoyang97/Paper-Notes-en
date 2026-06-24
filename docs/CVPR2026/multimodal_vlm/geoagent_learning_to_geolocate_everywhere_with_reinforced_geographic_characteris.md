@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeoAgent: Learning to Geolocate Everywhere with Reinforced Geographic Characteristics
 description: >-
-  [CVPR 2026][Remote Sensing][GRPO] GeoAgent approaches image geolocation as a human-like task of "hierarchical reasoning to a precise address." It first performs a cold start on a VLLM using GeoSeek, a Chain-of-Thought (CoT) dataset annotated by geographic experts and professional players. It then undergoes Group Relative Policy Optimization (GRPO) fine
+  [CVPR 2026][Multimodal VLM][Image Geolocation] GeoAgent approaches image geolocation as a human-like task of "hierarchical reasoning to a precise address." It first performs a cold start on a VLLM using GeoSeek, a Chain-of-Thought (CoT) dataset annotated by geographic experts and professional players. It then undergoes Group Relative Policy Optimization (GRPO) fine-tuning using two rewards tailored for geographic tasks: a Geographic Similarity Reward (measuring correctness) a…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Image Geolocation"
+  - "Vision Large Language Models (VLLM)"
+  - "GRPO"
+  - "Geographic Similarity Reward"
+  - "CoT Consistency"
 date: 2026-05-08
-content_hash: 8a6937a516f7c230
+content_hash: 3604b97a20e0f62c
 ---
+
 # GeoAgent: Learning to Geolocate Everywhere with Reinforced Geographic Characteristics
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ Experiments also confirm that Geographic Similarity > Direct Judging: replacing 
 
 ## Related Papers
 
-- [\[ICML 2026\] Localized, High-resolution Geographic Representations with Slepian Functions](../../ICML2026/remote_sensing/localized_high-resolution_geographic_representations_with_slepian_functions.md)
-- [\[CVPR 2026\] GeoSANE: Learning Geospatial Representations from Models, Not Data](geosane_learning_geospatial_representations_from_models_not_data.md)
-- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
-- [\[CVPR 2026\] PhenoYieldNet: Learning Crop-Aware Phenological Responses for Multi-Crop Yield Prediction](phenoyieldnet_learning_crop-aware_phenological_responses_for_multi-crop_yield_pr.md)
-- [\[CVPR 2026\] QuCNet: Quantum Deep Learning Driven Multi-Circuit Network for Remote Sensing Image Classification](qucnet_quantum_deep_learning_driven_multi-circuit_network_for_remote_sensing_ima.md)
+- [\[ACL 2026\] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems](../../ACL2026/multimodal_vlm/moneta_multimodal_industry_classification_through_geographic_information_with_mu.md)
+- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
+- [\[CVPR 2026\] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)
+- [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
+- [\[CVPR 2026\] Learning from Itself: Mining Internal Knowledge from Vision Language Models for Continual Learning](learning_from_itself_mining_internal_knowledge_from_vision_language_models_for_c.md)
 
 </div>
 

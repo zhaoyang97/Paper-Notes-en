@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ORSATR-X: A Foundation Model based on Differential-and-Excitation Networks for Optical Remote Sensing Object Recognition
 description: >-
-  [CVPR 2026][Remote Sensing][DINOv3] ORSATR-X utilizes a frozen DINOv3 as its backbone, attaching side adapters to each Transformer block: a Weber Local Adapter (WLA) inspired by Weber's Law to amplify boundaries of low-contrast targets, and a Multi-Scale Aggregation Module (MSAM) to handle extreme scale variations in remote sensing (RS) objects. Trained
+  [CVPR 2026][Remote Sensing][RSFM] ORSATR-X utilizes a frozen DINOv3 as its backbone, attaching side adapters to each Transformer block: a Weber Local Adapter (WLA) inspired by Weber's Law to amplify boundaries of low-contrast targets, and a Multi-Scale Aggregation Module (MSAM) to handle extreme scale variations in remote sensing (RS) objects. Trained via distillation from DINOv3-L, it achieves SOTA results for single-modal RS foundation models across scene classification…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - DINOv3
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "RSFM"
+  - "DINOv3"
+  - "Weber Local Contrast"
+  - "Multi-scale Aggregation"
+  - "Self-supervised Distillation"
 date: 2026-05-08
-content_hash: 091e20ab21a28c2c
+content_hash: 112912c1dcc92145
 ---
+
 # ORSATR-X: A Foundation Model based on Differential-and-Excitation Networks for Optical Remote Sensing Object Recognition
 
 **Conference**: CVPR 2026  
@@ -152,9 +157,9 @@ MSAM+WLA shows significant gains for small objects (+2.47%), validating robustne
 ## Related Papers
 
 - [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
-- [\[CVPR 2026\] Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)
-- [\[CVPR 2026\] HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping](hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping.md)
-- [\[CVPR 2026\] Beyond Tie Points: Satellite Image Block Adjustment based on Dense Feature Consistency](beyond_tie_points_satellite_image_block_adjustment_based_on_dense_feature_consis.md)
+- [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](../../NeurIPS2025/remote_sensing/geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
+- [\[ICLR 2026\] Object Fidelity Diffusion for Remote Sensing Image Generation](../../ICLR2026/remote_sensing/object_fidelity_diffusion_for_remote_sensing_image_generation.md)
+- [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](../../ICCV2025/remote_sensing/skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
 - [\[CVPR 2026\] GeoBridge: A Semantic-Anchored Multi-View Foundation Model Bridging Images and Text for Geo-Localization](geobridge_a_semantic-anchored_multi-view_foundation_model_bridging_images_and_te.md)
 
 </div>

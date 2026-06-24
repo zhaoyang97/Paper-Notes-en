@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Network Dismantling Without Handcrafted Inputs
 description: >-
-  [AAAI 2026][Network dismantling] This paper proposes MIND (Message Iteration Network Dismantler), which eliminates the dependence of GNNs on handcrafted features through a novel All-to-One attention mechanism and Message…
+  [AAAI 2026][Network dismantling] This paper proposes MIND (Message Iteration Network Dismantler), which eliminates the dependence of GNNs on handcrafted features through a novel All-to-One attention mechanism and Message Iteration Profiles. Using only raw adjacency information, MIND achieves state-of-the-art network dismantling performance on real-world networks with up to millions of nodes, while maintaining the lowest computational complexity of $O(|V|+|E|)$.
 tags:
   - "AAAI 2026"
   - "Network dismantling"
@@ -11,7 +11,7 @@ tags:
   - "reinforcement learning"
   - "vital node identification"
 date: 2026-05-08
-content_hash: 5f857a1176bb11e1
+content_hash: ab8e3a0086af3dfe
 ---
 
 # Learning Network Dismantling Without Handcrafted Inputs
@@ -168,10 +168,10 @@ MIND ranks first overall across dozens of real-world networks spanning four cate
 ## Related Papers
 
 - [\[AAAI 2026\] Optimal Welfare in Noncooperative Network Formation under Attack](optimal_welfare_in_noncooperative_network_formation_under_attack.md)
+- [\[ICLR 2026\] Deploying Models to Non-participating Clients in Federated Learning without Fine-tuning: A Hypernetwork-based Approach](../../ICLR2026/others/deploying_models_to_non-participating_clients_in_federated_learning_without_fine.md)
+- [\[ECCV 2024\] Momentum Auxiliary Network for Supervised Local Learning](../../ECCV2024/others/momentum_auxiliary_network_for_supervised_local_learning.md)
 - [\[AAAI 2026\] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis](bayesian_network_structural_consensus_via_greedy_min-cut_analysis.md)
 - [\[AAAI 2026\] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes](detonation_decoupled_torch_network-aware_training_on_interlinked_online_nodes.md)
-- [\[AAAI 2026\] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)
-- [\[ICML 2026\] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach](../../ICML2026/others/markov_chain_monte_carlo_without_evaluating_the_target_an_auxiliary_variable_app.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Information-Theoretic Parameter-Free Bayesian Framework for Probing Labeled Dependency Trees from Attention Score
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] IPBP does not train any probing network. It directly performs kernel density estimation on the joint distribution of "attention scores" and "dependency relations" to calculate the mutual information (MI) between each attention head and various dependency types in closed form. Using Bayesian posterior + geometric mean p
+  [ICLR2026][Interpretability][Syntactic Probing] IPBP does not train any probing network. It directly performs kernel density estimation on the joint distribution of "attention scores" and "dependency relations" to calculate the mutual information (MI) between each attention head and various dependency types in closed form. Using Bayesian posterior + geometric mean pooling + Eisner decoding, it reconstructs **labeled** dependency trees. On several 7B/8B LLMs…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Syntactic Probing"
+  - "Mutual Information"
+  - "Bayesian Inference"
+  - "Dependency Trees"
+  - "Attention Score"
 date: 2026-05-08
-content_hash: 3b75d578b9ac4b28
+content_hash: 0db81ff2fc6e1a90
 ---
+
 # An Information-Theoretic Parameter-Free Bayesian Framework for Probing Labeled Dependency Trees from Attention Score
 
 **Conference**: ICLR2026  
@@ -160,7 +166,7 @@ Regarding models/languages, Mistral-7B (50.4 UAS) and open\_llama\_7b (49.1) per
 - [\[ICLR 2026\] Attention, Please! Revisiting Attentive Probing Through the Lens of Efficiency](attention_please_revisiting_attentive_probing_through_the_lens_of_efficiency.md)
 - [\[NeurIPS 2025\] Curvature Tuning: Provable Training-free Model Steering From a Single Parameter](../../NeurIPS2025/interpretability/curvature_tuning_provable_training-free_model_steering_from_a_single_parameter.md)
 - [\[ICLR 2026\] Bayesian Neural Networks for Functional ANOVA Model](bayesian_neural_networks_for_functional_anova_model.md)
-- [\[ICLR 2026\] Decoupling Positional and Symbolic Attention in Transformers](decoupling_positional_and_symbolic_attention_in_transformers.md)
+- [\[ICLR 2026\] Seeing but Not Believing: Probing the Disconnect Between Visual Attention and Answer Correctness in VLMs](seeing_but_not_believing_probing_the_disconnect_between_visual_attention_and_ans.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thermal Diffusion Matters: Infrared Spatial-Temporal Video Super-Resolution through Heat Conduction Priors
 description: >-
-  [CVPR 2026][Image Restoration][State Space Model] THERIS treats pixel-wise grayscale sequences of infrared videos as temperature fields satisfying the heat conduction equation. It utilizes frequency-domain thermal diffusion kernels for frame interpolation (TDIM), Mamba modules modulated by "thermal prompts" for spatial-temporal detail recovery (TSSM), and a loss funct
+  [CVPR 2026][Video Generation][Infrared Video] THERIS treats pixel-wise grayscale sequences of infrared videos as temperature fields satisfying the heat conduction equation. It utilizes frequency-domain thermal diffusion kernels for frame interpolation (TDIM), Mamba modules modulated by "thermal prompts" for spatial-temporal detail recovery (TSSM), and a loss function (TFM Loss) that enforces discrete heat equations to achieve SOTA in infrared spatial-temporal video super-reso…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - State Space Model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Infrared Video"
+  - "Spatial-Temporal Super-Resolution"
+  - "Heat Conduction Prior"
+  - "State Space Models"
+  - "Frequency Domain Diffusion"
 date: 2026-05-08
-content_hash: e46afd7211e439bc
+content_hash: 60e416f13f235fdc
 ---
+
 # Thermal Diffusion Matters: Infrared Spatial-Temporal Video Super-Resolution through Heat Conduction Priors
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Downstream IR object detection (LLVIP, YOLO, mAP@0.5:0.95):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Disentangled Textual Priors for Diffusion-based Image Super-Resolution](disentangled_textual_priors_for_diffusion-based_image_super-resolution.md)
-- [\[AAAI 2026\] Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment](../../AAAI2026/image_restoration/temporal_inconsistency_guidance_for_super-resolution_video_quality_assessment.md)
-- [\[CVPR 2026\] PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](ps-sr_pseudo-single-step_video_super-resolution_via_speculative_diffusion.md)
-- [\[CVPR 2026\] Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution](time_without_time_pseudo-temporal_representation_for_space-time_super-resolution.md)
-- [\[CVPR 2026\] Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features](rethinking_diffusion_model-based_video_super-resolution_leveraging_dense_guidanc.md)
+- [\[CVPR 2026\] Compressed-Domain-Aware Online Video Super-Resolution](compressed-domain-aware_online_video_super-resolution.md)
+- [\[CVPR 2026\] VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment](vsrell_a_simple_baseline_for_video_super-resolution_and_enhancement_in_low-light.md)
+- [\[CVPR 2025\] BF-STVSR: B-Splines and Fourier—Best Friends for High Fidelity Spatial-Temporal Video Super-Resolution](../../CVPR2025/video_generation/bf-stvsr_b-splines_and_fourier---best_friends_for_high_fidelity_spatia.md)
+- [\[CVPR 2026\] Spatia: Video Generation with Updatable Spatial Memory](spatia_video_generation_with_updatable_spatial_memory.md)
+- [\[CVPR 2025\] PatchVSR: Breaking Video Diffusion Resolution Limits with Patch-Wise Video Super-Resolution](../../CVPR2025/video_generation/patchvsr_breaking_video_diffusion_resolution_limits_with_patch-wise_video_super-.md)
 
 </div>
 

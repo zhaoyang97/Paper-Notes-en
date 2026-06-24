@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing
 description: >-
-  [CVPR 2026][3D Vision][4D Remeshing] FISHuman utilizes a "3D-aware dual-stream video diffusion model" to expand a single photo into multi-view aligned RGB+normal sequences. It then employs a "4D Remeshing" module to transform pixel drifts from **inconsistent** multi-view frames into controllable per-vertex deformations. This allows for the reconstruction
+  [CVPR 2026][3D Vision][Single-image human reconstruction] FISHuman utilizes a "3D-aware dual-stream video diffusion model" to expand a single photo into multi-view aligned RGB+normal sequences. It then employs a "4D Remeshing" module to transform pixel drifts from **inconsistent** multi-view frames into controllable per-vertex deformations. This allows for the reconstruction of 3D humans with fine geometry, realistic textures, and animation-ready meshes from a single image…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D Remeshing
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-image human reconstruction"
+  - "multi-view video diffusion"
+  - "4D Remeshing"
+  - "vertex deformation"
+  - "unified UV texture"
 date: 2026-05-08
-content_hash: f6b776a22798cefe
+content_hash: 27b4bad53fc7d6ca
 ---
+
 # FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Verifying core modules on appearance metrics (2K2K setup):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
 - [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
 - [\[CVPR 2026\] iSplat: Iterative Learning for Fine-Grained Gaussian Splatting](isplat_iterative_learning_for_fine-grained_gaussian_splatting.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
+- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
+- [\[CVPR 2026\] Animator-Centric Skeleton Generation on Objects with Fine-Grained Details](animator-centric_skeleton_generation_on_objects_with_fine-grained_details.md)
 
 </div>
 

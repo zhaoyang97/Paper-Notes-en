@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Composing Concepts from Images and Videos via Concept-prompt Binding
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] The authors propose Bind & Compose (BiCo), a one-shot method that binds visual concepts to prompt tokens via a hierarchical binder structure and achieves flexible image-video concept composition through token-level assembly. It significantly outperforms previous methods in concept consistency, prompt fidelity, and moti
+  [CVPR 2026][Video Generation][Visual Concept Composition] The authors propose Bind & Compose (BiCo), a one-shot method that binds visual concepts to prompt tokens via a hierarchical binder structure and achieves flexible image-video concept composition through token-level assembly. It significantly outperforms previous methods in concept consistency, prompt fidelity, and motion quality.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Visual Concept Composition"
+  - "Diffusion Transformer"
+  - "Video Personalization"
+  - "Concept Binding"
+  - "Temporal Decoupling"
 date: 2026-05-08
-content_hash: c194c5e14f4b4e81
+content_hash: 23ed2f0e6eaae685
 ---
+
 # Composing Concepts from Images and Videos via Concept-prompt Binding
 
 **Conference**: CVPR 2026  
@@ -152,8 +158,8 @@ BiCo shows a **+54.67%** improvement (3.00→4.64) in subjective Overall Quality
 - [\[ICML 2026\] Where Concept Erasure Should Occur: Concept-Layer Alignment in Text-to-Video Diffusion Models](../../ICML2026/video_generation/where_concept_erasure_should_occur_concept-layer_alignment_in_text-to-video_diff.md)
 - [\[CVPR 2026\] I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers](interpretable_motion-attentive_maps_spatio-temporally_localizing_concepts_in_vid.md)
 - [\[CVPR 2026\] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](activityforensics_a_comprehensive_benchmark_for_localizing_manipulated_activity_.md)
+- [\[CVPR 2026\] Generating Humanless Environment Walkthroughs from Egocentric Walking Tour Videos](generating_humanless_environment_walkthroughs_from_egocentric_walking_tour_video.md)
 - [\[ICCV 2025\] Prompt-A-Video: Prompt Your Video Diffusion Model via Preference-Aligned LLM](../../ICCV2025/video_generation/prompt-a-video_prompt_your_video_diffusion_model_via_preference-aligned_llm.md)
-- [\[CVPR 2026\] Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos](ego-inbetween_generating_object_state_transitions_in_ego-centric_videos.md)
 
 </div>
 

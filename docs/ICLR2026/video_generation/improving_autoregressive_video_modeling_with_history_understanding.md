@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Improving Autoregressive Video Modeling with History Understanding
 description: >-
-  [ICLR 2026][Video Generation][VideoAR] This paper identifies the "quality of internal representations of historical frames" as an overlooked key variable in diffusion-based autoregressive video generation (VideoAR). It proposes **MiMo (Masked History Modeling)**, which performs masked reconstruction of clean historical frames alongside the diffusion denoisi
+  [ICLR 2026][Video Generation][VideoAR] This paper identifies the "quality of internal representations of historical frames" as an overlooked key variable in diffusion-based autoregressive video generation (VideoAR). It proposes **MiMo (Masked History Modeling)**, which performs masked reconstruction of clean historical frames alongside the diffusion denoising objective. This approach learns stronger history representations in a self-supervised manner…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - VideoAR
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Video Generation"
+  - "VideoAR"
+  - "Diffusion Models"
+  - "Masked Modeling"
+  - "History Representation"
+  - "Self-supervised Representation Learning"
 date: 2026-05-08
-content_hash: 01368ad64362cad8
+content_hash: 09b7207671d9da47
 ---
+
 # Improving Autoregressive Video Modeling with History Understanding
 
 **Conference**: ICLR 2026  
@@ -122,15 +126,16 @@ MiMo achieves new AR SOTA across all tasks, notably improving UCF unconditional 
 - **Value**: ⭐⭐⭐⭐ — A practical, VFM-free improvement for diffusion-based VideoAR with negligible computational overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](../../CVPR2026/video_generation/accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
 - [\[CVPR 2025\] Mimir: Improving Video Diffusion Models for Precise Text Understanding](../../CVPR2025/video_generation/mimir_improving_video_diffusion_models_for_precise_text_understanding.md)
-- [\[ICLR 2026\] Flow Caching for Autoregressive Video Generation](flow_caching_for_autoregressive_video_generation.md)
 - [\[CVPR 2026\] STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows](../../CVPR2026/video_generation/starflow-v_end-to-end_video_generative_modeling_with_autoregressive_normalizing_.md)
-- [\[ICLR 2026\] LikePhys: Evaluating Intuitive Physics Understanding in Video Diffusion Models via Likelihood Preference](likephys_evaluating_intuitive_physics_understanding_in_video_diffusion_models_vi.md)
+- [\[ICLR 2026\] Flow Caching for Autoregressive Video Generation](flow_caching_for_autoregressive_video_generation.md)
+- [\[ICLR 2026\] Streaming Autoregressive Video Generation via Diagonal Distillation](streaming_autoregressive_video_generation_via_diagonal_distillation.md)
 
 </div>
 

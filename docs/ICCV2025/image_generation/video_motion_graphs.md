@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Video Motion Graphs
 description: >-
-  [ICCV 2025][Image Generation][Video Motion Graphs] Video Motion Graphs proposes a retrieval-augmented generation system for human motion video synthesis. It constructs a motion graph from reference videos and performs co…
+  [ICCV 2025][Image Generation][Video Motion Graphs] Video Motion Graphs proposes a retrieval-augmented generation system for human motion video synthesis. It constructs a motion graph from reference videos and performs conditioned path search to obtain keyframes, then employs HMInterp—a dual-branch diffusion-based frame interpolation model combining skeleton guidance from a Motion Diffusion Model and progressive condition training—to seamlessly connect discontinuous frames. Th…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Retrieval-based Video Generation"
   - "Human Motion Video"
 date: 2026-05-08
-content_hash: 5f7b914c0df6916c
+content_hash: 8cce1158c0a95b81
 ---
 
 # Video Motion Graphs
@@ -169,9 +169,9 @@ Even under the most challenging f=216 setting, the proposed method outperforms a
 
 - [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
 - [\[ICCV 2025\] REDUCIO! Generating 1K Video within 16 Seconds using Extremely Compressed Motion Latents](reducio_generating_1k_video_within_16_seconds_using_extremely_compressed_motion_.md)
+- [\[CVPR 2025\] EDEN: Enhanced Diffusion for High-quality Large-motion Video Frame Interpolation](../../CVPR2025/image_generation/eden_enhanced_diffusion_for_high-quality_large-motion_video_frame_interpolation.md)
 - [\[ICCV 2025\] InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation](infinidreamer_arbitrarily_long_human_motion_generation_via_segment_score_distill.md)
-- [\[ICCV 2025\] TLB-VFI: Temporal-Aware Latent Brownian Bridge Diffusion for Video Frame Interpolation](tlb-vfi_temporal-aware_latent_brownian_bridge_diffusion_for_video_frame_interpol.md)
-- [\[ICCV 2025\] PINO: Person-Interaction Noise Optimization for Long-Duration and Customizable Motion Generation of Arbitrary-Sized Groups](pino_person-interaction_noise_optimization_for_long-duration_and_customizable_mo.md)
+- [\[CVPR 2025\] GraphGPT-o: Synergistic Multimodal Comprehension and Generation on Graphs](../../CVPR2025/image_generation/graphgpt-o_synergistic_multimodal_comprehension_and_generation_on_graphs.md)
 
 </div>
 

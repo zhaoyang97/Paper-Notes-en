@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diagnosing and Remedying Knowledge Deficiencies in LLMs via Label-free Curricular Meaningful Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] LaMer utilizes the "relative entropy of model output distributions before and after incorporating external knowledge" as a **label-free** probe to locate and quantify knowledge deficiencies in LLMs. It then adaptively synthesizes data based on deficiency severity and repairs them through easy-to-hard curriculum fine-tu
+  [ICLR2026][Reasoning][Relative Entropy] LaMer utilizes the "relative entropy of model output distributions before and after incorporating external knowledge" as a **label-free** probe to locate and quantify knowledge deficiencies in LLMs. It then adaptively synthesizes data based on deficiency severity and repairs them through easy-to-hard curriculum fine-tuning, matching or exceeding label-dependent methods with only 40% of the training data.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Relative Entropy"
+  - "Label-free Diagnosis"
+  - "Curriculum Learning"
+  - "Meaningful Learning"
+  - "Knowledge Augmentation"
 date: 2026-05-08
-content_hash: 0276d38d116fa27c
+content_hash: a85e04813b90f94d
 ---
+
 # Diagnosing and Remedying Knowledge Deficiencies in LLMs via Label-free Curricular Meaningful Learning
 
 **Conference**: ICLR2026  
@@ -132,10 +138,17 @@ LaMer ranks first across all models. Indiscriminate augmentation (AugGPT/Naive) 
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Enhancing LLMs for Knowledge Base Question Answering by Chain-of-Decomposition](enhancing_llms_for_knowledge_base_question_answering_by_chain-of-decomposition.md)
+- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](../../ACL2026/llm_reasoning/learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
+- [\[ICML 2026\] Diagnosing Multi-step Reasoning Failures in Black-box LLMs via Stepwise Confidence Attribution](../../ICML2026/llm_reasoning/diagnosing_multi-step_reasoning_failures_in_black-box_llms_via_stepwise_confiden.md)
+- [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
+- [\[ICLR 2026\] Is In-Context Learning Learning?](is_in-context_learning_learning.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](../../ACL2026/llm_reasoning/learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)

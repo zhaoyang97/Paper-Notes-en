@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAO-Instruct: Free-form Audio Editing using Natural Language Instructions
 description: >-
-  [NeurIPS 2025][Image Generation][Audio Editing] This paper proposes SAO-Instruct, the first audio editing model supporting fully free-form natural language instructions. Training data consisting of editing triplets is co…
+  [NeurIPS 2025][Image Generation][Audio Editing] This paper proposes SAO-Instruct, the first audio editing model supporting fully free-form natural language instructions. Training data consisting of editing triplets is constructed via three pipelines — Prompt-to-Prompt, DDPM inversion, and manual editing — and Stable Audio Open is fine-tuned to achieve context-preserving, targeted audio modification.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Prompt-to-Prompt"
   - "Diffusion Models"
 date: 2026-05-08
-content_hash: 295d602afcb44fdc
+content_hash: b43212dcc16e9d8f
 ---
 
 # SAO-Instruct: Free-form Audio Editing using Natural Language Instructions
@@ -52,13 +52,13 @@ A three-stage pipeline: (1) an LLM generates (input description, editing instruc
    The Prompt-to-Prompt approach from the image domain is adapted to audio. The core idea is to inject attention maps (cross-attention maps) from the input description into the generation process guided by the output description, thereby achieving local edits while preserving global contextual consistency.
 
    Three key parameters control editing strength:
-   - $\lambda_{\text{frac}}^{\text{attn}}$: attention injection ratio (0 = no influence, 1 = identical)
-   - $\lambda_{\text{delay}}^{\text{attn}}$: injection delay (skip the first $N\%$ of attention maps)
-   - $\lambda_{\text{weight}}^{\text{attn}}$: attention weight amplification for changed tokens
+    - $\lambda_{\text{frac}}^{\text{attn}}$: attention injection ratio (0 = no influence, 1 = identical)
+    - $\lambda_{\text{delay}}^{\text{attn}}$: injection delay (skip the first $N\%$ of attention maps)
+    - $\lambda_{\text{weight}}^{\text{attn}}$: attention weight amplification for changed tokens
 
    Since different edits require different parameter configurations, **Bayesian optimization** (10 trials/sample) is employed to automatically search for optimal settings. The objective function is:
 
-   $$\mathcal{L}_{\text{obj}} = \omega_1 \cdot M_{\text{CLAP}}^{\text{out}} + \omega_2 \cdot M_{\text{CLAP}}^{\text{dir}} + \omega_3 \cdot M_{\text{CLAP}}^{\text{sim}} - \omega_4 \cdot M_{\text{MEL}}^{\text{sim}}$$
+    $\mathcal{L}_{\text{obj}} = \omega_1 \cdot M_{\text{CLAP}}^{\text{out}} + \omega_2 \cdot M_{\text{CLAP}}^{\text{dir}} + \omega_3 \cdot M_{\text{CLAP}}^{\text{sim}} - \omega_4 \cdot M_{\text{MEL}}^{\text{sim}}$
 
    Weights are determined via ELO rankings from small-scale human listening tests: $\omega_1=8,\ \omega_2=14,\ \omega_3=0.5,\ \omega_4=1.5$.
 
@@ -140,10 +140,10 @@ Fine-tuning proceeds under Stable Audio Open's diffusion objective. The model em
 ## Related Papers
 
 - [\[ICCV 2025\] Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent](../../ICCV2025/image_generation/describe_dont_dictate_semantic_image_editing_with_natural_language_intent.md)
+- [\[ICML 2025\] FlexiClip: Locality-Preserving Free-Form Character Animation](../../ICML2025/image_generation/flexiclip_locality-preserving_free-form_character_animation.md)
 - [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](../../CVPR2026/image_generation/language-free_generative_editing_from_one_visual_example.md)
-- [\[NeurIPS 2025\] CAMILA: Context-Aware Masking for Image Editing with Language Alignment](camila_contextaware_masking_for_image_editing_with_language.md)
 - [\[NeurIPS 2025\] DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images](diffeye_diffusion-based_continuous_eye-tracking_data_generation_conditioned_on_n.md)
-- [\[NeurIPS 2025\] SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing](splitflow_flow_decomposition_for_inversion-free_text-to-image_editing.md)
+- [\[NeurIPS 2025\] CAMILA: Context-Aware Masking for Image Editing with Language Alignment](camila_contextaware_masking_for_image_editing_with_language.md)
 
 </div>
 

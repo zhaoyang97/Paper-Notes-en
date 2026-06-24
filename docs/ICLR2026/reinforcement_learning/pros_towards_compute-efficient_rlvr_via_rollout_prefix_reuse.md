@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PROS: Towards Compute-Efficient RLVR via Rollout Prefix Reuse
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] PROS identifies that multiple rollouts for the same query are highly redundant in early reasoning steps. It constructs "Augmented Queries" by concatenating original queries with "valuable prefixes" from historical rollouts for reuse in subsequent iterations. This eliminates redundant compute and employs a hierarchical
+  [ICLR 2026][Reinforcement Learning][RLVR] PROS identifies that multiple rollouts for the same query are highly redundant in early reasoning steps. It constructs "Augmented Queries" by concatenating original queries with "valuable prefixes" from historical rollouts for reuse in subsequent iterations. This eliminates redundant compute and employs a hierarchical Bayesian model to estimate pass rates, prioritizing samples with pass rates near 0.5. PROS achieves higher accuracy th…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Prefix Reuse"
+  - "Augmented Query"
+  - "Hierarchical Bayes"
+  - "Training Efficiency"
 date: 2026-05-08
-content_hash: b219c425e6f62f16
+content_hash: 297f65e20ba33e0d
 ---
+
 # PROS: Towards Compute-Efficient RLVR via Rollout Prefix Reuse
 
 **Conference**: ICLR 2026  
@@ -130,15 +135,20 @@ Hyperparameter ablations (GRPO/AIME-Old, $\sigma$ and $\lambda$) show PROS is ro
 - Value: ⭐⭐⭐⭐⭐ Plug-and-play with minimal overhead; directly addresses the generation bottleneck in RLVR scaling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **[DeepSeek-V3]** DeepSeek-V3 Technical Report. (RLVR foundation).
-- **[DAPO]** Dynamic Sampling in Policy Optimization for Reasoning. (Comparison target for selection).
-- **[PPO-Replay]** On the tradeoff between sample and compute efficiency in RL.
+## Related Papers
+
+- [\[ICLR 2026\] Parameter-Efficient Reinforcement Learning using Prefix Optimization](parameter-efficient_reinforcement_learning_using_prefix_optimization.md)
+- [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](../../ICML2026/reinforcement_learning/single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
+- [\[ICLR 2026\] The Art of Scaling Reinforcement Learning Compute for LLMs](the_art_of_scaling_reinforcement_learning_compute_for_llms.md)
+- [\[ICLR 2026\] Generalization of RLVR Using Causal Reasoning as a Testbed](generalization_of_rlvr_using_causal_reasoning_as_a_testbed.md)
+- [\[ICLR 2026\] Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning](controllable_exploration_in_hybrid-policy_rlvr_for_multi-modal_reasoning.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Parameter-Efficient Reinforcement Learning using Prefix Optimization](parameter-efficient_reinforcement_learning_using_prefix_optimization.md)

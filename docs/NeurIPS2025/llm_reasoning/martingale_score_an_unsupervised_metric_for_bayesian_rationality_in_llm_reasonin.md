@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Martingale Score] This paper proposes the Martingale Score as an unsupervised metric that quantifies belief entrenchment in LLM reasoning processes based on the martingale property from Baye…
+  [NeurIPS 2025][Reasoning][Martingale Score] This paper proposes the Martingale Score as an unsupervised metric that quantifies belief entrenchment in LLM reasoning processes based on the martingale property from Bayesian statistics. The study finds that belief entrenchment is pervasive across models and domains, and is significantly correlated with degraded accuracy.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Martingale Score"
   - "belief entrenchment"
   - "Bayesian rationality"
+  - "LLM reasoning"
   - "unsupervised evaluation"
 date: 2026-05-08
-content_hash: a62dd158b33ac371
+content_hash: 264282e07abcac0f
 ---
 
 # Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning
@@ -149,10 +150,10 @@ Martingale Scores under CoT reasoning across models and domains (positive values
 ## Related Papers
 
 - [\[NeurIPS 2025\] First SFT, Second RL, Third UPT: Continual Improving Multi-Modal LLM Reasoning via Unsupervised Post-Training](first_sft_second_rl_third_upt_continual_improving_multi-modal_llm_reasoning_via_.md)
+- [\[ICLR 2026\] Sample Lottery: Unsupervised Discovery of Critical Instances for LLM Reasoning](../../ICLR2026/llm_reasoning/sample_lottery_unsupervised_discovery_of_critical_instances_for_llm_reasoning.md)
 - [\[AAAI 2026\] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback](../../AAAI2026/llm_reasoning/in-token_rationality_optimization_towards_accurate_and_concise_llm_reasoning_via.md)
 - [\[ICCV 2025\] Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization](../../ICCV2025/llm_reasoning/unsupervised_visual_chain-of-thought_reasoning_via_preference_optimization.md)
-- [\[NeurIPS 2025\] The Surprising Effectiveness of Negative Reinforcement in LLM Reasoning](the_surprising_effectiveness_of_negative_reinforcement_in_llm_reasoning.md)
-- [\[NeurIPS 2025\] GPO: Learning from Critical Steps to Improve LLM Reasoning](gpo_learning_from_critical_steps_to_improve_llm_reasoning.md)
+- [\[NeurIPS 2025\] A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning](a_theoretical_study_on_bridging_internal_probability_and_sel.md)
 
 </div>
 

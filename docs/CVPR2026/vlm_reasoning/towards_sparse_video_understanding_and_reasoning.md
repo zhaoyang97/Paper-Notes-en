@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Sparse Video Understanding and Reasoning
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] ReViSe reforms video question answering as "question-driven multi-turn sparse frame selection"—selecting only a few frames per turn, compressing verified evidence into a structured "summary-as-state" across turns, and stopping early once confident. It serves as a plug-and-play wrapper for any VLM and supports reinforce
+  [CVPR 2026][VLM Reasoning][Video Question Answering] ReViSe reforms video question answering as "question-driven multi-turn sparse frame selection"—selecting only a few frames per turn, compressing verified evidence into a structured "summary-as-state" across turns, and stopping early once confident. It serves as a plug-and-play wrapper for any VLM and supports reinforced fine-tuning using the label-free reward EAGER, achieving higher accuracy on multiple VQA benchmarks with…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Question Answering"
+  - "Frame Selection"
+  - "Multi-turn Reasoning"
+  - "Summary-as-State"
+  - "Reinforced Fine-tuning"
 date: 2026-05-08
-content_hash: 6c12bf2380330fae
+content_hash: 75edd74f6cc41588
 ---
+
 # Towards Sparse Video Understanding and Reasoning
 
 **Conference**: CVPR 2026  
@@ -174,10 +180,10 @@ RFT significantly outperformed plug-and-play on NExT-QA (51.3 vs 31.7) while red
 ## Related Papers
 
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
-- [\[ICLR 2026\] VideoNSA: Native Sparse Attention Scales Video Understanding](../../ICLR2026/video_understanding/videonsa_native_sparse_attention_scales_video_understanding.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2026\] SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation](segcompass_exploring_interpretable_alignment_with_sparse_autoencoders_for_enhanc.md)
+- [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
 - [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
-- [\[CVPR 2026\] MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning](minerva-cultural_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
-- [\[CVPR 2026\] VecAttention: Vector-wise Sparse Attention for Accelerating Long Context Inference](vecattention_vector-wise_sparse_attention_for_accelerating_long_context_inferenc.md)
 
 </div>
 

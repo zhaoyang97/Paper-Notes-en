@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HoloFair: Unified T2I Fairness Evaluation and Fair-GRPO Debiasing
 description: >-
-  [ICML 2026][Image Generation][MGBI] This paper constructs HoloFair, a unified fairness benchmark for T2I models (comprising a SpaFreq dual-stream attribute classifier + MGBI multi-attribute geometric mean metric). Based on this, it proposes Fair-GRPO: using log-ratio multi-attribute per-prompt rewards + KL-regularized GRPO, it improves MGBI from 0.5211 t
+  [ICML2026][Image Generation][T2I Fairness] This paper constructs HoloFair, a unified fairness benchmark for T2I models (comprising a SpaFreq dual-stream attribute classifier + MGBI multi-attribute geometric mean metric). Based on this, it proposes Fair-GRPO: using log-ratio multi-attribute per-prompt rewards + KL-regularized GRPO, it improves MGBI from 0.5211 to 0.6772 (+29.9%) on SD3.5-Medium while maintaining or slightly improving image quality.
 tags:
-  - ICML 2026
-  - Image Generation
-  - MGBI
-  - Fair-GRPO
+  - "ICML2026"
+  - "Image Generation"
+  - "T2I Fairness"
+  - "MGBI"
+  - "SpaFreq Classifier"
+  - "Fair-GRPO"
+  - "Multi-attribute Reward"
 date: 2026-05-08
-content_hash: d7f9a0df672799a5
+content_hash: 26b0d5f34bb9a413
 ---
+
 # HoloFair: Unified T2I Fairness Evaluation and Fair-GRPO Debiasing
 
 **Conference**: ICML2026  
@@ -160,11 +164,11 @@ Fair-GRPO Multi-attribute Reward Ablation (SD3.5M):
 
 ## Related Papers
 
-- [\[ICML 2026\] MIRO: 多奖励条件预训练同时提升 T2I 质量与效率](miro_multi-reward_conditioned_pretraining_improves_t2i_quality_and_efficiency.md)
 - [\[ICCV 2025\] Fair Generation without Unfair Distortions: Debiasing Text-to-Image Generation with Entanglement-Free Attention](../../ICCV2025/image_generation/fair_generation_without_unfair_distortions_debiasing_text-to-image_generation_wi.md)
 - [\[AAAI 2026\] T2I-RiskyPrompt: A Benchmark for Safety Evaluation, Attack, and Defense on Text-to-Image Model](../../AAAI2026/image_generation/t2i-riskyprompt_a_benchmark_for_safety_evaluation_attack_and_defense_on_text-to-.md)
 - [\[ICML 2026\] Conformal Reliability: A New Evaluation Metric for Conditional Generation](conformal_reliability_a_new_evaluation_metric_for_conditional_generation.md)
 - [\[ICML 2026\] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters](ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters.md)
+- [\[ICLR 2026\] TempFlow-GRPO: When Timing Matters for GRPO in Flow Models](../../ICLR2026/image_generation/tempflow-grpo_when_timing_matters_for_grpo_in_flow_models.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment
 description: >-
-  [ACL 2026][Reinforcement Learning][RLVR] To address data selection for RLVR post-training, LearnAlign is proposed—utilizing "gradient alignment" as a representativeness metric and "success rate $V(\xi)=p(1-p)$" as a learnability weight to eliminate response length bias. With only 1,000 samples (~6%), it achieves performance close to full-set training across 5
+  [ACL 2026 Findings][Reinforcement Learning][RLVR] To address data selection for RLVR post-training, LearnAlign is proposed—utilizing "gradient alignment" as a representativeness metric and "success rate $V(\xi)=p(1-p)$" as a learnability weight to eliminate response length bias. With only 1,000 samples (~6%), it achieves performance close to full-set training across 5 reasoning benchmarks (42.4% vs 44.9%), and on GSM8K, using 13.4% of the data (77.5%) exceeds full-set perform…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ACL 2026 Findings"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "GRPO"
+  - "Data Selection"
+  - "Gradient Alignment"
+  - "Data Learnability"
+  - "Zone of Proximal Development"
 date: 2026-05-08
-content_hash: 70f6231b48a30c66
+content_hash: a31fe7991173ee0e
 ---
+
 # LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment
 
 **Conference**: ACL 2026 Findings  
@@ -158,10 +163,10 @@ Both components are indispensable: removing $V$ drops performance by 1.4 points 
 ## Related Papers
 
 - [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](../../ICML2026/reinforcement_learning/single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
+- [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](../../ICLR2026/reinforcement_learning/towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
 - [\[ICCV 2025\] RL-Selector: Reinforcement Learning-Guided Data Selection via Redundancy Assessment](../../ICCV2025/reinforcement_learning/reinforcement_learning-guided_data_selection_via_redundancy_assessment.md)
+- [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](../../ICLR2026/reinforcement_learning/r-zero_self-evolving_reasoning_llm_from_zero_data.md)
 - [\[ACL 2026\] Efficient Hyperparameter Optimization for LLM Reinforcement Learning](efficient_hyperparameter_optimization_for_llm_reinforcement_learning.md)
-- [\[ICLR 2026\] References Improve LLM Alignment in Non-Verifiable Domains](../../ICLR2026/reinforcement_learning/references_improve_llm_alignment_in_non-verifiable_domains.md)
-- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
 
 </div>
 

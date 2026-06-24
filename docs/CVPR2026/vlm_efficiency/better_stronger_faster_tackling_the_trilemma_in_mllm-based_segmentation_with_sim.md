@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Better, Stronger, Faster: Tackling the Trilemma in MLLM-based Segmentation with Simultaneous Textual Mask Prediction
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] STAMP reformulates MLLM-based segmentation as a parallel "cloze" classification task for all image patches. By simultaneously predicting the entire mask using a single non-autoregressive forward pass, it achieves high segmentation precision and fast inference speed without compromising conversational capabilities, effe
+  [CVPR 2026][Multimodal Efficiency][MLLM Segmentation] STAMP reformulates MLLM-based segmentation as a parallel "cloze" classification task for all image patches. By simultaneously predicting the entire mask using a single non-autoregressive forward pass, it achieves high segmentation precision and fast inference speed without compromising conversational capabilities, effectively resolving the long-standing "dialogue/performance/speed" trilemma in MLLM segmentation.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "MLLM Segmentation"
+  - "Non-autoregressive"
+  - "All-mask Prediction"
+  - "Referring Expression Segmentation"
+  - "Mixed Attention"
 date: 2026-05-08
-content_hash: 60981abdfb6d0a8d
+content_hash: da89785e48f18bb2
 ---
+
 # Better, Stronger, Faster: Tackling the Trilemma in MLLM-based Segmentation with Simultaneous Textual Mask Prediction
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Single-target RES (cIoU) + Inference Time:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token](rethinking_mllm_itself_as_a_segmenter_with_a_single_segmentation_token.md)
-- [\[ACL 2026\] ReGATE: Learning Faster and Better with Fewer Tokens in MLLMs](../../ACL2026/multimodal_vlm/regate_learning_faster_and_better_with_fewer_tokens_in_mllms.md)
-- [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
-- [\[CVPR 2026\] ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning](ants_adaptive_negative_textual_space_shaping_for_ood_detection_via_test-time_mll.md)
-- [\[CVPR 2026\] MVP: Multiple View Prediction Improves GUI Grounding](mvp_multiple_view_prediction_improves_gui_grounding.md)
+- [\[ACL 2026\] ReGATE: Learning Faster and Better with Fewer Tokens in MLLMs](../../ACL2026/vlm_efficiency/regate_learning_faster_and_better_with_fewer_tokens_in_mllms.md)
+- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
+- [\[ACL 2025\] Sharper and Faster mean Better: Towards More Efficient Vision-Language Model for Hour-scale Long Video Understanding](../../ACL2025/vlm_efficiency/sophia_efficient_long_video.md)
+- [\[CVPR 2026\] Variation-Aware Vision Token Dropping for Faster Large Vision-Language Models](variation-aware_vision_token_dropping_for_faster_large_vision-language_models.md)
+- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/vlm_efficiency/filter_correlate_compress_training-free_token_reduction_for_.md)
 
 </div>
 

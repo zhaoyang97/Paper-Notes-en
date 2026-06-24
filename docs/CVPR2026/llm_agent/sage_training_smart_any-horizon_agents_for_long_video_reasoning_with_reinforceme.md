@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning
 description: >-
-  [CVPR 2026][LLM Agent][Paper Note] SAGE transforms long video reasoning from the "DIRECT" paradigm, which feeds thousands of frames in a single pass for a one-shot answer, into an "AGENT" paradigm that performs multi-round on-demand retrieval like humans. By utilizing an orchestrator VLM (SAGE-MM) capable of coordinating 6 tools, combined with low-cost
+  [CVPR 2026][LLM Agent][Long Video Reasoning] SAGE transforms long video reasoning from the "DIRECT" paradigm, which feeds thousands of frames in a single pass for a one-shot answer, into an "AGENT" paradigm that performs multi-round on-demand retrieval like humans. By utilizing an orchestrator VLM (SAGE-MM) capable of coordinating 6 tools, combined with low-cost synthetic data and multi-reward GRPO post-training, SAGE achieves up to a 6.1% improvement in open-ended QA on the…
 tags:
-  - CVPR 2026
-  - LLM Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Long Video Reasoning"
+  - "Any-Horizon Agent"
+  - "Tool Use"
+  - "GRPO Reinforcement Learning"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 653fc9861a034869
+content_hash: 9b943adb98e0b3f0
 ---
+
 # SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -137,15 +143,15 @@ Binning by duration reveals that SAGE performs similarly to the DIRECT baseline 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] WebGym: Scaling Training Environments for Long-Horizon Visual Web Agents with Realistic Tasks](webgym_scaling_training_environments_for_long-horizon_visual_web_agents_with_rea.md)
-- [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
+- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](../../ICLR2026/llm_agent/mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
 - [\[ACL 2026\] SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning](../../ACL2026/llm_agent/solar-rl_semi-online_long-horizon_assignment_reinforcement_learning.md)
-- [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
-- [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
+- [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
+- [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
 
 </div>
 

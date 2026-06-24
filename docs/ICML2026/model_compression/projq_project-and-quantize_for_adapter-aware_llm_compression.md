@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProjQ: Project-and-Quantize for Adapter-Aware LLM Compression
 description: >-
-  [ICML 2026][Model Compression][LoRA] ProjQ actively "shapes" the quantization noise of PTQ into a low-rank subspace and delegates this part to the subsequent LoRA adapter for elimination, thereby preserving LoRA capacity for learning downstream tasks. It achieves parity with standard 4-bit baselines using only 3 bits on LLaMA-2 / Qwen2.5 / Qwen3.
+  [ICML 2026][Model Compression][Post-Training Quantization] ProjQ actively "shapes" the quantization noise of PTQ into a low-rank subspace and delegates this part to the subsequent LoRA adapter for elimination, thereby preserving LoRA capacity for learning downstream tasks. It achieves parity with standard 4-bit baselines using only 3 bits on LLaMA-2 / Qwen2.5 / Qwen3.
 tags:
-  - ICML 2026
-  - Model Compression
-  - LoRA
+  - "ICML 2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "LoRA"
+  - "Subspace Projection"
+  - "Activation-Aware"
+  - "Low-Rank Noise Shaping"
 date: 2026-05-08
-content_hash: 30d4a706bbea9436
+content_hash: 357055ea2c385339
 ---
+
 # ProjQ: Project-and-Quantize for Adapter-Aware LLM Compression
 
 **Conference**: ICML 2026  
@@ -139,11 +144,11 @@ At the extreme 2-bit level, AWQ collapses to $10^5$ level PPL, while ProjQ achie
 
 ## Related Papers
 
+- [\[ICLR 2026\] Prune-then-Quantize or Quantize-then-Prune? Understanding the Impact of Compression Order in Joint Model Compression](../../ICLR2026/model_compression/prune-then-quantize_or_quantize-then-prune_understanding_the_impact_of_compressi.md)
+- [\[ICML 2026\] Swift-SVD: Theoretical Optimality Meets Practical Efficiency in Low-Rank LLM Compression](swift-svd_theoretical_optimality_meets_practical_efficiency_in_low-rank_llm_comp.md)
 - [\[ICML 2026\] Multi-Adapter Representation Interventions via Energy Calibration](multi-adapter_representation_interventions_via_energy_calibration.md)
 - [\[ICML 2026\] Preserve-Then-Quantize: Balancing Rank Budgets for Quantization Error Reconstruction in LLMs](preserve-then-quantize_balancing_rank_budgets_for_quantization_error_reconstruct.md)
 - [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
-- [\[ICML 2026\] Geo-Expert: 用 LoRA 把 8B 模型微调成专家级地质推理 LLM](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
-- [\[ACL 2026\] Quantize What Counts: More for Keys, Less for Values](../../ACL2026/model_compression/quantize_what_counts_more_for_keys_less_for_values.md)
 
 </div>
 

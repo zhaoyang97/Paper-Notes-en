@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] Proposes Collaborative Gym (Co-Gym)—the first open framework supporting **bidirectional communication and non-turn-taking collaboration** between humans and LM agents in shared task environments, accompanied by an evaluation suite that assesses both collaboration outcomes and processes.
+  [ICLR 2026][LLM Agent][human-agent collaboration] Proposes Collaborative Gym (Co-Gym)—the first open framework supporting **bidirectional communication and non-turn-taking collaboration** between humans and LM agents in shared task environments, accompanied by an evaluation suite that assesses both collaboration outcomes and processes.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "human-agent collaboration"
+  - "dual-control environment"
+  - "non-turn-taking interaction"
+  - "agent evaluation"
+  - "mixed-initiative systems"
 date: 2026-05-08
-content_hash: a76bb6e1ca062073
+content_hash: c2f18c304483245f
 ---
+
 # Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration
 
 **Conference**: ICLR 2026  
@@ -119,8 +125,8 @@ Experiments compared three agent types (Fully Autonomous / Collaborative / Colla
 - [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
 - [\[ACL 2025\] Leveraging Dual Process Theory in Language Agent Framework for Real-time Simultaneous Human-AI Collaboration](../../ACL2025/llm_agent/dpt_agent_dual_process.md)
 - [\[ACL 2025\] MultiAgentBench: Evaluating the Collaboration and Competition of LLM Agents](../../ACL2025/llm_agent/multiagentbench_evaluating_the_collaboration_and_competition_of_llm_agents.md)
-- [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
-- [\[ICLR 2026\] Empowering Efficiency and Efficacy in WebAgent via Enabling Info-Rich Seeking](empowering_efficiency_and_efficacy_in_webagent_via_enabling_info-rich_seeking.md)
+- [\[ICLR 2026\] CoDA: Agentic Systems for Collaborative Data Visualization](coda_agentic_systems_for_collaborative_data_visualization.md)
+- [\[ICLR 2026\] ProRe: A Proactive Reward System for GUI Agents via Reasoner–Actor Collaboration](prore_a_proactive_reward_system_for_gui_agents_via_reasoneractor_collaboration.md)
 
 </div>
 

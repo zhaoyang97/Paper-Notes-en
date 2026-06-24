@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] The authors observed that the output entropy of OCR models on "formatted text" like formulas and tables is an order of magnitude higher than on plain text. Consequently, they propose Format Decoupled RL (FD-RL): utilizing entropy to rank and filter format-intensive hard samples, and then applying GRPO training with a s
+  [CVPR 2026][VLM Reasoning][Document OCR] The authors observed that the output entropy of OCR models on "formatted text" like formulas and tables is an order of magnitude higher than on plain text. Consequently, they propose Format Decoupled RL (FD-RL): utilizing entropy to rank and filter format-intensive hard samples, and then applying GRPO training with a suite of separate reward functions for text, formulas, and tables. The method achieves a competitive score of 90.41 on O…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Document OCR"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Entropy Screening"
+  - "Format Decoupled Rewards"
 date: 2026-05-08
-content_hash: f60efe99a70d7cf1
+content_hash: c14881d5055265ea
 ---
+
 # Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR
 
 **Conference**: CVPR 2026  
@@ -143,11 +147,11 @@ FD-RL ranks first overall among end-to-end models, outperforming dots.ocr by 2.0
 
 ## Related Papers
 
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
-- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
 - [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
+- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
 - [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
-- [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
+- [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
 
 </div>
 

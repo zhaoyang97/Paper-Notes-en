@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Latent Thinking Optimization: Your Latent Reasoning Language Model Secretly Encodes Reward Signals in Its Latent Thoughts
 description: >-
-  [ICLR 2026][Interpretability][latent reasoning] This paper systematically dissects the "latent thinking" process of the latent reasoning language model Huginn-3.5B. It discovers that correct and incorrect latent thinking trajectories are highly separable in the latent space. Consequently, the authors train a lightweight classifier as a "Latent Reward Model (LRM)" an
+  [ICLR 2026][Interpretability][latent reasoning] This paper systematically dissects the "latent thinking" process of the latent reasoning language model Huginn-3.5B. It discovers that correct and incorrect latent thinking trajectories are highly separable in the latent space. Consequently, the authors train a lightweight classifier as a "Latent Reward Model (LRM)" and propose Latent Thinking Optimization (LTO)—a probabilistic algorithm using acceptance-rejection sampling to se…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - latent reasoning
-  - Huginn-3.5B
-  - reward model
-  - test-time scaling
-  - process reward
+  - "ICLR 2026"
+  - "Interpretability"
+  - "latent reasoning"
+  - "Huginn-3.5B"
+  - "reward model"
+  - "test-time scaling"
+  - "process reward"
 date: 2026-05-08
-content_hash: d16c48441734459f
+content_hash: 2f26c9ec8b5e519d
 ---
+
 # Latent Thinking Optimization: Your Latent Reasoning Language Model Secretly Encodes Reward Signals in Its Latent Thoughts
 
 **Conference**: ICLR 2026  
@@ -133,8 +134,8 @@ Even with a small sampling budget of $N=20$, LTO provides relative gains of up t
 - [\[ICLR 2026\] Latent Concept Disentanglement in Transformer-based Language Models](latent_concept_disentanglement_in_transformer-based_language_models.md)
 - [\[ICLR 2026\] Latent Planning Emerges with Scale](latent_planning_emerges_with_scale.md)
 - [\[ICLR 2026\] Your VAR Model is Secretly an Efficient and Explainable Generative Classifier](your_var_model_is_secretly_an_efficient_and_explainable_generative_classifier.md)
-- [\[ICLR 2026\] Hedonic Neurons: A Mechanistic Mapping of Latent Coalitions in Transformer MLPs](hedonic_neurons_a_mechanistic_mapping_of_latent_coalitions_in_transformer_mlps.md)
 - [\[ICLR 2026\] The Shape of Adversarial Influence: Characterizing LLM Latent Spaces with Persistent Homology](the_shape_of_adversarial_influence_characterizing_llm_latent_spaces_with_persist.md)
+- [\[ICLR 2026\] Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning](domain_expansion_a_latent_space_construction_framework_for_multi-task_learning.md)
 
 </div>
 

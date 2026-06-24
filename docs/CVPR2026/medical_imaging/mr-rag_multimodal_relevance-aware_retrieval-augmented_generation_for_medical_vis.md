@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MR-RAG: Multimodal Relevance-Aware Retrieval-Augmented Generation for Medical Visual Question Answering
 description: >-
-  [CVPR 2026][Medical Imaging][LVLM] MR-RAG optimizes both retrieval and generation stages of the medical VQA RAG pipeline: the retrieval stage utilizes a lightweight adapter to fuse image-text, image-image, and text-text similarities for multimodal relevance scoring, while the generation stage injects these scores into the LVLM's attention mechanism to a
+  [CVPR 2026][Medical Imaging][Medical VQA] MR-RAG optimizes both retrieval and generation stages of the medical VQA RAG pipeline: the retrieval stage utilizes a lightweight adapter to fuse image-text, image-image, and text-text similarities for multimodal relevance scoring, while the generation stage injects these scores into the LVLM's attention mechanism to amplify information from highly relevant documents and suppress noise, achieving up to a 6.4% accuracy improvement acro…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - LVLM
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical VQA"
+  - "Retrieval-Augmented Generation"
+  - "Multimodal Relevance"
+  - "Attention Regulation"
+  - "LVLM"
 date: 2026-05-08
-content_hash: 63aeaccb08b1a5b2
+content_hash: bb15ec732cfb5d5c
 ---
+
 # MR-RAG: Multimodal Relevance-Aware Retrieval-Augmented Generation for Medical Visual Question Answering
 
 **Conference**: CVPR 2026  
@@ -131,9 +136,9 @@ Average results across three datasets (%):
 ## Related Papers
 
 - [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
-- [\[CVPR 2026\] Attention Consistent Longitudinal Medical Visual Question Answering Guided by Vision Foundation Models](attention_consistent_longitudinal_medical_visual_question_answering_guided_by_vi.md)
-- [\[ICLR 2026\] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](../../ICLR2026/medical_imaging/q-fsru_quantum-augmented_frequency-spectral_for_medical_visual_question_answerin.md)
+- [\[AAAI 2026\] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](../../AAAI2026/medical_imaging/q-fsru_quantum-augmented_frequency-spectral_fusion_for_medical_visual_question_a.md)
 - [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
+- [\[ICLR 2026\] MedVLSynther: Synthesizing High-Quality Medical Visual Question Answering from Biomedical Literature with Generator-Verifier LMMs](../../ICLR2026/medical_imaging/synthesizing_high-quality_visual_question_answering_from_medical_documents_with_.md)
 - [\[CVPR 2026\] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation](personalized_longitudinal_medical_report_generation_via_temporally-aware_federat.md)
 
 </div>

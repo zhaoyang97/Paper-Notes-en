@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Data Curation in LLM Training: Online Reweighting Offers Better Generalization than Offline Methods
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper unifies LLM data curation (selection) and data mixing into an "online reweighting" problem. It proposes ADAPT, which dynamically adjusts the per-sample learning rate based on the semantic similarity between training samples and a validation set during training. Without removing any data and with near-zero ad
+  [ICLR 2026][LLM Pretraining][Data Curation] This paper unifies LLM data curation (selection) and data mixing into an "online reweighting" problem. It proposes ADAPT, which dynamically adjusts the per-sample learning rate based on the semantic similarity between training samples and a validation set during training. Without removing any data and with near-zero additional overhead, ADAPT achieves stronger cross-benchmark generalization than offline selection/mixing methods in b…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data Curation"
+  - "Online Reweighting"
+  - "Implicit Curriculum Learning"
+  - "Generalization"
+  - "Per-sample Learning Rate"
 date: 2026-05-08
-content_hash: bdfb16b948a5e7d1
+content_hash: 9d4ddc7327220a8b
 ---
+
 # Rethinking Data Curation in LLM Training: Online Reweighting Offers Better Generalization than Offline Methods
 
 **Conference**: ICLR 2026  
@@ -154,15 +160,14 @@ ADAPT leads in Average (Unseen), the true measure of generalization, while scori
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Can Small Training Runs Reliably Guide Data Curation? Rethinking Proxy-Model Practice](can_small_training_runs_reliably_guide_data_curation_rethinking_proxy-model_prac.md)
+- [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](token-level_data_selection_for_safe_llm_fine-tuning.md)
 - [\[ICLR 2026\] Rewriting Pre-training Data Boosts LLM Performance in Math and Code](rewriting_pre-training_data_boosts_llm_performance_in_math_and_code.md)
-- [\[ICLR 2026\] Late-to-Early Training: 让 LLM 更早学到后期知识，从而更快更好](late-to-early_training_let_llms_learn_earlier_so_faster_and_better.md)
-- [\[ICML 2026\] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning](../../ICML2026/llm_pretraining/data_difficulty_and_the_generalization--extrapolation_tradeoff_in_llm_fine-tunin.md)
-- [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
+- [\[ICLR 2026\] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training](common_corpus_ethical_data_for_llm_pretraining.md)
+- [\[ICLR 2026\] Late-to-Early Training: Enabling LLMs to Learn Late-Stage Knowledge Earlier for Faster and Better Training](late-to-early_training_let_llms_learn_earlier_so_faster_and_better.md)
 
 </div>
 

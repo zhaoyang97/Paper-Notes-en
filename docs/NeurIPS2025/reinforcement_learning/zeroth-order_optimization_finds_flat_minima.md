@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zeroth-Order Optimization Finds Flat Minima
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Zeroth-order optimization] This paper provides the first theoretical proof that standard zeroth-order optimization (two-point gradient estimation) exhibits an implicit regularizatio…
+  [NeurIPS 2025][Reinforcement Learning][Zeroth-order optimization] This paper provides the first theoretical proof that standard zeroth-order optimization (two-point gradient estimation) exhibits an implicit regularization effect—converging to flat minima that minimize the Hessian trace—with a convergence complexity of $T = \mathcal{O}(d^4/\epsilon^2)$ established under convexity and sufficient smoothness conditions.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "language model fine-tuning"
   - "sharpness-aware minimization"
 date: 2026-05-08
-content_hash: 6d9ca4546998871e
+content_hash: aa29288cfe9e7d20
 ---
 
 # Zeroth-Order Optimization Finds Flat Minima
@@ -168,10 +168,10 @@ In LLM fine-tuning, both GD and ZO reduce the Hessian trace. The implicit regula
 ## Related Papers
 
 - [\[ICML 2026\] FAB: A First-Order AB-based Gradient Algorithm for Distributed Bilevel Optimization over Time-Varying Directed Graphs](../../ICML2026/reinforcement_learning/fab_a_first-order_ab-based_gradient_algorithm_for_distributed_bilevel_optimizati.md)
+- [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](../../AAAI2026/reinforcement_learning/first-order_representation_languages_for_goal-conditioned_rl.md)
 - [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](online_optimization_for_offline_safe_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Complexity Scaling Laws for Neural Models using Combinatorial Optimization](complexity_scaling_laws_for_neural_models_using_combinatorial_optimization.md)
 - [\[NeurIPS 2025\] Sequential Monte Carlo for Policy Optimization in Continuous POMDPs](sequential_monte_carlo_for_policy_optimization_in_continuous_pomdps.md)
-- [\[NeurIPS 2025\] Improved Regret Bounds for GP-UCB in Bayesian Optimization](improved_regret_bounds_for_gaussian_process_upper_confidence_bound_in_bayesian_o.md)
 
 </div>
 

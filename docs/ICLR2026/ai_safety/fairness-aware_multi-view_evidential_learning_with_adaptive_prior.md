@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fairness-Aware Multi-view Evidential Learning with Adaptive Prior
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Addressing the neglected issue in multi-view evidential learning where samples tend to allocate support evidence to majority classes—leading to unfair uncertainty estimation—this paper proposes FAML. By replacing the fixed uniform prior in evidential deep learning with a **training-trajectory-based adaptive prior**, an
+  [ICLR 2026][AI Safety][Evidential Deep Learning] Addressing the neglected issue in multi-view evidential learning where samples tend to allocate support evidence to majority classes—leading to unfair uncertainty estimation—this paper proposes FAML. By replacing the fixed uniform prior in evidential deep learning with a **training-trajectory-based adaptive prior**, and incorporating **fairness constraints** and **view opinion alignment**, FAML simultaneously improves classific…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Evidential Deep Learning"
+  - "Multi-view Fusion"
+  - "Class Imbalance"
+  - "Fairness"
+  - "Adaptive Prior"
 date: 2026-05-08
-content_hash: e42aa0748fe911eb
+content_hash: 82515e3351c7d030
 ---
+
 # Fairness-Aware Multi-view Evidential Learning with Adaptive Prior
 
 **Conference**: ICLR 2026  

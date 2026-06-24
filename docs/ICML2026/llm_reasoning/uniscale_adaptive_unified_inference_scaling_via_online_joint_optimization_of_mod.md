@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] UniScale：通过模型路由与测试时缩放在线联合优化的自适应统一推理缩放
+  [Paper Note] UniScale: Adaptive Unified Inference Scaling through Online Joint Optimization of Model Routing and Test-Time Scaling
 description: >-
-  [ICML 2026][LLM Reasoning][LinUCB] The authors propose the UniScale framework, which unifies model routing and test-time scaling (TTS) into a single decision space. It leverages LinUCB contextual multi-armed bandits for online learning of adaptive inference strategies, addressing the fine-grained quality-cost tradeoff in LLM deployment.
+  [ICML 2026][Reasoning][Model Routing] The authors propose the UniScale framework, which unifies model routing and test-time scaling (TTS) into a single decision space. It leverages LinUCB contextual multi-armed bandits for online learning of adaptive inference strategies, addressing the fine-grained quality-cost tradeoff in LLM deployment.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - LinUCB
+  - "ICML 2026"
+  - "Reasoning"
+  - "Model Routing"
+  - "Test-time Scaling"
+  - "Joint Optimization"
+  - "LinUCB"
+  - "Contextual Multi-Armed Bandits"
 date: 2026-05-08
-content_hash: d8ecba09914b4de9
+content_hash: 1a98a01525526e10
 ---
+
 # UniScale: Adaptive Unified Inference Scaling through Online Joint Optimization of Model Routing and Test-Time Scaling
 
 **Conference**: ICML 2026  
@@ -130,11 +135,11 @@ Weights balance correctness, process quality, and normalized cost—ensuring tha
 
 ## Related Papers
 
-- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
-- [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
-- [\[ICML 2026\] When to Re-Plan: Subgoal Persistence in Hierarchical Latent Reasoning](when_to_re-plan_subgoal_persistence_in_hierarchical_latent_reasoning.md)
-- [\[ICML 2026\] Conformal Thinking: Risk Control for Reasoning on a Compute Budget](conformal_thinking_risk_control_for_reasoning_on_a_compute_budget.md)
-- [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](../../ICLR2026/llm_reasoning/test-time_scaling_with_reflective_generative_model.md)
+- [\[ICLR 2026\] The Limits of Inference Scaling Through Resampling](../../ICLR2026/llm_reasoning/the_limits_of_inference_scaling_through_resampling.md)
+- [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
+- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
+- [\[ICML 2026\] ETS: Energy-Guided Test-Time Scaling for Training-Free RL Alignment](ets_energy-guided_test-time_scaling_for_training-free_rl_alignment.md)
 
 </div>
 

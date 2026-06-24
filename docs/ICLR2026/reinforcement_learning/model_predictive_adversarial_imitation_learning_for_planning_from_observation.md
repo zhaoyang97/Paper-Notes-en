@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Model Predictive Adversarial Imitation Learning for Planning from Observation
 description: >-
-  [ICLR 2026][Reinforcement Learning][MPPI] The authors propose MPAIL (Model Predictive Adversarial Imitation Learning), which embeds an MPPI planner into the adversarial imitation learning loop. This represents the first end-to-end Planning-from-Observation framework that significantly outperforms policy-based AIL methods in generalization, robustness, interpre
+  [ICLR 2026][Reinforcement Learning][Adversarial Imitation Learning] The authors propose MPAIL (Model Predictive Adversarial Imitation Learning), which embeds an MPPI planner into the adversarial imitation learning loop. This represents the first end-to-end Planning-from-Observation framework that significantly outperforms policy-based AIL methods in generalization, robustness, interpretability, and sample efficiency, while successfully deploying in real-world robot navigation…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - MPPI
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Adversarial Imitation Learning"
+  - "Model Predictive Control"
+  - "Inverse Reinforcement Learning"
+  - "Learning-from-Observation"
+  - "MPPI"
 date: 2026-05-08
-content_hash: ad8cd053ce1bbe11
+content_hash: 6b0ebcb9b03570dd
 ---
+
 # Model Predictive Adversarial Imitation Learning for Planning from Observation
 
 **Conference**: ICLR 2026  
@@ -142,10 +147,10 @@ MPAIL's planning horizon is only 3 meters, yet its task horizon reaches 15 times
 ## Related Papers
 
 - [\[ICLR 2026\] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning](near-optimal_second-order_guarantees_for_model-based_adversarial_imitation_learn.md)
-- [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](latent_wasserstein_adversarial_imitation_learning.md)
 - [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](on_discovering_algorithms_for_adversarial_imitation_learning.md)
+- [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](latent_wasserstein_adversarial_imitation_learning.md)
 - [\[ICLR 2026\] Predictive CVaR Q-Learning](predictive_cvar_q-learning.md)
-- [\[ICLR 2026\] MIRACLE: Model-free Imitation and Reinforcement Learning for Adaptive Cut-Selection](miracle_model-free_imitation_and_reinforcement_learning_for_adaptive_cut-selecti.md)
+- [\[ICLR 2026\] Benefits and Pitfalls of Reinforcement Learning for Language Model Planning: A Theoretical Perspective](benefits_and_pitfalls_of_reinforcement_learning_for_language_model_planning_a_th.md)
 
 </div>
 

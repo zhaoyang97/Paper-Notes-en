@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Singleton-Optimized Conformal Prediction
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] To address the pain point where conformal prediction sets are often too large and require manual intervention, this paper proposes SOCOP, a nonconformity score that directly optimizes the **probability of singleton sets** (rather than mean length). By geometrizing the per-sample Lagrangian subproblem as finding the "lo
+  [ICLR 2026][Learning Theory][nonconformity scores] To address the pain point where conformal prediction sets are often too large and require manual intervention, this paper proposes SOCOP, a nonconformity score that directly optimizes the **probability of singleton sets** (rather than mean length). By geometrizing the per-sample Lagrangian subproblem as finding the "lower convex hull of $K$ points in 2D," the scores are computed in $O(K)$ time. This approach reduces the non-s…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Conformal Prediction"
+  - "nonconformity scores"
+  - "singleton sets"
+  - "convex hull"
+  - "Lagrangian relaxation"
 date: 2026-05-08
-content_hash: 4deead15915297ac
+content_hash: 33a2155a257ced29
 ---
+
 # Singleton-Optimized Conformal Prediction
 
 **Conference**: ICLR 2026  
@@ -138,9 +144,9 @@ While RAPS has slightly lower SSCV, its mean size is significantly larger (8.6 v
 
 - [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
 - [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
-- [\[ICML 2026\] Enhancing Conformal Prediction via Class Similarity](../../ICML2026/learning_theory/enhancing_conformal_prediction_via_class_similarity.md)
 - [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
-- [\[ICLR 2026\] Multi-Condition Conformal Selection](multi-condition_conformal_selection.md)
+- [\[ICLR 2026\] Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity](adaptive_conformal_prediction_via_mixture-of-experts_gating_similarity.md)
+- [\[ICML 2026\] Enhancing Conformal Prediction via Class Similarity](../../ICML2026/learning_theory/enhancing_conformal_prediction_via_class_similarity.md)
 
 </div>
 

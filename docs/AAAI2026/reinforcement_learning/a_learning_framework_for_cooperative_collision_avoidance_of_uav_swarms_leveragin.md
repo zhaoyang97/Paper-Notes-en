@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Learning Framework For Cooperative Collision Avoidance of UAV Swarms Leveraging Domain Knowledge
 description: >-
-  [AAAI 2026][Reinforcement Learning][UAV swarm] This paper proposes reMARL, a framework that leverages domain knowledge from image processing (active contour model) to design reward functions for multi-agent reinforcement…
+  [AAAI 2026][Reinforcement Learning][UAV swarm] This paper proposes reMARL, a framework that leverages domain knowledge from image processing (active contour model) to design reward functions for multi-agent reinforcement learning, enabling cooperative collision avoidance in UAV swarms. Compared to traditional metaheuristic methods, reMARL reduces reaction time by 98.75% and energy consumption by 85.37%.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "domain knowledge"
   - "active contour model"
 date: 2026-05-08
-content_hash: 0774e874d739b6aa
+content_hash: e8d5937d9b0976ea
 ---
 
 # A Learning Framework For Cooperative Collision Avoidance of UAV Swarms Leveraging Domain Knowledge
@@ -118,11 +118,11 @@ Learning curves indicate that for swarm sizes ≤ 3, UAVs can fly safely without
 
 ## Related Papers
 
+- [\[ICLR 2026\] Leveraging Explanation to Improve Generalization of Meta Reinforcement Learning](../../ICLR2026/reinforcement_learning/leveraging_explanation_to_improve_generalization_of_meta_reinforcement_learning.md)
 - [\[AAAI 2026\] CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments](chdp_cooperative_hybrid_diffusion_policies_for_reinforcement_learning_in_paramet.md)
 - [\[AAAI 2026\] Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework](distilling_deep_reinforcement_learning_into_interpretable_fuzzy_rules_an_explain.md)
-- [\[AAAI 2026\] ChartEditor: A Reinforcement Learning Framework for Robust Chart Editing](charteditor_a_reinforcement_learning_framework_for_robust_chart_editing.md)
-- [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
 - [\[AAAI 2026\] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction](tadarag_task_adaptive_retrieval-augmented_generation_via_on-the-fly_knowledge_gr.md)
+- [\[AAAI 2026\] ChartEditor: A Reinforcement Learning Framework for Robust Chart Editing](charteditor_a_reinforcement_learning_framework_for_robust_chart_editing.md)
 
 </div>
 

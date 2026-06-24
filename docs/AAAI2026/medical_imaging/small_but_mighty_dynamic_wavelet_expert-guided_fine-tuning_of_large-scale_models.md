@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation
 description: >-
-  [Medical Imaging] WEFT proposes a lightweight fine-tuning paradigm guided by dynamic wavelet experts, adapting frozen large-scale visual foundation models to optical remote sensing image segmentation with only 4.52% trai…
+  [Medical Imaging] WEFT proposes a lightweight fine-tuning paradigm guided by dynamic wavelet experts, adapting frozen large-scale visual foundation models to optical remote sensing image segmentation with only 4.52% trainable parameters, surpassing 21 state-of-the-art methods on three ORSIs datasets.
 tags:
   - "Medical Imaging"
 date: 2026-05-08
-content_hash: c56fdc0befe06f3f
+content_hash: e877f1505839758e
 ---
 
 # Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation
@@ -178,8 +178,8 @@ The full model achieves a 12.09% improvement over the baseline.
 - [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
 - [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
 - [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
+- [\[CVPR 2025\] Multi-Resolution Pathology-Language Pre-training Model with Text-Guided Visual Representation](../../CVPR2025/medical_imaging/multi-resolution_pathology-language_pre-training_model_with_text-guided_visual_r.md)
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
-- [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](../../NeurIPS2025/medical_imaging/scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Boosting Reasoning in Large Multimodal Models via Activation Replay
 description: >-
-  [CVPR 2026][Multimodal VLM][RLVR] The authors use logit lens to discover that RLVR post-training "excessively" perturbs low-entropy input activations of large multimodal models (LMMs). They propose Activation Replay, a training-free test-time method that optimizes a set of learnable visual tokens to pull the low-entropy activations of the RLVR model ba
+  [CVPR2026][VLM Reasoning][RLVR] The authors use logit lens to discover that RLVR post-training "excessively" perturbs low-entropy input activations of large multimodal models (LMMs). They propose Activation Replay, a training-free test-time method that optimizes a set of learnable visual tokens to pull the low-entropy activations of the RLVR model back to the base model's distribution, achieving consistent gains across mathematics, o3-style visual agents, and video reasoning.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RLVR
-  - logit lens
+  - "CVPR2026"
+  - "VLM Reasoning"
+  - "RLVR"
+  - "Activation Replay"
+  - "Low-entropy Activation"
+  - "Logit Lens"
+  - "Test-time Optimization"
 date: 2026-05-08
-content_hash: 6af7e49ff48d0009
+content_hash: 1703969c6d9ee4ce
 ---
+
 # Boosting Reasoning in Large Multimodal Models via Activation Replay
 
 **Conference**: CVPR2026  
@@ -155,11 +159,11 @@ Grid search on threshold coefficient $\gamma$ and alignment strength $\alpha$ (B
 
 ## Related Papers
 
-- [\[AAAI 2026\] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking](../../AAAI2026/multimodal_vlm/astar_boosting_multimodal_reasoning_with_automated_structure.md)
-- [\[CVPR 2026\] Mastering Negation: Boosting Grounding Models via Grouped Opposition-Based Learning](mastering_negation_boosting_grounding_models_via_grouped_opposition-based_learni.md)
-- [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
-- [\[CVPR 2026\] ReMatch: Boosting Representation through Matching for Multimodal Retrieval](rematch_boosting_representation_through_matching_for_multimodal_retrieval.md)
-- [\[AAAI 2026\] AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](../../AAAI2026/multimodal_vlm/abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)
+- [\[ICLR 2026\] ReWatch-R1: Boosting Complex Video Reasoning in Large Vision-Language Models through Agentic Data Synthesis](../../ICLR2026/vlm_reasoning/rewatch-r1_boosting_complex_video_reasoning_in_large_vision-language_models_thro.md)
+- [\[AAAI 2026\] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking](../../AAAI2026/vlm_reasoning/astar_boosting_multimodal_reasoning_with_automated_structure.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] EduDiag: A Benchmark for Educational Diagnostic Reasoning with Error Tracing and Correction on Large Multimodal Models](edudiag_a_benchmark_for_educational_diagnostic_reasoning_with_error_tracing_and_.md)
+- [\[CVPR 2026\] Breaking the Regional Perception Bottleneck of Multimodal Large Language Models via External Reasoning Framework](breaking_the_regional_perception_bottleneck_of_multimodal_large_language_models_.md)
 
 </div>
 

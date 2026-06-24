@@ -2,131 +2,131 @@
 title: >-
   [Paper Note] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][sparse-view reconstruction] This paper proposes MeshSplat, the first generalizable sparse-view surface reconstruction framework based on 2DGS. It regularizes depth prediction via a Weighted Chamfer…
+  [AAAI 2026][3D Vision][Sparse-view reconstruction] MeshSplat is proposed as the first generalizable sparse-view surface reconstruction framework based on 2D GS. By introducing a weighted Chamfer Distance loss to regularize depth predictions and an uncertainty-based normal prediction network to align 2D GS orientations, it learns geometric priors from novel view synthesis in a self-supervised manner, achieving state-of-the-art performance in sparse-view mesh reconstruction and…
 tags:
   - "AAAI 2026"
   - "3D Vision"
-  - "sparse-view reconstruction"
-  - "surface reconstruction"
-  - "2D Gaussian splatting"
-  - "feed-forward network"
-  - "cross-scene generalization"
+  - "Sparse-view reconstruction"
+  - "Surface reconstruction"
+  - "2D Gaussian Splatting"
+  - "Feed-forward networks"
+  - "Cross-scene generalization"
 date: 2026-05-08
-content_hash: 0c420ef9db4dd577
+content_hash: 96f540d418da4b00
 ---
 
 # MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2508.17811](https://arxiv.org/abs/2508.17811)  
 **Code**: [https://hanzhichang.github.io/meshsplat_web/](https://hanzhichang.github.io/meshsplat_web/)  
-**Area**: 3D Vision
-**Keywords**: sparse-view reconstruction, surface reconstruction, 2D Gaussian splatting, feed-forward network, cross-scene generalization
+**Area**: 3D Vision  
+**Keywords**: Sparse-view reconstruction, Surface reconstruction, 2D Gaussian Splatting, Feed-forward networks, Cross-scene generalization
 
 ## TL;DR
 
-This paper proposes MeshSplat, the first generalizable sparse-view surface reconstruction framework based on 2DGS. It regularizes depth prediction via a Weighted Chamfer Distance loss and aligns 2DGS orientations through an uncertainty-guided normal prediction network, learning geometric priors in a self-supervised manner from novel view synthesis. MeshSplat achieves state-of-the-art performance on both sparse-view mesh reconstruction and cross-dataset generalization.
+MeshSplat is proposed as the first generalizable sparse-view surface reconstruction framework based on 2D GS. By introducing a weighted Chamfer Distance loss to regularize depth predictions and an uncertainty-based normal prediction network to align 2D GS orientations, it learns geometric priors from novel view synthesis in a self-supervised manner, achieving state-of-the-art performance in sparse-view mesh reconstruction and cross-dataset generalization.
 
 ## Background & Motivation
 
-3D surface reconstruction is a fundamental task in 3D vision, critical for applications such as AR/VR and embodied AI. Per-scene optimization methods based on NeRF/3DGS perform poorly under sparse-view settings, where limited multi-view geometric constraints are insufficient to support high-quality per-scene geometry optimization.
+3D scene surface reconstruction is a fundamental task in 3D vision, critical for applications such as AR/VR and embodied AI. Scene-specific optimization methods based on NeRF or 3D GS perform poorly under sparse views, where limited multi-view geometric constraints fail to support high-quality per-scene geometric optimization.
 
 **Limitations of Prior Work**:
 
-**NeuS-based methods** (e.g., SparseNeuS): estimate implicit SDF fields via geometric voxels and extract meshes. They suffer from low efficiency due to implicit representations, slow rendering speeds, and are restricted to object-level scenes.
+**NeuS-based methods** (e.g., SparseNeuS): Extract meshes by estimating implicit SDF fields through geometric voxels. They suffer from low representation efficiency, slow rendering speeds, and are often restricted to object-level scenes.
 
-**3DGS feed-forward methods** (e.g., pixelSplat, MVSplat): effective for novel view synthesis, but the ellipsoidal shape of 3DGS produces different cross-sectional planes across viewpoints, causing **surface inconsistency** and making mesh extraction unreliable.
+**Feed-forward 3D GS methods** (e.g., pixelSplat, MVSplat): Perform well in novel view synthesis but suffer from **surface inconsistency** because the ellipsoidal shape of 3D Gaussians produces different intersecting planes under different viewpoints, preventing effective mesh extraction.
 
-**Core Idea**: 2DGS (2D Gaussian Splatting) serves as a natural bridge between NVS and surface reconstruction. Unlike 3DGS, 2DGS maintains consistent cross-sectional planes across viewpoints and is inherently better suited to represent thin surfaces, enabling simultaneous novel view synthesis and mesh extraction. However, integrating 2DGS into a feed-forward framework is non-trivial—2DGS is **more sensitive** to errors in position and orientation estimation:
+**Key Insight**: 2D GS (2D Gaussian Splatting) serves as a natural bridge between novel view synthesis (NVS) and surface reconstruction. Having consistent intersecting planes across different viewpoints, 2D GS is inherently better suited for representing thin surfaces, enabling simultaneous NVS and mesh extraction. However, integrating 2D GS into a feed-forward framework is challenging because 2D GS is **more sensitive** to position and orientation estimation:
 
-- **Position sensitivity**: The thin nature of 2DGS means that depth prediction errors directly cause pronounced positional offsets (3DGS tolerates larger errors due to its volumetric extent).
-- **Orientation sensitivity**: The orientation of 2DGS directly determines scene surface normals; incorrect orientation prediction leads to distorted surfaces.
+- **Position Sensitivity**: The thin nature of 2D GS means that even minor errors in depth estimation directly cause noticeable position offsets, whereas 3D GS can tolerate larger errors due to its ellipsoidal volume.
+- **Orientation Sensitivity**: The orientation of 2D GS directly determines the scene surface normals, and incorrect orientation predictions lead to highly distorted scene surfaces.
 
 ## Method
 
 ### Overall Architecture
 
-Given two images and their projection matrices, MeshSplat proceeds as follows:
-1. A CNN with a Multi-View Transformer extracts feature maps.
-2. Plane sweeping constructs per-view cost volumes.
-3. A Weighted Chamfer Distance loss regularizes the cost volumes.
-4. A Gaussian Prediction Network (comprising a depth refinement network and a normal prediction network) generates pixel-aligned 2DGS.
-5. 2DGS renders novel views for supervision and extracts scene meshes.
+Given two input images and their projection matrices, the pipeline of MeshSplat is as follows:
+1. Extract feature maps using a CNN and a Multi-View Transformer.
+2. Construct a per-view cost volume via plane sweeping.
+3. Apply a Weighted Chamfer Distance Loss to regularize the cost volume.
+4. Use a Gaussian Prediction Network (comprising a depth refinement network and a normal prediction network) to generate pixel-aligned 2D GS.
+5. Render novel views with 2D GS for supervision and extract the scene mesh.
 
-Formally: $\{I_i, \Pi_i\}_{i=1}^{2} \rightarrow \{\mu_j, s_j, r_j, \alpha_j, c_j\}_{j=1}^{2 \times H \times W}$
+Formal formulation: $\{I_i, \Pi_i\}_{i=1}^{2} \rightarrow \{\mu_j, s_j, r_j, \alpha_j, c_j\}_{j=1}^{2 \times H \times W}$
 
 ### Key Designs
 
 #### 1. **Cost Volume Construction and Depth Prediction**
 
-Following the MVSplat framework, plane sweeping is used to construct cost volumes. For input view $i$, the depth range is discretized into $D=128$ depth candidates. Features from the other view are warped to the current view at each depth candidate, and dot products are computed to obtain the cost volume:
+Following the framework of MVSplat, plane sweeping is introduced to construct the cost volume. For the input view $i$, the depth range is discretized into $D=128$ depth candidates. The feature map of the other view is warped according to the current depth candidate, and the dot product is calculated to obtain the cost volume:
 
 $$V_i^{d_k} = \frac{F_i \cdot F_{j \to i}^{d_k}}{\sqrt{C}}$$
 
-A Softmax over the depth dimension yields depth probabilities, which are used in a weighted sum to produce the coarse depth map:
+Softmax is applied along the depth dimension of the cost volume to obtain depth probabilities, and a weighted sum yields the coarse depth map:
 
 $$D_i^{\text{coarse}} = \sum_k W_i^k d_k$$
 
 #### 2. **Weighted Chamfer Distance Loss (WCD Loss)**
 
-Ideally, Gaussians predicted from adjacent views should exhibit substantial overlap. Standard Chamfer Distance assigns equal weight to all points; however, due to occlusion and viewpoint differences, non-corresponding pixels produce large chamfer distances, and uniform weighting introduces erroneous constraints.
+Ideally, the predicted Gaussian positions from adjacent views should exhibit substantial overlap. Standard Chamfer Distance assigns equal weights to all points. However, due to occlusions and view differences, non-corresponding pixels can have large Chamfer distances, and applying a uniform constraint leads to unreasonable optimization behaviors.
 
-**Solution**: A per-pixel matching confidence map is extracted from the cost volume:
+**Solution**: A match confidence map is extracted for each pixel from the cost volume:
 
 $$M_i = \max_{d_k} \text{Softmax}_D(V_i)$$
 
-The WCD loss applies strong constraints only in high-confidence regions:
+The WCD Loss imposes strong constraints only on regions with high confidence:
 
 $$\mathcal{L}_{\text{WCD}} = \frac{1}{2}\left(\frac{1}{N_1}\sum_{i=1}^{N_1} M_1(i)\min_j ||p_1^i - p_2^j|| + \frac{1}{N_2}\sum_{i=1}^{N_2} M_2(i)\min_j ||p_2^i - p_1^j||\right)$$
 
-The confidence map clearly identifies texture-less and non-overlapping regions (low confidence), preventing erroneous constraints from being applied to these areas.
+The confidence map clearly highlights textureless and non-overlapping regions (exhibiting low confidence), preventing erroneous constraints in these areas.
 
 #### 3. **Uncertainty-Guided Normal Prediction Network**
 
-The orientation of 2DGS directly determines scene surface normals. A lightweight CNN $\phi_{\text{rot}}$ is designed to predict the rotation quaternion $q$ and uncertainty $\kappa$ for each 2DGS:
+The orientation of 2D GS directly determines the scene surface normals. A lightweight CNN $\phi_{\text{rot}}$ is designed to predict the rotation quaternion $q$ and uncertainty $\kappa$ of the 2D GS:
 
 $$\{q, \kappa\} = \phi_{\text{rot}}(V_i || F_i || I_i), \quad n = R(q) \cdot [0, 0, 1]^T$$
 
-Supervision is provided via the negative log-likelihood (NLL) loss of the Angular von Mises-Fisher distribution:
+Supervision is applied using the negative log-likelihood (NLL) loss of the Angular von Mises-Fisher distribution:
 
 $$\mathcal{L}_{\text{AngMF}}(n_i, \hat{n}_i, \kappa_i) = -\log(\kappa_i^2 + 1) + \log(1 + \exp(-\kappa_i\pi)) + \kappa_i \cos^{-1} n_i^T \hat{n}_i$$
 
-Pseudo ground-truth normals are provided by a pretrained Omnidata model. Uncertainty-guided sampling based on $\kappa$ selects the top 70% of pixels with the lowest $\kappa$ along with a random 30% for loss computation.
+The output from a pre-trained Omnidata model serves as the pseudo-ground-truth normal supervision. An uncertainty-guided sampling strategy based on $\kappa$ is adopted: the top 70% pixels with the lowest uncertainty $\kappa$ along with 30% randomly sampled pixels are selected for loss computation.
 
 ### Loss & Training
 
-The total training loss is:
+Total training loss:
 
 $$\mathcal{L} = w_1\mathcal{L}_{\text{pho}} + w_2\mathcal{L}_{\text{WCD}} + w_3\mathcal{L}_{\text{normal}}$$
 
 where $\mathcal{L}_{\text{pho}} = w_{11}\text{MSE}(I, \hat{I}) + w_{12}\text{LPIPS}(I, \hat{I})$
 
-Loss weights: $w_1=1.0$, $w_2=5.0\times10^{-3}$, $w_3=5.0\times10^{-3}$, $w_{11}=1.0$, $w_{12}=0.1$
+Weight settings: $w_1=1.0$, $w_2=5.0\times10^{-3}$, $w_3=5.0\times10^{-3}$, $w_{11}=1.0$, $w_{12}=0.1$
 
-Training configuration:
-- Re10K: cropped to 256×256, trained for 200k steps, batch size 12
-- ScanNet: cropped to 512×384, trained for 75k steps, batch size 4
-- Adam optimizer, maximum learning rate $2\times10^{-4}$
-- Single NVIDIA A800 GPU
+Training strategy:
+- Re10K: Cropped to 256×256, trained for 200k steps with a batch size of 12.
+- Scannet: Cropped to 512×384, trained for 75k steps with a batch size of 4.
+- Optimizer: Adam, with a peak learning rate of $2\times10^{-4}$.
+- Hardware: A single NVIDIA A800 GPU.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Surface reconstruction on Re10K and ScanNet:
+Surface reconstruction results on Re10K and Scannet datasets:
 
-| Method | Re10K CD↓ | Re10K F1↑ | ScanNet CD↓ | ScanNet F1↑ |
-|--------|-----------|-----------|-------------|-------------|
+| Method | Re10K CD↓ | Re10K F1↑ | Scannet CD↓ | Scannet F1↑ |
+|------|----------|----------|------------|------------|
 | **MeshSplat** | **0.3566** | **0.3758** | **0.2606** | **0.3824** |
 | MVSplat | 0.4015 | 0.3100 | 0.3748 | 0.2095 |
 | pixelSplat | 1.4423 | 0.0944 | 0.3285 | 0.2948 |
 | MVSNeRF | 0.6139 | 0.1407 | 0.5761 | 0.1514 |
 | SparseNeuS | 6.0473 | 0.0020 | 7.1860 | 0.0107 |
 
-Cross-dataset zero-shot transfer (trained on Re10K only):
+Cross-dataset zero-shot transfer (trained only on Re10K):
 
-| Method | Re10K→ScanNet F1↑ | Re10K→Replica F1↑ |
-|--------|-------------------|-------------------|
+| Method | Re10K→Scannet F1↑ | Re10K→Replica F1↑ |
+|------|-------------------|-------------------|
 | **MeshSplat** | **0.2956** | **0.0809** |
 | MVSplat | 0.1418 | 0.0564 |
 | SparseNeuS | 0.0006 | 0.0003 |
@@ -134,67 +134,67 @@ Cross-dataset zero-shot transfer (trained on Re10K only):
 Depth and normal prediction quality:
 
 | Method | Depth AbsRel↓ | Normal Mean↓ | Normal <30°↑ |
-|--------|--------------|--------------|--------------|
+|------|-------------|-------------|-------------|
 | **MeshSplat** | **0.0910** | **33.84** | **0.6026** |
 | MVSplat | 0.1692 | 57.16 | 0.1357 |
 
 ### Ablation Study
 
-Ablation on ScanNet:
+Ablation study on Scannet dataset:
 
-| # | Configuration | CD↓ | Note |
-|---|---------------|-----|------|
-| 1 | 3DGS (MVSplat baseline) | 0.3748 | Baseline |
-| 2 | 2DGS | 0.2948 | 2DGS better suited for surface reconstruction |
-| 3 | 2DGS + WCD Loss | 0.2769 | Cross-view depth consistency improved |
-| 4 | 2DGS + NPN | 0.2642 | Normal prediction network contributes most |
-| 5 | 2DGS + WCD + NPN | **0.2606** | Two components are complementary |
+| # | Configuration | CD↓ | Description |
+|---|------|-----|------|
+| 1 | 3D GS (MVSplat baseline) | 0.3748 | Baseline |
+| 2 | 2D GS | 0.2948 | 2D GS is better suited for surface reconstruction |
+| 3 | 2D GS + WCD Loss | 0.2769 | Dynamic cross-view depth consistency improvement |
+| 4 | 2D GS + NPN | 0.2642 | Normal prediction network contributes the most |
+| 5 | 2D GS + WCD + NPN | **0.2606** | The two are complementary |
 
 Model efficiency:
 
 | Method | Rendering Time (s) | Parameters (M) |
-|--------|--------------------|----------------|
+|------|-----------|----------|
 | MeshSplat | 0.102 | 13.3 |
 | MVSplat | 0.072 | 12.0 |
 | SparseNeuS | 7.048 | 0.843 |
 
 ### Key Findings
 
-- **2DGS vs. 3DGS**: Simply replacing 3DGS with 2DGS reduces CD from 0.3748 to 0.2948, validating 2DGS as an effective bridge between NVS and surface reconstruction.
-- **The normal prediction network contributes most** (CD: 0.2948→0.2642), highlighting the critical influence of 2DGS orientation on mesh quality.
-- The WCD loss effectively addresses erroneous constraints in non-overlapping regions; the confidence map accurately identifies texture-less and non-overlapping areas.
-- The method adds only 1.3M parameters and 30ms rendering time, incurring minimal overhead.
-- Cross-dataset generalization: training on Re10K and transferring zero-shot to ScanNet/Replica yields F1 scores substantially higher than baselines.
-- High-uncertainty regions in the $\kappa$ map typically correspond to object boundaries, consistent with intuition.
+- **2D GS vs 3D GS**: Simply replacing 3D GS with 2D GS reduces CD from 0.3748 to 0.2948, validating the efficacy of 2D GS as a bridge between NVS and surface reconstruction.
+- **The normal prediction network contributes the most** (reducing CD from 0.2948 to 0.2642), highlighting the critical impact of 2D GS orientation on mesh quality.
+- The WCD Loss effectively addresses the incorrect constraint issues in non-overlapping regions, as the confidence map accurately reflects both textureless and non-overlapping areas.
+- The model introduces minimal overhead, requiring only an additional 1.3M parameters and 30ms rendering time.
+- Cross-dataset generalization: Zero-shot transfer from Re10K to Scannet and Replica shows significantly superior F1 scores compared to baselines.
+- High-uncertainty regions in the predicted $\kappa$ map typically correspond to object boundaries, which aligns with intuition.
 
 ## Highlights & Insights
 
-1. **2DGS as a bridge**: The framework converts the richness of NVS training data into geometric priors for surface reconstruction, elegantly avoiding the need for expensive 3D ground-truth annotations.
-2. **Elegant WCD loss design**: The confidence map is naturally derived from the cost volume without requiring additional modules.
-3. **Uncertainty-guided sampling**: Sampling based on $\kappa$ in the normal loss directs the network to focus learning on uncertain regions, improving training efficiency.
-4. **Self-supervised geometric learning**: The entire framework requires no 3D ground truth and learns geometry solely through NVS supervision.
+1. **Insight on 2D GS as a Bridge**: Leverages the rich training data of NVS to derive geometric priors for surface reconstruction, cleverly avoiding costly 3D ground-truth labels.
+2. **Elegant Design of WCD Loss**: Automatically derives confidence maps directly from the cost volume without requiring extra modules.
+3. **Uncertainty-Guided Sampling**: Samples based on $\kappa$ for the normal loss to allow the network to focus on highly uncertain regions, thereby improving training efficiency.
+4. **Self-Supervised Geometric Learning**: The entire framework does not require 3D ground truth, learning geometry purely under NVS supervision.
 
 ## Limitations & Future Work
 
-- Weakly textured regions may yield discontinuous depth maps, even when RGB rendering remains reliable.
-- The method cannot reconstruct regions not observed in the input views.
-- Only two input images are used; incorporating more views could further improve performance.
-- Generative approaches for completing unobserved regions have not been explored.
-- Re10K lacks ground-truth meshes; dense point clouds reconstructed by COLMAP are used as approximate ground truth.
+- Weakly textured regions may yield discontinuous depth maps (even though RGB rendering remains reliable).
+- Unobserved regions from input views cannot be reconstructed.
+- Only two input images are used; leveraging more view inputs may yield further improvements.
+- Generative methods for hallucinating or completing unseen regions are yet to be explored.
+- The Re10K dataset lacks ground-truth meshes, requiring dense point clouds reconstructed via COLMAP to serve as approximate ground truths.
 
 ## Related Work & Insights
 
-- MVSplat is the most direct baseline, sharing the same feed-forward framework but using 3DGS.
-- 2DGS (Huang et al.) demonstrated its advantage for surface reconstruction in per-scene optimization settings; this work is the first to extend it to a generalizable setting.
-- DUSt3R/MASt3R can predict 3D point maps but do not support novel view synthesis or surface reconstruction.
-- Insight: 2DGS holds potential in other feed-forward 3D tasks, such as panoramic reconstruction and object-level reconstruction.
+- MVSplat is the most direct baseline (employing a similar feed-forward framework but using 3D GS).
+- 2D GS (Huang et al.) demonstrated its advantages in surface reconstruction within per-scene optimization setups; this work is the first to extend it to a generalizable setting.
+- While models like DUSt3R and MASt3R can predict 3D point maps, they do not support novel view synthesis and surface reconstruction.
+- Inspiration: 2D GS holds significant potential for other feed-forward 3D tasks (e.g., panorama reconstruction, object-level reconstruction).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First application of 2DGS to generalizable sparse-view surface reconstruction
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-dataset evaluation, cross-dataset generalization, depth/normal assessment, and ablation studies
-- Writing Quality: ⭐⭐⭐⭐ — Clear motivation; 2DGS vs. 3DGS comparison is intuitive
-- Value: ⭐⭐⭐⭐⭐ — Opens a new direction for feed-forward reconstruction with 2DGS; high practical utility
+- Novelty: ⭐⭐⭐⭐ — First to apply 2D GS to generalizable sparse-view surface reconstruction
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-dataset evaluation + cross-dataset generalization + depth/normal evaluation + ablation study
+- Writing Quality: ⭐⭐⭐⭐ — Clear motivation, with an intuitive comparison between 2D GS and 3D GS
+- Value: ⭐⭐⭐⭐⭐ — Opens a new direction for feed-forward 2D GS reconstruction, carrying high practical value
 
 <!-- RELATED:START -->
 
@@ -203,10 +203,10 @@ Model efficiency:
 ## Related Papers
 
 - [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
+- [\[CVPR 2026\] Generalizable Sparse-View 3D Reconstruction from Unconstrained Images](../../CVPR2026/3d_vision/generalizable_sparse-view_3d_reconstruction_from_unconstrained_images.md)
 - [\[AAAI 2026\] Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction](sparse4dgs_4d_gaussian_splatting_for_sparse-frame_dynamic_scene_reconstruction.md)
-- [\[AAAI 2026\] OceanSplat: Object-aware Gaussian Splatting with Trinocular View Consistency for Underwater Scene Reconstruction](oceansplat_object-aware_gaussian_splatting_with_trinocular_view_consistency_for_.md)
-- [\[CVPR 2026\] Generalizable Human Gaussian Splatting via Multi-view Semantic Consistency](../../CVPR2026/3d_vision/generalizable_human_gaussian_splatting_via_multi-view_semantic_consistency.md)
-- [\[ICCV 2025\] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting](../../ICCV2025/3d_vision/surfacesplat_connecting_surface_reconstruction_and_gaussian_splatting.md)
+- [\[ICLR 2026\] D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction](../../ICLR2026/3d_vision/d2gs_depth-and-density_guided_gaussian_splatting_for_stable_and_accurate_sparse-.md)
+- [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](../../CVPR2026/3d_vision/fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
 
 </div>
 

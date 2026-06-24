@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)
 description: >-
-  [ICML 2026][AI Safety][KV-cache] This position paper argues that LLM benchmarks should be **contamination-resistant**—meaning they are usable for inference but unusable for training. It proposes leveraging the fundamental asymmetry between Transformer training and inference pipelines (training requires full tokens for gradients, while inference only r
+  [ICML 2026][AI Safety][benchmark contamination] This position paper argues that LLM benchmarks should be **contamination-resistant**—meaning they are usable for inference but unusable for training. It proposes leveraging the fundamental asymmetry between Transformer training and inference pipelines (training requires full tokens for gradients, while inference only requires the KV-cache + penultimate layer hidden state). The authors suggest shifting benchmark release formats f…
 tags:
-  - ICML 2026
-  - AI Safety
-  - KV-cache
+  - "ICML 2026"
+  - "AI Safety"
+  - "benchmark contamination"
+  - "contamination-resistant datasets"
+  - "KV-cache"
+  - "training-inference asymmetry"
+  - "cross-model interoperability"
 date: 2026-05-08
-content_hash: f466fdd3827126b2
+content_hash: 169047556fd367a8
 ---
+
 # LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)
 
 **Conference**: ICML 2026  
@@ -155,8 +160,8 @@ PyramidKV research suggests 12% retention is sufficient; removing formatting and
 - [\[ICML 2026\] Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives](position_machine_learning_for_heart_transplant_allocation_policy_optimization_sh.md)
 - [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
 - [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
+- [\[ICML 2026\] ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity](abc-bench_an_agentic_bio-capabilities_benchmark_for_biosecurity.md)
 - [\[ICML 2026\] MedMosaic: A Challenging Large Scale Benchmark of Diverse Medical Audio](medmosaic_a_challenging_large_scale_benchmark_of_diverse_medical_audio.md)
-- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
 
 </div>
 

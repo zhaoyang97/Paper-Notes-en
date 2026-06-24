@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Controlling Repetition in Protein Language Models
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] The authors provide the first systematic study of pathological repetition in Protein Language Models (PLMs). They propose a unified repetition metric $R(x)$ and a utility metric $U(x)$, and design the Utility-Controlled Contrastive Steering (UCCS) method. By injecting a steering vector decoupled from repetition into th
+  [ICLR2026][Computational Biology][Protein Language Models] The authors provide the first systematic study of pathological repetition in Protein Language Models (PLMs). They propose a unified repetition metric $R(x)$ and a utility metric $U(x)$, and design the Utility-Controlled Contrastive Steering (UCCS) method. By injecting a steering vector decoupled from repetition into the hidden layers, the method effectively suppresses repetition while maintaining folding reliability w…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Protein Language Models"
+  - "Repetition Control"
+  - "Contrastive Steering"
+  - "Representation Engineering"
+  - "Sequence Generation"
 date: 2026-05-08
-content_hash: 3b97bfa6a73ade72
+content_hash: e436864809650784
 ---
+
 # Controlling Repetition in Protein Language Models
 
 **Conference**: ICLR2026  

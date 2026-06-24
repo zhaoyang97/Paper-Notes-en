@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning
 description: >-
-  [ICLR 2026][AI Safety][Reinforcement Learning] The authors model the recovery of "unlearned data" as a reinforcement learning (RL) problem. By treating the residual differences (traces) between the pre-unlearning and post-unlearning models as reward signals, they guide a generator to search for high-reward regions in the input space. This approach successfully reco
+  [ICLR 2026][AI Safety][Machine Unlearning] The authors model the recovery of "unlearned data" as a reinforcement learning (RL) problem. By treating the residual differences (traces) between the pre-unlearning and post-unlearning models as reward signals, they guide a generator to search for high-reward regions in the input space. This approach successfully reconstructs samples and class distributions on large-scale models like ResNet and DistilBERT…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Reconstruction Attack"
+  - "Reinforcement Learning"
+  - "Unlearning Trace"
+  - "Privacy Leakage"
 date: 2026-05-08
-content_hash: d29a1e446c8e5a59
+content_hash: 692174d2a3c0b809
 ---
+
 # ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning
 
 **Conference**: ICLR 2026  
@@ -146,15 +151,16 @@ In distribution-level attacks (CIFAR-100), FID improved from 125.3 (black-box) t
 - **Value**: ⭐⭐⭐⭐⭐ Highlights a critical privacy flaw in machine unlearning with direct implications for regulatory compliance.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](label_smoothing_improves_machine_unlearning.md)
-- [\[ICLR 2026\] No Prior, No Leakage: Revisiting Reconstruction Attacks in Trained Neural Networks](no_prior_no_leakage_revisiting_reconstruction_attacks_in_trained_neural_networks.md)
-- [\[ICLR 2026\] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea.md)
+- [\[ICML 2026\] Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Re-learning Attacks](../../ICML2026/ai_safety/unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
 - [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](machine_unlearning_under_retainforget_entanglement.md)
-- [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](distributional_machine_unlearning_via_selective_data_removal.md)
+- [\[ICLR 2026\] Decoupling the Class Label and the Target Concept in Machine Unlearning](decoupling_the_class_label_and_the_target_concept_in_machine_unlearning.md)
+- [\[ICLR 2026\] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution](remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md)
 
 </div>
 

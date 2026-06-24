@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects
 description: >-
-  [NeurIPS 2025][LLM Agent][AI agent polling] This paper proposes an LLM-based AI agent polling framework that synthesizes demographically representative virtual resident agents to conduct large-scale…
+  [NeurIPS 2025][LLM Agent][AI agent polling] This paper proposes an LLM-based AI agent polling framework that synthesizes demographically representative virtual resident agents to conduct large-scale, low-cost public opinion surveys on data center projects. Cross-model and cross-region experiments demonstrate high thematic alignment between agent opinions and real-world polls.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "LLM simulation"
   - "community engagement"
 date: 2026-05-08
-content_hash: cabc6501f434c682
+content_hash: c1d61c163b37cb16
 ---
 
 # What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects
@@ -132,11 +132,11 @@ The framework comprises six key stages: (1) establishing a data center proposal;
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers](lc-opt_benchmarking_reinforcement_learning_and_agentic_ai_for_end-to-end_liquid_.md)
 - [\[NeurIPS 2025\] Generative AI Agents for Controllable and Protected Content Creation](generative_ai_agents_for_controllable_and_protected_content_creation.md)
+- [\[NeurIPS 2025\] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers](lc-opt_benchmarking_reinforcement_learning_and_agentic_ai_for_end-to-end_liquid_.md)
 - [\[NeurIPS 2025\] Enhancing Demand-Oriented Regionalization with Agentic AI and Local Heterogeneous Data for Adaptation Planning](enhancing_demand-oriented_regionalization_with_agentic_ai_and_local_heterogeneou.md)
+- [\[ICLR 2026\] KRAMABENCH: A Benchmark for AI Systems on Data-to-Insight Pipelines over Data Lakes](../../ICLR2026/llm_agent/kramabench_a_benchmark_for_ai_systems_on_data-to-insight_pipelines_over_data_lak.md)
 - [\[NeurIPS 2025\] SuffixDecoding: Extreme Speculative Decoding for Emerging AI Applications](suffixdecoding_extreme_speculative_decoding_for_emerging_ai_applications.md)
-- [\[ICML 2026\] Towards a Science of AI Agent Reliability](../../ICML2026/llm_agent/towards_a_science_of_ai_agent_reliability.md)
 
 </div>
 

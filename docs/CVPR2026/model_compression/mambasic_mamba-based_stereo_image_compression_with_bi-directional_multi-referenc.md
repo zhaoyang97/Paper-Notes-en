@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MambaSIC: Mamba-based Stereo Image Compression with Bi-directional Multi-reference Entropy Model
 description: >-
-  [CVPR 2026][Model Compression][Mamba] MambaSIC replaces expensive cross-attention in stereo image compression with a linear-complexity Stereo Visual State Space Block (Stereo VSSB) for inter-view context transfer. Combined with a checkerboard-partitioned bi-directional multi-reference entropy model instead of spatial autoregression, it refreshes Rate-Disto
+  [CVPR 2026][Model Compression][Stereo Image Compression] MambaSIC replaces expensive cross-attention in stereo image compression with a linear-complexity Stereo Visual State Space Block (Stereo VSSB) for inter-view context transfer. Combined with a checkerboard-partitioned bi-directional multi-reference entropy model instead of spatial autoregression, it refreshes Rate-Distortion performance on InStereo2K / Cityscapes (improving BD-PSNR) while reducing latency to 1.26s (appro…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Mamba
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Stereo Image Compression"
+  - "Mamba"
+  - "Visual State Space"
+  - "Checkerboard Entropy Model"
+  - "Inter-view Redundancy"
 date: 2026-05-08
-content_hash: b08d7934585f6c77
+content_hash: 0db3ab446db12454
 ---
+
 # MambaSIC: Mamba-based Stereo Image Compression with Bi-directional Multi-reference Entropy Model
 
 **Conference**: CVPR 2026  
@@ -148,10 +153,10 @@ Component ablation (Ours as anchor, values represent BDBR increase/worsening):
 ## Related Papers
 
 - [\[CVPR 2026\] FreqSIC: Frequency-aware Stereo Image Compression with Bi-directional Checkerboard Context Model](freqsic_frequency-aware_stereo_image_compression_with_bi-directional_checkerboar.md)
+- [\[CVPR 2026\] High Resolution Neural Video Coding with Bi-directional Confidence-Guided Reference Information Modeling](high_resolution_neural_video_coding_with_bi-directional_confidence-guided_refere.md)
 - [\[ECCV 2024\] Bidirectional Stereo Image Compression with Cross-Dimensional Entropy Model](../../ECCV2024/model_compression/bidirectional_stereo_image_compression_with_cross-dimensional_entropy_model.md)
 - [\[CVPR 2026\] Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression](parallax_to_align_them_all_an_omniparallax_attention_mechanism_for_distributed_m.md)
-- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
-- [\[CVPR 2026\] Block-based Learned Image Compression without Blocking Artifacts](block-based_learned_image_compression_without_blocking_artifacts.md)
+- [\[CVPR 2026\] What Matters in Practical Learned Image Compression](what_matters_in_practical_learned_image_compression.md)
 
 </div>
 

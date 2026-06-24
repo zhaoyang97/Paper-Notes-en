@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][LLM alignment] This paper proposes the Residual Alignment Model (RAM), which formalizes the LLM alignment process as importance sampling and decomposes a large model into a frozen Proposal…
+  [NeurIPS 2025][LLM Pretraining][LLM alignment] This paper proposes the Residual Alignment Model (RAM), which formalizes the LLM alignment process as importance sampling and decomposes a large model into a frozen Proposal Module and a trainable lightweight Residual Aligner. Using fewer than 1/8 of the parameters, RAM achieves alignment performance comparable to or exceeding full-parameter SFT/DPO, while also resolving the first-token latency problem.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -13,7 +13,7 @@ tags:
   - "token-level decoding"
   - "parameter-efficient"
 date: 2026-05-08
-content_hash: 91b177883dc934f0
+content_hash: 114dc061047830b7
 ---
 
 # Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models
@@ -191,10 +191,10 @@ Even when the DPO model already achieves a win rate exceeding 70%, the Residual 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
-- [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
+- [\[ACL 2025\] FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling](../../ACL2025/llm_pretraining/fr_spec_speculative_sampling.md)
 - [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
-- [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
+- [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
 
 </div>
 

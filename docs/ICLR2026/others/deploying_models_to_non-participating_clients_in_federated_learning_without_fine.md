@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Deploying Models to Non-participating Clients in Federated Learning without Fine-tuning: A Hypernetwork-based Approach
 description: >-
-  [ICLR 2026][Others][Paper Note] HyperFedZero utilizes a hypernetwork conditioned on "distribution embeddings" to **dynamically generate classifier parameters** for new, non-participating clients with intra-domain distribution shifts. It achieves localized personalization with zero fine-tuning and minimal overhead, consistently outperforming existing
+  [ICLR2026][Federated Learning] HyperFedZero utilizes a hypernetwork conditioned on "distribution embeddings" to **dynamically generate classifier parameters** for new, non-participating clients with intra-domain distribution shifts. It achieves localized personalization with zero fine-tuning and minimal overhead, consistently outperforming existing methods across 7 datasets and 5 models.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR2026"
+  - "Federated Learning"
+  - "Hypernetwork"
+  - "Zero-shot Personalization"
+  - "Intra-domain Distribution Shift"
+  - "Non-participating Clients"
 date: 2026-05-08
-content_hash: 33c6cce9145caaa7
+content_hash: 38bb535d975db407
 ---
+
 # Deploying Models to Non-participating Clients in Federated Learning without Fine-tuning: A Hypernetwork-based Approach
 
 **Conference**: ICLR2026  
@@ -129,10 +134,10 @@ HyperFedZero consistently leads in zACC across all baselines; the Gain over FedA
 ## Related Papers
 
 - [\[ICLR 2026\] Layerwise Federated Learning for Heterogeneous Quantum Clients using Quorus](layerwise_federated_learning_for_heterogeneous_quantum_clients_using_quorus.md)
+- [\[ICML 2026\] Advantages of Non-Smooth Components in Vision Transformer Fine-Tuning](../../ICML2026/others/vision_transformer_finetuning_benefits_from_non-smooth_components.md)
 - [\[ICLR 2026\] HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning](hippotune_a_hippocampal_associative_loopinspired_fine-tuning_method_for_continua.md)
 - [\[ICLR 2026\] Federated ADMM from Bayesian Duality](federated_admm_from_bayesian_duality.md)
 - [\[ICLR 2026\] A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components](a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi.md)
-- [\[ICML 2026\] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach](../../ICML2026/others/markov_chain_monte_carlo_without_evaluating_the_target_an_auxiliary_variable_app.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detecting Temporal Misalignment Attacks in Multimodal Fusion for Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] Addressing the vulnerability of camera-LiDAR fusion’s dependence on precise time synchronization, this paper proposes AION, a lightweight plug-and-play defense. AION utilizes "Continuity-Aware Contrastive Learning" to train a shared multimodal encoder and employs Dynamic Time Warping (DTW) to track the alignment path o
+  [ICLR2026][Autonomous Driving][Temporal Misalignment Attack] Addressing the vulnerability of camera-LiDAR fusion’s dependence on precise time synchronization, this paper proposes AION, a lightweight plug-and-play defense. AION utilizes "Continuity-Aware Contrastive Learning" to train a shared multimodal encoder and employs Dynamic Time Warping (DTW) to track the alignment path of dual-sensor representations. Deviations from the diagonal are converted into anomaly scores…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR2026"
+  - "Autonomous Driving"
+  - "Temporal Misalignment Attack"
+  - "Multimodal Fusion"
+  - "Dynamic Time Warping"
+  - "Contrastive Learning"
+  - "Autonomous Driving Security"
 date: 2026-05-08
-content_hash: a6e8be048398f7be
+content_hash: 5bf53ec716e4a7b8
 ---
+
 # Detecting Temporal Misalignment Attacks in Multimodal Fusion for Autonomous Driving
 
 **Conference**: ICLR2026  

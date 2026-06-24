@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] OLAF-World: Orienting Latent Actions for Video World Modeling
 description: >-
-  [ICML 2026][Video Generation][Paper Note] OLAF-World learns transferable latent actions through **Sequence-level Control-Effect Alignment** (Seq∆-REPA)—turning unlabeled videos into action-controllable video world models and achieving zero-shot action transfer across contexts. With only 1 minute of annotated data, it achieves performance comparable to AdaWorld
+  [ICML 2026][Video Generation][Latent Action Learning] OLAF-World learns transferable latent actions through **Sequence-level Control-Effect Alignment** (Seq∆-REPA)—turning unlabeled videos into action-controllable video world models and achieving zero-shot action transfer across contexts. With only 1 minute of annotated data, it achieves performance comparable to AdaWorld with 2 hours of data (rotation control accuracy 0.4680 vs 0.6420).
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Latent Action Learning"
+  - "Video World Models"
+  - "Cross-Context Transfer"
+  - "Control Alignment"
 date: 2026-05-08
-content_hash: 9974bbb0e37caefe
+content_hash: ddd5d276f6880875
 ---
+
 # OLAF-World: Orienting Latent Actions for Video World Modeling
 
 **Conference**: ICML 2026  
@@ -138,8 +143,8 @@ In zero-shot, 1-minute, and 2-hour data scenarios, OLAF-World outperforms in RPE
 - [\[CVPR 2026\] DriveLaW: Unifying Planning and Video Generation in a Latent Driving World](../../CVPR2026/video_generation/drivelaw_unifying_planning_and_video_generation_in_a_latent_driving_world.md)
 - [\[ICML 2026\] World-R1: Reinforcing 3D Constraints for Text-to-Video Generation](world-r1_reinforcing_3d_constraints_for_text-to-video_generation.md)
 - [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](../../CVPR2026/video_generation/inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
-- [\[CVPR 2025\] World-Consistent Video Diffusion with Explicit 3D Modeling](../../CVPR2025/video_generation/world-consistent_video_diffusion_with_explicit_3d_modeling.md)
 - [\[ICML 2026\] WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching](worldcache_accelerating_world_models_for_free_via_heterogeneous_token_caching.md)
+- [\[CVPR 2025\] World-Consistent Video Diffusion with Explicit 3D Modeling](../../CVPR2025/video_generation/world-consistent_video_diffusion_with_explicit_3d_modeling.md)
 
 </div>
 

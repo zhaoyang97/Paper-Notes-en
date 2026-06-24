@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LinEAS: End-to-end Learning of Activation Steering with a Distributional Loss
 description: >-
-  [NeurIPS 2025][Image Generation][Activation Steering] This paper proposes LinEAS (Linear End-to-end Activation Steering), which jointly optimizes cross-layer affine transformations in an end-to-end manner using a 1D Wass…
+  [NeurIPS 2025][Image Generation][Activation Steering] This paper proposes LinEAS (Linear End-to-end Activation Steering), which jointly optimizes cross-layer affine transformations in an end-to-end manner using a 1D Wasserstein distributional loss for global activation alignment. With only 32 unpaired samples, LinEAS efficiently steers LLM toxicity and controls concept generation in T2I models.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "text-to-image"
   - "Sparse Regularization"
 date: 2026-05-08
-content_hash: 896396641fa07d80
+content_hash: 5881a7e831dc5618
 ---
 
 # LinEAS: End-to-end Learning of Activation Steering with a Distributional Loss

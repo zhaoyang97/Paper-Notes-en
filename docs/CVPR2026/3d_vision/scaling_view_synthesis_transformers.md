@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Scaling View Synthesis Transformers (SVSM)
 description: >-
-  [CVPR 2026][3D Vision][Transformer] This work establishes the first scaling laws for geometry-free NVS Transformers. By proposing the Effective Batch Size hypothesis ($B_{\text{eff}} = B \cdot V_T$), it reveals the root cause for the prior undervaluation of encoder-decoder architectures. The authors design SVSM, a unidirectional encoder-decoder that achi
+  [CVPR 2026][3D Vision][Novel View Synthesis] This work establishes the first scaling laws for geometry-free NVS Transformers. By proposing the Effective Batch Size hypothesis ($B_{\text{eff}} = B \cdot V_T$), it reveals the root cause for the prior undervaluation of encoder-decoder architectures. The authors design SVSM, a unidirectional encoder-decoder that achieves a new SOTA on RealEstate10K (30.01 PSNR) using less than half the training FLOPs…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Transformer
-  - encoder-decoder
-  - PRoPE
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Scaling Laws"
+  - "Transformer"
+  - "encoder-decoder"
+  - "Computational Efficiency"
+  - "PRoPE"
 date: 2026-05-08
-content_hash: bd0134d4fde9175f
+content_hash: 1810d983be94a090
 ---
+
 # Scaling View Synthesis Transformers (SVSM)
 
 **Conference**: CVPR 2026  
@@ -140,10 +144,10 @@ To isolate "decoding directionality" from "presence of bottleneck," the authors 
 ## Related Papers
 
 - [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
+- [\[CVPR 2026\] Emergent Outlier View Rejection in Visual Geometry Grounded Transformers](emergent_outlier_view_rejection_in_visual_geometry_grounded_transformers.md)
 - [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
 - [\[CVPR 2026\] Block-Sparse Global Attention for Efficient Multi-View Geometry Transformers](block-sparse_global_attention_for_efficient_multi-view_geometry_transformers.md)
 - [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
-- [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
 
 </div>
 

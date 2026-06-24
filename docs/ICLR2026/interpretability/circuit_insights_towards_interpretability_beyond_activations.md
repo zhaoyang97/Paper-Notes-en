@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Circuit Insights: Towards Interpretability Beyond Activations
 description: >-
-  [ICLR 2026][Interpretability][Transcoder] This paper introduces WeightLens and CircuitLens to evolve automated interpretability from merely observing activation-triggering samples to analyzing weight connections and circuit attributions. This approach more robustly explains token-level, context-dependent, and polysemantic features in transcoder activations.
+  [ICLR2026][Interpretability][Circuit Interpretability] This paper introduces WeightLens and CircuitLens to evolve automated interpretability from merely observing activation-triggering samples to analyzing weight connections and circuit attributions. This approach more robustly explains token-level, context-dependent, and polysemantic features in transcoder activations.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Transcoder
+  - "ICLR2026"
+  - "Interpretability"
+  - "Circuit Interpretability"
+  - "Transcoder"
+  - "Automated Interpretability"
+  - "Feature Attribution"
+  - "Sparse Features"
 date: 2026-05-08
-content_hash: 0e20b6ff16281787
+content_hash: a385345d912fe0e1
 ---
+
 # Circuit Insights: Towards Interpretability Beyond Activations
 
 **Conference**: ICLR2026  
@@ -134,6 +139,7 @@ Ablations demonstrated the impact of different information sources. WeightLens v
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

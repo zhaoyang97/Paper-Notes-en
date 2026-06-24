@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TokenTrace: Multi-Concept Attribution through Watermarked Token Recovery
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] TokenTrace injects secret signatures of concepts **simultaneously into text prompt embeddings and initial latent noise** (dual conditioning). It employs a **query-based retrieval module**—given a generated image and a text query specifying "which concept to check"—to independently decode the corresponding secret. This
+  [CVPR 2026][AI Safety][Proactive Watermarking] TokenTrace injects secret signatures of concepts **simultaneously into text prompt embeddings and initial latent noise** (dual conditioning). It employs a **query-based retrieval module**—given a generated image and a text query specifying "which concept to check"—to independently decode the corresponding secret. This allows for individual attribution of multiple concepts (objects and styles) within a single image…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Proactive Watermarking"
+  - "Multi-concept Attribution"
+  - "Diffusion Models"
+  - "Semantic Domain Watermarking"
+  - "Intellectual Property Protection"
 date: 2026-05-08
-content_hash: 5ba1322d5905eab3
+content_hash: bfc0ba4aedc07048
 ---
+
 # TokenTrace: Multi-Concept Attribution through Watermarked Token Recovery
 
 **Conference**: CVPR 2026  
@@ -160,11 +165,11 @@ Robustness (WikiArt):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond \[CLS\] Token: Query-Driven Token-Level Forgery Purification for Generalizable Deepfake Detection](beyond_cls_token_query-driven_token-level_forgery_purification_for_generalizable.md)
 - [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
+- [\[CVPR 2026\] Beyond \[CLS\] Token: Query-Driven Token-Level Forgery Purification for Generalizable Deepfake Detection](beyond_cls_token_query-driven_token-level_forgery_purification_for_generalizable.md)
 - [\[CVPR 2026\] SAGA: Source Attribution of Generative AI Videos](saga_source_attribution_of_generative_ai_videos.md)
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
-- [\[CVPR 2026\] Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models](roots_beneath_the_cut_uncovering_the_risk_of_concept_revival_in_pruning-based_un.md)
+- [\[ICML 2026\] Scaling Unsupervised Multi-Source Federated Domain Adaptation through Group-Wise Discrepancy Minimization](../../ICML2026/ai_safety/scaling_unsupervised_multi-source_federated_domain_adaptation_through_group-wise.md)
 
 </div>
 

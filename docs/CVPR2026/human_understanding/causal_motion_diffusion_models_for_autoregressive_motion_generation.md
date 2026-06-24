@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Causal Motion Diffusion Models for Autoregressive Motion Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The CMDM framework is proposed, which unifies diffusion denoising and autoregressive generation within a motion-language-aligned causal latent space. By employing frame-level independent noise levels and a causal uncertainty sampling schedule, it achieves high-quality, low-latency text-to-motion generation and long-seq
+  [CVPR 2026][Human Understanding][Causal Diffusion] The CMDM framework is proposed, which unifies diffusion denoising and autoregressive generation within a motion-language-aligned causal latent space. By employing frame-level independent noise levels and a causal uncertainty sampling schedule, it achieves high-quality, low-latency text-to-motion generation and long-sequence streaming synthesis.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Causal Diffusion"
+  - "Autoregressive Motion Generation"
+  - "Text-to-Motion"
+  - "Streaming Generation"
+  - "Frame-wise Sampling Schedule"
 date: 2026-05-08
-content_hash: 87f02573feae9396
+content_hash: b512a6e695b1a617
 ---
+
 # Causal Motion Diffusion Models for Autoregressive Motion Generation
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ flowchart TD
 
 ## Related Papers
 
-- [\[CVPR 2026\] MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation](mocodiff_a_controllable_autoregressive_diffusion_model_for_expressive_motion_gen.md)
-- [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](../../ICCV2025/image_generation/motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
-- [\[CVPR 2026\] Pixel Motion Diffusion Is What We Need for Robot Control](pixel_motion_diffusion_is_what_we_need_for_robot_control.md)
-- [\[CVPR 2026\] Cross-Axis Feature Fusion with Joint-Wise Motion Difference Prediction for Text-Based 3D Human Motion Editing](cross-axis_feature_fusion_with_joint-wise_motion_difference_prediction_for_text-.md)
-- [\[CVPR 2026\] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation](egoflow_gradient-guided_flow_matching_for_egocentric_6dof_object_motion_generati.md)
+- [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
+- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
+- [\[CVPR 2026\] FloodDiffusion: Tailored Diffusion Forcing for Streaming Motion Generation](flooddiffusion_tailored_diffusion_forcing_for_streaming_motion_generation.md)
+- [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
 
 </div>
 

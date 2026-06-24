@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA
 description: >-
-  [NeurIPS 2025][LLM Safety][Federated Learning] FedSVD proposes globally reparameterizing LoRA matrices via SVD, updating the $A$ matrix each communication round using the right singular vectors of the aggregated $BA$ pro…
+  [NeurIPS 2025][LLM Safety][Federated Learning] FedSVD proposes globally reparameterizing LoRA matrices via SVD, updating the $A$ matrix each communication round using the right singular vectors of the aggregated $BA$ product. This approach avoids the quadratic noise amplification under DP-SGD while preserving the adaptive capacity of $A$, consistently outperforming fixed-$A$ baselines across multiple NLU benchmarks.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "SVD"
   - "Noise Amplification"
 date: 2026-05-08
-content_hash: f758a479faa5f8ca
+content_hash: 4368887ed3100d34
 ---
 
 # FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA
@@ -133,9 +133,9 @@ By the post-processing invariance property of differential privacy, SVD is appli
 
 - [\[NeurIPS 2025\] Adaptive LoRA Experts Allocation and Selection for Federated Fine-Tuning](adaptive_lora_experts_allocation_and_selection_for_federated_fine-tuning.md)
 - [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
+- [\[ICML 2025\] POPri: Private Federated Learning using Preference-Optimized Synthetic Data](../../ICML2025/llm_safety/popri_private_federated_learning_using_preference-optimized_synthetic_data.md)
 - [\[ICLR 2026\] SHE-LoRA: Selective Homomorphic Encryption for Federated Tuning with Heterogeneous LoRA](../../ICLR2026/llm_safety/she-lora_selective_homomorphic_encryption_for_federated_tuning_with_heterogeneou.md)
 - [\[NeurIPS 2025\] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models](fedrw_efficient_privacy-preserving_data_reweighting_for_enhancing_federated_lear.md)
-- [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](on_the_sample_complexity_of_differentially_private_policy_optimization.md)
 
 </div>
 

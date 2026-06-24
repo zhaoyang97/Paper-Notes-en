@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Uni-X proposes an X-shaped architecture that is separated at both ends and shared in the middle to mitigate gradient conflicts between visual and textual modalities in Unified Multimodal Models (UMM). By setting shallow and deep layers as modality-specific while keeping middle layers parameter-shared, it matches or exc
+  [ICLR 2026][Image Generation][Unified Multimodal Models] Uni-X proposes an X-shaped architecture that is separated at both ends and shared in the middle to mitigate gradient conflicts between visual and textual modalities in Unified Multimodal Models (UMM). By setting shallow and deep layers as modality-specific while keeping middle layers parameter-shared, it matches or exceeds the performance of 7B AR-UMMs in image generation and multimodal understanding with only 3B parame…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Unified Multimodal Models"
+  - "Gradient Conflict"
+  - "Modality Separation"
+  - "Autoregressive Generation"
+  - "Image Generation and Understanding"
 date: 2026-05-08
-content_hash: 0486f69817b4ed87
+content_hash: 0e3cc6f609f4c346
 ---
+
 # Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models
 
 **Conference**: ICLR 2026  
@@ -126,9 +132,9 @@ The model is trained using standard autoregressive cross-entropy loss $\mathcal{
 
 - [\[NeurIPS 2025\] Mitigating Intra- and Inter-modal Forgetting in Continual Learning of Unified Multimodal Models](../../NeurIPS2025/image_generation/mitigating_intra-_and_inter-modal_forgetting_in_continual_learning_of_unified_mu.md)
 - [\[ICLR 2026\] Draw-In-Mind: Rebalancing Designer-Painter Roles in Unified Multimodal Models Benefits Image Editing](draw-in-mind_rebalancing_designer-painter_roles_in_unified_multimodal_models_ben.md)
+- [\[ICLR 2026\] There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training](there_is_no_vae_end-to-end_pixel-space_generative_modeling_via_self-supervised_p.md)
 - [\[ICLR 2026\] Generation then Reconstruction: Accelerating Masked Autoregressive Models via Two-Stage Sampling](generation_then_reconstruction_accelerating_masked_autoregressive_models_via_two.md)
 - [\[ICLR 2026\] Detecting and Mitigating Memorization in Diffusion Models through Anisotropy of the Log-Probability](detecting_and_mitigating_memorization_in_diffusion_models_through_anisotropy_of_.md)
-- [\[ICML 2026\] Conflict-Aware Additive Guidance for Flow Models under Compositional Rewards](../../ICML2026/image_generation/conflict-aware_additive_guidance_for_flow_models_under_compositional_rewards.md)
 
 </div>
 

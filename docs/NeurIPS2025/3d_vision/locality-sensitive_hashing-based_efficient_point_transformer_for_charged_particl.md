@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Locality-Sensitive Hashing-Based Efficient Point Transformer for Charged Particle Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][Point Transformer] By combining LSH with Point Transformer, the paper proposes HEPTv2 for end-to-end particle track reconstruction…
+  [NeurIPS 2025][3D Vision][Point Transformer] By combining LSH with Point Transformer, the paper proposes HEPTv2 for end-to-end particle track reconstruction, eliminating the DBScan clustering post-processing bottleneck and achieving a 28.9× speedup while maintaining competitive tracking efficiency.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -11,7 +11,7 @@ tags:
   - "Particle Tracking"
   - "End-to-End Learning"
 date: 2026-05-08
-content_hash: d1520a2e3f5f6ebc
+content_hash: 0c6f4d83623242b6
 ---
 
 # Locality-Sensitive Hashing-Based Efficient Point Transformer for Charged Particle Reconstruction
@@ -120,11 +120,11 @@ Curriculum learning: the model is first trained on clean, trackable hits, with h
 
 ## Related Papers
 
-- [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](../../CVPR2026/3d_vision/ggpt_geometry_grounded_point_transformer.md)
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](../../ICCV2025/3d_vision/efficient_spiking_point_mamba_for_point_cloud_analysis.md)
+- [\[CVPR 2025\] ERUPT: Efficient Rendering with Unposed Patch Transformer](../../CVPR2025/3d_vision/erupt_efficient_rendering_with_unposed_patch_transformer.md)
 - [\[NeurIPS 2025\] How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?](how_many_tokens_do_3d_point_cloud_transformer_architectures_really_need.md)
-- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](../../CVPR2026/3d_vision/art_articulated_reconstruction_transformer.md)
-- [\[CVPR 2026\] LitePT: Lighter Yet Stronger Point Transformer](../../CVPR2026/3d_vision/litept_lighter_yet_stronger_point_transformer.md)
+- [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](../../CVPR2026/3d_vision/ggpt_geometry_grounded_point_transformer.md)
+- [\[ICCV 2025\] Nautilus: Locality-aware Autoencoder for Scalable Mesh Generation](../../ICCV2025/3d_vision/nautilus_locality-aware_autoencoder_for_scalable_mesh_generation.md)
 
 </div>
 

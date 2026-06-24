@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Representational Alignment Across Model Layers and Brain Regions with Multi-Level Optimal Transport
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes Multi-Level Optimal Transport (MOT), a dual-layer optimal transport framework featuring "inner-layer neuron transport + outer-layer hierarchical transport." It upgrades representational alignment between two networks (or brain regions) from "layer-wise greedy matching" to "globally consistent soft c
+  [ICLR 2026][Interpretability][Representational Alignment] This paper proposes Multi-Level Optimal Transport (MOT), a dual-layer optimal transport framework featuring "inner-layer neuron transport + outer-layer hierarchical transport." It upgrades representational alignment between two networks (or brain regions) from "layer-wise greedy matching" to "globally consistent soft coupling." This approach provides a single network-level alignment score…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Representational Alignment"
+  - "Optimal Transport"
+  - "Hierarchical Correspondence"
+  - "Brain-Model Comparison"
+  - "Rotation Invariance"
 date: 2026-05-08
-content_hash: e3bc6e4ffc5c760b
+content_hash: 9f7190d2c342a17e
 ---
+
 # Representational Alignment Across Model Layers and Brain Regions with Multi-Level Optimal Transport
 
 **Conference**: ICLR 2026  
@@ -141,8 +147,6 @@ Ablation on fMRI data (Subject A↔B):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

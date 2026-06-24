@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought
 description: >-
-  [CVPR 2026][LLM Reasoning][rationale grounding] This paper discovers that existing LVLMs actually ignore the content of intermediate rationales during CoT reasoning. It proposes RED (Rationale-Enhanced Decoding), which multiplies next-token distributions conditioned on images and rationales at the logit level. Theoretically equivalent to the optimal solution for KL-
+  [CVPR 2026][Reasoning][Chain-of-Thought reasoning] This paper discovers that existing LVLMs actually ignore the content of intermediate rationales during CoT reasoning. It proposes RED (Rationale-Enhanced Decoding), which multiplies next-token distributions conditioned on images and rationales at the logit level. Theoretically equivalent to the optimal solution for KL-constrained reward maximization, RED significantly improves multimodal reasoning accuracy without requiring t…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - rationale grounding
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Chain-of-Thought reasoning"
+  - "Multimodal Large Language Models"
+  - "Decoding strategy"
+  - "rationale grounding"
+  - "plug-and-play"
 date: 2026-05-08
-content_hash: 189a10eaddd4f28e
+content_hash: 836d698a51c2c9b5
 ---
+
 # Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought
 
 **Conference**: CVPR 2026  
@@ -161,8 +166,8 @@ RED is a purely inference-time method with **zero training**. It requires two fo
 - [\[AAAI 2026\] CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation](../../AAAI2026/llm_reasoning/cmmcot_enhancing_complex_multi-image_comprehension_via_multi.md)
 - [\[CVPR 2025\] Interleaved-Modal Chain-of-Thought](../../CVPR2025/llm_reasoning/interleaved-modal_chain-of-thought.md)
 - [\[ACL 2025\] RSVP: Reasoning Segmentation via Visual Prompting and Multi-modal Chain-of-Thought](../../ACL2025/llm_reasoning/rsvp_reasoning_segmentation_via_visual_prompting_and_multi-modal_chain-of-though.md)
+- [\[CVPR 2026\] FireScope: Wildfire Risk Raster Prediction with a Chain-of-Thought Oracle](firescope_wildfire_risk_raster_prediction_with_a_chain-of-thought_oracle.md)
 - [\[CVPR 2026\] VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models](visref_visual_refocusing_test_time_scaling.md)
-- [\[ICLR 2026\] Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning](../../ICLR2026/llm_reasoning/fine-r1_make_multi-modal_llms_excel_in_fine-grained_visual_recognition_by_chain-.md)
 
 </div>
 

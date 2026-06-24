@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CrossEarth-Gate: Fisher-Guided Adaptive Tuning Engine for Efficient Adaptation of Cross-Domain Remote Sensing Semantic Segmentation
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] To address the concurrent spatial, semantic, and frequency domain shifts in remote sensing (RS) imagery, CrossEarth-Gate integrates three types of PEFT modules (LoRA / Adapter / Earth-Adapter) as a "toolbox" into every backbone layer. By periodically measuring the contribution of each module to the task's gradient flow
+  [CVPR 2026][Remote Sensing][RS Segmentation] To address the concurrent spatial, semantic, and frequency domain shifts in remote sensing (RS) imagery, CrossEarth-Gate integrates three types of PEFT modules (LoRA / Adapter / Earth-Adapter) as a "toolbox" into every backbone layer. By periodically measuring the contribution of each module to the task's gradient flow using Fisher information and activating only the Top-k most critical ones, it achieves 16 SOTAs across 18 RS cross…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "RS Segmentation"
+  - "Parameter-Efficient Fine-Tuning (PEFT)"
+  - "Domain Generalization/Adaptation"
+  - "Fisher Information"
+  - "Dynamic Module Selection"
 date: 2026-05-08
-content_hash: ab696ada891e567b
+content_hash: b8ff39294cef8eda
 ---
+
 # CrossEarth-Gate: Fisher-Guided Adaptive Tuning Engine for Efficient Adaptation of Cross-Domain Remote Sensing Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -121,16 +127,16 @@ Ablation of core components (CASID, Mean is the average mIoU% across four source
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] SegEarth-R2: Towards Comprehensive Language-guided Segmentation for Remote Sensing Images](segearth-r2_towards_comprehensive_language-guided_segmentation_for_remote_sensin.md)
 - [\[CVPR 2026\] Semantic-Adaptive Diffusion for Dynamic Spatiotemporal Fusion](semantic-adaptive_diffusion_for_dynamic_spatiotemporal_fusion.md)
-- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
 - [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
-- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
+- [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
+- [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
 
 </div>
 

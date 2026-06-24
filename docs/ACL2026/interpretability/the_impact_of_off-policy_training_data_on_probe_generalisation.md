@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Impact of Off-Policy Training Data on Probe Generalisation
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper systematically compares the impact of four types of training data—on-policy natural, on-policy incentivised, on-policy prompted, and off-policy—on the generalization of LLM activation probes. It finds that probes for behaviors visible on the text surface are robust, while "intentional" behaviors like decepti
+  [ACL2026][Interpretability][Activation Probes] This paper systematically compares the impact of four types of training data—on-policy natural, on-policy incentivised, on-policy prompted, and off-policy—on the generalization of LLM activation probes. It finds that probes for behaviors visible on the text surface are robust, while "intentional" behaviors like deception, sycophancy, and sandbagging are highly susceptible to domain shifts. The authors propose using an on-policy i…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL2026"
+  - "Interpretability"
+  - "Activation Probes"
+  - "Off-Policy Data"
+  - "Generalization"
+  - "Deception Detection"
+  - "Distribution Shift"
 date: 2026-05-08
-content_hash: da87c22dc48cc5b0
+content_hash: 567b69327491b769
 ---
+
 # The Impact of Off-Policy Training Data on Probe Generalisation
 
 **Conference**: ACL2026  
@@ -143,10 +149,18 @@ The authors propose a proxy test: if on-policy natural test data is unavailable,
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](../../ICLR2026/interpretability/learning_to_weight_parameters_for_training_data_attribution.md)
+- [\[ICML 2026\] ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](../../ICML2026/interpretability/explaind_unifying_model_data_and_training_attribution_to_study_model_behavior.md)
+- [\[ACL 2026\] Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall](through_a_compressed_lens_investigating_the_impact_of_quantization_on_factual_kn.md)
+- [\[ACL 2026\] Evian: Towards Explainable Visual Instruction-tuning Data Auditing](evian_towards_explainable_visual_instruction-tuning_data_auditing.md)
+- [\[ICML 2026\] OmniSapiens: A Foundation Model for Social Behavior Processing via Heterogeneity-Aware Relative Policy Optimization](../../ICML2026/interpretability/omnisapiens_a_foundation_model_for_social_behavior_processing_via_heterogeneity-.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](../../ICML2026/interpretability/explaind_unifying_model_data_and_training_attribution_to_study_model_behavior.md)

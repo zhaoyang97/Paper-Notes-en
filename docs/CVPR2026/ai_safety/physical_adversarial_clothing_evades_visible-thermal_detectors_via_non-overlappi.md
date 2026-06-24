@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Physical Adversarial Clothing Evades Visible-Thermal Detectors via Non-Overlapping RGB-T Pattern
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper constructs a 3D adversarial clothing (NORP) made of two mutually non-overlapping materials—"visible-light printed fabric + aluminum film." Combined with the Spatially Discrete-Continuous Optimization (SDCO) method, which simultaneously optimizes continuous RGB pixels and discrete thermal pixels, the wearer c
+  [CVPR2026][AI Safety][RGB-T detection] This paper constructs a 3D adversarial clothing (NORP) made of two mutually non-overlapping materials—"visible-light printed fabric + aluminum film." Combined with the Spatially Discrete-Continuous Optimization (SDCO) method, which simultaneously optimizes continuous RGB pixels and discrete thermal pixels, the wearer can evade RGB-T pedestrian detectors in both visible and thermal modalities across all viewpoints (0°–360°). The digital w…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR2026"
+  - "AI Safety"
+  - "RGB-T detection"
+  - "Physical adversarial attack"
+  - "Adversarial clothing"
+  - "Multi-modal fusion"
+  - "Discrete-continuous optimization"
 date: 2026-05-08
-content_hash: a537d5dfcb2a266f
+content_hash: 11e891cbb2e09cab
 ---
+
 # Physical Adversarial Clothing Evades Visible-Thermal Detectors via Non-Overlapping RGB-T Pattern
 
 **Conference**: CVPR2026  
@@ -162,9 +168,9 @@ Removing SRD drops ASR on independent detectors from ~99% to 46-48%.
 
 - [\[CVPR 2026\] Thermally Activated Dual-Modal Adversarial Clothing against AI Surveillance Systems](thermally_activated_dual-modal_adversarial_clothing_against_ai_surveillance_syst.md)
 - [\[CVPR 2026\] CamPI: Physical Adversarial Examples through Camera Power Signal Injection](campi_physical_adversarial_examples_through_camera_power_signal_injection.md)
-- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
 - [\[CVPR 2026\] Phantom: Physical Object Interactions as Dynamic Triggers for NMS-Exploited Backdoors](phantom_physical_object_interactions_as_dynamic_triggers_for_nms-exploited_backd.md)
-- [\[CVPR 2026\] SANER: Switchable Adapter with Non-parametric Enhanced Routing for Person De-Reidentification](saner_switchable_adapter_with_non-parametric_enhanced_routing_for_person_de-reid.md)
+- [\[CVPR 2026\] Unlearning without Forgetting: Securely Removing Targeted Concepts from Large-Scale Vision-Language Open-Vocabulary Detectors](unlearning_without_forgetting_securely_removing_targeted_concepts_from_large-sca.md)
+- [\[CVPR 2026\] Federated Active Learning Under Extreme Non-IID and Global Class Imbalance](federated_active_learning_extreme_noniid.md)
 
 </div>
 

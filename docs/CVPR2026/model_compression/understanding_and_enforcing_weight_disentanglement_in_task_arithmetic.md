@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding and Enforcing Weight Disentanglement in Task Arithmetic
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This work proposes Task Feature Specialization (TFS) as a sufficient condition for weight disentanglement, revealing that its geometric consequence is the orthogonality of weight vectors. Based on this, the OrthoReg regularization method is introduced. By enforcing orthogonality among the column vectors of the weight u
+  [CVPR 2026][Model Compression][Task Arithmetic] This work proposes Task Feature Specialization (TFS) as a sufficient condition for weight disentanglement, revealing that its geometric consequence is the orthogonality of weight vectors. Based on this, the OrthoReg regularization method is introduced. By enforcing orthogonality among the column vectors of the weight update matrix during fine-tuning, OrthoReg promotes task vector disentanglement and significantly enhances the pe…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Task Arithmetic"
+  - "Model Merging"
+  - "Weight Disentanglement"
+  - "Orthogonal Regularization"
+  - "Task Vectors"
 date: 2026-05-08
-content_hash: b6bf9c679bec1128
+content_hash: 7a5729a2fe4f735a
 ---
+
 # Understanding and Enforcing Weight Disentanglement in Task Arithmetic
 
 **Conference**: CVPR 2026  
@@ -120,10 +126,10 @@ The total loss is $\mathcal{L} = \mathcal{L}_{\text{task}} + \lambda \cdot \math
 ## Related Papers
 
 - [\[CVPR 2026\] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)
-- [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](elastic_weight_consolidation_done_right_for_continual_learning.md)
-- [\[CVPR 2025\] Task Singular Vectors: Reducing Task Interference in Model Merging](../../CVPR2025/model_compression/task_singular_vectors_reducing_task_interference_in_model_merging.md)
 - [\[AAAI 2026\] Distilling Cross-Modal Knowledge via Feature Disentanglement](../../AAAI2026/model_compression/distilling_cross-modal_knowledge_via_feature_disentanglement.md)
-- [\[ICML 2026\] The Shape of Addition: Geometric Structures of Arithmetic in Large Language Models](../../ICML2026/model_compression/the_shape_of_addition_geometric_structures_of_arithmetic_in_large_language_model.md)
+- [\[CVPR 2025\] Task Singular Vectors: Reducing Task Interference in Model Merging](../../CVPR2025/model_compression/task_singular_vectors_reducing_task_interference_in_model_merging.md)
+- [\[CVPR 2026\] DuetMerging: Synergizing Dynamic and Static Strategies for Mitigating Task Interference in Model Merging](duetmerging_synergizing_dynamic_and_static_strategies_for_mitigating_task_interf.md)
+- [\[CVPR 2026\] TimeRipples: Accelerating vDiTs by Understanding the Spatio-Temporal Correlations in Latent Space](timeripples_accelerating_vdits_by_understanding_the_spatio-temporal_correlations.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] MedKCO is proposed as a knowledge-driven cognitive orchestration strategy for medical vision-language pretraining. By utilizing a hierarchical curriculum (label-level sorting by diagnostic sensitivity and description-level sorting by sample representativeness) along with a self-paced asymmetric contrastive loss, the mo
+  [CVPR 2026][Medical Imaging][Vision-Language Pretraining] MedKCO is proposed as a knowledge-driven cognitive orchestration strategy for medical vision-language pretraining. By utilizing a hierarchical curriculum (label-level sorting by diagnostic sensitivity and description-level sorting by sample representativeness) along with a self-paced asymmetric contrastive loss, the model learns progressively from simple to complex concepts. It significantly outperforms baselines in ze…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Vision-Language Pretraining"
+  - "Curriculum Learning"
+  - "Contrastive Learning"
+  - "Cognitive Orchestration"
 date: 2026-05-08
-content_hash: 295cb2b4579d86f6
+content_hash: d0005eedcaf3f2bb
 ---
+
 # MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration
 
 **Conference**: CVPR 2026  
@@ -152,8 +157,8 @@ Standard symmetric contrastive loss $\mathcal{L}_i = \frac{1}{2}(\mathcal{L}_i^{
 - [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
 - [\[CVPR 2026\] KAMP: Knowledge-Anchored Multimodal Pretraining Framework for Medical Image Representation](kamp_knowledge-anchored_multimodal_pretraining_framework_for_medical_image_repre.md)
 - [\[CVPR 2026\] Modeling the Brain's Grammar: ROI-Guided fMRI Pretraining for Transferable and Interpretable Vision Decoding](modeling_the_brains_grammar_roi-guided_fmri_pretraining_for_transferable_and_int.md)
+- [\[CVPR 2026\] Simple-ViLMedSAM: Simple Text Prompts Meet Vision-Language Models for Medical Image Segmentation](simple-vilmedsam_simple_text_prompts_meet_vision-language_models_for_medical_ima.md)
 - [\[ICCV 2025\] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision](../../ICCV2025/medical_imaging/vector_contrastive_learning_for_pixel-wise_pretraining_in_medical_vision.md)
-- [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
 
 </div>
 

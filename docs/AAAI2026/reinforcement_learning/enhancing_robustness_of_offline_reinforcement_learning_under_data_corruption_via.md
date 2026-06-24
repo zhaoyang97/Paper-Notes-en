@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Robustness of Offline RL Under Data Corruption via SAM
 description: >-
-  [AAAI 2026 (Student Abstract, Oral)][Reinforcement Learning][Offline RL] This paper is the first to apply Sharpness-Aware Minimization (SAM) as a plug-and-play optimizer for offline RL. It hypothesizes that data corrupti…
+  [AAAI 2026 (Student Abstract, Oral)][Reinforcement Learning][Offline RL] This paper is the first to apply Sharpness-Aware Minimization (SAM) as a plug-and-play optimizer for offline RL. It hypothesizes that data corruption induces sharp minima in the loss landscape, leading to poor generalization, and demonstrates that SAM improves robustness by seeking flat minima. On the D4RL benchmark, IQL+SAM improves average score from 34.47 to 44.40.
 tags:
   - "AAAI 2026 (Student Abstract, Oral)"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Flat Minima"
   - "Robustness"
 date: 2026-05-08
-content_hash: dd9ea7652ce09ffb
+content_hash: 4b246838db965ada
 ---
 
 # Enhancing Robustness of Offline RL Under Data Corruption via SAM
@@ -126,11 +126,11 @@ IQL converges to regions with sharp peaks and deep valleys, whereas IQL+SAM lear
 
 ## Related Papers
 
+- [\[ICLR 2026\] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL](../../ICLR2026/reinforcement_learning/gas_enhancing_reward-cost_balance_of_generative_model-assisted_offline_safe_rl.md)
+- [\[ICLR 2026\] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](../../ICLR2026/reinforcement_learning/enhancing_generative_auto-bidding_with_offline_reward_evaluation_and_policy_sear.md)
+- [\[ICLR 2026\] Webscale-RL: Automated Data Pipeline for Scaling RL Data to Pretraining Levels](../../ICLR2026/reinforcement_learning/webscale-rl_automated_data_pipeline_for_scaling_rl_data_to_pretraining_levels.md)
 - [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](../../ICML2026/reinforcement_learning/trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](../../ICLR2026/reinforcement_learning/reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
-- [\[ICML 2026\] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching](../../ICML2026/reinforcement_learning/moment_matching_q-learning.md)
-- [\[ACL 2026\] A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions](../../ACL2026/reinforcement_learning/a_survey_of_reinforcement_learning_for_large_language_models_under_data_scarcity.md)
-- [\[CVPR 2026\] AnyDoc: Enhancing Document Generation via Large-Scale HTML/CSS Data Synthesis and Height-Aware Reinforcement Optimization](../../CVPR2026/reinforcement_learning/anydoc_enhancing_document_generation_via_large-scale_htmlcss_data_synthesis_and_.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](../../ICLR2026/reinforcement_learning/scalable_offline_model-based_rl_with_action_chunks.md)
 
 </div>
 

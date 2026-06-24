@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Mind the Gap: How Elicitation Protocols Shape the Stated-Revealed Preference Gap in Language Models
 description: >-
-  [ACL 2026][LLM (Other)][stated-revealed preference] The authors upgrade forced-choice to expanded-choice (allowing "Equal Preference" and "Depends" as neutral options) within the LitmusValues / AIRiskDilemmas framework. Systematically evaluating 24 LLMs, they find that allowing neutrality on the stated side significantly increases the SvR Spearman correlation $\rho$ fro
+  [ACL 2026][LLM (Other)][stated-revealed preference] The authors upgrade forced-choice to expanded-choice (allowing "Equal Preference" and "Depends" as neutral options) within the LitmusValues / AIRiskDilemmas framework. Systematically evaluating 24 LLMs, they find that allowing neutrality on the stated side significantly increases the SvR Spearman correlation $\rho$ from ~0.2 to ~0.7 (by filtering out weak signals where models lack an inherent stance). Conversely…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - stated-revealed preference
-  - elicitation protocol
-  - neutrality
-  - abstention
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "stated-revealed preference"
+  - "value alignment"
+  - "elicitation protocol"
+  - "neutrality"
+  - "abstention"
 date: 2026-05-08
-content_hash: 09d4f14fcf058c6c
+content_hash: 3d68f3e5885a12c9
 ---
+
 # Mind the Gap: How Elicitation Protocols Shape the Stated-Revealed Preference Gap in Language Models
 
 **Conference**: ACL 2026  
@@ -152,6 +154,7 @@ System prompt steering effect ($\Delta\rho$ vs. unsteered baseline):
 - Value: ⭐⭐⭐⭐⭐ Directly impacts alignment evaluation methodology.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

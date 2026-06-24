@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Breaking the Regional Perception Bottleneck of Multimodal Large Language Models via External Reasoning Framework
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper identifies that the true bottleneck for Multimodal Large Language Models (MLLMs) in pixel-level grounding lies not in "seeing the region" but in the "translating the region into coordinates" (semantics refinement) stage. It proposes R-Ground, an external reasoning framework based on Multimodal Monte Carlo Tr
+  [CVPR 2026][VLM Reasoning][Regional perception] This paper identifies that the true bottleneck for Multimodal Large Language Models (MLLMs) in pixel-level grounding lies not in "seeing the region" but in the "translating the region into coordinates" (semantics refinement) stage. It proposes R-Ground, an external reasoning framework based on Multimodal Monte Carlo Tree Search (MCTS), which directs computational power specifically to this stage…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Regional perception"
+  - "visual grounding"
+  - "Multimodal MCTS"
+  - "reasoning scaling"
+  - "feature alignment"
 date: 2026-05-08
-content_hash: 3d7c7cad215e4d5b
+content_hash: 1a83c4a2d3a22906
 ---
+
 # Breaking the Regional Perception Bottleneck of Multimodal Large Language Models via External Reasoning Framework
 
 **Conference**: CVPR 2026  
@@ -128,15 +134,16 @@ Conducted on RefCOCO+ (no spatial prompts, relies heavily on multimodal alignmen
 - Value: ⭐⭐⭐⭐⭐ High practical value for achieving large-model performance with small-model compute.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
-- [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)
-- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Breaking Multimodal LLM Safety via Video-Driven Prompting](breaking_multimodal_llm_safety_via_video-driven_prompting.md)
-- [\[CVPR 2026\] CADFS: A Big CAD Program Dataset and Framework for Computer-Aided Design with Large Language Models](cadfs_a_big_cad_program_dataset_and_framework_for_computer-aided_design_with_lar.md)
+- [\[ICLR 2026\] VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning](../../ICLR2026/vlm_reasoning/visuriddles_fine-grained_perception_is_a_primary_bottleneck_for_multimodal_large.md)
+- [\[CVPR 2026\] DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models](deepscan_a_training-free_framework_for_visually_grounded_reasoning_in_large_visi.md)
+- [\[CVPR 2026\] Deeper Thought, Weaker Aim: Understanding and Mitigating Perceptual Impairment during Reasoning in Multimodal Large Language Models](deeper_thought_weaker_aim_understanding_and_mitigating_perceptual_impairment_dur.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Seeing What Matters: A Training-Free Self-Guided Framework for Multimodal Detail Perception and Reasoning](seeing_what_matters_a_training-free_self-guided_framework_for_multimodal_detail_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][State Space Model] TimeViper utilizes a 9B large model backbone hybridizing Mamba-2 and self-attention. Leveraging the newly discovered "visual information converges into instruction tokens layer-by-layer" phenomenon, the authors propose the TransV module within the LLM to transfer and compress redundant visual tokens into instruction to
+  [CVPR 2026][Multimodal Efficiency][Long video understanding] TimeViper utilizes a 9B large model backbone hybridizing Mamba-2 and self-attention. Leveraging the newly discovered "visual information converges into instruction tokens layer-by-layer" phenomenon, the authors propose the TransV module within the LLM to transfer and compress redundant visual tokens into instruction tokens via gated cross-attention. This enables the processing of hour-long videos with tens of thousa…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - State Space Model
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Long video understanding"
+  - "Mamba-Transformer hybrid architecture"
+  - "visual token compression"
+  - "visual-to-text information aggregation"
+  - "State Space Models"
 date: 2026-05-08
-content_hash: 272f8a2b4c91b91d
+content_hash: a0d51d047116d33d
 ---
+
 # TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding
 
 **Conference**: CVPR 2026  
@@ -126,16 +131,16 @@ Ablation of TransV positions and rates (Table 2):
 - **Value**: ⭐⭐⭐⭐⭐ Sets a high-efficiency path for long-video MLLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](../../ICCV2025/multimodal_vlm/matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
-- [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
-- [\[CVPR 2026\] POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs](points-long_adaptive_dual-mode_visual_reasoning_in_mllms.md)
-- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](../../ICCV2025/vlm_efficiency/matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
+- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
+- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
+- [\[ACL 2025\] Sharper and Faster mean Better: Towards More Efficient Vision-Language Model for Hour-scale Long Video Understanding](../../ACL2025/vlm_efficiency/sophia_efficient_long_video.md)
+- [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)
 
 </div>
 

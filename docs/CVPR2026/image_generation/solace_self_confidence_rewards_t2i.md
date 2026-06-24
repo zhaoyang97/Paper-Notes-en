@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards
 description: >-
-  [CVPR 2026][Image Generation][Text-to-Image] The denoising self-confidence of a T2I model (its precision in recovering injected noise) is utilized as an intrinsic reward for post-training, substituting external reward models. This approach yields consistent improvements in compositional generation, text rendering, and image-text alignment, while complementing ext
+  [CVPR 2026][Image Generation][Text-to-Image] The denoising self-confidence of a T2I model (its precision in recovering injected noise) is utilized as an intrinsic reward for post-training, substituting external reward models. This approach yields consistent improvements in compositional generation, text rendering, and image-text alignment, while complementing external rewards to mitigate reward hacking.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Text-to-Image
-  - Flow-GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Self-Confidence Rewards"
+  - "Flow-GRPO"
+  - "External Reward-free"
+  - "Post-training Alignment"
 date: 2026-05-08
-content_hash: 85147bbbfd6e0363
+content_hash: b25953caec3473a4
 ---
+
 # SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards
 
 **Conference**: CVPR 2026  
@@ -153,10 +157,10 @@ In ~1800 responses collected on PartiPrompts and HPSv2 prompts (20 participants)
 
 ## Related Papers
 
-- [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](self-corrected_image_generation_with_explainable_latent_rewards.md)
 - [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
-- [\[CVPR 2026\] LumiX: Structured and Coherent Text-to-Intrinsic Generation](lumix_structured_and_coherent_text-to-intrinsic_generation.md)
+- [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](self-corrected_image_generation_with_explainable_latent_rewards.md)
 - [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
+- [\[CVPR 2026\] LumiX: Structured and Coherent Text-to-Intrinsic Generation](lumix_structured_and_coherent_text-to-intrinsic_generation.md)
 - [\[CVPR 2026\] OctoT2I: A Self-Evolving Agentic Text-to-Image Router](octot2i_a_self-evolving_agentic_text-to-image_router.md)
 
 </div>

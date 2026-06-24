@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] Focusing on "looks real but defies logic" semantic anomalies in AI-generated images (violating physics, common sense, or anatomy), this paper formalizes the task of "detection + explanation + scoring." By utilizing the multi-agent pipeline AnomAgent and lightweight human verification, the authors curate the AnomReason
+  [ICLR 2026][AIGC Detection][Semantic Anomaly Detection] Focusing on "looks real but defies logic" semantic anomalies in AI-generated images (violating physics, common sense, or anatomy), this paper formalizes the task of "detection + explanation + scoring." By utilizing the multi-agent pipeline AnomAgent and lightweight human verification, the authors curate the AnomReason benchmark with 21.5K images and hundreds of thousands of structured quadruplet annotations. They propose…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Semantic Anomaly Detection"
+  - "AIGC Forensics"
+  - "Multi-agent Annotation"
+  - "Structured Reasoning"
+  - "Explainable Deepfake"
 date: 2026-05-08
-content_hash: 7c127dbfdc9bcd69
+content_hash: 9d99968a7b2efd4e
 ---
+
 # Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images
 
 **Conference**: ICLR 2026  
@@ -131,7 +137,7 @@ AR-7B's accuracy (82.61%) is lower than GPT-4o's, but it surpasses GPT-4o in cau
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

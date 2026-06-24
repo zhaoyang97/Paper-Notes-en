@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][active reasoning] This paper proposes T³ (Truncating Belief-Trapped Trajectories), which analyzes the "belief trap" phenomenon in LLM agents during multi-turn active reasoning based on POMDP theory. By detecting belief deviation and truncating uninformative trajectory tails, it corrects credit assignment errors in RL training. T³ achiev
+  [ICLR 2026 Oral][LLM Agent][active reasoning] This paper proposes T³ (Truncating Belief-Trapped Trajectories), which analyzes the "belief trap" phenomenon in LLM agents during multi-turn active reasoning based on POMDP theory. By detecting belief deviation and truncating uninformative trajectory tails, it corrects credit assignment errors in RL training. T³ achieves performance gains of up to 30 points across five challenging tasks while saving 34% in token costs.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - active reasoning
-  - reinforcement-learning
-  - belief tracking
-  - POMDP
-  - credit assignment
+  - "ICLR 2026 Oral"
+  - "LLM Agent"
+  - "active reasoning"
+  - "reinforcement-learning"
+  - "belief tracking"
+  - "POMDP"
+  - "credit assignment"
 date: 2026-05-08
-content_hash: fb70913a296437cb
+content_hash: 51ffefefe4a72297
 ---
+
 # Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents
 
 **Conference**: ICLR 2026 Oral  
@@ -145,10 +146,10 @@ Self-correction relies on internal reflection, which cannot solve the root probl
 ## Related Papers
 
 - [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICML2026/llm_agent/on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
+- [\[ICLR 2026\] Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents](memory-t1_reinforcement_learning_for_temporal_reasoning_in_multi-session_agents.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
+- [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](../../ICML2026/llm_agent/from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
 - [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](../../AAAI2026/llm_agent/moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
-- [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
-- [\[ICLR 2026\] Language Agents for Hypothesis-driven Clinical Decision Making with Reinforcement Learning](language_agents_for_hypothesis-driven_clinical_decision_making_with_reinforcemen.md)
-- [\[ICLR 2026\] WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](webseer_training_deeper_search_agents_through_reinforcement_learning_with_self-r.md)
 
 </div>
 

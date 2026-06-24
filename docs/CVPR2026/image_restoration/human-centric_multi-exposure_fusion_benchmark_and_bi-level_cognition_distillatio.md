@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Human-Centric Multi-Exposure Fusion: Benchmark and Bi-level Cognition Distillation Framework
 description: >-
-  [CVPR 2026][Image Restoration][Knowledge Distillation] This paper introduces human electroencephalogram (EEG) cognitive signals into multi-exposure fusion (MEF): first by constructing Cog-Expo, the first paired MEF-EEG dataset, and then employing "bi-level optimization" to distill cognitive knowledge from an EEG-guided Teacher to a Student that **only uses images and requi
+  [CVPR 2026][Image Restoration][Multi-Exposure Fusion] This paper introduces human electroencephalogram (EEG) cognitive signals into multi-exposure fusion (MEF): first by constructing Cog-Expo, the first paired MEF-EEG dataset, and then employing "bi-level optimization" to distill cognitive knowledge from an EEG-guided Teacher to a Student that **only uses images and requires no EEG during inference**, achieving SOTA results on MEF benchmarks with fusion results more aligned w…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Multi-Exposure Fusion"
+  - "EEG"
+  - "Bi-level Optimization"
+  - "Knowledge Distillation"
+  - "Human Perception"
 date: 2026-05-08
-content_hash: 7f0e35109e1dfe49
+content_hash: 9a94bdd43163f0c0
 ---
+
 # Human-Centric Multi-Exposure Fusion: Benchmark and Bi-level Cognition Distillation Framework
 
 **Conference**: CVPR 2026  
@@ -151,10 +156,10 @@ Optimization strategy and Teacher architecture:
 ## Related Papers
 
 - [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
-- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
 - [\[CVPR 2026\] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation](evlf_early_vision-language_fusion_for_generative_dataset_distillation.md)
 - [\[CVPR 2026\] UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization](unirain_unified_image_deraining_rag_dataset_distillation.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
+- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
 
 </div>
 

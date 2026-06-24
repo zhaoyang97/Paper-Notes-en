@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing Motion Through Polarity for Event-based Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the issue where existing event-text cross-modal action recognition methods stack positive and negative polarities into a single frame, thereby losing motion direction cues, POKER introduces a Polarity Motion Catcher (PMC) to explicitly decouple polarities and extract spatio-temporal motion primitives. Simult
+  [CVPR 2026][Video Understanding][Event Camera] Addressing the issue where existing event-text cross-modal action recognition methods stack positive and negative polarities into a single frame, thereby losing motion direction cues, POKER introduces a Polarity Motion Catcher (PMC) to explicitly decouple polarities and extract spatio-temporal motion primitives. Simultaneously, a Polarity Motion Reasoner (PMR) enables MLLMs to progressively reason about polarity-aware motion text…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Event Camera"
+  - "Action Recognition"
+  - "Polarity Motion"
+  - "Cross-modal Alignment"
+  - "Multimodal Large Language Models (MLLM)"
 date: 2026-05-08
-content_hash: 21b09f61c408494c
+content_hash: 60025173fedf5aa6
 ---
+
 # Seeing Motion Through Polarity for Event-based Action Recognition
 
 **Conference**: CVPR 2026  
@@ -138,16 +144,16 @@ Additional diagnostic ablations:
 - Value: ⭐⭐⭐⭐ Plug-and-play with zero inference overhead; the scaffolding paradigm for MLLMs is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] SMV-EAR: Bring Spatiotemporal Multi-View Representation Learning into Efficient Event-Based Action Recognition](smv-ear_bring_spatiotemporal_multi-view_representation_learning_into_efficient_e.md)
+- [\[CVPR 2026\] Tracking through Severe Occlusion via Event-Derived Transient Cues](tracking_through_severe_occlusion_via_event-derived_transient_cues.md)
 - [\[CVPR 2026\] DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions](darkshake-dvs_event-based_human_action_recognition_under_low-light_and_shaking_c.md)
 - [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
 - [\[CVPR 2026\] VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition](videonet_a_large-scale_dataset_for_domain-specific_action_recognition.md)
-- [\[NeurIPS 2025\] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition](../../NeurIPS2025/video_understanding/seeing_beyond_the_scene_analyzing_and_mitigating_background_bias_in_action_recog.md)
 
 </div>
 

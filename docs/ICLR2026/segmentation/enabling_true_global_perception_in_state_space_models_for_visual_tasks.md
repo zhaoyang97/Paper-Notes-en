@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Enabling True Global Perception in State Space Models for Visual Tasks
 description: >-
-  [ICLR 2026][Segmentation][State Space Model] The authors axiomatically define "image global modeling" for the first time using gradient lower bound axioms and design the GSSM module based on 2D-DFT frequency domain modulation. They theoretically prove and experimentally verify that SSMs can achieve true global perception while maintaining linear-logarithmic compl
+  [ICLR 2026][Segmentation][State Space Model] The authors axiomatically define "image global modeling" for the first time using gradient lower bound axioms and design the GSSM module based on 2D-DFT frequency domain modulation. They theoretically prove and experimentally verify that SSMs can achieve true global perception while maintaining linear-logarithmic complexity.
 tags:
-  - ICLR 2026
-  - Segmentation
-  - State Space Model
-  - Mamba
+  - "ICLR 2026"
+  - "Segmentation"
+  - "State Space Model"
+  - "Mamba"
+  - "Global Perception"
+  - "Frequency Domain Modulation"
+  - "Discrete Fourier Transform"
 date: 2026-05-08
-content_hash: e74e339db38ac268
+content_hash: b64e54463521f762
 ---
+
 # Enabling True Global Perception in State Space Models for Visual Tasks
 
 **Conference**: ICLR 2026  
@@ -141,9 +145,9 @@ Ablation studies (Table 6) show that introducing bidirectional or four-way scann
 
 - [\[CVPR 2025\] GroupMamba: Efficient Group-Based Visual State Space Model](../../CVPR2025/segmentation/groupmamba_efficient_group-based_visual_state_space_model.md)
 - [\[CVPR 2025\] DefMamba: Deformable Visual State Space Model](../../CVPR2025/segmentation/defmamba_deformable_visual_state_space_model.md)
-- [\[CVPR 2026\] MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models](../../CVPR2026/segmentation/marss_radar_semantic_segmentation_via_modular_attention_and_state_space_models.md)
+- [\[ICLR 2026\] How Well Does GPT-4o Understand Vision? Evaluating Multimodal Foundation Models on Standard Computer Vision Tasks](how_well_does_gpt-4o_understand_vision_evaluating_multimodal_foundation_models_o.md)
 - [\[CVPR 2026\] RS-SSM: Refining Forgotten Specifics in State Space Model for Video Semantic Segmentation](../../CVPR2026/segmentation/rs-ssm_refining_forgotten_specifics_in_state_space_model_for_video_semantic_segm.md)
-- [\[CVPR 2025\] Exploiting Temporal State Space Sharing for Video Semantic Segmentation](../../CVPR2025/segmentation/exploiting_temporal_state_space_sharing_for_video_semantic_segmentation.md)
+- [\[CVPR 2026\] MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models](../../CVPR2026/segmentation/marss_radar_semantic_segmentation_via_modular_attention_and_state_space_models.md)
 
 </div>
 

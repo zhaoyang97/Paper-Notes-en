@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models
 description: >-
-  [ICML 2026][Segmentation][Sinkhorn] GPUA treats VLMs like CLIP (rich semantics, insufficient local precision) and VFMs like DINOv3 (fine-grained detail, lacking semantics) as two "visual languages." It uses Optimal Transport to mine soft correspondences and solves the Orthogonal Procrustes problem to learn a geometry-preserving linear mapping that transl
+  [ICML 2026][Segmentation][Visual Foundation Models] GPUA treats VLMs like CLIP (rich semantics, insufficient local precision) and VFMs like DINOv3 (fine-grained detail, lacking semantics) as two "visual languages." It uses Optimal Transport to mine soft correspondences and solves the Orthogonal Procrustes problem to learn a geometry-preserving linear mapping that translates VFM features into the VLM space. This process is entirely unsupervised…
 tags:
-  - ICML 2026
-  - Segmentation
-  - Sinkhorn
-  - hubness
+  - "ICML 2026"
+  - "Segmentation"
+  - "Visual Foundation Models"
+  - "VFM-VLM Fusion"
+  - "Cross-lingual Alignment"
+  - "Orthogonal Procrustes"
+  - "Sinkhorn"
+  - "hubness"
 date: 2026-05-08
-content_hash: ced2c4e9dec28c8b
+content_hash: 10a9b69a61a17c54
 ---
+
 # Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models
 
 **Conference**: ICML 2026  
@@ -146,10 +151,10 @@ GPUA achieves an average gain of 11.8 points. Gains are highest in remote sensin
 
 ## Related Papers
 
-- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/gkd_generalizable_knowledge_distillation_vfm.md)
 - [\[CVPR 2026\] From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction](../../CVPR2026/segmentation/from_2d_alignment_to_3d_plausibility_unifying_heterogeneous_2d_priors_and_penetr.md)
+- [\[ICML 2026\] Unsupervised Hierarchical Skill Discovery](unsupervised_hierarchical_skill_discovery.md)
+- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/gkd_generalizable_knowledge_distillation_vfm.md)
 - [\[CVPR 2025\] Uni4D: Unifying Visual Foundation Models for 4D Modeling from a Single Video](../../CVPR2025/segmentation/uni4d_unifying_visual_foundation_models_for_4d_modeling_from_a_single_video.md)
-- [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](../../CVPR2026/segmentation/selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
 - [\[ICCV 2025\] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](../../ICCV2025/segmentation/can_generative_geospatial_diffusion_models_excel_as_discriminative_geospatial_fo.md)
 
 </div>

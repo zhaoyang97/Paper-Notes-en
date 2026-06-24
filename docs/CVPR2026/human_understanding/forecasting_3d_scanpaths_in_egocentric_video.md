@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Forecasting 3D Scanpaths in Egocentric Video
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper extends the task of "predicting where a person will look next" from 2D images to egocentric videos for the first time. It defines a new task of **predicting future gaze sequences (3D scanpaths) within a 3D world coordinate system** and proposes a Transformer architecture that uses the "last observed camera p
+  [CVPR 2026][Human Understanding][Egocentric video] This paper extends the task of "predicting where a person will look next" from 2D images to egocentric videos for the first time. It defines a new task of **predicting future gaze sequences (3D scanpaths) within a 3D world coordinate system** and proposes a Transformer architecture that uses the "last observed camera pose" as a canonical frame to fuse video, head pose, and historical gaze, establishing the first baseline on t…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Egocentric video"
+  - "3D scanpath prediction"
+  - "gaze prediction"
+  - "canonical frame"
+  - "cross-modal attention"
 date: 2026-05-08
-content_hash: 7a2b1b3156d42806
+content_hash: 3c49964c12e79039
 ---
+
 # Forecasting 3D Scanpaths in Egocentric Video
 
 **Conference**: CVPR 2026  
@@ -134,15 +140,15 @@ The full model leads across most metrics, significantly outperforming TPP-Gaze (
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
 - [\[CVPR 2026\] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)
-- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
 - [\[ECCV 2024\] 3D Hand Pose Estimation in Everyday Egocentric Images](../../ECCV2024/human_understanding/3d_hand_pose_estimation_in_everyday_egocentric_images.md)
-- [\[CVPR 2026\] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)
+- [\[CVPR 2026\] AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video](avatar_reinforcement_learning_to_see_hear_and_reason_over_video.md)
+- [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](unleashing_vision-language_semantics_for_deepfake_video_detection.md)
 
 </div>
 

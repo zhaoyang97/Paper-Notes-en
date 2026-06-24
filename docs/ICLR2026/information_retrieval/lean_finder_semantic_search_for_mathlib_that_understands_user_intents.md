@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Lean Finder: Semantic Search for Mathlib That Understands User Intents
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Lean/mathlib] Addressing the pain point that mathlib4 retrieval "only aligns with machine-translated informalization but fails to match real mathematician queries," Lean Finder utilizes "reverse-engineered synthetic user queries + multimodal contrastive learning + DPO preference alignment" to train a user-intent-oriented Lean semant
+  [ICLR 2026][Information Retrieval & RAG][Semantic Search] Addressing the pain point that mathlib4 retrieval "only aligns with machine-translated informalization but fails to match real mathematician queries," Lean Finder utilizes "reverse-engineered synthetic user queries + multimodal contrastive learning + DPO preference alignment" to train a user-intent-oriented Lean semantic retriever. It achieves a 30%+ improvement over existing engines and GPT-4o on real-world queries.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Lean/mathlib
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Semantic Search"
+  - "Lean/mathlib"
+  - "User Intents"
+  - "Contrastive Learning"
+  - "DPO Preference Alignment"
+  - "Code Retrieval"
 date: 2026-05-08
-content_hash: efc573c45d86d215
+content_hash: f3879d4e696777ef
 ---
+
 # Lean Finder: Semantic Search for Mathlib That Understands User Intents
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TongUI: Internet-Scale Trajectories from Multimodal Web Tutorials for Generalized GUI Agents
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] TongUI proposes a framework that automatically converts multimodal web tutorials (videos and illustrated articles) into GUI operation trajectories…
+  [AAAI 2026][LLM Agent][GUI Agent] TongUI proposes a framework that automatically converts multimodal web tutorials (videos and illustrated articles) into GUI operation trajectories, constructing the million-scale GUI-Net-1M dataset for fine-tuning Qwen2.5-VL. The resulting models surpass or approach state-of-the-art methods such as UI-TARS across multiple grounding and navigation benchmarks.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "VLM Fine-tuning"
   - "Cross-platform Generalization"
 date: 2026-05-08
-content_hash: 9044469f2daad3ab
+content_hash: 28e52226fc288aa1
 ---
 
 # TongUI: Internet-Scale Trajectories from Multimodal Web Tutorials for Generalized GUI Agents
@@ -138,7 +138,7 @@ Two-stage training: the base VLM is first fine-tuned on GUI-Net-1M, then further
 - [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](history-aware_reasoning_for_gui_agents.md)
 - [\[AAAI 2026\] Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents](co-epg_a_framework_for_co-evolution_of_planning_and_groundin.md)
 - [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
-- [\[AAAI 2026\] ProBench: Benchmarking GUI Agents with Accurate Process Information](probench_benchmarking_gui_agents_with_accurate_process_infor.md)
+- [\[AAAI 2026\] AutoGLM: Autonomous Foundation Agents for GUIs](autoglm_autonomous_foundation_agents_for_guis.md)
 
 </div>
 

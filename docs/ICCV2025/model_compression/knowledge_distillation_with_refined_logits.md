@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Knowledge Distillation with Refined Logits
 description: >-
-  [ICCV 2025][Model Compression][Knowledge Distillation] RLD refines teacher knowledge into two complementary forms — Sample Confidence and Masked Correlation — to mitigate the negative effects of teacher mispredictions wi…
+  [ICCV 2025][Model Compression][Knowledge Distillation] RLD refines teacher knowledge into two complementary forms — Sample Confidence and Masked Correlation — to mitigate the negative effects of teacher mispredictions without disrupting inter-class correlations. It consistently outperforms existing logit distillation methods on both CIFAR-100 and ImageNet.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -11,7 +11,7 @@ tags:
   - "Class Correlation"
   - "Teacher Error Correction"
 date: 2026-05-08
-content_hash: 8fcbc2397d376398
+content_hash: fbc777ace0840789
 ---
 
 # Knowledge Distillation with Refined Logits
@@ -169,11 +169,11 @@ RLD surpasses all feature and logit distillation methods on ImageNet, with large
 
 ## Related Papers
 
+- [\[ACL 2025\] Beyond Logits: Aligning Feature Dynamics for Effective Knowledge Distillation](../../ACL2025/model_compression/beyond_logits_aligning_feature_dynamics_for_effective_knowledge_distillation.md)
 - [\[ICCV 2025\] Local Dense Logit Relations for Enhanced Knowledge Distillation](local_dense_logit_relations_for_enhanced_knowledge_distillation.md)
 - [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](a_good_teacher_adapts_their_knowledge_for_distillation.md)
 - [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
 - [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
-- [\[ICCV 2025\] ACAM-KD: Adaptive and Cooperative Attention Masking for Knowledge Distillation](acam-kd_adaptive_and_cooperative_attention_masking_for_knowledge_distillation.md)
 
 </div>
 

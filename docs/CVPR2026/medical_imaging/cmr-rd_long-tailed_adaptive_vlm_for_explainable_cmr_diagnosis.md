@@ -2,13 +2,15 @@
 title: >-
   [Paper Note] CMR-RD: Long-Tailed Adaptive VLM for Explainable CMR Diagnosis
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] CMR-RD is the first vision-language model for explainable cardiac magnetic resonance (CMR) diagnosis. It establishes a foundation through "medical alignment + Chain-of-Thought (CoT) cold start," then actively strengthens rare disease categories using GPPO—a multi-phase reinforcement learning algorithm with Thompson sam
+  [CVPR 2026][Medical Imaging][CMR Diagnosis / Long-tailed VLM / Reinforcement Learning Post-training / Thompson Sampling / Lesion Grounding] CMR-RD is the first vision-language model for explainable cardiac magnetic resonance (CMR) diagnosis. It establishes a foundation through "medical alignment + Chain-of-Thought (CoT) cold start," then actively strengthens rare disease categories using GPPO—a multi-phase reinforcement learning algorithm with Thompson sampling for dynamic qu…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "CMR Diagnosis / Long-tailed VLM / Reinforcement Learning Post-training / Thompson Sampling / Lesion Grounding"
 date: 2026-05-08
-content_hash: c0401d73efa8664d
+content_hash: 938cb6939307b130
 ---
+
 # CMR-RD: Long-Tailed Adaptive VLM for Explainable CMR Diagnosis
 
 **Conference**: CVPR 2026  
@@ -134,8 +136,8 @@ Key finding: Baselines largely failed on the two rare categories—**all compari
 
 ## Related Papers
 
+- [\[CVPR 2026\] Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning](med-cmr_a_fine-grained_benchmark_integrating_visual_evidence_and_clinical_logic_.md)
 - [\[CVPR 2026\] Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis](clinically-grounded_counterfactual_reasoning_for_medical_video_diagnosis.md)
-- [\[ICCV 2025\] GEMeX: A Large-Scale, Groundable, and Explainable Medical VQA Benchmark for Chest X-ray Diagnosis](../../ICCV2025/medical_imaging/gemex_a_large-scale_groundable_and_explainable_medical_vqa_benchmark_for_chest_x.md)
 - [\[CVPR 2026\] MedTVT-R1: A Multimodal LLM Empowering Medical Reasoning and Diagnosis](medtvt-r1_a_multimodal_llm_empowering_medical_reasoning_and_diagnosis.md)
 - [\[CVPR 2026\] EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease](emad_evidence-centric_grounded_multimodal_diagnosis_for_alzheimers_disease.md)
 - [\[CVPR 2026\] X-PCR: A Benchmark for Cross-modality Progressive Clinical Reasoning in Ophthalmic Diagnosis](x-pcr_a_benchmark_for_cross-modality_progressive_clinical_reasoning_in_ophthalmi.md)

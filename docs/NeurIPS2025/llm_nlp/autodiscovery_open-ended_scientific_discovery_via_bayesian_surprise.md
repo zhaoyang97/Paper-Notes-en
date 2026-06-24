@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise
 description: >-
-  [NeurIPS 2025][LLM/NLP][Bayesian Surprise] AutoDiscovery proposes Bayesian Surprise as an objective reward signal for open-ended scientific discovery — estimating the KL divergence between prior and posterior belief dist…
+  [NeurIPS 2025][LLM (Other)][Bayesian Surprise] AutoDiscovery proposes Bayesian Surprise as an objective reward signal for open-ended scientific discovery — estimating the KL divergence between prior and posterior belief distributions via LLM sampling, combined with MCTS and progressive widening to explore the hypothesis space. On 21 real-world datasets, the method produces 5–29% more surprising discoveries than greedy/beam search baselines. Human evaluation confirms that Baye…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Bayesian Surprise"
   - "Open-ended Discovery"
   - "MCTS"
   - "Hypothesis Generation"
   - "LLM Agent"
 date: 2026-05-08
-content_hash: fc1ce7c1fe924ffe
+content_hash: 06dce8b604fa1ec8
 ---
 
 # AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise
@@ -137,8 +137,8 @@ AutoDiscovery achieves the best performance on 17 out of 21 datasets.
 - [\[NeurIPS 2025\] MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery](moose-chem2_exploring_llm_limits_in_fine-grained_scientific_hypothesis_discovery.md)
 - [\[NeurIPS 2025\] Cultural Alien Sampler: Open-ended Art Generation Balancing Originality and Coherence](cultural_alien_sampler_open-ended_art_generation_balancing_originality_and_coher.md)
 - [\[NeurIPS 2025\] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)
-- [\[NeurIPS 2025\] SYMPHONY: Synergistic Multi-agent Planning with Heterogeneous Language Model Assemblies](symphony_synergistic_multi-agent_planning_with_heterogeneous_language_model_asse.md)
-- [\[NeurIPS 2025\] Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search](wider_or_deeper_scaling_llm_inference-time_compute_with_adaptive_branching_tree_.md)
+- [\[ACL 2025\] Enough Coin Flips Can Make LLMs Act Bayesian](../../ACL2025/llm_nlp/coin_flips_bayesian.md)
+- [\[ACL 2025\] Enhancing the Comprehensibility of Text Explanations via Unsupervised Concept Discovery](../../ACL2025/llm_nlp/enhancing_the_comprehensibility_of_text_explanations_via_unsupervised_concept_di.md)
 
 </div>
 

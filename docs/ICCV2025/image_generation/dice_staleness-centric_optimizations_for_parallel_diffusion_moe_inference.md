@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference
 description: >-
-  [ICCV 2025][Image Generation][MoE] DICE is a framework targeting the *staleness* problem in parallel inference of MoE-based diffusion models. Through three levels of optimization — step-level interweaved parallelism…
+  [ICCV 2025][Image Generation][MoE] DICE is a framework targeting the *staleness* problem in parallel inference of MoE-based diffusion models. Through three levels of optimization — step-level interweaved parallelism, layer-level selective synchronization, and token-level conditional communication — DICE achieves a 1.26× speedup on DiT-MoE with negligible quality degradation.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Staleness Optimization"
   - "Communication Optimization"
 date: 2026-05-08
-content_hash: 35c318a40cf26f95
+content_hash: 645be4f9e326916a
 ---
 
 # DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference
@@ -44,11 +44,11 @@ DICE optimizes staleness at three granularities — step-level, layer-level, and
 1. **Interweaved Parallelism** — Step-Level Optimization:
 
    Conventional displaced parallelism incurs 2-step staleness (dispatch: 1 step + combine: 1 step). Interweaved parallelism restructures the scheduling of communication and computation to achieve:
-   - Asynchronous dispatch completing within the current step during interleaved execution (0-step delay)
-   - The next combine operation initiated while processing expert outputs
-   - Combine results becoming available in the next step (1-step delay)
+    - Asynchronous dispatch completing within the current step during interleaved execution (0-step delay)
+    - The next combine operation initiated while processing expert outputs
+    - Combine results becoming available in the next step (1-step delay)
 
-   $$\text{Staleness}_{\text{interweaved}} = \underbrace{0}_{\text{dispatch}} + \underbrace{1}_{\text{combine}} = 1\text{-step}$$
+    $\text{Staleness}_{\text{interweaved}} = \underbrace{0}_{\text{dispatch}} + \underbrace{1}_{\text{combine}} = 1\text{-step}$
 
    Compared to displaced parallelism, staleness is halved, cache size is halved (only store combine results), and no additional overhead is introduced — a **free-lunch** optimization. Used alone, it improves FID from 8.27 to 6.97.
 
@@ -62,7 +62,7 @@ DICE optimizes staleness at three granularities — step-level, layer-level, and
 
    This design leverages an intrinsic property of MoE routing: tokens with high routing scores dominate outputs through weighted summation and are thus more susceptible to staleness perturbations. Specifically, the propagation of staleness-induced activation perturbation $\Delta \mathbf{h}_i^e$ to the output is proportional to the routing score $s_i^e$:
 
-   $$\frac{\partial \|\mathbf{y}_i\|}{\partial \mathbf{h}_i^e} = \frac{s_i^e \cdot \mathbf{y}_i}{\|\mathbf{y}_i\|}$$
+    $\frac{\partial \|\mathbf{y}_i\|}{\partial \mathbf{h}_i^e} = \frac{s_i^e \cdot \mathbf{y}_i}{\|\mathbf{y}_i\|}$
 
    Therefore, high-score tokens are transmitted every step to remain fresh, while low-score tokens reuse cached values, reducing communication frequency. This strategy requires no training.
 
@@ -153,8 +153,8 @@ Speedup: DICE achieves up to 1.26× acceleration at batch size 32; DistriFusion 
 
 - [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
 - [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](inference-time_diffusion_model_distillation.md)
+- [\[CVPR 2025\] GLASS: Guided Latent Slot Diffusion for Object-Centric Learning](../../CVPR2025/image_generation/glass_guided_latent_slot_diffusion_for_object-centric_learning.md)
 - [\[NeurIPS 2025\] Accelerating Parallel Diffusion Model Serving with Residual Compression](../../NeurIPS2025/image_generation/accelerating_parallel_diffusion_model_serving_with_residual_compression.md)
-- [\[NeurIPS 2025\] GSPN-2: Efficient Parallel Sequence Modeling](../../NeurIPS2025/image_generation/gspn-2_efficient_parallel_sequence_modeling.md)
 - [\[ICCV 2025\] GenHancer: Imperfect Generative Models are Secretly Strong Vision-Centric Enhancers](genhancer_imperfect_generative_models_are_secretly_strong_vision-centric_enhance.md)
 
 </div>

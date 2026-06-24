@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] OmniSTVG: Toward Spatio-Temporal Omni-Object Video Grounding
 description: >-
-  [ICLR 2026][Video Understanding][BOSTVG] This paper extends the classic task of "Spatio-Temporal Video Grounding (STVG) grounding only a single target" to OmniSTVG—grounding **all** targets (including interacting objects) mentioned in a text query. It proposes the first large-scale benchmark BOSTVG (10,018 videos, 287 categories, 1–10 targets) and a DETR-base
+  [ICLR 2026][Video Understanding][Spatio-Temporal Video Grounding] This paper extends the classic task of "Spatio-Temporal Video Grounding (STVG) grounding only a single target" to OmniSTVG—grounding **all** targets (including interacting objects) mentioned in a text query. It proposes the first large-scale benchmark BOSTVG (10,018 videos, 287 categories, 1–10 targets) and a DETR-based method, OmniTube, which outperforms existing STVG methods adapted for this task across all m…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - BOSTVG
-  - OmniTube
-  - Transformer
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Spatio-Temporal Video Grounding"
+  - "Multi-Object Grounding"
+  - "BOSTVG"
+  - "OmniTube"
+  - "Transformer"
 date: 2026-05-08
-content_hash: fa3c96eb89e26a81
+content_hash: 8cdf6f094e043a00
 ---
+
 # OmniSTVG: Toward Spatio-Temporal Omni-Object Video Grounding
 
 **Conference**: ICLR 2026  
@@ -150,9 +153,9 @@ Temporal Decoder (Tab. 5):
 
 - [\[CVPR 2026\] OmniGround: A Comprehensive Spatio-Temporal Grounding Benchmark for Real-World Complex Scenarios](../../CVPR2026/video_understanding/omniground_a_comprehensive_spatio-temporal_grounding_benchmark_for_real-world_co.md)
 - [\[CVPR 2026\] SARL-STG: A Spatially Aware Reinforcement Learning Framework for Refining MLLMs in Spatio-Temporal Video Grounding](../../CVPR2026/video_understanding/sarl-stg_a_spatially_aware_reinforcement_learning_framework_for_refining_mllms_i.md)
+- [\[ICLR 2026\] HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding](hitea_hierarchical_temporal_alignment_for_training-free_long-video_temporal_grou.md)
 - [\[ICLR 2026\] OmniCVR: A Benchmark for Omni-Composed Video Retrieval with Vision, Audio, and Text](omnicvr_a_benchmark_for_omni-composed_video_retrieval_with_vision_audio_and_text.md)
 - [\[ICLR 2026\] Invert4TVG: A Temporal Video Grounding Framework with Inversion Tasks Preserving Action Understanding Ability](invert4tvg_a_temporal_video_grounding_framework_with_inversion_tasks_preserving_.md)
-- [\[CVPR 2026\] T2SGrid: Temporal-to-Spatial Gridification for Video Temporal Grounding](../../CVPR2026/video_understanding/t2sgrid_temporal-to-spatial_gridification_for_video_temporal_grounding.md)
 
 </div>
 

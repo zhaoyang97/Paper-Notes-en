@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective
 description: >-
-  [ICML 2026][Optimization & Theory][eNTK] This paper adopts empirical NTK (eNTK) as a unified perspective to prove that the eNTK induced by zeroth-order (ZO) SGD is equivalent to projecting the first-order (FO) eNTK onto a random subspace spanned by perturbations. Using the Johnson-Lindenstrauss (JL) Lemma, the authors explain why ZO methods remain effective f
+  [ICML 2026][Optimization][Zeroth-Order Optimization] This paper adopts empirical NTK (eNTK) as a unified perspective to prove that the eNTK induced by zeroth-order (ZO) SGD is equivalent to projecting the first-order (FO) eNTK onto a random subspace spanned by perturbations. Using the Johnson-Lindenstrauss (JL) Lemma, the authors explain why ZO methods remain effective for billion-parameter LLMs: the error depends only on the output dimension $V$ and the perturbation count $P…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - eNTK
-  - Johnson-Lindenstrauss
+  - "ICML 2026"
+  - "Optimization"
+  - "Zeroth-Order Optimization"
+  - "eNTK"
+  - "Johnson-Lindenstrauss"
+  - "Perturbation Count"
+  - "Dimension Independence"
 date: 2026-05-08
-content_hash: 4c948ada11d06ed5
+content_hash: 8606655d3eac0584
 ---
+
 # Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective
 
 **Conference**: ICML 2026  
@@ -120,9 +124,9 @@ The authors verify the theory across three settings:
 
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
 - [\[NeurIPS 2025\] Private Zeroth-Order Optimization with Public Data](../../NeurIPS2025/optimization/private_zeroth-order_optimization_with_public_data.md)
-- [\[ICML 2026\] HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation](ho-sfl_hybrid-order_split_federated_learning_with_backprop-free_clients_and_dime.md)
 - [\[ICML 2026\] Ubiquity of Emergent Hebbian Dynamics in Regularized Learning](ubiquity_of_emergent_hebbian_dynamics_in_regularized_learning.md)
-- [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
+- [\[ICML 2026\] HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation](ho-sfl_hybrid-order_split_federated_learning_with_backprop-free_clients_and_dime.md)
+- [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](../../NeurIPS2025/optimization/improving_the_straight-through_estimator_with_zeroth-order_information.md)
 
 </div>
 

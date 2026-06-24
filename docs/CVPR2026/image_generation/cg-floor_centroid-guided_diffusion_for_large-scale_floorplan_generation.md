@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CG-Floor: Centroid-Guided Diffusion for Large-Scale Floorplan Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] CG-Floor employs a "locate-then-draw" hierarchical framework for large-scale floorplan generation: first, a Graph Transformer predicts centroids and sizes of all rooms simultaneously, encoded as a "Size-Aware Semantic Centroid Heatmap" (SASCH) to anchor the global topology; then, a VQ-VAE codebook and a Vector Quantize
+  [CVPR 2026][Image Generation][Floorplan generation] CG-Floor employs a "locate-then-draw" hierarchical framework for large-scale floorplan generation: first, a Graph Transformer predicts centroids and sizes of all rooms simultaneously, encoded as a "Size-Aware Semantic Centroid Heatmap" (SASCH) to anchor the global topology; then, a VQ-VAE codebook and a Vector Quantized Diffusion Transformer draw non-Manhattan (non-rectangular) room shapes guided by the SASCH. It reduces the…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Floorplan generation"
+  - "centroid-guided diffusion"
+  - "VQ-VAE codebook"
+  - "topology-geometry decoupling"
+  - "large-scale layout"
 date: 2026-05-08
-content_hash: 7ca7957d2f8ac3e5
+content_hash: 3431df36bd4f3864
 ---
+
 # CG-Floor: Centroid-Guided Diffusion for Large-Scale Floorplan Generation
 
 **Conference**: CVPR 2026  
@@ -145,9 +151,9 @@ In the user study (Table 3), the selection rates for the proposed method in GT-S
 
 - [\[CVPR 2026\] Unified Vector Floorplan Generation via Markup Representation](unified_vector_floorplan_generation_via_markup_representation.md)
 - [\[CVPR 2026\] Pico-Banana-400K: A Large-Scale Dataset for Text-Guided Image Editing](pico-banana-400k_a_large-scale_dataset_for_text-guided_image_editing.md)
-- [\[CVPR 2026\] 4KLSDB: A Large-Scale Dataset for 4K Image Restoration and Generation](4klsdb_a_large-scale_dataset_for_4k_image_restoration_and_generation.md)
-- [\[CVPR 2026\] StyleText: A Large-Scale Dataset and Benchmark for Stylized Scene Text Inpainting](styletext_a_large-scale_dataset_and_benchmark_for_stylized_scene_text_inpainting.md)
-- [\[CVPR 2026\] Scale Space Diffusion：把尺度空间塞进扩散过程](scale_space_diffusion.md)
+- [\[CVPR 2026\] VINS-120K: Ultra High-Resolution Image Editing with A Large-Scale Dataset](vins-120k_ultra_high-resolution_image_editing_with_a_large-scale_dataset.md)
+- [\[CVPR 2026\] Scale Space Diffusion: Integrating Scale Space into the Diffusion Process](scale_space_diffusion.md)
+- [\[AAAI 2026\] HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models](../../AAAI2026/image_generation/hierarchicalprune_position-aware_compression_for_large-scale_diffusion_models.md)
 
 </div>
 

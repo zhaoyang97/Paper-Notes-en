@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Guiding Noisy Label Conditional Diffusion Models with Score-based Discriminator Correction
 description: >-
-  [ICCV 2025][Image Generation][Noisy Labels] This paper proposes Score-based Discriminator Correction (SBDC), which trains a lightweight discriminator to correct the generation trajectory of noisy-label conditional diffus…
+  [ICCV 2025][Image Generation][Noisy Labels] This paper proposes Score-based Discriminator Correction (SBDC), which trains a lightweight discriminator to correct the generation trajectory of noisy-label conditional diffusion models at inference time. The discriminator is trained by partitioning the training set into clean and corrupted subsets via noise detection, and the paper finds that applying guidance only during the early-to-middle stages of the sampling process yields o…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Conditional Diffusion Models"
   - "Score-based Correction"
 date: 2026-05-08
-content_hash: f3d23c44dffb4096
+content_hash: 575dd8fe55cc31eb
 ---
 
 # Guiding Noisy Label Conditional Diffusion Models with Score-based Discriminator Correction
@@ -155,11 +155,11 @@ SBDC comprehensively outperforms TDSM on class-conditional metrics (CW-FID, CW-D
 
 ## Related Papers
 
+- [\[ICLR 2026\] SONA: Learning Conditional, Unconditional, and Matching-Aware Discriminator](../../ICLR2026/image_generation/sona_learning_conditional_unconditional_and_matching-aware_discriminator.md)
 - [\[ICCV 2025\] UniCombine: Unified Multi-Conditional Combination with Diffusion Transformer](unicombine_unified_multi-conditional_combination_with_diffusion_transformer.md)
 - [\[NeurIPS 2025\] Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation](../../NeurIPS2025/image_generation/distilled_decoding_2_onestep_sampling_of_image_autoregressiv.md)
-- [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](../../CVPR2026/image_generation/guiding_diffusion_models_with_semantically_degraded_conditions.md)
-- [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
 - [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](balanced_image_stylization_with_style_matching_score.md)
+- [\[ICCV 2025\] HPSv3: Towards Wide-Spectrum Human Preference Score](hpsv3_towards_wide-spectrum_human_preference_score.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction
 description: >-
-  [ICLR 2026][LLM Reasoning][asynchronous inference] This paper proposes ATTS, an asynchronous test-time scaling framework based on conformal prediction. By reframing rejection sampling as a hypothesis testing process to eliminate synchronization overhead, it achieves up to 56.7x speedup and 4.14x throughput improvement on mathematical reasoning tasks such as MATH and AI
+  [ICLR 2026][Reasoning][Test-time scaling] This paper proposes ATTS, an asynchronous test-time scaling framework based on conformal prediction. By reframing rejection sampling as a hypothesis testing process to eliminate synchronization overhead, it achieves up to 56.7x speedup and 4.14x throughput improvement on mathematical reasoning tasks such as MATH and AIME without accuracy loss. A 1.5B/70B draft/target model combination reaches the AIME performance level of o3-mini (hig…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - asynchronous inference
-  - rejection sampling
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "speculative decoding"
+  - "conformal prediction"
+  - "asynchronous inference"
+  - "rejection sampling"
 date: 2026-05-08
-content_hash: 77e4779026d4a566
+content_hash: 15ddac67c8f94dd6
 ---
+
 # ATTS: Asynchronous Test-Time Scaling via Conformal Prediction
 
 **Conference**: ICLR 2026  
@@ -136,11 +140,11 @@ Ours is training-free and lossless. ATTS operates entirely at inference time, do
 
 ## Related Papers
 
-- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
-- [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
+- [\[ICLR 2026\] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling](roc-n-reroll_how_verifier_imperfection_affects_test-time_scaling.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
 - [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Mode-conditioning unlocks superior test-time compute scaling](mode-conditioning_unlocks_superior_test-time_compute_scaling.md)
 
 </div>
 

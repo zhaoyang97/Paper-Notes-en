@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs
 description: >-
-  [ICLR 2026][learning_theory][Generative Model] This paper provides the **first near minimax-optimal sample complexity upper and lower bounds for learning $\varepsilon$-optimal policies in Constrained Average-Reward MDPs (CAMDPs) under a generative model**: $\tilde O\big(SA(B+H)/\varepsilon^2\big)$ for the relaxed feasibility setting and $\tilde O\big(SA(B+H)/(\vare
+  [ICLR 2026][Learning Theory][Constrained Average-Reward MDP (CAMDP)] This paper provides the **first near minimax-optimal sample complexity upper and lower bounds for learning $\varepsilon$-optimal policies in Constrained Average-Reward MDPs (CAMDPs) under a generative model**: $\tilde O\big(SA(B+H)/\varepsilon^2\big)$ for the relaxed feasibility setting and $\tilde O\big(SA(B+H)/(\varepsilon^2\zeta^2)\big)$ for the strict feasibility setting. These results…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Generative Model
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Reinforcement Learning Theory"
+  - "Constrained Average-Reward MDP (CAMDP)"
+  - "Sample Complexity"
+  - "Generative Model"
+  - "Primal-Dual"
+  - "Minimax Lower Bound"
+  - "Slater Constant"
 date: 2026-05-08
-content_hash: 06f7dd48c72b3836
+content_hash: fd549abb11d9b247
 ---
+
 # Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs
 
 **Conference**: ICLR 2026  
@@ -102,16 +109,16 @@ Both require $\rho^{\hat\pi}_r(s)\ge\rho^\star_r(s)-\varepsilon$. $S, A$ are sta
 - **Value**: ⭐⭐⭐⭐⭐ — Unifies and extends research on AMDPs and CMDPs, providing fundamental statistical limits for long-term RL under safety/fairness constraints.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
 - [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
 - [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
-- [\[ICLR 2026\] Sampling Complexity of TD and PPO in RKHS](sampling_complexity_of_td_and_ppo_in_rkhs.md)
-- [\[ICLR 2026\] Learning Correlated Reward Models: Statistical Barriers and Opportunities](learning_correlated_reward_models_statistical_barriers_and_opportunities.md)
+- [\[ICLR 2026\] Near Optimal Robust Federated Learning Against Data Poisoning Attack](near_optimal_robust_federated_learning_against_data_poisoning_attack.md)
 
 </div>
 

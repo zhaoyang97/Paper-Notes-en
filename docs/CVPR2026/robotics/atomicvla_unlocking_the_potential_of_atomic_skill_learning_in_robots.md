@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] This paper proposes AtomicVLA, a unified planning-execution framework built upon $\pi_0$. By utilizing adaptive Think-Act switching to generate atomic skill abstractions and routing actions to specialized experts via Skill-Guided MoE (SG-MoE), it improves the LIBERO-LONG success rate from 85.2% to 95.2% (+10%), achieve
+  [CVPR 2026][Robotics][VLA] This paper proposes AtomicVLA, a unified planning-execution framework built upon $\pi_0$. By utilizing adaptive Think-Act switching to generate atomic skill abstractions and routing actions to specialized experts via Skill-Guided MoE (SG-MoE), it improves the LIBERO-LONG success rate from 85.2% to 95.2% (+10%), achieves a +18.3% Gain in real-world Franka long-horizon tasks, and increases continual learning performance by 21%.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Mixture-of-Experts
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Atomic Skills"
+  - "Mixture-of-Experts"
+  - "Continual Learning"
+  - "Task Planning"
+  - "Skill Routing"
 date: 2026-05-08
-content_hash: e03d542241ce1b8b
+content_hash: aed1530c30722a4e
 ---
+
 # AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots
 
 **Conference**: CVPR 2026  
@@ -160,9 +165,17 @@ Data for the thinking mode is generated using a two-stage pipeline. First, princ
 
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[CVPR 2026\] SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead](swiftvla_unlocking_spatiotemporal_dynamics_for_lightweight_vla_models_at_minimal.md)
+- [\[NeurIPS 2025\] Policy Compatible Skill Incremental Learning via Lazy Learning Interface](../../NeurIPS2025/robotics/policy_compatible_skill_incremental_learning_via_lazy_learning_interface.md)
+- [\[CVPR 2026\] Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots](towards_motion_turing_test_evaluating_human-likeness_in_humanoid_robots.md)
+- [\[CVPR 2026\] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent](mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag.md)
+- [\[ICCV 2025\] iManip: Skill-Incremental Learning for Robotic Manipulation](../../ICCV2025/robotics/imanip_skill-incremental_learning_for_robotic_manipulation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead](swiftvla_unlocking_spatiotemporal_dynamics_for_lightweight_vla_models_at_minimal.md)

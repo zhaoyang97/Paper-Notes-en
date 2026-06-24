@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] JRM: Joint Reconstruction Model for Multiple Objects without Alignment
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] JRM reformulates the reconstruction problem of "the same object being repeatedly observed in a scene" as **personalized generation**. By using a 3D flow-matching model to implicitly aggregate multiple unaligned observations in the latent space, it jointly reconstructs a group of objects without explicit matching or rig
+  [CVPR 2026][3D Vision][Object-centric reconstruction] JRM reformulates the reconstruction problem of "the same object being repeatedly observed in a scene" as **personalized generation**. By using a 3D flow-matching model to implicitly aggregate multiple unaligned observations in the latent space, it jointly reconstructs a group of objects without explicit matching or rigid registration. This approach is more robust to association errors and articulated deformations…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Object-centric reconstruction"
+  - "Flow-matching generation"
+  - "Repeated objects"
+  - "Implicit aggregation"
+  - "Articulated objects"
 date: 2026-05-08
-content_hash: c79a0a0d2c5eabd4
+content_hash: 2f3957c1a420140c
 ---
+
 # JRM: Joint Reconstruction Model for Multiple Objects without Alignment
 
 **Conference**: CVPR 2026  
@@ -163,11 +169,11 @@ A ratio of 0.1 provides the best compromise between aggregation capability and m
 
 ## Related Papers
 
+- [\[CVPR 2026\] 2D-LFM: Lifting Foundation Model without 3D Supervision](2d-lfm_lifting_foundation_model_without_3d_supervision.md)
 - [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
-- [\[CVPR 2026\] iLRM: An Iterative Large 3D Reconstruction Model](ilrm_an_iterative_large_3d_reconstruction_model.md)
-- [\[CVPR 2026\] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction](laser_layer-wise_scale_alignment_for_training-free_streaming_4d_reconstruction.md)
-- [\[CVPR 2026\] Inferring Compositional 4D Scenes without Ever Seeing One](inferring_compositional_4d_scenes_without_ever_seeing_one.md)
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
+- [\[CVPR 2026\] CUPID: Generative 3D Reconstruction via Joint Object and Pose Modeling](cupid_generative_3d_reconstruction_via_joint_object_and_pose_modeling.md)
+- [\[CVPR 2026\] MatMart: Material Reconstruction of 3D Objects via Diffusion](matmart_material_reconstruction_of_3d_objects_via_diffusion.md)
+- [\[CVPR 2026\] DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis](dmaligner_enhancing_image_alignment_via_diffusion_model_based_view_synthesis.md)
 
 </div>
 

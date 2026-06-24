@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Time-series classification] STaRFormer is proposed, which employs Dynamic Attention-based Regional Masking (DAReM) to identify task-critical regions and apply masking perturbation…
+  [NeurIPS 2025][Self-Supervised Learning][Time-series classification] STaRFormer is proposed, which employs Dynamic Attention-based Regional Masking (DAReM) to identify task-critical regions and apply masking perturbations, coupled with intra-batch and intra-class semi-supervised contrastive learning to embed task information into latent representations. The method comprehensively outperforms state-of-the-art baselines across 56 datasets spanning non-stationary…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "non-stationarity"
   - "irregular sampling"
 date: 2026-05-08
-content_hash: ff3adf09b9d6a07a
+content_hash: 7fe173d77573de1f
 ---
 
 # STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking
@@ -126,9 +126,9 @@ A Siamese architecture is adopted: the left branch processes the original sequen
 
 - [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
 - [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
-- [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](../../AAAI2026/self_supervised/explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
+- [\[ECCV 2024\] Self-supervised Video Copy Localization with Regional Token Representation](../../ECCV2024/self_supervised/self-supervised_video_copy_localization_with_regional_token_representation.md)
 - [\[NeurIPS 2025\] Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees](adv-ssl_adversarial_self-supervised_representation_learning_with_theoretical_gua.md)
-- [\[NeurIPS 2025\] MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark](mmtu_a_massive_multi-task_table_understanding_and_reasoning_benchmark.md)
+- [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](../../AAAI2026/self_supervised/explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
 
 </div>
 

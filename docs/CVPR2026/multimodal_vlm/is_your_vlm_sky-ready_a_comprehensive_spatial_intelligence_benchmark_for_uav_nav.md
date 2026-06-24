@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM benchmark] This work constructs the first spatial intelligence evaluation benchmark for Unmanned Aerial Vehicle (UAV) perspectives, SpatialSky-Bench (13 fine-grained tasks in 2 categories), accompanied by a 1-million-sample automatically generated training set SpatialSky-Dataset. By employing "SFT + GRPO reinforcement fine-tuning
+  [CVPR 2026][Multimodal VLM][UAV Navigation] This work constructs the first spatial intelligence evaluation benchmark for Unmanned Aerial Vehicle (UAV) perspectives, SpatialSky-Bench (13 fine-grained tasks in 2 categories), accompanied by a 1-million-sample automatically generated training set SpatialSky-Dataset. By employing "SFT + GRPO reinforcement fine-tuning," the authors develop a specialized model, Sky-VLM, which achieves an average score of 53.30…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM benchmark
-  - SFT+GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "UAV Navigation"
+  - "Spatial Intelligence"
+  - "VLM benchmark"
+  - "SFT+GRPO"
+  - "Aerial Perspective"
 date: 2026-05-08
-content_hash: 7fbf399fb324ccc5
+content_hash: 9e2e25489a727bca
 ---
+
 # Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation
 
 **Conference**: CVPR 2026  
@@ -130,8 +134,8 @@ Reward function ablation (removing rewards in GRPO): Removing **pointing reward*
 - [\[CVPR 2026\] SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence](spatialscore_towards_comprehensive_evaluation_for_spatial_intelligence.md)
 - [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](scaling_spatial_intelligence_with_multimodal_foundation_models.md)
 - [\[CVPR 2026\] SpatialTree: How Spatial Intelligence Branches Out in MLLMs](spatialtree_how_spatial_intelligence_branches_out_in_mllms.md)
-- [\[CVPR 2026\] Twin-T & TwintVQA: A Reliable Structure-Detail Separating VLM and a Comprehensive Benchmark for Chart and Table Tasks](twin-t_twintvqa_a_reliable_structure-detail_separating_vlm_and_a_comprehensive_b.md)
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
+- [\[ICLR 2026\] MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence](../../ICLR2026/multimodal_vlm/mmsi-bench_a_benchmark_for_multi-image_spatial_intelligence.md)
+- [\[ICLR 2026\] SpaCE-10: A Comprehensive Benchmark for Multimodal Large Language Models in Compositional Spatial Intelligence](../../ICLR2026/multimodal_vlm/space-10_a_comprehensive_benchmark_for_multimodal_large_language_models_in_compo.md)
 
 </div>
 

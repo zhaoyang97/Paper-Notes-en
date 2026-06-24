@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EdiVal-Agent: An Object-Centric Framework for Automated, Fine-Grained Evaluation of Multi-Turn Editing
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] EdiVal-Agent decomposes multi-turn image editing evaluation into object decomposition, object state tracking, instruction generation, and tool-assisted scoring. It utilizes three metrics—EdiVal-IF, EdiVal-CC, and EdiVal-VQ—to provide a fine-grained assessment of whether the model correctly edits targets, preserves uned
+  [ICLR 2026][Image Generation][Multi-turn image editing] EdiVal-Agent decomposes multi-turn image editing evaluation into object decomposition, object state tracking, instruction generation, and tool-assisted scoring. It utilizes three metrics—EdiVal-IF, EdiVal-CC, and EdiVal-VQ—to provide a fine-grained assessment of whether the model correctly edits targets, preserves unedited content, and maintains visual quality.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multi-turn image editing"
+  - "automated evaluation"
+  - "object-centric evaluation"
+  - "instruction following"
+  - "content consistency"
 date: 2026-05-08
-content_hash: ab235068533dfb90
+content_hash: c2c620f2483aea55
 ---
+
 # EdiVal-Agent: An Object-Centric Framework for Automated, Fine-Grained Evaluation of Multi-Turn Editing
 
 **Conference**: ICLR 2026  

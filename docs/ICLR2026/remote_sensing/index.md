@@ -44,7 +44,7 @@ item_total: 11
 
 **🔬 ICLR2026** · **11** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (57)](../../CVPR2026/remote_sensing/index.md) · [🧪 ICML2026 (3)](../../ICML2026/remote_sensing/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (63)](../../CVPR2026/remote_sensing/index.md) · [🧪 ICML2026 (3)](../../ICML2026/remote_sensing/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md) · [🧪 ICML2025 (7)](../../ICML2025/remote_sensing/index.md)
 
 🔥 **Top topics:** Remote Sensing ×4 · Multimodal/VLM ×2
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Breaking Smooth-Motion Assumptions: A UAV Benchmark for Multi-Object Tracking in Complex and Adverse Conditions
 description: >-
-  [CVPR 2026][Video Understanding][UAV-MOT] The authors propose DynUAV—a multi-object tracking benchmark (42 videos, 1.7M+ bounding boxes, 8 categories) that intentionally creates intense ego-motion through aggressive UAV maneuvers. It breaks the implicit "smooth near-linear motion" assumption of existing UAV-MOT datasets. Experiments with 11 SOTA trackers demon
+  [CVPR 2026][Video Understanding][UAV-MOT] The authors propose DynUAV—a multi-object tracking benchmark (42 videos, 1.7M+ bounding boxes, 8 categories) that intentionally creates intense ego-motion through aggressive UAV maneuvers. It breaks the implicit "smooth near-linear motion" assumption of existing UAV-MOT datasets. Experiments with 11 SOTA trackers demonstrate that existing methods' detection and association simultaneously collapse under drastic viewpoint and scale muta…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - UAV-MOT
-  - ego-motion
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "UAV-MOT"
+  - "ego-motion"
+  - "tracking benchmark"
+  - "motion blur"
+  - "trajectory fragmentation"
 date: 2026-05-08
-content_hash: e213b200099c68cf
+content_hash: 463e77a35e1f4884
 ---
+
 # Breaking Smooth-Motion Assumptions: A UAV Benchmark for Multi-Object Tracking in Complex and Adverse Conditions
 
 **Conference**: CVPR 2026  

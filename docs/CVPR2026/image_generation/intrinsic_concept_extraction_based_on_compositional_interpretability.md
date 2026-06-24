@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Intrinsic Concept Extraction Based on Compositional Interpretability
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] HyperExpress proposes the new task of Compositional Interpretability Intrinsic Concept Extraction (CI-ICE), leveraging the hierarchical modeling capabilities of hyperbolic space and a horosphere projection module to extract composable object-level and attribute-level concepts from a single image, achieving reversible d
+  [CVPR 2026][Image Generation][Concept Extraction] HyperExpress proposes the new task of Compositional Interpretability Intrinsic Concept Extraction (CI-ICE), leveraging the hierarchical modeling capabilities of hyperbolic space and a horosphere projection module to extract composable object-level and attribute-level concepts from a single image, achieving reversible decomposition of complex visual concepts.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Extraction"
+  - "Hyperbolic Space"
+  - "Compositional Interpretability"
+  - "Diffusion Models"
+  - "Concept Disentanglement"
 date: 2026-05-08
-content_hash: 51a84dd450f71ab2
+content_hash: 92f5f16392bab6dd
 ---
+
 # Intrinsic Concept Extraction Based on Compositional Interpretability
 
 **Conference**: CVPR 2026  
@@ -150,9 +155,9 @@ The total loss is a weighted sum ($\lambda$) of four components: the diffusion m
 
 - [\[CVPR 2025\] ICE: Intrinsic Concept Extraction from a Single Image via Diffusion Models](../../CVPR2025/image_generation/ice_intrinsic_concept_extraction_from_a_single_image_via_diffusion_models.md)
 - [\[CVPR 2026\] LumiX: Structured and Coherent Text-to-Intrinsic Generation](lumix_structured_and_coherent_text-to-intrinsic_generation.md)
+- [\[CVPR 2026\] ShadowDraw: From Any Object to Shadow-Drawing Compositional Art](shadowdraw_from_any_object_to_shadow-drawing_compositional_art.md)
 - [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](closed-form_concept_erasure_via_double_projections.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration](beyond_text_prompts_precise_concept_erasure_through_text-image_collaboration.md)
 
 </div>
 

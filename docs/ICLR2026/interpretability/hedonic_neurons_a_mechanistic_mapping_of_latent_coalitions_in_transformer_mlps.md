@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Hedonic Neurons: A Mechanistic Mapping of Latent Coalitions in Transformer MLPs
 description: >-
-  [ICLR 2026][Interpretability][hedonic game] By treating neurons in Transformer MLPs as "rational players" in a cooperative game, this work employs hedonic games and the PAC-Top-Cover algorithm to identify neuron coalitions where "joint ablation effects superimpose non-linearly." This reveals how LoRA fine-tuning encodes task features within synergistic neuron gr
+  [ICLR 2026][Interpretability][hedonic game] By treating neurons in Transformer MLPs as "rational players" in a cooperative game, this work employs hedonic games and the PAC-Top-Cover algorithm to identify neuron coalitions where "joint ablation effects superimpose non-linearly." This reveals how LoRA fine-tuning encodes task features within synergistic neuron groups.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - hedonic game
-  - neuron coalition
-  - PAC-stable
-  - LoRA
-  - MLP
-  - synergy
+  - "ICLR 2026"
+  - "Interpretability"
+  - "hedonic game"
+  - "neuron coalition"
+  - "PAC-stable"
+  - "LoRA"
+  - "MLP"
+  - "synergy"
+  - "mechanistic interpretability"
 date: 2026-05-08
-content_hash: 200de5315e24670f
+content_hash: 0e59b9a29d9f936d
 ---
+
 # Hedonic Neurons: A Mechanistic Mapping of Latent Coalitions in Transformer MLPs
 
 **Conference**: ICLR 2026  
@@ -124,7 +126,7 @@ Using coalitions as macro-features, PAS achieves 2–3× the OOD $R^2$ of cluste
 - [\[NeurIPS 2025\] Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models](../../NeurIPS2025/interpretability/bigram_subnetworks_mapping_to_next_tokens_in_transformer_language_models.md)
 - [\[ICLR 2026\] Latent Thinking Optimization: Your Latent Reasoning Language Model Secretly Encodes Reward Signals in Its Latent Thoughts](latent_thinking_optimization_your_latent_reasoning_language_model_secretly_encod.md)
 - [\[ICLR 2026\] Latent Planning Emerges with Scale](latent_planning_emerges_with_scale.md)
-- [\[ICLR 2026\] Noise Stability of Transformer Models](noise_stability_of_transformer_models.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 
 </div>
 

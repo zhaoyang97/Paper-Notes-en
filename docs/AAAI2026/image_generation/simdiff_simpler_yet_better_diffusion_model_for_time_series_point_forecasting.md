@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SimDiff: Simpler Yet Better Diffusion Model for Time Series Point Forecasting
 description: >-
-  [AAAI 2026][Image Generation][Time Series Forecasting] This paper proposes SimDiff — the first purely end-to-end diffusion model to achieve state-of-the-art performance on time series point forecasting. A unified Transfo…
+  [AAAI 2026][Image Generation][Time Series Forecasting] This paper proposes SimDiff — the first purely end-to-end diffusion model to achieve state-of-the-art performance on time series point forecasting. A unified Transformer network serves simultaneously as denoiser and predictor. Combined with Normalization Independence for distribution shift handling and a Median-of-Means ensemble strategy that converts probabilistic samples into precise point predictions…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Median-of-Means"
   - "End-to-End"
 date: 2026-05-08
-content_hash: 8a7807d7dee02af9
+content_hash: f139bfb0a0a28765
 ---
 
 # SimDiff: Simpler Yet Better Diffusion Model for Time Series Point Forecasting

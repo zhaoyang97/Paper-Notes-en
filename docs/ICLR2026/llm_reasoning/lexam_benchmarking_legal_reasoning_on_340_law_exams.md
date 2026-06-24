@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LEXam: Benchmarking Legal Reasoning on 340 Law Exams
 description: >-
-  [ICLR 2026][LLM Reasoning][LLM-as-a-Judge] LEXam organizes 340 real law school exams from the University of Zurich into 7,537 English-German bilingual questions (open-ended + multiple-choice). It evaluates not just the final answer but also the multi-step legal reasoning process using an expert-calibrated ensemble LLM judge, revealing that current SOTA models s
+  [ICLR 2026][Reasoning][Legal reasoning] LEXam organizes 340 real law school exams from the University of Zurich into 7,537 English-German bilingual questions (open-ended + multiple-choice). It evaluates not just the final answer but also the multi-step legal reasoning process using an expert-calibrated ensemble LLM judge, revealing that current SOTA models still fail significantly in structured legal reasoning.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - LLM-as-a-Judge
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Legal reasoning"
+  - "Benchmarking"
+  - "Long-form QA"
+  - "Multilingual"
+  - "LLM-as-a-Judge"
+  - "Process-based evaluation"
 date: 2026-05-08
-content_hash: f29fda87f2db438c
+content_hash: e117d330b3ec45ad
 ---
+
 # LEXam: Benchmarking Legal Reasoning on 340 Law Exams
 
 **Conference**: ICLR 2026  
@@ -120,10 +126,17 @@ LEXam follows LegalBench, LawBench, and LBOX by shifting focus from "result corr
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication](../../ACL2026/llm_reasoning/accurate_legal_reasoning_at_scale_neuro-symbolic_offloading_and_structural_audit.md)
+- [\[ICLR 2026\] VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs](visiomath_benchmarking_figure-based_mathematical_reasoning_in_lmms.md)
+- [\[ICLR 2026\] GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs](geogrambench_benchmarking_the_geometric_program_reasoning_in_modern_llms.md)
+- [\[ICLR 2026\] FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning](faithcot-bench_benchmarking_instance-level_faithfulness_of_chain-of-thought_reas.md)
+- [\[ICLR 2026\] USTBench: Benchmarking and Dissecting Spatiotemporal Reasoning Capabilities of LLMs as Urban Agents](ustbench_benchmarking_and_dissecting_spatiotemporal_reasoning_capabilities_of_ll.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs](visiomath_benchmarking_figure-based_mathematical_reasoning_in_lmms.md)

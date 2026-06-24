@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ProtSAE: Disentangling and Interpreting Protein Language Models via Semantically-Guided Sparse Autoencoders
 description: >-
-  [AAAI 2026][Computational Biology][Protein language models] This paper proposes ProtSAE, which incorporates semantic annotations and domain ontology knowledge as guidance signals during sparse autoencoder training to add…
+  [AAAI 2026][Computational Biology][Protein language models] This paper proposes ProtSAE, which incorporates semantic annotations and domain ontology knowledge as guidance signals during sparse autoencoder training to address the semantic entanglement problem of conventional SAEs. The method aligns latent features of protein language models with biological concepts (molecular function, biological process, ion binding sites, etc.) with high precision…
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -13,7 +13,7 @@ tags:
   - "feature disentanglement"
   - "ontology embeddings"
 date: 2026-05-08
-content_hash: fddde8573bf652e5
+content_hash: 331f04dc1a9b7429
 ---
 
 # ProtSAE: Disentangling and Interpreting Protein Language Models via Semantically-Guided Sparse Autoencoders
@@ -147,10 +147,10 @@ Ablation experiments confirm that each component is indispensable: detach is the
 ## Related Papers
 
 - [\[ICLR 2026\] Controlling Repetition in Protein Language Models](../../ICLR2026/computational_biology/controlling_repetition_in_protein_language_models.md)
-- [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](../../NeurIPS2025/computational_biology/g-dpo_scalable_preference_optimization_for_protein_language_models.md)
-- [\[ICLR 2026\] Protein as a Second Language for LLMs](../../ICLR2026/computational_biology/protein_as_a_second_language_for_llms.md)
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/computational_biology/tracing_pharmacological_knowledge_in_large_language_models.md)
-- [\[CVPR 2026\] Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation](../../CVPR2026/computational_biology/multimodal_protein_language_models_for_enzyme_kinetic_parameters_from_substrate_.md)
+- [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](../../ICLR2026/computational_biology/towards_understanding_the_shape_of_representations_in_protein_language_models.md)
+- [\[ICML 2025\] Steering Protein Language Models](../../ICML2025/computational_biology/steering_protein_language_models.md)
+- [\[ICML 2026\] Viral Proteins Reveal Geometry of Protein Language Models](../../ICML2026/computational_biology/viral_proteins_reveal_geometry_of_protein_language_models.md)
+- [\[ICLR 2026\] Flow Autoencoders are Effective Protein Tokenizers](../../ICLR2026/computational_biology/flow_autoencoders_are_effective_protein_tokenizers.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers
 description: >-
-  [ICLR 2026][Model Compression][Jumbo token] To make small-scale plain ViTs both fast and accurate, this paper replaces the original CLS token with a "Jumbo token" that is $J$ times wider than patch tokens and equips it with a cross-layer shared, dedicated wide FFN. This supplements global representation capacity with almost no added computation or memory overhea
+  [ICLR 2026][Model Compression][Efficient ViT] To make small-scale plain ViTs both fast and accurate, this paper replaces the original CLS token with a "Jumbo token" that is $J$ times wider than patch tokens and equips it with a cross-layer shared, dedicated wide FFN. This supplements global representation capacity with almost no added computation or memory overhead—achieving a 13% improvement over ViT+Registers at the ImageNet-1K Nano scale while maintaining full compatibilit…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Jumbo token
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Efficient ViT"
+  - "Jumbo token"
+  - "Asymmetric token width"
+  - "Parameter-shared FFN"
+  - "Plain ViT compatibility"
 date: 2026-05-08
-content_hash: 9822327707f8459a
+content_hash: 8e305c658f8e0209
 ---
+
 # Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers
 
 **Conference**: ICLR 2026  
@@ -131,9 +136,9 @@ Highlight: ViT-Base+Jumbo's MAE linear probe (73.0%) **matches the ViT-Large** b
 ## Related Papers
 
 - [\[ICLR 2026\] Faster Vision Transformers with Adaptive Patches](faster_vision_transformers_with_adaptive_patches.md)
-- [\[ICLR 2026\] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Language Models](wsvd_weighted_low-rank_approximation_for_fast_and_efficient_execution_of_low-pre.md)
+- [\[ICLR 2026\] Vulcan: Tailoring Compact Class-Specific Vision Transformers for Edge Intelligence](vulcan_crafting_compact_class-specific_vision_transformers_for_edge_intelligence.md)
+- [\[ICLR 2026\] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Learning Models](wsvd_weighted_low-rank_approximation_for_fast_and_efficient_execution_of_low-pre.md)
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](../../AAAI2026/model_compression/distillation_dynamics_towards_understanding_feature-based_di.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](../../CVPR2026/model_compression/binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
 - [\[AAAI 2026\] Stratified Knowledge-Density Super-Network for Scalable Vision Transformers](../../AAAI2026/model_compression/stratified_knowledge-density_super-network_for_scalable_vision_transformers.md)
 
 </div>

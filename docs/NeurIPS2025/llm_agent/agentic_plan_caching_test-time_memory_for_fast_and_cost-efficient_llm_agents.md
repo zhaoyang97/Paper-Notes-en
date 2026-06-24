@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][Agent caching] This paper proposes Agentic Plan Caching (APC), which extracts structured plan templates from agent execution logs and reuses them via keyword-matching cache hits with a small mod…
+  [NeurIPS 2025][LLM Agent][Agent caching] This paper proposes Agentic Plan Caching (APC), which extracts structured plan templates from agent execution logs and reuses them via keyword-matching cache hits with a small model for adaptation. APC reduces cost by 50.31% and latency by 27.28% on average while retaining 96.61% of accuracy-optimal performance.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "inference cost optimization"
   - "Plan-Act paradigm"
 date: 2026-05-08
-content_hash: df0cd4e915a8c9d5
+content_hash: 9fdd07ce3a86940e
 ---
 
 # Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents
@@ -135,10 +135,10 @@ Input task query → small model extracts keywords (high-level intent) → exact
 ## Related Papers
 
 - [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
+- [\[ICML 2026\] AdaMEM: Test-Time Adaptive Memory for Language Agents](../../ICML2026/llm_agent/adamem_test-time_adaptive_memory_for_language_agents.md)
 - [\[NeurIPS 2025\] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks](agenttts_large_language_model_agent_for_testtime_computeopti.md)
 - [\[NeurIPS 2025\] CAM: A Constructivist View of Agentic Memory for LLM-Based Reading Comprehension](cam_a_constructivist_view_of_agentic_memory_for_llm-based_reading_comprehension.md)
-- [\[ACL 2026\] RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents](../../ACL2026/llm_agent/recmem_recurrence-based_memory_consolidation_for_efficient_and_effective_long-ru.md)
-- [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](../../ICML2026/llm_agent/towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
+- [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](../../ICML2026/llm_agent/from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Benchmarking and Learning Multi-Dimensional Quality Evaluator for Text-to-3D Generation
 description: >-
-  [ICCV 2025][3D Vision][Text-to-3D generation] This paper introduces MATE-3D, a multi-dimensional benchmark comprising 1,280 text-to-3D models (8 prompt categories × 8 generation methods × 4 evaluation dimensions × 21 ann…
+  [ICCV 2025][3D Vision][Text-to-3D generation] This paper introduces MATE-3D, a multi-dimensional benchmark comprising 1,280 text-to-3D models (8 prompt categories × 8 generation methods × 4 evaluation dimensions × 21 annotators), and proposes HyperScore, a hypernetwork-based multi-dimensional quality evaluator that employs conditional feature fusion and adaptive quality mapping to surpass existing metrics across all evaluation dimensions.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "hypernetwork"
   - "benchmark"
 date: 2026-05-08
-content_hash: ddaac6d98ad73af4
+content_hash: 55e886df6fa3f15c
 ---
 
 # Benchmarking and Learning Multi-Dimensional Quality Evaluator for Text-to-3D Generation
@@ -138,7 +138,7 @@ AQM contributes the most substantial gains; CFF provides complementary improveme
 - [\[ICCV 2025\] Benchmarking Egocentric Visual-Inertial SLAM at City Scale](benchmarking_egocentric_visualinertial_slam_at_city_scale.md)
 - [\[ICCV 2025\] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models](mvgbench_a_comprehensive_benchmark_for_multi-view_generation_models.md)
 - [\[ICCV 2025\] Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation](advancing_text-to-3d_generation_with_linearized_lookahead_variational_score_dist.md)
-- [\[ICCV 2025\] RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text](rapverse_coherent_vocals_and_whole-body_motion_generation_from_text.md)
+- [\[CVPR 2025\] Turbo3D: Ultra-Fast Text-to-3D Generation](../../CVPR2025/3d_vision/turbo3d_ultra-fast_text-to-3d_generation.md)
 
 </div>
 

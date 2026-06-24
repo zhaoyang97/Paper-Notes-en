@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Contractive Diffusion Policies
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][score Jacobian] To address the issue where "sampler error + score estimation error" progressively accumulates/pushes actions away from data support in offline control, this paper uses contraction theory to transform "bringing adjacent denoising trajectories closer" into a differentiable penalty on the maximum eigenvalue of the score n
+  [ICLR2026][Robotics][Diffusion Policy] To address the issue where "sampler error + score estimation error" progressively accumulates/pushes actions away from data support in offline control, this paper uses contraction theory to transform "bringing adjacent denoising trajectories closer" into a differentiable penalty on the maximum eigenvalue of the score network's Jacobian. By adding only one hyperparameter and a lightweight loss term, it can be integrated into existing diff…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - score Jacobian
+  - "ICLR2026"
+  - "Robotics"
+  - "Diffusion Policy"
+  - "Contraction Theory"
+  - "Offline RL"
+  - "Imitation Learning"
+  - "score Jacobian"
 date: 2026-05-08
-content_hash: 7ce35cfd326fa27f
+content_hash: 93d558240e0459e6
 ---
+
 # Contractive Diffusion Policies
 
 **Conference**: ICLR2026  
@@ -148,10 +153,10 @@ Imitation Learning on Robomimic (success rate):
 ## Related Papers
 
 - [\[ICLR 2026\] Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies](abstracting_robot_manipulation_skills_via_mixture-of-experts_diffusion_policies.md)
+- [\[ICLR 2026\] Demystifying Robot Diffusion Policies: Action Memorization and a Simple Lookup Table Alternative](demystifying_robot_diffusion_policies_action_memorization_and_a_simple_lookup_ta.md)
 - [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](../../CVPR2026/robotics/reach_explicit_recovery_behavior_for_diffusion_policies.md)
 - [\[ICML 2026\] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](../../ICML2026/robotics/online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)
 - [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](../../ICML2026/robotics/lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
-- [\[ICLR 2026\] Difference-Aware Retrieval Policies for Imitation Learning](difference-aware_retrieval_policies_for_imitation_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uncertainty as Feature Gaps: Epistemic Uncertainty Quantification of LLMs in Contextual Question-Answering
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper derives the epistemic uncertainty of LLMs as the "feature gap between the current model's hidden states and an ideal model." In contextual QA (RAG) scenarios, this gap is approximated using three semantic features (context reliance, context comprehension, and honesty). By extracting feature directions from m
+  [ICLR 2026][Interpretability][Epistemic Uncertainty] This paper derives the epistemic uncertainty of LLMs as the "feature gap between the current model's hidden states and an ideal model." In contextual QA (RAG) scenarios, this gap is approximated using three semantic features (context reliance, context comprehension, and honesty). By extracting feature directions from minimal labeled samples and ensembling them, the method improves PRR by approximately 13–16 points across mu…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Epistemic Uncertainty"
+  - "Contextual QA"
+  - "Feature Gaps"
+  - "Linear Representation Hypothesis"
+  - "Top-down Interpretability"
 date: 2026-05-08
-content_hash: fa68242882961ff2
+content_hash: 0f1849c24f5e52e3
 ---
+
 # Uncertainty as Feature Gaps: Epistemic Uncertainty Quantification of LLMs in Contextual Question-Answering
 
 **Conference**: ICLR 2026  
@@ -159,10 +165,20 @@ Feature Direction vs. Baseline Directions (LLaMA-3.1-8B, PRR):
 - **Value**: ⭐⭐⭐⭐⭐ High practical value for RAG error detection with near-zero overhead.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification](../../ICML2026/interpretability/minimax_learning_of_interpretable_factored_stochastic_policies_from_conjoint_dat.md)
+- [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](../../ICML2026/interpretability/courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
+- [\[ICLR 2026\] Taming Polysemanticity in LLMs: Theory-Grounded Feature Recovery via Sparse Autoencoders](taming_polysemanticity_in_llms_theory-grounded_feature_recovery_via_sparse_autoe.md)
+- [\[ICML 2025\] On the Effect of Uncertainty on Layer-wise Inference Dynamics](../../ICML2025/interpretability/on_the_effect_of_uncertainty_on_layer-wise_inference_dynamics.md)
+- [\[NeurIPS 2025\] Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration](../../NeurIPS2025/interpretability/improving_perturbation-based_explanations_by_understanding_the_role_of_uncertain.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification](../../ICML2026/interpretability/minimax_learning_of_interpretable_factored_stochastic_policies_from_conjoint_dat.md)

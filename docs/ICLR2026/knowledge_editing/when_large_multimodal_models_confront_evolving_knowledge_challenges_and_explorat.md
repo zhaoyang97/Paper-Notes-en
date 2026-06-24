@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations
 description: >-
-  [ICLR 2026][Knowledge Editing][Paper Note] This paper proposes the EVOKE benchmark to systematically evaluate the knowledge injection capabilities of Large Multimodal Models (LMMs) for evolving knowledge. It reveals two primary challenges: the poor performance of existing methods and catastrophic forgetting caused by fine-tuning. Furthermore, it explores two re
+  [ICLR 2026][Knowledge Editing][Large Multimodal Models] This paper proposes the EVOKE benchmark to systematically evaluate the knowledge injection capabilities of Large Multimodal Models (LMMs) for evolving knowledge. It reveals two primary challenges: the poor performance of existing methods and catastrophic forgetting caused by fine-tuning. Furthermore, it explores two response paths: knowledge augmentation and continual learning.
 tags:
-  - ICLR 2026
-  - Knowledge Editing
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "Large Multimodal Models"
+  - "Knowledge Injection"
+  - "Evolving Knowledge"
+  - "Catastrophic Forgetting"
+  - "Continual Learning"
 date: 2026-05-08
-content_hash: 5f1d5337c16ec2cc
+content_hash: a69855f6bec1e771
 ---
+
 # When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations
 
 **Conference**: ICLR 2026  
@@ -155,6 +161,7 @@ All methods achieve a maximum of only 56.13% accuracy, significantly below ideal
 *   Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -163,7 +170,7 @@ All methods achieve a maximum of only 56.13% accuracy, significantly below ideal
 - [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](../../ACL2026/knowledge_editing/evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
 - [\[AAAI 2026\] Hybrid-DMKG: A Hybrid Reasoning Framework over Dynamic Multimodal Knowledge Graphs for Multimodal Multihop QA with Knowledge Editing](../../AAAI2026/knowledge_editing/hybrid-dmkg_a_hybrid_reasoning_framework_over_dynamic_multimodal_knowledge_graph.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICLR 2026\] Disentangling Knowledge Representations for Large Language Model Editing](disentangling_knowledge_representations_for_large_language_model_editing.md)
+- [\[ACL 2026\] Can Factual Opinions Be Edited (Manipulated) in Large Language Models?](../../ACL2026/knowledge_editing/can_factual_opinions_be_edited_manipulated_in_large_language_models.md)
 
 </div>
 

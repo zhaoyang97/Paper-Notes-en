@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks
 description: >-
-  [CVPR 2026][Video Understanding][Spike-driven Transformer] This paper proposes SDTrack, the first fully Spiking Neural Network (SNN) based Transformer pipeline for event tracking. By utilizing Global Trajectory Prompt (GTP), asynchronous event streams are aggregated into 3-channel event frames rich in trajectory information. A full spike-driven SNN Transformer tracker, featuri
+  [CVPR 2026][Video Understanding][Event Camera] This paper proposes SDTrack, the first fully Spiking Neural Network (SNN) based Transformer pipeline for event tracking. By utilizing Global Trajectory Prompt (GTP), asynchronous event streams are aggregated into 3-channel event frames rich in trajectory information. A full spike-driven SNN Transformer tracker, featuring Intrinsic Position Learning (IPL), predicts target boxes end-to-end. SDTrack achieves competitive or SOTA accu…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Spike-driven Transformer
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Event Camera"
+  - "Single Object Tracking"
+  - "Spiking Neural Networks"
+  - "Spike-driven Transformer"
+  - "Event Aggregation"
 date: 2026-05-08
-content_hash: 97ba236e0ec3de20
+content_hash: 9590e7c1de061c6e
 ---
+
 # SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks
 
 **Conference**: CVPR 2026  
@@ -142,9 +147,9 @@ SDTrack-Tiny on FE108:
 
 - [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
 - [\[CVPR 2026\] Event6D: Event-based Novel Object 6D Pose Tracking](event6d_event-based_novel_object_6d_pose_tracking.md)
-- [\[CVPR 2026\] DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions](darkshake-dvs_event-based_human_action_recognition_under_low-light_and_shaking_c.md)
-- [\[CVPR 2026\] TAPFormer: Robust Arbitrary Point Tracking via Transient Asynchronous Fusion of Frames and Events](ttapformer_robust_arbitrary_point_tracking_via_transient_asynchronous_fusion_of_.md)
+- [\[CVPR 2026\] Tracking through Severe Occlusion via Event-Derived Transient Cues](tracking_through_severe_occlusion_via_event-derived_transient_cues.md)
 - [\[CVPR 2026\] MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras](mer-tracker_towards_high-speed_3d_point_tracking_via_multi-view_event-rgb_hybrid.md)
+- [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
 
 </div>
 

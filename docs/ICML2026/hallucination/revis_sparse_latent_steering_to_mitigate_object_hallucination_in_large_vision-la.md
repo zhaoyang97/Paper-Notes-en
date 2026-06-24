@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] This paper redefines LVLM hallucination as "missing visual information suppressed by language priors." It uses orthogonal projection to extract a "pure visual vector" by stripping language priors from the raw visual direction. Then, via a risk-gating mechanism, it performs sparse intervention on a single layer at the o
+  [ICML 2026][Hallucination Detection][Object Hallucinations] This paper redefines LVLM hallucination as "missing visual information suppressed by language priors." It uses orthogonal projection to extract a "pure visual vector" by stripping language priors from the raw visual direction. Then, via a risk-gating mechanism, it performs sparse intervention on a single layer at the optimal depth. This training-free approach reduces the CHAIRS hallucination rate by ~19% while preser…
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Object Hallucinations"
+  - "Latent Steering"
+  - "Orthogonal Projection"
+  - "Sparse Intervention"
+  - "Mechanistic Interpretability"
 date: 2026-05-08
-content_hash: 7f72cbb297ec6cec
+content_hash: 9c34d23d39cee2ac
 ---
+
 # Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models
 
 **Conference**: ICML 2026  
@@ -139,8 +145,8 @@ Completely training-free. The two hyperparameters $\alpha$ (intensity) and $k$ (
 - [\[ICML 2026\] Adaptive Residual-Update Steering for Low-Overhead Hallucination Mitigation in Large Vision Language Models](adaptive_residual-update_steering_for_low-overhead_hallucination_mitigation_in_l.md)
 - [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](../../CVPR2026/hallucination/first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
-- [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
 - [\[ACL 2025\] Retrieval Visual Contrastive Decoding to Mitigate Object Hallucinations in Large Vision-Language Models](../../ACL2025/hallucination/retrieval_visual_contrastive_decoding_to_mitigate_object_hallucinations_in_large.md)
+- [\[ICML 2026\] Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models](instruction_lens_score_your_instruction_contributes_a_powerful_object_hallucinat.md)
 
 </div>
 

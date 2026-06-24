@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MatLat: Material Latent Space for PBR Texture Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MatLat learns a "Material Latent Space" (MatVAE) by fine-tuning a pretrained VAE to accommodate five channels (albedo/roughness/metallic) while **minimizing deviation from the original latent distribution**. Combined with "Correspondence-Aware Attention + Locality Regularization" to ensure multi-view consistency, it ge
+  [CVPR 2026][3D Vision][PBR Texture Generation] MatLat learns a "Material Latent Space" (MatVAE) by fine-tuning a pretrained VAE to accommodate five channels (albedo/roughness/metallic) while **minimizing deviation from the original latent distribution**. Combined with "Correspondence-Aware Attention + Locality Regularization" to ensure multi-view consistency, it generates high-quality, relightable PBR textures for given 3D meshes.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "PBR Texture Generation"
+  - "Material Latent Space"
+  - "VAE Fine-tuning"
+  - "Correspondence-Aware Attention"
+  - "Locality Regularization"
 date: 2026-05-08
-content_hash: 59545c8175982f84
+content_hash: 419e457e4ddc9583
 ---
+
 # MatLat: Material Latent Space for PBR Texture Generation
 
 **Conference**: CVPR 2026  
@@ -129,10 +135,10 @@ MatLat significantly outperforms baselines in shaded/albedo FID (~50% improvemen
 ## Related Papers
 
 - [\[CVPR 2026\] NaTex: Seamless Texture Generation as Latent Color Diffusion](natex_seamless_texture_generation_as_latent_color_diffusion.md)
-- [\[ICCV 2025\] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion](../../ICCV2025/3d_vision/materialmvp_illumination-invariant_material_generation_via_multi-view_pbr_diffus.md)
-- [\[CVPR 2026\] CaliTex: Geometry-Calibrated Attention for View-Coherent 3D Texture Generation](calitex_geometry-calibrated_attention_for_view-coherent_3d_texture_generation.md)
-- [\[ICCV 2025\] SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates](../../ICCV2025/3d_vision/supermat_physically_consistent_pbr_material_estimation_at_interactive_rates.md)
-- [\[CVPR 2026\] Material Magic Wand: Material-Aware Grouping of 3D Parts in Untextured Meshes](material_magic_wand_material-aware_grouping_of_3d_parts_in_untextured_meshes.md)
+- [\[CVPR 2026\] TEXTRIX: Latent Attribute Grid for Native Texture Generation and Beyond](textrix_latent_attribute_grid_for_native_texture_generation_and_beyond.md)
+- [\[ICLR 2026\] LumiTex: Towards High-Fidelity PBR Texture Generation with Illumination Context](../../ICLR2026/3d_vision/lumitex_towards_high-fidelity_pbr_texture_generation_with_illumination_context.md)
+- [\[CVPR 2026\] 3D-LATTE: Latent Space 3D Editing from Textual Instructions](3d-latte_latent_space_3d_editing_from_textual_instructions.md)
+- [\[CVPR 2026\] NI-Tex: Non-isometric Image-based Garment Texture Generation](ni-tex_non-isometric_image-based_garment_texture_generation.md)
 
 </div>
 

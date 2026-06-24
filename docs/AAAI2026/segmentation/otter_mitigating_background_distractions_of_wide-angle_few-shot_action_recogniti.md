@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Otter: Mitigating Background Distractions of Wide-Angle Few-Shot Action Recognition with Enhanced RWKV
 description: >-
-  [AAAI 2026][Segmentation][few-shot action recognition] To address background distraction in few-shot action recognition (FSAR) for wide-angle videos — where subjects occupy a small portion of the frame and temporal relat…
+  [AAAI 2026 Oral][Segmentation][few-shot action recognition] To address background distraction in few-shot action recognition (FSAR) for wide-angle videos — where subjects occupy a small portion of the frame and temporal relationships degrade — this paper proposes Otter, an enhanced RWKV-based framework. It introduces a Compound Segmentation Module (CSM) for subject highlighting and a Temporal Reconstruction Module (TRM) for recovering temporal relationships…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Segmentation"
   - "few-shot action recognition"
   - "wide-angle video"
@@ -12,7 +12,7 @@ tags:
   - "background distraction"
   - "temporal reconstruction"
 date: 2026-05-08
-content_hash: 86f043c1292a1f32
+content_hash: 7d5fd1499f3efa62
 ---
 
 # Otter: Mitigating Background Distractions of Wide-Angle Few-Shot Action Recognition with Enhanced RWKV
@@ -125,11 +125,11 @@ Compared to state-of-the-art methods including MoLo (CVPR'23), SOAP (MM'24), and
 
 ## Related Papers
 
+- [\[ICLR 2026\] Object-Centric Refinement for Enhanced Zero-Shot Segmentation](../../ICLR2026/segmentation/object-centric_refinement_for_enhanced_zero-shot_segmentation.md)
 - [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
+- [\[CVPR 2026\] Bayesian Decomposition and Semantic Completion for Few-shot Semantic Segmentation](../../CVPR2026/segmentation/bayesian_decomposition_and_semantic_completion_for_few-shot_semantic_segmentatio.md)
+- [\[ECCV 2024\] Eliminating Feature Ambiguity for Few-Shot Segmentation](../../ECCV2024/segmentation/eliminating_feature_ambiguity_for_few-shot_segmentation.md)
 - [\[ICCV 2025\] Object-level Correlation for Few-Shot Segmentation](../../ICCV2025/segmentation/object-level_correlation_for_few-shot_segmentation.md)
-- [\[AAAI 2026\] From Attribution to Action: Jointly ALIGNing Predictions and Explanations](from_attribution_to_action_jointly_aligning_predictions_and_explanations.md)
-- [\[ICCV 2025\] MOVE: Motion-Guided Few-Shot Video Object Segmentation](../../ICCV2025/segmentation/move_motion-guided_few-shot_video_object_segmentation.md)
-- [\[NeurIPS 2025\] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation](../../NeurIPS2025/segmentation/sansa_unleashing_the_hidden_semantics_in_sam2_for_few-shot_segmentation.md)
 
 </div>
 

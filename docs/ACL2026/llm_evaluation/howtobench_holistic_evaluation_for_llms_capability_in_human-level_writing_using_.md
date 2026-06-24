@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HoWToBench: Holistic Evaluation for LLM's Capability in Human-level Writing using Tree of Writing
 description: >-
-  [ACL 2026][LLM Evaluation][Tree-of-Writing] This paper identifies that LLM-as-a-judge exhibits "negotiation inconsistency" in long-form open-ended writing—where sub-score aggregation is unstable and uninterpretable. It proposes Tree-of-Writing (ToW), which explicitly models writing evaluation as a tree pipeline consisting of three main nodes (Content / Format /
+  [ACL 2026][LLM Evaluation][Tree-of-Writing] This paper identifies that LLM-as-a-judge exhibits "negotiation inconsistency" in long-form open-ended writing—where sub-score aggregation is unstable and uninterpretable. It proposes Tree-of-Writing (ToW), which explicitly models writing evaluation as a tree pipeline consisting of three main nodes (Content / Format / Impression), leaf nodes, and an explicit LLM-negotiator for weights. On HoWToBench (1…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Tree-of-Writing
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Tree-of-Writing"
+  - "Writing Evaluation"
+  - "negotiation bias"
+  - "length paradox"
+  - "robustness"
 date: 2026-05-08
-content_hash: 29f775d590a447f5
+content_hash: 56f4d8c2ccec59b3
 ---
+
 # HoWToBench: Holistic Evaluation for LLM's Capability in Human-level Writing using Tree of Writing
 
 **Conference**: ACL 2026  
@@ -147,10 +152,10 @@ The ToW framework is training-free; all LLM calls are implemented via prompt eng
 ## Related Papers
 
 - [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](reward_modeling_for_scientific_writing_evaluation.md)
-- [\[ACL 2026\] AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking](agenteval_dag-structured_step-level_evaluation_for_agentic_workflows_with_error_.md)
+- [\[ICLR 2026\] JQBench: A Benchmark for Reading and Writing JSON from Natural Language and/or Examples](../../ICLR2026/llm_evaluation/jqbench_a_benchmark_for_reading_and_editing_json_from_natural_language_andor_exa.md)
 - [\[ACL 2026\] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns](humanllm_benchmarking_and_improving_llm_anthropomorphism_via_human_cognitive_pat.md)
+- [\[ACL 2026\] AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking](agenteval_dag-structured_step-level_evaluation_for_agentic_workflows_with_error_.md)
 - [\[ACL 2026\] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics](evaluating_legal_reasoning_traces_with_legal_issue_tree_rubrics.md)
-- [\[ICML 2026\] From Human-Level AI Tales to AI Leveling Human Scales](../../ICML2026/llm_evaluation/from_human-level_ai_tales_to_ai_leveling_human_scales.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] SeedVR2 compresses a multi-step diffusion-based video restoration model into a one-step generator via diffusion adversarial post-training. It utilizes adaptive window attention, progressive distillation, and discriminator feature matching loss to support high-resolution video restoration, achieving perceptual quality c
+  [ICLR2026][Image Restoration][One-step video restoration] SeedVR2 compresses a multi-step diffusion-based video restoration model into a one-step generator via diffusion adversarial post-training. It utilizes adaptive window attention, progressive distillation, and discriminator feature matching loss to support high-resolution video restoration, achieving perceptual quality comparable to or better than multi-step models in a single inference step.
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR2026"
+  - "Image Restoration"
+  - "One-step video restoration"
+  - "Diffusion model acceleration"
+  - "Adversarial post-training"
+  - "Adaptive window attention"
+  - "Video super-resolution"
 date: 2026-05-08
-content_hash: 25e2ad44f8df3bc4
+content_hash: 309fe1cfb18544a4
 ---
+
 # SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training
 
 **Conference**: ICLR2026  
@@ -142,13 +148,14 @@ User studies (with Ours-7B as baseline) showed that Ours-3B-1 is preferred for i
 - Value: ⭐⭐⭐⭐⭐ High practical value for real-world deployment of generative video restoration.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution](improved_adversarial_diffusion_compression_for_real-world_video_super-resolution.md)
-- [\[ICLR 2026\] Vivid-VR: Distilling Concepts from Text-to-Video Diffusion Transformer for Photorealistic Video Restoration](vivid-vr_distilling_concepts_from_text-to-video_diffusion_transformer_for_photor.md)
 - [\[ICLR 2026\] One-Step Flow for Image Super-Resolution with Tunable Fidelity-Realism Trade-offs](one-step_flow_for_image_super-resolution_with_tunable_fidelity-realism_trade-off.md)
+- [\[ICLR 2026\] Vivid-VR: Distilling Concepts from Text-to-Video Diffusion Transformer for Photorealistic Video Restoration](vivid-vr_distilling_concepts_from_text-to-video_diffusion_transformer_for_photor.md)
 - [\[ICLR 2026\] Analyzing the Training Dynamics of Image Restoration Transformers: A Revisit to Layer Normalization](analyzing_the_training_dynamics_of_image_restoration_transformers_a_revisit_to_l.md)
 - [\[ICLR 2026\] DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation](diffusionblocks_block-wise_neural_network_training_via_diffusion_interpretation.md)
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Object-Centric Latent Action Learning
 description: >-
-  [AAAI 2026][Robotics][object-centric representation] This paper proposes an object-centric latent action learning framework that leverages self-supervised object decomposition (VideoSAUR) to disentangle task-relevant ent…
+  [AAAI 2026 Oral][Robotics][object-centric representation] This paper proposes an object-centric latent action learning framework that leverages self-supervised object decomposition (VideoSAUR) to disentangle task-relevant entities from visual distractions (e.g., dynamic backgrounds), reducing the performance degradation of LAPO on distracted videos by approximately 50%. A linear action probe is used to automatically select control-relevant slots.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Robotics"
   - "object-centric representation"
   - "latent action learning"
@@ -12,7 +12,7 @@ tags:
   - "imitation learning"
   - "self-supervised learning"
 date: 2026-05-08
-content_hash: 678f95f2e745b541
+content_hash: 4701e8b786e97af6
 ---
 
 # Object-Centric Latent Action Learning
@@ -149,11 +149,11 @@ Definition: Recovery ratio $= \frac{\text{LAPO-slots/masks} - \text{LAPO}}{\text
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency](../../CVPR2026/robotics/learning_a_unified_latent_action_space_from_videos_with_action-centric_cycle_con.md)
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](../../NeurIPS2025/robotics/learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[AAAI 2026\] Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search](human-centric_open-future_task_discovery_formulation_benchmark_and_scalable_tree.md)
-- [\[AAAI 2026\] PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory](panonav_mapless_zero-shot_object_navigation_with_panoramic_scene_parsing_and_dyn.md)
-- [\[AAAI 2026\] UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories](urbannav_learning_language-guided_urban_navigation_from_web-scale_human_trajecto.md)
 - [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](../../ICML2026/robotics/latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
+- [\[CVPR 2025\] A Data-Centric Revisit of Pre-Trained Vision Models for Robot Learning](../../CVPR2025/robotics/a_data-centric_revisit_of_pre-trained_vision_models_for_robot_learning.md)
+- [\[CVPR 2026\] Motus: A Unified Latent Action World Model](../../CVPR2026/robotics/motus_a_unified_latent_action_world_model.md)
 
 </div>
 

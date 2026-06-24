@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EmoThinker: Advancing Visual-Acoustic Emotion Analysis via Structural Token Selection and Chain-of-Thought Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] EmoThinker transforms visual-acoustic emotion analysis from "implicit fusion" to "explicit step-by-step reasoning": the visual end uses structural token selection to separate facial focal regions from text-conditioned backgrounds, while the audio end utilizes text-guided attention to refine paralinguistic features. Com
+  [CVPR 2026][VLM Reasoning][Multi-modal Emotion Analysis] EmoThinker transforms visual-acoustic emotion analysis from "implicit fusion" to "explicit step-by-step reasoning": the visual end uses structural token selection to separate facial focal regions from text-conditioned backgrounds, while the audio end utilizes text-guided attention to refine paralinguistic features. Combined with the first CoET dataset featuring step-by-step reasoning chains for LoRA post-training…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multi-modal Emotion Analysis"
+  - "Structural Token Selection"
+  - "Chain-of-Emotion-Thought"
+  - "Visual-Acoustic Alignment"
+  - "Cross-modal Reasoning"
 date: 2026-05-08
-content_hash: 4a67861a7c8bc2d6
+content_hash: 14fcb1279fe113d7
 ---
+
 # EmoThinker: Advancing Visual-Acoustic Emotion Analysis via Structural Token Selection and Chain-of-Thought Reasoning
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Comparison of background token selection strategies (DFEW WAR / MELD w-F1):
 ## Related Papers
 
 - [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] Chain-of-Frames: Advancing Video Understanding in Multimodal LLMs via Frame-Aware Reasoning](chain-of-frames_advancing_video_understanding_in_multimodal_llms_via_frame-aware.md)
-- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
 - [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
-- [\[CVPR 2026\] FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection](focusui_efficient_ui_grounding_via_position-preserving_visual_token_selection.md)
 
 </div>
 

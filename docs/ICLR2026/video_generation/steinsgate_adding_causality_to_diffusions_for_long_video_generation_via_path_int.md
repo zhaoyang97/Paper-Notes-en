@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SteinsGate: 用路径积分为扩散模型注入因果性以生成长视频
+  [Paper Note] SteinsGate: Injecting Causality into Diffusion Models with Path Integral for Long Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] This paper proposes the InstructVC framework and its inference-time instance, SteinsGate. It uses an MLLM to decompose long prompts into "action-duration" sequences for fine-grained temporal control and introduces a novel **Video Path Integral** to transform pre-trained TI2V diffusion models into "history-aware" autore
+  [ICLR 2026][Video Generation][Long Video Generation] This paper proposes the InstructVC framework and its inference-time instance, SteinsGate. It uses an MLLM to decompose long prompts into "action-duration" sequences for fine-grained temporal control and introduces a novel **Video Path Integral** to transform pre-trained TI2V diffusion models into "history-aware" autoregressive continuation models at inference time, generating coherent long videos with natural transitions ac…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Long Video Generation"
+  - "Temporal Causality"
+  - "Path Integral"
+  - "Autoregressive Video Continuation"
+  - "Guidance at Inference Time"
 date: 2026-05-08
-content_hash: f44cddab4bcb9e29
+content_hash: 1b9637885c2115b3
 ---
+
 # SteinsGate: Injecting Causality into Diffusion Models with Path Integral for Long Video Generation
 
 **Conference**: ICLR 2026  
@@ -128,11 +134,11 @@ SteinsGate, as a **training-free inference-time** method, achieves CSCV and Moti
 
 ## Related Papers
 
-- [\[ICLR 2026\] Stable Video Infinity：用「误差回收」实现无限长视频生成](stable_video_infinity_infinite-length_video_generation_with_error_recycling.md)
-- [\[ICLR 2026\] NarrLV: Towards a Comprehensive Narrative-Centric Evaluation for Long Video Generation](narrlv_towards_a_comprehensive_narrative-centric_evaluation_for_long_video_gener.md)
+- [\[ICLR 2026\] Uniform Discrete Diffusion with Metric Path for Video Generation](uniform_discrete_diffusion_with_metric_path_for_video_generation.md)
 - [\[ICLR 2026\] Mixture of Contexts for Long Video Generation](mixture_of_contexts_for_long_video_generation.md)
+- [\[ICLR 2026\] NarrLV: Towards a Comprehensive Narrative-Centric Evaluation for Long Video Generation](narrlv_towards_a_comprehensive_narrative-centric_evaluation_for_long_video_gener.md)
 - [\[ICLR 2026\] LongLive: Real-time Interactive Long Video Generation](longlive_real-time_interactive_long_video_generation.md)
-- [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
+- [\[ICLR 2026\] Animating the Uncaptured: Humanoid Mesh Animation with Video Diffusion Models](animating_the_uncaptured_humanoid_mesh_animation_with_video_diffusion_models.md)
 
 </div>
 

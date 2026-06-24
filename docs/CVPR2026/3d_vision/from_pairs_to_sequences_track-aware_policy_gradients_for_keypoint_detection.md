@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Pairs to Sequences: Track-Aware Policy Gradients for Keypoint Detection
 description: >-
-  [CVPR 2026][3D Vision][Reinforcement Learning] Shift keypoint detection from the "image pair matching" paradigm to "sequence-level trackability optimization" using the reinforcement learning framework TraqPoint to directly optimize the long-term tracking quality of keypoints over image sequences. It surpasses SOTA in pose estimation, visual localization, visual odo
+  [CVPR 2026][3D Vision][Keypoint detection] Shift keypoint detection from the "image pair matching" paradigm to "sequence-level trackability optimization" using the reinforcement learning framework TraqPoint to directly optimize the long-term tracking quality of keypoints over image sequences. It surpasses SOTA in pose estimation, visual localization, visual odometry, and 3D reconstruction.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Keypoint detection"
+  - "Reinforcement learning"
+  - "Long-term trackability"
+  - "Sequential decision making"
+  - "Feature matching"
 date: 2026-05-08
-content_hash: b8a0b3000fc3e086
+content_hash: 0356e49a041873bd
 ---
+
 # From Pairs to Sequences: Track-Aware Policy Gradients for Keypoint Detection
 
 **Conference**: CVPR 2026  
@@ -148,14 +153,13 @@ $$\mathcal{L}(\theta) = -\mathcal{R}(\mathcal{A}) \cdot \left(\frac{1}{N} \sum_{
 
 - [\[CVPR 2026\] EV-CGNet: Co-visible Focused 3D-guided 2D Event Keypoint Detection Network](ev-cgnet_co-visible_focused_3d-guided_2d_event_keypoint_detection_network.md)
 - [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
+- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] Write Where It Matters: Policy-Guided Watermarks for 3D Gaussian Splatting](write_where_it_matters_policy-guided_watermarks_for_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
-- [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] EV-CGNet: Co-visible Focused 3D-guided 2D Event Keypoint Detection Network](ev-cgnet_co-visible_focused_3d-guided_2d_event_keypoint_detection_network.md)

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] NeuralOS: Towards Simulating Operating Systems via Neural Generative Models
 description: >-
-  [ICLR 2026][Image Generation][operating system simulation] Ours proposes NeuralOS, a dual-component architecture utilizing an RNN for state tracking and a diffusion renderer to predict operating system GUI frame sequences directly from user input events (mouse movement/clicks/keyboard), achieving the first end-to-end simulation of an operating system via neural generative mode
+  [ICLR 2026][Image Generation][operating system simulation] Ours proposes NeuralOS, a dual-component architecture utilizing an RNN for state tracking and a diffusion renderer to predict operating system GUI frame sequences directly from user input events (mouse movement/clicks/keyboard), achieving the first end-to-end simulation of an operating system via neural generative models.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - operating system simulation
-  - world model
-  - diffusion rendering
-  - GUI generation
-  - interactive systems
+  - "ICLR 2026"
+  - "Image Generation"
+  - "operating system simulation"
+  - "world model"
+  - "diffusion rendering"
+  - "GUI generation"
+  - "interactive systems"
 date: 2026-05-08
-content_hash: 450ef94e62f23f23
+content_hash: 84fe519410d6b041
 ---
+
 # NeuralOS: Towards Simulating Operating Systems via Neural Generative Models
 
 **Conference**: ICLR 2026  
@@ -167,11 +168,11 @@ In short clips, humans perform only slightly better than random guessing.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models](../../NeurIPS2025/image_generation/accuquant_simulating_multiple_denoising_steps_for_quantizing.md)
 - [\[ICLR 2026\] PixNerd: Pixel Neural Field Diffusion](pixnerd_pixel_neural_field_diffusion.md)
+- [\[ICLR 2026\] Amortising Inference and Meta-Learning Priors in Neural Networks (BNNP)](amortising_inference_and_meta-learning_priors_in_neural_networks.md)
+- [\[NeurIPS 2025\] AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models](../../NeurIPS2025/image_generation/accuquant_simulating_multiple_denoising_steps_for_quantizing.md)
 - [\[ACL 2025\] Planning with Diffusion Models for Target-Oriented Dialogue Systems](../../ACL2025/image_generation/difftod_diffusion_dialogue_planning.md)
-- [\[ICLR 2026\] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance](mitigating_noise_shift_in_denoising_generative_models_with_noise_awareness_guida.md)
-- [\[NeurIPS 2025\] Neural Entropy](../../NeurIPS2025/image_generation/neural_entropy.md)
+- [\[ICLR 2026\] DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting](doflow_flow-based_generative_models_for_interventional_and_counterfactual_foreca.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Weak LLMs Speak with Confidence, Preference Alignment Gets Stronger
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] Using a weak LLM of less than 0.5B parameters as a preference annotator and weighting the preference optimization target per sample based on its "confidence" (CW-PO) allows the method to surpass DPO trained with 100% human labels on multiple datasets using only 20%~30% of human annotations. It is compatible with variou
+  [ICLR 2026][LLM Alignment][Preference Alignment] Using a weak LLM of less than 0.5B parameters as a preference annotator and weighting the preference optimization target per sample based on its "confidence" (CW-PO) allows the method to surpass DPO trained with 100% human labels on multiple datasets using only 20%~30% of human annotations. It is compatible with various objectives such as DPO, IPO, and rDPO.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference Alignment"
+  - "Weak Model Labeling"
+  - "Confidence Weighting"
+  - "DPO"
+  - "Weak-to-Strong Alignment"
 date: 2026-05-08
-content_hash: 09d0d4ea52b2c7c5
+content_hash: 2063b7bc86bf961c
 ---
+
 # When Weak LLMs Speak with Confidence, Preference Alignment Gets Stronger
 
 **Conference**: ICLR 2026  

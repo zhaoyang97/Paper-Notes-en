@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing What's Wrong: A Trajectory-Guided Approach to Caption Error Detection
 description: >-
-  [ICLR 2026][Hallucination Detection][Interpretability] This paper proposes TRACED: instead of judging caption correctness via a single image-text similarity score, it iteratively edits the caption to maximize alignment, generating a "caption trajectory." Features derived from the improvement magnitude and semantic shifts of this trajectory are used to train a classifier. T
+  [ICLR 2026][Hallucination Detection][Caption error detection] This paper proposes TRACED: instead of judging caption correctness via a single image-text similarity score, it iteratively edits the caption to maximize alignment, generating a "caption trajectory." Features derived from the improvement magnitude and semantic shifts of this trajectory are used to train a classifier. TRACED improves detection accuracy by up to 2.8% on MS COCO, Flickr30k, and MM-IMDb…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - Interpretability
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Caption error detection"
+  - "image-text alignment"
+  - "trajectory features"
+  - "data cleaning"
+  - "interpretability"
 date: 2026-05-08
-content_hash: 72367e3d924aa1a3
+content_hash: 5af83e1bbde75210
 ---
+
 # Seeing What's Wrong: A Trajectory-Guided Approach to Caption Error Detection
 
 **Conference**: ICLR 2026  
@@ -139,15 +144,16 @@ Efficiency: TRACED is highly parallelizable. Using Elim with BLIP(ITM), 1 millio
 - Value: ⭐⭐⭐⭐ Plug-and-play capability with interpretable outputs makes it highly practical for large-scale multimodal data cleaning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Ground What You See: Hallucination-Resistant MLLMs via Caption Feedback, Diversity-Aware Sampling, and Conflict Regularization](../../AAAI2026/hallucination/ground_what_you_see_hallucination-resistant_mllms_via_caption_feedback_diversity.md)
+- [\[ICLR 2026\] AFTER: Mitigating Object Hallucinations in LVLMs with Adaptive Fact-guided Activation Editing](after_mitigating_the_object_hallucination_of_lvlm_via_adaptive_factual-guided_ac.md)
 - [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
 - [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](enhancing_hallucination_detection_through_noise_injection.md)
-- [\[ICLR 2026\] Learning to Reason for Hallucination Span Detection](learning_to_reason_for_hallucination_span_detection.md)
-- [\[ICLR 2026\] Neural Message-Passing on Attention Graphs for Hallucination Detection](neural_message-passing_on_attention_graphs_for_hallucination_detection.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
 
 </div>
 

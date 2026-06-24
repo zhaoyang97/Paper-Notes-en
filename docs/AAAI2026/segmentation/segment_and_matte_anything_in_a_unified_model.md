@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Segment and Matte Anything in a Unified Model (SAMA)
 description: >-
-  [AAAI 2026][Segmentation][SAM Extension] This paper proposes SAMA — a lightweight extension of SAM that introduces a Multi-View Local Encoder (MVLE) to capture fine-grained local features…
+  [AAAI 2026][Segmentation][SAM Extension] This paper proposes SAMA — a lightweight extension of SAM that introduces a Multi-View Local Encoder (MVLE) to capture fine-grained local features, a Local-Adapter to inject local details into the decoding process, and dual task-specific prediction heads. With only a 1.8% parameter increase, SAMA achieves high-quality interactive segmentation and alpha matting simultaneously within a unified model, reaching state-of-the-art performance…
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "Interactive Segmentation"
   - "Alpha Matting"
 date: 2026-05-08
-content_hash: 7d8e981bebd62695
+content_hash: 09113dbc8fce6c58
 ---
 
 # Segment and Matte Anything in a Unified Model (SAMA)
@@ -146,8 +146,8 @@ Comparison with trimap-based and trimap-free methods on Composition-1K and Disti
 - [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
 - [\[AAAI 2026\] Segment Anything Across Shots: A Method and Benchmark](segment_anything_across_shots_a_method_and_benchmark.md)
 - [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
-- [\[ICCV 2025\] OmniSAM: Omnidirectional Segment Anything Model for UDA in Panoramic Semantic Segmentation](../../ICCV2025/segmentation/omnisam_omnidirectional_segment_anything_model_for_uda_in_panoramic_semantic_seg.md)
-- [\[ICML 2026\] Segment Anything with Robust Uncertainty-Accuracy Correlation](../../ICML2026/segmentation/segment_anything_with_robust_uncertainty-accuracy_correlation.md)
+- [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](../../ICLR2026/segmentation/sam_3_segment_anything_with_concepts.md)
+- [\[CVPR 2026\] Attack for Defense: Adversarial Agents for Point Prompt Optimization Empowering Segment Anything Model](../../CVPR2026/segmentation/attack_for_defense_adversarial_agents_for_point_prompt_optimization_empowering_s.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Protein Fold Classification at Scale: Benchmarking and Pretraining
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] The authors constructed TEDBench, an unprecedentedly large (approx. 490k entries, 965 classes) and non-redundant protein fold classification benchmark based on AlphaFold structures clustered via TED + Foldseek. They further proposed MiAE, an SE(3)-invariant Masked Autoencoder. Utilizing an extreme masking rate of 90% a
+  [ICML 2026 Spotlight][Computational Biology][Protein fold classification] The authors constructed TEDBench, an unprecedentedly large (approx. 490k entries, 965 classes) and non-redundant protein fold classification benchmark based on AlphaFold structures clustered via TED + Foldseek. They further proposed MiAE, an SE(3)-invariant Masked Autoencoder. Utilizing an extreme masking rate of 90% and an asymmetric architecture with a heavy encoder and light decoder…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026 Spotlight"
+  - "Computational Biology"
+  - "Protein fold classification"
+  - "Large-scale benchmark"
+  - "Masked Autoencoder"
+  - "SE(3) invariant"
+  - "Self-supervised pretraining"
 date: 2026-05-08
-content_hash: 79202bc01988240f
+content_hash: 2abe7fd11fbe9e27
 ---
+
 # Protein Fold Classification at Scale: Benchmarking and Pretraining
 
 **Conference**: ICML 2026 Spotlight  
@@ -145,9 +151,9 @@ flowchart TD
 
 - [\[AAAI 2026\] Investigating Data Pruning for Pretraining Biological Foundation Models at Scale](../../AAAI2026/computational_biology/investigating_data_pruning_for_pretraining_biological_foundation_models_at_scale.md)
 - [\[ICML 2025\] Protein Structure Tokenization: Benchmarking and New Recipe](../../ICML2025/computational_biology/protein_structure_tokenization_benchmarking_and_new_recipe.md)
-- [\[ICML 2026\] Learning the Neighborhood: Contrast-Free Multimodal Self-Supervised Molecular Graph Pretraining](learning_the_neighborhood_contrast-free_multimodal_self-supervised_molecular_gra.md)
-- [\[ICLR 2026\] PoinnCARE: Hyperbolic Multi-Modal Learning for Enzyme Classification](../../ICLR2026/computational_biology/poinncare_hyperbolic_multi-modal_learning_for_enzyme_classification.md)
-- [\[ICLR 2026\] HeurekaBench: A Benchmarking Framework for AI Co-scientist](../../ICLR2026/computational_biology/heurekabench_a_benchmarking_framework_for_ai_co-scientist.md)
+- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](../../ICLR2026/computational_biology/flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
+- [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](../../ICLR2026/computational_biology/animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
+- [\[ICLR 2026\] Fast Proteome-Scale Protein Interaction Retrieval via Residue-Level Factorization](../../ICLR2026/computational_biology/fast_proteome-scale_protein_interaction_retrieval_via_residue-level_factorizatio.md)
 
 </div>
 

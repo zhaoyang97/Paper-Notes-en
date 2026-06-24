@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Data packing] This paper proposes Hierarchical Balance Packing (HBP), which addresses attention computation imbalance and communication waste in mixed long/short-context SFT through multi-l…
+  [NeurIPS 2025][LLM Efficiency][Data packing] This paper proposes Hierarchical Balance Packing (HBP), which addresses attention computation imbalance and communication waste in mixed long/short-context SFT through multi-level packing groups, balanced batching, adaptive sequence parallelism, and stable loss normalization. HBP achieves a 2.4× training speedup on DeepSeek-V2 (236B) without performance degradation.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "attention balancing"
   - "curriculum learning"
 date: 2026-05-08
-content_hash: b9a0fd58678eec92
+content_hash: 703492fc541b5c09
 ---
 
 # Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM
@@ -142,10 +142,10 @@ Core distinction: HBP is the first to extend the packing length from a single fi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
-- [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection](../../ICLR2026/llm_efficiency/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_selection.md)
+- [\[ICLR 2026\] Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning](../../ICLR2026/llm_efficiency/difficultydiversity_collaborative_filtering_for_data-efficient_llm_fine-tuning.md)
 - [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
 - [\[NeurIPS 2025\] Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context](technical_debt_in_in-context_learning_diminishing_efficiency_in_long_context.md)
-- [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](../../ICML2026/llm_efficiency/remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
+- [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](../../ICLR2026/llm_efficiency/explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
 
 </div>
 

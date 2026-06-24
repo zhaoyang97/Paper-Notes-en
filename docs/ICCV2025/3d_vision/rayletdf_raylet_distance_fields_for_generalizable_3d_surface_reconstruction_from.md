@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians
 description: >-
-  [ICCV 2025][3D Vision][Raylet Distance Field] This paper proposes RayletDF, a generalizable 3D surface reconstruction method based on a "raylet" (ray segment) distance field. Through three modules — a raylet feature extr…
+  [ICCV 2025][3D Vision][Raylet Distance Field] This paper proposes RayletDF, a generalizable 3D surface reconstruction method based on a "raylet" (ray segment) distance field. Through three modules — a raylet feature extractor, a distance field predictor, and a multi-raylet mixer — RayletDF directly predicts surface points from point clouds or 3D Gaussians, achieving high-accuracy cross-dataset generalization via a single forward pass on unseen datasets.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3DGS"
   - "Generalization"
 date: 2026-05-08
-content_hash: e749d2dc5de5efb0
+content_hash: 57f98707bd332cce
 ---
 
 # RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians
@@ -131,7 +131,7 @@ $$D = \sum_{t=1}^T \hat{s}_{l_t}\left(\|\mathbf{p}_{cam} - \mathbf{p}_{l_t}\| + 
 - [\[ICCV 2025\] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting](surfacesplat_connecting_surface_reconstruction_and_gaussian_splatting.md)
 - [\[ICCV 2025\] SVG-Head: Hybrid Surface-Volumetric Gaussians for High-Fidelity Head Reconstruction and Real-Time Editing](svg-head_hybrid_surface-volumetric_gaussians_for_high-fidelity_head_reconstructi.md)
 - [\[NeurIPS 2025\] AtlasGS: Atlanta-world Guided Surface Reconstruction with Implicit Structured Gaussians](../../NeurIPS2025/3d_vision/atlasgs_atlanta-world_guided_surface_reconstruction_with_implicit_structured_gau.md)
-- [\[CVPR 2026\] Distilling Unsigned Distance Function for Surface Reconstruction from 3D Gaussian Splatting](../../CVPR2026/3d_vision/distilling_unsigned_distance_function_for_surface_reconstruction_from_3d_gaussia.md)
+- [\[ECCV 2024\] Implicit Filtering for Learning Neural Signed Distance Functions from 3D Point Clouds](../../ECCV2024/3d_vision/implicit_filtering_for_learning_neural_signed_distance_functions_from_3d_point_c.md)
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
 
 </div>

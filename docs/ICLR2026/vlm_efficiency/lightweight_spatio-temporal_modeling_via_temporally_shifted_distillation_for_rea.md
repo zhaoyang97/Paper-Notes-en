@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Lightweight Spatio-Temporal Modeling via Temporally Shifted Distillation for Real-Time Accident Anticipation
 description: >-
-  [ICLR 2026][vlm_efficiency][Knowledge Distillation] Using a **frozen image-only CLIP teacher + temporally shifted distillation**, a lightweight RepMixer+RWKV student learns "predictive" temporal capabilities without large-scale video pre-training. It achieves SOTA on the DAD/CCD accident anticipation benchmarks while being 3–7× smaller than competitors and running at 80
+  [ICLR 2026][Multimodal Efficiency][Accident Anticipation] Using a **frozen image-only CLIP teacher + temporally shifted distillation**, a lightweight RepMixer+RWKV student learns "predictive" temporal capabilities without large-scale video pre-training. It achieves SOTA on the DAD/CCD accident anticipation benchmarks while being 3–7× smaller than competitors and running at 80 FPS on Jetson Orin Nano.
 tags:
-  - ICLR 2026
-  - vlm_efficiency
-  - Knowledge Distillation
-  - RWKV
-  - MobileCLIP
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Accident Anticipation"
+  - "Knowledge Distillation"
+  - "RWKV"
+  - "Spatio-temporal Modeling"
+  - "Edge Deployment"
+  - "MobileCLIP"
 date: 2026-05-08
-content_hash: d4ed6c7bf5c1fa01
+content_hash: 2b155ccf63199f63
 ---
+
 # Lightweight Spatio-Temporal Modeling via Temporally Shifted Distillation for Real-Time Accident Anticipation
 
 **Conference**: ICLR 2026  
@@ -121,15 +125,13 @@ On DAD, with 26M parameters (7× smaller than DAA-GNN, 8.3× smaller than CCAF-N
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models](../../CVPR2026/vlm_efficiency/lift_and_place_a_simple_stable_and_effective_knowledge_distillation_framework_fo.md)
 - [\[ICML 2026\] Gated Relational Alignment via Confidence-based Distillation for Efficient VLMs](../../ICML2026/vlm_efficiency/gated_relational_alignment_via_confidence-based_distillation_for_efficient_vlms.md)
+- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](../../ICCV2025/vlm_efficiency/matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
 - [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](../../CVPR2026/vlm_efficiency/curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
 - [\[ICLR 2026\] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding](enhancing_visual_token_representations_for_video_large_language_models_via_train.md)
-- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](../../CVPR2026/vlm_efficiency/httm_head-wise_temporal_token_merging_for_faster_vggt.md)
 
 </div>
 

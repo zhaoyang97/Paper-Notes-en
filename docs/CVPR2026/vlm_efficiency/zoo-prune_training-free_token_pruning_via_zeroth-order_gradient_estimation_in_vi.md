@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] ZOO-Prune utilizes "zeroth-order gradient estimation" on a lightweight projection layer to measure the "sensitivity" of each visual token. By multiplying sensitivity with feature diversity into a hybrid score for greedy selection, it achieves completely training-free pruning of up to 94.4% of visual tokens, reaching a
+  [CVPR 2026][Multimodal Efficiency][Visual token pruning] ZOO-Prune utilizes "zeroth-order gradient estimation" on a lightweight projection layer to measure the "sensitivity" of each visual token. By multiplying sensitivity with feature diversity into a hybrid score for greedy selection, it achieves completely training-free pruning of up to 94.4% of visual tokens, reaching a 2.30× end-to-end inference speedup with negligible accuracy loss.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token pruning"
+  - "Zeroth-order gradient estimation"
+  - "Training-free"
+  - "VLM inference acceleration"
+  - "Sensitivity"
 date: 2026-05-08
-content_hash: 488529733cc60059
+content_hash: a9c8d1f74fcf9067
 ---
+
 # ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Ablation of selection criteria on LLaVA-NeXT-7B (640 tokens retained, 77.8% prun
 
 ## Related Papers
 
-- [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
-- [\[AAAI 2026\] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models](../../AAAI2026/multimodal_vlm/branch_or_layer_zeroth-order_optimization_for_continual_lear.md)
-- [\[ICML 2026\] CLIP Tricks You: Training-free Token Pruning for Efficient Pixel Grounding in Large Vision-Language Models](../../ICML2026/multimodal_vlm/clip_tricks_you_training-free_token_pruning_for_efficient_pixel_grounding_in_lar.md)
-- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](../../ICLR2026/multimodal_vlm/ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
-- [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
+- [\[CVPR 2026\] Hi-Lo Prune: Look at What You'll Lose before Pruning with Hierarchical Token Selection](hi-lo_prune_look_at_what_youll_lose_before_pruning_with_hierarchical_token_selec.md)
+- [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[ICML 2026\] CLIP Tricks You: Training-free Token Pruning for Efficient Pixel Grounding in Large Vision-Language Models](../../ICML2026/vlm_efficiency/clip_tricks_you_training-free_token_pruning_for_efficient_pixel_grounding_in_lar.md)
 
 </div>
 

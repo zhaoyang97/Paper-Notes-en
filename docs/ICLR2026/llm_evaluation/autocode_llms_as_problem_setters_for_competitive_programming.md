@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AutoCode: LLMs as Problem Setters for Competitive Programming
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] AutoCode utilizes a "Validator-Generator-Checker(-Interactor)" closed-loop multi-agent framework to enable LLMs to generate test data for existing competitive problems with ~99% official verdict consistency. Furthermore, starting from seed problems, it automatically generates new problems recognized by Grandmasters as
+  [ICLR 2026][LLM Evaluation][Competitive Programming] AutoCode utilizes a "Validator-Generator-Checker(-Interactor)" closed-loop multi-agent framework to enable LLMs to generate test data for existing competitive problems with ~99% official verdict consistency. Furthermore, starting from seed problems, it automatically generates new problems recognized by Grandmasters as competition-level through "Reference vs. Brute-force" dual verification.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Competitive Programming"
+  - "Test Case Generation"
+  - "Problem Generation"
+  - "RLVR Verifier"
+  - "Consistency Evaluation"
 date: 2026-05-08
-content_hash: b6e0dfd3be0303fb
+content_hash: be92d8bdb23d7c5a
 ---
+
 # AutoCode: LLMs as Problem Setters for Competitive Programming
 
 **Conference**: ICLR 2026  
@@ -120,8 +126,8 @@ Prompt optimization is most critical (FNR doubles to 2.9% without it). The three
 - [\[ACL 2025\] ELABORATION: A Comprehensive Benchmark on Human-LLM Competitive Programming](../../ACL2025/llm_evaluation/elaboration_competitive_programming.md)
 - [\[ICLR 2026\] How Many Code and Test Cases Are Enough? Evaluating Test Cases Generation from a Binary-Matrix Perspective](how_many_code_and_test_cases_are_enough_evaluating_test_cases_generation_from_a_.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
+- [\[ICLR 2026\] Are LLMs Really Not Knowledgeable? Mining the Submerged Knowledge in LLMs' Memory](are_llms_really_not_knowledgeable_mining_the_submerged_knowledge_in_llms_memory.md)
 - [\[ICLR 2026\] Benchmarking Overton Pluralism in LLMs](benchmarking_overton_pluralism_in_llms.md)
-- [\[ICLR 2026\] LLMs Get Lost In Multi-Turn Conversation](llms_get_lost_in_multi-turn_conversation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AudioX: A Unified Framework for Anything-to-Audio Generation
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] AudioX utilizes a unified framework based on a Diffusion Transformer (DiT), integrated with a lightweight "Multimodal Adaptive Fusion (MAF)" module and a self-constructed 7-million-sample multimodal dataset, IF-caps. This allows a single set of model weights to generate high-fidelity sound effects and music from arbitr
+  [ICLR2026][Audio & Speech][Anything-to-Audio Generation] AudioX utilizes a unified framework based on a Diffusion Transformer (DiT), integrated with a lightweight "Multimodal Adaptive Fusion (MAF)" module and a self-constructed 7-million-sample multimodal dataset, IF-caps. This allows a single set of model weights to generate high-fidelity sound effects and music from arbitrary combinations of text, video, and audio, significantly outperforming specialized models in fine-grai…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Anything-to-Audio Generation"
+  - "Multimodal Fusion"
+  - "Diffusion Transformer"
+  - "Instruction Following"
+  - "Data Construction"
 date: 2026-05-08
-content_hash: d5beecc2844b77b0
+content_hash: a1a5e77895ca8fd3
 ---
+
 # AudioX: A Unified Framework for Anything-to-Audio Generation
 
 **Conference**: ICLR2026  

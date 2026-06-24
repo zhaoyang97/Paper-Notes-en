@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NeuroPath: Neurobiology-Inspired Path Tracking and Reflection for Semantically Coherent Retrieval
 description: >-
-  [NeurIPS 2025][Graph Learning][RAG] Inspired by the hippocampal place cell navigation and memory consolidation mechanisms in neurobiology…
+  [NeurIPS 2025][Graph Learning][RAG] Inspired by the hippocampal place cell navigation and memory consolidation mechanisms in neurobiology, this paper proposes NeuroPath—a RAG framework based on semantic path tracking—that achieves average improvements of 16.3% in recall@2 and 13.5% in recall@5 on multi-hop QA tasks through LLM-driven goal-directed path construction and a post-retrieval completion strategy.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "place cells"
   - "semantic path tracking"
 date: 2026-05-08
-content_hash: 908db03fc855d4ff
+content_hash: e44c024853964e8a
 ---
 
 # NeuroPath: Neurobiology-Inspired Path Tracking and Reflection for Semantically Coherent Retrieval
@@ -160,9 +160,9 @@ The framework follows a three-step pipeline: (1) **Static Indexing**: an LLM ext
 
 - [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
 - [\[AAAI 2026\] Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving](../../AAAI2026/graph_learning/human_cognition_inspired_rag_with_knowledge_graph_for_complex_problem_solving.md)
+- [\[ACL 2025\] Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation (K-RagRec)](../../ACL2025/graph_learning/kg_rag_recommendation.md)
 - [\[NeurIPS 2025\] RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis](rad_towards_trustworthy_retrieval-augmented_multi-modal_clinical_diagnosis.md)
 - [\[ICLR 2026\] Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs](../../ICLR2026/graph_learning/structurally_human_semantically_biased_detecting_llm-generated_references_with_e.md)
-- [\[AAAI 2026\] Skill Path: Unveiling Language Skills from Circuit Graphs](../../AAAI2026/graph_learning/skill_path_unveiling_language_skills_from_circuit_graphs.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Information Processing of One-Dimensional Wasserstein Distances with Finite Samples
 description: >-
-  [AAAI 2026][Computational Biology][Wasserstein Distance] This paper analytically characterizes, via a Poisson process framework, the ability of the one-dimensional Wasserstein distance under finite samples to simultaneou…
+  [AAAI 2026][Computational Biology][Wasserstein Distance] This paper analytically characterizes, via a Poisson process framework, the ability of the one-dimensional Wasserstein distance under finite samples to simultaneously encode pointwise density differences (rate difference) and support differences between probability density functions, and validates its practical utility on neural spike data and amino acid contact frequency data.
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Rate Coding"
   - "Support Difference"
 date: 2026-05-08
-content_hash: ccb8024a08c74979
+content_hash: 5aadd1def0fa3b6f
 ---
 
 # On the Information Processing of One-Dimensional Wasserstein Distances with Finite Samples
@@ -169,11 +169,11 @@ The radial ordering of Wasserstein distance embeddings exhibits substantially hi
 
 ## Related Papers
 
+- [\[ICLR 2026\] One Protein Is All You Need](../../ICLR2026/computational_biology/one_protein_is_all_you_need.md)
 - [\[NeurIPS 2025\] One Small Step with Fingerprints, One Giant Leap for De Novo Molecule Generation from Mass Spectra](../../NeurIPS2025/computational_biology/one_small_step_with_fingerprints_one_giant_leap_for_de_novo_molecule_generation_.md)
+- [\[ICLR 2026\] Distilling Causal Signals for One-Shot Directed Evolution of Antibodies](../../ICLR2026/computational_biology/distilling_causal_signals_for_one-shot_directed_evolution_of_antibodies.md)
+- [\[ICML 2025\] WGFormer: An SE(3)-Transformer Driven by Wasserstein Gradient Flows for Molecular Generation](../../ICML2025/computational_biology/wgformer_an_se3-transformer_driven_by_wasserstein_gradient_flows_for_molecular_g.md)
 - [\[NeurIPS 2025\] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space](../../NeurIPS2025/computational_biology/manipulating_3d_molecules_in_a_fixed-dimensional_e3-equivariant_latent_space.md)
-- [\[ICML 2026\] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models](../../ICML2026/computational_biology/neural_estimation_of_pairwise_mutual_information_in_masked_discrete_sequence_mod.md)
-- [\[NeurIPS 2025\] Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX](../../NeurIPS2025/computational_biology/benchmarking_agentic_systems_in_automated_scientific_information_extraction_with.md)
-- [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](../../NeurIPS2025/computational_biology/is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
 
 </div>
 

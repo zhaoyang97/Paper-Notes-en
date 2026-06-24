@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits
 description: >-
-  [NeurIPS 2025][Interpretability][SVD interpretability] This paper proposes a direction-level interpretability framework based on singular vectors. By applying SVD to augmented matrices of Transformer attention heads and…
+  [NeurIPS 2025][Interpretability][SVD interpretability] This paper proposes a direction-level interpretability framework based on singular vectors. By applying SVD to augmented matrices of Transformer attention heads and MLPs, combined with learnable diagonal mask optimization (KL+L₁), it reveals orthogonal low-rank subfunctions within individual components. On the IOI task, retaining only ~9% of directions suffices to reproduce model behavior with KLD=0.21; moreover…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -13,7 +13,7 @@ tags:
   - "directional masking"
   - "low-rank subfunctions"
 date: 2026-05-08
-content_hash: efd92117bb27567e
+content_hash: ab03a55e175af0ea
 ---
 
 # Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits
@@ -135,10 +135,10 @@ This paper proposes a direction-level interpretability framework based on singul
 ## Related Papers
 
 - [\[NeurIPS 2025\] Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework](discovering_transformer_circuits_via_a_hybrid_attribution_and_pruning_framework.md)
-- [\[CVPR 2026\] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition](../../CVPR2026/interpretability/from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_.md)
 - [\[NeurIPS 2025\] Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models](bigram_subnetworks_mapping_to_next_tokens_in_transformer_language_models.md)
-- [\[NeurIPS 2025\] Towards Interpretability Without Sacrifice: Faithful Dense Layer Decomposition with Mixture of Decoders](towards_interpretability_without_sacrifice_faithful_dense_layer_decomposition_wi.md)
-- [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
+- [\[AAAI 2026\] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](../../AAAI2026/interpretability/attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)
+- [\[ICLR 2026\] Circuit Insights: Towards Interpretability Beyond Activations](../../ICLR2026/interpretability/circuit_insights_towards_interpretability_beyond_activations.md)
+- [\[ICML 2026\] Certified Circuits: Stability Guarantees for Mechanistic Circuits](../../ICML2026/interpretability/certified_circuits_stability_guarantees_for_mechanistic_circuits.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding
 description: >-
-  [ICML 2026][vlm_reasoning][Paper Note] The authors decompose the KL loss of multimodal on-policy distillation into "language prior" and "visual grounding" sub-objectives based on a Bayesian chain. They find that the gradients of these two are nearly orthogonal, and standard distillation merely takes a passive bisector. Consequently, they propose Visual Grad
+  [ICML2026 Spotlight][VLM Reasoning][On-Policy Distillation] The authors decompose the KL loss of multimodal on-policy distillation into "language prior" and "visual grounding" sub-objectives based on a Bayesian chain. They find that the gradients of these two are nearly orthogonal, and standard distillation merely takes a passive bisector. Consequently, they propose Visual Gradient Steering (VGS) to actively bias the update direction toward the visual subspace…
 tags:
-  - ICML 2026
-  - vlm_reasoning
+  - "ICML2026 Spotlight"
+  - "VLM Reasoning"
+  - "On-Policy Distillation"
+  - "Visual Grounding"
+  - "Gradient Orthogonality"
+  - "Visual Gradient Steering"
 date: 2026-05-08
-content_hash: 8a9dc6138e130bb3
+content_hash: fd7037bd02176e45
 ---
+
 # Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding
 
 **Conference**: ICML2026 Spotlight  
@@ -134,9 +139,9 @@ GRPO + Distillation ablation (2B Student, Vision-SR1-47K):
 ## Related Papers
 
 - [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](../../CVPR2026/vlm_reasoning/vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
 - [\[CVPR 2026\] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning](../../CVPR2026/vlm_reasoning/pdcr_perception-decomposed_confidence_reward_for_vision-language_reasoning.md)
-- [\[ICML 2026\] The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design](the_perceptual_bandwidth_bottleneck_in_vision-language_models_active_visual_reas.md)
+- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
+- [\[CVPR 2026\] VGent: Visual Grounding via Modular Design for Disentangling Reasoning and Prediction](../../CVPR2026/vlm_reasoning/vgent_visual_grounding_via_modular_design_for_disentangling_reasoning_and_predic.md)
 - [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](../../CVPR2026/vlm_reasoning/self-critical_distillation_network_for_video-based_commonsense_captioning.md)
 
 </div>

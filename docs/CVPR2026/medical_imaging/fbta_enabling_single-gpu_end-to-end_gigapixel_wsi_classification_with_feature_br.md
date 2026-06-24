@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FBTA: Enabling Single-GPU End-to-End Gigapixel WSI Classification with Feature Bridging and Translation Alignment
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] FBTA employs "pseudo-bag proxy + feature translation + three-view consistency constraint" to compress Multiple Instance Learning (MIL) of gigapixel Whole Slide Images (WSI) into a single 24GB GPU for true end-to-end training. Compared to direct full-image end-to-end approaches, it achieves a speedup of over 100$\times$
+  [CVPR 2026][Medical Imaging][Computational Pathology] FBTA employs "pseudo-bag proxy + feature translation + three-view consistency constraint" to compress Multiple Instance Learning (MIL) of gigapixel Whole Slide Images (WSI) into a single 24GB GPU for true end-to-end training. Compared to direct full-image end-to-end approaches, it achieves a speedup of over 100$\times$ and provides plug-and-play performance gains across three MIL architectures and two feature extractors (e…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Computational Pathology"
+  - "Whole Slide Image (WSI)"
+  - "Multiple Instance Learning (MIL)"
+  - "End-to-End Training"
+  - "Feature Translation"
 date: 2026-05-08
-content_hash: e3478fb960fd72b8
+content_hash: 2ad007fdd4ff2a63
 ---
+
 # FBTA: Enabling Single-GPU End-to-End Gigapixel WSI Classification with Feature Bridging and Translation Alignment
 
 **Conference**: CVPR 2026  
@@ -134,6 +140,7 @@ Key Observation: With FBTA, classic ABMIL performance approaches that of SOTA Ma
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

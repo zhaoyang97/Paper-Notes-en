@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer
 description: >-
-  [CVPR 2026][Video Generation][outpainting] Addressing the long-standing challenge of "spatial misalignment" between reference images and driving videos, this paper reformulates character animation training as a self-supervised outpainting task. By combining a specialized reference feature extractor, identity-skeleton decoupled pose control, and a TokenReplace l
+  [CVPR 2026][Video Generation][Character Animation] Addressing the long-standing challenge of "spatial misalignment" between reference images and driving videos, this paper reformulates character animation training as a self-supervised outpainting task. By combining a specialized reference feature extractor, identity-skeleton decoupled pose control, and a TokenReplace long-video strategy, the model enables a single reference image of **arbitrary layout** to drive cross-scale v…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - outpainting
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Character Animation"
+  - "Pose Transfer"
+  - "Misaligned Reference"
+  - "Outpainting"
+  - "Long Video Generation"
 date: 2026-05-08
-content_hash: abcaf2a70114476f
+content_hash: 5d201f726cd0ac6b
 ---
+
 # One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer
 
 **Conference**: CVPR 2026  
@@ -161,8 +166,8 @@ Identity-Robust Pose Control (100 misaligned pairs, CSIM↑/APD-body↓/AED↓):
 
 - [\[CVPR 2026\] MultiAnimate: Pose-Guided Image Animation Made Extensible](multianimate_pose-guided_image_animation_made_extensible.md)
 - [\[CVPR 2026\] PersonaLive! Expressive Portrait Image Animation for Live Streaming](personalive_expressive_portrait_image_animation_for_live_streaming.md)
-- [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](infinityhuman_towards_long-term_audio-driven_human_animation.md)
 - [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
+- [\[ICLR 2026\] MTVCraft: Tokenizing 4D Motion for Arbitrary Character Animation](../../ICLR2026/video_generation/mtvcraft_tokenizing_4d_motion_for_arbitrary_character_animation.md)
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](lottiegpt_vector_animation_generation.md)
 
 </div>

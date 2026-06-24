@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How Retrieved Context Shapes Internal Representations in RAG
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Interpretability] This paper systematically analyzes how retrieved documents in RAG influence the internal states of LLMs from the perspective of hidden representations. It identifies five key patterns: random documents induce large representation drifts and trigger refusal behaviors; relevant documents primarily confirm rather than alt
+  [ACL 2026 Findings][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper systematically analyzes how retrieved documents in RAG influence the internal states of LLMs from the perspective of hidden representations. It identifies five key patterns: random documents induce large representation drifts and trigger refusal behaviors; relevant documents primarily confirm rather than alter parametric knowledge; a single relevant document can anchor representations…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Hidden Representations"
+  - "Representation Drift"
+  - "Knowledge Conflict"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: c084be2c65403619
+content_hash: 6d967d1f598b3b70
 ---
+
 # How Retrieved Context Shapes Internal Representations in RAG
 
 **Conference**: ACL 2026 Findings  
@@ -132,10 +137,10 @@ Ours is an analytical work and does not involve model training. It utilizes pre-
 ## Related Papers
 
 - [\[ACL 2026\] How Large Language Models Balance Internal Knowledge with User and Document Assertions](how_large_language_models_balance_internal_knowledge_with_user_and_document_asse.md)
+- [\[ICLR 2026\] The Topology of Reasoning: Augmenting Generation with Retrieved Cell Complexes for Text-Graph QA](../../ICLR2026/information_retrieval/topology_of_reasoning_retrieved_cell_complex-augmented_generation_for_textual_gr.md)
 - [\[ACL 2026\] Context Attribution with Multi-Armed Bandit Optimization](context_attribution_with_multi-armed_bandit_optimization.md)
-- [\[ACL 2026\] 生物医学 RAG 中检索何时无效：大规模实证研究](when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
 - [\[ACL 2026\] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches](is_agentic_rag_worth_it_an_experimental_comparison_of_rag_approaches.md)
-- [\[ICML 2026\] Less Is More: Elevating RAG via Performance-Driven Context Compression](../../ICML2026/information_retrieval/less_is_more_elevating_rag_via_performance-driven_context_compression.md)
+- [\[ICML 2026\] How can embedding models bind concepts?](../../ICML2026/information_retrieval/how_can_embedding_models_bind_concepts.md)
 
 </div>
 

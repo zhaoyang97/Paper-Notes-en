@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] [b] = [d] − [t] + [p]: Self-supervised Speech Models Discover Phonological Vector Arithmetic
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This work systematically demonstrates the existence of linear phonological feature vectors within the representation spaces of self-supervised speech models (S3M). These vectors satisfy word2vec-style vector arithmetic relationships, and their scaling correlates continuously with acoustic measurements.
+  [ACL 2026 Findings][Audio & Speech][Self-supervised speech models] This work systematically demonstrates the existence of linear phonological feature vectors within the representation spaces of self-supervised speech models (S3M). These vectors satisfy word2vec-style vector arithmetic relationships, and their scaling correlates continuously with acoustic measurements.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Self-supervised speech models"
+  - "Phonological vector arithmetic"
+  - "Speech representation structure"
+  - "Acoustically controllable synthesis"
+  - "Cross-lingual generalization"
 date: 2026-05-08
-content_hash: 52038cae625dc026
+content_hash: f14bf0d0557a281a
 ---
+
 # [b] = [d] − [t] + [p]: Self-supervised Speech Models Discover Phonological Vector Arithmetic
 
 **Conference**: ACL 2026 Findings  
@@ -164,8 +170,8 @@ All 8 feature correlation signs align with theoretical expectations.
 - [\[ACL 2026\] An Exploration of Mamba for Speech Self-Supervised Models](an_exploration_of_mamba_for_speech_self-supervised_models.md)
 - [\[ACL 2026\] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition](pseudo2real_task_arithmetic_for_pseudo-label_correction_in_automatic_speech_reco.md)
 - [\[ACL 2026\] Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling](semi-supervised_diseased_detection_from_speech_dialogues_with_multi-level_data_m.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 - [\[ACL 2026\] How Tokenization Limits Phonological Knowledge Representation in Language Models and How to Improve Them](how_tokenization_limits_phonological_knowledge_representation_in_language_models.md)
-- [\[ACL 2026\] Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition and Audio Reasoning with Omni Perception](speech-hands_a_self-reflection_voice_agentic_approach_to_speech_recognition_and_.md)
 
 </div>
 

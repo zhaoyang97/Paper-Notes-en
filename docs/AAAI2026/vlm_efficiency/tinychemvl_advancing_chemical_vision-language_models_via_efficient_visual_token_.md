@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks
 description: >-
-  [AAAI 2026][Multimodal VLM][Chemical VLM] TinyChemVL is a chemistry-domain VLM with only 4B parameters. It compresses visual tokens to 1/16 of the original count via an adaptive token merging and pruning strategy…
+  [AAAI 2026][Multimodal Efficiency][Chemical VLM] TinyChemVL is a chemistry-domain VLM with only 4B parameters. It compresses visual tokens to 1/16 of the original count via an adaptive token merging and pruning strategy, introduces reaction-level tasks and the ChemRxn-V benchmark, and achieves state-of-the-art performance on both molecular- and reaction-level visual chemistry tasks while significantly improving inference and training speed.
 tags:
   - "AAAI 2026"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Chemical VLM"
   - "visual token compression"
   - "molecular recognition"
   - "reaction prediction"
   - "efficient inference with small models"
 date: 2026-05-08
-content_hash: 8d4ae52c851f159a
+content_hash: 1218cf5e04f0620a
 ---
 
 # TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks
@@ -165,11 +165,11 @@ A large-scale multi-task training set of approximately 1.25 million samples was 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](filter_correlate_compress_training-free_token_reduction_for_.md)
+- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](../../CVPR2026/vlm_efficiency/rethinking_token_reduction_for_large_vision-language_models.md)
 - [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
-- [\[ICCV 2025\] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models](../../ICCV2025/multimodal_vlm/llava-prumerge_adaptive_token_reduction_for_efficient_large_multimodal_models.md)
-- [\[CVPR 2026\] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition](../../CVPR2026/multimodal_vlm/adaptvision_efficient_vision-language_models_via_adaptive_visual_acquisition.md)
-- [\[ACL 2026\] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding](../../ACL2026/multimodal_vlm/chemvlr_prioritizing_reasoning_in_perception_for_chemical_vision-language_unders.md)
+- [\[CVPR 2026\] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition](../../CVPR2026/vlm_efficiency/adaptvision_efficient_vision-language_models_via_adaptive_visual_acquisition.md)
+- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](filter_correlate_compress_training-free_token_reduction_for_.md)
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](../../CVPR2026/vlm_efficiency/score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
 
 </div>
 

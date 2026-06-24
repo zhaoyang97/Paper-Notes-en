@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] This paper upgrades the "iterative reasoning + explicit summary" paradigm from pure SFT to end-to-end RL, proposing InftyThink+. By using trajectory-level GRPO to simultaneously optimize three decisions—"when to summarize, what to retain, and how to continue"—and incorporating an efficiency reward, it achieves a 21% in
+  [ICML 2026][Reinforcement Learning][Iterative Reasoning] This paper upgrades the "iterative reasoning + explicit summary" paradigm from pure SFT to end-to-end RL, proposing InftyThink+. By using trajectory-level GRPO to simultaneously optimize three decisions—"when to summarize, what to retain, and how to continue"—and incorporating an efficiency reward, it achieves a 21% increase in AIME24 accuracy and a 32.8% reduction in latency on DeepSeek-R1-Distill-Qwen-1.5B.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Iterative Reasoning"
+  - "Trajectory-level RL"
+  - "GRPO"
+  - "Summarized CoT"
+  - "Efficiency Measurement"
 date: 2026-05-08
-content_hash: 8638c7b1305faf5e
+content_hash: 13c4bd63361354c9
 ---
+
 # InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -138,9 +143,9 @@ Results are consistent on Qwen3-4B-Base: InftyThink+ RL (task) yields 58.71 Avg.
 
 - [\[ACL 2026\] A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks (EAGLET)](../../ACL2026/reinforcement_learning/a_goal_without_a_plan_is_just_a_wish_efficient_and_effective_global_planner_trai.md)
 - [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](offline_reinforcement_learning_with_universal_horizon_models.md)
-- [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
+- [\[ICLR 2026\] Self-Aligned Reward: Towards Effective and Efficient Reasoners](../../ICLR2026/reinforcement_learning/self-aligned_reward_towards_effective_and_efficient_reasoners.md)
+- [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](../../ICLR2026/reinforcement_learning/rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
 - [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
-- [\[ICML 2026\] Coupled Variational Reinforcement Learning for Language Model General Reasoning](coupled_variational_reinforcement_learning_for_language_model_general_reasoning.md)
 
 </div>
 

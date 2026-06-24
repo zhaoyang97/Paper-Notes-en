@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Agents via Continual Pre-training
 description: >-
-  [ICLR 2026][LLM Agent][Agentic CPT] This paper shifts the learning of agent capabilities to the continual pre-training stage by proposing Agentic Continual Pre-Training. Using two types of large-scale synthetic data, FAS and HAS, the authors train AgentFounder. This allows an open-source 30B-class deep research agent to achieve strong performance across
+  [ICLR2026][LLM Agent][Agentic CPT] This paper shifts the learning of agent capabilities to the continual pre-training stage by proposing Agentic Continual Pre-Training. Using two types of large-scale synthetic data, FAS and HAS, the authors train AgentFounder. This allows an open-source 30B-class deep research agent to achieve strong performance across 10 benchmarks, including BrowseComp, GAIA, and HLE.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Agentic CPT
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Agentic CPT"
+  - "Deep Research Agent"
+  - "Tool Calling"
+  - "Synthetic Trajectories"
+  - "Continual Pre-training"
 date: 2026-05-08
-content_hash: aacb2515e23ec0e9
+content_hash: ae161fd2169d5534
 ---
+
 # Scaling Agents via Continual Pre-training
 
 **Conference**: ICLR2026  
@@ -150,7 +155,7 @@ The authors validated Agentic CPT via SFT adaptation, training strategies, and d
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] From Concepts to Components: Concept-Agnostic Attention Module Discovery in Transformers
 description: >-
-  [ICLR 2026][Interpretability][attention head attribution] By abstracting any complex "concept" into a vector and using its cosine similarity with the output of each attention head to identify TopK heads as a "concept module," the authors demonstrate that scaling the output intensity of these modules with a single scalar can localize and amplify/suppress concepts like safety,
+  [ICLR 2026][Interpretability][attention head attribution] By abstracting any complex "concept" into a vector and using its cosine similarity with the output of each attention head to identify TopK heads as a "concept module," the authors demonstrate that scaling the output intensity of these modules with a single scalar can localize and amplify/suppress concepts like safety, reasoning, multilingualism, and image recognition in language and vision Transformers.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - attention head attribution
-  - concept localization
-  - residual stream
-  - scalar intervention
-  - jailbreak
-  - multilingualism
+  - "ICLR 2026"
+  - "Interpretability"
+  - "attention head attribution"
+  - "concept localization"
+  - "residual stream"
+  - "scalar intervention"
+  - "jailbreak"
+  - "multilingualism"
 date: 2026-05-08
-content_hash: 95e0f2d63c7a9ed2
+content_hash: 3ce03e778af69cef
 ---
+
 # From Concepts to Components: Concept-Agnostic Attention Module Discovery in Transformers
 
 **Conference**: ICLR 2026  
@@ -148,8 +149,8 @@ Amplifying reasoning modules **hardly damages** general knowledge, coding, or co
 
 - [\[ICLR 2026\] Decoupling Positional and Symbolic Attention in Transformers](decoupling_positional_and_symbolic_attention_in_transformers.md)
 - [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution](concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept_a.md)
-- [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
 - [\[ACL 2025\] Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers](../../ACL2025/interpretability/separating_tongue_from_thought_activation_patching_reveals_language-agnostic_con.md)
+- [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
 - [\[ICLR 2026\] Adaptive Concept Discovery for Interpretable Few-Shot Text Classification](adaptive_concept_discovery_for_interpretable_few-shot_text_classification.md)
 
 </div>

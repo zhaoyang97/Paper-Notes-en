@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TRAPO: Trust-Region Adaptive Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] TRAPO decouples the traditional "SFT followed by RL" two-stage serial pipeline into an interleaved process **within each individual sample**. Expert trajectory prefixes are learned via SFT, while the model-generated continuations are learned via RL. By utilizing a Trust-Region version of SFT (TrSFT) to shift forward KL
+  [ICLR 2026][Reinforcement Learning][Post-training] TRAPO decouples the traditional "SFT followed by RL" two-stage serial pipeline into an interleaved process **within each individual sample**. Expert trajectory prefixes are learned via SFT, while the model-generated continuations are learned via RL. By utilizing a Trust-Region version of SFT (TrSFT) to shift forward KL toward reverse KL for stable training, and employing adaptive prefix lengths to provide guidance based on pr…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Post-training"
+  - "SFT-RL Fusion"
+  - "Trust Region"
+  - "Adaptive Expert Guidance"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 737b4519df75c139
+content_hash: 9cce376425cdade2
 ---
+
 # TRAPO: Trust-Region Adaptive Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -150,9 +156,9 @@ TRAPO leads across all five math reasoning benchmarks with a 56.6 average. Furth
 
 - [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
 - [\[ICLR 2026\] Heterogeneous Agent Q-weighted Policy Optimization](heterogeneous_agent_q-weighted_policy_optimization.md)
+- [\[ICLR 2026\] TROLL: Trust Regions improve Reinforcement Learning for Large Language Models](troll_trust_regions_improve_reinforcement_learning_for_large_language_models.md)
 - [\[ICML 2025\] Embedding Safety into RL: A New Take on Trust Region Methods](../../ICML2025/reinforcement_learning/embedding_safety_into_rl_a_new_take_on_trust_region_methods.md)
 - [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
-- [\[ICLR 2026\] Relative Entropy Pathwise Policy Optimization](relative_entropy_pathwise_policy_optimization.md)
 
 </div>
 

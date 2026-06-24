@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Seeing the Unseen: Zooming in the Dark with Event Cameras
 description: >-
-  [AAAI 2026][Video Generation][Low-light video super-resolution] This paper proposes RetinexEVSR, the first event-driven low-light video super-resolution (LVSR) framework. Through a Retinex-inspired bidirectional fusion s…
+  [AAAI 2026][Video Generation][Low-light video super-resolution] This paper proposes RetinexEVSR, the first event-driven low-light video super-resolution (LVSR) framework. Through a Retinex-inspired bidirectional fusion strategy (RBF)—which first uses illumination maps to guide event feature denoising (IEE), then leverages enhanced event features to recover reflectance details (ERE)—the method achieves a 2.95 dB gain on the SDSD benchmark while reducing runtime by 65%.
 tags:
   - "AAAI 2026"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal fusion"
   - "bidirectional enhancement"
 date: 2026-05-08
-content_hash: 1a381e89838ef08b
+content_hash: b7f9b49d18676823
 ---
 
 # Seeing the Unseen: Zooming in the Dark with Event Cameras
@@ -134,9 +134,9 @@ End-to-end training uses a combination of Charbonnier Loss and perceptual loss. 
 
 - [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](../../CVPR2026/video_generation/seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
 - [\[NeurIPS 2025\] Seeing the Wind from a Falling Leaf](../../NeurIPS2025/video_generation/seeing_the_wind_from_a_falling_leaf.md)
+- [\[CVPR 2026\] Video-as-Answer: Predict and Generate Next Video Event with Joint-GRPO](../../CVPR2026/video_generation/video-as-answer_predict_and_generate_next_video_event_with_joint-grpo.md)
 - [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](../../CVPR2026/video_generation/switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
 - [\[CVPR 2026\] Chain of Event-Centric Causal Thought for Physically Plausible Video Generation](../../CVPR2026/video_generation/chain_of_event-centric_causal_thought_for_physically_plausible_video_generation.md)
-- [\[AAAI 2026\] OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding](omnivdiff_omni_controllable_video_diffusion_for_generation_and_understanding.md)
 
 </div>
 

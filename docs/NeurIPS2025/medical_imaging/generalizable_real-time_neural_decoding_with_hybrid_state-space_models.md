@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models
 description: >-
-  [NeurIPS 2025][Medical Imaging][State-Space Models] POSSM proposes a hybrid SSM-attention architecture that combines spike-level tokenization with a recurrent state-space model backbone…
+  [NeurIPS 2025][Medical Imaging][State-Space Models] POSSM proposes a hybrid SSM-attention architecture that combines spike-level tokenization with a recurrent state-space model backbone, achieving generalizable real-time neural decoding with inference speeds up to 9× faster than Transformers while maintaining comparable accuracy.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Species Transfer"
   - "Real-Time Inference"
 date: 2026-05-08
-content_hash: 74cbf68b1f157ab8
+content_hash: b5eb45df46fb8efb
 ---
 
 # Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models

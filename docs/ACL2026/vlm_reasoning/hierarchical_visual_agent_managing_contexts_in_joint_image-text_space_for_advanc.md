@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] HierVA: Hierarchical Visual Agent — Managing Contexts in Joint Image-Text Space for Advanced Chart Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][chart QA] HierVA utilizes a "manager–worker" dual-layer multimodal agent to manage both image and text contexts during chart reasoning through a disciplined "acquisition–limitation–distillation" approach. It outperforms strong baselines like CoT and "thinking with images" on complex chart reasoning benchmarks such as CharXiv in
+  [ACL 2026][VLM Reasoning][chart QA] HierVA utilizes a "manager–worker" dual-layer multimodal agent to manage both image and text contexts during chart reasoning through a disciplined "acquisition–limitation–distillation" approach. It outperforms strong baselines like CoT and "thinking with images" on complex chart reasoning benchmarks such as CharXiv in a training-free manner.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - chart QA
-  - hierarchical agent
-  - multimodal context
-  - zoom-in
-  - training-free
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "chart QA"
+  - "hierarchical agent"
+  - "multimodal context"
+  - "zoom-in"
+  - "training-free"
 date: 2026-05-08
-content_hash: 90c9a5f8c5818d48
+content_hash: 81fcc2788890a6dd
 ---
+
 # HierVA: Hierarchical Visual Agent — Managing Contexts in Joint Image-Text Space for Advanced Chart Reasoning
 
 **Conference**: ACL 2026  
@@ -158,10 +159,10 @@ On ChartQA + synthetic multi-subplot charts (sp#1 to sp#6): As the number of sub
 ## Related Papers
 
 - [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](../../CVPR2026/vlm_reasoning/monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
-- [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
-- [\[CVPR 2025\] MV-MATH: Evaluating Multimodal Math Reasoning in Multi-Visual Contexts](../../CVPR2025/vlm_reasoning/mv-math_evaluating_multimodal_math_reasoning_in_multi-visual_contexts.md)
+- [\[ICLR 2026\] JointAVBench: A Benchmark for Joint Audio-Visual Reasoning Evaluation](../../ICLR2026/vlm_reasoning/jointavbench_a_benchmark_for_joint_audio-visual_reasoning_evaluation.md)
+- [\[ICLR 2026\] OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning](../../ICLR2026/vlm_reasoning/ocr-reasoning_benchmark_unveiling_the_true_capabilities_of_mllms_in_complex_text.md)
 - [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](../../CVPR2026/vlm_reasoning/mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
-- [\[ACL 2026\] Forest Before Trees: Latent Superposition for Efficient Visual Reasoning](forest_before_trees_latent_superposition_for_efficient_visual_reasoning.md)
+- [\[CVPR 2026\] OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning](../../CVPR2026/vlm_reasoning/oasis_on-demand_hierarchical_event_memory_for_streaming_video_reasoning.md)
 
 </div>
 

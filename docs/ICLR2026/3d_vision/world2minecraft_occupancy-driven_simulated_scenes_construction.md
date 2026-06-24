@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] World2Minecraft: Occupancy-Driven Simulated Scenes Construction
 description: >-
-  [ICLR 2026][3D Vision][real-to-sim] This work converts real-world indoor scenes into voxel-aligned editable Minecraft environments using "3D semantic occupancy prediction" and builds a simulation platform for Vision-Language Navigation (VLN). Simultaneously, it utilizes Minecraft to automatically generate 100,000 occupancy annotations (MinecraftOcc datas
+  [ICLR 2026][3D Vision][Semantic occupancy prediction] This work converts real-world indoor scenes into voxel-aligned editable Minecraft environments using "3D semantic occupancy prediction" and builds a simulation platform for Vision-Language Navigation (VLN). Simultaneously, it utilizes Minecraft to automatically generate 100,000 occupancy annotations (MinecraftOcc dataset), serving as both a challenging benchmark and an augmentation source for real-world datasets.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - real-to-sim
-  - Minecraft
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Semantic occupancy prediction"
+  - "real-to-sim"
+  - "Minecraft"
+  - "Vision-Language Navigation"
+  - "dataset construction"
 date: 2026-05-08
-content_hash: 46fdfee66c2e8ccd
+content_hash: 4c3094f905777973
 ---
+
 # World2Minecraft: Occupancy-Driven Simulated Scenes Construction
 
 **Conference**: ICLR 2026  

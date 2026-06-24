@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] 解构强化学习智能体中的记忆：一套分类与评估方法
+  [Paper Note] Deconstructing Memory in Reinforcement Learning Agents: A Taxonomy and Evaluation Methodology
 description: >-
-  [ICLR 2026][Reinforcement Learning][POMDP] This paper does not propose a new model but provides a formal definition and evaluation methodology for the overused term "memory" in reinforcement learning. By using the relational horizon $\xi$ and the agent's context length $K$ to strictly distinguish between short-term memory (STM) and long-term memory (LTM), it in
+  [ICLR 2026][Reinforcement Learning][Agent Memory] This paper does not propose a new model but provides a formal definition and evaluation methodology for the overused term "memory" in reinforcement learning. By using the relational horizon $\xi$ and the agent's context length $K$ to strictly distinguish between short-term memory (STM) and long-term memory (LTM), it introduces an actionable experimental configuration algorithm. It empirically demonstrates that failing to follo…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - POMDP
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Agent Memory"
+  - "Long-term/Short-term Memory"
+  - "POMDP"
+  - "Evaluation Methodology"
+  - "Relational Horizon"
 date: 2026-05-08
-content_hash: fbabc8251ca88b60
+content_hash: de11ac099732894d
 ---
+
 # Deconstructing Memory in Reinforcement Learning Agents: A Taxonomy and Evaluation Methodology
 
 **Conference**: ICLR 2026  
@@ -147,11 +152,11 @@ The authors evaluate DTQN, DQN-GPT-2, and SAC-GPT-2 (attention memory) online, a
 
 ## Related Papers
 
-- [\[ICLR 2026\] PAMDP: Interact to Persona Alignment via a Partially Observable Markov Decision Process](pamdp_interact_to_persona_alignment_via_a_partially_observable_markov_decision_p.md)
-- [\[ICLR 2026\] Geometry of Uncertainty: Learning Metric Spaces for Multimodal State Estimation in RL](geometry_of_uncertainty_learning_metric_spaces_for_multimodal_state_estimation_i.md)
-- [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
-- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
-- [\[ICLR 2026\] Guided Policy Optimization under Partial Observability](guided_policy_optimization_under_partial_observability.md)
+- [\[ICLR 2026\] Reinforcement Learning for Machine Learning Engineering Agents](reinforcement_learning_for_machine_learning_engineering_agents.md)
+- [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
+- [\[ICLR 2026\] MIRA: Memory-Integrated Reinforcement Learning Agent with Limited LLM Guidance](mira_memory-integrated_reinforcement_learning_agent_with_limited_llm_guidance.md)
+- [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
+- [\[ICLR 2026\] RLVER: Reinforcement Learning with Verifiable Emotion Rewards for Empathetic Agents](rlver_reinforcement_learning_with_verifiable_emotion_rewards_for_empathetic_agen.md)
 
 </div>
 

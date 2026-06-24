@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Negotiated Reasoning: On Provably Addressing Relative Over-Generalization
 description: >-
-  [ICLR 2026][Reinforcement Learning][relative over-generalization] This paper formally defines the "Relative Over-generalization (RO)" problem in MARL for the first time and proves that RO can be avoided if the "consistent reasoning" condition is satisfied. It further proposes SVNR, a negotiated reasoning algorithm based on Stein Variational Gradient Descent, which is the first MARL m
+  [ICLR 2026][Reinforcement Learning][relative over-generalization] This paper formally defines the "Relative Over-generalization (RO)" problem in MARL for the first time and proves that RO can be avoided if the "consistent reasoning" condition is satisfied. It further proposes SVNR, a negotiated reasoning algorithm based on Stein Variational Gradient Descent, which is the first MARL method capable of provably eliminating RO.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - relative over-generalization
-  - MARL
-  - negotiated reasoning
-  - Stein variational gradient descent
-  - maximum entropy RL
-  - CTDE
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "relative over-generalization"
+  - "MARL"
+  - "negotiated reasoning"
+  - "Stein variational gradient descent"
+  - "maximum entropy RL"
+  - "CTDE"
 date: 2026-05-08
 content_hash: 61b8cd9b56950066
 ---
+
 # Negotiated Reasoning: On Provably Addressing Relative Over-Generalization
 
 **Conference**: ICLR 2026  

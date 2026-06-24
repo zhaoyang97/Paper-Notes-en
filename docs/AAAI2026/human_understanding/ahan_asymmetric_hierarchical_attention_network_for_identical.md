@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AHAN: Asymmetric Hierarchical Attention Network for Identical Twin Face Verification
 description: >-
-  [AAAI 2026][Human Understanding][Identical twin verification] To address the extreme fine-grained recognition challenge of identical twin face verification, this paper proposes AHAN…
+  [AAAI 2026][Human Understanding][Identical twin verification] To address the extreme fine-grained recognition challenge of identical twin face verification, this paper proposes AHAN, a multi-stream architecture that performs multi-scale analysis of semantic facial regions via Hierarchical Cross-Attention (HCA), captures left-right facial asymmetry signatures through a Facial Asymmetry Attention Module (FAAM), and incorporates Twin-Aware Pair-Wise Cross-Attention (TA-PWCA) as…
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "fine-grained face recognition"
   - "Vision Transformer"
 date: 2026-05-08
-content_hash: fb692302f4ccd063
+content_hash: 44934dc21df4c086
 ---
 
 # AHAN: Asymmetric Hierarchical Attention Network for Identical Twin Face Verification
@@ -136,11 +136,11 @@ General Verification scenario: AHAN achieves 99.1% Acc / 99.8% AUC / 97.2% TAR@1
 
 ## Related Papers
 
+- [\[CVPR 2026\] Goldilocks Test Sets for Face Verification](../../CVPR2026/human_understanding/goldilocks_test_sets_for_face_verification.md)
 - [\[AAAI 2026\] MVGD-Net: A Novel Motion-aware Video Glass Surface Detection Network](mvgd-net_a_novel_motion-aware_video_glass_surface_detection_network.md)
-- [\[CVPR 2026\] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](../../CVPR2026/human_understanding/cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)
-- [\[ICCV 2025\] CarGait: Cross-Attention based Re-ranking for Gait Recognition](../../ICCV2025/human_understanding/cargait_cross_attention_based_re_ranking_for_gait_recognition.md)
-- [\[CVPR 2026\] PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement](../../CVPR2026/human_understanding/phase-net_physics-grounded_harmonic_attention_system_for_efficient_remote_photop.md)
 - [\[AAAI 2026\] CLIP-FTI: Fine-Grained Face Template Inversion via CLIP-Driven Attribute Conditioning](clip-fti_fine-grained_face_template_inversion_via_clip-driven_attribute_conditio.md)
+- [\[CVPR 2026\] RGB-Event based Pedestrian Attribute Recognition: A Benchmark Dataset and An Asymmetric RWKV Fusion Framework](../../CVPR2026/human_understanding/rgb-event_based_pedestrian_attribute_recognition_a_benchmark_dataset_and_an_asym.md)
+- [\[CVPR 2026\] MotionHiFlow: Text-to-Motion via Hierarchical Flow Matching](../../CVPR2026/human_understanding/motionhiflow_text-to-motion_via_hierarchical_flow_matching.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeepASA: An Object-Oriented Multi-Purpose Network for Auditory Scene Analysis
 description: >-
-  [NeurIPS 2025][Audio & Speech][auditory scene analysis] This paper proposes DeepASA, an object-oriented multi-task unified architecture that simultaneously performs multi-channel source separation (MIMO), dereverberation…
+  [NeurIPS 2025][Audio & Speech][auditory scene analysis] This paper proposes DeepASA, an object-oriented multi-task unified architecture that simultaneously performs multi-channel source separation (MIMO), dereverberation, sound event detection (SED), audio classification, and direction-of-arrival estimation (DoAE) within a single model via object-oriented processing and a chain-of-inference mechanism, achieving state-of-the-art performance on multiple spatial audio benchmarks…
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "direction-of-arrival estimation"
   - "multi-task learning"
 date: 2026-05-08
-content_hash: 98f04de37d2ade5f
+content_hash: 6d10897e880cbd15
 ---
 
 # DeepASA: An Object-Oriented Multi-Purpose Network for Auditory Scene Analysis
@@ -141,11 +141,11 @@ The object-oriented processing (OOP) paradigm can be generalized to visual scene
 
 ## Related Papers
 
+- [\[CVPR 2025\] Object-aware Sound Source Localization via Audio-Visual Scene Understanding](../../CVPR2025/audio_speech/object-aware_sound_source_localization_via_audio-visual_scene_understanding.md)
+- [\[ICML 2025\] Sounding that Object: Interactive Object-Aware Image to Audio Generation](../../ICML2025/audio_speech/sounding_that_object_interactive_object-aware_image_to_audio_generation.md)
 - [\[NeurIPS 2025\] A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings](a_multitask_benchmark_for_abusive_language_detection_in_lowr.md)
-- [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](../../ICLR2026/audio_speech/flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
-- [\[AAAI 2026\] PSA-MF: Personality-Sentiment Aligned Multi-Level Fusion for Multimodal Sentiment Analysis](../../AAAI2026/audio_speech/psa-mf_personality-sentiment_aligned_multi-level_fusion_for_multimodal_sentiment.md)
+- [\[CVPR 2025\] Crab: A Unified Audio-Visual Scene Understanding Model with Explicit Cooperation](../../CVPR2025/audio_speech/crab_a_unified_audio-visual_scene_understanding_model_with_explicit_cooperation.md)
 - [\[NeurIPS 2025\] Multi-head Temporal Latent Attention](multi-head_temporal_latent_attention.md)
-- [\[ICCV 2025\] MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing](../../ICCV2025/audio_speech/mug_pseudo_labeling_augmented_audio-visual_mamba_network_for_audio-visual_video_.md)
 
 </div>
 

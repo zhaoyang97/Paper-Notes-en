@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] LocoT2V-Bench: Benchmarking Long-form and Complex Text-to-Video Generation
 description: >-
-  [ICML 2026][Video Generation][Paper Note] LocoT2V-Bench is a professional benchmark designed for **long video + complex scene** generation—comprising 234 real video clips $\times$ 18 themes $\times$ an average of 249-word prompts. Accompanied by the LoCoT2V-Eval framework (5 dimensions, 17 sub-dimensions, including hierarchical VQA + conditional gating + Audit
+  [ICML 2026][Video Generation][Long Video Generation Benchmark] LocoT2V-Bench is a professional benchmark designed for **long video + complex scene** generation—comprising 234 real video clips $\times$ 18 themes $\times$ an average of 249-word prompts. Accompanied by the LoCoT2V-Eval framework (5 dimensions, 17 sub-dimensions, including hierarchical VQA + conditional gating + Auditor-Evaluator dual-agent HERD), it systematically evaluates 17 long-video generation models. The r…
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Long Video Generation Benchmark"
+  - "Complex Text Alignment"
+  - "Hierarchical Metadata"
+  - "Character Consistency"
 date: 2026-05-08
-content_hash: 96a9161cdb3e1837
+content_hash: 00fb67777f4f127d
 ---
+
 # LocoT2V-Bench: Benchmarking Long-form and Complex Text-to-Video Generation
 
 **Conference**: ICML 2026  
@@ -136,13 +141,14 @@ HERD evaluates whether the video fulfills expectations implicit in the prompt, w
 - Value: ⭐⭐⭐⭐⭐ (Provides the most comprehensive benchmark for long-video generation; guides model improvement; highly transferable methodology).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] OSCBench: Benchmarking Object State Change in Text-to-Video Generation](../../ACL2026/video_generation/oscbench_benchmarking_object_state_change_in_text-to-video_generation.md)
+- [\[ICML 2026\] V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation](v2v-bench_a_comprehensive_benchmark_for_video-to-video_generation_evaluation.md)
 - [\[ICML 2026\] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos](enhancing_train-free_infinite-frame_generation_for_consistent_long_videos.md)
-- [\[ICML 2026\] Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization](quant_videogen_auto-regressive_long_video_generation_via_2-bit_kv-cache_quantiza.md)
 - [\[CVPR 2026\] TiViBench: Benchmarking Think-in-Video Reasoning for Video Generation](../../CVPR2026/video_generation/tivibench_benchmarking_think-in-video_reasoning_for_video_generation.md)
 - [\[CVPR 2026\] SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation](../../CVPR2026/video_generation/slvmeval_synthetic_meta_evaluation_benchmark_for_text-to-long_video_generation.md)
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HyTIP: Hybrid Temporal Information Propagation for Masked Conditional Residual Video Coding
 description: >-
-  [ICCV 2025][Video Compression] This paper proposes HyTIP, a framework that unifies output-recurrence (explicit buffering of decoded frames) and hidden-to-hidden propagation (implicit buffering of latent features) within…
+  [ICCV 2025][Video Compression] This paper proposes HyTIP, a framework that unifies output-recurrence (explicit buffering of decoded frames) and hidden-to-hidden propagation (implicit buffering of latent features) within a single learned video coding framework, achieving comparable coding performance to state-of-the-art methods using only 14% of their buffer size.
 tags:
   - "ICCV 2025"
   - "Video Compression"
@@ -11,7 +11,7 @@ tags:
   - "RNN"
   - "Conditional Residual Coding"
 date: 2026-05-08
-content_hash: 56315ae7af34c7b8
+content_hash: 091fd0d011cc6fd1
 ---
 
 # HyTIP: Hybrid Temporal Information Propagation for Masked Conditional Residual Video Coding
@@ -136,11 +136,11 @@ Key finding: Hybrid(3+2) achieves nearly identical performance to Hybrid(3+48) (
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Sheaf Cohomology of Linear Predictive Coding Networks](../../NeurIPS2025/others/sheaf_cohomology_of_linear_predictive_coding_networks.md)
-- [\[NeurIPS 2025\] InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras](../../NeurIPS2025/others/influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras.md)
-- [\[AAAI 2026\] Expressive Temporal Specifications for Reward Monitoring](../../AAAI2026/others/expressive_temporal_specifications_for_reward_monitoring.md)
+- [\[ICML 2025\] Residual Matrix Transformers: Scaling the Size of the Residual Stream](../../ICML2025/others/residual_matrix_transformers_scaling_the_size_of_the_residual_stream.md)
+- [\[ACL 2025\] Value Residual Learning](../../ACL2025/others/value_residual_learning.md)
 - [\[NeurIPS 2025\] Hybrid-Balance GFlowNet for Solving Vehicle Routing Problems](../../NeurIPS2025/others/hybrid-balance_gflownet_for_solving_vehicle_routing_problems.md)
-- [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](../../AAAI2026/others/hybridla_hybrid_generation_for_document_layout_analysis.md)
+- [\[NeurIPS 2025\] Sheaf Cohomology of Linear Predictive Coding Networks](../../NeurIPS2025/others/sheaf_cohomology_of_linear_predictive_coding_networks.md)
+- [\[ACL 2025\] The Harmonic Structure of Information Contours](../../ACL2025/others/the_harmonic_structure_of_information_contours.md)
 
 </div>
 

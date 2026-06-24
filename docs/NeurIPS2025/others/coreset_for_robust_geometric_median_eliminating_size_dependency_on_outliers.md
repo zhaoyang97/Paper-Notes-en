@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Coreset for Robust Geometric Median: Eliminating Size Dependency on Outliers
 description: >-
-  [NeurIPS 2025][Coreset] This paper is the first to eliminate the dependency of the robust geometric median coreset size on the number of outliers $m$: under the condition $n \geq 4m$…
+  [NeurIPS 2025][Coreset] This paper is the first to eliminate the dependency of the robust geometric median coreset size on the number of outliers $m$: under the condition $n \geq 4m$, it achieves an optimal coreset size of $\tilde{\Theta}(\varepsilon^{-1/2} + \frac{m}{n}\varepsilon^{-1})$ for $d=1$, and $\tilde{O}(\varepsilon^{-2}\min\{\varepsilon^{-2}, d\})$ in high dimensions. The core technical contribution is a novel **non-componentwise error analysis**.
 tags:
   - "NeurIPS 2025"
   - "Coreset"
@@ -11,7 +11,7 @@ tags:
   - "Clustering"
   - "Non-Componentwise Error Analysis"
 date: 2026-05-08
-content_hash: bdef4ed94f1cb2da
+content_hash: 8a02571301c98cf8
 ---
 
 # Coreset for Robust Geometric Median: Eliminating Size Dependency on Outliers
@@ -126,10 +126,10 @@ Condition 2 of Assumption 1.4 ($\max_p \text{dist}(p, C^*)^z \leq 4k \cdot \text
 ## Related Papers
 
 - [\[NeurIPS 2025\] Distributionally Robust Feature Selection](distributionally_robust_feature_selection.md)
+- [\[ACL 2025\] Hierarchical Bracketing Encodings for Dependency Parsing as Tagging](../../ACL2025/others/hierarchical_bracketing_dep_parsing.md)
 - [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
+- [\[ICML 2025\] Softmax is not Enough (for Sharp Size Generalisation)](../../ICML2025/others/softmax_is_not_enough_for_sharp_size_generalisation.md)
 - [\[NeurIPS 2025\] Overfitting in Adaptive Robust Optimization](overfitting_in_adaptive_robust_optimization.md)
-- [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](../../AAAI2026/others/model_counting_for_dependency_quantified_boolean_formulas.md)
-- [\[NeurIPS 2025\] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets](the_cost_of_robustness_tighter_bounds_on_parameter_complexity_for_robust_memoriz.md)
 
 </div>
 

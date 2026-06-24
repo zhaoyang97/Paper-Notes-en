@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scalable In-Context Q-Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] S-ICQL is proposed, integrating dynamic programming (Q-learning) and world models into the supervised ICRL framework. It employs a multi-head Transformer to simultaneously predict policies and contextual value functions. A pre-trained world model constructs lightweight and accurate prompts, and advantage-weighted regre
+  [ICLR 2026][Reinforcement Learning][In-Context RL] S-ICQL is proposed, integrating dynamic programming (Q-learning) and world models into the supervised ICRL framework. It employs a multi-head Transformer to simultaneously predict policies and contextual value functions. A pre-trained world model constructs lightweight and accurate prompts, and advantage-weighted regression is used to extract the policy, consistently outperforming all baselines when learning from suboptimal d…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "In-Context RL"
+  - "Q-learning"
+  - "World Model"
+  - "Dynamic Programming"
+  - "Efficient Prompting"
 date: 2026-05-08
-content_hash: eb1e3ff1fa116d33
+content_hash: 5f8ad73c1c4edd97
 ---
+
 # Scalable In-Context Q-Learning
 
 **Conference**: ICLR 2026  
@@ -146,16 +151,16 @@ On Out-Of-Distribution (OOD) tasks, Ours maintains a significant lead, outperfor
 - Evaluation is limited to standard RL benchmarks and has not yet addressed complex real-world decision scenarios like sim-to-real robot manipulation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
 - [\[ICLR 2026\] Vintix II: Decision Pre-Trained Transformer is a Scalable In-Context Reinforcement Learner](vintix_ii_decision_pre-trained_transformer_is_a_scalable_in-context_reinforcemen.md)
+- [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
 - [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
 - [\[ICLR 2026\] In-Context Compositional Q-Learning for Offline Reinforcement Learning](in-context_compositional_q-learning_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
+- [\[ICML 2026\] Safe In-Context Reinforcement Learning](../../ICML2026/reinforcement_learning/safe_in-context_reinforcement_learning.md)
 
 </div>
 

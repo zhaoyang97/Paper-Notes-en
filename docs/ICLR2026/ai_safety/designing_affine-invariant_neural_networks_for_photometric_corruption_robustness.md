@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Designing Affine-Invariant Neural Networks for Photometric Corruption Robustness and Generalization
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper proposes SEqSI, a CNN design that implements intensity shift invariance in the first layer and intensity scale equivariance in the subsequent backbone. Without significant computational overhead, it provides verifiable robustness to global brightness/contrast affine transformations for tasks including classi
+  [ICLR 2026][AI Safety][Photometric Robustness] This paper proposes SEqSI, a CNN design that implements intensity shift invariance in the first layer and intensity scale equivariance in the subsequent backbone. Without significant computational overhead, it provides verifiable robustness to global brightness/contrast affine transformations for tasks including classification, localization, and segmentation, significantly outperforming standard networks in real-world photometric…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Photometric Robustness"
+  - "Affine Invariance"
+  - "Equivariant Neural Networks"
+  - "Biological Image Analysis"
+  - "Out-of-Distribution Generalization"
 date: 2026-05-08
-content_hash: 7d33b4ac52b5ee31
+content_hash: 06162dfe5efaca95
 ---
+
 # Designing Affine-Invariant Neural Networks for Photometric Corruption Robustness and Generalization
 
 **Conference**: ICLR 2026  

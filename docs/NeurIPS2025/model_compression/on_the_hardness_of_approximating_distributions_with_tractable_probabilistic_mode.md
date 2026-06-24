@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Hardness of Approximating Distributions with Tractable Probabilistic Models
 description: >-
-  [NeurIPS 2025][Model Compression][probabilistic circuits] This paper proves that approximating arbitrary distributions with tractable probabilistic models (e.g.…
+  [NeurIPS 2025][Model Compression][probabilistic circuits] This paper proves that approximating arbitrary distributions with tractable probabilistic models (e.g., decomposable probabilistic circuits) under bounded $f$-divergence is NP-hard, and establishes an exponential size separation between decomposable PCs and (deterministic + decomposable) PCs under approximate modeling, demonstrating that approximation relaxations do not alleviate the complexity bottlenecks inherent in…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "NP-hardness"
   - "expressive efficiency"
 date: 2026-05-08
-content_hash: d362067bd531d1e4
+content_hash: 9c5163d8440d86e5
 ---
 
 # On the Hardness of Approximating Distributions with Tractable Probabilistic Models
@@ -126,10 +126,10 @@ This is a purely theoretical work with no training procedure. The core measure i
 ## Related Papers
 
 - [\[ICML 2026\] Exploiting Weight-Space Symmetries for Approximating Curvature](../../ICML2026/model_compression/exploiting_weight-space_symmetries_for_approximating_curvature.md)
+- [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](../../ICLR2026/model_compression/maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
 - [\[NeurIPS 2025\] REOrdering Patches Improves Vision Models](reordering_patches_improves_vision_models.md)
 - [\[NeurIPS 2025\] Geometry of Decision Making in Language Models](geometry_of_decision_making_in_language_models.md)
 - [\[NeurIPS 2025\] Knowledge Distillation Detection for Open-weights Models](knowledge_distillation_detection_for_open-weights_models.md)
-- [\[NeurIPS 2025\] Elastic ViTs from Pretrained Models without Retraining](elastic_vits_from_pretrained_models_without_retraining.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Just Few States are Enough: Randomized Sparse Feedback for Stability of Dynamical Systems
 description: >-
-  [AAAI2026][Physics & Scientific Computing][sparse feedback control] This paper proposes a randomized sparse feedback control framework in which the controller accesses only a random subset of the state vector at each tim…
+  [AAAI2026][Physics & Scientific Computing][sparse feedback control] This paper proposes a randomized sparse feedback control framework in which the controller accesses only a random subset of the state vector at each time step. Feedback gain matrices and Bernoulli sparsification parameters are jointly designed via LMIs to guarantee asymptotic mean-square stability (AMSS) while minimizing the required number of active sensors. Experiments demonstrate that as few as 0.3% of sta…
 tags:
   - "AAAI2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "LMI"
   - "large-scale systems"
 date: 2026-05-08
-content_hash: c6e798b824964929
+content_hash: 2da84b82dbc8f668
 ---
 
 # Just Few States are Enough: Randomized Sparse Feedback for Stability of Dynamical Systems
@@ -158,11 +158,11 @@ The sparsification strategy is directly inspired by gradient sparsification in d
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Why Is Attention Sparse in Particle Transformer?](../../NeurIPS2025/physics/why_is_attention_sparse_in_particle_transformer.md)
+- [\[ICLR 2026\] Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems](../../ICLR2026/physics/self-supervised_evolution_operator_learning_for_high-dimensional_dynamical_syste.md)
 - [\[ICML 2026\] $\mathbb{R}^{2k}$ is Theoretically Large Enough for Embedding-based Top-$k$ Retrieval](../../ICML2026/physics/mathbbr2k_is_theoretically_large_enough_for_embedding-based_top-k_retrieval.md)
 - [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](../../ICLR2026/physics/feedback-driven_recurrent_quantum_neural_network_universality.md)
-- [\[ICLR 2026\] Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery](../../ICLR2026/physics/empirical_stability_analysis_of_kolmogorov-arnold_networks_in_hard-constrained_r.md)
-- [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](../../NeurIPS2025/physics/from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
+- [\[ICLR 2026\] Enhancing Stability of Physics-Informed Neural Network Training Through Saddle-Point Reformulation](../../ICLR2026/physics/enhancing_stability_of_physics-informed_neural_network_training_through_saddle-p.md)
+- [\[ICLR 2026\] RealPDEBench: A Benchmark for Complex Physical Systems with Real-World Data](../../ICLR2026/physics/realpdebench_a_benchmark_for_complex_physical_systems_with_real-world_data.md)
 
 </div>
 

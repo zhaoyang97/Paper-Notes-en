@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Balanced Dataset Distillation via Modeling Multiple Visual Pattern Distribution
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This work identifies a prevalent "pattern imbalance" in existing dataset distillation methods (either favoring intra-class majority class-general patterns or rare marginal patterns). It proposes the BPS framework: first, each class is modeled as a distribution of multiple visual patterns using a hierarchical semantic s
+  [CVPR 2026][Model Compression][Dataset distillation] This work identifies a prevalent "pattern imbalance" in existing dataset distillation methods (either favoring intra-class majority class-general patterns or rare marginal patterns). It proposes the BPS framework: first, each class is modeled as a distribution of multiple visual patterns using a hierarchical semantic structure; then, a pattern-balanced coreset is constructed by taking half of the IPC budget from both the "c…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Dataset distillation"
+  - "coreset selection"
+  - "pattern balance"
+  - "multi-visual pattern modeling"
+  - "cross-architecture generalization"
 date: 2026-05-08
-content_hash: c29371fd01ef9bc4
+content_hash: 9512732f2f8fa240
 ---
+
 # Balanced Dataset Distillation via Modeling Multiple Visual Pattern Distribution
 
 **Conference**: CVPR 2026  
@@ -147,6 +153,7 @@ BPS is optimal across all architectures, with the largest gains on "data-hungry"
 - Value: ⭐⭐⭐⭐⭐ Model-agnostic and efficient; highly practical for downstream tasks like NAS and continual learning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

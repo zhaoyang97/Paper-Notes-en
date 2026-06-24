@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology
 description: >-
-  [ACL 2026][LLM Evaluation][K-MetBench] The authors constructed K-MetBench, containing 1,774 questions based on 25 editions of the South Korean National Meteorological Engineer certification exams. Evaluating 55 LLMs/MLLMs across four orthogonal dimensions—"Multimodal Vision / Expert Reasoning / Geo-cultural / Sub-domain Granularity"—the study reveals a univ
+  [ACL 2026 Findings][LLM Evaluation][K-MetBench] The authors constructed K-MetBench, containing 1,774 questions based on 25 editions of the South Korean National Meteorological Engineer certification exams. Evaluating 55 LLMs/MLLMs across four orthogonal dimensions—"Multimodal Vision / Expert Reasoning / Geo-cultural / Sub-domain Granularity"—the study reveals a universal **modality gap** (an average 18.6% drop in accuracy for visual meteorological charts compared to text)…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - K-MetBench
-  - LLM-as-Judge
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "K-MetBench"
+  - "Skew-T Diagram"
+  - "Meteorological Reasoning"
+  - "Geo-cultural Alignment"
+  - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: 3a725a36408c5474
+content_hash: d12259af0c4c3217
 ---
+
 # K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology
 
 **Conference**: ACL 2026 Findings  
@@ -106,10 +110,20 @@ To evaluate 7,755 rationales (55 models × 141 questions), Gemini-2.5-Pro was us
 - Value: ⭐⭐⭐⭐⭐ (A replicable paradigm for professional domain evaluation)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
+- [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
+- [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
+- [\[ICLR 2026\] ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models](../../ICLR2026/llm_evaluation/chemeval_a_multi-level_and_fine-grained_chemical_capability_evaluation_for_large.md)
+- [\[ACL 2026\] LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control](locar_localization-aware_evaluation_of_in-vehicle_assistants_through_fine-graine.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)

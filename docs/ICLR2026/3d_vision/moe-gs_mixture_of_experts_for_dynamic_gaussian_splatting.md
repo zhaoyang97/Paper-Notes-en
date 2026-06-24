@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] MoE-GS is the first framework to introduce the Mixture of Experts architecture into dynamic Gaussian Splatting. By employing a Volume-aware Pixel Router to adaptively fuse heterogenous deformation priors (HexPlane, per-Gaussian, polynomial, and interpolation), it consistently outperforms SOTA on N3V and Technicolor dat
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] MoE-GS is the first framework to introduce the Mixture of Experts architecture into dynamic Gaussian Splatting. By employing a Volume-aware Pixel Router to adaptively fuse heterogenous deformation priors (HexPlane, per-Gaussian, polynomial, and interpolation), it consistently outperforms SOTA on N3V and Technicolor datasets while maintaining efficiency through single-pass rendering, gate-aware pruning, and knowledge distillation.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - dynamic scene
-  - mixture of experts
-  - novel view synthesis
-  - knowledge distillation
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "dynamic scene"
+  - "mixture of experts"
+  - "novel view synthesis"
+  - "knowledge distillation"
 date: 2026-05-08
-content_hash: 752b87bf7dbad2c7
+content_hash: cfa735da1a48290d
 ---
+
 # MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -149,10 +150,10 @@ MoE-GS (N=3) improves upon the strongest single expert, E-D3DGS, by 0.9 dB PSNR.
 ## Related Papers
 
 - [\[ICLR 2026\] Point-MoE: Large-Scale Multi-Dataset Training with Mixture-of-Experts for 3D Semantic Segmentation](point-moe_large-scale_multi-dataset_training_with_mixture-of-experts_for_3d_sema.md)
+- [\[ICLR 2026\] ODE-GS: Latent ODEs for Dynamic Scene Extrapolation with 3D Gaussian Splatting](ode-gs_latent_odes_for_dynamic_scene_extrapolation_with_3d_gaussian_splatting.md)
 - [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
 - [\[ICLR 2026\] Fracture-GS: Dynamic Fracture Simulation with Physics-Integrated Gaussian Splatting](fracture-gs_dynamic_fracture_simulation_with_physics-integrated_gaussian_splatti.md)
-- [\[ICLR 2026\] ODE-GS: Latent ODEs for Dynamic Scene Extrapolation with 3D Gaussian Splatting](ode-gs_latent_odes_for_dynamic_scene_extrapolation_with_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)
+- [\[ICLR 2026\] SSD-GS: Scattering and Shadow Decomposition for Relightable 3D Gaussian Splatting](ssd-gs_scattering_and_shadow_decomposition_for_relightable_3d_gaussian_splatting.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Physically Inspired Gaussian Splatting for HDR Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][3DGS] PhysHDR-GS is proposed as a physically inspired HDR novel view synthesis framework: it decomposes Gaussian color into intrinsic reflectance and adjustable ambient illumination. It utilizes complementary Image-Exposure (IE) and Gaussian-Illumination (GI) branches to capture HDR details, while a cross-branch HDR consiste
+  [CVPR 2026][3D Vision][HDR Novel View Synthesis] PhysHDR-GS is proposed as a physically inspired HDR novel view synthesis framework: it decomposes Gaussian color into intrinsic reflectance and adjustable ambient illumination. It utilizes complementary Image-Exposure (IE) and Gaussian-Illumination (GI) branches to capture HDR details, while a cross-branch HDR consistency loss provides explicit HDR supervision without Ground Truth (GT). Furthermore…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3DGS
+  - "CVPR 2026"
+  - "3D Vision"
+  - "HDR Novel View Synthesis"
+  - "3DGS"
+  - "Physically Inspired Rendering"
+  - "Dual-branch Architecture"
+  - "Illumination-guided Gradient Scaling"
 date: 2026-05-08
-content_hash: e9a2c4290fa759bd
+content_hash: 827b15677183afea
 ---
+
 # Physically Inspired Gaussian Splatting for HDR Novel View Synthesis
 
 **Conference**: CVPR 2026  
@@ -165,7 +170,7 @@ Note: Ours† (Scaffold-GS) is 0.59dB higher than GaussHDR† on LDR-OE.
 
 - [\[CVPR 2026\] Splatent: Splatting Diffusion Latents for Novel View Synthesis](splatent_splatting_diffusion_latents_for_novel_view_synthesis.md)
 - [\[ICCV 2025\] SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing](../../ICCV2025/3d_vision/sehdr_single-exposure_hdr_novel_view_synthesis_via_3d_gaussian_bracketing.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting for Efficient Retrospective Dynamic Scene Novel View Synthesis with a Standardized Benchmark](3d_gaussian_splatting_for_efficient_retrospective_dynamic_scene_novel_view_synth.md)
+- [\[ICLR 2026\] CylinderSplat: 3D Gaussian Splatting with Cylindrical Triplanes for Panoramic Novel View Synthesis](../../ICLR2026/3d_vision/cylindersplat_3d_gaussian_splatting_with_cylindrical_triplanes_for_panoramic_nov.md)
 - [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
 - [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
 

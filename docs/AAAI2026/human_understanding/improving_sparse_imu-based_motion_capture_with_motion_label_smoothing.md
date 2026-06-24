@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Sparse IMU-based Motion Capture with Motion Label Smoothing
 description: >-
-  [AAAI 2026][Human Understanding][Sparse IMU] This paper proposes Motion Label Smoothing, adapting classical label smoothing from classification tasks to sparse IMU-based motion capture. By incorporating skeleton-structur…
+  [AAAI 2026][Human Understanding][Sparse IMU] This paper proposes Motion Label Smoothing, adapting classical label smoothing from classification tasks to sparse IMU-based motion capture. By incorporating skeleton-structure-aware Perlin noise as smoothed labels, the method improves accuracy across three state-of-the-art methods on four datasets in a plug-and-play manner without modifying model architectures. GlobalPose achieves a 20.41% reduction in SIP error on TotalCapture.
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Perlin Noise"
   - "Regularization"
 date: 2026-05-08
-content_hash: 4c485955def2df43
+content_hash: d14aa3b45ffd405e
 ---
 
 # Improving Sparse IMU-based Motion Capture with Motion Label Smoothing
@@ -150,11 +150,11 @@ Key characteristics:
 
 ## Related Papers
 
+- [\[CVPR 2026\] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](../../CVPR2026/human_understanding/imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)
+- [\[CVPR 2026\] Ground Reaction Inertial Poser: Physics-based Human Motion Capture from Sparse IMUs and Insole Pressure Sensors](../../CVPR2026/human_understanding/ground_reaction_inertial_poser_physics-based_human_motion_capture_from_sparse_im.md)
 - [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
 - [\[ICCV 2025\] MagShield: Towards Better Robustness in Sparse Inertial Motion Capture Under Magnetic Disturbances](../../ICCV2025/human_understanding/magshield_towards_better_robustness_in_sparse_inertial_motion_capture_under_magn.md)
-- [\[CVPR 2026\] HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture](../../CVPR2026/human_understanding/hum4d_markerless_motion_capture.md)
-- [\[AAAI 2026\] Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction](spatiotemporal-untrammelled_mixture_of_experts_for_multi-person_motion_predictio.md)
-- [\[AAAI 2026\] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment](realign_text-to-motion_generation_via_step-aware_reward-guided_alignment.md)
+- [\[CVPR 2026\] MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment](../../CVPR2026/human_understanding/mobind_motion_binding_for_fine-grained_imu-video_pose_alignment.md)
 
 </div>
 

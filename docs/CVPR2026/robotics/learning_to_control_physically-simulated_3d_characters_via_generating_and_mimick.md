@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Reinforcement Learning] Mimic2DM reformulates "learning physically controllable characters from video" as a pure 2D reprojection tracking problem. Using only 2D keypoints extracted from in-the-wild videos and leveraging physical simulation as a prior to filter infeasible poses, it trains a view-invariant tracking policy. This policy is extend
+  [CVPR 2026][Robotics][Physically-simulated character control] Mimic2DM reformulates "learning physically controllable characters from video" as a pure 2D reprojection tracking problem. Using only 2D keypoints extracted from in-the-wild videos and leveraging physical simulation as a prior to filter infeasible poses, it trains a view-invariant tracking policy. This policy is extended to 3D tracking via multi-view feature aggregation in a zero-shot manner and integrated with an…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Robotics"
+  - "Physically-simulated character control"
+  - "Reinforcement Learning"
+  - "2D motion mimicking"
+  - "View-invariant policy"
+  - "Hierarchical control"
 date: 2026-05-08
-content_hash: e9f5837e69348185
+content_hash: 68892a82f2591f73
 ---
+
 # Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ On AIST++ large-scale imitation and generation, 2D supervision approaches the pe
 
 ## Related Papers
 
+- [\[CVPR 2026\] RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model](rehearsevla_simulated_post-training_for_vlas_with_physically-consistent_world_mo.md)
 - [\[ECCV 2024\] GraspXL: Generating Grasping Motions for Diverse Objects at Scale](../../ECCV2024/robotics/graspxl_generating_grasping_motions_for_diverse_objects_at_scale.md)
 - [\[CVPR 2026\] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation](bridging_the_2d-3d_gap_a_hierarchical_semantic-geometric_map_for_vision_language.md)
-- [\[CVPR 2026\] Physically Ground Commonsense Knowledge for Articulated Object Manipulation with Analytic Concepts](physically_ground_commonsense_knowledge_for_articulated_object_manipulation_with.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
 - [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
-- [\[CVPR 2026\] Closed-Loop Neural Activation Control in Vision-Language-Action Models](closed-loop_neural_activation_control_in_vision-language-action_models.md)
 
 </div>
 

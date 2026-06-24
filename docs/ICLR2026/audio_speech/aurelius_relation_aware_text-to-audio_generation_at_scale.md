@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Aurelius: Relation Aware Text-to-Audio Generation At Scale
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] Aurelius constructs two large-scale decoupled corpora (AudioEventSet with 110 categories of audio events + AudioRelSet with 100 types of relations) and a text-audio pair generation strategy. This pushes "relation-aware text-to-audio generation" from small-scale exploration to a scalable research level. The authors syst
+  [ICLR2026][Audio & Speech][Text-to-Audio] Aurelius constructs two large-scale decoupled corpora (AudioEventSet with 110 categories of audio events + AudioRelSet with 100 types of relations) and a text-audio pair generation strategy. This pushes "relation-aware text-to-audio generation" from small-scale exploration to a scalable research level. The authors systematically benchmark 9 mainstream TTA models, revealing that they almost entirely fail at modeling multi-event relatio…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Text-to-Audio"
+  - "Relation-Aware Generation"
+  - "Audio Event Corpus"
+  - "Benchmark Evaluation"
+  - "Compositional Reasoning"
 date: 2026-05-08
-content_hash: ad6715d47186449e
+content_hash: c0478158322f98a2
 ---
+
 # Aurelius: Relation Aware Text-to-Audio Generation At Scale
 
 **Conference**: ICLR2026  
@@ -136,11 +142,11 @@ Both fine-tuning and training from-scratch significantly improve relation-aware 
 
 ## Related Papers
 
+- [\[ICLR 2026\] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization](tangoflux_super_fast_and_faithful_text_to_audio_generation_with_flow_matching_an.md)
 - [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](../../CVPR2026/audio_speech/omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 - [\[ICML 2025\] Sounding that Object: Interactive Object-Aware Image to Audio Generation](../../ICML2025/audio_speech/sounding_that_object_interactive_object-aware_image_to_audio_generation.md)
 - [\[ICLR 2026\] AudioX: A Unified Framework for Anything-to-Audio Generation](audiox_a_unified_framework_for_anything-to-audio_generation.md)
-- [\[ACL 2026\] ControlAudio: Tackling Text-Guided, Timing-Indicated and Intelligible Audio Generation via Progressive Diffusion Modeling](../../ACL2026/audio_speech/controlaudio_tackling_text-guided_timing-indicated_and_intelligible_audio_genera.md)
 
 </div>
 

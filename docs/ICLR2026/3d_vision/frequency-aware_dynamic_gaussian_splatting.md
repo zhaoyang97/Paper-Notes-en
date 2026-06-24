@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Frequency-Aware Dynamic Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper reveals the root cause of motion blur in dynamic 3DGS from a frequency perspective—"high-frequency rendering details" and "high-frequency motion" compete for expressive power on fixed Gaussian kernels. It proposes the Frequency-Differentiated Gaussian Kernel (FDGK) and Fourier Deformation Network (FDN) to de
+  [ICLR 2026][3D Vision][Dynamic Gaussian Splatting] This paper reveals the root cause of motion blur in dynamic 3DGS from a frequency perspective—"high-frequency rendering details" and "high-frequency motion" compete for expressive power on fixed Gaussian kernels. It proposes the Frequency-Differentiated Gaussian Kernel (FDGK) and Fourier Deformation Network (FDN) to decouple detail expression from motion modeling, significantly reducing blur and achieving a new SOTA on synthe…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Dynamic Gaussian Splatting"
+  - "4D Reconstruction"
+  - "Motion Blur"
+  - "Frequency-Aware"
+  - "Deformation Field"
+  - "Fourier Embedding"
 date: 2026-05-08
-content_hash: e13c09e18c0fcda9
+content_hash: bef877c7e164b84c
 ---
+
 # Frequency-Aware Dynamic Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -126,11 +133,11 @@ D-NeRF averages, removing components sequentially:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
 - [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
+- [\[CVPR 2026\] SharpTimeGS: Sharp and Stable Dynamic Gaussian Splatting via Lifespan Modulation](../../CVPR2026/3d_vision/sharptimegs_sharp_and_stable_dynamic_gaussian_splatting_via_lifespan_modulation.md)
+- [\[ICLR 2026\] ETGS: Explicit Thermodynamics Gaussian Splatting for Dynamic Thermal Reconstruction](etgs_explicit_thermodynamics_gaussian_splatting_for_dynamic_thermal_reconstructi.md)
 - [\[CVPR 2026\] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking](../../CVPR2026/3d_vision/tagsplat_topology-aware_gaussian_splatting_for_dynamic_mesh_modeling_and_trackin.md)
-- [\[ICLR 2026\] Fracture-GS: Dynamic Fracture Simulation with Physics-Integrated Gaussian Splatting](fracture-gs_dynamic_fracture_simulation_with_physics-integrated_gaussian_splatti.md)
-- [\[ICLR 2026\] Gradient-Direction-Aware Density Control for 3D Gaussian Splatting](gradient-direction-aware_density_control_for_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
 
 </div>
 

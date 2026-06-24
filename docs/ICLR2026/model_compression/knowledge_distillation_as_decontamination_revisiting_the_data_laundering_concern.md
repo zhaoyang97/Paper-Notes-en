@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Knowledge Distillation as Decontamination? Revisiting the "Data Laundering" Concern in Classification Tasks
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] The authors systematically examine the severity of "data laundering" (where a contaminated teacher smuggles test set knowledge to a clean student via distillation) across eight classification benchmarks. They find that the inflated accuracy caused by laundering is much smaller than direct contamination and statisticall
+  [ICLR 2026][Model Compression][Knowledge Distillation] The authors systematically examine the severity of "data laundering" (where a contaminated teacher smuggles test set knowledge to a clean student via distillation) across eight classification benchmarks. They find that the inflated accuracy caused by laundering is much smaller than direct contamination and statistically insignificant in most cases. Furthermore, they demonstrate that laundering and direct contamination are…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Data Contamination"
+  - "Data Laundering"
+  - "Evaluation Integrity"
+  - "Classification Tasks"
 date: 2026-05-08
-content_hash: ae3c602d1da95a25
+content_hash: 6e87bb0b2ed7e5ad
 ---
+
 # Knowledge Distillation as Decontamination? Revisiting the "Data Laundering" Concern in Classification Tasks
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model
 description: >-
-  [ICCV 2025][Image Generation][Unsupervised deblurring] TP-Diff is the first work to introduce diffusion models into unpaired image deblurring. It learns spatially varying texture priors via a memory-augmented Texture Pri…
+  [ICCV 2025][Image Generation][Unsupervised deblurring] TP-Diff is the first work to introduce diffusion models into unpaired image deblurring. It learns spatially varying texture priors via a memory-augmented Texture Prior Encoder (TPE), and designs a Filter-Modulated Multi-head Self-Attention (FM-MSA) to leverage these priors for precise deblurring, achieving a new unsupervised state-of-the-art on multiple benchmarks with only 11.89M parameters.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "unpaired training"
   - "adaptive filtering"
 date: 2026-05-08
-content_hash: 9fbb2c1cede6d5d3
+content_hash: e9c9a7470a8af003
 ---
 
 # Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model
@@ -144,8 +144,8 @@ TP-Diff achieves the best performance among unpaired methods with the fewest par
 - [\[ICCV 2025\] DPoser-X: Diffusion Model as Robust 3D Whole-Body Human Pose Prior](dposer-x_diffusion_model_as_robust_3d_whole-body_human_pose_prior.md)
 - [\[ICCV 2025\] DIIP: Diffusion Image Prior](diffusion_image_prior.md)
 - [\[NeurIPS 2025\] BlurDM: A Blur Diffusion Model for Image Deblurring](../../NeurIPS2025/image_generation/blurdm_a_blur_diffusion_model_for_image_deblurring.md)
-- [\[ICML 2026\] Bayesian Tensor Decomposition with Diffusion Model Prior](../../ICML2026/image_generation/bayesian_tensor_decomposition_with_diffusion_model_prior.md)
 - [\[NeurIPS 2025\] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors](../../NeurIPS2025/image_generation/a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors.md)
+- [\[ICCV 2025\] A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](a0_an_affordance-aware_hierarchical_model_for_general_robotic_manipulation.md)
 
 </div>
 

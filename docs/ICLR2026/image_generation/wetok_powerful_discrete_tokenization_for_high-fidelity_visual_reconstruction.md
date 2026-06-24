@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WeTok: Powerful Discrete Tokenization for High-Fidelity Visual Reconstruction
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] WeTok is a discrete visual tokenizer that employs "Grouped Lookup-free Quantization (GQ)" to bypass the memory explosion of entropy loss by partitioning large codebooks into smaller groups. It further utilizes a "Generative Decoder (GD)" to transform the decoder from a deterministic regression model into a noise-condit
+  [ICLR 2026][Image Generation][Discrete Visual Tokenizer] WeTok is a discrete visual tokenizer that employs "Grouped Lookup-free Quantization (GQ)" to bypass the memory explosion of entropy loss by partitioning large codebooks into smaller groups. It further utilizes a "Generative Decoder (GD)" to transform the decoder from a deterministic regression model into a noise-conditioned GAN generator, enabling the reconstruction of fine details even at high compression ratios. On Im…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Discrete Visual Tokenizer"
+  - "Lookup-free Quantization"
+  - "Grouped Quantization"
+  - "Generative Decoder"
+  - "High-fidelity Reconstruction"
 date: 2026-05-08
-content_hash: 425e6abcaeb4d7b0
+content_hash: 28809fa52ae358e4
 ---
+
 # WeTok: Powerful Discrete Tokenization for High-Fidelity Visual Reconstruction
 
 **Conference**: ICLR 2026  

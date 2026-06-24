@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Complexity Scaling Laws for Neural Models using Combinatorial Optimization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][neural scaling laws] Using the Traveling Salesman Problem (TSP) as a case study, this paper investigates predictable scaling relationships between problem complexity (solution space…
+  [NeurIPS 2025][Reinforcement Learning][neural scaling laws] Using the Traveling Salesman Problem (TSP) as a case study, this paper investigates predictable scaling relationships between problem complexity (solution space size, representation space dimensionality) and model performance under fixed model capacity, revealing systematic performance trends for RL and SFT in combinatorial optimization.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "TSP"
   - "problem complexity"
 date: 2026-05-08
-content_hash: 9a7145d7928310fb
+content_hash: fe1e7f04bcc5e920
 ---
 
 # Complexity Scaling Laws for Neural Models using Combinatorial Optimization
@@ -169,10 +169,10 @@ The growth rate exponent of optimal model size vs. compute budget is approximate
 ## Related Papers
 
 - [\[NeurIPS 2025\] PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization](parco_parallel_autoregressive_models_for_multi-agent_combinatorial_optimization.md)
+- [\[ICML 2025\] Preference Optimization for Combinatorial Optimization Problems](../../ICML2025/reinforcement_learning/preference_optimization_for_combinatorial_optimization_problems.md)
 - [\[ICML 2026\] ASAP: Exploiting the Satisficing Generalization Edge in Neural Combinatorial Optimization](../../ICML2026/reinforcement_learning/asap_exploiting_the_satisficing_generalization_edge_in_neural_combinatorial_opti.md)
 - [\[NeurIPS 2025\] Inverse Optimization Latent Variable Models for Learning Costs Applied to Route Problems](inverse_optimization_latent_variable_models_for_learning_costs_applied_to_route_.md)
 - [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](structured_reinforcement_learning_for_combinatorial_decision-making.md)
-- [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](reinforcement_learning_teachers_of_test_time_scaling.md)
 
 </div>
 

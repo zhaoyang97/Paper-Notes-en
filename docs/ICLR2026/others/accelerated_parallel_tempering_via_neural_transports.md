@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Accelerated Parallel Tempering via Neural Transports
 description: >-
-  [ICLR 2026][Others][Paper Note] The rigid "direct state swap" in Parallel Tempering (PT) is replaced with an "accelerated swap": neural transports (Normalizing Flows / Controlled Diffusion / Diffusion Models) are used to push the two states towards each other before performing a Metropolis acceptance check. This enables high-probability exchanges eve
+  [ICLR2026][Parallel Tempering] The rigid "direct state swap" in Parallel Tempering (PT) is replaced with an "accelerated swap": neural transports (Normalizing Flows / Controlled Diffusion / Diffusion Models) are used to push the two states towards each other before performing a Metropolis acceptance check. This enables high-probability exchanges even when adjacent annealed distributions have minimal overlap, significantly increasing the round-trip count between the reference…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR2026"
+  - "Parallel Tempering"
+  - "Neural Transport"
+  - "MCMC Sampling"
+  - "Free Energy Estimation"
+  - "Multimodal Sampling"
 date: 2026-05-08
-content_hash: 84b1920a1d01023d
+content_hash: bffba44bf2b6aaf7
 ---
+
 # Accelerated Parallel Tempering via Neural Transports
 
 **Conference**: ICLR2026  
@@ -146,11 +151,11 @@ When chains are limited (N=6), APT achieves **10×–100×** round-trip gains ov
 
 ## Related Papers
 
-- [\[ICLR 2026\] Fractional-Order Spiking Neural Network](fractional-order_spiking_neural_network.md)
-- [\[ICLR 2026\] SONIC: Spectral Oriented Neural Invariant Convolutions](sonic_spectral_oriented_neural_invariant_convolutions.md)
+- [\[AAAI 2026\] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](../../AAAI2026/others/pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)
+- [\[ICML 2026\] Inference of Online Newton Methods with Nesterov's Accelerated Sketching](../../ICML2026/others/inference_of_online_newton_methods_with_nesterovs_accelerated_sketching.md)
+- [\[ICML 2026\] ParalESN: Enabling Parallel Information Processing in Reservoir Computing](../../ICML2026/others/paralesn_enabling_parallel_information_processing_in_reservoir_computing.md)
 - [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
-- [\[ICLR 2026\] Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks](learning_on_a_razors_edge_identifiability_and_singularity_of_polynomial_neural_n.md)
-- [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
+- [\[ICLR 2026\] Beyond Linear Processing: Dendritic Bilinear Integration in Spiking Neural Networks](beyond_linear_processing_dendritic_bilinear_integration_in_spiking_neural_networ.md)
 
 </div>
 

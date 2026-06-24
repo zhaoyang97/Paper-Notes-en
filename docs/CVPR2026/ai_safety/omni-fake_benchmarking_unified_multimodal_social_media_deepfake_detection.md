@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection
 description: >-
-  [CVPR 2026][AI Safety][Reinforcement Learning] This paper constructs Omni-Fake, the first social media deepfake benchmark covering four modalities (Image, Audio, Video, Audio-Visual Talking Head) with over 1 million training samples and 200,000+ strictly disjoint OOD samples, unified under "Detect-Locate-Explain" annotations. It also presents Omni-Fake-R1, a unifie
+  [CVPR 2026][AI Safety][deepfake detection] This paper constructs Omni-Fake, the first social media deepfake benchmark covering four modalities (Image, Audio, Video, Audio-Visual Talking Head) with over 1 million training samples and 200,000+ strictly disjoint OOD samples, unified under "Detect-Locate-Explain" annotations. It also presents Omni-Fake-R1, a unified detector based on Qwen2.5-Omni-7B trained with "Curricular SFT + GSPO Reinforcement Learning…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "AI Safety"
+  - "deepfake detection"
+  - "multimodal benchmark"
+  - "OOD generalization"
+  - "detect-locate-explain"
+  - "reinforcement learning"
 date: 2026-05-08
-content_hash: 53794b187dc7c725
+content_hash: b4e035c248d7c097
 ---
+
 # Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection
 
 **Conference**: CVPR 2026  
@@ -121,9 +126,9 @@ $$r(x,y)=\lambda_{\mathrm{fmt}}r_{\mathrm{fmt}}+\lambda_{\mathrm{acc}}r_{\mathrm
 ## Related Papers
 
 - [\[CVPR 2026\] FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models](fvbench_benchmarking_deepfake_video_detection_capability_of_large_multimodal_mod.md)
-- [\[CVPR 2026\] UniGame: Turning a Unified Multimodal Model Into Its Own Adversary](unigame_turning_a_unified_multimodal_model_into_its_own_adversary.md)
-- [\[CVPR 2026\] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning](dfd-hr_generalizable_deepfake_detection_via_hierarchical_routing_learning.md)
 - [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
+- [\[CVPR 2026\] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning](dfd-hr_generalizable_deepfake_detection_via_hierarchical_routing_learning.md)
+- [\[CVPR 2026\] UniGame: Turning a Unified Multimodal Model Into Its Own Adversary](unigame_turning_a_unified_multimodal_model_into_its_own_adversary.md)
 - [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
 
 </div>

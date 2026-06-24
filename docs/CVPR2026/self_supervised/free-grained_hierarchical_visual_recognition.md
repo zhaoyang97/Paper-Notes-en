@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Free-Grained Hierarchical Visual Recognition
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Ours proposes "free-grained" hierarchical visual recognition, allowing training labels to appear at any level of the taxonomy, and introduces text-guided pseudo-attributes and taxonomy-guided semi-supervised learning to compensate for missing supervision; during inference, the model adaptively selects prediction depth.
+  [CVPR 2026][Self-Supervised Learning][Hierarchical Classification] Ours proposes "free-grained" hierarchical visual recognition, allowing training labels to appear at any level of the taxonomy, and introduces text-guided pseudo-attributes and taxonomy-guided semi-supervised learning to compensate for missing supervision; during inference, the model adaptively selects prediction depth.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Hierarchical Classification"
+  - "Mixed-Granularity Labeling"
+  - "Semi-Supervised Learning"
+  - "Text-Guided"
+  - "Taxonomy"
 date: 2026-05-08
-content_hash: 103991145682819e
+content_hash: 36cc2cf34eac4767
 ---
+
 # Free-Grained Hierarchical Visual Recognition
 
 **Conference**: CVPR 2026  
@@ -151,9 +157,9 @@ After recovering supervision, inference must determine "how deep to predict"—s
 
 - [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
 - [\[ICCV 2025\] Scaling Language-Free Visual Representation Learning](../../ICCV2025/self_supervised/scaling_languagefree_visual_representation_learning.md)
+- [\[ICLR 2026\] Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification](../../ICLR2026/self_supervised/part-level_semantic-guided_contrastive_learning_for_fine-grained_visual_classifi.md)
 - [\[CVPR 2026\] HCL-FF: Hierarchical and Contrastive Learning for Forward-Forward Algorithm](hcl-ff_hierarchical_and_contrastive_learning_for_forward-forward_algorithm.md)
 - [\[CVPR 2026\] Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines](learning_to_see_through_a_babys_eyes_early_visual_diets_enable_robust_visual_int.md)
-- [\[CVPR 2026\] Exploring Visual Pretraining for Learning Language Intelligence](exploring_visual_pretraining_for_learning_language_intelligence.md)
 
 </div>
 

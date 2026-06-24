@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides a "feature compression" explanation for adversarial fragility using random matrix theory: neural networks classify using only a compressed subset of features, resulting in a worst-case robustness that may be only $1/\sqrt{d}$ of the optimal classifier's, validated on ImageNet.
+  [ICLR 2026][Learning Theory][Adversarial Robustness] This paper provides a "feature compression" explanation for adversarial fragility using random matrix theory: neural networks classify using only a compressed subset of features, resulting in a worst-case robustness that may be only $1/\sqrt{d}$ of the optimal classifier's, validated on ImageNet.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Adversarial Robustness Theory"
+  - "Adversarial Robustness"
+  - "Feature Compression"
+  - "Random Matrix Theory"
+  - "Optimal Classifier"
+  - "QR Decomposition"
 date: 2026-05-08
-content_hash: 9eb7c3c98b3e0926
+content_hash: 6bf62d497cc1ff97
 ---
+
 # Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks
 
 **Conference**: ICLR 2026  
@@ -125,7 +132,7 @@ The magnitudes match, validating that feature compression causes adversarial fra
 - [\[ICLR 2026\] Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime](scaling_laws_and_spectra_of_shallow_neural_networks_in_the_feature_learning_regi.md)
 - [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](transfer_learning_in_infinite_width_feature_learning_networks.md)
 - [\[ICLR 2026\] FACT: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations](fact_a_first-principles_alternative_to_the_neural_feature_ansatz_for_how_network.md)
-- [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
 - [\[ICLR 2026\] Overparametrization bends the landscape: BBP transitions at initialization in simple Neural Networks](overparametrization_bends_the_landscape_bbp_transitions_at_initialization_in_sim.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning
 description: >-
-  [ICCV 2025][Robotics][Multi-Task Learning] This paper proposes DTME-MTL, a framework that identifies and categorizes gradient conflicts in token space into range-space conflicts and null-space conflicts…
+  [ICCV 2025][Robotics][Multi-Task Learning] This paper proposes DTME-MTL, a framework that identifies and categorizes gradient conflicts in token space into range-space conflicts and null-space conflicts, and addresses them via Token Modulation (affine transformation) and Token Expansion (task-specific token insertion), respectively, to mitigate negative transfer in Transformer-based multi-task learning with minimal parameter overhead.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Transformer"
   - "Dynamic Network Expansion"
 date: 2026-05-08
-content_hash: 16624bc700a95778
+content_hash: be65607e6ac9f429
 ---
 
 # Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning
@@ -166,7 +166,7 @@ DTME-MTL (Dynamic Token Modulation and Expansion) is a plug-and-play framework a
 - [\[ICCV 2025\] Beyond Losses Reweighting: Empowering Multi-Task Learning via the Generalization Perspective](beyond_losses_reweighting_empowering_multi-task_learning_via_the_generalization_.md)
 - [\[ICCV 2025\] Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos](moto_latent_motion_token_as_the_bridging_language_for_learning_robot_manipulatio.md)
 - [\[ICCV 2025\] Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning](rep-mtl_unleashing_the_power_of_representation-level_task_saliency_for_multi-tas.md)
-- [\[ICCV 2025\] TransiT: Transient Transformer for Non-line-of-sight Videography](transit_transient_transformer_for_non-line-of-sight_videography.md)
+- [\[ICML 2025\] Efficient Robotic Policy Learning via Latent Space Backward Planning](../../ICML2025/robotics/efficient_robotic_policy_learning_via_latent_space_backward_planning.md)
 - [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](../../NeurIPS2025/robotics/vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
 
 </div>

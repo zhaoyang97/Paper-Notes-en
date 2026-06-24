@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] This paper introduces TANL (Test-time Activated Negative Labels), which dynamically evaluates the "activation level" of negative labels on OOD samples during test-time to mine the most effective labels. Combined with an activation-aware scoring function, it significantly reduces FPR95 from 17.5% to 9.8% on ImageNet ben
+  [CVPR 2026][Multimodal VLM][OOD Detection] This paper introduces TANL (Test-time Activated Negative Labels), which dynamically evaluates the "activation level" of negative labels on OOD samples during test-time to mine the most effective labels. Combined with an activation-aware scoring function, it significantly reduces FPR95 from 17.5% to 9.8% on ImageNet benchmarks while remaining training-free and computationally efficient at inference.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "OOD Detection"
+  - "Vision-Language Models"
+  - "Negative Labels"
+  - "Test-time Adaptation"
+  - "Activation Metrics"
 date: 2026-05-08
-content_hash: daf4288c2b46ea3d
+content_hash: cea0927d2f1d2c99
 ---
+
 # Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -149,9 +154,9 @@ Ours is entirely training-free (zero-shot). The CLIP encoders are frozen through
 
 ## Related Papers
 
-- [\[CVPR 2026\] ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning](ants_adaptive_negative_textual_space_shaping_for_ood_detection_via_test-time_mll.md)
 - [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
+- [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
 - [\[CVPR 2026\] Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs](mind_the_way_you_select_negative_texts_pursuing_the_distance_consistency_in_ood_.md)
 - [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](../../AAAI2026/multimodal_vlm/cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
 

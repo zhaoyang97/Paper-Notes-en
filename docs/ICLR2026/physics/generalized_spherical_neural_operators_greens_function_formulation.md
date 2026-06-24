@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Generalized Spherical Neural Operators: Green's Function Formulation
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Green's function] This paper reformulates spherical neural operators using "designable spherical Green's functions," interpreting the existing SFNO as a special case of relative-position Green's functions. By introducing absolute-position dependent terms, the authors derive the GSNO operator and the multi-scale SHNet, which flexible bal
+  [ICLR 2026][Physics & Scientific Computing][Green's function] This paper reformulates spherical neural operators using "designable spherical Green's functions," interpreting the existing SFNO as a special case of relative-position Green's functions. By introducing absolute-position dependent terms, the authors derive the GSNO operator and the multi-scale SHNet, which flexible balance equivariance and invariance, significantly outperforming SOTA models in diffusion MRI…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Green's function
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Green's function"
+  - "Spherical Neural Operator"
+  - "Spherical Harmonic Transform"
+  - "Equivariance and Invariance"
+  - "Multi-scale modeling"
 date: 2026-05-08
-content_hash: de7ec6f134a34992
+content_hash: bbff87bda2a42174
 ---
+
 # Generalized Spherical Neural Operators: Green's Function Formulation
 
 **Conference**: ICLR 2026  
@@ -128,14 +133,15 @@ Even with increased capacity (96 channels) or spatial position embeddings, SFNO 
 - **Value**: ⭐⭐⭐⭐⭐ — Provides a unified theoretical framework and efficient operator blocks for real-world spherical systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
 - [\[ICLR 2026\] A Function-Centric Graph Neural Network Approach for Predicting Electron Densities](a_function-centric_graph_neural_network_approach_for_predicting_electron_densiti.md)
 - [\[NeurIPS 2025\] Neural Green's Functions](../../NeurIPS2025/physics/neural_greens_functions.md)
 - [\[ICLR 2026\] Adaptive Mamba Neural Operators](adaptive_mamba_neural_operators.md)
-- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
 - [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
 
 </div>

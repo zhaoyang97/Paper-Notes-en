@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unified Primitive Proxies for Structured Shape Completion
 description: >-
-  [CVPR 2026][3D Vision][Transformer] UniCo is proposed to learn unified primitive representations on shared shape features via primitive proxies. It jointly predicts complete point clouds and assembly-ready quadric primitives (including geometry, semantics, and membership) in a single forward pass, reducing Chamfer distance by up to 50% and improving norm
+  [CVPR 2026][3D Vision][Shape Completion] UniCo is proposed to learn unified primitive representations on shared shape features via primitive proxies. It jointly predicts complete point clouds and assembly-ready quadric primitives (including geometry, semantics, and membership) in a single forward pass, reducing Chamfer distance by up to 50% and improving normal consistency by up to 7% on synthetic and real-world point cloud benchmarks.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Shape Completion"
+  - "Primitive Assembly"
+  - "3D Reconstruction"
+  - "Transformer"
+  - "Structured Understanding"
 date: 2026-05-08
-content_hash: fb7e70fad63fadb3
+content_hash: 7c2a84d72658c734
 ---
+
 # Unified Primitive Proxies for Structured Shape Completion
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ Primitives with $s_k > 0.5$ are passed to downstream solvers.
 
 ## Related Papers
 
+- [\[CVPR 2026\] Wave-Former: Through-Occlusion 3D Reconstruction via Wireless Shape Completion](wave-former_through-occlusion_3d_reconstruction_via_wireless_shape_completion.md)
+- [\[CVPR 2026\] X-Part: High Fidelity And Structure Coherent Shape Decomposition And Completion](x-part_high_fidelity_and_structure_coherent_shape_decomposition_and_completion.md)
 - [\[CVPR 2026\] Proxy-GS: Unified Occlusion Priors for Training and Inference in Structured 3D Gaussian Splatting](proxy-gs_unified_occlusion_priors_for_training_and_inference_in_structured_3d_ga.md)
 - [\[CVPR 2026\] Differentiable Adaptive 4D Structured Illumination for Joint Capture of Shape and Reflectance](differentiable_adaptive_4d_structured_illumination_for_joint_capture_of_shape_an.md)
 - [\[CVPR 2026\] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations](rng_a_unified_transformer_for_complete_3d_modeling_from_partial_observations.md)
-- [\[CVPR 2026\] FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation](flashmesh_faster_and_better_autoregressive_mesh_synthesis_via_structured_specula.md)
-- [\[CVPR 2025\] ESCAPE: Equivariant Shape Completion via Anchor Point Encoding](../../CVPR2025/3d_vision/escape_equivariant_shape_completion_via_anchor_point_encoding.md)
 
 </div>
 

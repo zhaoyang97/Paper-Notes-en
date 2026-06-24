@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Long-Context Generalization with Sparse Attention
 description: >-
-  [ICLR 2026][Object Detection][α-entmax] ASEntmax (Adaptive-Scalable Entmax) is proposed, replacing softmax attention with $\alpha$-entmax using learnable temperature. The work theoretically and experimentally proves that sparse attention achieves $1000\times$ length extrapolation, resolving the attention dispersion problem of softmax under long contexts.
+  [ICLR 2026][Object Detection][Sparse Attention] ASEntmax (Adaptive-Scalable Entmax) is proposed, replacing softmax attention with $\alpha$-entmax using learnable temperature. The work theoretically and experimentally proves that sparse attention achieves $1000\times$ length extrapolation, resolving the attention dispersion problem of softmax under long contexts.
 tags:
-  - ICLR 2026
-  - Object Detection
-  - α-entmax
-  - Transformer
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Sparse Attention"
+  - "Long-context Generalization"
+  - "$\\alpha$-entmax"
+  - "Length Extrapolation"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 5af89245bb30870c
+content_hash: e62abbb25ad0a523
 ---
+
 # Long-Context Generalization with Sparse Attention
 
 **Conference**: ICLR 2026  
@@ -136,8 +140,8 @@ Impact of $\alpha$ and temperature learnability (Associative Recall, test length
 - [\[ICLR 2026\] Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing](enhancing_vision_transformers_for_object_detection_via_context-aware_token_selec.md)
 - [\[ICLR 2026\] SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection](spwood_sparse_partial_weakly-supervised_oriented_object_detection.md)
 - [\[CVPR 2026\] Bridge: Basis-Driven Causal Inference Marries VFMs for Domain Generalization](../../CVPR2026/object_detection/bridge_basis-driven_causal_inference_marries_vfms_for_domain_generalization.md)
-- [\[ICCV 2025\] Adversarial Attention Perturbations for Large Object Detection Transformers](../../ICCV2025/object_detection/adversarial_attention_perturbations_for_large_object_detection_transformers.md)
 - [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](../../AAAI2026/object_detection/countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
+- [\[ICML 2026\] FOCUS: Forcing In-Context Object Localization through Visual Support Constraints and Policy Optimization](../../ICML2026/object_detection/focus_forcing_in-context_object_localization_through_visual_support_constraints_.md)
 
 </div>
 

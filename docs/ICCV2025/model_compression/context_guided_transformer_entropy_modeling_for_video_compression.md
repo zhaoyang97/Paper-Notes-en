@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Context Guided Transformer Entropy Modeling for Video Compression
 description: >-
-  [ICCV 2025][Model Compression][Video Compression] This paper proposes the Context Guided Transformer (CGT) conditional entropy model, which reduces entropy modeling time by approximately 65% while achieving an 11% BD-Rat…
+  [ICCV 2025][Model Compression][Video Compression] This paper proposes the Context Guided Transformer (CGT) conditional entropy model, which reduces entropy modeling time by approximately 65% while achieving an 11% BD-Rate improvement in video compression. This is accomplished via a Temporal Context Resampler that reduces computational overhead and a Dependency-Weighted Spatial Context Assigner that explicitly models spatial dependencies.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Spatiotemporal Context"
   - "Conditional Coding"
 date: 2026-05-08
-content_hash: 13abb50dbb1d65aa
+content_hash: 351fd16333a4fcf4
 ---
 
 # Context Guided Transformer Entropy Modeling for Video Compression
@@ -134,9 +134,9 @@ BD-Rate (MS-SSIM): CGT achieves an average of −74.7%, substantially outperform
 
 - [\[ICCV 2025\] Learned Image Compression with Hierarchical Progressive Context Modeling](learned_image_compression_with_hierarchical_progressive_context_modeling.md)
 - [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](../../ACL2026/model_compression/latent-condensed_transformer_for_efficient_long_context_modeling.md)
+- [\[CVPR 2025\] Learned Image Compression with Dictionary-based Entropy Model](../../CVPR2025/model_compression/learned_image_compression_with_dictionary-based_entropy_model.md)
+- [\[ICML 2025\] Core Context Aware Transformers for Long Context Language Modeling](../../ICML2025/model_compression/core_context_aware_transformers_for_long_context_language_modeling.md)
 - [\[ICCV 2025\] MotionFollower: Editing Video Motion via Lightweight Score-Guided Diffusion](motionfollower_editing_video_motion_via_score-guided_diffusion.md)
-- [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
-- [\[ICCV 2025\] EA-ViT: Efficient Adaptation for Elastic Vision Transformer](ea-vit_efficient_adaptation_for_elastic_vision_transformer.md)
 
 </div>
 

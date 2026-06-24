@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution
 description: >-
-  [NeurIPS 2025][Image Generation][One-step diffusion] This paper presents DOVE, a video super-resolution model built upon the CogVideoX pretrained video generation model. Through a two-stage latent-pixel space training st…
+  [NeurIPS 2025][Image Generation][One-step diffusion] This paper presents DOVE, a video super-resolution model built upon the CogVideoX pretrained video generation model. Through a two-stage latent-pixel space training strategy and a curated high-quality HQ-VSR dataset, DOVE achieves single-step inference for video super-resolution, delivering 28× speedup over multi-step diffusion methods while achieving comparable or superior performance.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "latent-pixel space training"
   - "video data pipeline"
 date: 2026-05-08
-content_hash: aefb9fa2be7476d6
+content_hash: e97772dd097ee7ca
 ---
 
 # DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution
@@ -203,10 +203,10 @@ A dataset of merely 2K videos surpasses one of 400K, demonstrating that data qua
 ## Related Papers
 
 - [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](../../AAAI2026/image_generation/realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
+- [\[CVPR 2025\] Self-Supervised ControlNet with Spatio-Temporal Mamba for Real-World Video Super-Resolution](../../CVPR2025/image_generation/self-supervised_controlnet_with_spatio-temporal_mamba_for_real-world_video_super.md)
 - [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](../../AAAI2026/image_generation/mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
 - [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](../../CVPR2026/image_generation/duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
 - [\[NeurIPS 2025\] ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion](scalediff_higher-resolution_image_synthesis_via_efficient_and_model-agnostic_dif.md)
-- [\[ICCV 2025\] PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution](../../ICCV2025/image_generation/patchscaler_an_efficient_patch-independent_diffusion_model_for_image_super-resol.md)
 
 </div>
 

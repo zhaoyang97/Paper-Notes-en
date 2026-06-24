@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation
 description: >-
-  [ICCV 2025][Autonomous Driving][4D scene generation] This paper proposes DiST-4D, the first feed-forward 4D driving scene generation framework. By disentangling temporal prediction (DiST-T) and spatial novel view synthes…
+  [ICCV 2025][Autonomous Driving][4D scene generation] This paper proposes DiST-4D, the first feed-forward 4D driving scene generation framework. By disentangling temporal prediction (DiST-T) and spatial novel view synthesis (DiST-S) into two separate diffusion processes, with metric depth serving as a geometric bridge, the method achieves state-of-the-art temporal video generation (FVD 22.67) and spatial NVS (FID 10.12) on nuScenes simultaneously…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "metric depth"
   - "novel view synthesis"
 date: 2026-05-08
-content_hash: 07498eb8698a3e70
+content_hash: c47556fbae42d565
 ---
 
 # DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation
@@ -161,11 +161,11 @@ The valid mask contributes most (15.8% FID reduction); SCC further reduces FID b
 
 ## Related Papers
 
+- [\[ICLR 2026\] WorldSplat: Gaussian-Centric Feed-Forward 4D Scene Generation for Autonomous Driving](../../ICLR2026/autonomous_driving/worldsplat_gaussian-centric_feed-forward_4d_scene_generation_for_autonomous_driv.md)
 - [\[ICCV 2025\] Decoupled Diffusion Sparks Adaptive Scene Generation](decoupled_diffusion_sparks_adaptive_scene_generation.md)
 - [\[ICCV 2025\] 4DSegStreamer: Streaming 4D Panoptic Segmentation via Dual Threads](4dsegstreamer_streaming_4d_panoptic_segmentation_via_dual_threads.md)
 - [\[ICCV 2025\] Controllable 3D Outdoor Scene Generation via Scene Graphs](controllable_3d_outdoor_scene_generation_via_scene_graphs.md)
-- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
-- [\[ICCV 2025\] Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation](hermes_a_unified_self-driving_world_model_for_simultaneous_3d_scene_understandin.md)
+- [\[CVPR 2025\] Prompting Depth Anything for 4K Resolution Accurate Metric Depth Estimation](../../CVPR2025/autonomous_driving/prompting_depth_anything_for_4k_resolution_accurate_metric_depth_estimation.md)
 
 </div>
 

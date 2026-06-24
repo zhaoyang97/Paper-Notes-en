@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours introduces Ego-1K, a large-scale time-synchronized egocentric multiview video dataset containing 956 short videos (12+4 cameras, 60Hz). It fills the data gap in the field of egocentric dynamic 3D reconstruction and demonstrates that stereo depth guidance significantly enhances the quality of 4D novel view synthesi
+  [CVPR 2026][3D Vision][Egocentric vision] Ours introduces Ego-1K, a large-scale time-synchronized egocentric multiview video dataset containing 956 short videos (12+4 cameras, 60Hz). It fills the data gap in the field of egocentric dynamic 3D reconstruction and demonstrates that stereo depth guidance significantly enhances the quality of 4D novel view synthesis.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Egocentric vision"
+  - "multiview dataset"
+  - "dynamic scene reconstruction"
+  - "novel view synthesis"
+  - "hand-object interaction"
 date: 2026-05-08
-content_hash: 67e7fb6568105b5e
+content_hash: 1032e80a3b391a88
 ---
+
 # Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Foundation Stereo achieved the best overall consistency (lowest MAD), while BiDA
 
 ## Related Papers
 
+- [\[CVPR 2026\] SpatialVID: A Large-Scale Video Dataset with Spatial Annotations](spatialvid_a_large-scale_video_dataset_with_spatial_annotations.md)
+- [\[CVPR 2026\] SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations](scenescribe-1m_a_large-scale_video_dataset_with_comprehensive_geometric_and_sema.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
-- [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
-- [\[CVPR 2026\] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling](cat-gs_efficient_3dgs_rendering_for_large-scale_scenes_with_inter-frame_caching_.md)
-- [\[CVPR 2026\] Minimal Constraint Relaxation for Multiview Autocalibration](minimal_constraint_relaxation_for_multiview_autocalibration.md)
+- [\[CVPR 2025\] EgoPressure: A Dataset for Hand Pressure and Pose Estimation in Egocentric Vision](../../CVPR2025/3d_vision/egopressure_a_dataset_for_hand_pressure_and_pose_estimation_in_egocentric_vision.md)
+- [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
 
 </div>
 

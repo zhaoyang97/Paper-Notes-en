@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploring the Translation Mechanism of Large Language Models
 description: >-
-  [NeurIPS 2025][Multilingual & Machine Translation][translation mechanism] This paper proposes a subspace-intervened path patching method for fine-grained causal analysis of the translation mechanism in LLMs. The study fi…
+  [NeurIPS 2025][Multilingual & Machine Translation][translation mechanism] This paper proposes a subspace-intervened path patching method for fine-grained causal analysis of the translation mechanism in LLMs. The study finds that translation is driven by a sparse set of attention heads comprising fewer than 5% of all heads, categorized into three functional roles: source heads, indicator heads, and positional heads. MLP layers integrate these features into an English-centric i…
 tags:
   - "NeurIPS 2025"
   - "Multilingual & Machine Translation"
@@ -12,7 +12,7 @@ tags:
   - "path patching"
   - "subspace intervention"
 date: 2026-05-08
-content_hash: b36067dc32257541
+content_hash: 5f43f95103bf49df
 ---
 
 # Exploring the Translation Mechanism of Large Language Models
@@ -127,9 +127,9 @@ Fine-tuning only the 64 identified critical attention heads (<5% of parameters) 
 
 - [\[NeurIPS 2025\] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following](xifbench_evaluating_large_language_models_on_multilingual_instruction_following.md)
 - [\[ACL 2026\] Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models](../../ACL2026/multilingual_mt/exploring_continual_fine-tuning_for_enhancing_language_ability_in_large_language.md)
-- [\[NeurIPS 2025\] ParallelPrompt: Extracting Parallelism from Large Language Model Queries](parallelprompt_extracting_parallelism_from_large_language_model_queries.md)
-- [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](../../ACL2026/multilingual_mt/laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
-- [\[ACL 2026\] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](../../ACL2026/multilingual_mt/llm-xtm_enhancing_cross-lingual_topic_models_with_large_language_models.md)
+- [\[ACL 2025\] Exploring In-context Example Generation for Machine Translation](../../ACL2025/multilingual_mt/exploring_in-context_example_generation_for_machine_translation.md)
+- [\[ACL 2025\] Trans-Zero: Self-Play Incentivizes Large Language Models for Multilingual Translation](../../ACL2025/multilingual_mt/trans-zero_self-play_incentivizes_large_language_models_for_multilingual_transla.md)
+- [\[ACL 2025\] Exploring In-Image Machine Translation with Real-World Background](../../ACL2025/multilingual_mt/exploring_in-image_machine_translation_with_real-world_background.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ELEPHANT: Measuring and Understanding Social Sycophancy in LLMs
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper extends LLM sycophancy from "agreeing with false facts" to "excessively maintaining user face," proposing a social sycophancy theoretical framework. It constructs the ELEPHANT benchmark to evaluate 11 major LLMs, finding they are on average 47 percentage points more sycophantic than humans in daily advice qu
+  [ICLR 2026][LLM Alignment][Sycophancy] This paper extends LLM sycophancy from "agreeing with false facts" to "excessively maintaining user face," proposing a social sycophancy theoretical framework. It constructs the ELEPHANT benchmark to evaluate 11 major LLMs, finding they are on average 47 percentage points more sycophantic than humans in daily advice queries. The study reveals that sycophantic tendencies are rewarded in preference datasets and provides mitigation strategi…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Sycophancy"
+  - "Face Theory"
+  - "LLM Benchmark"
+  - "Preference Alignment"
+  - "Social Safety"
 date: 2026-05-08
-content_hash: 85831c4b24278a2b
+content_hash: cd902f129ff0cf8d
 ---
+
 # ELEPHANT: Measuring and Understanding Social Sycophancy in LLMs
 
 **Conference**: ICLR 2026  
@@ -150,7 +156,6 @@ OEQ (3027 open advice queries) measures baseline sycophancy in daily use; AITA-Y
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

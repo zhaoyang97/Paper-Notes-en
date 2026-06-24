@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-Agent Debate] iMAD proposes a framework for selectively triggering multi-agent debate (MAD): a single agent first generates a structured response with self-critique…
+  [AAAI 2026 Oral][Multi-Agent][Multi-Agent Debate] iMAD proposes a framework for selectively triggering multi-agent debate (MAD): a single agent first generates a structured response with self-critique, from which 41 interpretable linguistic/semantic features are extracted; a lightweight MLP classifier trained with the FocusCal loss then determines whether to trigger MAD. Across 6 QA/VQA benchmarks, iMAD reduces token overhead by up to 92% while improving accuracy by up to 13.…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multi-Agent"
   - "Multi-Agent Debate"
   - "Selective Triggering"
@@ -12,7 +12,7 @@ tags:
   - "Confidence Calibration"
   - "Self-Critique"
 date: 2026-05-08
-content_hash: 85bc7f0b28e2ada7
+content_hash: 5650a6df141a8c48
 ---
 
 # iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference
@@ -130,11 +130,11 @@ The MLP classifier consists of 6 layers with 200 hidden units, BN+ReLU+Dropout(0
 
 ## Related Papers
 
-- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
 - [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](../../ICLR2026/multi_agent/completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
-- [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
-- [\[AAAI 2026\] EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation](ecoagent_an_efficient_device-cloud_collaborative_multi-agent.md)
+- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
+- [\[ICLR 2026\] MARTI: A Framework for Multi-Agent LLM Systems Reinforced Training and Inference](../../ICLR2026/multi_agent/marti_a_framework_for_multi-agent_llm_systems_reinforced_training_and_inference.md)
 - [\[ACL 2026\] Explicit Trait Inference for Multi-Agent Coordination](../../ACL2026/multi_agent/explicit_trait_inference_for_multi-agent_coordination.md)
+- [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Distributional Consistency Loss: Beyond Pointwise Data Terms in Inverse Problems
 description: >-
-  [ICLR 2026][Medical Imaging][Deep Image Prior] The authors propose the Distributional Consistency (DC) loss, which replaces traditional pointwise data fidelity terms (e.g., MSE/NLL) with distribution-level calibration. This approach avoids overfitting to noise, significantly improving performance in DIP denoising and PET image reconstruction without requiring early
+  [ICLR 2026][Medical Imaging][Inverse Problems] The authors propose the Distributional Consistency (DC) loss, which replaces traditional pointwise data fidelity terms (e.g., MSE/NLL) with distribution-level calibration. This approach avoids overfitting to noise, significantly improving performance in DIP denoising and PET image reconstruction without requiring early stopping.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Deep Image Prior
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Inverse Problems"
+  - "Data Fidelity Term"
+  - "Distributional Consistency"
+  - "PET Reconstruction"
+  - "Deep Image Prior"
 date: 2026-05-08
-content_hash: d7ca4931ae309e68
+content_hash: 482b3130b2bb5938
 ---
+
 # Distributional Consistency Loss: Beyond Pointwise Data Terms in Inverse Problems
 
 **Conference**: ICLR 2026  
@@ -142,7 +147,7 @@ DIP-DC outperforms **optimally stopped** DIP-MSE across all noise levels, with g
 - [\[CVPR 2026\] KLIP: localized distribution shift detection via KL-divergence with diffusion priors in Inverse Problems](../../CVPR2026/medical_imaging/klip_localized_distribution_shift_detection_via_kl-divergence_with_diffusion_pri.md)
 - [\[ICLR 2026\] Towards Text–Mask Consistency in Medical Image Segmentation](towards_text-mask_consistency_in_medical_image_segmentation.md)
 - [\[ICLR 2026\] Moving Beyond Diffusion: Hierarchy-to-Hierarchy Autoregression for fMRI-to-Image Reconstruction](moving_beyond_diffusion_hierarchy-to-hierarchy_autoregression_for_fmri-to-image_.md)
-- [\[CVPR 2026\] Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors](../../CVPR2026/medical_imaging/solving_a_nonlinear_blind_inverse_problem_for_tagged_mri_with_physics_and_deep_g.md)
+- [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](../../CVPR2026/medical_imaging/benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] The SEMA framework is proposed, which trains an attacker capable of automatically generating multi-turn jailbreak attacks through two-stage training: prefilling self-tuning and RL with intent-drift-aware rewards. Without requiring any existing attack strategies or external data, it achieves an average ASR@1 of 80.1% ac
+  [ICLR 2026][LLM Alignment][Multi-turn jailbreak attacks] The SEMA framework is proposed, which trains an attacker capable of automatically generating multi-turn jailbreak attacks through two-stage training: prefilling self-tuning and RL with intent-drift-aware rewards. Without requiring any existing attack strategies or external data, it achieves an average ASR@1 of 80.1% across three victim models on AdvBench, surpassing SOTA by 33.9%.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Multi-turn jailbreak attacks"
+  - "RL Red Teaming"
+  - "Intent drift"
+  - "Open-loop attacks"
+  - "LLM safety"
 date: 2026-05-08
-content_hash: 602b057afceb3a2b
+content_hash: 42be515e31aef3a8
 ---
+
 # SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks
 
 **Conference**: ICLR 2026  

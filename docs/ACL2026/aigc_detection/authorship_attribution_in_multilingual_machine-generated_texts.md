@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Authorship Attribution in Multilingual Machine-Generated Texts
 description: >-
-  [ACL 2026][AIGC Detection][MULTITuDE] Existing research on machine-generated text authorship attribution (identifying which specific LLM or human produced a text) is almost entirely monolingual (primarily English). This paper is the first to formally define **Multilingual Authorship Attribution (ML-MGT)** and **Cross-Lingual Authorship Attribution (CL-MGT)
+  [ACL 2026][AIGC Detection][Machine-generated text detection] Existing research on machine-generated text authorship attribution (identifying which specific LLM or human produced a text) is almost entirely monolingual (primarily English). This paper is the first to formally define **Multilingual Authorship Attribution (ML-MGT)** and **Cross-Lingual Authorship Attribution (CL-MGT)**. Through a systematic evaluation of 18 languages $\times$ 8 generators (7 LLMs + human) using st…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - MULTITuDE
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "Machine-generated text detection"
+  - "Authorship attribution"
+  - "Multilingual"
+  - "Cross-lingual transfer"
+  - "MULTITuDE"
 date: 2026-05-08
-content_hash: ecede9d02f989099
+content_hash: 7101d4d2fabb886f
 ---
+
 # Authorship Attribution in Multilingual Machine-Generated Texts
 
 **Conference**: ACL 2026  
@@ -128,10 +133,10 @@ Joint training on all 18 languages, 8 classes, reporting macro-averaged F1 (rand
 ## Related Papers
 
 - [\[ACL 2025\] MultiSocial: Multilingual Benchmark of Machine-Generated Text Detection of Social-Media Texts](../../ACL2025/aigc_detection/multisocial_mgt_detection.md)
-- [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
 - [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
+- [\[ACL 2026\] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)
+- [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
 - [\[ACL 2026\] BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories](biasedtales-ml_a_multilingual_dataset_for_analyzing_narrative_attribute_distribu.md)
-- [\[ACL 2026\] ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability](exagpt_example-based_machine-generated_text_detection_for_human_interpretability.md)
 
 </div>
 

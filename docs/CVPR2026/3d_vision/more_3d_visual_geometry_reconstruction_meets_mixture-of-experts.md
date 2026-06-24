@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoRE: 3D Visual Geometry Reconstruction Meets Mixture-of-Experts
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MoRE introduces Mixture-of-Experts (MoE) routing into feed-forward dense 3D geometry foundation models represented by VGGT. This allows different experts to specialize in heterogeneous scenes such as indoor/outdoor, objects, humans, or dynamic environments. Combined with confidence-guided depth refinement and dense sem
+  [CVPR 2026][3D Vision][Feed-forward 3D Reconstruction] MoRE introduces Mixture-of-Experts (MoE) routing into feed-forward dense 3D geometry foundation models represented by VGGT. This allows different experts to specialize in heterogeneous scenes such as indoor/outdoor, objects, humans, or dynamic environments. Combined with confidence-guided depth refinement and dense semantic feature fusion, it achieves SOTA performance across four tasks: point maps, depth, camera poses…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward 3D Reconstruction"
+  - "Mixture-of-Experts (MoE)"
+  - "Visual Geometry Foundation Models"
+  - "Depth Refinement"
+  - "Multi-task Learning"
 date: 2026-05-08
-content_hash: 88a95eac0d09b436
+content_hash: 54a70055b491a997
 ---
+
 # MoRE: 3D Visual Geometry Reconstruction Meets Mixture-of-Experts
 
 **Conference**: CVPR 2026  
@@ -146,9 +152,9 @@ All variants were trained for the same number of steps to ensure a fair comparis
 
 - [\[CVPR 2026\] More Natural, More Real: Object-aware Gaussian Splatting for 3D Visual Decoding from Human Brain](more_natural_more_real_object-aware_gaussian_splatting_for_3d_visual_decoding_fr.md)
 - [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](../../ICLR2026/3d_vision/moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
-- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
-- [\[CVPR 2026\] Unlocking the Power of Critical Factors for 3D Visual Geometry Estimation](unlocking_the_power_of_critical_factors_for_3d_visual_geometry_estimation.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
+- [\[CVPR 2026\] Emergent Outlier View Rejection in Visual Geometry Grounded Transformers](emergent_outlier_view_rejection_in_visual_geometry_grounded_transformers.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
+- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
 
 </div>
 

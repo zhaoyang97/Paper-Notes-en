@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Posterior Inference of Galaxy Properties with Image-Based Conditional Flow Matching
 description: >-
-  [NeurIPS 2025][Image Generation][conditional flow matching] This paper proposes a Conditional Flow Matching (CFM) framework that jointly models morphological information from galaxy images alongside photometric data…
+  [NeurIPS 2025][Image Generation][conditional flow matching] This paper proposes a Conditional Flow Matching (CFM) framework that jointly models morphological information from galaxy images alongside photometric data, substantially improving posterior inference of physical galaxy properties including stellar mass, star formation rate, metallicity, and dust extinction.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "morphology"
   - "posterior inference"
 date: 2026-05-08
-content_hash: 04b9e8a36beb02fc
+content_hash: 148072f6c5fd4971
 ---
 
 # Improving Posterior Inference of Galaxy Properties with Image-Based Conditional Flow Matching
@@ -172,8 +172,8 @@ Five physical galaxy properties are inferred jointly:
 ## Related Papers
 
 - [\[NeurIPS 2025\] LeapFactual: Reliable Visual Counterfactual Explanation Using Conditional Flow Matching](leapfactual_reliable_visual_counterfactual_explanation_using_conditional_flow_ma.md)
-- [\[ICCV 2025\] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation](../../ICCV2025/image_generation/the_curse_of_conditions_analyzing_and_improving_optimal_transport_for_conditiona.md)
 - [\[ICLR 2026\] FlowCast: Advancing Precipitation Nowcasting with Conditional Flow Matching](../../ICLR2026/image_generation/flowcast_advancing_precipitation_nowcasting_with_conditional_flow_matching.md)
+- [\[ICCV 2025\] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation](../../ICCV2025/image_generation/the_curse_of_conditions_analyzing_and_improving_optimal_transport_for_conditiona.md)
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
 

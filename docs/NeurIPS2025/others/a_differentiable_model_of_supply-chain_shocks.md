@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Differentiable Model of Supply-Chain Shocks
 description: >-
-  [NeurIPS 2025 (Workshop: Differentiable Systems and Scientific ML)][supply chain] A JAX-based differentiable Agent-Based Model (ABM) of supply chains (~1…
+  [NeurIPS 2025 (Workshop: Differentiable Systems and Scientific ML)][supply chain] A JAX-based differentiable Agent-Based Model (ABM) of supply chains (~1,000 firms) that combines GPU parallelization and automatic differentiation to achieve Bayesian parameter calibration three orders of magnitude faster than conventional ABC, paving the way for shock-propagation modeling in global supply-chain networks.
 tags:
   - "NeurIPS 2025 (Workshop: Differentiable Systems and Scientific ML)"
   - "supply chain"
@@ -12,7 +12,7 @@ tags:
   - "GPU acceleration"
   - "variational inference"
 date: 2026-05-08
-content_hash: cd5fd2d51544fec3
+content_hash: e93534a8d37e41c4
 ---
 
 # A Differentiable Model of Supply-Chain Shocks
@@ -136,8 +136,8 @@ After 300 model evaluations, SVI achieves lower in-sample and out-of-sample loss
 
 - [\[NeurIPS 2025\] Exact Learning of Arithmetic with Differentiable Agents](exact_learning_of_arithmetic_with_differentiable_agents.md)
 - [\[NeurIPS 2025\] Scalable GPU-Accelerated Euler Characteristic Curves: Optimization and Differentiable Learning for PyTorch](scalable_gpu-accelerated_euler_characteristic_curves_optimization_and_differenti.md)
+- [\[CVPR 2025\] Locally Orderless Images for Optimization in Differentiable Rendering](../../CVPR2025/others/locally_orderless_images_for_optimization_in_differentiable_rendering.md)
 - [\[CVPR 2026\] DiffBMP: Differentiable Rendering with Bitmap Primitives](../../CVPR2026/others/diffbmp_differentiable_rendering_with_bitmap_primitives.md)
-- [\[NeurIPS 2025\] Model Context Protocol for Vision Systems: Audit, Security, and Protocol Extensions](model_context_protocol_for_vision_systems_audit_security_and_protocol_extensions.md)
 - [\[CVPR 2026\] GardenDesigner: Encoding Aesthetic Principles into Jiangnan Garden Construction via a Chain of Agents](../../CVPR2026/others/gardendesigner_encoding_aesthetic_principles_into_jiangnan_garden_construction_v.md)
 
 </div>

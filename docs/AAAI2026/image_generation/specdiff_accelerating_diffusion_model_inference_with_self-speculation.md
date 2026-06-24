@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation
 description: >-
-  [AAAI 2026][Image Generation][Diffusion model acceleration] This paper proposes SpecDiff, a training-free multi-level feature caching strategy based on self-speculation. By leveraging a small number of speculative steps…
+  [AAAI 2026 Oral][Image Generation][Diffusion model acceleration] This paper proposes SpecDiff, a training-free multi-level feature caching strategy based on self-speculation. By leveraging a small number of speculative steps to introduce **future information** for token importance selection, SpecDiff overcomes the accuracy–speed bottleneck of methods that rely solely on historical information, achieving 2.80×/2.74×/3.17× speedup on Stable Diffusion 3/3.5 and FLUX with negligi…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Image Generation"
   - "Diffusion model acceleration"
   - "feature caching"
@@ -12,7 +12,7 @@ tags:
   - "DiT"
   - "information utilization"
 date: 2026-05-08
-content_hash: 8ad3a7cfd71f1303
+content_hash: a6e8a1e60aadddd5
 ---
 
 # SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation
@@ -202,11 +202,11 @@ Component-wise ablation (SD3, speed and quality decomposition):
 
 ## Related Papers
 
+- [\[CVPR 2026\] SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching](../../CVPR2026/image_generation/sencache_accelerating_diffusion_model_inference_via_sensitivity-aware_caching.md)
 - [\[NeurIPS 2025\] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration](../../NeurIPS2025/image_generation/tortoise_and_hare_guidance_accelerating_diffusion_model_inference_with_multirate.md)
-- [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
 - [\[ICCV 2025\] From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers](../../ICCV2025/image_generation/from_reusing_to_forecasting_accelerating_diffusion_models_with_taylorseers.md)
-- [\[CVPR 2026\] LESA: Learnable Stage-Aware Predictors for Diffusion Model Acceleration](../../CVPR2026/image_generation/lesa_learnable_stage-aware_predictors_for_diffusion_model_acceleration.md)
-- [\[CVPR 2026\] Accelerating Diffusion Model Training under Minimal Budgets: A Condensation-Based Perspective](../../CVPR2026/image_generation/d2c_diffusion_dataset_condensation.md)
+- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](../../ICLR2026/image_generation/fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
+- [\[ICLR 2026\] MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference](../../ICLR2026/image_generation/meancache_from_instantaneous_to_average_velocity_for_accelerating_flow_matching_.md)
 
 </div>
 

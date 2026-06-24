@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence
 description: >-
-  [ICLR 2026][Multimodal VLM][VQA Benchmark] Six 3D vision researchers spent 300+ hours manually crafting 1,000 **multi-image spatial reasoning** multiple-choice questions from 120,000 real images to form MMSI-Bench. Among 37 mainstream MLLMs, the strongest open-source model scores only 30%, GPT-5 reaches 41.9%, while humans achieve 97%. It also provides an autom
+  [ICLR 2026][Multimodal VLM][Multi-image Spatial Reasoning] Six 3D vision researchers spent 300+ hours manually crafting 1,000 **multi-image spatial reasoning** multiple-choice questions from 120,000 real images to form MMSI-Bench. Among 37 mainstream MLLMs, the strongest open-source model scores only 30%, GPT-5 reaches 41.9%, while humans achieve 97%. It also provides an automated error diagnosis pipeline leveraging manual reasoning annotations.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VQA Benchmark
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multi-image Spatial Reasoning"
+  - "MLLM Evaluation"
+  - "VQA Benchmark"
+  - "Spatial Intelligence"
+  - "Error Analysis"
 date: 2026-05-08
-content_hash: e9b98ccbf0a4db04
+content_hash: 3974a45d00bcda10
 ---
+
 # MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence
 
 **Conference**: ICLR 2026  
@@ -119,10 +124,10 @@ flowchart LR
 ## Related Papers
 
 - [\[ICLR 2026\] On the Generalization Capacities of MLLMs for Spatial Intelligence](on_the_generalization_capacities_of_mllms_for_spatial_intelligence.md)
+- [\[ICLR 2026\] SpaCE-10: A Comprehensive Benchmark for Multimodal Large Language Models in Compositional Spatial Intelligence](space-10_a_comprehensive_benchmark_for_multimodal_large_language_models_in_compo.md)
+- [\[ICLR 2026\] SpatialViz-Bench: A Cognitive Science-Driven Benchmark for Diagnosing the Spatial Visualization Capabilities of MLLMs](spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
 - [\[CVPR 2026\] Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation](../../CVPR2026/multimodal_vlm/is_your_vlm_sky-ready_a_comprehensive_spatial_intelligence_benchmark_for_uav_nav.md)
 - [\[CVPR 2026\] SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence](../../CVPR2026/multimodal_vlm/spatialscore_towards_comprehensive_evaluation_for_spatial_intelligence.md)
-- [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](../../CVPR2026/multimodal_vlm/scaling_spatial_intelligence_with_multimodal_foundation_models.md)
-- [\[CVPR 2026\] SpatialTree: How Spatial Intelligence Branches Out in MLLMs](../../CVPR2026/multimodal_vlm/spatialtree_how_spatial_intelligence_branches_out_in_mllms.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] First-Order Error Matters: Accurate Compensation for Quantized Large Language Models
 description: >-
-  [AAAI 2026][Model Compression][Post-training quantization] This paper identifies a critical yet overlooked issue in LLM post-training quantization: the column-wise compensation process renders first-order gradient terms…
+  [AAAI 2026][Model Compression][Post-training quantization] This paper identifies a critical yet overlooked issue in LLM post-training quantization: the column-wise compensation process renders first-order gradient terms non-negligible. The proposed FOEM method incorporates first-order terms into the error compensation formula, reducing the perplexity of Llama3-8B under 3-bit quantization by 17.3% with virtually no additional computational overhead.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "GPTQ"
   - "weight quantization"
 date: 2026-05-08
-content_hash: 69d383b331ea4bbc
+content_hash: 15ad34ec227f6f98
 ---
 
 # First-Order Error Matters: Accurate Compensation for Quantized Large Language Models
@@ -195,11 +195,11 @@ FOEM is a post-training quantization method and involves no training. Calibratio
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Restoring Pruned Large Language Models via Lost Component Compensation](../../NeurIPS2025/model_compression/restoring_pruned_large_language_models_via_lost_component_compensation.md)
-- [\[AAAI 2026\] Failures to Surface Harmful Contents in Video Large Language Models](failures_to_surface_harmful_contents_in_video_large_language_models.md)
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](../../CVPR2026/model_compression/quant_experts_token_aware_vlm_quantization.md)
+- [\[ICLR 2026\] RCPU: Rotation-Constrained Error Compensation for Structured Pruning of Large Language Models](../../ICLR2026/model_compression/rcpu_rotation-constrained_error_compensation_for_structured_pruning_of_large_lan.md)
 - [\[AAAI 2026\] Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework](error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage.md)
-- [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
+- [\[AAAI 2026\] Failures to Surface Harmful Contents in Video Large Language Models](failures_to_surface_harmful_contents_in_video_large_language_models.md)
+- [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](../../ICLR2026/model_compression/rethinking_residual_errors_in_compensation-based_llm_quantization.md)
+- [\[AAAI 2026\] QuEPT: Quantized Elastic Precision Transformers with One-Shot Calibration for Multi-Bit Switching](quept_quantized_elastic_precision_transformers_with_one-shot_calibration_for_mul.md)
 
 </div>
 

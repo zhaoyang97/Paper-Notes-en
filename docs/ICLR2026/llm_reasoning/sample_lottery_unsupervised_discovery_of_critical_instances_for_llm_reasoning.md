@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sample Lottery: Unsupervised Discovery of Critical Instances for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper proposes the "Lottery Sample Hypothesis"—asserting that a minimal subset exists within the RLVR training set which, when used for training alone, can approximate the performance of the full dataset. The authors design an unsupervised selection framework, CONST, which characterizes the potential value of each
+  [ICLR 2026][Reasoning][Lottery Sample Hypothesis] This paper proposes the "Lottery Sample Hypothesis"—asserting that a minimal subset exists within the RLVR training set which, when used for training alone, can approximate the performance of the full dataset. The authors design an unsupervised selection framework, CONST, which characterizes the potential value of each problem using "Process Volatility + Outcome Volatility." By using the size of the conformal prediction set as…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Lottery Sample Hypothesis"
+  - "Process Volatility"
+  - "Outcome Volatility"
+  - "Conformal Prediction"
+  - "GRPO"
 date: 2026-05-08
-content_hash: edd23cedc0f822ba
+content_hash: b9496748921ef36a
 ---
+
 # Sample Lottery: Unsupervised Discovery of Critical Instances for LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -148,10 +153,10 @@ Variants V1–V6 were designed under LLaMA-3.1-8B with a budget of 8 (AVG column
 ## Related Papers
 
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
+- [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](../../ICML2026/llm_reasoning/resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
 - [\[ICLR 2026\] ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution](shinkaevolve_towards_open-ended_and_sample-efficient_program_evolution.md)
 - [\[ICLR 2026\] Sample Smart, Not Hard: Correctness-First Decoding for Better Reasoning in LLMs](sample_smart_not_hard_correctness-first_decoding_for_better_reasoning_in_llms.md)
-- [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](../../ICML2026/llm_reasoning/resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
-- [\[ICLR 2026\] On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning](on_the_design_of_kl-regularized_policy_gradient_algorithms_for_llm_reasoning.md)
+- [\[NeurIPS 2025\] GPO: Learning from Critical Steps to Improve LLM Reasoning](../../NeurIPS2025/llm_reasoning/gpo_learning_from_critical_steps_to_improve_llm_reasoning.md)
 
 </div>
 

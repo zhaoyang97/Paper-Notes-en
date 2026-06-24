@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PAC-Bayes Bounds for Multivariate Linear Regression and Linear Autoencoders
 description: >-
-  [NeurIPS 2025][Recommender Systems][PAC-Bayes] This paper extends PAC-Bayes generalization bounds from single-output linear regression to **multivariate linear regression**…
+  [NeurIPS 2025][Recommender Systems][PAC-Bayes] This paper extends PAC-Bayes generalization bounds from single-output linear regression to **multivariate linear regression**, and further adapts them to **linear autoencoders (LAEs)** in recommender systems. Through theoretical development, the computational complexity is reduced from O(n⁴) to O(n³), and experiments demonstrate that the bounds are tight and highly correlated with practical metrics such as Recall@K and NDCG@K.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -11,7 +11,7 @@ tags:
   - "linear autoencoder"
   - "multivariate linear regression"
 date: 2026-05-08
-content_hash: 09284f8c926bb805
+content_hash: 7770f2735f8338c3
 ---
 
 # PAC-Bayes Bounds for Multivariate Linear Regression and Linear Autoencoders
@@ -216,7 +216,7 @@ PAC-Bayes bounds are computed on three real-world datasets, alongside reported p
 - [\[NeurIPS 2025\] Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning](overcoming_sparsity_artifacts_in_crosscoders_to_interpret_chat-tuning.md)
 - [\[NeurIPS 2025\] R²ec: Towards Large Recommender Models with Reasoning](r2ec_towards_large_recommender_models_with_reasoning.md)
 - [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
-- [\[NeurIPS 2025\] Inference-Time Reward Hacking in Large Language Models](inference-time_reward_hacking_in_large_language_models.md)
+- [\[NeurIPS 2025\] NeurIPS Should Lead Scientific Consensus on AI Policy](neurips_should_lead_scientific_consensus_on_ai_policy.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Steering Generative Models with Experimental Data for Protein Fitness Optimization
 description: >-
-  [NeurIPS 2025][Computational Biology][protein fitness optimization] This work systematically evaluates strategies for steering protein generative models (discrete diffusion models and language models) toward fitness opti…
+  [NeurIPS 2025][Computational Biology][protein fitness optimization] This work systematically evaluates strategies for steering protein generative models (discrete diffusion models and language models) toward fitness optimization, finding that plug-and-play guidance methods using small labeled datasets (~200 samples)—particularly DAPS—outperform RL-based fine-tuning, and proposes a Thompson sampling strategy incorporating predictive uncertainty for adaptive optimization.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "protein language models"
   - "Bayesian optimization"
 date: 2026-05-08
-content_hash: 710d737ce7e8e6d6
+content_hash: 5b97491aca6017e4
 ---
 
 # Steering Generative Models with Experimental Data for Protein Fitness Optimization
@@ -257,11 +257,11 @@ Evaluation on three protein fitness datasets (TrpB enzymatic activity, CreiLOV f
 
 ## Related Papers
 
+- [\[ICML 2025\] Steering Protein Language Models](../../ICML2025/computational_biology/steering_protein_language_models.md)
 - [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](g-dpo_scalable_preference_optimization_for_protein_language_models.md)
-- [\[NeurIPS 2025\] Evaluating Multiple Models Using Labeled and Unlabeled Data](evaluating_multiple_models_using_labeled_and_unlabeled_data.md)
 - [\[NeurIPS 2025\] Flow Density Control: Generative Optimization Beyond Entropy-Regularized Fine-Tuning](flow_density_control_generative_optimization_beyond_entropy-regularized_fine-tun.md)
-- [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
-- [\[NeurIPS 2025\] GraphFLA: Augmenting Biological Fitness Prediction Benchmarks with Landscape Features](augmenting_biological_fitness_prediction_benchmarks_with_landscapes_features_fro.md)
+- [\[NeurIPS 2025\] Evaluating Multiple Models Using Labeled and Unlabeled Data](evaluating_multiple_models_using_labeled_and_unlabeled_data.md)
+- [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
 
 </div>
 

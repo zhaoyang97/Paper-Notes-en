@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity
 description: >-
-  [NeurIPS 2025][LLM/NLP][LLM inference] This paper reveals a "polarity shift" phenomenon in LLM inference sparsity — MLP layer sparsity vanishes as batch size increases…
+  [NeurIPS 2025][LLM (Other)][LLM inference] This paper reveals a "polarity shift" phenomenon in LLM inference sparsity — MLP layer sparsity vanishes as batch size increases, while attention head sparsity remains stable and batch-invariant. Based on this insight, the authors design Selective Head Attention and corresponding GPU kernels, achieving up to 2.2× end-to-end speedup in large-batch inference.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "LLM inference"
   - "contextual sparsity"
   - "attention head sparsity"
   - "batched inference"
   - "GPU kernel"
 date: 2026-05-08
-content_hash: 08de4ea6fa92e2da
+content_hash: 4bc3f2c96da48969
 ---
 
 # Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity
@@ -183,9 +183,9 @@ Average accuracy degradation across all models at their respective key sparsity 
 
 - [\[ICML 2026\] Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models](../../ICML2026/llm_nlp/resting_neurons_active_insights_robustify_activation_sparsity_for_large_language.md)
 - [\[NeurIPS 2025\] Detecting High-Stakes Interactions with Activation Probes](detecting_high-stakes_interactions_with_activation_probes.md)
-- [\[NeurIPS 2025\] Reparameterized LLM Training via Orthogonal Equivalence Transformation](reparameterized_llm_training_via_orthogonal_equivalence_transformation.md)
-- [\[NeurIPS 2025\] Q♯: Provably Optimal Distributional RL for LLM Post-Training](qsharp_provably_optimal_distributional_rl_for_llm_post-training.md)
-- [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
+- [\[ACL 2025\] ScaleQuest: Unleashing LLM Reasoning Capability via Scalable Question Synthesis from Scratch](../../ACL2025/llm_nlp/unleashing_llm_reasoning_capability_via_scalable.md)
+- [\[ICML 2025\] Expert Evaluation of LLM World Models: A High-Tc Superconductivity Case Study](../../ICML2025/llm_nlp/expert_evaluation_of_llm_world_models_a_high-t_c_superconductivity_case_study.md)
+- [\[ACL 2025\] BFS-Prover: Scalable Best-First Tree Search for LLM-Based Automatic Theorem Proving](../../ACL2025/llm_nlp/bfs-prover_scalable_best-first_tree_search_for_llm-based_automatic_theorem_provi.md)
 
 </div>
 

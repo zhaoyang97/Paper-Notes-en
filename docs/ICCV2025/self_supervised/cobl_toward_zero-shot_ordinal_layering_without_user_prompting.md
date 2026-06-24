@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CObL: Toward Zero-Shot Ordinal Layering without User Prompting
 description: >-
-  [ICCV 2025][Self-Supervised Learning][object layers] This paper presents CObL, an architecture based on multiple frozen Stable Diffusion UNets operating in parallel…
+  [ICCV 2025][Self-Supervised Learning][object layers] This paper presents CObL, an architecture based on multiple frozen Stable Diffusion UNets operating in parallel, capable of inferring an occlusion-ordered object layer representation (one amodally-completed object per layer) from a single image without any user prompts or prior knowledge of object count. Trained on only a few thousand synthetic tabletop scenes, CObL generalizes zero-shot to real-world photographs.
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -13,7 +13,7 @@ tags:
   - "occlusion ordering"
   - "scene decomposition"
 date: 2026-05-08
-content_hash: 214a7b75938794ff
+content_hash: a13a7e0cb2dcb9d2
 ---
 
 # CObL: Toward Zero-Shot Ordinal Layering without User Prompting
@@ -158,11 +158,11 @@ Visible segmentation quality (TABLETOP subset):
 
 ## Related Papers
 
+- [\[CVPR 2025\] SEC-Prompt: SEmantic Complementary Prompting for Few-Shot Class-Incremental Learning](../../CVPR2025/self_supervised/sec-promptsemantic_complementary_prompting_for_few-shot_class-incremental_learni.md)
 - [\[ICML 2026\] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection](../../ICML2026/self_supervised/from_zero_to_hero_advancing_zero-shot_foundation_models_for_tabular_outlier_dete.md)
+- [\[ICML 2025\] Alpha-SQL: Zero-Shot Text-to-SQL using Monte Carlo Tree Search](../../ICML2025/self_supervised/alpha-sql_zero-shot_text-to-sql_using_monte_carlo_tree_search.md)
 - [\[ICML 2026\] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation](../../ICML2026/self_supervised/infoatlas_a_foundation_model_for_zero-shot_statistical_dependence_estimate.md)
-- [\[AAAI 2026\] From Pretrain to Pain: Adversarial Vulnerability of Video Foundation Models without Finetuning](../../AAAI2026/self_supervised/from_pretrain_to_pain_adversarial_vulnerability_of_video_foundation_models_witho.md)
-- [\[ICCV 2025\] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery](generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f.md)
-- [\[ICCV 2025\] From Linearity to Non-Linearity: How Masked Autoencoders Capture Spatial Correlations](from_linearity_to_non-linearity_how_masked_autoencoders_capture_spatial_correlat.md)
+- [\[CVPR 2025\] Transformers without Normalization](../../CVPR2025/self_supervised/transformers_without_normalization.md)
 
 </div>
 

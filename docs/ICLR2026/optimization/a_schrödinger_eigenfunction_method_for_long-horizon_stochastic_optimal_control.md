@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Schrödinger Eigenfunction Method for Long-Horizon Stochastic Optimal Control
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] For a class of stochastic optimal control (SOC) problems where the "uncontrolled drift is the gradient of a potential function," this paper proves that the linearized HJB operator is unitarily equivalent to a Schrödinger operator with a purely discrete spectrum. Consequently, long-horizon optimal control can be directl
+  [ICLR2026][Optimization][Stochastic Optimal Control] For a class of stochastic optimal control (SOC) problems where the "uncontrolled drift is the gradient of a potential function," this paper proves that the linearized HJB operator is unitarily equivalent to a Schrödinger operator with a purely discrete spectrum. Consequently, long-horizon optimal control can be directly determined by the **principal eigenfunction** of this operator (with correction terms decaying exponentia…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Stochastic Optimal Control"
+  - "HJB Equation"
+  - "Schrödinger Operator"
+  - "Eigenfunction Learning"
+  - "Long-Horizon Planning"
 date: 2026-05-08
-content_hash: 814d9c1d8456dc60
+content_hash: 3075ebbbf421e046
 ---
+
 # A Schrödinger Eigenfunction Method for Long-Horizon Stochastic Optimal Control
 
 **Conference**: ICLR2026  
@@ -139,8 +145,8 @@ The table above shows the "Opinion Dynamics (De Groot Model)" task: $N=10$ agent
 
 - [\[NeurIPS 2025\] MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control](../../NeurIPS2025/optimization/mdns_masked_diffusion_neural_sampler_via_stochastic_optimal_control.md)
 - [\[ICLR 2026\] Dual Optimistic Ascent (PI Control) is the Augmented Lagrangian Method in Disguise](dual_optimistic_ascent_pi_control_is_the_augmented_lagrangian_method_in_disguise.md)
-- [\[ICLR 2026\] Nesterov Finds GRAAL: Optimal and Adaptive Gradient Method for Convex Optimization](nesterov_finds_graal_optimal_and_adaptive_gradient_method_for_convex_optimizatio.md)
 - [\[ICLR 2026\] Differentiable Model Predictive Control on the GPU](differentiable_model_predictive_control_on_the_gpu.md)
+- [\[ICLR 2026\] Nesterov Finds GRAAL: Optimal and Adaptive Gradient Method for Convex Optimization](nesterov_finds_graal_optimal_and_adaptive_gradient_method_for_convex_optimizatio.md)
 - [\[ICLR 2026\] Multilevel Control Functional](multilevel_control_functional.md)
 
 </div>

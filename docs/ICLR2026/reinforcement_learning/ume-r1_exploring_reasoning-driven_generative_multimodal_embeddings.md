@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings
 description: >-
-  [ICLR 2026][Reinforcement Learning][multimodal embeddings] The authors propose UME-R1, the first exploration of a reasoning-driven generative multimodal embedding paradigm. Through two-stage training (cold-start SFT + Reinforcement Learning), the model is trained to reason before generating representations. It significantly outperforms traditional discriminative embedding mode
+  [ICLR 2026][Reinforcement Learning][multimodal embeddings] The authors propose UME-R1, the first exploration of a reasoning-driven generative multimodal embedding paradigm. Through two-stage training (cold-start SFT + Reinforcement Learning), the model is trained to reason before generating representations. It significantly outperforms traditional discriminative embedding models across 78 tasks in the MMEB-V2 benchmark.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - multimodal embeddings
-  - reasoning-driven generation
-  - reinforcement-learning
-  - MLLM
-  - inference-time scaling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "multimodal embeddings"
+  - "reasoning-driven generation"
+  - "reinforcement-learning"
+  - "MLLM"
+  - "inference-time scaling"
 date: 2026-05-08
-content_hash: 5d8140ee1420e756
+content_hash: fd9913352c5f21a7
 ---
+
 # UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings
 
 **Conference**: ICLR 2026  
@@ -154,8 +155,8 @@ With only 2/3 of the data used by VLM2Vec-V2, UME-R1 achieves an overall improve
 - [\[AAAI 2026\] MMhops-R1: Multimodal Multi-hop Reasoning](../../AAAI2026/reinforcement_learning/mmhops-r1_multimodal_multi-hop_reasoning.md)
 - [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](rm-r1_reward_modeling_as_reasoning.md)
 - [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
-- [\[ICLR 2026\] MARS-Sep: Multimodal-Aligned Reinforced Sound Separation](mars-sep_multimodal-aligned_reinforced_sound_separation.md)
-- [\[ICLR 2026\] Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies](multimodal_llm-assisted_evolutionary_search_for_programmatic_control_policies.md)
+- [\[ICLR 2026\] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning](from_narrow_to_panoramic_vision_attention-guided_cold-start_reshapes_multimodal_.md)
+- [\[ICLR 2026\] Parallel-R1: Towards Parallel Thinking via Reinforcement Learning](parallel-r1_towards_parallel_thinking_via_reinforcement_learning.md)
 
 </div>
 

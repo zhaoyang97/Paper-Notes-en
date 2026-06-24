@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Growing a Twig to Accelerate Large Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM acceleration] This paper proposes TwigVLM, which attaches a lightweight twig module to the early layers of a VLM to simultaneously enable twig-guided visual token pruning (TTP…
+  [ICCV 2025][Multimodal Efficiency][VLM acceleration] This paper proposes TwigVLM, which attaches a lightweight twig module to the early layers of a VLM to simultaneously enable twig-guided visual token pruning (TTP, for prefilling acceleration) and self-speculative decoding (SSD, for decoding acceleration). On LLaVA-1.5-7B, TwigVLM retains 96% accuracy after pruning 88.9% of visual tokens and achieves a 154% speedup in long-answer generation…
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "VLM acceleration"
   - "visual token pruning"
   - "self-speculative decoding"
   - "lightweight module"
   - "inference efficiency"
 date: 2026-05-08
-content_hash: 52ccbc4efcb61c89
+content_hash: cd6b39919f3f9284
 ---
 
 # Growing a Twig to Accelerate Large Vision-Language Models
@@ -197,11 +197,11 @@ $$\bar{R} = [M \times K + R \times (K_f - K)] / L$$
 
 ## Related Papers
 
-- [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
-- [\[ICCV 2025\] Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving](fine-grained_evaluation_of_large_vision-language_models_in_autonomous_driving.md)
-- [\[ICCV 2025\] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models](multiverse_a_multi-turn_conversation_benchmark_for_evaluating_large_vision_and_l.md)
-- [\[ICCV 2025\] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency](jailbreaking_multimodal_large_language_models_via_shuffle_inconsistency.md)
+- [\[CVPR 2025\] MBQ: Modality-Balanced Quantization for Large Vision-Language Models](../../CVPR2025/vlm_efficiency/mbq_modality-balanced_quantization_for_large_vision-language_models.md)
+- [\[ICCV 2025\] Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration](feather_the_throttle_revisiting_visual_token_pruning_for_vision-language_model_a.md)
+- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
 - [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
+- [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
 
 </div>
 

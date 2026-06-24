@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Large Depth Completion Model from Sparse Observations
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] LDCM employs a minimalist framework for sparse depth completion without complex modules. At the front end, it uses Poisson reconstruction to align the relative depth from monocular foundation models with sparse observations into metric-consistent coarse depth. At the back end, it replaces traditional depth regression h
+  [ICLR 2026][3D Vision][Depth completion] LDCM employs a minimalist framework for sparse depth completion without complex modules. At the front end, it uses Poisson reconstruction to align the relative depth from monocular foundation models with sparse observations into metric-consistent coarse depth. At the back end, it replaces traditional depth regression heads with pixel-wise 3D point map regression heads, achieving SOTA performance in zero-shot depth completion and point…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Depth completion"
+  - "Point map regression"
+  - "Monocular depth foundation models"
+  - "Poisson reconstruction"
+  - "Metric scale"
+  - "Zero-shot generalization"
 date: 2026-05-08
-content_hash: 14356e533f103337
+content_hash: db061b497068d392
 ---
+
 # Large Depth Completion Model from Sparse Observations
 
 **Conference**: ICLR 2026  
@@ -125,6 +132,7 @@ For affine-invariant point map estimation (Table 3), the average RELp of 0.037 s
 - **Value**: ⭐⭐⭐⭐⭐ Zero-shot metric completion is immediately useful for robotics, autonomous driving, and AR. High practical value due to its independence from intrinsics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

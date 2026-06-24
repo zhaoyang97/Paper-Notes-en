@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Layer Relevance in Large Language Models Beyond Cosine Similarity
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper demonstrates both theoretically and experimentally that "cosine similarity" is not a reliable proxy for measuring the importance of Transformer layers—a layer can have extremely low cosine similarity yet be critical to model performance. The authors advocate for using the "actual drop in model accuracy after
+  [ICLR 2026][Interpretability][Layer Importance] This paper demonstrates both theoretically and experimentally that "cosine similarity" is not a reliable proxy for measuring the importance of Transformer layers—a layer can have extremely low cosine similarity yet be critical to model performance. The authors advocate for using the "actual drop in model accuracy after removing the layer" as a more faithful measure of layer relevance. This approach revises several interpretabili…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Layer Importance"
+  - "Cosine Similarity"
+  - "Mechanistic Interpretability"
+  - "Snowball Effect"
+  - "Accuracy-Driven Pruning"
 date: 2026-05-08
-content_hash: 4bdf24e65974b65a
+content_hash: 9cb6801e73ed9a08
 ---
+
 # Rethinking Layer Relevance in Large Language Models Beyond Cosine Similarity
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds
 description: >-
-  [NeurIPS 2025][Medical Imaging][state-space model] This paper proposes GeoDynamics, which generalizes the classical state-space model (SSM) from Euclidean space to the symmetric positive definite (SPD) manifold. By emplo…
+  [NeurIPS 2025][Medical Imaging][state-space model] This paper proposes GeoDynamics, which generalizes the classical state-space model (SSM) from Euclidean space to the symmetric positive definite (SPD) manifold. By employing weighted Fréchet mean aggregation and orthogonal group translations, it achieves geometrically consistent state evolution on the manifold, attaining state-of-the-art performance on brain connectome analysis (early diagnosis of AD/PD/ASD) and human action…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "brain dynamics"
   - "functional connectivity"
 date: 2026-05-08
-content_hash: 1e20da55f069c366
+content_hash: 536707406c3a7783
 ---
 
 # GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds
@@ -135,8 +135,8 @@ This paper proposes GeoDynamics, which generalizes the classical state-space mod
 - [\[NeurIPS 2025\] Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models](generalizable_real-time_neural_decoding_with_hybrid_state-space_models.md)
 - [\[NeurIPS 2025\] DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs](dyg-mamba_continuous_state_space_modeling_on_dynamic_graphs.md)
 - [\[NeurIPS 2025\] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry](riemannian_flow_matching_for_brain_connectivity_matrices_via_pullback_geometry.md)
+- [\[ICLR 2026\] MnemoDyn: Learning Resting State Dynamics from 40K fMRI Sequences](../../ICLR2026/medical_imaging/mnemodyn_learning_resting_state_dynamics_from_40k_fmri_sequences.md)
 - [\[NeurIPS 2025\] Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics](posterior_sampling_by_combining_diffusion_models_with_annealed_langevin_dynamics.md)
-- [\[NeurIPS 2025\] NeurIPT: Foundation Model for Neural Interfaces](neuript_foundation_model_for_neural_interfaces.md)
 
 </div>
 

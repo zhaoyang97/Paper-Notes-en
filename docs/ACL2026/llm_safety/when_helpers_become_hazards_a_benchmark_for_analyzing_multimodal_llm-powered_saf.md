@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Helpers Become Hazards: A Benchmark for Analyzing Multimodal LLM-Powered Safety in Daily Life
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes the SaLAD benchmark, comprising 2013 real-world image-text samples across 10 daily life categories. It evaluates the ability of Multimodal Large Language Models (MLLMs) to identify implicit safety risks and provide safety warnings during daily assistance, revealing that even the strongest models ach
+  [ACL 2026 Findings][LLM Safety][Multimodal Safety] This paper proposes the SaLAD benchmark, comprising 2013 real-world image-text samples across 10 daily life categories. It evaluates the ability of Multimodal Large Language Models (MLLMs) to identify implicit safety risks and provide safety warnings during daily assistance, revealing that even the strongest models achieve only 57.2% accuracy on unsafe queries.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Multimodal Safety"
+  - "Benchmarking"
+  - "Daily Life Safety"
+  - "Safety Warning Evaluation"
+  - "MLLM Alignment"
 date: 2026-05-08
-content_hash: b49fad30f6a54907
+content_hash: e133fc705e6a7198
 ---
+
 # When Helpers Become Hazards: A Benchmark for Analyzing Multimodal LLM-Powered Safety in Daily Life
 
 **Conference**: ACL 2026 Findings  
@@ -119,8 +125,8 @@ This work focuses on benchmark construction and involves no training process. Da
 - [\[ACL 2026\] Robust Multimodal Safety via Conditional Decoding](robust_multimodal_safety_via_conditional_decoding.md)
 - [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
 - [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
+- [\[ICLR 2026\] A Guardrail for Safety Preservation: When Safety-Sensitive Subspace Meets Harmful-Resistant Null-Space](../../ICLR2026/llm_safety/a_guardrail_for_safety_preservation_when_safety-sensitive_subspace_meets_harmful.md)
 - [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
-- [\[ACL 2026\] Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](into_the_gray_zone_domain_contexts_can_blur_llm_safety_boundaries.md)
 
 </div>
 

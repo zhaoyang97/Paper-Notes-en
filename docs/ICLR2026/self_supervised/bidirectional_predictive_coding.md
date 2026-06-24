@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bidirectional Predictive Coding
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper proposes bidirectional Predictive Coding (bPC), which employs a single energy function to accommodate both "top-down generative" and "bottom-up discriminative" inference. This allows the same biologically plausible local circuit to perform accurate classification like discPC and generation/reconstruction lik
+  [ICLR2026][Self-Supervised Learning][Predictive Coding] This paper proposes bidirectional Predictive Coding (bPC), which employs a single energy function to accommodate both "top-down generative" and "bottom-up discriminative" inference. This allows the same biologically plausible local circuit to perform accurate classification like discPC and generation/reconstruction like genPC, outperforming existing unidirectional or hybrid PC models in brain-inspired tasks such as cross…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Predictive Coding"
+  - "Generative-Discriminative Unification"
+  - "Energy Function"
+  - "Local Hebbian Learning"
+  - "Brain-inspired Visual Inference"
 date: 2026-05-08
-content_hash: 40ee46b9f5d67eca
+content_hash: 1b23103031b14e40
 ---
+
 # Bidirectional Predictive Coding
 
 **Conference**: ICLR2026  
@@ -142,7 +148,7 @@ The model was compared with discPC, genPC, hybridPC, and their backpropagation (
 - [\[ICLR 2026\] Self-Predictive Representations for Combinatorial Generalization in Behavioral Cloning](self-predictive_representations_for_combinatorial_generalization_in_behavioral_c.md)
 - [\[ICLR 2026\] Two-Way is Better Than One: Bidirectional Alignment with Cycle Consistency for Exemplar-Free Class-Incremental Learning](two-way_is_better_than_one_bidirectional_alignment_with_cycle_consistency_for_ex.md)
 - [\[ICLR 2026\] Temporal Slowness in Central Vision Drives Semantic Object Learning](temporal_slowness_in_central_vision_drives_semantic_object_learning.md)
-- [\[ICLR 2026\] CSRv2: Unlocking Ultra-Sparse Embeddings](csrv2_unlocking_ultra-sparse_embeddings.md)
+- [\[ICLR 2026\] Unified and Efficient Multi-view Clustering from Probabilistic Perspective](unified_and_efficient_multi-view_clustering_from_probabilistic_perspective.md)
 
 </div>
 

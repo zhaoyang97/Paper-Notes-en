@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] ToolVQA: A Dataset for Multi-step Reasoning VQA with External Tools
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Question Answering] This paper proposes ToolVQA — a large-scale multimodal tool-augmented VQA dataset containing 23K samples. It is automatically constructed via the ToolEngine pipeline…
+  [ICCV 2025][VLM Reasoning][Visual Question Answering] This paper proposes ToolVQA — a large-scale multimodal tool-augmented VQA dataset containing 23K samples. It is automatically constructed via the ToolEngine pipeline, which combines image-guided DFS with LCS-based example matching, to generate multi-step reasoning data in realistic scenarios. LLaVA-7B fine-tuned on this dataset surpasses GPT-3.5-Turbo on 5 OOD benchmarks.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Visual Question Answering"
   - "Tool Use"
   - "Multi-step Reasoning"
@@ -13,7 +13,7 @@ tags:
   - "Large Models"
   - "Tool Agent"
 date: 2026-05-08
-content_hash: 8a717193bd5301fd
+content_hash: 3c4729930cf302b0
 ---
 
 # ToolVQA: A Dataset for Multi-step Reasoning VQA with External Tools
@@ -173,11 +173,11 @@ Value ★★★★★: Code and dataset are publicly released, directly usable f
 
 ## Related Papers
 
-- [\[ICCV 2025\] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning](mmat1m_a_large_reasoning_dataset_for_multimodal_agent_tuning.md)
+- [\[NeurIPS 2025\] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?](../../NeurIPS2025/vlm_reasoning/can_multi-modal_llms_provide_live_step-by-step_task_guidance.md)
 - [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](llava-cot_let_vision_language_models_reason_step-by-step.md)
-- [\[NeurIPS 2025\] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?](../../NeurIPS2025/multimodal_vlm/can_multi-modal_llms_provide_live_step-by-step_task_guidance.md)
-- [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
-- [\[ICCV 2025\] From Easy to Hard: The MIR Benchmark for Progressive Interleaved Multi-Image Reasoning](from_easy_to_hard_the_mir_benchmark_for_progressive_interleaved_multi-image_reas.md)
+- [\[ACL 2025\] FinMME: Benchmark Dataset for Financial Multi-Modal Reasoning Evaluation](../../ACL2025/vlm_reasoning/finmme_benchmark_dataset_for_financial_multi-modal_reasoning_evaluation.md)
+- [\[ICCV 2025\] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning](mmat1m_a_large_reasoning_dataset_for_multimodal_agent_tuning.md)
+- [\[ICML 2025\] Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner](../../ICML2025/vlm_reasoning/overcoming_multi-step_complexity_in_multimodal_theory-of-mind_reasoning_a_scalab.md)
 
 </div>
 

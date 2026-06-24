@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Talk, Snap, Complain: Validation-Aware Multimodal Expert Framework for Fine-Grained Customer Grievances
 description: >-
-  [AAAI2026][Image Generation][Multimodal complaint analysis] This paper proposes VALOR, a validation-aware multimodal expert framework combining a multi-expert routing architecture with Chain-of-Thought reasoning and a se…
+  [AAAI2026][Image Generation][Multimodal complaint analysis] This paper proposes VALOR, a validation-aware multimodal expert framework combining a multi-expert routing architecture with Chain-of-Thought reasoning and a semantic alignment validation mechanism, which achieves joint fine-grained classification of complaint Aspect and Severity in multi-turn multimodal customer service dialogues, yielding absolute improvements of 12.94%/6.51% over the strongest baseline Gemma-3.
 tags:
   - "AAAI2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "semantic alignment"
   - "fine-grained classification"
 date: 2026-05-08
-content_hash: 7277becda64e1bea
+content_hash: a37c533edde51178
 ---
 
 # Talk, Snap, Complain: Validation-Aware Multimodal Expert Framework for Fine-Grained Customer Grievances
@@ -154,11 +154,11 @@ The two-phase prediction–validation design is generalizable to other multimoda
 
 ## Related Papers
 
-- [\[ICCV 2025\] CharaConsist: Fine-Grained Consistent Character Generation](../../ICCV2025/image_generation/characonsist_fine-grained_consistent_character_generation.md)
-- [\[CVPR 2026\] BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling](../../CVPR2026/image_generation/beautygrpo_aesthetic_alignment_for_face_retouching_via_dynamic_path_guidance_and.md)
-- [\[ICCV 2025\] TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation](../../ICCV2025/image_generation/taxadiffusion_progressively_trained_diffusion_model_for_fine-grained_species_gen.md)
-- [\[CVPR 2026\] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models](../../CVPR2026/image_generation/segquant_a_semantics-aware_and_generalizable_quantization_framework_for_diffusio.md)
-- [\[ICML 2026\] Coarse-Grained Boltzmann Generators](../../ICML2026/image_generation/coarse-grained_boltzmann_generators.md)
+- [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](../../CVPR2026/image_generation/towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
+- [\[ICLR 2026\] EdiVal-Agent: An Object-Centric Framework for Automated, Fine-Grained Evaluation of Multi-Turn Editing](../../ICLR2026/image_generation/edival-agent_an_object-centric_framework_for_automated_fine-grained_evaluation_o.md)
+- [\[CVPR 2026\] SketchRevive: Fine-Grained Pixel-to-Vector Sketch Completion with Diffusion-Prior-Guided Multimodal LLMs](../../CVPR2026/image_generation/sketchrevive_fine-grained_pixel-to-vector_sketch_completion_with_diffusion-prior.md)
+- [\[CVPR 2026\] Beyond Objects: Contextual Synthetic Data Generation for Fine-Grained Classification](../../CVPR2026/image_generation/beyond_objects_contextual_synthetic_data_generation_for_fine-grained_classificat.md)
+- [\[CVPR 2026\] SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control](../../CVPR2026/image_generation/slideredit_continuous_image_editing_with_fine-grained_instruction_control.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising
 description: >-
-  [NeurIPS 2025][Image Generation][Dark matter detection] This work introduces TIDMAD — the first ultra-long time series denoising benchmark dataset for dark matter searches — comprising training/validation/science data fr…
+  [NeurIPS 2025 Spotlight][Image Generation][Dark matter detection] This work introduces TIDMAD — the first ultra-long time series denoising benchmark dataset for dark matter searches — comprising training/validation/science data from the ABRACADABRA experiment, a denoising score metric, and a complete analysis pipeline, enabling AI algorithms to directly produce physics-community-standard dark matter search results.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "Dark matter detection"
   - "time series denoising"
@@ -12,7 +12,7 @@ tags:
   - "benchmark dataset"
   - "signal recovery"
 date: 2026-05-08
-content_hash: 24255f60a0254080
+content_hash: f40fa93a4d0a80de
 ---
 
 # TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising
@@ -66,11 +66,11 @@ TIDMAD does not propose a new algorithm; rather, it constructs a complete ecosys
 2. **Denoising Score (Benchmark 1)**
 
    Designed based on an improved signal-to-noise ratio, the computation procedure is as follows:
-   - Divide the time series into 1-second segments and apply FFT to convert to power spectral density (PSD).
-   - Locate the signal frequency $\nu_0$ in the PSD of the injected signal.
-   - Compute the ratio of signal-region PSD to noise-region PSD to obtain the SNR.
-   - Normalize and compute a weighted sum to obtain $\Lambda$.
-   - Apply a logarithmic transformation: $\text{Denoising Score} = \log_{5.27}\Lambda$
+    - Divide the time series into 1-second segments and apply FFT to convert to power spectral density (PSD).
+    - Locate the signal frequency $\nu_0$ in the PSD of the injected signal.
+    - Compute the ratio of signal-region PSD to noise-region PSD to obtain the SNR.
+    - Normalize and compute a weighted sum to obtain $\Lambda$.
+    - Apply a logarithmic transformation: $\text{Denoising Score} = \log_{5.27}\Lambda$
 
    A denoising score of 1 corresponds to the raw undenoised data; higher scores indicate better denoising performance. It has been verified that this score exhibits a linear relationship with noise amplitude.
 
@@ -153,11 +153,11 @@ Training strategies for the 8 baseline denoising algorithms:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] CaMiT: A Time-Aware Car Model Dataset for Classification and Generation](camit_a_time-aware_car_model_dataset_for_classification_and_generation.md)
 - [\[NeurIPS 2025\] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking](a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co.md)
 - [\[ICCV 2025\] Learning to See in the Extremely Dark](../../ICCV2025/image_generation/learning_to_see_in_the_extremely_dark.md)
+- [\[NeurIPS 2025\] CaMiT: A Time-Aware Car Model Dataset for Classification and Generation](camit_a_time-aware_car_model_dataset_for_classification_and_generation.md)
+- [\[ICML 2025\] LSCD: Lomb-Scargle Conditioned Diffusion for Time Series Imputation](../../ICML2025/image_generation/lscd_lomb-scargle_conditioned_diffusion_for_time_series_imputation.md)
 - [\[ICLR 2026\] Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting](../../ICLR2026/image_generation/conditionally_whitened_generative_models_for_probabilistic_time_series_forecasti.md)
-- [\[NeurIPS 2025\] Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising](two-steps_diffusion_policy_for_robotic_manipulation_via_genetic_denoising.md)
 
 </div>
 

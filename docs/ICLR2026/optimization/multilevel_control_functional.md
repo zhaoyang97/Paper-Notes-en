@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Multilevel Control Functional
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes **Multilevel Control Functionals (MLCF)**, which graft non-parametric Stein control functionals onto the telescopic sum of Multilevel Monte Carlo (MLMC). By using control functionals to further suppress the variance of differences between adjacent fidelity models at each level, MLCF achieves faster
+  [ICLR 2026][Optimization][Control Variables] This paper proposes **Multilevel Control Functionals (MLCF)**, which graft non-parametric Stein control functionals onto the telescopic sum of Multilevel Monte Carlo (MLMC). By using control functionals to further suppress the variance of differences between adjacent fidelity models at each level, MLCF achieves faster convergence rates than MLMC when the integrand and density are smooth and the dimensionality is moderate. The autho…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Control Variables"
+  - "Control Functionals"
+  - "Multilevel Monte Carlo"
+  - "Multi-fidelity"
+  - "Stein Method"
+  - "Variational Inference"
 date: 2026-05-08
-content_hash: 0a8514510b267eff
+content_hash: c96a94d6f7dcac19
 ---
+
 # Multilevel Control Functional
 
 **Conference**: ICLR 2026  
@@ -103,10 +110,20 @@ reducing computation from $O(d\sum_l l\,n_l^3)$ to $O(d\,n_L^3)$ and memory from
 - **Value**: ⭐⭐⭐⭐ — Provides a plug-and-play variance reducer for "expensive integrals + adjustable fidelity" scenarios with high practical utility.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Unbiased Gradient Estimation for Event Binning via Functional Backpropagation](unbiased_gradient_estimation_for_event_binning_via_functional_backpropagation.md)
+- [\[ICLR 2026\] Conformal Robustness Control: A New Strategy for Robust Decision](conformal_robustness_control_a_new_strategy_for_robust_decision.md)
+- [\[ICLR 2026\] Differentiable Model Predictive Control on the GPU](differentiable_model_predictive_control_on_the_gpu.md)
+- [\[ICLR 2026\] Dual Optimistic Ascent (PI Control) is the Augmented Lagrangian Method in Disguise](dual_optimistic_ascent_pi_control_is_the_augmented_lagrangian_method_in_disguise.md)
+- [\[ICLR 2026\] A Schrödinger Eigenfunction Method for Long-Horizon Stochastic Optimal Control](a_schrödinger_eigenfunction_method_for_long-horizon_stochastic_optimal_control.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Unbiased Gradient Estimation for Event Binning via Functional Backpropagation](unbiased_gradient_estimation_for_event_binning_via_functional_backpropagation.md)

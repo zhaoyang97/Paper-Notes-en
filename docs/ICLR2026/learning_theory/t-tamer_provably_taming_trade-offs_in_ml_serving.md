@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] T-Tamer: Provably Taming Trade-offs in ML Serving
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] The trade-offs in cascaded/early-exit inference—specifically "when to exit and which sub-model to invoke"—are unified as a costly exploration problem on a DAG. It is proven that "recall" (the ability to revisit and select a previously examined model) is a necessary and sufficient condition for provable optimality: reca
+  [ICLR 2026][Learning Theory][Cascaded Inference] The trade-offs in cascaded/early-exit inference—specifically "when to exit and which sub-model to invoke"—are unified as a costly exploration problem on a DAG. It is proven that "recall" (the ability to revisit and select a previously examined model) is a necessary and sufficient condition for provable optimality: recall-free strategies cannot achieve even a constant approximation ratio, whereas a dynamic indexing strategy with…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Model Serving"
+  - "LLM Efficiency"
+  - "Cascaded Inference"
+  - "Early Exit"
+  - "Costly Exploration"
+  - "Dynamic Indexing"
+  - "Optimal Stopping"
 date: 2026-05-08
-content_hash: 6b89fe5809c8ce62
+content_hash: ca2a9b1038f22a6f
 ---
+
 # T-Tamer: Provably Taming Trade-offs in ML Serving
 
 **Conference**: ICLR 2026  
@@ -145,8 +153,8 @@ The dynamic indexing strategy (RECALL / T-Tamer) was evaluated on real-world CV/
 - [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
 - [\[ICLR 2026\] Nonparametric Contextual Online Bilateral Trade](nonparametric_contextual_online_bilateral_trade.md)
 - [\[ICLR 2026\] SVD Provably Denoises Nearest Neighbor Data](svd_provably_denoises_nearest_neighbor_data.md)
-- [\[ICML 2025\] Near-Optimal Consistency-Robustness Trade-Offs for Learning-Augmented Online Knapsack Problems](../../ICML2025/learning_theory/near-optimal_consistency-robustness_trade-offs_for_learning-augmented_online_kna.md)
-- [\[ICLR 2026\] Two-Layer Convolutional Autoencoders Trained on Normal Data Provably Detect Unseen Anomalies](two-layer_convolutional_autoencoders_trained_on_normal_data_provably_detect_unse.md)
+- [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
+- [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 
 </div>
 

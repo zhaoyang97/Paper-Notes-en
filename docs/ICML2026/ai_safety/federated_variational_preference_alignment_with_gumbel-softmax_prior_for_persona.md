@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper proposes FedVPA-GP: Under the privacy constraints of Federated Learning (FL), it models each client's preference as a continuous latent variable $z$ using a "client mixture prior + Gumbel-Softmax learnable weights + orthogonal prototype loss." This fundamentally fixes the "posterior collapse" encountered whe
+  [ICML 2026][AI Safety][Federated Preference Alignment] This paper proposes FedVPA-GP: Under the privacy constraints of Federated Learning (FL), it models each client's preference as a continuous latent variable $z$ using a "client mixture prior + Gumbel-Softmax learnable weights + orthogonal prototype loss." This fundamentally fixes the "posterior collapse" encountered when directly applying VPL to FL, enabling a single reward model to switch dynamically between conflicting p…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Federated Preference Alignment"
+  - "Variational Inference"
+  - "Gumbel-Softmax Mixture Prior"
+  - "Posterior Collapse"
+  - "Personalized RLHF"
 date: 2026-05-08
-content_hash: be80c2e44a783b2b
+content_hash: cc1fcb5aa0fabe30
 ---
+
 # Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences
 
 **Conference**: ICML 2026  
@@ -133,9 +139,9 @@ Generalization to unseen clients (20 clients, 10 train / 10 test): FedVPA-GP sco
 
 - [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 - [\[ICML 2026\] From Volume to Value: Preference-Aligned Memory Construction for On-Device RAG](from_volume_to_value_preference-aligned_memory_construction_for_on-device_rag.md)
-- [\[ICML 2026\] Fair Dataset Distillation via Cross-Group Barycenter Alignment](fair_dataset_distillation_via_cross-group_barycenter_alignment.md)
 - [\[NeurIPS 2025\] Brain-like Variational Inference](../../NeurIPS2025/ai_safety/brain-like_variational_inference.md)
-- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
+- [\[ICML 2026\] Position: 'AI Alignment' Encompasses Competing Technical Priorities](ai_alignment_encompasses_competing_technical_priorities.md)
+- [\[ICML 2026\] Fair Dataset Distillation via Cross-Group Barycenter Alignment](fair_dataset_distillation_via_cross-group_barycenter_alignment.md)
 
 </div>
 

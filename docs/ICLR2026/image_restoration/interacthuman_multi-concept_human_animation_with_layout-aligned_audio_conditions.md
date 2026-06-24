@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InterActHuman: Multi-Concept Human Animation with Layout-Aligned Audio Conditions
 description: >-
-  [ICLR 2026][Image Restoration][DiT] InterActHuman is proposed to achieve audio-driven video generation in multi-person and human-interaction scenes through an automated spatio-temporal layout-inferring mask predictor and an iterative mask-guiding strategy, supporting independent lip-sync and body movements for each character.
+  [ICLR 2026][Image Restoration][Multi-person video generation] InterActHuman is proposed to achieve audio-driven video generation in multi-person and human-interaction scenes through an automated spatio-temporal layout-inferring mask predictor and an iterative mask-guiding strategy, supporting independent lip-sync and body movements for each character.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - DiT
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Multi-person video generation"
+  - "Audio-driven animation"
+  - "Mask prediction"
+  - "Layout control"
+  - "DiT"
 date: 2026-05-08
-content_hash: fedc803c12eebe3d
+content_hash: af12ed932dc0fe6b
 ---
+
 # InterActHuman: Multi-Concept Human Animation with Layout-Aligned Audio Conditions
 
 **Conference**: ICLR 2026  

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Uni-LoRA: One Vector is All You Need
 description: >-
-  [NeurIPS 2025][Model Compression][Parameter-Efficient Fine-Tuning] This paper proposes Uni-LoRA, a unified framework demonstrating that the parameter reduction strategies of various LoRA variants (Tied-LoRA, VeRA…
+  [NeurIPS 2025 Spotlight][Model Compression][Parameter-Efficient Fine-Tuning] This paper proposes Uni-LoRA, a unified framework demonstrating that the parameter reduction strategies of various LoRA variants (Tied-LoRA, VeRA, VB-LoRA, etc.) are fundamentally distinguished by the choice of projection matrix mapping the full parameter space $\mathbb{R}^D$ to a low-dimensional subspace $\mathbb{R}^d$. An isometric random grouping projection matrix is designed such that training a…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "Parameter-Efficient Fine-Tuning"
   - "LoRA"
@@ -12,7 +12,7 @@ tags:
   - "Isometry"
   - "Parameter Sharing"
 date: 2026-05-08
-content_hash: b1243c551d6b6fa1
+content_hash: 2618a64d605fb8bb
 ---
 
 # Uni-LoRA: One Vector is All You Need
@@ -153,9 +153,9 @@ This vector is then mapped to a low-dimensional subspace via $\theta_D = P \thet
 
 - [\[NeurIPS 2025\] All You Need is One: Capsule Prompt Tuning with a Single Vector](all_you_need_is_one_capsule_prompt_tuning_with_a_single_vector.md)
 - [\[NeurIPS 2025\] Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA](robust_federated_finetuning_of_llms_via_alternating_optimization_of_lora.md)
+- [\[ACL 2025\] One QuantLLM for ALL: Fine-tuning Quantized LLMs Once for Efficient Deployments](../../ACL2025/model_compression/one_quantllm_for_all_fine-tuning_quantized_llms_once_for_efficient_deployments.md)
 - [\[NeurIPS 2025\] C-LoRA: Contextual Low-Rank Adaptation for Uncertainty Estimation in Large Language Models](c-lora_contextual_low-rank_adaptation_for_uncertainty_estimation_in_large_langua.md)
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
-- [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](gora_gradient-driven_adaptive_low_rank_adaptation.md)
 
 </div>
 

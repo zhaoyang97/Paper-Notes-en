@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Representation Interventions Enable Lifelong Knowledge Memory Control in LLMs
 description: >-
-  [ACL 2026][Knowledge Editing][Paper Note] This paper proposes RILKE, which transforms lifelong knowledge editing from "modifying model weights" to "applying low-rank interventions in the hidden representation space." Through robust training, query-adaptive routing, and shared subspace modules, RILKE maintains near-perfect editing success rates and strong gener
+  [ACL2026][Knowledge Editing][Representation Intervention] This paper proposes RILKE, which transforms lifelong knowledge editing from "modifying model weights" to "applying low-rank interventions in the hidden representation space." Through robust training, query-adaptive routing, and shared subspace modules, RILKE maintains near-perfect editing success rates and strong generalization after 1,000 unstructured knowledge edits while significantly reducing storage overhead.
 tags:
-  - ACL 2026
-  - Knowledge Editing
+  - "ACL2026"
+  - "Knowledge Editing"
+  - "Representation Intervention"
+  - "Lifelong Memory Control"
+  - "Router"
+  - "Low-rank Subspace"
 date: 2026-05-08
-content_hash: 8a369e6bdf327402
+content_hash: d44deb45bfc23845
 ---
+
 # Representation Interventions Enable Lifelong Knowledge Memory Control in LLMs
 
 **Conference**: ACL2026  
@@ -147,8 +152,8 @@ The robust training term primarily improves paraphrase generalization without ha
 
 - [\[ICML 2025\] WikiBigEdit: Understanding the Limits of Lifelong Knowledge Editing in LLMs](../../ICML2025/knowledge_editing/wikibigedit_understanding_the_limits_of_lifelong_knowledge_editing_in_llms.md)
 - [\[NeurIPS 2025\] MEMOIR: Lifelong Model Editing with Minimal Overwrite and Informed Retention for LLMs](../../NeurIPS2025/knowledge_editing/memoir_lifelong_model_editing_with_minimal_overwrite_and_informed_retention_for_.md)
-- [\[NeurIPS 2025\] Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs](../../NeurIPS2025/knowledge_editing/edit_less_achieve_more_dynamic_sparse_neuron_masking_for_lifelong_knowledge_edit.md)
 - [\[ACL 2026\] HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning](hiedit_lifelong_model_editing_with_hierarchical_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs](../../NeurIPS2025/knowledge_editing/edit_less_achieve_more_dynamic_sparse_neuron_masking_for_lifelong_knowledge_edit.md)
 - [\[ICML 2025\] Representation Shattering in Transformers: A Synthetic Study with Knowledge Editing](../../ICML2025/knowledge_editing/representation_shattering_in_transformers_a_synthetic_study_with_knowledge_editi.md)
 
 </div>

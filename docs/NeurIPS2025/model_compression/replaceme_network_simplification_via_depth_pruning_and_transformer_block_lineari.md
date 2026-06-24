@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization
 description: >-
-  [NeurIPS 2025][Model Compression][Depth Pruning] ReplaceMe is a training-free depth pruning method that uses a small calibration dataset to estimate a linear transformation approximating groups of pruned Transformer bloc…
+  [NeurIPS 2025][Model Compression][Depth Pruning] ReplaceMe is a training-free depth pruning method that uses a small calibration dataset to estimate a linear transformation approximating groups of pruned Transformer blocks. This transformation is fused into adjacent layer weights without introducing additional parameters, achieving 25% pruning on LLaMA-2-7B while retaining approximately 90% of original performance.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LLM Acceleration"
   - "Layer Selection"
 date: 2026-05-08
-content_hash: 9b80f4cf856663bc
+content_hash: 015fd543c33fecd0
 ---
 
 # ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization
@@ -150,11 +150,11 @@ ReplaceMe proceeds in four steps: (1) **Layer Selection**—identify the consecu
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis](the_graphon_limit_hypothesis_understanding_neural_network_pruning_via_infinite_w.md)
 - [\[ICML 2026\] FlattenGPT: Depth Compression for Transformer with Layer Flattening](../../ICML2026/model_compression/flattengpt_depth_compression_for_transformer_with_layer_flattening.md)
-- [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
-- [\[NeurIPS 2025\] Spark Transformer: Reactivating Sparsity in FFN and Attention](spark_transformer_reactivating_sparsity_in_ffn_and_attention.md)
+- [\[NeurIPS 2025\] The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis](the_graphon_limit_hypothesis_understanding_neural_network_pruning_via_infinite_w.md)
+- [\[CVPR 2025\] Layered Image Vectorization via Semantic Simplification](../../CVPR2025/model_compression/layered_image_vectorization_via_semantic_simplification.md)
 - [\[NeurIPS 2025\] On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills](on_the_creation_of_narrow_ai_hierarchy_and_nonlocality_of_neural_network_skills.md)
+- [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
 
 </div>
 

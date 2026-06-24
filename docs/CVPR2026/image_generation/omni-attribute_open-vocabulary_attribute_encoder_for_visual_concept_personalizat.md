@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Addressing the issue where holistic embeddings extracted by generic image encoders (CLIP/DINOv2/VAE) in existing personalization methods are "entangled," often carrying over irrelevant information like lighting and clothing (copy-and-paste artifacts), Omni-Attribute allows the encoder to ingest both an "image + a textu
+  [CVPR 2026][Image Generation][Attribute Decoupling] Addressing the issue where holistic embeddings extracted by generic image encoders (CLIP/DINOv2/VAE) in existing personalization methods are "entangled," often carrying over irrelevant information like lighting and clothing (copy-and-paste artifacts), Omni-Attribute allows the encoder to ingest both an "image + a textual attribute description." It specifically learns to encode open-vocabulary embeddings for designated attrib…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Attribute Decoupling"
+  - "Open-vocabulary Encoder"
+  - "Visual Concept Personalization"
+  - "Contrastive Learning"
+  - "Composable Generation"
 date: 2026-05-08
-content_hash: e8796e296b73404a
+content_hash: bee1754d0a702a3a
 ---
+
 # Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization
 
 **Conference**: CVPR 2026  
@@ -129,16 +135,16 @@ Ablation measures the gap $\Delta_{(\mathrm{pos},\mathrm{neg})}$ and personaliza
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] SHOE: Semantic HOI Open-Vocabulary Evaluation Metric](shoe_semantic_hoi_open-vocabulary_evaluation_metric.md)
 - [\[CVPR 2026\] TokenLight: Precise Lighting Control in Images using Attribute Tokens](tokenlight_precise_lighting_control_in_images_using_attribute_tokens.md)
 - [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all_in_one_slider_attribute_manipulation.md)
 - [\[CVPR 2026\] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
-- [\[CVPR 2026\] APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](apple_attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
+- [\[CVPR 2026\] SIGMA: Selective-Interleaved Generation with Multi-Attribute Tokens](sigma_selective-interleaved_generation_with_multi-attribute_tokens.md)
+- [\[CVPR 2026\] Visual Personalization Turing Test](visual_personalization_turing_test.md)
 
 </div>
 

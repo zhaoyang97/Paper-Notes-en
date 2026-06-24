@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Targeted Exploration via Unified Entropy Control for Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][GRPO] This paper proposes UEC-RL, a unified bidirectional entropy control framework. It addresses the common issues of entropy collapse and training instability in GRPO through targeted high-temperature exploration for difficult prompts (increasing entropy) and experience replay stabilizers to consolidate high-quality trajec
+  [ACL 2026 Findings][Reinforcement Learning][Entropy Control] This paper proposes UEC-RL, a unified bidirectional entropy control framework. It addresses the common issues of entropy collapse and training instability in GRPO through targeted high-temperature exploration for difficult prompts (increasing entropy) and experience replay stabilizers to consolidate high-quality trajectories (decreasing entropy), achieving a 37.9% relative improvement on Geometry3K.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026 Findings"
+  - "Reinforcement Learning"
+  - "Entropy Control"
+  - "GRPO"
+  - "Exploration Strategy"
+  - "Reasoning Enhancement"
 date: 2026-05-08
-content_hash: c4d8692b4398f681
+content_hash: cd8e90b0b50bb6fc
 ---
+
 # Targeted Exploration via Unified Entropy Control for Reinforcement Learning
 
 **Conference**: ACL 2026 Findings  
@@ -130,6 +134,7 @@ Geometry3K Multimodal Reasoning (Qwen2.5-VL-7B):
 - Value: ⭐⭐⭐⭐ Provides practical guidance for improving GRPO training; code is open-source.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

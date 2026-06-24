@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] DimABSA: Building Multilingual and Multidomain Datasets for Dimensional Aspect-Based Sentiment Analysis
 description: >-
-  [ACL 2026][NLP Understanding][ABSA] The authors constructed DimABSA, the first multilingual (6 languages) and multi-domain (4 domains) dimensional aspect-based sentiment analysis dataset (76,958 aspect instances / 42,590 sentences). It replaces traditional "positive/negative/neutral" tri-classification with continuous valence–arousal scores, designs thre
+  [ACL 2026][NLP Understanding][ABSA] The authors constructed DimABSA, the first multilingual (6 languages) and multi-domain (4 domains) dimensional aspect-based sentiment analysis dataset (76,958 aspect instances / 42,590 sentences). It replaces traditional "positive/negative/neutral" tri-classification with continuous valence–arousal scores, designs three new subtasks and a unified metric cF1, and evaluates 6 open/closed-source LLMs systematically.
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - ABSA
-  - Valence-Arousal
-  - cF1
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "ABSA"
+  - "Dimensional Sentiment"
+  - "Valence-Arousal"
+  - "Multilingual"
+  - "cF1"
 date: 2026-05-08
-content_hash: 86c7a3f11adeccc2
+content_hash: 98b6eb813d740387
 ---
+
 # DimABSA: Building Multilingual and Multidomain Datasets for Dimensional Aspect-Based Sentiment Analysis
 
 **Conference**: ACL 2026  
@@ -159,7 +162,7 @@ Observations: (i) In DimASR, 120B fine-tuning halves the RMSE, while 14B/70B mod
 - [\[ACL 2025\] Dynamic Order Template Prediction for Generative Aspect-Based Sentiment Analysis](../../ACL2025/nlp_understanding/dot_absa_template.md)
 - [\[ACL 2026\] A Computational Method for Measuring "Open Codes" in Qualitative Analysis](a_computational_method_for_measuring_34open_codes34_in_qualitative_analysis.md)
 - [\[ACL 2025\] SynGraph: A Dynamic Graph-LLM Synthesis Framework for Sparse Streaming User Sentiment Analysis](../../ACL2025/nlp_understanding/syngraph_a_dynamic_graph-llm_synthesis_framework_for_sparse_streaming_user_senti.md)
-- [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
+- [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 
 </div>
 

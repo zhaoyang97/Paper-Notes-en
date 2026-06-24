@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revisiting Point Cloud Completion: Are We Ready For The Real-World?
 description: >-
-  [ICCV 2025][3D Vision][Point cloud completion] Using algebraic topology and persistent homology ($\mathcal{PH}$) tools, this paper reveals that existing synthetic point cloud datasets lack the rich topological features p…
+  [ICCV 2025][3D Vision][Point cloud completion] Using algebraic topology and persistent homology ($\mathcal{PH}$) tools, this paper reveals that existing synthetic point cloud datasets lack the rich topological features present in real-world data. It contributes the first real-world industrial point cloud completion dataset RealPC (~40,000 pairs, 21 categories), and proposes BOSHNet, which samples proxy homology skeletons as topological priors to achieve significant improvemen…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "topological prior"
   - "industrial point cloud"
 date: 2026-05-08
-content_hash: 7e5be38b78a927f2
+content_hash: 2280af9904f6120d
 ---
 
 # Revisiting Point Cloud Completion: Are We Ready For The Real-World?
@@ -177,11 +177,11 @@ Diffusion-based generative models also perform poorly on RealPC.
 
 ## Related Papers
 
+- [\[CVPR 2025\] Parametric Point Cloud Completion for Polygonal Surface Reconstruction](../../CVPR2025/3d_vision/parametric_point_cloud_completion_for_polygonal_surface_reconstruction.md)
 - [\[AAAI 2026\] Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective](../../AAAI2026/3d_vision/rethinking_multimodal_point_cloud_completion_a_completion-by-correction_perspect.md)
+- [\[CVPR 2025\] PCDreamer: Point Cloud Completion Through Multi-view Diffusion Priors](../../CVPR2025/3d_vision/pcdreamer_point_cloud_completion_through_multi-view_diffusion_priors.md)
+- [\[CVPR 2025\] GenPC: Zero-shot Point Cloud Completion via 3D Generative Priors](../../CVPR2025/3d_vision/genpc_zero-shot_point_cloud_completion_via_3d_generative_priors.md)
 - [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](../../AAAI2026/3d_vision/dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
-- [\[NeurIPS 2025\] PointMAC: Meta-Learned Adaptation for Robust Test-Time Point Cloud Completion](../../NeurIPS2025/3d_vision/pointmac_meta-learned_adaptation_for_robust_test-time_point_cloud_completion.md)
-- [\[ICCV 2025\] Demeter: A Parametric Model of Crop Plant Morphology from the Real World](demeter_a_parametric_model_of_crop_plant_morphology_from_the_real_world.md)
-- [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
 
 </div>
 

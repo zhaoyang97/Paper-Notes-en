@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Radiation-Preserving Selective Imaging for Pediatric Hip Dysplasia: A Cross-Modal Approach
 description: >-
-  [AAAI 2026][Medical Imaging][Developmental dysplasia of the hip] This paper proposes an "ultrasound-first, radiation-preserving" cross-modal selective imaging strategy. By combining a self-supervised pretrained frozen en…
+  [AAAI 2026 Best Paper Oral][Medical Imaging][Developmental dysplasia of the hip] This paper proposes an "ultrasound-first, radiation-preserving" cross-modal selective imaging strategy. By combining a self-supervised pretrained frozen encoder, a measurement-faithful lightweight head network, and a conformal-prediction-calibrated one-sided lower bound, the framework provides principled decisions on when ultrasound alone suffices and when additional X-ray imaging is warranted fo…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Best Paper Oral"
   - "Medical Imaging"
   - "Developmental dysplasia of the hip"
   - "ultrasound–X-ray cross-modal learning"
@@ -12,7 +12,7 @@ tags:
   - "selective imaging"
   - "self-supervised learning"
 date: 2026-05-08
-content_hash: 141ae69d3c93bcc2
+content_hash: a153b43f5282eb71
 ---
 
 # Radiation-Preserving Selective Imaging for Pediatric Hip Dysplasia: A Cross-Modal Approach
@@ -162,11 +162,11 @@ This paper is an excellent example of applying **statistical decision theory** (
 
 ## Related Papers
 
-- [\[AAAI 2026\] Learning with Preserving for Continual Multitask Learning](learning_with_preserving_for_continual_multitask_learning.md)
 - [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
+- [\[AAAI 2026\] Learning with Preserving for Continual Multitask Learning](learning_with_preserving_for_continual_multitask_learning.md)
+- [\[ICML 2025\] Enhancing Statistical Validity and Power in Hybrid Controlled Trials: A Randomization Inference Approach with Conformal Selective Borrowing](../../ICML2025/medical_imaging/enhancing_statistical_validity_and_power_in_hybrid_controlled_trials_a_randomiza.md)
+- [\[ICLR 2026\] sleep2vec: Unified Cross-Modal Alignment for Heterogeneous Nocturnal Biosignals](../../ICLR2026/medical_imaging/sleep2vec_unified_cross-modal_alignment_for_heterogeneous_nocturnal_biosignals.md)
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
-- [\[CVPR 2026\] CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration](../../CVPR2026/medical_imaging/crft_consistent-recurrent_feature_flow_transformer_for_cross-modal_image_registr.md)
-- [\[AAAI 2026\] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach](rethinking_bias_in_generative_data_augmentation_for_medical_ai_a_frequency_recal.md)
 
 </div>
 

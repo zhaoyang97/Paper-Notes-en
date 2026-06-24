@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA
 description: >-
-  [NeurIPS 2025][Model Compression][federated learning] This paper proposes RoLoRA, which alternately optimizes the down-projection ($\mathbf{A}$) and up-projection ($\mathbf{B}$) matrices of LoRA to address imprecise aggr…
+  [NeurIPS 2025][Model Compression][federated learning] This paper proposes RoLoRA, which alternately optimizes the down-projection ($\mathbf{A}$) and up-projection ($\mathbf{B}$) matrices of LoRA to address imprecise aggregation and limited expressiveness in federated learning. RoLoRA significantly outperforms FedAVG of LoRA and FFA-LoRA on RoBERTa-Large and Llama-2-7B.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "alternating optimization"
   - "LLM"
 date: 2026-05-08
-content_hash: 8a01701d0767a2b2
+content_hash: bddd819fe13b99ec
 ---
 
 # Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA
@@ -152,11 +152,11 @@ The method is simple and effective, the theoretical analysis is clear, and the e
 
 ## Related Papers
 
+- [\[ACL 2025\] FedEx-LoRA: Exact Aggregation for Federated and Efficient Fine-Tuning of Large Language Models](../../ACL2025/model_compression/fedex_lora_federated_exact_aggregation.md)
+- [\[ACL 2025\] Towards Robust and Efficient Federated Low-Rank Adaptation with Heterogeneous Clients](../../ACL2025/model_compression/federated_lora_heterogeneous.md)
 - [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](../../ICML2026/model_compression/fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
 - [\[NeurIPS 2025\] C-LoRA: Contextual Low-Rank Adaptation for Uncertainty Estimation in Large Language Models](c-lora_contextual_low-rank_adaptation_for_uncertainty_estimation_in_large_langua.md)
-- [\[NeurIPS 2025\] Uni-LoRA: One Vector is All You Need](uni-lora_one_vector_is_all_you_need.md)
-- [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](gora_gradient-driven_adaptive_low_rank_adaptation.md)
-- [\[NeurIPS 2025\] Loquetier: A Virtualized Multi-LoRA Framework for Unified LLM Fine-tuning and Serving](loquetier_a_virtualized_multi-lora_framework_for_unified_llm_fine-tuning_and_ser.md)
+- [\[ICLR 2026\] CAR-LoRA: Training Compression-Aware and Robust LoRA Adapters for Evolving LLMs](../../ICLR2026/model_compression/car-lora_training_compression-aware_and_robust_lora_adapters_for_evolving_llms.md)
 
 </div>
 

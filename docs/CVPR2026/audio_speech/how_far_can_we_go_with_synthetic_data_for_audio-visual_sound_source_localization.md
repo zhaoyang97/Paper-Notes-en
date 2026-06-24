@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] This paper proposes the first scalable framework to generate data in bulk using text-to-X generative models for training Sound Source Localization (SSL) models. It demonstrates that purely synthetic data can match the performance of real data, and replacing noisy real "intermediate frames" with synthetic images can "pu
+  [CVPR 2026][Audio & Speech][Sound source localization] This paper proposes the first scalable framework to generate data in bulk using text-to-X generative models for training Sound Source Localization (SSL) models. It demonstrates that purely synthetic data can match the performance of real data, and replacing noisy real "intermediate frames" with synthetic images can "purify" the training set. Hybrid training involving real and synthetic data achieves new SOTA results acros…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Sound source localization"
+  - "synthetic data"
+  - "text-to-image/audio"
+  - "data-centric learning"
+  - "contrastive learning"
 date: 2026-05-08
-content_hash: fad101706bef9b25
+content_hash: f0611476f323122b
 ---
+
 # How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?
 
 **Conference**: CVPR 2026  
@@ -112,15 +118,16 @@ Pure synthetic (b) is comparable to pure real (a). Replacing real images with sy
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2025\] Object-aware Sound Source Localization via Audio-Visual Scene Understanding](../../CVPR2025/audio_speech/object-aware_sound_source_localization_via_audio-visual_scene_understanding.md)
+- [\[ICLR 2026\] Physics-Informed Audio-Geometry-Grid Representation Learning for Universal Sound Source Localization](../../ICLR2026/audio_speech/physics-informed_audio-geometry-grid_representation_learning_for_universal_sound.md)
 - [\[CVPR 2025\] Improving Sound Source Localization with Joint Slot Attention on Image and Audio](../../CVPR2025/audio_speech/improving_sound_source_localization_with_joint_slot_attention_on_image_and_audio.md)
-- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
-- [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](egoavu_egocentric_audio-visual_understanding.md)
 - [\[CVPR 2026\] Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods](unlocking_strong_supervision_a_data-centric_study_of_general-purpose_audio_pre-t.md)
+- [\[CVPR 2026\] GEM-TFL: Bridging Weak and Full Supervision for Forgery Localization](gem-tfl_bridging_weak_and_full_supervision_for_forgery_localization_through_em-g.md)
 
 </div>
 

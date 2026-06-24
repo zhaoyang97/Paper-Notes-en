@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters
 description: >-
-  [AAAI 2026][Optimization][Federated Learning] This paper proposes FedPM (Federated Preconditioned Mixing), a novel federated learning method that replaces the conventional simple parameter averaging on the server side wi…
+  [AAAI 2026][Optimization][Federated Learning] This paper proposes FedPM (Federated Preconditioned Mixing), a novel federated learning method that replaces the conventional simple parameter averaging on the server side with "preconditioned mixing," addressing the local preconditioner drift problem inherent in existing second-order federated optimization methods. FedPM is theoretically shown to achieve superlinear convergence for strongly convex objectives and empirically outpe…
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Data Heterogeneity"
   - "Convergence Analysis"
 date: 2026-05-08
-content_hash: f82e616deeb9a883
+content_hash: 0a9b57a1e2510553
 ---
 
 # FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters
@@ -191,11 +191,11 @@ FedPM consistently outperforms all baselines across all configurations.
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton](../../ICLR2026/optimization/the_potential_of_second-order_optimization_for_llms_a_study_with_full_gauss-newt.md)
+- [\[ICLR 2026\] Scalable Second-Order Riemannian Optimization for K-means Clustering](../../ICLR2026/optimization/scalable_second-order_riemannian_optimization_for_k-means_clustering.md)
 - [\[AAAI 2026\] Tackling Resource-Constrained and Data-Heterogeneity in Federated Learning with Double-Weight Sparse Pack](tackling_resource-constrained_and_data-heterogeneity_in_federated_learning_with_.md)
-- [\[NeurIPS 2025\] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity](../../NeurIPS2025/optimization/second-order_optimization_under_heavy-tailed_noise_hessian_clipping_and_sample_c.md)
+- [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](../../ICLR2026/optimization/byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
 - [\[AAAI 2026\] Data Heterogeneity and Forgotten Labels in Split Federated Learning](data_heterogeneity_and_forgotten_labels_in_split_federated_learning.md)
-- [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
-- [\[ICML 2026\] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective](../../ICML2026/optimization/learning_dynamics_of_zeroth-order_optimization_a_kernel_perspective.md)
 
 </div>
 

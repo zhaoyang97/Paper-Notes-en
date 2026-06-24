@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] IMU-HOI treats "hand-object contact" as a first-class probabilistic signal. Starting from sparse IMUs attached to the body (6 units) and the object (1 unit), a three-stage fusion pipeline simultaneously recovers full-body human poses and 6-DoF object trajectories, reducing object trajectory error by 44%–64% compared to
+  [CVPR 2026][Human Understanding][Sparse IMUs] IMU-HOI treats "hand-object contact" as a first-class probabilistic signal. Starting from sparse IMUs attached to the body (6 units) and the object (1 unit), a three-stage fusion pipeline simultaneously recovers full-body human poses and 6-DoF object trajectories, reducing object trajectory error by 44%–64% compared to strong baselines across three HOI benchmarks.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Sparse IMUs"
+  - "Human-Object Interaction"
+  - "Motion Capture"
+  - "Contact Gating"
+  - "Inertial Fusion"
 date: 2026-05-08
-content_hash: 9fbee99dfb783d6f
+content_hash: 05c3352dc2d6385d
 ---
+
 # IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion
 
 **Conference**: CVPR 2026  
@@ -137,10 +143,10 @@ Comparison of three object translation head variants (Tab. 3):
 ## Related Papers
 
 - [\[CVPR 2026\] Real-Time Multimodal Fingertip Contact Detection via Depth and Motion Fusion for Vision-Based Human-Computer Interaction](real-time_multimodal_fingertip_contact_detection_via_depth_and_motion_fusion_for.md)
-- [\[AAAI 2026\] Improving Sparse IMU-based Motion Capture with Motion Label Smoothing](../../AAAI2026/human_understanding/improving_sparse_imu-based_motion_capture_with_motion_label_smoothing.md)
-- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
-- [\[CVPR 2026\] Learning to Diversify and Focus: A Reinforcement Framework for Open-Vocabulary HOI Detection](learning_to_diversify_and_focus_a_reinforcement_framework_for_open-vocabulary_ho.md)
 - [\[NeurIPS 2025\] HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion](../../NeurIPS2025/human_understanding/hoi-dyn_learning_interaction_dynamics_for_human-object_motion_diffusion.md)
+- [\[CVPR 2026\] Ground Reaction Inertial Poser: Physics-based Human Motion Capture from Sparse IMUs and Insole Pressure Sensors](ground_reaction_inertial_poser_physics-based_human_motion_capture_from_sparse_im.md)
+- [\[CVPR 2026\] Learning to Diversify and Focus: A Reinforcement Framework for Open-Vocabulary HOI Detection](learning_to_diversify_and_focus_a_reinforcement_framework_for_open-vocabulary_ho.md)
+- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
 
 </div>
 

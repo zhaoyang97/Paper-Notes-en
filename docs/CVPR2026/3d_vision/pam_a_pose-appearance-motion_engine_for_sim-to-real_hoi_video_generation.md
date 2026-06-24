@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation
 description: >-
-  [CVPR 2026][Video Generation][sim-to-real] PAM is proposed as the first engine to generate realistic hand-object interaction (HOI) videos using only initial/target hand poses and object geometry. By decoupling the process into three stages—pose, appearance, and motion generation—it achieves an FVD of 29.13 (vs. InterDyn's 38.83) and an MPJPE of 19.37mm (vs. Cos
+  [CVPR 2026][3D Vision][Hand-Object Interaction] PAM is proposed as the first engine to generate realistic hand-object interaction (HOI) videos using only initial/target hand poses and object geometry. By decoupling the process into three stages—pose, appearance, and motion generation—it achieves an FVD of 29.13 (vs. InterDyn's 38.83) and an MPJPE of 19.37mm (vs. CosHand's 30.05mm) on DexYCB. The generated synthetic data also effectively augments downstream hand pose estimatio…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - sim-to-real
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Hand-Object Interaction"
+  - "sim-to-real"
+  - "controllable video generation"
+  - "diffusion models"
+  - "data augmentation"
 date: 2026-05-08
-content_hash: e917377b1b549ad7
+content_hash: c666aad2de3dda4e
 ---
+
 # PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation
 
 **Conference**: CVPR 2026  
@@ -130,11 +134,11 @@ On OAKINK2: FVD dropped from 68.76 (CosHand) to 46.31, and MPJPE dropped from 14
 
 ## Related Papers
 
-- [\[CVPR 2026\] Captain Safari: A World Engine with Pose-Aligned 3D Memory](captain_safari_a_world_engine_with_pose-aligned_3d_memory.md)
-- [\[ICLR 2026\] MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling](../../ICLR2026/video_generation/mosa_motion-coherent_human_video_generation_via_structure-appearance_decoupling.md)
-- [\[CVPR 2026\] SynMotion: Semantic-Visual Adaptation for Motion Customized Video Generation](synmotion_semantic-visual_adaptation_for_motion_customized_video_generation.md)
-- [\[CVPR 2026\] ExPose: Reinforcing Video Generation Models for Extreme Pose Estimation](expose_reinforcing_video_generation_models_for_extreme_pose_estimation.md)
-- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
+- [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
+- [\[CVPR 2026\] SO(3)-Equivariant ViT-Adapter for Data-Efficient Zero-Shot Sim-to-Real Indoor Panoramic Depth Estimation](so3-equivariant_vit-adapter_for_data-efficient_zero-shot_sim-to-real_indoor_pano.md)
+- [\[CVPR 2026\] UniPR: Unified Object-level Real-to-Sim Perception and Reconstruction from a Single Stereo Pair](unipr_unified_object-level_real-to-sim_perception_and_reconstruction_from_a_sing.md)
+- [\[CVPR 2026\] KV-Tracker: Real-Time Pose Tracking with Transformers](kv-tracker_real-time_pose_tracking_with_transformers.md)
+- [\[CVPR 2026\] AnthroTAP: Learning Point Tracking with Real-World Motion](anthrotap_learning_point_tracking_with_real-world_motion.md)
 
 </div>
 

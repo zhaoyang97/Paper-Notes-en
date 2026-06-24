@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] A Foundation Model with Multi-Variate Parallel Attention to Generate Neuronal Activity
 description: >-
-  [ICLR 2026][Computational Biology][iEEG] This paper proposes Multi-Variate Parallel Attention (MVPA), which decouples attention into content, time, and channel parallel components to ignore differences in channel quantity and arrangement. Using this, the authors build MVPFormer, the first open-source, open-weight, and open-data intracranial EEG (iEEG) foundat
+  [ICLR 2026][Computational Biology][iEEG] This paper proposes Multi-Variate Parallel Attention (MVPA), which decouples attention into content, time, and channel parallel components to ignore differences in channel quantity and arrangement. Using this, the authors build MVPFormer, the first open-source, open-weight, and open-data intracranial EEG (iEEG) foundation model, achieving expert-level SOTA in epilepsy detection and brain activity decoding.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - iEEG
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "iEEG"
+  - "EEG Foundation Model"
+  - "Multivariate Attention"
+  - "Channel Heterogeneity"
+  - "Epilepsy Detection"
+  - "Generative Pre-training"
 date: 2026-05-08
-content_hash: d6f5328f74b0c19c
+content_hash: 682c8e1b1c0c1c18
 ---
+
 # A Foundation Model with Multi-Variate Parallel Attention to Generate Neuronal Activity
 
 **Conference**: ICLR 2026  

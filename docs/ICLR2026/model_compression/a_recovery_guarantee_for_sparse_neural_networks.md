@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Recovery Guarantee for Sparse Neural Networks
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The authors prove the first sparse recovery guarantee for ReLU neural networks: for two-layer scalar output networks with Gaussian randomly sampled training data, an Iterative Hard Thresholding (IHT) algorithm based on convex reformulation precisely recovers sparse network weights, with memory requirements growing only
+  [ICLR 2026][Model Compression][Sparse Neural Networks] The authors prove the first sparse recovery guarantee for ReLU neural networks: for two-layer scalar output networks with Gaussian randomly sampled training data, an Iterative Hard Thresholding (IHT) algorithm based on convex reformulation precisely recovers sparse network weights, with memory requirements growing only linearly with the number of non-zero weights.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Sparse Neural Networks"
+  - "Compressed Sensing"
+  - "Iterative Hard Thresholding"
+  - "Convex Reformulation"
+  - "ReLU Networks"
 date: 2026-05-08
-content_hash: 25c2090a25b58a25
+content_hash: 21e8a03e0e1b00ec
 ---
+
 # A Recovery Guarantee for Sparse Neural Networks
 
 **Conference**: ICLR 2026  
@@ -124,9 +130,9 @@ The recovery objective is linear least squares MSE $f(w) = \frac{1}{2}\|Aw - y\|
 
 - [\[ICLR 2026\] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks](cannistraci-hebb_training_on_ultra-sparse_spiking_neural_networks.md)
 - [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 - [\[ICLR 2026\] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization](fine-tuning_quantized_neural_networks_with_zeroth-order_optimization.md)
 - [\[ICLR 2026\] KLAS: Using Similarity to Stitch Neural Networks for Improved Accuracy-Efficiency Tradeoffs](klas_using_similarity_to_stitch_neural_networks_for_improved_accuracy-efficiency.md)
-- [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
 
 </div>
 

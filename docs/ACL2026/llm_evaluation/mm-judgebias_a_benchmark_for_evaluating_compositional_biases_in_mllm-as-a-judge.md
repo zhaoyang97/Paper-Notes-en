@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MM-JudgeBias: A Benchmark for Evaluating Compositional Biases in MLLM-as-a-Judge
 description: >-
-  [ACL 2026][LLM Evaluation][MLLM-as-a-Judge] The authors formalize whether "MLLM judges truly integrate images, queries, and responses" as **Compositional Bias** and construct **MM-JudgeBias**—a diagnostic set containing 9 types of bias and 1804 samples from 29 source benchmarks. Using two complementary metrics, **Bias-Deviation** (failure to decrease scores when
+  [ACL 2026][LLM Evaluation][MLLM-as-a-Judge] The authors formalize whether "MLLM judges truly integrate images, queries, and responses" as **Compositional Bias** and construct **MM-JudgeBias**—a diagnostic set containing 9 types of bias and 1804 samples from 29 source benchmarks. Using two complementary metrics, **Bias-Deviation** (failure to decrease scores when semantics are destroyed) and **Bias-Conformity** (failure to remain stable when semantics are preserved)…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - MLLM-as-a-Judge
-  - compositional bias
-  - modality bias
-  - Bias-Deviation
-  - Bias-Conformity
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "MLLM-as-a-Judge"
+  - "compositional bias"
+  - "modality bias"
+  - "Bias-Deviation"
+  - "Bias-Conformity"
 date: 2026-05-08
-content_hash: fc9fb52e609c40e2
+content_hash: 1558af4530a3edad
 ---
+
 # MM-JudgeBias: A Benchmark for Evaluating Compositional Biases in MLLM-as-a-Judge
 
 **Conference**: ACL 2026  
@@ -137,10 +138,10 @@ MM-JudgeBias is a benchmark, not a model; no training is involved. For evaluatio
 ## Related Papers
 
 - [\[ACL 2026\] Reasoning Model Is Superior LLM-Judge, Yet Suffers from Biases](reasoning_model_is_superior_llm-judge_yet_suffers_from_biases.md)
+- [\[ICLR 2026\] VideoJudge: Bootstrapping Enables Scalable Supervision of MLLM-as-a-Judge for Video Understanding](../../ICLR2026/llm_evaluation/videojudge_bootstrapping_enables_scalable_supervision_of_mllm-as-a-judge_for_vid.md)
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
-- [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
-- [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
-- [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
+- [\[ICLR 2026\] An Open-Ended Benchmark and Formal Framework for Adjuvant Research with MLLM](../../ICLR2026/llm_evaluation/an_open-ended_benchmark_and_formal_framework_for_adjuvant_research_with_mllm.md)
+- [\[ACL 2026\] Beyond Case Law: Evaluating Structure-Aware Retrieval and Safety in Statute-Centric Legal QA](beyond_case_law_evaluating_structure-aware_retrieval_and_safety_in_statute-centr.md)
 
 </div>
 

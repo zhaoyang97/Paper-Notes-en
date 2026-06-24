@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction
 description: >-
-  [CVPR 2026][Multimodal VLM][Multi-Agent] Socratic-Geo utilizes a "Teacher-Solver-Generator" three-agent closed-loop framework. Starting from only 108 seed problems, the Teacher diagnoses Solver failures and procedurally modifies geometric diagrams using Python code with self-verification. This creates a strictly aligned curriculum of geometric problems. The S
+  [CVPR 2026][Multimodal VLM][Geometric Reasoning] Socratic-Geo utilizes a "Teacher-Solver-Generator" three-agent closed-loop framework. Starting from only 108 seed problems, the Teacher diagnoses Solver failures and procedurally modifies geometric diagrams using Python code with self-verification. This creates a strictly aligned curriculum of geometric problems. The Solver achieves 49.11% across six benchmarks using only 1/4 of the training data (2.43 points higher than the st…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multi-Agent
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Geometric Reasoning"
+  - "Multi-Agent"
+  - "Synthetic Data"
+  - "Procedural Generation"
+  - "GRPO"
 date: 2026-05-08
-content_hash: fc9ad78311c91253
+content_hash: 6f0d86d92fe9abb3
 ---
+
 # Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction
 
 **Conference**: CVPR 2026  
@@ -144,11 +148,11 @@ The Generator sets a new **open-source SOTA** with 42.4 Relaxed points, signific
 
 ## Related Papers
 
-- [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
 - [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
-- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
+- [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
+- [\[CVPR 2026\] Geometrically-Constrained Agent for Spatial Reasoning](geometrically-constrained_agent_for_spatial_reasoning.md)
 - [\[CVPR 2026\] Role-SynthCLIP: A Role-Play Driven Diverse Synthetic Data Approach](role-synthclip_a_role-play_driven_diverse_synthetic_data_approach.md)
-- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
+- [\[CVPR 2026\] MMLandmarks: a Cross-View Instance-Level Benchmark for Geo-Spatial Understanding](mmlandmarks_a_cross-view_instance-level_benchmark_for_geo-spatial_understanding.md)
 
 </div>
 

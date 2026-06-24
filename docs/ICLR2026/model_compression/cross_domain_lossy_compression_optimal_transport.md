@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Cross-Domain Lossy Compression via Rate- and Classification-Constrained Optimal Transport
 description: >-
-  [ICLR 2026][Model Compression][optimal transport] This work formalizes cross-domain lossy compression—where the encoder observes a degraded source and the decoder reconstructs a sample from a different target distribution—as an optimal transport problem under dual constraints of compression rate and classification loss. It derives closed-form DRC/RDC and DRPC tradeoff
+  [ICLR 2026 (Oral)][Model Compression][optimal transport] This work formalizes cross-domain lossy compression—where the encoder observes a degraded source and the decoder reconstructs a sample from a different target distribution—as an optimal transport problem under dual constraints of compression rate and classification loss. It derives closed-form DRC/RDC and DRPC tradeoff functions for Bernoulli sources (Hamming distortion) and Gaussian sources (MSE). The theoretical predi…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - optimal transport
-  - rate-distortion theory
-  - lossy compression
-  - cross-domain
-  - DRC tradeoff
-  - DRPC
+  - "ICLR 2026 (Oral)"
+  - "Model Compression"
+  - "optimal transport"
+  - "rate-distortion theory"
+  - "lossy compression"
+  - "cross-domain"
+  - "DRC tradeoff"
+  - "DRPC"
 date: 2026-05-08
-content_hash: 8f01b0afb9f78708
+content_hash: 83d66070b14b41d1
 ---
+
 # Cross-Domain Lossy Compression via Rate- and Classification-Constrained Optimal Transport
 
 **Conference**: ICLR 2026 (Oral)  
@@ -136,9 +137,9 @@ The deep implementation utilizes a Lagrangian objective: $L = \text{MSE} + \lamb
 
 - [\[AAAI 2026\] Lightweight Optimal-Transport Harmonization on Edge Devices](../../AAAI2026/model_compression/lightweight_optimal-transport_harmonization_on_edge_devices.md)
 - [\[ICLR 2026\] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate](turboquant_online_vector_quantization_with_near-optimal_distortion_rate.md)
+- [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](../../NeurIPS2025/model_compression/optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
 - [\[AAAI 2026\] Reinforced Rate Control for Neural Video Compression via Inter-Frame Rate-Distortion Awareness](../../AAAI2026/model_compression/reinforced_rate_control_for_neural_video_compression_via_inter-frame_rate-distor.md)
 - [\[ICLR 2026\] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension](freqkv_key-value_compression_in_frequency_domain_for_context_window_extension.md)
-- [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](../../NeurIPS2025/model_compression/optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
 
 </div>
 

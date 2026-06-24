@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] GradPCA: Leveraging NTK Alignment for Reliable Out-of-Distribution Detection
 description: >-
-  [ICLR 2026][AI Safety][Out-of-Distribution Detection] GradPCA leverages the low-rank structure of network gradients induced by NTK alignment. By performing PCA on "class-mean gradients" to characterize the ID subspace, it identifies inputs with gradients falling outside this subspace as OOD. It achieves more **consistent** (rather than occasionally optimal) detection perf
+  [ICLR 2026][AI Safety][Out-of-Distribution Detection] GradPCA leverages the low-rank structure of network gradients induced by NTK alignment. By performing PCA on "class-mean gradients" to characterize the ID subspace, it identifies inputs with gradients falling outside this subspace as OOD. It achieves more **consistent** (rather than occasionally optimal) detection performance across multiple image classification benchmarks and provides a theoretical framework for spectral…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Out-of-Distribution Detection
-  - Neural Tangent Kernel
-  - NTK Alignment
-  - Spectral Methods
-  - PCA
-  - Gradient-based Detection
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Out-of-Distribution Detection"
+  - "Neural Tangent Kernel"
+  - "NTK Alignment"
+  - "Spectral Methods"
+  - "PCA"
+  - "Gradient-based Detection"
 date: 2026-05-08
-content_hash: 84b13e3bd2f12286
+content_hash: 11bae3909ade5755
 ---
+
 # GradPCA: Leveraging NTK Alignment for Reliable Out-of-Distribution Detection
 
 **Conference**: ICLR 2026  
@@ -132,9 +133,9 @@ Evaluations conducted on CIFAR-10, CIFAR-100, and ImageNet-1k using at least two
 
 - [\[ICLR 2026\] AP-OOD: Attention Pooling for Out-of-Distribution Detection](ap-ood_attention_pooling_for_out-of-distribution_detection.md)
 - [\[CVPR 2025\] Leveraging Perturbation Robustness to Enhance Out-of-Distribution Detection](../../CVPR2025/ai_safety/leveraging_perturbation_robustness_to_enhance_out-of-distribution_detection.md)
-- [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](../../NeurIPS2025/ai_safety/revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
+- [\[ICLR 2026\] Fisher-Rao Sensitivity for Out-of-Distribution Detection in Deep Neural Networks](fisher-rao_sensitivity_for_out-of-distribution_detection_in_deep_neural_networks.md)
 - [\[NeurIPS 2025\] SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection](../../NeurIPS2025/ai_safety/spurious-aware_prototype_refinement_for_reliable_out-of-distribution_detection.md)
-- [\[ICLR 2026\] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)
+- [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](../../NeurIPS2025/ai_safety/revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
 
 </div>
 

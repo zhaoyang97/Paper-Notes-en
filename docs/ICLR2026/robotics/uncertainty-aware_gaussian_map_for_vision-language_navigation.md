@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uncertainty-Aware Gaussian Map for Vision-Language Navigation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper explicitly models the phenomenon of "perceptual ambiguity" for Vision-Language Navigation (VLN) agents. By estimating three types of perceptual uncertainties—geometric, semantic, and appearance—on a differentiable Semantic Gaussian Map (SGM), the authors package them into a unified 3D Value Map. This map is
+  [ICLR 2026][Robotics][Vision-Language Navigation] This paper explicitly models the phenomenon of "perceptual ambiguity" for Vision-Language Navigation (VLN) agents. By estimating three types of perceptual uncertainties—geometric, semantic, and appearance—on a differentiable Semantic Gaussian Map (SGM), the authors package them into a unified 3D Value Map. This map is fed into a decision network, preventing the agent from making blind guesses when evidence is insufficient…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "Perceptual Uncertainty"
+  - "Semantic Gaussian Map"
+  - "Fisher Information"
+  - "3D Value Map"
 date: 2026-05-08
-content_hash: 91bb385bd267f103
+content_hash: 4eb0b8a760af1659
 ---
+
 # Uncertainty-Aware Gaussian Map for Vision-Language Navigation
 
 **Conference**: ICLR 2026  
@@ -142,7 +148,7 @@ Contribution of Uncertainty Types (Table 6, baseline is SGM only):
 - [\[CVPR 2026\] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation](../../CVPR2026/robotics/bridging_the_2d-3d_gap_a_hierarchical_semantic-geometric_map_for_vision_language.md)
 - [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
 - [\[CVPR 2026\] GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation](../../CVPR2026/robotics/ga-vln_geometry-aware_bev_representation_for_efficient_vision-language_navigatio.md)
-- [\[ACL 2026\] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](../../ACL2026/robotics/vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)
+- [\[ICLR 2026\] Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation](ground_slow_move_fast_a_dual-system_foundation_model_for_generalizable_vision-la.md)
 - [\[ICLR 2026\] Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation](action-aware_dynamic_pruning_for_efficient_vision-language-action_manipulation.md)
 
 </div>

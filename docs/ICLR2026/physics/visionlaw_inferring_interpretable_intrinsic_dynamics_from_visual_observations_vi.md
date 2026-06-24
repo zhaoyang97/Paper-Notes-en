@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VisionLaw: Inferring Interpretable Intrinsic Dynamics from Visual Observations via Bilevel Optimization
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] VisionLaw models the task of "inferring physical properties from videos" as a bilevel optimization problem—the upper level employs an LLM as a physics expert to evolve **symbolic constitutive laws (Python code)**, while the lower level uses a differentiable MPM simulator to optimize continuous material parameters under
+  [ICLR 2026][Physics & Scientific Computing][Intrinsic Dynamics] VisionLaw models the task of "inferring physical properties from videos" as a bilevel optimization problem—the upper level employs an LLM as a physics expert to evolve **symbolic constitutive laws (Python code)**, while the lower level uses a differentiable MPM simulator to optimize continuous material parameters under visual supervision, returning fitness and feedback. This approach infers both interpretable and…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Intrinsic Dynamics"
+  - "Constitutive Law"
+  - "Bilevel Optimization"
+  - "LLM Evolution"
+  - "Differentiable MPM"
 date: 2026-05-08
-content_hash: 831c23c342d0f08c
+content_hash: 381ea13a00d73d59
 ---
+
 # VisionLaw: Inferring Interpretable Intrinsic Dynamics from Visual Observations via Bilevel Optimization
 
 **Conference**: ICLR 2026  
@@ -143,7 +149,7 @@ Generalization (Infer from first 200 frames, predict next 200, Chamfer): VisionL
 - [\[ICLR 2026\] LD-EnSF: Synergizing Latent Dynamics with Ensemble Score Filters for Fast Data Assimilation with Sparse Observations](ld-ensf_synergizing_latent_dynamics_with_ensemble_score_filters_for_fast_data_as.md)
 - [\[ICLR 2026\] Stretching Beyond the Obvious: A Gradient-Free Framework to Unveil the Hidden Landscape of Visual Invariance](stretching_beyond_the_obvious_a_gradient-free_framework_to_unveil_the_hidden_lan.md)
 - [\[ICLR 2026\] Robust and Interpretable Adaptation of Equivariant Materials Foundation Models via Sparsity-promoting Fine-tuning](robust_and_interpretable_adaptation_of_equivariant_materials_foundation_models_v.md)
-- [\[ICLR 2026\] PRO-MOF: Policy Optimization with Universal Atomistic Models for Controllable MOF Generation](pro-mof_policy_optimization_with_universal_atomistic_models_for_controllable_mof.md)
+- [\[ICLR 2026\] Spectral-Guided Physical Dynamics Distillation](spectral-guided_physical_dynamics_distillation.md)
 
 </div>
 

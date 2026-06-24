@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning
 description: >-
-  [AAAI2026][LLM Efficiency][sleep staging] This paper proposes MASS (Mask-Aware Sleep Staging), a framework that achieves reliable sleep staging using only **10% of the original EEG signal** through a multi-level masking…
+  [AAAI2026][LLM Efficiency][sleep staging] This paper proposes MASS (Mask-Aware Sleep Staging), a framework that achieves reliable sleep staging using only **10% of the original EEG signal** through a multi-level masking strategy and hierarchical prompt learning mechanism, providing a practical solution for resource-constrained wearable sleep monitoring systems.
 tags:
   - "AAAI2026"
   - "LLM Efficiency"
@@ -13,7 +13,7 @@ tags:
   - "wearable monitoring"
   - "resource efficiency"
 date: 2026-05-08
-content_hash: a68b2bcf0a3f0423
+content_hash: 2b6708cb6e3095c7
 ---
 
 # Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning
@@ -111,10 +111,10 @@ Multi-level masking is the primary driver of performance.
 ## Related Papers
 
 - [\[ICLR 2026\] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning](../../ICLR2026/llm_efficiency/one-prompt_strikes_back_sparse_mixture_of_experts_for_prompt-based_continual_lea.md)
+- [\[ICLR 2026\] MHLA: Restoring Expressivity of Linear Attention via Token-Level Multi-Head](../../ICLR2026/llm_efficiency/mhla_restoring_expressivity_of_linear_attention_via_token-level_multi-head.md)
 - [\[ICLR 2026\] Efficient Resource-Constrained Training of Transformers via Subspace Optimization](../../ICLR2026/llm_efficiency/efficient_resource-constrained_training_of_transformers_via_subspace_optimizatio.md)
 - [\[ACL 2026\] Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios](../../ACL2026/llm_efficiency/task-aware_llm_routing_with_multi-level_task-profile-guided_data_synthesis_for_c.md)
-- [\[ICML 2026\] Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing](../../ICML2026/llm_efficiency/efficient_training-free_multi-token_prediction_via_embedding-space_probing.md)
-- [\[ICML 2026\] WarmServe: A Multi-Model Loading GPU Warm-up Mechanism](../../ICML2026/llm_efficiency/warmserve_enabling_one-for-many_gpu_prewarming_for_multi-llm_serving.md)
+- [\[ICLR 2026\] ICaRus: Identical Cache Reuse for Efficient Multi-Model Inference](../../ICLR2026/llm_efficiency/icarus_identical_cache_reuse_for_efficient_multi-model_inference.md)
 
 </div>
 

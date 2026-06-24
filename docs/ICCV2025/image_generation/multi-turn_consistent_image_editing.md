@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-turn Consistent Image Editing
 description: >-
-  [ICCV2025][Image Generation][multi-turn editing] This paper proposes a multi-turn image editing framework based on flow matching. By incorporating dual-objective LQR guidance and an adaptive attention mechanism…
+  [ICCV2025][Image Generation][multi-turn editing] This paper proposes a multi-turn image editing framework based on flow matching. By incorporating dual-objective LQR guidance and an adaptive attention mechanism, it effectively suppresses error accumulation across editing rounds, enabling flexible and controllable iterative editing while maintaining content consistency.
 tags:
   - "ICCV2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "FLUX"
   - "image inversion"
 date: 2026-05-08
-content_hash: fc6307771e306254
+content_hash: a794ab7dcd1506c5
 ---
 
 # Multi-turn Consistent Image Editing
@@ -186,11 +186,11 @@ In pure reconstruction experiments (without editing) over 1/2/4/8 rounds, the pr
 
 ## Related Papers
 
-- [\[ICML 2026\] CoCoEdit: Content-Consistent Image Editing via Region Regularized Reinforcement Learning](../../ICML2026/image_generation/cocoedit_content-consistent_image_editing_via_region_regularized_reinforcement_l.md)
-- [\[ICCV 2025\] MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance](mmaif_multi-task_and_multi-degradation_all-in-one_for_image_fusion_with_language.md)
+- [\[CVPR 2026\] FreqEdit: Preserving High-Frequency Features for Robust Multi-Turn Image Editing](../../CVPR2026/image_generation/freqedit_preserving_high-frequency_features_for_robust_multi-turn_image_editing.md)
 - [\[ICCV 2025\] OmniPaint: Mastering Object-Oriented Editing via Disentangled Insertion-Removal Inpainting](omnipaint_mastering_object-oriented_editing_via_disentangled_insertion-removal_i.md)
-- [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](ale_attribute_leakage_free_editing.md)
-- [\[ICML 2026\] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models](../../ICML2026/image_generation/viewmask-1-to-3_multi-view_consistent_image_generation_via_multimodal_discrete_d.md)
+- [\[ICLR 2026\] EdiVal-Agent: An Object-Centric Framework for Automated, Fine-Grained Evaluation of Multi-Turn Editing](../../ICLR2026/image_generation/edival-agent_an_object-centric_framework_for_automated_fine-grained_evaluation_o.md)
+- [\[ICCV 2025\] MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance](mmaif_multi-task_and_multi-degradation_all-in-one_for_image_fusion_with_language.md)
+- [\[CVPR 2026\] InstructMix2Mix: Consistent Sparse-View Editing Through Multi-View Model Personalization](../../CVPR2026/image_generation/instructmix2mix_consistent_sparse-view_editing_through_multi-view_model_personal.md)
 
 </div>
 

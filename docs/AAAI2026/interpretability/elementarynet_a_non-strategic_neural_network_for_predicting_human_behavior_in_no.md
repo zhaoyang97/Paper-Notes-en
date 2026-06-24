@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games
 description: >-
-  [AAAI 2026][Interpretability][Behavioral game theory] This paper proposes ElementaryNet, a neural network architecture that is **provably incapable of strategic reasoning**…
+  [AAAI 2026][Interpretability][Behavioral game theory] This paper proposes ElementaryNet, a neural network architecture that is **provably incapable of strategic reasoning**, designed to model "level-0" (non-strategic) human behavior in games. It achieves prediction accuracy statistically indistinguishable from GameNet (current SOTA) while offering substantially better interpretability.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "non-strategic neural network"
   - "iterated reasoning"
 date: 2026-05-08
-content_hash: c0968c939b73e5b3
+content_hash: ce62d6e06d2dbddc
 ---
 
 # ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games
@@ -149,11 +149,11 @@ An aggregated dataset from 12 experimental studies comprising 26,553 observation
 
 ## Related Papers
 
-- [\[AAAI 2026\] Can LLMs Truly Embody Human Personality? Analyzing AI and Human Behavior Alignment in Dispute Resolution](can_llms_truly_embody_human_personality_analyzing_ai_and_human_behavior_alignmen.md)
 - [\[ICML 2026\] Discovering Differences in Strategic Behavior Between Humans and LLMs](../../ICML2026/interpretability/discovering_differences_in_strategic_behavior_between_humans_and_llms.md)
+- [\[AAAI 2026\] Can LLMs Truly Embody Human Personality? Analyzing AI and Human Behavior Alignment in Dispute Resolution](can_llms_truly_embody_human_personality_analyzing_ai_and_human_behavior_alignmen.md)
 - [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](../../ICLR2026/interpretability/causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
 - [\[AAAI 2026\] Enhancing Binary Encoded Crime Linkage Analysis Using Siamese Network](enhancing_binary_encoded_crime_linkage_analysis_using_siamese_network.md)
-- [\[AAAI 2026\] FourierPET: Deep Fourier-based Unrolled Network for Low-count PET Reconstruction](fourierpet_deep_fourier-based_unrolled_network_for_low-count_pet_reconstruction.md)
+- [\[NeurIPS 2025\] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions](../../NeurIPS2025/interpretability/fact_faithful_concept_traces_for_explaining_neural_network_decisions.md)
 
 </div>
 

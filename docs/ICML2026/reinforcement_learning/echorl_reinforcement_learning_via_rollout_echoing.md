@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] EchoRL: Reinforcement Learning via Rollout Echoing
 description: >-
-  [ICML 2026][Reinforcement Learning][RLVR] This paper identifies that in the late stages of RLVR training, GRPO-style methods suffer from "advantage degeneration"—where vanishing gradients occur because a group of rollouts all achieve success. The authors propose EchoRL: it identifies the "hardest yet successful" prefix, termed EchoClip, based on **step-level e
+  [ICML 2026][Reinforcement Learning][RLVR] This paper identifies that in the late stages of RLVR training, GRPO-style methods suffer from "advantage degeneration"—where vanishing gradients occur because a group of rollouts all achieve success. The authors propose EchoRL: it identifies the "hardest yet successful" prefix, termed EchoClip, based on **step-level entropy peaks** from verified-success rollouts. This is added to the loss as an auxiliary SFT term…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - RLVR
-  - Advantage Degeneration
-  - EchoClip
-  - Step-Level Entropy
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Advantage Degeneration"
+  - "EchoClip"
+  - "Step-Level Entropy"
+  - "GRPO"
 date: 2026-05-08
-content_hash: faadc6dbb1e9fd68
+content_hash: 2541c864c379c979
 ---
+
 # EchoRL: Reinforcement Learning via Rollout Echoing
 
 **Conference**: ICML 2026  
@@ -136,8 +137,8 @@ LUFFY + EchoRL yielded +1.8% ID and +3.2% OOD. Notably, GPQA increased from 39.9
 ## Related Papers
 
 - [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
-- [\[ICLR 2026\] QuRL: Efficient Reinforcement Learning with Quantized Rollout](../../ICLR2026/reinforcement_learning/qurl_efficient_reinforcement_learning_with_quantized_rollout.md)
 - [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
+- [\[ICLR 2026\] PROS: Towards Compute-Efficient RLVR via Rollout Prefix Reuse](../../ICLR2026/reinforcement_learning/pros_towards_compute-efficient_rlvr_via_rollout_prefix_reuse.md)
 - [\[ICML 2026\] InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning](inftythink_effective_and_efficient_infinite-horizon_reasoning_via_reinforcement_.md)
 - [\[ICML 2026\] Coupled Variational Reinforcement Learning for Language Model General Reasoning](coupled_variational_reinforcement_learning_for_language_model_general_reasoning.md)
 

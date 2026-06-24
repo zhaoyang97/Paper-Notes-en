@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Geometric Autoencoder Priors for Bayesian Inversion: Learn First Observe Later
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Bayesian inversion] GABI utilizes graph autoencoders to distill a geometry-conditioned latent space prior from a large-scale dataset of "geometrically diverse" physical fields. This achieves a "learn first, observe later" paradigm—training requires no knowledge of PDEs, boundary conditions, or observation processes. At inference, this pri
+  [ICLR 2026][Physics & Scientific Computing][Bayesian inversion] GABI utilizes graph autoencoders to distill a geometry-conditioned latent space prior from a large-scale dataset of "geometrically diverse" physical fields. This achieves a "learn first, observe later" paradigm—training requires no knowledge of PDEs, boundary conditions, or observation processes. At inference, this prior is combined with arbitrary observation likelihoods, enabling efficient solution of full-field…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Bayesian inversion
-  - geometry-aware prior
-  - graph autoencoder
-  - uncertainty quantification
-  - pushforward prior
-  - ABC sampling
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Bayesian inversion"
+  - "geometry-aware prior"
+  - "graph autoencoder"
+  - "uncertainty quantification"
+  - "pushforward prior"
+  - "ABC sampling"
 date: 2026-05-08
-content_hash: 0c7e93ee00591130
+content_hash: 95e80a561be3b957
 ---
+
 # Geometric Autoencoder Priors for Bayesian Inversion: Learn First Observe Later
 
 **Conference**: ICLR 2026  

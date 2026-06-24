@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] To address the slow real-time deployment of streaming Video Large Language Models (Streaming VideoLLM), this paper proposes STC, a plug-and-play two-level token compression framework. STC-Cacher caches and reuses static features from adjacent frames during the ViT encoding stage, recomputing only dynamic tokens. STC-Pr
+  [CVPR 2026][Multimodal Efficiency][Streaming Video Understanding] To address the slow real-time deployment of streaming Video Large Language Models (Streaming VideoLLM), this paper proposes STC, a plug-and-play two-level token compression framework. STC-Cacher caches and reuses static features from adjacent frames during the ViT encoding stage, recomputing only dynamic tokens. STC-Pruner utilizes "spatio-temporal dual anchors" to prune redundant tokens before entering the LLM…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Streaming Video Understanding"
+  - "Token Compression"
+  - "ViT Cache Reuse"
+  - "KV Prefill Acceleration"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 7e9f35fe557a04eb
+content_hash: 87abecebe44a5a90
 ---
+
 # Accelerating Streaming Video Large Language Models via Hierarchical Token Compression
 
 **Conference**: CVPR 2026  
@@ -129,15 +135,15 @@ STC-Cacher feature reuse (Table 4, OVO-Bench subsets + EgoSchema):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
+- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](../../ACL2026/vlm_efficiency/hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
+- [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
+- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
 - [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
-- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
-- [\[CVPR 2026\] UniComp: Rethinking Video Compression Through Informational Uniqueness](unicomp_rethinking_video_compression_through_informational_uniqueness.md)
-- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
-- [\[NeurIPS 2025\] 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming](../../NeurIPS2025/model_compression/4dgcpro_efficient_hierarchical_4d_gaussian_compression_for_p.md)
 
 </div>
 

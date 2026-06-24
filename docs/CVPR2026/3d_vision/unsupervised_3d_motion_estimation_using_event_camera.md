@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Unsupervised 3D Motion Estimation Using Event Camera
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Leveraging the clue that event cameras exhibit dilation/contraction streaks on different projection axes reflecting depth changes, this paper derives an analytical relationship between optical flow divergence and "motion in depth" (MID) to provide initial values. This is refined by a Directional Expansion Modulation (D
+  [CVPR 2026][3D Vision][Event-based camera] Leveraging the clue that event cameras exhibit dilation/contraction streaks on different projection axes reflecting depth changes, this paper derives an analytical relationship between optical flow divergence and "motion in depth" (MID) to provide initial values. This is refined by a Directional Expansion Modulation (DEM) module. Finally, MID is incorporated into event-level warping and jointly optimized using contrast maximization…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event-based camera"
+  - "3D motion estimation"
+  - "optical flow"
+  - "motion in depth"
+  - "contrast maximization"
+  - "unsupervised learning"
 date: 2026-05-08
-content_hash: fe59ce42b552483b
+content_hash: 1a61e4804adfeae9
 ---
+
 # Unsupervised 3D Motion Estimation Using Event Camera
 
 **Conference**: CVPR 2026  
@@ -156,11 +163,11 @@ Removing DEM results in significantly discontinuous MID and nearly doubles the l
 
 ## Related Papers
 
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
-- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
+- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
+- [\[CVPR 2026\] Moving Border Ownership for Event-based Motion Segmentation](moving_border_ownership_for_event-based_motion_segmentation.md)
+- [\[CVPR 2026\] Event Stream Filtering via Probability Flux Estimation](event_stream_filtering_via_probability_flux_estimation.md)
 - [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](unidac_universal_metric_depth_estimation_for_any_camera.md)
+- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
 
 </div>
 

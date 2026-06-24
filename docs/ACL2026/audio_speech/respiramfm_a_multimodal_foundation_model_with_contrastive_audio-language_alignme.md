@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] RespiraMFM: 用对比式音频-语言对齐做呼吸疾病识别的多模态基础模型
+  [Paper Note] RespiraMFM: A Multimodal Foundation Model for Respiratory Disease Recognition via Contrastive Audio-Language Alignment
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] RespiraMFM addresses the challenge where "non-linguistic acoustic biomarkers like coughing/wheezing are difficult to align with symptom text" by proposing a **two-stage decoupling** architecture: first, use contrastive learning to explicitly anchor audio embeddings into the LLM text semantic space, then freeze this ali
+  [ACL 2026][Audio & Speech][Respiratory Disease Recognition] RespiraMFM addresses the challenge where "non-linguistic acoustic biomarkers like coughing/wheezing are difficult to align with symptom text" by proposing a **two-stage decoupling** architecture: first, use contrastive learning to explicitly anchor audio embeddings into the LLM text semantic space, then freeze this aligner for instruction fine-tuning classification. This improves supervised AUROC by 9.15% and zero-sh…
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Respiratory Disease Recognition"
+  - "Audio-Text Alignment"
+  - "Contrastive Learning"
+  - "Multimodal Fusion"
+  - "Zero-shot"
 date: 2026-05-08
-content_hash: 0876ecc4ab9d7643
+content_hash: e5a9b1c266089b6b
 ---
+
 # RespiraMFM: A Multimodal Foundation Model for Respiratory Disease Recognition via Contrastive Audio-Language Alignment
 
 **Conference**: ACL 2026  
@@ -143,11 +149,11 @@ Average AUROC of 0.738, a 20.98% gain over BTS (0.61). T8 (Asthma) and T9 (Pneum
 
 ## Related Papers
 
-- [\[ACL 2026\] MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models](mtr-duplexbench_towards_a_comprehensive_evaluation_of_multi-round_conversations_.md)
-- [\[ACL 2026\] Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition and Audio Reasoning with Omni Perception](speech-hands_a_self-reflection_voice_agentic_approach_to_speech_recognition_and_.md)
-- [\[ACL 2026\] Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation](analyzing_reasoning_shifts_in_audio_deepfake_detection_under_adversarial_attacks.md)
-- [\[ACL 2026\] SegTune: Structured and Fine-Grained Control for Song Generation](segtune_structured_and_fine-grained_control_for_song_generation.md)
-- [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
+- [\[ICML 2026\] Beyond Classification: A Cough Regression Benchmark for Respiratory Acoustic Foundation Models](../../ICML2026/audio_speech/beyond_classification_a_cough_regression_benchmark_for_respiratory_acoustic_foun.md)
+- [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
+- [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
+- [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
+- [\[ACL 2026\] Reference Games as a Testbed for the Alignment of Model Uncertainty and Clarification Requests](reference_games_as_a_testbed_for_the_alignment_of_model_uncertainty_and_clarific.md)
 
 </div>
 

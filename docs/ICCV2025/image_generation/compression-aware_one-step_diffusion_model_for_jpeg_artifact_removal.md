@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Compression-Aware One-Step Diffusion Model for JPEG Artifact Removal
 description: >-
-  [ICCV 2025][Image Generation][JPEG artifact removal] This paper proposes CODiff, a compression-aware one-step diffusion model for JPEG artifact removal. The core contribution is a Compression-aware Visual Embedder (CaVE)…
+  [ICCV 2025][Image Generation][JPEG artifact removal] This paper proposes CODiff, a compression-aware one-step diffusion model for JPEG artifact removal. The core contribution is a Compression-aware Visual Embedder (CaVE) that extracts JPEG compression priors via an explicit–implicit dual learning strategy, guiding the diffusion model toward high-quality restoration. CODiff comprehensively outperforms existing methods on LIVE-1, Urban100, and DIV2K-Val while achieving extremel…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "dual learning"
   - "image restoration"
 date: 2026-05-08
-content_hash: 807966ddc8aa402f
+content_hash: e733d4b89146c4b6
 ---
 
 # Compression-Aware One-Step Diffusion Model for JPEG Artifact Removal
@@ -178,10 +178,10 @@ The effectiveness of the dual learning strategy is clearly demonstrated through 
 
 ## Related Papers
 
+- [\[CVPR 2025\] OSDFace: One-Step Diffusion Model for Face Restoration](../../CVPR2025/image_generation/osdface_one-step_diffusion_model_for_face_restoration.md)
 - [\[AAAI 2026\] Steering One-Step Diffusion Model with Fidelity-Rich Decoder for Fast Image Compression](../../AAAI2026/image_generation/steering_one-step_diffusion_model_with_fidelity-rich_decoder_for_fast_image_comp.md)
 - [\[ICCV 2025\] SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency Distillation](sana-sprint_one-step_diffusion_with_continuous-time_consistency_distillation.md)
 - [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
-- [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](../../NeurIPS2025/image_generation/diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
 - [\[ICCV 2025\] Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment](fewer_denoising_steps_or_cheaper_per-step_inference_towards_compute-optimal_diff.md)
 
 </div>

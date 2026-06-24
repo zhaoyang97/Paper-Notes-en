@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer
 description: >-
-  [CVPR 2026][Others][Spiking Transformer] To address the deficiency where spiking self-attention "models only space and almost no time," this paper first proposes the TIC metric to quantify the issue. It then introduces the Multi-Delay Mixer (multi-branch learnable delays), inspired by biological axonal transmission delays, as a plug-and-play module to inject
+  [CVPR 2026][Self-Supervised Learning][Spiking Neural Networks] To address the deficiency where spiking self-attention "models only space and almost no time," this paper first proposes the TIC metric to quantify the issue. It then introduces the Multi-Delay Mixer (multi-branch learnable delays), inspired by biological axonal transmission delays, as a plug-and-play module to inject multi-scale temporal dependencies into Key/Value. This approach consistently refreshes SOTA for S…
 tags:
-  - CVPR 2026
-  - Others
-  - Spiking Transformer
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Spiking Neural Networks"
+  - "Spiking Transformer"
+  - "Temporal Modeling"
+  - "Learnable Delay"
+  - "Self-Attention"
 date: 2026-05-08
-content_hash: beb9457dea8c28e6
+content_hash: 2b9b6cee177f5a59
 ---
+
 # Temporal Interaction in Spiking Transformers with Multi-Delay Mixer
 
 **Conference**: CVPR 2026  
@@ -150,6 +155,7 @@ On SDT-V1-8-768, MD-Mixer improves by 1.91% over the baseline, performing slight
 - **Value**: ⭐⭐⭐⭐ (Plug-and-play SOTA achiever for temporal modeling in Spiking Transformers)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -157,8 +163,8 @@ On SDT-V1-8-768, MD-Mixer improves by 1.91% over the baseline, performing slight
 - [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)
 - [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](robust_spiking_neural_networks_by_temporal_mutual_information.md)
 - [\[CVPR 2026\] Temporal Representation Enhancement (TRE): Learning to Forget Dominant Patterns for Enhanced Temporal Spiking Features](temporal_representation_enhancement_tre_learning_to_forget_dominant_patterns_for.md)
-- [\[CVPR 2026\] MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics](moocap_a_multi-view_benchmark_for_cow-object-human_interaction_and_behavior_dyna.md)
-- [\[CVPR 2026\] Keep It Frozen: Domain-Routed Conditional Residual Modulation for Multi-Domain Vision Transformers](keep_it_frozen_domain-routed_conditional_residual_modulation_for_multi-domain_vi.md)
+- [\[AAAI 2026\] CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds](../../AAAI2026/self_supervised/catformer_when_continual_learning_meets_spiking_transformers_with_dynamic_thresh.md)
+- [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](../../ICLR2026/self_supervised/prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
 
 </div>
 

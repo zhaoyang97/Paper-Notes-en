@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] EvoSci: A Bio-Inspired Multi-Agent Framework for the Evolution of Scientific Discovery
 description: >-
-  [ACL 2026][Multi-Agent][scientific discovery] This paper proposes EvoSci, which models the generation of scientific ideas as a multi-agent collaboration and bio-inspired evolutionary cycle. By constructing a problem space, executing research in teams, providing reviewer feedback, and performing entity-level crossover/variation/selection, it generates research idea
+  [ACL2026][Multi-Agent][scientific discovery] This paper proposes EvoSci, which models the generation of scientific ideas as a multi-agent collaboration and bio-inspired evolutionary cycle. By constructing a problem space, executing research in teams, providing reviewer feedback, and performing entity-level crossover/variation/selection, it generates research ideas with higher novelty and overall quality across 10 scientific topics.
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - scientific discovery
-  - multi-agent collaboration
-  - bio-inspired evolution
-  - knowledge graph
-  - idea generation
+  - "ACL2026"
+  - "Multi-Agent"
+  - "scientific discovery"
+  - "multi-agent collaboration"
+  - "bio-inspired evolution"
+  - "knowledge graph"
+  - "idea generation"
 date: 2026-05-08
-content_hash: 7926c28b869cb83d
+content_hash: d08f073790fe123f
 ---
+
 # EvoSci: A Bio-Inspired Multi-Agent Framework for the Evolution of Scientific Discovery
 
 **Conference**: ACL2026  
@@ -156,8 +157,8 @@ EvoSci has no parameter training loss; optimization comes from reviewer feedback
 
 - [\[ACL 2026\] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](posterforest_hierarchical_multi-agent_collaboration_for_scientific_poster_genera.md)
 - [\[ACL 2026\] EvoSpark: Endogenous Interactive Agent Societies for Unified Long-Horizon Narrative Evolution](evospark_endogenous_interactive_agent_societies_for_unified_long-horizon_narrati.md)
-- [\[ICLR 2026\] Auditing Cascading Risks in Multi-Agent Systems via Semantic–Geometric Co-evolution](../../ICLR2026/multi_agent/auditing_cascading_risks_in_multi-agent_systems_via_semanti-geometric_co-evolut.md)
 - [\[ACL 2026\] A Multi-Agent Framework for Feature-Constrained Difficulty Control in Reading Comprehension Item Generation](a_multi-agent_framework_for_feature-constrained_difficulty_control_in_reading_co.md)
+- [\[AAAI 2026\] ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment](../../AAAI2026/multi_agent/arcane_a_multi-agent_framework_for_interpretable_and_configurable_alignment.md)
 - [\[ACL 2026\] MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering](mata_multi-agent_framework_for_reliable_and_flexible_table_question_answering.md)
 
 </div>

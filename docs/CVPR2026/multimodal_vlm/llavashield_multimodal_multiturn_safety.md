@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][MCTS] Addressing three major challenges in multimodal multi-turn dialogues—malicious intent concealment, contextual risk accumulation, and cross-modal joint risk—this work constructs the MMDS dataset with 4,484 annotated dialogues and the MMRT red-teaming framework based on MCTS. The proposed LLaVAShield auditing model achie
+  [CVPR 2026][Multimodal VLM][Multimodal Multi-turn Dialogue Safety] Addressing three major challenges in multimodal multi-turn dialogues—malicious intent concealment, contextual risk accumulation, and cross-modal joint risk—this work constructs the MMDS dataset with 4,484 annotated dialogues and the MMRT red-teaming framework based on MCTS. The proposed LLaVAShield auditing model achieves F1 scores of 95.71% and 92.24% on the user and assistant sides respectively…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MCTS
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Multi-turn Dialogue Safety"
+  - "Content Moderation"
+  - "Red-teaming"
+  - "MCTS"
+  - "Risk Taxonomy"
 date: 2026-05-08
-content_hash: 46d4838b0f64e56d
+content_hash: fb28b1d72c1c5a0a
 ---
+
 # LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -137,14 +142,17 @@ Ours achieves 100% precision and 91.76% recall on the user side, providing a Gai
 
 <div class="related-papers" markdown="1">
 
-- **Llama Guard: LLM-based Input-Output Safeguard for Real-World Applications**, arXiv 2023.
-- **ShieldVLM: Helping Vision-Language Models to Say No**, arXiv 2024.
-- **Red Queen: A Multi-turn Red Teaming Framework**, arXiv 2024.
+## Related Papers
+
+- [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
+- [\[CVPR 2026\] Dictionary-Aligned Concept Control for Safeguarding Multimodal LLMs](dictionary_aligned_concept_control_for_safeguarding_multimodal_llms.md)
+- [\[CVPR 2026\] M3DocDep: Multi-modal, Multi-page, Multi-document Dependency Chunking with Large Vision-Language Models](m3docdep_multi-modal_multi-page_multi-document_dependency_chunking_with_large_vi.md)
+- [\[ICCV 2025\] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models](../../ICCV2025/multimodal_vlm/multiverse_a_multi-turn_conversation_benchmark_for_evaluating_large_vision_and_l.md)
+- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Dictionary-Aligned Concept Control for Safeguarding Multimodal LLMs](dictionary_aligned_concept_control_for_safeguarding_multimodal_llms.md)

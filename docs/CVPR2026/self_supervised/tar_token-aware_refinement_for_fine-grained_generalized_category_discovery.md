@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Targeting the "attention artifacts" issue in ViTs for fine-grained Generalized Category Discovery (GCD)—where a few high-norm tokens sequester attention, causing the [CLS] token to over-rely on global semantics while ignoring local discriminative cues—TAR introduces a plug-and-play three-module pipeline. It utilizes pa
+  [CVPR 2026][Self-Supervised Learning][Generalized Category Discovery (GCD)] Targeting the "attention artifacts" issue in ViTs for fine-grained Generalized Category Discovery (GCD)—where a few high-norm tokens sequester attention, causing the [CLS] token to over-rely on global semantics while ignoring local discriminative cues—TAR introduces a plug-and-play three-module pipeline. It utilizes parameter-free reweighting to exclude high-norm tokens…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Generalized Category Discovery (GCD)"
+  - "Fine-grained Recognition"
+  - "Attention Artifacts"
+  - "Token Reweighting"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 6ef9670a566eb7ba
+content_hash: ae9f9f68d09e5adb
 ---
+
 # TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery
 
 **Conference**: CVPR 2026  
@@ -135,10 +141,10 @@ Ablation on CUB using the GET baseline (row labels from original Table 3):
 ## Related Papers
 
 - [\[CVPR 2026\] The Devil Is in Gradient Entanglement: Energy-Aware Gradient Coordinator for Robust Generalized Category Discovery](the_devil_is_in_gradient_entanglement_energy-aware_gradient_coordinator_for_robu.md)
+- [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
 - [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
 - [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
-- [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
-- [\[CVPR 2026\] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)
+- [\[CVPR 2026\] Assignment-Driven Hash Learning in a Hyper-Semantic Space for On-the-Fly Category Discovery](assignment-driven_hash_learning_in_a_hyper-semantic_space_for_on-the-fly_categor.md)
 
 </div>
 

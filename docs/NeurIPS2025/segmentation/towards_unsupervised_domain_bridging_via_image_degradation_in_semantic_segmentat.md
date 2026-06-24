@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Unsupervised Domain Adaptation] This paper proposes DiDA, which formalizes image degradation operations as the forward process of diffusion models to construct a continuous intermediate domai…
+  [NeurIPS 2025][Segmentation][Unsupervised Domain Adaptation] This paper proposes DiDA, which formalizes image degradation operations as the forward process of diffusion models to construct a continuous intermediate domain between the source and target domains. Combined with a semantic shift compensation mechanism, DiDA serves as a plug-and-play module that consistently improves existing UDA semantic segmentation methods.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Image Degradation"
   - "Domain Bridging"
 date: 2026-05-08
-content_hash: f8240969e183c2f9
+content_hash: 96dbf7ff147d6b59
 ---
 
 # Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation
@@ -135,10 +135,10 @@ $$\mathcal{L} = \mathcal{L}^S + \mathcal{L}^T + \lambda_D \mathcal{L}^D + \lambd
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective](towards_robust_pseudo-label_learning_in_semantic_segmentation_an_encoding_perspe.md)
-- [\[ICCV 2025\] Exploiting Domain Properties in Language-Driven Domain Generalization for Semantic Segmentation](../../ICCV2025/segmentation/exploiting_domain_properties_in_language-driven_domain_generalization_for_semant.md)
-- [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](../../AAAI2026/segmentation/bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
+- [\[ICML 2025\] Dual form Complementary Masking for Domain-Adaptive Image Segmentation](../../ICML2025/segmentation/dual_form_complementary_masking_for_domain-adaptive_image_segmentation.md)
 - [\[NeurIPS 2025\] Exploring Structural Degradation in Dense Representations for Self-supervised Learning](exploring_structural_degradation_in_dense_representations_for_self-supervised_le.md)
-- [\[ICCV 2025\] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation](../../ICCV2025/segmentation/exploring_probabilistic_modeling_beyond_domain_generalization_for_semantic_segme.md)
+- [\[CVPR 2025\] Universal Domain Adaptation for Semantic Segmentation](../../CVPR2025/segmentation/universal_domain_adaptation_for_semantic_segmentation.md)
+- [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](../../AAAI2026/segmentation/bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
 
 </div>
 

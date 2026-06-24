@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] ORIC formalizes **contextual incongruity**—where objects appear in unexpected scenes or are missing from expected ones—as a source of uncertainty. Using LLM-guided and CLIP-guided sampling strategies, the authors construct ORIC-Bench from MSCOCO to test this specific scenario. Results reveal that the Macro F1 of 18 mai
+  [CVPR 2026][Multimodal VLM][Object recognition] ORIC formalizes **contextual incongruity**—where objects appear in unexpected scenes or are missing from expected ones—as a source of uncertainty. Using LLM-guided and CLIP-guided sampling strategies, the authors construct ORIC-Bench from MSCOCO to test this specific scenario. Results reveal that the Macro F1 of 18 mainstream LVLMs drops from near-perfect to approximately 60–80. Performance is recovered and aligned more closely…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Object recognition"
+  - "contextual incongruity"
+  - "hallucination"
+  - "uncertainty"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 0057245717e6cd1f
+content_hash: 4db933b97cd563e2
 ---
+
 # ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ Visual-RFT Mitigation:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Visual Funnel: Resolving Contextual Blindness in Multimodal Large Language Models](visual_funnel_resolving_contextual_blindness_in_multimodal_large_language_models.md)
+- [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
 - [\[CVPR 2026\] Mechanisms of Object Localization in Vision-Language Models](mechanisms_of_object_localization_in_vision-language_models.md)
 - [\[CVPR 2025\] COUNTS: Benchmarking Object Detectors and Multimodal Large Language Models under Distribution Shifts](../../CVPR2025/multimodal_vlm/counts_benchmarking_object_detectors_and_multimodal_large_language_models_under_.md)
-- [\[CVPR 2026\] Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in Augmented Reality](benchmarking_vision-language_models_under_contradictory_virtual_content_attacks_.md)
-- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
+- [\[CVPR 2026\] Boosting Vision-Language Models Towards Cross-Domain Incremental Object Detection](boosting_vision-language_models_towards_cross-domain_incremental_object_detectio.md)
+- [\[CVPR 2026\] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping](venus_benchmarking_and_empowering_multimodal_large_language_models_for_aesthetic.md)
 
 </div>
 

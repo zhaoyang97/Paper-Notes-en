@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Generalizable Insights for Graph Transformers in Theory and Practice
 description: >-
-  [NeurIPS 2025][Computational Biology][Graph Transformer] This paper proposes the Generalized-Distance Transformer (GDT), a graph Transformer architecture based on standard attention (requiring no modifications to the att…
+  [NeurIPS 2025 Spotlight][Computational Biology][Graph Transformer] This paper proposes the Generalized-Distance Transformer (GDT), a graph Transformer architecture based on standard attention (requiring no modifications to the attention mechanism). It theoretically proves that GDT's expressiveness is equivalent to the GD-WL algorithm, and through large-scale experiments covering 8 million graphs and 270 million tokens, establishes for the first time a fine-grained empirical h…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Computational Biology"
   - "Graph Transformer"
   - "GD-WL"
@@ -12,7 +12,7 @@ tags:
   - "few-shot transfer"
   - "large-scale evaluation"
 date: 2026-05-08
-content_hash: f68717277a5aff86
+content_hash: f4a67a870b3639d3
 ---
 
 # Generalizable Insights for Graph Transformers in Theory and Practice
@@ -146,10 +146,10 @@ Graph structural information is incorporated via attention bias (edge features +
 
 ## Related Papers
 
+- [\[ICML 2025\] Supercharging Graph Transformers with Advective Diffusion](../../ICML2025/computational_biology/supercharging_graph_transformers_with_advective_diffusion.md)
+- [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](../../ICLR2026/computational_biology/graph_diffusion_transformers_are_in-context_molecular_designers.md)
 - [\[NeurIPS 2025\] Interpreting GFlowNets for Drug Discovery: Extracting Actionable Insights for Medicinal Chemistry](interpreting_gflownets_for_drug_discovery_extracting_actionable_insights_for_med.md)
 - [\[NeurIPS 2025\] Graph Diffusion that can Insert and Delete](graph_diffusion_that_can_insert_and_delete.md)
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
-- [\[NeurIPS 2025\] Random Search Neural Networks for Efficient and Expressive Graph Learning](random_search_neural_networks_for_efficient_and_expressive_graph_learning.md)
 - [\[CVPR 2026\] Stronger Normalization-Free Transformers](../../CVPR2026/computational_biology/stronger_normalization-free_transformers.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anti-I2V: Safeguarding your photos from malicious image-to-video generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Anti-I2V proposes a defense method against malicious image-to-video generation by optimizing perturbations in the L\*a\*b\* and frequency dual-spaces and designing Internal Representation Collapse (IRC) and Anchoring (IRA) losses to disrupt semantic feature propagation in denoising networks, achieving SOTA protection a
+  [CVPR 2026][Video Generation][Adversarial Attack] Anti-I2V proposes a defense method against malicious image-to-video generation by optimizing perturbations in the L\*a\*b\* and frequency dual-spaces and designing Internal Representation Collapse (IRC) and Anchoring (IRA) losses to disrupt semantic feature propagation in denoising networks, achieving SOTA protection across CogVideoX, DynamiCrafter, and Open-Sora.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Adversarial Attack"
+  - "Video Diffusion Model"
+  - "Image Protection"
+  - "Dual-space Perturbation"
+  - "Deep Feature Collapse"
 date: 2026-05-08
-content_hash: bdf5bce541b93599
+content_hash: 29df0d2f16535836
 ---
+
 # Anti-I2V: Safeguarding your photos from malicious image-to-video generation
 
 **Conference**: CVPR 2026  
@@ -141,8 +147,8 @@ The auxiliary loss $\mathcal{L}_{auxiliary}$ maximizes CLIP feature distance and
 - [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
 - [\[CVPR 2026\] Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](attention_surgery_an_efficient_recipe_to_linearize_your_video_diffusion_transfor.md)
 - [\[ICCV 2025\] TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation](../../ICCV2025/video_generation/tip-i2v_a_million-scale_real_text_and_image_prompt_dataset_for_image-to-video_ge.md)
-- [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](../../ICCV2025/video_generation/realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
 - [\[CVPR 2026\] Are Image-to-Video Models Good Zero-Shot Image Editors?](are_image-to-video_models_good_zero-shot_image_editors.md)
+- [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](../../ICCV2025/video_generation/realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
 
 </div>
 

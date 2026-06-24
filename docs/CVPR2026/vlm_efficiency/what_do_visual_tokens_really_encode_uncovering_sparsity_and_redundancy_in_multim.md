@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Token Redundancy] The authors propose the EmbedLens probing tool to systematically analyze the internal structure of visual tokens in MLLMs. They discover that visual tokens are categorized into three types: sink, dead, and alive (approximately 40% are useless). Alive tokens already encode rich semantics before entering the LLM ("pre-li
+  [CVPR 2026][Multimodal Efficiency][visual token analysis] The authors propose the EmbedLens probing tool to systematically analyze the internal structure of visual tokens in MLLMs. They discover that visual tokens are categorized into three types: sink, dead, and alive (approximately 40% are useless). Alive tokens already encode rich semantics before entering the LLM ("pre-linguistic" property), and internal visual computation within the LLM is redundant for most tasks…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Token Redundancy
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "visual token analysis"
+  - "semantic sparsity"
+  - "MLLM interpretability"
+  - "attention sink"
+  - "token redundancy"
 date: 2026-05-08
-content_hash: ff36410b2de7fd11
+content_hash: 039874e96c6f904f
 ---
+
 # What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -126,15 +131,15 @@ The authors demonstrate that for most standard tasks, skipping the FFN and self-
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](do_vision_language_models_need_to_process_image_tokens.md)
-- [\[ACL 2026\] What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?](../../ACL2026/multimodal_vlm/what_do_vision-language_models_encode_for_personalized_image_aesthetics_assessme.md)
-- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
-- [\[ICML 2025\] Do Vision-Language Models Really Understand Visual Language?](../../ICML2025/multimodal_vlm/do_vision-language_models_really_understand_visual_language.md)
-- [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
+- [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
+- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
+- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](../../ICCV2025/vlm_efficiency/shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
+- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
+- [\[ICLR 2026\] iLLaVA: An Image Is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models](../../ICLR2026/vlm_efficiency/illava_an_image_is_worth_fewer_than_13_input_tokens_in_large_multimodal_models.md)
 
 </div>
 

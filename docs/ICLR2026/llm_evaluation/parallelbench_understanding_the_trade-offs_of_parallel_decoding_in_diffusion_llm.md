@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ParallelBench: Understanding the Trade-offs of Parallel Decoding in Diffusion LLMs
 description: >-
-  [ICLR 2026][LLM Evaluation][diffusion LLM] This paper utilizes information-theoretic analysis combined with analytically solvable synthetic list tasks to quantify and reveal the inevitable quality loss in Diffusion Language Models (dLLMs) caused by the "conditional independence assumption" during parallel decoding. Based on these insights, the authors construct
+  [ICLR 2026][LLM Evaluation][diffusion LLM] This paper utilizes information-theoretic analysis combined with analytically solvable synthetic list tasks to quantify and reveal the inevitable quality loss in Diffusion Language Models (dLLMs) caused by the "conditional independence assumption" during parallel decoding. Based on these insights, the authors construct ParallelBench—the first diagnostic benchmark (17 tasks in 3 categories) specifically designed to measure the speed-q…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - diffusion LLM
-  - benchmark
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "diffusion LLM"
+  - "parallel decoding"
+  - "conditional independence assumption"
+  - "speed-quality trade-off"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 4f190587a40f4ffa
+content_hash: d7b07fe42376633a
 ---
+
 # ParallelBench: Understanding the Trade-offs of Parallel Decoding in Diffusion LLMs
 
 **Conference**: ICLR 2026  
@@ -127,10 +131,20 @@ The paper does not train new models but fine-tunes existing dLLMs (LLaDA 1.5, SE
 -   Value: ⭐⭐⭐⭐⭐ (Provides necessary diagnostic tools for the next stage of dLLM research).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Top-W: Geometry-Aware Decoding with Wasserstein-Regularized Truncation and Mass Penalties for LLMs](../../ICML2026/llm_evaluation/geometry-aware_decoding_with_wasserstein-regularized_truncation_and_mass_penalti.md)
+- [\[ICLR 2026\] AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size](adablock-dllm_semantic-aware_diffusion_llm_inference_via_adaptive_block_size.md)
+- [\[ICLR 2026\] LLM-as-a-Prophet: Understanding Predictive Intelligence with Prophet Arena](llm-as-a-prophet_understanding_predictive_intelligence_with_prophet_arena.md)
+- [\[ICLR 2026\] Benchmarking Overton Pluralism in LLMs](benchmarking_overton_pluralism_in_llms.md)
+- [\[ICLR 2026\] VideoJudge: Bootstrapping Enables Scalable Supervision of MLLM-as-a-Judge for Video Understanding](videojudge_bootstrapping_enables_scalable_supervision_of_mllm-as-a-judge_for_vid.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Top-W: Geometry-Aware Decoding with Wasserstein-Regularized Truncation and Mass Penalties for LLMs](../../ICML2026/llm_evaluation/geometry-aware_decoding_with_wasserstein-regularized_truncation_and_mass_penalti.md)

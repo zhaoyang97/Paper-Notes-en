@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniHM: Unified Dexterous Hand Manipulation with Vision Language Model
 description: >-
-  [ICLR 2026][Multimodal VLM][VLM] UniHM is proposed as the first unified language-conditioned dexterous hand manipulation framework. It maps heterogeneous robotic hands to a shared discrete space via a morphology-agnostic VQ codebook, combines a VLM for instruction-driven sequence generation, and ensures physical feasibility through physics-guided dyna
+  [ICLR 2026][Multimodal VLM][Dexterous hand manipulation] UniHM is proposed as the first unified language-conditioned dexterous hand manipulation framework. It maps heterogeneous robotic hands to a shared discrete space via a morphology-agnostic VQ codebook, combines a VLM for instruction-driven sequence generation, and ensures physical feasibility through physics-guided dynamic optimization.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Dexterous hand manipulation"
+  - "VLM"
+  - "unified tokenizer"
+  - "physical dynamics optimization"
+  - "cross-morphology generalization"
 date: 2026-05-08
-content_hash: da920f6200190f20
+content_hash: 19ff9a891928f3bf
 ---
+
 # UniHM: Unified Dexterous Hand Manipulation with Vision Language Model
 
 **Conference**: ICLR 2026  

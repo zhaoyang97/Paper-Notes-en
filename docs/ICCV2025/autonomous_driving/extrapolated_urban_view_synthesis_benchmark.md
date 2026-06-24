@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Extrapolated Urban View Synthesis Benchmark
 description: >-
-  [ICCV2025][Autonomous Driving][novel view synthesis] This paper presents the first Extrapolated Urban View Synthesis (EUVS) benchmark, which leverages publicly available multi-traversal/multi-vehicle/multi-camera dataset…
+  [ICCV2025][Autonomous Driving][novel view synthesis] This paper presents the first Extrapolated Urban View Synthesis (EUVS) benchmark, which leverages publicly available multi-traversal/multi-vehicle/multi-camera datasets to systematically evaluate the generalization ability of 3DGS and NeRF methods under extrapolation settings, revealing that current methods severely overfit to training viewpoints.
 tags:
   - "ICCV2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "benchmark"
   - "extrapolation"
 date: 2026-05-08
-content_hash: d583281ede7c24cc
+content_hash: a15db009e4ba70aa
 ---
 
 # Extrapolated Urban View Synthesis Benchmark
@@ -162,11 +162,11 @@ Using GSPro on Level 1 with progressively more training traversals, PSNR and SSI
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] URB -- Urban Routing Benchmark for RL-Equipped Connected Autonomous Vehicles](../../NeurIPS2025/autonomous_driving/urb_--_urban_routing_benchmark_for_rl-equipped_connected_autonomous_vehicles.md)
+- [\[CVPR 2025\] EVolSplat: Efficient Volume-based Gaussian Splatting for Urban View Synthesis](../../CVPR2025/autonomous_driving/evolsplat_efficient_volume-based_gaussian_splatting_for_urban_view_synthesis.md)
 - [\[ICCV 2025\] Leveraging 2D Priors and SDF Guidance for Dynamic Urban Scene Rendering](leveraging_2d_priors_and_sdf_guidance_for_urban_scene_rendering.md)
-- [\[ICLR 2026\] Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](../../ICLR2026/autonomous_driving/spectral-geometric_neural_fields_for_pose-free_lidar_view_synthesis.md)
-- [\[NeurIPS 2025\] L2RSI: Cross-View LiDAR-Based Place Recognition for Large-Scale Urban Scenes via Remote Sensing Imagery](../../NeurIPS2025/autonomous_driving/l2rsi_cross-view_lidar-based_place_recognition_for_large-scale_urban_scenes_via_.md)
-- [\[CVPR 2026\] SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](../../CVPR2026/autonomous_driving/sgnlf_spectralgeometric_neural_fields_for_posefre.md)
+- [\[NeurIPS 2025\] URB -- Urban Routing Benchmark for RL-Equipped Connected Autonomous Vehicles](../../NeurIPS2025/autonomous_driving/urb_--_urban_routing_benchmark_for_rl-equipped_connected_autonomous_vehicles.md)
+- [\[CVPR 2025\] Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](../../CVPR2025/autonomous_driving/spectral-geometric_neural_fields_for_pose-free_lidar_view_synthesis.md)
+- [\[CVPR 2025\] Towards Autonomous Micromobility through Scalable Urban Simulation](../../CVPR2025/autonomous_driving/towards_autonomous_micromobility_through_scalable_urban_simulation.md)
 
 </div>
 

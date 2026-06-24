@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] AbsTopK: Rethinking Sparse Autoencoders For Bidirectional Features
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper derives SAEs using a unified framework of "unrolled proximal gradient descent for sparse coding," proving that ReLU, JumpReLU, and TopK are proximal operators for different sparse regularizers. It identifies that their shared non-negativity constraint splits bidirectional semantic concepts (e.g., male vs. fe
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This paper derives SAEs using a unified framework of "unrolled proximal gradient descent for sparse coding," proving that ReLU, JumpReLU, and TopK are proximal operators for different sparse regularizers. It identifies that their shared non-negativity constraint splits bidirectional semantic concepts (e.g., male vs. female) into two redundant features. Consequently, the authors propose **AbsTopK SAE**…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Dictionary Learning"
+  - "Proximal Gradient"
+  - "Bidirectional Features"
+  - "Activation Steering"
+  - "LLM Interpretability"
 date: 2026-05-08
-content_hash: 3e078570de0d9fcf
+content_hash: 4532fea845c10bc4
 ---
+
 # AbsTopK: Rethinking Sparse Autoencoders For Bidirectional Features
 
 **Conference**: ICLR 2026  

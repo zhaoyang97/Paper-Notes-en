@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Sim2Real VLA: Zero-Shot Generalization of Synthesized Skills to Realistic Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Sim2Real] Sim2Real-VLA employs a dual-system VLA architecture consisting of "high-level affordance chain planning + low-level tokenized action execution" to transfer manipulation skills generated purely in simulation to real robots in a zero-shot manner, significantly narrowing the Sim2Real gap in bimanual, dexterous, and long-h
+  [ICLR 2026][Robotics][Sim2Real] Sim2Real-VLA employs a dual-system VLA architecture consisting of "high-level affordance chain planning + low-level tokenized action execution" to transfer manipulation skills generated purely in simulation to real robots in a zero-shot manner, significantly narrowing the Sim2Real gap in bimanual, dexterous, and long-horizon tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Sim2Real
-  - Vision-Language-Action
-  - affordance
+  - "ICLR 2026"
+  - "Robotics"
+  - "Sim2Real"
+  - "Vision-Language-Action"
+  - "Robot Manipulation"
+  - "affordance"
+  - "synthetic data"
 date: 2026-05-08
-content_hash: 26c41afa5bb90ff8
+content_hash: 0d6f82011ff83824
 ---
+
 # Sim2Real VLA: Zero-Shot Generalization of Synthesized Skills to Realistic Manipulation
 
 **Conference**: ICLR 2026  
@@ -147,10 +150,20 @@ Sim2Real-VLA achieved an average real-world success rate of $60.8\%$, an absolut
 - **Value**: ⭐⭐⭐⭐⭐ Provides a significant reference for scaling robot policies using simulation, emphasizing structural design over pure simulation fidelity.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models](vita_zero-shot_value_functions_via_test-time_adaptation_of_visionlanguage_models.md)
+- [\[NeurIPS 2025\] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts](../../NeurIPS2025/robotics/zero-shot_context_generalization_in_reinforcement_learning_from_few_training_con.md)
+- [\[ICLR 2026\] From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation](from_seeing_to_doing_bridging_reasoning_and_decision_for_robotic_manipulation.md)
+- [\[ICLR 2026\] Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies](abstracting_robot_manipulation_skills_via_mixture-of-experts_diffusion_policies.md)
+- [\[ICLR 2026\] VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](vlbiman_vision-language_anchored_one-shot_demonstration_enables_generalizable_bi.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models](vita_zero-shot_value_functions_via_test-time_adaptation_of_visionlanguage_models.md)

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Multimodal Reasoning] This paper proposes SRPO (Self-Reflection enhanced reasoning with Group Relative Policy Optimization)…
+  [NeurIPS 2025][Reasoning][Multimodal Reasoning] This paper proposes SRPO (Self-Reflection enhanced reasoning with Group Relative Policy Optimization), a two-stage reflection-aware RL framework. Stage 1 constructs reflection data via large model distillation for SFT cold-start; Stage 2 designs a reflection-aware reward function within GRPO to reinforce concise and effective self-reflection. SRPO achieves state-of-the-art results at the 7B/32B scale on multimodal reasoning benc…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Multimodal Reasoning"
   - "Self-Reflection"
   - "Reinforcement Learning"
   - "GRPO"
   - "Reflection-Aware RL"
 date: 2026-05-08
-content_hash: 0e3d4496642a3096
+content_hash: 62c1a2debeddf418
 ---
 
 # SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning
@@ -158,8 +158,8 @@ SRPO-7B outperforms all open-source reasoning models of comparable scale across 
 - [\[NeurIPS 2025\] SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](swe-rl_advancing_llm_reasoning_via_reinforcement_learning_on_open_software_evolu.md)
 - [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
 - [\[NeurIPS 2025\] The Impact of Quantization on Large Reasoning Model Reinforcement Learning](the_impact_of_quantization_on_large_reasoning_model_reinforcement_learning.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[NeurIPS 2025\] Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning](beyond_accuracy_dissecting_mathematical_reasoning_for_llms_u.md)
+- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](../../ICLR2026/llm_reasoning/generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
+- [\[NeurIPS 2025\] GPO: Learning from Critical Steps to Improve LLM Reasoning](gpo_learning_from_critical_steps_to_improve_llm_reasoning.md)
 
 </div>
 

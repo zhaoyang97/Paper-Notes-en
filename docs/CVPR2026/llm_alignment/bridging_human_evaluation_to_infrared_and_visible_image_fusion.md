@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Bridging Human Evaluation to Infrared and Visible Image Fusion
 description: >-
-  [CVPR 2026][Image Restoration][RLHF] To address the long-standing issue of Infrared and Visible Image Fusion (IVIF) optimizing only handcrafted metrics and disconnecting from human aesthetics, this paper constructs the first large-scale IVIF human feedback dataset. It trains a "fusion-oriented reward model" to quantify perceptual quality and utilizes SAM-
+  [CVPR 2026][LLM Alignment][Infrared and Visible Image Fusion] To address the long-standing issue of Infrared and Visible Image Fusion (IVIF) optimizing only handcrafted metrics and disconnecting from human aesthetics, this paper constructs the first large-scale IVIF human feedback dataset. It trains a "fusion-oriented reward model" to quantify perceptual quality and utilizes SAM-assisted GRPO to align the fusion network with human preferences…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - RLHF
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Infrared and Visible Image Fusion"
+  - "RLHF"
+  - "Human Preference"
+  - "Reward Model"
+  - "GRPO"
 date: 2026-05-08
-content_hash: b9e4a7c3fe697599
+content_hash: 87ebdf34b3d362e2
 ---
+
 # Bridging Human Evaluation to Infrared and Visible Image Fusion
 
 **Conference**: CVPR 2026  
@@ -157,11 +161,11 @@ Additionally, a double-blind preference ranking experiment with 15 participants 
 
 ## Related Papers
 
-- [\[CVPR 2026\] RegionFuse: Region-Adaptive Pixel Distribution Learning for Infrared and Visible Image Fusion](regionfuse_region-adaptive_pixel_distribution_learning_for_infrared_and_visible_.md)
-- [\[CVPR 2026\] Beyond Strict Pairing: Arbitrarily Paired Training for High-Performance Infrared and Visible Image Fusion](beyond_strict_pairing_arbitrarily_paired_training_for_high-performance_infrared_.md)
-- [\[CVPR 2026\] Bridging the Perception Gap in Image Super-Resolution Evaluation](bridging_the_perception_gap_in_image_super-resolution_evaluation.md)
-- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
-- [\[CVPR 2026\] Human-Centric Multi-Exposure Fusion: Benchmark and Bi-level Cognition Distillation Framework](human-centric_multi-exposure_fusion_benchmark_and_bi-level_cognition_distillatio.md)
+- [\[ICML 2026\] Implicit Preference Alignment for Human Image Animation](../../ICML2026/llm_alignment/implicit_preference_alignment_for_human_image_animation.md)
+- [\[CVPR 2026\] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](thinking_with_frames_generative_video_distortion_evaluation_via_frame_reward_mod.md)
+- [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](../../ICLR2026/llm_alignment/rewardbench_2_advancing_reward_model_evaluation.md)
+- [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](../../ACL2026/llm_alignment/bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
+- [\[CVPR 2026\] From Pixel to Precision: Enhancing Handwritten Mathematical Expression Recognition with Image-Level Reward](from_pixel_to_precision_enhancing_handwritten_mathematical_expression_recognitio.md)
 
 </div>
 

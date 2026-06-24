@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spectral Scalpel: Amplifying Adjacent Action Discrepancy via Frequency-Selective Filtering for Skeleton-Based Action Segmentation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] To address the issues of "indistinguishable adjacent actions" and "blurry boundaries" in Skeleton-based Temporal Action Segmentation (STAS), this paper shifts modeling to the frequency domain. It employs a learnable "Spectral Scalpel" (Multi-scale Adaptive Spectral Filtering, MASF) to amplify action-specific frequencie
+  [CVPR 2026][Video Understanding][Skeleton action segmentation] To address the issues of "indistinguishable adjacent actions" and "blurry boundaries" in Skeleton-based Temporal Action Segmentation (STAS), this paper shifts modeling to the frequency domain. It employs a learnable "Spectral Scalpel" (Multi-scale Adaptive Spectral Filtering, MASF) to amplify action-specific frequencies and suppress shared frequencies, while using an "Adjacent Action Discrepancy Loss" (AADL) as an…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Skeleton action segmentation"
+  - "frequency domain filtering"
+  - "adjacent action discrimination"
+  - "spectral editing"
+  - "channel mixing"
 date: 2026-05-08
-content_hash: 650cbd2a904d6213
+content_hash: 61252f0bcc0e1643
 ---
+
 # Spectral Scalpel: Amplifying Adjacent Action Discrepancy via Frequency-Selective Filtering for Skeleton-Based Action Segmentation
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,20 @@ Incremental ablation on PKU-MMD (X-sub) using a baseline of DeST + adaptive GCN 
 - Value: ⭐⭐⭐⭐ High accuracy and efficiency with plug-and-play modules, though dependency on frame-level labels limits some application areas.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-...
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] LaDy: Lagrangian-Dynamic Informed Network for Skeleton-based Action Segmentation via Spatial-Temporal Modulation](lady_lagrangian-dynamic_informed_network_for_skeleton-based_action_segmentation_.md)
+- [\[CVPR 2026\] Hierarchical Action Learning for Weakly-Supervised Action Segmentation](hierarchical_action_learning_for_weakly-supervised_action_segmentation.md)
+- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+- [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
+- [\[ICCV 2025\] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition](../../ICCV2025/video_understanding/frequency-semantic_enhanced_variational_autoencoder_for_zero-shot_skeleton-based.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)

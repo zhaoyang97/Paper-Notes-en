@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Knowledge Distillation] This work proposes SPAR, a method that distills the spatial reasoning capabilities of a fine-stride sliding window teacher into a single-pass student. This transforms ViTs into resolution-agnostic dense feature extractors, achieving a 10.5 mIoU improvement over single-pass baselines in open-vocabulary segmentation whil
+  [CVPR 2026][Segmentation][Open-vocabulary segmentation] This work proposes SPAR, a method that distills the spatial reasoning capabilities of a fine-stride sliding window teacher into a single-pass student. This transforms ViTs into resolution-agnostic dense feature extractors, achieving a 10.5 mIoU improvement over single-pass baselines in open-vocabulary segmentation while being 52x faster than the teacher.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Knowledge Distillation
-  - Vision Transformer
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary segmentation"
+  - "resolution-agnostic"
+  - "knowledge distillation"
+  - "Vision Transformer"
+  - "sliding window inference"
 date: 2026-05-08
-content_hash: b7b280dcdb4f59d5
+content_hash: 2e96fa18b2289a61
 ---
+
 # SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation
 
 **Conference**: CVPR 2026  
@@ -150,15 +154,14 @@ Gains across different backbones:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
 - [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
 - [\[CVPR 2026\] PCA-Seg: Revisiting Cost Aggregation for Open-Vocabulary Semantic and Part Segmentation](pca-seg_revisiting_cost_aggregation_for_openvocabulary_semantic_and_part_segmentat.md)
+- [\[CVPR 2026\] Retrieve and Segment: Are a Few Examples Enough to Bridge the Supervision Gap in Open-Vocabulary Segmentation?](retrieve_and_segment_are_a_few_examples_enough_to_bridge_the_supervision_gap_in_.md)
 - [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
 
 </div>
 

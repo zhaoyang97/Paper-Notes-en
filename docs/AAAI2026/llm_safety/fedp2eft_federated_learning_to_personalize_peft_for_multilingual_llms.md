@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedP²EFT: Federated Learning to Personalize PEFT for Multilingual LLMs
 description: >-
-  [AAAI2026][LLM Safety][Federated Learning] This paper proposes FedP²EFT, which collaboratively trains a Personalization Strategy Generator (PSG) via federated learning to automatically generate personalized LoRA rank str…
+  [AAAI2026][LLM Safety][Federated Learning] This paper proposes FedP²EFT, which collaboratively trains a Personalization Strategy Generator (PSG) via federated learning to automatically generate personalized LoRA rank structures for each client, substantially outperforming manually designed PEFT configurations and existing FL personalization methods in multilingual LLM fine-tuning.
 tags:
   - "AAAI2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Multilingual LLM"
   - "Bayesian Sparse Selection"
 date: 2026-05-08
-content_hash: 377ec5fcbb65c76f
+content_hash: 674867845ba41b4e
 ---
 
 # FedP²EFT: Federated Learning to Personalize PEFT for Multilingual LLMs
@@ -152,11 +152,11 @@ FedP²EFT integrates seamlessly with existing personalized FL methods (FedDPA-T,
 
 ## Related Papers
 
-- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](../../ICML2026/llm_safety/multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
-- [\[ICLR 2026\] Robustness and Radioactivity of Watermarks in Federated Learning May Be at Odds](../../ICLR2026/llm_safety/watermark_robustness_and_radioactivity_may_be_at_odds_in_federated_learning.md)
-- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](../../ICML2026/llm_safety/decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
 - [\[ICLR 2026\] SABRE-FL: Selective and Accurate Backdoor Rejection for Federated Prompt Learning](../../ICLR2026/llm_safety/sabre-fl_selective_and_accurate_backdoor_rejection_for_federated_prompt_learning.md)
+- [\[NeurIPS 2025\] FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA](../../NeurIPS2025/llm_safety/fedsvd_adaptive_orthogonalization_for_private_federated_learning_with_lora.md)
 - [\[ACL 2026\] Exploring Cross-Client Memorization of Training Data in Large Language Models for Federated Learning](../../ACL2026/llm_safety/exploring_cross-client_memorization_of_training_data_in_large_language_models_fo.md)
+- [\[ICML 2025\] Federated In-Context Learning: Iterative Refinement for Improved Answer Quality](../../ICML2025/llm_safety/federated_in-context_learning_iterative_refinement_for_improved_answer_quality.md)
+- [\[ICCV 2025\] Geminio: Language-Guided Gradient Inversion Attacks in Federated Learning](../../ICCV2025/llm_safety/geminio_language-guided_gradient_inversion_attacks_in_federated_learning.md)
 
 </div>
 

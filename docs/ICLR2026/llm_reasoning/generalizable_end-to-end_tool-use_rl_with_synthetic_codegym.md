@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Generalizable End-to-End Tool-Use RL with Synthetic CodeGym
 description: >-
-  [ICLR 2026][LLM Reasoning][tool-use] CodeGym is proposed to automatically transform programming problems into interactive multi-turn tool-use environments for reinforcing LLM agents. It achieves significant generalization improvements on out-of-distribution (OOD) benchmarks (e.g., +8.7 points for Qwen2.5-32B on $\tau$-Bench).
+  [ICLR2026][Reasoning][tool-use] CodeGym is proposed to automatically transform programming problems into interactive multi-turn tool-use environments for reinforcing LLM agents. It achieves significant generalization improvements on out-of-distribution (OOD) benchmarks (e.g., +8.7 points for Qwen2.5-32B on $\tau$-Bench).
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - tool-use
-  - reinforcement-learning
-  - LLM agent
-  - synthetic environment
-  - code-based training
+  - "ICLR2026"
+  - "Reasoning"
+  - "tool-use"
+  - "reinforcement-learning"
+  - "LLM agent"
+  - "synthetic environment"
+  - "code-based training"
 date: 2026-05-08
-content_hash: 509040b116572302
+content_hash: 15953fc223782ab4
 ---
+
 # Generalizable End-to-End Tool-Use RL with Synthetic CodeGym
 
 **Conference**: ICLR2026  

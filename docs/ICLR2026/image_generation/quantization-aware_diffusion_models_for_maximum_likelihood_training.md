@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Quantization-Aware Diffusion Models for Maximum Likelihood Training
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] Addressing the fundamental contradiction where digital images are discrete quantized values but diffusion models treat them as continuous signals, this paper introduces a "soft rounding + super-exponentially decaying residual" parameterization for the signal predictor. This ensures the reverse SDE converges to quantize
+  [ICLR 2026][Image Generation][Diffusion Models] Addressing the fundamental contradiction where digital images are discrete quantized values but diffusion models treat them as continuous signals, this paper introduces a "soft rounding + super-exponentially decaying residual" parameterization for the signal predictor. This ensures the reverse SDE converges to quantized points at $t\to0$, pushing density estimation to the limit—reducing CIFAR-10 NLL from the previous SOTA of 2.4…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Data Quantization"
+  - "Maximum Likelihood"
+  - "Density Estimation"
+  - "Reverse SDE"
 date: 2026-05-08
-content_hash: 4a6e8419f3cbe505
+content_hash: aa4968528668bc7f
 ---
+
 # Quantization-Aware Diffusion Models for Maximum Likelihood Training
 
 **Conference**: ICLR 2026  
@@ -126,15 +131,16 @@ QDPM crushes previous results, being the first to drop below 1.0 bpd and approac
 - Value: ⭐⭐⭐⭐⭐ A milestone for diffusion-based density estimation, breaking the 1.0 bpd barrier.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models](../../CVPR2026/image_generation/segquant_a_semantics-aware_and_generalizable_quantization_framework_for_diffusio.md)
+- [\[ICLR 2026\] WILD-Diffusion: A WDRO-inspired Training Method for Limited Data Diffusion Models](wild-diffusion_a_wdro_inspired_training_method_for_diffusion_models_under_limite.md)
 - [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
 - [\[ICLR 2026\] Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models](joint_distillation_for_fast_likelihood_evaluation_and_sampling_in_flow-based_mod.md)
 - [\[ICCV 2025\] DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization](../../ICCV2025/image_generation/dmq_dissecting_outliers_of_diffusion_models_for_post-training_quantization.md)
-- [\[ICLR 2026\] Half-order Fine-Tuning for Diffusion Model: A Recursive Likelihood Ratio Optimizer](half-order_fine-tuning_for_diffusion_model_a_recursive_likelihood_ratio_optimize.md)
 
 </div>
 

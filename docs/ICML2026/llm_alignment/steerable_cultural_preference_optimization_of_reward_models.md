@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Steerable Cultural Preference Optimization of Reward Models
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] SCPO uses a "global reward model" as a reference frame. It first **filters** out general preferences in minority groups that align with global consensus, leaving only preferences with genuine cultural differences. It then applies **inverse divergence weighting** to reduce the influence of extreme outlier preferences. T
+  [ICML 2026][LLM Alignment][Cultural alignment] SCPO uses a "global reward model" as a reference frame. It first **filters** out general preferences in minority groups that align with global consensus, leaving only preferences with genuine cultural differences. It then applies **inverse divergence weighting** to reduce the influence of extreme outlier preferences. This approach trains steerable reward models that represent specific minority perspectives without being excessive…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Cultural alignment"
+  - "Reward model"
+  - "Diverse alignment"
+  - "Preference filtering"
+  - "Preference weighting"
 date: 2026-05-08
-content_hash: 0314861212a6a96d
+content_hash: eedc0d4899616592
 ---
+
 # Steerable Cultural Preference Optimization of Reward Models
 
 **Conference**: ICML 2026  
@@ -139,11 +145,11 @@ OpenAssistant RM average across 7 countries on the "Pure Minority Preference" te
 
 ## Related Papers
 
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](../../ICLR2026/llm_alignment/evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
 - [\[ICML 2026\] VALUEFLOW: Toward Pluralistic and Steerable Value-based Alignment in Large Language Models](valueflow_toward_pluralistic_and_steerable_value-based_alignment_in_large_langua.md)
-- [\[ICML 2026\] Korean Culture into LLM Alignment: Toward Cultural Coherence](korean_culture_into_llm_alignment_toward_cultural_coherence.md)
-- [\[ACL 2025\] AMoPO: Adaptive Multi-objective Preference Optimization without Reward Models and Reference Models](../../ACL2025/llm_alignment/amopo_adaptive_multi-objective_preference_optimization_without_reward_models_and.md)
-- [\[ICML 2026\] Autoregressive Direct Preference Optimization](autoregressive_direct_preference_optimization.md)
 - [\[ICML 2026\] Quantifying the Salience of Geo-Cultural Values for Pluralistic Safety Alignment](quantifying_the_salience_of_geo-cultural_values_for_pluralistic_safety_alignment.md)
+- [\[ICML 2026\] Korean Culture into LLM Alignment: Toward Cultural Coherence](korean_culture_into_llm_alignment_toward_cultural_coherence.md)
+- [\[ICML 2026\] Autoregressive Direct Preference Optimization](autoregressive_direct_preference_optimization.md)
 
 </div>
 

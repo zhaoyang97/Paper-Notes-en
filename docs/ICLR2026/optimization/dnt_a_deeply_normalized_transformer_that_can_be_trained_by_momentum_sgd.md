@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DNT: a Deeply Normalized Transformer that can be trained by Momentum SGD
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Starting from the analysis of the Jacobian matrix, this paper clarifies the source of "heavy-tailed gradients" during Transformer training. By redesigning the DNT architecture with normalization operators at appropriate positions (InputNorm + PreNorm + QKNorm + MidNorm), the authors enable training with vanilla momentu
+  [ICLR2026][Optimization][Transformer Optimization] Starting from the analysis of the Jacobian matrix, this paper clarifies the source of "heavy-tailed gradients" during Transformer training. By redesigning the DNT architecture with normalization operators at appropriate positions (InputNorm + PreNorm + QKNorm + MidNorm), the authors enable training with vanilla momentum SGDW. The performance matches AdamW (ImageNet 81.5% vs 82.1%, OpenWebText val loss 2.849 vs 2.863) while sa…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Transformer Optimization"
+  - "Momentum SGD"
+  - "Normalization"
+  - "Heavy-tailed Gradients"
+  - "Jacobian Analysis"
 date: 2026-05-08
-content_hash: 117b46b02548bb28
+content_hash: 5d759cc45488ad98
 ---
+
 # DNT: a Deeply Normalized Transformer that can be trained by Momentum SGD
 
 **Conference**: ICLR2026  
@@ -149,8 +155,8 @@ All five settings were trained using mSGDW, incrementally adding normalizations:
 
 ## Related Papers
 
-- [\[ICML 2026\] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization](../../ICML2026/optimization/rmnp_row-momentum_normalized_preconditioning_for_scalable_matrix-based_optimizat.md)
 - [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
+- [\[ICML 2026\] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization](../../ICML2026/optimization/rmnp_row-momentum_normalized_preconditioning_for_scalable_matrix-based_optimizat.md)
 - [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
 - [\[ICML 2026\] On the Provable Suboptimality of Momentum SGD in Nonstationary Stochastic Optimization](../../ICML2026/optimization/on_the_provable_suboptimality_of_momentum_sgd_in_nonstationary_stochastic_optimi.md)
 - [\[ICLR 2026\] DeMo: Decoupled Momentum Optimization](demo_decoupled_momentum_optimization.md)

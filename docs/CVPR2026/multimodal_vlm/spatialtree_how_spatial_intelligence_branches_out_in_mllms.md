@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpatialTree: How Spatial Intelligence Branches Out in MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][auto-think RL] Inspired by cognitive science, this work deconstructs the spatial intelligence of Multi-modal Large Language Models (MLLMs) into 27 atomic capabilities across four layers ("Perception → Mapping → Simulation → Execution"). It introduces SpatialTree-Bench, the first "capability-centric" hierarchical benchmark. Through SF
+  [CVPR 2026][Multimodal VLM][Spatial intelligence] Inspired by cognitive science, this work deconstructs the spatial intelligence of Multi-modal Large Language Models (MLLMs) into 27 atomic capabilities across four layers ("Perception → Mapping → Simulation → Execution"). It introduces SpatialTree-Bench, the first "capability-centric" hierarchical benchmark. Through SFT/RL intervention experiments, the study reveals that low-layer capabilities are mutually independent but exhi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - auto-think RL
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Spatial intelligence"
+  - "capability hierarchy"
+  - "evaluation benchmark"
+  - "cross-layer transfer"
+  - "auto-think RL"
 date: 2026-05-08
-content_hash: dff6ae641d6e32d5
+content_hash: 22d2fdfb838baf5f
 ---
+
 # SpatialTree: How Spatial Intelligence Branches Out in MLLMs
 
 **Conference**: CVPR 2026  

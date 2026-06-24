@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction
 description: >-
-  [NeurIPS 2025 (GenAI for Health Workshop)][Graph Learning][ICU length-of-stay prediction] This paper proposes S2G-Net, a dual-branch architecture that integrates Mamba state-space temporal encoding with a multi-view grap…
+  [NeurIPS 2025 (GenAI for Health Workshop)][Graph Learning][ICU length-of-stay prediction] This paper proposes S2G-Net, a dual-branch architecture that integrates Mamba state-space temporal encoding with a multi-view graph neural network (GraphGPS) for ICU length-of-stay (LOS) prediction, achieving comprehensive improvements over sequential, graph-based, and hybrid baselines on MIMIC-IV.
 tags:
   - "NeurIPS 2025 (GenAI for Health Workshop)"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Mamba"
   - "multi-view graphs"
 date: 2026-05-08
-content_hash: d7791d9823a6758d
+content_hash: 656b62951d768f81
 ---
 
 # Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction
@@ -144,8 +144,8 @@ S2G-Net improves $R^2$ by approximately 7.5% over the best baseline (GraphGPS) a
 - [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](../../ICLR2026/graph_learning/graph_tokenization_for_bridging_graphs_and_transformers.md)
 - [\[NeurIPS 2025\] P-DRUM: Post-hoc Descriptor-based Residual Uncertainty Modeling for Machine Learning Potentials](p-drum_post-hoc_descriptor-based_residual_uncertainty_modeling_for_machine_learn.md)
 - [\[NeurIPS 2025\] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction](tami_taming_heterogeneity_in_temporal_interactions_for_temporal_graph_link_predi.md)
-- [\[NeurIPS 2025\] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids](graph_neural_networks_for_efficient_ac_power_flow_prediction_in_power_grids.md)
 - [\[ICLR 2026\] RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation](../../ICLR2026/graph_learning/ras_retrieval-and-structuring_for_knowledge-intensive_llm_generation.md)
+- [\[ICLR 2026\] Bridging Input Feature Spaces Towards Graph Foundation Models](../../ICLR2026/graph_learning/bridging_input_feature_spaces_towards_graph_foundation_models.md)
 
 </div>
 

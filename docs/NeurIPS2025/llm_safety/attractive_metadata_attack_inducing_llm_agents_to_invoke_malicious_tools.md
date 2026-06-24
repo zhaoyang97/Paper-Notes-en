@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Attractive Metadata Attack: Inducing LLM Agents to Invoke Malicious Tools
 description: >-
-  [NeurIPS 2025][LLM Safety][Tool invocation attack] AMA (Attractive Metadata Attack) demonstrates that by carefully crafting malicious tool metadata (name, description…
+  [NeurIPS 2025][LLM Safety][Tool invocation attack] AMA (Attractive Metadata Attack) demonstrates that by carefully crafting malicious tool metadata (name, description, parameter schema) alone — without prompt injection or internal model access — an attacker can induce LLM agents to invoke malicious tools and leak private data at a success rate of 81–95%, while barely affecting original task completion (98%+), with existing defenses (auditors…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "LLM agent security"
   - "MCP"
 date: 2026-05-08
-content_hash: c0f5df06944628c8
+content_hash: 462814db8e13665e
 ---
 
 # Attractive Metadata Attack: Inducing LLM Agents to Invoke Malicious Tools
@@ -133,10 +133,10 @@ AMA (Attractive Metadata Attack) demonstrates that by carefully crafting malicio
 ## Related Papers
 
 - [\[NeurIPS 2025\] DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents](drift_dynamic_rulebased_defense_with_injection_isolation_for.md)
+- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](../../ICLR2026/llm_safety/invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
 - [\[NeurIPS 2025\] AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents](agentdam_privacy_leakage_evaluation_for_autonomous_web_agent.md)
 - [\[NeurIPS 2025\] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text](adversarial_paraphrasing_a_universal_attack_for_humanizing_ai-generated_text.md)
-- [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
-- [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](../../ACL2026/llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
+- [\[ICLR 2026\] Reliable Weak-to-Strong Monitoring of LLM Agents](../../ICLR2026/llm_safety/reliable_weak-to-strong_monitoring_of_llm_agents.md)
 
 </div>
 

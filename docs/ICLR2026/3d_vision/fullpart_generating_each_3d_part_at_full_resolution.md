@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] FullPart: Generating each 3D Part at Full Resolution
+  [Paper Note] FullPart: Generating Each 3D Part at Full Resolution
 description: >-
-  [ICLR 2026][3D Vision][Diffusion Model] FullPart integrates two paradigms: generating bounding box layouts using implicit vecset diffusion, followed by generating details for each part within its own independent, full-resolution voxel grid. It employs center-corner encoding to resolve scale mismatches during assembly and introduces PartVerse-XL—the largest m
+  [ICLR 2026][3D Vision][Part-based 3D Generation] FullPart integrates two paradigms: generating bounding box layouts using implicit vecset diffusion, followed by generating details for each part within its own independent, full-resolution voxel grid. It employs center-corner encoding to resolve scale mismatches during assembly and introduces PartVerse-XL—the largest manually annotated 3D part dataset to date (40K objects / 320K parts)—achieving SOTA performance in part-based 3…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Part-based 3D Generation"
+  - "Voxel Representation"
+  - "Layout Generation"
+  - "Diffusion Models"
+  - "3D Datasets"
 date: 2026-05-08
-content_hash: 272496365b4e3e3f
+content_hash: e8312a7b1645d35a
 ---
+
 # FullPart: Generating Each 3D Part at Full Resolution
 
 **Conference**: ICLR 2026  
@@ -128,15 +133,16 @@ Ours leads across all metrics. Qualitatively, FullPart avoids the fragmented par
 - Value: ⭐⭐⭐⭐⭐ High value due to SOTA performance and the release of the PartVerse-XL dataset.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](holopart_generative_3d_part_amodal_segmentation.md)
 - [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
+- [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](holopart_generative_3d_part_amodal_segmentation.md)
 - [\[ICLR 2026\] pySpatial: Generating 3D Visual Programs for Zero-Shot Spatial Reasoning](pyspatial_generating_3d_visual_programs_for_zero-shot_spatial_reasoning.md)
 - [\[ICLR 2026\] Quartet of Diffusions: Structure-Aware Point Cloud Generation through Part and Symmetry Guidance](quartet_of_diffusions_structure-aware_point_cloud_generation_through_part_and_sy.md)
-- [\[ICCV 2025\] From One to More: Contextual Part Latents for 3D Generation](../../ICCV2025/3d_vision/from_one_to_more_contextual_part_latents_for_3d_generation.md)
+- [\[ICLR 2026\] PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data](partsam_a_scalable_promptable_part_segmentation_model_trained_on_native_3d_data.md)
 
 </div>
 

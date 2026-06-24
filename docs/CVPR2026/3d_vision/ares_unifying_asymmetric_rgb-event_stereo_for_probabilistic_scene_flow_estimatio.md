@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Utilizing an asymmetric stereo setup consisting of an "Event camera + RGB camera," the proposed method first integrates temporal clues from asynchronous events with spatial structures from RGB into a unified representation via Multimodal Contextual Attention for simultaneous optical flow and disparity estimation. Then,
+  [CVPR 2026][3D Vision][Scene Flow] Utilizing an asymmetric stereo setup consisting of an "Event camera + RGB camera," the proposed method first integrates temporal clues from asynchronous events with spatial structures from RGB into a unified representation via Multimodal Contextual Attention for simultaneous optical flow and disparity estimation. Then, Temporal Disparity Posterior Fusion is employed to probabilistically model the evolution of disparity over time…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scene Flow"
+  - "RGB-Event Stereo"
+  - "Multi-modal Fusion"
+  - "Disparity Posterior"
+  - "Probabilistic Modeling"
 date: 2026-05-08
-content_hash: 9ea3f6b53eccdf65
+content_hash: 9bbfccef3ddd4772
 ---
+
 # ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation
 
 **Conference**: CVPR 2026  
@@ -158,9 +164,9 @@ Component-wise ablation on DSEC (EPE):
 
 - [\[CVPR 2026\] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)
 - [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
-- [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
-- [\[CVPR 2026\] FunFact: Building Probabilistic Functional 3D Scene Graphs via Factor-Graph Reasoning](funfact_building_probabilistic_functional_3d_scene_graphs_via_factor-graph_reaso.md)
+- [\[CVPR 2026\] UniPixie: Unified and Probabilistic 3D Physics Learning via Flow Matching](unipixie_unified_and_probabilistic_3d_physics_learning_via_flow_matching.md)
+- [\[ICLR 2026\] RobustSpring: Benchmarking Robustness to Image Corruptions for Optical Flow, Scene Flow and Stereo](../../ICLR2026/3d_vision/robustspring_benchmarking_robustness_to_image_corruptions_for_optical_flow_scene.md)
+- [\[CVPR 2026\] Event Stream Filtering via Probability Flux Estimation](event_stream_filtering_via_probability_flux_estimation.md)
 
 </div>
 

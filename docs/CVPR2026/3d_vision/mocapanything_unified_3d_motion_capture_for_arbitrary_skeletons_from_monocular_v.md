@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoCapAnything: Unified 3D Motion Capture for Arbitrary Skeletons from Monocular Videos
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Given a monocular video and an arbitrary 3D skeletal asset (human/animal/robot/toy) as a prompt, MoCapAnything first predicts per-joint 3D trajectories and then solves for the asset's specific skeleton rotation (e.g., BVH) using constraint-aware Inverse Kinematics (IK). This achieves unified motion capture and cross-sp
+  [CVPR2026][3D Vision][Category-Agnostic MoCap] Given a monocular video and an arbitrary 3D skeletal asset (human/animal/robot/toy) as a prompt, MoCapAnything first predicts per-joint 3D trajectories and then solves for the asset's specific skeleton rotation (e.g., BVH) using constraint-aware Inverse Kinematics (IK). This achieves unified motion capture and cross-species retargeting across heterogeneous skeletons, reducing the MPJPE of unseen species from 7.42cm to 1.76cm on T…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Category-Agnostic MoCap"
+  - "Arbitrary skeleton"
+  - "Monocular video"
+  - "Inverse Kinematics"
+  - "Cross-species retargeting"
 date: 2026-05-08
-content_hash: 9992895e81bd6d33
+content_hash: 432e031d2ff746f1
 ---
+
 # MoCapAnything: Unified 3D Motion Capture for Arbitrary Skeletons from Monocular Videos
 
 **Conference**: CVPR2026  
@@ -125,15 +131,16 @@ Ours leads across all tiers, with the gap widening significantly for unseen spec
 - Value: ⭐⭐⭐⭐⭐ Directly addresses pains in gaming/virtual production and IP character animation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
+- [\[CVPR 2026\] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)
+- [\[ICLR 2026\] SMAGA: Secondary Motion-Aware 3D Clothed Gaussian Avatars from Monocular Videos](../../ICLR2026/3d_vision/smaga_secondary_motion-aware_3d_clothed_gaussian_avatars_from_monocular_videos.md)
 - [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
 - [\[CVPR 2026\] RHINO: Reconstructing Human Interactions with Novel Objects from Monocular Videos](rhino_reconstructing_human_interactions_with_novel_objects_from_monocular_videos.md)
-- [\[CVPR 2026\] Recovering Physically Plausible Human-Object Interactions from Monocular Videos](recovering_physically_plausible_human-object_interactions_from_monocular_videos.md)
-- [\[CVPR 2026\] Differentiable Adaptive 4D Structured Illumination for Joint Capture of Shape and Reflectance](differentiable_adaptive_4d_structured_illumination_for_joint_capture_of_shape_an.md)
 
 </div>
 

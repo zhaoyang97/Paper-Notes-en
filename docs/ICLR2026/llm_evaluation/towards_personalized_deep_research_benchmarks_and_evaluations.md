@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Personalized Deep Research: Benchmarks and Evaluations
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-Judge] The authors propose **PDR-Bench**, the first benchmark for "Personalized Deep Research," consisting of 250 personalized queries generated from 50 research tasks across 10 domains paired with 25 real user personas. Accompanying this is the **PQR Evaluation Framework** (Personalization alignment P / content Quality Q / f
+  [ICLR 2026][LLM Evaluation][Deep Research Agents] The authors propose **PDR-Bench**, the first benchmark for "Personalized Deep Research," consisting of 250 personalized queries generated from 50 research tasks across 10 domains paired with 25 real user personas. Accompanying this is the **PQR Evaluation Framework** (Personalization alignment P / content Quality Q / factual Reliability R). Evaluations reveal that existing deep research systems "know how to write reports but f…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Deep Research Agents"
+  - "Personalized Evaluation"
+  - "Benchmark Construction"
+  - "LLM-as-Judge"
+  - "User Persona"
 date: 2026-05-08
-content_hash: 249ffd9e98924ea0
+content_hash: 548fb03dc7caffc2
 ---
+
 # Towards Personalized Deep Research: Benchmarks and Evaluations
 
 **Conference**: ICLR 2026  

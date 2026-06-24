@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EgoAVU: Egocentric Audio-Visual Understanding
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] Addressing the issue where existing MLLMs "see but don't listen" and mismatch audio with incorrect visual sources in egocentric videos, this paper proposes EgoAVU, a fully automated data engine. It uses modular open-source models to generate modality-specific narrations and an explicit Multimodal Context Graph (MCG) to
+  [CVPR 2026][Multimodal VLM][Egocentric video] Addressing the issue where existing MLLMs "see but don't listen" and mismatch audio with incorrect visual sources in egocentric videos, this paper proposes EgoAVU, a fully automated data engine. It uses modular open-source models to generate modality-specific narrations and an explicit Multimodal Context Graph (MCG) to model audio-source relationships. The engine produces 3 million training samples (EgoAVU-Instruct) and 3…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Egocentric video"
+  - "Audio-visual understanding"
+  - "Data engine"
+  - "Multimodal Context Graph"
+  - "MLLM instruction tuning"
 date: 2026-05-08
-content_hash: d6fc8390b7797066
+content_hash: b57bd3657dccd8cb
 ---
+
 # EgoAVU: Egocentric Audio-Visual Understanding
 
 **Conference**: CVPR 2026  
@@ -130,16 +136,16 @@ The paper performs an error analysis by sub-modality rather than module removal,
 - Value: ⭐⭐⭐⭐⭐ Quantifies "visual bias" and provides high-utility data for embodied AI/AR communities.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding](amuse_audio-visual_benchmark_and_alignment_framework_for_agentic_multi-speaker_u.md)
-- [\[ECCV 2024\] Listen to Look into the Future: Audio-Visual Egocentric Gaze Anticipation](../../ECCV2024/audio_speech/listen_to_look_into_the_future_audio-visual_egocentric_gaze_anticipation.md)
+- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](../../ICLR2026/multimodal_vlm/omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
+- [\[CVPR 2026\] EgoSound: Benchmarking Sound Understanding in Egocentric Videos](egosound_benchmarking_sound_understanding_in_egocentric_videos.md)
 - [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
-- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
-- [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
+- [\[CVPR 2026\] LifeEval: A Multimodal Benchmark for Assistive AI in Egocentric Daily Life Tasks](lifeeval_a_multimodal_benchmark_for_assistive_ai_in_egocentric_daily_life_tasks.md)
+- [\[NeurIPS 2025\] Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM](../../NeurIPS2025/multimodal_vlm/watch_and_listen_understanding_audio-visual-speech_moments_with_multimodal_llm.md)
 
 </div>
 

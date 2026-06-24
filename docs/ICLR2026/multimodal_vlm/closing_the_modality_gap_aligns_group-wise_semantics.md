@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Closing the Modality Gap Aligns Group-Wise Semantics
 description: >-
-  [ICLR 2026][Multimodal VLM][modality gap] Demonstrates that the modality gap in CLIP is irrelevant for instance-level tasks (retrieval) but severely harms group-level tasks (clustering). Proposes a new objective function consisting of Align True Pairs loss + Centroid Uniformity loss, reducing the gap nearly to zero in bi-modal and tri-modal settings, significa
+  [ICLR2026][Multimodal VLM][modality gap] Demonstrates that the modality gap in CLIP is irrelevant for instance-level tasks (retrieval) but severely harms group-level tasks (clustering). Proposes a new objective function consisting of Align True Pairs loss + Centroid Uniformity loss, reducing the gap nearly to zero in bi-modal and tri-modal settings, significantly improving clustering V-Measure (+10-17 points) while maintaining retrieval performance.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - modality gap
-  - contrastive learning
-  - CLIP
-  - clustering
-  - multimodal alignment
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "modality gap"
+  - "contrastive learning"
+  - "CLIP"
+  - "clustering"
+  - "multimodal alignment"
 date: 2026-05-08
-content_hash: ccdabf11a48153c8
+content_hash: ca35dcd2801dede3
 ---
+
 # Closing the Modality Gap Aligns Group-Wise Semantics
 
 **Conference**: ICLR2026  
@@ -138,8 +139,8 @@ The complete objective combines the three components: $\mathcal{L}_{\text{CL}_{\
 - [\[CVPR 2026\] Is the Modality Gap a Bug or a Feature? A Robustness Perspective](../../CVPR2026/multimodal_vlm/is_the_modality_gap_a_bug_or_a_feature_a_robustness_perspective.md)
 - [\[NeurIPS 2025\] HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation](../../NeurIPS2025/multimodal_vlm/hermesflow_seamlessly_closing_the_gap_in_multimodal_understanding_and_generation.md)
 - [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](../../CVPR2026/multimodal_vlm/bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
-- [\[ICLR 2026\] MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition](mora_missing_modality_low-rank_adaptation_for_visual_recognition.md)
-- [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](../../AAAI2026/multimodal_vlm/aligning_the_true_semantics_constrained_decoupling_and_distr.md)
+- [\[ICLR 2026\] Turning Internal Gap into Self-Improvement: Promoting the Generation-Understanding Unification in MLLMs](turning_internal_gap_into_self-improvement_promoting_the_generation-understandin.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](../../CVPR2026/multimodal_vlm/text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
 
 </div>
 

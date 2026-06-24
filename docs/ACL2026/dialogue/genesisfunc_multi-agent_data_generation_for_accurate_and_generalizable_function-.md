@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling
 description: >-
-  [ACL 2026][Dialogue Systems][Function Calling] GenesisFunc automatically constructs high-quality function-calling training data using a reliable tool pool, multi-agent dialogue generation, and multi-stage quality control. After fine-tuning Qwen3-8B, it outperforms open-source function-calling models of the same scale on BFCL, API-Bank, and ACEBench, demonstrating p
+  [ACL2026][Dialogue Systems][Function Calling] GenesisFunc automatically constructs high-quality function-calling training data using a reliable tool pool, multi-agent dialogue generation, and multi-stage quality control. After fine-tuning Qwen3-8B, it outperforms open-source function-calling models of the same scale on BFCL, API-Bank, and ACEBench, demonstrating potential for scaling to more tools and multi-turn RL training.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Function Calling
-  - GRPO
+  - "ACL2026"
+  - "Dialogue Systems"
+  - "Function Calling"
+  - "Multi-agent data generation"
+  - "Tool learning"
+  - "Synthetic data quality control"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 7694eefcca71d935
+content_hash: 17360d539de9a2ab
 ---
+
 # GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling
 
 **Conference**: ACL2026  
@@ -139,6 +143,7 @@ The primary model, GenesisFunc-8B, is derived from Qwen3-8B via SFT on the gener
 - Value: ⭐⭐⭐⭐⭐ Highly practical for teams aiming to improve small model agent capabilities and private tool ecosystems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

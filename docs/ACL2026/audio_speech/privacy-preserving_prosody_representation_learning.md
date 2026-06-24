@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Privacy-preserving Prosody Representation Learning
 description: >-
-  [ACL 2026][Audio & Speech][Self-Supervised Learning] This paper proposes a self-supervised prosody encoder using glottal source as input, which reduces identity leakage through F0 speaker normalization and adversarial speaker loss. It outperforms raw prosody and HuBERT baselines in phrase boundary detection, syllable prominence, and pitch reconstruction, while reducing V
+  [ACL2026][Audio & Speech][Prosody representation] This paper proposes a self-supervised prosody encoder using glottal source as input, which reduces identity leakage through F0 speaker normalization and adversarial speaker loss. It outperforms raw prosody and HuBERT baselines in phrase boundary detection, syllable prominence, and pitch reconstruction, while reducing VoxCeleb1 speaker identification accuracy from 0.64 (HuBERT) to 0.14.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Self-Supervised Learning
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Prosody representation"
+  - "speaker disentanglement"
+  - "self-supervised learning"
+  - "privacy protection"
+  - "speech security"
 date: 2026-05-08
-content_hash: e425d89b1cd512bb
+content_hash: 75d8004438210b03
 ---
+
 # Privacy-preserving Prosody Representation Learning
 
 **Conference**: ACL2026  
@@ -165,8 +170,8 @@ The two disentanglement strategies serve different roles: speaker-normalized tar
 - [\[ICLR 2026\] EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning](../../ICLR2026/audio_speech/emotionthinker_prosody-aware_reinforcement_learning_for_explainable_speech_emoti.md)
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 - [\[ACL 2026\] Protecting Bystander Privacy via Selective Hearing in Audio LLMs](protecting_bystander_privacy_via_selective_hearing_in_audio_llms.md)
+- [\[ICLR 2026\] Physics-Informed Audio-Geometry-Grid Representation Learning for Universal Sound Source Localization](../../ICLR2026/audio_speech/physics-informed_audio-geometry-grid_representation_learning_for_universal_sound.md)
 - [\[ACL 2026\] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment](immersivetts_environment-aware_text-to-speech_with_multimodal_diffusion_transfor.md)
-- [\[ACL 2026\] How Tokenization Limits Phonological Knowledge Representation in Language Models and How to Improve Them](how_tokenization_limits_phonological_knowledge_representation_in_language_models.md)
 
 </div>
 

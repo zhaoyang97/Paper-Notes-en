@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] SAFEMLLM is the first adversarial training framework designed specifically for Multimodal Large Language Models (MLLMs). By injecting compact, learnable perturbation matrices into the token embedding layer to simulate cross-modal attacks (CoE-Attack) and iteratively updating model parameters to neutralize these perturb
+  [CVPR 2026][AI Safety][Jailbreak Defense] SAFEMLLM is the first adversarial training framework designed specifically for Multimodal Large Language Models (MLLMs). By injecting compact, learnable perturbation matrices into the token embedding layer to simulate cross-modal attacks (CoE-Attack) and iteratively updating model parameters to neutralize these perturbations, SAFEMLLM reduces the Attack Success Rate (ASR) of six jailbreak methods to near 0 in white-box scenarios while…
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Jailbreak Defense"
+  - "Adversarial Training"
+  - "MLLM"
+  - "Token Embedding Perturbation"
+  - "Contrastive Loss"
 date: 2026-05-08
-content_hash: 663b0ac807272ecc
+content_hash: 44a5f60653e05686
 ---
+
 # Towards Robust Multimodal Large Language Models Against Jailbreak Attacks
 
 **Conference**: CVPR 2026  
@@ -162,11 +168,11 @@ On 13B models under ImgJP / AdvBench ("×" denotes removal):
 
 ## Related Papers
 
-- [\[ACL 2026\] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models](../../ACL2026/llm_safety/gambit_a_gamified_jailbreak_framework_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Omni-Attack: Adversarial Attacks on Open-Ended VQA in Black-Box Multimodal LLMs](omni-attack_adversarial_attacks_on_open-ended_vqa_in_black-box_multimodal_llms.md)
 - [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
-- [\[CVPR 2026\] Demographic Fairness in Multimodal LLMs: A Benchmark of Gender and Ethnicity Bias in Face Verification](demographic_fairness_in_multimodal_llms_a_benchmark_of_gender_and_ethnicity_bias.md)
+- [\[CVPR 2026\] FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models](fvbench_benchmarking_deepfake_video_detection_capability_of_large_multimodal_mod.md)
+- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
+- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
+- [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
 
 </div>
 

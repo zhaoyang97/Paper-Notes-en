@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PINFDiT: Energy-Based Physics-Informed Diffusion Transformers for General-purpose Time Series Tasks
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] PINFDiT utilizes a Diffusion Transformer with a unified masking strategy as a "statistical generalist," then inserts a training-free, architecture-agnostic physical correction step during the **inference stage**. By treating PDE residuals as energy terms and employing calibrated Langevin dynamics to pull generated samp
+  [ICLR 2026][Physics & Scientific Computing][Diffusion Transformer] PINFDiT utilizes a Diffusion Transformer with a unified masking strategy as a "statistical generalist," then inserts a training-free, architecture-agnostic physical correction step during the **inference stage**. By treating PDE residuals as energy terms and employing calibrated Langevin dynamics to pull generated samples toward solutions satisfying physical laws, it achieves state-of-the-art (SOTA) performanc…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Diffusion Transformer"
+  - "Physics Injection"
+  - "Langevin Correction"
+  - "Boltzmann Energy"
+  - "Zero-shot Forecasting"
 date: 2026-05-08
-content_hash: 395b73203e87b548
+content_hash: c829aa442cf671fb
 ---
+
 # PINFDiT: Energy-Based Physics-Informed Diffusion Transformers for General-purpose Time Series Tasks
 
 **Conference**: ICLR 2026  
@@ -158,9 +164,9 @@ Component ablation under zero-shot settings (Solar / Electricity, CRPS_sum):
 
 - [\[ICLR 2026\] Orbital Transformers for Predicting Wavefunctions in Time-Dependent Density Functional Theory](orbital_transformers_for_predicting_wavefunctions_in_time-dependent_density_func.md)
 - [\[ICLR 2026\] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction](physics-informed_inference_time_scaling_for_solving_high-dimensional_partial_dif.md)
+- [\[ICLR 2026\] Learning Escorted Protocols For Multistate Free-Energy Estimation](learning_escorted_protocols_for_multistate_free-energy_estimation.md)
+- [\[ICLR 2026\] Fast training of accurate physics-informed neural networks without gradient descent](fast_training_of_accurate_physics-informed_neural_networks_without_gradient_desc.md)
 - [\[ICLR 2026\] Proximal Diffusion Neural Sampler](proximal_diffusion_neural_sampler.md)
-- [\[CVPR 2026\] Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening](../../CVPR2026/physics/spatial-spectral_residuals_informed_diffusion_neural_operator_for_pan-sharpening.md)
-- [\[ICLR 2026\] Incomplete Data, Complete Dynamics: A Diffusion Approach](incomplete_data_complete_dynamics_a_diffusion_approach.md)
 
 </div>
 

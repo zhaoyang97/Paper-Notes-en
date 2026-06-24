@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Extending the Context of Pretrained LLMs by Dropping Their Positional Embedding
 description: >-
-  [ICLR 2026][LLM Efficiency][RoPE] RoPE is a critical inductive bias for accelerating convergence during pretraining but serves as the root cause hindering length extrapolation. This paper proposes **DroPE**: by directly removing all positional embeddings after pretraining and performing a brief "re-calibration" with a minimal number of tokens, LLMs can
+  [ICLR 2026][LLM Efficiency][Positional encoding] RoPE is a critical inductive bias for accelerating convergence during pretraining but serves as the root cause hindering length extrapolation. This paper proposes **DroPE**: by directly removing all positional embeddings after pretraining and performing a brief "re-calibration" with a minimal number of tokens, LLMs can zero-shot generalize to sequences far exceeding their training length without any long-context fine-tuning.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - RoPE
-  - NoPE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Positional encoding"
+  - "RoPE"
+  - "NoPE"
+  - "Zero-shot context extension"
+  - "Long context"
+  - "Post-pretraining processing"
 date: 2026-05-08
-content_hash: 16465d5c35d923f6
+content_hash: 13cb65db7e3db516
 ---
+
 # Extending the Context of Pretrained LLMs by Dropping Their Positional Embedding
 
 **Conference**: ICLR 2026  

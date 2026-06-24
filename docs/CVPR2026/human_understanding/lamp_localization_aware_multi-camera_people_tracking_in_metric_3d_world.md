@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LAMP: Localization Aware Multi-camera People Tracking in Metric 3D World
 description: >-
-  [CVPR 2026][Human Understanding][SMPL] LAMP leverages the known 6-DoF poses of a headset to lift 2D human keypoints detected across multiple cameras into a unified world-frame 3D ray cloud at an early stage. A spatio-temporal Transformer then fits human SMPL motion directly to this ray cloud. This "lift-then-fit" paradigm completely decouples the wearer's h
+  [CVPR 2026][Human Understanding][Multi-camera Headset] LAMP leverages the known 6-DoF poses of a headset to lift 2D human keypoints detected across multiple cameras into a unified world-frame 3D ray cloud at an early stage. A spatio-temporal Transformer then fits human SMPL motion directly to this ray cloud. This "lift-then-fit" paradigm completely decouples the wearer's head motion from the observed person's motion, achieving SOTA performance on monocular benchmarks and sign…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - SMPL
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-camera Headset"
+  - "World-frame Motion Tracking"
+  - "Ray Lifting"
+  - "SMPL"
+  - "Spatio-temporal Transformer"
 date: 2026-05-08
-content_hash: 1d1ef66b6d945802
+content_hash: e24865835940e72d
 ---
+
 # LAMP: Localization Aware Multi-camera People Tracking in Metric 3D World
 
 **Conference**: CVPR 2026  
@@ -151,15 +156,14 @@ Ablation on Nymeria (posed=using camera pose; smooth=sliding window; simulate=si
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](humanoid-gpt_scaling_data_and_structure_for_zero-shot_motion_tracking.md)
-- [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
-- [\[CVPR 2026\] Seeing without Pixels: Perception from Camera Trajectories](seeing_without_pixels_perception_from_camera_trajectories.md)
 - [\[CVPR 2026\] OSMO: Open-vocabulary Self-eMOtion Tracking](osmo_open-vocabulary_self-emotion_tracking.md)
-- [\[CVPR 2026\] Active Intelligence in Video Avatars via Closed-loop World Modeling](active_intelligence_in_video_avatars_via_closed-loop_world_modeling.md)
+- [\[ICLR 2026\] PulpMotion: Framing-Aware Multimodal Camera and Human Motion Generation](../../ICLR2026/human_understanding/pulp_motion_framing-aware_multimodal_camera_and_human_motion_generation.md)
+- [\[CVPR 2026\] Seeing without Pixels: Perception from Camera Trajectories](seeing_without_pixels_perception_from_camera_trajectories.md)
+- [\[ECCV 2024\] WorldPose: A World Cup Dataset for Global 3D Human Pose Estimation](../../ECCV2024/human_understanding/worldpose_a_world_cup_dataset_for_global_3d_human_pose_estimation.md)
+- [\[CVPR 2026\] Towards Storytelling Animations: Joint Synthesis of Human and Camera Motions](towards_storytelling_animations_joint_synthesis_of_human_and_camera_motions.md)
 
 </div>
 

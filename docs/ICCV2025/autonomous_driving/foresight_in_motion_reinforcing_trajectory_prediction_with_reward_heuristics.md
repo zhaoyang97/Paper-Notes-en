@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Foresight in Motion: Reinforcing Trajectory Prediction with Reward Heuristics
 description: >-
-  [ICCV 2025][Autonomous Driving][Trajectory Prediction] This paper proposes a "First Reasoning, Then Forecasting" strategy that infers reward distributions over driving intentions via Query-centric Inverse Reinforcement L…
+  [ICCV 2025][Autonomous Driving][Trajectory Prediction] This paper proposes a "First Reasoning, Then Forecasting" strategy that infers reward distributions over driving intentions via Query-centric Inverse Reinforcement Learning (QIRL), and couples this with a Bi-Mamba-enhanced DETR-style trajectory decoder to significantly improve prediction confidence and accuracy.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "Intent Reasoning"
   - "Mamba"
 date: 2026-05-08
-content_hash: 7d37c3f7f537c334
+content_hash: 7869f7bccc70f918
 ---
 
 # Foresight in Motion: Reinforcing Trajectory Prediction with Reward Heuristics
@@ -184,11 +184,11 @@ $$\mathcal{L} = \mathcal{L}_{IRL} + \alpha \mathcal{L}_{OGM} + \beta \mathcal{L}
 
 ## Related Papers
 
-- [\[ICCV 2025\] DONUT: A Decoder-Only Model for Trajectory Prediction](donut_a_decoder-only_model_for_trajectory_prediction.md)
 - [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](future-aware_interaction_network_for_motion_forecasting.md)
-- [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
+- [\[ICCV 2025\] DONUT: A Decoder-Only Model for Trajectory Prediction](donut_a_decoder-only_model_for_trajectory_prediction.md)
+- [\[CVPR 2025\] Certified Human Trajectory Prediction](../../CVPR2025/autonomous_driving/certified_human_trajectory_prediction.md)
 - [\[NeurIPS 2025\] DINO-Foresight: Looking into the Future with DINO](../../NeurIPS2025/autonomous_driving/dino-foresight_looking_into_the_future_with_dino.md)
-- [\[ICCV 2025\] SRefiner: Soft-Braid Attention for Multi-Agent Trajectory Refinement](srefiner_soft-braid_attention_for_multi-agent_trajectory_refinement.md)
+- [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
 
 </div>
 

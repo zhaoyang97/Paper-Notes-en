@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Art of Scaling Reinforcement Learning Compute for LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][PipelineRL] This paper introduces a sigmoid-shaped "compute-performance" scaling law that decomposes LLM RL training into two fittable parameters: "performance ceiling $A$" and "computational efficiency $B$." Based on 400,000 GPU-hours of systematic ablation, the authors identify a robust recipe called SCALERL. By extrapolating cu
+  [ICLR 2026][Reinforcement Learning][RL Scaling Laws] This paper introduces a sigmoid-shaped "compute-performance" scaling law that decomposes LLM RL training into two fittable parameters: "performance ceiling $A$" and "computational efficiency $B$." Based on 400,000 GPU-hours of systematic ablation, the authors identify a robust recipe called SCALERL. By extrapolating curves from low-compute runs, they accurately predicted final validation performance in a single 100…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PipelineRL
-  - SCALERL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RL Scaling Laws"
+  - "Predictable Scaling"
+  - "Computational Efficiency"
+  - "PipelineRL"
+  - "SCALERL"
 date: 2026-05-08
-content_hash: 4893a73d7ca4bdcb
+content_hash: 48903e03a78d0b12
 ---
+
 # The Art of Scaling Reinforcement Learning Compute for LLMs
 
 **Conference**: ICLR 2026  

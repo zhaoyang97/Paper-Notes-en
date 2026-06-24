@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture
 description: >-
-  [AAAI 2026][Object Detection][Urban pipeline networks] This paper proposes AquaSentinel, a physics-informed AI system that achieves network-wide pipeline leak detection using only 20–30% node coverage through sparse sens…
+  [AAAI 2026][Object Detection][Urban pipeline networks] This paper proposes AquaSentinel, a physics-informed AI system that achieves network-wide pipeline leak detection using only 20–30% node coverage through sparse sensor deployment, physics-augmented virtual sensors, a MoE spatiotemporal GNN ensemble, a dual-threshold RTCA detection algorithm, causal flow localization, and LLM-based report generation. The system achieves 100% detection rate across 110 leak scenarios.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "physics-informed AI"
   - "MoE spatiotemporal forecasting"
 date: 2026-05-08
-content_hash: 91d2d73cad59d353
+content_hash: 646c06aeaae4fb05
 ---
 
 # AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture
@@ -124,7 +124,7 @@ The "virtual sensor" concept (inferring unobserved states from limited observati
 - [\[AAAI 2026\] T-Rex-Omni: Integrating Negative Visual Prompt in Generic Object Detection](t-rex-omni_integrating_negative_visual_prompt_in_generic_object_detection.md)
 - [\[AAAI 2026\] AnoStyler: Text-Driven Localized Anomaly Generation via Lightweight Style Transfer](anostyler_text-driven_localized_anomaly_generation_via_light.md)
 - [\[NeurIPS 2025\] DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning](../../NeurIPS2025/object_detection/detree_detecting_human-ai_collaborative_texts_via_tree-structured_hierarchical_r.md)
-- [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](../../CVPR2026/object_detection/unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
+- [\[CVPR 2026\] Detect Anything via Next Point Prediction](../../CVPR2026/object_detection/detect_anything_via_next_point_prediction.md)
 
 </div>
 

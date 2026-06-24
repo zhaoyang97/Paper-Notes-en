@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning
 description: >-
-  [AAAI 2026][Time Series][Irregularly sampled time series] This paper proposes iTimER, which leverages the model's own reconstruction error distribution as a learning signal. By estimating the error distribution from obse…
+  [AAAI 2026][Time Series][Irregularly sampled time series] This paper proposes iTimER, which leverages the model's own reconstruction error distribution as a learning signal. By estimating the error distribution from observed points and sampling from it to generate pseudo-observations at unobserved timestamps, the method aligns the error distributions of observed and pseudo-observed regions via Wasserstein distance combined with contrastive learning…
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Wasserstein alignment"
   - "pseudo-observations"
 date: 2026-05-08
-content_hash: 43cfaa3fb8b081f6
+content_hash: 48517041b0e6b31b
 ---
 
 # iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning
@@ -106,10 +106,10 @@ iTimER also achieves comprehensive improvements on interpolation and forecasting
 
 ## Related Papers
 
-- [\[AAAI 2026\] Mask the Redundancy: Evolving Masking Representation Learning for Multivariate Time-Series Clustering](mask_the_redundancy_evolving_masking_representation_learning_for_multivariate_ti.md)
+- [\[ECCV 2024\] Semantically Guided Representation Learning For Action Anticipation](../../ECCV2024/time_series/semantically_guided_representation_learning_for_action_anticipation.md)
 - [\[AAAI 2026\] C3RL: Rethinking the Combination of Channel-independence and Channel-mixing from Representation Learning](c3rl_rethinking_the_combination_of_channel-independence_and_channel-mixing_from_.md)
-- [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning](../../ICLR2026/time_series/gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-series.md)
 - [\[AAAI 2026\] CometNet: Contextual Motif-guided Long-term Time Series Forecasting](cometnet_contextual_motif-guided_long-term_time_series_forecasting.md)
+- [\[AAAI 2026\] Mask the Redundancy: Evolving Masking Representation Learning for Multivariate Time-Series Clustering](mask_the_redundancy_evolving_masking_representation_learning_for_multivariate_ti.md)
 - [\[AAAI 2026\] Mitigating Error Accumulation in Co-Speech Motion Generation via Global Rotation Diffusion and Multi-Level Constraints](mitigating_error_accumulation_in_co-speech_motion_generation_via_global_rotation.md)
 
 </div>

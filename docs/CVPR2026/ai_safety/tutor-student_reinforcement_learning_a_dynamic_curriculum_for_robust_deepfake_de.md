@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection
 description: >-
-  [CVPR 2026][AI Safety][Reinforcement Learning] The authors propose the Tutor-Student Reinforcement Learning (TSRL) framework, which models the training process of a deepfake detector as a Markov Decision Process (MDP). A "Tutor" (PPO agent) dynamically assigns loss weights based on the visual features and historical learning dynamics (EMA loss, forgetting counts) o
+  [CVPR 2026][AI Safety][Deepfake Detection] The authors propose the Tutor-Student Reinforcement Learning (TSRL) framework, which models the training process of a deepfake detector as a Markov Decision Process (MDP). A "Tutor" (PPO agent) dynamically assigns loss weights based on the visual features and historical learning dynamics (EMA loss, forgetting counts) of each sample. Guided by "state-change" reward signals, the "Student" (detector) prioritizes learning high-value samp…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Deepfake Detection"
+  - "Reinforcement Learning"
+  - "Curriculum Learning"
+  - "Dynamic Sample Weighting"
+  - "Cross-domain Generalization"
 date: 2026-05-08
-content_hash: 588ad2c4297c540f
+content_hash: df28dc3ec780d425
 ---
+
 # Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection
 
 **Conference**: CVPR 2026  
@@ -155,11 +160,11 @@ The three-stage training strategy ensures stability:
 
 ## Related Papers
 
-- [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
 - [\[CVPR 2026\] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning](dfd-hr_generalizable_deepfake_detection_via_hierarchical_routing_learning.md)
 - [\[CVPR 2026\] Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection](omni-fake_benchmarking_unified_multimodal_social_media_deepfake_detection.md)
-- [\[CVPR 2026\] Beyond \[CLS\] Token: Query-Driven Token-Level Forgery Purification for Generalizable Deepfake Detection](beyond_cls_token_query-driven_token-level_forgery_purification_for_generalizable.md)
-- [\[CVPR 2026\] Bypassing the Transport Plan: Dynamic Reweighting for Out-of-Distribution Detection with Optimal Transport](bypassing_the_transport_plan_dynamic_reweighting_for_out-of-distribution_detecti.md)
+- [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
+- [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
+- [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
 
 </div>
 

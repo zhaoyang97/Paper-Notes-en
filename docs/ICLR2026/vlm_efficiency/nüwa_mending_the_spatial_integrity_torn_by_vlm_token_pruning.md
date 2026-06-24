@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Nüwa: Mending the Spatial Integrity Torn by VLM Token Pruning
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] This paper discovers that existing visual token pruning methods collapse on visual grounding (VG) tasks because they destroy the "global spatial reference system" constructed by positional encodings. Consequently, it proposes Nüwa—a two-stage pruning framework inspired by swarm intelligence (Boids) that employs a "Part
+  [ICLR 2026][Multimodal Efficiency][Visual Token Pruning] This paper discovers that existing visual token pruning methods collapse on visual grounding (VG) tasks because they destroy the "global spatial reference system" constructed by positional encodings. Consequently, it proposes Nüwa—a two-stage pruning framework inspired by swarm intelligence (Boids) that employs a "Partition-Align-Aggregate" strategy on the vision encoder side to preserve spatial anchors…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Visual Token Pruning"
+  - "Visual Grounding"
+  - "Spatial Integrity"
+  - "Swarm Intelligence"
+  - "Two-stage Pruning"
 date: 2026-05-08
-content_hash: 507249e4dd32b6e2
+content_hash: d9e0d4ea07b37e2d
 ---
+
 # Nüwa: Mending the Spatial Integrity Torn by VLM Token Pruning
 
 **Conference**: ICLR 2026  
@@ -149,15 +155,16 @@ Key component ablation (Table 8, ✔=Enabled):
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the failure of current pruning in grounding tasks; training-free and efficient with high practical value.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](../../CVPR2026/vlm_efficiency/vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
-- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
 - [\[ICLR 2026\] LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models](learnpruner_rethinking_attention-based_token_pruning_in_vision_language_models.md)
+- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
 - [\[ICLR 2026\] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding](enhancing_visual_token_representations_for_video_large_language_models_via_train.md)
-- [\[ICLR 2026\] HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit](hidrop_hierarchical_vision_token_reduction_in_mllms_via_late_injection_concave_p.md)
+- [\[ICLR 2026\] SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration](sp-vla_a_joint_model_scheduling_and_token_pruning_approach_for_vla_model_acceler.md)
 
 </div>
 

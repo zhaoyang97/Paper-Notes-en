@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation
 description: >-
-  [CVPR 2026][Image Generation][Sketch Colourisation] SketchDeco is proposed as a training-free sketch colorization method. It employs a global-local two-stage strategy using region masks and color palettes as precise control signals. By utilizing diffusion model inversion and self-attention injection, it achieves precise regional coloring and harmonious global transition
+  [CVPR 2026][Image Generation][Sketch Colourisation] SketchDeco is proposed as a training-free sketch colorization method. It employs a global-local two-stage strategy using region masks and color palettes as precise control signals. By utilizing diffusion model inversion and self-attention injection, it achieves precise regional coloring and harmonious global transitions in latent space, completing in 15-20 steps on consumer-grade GPUs.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Sketch Colourisation
-  - Diffusion Models
-  - training-free
-  - Latent Composition
-  - Self-Attention Injection
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Sketch Colourisation"
+  - "Diffusion Models"
+  - "training-free"
+  - "Latent Composition"
+  - "Self-Attention Injection"
 date: 2026-05-08
-content_hash: 8544fee9e9cf00e3
+content_hash: 6a10e1718e227d22
 ---
+
 # SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation
 
 **Conference**: CVPR 2026  
@@ -160,11 +161,11 @@ This method is entirely training-free. All components are based on pre-trained S
 
 ## Related Papers
 
-- [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
 - [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
-- [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
-- [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](dpcache_denoising_path_planning_diffusion_accel.md)
-- [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
+- [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
+- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
+- [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
+- [\[ICCV 2025\] LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering](../../ICCV2025/image_generation/larender_training-free_occlusion_control_in_image_generation_via_latent_renderin.md)
 
 </div>
 

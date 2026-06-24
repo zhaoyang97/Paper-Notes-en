@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation
 description: >-
-  [AAAI 2026][Video Understanding][emotion video dataset] This paper presents EmoVid, the first large-scale multimodal emotion video dataset targeting artistic and non-photorealistic content (22,758 video clips)…
+  [AAAI 2026 Oral][Video Understanding][emotion video dataset] This paper presents EmoVid, the first large-scale multimodal emotion video dataset targeting artistic and non-photorealistic content (22,758 video clips), spanning three content types—animation, film, and emoji stickers—and demonstrates the effectiveness of emotion-conditioned video generation by fine-tuning the Wan2.1 model, achieving significant improvements over baselines on emotion accuracy metrics.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Video Understanding"
   - "emotion video dataset"
   - "video generation"
@@ -12,7 +12,7 @@ tags:
   - "text-to-video"
   - "affective computing"
 date: 2026-05-08
-content_hash: 92a2cde836dcae5f
+content_hash: bc4155618de1cd59
 ---
 
 # EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation
@@ -151,11 +151,11 @@ EmoVid's construction and application consists of three components:
 
 ## Related Papers
 
-- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](../../CVPR2026/video_understanding/openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
+- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](../../CVPR2026/video_understanding/dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation](../../CVPR2026/video_understanding/autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio.md)
 - [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](state-space_hierarchical_compression_with_gated_attention_an.md)
-- [\[ACL 2026\] TRACE: Evidence Localization-based Multi-Video Event Understanding and Statement Generation](../../ACL2026/video_understanding/trace_evidence_grounding-guided_multi-video_event_understanding_and_claim_genera.md)
-- [\[AAAI 2026\] Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective](rethinking_progression_of_memory_state_in_robotic_manipulation_an_object-centric.md)
-- [\[ACL 2026\] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding](../../ACL2026/video_understanding/dualfact_a_multimodal_fact_verification_framework_for_procedural_video_understan.md)
+- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](../../CVPR2026/video_understanding/openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
+- [\[ICLR 2026\] VUDG: A Dataset for Video Understanding Domain Generalization](../../ICLR2026/video_understanding/vudg_a_dataset_for_video_understanding_domain_generalization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] We-Math 2.0: A Versatile MathBook System for Incentivizing Visual Mathematical Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][GRPO] We-Math 2.0 integrates a five-level "Mathematical Knowledge System" (491 knowledge points, 1,819 principles) with a model-centric three-dimensional difficulty data space (MathBook-Standard/Pro) and a two-stage reinforcement learning framework (cold-start SFT + progressive alignment RL). Using only ~9.8K training sample
+  [ICLR 2026][VLM Reasoning][Visual Mathematical Reasoning] We-Math 2.0 integrates a five-level "Mathematical Knowledge System" (491 knowledge points, 1,819 principles) with a model-centric three-dimensional difficulty data space (MathBook-Standard/Pro) and a two-stage reinforcement learning framework (cold-start SFT + progressive alignment RL). Using only ~9.8K training samples, it improves Qwen2.5-VL-7B by an average of 6.1 points across four major visual math benchmarks.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Mathematical Reasoning"
+  - "Knowledge System"
+  - "Difficulty Modeling"
+  - "Curriculum Reinforcement Learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 37b74a9118becedf
+content_hash: 43689f02ea3d7b7f
 ---
+
 # We-Math 2.0: A Versatile MathBook System for Incentivizing Visual Mathematical Reasoning
 
 **Conference**: ICLR 2026  
@@ -142,9 +147,9 @@ Ablation across training stages (MVt=MathVista, MVs=MathVision, WM=We-Math):
 
 - [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](../../CVPR2026/vlm_reasoning/incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
 - [\[ICLR 2026\] GIR-Bench: Versatile Benchmark for Generating Images with Reasoning](gir-bench_versatile_benchmark_for_generating_images_with_reasoning.md)
-- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
+- [\[ACL 2025\] We-Math: Does Your Large Multimodal Model Achieve Human-like Mathematical Reasoning?](../../ACL2025/vlm_reasoning/wemath_knowledge_reasoning.md)
 - [\[ICLR 2026\] Math Blind: Failures in Diagram Understanding Undermine Reasoning in MLLMs](math_blind_failures_in_diagram_understanding_undermine_reasoning_in_mllms.md)
-- [\[ICLR 2026\] MathNet: A Global Multimodal Benchmark for Mathematical Reasoning and Retrieval](mathnet_a_global_multimodal_benchmark_for_mathematical_reasoning_and_retrieval.md)
+- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
 
 </div>
 

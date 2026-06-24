@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Experience-based Knowledge Correction for Robust Planning in Minecraft
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][LLM planning] The study demonstrates that LLMs cannot self-correct erroneous planning priors (item dependencies) through prompting alone. It proposes XENON—an algorithmic knowledge management system (Adaptive Dependency Graph ADG + Failure-aware Action Memory FAM) that learns from binary feedback, enabling a 7B LLM to outperform SOT
+  [ICLR 2026][Robotics][LLM planning] The study demonstrates that LLMs cannot self-correct erroneous planning priors (item dependencies) through prompting alone. It proposes XENON—an algorithmic knowledge management system (Adaptive Dependency Graph ADG + Failure-aware Action Memory FAM) that learns from binary feedback, enabling a 7B LLM to outperform SOTA methods using GPT-4V + oracle knowledge in long-term Minecraft planning.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - LLM planning
-  - knowledge correction
-  - Minecraft
-  - embodied agent
-  - self-correction failure
+  - "ICLR 2026"
+  - "Robotics"
+  - "LLM planning"
+  - "knowledge correction"
+  - "Minecraft"
+  - "embodied agent"
+  - "self-correction failure"
 date: 2026-05-08
-content_hash: bca8e1b6d01033ec
+content_hash: 9c8f7741a5775382
 ---
+
 # Experience-based Knowledge Correction for Robust Planning in Minecraft
 
 **Conference**: ICLR 2026  
@@ -127,9 +128,9 @@ XENON relies on imperfect low-level controllers like STEVE-1, which often get st
 
 - [\[ICLR 2026\] ReCAPA: Hierarchical Predictive Correction to Mitigate Cascading Failures](recapa_hierarchical_predictive_correction_to_mitigate_cascading_failures.md)
 - [\[ICML 2026\] R2R2: Robust Representation for Intensive Experience Reuse via Redundancy Reduction in Self-Predictive Learning](../../ICML2026/robotics/r2r2_robust_representation_for_intensive_experience_reuse_via_redundancy_reducti.md)
+- [\[ICLR 2026\] Scaling up Memory for Robotic Control via Experience Retrieval](scaling_up_memory_for_robotic_control_via_experience_retrieval.md)
 - [\[ICCV 2025\] Interaction-Merged Motion Planning: Effectively Leveraging Diverse Motion Datasets for Robust Planning](../../ICCV2025/robotics/interaction-merged_motion_planning_effectively_leveraging_diverse_motion_dataset.md)
-- [\[ICLR 2026\] Planning with an Embodied Learnable Memory](planning_with_an_embodied_learnable_memory.md)
-- [\[CVPR 2026\] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning](../../CVPR2026/robotics/agile_learning_robust_long-horizon_manipulation_via_affordance-grounded_bidirect.md)
+- [\[ICLR 2026\] RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks](robopara_dual-arm_robot_planning_with_parallel_allocation_and_recomposition_acro.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][Neural PDE Solver] This paper proposes PhysicsCorrect, a training-free correction framework that models PDE residual correction as a linearized inverse problem and precomputes…
+  [AAAI 2026 Oral][Physics & Scientific Computing][Neural PDE Solver] This paper proposes PhysicsCorrect, a training-free correction framework that models PDE residual correction as a linearized inverse problem and precomputes a cached pseudoinverse. At inference time, it achieves up to 100× error reduction with less than 5% computational overhead, and is applicable to arbitrary pretrained neural operators including FNO, UNet, and ViT.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Physics & Scientific Computing"
   - "Neural PDE Solver"
   - "Error Accumulation"
@@ -12,7 +12,7 @@ tags:
   - "Training-Free"
   - "Jacobian Caching"
 date: 2026-05-08
-content_hash: f42c69ed0ae64d14
+content_hash: 870f01ca18194f41
 ---
 
 # PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations
@@ -119,10 +119,10 @@ No training is required. Theoretical guarantee: under the relaxed update $u^c = 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](../../NeurIPS2025/physics/enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
-- [\[CVPR 2026\] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training](../../CVPR2026/physics/nestor_a_nested_moe-based_neural_operator_for_large-scale_pde_pre-training.md)
 - [\[ICML 2026\] Unbiased and Second-Order-Free Training for High-Dimensional PDEs](../../ICML2026/physics/unbiased_and_second-order-free_training_for_high-dimensional_pdes.md)
 - [\[NeurIPS 2025\] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale](../../NeurIPS2025/physics/eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca.md)
-- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
+- [\[ICLR 2026\] A Function-Centric Graph Neural Network Approach for Predicting Electron Densities](../../ICLR2026/physics/a_function-centric_graph_neural_network_approach_for_predicting_electron_densiti.md)
+- [\[ICLR 2026\] Incomplete Data, Complete Dynamics: A Diffusion Approach](../../ICLR2026/physics/incomplete_data_complete_dynamics_a_diffusion_approach.md)
 
 </div>
 

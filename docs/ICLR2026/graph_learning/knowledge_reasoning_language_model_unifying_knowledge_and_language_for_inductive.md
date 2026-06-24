@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning
 description: >-
-  [ICLR 2026][Graph Learning][LLM] KRLM unifies Knowledge Graph (KG) structural representations and LLM internal knowledge into a "Knowledge Reasoning Language" (KRL). Through a KRL tokenizer, a KRL attention layer with knowledge memory, and a structure-aware next-entity predictor, it suppresses "knowledge distortion" caused by sparse KG contexts and ou
+  [ICLR 2026][Graph Learning][Inductive Knowledge Graph Reasoning] KRLM unifies Knowledge Graph (KG) structural representations and LLM internal knowledge into a "Knowledge Reasoning Language" (KRL). Through a KRL tokenizer, a KRL attention layer with knowledge memory, and a structure-aware next-entity predictor, it suppresses "knowledge distortion" caused by sparse KG contexts and out-of-scope hallucinations in inductive KGR tasks.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - LLM
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Inductive Knowledge Graph Reasoning"
+  - "Knowledge Graph Foundation Models"
+  - "LLM"
+  - "Knowledge Distortion"
+  - "Knowledge Mutual Distillation"
 date: 2026-05-08
-content_hash: a2f6adaf6d75a4b4
+content_hash: 0d3dd30d7eb00956
 ---
+
 # Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning
 
 **Conference**: ICLR 2026  

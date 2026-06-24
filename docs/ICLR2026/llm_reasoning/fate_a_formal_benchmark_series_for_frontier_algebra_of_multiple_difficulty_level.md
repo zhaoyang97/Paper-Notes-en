@@ -2,15 +2,22 @@
 title: >-
   [Paper Note] FATE: A Formal Benchmark Series for Frontier Algebra of Multiple Difficulty Levels
 description: >-
-  [ICLR 2026][LLM Reasoning][Lean] FATE is a series of Lean formalization benchmarks for **research-level abstract and commutative algebra**. By utilizing three difficulty levels—FATE-M/H/X (ranging from undergraduate exercises to beyond Ph.D. qualifying exams)—it pushes current top models to their limits: the best models achieve only 3% on FATE-H and 0
+  [ICLR 2026][Reasoning][Formal Proof] FATE is a series of Lean formalization benchmarks for **research-level abstract and commutative algebra**. By utilizing three difficulty levels—FATE-M/H/X (ranging from undergraduate exercises to beyond Ph.D. qualifying exams)—it pushes current top models to their limits: the best models achieve only 3% on FATE-H and 0% on FATE-X. Through a two-stage decomposition of "Natural Language Reasoning + Formalization…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Lean
-  - Mathlib
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Formal Proof"
+  - "Lean"
+  - "Mathlib"
+  - "Abstract Algebra"
+  - "Commutative Algebra"
+  - "Difficulty Grading"
+  - "Autoformalization"
+  - "LLM Reasoning"
 date: 2026-05-08
-content_hash: 8737e04f35883b8e
+content_hash: ac9a93835b1b1faa
 ---
+
 # FATE: A Formal Benchmark Series for Frontier Algebra of Multiple Difficulty Levels
 
 **Conference**: ICLR 2026  
@@ -133,15 +140,16 @@ Formalization error statistics on FATE-H (denominator is the number of proofs ju
 - **Value**: ⭐⭐⭐⭐⭐ Established a true research-level checkpoint for formal reasoning; error analysis points to actionable improvements like RAG and decoupled architectures, offering directional value to the ATP community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)
+- [\[ICLR 2026\] Let's Explore Step by Step: Generating Provable Formal Statements with Deductive Exploration](lets_explore_step_by_step_generating_provable_formal_statements_with_deductive_e.md)
 - [\[ICLR 2026\] Hilbert: Recursively Building Formal Proofs with Informal Reasoning](hilbert_recursively_building_formal_proofs_with_informal_reasoning.md)
 - [\[ICLR 2026\] On The Fragility of Benchmark Contamination Detection in Reasoning Models](on_the_fragility_of_benchmark_contamination_detection_in_reasoning_models.md)
-- [\[ICLR 2026\] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](neural_theorem_proving_for_verification_conditions_a_real-world_benchmark.md)
-- [\[ICLR 2026\] Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation](harder_is_better_boosting_mathematical_reasoning_via_difficulty-aware_grpo_and_m.md)
+- [\[ICLR 2026\] The Quest for Efficient Reasoning: A Data-Centric Benchmark to CoT Distillation](the_quest_for_efficient_reasoning_a_data-centric_benchmark_to_cot_distillation.md)
 
 </div>
 

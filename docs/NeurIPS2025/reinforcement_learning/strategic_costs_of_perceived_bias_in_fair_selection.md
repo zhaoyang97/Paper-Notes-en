@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Strategic Costs of Perceived Bias in Fair Selection
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][fair selection] This paper employs a game-theoretic model to reveal a "perception-driven bias" mechanism: in purely merit-based selection systems…
+  [NeurIPS 2025][Reinforcement Learning][fair selection] This paper employs a game-theoretic model to reveal a "perception-driven bias" mechanism: in purely merit-based selection systems, inter-group differences in perceived post-selection value lead to rational effort disparities, thereby systematically propagating inequality within ostensibly fair processes.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "perceived bias"
   - "social welfare"
 date: 2026-05-08
-content_hash: 7f39c612154d7c5f
+content_hash: 4da5f44bba3543e9
 ---
 
 # Strategic Costs of Perceived Bias in Fair Selection
@@ -164,9 +164,9 @@ Improving the value perception of the lower-perception group is the most effecti
 
 - [\[NeurIPS 2025\] Inverse Optimization Latent Variable Models for Learning Costs Applied to Route Problems](inverse_optimization_latent_variable_models_for_learning_costs_applied_to_route_.md)
 - [\[ICLR 2026\] Towards Strategic Persuasion with Language Models](../../ICLR2026/reinforcement_learning/towards_strategic_persuasion_with_language_models.md)
-- [\[ICLR 2026\] RebuttalAgent: Strategic Persuasion in Academic Rebuttal via Theory of Mind](../../ICLR2026/reinforcement_learning/rebuttalagent_strategic_persuasion_in_academic_rebuttal_via_theory_of_mind.md)
-- [\[ICCV 2025\] RL-Selector: Reinforcement Learning-Guided Data Selection via Redundancy Assessment](../../ICCV2025/reinforcement_learning/reinforcement_learning-guided_data_selection_via_redundancy_assessment.md)
-- [\[ICCV 2025\] mDP3: A Training-free Approach for List-wise Frame Selection in Video-LLMs](../../ICCV2025/reinforcement_learning/mdp3_a_training-free_approach_for_list-wise_frame_selection_in_video-llms.md)
+- [\[ICML 2025\] Controlling Underestimation Bias in Constrained Reinforcement Learning for Safe Exploration](../../ICML2025/reinforcement_learning/controlling_underestimation_bias_in_constrained_reinforcement_learning_for_safe_.md)
+- [\[ICLR 2026\] ReTool: Reinforcement Learning for Strategic Tool Use in LLMs](../../ICLR2026/reinforcement_learning/retool_reinforcement_learning_for_strategic_tool_use_in_llms.md)
+- [\[ICML 2025\] The Sample Complexity of Online Strategic Decision Making with Information Asymmetry and Knowledge Transportability](../../ICML2025/reinforcement_learning/the_sample_complexity_of_online_strategic_decision_making_with_information_asymm.md)
 
 </div>
 

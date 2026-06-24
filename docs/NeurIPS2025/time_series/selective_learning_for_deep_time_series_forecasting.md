@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Selective Learning for Deep Time Series Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][time series forecasting] This paper proposes a Selective Learning strategy that employs a dual-mask mechanism—comprising an uncertainty mask and an anomaly mask—to identify generalizable time…
+  [NeurIPS 2025][Time Series][time series forecasting] This paper proposes a Selective Learning strategy that employs a dual-mask mechanism—comprising an uncertainty mask and an anomaly mask—to identify generalizable time steps for MSE loss computation. The approach achieves an average MSE reduction of 37.4% for Informer, 8.4% for TimesNet, and 6.5% for iTransformer across 8 benchmark datasets.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "uncertainty"
   - "anomaly detection"
 date: 2026-05-08
-content_hash: 7bf123c503361332
+content_hash: 918af2e3c7faa93d
 ---
 
 # Selective Learning for Deep Time Series Forecasting

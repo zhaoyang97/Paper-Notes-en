@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Generating Effective CoT Traces for Mitigating Causal Hallucination
 description: >-
-  [ACL 2026][Hallucination Detection][Chain-of-Thought] This paper proposes the Causal Hallucination Rate (CHR) metric to quantify the tendency of small LLMs to over-predict causal relationships in Event Causality Identification. Through systematic experiments, two key criteria for effective CoT data are identified (sufficient semantic explanation length + distribution alig
+  [ACL 2026][Hallucination Detection][Causal Hallucination] This paper proposes the Causal Hallucination Rate (CHR) metric to quantify the tendency of small LLMs to over-predict causal relationships in Event Causality Identification. Through systematic experiments, two key criteria for effective CoT data are identified (sufficient semantic explanation length + distribution alignment with the target model). A low-cost CoT data generation pipeline is designed…
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Chain-of-Thought
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Causal Hallucination"
+  - "Chain-of-Thought"
+  - "Event Causality Identification"
+  - "Small Model Fine-tuning"
+  - "Data Generation"
 date: 2026-05-08
-content_hash: 1ffb5d8114b5ad15
+content_hash: d8546c49cf6fc55c
 ---
+
 # Generating Effective CoT Traces for Mitigating Causal Hallucination
 
 **Conference**: ACL 2026  
@@ -133,8 +138,8 @@ LoRA fine-tuning is performed using the SFTTrainer from the TRL framework: batch
 - [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](../../NeurIPS2025/hallucination/causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
 - [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
 - [\[CVPR 2025\] Seeing Far and Clearly: Mitigating Hallucinations in MLLMs with Attention Causal Decoding](../../CVPR2025/hallucination/seeing_far_and_clearly_mitigating_hallucinations_in_mllms_with_attention_causal_.md)
+- [\[CVPR 2026\] COPO: Causal-Oriented Policy Optimization for Hallucinations of MLLMs](../../CVPR2026/hallucination/copo_causal-oriented_policy_optimization_for_hallucinations_of_mllms.md)
 - [\[ACL 2026\] Stable-RAG: Mitigating Retrieval-Permutation-Induced Hallucinations in Retrieval-Augmented Generation](stable-rag_mitigating_retrieval-permutation-induced_hallucinations_in_retrieval-.md)
-- [\[ACL 2026\] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate](dialectic-med_mitigating_diagnostic_hallucinations_via_counterfactual_adversaria.md)
 
 </div>
 

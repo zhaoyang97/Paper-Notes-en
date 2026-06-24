@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Heads to Neurons: Causal Attribution and Steering in Multi-Task Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] The HONES framework is proposed to achieve unified, gradient-free neuron-level causal analysis across heterogeneous tasks and lightweight performance enhancement in multi-task VLMs by first locating task-critical attention heads and then guiding FFN neuron attribution conditioned on those heads.
+  [ACL 2026 Findings][Multimodal VLM][Neuron Attribution] The HONES framework is proposed to achieve unified, gradient-free neuron-level causal analysis across heterogeneous tasks and lightweight performance enhancement in multi-task VLMs by first locating task-critical attention heads and then guiding FFN neuron attribution conditioned on those heads.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Neuron Attribution"
+  - "Causal Analysis"
+  - "Multi-task VLM"
+  - "Attention Heads"
+  - "Model Interpretability"
 date: 2026-05-08
-content_hash: 53e496a846210f92
+content_hash: 50cdf4945aa6b8ca
 ---
+
 # From Heads to Neurons: Causal Attribution and Steering in Multi-Task Vision-Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -134,9 +140,9 @@ The discovery phase uses a discovery split of 7K images. The steering phase util
 
 - [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](../../CVPR2026/multimodal_vlm/understanding_task_transfer_in_vision-language_models.md)
 - [\[CVPR 2026\] BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models](../../CVPR2026/multimodal_vlm/biomedccpl_causal_conditional_prompt_learning_for_biomedical_vision-language_mod.md)
+- [\[ICLR 2026\] Rethinking Causal Mask Attention for Vision-Language Inference](../../ICLR2026/multimodal_vlm/rethinking_causal_mask_attention_for_vision-language_inference.md)
 - [\[ICML 2025\] Learning Invariant Causal Mechanism from Vision-Language Models](../../ICML2025/multimodal_vlm/learning_invariant_causal_mechanism_from_vision-language_models.md)
 - [\[CVPR 2026\] LVLM-Aided Alignment of Task-Specific Vision Models](../../CVPR2026/multimodal_vlm/lvlm-aided_alignment_of_task-specific_vision_models.md)
-- [\[CVPR 2025\] Task Preference Optimization: Improving Multimodal Large Language Models with Vision Task Alignment](../../CVPR2025/multimodal_vlm/task_preference_optimization_improving_multimodal_large_language_models_with_vis.md)
 
 </div>
 

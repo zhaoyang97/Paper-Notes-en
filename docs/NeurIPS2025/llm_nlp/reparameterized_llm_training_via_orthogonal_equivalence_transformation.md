@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Reparameterized LLM Training via Orthogonal Equivalence Transformation
 description: >-
-  [NeurIPS 2025][LLM/NLP][reparameterized training] This paper proposes POET, a training framework that reparameterizes weight matrices as the product of two learnable orthogonal matrices and a fixed random weight matrix…
+  [NeurIPS 2025][LLM (Other)][reparameterized training] This paper proposes POET, a training framework that reparameterizes weight matrices as the product of two learnable orthogonal matrices and a fixed random weight matrix, thereby preserving spectral properties throughout training to achieve more stable optimization and improved generalization with fewer trainable parameters than AdamW.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "reparameterized training"
   - "orthogonal transformation"
   - "spectrum preservation"
   - "LLM pretraining"
   - "efficient training"
 date: 2026-05-08
-content_hash: a708e5c8fa51133c
+content_hash: a8d39af8ca5e2fea
 ---
 
 # Reparameterized LLM Training via Orthogonal Equivalence Transformation
@@ -179,10 +179,10 @@ Models pretrained with POET consistently outperform AdamW-pretrained baselines a
 ## Related Papers
 
 - [\[NeurIPS 2025\] Q♯: Provably Optimal Distributional RL for LLM Post-Training](qsharp_provably_optimal_distributional_rl_for_llm_post-training.md)
-- [\[NeurIPS 2025\] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs](speculate_deep_and_accurate_lossless_and_training-free_acceleration_for_offloade.md)
-- [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](../../ICLR2026/llm_nlp/pt2-llm_post-training_ternarization_for_large_language_models.md)
-- [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
-- [\[NeurIPS 2025\] MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery](moose-chem2_exploring_llm_limits_in_fine-grained_scientific_hypothesis_discovery.md)
+- [\[ICML 2025\] LASER: Attention with Exponential Transformation](../../ICML2025/llm_nlp/laser_attention_with_exponential_transformation.md)
+- [\[ACL 2025\] Understanding Silent Data Corruption in LLM Training](../../ACL2025/llm_nlp/understanding_silent_data_corruption_in_llm_training.md)
+- [\[ICML 2025\] Interchangeable Token Embeddings for Extendable Vocabulary and Alpha-Equivalence](../../ICML2025/llm_nlp/interchangeable_token_embeddings_for_extendable_vocabulary_and_alpha-equivalence.md)
+- [\[ACL 2025\] Training-free LLM Merging for Multi-task Learning](../../ACL2025/llm_nlp/training-free_llm_merging_for_multi-task_learning.md)
 
 </div>
 

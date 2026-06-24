@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SR-Scientist: Scientific Equation Discovery With Agentic AI
 description: >-
-  [ICLR 2026][LLM Agent][symbolic regression] Ours proposes the SR-Scientist framework, elevating LLMs from simple equation proposers to autonomous AI scientists. By utilizing code interpreter tools for data analysis and equation evaluation, the agent autonomously discovers scientific equations through long-horizon interactions, with capabilities further enhanced
+  [ICLR 2026][LLM Agent][symbolic regression] Ours proposes the SR-Scientist framework, elevating LLMs from simple equation proposers to autonomous AI scientists. By utilizing code interpreter tools for data analysis and equation evaluation, the agent autonomously discovers scientific equations through long-horizon interactions, with capabilities further enhanced via reinforcement learning.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - symbolic regression
-  - agentic AI
-  - equation discovery
-  - reinforcement-learning
-  - scientific discovery
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "symbolic regression"
+  - "agentic AI"
+  - "equation discovery"
+  - "reinforcement-learning"
+  - "scientific discovery"
 date: 2026-05-08
-content_hash: 5baf65e97f38c9d7
+content_hash: ef15f5c27414449e
 ---
+
 # SR-Scientist: Scientific Equation Discovery With Agentic AI
 
 **Conference**: ICLR 2026  
@@ -150,16 +151,16 @@ Ablation analysis indicates that:
 - **Overall**: ⭐⭐⭐⭐ (4/5)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
+- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
 - [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](tusoai_agentic_optimization_for_scientific_methods.md)
-- [\[ACL 2026\] MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery](../../ACL2026/llm_agent/moose-copilot_a_web-based_interactive_assistant_for_unified_exploratory_and_fine.md)
 - [\[ICML 2025\] Evaluating Retrieval-Augmented Generation Agents for Autonomous Scientific Discovery in Astrophysics](../../ICML2025/llm_agent/evaluating_retrieval-augmented_generation_agents_for_autonomous_scientific_disco.md)
+- [\[ICLR 2026\] ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows](scienceboard_evaluating_multimodal_autonomous_agents_in_realistic_scientific_wor.md)
 
 </div>
 

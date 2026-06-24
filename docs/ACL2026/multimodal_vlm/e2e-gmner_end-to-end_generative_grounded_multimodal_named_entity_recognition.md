@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] Ours proposes E2E-GMNER, the first end-to-end GMNER framework that unifies entity recognition, semantic classification, visual grounding, and implicit knowledge reasoning within a single multimodal large language model. This framework adaptively determines the availability of visual/knowledge cues through CoT reasoning
+  [ACL 2026 Findings][Multimodal VLM][Multimodal Named Entity Recognition] Ours proposes E2E-GMNER, the first end-to-end GMNER framework that unifies entity recognition, semantic classification, visual grounding, and implicit knowledge reasoning within a single multimodal large language model. This framework adaptively determines the availability of visual/knowledge cues through CoT reasoning and introduces Gaussian Risk-aware Box Perturbation (GRBP) to enhance the robustness o…
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Multimodal Named Entity Recognition"
+  - "End-to-End Generation"
+  - "Visual Grounding"
+  - "Gaussian Perturbation"
+  - "CoT Reasoning"
 date: 2026-05-08
-content_hash: 45248db01846566c
+content_hash: 4147c404bb70e168
 ---
+
 # E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition
 
 **Conference**: ACL 2026 Findings  
@@ -138,9 +144,9 @@ On the Twitter-GMNER and Twitter-FMNERG benchmarks:
 ## Related Papers
 
 - [\[CVPR 2026\] MarkushGrapher-2: End-to-end Multimodal Recognition of Chemical Structures](../../CVPR2026/multimodal_vlm/markushgrapher-2_end-to-end_multimodal_recognition_of_chemical_structures.md)
-- [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
 - [\[AAAI 2026\] SpeakerLM: End-to-End Versatile Speaker Diarization and Recognition with Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/speakerlm_end-to-end_versatile_speaker_diarization_and_recognition_with_multimod.md)
-- [\[CVPR 2026\] WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition](../../CVPR2026/multimodal_vlm/wikiclip_an_efficient_contrastive_baseline_for_open-domain_visual_entity_recogni.md)
+- [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
+- [\[ICLR 2026\] LEGATO: Large-scale End-to-end Generalizable Approach to Typeset OMR](../../ICLR2026/multimodal_vlm/legato_large-scale_end-to-end_generalizable_approach_to_typeset_omr.md)
 - [\[ACL 2026\] Towards Visually Grounded Multimodal Summarization via Cross-Modal Transformer and Gated Attention](towards_visually_grounded_multimodal_summarization_via_cross-modal_transformer_a.md)
 
 </div>

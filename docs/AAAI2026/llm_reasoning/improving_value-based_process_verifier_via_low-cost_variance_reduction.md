@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Improving Value-based Process Verifier via Low-Cost Variance Reduction
 description: >-
-  [AAAI 2026][LLM Reasoning][Process verifier] To address the high-variance issue in value-based process reward model (PRM) training caused by limited Monte Carlo (MC) samples…
+  [AAAI 2026][Reasoning][Process verifier] To address the high-variance issue in value-based process reward model (PRM) training caused by limited Monte Carlo (MC) samples, this paper proposes Compound Monte Carlo Sampling (ComMCS), which constructs an unbiased low-variance estimator by linearly combining MC estimates from the current step and subsequent steps. The method introduces no additional LLM inference overhead and achieves a 2.2-point improvement on MATH-500 under Best…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Process verifier"
   - "variance reduction"
   - "Monte Carlo sampling"
   - "mathematical reasoning"
   - "test-time scaling"
 date: 2026-05-08
-content_hash: 27faa95b0aa3e9a1
+content_hash: 2ba2705c7305e2f9
 ---
 
 # Improving Value-based Process Verifier via Low-Cost Variance Reduction
@@ -127,11 +127,11 @@ Consistent improvements are also observed on GSM8K.
 
 ## Related Papers
 
+- [\[ICLR 2026\] SCI-Verifier: Scientific Verifier with Thinking](../../ICLR2026/llm_reasoning/sci-verifier_scientific_verifier_with_thinking.md)
+- [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
 - [\[ACL 2026\] DVMap: Fine-Grained Pluralistic Value Alignment via High-Consensus Demographic-Value Mapping](../../ACL2026/llm_reasoning/dvmap_fine-grained_pluralistic_value_alignment_via_high-consensus_demographic-va.md)
 - [\[ICLR 2026\] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling](../../ICLR2026/llm_reasoning/overthinking_reduction_with_decoupled_rewards_and_curriculum_data_scheduling.md)
-- [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
-- [\[ICLR 2026\] CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling](../../ICLR2026/llm_reasoning/cyclicreflex_improving_reasoning_models_via_cyclical_reflection_token_scheduling.md)
-- [\[ICML 2026\] The Expressive Power of Low Precision Softmax Transformers with (Summarized) Chain-of-Thought](../../ICML2026/llm_reasoning/the_expressive_power_of_low_precision_softmax_transformers_with_summarized_chain.md)
+- [\[ICLR 2026\] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling](../../ICLR2026/llm_reasoning/roc-n-reroll_how_verifier_imperfection_affects_test-time_scaling.md)
 
 </div>
 

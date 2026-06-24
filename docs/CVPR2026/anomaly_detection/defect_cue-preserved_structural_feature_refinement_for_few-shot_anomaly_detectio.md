@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Defect Cue-Preserved Structural Feature Refinement for Few-Shot Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper identifies that the core difficulty in few-shot anomaly detection (FSAD) lies in the "dilution" of subtle defect cues layer-by-layer within deep feature extraction pipelines. It proposes DCP-SFR: first using learnable prompts to "amplify" early weak signals into high-contrast anomaly cue maps, then using the
+  [CVPR 2026][Anomaly Detection][Few-Shot Anomaly Detection] This paper identifies that the core difficulty in few-shot anomaly detection (FSAD) lies in the "dilution" of subtle defect cues layer-by-layer within deep feature extraction pipelines. It proposes DCP-SFR: first using learnable prompts to "amplify" early weak signals into high-contrast anomaly cue maps, then using these maps to guide reconstruction-based localization, and finally performing structural-aware boundary…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Anomaly Detection"
+  - "Few-Shot Anomaly Detection"
+  - "Defect Cue Fading"
+  - "Anomaly Cue Amplification"
+  - "Reconstruction-based Localization"
+  - "Edge Alignment"
 date: 2026-05-08
-content_hash: 2f789a77b6816f09
+content_hash: 172218084cd75b4e
 ---
+
 # Defect Cue-Preserved Structural Feature Refinement for Few-Shot Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Removing modules one-by-one under the VisA 1-shot setting (units in %):
 
 ## Related Papers
 
-- [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)
-- [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
-- [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
-- [\[ICLR 2026\] Dual Distillation for Few-Shot Anomaly Detection](../../ICLR2026/object_detection/dual_distillation_for_few-shot_anomaly_detection.md)
-- [\[CVPR 2026\] SFR-Net: Steering-Fusion-Refining Network in Multi-label Zero-Shot Sewer Defect Detection](sfr-net_steering-fusion-refining_network_in_multi-label_zero-shot_sewer_defect_d.md)
+- [\[ICLR 2026\] Foundation Visual Encoders Are Secretly Few-Shot Anomaly Detectors](../../ICLR2026/anomaly_detection/foundation_visual_encoders_are_secretly_few-shot_anomaly_detectors.md)
+- [\[ICLR 2026\] Let OOD Feature Exploring Vast Predefined Classifiers](../../ICLR2026/anomaly_detection/let_ood_feature_exploring_vast_predefined_classifiers.md)
+- [\[ICLR 2026\] MRAD: Zero-Shot Anomaly Detection with Memory-Driven Retrieval](../../ICLR2026/anomaly_detection/mrad_zero-shot_anomaly_detection_with_memory-driven_retrieval.md)
+- [\[CVPR 2026\] Anomaly-Related Residual Fields for Cross-domain Anomaly Detection](anomaly-related_residual_fields_for_cross-domain_anomaly_detection.md)
+- [\[CVPR 2026\] RAID: Retrieval-Augmented Anomaly Detection](raid_retrieval-augmented_anomaly_detection.md)
 
 </div>
 

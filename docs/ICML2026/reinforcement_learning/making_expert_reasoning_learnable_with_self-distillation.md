@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Making Expert Reasoning Learnable with Self-Distillation
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] DAIL utilizes a hybrid strategy rollout where "Teacher = itself with the expert solution + Student = itself without the expert solution" to rewrite fewer than 1,000 expert trajectories into reasoning chains aligned with the student's policy distribution. It then employs a contrastive loss to suppress high-probability s
+  [ICML 2026][Reinforcement Learning][Expert Trajectories] DAIL utilizes a hybrid strategy rollout where "Teacher = itself with the expert solution + Student = itself without the expert solution" to rewrite fewer than 1,000 expert trajectories into reasoning chains aligned with the student's policy distribution. It then employs a contrastive loss to suppress high-probability shortcut tokens from a "negative reference model that only sees intermediate answers…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Expert Trajectories"
+  - "Self-distillation"
+  - "Contrastive Learning"
+  - "Distribution Alignment"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: b1488e5da8e0a145
+content_hash: 576965b7c44446fb
 ---
+
 # Making Expert Reasoning Learnable with Self-Distillation
 
 **Conference**: ICML 2026  
@@ -154,9 +160,9 @@ OOD Generalization (GPQA-Diamond, graduate-level Physics/Chemistry/Biology; 8 se
 
 - [\[ICML 2026\] EAPO: Enhancing Policy Optimization with On-Demand Expert Assistance](eapo_enhancing_policy_optimization_with_on-demand_expert_assistance.md)
 - [\[ICML 2025\] The Challenge of Teaching Reasoning to LLMs Without RL or Distillation](../../ICML2025/reinforcement_learning/the_challenge_of_teaching_reasoning_to_llms_without_rl_or_distillation.md)
+- [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](../../ICLR2026/reinforcement_learning/r-zero_self-evolving_reasoning_llm_from_zero_data.md)
 - [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
-- [\[ICML 2025\] Diving into Self-Evolving Training for Multimodal Reasoning](../../ICML2025/reinforcement_learning/diving_into_self-evolving_training_for_multimodal_reasoning.md)
-- [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
+- [\[ICML 2026\] The Shape of Reasoning: Topological Analysis of Reasoning Traces in Large Language Models](the_shape_of_reasoning_topological_analysis_of_reasoning_traces_in_large_languag.md)
 
 </div>
 

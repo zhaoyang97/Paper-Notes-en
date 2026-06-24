@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Fractional-Order Spiking Neural Network
 description: >-
-  [ICLR 2026][Others][Paper Note] This work replaces the first-order ODEs underlying the membrane potential evolution of spiking neurons with Caputo fractional-order ODEs. This endows neurons with an inherent "long memory" characterized by power-law decay, strictly generalizing the classical IF/LIF models (which recover the original models at $\alpha=1
+  [ICLR 2026][Spiking Neural Networks] This work replaces the first-order ODEs underlying the membrane potential evolution of spiking neurons with Caputo fractional-order ODEs. This endows neurons with an inherent "long memory" characterized by power-law decay, strictly generalizing the classical IF/LIF models (which recover the original models at $\alpha=1$). The approach achieves higher accuracy and stronger noise robustness in both neuromorphic vision and graph learning task…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Spiking Neural Networks"
+  - "Fractional Calculus"
+  - "Non-Markovian Dynamics"
+  - "Long-range Dependence"
+  - "Robustness"
 date: 2026-05-08
-content_hash: e09a16946b58297c
+content_hash: ed1b1dfb128ffba7
 ---
+
 # Fractional-Order Spiking Neural Network
 
 **Conference**: ICLR 2026  

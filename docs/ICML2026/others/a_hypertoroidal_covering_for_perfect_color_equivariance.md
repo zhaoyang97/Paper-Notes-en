@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] A Hypertoroidal Covering for Perfect Color Equivariance
 description: >-
-  [ICML 2026][Others][Paper Note] This paper uses a double-cover mapping to lift the interval-valued saturation and luminance in HSL space onto circle groups, constructing $\mathbb{T}^3$CEN. This enables the network to achieve precise color equivariance for hue, saturation, and luminance shifts, enhancing robustness in tasks such as color-shifted and m
+  [ICML2026][Color Equivariance] This paper uses a double-cover mapping to lift the interval-valued saturation and luminance in HSL space onto circle groups, constructing $\mathbb{T}^3$CEN. This enables the network to achieve precise color equivariance for hue, saturation, and luminance shifts, enhancing robustness in tasks such as color-shifted and medical imaging.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Color Equivariance"
+  - "Group Convolution"
+  - "Topological Covering"
+  - "HSL Color Space"
+  - "Out-of-Distribution Generalization"
 date: 2026-05-08
-content_hash: b35e780420e1ecc3
+content_hash: 042eeec25880dcdc
 ---
+
 # A Hypertoroidal Covering for Perfect Color Equivariance
 
 **Conference**: ICML2026  
@@ -138,7 +143,7 @@ The analysis focuses on lifting cardinality, whether color acts as a label signa
 - [\[NeurIPS 2025\] Equivariance by Contrast: Identifiable Equivariant Embeddings from Unlabeled Finite Group Actions](../../NeurIPS2025/others/equivariance_by_contrast_identifiable_equivariant_embeddings_from_unlabeled_fini.md)
 - [\[ECCV 2024\] Real-Data-Driven 2000 FPS Color Video from Mosaicked Chromatic Spikes](../../ECCV2024/others/real-data-driven_2000_fps_color_video_from_mosaicked_chromatic_spikes.md)
 - [\[ICML 2026\] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems](beyond_model_readiness_institutional_readiness_for_ai_deployment_in_public_syste.md)
-- [\[ICML 2026\] Comprehensive AI Governance Requires Addressing Non-Model Gains](comprehensive_ai_governance_requires_addressing_non-model_gains.md)
+- [\[ICML 2026\] Spatial Priors via Space Filling Curves for Small and Limited Data Vision Transformers](spatial_priors_via_space_filling_curves_for_small_and_limited_data_vision_transf.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures
 description: >-
-  [NeurIPS 2025][gradient flow] Using mathematical tools from o-minimal structures, this paper establishes a dichotomy for gradient flows in fully connected networks with common smooth activation functions (sigmoid, tanh…
+  [NeurIPS 2025][gradient flow] Using mathematical tools from o-minimal structures, this paper establishes a dichotomy for gradient flows in fully connected networks with common smooth activation functions (sigmoid, tanh, softplus, GELU, etc.): the flow either converges to a critical point or diverges to infinity with the loss converging to an asymptotic critical value. In particular, for polynomial target functions, the paper proves that the loss cannot be exactly zero but can…
 tags:
   - "NeurIPS 2025"
   - "gradient flow"
@@ -11,7 +11,7 @@ tags:
   - "SAD activation functions"
   - "asymptotic optimality"
 date: 2026-05-08
-content_hash: 42d22d7bcd69cf6a
+content_hash: b88faf88f23cc9f8
 ---
 
 # SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures
@@ -150,7 +150,7 @@ The theory applies to both empirical loss (finite datasets) and expected loss ov
 - [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
 - [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
 - [\[NeurIPS 2025\] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)
-- [\[NeurIPS 2025\] Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning](directional_non-commutative_monoidal_structures_for_compositional_embeddings_in_.md)
+- [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](../../ICLR2026/others/breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Gravitation-Driven Semantic Alignment for Text Video Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] GraviAlign analogies cross-modal semantic alignment to universal gravitation. It decomposes the alignment score between Gaussian embeddings of text/video into two orthogonal, closed-form factors: "Semantic Gravitation (Attraction)" and "Geometric Overlap." Each factor possesses independent veto power, consistently outp
+  [CVPR 2026][Multimodal VLM][Text-Video Retrieval] GraviAlign analogies cross-modal semantic alignment to universal gravitation. It decomposes the alignment score between Gaussian embeddings of text/video into two orthogonal, closed-form factors: "Semantic Gravitation (Attraction)" and "Geometric Overlap." Each factor possesses independent veto power, consistently outperforming the CLIP-ViP baseline by 1.6%~2.6% R@1 across three text-video retrieval benchmarks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Text-Video Retrieval"
+  - "Probabilistic Embedding"
+  - "Gaussian Distribution"
+  - "Semantic Gravitation"
+  - "Uncertainty Modeling"
 date: 2026-05-08
-content_hash: 578aa9e0a138fb40
+content_hash: 95d9bf9ade7ac2d2
 ---
+
 # Gravitation-Driven Semantic Alignment for Text Video Retrieval
 
 **Conference**: CVPR 2026  
@@ -158,10 +164,10 @@ Sensitivity analysis (Table 5) show that performance is stable across temperatur
 ## Related Papers
 
 - [\[CVPR 2026\] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval](eaglenet_energy-aware_fine-grained_relationship_learning_network_for_text-video_.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](language-driven_fine-grained_retrieval.md)
+- [\[CVPR 2026\] Quota-Calibrated Fine-Grained Alignment with Context-Aware Marginals for Text-based Person Retrieval](quota-calibrated_fine-grained_alignment_with_context-aware_marginals_for_text-ba.md)
 - [\[CVPR 2026\] Breaking Multimodal LLM Safety via Video-Driven Prompting](breaking_multimodal_llm_safety_via_video-driven_prompting.md)
 - [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
-- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
-- [\[CVPR 2026\] SMAP: Semantic Route Planning with Map-Grounded Multimodal Alignment](smap_semantic_route_planning_with_map-grounded_multimodal_alignment.md)
 
 </div>
 

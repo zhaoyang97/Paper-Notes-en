@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration
 description: >-
-  [AAAI 2026][LLM Safety][Privacy Protection] This paper proposes PRISM, a framework that dynamically routes user prompts to one of three inference modes—cloud-only, edge-only…
+  [AAAI 2026][LLM Safety][Privacy Protection] This paper proposes PRISM, a framework that dynamically routes user prompts to one of three inference modes—cloud-only, edge-only, or collaborative—via a context-aware soft gating mechanism. In the collaborative mode, an adaptive two-layer local differential privacy (LDP) scheme and semantic sketch collaboration are employed to achieve a three-way balance among privacy, utility, and efficiency.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Differential Privacy"
   - "Semantic Sketch"
 date: 2026-05-08
-content_hash: b219740b9c8e07bf
+content_hash: 440129634c858d06
 ---
 
 # PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration
@@ -192,10 +192,10 @@ All 8 cloud-edge model combinations maintain IQ ≥ 6.9 (except TinyLLaMA), demo
 ## Related Papers
 
 - [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](../../ACL2026/llm_safety/privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
-- [\[ICML 2026\] PipeSD: An Efficient Cloud-Edge Collaborative Pipeline Inference Framework with Speculative Decoding](../../ICML2026/llm_safety/pipesd_an_efficient_cloud-edge_collaborative_pipeline_inference_framework_with_s.md)
 - [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
-- [\[ICLR 2026\] Resource-Adaptive Federated Text Generation with Differential Privacy](../../ICLR2026/llm_safety/resource-adaptive_federated_text_generation_with_differential_privacy.md)
 - [\[NeurIPS 2025\] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing](../../NeurIPS2025/llm_safety/cryptomoe_privacy-preserving_and_scalable_mixture_of_experts_inference_via_balan.md)
+- [\[AAAI 2026\] RadarLLM: Empowering Large Language Models to Understand Human Motion from Millimeter-Wave Point Cloud Sequence](radarllm_empowering_large_language_models_to_understand_human_motion_from_millim.md)
+- [\[AAAI 2026\] SafeNlidb: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces](safenlidb_a_privacy-preserving_safety_alignment_framework_for_llm-based_natural_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors
 description: >-
-  [CVPR 2026][Object Detection][LoRA] AnomalyVFM proposes a general framework that transforms any Vision Foundation Model (VFM) into a robust zero-shot anomaly detector through a three-stage synthetic data generation scheme and a parameter-efficient LoRA adaptation mechanism. Using RADIO as the backbone, it achieves 94.1% image-level AUROC on 9 industrial
+  [CVPR 2026][Object Detection][Zero-shot Anomaly Detection] AnomalyVFM proposes a general framework that transforms any Vision Foundation Model (VFM) into a robust zero-shot anomaly detector through a three-stage synthetic data generation scheme and a parameter-efficient LoRA adaptation mechanism. Using RADIO as the backbone, it achieves 94.1% image-level AUROC on 9 industrial datasets, outperforming the SOTA by 3.3 percentage points.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - LoRA
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Zero-shot Anomaly Detection"
+  - "Vision Foundation Models"
+  - "Synthetic Data"
+  - "Parameter-Efficient Fine-Tuning"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 4239952b1bbfc09f
+content_hash: e912e542fd5ef531
 ---
+
 # AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors
 
 **Conference**: CVPR 2026  
@@ -137,7 +142,7 @@ where the base loss is $\mathcal{L}_{base} = \ell_1 + 5 \cdot \ell_{focal}$. The
 - [\[CVPR 2026\] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection](moeclip_patch-specialized_experts_for_zero-shot_anomaly_detection.md)
 - [\[ICLR 2026\] FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion](../../ICLR2026/object_detection/fsod-vfm_few-shot_object_detection_with_vision_foundation_models_and_graph_diffu.md)
 - [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
-- [\[ECCV 2024\] Can OOD Object Detectors Learn from Foundation Models?](../../ECCV2024/object_detection/can_ood_object_detectors_learn_from_foundation_models.md)
+- [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
 
 </div>
 

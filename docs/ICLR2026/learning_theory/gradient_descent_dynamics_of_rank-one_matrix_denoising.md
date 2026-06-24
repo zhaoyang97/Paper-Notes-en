@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Gradient Descent Dynamics of Rank-One Matrix Denoising
 description: >-
-  [ICLR 2026][learning_theory][spiked model] This paper provides a **closed-form deterministic approximation of the gradient descent learning trajectory in the rectangular (Wishart) rank-one matrix denoising problem** using high-dimensional random matrix theory. It proves the almost sure convergence of the inner product between the estimate and the ground truth,
+  [ICLR 2026][learning theory][matrix denoising] This paper provides a **closed-form deterministic approximation of the gradient descent learning trajectory in the rectangular (Wishart) rank-one matrix denoising problem** using high-dimensional random matrix theory. It proves the almost sure convergence of the inner product between the estimate and the ground truth, revealing an asymptotic limit corresponding to a signed BBP transition.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - spiked model
+  - "ICLR 2026"
+  - "learning theory"
+  - "high-dimensional statistics"
+  - "matrix denoising"
+  - "gradient descent dynamics"
+  - "random matrix theory"
+  - "BBP transition"
+  - "spiked model"
+  - "closed-form solution"
 date: 2026-05-08
-content_hash: dad69be048f17261
+content_hash: 5d3c7c94da9140a2
 ---
+
 # Gradient Descent Dynamics of Rank-One Matrix Denoising
 
 **Conference**: ICLR 2026  
@@ -103,10 +110,10 @@ flowchart LR
 ## Related Papers
 
 - [\[ICLR 2026\] Interactive Learning of Single-Index Models via Stochastic Gradient Descent](interactive_learning_of_single-index_models_via_stochastic_gradient_descent.md)
+- [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 - [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
+- [\[ICLR 2026\] Separable Neural Networks: Approximation Theory, NTK Regime, and Preconditioned Gradient Descent](separable_neural_networks_approximation_theory_ntk_regime_and_preconditioned_gra.md)
 - [\[ICLR 2026\] Computational Bottlenecks for Denoising Diffusions](computational_bottlenecks_for_denoising_diffusions.md)
-- [\[ICLR 2026\] On the Benefits of Weight Normalization for Overparameterized Matrix Sensing](on_the_benefits_of_weight_normalization_for_overparameterized_matrix_sensing.md)
-- [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Globscope: Toward a Global View of the Loss Landscape
 description: >-
-  [CVPR 2026][Optimization & Theory][merge tree] This work utilizes a **reversible autoencoder** to compress a set of independently trained networks (each flattened into a parameter vector) into a 2D latent space. A topological analysis (merge tree) is then performed on this latent space by treating "loss" as a scalar field. This provides the first global loss landsc
+  [CVPR 2026][Optimization][Loss landscape] This work utilizes a **reversible autoencoder** to compress a set of independently trained networks (each flattened into a parameter vector) into a 2D latent space. A topological analysis (merge tree) is then performed on this latent space by treating "loss" as a scalar field. This provides the first global loss landscape visualization capable of accommodating **multiple minima/basins and their connectivity**…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - merge tree
-  - mode connectivity
+  - "CVPR 2026"
+  - "Optimization"
+  - "Loss landscape"
+  - "global visualization"
+  - "autoencoder"
+  - "merge tree"
+  - "mode connectivity"
 date: 2026-05-08
-content_hash: fbe130c861da6fbe
+content_hash: f08bcce2fc948b8b
 ---
+
 # Globscope: Toward a Global View of the Loss Landscape
 
 **Conference**: CVPR 2026  
@@ -132,7 +136,7 @@ In contrast, Kernel-PCA fails to separate basins, and UMAP breaks internal geome
 
 ## Related Papers
 
-- [\[ICLR 2026\] Rolling Ball Optimizer: Learning by Ironing Out Loss Landscape Wrinkles](../../ICLR2026/optimization/rolling_ball_optimizer_learning_by_ironing_out_loss_landscape_wrinkles.md)
+- [\[ICLR 2026\] How does the optimizer implicitly bias the model merging loss landscape?](../../ICLR2026/optimization/how_does_the_optimizer_implicitly_bias_the_model_merging_loss_landscape.md)
 - [\[ICML 2026\] Sharp Description of Local Minima in the Loss Landscape of High-Dimensional Two-Layer ReLU Networks](../../ICML2026/optimization/sharp_description_of_local_minima_in_the_loss_landscape_of_high-dimensional_two-.md)
 - [\[ICML 2026\] Taming the Loss Landscape of PINNs with Noisy Feynman-Kac Supervision: Operator Preconditioning and Non-Asymptotic Error Bounds](../../ICML2026/optimization/taming_the_loss_landscape_of_pinns_with_noisy_feynman-kac_supervision_operator_p.md)
 - [\[NeurIPS 2025\] Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules](../../NeurIPS2025/optimization/gradient_descent_as_loss_landscape_navigation_a_normative_framework_for_deriving.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Thinking Beyond Labels: Vocabulary-Free Fine-Grained Recognition using Reasoning-Augmented LMMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] FiNDR utilizes a reasoning-augmented Large Multimodal Model (LMM) to directly "think of" fine-grained class names for unlabeled images. By employing CLIP for visual filtering and modality coupling to construct a classifier, it pushes vocabulary-free recognition to SOTA on 5 fine-grained datasets (avg. cACC +9.5%), even
+  [CVPR 2026][VLM Reasoning][Vocabulary-Free Fine-Grained Recognition] FiNDR utilizes a reasoning-augmented Large Multimodal Model (LMM) to directly "think of" fine-grained class names for unlabeled images. By employing CLIP for visual filtering and modality coupling to construct a classifier, it pushes vocabulary-free recognition to SOTA on 5 fine-grained datasets (avg. cACC +9.5%), even surpassing the zero-shot upper bound that uses "ground truth class names."
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Vocabulary-Free Fine-Grained Recognition"
+  - "Reasoning-Augmented LMM"
+  - "Dynamic Class Name Discovery"
+  - "Open-World Recognition"
+  - "CLIP Modality Coupling"
 date: 2026-05-08
-content_hash: 26686cbd7c74c1a5
+content_hash: ce5076c02418ad41
 ---
+
 # Thinking Beyond Labels: Vocabulary-Free Fine-Grained Recognition using Reasoning-Augmented LMMs
 
 **Conference**: CVPR 2026  
@@ -126,16 +132,16 @@ Meta-information consistently improves scores across all datasets, while expert 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
 - [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
 - [\[CVPR 2026\] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps](reasonmap_towards_fine-grained_visual_reasoning_from_transit_maps.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
 - [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
+- [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
 
 </div>
 

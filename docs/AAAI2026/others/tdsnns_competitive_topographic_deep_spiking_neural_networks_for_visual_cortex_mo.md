@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling
 description: >-
-  [AAAI 2026][Spiking Neural Networks] This paper proposes Topographic Deep Spiking Neural Networks (TDSNNs), which introduce a Spatiotemporal Constraint (STC) loss to successfully replicate the hierarchical topographic or…
+  [AAAI 2026 Oral][Spiking Neural Networks] This paper proposes Topographic Deep Spiking Neural Networks (TDSNNs), which introduce a Spatiotemporal Constraint (STC) loss to successfully replicate the hierarchical topographic organization of the primate visual cortex from V1 to IT in deep SNNs, achieving zero accuracy degradation on ImageNet (top-1) while substantially outperforming existing topographic ANNs in brain similarity.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Spiking Neural Networks"
   - "Topographic Organization"
   - "Visual Cortex Modeling"
   - "Spatiotemporal Constraints"
   - "Biological Plausibility"
 date: 2026-05-08
-content_hash: 73927a6629348719
+content_hash: 9be0f266cb933a60
 ---
 
 # TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling
@@ -131,11 +131,11 @@ The total loss is the weighted sum of the cross-entropy task loss and the STC lo
 
 ## Related Papers
 
-- [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
-- [\[AAAI 2026\] DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks](ds-atgo_dual-stage_synergistic_learning_via_forward_adaptive_threshold_and_backw.md)
 - [\[ICLR 2026\] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition](../../ICLR2026/others/training_deep_normalization-free_spiking_neural_networks_with_lateral_inhibition.md)
-- [\[AAAI 2026\] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)
-- [\[ICML 2026\] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks](../../ICML2026/others/bullet_trains_parallelizing_training_of_temporally_precise_spiking_neural_networ.md)
+- [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
+- [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](../../ICLR2026/others/breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
+- [\[ICLR 2026\] Beyond Linear Processing: Dendritic Bilinear Integration in Spiking Neural Networks](../../ICLR2026/others/beyond_linear_processing_dendritic_bilinear_integration_in_spiking_neural_networ.md)
+- [\[ICLR 2026\] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks](../../ICLR2026/others/online_pseudo-zeroth-order_training_of_neuromorphic_spiking_neural_networks.md)
 
 </div>
 

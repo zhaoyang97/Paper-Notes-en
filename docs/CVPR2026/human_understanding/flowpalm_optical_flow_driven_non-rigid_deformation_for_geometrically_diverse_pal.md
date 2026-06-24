@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlowPalm: Optical Flow Driven Non-Rigid Deformation for Geometrically Diverse Palmprint Generation
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] FlowPalm utilizes RAFT optical flow to statistically derive non-rigid deformation fields from real palmprint pairs, constructing a "deformation library." During diffusion sampling, these deformations are injected into the pipeline via three stages: crease warping for the backbone and warped noise for the texture. This
+  [CVPR 2026][Human Understanding][Palmprint Generation] FlowPalm utilizes RAFT optical flow to statistically derive non-rigid deformation fields from real palmprint pairs, constructing a "deformation library." During diffusion sampling, these deformations are injected into the pipeline via three stages: crease warping for the backbone and warped noise for the texture. This produces geometrically diverse and identity-consistent synthetic palmprints. Notably…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Palmprint Generation"
+  - "Optical Flow"
+  - "Non-rigid Deformation"
+  - "Diffusion Models"
+  - "Identity Consistency"
 date: 2026-05-08
-content_hash: dc01e26e2b80df6f
+content_hash: ced3f8e077a92c64
 ---
+
 # FlowPalm: Optical Flow Driven Non-Rigid Deformation for Geometrically Diverse Palmprint Generation
 
 **Conference**: CVPR 2026  
@@ -136,15 +141,15 @@ Ablation of deformation components (TAR@FAR=$10^{-6}$):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FLOW: Optimal Transport-Driven Feature Warping for Generalized Remote Physiological Measurement](flow_optimal_transport-driven_feature_warping_for_generalized_remote_physiologic.md)
 - [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](unified_number-free_text-to-motion_generation_via_flow_matching.md)
-- [\[CVPR 2026\] ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data](remogen_real-time_human_interaction-to-reaction_generation_via_modular_learning_.md)
 - [\[CVPR 2026\] MotionMaster: Generalizable Text-Driven Motion Generation and Editing](motionmaster_generalizable_text-driven_motion_generation_and_editing.md)
-- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
+- [\[CVPR 2026\] ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data](remogen_real-time_human_interaction-to-reaction_generation_via_modular_learning_.md)
+- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
 
 </div>
 

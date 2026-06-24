@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Correction Distillation for Structured Data Question Answering
 description: >-
-  [AAAI 2026][Graph Learning][Knowledge Distillation] This paper proposes Self-Correction Distillation (SCD), which transfers structured data question answering capabilities from large-scale LLMs (GPT-4) to small-scale LLM…
+  [AAAI 2026][Graph Learning][Knowledge Distillation] This paper proposes Self-Correction Distillation (SCD), which transfers structured data question answering capabilities from large-scale LLMs (GPT-4) to small-scale LLMs (8B) via an Error Prompting Mechanism (EPM) and a two-stage distillation strategy, achieving state-of-the-art distillation performance across five benchmarks.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Error Correction"
   - "Small Language Models"
 date: 2026-05-08
-content_hash: bdef0876180608a9
+content_hash: f8e65bfb8a81849b
 ---
 
 # Self-Correction Distillation for Structured Data Question Answering
@@ -171,10 +171,10 @@ Evaluated on five datasets (WikiSQL, WTQ, MetaQA, WebQSP, CronQuestion):
 ## Related Papers
 
 - [\[ACL 2026\] CRAFTQA: A Code-Driven Adaptive Framework for Complex Structured Data Reasoning](../../ACL2026/graph_learning/craftqa_a_code-driven_adaptive_framework_for_complex_structured_data_reasoning.md)
+- [\[ICLR 2026\] Scaling Knowledge Graph Construction through Synthetic Data Generation and Distillation](../../ICLR2026/graph_learning/scaling_knowledge_graph_construction_through_synthetic_data_generation_and_disti.md)
+- [\[ACL 2025\] Agent Steerable Search for Knowledge Graph Question Answering](../../ACL2025/graph_learning/agent_steerable_search_for_knowledge_graph_question_answering.md)
 - [\[ICML 2026\] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering](../../ICML2026/graph_learning/kbqa-r1_reinforcing_large_language_models_for_knowledge_base_question_answering.md)
-- [\[ACL 2026\] IndustryAssetEQA: A Neurosymbolic Operational Intelligence System for Embodied Question Answering in Industrial Asset Maintenance](../../ACL2026/graph_learning/industryasseteqa_a_neurosymbolic_operational_intelligence_system_for_embodied_qu.md)
-- [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](self-adaptive_graph_mixture_of_models.md)
-- [\[AAAI 2026\] Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data](format_as_a_prior_quantifying_and_analyzing_bias_in_llms_for_heterogeneous_data.md)
+- [\[ACL 2025\] The Role of Exploration Modules in Small Language Models for Knowledge Graph Question Answering](../../ACL2025/graph_learning/the_role_of_exploration_modules_in_small_language_models_for_knowledge_graph_que.md)
 
 </div>
 

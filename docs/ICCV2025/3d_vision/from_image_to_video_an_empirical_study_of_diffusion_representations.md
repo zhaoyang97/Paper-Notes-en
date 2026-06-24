@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Image to Video: An Empirical Study of Diffusion Representations
 description: >-
-  [ICCV 2025][3D Vision][Diffusion Models] This paper systematically compares diffusion models trained under image vs. video generation objectives using the same architecture (WALT) on a suite of downstream visual understa…
+  [ICCV 2025][3D Vision][Diffusion Models] This paper systematically compares diffusion models trained under image vs. video generation objectives using the same architecture (WALT) on a suite of downstream visual understanding tasks. Video diffusion models consistently outperform their image counterparts across all tasks, with particularly large gains on tasks requiring motion and 3D spatial understanding (point tracking +68%, camera pose +60%).
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Motion Understanding"
   - "WALT"
 date: 2026-05-08
-content_hash: c93d82f43f580239
+content_hash: 322c9de673807b15
 ---
 
 # From Image to Video: An Empirical Study of Diffusion Representations
@@ -160,11 +160,11 @@ V-WALT is competitive on depth and motion understanding tasks, but is dominated 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Mono2Stereo: A Benchmark and Empirical Study for Stereo Conversion](../../CVPR2025/3d_vision/mono2stereo_a_benchmark_and_empirical_study_for_stereo_conversion.md)
 - [\[ICCV 2025\] Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework](bridging_diffusion_models_and_3d_representations_a_3d_consistent_super-resolutio.md)
-- [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
 - [\[ICCV 2025\] Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction](baking_gaussian_splatting_into_diffusion_denoiser_for_fast_and_scalable_single-s.md)
-- [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
+- [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
 
 </div>
 

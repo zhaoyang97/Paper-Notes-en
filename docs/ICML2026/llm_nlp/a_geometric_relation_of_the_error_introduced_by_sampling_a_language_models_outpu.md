@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State
 description: >-
-  [ICML 2026][LLM (Other)][World Models] This paper characterizes the information loss introduced by sampling from high-entropy distributions in GPT-style LLMs from a differential geometry perspective. By constructing $\mathfrak{so}(n)$-valued 1-forms and parallel transport operators, it demonstrates through chess probe experiments that these geometric rotati
+  [ICML 2026][LLM (Other)][Sampling error] This paper characterizes the information loss introduced by sampling from high-entropy distributions in GPT-style LLMs from a differential geometry perspective. By constructing $\mathfrak{so}(n)$-valued 1-forms and parallel transport operators, it demonstrates through chess probe experiments that these geometric rotations align highly with the model’s learned world vectors.
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - World Models
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Sampling error"
+  - "differential geometry"
+  - "parallel transport"
+  - "world models"
+  - "chess"
 date: 2026-05-08
-content_hash: 9894024d38eda20d
+content_hash: 5425ea5ae2009d67
 ---
+
 # A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State
 
 **Conference**: ICML 2026  

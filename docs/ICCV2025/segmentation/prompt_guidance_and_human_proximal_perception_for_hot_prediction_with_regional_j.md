@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss
 description: >-
-  [ICCV 2025][Segmentation][Human-Object Contact Detection] This paper proposes P3HOT, a framework that achieves state-of-the-art performance on Human-Object Contact (HOT) detection by incorporating text prompt guidance to…
+  [ICCV 2025][Segmentation][Human-Object Contact Detection] This paper proposes P3HOT, a framework that achieves state-of-the-art performance on Human-Object Contact (HOT) detection by incorporating text prompt guidance to focus on human contact regions, a depth-aware module to filter irrelevant backgrounds, and a Regional Joint Loss to enforce intra-region category consistency.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Regional Joint Loss"
   - "Semantic Segmentation"
 date: 2026-05-08
-content_hash: 201eeb18e13377dc
+content_hash: 3ab040dd265e855c
 ---
 
 # Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss
@@ -176,8 +176,8 @@ Gains on HOT-Annotated: SC-Acc. +0.7, mIoU +2.0, wIoU +1.6, **AD-Acc. +11.0**.
 - [\[NeurIPS 2025\] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance](../../NeurIPS2025/segmentation/haodiff_human-aware_one-step_diffusion_via_dual-prompt_guidance.md)
 - [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](joint_self-supervised_video_alignment_and_action_segmentation.md)
 - [\[ICCV 2025\] Temporal Rate Reduction Clustering for Human Motion Segmentation](temporal_rate_reduction_clustering_for_human_motion_segmentation.md)
-- [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
 - [\[ICCV 2025\] ConformalSAM: Unlocking the Potential of Foundational Segmentation Models in Semi-Supervised Semantic Segmentation with Conformal Prediction](conformalsam_unlocking_the_potential_of_foundational_segmentation_models_in_semi.md)
+- [\[ICCV 2025\] 2HandedAfforder: Learning Precise Actionable Bimanual Affordances from Human Videos](2handedafforder_learning_precise_actionable_bimanual_affordances_from_human_vide.md)
 
 </div>
 

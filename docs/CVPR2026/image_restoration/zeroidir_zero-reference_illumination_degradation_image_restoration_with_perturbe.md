@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ZeroIDIR: Zero-Reference Illumination Degradation Image Restoration with Perturbed Consistency Diffusion Models
 description: >-
-  [CVPR 2026][Image Restoration][Retinex] ZeroIDIR decomposes illumination degradation image restoration into two steps: "Adaptive Illumination Correction + Diffusion Reconstruction." **It is trained exclusively on degraded images without any reference images or paired data**. First, the Adaptive Gamma Correction Module (AGCM) shifts the exposure to a natural
+  [CVPR 2026][Image Restoration][Zero-reference] ZeroIDIR decomposes illumination degradation image restoration into two steps: "Adaptive Illumination Correction + Diffusion Reconstruction." **It is trained exclusively on degraded images without any reference images or paired data**. First, the Adaptive Gamma Correction Module (AGCM) shifts the exposure to a natural distribution. Then, this corrected result is treated as an intermediate noise state and fed into the Perturbed Co…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Retinex
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Zero-reference"
+  - "Illumination degradation restoration"
+  - "Adaptive Gamma correction"
+  - "Perturbed consistency diffusion"
+  - "Retinex"
 date: 2026-05-08
-content_hash: 533004d3ca74b5ae
+content_hash: 5d75bb72e15293dc
 ---
+
 # ZeroIDIR: Zero-Reference Illumination Degradation Image Restoration with Perturbed Consistency Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -165,16 +170,16 @@ PCDM Ablations (LOL / SICE-over, PSNR):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration](self-supervised_dynamic_heterogeneous_degradation_modeling_for_unified_zero-shot.md)
 - [\[CVPR 2026\] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems](pnp-cm_consistency_models_as_plug-and-play_priors_for_inverse_problems.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
-- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
 - [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
+- [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
 
 </div>
 

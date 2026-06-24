@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Constrained Bayesian Experimental Design via Online Planning
 description: >-
-  [ICML 2026][Pretraining][Bayesian experimental design] This paper proposes COPEx: a semi-amortized scheme combining "offline pre-trained amortized posterior networks + design policies + online multi-step lookahead scenario trees." This allows Bayesian experimental design (BED) to dynamically adapt to budget, cost, and transition constraints at test time. COPEx consistently
+  [ICML 2026][LLM Pretraining][Bayesian experimental design] This paper proposes COPEx: a semi-amortized scheme combining "offline pre-trained amortized posterior networks + design policies + online multi-step lookahead scenario trees." This allows Bayesian experimental design (BED) to dynamically adapt to budget, cost, and transition constraints at test time. COPEx consistently outperforms baselines such as VPCE, ALINE, and RL-BOED in EIG/RMSE across three types of tasks: cons…
 tags:
-  - ICML 2026
-  - Pretraining
-  - Bayesian experimental design
-  - EIG
-  - scenario tree
-  - amortized inference
-  - constrained planning
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "Bayesian experimental design"
+  - "EIG"
+  - "scenario tree"
+  - "amortized inference"
+  - "constrained planning"
 date: 2026-05-08
-content_hash: 7cc8e5b3b1beb14a
+content_hash: 8747d79973fc4c31
 ---
+
 # Constrained Bayesian Experimental Design via Online Planning
 
 **Conference**: ICML 2026  
@@ -146,9 +147,20 @@ Offline: (i) Amortized posterior $q_\phi$ is trained with NLL on simulated seque
 - Value: ⭐⭐⭐⭐ — Effectively solves the "adaptation to constraints without retraining" problem, crucial for real-world laboratory automation.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2025\] Position: The Future of Bayesian Prediction Is Prior-Fitted](../../ICML2025/llm_pretraining/position_the_future_of_bayesian_prediction_is_prior-fitted.md)
+- [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](../../NeurIPS2025/llm_pretraining/composition_and_alignment_of_diffusion_models_using_constrai.md)
+- [\[CVPR 2026\] Watch and Learn: Learning to Use Computers from Online Videos](../../CVPR2026/llm_pretraining/watch_and_learn_learning_to_use_computers_from_online_videos.md)
+- [\[ICML 2026\] AC-ODM: Actor–Critic Online Data Mixing for Sample-Efficient LLM Pretraining](ac-odm_actor--critic_online_data_mixing_for_sample-efficient_llm_pretraining.md)
+- [\[ACL 2025\] Data-Constrained Synthesis of Training Data for De-Identification](../../ACL2025/llm_pretraining/data-constrained_synthesis_of_training_data_for_de-identification.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Watch and Learn: Learning to Use Computers from Online Videos](../../CVPR2026/llm_pretraining/watch_and_learn_learning_to_use_computers_from_online_videos.md)

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling
 description: >-
-  [ICLR 2026][Image Generation][flow matching] LapFlow decomposes images into Laplacian pyramid residuals and utilizes a unified Mixture-of-Transformers (MoT) with causal attention to generate all scales in parallel. It eliminates the explicit renoising bridges required by cascaded methods, achieving superior FID on CelebA-HQ and ImageNet with lower GFLOPs and fast
+  [ICLR 2026][Image Generation][flow matching] LapFlow decomposes images into Laplacian pyramid residuals and utilizes a unified Mixture-of-Transformers (MoT) with causal attention to generate all scales in parallel. It eliminates the explicit renoising bridges required by cascaded methods, achieving superior FID on CelebA-HQ and ImageNet with lower GFLOPs and faster inference.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - flow matching
-  - Laplacian pyramid
-  - multi-scale generation
-  - mixture-of-transformers
-  - causal attention
+  - "ICLR 2026"
+  - "Image Generation"
+  - "flow matching"
+  - "Laplacian pyramid"
+  - "multi-scale generation"
+  - "mixture-of-transformers"
+  - "causal attention"
 date: 2026-05-08
-content_hash: 182cd1a215d92bd0
+content_hash: b30e457a583c3944
 ---
+
 # LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling
 
 **Conference**: ICLR 2026  
@@ -122,10 +123,10 @@ For ImageNet 256 (class-conditional), under DiT-XL/2 with 600K steps, Ours achie
 ## Related Papers
 
 - [\[ICLR 2026\] Mirror Flow Matching with Heavy-Tailed Priors for Generative Modeling on Convex Domains](mirror_flow_matching_with_heavy-tailed_priors_for_generative_modeling_on_convex_.md)
-- [\[ICLR 2026\] Flow Along the $K$-Amplitude for Generative Modeling](flow_along_the_k-amplitude_for_generative_modeling.md)
 - [\[ICLR 2026\] Gauge Flow Matching: Efficient Constrained Generative Modeling over General Convex Set and Beyond](gauge_flow_matching_efficient_constrained_generative_modeling_over_general_conve.md)
+- [\[ICLR 2026\] Flow Along the $K$-Amplitude for Generative Modeling](flow_along_the_k-amplitude_for_generative_modeling.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
-- [\[ICLR 2026\] Partition Generative Modeling: Masked Modeling Without Masks](partition_generative_modeling_masked_modeling_without_masks.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 
 </div>
 

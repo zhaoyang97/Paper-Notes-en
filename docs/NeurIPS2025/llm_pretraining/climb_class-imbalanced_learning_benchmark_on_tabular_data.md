@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data
 description: >-
-  [NeurIPS 2025][LLM Pretraining][class imbalance] This paper presents CLIMB — the most comprehensive benchmark to date for class-imbalanced learning on tabular data — encompassing 73 real-world datasets and 29 CIL algorit…
+  [NeurIPS 2025][LLM Pretraining][class imbalance] This paper presents CLIMB — the most comprehensive benchmark to date for class-imbalanced learning on tabular data — encompassing 73 real-world datasets and 29 CIL algorithms. Large-scale experiments reveal several practical insights: naive rebalancing is often ineffective, ensemble methods are critical, and data quality impacts performance more than the degree of imbalance itself.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "ensemble learning"
   - "resampling"
 date: 2026-05-08
-content_hash: ea877c634185ced8
+content_hash: 8d95dde500acec9e
 ---
 
 # CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data
@@ -127,7 +127,7 @@ Compared to prior empirical studies such as Zhu et al. (2018), Xiao et al. (2021
 - [\[NeurIPS 2025\] ZEUS: Zero-shot Embeddings for Unsupervised Separation of Tabular Data](zeus_zero-shot_embeddings_for_unsupervised_separation_of_tabular_data.md)
 - [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
 - [\[NeurIPS 2025\] LCDB 1.1: A Database Illustrating Learning Curves Are More Ill-Behaved Than Previously Thought](lcdb_11_a_database_illustrating_learning_curves_are_more_ill-behaved_than_previo.md)
-- [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](enhancing_training_data_attribution_with_representational_optimization.md)
+- [\[CVPR 2025\] Precise Event Spotting in Sports Videos: Solving Long-Range Dependency and Class Imbalance](../../CVPR2025/llm_pretraining/precise_event_spotting_in_sports_videos_solving_long-range_dependency_and_class_.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Universal Value-Function Uncertainties
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes UVU (Universal Value-Function Uncertainties), which measures the epistemic uncertainty of a value function using the prediction error between an online network and a fixed random target network. The key innovation is that the online network does not directly regress the target output (which would yi
+  [ICLR 2026][Reinforcement Learning][Epistemic uncertainty] This paper proposes UVU (Universal Value-Function Uncertainties), which measures the epistemic uncertainty of a value function using the prediction error between an online network and a fixed random target network. The key innovation is that the online network does not directly regress the target output (which would yield "myopic" RND-style uncertainty); instead, it performs TD learning using synthetic rewards generat…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Epistemic uncertainty"
+  - "value function"
+  - "Random Network Distillation (RND)"
+  - "Neural Tangent Kernel (NTK)"
+  - "Offline RL"
 date: 2026-05-08
-content_hash: 355fdc88f2b4fe2b
+content_hash: 8d0545ca370cc6ca
 ---
+
 # Universal Value-Function Uncertainties
 
 **Conference**: ICLR 2026  
@@ -127,14 +133,14 @@ UVU, a **single model**, matches or exceeds the performance of a large ensemble 
 - Value: ⭐⭐⭐⭐⭐ Provides a theoretically grounded, efficient alternative to ensembles for exploration and offline RL.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Replicable Reinforcement Learning with Linear Function Approximation](replicable_reinforcement_learning_with_linear_function_approximation.md)
 - [\[ICLR 2026\] Value Flows](value_flows.md)
-- [\[ICLR 2026\] Transitive RL: Value Learning via Divide and Conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 - [\[ICLR 2026\] Relative Value Learning](relative_value_learning.md)
 - [\[ICLR 2026\] Is Pure Exploitation Sufficient in Exogenous MDPs with Linear Function Approximation?](is_pure_exploitation_sufficient_in_exogenous_mdps_with_linear_function_approxima.md)
 

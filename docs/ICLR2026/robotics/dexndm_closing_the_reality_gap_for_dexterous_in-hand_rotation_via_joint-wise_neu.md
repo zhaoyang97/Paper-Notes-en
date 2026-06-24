@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DexNDM: Closing the Reality Gap for Dexterous In-Hand Rotation via Joint-Wise Neural Dynamics Model
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] DexNDM decomposes the high-dimensional hand-object system into low-dimensional effective dynamics for individual joints using a **Joint-Wise Neural Dynamics Model**. Combined with an autonomous "Chaos Box" for data collection, it trains a residual policy to correct the simulation-based base policy. This approach achiev
+  [ICLR 2026][Robotics][In-hand rotation] DexNDM decomposes the high-dimensional hand-object system into low-dimensional effective dynamics for individual joints using a **Joint-Wise Neural Dynamics Model**. Combined with an autonomous "Chaos Box" for data collection, it trains a residual policy to correct the simulation-based base policy. This approach achieves the first robust real-world in-hand rotation for complex, high-aspect-ratio, and small objects across multiple wrist…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "In-hand rotation"
+  - "Neural Dynamics Model"
+  - "Residual Policy"
+  - "Autonomous Data Collection"
+  - "Information Bottleneck"
 date: 2026-05-08
-content_hash: 3ea207198611948a
+content_hash: 373a73bade8c612e
 ---
+
 # DexNDM: Closing the Reality Gap for Dexterous In-Hand Rotation via Joint-Wise Neural Dynamics Model
 
 **Conference**: ICLR 2026  

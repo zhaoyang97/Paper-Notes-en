@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit
 description: >-
-  [AAAI 2026][pursuit-evasion game] This paper studies pursuit-evasion games with heterogeneous speeds involving multiple pursuers and a single evader. The evader's safe reachable set is defined as the intersection of Apol…
+  [AAAI 2026][pursuit-evasion game] This paper studies pursuit-evasion games with heterogeneous speeds involving multiple pursuers and a single evader. The evader's safe reachable set is defined as the intersection of Apollonius circles for all pursuer–evader pairs. The capture strategy is modeled as a zero-sum game in which pursuers minimize and the evader maximizes the area of this intersection. Closed-form instantaneous optimal heading control laws are derived…
 tags:
   - "AAAI 2026"
   - "pursuit-evasion game"
@@ -13,7 +13,7 @@ tags:
   - "safe reachable set"
   - "zero-sum game"
 date: 2026-05-08
-content_hash: c3391ddc31380ba3
+content_hash: 0c771da637ffc234
 ---
 
 # Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit
@@ -156,7 +156,7 @@ No learning or training components are involved. The control law is a purely ana
 - [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
 - [\[AAAI 2026\] An Epistemic Perspective on Agent Awareness](an_epistemic_perspective_on_agent_awareness.md)
 - [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
-- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](../../ICML2026/others/mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
+- [\[AAAI 2026\] Semi-Supervised High Dynamic Range Image Reconstructing via Bi-Level Uncertain Area Masking](semi-supervised_high_dynamic_range_image_reconstructing_via_bi-level_uncertain_a.md)
 
 </div>
 

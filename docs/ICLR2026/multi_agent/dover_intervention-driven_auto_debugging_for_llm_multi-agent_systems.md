@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DoVer: Intervention-Driven Auto Debugging for LLM Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] DoVer upgrades the "log attribution" debugging paradigm for LLM multi-agent systems from "guessing the faulty agent/step" to "targeted intervention and replay verification" (Do-then-Verify). By segmenting failure trajectories into multiple trials, proposing hypotheses for each, and rewriting orchestrator instructions o
+  [ICLR2026][Multi-Agent][Multi-agent systems] DoVer upgrades the "log attribution" debugging paradigm for LLM multi-agent systems from "guessing the faulty agent/step" to "targeted intervention and replay verification" (Do-then-Verify). By segmenting failure trajectories into multiple trials, proposing hypotheses for each, and rewriting orchestrator instructions or plans for in-situ replay with milestone scoring, it successfully flips 18–28% of failure cases in GAIA / Assistan…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Multi-agent systems"
+  - "Auto debugging"
+  - "Failure attribution"
+  - "Intervention verification"
+  - "Counterfactual replay"
 date: 2026-05-08
-content_hash: cb54e79c6eb6c307
+content_hash: eb9a75b1d87bcbe9
 ---
+
 # DoVer: Intervention-Driven Auto Debugging for LLM Multi-Agent Systems
 
 **Conference**: ICLR2026  
@@ -134,6 +140,7 @@ On complex WW tasks, ~60% fall into "Inconclusive" (difficulty in faithful inter
 - Value: ⭐⭐⭐⭐⭐ (A practical, automated mechanism for agent reliability)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -141,8 +148,8 @@ On complex WW tasks, ~60% fall into "Inconclusive" (difficulty in faithful inter
 - [\[ICLR 2026\] CellAgent: LLM-Driven Multi-Agent Framework for Natural Language-Based Single-Cell Analysis](cellagent_llm-driven_multi-agent_framework_for_natural_language-based_single-cel.md)
 - [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](../../ACL2026/multi_agent/seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 - [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](../../AAAI2026/multi_agent/beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
+- [\[ICLR 2026\] When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems](when_agents_misremember_collectively_exploring_the_mandela_effect_in_llm-based_m.md)
 - [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](../../ICML2026/multi_agent/maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
-- [\[ICLR 2026\] CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards](comas_co-evolving_multi-agent_systems_via_interaction_rewards.md)
 
 </div>
 

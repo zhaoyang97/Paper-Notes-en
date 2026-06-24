@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VisRL: Intention-Driven Visual Perception via Reinforced Reasoning
 description: >-
-  [ICCV 2025][Object Detection][Intention-driven visual perception] VisRL is the first framework to apply reinforcement learning to intention-driven visual perception. Through iterative DPO training…
+  [ICCV 2025][Object Detection][Intention-driven visual perception] VisRL is the first framework to apply reinforcement learning to intention-driven visual perception. Through iterative DPO training, it enables large multimodal models (LMMs) to autonomously select focus regions (by predicting bounding boxes) according to query intent, achieving superior visual reasoning over SFT without requiring costly intermediate bounding box annotations.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "large multimodal models"
 date: 2026-05-08
-content_hash: e6451363136be5ce
+content_hash: 5f8599bf7e20cd2f
 ---
 
 # VisRL: Intention-Driven Visual Perception via Reinforced Reasoning
@@ -140,10 +140,10 @@ VisRL proceeds in two stages: (1) **SFT warm-up**—training the model on a smal
 ## Related Papers
 
 - [\[CVPR 2026\] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision](../../CVPR2026/object_detection/reasoning-driven_anomaly_detection_and_localization_with_image-level_supervision.md)
+- [\[ICML 2025\] UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction](../../ICML2025/object_detection/ui-vision_a_desktop-centric_gui_benchmark_for_visual_perception_and_interaction.md)
 - [\[ICCV 2025\] Visual-RFT: Visual Reinforcement Fine-Tuning](visual-rft_visual_reinforcement_fine-tuning.md)
 - [\[ICLR 2026\] Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and Method](../../ICLR2026/object_detection/traceable_evidence_enhanced_visual_grounded_reasoning_evaluation_and_methodology.md)
 - [\[AAAI 2026\] Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning](../../AAAI2026/object_detection/connecting_the_dots_training-free_visual_grounding_via_agent.md)
-- [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
 
 </div>
 

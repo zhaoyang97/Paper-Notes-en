@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tracking and Understanding Object Transformations
 description: >-
-  [NeurIPS 2025][Video Understanding][object tracking] This paper introduces the Track Any State task and the TubeletGraph zero-shot framework, which tracks objects undergoing drastic appearance changes in video (e.g.…
+  [NeurIPS 2025][Video Understanding][object tracking] This paper introduces the Track Any State task and the TubeletGraph zero-shot framework, which tracks objects undergoing drastic appearance changes in video (e.g., an apple being cut, a butterfly emerging from a chrysalis) while simultaneously detecting and describing these transformations.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -11,7 +11,7 @@ tags:
   - "zero-shot"
   - "spatiotemporal segmentation"
 date: 2026-05-08
-content_hash: 777ea96e61a6ebd7
+content_hash: 3af07362af8cccca
 ---
 
 # Tracking and Understanding Object Transformations
@@ -120,10 +120,10 @@ The paper reveals an interesting insight: the failure mode of existing trackers 
 ## Related Papers
 
 - [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](../../ICCV2025/video_understanding/general_compression_framework_for_efficient_transformer_object_tracking.md)
+- [\[CVPR 2025\] OmniTrack: Omnidirectional Multi-Object Tracking](../../CVPR2025/video_understanding/omnidirectional_multi-object_tracking.md)
+- [\[CVPR 2025\] MUST: The First Dataset and Unified Framework for Multispectral UAV Single Object Tracking](../../CVPR2025/video_understanding/must_the_first_dataset_and_unified_framework_for_multispectral_uav_single_object.md)
 - [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](../../CVPR2026/video_understanding/uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
-- [\[ICML 2026\] RELO: Reinforcement Learning to Localize for Visual Object Tracking](../../ICML2026/video_understanding/relo_reinforcement_learning_to_localize_for_visual_object_tracking.md)
-- [\[CVPR 2026\] Event6D: Event-based Novel Object 6D Pose Tracking](../../CVPR2026/video_understanding/event6d_event-based_novel_object_6d_pose_tracking.md)
-- [\[CVPR 2026\] STORM: End-to-End Referring Multi-Object Tracking in Videos](../../CVPR2026/video_understanding/storm_referring_multi_object_tracking.md)
+- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](../../CVPR2026/video_understanding/hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
 
 </div>
 

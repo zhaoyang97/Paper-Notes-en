@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoCoDiff: Correspondence-Consistent Diffusion Model for Fine-grained Style Transfer
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] CoCoDiff is a **training-free** style transfer framework that directly extracts **pixel-level semantic correspondence** between content and style images from the intermediate features of pre-trained Stable Diffusion. It then utilizes a **cyclic-consistent** attention injection mechanism to "paste" styles onto structura
+  [ICLR2026][Image Generation][Style Transfer] CoCoDiff is a **training-free** style transfer framework that directly extracts **pixel-level semantic correspondence** between content and style images from the intermediate features of pre-trained Stable Diffusion. It then utilizes a **cyclic-consistent** attention injection mechanism to "paste" styles onto structurally aligned regions, outperforming methods requiring additional training or annotations across FID, LPIPS, ArtFID…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Style Transfer"
+  - "Semantic Correspondence"
+  - "Diffusion Features"
+  - "Attention Injection"
+  - "Cyclic Consistency"
 date: 2026-05-08
-content_hash: d84c79039b8c99ac
+content_hash: ed05681949ada47c
 ---
+
 # CoCoDiff: Correspondence-Consistent Diffusion Model for Fine-grained Style Transfer
 
 **Conference**: ICLR2026  

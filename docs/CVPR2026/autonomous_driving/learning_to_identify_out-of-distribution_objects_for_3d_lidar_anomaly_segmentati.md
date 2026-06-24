@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] LIDO directly models the distribution of inlier classes in the feature space using a semantic head to maintain "confidence-based prototypes" and a contrastive head to push inlier features away from the hypersphere center. During inference, it fuses cosine distance, entropy, and feature norm signals to assign anomaly sc
+  [CVPR 2026][Autonomous Driving][LiDAR Anomaly Segmentation] LIDO directly models the distribution of inlier classes in the feature space using a semantic head to maintain "confidence-based prototypes" and a contrastive head to push inlier features away from the hypersphere center. During inference, it fuses cosine distance, entropy, and feature norm signals to assign anomaly scores to each point, achieving SOTA in 3D LiDAR anomaly segmentation without any anomaly samples. The…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Anomaly Segmentation"
+  - "Out-of-Distribution Detection"
+  - "Feature Space Modeling"
+  - "Class Prototypes"
+  - "Mixed Real-Synthetic Datasets"
 date: 2026-05-08
-content_hash: e23aaf54c0b1563e
+content_hash: 19885478120388c6
 ---
+
 # Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation
 
 **Conference**: CVPR 2026  
@@ -129,7 +135,6 @@ Efficiency (nuScenes-OoD, A40):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

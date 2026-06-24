@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Massively Parallel Imitation Learning of Mouse Forelimb Musculoskeletal Reaching Dynamics
 description: >-
-  [NeurIPS 2025][Robotics][musculoskeletal simulation] This work presents MIMIC-MJX, a massively parallel imitation learning pipeline for mouse forelimb musculoskeletal simulation. Leveraging JAX-accelerated PPO at 1.2 mil…
+  [NeurIPS 2025][Robotics][musculoskeletal simulation] This work presents MIMIC-MJX, a massively parallel imitation learning pipeline for mouse forelimb musculoskeletal simulation. Leveraging JAX-accelerated PPO at 1.2 million steps/second across thousands of parallel environments, the pipeline trains physically-informed imitation learning policies. The study demonstrates that control cost regularization enables simulated muscle activity to better predict real EMG signals…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -14,7 +14,7 @@ tags:
   - "imitation learning"
   - "Takens theorem"
 date: 2026-05-08
-content_hash: 1835ac85ef394d49
+content_hash: 12e0c477f8d526f6
 ---
 
 # Massively Parallel Imitation Learning of Mouse Forelimb Musculoskeletal Reaching Dynamics
@@ -156,11 +156,11 @@ The full pipeline comprises three stages: (1) **3D pose estimation** — SLEAP-A
 
 ## Related Papers
 
+- [\[ICML 2025\] Action-Constrained Imitation Learning](../../ICML2025/robotics/action-constrained_imitation_learning.md)
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
 - [\[NeurIPS 2025\] BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning](beast_efficient_tokenization_of_b-splines_encoded_action_sequences_for_imitation.md)
-- [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
-- [\[NeurIPS 2025\] Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination](inner_speech_as_behavior_guides_steerable_imitation_of_diverse_behaviors_for_hum.md)
-- [\[CVPR 2026\] Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment](../../CVPR2026/robotics/lifelong_imitation_learning_multimodal_latent_rep.md)
+- [\[CVPR 2025\] Learning Physics-Based Full-Body Human Reaching and Grasping from Brief Walking References](../../CVPR2025/robotics/learning_physics-based_full-body_human_reaching_and_grasping_from_brief_walking_.md)
+- [\[CVPR 2026\] NIL: No-data Imitation Learning](../../CVPR2026/robotics/nil_no-data_imitation_learning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Krause Synchronization Transformers
 description: >-
-  [ICML 2026][Image Generation][Attention] The authors incorporate the Krause bounded confidence consensus model into Transformers, replacing global softmax similarity with "distance-RBF + local window + top-k sparsity." They theoretically prove that this encourages multi-cluster synchronization rather than global collapse, achieving superior performance and 30
+  [ICML 2026][Image Generation][Attention Mechanism] The authors incorporate the Krause bounded confidence consensus model into Transformers, replacing global softmax similarity with "distance-RBF + local window + top-k sparsity." They theoretically prove that this encourages multi-cluster synchronization rather than global collapse, achieving superior performance and 30%+ computational savings across ViT, autoregressive image generation, and LLMs.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Attention
+  - "ICML 2026"
+  - "Image Generation"
+  - "Attention Mechanism"
+  - "Bounded Confidence Dynamics"
+  - "Local Sparse Attention"
+  - "Attention Sink"
+  - "Multi-cluster Synchronization"
 date: 2026-05-08
-content_hash: 9921754745eb699d
+content_hash: a5fbc5356fb79172
 ---
+
 # Krause Synchronization Transformers
 
 **Conference**: ICML 2026  

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Connecting Independently Trained Modes via Layer-Wise Connectivity
 description: >-
-  [ICML 2026][Others][Paper Note] Proposes the Low-Loss Path Finding (LLPF) algorithm, which reliably constructs low-loss paths between independently trained neural network models through layer-wise connectivity and variance sphere constraints. It supports modern architectures such as MobileNet, EfficientNet, and CCT, yielding highly reproducible resul
+  [ICML2026][Mode Connectivity] Proposes the Low-Loss Path Finding (LLPF) algorithm, which reliably constructs low-loss paths between independently trained neural network models through layer-wise connectivity and variance sphere constraints. It supports modern architectures such as MobileNet, EfficientNet, and CCT, yielding highly reproducible results.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Mode Connectivity"
+  - "Loss Landscape"
+  - "Variance Sphere"
+  - "Layer-wise Connectivity"
+  - "Low-loss Path"
 date: 2026-05-08
-content_hash: 5e1f605c823892a6
+content_hash: 0b91b34d0c7257af
 ---
+
 # Connecting Independently Trained Modes via Layer-Wise Connectivity
 
 **Conference**: ICML2026  

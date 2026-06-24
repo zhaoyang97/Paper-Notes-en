@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] StreamSplat proposes a fully feed-forward online dynamic 3D reconstruction framework. Through three innovations—probabilistic position sampling, bidirectional deformation fields, and adaptive Gaussian fusion—it can instantly generate dynamic 3DGS representations from uncalibrated video streams, achieving a speed 1200x
+  [ICLR 2026][3D Vision][Dynamic 3D Reconstruction] StreamSplat proposes a fully feed-forward online dynamic 3D reconstruction framework. Through three innovations—probabilistic position sampling, bidirectional deformation fields, and adaptive Gaussian fusion—it can instantly generate dynamic 3DGS representations from uncalibrated video streams, achieving a speed 1200x faster than optimization-based methods.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Dynamic 3D Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Online Reconstruction"
+  - "Feed-forward Model"
+  - "Video Streams"
 date: 2026-05-08
-content_hash: 3faecdf7026c385f
+content_hash: 0f3ec2d41e187d6c
 ---
+
 # StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams
 
 **Conference**: ICLR 2026  
@@ -135,10 +141,10 @@ An auxiliary reconstruction loss for moving foreground regions is added, using s
 ## Related Papers
 
 - [\[ICLR 2026\] WorldTree: Towards 4D Dynamic Worlds from Monocular Video Using Tree-Chains](worldtree_towards_4d_dynamic_worlds_from_monocular_video_using_tree-chains.md)
-- [\[CVPR 2026\] V-DPM: 4D Video Reconstruction with Dynamic Point Maps](../../CVPR2026/3d_vision/v-dpm_4d_video_reconstruction_with_dynamic_point_maps.md)
+- [\[CVPR 2026\] Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams](../../CVPR2026/3d_vision/3d_gaussian_splatting_from_unposed_spike_stream.md)
+- [\[ICLR 2026\] ARTDECO: High-Fidelity Online 3D Reconstruction with Hierarchical Gaussian Structure + Feed-forward Priors](artdeco_toward_high-fidelity_on-the-fly_reconstruction_with_hierarchical_gaussia.md)
 - [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
 - [\[ICLR 2026\] Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation](lyra_generative_3d_scene_reconstruction_via_video_diffusion_model_self-distillat.md)
-- [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](../../CVPR2026/3d_vision/onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
 
 </div>
 

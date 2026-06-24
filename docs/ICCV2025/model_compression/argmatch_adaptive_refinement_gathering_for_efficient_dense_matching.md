@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ARGMatch: Adaptive Refinement Gathering for Efficient Dense Matching
 description: >-
-  [ICCV 2025][Model Compression][Dense matching] This paper proposes an Adaptive Refinement Gathering pipeline comprising three modules—a content-aware offset estimator, a local consistency matching corrector…
+  [ICCV 2025][Model Compression][Dense matching] This paper proposes an Adaptive Refinement Gathering pipeline comprising three modules—a content-aware offset estimator, a local consistency matching corrector, and a local consistency upsampler—augmented with an adaptive gating mechanism. The approach substantially reduces reliance on heavyweight feature extractors and global matchers, achieving performance comparable to state-of-the-art methods with a lightweight model.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "local consistency"
   - "efficient feature matching"
 date: 2026-05-08
-content_hash: 4fcec412fa736307
+content_hash: a21783d404e8f457
 ---
 
 # ARGMatch: Adaptive Refinement Gathering for Efficient Dense Matching
@@ -222,9 +222,9 @@ Conventional pipelines require gradient detachment to stabilize training, wherea
 
 - [\[ICCV 2025\] Local Dense Logit Relations for Enhanced Knowledge Distillation](local_dense_logit_relations_for_enhanced_knowledge_distillation.md)
 - [\[ICCV 2025\] Color Matching Using Hypernetwork-Based Kolmogorov-Arnold Networks (cmKAN)](color_matching_using_hypernetwork-based_kolmogorov-arnold_networks.md)
+- [\[CVPR 2026\] LiDeRe: A Lightweight Readout for Fast and Data-Efficient Dense Prediction](../../CVPR2026/model_compression/lidere_a_lightweight_readout_for_fast_and_data-efficient_dense_prediction.md)
 - [\[NeurIPS 2025\] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts](../../NeurIPS2025/model_compression/dense_backpropagation_improves_training_for_sparse_mixture-of-experts.md)
-- [\[NeurIPS 2025\] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching](../../NeurIPS2025/model_compression/universal_cross-tokenizer_distillation_via_approximate_likelihood_matching.md)
-- [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
+- [\[CVPR 2025\] Enhancing Dataset Distillation via Non-Critical Region Refinement](../../CVPR2025/model_compression/enhancing_dataset_distillation_via_non-critical_region_refinement.md)
 
 </div>
 

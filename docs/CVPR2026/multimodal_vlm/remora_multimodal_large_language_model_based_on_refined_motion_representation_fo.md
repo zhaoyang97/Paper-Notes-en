@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][State Space Model] The authors propose ReMoRa, which directly operates on compressed video representations (I-frames + motion vectors). Through the Refined Motion Representation (RMR) module, coarse block-level motion vectors are refined into fine-grained motion representations similar to optical flow. A Hierarchical Motion State Space (
+  [CVPR 2026][Multimodal VLM][Long-video understanding] The authors propose ReMoRa, which directly operates on compressed video representations (I-frames + motion vectors). Through the Refined Motion Representation (RMR) module, coarse block-level motion vectors are refined into fine-grained motion representations similar to optical flow. A Hierarchical Motion State Space (HMSS) module is then utilized for linear-time long-range temporal modeling…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - State Space Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Long-video understanding"
+  - "compressed video representation"
+  - "motion vectors"
+  - "state space models"
+  - "optical flow refinement."
 date: 2026-05-08
-content_hash: 74e69b53cce14640
+content_hash: 6718a0fe028aeae9
 ---
+
 # ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ The RMR module is first pre-trained independently using an $L_2$ optical flow re
 
 ## Related Papers
 
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
 - [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
-- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
 - [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
+- [\[CVPR 2026\] Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models](unleashing_the_intrinsic_visual_representation_capability_of_multimodal_large_la.md)
 - [\[CVPR 2025\] Video-XL: Extra-Long Vision Language Model for Hour-Scale Video Understanding](../../CVPR2025/multimodal_vlm/video-xl_extra-long_vision_language_model_for_hour-scale_video_understanding.md)
+- [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
 
 </div>
 

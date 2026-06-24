@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neural Differentiation in Deep Networks: A Theoretical Framework for Expressivity and Representational Diversity
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper proposes a mathematical framework for "neural differentiation," utilizing a unified **Neural Differentiation Index (NDI)** (integrating spectral diversity, entropy information, and second-order curvature sensitivity) to quantify the functional uniqueness of each neuron/channel. It provides provable error bou
+  [CVPR 2026][Model Compression][Neural Differentiation] This paper proposes a mathematical framework for "neural differentiation," utilizing a unified **Neural Differentiation Index (NDI)** (integrating spectral diversity, entropy information, and second-order curvature sensitivity) to quantify the functional uniqueness of each neuron/channel. It provides provable error bounds for pruning; the resulting algorithm, NDP, achieves accuracies comparable to or exceeding the Prev. S…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Neural Differentiation"
+  - "Channel Importance"
+  - "Structured Pruning"
+  - "Representational Diversity"
+  - "Provable Error Bounds"
 date: 2026-05-08
-content_hash: 6107a8e8ac7594fb
+content_hash: 28d815a7c87b63ff
 ---
+
 # Neural Differentiation in Deep Networks: A Theoretical Framework for Expressivity and Representational Diversity
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ On Tiny-ImageNet, NDP simultaneously reduces FLOPs: at 90% sparsity, it uses onl
 
 ## Related Papers
 
-- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
-- [\[CVPR 2026\] Convolutional Neural Networks Driven by Content Similarity](convolutional_neural_networks_driven_by_content_similarity.md)
-- [\[ICLR 2026\] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition](../../ICLR2026/others/training_deep_normalization-free_spiking_neural_networks_with_lateral_inhibition.md)
-- [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](robust_spiking_neural_networks_by_temporal_mutual_information.md)
-- [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)
+- [\[CVPR 2026\] AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks](adabet_gradient-free_layer_selection_for_efficient_training_of_deep_neural_netwo.md)
+- [\[NeurIPS 2025\] QuadEnhancer: Leveraging Quadratic Transformations to Enhance Deep Neural Networks](../../NeurIPS2025/model_compression/quadenhancer_leveraging_quadratic_transformations_to_enhance_deep_neural_network.md)
+- [\[CVPR 2026\] Decompose, Mix, Adapt: A Unified Framework for Parameter-Efficient Neural Network Recombination and Compression](decompose_mix_adapt_a_unified_framework_for_parameter-efficient_neural_network_r.md)
+- [\[ICML 2025\] FGFP: A Fractional Gaussian Filter and Pruning for Deep Neural Networks Compression](../../ICML2025/model_compression/fgfp_a_fractional_gaussian_filter_and_pruning_for_deep_neural_networks_compressi.md)
+- [\[ICLR 2026\] Adaptive Width Neural Networks](../../ICLR2026/model_compression/adaptive_width_neural_networks.md)
 
 </div>
 

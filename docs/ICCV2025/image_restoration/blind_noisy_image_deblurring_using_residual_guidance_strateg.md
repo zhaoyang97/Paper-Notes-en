@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Blind Noisy Image Deblurring Using Residual Guidance Strategy
 description: >-
-  [ICCV 2025][Image Restoration][Blind Deblurring] This paper proposes a Residual Guidance Strategy (RGS) for coarse-to-fine blind image deblurring within an image pyramid framework. At each scale transition…
+  [ICCV 2025][Image Restoration][Blind Deblurring] This paper proposes a Residual Guidance Strategy (RGS) for coarse-to-fine blind image deblurring within an image pyramid framework. At each scale transition, the convolution residual from the adjacent coarser scale is denoised via a guided filter and used to correct the blurred input at the current scale. This approach significantly improves kernel estimation accuracy and restoration quality under high noise levels (σ=0.1)…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Image Pyramid"
   - "Blur Kernel Estimation"
 date: 2026-05-08
-content_hash: 5c23b85deaf182cd
+content_hash: 733abd36664c371b
 ---
 
 # Blind Noisy Image Deblurring Using Residual Guidance Strategy
@@ -145,11 +145,11 @@ All experiments are conducted under Gaussian noise with σ=0.1, which represents
 
 ## Related Papers
 
+- [\[ECCV 2024\] Blind Image Deblurring with Noise-Robust Kernel Estimation](../../ECCV2024/image_restoration/blind_image_deblurring_with_noise-robust_kernel_estimation.md)
 - [\[ICCV 2025\] Efficient Concertormer for Image Deblurring and Beyond](efficient_concertormer_for_image_deblurring_and_beyond.md)
 - [\[ICCV 2025\] Blind2Sound: Self-Supervised Image Denoising without Residual Noise](blind2sound_self-supervised_image_denoising_without_residual_noise.md)
 - [\[NeurIPS 2025\] The Effect of Optimal Self-Distillation in Noisy Gaussian Mixture Model](../../NeurIPS2025/image_restoration/the_effect_of_optimal_self-distillation_in_noisy_gaussian_mixture_model.md)
-- [\[CVPR 2026\] BluRef: Unsupervised Image Deblurring with Dense-Matching References](../../CVPR2026/image_restoration/bluref_unsupervised_image_deblurring_with_dense-matching_references.md)
-- [\[NeurIPS 2025\] DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance](../../NeurIPS2025/image_restoration/dynaguide_steering_diffusion_polices_with_active_dynamic_guidance.md)
+- [\[CVPR 2026\] Unpaired Image Deraining Using Reward-Guided Self-Reinforcement Strategy](../../CVPR2026/image_restoration/unpaired_image_deraining_using_reward-guided_self-reinforcement_strategy.md)
 
 </div>
 

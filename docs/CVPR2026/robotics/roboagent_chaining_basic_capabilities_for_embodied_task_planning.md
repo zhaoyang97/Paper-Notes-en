@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RoboAgent: Chaining Basic Capabilities for Embodied Task Planning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Vision-Language Model] RoboAgent is proposed as a capability-driven embodied task planning framework that employs a single VLM to simultaneously function as a scheduler and five basic capabilities (Exploration Guidance, Object Grounding, Scene Description, Action Decoding, and Experience Summarization). Through a three-stage training process
+  [CVPR 2026][Robotics][Embodied Task Planning] RoboAgent is proposed as a capability-driven embodied task planning framework that employs a single VLM to simultaneously function as a scheduler and five basic capabilities (Exploration Guidance, Object Grounding, Scene Description, Action Decoding, and Experience Summarization). Through a three-stage training process (SFT + DAgger + Expert-guided RL), it achieves SOTA performance on EB-ALFRED and ALFWorld.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Vision-Language Model
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Robotics"
+  - "Embodied Task Planning"
+  - "Capability Chaining"
+  - "Vision-Language Models"
+  - "Reinforcement Learning"
+  - "Multi-stage Training"
 date: 2026-05-08
-content_hash: e1630f54516f47f3
+content_hash: eda6dd2734d3b3dd
 ---
+
 # RoboAgent: Chaining Basic Capabilities for Embodied Task Planning
 
 **Conference**: CVPR 2026  
@@ -154,11 +158,11 @@ In the ALFWorld visual environment, RoboAgent achieves a 77.6% SR, significantly
 
 ## Related Papers
 
+- [\[ICLR 2026\] MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Models for Embodied Task Planning](../../ICLR2026/robotics/momagraph_state-aware_unified_scene_graphs_with_vision-language_models_for_embod.md)
 - [\[CVPR 2026\] Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress](recurrent_reasoning_with_vision-language_models_for_estimating_long-horizon_embo.md)
+- [\[ICLR 2026\] Planning with an Embodied Learnable Memory](../../ICLR2026/robotics/planning_with_an_embodied_learnable_memory.md)
 - [\[ICML 2026\] Embodied Task Planning via Graph-Informed Action Generation with Large Language Models](../../ICML2026/robotics/embodied_task_planning_via_graph-informed_action_generation_with_large_language_.md)
 - [\[CVPR 2026\] Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control](iterative_closed-loop_motion_synthesis_for_scaling_the_capabilities_of_humanoid_.md)
-- [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](../../ICLR2026/robotics/rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
-- [\[NeurIPS 2025\] Towards Reliable Code-as-Policies: A Neuro-Symbolic Framework for Embodied Task Planning](../../NeurIPS2025/robotics/towards_reliable_code-as-policies_a_neuro-symbolic_framework_for_embodied_task_p.md)
 
 </div>
 

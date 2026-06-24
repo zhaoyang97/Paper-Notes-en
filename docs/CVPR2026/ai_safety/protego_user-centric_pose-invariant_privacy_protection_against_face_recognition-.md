@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Protego: User-Centric Pose-Invariant Privacy Protection Against Face Recognition-Induced Digital Footprint Exposure
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Protego compresses a user's 3D facial features into a pose-invariant 2D "Privacy Protection Texture" (PPT). Combined with a novel loss that makes face recognition models "hypersensitive" to protected images, it ensures that even protected face photos cannot be retrieved or matched against each other. This protects the
+  [CVPR 2026][AI Safety][Face recognition adversarial] Protego compresses a user's 3D facial features into a pose-invariant 2D "Privacy Protection Texture" (PPT). Combined with a novel loss that makes face recognition models "hypersensitive" to protected images, it ensures that even protected face photos cannot be retrieved or matched against each other. This protects the user's digital footprint from search engines like Clearview AI and PimEyes…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Face recognition adversarial"
+  - "privacy protection"
+  - "pose-invariant"
+  - "UV mapping"
+  - "black-box protection"
 date: 2026-05-08
-content_hash: 7bf9472843abd87b
+content_hash: 7e341a3563005620
 ---
+
 # Protego: User-Centric Pose-Invariant Privacy Protection Against Face Recognition-Induced Digital Footprint Exposure
 
 **Conference**: CVPR 2026  
@@ -118,10 +124,18 @@ In the "Hard" scenario, Protego's recall reduction is 3.5x that of Chameleon and
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Protection against Source Inference Attacks in Federated Learning](../../ICLR2026/ai_safety/protection_against_source_inference_attacks_in_federated_learning.md)
+- [\[CVPR 2026\] Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition](reinforcement-guided_synthetic_data_generation_for_privacy-sensitive_identity_re.md)
+- [\[CVPR 2026\] Frequency-domain Manipulation for Face Obfuscation](frequency-domain_manipulation_for_face_obfuscation.md)
+- [\[CVPR 2026\] No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation](no_way_to_steal_my_face_proactive_defense_against_identity-preserving_personaliz.md)
+- [\[ICLR 2026\] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](../../ICLR2026/ai_safety/optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition](reinforcement-guided_synthetic_data_generation_for_privacy-sensitive_identity_re.md)

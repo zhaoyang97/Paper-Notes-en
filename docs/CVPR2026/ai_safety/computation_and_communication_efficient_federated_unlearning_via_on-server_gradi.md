@@ -4,16 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][AI Safety][Federated Unlearning] The FOUL framework is proposed to achieve efficient federated unlearning with low communication overhead without accessing client data. It utilizes a two-stage strategy: decoupling causal and non-causal features during the learning phase, followed by server-side gradient conflict matching during the unlearning phase.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Federated Unlearning
-  - Gradient Conflict
-  - Causal Disentanglement
-  - On-server Aggregation
-  - Privacy
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Unlearning"
+  - "Gradient Conflict"
+  - "Causal Disentanglement"
+  - "On-server Aggregation"
+  - "Privacy"
 date: 2026-05-08
-content_hash: 34256c5282ace7b5
+content_hash: f3995a24ead0147d
 ---
+
 # Computation and Communication Efficient Federated Unlearning via On-server Gradient Conflict Mitigation and Expression
 
 **Conference**: CVPR 2026  
@@ -168,11 +169,11 @@ During the unlearning phase, only the non-causal sub-network $\theta_V$ is updat
 
 ## Related Papers
 
-- [\[CVPR 2026\] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)
 - [\[AAAI 2026\] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute](../../AAAI2026/ai_safety/secmoe_communication-efficient_secure_moe_inference_via_select-then-compute.md)
 - [\[NeurIPS 2025\] Efficient Fairness-Performance Pareto Front Computation](../../NeurIPS2025/ai_safety/efficient_fairness-performance_pareto_front_computation.md)
-- [\[CVPR 2026\] SubFLOT: Submodel Extraction for Efficient and Personalized Federated Learning via Optimal Transport](subflot_submodel_extraction_for_efficient_and_personalized_federated_learning_vi.md)
 - [\[CVPR 2026\] DSO: Direct Steering Optimization for Bias Mitigation](dso_direct_steering_optimization_for_bias_mitigation.md)
+- [\[CVPR 2026\] RemedyGS: Defend 3D Gaussian Splatting Against Computation Cost Attacks](remedygs_defend_3d_gaussian_splatting_against_computation_cost_attacks.md)
+- [\[ICLR 2026\] Don't Shift the Trigger: Robust Gradient Ascent for Backdoor Unlearning](../../ICLR2026/ai_safety/dont_shift_the_trigger_robust_gradient_ascent_for_backdoor_unlearning.md)
 
 </div>
 

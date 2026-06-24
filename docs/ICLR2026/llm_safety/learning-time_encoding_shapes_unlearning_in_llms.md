@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning-Time Encoding Shapes Unlearning in LLMs
 description: >-
-  [ICLR 2026][LLM Safety][LLM Unlearning] This paper systematically reveals an overlooked factor—how knowledge is **encoded via text during the training phase** (e.g., via a single text vs. multiple paraphrases, or whether it is entangled with other facts in the same paragraph)—fundamentally determines whether that knowledge can be effectively unlearned later.
+  [ICLR 2026][LLM Safety][LLM Unlearning] This paper systematically reveals an overlooked factor—how knowledge is **encoded via text during the training phase** (e.g., via a single text vs. multiple paraphrases, or whether it is entangled with other facts in the same paragraph)—fundamentally determines whether that knowledge can be effectively unlearned later. Based on this, it proposes two practical strategies, "paraphrasing" and "separating," to enhance unlearning efficiency.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM Unlearning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Unlearning"
+  - "Knowledge Encoding"
+  - "Paraphrase Augmentation"
+  - "Textual Entanglement"
+  - "Privacy Compliance"
 date: 2026-05-08
-content_hash: 7d83e4764e26c4ea
+content_hash: 23af23a152dc76f0
 ---
+
 # Learning-Time Encoding Shapes Unlearning in LLMs
 
 **Conference**: ICLR 2026  

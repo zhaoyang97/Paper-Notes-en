@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper discovers the "logical phase transition" phenomenon in LLM logical reasoning—performance collapses abruptly at specific complexity thresholds rather than degrading smoothly. It proposes the Logical Complexity Measure (LoCM) to quantify this phenomenon and designs the Neuro-Symbolic Curriculum Tuning (NSCT) f
+  [ACL 2026][Reasoning][Logical Reasoning] This paper discovers the "logical phase transition" phenomenon in LLM logical reasoning—performance collapses abruptly at specific complexity thresholds rather than degrading smoothly. It proposes the Logical Complexity Measure (LoCM) to quantify this phenomenon and designs the Neuro-Symbolic Curriculum Tuning (NSCT) framework. Through adaptive neuro-symbolic alignment and complexity-aware curriculum optimization…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Logical Reasoning"
+  - "Phase Transitions"
+  - "Curriculum Learning"
+  - "Neuro-Symbolic Alignment"
+  - "Reasoning Collapse"
 date: 2026-05-08
-content_hash: 1fc1c737f80fe1b0
+content_hash: f96e7427bc069bca
 ---
+
 # Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning
 
 **Conference**: ACL 2026  
@@ -133,15 +139,14 @@ Standard token-level cross-entropy loss is used throughout: $\mathcal{L}(\theta)
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
 - [\[ACL 2026\] Semantic-Aware Logical Reasoning via a Semiotic Framework](semantic-aware_logical_reasoning_via_a_semiotic_framework.md)
 - [\[ICLR 2026\] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision](../../ICLR2026/llm_reasoning/logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision.md)
-- [\[ACL 2026\] Self-Awareness before Action: Mitigating Logical Inertia via Proactive Cognitive Awareness](self-awareness_before_action_mitigating_logical_inertia_via_proactive_cognitive_.md)
 - [\[ICLR 2026\] ActivationReasoning: Logical Reasoning in Latent Activation Spaces](../../ICLR2026/llm_reasoning/activationreasoning_logical_reasoning_in_latent_activation_spaces.md)
+- [\[ICLR 2026\] Learning to Reason via Mixture-of-Thought for Logical Reasoning](../../ICLR2026/llm_reasoning/learning_to_reason_via_mixture-of-thought_for_logical_reasoning.md)
 
 </div>
 

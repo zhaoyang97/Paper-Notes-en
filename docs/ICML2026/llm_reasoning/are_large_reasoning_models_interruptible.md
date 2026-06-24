@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Are Large Reasoning Models Interruptible?
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper shifts the evaluation of large reasoning models from static problem-solving to dynamic environments where models may be interrupted or receive mid-generation updates. The authors construct evaluation protocols for mathematics and programming and identify three consistent failure modes: reasoning leakage, pan
+  [ICML 2026][Reasoning][Interruptible Reasoning] This paper shifts the evaluation of large reasoning models from static problem-solving to dynamic environments where models may be interrupted or receive mid-generation updates. The authors construct evaluation protocols for mathematics and programming and identify three consistent failure modes: reasoning leakage, panic answering, and self-doubt.
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Interruptible Reasoning"
+  - "Dynamic Context"
+  - "Long Reasoning Models"
+  - "Reasoning Robustness"
+  - "Evaluation Benchmark"
 date: 2026-05-08
-content_hash: be8bc0f2bba13f85
+content_hash: 3f537493ca0e4dd9
 ---
+
 # Are Large Reasoning Models Interruptible?
 
 **Conference**: ICML 2026  

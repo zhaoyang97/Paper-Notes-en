@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] To address the issues of isolated clusters and rigid boundaries caused by "binary contrast" in self-supervised skeleton action recognition, TranCLR synthesizes "transitional anchors" as manifold regularization terms between actions and reshapes the representation space from discrete point clouds into continuous smooth
+  [CVPR 2026][Self-Supervised Learning][Skeleton Action Recognition] To address the issues of isolated clusters and rigid boundaries caused by "binary contrast" in self-supervised skeleton action recognition, TranCLR synthesizes "transitional anchors" as manifold regularization terms between actions and reshapes the representation space from discrete point clouds into continuous smooth manifolds using three-level geometric manifold calibration. It achieves SOTA across linear ev…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Skeleton Action Recognition"
+  - "Contrastive Learning"
+  - "Transitional Anchors"
+  - "Manifold Calibration"
+  - "Confidence Calibration"
 date: 2026-05-08
-content_hash: 754ef5d3940086a4
+content_hash: bd84b418e24f9a37
 ---
+
 # Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors
 
 **Conference**: CVPR 2026  
@@ -151,11 +157,11 @@ Three levels in MGMC (NTU-60 Avg):
 
 ## Related Papers
 
-- [\[CVPR 2026\] PRISM: Learning a Shared Primitive Space for Transferable Skeleton Action Representation](prism_learning_a_shared_primitive_space_for_transferable_skeleton_action_represe.md)
-- [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
-- [\[CVPR 2026\] ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars](actavatar_temporally-aware_precise_action_control_for_talking_avatars.md)
-- [\[CVPR 2026\] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)
-- [\[CVPR 2026\] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation](superman_unifying_skeleton_and_vision_for_human_motion_perception_and_generation.md)
+- [\[ICLR 2026\] SnaPhArd Contrast Learning](../../ICLR2026/self_supervised/snaphard_contrast_learning.md)
+- [\[CVPR 2026\] Reading Your Actions: Learning Generalizable Action Representations via Pre-training AEMG](reading_your_actions_learning_generalizable_action_representations_via_pre-train.md)
+- [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
+- [\[CVPR 2026\] Beyond the Static World: Continual Category Discovery under Visual Drift](beyond_the_static_world_continual_category_discovery_under_visual_drift.md)
+- [\[CVPR 2026\] Suppressing Non-Semantic Noise in Masked Image Modeling Representations](suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)
 
 </div>
 

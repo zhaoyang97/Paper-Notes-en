@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Principled Data Augmentation for Learning to Solve Quadratic Programming Problems
 description: >-
-  [NeurIPS 2025][Graph Learning][Data Augmentation] This paper proposes a principled data augmentation framework based on affine transformations of the KKT system…
+  [NeurIPS 2025 Spotlight][Graph Learning][Data Augmentation] This paper proposes a principled data augmentation framework based on affine transformations of the KKT system, generating optimality-preserving augmented instances for MPNN-based learning-to-optimize (L2O) on linear programming (LP) and quadratic programming (QP) tasks. Combined with contrastive pretraining, the framework substantially improves performance in data-scarce and out-of-distribution (OOD) generalization…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Graph Learning"
   - "Data Augmentation"
   - "Quadratic Programming"
@@ -13,7 +13,7 @@ tags:
   - "Learning to Optimize"
   - "KKT Conditions"
 date: 2026-05-08
-content_hash: c43d6c9b509afc39
+content_hash: 1f8e2ea032611eef
 ---
 
 # Principled Data Augmentation for Learning to Solve Quadratic Programming Problems
@@ -175,11 +175,11 @@ The pretrained model outperforms training from scratch on nearly all OOD tasks, 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning](moemeta_mixture-of-experts_meta_learning_for_few-shot_relational_learning.md)
-- [\[NeurIPS 2025\] Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks](sketch-augmented_features_improve_learning_long-range_dependencies_in_graph_neur.md)
+- [\[ICML 2025\] Diss-l-ECT: Dissecting Graph Data with Local Euler Characteristic Transforms](../../ICML2025/graph_learning/diss-l-ect_dissecting_graph_data_with_local_euler_characteristic_transforms.md)
+- [\[ICML 2025\] Does Graph Prompt Work? A Data Operation Perspective with Theoretical Analysis](../../ICML2025/graph_learning/does_graph_prompt_work_a_data_operation_perspective_with_theoretical_analysis.md)
 - [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](../../AAAI2026/graph_learning/self-correction_distillation_for_structured_data_question_answering.md)
-- [\[NeurIPS 2025\] Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning](uncertain_knowledge_graph_completion_via_semi-supervised_confidence_distribution.md)
-- [\[AAAI 2026\] Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data](../../AAAI2026/graph_learning/format_as_a_prior_quantifying_and_analyzing_bias_in_llms_for_heterogeneous_data.md)
+- [\[ICLR 2026\] Graphon Cross-Validation: Assessing Models on Network Data](../../ICLR2026/graph_learning/graphon_cross-validation_assessing_models_on_network_data.md)
+- [\[NeurIPS 2025\] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning](moemeta_mixture-of-experts_meta_learning_for_few-shot_relational_learning.md)
 
 </div>
 

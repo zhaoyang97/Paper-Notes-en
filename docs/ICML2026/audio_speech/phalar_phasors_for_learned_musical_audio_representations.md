@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhaLar: Phasors for Learned Musical Audio Representations
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] PhaLar achieves a 70% relative improvement over SOTA on musical stem retrieval tasks by projecting audio features onto the complex plane and leveraging phase equivariance—encoding temporal alignment as phase rotations via FFT. It uses only 44% of the competitor's parameters and achieves 7× training acceleration; it rep
+  [ICML 2026][Audio & Speech][Phase Equivariance] PhaLar achieves a 70% relative improvement over SOTA on musical stem retrieval tasks by projecting audio features onto the complex plane and leveraging phase equivariance—encoding temporal alignment as phase rotations via FFT. It uses only 44% of the competitor's parameters and achieves 7× training acceleration; it represents a fundamental paradigm shift from "phase invariance" to "phase equivariance."
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Phase Equivariance"
+  - "Complex-valued Neural Networks"
+  - "Audio Coherence"
+  - "Stem Retrieval"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 560c751f638acc07
+content_hash: 766e3f7d92c6cbf6
 ---
+
 # PhaLar: Phasors for Learned Musical Audio Representations
 
 **Conference**: ICML 2026  
@@ -128,9 +134,9 @@ PhaLar establishes a new SOTA across all datasets with only 44% of COCOLA's para
 
 - [\[ACL 2026\] MSU-Bench: Musical Score Understanding Benchmark](../../ACL2026/audio_speech/musical_score_understanding_benchmark_evaluating_large_language_models39_compreh.md)
 - [\[ICML 2026\] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer](towards_streaming_synchronized_spatial_audio_generation_via_autoregressive_diffu.md)
+- [\[ICLR 2026\] DrVoice: Parallel Speech-Text Voice Conversation Model via Dual-Resolution Speech Representations](../../ICLR2026/audio_speech/drvoice_parallel_speech-text_voice_conversation_model_via_dual-resolution_speech.md)
 - [\[NeurIPS 2025\] Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders](../../NeurIPS2025/audio_speech/perceptually_aligning_representations_of_music_via_noise-augmented_autoencoders.md)
 - [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](../../ACL2026/audio_speech/fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
-- [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](../../ICCV2025/audio_speech/zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
 
 </div>
 

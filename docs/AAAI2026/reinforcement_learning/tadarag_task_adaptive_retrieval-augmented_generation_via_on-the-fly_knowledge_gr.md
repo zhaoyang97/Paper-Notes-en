@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction
 description: >-
-  [AAAI 2026][Reinforcement Learning][RAG] This paper proposes TAdaRAG, a task-adaptive RAG framework that performs on-the-fly knowledge graph construction via intent-driven template routing, supervised fine-tuning…
+  [AAAI 2026][Reinforcement Learning][RAG] This paper proposes TAdaRAG, a task-adaptive RAG framework that performs on-the-fly knowledge graph construction via intent-driven template routing, supervised fine-tuning, and REINFORCE-based reinforcement learning. It addresses three core limitations of conventional RAG—chunking-induced hallucination, broken reasoning chains, and irrelevant information interference—achieving state-of-the-art performance on 6 public benchmarks and 1 c…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "REINFORCE"
   - "Long-context Understanding"
 date: 2026-05-08
-content_hash: c41d8df965679063
+content_hash: 9312184a46ecebdb
 ---
 
 # TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction
@@ -204,8 +204,8 @@ As training progresses, the KG becomes increasingly compact — REINFORCE learns
 
 - [\[CVPR 2026\] ReAG: Reasoning-Augmented Generation for Knowledge-based Visual Question Answering](../../CVPR2026/reinforcement_learning/reag_reasoning-augmented_generation_for_knowledge-based_visual_question_answerin.md)
 - [\[NeurIPS 2025\] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/improving_retrieval-augmented_generation_through_multi-agent_reinforcement_learn.md)
+- [\[ICML 2026\] DRIVE: Distributional and Retrieval-Augmented Bidding with Value Evaluation](../../ICML2026/reinforcement_learning/drive_distributional_and_retrieval-augmented_bidding_with_value_evaluation.md)
 - [\[NeurIPS 2025\] Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering](../../NeurIPS2025/reinforcement_learning/knowledge-based_visual_question_answer_with_multimodal_processing_retrieval_and_.md)
-- [\[AAAI 2026\] Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making](think_speak_decide_language-augmented_multi-agent_reinforcement_learning_for_eco.md)
 - [\[AAAI 2026\] A Learning Framework For Cooperative Collision Avoidance of UAV Swarms Leveraging Domain Knowledge](a_learning_framework_for_cooperative_collision_avoidance_of_uav_swarms_leveragin.md)
 
 </div>

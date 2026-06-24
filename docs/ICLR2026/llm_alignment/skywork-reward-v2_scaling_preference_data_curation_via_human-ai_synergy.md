@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] A two-stage Human-AI synergistic preference data curation pipeline is proposed: Phase 1 accumulates approximately 1M preference pairs through 8 iterations of human verification, error-driven adaptive retrieval, and preference-guided LLM annotation; Phase 2 scales the data to 26M pairs using dual-RM consistency filterin
+  [ICLR 2026][LLM Alignment][Reward Model] A two-stage Human-AI synergistic preference data curation pipeline is proposed: Phase 1 accumulates approximately 1M preference pairs through 8 iterations of human verification, error-driven adaptive retrieval, and preference-guided LLM annotation; Phase 2 scales the data to 26M pairs using dual-RM consistency filtering. The resulting Skywork-Reward-V2 8B model achieves 97.8% on RewardBench and an average of 88.6% across seven major be…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Preference Data Curation"
+  - "Human-AI Synergy"
+  - "Data Quality"
+  - "Scalable Curation"
 date: 2026-05-08
-content_hash: f125a7c3f9766cb5
+content_hash: 0f2a3eaf2655e7b0
 ---
+
 # Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy
 
 **Conference**: ICLR 2026  

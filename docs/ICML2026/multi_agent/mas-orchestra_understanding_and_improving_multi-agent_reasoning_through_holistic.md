@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MAS-Orchestra: Understanding and Improving Multi-Agent Reasoning Through Holistic Orchestration and Controlled Benchmarks
 description: >-
-  [ICML 2026][Multi-Agent][GRPO] The paper reformulates "automated multi-agent system design" as a reinforcement learning (RL) problem involving function calls that output an entire MAS structure in a single step. It introduces MASBench to clarify "when multi-agent systems are truly superior to single-agent systems" across five dimensions: Depth, Hori
+  [ICML 2026][Multi-Agent][Multi-Agent Systems] The paper reformulates "automated multi-agent system design" as a reinforcement learning (RL) problem involving function calls that output an entire MAS structure in a single step. It introduces MASBench to clarify "when multi-agent systems are truly superior to single-agent systems" across five dimensions: Depth, Horizon, Breadth, Parallelism, and Robustness.
 tags:
-  - ICML 2026
-  - Multi-Agent
-  - GRPO
-  - MASBench
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "Multi-Agent Systems"
+  - "Holistic Orchestration"
+  - "Function Calling"
+  - "GRPO"
+  - "MASBench"
 date: 2026-05-08
-content_hash: 67122f45db08608b
+content_hash: fb573b3b004cd3f0
 ---
+
 # MAS-Orchestra: Understanding and Improving Multi-Agent Reasoning Through Holistic Orchestration and Controlled Benchmarks
 
 **Conference**: ICML 2026  
@@ -147,9 +151,9 @@ In terms of efficiency, MAS-Orchestra lies on the Pareto frontier, achieving ove
 
 - [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
 - [\[ICML 2026\] Toward Culturally Aligned LLMs through Ontology-Guided Multi-Agent Reasoning](toward_culturally_aligned_llms_through_ontology-guided_multi-agent_reasoning.md)
+- [\[ICLR 2026\] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](../../ICLR2026/multi_agent/stronger-mas_multi-agent_reinforcement_learning_for_collaborative_llms.md)
 - [\[ACL 2026\] Towards Self-Improving Error Diagnosis in Multi-Agent Systems](../../ACL2026/multi_agent/towards_self-improving_error_diagnosis_in_multi-agent_systems.md)
 - [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
-- [\[ACL 2025\] GETReason: Enhancing Image Context Extraction through Hierarchical Multi-Agent Reasoning](../../ACL2025/multi_agent/getreason_enhancing_image_context_extraction_through_hierarchical_multi-agent_re.md)
 
 </div>
 

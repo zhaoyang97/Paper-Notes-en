@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Conservation Laws for Modern Neural Architectures
 description: >-
-  [ICML 2026][Optimization & Theory][Attention] This paper reformulates the problem of "characterizing all conserved quantities in training dynamics" as solving a data-independent partial differential equation (PDE). Leveraging meromorphic continuation techniques from complex analysis, it provides for the first time a **complete list of conservation laws** for GELU/
+  [ICML2026][Optimization][Conservation laws] This paper reformulates the problem of "characterizing all conserved quantities in training dynamics" as solving a data-independent partial differential equation (PDE). Leveraging meromorphic continuation techniques from complex analysis, it provides for the first time a **complete list of conservation laws** for GELU/SiLU/SwiGLU feed-forward networks, multi-head attention (including sinusoidal PE and RoPE), and various gated MoEs…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Attention
-  - RoPE
-  - MoE
+  - "ICML2026"
+  - "Optimization"
+  - "Conservation laws"
+  - "Gradient flow"
+  - "Implicit bias"
+  - "Attention mechanism"
+  - "RoPE"
+  - "MoE"
 date: 2026-05-08
-content_hash: a72383f21bc52755
+content_hash: f6c473b05c5fcd35
 ---
+
 # Conservation Laws for Modern Neural Architectures
 
 **Conference**: ICML2026  
@@ -137,10 +141,10 @@ $$\epsilon_\text{block}(k)=\frac1N\sum_{i=1}^N\frac{\lVert h_i(\theta_k)-h_i(\th
 ## Related Papers
 
 - [\[ICML 2025\] Transformative or Conservative? Conservation Laws for ResNets and Transformers](../../ICML2025/optimization/transformative_or_conservative_conservation_laws_for_resnets_and_transformers.md)
-- [\[ICLR 2026\] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](../../ICLR2026/optimization/saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)
 - [\[ICML 2026\] Muon in Associative Memory Learning: Training Dynamics and Scaling Laws](muon_in_associative_memory_learning_training_dynamics_and_scaling_laws.md)
+- [\[ICLR 2026\] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](../../ICLR2026/optimization/saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)
+- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
 - [\[NeurIPS 2025\] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks](../../NeurIPS2025/optimization/emergence_and_scaling_laws_in_sgd_learning_of_shallow_neural_networks.md)
-- [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](../../NeurIPS2025/optimization/learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
 
 </div>
 

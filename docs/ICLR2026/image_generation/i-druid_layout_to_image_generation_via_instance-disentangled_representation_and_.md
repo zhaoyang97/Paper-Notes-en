@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] I-DRUID: Layout to Image Generation via Instance-Disentangled Representation and Unpaired Data
 description: >-
-  [ICLR 2026][Image Generation][Layout-to-Image] Addressing two major issues in Layout-to-Image (L2I) generation—"attribute leakage" caused by entangled instance features in attention layers and "poor cross-scenario generalization" due to insufficient paired data—I-DRUID introduces an **Instance-Disentangled Module + Disentangled Constraint** to extract clean semanti
+  [ICLR 2026][Image Generation][Layout-to-Image] Addressing two major issues in Layout-to-Image (L2I) generation—"attribute leakage" caused by entangled instance features in attention layers and "poor cross-scenario generalization" due to insufficient paired data—I-DRUID introduces an **Instance-Disentangled Module + Disentangled Constraint** to extract clean semantic features. It then employs **prompt-only Reinforcement Learning without paired images** to adapt the model to ne…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Layout-to-Image
-  - Reinforcement Learning
-  - MM-DiT
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Layout-to-Image"
+  - "Attribute Leakage"
+  - "Instance Disentanglement"
+  - "Reinforcement Learning"
+  - "AI Feedback"
+  - "MM-DiT"
 date: 2026-05-08
-content_hash: 64733b45bc1502ec
+content_hash: 3e726236aad72e60
 ---
+
 # I-DRUID: Layout to Image Generation via Instance-Disentangled Representation and Unpaired Data
 
 **Conference**: ICLR 2026  

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Efficient-SAM2: Accelerating SAM2 with Object-Aware Visual Encoding and Memory Retrieval
 description: >-
-  [ICLR 2026][Segmentation][SAM2] The study identifies that SAM2 exhibits sparse perception patterns similar to biological vision (the decoder focuses on the foreground while the encoder computes globally; only a few tokens in memory frames are effective and remain temporally consistent in saliency). Based on this, Efficient-SAM2 is proposed, eliminati
+  [ICLR 2026][Segmentation][SAM2] The study identifies that SAM2 exhibits sparse perception patterns similar to biological vision (the decoder focuses on the foreground while the encoder computes globally; only a few tokens in memory frames are effective and remain temporally consistent in saliency). Based on this, Efficient-SAM2 is proposed, eliminating redundant computation through Object-Aware Sparse Window Routing (SWR) and Sparse Memory Retrieval (SMR). This achieves a 1.6…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - SAM2
-  - video object segmentation
-  - post-training acceleration
-  - sparse window routing
-  - memory compression
+  - "ICLR 2026"
+  - "Segmentation"
+  - "SAM2"
+  - "video object segmentation"
+  - "post-training acceleration"
+  - "sparse window routing"
+  - "memory compression"
 date: 2026-05-08
-content_hash: 435bc9a632fe3980
+content_hash: 66471d5cd642abb0
 ---
+
 # Efficient-SAM2: Accelerating SAM2 with Object-Aware Visual Encoding and Memory Retrieval
 
 **Conference**: ICLR 2026  
@@ -137,9 +138,9 @@ The SWR shortcut branch is trained using a reconstruction loss $\mathcal{L} = \|
 
 - [\[CVPR 2025\] A Distractor-Aware Memory for Visual Object Tracking with SAM2](../../CVPR2025/segmentation/a_distractor-aware_memory_for_visual_object_tracking_with_sam2.md)
 - [\[AAAI 2026\] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation](../../AAAI2026/segmentation/rs2-sam2_customized_sam2_for_referring_remote_sensing_image_segmentation.md)
-- [\[ICLR 2026\] AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation](amlris_alignment-aware_masked_learning_for_referring_image_segmentation.md)
-- [\[ICLR 2026\] Decomposed Attention Fusion in MLLMs for Training-free Video Reasoning Segmentation](decomposed_attention_fusion_in_mllms_for_training-free_video_reasoning_segmentat.md)
 - [\[CVPR 2026\] V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence](../../CVPR2026/segmentation/v2-sam_marrying_sam2_with_multi-prompt_experts_for_cross-view_object_corresponde.md)
+- [\[ICLR 2026\] VIRTUE: Visual-Interactive Text-Image Universal Embedder](virtue_visual-interactive_text-image_universal_embedder.md)
+- [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](../../ICCV2025/segmentation/correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
 
 </div>
 

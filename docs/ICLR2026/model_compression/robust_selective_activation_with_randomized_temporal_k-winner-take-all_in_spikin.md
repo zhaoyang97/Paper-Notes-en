@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robust Selective Activation with Randomized Temporal K-Winner-Take-All in Spiking Neural Networks for Continual Learning
 description: >-
-  [ICLR 2026][Model Compression][K-Winner-Take-All] To address catastrophic forgetting in Spiking Neural Networks (SNNs) for continual learning, this paper upgrades the traditional rate-based deterministic K-WTA to "Randomized Temporal K-WTA (RTK-WTA)". By ranking neurons based on their temporal traces rather than instantaneous firing rates and injecting controlled rand
+  [ICLR 2026][Model Compression][Spiking Neural Networks] To address catastrophic forgetting in Spiking Neural Networks (SNNs) for continual learning, this paper upgrades the traditional rate-based deterministic K-WTA to "Randomized Temporal K-WTA (RTK-WTA)". By ranking neurons based on their temporal traces rather than instantaneous firing rates and injecting controlled randomness $\alpha$ into Top-K selection, the method expands the effective feature space and increases inter…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - K-Winner-Take-All
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Spiking Neural Networks"
+  - "Continual Learning"
+  - "K-Winner-Take-All"
+  - "Temporal Trace"
+  - "Randomized Selection"
 date: 2026-05-08
-content_hash: b695ec2fc9c7c81d
+content_hash: 80167ffd00036122
 ---
+
 # Robust Selective Activation with Randomized Temporal K-Winner-Take-All in Spiking Neural Networks for Continual Learning
 
 **Conference**: ICLR 2026  
@@ -140,16 +145,16 @@ Noise Robustness (CIFAR100, noise injected during training, Accuracy %):
 - Value: ⭐⭐⭐⭐ Provides a near-zero cost, interpretable robust selection mechanism for neuromorphic continual learning with good transfer potential.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Many Eyes, One Mind: Temporal Multi-Perspective and Progressive Distillation for Spiking Neural Networks](many_eyes_one_mind_temporal_multi-perspective_and_progressive_distillation_for_s.md)
 - [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
+- [\[ICLR 2026\] FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning](flyprompt_brain-inspired_random-expanded_routing.md)
 - [\[ICLR 2026\] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks](cannistraci-hebb_training_on_ultra-sparse_spiking_neural_networks.md)
 - [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](rethinking_continual_learning_with_progressive_neural_collapse.md)
-- [\[NeurIPS 2025\] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing](../../NeurIPS2025/model_compression/synergy_between_the_strong_and_the_weak_spiking_neural_networks_are_inherently_s.md)
 
 </div>
 

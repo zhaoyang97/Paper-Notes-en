@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games
 description: >-
-  [ICML 2026][Reinforcement Learning][PSRO] This paper points out that prevailing PSRO methods focus only on local information from the "restricted game" when expanding the policy population, leading to a worst-case requirement of nearly $N$ pure policies for convergence. It proposes Global PSRO, a two-stage exploration-selection framework that first samples mul
+  [ICML 2026][Reinforcement Learning][PSRO] This paper points out that prevailing PSRO methods focus only on local information from the "restricted game" when expanding the policy population, leading to a worst-case requirement of nearly $N$ pure policies for convergence. It proposes Global PSRO, a two-stage exploration-selection framework that first samples multiple candidate best responses and then selects the optimal expansion by directly scoring the *post-expansion Populati…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - PSRO
-  - Population Exploitability
-  - DRL
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "PSRO"
+  - "Nash Equilibrium"
+  - "Population Exploitability"
+  - "Zero-sum Games"
+  - "DRL"
 date: 2026-05-08
-content_hash: 9243cda6bef07994
+content_hash: 6d5ea573f56798ec
 ---
+
 # Global Policy-Space Response Oracles for Two-Player Zero-Sum Games
 
 **Conference**: ICML 2026  

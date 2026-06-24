@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fair Minimum Labeling: Efficient Temporal Network Activations for Reachability and Equity
 description: >-
-  [NeurIPS 2025][AI Safety][Fairness] This paper introduces the Fair Minimum Labeling (FML) problem, which aims to design minimum-cost temporal edge activation schemes ensuring sufficient temporal-path reachability for eac…
+  [NeurIPS 2025][AI Safety][Fairness] This paper introduces the Fair Minimum Labeling (FML) problem, which aims to design minimum-cost temporal edge activation schemes ensuring sufficient temporal-path reachability for each node group in a network to satisfy fair coverage requirements. The paper proves FML is NP-hard and inapproximable beyond a certain factor, and provides an approximation algorithm based on probabilistic tree embeddings that matches the hardness lower bound.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Reachability"
   - "Approximation Algorithms"
 date: 2026-05-08
-content_hash: b61747f698ad5404
+content_hash: b5d72a2d9738f816
 ---
 
 # Fair Minimum Labeling: Efficient Temporal Network Activations for Reachability and Equity
@@ -162,9 +162,9 @@ Theoretical guarantee: with tree height $H \approx 6.68$, $\varepsilon=0.01$ gua
 
 - [\[NeurIPS 2025\] Efficient Fairness-Performance Pareto Front Computation](efficient_fairness-performance_pareto_front_computation.md)
 - [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
-- [\[ICCV 2025\] Vulnerability-Aware Spatio-Temporal Learning for Generalizable Deepfake Video Detection](../../ICCV2025/ai_safety/vulnerability-aware_spatio-temporal_learning_for_generalizable_deepfake_video_de.md)
 - [\[NeurIPS 2025\] Cost Efficient Fairness Audit Under Partial Feedback](cost_efficient_fairness_audit_under_partial_feedback.md)
 - [\[NeurIPS 2025\] DictPFL: Efficient and Private Federated Learning on Encrypted Gradients](dictpfl_efficient_and_private_federated_learning_on_encrypted_gradients.md)
+- [\[CVPR 2026\] WaTeRFlow: Watermark Temporal Robustness via Flow Consistency](../../CVPR2026/ai_safety/waterflow_watermark_temporal_robustness_via_flow_consistency.md)
 
 </div>
 

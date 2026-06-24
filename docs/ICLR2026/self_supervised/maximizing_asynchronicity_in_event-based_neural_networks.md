@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Maximizing Asynchronicity in Event-based Neural Networks
 description: >-
-  [ICLR 2026][Self-Supervised Learning][RWKV-6] The EVA framework is proposed, treating events as language tokens and utilizing a RWKV-6 based linear attention asynchronous encoder for event-by-event feature updates. Combined with Multi-Representation Prediction (MRP) and Next-Representation Prediction (NRP) self-supervised learning, it acquires generalizable featur
+  [ICLR 2026][Self-Supervised Learning][Event cameras] The EVA framework is proposed, treating events as language tokens and utilizing a RWKV-6 based linear attention asynchronous encoder for event-by-event feature updates. Combined with Multi-Representation Prediction (MRP) and Next-Representation Prediction (NRP) self-supervised learning, it acquires generalizable features, successfully achieving high-difficulty object detection tasks in the Asynchronous-to-Synchronous (A2S)…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - RWKV-6
-  - A2S
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Event cameras"
+  - "Asynchronous processing"
+  - "Linear attention"
+  - "RWKV-6"
+  - "A2S"
 date: 2026-05-08
-content_hash: cfb0f2fdbf1302bc
+content_hash: 4f36fabf86d195b7
 ---
+
 # Maximizing Asynchronicity in Event-based Neural Networks
 
 **Conference**: ICLR 2026  
@@ -155,8 +159,8 @@ An end-to-end asynchronous Graph Neural Network method with 32.1 mAP on Gen1. EV
 - [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
 - [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](../../CVPR2026/self_supervised/robust_spiking_neural_networks_by_temporal_mutual_information.md)
 - [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](../../CVPR2026/self_supervised/on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)
+- [\[CVPR 2026\] Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses](../../CVPR2026/self_supervised/reconstructing_spiking_neural_networks_using_a_single_neuron_with_autapses.md)
 - [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](../../AAAI2026/self_supervised/spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
-- [\[ICLR 2026\] Maximizing Incremental Information Entropy for Contrastive Learning](maximizing_incremental_information_entropy_for_contrastive_learning.md)
 
 </div>
 

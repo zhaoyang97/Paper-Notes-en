@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Adaptive Canonicalization with Application to Invariant Anisotropic Geometric Networks
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper proposes adaptive canonicalization: instead of the input alone determining a canonical pose, the input and the current task network jointly select the transformation with the highest confidence. This maintains symmetry invariance while alleviating discretization issues in traditional canonicalization. It ach
+  [ICLR 2026][Adaptive Canonicalization] This paper proposes adaptive canonicalization: instead of the input alone determining a canonical pose, the input and the current task network jointly select the transformation with the highest confidence. This maintains symmetry invariance while alleviating discretization issues in traditional canonicalization. It achieves results superior to equivariant architectures, data augmentation, and fixed canonicalization in spectral graph netw…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Adaptive Canonicalization"
+  - "Geometric Deep Learning"
+  - "Symmetry"
+  - "Spectral Graph Neural Networks"
+  - "Point Cloud Classification"
 date: 2026-05-08
-content_hash: 282a350abc0cc373
+content_hash: 5cfebbc9651e7598
 ---
+
 # Adaptive Canonicalization with Application to Invariant Anisotropic Geometric Networks
 
 **Conference**: ICLR 2026  

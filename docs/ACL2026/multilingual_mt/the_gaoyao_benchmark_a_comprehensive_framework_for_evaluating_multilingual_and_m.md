@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper introduces the GaoYao benchmark, featuring 182.3K samples across 26 languages and 51 countries/regions. Utilizing a three-tier cultural evaluation framework (General Multilingual / Cross-cultural / Mono-cultural) and nine cognitive sub-layers, it combines human-localized subjective test sets with the expert-
+  [ACL 2026][Multilingual & Machine Translation][Multilingual Benchmark] This paper introduces the GaoYao benchmark, featuring 182.3K samples across 26 languages and 51 countries/regions. Utilizing a three-tier cultural evaluation framework (General Multilingual / Cross-cultural / Mono-cultural) and nine cognitive sub-layers, it combines human-localized subjective test sets with the expert-verified cross-cultural synthetic dataset SuperBLEnD to deeply diagnose the multilingual…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual Benchmark"
+  - "Multicultural Evaluation"
+  - "LLM Evaluation"
+  - "Linguistic Fairness"
+  - "Cultural Understanding"
 date: 2026-05-08
-content_hash: 9ffcc5afeb7a99d7
+content_hash: b754649bc84ec111
 ---
+
 # The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models
 
 **Conference**: ACL 2026  
@@ -135,10 +141,10 @@ GaoYao is an evaluation benchmark, not a training method. Objective tasks are ev
 ## Related Papers
 
 - [\[ACL 2026\] Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors](evaluating_robustness_of_large_language_models_against_multilingual_typographica.md)
-- [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
 - [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
+- [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
+- [\[ACL 2026\] Multilingual Refusal Alignment for Safer Large Language Models](multilingual_refusal_alignment_for_safer_large_language_models.md)
 - [\[ACL 2026\] Language Models Entangle Language and Culture](language_models_entangle_language_and_culture.md)
-- [\[ACL 2025\] Disentangling Language and Culture for Evaluating Multilingual Large Language Models](../../ACL2025/multilingual_mt/disentangle_language_culture.md)
 
 </div>
 

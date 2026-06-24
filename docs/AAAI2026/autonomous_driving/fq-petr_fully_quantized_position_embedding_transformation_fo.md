@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection
 description: >-
-  [AAAI 2026][Autonomous Driving][3D Object Detection] This work presents the first fully INT8-quantized deployment of PETR-series 3D detectors. It introduces three key components: a quantization-friendly LiDAR-ray positio…
+  [AAAI 2026][Autonomous Driving][3D Object Detection] This work presents the first fully INT8-quantized deployment of PETR-series 3D detectors. It introduces three key components: a quantization-friendly LiDAR-ray position encoding (QFPE) to resolve multi-modal feature magnitude mismatch, a dual-lookup table (DULUT) for efficient approximation of nonlinear operators, and quantization after numerical stabilization (QANS) to prevent softmax attention distortion. Across PETR/Stre…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "PETR"
   - "Position Encoding"
 date: 2026-05-08
-content_hash: 3839fa8c652bb703
+content_hash: 9d8616df3b41472d
 ---
 
 # FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection
@@ -108,10 +108,10 @@ Direct application of SmoothQuant causes a 10.8% mAP drop; FQ-PETR reduces this 
 ## Related Papers
 
 - [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](exploring_surround-view_fisheye_camera_3d_object_detection.md)
+- [\[ECCV 2024\] OPEN: Object-wise Position Embedding for Multi-view 3D Object Detection](../../ECCV2024/autonomous_driving/open_object-wise_position_embedding_for_multi-view_3d_object_detection.md)
 - [\[AAAI 2026\] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving](driveflow_rectified_flow_adaptation_for_robust_3d_object_detection_in_autonomous.md)
-- [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](../../ICCV2025/autonomous_driving/evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
 - [\[AAAI 2026\] MOBA: A Material-Oriented Backdoor Attack against LiDAR-based 3D Object Detection](moba_a_material-oriented_backdoor_attack_against_lidar-based_3d_object_detection.md)
-- [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
+- [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](../../ICCV2025/autonomous_driving/evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
 
 </div>
 

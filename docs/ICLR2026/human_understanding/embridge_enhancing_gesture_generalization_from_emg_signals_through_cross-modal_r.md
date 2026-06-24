@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EMBridge: Enhancing Gesture Generalization from EMG Signals Through Cross-modal Representation Learning
 description: >-
-  [ICLR 2026][Human Understanding][Q-Former] EMBridge proposes using hand poses as high-quality anchors. Through a triple mechanism of Q-Former, Masked Pose Reconstruction Loss (MPRL), and Community-Aware Soft Contrastive Learning (CASCLe), it aligns the representation space of noisy sEMG signals with a semantically structured pose space, achieving zero-shot EMG
+  [ICLR 2026][Human Understanding][Surface Electromyography (sEMG)] EMBridge proposes using hand poses as high-quality anchors. Through a triple mechanism of Q-Former, Masked Pose Reconstruction Loss (MPRL), and Community-Aware Soft Contrastive Learning (CASCLe), it aligns the representation space of noisy sEMG signals with a semantically structured pose space, achieving zero-shot EMG gesture classification on wearable devices for the first time.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Q-Former
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Surface Electromyography (sEMG)"
+  - "Cross-modal Representation Learning"
+  - "Gesture Recognition"
+  - "Zero-shot Generalization"
+  - "Q-Former"
 date: 2026-05-08
-content_hash: c42d35a5747c93a7
+content_hash: b04b350ebf2ab428
 ---
+
 # EMBridge: Enhancing Gesture Generalization from EMG Signals Through Cross-modal Representation Learning
 
 **Conference**: ICLR 2026  

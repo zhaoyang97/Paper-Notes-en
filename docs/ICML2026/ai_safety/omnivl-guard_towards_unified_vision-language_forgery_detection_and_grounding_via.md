@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniVL-Guard: Towards Unified Vision-Language Forgery Detection and Grounding via Balanced RL
 description: >-
-  [ICML 2026][AI Safety][Grounding] This paper targets the unified task of "Simultaneous detection and localization of mixed image/text/video forgeries." It proposes OmniVL-Guard, which utilizes Self-Evolving CoT to synthesize high-quality cold-start data and ARSPO (non-linear reward mapping + dynamic task weights) to address the "difficulty bias" in mul
+  [ICML 2026][AI Safety][Forgery Detection] This paper targets the unified task of "Simultaneous detection and localization of mixed image/text/video forgeries." It proposes OmniVL-Guard, which utilizes Self-Evolving CoT to synthesize high-quality cold-start data and ARSPO (non-linear reward mapping + dynamic task weights) to address the "difficulty bias" in multi-task RL, where simple classification tasks dominate gradients while fine-grained localization tasks fail to learn.…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Grounding
+  - "ICML 2026"
+  - "AI Safety"
+  - "Forgery Detection"
+  - "Grounding"
+  - "Multi-task RL"
+  - "Reward Shaping"
+  - "Self-Evolving CoT"
 date: 2026-05-08
-content_hash: e433c2d91fdc7348
+content_hash: 2454b6d3129784f0
 ---
+
 # OmniVL-Guard: Towards Unified Vision-Language Forgery Detection and Grounding via Balanced RL
 
 **Conference**: ICML 2026  
@@ -143,10 +148,10 @@ OOD Zero-shot: 93.69 on ISOT (vs 88.74), 63.64 on CASIA2.0 (vs 60.88), 79.38 on 
 ## Related Papers
 
 - [\[ICML 2026\] PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection](prpo_paragraph-level_policy_optimization_for_vision-language_deepfake_detection.md)
-- [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](../../CVPR2026/ai_safety/a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
-- [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](../../CVPR2026/ai_safety/ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
-- [\[CVPR 2026\] Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection](../../CVPR2026/ai_safety/omni-fake_benchmarking_unified_multimodal_social_media_deepfake_detection.md)
-- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](../../CVPR2026/ai_safety/hierarchically_robust_zero-shot_vision-language_models.md)
+- [\[ACL 2026\] UniVid: A Unified Vision-Language Model for Video Moderation](../../ACL2026/ai_safety/univid_unified_vision-language_model_for_video_moderation.md)
+- [\[ICML 2026\] Right Predictions, Misleading Explanations: On the Vulnerability of Vision-Language Model Explanations](right_predictions_misleading_explanations_on_the_vulnerability_of_vision-languag.md)
+- [\[ICML 2026\] Optimizing Token Choice for Code Watermarking: An RL Approach](optimizing_token_choice_for_code_watermarking_an_rl_approach.md)
+- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 
 </div>
 

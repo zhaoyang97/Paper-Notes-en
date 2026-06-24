@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision
 description: >-
-  [CVPR 2026][Human Understanding][3D Gaussian Splatting] FlexAvatar is proposed to resolve the entanglement between driving signals and target viewpoints by introducing learnable "bias sinks" tokens to unify training across monocular and multi-view data, enabling the generation of complete, high-quality, and animatable 3D head avatars from a single image.
+  [CVPR 2026][Human Understanding][3D Head Avatar] FlexAvatar is proposed to resolve the entanglement between driving signals and target viewpoints by introducing learnable "bias sinks" tokens to unify training across monocular and multi-view data, enabling the generation of complete, high-quality, and animatable 3D head avatars from a single image.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - 3D Gaussian Splatting
-  - Transformer
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "3D Head Avatar"
+  - "Single-image Reconstruction"
+  - "Bias Sinks"
+  - "3D Gaussian Splatting"
+  - "Transformer"
 date: 2026-05-08
-content_hash: eb1a088ed3971f5c
+content_hash: eab9f53bee9b299a
 ---
+
 # FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision
 
 **Conference**: CVPR 2026  
@@ -170,15 +174,15 @@ A PSNR gain of 3.8+ dB and significant LPIPS leads indicate that the completenes
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] VASA-3D: Lifelike Audio-Driven Gaussian Head Avatars from a Single Image](../../NeurIPS2025/human_understanding/vasa-3d_lifelike_audio-driven_gaussian_head_avatars_from_a_single_image.md)
 - [\[CVPR 2025\] WildAvatar: Learning In-the-Wild 3D Avatars from the Web](../../CVPR2025/human_understanding/wildavatar_learning_in-the-wild_3d_avatars_from_the_web.md)
-- [\[CVPR 2026\] ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars](actavatar_temporally-aware_precise_action_control_for_talking_avatars.md)
-- [\[CVPR 2026\] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head](syncdreamer_controllable_and_expressive_avatar_generation_beyond_the_talking_hea.md)
 - [\[CVPR 2026\] MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision](matched_crisp_edge_detection_using_end-to-end_matching-based_supervision.md)
+- [\[CVPR 2026\] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation](mimictalker_a_multimodal_interactive_and_memory-enhanced_framework_for_real-time.md)
+- [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](../../ICCV2025/human_understanding/avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
 
 </div>
 

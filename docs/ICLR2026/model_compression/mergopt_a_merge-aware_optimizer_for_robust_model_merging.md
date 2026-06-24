@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MergOPT: A Merge-Aware Optimizer for Robust Model Merging
 description: >-
-  [ICLR 2026][Model Compression][LLM] By shifting "merging" considerations forward to the fine-tuning stage, MergOPT models "other experts to be merged" as adversarial perturbations in the weight space during training. Using distributionally robust optimization (DRO), it trains experts that are naturally more robust to merging, achieving a gain of 3.5% (up
+  [ICLR 2026][Model Compression][Model Merging] By shifting "merging" considerations forward to the fine-tuning stage, MergOPT models "other experts to be merged" as adversarial perturbations in the weight space during training. Using distributionally robust optimization (DRO), it trains experts that are naturally more robust to merging, achieving a gain of 3.5% (up to 9.5%) in subsequent merging with almost no additional training cost.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LLM
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "Distributionally Robust Optimization"
+  - "Task Vectors"
+  - "Merge-Aware Fine-Tuning"
+  - "LLM"
 date: 2026-05-08
-content_hash: d68de7018fe03773
+content_hash: bedf584fdaf0928e
 ---
+
 # MergOPT: A Merge-Aware Optimizer for Robust Model Merging
 
 **Conference**: ICLR 2026  
@@ -124,10 +129,10 @@ The appendix further verifies **optimizer independence** (SGD instantiation, com
 
 ## Related Papers
 
-- [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
-- [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
 - [\[ICLR 2026\] DisTaC: Conditioning Task Vectors via Distillation for Robust Model Merging](distac_conditioning_task_vectors_via_distillation_for_robust_model_merging.md)
 - [\[ICLR 2026\] LS-Merge: Merging Language Models in Latent Space](ls-merge_merging_language_models_in_latent_space.md)
+- [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
+- [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
 - [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
 
 </div>

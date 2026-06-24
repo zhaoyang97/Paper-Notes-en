@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SURF: Separation via Unsupervised Remixing Flow
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] SURF combines the supervised flow matching framework FLOSS with the unsupervised ReMixIT / Self-Remixing teacher-student remixing training strategy. This allows a generative flow matching separator to be trained **entirely from mixture observations** (without any clean source samples). It nearly matches the performance
+  [ICML 2026][Image Generation][Single-channel source separation] SURF combines the supervised flow matching framework FLOSS with the unsupervised ReMixIT / Self-Remixing teacher-student remixing training strategy. This allows a generative flow matching separator to be trained **entirely from mixture observations** (without any clean source samples). It nearly matches the performance of supervised flows on MNIST/CIFAR10 image separation and LibriSpeech / FUSS audio separation…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
-  - Wake-Sleep
+  - "ICML 2026"
+  - "Image Generation"
+  - "Single-channel source separation"
+  - "Flow matching"
+  - "Unsupervised learning"
+  - "Teacher-student distillation"
+  - "Wake-Sleep"
 date: 2026-05-08
-content_hash: fbe540f0740a647e
+content_hash: b949898d42a02fbd
 ---
+
 # SURF: Separation via Unsupervised Remixing Flow
 
 **Conference**: ICML 2026  
@@ -126,16 +130,16 @@ The joint training objective uses either $\mathcal{L}_{\text{RM-FM}}$ or $\mathc
 - Value: ⭐⭐⭐⭐⭐ Provides a path for training generative separators without clean sources, highly relevant for scientific imaging and bioacoustics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICML 2026\] Adversarial Flow Models](adversarial_flow_models.md)
 - [\[CVPR 2026\] Cinematic Audio Source Separation Using Visual Cues](../../CVPR2026/image_generation/cinematic_audio_source_separation_using_visual_cues.md)
+- [\[ICML 2026\] Stable Velocity: A Variance Perspective on Flow Matching](stable_velocity_a_variance_perspective_on_flow_matching.md)
 - [\[ECCV 2024\] Implicit Style-Content Separation using B-LoRA](../../ECCV2024/image_generation/implicit_style-content_separation_using_b-lora.md)
 - [\[ICLR 2026\] From Parameters to Behaviors: Unsupervised Compression of the Policy Space](../../ICLR2026/image_generation/from_parameters_to_behaviors_unsupervised_compression_of_the_policy_space.md)
-- [\[ICML 2025\] Unsupervised Learning for Class Distribution Mismatch (UCDM)](../../ICML2025/image_generation/unsupervised_learning_for_class_distribution_mismatch.md)
-- [\[ICML 2026\] Adversarial Flow Models](adversarial_flow_models.md)
 
 </div>
 

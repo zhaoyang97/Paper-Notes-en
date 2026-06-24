@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Simple Graphs: Neural Multi-Objective Routing on Multigraphs
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper proposes GMS, the first neural combinatorial optimization routing method for multigraphs. It includes two variants: GMS-EB, which performs edge-level autoregressive construction directly on multigraphs, and GMS-DH, a dual-head approach that learns to prune multigraphs before node-level routing. GMS achieves
+  [ICLR 2026][Graph Learning][Multi-Objective Routing] This paper proposes GMS, the first neural combinatorial optimization routing method for multigraphs. It includes two variants: GMS-EB, which performs edge-level autoregressive construction directly on multigraphs, and GMS-DH, a dual-head approach that learns to prune multigraphs before node-level routing. GMS achieves performance close to the exact solver LKH on asymmetric multi-objective TSP and CVRP while being dozens of…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Multi-Objective Routing"
+  - "Multigraphs"
+  - "Graph Neural Networks"
+  - "Autoregressive Construction"
+  - "Pareto Optimization"
 date: 2026-05-08
-content_hash: 65ed3538fc607e26
+content_hash: e6a4e17ba10c41c8
 ---
+
 # Beyond Simple Graphs: Neural Multi-Objective Routing on Multigraphs
 
 **Conference**: ICLR 2026  
@@ -144,16 +150,16 @@ Evaluated on MOTSP, MOCVRP (simple graphs) and MGMOTSP, MGMOCVRP (multigraphs) u
 - Value: ⭐⭐⭐⭐ Fills a gap in neural routing for multigraphs with practical value for logistics and transportation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond Entity Correlations: Disentangling Event Causal Puzzles in Temporal Knowledge Graphs](beyond_entity_correlations_disentangling_event_causal_puzzles_in_temporal_knowle.md)
 - [\[ICML 2026\] Beyond Model Base Retrieval: Weaving Knowledge to Master Fine-grained Neural Network Design](../../ICML2026/graph_learning/beyond_model_base_retrieval_weaving_knowledge_to_master_fine-grained_neural_netw.md)
-- [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 - [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](towards_improved_sentence_representations_using_token_graphs.md)
 - [\[ICML 2025\] Beyond Message Passing: Neural Graph Pattern Machine](../../ICML2025/graph_learning/beyond_message_passing_neural_graph_pattern_machine.md)
+- [\[ICLR 2026\] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding](pairwise_is_not_enough_hypergraph_neural_networks_for_multi-agent_pathfinding.md)
 
 </div>
 

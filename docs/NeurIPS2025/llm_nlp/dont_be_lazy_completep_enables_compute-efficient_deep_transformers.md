@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers
 description: >-
-  [NeurIPS 2025][LLM/NLP][Parameterization] CompleteP parameterization (α=1) is the only scheme that simultaneously achieves hyperparameter transfer along the depth dimension and complete feature learning…
+  [NeurIPS 2025][LLM (Other)][Parameterization] CompleteP parameterization (α=1) is the only scheme that simultaneously achieves hyperparameter transfer along the depth dimension and complete feature learning, saving 12–34% FLOPs over μP on deep models.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Parameterization"
   - "Depth Scaling"
   - "Hyperparameter Transfer"
@@ -13,7 +13,7 @@ tags:
   - "CompleteP"
   - "μP"
 date: 2026-05-08
-content_hash: 711ed59937ce1408
+content_hash: dee2615d68647e38
 ---
 
 # Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers
@@ -140,11 +140,11 @@ Further training at 200 TPP on 50M and 300M models shows that CompleteP achieves
 
 ## Related Papers
 
+- [\[ACL 2025\] Why Are Positional Encodings Nonessential for Deep Autoregressive Transformers? Revisiting a Petroglyph](../../ACL2025/llm_nlp/why_are_positional_encodings_nonessential_for_deep_autoregressive_transformers_r.md)
 - [\[NeurIPS 2025\] Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales](hyperparameter_transfer_enables_consistent_gains_of_matrix-preconditioned_optimi.md)
-- [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
 - [\[NeurIPS 2025\] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs](speculate_deep_and_accurate_lossless_and_training-free_acceleration_for_offloade.md)
-- [\[NeurIPS 2025\] Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search](wider_or_deeper_scaling_llm_inference-time_compute_with_adaptive_branching_tree_.md)
-- [\[ICML 2026\] Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision](../../ICML2026/llm_nlp/compute_as_teacher_turning_inference_compute_into_reference-free_supervision.md)
+- [\[NeurIPS 2025\] Linear Transformers Implicitly Discover Unified Numerical Algorithms](linear_transformers_implicitly_discover_unified_numerical_algorithms.md)
+- [\[NeurIPS 2025\] Strassen Attention, Split VC Dimension and Compositionality in Transformers](strassen_attention_split_vc_dimension_and_compositionality_in_transformers.md)
 
 </div>
 

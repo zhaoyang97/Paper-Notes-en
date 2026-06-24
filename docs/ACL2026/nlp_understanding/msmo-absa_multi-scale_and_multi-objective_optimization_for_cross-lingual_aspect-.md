@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MSMO-ABSA: Multi-Scale and Multi-Objective Optimization for Cross-Lingual Aspect-Based Sentiment Analysis
 description: >-
-  [ACL 2026][NLP Understanding][Cross-lingual ABSA] The MSMO framework is proposed for cross-lingual aspect-based sentiment analysis. It utilizes sentence-level Wasserstein adversarial training with code-switched data for language discriminator alignment and aspect-level bidirectional KL consistency training to align prediction distributions of aspects with the same sen
+  [ACL 2026][NLP Understanding][Cross-lingual ABSA] The MSMO framework is proposed for cross-lingual aspect-based sentiment analysis. It utilizes sentence-level Wasserstein adversarial training with code-switched data for language discriminator alignment and aspect-level bidirectional KL consistency training to align prediction distributions of aspects with the same sentiment. Complemented by multi-teacher knowledge distillation, it achieves new SOTA results across four target…
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - Cross-lingual ABSA
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Cross-lingual ABSA"
+  - "adversarial training"
+  - "consistency training"
+  - "code-switch"
+  - "multi-objective optimization"
 date: 2026-05-08
-content_hash: 33ea662fdb627e27
+content_hash: 3ae1a9eecbf93147
 ---
+
 # MSMO-ABSA: Multi-Scale and Multi-Objective Optimization for Cross-Lingual Aspect-Based Sentiment Analysis
 
 **Conference**: ACL 2026  
@@ -163,8 +168,8 @@ $\beta$ sensitivity: Too small leads to degradation into pure supervised mode wi
 - [\[ACL 2026\] DimABSA: Building Multilingual and Multidomain Datasets for Dimensional Aspect-Based Sentiment Analysis](dimabsa_building_multilingual_and_multidomain_datasets_for_dimensional_aspect-ba.md)
 - [\[ACL 2025\] Dynamic Order Template Prediction for Generative Aspect-Based Sentiment Analysis](../../ACL2025/nlp_understanding/dot_absa_template.md)
 - [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
+- [\[ACL 2026\] TruthSplit: Operationalizing Conditional Validity in Arguments Through Multi-Perspective Reasoning](truthsplit_operationalizing_conditional_validity_in_arguments_through_multi-pers.md)
 - [\[ACL 2026\] MTSQL-R1: Towards Long-Horizon Multi-Turn Text-to-SQL via Agentic Training](mtsql-r1_towards_long-horizon_multi-turn_text-to-sql_via_agentic_training.md)
-- [\[ACL 2026\] HCRE: LLM-based Hierarchical Classification for Cross-Document Relation Extraction](hcre_llm-based_hierarchical_classification_for_cross-document_relation_extractio.md)
 
 </div>
 

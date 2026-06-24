@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Do LLM Agents Know How to Ground, Recover, and Assess? Evaluating Epistemic Competence in Information-Seeking Agents
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-judge] The authors propose SeekBench—the first **process-level** evaluation framework for LLM search agents. It decomposes "ability to use evidence" into three epistemic competencies: groundedness, recovery, and calibration, with quantifiable metrics (RQI / ERF / CE). Utilizing 190 expert-annotated trajectories to calibrate a
+  [ICLR 2026][LLM Evaluation][Search Agents] The authors propose SeekBench—the first **process-level** evaluation framework for LLM search agents. It decomposes "ability to use evidence" into three epistemic competencies: groundedness, recovery, and calibration, with quantifiable metrics (RQI / ERF / CE). Utilizing 190 expert-annotated trajectories to calibrate a highly consistent annotation schema, the framework scales to 28,493 trajectories via LLM-as-judge…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Search Agents"
+  - "Process-level Evaluation"
+  - "Epistemic Competence"
+  - "Evidence State"
+  - "LLM-as-judge"
 date: 2026-05-08
-content_hash: 7aaaefba7a466e13
+content_hash: 0781348bde38585e
 ---
+
 # Do LLM Agents Know How to Ground, Recover, and Assess? Evaluating Epistemic Competence in Information-Seeking Agents
 
 **Conference**: ICLR 2026  
@@ -126,6 +131,7 @@ RL training significantly reduces overconfident answering from 63.1% to 35.3%, l
 - Value: ⭐⭐⭐⭐⭐ Provides a practical diagnostic tool for developing trustworthy retrieval agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

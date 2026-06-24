@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fast-SAM3D: 3Dfy Anything in Images but Faster
 description: >-
-  [ICML 2026][3D Vision][Paper Note] To address the slow inference speed of the SAM3D single-view 3D reconstruction model, this paper provides the first module-level latency profiling. Identifying performance bottlenecks caused by three types of heterogeneity (shape/layout dynamics, texture sparsity, and geometric spectral differences), the authors propos
+  [ICML 2026][3D Vision][SAM3D Acceleration] To address the slow inference speed of the SAM3D single-view 3D reconstruction model, this paper provides the first module-level latency profiling. Identifying performance bottlenecks caused by three types of heterogeneity (shape/layout dynamics, texture sparsity, and geometric spectral differences), the authors propose Fast-SAM3D. This training-free framework utilizes modality-aware step caching, spatiotemporal token carving…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026"
+  - "3D Vision"
+  - "SAM3D Acceleration"
+  - "Single-view 3D Reconstruction"
+  - "Training-free Inference Optimization"
+  - "Diffusion Step Caching"
+  - "Token Pruning"
 date: 2026-05-08
-content_hash: 5c6bf03038406085
+content_hash: 5df829ebb04447f0
 ---
+
 # Fast-SAM3D: 3Dfy Anything in Images but Faster
 
 **Conference**: ICML 2026  
@@ -139,8 +145,8 @@ Modular performance on Toys4K (Scene Time):
 - [\[CVPR 2026\] SAM 3D: 3Dfy Anything in Images](../../CVPR2026/3d_vision/sam_3d_3dfy_anything_in_images.md)
 - [\[CVPR 2026\] UIKA: Fast Universal Head Avatar from Pose-Free Images](../../CVPR2026/3d_vision/uika_fast_universal_head_avatar_from_pose-free_images.md)
 - [\[CVPR 2026\] Simple but Effective Triplet-Based Compression Strategies for Compact Visual Localization](../../CVPR2026/3d_vision/simple_but_effective_triplet-based_compression_strategies_for_compact_visual_loc.md)
-- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](../../CVPR2026/3d_vision/faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
-- [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](../../ICLR2026/3d_vision/ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
+- [\[ICLR 2026\] Depth Anything with Any Prior](../../ICLR2026/3d_vision/depth_anything_with_any_prior.md)
+- [\[ICLR 2026\] DA$^{2}$: Depth Anything in Any Direction](../../ICLR2026/3d_vision/da2_depth_anything_in_any_direction.md)
 
 </div>
 

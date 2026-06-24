@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] A Function-Centric Graph Neural Network Approach for Predicting Electron Densities
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper proposes **Basis Overlap Architecture (BOA)**—an equivariant GNN that interprets internal features as "spatial functions expanded in a basis" and passes messages using overlap integrals between atomic basis functions. It represents electron density via a quadratic expansion of basis function products (i.e.,
+  [ICLR 2026][Physics & Scientific Computing][Electron Density Prediction] This paper proposes **Basis Overlap Architecture (BOA)**—an equivariant GNN that interprets internal features as "spatial functions expanded in a basis" and passes messages using overlap integrals between atomic basis functions. It represents electron density via a quadratic expansion of basis function products (i.e., density matrix). BOA achieves new SOTA results on QM9 and MD density datasets and gener…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Electron Density Prediction"
+  - "KS-DFT Surrogate Model"
+  - "Equivariant Message Passing"
+  - "Overlap Matrix"
+  - "Density Matrix"
+  - "Gaussian Basis Functions"
 date: 2026-05-08
-content_hash: ca6ef36feab0c664
+content_hash: d81089963f56f8ee
 ---
+
 # A Function-Centric Graph Neural Network Approach for Predicting Electron Densities
 
 **Conference**: ICLR 2026  
@@ -119,7 +126,7 @@ where each $g^{(l)}_{abo}, g^{(r)}_{abo}$ is still expanded only on local bases 
 - [\[ICLR 2026\] Orbital Transformers for Predicting Wavefunctions in Time-Dependent Density Functional Theory](orbital_transformers_for_predicting_wavefunctions_in_time-dependent_density_func.md)
 - [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](feedback-driven_recurrent_quantum_neural_network_universality.md)
 - [\[ICLR 2026\] Incomplete Data, Complete Dynamics: A Diffusion Approach](incomplete_data_complete_dynamics_a_diffusion_approach.md)
-- [\[AAAI 2026\] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations](../../AAAI2026/physics/physicscorrect_a_training-free_approach_for_stable_neural_pde_simulations.md)
+- [\[ICLR 2026\] Enhancing Stability of Physics-Informed Neural Network Training Through Saddle-Point Reformulation](enhancing_stability_of_physics-informed_neural_network_training_through_saddle-p.md)
 
 </div>
 

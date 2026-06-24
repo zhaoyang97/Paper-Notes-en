@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Predicting the Future by Retrieving the Past
 description: >-
-  [AAAI 2026][Model Compression][Retrieval-Augmented Forecasting] This paper proposes PFRP (Predicting the Future by Retrieving the Past), which constructs a Global Memory Bank (GMB) to store historical patterns…
+  [AAAI 2026][Model Compression][Retrieval-Augmented Forecasting] This paper proposes PFRP (Predicting the Future by Retrieving the Past), which constructs a Global Memory Bank (GMB) to store historical patterns, trains an encoder via Predictive Contrastive Learning (PCL) for efficient retrieval, and dynamically integrates retrieved global predictions with any local forecasting model. PFRP achieves an average improvement of 8.4% in forecasting performance across 7 datasets.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Univariate Time Series"
   - "Plug-and-Play"
 date: 2026-05-08
-content_hash: ac25d776a2e70202
+content_hash: 921740c5d2de4c65
 ---
 
 # Predicting the Future by Retrieving the Past
@@ -164,10 +164,10 @@ GMB-related ablations:
 
 ## Related Papers
 
-- [\[ICLR 2026\] ConFu: Contemplate the Future for Better Speculative Sampling](../../ICLR2026/model_compression/confu_contemplate_the_future_for_better_speculative_sampling.md)
-- [\[ICLR 2026\] LLMs Encode Their Failures: Predicting Success from Pre-Generation Activations](../../ICLR2026/model_compression/llms_encode_their_failures_predicting_success_from_pre-generation_activations.md)
+- [\[ICLR 2026\] Qronos: Correcting the Past by Shaping the Future... in Post-Training Quantization](../../ICLR2026/model_compression/qronos_correcting_the_past_by_shaping_the_future_in_post-training_quantization.md)
 - [\[ICML 2026\] Easier to Judge Than to Find: Predicting In-Context Learning Success for Demonstration Selection](../../ICML2026/model_compression/easier_to_judge_than_to_find_predicting_in-context_learning_success_for_demonstr.md)
 - [\[ICLR 2026\] LookaheadKV: Fast and Accurate KV Cache Eviction by Glimpsing into the Future without Generation](../../ICLR2026/model_compression/lookaheadkv_fast_and_accurate_kv_cache_eviction_by_glimpsing_into_the_future_wit.md)
+- [\[ACL 2025\] Predicting Through Generation: Why Generation Is Better for Prediction](../../ACL2025/model_compression/predicting_through_generation_why_generation_is_better_for_prediction.md)
 - [\[AAAI 2026\] BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?](bd-net_has_depth-wise_convolution_ever_been_applied_in_binary_neural_networks.md)
 
 </div>

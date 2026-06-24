@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Accuracy-Cost Control in Neural Simulators via Recurrent-Depth
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper proposes RecurrSim (Recurrent-Depth Simulator)—a model-agnostic "Encoder + Recurrent Block + Decoder" framework. It enables a trained neural PDE simulator to **slide between accuracy and computational cost during inference using a single knob $K$ (iteration count)** without retraining or architectural change
+  [ICLR 2026][Physics & Scientific Computing][Neural simulators] This paper proposes RecurrSim (Recurrent-Depth Simulator)—a model-agnostic "Encoder + Recurrent Block + Decoder" framework. It enables a trained neural PDE simulator to **slide between accuracy and computational cost during inference using a single knob $K$ (iteration count)** without retraining or architectural changes. On multiple fluid dynamics benchmarks, it achieves or exceeds larger baselines and diffusion-b…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Neural simulators"
+  - "accuracy-cost trade-off"
+  - "recurrent-depth"
+  - "adaptive computation"
+  - "fixed point"
 date: 2026-05-08
-content_hash: cd0fdbbd77f4347f
+content_hash: 244371edbf8b8408
 ---
+
 # Test-Time Accuracy-Cost Control in Neural Simulators via Recurrent-Depth
 
 **Conference**: ICLR 2026  
@@ -127,8 +133,8 @@ High-dimensional and cross-architecture results:
 - Value: ⭐⭐⭐⭐ Highly practical for AI for Science, offering VRAM efficiency and flexible deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

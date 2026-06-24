@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Next Visual Granularity Generation
 description: >-
-  [ICLR 2026][Image Generation][ImageNet] Ours proposes the Next Visual Granularity (NVG) generation framework, which decomposes images into structured sequences at different granularity levels. By generating from global layout to fine details step-by-step, it achieves consistent FID improvements over the VAR series.
+  [ICLR 2026][Image Generation][Visual Granularity] Ours proposes the Next Visual Granularity (NVG) generation framework, which decomposes images into structured sequences at different granularity levels. By generating from global layout to fine details step-by-step, it achieves consistent FID improvements over the VAR series.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - ImageNet
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Granularity"
+  - "Autoregressive Generation"
+  - "Structured Sequence"
+  - "Coarse-to-fine Generation"
+  - "ImageNet"
 date: 2026-05-08
-content_hash: 664f2c52620277b8
+content_hash: 5659e5546bc5b725
 ---
+
 # Next Visual Granularity Generation
 
 **Conference**: ICLR 2026  
@@ -132,8 +137,8 @@ To help attention distinguish intra-cluster and inter-cluster relationships, NVG
 
 ## Related Papers
 
-- [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](../../CVPR2026/image_generation/fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
 - [\[ICLR 2026\] BAR: Refactor the Basis of Autoregressive Visual Generation](bar_refactor_the_basis_of_autoregressive_visual_generation.md)
+- [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](../../CVPR2026/image_generation/fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
 - [\[ICLR 2026\] Product of Experts for Visual Generation](product_of_experts_for_visual_generation.md)
 - [\[ICLR 2026\] Pyramidal Patchification Flow for Visual Generation](pyramid_patchification_flow_for_visual_generation.md)
 - [\[ICML 2026\] Semantic Granularity Navigation in Image Editing](../../ICML2026/image_generation/semantic_granularity_navigation_in_image_editing.md)

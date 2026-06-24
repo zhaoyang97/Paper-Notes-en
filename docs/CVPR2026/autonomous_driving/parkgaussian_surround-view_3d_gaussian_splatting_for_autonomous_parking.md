@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Targeting "crowded, GPS-denied, and low-light" underground garage scenarios, this work first establishes ParkRecon3D, the first 3D reconstruction benchmark for parking (four-way surround-view fisheye + 60,000 parking slot annotations). It then proposes ParkGaussian, which adapts 3DGS to fisheye cameras via UT projectio
+  [CVPR 2026][Autonomous Driving][Automated valet parking] Targeting "crowded, GPS-denied, and low-light" underground garage scenarios, this work first establishes ParkRecon3D, the first 3D reconstruction benchmark for parking (four-way surround-view fisheye + 60,000 parking slot annotations). It then proposes ParkGaussian, which adapts 3DGS to fisheye cameras via UT projection, converts rendering results to Birds-Eye-View (BEV) using differentiable IPM…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Automated valet parking"
+  - "3D Gaussian Splatting"
+  - "surround-view fisheye"
+  - "parking slot detection"
+  - "differentiable IPM"
 date: 2026-05-08
-content_hash: 7601dd03bbca1882
+content_hash: c0875bd02ec6bfe7
 ---
+
 # ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking
 
 **Conference**: CVPR 2026  
@@ -148,9 +154,9 @@ Experiments use four scenes from ParkRecon3D (100 surround-view frames per scene
 ## Related Papers
 
 - [\[CVPR 2026\] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving](drocc_depth_region_guided_3d_occupancy.md)
-- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
-- [\[CVPR 2026\] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling](f3dgs_federated_3d_gaussian_splatting_for_decentralized_multi-agent_world_modeli.md)
 - [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](../../AAAI2026/autonomous_driving/exploring_surround-view_fisheye_camera_3d_object_detection.md)
+- [\[ICLR 2026\] Beyond Visual Reconstruction Quality: Object Perception-aware 3D Gaussian Splatting for Autonomous Driving](../../ICLR2026/autonomous_driving/beyond_visual_reconstruction_quality_object_perception-aware_3d_gaussian_splatti.md)
+- [\[ICCV 2025\] 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation](../../ICCV2025/autonomous_driving/3d_gaussian_splatting_driven_multiview_robust_physical_adver.md)
 - [\[CVPR 2025\] EVolSplat: Efficient Volume-based Gaussian Splatting for Urban View Synthesis](../../CVPR2025/autonomous_driving/evolsplat_efficient_volume-based_gaussian_splatting_for_urban_view_synthesis.md)
 
 </div>

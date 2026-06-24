@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization
 description: >-
-  [AAAI 2026][Reinforcement Learning][Automated Prompt Optimization] This paper proposes MARS, a five-agent framework for automated prompt optimization (APO): a Planner generates task-specific optimization trajectories…
+  [AAAI 2026][Reinforcement Learning][Automated Prompt Optimization] This paper proposes MARS, a five-agent framework for automated prompt optimization (APO): a Planner generates task-specific optimization trajectories; a Teacher-Critic-Student triad conducts Socratic dialogue for iterative prompt refinement (simulating pseudo-gradient descent in text space); and a Target agent executes the prompt and provides feedback. The entire process is modeled as a POMDP. MARS outperforms…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Teacher-Critic-Student"
   - "Pseudo-Gradient"
 date: 2026-05-08
-content_hash: 5e02f92f72821c5e
+content_hash: f72dc65800e2cc95
 ---
 
 # MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization
@@ -138,9 +138,9 @@ Only **1 training sample** is required for optimization. The Planner can infer t
 
 - [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
 - [\[ACL 2026\] LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance](../../ACL2026/reinforcement_learning/lang_reinforcement_learning_for_multilingual_reasoning_with_language-adaptive_hi.md)
+- [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](../../ICLR2026/reinforcement_learning/multi-agent_guided_policy_optimization.md)
+- [\[AAAI 2026\] MMhops-R1: Multimodal Multi-hop Reasoning](mmhops-r1_multimodal_multi-hop_reasoning.md)
 - [\[AAAI 2026\] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning](hcpo_hierarchical_conductor-based_policy_optimization_in_multi-agent_reinforceme.md)
-- [\[AAAI 2026\] InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization](infigui-g1_advancing_gui_grounding_with_adaptive_exploration_policy_optimization.md)
-- [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
 
 </div>
 

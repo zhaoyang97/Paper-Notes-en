@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mem^p: Exploring Agent Procedural Memory
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes the Mem^p framework to systematically study how to build learnable, updatable, and lifelong evolving procedural memory for LLM Agents. By distilling past task trajectories into fine-grained step-by-step instructions and high-level script abstractions, combined with a dynamic update mechanism (additi
+  [ACL 2026 Findings][LLM Agent][Procedural Memory] This paper proposes the Mem^p framework to systematically study how to build learnable, updatable, and lifelong evolving procedural memory for LLM Agents. By distilling past task trajectories into fine-grained step-by-step instructions and high-level script abstractions, combined with a dynamic update mechanism (addition/validation/reflection/elimination), the authors achieve continuous success rate improvements and significan…
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Procedural Memory"
+  - "Agent Learning"
+  - "Trajectory Distillation"
+  - "Memory Update"
+  - "Lifelong Learning"
 date: 2026-05-08
-content_hash: 874c5ec28393703c
+content_hash: 8940def33898b5a5
 ---
+
 # Mem^p: Exploring Agent Procedural Memory
 
 **Conference**: ACL 2026 Findings  
@@ -156,12 +162,10 @@ Mem^p is an inference-time framework and does not involve model training. During
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ACL 2026\] Exploring Reasoning Reward Model for Agents](exploring_reasoning_reward_model_for_agents.md)
 - [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
+- [\[ACL 2026\] Exploring Reasoning Reward Model for Agents](exploring_reasoning_reward_model_for_agents.md)
 - [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](../../NeurIPS2025/llm_agent/a-mem_agentic_memory_for_llm_agents.md)
 - [\[ACL 2026\] From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](from_storage_to_experience_a_survey_on_the_evolution_of_llm_agent_memory_mechani.md)
 - [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SRT: Super-Resolution for Time Series via Disentangled Rectified Flow
 description: >-
-  [ICLR 2026][Time Series][Rectified Flow] SRT transfers the concepts of image super-resolution to time series: it first decomposes the low-resolution sequence into trend and seasonal components, aligns them to the target resolution using an Implicit Temporal Function (ITF), and then employs two rectified flow models with Cross-Resolution Attention to complemen
+  [ICLR2026][Time Series][Time Series Super-Resolution] SRT transfers the concepts of image super-resolution to time series: it first decomposes the low-resolution sequence into trend and seasonal components, aligns them to the target resolution using an Implicit Temporal Function (ITF), and then employs two rectified flow models with Cross-Resolution Attention to complement high-frequency details. It achieves SOTA on 9 datasets for both sampling-based and aggregation-based sup…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Rectified Flow
+  - "ICLR2026"
+  - "Time Series"
+  - "Time Series Super-Resolution"
+  - "Rectified Flow"
+  - "Sequence Disentanglement"
+  - "Implicit Neural Representation"
+  - "Zero-shot"
 date: 2026-05-08
-content_hash: 6a401422f0dd2068
+content_hash: 9369678d23b91741
 ---
+
 # SRT: Super-Resolution for Time Series via Disentangled Rectified Flow
 
 **Conference**: ICLR2026  
@@ -131,16 +136,16 @@ The performance gap of various variants relative to full SRT on the SSR task is 
 - Value: ⭐⭐⭐⭐⭐ Establishes a benchmark and unified framework for an overlooked practical problem (TSSR); SRT-large provides a path for zero-shot deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](../../CVPR2026/time_series/probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)
 - [\[ICLR 2026\] Language in the Flow of Time: Time-Series-Paired Texts Weaved into a Unified Temporal Narrative](language_in_the_flow_of_time_time-series-paired_texts_weaved_into_a_unified_temp.md)
 - [\[ICLR 2026\] TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series](tspulse_tiny_pre-trained_models_with_disentangled_representations_for_rapid_time.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 - [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
-- [\[ICLR 2026\] Understanding Transformers for Time Series: Rank Structure, Flow-of-ranks, and Compressibility](understanding_transformers_for_time_series_rank_structure_flow-of-ranks_and_comp.md)
 
 </div>
 

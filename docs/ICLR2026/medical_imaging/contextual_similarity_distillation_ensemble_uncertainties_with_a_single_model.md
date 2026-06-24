@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Contextual Similarity Distillation: Ensemble Uncertainties with a Single Model
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] Estimates the predictive variance of an "infinite randomly initialized ensemble" using a single model and a single forward pass. By reformulating the ensemble variance as a supervised regression problem with kernel similarity labels, the method avoids training actual ensembles or inverting the Gram matrix. It provides
+  [ICLR 2026][Medical Imaging][Epistemic Uncertainty] Estimates the predictive variance of an "infinite randomly initialized ensemble" using a single model and a single forward pass. By reformulating the ensemble variance as a supervised regression problem with kernel similarity labels, the method avoids training actual ensembles or inverting the Gram matrix. It provides uncertainty estimates comparable to or better than Deep Ensembles, validated on OOD detection and sparse rew…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Epistemic Uncertainty"
+  - "Deep Ensembles"
+  - "Neural Tangent Kernel"
+  - "Single-model Estimation"
+  - "Sparse Reward Exploration"
 date: 2026-05-08
-content_hash: 5304415b0c6fc13d
+content_hash: 5212ecef85aadbfa
 ---
+
 # Contextual Similarity Distillation: Ensemble Uncertainties with a Single Model
 
 **Conference**: ICLR 2026  

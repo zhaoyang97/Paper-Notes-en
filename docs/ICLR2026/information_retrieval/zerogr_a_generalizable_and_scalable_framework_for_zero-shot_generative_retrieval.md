@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ZeroGR: A Generalizable and Scalable Framework for Zero-Shot Generative Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][DocID] ZeroGR utilizes natural language task instructions to generalize Generative Retrieval (GR) from supervised single-task settings to zero-shot heterogeneous retrieval. It unifies arbitrary document formats into keyword-based text DocIDs, builds indexes using an instruction-tuned query generator for pseudo-query generatio
+  [ICLR 2026][Information Retrieval & RAG][Generative Retrieval] ZeroGR utilizes natural language task instructions to generalize Generative Retrieval (GR) from supervised single-task settings to zero-shot heterogeneous retrieval. It unifies arbitrary document formats into keyword-based text DocIDs, builds indexes using an instruction-tuned query generator for pseudo-query generation, and employs "reverse-annealed" decoding to balance precision and recall…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - DocID
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Generative Retrieval"
+  - "Zero-Shot Retrieval"
+  - "Instruction Tuning"
+  - "DocID"
+  - "Reverse-Annealed Decoding"
 date: 2026-05-08
-content_hash: 8316d2c5fe62ce57
+content_hash: b3e89df56d603e50
 ---
+
 # ZeroGR: A Generalizable and Scalable Framework for Zero-Shot Generative Retrieval
 
 **Conference**: ICLR 2026  

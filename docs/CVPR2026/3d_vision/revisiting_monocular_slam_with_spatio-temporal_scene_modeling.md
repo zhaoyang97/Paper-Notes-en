@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Monocular SLAM with Spatio-Temporal Scene Modeling
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the pain point that calibration-free monocular SLAM is "either slow or non-modular," this paper proposes **SLAM-MER**, a pipeline implemented from scratch in C++. It utilizes dual-path 3D point queries—"Temporal Buffer (recent keyframes) + Spatial 3D Grid (early reconstructed regions)"—for localization. By i
+  [CVPR 2026][3D Vision][Monocular SLAM] Addressing the pain point that calibration-free monocular SLAM is "either slow or non-modular," this paper proposes **SLAM-MER**, a pipeline implemented from scratch in C++. It utilizes dual-path 3D point queries—"Temporal Buffer (recent keyframes) + Spatial 3D Grid (early reconstructed regions)"—for localization. By invoking a feed-forward depth model (MASt3R) only on keyframes, it fuses sparse keypoint localization with semi-dense anch…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular SLAM"
+  - "Spatio-temporal modeling"
+  - "Calibration-free"
+  - "Feed-forward geometric priors"
+  - "Real-time localization"
 date: 2026-05-08
-content_hash: b485edf93308138f
+content_hash: 4d4e3586061826d9
 ---
+
 # Revisiting Monocular SLAM with Spatio-Temporal Scene Modeling
 
 **Conference**: CVPR 2026  
@@ -132,8 +138,8 @@ Accuracy is comparable to the strongest baselines (TUM 0.056m, 7-Scenes 0.059m),
 - [\[CVPR 2026\] SCE-SLAM: Scale-Consistent Monocular SLAM via Scene Coordinate Embeddings](sce-slam_scale-consistent_monocular_slam_via_scene_coordinate_embeddings.md)
 - [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
 - [\[CVPR 2026\] LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving](lidar_prompted_spatio-temporal_multi-view_stereo_for_autonomous_driving.md)
-- [\[CVPR 2026\] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding](sts_mixer_4d_point_cloud.md)
 - [\[CVPR 2026\] STAC: Plug-and-Play Spatio-Temporal Aware Cache Compression for Streaming 3D Reconstruction](stac_plug-and-play_spatio-temporal_aware_cache_compression_for_streaming_3d_reco.md)
+- [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
 
 </div>
 

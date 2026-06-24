@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Representation Alignment for Diffusion Transformers without External Components
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper discovers a "bad-to-good" evolution of discriminative representations within Diffusion Transformers. It proposes SRA (Self-Representation Alignment): aligning student representations at "shallower layers + higher noise" with EMA teacher representations at "deeper layers + lower noise." This accelerates DiT/S
+  [ICLR 2026][Self-Supervised Learning][Representation Alignment] This paper discovers a "bad-to-good" evolution of discriminative representations within Diffusion Transformers. It proposes SRA (Self-Representation Alignment): aligning student representations at "shallower layers + higher noise" with EMA teacher representations at "deeper layers + lower noise." This accelerates DiT/SiT training without any external tasks or pre-trained encoders…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Representation Alignment"
+  - "Diffusion Transformer"
+  - "Self-Representation Alignment"
+  - "EMA Teacher"
+  - "Generation Acceleration"
 date: 2026-05-08
-content_hash: 96975ddc47e2f325
+content_hash: 4c35020d9dd5009a
 ---
+
 # Representation Alignment for Diffusion Transformers without External Components
 
 **Conference**: ICLR 2026  
@@ -133,13 +139,13 @@ SiT-B/2, 400K iterations, no CFG (Baseline FID 33.02 / IS 43.71):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers](../../CVPR2026/self_supervised/diversedit_towards_diverse_representation_learning_in_diffusion_transformers.md)
-- [\[CVPR 2025\] Transformers without Normalization](../../CVPR2025/self_supervised/transformers_without_normalization.md)
 - [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
+- [\[CVPR 2025\] Transformers without Normalization](../../CVPR2025/self_supervised/transformers_without_normalization.md)
 - [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](../../ICML2026/self_supervised/flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
 - [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
 

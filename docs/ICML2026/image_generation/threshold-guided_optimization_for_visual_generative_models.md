@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Threshold-Guided Optimization for Visual Generative Models
 description: >-
-  [ICML 2026][Image Generation][MaskGIT] The authors dismantle the paired preference assumption of DPO, proving that the KL-regularized optimal policy inherently compares the reward of each sample to an uncomputable instance-dependent baseline $\tau^*(x)=\beta\log Z(x)$. Consequently, they replace it with a global threshold $\tau$ estimated from score quantil
+  [ICML 2026][Image Generation][Threshold-guided] The authors dismantle the paired preference assumption of DPO, proving that the KL-regularized optimal policy inherently compares the reward of each sample to an uncomputable instance-dependent baseline $\tau^*(x)=\beta\log Z(x)$. Consequently, they replace it with a global threshold $\tau$ estimated from score quantiles and incorporate a confidence weight proportional to $|s-\tau|$. This enables stable alignment for Diffusion m…
 tags:
-  - ICML 2026
-  - Image Generation
-  - MaskGIT
+  - "ICML 2026"
+  - "Image Generation"
+  - "Threshold-guided"
+  - "unpaired preference optimization"
+  - "scalar feedback"
+  - "diffusion model alignment"
+  - "MaskGIT"
 date: 2026-05-08
-content_hash: e5c2723c0f5991ab
+content_hash: 909a28ae22313a70
 ---
+
 # Threshold-Guided Optimization for Visual Generative Models
 
 **Conference**: ICML 2026  
@@ -121,14 +126,17 @@ Cross-paradigm comparison on the 10K scalar feedback set:
 
 <div class="related-papers" markdown="1">
 
-- **Diffusion-DPO**: Wallace et al., "Diffusion Model Alignment Using Direct Preference Optimization", 2023.
-- **Diffusion-KTO**: Ethayarajh et al., "KTO: Model Alignment as Prospect Theoretic Optimization", 2024.
-- **DSPO**: Tang et al., "Direct Sampling Preference Optimization", 2024.
+## Related Papers
+
+- [\[ICML 2026\] Generative Visual Code Mobile World Models](generative_visual_code_mobile_world_models.md)
+- [\[ICML 2026\] EvoGM: Learning to Merge LLMs via Evolutionary Generative Optimization](evogm_learning_to_merge_llms_via_evolutionary_generative_optimization.md)
+- [\[CVPR 2026\] Learning What to Trust: Bayesian Prior-Guided Optimization for Visual Generation](../../CVPR2026/image_generation/learning_what_to_trust_bayesian_prior-guided_optimization_for_visual_generation.md)
+- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](../../ICLR2026/image_generation/vipo_visual_preference_optimization_at_scale.md)
+- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Generative Visual Code Mobile World Models](generative_visual_code_mobile_world_models.md)

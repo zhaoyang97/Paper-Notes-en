@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Signs as Tokens: A Retrieval-Enhanced Multilingual Sign Language Generator
 description: >-
-  [ICCV 2025][Human Understanding][Sign language generation] This paper proposes SOKE, a multilingual sign language generation framework built upon pretrained language models. It discretizes continuous sign language motion…
+  [ICCV 2025][Human Understanding][Sign language generation] This paper proposes SOKE, a multilingual sign language generation framework built upon pretrained language models. It discretizes continuous sign language motion into token sequences via a decoupled tokenizer, and achieves high-quality text-to-3D-avatar sign language generation across multiple languages through multi-head decoding and retrieval-augmented strategies.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "retrieval-augmented generation"
   - "motion discretization"
 date: 2026-05-08
-content_hash: 114128c29283cecc
+content_hash: ab8a40c8202af91b
 ---
 
 # Signs as Tokens: A Retrieval-Enhanced Multilingual Sign Language Generator
@@ -144,10 +144,10 @@ SOKE also significantly outperforms on Back-Translation BLEU-4: 14.48 vs. 11.45 
 ## Related Papers
 
 - [\[NeurIPS 2025\] VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models](../../NeurIPS2025/human_understanding/vimorag_video-based_retrieval-augmented_3d_motion_generation_for_motion_language.md)
-- [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](../../CVPR2026/human_understanding/sign_language_recognition_llms.md)
 - [\[ICCV 2025\] GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation](gesturehydra_semantic_co-speech_gesture_synthesis_via_hybrid_modality_diffusion_.md)
-- [\[ACL 2026\] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production](../../ACL2026/human_understanding/hybrid_autoregressive-diffusion_model_for_real-time_sign_language_production.md)
-- [\[NeurIPS 2025\] Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization](../../NeurIPS2025/human_understanding/cycle-sync_robust_global_camera_pose_estimation_through_enhanced_cycle-consisten.md)
+- [\[ECCV 2024\] A Simple Baseline for Spoken Language to Sign Language Translation with 3D Avatars](../../ECCV2024/human_understanding/a_simple_baseline_for_spoken_language_to_sign_language_trans.md)
+- [\[CVPR 2025\] Lost in Translation, Found in Context: Sign Language Translation with Contextual Cues](../../CVPR2025/human_understanding/lost_in_translation_found_in_context_sign_language_translation_with_contextual_c.md)
+- [\[CVPR 2026\] Learning Effective Sign Features without Text for Gloss-free Sign Language Translation](../../CVPR2026/human_understanding/learning_effective_sign_features_without_text_for_gloss-free_sign_language_trans.md)
 
 </div>
 

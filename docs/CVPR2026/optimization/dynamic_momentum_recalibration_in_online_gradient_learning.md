@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Dynamic Momentum Recalibration in Online Gradient Learning
 description: >-
-  [CVPR 2026][Optimization & Theory][optimizer] This paper reveals the inherent flaws of fixed momentum coefficients in the bias-variance tradeoff from a signal processing perspective. It proposes the SGDF optimizer, which dynamically balances noise suppression and signal preservation in gradient estimation by calculating an optimal time-varying gain online (based o
+  [CVPR 2026][Optimization][optimizer] This paper reveals the inherent flaws of fixed momentum coefficients in the bias-variance tradeoff from a signal processing perspective. It proposes the SGDF optimizer, which dynamically balances noise suppression and signal preservation in gradient estimation by calculating an optimal time-varying gain online (based on the Minimum Mean Square Error principle), outperforming SGD with momentum and Adam variants across various vision tasks.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - optimizer
-  - momentum
-  - bias-variance tradeoff
-  - optimal linear filter
-  - gradient estimation
+  - "CVPR 2026"
+  - "Optimization"
+  - "optimizer"
+  - "momentum"
+  - "bias-variance tradeoff"
+  - "optimal linear filter"
+  - "gradient estimation"
 date: 2026-05-08
-content_hash: c6922583b0495519
+content_hash: b950a5a277d705d5
 ---
+
 # Dynamic Momentum Recalibration in Online Gradient Learning
 
 **Conference**: CVPR 2026  
@@ -143,11 +144,11 @@ Under heavy noise, the raw $K_t$ can be suppressed to near zero, causing the opt
 
 ## Related Papers
 
+- [\[ICLR 2026\] LEGACY: A Lightweight Dynamic Gradient Compression Strategy for Distributed Deep Learning](../../ICLR2026/optimization/legacy_a_lightweight_dynamic_gradient_compression_strategy_for_distributed_deep_.md)
 - [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
-- [\[CVPR 2026\] FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization](fedadamom_adaptive_momentum_for_improved_generalization_in_federated_optimizatio.md)
+- [\[ICLR 2026\] Towards Dynamic Interleaving Optimizers](../../ICLR2026/optimization/towards_dynamic_interleaving_optimizers.md)
 - [\[NeurIPS 2025\] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis](../../NeurIPS2025/optimization/nonlinearly_preconditioned_gradient_methods_momentum_and_stochastic_analysis.md)
-- [\[CVPR 2026\] From Selection to Scheduling: Federated Geometry-Aware Correction Makes Exemplar Replay Work Better under Continual Dynamic Heterogeneity](from_selection_to_scheduling_federated_geometry-aware_correction_makes_exemplar_.md)
-- [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](../../ICML2026/optimization/a_general_framework_for_dynamic_consistent_submodular_maximization.md)
+- [\[ICLR 2026\] DeMo: Decoupled Momentum Optimization](../../ICLR2026/optimization/demo_decoupled_momentum_optimization.md)
 
 </div>
 

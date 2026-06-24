@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Asymmetric Synthetic Data Update for Domain Incremental Dataset Distillation
 description: >-
-  [ICLR 2026][Model Compression][Dataset Distillation] This paper introduces the new problem of "Domain Incremental Dataset Distillation (DIDD)" — continuously distilling sequentially arriving data from different domains into a **single, fixed-size** synthetic set. It proposes an **Asymmetric Synthetic Data Update** strategy based on meta-learning bi-level optimization to
+  [ICLR 2026][Model Compression][Dataset Distillation] This paper introduces the new problem of "Domain Incremental Dataset Distillation (DIDD)" — continuously distilling sequentially arriving data from different domains into a **single, fixed-size** synthetic set. It proposes an **Asymmetric Synthetic Data Update** strategy based on meta-learning bi-level optimization to learn individual stability and plasticity gradient update rates for each synthetic image…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Dataset Distillation
-  - Domain Incremental Learning
-  - Catastrophic Forgetting
-  - Bi-level Optimization
-  - Stability-Plasticity
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Domain Incremental Learning"
+  - "Catastrophic Forgetting"
+  - "Bi-level Optimization"
+  - "Stability-Plasticity"
 date: 2026-05-08
-content_hash: fb8765bd7c311c41
+content_hash: 55ba2bf8b0e1ec2a
 ---
+
 # Asymmetric Synthetic Data Update for Domain Incremental Dataset Distillation
 
 **Conference**: ICLR 2026  
@@ -125,10 +126,10 @@ Datasets: Rotated-MNIST (20 domains, longest sequence), Seq-CORe50 (11 domains),
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](understanding_dataset_distillation_via_spectral_filtering.md)
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
 - [\[ICLR 2026\] Grounding and Enhancing Informativeness and Utility in Dataset Distillation](grounding_and_enhancing_informativeness_and_utility_in_dataset_distillation.md)
-- [\[AAAI 2026\] DP-GenG: Differentially Private Dataset Distillation Guided by DP-Generated Data](../../AAAI2026/model_compression/dp-geng_differentially_private_dataset_distillation_guided_by_dp-generated_data.md)
-- [\[ICLR 2026\] Beyond Student: An Asymmetric Network for Neural Network Inheritance](beyond_student_an_asymmetric_network_for_neural_network_inheritance.md)
-- [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
+- [\[ICLR 2026\] Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation](rectified_decoupled_dataset_distillation_a_closer_look_for_fair_and_comprehensiv.md)
+- [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](dataset_distillation_as_pushforward_optimal_quantization.md)
 
 </div>
 

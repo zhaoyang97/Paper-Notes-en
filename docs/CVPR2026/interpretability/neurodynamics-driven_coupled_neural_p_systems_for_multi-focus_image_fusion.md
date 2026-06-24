@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] ND-CNPFuse is proposed to establish constraints between network parameters and input signals through neurodynamic analysis of Coupled Neural P (CNP) systems. This prevents abnormal continuous firing of neurons, enabling the generation of high-quality, interpretable decision maps for multi-focus image fusion (MFIF) task
+  [CVPR 2026][Interpretability][Multi-focus image fusion] ND-CNPFuse is proposed to establish constraints between network parameters and input signals through neurodynamic analysis of Coupled Neural P (CNP) systems. This prevents abnormal continuous firing of neurons, enabling the generation of high-quality, interpretable decision maps for multi-focus image fusion (MFIF) tasks without any training.
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Multi-focus image fusion"
+  - "coupled neural P systems"
+  - "neurodynamics"
+  - "decision map"
+  - "pulsing mechanism"
 date: 2026-05-08
-content_hash: 655b7df2af225a95
+content_hash: bdeb1d75024fcbc0
 ---
+
 # Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Energy Consumption: $1.12 \times 10^{-5}$ J / image pair (extremely low).
 ## Related Papers
 
 - [\[CVPR 2026\] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared](missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare.md)
-- [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)
+- [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](../../ICLR2026/interpretability/explainable_k_-means_neural_networks_for_multi-view_clustering.md)
 - [\[ICML 2026\] IQA-Spider: Unifying Multi-Granularity Image Quality Assessment with Reasoning, Grounding and Referring](../../ICML2026/interpretability/iqa-spider_unifying_multi-granularity_image_quality_assessment_with_reasoning_gr.md)
 - [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
-- [\[CVPR 2026\] Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition](hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition.md)
+- [\[CVPR 2026\] Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](where_culture_fades_revealing_the_cultural_gap_in_text-to-image_generation.md)
 
 </div>
 

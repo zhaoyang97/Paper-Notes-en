@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][3D spatial understanding] Apple proposes the CA-VQA dataset and MM-Spatial model, leveraging high-quality 3D scene data and open-set annotations to generate training/evaluation data covering s…
+  [ICCV 2025][Multimodal VLM][3D spatial understanding] Apple proposes the CA-VQA dataset and MM-Spatial model, leveraging high-quality 3D scene data and open-set annotations to generate training/evaluation data covering spatial relation prediction, metric estimation, and 3D grounding. The resulting general-purpose MLLM achieves SOTA on 3D spatial understanding benchmarks while remaining competitive on other tasks.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "multi-view"
   - "spatial reasoning"
 date: 2026-05-08
-content_hash: f5e6d5b8a0ec848d
+content_hash: de06d857c549bcf9
 ---
 
 # MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs
@@ -52,23 +52,23 @@ The authors aim to systematically advance 3D spatial understanding research in M
 1. **CA-VQA Dataset and Benchmark**
 
    Covers six spatial task categories:
-   - **Counting**: "How many chairs are in the scene?"
-   - **Viewpoint-dependent relations**: "Is X behind Y?" (depends on camera pose)
-   - **Metric regression**: "What is the distance from X to Y/the camera?" "How wide/tall is X?"
-   - **2D/3D Referring & Grounding**
-   - **Binary & multiple-choice questions**
+    - **Counting**: "How many chairs are in the scene?"
+    - **Viewpoint-dependent relations**: "Is X behind Y?" (depends on camera pose)
+    - **Metric regression**: "What is the distance from X to Y/the camera?" "How wide/tall is X?"
+    - **2D/3D Referring & Grounding**
+    - **Binary & multiple-choice questions**
 
    Distinguishing features:
-   - 3D ground truth from high-precision FARO laser scanners (not pseudo-labels)
-   - Three depth map types per frame: GT depth, ARKit depth (iPad LiDAR), monocular depth (DepthPro)
-   - Multi-view support: up to 4 support frames per reference frame, with relative poses and camera intrinsics
-   - **Blind filtering strategy**: 7 MLLMs serve as judges to remove samples answerable without visual input, reducing language prior bias
+    - 3D ground truth from high-precision FARO laser scanners (not pseudo-labels)
+    - Three depth map types per frame: GT depth, ARKit depth (iPad LiDAR), monocular depth (DepthPro)
+    - Multi-view support: up to 4 support frames per reference frame, with relative poses and camera intrinsics
+    - **Blind filtering strategy**: 7 MLLMs serve as judges to remove samples answerable without visual input, reducing language prior bias
 
 2. **Depth Utilization: CoT / Tool-Use**
 
    Two strategies for leveraging metric depth (without directly encoding depth maps):
-   - **Tool-Use**: The model predicts 2D bounding boxes and issues a function call; the tool returns the median depth within the box as text, upon which the model reasons.
-   - **CoT (Chain-of-Thought)**: During training, step-by-step reasoning examples with GT depth are provided; at test time, the model predicts depth values on its own.
+    - **Tool-Use**: The model predicts 2D bounding boxes and issues a function call; the tool returns the median depth within the box as text, upon which the model reasons.
+    - **CoT (Chain-of-Thought)**: During training, step-by-step reasoning examples with GT depth are provided; at test time, the model predicts depth values on its own.
 
    Design Motivation: Encoding full-image depth yields only normalized relative depth, whereas CoT/Tool-Use can exploit absolute metric depth. Moreover, CoT requires no external tools — the model learns to predict depth accurately through SFT.
 
@@ -169,11 +169,11 @@ This work represents a comprehensive upgrade over prior efforts including Spatia
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](../../NeurIPS2025/multimodal_vlm/spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
 - [\[ICCV 2025\] Spatial Preference Rewarding for MLLMs Spatial Understanding](spatial_preference_rewarding_for_mllms_spatial_understanding.md)
+- [\[CVPR 2025\] RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics](../../CVPR2025/multimodal_vlm/robospatial_teaching_spatial_understanding_to_2d_and_3d_vision-language_models_f.md)
 - [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](../../CVPR2026/multimodal_vlm/hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
-- [\[ICCV 2025\] Are They the Same? Exploring Visual Correspondence Shortcomings of Multimodal LLMs](are_they_the_same_exploring_visual_correspondence_shortcomings_of_multimodal_llm.md)
 - [\[ICCV 2025\] STI-Bench: Are MLLMs Ready for Precise Spatial-Temporal World Understanding?](sti-bench_are_mllms_ready_for_precise_spatial-temporal_world_understanding.md)
+- [\[ICCV 2025\] CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting](capture_evaluating_spatial_reasoning_in_vision_language_models_via_occluded_obje.md)
 
 </div>
 

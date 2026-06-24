@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes the "Audio-Visual Spatial Reasoning" task and synthesizes a million-scale QA dataset, Hear You Are QA, featuring binaural audio and $360^{\circ}$ panoramas using SoundSpaces 2.0. It trains "Hear You Are LLM," a multimodal large model connecting a binaural spatial audio encoder and a panoramic vision
+  [CVPR 2026][VLM Reasoning][Spatial Reasoning] This paper proposes the "Audio-Visual Spatial Reasoning" task and synthesizes a million-scale QA dataset, Hear You Are QA, featuring binaural audio and $360^{\circ}$ panoramas using SoundSpaces 2.0. It trains "Hear You Are LLM," a multimodal large model connecting a binaural spatial audio encoder and a panoramic vision encoder to Qwen2-7B. In scenarios solvable only through spatial cues—such as "semantic mismatch between sound and…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Spatial Reasoning"
+  - "Binaural Spatial Audio"
+  - "Audio-Visual Question Answering (AVQA)"
+  - "Multimodal LLM"
+  - "Sound Source Localization"
 date: 2026-05-08
-content_hash: b6792721e75ba41c
+content_hash: ba95a9cb379565b0
 ---
+
 # Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound
 
 **Conference**: CVPR 2026  
@@ -122,11 +128,11 @@ Comparison of R+B+Q (Vision+Binaural+Question) / R+M+Q (Monaural) / B+Q / M+Q / 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Geometrically-Constrained Agent for Spatial Reasoning](geometrically-constrained_agent_for_spatial_reasoning.md)
-- [\[ICCV 2025\] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs](../../ICCV2025/multimodal_vlm/mm-spatial_exploring_3d_spatial_understanding_in_multimodal_llms.md)
 - [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
-- [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
-- [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
+- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
+- [\[ICLR 2026\] SCoT: Teaching 3D-LLMs to Think Spatially with Million-scale CoT Annotations](../../ICLR2026/vlm_reasoning/scot_teaching_3d-llms_to_think_spatially_with_million-scale_cot_annotations.md)
+- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 
 </div>
 

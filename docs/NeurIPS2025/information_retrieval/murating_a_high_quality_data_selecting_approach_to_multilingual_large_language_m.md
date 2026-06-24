@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MuRating: A High Quality Data Selecting Approach to Multilingual Large Language Model Pretraining
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][multilingual data selection] This paper proposes MuRating, a scalable multilingual data selection framework that aggregates multiple English data quality scorers via pairwise c…
+  [NeurIPS 2025][Information Retrieval & RAG][multilingual data selection] This paper proposes MuRating, a scalable multilingual data selection framework that aggregates multiple English data quality scorers via pairwise comparisons, transfers quality signals to 17 languages through translation, and trains a language-agnostic multilingual quality assessment model, achieving consistent performance gains in LLM pretraining at both 1.2B and 7B scales.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "pairwise comparison"
   - "cross-lingual alignment"
 date: 2026-05-08
-content_hash: 1498a59930fd8641
+content_hash: 3bc5c22680320106
 ---
 
 # MuRating: A High Quality Data Selecting Approach to Multilingual Large Language Model Pretraining
@@ -193,11 +193,11 @@ The model fine-tunes the BGE-M3 encoder with an added linear head for quality sc
 
 ## Related Papers
 
+- [\[ICML 2026\] Linguistic Nepotism: Trading-off Quality for Language Preference in Multilingual RAG](../../ICML2026/information_retrieval/linguistic_nepotism_trading-off_quality_for_language_preference_in_multilingual_.md)
+- [\[ACL 2025\] SafeRAG: Benchmarking Security in Retrieval-Augmented Generation of Large Language Model](../../ACL2025/information_retrieval/saferag_benchmarking_security_in_retrieval-augmented_generation_of_large_languag.md)
+- [\[ECCV 2024\] Towards Open-Ended Visual Recognition with Large Language Model](../../ECCV2024/information_retrieval/towards_open-ended_visual_recognition_with_large_language_models.md)
 - [\[ICML 2026\] Understand and Accelerate Memory Processing Pipeline for Large Language Model Inference](../../ICML2026/information_retrieval/understand_and_accelerate_memory_processing_pipeline_for_disaggregated_llm_infer.md)
-- [\[NeurIPS 2025\] The Transparent Earth: A Multimodal Foundation Model for the Earth's Subsurface](the_transparent_earth_a_multimodal_foundation_model_for_the_earths_subsurface.md)
-- [\[ICLR 2026\] Your Language Model Secretly Contains Personality Subnetworks](../../ICLR2026/information_retrieval/your_language_model_secretly_contains_personality_subnetworks.md)
-- [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](../../ICLR2026/information_retrieval/query-level_uncertainty_in_large_language_models.md)
-- [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](scaling_language-centric_omnimodal_representation_learning.md)
+- [\[ACL 2025\] Investigating Language Preference of Multilingual RAG Systems](../../ACL2025/information_retrieval/investigating_language_preference_of_multilingual_rag_systems.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)
 description: >-
-  [ACL 2026][LLM Safety][RAG] DP-SynRAG utilizes LLMs to distill private RAG databases into differentially private synthetic text libraries in a **one-time** process. Subsequent queries do not consume any privacy budget. On Medical Synth, MovieLens, and SearchQA datasets, its accuracy significantly outperforms query-time DP-RAG (which collapses in
+  [ACL 2026 Findings][LLM Safety][Differential Privacy] DP-SynRAG utilizes LLMs to distill private RAG databases into differentially private synthetic text libraries in a **one-time** process. Subsequent queries do not consume any privacy budget. On Medical Synth, MovieLens, and SearchQA datasets, its accuracy significantly outperforms query-time DP-RAG (which collapses in multi-query scenarios).
 tags:
-  - ACL 2026
-  - LLM Safety
-  - RAG
-  - private prediction
-  - subsample-and-aggregate
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Differential Privacy"
+  - "Synthetic Data"
+  - "RAG"
+  - "Private Prediction"
+  - "Subsample-and-Aggregate"
 date: 2026-05-08
-content_hash: 445d8d5fb0cdecdc
+content_hash: 3b62d86f8f474835
 ---
+
 # Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)
 
 **Conference**: ACL 2026 Findings  
@@ -147,11 +150,11 @@ Impact of components on DP-SynRAG accuracy (%):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Secret-Protected Evolution for Differentially Private Synthetic Text Generation](../../ICLR2026/llm_safety/secret-protected_evolution_for_differentially_private_synthetic_text_generation.md)
+- [\[ICLR 2026\] Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval](../../ICLR2026/llm_safety/pisces_cryptography-based_private_retrieval-augmented_generation_with_dual-path_.md)
 - [\[ACL 2026\] Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation](beyond_explicit_refusals_soft-failure_attacks_on_retrieval-augmented_generation.md)
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
-- [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](../../AAAI2026/llm_safety/privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
-- [\[NeurIPS 2025\] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation](../../NeurIPS2025/llm_safety/imagesentinel_protecting_visual_datasets_from_unauthorized_retrieval-augmented_i.md)
-- [\[ACL 2026\] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation](agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification.md)
+- [\[ICLR 2026\] Fine-Grained Privacy Extraction from Retrieval-Augmented Generation Systems by Exploiting Knowledge Asymmetry](../../ICLR2026/llm_safety/fine-grained_privacy_extraction_from_retrieval-augmented_generation_systems_by_e.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Exposing and Defending the Achilles' Heel of Video Mixture-of-Experts
 description: >-
-  [ICLR 2026][Video Understanding][Video MoE] This paper systematically deconstructs the component-level adversarial vulnerabilities of Video MoE for the first time. It proposes the J-TLGA attack, which exposes the "Achilles' Heel" by first directing the router toward the weakest experts and then jointly perturbing both the router and experts. Accompanying this is
+  [ICLR 2026][Video Understanding][Video MoE] This paper systematically deconstructs the component-level adversarial vulnerabilities of Video MoE for the first time. It proposes the J-TLGA attack, which exposes the "Achilles' Heel" by first directing the router toward the weakest experts and then jointly perturbing both the router and experts. Accompanying this is J-TLAT, a hierarchical adversarial training method that repairs these weaknesses layer by layer…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Video MoE
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Video MoE"
+  - "Adversarial Attack"
+  - "Adversarial Training"
+  - "Lipschitz Constraint"
+  - "Router Attack"
+  - "Component-level Robustness"
 date: 2026-05-08
-content_hash: 39b19531e8432b0f
+content_hash: b603feb0bd7216c7
 ---
+
 # Exposing and Defending the Achilles' Heel of Video Mixture-of-Experts
 
 **Conference**: ICLR 2026  

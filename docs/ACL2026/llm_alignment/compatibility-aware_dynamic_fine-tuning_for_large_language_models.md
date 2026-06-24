@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models
 description: >-
-  [ACL 2026][Alignment & RLHF][DFT] Building on the token-level stabilization method DFT, CADFT introduces a "sample-level compatibility" signal calculated from the model's own likelihood to re-weight supervised gradients. It further employs a delayed, low-frequency "compatibility-guided rewriting" to transform stubborn, difficult samples into learnable
+  [ACL 2026][LLM Alignment][Supervised Fine-Tuning] Building on the token-level stabilization method DFT, CADFT introduces a "sample-level compatibility" signal calculated from the model's own likelihood to re-weight supervised gradients. It further employs a delayed, low-frequency "compatibility-guided rewriting" to transform stubborn, difficult samples into learnable targets. This suppresses high-variance gradients without reward models or RL, enhancing SFT stability…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - DFT
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Supervised Fine-Tuning"
+  - "Gradient Variance Control"
+  - "Sample-level Compatibility"
+  - "DFT"
+  - "Cold-start RL"
 date: 2026-05-08
-content_hash: b265a4f090a2e362
+content_hash: 65d2f8657413cabe
 ---
+
 # Compatibility-Aware Dynamic Fine-Tuning for Large Language Models
 
 **Conference**: ACL 2026  
@@ -133,10 +138,17 @@ CADFT provides a 1.8 to 4.3 point improvement over the already strong DFT, regar
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
+- [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
+- [\[ICLR 2026\] Anchored Supervised Fine-Tuning](../../ICLR2026/llm_alignment/anchored_supervised_fine-tuning.md)
+- [\[CVPR 2026\] Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models](../../CVPR2026/llm_alignment/uncertainty-aware_exploratory_direct_preference_optimization_for_multimodal_larg.md)
+- [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)

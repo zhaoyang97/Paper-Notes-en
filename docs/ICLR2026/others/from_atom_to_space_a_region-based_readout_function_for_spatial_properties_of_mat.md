@@ -1,15 +1,21 @@
 ---
 title: >-
-  [Paper Note] From atom to space：面向材料空间性质的区域化读出函数 SpatialRead
+  [Paper Note] From atom to space: SpatialRead, a Regionalized Readout Function for Spatial Properties of Materials
 description: >-
-  [ICLR 2026][Others][MOF] Focusing on material properties like gas adsorption that "decompose by spatial region rather than by atom," this paper proposes SpatialRead. It inserts "spatial nodes" into voxelized space, transforms the atomic graph into an atom-spatial heterogeneous graph, and adaptively fuses atomic and spatial inductive biases usi
+  [ICLR 2026][Readout functions] Focusing on material properties like gas adsorption that "decompose by spatial region rather than by atom," this paper proposes SpatialRead. It inserts "spatial nodes" into voxelized space, transforms the atomic graph into an atom-spatial heterogeneous graph, and adaptively fuses atomic and spatial inductive biases using multi-modal attention. This allows small models trained from scratch to surpass foundation models pre-trained on 120 million s…
 tags:
-  - ICLR 2026
-  - Others
-  - MOF
+  - "ICLR 2026"
+  - "Readout functions"
+  - "spatial properties"
+  - "heterogeneous graphs"
+  - "porous materials"
+  - "MOF"
+  - "gas adsorption"
+  - "inductive bias"
 date: 2026-05-08
-content_hash: e97aba46f083a14c
+content_hash: 7ac7e0f239ce860f
 ---
+
 # From atom to space: SpatialRead, a Regionalized Readout Function for Spatial Properties of Materials
 
 **Conference**: ICLR 2026  
@@ -117,11 +123,11 @@ Ablation breaks down the method: Base GNN $\rightarrow$ +SN (Spatial Node poolin
 
 ## Related Papers
 
-- [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](a_single_architecture_for_representing_invariance_under_any_space_group.md)
-- [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
-- [\[ICLR 2026\] Exploring State-Space Models for Data-Specific Neural Representations](exploring_state-space_models_for_data-specific_neural_representations.md)
-- [\[CVPR 2026\] Consensus vs. Controversy: Mapping the Decision Space Where Architectures Diverge](../../CVPR2026/others/consensus_vs_controversy_mapping_the_decision_space_where_architectures_diverge.md)
 - [\[ICML 2026\] Spatial Priors via Space Filling Curves for Small and Limited Data Vision Transformers](../../ICML2026/others/spatial_priors_via_space_filling_curves_for_small_and_limited_data_vision_transf.md)
+- [\[ICLR 2026\] Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)
+- [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
+- [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](probabilistic_kernel_function_for_fast_angle_testing.md)
+- [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
 
 </div>
 

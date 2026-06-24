@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Model Merging Scaling Laws in Large Language Models
 description: >-
-  [ICML 2026][Model Compression][scaling law] The authors empirically derived a dual-axis power law of the form $L=L_*+BN^{-\beta}+A_0 N^{-\gamma}/(k+b)$ using 10,866 merged models. The base scale $N$ determines the performance floor, while the number of experts $k$ determines the tail. Four mainstream merging methods (Average, TA, TIES, DARE) share the same curve
+  [ICML 2026][Model Compression][Model merging] The authors empirically derived a dual-axis power law of the form $L=L_*+BN^{-\beta}+A_0 N^{-\gamma}/(k+b)$ using 10,866 merged models. The base scale $N$ determines the performance floor, while the number of experts $k$ determines the tail. Four mainstream merging methods (Average, TA, TIES, DARE) share the same curve, transforming the engineering questions of "how many experts to merge" and "when to stop" into a predictable and…
 tags:
-  - ICML 2026
-  - Model Compression
-  - scaling law
-  - power law
-  - task arithmetic
-  - TIES/DARE
+  - "ICML 2026"
+  - "Model Compression"
+  - "Model merging"
+  - "scaling law"
+  - "power law"
+  - "task arithmetic"
+  - "TIES/DARE"
 date: 2026-05-08
-content_hash: 38d75ac116e03960
+content_hash: 98a5b9caad5c4c54
 ---
+
 # Model Merging Scaling Laws in Large Language Models
 
 **Conference**: ICML 2026  
@@ -122,8 +124,8 @@ No new training losses are introduced. All data points come from frozen bases an
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
 - [\[ICML 2026\] LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws](llms_as_noisy_channels_a_shannon_perspective_on_model_capacity_and_scaling_laws.md)
 - [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
-- [\[ACL 2025\] Spectra 1.1: Scaling Laws and Efficient Inference for Ternary Language Models](../../ACL2025/model_compression/scaling_laws_and_efficient_inference_for_ternary_language_models.md)
 - [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)
+- [\[ICML 2026\] Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing](post-hoc_merging_is_not_enough_many-shot_model_merging_with_loss-gap_balancing.md)
 
 </div>
 

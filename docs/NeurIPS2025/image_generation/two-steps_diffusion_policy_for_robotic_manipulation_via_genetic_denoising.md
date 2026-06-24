@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising
 description: >-
-  [NeurIPS 2025][Image Generation][Genetic Denoising Policy] By revealing the distributional mismatch caused by clipping operations in diffusion policies…
+  [NeurIPS 2025][Image Generation][Genetic Denoising Policy] By revealing the distributional mismatch caused by clipping operations in diffusion policies, this paper proposes GDP—a method combining denoising schedule optimization and genetic algorithm-based population selection—that enables off-the-shelf DDPM diffusion policies to match or surpass 100-step baselines with only 2-step inference, **without any retraining**.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Population Sampling"
   - "OoD Risk"
 date: 2026-05-08
-content_hash: e487aa2686ec5b82
+content_hash: df9fa5b198283d38
 ---
 
 # Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising
@@ -163,9 +163,9 @@ GDP builds on three progressive levels of improvement:
 
 - [\[NeurIPS 2025\] AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models](accuquant_simulating_multiple_denoising_steps_for_quantizing.md)
 - [\[AAAI 2026\] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation](../../AAAI2026/image_generation/mp1_meanflow_tames_policy_learning_in_1-step_for_robotic_manipulation.md)
-- [\[ICCV 2025\] Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment](../../ICCV2025/image_generation/fewer_denoising_steps_or_cheaper_per-step_inference_towards_compute-optimal_diff.md)
 - [\[ICCV 2025\] A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](../../ICCV2025/image_generation/a0_an_affordance-aware_hierarchical_model_for_general_robotic_manipulation.md)
 - [\[NeurIPS 2025\] Diffusion-Driven Progressive Target Manipulation for Source-Free Domain Adaptation](diffusion-driven_progressive_target_manipulation_for_source-free_domain_adaptati.md)
+- [\[ICCV 2025\] Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment](../../ICCV2025/image_generation/fewer_denoising_steps_or_cheaper_per-step_inference_towards_compute-optimal_diff.md)
 
 </div>
 

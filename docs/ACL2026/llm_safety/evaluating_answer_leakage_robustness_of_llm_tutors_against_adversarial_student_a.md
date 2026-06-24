@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks
 description: >-
-  [ACL 2026][LLM Safety][LLM tutor] This paper systematically evaluates the answer leakage robustness of LLM tutors in scenarios where "students attempt to deceive the tutor into providing answers." It defines 6 categories of adversarial/persuasive techniques, compares 4 types of adversarial student agents (Base, Reasoning-enhanced, Multi-agent, SFT-tune
+  [ACL 2026][LLM Safety][LLM tutor] This paper systematically evaluates the answer leakage robustness of LLM tutors in scenarios where "students attempt to deceive the tutor into providing answers." It defines 6 categories of adversarial/persuasive techniques, compares 4 types of adversarial student agents (Base, Reasoning-enhanced, Multi-agent, SFT-tuned), and verifies that two simple defenses (Reasoning-first and Multi-agent tutor) can compress the leakage rate from 70–85% to…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - LLM tutor
+  - "ACL 2026"
+  - "LLM Safety"
+  - "LLM tutor"
+  - "answer leakage"
+  - "adversarial student"
+  - "multi-turn jailbreak"
+  - "educational safety"
 date: 2026-05-08
-content_hash: 1ca3836d8e69c917
+content_hash: 33021f23292fcf1d
 ---
+
 # Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks
 
 **Conference**: ACL 2026  
@@ -149,15 +154,16 @@ Defense Ablation (vs. Base In-Context Tutor):
 - Value: ⭐⭐⭐⭐⭐ Provides reusable benchmarks and plug-and-play defenses for EdTech; the counter-intuitive findings regarding model scale and pedagogical SFT are particularly valuable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Robustness via Referencing: Defending against Prompt Injection Attacks by Referencing the Executed Instruction](robustness_via_referencing_defending_against_prompt_injection_attacks_by_referen.md)
 - [\[NeurIPS 2025\] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks](../../NeurIPS2025/llm_safety/on_the_robustness_of_verbal_confidence_of_llms_in_adversarial_attacks.md)
+- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](../../ICLR2026/llm_safety/sampling-aware_adversarial_attacks_against_large_language_models.md)
 - [\[NeurIPS 2025\] Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties](../../NeurIPS2025/llm_safety/trans-env_a_framework_for_evaluating_the_linguistic_robustness_of_llms_against_e.md)
 - [\[ACL 2026\] CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks](crossguard_safeguarding_mllms_against_joint-modal_implicit_malicious_attacks.md)
-- [\[ACL 2026\] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models](ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack.md)
 
 </div>
 

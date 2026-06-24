@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Would It Sound? Material-Controlled Multimodal Acoustic Profile Generation for Objects
 description: >-
-  [ICCV 2025][Audio & Speech][Room Impulse Response] This paper proposes a material-controlled acoustic profile generation task (M-CAPA): given audio-visual observations of an indoor scene and a user-defined target materia…
+  [ICCV 2025][Audio & Speech][Room Impulse Response] This paper proposes a material-controlled acoustic profile generation task (M-CAPA): given audio-visual observations of an indoor scene and a user-defined target material configuration, the model generates a target room impulse response (RIR) that reflects the material changes. A companion dataset, Acoustic Wonderland, is also introduced.
 tags:
   - "ICCV 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "RIR Generation"
   - "Acoustic Simulation"
 date: 2026-05-08
-content_hash: b1075dc106637feb
+content_hash: 9e00fadb3ed98dd6
 ---
 
 # How Would It Sound? Material-Controlled Multimodal Acoustic Profile Generation for Objects
@@ -151,11 +151,11 @@ Removing the residual term $B_T$ leads to a 2.39 dB degradation in CTE, confirmi
 
 ## Related Papers
 
+- [\[CVPR 2025\] MultiFoley: Video-Guided Foley Sound Generation with Multimodal Controls](../../CVPR2025/audio_speech/video-guided_foley_sound_generation_with_multimodal_controls.md)
+- [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](../../CVPR2026/audio_speech/how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
+- [\[ICCV 2025\] 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining](25_years_in_class_a_multimodal_textbook_for_visionlanguage_p.md)
+- [\[ECCV 2024\] Beat-It: Beat-Synchronized Multi-Condition 3D Dance Generation](../../ECCV2024/audio_speech/beat-it_beat-synchronized_multi-condition_3d_dance_generation.md)
 - [\[NeurIPS 2025\] Resounding Acoustic Fields with Reciprocity](../../NeurIPS2025/audio_speech/resounding_acoustic_fields_with_reciprocity.md)
-- [\[ACL 2026\] How Tokenization Limits Phonological Knowledge Representation in Language Models and How to Improve Them](../../ACL2026/audio_speech/how_tokenization_limits_phonological_knowledge_representation_in_language_models.md)
-- [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](../../NeurIPS2025/audio_speech/node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
-- [\[NeurIPS 2025\] Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization](../../NeurIPS2025/audio_speech/seeing_sound_hearing_sight_uncovering_modality_bias_and_conflict_of_ai_models_in.md)
-- [\[ACL 2026\] UniSonate: A Unified Model for Speech, Music, and Sound Effect Generation with Text Instructions](../../ACL2026/audio_speech/unisonate_a_unified_model_for_speech_music_and_sound_effect_generation_with_text.md)
 
 </div>
 

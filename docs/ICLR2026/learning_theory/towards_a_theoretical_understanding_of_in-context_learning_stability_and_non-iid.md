@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation
 description: >-
-  [ICLR 2026][learning_theory][Error Accumulation] Under realistic conditions without assuming token orthogonality or i.i.d. sampling, this paper employs "algorithmic stability + discrepancy measure" to derive generalization error bounds for non-linear Transformers in the context of ICL next-token prediction. It reveals how optimization configurations and loss smoothne
+  [ICLR 2026][Learning Theory][Algorithmic Stability] Under realistic conditions without assuming token orthogonality or i.i.d. sampling, this paper employs "algorithmic stability + discrepancy measure" to derive generalization error bounds for non-linear Transformers in the context of ICL next-token prediction. It reveals how optimization configurations and loss smoothness collectively determine stability, how training/test distribution alignment dictates generalizability…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Error Accumulation
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "In-Context Learning"
+  - "Algorithmic Stability"
+  - "Distribution Shift"
+  - "Generalization Bounds"
+  - "Error Accumulation"
 date: 2026-05-08
-content_hash: 8c2f1ddc3cb51206
+content_hash: 11dd964c9053b3fe
 ---
+
 # Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation
 
 **Conference**: ICLR 2026  
@@ -129,9 +134,9 @@ Experiments are purely for verification (as this is a theoretical paper). A 12-l
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
-- [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
-- [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
+- [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
 - [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
 
 </div>

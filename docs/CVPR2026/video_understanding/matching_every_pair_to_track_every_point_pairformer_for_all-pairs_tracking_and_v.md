@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Matching Every Pair to Track Every Point: PairFormer for All-Pairs Tracking and Video Trajectory Fields
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] PairFormer upgrades video motion modeling from "tracking a few query points" to "predicting dense displacement and visibility fields for every frame pair" (All-Pairs Tracking, APT). Using a feed-forward Transformer (Spatio-temporal encoder + CorrBank + Broadcast Motion Mixer + Trajectory Field Decoder), it outputs sequ
+  [CVPR 2026][Video Understanding][All-Pairs Tracking] PairFormer upgrades video motion modeling from "tracking a few query points" to "predicting dense displacement and visibility fields for every frame pair" (All-Pairs Tracking, APT). Using a feed-forward Transformer (Spatio-temporal encoder + CorrBank + Broadcast Motion Mixer + Trajectory Field Decoder), it outputs sequence-consistent dense trajectory fields in a single forward pass. Accompanied by the PAIRender synthetic da…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "All-Pairs Tracking"
+  - "Point Tracking TAP"
+  - "Trajectory Fields"
+  - "Feed-forward Transformer"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 1b061c0762c1aa7a
+content_hash: ded627353c685913
 ---
+
 # Matching Every Pair to Track Every Point: PairFormer for All-Pairs Tracking and Video Trajectory Fields
 
 **Conference**: CVPR 2026  
@@ -123,13 +129,14 @@ On APT-Bench held-out split:
 - Value: ⭐⭐⭐⭐⭐ Dense all-pairs fields have clear utility for 4D reconstruction and video editing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ECCV 2024\] Local All-Pair Correspondence for Point Tracking](../../ECCV2024/video_understanding/local_all-pair_correspondence_for_point_tracking.md)
 - [\[CVPR 2026\] Efficient All-Pairs Correlation Volume Sampling for Optical Flow Estimation](efficient_all-pairs_correlation_volume_sampling_for_optical_flow_estimation.md)
-- [\[CVPR 2026\] TAPFormer: Robust Arbitrary Point Tracking via Transient Asynchronous Fusion of Frames and Events](ttapformer_robust_arbitrary_point_tracking_via_transient_asynchronous_fusion_of_.md)
+- [\[CVPR 2026\] Generative Point Tracking and Forecasting](generative_point_tracking_and_forecasting.md)
 - [\[CVPR 2026\] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)
 - [\[CVPR 2026\] MV-TAP: Tracking Any Point in Multi-View Videos](mv-tap_tracking_any_point_in_multi-view_videos.md)
 

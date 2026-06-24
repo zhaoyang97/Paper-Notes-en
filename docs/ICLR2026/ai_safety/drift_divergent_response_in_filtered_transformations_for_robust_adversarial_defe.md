@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DRIFT: Divergent Response in Filtered Transformations for Robust Adversarial Defense
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] DRIFT prepends a set of lightweight learnable filters to a frozen classifier and employs a "consensus divergence" loss to actively scatter the gradient directions of different filters. This effectively disrupts the "gradient consensus" that adversarial perturbations rely on for transferability. On ImageNet, for both CN
+  [ICLR2026][AI Safety][Adversarial Defense] DRIFT prepends a set of lightweight learnable filters to a frozen classifier and employs a "consensus divergence" loss to actively scatter the gradient directions of different filters. This effectively disrupts the "gradient consensus" that adversarial perturbations rely on for transferability. On ImageNet, for both CNNs and ViTs, DRIFT achieves state-of-the-art robust accuracy against strong adaptive attacks such as PGD-EoT…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Adversarial Defense"
+  - "Gradient Consensus"
+  - "Learnable Filters"
+  - "Adaptive Attacks"
+  - "Robust Accuracy"
 date: 2026-05-08
-content_hash: ef5725374b68cf38
+content_hash: 42b3e80a00db16a5
 ---
+
 # DRIFT: Divergent Response in Filtered Transformations for Robust Adversarial Defense
 
 **Conference**: ICLR2026  
@@ -140,11 +146,11 @@ JPEG/BaRT collapse to below 10%. AT and its variants (FFR+AT/ANF+AT) show limite
 
 ## Related Papers
 
+- [\[ICLR 2026\] LAMDA: A Longitudinal Android Malware Benchmark for Concept Drift Analysis](lamda_a_longitudinal_android_malware_benchmark_for_concept_drift_analysis.md)
 - [\[ICLR 2026\] Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models](adversarial_attacks_already_tell_the_answer_directional_bias-guided_test-time_de.md)
 - [\[ICLR 2026\] Zero-Sacrifice Persistent-Robustness Adversarial Defense for Pre-Trained Encoders](zero-sacrifice_persistent-robustness_adversarial_defense_for_pre-trained_encoder.md)
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
 - [\[CVPR 2026\] AdvMark: Decoupling Defense Strategies for Robust Image Watermarking](../../CVPR2026/ai_safety/decoupling_defense_strategies_for_robust_image_watermarking.md)
-- [\[ICLR 2026\] Discrete Latent Features Ablate Adversarial Attack: A Robust Prompt Tuning Framework for VLMs](discrete_latent_features_ablate_adversarial_attack_a_robust_prompt_tuning_framew.md)
 
 </div>
 

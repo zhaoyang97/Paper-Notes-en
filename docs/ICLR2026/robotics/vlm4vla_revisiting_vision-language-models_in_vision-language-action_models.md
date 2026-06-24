@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] This paper establishes a minimalist adaptation pipeline (VLM4VLA) that adds $<1\%$ parameters to fairly convert 17 general VLMs into VLA policies. It systematically investigates whether "VLM strength determines VLA performance," concluding that while VLM pre-training is necessary, neither general capabilities nor speci
+  [ICLR 2026][Robotics][VLA] This paper establishes a minimalist adaptation pipeline (VLM4VLA) that adds $<1\%$ parameters to fairly convert 17 general VLMs into VLA policies. It systematically investigates whether "VLM strength determines VLA performance," concluding that while VLM pre-training is necessary, neither general capabilities nor specialized embodied capabilities reliably predict downstream control performance; the true bottleneck lies in the visual encoder.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA"
+  - "VLM Backbone"
+  - "Embodied Control"
+  - "Visual Encoder"
+  - "Empirical Study"
 date: 2026-05-08
-content_hash: b34cb6c3ac222b27
+content_hash: bba410c0714e239e
 ---
+
 # VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models
 
 **Conference**: ICLR 2026  

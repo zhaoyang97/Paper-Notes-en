@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantics-Enhanced Retrieval-Augmented Time Series Forecasting
 description: >-
-  [ICML 2026][Time Series][Paper Note] SERAF adds a "semantic retrieval" path to retrieval-augmented time series forecasting: it automatically translates each historical time series segment into a structured text description (season/trend/volatility). By retrieving two sets of "similar past + corresponding future" based on both numerical and text semantic s
+  [ICML 2026][Time Series][Time Series Forecasting] SERAF adds a "semantic retrieval" path to retrieval-augmented time series forecasting: it automatically translates each historical time series segment into a structured text description (season/trend/volatility). By retrieving two sets of "similar past + corresponding future" based on both numerical and text semantic similarity and adaptively fusing them, the model can identify historical patterns that are "numerically dissimi…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Retrieval-Augmented Generation"
+  - "Multi-modal Retrieval"
+  - "Semantic Retrieval"
+  - "Non-stationary"
 date: 2026-05-08
-content_hash: b6734bcf16b76081
+content_hash: fbf9ccbc6713fbf1
 ---
+
 # Semantics-Enhanced Retrieval-Augmented Time Series Forecasting
 
 **Conference**: ICML 2026  
@@ -139,10 +145,20 @@ The contribution of core components:
 - Value: ⭐⭐⭐⭐ Lightweight and scalable; highly practical for non-stationary time series.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](../../ICLR2026/time_series/semantic-enhanced_time-series_forecasting_via_large_language_models.md)
+- [\[ICML 2026\] From Observations to States: Latent Time Series Forecasting](from_observations_to_states_latent_time_series_forecasting.md)
+- [\[ICML 2026\] It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks](its_time_towards_the_next_generation_of_time_series_forecasting_benchmarks.md)
+- [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning](../../ICLR2026/time_series/gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-series.md)
+- [\[ICML 2026\] Beyond Extrapolation: Knowledge Utilization Paradigm with Bidirectional Inspiration for Time Series Forecasting](beyond_extrapolation_knowledge_utilization_paradigm_with_bidirectional_inspirati.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning](../../ICLR2026/time_series/gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-series.md)

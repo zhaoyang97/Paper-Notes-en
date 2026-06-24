@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generalization Below the Edge of Stability: The Role of Data Geometry
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes the "data shatterability" principle to provide a unified explanation of how data geometry controls the strength of implicit regularization for gradient descent near the Edge of Stability (EoS). It derives a spectrum of $\alpha$-dependent generalization upper and lower bounds for the Beta(α) radial d
+  [ICLR 2026][Optimization][Generalization Theory] This paper proposes the "data shatterability" principle to provide a unified explanation of how data geometry controls the strength of implicit regularization for gradient descent near the Edge of Stability (EoS). It derives a spectrum of $\alpha$-dependent generalization upper and lower bounds for the Beta(α) radial distribution family and proves that generalization rates adapt to the intrinsic dimension $m$ rather than the am…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Generalization Theory"
+  - "Edge of Stability"
+  - "Data Geometry"
+  - "ReLU Networks"
+  - "Implicit Regularization"
 date: 2026-05-08
-content_hash: 9517ae7ddbab0d98
+content_hash: 0848e797b7d9d45d
 ---
+
 # Generalization Below the Edge of Stability: The Role of Data Geometry
 
 **Conference**: ICLR 2026  
@@ -115,14 +121,17 @@ This is a theoretical work of significant depth and breadth, establishing the fi
 
 <div class="related-papers" markdown="1">
 
-- **The Implicit Bias of Gradient Descent on Separable Data** (Soudry et al., JMLR 2018)
-- **Gradient Descent on Neural Networks Necessarily Operates at the Edge of Stability** (Cohen et al., ICLR 2021)
-- **Understanding Deep Learning Requires Rethinking Generalization** (Zhang et al., ICLR 2017)
+## Related Papers
+
+- [\[ICML 2026\] Conflicting Biases at the Edge of Stability: Norm versus Sharpness Regularization](../../ICML2026/optimization/conflicting_biases_at_the_edge_of_stability_norm_versus_sharpness_regularization.md)
+- [\[ICLR 2026\] How Muon's Spectral Design Benefits Generalization: A Study on Imbalanced Data](how_muons_spectral_design_benefits_generalization_a_study_on_imbalanced_data.md)
+- [\[NeurIPS 2025\] A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias](../../NeurIPS2025/optimization/a_unified_stability_analysis_of_sam_vs_sgd_role_of_data_cohe.md)
+- [\[ICLR 2026\] FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability–Plasticity Tradeoff](fire_frobenius-isometry_reinitialization_for_balancing_the_stabilityplasticity_t.md)
+- [\[ICLR 2026\] Matched Data, Better Models: Target Aligned Data Filtering with Sparse Autoencoders](matched_data_better_models_target_aligned_data_filtering_with_sparse_autoencoder.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] How Muon's Spectral Design Benefits Generalization: A Study on Imbalanced Data](how_muons_spectral_design_benefits_generalization_a_study_on_imbalanced_data.md)

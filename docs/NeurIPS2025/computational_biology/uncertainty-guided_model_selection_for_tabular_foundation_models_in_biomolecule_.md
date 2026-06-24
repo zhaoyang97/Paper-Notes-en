@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction
 description: >-
-  [NeurIPS 2025 (Workshop: Multi-modal Foundation Models for Life Sciences)][Computational Biology][TabPFN] This paper proposes OligoICP, a method that leverages the interquartile range (IQR) of TabPFN's predicted distribu…
+  [NeurIPS 2025 (Workshop: Multi-modal Foundation Models for Life Sciences)][Computational Biology][TabPFN] This paper proposes OligoICP, a method that leverages the interquartile range (IQR) of TabPFN's predicted distributions as an unlabeled model selection heuristic, achieving superior performance over both specialized SOTA models and naive ensembles on siRNA knockdown efficiency prediction.
 tags:
   - "NeurIPS 2025 (Workshop: Multi-modal Foundation Models for Life Sciences)"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "posterior ensemble"
   - "model selection"
 date: 2026-05-08
-content_hash: ae8e00983828e773
+content_hash: 28122ee9cf8a99c1
 ---
 
 # Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction
@@ -135,10 +135,10 @@ The OligoICP pipeline:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
+- [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
 - [\[NeurIPS 2025\] A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random](a_unified_framework_for_variable_selection_in_modelbased_clu.md)
 - [\[NeurIPS 2025\] Iterative Foundation Model Fine-Tuning on Multiple Rewards](iterative_foundation_model_fine-tuning_on_multiple_rewards.md)
-- [\[NeurIPS 2025\] JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model](janusdna_a_powerful_bi-directional_hybrid_dna_foundation_model.md)
-- [\[CVPR 2026\] CARE: A Molecular-Guided Foundation Model with Adaptive Region Modeling for Whole Slide Image Analysis](../../CVPR2026/computational_biology/care_a_molecular-guided_foundation_model_with_adaptive_region_modeling_for_whole.md)
+- [\[ICML 2025\] SToFM: a Multi-scale Foundation Model for Spatial Transcriptomics](../../ICML2025/computational_biology/stofm_a_multi-scale_foundation_model_for_spatial_transcriptomics.md)
 
 </div>
 

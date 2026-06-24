@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation
 description: >-
-  [ICLR 2026][vlm_reasoning][speculative decoding] Inspired by the "draft-then-verify" paradigm of Speculative Decoding, this paper proposes Speculative Verdict (SV). It utilizes multiple lightweight VLMs to generate diverse reasoning paths as drafts, while a large model serves as the verdict to synthesize, verify, and correct errors. SV outperforms GPT-4o by 11.9% on
+  [ICLR 2026][VLM Reasoning][speculative decoding] Inspired by the "draft-then-verify" paradigm of Speculative Decoding, this paper proposes Speculative Verdict (SV). It utilizes multiple lightweight VLMs to generate diverse reasoning paths as drafts, while a large model serves as the verdict to synthesize, verify, and correct errors. SV outperforms GPT-4o by 11.9% on information-intensive VQA without training and can rectify 47-53% of minority-correct cases.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - speculative decoding
-  - visual reasoning
-  - information-intensive VQA
-  - draft-verdict framework
-  - consensus expert selection
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "speculative decoding"
+  - "visual reasoning"
+  - "information-intensive VQA"
+  - "draft-verdict framework"
+  - "consensus expert selection"
 date: 2026-05-08
-content_hash: 73c38d1c1cd44560
+content_hash: 923e5edf95e63548
 ---
+
 # Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation
 
 **Conference**: ICLR 2026  
@@ -156,8 +157,8 @@ SV is entirely training-free. It utilizes five 7-9B open-source VLMs for the dra
 
 - [\[ICLR 2026\] ProxyThinker: Test-Time Guidance Through Small Visual Reasoners](proxythinker_test-time_guidance_through_small_visual_reasoners.md)
 - [\[ICLR 2026\] Empowering Small VLMs to Think with Dynamic Memorization and Exploration](empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)
-- [\[ICML 2026\] VideoKR: Towards Knowledge- and Reasoning-Intensive Video Understanding](../../ICML2026/vlm_reasoning/videokr_towards_knowledge-_and_reasoning-intensive_video_understanding.md)
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/vlm_reasoning/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
+- [\[ICML 2026\] VideoKR: Towards Knowledge- and Reasoning-Intensive Video Understanding](../../ICML2026/vlm_reasoning/videokr_towards_knowledge-_and_reasoning-intensive_video_understanding.md)
 - [\[CVPR 2026\] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval](../../CVPR2026/vlm_reasoning/rmir_a_benchmark_dataset_for_reasoning-intensive_multimodal_image_retrieval.md)
 
 </div>

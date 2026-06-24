@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MUNBa: Machine Unlearning via Nash Bargaining
 description: >-
-  [ICCV 2025][LLM Safety][Machine Unlearning] This work formulates Machine Unlearning (MU) as a two-player cooperative bargaining game and derives a closed-form solution via Nash bargaining theory to simultaneously address…
+  [ICCV 2025][LLM Safety][Machine Unlearning] This work formulates Machine Unlearning (MU) as a two-player cooperative bargaining game and derives a closed-form solution via Nash bargaining theory to simultaneously address gradient conflict and gradient dominance between the forgetting and retention objectives, achieving an optimal balance between unlearning and preservation across both classification and generation tasks.
 tags:
   - "ICCV 2025"
   - "LLM Safety"
@@ -14,7 +14,7 @@ tags:
   - "CLIP"
   - "Multi-Objective Optimization"
 date: 2026-05-08
-content_hash: d3f0569b1dfeb64e
+content_hash: eb5b7c781ff8c717
 ---
 
 # MUNBa: Machine Unlearning via Nash Bargaining
@@ -177,11 +177,11 @@ MUNBa is particularly effective against UnlearnDiffAtk, achieving an attack succ
 
 ## Related Papers
 
+- [\[ICML 2025\] NegMerge: Sign-Consensual Weight Merging for Machine Unlearning](../../ICML2025/llm_safety/negmerge_sign-consensual_weight_merging_for_machine_unlearning.md)
 - [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](../../NeurIPS2025/llm_safety/simu_selective_influence_machine_unlearning.md)
+- [\[CVPR 2026\] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](../../CVPR2026/llm_safety/machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)
+- [\[CVPR 2025\] LoTUS: Large-Scale Machine Unlearning with a Taste of Uncertainty](../../CVPR2025/llm_safety/lotus_large-scale_machine_unlearning_with_a_taste_of_uncertainty.md)
 - [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](../../NeurIPS2025/llm_safety/a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
-- [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](../../ICLR2026/llm_safety/ofmu_optimization-driven_framework_for_machine_unlearning.md)
-- [\[CVPR 2026\] SineProject: Machine Unlearning for Stable Vision–Language Alignment](../../CVPR2026/llm_safety/sineproject_machine_unlearning_for_stable_vision_language_alignment.md)
-- [\[ICML 2026\] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models](../../ICML2026/llm_safety/dualoptim_bridging_shared_and_decoupled_optimizer_states_for_better_machine_unle.md)
 
 </div>
 

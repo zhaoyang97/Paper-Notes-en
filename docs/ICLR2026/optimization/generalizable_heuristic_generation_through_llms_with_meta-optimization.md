@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Generalizable Heuristic Generation Through LLMs with Meta-Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][LLM-EC] MoH elevates LLM-based heuristic generation from "evolving heuristics with a fixed evolutionary algorithm" to "iteratively building optimizers." By using self-invocation to generate diverse heuristic optimizers and selecting the best one based on multi-task utility as the next round's meta-optimizer, MoH breaks free fr
+  [ICLR 2026][Optimization][Combinatorial Optimization] MoH elevates LLM-based heuristic generation from "evolving heuristics with a fixed evolutionary algorithm" to "iteratively building optimizers." By using self-invocation to generate diverse heuristic optimizers and selecting the best one based on multi-task utility as the next round's meta-optimizer, MoH breaks free from manually designed evolutionary frameworks and significantly enhances cross-scale generalization.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - LLM-EC
+  - "ICLR 2026"
+  - "Optimization"
+  - "Combinatorial Optimization"
+  - "Heuristic Generation"
+  - "Large Language Models"
+  - "Meta-Optimization"
+  - "Meta-Learning"
+  - "LLM-EC"
+  - "Cross-scale Generalization"
 date: 2026-05-08
-content_hash: f36b51a29c53c5bd
+content_hash: 65063e910d283239
 ---
+
 # Generalizable Heuristic Generation Through LLMs with Meta-Optimization
 
 **Conference**: ICLR 2026  
@@ -117,15 +124,15 @@ Different LLMs (MoH-GLS): 4o-mini (1.710%) outperformed stronger models like o1-
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering](../../AAAI2026/optimization/instance_generation_for_meta-black-box_optimization_through_latent_space_reverse.md)
 - [\[ICML 2026\] PathWise: Planning through World Model for Automated Heuristic Design via Self-Evolving LLMs](../../ICML2026/optimization/pathwise_planning_through_world_model_for_automated_heuristic_design_via_self-ev.md)
 - [\[ICLR 2026\] AutoEP: LLMs-Driven Automation of Hyperparameter Evolution for Metaheuristic Algorithms](autoep_llms-driven_automation_of_hyperparameter_evolution_for_metaheuristic_algo.md)
-- [\[ICLR 2026\] Evaluating Data Influence in Meta Learning](evaluating_data_influence_in_meta_learning.md)
 - [\[ICLR 2026\] Binomial Gradient-Based Meta-Learning for Enhanced Meta-Gradient Estimation](binomial_gradient-based_meta-learning_for_enhanced_meta-gradient_estimation.md)
+- [\[ICLR 2026\] Landing with the Score: Riemannian Optimization through Denoising](landing_with_the_score_riemannian_optimization_through_denoising.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VITAL: Vision-Encoder-centered Pre-training for LMMs in Visual Quality Assessment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] VITAL automatically annotates 4.58 million vision-language pairs using six scoring models followed by multi-LMM cross-review. By **freezing the LLM and training only the vision encoder** via generative pre-training, it produces a foundation vision encoder for visual quality assessment that generalizes across image/vide
+  [CVPR 2026][Multimodal VLM][Visual Quality Assessment] VITAL automatically annotates 4.58 million vision-language pairs using six scoring models followed by multi-LMM cross-review. By **freezing the LLM and training only the vision encoder** via generative pre-training, it produces a foundation vision encoder for visual quality assessment that generalizes across image/video scoring and descriptions while being seamlessly transferable to arbitrary LLM decoders.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Quality Assessment"
+  - "Large Multimodal Models"
+  - "Vision Encoder Pre-training"
+  - "Machine Annotation"
+  - "Structural Transfer"
 date: 2026-05-08
-content_hash: afb4aaf30d559314
+content_hash: 76c966f0acab74f0
 ---
+
 # VITAL: Vision-Encoder-centered Pre-training for LMMs in Visual Quality Assessment
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Linear Probing: Attaching a 1.61M linear head to the vision encoder outperforms 
 ## Related Papers
 
 - [\[CVPR 2026\] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement](uare_a_unified_vision-language_model_for_image_quality_assessment_restoration_an.md)
+- [\[CVPR 2026\] PowerCLIP: Powerset Alignment for Contrastive Pre-Training](powerclip_powerset_alignment_for_contrastive_pre-training.md)
 - [\[CVPR 2026\] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment](probabilistic_prompt_adaptation_for_unified_image_aesthetics_and_quality_assessm.md)
 - [\[CVPR 2026\] FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy](fluoclip_stain-aware_focus_quality_assessment_in_fluorescence_microscopy.md)
 - [\[CVPR 2026\] R4-CGQA: Retrieval-based Vision Language Models for Computer Graphics Image Quality Assessment](r4-cgqa_retrieval-based_vision_language_models_for_computer_graphics_image_quali.md)
-- [\[CVPR 2026\] PowerCLIP: Powerset Alignment for Contrastive Pre-Training](powerclip_powerset_alignment_for_contrastive_pre-training.md)
 
 </div>
 

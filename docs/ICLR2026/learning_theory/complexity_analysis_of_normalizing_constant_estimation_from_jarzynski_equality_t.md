@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Complexity Analysis of Normalizing Constant Estimation: from Jarzynski Equality to Annealed Importance Sampling and Beyond
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the first **non-asymptotic oracle complexity** bounds for estimating the normalizing constant $Z$ via Jarzynski Equality (JE) and Annealed Importance Sampling (AIS). It replaces isoperimetric inequalities with the "action of the curve" to characterize difficulty, demonstrates that geometric interpol
+  [ICLR 2026][Learning Theory][Normalizing constant estimation] This paper provides the first **non-asymptotic oracle complexity** bounds for estimating the normalizing constant $Z$ via Jarzynski Equality (JE) and Annealed Importance Sampling (AIS). It replaces isoperimetric inequalities with the "action of the curve" to characterize difficulty, demonstrates that geometric interpolation suffers from exponential action on multimodal distributions…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Sampling Complexity (probabilistic methods, sampling)"
+  - "Normalizing constant estimation"
+  - "Jarzynski Equality"
+  - "Annealed Importance Sampling"
+  - "non-asymptotic complexity"
+  - "optimal transport"
+  - "reverse diffusion sampling"
 date: 2026-05-08
-content_hash: a1a8841085eeb012
+content_hash: 9996a3f83a263b09
 ---
+
 # Complexity Analysis of Normalizing Constant Estimation: from Jarzynski Equality to Annealed Importance Sampling and Beyond
 
 **Conference**: ICLR 2026  
@@ -97,6 +105,7 @@ Comparison of TI, AIS, and four RDS methods on 2D multimodal targets, reporting 
 - **Value**: ⭐⭐⭐⭐ Lays the non-asymptotic foundation for annealing-based estimation and links sampling complexity with partition function estimation, impacting Bayesian computation and generative modeling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -105,7 +114,7 @@ Comparison of TI, AIS, and four RDS methods on 2D multimodal targets, reporting 
 - [\[ICLR 2026\] Poisson Midpoint Method for Log-Concave Sampling: Beyond the Strong Error Lower Bounds](poisson_midpoint_method_for_log_concave_sampling_beyond_the_strong_error_lower_b.md)
 - [\[ICLR 2026\] Stable Coresets: Unleashing the Power of Uniform Sampling](stable_coresets_unleashing_the_power_of_uniform_sampling.md)
 - [\[ICLR 2026\] On Coreset for LASSO Regression Problem with Sensitivity Sampling](on_coreset_for_lasso_regression_problem_with_sensitivity_sampling.md)
-- [\[ICLR 2026\] On Powerful Ways to Generate: Autoregression, Diffusion, and Beyond](on_powerful_ways_to_generate_autoregression_diffusion_and_beyond.md)
+- [\[ICLR 2026\] On the Wasserstein Geodesic Principal Component Analysis of probability measures](on_the_wasserstein_geodesic_principal_component_analysis_of_probability_measures.md)
 
 </div>
 

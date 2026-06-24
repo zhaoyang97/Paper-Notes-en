@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Biological taxonomy] BioCLIP 2 trains a ViT-L on TreeOfLife-200M (214M images across 952K species) using hierarchical contrastive learning…
+  [NeurIPS 2025 Spotlight][Multimodal VLM][Biological taxonomy] BioCLIP 2 trains a ViT-L on TreeOfLife-200M (214M images across 952K species) using hierarchical contrastive learning, achieving an 18% improvement over BioCLIP in zero-shot species recognition. The work further uncovers emergent properties arising from scale: embeddings automatically encode ecological relationships (e.g., Darwin's finches arranged by beak size), and intra-species variation is orthogonal to inter-s…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Multimodal VLM"
   - "Biological taxonomy"
   - "hierarchical contrastive learning"
@@ -12,7 +12,7 @@ tags:
   - "species recognition"
   - "TreeOfLife"
 date: 2026-05-08
-content_hash: d6fb9cf6fc65662d
+content_hash: 7b76d9d397f301d0
 ---
 
 # BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning
@@ -122,11 +122,11 @@ BioCLIP 2 trains a ViT-L on TreeOfLife-200M (214M images across 952K species) us
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](continual_multimodal_contrastive_learning.md)
 - [\[NeurIPS 2025\] NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints](navil_rethinking_scaling_properties_of_native_multimodal_large_language_models_u.md)
-- [\[NeurIPS 2025\] SITCOM: Scaling Inference-Time COMpute for VLAs](sitcom_scaling_inference-time_compute_for_vlas.md)
-- [\[NeurIPS 2025\] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM](hawaii_hierarchical_visual_knowledge_transfer_for_efficient_vision-language_mode.md)
-- [\[NeurIPS 2025\] Hierarchical Self-Attention: Generalizing Neural Attention Mechanics to Multi-Scale Problems](hierarchical_self-attention_generalizing_neural_attention_mechanics_to_multi-sca.md)
+- [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](continual_multimodal_contrastive_learning.md)
+- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](generalized_contrastive_learning_for_universal_multimodal_re.md)
+- [\[ACL 2025\] HSCR: Hierarchical Self-Contrastive Rewarding for Aligning Medical Vision Language Models](../../ACL2025/multimodal_vlm/hscr_hierarchical_self-contrastive_rewarding_for_aligning_medical_vision_languag.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](../../CVPR2026/multimodal_vlm/multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
 
 </div>
 

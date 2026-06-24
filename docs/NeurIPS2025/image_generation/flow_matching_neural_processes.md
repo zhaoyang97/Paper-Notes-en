@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Flow Matching Neural Processes
 description: >-
-  [NeurIPS 2025][Image Generation][neural processes] This paper proposes FlowNP, which integrates flow matching into the neural process framework. By employing a transformer to predict velocity fields at target points…
+  [NeurIPS 2025][Image Generation][neural processes] This paper proposes FlowNP, which integrates flow matching into the neural process framework. By employing a transformer to predict velocity fields at target points, FlowNP enables parallel sampling from conditional distributions, achieving state-of-the-art performance on three benchmarks spanning 1D Gaussian processes, image data, and meteorological data.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "conditional generation"
   - "transformer"
 date: 2026-05-08
-content_hash: e7b9d9837910e780
+content_hash: 671a81250035aac4
 ---
 
 # Flow Matching Neural Processes
@@ -194,11 +194,11 @@ TNP's generation time scales linearly with the number of target points $N$ (auto
 
 ## Related Papers
 
+- [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](../../ICLR2026/image_generation/edit-based_flow_matching_for_temporal_point_processes.md)
+- [\[ICML 2025\] ContinualFlow: Learning and Unlearning with Neural Flow Matching](../../ICML2025/image_generation/continualflow_learning_and_unlearning_with_neural_flow_matching.md)
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
-- [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](../../CVPR2026/image_generation/renderflow_single-step_neural_rendering_via_flow_matching.md)
 - [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](../../ICCV2025/image_generation/contrastive_flow_matching.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
-- [\[NeurIPS 2025\] Neural Entropy](neural_entropy.md)
 
 </div>
 

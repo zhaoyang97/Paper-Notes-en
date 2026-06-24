@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SIMU: Selective Influence Machine Unlearning
 description: >-
-  [NeurIPS 2025][LLM Safety][Machine Unlearning] SIMU proposes a two-stage framework: it first identifies critical MLP neurons encoding forget-set information via gradient aggregation…
+  [NeurIPS 2025][LLM Safety][Machine Unlearning] SIMU proposes a two-stage framework: it first identifies critical MLP neurons encoding forget-set information via gradient aggregation, then applies second-order (Sophia) optimization exclusively to those neurons, achieving effective unlearning while substantially preserving the model's original capabilities.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -11,7 +11,7 @@ tags:
   - "Neuron Localization"
   - "Influence Functions"
 date: 2026-05-08
-content_hash: b3ae477711487eb0
+content_hash: e130e66d7b0365c7
 ---
 
 # SIMU: Selective Influence Machine Unlearning
@@ -168,10 +168,10 @@ Evaluation is conducted on two benchmarks, TOFU and LUME, using LLaMA2-7B and OL
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
+- [\[CVPR 2026\] pH-Strips for Selective Forgetting: A Blunt but Fast Diagnostic Baseline for Machine Unlearning](../../CVPR2026/llm_safety/ph-strips_for_selective_forgetting_a_blunt_but_fast_diagnostic_baseline_for_mach.md)
 - [\[ICCV 2025\] MUNBa: Machine Unlearning via Nash Bargaining](../../ICCV2025/llm_safety/munba_machine_unlearning_via_nash_bargaining.md)
-- [\[ICCV 2025\] SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders](../../ICCV2025/llm_safety/sauce_selective_concept_unlearning_in_vision-language_models_with_sparse_autoenc.md)
-- [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](../../ICLR2026/llm_safety/ofmu_optimization-driven_framework_for_machine_unlearning.md)
-- [\[CVPR 2026\] SineProject: Machine Unlearning for Stable Vision–Language Alignment](../../CVPR2026/llm_safety/sineproject_machine_unlearning_for_stable_vision_language_alignment.md)
+- [\[ACL 2025\] Lacuna Inc. at SemEval-2025 Task 4: LoRA-Enhanced Influence-Based Unlearning for LLMs](../../ACL2025/llm_safety/lacuna_inc_at_semeval-2025_task_4_lora-enhanced_influence-based_unlearning_for_l.md)
+- [\[ICML 2025\] NegMerge: Sign-Consensual Weight Merging for Machine Unlearning](../../ICML2025/llm_safety/negmerge_sign-consensual_weight_merging_for_machine_unlearning.md)
 
 </div>
 

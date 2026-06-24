@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][latent diffusion model] This paper proposes DWGF (Diffusion-regularized Wasserstein Gradient Flow), which rigorously formalizes posterior sampling with latent diffusion models as a regula…
+  [NeurIPS 2025][Image Generation][latent diffusion model] This paper proposes DWGF (Diffusion-regularized Wasserstein Gradient Flow), which rigorously formalizes posterior sampling with latent diffusion models as a regularized gradient flow of KL divergence in the Wasserstein-2 space. An ODE system in the latent space is derived to solve image inverse problems, achieving substantially higher PSNR than baselines on inpainting and super-resolution tasks on FFHQ-512.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "posterior sampling"
   - "KL divergence"
 date: 2026-05-08
-content_hash: 5bb72e87a79a10e7
+content_hash: 93ae2e8a2115a31d
 ---
 
 # A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models
@@ -129,11 +129,11 @@ The DWGF framework maintains $N$ particles $\{z_0^{(i)}\}$ in the latent space $
 
 ## Related Papers
 
+- [\[ICML 2025\] Integrating Intermediate Layer Optimization and Projected Gradient Descent for Solving Inverse Problems with Diffusion Models](../../ICML2025/image_generation/integrating_intermediate_layer_optimization_and_projected_gradient_descent_for_s.md)
 - [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
-- [\[NeurIPS 2025\] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models](gradient_variance_reveals_failure_modes_in_flow-based_generative_models.md)
-- [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
-- [\[NeurIPS 2025\] Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems](preconditioned_langevin_dynamics_with_score-based_generative_models_for_infinite.md)
 - [\[NeurIPS 2025\] NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems](npn_non-linear_projections_of_the_null-space_for_imaging_inverse_problems.md)
+- [\[NeurIPS 2025\] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models](gradient_variance_reveals_failure_modes_in_flow-based_generative_models.md)
+- [\[CVPR 2025\] Improving Diffusion Inverse Problem Solving with Decoupled Noise Annealing](../../CVPR2025/image_generation/improving_diffusion_inverse_problem_solving_with_decoupled_noise_annealing.md)
 
 </div>
 

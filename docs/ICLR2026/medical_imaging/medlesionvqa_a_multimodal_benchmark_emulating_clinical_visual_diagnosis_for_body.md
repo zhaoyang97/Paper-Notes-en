@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] MedLesionVQA: A Multimodal Benchmark Emulating Clinical Visual Diagnosis for Body Surface Health
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] MedLesionVQA, developed by the ByteDance Xiaohe team in collaboration with Peking Union Medical College Hospital (Tsinghua Changgung Hospital), is the first multimodal benchmark for body surface health aligned with the "step-by-step visual diagnosis workflow" of physicians. It comprises 12K unreleased real-world hospit
+  [ICLR 2026][Medical Imaging][Body Surface Health] MedLesionVQA, developed by the ByteDance Xiaohe team in collaboration with Peking Union Medical College Hospital (Tsinghua Changgung Hospital), is the first multimodal benchmark for body surface health aligned with the "step-by-step visual diagnosis workflow" of physicians. It comprises 12K unreleased real-world hospital patient images and 19K expert-reviewed QAs, covering 94 lesion types, 110 body parts…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Body Surface Health"
+  - "Visual Diagnosis"
+  - "Medical MLLM"
+  - "VQA Benchmark"
+  - "Skin Lesions"
+  - "Clinical Evaluation"
 date: 2026-05-08
-content_hash: 2cb6630068b02d0d
+content_hash: dbd3f1cd656b8954
 ---
+
 # MedLesionVQA: A Multimodal Benchmark Emulating Clinical Visual Diagnosis for Body Surface Health
 
 **Conference**: ICLR 2026  
@@ -121,11 +128,11 @@ Accuracy for the "Suggestion & Treatment" task remains nearly identical after re
 
 ## Related Papers
 
+- [\[ICLR 2026\] AbdCTBench: Learning Clinical Biomarker Representations from Abdominal Surface Geometry](abdctbench_learning_clinical_biomarker_representations_from_abdominal_surface_ge.md)
 - [\[CVPR 2026\] Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning](../../CVPR2026/medical_imaging/med-cmr_a_fine-grained_benchmark_integrating_visual_evidence_and_clinical_logic_.md)
 - [\[CVPR 2026\] X-PCR: A Benchmark for Cross-modality Progressive Clinical Reasoning in Ophthalmic Diagnosis](../../CVPR2026/medical_imaging/x-pcr_a_benchmark_for_cross-modality_progressive_clinical_reasoning_in_ophthalmi.md)
-- [\[ICLR 2026\] Unified Brain Surface and Volume Registration](unified_brain_surface_and_volume_registration.md)
 - [\[ICML 2026\] DIYHealth Suite: Dataset, Model, and Benchmark for Health Management at Home](../../ICML2026/medical_imaging/diyhealth_suite_dataset_model_and_benchmark_for_health_management_at_home.md)
-- [\[NeurIPS 2025\] MTBBench: A Multimodal Sequential Clinical Decision-Making Benchmark in Oncology](../../NeurIPS2025/medical_imaging/mtbbench_a_multimodal_sequential_clinical_decision-making_benchmark_in_oncology.md)
+- [\[ICLR 2026\] Unified Brain Surface and Volume Registration](unified_brain_surface_and_volume_registration.md)
 
 </div>
 

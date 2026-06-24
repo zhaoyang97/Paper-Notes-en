@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Contrastive Representations for Temporal Reasoning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Contrastive Learning] This paper proposes CRTR (Contrastive Representations for Temporal Reasoning), which introduces intra-trajectory negative pairs by repeating trajectory IDs w…
+  [NeurIPS 2025][Self-Supervised Learning][Contrastive Learning] This paper proposes CRTR (Contrastive Representations for Temporal Reasoning), which introduces intra-trajectory negative pairs by repeating trajectory IDs within training batches. This eliminates the reliance on static contextual features in standard temporal contrastive learning, enabling representations that reflect temporal structure. CRTR achieves, for the first time, search-free solving on combinatorial reas…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Sokoban"
   - "Rubik's Cube"
 date: 2026-05-08
-content_hash: 9d604af71b048234
+content_hash: 3f59d6e31e6bdaf7
 ---
 
 # Contrastive Representations for Temporal Reasoning
@@ -137,11 +137,11 @@ The core modification in CRTR is remarkably simple — only the negative samplin
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
 - [\[NeurIPS 2025\] MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark](mmtu_a_massive_multi-task_table_understanding_and_reasoning_benchmark.md)
+- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
 - [\[NeurIPS 2025\] The Complexity of Finding Local Optima in Contrastive Learning](the_complexity_of_finding_local_optima_in_contrastive_learning.md)
-- [\[CVPR 2026\] UniGeoCLIP: Unified Geospatial Contrastive Learning](../../CVPR2026/self_supervised/unigeoclip_geospatial_contrastive.md)
-- [\[ICLR 2026\] Temporal Slowness in Central Vision Drives Semantic Object Learning](../../ICLR2026/self_supervised/temporal_slowness_in_central_vision_drives_semantic_object_learning.md)
+- [\[ICML 2025\] Contextures: Representations from Contexts](../../ICML2025/self_supervised/contextures_representations_from_contexts.md)
+- [\[CVPR 2026\] Temporal Representation Enhancement (TRE): Learning to Forget Dominant Patterns for Enhanced Temporal Spiking Features](../../CVPR2026/self_supervised/temporal_representation_enhancement_tre_learning_to_forget_dominant_patterns_for.md)
 
 </div>
 

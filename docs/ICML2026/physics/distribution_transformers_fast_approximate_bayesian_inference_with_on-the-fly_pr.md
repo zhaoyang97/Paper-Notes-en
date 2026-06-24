@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Transformer] Distribution Transformer (DT) explicitly tokenizes the "prior distribution" into a set of Gaussian Mixture Model (GMM) components and injects "observations" into the decoder via cross-attention, learning an end-to-end mapping from "prior + data → posterior." While maintaining conjugacy within the same family (GMM→GMM)
+  [ICML 2026 Spotlight][Physics & Scientific Computing][Amortized Bayesian Inference] Distribution Transformer (DT) explicitly tokenizes the "prior distribution" into a set of Gaussian Mixture Model (GMM) components and injects "observations" into the decoder via cross-attention, learning an end-to-end mapping from "prior + data → posterior." While maintaining conjugacy within the same family (GMM→GMM) to support sequential filtering, it compresses inference time from minutes t…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - Transformer
+  - "ICML 2026 Spotlight"
+  - "Physics & Scientific Computing"
+  - "Amortized Bayesian Inference"
+  - "Prior Adaptation"
+  - "Gaussian Mixture Models"
+  - "Sequential Filtering"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 8d42fd04e3bfe11d
+content_hash: 043db6c4146b8cc7
 ---
+
 # Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation
 
 **Conference**: ICML 2026 Spotlight  
@@ -151,11 +156,11 @@ DT nearly matches the "quasi-ground truth" PF while being ~50× faster per step;
 
 ## Related Papers
 
-- [\[AAAI 2026\] Fast 3D Surrogate Modeling for Data Center Thermal Management](../../AAAI2026/physics/fast_3d_surrogate_modeling_for_data_center_thermal_management.md)
-- [\[NeurIPS 2025\] The Primacy of Magnitude in Low-Rank Adaptation](../../NeurIPS2025/physics/the_primacy_of_magnitude_in_low-rank_adaptation.md)
-- [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](../../NeurIPS2025/physics/quantum_doubly_stochastic_transformers.md)
-- [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](../../NeurIPS2025/physics/from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
 - [\[ICML 2026\] Interpretable Equivariant Marks for Contrastive Cosmological Inference](interpretable_neural_marked_statistics_for_cosmological_inference.md)
+- [\[ICML 2026\] Foundation Inference Models for Ordinary Differential Equations](foundation_inference_models_for_ordinary_differential_equations.md)
+- [\[NeurIPS 2025\] The Primacy of Magnitude in Low-Rank Adaptation](../../NeurIPS2025/physics/the_primacy_of_magnitude_in_low-rank_adaptation.md)
+- [\[AAAI 2026\] Fast 3D Surrogate Modeling for Data Center Thermal Management](../../AAAI2026/physics/fast_3d_surrogate_modeling_for_data_center_thermal_management.md)
+- [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](../../NeurIPS2025/physics/quantum_doubly_stochastic_transformers.md)
 
 </div>
 

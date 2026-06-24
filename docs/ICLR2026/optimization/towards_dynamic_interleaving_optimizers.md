@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Dynamic Interleaving Optimizers
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] DOIT treats the problem of "which optimizer to use during training" as an online decision-making problem that changes based on the training state. It utilizes Gaussian Process (GP) proxy models to predict the short-term reward of each optimizer at the current parameter state and selects the optimizer using an acquisiti
+  [ICLR 2026][Optimization][Dynamic optimizer switching] DOIT treats the problem of "which optimizer to use during training" as an online decision-making problem that changes based on the training state. It utilizes Gaussian Process (GP) proxy models to predict the short-term reward of each optimizer at the current parameter state and selects the optimizer using an acquisition function that integrates transferability and training progress. This allows for dynamic interleaving b…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Dynamic optimizer switching"
+  - "Proxy models"
+  - "Gaussian Processes"
+  - "Acquisition functions"
+  - "Transferability"
 date: 2026-05-08
-content_hash: 7f27c790ddef31b6
+content_hash: 522686c02aea8044
 ---
+
 # Towards Dynamic Interleaving Optimizers
 
 **Conference**: ICLR 2026  
@@ -146,15 +152,16 @@ Computational overhead is extremely low: additional components account for $< 1\
 - Value: ⭐⭐⭐⭐ Significant performance gain with $< 1\%$ overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Fantastic Pretraining Optimizers and Where to Find Them](fantastic_pretraining_optimizers_and_where_to_find_them.md)
+- [\[ICLR 2026\] Cautious Optimizers: Improving Training with One Line of Code](cautious_optimizers_improving_training_with_one_line_of_code.md)
 - [\[ICLR 2026\] $\mu$LO: Compute-Efficient Meta-Generalization of Learned Optimizers](mulo_compute-efficient_meta-generalization_of_learned_optimizers.md)
 - [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
 - [\[ICLR 2026\] A Tale of Two Geometries: Adaptive Optimizers and Non-Euclidean Descent](a_tale_of_two_geometries_adaptive_optimizers_and_non-euclidean_descent.md)
-- [\[ICLR 2026\] Incorporating Expert Priors into Bayesian Optimization via Dynamic Mean Decay](incorporating_expert_priors_into_bayesian_optimization_via_dynamic_mean_decay.md)
 
 </div>
 

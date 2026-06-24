@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Provable Separations between Memorization and Generalization in Diffusion Models
 description: >-
-  [ICLR 2026][learning_theory][Diffusion Model] This paper proves from two complementary perspectives, "statistical estimation" and "network approximation," that memorization in diffusion models (reproducing training samples rather than generalizing) fundamentally stems from two provable "separations" between the true score function and the empirical score function:
+  [ICLR 2026][Diffusion Models][Memorization] This paper proves from two complementary perspectives, "statistical estimation" and "network approximation," that memorization in diffusion models (reproducing training samples rather than generalizing) fundamentally stems from two provable "separations" between the true score function and the empirical score function: the true score does not minimize the denoising score matching loss, and the empirical score requires a network that…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Diffusion Models"
+  - "Learning Theory"
+  - "Memorization"
+  - "Denoising Score Matching"
+  - "Fisher Divergence"
+  - "Network Approximation"
 date: 2026-05-08
-content_hash: 290bbe9d9a3498db
+content_hash: 593cd1484a07f653
 ---
+
 # Provable Separations between Memorization and Generalization in Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -137,8 +142,8 @@ Factor analysis on Gaussian mixture data ($K=8$):
 - [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
 - [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
 - [\[ICLR 2026\] Polynomial Convergence of Riemannian Diffusion Models](polynomial_convergence_of_riemannian_diffusion_models.md)
-- [\[ICLR 2026\] Random Label Prediction Heads for Studying Memorization in Deep Neural Networks](random_label_prediction_heads_for_studying_memorization_in_deep_neural_networks.md)
-- [\[ICLR 2026\] A Sharp KL Convergence Analysis for Diffusion Models under Minimal Assumptions](a_sharp_kl_convergence_analysis_for_diffusion_models_under_minimal_assumptions.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
+- [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
 
 </div>
 

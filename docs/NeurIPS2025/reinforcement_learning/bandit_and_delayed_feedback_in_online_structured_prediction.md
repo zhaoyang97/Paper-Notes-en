@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bandit and Delayed Feedback in Online Structured Prediction
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Online Structured Prediction] This paper is the first to study bandit and delayed feedback settings in online structured prediction. By designing a novel pseudo-inverse matrix gradi…
+  [NeurIPS 2025][Reinforcement Learning][Online Structured Prediction] This paper is the first to study bandit and delayed feedback settings in online structured prediction. By designing a novel pseudo-inverse matrix gradient estimator, it achieves an $O(T^{2/3})$ surrogate regret bound that does not explicitly depend on the output set size $K$.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Surrogate Regret"
   - "Fenchel-Young Loss"
 date: 2026-05-08
-content_hash: a6dc3e0227ea1eee
+content_hash: 11219a8b1cd2c94e
 ---
 
 # Bandit and Delayed Feedback in Online Structured Prediction
@@ -148,11 +148,11 @@ On the MNIST dataset ($K=10$), the proposed algorithm outperforms methods specif
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](structured_reinforcement_learning_for_combinatorial_decision-making.md)
 - [\[AAAI 2026\] Bi-Level Contextual Bandits for Individualized Resource Allocation under Delayed Feedback](../../AAAI2026/reinforcement_learning/bi-level_contextual_bandits_for_individualized_resource_allocation_under_delayed.md)
+- [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](structured_reinforcement_learning_for_combinatorial_decision-making.md)
 - [\[ICML 2026\] Parameter-free Dynamic Regret: Time-varying Movement Costs, Delayed Feedback, and Memory](../../ICML2026/reinforcement_learning/parameter-free_dynamic_regret_time-varying_movement_costs_delayed_feedback_and_m.md)
 - [\[ICLR 2026\] Online Prediction of Stochastic Sequences with High Probability Regret Bounds](../../ICLR2026/reinforcement_learning/online_prediction_of_stochastic_sequences_with_high_probability_regret_bounds.md)
-- [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
+- [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
 
 </div>
 

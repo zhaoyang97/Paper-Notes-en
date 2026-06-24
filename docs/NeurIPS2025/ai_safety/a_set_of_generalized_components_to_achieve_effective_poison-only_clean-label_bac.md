@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers
 description: >-
-  [NeurIPS 2025][AI Safety][backdoor attack] This paper proposes a set of generalized components (Component A/B/C) that establish a bidirectional collaborative relationship between sample selection and trigger design…
+  [NeurIPS 2025][AI Safety][backdoor attack] This paper proposes a set of generalized components (Component A/B/C) that establish a bidirectional collaborative relationship between sample selection and trigger design, simultaneously improving the attack success rate (ASR) and stealthiness of Poison-only Clean-label Backdoor Attacks (PCBA), with strong generalizability across multiple attack types.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "trigger optimization"
   - "adversarial robustness"
 date: 2026-05-08
-content_hash: e1e418cf0527b620
+content_hash: 628361345ce9cbd5
 ---
 
 # A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers
@@ -183,10 +183,10 @@ This work focuses on **data-level** attack optimization without modifying the tr
 ## Related Papers
 
 - [\[AAAI 2026\] Towards Effective, Stealthy, and Persistent Backdoor Attacks Targeting Graph Foundation Models](../../AAAI2026/ai_safety/towards_effective_stealthy_and_persistent_backdoor_attacks_targeting_graph_found.md)
-- [\[NeurIPS 2025\] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack](taught_well_learned_ill_towards_distillation-conditional_backdoor_attack.md)
-- [\[NeurIPS 2025\] Provable Watermarking for Data Poisoning Attacks](provable_watermarking_for_data_poisoning_attacks.md)
-- [\[ICCV 2025\] Backdoor Attacks on Neural Networks via One-Bit Flip](../../ICCV2025/ai_safety/backdoor_attacks_on_neural_networks_via_one_bit_flip.md)
+- [\[CVPR 2026\] Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach](../../CVPR2026/ai_safety/towards_stealthy_and_effective_backdoor_attacks_on_lane_detection_a_naturalistic.md)
+- [\[CVPR 2025\] Infighting in the Dark: Multi-Label Backdoor Attack in Federated Learning](../../CVPR2025/ai_safety/infighting_in_the_dark_multi-label_backdoor_attack_in_federated_learning.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
+- [\[NeurIPS 2025\] Differentially Private High-dimensional Variable Selection via Integer Programming](differentially_private_high-dimensional_variable_selection_via_integer_programmi.md)
 
 </div>
 

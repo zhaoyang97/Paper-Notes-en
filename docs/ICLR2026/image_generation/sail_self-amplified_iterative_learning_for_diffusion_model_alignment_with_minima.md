@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAIL: Self-Amplified Iterative Learning for Diffusion Model Alignment with Minimal Human Feedback
 description: >-
-  [ICLR 2026][Image Generation][DPO] SAIL enables a diffusion model to act as its own "teacher": starting from a minimal seed of human-annotated preference data, the model generates its own samples, ranks them using an implicit reward derived from the diffusion loss, and fine-tunes itself in a closed loop. Using only approximately 6% of the preference dat
+  [ICLR 2026][Image Generation][Diffusion model alignment] SAIL enables a diffusion model to act as its own "teacher": starting from a minimal seed of human-annotated preference data, the model generates its own samples, ranks them using an implicit reward derived from the diffusion loss, and fine-tunes itself in a closed loop. Using only approximately 6% of the preference data, it outperforms DiffusionDPO on HPSv2, Pick-a-Pic, and PartiPrompts.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - DPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion model alignment"
+  - "self-rewarding"
+  - "iterative bootstrapping"
+  - "DPO"
+  - "preference mixup"
 date: 2026-05-08
-content_hash: b7b83916b80b2901
+content_hash: 1201d130e583f88f
 ---
+
 # SAIL: Self-Amplified Iterative Learning for Diffusion Model Alignment with Minimal Human Feedback
 
 **Conference**: ICLR 2026  
@@ -144,7 +149,7 @@ SAIL was also compared with Online DPO. While OnlineDPO-Aes (single aesthetic re
 - [\[ICLR 2026\] Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment (CODA)](improved_object-centric_diffusion_learning_with_registers_and_contrastive_alignm.md)
 - [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](test-time_iterative_error_correction_for_efficient_diffusion_models.md)
 - [\[ICLR 2026\] Towards Sequence Modeling Alignment Between Tokenizer and Autoregressive Model](towards_sequence_modeling_alignment_between_tokenizer_and_autoregressive_model.md)
-- [\[ICLR 2026\] Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting](diffusion_adversarial_schrödinger_bridges_via_iterative_proportional_markovian_f.md)
+- [\[CVPR 2026\] D2C: Accelerating Diffusion Model Training under Minimal Budgets via Condensation](../../CVPR2026/image_generation/d2c_diffusion_dataset_condensation.md)
 
 </div>
 

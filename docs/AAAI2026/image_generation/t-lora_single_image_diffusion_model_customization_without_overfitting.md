@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] T-LoRA: Single Image Diffusion Model Customization Without Overfitting
 description: >-
-  [AAAI 2026][Image Generation][Diffusion model customization] This paper proposes T-LoRA, a timestep-dependent low-rank adaptation framework that addresses overfitting in single-image diffusion model customization. The fr…
+  [AAAI 2026][Image Generation][Diffusion model customization] This paper proposes T-LoRA, a timestep-dependent low-rank adaptation framework that addresses overfitting in single-image diffusion model customization. The framework dynamically adjusts the effective LoRA rank across diffusion timesteps (smaller rank at high-noise timesteps, larger rank at low-noise timesteps) and employs orthogonal initialization (Ortho-LoRA) via random matrix SVD to ensure information independenc…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "timestep dependency"
   - "orthogonal initialization"
 date: 2026-05-08
-content_hash: 9d7daaf5956a921f
+content_hash: 605a435d654082cc
 ---
 
 # T-LoRA: Single Image Diffusion Model Customization Without Overfitting
@@ -238,10 +238,10 @@ FLUX-1.dev experiments:
 ## Related Papers
 
 - [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](../../ICLR2026/image_generation/latent_diffusion_model_without_variational_autoencoder.md)
+- [\[ICLR 2026\] Learning an Image Editing Model without Image Editing Pairs](../../ICLR2026/image_generation/learning_an_image_editing_model_without_image_editing_pairs.md)
 - [\[ICLR 2026\] MOLM: Mixture of LoRA Markers](../../ICLR2026/image_generation/molm_mixture_of_lora_markers.md)
 - [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
-- [\[ICCV 2025\] PersonalVideo: High ID-Fidelity Video Customization without Dynamic and Semantic Degradation](../../ICCV2025/image_generation/personalvideo_high_id-fidelity_video_customization_without_dynamic_and_semantic_.md)
-- [\[AAAI 2026\] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution](gewdiff_geometric_enhanced_wavelet-based_diffusion_model_for_hyperspectral_image.md)
+- [\[ECCV 2024\] L-DiffER: Single Image Reflection Removal with Language-Based Diffusion Model](../../ECCV2024/image_generation/l-differ_single_image_reflection_removal_with_language-based_diffusion_model.md)
 
 </div>
 

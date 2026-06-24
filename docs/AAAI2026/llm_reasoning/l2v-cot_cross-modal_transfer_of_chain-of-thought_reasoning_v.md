@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention
 description: >-
-  [AAAI 2026][LLM Reasoning][CoT reasoning transfer] Through LAT analysis, this paper reveals that the low-frequency CoT directional representations of LLMs and VLMs share similar distributions. It proposes L2V-CoT: extrac…
+  [AAAI 2026 Oral][Reasoning][CoT reasoning transfer] Through LAT analysis, this paper reveals that the low-frequency CoT directional representations of LLMs and VLMs share similar distributions. It proposes L2V-CoT: extract CoT directional representations from an LLM → apply low-pass filtering → frequency-domain resampling for dimension alignment → inject into VLM hidden layers. This training-free approach transfers LLM reasoning capabilities to VLMs…
 tags:
-  - "AAAI 2026"
-  - "LLM Reasoning"
+  - "AAAI 2026 Oral"
+  - "Reasoning"
   - "CoT reasoning transfer"
   - "activation engineering"
   - "frequency-domain analysis"
   - "LLM to VLM"
   - "training-free"
 date: 2026-05-08
-content_hash: 72424ed14c755ae4
+content_hash: ed45c5a456fe9670
 ---
 
 # L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention
@@ -109,11 +109,11 @@ The method is entirely training-free. Only 100 CoT/Non-CoT sample pairs are need
 
 ## Related Papers
 
-- [\[AAAI 2026\] Efficient Thought Space Exploration Through Strategic Intervention](efficient_thought_space_exploration_through_strategic_intervention.md)
 - [\[ACL 2026\] Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval](../../ACL2026/llm_reasoning/towards_effective_in-context_cross-domain_knowledge_transfer_via_domain-invarian.md)
-- [\[AAAI 2026\] CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation](cmmcot_enhancing_complex_multi-image_comprehension_via_multi.md)
+- [\[CVPR 2025\] Interleaved-Modal Chain-of-Thought](../../CVPR2025/llm_reasoning/interleaved-modal_chain-of-thought.md)
 - [\[CVPR 2026\] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought](../../CVPR2026/llm_reasoning/rationale-enhanced_decoding_for_multi-modal_chain-of-thought.md)
-- [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](../../ICML2026/llm_reasoning/a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
+- [\[AAAI 2026\] Efficient Thought Space Exploration Through Strategic Intervention](efficient_thought_space_exploration_through_strategic_intervention.md)
+- [\[AAAI 2026\] CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation](cmmcot_enhancing_complex_multi-image_comprehension_via_multi.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Better Bounds for the Distributed Experts Problem
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper investigates the distributed online prediction problem where "experts are distributed across multiple servers and losses are aggregated across servers according to the $\ell_p$ norm." It proposes a suite of protocols based on exponential random variable embedding combined with geometric mean variance reducti
+  [ICLR2026][Learning Theory][Distributed Experts Problem] This paper investigates the distributed online prediction problem where "experts are distributed across multiple servers and losses are aggregated across servers according to the $\ell_p$ norm." It proposes a suite of protocols based on exponential random variable embedding combined with geometric mean variance reduction. It is the first to handle general $\ell_p$ losses in the coordinator (message-passing) model…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Communication Complexity"
+  - "Distributed Experts Problem"
+  - "$\\ell_p$ Loss"
+  - "Geometric Mean Estimation"
 date: 2026-05-08
-content_hash: 58685e669ef29e6c
+content_hash: 0f29c668bc3df00b
 ---
+
 # Better Bounds for the Distributed Experts Problem
 
 **Conference**: ICLR2026  
@@ -125,11 +131,11 @@ The experiments serve as a proof-of-concept, run on the HPO-B hyperparameter opt
 
 ## Related Papers
 
+- [\[ICLR 2026\] Two (narrow) heads are better than (an arbitrarily wide) one](two_narrow_heads_are_better_than_an_arbitrarily_wide_one.md)
+- [\[ICLR 2026\] Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity](adaptive_conformal_prediction_via_mixture-of-experts_gating_similarity.md)
 - [\[ICLR 2026\] On Coreset for LASSO Regression Problem with Sensitivity Sampling](on_coreset_for_lasso_regression_problem_with_sensitivity_sampling.md)
 - [\[ICML 2026\] Robustness of Mixtures of Experts to Feature Noise](../../ICML2026/learning_theory/robustness_of_mixtures_of_experts_to_feature_noise.md)
-- [\[ICLR 2026\] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion](better_learning-augmented_spanning_tree_algorithms_via_metric_forest_completion.md)
 - [\[ICLR 2026\] Revisiting Tree-Sliced Wasserstein Distance through the Lens of the Fermat–Weber Problem](revisiting_tree-sliced_wasserstein_distance_through_the_lens_of_the_fermatweber_.md)
-- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
 
 </div>
 

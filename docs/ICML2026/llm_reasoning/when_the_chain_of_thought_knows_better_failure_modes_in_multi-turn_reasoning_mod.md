@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models
 description: >-
-  [ICML 2026][LLM Reasoning][Chain-of-Thought] This paper demonstrates that safety failures in multi-turn reasoning models are largely invisible to "final-turn score evaluations." A model may lock into an unsafe stance early on while maintaining a final refusal rate identical to well-aligned baselines. The authors propose a trajectory-level diagnostic framework, th
+  [ICML 2026][Reasoning][Multi-turn Safety] This paper demonstrates that safety failures in multi-turn reasoning models are largely invisible to "final-turn score evaluations." A model may lock into an unsafe stance early on while maintaining a final refusal rate identical to well-aligned baselines. The authors propose a trajectory-level diagnostic framework, the **CoT–Output 2×2 Safety Matrix**, which labels each turn along two independent axes: "Internal Reasoning (CoT)" and…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ICML 2026"
+  - "Reasoning"
+  - "Multi-turn Safety"
+  - "Chain-of-Thought"
+  - "Alignment Faking"
+  - "Reasoning Unfaithfulness"
+  - "Diagnostic Dataset"
 date: 2026-05-08
-content_hash: 9b7710b0e8dff2e1
+content_hash: dd4f9e9c4f19befd
 ---
+
 # When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models
 
 **Conference**: ICML 2026  
@@ -117,15 +122,16 @@ DeepSeek-R1-7B exhibits alignment faking as high as 53.1% under the Dep-Free con
 - Value: ⭐⭐⭐⭐⭐ (Provides a reproducible foundation for CoT monitoring and mechanistic interpretability.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck](../../ACL2026/llm_reasoning/failure_modes_in_multi-hop_qa_the_weakest_link_effect_and_the_recognition_bottle.md)
 - [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
-- [\[ACL 2026\] MTR-Bench: A Comprehensive Benchmark for Multi-Turn Reasoning Evaluation](../../ACL2026/llm_reasoning/mtr-bench_a_comprehensive_benchmark_for_multi-turn_reasoning_evaluation.md)
-- [\[ICML 2026\] Is Code Better Than Language for Algorithmic Reasoning?](is_code_better_than_language_for_algorithmic_reasoning.md)
-- [\[ACL 2025\] Towards Better Chain-of-Thought: A Reflection on Effectiveness and Faithfulness](../../ACL2025/llm_reasoning/towards_better_chain-of-thought_a_reflection_on_effectiveness_and_faithfulness.md)
+- [\[ICML 2026\] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning](clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn.md)
+- [\[ICML 2026\] The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary](the_deterministic_horizon_when_extended_reasoning_fails_and_tool_delegation_beco.md)
+- [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
 
 </div>
 

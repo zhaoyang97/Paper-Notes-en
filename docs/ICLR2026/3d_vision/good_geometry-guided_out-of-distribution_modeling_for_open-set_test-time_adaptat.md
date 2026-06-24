@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] GOOD: Geometry-guided Out-of-Distribution Modeling for Open-set Test-time Adaptation in Point Cloud Semantic Segmentation
 description: >-
-  [ICLR 2026][3D Vision][mean-teacher] This work shifts Open-set Test-time Adaptation (OSTTA) from "point-wise" to "geometrically connected superpoint" granularity. It utilizes superpoint purity and entropy confidence combined with a GMM to distinguish ID/OOD, supplemented by superpoint ID prototypes for error correction. This addresses the severe class imb
+  [ICLR 2026][3D Vision][Open-set Test-time Adaptation] This work shifts Open-set Test-time Adaptation (OSTTA) from "point-wise" to "geometrically connected superpoint" granularity. It utilizes superpoint purity and entropy confidence combined with a GMM to distinguish ID/OOD, supplemented by superpoint ID prototypes for error correction. This addresses the severe class imbalance in 3D point clouds where ID points are overwhelming while OOD points are sparse or absent.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - mean-teacher
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Open-set Test-time Adaptation"
+  - "Point Cloud Semantic Segmentation"
+  - "OOD Detection"
+  - "Superpoint"
+  - "Geometric Priors"
+  - "Mean-teacher"
 date: 2026-05-08
-content_hash: e72ffc43d79788b1
+content_hash: 8de158cbfccf46ec
 ---
+
 # GOOD: Geometry-guided Out-of-Distribution Modeling for Open-set Test-time Adaptation in Point Cloud Semantic Segmentation
 
 **Conference**: ICLR 2026  
@@ -120,8 +126,8 @@ On the sparser real-world data of nuScenes, 2D OSTTA methods consistently cause 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Open-Set Semantic Gaussian Splatting SLAM with Expandable Representation](open-set_semantic_gaussian_splatting_slam_with_expandable_representation.md)
 - [\[ICLR 2026\] Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](test-time_optimization_of_3d_point_cloud_llm_via_manifold-aware_in-context_guida.md)
+- [\[ICLR 2026\] Open-Set Semantic Gaussian Splatting SLAM with Expandable Representation](open-set_semantic_gaussian_splatting_slam_with_expandable_representation.md)
 - [\[ICLR 2026\] SpaceControl: Introducing Test-Time Spatial Control to 3D Generative Modeling](spacecontrol_introducing_test-time_spatial_control_to_3d_generative_modeling.md)
 - [\[ICCV 2025\] A Unified Interpretation of Training-Time Out-of-Distribution Detection](../../ICCV2025/3d_vision/a_unified_interpretation_of_training-time_out-of-distribution_detection.md)
 - [\[ICLR 2026\] Generative Human Geometry Distribution](generative_human_geometry_distribution.md)

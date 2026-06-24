@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep
 description: >-
-  [CVPR 2026][Video Generation][Video Editing] For masked video editing (MV2V) tasks, this paper proposes HetCache, a training-free framework: it categorizes denoising steps into "full, partial, or reuse" based on cumulative change across timesteps, and partitions tokens into "context, margin, or generation" based on mask spatial priors within a single step. By per
+  [CVPR 2026][Video Generation][Video Editing] For masked video editing (MV2V) tasks, this paper proposes HetCache, a training-free framework: it categorizes denoising steps into "full, partial, or reuse" based on cumulative change across timesteps, and partitions tokens into "context, margin, or generation" based on mask spatial priors within a single step. By performing attention only on the most semantically representative context tokens, it achieves a 2.67× speedup on Wan2.…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video Editing
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Editing"
+  - "Diffusion Transformer"
+  - "Feature Caching"
+  - "Token Heterogeneity"
+  - "Training-free Acceleration"
 date: 2026-05-08
-content_hash: 5dc61582e53d3414
+content_hash: e9d25f420c620c51
 ---
+
 # Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep
 
 **Conference**: CVPR 2026  
@@ -137,15 +142,15 @@ Removing components of token-level caching (VACE-Benchmark):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching](../../ICLR2026/video_generation/bwcache_accelerating_video_diffusion_transformers_through_block-wise_caching.md)
 - [\[ICML 2026\] WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching](../../ICML2026/video_generation/worldcache_accelerating_world_models_for_free_via_heterogeneous_token_caching.md)
 - [\[CVPR 2026\] DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching](disca_accelerating_video_diffusion_transformers_wi.md)
 - [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
-- [\[CVPR 2026\] Causality in Video Diffusers is Separable from Denoising](causality_in_video_diffusers_is_separable_from_denoising.md)
-- [\[CVPR 2026\] D2Cache: Second-Order Delta Caching for Higher Video Diffusion Acceleration](d2cache_second-order_delta_caching_for_higher_video_diffusion_acceleration.md)
+- [\[ICLR 2026\] Flow Caching for Autoregressive Video Generation](../../ICLR2026/video_generation/flow_caching_for_autoregressive_video_generation.md)
 
 </div>
 

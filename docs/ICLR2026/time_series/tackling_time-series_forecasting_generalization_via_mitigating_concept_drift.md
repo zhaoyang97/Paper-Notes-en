@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tackling Time-Series Forecasting Generalization via Mitigating Concept Drift
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper categorizes distribution shifts in time-series forecasting into "temporal shift" and "concept drift." It proposes a Soft Attention Mask (SAM) to extract stable invariant patterns from exogenous features in both the look-back and prediction windows to mitigate concept drift. Using a model-agnostic framework,
+  [ICLR 2026][Time Series][Concept Drift] This paper categorizes distribution shifts in time-series forecasting into "temporal shift" and "concept drift." It proposes a Soft Attention Mask (SAM) to extract stable invariant patterns from exogenous features in both the look-back and prediction windows to mitigate concept drift. Using a model-agnostic framework, ShifTS, which "treats temporal shift first, then concept drift," it consistently improves forecasting accuracy across mu…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Concept Drift"
+  - "Temporal Shift"
+  - "Distribution Shift Generalization"
+  - "Invariant Patterns"
+  - "Soft Attention"
 date: 2026-05-08
-content_hash: 5fa39d900e69b80c
+content_hash: b944c9fd88d759ff
 ---
+
 # Tackling Time-Series Forecasting Generalization via Mitigating Concept Drift
 
 **Conference**: ICLR 2026  
@@ -144,15 +150,16 @@ Additionally, replacing RevIN in ShifTS with the stronger SAN (Exchange, MSE): S
 - Value: ⭐⭐⭐⭐ Model-agnostic, plug-in design with stable improvements, highly useful for practical time-series forecasting.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Temporal Generalization: A Reality Check](temporal_generalization_a_reality_check.md)
 - [\[AAAI 2026\] DeepBooTS: Dual-Stream Residual Boosting for Drift-Resilient Time-Series Forecasting](../../AAAI2026/time_series/deepboots_dual-stream_residual_boosting_for_drift-resilient_time-series_forecast.md)
 - [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
+- [\[ICLR 2026\] TEDM: Elucidated Diffusion Models for Time Series Forecasting](tedm_time_series_forecasting_with_elucidated_diffusion_models.md)
 - [\[ICLR 2026\] ResCP: Reservoir Conformal Prediction for Time Series Forecasting](rescp_reservoir_conformal_prediction_for_time_series_forecasting.md)
-- [\[ICLR 2026\] PhaseFormer: From Patches to Phases for Efficient and Effective Time Series Forecasting](phaseformer_from_patches_to_phases_for_efficient_and_effective_time_series_forec.md)
-- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
 
 </div>
 

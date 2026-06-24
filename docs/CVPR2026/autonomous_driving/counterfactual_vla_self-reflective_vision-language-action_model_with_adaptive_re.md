@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] CF-VLA enables an autonomous driving VLA to first generate "time-segmented meta-actions" and then perform counterfactual reasoning on its own proposed actions ("What would happen if I follow this plan, and should I modify it?") to self-correct before outputting a trajectory. Coupled with a rollout–filter–label data pip
+  [CVPR 2026][Autonomous Driving][VLA] CF-VLA enables an autonomous driving VLA to first generate "time-segmented meta-actions" and then perform counterfactual reasoning on its own proposed actions ("What would happen if I follow this plan, and should I modify it?") to self-correct before outputting a trajectory. Coupled with a rollout–filter–label data pipeline that labels counterfactual traces only for difficult scenarios, the model learns "adaptive reasoning"—thinking only w…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "VLA"
+  - "Counterfactual Reasoning"
+  - "Self-Reflection"
+  - "Adaptive Thinking"
 date: 2026-05-08
-content_hash: 94233dc31cdc8e0b
+content_hash: 89d128dce75bca2a
 ---
+
 # Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning
 
 **Conference**: CVPR 2026  
@@ -157,11 +160,20 @@ The dataset comprises 80,000 hours of NVIDIA internal human driving data across 
 - Value: ⭐⭐⭐⭐ The data mining tricks and adaptive SFT approach are transferable and highly relevant to the safety of end-to-end autonomous driving.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers content would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] NoRD: A Data-Efficient Vision-Language-Action Model that Drives without Reasoning](nord_a_data-efficient_vision-language-action_model_that_drives_without_reasoning.md)
+- [\[ICLR 2026\] AutoDrive-R²: Incentivizing Reasoning and Self-Reflection Capacity for VLA Model in Autonomous Driving](../../ICLR2026/autonomous_driving/autodrive-r²_incentivizing_reasoning_and_self-reflection_capacity_for_vla_model_.md)
+- [\[CVPR 2026\] HybridDriveVLA: Vision-Language-Action Model with Visual CoT reasoning and ToT Evaluation for Autonomous Driving](hybriddrivevla_vision-language-action_model_with_visual_cot_reasoning.md)
+- [\[CVPR 2026\] E3AD: An Emotion-Aware Vision-Language-Action Model for Human-Centric End-to-End Autonomous Driving](e3ad_an_emotion-aware_vision-language-action_model_for_human-centric_end-to-end_.md)
+- [\[CVPR 2026\] Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving](drive_my_way_preference_alignment_of_vision-language-action_model_for_personaliz.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][visual token pruning] Reexamining visual token redundancy in VLMs through the lens of Information Flow: the CLS token acts as an information relay, redundancy emerges progressively…
+  [NeurIPS 2025][Multimodal Efficiency][visual token pruning] Reexamining visual token redundancy in VLMs through the lens of Information Flow: the CLS token acts as an information relay, redundancy emerges progressively, and single-layer single-criterion scoring is unreliable. FlowCut—an information-flow-aware multi-criteria cumulative importance pruning framework—surpasses SOTA by 1.6% on LLaVA-1.5-7B at an 88.9% token reduction rate, and by 4.3% on LLaVA-NeXT-7B.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "visual token pruning"
   - "information flow"
   - "VLM efficiency"
   - "attention analysis"
   - "training-free"
 date: 2026-05-08
-content_hash: 2c75120c99bef26a
+content_hash: b854bad9bae4c5f6
 ---
 
 # FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models
@@ -121,11 +121,11 @@ Three key modules: (1) layer-adaptive pruning ratios based on attention entropy;
 
 ## Related Papers
 
-- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](../../CVPR2026/multimodal_vlm/aif_adaptive_information_flow_vlm.md)
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](../../CVPR2026/vlm_efficiency/if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
+- [\[ICML 2025\] SparseVLM: Visual Token Sparsification for Efficient Vision-Language Model Inference](../../ICML2025/vlm_efficiency/sparsevlm_visual_token_sparsification_for_efficient_vision-language_model_infere.md)
 - [\[NeurIPS 2025\] SCOPE: Saliency-Coverage Oriented Token Pruning for Efficient Multimodal LLMs](scope_saliency-coverage_oriented_token_pruning_for_efficient_multimodel_llms.md)
-- [\[NeurIPS 2025\] NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints](navil_rethinking_scaling_properties_of_native_multimodal_large_language_models_u.md)
 - [\[NeurIPS 2025\] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization](balanced_token_pruning_accelerating_vision_language_models_b.md)
-- [\[ICML 2026\] VEENA: Interpreting and Enhancing Emotional Circuits in Large Vision-Language Models via Cross-Modal Information Flow](../../ICML2026/multimodal_vlm/interpreting_and_enhancing_emotional_circuits_in_large_vision-language_models_vi.md)
+- [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
 
 </div>
 

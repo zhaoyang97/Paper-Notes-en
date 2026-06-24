@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HOTA: Hamiltonian Framework for Optimal Transport Advection
 description: >-
-  [ICLR 2026][Optimization & Theory][Generalized Schrödinger Bridge] HOTA reformulates the dual problem of the Generalized Schrödinger Bridge (GSB) as a joint optimization of "Kantorovich potential + HJB value function." By employing RL-style replay buffers, target networks, and adaptive gradient balancing, it achieves stable training without modeling intermediate densities, handles non
+  [ICLR 2026][Optimization][Generalized Schrödinger Bridge] HOTA reformulates the dual problem of the Generalized Schrödinger Bridge (GSB) as a joint optimization of "Kantorovich potential + HJB value function." By employing RL-style replay buffers, target networks, and adaptive gradient balancing, it achieves stable training without modeling intermediate densities, handles non-smooth potential functions, and strictly guarantees terminal distribution matching.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Generalized Schrödinger Bridge
-  - Hamilton-Jacobi-Bellman
+  - "ICLR 2026"
+  - "Optimization"
+  - "Generalized Schrödinger Bridge"
+  - "Hamilton-Jacobi-Bellman"
+  - "Optimal Transport"
+  - "Kantorovich Potential"
+  - "Non-smooth Potential Functions"
 date: 2026-05-08
-content_hash: b999af319111cc00
+content_hash: 60aefded8a70813c
 ---
+
 # HOTA: Hamiltonian Framework for Optimal Transport Advection
 
 **Conference**: ICLR 2026  
@@ -143,9 +147,9 @@ Stability is maintained up to 1000 dimensions; additional effectiveness is shown
 
 - [\[ICLR 2026\] Neural Hamilton–Jacobi Characteristic Flows for Optimal Transport](neural_hamilton--jacobi_characteristic_flows_for_optimal_transport.md)
 - [\[ICLR 2026\] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation](elastic_optimal_transport_theory_application_and_empirical_evaluation.md)
+- [\[ICLR 2026\] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport](hyperparameter_trajectory_inference_with_conditional_lagrangian_optimal_transpor.md)
 - [\[ICLR 2026\] A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport](a_scalable_constant-factor_approximation_algorithm_for_w_p_optimal_transport.md)
 - [\[ICLR 2026\] Neural Optimal Transport Meets Multivariate Conformal Prediction](neural_optimal_transport_meets_multivariate_conformal_prediction.md)
-- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
 
 </div>
 

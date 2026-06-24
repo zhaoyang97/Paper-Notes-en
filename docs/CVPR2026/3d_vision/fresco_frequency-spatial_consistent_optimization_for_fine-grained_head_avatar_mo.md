@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fresco: Frequency-Spatial Consistent Optimization for Fine-Grained Head Avatar Modeling
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Fresco does not modify the underlying representation of head avatars but focuses on training dynamics: it employs a Laplacian pyramid for a "low-to-high" frequency curriculum and incorporates differentiable UV-baking to align multi-view renderings to a shared texture atlas. This suppresses early pseudo high-frequency a
+  [CVPR 2026][3D Vision][Head Avatar] Fresco does not modify the underlying representation of head avatars but focuses on training dynamics: it employs a Laplacian pyramid for a "low-to-high" frequency curriculum and incorporates differentiable UV-baking to align multi-view renderings to a shared texture atlas. This suppresses early pseudo high-frequency artifacts and eliminates cross-view drifting, achieving SOTA results in both novel-view and self-reenactment metrics (PSNR/LP…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Head Avatar"
+  - "Frequency Curriculum Learning"
+  - "UV Space Consistency"
+  - "Laplacian Pyramid"
+  - "Cross-View Consistency"
 date: 2026-05-08
-content_hash: 59c01501b93c152f
+content_hash: f39a1ea577e19dbc
 ---
+
 # Fresco: Frequency-Spatial Consistent Optimization for Fine-Grained Head Avatar Modeling
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ Ablation on subject #253:
 ## Related Papers
 
 - [\[CVPR 2026\] iSplat: Iterative Learning for Fine-Grained Gaussian Splatting](isplat_iterative_learning_for_fine-grained_gaussian_splatting.md)
-- [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
 - [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
-- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
+- [\[CVPR 2026\] UIKA: Fast Universal Head Avatar from Pose-Free Images](uika_fast_universal_head_avatar_from_pose-free_images.md)
+- [\[CVPR 2026\] OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)
+- [\[CVPR 2026\] Animator-Centric Skeleton Generation on Objects with Fine-Grained Details](animator-centric_skeleton_generation_on_objects_with_fine-grained_details.md)
 
 </div>
 

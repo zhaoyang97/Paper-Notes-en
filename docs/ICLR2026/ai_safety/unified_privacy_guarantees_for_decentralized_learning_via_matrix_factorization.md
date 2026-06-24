@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper unifies multiple algorithms and trust models in decentralized learning (DL) into a Matrix Factorization (MF) framework. It generalizes privacy guarantees to broader matrix types and proposes the MAFALDA-SGD algorithm, which significantly outperforms existing methods on synthetic and real graph topologies by
+  [ICLR 2026][AI Safety][Decentralized learning] This paper unifies multiple algorithms and trust models in decentralized learning (DL) into a Matrix Factorization (MF) framework. It generalizes privacy guarantees to broader matrix types and proposes the MAFALDA-SGD algorithm, which significantly outperforms existing methods on synthetic and real graph topologies by optimizing noise correlation.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Decentralized learning"
+  - "matrix factorization"
+  - "differential privacy"
+  - "correlated noise"
+  - "gossip protocol"
 date: 2026-05-08
-content_hash: 66f018386936d9ac
+content_hash: fa2dc2610d06411f
 ---
+
 # Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization
 
 **Conference**: ICLR 2026  
@@ -108,8 +114,8 @@ Training follows standard DP-SGD: per-sample gradients are clipped to norm $\Del
 ## Related Papers
 
 - [\[ICLR 2026\] Back to Square Roots: An Optimal Bound on the Matrix Factorization Error for Multi-Epoch Differentially Private SGD](back_to_square_roots_an_optimal_bound_on_the_matrix_factorization_error_for_mult.md)
-- [\[AAAI 2026\] Learning to Collaborate: An Orchestrated-Decentralized Framework for Peer-to-Peer Collaborative Learning](../../AAAI2026/ai_safety/learning_to_collaborate_an_orchestrated-decentralized_framework_for_peer-to-peer.md)
 - [\[NeurIPS 2025\] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy](../../NeurIPS2025/ai_safety/mitigating_privacy-utility_trade-off_in_decentralized_federated_learning_via_f-d.md)
+- [\[AAAI 2026\] Learning to Collaborate: An Orchestrated-Decentralized Framework for Peer-to-Peer Collaborative Learning](../../AAAI2026/ai_safety/learning_to_collaborate_an_orchestrated-decentralized_framework_for_peer-to-peer.md)
 - [\[ICLR 2026\] Convergent Differential Privacy Analysis for General Federated Learning](convergent_differential_privacy_analysis_for_general_federated_learning.md)
 - [\[ICLR 2026\] Optimizing Canaries for Privacy Auditing with Metagradient Descent](optimizing_canaries_for_privacy_auditing_with_metagradient_descent.md)
 

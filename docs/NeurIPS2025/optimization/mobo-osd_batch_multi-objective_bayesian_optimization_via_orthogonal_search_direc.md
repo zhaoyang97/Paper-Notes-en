@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions
 description: >-
-  [NeurIPS 2025][Optimization][Multi-objective Bayesian optimization] This paper proposes MOBO-OSD, an algorithm that generates diverse Pareto-optimal solutions by defining orthogonal search directions on an approximated c…
+  [NeurIPS 2025][Optimization][Multi-objective Bayesian optimization] This paper proposes MOBO-OSD, an algorithm that generates diverse Pareto-optimal solutions by defining orthogonal search directions on an approximated convex hull of individual minima (CHIM), combined with Pareto front estimation and a batch selection strategy, consistently outperforming state-of-the-art multi-objective Bayesian optimization methods on both synthetic and real-world benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "hypervolume improvement"
   - "batch optimization"
 date: 2026-05-08
-content_hash: 529cb38c05ea14c7
+content_hash: 38ce80451b5d59a6
 ---
 
 # MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions
@@ -135,11 +135,11 @@ The MOBO-OSD pipeline consists of four steps:
 
 ## Related Papers
 
-- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive $\varepsilon$-Constraints Decomposition](../../ICML2026/optimization/multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
+- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition](../../ICML2026/optimization/multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
 - [\[NeurIPS 2025\] Learning Orthogonal Multi-Index Models: A Fine-Grained Information Exponent Analysis](learning_orthogonal_multi-index_models_a_fine-grained_information_exponent_analy.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](../../ICLR2026/optimization/in-context_multi-objective_optimization.md)
 - [\[NeurIPS 2025\] In Search of Adam's Secret Sauce](in_search_of_adams_secret_sauce.md)
-- [\[NeurIPS 2025\] Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning](cost-sensitive_freeze-thaw_bayesian_optimization_for_efficient_hyperparameter_tu.md)
-- [\[NeurIPS 2025\] Optimistic Online-to-Batch Conversions for Accelerated Convergence and Universality](optimistic_online-to-batch_conversions_for_accelerated_convergence_and_universal.md)
+- [\[ICLR 2026\] Local Entropy Search over Descent Sequences for Bayesian Optimization](../../ICLR2026/optimization/local_entropy_search_over_descent_sequences_for_bayesian_optimization.md)
 
 </div>
 

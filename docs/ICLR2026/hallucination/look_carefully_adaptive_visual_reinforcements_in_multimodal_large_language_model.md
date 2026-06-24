@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Look Carefully: Adaptive Visual Reinforcements in Multimodal Large Language Models for Hallucination Mitigation
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] The AIR (Adaptive vIsual Reinforcement) framework is proposed to reduce MLLM hallucinations during inference without training by utilizing prototype distance-based token pruning and Optimal Transport-guided selective patch reinforcement (LLaVA-1.5-7B CHAIR_S: 22→18.4, POPE Accuracy +5.3%), while maintaining general mul
+  [ICLR 2026][Hallucination Detection][MLLM Hallucination Mitigation] The AIR (Adaptive vIsual Reinforcement) framework is proposed to reduce MLLM hallucinations during inference without training by utilizing prototype distance-based token pruning and Optimal Transport-guided selective patch reinforcement (LLaVA-1.5-7B CHAIR_S: 22→18.4, POPE Accuracy +5.3%), while maintaining general multimodal performance.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "MLLM Hallucination Mitigation"
+  - "Visual Reinforcement"
+  - "Optimal Transport"
+  - "Token Pruning"
+  - "Training-free Inference"
 date: 2026-05-08
-content_hash: 5d83f4cce8c8d5b8
+content_hash: b8c7c123200b8ab5
 ---
+
 # Look Carefully: Adaptive Visual Reinforcements in Multimodal Large Language Models for Hallucination Mitigation
 
 **Conference**: ICLR 2026  

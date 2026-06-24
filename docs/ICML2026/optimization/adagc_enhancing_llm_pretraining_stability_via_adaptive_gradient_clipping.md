@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AdaGC: Enhancing LLM Pretraining Stability via Adaptive Gradient Clipping
 description: >-
-  [ICML 2026][Optimization & Theory][loss spike] To address the recurring loss spikes in large model pretraining, AdaGC replaces the "one-size-fits-all" Global Gradient Clipping with "per-tensor adaptive clipping based on the EMA of its own historical gradient norm." By suppressing abnormal gradients before they pollute the optimizer's first and second moments, it re
+  [ICML 2026][Optimization][Gradient Clipping] To address the recurring loss spikes in large model pretraining, AdaGC replaces the "one-size-fits-all" Global Gradient Clipping with "per-tensor adaptive clipping based on the EMA of its own historical gradient norm." By suppressing abnormal gradients before they pollute the optimizer's first and second moments, it reduces spike scores to zero on Llama-2 7B, Mixtral 8×1B, and ERNIE 10B-A1.4B, while improving downstream accuracy by…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - loss spike
-  - EMA
+  - "ICML 2026"
+  - "Optimization"
+  - "Gradient Clipping"
+  - "loss spike"
+  - "per-tensor adaptive"
+  - "EMA"
+  - "LLM Pretraining"
 date: 2026-05-08
-content_hash: 155ce6dbc4fc9726
+content_hash: ac011735e7e88f7a
 ---
+
 # AdaGC: Enhancing LLM Pretraining Stability via Adaptive Gradient Clipping
 
 **Conference**: ICML 2026  
@@ -140,7 +144,7 @@ Evaluation covers dense (Llama-2 1.3B/7B, Qwen3-1.7B) and MoE (Mixtral 8×1B, ER
 
 - [\[ICML 2026\] Enhancing LLM Training via Spectral Clipping](enhancing_llm_training_via_spectral_clipping.md)
 - [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
-- [\[CVPR 2026\] The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers](../../CVPR2026/optimization/the_power_of_decaying_steps_enhancing_attack_stability_and_transferability_for_s.md)
+- [\[ICML 2026\] Adaptive Preconditioners Trigger Loss Spikes in Adam](adaptive_preconditioners_trigger_loss_spikes_in_adam.md)
 - [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](stability_analysis_of_sharpness-aware_minimization.md)
 - [\[ICML 2026\] Can Adaptive Gradient Methods Converge under Heavy-Tailed Noise? A Case Study of AdaGrad](can_adaptive_gradient_methods_converge_under_heavy-tailed_noise_a_case_study_of_.md)
 

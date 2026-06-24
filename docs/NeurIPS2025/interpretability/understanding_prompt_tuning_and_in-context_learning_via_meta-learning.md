@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding Prompt Tuning and In-Context Learning via Meta-Learning
 description: >-
-  [NeurIPS 2025][Interpretability][prompt tuning] This paper systematically analyzes the theoretical foundations and limitations of prompt tuning from a Bayesian meta-learning perspective. It proves that soft prompts can a…
+  [NeurIPS 2025][Interpretability][prompt tuning] This paper systematically analyzes the theoretical foundations and limitations of prompt tuning from a Bayesian meta-learning perspective. It proves that soft prompts can achieve optimal adaptation on a single target task within the pretraining distribution, yet face fundamental limitations under multi-task mixture target distributions. Furthermore, soft prefixes can surpass the optimal hard-token sequence by manipulating activa…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Bayesian inference"
   - "soft prompts"
 date: 2026-05-08
-content_hash: 25bc88e6566ae543
+content_hash: d11007e850ef7930
 ---
 
 # Understanding Prompt Tuning and In-Context Learning via Meta-Learning
@@ -155,11 +155,11 @@ Experiments use coin-flip sequences. The pretraining distribution is a uniformly
 
 ## Related Papers
 
+- [\[ICLR 2026\] Comparing the learning dynamics of in-context learning and fine-tuning in language models](../../ICLR2026/interpretability/comparing_the_learning_dynamics_of_in-context_learning_and_fine-tuning_in_langua.md)
+- [\[ICLR 2026\] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations](../../ICLR2026/interpretability/understanding_task_vectors_in_in-context_learning_emergence_functionality_and_li.md)
+- [\[ICML 2025\] On the Power of Context-Enhanced Learning in LLMs](../../ICML2025/interpretability/on_the_power_of_context-enhanced_learning_in_llms.md)
 - [\[NeurIPS 2025\] What Happens During the Loss Plateau? Understanding Abrupt Learning in Transformers](what_happens_during_the_loss_plateau_understanding_abrupt_learning_in_transforme.md)
-- [\[ICLR 2026\] GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](../../ICLR2026/interpretability/gepa_reflective_prompt_evolution_can_outperform_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Rectifying Shortcut Behaviors in Preference-based Reward Learning](rectifying_shortcut_behaviors_in_preference-based_reward_learning.md)
-- [\[ICLR 2026\] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts](../../ICLR2026/interpretability/exploring_interpretability_for_visual_prompt_tuning_with_cross-layer_concepts.md)
-- [\[NeurIPS 2025\] FastDINOv2: Frequency Based Curriculum Learning Improves Robustness and Training Speed](fastdinov2_frequency_based_curriculum_learning_improves_robustness_and_training_.md)
 
 </div>
 

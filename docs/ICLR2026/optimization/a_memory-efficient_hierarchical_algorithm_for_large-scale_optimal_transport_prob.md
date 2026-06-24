@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes HALO—a multiscale hierarchical framework for large-scale optimal transport (OT) problems. By combining "coarse-to-fine warm-start," "active support set pruning," and a "factorization-free first-order LP solver," the framework reduces memory requirements to $O(n)$. On $1024^2$ pixel images, it achiev
+  [ICLR 2026][Optimization][Optimal Transport] This paper proposes HALO—a multiscale hierarchical framework for large-scale optimal transport (OT) problems. By combining "coarse-to-fine warm-start," "active support set pruning," and a "factorization-free first-order LP solver," the framework reduces memory requirements to $O(n)$. On $1024^2$ pixel images, it achieves an 8.9× speedup and a 70.5% reduction in GPU memory compared to the strongest baselines…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Optimal Transport"
+  - "Wasserstein Distance"
+  - "Linear Programming"
+  - "Multiscale Algorithm"
+  - "Memory-Efficient"
+  - "GPU Parallelism"
+  - "PDHG"
 date: 2026-05-08
-content_hash: 3eda3d96045be4e0
+content_hash: b1d8b3dee870782d
 ---
+
 # A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems
 
 **Conference**: ICLR 2026  

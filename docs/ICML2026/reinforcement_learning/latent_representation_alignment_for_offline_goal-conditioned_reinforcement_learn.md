@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] By explicitly parameterizing the goal-conditioned value function as the **negative Euclidean distance in an asymmetric latent space** $V(s,g)=-\|\varphi_S(s)-\varphi_G(g)\|_2$, combined with continuity regularization and a HIQL-style hierarchical structure, LAVL achieves SOTA on 20 out of 22 OGBench datasets. It increa
+  [ICML 2026][Reinforcement Learning][Offline GCRL] By explicitly parameterizing the goal-conditioned value function as the **negative Euclidean distance in an asymmetric latent space** $V(s,g)=-\|\varphi_S(s)-\varphi_G(g)\|_2$, combined with continuity regularization and a HIQL-style hierarchical structure, LAVL achieves SOTA on 20 out of 22 OGBench datasets. It increases the success rate on long-range tasks like giant maze and stitch datasets from nearly zero to over 80%.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Offline GCRL"
+  - "Value Function Architecture"
+  - "Latent Representation Alignment"
+  - "Quasimetric"
+  - "Hierarchical Policy"
 date: 2026-05-08
-content_hash: 47583b72945c1709
+content_hash: d5e16826fbe7999c
 ---
+
 # Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -138,15 +144,16 @@ LAVL achieved the best performance in 20 out of 22 datasets. Its advantage in ma
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
 - [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](../../AAAI2026/reinforcement_learning/first-order_representation_languages_for_goal-conditioned_rl.md)
-- [\[CVPR 2026\] MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning](../../CVPR2026/reinforcement_learning/mangobench_a_benchmark_for_multi-agent_goal-conditioned_offline_reinforcement_le.md)
+- [\[ICLR 2026\] Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning](../../ICLR2026/reinforcement_learning/occupancy_reward_shaping_improving_credit_assignment_for_offline_goal-conditione.md)
 - [\[ICML 2026\] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning](direction-conditioned_policies_via_compositional_subgoal_scoring_for_online_goal.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](offline_reinforcement_learning_with_universal_horizon_models.md)
+- [\[ICML 2026\] Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning](unifying_value_alignment_and_assignment_in_cross-domain_offline_reinforcement_le.md)
 
 </div>
 

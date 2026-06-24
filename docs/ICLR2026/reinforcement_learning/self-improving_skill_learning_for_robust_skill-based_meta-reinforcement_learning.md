@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][meta-RL] Ours proposes SISL (Self-Improving Skill Learning), which achieves robust skill learning under noisy offline demonstration data by decoupling high-level policies from skill improvement policies and incorporating a skill prioritization mechanism based on maximum return relabeling. This significantly enhances the perform
+  [ICLR 2026][Reinforcement Learning][meta-RL] Ours proposes SISL (Self-Improving Skill Learning), which achieves robust skill learning under noisy offline demonstration data by decoupling high-level policies from skill improvement policies and incorporating a skill prioritization mechanism based on maximum return relabeling. This significantly enhances the performance of skill-based meta-reinforcement learning in long-horizon tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - meta-RL
-  - skill learning
-  - noisy demonstrations
-  - self-improvement
-  - maximum return relabeling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "meta-RL"
+  - "skill learning"
+  - "noisy demonstrations"
+  - "self-improvement"
+  - "maximum return relabeling"
 date: 2026-05-08
-content_hash: a5946ada7e6fca14
+content_hash: f7e403adff9bf13d
 ---
+
 # Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning
 
 **Conference**: ICLR 2026  

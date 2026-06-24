@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning What Matters: Prioritized Concept Learning via Relative Error-driven Sample Selection
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The PROGRESS framework is proposed to dynamically select the most informative training samples by tracking the VLM's learning progress on automatically discovered multimodal concept clusters. Using only 16-20% of labeled data, it achieves 99-100% of full-data performance with a shorter total training time.
+  [CVPR 2026][Multimodal VLM][Data-efficient learning] The PROGRESS framework is proposed to dynamically select the most informative training samples by tracking the VLM's learning progress on automatically discovered multimodal concept clusters. Using only 16-20% of labeled data, it achieves 99-100% of full-data performance with a shorter total training time.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Data-efficient learning"
+  - "Instruction tuning"
+  - "Curriculum learning"
+  - "VLM training"
+  - "Sample selection"
 date: 2026-05-08
-content_hash: 7081587a879b2d56
+content_hash: 84a35f4efd497713
 ---
+
 # Learning What Matters: Prioritized Concept Learning via Relative Error-driven Sample Selection
 
 **Conference**: CVPR 2026  
@@ -134,11 +140,11 @@ The process begins with a warm-up phase using a simple sampler to establish reli
 
 ## Related Papers
 
-- [\[CVPR 2026\] Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection](ramen_robust_test-time_adaptation_of_vision-language_models_with_active_sample_s.md)
+- [\[CVPR 2026\] Label What Matters: Modality-Balanced and Difficulty-Aware Multimodal Active Learning](label_what_matters_modality-balanced_and_difficulty-aware_multimodal_active_lear.md)
 - [\[ICLR 2026\] SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery](../../ICLR2026/multimodal_vlm/spectralgcd_spectral_concept_selection_and_cross-modal_representation_learning_f.md)
 - [\[CVPR 2026\] Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning](anchor-guided_gradient_alignment_for_incomplete_multimodal_learning.md)
 - [\[CVPR 2026\] No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models](no_hard_negatives_required_concept_centric_learning_leads_to_compositionality_wi.md)
-- [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
+- [\[CVPR 2026\] Learning from Itself: Mining Internal Knowledge from Vision Language Models for Continual Learning](learning_from_itself_mining_internal_knowledge_from_vision_language_models_for_c.md)
 
 </div>
 

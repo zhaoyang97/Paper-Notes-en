@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition
 description: >-
-  [ICML 2026][Optimization & Theory][fill distance] STAGE-BO reformulates MOBO as a sequence of ε-constrained single-objective Bayesian sub-problems with "thresholds adaptively selected via fill distance," solved using cEI. This achieves uniform Pareto front coverage without calculating hypervolume and is naturally compatible with hard constraints and user preferences.
+  [ICML 2026][Optimization][Multi-Objective Bayesian Optimization] STAGE-BO reformulates MOBO as a sequence of ε-constrained single-objective Bayesian sub-problems with "thresholds adaptively selected via fill distance," solved using cEI. This achieves uniform Pareto front coverage without calculating hypervolume and is naturally compatible with hard constraints and user preferences.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - fill distance
+  - "ICML 2026"
+  - "Optimization"
+  - "Multi-Objective Bayesian Optimization"
+  - "ε-constraint method"
+  - "Pareto coverage"
+  - "fill distance"
+  - "Thompson sampling"
 date: 2026-05-08
-content_hash: dbf4ca37b9e7aebc
+content_hash: 6e2f9e5c47906aa8
 ---
+
 # Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition
 
 **Conference**: ICML 2026  
@@ -148,10 +153,10 @@ The authors compared 8 SOTAs across 6 unconstrained, 4 constrained, and 4 prefer
 ## Related Papers
 
 - [\[ICML 2026\] Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization](accelerated_multiple_wasserstein_gradient_flows_for_multi-objective_distribution.md)
-- [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](../../NeurIPS2025/optimization/mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
-- [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](cost-aware_stopping_for_bayesian_optimization.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](../../ICLR2026/optimization/in-context_multi-objective_optimization.md)
 - [\[ICML 2026\] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning](diversity-driven_offline_multi-objective_optimization_via_nested_pareto_set_lear.md)
-- [\[ICML 2026\] Bayesian Gated Non-Negative Contrastive Learning](bayesian_gated_non-negative_contrastive_learning.md)
+- [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](../../NeurIPS2025/optimization/mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
+- [\[ICLR 2026\] Scaling Multi-Task Bayesian Optimization with Large Language Models](../../ICLR2026/optimization/scaling_multi-task_bayesian_optimization_with_large_language_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift
 description: >-
-  [NeurIPS 2025][Time Series][Time Series Foundation Models] This paper identifies spectral shift—a mismatch between the dominant frequencies of downstream data and those covered by pretraining data—as the key reason for g…
+  [NeurIPS 2025][Time Series][Time Series Foundation Models] This paper identifies spectral shift—a mismatch between the dominant frequencies of downstream data and those covered by pretraining data—as the key reason for generalization failure of Time Series Foundation Models (TSFMs) in industrial settings. The hypothesis is validated through an industrial-scale mobile game player engagement prediction task and controlled synthetic experiments.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "MOMENT"
   - "Player Engagement Prediction"
 date: 2026-05-08
-content_hash: 7cda7f483799533a
+content_hash: f8266e522ae4d240
 ---
 
 # Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift
@@ -140,8 +140,8 @@ Across all datasets, MSE and MAE on unseen frequency bands are consistently high
 - [\[NeurIPS 2025\] SEMPO: Lightweight Foundation Models for Time Series Forecasting](sempo_lightweight_foundation_models_for_time_series_forecasting.md)
 - [\[NeurIPS 2025\] How Foundational are Foundation Models for Time Series Forecasting?](how_foundational_are_foundation_models_for_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Multi-Scale Finetuning for Encoder-based Time Series Foundation Models](multi-scale_finetuning_for_encoder-based_time_series_foundation_models.md)
-- [\[NeurIPS 2025\] Less is More: Unlocking Specialization of Time Series Foundation Models via Structured Pruning](less_is_more_unlocking_specialization_of_time_series_foundation_models_via_struc.md)
 - [\[ICML 2026\] OLIVIA: Harmonizing Time Series Foundation Models with Power Spectral Density](../../ICML2026/time_series/olivia_harmonizing_time_series_foundation_models_with_power_spectral_density.md)
+- [\[NeurIPS 2025\] Less is More: Unlocking Specialization of Time Series Foundation Models via Structured Pruning](less_is_more_unlocking_specialization_of_time_series_foundation_models_via_struc.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Egocentric Action-aware Inertial Localization in Point Clouds with Vision-Language Guidance
 description: >-
-  [3D Vision] The EAIL framework leverages egocentric action cues embedded in head-mounted IMU signals and employs hierarchical multimodal alignment (vision-language guidance) to learn associations between actions and envi…
+  [3D Vision] The EAIL framework leverages egocentric action cues embedded in head-mounted IMU signals and employs hierarchical multimodal alignment (vision-language guidance) to learn associations between actions and environmental structures, enabling accurate inertial localization in 3D point clouds while simultaneously supporting action recognition.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 8f2ef76b92bc3ddd
+content_hash: e15a56bcbb1a8610
 ---
 
 # Egocentric Action-aware Inertial Localization in Point Clouds with Vision-Language Guidance
@@ -157,9 +157,9 @@ $$L_{\text{stage2}} = L_{\text{traj}} + L_{\text{action}}$$
 
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
 - [\[ICCV 2025\] PlaceIt3D: Language-Guided Object Placement in Real 3D Scenes](placeit3d_language-guided_object_placement_in_real_3d_scenes.md)
+- [\[CVPR 2025\] Multi-View Pose-Agnostic Change Localization with Zero Labels](../../CVPR2025/3d_vision/multi-view_pose-agnostic_change_localization_with_zero_labels.md)
+- [\[CVPR 2025\] DualPM: Dual Posed-Canonical Point Maps for 3D Shape and Pose Reconstruction](../../CVPR2025/3d_vision/dualpm_dual_posed-canonical_point_maps_for_3d_shape_and_pose_reconstruction.md)
 - [\[ICCV 2025\] Unleashing Vecset Diffusion Model for Fast Shape Generation (FlashVDM)](unleashing_vecset_diffusion_model_for_fast_shape_generation.md)
-- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
-- [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
 
 </div>
 

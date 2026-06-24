@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On Discriminative vs. Generative Classifiers: Rethinking MLLMs for Action Understanding
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] The authors revisit the mainstream practice of treating MLLMs as generative classifiers that autoregressively output action labels. They identify semantic overlap caused by shared subwords in action labels as the root cause of low accuracy. Consequently, they transform MLLMs into discriminative classifiers using a lear
+  [ICLR 2026][Multimodal VLM][MLLM] The authors revisit the mainstream practice of treating MLLMs as generative classifiers that autoregressively output action labels. They identify semantic overlap caused by shared subwords in action labels as the root cause of low accuracy. Consequently, they transform MLLMs into discriminative classifiers using a learnable [CLS] token and introduce generative modeling as an auxiliary regularization. The proposed GAD (Generation-Assisted Disc…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "Temporal Action Understanding"
+  - "Discriminative Classifier"
+  - "Generative Classifier"
+  - "Semantic Overlap"
 date: 2026-05-08
-content_hash: 1d9bd5ec08b9b215
+content_hash: fa878040c4ef639a
 ---
+
 # On Discriminative vs. Generative Classifiers: Rethinking MLLMs for Action Understanding
 
 **Conference**: ICLR 2026  
@@ -142,8 +147,8 @@ Bridging the gap control (Llama3.2-1B): Gen 16.7/13.9 (EK100) → Gen rand 16.8/
 - Value: ⭐⭐⭐⭐⭐ Improves both accuracy and efficiency without modifying pre-training, offering high practical value for MLLM-based classification.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

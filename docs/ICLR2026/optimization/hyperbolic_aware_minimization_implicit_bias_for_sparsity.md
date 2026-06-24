@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Hyperbolic Aware Minimization: Implicit Bias for Sparsity
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] HAM alternates a lightweight "hyperbolic mirror step" with a standard optimizer step. Without increasing parameters or memory, it replicates the sparse implicit bias brought by `m⊙w` pointwise over-parameterization, while fixing its inherent "inverse metric collapse" near the origin that stalls sign flips, leading to g
+  [ICLR 2026][Optimization][implicit bias] HAM alternates a lightweight "hyperbolic mirror step" with a standard optimizer step. Without increasing parameters or memory, it replicates the sparse implicit bias brought by `m⊙w` pointwise over-parameterization, while fixing its inherent "inverse metric collapse" near the origin that stalls sign flips, leading to gains in both dense and sparse training.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "implicit bias"
+  - "sparse training"
+  - "mirror flow"
+  - "Riemannian gradient flow"
+  - "hyperbolic geometry"
+  - "sign flip"
+  - "over-parameterization"
 date: 2026-05-08
-content_hash: 6a0596fea6e573eb
+content_hash: b378e12a500124fd
 ---
+
 # Hyperbolic Aware Minimization: Implicit Bias for Sparsity
 
 **Conference**: ICLR 2026  
@@ -132,8 +140,8 @@ AC/DC+HAM shows the strongest improvement (72.59 → 75.45 at s=0.95, +2.86). Th
 
 - [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
 - [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
-- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
 - [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
+- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
 - [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
 
 </div>

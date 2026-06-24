@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] S2S-Arena: Evaluating Paralinguistic Instruction Following in Speech-to-Speech Models
 description: >-
-  [ACL 2026][Audio & Speech][Paralinguistic Information] S2S-Arena proposes a benchmark to evaluate S2S models directly in the speech modality. Using a four-level paralinguistic interaction protocol, 1,243 speech samples, and 1,001 pairwise comparisons, it reveals significant performance gaps in current systems regarding complex tone, emotion, speaking style, and expressive
+  [ACL2026][Audio & Speech][Speech-to-Speech] S2S-Arena proposes a benchmark to evaluate S2S models directly in the speech modality. Using a four-level paralinguistic interaction protocol, 1,243 speech samples, and 1,001 pairwise comparisons, it reveals significant performance gaps in current systems regarding complex tone, emotion, speaking style, and expressive control.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Paralinguistic Information
-  - Elo
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Speech-to-Speech"
+  - "Paralinguistic Information"
+  - "Arena Evaluation"
+  - "Elo"
+  - "Instruction Following"
 date: 2026-05-08
-content_hash: 74a19012255d1727
+content_hash: 1e1c4eac64e72465
 ---
+
 # S2S-Arena: Evaluating Paralinguistic Instruction Following in Speech-to-Speech Models
 
 **Conference**: ACL2026  
@@ -159,8 +163,8 @@ The paper analyzes system capability differences across task categories and diff
 - [\[ICLR 2026\] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](../../ICLR2026/audio_speech/paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)
 - [\[ICML 2026\] CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction](../../ICML2026/audio_speech/cmi-rewardbench_evaluating_music_reward_models_with_compositional_multimodal_ins.md)
 - [\[ICLR 2026\] EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models](../../ICLR2026/audio_speech/echomind_an_interrelated_multi-level_benchmark_for_evaluating_empathetic_speech_.md)
+- [\[ICLR 2026\] Towards True Speech-to-Speech Models Without Text Guidance](../../ICLR2026/audio_speech/towards_true_speech-to-speech_models_without_text_guidance.md)
 - [\[ACL 2026\] VAPO: End-to-end Slide-Enhanced Speech Recognition with Omni-modal Large Language Models](vapo_end-to-end_slide-enhanced_speech_recognition_with_omni-modal_large_language.md)
-- [\[ACL 2026\] An Exploration of Mamba for Speech Self-Supervised Models](an_exploration_of_mamba_for_speech_self-supervised_models.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity
 description: >-
-  [ICLR 2026][Others][Paper Note] Empirical evidence suggests that Linear Mode Connectivity (LMC) between independently trained models can be achieved solely by increasing model width without parameter permutations. The study proposes "Layer-wise Exponentially Weighted Connectivity" (LEWC) to explain the underlying mechanism.
+  [ICLR 2026][Linear Mode Connectivity] Empirical evidence suggests that Linear Mode Connectivity (LMC) between independently trained models can be achieved solely by increasing model width without parameter permutations. The study proposes "Layer-wise Exponentially Weighted Connectivity" (LEWC) to explain the underlying mechanism.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Linear Mode Connectivity"
+  - "model merging"
+  - "permutation symmetry"
+  - "model width"
+  - "loss landscape"
 date: 2026-05-08
-content_hash: cf069a1cd5050a25
+content_hash: 688d7b92cf86a581
 ---
+
 # Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity
 
 **Conference**: ICLR 2026  
@@ -161,11 +166,11 @@ Weak weight decay leads to high-rank weights, causing LEWC conditions to fail an
 
 ## Related Papers
 
-- [\[ICML 2026\] Functional Equivalence in Attention: A Comprehensive Study with Applications to Linear Mode Connectivity](../../ICML2026/others/functional_equivalence_in_attention_a_comprehensive_study_with_applications_to_l.md)
 - [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](../../NeurIPS2025/others/generalized_linear_mode_connectivity_for_transformers.md)
+- [\[ICML 2026\] Functional Equivalence in Attention: A Comprehensive Study with Applications to Linear Mode Connectivity](../../ICML2026/others/functional_equivalence_in_attention_a_comprehensive_study_with_applications_to_l.md)
 - [\[ICLR 2026\] Learning Distributions over Permutations and Rankings with Factorized Representations](learning_distributions_over_permutations_and_rankings_with_factorized_representa.md)
 - [\[ICLR 2026\] On the Impact of the Utility in Semivalue-based Data Valuation](on_the_impact_of_the_utility_in_semivalue-based_data_valuation.md)
-- [\[ICML 2026\] Connecting Independently Trained Modes via Layer-Wise Connectivity](../../ICML2026/others/connecting_independently_trained_modes_via_layer-wise_connectivity.md)
+- [\[CVPR 2025\] PLeaS: Merging Models with Permutations and Least Squares](../../CVPR2025/others/pleas_-_merging_models_with_permutations_and_least_squares.md)
 
 </div>
 

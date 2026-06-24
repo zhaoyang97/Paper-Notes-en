@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][Zero-shot action recognition] This paper proposes FS-VAE (Frequency-Semantic Enhanced Variational Autoencoder)…
+  [ICCV 2025][Video Understanding][Zero-shot action recognition] This paper proposes FS-VAE (Frequency-Semantic Enhanced Variational Autoencoder), which achieves significant performance gains in zero-shot skeleton-based action recognition through three key contributions: frequency decomposition for enhanced skeleton semantic learning, multilevel semantic alignment to bridge the visual-text modality gap, and a calibrated cross-alignment loss to mitigate alignment ambiguity.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "semantic alignment"
   - "variational autoencoder"
 date: 2026-05-08
-content_hash: 27f0fda802e2d001
+content_hash: 01ae2ce22aebceba
 ---
 
 # Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition
@@ -136,10 +136,10 @@ The overall loss is a weighted sum of three components: (1) **VAE reconstruction
 ## Related Papers
 
 - [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](../../CVPR2026/video_understanding/skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+- [\[ECCV 2024\] SA-DVAE: Improving Zero-Shot Skeleton-Based Action Recognition by Disentangled Variational Autoencoders](../../ECCV2024/video_understanding/sa-dvae_improving_zero-shot_skeleton-based_action_recognition_by_disentangled_va.md)
 - [\[ICCV 2025\] Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition](trokens_semantic-aware_relational_trajectory_tokens_for_few-shot_action_recognit.md)
-- [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
 - [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
-- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-based Human Action Recognition with Virtual Connections](adaptive_hyper_graph_convolution_network_skeleton_action_recognition.md)
+- [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
 
 </div>
 

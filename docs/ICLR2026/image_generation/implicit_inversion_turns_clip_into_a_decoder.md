@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Implicit Inversion turns CLIP into a Decoder
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Without training any generative decoder or fine-tuning CLIP, this work achieves text-to-image generation, style transfer, and image reconstruction by "inverting" a **frozen CLIP image encoder**. By utilizing frequency-aware Implicit Neural Representations (INR) to back-project images from text embeddings, the authors r
+  [ICLR 2026][Image Generation][CLIP Inversion] Without training any generative decoder or fine-tuning CLIP, this work achieves text-to-image generation, style transfer, and image reconstruction by "inverting" a **frozen CLIP image encoder**. By utilizing frequency-aware Implicit Neural Representations (INR) to back-project images from text embeddings, the authors reveal significant untapped generative capabilities within discriminative models.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "CLIP Inversion"
+  - "Implicit Neural Representation (INR)"
+  - "Text-to-Image"
+  - "Modality Gap"
+  - "Frequency-Aware"
+  - "Generative Capability of Discriminative Models"
 date: 2026-05-08
-content_hash: 80ad17f67365e73e
+content_hash: a124cc2fd33f969b
 ---
+
 # Implicit Inversion turns CLIP into a Decoder
 
 **Conference**: ICLR 2026  

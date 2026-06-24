@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Neural Network for Simulating Radio Emission from Extensive Air Showers
 description: >-
-  [NeurIPS 2025][Cosmic rays] A simple fully connected neural network is employed to replace computationally expensive CoREAS Monte Carlo simulations…
+  [NeurIPS 2025][Physics & Scientific Computing][Cosmic rays] A simple fully connected neural network is employed to replace computationally expensive CoREAS Monte Carlo simulations, enabling fast prediction of radio pulses from extensive air showers (EAS) while achieving $X_{\text{max}}$ reconstruction resolution comparable to conventional simulations.
 tags:
   - "NeurIPS 2025"
+  - "Physics & Scientific Computing"
   - "Cosmic rays"
   - "extensive air showers"
   - "radio emission simulation"
   - "neural network surrogate model"
   - "$X_{\\text{max}}$ reconstruction"
 date: 2026-05-08
-content_hash: c5712500f722735c
+content_hash: cfe96947a3656ca4
 ---
 
 # Neural Network for Simulating Radio Emission from Extensive Air Showers
@@ -145,11 +146,11 @@ The paper notes that the discrepancy between the two leading radio emission mode
 
 ## Related Papers
 
-- [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](../../ICLR2026/physics/feedback-driven_recurrent_quantum_neural_network_universality.md)
-- [\[NeurIPS 2025\] From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE & Normalizing Flows](from_images_to_physics_probabilistic_inference_of_galaxy_parameters_and_emission.md)
 - [\[NeurIPS 2025\] Scaling Laws and Pathologies of Single-Layer PINNs: Network Width and PDE Nonlinearity](scaling_laws_and_pathologies_of_single-layer_pinns_network_width_and_pde_nonline.md)
-- [\[NeurIPS 2025\] Neural Green's Functions](neural_greens_functions.md)
-- [\[NeurIPS 2025\] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon](stable_minima_of_relu_neural_networks_suffer_from_the_curse_of_dimensionality_th.md)
+- [\[NeurIPS 2025\] From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE & Normalizing Flows](from_images_to_physics_probabilistic_inference_of_galaxy_parameters_and_emission.md)
+- [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](../../ICLR2026/physics/feedback-driven_recurrent_quantum_neural_network_universality.md)
+- [\[ICLR 2026\] A Function-Centric Graph Neural Network Approach for Predicting Electron Densities](../../ICLR2026/physics/a_function-centric_graph_neural_network_approach_for_predicting_electron_densiti.md)
+- [\[ICLR 2026\] Enhancing Stability of Physics-Informed Neural Network Training Through Saddle-Point Reformulation](../../ICLR2026/physics/enhancing_stability_of_physics-informed_neural_network_training_through_saddle-p.md)
 
 </div>
 

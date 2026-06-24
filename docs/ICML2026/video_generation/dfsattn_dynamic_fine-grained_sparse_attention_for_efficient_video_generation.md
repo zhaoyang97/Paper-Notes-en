@@ -2,13 +2,17 @@
 title: >-
   [Paper Note] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation
 description: >-
-  [ICML 2026][Video Generation][Paper Note] DFSAttn achieves **2.1× end-to-end acceleration** with quality comparable to full attention through **3D Hilbert curve reordering** + **hierarchical block scoring** + **adaptive mask caching**. It addresses the core issue of quality degradation in block-sparse attention at high sparsity ratios (>80%).
+  [ICML 2026][Video Generation][Sparse Attention] DFSAttn achieves **2.1× end-to-end acceleration** with quality comparable to full attention through **3D Hilbert curve reordering** + **hierarchical block scoring** + **adaptive mask caching**. It addresses the core issue of quality degradation in block-sparse attention at high sparsity ratios (>80%).
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Sparse Attention"
+  - "Hilbert Curve"
+  - "Dynamic Masking"
 date: 2026-05-08
-content_hash: 5da980a81baf1e9f
+content_hash: 120b31a008cb0d27
 ---
+
 # DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation
 
 **Conference**: ICML 2026  
@@ -118,15 +122,14 @@ On Wan2.1, Ours outperforms SVG by 29% (PSNR 22.37 vs 17.39), and on HunyuanVide
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
 - [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
-- [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
-- [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](../../NeurIPS2025/video_generation/vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
 - [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](lightning_unified_video_editing_via_in-context_sparse_attention.md)
+- [\[ICLR 2026\] DSA: Efficient Inference For Video Generation Models via Distributed Sparse Attention](../../ICLR2026/video_generation/dsa_efficient_inference_for_video_generation_models_via_distributed_sparse_atten.md)
+- [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
 
 </div>
 

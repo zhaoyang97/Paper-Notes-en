@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PE3R: Perception-Efficient 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PE3R proposes a tuning-free feed-forward 3D semantic reconstruction framework. By utilizing pixel embedding disambiguation, semantic point cloud reconstruction, and global view-aware perception modules, it directly generates semantic 3D point clouds from pose-free 2D images. It achieves 9x acceleration and reaches new
+  [CVPR 2026][3D Vision][3D Semantic Reconstruction] PE3R proposes a tuning-free feed-forward 3D semantic reconstruction framework. By utilizing pixel embedding disambiguation, semantic point cloud reconstruction, and global view-aware perception modules, it directly generates semantic 3D point clouds from pose-free 2D images. It achieves 9x acceleration and reaches new SOTA in open-vocabulary segmentation and depth estimation.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Semantic Reconstruction"
+  - "Open-Vocabulary Segmentation"
+  - "Tuning-Free"
+  - "Feed-Forward Inference"
+  - "Semantic Point Clouds"
 date: 2026-05-08
-content_hash: bd14e26e22c5b84f
+content_hash: 00dc02cb91847878
 ---
+
 # PE3R: Perception-Efficient 3D Reconstruction
 
 **Conference**: CVPR 2026  
@@ -162,9 +168,9 @@ Multi-view Depth Estimation (Average of 5 datasets):
 
 - [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
 - [\[CVPR 2026\] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)
-- [\[CVPR 2026\] TokenHand: Discrete Token Representation for Efficient Hand Mesh Reconstruction](tokenhand_discrete_token_representation_for_efficient_hand_mesh_reconstruction.md)
-- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning](adaptive_3d_perception_for_small_aerial_targets_under_sparse_sampling_via_reinfo.md)
+- [\[CVPR 2026\] 3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)
+- [\[CVPR 2026\] AREA3D: Active Reconstruction Agent with Unified Feed-Forward 3D Perception and Vision-Language Guidance](area3d_active_reconstruction_agent_with_unified_feed-forward_3d_perception_and_v.md)
+- [\[CVPR 2026\] UniPR: Unified Object-level Real-to-Sim Perception and Reconstruction from a Single Stereo Pair](unipr_unified_object-level_real-to-sim_perception_and_reconstruction_from_a_sing.md)
 
 </div>
 

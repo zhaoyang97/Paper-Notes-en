@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PartDiffuser: Part-wise 3D Mesh Generation via Discrete Diffusion
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PartDiffuser replaces the "per-token autoregressive mesh generation" with a semi-autoregressive framework characterized by "inter-part autoregression and intra-part parallel discrete diffusion." It injects hierarchical geometric conditions through part-aware cross-attention to refine local high-frequency details while
+  [CVPR 2026][3D Vision][Artist-grade Mesh Generation] PartDiffuser replaces the "per-token autoregressive mesh generation" with a semi-autoregressive framework characterized by "inter-part autoregression and intra-part parallel discrete diffusion." It injects hierarchical geometric conditions through part-aware cross-attention to refine local high-frequency details while ensuring global topology. On Objaverse, it reduces Chamfer Distance by approximately 27% compared to the se…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Artist-grade Mesh Generation"
+  - "Discrete Diffusion"
+  - "Semi-Autoregressive"
+  - "Part-level Generation"
+  - "Point Cloud to Mesh"
 date: 2026-05-08
-content_hash: 167bf087a02273c8
+content_hash: 9e283ff528b70ff1
 ---
+
 # PartDiffuser: Part-wise 3D Mesh Generation via Discrete Diffusion
 
 **Conference**: CVPR 2026  
@@ -133,7 +139,7 @@ Ablations of hierarchical geometric conditions on the Objaverse test set (varian
 - [\[CVPR 2026\] TokenHand: Discrete Token Representation for Efficient Hand Mesh Reconstruction](tokenhand_discrete_token_representation_for_efficient_hand_mesh_reconstruction.md)
 - [\[CVPR 2026\] MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer](meshflow_efficient_artistic_mesh_generation_via_meshvae_and_flow-based_diffusion.md)
 - [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
-- [\[CVPR 2026\] DICArt: Advancing Category-level Articulated Object Pose Estimation in Discrete State-Spaces](dicart_advancing_category-level_articulated_object_pose_estimation_in_discrete_s.md)
+- [\[CVPR 2026\] UniPart: Part-Level 3D Generation with Unified 3D Geom-Seg Latents](unipart_part-level_3d_generation_with_unified_3d_geom-seg_latents.md)
 
 </div>
 

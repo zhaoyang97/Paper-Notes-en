@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Cultural Transfer of Emoji Semantics and Sentiment in Financial Social Media
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] By systematically comparing emoji frequency, semantics, and sentiment polarity across 100 million financial microblogs in 4 languages, 2 platforms, and 2 asset classes, this study finds that while emoji frequency varies significantly across languages/platforms, their semantics and polarity remain highly stable. Consequ
+  [ACL 2026 Findings][Multilingual & Machine Translation][emoji semantics] By systematically comparing emoji frequency, semantics, and sentiment polarity across 100 million financial microblogs in 4 languages, 2 platforms, and 2 asset classes, this study finds that while emoji frequency varies significantly across languages/platforms, their semantics and polarity remain highly stable. Consequently, in zero-shot sentiment transfer, incorporating emojis into text consistently red…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026 Findings"
+  - "Multilingual & Machine Translation"
+  - "emoji semantics"
+  - "cross-lingual transfer"
+  - "financial social media"
+  - "zero-shot sentiment analysis"
+  - "cross-platform generalization"
 date: 2026-05-08
-content_hash: cc85d36877d97173
+content_hash: 1c18aa92b6f8bd0f
 ---
+
 # Cross-Cultural Transfer of Emoji Semantics and Sentiment in Financial Social Media
 
 **Conference**: ACL 2026 Findings  
@@ -150,7 +156,7 @@ Treating modality as the ablation dimension while fixing XLM-R to observe contri
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

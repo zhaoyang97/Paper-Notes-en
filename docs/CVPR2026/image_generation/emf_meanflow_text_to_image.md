@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation
 description: >-
-  [CVPR 2026][Image Generation][MeanFlow] This work first extends the MeanFlow framework from class-label conditioning to text-conditional image generation. It discovers that the semantic discriminability and disentanglement of text representations are key bottlenecks under restricted inference steps. Based on the BLIP3o-NEXT text encoder, the authors achieve
+  [CVPR 2026][Image Generation][MeanFlow] This work first extends the MeanFlow framework from class-label conditioning to text-conditional image generation. It discovers that the semantic discriminability and disentanglement of text representations are key bottlenecks under restricted inference steps. Based on the BLIP3o-NEXT text encoder, the authors achieve high-quality few-step and one-step T2I generation.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MeanFlow
-  - Text-to-Image
+  - "CVPR 2026"
+  - "Image Generation"
+  - "MeanFlow"
+  - "One-step generation"
+  - "text-to-image"
+  - "text encoder"
+  - "semantic discriminability"
 date: 2026-05-08
-content_hash: 4b44268a06298f8a
+content_hash: cdef39ab61ad118d
 ---
+
 # Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation
 
 **Conference**: CVPR 2026  
@@ -145,10 +149,10 @@ The model uses approximately 170K samples (BLIP3o-60k + shareGPT-4o + Echo-4o), 
 ## Related Papers
 
 - [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
+- [\[CVPR 2026\] ImageRAGTurbo: Towards One-step Text-to-Image Generation with Retrieval-Augmented Diffusion Models](imageragturbo_towards_one-step_text-to-image_generation_with_retrieval-augmented.md)
 - [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
 - [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
-- [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
-- [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
+- [\[ICML 2026\] Riemannian MeanFlow for One-Step Generation on Manifolds](../../ICML2026/image_generation/riemannian_meanflow_for_one-step_generation_on_manifolds.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On Cost-Effective LLM-as-a-Judge Improvement Techniques
 description: >-
-  [ICML 2026][LLM Evaluation][LLM-as-a-judge] Addressing the issue that LLM-as-a-judge accuracy depends heavily on prompts and aggregation strategies but lacks systematic evidence on "which tricks are truly cost-effective," this paper adopts a unified perspective of "noise control for stochastic judges" on RewardBench 2. It systematically compares four drop-in tec
+  [ICML 2026][LLM Evaluation][LLM-as-a-judge] Addressing the issue that LLM-as-a-judge accuracy depends heavily on prompts and aggregation strategies but lacks systematic evidence on "which tricks are truly cost-effective," this paper adopts a unified perspective of "noise control for stochastic judges" on RewardBench 2. It systematically compares four drop-in techniques: **ensemble scoring, task-specific scoring criteria, calibration context, and adaptive model upgrading**. Th…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - LLM-as-a-judge
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-judge"
+  - "ensemble scoring"
+  - "scoring criteria"
+  - "calibration"
+  - "cost-precision trade-off"
 date: 2026-05-08
-content_hash: 5403b3530cbdb00b
+content_hash: 7c832651454aa90b
 ---
+
 # On Cost-Effective LLM-as-a-Judge Improvement Techniques
 
 **Conference**: ICML 2026  
@@ -139,10 +144,10 @@ RB2 contains 1753 samples across 5 categories. Models include full/mini/nano tie
 ## Related Papers
 
 - [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
-- [\[ICML 2026\] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
-- [\[ACL 2026\] CUB: Benchmarking Context Utilisation Techniques for Language Models](../../ACL2026/llm_evaluation/cub_benchmarking_context_utilisation_techniques_for_language_models.md)
-- [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
+- [\[ICML 2026\] REAL: Integrating Regression-Aware Rewards into RL, Teaching LLM-as-a-Judge that "Even a One-Point Difference Matters"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](../../ICLR2026/llm_evaluation/preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
+- [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
+- [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](../../ACL2026/llm_evaluation/contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
 
 </div>
 

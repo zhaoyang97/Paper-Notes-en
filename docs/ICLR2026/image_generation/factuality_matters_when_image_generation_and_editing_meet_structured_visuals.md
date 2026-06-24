@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Factuality Matters: When Image Generation and Editing Meet Structured Visuals
 description: >-
-  [ICLR 2026][Image Generation][structured image generation] The first systematic study on structured visual content (charts, math formulas, diagrams, etc.) generation and editing. This work constructs a 1.3 million code-aligned training dataset (including CoT reasoning annotations), a unified VLM+Diffusion architecture, and a StructBench benchmark containing 1700+ samples, reve
+  [ICLR2026][Image Generation][structured image generation] The first systematic study on structured visual content (charts, math formulas, diagrams, etc.) generation and editing. This work constructs a 1.3 million code-aligned training dataset (including CoT reasoning annotations), a unified VLM+Diffusion architecture, and a StructBench benchmark containing 1700+ samples, revealing that reasoning capability is the key bottleneck for current models handling structured visuals.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - structured image generation
-  - image editing
-  - chain-of-thought reasoning
-  - benchmark
-  - diffusion transformer
+  - "ICLR2026"
+  - "Image Generation"
+  - "structured image generation"
+  - "image editing"
+  - "chain-of-thought reasoning"
+  - "benchmark"
+  - "diffusion transformer"
 date: 2026-05-08
-content_hash: 8a5cce3e79bf3e56
+content_hash: bdd0e183d710c61f
 ---
+
 # Factuality Matters: When Image Generation and Editing Meet Structured Visuals
 
 **Conference**: ICLR2026  
@@ -135,8 +136,8 @@ The comparison with Bagel-Think is crucial: Ours' external reasoner approach (38
 
 ## Related Papers
 
-- [\[CVPR 2025\] AutoPresent: Designing Structured Visuals from Scratch](../../CVPR2025/image_generation/autopresent_designing_structured_visuals_from_scratch.md)
 - [\[CVPR 2025\] From Words to Structured Visuals: A Benchmark and Framework for Text-to-Diagram Generation and Editing](../../CVPR2025/image_generation/from_words_to_structured_visuals_a_benchmark_and_framework_for_text-to-diagram_g.md)
+- [\[CVPR 2025\] AutoPresent: Designing Structured Visuals from Scratch](../../CVPR2025/image_generation/autopresent_designing_structured_visuals_from_scratch.md)
 - [\[ICLR 2026\] TempFlow-GRPO: When Timing Matters for GRPO in Flow Models](tempflow-grpo_when_timing_matters_for_grpo_in_flow_models.md)
 - [\[ICLR 2026\] Condition Matters in Full-head 3D GANs](condition_matters_in_full-head_3d_gans.md)
 - [\[ICLR 2026\] Guidance Matters: Rethinking the Evaluation Pitfall for Text-to-Image Generation](guidance_matters_rethinking_the_evaluation_pitfall_for_text-to-image_generation.md)

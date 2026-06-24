@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension
 description: >-
-  [NeurIPS 2025][Object Detection][Retrieval-Augmented Generation] This paper proposes Video-RAG, a training-free, plug-and-play RAG pipeline that extracts visually-aligned auxiliary texts (OCR, ASR…
+  [NeurIPS 2025][Object Detection][Retrieval-Augmented Generation] This paper proposes Video-RAG, a training-free, plug-and-play RAG pipeline that extracts visually-aligned auxiliary texts (OCR, ASR, object detection) from video, retrieves relevant content, and feeds it into LVLMs. With an overhead of only ~2K tokens, it improves average Video-MME performance by 2.8% across seven open-source LVLMs, and the 72B model surpasses GPT-4o.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Plug-and-Play"
   - "Multimodal Alignment"
 date: 2026-05-08
-content_hash: 36f4c953565d83be
+content_hash: 4aebbf1e88ee5d57
 ---
 
 # Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension
@@ -158,7 +158,7 @@ Video-RAG comprises three stages:
 - [\[ICCV 2025\] Large-scale Pre-training for Grounded Video Caption Generation](../../ICCV2025/object_detection/large-scale_pre-training_for_grounded_video_caption_generation.md)
 - [\[NeurIPS 2025\] MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling](mstar_box-free_multi-query_scene_text_retrieval_with_attention_recycling.md)
 - [\[ICCV 2025\] VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions](../../ICCV2025/object_detection/voccl3d_a_video_benchmark_dataset_for_3d_human_pose_and_shape_estimation_under_r.md)
-- [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](../../AAAI2026/object_detection/temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
+- [\[CVPR 2025\] Search and Detect: Training-Free Long Tail Object Detection via Web-Image Retrieval](../../CVPR2025/object_detection/search_and_detect_training-free_long_tail_object_detection_via_web-image_retriev.md)
 
 </div>
 

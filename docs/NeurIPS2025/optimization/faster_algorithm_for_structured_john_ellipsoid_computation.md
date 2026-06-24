@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Faster Algorithms for Structured John Ellipsoid Computation
 description: >-
-  [NeurIPS 2025][Optimization][John ellipsoid] For computing the John ellipsoid of a symmetric convex polytope $P = \{x \in \mathbb{R}^d : -\mathbf{1}_n \leq Ax \leq \mathbf{1}_n\}$…
+  [NeurIPS 2025][Optimization][John ellipsoid] For computing the John ellipsoid of a symmetric convex polytope $P = \{x \in \mathbb{R}^d : -\mathbf{1}_n \leq Ax \leq \mathbf{1}_n\}$, this paper proposes two fast algorithms: a near-input-sparsity algorithm based on sketching with per-iteration cost $\widetilde{O}(\text{nnz}(A) + d^\omega)$, and a treewidth-based algorithm with per-iteration cost $O(n\tau^2)$, both significantly improving upon the prior state-of-the-art cost of $…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -14,7 +14,7 @@ tags:
   - "Lewis weights"
   - "leverage scores"
 date: 2026-05-08
-content_hash: c8e0f8b53b919250
+content_hash: ecbdb3485a803706
 ---
 
 # Faster Algorithms for Structured John Ellipsoid Computation
@@ -152,11 +152,11 @@ Volume guarantee: $\text{vol}(\frac{1}{\sqrt{1+\varepsilon}} Q) \geq \exp(-d\var
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
 - [\[NeurIPS 2025\] The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels](the_implicit_bias_of_structured_state_space_models_can_be_poisoned_with_clean_la.md)
+- [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
 - [\[NeurIPS 2025\] Verbalized Algorithms: Zero-shot Classical Algorithmic Reasoning for Correctness and Runtime Guarantees](verbalized_algorithms.md)
+- [\[ICLR 2026\] MuonBP: Faster Muon via Block-Periodic Orthogonalization](../../ICLR2026/optimization/muonbp_faster_muon_via_block-periodic_orthogonalization.md)
 - [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](../../ICLR2026/optimization/faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
-- [\[NeurIPS 2025\] FlyLoRA: Boosting Task Decoupling and Parameter Efficiency via Implicit Rank-Wise Mixture-of-Experts](flylora_boosting_task_decoupling_and_parameter_efficiency_via_implicit_rank-wise.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Neural Networks] This paper proposes Sketched Random Features (SRF), which injects random kernel-space projections of node features into every layer of a standard message-passing GNN…
+  [NeurIPS 2025][Graph Learning][Graph Neural Networks] This paper proposes Sketched Random Features (SRF), which injects random kernel-space projections of node features into every layer of a standard message-passing GNN, simultaneously alleviating oversquashing, oversmoothing, and limited expressiveness, with rigorous theoretical guarantees and low computational overhead.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Random Features"
   - "Johnson-Lindenstrauss Transform"
 date: 2026-05-08
-content_hash: 21b17d1ecd0c09ed
+content_hash: efe386f3e9b32691
 ---
 
 # Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks
@@ -162,10 +162,10 @@ The sketching projection accounts for over 60% of the total gain, far exceeding 
 
 ## Related Papers
 
+- [\[ICML 2025\] On Measuring Long-Range Interactions in Graph Neural Networks](../../ICML2025/graph_learning/on_measuring_long-range_interactions_in_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks](self-supervised_discovery_of_neural_circuits_in_spatially_patterned_neural_respo.md)
 - [\[NeurIPS 2025\] Sound Logical Explanations for Mean Aggregation Graph Neural Networks](sound_logical_explanations_for_mean_aggregation_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Logical Expressiveness of Graph Neural Networks with Hierarchical Node Individualization](logical_expressiveness_of_graph_neural_networks_with_hierarchical_node_individua.md)
-- [\[ICLR 2026\] Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics](../../ICLR2026/graph_learning/improving_long-range_interactions_in_graph_neural_simulators_via_hamiltonian_dyn.md)
 - [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](over-squashing_in_spatiotemporal_graph_neural_networks.md)
 
 </div>

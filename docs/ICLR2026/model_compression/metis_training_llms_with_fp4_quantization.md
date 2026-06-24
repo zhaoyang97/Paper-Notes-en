@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Metis: Training LLMs with FP4 Quantization
 description: >-
-  [ICLR 2026][Model Compression][W4A4G4] Metis identifies the "anisotropy of weights/activations/gradients singular spectra" as the root cause of FP4 training failure. It proposes splitting the spectrum in the spectral domain into "a few dominant components + long-tail residuals" for separate quantization. By utilizing sparse sampling and random projection, t
+  [ICLR 2026][Model Compression][FP4 Training] Metis identifies the "anisotropy of weights/activations/gradients singular spectra" as the root cause of FP4 training failure. It proposes splitting the spectrum in the spectral domain into "a few dominant components + long-tail residuals" for separate quantization. By utilizing sparse sampling and random projection, the SVD overhead is reduced to a negligible level, enabling W4A4G4 full FP4 training on LLaMA-3 8B. The training los…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - W4A4G4
+  - "ICLR 2026"
+  - "Model Compression"
+  - "FP4 Training"
+  - "Spectral Domain Quantization"
+  - "Anisotropy"
+  - "Randomized SVD"
+  - "W4A4G4"
 date: 2026-05-08
-content_hash: 507c41a6efad4cae
+content_hash: d411737422c7b653
 ---
+
 # Metis: Training LLMs with FP4 Quantization
 
 **Conference**: ICLR 2026  

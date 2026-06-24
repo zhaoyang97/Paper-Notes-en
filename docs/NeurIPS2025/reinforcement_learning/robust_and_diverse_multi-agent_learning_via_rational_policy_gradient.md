@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes the Rationality-Preserving Optimization (RPO) framework and the Rational Policy Gradient (RPG) algorithm. By introducing mani…
+  [NeurIPS 2025][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes the Rationality-Preserving Optimization (RPO) framework and the Rational Policy Gradient (RPG) algorithm. By introducing manipulator agents and opponent shaping techniques, RPG eliminates suicidal behavior induced by adversarial optimization in both cooperative and general-sum games, while simultaneously achieving policy robustness and diversity.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Policy Gradient"
   - "Cooperative Games"
 date: 2026-05-08
-content_hash: dfa883b73ee3070a
+content_hash: ba0bd14199de59db
 ---
 
 # Robust and Diverse Multi-Agent Learning via Rational Policy Gradient
@@ -49,18 +49,18 @@ The core architecture of RPG introduces a *manipulator* agent: for each original
 
 1. **Rationality-Preserving Optimization (RPO) Formalization**:
    For each agent $i$, given an adversarial objective $O_i(\pi_1, \dots, \pi_m)$, RPO requires:
-   $$\max_{\pi_i} O_i(\pi_1, \dots, \pi_m) \quad \text{s.t.} \quad \exists \pi'_{-i} \in \Pi_{-i} \text{ s.t. } \pi_i \in \text{BR}(\pi'_{-i})$$
+    $\max_{\pi_i} O_i(\pi_1, \dots, \pi_m) \quad \text{s.t.} \quad \exists \pi'_{-i} \in \Pi_{-i} \text{ s.t. } \pi_i \in \text{BR}(\pi'_{-i})$
    That is, the adversarial objective is optimized subject to the constraint that the policy must be a best response to at least one joint strategy of the other agents. This guarantees that the agent's behavior is "reasonable"—there exists some teammate strategy under which the agent's behavior is optimal.
 
    Key property: In zero-sum games, the RPO constraint is automatically satisfied (since minimizing the opponent's reward equals maximizing one's own), making RPO a strict generalization of adversarial training to zero-sum settings.
 
 2. **Manipulator and Opponent Shaping Mechanism**:
    The objective is decomposed into two parts:
-   - **Base agent** objective: $\max_{\pi_i} U(\pi_i, \pi^M_{-i})$ (best response to the manipulator, ensuring rationality)
-   - **Manipulator** objective: $\max_{\pi^M_{-i}} O_i(\pi_1, \dots, \pi_m)$ (optimizing the adversarial objective by influencing the base agent's learning)
+    - **Base agent** objective: $\max_{\pi_i} U(\pi_i, \pi^M_{-i})$ (best response to the manipulator, ensuring rationality)
+    - **Manipulator** objective: $\max_{\pi^M_{-i}} O_i(\pi_1, \dots, \pi_m)$ (optimizing the adversarial objective by influencing the base agent's learning)
 
    The manipulator's gradient update involves **higher-order gradients**—gradients taken through the base agent's parameter update step:
-   $$\theta^M_{-i} \leftarrow \theta^M_{-i} + \nabla_{\theta^M_{-i}} O_i(\theta'_1, \dots, \theta'_m)$$
+    $\theta^M_{-i} \leftarrow \theta^M_{-i} + \nabla_{\theta^M_{-i}} O_i(\theta'_1, \dots, \theta'_m)$
    where $\theta'_i$ denotes the base agent's parameters after the update.
 
 3. **Partner-Play Regularization**:
@@ -167,7 +167,7 @@ AD-RPG eliminates suicidal behavior and maintains high robustness across all env
 - [\[NeurIPS 2025\] Sequential Multi-Agent Dynamic Algorithm Configuration](sequential_multi-agent_dynamic_algorithm_configuration.md)
 - [\[NeurIPS 2025\] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](improving_retrieval-augmented_generation_through_multi-agent_reinforcement_learn.md)
 - [\[NeurIPS 2025\] Extending NGU to Multi-Agent RL: A Preliminary Study](extending_ngu_to_multi-agent_rl_a_preliminary_study.md)
-- [\[NeurIPS 2025\] Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning](finite-sample_analysis_of_policy_evaluation_for_robust_average_reward_reinforcem.md)
+- [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](../../ICLR2026/reinforcement_learning/multi-agent_guided_policy_optimization.md)
 
 </div>
 

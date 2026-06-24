@@ -1,0 +1,146 @@
+---
+title: >-
+  [Paper Note] Learning Optimal Multimodal Information Bottleneck Representations
+description: >-
+  [ICML2025][Multimodal VLM][Multimodal Learning] This paper proposes the OMIB framework, which guarantees the optimality of multimodal information bottleneck representations (retaining all task-relevant information and eliminating redundant information) by theoretically deriving the upper bound of the regularization parameter $\beta$ and dynamically adjusting the weight $r$ of each modality.
+tags:
+  - "ICML2025"
+  - "Multimodal VLM"
+  - "Multimodal Learning"
+  - "Information Bottleneck"
+  - "Variational Inference"
+  - "regularization bound"
+  - "cross-attention fusion"
+date: 2026-05-08
+content_hash: 21fcb1c8ab67dab7
+---
+
+# Learning Optimal Multimodal Information Bottleneck Representations
+
+**Conference**: ICML2025  
+**arXiv**: [2505.19996](https://arxiv.org/abs/2505.19996)  
+**Code**: Unreleased  
+**Area**: Multimodal VLM  
+**Keywords**: Multimodal Learning, Information Bottleneck, Variational Inference, regularization bound, cross-attention fusion
+
+## TL;DR
+This paper proposes the OMIB framework, which guarantees the optimality of multimodal information bottleneck representations (retaining all task-relevant information and eliminating redundant information) by theoretically deriving the upper bound of the regularization parameter $\beta$ and dynamically adjusting the weight $r$ of each modality.
+
+## Background & Motivation
+
+### Background
+
+**Background**: Multimodal Information Bottleneck (MIB) methods balance sufficiency and compactness by maximizing the mutual information between representations and labels, while minimizing the mutual information between representations and inputs.
+
+### Limitations of Prior Work
+
+**Limitations of Prior Work**: Existing Issue 1: The regularization parameter $\beta$ is typically hand-tuned. Improper values lead to either retaining redundant information or losing task-relevant information, failing to guarantee the optimal MIB.
+
+### Key Challenge
+
+**Key Challenge**: Existing Issue 2: The regularization weights for each modality are fixed, ignoring the imbalance of task-relevant information across modalities (weak modalities may carry small but crucial information).
+
+### Approach
+
+**Approach**: Existing Issue 3: Existing theories do not simultaneously cover the five information-theoretic factors: consistency, complementarity, specificity, sufficiency, and compactness.
+
+### Additional Notes
+
+**Additional Notes**: The authors derive the theoretical upper bound $M_u$ of $\beta$ for the first time. Optimizing within this range guarantees achieving the optimal MIB.
+
+## Method
+
+### Overall Architecture (OMIB)
+OMIB consists of a two-stage training process:
+1. **Warm-up Stage**: The Task Relevance Branch (TRB) trains an encoder $Enc_i$ for each modality $v_i$ to extract a sufficient representation $z_i$. This representation is concatenated with Gaussian noise and then passed through a prediction head $Dec_i$ to predict labels.
+2. **Main Training Stage**: The Optimal Multimodal Fusion (OMF) module is introduced, where $z_i$ is fed into a VAE to generate $\zeta_i$, which is then fused into the MIB representation $\xi$ using a Cross-Attention Network (CAN).
+
+### Key Designs
+- **VAE + Reparameterization**: $\mu_i, \Sigma_i = VAE_i(z_i)$, $\zeta_i = \mu_i + \Sigma_i \times \epsilon_i$
+- **Cross-Attention Fusion**: $\xi = CAN(\zeta_1, \zeta_2)$
+
+### Loss & Training
+Loss of OMF:
+
+$$L_{OMF} = \frac{1}{N}\sum_{n=1}^{N} \mathbb{E}_{\epsilon_1}\mathbb{E}_{\epsilon_2}[-\log q(y^n|\xi^n)] + \beta(KL[p(\zeta_1^n|z_1^n)||\mathcal{N}(0,I)] + r \cdot KL[p(\zeta_2^n|z_2^n)||\mathcal{N}(0,I)])$$
+
+where $\beta$ controls the strength of the redundancy constraint, and $r$ dynamically balances the regularization of both modalities.
+
+### Computation of Dynamic Weight $r$
+$$r = 1 - \tanh\left(\ln \frac{1}{N}\sum_{n}\frac{KL(p(\hat{y}_2^n|\xi^n,z_2^n)||p(\hat{y}^n|\xi^n))}{KL(p(\hat{y}_1^n|\xi^n,z_1^n)||p(\hat{y}^n|\xi^n))}\right)$$
+
+When a large amount of task-relevant information in $v_2$ remains uncoded, $r$ becomes smaller, encouraging more information to be incorporated from $v_2$.
+
+### Theoretical Upper Bound of $\beta$
+$$M_u = \frac{1}{(1+r)(H(v_1)+H(v_2)-I(v_1;v_2))}$$
+
+Setting $\beta \in (0, M_u]$ guarantees $F(\xi) = \{a_0,a_1,a_2\}$ (optimal MIB), which is computed under the prior from training data via MINE.
+
+## Key Experimental Results
+
+### Main Results
+
+| Task | Dataset | OMIB | Best Baseline | Gain |
+|------|--------|------|----------|------|
+| Emotion Recognition | CREMA-D | **Best** | Second-best baseline | Significant |
+| Sentiment Analysis | CMU-MOSI | **Best** | Second-best baseline | Leading in both regression and classification |
+| Abnormal Tissue Detection | 10x-hBC | **Best** | DMIB | AUC Gain |
+| Synthetic Data | SIM-I/III | 0.892/0.890 | Ground-truth optimal MIB 0.909/0.908 | Close to upper bound |
+
+- Synthetic data validation: The accuracy of MIB generated by OMIB (0.892) is close to the theoretical optimal MIB (0.909).
+- Performance drops significantly when $\beta$ exceeds the theoretical upper bound, validating Proposition 5.7.
+
+## Highlights & Insights
+- **Significant Theoretical Innovation**: For the first time, the reachability proof of the optimal MIB (Proposition 5.7) is provided, offering a mathematical guarantee for setting $\beta$.
+- **Dynamic Weight $r$**: Elegantly addresses the cross-modal information imbalance issue without requiring manual adjustment.
+- **Unification of Five Factors**: The theoretical analysis comprehensively covers consistency, complementarity, specificity, sufficiency, and compactness.
+- **Synthetic + Real Validation**: Synthetic data allows for the precise validation of the theoretical properties.
+
+## Limitations & Future Work
+- The computation of the upper bound of $\beta$ relies on MINE to estimate mutual information, which may be inaccurate for high-dimensional complex data.
+- The method is primarily validated in two-modality scenarios; although extension to multi-modality ($\ge 3$) is discussed in the appendix, it lacks experimental validation.
+- Synthetic data scenarios are relatively simple (Gaussian distributions), whereas the information structures of real-world data are far more complex.
+- The CAN fusion structure is relatively fixed, and the impact of other fusion strategies has not been explored.
+- The warm-up training phase uses random noise instead of MIB, and the stability of the transition to main training is not fully discussed.
+- For large-scale vision-language multimodal tasks (e.g., VQA, image-text retrieval), scalability remains an open problem.
+- The $\tanh$ mapping of the dynamic weight $r$ introduces an artificial upper bound of $(0, 2)$, which may limit extreme imbalance scenarios.
+- The theoretical analysis assumes that the cross-modal information structure conforms to a Venn diagram-like decomposition, whereas practical modal relationships can be much more complex.
+- Lacks comparison with recent Transformer-based end-to-end multimodal fusion methods (e.g., Perceiver, CoCa).
+- The training consists of two phases (TRB + OMF), which increases training complexity and the difficulty of hyperparameter tuning.
+
+## Related Work & Insights
+- **L-MIB/E-MIB/C-MIB** (Mai et al., 2023): Explores MIB at different fusion stages, but relies on empirical settings for $\beta$.
+- **DMIB** (Fang et al., 2024): Filters redundancy but lacks optimality guarantees.
+- **VIB** (Alemi et al., 2017): Variational Information Bottleneck framework, providing the basis for the variational approximation in OMIB.
+- Insight: The combination of theoretical constraints and dynamic adjustment is a promising direction for future multimodal learning.
+
+## Rating
+- Novelty: ⭐⭐⭐⭐ (Solid theoretical contribution, proving the reachability of optimal MIB for the first time)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Synthetic + multiple real-world tasks, comprehensive ablation study)
+- Writing Quality: ⭐⭐⭐⭐ (Clear theoretical derivation, intuitive figures)
+- Value: ⭐⭐⭐⭐ (Provides a solid theoretical foundation for MIB methods)
+
+### Additional Experimental Details
+- On synthetic data, the accuracy is highest when $\beta$ is set to the theoretical upper bound $M_u$, and drops sharply once exceeded.
+- CREMA-D Emotion Recognition: Audio-visual bimodal, 6-class emotion classification.
+- CMU-MOSI Sentiment Analysis: Vision + audio + text tri-modal, regression (from -3 to 3) and classification tasks.
+- 10x-hBC Abnormal Tissue Detection: Gene expression + histological images, SVDD anomaly detection.
+- Comprehensive comparison against baselines such as L-MIB, E-MIB, C-MIB, MMIB-Zhang, and DMIB.
+- Non-MIB baselines include fusion methods such as Concat, BiGated, and MISA.
+- Variational approximation utilizes KL divergence, and the reparameterization trick ensures differentiability.
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2025\] Graph4MM: Weaving Multimodal Learning with Structural Information](graph4mm_weaving_multimodal_learning_with_structural_information.md)
+- [\[AAAI 2026\] Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection](../../AAAI2026/multimodal_vlm/conditional_information_bottleneck_for_multimodal_fusion_overcoming_shortcut_lea.md)
+- [\[ACL 2026\] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck](../../ACL2026/multimodal_vlm/from_verbatim_to_gist_distilling_pyramidal_multimodal_memory_via_semantic_inform.md)
+- [\[ICLR 2026\] Calibrated Information Bottleneck for Trusted Multi-modal Clustering](../../ICLR2026/multimodal_vlm/calibrated_information_bottleneck_for_trusted_multi-modal_clustering.md)
+- [\[CVPR 2026\] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition](../../CVPR2026/multimodal_vlm/sed-ud_an_influence-driven_and_hierarchically-decoupled_information_bottleneck_f.md)
+
+</div>
+
+<!-- RELATED:END -->

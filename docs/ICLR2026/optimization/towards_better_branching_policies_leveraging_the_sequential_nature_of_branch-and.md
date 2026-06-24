@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Towards Better Branching Policies: Leveraging the Sequential Nature of Branch-and-Bound Tree
 description: >-
-  [ICLR 2026][Optimization & Theory][MILP] This paper proposes Mamba-Branching: explicitly modeling the Branch-and-Bound (B&B) solving process as a sequence of branching paths from the root to the optimal solution node. By utilizing Mamba with linear complexity for ultra-long sequence modeling and pre-training discriminative embeddings for candidate variables v
+  [ICLR 2026][Optimization][Branch-and-Bound] This paper proposes Mamba-Branching: explicitly modeling the Branch-and-Bound (B&B) solving process as a sequence of branching paths from the root to the optimal solution node. By utilizing Mamba with linear complexity for ultra-long sequence modeling and pre-training discriminative embeddings for candidate variables via contrastive learning, it outperforms all existing neural branching policies on heterogeneous MILPs and surpasses…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - MILP
-  - Mamba
+  - "ICLR 2026"
+  - "Optimization"
+  - "Branch-and-Bound"
+  - "MILP"
+  - "Variable Branching"
+  - "Mamba"
+  - "Contrastive Learning"
+  - "Imitation Learning"
 date: 2026-05-08
-content_hash: 78f1cce4d58a960c
+content_hash: 89aa1c93a128f38b
 ---
+
 # Towards Better Branching Policies: Leveraging the Sequential Nature of Branch-and-Bound Tree
 
 **Conference**: ICLR 2026  
@@ -145,10 +150,10 @@ Ablation on MILP-S using Mamba-Branching-p (pure neural version without `relpsco
 ## Related Papers
 
 - [\[ICLR 2026\] Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting](hinge_regression_tree_a_newton_method_for_oblique_regression_tree_splitting.md)
+- [\[ICLR 2026\] Leveraging Discrete Function Decomposability for Scientific Design](leveraging_discrete_function_decomposability_for_scientific_design.md)
 - [\[ICLR 2026\] Birch SGD: A Tree Graph Framework for Local and Asynchronous SGD Methods](birch_sgd_a_tree_graph_framework_for_local_and_asynchronous_sgd_methods.md)
 - [\[ICLR 2026\] Proving the Limited Scalability of Centralized Distributed Optimization via a New Lower Bound Construction](proving_the_limited_scalability_of_centralized_distributed_optimization_via_a_ne.md)
 - [\[ICLR 2026\] From Sequential to Parallel: Reformulating Dynamic Programming as GPU Kernels for Large-Scale Stochastic Combinatorial Optimization](from_sequential_to_parallel_reformulating_dynamic_programming_as_gpu_kernels_for.md)
-- [\[ICLR 2026\] Matched Data, Better Models: Target Aligned Data Filtering with Sparse Autoencoders](matched_data_better_models_target_aligned_data_filtering_with_sparse_autoencoder.md)
 
 </div>
 

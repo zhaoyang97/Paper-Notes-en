@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Solving Inverse Problems with Flow-based Models via Model Predictive Control
 description: >-
-  [ICML 2026][Image Restoration][Flow Matching] This work reformulates "solving inverse problems with pre-trained flow models" as **Model Predictive Control (MPC)**—instead of optimizing the entire sampling trajectory at once, it solves a short-horizon subproblem at each time step, applies one step of control, and re-plans. This significantly reduces memory usage an
+  [ICML 2026][Image Restoration][Flow Matching] This work reformulates "solving inverse problems with pre-trained flow models" as **Model Predictive Control (MPC)**—instead of optimizing the entire sampling trajectory at once, it solves a short-horizon subproblem at each time step, applies one step of control, and re-plans. This significantly reduces memory usage and leads to a variant that **requires no backpropagation through the flow model**…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - Flow Matching
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Flow Matching"
+  - "Optimal Control"
+  - "Model Predictive Control"
+  - "Training-Free Guidance"
+  - "Inverse Problems"
 date: 2026-05-08
-content_hash: f664d6dc62dc5bf6
+content_hash: 864abead87e16055
 ---
+
 # Solving Inverse Problems with Flow-based Models via Model Predictive Control
 
 **Conference**: ICML 2026  
@@ -150,11 +155,11 @@ Key takeaway: MPC-$\Delta t$ achieves top-tier results (often 1st or 2nd) and **
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flower: A Flow-Matching Solver for Inverse Problems](../../ICLR2026/image_restoration/flower_a_flow-matching_solver_for_inverse_problems.md)
 - [\[ICML 2026\] Learning Normalized Energy Models for Linear Inverse Problems](learning_normalized_energy_models_for_linear_inverse_problems.md)
 - [\[CVPR 2025\] FiRe: Fixed-points of Restoration Priors for Solving Inverse Problems](../../CVPR2025/image_restoration/fire_fixed-points_of_restoration_priors_for_solving_inverse_problems.md)
+- [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
 - [\[CVPR 2026\] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems](../../CVPR2026/image_restoration/pnp-cm_consistency_models_as_plug-and-play_priors_for_inverse_problems.md)
-- [\[ICLR 2026\] SoFlow: Solution Flow Models for One-Step Generative Modeling](../../ICLR2026/image_restoration/soflow_solution_flow_models_for_one-step_generative_modeling.md)
-- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](../../CVPR2026/image_restoration/dual_ascent_diffusion_for_inverse_problems.md)
 
 </div>
 

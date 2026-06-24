@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] 3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience
 description: >-
-  [CVPR 2026][3D Vision][LLM] Proposes the training-free 3DrawAgent framework, which enables frozen LLMs to self-learn 3D spatial reasoning through "contrastive experience optimization." It generates language-driven 3D Bezier sketches in an autoregressive manner, achieving performance close to trained methods without parameter updates.
+  [CVPR 2026 Highlight][3D Vision][3D Sketch Generation] Proposes the training-free 3DrawAgent framework, which enables frozen LLMs to self-learn 3D spatial reasoning through "contrastive experience optimization." It generates language-driven 3D Bezier sketches in an autoregressive manner, achieving performance close to trained methods without parameter updates.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - LLM
+  - "CVPR 2026 Highlight"
+  - "3D Vision"
+  - "3D Sketch Generation"
+  - "LLM"
+  - "Training-free"
+  - "Contrastive Experience Optimization"
+  - "Bezier Curves"
 date: 2026-05-08
-content_hash: 0d5e7470e7c9be33
+content_hash: 55a0a38785a8dd6c
 ---
+
 # 3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience
 
 **Conference**: CVPR 2026 Highlight  
@@ -139,11 +144,11 @@ Take "drawing a chair" as an example. In Round 0, the experience library is empt
 
 ## Related Papers
 
+- [\[CVPR 2026\] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding](3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras.md)
 - [\[CVPR 2026\] NTK-Guided Implicit Neural Teaching](ntk-guided_implicit_neural_teaching.md)
 - [\[CVPR 2026\] ArtLLM: Generating Articulated Assets via 3D LLM](artllm_generating_articulated_assets_via_3d_llm.md)
-- [\[CVPR 2026\] 3D-IDE: 3D Implicit Depth Emergent](3d-ide_3d_implicit_depth_emergent.md)
-- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
+- [\[AAAI 2026\] UniC-Lift: Unified 3D Instance Segmentation via Contrastive Learning](../../AAAI2026/3d_vision/unic-lift_unified_3d_instance_segmentation_via_contrastive_learning.md)
+- [\[CVPR 2026\] CoSMo3D: Open-World Promptable 3D Semantic Segmentation through LLM-Guided Canonical Spatial Modeling](cosmo3d_open-world_promptable_3d_semantic_segmentation_through_llm-guided_canoni.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Early Signs of Steganographic Capabilities in Frontier LLMs
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper systematically evaluates the "steganographic" capabilities of frontier large models (GPT-4.1/4.5, Claude 3.5/3.7/Opus 4, o3-mini, Gemini 2.5, etc.)—the ability to hide secret information or reasoning within seemingly innocuous outputs to evade monitoring. It finds that current models succeed only under "stro
+  [ICLR2026][LLM Safety][Steganography] This paper systematically evaluates the "steganographic" capabilities of frontier large models (GPT-4.1/4.5, Claude 3.5/3.7/Opus 4, o3-mini, Gemini 2.5, etc.)—the ability to hide secret information or reasoning within seemingly innocuous outputs to evade monitoring. It finds that current models succeed only under "strong prompts," such as being provided specific encoding schemes, having access to unmonitored scratchpads…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Steganography"
+  - "CoT Monitoring"
+  - "Encoded Reasoning"
+  - "Monitor Evasion"
+  - "Dangerous Capability Evaluation"
 date: 2026-05-08
-content_hash: 9ef63ccf45ef5d99
+content_hash: 3d26c8029cec7dc2
 ---
+
 # Early Signs of Steganographic Capabilities in Frontier LLMs
 
 **Conference**: ICLR2026  
@@ -130,7 +136,7 @@ The authors attribute the collapse of encoded reasoning in realistic settings to
 - [\[ICLR 2026\] Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs](strategic_dishonesty_can_undermine_ai_safety_evaluations_of_frontier_llms.md)
 - [\[ACL 2025\] Are the Hidden States Hiding Something? Testing the Limits of Factuality-Encoding Capabilities in LLMs](../../ACL2025/llm_safety/are_the_hidden_states_hiding_something_testing_the_limits_of_factuality-encoding.md)
 - [\[NeurIPS 2025\] CoreGuard: Safeguarding Foundational Capabilities of LLMs Against Model Stealing in Edge Deployment](../../NeurIPS2025/llm_safety/coreguard_safeguarding_foundational_capabilities_of_llms_against_model_stealing_.md)
-- [\[ICLR 2026\] CIMemories: A Compositional Benchmark For Contextual Integrity In LLMs](cimemories_a_compositional_benchmark_for_contextual_integrity_in_llms.md)
+- [\[ICLR 2026\] Bias Similarity Measurement: A Black-Box Audit of Fairness Across LLMs](bias_similarity_measurement_a_black-box_audit_of_fairness_across_llms.md)
 
 </div>
 

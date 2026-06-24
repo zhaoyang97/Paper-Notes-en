@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] PredNext introduces a plug-and-play "cross-view future prediction" module for self-supervised video learning in Spiking Neural Networks (SNNs). By simultaneously predicting features of the next time step and the next clip within the same video, it enhances temporal feature consistency without imposing rigid constraints
+  [ICLR 2026][Self-Supervised Learning][Spiking Neural Networks] PredNext introduces a plug-and-play "cross-view future prediction" module for self-supervised video learning in Spiking Neural Networks (SNNs). By simultaneously predicting features of the next time step and the next clip within the same video, it enhances temporal feature consistency without imposing rigid constraints. This allows deep SNNs to learn unsupervised representations on large-scale video datasets like…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Spiking Neural Networks"
+  - "Temporal Prediction"
+  - "Video Representation"
+  - "Feature Consistency"
 date: 2026-05-08
-content_hash: 9ef76522a76e3adf
+content_hash: 80a7fe1ea048569c
 ---
+
 # PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks
 
 **Conference**: ICLR 2026  
@@ -141,16 +146,16 @@ Cross-view vs. same-view (UCF101 Top-1):
 - Value: ⭐⭐⭐⭐ Provides a reusable plug-and-play module and standard benchmarks for unsupervised video learning in deep SNNs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](../../CVPR2026/self_supervised/robust_spiking_neural_networks_by_temporal_mutual_information.md)
 - [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](../../CVPR2026/self_supervised/on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)
-- [\[ICLR 2026\] Maximizing Asynchronicity in Event-based Neural Networks](maximizing_asynchronicity_in_event-based_neural_networks.md)
 - [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](../../AAAI2026/self_supervised/spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
-- [\[ICLR 2026\] Rethinking Unsupervised Cross-Modal Flow Estimation: Learning from Decoupled Optimization and Consistency Constraint](rethinking_unsupervised_cross-modal_flow_estimation_learning_from_decoupled_opti.md)
+- [\[CVPR 2026\] Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses](../../CVPR2026/self_supervised/reconstructing_spiking_neural_networks_using_a_single_neuron_with_autapses.md)
+- [\[ICLR 2026\] Maximizing Asynchronicity in Event-based Neural Networks](maximizing_asynchronicity_in_event-based_neural_networks.md)
 
 </div>
 

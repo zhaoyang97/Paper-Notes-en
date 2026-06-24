@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Features Emerge as Discrete States: The First Application of SAEs to 3D Representations
 description: >-
-  [ICLR 2026][Interpretability][Sparse Autoencoder] The first application of Sparse Autoencoders (SAEs) to the latent space of 3D reconstruction VAEs reveals that 3D models encode continuous positions into "discrete states + phase transitions." A proposed framework based on gradient dynamics provides a unified explanation for positional encoding preferences, S-shaped ab
+  [ICLR 2026][Interpretability][Sparse Autoencoder] The first application of Sparse Autoencoders (SAEs) to the latent space of 3D reconstruction VAEs reveals that 3D models encode continuous positions into "discrete states + phase transitions." A proposed framework based on gradient dynamics provides a unified explanation for positional encoding preferences, S-shaped ablation-loss curves, and the bimodal distribution of phase transition points.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Sparse Autoencoder
-  - 3D VAE
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoder"
+  - "Feature Decomposition"
+  - "3D VAE"
+  - "Discrete State Space"
+  - "Phase Transition"
+  - "Superposition Interference"
 date: 2026-05-08
-content_hash: 6e55c7480c9f2a66
+content_hash: 831051797a4bd607
 ---
+
 # Features Emerge as Discrete States: The First Application of SAEs to 3D Representations
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning
 description: >-
-  [ICML 2026][Pretraining][LTL] The authors modify the Transformer into a structure with "a shared-weight parallel embedding stream for each interchangeable symbol + cross-stream aggregated attention." This architecture-level design guarantees identical outputs for variable renaming (alpha-equivalence) and allows the inclusion of new symbols not seen
+  [ICML 2026][LLM Pretraining][Symbol Invariance] The authors modify the Transformer into a structure with "a shared-weight parallel embedding stream for each interchangeable symbol + cross-stream aggregated attention." This architecture-level design guarantees identical outputs for variable renaming (alpha-equivalence) and allows the inclusion of new symbols not seen during training into the vocabulary during testing. It outperforms comparable baselines and even GPT-5.2 on pro…
 tags:
-  - ICML 2026
-  - Pretraining
-  - LTL
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "Symbol Invariance"
+  - "alpha-equivalence"
+  - "Parallel Embedding Streams"
+  - "Open-Vocabulary Generalization"
+  - "LTL"
 date: 2026-05-08
-content_hash: 45caacd71c552252
+content_hash: fe641f3af407f71f
 ---
+
 # Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning
 
 **Conference**: ICML 2026  
@@ -138,9 +143,9 @@ Codes: E/D/C = Encoder/Decoder/Cross-attention; P/A = Per-stream/Aggregated.
 
 - [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](../../CVPR2026/llm_pretraining/reconstructing_clip_for_open-vocabulary_dense_perception.md)
 - [\[ECCV 2024\] Plan, Posture and Go: Towards Open-Vocabulary Text-to-Motion Generation](../../ECCV2024/llm_pretraining/plan_posture_and_go_towards_open-vocabulary_text-to-motion_generation.md)
-- [\[ICML 2026\] If open source is to win, it must go public](if_open_source_is_to_win_it_must_go_public.md)
 - [\[NeurIPS 2025\] Learning in Compact Spaces with Approximately Normalized Transformer](../../NeurIPS2025/llm_pretraining/learning_in_compact_spaces_with_approximately_normalized_transformer.md)
-- [\[NeurIPS 2025\] Born a Transformer – Always a Transformer? On the Effect of Pretraining on Architectural Abilities](../../NeurIPS2025/llm_pretraining/born_a_transformer_--_always_a_transformer_on_the_effect_of_pretraining_on_archi.md)
+- [\[ICML 2026\] If open source is to win, it must go public](if_open_source_is_to_win_it_must_go_public.md)
+- [\[ICML 2026\] Different Layers, Different Manifolds: Module-Wise Weight-Space Geometry in Transformer Optimization](different_layers_different_manifolds_module-wise_weight-space_geometry_in_transf.md)
 
 </div>
 

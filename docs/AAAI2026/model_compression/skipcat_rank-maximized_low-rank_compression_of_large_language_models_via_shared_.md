@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping
 description: >-
-  [AAAI 2026][Model Compression][Low-rank compression] SkipCat proposes a rank-maximized low-rank compression framework that introduces two techniques—intra-layer shared projection (Cat) and block skipping (Skip)—to retain…
+  [AAAI 2026][Model Compression][Low-rank compression] SkipCat proposes a rank-maximized low-rank compression framework that introduces two techniques—intra-layer shared projection (Cat) and block skipping (Skip)—to retain more effective rank under the same compression ratio. Without any fine-tuning, it achieves up to 7% accuracy improvement on zero-shot tasks over existing low-rank methods.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "block skipping"
   - "shared projection"
 date: 2026-05-08
-content_hash: eaa68f979625f800
+content_hash: d5b7a7e32be21f76
 ---
 
 # SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping
@@ -155,10 +155,10 @@ Used jointly, the two techniques significantly increase the number of effective 
 ## Related Papers
 
 - [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](../../ACL2026/model_compression/tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
+- [\[ICLR 2026\] GlowQ: Group-Shared Low-Rank Approximation for Quantized LLMs](../../ICLR2026/model_compression/glowq_group-shared_low-rank_approximation_for_quantized_llms.md)
 - [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](../../ACL2026/model_compression/talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
 - [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
-- [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](../../NeurIPS2025/model_compression/gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
-- [\[NeurIPS 2025\] C-LoRA: Contextual Low-Rank Adaptation for Uncertainty Estimation in Large Language Models](../../NeurIPS2025/model_compression/c-lora_contextual_low-rank_adaptation_for_uncertainty_estimation_in_large_langua.md)
+- [\[ICLR 2026\] Large Language Model Compression with Global Rank and Sparsity Optimization](../../ICLR2026/model_compression/large_language_model_compression_with_global_rank_and_sparsity_optimization.md)
 
 </div>
 

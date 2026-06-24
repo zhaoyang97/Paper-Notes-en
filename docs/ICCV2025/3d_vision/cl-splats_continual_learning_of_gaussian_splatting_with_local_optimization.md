@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CL-Splats: Continual Learning of Gaussian Splatting with Local Optimization
 description: >-
-  [ICCV 2025][3D Vision][Gaussian Splatting] This paper proposes CL-Splats, a continual learning framework built on 3D Gaussian Splatting that incrementally updates scene reconstructions from sparse novel views via DINOv2-…
+  [ICCV 2025][3D Vision][Gaussian Splatting] This paper proposes CL-Splats, a continual learning framework built on 3D Gaussian Splatting that incrementally updates scene reconstructions from sparse novel views via DINOv2-based change detection, 2D-to-3D mask lifting, and sphere-constrained local optimization. CL-Splats substantially outperforms CL-NeRF and related methods on both synthetic and real scenes (PSNR: 40.1 vs. 30.1 dB) while supporting applications such as historica…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "scene update"
   - "change detection"
 date: 2026-05-08
-content_hash: 2893112999d3b101
+content_hash: 1b7a19805ee6fffe
 ---
 
 # CL-Splats: Continual Learning of Gaussian Splatting with Local Optimization
@@ -154,9 +154,9 @@ Background freezing is the single most critical factor (+20 dB); the local optim
 
 - [\[ICCV 2025\] GaussianUpdate: Continual 3D Gaussian Splatting Update for Changing Environments](gaussianupdate_continual_3d_gaussian_splatting_update_for_changing_environments.md)
 - [\[ICCV 2025\] A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision](a_lesson_in_splats_teacher-guided_diffusion_for_3d_gaussian_splats_generation_wi.md)
-- [\[ICCV 2025\] 3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt](3dgslm_faster_gaussiansplatting_optimization_with_levenbergm.md)
 - [\[AAAI 2026\] Splats in Splats: Robust and Effective 3D Steganography towards Gaussian Splatting](../../AAAI2026/3d_vision/splats_in_splats_robust_and_effective_3d_steganography_towards_gaussian_splattin.md)
-- [\[ICCV 2025\] EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device](embodiedsplat_personalized_real-to-sim-to-real_navigation_with_gaussian_splats_f.md)
+- [\[ICCV 2025\] 3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt](3dgslm_faster_gaussiansplatting_optimization_with_levenbergm.md)
+- [\[CVPR 2025\] GaussHDR: High Dynamic Range Gaussian Splatting via Learning Unified 3D and 2D Local Tone Mapping](../../CVPR2025/3d_vision/gausshdr_high_dynamic_range_gaussian_splatting_via_learning_unified_3d_and_2d_lo.md)
 
 </div>
 

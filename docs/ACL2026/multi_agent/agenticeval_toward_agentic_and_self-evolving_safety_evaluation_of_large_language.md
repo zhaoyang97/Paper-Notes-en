@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models
 description: >-
-  [ACL 2026][Multi-Agent][agentic evaluation] AgenticEval redefines LLM safety evaluation as a "continuous, self-evolving red-teaming process": the Specialist decomposes unstructured regulatory text into an atomic rule knowledge base; the Generator creates multimodal and multi-format Question Groups centered around each rule; the Evaluator + Analyst continuously t
+  [ACL 2026 Findings][Multi-Agent][agentic evaluation] AgenticEval redefines LLM safety evaluation as a "continuous, self-evolving red-teaming process": the Specialist decomposes unstructured regulatory text into an atomic rule knowledge base; the Generator creates multimodal and multi-format Question Groups centered around each rule; the Evaluator + Analyst continuously transform failures from the current round into more aggressive attack strategies for the next. After three i…
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - agentic evaluation
-  - regulation-grounded
-  - self-evolving red-teaming
-  - EU AI Act
+  - "ACL 2026 Findings"
+  - "Multi-Agent"
+  - "agentic evaluation"
+  - "regulation-grounded"
+  - "self-evolving red-teaming"
+  - "EU AI Act"
 date: 2026-05-08
-content_hash: 0bafe1d8af724948
+content_hash: 3ff542caa71bdb5e
 ---
+
 # AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -166,13 +167,13 @@ Impact of key components (Final safety rate for GPT-5 ↑ means evaluation failu
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Cache-to-Cache: Direct Semantic Communication Between Large Language Models](../../ICLR2026/multi_agent/cache-to-cache_direct_semantic_communication_between_large_language_models.md)
 - [\[NeurIPS 2025\] Large Language Models Miss the Multi-Agent Mark](../../NeurIPS2025/multi_agent/large_language_models_miss_the_multi-agent_mark.md)
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
-- [\[ICLR 2026\] Cache-to-Cache: Direct Semantic Communication Between Large Language Models](../../ICLR2026/multi_agent/cache-to-cache_direct_semantic_communication_between_large_language_models.md)
 - [\[ACL 2026\] Towards Self-Improving Error Diagnosis in Multi-Agent Systems](towards_self-improving_error_diagnosis_in_multi-agent_systems.md)
 - [\[NeurIPS 2025\] Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?](../../NeurIPS2025/multi_agent/debate_or_vote_which_yields_better_decisions_in_multi-agent_large_language_model.md)
 

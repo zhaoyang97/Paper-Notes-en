@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Lightweight Transformer for EEG Classification via Balanced Signed Graph Algorithm Unrolling
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] The paper unrolls a "spectral denoising algorithm on balanced signed graphs" into an interpretable Transformer-like network. It utilizes the reconstruction errors of two class-specific denoisers for binary epilepsy EEG classification, achieving an accuracy improvement from 85% to 97.6% while using less than 1% of the p
+  [ICLR 2026][Medical Imaging][EEG classification] The paper unrolls a "spectral denoising algorithm on balanced signed graphs" into an interpretable Transformer-like network. It utilizes the reconstruction errors of two class-specific denoisers for binary epilepsy EEG classification, achieving an accuracy improvement from 85% to 97.6% while using less than 1% of the parameters compared to standard Transformers.
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "EEG classification"
+  - "algorithm unrolling"
+  - "balanced signed graphs"
+  - "graph signal denoising"
+  - "white-box Transformer"
+  - "lightweight model"
 date: 2026-05-08
-content_hash: 363e23dc869436d3
+content_hash: 3dd2037d3de7546d
 ---
+
 # Lightweight Transformer for EEG Classification via Balanced Signed Graph Algorithm Unrolling
 
 **Conference**: ICLR 2026  
@@ -119,8 +126,8 @@ Dataset: Turkish Epilepsy EEG (10,356 records, 121 subjects, 35 channels, 500Hz,
 - [\[ICLR 2026\] ODEBRAIN: Continuous-Time EEG Graph for Modeling Dynamic Brain Networks](odebrain_continuous-time_eeg_graph_for_modeling_dynamic_brain_networks.md)
 - [\[CVPR 2026\] MedFG-VQA: Low-Frequency Memory and Graph Attention for Lightweight Medical VQA](../../CVPR2026/medical_imaging/medfg-vqa_low-frequency_memory_and_graph_attention_for_lightweight_medical_vqa.md)
 - [\[ICLR 2026\] Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization](frequency-balanced_retinal_representation_learning_with_mutual_information_regul.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
 - [\[CVPR 2026\] GraPHFormer: A Multimodal Graph Persistent Homology Transformer for the Analysis of Neuroscience Morphologies](../../CVPR2026/medical_imaging/graphformer_a_multimodal_graph_persistent_homology_transformer_for_the_analysis_.md)
-- [\[ICLR 2026\] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer](brain-it_image_reconstruction_from_fmri_via_brain-interaction_transformer.md)
 
 </div>
 

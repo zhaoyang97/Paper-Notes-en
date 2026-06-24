@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MagCache: Fast Video Generation with Magnitude-Aware Cache
 description: >-
-  [NeurIPS 2025][Video Generation][Video diffusion model acceleration] This paper discovers that the magnitude ratio of residual outputs between adjacent timesteps in video diffusion models follows a universally monotonica…
+  [NeurIPS 2025][Video Generation][Video diffusion model acceleration] This paper discovers that the magnitude ratio of residual outputs between adjacent timesteps in video diffusion models follows a universally monotonically decreasing pattern across models and prompts — termed the "Unified Magnitude Law" — and proposes MagCache: a method that accurately models skip-step error accumulation via magnitude ratios, adaptively skips redundant timesteps and reuses cached outputs wit…
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "timestep skipping"
   - "inference acceleration"
 date: 2026-05-08
-content_hash: d48f7b2bb2dc1ae3
+content_hash: f04cd1c3af4db378
 ---
 
 # MagCache: Fast Video Generation with Magnitude-Aware Cache
@@ -172,11 +172,11 @@ Calibration prompt robustness experiment (Wan 2.1, slow mode):
 
 ## Related Papers
 
+- [\[ICLR 2026\] FastCar: Cache Attentive Replay for Fast Auto-Regressive Video Generation on the Edge](../../ICLR2026/video_generation/fastcar_cache_attentive_replay_for_fast_auto-regressive_video_generation_on_the_.md)
 - [\[ICCV 2025\] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks](../../ICCV2025/video_generation/generating_fast_and_slow_scalable_parallel_video_generation_with_video_interface.md)
-- [\[CVPR 2026\] FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters](../../CVPR2026/video_generation/fastlightgen_fast_and_light_video_generation_with_fewer_steps_and_parameters.md)
-- [\[ICML 2026\] Quantized Keys Steal Attention: Bias Correction for KV-Cache Compression in Video Generation](../../ICML2026/video_generation/quantized_keys_steal_attention_bias_correction_for_kv-cache_compression_in_video.md)
-- [\[ICML 2026\] Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization](../../ICML2026/video_generation/quant_videogen_auto-regressive_long_video_generation_via_2-bit_kv-cache_quantiza.md)
-- [\[ICLR 2026\] Geometry-aware 4D Video Generation for Robot Manipulation](../../ICLR2026/video_generation/geometry-aware_4d_video_generation_for_robot_manipulation.md)
+- [\[CVPR 2025\] From Slow Bidirectional to Fast Autoregressive Video Diffusion Models](../../CVPR2025/video_generation/from_slow_bidirectional_to_fast_autoregressive_video_diffusion_models.md)
+- [\[CVPR 2026\] SURF: Signature-Retained Fast Video Generation](../../CVPR2026/video_generation/surf_signature-retained_fast_video_generation.md)
+- [\[CVPR 2026\] Transition Matching Distillation for Fast Video Generation](../../CVPR2026/video_generation/transition_matching_distillation_for_fast_video_generation.md)
 
 </div>
 

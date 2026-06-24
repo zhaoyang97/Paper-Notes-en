@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] A 14B causal Transformer is utilized to perform next-token prediction directly on **continuous image tokens**, paired with a lightweight 157M flow matching head as a sampler. Without relying on heavy diffusion backbones or vector quantization, this approach achieves pure autoregressive text-to-image quality comparable
+  [ICLR 2026][Image Generation][Autoregressive image generation] A 14B causal Transformer is utilized to perform next-token prediction directly on **continuous image tokens**, paired with a lightweight 157M flow matching head as a sampler. Without relying on heavy diffusion backbones or vector quantization, this approach achieves pure autoregressive text-to-image quality comparable to top-tier diffusion models.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Autoregressive image generation"
+  - "continuous tokens"
+  - "Flow Matching"
+  - "image tokenizer"
+  - "text-to-image"
 date: 2026-05-08
-content_hash: 2adb96072385c1a6
+content_hash: ef8f9f1a475a4acd
 ---
+
 # NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale
 
 **Conference**: ICLR 2026  

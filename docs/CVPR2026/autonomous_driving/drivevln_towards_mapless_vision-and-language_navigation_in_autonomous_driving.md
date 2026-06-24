@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DriveVLN: Towards Mapless Vision-and-Language Navigation in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] DriveVLN migrates "Vision-and-Language Navigation" to autonomous driving: in scenarios without high-definition maps and given only destination-level instructions (e.g., "go to the exit/charging pile"), it enables vehicles to find their way using visual cues and historical decisions. The authors reconstructed 200 real-w
+  [CVPR 2026][Autonomous Driving][Mapless Driving] DriveVLN migrates "Vision-and-Language Navigation" to autonomous driving: in scenarios without high-definition maps and given only destination-level instructions (e.g., "go to the exit/charging pile"), it enables vehicles to find their way using visual cues and historical decisions. The authors reconstructed 200 real-world scenes in CARLA to create a closed-loop benchmark and established a baseline using a "Planning Module for…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Mapless Driving"
+  - "Vision-and-Language Navigation"
+  - "Closed-loop Simulation"
+  - "Candidate Trajectory Selection"
+  - "GRPO Reinforcement Learning"
 date: 2026-05-08
-content_hash: 153cd9e3f0198378
+content_hash: 50698d01326e7e28
 ---
+
 # DriveVLN: Towards Mapless Vision-and-Language Navigation in Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -126,15 +132,16 @@ The 3B fine-tuned model outperforms large models like GPT-5 and Qwen2.5-VL-72B. 
 - Value: ⭐⭐⭐⭐⭐ (Establishes a solid framework for language-driven mapless navigation)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
 - [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
 - [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
 - [\[CVPR 2026\] EventDrive: Event Cameras for Vision-Language Driving Intelligence](eventdrive_event_cameras_for_vision-language_driving_intelligence.md)
 - [\[CVPR 2026\] WalkGPT: Grounded Vision-Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation](walkgpt_grounded_vision-language_conversation_with_depth-aware_segmentation_for_.md)
+- [\[CVPR 2026\] HybridDriveVLA: Vision-Language-Action Model with Visual CoT reasoning and ToT Evaluation for Autonomous Driving](hybriddrivevla_vision-language-action_model_with_visual_cot_reasoning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis
 description: >-
-  [NeurIPS 2025][Graph Learning][Retrieval-augmented diagnosis] This paper proposes RAD, a retrieval-augmented diagnostic framework that retrieves disease guidelines from multi-source medical corpora and injects them throu…
+  [NeurIPS 2025][Graph Learning][Retrieval-augmented diagnosis] This paper proposes RAD, a retrieval-augmented diagnostic framework that retrieves disease guidelines from multi-source medical corpora and injects them throughout the full pipeline of a multimodal model — from feature extraction to cross-modal fusion. A dual-axis explainability evaluation protocol is also introduced. RAD achieves state-of-the-art performance on four datasets spanning distinct anatomical regions.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "explainability"
   - "clinical guidelines"
 date: 2026-05-08
-content_hash: 3148f0176141961f
+content_hash: 0cb7d4aac761c560
 ---
 
 # RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis
@@ -73,8 +73,8 @@ RAD comprises three synergistic components: (1) multi-source guideline retrieval
 3. **Dual Diagnostic Network**
 
    Two symmetric Transformer decoders operate in parallel:
-   - **Guideline branch**: Uses the encoding of guideline $g$ as query and concatenated modality features $\mathbf{V}_i \oplus \mathbf{T}_i$ as key/value, outputting $\hat{y}_i^{\text{guide}}$
-   - **Label branch**: Uses the encoding of disease name $E$ as query and concatenated modality features as key/value, outputting $\hat{y}_i^{\text{label}}$
+    - **Guideline branch**: Uses the encoding of guideline $g$ as query and concatenated modality features $\mathbf{V}_i \oplus \mathbf{T}_i$ as key/value, outputting $\hat{y}_i^{\text{guide}}$
+    - **Label branch**: Uses the encoding of disease name $E$ as query and concatenated modality features as key/value, outputting $\hat{y}_i^{\text{label}}$
 
    Total training loss:
    $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{BCE}}(\hat{y}^{\text{guide}}, y) + \mathcal{L}_{\text{BCE}}(\hat{y}^{\text{label}}, y) + \beta \mathcal{L}_{\text{GECL}}$
@@ -163,7 +163,7 @@ RAD comprises three synergistic components: (1) multi-source guideline retrieval
 - [\[ACL 2026\] LegalGraphRAG: Multi-Agent Graph Retrieval-Augmented Generation for Reliable Legal Reasoning](../../ACL2026/graph_learning/legalgraphrag_multi-agent_graph_retrieval-augmented_generation_for_reliable_lega.md)
 - [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
 - [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](../../CVPR2026/graph_learning/m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
-- [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](../../ACL2026/graph_learning/megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
+- [\[ACL 2025\] Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation (K-RagRec)](../../ACL2025/graph_learning/kg_rag_recommendation.md)
 
 </div>
 

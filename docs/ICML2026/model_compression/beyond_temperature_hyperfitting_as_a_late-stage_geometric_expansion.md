@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion
 description: >-
-  [ICML 2026][Model Compression][Hyperfitting] This paper demonstrates through controlled experiments that Hyperfitting (training LLMs to near-zero loss on small datasets) is not a temperature-scaling-style distribution sharpening, but a dynamic, context-dependent token Rank Reordering mechanism. This mechanism concentratedly occurs in the final layer of the Transf
+  [ICML 2026][Model Compression][Hyperfitting] This paper demonstrates through controlled experiments that Hyperfitting (training LLMs to near-zero loss on small datasets) is not a temperature-scaling-style distribution sharpening, but a dynamic, context-dependent token Rank Reordering mechanism. This mechanism concentratedly occurs in the final layer of the Transformer as a "Terminal Geometric Expansion" ($\Delta \text{Dim} \approx +80.8$). Based on this…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Hyperfitting
-  - Late-Stage LoRA
+  - "ICML 2026"
+  - "Model Compression"
+  - "Hyperfitting"
+  - "Rank Reordering"
+  - "Terminal Geometric Expansion"
+  - "Late-Stage LoRA"
+  - "Greedy Decoding Degradation"
 date: 2026-05-08
-content_hash: f59cce9203b7280f
+content_hash: 2d4e96ac203879da
 ---
+
 # Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion
 
 **Conference**: ICML 2026  
@@ -122,9 +126,9 @@ Since changes stem from internal representations, they should be detectable laye
 ## Related Papers
 
 - [\[ICML 2026\] The Shape of Addition: Geometric Structures of Arithmetic in Large Language Models](the_shape_of_addition_geometric_structures_of_arithmetic_in_large_language_model.md)
-- [\[AAAI 2026\] Condensed Data Expansion Using Model Inversion for Knowledge Distillation](../../AAAI2026/model_compression/condensed_data_expansion_using_model_inversion_for_knowledge_distillation.md)
-- [\[ICML 2026\] Beyond Tokens: Enhancing RTL Quality Estimation via Structural Graph Learning](beyond_tokens_enhancing_rtl_quality_estimation_via_structural_graph_learning.md)
 - [\[NeurIPS 2025\] Geometric Data Valuation via Leverage Scores](../../NeurIPS2025/model_compression/geometric_data_valuation_via_leverage_scores.md)
+- [\[ICML 2026\] Beyond Tokens: Enhancing RTL Quality Estimation via Structural Graph Learning](beyond_tokens_enhancing_rtl_quality_estimation_via_structural_graph_learning.md)
+- [\[AAAI 2026\] Condensed Data Expansion Using Model Inversion for Knowledge Distillation](../../AAAI2026/model_compression/condensed_data_expansion_using_model_inversion_for_knowledge_distillation.md)
 - [\[ACL 2026\] Two-Stage Regularization-Based Structured Pruning for LLMs](../../ACL2026/model_compression/two-stage_regularization-based_structured_pruning_for_llms.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models
 description: >-
-  [CVPR 2026][Others][Paper Note] RSIAT employs a **single shared adapter** (with parameters remaining constant regardless of task growth) for PTM-based class-incremental learning. It first shapes features to be intra-class compact and inter-class separable using a "Representation-Steered Loss" in the base task. Then, in incremental tasks, it utilizes
+  [CVPR 2026][Self-Supervised Learning][Class-Incremental Learning] RSIAT employs a **single shared adapter** (with parameters remaining constant regardless of task growth) for PTM-based class-incremental learning. It first shapes features to be intra-class compact and inter-class separable using a "Representation-Steered Loss" in the base task. Then, in incremental tasks, it utilizes "Residual AutoEncoder Projection + Orthogonal Loss" to align new and old feature spaces and su…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Class-Incremental Learning"
+  - "Pre-Trained Models"
+  - "Shared Adapter"
+  - "Representation Steering"
+  - "Prototype Drift"
 date: 2026-05-08
-content_hash: a3a6fc7b8c3083a9
+content_hash: afca21a43f3eefc7
 ---
+
 # Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models
 
 **Conference**: CVPR 2026  
@@ -155,11 +161,11 @@ Ablation of components on ImageNet-R/A (B0I20) ($\bar A$/$A_B$):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Smart Replay: Adaptive Scheduling of Memory Rehearsal for Computational Resource-Aware Incremental Learning](smart_replay_adaptive_scheduling_of_memory_rehearsal_for_computational_resource-.md)
-- [\[CVPR 2026\] Drainage: A Unifying Framework for Addressing Class Uncertainty](drainage_a_unifying_framework_for_addressing_class_uncertainty.md)
-- [\[CVPR 2026\] Temporal Representation Enhancement (TRE): Learning to Forget Dominant Patterns for Enhanced Temporal Spiking Features](temporal_representation_enhancement_tre_learning_to_forget_dominant_patterns_for.md)
-- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
-- [\[CVPR 2026\] Bias In, Bias Out? Finding Unbiased Subnetworks in Vanilla Models](bias_in_bias_out_finding_unbiased_subnetworks_in_vanilla_models.md)
+- [\[CVPR 2026\] Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)
+- [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
+- [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
+- [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
+- [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
 
 </div>
 

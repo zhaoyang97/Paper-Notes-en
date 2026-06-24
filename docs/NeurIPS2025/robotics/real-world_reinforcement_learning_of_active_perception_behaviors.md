@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Real-World Reinforcement Learning of Active Perception Behaviors
 description: >-
-  [NeurIPS 2025][Robotics][Active Perception] This paper proposes Asymmetric Advantage-Weighted Regression (AAWR), which leverages additional privileged sensors during training to estimate more accurate advantage functions…
+  [NeurIPS 2025][Robotics][Active Perception] This paper proposes Asymmetric Advantage-Weighted Regression (AAWR), which leverages additional privileged sensors during training to estimate more accurate advantage functions, enabling efficient learning of active perception policies in the real world. AAWR outperforms all baselines across 8 manipulation tasks spanning varying degrees of partial observability.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "POMDP"
   - "Real-Robot"
 date: 2026-05-08
-content_hash: 87cac570e8addb40
+content_hash: 090755d5754f1faa
 ---
 
 # Real-World Reinforcement Learning of Active Perception Behaviors
@@ -145,9 +145,9 @@ Real-robot Koch interactive perception task:
 
 - [\[ICLR 2026\] APPLE: Toward General Active Perception via Reinforcement Learning](../../ICLR2026/robotics/apple_toward_general_active_perception_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
 - [\[NeurIPS 2025\] To Distill or Decide? Understanding the Algorithmic Trade-off in Partially Observable Reinforcement Learning](to_distill_or_decide_understanding_the_algorithmic_trade-off_in_partially_observ.md)
-- [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
+- [\[CVPR 2025\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](../../CVPR2025/robotics/sapave_towards_active_perception_and_manipulation_in_vision-language-action_mode.md)
+- [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
 
 </div>
 

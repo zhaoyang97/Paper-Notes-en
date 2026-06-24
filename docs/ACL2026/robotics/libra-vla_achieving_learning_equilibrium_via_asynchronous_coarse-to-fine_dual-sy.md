@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System
 description: >-
-  [ACL 2026][Robotics & Embodied AI][coarse-to-fine] Libra-VLA decomposes robot actions into a hybrid action space of "discrete macro-intent + continuous micro-pose." It utilizes System 2 (VLM + parallel coarse-action head) for low-frequency planning and System 1 (diffusion transformer + independent SigLIP encoder) for high-frequency refinement. Achieving true asynchrono
+  [ACL 2026][Robotics][Vision-Language-Action Models] Libra-VLA decomposes robot actions into a hybrid action space of "discrete macro-intent + continuous micro-pose." It utilizes System 2 (VLM + parallel coarse-action head) for low-frequency planning and System 1 (diffusion transformer + independent SigLIP encoder) for high-frequency refinement. Achieving true asynchronous execution via an intent buffer, it reaches a SoTA of 97.2% on LIBERO and 79.5% zero-shot on LIBERO-Plus (…
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - coarse-to-fine
+  - "ACL 2026"
+  - "Robotics"
+  - "Vision-Language-Action Models"
+  - "Hybrid Action Space"
+  - "Dual-System"
+  - "Asynchronous Execution"
+  - "Coarse-to-Fine"
 date: 2026-05-08
-content_hash: 4fea994f7baf171e
+content_hash: b7787a572aa22543
 ---
+
 # Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System
 
 **Conference**: ACL 2026  
@@ -164,11 +169,11 @@ Ours achieves 97.2 Avg, leading the leaderboard, with particularly high scores i
 
 ## Related Papers
 
+- [\[ICLR 2026\] Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation](../../ICLR2026/robotics/ground_slow_move_fast_a_dual-system_foundation_model_for_generalizable_vision-la.md)
 - [\[AAAI 2026\] Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation](../../AAAI2026/robotics/affordance-guided_coarse-to-fine_exploration_for_base_placem.md)
 - [\[ICML 2026\] Dual Advantage Fields](../../ICML2026/robotics/dual_advantage_fields.md)
-- [\[ICML 2026\] Dual Quaternion SE(3) Synchronization with Recovery Guarantees](../../ICML2026/robotics/dual_quaternion_se3_synchronization_with_recovery_guarantees.md)
-- [\[ECCV 2024\] LLM as Copilot for Coarse-Grained Vision-and-Language Navigation](../../ECCV2024/robotics/llm_as_copilot_for_coarse-grained_vision-and-language_navigation.md)
-- [\[NeurIPS 2025\] LUMIA: A Handheld Vision-to-Music System for Real-Time, Embodied Composition](../../NeurIPS2025/robotics/lumia_a_handheld_vision-to-music_system_for_real-time_embodied_composition.md)
+- [\[ICLR 2026\] SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning](../../ICLR2026/robotics/simplevla-rl_scaling_vla_training_via_reinforcement_learning.md)
+- [\[ICLR 2026\] SpikePingpong: Spike Vision-based Fast-Slow Pingpong Robot System](../../ICLR2026/robotics/spikepingpong_spike_vision-based_fast-slow_pingpong_robot_system.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReactDance: Hierarchical Representation for High-Fidelity and Coherent Long-Form Reactive Dance Generation
 description: >-
-  [ICLR 2026][Human Understanding][Diffusion Model] ReactDance utilizes a multi-scale motion representation via Hierarchical Finite Scalar Quantization (HFSQ) to decouple "coarse posture" from "high-frequency details." Combined with non-autoregressive Blocked Local Context (BLC) parallel sampling, it generates high-fidelity and long-term coherent "reactor" dances exceed
+  [ICLR 2026][Human Understanding][Reactive Dance Generation] ReactDance utilizes a multi-scale motion representation via Hierarchical Finite Scalar Quantization (HFSQ) to decouple "coarse posture" from "high-frequency details." Combined with non-autoregressive Blocked Local Context (BLC) parallel sampling, it generates high-fidelity and long-term coherent "reactor" dances exceeding 2000 frames (60s+) in under 2 seconds.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Reactive Dance Generation"
+  - "Hierarchical Quantization"
+  - "Diffusion Models"
+  - "Long-Sequence Parallel Sampling"
+  - "Classifier-Free Guidance"
 date: 2026-05-08
-content_hash: 362c8ce733e4f671
+content_hash: 5ba7bb7b5c45712d
 ---
+
 # ReactDance: Hierarchical Representation for High-Fidelity and Coherent Long-Form Reactive Dance Generation
 
 **Conference**: ICLR 2026  
@@ -131,16 +136,16 @@ ReactDance leads in most metrics. Substantial gains in FIDk/FIDg stem from HFSQ 
 - Value: ⭐⭐⭐⭐⭐ High utility for virtual avatars and HCI; advances parallel sequence generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Text2Interact: High-Fidelity and Diverse Text-to-Two-Person Interaction Generation](text2interact_high-fidelity_and_diverse_text-to-two-person_interaction_generatio.md)
 - [\[CVPR 2026\] Mobile-VTON: High-Fidelity On-Device Virtual Try-On](../../CVPR2026/human_understanding/mobile_vton_ondevice_virtual_tryon.md)
 - [\[ICLR 2026\] KinemaDiff: Towards Diffusion for Coherent and Physically Plausible Human Motion Prediction](kinemadiff_towards_diffusion_for_coherent_and_physically_plausible_human_motion_.md)
+- [\[ICLR 2026\] TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions](touch_text-guided_controllable_generation_of_free-form_hand-object_interactions.md)
 - [\[CVPR 2026\] 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction](../../CVPR2026/human_understanding/textit4dsurf_high-fidelity_dynamic_scene_surface_reconstruction.md)
-- [\[ICLR 2026\] Disentangled Hierarchical VAE for 3D Human-Human Interaction Generation](disentangled_hierarchical_vae_for_3d_human-human_interaction_generation.md)
-- [\[CVPR 2025\] VTON 360: High-Fidelity Virtual Try-On from Any Viewing Direction](../../CVPR2025/human_understanding/vton_360_high-fidelity_virtual_try-on_from_any_viewing_direction.md)
 
 </div>
 

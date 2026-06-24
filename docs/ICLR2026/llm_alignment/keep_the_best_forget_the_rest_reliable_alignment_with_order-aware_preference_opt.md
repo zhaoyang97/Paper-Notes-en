@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Keep the Best, Forget the Rest: Reliable Alignment with Order-Aware Preference Optimization
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] RAPPO uses the reference policy to assign "credibility" scores to samples within each batch, temporarily excluding high-loss preference pairs where the reference model itself is misaligned and the samples are the hardest to learn. By modifying DPO with just a few lines of code, it consistently outperforms baselines lik
+  [ICLR 2026][LLM Alignment][DPO] RAPPO uses the reference policy to assign "credibility" scores to samples within each batch, temporarily excluding high-loss preference pairs where the reference model itself is misaligned and the samples are the hardest to learn. By modifying DPO with just a few lines of code, it consistently outperforms baselines like SimPO/DPO in sentiment, detoxification, summarization, and safety alignment, while providing a tighter generalization bound.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "DPO"
+  - "Preference Optimization"
+  - "Reference Policy"
+  - "Sample Selection"
+  - "Generalization Bound"
+  - "RLHF"
 date: 2026-05-08
-content_hash: 51a923d54cdd6595
+content_hash: e635c0abeeab5816
 ---
+
 # Keep the Best, Forget the Rest: Reliable Alignment with Order-Aware Preference Optimization
 
 **Conference**: ICLR 2026  
@@ -132,10 +137,10 @@ Sensitivity analysis for two hyperparameters—exclusion count $q$ and reference
 ## Related Papers
 
 - [\[ICLR 2026\] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?](is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base.md)
+- [\[ICLR 2026\] Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization](sharpness-aware_minimization_in_logit_space_efficiently_enhances_direct_preferen.md)
 - [\[ICML 2026\] Alignment-Aware Decoding](../../ICML2026/llm_alignment/alignment-aware_decoding.md)
 - [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
 - [\[ICLR 2026\] Multiplayer Nash Preference Optimization](multiplayer_nash_preference_optimization.md)
-- [\[ICLR 2026\] Semi-Supervised Preference Optimization with Limited Feedback](semi-supervised_preference_optimization_with_limited_feedback.md)
 
 </div>
 

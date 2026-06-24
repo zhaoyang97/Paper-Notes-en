@@ -2,13 +2,17 @@
 title: >-
   [Paper Note] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper investigates whether language models can learn to predict the empirical success of research ideas. By constructing a dataset of 11,488 idea pairs based on objective outcomes from PapersWithCode, the authors trained an 8B model using SFT and RLVR to achieve 77.1% accuracy, outperforming GPT-5's 61.1% and serv
+  [ACL 2026 Findings][LLM Evaluation][Comparative Forecasting] This paper investigates whether language models can learn to predict the empirical success of research ideas. By constructing a dataset of 11,488 idea pairs based on objective outcomes from PapersWithCode, the authors trained an 8B model using SFT and RLVR to achieve 77.1% accuracy, outperforming GPT-5's 61.1% and serving as an effective idea verifier for automated scientific discovery.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Comparative Forecasting"
+  - "Research Idea Ranking"
+  - "Reinforcement Learning for Reasoning"
 date: 2026-05-08
-content_hash: d1570ebb7e9516ae
+content_hash: e126fcb030f398b1
 ---
+
 # Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation
 
 **Conference**: ACL 2026 Findings  
@@ -131,6 +135,7 @@ Allowing a small model to generate reasoning freely can lead to performance drop
 *   Value: ⭐⭐⭐⭐⭐ Directly supports idea screening in autonomous research systems; the efficient small-model solution is attractive for applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

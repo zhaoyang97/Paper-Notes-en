@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RePIC: Reinforced Post-Training for Personalizing Multi-Modal Language Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multimodal Large Language Models] This paper proposes RePIC, the first reinforcement learning-based post-training framework for multimodal large language models targeting personaliz…
+  [NeurIPS 2025][Reinforcement Learning][Multimodal Large Language Models] This paper proposes RePIC, the first reinforcement learning-based post-training framework for multimodal large language models targeting personalized image captioning, which significantly outperforms SFT-based methods in multi-concept scenarios.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Image Captioning"
   - "Post-Training"
 date: 2026-05-08
-content_hash: 9cc2319ef7cda840
+content_hash: 9971837a30a90a3d
 ---
 
 # RePIC: Reinforced Post-Training for Personalizing Multi-Modal Language Models
@@ -149,11 +149,11 @@ Contribution of individual components in RL post-training:
 
 ## Related Papers
 
+- [\[ACL 2025\] MAPoRL: Multi-Agent Post-Co-Training for Collaborative Large Language Models with Reinforcement Learning](../../ACL2025/reinforcement_learning/maporl_multi-agent_post-co-training_for_collaborative_large_language_models_with.md)
 - [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](training_language_models_to_reason_efficiently.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](../../ICLR2026/reinforcement_learning/post-training_large_language_models_for_diverse_high-quality_responses.md)
 - [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
-- [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](checklists_are_better_than_reward_models_for_aligning_langua.md)
-- [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](../../ICLR2026/reinforcement_learning/representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 
 </div>
 

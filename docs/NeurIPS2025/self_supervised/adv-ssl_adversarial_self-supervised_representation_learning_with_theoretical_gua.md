@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][adversarial learning] This paper proposes Adv-SSL, which rewrites the Frobenius norm of the covariance regularization term as a minimax dual form…
+  [NeurIPS 2025][Self-Supervised Learning][adversarial learning] This paper proposes Adv-SSL, which rewrites the Frobenius norm of the covariance regularization term as a minimax dual form, eliminating the biased sample-level risk estimation present in methods such as Barlow Twins. The approach substantially improves downstream classification performance without incurring additional computational cost, and provides end-to-end theoretical convergence guarantees.
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "theoretical guarantees"
   - "few-shot learning"
 date: 2026-05-08
-content_hash: c921f9b7efc054be
+content_hash: 74979592c32dee9b
 ---
 
 # Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees
@@ -150,8 +150,8 @@ $$\hat{\mathcal{L}}(f, G) = \underbrace{\frac{1}{n_s}\sum_{i=1}^{n_s}\|f(\mathtt
 - [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
 - [\[NeurIPS 2025\] Understanding Ice Crystal Habit Diversity with Self-Supervised Learning](understanding_ice_crystal_habit_diversity_with_self-supervised_learning.md)
 - [\[NeurIPS 2025\] T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning](t-regs_minimum_spanning_tree_regularization_for_self-supervised_learning.md)
+- [\[ICLR 2026\] Adversarial Encoding Perturbation and Synthesis for Set Representation Auxiliary Learning](../../ICLR2026/self_supervised/adversarial_encoding_perturbation_and_synthesis_for_set_representation_auxiliary.md)
 - [\[NeurIPS 2025\] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking](starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att.md)
-- [\[NeurIPS 2025\] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization](m-grpo_stabilizing_self-supervised_reinforcement_learning_for_multimodal_underst.md)
 
 </div>
 

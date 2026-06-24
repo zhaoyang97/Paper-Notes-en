@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stylos: Multi-View 3D Stylization with Single-Forward Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Stylos proposes a single-forward 3D style transfer framework. Through a dual-path design (geometry self-attention + style cross-attention) sharing a Transformer backbone and a voxel-level 3D style loss, it achieves zero-shot 3D stylization from uncalibrated inputs, supporting scaling from single-view to hundreds of vie
+  [ICLR 2026][3D Vision][3D Style Transfer] Stylos proposes a single-forward 3D style transfer framework. Through a dual-path design (geometry self-attention + style cross-attention) sharing a Transformer backbone and a voxel-level 3D style loss, it achieves zero-shot 3D stylization from uncalibrated inputs, supporting scaling from single-view to hundreds of views.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Style Transfer"
+  - "Gaussian Splatting"
+  - "Cross-view Consistency"
+  - "Voxel Style Loss"
+  - "Feed-forward Model"
 date: 2026-05-08
-content_hash: 72f94fa5009e7eae
+content_hash: f954164ffbf30f78
 ---
+
 # Stylos: Multi-View 3D Stylization with Single-Forward Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -136,10 +142,10 @@ $$\mathcal{L}_{\text{stage2}} = \mathcal{L}_{\text{rec}} + \lambda_{\text{style}
 ## Related Papers
 
 - [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](../../CVPR2026/3d_vision/ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2025\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](../../CVPR2025/3d_vision/instanthdr_single-forward_gaussian_splatting_for_high_dynamic_range_3d_reconstru.md)
-- [\[ICLR 2026\] Flash-Mono: Feed-Forward Accelerated Gaussian Splatting Monocular SLAM](flash-mono_feed-forward_accelerated_gaussian_splatting_monocular_slam.md)
-- [\[ICLR 2026\] ReSplat: Degradation-agnostic Feed-forward Gaussian Splatting via Self-guided Residual Diffusion](resplat_degradation-agnostic_feed-forward_gaussian_splatting_via_self-guided_res.md)
-- [\[ICLR 2026\] ReLi3D: Relightable Multi-View 3D Reconstruction with Disentangled Illumination](reli3d_relightable_multi-view_3d_reconstruction_with_disentangled_illumination.md)
+- [\[ICLR 2026\] Open-Set Semantic Gaussian Splatting SLAM with Expandable Representation](open-set_semantic_gaussian_splatting_slam_with_expandable_representation.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](../../CVPR2026/3d_vision/brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](../../CVPR2026/3d_vision/splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Multimodal Retrieval] By appending a small set of learnable Meta Tokens to VLM input sequences and organizing information by granularity into these tokens using Matryoshka-nested multi-vector contrastive training, MetaEmbed allows users to freely choose between 1 to 64 vectors at test-time to trade off retrieval accuracy against indexing an
+  [ICLR 2026][Information Retrieval & RAG][Multimodal Retrieval] By appending a small set of learnable Meta Tokens to VLM input sequences and organizing information by granularity into these tokens using Matryoshka-nested multi-vector contrastive training, MetaEmbed allows users to freely choose between 1 to 64 vectors at test-time to trade off retrieval accuracy against indexing and latency overhead. This achieves SOTA performance on MMEB and ViDoRe with compact multi-vector r…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Multimodal Retrieval
-  - Late Interaction
-  - Multi-Vector
-  - Matryoshka Representation
-  - Test-Time Scaling
-  - VLM Embedding
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Multimodal Retrieval"
+  - "Late Interaction"
+  - "Multi-Vector"
+  - "Matryoshka Representation"
+  - "Test-Time Scaling"
+  - "VLM Embedding"
 date: 2026-05-08
-content_hash: 87c398dd2db72bc3
+content_hash: 1df9b34bbfbd5ffe
 ---
+
 # MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction
 
 **Conference**: ICLR 2026  

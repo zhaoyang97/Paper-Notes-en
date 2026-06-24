@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception
 description: >-
-  [CVPR 2026][Autonomous Driving][V2X] CATNet targets the two major realistic challenges in V2X cooperative perception: "communication delay + multi-source noise." By cascading Spatio-Temporal Synchronous (STSync), Dual-branch Wavelet Denoising (WTDen), and Adaptive Feature Selection (AdpSel) modules, it achieves SOTA AP on OPV2V/V2XSet/DAIR-V2X datasets un
+  [CVPR 2026][Autonomous Driving][Cooperative Perception] CATNet targets the two major realistic challenges in V2X cooperative perception: "communication delay + multi-source noise." By cascading Spatio-Temporal Synchronous (STSync), Dual-branch Wavelet Denoising (WTDen), and Adaptive Feature Selection (AdpSel) modules, it achieves SOTA AP on OPV2V/V2XSet/DAIR-V2X datasets under noisy and delayed scenarios with only 9.95M parameters.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - V2X
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Cooperative Perception"
+  - "V2X"
+  - "Communication Delay Alignment"
+  - "Multi-source Noise Suppression"
+  - "Intermediate Feature Fusion"
 date: 2026-05-08
-content_hash: 003d40f20bd69c14
+content_hash: e01f734fb88b85b7
 ---
+
 # CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception
 
 **Conference**: CVPR 2026  
@@ -147,11 +152,11 @@ Step-by-step module addition (AP@0.5 / AP@0.7):
 
 ## Related Papers
 
-- [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
-- [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 - [\[CVPR 2026\] MTA: Multimodal Task Alignment for BEV Perception and Captioning](mta_multimodal_task_alignment_for_bev_perception_and_captioning.md)
+- [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
 - [\[CVPR 2026\] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views](unsupervised_multi-agent_and_single-agent_perception_from_cooperative_views.md)
-- [\[CVPR 2026\] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception](learning_mutual_view_information_graph_for_adaptive_adversarial_collaborative_pe.md)
+- [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
+- [\[AAAI 2026\] SparseCoop: Cooperative Perception with Kinematic-Grounded Queries](../../AAAI2026/autonomous_driving/sparsecoop_cooperative_perception_with_kinematic-grounded_queries.md)
 
 </div>
 

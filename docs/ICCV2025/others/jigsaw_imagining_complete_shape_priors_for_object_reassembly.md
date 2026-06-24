@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Jigsaw++: Imagining Complete Shape Priors for Object Reassembly
 description: >-
-  [ICCV 2025][object reassembly] Jigsaw++ proposes a generative model-based approach for learning complete shape priors, mapping partially assembled fragment point clouds to the shape space of complete objects via a *retar…
+  [ICCV 2025][object reassembly] Jigsaw++ proposes a generative model-based approach for learning complete shape priors, mapping partially assembled fragment point clouds to the shape space of complete objects via a *retargeting* strategy, thereby improving reassembly quality in a manner orthogonal to existing assembly algorithms.
 tags:
   - "ICCV 2025"
   - "object reassembly"
@@ -11,7 +11,7 @@ tags:
   - "Rectified Flow"
   - "shape prior"
 date: 2026-05-08
-content_hash: 1b84b99ab0449211
+content_hash: fe0343cca08f6a34
 ---
 
 # Jigsaw++: Imagining Complete Shape Priors for Object Reassembly
@@ -140,11 +140,11 @@ The model is then fine-tuned on $(\mathbf{x}_0, \mathbf{x}_1)$ pairs to learn th
 
 ## Related Papers
 
+- [\[ACL 2025\] Tokenisation is NP-Complete](../../ACL2025/others/tokenisation_is_np-complete.md)
 - [\[ICCV 2025\] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)
-- [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](../../AAAI2026/others/dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
-- [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](../../ICLR2026/others/latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
-- [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
-- [\[ICCV 2025\] EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration](edffdnet_towards_accurate_and_efficient_unsupervised_multi-grid_image_registrati.md)
+- [\[ACL 2025\] Meta-Learning Neural Mechanisms rather than Bayesian Priors](../../ACL2025/others/meta-learning_neural_mechanisms_rather_than_bayesian_priors.md)
+- [\[ECCV 2024\] Object-Aware NIR-to-Visible Translation](../../ECCV2024/others/object-aware_nir-to-visible_translation.md)
+- [\[CVPR 2025\] Radio Frequency Ray Tracing with Neural Object Representation for Enhanced RF Modeling](../../CVPR2025/others/radio_frequency_ray_tracing_with_neural_object_representation_for_enhanced_rf_mo.md)
 
 </div>
 

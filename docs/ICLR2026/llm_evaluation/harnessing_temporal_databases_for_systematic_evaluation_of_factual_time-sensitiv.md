@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Harnessing Temporal Databases for Systematic Evaluation of Factual Time-Sensitive Question-Answering in LLMs
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper introduces TDBench, which utilizes temporal databases and database technologies (Temporal Functional Dependencies, Temporal SQL, and temporal joins) as an automated engine for constructing TSQA datasets. It generates questions covering 13 types of temporal constraints without manual intervention and introduc
+  [ICLR 2026][LLM Evaluation][Time-Sensitive QA] This paper introduces TDBench, which utilizes temporal databases and database technologies (Temporal Functional Dependencies, Temporal SQL, and temporal joins) as an automated engine for constructing TSQA datasets. It generates questions covering 13 types of temporal constraints without manual intervention and introduces a "time accuracy" metric, revealing that LLMs often hallucinate incorrect temporal references in their explana…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Time-Sensitive QA"
+  - "Temporal Databases"
+  - "Temporal Functional Dependencies"
+  - "Allen’s Interval Algebra"
+  - "Temporal Hallucination"
 date: 2026-05-08
-content_hash: 0f968c647b523262
+content_hash: dab31b67faad39f1
 ---
+
 # Harnessing Temporal Databases for Systematic Evaluation of Factual Time-Sensitive Question-Answering in LLMs
 
 **Conference**: ICLR 2026  

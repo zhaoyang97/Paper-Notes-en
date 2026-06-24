@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] DIVA discovers that Unified Multimodal Models (UMM) spontaneously decouple "understanding" and "generation" information flows within intermediate layers. By explicitly factorizing representations into shared and unique components and applying contrastive/CLUB mutual information constraints for "shared alignment + uniqu
+  [ICML 2026][Multimodal VLM][Unified Multimodal Models] DIVA discovers that Unified Multimodal Models (UMM) spontaneously decouple "understanding" and "generation" information flows within intermediate layers. By explicitly factorizing representations into shared and unique components and applying contrastive/CLUB mutual information constraints for "shared alignment + unique decoupling," it simultaneously improves understanding by +7.82% and generation by +8.46% on Show-o/Liqu…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Unified Multimodal Models"
+  - "Representation Divergence"
+  - "Mutual Information"
+  - "Shared/Unique Decomposition"
+  - "Post-training"
 date: 2026-05-08
-content_hash: 02a1093afb7c2172
+content_hash: 30d1d6763a667bfa
 ---
+
 # DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement
 
 **Conference**: ICML 2026  

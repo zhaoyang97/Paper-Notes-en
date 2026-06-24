@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Paired Testing Protocol for Batch-Conditioned Refusal Robustness in LLM Serving
 description: >-
-  [ICML 2026][Recommender Systems][vLLM] This paper treats the batch condition in LLM serving as a treatment variable for safety evaluation. It proposes a testing protocol consisting of safety-capability paired comparisons, scorer/human adjudication, cross-model expansion, continuous batching composition, and batch-invariant kernel ablation. The study conclud
+  [ICML2026][Recommender Systems][Refusal robustness] This paper treats the batch condition in LLM serving as a treatment variable for safety evaluation. It proposes a testing protocol consisting of safety-capability paired comparisons, scorer/human adjudication, cross-model expansion, continuous batching composition, and batch-invariant kernel ablation. The study concludes that refusal flips are real but low-frequency, model-specific, and dependent on the specific serving stac…
 tags:
-  - ICML 2026
-  - Recommender Systems
-  - vLLM
+  - "ICML2026"
+  - "Recommender Systems"
+  - "Refusal robustness"
+  - "batch inference"
+  - "vLLM"
+  - "paired testing"
+  - "safety evaluation"
 date: 2026-05-08
-content_hash: 5aadb7cee5fc45f0
+content_hash: 905658a1d9e41d56
 ---
+
 # A Paired Testing Protocol for Batch-Conditioned Refusal Robustness in LLM Serving
 
 **Conference**: ICML2026  
@@ -149,15 +154,15 @@ Another critical analysis is the Study A scorer/adjudication calibration, which 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reinforced Latent Reasoning for LLM-based Recommendation](../../ICLR2026/recommender/reinforced_latent_reasoning_for_llm-based_recommendation.md)
 - [\[AAAI 2026\] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation](../../AAAI2026/recommender/tool4poi_a_tool-augmented_llm_framework_for_next_poi_recommendation.md)
+- [\[ICLR 2026\] Continual Low-Rank Adapters for LLM-based Generative Recommender Systems](../../ICLR2026/recommender/continual_low-rank_adapters_for_llm-based_generative_recommender_systems.md)
 - [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](../../ICLR2026/recommender/token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
-- [\[ICML 2025\] RLTHF: Targeted Human Feedback for LLM Alignment](../../ICML2025/recommender/rlthf_targeted_human_feedback_for_llm_alignment.md)
-- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](../../AAAI2026/recommender/align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
-- [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](../../ACL2026/recommender/rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
+- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](../../AAAI2026/recommender/tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
 
 </div>
 

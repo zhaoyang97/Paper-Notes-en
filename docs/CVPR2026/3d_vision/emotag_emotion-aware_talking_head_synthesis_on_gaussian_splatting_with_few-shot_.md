@@ -4,16 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][3D Gaussian Splatting] EmoTaG is proposed, an emotion-aware 3D talking head synthesis framework based on a FLAME-Gaussian structural prior and a Gated Residual Motion Network (GRMN). It achieves few-shot personalization with only 5 seconds of video while balancing emotional expression, lip-sync, and geometric stability.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Talking Head
-  - Emotion-Aware
-  - Few-Shot
-  - FLAME
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Talking Head"
+  - "Emotion-Aware"
+  - "Few-Shot"
+  - "FLAME"
 date: 2026-05-08
-content_hash: 5168218d37413e01
+content_hash: 5832842de1e8a8c1
 ---
+
 # EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization
 
 **Conference**: CVPR 2026  
@@ -168,11 +169,11 @@ The total loss consists of four parts: $L = L_{Render} + L_{KL} + L_{Score} + L_
 
 ## Related Papers
 
+- [\[CVPR 2026\] EmoDiffTalk: Emotion-aware Diffusion for Editable 3D Gaussian Talking Head](emodifftalk_emotion-aware_diffusion_for_editable_3d_gaussian_talking_head.md)
 - [\[ICLR 2026\] FastGHA: Generalized Few-Shot 3D Gaussian Head Avatars with Real-Time Animation](../../ICLR2026/3d_vision/fastgha_generalized_few-shot_3d_gaussian_head_avatars_with_real-time_animation.md)
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[CVPR 2026\] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation](flexavatar_flexible_large_reconstruction_model_for_animatable_gaussian_head_avat.md)
-- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
 - [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
+- [\[ECCV 2024\] TalkingGaussian: Structure-Persistent 3D Talking Head Synthesis via Gaussian Splatting](../../ECCV2024/3d_vision/talkinggaussian_structure-persistent_3d_talking_head_synthesis_via_gaussian_spla.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
 
 </div>
 

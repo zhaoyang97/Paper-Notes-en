@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] The D2-Align framework is proposed to correct reward signals by learning directional correction vectors in the reward model's embedding space. This addresses the Preference Mode Collapse (PMC) issue in RLHF alignment for diffusion models—where over-optimization of rewards leads to a severe decline in generative diversi
+  [CVPR 2026][Image Generation][Preference Mode Collapse] The D2-Align framework is proposed to correct reward signals by learning directional correction vectors in the reward model's embedding space. This addresses the Preference Mode Collapse (PMC) issue in RLHF alignment for diffusion models—where over-optimization of rewards leads to a severe decline in generative diversity. Additionally, the DivGenBench benchmark is introduced to quantitatively evaluate generative diversit…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Preference Mode Collapse"
+  - "RLHF Alignment"
+  - "Diffusion Models"
+  - "Reward Correction"
+  - "Generative Diversity"
 date: 2026-05-08
-content_hash: d25747994734c1bb
+content_hash: 489d03fadc35157b
 ---
+
 # Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -163,7 +168,7 @@ Flow-GRPO suffers the most severe diversity collapse (ASC 0.044 vs. FLUX 0.179),
 - [\[CVPR 2026\] DiverseGRPO: Mitigating Mode Collapse in Image Generation via Diversity-Aware GRPO](diversegrpo_mitigating_mode_collapse_in_image_generation_via_diversity-aware_grp.md)
 - [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](../../ICML2026/image_generation/escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
 - [\[CVPR 2026\] Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning](refining_few-step_text-to-multiview_diffusion_via_reinforcement_learning.md)
-- [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
+- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
 - [\[CVPR 2026\] It's Never Too Late: Noise Optimization for Collapse Recovery in Trained Diffusion Models](its_never_too_late_noise_optimization_for_collapse_recovery_in_trained_diffusion.md)
 
 </div>

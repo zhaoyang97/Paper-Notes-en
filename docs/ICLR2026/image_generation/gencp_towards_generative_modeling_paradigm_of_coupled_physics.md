@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] GenCP: Towards Generative Modeling Paradigm of Coupled Physics
 description: >-
-  [ICLR 2026][Image Generation][coupled physics simulation] GenCP is proposed to model coupled multi-physics simulation as a probability density evolution problem. It utilizes flow matching to learn conditional velocity fields from decoupled data and synthesizes coupled solutions via Lie-Trotter operator splitting during inference. This achieves "decoupled training, coupled inf
+  [ICLR 2026][Image Generation][coupled physics simulation] GenCP is proposed to model coupled multi-physics simulation as a probability density evolution problem. It utilizes flow matching to learn conditional velocity fields from decoupled data and synthesizes coupled solutions via Lie-Trotter operator splitting during inference. This achieves "decoupled training, coupled inference" with theoretically controllable error guarantees.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - coupled physics simulation
-  - flow matching
-  - operator splitting
-  - multiphysics
-  - decoupled training
+  - "ICLR 2026"
+  - "Image Generation"
+  - "coupled physics simulation"
+  - "flow matching"
+  - "operator splitting"
+  - "multiphysics"
+  - "decoupled training"
 date: 2026-05-08
-content_hash: d853513326666016
+content_hash: c937feef82e89c25
 ---
+
 # GenCP: Towards Generative Modeling Paradigm of Coupled Physics
 
 **Conference**: ICLR 2026  
@@ -164,7 +165,6 @@ GenCP reduces average error by ~26.77% on the FNO* backbone with 14x faster infe
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -172,7 +172,7 @@ GenCP reduces average error by ~26.77% on the FNO* backbone with 14x faster infe
 - [\[ICLR 2026\] Partition Generative Modeling: Masked Modeling Without Masks](partition_generative_modeling_masked_modeling_without_masks.md)
 - [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 - [\[CVPR 2026\] Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling](../../CVPR2026/image_generation/test-time_instance-specific_parameter_composition_a_new_paradigm_for_adaptive_ge.md)
-- [\[ICLR 2026\] Mirror Flow Matching with Heavy-Tailed Priors for Generative Modeling on Convex Domains](mirror_flow_matching_with_heavy-tailed_priors_for_generative_modeling_on_convex_.md)
+- [\[ICLR 2026\] Gauge Flow Matching: Efficient Constrained Generative Modeling over General Convex Set and Beyond](gauge_flow_matching_efficient_constrained_generative_modeling_over_general_conve.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Supervised Inductive Logic Programming
 description: >-
-  [AAAI 2026][Self-Supervised Learning][inductive logic programming] This paper proposes a new self-supervised inductive logic programming (SS-ILP) setting and the Poker system…
+  [AAAI 2026][Self-Supervised Learning][inductive logic programming] This paper proposes a new self-supervised inductive logic programming (SS-ILP) setting and the Poker system, which starts from a small number of positive labeled examples and unlabeled examples, automatically generates positive and negative examples, and employs a maximally general second-order normal form (SONF) background theory to learn logic programs with recursion and predicate invention in the absence of…
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -11,7 +11,7 @@ tags:
   - "grammar learning"
   - "predicate invention"
 date: 2026-05-08
-content_hash: 1c969cd4572b339a
+content_hash: 495a637dbb87e08e
 ---
 
 # Self-Supervised Inductive Logic Programming
@@ -161,11 +161,11 @@ This validates the prediction of Theorem 1: accuracy increases monotonically wit
 
 ## Related Papers
 
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](../../ICLR2026/self_supervised/on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
+- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](../../CVPR2026/self_supervised/videossr_video_self-supervised_reinforcement_learning.md)
 - [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](../../ICLR2026/self_supervised/soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
 - [\[ICML 2026\] Understanding Self-Supervised Learning via Latent Distribution Matching](../../ICML2026/self_supervised/understanding_self-supervised_learning_via_latent_distribution_matching.md)
 - [\[ICML 2026\] Can Local Learning Match Self-Supervised Backpropagation?](../../ICML2026/self_supervised/can_local_learning_match_self-supervised_backpropagation.md)
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](../../NeurIPS2025/self_supervised/self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
-- [\[CVPR 2026\] A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](../../CVPR2026/self_supervised/a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)
 
 </div>
 

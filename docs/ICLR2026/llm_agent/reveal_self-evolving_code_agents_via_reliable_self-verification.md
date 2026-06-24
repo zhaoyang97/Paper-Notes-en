@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] ReVeal: 通过可靠自验证实现自进化的代码智能体
+  [Paper Note] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] ReVeal organizes code generation into an alternating "generation-verification" multi-turn loop and explicitly optimizes self-verification capabilities using a turn-level reinforcement learning algorithm (TAPO). This allows a 32B model, trained for only 3 turns, to continuously self-correct for over 20 turns during infe
+  [ICLR 2026][LLM Agent][Code Generation] ReVeal organizes code generation into an alternating "generation-verification" multi-turn loop and explicitly optimizes self-verification capabilities using a turn-level reinforcement learning algorithm (TAPO). This allows a 32B model, trained for only 3 turns, to continuously self-correct for over 20 turns during inference, driving the Pass@1 on LiveCodeBench V6 from 34.8% up to 38.7%.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Code Generation"
+  - "Self-Verification"
+  - "Multi-turn RL"
+  - "Test-time Scaling"
+  - "Credit Assignment"
 date: 2026-05-08
-content_hash: 36801ba6d44288a0
+content_hash: 4baa6358d6ba5e55
 ---
+
 # ReVeal: Self-Evolving Code Agents via Reliable Self-Verification
 
 **Conference**: ICLR 2026  
@@ -140,11 +146,11 @@ TAPO joint rewards yield higher Pass@1, larger $\Delta\uparrow$, and reduce $\De
 
 ## Related Papers
 
-- [\[ICLR 2026\] Pushing Test-Time Scaling Limits of Deep Search with Asymmetric Verification](pushing_test-time_scaling_limits_of_deep_search_with_asymmetric_verification.md)
-- [\[ICLR 2026\] Zephyrus: An Agentic Framework for Weather Science](zephyrus_an_agentic_framework_for_weather_science.md)
-- [\[ICLR 2026\] Helmsman: Autonomous Synthesis of Federated Learning Systems via Collaborative LLM Agents](helmsman_autonomous_synthesis_of_federated_learning_systems_via_collaborative_ll.md)
-- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](tooltree_efficient_llm_tool_planning_via_dual-feedback_monte_carlo_tree_search_a.md)
-- [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
+- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
+- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](../../ICML2026/llm_agent/self-evolving_llm_agents_with_in-distribution_optimization.md)
+- [\[ICLR 2026\] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](your_agent_may_misevolve_emergent_risks_in_self-evolving_llm_agents.md)
+- [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
+- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 
 </div>
 

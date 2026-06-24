@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Motion Matters: Compact Gaussian Streaming for Free-Viewpoint Video Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes ComGS, a framework that exploits the locality and consistency of motion in dynamic scenes to drive the motion of all Gaussians in moving regions using…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes ComGS, a framework that exploits the locality and consistency of motion in dynamic scenes to drive the motion of all Gaussians in moving regions using only ~200 keypoints. ComGS achieves 159× storage compression over 3DGStream and 14× over QUEEN while maintaining competitive visual quality and rendering speed.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Motion Modeling"
   - "Streaming"
 date: 2026-05-08
-content_hash: e8396d0fd2e89d12
+content_hash: 1b7b8dccc25bfd79
 ---
 
 # Motion Matters: Compact Gaussian Streaming for Free-Viewpoint Video Reconstruction
@@ -126,10 +126,10 @@ ComGS adopts an online frame-by-frame streaming reconstruction framework. The fi
 ## Related Papers
 
 - [\[AAAI 2026\] StreamSTGS: Streaming Spatial and Temporal Gaussian Grids for Real-Time Free-Viewpoint Video](../../AAAI2026/3d_vision/streamstgs_streaming_spatial_and_temporal_gaussian_grids_for_real-time_free-view.md)
-- [\[NeurIPS 2025\] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects](onlinesplatter_pose-free_online_3d_reconstruction_for_free-moving_objects.md)
+- [\[CVPR 2025\] 4DGC: Rate-Aware 4D Gaussian Compression for Efficient Streamable Free-Viewpoint Video](../../CVPR2025/3d_vision/4dgc_rate-aware_4d_gaussian_compression_for_efficient_streamable_free-viewpoint_.md)
 - [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
-- [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](../../ICCV2025/3d_vision/shape_of_motion_4d_reconstruction_from_a_single_video.md)
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
+- [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](../../ICCV2025/3d_vision/shape_of_motion_4d_reconstruction_from_a_single_video.md)
 
 </div>
 

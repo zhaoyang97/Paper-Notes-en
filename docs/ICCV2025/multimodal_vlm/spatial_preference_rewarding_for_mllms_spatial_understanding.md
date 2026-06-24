@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spatial Preference Rewarding for MLLMs Spatial Understanding
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM] This paper proposes SPR (Spatial Preference Rewarding), a framework that automatically constructs preference data pairs via semantic and localization scores…
+  [ICCV 2025][Multimodal VLM][MLLM] This paper proposes SPR (Spatial Preference Rewarding), a framework that automatically constructs preference data pairs via semantic and localization scores, and trains MLLMs with DPO to distinguish high-precision grounding (chosen) from ambiguous or erroneous grounding (rejected), substantially improving fine-grained spatial understanding—particularly at high IoU thresholds.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "object grounding"
 date: 2026-05-08
-content_hash: 06589183f0f669b0
+content_hash: 9b55e3b011574eda
 ---
 
 # Spatial Preference Rewarding for MLLMs Spatial Understanding
@@ -175,7 +175,7 @@ The improvement from SPR grows substantially as the IoU threshold increases—**
 - [\[ICCV 2025\] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs](mm-spatial_exploring_3d_spatial_understanding_in_multimodal_llms.md)
 - [\[ICCV 2025\] STI-Bench: Are MLLMs Ready for Precise Spatial-Temporal World Understanding?](sti-bench_are_mllms_ready_for_precise_spatial-temporal_world_understanding.md)
 - [\[ICCV 2025\] Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs](instruction-oriented_preference_alignment_for_enhancing_multi-modal_comprehensio.md)
-- [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](../../NeurIPS2025/multimodal_vlm/struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
+- [\[ICCV 2025\] CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting](capture_evaluating_spatial_reasoning_in_vision_language_models_via_occluded_obje.md)
 - [\[ICLR 2026\] On the Generalization Capacities of MLLMs for Spatial Intelligence](../../ICLR2026/multimodal_vlm/on_the_generalization_capacities_of_mllms_for_spatial_intelligence.md)
 
 </div>

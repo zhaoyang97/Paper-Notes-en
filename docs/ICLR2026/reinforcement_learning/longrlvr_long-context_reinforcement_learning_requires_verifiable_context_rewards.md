@@ -4,13 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Reinforcement Learning][RLVR] LongRLVR is proposed to introduce verifiable context rewards into RLVR training, addressing the gradient vanishing problem in context grounding caused by outcome-only rewards in long-context scenarios, thereby significantly enhancing the long-context reasoning capabilities of LLMs.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "long-context reasoning"
+  - "context localization"
+  - "verifiable rewards"
+  - "gradient vanishing"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 14d3538ffca02ea4
+content_hash: cbf31157696ebde0
 ---
+
 # LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards
 
 **Conference**: ICLR 2026  
@@ -134,10 +139,10 @@ Context rewards require ground-truth chunk annotations $G$ for every sample. Sin
 ## Related Papers
 
 - [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
-- [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
 - [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
 - [\[ICLR 2026\] Scalable In-Context Q-Learning](scalable_in-context_q-learning.md)
+- [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
 
 </div>
 

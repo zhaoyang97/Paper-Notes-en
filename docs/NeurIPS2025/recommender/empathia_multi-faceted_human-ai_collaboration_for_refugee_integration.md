@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration
 description: >-
-  [NeurIPS 2025][Recommender Systems][refugee integration] This paper proposes EMPATHIA, a multi-agent framework grounded in Kegan's constructive-developmental theory. Three specialized agents—emotional, cultural…
+  [NeurIPS 2025][Recommender Systems][refugee integration] This paper proposes EMPATHIA, a multi-agent framework grounded in Kegan's constructive-developmental theory. Three specialized agents—emotional, cultural, and ethical—engage in selector-validator negotiation to evaluate refugee resettlement recommendations. On real-world data from 6,359 refugees, the framework achieves an 87.4% convergence rate and 92.1% cultural expert agreement rate.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "culturally-aware AI"
   - "ethical AI"
 date: 2026-05-08
-content_hash: 9b7a150c870668d1
+content_hash: 29fd44e0a7ac28d4
 ---
 
 # EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration
@@ -129,9 +129,9 @@ The framework relies on pre-trained LLM inference and involves no model training
 
 - [\[NeurIPS 2025\] Position: Towards Bidirectional Human-AI Alignment](position_towards_bidirectional_human-ai_alignment.md)
 - [\[NeurIPS 2025\] The Coming Crisis of Multi-Agent Misalignment: AI Alignment Must Be a Dynamic and Social Process](the_coming_crisis_of_multi-agent_misalignment_ai_alignment_must_be_a_dynamic_and.md)
+- [\[ICML 2025\] MATCHA: Toward Safe and Human-Aligned Game Conversational Recommendation via Multi-Agent Decomposition](../../ICML2025/recommender/toward_safe_and_human-aligned_game_conversational_recommendation_via_multi-agent.md)
 - [\[NeurIPS 2025\] MMPB: It's Time for Multi-Modal Personalization](mmpb_its_time_for_multi-modal_personalization.md)
 - [\[NeurIPS 2025\] NeurIPS Should Lead Scientific Consensus on AI Policy](neurips_should_lead_scientific_consensus_on_ai_policy.md)
-- [\[AAAI 2026\] Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback](../../AAAI2026/recommender/moral_change_or_noise_on_problems_of_aligning_ai_with_temporally_unstable_human_.md)
 
 </div>
 

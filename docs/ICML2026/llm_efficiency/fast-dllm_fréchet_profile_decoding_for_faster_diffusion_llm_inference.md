@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] Addressing the parallel decoding bottleneck of diffusion language models (dLLMs), this paper proposes training-free Fréchet Profile Decoding. It uses the entire sorted confidence profile—rather than just the "weakest selected token"—to determine the number of tokens to commit per step. This strictly generalizes the fac
+  [ICML 2026 (Workshop on Structured Probabilistic Inference & Generative Modeling)][LLM Efficiency][Diffusion LLM] Addressing the parallel decoding bottleneck of diffusion language models (dLLMs), this paper proposes training-free Fréchet Profile Decoding. It uses the entire sorted confidence profile—rather than just the "weakest selected token"—to determine the number of tokens to commit per step. This strictly generalizes the factor rule of Fast-dLLM to heterogeneous confide…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026 (Workshop on Structured Probabilistic Inference & Generative Modeling)"
+  - "LLM Efficiency"
+  - "Diffusion LLM"
+  - "Parallel Decoding"
+  - "Fréchet Lower Bound"
+  - "Confidence Profile"
+  - "Heterogeneity Reward"
 date: 2026-05-08
-content_hash: f1c00fcd486f379c
+content_hash: 49540efd7a4cf834
 ---
+
 # Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference
 
 **Conference**: ICML 2026 (Workshop on Structured Probabilistic Inference & Generative Modeling)  
@@ -117,11 +123,11 @@ Across 8 settings: Fréchet achieved **1.36×** average throughput and **29.2%**
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](../../ICLR2026/llm_efficiency/fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
+- [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](../../ICLR2026/llm_efficiency/fast-dllm_v2_efficient_block-diffusion_llm.md)
+- [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](../../ICLR2026/llm_efficiency/dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
+- [\[ICLR 2026\] Diffusion LLMs Can Do Faster-Than-AR Inference via Discrete Diffusion Forcing](../../ICLR2026/llm_efficiency/diffusion_llms_can_do_faster-than-ar_inference_via_discrete_diffusion_forcing.md)
 - [\[CVPR 2026\] Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference](../../CVPR2026/llm_efficiency/rejection_mixing_fast_semantic_propagation_of_mask_tokens_for_efficient_dllm_inf.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[ICML 2026\] Structuring The Future: Diffusion LLM Speculative Decoding via Calibrated Draft Graphs](structuring_the_future_diffusion_llm_speculative_decoding_via_calibrated_draft_g.md)
-- [\[ACL 2025\] Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference](../../ACL2025/llm_efficiency/smarter_better_faster_longer_a_modern_bidirectional_encoder_for_fast_memory_effi.md)
-- [\[ICML 2026\] Ekka: Automated Diagnosis of Silent Errors in LLM Inference](ekka_automated_diagnosis_of_silent_errors_in_llm_inference.md)
 
 </div>
 

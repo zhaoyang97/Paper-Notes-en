@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SegMASt3R: Geometry Grounded Segment Matching
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Wide-baseline matching] SegMASt3R augments the pretrained MASt3R 3D foundation model with a lightweight segmentation feature head and a differentiable Sinkhorn matching layer. By…
+  [NeurIPS 2025 Spotlight][Self-Supervised Learning][Wide-baseline matching] SegMASt3R augments the pretrained MASt3R 3D foundation model with a lightweight segmentation feature head and a differentiable Sinkhorn matching layer. By leveraging 3D geometric priors, it achieves robust semantic segment matching under extreme viewpoint changes (up to 180°), attaining an AUPRC of 83.6% on the 135–180° baseline (vs. 17% for SAM2).
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Self-Supervised Learning"
   - "Wide-baseline matching"
   - "MASt3R"
@@ -12,7 +12,7 @@ tags:
   - "Sinkhorn matching"
   - "3D instance mapping"
 date: 2026-05-08
-content_hash: aa83408e1e096c9f
+content_hash: 1e2d35ebcc1d8fd1
 ---
 
 # SegMASt3R: Geometry Grounded Segment Matching
@@ -124,11 +124,11 @@ Two input images → **Frozen MASt3R** (ViT encoder + CroCo cross-attention deco
 
 ## Related Papers
 
+- [\[CVPR 2025\] ScaleLSD: Scalable Deep Line Segment Detection Streamlined](../../CVPR2025/self_supervised/scalelsd_scalable_deep_line_segment_detection_streamlined.md)
 - [\[ICCV 2025\] WIR3D: Visually-Informed and Geometry-Aware 3D Shape Abstraction](../../ICCV2025/self_supervised/wir3d_visually-informed_and_geometry-aware_3d_shape_abstraction.md)
 - [\[ICML 2026\] Understanding Self-Supervised Learning via Latent Distribution Matching](../../ICML2026/self_supervised/understanding_self-supervised_learning_via_latent_distribution_matching.md)
-- [\[ICML 2026\] The Geometry of Projection Heads: Conditioning, Invariance and Collapse](../../ICML2026/self_supervised/the_geometry_of_projection_heads_conditioning_invariance_and_collapse.md)
-- [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](../../CVPR2026/self_supervised/reframing_long-tailed_learning_via_loss_landscape_geometry.md)
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
+- [\[ICML 2026\] Riemannian Metric Matching for Scalable Geometric Modeling of Distributions](../../ICML2026/self_supervised/riemannian_metric_matching_for_scalable_geometric_modeling_of_distributions.md)
+- [\[CVPR 2026\] Teaching DINOv3 About Partial 3D Geometry: A Self-Supervised Geometry-Aware Approach](../../CVPR2026/self_supervised/teaching_dinov3_about_partial_3d_geometry_a_self-supervised_geometry-aware_appro.md)
 
 </div>
 

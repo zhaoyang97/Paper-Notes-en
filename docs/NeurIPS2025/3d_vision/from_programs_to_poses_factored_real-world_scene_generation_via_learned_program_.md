@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Programs to Poses: Factored Real-World Scene Generation via Learned Program Libraries
 description: >-
-  [NeurIPS 2025][3D Vision][3D scene generation] This paper proposes FactoredScenes, which decomposes real-world 3D scene generation into a five-step factorization pipeline — learning a layout program library from syntheti…
+  [NeurIPS 2025][3D Vision][3D scene generation] This paper proposes FactoredScenes, which decomposes real-world 3D scene generation into a five-step factorization pipeline — learning a layout program library from synthetic data, generating scene programs via LLM, executing programs to obtain axis-aligned layouts, program-conditioned hierarchical pose prediction, and object retrieval and placement. The method achieves 38.3% FID improvement and 80.4% KID improvement on bedrooms…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "pose prediction"
   - "ScanNet"
 date: 2026-05-08
-content_hash: ba64df31ce83cf4f
+content_hash: c0b11eb7f8d31ead
 ---
 
 # From Programs to Poses: Factored Real-World Scene Generation via Learned Program Libraries
@@ -140,11 +140,11 @@ A five-step factorization: $P(S) = P(objects|pose, program) \cdot P(pose|layout,
 
 ## Related Papers
 
+- [\[CVPR 2025\] SceneFactor: Factored Latent 3D Diffusion for Controllable 3D Scene Generation](../../CVPR2025/3d_vision/scenefactor_factored_latent_3d_diffusion_for_controllable_3d_scene_generation.md)
+- [\[CVPR 2025\] Open-Vocabulary Functional 3D Scene Graphs for Real-World Indoor Spaces](../../CVPR2025/3d_vision/open-vocabulary_functional_3d_scene_graphs_for_real-world_indoor_spaces.md)
 - [\[NeurIPS 2025\] MetaGS: A Meta-Learned Gaussian-Phong Model for Out-of-Distribution 3D Scene Relighting](metags_a_meta-learned_gaussian-phong_model_for_out-of-distribution_3d_scene_reli.md)
 - [\[NeurIPS 2025\] 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos](4dgt_learning_a_4d_gaussian_transformer_using_realworld_mono.md)
 - [\[ICCV 2025\] Demeter: A Parametric Model of Crop Plant Morphology from the Real World](../../ICCV2025/3d_vision/demeter_a_parametric_model_of_crop_plant_morphology_from_the_real_world.md)
-- [\[ICCV 2025\] Revisiting Point Cloud Completion: Are We Ready For The Real-World?](../../ICCV2025/3d_vision/revisiting_point_cloud_completion_are_we_ready_for_the_real-world.md)
-- [\[ICCV 2025\] How Far are AI-generated Videos from Simulating the 3D Visual World: A Learned 3D Evaluation Approach](../../ICCV2025/3d_vision/how_far_are_ai-generated_videos_from_simulating_the_3d_visual_world_a_learned_3d.md)
 
 </div>
 

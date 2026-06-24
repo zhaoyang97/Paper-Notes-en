@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Message-Passing Transformer for Error Correcting Codes
 description: >-
-  [ICLR 2026][Signal & Communications][Paper Note] EfficientMPT replaces the $O(n^2)$ standard attention in Transformer-based error-correcting code (ECC) decoders with a linear-complexity EEC attention based on "global query vectors + element-wise multiplication." While maintaining error correction performance comparable to state-of-the-art (CrossMPT), it reduces GPU m
+  [ICLR2026][Signal & Communication][Error correcting codes] EfficientMPT replaces the $O(n^2)$ standard attention in Transformer-based error-correcting code (ECC) decoders with a linear-complexity EEC attention based on "global query vectors + element-wise multiplication." While maintaining error correction performance comparable to state-of-the-art (CrossMPT), it reduces GPU memory and FLOPs by dozens of times for long LDPC codes. Its parameter count is independent of code le…
 tags:
-  - ICLR 2026
-  - Signal & Communications
+  - "ICLR2026"
+  - "Signal & Communication"
+  - "Error correcting codes"
+  - "Transformer decoder"
+  - "linear complexity attention"
+  - "parity-check matrix"
+  - "foundation model"
 date: 2026-05-08
-content_hash: 53f9fd9ebfa35e40
+content_hash: edf4135e2b637408
 ---
+
 # Efficient Message-Passing Transformer for Error Correcting Codes
 
 **Conference**: ICLR2026  

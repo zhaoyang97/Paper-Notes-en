@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-modal Test-time Adaptation via Adaptive Probabilistic Gaussian Calibration
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the failure of class-conditional distribution modeling caused by "modality distribution asymmetry" in Multi-modal Test-time Adaptation (TTA), AdaPGC explicitly models the feature distribution of each class using a probabilistic Gaussian model with class-specific covariances. It further suppresses the bias of
+  [CVPR 2026][Multimodal VLM][Multi-modal TTA] To address the failure of class-conditional distribution modeling caused by "modality distribution asymmetry" in Multi-modal Test-time Adaptation (TTA), AdaPGC explicitly models the feature distribution of each class using a probabilistic Gaussian model with class-specific covariances. It further suppresses the bias of corrupted modalities through contrastive correction based on symmetric KL divergence…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-modal TTA"
+  - "Gaussian Discriminant Analysis"
+  - "Class-conditional distribution"
+  - "Modality asymmetry"
+  - "Contrastive correction"
 date: 2026-05-08
-content_hash: 4702a782898cb9bf
+content_hash: fa7d4d417d359a0d
 ---
+
 # Multi-modal Test-time Adaptation via Adaptive Probabilistic Gaussian Calibration
 
 **Conference**: CVPR 2026  
@@ -127,10 +133,10 @@ Three components are decomposed on Kinetics50-C: Fusion Logits (FL, Eq. 14), Pre
 ## Related Papers
 
 - [\[CVPR 2026\] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation](decoupling_stability_and_plasticity_for_multi-modal_test-time_adaptation.md)
-- [\[CVPR 2026\] Test-Time Distillation for Continual Model Adaptation](test-time_distillation_for_continual_model_adaptation.md)
 - [\[CVPR 2026\] SoC: Semantic Orthogonal Calibration for Test-Time Prompt Tuning](soc_semantic_orthogonal_calibration_for_test-time_prompt_tuning.md)
 - [\[CVPR 2026\] Condensed Test-Time Adaptation of VLMs for Action Recognition](condensed_test-time_adaptation_of_vlms_for_action_recognition.md)
 - [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
+- [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
 
 </div>
 

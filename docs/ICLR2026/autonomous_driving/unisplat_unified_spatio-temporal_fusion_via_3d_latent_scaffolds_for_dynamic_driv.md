@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniSplat: Unified Spatio-Temporal Fusion via 3D Latent Scaffolds for Dynamic Driving Scene Reconstruction
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] UniSplat performs multi-view spatial fusion and multi-frame temporal fusion simultaneously on a unified "3D implicit scaffold" (sparse voxel grid). It utilizes a point-voxel dual-branch decoder to generate Gaussians with dynamic attributes while maintaining a static Gaussian memory bank, achieving feed-forward SOTA new
+  [ICLR 2026][Autonomous Driving][Feed-forward reconstruction] UniSplat performs multi-view spatial fusion and multi-frame temporal fusion simultaneously on a unified "3D implicit scaffold" (sparse voxel grid). It utilizes a point-voxel dual-branch decoder to generate Gaussians with dynamic attributes while maintaining a static Gaussian memory bank, achieving feed-forward SOTA new-view synthesis in sparse surround-view, highly dynamic driving scenarios like Waymo and nuScenes…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Feed-forward reconstruction"
+  - "3D Gaussian Splatting"
+  - "Spatio-temporal fusion"
+  - "Dynamic scenes"
+  - "Implicit voxel scaffolds"
 date: 2026-05-08
-content_hash: 3b0fe6faf7c28d89
+content_hash: d0538f91c8914b30
 ---
+
 # UniSplat: Unified Spatio-Temporal Fusion via 3D Latent Scaffolds for Dynamic Driving Scene Reconstruction
 
 **Conference**: ICLR 2026  
@@ -131,12 +137,13 @@ UniSplat outperforms DepthSplat and Omni-Scene across all metrics. † denotes u
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] STUR3D: Spatio-Temporal Unified Representation Learning for 3D Object Detection](../../CVPR2026/autonomous_driving/stur3d_spatio-temporal_unified_representation_learning_for_3d_object_detection.md)
 - [\[ICLR 2026\] GaussianFusion: Unified 3D Gaussian Representation for Multi-Modal Fusion Perception](gaussianfusion_unified_3d_gaussian_representation_for_multi-modal_fusion_percept.md)
+- [\[CVPR 2026\] STUR3D: Spatio-Temporal Unified Representation Learning for 3D Object Detection](../../CVPR2026/autonomous_driving/stur3d_spatio-temporal_unified_representation_learning_for_3d_object_detection.md)
 - [\[AAAI 2026\] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](../../AAAI2026/autonomous_driving/catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)
 - [\[CVPR 2026\] DGGT: Feedforward 4D Reconstruction of Dynamic Driving Scenes using Unposed Images](../../CVPR2026/autonomous_driving/dggt_feedforward_4d_reconstruction_of_dynamic_driving_scenes_using_unposed_image.md)
 - [\[ICLR 2026\] NeMo-map: Neural Implicit Flow Fields for Spatio-Temporal Motion Mapping](nemo-map_neural_implicit_flow_fields_for_spatio-temporal_motion_mapping.md)

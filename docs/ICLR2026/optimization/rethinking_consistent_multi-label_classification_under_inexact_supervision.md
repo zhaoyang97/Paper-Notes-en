@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Consistent Multi-Label Classification Under Inexact Supervision
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The COMES framework is proposed to provide consistent risk estimators for multi-label classification under inexact supervision through first-order (Hamming loss) and second-order (Ranking loss) strategies, eliminating the need for label generation process estimation or uniform distribution assumptions.
+  [ICLR 2026][Optimization][Multi-label classification] The COMES framework is proposed to provide consistent risk estimators for multi-label classification under inexact supervision through first-order (Hamming loss) and second-order (Ranking loss) strategies, eliminating the need for label generation process estimation or uniform distribution assumptions.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Multi-label classification"
+  - "weakly supervised learning"
+  - "partial multi-label learning"
+  - "complementary multi-label learning"
+  - "risk consistency"
 date: 2026-05-08
-content_hash: 9f71285793149c21
+content_hash: ea88c27bb4f8ab9e
 ---
+
 # Rethinking Consistent Multi-Label Classification Under Inexact Supervision
 
 **Conference**: ICLR 2026  
@@ -136,9 +142,9 @@ The bias introduced by correction terms (absolute value / flooding) vanishes as 
 
 - [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](../../ICML2026/optimization/a_general_framework_for_dynamic_consistent_submodular_maximization.md)
 - [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
-- [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](multi-action_self-improvement_for_neural_combinatorial_optimization.md)
-- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
-- [\[ICLR 2026\] Federated Learning with Profile Mapping under Distribution Shifts and Drifts](federated_learning_with_profile_mapping_under_distribution_shifts_and_drifts.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](in-context_multi-objective_optimization.md)
+- [\[ICLR 2026\] Hierarchical Multi-Stage Recovery Framework for Kronecker Compressed Sensing](hierarchical_multi-stage_recovery_framework_for_kronecker_compressed_sensing.md)
+- [\[ICLR 2026\] From Gradient Volume to Shapley Fairness: Towards Fair Multi-Task Learning](from_gradient_volume_to_shapley_fairness_towards_fair_multi-task_learning.md)
 
 </div>
 

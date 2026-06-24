@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One-Step Generative Policies with Q-Learning: A Reformulation of MeanFlow
 description: >-
-  [AAAI 2026][Reinforcement Learning][Offline reinforcement learning] This paper reformulates MeanFlow from visual generation into a generative policy for offline RL. It proposes a residual-form direct noise-to-action mapp…
+  [AAAI 2026][Reinforcement Learning][Offline reinforcement learning] This paper reformulates MeanFlow from visual generation into a generative policy for offline RL. It proposes a residual-form direct noise-to-action mapping that achieves expressive one-step sampling and enables stable joint optimization with a Q-function in a single training stage, achieving strong performance across 73 tasks on OGBench and D4RL.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "one-step sampling"
   - "Q-learning"
 date: 2026-05-08
-content_hash: 4554eed98679a622
+content_hash: b249a4cd8ab30afb
 ---
 
 # One-Step Generative Policies with Q-Learning: A Reformulation of MeanFlow
@@ -124,11 +124,11 @@ $\mathcal{L}_\pi = -Q_\phi(s, g_\theta(e,0,1)) + \alpha \cdot \mathcal{L}_{MFI}$
 
 ## Related Papers
 
-- [\[ICLR 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](../../ICLR2026/reinforcement_learning/offline_reinforcement_learning_with_generative_trajectory_policies.md)
-- [\[ICML 2026\] MFPO: Running MaxEnt RL with Few-step MeanFlow Policy at Nearly Gaussian Policy Speeds](../../ICML2026/reinforcement_learning/mean_flow_policy_optimization.md)
+- [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](../../ICML2026/reinforcement_learning/offline_reinforcement_learning_with_generative_trajectory_policies.md)
+- [\[ICML 2026\] MFPO: Accelerating MaxEnt RL to Gaussian Policy Speeds with Few-step MeanFlow Policy](../../ICML2026/reinforcement_learning/mean_flow_policy_optimization.md)
+- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](../../ICLR2026/reinforcement_learning/one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
+- [\[ICLR 2026\] Mean Flow Policy with Instantaneous Velocity Constraint for One-step Action Generation](../../ICLR2026/reinforcement_learning/mean_flow_policy_with_instantaneous_velocity_constraint_for_one-step_action_gene.md)
 - [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
-- [\[NeurIPS 2025\] CORE: Constraint-Aware One-Step Reinforcement Learning for Simulation-Guided Neural Network Accelerator Design](../../NeurIPS2025/reinforcement_learning/core_constraint-aware_one-step_reinforcement_learning_for_simulation-guided_neur.md)
-- [\[AAAI 2026\] CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments](chdp_cooperative_hybrid_diffusion_policies_for_reinforcement_learning_in_paramet.md)
 
 </div>
 

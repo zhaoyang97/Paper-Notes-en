@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Radiance Meshes for Volumetric Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Radiance Mesh represents radiance fields by partitioning the scene into tetrahedral units with "constant density + linear color" using Delaunay tetrahedralization. In conjunction with exact volumetric rendering sorted by circumsphere power and a novel mesh shader rasterizer, it achieves real-time view synthesis that is
+  [CVPR 2026][3D Vision][Radiance Fields] Radiance Mesh represents radiance fields by partitioning the scene into tetrahedral units with "constant density + linear color" using Delaunay tetrahedralization. In conjunction with exact volumetric rendering sorted by circumsphere power and a novel mesh shader rasterizer, it achieves real-time view synthesis that is faster than 3DGS and popping-free, while maintaining comparable quality and being naturally compatible with graphics ec…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Radiance Fields"
+  - "Delaunay Tetrahedralization"
+  - "Volumetric Rendering"
+  - "Hardware Rasterization"
+  - "Real-time View Synthesis"
 date: 2026-05-08
-content_hash: 3cb2708988a9690e
+content_hash: c15c42a3f285485f
 ---
+
 # Radiance Meshes for Volumetric Reconstruction
 
 **Conference**: CVPR 2026  
@@ -134,15 +140,17 @@ In terms of quality, this work comprehensively exceeds the most similar baseline
 
 <div class="related-papers" markdown="1">
 
-1. (2024) [RadFoam: Real-Time Photorealistic Ray Tracing of Volumetric Models](https://arxiv.org/abs/2403.04128)
-2. (2023) [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://repo-lpgh.github.io/gaussian-splatting/)
-3. (2024) [SVRaster: Spheroid Volumetric Rasterization for Real-Time View Synthesis](https://arxiv.org/abs/2403.18181)
-4. (2021) [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/)
+## Related Papers
+
+- [\[CVPR 2026\] Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction](color-encoded_illumination_for_high-speed_volumetric_scene_reconstruction.md)
+- [\[CVPR 2026\] Volumetric Functional Maps](volumetric_functional_maps.md)
+- [\[CVPR 2026\] MeshSplatting: Differentiable Rendering with Opaque Meshes](meshsplatting_differentiable_rendering_with_opaque_meshes.md)
+- [\[CVPR 2025\] Volumetric Surfaces: Representing Fuzzy Geometries with Layered Meshes](../../CVPR2025/3d_vision/volumetric_surfaces_representing_fuzzy_geometries_with_layered_meshes.md)
+- [\[CVPR 2026\] Image-Guided Geometric Stylization of 3D Meshes](image-guided_geometric_stylization_of_3d_meshes.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction](color-encoded_illumination_for_high-speed_volumetric_scene_reconstruction.md)

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis
 description: >-
-  [ICLR 2026][learning_theory][Diffusion Model] This paper proposes "score stability," an **algorithm-dependent** generalization analysis framework that directly translates the sensitivity of a diffusion model to a single training sample into an upper bound on the generalization gap. Using this framework, the authors reveal three previously overlooked sources of imp
+  [ICLR 2026][Learning Theory][Implicit Regularization] This paper proposes "score stability," an **algorithm-dependent** generalization analysis framework that directly translates the sensitivity of a diffusion model to a single training sample into an upper bound on the generalization gap. Using this framework, the authors reveal three previously overlooked sources of implicit regularization: the denoising objective itself, the coarse-grained discretization of the sampler…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Diffusion Models"
+  - "Generalization Analysis"
+  - "Implicit Regularization"
+  - "Algorithmic Stability"
+  - "Generalization Bounds"
+  - "Score Matching"
 date: 2026-05-08
-content_hash: 4cb2f989e6f52d05
+content_hash: f447a1ee735cef6d
 ---
+
 # Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis
 
 **Conference**: ICLR 2026  

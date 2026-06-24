@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes the Explicit Motion Decomposition (EMD) module, which models the motion characteristics of each Gaussian primitive via learnable motion embedding…
+  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes the Explicit Motion Decomposition (EMD) module, which models the motion characteristics of each Gaussian primitive via learnable motion embeddings and a dual-scale deformation framework. As a plug-and-play module, EMD integrates seamlessly into both self-supervised and supervised street-view Gaussian splatting methods, achieving state-of-the-art performance under the self-supervised setting on the Waym…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Self-Supervised Learning"
   - "Street View Simulation"
 date: 2026-05-08
-content_hash: d3a575e80e8867ef
+content_hash: 3cbc1fcf192ef1ee
 ---
 
 # EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting
@@ -220,8 +220,8 @@ Novel trajectory synthesis (FID↓, Waymo):
 
 ## Related Papers
 
-- [\[ICCV 2025\] DAMap: Distance-aware MapNet for High Quality HD Map Construction](damap_distance-aware_mapnet_for_high_quality_hd_map_construction.md)
 - [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](ad_gs_object_aware_bspline_gaussian_splatting_self_supervised_autonomous_driving.md)
+- [\[ICCV 2025\] DAMap: Distance-aware MapNet for High Quality HD Map Construction](damap_distance-aware_mapnet_for_high_quality_hd_map_construction.md)
 - [\[ICCV 2025\] CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting](ccl-lgs_contrastive_codebook_learning_for_3d_language_gaussian_splatting.md)
 - [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
 - [\[ICCV 2025\] 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation](3d_gaussian_splatting_driven_multiview_robust_physical_adver.md)

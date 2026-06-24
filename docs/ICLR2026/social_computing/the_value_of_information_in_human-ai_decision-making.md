@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Value of Information in Human-AI Decision-Making
 description: >-
-  [ICLR 2026][Social Computing][Paper Note] This paper proposes a framework based on Bayesian decision theory that uses "Value of Information" to quantify the maximum expected utility gain brought by each signal (AI predictions, human judgments, instance features) relative to existing decisions. Based on this, it designs a new explanation method, ILIV-SHAP, whic
+  [ICLR 2026][Social Computing][Value of Information] This paper proposes a framework based on Bayesian decision theory that uses "Value of Information" to quantify the maximum expected utility gain brought by each signal (AI predictions, human judgments, instance features) relative to existing decisions. Based on this, it designs a new explanation method, ILIV-SHAP, which highlights "human-complementary information." Experiments in house price prediction demonstrate that it im…
 tags:
-  - ICLR 2026
-  - Social Computing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Value of Information"
+  - "Human-AI Complementarity"
+  - "Bayesian Decision Theory"
+  - "SHAP Explanations"
+  - "Decision Evaluation"
 date: 2026-05-08
-content_hash: db30ca7089a8af30
+content_hash: dfc8a228bc6fb54d
 ---
+
 # The Value of Information in Human-AI Decision-Making
 
 **Conference**: ICLR 2026  
@@ -137,13 +143,17 @@ The two AI models had nearly identical prediction accuracy, but the ACIV ranking
 
 <div class="related-papers" markdown="1">
 
-- **Complementarity in Human-AI Collaboration: A Bayesian Decision-Theoretic Approach**, Guo et al., 2024.
-- **A Unified Approach to Interpreting Model Predictions**, Lundberg & Lee, 2017 (NIPS).
+## Related Papers
+
+- [\[ICLR 2026\] INTIMA: A Benchmark for Human-AI Companionship Behavior](intima_a_benchmark_for_human-ai_companionship_behavior.md)
+- [\[ACL 2026\] Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies](../../ACL2026/social_computing/imperfectly_cooperative_human-ai_interactions_comparing_the_impacts_of_human_and.md)
+- [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
+- [\[ICLR 2026\] Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction](human_or_machine_a_preliminary_turing_test_for_speech-to-speech_interaction.md)
+- [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](../../ACL2026/social_computing/inertia_in_moral_and_value_judgments_of_large_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies](../../ACL2026/social_computing/imperfectly_cooperative_human-ai_interactions_comparing_the_impacts_of_human_and.md)

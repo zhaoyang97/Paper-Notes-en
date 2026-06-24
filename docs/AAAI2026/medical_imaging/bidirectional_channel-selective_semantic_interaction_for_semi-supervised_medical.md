@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Semi-supervised learning] This paper proposes the BCSI framework, which employs a channel-selection router to dynamically identify critical feature channels and performs bidirectional channel…
+  [AAAI 2026][Medical Imaging][Semi-supervised learning] This paper proposes the BCSI framework, which employs a channel-selection router to dynamically identify critical feature channels and performs bidirectional channel-level interaction between labeled and unlabeled data streams. Combined with semantic-spatial perturbation-based weak-to-strong consistency learning, BCSI achieves substantial improvements in semi-supervised medical image segmentation.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "bidirectional interaction"
   - "weak-to-strong consistency"
 date: 2026-05-08
-content_hash: c2cf9ba3c16765f4
+content_hash: 5c87fb5d2c5a6f0b
 ---
 
 # Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation
@@ -185,7 +185,7 @@ Comparisons against 11 state-of-the-art methods on three 3D medical segmentation
 
 - [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
 - [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semantic_class_distribution_learning_for_debiasing.md)
+- [\[CVPR 2025\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/semantic_class_distribution_learning_for_debiasing_semi-supervised_medical_image.md)
 - [\[AAAI 2026\] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation](dualfete_revisiting_teacher-student_interactions_from_a_feedback_perspective_for.md)
 - [\[ICML 2026\] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](../../ICML2026/medical_imaging/are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)
 

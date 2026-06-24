@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] eTracer: Towards Traceable Text Generation via Claim-Level Grounding
 description: >-
-  [ACL 2026][Information Retrieval & RAG][claim-level grounding] eTracer decomposes RAG responses into atomic claims and searches for sentence-level evidence (supporting or refuting) within the context. By using a three-step pipeline (decomposition → embedding retrieval → entailment judgment), it outputs a signed score matrix. This allows for precise back-tracing of factual origins
+  [ACL 2026][Information Retrieval & RAG][claim-level grounding] eTracer decomposes RAG responses into atomic claims and searches for sentence-level evidence (supporting or refuting) within the context. By using a three-step pipeline (decomposition → embedding retrieval → entailment judgment), it outputs a signed score matrix. This allows for precise back-tracing of factual origins and quantitative assessment of response faithfulness in biomedical scenarios.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - claim-level grounding
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "claim-level grounding"
+  - "RAG verifiability"
+  - "hallucination detection"
+  - "biomedical QA"
+  - "citation granularity"
 date: 2026-05-08
-content_hash: 7704bc17549f5453
+content_hash: 6bc17249cb726866
 ---
+
 # eTracer: Towards Traceable Text Generation via Claim-Level Grounding
 
 **Conference**: ACL 2026  
@@ -169,8 +174,8 @@ User experiment (Appendix A): S⇒C (Ours) had an average verification time of 1
 - [\[ACL 2025\] Investigating the Robustness of Retrieval-Augmented Generation at the Query Level](../../ACL2025/information_retrieval/investigating_the_robustness_of_retrieval-augmented_generation_at_the_query_leve.md)
 - [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](../../ICLR2026/information_retrieval/query-level_uncertainty_in_large_language_models.md)
 - [\[ACL 2026\] Quantifying and Improving the Robustness of Retrieval-Augmented Language Models Against Spurious Features in Grounding Data](quantifying_and_improving_the_robustness_of_retrieval-augmented_language_models_.md)
-- [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
-- [\[ACL 2026\] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval](reasonembed_enhanced_text_embeddings_for_reasoning-intensive_document_retrieval.md)
+- [\[ACL 2025\] FaithfulRAG: Fact-Level Conflict Modeling for Context-Faithful Retrieval-Augmented Generation](../../ACL2025/information_retrieval/faithfulrag_fact_level_conflict.md)
+- [\[ACL 2026\] SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation](skmteb_slovak_massive_text_embedding_benchmark_and_model_adaptation.md)
 
 </div>
 

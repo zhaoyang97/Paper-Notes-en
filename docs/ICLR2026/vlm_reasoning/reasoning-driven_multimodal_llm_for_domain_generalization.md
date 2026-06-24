@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] Reasoning-Driven Multimodal LLM for Domain Generalization
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] Ours proposes RD-MLDG: the first framework to introduce Multimodal Large Language Model (MLLM) reasoning chains into Domain Generalization (DG). By constructing the DomainBed-Reasoning dataset, the study systematically analyzes two major challenges in reasoning supervision (optimization difficulty and reasoning mode mi
+  [ICLR 2026][VLM Reasoning] Ours proposes RD-MLDG: the first framework to introduce Multimodal Large Language Model (MLLM) reasoning chains into Domain Generalization (DG). By constructing the DomainBed-Reasoning dataset, the study systematically analyzes two major challenges in reasoning supervision (optimization difficulty and reasoning mode mismatch). These are addressed through the synergy of Multi-Task Cross Training (MTCT) and Self-Aligned Reasoning Regularization (SARR)…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
 date: 2026-05-08
-content_hash: ddc7067cfb0333d7
+content_hash: d09f7ad9b6898302
 ---
+
 # Reasoning-Driven Multimodal LLM for Domain Generalization
 
 **Conference**: ICLR 2026  
@@ -121,14 +122,15 @@ Key Findings: (1) Using reasoning chains alone (Reasoning only) is lower than di
 *   Value: ⭐⭐⭐⭐⭐ Opens a new reasoning-driven paradigm for Domain Generalization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Vid-LLM: A Compact Video-based 3D Multimodal LLM with Reconstruction–Reasoning Synergy](vid-llm_a_compact_video-based_3d_multimodal_llm_with_reconstructionreasoning_syn.md)
 - [\[ICLR 2026\] JUDO: A Juxtaposed Domain-Oriented Multimodal Reasoner for Industrial Anomaly QA](judo_a_juxtaposed_domain-oriented_multimodal_reasoner_for_industrial_anomaly_qa.md)
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
 - [\[ICML 2026\] LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations](../../ICML2026/vlm_reasoning/limssr_llm-driven_sequence-to-score_reasoning_under_training-time_incomplete_mul.md)
+- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
 - [\[ICLR 2026\] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)
 
 </div>

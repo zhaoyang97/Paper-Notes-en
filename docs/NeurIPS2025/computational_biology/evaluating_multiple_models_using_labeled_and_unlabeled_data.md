@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evaluating Multiple Models Using Labeled and Unlabeled Data
 description: >-
-  [NeurIPS 2025][Computational Biology][semi-supervised evaluation] This paper proposes **SSME (Semi-Supervised Model Evaluation)**, which leverages a small amount of labeled data and a large amount of unlabeled data to es…
+  [NeurIPS 2025][Computational Biology][semi-supervised evaluation] This paper proposes **SSME (Semi-Supervised Model Evaluation)**, which leverages a small amount of labeled data and a large amount of unlabeled data to estimate the joint distribution $P(y, \mathbf{s})$ of multiple classifiers via a semi-supervised mixture model, enabling accurate classifier performance evaluation with errors reduced to 1/5 of those incurred when using labeled data alone.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "unlabeled data"
   - "classifier performance"
 date: 2026-05-08
-content_hash: c75a7c54d88e04e0
+content_hash: 91d85e20810d9cfc
 ---
 
 # Evaluating Multiple Models Using Labeled and Unlabeled Data
@@ -157,9 +157,9 @@ Key implications:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
 - [\[NeurIPS 2025\] Self Iterative Label Refinement via Robust Unlabeled Learning](self_iterative_label_refinement_via_robust_unlabeled_learning.md)
 - [\[NeurIPS 2025\] Iterative Foundation Model Fine-Tuning on Multiple Rewards](iterative_foundation_model_fine-tuning_on_multiple_rewards.md)
+- [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
 - [\[NeurIPS 2025\] Compressing Biology: Evaluating the Stable Diffusion VAE for Phenotypic Drug Discovery](compressing_biology_evaluating_the_stable_diffusion_vae_for_phenotypic_drug_disc.md)
 - [\[NeurIPS 2025\] Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations](beyond_chemical_qa_evaluating_llms_chemical_reasoning_with_modular_chemical_oper.md)
 

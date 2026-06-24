@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Text Summarization via Global Structure Awareness
 description: >-
-  [ICLR 2026][Text Generation][Paper Note] GloSA-sum introduces Topological Data Analysis (TDA) to text summarization for the first time. It utilizes persistent homology to identify the document's semantic skeleton and logical loops, storing them in a "protection pool." A lightweight proxy metric is then used to iteratively delete sentences, achieving fast and
+  [ICLR 2026][Text Generation][Text Summarization] GloSA-sum introduces Topological Data Analysis (TDA) to text summarization for the first time. It utilizes persistent homology to identify the document's semantic skeleton and logical loops, storing them in a "protection pool." A lightweight proxy metric is then used to iteratively delete sentences, achieving fast and accurate compression without losing core logic chains, while effectively shortening contexts for downstream LLM…
 tags:
-  - ICLR 2026
-  - Text Generation
+  - "ICLR 2026"
+  - "Text Generation"
+  - "Text Summarization"
+  - "Topological Data Analysis"
+  - "Persistent Homology"
+  - "Long Document Compression"
+  - "Unsupervised Extraction"
 date: 2026-05-08
-content_hash: 893b92bbaf65ffa3
+content_hash: c29c742be47d8443
 ---
+
 # Text Summarization via Global Structure Awareness
 
 **Conference**: ICLR 2026  
@@ -132,15 +138,15 @@ In terms of efficiency, GloSA-sum is significantly faster than generative models
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Improving Attributed Long-form Question Answering with Intent Awareness](improving_attributed_long-form_question_answering_with_intent_awareness.md)
 - [\[ACL 2025\] Theme-Explanation Structure for Table Summarization Using Large Language Models](../../ACL2025/nlp_generation/theme-explanation_structure_for_table_summarization_using_large_language_models_.md)
+- [\[ICLR 2026\] Diverse Text Decoding via Iterative Reweighting](diverse_text_decoding_via_iterative_reweighting.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
-- [\[ACL 2025\] What Is That Talk About? A Video-to-Text Summarization Dataset for Scientific Presentations](../../ACL2025/nlp_generation/video_text_summarization.md)
-- [\[ACL 2026\] ThreadSumm: Summarization of Nested Discourse Threads Using Tree of Thoughts](../../ACL2026/nlp_generation/threadsumm_summarization_of_nested_discourse_threads_using_tree_of_thoughts.md)
-- [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/nlp_generation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
+- [\[ICLR 2026\] Logit-KL Flow Matching: Non-Autoregressive Text Generation with Sampling-Mixing Inference](logitkl_flow_matching_nonautoregressive_text_generation_via_samplinghybrid_infer.md)
 
 </div>
 

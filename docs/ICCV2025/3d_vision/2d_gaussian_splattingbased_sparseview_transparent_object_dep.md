@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update
 description: >-
-  [ICCV 2025][3D Vision][2D Gaussian Splatting] This paper proposes TRAN-D, a 2D Gaussian Splatting-based method for sparse-view transparent object depth reconstruction. It employs segmentation-guided object-aware losses t…
+  [ICCV 2025][3D Vision][2D Gaussian Splatting] This paper proposes TRAN-D, a 2D Gaussian Splatting-based method for sparse-view transparent object depth reconstruction. It employs segmentation-guided object-aware losses to optimize Gaussian distributions in occluded regions, and leverages physics simulation (MPM) to enable dynamic scene updates after object removal, requiring only a single image for scene refresh.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "physics simulation"
   - "scene update"
 date: 2026-05-08
-content_hash: 27edcf77a3f3c2a9
+content_hash: 554d30fb39628fbb
 ---
 
 # TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update
@@ -171,10 +171,10 @@ The **paradigm of combining physics simulation with neural representations** des
 ## Related Papers
 
 - [\[ICCV 2025\] GaussianUpdate: Continual 3D Gaussian Splatting Update for Changing Environments](gaussianupdate_continual_3d_gaussian_splatting_update_for_changing_environments.md)
+- [\[ICCV 2025\] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting](surfacesplat_connecting_surface_reconstruction_and_gaussian_splatting.md)
 - [\[ICCV 2025\] Sparfels: Fast Reconstruction from Sparse Unposed Imagery](sparfels_fast_reconstruction_from_sparse_unposed_imagery.md)
 - [\[AAAI 2026\] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting](../../AAAI2026/3d_vision/meshsplat_generalizable_sparse-view_surface_reconstruction_via_gaussian_splattin.md)
 - [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](../../AAAI2026/3d_vision/sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
-- [\[ICCV 2025\] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting](surfacesplat_connecting_surface_reconstruction_and_gaussian_splatting.md)
 
 </div>
 

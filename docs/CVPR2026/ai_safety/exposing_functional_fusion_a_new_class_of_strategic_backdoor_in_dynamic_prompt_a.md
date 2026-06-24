@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exposing Functional Fusion: A New Class of Strategic Backdoor in Dynamic Prompt Architectures
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper proposes VIPER—the first ViT backdoor attack framework built on a dynamic Visual Prompt Generator (VPG). Through the joint optimization of triggers and prompts, it induces a new phenomenon called "Functional Fusion," where malicious logic and benign utility are compressed into the same sparse, high-amplitude
+  [CVPR 2026][AI Safety][Backdoor Attack] This paper proposes VIPER—the first ViT backdoor attack framework built on a dynamic Visual Prompt Generator (VPG). Through the joint optimization of triggers and prompts, it induces a new phenomenon called "Functional Fusion," where malicious logic and benign utility are compressed into the same sparse, high-amplitude parameter core. This creates a "hostage dilemma" for defenders: removing the attack via pruning inevitably destroys ben…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Backdoor Attack"
+  - "Visual Prompt Tuning"
+  - "Dynamic Prompt Generation"
+  - "Parameter-Efficient Fine-Tuning"
+  - "ViT Security"
 date: 2026-05-08
-content_hash: fc977d06691c9471
+content_hash: 8dbc94f7cbc623f0
 ---
+
 # Exposing Functional Fusion: A New Class of Strategic Backdoor in Dynamic Prompt Architectures
 
 **Conference**: CVPR 2026  
@@ -151,10 +157,10 @@ Computational overhead: VIPER uses only 2.30M trainable parameters (92.6% less t
 
 ## Related Papers
 
-- [\[CVPR 2026\] Sparsity as a Key: Unlocking New Insights from Latent Structures for Out-of-Distribution Detection](sparsity_as_a_key_unlocking_new_insights_from_latent_structures_for_out-of-distr.md)
-- [\[CVPR 2026\] VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation](vmd-fact_a_new_video_dataset_and_mllm-based_method_for_detecting_realistic_ai-ge.md)
-- [\[CVPR 2026\] Selective Amnesia using Contrastive Subnet Erasure for Class Level Unlearning in Vision Models](selective_amnesia_using_contrastive_subnet_erasure_for_class_level_unlearning_in.md)
-- [\[CVPR 2026\] Enhancing the Security of Visual Speaker Authentication Based on Dynamic Lip-Print Analysis](enhancing_the_security_of_visual_speaker_authentication_based_on_dynamic_lip-pri.md)
+- [\[ICML 2026\] Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search](../../ICML2026/ai_safety/exposing_hidden_biases_in_text-to-image_models_via_automated_prompt_search.md)
+- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
+- [\[CVPR 2026\] Phantom: Physical Object Interactions as Dynamic Triggers for NMS-Exploited Backdoors](phantom_physical_object_interactions_as_dynamic_triggers_for_nms-exploited_backd.md)
+- [\[CVPR 2026\] Logit-Margin Repulsion for Backdoor Defense](logit-margin_repulsion_for_backdoor_defense.md)
 - [\[CVPR 2026\] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models](eliminate_distance_differences_induced_by_backdoor_attacks_layer-selective_train.md)
 
 </div>

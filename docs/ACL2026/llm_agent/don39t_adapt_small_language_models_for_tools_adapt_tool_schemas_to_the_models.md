@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes PA-Tool, a training-free tool schema optimization method. By utilizing the "peakedness" signal borrowed from data contamination detection, it identifies naming patterns familiar to the model from pre-training. By renaming tool components to align with the internalized knowledge of Small Language Mod
+  [ACL 2026][LLM Agent][Small Language Models] This paper proposes PA-Tool, a training-free tool schema optimization method. By utilizing the "peakedness" signal borrowed from data contamination detection, it identifies naming patterns familiar to the model from pre-training. By renaming tool components to align with the internalized knowledge of Small Language Models (SLMs), PA-Tool achieves up to a 17% improvement on MetaTool and RoTBench, and reduces schema misalignment erro…
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Small Language Models"
+  - "Tool Use"
+  - "Schema Alignment"
+  - "Pre-trained Knowledge"
+  - "Training-free Optimization"
 date: 2026-05-08
-content_hash: 0501a65b3c93e604
+content_hash: bf4ee832f6adb74e
 ---
+
 # Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models
 
 **Conference**: ACL 2026  
@@ -149,10 +155,10 @@ PA-Tool is entirely training-free and requires only a one-time schema mapping. A
 
 ## Related Papers
 
-- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
-- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
+- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
 - [\[ACL 2026\] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair](polaris_a_gödel_agent_framework_for_small_language_models_through_experience-abs.md)
+- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
 - [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
 
 </div>

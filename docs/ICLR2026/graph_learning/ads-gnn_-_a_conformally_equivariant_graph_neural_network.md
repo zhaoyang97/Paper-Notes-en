@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdS-GNN - a Conformally Equivariant Graph Neural Network
 description: >-
-  [ICLR 2026][Graph Learning][AdS/CFT] This paper "lifts" point clouds from flat Euclidean space to a higher-dimensional Anti-de Sitter (AdS) space. Leveraging the correspondence in physics between AdS isometry transformations and boundary conformal transformations, the authors construct AdS-GNN, the first Graph Neural Network equivariant to the **full conf
+  [ICLR2026][Graph Learning][Conformal Symmetry] This paper "lifts" point clouds from flat Euclidean space to a higher-dimensional Anti-de Sitter (AdS) space. Leveraging the correspondence in physics between AdS isometry transformations and boundary conformal transformations, the authors construct AdS-GNN, the first Graph Neural Network equivariant to the **full conformal group** (including translations, rotations, scaling, and non-affine special conformal transformations). The…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - AdS/CFT
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Conformal Symmetry"
+  - "Equivariant GNN"
+  - "Anti-de Sitter Space"
+  - "AdS/CFT"
+  - "Message Passing"
 date: 2026-05-08
-content_hash: 573a8120c575f877
+content_hash: c164160b48c6e56d
 ---
+
 # AdS-GNN - a Conformally Equivariant Graph Neural Network
 
 **Conference**: ICLR2026  
@@ -128,13 +133,14 @@ The most compelling result is the augmented test on SuperPixel MNIST: when rotat
 - **Value**: ⭐⭐⭐⭐⭐ Opens a new path for conformal learning and provides an interpretable paradigm for physical quantity extraction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
-- [\[AAAI 2026\] On Stealing Graph Neural Network Models](../../AAAI2026/graph_learning/on_stealing_graph_neural_network_models.md)
 - [\[AAAI 2026\] Magnitude-Modulated Equivariant Adapter for Parameter-Efficient Fine-Tuning of Equivariant Graph Neural Networks](../../AAAI2026/graph_learning/magnitude-modulated_equivariant_adapter_for_parameter-efficient_fine-tuning_of_e.md)
+- [\[AAAI 2026\] On Stealing Graph Neural Network Models](../../AAAI2026/graph_learning/on_stealing_graph_neural_network_models.md)
+- [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
 - [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
 - [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](../../ICML2026/graph_learning/full-spectrum_graph_neural_network_expressive_and_scalable.md)
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Probing Rotary Position Embeddings through Frequency Entropy
 description: >-
-  [ICLR 2026][Interpretability][RoPE] This paper proposes **Frequency Entropy (FE)**, a training-free diagnostic metric that applies Fourier analysis to the query norm signals of RoPE rotation pairs along the sequence to calculate Shannon entropy. By decoupling signals into "frequency band structures" and "periodic oscillations," it provides a unified expl
+  [ICLR 2026][Interpretability][RoPE] This paper proposes **Frequency Entropy (FE)**, a training-free diagnostic metric that applies Fourier analysis to the query norm signals of RoPE rotation pairs along the sequence to calculate Shannon entropy. By decoupling signals into "frequency band structures" and "periodic oscillations," it provides a unified explanation for previous contradictory findings regarding high vs. low-frequency dimensions and discovers that periodic dimensio…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - RoPE
+  - "ICLR 2026"
+  - "Interpretability"
+  - "RoPE"
+  - "Frequency Entropy"
+  - "Positional Encoding"
+  - "Dimensional Pruning"
 date: 2026-05-08
-content_hash: 5d123d75e58644e6
+content_hash: c02bc783206bb62f
 ---
+
 # Probing Rotary Position Embeddings through Frequency Entropy
 
 **Conference**: ICLR 2026  

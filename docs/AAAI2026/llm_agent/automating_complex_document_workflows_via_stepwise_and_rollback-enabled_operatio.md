@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Automating Complex Document Workflows via Stepwise and Rollback-Enabled Operations
 description: >-
-  [AAAI 2026][LLM Agent][document workflows] This paper proposes AutoDW, a framework that automates complex document workflows through stepwise planning (generating one API call at a time) combined with adaptive rollback (…
+  [AAAI 2026][LLM Agent][document workflows] This paper proposes AutoDW, a framework that automates complex document workflows through stepwise planning (generating one API call at a time) combined with adaptive rollback (parameter-level and API-level). On DWBench—a benchmark of 250 sessions and 1,708 instructions—AutoDW achieves 90% instruction-level and 62% session-level completion rates, surpassing the strongest baseline by 40% and 76%, respectively.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "error recovery"
   - "AutoDW"
 date: 2026-05-08
-content_hash: c4bfc1d14135c485
+content_hash: 0d847fd28b398c83
 ---
 
 # Automating Complex Document Workflows via Stepwise and Rollback-Enabled Operations
@@ -137,10 +137,10 @@ AutoDW consists of three core modules: (1) **Stepwise Planning**—generating on
 ## Related Papers
 
 - [\[AAAI 2026\] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)
-- [\[ACL 2026\] The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check](../../ACL2026/llm_agent/the_bitter_lesson_of_diffusion_language_models_for_agentic_workflows_a_comprehen.md)
-- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](../../ACL2026/llm_agent/octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
-- [\[ICLR 2026\] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development](../../ICLR2026/llm_agent/membership_privacy_risks_of_sharpness_aware_minimization.md)
-- [\[ICLR 2026\] PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement](../../ICLR2026/llm_agent/physcensis_physics-augmented_llm_agents_for_complex_physical_scene_arrangement.md)
+- [\[ICML 2025\] GuardAgent: Safeguard LLM Agents via Knowledge-Enabled Reasoning](../../ICML2025/llm_agent/guardagent_safeguard_llm_agents_by_a_guard_agent_via_knowledge-enabled_reasoning.md)
+- [\[CVPR 2026\] ORCA: Orchestrated Reasoning with Collaborative Agents for Document Visual Question Answering](../../CVPR2026/llm_agent/orca_orchestrated_reasoning_with_collaborative_agents_for_document_visual_questi.md)
+- [\[CVPR 2026\] Resolving Evidence Sparsity: Agentic Context Engineering for Long-Document Understanding](../../CVPR2026/llm_agent/resolving_evidence_sparsity_agentic_context_engineering_for_long-document_unders.md)
+- [\[ICLR 2026\] ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows](../../ICLR2026/llm_agent/scienceboard_evaluating_multimodal_autonomous_agents_in_realistic_scientific_wor.md)
 
 </div>
 

@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Post-Hoc Merging is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing
+  [Paper Note] Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper points out that mainstream model merging methods are "post-hoc"—merging only once after training—which is prone to information erasure caused by task interference. Instead, it proposes a **many-shot iterative merging** framework and introduces METIS. METIS uses task-level loss-gap weighting to compensate for
+  [ICML 2026][Model Compression][Model Merging] This paper points out that mainstream model merging methods are "post-hoc"—merging only once after training—which is prone to information erasure caused by task interference. Instead, it proposes a **many-shot iterative merging** framework and introduces METIS. METIS uses task-level loss-gap weighting to compensate for erased tasks and a consensus mask to locate compatible updates, significantly improving multi-task capabilities w…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "Many-shot Merging"
+  - "Task Interference"
+  - "Loss-gap Weighting"
+  - "Consensus Masking"
 date: 2026-05-08
-content_hash: 7f4676d07fb6cb74
+content_hash: 843d8a5185e34bb0
 ---
+
 # Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing
 
 **Conference**: ICML 2026  
@@ -133,10 +139,10 @@ Taking Llama-3.2-3B as an example, METIS normalized scores are: Instruction 0.91
 ## Related Papers
 
 - [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)
-- [\[AAAI 2026\] Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging](../../AAAI2026/model_compression/do_not_merge_my_model_safeguarding_open-source_llms_against_unauthorized_model_m.md)
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
-- [\[ICML 2026\] When Shared Knowledge Hurts: Spectral Over-Accumulation in Model Merging](when_shared_knowledge_hurts_spectral_over-accumulation_in_model_merging.md)
 - [\[ICCV 2025\] FREE-Merging: Fourier Transform for Efficient Model Merging](../../ICCV2025/model_compression/free-merging_fourier_transform_for_efficient_model_merging.md)
+- [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
+- [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
 
 </div>
 

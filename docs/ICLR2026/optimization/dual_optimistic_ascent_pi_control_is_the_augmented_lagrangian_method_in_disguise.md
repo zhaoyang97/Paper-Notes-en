@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual Optimistic Ascent (PI Control) is the Augmented Lagrangian Method in Disguise
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Proves that dual optimistic ascent (PI control), widely used in constrained deep learning, is mathematically equivalent to the classical Augmented Lagrangian Method (ALM) under a single-step first-order update regime. This transfers ALM's robust convergence guarantees (linear convergence to all strict local solutions)
+  [ICLR 2026][Optimization][Augmented Lagrangian] Proves that dual optimistic ascent (PI control), widely used in constrained deep learning, is mathematically equivalent to the classical Augmented Lagrangian Method (ALM) under a single-step first-order update regime. This transfers ALM's robust convergence guarantees (linear convergence to all strict local solutions) to PI control and provides principled tuning guidance for the optimism coefficient $\omega$.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Augmented Lagrangian"
+  - "Dual Optimistic Ascent"
+  - "PI Control"
+  - "Constrained Optimization"
+  - "Non-convex Min-max"
 date: 2026-05-08
-content_hash: bcf99f6e25364608
+content_hash: 75fbf3b459572d57
 ---
+
 # Dual Optimistic Ascent (PI Control) is the Augmented Lagrangian Method in Disguise
 
 **Conference**: ICLR 2026  
@@ -128,12 +134,20 @@ Adaptive $\omega$ scheduling (increasing $\omega$ when progress is slow) signifi
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- [stooke2020responsive] Responsive Learning Rates for Bounded-Cost Optimization.
-- [sohrabi2024nupi] NUPI: Normalized Update with Proportional-Integral Control.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] A Schrödinger Eigenfunction Method for Long-Horizon Stochastic Optimal Control](a_schrödinger_eigenfunction_method_for_long-horizon_stochastic_optimal_control.md)
+- [\[ICLR 2026\] Multilevel Control Functional](multilevel_control_functional.md)
+- [\[ICML 2025\] Layer-wise Quantization for Quantized Optimistic Dual Averaging](../../ICML2025/optimization/layer-wise_quantization_for_quantized_optimistic_dual_averaging.md)
+- [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](../../ICML2026/optimization/learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
+- [\[ICLR 2026\] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport](hyperparameter_trajectory_inference_with_conditional_lagrangian_optimal_transpor.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] A Schrödinger Eigenfunction Method for Long-Horizon Stochastic Optimal Control](a_schrödinger_eigenfunction_method_for_long-horizon_stochastic_optimal_control.md)

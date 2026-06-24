@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Multilingual Steering by Design: Multilingual Sparse Autoencoders and Principled Layer Selection
 description: >-
-  [ACL 2026][Multilingual & Translation][activation steering] This paper demonstrates that multilingual sparse autoencoders combined with layer selection at the intersection of "multilingual alignment and language separability" make SAE language steering more stable. This approach transforms the empirical layer selection problem in multilingual control into a predictable represen
+  [ACL2026][Multilingual & Machine Translation][Multilingual SAE] This paper demonstrates that multilingual sparse autoencoders combined with layer selection at the intersection of "multilingual alignment and language separability" make SAE language steering more stable. This approach transforms the empirical layer selection problem in multilingual control into a predictable representation diagnostic problem.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - activation steering
-  - layer selection
-  - CrossSumm
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual SAE"
+  - "activation steering"
+  - "layer selection"
+  - "language vectors"
+  - "CrossSumm"
 date: 2026-05-08
-content_hash: cb8583770f0a249e
+content_hash: 1d3c88b6880e4dc6
 ---
+
 # Multilingual Steering by Design: Multilingual Sparse Autoencoders and Principled Layer Selection
 
 **Conference**: ACL2026  
@@ -136,16 +139,16 @@ The authors note that no-steering prompt baselines are calculated by prompt lang
 - Value: ⭐⭐⭐⭐☆ Highly relevant for interpretable steering and designing multilingual SAE training data.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge](dfki-mlt_at_semeval-2026_task_7_steering_multilingual_models_towards_cultural_kn.md)
 - [\[ICLR 2026\] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs](../../ICLR2026/multilingual_mt/sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod.md)
 - [\[ACL 2025\] Less, but Better: Efficient Multilingual Expansion for LLMs via Layer-wise Mixture-of-Experts](../../ACL2025/multilingual_mt/less_but_better_efficient_multilingual_expansion.md)
+- [\[AAAI 2026\] Mitigating Content Effects on Reasoning in Language Models through Fine-Grained Activation Steering](../../AAAI2026/multilingual_mt/mitigating_content_effects_on_reasoning_in_language_models_through_fine-grained_.md)
 - [\[ACL 2026\] SteerEval: Inference-time Interventions Strengthen Multilingual Generalization in Neural Summarization Metrics](steereval_inference-time_interventions_strengthen_multilingual_generalization_in.md)
-- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
 
 </div>
 

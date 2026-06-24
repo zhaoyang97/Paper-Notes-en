@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation
 description: >-
-  [ICML 2026][LLM Agent][VLM Agent] The Xiaomi team presents a systematic study on the "Data-Evaluation-Reasoning" trinity for VLM mobile GUI agents. They released the HyperTrack dataset (16k tasks / 674 Chinese apps) and the GUIEvalKit tool (supporting 30+ models). The study demonstrates that DAPO-style RL significantly outperforms SFT in OOD scenarios
+  [ICML 2026][LLM Agent][Mobile GUI Navigation] The Xiaomi team presents a systematic study on the "Data-Evaluation-Reasoning" trinity for VLM mobile GUI agents. They released the HyperTrack dataset (16k tasks / 674 Chinese apps) and the GUIEvalKit tool (supporting 30+ models). The study demonstrates that DAPO-style RL significantly outperforms SFT in OOD scenarios and utilizes semi-online evaluation (SOEval) to reveal a core trade-off: "explicit reasoning sacrifices PASS@1 sta…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - VLM Agent
-  - DAPO-RL
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Mobile GUI Navigation"
+  - "VLM Agent"
+  - "Data Scaling"
+  - "DAPO-RL"
+  - "Semi-online Evaluation"
 date: 2026-05-08
-content_hash: b3bd01297ced0535
+content_hash: 9799560d9d16a590
 ---
+
 # Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation
 
 **Conference**: ICML 2026  

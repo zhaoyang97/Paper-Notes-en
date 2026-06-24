@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] LingoLoop Attack: Trapping MLLMs via Linguistic Context and State Entrapment into Endless Loops
 description: >-
-  [ICLR 2026][AI Safety][energy-latency attack] LingoLoop injects subtle adversarial perturbations into input images to trap Multimodal Large Language Models (MLLMs) into infinite repetitive generation. By utilizing "POS-prior-based EOS suppression" and "hidden state contraction-induced loops," it produces up to 367× more tokens than normal inputs when generation li
+  [ICLR 2026][AI Safety][energy-latency attack] LingoLoop injects subtle adversarial perturbations into input images to trap Multimodal Large Language Models (MLLMs) into infinite repetitive generation. By utilizing "POS-prior-based EOS suppression" and "hidden state contraction-induced loops," it produces up to 367× more tokens than normal inputs when generation limits are relaxed, causing compute/energy-exhaustion Denial-of-Service (DoS).
 tags:
-  - ICLR 2026
-  - AI Safety
-  - energy-latency attack
-  - sponge attack
-  - MLLM
-  - EOS suppression
-  - repetitive generation
-  - DoS
+  - "ICLR 2026"
+  - "AI Safety"
+  - "energy-latency attack"
+  - "sponge attack"
+  - "MLLM"
+  - "EOS suppression"
+  - "repetitive generation"
+  - "DoS"
 date: 2026-05-08
-content_hash: 1aec875e0697234c
+content_hash: e8ee0efc41b82347
 ---
+
 # LingoLoop Attack: Trapping MLLMs via Linguistic Context and State Entrapment into Endless Loops
 
 **Conference**: ICLR 2026  
@@ -146,7 +147,7 @@ Regardless of how high the limit was set, **Ours** consistently hit the ceiling,
 - [\[ICML 2026\] MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs](../../ICML2026/ai_safety/mlubench_a_benchmark_for_lifelong_unlearning_evaluation_in_mllms.md)
 - [\[CVPR 2025\] Towards General Visual-Linguistic Face Forgery Detection](../../CVPR2025/ai_safety/towards_general_visual-linguistic_face_forgery_detection.md)
 - [\[ICML 2026\] Semantic Router: On the Feasibility of Hijacking MLLMs via a Single Adversarial Perturbation](../../ICML2026/ai_safety/semantic_router_on_the_feasibility_of_hijacking_mllms_via_a_single_adversarial_p.md)
-- [\[ICML 2026\] Robust In-Context Reinforcement Learning Under Reward Poisoning Attacks](../../ICML2026/ai_safety/robust_in-context_reinforcement_learning_under_reward_poisoning_attacks.md)
+- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](../../ICML2026/ai_safety/understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges
 description: >-
-  [ICML 2026][Robotics & Embodied AI][MAPF] This paper characterizes anonymous Multi-Agent Path Finding (MAPF) as a class of **Markovian Multi-Marginal Optimal Transport (MMOT)**, compressing the $K^{T+1}$ dimensional transport tensor into a polynomial-scale LP (P1) and guaranteeing integer optimality through Total Unimodularity (TU). It further generalizes this
+  [ICML 2026 Spotlight][Robotics][MAPF] This paper characterizes anonymous Multi-Agent Path Finding (MAPF) as a class of **Markovian Multi-Marginal Optimal Transport (MMOT)**, compressing the $K^{T+1}$ dimensional transport tensor into a polynomial-scale LP (P1) and guaranteeing integer optimality through Total Unimodularity (TU). It further generalizes this into a Schrödinger bridge for Sinkhorn-style entropic relaxation (P2) to produce a "shadow transport…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - MAPF
-  - Schrödinger bridge
-  - Sinkhorn
+  - "ICML 2026 Spotlight"
+  - "Robotics"
+  - "MAPF"
+  - "Multi-Marginal Optimal Transport"
+  - "Schrödinger bridge"
+  - "Total Unimodularity"
+  - "Sinkhorn"
 date: 2026-05-08
-content_hash: 5cef1f5a4785cd39
+content_hash: ca3dba591557a999
 ---
+
 # Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges
 
 **Conference**: ICML 2026 Spotlight  
@@ -123,14 +126,17 @@ On $K = W\times H$ grids (side lengths 50–150, 5% robot density, $T=30$, Gurob
 
 <div class="related-papers" markdown="1">
 
-- **Yu & LaValle 2013**: Time-expanded flow networks for anonymous MAPF.
-- **Ma & Koenig 2016**: Conflict-based min-cost flow for anonymous MAPF.
-- **Chen et al. 2021**: Schrödinger bridges for multi-agent systems.
+## Related Papers
+
+- [\[ICCV 2025\] Certifiably Optimal Anisotropic Rotation Averaging](../../ICCV2025/robotics/certifiably_optimal_anisotropic_rotation_averaging.md)
+- [\[ICML 2025\] Learning to Stop: Deep Learning for Mean Field Optimal Stopping](../../ICML2025/robotics/learning_to_stop_deep_learning_for_mean_field_optimal_stopping.md)
+- [\[ICLR 2026\] Time Optimal Execution of Action Chunk Policies Beyond Demonstration Speed](../../ICLR2026/robotics/time_optimal_execution_of_action_chunk_policies_beyond_demonstration_speed.md)
+- [\[ICML 2026\] WestWorld: Scalable Trajectory World Models with Knowledge Encoding](westworld_a_knowledge-encoded_scalable_trajectory_world_model_for_diverse_roboti.md)
+- [\[AAAI 2026\] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](../../AAAI2026/robotics/scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICCV 2025\] Certifiably Optimal Anisotropic Rotation Averaging](../../ICCV2025/robotics/certifiably_optimal_anisotropic_rotation_averaging.md)

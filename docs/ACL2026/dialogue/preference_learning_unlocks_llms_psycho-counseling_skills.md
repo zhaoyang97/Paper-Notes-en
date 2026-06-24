@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Preference Learning Unlocks LLMs' Psycho-Counseling Skills
 description: >-
-  [ACL 2026][Dialogue Systems][DPO] This paper constructs the PsyCoPref preference dataset for psycho-counseling response quality and employs reward models, DPO, and iterative preference learning to train LLMs. The resulting 8B model achieves an 87.0% win rate against GPT-4o in psycho-counseling responses.
+  [ACL 2026][Dialogue Systems][Psycho-counseling] This paper constructs the PsyCoPref preference dataset for psycho-counseling response quality and employs reward models, DPO, and iterative preference learning to train LLMs. The resulting 8B model achieves an 87.0% win rate against GPT-4o in psycho-counseling responses.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - DPO
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Psycho-counseling"
+  - "Preference Learning"
+  - "Reward Model"
+  - "DPO"
+  - "Human Preference Alignment"
 date: 2026-05-08
-content_hash: 3891c0f6e092cdcf
+content_hash: 82637a112787b46e
 ---
+
 # Preference Learning Unlocks LLMs' Psycho-Counseling Skills
 
 **Conference**: ACL 2026  
@@ -160,11 +165,11 @@ Reward models were initialized from Llama3.2-3B-Instruct and Llama3.1-8B-Instruc
 
 ## Related Papers
 
+- [\[ICLR 2026\] DRIFT: Learning from Abundant User Dissatisfaction in Real-World Preference Learning](../../ICLR2026/dialogue/drift_learning_from_abundant_user_dissatisfaction_in_real-world_preference_learn.md)
 - [\[ACL 2026\] Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings](template-assisted_contrastive_learning_of_task-oriented_dialogue_sentence_embedd.md)
-- [\[NeurIPS 2025\] KL Penalty Control via Perturbation for Direct Preference Optimization](../../NeurIPS2025/dialogue/kl_penalty_control_via_perturbation_for_direct_preference_optimization.md)
-- [\[ACL 2026\] Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents](dual_hierarchical_dialogue_policy_learning_for_legal_inquisitive_conversational_.md)
 - [\[ACL 2026\] Reasoning Gets Harder for LLMs Inside A Dialogue](reasoning_gets_harder_for_llms_inside_a_dialogue.md)
-- [\[ACL 2025\] KokoroChat: A Japanese Psychological Counseling Dialogue Dataset Collected via Role-Playing by Trained Counselors](../../ACL2025/dialogue/kokorochat_a_japanese_psychological_counseling_dialogue.md)
+- [\[ACL 2026\] Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents](dual_hierarchical_dialogue_policy_learning_for_legal_inquisitive_conversational_.md)
+- [\[NeurIPS 2025\] KL Penalty Control via Perturbation for Direct Preference Optimization](../../NeurIPS2025/dialogue/kl_penalty_control_via_perturbation_for_direct_preference_optimization.md)
 
 </div>
 

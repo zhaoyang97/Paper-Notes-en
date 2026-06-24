@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Learning to Reason as Action Abstractions with Scalable Mid-Training RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][mid-training] This paper provides the first theoretical characterization of "how mid-training shapes post-training RL," pointing out that effective mid-training should occur within **temporal action abstractions** rather than the raw token space. Based on this, it proposes RA3—a scalable mid-training algorithm that discovers latent
+  [ICLR 2026][Reinforcement Learning][mid-training] This paper provides the first theoretical characterization of "how mid-training shapes post-training RL," pointing out that effective mid-training should occur within **temporal action abstractions** rather than the raw token space. Based on this, it proposes RA3—a scalable mid-training algorithm that discovers latent reasoning structures via self-supervised RL and feeds them back through SFT.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - mid-training
-  - EM
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "mid-training"
+  - "action abstraction"
+  - "temporal abstraction (options)"
+  - "self-supervised RL"
+  - "EM"
+  - "RLVR"
+  - "code generation"
 date: 2026-05-08
-content_hash: 04899564d2760343
+content_hash: 33a15319bd9fe937
 ---
+
 # Learning to Reason as Action Abstractions with Scalable Mid-Training RL
 
 **Conference**: ICLR 2026  
@@ -123,10 +128,10 @@ RA3 is approximately 4 points higher than NTP and 8 points higher than the base 
 ## Related Papers
 
 - [\[ICLR 2026\] Reinforcement Mid-Training](reinforcement_mid-training.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[ICLR 2026\] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL](deas_detached_value_learning_with_action_sequence_for_scalable_offline_rl.md)
 - [\[ICLR 2026\] ExGRPO: Learning to Reason from Experience](exgrpo_learning_to_reason_from_experience.md)
 - [\[ICLR 2026\] Learning to Reason Efficiently with Discounted Reinforcement Learning](learning_to_reason_efficiently_with_discounted_reinforcement_learning.md)
-- [\[ICLR 2026\] Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty](beyond_binary_rewards_training_lms_to_reason_about_their_uncertainty.md)
 
 </div>
 

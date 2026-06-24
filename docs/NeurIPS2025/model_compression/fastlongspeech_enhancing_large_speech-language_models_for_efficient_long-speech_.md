@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FastLongSpeech: Enhancing Large Speech-Language Models for Efficient Long-Speech Processing
 description: >-
-  [NeurIPS 2025][Model Compression][speech compression] FastLongSpeech is proposed to compress redundant speech representations via an iterative fusion strategy and to transfer short-speech capabilities to long-speech scen…
+  [NeurIPS 2025][Model Compression][speech compression] FastLongSpeech is proposed to compress redundant speech representations via an iterative fusion strategy and to transfer short-speech capabilities to long-speech scenarios through dynamic compression training, enabling large speech-language models (LSLMs) to efficiently process long speech without long-speech training data, achieving state-of-the-art performance on long-speech QA with a 70% improvement in inference efficie…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "CTC"
   - "dynamic compression training"
 date: 2026-05-08
-content_hash: 5d2955046e88335c
+content_hash: d3abe5880937ebb4
 ---
 
 # FastLongSpeech: Enhancing Large Speech-Language Models for Efficient Long-Speech Processing
@@ -196,9 +196,9 @@ All three components contribute significantly. Content density guidance contribu
 
 - [\[NeurIPS 2025\] Compress, Gather, and Recompute: REFORMing Long-Context Processing in Transformers](compress_gather_and_recompute_reforming_long-context_processing_in_transformers.md)
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
+- [\[ICML 2025\] LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models](../../ICML2025/model_compression/lacache_ladder-shaped_kv_caching_for_efficient_long-context_modeling_of_large_la.md)
 - [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
-- [\[NeurIPS 2025\] Restoring Pruned Large Language Models via Lost Component Compensation](restoring_pruned_large_language_models_via_lost_component_compensation.md)
-- [\[NeurIPS 2025\] The Structure of Relation Decoding Linear Operators in Large Language Models](the_structure_of_relation_decoding_linear_operators_in_large_language_models.md)
+- [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
 
 </div>
 

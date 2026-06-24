@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On Large Multimodal Models as Open-World Image Classifiers
 description: >-
-  [ICCV 2025][Multimodal VLM][large multimodal models] This paper systematically evaluates 13 large multimodal models (LMMs) on open-world image classification…
+  [ICCV 2025][Multimodal VLM][large multimodal models] This paper systematically evaluates 13 large multimodal models (LMMs) on open-world image classification, proposes an evaluation protocol comprising four complementary metrics, and reveals systematic error patterns in LMMs regarding granularity judgment and fine-grained discrimination.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "LMM"
   - "image classification"
 date: 2026-05-08
-content_hash: e0e9219bf20f4f2d
+content_hash: b040f04cc99f0543
 ---
 
 # On Large Multimodal Models as Open-World Image Classifiers
@@ -159,7 +159,7 @@ This paper is an evaluation study and does not involve model training. All exper
 - [\[ICCV 2025\] ProbRes: Probabilistic Jump Diffusion for Open-World Egocentric Activity Recognition](probres_probabilistic_jump_diffusion_for_open-world_egocentric_activity_recognit.md)
 - [\[ICCV 2025\] GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models](grab_a_challenging_graph_analysis_benchmark_for_large_multimodal_models.md)
 - [\[ICCV 2025\] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models](aigi_holmes_towards_explainable_and_generalizable_ai_generated_image_detection_via_mllm.md)
-- [\[ICCV 2025\] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models](llava-prumerge_adaptive_token_reduction_for_efficient_large_multimodal_models.md)
+- [\[ACL 2025\] CrafText Benchmark: Advancing Instruction Following in Complex Multimodal Open-Ended World](../../ACL2025/multimodal_vlm/craftext_benchmark_advancing_instruction_following_in_complex_multimodal_open-en.md)
 
 </div>
 

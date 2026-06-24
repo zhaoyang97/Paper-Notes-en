@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Do Vision-Language Models Measure Up? Benchmarking Visual Measurement Reading with MeasureBench
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] MeasureBench constructs a "reading" benchmark using 2,442 real and synthetic images of measuring instruments. It reveals that even the most powerful frontier VLMs achieve an overall accuracy of only around 30%. While they can identify units and instrument types (>90%), they fail to accurately read the values correspond
+  [CVPR 2026][Multimodal VLM][Gauge reading] MeasureBench constructs a "reading" benchmark using 2,442 real and synthetic images of measuring instruments. It reveals that even the most powerful frontier VLMs achieve an overall accuracy of only around 30%. While they can identify units and instrument types (>90%), they fail to accurately read the values corresponding to pointers or scales, exposing a fundamental bottleneck in fine-grained spatial localization for VLMs.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Gauge reading"
+  - "fine-grained perception"
+  - "VLM benchmark"
+  - "data synthesis"
+  - "reinforcement fine-tuning"
 date: 2026-05-08
-content_hash: f0c815d2e95a0d6a
+content_hash: 96c8e2ed49aa5099
 ---
+
 # Do Vision-Language Models Measure Up? Benchmarking Visual Measurement Reading with MeasureBench
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ The authors generated 100 images for each of the 39 instrument types (3,900 imag
 
 ## Related Papers
 
-- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](do_vision_language_models_need_to_process_image_tokens.md)
-- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
 - [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
-- [\[CVPR 2026\] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models](what_do_visual_tokens_really_encode_uncovering_sparsity_and_redundancy_in_multim.md)
+- [\[ICML 2026\] Measurement Plasticity: Sensor-Level Adaptation for Vision–Language Models](../../ICML2026/multimodal_vlm/measurement_plasticity_sensor-level_adaptation_for_vision-language_models.md)
 - [\[CVPR 2026\] CapNav: Benchmarking Vision Language Models on Capability-conditioned Indoor Navigation](capnav_benchmarking_vision_language_models_on_capability-conditioned_indoor_navi.md)
+- [\[ECCV 2024\] Vary: Scaling up the Vision Vocabulary for Large Vision-Language Models](../../ECCV2024/multimodal_vlm/vary_scaling_up_the_vision_vocabulary_for_large_visionlanguag.md)
+- [\[CVPR 2026\] ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models](oric_benchmarking_object_recognition_under_contextual_incongruity_in_large_visio.md)
 
 </div>
 

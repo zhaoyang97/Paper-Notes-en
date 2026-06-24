@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation
 description: >-
-  [AAAI 2026][Social Computing][Jailbreak Evaluation] This paper proposes SceneJailEval, a scenario-adaptive multi-dimensional jailbreak evaluation framework that defines 14 jailbreak scenarios and 10 evaluation dimensions…
+  [AAAI 2026][Social Computing][Jailbreak Evaluation] This paper proposes SceneJailEval, a scenario-adaptive multi-dimensional jailbreak evaluation framework that defines 14 jailbreak scenarios and 10 evaluation dimensions. Through a pipeline of scenario classification → dynamic dimension selection → multi-dimensional detection → weighted harm scoring, it achieves F1 of 0.917 on a self-constructed dataset (surpassing SOTA by 6%) and 0.995 on JBB (surpassing SOTA by 3%)…
 tags:
   - "AAAI 2026"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "LLM Safety"
   - "Harm Quantification"
 date: 2026-05-08
-content_hash: b507dc8fc9ec2272
+content_hash: 640769224069a5ce
 ---
 
 # SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation
@@ -135,8 +135,8 @@ Public datasets — JBB: F1 = 0.995 (SOTA); JailJudge dataset: F1 = 0.824 (SOTA)
 - [\[ICML 2026\] MIND: Multi-Rationale Integrated Discriminative Reasoning Framework for Multi-Modal Fake News](../../ICML2026/social_computing/mind_multi-rationale_integrated_discriminative_reasoning_framework_for_multi-mod.md)
 - [\[ACL 2026\] When Bigger Isn't Better: A Comprehensive Fairness Evaluation of Political Bias in Multi-News Summarisation](../../ACL2026/social_computing/when_bigger_isn39t_better_a_comprehensive_fairness_evaluation_of_political_bias_.md)
 - [\[AAAI 2026\] Bias Association Discovery Framework for Open-Ended LLM Generations](bias_association_discovery_framework_for_open-ended_llm_generations.md)
-- [\[ICLR 2026\] Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation](../../ICLR2026/social_computing/adaptive_debiasing_tsallis_entropy_for_test-time_adaptation.md)
 - [\[AAAI 2026\] Multi-modal Dynamic Proxy Learning for Personalized Multiple Clustering](multi-modal_dynamic_proxy_learning_for_personalized_multiple_clustering.md)
+- [\[ICLR 2026\] Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation](../../ICLR2026/social_computing/adaptive_debiasing_tsallis_entropy_for_test-time_adaptation.md)
 
 </div>
 

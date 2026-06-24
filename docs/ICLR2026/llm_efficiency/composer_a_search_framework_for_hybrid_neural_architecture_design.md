@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Composer: A Search Framework for Hybrid Neural Architecture Design
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Composer transforms the manual design process of "how to interleave computational primitives like Attention and MLP into superior LLMs" into an automated search framework. By employing Bayesian optimization on million-parameter small models to discover optimal interleaving patterns and extrapolating them ~1000× to 3B/8
+  [ICLR2026][LLM Efficiency][Hybrid Architecture] Composer transforms the manual design process of "how to interleave computational primitives like Attention and MLP into superior LLMs" into an automated search framework. By employing Bayesian optimization on million-parameter small models to discover optimal interleaving patterns and extrapolating them ~1000× to 3B/8B scales, the resulting Composite architectures consistently outperform Llama 3.2 across the 350M–8B range. This…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Hybrid Architecture"
+  - "Neural Architecture Search"
+  - "Computational Primitive Interleaving"
+  - "Small-scale Search Extrapolation"
+  - "Bayesian Optimization"
 date: 2026-05-08
-content_hash: 6eeb7c6d1b831465
+content_hash: 2564035e9fd1e273
 ---
+
 # Composer: A Search Framework for Hybrid Neural Architecture Design
 
 **Conference**: ICLR2026  
@@ -129,7 +135,7 @@ Ablation of component methodologies (1B scale, DCLM validation loss):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -137,7 +143,7 @@ Ablation of component methodologies (1B scale, DCLM validation loss):
 - [\[ICLR 2026\] Distilling to Hybrid Attention Models via KL-Guided Layer Selection](distilling_to_hybrid_attention_models_via_kl-guided_layer_selection.md)
 - [\[ICLR 2026\] Demystifying and Enhancing the Efficiency of Large Language Model Based Search Agents](demystifying_and_enhancing_the_efficiency_of_large_language_model_based_search_a.md)
 - [\[ICLR 2026\] CONCUR: A Framework for Continual Constrained and Unconstrained Routing](concur_a_framework_for_continual_constrained_and_unconstrained_routing.md)
-- [\[ICLR 2026\] A Two-Phase Deep Learning Framework for Adaptive Time-Stepping in High-Speed Flow Modeling](a_two-phase_deep_learning_framework_for_adaptive_time-stepping_in_high-speed_flo.md)
+- [\[ICLR 2026\] From Collapse to Control: Understanding and Extending Context Length in Emerging Hybrid Models via Universal Position Interpolation](from_collapse_to_control_understanding_and_extending_context_length_in_emerging_.md)
 
 </div>
 

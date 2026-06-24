@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Graph Classification Robustness with Singular Pooling
 description: >-
-  [NeurIPS 2025][AI Safety][GNN robustness] This paper presents the first systematic analysis of how flat pooling operators (Sum/Avg/Max) affect adversarial robustness in graph classification. It derives adversarial risk u…
+  [NeurIPS 2025][AI Safety][GNN robustness] This paper presents the first systematic analysis of how flat pooling operators (Sum/Avg/Max) affect adversarial robustness in graph classification. It derives adversarial risk upper bounds for each operator and proposes RS-Pool—a method that constructs graph-level representations from the dominant singular vector of the node embedding matrix—achieving significant robustness improvements without sacrificing clean accuracy.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "adversarial attacks"
   - "singular value decomposition"
 date: 2026-05-08
-content_hash: 572980db5a402dfa
+content_hash: df19a5b0184cb140
 ---
 
 # Enhancing Graph Classification Robustness with Singular Pooling
@@ -143,8 +143,8 @@ This paper presents the first systematic analysis of how flat pooling operators 
 - [\[NeurIPS 2025\] Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness](bridging_symmetry_and_robustness_on_the_role_of_equivariance_in_enhancing_advers.md)
 - [\[NeurIPS 2025\] Robust Graph Condensation via Classification Complexity Mitigation](robust_graph_condensation_via_classification_complexity_mitigation.md)
 - [\[NeurIPS 2025\] Improved Balanced Classification with Theoretically Grounded Loss Functions](improved_balanced_classification_with_theoretically_grounded_loss_functions.md)
-- [\[NeurIPS 2025\] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)
 - [\[NeurIPS 2025\] FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation](faircontrast_enhancing_fairness_through_contrastive_learning_and_customized_augm.md)
+- [\[ICML 2025\] Enhancing Certified Robustness via Block Reflector Orthogonal Layers and Logit Annealing Loss](../../ICML2025/ai_safety/enhancing_certified_robustness_via_block_reflector_orthogonal_layers_and_logit_a.md)
 
 </div>
 

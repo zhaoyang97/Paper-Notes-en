@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Contextualized Visual Personalization in Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] CoViP converges the open-ended task of "visual personalization based on user history" into a shared underlying process of "personalized image captioning." By employing RL post-training with verifiable rewards and inference-time Caption-Augmented Generation (CAG), it enables VLMs to "generate human-like grounded descrip
+  [ICML2026][Multimodal VLM][Visual Personalization] CoViP converges the open-ended task of "visual personalization based on user history" into a shared underlying process of "personalized image captioning." By employing RL post-training with verifiable rewards and inference-time Caption-Augmented Generation (CAG), it enables VLMs to "generate human-like grounded descriptions" within interleaved vision-language contexts, complemented by an MCQA diagnostic benchmark designed to…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Visual Personalization"
+  - "Personalized Captioning"
+  - "Reinforcement Learning Post-training"
+  - "Contextual Memory"
+  - "Multimodal Dialogue"
 date: 2026-05-08
-content_hash: 44d6eaea9e09bd6a
+content_hash: 5fa984e67107244d
 ---
+
 # Contextualized Visual Personalization in Vision-Language Models
 
 **Conference**: ICML2026  
@@ -131,16 +137,16 @@ Closed-source models achieve near-perfect $\text{Acc}^-$ (avoiding hallucination
 - **Value**: ⭐⭐⭐⭐ The "proxy task + verifiable reward + CAG" framework is highly practical for industrial deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Ego: Embedding-Guided Personalization of Vision-Language Models](../../CVPR2026/multimodal_vlm/ego_embedding-guided_personalization_of_vision-language_models.md)
+- [\[ICML 2026\] MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models](medsight_towards_grounded_visual_comprehension_in_medical_large_vision-language_.md)
 - [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
-- [\[CVPR 2026\] Same or Not? Enhancing Visual Perception in Vision-Language Models](../../CVPR2026/multimodal_vlm/same_or_not_enhancing_visual_perception_in_vision-language_models.md)
-- [\[CVPR 2025\] RAP: Retrieval-Augmented Personalization for Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/rap_retrieval-augmented_personalization_for_multimodal_large_language_models.md)
-- [\[ICML 2026\] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain](focusing_where_vision_matters_selective_training_for_large_vision_language_model.md)
+- [\[ICML 2026\] Unveiling Visual Counting Bottlenecks in Vision-Language Models](unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
+- [\[ICML 2026\] Visual Persuasion: What Influences the Decisions of Vision-Language Models?](visual_persuasion_what_influences_decisions_of_vision-language_models.md)
 
 </div>
 

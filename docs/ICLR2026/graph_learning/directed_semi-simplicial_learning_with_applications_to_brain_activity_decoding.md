@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Directed Semi-Simplicial Learning with Applications to Brain Activity Decoding
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper proposes Semi-Simplicial Neural Networks (SSNs)—the first topological deep learning model to operate directly on "semi-simplicial sets". By unifying and surpassing various networks on graphs, directed graphs, and simplicial complexes through a relational algebra induced by face maps, it achieves strictly hig
+  [ICLR 2026][Graph Learning][Topological Deep Learning] This paper proposes Semi-Simplicial Neural Networks (SSNs)—the first topological deep learning model to operate directly on "semi-simplicial sets". By unifying and surpassing various networks on graphs, directed graphs, and simplicial complexes through a relational algebra induced by face maps, it achieves strictly higher theoretical expressivity. It outperforms the runner-up model by up to 27% and message-passing GNNs by…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Topological Deep Learning"
+  - "Semi-simplicial sets"
+  - "Directed higher-order interactions"
+  - "Brain activity decoding"
+  - "Neurotopology"
+  - "Graph Neural Networks"
 date: 2026-05-08
-content_hash: 3c1fe5ebd3100293
+content_hash: 7e1fd063b7dbdefa
 ---
+
 # Directed Semi-Simplicial Learning with Applications to Brain Activity Decoding
 
 **Conference**: ICLR 2026  
@@ -127,11 +134,11 @@ The conclusion is clear: Modeling directionality alone (Dir-GNN) or hierarchy al
 
 ## Related Papers
 
-- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
 - [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](forest-based_graph_learning_for_semi-supervised_node_classification.md)
+- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
 - [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)
 - [\[NeurIPS 2025\] Spatio-Temporal Directed Graph Learning for Account Takeover Fraud Detection](../../NeurIPS2025/graph_learning/spatio-temporal_directed_graph_learning_for_account_takeover_fraud_detection.md)
-- [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](../../AAAI2026/graph_learning/s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
+- [\[NeurIPS 2025\] Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning](../../NeurIPS2025/graph_learning/uncertain_knowledge_graph_completion_via_semi-supervised_confidence_distribution.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling
 description: >-
-  [NeurIPS 2025][Computational Biology][Energy-Based Models] This paper proposes Energy Matching, which unifies flow matching and energy-based models via a single time-independent scalar potential field: far from the data…
+  [NeurIPS 2025][Computational Biology][Energy-Based Models] This paper proposes Energy Matching, which unifies flow matching and energy-based models via a single time-independent scalar potential field: far from the data manifold, the model performs efficient transport along optimal transport paths; near the manifold, it transitions to a Boltzmann equilibrium distribution for likelihood modeling. The method achieves FID 3.34 on CIFAR-10, substantially outperforming existing EB…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -13,7 +13,7 @@ tags:
   - "Inverse Problems"
   - "Local Intrinsic Dimensionality"
 date: 2026-05-08
-content_hash: a228dfd509fbc450
+content_hash: 4aa180678d386328
 ---
 
 # Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling
@@ -166,11 +166,11 @@ This is an elegant theoretical contribution that naturally unifies two major gen
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Curly Flow Matching for Learning Non-gradient Field Dynamics](curly_flow_matching_for_learning_non-gradient_field_dynamics.md)
 - [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
-- [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
 - [\[NeurIPS 2025\] Energy Loss Functions for Physical Systems](energy_loss_functions_for_physical_systems.md)
-- [\[ICLR 2026\] EvoFlows: Evolutionary Edit-Based Flow-Matching for Protein Engineering](../../ICLR2026/computational_biology/evoflows_evolutionary_edit-based_flow-matching_for_protein_engineering.md)
-- [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
+- [\[ICML 2025\] Improving Flow Matching by Aligning Flow Divergence](../../ICML2025/computational_biology/improving_flow_matching_by_aligning_flow_divergence.md)
+- [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
 
 </div>
 

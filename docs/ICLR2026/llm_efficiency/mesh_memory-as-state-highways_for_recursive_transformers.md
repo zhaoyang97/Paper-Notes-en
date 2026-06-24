@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MeSH: Memory-as-State-Highways for Recursive Transformers
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper identifies two root causes for why recursive Transformers lag behind non-recursive models of equal compute—"undifferentiated computation" and "information overload." It proposes MeSH: a scheme using explicit memory slots and step-wise learnable read/write routers to replace the overloaded single hidden state
+  [ICLR 2026][LLM Efficiency][Recursive Transformer] This paper identifies two root causes for why recursive Transformers lag behind non-recursive models of equal compute—"undifferentiated computation" and "information overload." It proposes MeSH: a scheme using explicit memory slots and step-wise learnable read/write routers to replace the overloaded single hidden state. This allows a 1.4B recursive model to outperform a same-scale Vanilla Transformer while using 33% fewer par…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Recursive Transformer"
+  - "Weight Sharing"
+  - "Memory Buffer"
+  - "Dynamic Routing"
+  - "Parameter Efficiency"
 date: 2026-05-08
-content_hash: 51fc273a9aabdc5a
+content_hash: a3ba56fe6b3455f9
 ---
+
 # MeSH: Memory-as-State-Highways for Recursive Transformers
 
 **Conference**: ICLR 2026  
@@ -127,9 +133,9 @@ Pre-training follows the Pythia suite methodology (GPT-NeoX architecture, dedupl
 
 - [\[ICLR 2026\] RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers](rmaat_astrocyte-inspired_memory_compression_and_replay_for_efficient_long-contex.md)
 - [\[ICLR 2026\] STEM: Scaling Transformers with Embedding Modules](stem_scaling_transformers_with_embedding_modules.md)
-- [\[ICLR 2026\] LoopFormer: Elastic-Depth Looped Transformers for Latent Reasoning via Shortcut Modulation](loopformer_elastic-depth_looped_transformers_for_latent_reasoning_via_shortcut_m.md)
-- [\[ICLR 2026\] Efficient Resource-Constrained Training of Transformers via Subspace Optimization](efficient_resource-constrained_training_of_transformers_via_subspace_optimizatio.md)
+- [\[ICLR 2026\] Scaling Linear Attention Capacity with Sparse State Expansion](scaling_linear_attention_capacity_with_sparse_state_expansion.md)
 - [\[ICLR 2026\] Reconstructing KV Caches with Cross-Layer Fusion for Enhanced Transformers](reconstructing_kv_caches_with_cross-layer_fusion_for_enhanced_transformers.md)
+- [\[ICLR 2026\] LoopFormer: Elastic-Depth Looped Transformers for Latent Reasoning via Shortcut Modulation](loopformer_elastic-depth_looped_transformers_for_latent_reasoning_via_shortcut_m.md)
 
 </div>
 

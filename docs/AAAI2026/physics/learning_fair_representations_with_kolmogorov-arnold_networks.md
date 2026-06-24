@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Fair Representations with Kolmogorov-Arnold Networks
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][Kolmogorov-Arnold Networks] This paper proposes integrating Kolmogorov-Arnold Networks (KAN) into an adversarial debiasing framework…
+  [AAAI 2026][Physics & Scientific Computing][Kolmogorov-Arnold Networks] This paper proposes integrating Kolmogorov-Arnold Networks (KAN) into an adversarial debiasing framework, leveraging KAN's spline-based architecture to provide theoretical guarantees of Lipschitz continuity and smoothness. An adaptive $\lambda$ update mechanism is introduced to dynamically balance fairness and accuracy. The approach achieves significant improvements on fairness metrics on the UCI college…
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "adaptive penalty"
   - "college admissions"
 date: 2026-05-08
-content_hash: 9c5ef6b3f69a69e4
+content_hash: a48b5bee154d0b46
 ---
 
 # Learning Fair Representations with Kolmogorov-Arnold Networks
@@ -154,8 +154,8 @@ On the larger dataset D₂, the KAN+ADOPT configuration simultaneously achieves 
 - [\[AAAI 2026\] Catastrophic Forgetting in Kolmogorov-Arnold Networks](catastrophic_forgetting_in_kolmogorov-arnold_networks.md)
 - [\[AAAI 2026\] FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer](flashkat_understanding_and_addressing_performance_bottlenecks_in_the_kolmogorov-.md)
 - [\[ICLR 2026\] Initialization Schemes for Kolmogorov-Arnold Networks: An Empirical Study](../../ICLR2026/physics/initialization_schemes_for_kolmogorov-arnold_networks_an_empirical_study.md)
-- [\[ICLR 2026\] Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery](../../ICLR2026/physics/empirical_stability_analysis_of_kolmogorov-arnold_networks_in_hard-constrained_r.md)
-- [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
+- [\[ICLR 2026\] KANO: Kolmogorov–Arnold Neural Operator](../../ICLR2026/physics/kano_kolmogorov-arnold_neural_operator.md)
+- [\[CVPR 2025\] KAC: Kolmogorov-Arnold Classifier for Continual Learning](../../CVPR2025/physics/kac_kolmogorov-arnold_classifier_for_continual_learning.md)
 
 </div>
 

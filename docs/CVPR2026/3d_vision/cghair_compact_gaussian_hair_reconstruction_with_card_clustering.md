@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] CGHair is proposed to achieve over 200x appearance parameter compression and 4x hair reconstruction acceleration while maintaining comparable visual quality through hair-card-guided hierarchical clustering and a shared Gaussian appearance codebook.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] CGHair is proposed to achieve over 200x appearance parameter compression and 4x hair reconstruction acceleration while maintaining comparable visual quality through hair-card-guided hierarchical clustering and a shared Gaussian appearance codebook.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "hair reconstruction"
+  - "hair card clustering"
+  - "compact representation"
+  - "appearance compression"
 date: 2026-05-08
-content_hash: dddbf742053a3c97
+content_hash: 868f9c12469984ec
 ---
+
 # CGHair: Compact Gaussian Hair Reconstruction with Card Clustering
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ $$\mathcal{L} = \mathcal{L}_p + \mathcal{L}_a + \mathcal{L}_o$$
 
 ## Related Papers
 
+- [\[CVPR 2026\] Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives](prune_wisely_reconstruct_sharply_compact_3d_gaussian_splatting_via_adaptive_prun.md)
+- [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
 - [\[CVPR 2026\] 3D Gaussian Splatting at Arbitrary Resolutions with Compact Proxy Anchors](3d_gaussian_splatting_at_arbitrary_resolutions_with_compact_proxy_anchors.md)
-- [\[CVPR 2026\] Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams](3d_gaussian_splatting_from_unposed_spike_stream.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
-- [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
+- [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
+- [\[CVPR 2026\] GS²: Graph-based Spatial Distribution Optimization for Compact 3D Gaussian Splatting](gs2_graph-based_spatial_distribution_optimization_for_compact_3d_gaussian_splatt.md)
 
 </div>
 

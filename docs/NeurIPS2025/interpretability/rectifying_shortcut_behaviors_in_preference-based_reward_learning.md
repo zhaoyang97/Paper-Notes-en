@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rectifying Shortcut Behaviors in Preference-based Reward Learning
 description: >-
-  [NeurIPS 2025][Interpretability][reward hacking] This paper proposes PRISM (Preference-based Reward Invariance for Shortcut Mitigation)…
+  [NeurIPS 2025][Interpretability][reward hacking] This paper proposes PRISM (Preference-based Reward Invariance for Shortcut Mitigation), which unifies reward hacking as a shortcut learning problem and employs group-invariant kernels approximated via random feature maps to simultaneously mitigate multiple spurious correlations (verbosity, sycophancy, tone, etc.), achieving consistent improvements on out-of-distribution preference data and downstream policy models.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "RLHF"
   - "preference alignment"
 date: 2026-05-08
-content_hash: ce3694c3539e914c
+content_hash: 18dcac04ae0016d9
 ---
 
 # Rectifying Shortcut Behaviors in Preference-based Reward Learning
@@ -192,10 +192,10 @@ PRISM achieves near-zero Pearson correlation coefficients across all three short
 ## Related Papers
 
 - [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](../../AAAI2026/interpretability/probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
+- [\[ACL 2025\] Establishing Trustworthy LLM Evaluation via Shortcut Neuron Analysis](../../ACL2025/interpretability/shortcut_neuron_eval.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
-- [\[ACL 2026\] Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling](../../ACL2026/interpretability/learning_what_matters_dynamic_dimension_selection_and_aggregation_for_interpreta.md)
+- [\[ICML 2025\] Configurable Preference Tuning with Rubric-Guided Synthetic Data](../../ICML2025/interpretability/configurable_preference_tuning_with_rubric-guided_synthetic_data.md)
 - [\[NeurIPS 2025\] FastDINOv2: Frequency Based Curriculum Learning Improves Robustness and Training Speed](fastdinov2_frequency_based_curriculum_learning_improves_robustness_and_training_.md)
-- [\[NeurIPS 2025\] Learning to Focus: Causal Attention Distillation via Gradient-Guided Token Pruning](learning_to_focus_causal_attention_distillation_via_gradient-guided_token_prunin.md)
 
 </div>
 

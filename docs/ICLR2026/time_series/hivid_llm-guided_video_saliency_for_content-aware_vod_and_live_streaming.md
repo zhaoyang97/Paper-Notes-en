@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] HiVid: LLM-Guided Video Saliency For Content-Aware VOD And Live Streaming
 description: >-
-  [ICLR 2026][Time Series][video saliency] The HiVid framework is proposed, marking the first use of LLMs as human proxies to generate content importance weights for video chunks. Through a perception module (sliding window scoring), a ranking module (LLM-guided merge sort to remove scoring bias), and a prediction module (multimodal time series forecasting for
+  [ICLR 2026][Time Series][video saliency] The HiVid framework is proposed, marking the first use of LLMs as human proxies to generate content importance weights for video chunks. Through a perception module (sliding window scoring), a ranking module (LLM-guided merge sort to remove scoring bias), and a prediction module (multimodal time series forecasting for adaptive latency), it achieves content-aware streaming. HiVid improves VOD PLCC by 11.5%…
 tags:
-  - ICLR 2026
-  - Time Series
-  - video saliency
-  - LLM-as-judge
-  - content-aware streaming
-  - time series forecasting
-  - adaptive bitrate
+  - "ICLR 2026"
+  - "Time Series"
+  - "video saliency"
+  - "LLM-as-judge"
+  - "content-aware streaming"
+  - "time series forecasting"
+  - "adaptive bitrate"
 date: 2026-05-08
-content_hash: 362c0df912495ba1
+content_hash: 8a52429a58638503
 ---
+
 # HiVid: LLM-Guided Video Saliency For Content-Aware VOD And Live Streaming
 
 **Conference**: ICLR 2026  
@@ -129,15 +130,15 @@ $m=10$ is optimal for the accuracy-cost tradeoff.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Interpreting Fedspeak with Confidence: A LLM-Based Uncertainty-Aware Framework Guided by Monetary Policy Transmission Paths](../../AAAI2026/time_series/interpreting_fedspeak_with_confidence_a_llm-based_uncertainty-aware_framework_gu.md)
 - [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
+- [\[ICLR 2026\] STDDN: A Deep Learning Framework for Crowd Simulation Guided by the Fluid Continuity Equation](stddn_a_physics-guided_deep_learning_framework_for_crowd_simulation.md)
 - [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
-- [\[ACL 2025\] Context-Aware Sentiment Forecasting via LLM-based Multi-Perspective Role-Playing Agents](../../ACL2025/time_series/context_aware_sentiment_forecasting_agents.md)
-- [\[ICML 2025\] Event-Aware Sentiment Factors from LLM-Augmented Financial Tweets: A Transparent Framework for Interpretable Quant Trading](../../ICML2025/time_series/event-aware_sentiment_factors_from_llm-augmented_financial_tweets_a_transparent_.md)
+- [\[ICLR 2026\] Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting](bridging_past_and_future_distribution-aware_alignment_for_time_series_forecastin.md)
 
 </div>
 

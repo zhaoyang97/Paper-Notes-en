@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Demystifying the Optimal Fair Classifier in Multi-Class Classification
 description: >-
-  [ICML 2026][AI Safety][In-processing] This paper provides an analytically tractable form (a closed-form solution with entropy regularization) for the Bayes optimal classifier in multi-class fair classification problems. Based on this, it derives a unified framework, OptFair: the training phase utilizes a reduction to saddle-point optimization of cost-sensi
+  [ICML 2026][AI Safety][Fair Classification] This paper provides an analytically tractable form (a closed-form solution with entropy regularization) for the Bayes optimal classifier in multi-class fair classification problems. Based on this, it derives a unified framework, OptFair: the training phase utilizes a reduction to saddle-point optimization of cost-sensitive cross-entropy, while the deployment phase uses plug-in estimation to solve a convex proximal gradient problem.…
 tags:
-  - ICML 2026
-  - AI Safety
-  - In-processing
-  - Post-processing
+  - "ICML 2026"
+  - "AI Safety"
+  - "Fair Classification"
+  - "Multi-class Classification"
+  - "Pareto Frontier"
+  - "In-processing"
+  - "Post-processing"
 date: 2026-05-08
-content_hash: 60bb4e03b1532b5f
+content_hash: 9a83acc8328f7d87
 ---
+
 # Demystifying the Optimal Fair Classifier in Multi-Class Classification
 
 **Conference**: ICML 2026  
@@ -135,10 +139,10 @@ On ENEM/ACSIncome, in-processing was trained to a certain fairness threshold and
 ## Related Papers
 
 - [\[ICML 2026\] Fair Decisions from Calibrated Scores: Achieving Optimal Classification While Satisfying Sufficiency](fair_decisions_from_calibrated_scores_achieving_optimal_classification_while_sat.md)
-- [\[CVPR 2026\] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation](../../CVPR2026/ai_safety/your_classifier_can_do_more_towards_balancing_the.md)
+- [\[ICLR 2026\] Rethinking Pareto Frontier: On the Optimal Trade-offs in Fair Classification](../../ICLR2026/ai_safety/rethinking_pareto_frontier_on_the_optimal_trade-offs_in_fair_classification.md)
+- [\[ICLR 2026\] Fair Classification by Direct Intervention on Operating Characteristics](../../ICLR2026/ai_safety/fair_classification_by_direct_intervention_on_operating_characteristics.md)
 - [\[ICLR 2026\] Fair Conformal Classification via Learning Representation-Based Groups](../../ICLR2026/ai_safety/fair_conformal_classification_via_learning_representation-based_groups.md)
-- [\[ICML 2026\] Fair Dataset Distillation via Cross-Group Barycenter Alignment](fair_dataset_distillation_via_cross-group_barycenter_alignment.md)
-- [\[ICML 2026\] Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking](fairness_in_aggregation_optimal_top-k_and_improved_full_ranking.md)
+- [\[CVPR 2026\] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation](../../CVPR2026/ai_safety/your_classifier_can_do_more_towards_balancing_the.md)
 
 </div>
 

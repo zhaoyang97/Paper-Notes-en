@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Obliviator Reveals the Cost of Nonlinear Guardedness in Concept Erasure
 description: >-
-  [NeurIPS 2025][concept erasure] This paper proposes Obliviator — a post-processing concept erasure method based on HSIC minimization in RKHS — that iteratively deforms the feature space through a two-step optimization pr…
+  [NeurIPS 2025][concept erasure] This paper proposes Obliviator — a post-processing concept erasure method based on HSIC minimization in RKHS — that iteratively deforms the feature space through a two-step optimization procedure. It is the first method to achieve complete guardedness against nonlinear adversaries, while quantifying the utility-erasure trade-off of nonlinear guardedness. Obliviator substantially outperforms existing methods across multiple PLMs and datasets.
 tags:
   - "NeurIPS 2025"
   - "concept erasure"
@@ -11,7 +11,7 @@ tags:
   - "fairness"
   - "nonlinear guardedness"
 date: 2026-05-08
-content_hash: a4eb39d5c39284e8
+content_hash: ff396426291127fe
 ---
 
 # Obliviator Reveals the Cost of Nonlinear Guardedness in Concept Erasure
@@ -148,9 +148,9 @@ Obliviator is a **post-processing, iterative** concept erasure method that alter
 
 - [\[NeurIPS 2025\] FACE: Faithful Automatic Concept Extraction](face_faithful_automatic_concept_extraction.md)
 - [\[NeurIPS 2025\] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets](the_cost_of_robustness_tighter_bounds_on_parameter_complexity_for_robust_memoriz.md)
+- [\[ACL 2025\] Partial Colexifications Improve Concept Embeddings](../../ACL2025/others/partial_colexifications_improve_concept_embeddings.md)
+- [\[ICML 2025\] Practical Principles for AI Cost and Compute Accounting](../../ICML2025/others/practical_principles_for_ai_cost_and_compute_accounting.md)
 - [\[AAAI 2026\] On the Variability of Concept Activation Vectors](../../AAAI2026/others/on_the_variability_of_concept_activation_vectors.md)
-- [\[AAAI 2026\] Cost-Free Neutrality for the River Method](../../AAAI2026/others/cost-free_neutrality_for_the_river_method.md)
-- [\[ICLR 2026\] Beyond Linearity in Attention Projections: The Case for Nonlinear Queries](../../ICLR2026/others/beyond_linearity_in_attention_projections_the_case_for_nonlinear_queries.md)
 
 </div>
 

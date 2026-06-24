@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Test-Time Verification via Optimal Transport: Coverage, ROC, & Sub-Optimality
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper reformulates "test-time scaling with verifiers" as an Optimal Transport (sampling) problem. It provides a unified framework to precisely characterize the geometric relationship between **generator coverage, verifier ROC, and sampling algorithm sub-optimality**. It reveals a three-regime nature of the sub-opt
+  [ICLR 2026][LLM Inference][Test-time scaling] This paper reformulates "test-time scaling with verifiers" as an Optimal Transport (sampling) problem. It provides a unified framework to precisely characterize the geometric relationship between **generator coverage, verifier ROC, and sampling algorithm sub-optimality**. It reveals a three-regime nature of the sub-optimality-coverage curve (transport / policy improvement / saturation) and designs and analyzes sequential (SRS…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "LLM Inference"
+  - "Learning Theory"
+  - "Test-time scaling"
+  - "Verifier"
+  - "Optimal Transport"
+  - "Sub-optimality"
+  - "Youden's Index"
 date: 2026-05-08
-content_hash: da69894fdca457e2
+content_hash: 0fcad9a94e65948b
 ---
+
 # Test-Time Verification via Optimal Transport: Coverage, ROC, & Sub-Optimality
 
 **Conference**: ICLR 2026  
@@ -123,11 +130,11 @@ To fix this, the authors propose **SRS** (Sequential Rejection Sampling): it use
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
 - [\[ICLR 2026\] Slicing Wasserstein over Wasserstein via Functional Optimal Transport](slicing_wasserstein_over_wasserstein_via_functional_optimal_transport.md)
 - [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
 - [\[ICLR 2026\] SEINT: An Efficient SE(p)-Invariant Transport Metric Driven by Polar Transport Discrepancy-based Representation](an_efficient_sep-invariant_transport_metric_driven_by_polar_transport_discrepanc.md)
 - [\[ICLR 2026\] A Statistical Learning Perspective on Semi-dual Adversarial Neural Optimal Transport Solvers](a_statistical_learning_perspective_on_semi-dual_adversarial_neural_optimal_trans.md)
-- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](../../ICML2026/learning_theory/on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
 
 </div>
 

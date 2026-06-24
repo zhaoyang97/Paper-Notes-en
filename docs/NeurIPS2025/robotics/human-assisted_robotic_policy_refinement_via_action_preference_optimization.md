@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Human-assisted Robotic Policy Refinement via Action Preference Optimization
 description: >-
-  [NeurIPS 2025][Robotics][VLA models] This paper proposes Action Preference Optimization (APO), a human-robot collaboration framework that collects interactive trajectories and applies preference alignment to VLA models u…
+  [NeurIPS 2025][Robotics][VLA models] This paper proposes Action Preference Optimization (APO), a human-robot collaboration framework that collects interactive trajectories and applies preference alignment to VLA models using binary desirability signals grounded in prospect theory and an adaptive reweighting scheme, enabling the model to learn from failures and improve iteratively.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "robotic manipulation"
   - "adaptive reweighting"
 date: 2026-05-08
-content_hash: f060638606b06700
+content_hash: caa2c78aa9c5e7dc
 ---
 
 # Human-assisted Robotic Policy Refinement via Action Preference Optimization
@@ -170,10 +170,10 @@ Implementation details: OpenVLA is fine-tuned using LoRA (rank=32) with a learni
 ## Related Papers
 
 - [\[NeurIPS 2025\] Opinion: Towards Unified Expressive Policy Optimization for Robust Robot Learning](opinion_towards_unified_expressive_policy_optimization_for_robust_robot_learning.md)
-- [\[AAAI 2026\] H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation](../../AAAI2026/robotics/h-gar_a_hierarchical_interaction_framework_via_goal-driven_observation-action_re.md)
 - [\[NeurIPS 2025\] Trust Region Reward Optimization and Proximal Inverse Reward Optimization Algorithm](trust_region_reward_optimization_and_proximal_inverse_reward_optimization_algori.md)
-- [\[NeurIPS 2025\] COOPERA: Continual Open-Ended Human-Robot Assistance](coopera_continual_open_ended_human_robot_assistance.md)
-- [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
+- [\[AAAI 2026\] H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation](../../AAAI2026/robotics/h-gar_a_hierarchical_interaction_framework_via_goal-driven_observation-action_re.md)
+- [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](../../ICLR2026/robotics/wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
+- [\[CVPR 2026\] SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models](../../CVPR2026/robotics/srpo_self-referential_policy_optimization_for_vision-language-action_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UAST: Unified Active Search and Tracking for Arbitrary Targets with UAVs
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] UAST utilizes a mapless RGB-D framework to unify "active search for arbitrary targets" and "persistent tracking" into a single perception-control pipeline. A dual-branch perception combined with a regulated point search strategy adaptively switches between "Visible Tracking," "Short-term Occlusion Compensation," and "L
+  [CVPR 2026][Robotics][UAVs] UAST utilizes a mapless RGB-D framework to unify "active search for arbitrary targets" and "persistent tracking" into a single perception-control pipeline. A dual-branch perception combined with a regulated point search strategy adaptively switches between "Visible Tracking," "Short-term Occlusion Compensation," and "Lost Exploration" states. A lightweight control network directly outputs dynamically feasible trajectories…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "UAVs"
+  - "Active Tracking"
+  - "Active Search"
+  - "Mapless Navigation"
+  - "End-to-End Control"
 date: 2026-05-08
-content_hash: 4aae41a70a16184d
+content_hash: 6e19f18d592fa647
 ---
+
 # UAST: Unified Active Search and Tracking for Arbitrary Targets with UAVs
 
 **Conference**: CVPR 2026  
@@ -151,15 +157,16 @@ Ablation at 5 m/s:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Instance-level Visual Active Tracking with Occlusion-Aware Planning](instance-level_visual_active_tracking_with_occlusion-aware_planning.md)
+- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
 - [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
-- [\[CVPR 2026\] Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory](parse_search_and_confirmation_training-free_aerial_vision-and-dialog_navigation_.md)
-- [\[CVPR 2026\] Motus: A Unified Latent Action World Model](motus_a_unified_latent_action_world_model.md)
-- [\[CVPR 2026\] CUBic: Coordinated Unified Bimanual Perception and Control Framework](cubic_coordinated_unified_bimanual_perception_and_control_framework.md)
+- [\[CVPR 2026\] ActiveGrasp: Information-Guided Active Grasping with Calibrated Energy-based Model](activegrasp_information-guided_active_grasping_with_calibrated_energy-based_mode.md)
+- [\[ICML 2026\] LIMMT: Less is More for Motion Tracking](../../ICML2026/robotics/limmt_less_is_more_for_motion_tracking.md)
+- [\[CVPR 2026\] Align While Search: Belief-Guided Exploratory Inference for World-Grounded Embodied Agents](align_while_search_belief-guided_exploratory_inference_for_world-grounded_embodi.md)
 
 </div>
 

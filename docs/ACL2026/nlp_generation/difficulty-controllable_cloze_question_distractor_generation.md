@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Difficulty-Controllable Cloze Question Distractor Generation
 description: >-
-  [ACL 2026][Text Generation][Paper Note] This paper proposes DCDG, which enables easy/hard difficulty control for cloze distractor generation via dual-path data augmentation, QA ensemble difficulty clustering, and multi-task seq2seq training, significantly outperforming GPT-4o in both automatic and human evaluations.
+  [ACL2026][Text Generation][Cloze test] This paper proposes DCDG, which enables easy/hard difficulty control for cloze distractor generation via dual-path data augmentation, QA ensemble difficulty clustering, and multi-task seq2seq training, significantly outperforming GPT-4o in both automatic and human evaluations.
 tags:
-  - ACL 2026
-  - Text Generation
+  - "ACL2026"
+  - "Text Generation"
+  - "Cloze test"
+  - "distractor generation"
+  - "difficulty control"
+  - "data augmentation"
+  - "multi-task learning"
 date: 2026-05-08
-content_hash: 3ee7021c5369c658
+content_hash: cd940b3b70a306fe
 ---
+
 # Difficulty-Controllable Cloze Question Distractor Generation
 
 **Conference**: ACL2026  
@@ -144,16 +150,16 @@ All tasks are unified under seq2seq cross-entropy training. Gemma 2 9B is used f
 - Value: ⭐⭐⭐⭐☆ Highly practical for educational NLP and automated item generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Children's English Reading Story Generation via Supervised Fine-Tuning of Compact LLMs with Controllable Difficulty and Safety](childrens_english_reading_story_generation_via_supervised_fine-tuning_of_compact.md)
+- [\[ICLR 2026\] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation](../../ICLR2026/nlp_generation/unveiling_the_potential_of_diffusion_large_language_model_in_controllable_genera.md)
+- [\[ICLR 2026\] Improving Attributed Long-form Question Answering with Intent Awareness](../../ICLR2026/nlp_generation/improving_attributed_long-form_question_answering_with_intent_awareness.md)
 - [\[ACL 2026\] Adaptive Planning for Multi-Attribute Controllable Summarization with Monte Carlo Tree Search](adaptive_planning_for_multi-attribute_controllable_summarization_with_monte_carl.md)
 - [\[ACL 2026\] XtraGPT: Context-Aware and Controllable Academic Paper Revision via Human-AI Collaboration](xtragpt_context-aware_and_controllable_academic_paper_revision_via_human-ai_coll.md)
-- [\[CVPR 2025\] ArtFormer: Controllable Generation of Diverse 3D Articulated Objects](../../CVPR2025/nlp_generation/artformer_controllable_generation_of_diverse_3d_articulated_objects.md)
-- [\[ACL 2026\] FACTS: Table Summarization via Offline Template Generation with Agentic Workflows](facts_table_summarization_via_offline_template_generation_with_agentic_workflows.md)
 
 </div>
 

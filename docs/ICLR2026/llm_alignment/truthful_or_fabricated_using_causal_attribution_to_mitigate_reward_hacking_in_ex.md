@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Truthful or Fabricated? Using Causal Attribution to Mitigate Reward Hacking in Explanations
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] The paper argues that preference optimization (DPO/RLHF) incentivizes LLMs to "clandestinely use" forbidden input cues while failing to acknowledge them, leading to unfaithful Chain-of-Thought (CoT) explanations. The authors detect this cue dependency via counterfactual causal attribution and inject this signal into th
+  [ICLR 2026][LLM Alignment][Reward Hacking] The paper argues that preference optimization (DPO/RLHF) incentivizes LLMs to "clandestinely use" forbidden input cues while failing to acknowledge them, leading to unfaithful Chain-of-Thought (CoT) explanations. The authors detect this cue dependency via counterfactual causal attribution and inject this signal into the reward model input as "disclaimers," significantly reducing the incidence of CoT hacking in two controlled settings…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Hacking"
+  - "CoT Faithfulness"
+  - "Preference Optimization"
+  - "Causal Attribution"
+  - "Counterfactuals"
 date: 2026-05-08
-content_hash: 415c06174a49c512
+content_hash: 4dce479071a6735d
 ---
+
 # Truthful or Fabricated? Using Causal Attribution to Mitigate Reward Hacking in Explanations
 
 **Conference**: ICLR 2026  
@@ -130,10 +136,10 @@ Regarding BoN decoding: For SK-GEMMA-27B, RMC closes $41\%$ of the gap between "
 ## Related Papers
 
 - [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](robust_reward_modeling_via_causal_rubrics.md)
-- [\[CVPR 2026\] Unlocking Token Rewards via Training-Free Reward Attribution](../../CVPR2026/llm_alignment/unlocking_token_rewards_via_training-free_reward_attribution.md)
 - [\[ICML 2026\] Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling](../../ICML2026/llm_alignment/mitigating_reward_hacking_in_rlhf_via_bayesian_non-negative_reward_modeling.md)
+- [\[CVPR 2026\] Unlocking Token Rewards via Training-Free Reward Attribution](../../CVPR2026/llm_alignment/unlocking_token_rewards_via_training-free_reward_attribution.md)
 - [\[ICML 2026\] TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning](../../ICML2026/llm_alignment/truthrl_incentivizing_truthful_llms_via_reinforcement_learning.md)
-- [\[ICLR 2026\] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences](omni-reward_towards_generalist_omni-modal_reward_modeling_with_free-form_prefere.md)
+- [\[ICLR 2026\] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary](bradley-terry_and_multi-objective_reward_modeling_are_complementary.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] R1-Onevision: Advancing Generalized Multimodal Reasoning through Cross-Modal Formalization
 description: >-
-  [ICCV 2025][Reinforcement Learning][multimodal reasoning] This paper proposes R1-Onevision, a framework that converts images into formalized textual representations via a cross-modal reasoning pipeline…
+  [ICCV 2025][Reinforcement Learning][multimodal reasoning] This paper proposes R1-Onevision, a framework that converts images into formalized textual representations via a cross-modal reasoning pipeline, combined with a two-stage post-training strategy of SFT followed by rule-based reinforcement learning (GRPO), to significantly enhance multimodal reasoning in vision-language models, surpassing GPT-4o on multiple mathematical reasoning benchmarks.
 tags:
   - "ICCV 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "vision-language model"
   - "reasoning benchmark"
 date: 2026-05-08
-content_hash: d6d140b053bbb4de
+content_hash: e6a18b6a9557d849
 ---
 
 # R1-Onevision: Advancing Generalized Multimodal Reasoning through Cross-Modal Formalization
@@ -158,11 +158,11 @@ The R1-Onevision framework consists of three components: (1) a cross-modal reaso
 
 ## Related Papers
 
+- [\[ICML 2025\] T1: Advancing Language Model Reasoning through Reinforcement Learning and Inference Scaling](../../ICML2025/reinforcement_learning/t1_advancing_language_model_reasoning_through_reinforcement_learning_and_inferen.md)
 - [\[AAAI 2026\] MMhops-R1: Multimodal Multi-hop Reasoning](../../AAAI2026/reinforcement_learning/mmhops-r1_multimodal_multi-hop_reasoning.md)
+- [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](../../ICLR2026/reinforcement_learning/r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
 - [\[ICLR 2026\] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings](../../ICLR2026/reinforcement_learning/ume-r1_exploring_reasoning-driven_generative_multimodal_embeddings.md)
-- [\[ICLR 2026\] Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning](../../ICLR2026/reinforcement_learning/controllable_exploration_in_hybrid-policy_rlvr_for_multi-modal_reasoning.md)
-- [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](../../ACL2026/reinforcement_learning/visually-guided_policy_optimization_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning](../../CVPR2026/reinforcement_learning/cross-modal_identity_mapping_minimizing_information_loss_in_modality_conversion_.md)
+- [\[ICML 2025\] Diving into Self-Evolving Training for Multimodal Reasoning](../../ICML2025/reinforcement_learning/diving_into_self-evolving_training_for_multimodal_reasoning.md)
 
 </div>
 

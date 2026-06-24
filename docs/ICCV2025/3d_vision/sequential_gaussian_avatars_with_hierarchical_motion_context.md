@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sequential Gaussian Avatars with Hierarchical Motion Context
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes SeqAvatar, which leverages explicit 3DGS representations combined with hierarchical motion context (coarse-grained skeletal motion + fine-grained per-poin…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes SeqAvatar, which leverages explicit 3DGS representations combined with hierarchical motion context (coarse-grained skeletal motion + fine-grained per-point velocity) to model motion-correlated appearance changes in human avatars. Spatio-temporal multi-scale sampling further enhances the robustness of motion conditioning. SeqAvatar achieves state-of-the-art rendering quality across multiple datasets while mainta…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Motion Context"
   - "SMPL"
 date: 2026-05-08
-content_hash: af73b261f63125a3
+content_hash: 0ccfd2d15af5e5ca
 ---
 
 # Sequential Gaussian Avatars with Hierarchical Motion Context

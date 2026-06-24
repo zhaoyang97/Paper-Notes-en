@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Parametric SVD of Koopman Operator for Stochastic Dynamical Systems
 description: >-
-  [NEURIPS2025][Model Compression][Koopman operator] This paper proposes a low-rank approximation (LoRA)-based objective to learn the top-k singular functions of the Koopman operator for stochastic dynamical systems…
+  [NEURIPS2025][Model Compression][Koopman operator] This paper proposes a low-rank approximation (LoRA)-based objective to learn the top-k singular functions of the Koopman operator for stochastic dynamical systems, entirely avoiding the numerically unstable matrix decomposition operations present in VAMPnet/DPNet, with naturally unbiased gradients.
 tags:
   - "NEURIPS2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "low-rank approximation"
   - "deep learning"
 date: 2026-05-08
-content_hash: e8e052a6a5bba4ca
+content_hash: aaf7f7fd1f9708ec
 ---
 
 # Efficient Parametric SVD of Koopman Operator for Stochastic Dynamical Systems
@@ -151,10 +151,10 @@ The LoRA idea generalizes low-rank matrix approximation to operator low-rank app
 ## Related Papers
 
 - [\[NeurIPS 2025\] Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization](tighter_cmi-based_generalization_bounds_via_stochastic_projection_and_quantizati.md)
-- [\[AAAI 2026\] Parametric Pareto Set Learning for Expensive Multi-Objective Optimization](../../AAAI2026/model_compression/parametric_pareto_set_learning_for_expensive_multi-objective_optimization.md)
+- [\[ICLR 2026\] SAES-SVD: Self-Adaptive Suppression of Accumulated and Local Errors for SVD-based LLM Compression](../../ICLR2026/model_compression/saes-svd_self-adaptive_suppression_of_accumulated_and_local_errors_for_svd-based.md)
+- [\[CVPR 2025\] HiAP: A Multi-Granular Stochastic Auto-Pruning Framework for Vision Transformers](../../CVPR2025/model_compression/hiap_a_multi-granular_stochastic_auto-pruning_framework_for_vision_transformers.md)
+- [\[ICLR 2026\] Automated Stateful Specialization for Adaptive Agent Systems](../../ICLR2026/model_compression/automated_stateful_specialization_for_adaptive_agent_systems.md)
 - [\[ICLR 2026\] Textual Equilibrium Propagation for Deep Compound AI Systems](../../ICLR2026/model_compression/textual_equilibrium_propagation_for_deep_compound_ai_systems.md)
-- [\[ICLR 2026\] Rejuvenating Cross-Entropy Loss in Knowledge Distillation for Recommender Systems](../../ICLR2026/model_compression/rejuvenating_cross-entropy_loss_in_knowledge_distillation_for_recommender_system.md)
-- [\[ICLR 2026\] KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models](../../ICLR2026/model_compression/kbvq-moe_klt-guided_svd_with_bias-corrected_vector_quantization_for_moe_large_la.md)
 
 </div>
 

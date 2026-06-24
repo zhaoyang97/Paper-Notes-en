@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Eliciting Harmful Capabilities by Fine-Tuning on Safeguarded Outputs
 description: >-
-  [ICLR 2026][AI Safety][Fine-tuning] Even if frontier models strictly block direct harmful outputs using classifiers, attackers can obtain "surface-benign" responses in adjacent domains (e.g., general organic synthesis) and use these pairs to fine-tune open-weights models. This "elicitation attack" recovers approximately 40% of the capability gap in chemi
+  [ICLR 2026][AI Safety][Elicitation Attack] Even if frontier models strictly block direct harmful outputs using classifiers, attackers can obtain "surface-benign" responses in adjacent domains (e.g., general organic synthesis) and use these pairs to fine-tune open-weights models. This "elicitation attack" recovers approximately 40% of the capability gap in chemical weapon scenarios, revealing the failure of output-level guardrails at the ecosystem level.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Fine-tuning
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Elicitation Attack"
+  - "Fine-tuning"
+  - "Output-level Safety Guardrails"
+  - "Ecosystem-level Risk"
+  - "Capability Assessment"
+  - "Red Teaming"
 date: 2026-05-08
-content_hash: 585a373d50437bdf
+content_hash: f0489991587ff171
 ---
+
 # Eliciting Harmful Capabilities by Fine-Tuning on Safeguarded Outputs
 
 **Conference**: ICLR 2026  
@@ -122,8 +128,8 @@ Uplift rises sharply as the training domain approaches the target. Even related 
 - [\[CVPR 2026\] Immunizing Models Against Harmful Long-Horizon Fine-Tuning via Contractive Optimization Dynamics](../../CVPR2026/ai_safety/immunizing_models_against_harmful_long-horizon_fine-tuning_via_contractive_optim.md)
 - [\[ICLR 2026\] Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling](robust_fine-tuning_from_non-robust_pretrained_models_mitigating_suboptimal_trans.md)
 - [\[ICML 2026\] PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials](../../ICML2026/ai_safety/pft_phonon_fine-tuning_for_machine_learned_interatomic_potentials.md)
-- [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
-- [\[CVPR 2025\] Gradient Inversion Attacks on Parameter-Efficient Fine-Tuning](../../CVPR2025/ai_safety/gradient_inversion_attacks_on_parameter-efficient_fine-tuning.md)
+- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](../../ICML2026/ai_safety/decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
+- [\[ICML 2026\] FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning](../../ICML2026/ai_safety/fedtreelora_reconciling_statistical_and_functional_heterogeneity_in_federated_lo.md)
 
 </div>
 

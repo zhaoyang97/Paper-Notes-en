@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dr. Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] Dr. Tulu proposes RLER (Reinforcement Learning with Evolving Rubrics), allowing evaluation rubrics to co-evolve with the policy during training. This extends RLVR from short-form QA to long-form deep research tasks with citations. Ultimately, DR Tulu-8B, trained from Qwen3-8B, outperforms Tongyi DR-30B by an average of
+  [ICML 2026][Reinforcement Learning][Evolving rubrics] Dr. Tulu proposes RLER (Reinforcement Learning with Evolving Rubrics), allowing evaluation rubrics to co-evolve with the policy during training. This extends RLVR from short-form QA to long-form deep research tasks with citations. Ultimately, DR Tulu-8B, trained from Qwen3-8B, outperforms Tongyi DR-30B by an average of 15.6 points across four long-form deep research benchmarks and reaches competitive performance with OpenA…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Evolving rubrics"
+  - "deep research agent"
+  - "long-form response"
+  - "verifiable citations"
+  - "RLVR extension"
 date: 2026-05-08
-content_hash: 43dd5a3634574649
+content_hash: 2fd0798ef134033d
 ---
+
 # Dr. Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research
 
 **Conference**: ICML 2026  
@@ -150,10 +156,10 @@ The improvement brought specifically by RLER across benchmarks ranges from 6.4 t
 ## Related Papers
 
 - [\[ICML 2026\] DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control](debiased_model-based_representations_for_sample-efficient_continuous_control.md)
+- [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](../../ICLR2026/reinforcement_learning/rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
 - [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
 - [\[ICML 2026\] ORLoopBench: Solver-in-the-Loop Benchmarks for Self-Correction and Behavioral Rationality in Operations Research](orloopbench_solver-in-the-loop_benchmarks_for_self-correction_and_behavioral_rat.md)
 - [\[ICML 2026\] SPHERE: Mitigating the Loss of Spectral Plasticity in Mixture-of-Experts for Deep Reinforcement Learning](sphere_mitigating_the_loss_of_spectral_plasticity_in_mixture-of-experts_for_deep.md)
-- [\[NeurIPS 2025\] ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
 
 </div>
 

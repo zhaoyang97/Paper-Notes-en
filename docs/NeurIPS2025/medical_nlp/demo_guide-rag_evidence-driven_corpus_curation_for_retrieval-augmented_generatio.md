@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID
 description: >-
-  [NeurIPS 2025 (GenAI for Health Workshop)][Medical NLP][RAG] This paper systematically evaluates six RAG corpus configurations for Long COVID clinical QA. The GS-4 configuration—combining clinical guidelines with high-qu…
+  [NeurIPS 2025 (GenAI for Health Workshop)][Medical LLM][RAG] This paper systematically evaluates six RAG corpus configurations for Long COVID clinical QA. The GS-4 configuration—combining clinical guidelines with high-quality systematic reviews—consistently outperforms both single-guideline and large-scale literature retrieval baselines across faithfulness, relevance, and comprehensiveness. The authors further introduce the Guide-RAG framework and the LongCOVID-CQ evaluation…
 tags:
   - "NeurIPS 2025 (GenAI for Health Workshop)"
-  - "Medical NLP"
+  - "Medical LLM"
   - "RAG"
   - "Long COVID"
   - "corpus curation"
   - "LLM-as-a-judge"
   - "clinical QA"
 date: 2026-05-08
-content_hash: 417912b43370f456
+content_hash: 8983b26c59015231
 ---
 
 # Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID
@@ -131,11 +131,11 @@ GS-4 (guideline + 3 systematic reviews; only 4 documents) ranks first in overall
 
 ## Related Papers
 
+- [\[ACL 2025\] Towards Omni-RAG: Comprehensive Retrieval-Augmented Generation for Large Language Models in Medical Applications](../../ACL2025/medical_nlp/omni_rag_medical.md)
+- [\[ACL 2025\] Query-driven Document-level Scientific Evidence Extraction from Biomedical Studies](../../ACL2025/medical_nlp/urca_biomedical_evidence_extraction.md)
 - [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](../../ACL2026/medical_nlp/sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
-- [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
-- [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](../../AAAI2026/medical_nlp/expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
-- [\[ACL 2026\] HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks](../../ACL2026/medical_nlp/heterorag_a_heterogeneous_retrieval-augmented_generation_framework_for_medical_v.md)
-- [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](../../ACL2026/medical_nlp/ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
+- [\[ICML 2025\] On the Vulnerability of Applying Retrieval-Augmented Generation within Knowledge-Intensive Application Domains](../../ICML2025/medical_nlp/on_the_vulnerability_of_applying_retrieval-augmented_generation_within_knowledge.md)
+- [\[ACL 2025\] MedBioRAG: Semantic Search and Retrieval-Augmented Generation with Large Language Models for Medical and Biological QA](../../ACL2025/medical_nlp/medbiorag_semantic_search_and_retrieval-augmented_generation_with_large_language.md)
 
 </div>
 

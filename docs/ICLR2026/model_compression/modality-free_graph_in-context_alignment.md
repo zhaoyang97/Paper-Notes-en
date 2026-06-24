@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Modality-free Graph In-context Alignment
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The authors propose MF-GIA, the first graph in-context learning framework that simultaneously satisfies tuning-free inference, cross-domain alignment, and modality-free requirements. By capturing domain features via gradient fingerprints and aligning features and labels through FiLM-conditioned transformations, MF-GIA
+  [ICLR 2026][Model Compression][Graph Foundation Models] The authors propose MF-GIA, the first graph in-context learning framework that simultaneously satisfies tuning-free inference, cross-domain alignment, and modality-free requirements. By capturing domain features via gradient fingerprints and aligning features and labels through FiLM-conditioned transformations, MF-GIA achieves SOTA performance on few-shot tasks across multiple graph domains.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Graph Foundation Models"
+  - "In-context Learning"
+  - "Cross-domain Alignment"
+  - "Gradient Fingerprints"
+  - "Meta-learning"
 date: 2026-05-08
-content_hash: 62e71fa4a11c1887
+content_hash: 1014b8c547edeea9
 ---
+
 # Modality-free Graph In-context Alignment
 
 **Conference**: ICLR 2026  
@@ -126,11 +132,11 @@ The model uses an episodic cross-entropy loss: $\mathcal{L}_{\text{episode}} = -
 
 ## Related Papers
 
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[ICLR 2026\] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)
 - [\[ICLR 2026\] GAPrune: Gradient-Alignment Pruning for Domain-Aware Embeddings](gaprune_gradient-alignment_pruning_for_domain-aware_embeddings.md)
 - [\[ECCV 2024\] SpaceJAM: a Lightweight and Regularization-free Method for Fast Joint Alignment of Images](../../ECCV2024/model_compression/spacejam_a_lightweight_and_regularization-free_method_for_fast_joint_alignment_o.md)
 - [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](../../ICML2026/model_compression/selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
-- [\[ICML 2025\] Context Tuning for In-Context Optimization](../../ICML2025/model_compression/context_tuning_for_in-context_optimization.md)
 
 </div>
 

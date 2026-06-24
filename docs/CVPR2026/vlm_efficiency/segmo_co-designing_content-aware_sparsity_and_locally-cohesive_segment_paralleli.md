@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] SegMo addresses the token explosion and $O(N^2)$ prefill bottleneck in long-video VLMs. Through "algorithm-system co-design," it jointly optimizes *what to compute* (Content-Aware Sparsity, CAS) and *how to compute* (Locally-Cohesive Segment Parallelism, LSP). Leveraging the "local cohesion" property of VLM attention,
+  [CVPR 2026][Multimodal Efficiency][Long Video Understanding] SegMo addresses the token explosion and $O(N^2)$ prefill bottleneck in long-video VLMs. Through "algorithm-system co-design," it jointly optimizes *what to compute* (Content-Aware Sparsity, CAS) and *how to compute* (Locally-Cohesive Segment Parallelism, LSP). Leveraging the "local cohesion" property of VLM attention, it segments videos by scenes for parallel execution with zero cross-GPU communication during prefil…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Long Video Understanding"
+  - "VLM Inference Acceleration"
+  - "Content-Aware Sparsity"
+  - "Segment Parallelism"
+  - "Prefill Optimization"
 date: 2026-05-08
-content_hash: 3db05e05b81f0d77
+content_hash: 9f581e69be6500ba
 ---
+
 # SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ Using the same number of GPUs, SegMo reduces the Time-To-First-Token (TTFT) by 2
 
 ## Related Papers
 
-- [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
+- [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
+- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/vlm_efficiency/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
+- [\[CVPR 2026\] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference](duet-vlm_dual_stage_unified_efficient_token_reduction_for_vlm_training_and_infer.md)
 - [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
-- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
-- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
-- [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
+- [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
 
 </div>
 

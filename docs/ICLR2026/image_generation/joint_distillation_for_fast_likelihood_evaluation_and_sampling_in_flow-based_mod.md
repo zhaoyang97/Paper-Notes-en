@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] By coupling the "sampling trajectory" and "log-likelihood (cumulative divergence)" into the same flow map for joint distillation, F2D2 reduces the NFE for both sampling and likelihood evaluation in flow matching models from thousands to just a few steps. This achieves **few-step exact likelihood evaluation** for CNF/di
+  [ICLR 2026][Image Generation][Flow Matching] By coupling the "sampling trajectory" and "log-likelihood (cumulative divergence)" into the same flow map for joint distillation, F2D2 reduces the NFE for both sampling and likelihood evaluation in flow matching models from thousands to just a few steps. This achieves **few-step exact likelihood evaluation** for CNF/diffusion-type models for the first time.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - MeanFlow
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Likelihood Evaluation"
+  - "Distillation"
+  - "Flow Map"
+  - "MeanFlow"
+  - "Few-step Sampling"
 date: 2026-05-08
-content_hash: a41b75885affd288
+content_hash: d8ceef650112d49c
 ---
+
 # Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models
 
 **Conference**: ICLR 2026  
@@ -125,9 +130,9 @@ On CelebA-64, LSD-F2D2 similarly achieves valid calibrated likelihood in few ste
 
 - [\[ICLR 2026\] Decoupled MeanFlow: Turning Flow Models into Flow Maps for Accelerated Sampling](decoupled_meanflow_turning_flow_models_into_flow_maps_for_accelerated_sampling.md)
 - [\[ICLR 2026\] Flow Straight and Fast in Hilbert Space: Functional Rectified Flow](flow_straight_and_fast_in_hilbert_space_functional_rectified_flow.md)
-- [\[ICLR 2026\] Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening](motion_prior_distillation_in_time_reversal_sampling_for_generative_inbetweening.md)
-- [\[ICLR 2026\] Quantization-Aware Diffusion Models for Maximum Likelihood Training](quantization-aware_diffusion_models_for_maximum_likelihood_training.md)
-- [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
+- [\[ICLR 2026\] SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation](senseflow_scaling_distribution_matching_for_flow-based_text-to-image_distillatio.md)
+- [\[ICLR 2026\] SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions](safeflowmatcher_safe_and_fast_planning_using_flow_matching_with_control_barrier_.md)
+- [\[ICLR 2026\] Scale-wise Distillation of Diffusion Models](scale-wise_distillation_of_diffusion_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][AI-generated image detection] This paper proposes AIGI-Holmes, which adapts MLLMs into a "Holmes"-style detector capable of both accurately identifying AI-generated images and providing human-…
+  [ICCV 2025][Multimodal VLM][AI-generated image detection] This paper proposes AIGI-Holmes, which adapts MLLMs into a "Holmes"-style detector capable of both accurately identifying AI-generated images and providing human-verifiable explanations. This is achieved by constructing the Holmes-Set dataset with explanatory annotations and a carefully designed three-stage training pipeline (visual expert pre-training → SFT → DPO). At inference time, a collaborative decoding strategy…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "direct preference optimization"
   - "collaborative decoding"
 date: 2026-05-08
-content_hash: b951da4e92dc1757
+content_hash: 836ffa0c9b62550b
 ---
 
 # AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models
@@ -211,8 +211,8 @@ AIGI-Holmes achieves 98%+ accuracy across all generators, with Mean Acc. surpass
 
 - [\[ICCV 2025\] CompCap: Improving Multimodal Large Language Models with Composite Captions](compcap_improving_multimodal_large_language_models_with_composite_captions.md)
 - [\[ICCV 2025\] Bidirectional Likelihood Estimation with Multi-Modal Large Language Models for Text-Video Retrieval](bidirectional_likelihood_estimation_with_multi-modal_large_language_models_for_t.md)
-- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
 - [\[ICCV 2025\] DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding](docthinker_explainable_multimodal_large_language_models_with.md)
+- [\[ICCV 2025\] Are They the Same? Exploring Visual Correspondence Shortcomings of Multimodal LLMs](are_they_the_same_exploring_visual_correspondence_shortcomings_of_multimodal_llm.md)
 - [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](on_large_multimodal_models_as_open-world_image_classifiers.md)
 
 </div>

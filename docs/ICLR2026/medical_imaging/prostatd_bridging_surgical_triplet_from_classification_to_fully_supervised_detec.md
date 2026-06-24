@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProstaTD: Bridging Surgical Triplet from Classification to Fully Supervised Detection
 description: >-
-  [ICLR 2026][Medical Imaging][Dataset] This work constructs the first large-scale multi-center dataset for "fully supervised surgical triplet detection," named ProstaTD (21 robot-assisted radical prostatectomies, 71,775 frames, 196,490 instances with bounding boxes, 89 triplet classes). By employing clinically defined temporal boundaries and precise boundin
+  [ICLR 2026][Medical Imaging][Surgical triplet detection] This work constructs the first large-scale multi-center dataset for "fully supervised surgical triplet detection," named ProstaTD (21 robot-assisted radical prostatectomies, 71,775 frames, 196,490 instances with bounding boxes, 89 triplet classes). By employing clinically defined temporal boundaries and precise bounding boxes, the task is advanced from "frame-level weakly supervised classification" to "fully supervised…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Dataset
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Surgical triplet detection"
+  - "fully supervised"
+  - "dataset"
+  - "prostatectomy"
+  - "self-distillation"
 date: 2026-05-08
-content_hash: 1e219fcc7cac210b
+content_hash: e77212ee928153ff
 ---
+
 # ProstaTD: Bridging Surgical Triplet from Classification to Fully Supervised Detection
 
 **Conference**: ICLR 2026  

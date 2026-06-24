@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Chain of Event-Centric Causal Thought for Physically Plausible Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Chain-of-Thought] Models physically plausible video generation (PPVG) as a sequence of causally connected events. It decomposes complex physical phenomena into ordered event chains driven by physical formulas through physical-driven event chain reasoning, then generates semantic-visual dual conditions through transition-aware cross-moda
+  [CVPR 2026][Video Generation][Physically plausible video generation] Models physically plausible video generation (PPVG) as a sequence of causally connected events. It decomposes complex physical phenomena into ordered event chains driven by physical formulas through physical-driven event chain reasoning, then generates semantic-visual dual conditions through transition-aware cross-modal prompting to guide video diffusion models in generating videos that follow causal evoluti…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Chain-of-Thought
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Physically plausible video generation"
+  - "causal reasoning"
+  - "event chain"
+  - "cross-modal prompting"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 347d312f45504694
+content_hash: 08146229a52fb244
 ---
+
 # Chain of Event-Centric Causal Thought for Physically Plausible Video Generation
 
 **Conference**: CVPR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] REOrdering Patches Improves Vision Models
 description: >-
-  [NeurIPS 2025][Model Compression][patch ordering] This paper reveals that patch ordering significantly affects the performance of long-sequence vision models, and proposes the REOrder framework…
+  [NeurIPS 2025][Model Compression][patch ordering] This paper reveals that patch ordering significantly affects the performance of long-sequence vision models, and proposes the REOrder framework, which leverages information-theoretic priors and reinforcement learning to automatically discover optimal patch permutations, achieving up to 3.01% improvement on ImageNet-1K and 13.35% on FMoW.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "reinforcement learning"
   - "Plackett-Luce"
 date: 2026-05-08
-content_hash: 982407f85ce7cf9e
+content_hash: ba27f7a566233264
 ---
 
 # REOrdering Patches Improves Vision Models
@@ -135,11 +135,11 @@ The reward is defined as the negative cross-entropy loss $r = -\mathcal{L}_{\tex
 
 ## Related Papers
 
+- [\[ICLR 2026\] Faster Vision Transformers with Adaptive Patches](../../ICLR2026/model_compression/faster_vision_transformers_with_adaptive_patches.md)
 - [\[NeurIPS 2025\] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts](dense_backpropagation_improves_training_for_sparse_mixture-of-experts.md)
-- [\[ICCV 2025\] ViT-Linearizer: Distilling Quadratic Knowledge into Linear-Time Vision Models](../../ICCV2025/model_compression/vit-linearizer_distilling_quadratic_knowledge_into_linear-time_vision_models.md)
-- [\[ICML 2026\] Dispersion Loss Counteracts Embedding Condensation and Improves Generalization in Small Language Models](../../ICML2026/model_compression/dispersion_loss_counteracts_embedding_condensation_and_improves_generalization_i.md)
-- [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](vision-centric_token_compression_in_large_language_model.md)
 - [\[NeurIPS 2025\] Learning to Better Search with Language Models via Guided Reinforced Self-Training](learning_to_better_search_with_language_models_via_guided_reinforced_self-traini.md)
+- [\[ICCV 2025\] ViT-Linearizer: Distilling Quadratic Knowledge into Linear-Time Vision Models](../../ICCV2025/model_compression/vit-linearizer_distilling_quadratic_knowledge_into_linear-time_vision_models.md)
+- [\[NeurIPS 2025\] Geometry of Decision Making in Language Models](geometry_of_decision_making_in_language_models.md)
 
 </div>
 

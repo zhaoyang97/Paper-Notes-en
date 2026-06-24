@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Bidirectional Query-Driven Generation of Parametric CAD Sketch
 description: >-
-  [CVPR 2026][Others][Paper Note] CADSketcher reformulates parametric CAD sketch completion from a unidirectional "prefix → continuation" task into a "middle fragment → bidirectional outward expansion" query-driven generation. By integrating bidirectional query learning, confidence gating, and a validity compiler, it improves sketch-level accuracy on S
+  [CVPR 2026][Parametric CAD] CADSketcher reformulates parametric CAD sketch completion from a unidirectional "prefix → continuation" task into a "middle fragment → bidirectional outward expansion" query-driven generation. By integrating bidirectional query learning, confidence gating, and a validity compiler, it improves sketch-level accuracy on SketchGraphs from ~33% to 45.6% and reduces the invalid rate to zero.
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Parametric CAD"
+  - "sketch completion"
+  - "bidirectional query"
+  - "confidence guidance"
+  - "hybrid positional encoding"
 date: 2026-05-08
-content_hash: 58e52c0fa5997e5f
+content_hash: d32471d889bb52c9
 ---
+
 # Bidirectional Query-Driven Generation of Parametric CAD Sketch
 
 **Conference**: CVPR 2026  
@@ -134,15 +139,20 @@ The model achieves state-of-the-art accuracy and a 0% invalid rate. Cross-datase
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **Vitruvion**: Seff et al., "Vitruvion: A Generative Model of Parametric CAD Sketches," ICLR 2022.
-- **DeepCAD**: Wu et al., "DeepCAD: A Deep Generative Network for Computer-Aided Design Models," ICCV 2021.
-- **CAD-VLM**: "Multimodal Understanding for CAD Sketching," CVPR 2024.
+## Related Papers
+
+- [\[AAAI 2026\] Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation](../../AAAI2026/others/generating_sketches_in_a_hierarchical_auto-regressive_proces.md)
+- [\[CVPR 2026\] Convolutional Neural Networks Driven by Content Similarity](convolutional_neural_networks_driven_by_content_similarity.md)
+- [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
+- [\[ICCV 2025\] Stroke2Sketch: Harnessing Stroke Attributes for Training-Free Sketch Generation](../../ICCV2025/others/stroke2sketch_harnessing_stroke_attributes_for_training-free_sketch_generation.md)
+- [\[CVPR 2026\] Progressive Neural Architecture Generation](progressive_neural_architecture_generation.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)

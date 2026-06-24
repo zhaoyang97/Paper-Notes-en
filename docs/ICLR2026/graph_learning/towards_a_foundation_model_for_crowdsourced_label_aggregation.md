@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards a Foundation Model for Crowdsourced Label Aggregation
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] CrowdFM upgrades the task of "inferring ground truth from noisy crowdsourced labels" from "estimating parameters per individual dataset" to "a single pre-trained bipartite graph neural network that handles everything zero-shot." By pre-training an attention-based GNN that explicitly models workers, tasks, and options o
+  [ICLR 2026][Graph Learning][Label aggregation] CrowdFM upgrades the task of "inferring ground truth from noisy crowdsourced labels" from "estimating parameters per individual dataset" to "a single pre-trained bipartite graph neural network that handles everything zero-shot." By pre-training an attention-based GNN that explicitly models workers, tasks, and options on domain-randomized synthetic crowdsourced data, it matches or even surpasses dataset-specific customized methods…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Label aggregation"
+  - "crowdsourcing"
+  - "bipartite graph neural networks"
+  - "synthetic data pre-training"
+  - "zero-shot generalization"
 date: 2026-05-08
-content_hash: 3b440ce722d994a5
+content_hash: 5c9895fbeb96e92f
 ---
+
 # Towards a Foundation Model for Crowdsourced Label Aggregation
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Softmax is not Enough (for Adaptive Conformal Classification)
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper points out that adaptive conformal classification relying solely on softmax probabilities inherits the overconfidence issues of deep classifiers. It proposes using Helmholtz free energy in the logit space for sample-level reweighting of non-conformity scores, enhancing the distinctness of prediction sets for
+  [ICLR2026][Learning Theory][Non-conformity Score] This paper points out that adaptive conformal classification relying solely on softmax probabilities inherits the overconfidence issues of deep classifiers. It proposes using Helmholtz free energy in the logit space for sample-level reweighting of non-conformity scores, enhancing the distinctness of prediction sets for easy, hard, and OOD inputs while maintaining conformal coverage guarantees.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Uncertainty Quantization"
+  - "Adaptive Conformal Classification"
+  - "Non-conformity Score"
+  - "Helmholtz Free Energy"
+  - "Logit Uncertainty"
+  - "OOD Reliability"
 date: 2026-05-08
-content_hash: 39cd413f8fd32b2d
+content_hash: 00d7de521c6e08fc
 ---
+
 # Softmax is not Enough (for Adaptive Conformal Classification)
 
 **Conference**: ICLR2026  
@@ -152,8 +159,8 @@ OOD experiments demonstrate that energy-based APS expands sets on unfamiliar inp
 - **Value**: ⭐⭐⭐⭐⭐ High practical value as a training-free, lightweight enhancement for improved prediction set adaptiveness in existing systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -161,7 +168,7 @@ OOD experiments demonstrate that energy-based APS expands sets on unfamiliar inp
 - [\[ICLR 2026\] Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity](adaptive_conformal_prediction_via_mixture-of-experts_gating_similarity.md)
 - [\[ICLR 2026\] The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens](the_softmax_bottleneck_does_not_limit_the_probabilities_of_the_most_likely_token.md)
 - [\[ICLR 2026\] Softmax Transformers are Turing-Complete](softmax_transformers_are_turing-complete.md)
-- [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
+- [\[ICLR 2026\] Adaptive Hopfield Network: Rethinking Similarities in Associative Memory](adaptive_hopfield_network_rethinking_similarities_in_associative_memory.md)
 
 </div>
 

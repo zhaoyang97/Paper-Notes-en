@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LONG3R: Long Sequence Streaming 3D Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Streaming 3D reconstruction] This paper proposes LONG3R, a streaming multi-view 3D reconstruction model based on a recurrent memory mechanism. Through three key innovations — memory gating…
+  [ICCV 2025][3D Vision][Streaming 3D reconstruction] This paper proposes LONG3R, a streaming multi-view 3D reconstruction model based on a recurrent memory mechanism. Through three key innovations — memory gating, a dual-source refined decoder, and 3D spatio-temporal memory — LONG3R significantly improves long-sequence reconstruction quality while maintaining real-time inference speed.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "long-sequence reconstruction"
   - "real-time inference"
 date: 2026-05-08
-content_hash: 25654ffc5bbf1c27
+content_hash: 39fbc972ef5c2172
 ---
 
 # LONG3R: Long Sequence Streaming 3D Reconstruction
@@ -193,8 +193,8 @@ Removing 3D spatial memory leads to severe performance collapse (Accuracy surges
 ## Related Papers
 
 - [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](../../CVPR2026/3d_vision/longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
 - [\[ICCV 2025\] FlashDepth: Real-time Streaming Video Depth Estimation at 2K Resolution](flashdepth_real-time_streaming_video_depth_estimation_at_2k_resolution.md)
+- [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
 - [\[ICCV 2025\] Amodal3R: Amodal 3D Reconstruction from Occluded 2D Images](amodal3r_amodal_3d_reconstruction_from_occluded_2d_images.md)
 - [\[ICCV 2025\] Boost 3D Reconstruction using Diffusion-based Monocular Camera Calibration](boost_3d_reconstruction_using_diffusion-based_monocular_camera_calibration.md)
 

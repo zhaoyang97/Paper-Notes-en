@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Understanding LoRA as Knowledge Memory: An Empirical Analysis
 description: >-
-  [ICML 2026][Information Retrieval & RAG][LoRA] The authors perform a systematic empirical audit using PhoneBook and a newly constructed PaperQA benchmark, treating LoRA as a knowledge memory unit that can be independently trained, loaded, and combined. They quantitatively provide full-link design guidelines covering "Rank $\rightarrow$ Capacity $\rightarrow$ Effici
+  [ICML 2026][Information Retrieval & RAG][LoRA] The authors perform a systematic empirical audit using PhoneBook and a newly constructed PaperQA benchmark, treating LoRA as a knowledge memory unit that can be independently trained, loaded, and combined. They quantitatively provide full-link design guidelines covering "Rank $\rightarrow$ Capacity $\rightarrow$ Efficiency $\rightarrow$ Multi-module Combination $\rightarrow$ Complementarity with RAG/ICL."
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - LoRA
-  - Multi-LoRA
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "LoRA"
+  - "Parametric Memory"
+  - "Knowledge Capacity"
+  - "Multi-LoRA"
+  - "RAG/ICL Comparison"
 date: 2026-05-08
-content_hash: c428b64802080ca6
+content_hash: 00410afcab5f32ad
 ---
+
 # Understanding LoRA as Knowledge Memory: An Empirical Analysis
 
 **Conference**: ICML 2026  
@@ -112,11 +116,11 @@ No new loss functions are introduced. All LoRAs are fine-tuned using standard ne
 
 ## Related Papers
 
+- [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](../../ICLR2026/information_retrieval/mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
+- [\[ACL 2026\] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study](../../ACL2026/information_retrieval/when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
 - [\[ICML 2026\] Understand and Accelerate Memory Processing Pipeline for Large Language Model Inference](understand_and_accelerate_memory_processing_pipeline_for_disaggregated_llm_infer.md)
-- [\[ACL 2026\] A Picture is Worth a Thousand Words? An Empirical Study of Aggregation Strategies for Visual Financial Document Retrieval](../../ACL2026/information_retrieval/a_picture_is_worth_a_thousand_words_an_empirical_study_of_aggregation_strategies.md)
 - [\[ACL 2026\] Code-Switching Information Retrieval: Benchmarks, Analysis, and the Limits of Current Retrievers](../../ACL2026/information_retrieval/code-switching_information_retrieval_benchmarks_analysis_and_the_limits_of_curre.md)
-- [\[ICLR 2026\] Judge's Verdict: A Comprehensive Analysis of LLM Judge Capability Through Human Agreement](../../ICLR2026/information_retrieval/judges_verdict_a_comprehensive_analysis_of_llm_judge_capability_through_human_ag.md)
-- [\[ICML 2026\] HGMem: Hypergraph-based Working Memory to Improve Multi-step RAG for Long-Context Complex Relational Modeling](hgmem_hypergraph-based_working_memory_to_improve_multi-step_rag_for_long-context.md)
+- [\[ACL 2026\] A Picture is Worth a Thousand Words? An Empirical Study of Aggregation Strategies for Visual Financial Document Retrieval](../../ACL2026/information_retrieval/a_picture_is_worth_a_thousand_words_an_empirical_study_of_aggregation_strategies.md)
 
 </div>
 

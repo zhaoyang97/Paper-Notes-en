@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Bayes-Adaptive RL] This paper reinterprets the "self-reflection" behavior of LLMs through the lens of Bayesian Reinforcement Learning—viewing reflection as information gathering under MDP uncertainty. It proposes the BARL algorithm, which maintains a posterior of MDP hypotheses over candidate answers and switches policies when beliefs co
+  [ICLR 2026][Reasoning][Bayes-Adaptive RL] This paper reinterprets the "self-reflection" behavior of LLMs through the lens of Bayesian Reinforcement Learning—viewing reflection as information gathering under MDP uncertainty. It proposes the BARL algorithm, which maintains a posterior of MDP hypotheses over candidate answers and switches policies when beliefs conflict with reward feedback, simultaneously improving accuracy and token efficiency in mathematical reasoning.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Bayes-Adaptive RL
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Bayes-Adaptive RL"
+  - "reflective exploration"
+  - "MDP posterior"
+  - "uncertainty-adaptive policy"
+  - "Token efficiency"
 date: 2026-05-08
-content_hash: 78a64b741f85b731
+content_hash: 300feac1aba4bd65
 ---
+
 # Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -119,11 +124,11 @@ Across three models, BARL leads in average accuracy, with the most significant G
 
 ## Related Papers
 
+- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](../../ICML2026/llm_reasoning/beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
 - [\[ICLR 2026\] MAGO: Beyond Fixed Hyperparameters with Multi-Objective Pareto Optimization for Hybrid LLM Reasoning](mago_beyond_fixed_hyperparameters_with_multi-objective_pareto_optimization_for_h.md)
 - [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
 - [\[ICLR 2026\] Tricks or Traps? A Deep Dive into RL for LLM Reasoning](tricks_or_traps_a_deep_dive_into_rl_for_llm_reasoning.md)
 - [\[ICLR 2026\] Beyond Magnitude: Leveraging Direction of RLVR Updates for LLM Reasoning](beyond_magnitude_leveraging_direction_of_rlvr_updates_for_llm_reasoning.md)
-- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 
 </div>
 

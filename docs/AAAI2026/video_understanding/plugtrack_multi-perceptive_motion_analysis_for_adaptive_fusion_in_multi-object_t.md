@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking
 description: >-
-  [AAAI 2026][Video Understanding][Multi-Object Tracking] This paper proposes PlugTrack, a framework that achieves, for the first time, adaptive fusion of Kalman filters and data-driven motion predictors via a Context Moti…
+  [AAAI 2026][Video Understanding][Multi-Object Tracking] This paper proposes PlugTrack, a framework that achieves, for the first time, adaptive fusion of Kalman filters and data-driven motion predictors via a Context Motion Encoder (CME) and an Adaptive Blending factor Generator (ABG), yielding significant improvements under both linear and nonlinear motion scenarios.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Motion Prediction"
   - "Plug-and-Play"
 date: 2026-05-08
-content_hash: 3aa19425f7ff5aa6
+content_hash: 8d851ed8ac6bebdb
 ---
 
 # PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking
@@ -181,9 +181,9 @@ Training uses the Adam optimizer with a learning rate of 0.001, batch size of 20
 
 - [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](../../CVPR2026/video_understanding/occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
 - [\[AAAI 2026\] Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks](learning_topology-driven_multi-subspace_fusion_for_grassmannian_deep_network.md)
-- [\[CVPR 2026\] STORM: End-to-End Referring Multi-Object Tracking in Videos](../../CVPR2026/video_understanding/storm_referring_multi_object_tracking.md)
-- [\[CVPR 2026\] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition](../../CVPR2026/video_understanding/tcei_test_time_calibration_experience_intuition_mot.md)
-- [\[ICCV 2025\] UMDATrack: Unified Multi-Domain Adaptive Tracking Under Adverse Weather Conditions](../../ICCV2025/video_understanding/umdatrack_unified_multi-domain_adaptive_tracking_under_adverse_weather_condition.md)
+- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](../../CVPR2026/video_understanding/hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
+- [\[CVPR 2025\] OmniTrack: Omnidirectional Multi-Object Tracking](../../CVPR2025/video_understanding/omnidirectional_multi-object_tracking.md)
+- [\[CVPR 2026\] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](../../CVPR2026/video_understanding/progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)
 
 </div>
 

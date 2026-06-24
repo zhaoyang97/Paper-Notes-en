@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LiteGuard: Efficient Task-Agnostic Model Fingerprinting with Enhanced Generalization
 description: >-
-  [ICLR 2026][AI Safety][Generalizability] LiteGuard employs two strategies—expanding model sets using training checkpoints and assigning a lightweight local verifier to each fingerprint—to minimize the training requirement for task-agnostic model fingerprinting (requiring as few as 1 real model per set). It outperforms the SOTA MetaV in AUC across five categor
+  [ICLR 2026][AI Safety][Model Fingerprinting] LiteGuard employs two strategies—expanding model sets using training checkpoints and assigning a lightweight local verifier to each fingerprint—to minimize the training requirement for task-agnostic model fingerprinting (requiring as few as 1 real model per set). It outperforms the SOTA MetaV in AUC across five categories of tasks while reducing training costs by 5 to 10 times.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Generalizability
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Model Fingerprinting"
+  - "Intellectual Property Protection"
+  - "Task-Agnostic"
+  - "Generalization"
+  - "Computational Efficiency"
+  - "Overfitting"
 date: 2026-05-08
-content_hash: 9ebc0e5de107d0bb
+content_hash: 579374725bbc5025
 ---
+
 # LiteGuard: Efficient Task-Agnostic Model Fingerprinting with Enhanced Generalization
 
 **Conference**: ICLR 2026  
@@ -116,7 +122,6 @@ Ours relative to MetaV: Classification +34.5%, protein regression +9.5%, tabular
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

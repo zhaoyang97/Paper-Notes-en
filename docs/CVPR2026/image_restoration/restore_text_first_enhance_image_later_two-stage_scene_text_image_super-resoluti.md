@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance
 description: >-
-  [CVPR 2026][Image Restoration][Diffusion Model] TiGeSR decouples the inherent trade-off between "image quality" and "text readability" in scene text super-resolution using a "restore text first, enhance image later" two-stage paradigm. It first reconstructs precise glyph structures in text regions via a diffusion model, then injects these glyphs as conditions into C
+  [CVPR 2026][Image Restoration][Scene Text Super-Resolution] TiGeSR decouples the inherent trade-off between "image quality" and "text readability" in scene text super-resolution using a "restore text first, enhance image later" two-stage paradigm. It first reconstructs precise glyph structures in text regions via a diffusion model, then injects these glyphs as conditions into ControlNet for full-image super-resolution. The authors also released UZ-ST…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Scene Text Super-Resolution"
+  - "Glyph Structure"
+  - "Two-Stage"
+  - "Diffusion Models"
+  - "ControlNet Guidance"
 date: 2026-05-08
-content_hash: a57dc6b677d15001
+content_hash: 5f53d279f3dcc1c2
 ---
+
 # Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance
 
 **Conference**: CVPR 2026  
@@ -133,11 +138,11 @@ Ours also achieves the best cropped text region metrics. Notably, $\Delta$OCR-A 
 
 ## Related Papers
 
+- [\[CVPR 2026\] TextOVSR: Text-Guided Real-World Opera Video Super-Resolution](textovsr_text-guided_real-world_opera_video_super-resolution.md)
+- [\[ICLR 2026\] Text-Aware Image Restoration with Diffusion Models](../../ICLR2026/image_restoration/text-aware_image_restoration_with_diffusion_models.md)
 - [\[CVPR 2026\] SDUIE: Semi-Supervised Diffusion for Underwater Image Enhancement with Quant-Text Dual Control](sduie_semi-supervised_diffusion_for_underwater_image_enhancement_with_quant-text.md)
 - [\[CVPR 2026\] White-Balance First, Adjust Later: Cross-Camera Color Constancy via Vision-Language Evaluation](white-balance_first_adjust_later_cross-camera_color_constancy_via_vision-languag.md)
-- [\[CVPR 2026\] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](f2hdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_motion_mo.md)
 - [\[CVPR 2026\] Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features](rethinking_diffusion_model-based_video_super-resolution_leveraging_dense_guidanc.md)
-- [\[CVPR 2026\] RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration](rar_restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adversarial Déjà Vu: Jailbreak Dictionary Learning for Stronger Generalization to Unseen Attacks
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The authors propose the "Adversarial Déjà Vu" hypothesis—that new jailbreaks are not entirely novel inventions but rather recombinations of adversarial skills from previous attacks. By using sparse dictionary learning to compress ~17,000 skills extracted from 32 attack papers into approximately 400 interpretable primit
+  [ICLR2026][LLM Safety][Jailbreak] The authors propose the "Adversarial Déjà Vu" hypothesis—that new jailbreaks are not entirely novel inventions but rather recombinations of adversarial skills from previous attacks. By using sparse dictionary learning to compress ~17,000 skills extracted from 32 attack papers into approximately 400 interpretable primitives (a jailbreak dictionary), they verify that "unseen attacks can be sparsely reconstructed from old skills." Based on this…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Jailbreak"
+  - "Adversarial Skills"
+  - "Sparse Dictionary Learning"
+  - "Compositional Generalization"
+  - "Adversarial Training"
 date: 2026-05-08
-content_hash: d76910f7216f1caf
+content_hash: 8bbe402fcae575d8
 ---
+
 # Adversarial Déjà Vu: Jailbreak Dictionary Learning for Stronger Generalization to Unseen Attacks
 
 **Conference**: ICLR2026  
@@ -129,15 +135,16 @@ ASCoT achieved the lowest harmfulness and strongest generalization across models
 - Value: ⭐⭐⭐⭐⭐ Provides an actionable lever—skill coverage—for improving the robustness of LLM defenses.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Learning to Lie: Adversarial Attacks on Human-AI Teams and LLMs](learning_to_lie_adversarial_attacks_on_human-ai_teams_and_llms.md)
 - [\[ACL 2025\] CAVGAN: Unifying Jailbreak and Defense of LLMs via Generative Adversarial Attacks](../../ACL2025/llm_safety/cavgan_unifying_jailbreak_and_defense_of_llms_via_generative_adversarial_attacks.md)
-- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
 - [\[ICLR 2026\] GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance](genebreaker_jailbreak_attacks_against_dna_language_models_with_pathogenicity_gui.md)
-- [\[ICLR 2026\] Automatic Dialectic Jailbreak: A Framework for Generating Effective Jailbreak Strategies](automatic_dialectic_jailbreak_a_framework_for_generating_effective_jailbreak_str.md)
+- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 
 </div>
 

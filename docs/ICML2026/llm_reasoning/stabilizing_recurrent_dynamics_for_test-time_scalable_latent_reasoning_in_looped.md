@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models
 description: >-
-  [ICML 2026][LLM Reasoning][Looped LM] This paper diagnoses the root cause of the "gain-then-collapse" phenomenon in Looped Language Models (LoopLM) when scaling depth at test-time from a dynamical systems perspective—a "Stability-Effectiveness" dilemma caused by normalization placement. It proposes STARS: using Jacobian Spectral Radius Regularization (JSRR
+  [ICML 2026][Reasoning][Looped LM] This paper diagnoses the root cause of the "gain-then-collapse" phenomenon in Looped Language Models (LoopLM) when scaling depth at test-time from a dynamical systems perspective—a "Stability-Effectiveness" dilemma caused by normalization placement. It proposes STARS: using Jacobian Spectral Radius Regularization (JSRR) + Stochastic Recurrent Sampling to pull latent trajectories toward "asymptotically stable effective fixed points." On GSM8K…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Looped LM
-  - Test-time Scaling
+  - "ICML 2026"
+  - "Reasoning"
+  - "Looped LM"
+  - "Test-time Scaling"
+  - "Jacobian Spectral Radius"
+  - "Dynamical System Stability"
+  - "Stochastic Recurrent Sampling"
 date: 2026-05-08
-content_hash: c502b3be81aa30c4
+content_hash: d3dfa2d26c61c68d
 ---
+
 # Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models
 
 **Conference**: ICML 2026  
@@ -134,11 +138,20 @@ Key Comparison: On GSM8K, the relative drop from peak (4 steps) to 8 steps was 2
 - Value: ⭐⭐⭐⭐⭐ Highly applicable to all "recurrent depth" latent reasoning work; a crucial step for test-time scalable LoopLMs.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
+- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](../../ACL2026/llm_reasoning/parallel_test-time_scaling_for_latent_reasoning_models.md)
+- [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
+- [\[ICLR 2026\] MoDr: Mixture-of-Depth-Recurrent Transformers for Test-Time Reasoning](../../ICLR2026/llm_reasoning/modr_mixture-of-depth-recurrent_transformers_for_test-time_reasoning.md)
+- [\[ICML 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)

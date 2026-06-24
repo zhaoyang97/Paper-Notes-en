@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] PA3FF：面向可泛化铰接物体操作的部件感知稠密 3D 特征场
+  [Paper Note] PA3FF: Part-Aware Dense 3D Feature Fields for Generalizable Articulated Object Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper proposes PA3FF—a dense 3D feature field predicted feed-forwardly from point clouds where feature distances reflect whether points belong to the same functional part. Building upon this, the Part-Aware Diffusion Policy (PADP) is introduced, enabling robots to generalize across various articulated objects (doo
+  [ICLR 2026][Robotics][Articulated Object Manipulation] This paper proposes PA3FF—a dense 3D feature field predicted feed-forwardly from point clouds where feature distances reflect whether points belong to the same functional part. Building upon this, the Part-Aware Diffusion Policy (PADP) is introduced, enabling robots to generalize across various articulated objects (door handles, knobs, lids) with minimal demonstrations, significantly outperforming 2D/3D representations li…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Articulated Object Manipulation"
+  - "3D Feature Fields"
+  - "Part-Aware"
+  - "Contrastive Learning"
+  - "Diffusion Policy"
 date: 2026-05-08
-content_hash: 82d546e859495cdf
+content_hash: eaf61a347a0fad3f
 ---
+
 # PA3FF: Part-Aware Dense 3D Feature Fields for Generalizable Articulated Object Manipulation
 
 **Conference**: ICLR 2026  
@@ -146,11 +152,11 @@ Component-wise ablation on the "Put in Drawer" task:
 
 ## Related Papers
 
-- [\[ICLR 2026\] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation](equact_an_se3-equivariant_multi-task_transformer_for_3d_robotic_manipulation.md)
-- [\[ICLR 2026\] OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning](omnieva_embodied_versatile_planner_via_task-adaptive_3d-grounded_and_embodiment-.md)
-- [\[CVPR 2025\] 3D-MVP: 3D Multiview Pretraining for Robotic Manipulation](../../CVPR2025/robotics/3d-mvp_3d_multiview_pretraining_for_manipulation.md)
+- [\[CVPR 2025\] g3D-LF: Generalizable 3D-Language Feature Fields for Embodied Tasks](../../CVPR2025/robotics/g3d-lf_generalizable_3d-language_feature_fields_for_embodied_tasks.md)
+- [\[ICCV 2025\] Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding](../../ICCV2025/robotics/adaptive_articulated_object_manipulation_on_the_fly_with_foundation_model_reason.md)
+- [\[CVPR 2026\] Physically Ground Commonsense Knowledge for Articulated Object Manipulation with Analytic Concepts](../../CVPR2026/robotics/physically_ground_commonsense_knowledge_for_articulated_object_manipulation_with.md)
+- [\[ICLR 2026\] Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation](ground_slow_move_fast_a_dual-system_foundation_model_for_generalizable_vision-la.md)
 - [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](../../CVPR2026/robotics/diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
-- [\[CVPR 2026\] Structural Action Transformer for 3D Dexterous Manipulation](../../CVPR2026/robotics/structural_action_transformer_for_3d_dexterous_manipulation.md)
 
 </div>
 

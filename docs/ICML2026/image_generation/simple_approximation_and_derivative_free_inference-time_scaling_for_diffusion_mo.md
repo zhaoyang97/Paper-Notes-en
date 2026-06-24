@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Simple Approximation and Derivative Free Inference-Time Scaling for Diffusion Models via Sequential Monte Carlo on Path Measures
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The authors upgrade inference-time reward guidance for diffusion models from "particle-space SMC + high-order derivatives" to "path-space SMC + Girsanov likelihood ratios," resulting in the URGE algorithm. Each trajectory only requires a first-order gradient of the guidance $G$ and an accumulated simple Itô term as wei
+  [ICML 2026][Image Generation][Inference-time scaling] The authors upgrade inference-time reward guidance for diffusion models from "particle-space SMC + high-order derivatives" to "path-space SMC + Girsanov likelihood ratios," resulting in the URGE algorithm. Each trajectory only requires a first-order gradient of the guidance $G$ and an accumulated simple Itô term as weight, completely eliminating the need for derivatives of the reward $r$, the Hessian…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Inference-time scaling"
+  - "Girsanov Theorem"
+  - "Path-space SMC"
+  - "Derivative-free guidance"
+  - "reward-tilted sampling"
 date: 2026-05-08
-content_hash: 84d9408ec0f1ef34
+content_hash: 402f503cdf777910
 ---
+
 # Simple Approximation and Derivative Free Inference-Time Scaling for Diffusion Models via Sequential Monte Carlo on Path Measures
 
 **Conference**: ICML 2026  
@@ -130,11 +136,11 @@ ImageReward jumps from 0.21 (base) to 0.996 ($\times 4.7$), with CLIP / HPS / Ge
 
 ## Related Papers
 
+- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](../../ICLR2026/image_generation/inference-time_scaling_of_diffusion_models_through_classical_search.md)
 - [\[ICML 2026\] SURGE: Approximation and Training Free Particle Filter for Diffusion Surrogate](surge_approximation_and_training_free_particle_filter_for_diffusion_surrogate.md)
+- [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](../../ICLR2026/image_generation/compositional_visual_planning_via_inference-time_diffusion_scaling.md)
 - [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](../../CVPR2026/image_generation/rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
-- [\[ICML 2025\] Performance Plateaus in Inference-Time Scaling for Text-to-Image Diffusion Without External Models](../../ICML2025/image_generation/performance_plateaus_in_inference-time_scaling_for_text-to-image_diffusion_witho.md)
-- [\[NeurIPS 2025\] Inference-Time Scaling for Flow Models via Stochastic Generation and Rollover Budget Forcing](../../NeurIPS2025/image_generation/inference-time_scaling_for_flow_models_via_stochastic_generation_and_rollover_bu.md)
-- [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](../../CVPR2026/image_generation/dpcache_denoising_path_planning_diffusion_accel.md)
+- [\[ICLR 2026\] One Step Further with Monte-Carlo Sampler to Guide Diffusion Better](../../ICLR2026/image_generation/one_step_further_with_monte-carlo_sampler_to_guide_diffusion_better.md)
 
 </div>
 

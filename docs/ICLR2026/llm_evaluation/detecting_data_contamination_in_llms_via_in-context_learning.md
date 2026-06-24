@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detecting Data Contamination in LLMs via In-Context Learning
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] The paper proposes CoDeC (Contamination Detection via Context), which determines if an LLM was trained on a specific dataset by observing whether model confidence rises or falls when samples from the same dataset are provided as context. Confidence typically drops for "seen" datasets and rises for "unseen" ones. By req
+  [ICLR2026][LLM Evaluation][Data Contamination] The paper proposes CoDeC (Contamination Detection via Context), which determines if an LLM was trained on a specific dataset by observing whether model confidence rises or falls when samples from the same dataset are provided as context. Confidence typically drops for "seen" datasets and rises for "unseen" ones. By requiring only gray-box access to token probabilities and two forward passes, it achieves near-perfect separation (9…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Data Contamination"
+  - "In-Context Learning"
+  - "Membership Inference"
+  - "Benchmark Leakage"
+  - "Model Auditing"
 date: 2026-05-08
-content_hash: d82e5fb300c531ee
+content_hash: bb0321380939980f
 ---
+
 # Detecting Data Contamination in LLMs via In-Context Learning
 
 **Conference**: ICLR2026  
@@ -133,11 +139,11 @@ CoDeC achieves nearly 100% AUC, whereas baseline scores for seen/unseen data ove
 
 ## Related Papers
 
+- [\[ICLR 2026\] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models](detecting_data_contamination_from_reinforcement_learning_post-training_for_large.md)
 - [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
-- [\[ICLR 2026\] In-Context Learning of Temporal Point Processes with Foundation Inference Models](in-context_learning_of_temporal_point_processes_with_foundation_inference_models.md)
 - [\[ACL 2026\] SPENCE: A Syntactic Probe for Detecting Contamination in NL2SQL Benchmarks](../../ACL2026/llm_evaluation/spence_a_syntactic_probe_for_detecting_contamination_in_nl2sql_benchmarks.md)
+- [\[ICLR 2026\] In-Context Learning of Temporal Point Processes with Foundation Inference Models](in-context_learning_of_temporal_point_processes_with_foundation_inference_models.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
-- [\[ICML 2025\] Sample Efficient Demonstration Selection for In-Context Learning](../../ICML2025/llm_evaluation/sample_efficient_demonstration_selection_for_in-context_learning.md)
 
 </div>
 

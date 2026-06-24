@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Theoretical Analysis of Detecting Large Model-Generated Time Series
 description: >-
-  [AAAI 2026][Time Series][time series large model] This work presents the first theoretical framework for detecting time series large model (TSLM)-generated content. By establishing the Contraction Hypothesis…
+  [AAAI 2026][Time Series][time series large model] This work presents the first theoretical framework for detecting time series large model (TSLM)-generated content. By establishing the Contraction Hypothesis, it reveals that TSLM-generated sequences exhibit exponentially decaying uncertainty under recursive forecasting. Based on this insight, the proposed UCE detector achieves an in-distribution AUROC of 0.855 across 32 datasets, substantially outperforming 10 text-detection…
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "recursive forecasting"
   - "UCE"
 date: 2026-05-08
-content_hash: 9dfb0a8f413417ed
+content_hash: 344f10c375d8e8ab
 ---
 
 # A Theoretical Analysis of Detecting Large Model-Generated Time Series
@@ -123,11 +123,11 @@ Evaluated on 32 datasets (12 in-distribution + 20 zero-shot) against 10 text-det
 
 ## Related Papers
 
+- [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](../../ICLR2026/time_series/multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
 - [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
 - [\[AAAI 2026\] Detecting the Future: All-at-Once Event Sequence Forecasting with Horizon Matching](detecting_the_future_all-at-once_event_sequence_forecasting_with_horizon_matchin.md)
-- [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](../../ICLR2026/time_series/reasoning_on_time-series_for_financial_technical_analysis.md)
 - [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](a_unified_shape-aware_foundation_model_for_time_series_class.md)
-- [\[ICML 2026\] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences](../../ICML2026/time_series/fractal_ssm_with_fractional_recurrent_architecture_for_computational_temporal_an.md)
+- [\[ICLR 2026\] Lost in the Non-convex Loss Landscape: How to Fine-tune the Large Time Series Model?](../../ICLR2026/time_series/lost_in_the_non-convex_loss_landscape_how_to_fine-tune_the_large_time_series_mod.md)
 
 </div>
 

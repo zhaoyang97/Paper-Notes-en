@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs
 description: >-
-  [ICML 2026][Physics & Scientific Computing][PINN] The paper upgrades Instant-NGP's multi-resolution hash table to a "gradient-augmented" version—storing function values and all mixed partial derivatives at each hash grid point. It utilizes Hermite interpolation to reconstruct a $C^1$ continuous, analytically twice-differentiable field, effectively enabling NGP for PIN
+  [ICML 2026][Physics & Scientific Computing][PINN] The paper upgrades Instant-NGP's multi-resolution hash table to a "gradient-augmented" version—storing function values and all mixed partial derivatives at each hash grid point. It utilizes Hermite interpolation to reconstruct a $C^1$ continuous, analytically twice-differentiable field, effectively enabling NGP for PINN-based PDE solving for the first time. It achieves up to a $20\times$ error reduction over SOTA neural PDE so…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - PINN
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "PINN"
+  - "Hash Encoding"
+  - "Hermite Interpolation"
+  - "Analytical Differentiation"
+  - "Multi-scale Curriculum"
 date: 2026-05-08
-content_hash: f4ab6f998526d9ab
+content_hash: 34b4707f51a64afe
 ---
+
 # Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs
 
 **Conference**: ICML 2026  
@@ -132,12 +137,19 @@ PINNs suffer from spectral bias. The authors leverage the hierarchical structure
 
 <!-- RELATED:START -->
 
-### Related Papers
-- *Müller et al.*, "Instant Neural Graphics Primitives with a Multiresolution Hash Encoding", ACM TOG 2022.
-- *Huang & Alkhalifah*, "PINN with Multi-resolution Hash Encoding and Finite Difference", arXiv 2024.
-- *Wang et al.*, "PirateNet: Physics-Informed Deep Learning with Adaptive Residual Learning", arXiv 2024.
-<!-- RELATED:END -->
+<div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICML 2026\] TINNs: Time-Induced Neural Networks for Solving Time-Dependent PDEs](tinns_time-induced_neural_networks_for_solving_time-dependent_pdes.md)
+- [\[ICML 2026\] Loss Landscape Diagnosis for Gradient-Based Gray-Scott System Inversion: Disentangling the Roles of PINN Components](loss_landscape_diagnosis_for_gradient-based_gray-scott_system_inversion_disentan.md)
+- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
+- [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](../../NeurIPS2025/physics/integration_matters_for_learning_pdes_with_backward_sdes.md)
+- [\[ICML 2026\] Unbiased and Second-Order-Free Training for High-Dimensional PDEs](unbiased_and_second-order-free_training_for_high-dimensional_pdes.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)

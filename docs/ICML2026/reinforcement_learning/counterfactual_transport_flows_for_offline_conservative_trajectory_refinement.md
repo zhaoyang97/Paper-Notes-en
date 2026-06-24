@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] Given a "low-return" candidate trajectory, this paper avoids re-generating actions from scratch. Instead, it retrieves "better" neighbors in the latent trajectory space as weak supervision, learns an "instance-specific" refinement direction using source-conditioned flow matching, and controls the degree of modification
+  [ICML2026][Reinforcement Learning][Offline Reinforcement Learning] Given a "low-return" candidate trajectory, this paper avoids re-generating actions from scratch. Instead, it retrieves "better" neighbors in the latent trajectory space as weak supervision, learns an "instance-specific" refinement direction using source-conditioned flow matching, and controls the degree of modification via a refinement intensity parameter $\alpha$, enabling a continuous trade-off between "pres…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Trajectory Refinement"
+  - "Conditional Flow Matching"
+  - "Counterfactual"
+  - "Conservatism"
 date: 2026-05-08
-content_hash: bae32274ba8cd9a8
+content_hash: 33f42236789ee505
 ---
+
 # Counterfactual Transport Flows for Offline Conservative Trajectory Refinement
 
 **Conference**: ICML2026  
@@ -139,10 +145,10 @@ Key takeaway: The direct replacement baseline (Random improved) achieves higher 
 ## Related Papers
 
 - [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
-- [\[ICML 2026\] Video-Based Optimal Transport for Feedback-Efficient Offline Preference-Based Reinforcement Learning](video-based_optimal_transport_for_feedback-efficient_offline_preference-based_re.md)
-- [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
 - [\[ICML 2026\] Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training](beyond_the_proxy_trajectory-distilled_guidance_for_offline_gflownet_training.md)
-- [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](../../ICLR2026/reinforcement_learning/reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
+- [\[ICML 2026\] Video-Based Optimal Transport for Feedback-Efficient Offline Preference-Based Reinforcement Learning](video-based_optimal_transport_for_feedback-efficient_offline_preference-based_re.md)
+- [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
 
 </div>
 

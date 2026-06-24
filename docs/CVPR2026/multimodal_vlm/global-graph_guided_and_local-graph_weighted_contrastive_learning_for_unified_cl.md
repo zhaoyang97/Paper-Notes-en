@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] GLGC addresses incomplete and noisy multi-view data without relying on data imputation. It utilizes a **global affinity graph** to generate new positive/negative pairs for incomplete views (addressing "rare-paired" issues) and a **local affinity graph** to assign adaptive weights to cross-view pairs (addressing "mis-pa
+  [CVPR 2026][Multimodal VLM][Multi-view Clustering] GLGC addresses incomplete and noisy multi-view data without relying on data imputation. It utilizes a **global affinity graph** to generate new positive/negative pairs for incomplete views (addressing "rare-paired" issues) and a **local affinity graph** to assign adaptive weights to cross-view pairs (addressing "mis-paired" issues). Integrated into a unified contrastive learning framework, GLGC significantly outperforms SOTA…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-view Clustering"
+  - "Contrastive Learning"
+  - "Incomplete Data"
+  - "Noise Robustness"
+  - "Affinity Graph"
 date: 2026-05-08
-content_hash: 30ccbf484bcc6eb4
+content_hash: 4d69629358eb7d5a
 ---
+
 # Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ Ablation of loss components (ACC, selected I = Incomplete / N = Noise / I+N):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
-- [\[CVPR 2026\] UniGeoCLIP: Unified Geospatial Contrastive Learning](unigeoclip_geospatial_contrastive.md)
-- [\[ICML 2026\] Learning Graph Foundation Models on Riemannian Graph-of-Graphs](../../ICML2026/self_supervised/learning_graph_foundation_models_on_riemannian_graph-of-graphs.md)
-- [\[ICML 2026\] Data Augmentation of Contrastive Learning is Estimating Positive-incentive Noise](../../ICML2026/self_supervised/data_augmentation_of_contrastive_learning_is_estimating_positive-incentive_noise.md)
-- [\[CVPR 2026\] Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning](dual-estimator_decoupling_global_and_local_semantic_shift_for_drift_compensation.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
+- [\[CVPR 2026\] Reliable Clustering Number Estimation for Contrastive Multi-View Clustering](reliable_clustering_number_estimation_for_contrastive_multi-view_clustering.md)
+- [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
+- [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
+- [\[CVPR 2026\] Anti-Degradation Lifelong Multi-View Clustering](anti-degradation_lifelong_multi-view_clustering.md)
 
 </div>
 

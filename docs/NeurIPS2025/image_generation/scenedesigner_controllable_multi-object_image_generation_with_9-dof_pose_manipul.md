@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SceneDesigner: Controllable Multi-Object Image Generation with 9-DoF Pose Manipulation
 description: >-
-  [NeurIPS 2025][Image Generation][9DoF Pose Control] SceneDesigner introduces a CNOCS map representation combined with a two-stage reinforcement learning training strategy…
+  [NeurIPS 2025 Spotlight][Image Generation][9DoF Pose Control] SceneDesigner introduces a CNOCS map representation combined with a two-stage reinforcement learning training strategy, achieving for the first time precise 9D pose control (position, size, and orientation) over multiple objects, significantly outperforming existing methods in both controllability and generation quality.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "9DoF Pose Control"
   - "CNOCS Representation"
@@ -12,7 +12,7 @@ tags:
   - "Reinforcement Learning Fine-tuning"
   - "ControlNet"
 date: 2026-05-08
-content_hash: 12a8eb4374e174d5
+content_hash: 3c8b9f70e770de0e
 ---
 
 # SceneDesigner: Controllable Multi-Object Image Generation with 9-DoF Pose Manipulation
@@ -140,11 +140,11 @@ SceneDesigner introduces a ControlNet branch into pretrained Stable Diffusion 3.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] OSMGen: Highly Controllable Satellite Image Synthesis using OpenStreetMap Data](osmgen_highly_controllable_satellite_image_synthesis_using_openstreetmap_data.md)
+- [\[CVPR 2025\] BootComp: Controllable Human Image Generation with Personalized Multi-Garments](../../CVPR2025/image_generation/controllable_human_image_generation_with_personalized_multi-garments.md)
 - [\[ICCV 2025\] Rethink Sparse Signals for Pose-guided Text-to-Image Generation](../../ICCV2025/image_generation/rethink_sparse_signals_for_pose-guided_text-to-image_generation.md)
-- [\[AAAI 2026\] DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation](../../AAAI2026/image_generation/dos_directional_object_separation_in_text_embeddings_for_mul.md)
-- [\[NeurIPS 2025\] Text to Sketch Generation with Multi-Styles](text_to_sketch_generation_with_multi-styles.md)
-- [\[NeurIPS 2025\] Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising](two-steps_diffusion_policy_for_robotic_manipulation_via_genetic_denoising.md)
+- [\[ECCV 2024\] Linearly Controllable GAN: Unsupervised Feature Categorization and Decomposition for Image Generation and Manipulation](../../ECCV2024/image_generation/linearly_controllable_gan_unsupervised_feature_categorization_and_decomposition_.md)
+- [\[CVPR 2025\] Compass Control: Multi Object Orientation Control for Text-to-Image Generation](../../CVPR2025/image_generation/compass_control_multi_object_orientation_control_for_text-to-image_generation.md)
+- [\[ICLR 2026\] OmniText: A Training-Free Generalist for Controllable Text-Image Manipulation](../../ICLR2026/image_generation/omnitext_a_training-free_generalist_for_controllable_text-image_manipulation.md)
 
 </div>
 

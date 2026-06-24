@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FastGRPO: Accelerating Policy Optimization via Concurrency-aware Speculative Decoding and Online Draft Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] Addressing the critical bottleneck where the generation phase accounts for 91%-98% of GRPO training time, this work proposes a concurrency-aware speculative decoding strategy (dynamically adjusting draft tree parameters to adapt to real-time concurrency changes) and online draft model learning (utilizing hidden states
+  [ICLR 2026][Reasoning][GRPO acceleration] Addressing the critical bottleneck where the generation phase accounts for 91%-98% of GRPO training time, this work proposes a concurrency-aware speculative decoding strategy (dynamically adjusting draft tree parameters to adapt to real-time concurrency changes) and online draft model learning (utilizing hidden states from the target model to adapt to distribution shifts). The approach achieves 2.35x-2.72x end-to-end training accelera…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "GRPO acceleration"
+  - "speculative decoding"
+  - "concurrency-aware"
+  - "online draft learning"
+  - "RL training"
 date: 2026-05-08
-content_hash: 64bd302d3f6526bf
+content_hash: 26121f89e5d7ee5b
 ---
+
 # FastGRPO: Accelerating Policy Optimization via Concurrency-aware Speculative Decoding and Online Draft Learning
 
 **Conference**: ICLR 2026  
@@ -131,10 +137,10 @@ The components use alternating freezing to avoid interference: the target is fro
 ## Related Papers
 
 - [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
-- [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
+- [\[ICML 2026\] UCPO: Uncertainty-Aware Policy Optimization](../../ICML2026/llm_reasoning/ucpo_uncertainty-aware_policy_optimization.md)
+- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](../../ACL2026/llm_reasoning/calibration-aware_policy_optimization_for_reasoning_llms.md)
+- [\[ICML 2025\] AdaDecode: Accelerating LLM Decoding with Adaptive Layer Parallelism](../../ICML2025/llm_reasoning/adadecode_accelerating_llm_decoding_with_adaptive_layer_parallelism.md)
 - [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
-- [\[ICLR 2026\] HiPO: Self-Hint Policy Optimization for RLVR](hipo_self-hint_policy_optimization_for_rlvr.md)
-- [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] ALIGNED integrates data-driven neural networks with expert-curated gene regulatory knowledge within an Abductive Learning (ABL) framework. It utilizes a gradient-free adapter to decide whether to trust data or knowledge on a per-gene basis and subsequently refines the regulatory knowledge base using predictions. It ach
+  [ICLR2026][Computational Biology][Genetic Perturbation Prediction] ALIGNED integrates data-driven neural networks with expert-curated gene regulatory knowledge within an Abductive Learning (ABL) framework. It utilizes a gradient-free adapter to decide whether to trust data or knowledge on a per-gene basis and subsequently refines the regulatory knowledge base using predictions. It achieves the highest "Balanced Consistency" across several large-scale perturbation datasets and…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Genetic Perturbation Prediction"
+  - "Abductive Learning"
+  - "Neuro-symbolic Alignment"
+  - "Gene Regulatory Networks"
+  - "Knowledge Refinement"
 date: 2026-05-08
-content_hash: 86011acb388b1b60
+content_hash: f443c7843b096cdf
 ---
+
 # Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction
 
 **Conference**: ICLR2026  
@@ -151,10 +157,10 @@ Regarding robustness of refinement (synthetic data with noise-injected GRN): F1 
 ## Related Papers
 
 - [\[ACL 2026\] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling](../../ACL2026/computational_biology/aroma_augmented_reasoning_over_a_multimodal_architecture_for_virtual_cell_geneti.md)
+- [\[ICLR 2026\] GRAM-DTI: Adaptive Multimodal Representation Learning for Drug-Target Interaction Prediction](gram-dti_adaptive_multimodal_representation_learning_for_drugtarget_interaction_.md)
 - [\[ICLR 2026\] Towards Knowledge-and-Data-Driven Organic Reaction Prediction: RAG-Enhanced and Reasoning-Powered Hybrid System with LLMs](towards_knowledgeanddatadriven_organic_reaction_prediction_ragenhanced_and_reaso.md)
+- [\[ICLR 2026\] DeepSADR: Deep Transfer Learning with Subsequence Interaction and Adaptive Readout for Cancer Drug Response Prediction](deepsadr_deep_transfer_learning_with_subsequence_interaction_and_adaptive_readou.md)
 - [\[ICLR 2026\] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction](scdfm_distributional_flow_matching_model_for_robust_single-cell_perturbation_pre.md)
-- [\[ICML 2026\] What Makes a Representation Good for Single-Cell Perturbation Prediction?](../../ICML2026/computational_biology/what_makes_a_representation_good_for_single-cell_perturbation_prediction.md)
-- [\[AAAI 2026\] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics](../../AAAI2026/computational_biology/dual-path_knowledge-augmented_contrastive_alignment_network_for_spatially_resolv.md)
 
 </div>
 

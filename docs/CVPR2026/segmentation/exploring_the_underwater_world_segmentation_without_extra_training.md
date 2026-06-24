@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Exploring the Underwater World Segmentation without Extra Training
 description: >-
-  [CVPR 2026][Segmentation][training-free] Addressing the scarcity of data and models in underwater scenarios, this work introduces the first fine-grained underwater open-vocabulary segmentation dataset and benchmark (AquaOV255 / UOVSBench). It also proposes Earth2Ocean, a training-free framework that corrects CLIP visual features with geometric self-similarity
+  [CVPR 2026][Segmentation][Underwater Segmentation] Addressing the scarcity of data and models in underwater scenarios, this work introduces the first fine-grained underwater open-vocabulary segmentation dataset and benchmark (AquaOV255 / UOVSBench). It also proposes Earth2Ocean, a training-free framework that corrects CLIP visual features with geometric self-similarity priors and enhances text embeddings via MLLM reasoning. This transfers terrestrial VLMs to underwater contex…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - training-free
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Underwater Segmentation"
+  - "Open-Vocabulary"
+  - "training-free"
+  - "CLIP"
+  - "MLLM Reasoning"
 date: 2026-05-08
-content_hash: 6f919925d9ba29a7
+content_hash: 8e9f53a53d5d8572
 ---
+
 # Exploring the Underwater World Segmentation without Extra Training
 
 **Conference**: CVPR 2026  
@@ -150,10 +154,10 @@ Ablations (average of 6 datasets, ViT-B/16) show cumulative improvements for eac
 ## Related Papers
 
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
-- [\[CVPR 2026\] BiPA: Bilevel Prompt Adaptation for Underwater Instance Segmentation](bipa_bilevel_prompt_adaptation_for_underwater_instance_segmentation.md)
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
-- [\[CVPR 2026\] SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation](segcompass_exploring_interpretable_alignment_with_sparse_autoencoders_for_enhanc.md)
-- [\[CVPR 2026\] Live Interactive Training for Video Segmentation](live_interactive_training_for_video_segmentation.md)
+- [\[CVPR 2026\] BiPA: Bilevel Prompt Adaptation for Underwater Instance Segmentation](bipa_bilevel_prompt_adaptation_for_underwater_instance_segmentation.md)
+- [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 
 </div>
 

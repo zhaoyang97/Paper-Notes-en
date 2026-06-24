@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model
 description: >-
-  [CVPR 2026][Alignment & RLHF][GRPO] REACT is a frame-level reward model targeting "structural distortion" in generated videos. It establishes a taxonomy of eight distortion categories and labels 15,000 pairs of frame preference data. Using grounding reconstruction combined with Gemini-2.5-Pro, it synthesizes 6K CoT samples at low cost. Qwen2.5-VL-7B is t
+  [CVPR 2026][LLM Alignment][Video reward model] REACT is a frame-level reward model targeting "structural distortion" in generated videos. It establishes a taxonomy of eight distortion categories and labels 15,000 pairs of frame preference data. Using grounding reconstruction combined with Gemini-2.5-Pro, it synthesizes 6K CoT samples at low cost. Qwen2.5-VL-7B is trained in two stages via "Masked SFT + GRPO pairwise reward." During inference…
 tags:
-  - CVPR 2026
-  - Alignment & RLHF
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Video reward model"
+  - "structural distortion"
+  - "GRPO"
+  - "CoT synthesis"
+  - "frame-level evaluation"
 date: 2026-05-08
-content_hash: 2e2301683857ccf8
+content_hash: 7a31b3cd7355b57f
 ---
+
 # Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model
 
 **Conference**: CVPR 2026  
@@ -151,16 +156,16 @@ REACT improves overall accuracy by approximately 20–40% over the strongest bas
 - Value: ⭐⭐⭐⭐ Fills a critical gap in T2V training; the data synthesis method is highly reusable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Video-CoE: Reinforcing Video Event Prediction via Chain of Events](video-coe_reinforcing_video_event_prediction_via_chain_of_events.md)
+- [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](../../ICLR2026/llm_alignment/rewardbench_2_advancing_reward_model_evaluation.md)
+- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
 - [\[ACL 2025\] Rethinking Reward Model Evaluation Through the Lens of Reward Overoptimization](../../ACL2025/llm_alignment/rethinking_reward_model_evaluation_through_the_lens_of_reward_overoptimization.md)
 - [\[CVPR 2026\] DRM: Diffusion-based Reward Model With Step-wise Guidance](drm_diffusion-based_reward_model_with_step-wise_guidance.md)
-- [\[AAAI 2026\] GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning](../../AAAI2026/llm_alignment/gram-r2_self-training_generative_foundation_reward_models_for_reward_reasoning.md)
-- [\[CVPR 2026\] Unlocking Token Rewards via Training-Free Reward Attribution](unlocking_token_rewards_via_training-free_reward_attribution.md)
-- [\[ACL 2026\] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training](../../ACL2026/llm_alignment/consistrm_improving_generative_reward_models_via_consistency-aware_self-training.md)
 
 </div>
 

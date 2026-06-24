@@ -1,15 +1,21 @@
 ---
 title: >-
-  [Paper Note] 理解快速超参迁移的机制
+  [Paper Note] Understanding the Mechanisms of Fast Hyperparameter Transfer
 description: >-
-  [ICLR 2026][learning_theory][µP] This paper establishes a conceptual framework for the empirical phenomenon where hyperparameters (especially learning rates) in µP can be rapidly transferred from small to large models. The authors strictly distinguish between "weak," "fast," and "useful" transfer via convergence rates. They propose a top-k loss decomp
+  [ICLR 2026][Deep Learning Theory][Hyperparameter Transfer] This paper establishes a conceptual framework for the empirical phenomenon where hyperparameters (especially learning rates) in µP can be rapidly transferred from small to large models. The authors strictly distinguish between "weak," "fast," and "useful" transfer via convergence rates. They propose a top-k loss decomposition linearized along EMA trajectories, splitting the final loss into "width-stable top-k componen…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - µP
+  - "ICLR 2026"
+  - "Deep Learning Theory"
+  - "Optimization Dynamics"
+  - "Hyperparameter Transfer"
+  - "µP"
+  - "Width Scaling"
+  - "Optimization Trajectory"
+  - "Loss Decomposition"
 date: 2026-05-08
-content_hash: 1a9364dde7d57a08
+content_hash: f8f17a6347b193bb
 ---
+
 # Understanding the Mechanisms of Fast Hyperparameter Transfer
 
 **Conference**: ICLR 2026  
@@ -128,11 +134,11 @@ The reducible loss converges slowly as $n^{-0.52}$, but the optimal LR stabilize
 
 ## Related Papers
 
-- [\[ICLR 2026\] FACT: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations](fact_a_first-principles_alternative_to_the_neural_feature_ansatz_for_how_network.md)
-- [\[ICLR 2026\] $\mathbf{Li_2}$：刻画特征涌现与延迟泛化动力学的理论框架](mathbfli_2_a_framework_on_dynamics_of_feature_emergence_and_delayed_generalizati.md)
-- [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
-- [\[ICLR 2026\] PAC-Bayes Bounds for Cumulative Loss in Continual Learning](pac-bayes_bounds_for_cumulative_loss_in_continual_learning.md)
-- [\[ICLR 2026\] Online Inventory Optimization in Non-Stationary Environment](online_inventory_optimization_in_non-stationary_environment.md)
+- [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](transfer_learning_in_infinite_width_feature_learning_networks.md)
+- [\[ICLR 2026\] Residual Feature Integration is Sufficient to Prevent Negative Transfer](residual_feature_integration_is_sufficient_to_prevent_negative_transfer.md)
+- [\[ICLR 2026\] Understanding and Relaxing the Limitations of Transformers for Linear Algebra](understanding_and_relaxing_the_limitations_of_transformers_for_linear_algebra.md)
+- [\[ICLR 2026\] Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation](towards_a_theoretical_understanding_of_in-context_learning_stability_and_non-iid.md)
+- [\[ICLR 2026\] Fast Escape, Slow Convergence: Learning Dynamics of Phase Retrieval under Power-Law Data](fast_escape_slow_convergence_learning_dynamics_of_phase_retrieval_under_power-la.md)
 
 </div>
 

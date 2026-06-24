@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Untraceable DeepFakes via Traceable Fingerprint Elimination
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] This paper points out that existing attacks to evade attribution are "additive"—they only obscure but cannot eliminate the model fingerprints left by generative models in images, making them vulnerable to adversarial training. The authors propose a "multiplicative attack" that uses an adversarial network trained solely
+  [ICLR 2026][AIGC Detection][DeepFake attribution] This paper points out that existing attacks to evade attribution are "additive"—they only obscure but cannot eliminate the model fingerprints left by generative models in images, making them vulnerable to adversarial training. The authors propose a "multiplicative attack" that uses an adversarial network trained solely on real data to eliminate fingerprints at the source. It achieves an average Attack Success Rate (ASR) of 97.…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "DeepFake attribution"
+  - "model fingerprint"
+  - "multiplicative attack"
+  - "anti-forensics"
+  - "black-box attack"
 date: 2026-05-08
-content_hash: 37cb2c7aa1c40860
+content_hash: 2215f13755621dbb
 ---
+
 # Untraceable DeepFakes via Traceable Fingerprint Elimination
 
 **Conference**: ICLR 2026  
@@ -145,11 +151,11 @@ The most counter-intuitive result is in the white-box scenario: even if the defe
 
 ## Related Papers
 
+- [\[ICLR 2026\] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images](semantic_visual_anomaly_detection_and_reasoning_in_ai-generated_images.md)
+- [\[ICLR 2026\] Learning From Dictionary: Enhancing Robustness of Machine-Generated Text Detection in Zero-Shot Language via Adversarial Training](learning_from_dictionary_enhancing_robustness_of_machine-generated_text_detectio.md)
 - [\[ICLR 2026\] RelayFormer: A Unified Local-Global Attention Framework for Scalable Image and Video Manipulation Localization](relayformer_a_unified_local-global_attention_framework_for_scalable_image_and_vi.md)
+- [\[ICLR 2026\] Spherical Watermark: Encryption-Free, Lossless Watermarking for Diffusion Models](spherical_watermark_encryption-free_lossless_watermarking_for_diffusion_models.md)
 - [\[ICLR 2026\] Enabling Your Forensic Detector Know How Well It Performs on Distorted Samples](enabling_your_forensic_detector_know_how_well_it_performs_on_distorted_samples.md)
-- [\[ICLR 2026\] DMAP: A Distribution Map for Text](dmap_a_distribution_map_for_text.md)
-- [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
-- [\[ICLR 2026\] Omni-IML: Towards Unified Interpretable Image Manipulation Localization](omni-iml_towards_unified_interpretable_image_manipulation_localization.md)
 
 </div>
 

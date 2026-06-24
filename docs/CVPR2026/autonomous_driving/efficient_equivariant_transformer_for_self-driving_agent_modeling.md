@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Efficient Equivariant Transformer for Self-Driving Agent Modeling
 description: >-
-  [CVPR 2026][Autonomous Driving][Transformer] DriveGATr is proposed, an equivariant Transformer architecture based on 2D Projective Geometric Algebra (PGA). It achieves SE(2)-equivariance without explicit pairwise relative position encoding, reaching SOTA performance in traffic simulation tasks while significantly reducing computational costs.
+  [CVPR 2026][Autonomous Driving][SE(2)-Equivariance] DriveGATr is proposed, an equivariant Transformer architecture based on 2D Projective Geometric Algebra (PGA). It achieves SE(2)-equivariance without explicit pairwise relative position encoding, reaching SOTA performance in traffic simulation tasks while significantly reducing computational costs.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Transformer
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "SE(2)-Equivariance"
+  - "Geometric Algebra"
+  - "Transformer"
+  - "Traffic Simulation"
 date: 2026-05-08
-content_hash: 810e4c86a9c2f573
+content_hash: b6f6902ecaa293c2
 ---
+
 # Efficient Equivariant Transformer for Self-Driving Agent Modeling
 
 **Conference**: CVPR 2026  
@@ -145,10 +149,10 @@ The final actions output by an agent are invariants, but the intermediate multiv
 
 ## Related Papers
 
-- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
-- [\[CVPR 2026\] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling](f3dgs_federated_3d_gaussian_splatting_for_decentralized_multi-agent_world_modeli.md)
 - [\[CVPR 2026\] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views](unsupervised_multi-agent_and_single-agent_perception_from_cooperative_views.md)
 - [\[ECCV 2024\] Equivariant Spatio-Temporal Self-Supervision for LiDAR Object Detection](../../ECCV2024/autonomous_driving/equivariant_spatio-temporal_self-supervision_for_lidar_object_detection.md)
+- [\[CVPR 2026\] MAD: Motion Appearance Decoupling for Efficient Driving World Models](mad_motion_appearance_decoupling_for_efficient_driving_world_models.md)
+- [\[AAAI 2026\] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](../../AAAI2026/autonomous_driving/catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)
 - [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
 
 </div>

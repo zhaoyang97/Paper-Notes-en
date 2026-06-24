@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Synthetic Series-Symbol Data Generation for Time Series Foundation Models
 description: >-
-  [NeurIPS 2025][Time Series][time series foundation model] This paper proposes the Series-Symbol (S²) data generation mechanism and SymTime, a dual-modality foundation model. Grounded in Takens' theorem and symbolic dynam…
+  [NeurIPS 2025][Time Series][time series foundation model] This paper proposes the Series-Symbol (S²) data generation mechanism and SymTime, a dual-modality foundation model. Grounded in Takens' theorem and symbolic dynamics theory, the framework generates unlimited synthetic time series–symbol paired data (40M pairs / 50B tokens). Through cross-modal contrastive pre-training, SymTime achieves performance competitive with models pre-trained on real data across five time series…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "pre-training"
 date: 2026-05-08
-content_hash: f0fd57bd6ea47fb8
+content_hash: 5c0d228f7780dbbc
 ---
 
 # Synthetic Series-Symbol Data Generation for Time Series Foundation Models
@@ -125,10 +125,10 @@ The overall pre-training objective is $\mathcal{L} = \mathcal{L}_\text{mtm} + \m
 ## Related Papers
 
 - [\[NeurIPS 2025\] MIRA: Medical Time Series Foundation Model for Real-World Health Data](mira_medical_time_series_foundation_model_for_real-world_health_data.md)
+- [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](../../ICLR2026/time_series/cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
 - [\[NeurIPS 2025\] SEMPO: Lightweight Foundation Models for Time Series Forecasting](sempo_lightweight_foundation_models_for_time_series_forecasting.md)
 - [\[NeurIPS 2025\] How Foundational are Foundation Models for Time Series Forecasting?](how_foundational_are_foundation_models_for_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Towards Self-Supervised Foundation Models for Critical Care Time Series](towards_self-supervised_foundation_models_for_critical_care_time_series.md)
-- [\[NeurIPS 2025\] Multi-Scale Finetuning for Encoder-based Time Series Foundation Models](multi-scale_finetuning_for_encoder-based_time_series_foundation_models.md)
 
 </div>
 

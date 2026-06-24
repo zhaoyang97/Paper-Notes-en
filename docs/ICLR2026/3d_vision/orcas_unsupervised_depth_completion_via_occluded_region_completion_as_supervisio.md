@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ORCaS: Unsupervised Depth Completion via Occluded Region Completion as Supervision
 description: >-
-  [ICLR 2026][3D Vision][Structure-from-Motion] ORCaS enables unsupervised depth completion models to predict features of occluded regions—areas invisible to the input view but visible to adjacent views—during training. This forces the model to learn an inductive bias regarding 3D object shapes, outperforming previous state-of-the-art methods on VOID1500 / NYUv2 by
+  [ICLR 2026][3D Vision][Depth completion] ORCaS enables unsupervised depth completion models to predict features of occluded regions—areas invisible to the input view but visible to adjacent views—during training. This forces the model to learn an inductive bias regarding 3D object shapes, outperforming previous state-of-the-art methods on VOID1500 / NYUv2 by an average of 8.91%, with significant leads in cross-dataset generalization and sparse inputs.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Structure-from-Motion
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Depth completion"
+  - "unsupervised learning"
+  - "occluded region completion"
+  - "inductive bias"
+  - "Structure-from-Motion"
 date: 2026-05-08
-content_hash: bcc19062cc61a9fc
+content_hash: d8822ba755c63f45
 ---
+
 # ORCaS: Unsupervised Depth Completion via Occluded Region Completion as Supervision
 
 **Conference**: ICLR 2026  

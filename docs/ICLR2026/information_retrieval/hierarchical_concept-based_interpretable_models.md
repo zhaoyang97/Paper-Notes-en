@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Concept-based Interpretable Models
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] HiCEMs introduces hierarchical concept embedding models. Through the Concept Splitting method, it automatically discovers fine-grained sub-concepts in the embedding space of pre-trained CEMs (without additional annotations) to construct a hierarchical concept structure. This allows the model to perform test-time concep
+  [ICLR 2026][Information Retrieval & RAG][Concept Embedding Models] HiCEMs introduces hierarchical concept embedding models. Through the Concept Splitting method, it automatically discovers fine-grained sub-concepts in the embedding space of pre-trained CEMs (without additional annotations) to construct a hierarchical concept structure. This allows the model to perform test-time concept interventions at different levels of granularity to improve task performance.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Concept Embedding Models"
+  - "Hierarchical Concepts"
+  - "Concept Splitting"
+  - "Sub-concept Discovery"
+  - "Concept Intervention"
 date: 2026-05-08
-content_hash: 63e219da8463d398
+content_hash: d6de1a42cb91d4a9
 ---
+
 # Hierarchical Concept-based Interpretable Models
 
 **Conference**: ICLR 2026  

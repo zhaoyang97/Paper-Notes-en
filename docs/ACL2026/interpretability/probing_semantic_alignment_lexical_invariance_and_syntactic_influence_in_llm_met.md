@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probing Semantic Alignment, Lexical Invariance, and Syntactic Influence in LLM Metaphor Processing
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This is a diagnostic analysis paper: instead of competing for performance, the authors probe LLM metaphor processing from three complementary dimensions—**semantic property alignment, lexical invariance, and syntactic influence**. They find that "high scores on metaphor benchmarks" may stem from heterogeneous shallow s
+  [ACL2026][Interpretability][Metaphor processing] This is a diagnostic analysis paper: instead of competing for performance, the authors probe LLM metaphor processing from three complementary dimensions—**semantic property alignment, lexical invariance, and syntactic influence**. They find that "high scores on metaphor benchmarks" may stem from heterogeneous shallow signals (semantic drift + stable lexical anchors + heuristic sensitivity to syntactic irregularities) rather tha…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL2026"
+  - "Interpretability"
+  - "Metaphor processing"
+  - "geometric probing"
+  - "lexical invariance"
+  - "syntactic perturbation"
+  - "diagnostic analysis"
 date: 2026-05-08
-content_hash: d65353d52ccdfcfb
+content_hash: 4dc41c2600f06f71
 ---
+
 # Probing Semantic Alignment, Lexical Invariance, and Syntactic Influence in LLM Metaphor Processing
 
 **Conference**: ACL2026  
@@ -125,11 +131,11 @@ The consistency of geometric signals was also validated: Spearman $\rho = -0.62$
 
 ## Related Papers
 
-- [\[ICLR 2026\] One Language, Two Scripts: Probing Script-Invariance in LLM Concept Representations](../../ICLR2026/interpretability/one_language_two_scripts_probing_script-invariance_in_llm_concept_representation.md)
 - [\[ACL 2026\] Dual Alignment Between Language Model Layers and Human Sentence Processing](dual_alignment_between_language_model_layers_and_human_sentence_processing.md)
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
 - [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text Alignment](../../ICLR2026/interpretability/dynamic_reflections_probing_video_representations_with_text_alignment.md)
-- [\[ACL 2026\] Fine-Grained Analysis of Shared Syntactic Mechanisms in Language Models](fine-grained_analysis_of_shared_syntactic_mechanisms_in_language_models.md)
+- [\[ICLR 2026\] The Shape of Adversarial Influence: Characterizing LLM Latent Spaces with Persistent Homology](../../ICLR2026/interpretability/the_shape_of_adversarial_influence_characterizing_llm_latent_spaces_with_persist.md)
+- [\[ICLR 2026\] Semantic Regexes: Auto-Interpreting LLM Features with a Structured Language](../../ICLR2026/interpretability/semantic_regexes_auto-interpreting_llm_features_with_a_structured_language_of_re.md)
 
 </div>
 

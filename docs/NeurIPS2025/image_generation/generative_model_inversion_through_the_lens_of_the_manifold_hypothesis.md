@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generative Model Inversion Through the Lens of the Manifold Hypothesis
 description: >-
-  [NeurIPS 2025][Image Generation][Model Inversion Attack] This paper reveals, from a manifold-geometric perspective, that the essence of generative model inversion attacks (MIA) is implicit denoising achieved by projectin…
+  [NeurIPS 2025][Image Generation][Model Inversion Attack] This paper reveals, from a manifold-geometric perspective, that the essence of generative model inversion attacks (MIA) is implicit denoising achieved by projecting loss gradients onto the generator's tangent space. It proposes the gradient-manifold alignment hypothesis (higher alignment → greater vulnerability), and designs a training-free method, AlignMI, that consistently and significantly improves upon multiple stat…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "GAN"
   - "Privacy & Security"
 date: 2026-05-08
-content_hash: ff889257d5d3dfa2
+content_hash: 10400bd9a320da3f
 ---
 
 # Generative Model Inversion Through the Lens of the Manifold Hypothesis
@@ -157,7 +157,7 @@ Both methods approximate the expectation with 50 samples, are model-agnostic, an
 - [\[ICLR 2026\] When Scores Learn Geometry: Rate Separations under the Manifold Hypothesis](../../ICLR2026/image_generation/when_scores_learn_geometry_rate_separations_under_the_manifold_hypothesis.md)
 - [\[NeurIPS 2025\] What We Don't C: Manifold Disentanglement for Structured Discovery](what_we_dont_c_manifold_disentanglement_for_structured_discovery.md)
 - [\[NeurIPS 2025\] Enhancing Diffusion Model Guidance through Calibration and Regularization](enhancing_diffusion_model_guidance_through_calibration_and_regularization.md)
-- [\[NeurIPS 2025\] StelLA: Subspace Learning in Low-rank Adaptation using Stiefel Manifold](stella_subspace_learning_in_low-rank_adaptation_using_stiefel_manifold.md)
+- [\[ECCV 2024\] ReNoise: Real Image Inversion Through Iterative Noising](../../ECCV2024/image_generation/renoise_real_image_inversion_through_iterative_noising.md)
 
 </div>
 

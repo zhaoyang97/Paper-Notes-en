@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SuperMAN: Interpretable and Expressive Networks over Temporally Sparse Heterogeneous Data
 description: >-
-  [ICLR 2026][Time Series][Interpretability] SuperMAN models "multi-type, irregularly sampled, and asynchronous" sparse temporal data as "a set of implicit graphs." By utilizing an extended Graph Additive Network (ExtGNAN) combined with a subset grouping mechanism, it directly learns from these structures. This approach provides interpretable contribution scores
+  [ICLR 2026][Time Series][Irregular Time Series] SuperMAN models "multi-type, irregularly sampled, and asynchronous" sparse temporal data as "a set of implicit graphs." By utilizing an extended Graph Additive Network (ExtGNAN) combined with a subset grouping mechanism, it directly learns from these structures. This approach provides interpretable contribution scores at three granularities (node, graph, and subset) while allowing users to trade fine-grained interpretability for…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Interpretability
+  - "ICLR 2026"
+  - "Time Series"
+  - "Irregular Time Series"
+  - "Implicit Graphs"
+  - "Additive Networks"
+  - "Interpretability"
+  - "Expressivity"
 date: 2026-05-08
-content_hash: 377ed76509222517
+content_hash: 1b3b64cc9db09a25
 ---
+
 # SuperMAN: Interpretable and Expressive Networks over Temporally Sparse Heterogeneous Data
 
 **Conference**: ICLR 2026  

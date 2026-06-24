@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PETRI: Learning Unified Cell Embeddings from Unpaired Modalities via Early-Fusion Joint Reconstruction
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] PETRI treats a batch of cells with the same perturbation as a "multimodal document," using an early-fusion Transformer to perform joint reconstruction of masked images and transcriptomes. It learns unified cell embeddings without requiring cell-level pairing and significantly outperforms unimodal and late-fusion baseli
+  [ICLR 2026][Computational Biology][Single-cell] PETRI treats a batch of cells with the same perturbation as a "multimodal document," using an early-fusion Transformer to perform joint reconstruction of masked images and transcriptomes. It learns unified cell embeddings without requiring cell-level pairing and significantly outperforms unimodal and late-fusion baselines in recovering known gene relationships.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Single-cell"
+  - "Multimodal"
+  - "Early-fusion"
+  - "Masked Joint Reconstruction"
+  - "Perturbation Screening"
 date: 2026-05-08
-content_hash: 21a213f16567ba90
+content_hash: f5105d6eacf9e73d
 ---
+
 # PETRI: Learning Unified Cell Embeddings from Unpaired Modalities via Early-Fusion Joint Reconstruction
 
 **Conference**: ICLR 2026  

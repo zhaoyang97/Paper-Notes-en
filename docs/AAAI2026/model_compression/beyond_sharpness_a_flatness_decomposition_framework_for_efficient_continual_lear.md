@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning
 description: >-
-  [AAAI 2026][Model Compression][continual learning] This paper proposes FLAD, a framework that decomposes the sharpness-aware perturbation direction into a gradient-aligned component and a stochastic-noise component…
+  [AAAI 2026][Model Compression][continual learning] This paper proposes FLAD, a framework that decomposes the sharpness-aware perturbation direction into a gradient-aligned component and a stochastic-noise component, retaining only the noise component for regularization. By combining zeroth-order and first-order sharpness, FLAD improves generalization in continual learning with minimal additional computational overhead.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "catastrophic forgetting"
   - "Loss Landscape"
 date: 2026-05-08
-content_hash: cd61f279525e9ae5
+content_hash: 1e834f58d2f35693
 ---
 
 # Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning
@@ -135,10 +135,10 @@ Applying FLAD for only 30% of epochs reduces training overhead by at least 50% w
 ## Related Papers
 
 - [\[ICML 2026\] Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning](../../ICML2026/model_compression/task-driven_subspace_decomposition_for_knowledge_sharing_and_isolation_in_lora-b.md)
-- [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](../../CVPR2026/model_compression/elastic_weight_consolidation_done_right_for_continual_learning.md)
+- [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](../../ICLR2026/model_compression/quantized_gradient_projection_for_memory-efficient_continual_learning.md)
 - [\[ICLR 2026\] IDER: IDempotent Experience Replay for Reliable Continual Learning](../../ICLR2026/model_compression/ider_idempotent_experience_replay_for_reliable_continual_learning.md)
+- [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](../../ICLR2026/model_compression/sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
 - [\[ICCV 2025\] PLAN: Proactive Low-Rank Allocation for Continual Learning](../../ICCV2025/model_compression/plan_proactive_low-rank_allocation_for_continual_learning.md)
-- [\[NeurIPS 2025\] REP: Resource-Efficient Prompting for Rehearsal-Free Continual Learning](../../NeurIPS2025/model_compression/rep_resource-efficient_prompting_for_rehearsal-free_continual_learning.md)
 
 </div>
 

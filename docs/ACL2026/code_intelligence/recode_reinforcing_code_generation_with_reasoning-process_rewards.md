@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards
 description: >-
-  [ACL 2026][Code Intelligence][GRPO] ReCode trains a reward model capable of evaluating the quality of code reasoning processes via CRPL and utilizes CG-GRPO to activate process rewards only when code execution is correct, thereby improving the Pass@1 of code generation models while avoiding reward hacking.
+  [ACL 2026][Code Intelligence][Code Generation] ReCode trains a reward model capable of evaluating the quality of code reasoning processes via CRPL and utilizes CG-GRPO to activate process rewards only when code execution is correct, thereby improving the Pass@1 of code generation models while avoiding reward hacking.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - GRPO
-  - Reasoning-Process
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Code Generation"
+  - "Process Rewards"
+  - "GRPO"
+  - "Reward Model"
+  - "Reasoning-Process"
 date: 2026-05-08
-content_hash: fa9c5a5ffba3e67b
+content_hash: 6a6380fb104c1792
 ---
+
 # ReCode: Reinforcing Code Generation with Reasoning-Process Rewards
 
 **Conference**: ACL 2026  

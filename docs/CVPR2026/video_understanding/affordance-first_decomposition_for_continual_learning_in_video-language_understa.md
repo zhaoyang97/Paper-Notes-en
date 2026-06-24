@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Affordance-First Decomposition for Continual Learning in Video–Language Understanding
 description: >-
-  [CVPR 2026][Video Understanding][affordance] Addressing the blurred boundary of "what to stabilize and what to plasticize" in video-language continual learning, this paper proposes Affordance-First Decomposition (AFD). It maps videos to slowly-varying affordance tokens as a shared, stable "evidence foundation" across tasks, while concentrating plasticity into a L
+  [CVPR 2026][Video Understanding][Continual Learning] Addressing the blurred boundary of "what to stabilize and what to plasticize" in video-language continual learning, this paper proposes Affordance-First Decomposition (AFD). It maps videos to slowly-varying affordance tokens as a shared, stable "evidence foundation" across tasks, while concentrating plasticity into a LoRA scheduler that utilizes query-based routing and conflict-triggered rank expansion. Combined with questi…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - affordance
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Continual Learning"
+  - "Video Question Answering"
+  - "affordance"
+  - "parameter-efficient routing"
+  - "anti-forgetting"
 date: 2026-05-08
-content_hash: 5e4d991078c8ba9b
+content_hash: eb5108619a580f8d
 ---
+
 # Affordance-First Decomposition for Continual Learning in Video–Language Understanding
 
 **Conference**: CVPR 2026  
@@ -141,10 +146,10 @@ ViLCo-Bench (Ego4D, query-incremental):
 ## Related Papers
 
 - [\[ICCV 2025\] RainbowPrompt: Diversity-Enhanced Prompt-Evolving for Continual Learning](../../ICCV2025/video_understanding/rainbowprompt_diversity-enhanced_prompt-evolving_for_continual_learning.md)
+- [\[CVPR 2026\] First Frame Is the Place to Go for Video Content Customization](first_frame_is_the_place_to_go_for_video_content_customization.md)
 - [\[CVPR 2026\] SkillSight: Efficient First-Person Skill Assessment with Gaze](skillsight_efficient_first-person_skill_assessment_with_gaze.md)
 - [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[CVPR 2026\] EthoCLIP: Ontology-Enhanced Video-Language Pretraining for Animal Behavior Understanding](ethoclip_ontology-enhanced_video-language_pretraining_for_animal_behavior_unders.md)
-- [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
+- [\[CVPR 2026\] PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation](pyratok_language-aligned_pyramidal_tokenizer_for_video_understanding_and_generat.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MedLoc-R1: Performance-Aware Curriculum Reward Scheduling for GRPO-Based Medical Visual Grounding
 description: >-
-  [CVPR 2026][Medical Imaging][GRPO] Addressing the sparse reward challenge when applying GRPO directly to medical visual grounding—where "fixed IoU threshold rewards $\rightarrow$ early all-zero rewards $\rightarrow$ gradient vanishing"—this paper proposes MedLoc-R1. It utilizes a sliding window performance tracker and multi-condition update criteria to
+  [CVPR 2026][Medical Imaging][Medical visual grounding] Addressing the sparse reward challenge when applying GRPO directly to medical visual grounding—where "fixed IoU threshold rewards $\rightarrow$ early all-zero rewards $\rightarrow$ gradient vanishing"—this paper proposes MedLoc-R1. It utilizes a sliding window performance tracker and multi-condition update criteria to progressively tighten the IoU reward threshold from loose (dense rewards) to strict (fine-grained alignme…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - GRPO
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical visual grounding"
+  - "GRPO"
+  - "reward sparsity"
+  - "curriculum learning"
+  - "IoU threshold scheduling"
 date: 2026-05-08
-content_hash: d71217cb45ce695e
+content_hash: 70ef89ed46c0810a
 ---
+
 # MedLoc-R1: Performance-Aware Curriculum Reward Scheduling for GRPO-Based Medical Visual Grounding
 
 **Conference**: CVPR 2026  
@@ -127,7 +132,7 @@ Scheduling strategy ablation (A@0.5): Adaptive (dynamic $\delta_k, P_k, S_k$) 94
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

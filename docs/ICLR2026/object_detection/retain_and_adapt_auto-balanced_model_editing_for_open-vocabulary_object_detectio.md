@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Retain and Adapt: Auto-Balanced Model Editing for Open-Vocabulary Object Detection under Domain Shifts
 description: >-
-  [ICLR 2026][Object Detection][Paper Note] This work introduces "model editing" to Open-Vocabulary Object Detection (OVOD) for the first time. By fine-tuning only the FFN output projection layers and storing compact KV covariance statistics, the method utilizes a data-adaptive diagonal matrix $\Gamma$ to replace the manually tuned hyperparameter $\lambda$. This
+  [ICLR 2026][Object Detection][Open-Vocabulary Detection] This work introduces "model editing" to Open-Vocabulary Object Detection (OVOD) for the first time. By fine-tuning only the FFN output projection layers and storing compact KV covariance statistics, the method utilizes a data-adaptive diagonal matrix $\Gamma$ to replace the manually tuned hyperparameter $\lambda$. This approach automatically balances "retaining pre-trained capabilities" and "adapting to new domains"—ach…
 tags:
-  - ICLR 2026
-  - Object Detection
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Open-Vocabulary Detection"
+  - "Model Editing"
+  - "Cross-Domain Few-Shot"
+  - "Auto-Balanced"
+  - "Order-Agnostic"
 date: 2026-05-08
-content_hash: 0069afdf9b5e563f
+content_hash: f72d3fb0b86607e8
 ---
+
 # Retain and Adapt: Auto-Balanced Model Editing for Open-Vocabulary Object Detection under Domain Shifts
 
 **Conference**: ICLR 2026  
@@ -136,15 +142,16 @@ Key observations: The base model Avg is only 17.7 (OOD failure). ABME consistent
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] OVID: Open-Vocabulary Intrusion Detection](ovid_open-vocabulary_intrusion_detection.md)
-- [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](../../CVPR2026/object_detection/wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
-- [\[ECCV 2024\] LaMI-DETR: Open-Vocabulary Detection with Language Model Instruction](../../ECCV2024/object_detection/lami-detr_open-vocabulary_detection_with_language_model_instruction.md)
 - [\[ICLR 2026\] DeCo-DETR: Decoupled Cognition DETR for efficient Open-Vocabulary Object Detection](deco-detr_decoupled_cognition_detr_for_efficient_open-vocabulary_object_detectio.md)
 - [\[ICLR 2026\] Fantastic Tractor-Dogs and How Not to Find Them With Open-Vocabulary Detectors](fantastic_tractor-dogs_and_how_not_to_find_them_with_open-vocabulary_detectors.md)
+- [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](../../CVPR2026/object_detection/wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
+- [\[ECCV 2024\] LaMI-DETR: Open-Vocabulary Detection with Language Model Instruction](../../ECCV2024/object_detection/lami-detr_open-vocabulary_detection_with_language_model_instruction.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention
 description: >-
-  [ICCV 2025][Self-Supervised Learning][Generalized Category Discovery] This paper identifies a hidden vulnerability in GCD—ViT models exhibit distracted attention (attending to backgrounds rather than foreground targets)…
+  [ICCV 2025][Self-Supervised Learning][Generalized Category Discovery] This paper identifies a hidden vulnerability in GCD—ViT models exhibit distracted attention (attending to backgrounds rather than foreground targets) when processing unlabeled data—and proposes the Attention Focusing (AF) mechanism, which cascades Token Importance Measurement (TIME) and Token Adaptive Pruning (TAP) to remove irrelevant tokens. AF achieves up to 15.4% improvement on SimGCD with negligible co…
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Adaptive Pruning"
   - "Plug-and-Play Module"
 date: 2026-05-08
-content_hash: 0cd9e453d9a3e5c9
+content_hash: 3a6bda4fff440409
 ---
 
 # A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention
@@ -250,11 +250,11 @@ $$\mathcal{L} = \mathcal{L}_{gcd} + \lambda \sum_{l=1}^{L-1}\mathcal{L}_{ce}^l$$
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Consistent Supervised-Unsupervised Alignment for Generalized Category Discovery](../../NeurIPS2025/self_supervised/consistent_supervised-unsupervised_alignment_for_generalized_category_discovery.md)
+- [\[CVPR 2025\] MOS: Modeling Object-Scene Associations in Generalized Category Discovery](../../CVPR2025/self_supervised/mos_modeling_object-scene_associations_in_generalized_category_discovery.md)
 - [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](../../NeurIPS2025/self_supervised/seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
-- [\[CVPR 2026\] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](../../CVPR2026/self_supervised/omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)
-- [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](../../CVPR2026/self_supervised/learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
-- [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/self_supervised/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
-- [\[ICCV 2025\] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery](generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f.md)
+- [\[CVPR 2025\] Hyperbolic Category Discovery](../../CVPR2025/self_supervised/hyperbolic_category_discovery.md)
+- [\[ICLR 2026\] Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery](../../ICLR2026/self_supervised/bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery.md)
 
 </div>
 

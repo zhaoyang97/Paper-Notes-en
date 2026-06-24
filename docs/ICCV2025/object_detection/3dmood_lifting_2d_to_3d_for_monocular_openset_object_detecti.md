@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection
 description: >-
-  [ICCV 2025][Object Detection][Monocular 3D object detection] This paper proposes 3D-MOOD, the first end-to-end monocular open-set 3D object detector…
+  [ICCV 2025][Object Detection][Monocular 3D object detection] This paper proposes 3D-MOOD, the first end-to-end monocular open-set 3D object detector, which lifts open-set 2D detections into 3D space via geometry-aware 3D query generation and a canonical image space design, achieving state-of-the-art performance on both the Omni3D closed-set benchmark and the Argoverse 2 / ScanNet open-set benchmarks.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "geometry-aware query"
   - "canonical image space"
 date: 2026-05-08
-content_hash: c79fa90aff8c9d46
+content_hash: 647fe4173cafb940
 ---
 
 # 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection
@@ -142,11 +142,11 @@ The **2D→3D lifting paradigm** is broadly applicable: given a strong 2D open-s
 
 ## Related Papers
 
+- [\[CVPR 2026\] RARE: Learn to RAnk and REtrieve for Monocular 3D Object Detection](../../CVPR2026/object_detection/rare_learn_to_rank_and_retrieve_for_monocular_3d_object_detection.md)
 - [\[ICCV 2025\] VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions](voccl3d_a_video_benchmark_dataset_for_3d_human_pose_and_shape_estimation_under_r.md)
 - [\[ICCV 2025\] OpenRSD: Towards Open-prompts for Object Detection in Remote Sensing Images](openrsd_towards_open-prompts_for_object_detection_in_remote_sensing_images.md)
-- [\[ICML 2026\] Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection](../../ICML2026/object_detection/mixture_prototype_flow_matching_for_open-set_supervised_anomaly_detection.md)
-- [\[AAAI 2026\] REXO: Indoor Multi-View Radar Object Detection via 3D Bounding Box Diffusion](../../AAAI2026/object_detection/rexo_indoor_multi-view_radar_object_detection_via_3d_bounding_box_diffusion.md)
-- [\[AAAI 2026\] CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection](../../AAAI2026/object_detection/casl_curvature-augmented_self-supervised_learning_for_3d_anomaly_detection.md)
+- [\[CVPR 2025\] Distribution Prototype Diffusion Learning for Open-set Supervised Anomaly Detection](../../CVPR2025/object_detection/distribution_prototype_diffusion_learning_for_open-set_supervised_anomaly_detect.md)
+- [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Forget What Matters, Keep the Rest: Selective Unlearning of Informative Tokens
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] Ours proposes Entropy-guided Token Weighting (ETW), which utilizes the entropy of the prediction distribution as a proxy for token informativeness. It selectively applies stronger unlearning penalties to informative tokens, effectively unlearning target knowledge while better maintaining the general capabilities of the
+  [ACL 2026][LLM Safety][Machine Unlearning] Ours proposes Entropy-guided Token Weighting (ETW), which utilizes the entropy of the prediction distribution as a proxy for token informativeness. It selectively applies stronger unlearning penalties to informative tokens, effectively unlearning target knowledge while better maintaining the general capabilities of the model.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Informative Tokens"
+  - "Entropy-guided"
+  - "Token Weighting"
+  - "Selective Unlearning"
 date: 2026-05-08
-content_hash: f25a0a759198a2a2
+content_hash: 3d4811329a0daf2b
 ---
+
 # Forget What Matters, Keep the Rest: Selective Unlearning of Informative Tokens
 
 **Conference**: ACL 2026  
@@ -121,10 +127,10 @@ The total unlearning objective is $\mathcal{L} = \mathcal{L}_r + \lambda \mathca
 ## Related Papers
 
 - [\[ACL 2026\] VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models](vla-forget_vision-language-action_unlearning_for_embodied_foundation_models.md)
-- [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](../../CVPR2026/llm_safety/designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
 - [\[ACL 2026\] Maximizing Local Entropy Where It Matters: Prefix-Aware Localized LLM Unlearning](maximizing_local_entropy_where_it_matters_prefix-aware_localized_llm_unlearning.md)
+- [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](../../CVPR2026/llm_safety/designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
 - [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](../../NeurIPS2025/llm_safety/simu_selective_influence_machine_unlearning.md)
-- [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
+- [\[ICLR 2026\] Do LLMs Forget What They Should? Evaluating In-Context Forgetting in Large Language Models](../../ICLR2026/llm_safety/do_llms_forget_what_they_should_evaluating_in-context_forgetting_in_large_langua.md)
 
 </div>
 

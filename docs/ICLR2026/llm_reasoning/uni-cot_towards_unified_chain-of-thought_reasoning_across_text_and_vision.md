@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The paper proposes Uni-CoT, a hierarchical macro-micro reasoning framework that decomposes multimodal CoT into macro-level task planning (breaking complex tasks into sub-goals) and micro-level sub-task execution (MDP-style iterative optimization via self-reflection). By designing an attention mask to reduce $O(T^2)$ co
+  [ICLR2026][Reasoning][Multimodal CoT] The paper proposes Uni-CoT, a hierarchical macro-micro reasoning framework that decomposes multimodal CoT into macro-level task planning (breaking complex tasks into sub-goals) and micro-level sub-task execution (MDP-style iterative optimization via self-reflection). By designing an attention mask to reduce $O(T^2)$ complexity to $O(T)$, it outperforms the BAGEL baseline by +0.02 on GenEval, achieving unified reasoning for interleaved tex…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Multimodal CoT"
+  - "Interleaved Text-Image Reasoning"
+  - "Macro-Micro Hierarchy"
+  - "MDP Self-Reflection"
+  - "Unified Generation"
 date: 2026-05-08
-content_hash: c9e46742e2258c81
+content_hash: 9bbbd3c975764e37
 ---
+
 # Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
 
 **Conference**: ICLR2026  
@@ -126,8 +132,8 @@ Improvement in counting capability is most significant (+0.04), with notable gai
 
 - [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
 - [\[ICLR 2026\] CoT-Evo: Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning](cot-evo_evolutionary_distillation_of_chain-of-thought_for_scientific_reasoning.md)
-- [\[ICLR 2026\] SIM-CoT: Supervised Implicit Chain-of-Thought](sim-cot_supervised_implicit_chain-of-thought.md)
 - [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ACL2026/llm_reasoning/aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
+- [\[ICLR 2026\] SIM-CoT: Supervised Implicit Chain-of-Thought](sim-cot_supervised_implicit_chain-of-thought.md)
 - [\[ICLR 2026\] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos](cot-rvs_zero-shot_chain-of-thought_reasoning_segmentation_for_videos.md)
 
 </div>

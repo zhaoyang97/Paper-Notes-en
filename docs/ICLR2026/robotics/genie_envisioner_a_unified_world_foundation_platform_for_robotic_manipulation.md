@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][World Model] GE integrates a "multi-view video world model (GE-Base)" and a "lightweight parallel action decoder (GE-Act)" into a unified video generation framework. The action branch directly reads multi-scale, full-resolution latent representations from the video DiT via block-wise alignment. Combined with slow-fast asynchronous
+  [ICLR 2026][Robotics][World Model] GE integrates a "multi-view video world model (GE-Base)" and a "lightweight parallel action decoder (GE-Act)" into a unified video generation framework. The action branch directly reads multi-scale, full-resolution latent representations from the video DiT via block-wise alignment. Combined with slow-fast asynchronous inference, it generates 54-step action trajectories within 200ms on a single RTX 4090 and enables transfer to new robotic emb…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - World Model
-  - Robotic Manipulation
-  - Video Diffusion
-  - VLA
-  - Flow Matching
-  - Cross-Embodiment
+  - "ICLR 2026"
+  - "Robotics"
+  - "World Model"
+  - "Robotic Manipulation"
+  - "Video Diffusion"
+  - "VLA"
+  - "Flow Matching"
+  - "Cross-Embodiment"
 date: 2026-05-08
-content_hash: 99d336b6094c7b03
+content_hash: d609e2500ca4d8b4
 ---
+
 # Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation
 
 **Conference**: ICLR 2026  
@@ -114,9 +115,9 @@ graph LR
 
 - [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
 - [\[ICLR 2026\] Policy Contrastive Decoding for Robotic Foundation Models](policy_contrastive_decoding_for_robotic_foundation_models.md)
+- [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
 - [\[ICLR 2026\] WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control](wholebodyvla_towards_unified_latent_vla_for_whole-body_loco-manipulation_control.md)
-- [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](../../CVPR2026/robotics/from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
-- [\[ICLR 2026\] RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation](robointer_a_holistic_intermediate_representation_suite_towards_robotic_manipulat.md)
+- [\[CVPR 2026\] Motus: A Unified Latent Action World Model](../../CVPR2026/robotics/motus_a_unified_latent_action_world_model.md)
 
 </div>
 

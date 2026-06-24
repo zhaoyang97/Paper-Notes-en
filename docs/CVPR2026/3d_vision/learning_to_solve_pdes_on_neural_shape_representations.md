@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning to Solve PDEs on Neural Shape Representations
 description: >-
-  [CVPR 2026][3D Vision][Closest Point Method] This paper learns the "normal extension" step—the most critical component of the classic Closest Point Method (CPM)—using a lightweight, geometrically-conditioned neural operator. This enables **solving surface PDEs directly on neural surface representations (SNS / SDF / Occupancy Fields / Point Clouds / Gaussian Splat
+  [CVPR2026][3D Vision][Surface PDEs] This paper learns the "normal extension" step—the most critical component of the classic Closest Point Method (CPM)—using a lightweight, geometrically-conditioned neural operator. This enables **solving surface PDEs directly on neural surface representations (SNS / SDF / Occupancy Fields / Point Clouds / Gaussian Splatting)** without mesh extraction or per-instance optimization. The pipeline is fully differentiable and…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Closest Point Method
+  - "CVPR2026"
+  - "3D Vision"
+  - "Surface PDEs"
+  - "Closest Point Method"
+  - "Neural Implicit Surfaces"
+  - "Differentiable Solvers"
+  - "Geometrically-Conditioned Operators"
 date: 2026-05-08
-content_hash: 400a9028f90202cf
+content_hash: 2e15bf154998edeb
 ---
+
 # Learning to Solve PDEs on Neural Shape Representations
 
 **Conference**: CVPR2026  
@@ -152,11 +157,11 @@ Key Finding: Under the same train-test split (only seeing *Spike*), the proposed
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
-- [\[CVPR 2026\] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision](evobj_learning_evolving_object-centric_representations_for_3d_instance_segmentat.md)
+- [\[CVPR 2026\] Velox: Learning Representations of 4D Geometry and Appearance](velox_learning_representations_of_4d_geometry_and_appearance.md)
 - [\[CVPR 2026\] Learning to Infer Parameterized Representations of Plants from 3D Scans](learning_to_infer_parameterized_representations_of_plants_from_3d_scans.md)
-- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
-- [\[CVPR 2026\] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields](dynamic_black-hole_emission_tomography_with_physics-informed_neural_fields.md)
+- [\[CVPR 2026\] Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features](content-aware_frequency_encoding_for_implicit_neural_representations_with_fourie.md)
+- [\[CVPR 2026\] Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](learning_3d_representations_for_spatial_intelligence_from_unposed_multi-view_ima.md)
+- [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
 
 </div>
 

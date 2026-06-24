@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Flow Autoencoders are Effective Protein Tokenizers
 description: >-
-  [ICLR 2026][Computational Biology][Flow Matching] This paper proposes Kanzi—a non-equivariant protein structure tokenizer trained with a flow matching loss. By using a diffusion decoder and an FSQ quantization bottleneck to replace the traditional SE(3)-invariant modules and complex loss functions, it achieves SOTA reconstruction with 1/20th the parameters and 1/400th
+  [ICLR 2026][Computational Biology][Protein structure tokenizer] This paper proposes Kanzi—a non-equivariant protein structure tokenizer trained with a flow matching loss. By using a diffusion decoder and an FSQ quantization bottleneck to replace the traditional SE(3)-invariant modules and complex loss functions, it achieves SOTA reconstruction with 1/20th the parameters and 1/400th the training data.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein structure tokenizer"
+  - "Flow matching"
+  - "Autoencoder"
+  - "FSQ quantization"
+  - "Autoregressive generation"
 date: 2026-05-08
-content_hash: bf1fc3c7292f3020
+content_hash: 8607712c7744d864
 ---
+
 # Flow Autoencoders are Effective Protein Tokenizers
 
 **Conference**: ICLR 2026  
@@ -122,7 +127,7 @@ Generative Evaluation (Autoregressive Prior, Designability↑ / scRMSD↓):
 - [\[ICLR 2026\] La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](la-proteina_atomistic_protein_generation_via_partially_latent_flow_matching.md)
 - [\[ICLR 2026\] Riemannian Variational Flow Matching for Material and Protein Design](riemannian_variational_flow_matching_for_material_and_protein_design.md)
 - [\[ICLR 2026\] Low rank adaptation of chemical foundation models generate effective odorant representations](low_rank_adaptation_of_chemical_foundation_models_generate_effective_odorant_rep.md)
-- [\[ICLR 2026\] Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction](extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda.md)
+- [\[ICLR 2026\] Interpolation-Based Conditioning of Flow Matching Models for Bioisosteric Ligand Design](interpolation-based_conditioning_of_flow_matching_models_for_bioisosteric_ligand.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoFRR: Mixture of Diffusion Models for Face Retouching Restoration
 description: >-
-  [ICCV 2025][Image Generation][Face retouching restoration] This paper introduces the Face Retouching Restoration (FRR) task for the first time and proposes the MoFRR framework—inspired by DeepSeek MoE—which activates ret…
+  [ICCV 2025][Image Generation][Face retouching restoration] This paper introduces the Face Retouching Restoration (FRR) task for the first time and proposes the MoFRR framework—inspired by DeepSeek MoE—which activates retouching-type-specific experts (Wavelet DDIM) and a shared expert (general DDIM) via a router, achieving near-authentic restoration of retouched faces on the newly constructed million-scale RetouchingFFHQ++ dataset.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "frequency-domain decomposition"
 date: 2026-05-08
-content_hash: 57e6b5e2275c1aba
+content_hash: 8ab89fd7eeccd10c
 ---
 
 # MoFRR: Mixture of Diffusion Models for Face Retouching Restoration
@@ -143,10 +143,10 @@ $$\mathcal{L} = \mathcal{L}_{freq} + \mathcal{L}_{space} + \mathcal{L}_{class}$$
 ## Related Papers
 
 - [\[ICCV 2025\] Unlocking the Potential of Diffusion Priors in Blind Face Restoration](unlocking_the_potential_of_diffusion_priors_in_blind_face_restoration.md)
+- [\[CVPR 2025\] SVFR: A Unified Framework for Generalized Video Face Restoration](../../CVPR2025/image_generation/svfr_a_unified_framework_for_generalized_video_face_restoration.md)
+- [\[CVPR 2025\] OSDFace: One-Step Diffusion Model for Face Restoration](../../CVPR2025/image_generation/osdface_one-step_diffusion_model_for_face_restoration.md)
+- [\[ICML 2025\] Gaussian Mixture Flow Matching Models](../../ICML2025/image_generation/gaussian_mixture_flow_matching_models.md)
 - [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
-- [\[ICCV 2025\] LD-RPS: Zero-Shot Unified Image Restoration via Latent Diffusion Recurrent Posterior Sampling](ld-rps_zero-shot_unified_image_restoration_via_latent_diffusion_recurrent_poster.md)
-- [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](golden_noise_for_diffusion_models_a_learning_framework.md)
-- [\[ICCV 2025\] DiffDoctor: Diagnosing Image Diffusion Models Before Treating](diffdoctor_diagnosing_image_diffusion_models_before_treating.md)
 
 </div>
 

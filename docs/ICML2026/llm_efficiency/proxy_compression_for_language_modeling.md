@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Proxy Compression for Language Modeling
 description: >-
-  [ICML 2026][LLM Efficiency][byte-level LM] The authors propose "proxy compression"—training where 90% of data is fed as short sequences produced by a tokenizer/neural compressor and 10% as raw UTF-8 bytes, coupled with sentinel tokens and a brief in-context translation warm-up. During inference, all compressors are discarded, and the model processes only raw by
+  [ICML 2026][LLM Efficiency][byte-level LM] The authors propose "proxy compression"—training where 90% of data is fed as short sequences produced by a tokenizer/neural compressor and 10% as raw UTF-8 bytes, coupled with sentinel tokens and a brief in-context translation warm-up. During inference, all compressors are discarded, and the model processes only raw bytes; yet, it significantly outperforms pure byte-level models under fixed compute and matches or exceeds tokenizer ba…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - byte-level LM
-  - tokenizer-free inference
-  - mixed-representation training
-  - arithmetic coding
-  - neural compressor
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "byte-level LM"
+  - "tokenizer-free inference"
+  - "mixed-representation training"
+  - "arithmetic coding"
+  - "neural compressor"
 date: 2026-05-08
-content_hash: 0317ebb936b32e78
+content_hash: c2c8d4c510027ea2
 ---
+
 # Proxy Compression for Language Modeling
 
 **Conference**: ICML 2026  
@@ -144,11 +145,11 @@ Proxy models overtake pure byte-level models at $\geq 1.5$B and surpass tokenize
 
 ## Related Papers
 
+- [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](../../ICLR2026/llm_efficiency/knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
 - [\[ICLR 2026\] Autoencoding-Free Context Compression for LLMs via Contextual Semantic Anchors](../../ICLR2026/llm_efficiency/autoencoding-free_context_compression_for_llms_via_contextual_semantic_anchors.md)
-- [\[ACL 2025\] GigaChat Family: Efficient Russian Language Modeling Through Mixture of Experts Architecture](../../ACL2025/llm_efficiency/gigachat_family_efficient_russian_language_modeling_through_mixture_of_experts_a.md)
-- [\[ICML 2025\] Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling](../../ICML2025/llm_efficiency/efficient_length-generalizable_attention_via_causal_retrieval_for_long-context_l.md)
-- [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](../../ACL2026/llm_efficiency/native_hybrid_attention_for_efficient_sequence_modeling.md)
-- [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](../../ACL2026/llm_efficiency/comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
+- [\[ICLR 2026\] ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models](../../ICLR2026/llm_efficiency/thinkv_thought-adaptive_kv_cache_compression_for_efficient_reasoning_models.md)
+- [\[ICLR 2026\] RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers](../../ICLR2026/llm_efficiency/rmaat_astrocyte-inspired_memory_compression_and_replay_for_efficient_long-contex.md)
+- [\[ICML 2026\] RePo: Language Models with Context Re-Positioning](repo_language_models_with_context_re-positioning.md)
 
 </div>
 

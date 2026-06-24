@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Foundation Visual Encoders Are Secretly Few-Shot Anomaly Detectors
 description: >-
-  [ICLR 2026][Anomaly Detection][DINOv3] The authors discovered that frozen foundation visual encoders "secretly" possess the ability to distinguish anomalies—the area of an anomalous region in an image is positively correlated with the distance of its features to the natural image manifold. By training a lightweight non-linear projection operator (FOUNDAD) a
+  [ICLR 2026][Anomaly Detection][Few-shot Anomaly Detection] The authors discovered that frozen foundation visual encoders "secretly" possess the ability to distinguish anomalies—the area of an anomalous region in an image is positively correlated with the distance of its features to the natural image manifold. By training a lightweight non-linear projection operator (FOUNDAD) atop the encoder to pull anomalous features back to the normal manifold and scoring based on the diffe…
 tags:
-  - ICLR 2026
-  - Anomaly Detection
-  - DINOv3
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "Few-shot Anomaly Detection"
+  - "Foundation Visual Encoders"
+  - "DINOv3"
+  - "Natural Image Manifold"
+  - "Manifold Projection"
 date: 2026-05-08
-content_hash: a1cb9c574314f06a
+content_hash: 54a1d005fcbfc36d
 ---
+
 # Foundation Visual Encoders Are Secretly Few-Shot Anomaly Detectors
 
 **Conference**: ICLR 2026  
@@ -146,10 +151,10 @@ The improvement on VisA is particularly significant (I-AUROC +6.2 over the secon
 ## Related Papers
 
 - [\[CVPR 2026\] Defect Cue-Preserved Structural Feature Refinement for Few-Shot Anomaly Detection](../../CVPR2026/anomaly_detection/defect_cue-preserved_structural_feature_refinement_for_few-shot_anomaly_detectio.md)
+- [\[ICLR 2026\] LLM as an Algorithmist: Enhancing Anomaly Detectors via Programmatic Synthesis](llm_as_an_algorithmist_enhancing_anomaly_detectors_via_programmatic_synthesis.md)
 - [\[ICLR 2026\] Adaptive Conformal Anomaly Detection with Time Series Foundation Models for Signal Monitoring](adaptive_conformal_anomaly_detection_with_time_series_foundation_models_for_sign.md)
 - [\[ICLR 2026\] MRAD: Zero-Shot Anomaly Detection with Memory-Driven Retrieval](mrad_zero-shot_anomaly_detection_with_memory-driven_retrieval.md)
 - [\[ICLR 2026\] ReTabAD: A Benchmark for Restoring Semantic Context in Tabular Anomaly Detection](retabad_a_benchmark_for_restoring_semantic_context_in_tabular_anomaly_detection.md)
-- [\[ICLR 2026\] Low Rank Transformer for Multivariate Time Series Anomaly Detection and Localization](low_rank_transformer_for_multivariate_time_series_anomaly_detection_and_localiza.md)
 
 </div>
 

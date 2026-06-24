@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Self-Consistency] This paper proposes the first theoretical framework for sampling-based test-time scaling methods…
+  [NeurIPS 2025][Reasoning][Self-Consistency] This paper proposes the first theoretical framework for sampling-based test-time scaling methods, decomposing reasoning error into estimation error and model error. It reveals the limitations of Self-Consistency (slow convergence) and Perplexity (large model error), and introduces the RPC method that combines the strengths of both, achieving comparable reasoning performance on 7 benchmarks with only 50% of the sampling cost.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Self-Consistency"
   - "Perplexity"
   - "Test-time Scaling"
   - "Confidence Estimation"
+  - "LLM Reasoning"
 date: 2026-05-08
-content_hash: 4910a00ce6905c19
+content_hash: c9e5fdfe1d914206
 ---
 
 # A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning
@@ -127,10 +128,10 @@ The error decomposition framework can be transferred to test-time scaling analys
 ## Related Papers
 
 - [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](../../ACL2026/llm_reasoning/reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
+- [\[ICML 2025\] Self-Consistency Preference Optimization](../../ICML2025/llm_reasoning/self-consistency_preference_optimization.md)
+- [\[ACL 2025\] Ranked Voting based Self-Consistency of Large Language Models](../../ACL2025/llm_reasoning/ranked_voting_based_self-consistency_of_large_language_models.md)
+- [\[ACL 2025\] Revisiting Self-Consistency from Dynamic Distributional Alignment Perspective on Answer Aggregation](../../ACL2025/llm_reasoning/revisiting_self-consistency_from_dynamic_distributional_alignment_perspective_on.md)
 - [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](../../ACL2026/llm_reasoning/self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
-- [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](../../ACL2026/llm_reasoning/does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
-- [\[NeurIPS 2025\] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)
-- [\[NeurIPS 2025\] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks](value-guided_search_for_efficient_chain-of-thought_reasoning.md)
 
 </div>
 

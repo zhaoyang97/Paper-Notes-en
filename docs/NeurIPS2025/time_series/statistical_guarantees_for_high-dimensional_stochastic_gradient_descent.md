@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Statistical Guarantees for High-Dimensional Stochastic Gradient Descent
 description: >-
-  [NeurIPS 2025][Time Series][stochastic gradient descent] This work introduces coupling techniques from high-dimensional nonlinear time series into online learning…
+  [NeurIPS 2025][Time Series][stochastic gradient descent] This work introduces coupling techniques from high-dimensional nonlinear time series into online learning, providing the first rigorous moment convergence bounds and high-probability concentration inequalities—under $\ell^s$ and $\ell^\infty$ norms—for constant learning rate SGD and its Ruppert–Polyak averaged variant (ASGD) in high dimensions.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "geometric moment contraction"
   - "concentration inequalities"
 date: 2026-05-08
-content_hash: 45a5ae8b848faf12
+content_hash: d003b60633c30102
 ---
 
 # Statistical Guarantees for High-Dimensional Stochastic Gradient Descent
@@ -167,11 +167,11 @@ A rigorous, purely theoretical contribution that fills an important gap in the t
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting](a_graph_neural_network_approach_for_localized_and_high-resolution_temperature_fo.md)
 - [\[NeurIPS 2025\] In-Context Learning of Stochastic Differential Equations with Foundation Inference Models](in-context_learning_of_stochastic_differential_equations_with_foundation_inferen.md)
+- [\[NeurIPS 2025\] A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting](a_graph_neural_network_approach_for_localized_and_high-resolution_temperature_fo.md)
 - [\[NeurIPS 2025\] Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions](neural_stochastic_flows_solver-free_modelling_and_inference_for_sde_solutions.md)
-- [\[ICML 2026\] HELIX: Hybrid Encoding with Learnable Identity and Cross-dimensional Synthesis for Time Series Imputation](../../ICML2026/time_series/helix_hybrid_encoding_with_learnable_identity_and_cross-dimensional_synthesis_fo.md)
-- [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
+- [\[ICLR 2026\] Learning Koopman Representations with Controllability Guarantees](../../ICLR2026/time_series/learning_koopman_representations_with_controllability_guarantees.md)
+- [\[CVPR 2025\] Learning Extremely High Density Crowds as Active Matters](../../CVPR2025/time_series/learning_extremely_high_density_crowds_as_active_matters.md)
 
 </div>
 

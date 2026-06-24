@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reevaluating Policy Gradient Methods for Imperfect-Information Games
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] The authors propose the "Policy Gradient Hypothesis" – given proper hyperparameter tuning, general policy gradient methods such as PPO and PPG are not inferior (and often superior) to specialized game-theoretic algorithms based on Fictitious Play, Double Oracle, or Counterfactual Regret Minimization in two-player zero-
+  [ICLR 2026][Reinforcement Learning][Imperfect-information games] The authors propose the "Policy Gradient Hypothesis" – given proper hyperparameter tuning, general policy gradient methods such as PPO and PPG are not inferior (and often superior) to specialized game-theoretic algorithms based on Fictitious Play, Double Oracle, or Counterfactual Regret Minimization in two-player zero-sum imperfect-information games. To verify this, they open-sourced tools for calculating exact…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Imperfect-information games"
+  - "Policy Gradient"
+  - "Exploitability"
+  - "Self-play"
+  - "PPO"
 date: 2026-05-08
-content_hash: e844bed7adf2a03f
+content_hash: cfe9f5c75263a55e
 ---
+
 # Reevaluating Policy Gradient Methods for Imperfect-Information Games
 
 **Conference**: ICLR 2026  
@@ -121,10 +126,10 @@ The scale of the five benchmarks (demonstrating they are "large" enough):
 ## Related Papers
 
 - [\[ICLR 2026\] Look-ahead Reasoning with a Learned Model in Imperfect Information Games](look-ahead_reasoning_with_a_learned_model_in_imperfect_information_games.md)
+- [\[ICLR 2026\] General search techniques without common knowledge for imperfect-information games, and application to superhuman Fog of War chess](general_search_techniques_without_common_knowledge_for_imperfect-information_gam.md)
 - [\[ICLR 2026\] SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models](spg_sandwiched_policy_gradient_for_masked_diffusion_language_models.md)
 - [\[ICLR 2026\] On the $O(1/T)$ Convergence of Alternating Gradient Descent-Ascent in Bilinear Games](on_the_o1t_convergence_of_alternating_gradient_descent-ascent_in_bilinear_games.md)
 - [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
-- [\[NeurIPS 2025\] On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/on_the_global_optimality_of_policy_gradient_methods_in_general_utility_reinforce.md)
 
 </div>
 

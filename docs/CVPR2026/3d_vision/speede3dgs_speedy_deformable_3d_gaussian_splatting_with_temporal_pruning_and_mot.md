@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpeeDe3DGS: Speedy Deformable 3D Gaussian Splatting with Temporal Pruning and Motion Grouping
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SpeeDe3DGS integrates three modules — Temporal Sensitivity Pruning (TSP), Temporal Sensitivity Sampling (TSS), and Grouped Rigid Motion Distillation (GroupFlow) — into DeformableGS. It accelerates dynamic Gaussian Splatting rendering by 13.71×, reduces training time by 2.53×, and cuts the number of Gaussians to 1/10 wh
+  [CVPR 2026][3D Vision][Dynamic Gaussian Splatting] SpeeDe3DGS integrates three modules — Temporal Sensitivity Pruning (TSP), Temporal Sensitivity Sampling (TSS), and Grouped Rigid Motion Distillation (GroupFlow) — into DeformableGS. It accelerates dynamic Gaussian Splatting rendering by 13.71×, reduces training time by 2.53×, and cuts the number of Gaussians to 1/10 while maintaining the image quality of neural deformation fields.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic Gaussian Splatting"
+  - "Temporal Pruning"
+  - "Motion Field Distillation"
+  - "Real-time Rendering"
+  - "Deformation Field"
 date: 2026-05-08
-content_hash: a4f3c2e0f9b75c99
+content_hash: 3e63905bede5d9e7
 ---
+
 # SpeeDe3DGS: Speedy Deformable 3D Gaussian Splatting with Temporal Pruning and Motion Grouping
 
 **Conference**: CVPR 2026  
@@ -128,11 +134,11 @@ Module breakdown on the NeRF-DS dataset (7 real scenes, averaged over three runs
 
 ## Related Papers
 
+- [\[CVPR 2026\] MAPo: Motion-Aware Partitioning of Deformable 3D Gaussian Splatting for High-Fidelity Dynamic Scene Reconstruction](mapo_motion-aware_partitioning_of_deformable_3d_gaussian_splatting_for_high-fide.md)
 - [\[CVPR 2026\] Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping](space-time_forecasting_of_dynamic_scenes_with_motion-aware_gaussian_grouping.md)
 - [\[CVPR 2026\] Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives](prune_wisely_reconstruct_sharply_compact_3d_gaussian_splatting_via_adaptive_prun.md)
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
 - [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
 
 </div>
 

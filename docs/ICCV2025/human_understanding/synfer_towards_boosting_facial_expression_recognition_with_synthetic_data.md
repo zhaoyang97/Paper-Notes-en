@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data
 description: >-
-  [ICCV 2025][Human Understanding][Facial expression recognition] This paper proposes SynFER, a diffusion-model-based facial expression synthesis framework that achieves fine-grained expression generation via dual control…
+  [ICCV 2025][Human Understanding][Facial expression recognition] This paper proposes SynFER, a diffusion-model-based facial expression synthesis framework that achieves fine-grained expression generation via dual control signals — text descriptions and Facial Action Units (FAUs) — and introduces a FERAnno label calibrator to ensure annotation reliability. The effectiveness of synthetic data for FER is validated across four learning paradigms: self-supervised, supervised…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "facial action units"
   - "label calibration"
 date: 2026-05-08
-content_hash: a9bede8a57029e5f
+content_hash: 49363e54dcdf5ea4
 ---
 
 # SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data
@@ -166,11 +166,11 @@ Generation quality comparison (FID↓):
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](../../CVPR2026/human_understanding/a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
+- [\[ECCV 2024\] Generalizable Facial Expression Recognition](../../ECCV2024/human_understanding/generalizable_facial_expression_recognition.md)
 - [\[ICCV 2025\] PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data](posesyn_synthesizing_diverse_3d_pose_data_from_in-the-wild_2d_data.md)
-- [\[ICCV 2025\] Monocular Facial Appearance Capture in the Wild](monocular_facial_appearance_capture_in_the_wild.md)
-- [\[AAAI 2026\] New Synthetic Goldmine: Hand Joint Angle-Driven EMG Data Generation Framework for Micro-Gesture Recognition](../../AAAI2026/human_understanding/new_synthetic_goldmine_hand_joint_angle-driven_emg_data_generation_framework_for.md)
-- [\[NeurIPS 2025\] BEDLAM2.0: Synthetic Humans and Cameras in Motion](../../NeurIPS2025/human_understanding/bedlam20_synthetic_humans_and_cameras_in_motion.md)
+- [\[CVPR 2026\] Dynamic Label Noise Suppression with Optimal Teacher Pool for Facial Expression Recognition](../../CVPR2026/human_understanding/dynamic_label_noise_suppression_with_optimal_teacher_pool_for_facial_expression_.md)
+- [\[CVPR 2025\] HSEmotion Team at ABAW-10 Competition: Facial Expression Recognition, Valence-Arousal Estimation, Action Unit Detection and Fine-Grained Violence Classification](../../CVPR2025/human_understanding/hsemotion_team_at_abaw-10_competition_facial_expression_recognition_valence-arou.md)
+- [\[CVPR 2026\] D³FER: Dual Channel and Dual Branch Network for Robust Facial Expression Recognition under Dual Challenges](../../CVPR2026/human_understanding/d3fer_dual_channel_and_dual_branch_network_for_robust_facial_expression_recognit.md)
 
 </div>
 

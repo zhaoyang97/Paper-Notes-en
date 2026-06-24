@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction
 description: >-
-  [ICLR 2026][LLM Evaluation][Peer Prediction] This paper proposes applying the Peer Prediction mechanism from game theory to LLM evaluation and training. By measuring the mutual predictability of participants' answers to distinguish honest from deceptive responses, honesty incentives are achieved without ground-truth labels. It demonstrates a surprising "inverse s
+  [ICLR 2026][LLM Evaluation][Peer Prediction] This paper proposes applying the Peer Prediction mechanism from game theory to LLM evaluation and training. By measuring the mutual predictability of participants' answers to distinguish honest from deceptive responses, honesty incentives are achieved without ground-truth labels. It demonstrates a surprising "inverse scaling" property—weaker experts are more resistant to deception from stronger models.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Peer Prediction
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Peer Prediction"
+  - "Honesty Training"
+  - "Deception Resistance"
+  - "Weak Supervision"
 date: 2026-05-08
-content_hash: ca839d6c80d24553
+content_hash: 542c85b89d88f941
 ---
+
 # Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction
 
 **Conference**: ICLR 2026  
@@ -140,9 +144,9 @@ Honest training: Recovering honesty from a maliciously fine-tuned model (37,079 
 
 - [\[ICLR 2026\] VideoJudge: Bootstrapping Enables Scalable Supervision of MLLM-as-a-Judge for Video Understanding](videojudge_bootstrapping_enables_scalable_supervision_of_mllm-as-a-judge_for_vid.md)
 - [\[ICLR 2026\] Inverse IFEval: Can LLMs Unlearn Stubborn Training Conventions to Follow Real Instructions?](inverse_ifeval_can_llms_unlearn_stubborn_training_conventions_to_follow_real_ins.md)
-- [\[ACL 2025\] CalibraEval: Calibrating Prediction Distribution to Mitigate Selection Bias in LLMs-as-Judges](../../ACL2025/llm_evaluation/calibraeval_calibrating_prediction_distribution_to_mitigate_selection_bias_in_ll.md)
 - [\[ICLR 2026\] Mapping Post-Training Forgetting in Language Models at Scale](mapping_post-training_forgetting_in_language_models_at_scale.md)
 - [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
+- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
 
 </div>
 

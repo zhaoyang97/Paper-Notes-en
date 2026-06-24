@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Flowing Through States: Neural ODE Regularization for Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Neural ODE] This paper proposes **FlowReg**: using a neural ODE to fit a smooth and continuous trajectory flow in the latent space, and forcing the agent's state encoder to align the latent representations of adjacent states along this ODE flow via an alignment loss. This explicitly injects "environment transition dynamics" into r
+  [ICLR 2026][Reinforcement Learning][Neural ODE] This paper proposes **FlowReg**: using a neural ODE to fit a smooth and continuous trajectory flow in the latent space, and forcing the agent's state encoder to align the latent representations of adjacent states along this ODE flow via an alignment loss. This explicitly injects "environment transition dynamics" into representation learning, achieving significant performance improvements on Atari (A2C) and MiniGrid (PPO).
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Neural ODE
-  - Actor-Critic
-  - A2C
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Neural ODE"
+  - "Representation Learning"
+  - "Actor-Critic"
+  - "A2C"
+  - "Latent Space Regularization"
+  - "MDP Dynamics"
 date: 2026-05-08
-content_hash: 8f359fd1c6089729
+content_hash: 4f9f25e7eb0ab93e
 ---
+
 # Flowing Through States: Neural ODE Regularization for Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -129,8 +133,8 @@ Even U-20 (halving the flow loss updates) still shows significant gains—indica
 - [\[ICLR 2026\] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning](neuralsymbolic_approaches_for_interpretable_actor-critic_reinforcement_learning.md)
 - [\[ICLR 2026\] From Ticks to Flows: Dynamics of Neural Reinforcement Learning in Continuous Environments](from_ticks_to_flows_dynamics_of_neural_reinforcement_learning_in_continuous_envi.md)
 - [\[ICLR 2026\] Neural Predictor-Corrector: Solving Homotopy Problems with Reinforcement Learning](neural_predictor-corrector_solving_homotopy_problems_with_reinforcement_learning.md)
-- [\[ICLR 2026\] Critique-RL: Training Language Models for Critiquing Through Two-Stage Reinforcement Learning](critique-rl_training_language_models_for_critiquing_through_two-stage_reinforcem.md)
 - [\[ICLR 2026\] RESCHED: Rethinking Flexible Job Shop Scheduling from a Transformer-based Architecture with Simplified States](resched_rethinking_flexible_job_shop_scheduling_from_a_transformer-based_archite.md)
+- [\[ICLR 2026\] Critique-RL: Training Language Models for Critiquing Through Two-Stage Reinforcement Learning](critique-rl_training_language_models_for_critiquing_through_two-stage_reinforcem.md)
 
 </div>
 

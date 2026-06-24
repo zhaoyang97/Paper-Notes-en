@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper proposes MASS-RAG, a training-free multi-agent synthesis RAG framework. It processes retrieved documents from complementary perspectives via three specialized filtering agents (Summarizer/Extractor/Reasoner) and integrates multi-view evidence or candidate answers through a Synthesis Agent, consistently outpe
+  [ACL 2026 Findings][Information Retrieval & RAG][Multi-Agent RAG] This paper proposes MASS-RAG, a training-free multi-agent synthesis RAG framework. It processes retrieved documents from complementary perspectives via three specialized filtering agents (Summarizer/Extractor/Reasoner) and integrates multi-view evidence or candidate answers through a Synthesis Agent, consistently outperforming strong baselines across four benchmarks.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Multi-Agent RAG"
+  - "Evidence Synthesis"
+  - "Training-Free"
+  - "Multi-View Filtering"
+  - "Heterogeneous Evidence Fusion"
 date: 2026-05-08
-content_hash: 70de575c29aa85f6
+content_hash: 900487e2bd484d87
 ---
+
 # MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation
 
 **Conference**: ACL 2026 Findings  
@@ -133,10 +139,10 @@ A training-free framework where all agents share the same LLM backbone (Llama-3-
 ## Related Papers
 
 - [\[ACL 2025\] MAIN-RAG: Multi-Agent Filtering Retrieval-Augmented Generation](../../ACL2025/information_retrieval/main-rag_multi-agent_filtering_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] Eigen-Agent: Adaptive Multi-Agent Scientific Reasoning with Monitor-Based RAG](../../ICLR2026/information_retrieval/eigen-agent_adaptive_multi-agent_scientific_reasoning_with_monitor-based_rag.md)
 - [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
+- [\[ICLR 2026\] GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/gro-rag_gradient-aware_re-rank_optimization_for_multi-source_retrieval-augmented.md)
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](feedback_adaptation_for_retrieval-augmented_generation.md)
-- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](disco-rag_discourse-aware_retrieval-augmented_generation.md)
-- [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
 
 </div>
 

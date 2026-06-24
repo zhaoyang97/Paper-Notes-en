@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes CPSC (Conformal Predictive Self-Calibration), which attributes the seemingly independent "low-quality data" issues of modality imbalance and noise pollution to a single root cause—predictive uncertainty regarding the reliability of modalities or samples. It utilizes Conformal Prediction (CP) to gene
+  [CVPR 2026][Multimodal VLM][Multimodal Learning] This paper proposes CPSC (Conformal Predictive Self-Calibration), which attributes the seemingly independent "low-quality data" issues of modality imbalance and noise pollution to a single root cause—predictive uncertainty regarding the reliability of modalities or samples. It utilizes Conformal Prediction (CP) to generate real-time reliability scores during training, performing self-calibration at both the **feature level** (r…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Learning"
+  - "Conformal Prediction"
+  - "Modality Imbalance"
+  - "Noise Robustness"
+  - "Self-calibrated Training"
 date: 2026-05-08
-content_hash: fcdd6917c22e2306
+content_hash: 137389bf3ffb5331
 ---
+
 # Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration
 
 **Conference**: CVPR 2026  
@@ -134,14 +140,17 @@ Tested on CREMA-D (Imbalance) and NYU Depth V2 (Noise):
 
 <div class="related-papers" markdown="1">
 
-- **ARL**: Adversarial Re-weighting Learning for Multimodal Imbalance, CVPR 2022.
-- **IPRM**: Imbalance-aware Predictive Reliability Modeling, ICCV 2023.
-- **EAU**: Evidence-Aware Uncertainty for Robust Multimodal Fusion, NeurIPS 2023.
+## Related Papers
+
+- [\[CVPR 2026\] LOREAL: Mitigating Low-Resolution Challenges in Vision-Language Models with Attribute-driven Prompt Self-Distillation](loreal_mitigating_low-resolution_challenges_in_vision-language_models_with_attri.md)
+- [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
+- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
+- [\[CVPR 2026\] GUI-SAGE: Enhancing GUI Automation with Self-Explanatory Learning](gui-sage_enhancing_gui_automation_with_self-explanatory_learning.md)
+- [\[CVPR 2026\] MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals](merlin_building_low-snr_robust_multimodal_llms_for_electromagnetic_signals.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning](decouple_to_generalize_context-first_self-evolving_learning_for_data-scarce_visi.md)

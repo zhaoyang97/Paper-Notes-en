@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] Iris systematically validates a naive hypothesis: feeding additional text descriptions of scene objects into a diffusion-based monocular depth estimator leverages the "text $\leftrightarrow$ 3D scene" conditional distribution learned during text-to-image pre-training. This reduces the depth solution space, leading to o
+  [CVPR 2026][3D Vision][Monocular Depth Estimation] Iris systematically validates a naive hypothesis: feeding additional text descriptions of scene objects into a diffusion-based monocular depth estimator leverages the "text $\leftrightarrow$ 3D scene" conditional distribution learned during text-to-image pre-training. This reduces the depth solution space, leading to overall zero-shot accuracy improvements across three diffusion MDEs (Marigold, Lotus, and E2E-FT)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular Depth Estimation"
+  - "Diffusion Models"
+  - "Language Conditioning"
+  - "Vision-Language"
+  - "Text-guidance"
 date: 2026-05-08
-content_hash: dbc668b8e0971695
+content_hash: 21091085cc0c2adf
 ---
+
 # Iris: Integrating Language into Diffusion-based Monocular Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -118,10 +123,10 @@ MaskDINO was used for panoptic segmentation on the NYUv2 test set, evaluating de
 ## Related Papers
 
 - [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
 - [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
 - [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
+- [\[ECCV 2024\] DiffusionDepth: Diffusion Denoising Approach for Monocular Depth Estimation](../../ECCV2024/3d_vision/diffusiondepth_diffusion_denoising_approach_for_monocular_depth_estimation.md)
+- [\[ECCV 2024\] Diffusion Models for Monocular Depth Estimation: Overcoming Challenging Conditions](../../ECCV2024/3d_vision/diffusion_models_for_monocular_depth_estimation_overcoming_challenging_condition.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking
 description: >-
-  [ICLR 2026][Interpretability][Soft Thinking] Through a set of probing experiments, this paper reveals that "Soft Thinking" does not explore multiple reasoning paths in parallel as theoretically claimed—LLMs are actually "single-threaded reasoners," driven almost exclusively by the top-1 component in soft tokens, thereby falling into a greedy feedback loop. Conseq
+  [ICLR 2026][Interpretability][Soft Thinking] Through a set of probing experiments, this paper reveals that "Soft Thinking" does not explore multiple reasoning paths in parallel as theoretically claimed—LLMs are actually "single-threaded reasoners," driven almost exclusively by the top-1 component in soft tokens, thereby falling into a greedy feedback loop. Consequently, the authors propose **Stochastic Soft Thinking**, which injects controllable randomness via Gumbel-Softmax…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Soft Thinking
-  - Greedy Pitfall
-  - Gumbel-Softmax
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Soft Thinking"
+  - "Continuous Reasoning"
+  - "Greedy Pitfall"
+  - "Gumbel-Softmax"
+  - "Probing Analysis"
 date: 2026-05-08
-content_hash: 8c38f1d3e9d13045
+content_hash: e41b2e3b3a177958
 ---
+
 # LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking
 
 **Conference**: ICLR 2026  

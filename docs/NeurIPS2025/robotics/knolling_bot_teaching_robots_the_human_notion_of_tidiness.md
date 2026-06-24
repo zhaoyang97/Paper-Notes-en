@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Knolling Bot: Teaching Robots the Human Notion of Tidiness
 description: >-
-  [NeurIPS 2025][Robotics][knolling] This work frames desktop object tidying (knolling) as an NLP-style sequence prediction task, employing a Transformer to autoregressively generate target poses for each object. A Gaussia…
+  [NeurIPS 2025][Robotics][knolling] This work frames desktop object tidying (knolling) as an NLP-style sequence prediction task, employing a Transformer to autoregressively generate target poses for each object. A Gaussian Mixture Model (GMM) handles solution ambiguity, the model is trained on 2.4 million automatically generated demonstrations to learn a generalizable notion of tidiness, and user preferences are implicitly encoded via the input ordering of objects.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -13,7 +13,7 @@ tags:
   - "self-supervised learning"
   - "autoregressive generation"
 date: 2026-05-08
-content_hash: e23329daf0de8a27
+content_hash: 8aaeeb9445c6c3c6
 ---
 
 # Knolling Bot: Teaching Robots the Human Notion of Tidiness
@@ -160,11 +160,11 @@ The cross-domain analogy from object arrangement to sequence prediction is novel
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots](../../CVPR2026/robotics/towards_motion_turing_test_evaluating_human-likeness_in_humanoid_robots.md)
 - [\[ICLR 2026\] Nonparametric Teaching of Attention Learners](../../ICLR2026/robotics/nonparametric_teaching_of_attention_learners.md)
-- [\[NeurIPS 2025\] COOPERA: Continual Open-Ended Human-Robot Assistance](coopera_continual_open_ended_human_robot_assistance.md)
-- [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
+- [\[NeurIPS 2025\] Bridging Embodiment Gaps: Deploying Vision-Language-Action Models on Soft Robots](bridging_embodiment_gaps_deploying_vision-language-action_models_on_soft_robots.md)
 - [\[NeurIPS 2025\] Human-assisted Robotic Policy Refinement via Action Preference Optimization](human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)
-- [\[NeurIPS 2025\] Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination](inner_speech_as_behavior_guides_steerable_imitation_of_diverse_behaviors_for_hum.md)
+- [\[NeurIPS 2025\] COOPERA: Continual Open-Ended Human-Robot Assistance](coopera_continual_open_ended_human_robot_assistance.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Video Color Grading via Look-Up Table Generation
 description: >-
-  [ICCV 2025][Image Generation][video color grading] This paper proposes a video color grading framework that explicitly generates Look-Up Tables (LUTs) via a diffusion model. A GS-Extractor captures high-level style featu…
+  [ICCV 2025][Image Generation][video color grading] This paper proposes a video color grading framework that explicitly generates Look-Up Tables (LUTs) via a diffusion model. A GS-Extractor captures high-level style features from a reference scene, and an L-Diffuser generates a color LUT that can be applied losslessly to all video frames in a single forward pass. Text prompts are further supported for fine-grained adjustments such as brightness and contrast.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "reference image"
   - "style transfer"
 date: 2026-05-08
-content_hash: d86f02d6bb4ead1a
+content_hash: 44d2f37d412a5d48
 ---
 
 # Video Color Grading via Look-Up Table Generation
@@ -179,10 +179,10 @@ Applying a diffusion model to explicitly generate LUTs is the most compelling de
 ## Related Papers
 
 - [\[ICCV 2025\] SA-LUT: Spatial Adaptive 4D Look-Up Table for Photorealistic Style Transfer](sa-lut_spatial_adaptive_4d_look-up_table_for_photorealistic_style_transfer.md)
-- [\[ICCV 2025\] Video Motion Graphs](video_motion_graphs.md)
 - [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](balanced_image_stylization_with_style_matching_score.md)
-- [\[ICCV 2025\] SummDiff: Generative Modeling of Video Summarization with Diffusion](summdiff_generative_modeling_of_video_summarization_with_diffusion.md)
+- [\[ICCV 2025\] Video Motion Graphs](video_motion_graphs.md)
 - [\[ICCV 2025\] SMGDiff: Soccer Motion Generation using Diffusion Probabilistic Models](smgdiff_soccer_motion_generation_using_diffusion_probabilistic_models.md)
+- [\[ICCV 2025\] SummDiff: Generative Modeling of Video Summarization with Diffusion](summdiff_generative_modeling_of_video_summarization_with_diffusion.md)
 
 </div>
 

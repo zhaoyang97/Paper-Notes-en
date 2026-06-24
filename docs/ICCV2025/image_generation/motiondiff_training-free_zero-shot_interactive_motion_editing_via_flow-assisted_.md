@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MotionDiff: Training-Free Zero-Shot Interactive Motion Editing via Flow-Assisted Multi-View Diffusion
 description: >-
-  [ICCV 2025][Image Generation][Motion Editing] MotionDiff proposes a training-free, zero-shot multi-view motion editing approach that estimates multi-view optical flow from static scenes via a Point Kinematics Model (PKM)…
+  [ICCV 2025][Image Generation][Motion Editing] MotionDiff proposes a training-free, zero-shot multi-view motion editing approach that estimates multi-view optical flow from static scenes via a Point Kinematics Model (PKM), and leverages a decoupled motion representation to guide Stable Diffusion in generating high-quality, multi-view-consistent motion editing results.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Training-Free Diffusion"
   - "3D Point Cloud"
 date: 2026-05-08
-content_hash: 1955f13cf9d68df8
+content_hash: e3d4b8c9e25a7ee9
 ---
 
 # MotionDiff: Training-Free Zero-Shot Interactive Motion Editing via Flow-Assisted Multi-View Diffusion
@@ -185,10 +185,10 @@ The complete three-component decoupling (background + moving object + occlusion 
 ## Related Papers
 
 - [\[ICCV 2025\] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing](early_timestep_zero-shot_candidate_selection_for_instruction-guided_image_editin.md)
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](../../CVPR2026/image_generation/coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
 - [\[ICCV 2025\] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability](dynamicid_zero-shot_multi-id_image_personalization_with_flexible_facial_editabil.md)
 - [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](anyportal_zero-shot_consistent_video_background_replacement.md)
 - [\[ICCV 2025\] MAVFlow: Preserving Paralinguistic Elements with Conditional Flow Matching for Zero-Shot AV2AV Multilingual Translation](mavflow_preserving_paralinguistic_elements_with_conditional_flow_matching_for_ze.md)
-- [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
 
 </div>
 

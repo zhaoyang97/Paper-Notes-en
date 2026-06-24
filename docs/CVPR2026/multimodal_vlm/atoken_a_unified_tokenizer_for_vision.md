@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AToken: A Unified Tokenizer for Vision
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] AToken unifies the encoding of images, videos, and 3D assets into a shared sparse 4D latent space. Utilizing a pure Transformer with non-adversarial Gram loss, it achieves high-fidelity reconstruction and semantic understanding simultaneously. A single model achieves performance competitive with specialized methods acr
+  [CVPR 2026][Multimodal VLM][Unified vision tokenizer] AToken unifies the encoding of images, videos, and 3D assets into a shared sparse 4D latent space. Utilizing a pure Transformer with non-adversarial Gram loss, it achieves high-fidelity reconstruction and semantic understanding simultaneously. A single model achieves performance competitive with specialized methods across three modalities (Image 0.21 rFID / 82.2% ImageNet, Video 3.01 rFVD, 3D 28.3 PSNR / 90.9% accuracy).
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Unified vision tokenizer"
+  - "4D representation"
+  - "Reconstruction and understanding"
+  - "Non-adversarial training"
+  - "Progressive curriculum"
 date: 2026-05-08
-content_hash: 0b8d197e04b68e08
+content_hash: 0a6951699229447b
 ---
+
 # AToken: A Unified Tokenizer for Vision
 
 **Conference**: CVPR 2026  
@@ -129,15 +135,16 @@ Performance across curriculum stages (for the same continuous model So/C) reveal
 - Value: ⭐⭐⭐⭐ Provides a viable path for a universal vision tokenizer, though the lack of open-source status limits immediate impact.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
+- [\[ICLR 2026\] Manzano: A Simple and Scalable Unified Multimodal Model with a Hybrid Vision Tokenizer](../../ICLR2026/multimodal_vlm/manzano_a_simple_and_scalable_unified_multimodal_model_with_a_hybrid_vision_toke.md)
 - [\[NeurIPS 2025\] UniTok: A Unified Tokenizer for Visual Generation and Understanding](../../NeurIPS2025/multimodal_vlm/unitok_a_unified_tokenizer_for_visual_generation_and_understanding.md)
 - [\[CVPR 2026\] Modeling Cross-vision Synergy for Unified Large Vision Model](modeling_cross-vision_synergy_for_unified_large_vision_model.md)
-- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
-- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
+- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
 
 </div>
 

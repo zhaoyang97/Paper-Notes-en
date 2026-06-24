@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation
 description: >-
-  [AAAI 2026][Robotics][Semantic-geometric disentanglement] This paper proposes SpatialActor, a framework that explicitly disentangles semantic and geometric representations. It introduces a Semantic-Guided Geometry Module…
+  [AAAI 2026 Oral][Robotics][Semantic-geometric disentanglement] This paper proposes SpatialActor, a framework that explicitly disentangles semantic and geometric representations. It introduces a Semantic-Guided Geometry Module (SGM) that adaptively fuses noisy depth features with a pretrained depth estimation expert prior, and a Spatial Transformer (SPT) that encodes low-level spatial position cues. SpatialActor achieves 87.4% success rate on 50+ RLBench tasks (SOTA +6.0%) and…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Robotics"
   - "Semantic-geometric disentanglement"
   - "depth estimation prior"
@@ -12,7 +12,7 @@ tags:
   - "robust manipulation"
   - "RLBench"
 date: 2026-05-08
-content_hash: 3bb0259524ff78f2
+content_hash: 293dc80ef181de5d
 ---
 
 # SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation
@@ -161,11 +161,11 @@ SPT assigns precise 3D positional information to each spatial token:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](../../CVPR2026/robotics/learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
 - [\[AAAI 2026\] SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation](semanticvla_semantic-aligned_sparsification_and_enhancement_for_efficient_roboti.md)
-- [\[NeurIPS 2025\] Learning Spatial-Aware Manipulation Ordering](../../NeurIPS2025/robotics/learning_spatial-aware_manipulation_ordering.md)
-- [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](../../ICML2026/robotics/spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
-- [\[AAAI 2026\] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception](touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept.md)
+- [\[CVPR 2026\] Expanding Spatial and Temporal Context for Robotic Imitation Learning With Scene Graphs](../../CVPR2026/robotics/expanding_spatial_and_temporal_context_for_robotic_imitation_learning_with_scene.md)
 - [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
+- [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](../../ICML2026/robotics/spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
 
 </div>
 

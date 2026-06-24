@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Ours proposes the SSE (Strict Subgoal Execution) framework, which strictly distinguishes between success and failure in reaching subgoals through **Frontier Experience Replay (FER)**. Combined with a decoupled exploration strategy and failure-aware path optimization, it enforces subgoal completion within each high-leve
+  [ICLR 2026][Reinforcement Learning][Hierarchical RL] Ours proposes the SSE (Strict Subgoal Execution) framework, which strictly distinguishes between success and failure in reaching subgoals through **Frontier Experience Replay (FER)**. Combined with a decoupled exploration strategy and failure-aware path optimization, it enforces subgoal completion within each high-level step, significantly reducing the number of high-level decision steps and improving success rates in long-…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Hierarchical RL"
+  - "Subgoal Execution"
+  - "Graph Planning"
+  - "Frontier Experience Replay"
+  - "Long-Horizon Tasks"
 date: 2026-05-08
-content_hash: 93663b3f287fc2ef
+content_hash: 16d595e523206ffc
 ---
+
 # Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -145,9 +151,9 @@ where $\text{ratio}_{\text{fail}}(v_2)$ is the historical failure rate of node $
 
 - [\[ICLR 2026\] RD-HRL: Generating Reliable Sub-Goals for Long-Horizon Sparse-Reward Tasks](rd-hrl_generating_reliable_sub-goals_for_long-horizon_sparse-reward_tasks.md)
 - [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
-- [\[ICLR 2026\] Toward Conservative Planning from Human-AI Preferences in Reinforcement Learning](toward_conservative_planning_from_human-ai_preferences_in_reinforcement_learning.md)
-- [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](../../ICML2026/reinforcement_learning/long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
 - [\[ICLR 2026\] Goal Reaching with Eikonal-Constrained Hierarchical Quasimetric Reinforcement Learning](goal_reaching_with_eikonal-constrained_hierarchical_quasimetric_reinforcement_le.md)
+- [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](../../ICML2026/reinforcement_learning/long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
+- [\[ICLR 2026\] Toward Conservative Planning from Human-AI Preferences in Reinforcement Learning](toward_conservative_planning_from_human-ai_preferences_in_reinforcement_learning.md)
 
 </div>
 

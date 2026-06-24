@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MV-TAP: Tracking Any Point in Multi-View Videos
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] MV-TAP extends "Track Any Point" (TAP) from single-view to multi-view synchronized videos by modeling directly in 2D pixel space. It utilizes camera ray encoding to inject geometric context and a view attention layer to exchange information across viewpoints. This allows for trajectory completion in the presence of occ
+  [CVPR 2026][Video Understanding][Track Any Point (TAP)] MV-TAP extends "Track Any Point" (TAP) from single-view to multi-view synchronized videos by modeling directly in 2D pixel space. It utilizes camera ray encoding to inject geometric context and a view attention layer to exchange information across viewpoints. This allows for trajectory completion in the presence of occlusion or motion blur in a single view by leveraging other views, significantly outperforming single-vie…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Track Any Point (TAP)"
+  - "Multi-view"
+  - "View Attention"
+  - "Camera Ray Encoding"
+  - "Occlusion"
 date: 2026-05-08
-content_hash: 1e756358babcde97
+content_hash: 78e6c3626b38b64e
 ---
+
 # MV-TAP: Tracking Any Point in Multi-View Videos
 
 **Conference**: CVPR 2026  
@@ -138,9 +144,9 @@ View count ablation (DexYCB): MV-TAP AJ steadily rose from 39.2 to 44.2 as views
 ## Related Papers
 
 - [\[CVPR 2026\] MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras](mer-tracker_towards_high-speed_3d_point_tracking_via_multi-view_event-rgb_hybrid.md)
-- [\[CVPR 2025\] ETAP: Event-based Tracking of Any Point](../../CVPR2025/video_understanding/etap_event-based_tracking_of_any_point.md)
-- [\[CVPR 2026\] TAPFormer: Robust Arbitrary Point Tracking via Transient Asynchronous Fusion of Frames and Events](ttapformer_robust_arbitrary_point_tracking_via_transient_asynchronous_fusion_of_.md)
 - [\[NeurIPS 2025\] TAPVid-360: Tracking Any Point in 360 from Narrow Field of View Video](../../NeurIPS2025/video_understanding/tapvid-360_tracking_any_point_in_360_from_narrow_field_of_view_video.md)
+- [\[CVPR 2026\] Generative Point Tracking and Forecasting](generative_point_tracking_and_forecasting.md)
+- [\[CVPR 2025\] ETAP: Event-based Tracking of Any Point](../../CVPR2025/video_understanding/etap_event-based_tracking_of_any_point.md)
 - [\[CVPR 2026\] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling](realworld_point_tracking_with_verifierguided_pseud.md)
 
 </div>

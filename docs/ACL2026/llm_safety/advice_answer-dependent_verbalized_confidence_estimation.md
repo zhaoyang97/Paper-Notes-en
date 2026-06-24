@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ADVICE: Answer-Dependent Verbalized Confidence Estimation
 description: >-
-  [ACL 2026][LLM Safety][verbalized confidence] This paper diagnoses the root cause of LLM verbalized overconfidence as "confidence hardly depends on the generated answer" through JSD and attribution analysis. It proposes ADVICE, a lightweight contrastive fine-tuning framework using answer pairs, which employs JSD/Margin/Sum losses to force the confidence distributi
+  [ACL 2026][LLM Safety][verbalized confidence] This paper diagnoses the root cause of LLM verbalized overconfidence as "confidence hardly depends on the generated answer" through JSD and attribution analysis. It proposes ADVICE, a lightweight contrastive fine-tuning framework using answer pairs, which employs JSD/Margin/Sum losses to force the confidence distribution for correct answers to be significantly higher than for incorrect ones. This reduces Gemma2-9b's ECE on TriviaQ…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - verbalized confidence
-  - calibration
-  - answer-grounded
-  - contrastive fine-tuning
-  - overconfidence
+  - "ACL 2026"
+  - "LLM Safety"
+  - "verbalized confidence"
+  - "calibration"
+  - "answer-grounded"
+  - "contrastive fine-tuning"
+  - "overconfidence"
 date: 2026-05-08
-content_hash: f069bb11bac1d53a
+content_hash: 87115c4bd7aeab9c
 ---
+
 # ADVICE: Answer-Dependent Verbalized Confidence Estimation
 
 **Conference**: ACL 2026  

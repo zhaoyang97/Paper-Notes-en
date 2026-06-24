@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] R2R decouples "degradation adaptation" from the backbone by offloading it to an external retrievable "degradation bank." During training, a degradation amalgamator distills clean priors from various degradations into the bank; during inference, degradation matching retrieves the most relevant priors to modulate feature
+  [CVPR 2026][Image Restoration][All-in-One Image Restoration] R2R decouples "degradation adaptation" from the backbone by offloading it to an external retrievable "degradation bank." During training, a degradation amalgamator distills clean priors from various degradations into the bank; during inference, degradation matching retrieves the most relevant priors to modulate features. This allows a single lightweight backbone to handle multiple degradations stably…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "All-in-One Image Restoration"
+  - "Degradation Decoupling"
+  - "Retrieval-Based Prior"
+  - "Degradation Bank"
+  - "Lightweight"
 date: 2026-05-08
-content_hash: dfe7adc84263cb78
+content_hash: 89d625d0bf73b512
 ---
+
 # Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank
 
 **Conference**: CVPR 2026  
@@ -138,15 +144,15 @@ Complexity comparison (3-task setting):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
 - [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
 - [\[CVPR 2026\] FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration](fape-ir_frequency-aware_planning_and_execution_framework_for_all-in-one_image_re.md)
-- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
-- [\[CVPR 2025\] Degradation-Aware Feature Perturbation for All-in-One Image Restoration](../../CVPR2025/image_restoration/degradation-aware_feature_perturbation_for_all-in-one_image_restoration.md)
+- [\[CVPR 2026\] Restore, Assess, Repeat: A Unified Framework for Iterative Image Restoration](restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)
+- [\[ICLR 2026\] Rethinking Expressivity and Degradation-Awareness in Attention for All-in-One Blind Image Restoration](../../ICLR2026/image_restoration/rethinking_expressivity_and_degradation-awareness_in_attention_for_all-in-one_bl.md)
 
 </div>
 

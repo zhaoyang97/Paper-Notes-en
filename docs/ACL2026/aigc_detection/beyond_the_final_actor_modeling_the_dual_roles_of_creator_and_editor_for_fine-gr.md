@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection
 description: >-
-  [ACL 2026][AIGC Detection][Paper Note] Ours proposes RACE (Rhetorical Analysis for Creator-Editor Modeling), which utilizes Rhetorical Structure Theory (RST) to construct logic graphs for modeling the thought architecture of the "Creator," while extracting discourse unit-level features to capture the linguistic style of the "Editor." This enables four-way f
+  [ACL 2026][AIGC Detection][LLM-generated text detection] Ours proposes RACE (Rhetorical Analysis for Creator-Editor Modeling), which utilizes Rhetorical Structure Theory (RST) to construct logic graphs for modeling the thought architecture of the "Creator," while extracting discourse unit-level features to capture the linguistic style of the "Editor." This enables four-way fine-grained LLM-generated text detection (Human-written / LLM-generated / LLM-polished Human / Human-re…
 tags:
-  - ACL 2026
-  - AIGC Detection
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "LLM-generated text detection"
+  - "Rhetorical Structure Theory"
+  - "Creator-Editor modeling"
+  - "Fine-grained classification"
+  - "Discourse analysis"
 date: 2026-05-08
-content_hash: b5dc87a91661df42
+content_hash: 459d9210c3849073
 ---
+
 # Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection
 
 **Conference**: ACL 2026  
@@ -125,11 +131,11 @@ Four-way detection on the HART dataset.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](../../ICLR2026/aigc_detection/unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
+- [\[ICLR 2026\] HLD: Approximate Hierarchical Linguistic Distribution Modeling for LLM-Generated Text Detection](../../ICLR2026/aigc_detection/hld_approximate_hierarchical_linguistic_distribution_modeling_for_llm-generated_.md)
 - [\[ACL 2025\] HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring](../../ACL2025/aigc_detection/haco-det_a_study_towards_fine-grained_machine-generated_text_detection_under_hum.md)
-- [\[CVPR 2026\] Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks](../../CVPR2026/aigc_detection/fine-grained_image_aesthetic_assessment_learning_discriminative_scores_from_rela.md)
 - [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
-- [\[ACL 2026\] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)
-- [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](../../CVPR2026/aigc_detection/ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
+- [\[CVPR 2026\] Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks](../../CVPR2026/aigc_detection/fine-grained_image_aesthetic_assessment_learning_discriminative_scores_from_rela.md)
 
 </div>
 

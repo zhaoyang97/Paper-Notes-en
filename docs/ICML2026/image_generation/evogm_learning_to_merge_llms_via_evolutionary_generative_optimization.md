@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EvoGM: Learning to Merge LLMs via Evolutionary Generative Optimization
 description: >-
-  [ICML 2026][Image Generation][Cycle Consistency] EvoGM reformulates "searching for task-vector merging coefficients $\bm{\lambda}$" from an evolutionary search with hand-crafted mutation operators into a learnable generative task. It uses a pair of cycle-consistent MLP generators to learn the distribution of high-performance regions from historical winner-loser pairs
+  [ICML 2026][Image Generation][Model Merging] EvoGM reformulates "searching for task-vector merging coefficients $\bm{\lambda}$" from an evolutionary search with hand-crafted mutation operators into a learnable generative task. It uses a pair of cycle-consistent MLP generators to learn the distribution of high-performance regions from historical winner-loser pairs. By wrapping this in an outer "basis shift" mechanism to refresh the expert pool periodically…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Cycle Consistency
+  - "ICML 2026"
+  - "Image Generation"
+  - "Model Merging"
+  - "Task Vectors"
+  - "Evolutionary Algorithms"
+  - "Generative Optimization"
+  - "Cycle Consistency"
 date: 2026-05-08
-content_hash: 8b30fa72755d2e34
+content_hash: 093494fb7baa8c8c
 ---
+
 # EvoGM: Learning to Merge LLMs via Evolutionary Generative Optimization
 
 **Conference**: ICML 2026  
@@ -145,9 +150,9 @@ Configuration: 4-expert merging, population 8, $R=2, T=2$.
 ## Related Papers
 
 - [\[ICML 2026\] Threshold-Guided Optimization for Visual Generative Models](threshold-guided_optimization_for_visual_generative_models.md)
-- [\[CVPR 2025\] Decouple-Then-Merge: Finetune Diffusion Models as Multi-Task Learning](../../CVPR2025/image_generation/decouple-then-merge_finetune_diffusion_models_as_multi-task_learning.md)
 - [\[ICML 2026\] A Systematic Investigation of RL-Jailbreaking in LLMs](a_systematic_investigation_of_rl-jailbreaking_in_llms.md)
-- [\[ICML 2026\] $f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data](f-trajectory_balance_a_loss_family_for_tuning_gflownets_generative_models_and_ll.md)
+- [\[CVPR 2025\] Decouple-Then-Merge: Finetune Diffusion Models as Multi-Task Learning](../../CVPR2025/image_generation/decouple-then-merge_finetune_diffusion_models_as_multi-task_learning.md)
+- [\[CVPR 2026\] UniGenDet: A Unified Generative-Discriminative Framework for Co-evolutionary Generation and Detection](../../CVPR2026/image_generation/unigendet_a_unified_generative-discriminative_framework_for_co-evolutionary_imag.md)
 - [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
 
 </div>

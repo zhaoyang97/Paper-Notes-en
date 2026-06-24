@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SiMO: Single-Modality-Operable Multimodal Collaborative Perception
 description: >-
-  [ICLR 2026][Autonomous Driving][collaborative perception] Ours proposes the SiMO framework, which utilizes the LAMMA fusion module and the PAFR training strategy to achieve a multi-agent collaborative perception system capable of operating under arbitrary modality loss (specifically when LiDAR fails and only cameras are available) for the first time. It functions like a paral
+  [ICLR 2026][Autonomous Driving][collaborative perception] Ours proposes the SiMO framework, which utilizes the LAMMA fusion module and the PAFR training strategy to achieve a multi-agent collaborative perception system capable of operating under arbitrary modality loss (specifically when LiDAR fails and only cameras are available) for the first time. It functions like a parallel circuit—as long as one path exists, the system works.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - collaborative perception
-  - multimodal fusion
-  - modality failure
-  - BEV
-  - 3D detection
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "collaborative perception"
+  - "multimodal fusion"
+  - "modality failure"
+  - "BEV"
+  - "3D detection"
 date: 2026-05-08
-content_hash: e94e5df5bf9abfdf
+content_hash: ee32ae8025811dab
 ---
+
 # SiMO: Single-Modality-Operable Multimodal Collaborative Perception
 
 **Conference**: ICLR 2026  
@@ -171,10 +172,10 @@ After LAMMA, the discrepancy between multimodal features drops from 0.67 to 0.05
 ## Related Papers
 
 - [\[ICLR 2026\] Rate-Distortion Optimized Pragmatic Communication for Collaborative Perception](rate-distortion_optimized_pragmatic_communication_for_collaborative_perception.md)
+- [\[ICLR 2026\] GT-Space: Enhancing Heterogeneous Collaborative Perception with Ground Truth Feature Space](gt-space_enhancing_heterogeneous_collaborative_perception_with_ground_truth_feat.md)
+- [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](../../CVPR2026/autonomous_driving/colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
 - [\[NeurIPS 2025\] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion](../../NeurIPS2025/autonomous_driving/layer-wise_modality_decomposition_for_interpretable_multimodal_sensor_fusion.md)
 - [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](../../CVPR2026/autonomous_driving/catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
-- [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](../../CVPR2026/autonomous_driving/colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
-- [\[CVPR 2026\] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views](../../CVPR2026/autonomous_driving/unsupervised_multi-agent_and_single-agent_perception_from_cooperative_views.md)
 
 </div>
 

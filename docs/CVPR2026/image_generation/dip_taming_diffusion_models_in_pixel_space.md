@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiP: Taming Diffusion Models in Pixel Space
 description: >-
-  [CVPR 2026][Image Generation][Patch Detailer Head] Ours proposes DiP, an efficient pixel-space diffusion framework. By utilizing a DiT backbone to model global structures with large patches and a lightweight Patch Detailer Head to recover local details, it achieves computational efficiency comparable to LDMs without requiring a VAE, reaching a 1.79 FID on ImageNet 256×
+  [CVPR 2026][Image Generation][Pixel-space Diffusion] Ours proposes DiP, an efficient pixel-space diffusion framework. By utilizing a DiT backbone to model global structures with large patches and a lightweight Patch Detailer Head to recover local details, it achieves computational efficiency comparable to LDMs without requiring a VAE, reaching a 1.79 FID on ImageNet 256×256.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Patch Detailer Head
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Pixel-space Diffusion"
+  - "Patch Detailer Head"
+  - "Global-Local Decoupling"
+  - "End-to-End Generation"
+  - "Efficient Inference"
 date: 2026-05-08
-content_hash: 58a7e24505fe7b4a
+content_hash: afe737dfaf1ae4fa
 ---
+
 # DiP: Taming Diffusion Models in Pixel Space
 
 **Conference**: CVPR 2026  
@@ -133,7 +138,7 @@ Ablations were conducted on the head insertion point—posterior, intermediate i
 
 - [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
 - [\[CVPR 2026\] Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models](taming_sampling_perturbations_with_variance_expansion_loss_for_latent_diffusion_.md)
-- [\[CVPR 2026\] Scale Space Diffusion：把尺度空间塞进扩散过程](scale_space_diffusion.md)
+- [\[CVPR 2026\] Scale Space Diffusion: Integrating Scale Space into the Diffusion Process](scale_space_diffusion.md)
 - [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models](eda_arbitrary_noise_diffusion_design_space.md)
 - [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
 

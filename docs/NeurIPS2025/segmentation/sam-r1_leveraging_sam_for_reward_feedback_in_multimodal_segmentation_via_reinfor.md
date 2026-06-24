@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAM-R1: Leveraging SAM for Reward Feedback in Multimodal Segmentation via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Segmentation][Reasoning Segmentation] SAM-R1 proposes an end-to-end reasoning segmentation framework that, for the first time…
+  [NeurIPS 2025][Segmentation][Reasoning Segmentation] SAM-R1 proposes an end-to-end reasoning segmentation framework that, for the first time, incorporates SAM as a reward provider within the reinforcement learning training loop. Combined with a tiered IoU accuracy reward, asymmetric clipping, and token-level loss normalization in an improved GRPO algorithm, the method achieves a gIoU of 60.2% on the ReasonSeg zero-shot benchmark—surpassing Seg-Zero and other approaches—using…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Large Language Models"
   - "GRPO"
 date: 2026-05-08
-content_hash: 08d7b9b863e92b14
+content_hash: 5cc88b4fdfa5c66b
 ---
 
 # SAM-R1: Leveraging SAM for Reward Feedback in Multimodal Segmentation via Reinforcement Learning
@@ -154,11 +154,11 @@ Qwen2.5VL-7B serves as the base model and SAM2-Large as the segmentation model, 
 
 ## Related Papers
 
+- [\[ICLR 2026\] SAM-Veteran: An MLLM-based Human-like SAM Agent for Reasoning Segmentation](../../ICLR2026/segmentation/sam-veteran_an_mllm-based_human-like_sam_agent_for_reasoning_segmentation.md)
 - [\[NeurIPS 2025\] FineRS: Fine-grained Reasoning and Segmentation of Small Objects with Reinforcement Learning](finers_fine-grained_reasoning_and_segmentation_of_small_objects_with_reinforceme.md)
+- [\[CVPR 2025\] HFP-SAM: Hierarchical Frequency Prompted SAM for Efficient Marine Animal Segmentation](../../CVPR2025/segmentation/hfp-sam_hierarchical_frequency_prompted_sam_for_efficient_marine_animal_segmenta.md)
+- [\[CVPR 2025\] Effective SAM Combination for Open-Vocabulary Semantic Segmentation](../../CVPR2025/segmentation/effective_sam_combination_for_open-vocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] E-SAM: Training-Free Segment Every Entity Model](../../ICCV2025/segmentation/e-sam_training-free_segment_every_entity_model.md)
-- [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](../../AAAI2026/segmentation/saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
-- [\[ICCV 2025\] SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree](../../ICCV2025/segmentation/sam2long_enhancing_sam_2_for_long_video_segmentation_with_a.md)
-- [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](../../ICCV2025/segmentation/himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 
 </div>
 

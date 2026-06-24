@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Time-Aware Auto White Balance in Mobile Photography
 description: >-
-  [ICCV 2025][Model Compression][Auto White Balance] This paper proposes a lightweight illumination estimation method (~5K parameters) that leverages contextual metadata from mobile devices (timestamps and geolocation) alo…
+  [ICCV 2025][Model Compression][Auto White Balance] This paper proposes a lightweight illumination estimation method (~5K parameters) that leverages contextual metadata from mobile devices (timestamps and geolocation) alongside image color information. The method achieves performance on par with or superior to much larger models on a newly collected dataset of 3,224 smartphone images, and runs in under 0.25ms on a flagship mobile DSP.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Mobile Photography"
   - "Contextual Metadata"
 date: 2026-05-08
-content_hash: c9c67563e65a59f3
+content_hash: 410aa2c113f49a33
 ---
 
 # Time-Aware Auto White Balance in Mobile Photography
@@ -131,11 +131,11 @@ The method also achieves state-of-the-art or near state-of-the-art results on th
 
 ## Related Papers
 
+- [\[ECCV 2024\] Auto-DAS: Automated Proxy Discovery for Training-free Distillation-aware Architecture Search](../../ECCV2024/model_compression/auto-das_automated_proxy_discovery_for_training-free_distillation-aware_architec.md)
 - [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](../../NeurIPS2025/model_compression/correlation_dimension_of_auto-regressive_large_language_models.md)
 - [\[ICCV 2025\] ViT-Linearizer: Distilling Quadratic Knowledge into Linear-Time Vision Models](vit-linearizer_distilling_quadratic_knowledge_into_linear-time_vision_models.md)
+- [\[CVPR 2025\] HiAP: A Multi-Granular Stochastic Auto-Pruning Framework for Vision Transformers](../../CVPR2025/model_compression/hiap_a_multi-granular_stochastic_auto-pruning_framework_for_vision_transformers.md)
 - [\[ICCV 2025\] Scheduling Weight Transitions for Quantization-Aware Training](scheduling_weight_transitions_for_quantization-aware_training.md)
-- [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
-- [\[NeurIPS 2025\] Inference-Time Hyper-Scaling with KV Cache Compression](../../NeurIPS2025/model_compression/inference-time_hyper-scaling_with_kv_cache_compression.md)
 
 </div>
 

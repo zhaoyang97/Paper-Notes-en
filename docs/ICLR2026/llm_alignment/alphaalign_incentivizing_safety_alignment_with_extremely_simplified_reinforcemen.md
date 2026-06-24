@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AlphaAlign: Incentivizing Safety Alignment with Extremely Simplified Reinforcement Learning
 description: >-
-  [ICLR 2026][Alignment & RLHF][Reinforcement Learning] AlphaAlign utilizes an extremely simplified pure reinforcement learning framework—requiring only binary "harmful/benign" labels and fewer than 200 RL steps—to incentivize the "latent safety self-awareness" embedded in large models during pre-training. By requiring the model to generate a safety rationale before answeri
+  [ICLR2026][LLM Alignment][Safety Alignment] AlphaAlign utilizes an extremely simplified pure reinforcement learning framework—requiring only binary "harmful/benign" labels and fewer than 200 RL steps—to incentivize the "latent safety self-awareness" embedded in large models during pre-training. By requiring the model to generate a safety rationale before answering and employing a dual-reward system (verifiable safety reward + normalized helpfulness reward)…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Safety Alignment"
+  - "Verifiable Rewards"
+  - "Reinforcement Learning"
+  - "Proactive Safety Reasoning"
+  - "safety-utility trade-off"
 date: 2026-05-08
-content_hash: ef1da534b7f5ae2f
+content_hash: 899658c4dd783790
 ---
+
 # AlphaAlign: Incentivizing Safety Alignment with Extremely Simplified Reinforcement Learning
 
 **Conference**: ICLR2026  

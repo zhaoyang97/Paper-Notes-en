@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Unseen Bias: How Norm Discrepancy in Pre-Norm MLLMs Leads to Visual Information Loss
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper identifies that the widely adopted Pre-Norm architecture in MLLMs causes a severe norm discrepancy between high-norm visual tokens and low-norm text tokens, leading to slow visual token updates ("representation inertia") and cross-modal attention collapse. The authors insert a **carefully initialized LayerNo
+  [ICLR 2026][Multimodal VLM][Pre-Norm Architecture] This paper identifies that the widely adopted Pre-Norm architecture in MLLMs causes a severe norm discrepancy between high-norm visual tokens and low-norm text tokens, leading to slow visual token updates ("representation inertia") and cross-modal attention collapse. The authors insert a **carefully initialized LayerNorm** after the visual projector to force norm alignment, coupled with Global Weight Compensation to resolve s…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Pre-Norm Architecture"
+  - "Norm Discrepancy"
+  - "Cross-modal Fusion"
+  - "LayerNorm Alignment"
+  - "Gradient Compensation"
 date: 2026-05-08
-content_hash: f0a3663dec9574cc
+content_hash: b1f937c4a79a823c
 ---
+
 # The Unseen Bias: How Norm Discrepancy in Pre-Norm MLLMs Leads to Visual Information Loss
 
 **Conference**: ICLR 2026  
@@ -141,8 +147,8 @@ Ablation on initialization strategy (LayerNorm parameters after Stage 1):
 
 - [\[ICLR 2026\] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images](how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images.md)
 - [\[CVPR 2026\] Learning to Focus and Precise Cropping: A Reinforcement Learning Framework with Information Gaps and Grounding Loss for MLLMs](../../CVPR2026/multimodal_vlm/learning_to_focus_and_precise_croppinga_reinforcement_learning_framework_with_in.md)
-- [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](visual_jigsaw_post-training_improves_mllms.md)
 - [\[AAAI 2026\] Explore How to Inject Beneficial Noise in MLLMs](../../AAAI2026/multimodal_vlm/explore_how_to_inject_beneficial_noise_in_mllms.md)
+- [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](visual_jigsaw_post-training_improves_mllms.md)
 - [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
 
 </div>

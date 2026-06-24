@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TrajRAG: Retrieving Geometric-Semantic Experience for Zero-Shot Object Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] TrajRAG compresses historical navigation trajectories into a "topological-polar" structure stored in a lifelong cumulative RAG knowledge base. During navigation, each candidate frontier generates a hypothetical trajectory to retrieve similar historical experiences in a coarse-to-fine manner. These experiences are then
+  [CVPR 2026][Robotics][Zero-Shot Object Navigation] TrajRAG compresses historical navigation trajectories into a "topological-polar" structure stored in a lifelong cumulative RAG knowledge base. During navigation, each candidate frontier generates a hypothetical trajectory to retrieve similar historical experiences in a coarse-to-fine manner. These experiences are then fed into an LLM planner to select the next waypoint, achieving new SOTA results across three zero-shot Object…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Zero-Shot Object Navigation"
+  - "Retrieval-Augmented Generation"
+  - "Topological-Polar Trajectories"
+  - "Lifelong Memory"
+  - "LLM Planning"
 date: 2026-05-08
-content_hash: a4bb5f757658a48b
+content_hash: 614f1f252bcb2217
 ---
+
 # TrajRAG: Retrieving Geometric-Semantic Experience for Zero-Shot Object Navigation
 
 **Conference**: CVPR 2026  
@@ -154,10 +160,10 @@ TrajRAG achieves new SOTA results across all benchmarks, attributed to using his
 
 ## Related Papers
 
-- [\[CVPR 2026\] History to Future: Evolving Agent with Experience and Thought for Zero-shot Vision-and-Language Navigation](history_to_future_evolving_agent_with_experience_and_thought_for_zero-shot_visio.md)
+- [\[AAAI 2026\] PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory](../../AAAI2026/robotics/panonav_mapless_zero-shot_object_navigation_with_panoramic_scene_parsing_and_dyn.md)
 - [\[CVPR 2026\] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation](bridging_the_2d-3d_gap_a_hierarchical_semantic-geometric_map_for_vision_language.md)
 - [\[ECCV 2024\] Prioritized Semantic Learning for Zero-shot Instance Navigation](../../ECCV2024/robotics/prioritized_semantic_learning_for_zero-shot_instance_navigation.md)
-- [\[AAAI 2026\] PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory](../../AAAI2026/robotics/panonav_mapless_zero-shot_object_navigation_with_panoramic_scene_parsing_and_dyn.md)
+- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
 - [\[CVPR 2026\] Semantic Audio-Visual Navigation in Continuous Environments](semantic_audio-visual_navigation_in_continuous_environments.md)
 
 </div>

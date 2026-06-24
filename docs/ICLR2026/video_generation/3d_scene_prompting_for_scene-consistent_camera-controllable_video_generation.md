@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] This paper proposes **3DScenePrompt**, which utilizes dual spatio-temporal conditions—"temporally adjacent frames + projected views from a static 3D point cloud"—to extend future videos from any length of input video, maintaining scene consistency with the entire history while achieving precise camera control.
+  [ICLR 2026][Video Generation][Camera-Controllable Video Generation] This paper proposes **3DScenePrompt**, which utilizes dual spatio-temporal conditions—"temporally adjacent frames + projected views from a static 3D point cloud"—to extend future videos from any length of input video, maintaining scene consistency with the entire history while achieving precise camera control.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Camera-Controllable Video Generation"
+  - "Scene Consistency"
+  - "3D Scene Memory"
+  - "Dynamic SLAM"
+  - "Dual Spatio-Temporal Conditioning"
 date: 2026-05-08
-content_hash: 24dbaa64a0d3b9c5
+content_hash: 4a705d8cd48055a3
 ---
+
 # 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation
 
 **Conference**: ICLR 2026  
@@ -124,8 +130,18 @@ The geometric consistency metric MEt3R error **decreased by approximately 77%** 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+## Related Papers
+
+- [\[CVPR 2026\] CineScene: Implicit 3D as Effective Scene Representation for Cinematic Video Generation](../../CVPR2026/video_generation/cinescene_implicit_3d_as_effective_scene_representation_for_cinematic_video_gene.md)
+- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](../../CVPR2026/video_generation/geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
+- [\[ICLR 2026\] MoCa: Modeling Object Consistency for 3D Camera Control in Video Generation](moca_modeling_object_consistency_for_3d_camera_control_in_video_generation.md)
+- [\[ICLR 2026\] NewtonGen: Physics-consistent and Controllable Text-to-Video Generation via Neural Newtonian Dynamics](newtongen_physics-consistent_and_controllable_text-to-video_generation_via_neura.md)
+- [\[CVPR 2026\] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation](../../CVPR2026/video_generation/diff4splat_controllable_4d_scene_generation_with_latent_dynamic_reconstruction_m.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] CineScene: Implicit 3D as Effective Scene Representation for Cinematic Video Generation](../../CVPR2026/video_generation/cinescene_implicit_3d_as_effective_scene_representation_for_cinematic_video_gene.md)

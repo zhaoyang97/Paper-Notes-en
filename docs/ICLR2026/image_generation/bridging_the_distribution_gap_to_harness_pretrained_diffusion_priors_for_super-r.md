@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging the Distribution Gap to Harness Pretrained Diffusion Priors for Super-Resolution
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] DM-SR maintains the pretrained diffusion model entirely intact, training only an image encoder to "translate" the low-resolution (LR) image directly into the "noisy image" distribution familiar to the diffusion model. By using a fixed denoiser for single-step generation, it achieves current SOTA perceptual quality in o
+  [ICLR2026][Image Generation][Super-resolution] DM-SR maintains the pretrained diffusion model entirely intact, training only an image encoder to "translate" the low-resolution (LR) image directly into the "noisy image" distribution familiar to the diffusion model. By using a fixed denoiser for single-step generation, it achieves current SOTA perceptual quality in one-step diffusion.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Super-resolution"
+  - "Pretrained diffusion priors"
+  - "Distribution matching"
+  - "One-step diffusion"
+  - "Timestep estimation"
 date: 2026-05-08
-content_hash: 47bf1f9dfed206f9
+content_hash: d240d6a54be61b6a
 ---
+
 # Bridging the Distribution Gap to Harness Pretrained Diffusion Priors for Super-Resolution
 
 **Conference**: ICLR2026  
@@ -145,11 +151,11 @@ Ablation on timestep ground truth (Table 5) confirms LPIPS is superior to pixel 
 
 ## Related Papers
 
-- [\[CVPR 2025\] FaithDiff: Unleashing Diffusion Priors for Faithful Image Super-Resolution](../../CVPR2025/image_generation/faithdiff_unleashing_diffusion_priors_for_faithful_image_super-resolution.md)
 - [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](../../CVPR2026/image_generation/bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 - [\[ICLR 2026\] Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models](bridging_generalization_gap_of_heterogeneous_federated_clients_using_generative_.md)
+- [\[ICLR 2026\] Composition of Pretrained Diffusion Models: A Logic-Based Calculus](composition_of_pretrained_diffusion_models_a_logic-based_calculus.md)
+- [\[CVPR 2025\] FaithDiff: Unleashing Diffusion Priors for Faithful Image Super-Resolution](../../CVPR2025/image_generation/faithdiff_unleashing_diffusion_priors_for_faithful_image_super-resolution.md)
 - [\[ECCV 2024\] XPSR: Cross-modal Priors for Diffusion-based Image Super-Resolution](../../ECCV2024/image_generation/xpsr_crossmodal_priors_for_diffusionbased_image_superresolut.md)
-- [\[ICLR 2026\] Decoupled DMD: CFG Augmentation as the Spear, Distribution Matching as the Shield](decoupled_dmd_cfg_augmentation_as_the_spear_distribution_matching_as_the_shield.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dimension-Free Decision Calibration for Nonlinear Loss Functions
 description: >-
-  [ICLR 2026][learning_theory][RKHS] When downstream decision-makers utilize model predictions for decision-making, "decision calibration" requires predictions to be unbiased with respect to decision-relevant events. This paper extends this concept from linear to nonlinear loss functions. It proves that auditing calibration under deterministic optimal res
+  [ICLR2026][learning theory][Decision calibration] When downstream decision-makers utilize model predictions for decision-making, "decision calibration" requires predictions to be unbiased with respect to decision-relevant events. This paper extends this concept from linear to nonlinear loss functions. It proves that auditing calibration under deterministic optimal response inevitably requires $\Omega(\sqrt{m})$ samples (where $m$ is the feature dimension). However…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - RKHS
+  - "ICLR2026"
+  - "learning theory"
+  - "Decision calibration"
+  - "nonlinear loss"
+  - "RKHS"
+  - "quantal response"
+  - "sample complexity"
 date: 2026-05-08
-content_hash: 2341be949781761a
+content_hash: 59803c126eb109a4
 ---
+
 # Dimension-Free Decision Calibration for Nonlinear Loss Functions
 
 **Conference**: ICLR2026  
@@ -124,15 +129,15 @@ This is a purely theoretical work with no empirical experiments; "experimental r
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] An Improved Model-free Decision-estimation Coefficient with Applications in Adversarial MDPs](an_improved_model-free_decision-estimation_coefficient_with_applications_in_adve.md)
-- [\[ICML 2026\] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](../../ICML2026/learning_theory/expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)
 - [\[ICLR 2026\] Decision Aggregation under Quantal Response](decision_aggregation_under_quantal_response.md)
-- [\[ICLR 2026\] Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding](deep_flexqp_accelerated_nonlinear_programming_via_deep_unfolding.md)
 - [\[ICLR 2026\] A Faster Parameter-Free Regret Matching Algorithm](a_faster_parameter-free_regret_matching_algorithm.md)
+- [\[ICML 2026\] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](../../ICML2026/learning_theory/expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)
+- [\[ICLR 2026\] Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding](deep_flexqp_accelerated_nonlinear_programming_via_deep_unfolding.md)
 
 </div>
 

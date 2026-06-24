@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Human-Like Robot Handwriting via Contour-Aware Generation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] To enable writing robots to produce characters with human-like stroke thickness variations, this paper proposes a new task "Contour-aware Handwriting Trajectory Reconstruction (CHTR)" and builds the CHTR-110K dataset with 110,000 samples. It introduces the G-HTR method based on multi-scale character graphs to reconstru
+  [CVPR 2026][Robotics][Robot Handwriting] To enable writing robots to produce characters with human-like stroke thickness variations, this paper proposes a new task "Contour-aware Handwriting Trajectory Reconstruction (CHTR)" and builds the CHTR-110K dataset with 110,000 samples. It introduces the G-HTR method based on multi-scale character graphs to reconstruct character images into "trajectory sequences with stroke width," significantly surpassing SOTAs such as TrajFormer ac…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot Handwriting"
+  - "Trajectory Reconstruction"
+  - "Stroke Contour"
+  - "Graph Neural Network"
+  - "Calligraphy Robot"
 date: 2026-05-08
-content_hash: 01f2defe81793bac
+content_hash: e6e663584ddfd59f
 ---
+
 # Towards Human-Like Robot Handwriting via Contour-Aware Generation
 
 **Conference**: CVPR 2026  
@@ -147,15 +153,16 @@ Impact of Graph Encoder ($\varepsilon_G$) and Multi-Scale Graph Learning (MGL) o
 - Value: ⭐⭐⭐⭐⭐ High practical value for calligraphy robots and embodied AI, with a valuable new dataset.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](../../AAAI2026/robotics/towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
-- [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
+- [\[CVPR 2026\] ORV: 4D Occupancy-centric Robot Video Generation](orv_4d_occupancy-centric_robot_video_generation.md)
+- [\[CVPR 2026\] SocialNav: Training Human-Inspired Foundation Model for Socially-Aware Embodied Navigation](socialnav_training_human-inspired_foundation_model_for_socially-aware_embodied_n.md)
 - [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
 - [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
-- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
 
 </div>
 

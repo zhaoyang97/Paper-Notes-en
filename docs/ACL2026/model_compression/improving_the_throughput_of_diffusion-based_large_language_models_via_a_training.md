@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration
 description: >-
-  [ACL 2026][Model Compression][Diffusion Language Model] CadLLM is proposed as a training-free adaptive inference acceleration method that utilizes token decoding confidence signals from diffusion language models (dLLMs) to dynamically adjust four dimensions: block size, step count, vocabulary sampling range, and submission threshold. It achieves 1.1-2.28× throughput gains o
+  [ACL 2026 Findings][Model Compression][Diffusion Language Models] CadLLM is proposed as a training-free adaptive inference acceleration method that utilizes token decoding confidence signals from diffusion language models (dLLMs) to dynamically adjust four dimensions: block size, step count, vocabulary sampling range, and submission threshold. It achieves 1.1-2.28× throughput gains on LLaDA and DREAM while maintaining competitive accuracy.
 tags:
-  - ACL 2026
-  - Model Compression
-  - Diffusion Language Model
-  - Inference Acceleration
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Diffusion Language Models"
+  - "Inference Acceleration"
+  - "Adaptive Decoding"
+  - "Confidence Calibration"
+  - "Training-free method"
 date: 2026-05-08
-content_hash: d137a5abdedc8502
+content_hash: 4ea67e4fc36e2aa7
 ---
+
 # CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration
 
 **Conference**: ACL 2026 Findings  
@@ -130,10 +134,10 @@ Results on LLaDA-Instruct (single H100):
 ## Related Papers
 
 - [\[ACL 2026\] BaseCal: Unsupervised Confidence Calibration via Base Model Signals](basecal_unsupervised_confidence_calibration_via_base_model_signals.md)
+- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](../../ICLR2026/model_compression/gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
+- [\[ICML 2026\] FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models](../../ICML2026/model_compression/fair-calib_frontier-aware_instability-reweighted_calibration_for_post-training_q.md)
 - [\[ACL 2026\] TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination](tell-tale_task_efficient_llms_with_task_aware_layer_elimination.md)
 - [\[ACL 2026\] VecCISC: Improving Confidence-Informed Self-Consistency with Reasoning Trace Clustering and Candidate Answer Selection](veccisc_improving_confidence-informed_self-consistency_with_reasoning_trace_clus.md)
-- [\[ICML 2026\] FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models](../../ICML2026/model_compression/fair-calib_frontier-aware_instability-reweighted_calibration_for_post-training_q.md)
-- [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](../../NeurIPS2025/model_compression/duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
 
 </div>
 

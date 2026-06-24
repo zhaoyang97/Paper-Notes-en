@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations
 description: >-
-  [ICCV 2025][adversarial purification] This paper proposes NAPPure, a framework that jointly optimizes the underlying clean image and perturbation parameters via likelihood maximization…
+  [ICCV 2025][adversarial purification] This paper proposes NAPPure, a framework that jointly optimizes the underlying clean image and perturbation parameters via likelihood maximization, extending adversarial purification beyond additive perturbations to handle blur, occlusion, and geometric distortion. NAPPure achieves an average robust accuracy of 73.93% on GTSRB, compared to only 43.2% for conventional methods.
 tags:
   - "ICCV 2025"
   - "adversarial purification"
@@ -13,7 +13,7 @@ tags:
   - "occlusion attacks"
   - "geometric distortion"
 date: 2026-05-08
-content_hash: 4f07071cf0f64884
+content_hash: 3a7f351a531cf422
 ---
 
 # NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations
@@ -183,11 +183,11 @@ When $f(x, \epsilon) = x + \epsilon$ and $p(\epsilon)$ is uniform, NAPPure reduc
 
 ## Related Papers
 
+- [\[ECCV 2024\] Active Generation for Image Classification](../../ECCV2024/others/active_generation_for_image_classification.md)
 - [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](../../AAAI2026/others/boosting_adversarial_transferability_via_ensemble_non-attention.md)
+- [\[ACL 2025\] Battling against Tough Resister: Strategy Planning with Adversarial Game for Non-collaborative Dialogues](../../ACL2025/others/battling_against_tough_resister_strategy_planning_with_adversarial_game_for_non-.md)
 - [\[ICCV 2025\] Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents](adversarial_data_augmentation_for_single_domain_generalization_via_lyapunov_expo.md)
-- [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](../../ICLR2026/others/distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
-- [\[ICCV 2025\] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval](learning_visual_hierarchies_in_hyperbolic_space_for_image_retrieval.md)
-- [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
+- [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](../../CVPR2026/others/prototype-based_causal_intervention_for_multi-label_image_classification.md)
 
 </div>
 

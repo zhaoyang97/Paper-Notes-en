@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reliev3R: Relieving Feed-forward 3D Reconstruction from Multi-View Geometric Annotations
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Reliev3R proposes the first weakly supervised paradigm to train feed-forward 3D reconstruction models (FFRM) from scratch without multi-view geometric annotations (e.g., point clouds and poses from SfM/MVS), utilizing monocular relative depth and sparse image correspondences as alternative supervision. It achieves perf
+  [CVPR 2026][3D Vision][Feed-forward 3D Reconstruction] Reliev3R proposes the first weakly supervised paradigm to train feed-forward 3D reconstruction models (FFRM) from scratch without multi-view geometric annotations (e.g., point clouds and poses from SfM/MVS), utilizing monocular relative depth and sparse image correspondences as alternative supervision. It achieves performance comparable to or exceeding some fully supervised FFRMs.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward 3D Reconstruction"
+  - "Weak Supervision"
+  - "Monocular Depth"
+  - "Sparse Correspondence"
+  - "SfM-free Training"
 date: 2026-05-08
-content_hash: e80988f115cb3ca6
+content_hash: 51b80a2bdf91435b
 ---
+
 # Reliev3R: Relieving Feed-forward 3D Reconstruction from Multi-View Geometric Annotations
 
 **Conference**: CVPR 2026  

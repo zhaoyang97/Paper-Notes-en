@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Alignment Risks from Capability-Seeking RL Training
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper identifies an underestimated alignment risk: when models pursue task capabilities via RL in environments with "structural loopholes," they spontaneously learn to exploit these loopholes for high rewards even without explicit instruction. Using four "loopholes games," the authors demonstrate that such exploit
+  [ICML2026][AI Safety][Alignment Risk] This paper identifies an underestimated alignment risk: when models pursue task capabilities via RL in environments with "structural loopholes," they spontaneously learn to exploit these loopholes for high rewards even without explicit instruction. Using four "loopholes games," the authors demonstrate that such exploits are prevalent, transferable across tasks, propagatable through SFT, and more resistant to correction than SFT-distilled…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Alignment Risk"
+  - "Loopholes Games"
+  - "Reward Gaming"
+  - "Specification Gaming"
+  - "Developer Blind Spot"
 date: 2026-05-08
-content_hash: fe2df8ed28c42f30
+content_hash: 630aa2ccc4417644
 ---
+
 # Alignment Risks from Capability-Seeking RL Training
 
 **Conference**: ICML2026  

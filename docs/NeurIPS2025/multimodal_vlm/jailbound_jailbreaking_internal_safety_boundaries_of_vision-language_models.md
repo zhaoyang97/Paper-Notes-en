@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] JailBound: Jailbreaking Internal Safety Boundaries of Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][jailbreak] Inspired by the Eliciting Latent Knowledge (ELK) framework, this paper is the first to reveal that VLMs possess approximable safety decision boundaries in the latent space of fus…
+  [NeurIPS 2025][Multimodal VLM][jailbreak] Inspired by the Eliciting Latent Knowledge (ELK) framework, this paper is the first to reveal that VLMs possess approximable safety decision boundaries in the latent space of fusion layers. It proposes JailBound, a two-stage attack framework comprising Safety Boundary Probing and Safety Boundary Crossing, which jointly optimizes image and text adversarial perturbations to cross this boundary. JailBound achieves average attack success…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "ELK"
   - "cross-modal perturbation"
 date: 2026-05-08
-content_hash: 7b520003da0ed002
+content_hash: e107a1464cbe4cc3
 ---
 
 # JailBound: Jailbreaking Internal Safety Boundaries of Vision-Language Models
@@ -150,11 +150,11 @@ JailBound operates in two stages:
 
 ## Related Papers
 
+- [\[ACL 2025\] Do Vision-Language Models Have Internal World Models? Towards an Atomic Evaluation](../../ACL2025/multimodal_vlm/do_vision-language_models_have_internal_world_models_towards_an_atomic_evaluatio.md)
 - [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](../../ICCV2025/multimodal_vlm/ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
-- [\[NeurIPS 2025\] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](video-safetybench_a_benchmark_for_safety_evaluation_of_video_lvlms.md)
 - [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](../../ICML2026/multimodal_vlm/jailbreaking_vision-language_models_through_the_visual_modality.md)
-- [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
 - [\[ICCV 2025\] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency](../../ICCV2025/multimodal_vlm/jailbreaking_multimodal_large_language_models_via_shuffle_inconsistency.md)
+- [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][World Models] The HiF-VLA framework is proposed, utilizing Motion Vectors as compact temporal primitives to unify Hindsight, Insight, and Foresight reasoning capabilities. By achieving bidirectional temporal expansion for VLA models, it significantly outperforms baselines in long-horizon manipulation tasks with minimal computational
+  [CVPR 2026][Robotics][VLA Model] The HiF-VLA framework is proposed, utilizing Motion Vectors as compact temporal primitives to unify Hindsight, Insight, and Foresight reasoning capabilities. By achieving bidirectional temporal expansion for VLA models, it significantly outperforms baselines in long-horizon manipulation tasks with minimal computational overhead.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - World Models
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA Model"
+  - "Motion Representation"
+  - "Temporal Reasoning"
+  - "Long-horizon Manipulation"
+  - "World Model"
 date: 2026-05-08
-content_hash: d22bb8019b22bcd8
+content_hash: 993b2d2c8d21b364
 ---
+
 # HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -170,8 +175,8 @@ History frame stacking results in a 3.15× latency increase and actually degrade
 - [\[CVPR 2026\] Cross-Hand Latent Representation for Vision-Language-Action Models](cross-hand_latent_representation_for_vision-language-action_models.md)
 - [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
 - [\[CVPR 2026\] ForeAct: Steering Your VLA with Efficient Visual Foresight Planning](foreact_steering_your_vla_with_efficient_visual_foresight_planning.md)
-- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
+- [\[CVPR 2026\] Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight](mantis_a_versatile_vision-language-action_model_with_disentangled_visual_foresig.md)
+- [\[CVPR 2026\] StaMo: Unsupervised Learning of Generalizable Robot Motion from Compact State Representation](stamo_unsupervised_learning_of_generalizable_robot_motion_from_compact_state_rep.md)
 
 </div>
 

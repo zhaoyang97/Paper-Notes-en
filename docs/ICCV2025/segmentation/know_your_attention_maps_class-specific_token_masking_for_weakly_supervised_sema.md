@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Know Your Attention Maps: Class-specific Token Masking for Weakly Supervised Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Weakly Supervised Semantic Segmentation] This paper proposes an end-to-end weakly supervised semantic segmentation method that introduces multiple [CLS] tokens (one per class) into a ViT…
+  [ICCV 2025][Segmentation][Weakly Supervised Semantic Segmentation] This paper proposes an end-to-end weakly supervised semantic segmentation method that introduces multiple [CLS] tokens (one per class) into a ViT, applies random masking to [CLS] token output embeddings, and prunes redundant attention heads. Class-specific pseudo segmentation masks are generated directly from self-attention maps without any additional CAM module.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "CLS Token"
   - "Attention Head Pruning"
 date: 2026-05-08
-content_hash: a3f44e7c58d81e49
+content_hash: 54e8e0e10bbe083d
 ---
 
 # Know Your Attention Maps: Class-specific Token Masking for Weakly Supervised Semantic Segmentation
@@ -139,11 +139,11 @@ The input image is split into patches and projected into a token sequence. $C$ [
 
 ## Related Papers
 
-- [\[AAAI 2026\] SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation](../../AAAI2026/segmentation/ssr_semantic_and_spatial_rectification_for_clip-based_weakly_supervised_segmenta.md)
+- [\[CVPR 2026\] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation](../../CVPR2026/segmentation/leveraging_class_distributions_in_clip_for_weakly_supervised_semantic_segmentati.md)
+- [\[CVPR 2025\] Exploring CLIP's Dense Knowledge for Weakly Supervised Semantic Segmentation](../../CVPR2025/segmentation/exploring_clips_dense_knowledge_for_weakly_supervised_semantic_segmentation.md)
+- [\[ECCV 2024\] Cs2K: Class-Specific and Class-Shared Knowledge Guidance for Incremental Semantic Segmentation](../../ECCV2024/segmentation/cs2k_class-specific_and_class-shared_knowledge_guidance_for_incremental_semantic.md)
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
-- [\[ICCV 2025\] ConformalSAM: Unlocking the Potential of Foundational Segmentation Models in Semi-Supervised Semantic Segmentation with Conformal Prediction](conformalsam_unlocking_the_potential_of_foundational_segmentation_models_in_semi.md)
-- [\[ICCV 2025\] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup](dictas_a_framework_for_class-generalizable_few-shot_anomaly_segmentation_via_dic.md)
-- [\[ICCV 2025\] Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP](know_no_better_a_data-driven_approach_for_enhancing_negation_awareness_in_clip.md)
+- [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](../../CVPR2026/segmentation/frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Parametric Pareto Set Learning for Expensive Multi-Objective Optimization
 description: >-
-  [AAAI 2026][Model Compression][Pareto Set Learning] This paper proposes the PPSL-MOBO framework, which employs a hypernetwork + LoRA architecture to learn a unified mapping from preference vectors and extrinsic parameter…
+  [AAAI 2026][Model Compression][Pareto Set Learning] This paper proposes the PPSL-MOBO framework, which employs a hypernetwork + LoRA architecture to learn a unified mapping from preference vectors and extrinsic parameters to Pareto-optimal solutions. Combined with Gaussian process surrogate models and hypervolume improvement acquisition strategies, the framework efficiently addresses expensive parametric multi-objective optimization problems.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "Parametric Multi-Objective Optimization"
 date: 2026-05-08
-content_hash: deeb712976743274
+content_hash: 30d5378d58cbca7e
 ---
 
 # Parametric Pareto Set Learning for Expensive Multi-Objective Optimization
@@ -186,11 +186,11 @@ Ablation studies confirm the contribution of each component: the LoRA adaptation
 
 ## Related Papers
 
+- [\[ACL 2025\] Bone Soups: A Seek-and-Soup Model Merging Approach for Controllable Multi-Objective Generation](../../ACL2025/model_compression/bone_soups_multi_objective_gen.md)
 - [\[CVPR 2026\] Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning](../../CVPR2026/model_compression/frequency_switching_mechanism_for_parameter-ecient_multi-task_learning.md)
 - [\[ICLR 2026\] SwiReasoning: Switch-Thinking in Latent and Explicit for Pareto-Superior Reasoning](../../ICLR2026/model_compression/swireasoning_switch-thinking_in_latent_and_explicit_for_pareto-superior_reasonin.md)
-- [\[NeurIPS 2025\] Find your Needle: Small Object Image Retrieval via Multi-Object Attention Optimization](../../NeurIPS2025/model_compression/find_your_needle_small_object_image_retrieval_via_multi-object_attention_optimiz.md)
-- [\[NeurIPS 2025\] Efficient Parametric SVD of Koopman Operator for Stochastic Dynamical Systems](../../NeurIPS2025/model_compression/efficient_parametric_svd_of_koopman_operator_for_stochastic_dynamical_systems.md)
-- [\[ICCV 2025\] SAMO: A Lightweight Sharpness-Aware Approach for Multi-Task Optimization with Joint Global-Local Perturbation](../../ICCV2025/model_compression/samo_a_lightweight_sharpness-aware_approach_for_multi-task_optimization_with_joi.md)
+- [\[AAAI 2026\] MetaGDPO: Alleviating Catastrophic Forgetting with Metacognitive Knowledge through Group Direct Preference Optimization](metagdpo_alleviating_catastrophic_forgetting_with_metacognitive_knowledge_throug.md)
+- [\[ACL 2025\] MoRE: A Mixture of Low-Rank Experts for Adaptive Multi-Task Learning](../../ACL2025/model_compression/more_a_mixture_of_low-rank_experts_for_adaptive_multi-task_learning.md)
 
 </div>
 

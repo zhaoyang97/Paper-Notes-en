@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Dual Goal Representations
 description: >-
-  [ICLR 2026][Reinforcement Learning][goal-conditioned RL] The paper proposes "dual goal representations," which encode goals using the set of temporal distances from all states to the target state. The authors provide theoretical proof that this representation is sufficient for optimal policy recovery and naturally filters exogenous noise. A practical learning algorithm based
+  [ICLR 2026][Reinforcement Learning][goal-conditioned RL] The paper proposes "dual goal representations," which encode goals using the set of temporal distances from all states to the target state. The authors provide theoretical proof that this representation is sufficient for optimal policy recovery and naturally filters exogenous noise. A practical learning algorithm based on asymmetric inner product parametrization is designed, consistently improving the performance of thr…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - goal-conditioned RL
-  - dual goal representation
-  - OGBench
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "goal-conditioned RL"
+  - "dual goal representation"
+  - "temporal distance"
+  - "asymmetric inner product parametrization"
+  - "OGBench"
 date: 2026-05-08
-content_hash: cc467be50cc68718
+content_hash: 509b0ba5dc5076d5
 ---
+
 # Dual Goal Representations
 
 **Conference**: ICLR 2026  
@@ -154,11 +157,11 @@ Key Finding: The ranking of distance errors (3) > (1) ≈ (2) > (4) aligns perfe
 
 ## Related Papers
 
+- [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
 - [\[ICLR 2026\] Goal Reaching with Eikonal-Constrained Hierarchical Quasimetric Reinforcement Learning](goal_reaching_with_eikonal-constrained_hierarchical_quasimetric_reinforcement_le.md)
+- [\[ICLR 2026\] Inter-Agent Relative Representations for Multi-Agent Option Discovery](inter-agent_relative_representations_for_multi-agent_option_discovery.md)
 - [\[ICLR 2026\] Wavelet Predictive Representations for Non-Stationary Reinforcement Learning](wavelet_predictive_representations_for_non-stationary_reinforcement_learning.md)
 - [\[ICLR 2026\] Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses](primal-dual_policy_optimization_for_linear_cmdps_with_adversarial_losses.md)
-- [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
-- [\[ICLR 2026\] Inter-Agent Relative Representations for Multi-Agent Option Discovery](inter-agent_relative_representations_for_multi-agent_option_discovery.md)
 
 </div>
 

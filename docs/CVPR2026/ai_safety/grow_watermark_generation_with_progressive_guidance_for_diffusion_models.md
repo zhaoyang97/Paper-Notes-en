@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GROW: Watermark Generation with Progressive Guidance for Diffusion Models
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] GROW reformulates diffusion model watermarking from "one-time embedding in initial noise requiring expensive DDIM inversion during extraction" to "progressive guidance using frequency-domain gradients during denoising." This allows the watermark to naturally grow into the image texture, enabling **inversion-free** extr
+  [CVPR 2026][AI Safety][Digital Watermarking] GROW reformulates diffusion model watermarking from "one-time embedding in initial noise requiring expensive DDIM inversion during extraction" to "progressive guidance using frequency-domain gradients during denoising." This allows the watermark to naturally grow into the image texture, enabling **inversion-free** extraction—surpassing existing methods in robustness and invisibility while achieving nearly 100x faster extraction.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Digital Watermarking"
+  - "Diffusion Models"
+  - "Training-free"
+  - "Frequency Domain Guidance"
+  - "Inversion-free Extraction"
 date: 2026-05-08
-content_hash: d3db1a2c12833a3c
+content_hash: d685ac16246d852c
 ---
+
 # GROW: Watermark Generation with Progressive Guidance for Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -146,11 +151,11 @@ Progressive Guidance vs. One-Step Injection (MS-COCO, Table 4) — Injecting the
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
+- [\[ICLR 2026\] NatADiff: Adversarial Boundary Guidance for Natural Adversarial Diffusion](../../ICLR2026/ai_safety/natadiff_adversarial_boundary_guidance_for_natural_adversarial_diffusion.md)
 - [\[CVPR 2026\] Bridging Privacy and Provenance: Traceable Virtual Identity Generation](bridging_privacy_and_provenance_traceable_virtual_identity_generation.md)
+- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases](red-teaming_retrieval-augmented_diffusion_models_via_poisoning_knowledge_bases.md)
 - [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
-- [\[CVPR 2026\] Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models](roots_beneath_the_cut_uncovering_the_risk_of_concept_revival_in_pruning-based_un.md)
 
 </div>
 

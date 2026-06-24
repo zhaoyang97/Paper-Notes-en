@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ModHiFi: Identifying High Fidelity Predictive Components for Model Modification
 description: >-
-  [NeurIPS 2025][LLM Safety][model modification] This paper proposes the Subset Fidelity metric and the ModHiFi framework. Through theoretical analysis…
+  [NeurIPS 2025 Spotlight][LLM Safety][model modification] This paper proposes the Subset Fidelity metric and the ModHiFi framework. Through theoretical analysis, it proves that local reconstruction error linearly upper-bounds global prediction error for Lipschitz continuous networks. Without requiring training data, loss functions, or gradients—using only synthetic data—the framework identifies high-fidelity (HiFi) components within a model, and unifies the tasks of structured…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Safety"
   - "model modification"
   - "structured pruning"
@@ -13,7 +13,7 @@ tags:
   - "Lipschitz continuity"
   - "synthetic data"
 date: 2026-05-08
-content_hash: e00b2ea930f6e2c7
+content_hash: baefb4bd4a8aaa32
 ---
 
 # ModHiFi: Identifying High Fidelity Predictive Components for Model Modification
@@ -168,10 +168,10 @@ Empirical observations show that across all evaluated models, fewer than 20% of 
 ## Related Papers
 
 - [\[NeurIPS 2025\] InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy](invisibleink_high-utility_and_low-cost_text_generation_with_differential_privacy.md)
-- [\[NeurIPS 2025\] PULSE: Practical Evaluation Scenarios for Large Multimodal Model Unlearning](pulse_practical_evaluation_scenarios_for_large_multimodal_model_unlearning.md)
 - [\[AAAI 2026\] The Confidence Trap: Gender Bias and Predictive Certainty in LLMs](../../AAAI2026/llm_safety/the_confidence_trap_gender_bias_and_predictive_certainty_in_llms.md)
-- [\[NeurIPS 2025\] FALCON: Fine-grained Activation Manipulation by Contrastive Orthogonal Unalignment for Large Language Model](falcon_fine-grained_activation_manipulation_by_contrastive_orthogonal_unalignmen.md)
 - [\[ICLR 2026\] Gaussian Certified Unlearning in High Dimensions: A Hypothesis Testing Approach](../../ICLR2026/llm_safety/gaussian_certified_unlearning.md)
+- [\[ICLR 2026\] Efficient Adversarial Attacks on High-dimensional Offline Bandits](../../ICLR2026/llm_safety/efficient_adversarial_attacks_on_high-dimensional_offline_bandits.md)
+- [\[ACL 2026\] Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding](../../ACL2026/llm_safety/context-fidelity_boosting_enhancing_faithful_generation_through_watermark-inspir.md)
 
 </div>
 

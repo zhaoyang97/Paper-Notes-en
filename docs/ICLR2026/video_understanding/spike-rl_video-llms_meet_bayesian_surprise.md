@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SPIKE-RL: Video-LLMs Meet Bayesian Surprise
 description: >-
-  [ICLR 2026][Video Understanding][Video-LLM] This paper quantifies unexpected moments in videos into an interpretable score using "Bayesian Surprise." By tracking the KL divergence of a Video-LLM's belief distribution regarding "what happens next" before and after seeing new frames, it locates surprise segments and allocates more frame budget to these key moments
+  [ICLR 2026][Video Understanding][Video-LLM] This paper quantifies unexpected moments in videos into an interpretable score using "Bayesian Surprise." By tracking the KL divergence of a Video-LLM's belief distribution regarding "what happens next" before and after seeing new frames, it locates surprise segments and allocates more frame budget to these key moments via surprise-weighted sampling. Furthermore, it employs GRPO (SPIKE-RL) to optimize belief hypotheses using video c…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Video-LLM
-  - GRPO
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Video-LLM"
+  - "Bayesian Surprise"
+  - "Belief Tracking"
+  - "Frame Sampling"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 2139bc239aa22c1b
+content_hash: 1b49d43b3745f207
 ---
+
 # SPIKE-RL: Video-LLMs Meet Bayesian Surprise
 
 **Conference**: ICLR 2026  
@@ -139,15 +143,16 @@ Gains are most significant on surprise-heavy videos: ExFunTube +7.0, FunQA +4.6.
 - Value: ⭐⭐⭐⭐ A plug-and-play, query-agnostic sampling improvement with high potential for streaming or robotics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] VidBridge-R1: Bridging QA and Captioning for RL-based Video Understanding Models with Intermediate Proxy Tasks](vidbridge-r1_bridging_qa_and_captioning_for_rl-based_video_understanding_models_.md)
 - [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](../../CVPR2026/video_understanding/spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
 - [\[ICLR 2026\] Measure Twice, Cut Once: A Semantic-Oriented Approach to Video Temporal Localization with Video LLMs](measure_twice_cut_once_a_semantic-oriented_approach_to_video_temporal_localizati.md)
+- [\[ICLR 2026\] Divid: Disentangled Spatial-Temporal Modeling within LLMs for Temporally Grounded Video Understanding](divid_disentangled_spatial-temporal_modeling_within_llms_for_temporally_grounded.md)
 - [\[CVPR 2026\] An Empirical Study on How Video-LLMs Answer Video Questions](../../CVPR2026/video_understanding/an_empirical_study_on_how_video-llms_answer_video_questions.md)
-- [\[ICLR 2026\] Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection](steering_and_rectifying_latent_representation_manifolds_in_frozen_multi-modal_ll.md)
-- [\[AAAI 2026\] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](../../AAAI2026/video_understanding/r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)
 
 </div>
 

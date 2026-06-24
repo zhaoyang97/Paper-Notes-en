@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] History to Future: Evolving Agent with Experience and Thought for Zero-shot Vision-and-Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] EVONAV equips LLM agents for Zero-shot Vision-and-Language Navigation in Continuous Environments (VLN-CE) with a "Review History + Predict Future" feedback loop. By using Future Chain-of-Thought (F-CoT) to predict future actions and landmarks for estimating navigation progress, and History Chain-of-Experience (H-CoE) t
+  [CVPR 2026][LLM Agent][Zero-shot VLN-CE] EVONAV equips LLM agents for Zero-shot Vision-and-Language Navigation in Continuous Environments (VLN-CE) with a "Review History + Predict Future" feedback loop. By using Future Chain-of-Thought (F-CoT) to predict future actions and landmarks for estimating navigation progress, and History Chain-of-Experience (H-CoE) to summarize completed trajectories and traversed scenes into an online retrievable experience bank…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Zero-shot VLN-CE"
+  - "LLM Navigation"
+  - "Feedback Reasoning"
+  - "Experience Replay"
+  - "Future Chain-of-Thought"
 date: 2026-05-08
-content_hash: 81168a806d08eaaf
+content_hash: 20319bc51ba4fb9c
 ---
+
 # History to Future: Evolving Agent with Experience and Thought for Zero-shot Vision-and-Language Navigation
 
 **Conference**: CVPR 2026  
@@ -126,15 +132,16 @@ Table 4 on R2R-CE (Base is Gemini-2.5-pro naive reasoning):
 - Value: ⭐⭐⭐⭐ Significant practical progress for the zero-shot embodied navigation community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] TrajRAG: Retrieving Geometric-Semantic Experience for Zero-Shot Object Navigation](trajrag_retrieving_geometric-semantic_experience_for_zero-shot_object_navigation.md)
-- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
-- [\[CVPR 2026\] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation](bridging_the_2d-3d_gap_a_hierarchical_semantic-geometric_map_for_vision_language.md)
-- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
-- [\[CVPR 2026\] FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation](finecog_nav_fine_grained_cognitive_modules_for_zero_shot_uav_navigation.md)
+- [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](../../ICML2026/llm_agent/scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
+- [\[ECCV 2024\] Agent3D-Zero: An Agent for Zero-shot 3D Understanding](../../ECCV2024/llm_agent/agent3d-zero_an_agent_for_zero-shot_3d_understanding.md)
+- [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
+- [\[CVPR 2026\] JarvisEvo: Towards a Self-Evolving Photo Editing Agent with Synergistic Editor-Evaluator Optimization](jarvisevo_towards_a_self-evolving_photo_editing_agent_with_synergistic_editor-ev.md)
+- [\[CVPR 2026\] Learning to Select Visual Tools from Experience](learning_to_select_visual_tools_from_experience.md)
 
 </div>
 

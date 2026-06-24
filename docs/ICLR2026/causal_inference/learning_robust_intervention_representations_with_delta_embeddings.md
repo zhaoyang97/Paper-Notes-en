@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learning Robust Intervention Representations with Delta Embeddings
 description: >-
-  [ICLR 2026][Causal Inference][Causal Representation Learning] The authors propose the Causal Delta Embedding (CDE) framework, which represents interventions/actions as the vector difference between pre- and post-intervention states in a latent space. By applying three constraints—independence, sparsity, and invariance—the framework learns robust intervention representations. It s
+  [ICLR 2026][Causal Inference][Causal Representation Learning] The authors propose the Causal Delta Embedding (CDE) framework, which represents interventions/actions as the vector difference between pre- and post-intervention states in a latent space. By applying three constraints—independence, sparsity, and invariance—the framework learns robust intervention representations. It significantly outperforms baselines in OOD generalization within the Causal Triplet challenge and a…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Causal Representation Learning
-  - Delta Embeddings
-  - out-of-distribution
-  - Intervention
-  - Contrastive Learning
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Representation Learning"
+  - "Delta Embeddings"
+  - "out-of-distribution"
+  - "Intervention"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 485127bf7ce29fb8
+content_hash: 6c9f8391176781f2
 ---
+
 # Learning Robust Intervention Representations with Delta Embeddings
 
 **Conference**: ICLR 2026  
@@ -170,9 +171,9 @@ Global CDE reduces the generalization gap from 0.56 to 0.21 in single-object sce
 
 - [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](counterfactual_explanations_on_robust_perceptual_geodesics.md)
 - [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
-- [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
-- [\[ICML 2026\] Toward Scalable and Valid Conditional Independence Testing with Spectral Representations](../../ICML2026/causal_inference/toward_scalable_and_valid_conditional_independence_testing_with_spectral_represe.md)
 - [\[NeurIPS 2025\] A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning](../../NeurIPS2025/causal_inference/a_principle_of_targeted_intervention_for_multi-agent_reinforcement_learning.md)
+- [\[ICML 2026\] Toward Scalable and Valid Conditional Independence Testing with Spectral Representations](../../ICML2026/causal_inference/toward_scalable_and_valid_conditional_independence_testing_with_spectral_represe.md)
+- [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
 
 </div>
 

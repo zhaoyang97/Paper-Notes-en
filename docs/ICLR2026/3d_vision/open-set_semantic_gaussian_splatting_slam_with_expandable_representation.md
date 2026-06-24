@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Open-Set Semantic Gaussian Splatting SLAM with Expandable Representation
 description: >-
-  [ICLR 2026][3D Vision][SLAM] This work integrates a **dynamically expandable semantic feature pool** into 3DGS-SLAM. Each 3D Gaussian stores only a low-dimensional index key to soft-aggregate semantics from the shared pool on demand. This enables online reconstruction of 3D scenes with open-vocabulary semantics using minimal memory. Consistency ta
+  [ICLR 2026][3D Vision][Gaussian Splatting] This work integrates a **dynamically expandable semantic feature pool** into 3DGS-SLAM. Each 3D Gaussian stores only a low-dimensional index key to soft-aggregate semantics from the shared pool on demand. This enables online reconstruction of 3D scenes with open-vocabulary semantics using minimal memory. Consistency targets and semantic stability guidance are employed to resolve cross-view semantic inconsistencies…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - SLAM
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "SLAM"
+  - "Open-set Semantics"
+  - "Expandable Feature Pool"
+  - "Cross-view Consistency"
 date: 2026-05-08
-content_hash: f37e1f451abb878f
+content_hash: 893685f5e5470e8c
 ---
+
 # Open-Set Semantic Gaussian Splatting SLAM with Expandable Representation
 
 **Conference**: ICLR 2026  
@@ -131,6 +136,7 @@ On Replica Room 0 with SplaTAM backbone (Table 4):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -138,8 +144,8 @@ On Replica Room 0 with SplaTAM backbone (Table 4):
 - [\[ECCV 2024\] SGS-SLAM: Semantic Gaussian Splatting for Neural Dense SLAM](../../ECCV2024/3d_vision/sgs-slam_semantic_gaussian_splatting_for_neural_dense_slam.md)
 - [\[ICLR 2026\] GOOD: Geometry-guided Out-of-Distribution Modeling for Open-set Test-time Adaptation in Point Cloud Semantic Segmentation](good_geometry-guided_out-of-distribution_modeling_for_open-set_test-time_adaptat.md)
 - [\[CVPR 2026\] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM](../../CVPR2026/3d_vision/odgs-slam_omnidirectional_gaussian_splatting_slam.md)
+- [\[ICLR 2026\] Stylos: Multi-View 3D Stylization with Single-Forward Gaussian Splatting](stylos_multi-view_3d_stylization_with_single-forward_gaussian_splatting.md)
 - [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](learning_unified_representation_of_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](../../ICCV2025/3d_vision/3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
 
 </div>
 

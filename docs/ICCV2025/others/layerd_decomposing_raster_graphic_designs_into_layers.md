@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LayerD: Decomposing Raster Graphic Designs into Layers
 description: >-
-  [ICCV 2025][Layer decomposition] This paper proposes LayerD, a method that decomposes raster graphic designs into editable layers by iteratively extracting the unoccluded top layer and completing the background. It lever…
+  [ICCV 2025][Layer decomposition] This paper proposes LayerD, a method that decomposes raster graphic designs into editable layers by iteratively extracting the unoccluded top layer and completing the background. It leverages domain priors of graphic design (texture-flat regions) for refinement, and introduces a DTW-based hierarchical evaluation protocol.
 tags:
   - "ICCV 2025"
   - "Layer decomposition"
@@ -11,7 +11,7 @@ tags:
   - "palette optimization"
   - "evaluation protocol"
 date: 2026-05-08
-content_hash: d5081727975e199e
+content_hash: 46d745bb5315f378
 ---
 
 # LayerD: Decomposing Raster Graphic Designs into Layers
@@ -66,9 +66,9 @@ This design **unifies detection, segmentation, and layer ordering into a single 
 
    This component exploits a domain prior of graphic design — the prevalence of **texture-flat regions** (e.g., solid-color backgrounds, vector shapes, text):
 
-   - **Background refinement**: The inpainting target region is segmented into connected components, and the color gradient of surrounding areas is computed. If zero-gradient regions dominate, a color palette is extracted and the completion result is mapped to the nearest palette color in Lab space, eliminating artifacts introduced by the completion model in flat regions.
+    - **Background refinement**: The inpainting target region is segmented into connected components, and the color gradient of surrounding areas is computed. If zero-gradient regions dominate, a color palette is extracted and the completion result is mapped to the nearest palette color in Lab space, eliminating artifacts introduced by the completion model in flat regions.
 
-   - **Foreground refinement**: Connected components of the foreground are similarly analyzed. For regions classified as flat: areas matching palette colors are extracted from the original image or intermediate completed background. If the overlap with the predicted alpha exceeds a threshold, a new alpha mask is generated from this region. This significantly improves boundary quality and detection of fine decorative layers (lines, borders).
+    - **Foreground refinement**: Connected components of the foreground are similarly analyzed. For regions classified as flat: areas matching palette colors are extracted from the original image or intermediate completed background. If the overlap with the predicted alpha exceeds a threshold, a new alpha mask is generated from this region. This significantly improves boundary quality and detection of fine decorative layers (lines, borders).
 
 3. **Foreground Color Estimation**:
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FactGuard: Event-Centric and Commonsense-Guided Fake News Detection
 description: >-
-  [AAAI2026][Social Computing][fake news detection] This paper proposes FactGuard, a framework that leverages LLMs to extract event-centric content (with style removed) and generate commonsense rationales. A Rationale Usab…
+  [AAAI2026][Social Computing][fake news detection] This paper proposes FactGuard, a framework that leverages LLMs to extract event-centric content (with style removed) and generate commonsense rationales. A Rationale Usability Evaluator dynamically assesses the reliability of LLM suggestions. Knowledge distillation yields a lightweight variant, FactGuard-D, that operates without LLM inference, achieving both robustness and efficiency in fake news detection.
 tags:
   - "AAAI2026"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "commonsense reasoning"
   - "style debiasing"
 date: 2026-05-08
-content_hash: 83ecace50c62669a
+content_hash: 99d283e14dea50c5
 ---
 
 # FactGuard: Event-Centric and Commonsense-Guided Fake News Detection
@@ -113,11 +113,11 @@ Evaluated on Weibo21 (Chinese) and GossipCop (English).
 
 ## Related Papers
 
+- [\[ACL 2025\] Detection of Human and Machine-Authored Fake News in Urdu](../../ACL2025/social_computing/detection_of_human_and_machine-authored_fake_news_in_urdu.md)
 - [\[ICML 2026\] IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection](../../ICML2026/social_computing/ido_incongruity-aware_distribution_optimization_for_multimodal_fake_news_detecti.md)
+- [\[ACL 2025\] Synergizing LLMs with Global Label Propagation for Multimodal Fake News Detection](../../ACL2025/social_computing/llm_label_propagation.md)
 - [\[ACL 2026\] LiveFact: A Dynamic, Time-Aware Benchmark for LLM-Driven Fake News Detection](../../ACL2026/social_computing/livefact_a_dynamic_time-aware_benchmark_for_llm-driven_fake_news_detection.md)
 - [\[ICML 2026\] MIND: Multi-Rationale Integrated Discriminative Reasoning Framework for Multi-Modal Fake News](../../ICML2026/social_computing/mind_multi-rationale_integrated_discriminative_reasoning_framework_for_multi-mod.md)
-- [\[AAAI 2026\] Argumentative Debates for Transparent Bias Detection](argumentative_debates_for_transparent_bias_detection_technic.md)
-- [\[NeurIPS 2025\] IF-GUIDE: Influence Function-Guided Detoxification of LLMs](../../NeurIPS2025/social_computing/if-guide_influence_function-guided_detoxification_of_llms.md)
 
 </div>
 

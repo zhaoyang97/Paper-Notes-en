@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] ProtoKV：长上下文的知识在你查询之前就已组织好了
+  [Paper Note] ProtoKV: Knowledge in Long Context is Already Organized Before You Query
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] ProtoKV discovers that LLMs spontaneously categorize tokens into "Position-Determined Tokens" (PDT) and "Semantic-Anchored Tokens" (SAT) during the prefilling stage. Based on this, it constructs semantic prototypes, clusters tokens into groups based on these prototypes, and retains/evicts entire clusters. This approach
+  [ICLR 2026][LLM Efficiency][KV Cache Compression] ProtoKV discovers that LLMs spontaneously categorize tokens into "Position-Determined Tokens" (PDT) and "Semantic-Anchored Tokens" (SAT) during the prefilling stage. Based on this, it constructs semantic prototypes, clusters tokens into groups based on these prototypes, and retains/evicts entire clusters. This approach improves average LongBench accuracy by 2.11% over SOTA under the same memory budget…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV Cache Compression"
+  - "Semantic Anchors"
+  - "Local Deviation"
+  - "Semantic Prototypes"
+  - "Long Context Inference"
 date: 2026-05-08
-content_hash: ed6730f401d8af91
+content_hash: b199602cbaf4d421
 ---
+
 # ProtoKV: Knowledge in Long Context is Already Organized Before You Query
 
 **Conference**: ICLR 2026  
@@ -131,11 +137,11 @@ The naive SATKV (retaining by deviation only) consistently underperforms compare
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reconstructing KV Caches with Cross-Layer Fusion for Enhanced Transformers](reconstructing_kv_caches_with_cross-layer_fusion_for_enhanced_transformers.md)
-- [\[ICLR 2026\] Equilibrium Language Models](equilibrium_language_models.md)
 - [\[ICLR 2026\] QuoKA: Query-Oriented KV Selection for Efficient LLM Prefill](quoka_query-oriented_kv_selection_for_efficient_llm_prefill.md)
-- [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
+- [\[AAAI 2026\] Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models](../../AAAI2026/llm_efficiency/harnessing_the_unseen_the_hidden_influence_of_intrinsic_knowledge_in_long-contex.md)
 - [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
+- [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](diffusion_language_model_knows_the_answer_before_it_decodes.md)
 
 </div>
 

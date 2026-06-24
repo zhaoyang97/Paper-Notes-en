@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Let the Void Be Void: Robust Open-Set Semi-Supervised Learning via Selective Non-Alignment
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Open-set semi-supervised learning] This paper proposes SkipAlign, a framework that introduces a third "skip" operation alongside the conventional pull/push operations in contrastive…
+  [AAAI 2026][Self-Supervised Learning][Open-set semi-supervised learning] This paper proposes SkipAlign, a framework that introduces a third "skip" operation alongside the conventional pull/push operations in contrastive learning. Low-confidence samples are selectively excluded from alignment and subjected only to mild repulsion, allowing in-distribution (ID) classes to form compact "galaxies" while OOD samples naturally disperse into the "interstellar void." The approach achi…
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "selective non-alignment"
   - "prototype learning"
 date: 2026-05-08
-content_hash: c39634c79e8f2eb1
+content_hash: 8ea92fa9ead9cf69
 ---
 
 <!-- 由 src/gen_stubs.py 自动生成 -->
@@ -135,11 +135,11 @@ Closed-set accuracy is on par with or marginally better than the best baseline.
 
 ## Related Papers
 
+- [\[CVPR 2026\] PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning](../../CVPR2026/self_supervised/paf_perturbation-aware_filtering_for_open-set_semi-supervised_learning.md)
+- [\[ICLR 2026\] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments](../../ICLR2026/self_supervised/fedopenmatch_towards_semi-supervised_federated_learning_in_open-set_environments.md)
 - [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
-- [\[AAAI 2026\] Robust Tabular Foundation Models](robust_tabular_foundation_models.md)
-- [\[AAAI 2026\] HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association](hilomix_robust_high-_and_low-frequency_graph_learning_framework_for_mixing_addre.md)
-- [\[ICML 2026\] Beyond Distribution Estimation: Simplex Anchored Structural Inference Towards Universal Semi-Supervised Learning](../../ICML2026/self_supervised/beyond_distribution_estimation_simplex_anchored_structural_inference_towards_uni.md)
-- [\[NeurIPS 2025\] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking](../../NeurIPS2025/self_supervised/starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](../../ICLR2026/self_supervised/on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
+- [\[CVPR 2026\] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning](../../CVPR2026/self_supervised/secos_semantic_capture_for_rigorous_classification_in_open-world_semi-supervised.md)
 
 </div>
 

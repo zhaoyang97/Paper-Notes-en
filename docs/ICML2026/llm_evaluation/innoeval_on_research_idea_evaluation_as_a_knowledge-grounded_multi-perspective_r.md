@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] InnoEval: On Research Idea Evaluation as a Knowledge-Grounded, Multi-Perspective Reasoning Problem
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] InnoEval redefines "evaluating a research idea" as a **knowledge-grounded + multi-perspective reasoning** problem: it first employs a heterogeneous deep search engine to retrieve live knowledge from papers, webpages, and code, aligning it at a fine-grained level to each component of the idea. Then, an "Innovation Revie
+  [ICML 2026][LLM Evaluation][Idea Evaluation] InnoEval redefines "evaluating a research idea" as a **knowledge-grounded + multi-perspective reasoning** problem: it first employs a heterogeneous deep search engine to retrieve live knowledge from papers, webpages, and code, aligning it at a fine-grained level to each component of the idea. Then, an "Innovation Review Committee" composed of diverse academic personae scores the idea across five dimensions…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Idea Evaluation"
+  - "Heterogeneous Knowledge Retrieval"
+  - "Multi-perspective Review"
+  - "Personalized Reviewer"
+  - "Meta-review"
 date: 2026-05-08
-content_hash: 664106357cb0e26a
+content_hash: ab3e0bed2b6e9980
 ---
+
 # InnoEval: On Research Idea Evaluation as a Knowledge-Grounded, Multi-Perspective Reasoning Problem
 
 **Conference**: ICML 2026  
@@ -156,9 +162,9 @@ InnoEval achieves a win rate >70% in Overall Quality against all baselines, and 
 
 - [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](../../ACL2026/llm_evaluation/teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
 - [\[ACL 2025\] MDBench: A Synthetic Multi-Document Reasoning Benchmark Generated with Knowledge Guidance](../../ACL2025/llm_evaluation/mdbench_a_synthetic_multi-document_reasoning_benchmark_generated_with_knowledge_.md)
-- [\[ACL 2026\] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications](../../ACL2026/llm_evaluation/bizcompass_benchmarking_the_reasoning_capabilities_of_llms_in_business_knowledge.md)
 - [\[ACL 2026\] Aggregate vs. Personalized Judges in Business Idea Evaluation: Evidence from Expert Disagreement](../../ACL2026/llm_evaluation/aggregate_vs_personalized_judges_in_business_idea_evaluation_evidence_from_exper.md)
-- [\[ICLR 2026\] ACADREASON: Exploring the Limits of Reasoning Models with Academic Research Problems](../../ICLR2026/llm_evaluation/acadreason_exploring_the_limits_of_reasoning_models_with_academic_research_probl.md)
+- [\[ACL 2026\] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications](../../ACL2026/llm_evaluation/bizcompass_benchmarking_the_reasoning_capabilities_of_llms_in_business_knowledge.md)
+- [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
 
 </div>
 

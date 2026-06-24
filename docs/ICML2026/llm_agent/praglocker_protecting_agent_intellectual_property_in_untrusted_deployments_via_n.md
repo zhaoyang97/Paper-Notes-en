@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PragLocker: Protecting Agent Intellectual Property in Untrusted Deployments via Non-Portable Prompts
 description: >-
-  [ICML 2026][LLM Agent][agent IP] PragLocker employs a two-stage strategy consisting of "code-symbol initialization + noise injection under target model feedback" to encode an agent system prompt into obfuscated text. This text functions solely on the target LLM and fails when migrated to any other LLM, ensuring that attackers cannot reuse stolen promp
+  [ICML 2026][LLM Agent][prompt obfuscation] PragLocker employs a two-stage strategy consisting of "code-symbol initialization + noise injection under target model feedback" to encode an agent system prompt into obfuscated text. This text functions solely on the target LLM and fails when migrated to any other LLM, ensuring that attackers cannot reuse stolen prompts.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - agent IP
-  - non-portability
+  - "ICML 2026"
+  - "LLM Agent"
+  - "prompt obfuscation"
+  - "agent IP"
+  - "non-portability"
+  - "black-box optimization"
+  - "random search"
 date: 2026-05-08
-content_hash: 21682de81d103e2c
+content_hash: 869aa1b7e4cc7356
 ---
+
 # PragLocker: Protecting Agent Intellectual Property in Untrusted Deployments via Non-Portable Prompts
 
 **Conference**: ICML 2026  
@@ -132,14 +136,17 @@ The study evaluates two variants: PragLocker_tune (task loss tuning only) and Pr
 
 <div class="related-papers" markdown="1">
 
-- **PromptCARE**: Prompt Copyright Protection via Active Retrieval and Embeddings (NeurIPS 2023)
-- **GCG**: Universal Adversarial Attacks on Optimizers (2023)
-- **Pape**: Obfuscating Prompts via Representation-Space Perturbation (2024)
+## Related Papers
+
+- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
+- [\[ICLR 2026\] ToolACE-MT: Non-Autoregressive Generation for Agentic Multi-Turn Interaction](../../ICLR2026/llm_agent/toolace-mt_non-autoregressive_generation_for_agentic_multi-turn_interaction.md)
+- [\[ICML 2026\] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling](agent_jit_compilation_for_latency-optimizing_web_agent_planning_and_scheduling.md)
+- [\[ICML 2026\] A Minimal Agent for Automated Theorem Proving](a_minimal_agent_for_automated_theorem_proving.md)
+- [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)

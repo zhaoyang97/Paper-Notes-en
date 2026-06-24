@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Expanding the Capability Frontier of LLM Agents with ZPD-Guided Data Synthesis
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] By adopting the "Zone of Proximal Development (ZPD)" theory from educational psychology, this work develops a data synthesis engine that precisely calibrates task difficulty to the model's capability boundary. It generates high-value agent data for continued pre-training and post-training, pushing a small 30B-A3B model
+  [ICLR 2026][LLM Agent][Agent training data] By adopting the "Zone of Proximal Development (ZPD)" theory from educational psychology, this work develops a data synthesis engine that precisely calibrates task difficulty to the model's capability boundary. It generates high-value agent data for continued pre-training and post-training, pushing a small 30B-A3B model to 28.6% on HLE, surpassing several closed-source deep-research agents.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Agent training data"
+  - "Zone of Proximal Development (ZPD)"
+  - "Knowledge fusion"
+  - "Self-evolving benchmark"
+  - "Continued pre-training"
 date: 2026-05-08
-content_hash: 98dfbd0190747ff5
+content_hash: 4bc0a1307eb9b007
 ---
+
 # Expanding the Capability Frontier of LLM Agents with ZPD-Guided Data Synthesis
 
 **Conference**: ICLR 2026  
@@ -135,11 +141,11 @@ A weaker LKP increases yield by 44.1% but causes data complexity to plummet (too
 
 ## Related Papers
 
+- [\[ICLR 2026\] Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](search_self-play_pushing_the_frontier_of_agent_capability_without_supervision.md)
 - [\[ICLR 2026\] Open Data Synthesis for Deep Research](open_data_synthesis_for_deep_research.md)
 - [\[ICML 2026\] Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation](../../ICML2026/llm_agent/rule2drc_benchmarking_llm_agents_for_drc_script_synthesis_with_execution-guided_.md)
 - [\[ICLR 2026\] Helmsman: Autonomous Synthesis of Federated Learning Systems via Collaborative LLM Agents](helmsman_autonomous_synthesis_of_federated_learning_systems_via_collaborative_ll.md)
 - [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
-- [\[ICLR 2026\] DeepScientist: Advancing Frontier-Pushing Scientific Findings Progressively](deepscientist_advancing_frontier-pushing_scientific_findings_progressively.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OMP: One-step Meanflow Policy with Directional Alignment
 description: >-
-  [ICML 2026][Image Generation][MeanFlow] This paper addresses three theoretical "pathologies" exposed when applying the MeanFlow paradigm directly to robotic manipulation (spectral bias, gradient starvation in low-speed zones, and nested JVP memory explosion). It proposes OMP: a cosine-style directional alignment loss is used to "lock" the predicted mean velo
+  [ICML2026][Image Generation][MeanFlow] This paper addresses three theoretical "pathologies" exposed when applying the MeanFlow paradigm directly to robotic manipulation (spectral bias, gradient starvation in low-speed zones, and nested JVP memory explosion). It proposes OMP: a cosine-style directional alignment loss is used to "lock" the predicted mean velocity direction to the ground truth, and a Finite Difference DDE is utilized to approximate the Jacobian-Vector Product (J…
 tags:
-  - ICML 2026
-  - Image Generation
-  - MeanFlow
+  - "ICML2026"
+  - "Image Generation"
+  - "MeanFlow"
+  - "One-step Policy"
+  - "Directional Alignment"
+  - "JVP Finite Difference"
+  - "Robotic Manipulation"
 date: 2026-05-08
-content_hash: a2f4c45b56531274
+content_hash: 0e10dfc65e6a9bc2
 ---
+
 # OMP: One-step Meanflow Policy with Directional Alignment
 
 **Conference**: ICML2026  
@@ -143,8 +148,8 @@ On the most difficult task, Slip Ring, OMP is 15% higher than MP1, validating th
 
 ## Related Papers
 
-- [\[AAAI 2026\] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation](../../AAAI2026/image_generation/mp1_meanflow_tames_policy_learning_in_1-step_for_robotic_manipulation.md)
 - [\[ICML 2026\] Riemannian MeanFlow for One-Step Generation on Manifolds](riemannian_meanflow_for_one-step_generation_on_manifolds.md)
+- [\[AAAI 2026\] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation](../../AAAI2026/image_generation/mp1_meanflow_tames_policy_learning_in_1-step_for_robotic_manipulation.md)
 - [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](../../CVPR2026/image_generation/temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
 - [\[CVPR 2026\] MeanFlow Transformers with Representation Autoencoders](../../CVPR2026/image_generation/meanflow_transformers_with_representation_autoencoders.md)
 - [\[CVPR 2026\] Understanding, Accelerating, and Improving MeanFlow Training](../../CVPR2026/image_generation/understanding_accelerating_and_improving_meanflow_training.md)

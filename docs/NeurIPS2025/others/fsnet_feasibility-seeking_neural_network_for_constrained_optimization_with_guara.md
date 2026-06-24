@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FSNet: Feasibility-Seeking Neural Network for Constrained Optimization with Guarantees
 description: >-
-  [NeurIPS 2025][constrained optimization] This paper proposes FSNet, a framework that integrates **differentiable feasibility-seeking steps** into neural networks. By minimizing constraint violations via unconstrained opt…
+  [NeurIPS 2025][constrained optimization] This paper proposes FSNet, a framework that integrates **differentiable feasibility-seeking steps** into neural networks. By minimizing constraint violations via unconstrained optimization, FSNet guarantees constraint satisfaction while supporting end-to-end training. It significantly outperforms traditional solvers in speed across convex/non-convex and smooth/non-smooth problems while maintaining feasibility.
 tags:
   - "NeurIPS 2025"
   - "constrained optimization"
@@ -11,7 +11,7 @@ tags:
   - "end-to-end training"
   - "convergence guarantees"
 date: 2026-05-08
-content_hash: 77cfb12bd5644420
+content_hash: 4139039438d80011
 ---
 
 # FSNet: Feasibility-Seeking Neural Network for Constrained Optimization with Guarantees
@@ -156,9 +156,9 @@ The training loss consists of the expected objective value plus a penalty on the
 
 - [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
 - [\[NeurIPS 2025\] Semi-infinite Nonconvex Constrained Min-Max Optimization](semi-infinite_nonconvex_constrained_min-max_optimization.md)
+- [\[ICML 2025\] TANGO: Clustering with Typicality-Aware Nonlocal Mode-Seeking and Graph-Cut Optimization](../../ICML2025/others/tango_clustering_with_typicality-aware_nonlocal_mode-seeking_and_graph-cut_optim.md)
+- [\[ACL 2025\] Theoretical Guarantees for Minimum Bayes Risk Decoding](../../ACL2025/others/theoretical_guarantees_for_minimum_bayes_risk_decoding.md)
 - [\[NeurIPS 2025\] Depth-Supervised Fusion Network for Seamless-Free Image Stitching](depth-supervised_fusion_network_for_seamless-free_image_stitching.md)
-- [\[NeurIPS 2025\] Overfitting in Adaptive Robust Optimization](overfitting_in_adaptive_robust_optimization.md)
-- [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting Model Stitching in the Foundation Model Era
 description: >-
-  [CVPR 2026][Multimodal VLM][VFM Stitch Tree] This paper systematically investigates the feasibility of stitching Visual Foundation Models (VFMs). It discovers that traditional stitching methods fail for VFMs and proposes a two-stage training strategy—"Final Feature Matching + Task Loss"—to enable reliable stitching of heterogeneous VFMs. The resulting stitched mo
+  [CVPR 2026][Multimodal VLM][Model Stitching] This paper systematically investigates the feasibility of stitching Visual Foundation Models (VFMs). It discovers that traditional stitching methods fail for VFMs and proposes a two-stage training strategy—"Final Feature Matching + Task Loss"—to enable reliable stitching of heterogeneous VFMs. The resulting stitched models can even outperform individual VFMs. Furthermore, the VFM Stitch Tree (VST) architecture is introduced to prov…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VFM Stitch Tree
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model Stitching"
+  - "Visual Foundation Models"
+  - "Representation Compatibility"
+  - "VFM Stitch Tree"
+  - "Multimodal LLM"
 date: 2026-05-08
-content_hash: e553e1c386613d58
+content_hash: 0927c7ba0d8d0067
 ---
+
 # Revisiting Model Stitching in the Foundation Model Era
 
 **Conference**: CVPR 2026  
@@ -143,8 +148,8 @@ VST operationalizes the finding that heterogeneous VFMs can be reliably stitched
 - [\[CVPR 2026\] Revisiting Visual Corruptions in LVLMs: A Shape-Texture Perspective on Model Failures](revisiting_visual_corruptions_in_lvlms_a_shape-texture_perspective_on_model_fail.md)
 - [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
 - [\[CVPR 2026\] RealBirdID: Benchmarking Bird Species Identification in the Era of MLLMs](realbirdid_benchmarking_bird_species_identification_in_the_era_of_mllms.md)
-- [\[CVPR 2026\] Test-Time Distillation for Continual Model Adaptation](test-time_distillation_for_continual_model_adaptation.md)
-- [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
+- [\[CVPR 2026\] ProM3E: Probabilistic Masked MultiModal Embedding Model for Ecology](prom3e_probabilistic_masked_multimodal_embedding_model_for_ecology.md)
 
 </div>
 

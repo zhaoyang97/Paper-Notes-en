@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] CARE: A Molecular-Guided Foundation Model with Adaptive Region Modeling for Whole Slide Image Analysis
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] CARE is proposed as a pathology slide-level foundation model that partitions WSIs into morphologically relevant irregular regions via an Adaptive Region Generator (ARG)—analogous to word-level tokens in NLP. By combining cross-modal alignment with RNA/protein expression profiles in a two-stage pre-training paradigm, CA
+  [CVPR2026][Computational Biology][Computational Pathology] CARE is proposed as a pathology slide-level foundation model that partitions WSIs into morphologically relevant irregular regions via an Adaptive Region Generator (ARG)—analogous to word-level tokens in NLP. By combining cross-modal alignment with RNA/protein expression profiles in a two-stage pre-training paradigm, CARE achieves optimal average performance across 33 downstream tasks while using only approximately 1/1…
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR2026"
+  - "Computational Biology"
+  - "Computational Pathology"
+  - "Whole Slide Image Analysis"
+  - "Foundation Model"
+  - "Adaptive Region Modeling"
+  - "Cross-modal Alignment"
+  - "RNA/Protein Guidance"
 date: 2026-05-08
-content_hash: e7c80f9d8c09960c
+content_hash: fe6d49fc34719036
 ---
+
 # CARE: A Molecular-Guided Foundation Model with Adaptive Region Modeling for Whole Slide Image Analysis
 
 **Conference**: CVPR2026  
@@ -153,15 +160,15 @@ ROI features outperform global WSI features in tasks dependent on local signals,
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2025\] Unsupervised Foundation Model-Agnostic Slide-Level Representation Learning](../../CVPR2025/computational_biology/unsupervised_foundation_model-agnostic_slide-level_representation_learning.md)
 - [\[ICML 2025\] Scalable Generation of Spatial Transcriptomics from Histology Images via Whole-Slide Flow Matching](../../ICML2025/computational_biology/scalable_generation_of_spatial_transcriptomics_from_histology_images_via_whole-s.md)
-- [\[ICLR 2026\] Zatom-1: A Multimodal Flow Foundation Model for 3D Molecules and Materials](../../ICLR2026/computational_biology/zatom-1_a_multimodal_flow_foundation_model_for_3d_molecules_and_materials.md)
+- [\[ICLR 2026\] Structural Prognostic Event Modeling for Multimodal Cancer Survival Analysis](../../ICLR2026/computational_biology/structural_prognostic_event_modeling_for_multimodal_cancer_survival_analysis.md)
 - [\[NeurIPS 2025\] Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction](../../NeurIPS2025/computational_biology/uncertainty-guided_model_selection_for_tabular_foundation_models_in_biomolecule_.md)
-- [\[NeurIPS 2025\] Iterative Foundation Model Fine-Tuning on Multiple Rewards](../../NeurIPS2025/computational_biology/iterative_foundation_model_fine-tuning_on_multiple_rewards.md)
+- [\[CVPR 2026\] BiGMINT: Biologically-guided Hierarchical Multimodal Integration for Modeling Multiple Compound Activities in Drug Discovery](bigmint_biologically-guided_hierarchical_multimodal_integration_for_modeling_mul.md)
 
 </div>
 

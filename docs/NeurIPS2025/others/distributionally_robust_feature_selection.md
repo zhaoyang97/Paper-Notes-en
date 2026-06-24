@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distributionally Robust Feature Selection
 description: >-
-  [NeurIPS 2025][Feature Selection] This paper proposes a model-agnostic distributionally robust feature selection method that achieves a continuous relaxation of discrete selection by injecting controlled Gaussian noise i…
+  [NeurIPS 2025][Feature Selection] This paper proposes a model-agnostic distributionally robust feature selection method that achieves a continuous relaxation of discrete selection by injecting controlled Gaussian noise into covariates, and optimizes the conditional variance of the Bayes-optimal predictor, so that the selected feature subset enables high-quality downstream models to be trained simultaneously across multiple subpopulations.
 tags:
   - "NeurIPS 2025"
   - "Feature Selection"
@@ -11,7 +11,7 @@ tags:
   - "Noise Injection"
   - "Model-Agnostic"
 date: 2026-05-08
-content_hash: f6fec16b07693c88
+content_hash: 12a43152ff8af74b
 ---
 
 # Distributionally Robust Feature Selection
@@ -131,11 +131,11 @@ The final optimization objective is $\min_\alpha \max_{P_i} -\frac{1}{b}\sum_{\e
 
 ## Related Papers
 
+- [\[CVPR 2025\] Feature Selection for Latent Factor Models](../../CVPR2025/others/feature_selection_for_latent_factor_models.md)
 - [\[ICML 2026\] Variable Clustering via Distributionally Robust Nodewise Regression](../../ICML2026/others/variable_clustering_via_distributionally_robust_nodewise_regression.md)
 - [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](../../ICLR2026/others/distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
-- [\[NeurIPS 2025\] Manipulating Feature Visualizations with Gradient Slingshots](manipulating_feature_visualizations_with_gradient_slingshots.md)
 - [\[ICLR 2026\] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](../../ICLR2026/others/mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)
-- [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
+- [\[NeurIPS 2025\] Manipulating Feature Visualizations with Gradient Slingshots](manipulating_feature_visualizations_with_gradient_slingshots.md)
 
 </div>
 

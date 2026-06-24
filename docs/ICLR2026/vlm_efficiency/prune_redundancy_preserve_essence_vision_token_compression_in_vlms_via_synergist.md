@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prune Redundancy, Preserve Essence: Vision Token Compression in VLMs via Synergistic Importance-Diversity
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] PRUNESID is a training-free vision token compression framework that balances token semantic importance and information diversity through a two-stage pipeline consisting of "Principal Semantic Component Analysis (PSCA) clustering + Intra-group Non-Maximum Suppression (NMS)". By dynamically allocating token budgets accor
+  [ICLR 2026][Multimodal Efficiency][Vision token compression] PRUNESID is a training-free vision token compression framework that balances token semantic importance and information diversity through a two-stage pipeline consisting of "Principal Semantic Component Analysis (PSCA) clustering + Intra-group Non-Maximum Suppression (NMS)". By dynamically allocating token budgets according to image complexity, it maintains 96.3% relative accuracy on LLaVA-1.5 with only 11.1% of toke…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Vision token compression"
+  - "training-free"
+  - "importance-diversity"
+  - "semantic clustering"
+  - "non-maximum suppression"
 date: 2026-05-08
-content_hash: 41e44c0944369f6a
+content_hash: 3afd08d3ec13dc49
 ---
+
 # Prune Redundancy, Preserve Essence: Vision Token Compression in VLMs via Synergistic Importance-Diversity
 
 **Conference**: ICLR 2026  

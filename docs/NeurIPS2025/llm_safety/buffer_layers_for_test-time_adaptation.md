@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Buffer Layers for Test-Time Adaptation
 description: >-
-  [NeurIPS 2025][LLM Safety][Test-Time Adaptation] This paper proposes Buffer layers as a new paradigm for Test-Time Adaptation (TTA), replacing conventional normalization layer updates to fundamentally preserve the integr…
+  [NeurIPS 2025][LLM Safety][Test-Time Adaptation] This paper proposes Buffer layers as a new paradigm for Test-Time Adaptation (TTA), replacing conventional normalization layer updates to fundamentally preserve the integrity of the pretrained backbone. The approach effectively alleviates catastrophic forgetting and achieves consistent performance improvements across diverse architectures and TTA frameworks.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Domain Shift"
   - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: dc7d1d4b8b4e0996
+content_hash: 0c565ef5248a4c96
 ---
 
 # Buffer Layers for Test-Time Adaptation
@@ -169,9 +169,9 @@ The Buffer layer paradigm offers the TTA community a direction orthogonal to "ho
 
 - [\[ICCV 2025\] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning](../../ICCV2025/llm_safety/latte_collaborative_test-time_adaptation_of_vision-language_models_in_federated_.md)
 - [\[ACL 2026\] Red-Bandit: Test-Time Adaptation for LLM Red-Teaming via Bandit-Guided LoRA Experts](../../ACL2026/llm_safety/red-bandit_test-time_adaptation_for_llm_red-teaming_via_bandit-guided_lora_exper.md)
+- [\[CVPR 2025\] CleanSight: Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2025/llm_safety/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
+- [\[CVPR 2025\] TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in Vision-Language Models](../../CVPR2025/llm_safety/tapt_test-time_adversarial_prompt_tuning_for_robust_inference_in_vision-language.md)
 - [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2026/llm_safety/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
-- [\[ICLR 2026\] Inoculation Prompting: Eliciting Traits from LLMs during Training Can Suppress Them at Test-Time](../../ICLR2026/llm_safety/inoculation_prompting_eliciting_traits_from_llms_during_training_can_suppress_th.md)
 
 </div>
 

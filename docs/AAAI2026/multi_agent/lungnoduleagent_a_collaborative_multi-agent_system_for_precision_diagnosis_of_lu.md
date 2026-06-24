@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules
 description: >-
-  [AAAI 2026][Multi-Agent][lung nodule diagnosis] This paper proposes LungNoduleAgent, the first collaborative multi-agent system for lung nodule analysis. It simulates the clinical workflow through a three-stage pipeline—…
+  [AAAI 2026][Multi-Agent][lung nodule diagnosis] This paper proposes LungNoduleAgent, the first collaborative multi-agent system for lung nodule analysis. It simulates the clinical workflow through a three-stage pipeline—Nodule Spotter, Simulated Radiologist, and Doctor Agent System—and substantially outperforms mainstream VLMs (GPT-4o, Claude 3.7 Sonnet) and medical agents (MedAgent-Pro) on CT report generation and malignancy grading tasks.
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "CT report generation"
   - "malignancy grading"
 date: 2026-05-08
-content_hash: 4608c48a623a9905
+content_hash: e3d5830da721082f
 ---
 
 # LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules
@@ -170,9 +170,9 @@ Nodule Spotter internal ablation:
 
 - [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[AAAI 2026\] MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning](maps_multi-agent_personality_shaping_for_collaborative_reaso.md)
+- [\[ACL 2026\] Towards Self-Improving Error Diagnosis in Multi-Agent Systems](../../ACL2026/multi_agent/towards_self-improving_error_diagnosis_in_multi-agent_systems.md)
 - [\[AAAI 2026\] EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation](ecoagent_an_efficient_device-cloud_collaborative_multi-agent.md)
 - [\[AAAI 2026\] COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis](coach_collaborative_agents_for_contextual_highlighting_--_a_multi-agent_framewor.md)
-- [\[ACL 2026\] Towards Self-Improving Error Diagnosis in Multi-Agent Systems](../../ACL2026/multi_agent/towards_self-improving_error_diagnosis_in_multi-agent_systems.md)
 
 </div>
 

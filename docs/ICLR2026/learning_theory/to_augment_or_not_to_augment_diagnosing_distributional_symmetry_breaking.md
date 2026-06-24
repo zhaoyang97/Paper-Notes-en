@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] To Augment or Not to Augment? Diagnosing Distributional Symmetry Breaking
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes a "two-sample classifier test" metric $m(p_X)$ to quantify the **distributional symmetry breaking** of a dataset (i.e., the degree to which $x$ and its transformation $gx$ appear with unequal probabilities). Combined with a task-relevance metric $t(p_{X,Y})$ and a ridge regression theory, it systema
+  [ICLR 2026][Learning Theory][Distributional Symmetry Breaking] This paper proposes a "two-sample classifier test" metric $m(p_X)$ to quantify the **distributional symmetry breaking** of a dataset (i.e., the degree to which $x$ and its transformation $gx$ appear with unequal probabilities). Combined with a task-relevance metric $t(p_{X,Y})$ and a ridge regression theory, it systematically answers "when should data augmentation/equivariant methods be used…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Equivariant Learning"
+  - "Data Augmentation"
+  - "Distributional Symmetry Breaking"
+  - "Equivariant Networks"
+  - "Two-Sample Classifier Test"
+  - "Ridge Regression Generalization"
 date: 2026-05-08
-content_hash: c7be70950f3bf619
+content_hash: ec88f0dc300a6e43
 ---
+
 # To Augment or Not to Augment? Diagnosing Distributional Symmetry Breaking
 
 **Conference**: ICLR 2026  
@@ -146,15 +153,16 @@ Higher $t$ correlates with performance drops when using equivariance/augmentatio
 - Value: ⭐⭐⭐⭐⭐ Provides an actionable diagnostic tool for the geometric deep learning and molecular ML communities.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Achieving Approximate Symmetry Is Exponentially Easier than Exact Symmetry](achieving_approximate_symmetry_is_exponentially_easier_than_exact_symmetry.md)
 - [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
+- [\[ICLR 2026\] Softmax is not Enough (for Adaptive Conformal Classification)](softmax_is_not_enough_for_adaptive_conformal_classification.md)
 - [\[ICLR 2026\] The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens](the_softmax_bottleneck_does_not_limit_the_probabilities_of_the_most_likely_token.md)
-- [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
-- [\[ICLR 2026\] Pseudo-Non-Linear Data Augmentation: A Constrained Energy Minimization Viewpoint](pseudo-non-linear_data_augmentation_a_constrained_energy_minimization_viewpoint.md)
+- [\[ICLR 2026\] Breaking the Total Variance Barrier: Sharp Sample Complexity for Linear Heteroscedastic Bandits with Fixed Action Set](breaking_the_total_variance_barrier_sharp_sample_complexity_for_linear_heterosce.md)
 
 </div>
 

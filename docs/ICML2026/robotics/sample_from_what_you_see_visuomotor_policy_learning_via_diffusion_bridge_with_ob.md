@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sample from What You See: Visuomotor Policy Learning via Diffusion Bridge with Observation-Embedded Stochastic Differential Equation
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] BridgePolicy reformulates the diffusion policy paradigm—moving from "observation as a condition with sampling starting from random noise" to using a diffusion bridge that embeds observations directly into the endpoint of the forward SDE. This allows action sampling to originate from an "information-rich observation pri
+  [ICML2026][Robotics][Diffusion Bridge] BridgePolicy reformulates the diffusion policy paradigm—moving from "observation as a condition with sampling starting from random noise" to using a diffusion bridge that embeds observations directly into the endpoint of the forward SDE. This allows action sampling to originate from an "information-rich observation prior." By utilizing a semantic aligner to compress heterogeneous observations into an isomorphic representation with action…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML2026"
+  - "Robotics"
+  - "Diffusion Bridge"
+  - "Visuomotor Policy"
+  - "Imitation Learning"
+  - "Modality Alignment"
+  - "Stochastic Optimal Control"
 date: 2026-05-08
-content_hash: c1822c130373c661
+content_hash: 3069d6f1044989df
 ---
+
 # Sample from What You See: Visuomotor Policy Learning via Diffusion Bridge with Observation-Embedded Stochastic Differential Equation
 
 **Conference**: ICML2026  
@@ -133,11 +139,11 @@ Real-robot experiments used a Franka Emika Panda with a ZED-2i camera, evaluatin
 
 ## Related Papers
 
+- [\[ICLR 2026\] H$^3$DP: Triply-Hierarchical Diffusion Policy for Visuomotor Learning](../../ICLR2026/robotics/h3dp_triplyhierarchical_diffusion_policy_for_visuomotor_learning.md)
 - [\[ICLR 2026\] Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](../../ICLR2026/robotics/cosmos_policy_fine-tuning_video_models_for_visuomotor_control_and_planning.md)
 - [\[NeurIPS 2025\] Act to See, See to Act: Diffusion-Driven Perception-Action Interplay for Adaptive Policies](../../NeurIPS2025/robotics/act_to_see_see_to_act_diffusion-driven_perception-action_interplay_for_adaptive_.md)
 - [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](../../CVPR2026/robotics/graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
-- [\[ICML 2026\] STEP: Warm-Started Visuomotor Policies with Spatiotemporal Consistency Prediction](step_warm-started_visuomotor_policies_with_spatiotemporal_consistency_prediction.md)
-- [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
+- [\[ICLR 2026\] VITA: Vision-to-Action Flow Matching Policy](../../ICLR2026/robotics/vita_vision-to-action_flow_matching_policy.md)
 
 </div>
 

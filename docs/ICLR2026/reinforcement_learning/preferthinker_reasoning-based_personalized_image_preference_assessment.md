@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] PreferThinker: Reasoning-based Personalized Image Preference Assessment
 description: >-
-  [ICLR 2026][Reinforcement Learning][personalized preference assessment] The paper proposes PreferThinker, which connects diverse users through universal visual preference profiles and adopts a "predict-then-assess" CoT reasoning paradigm for interpretable personalized image preference assessment. Combined with cold-start SFT + GRPO reinforcement learning and a similarity-aware prediction r
+  [ICLR2024][Reinforcement Learning][personalized preference assessment] The paper proposes PreferThinker, which connects diverse users through universal visual preference profiles and adopts a "predict-then-assess" CoT reasoning paradigm for interpretable personalized image preference assessment. Combined with cold-start SFT + GRPO reinforcement learning and a similarity-aware prediction reward, the 7B model outperforms GPT-4o (+5.2%) and Claude 3.7 (+5.1%).
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - personalized preference assessment
-  - reasoning
-  - GRPO
-  - predict-then-assess
-  - visual preference profile
-  - CoT
+  - "ICLR2024"
+  - "Reinforcement Learning"
+  - "personalized preference assessment"
+  - "reasoning"
+  - "GRPO"
+  - "predict-then-assess"
+  - "visual preference profile"
+  - "CoT"
 date: 2026-05-08
-content_hash: f6c407fa627e9711
+content_hash: f09c2ccaea9bf7ca
 ---
+
 # PreferThinker: Reasoning-based Personalized Image Preference Assessment
 
 **Conference**: ICLR2024  
@@ -137,7 +138,7 @@ The method design is comprehensive, with innovations in both data construction a
 - [\[ICLR 2026\] Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment](reasoning_as_representation_rethinking_visual_reinforcement_learning_in_image_qu.md)
 - [\[ICLR 2026\] DiVE-k: Differential Visual Reasoning for Fine-grained Image Recognition](dive-k_differential_visual_reasoning_for_fine-grained_image_recognition.md)
 - [\[ICLR 2026\] DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization](dupo_enabling_reliable_self-verification_via_dual_preference_optimization.md)
-- [\[ICLR 2026\] Boosting Multi-Domain Reasoning of LLMs via Curvature-Guided Policy Optimization](boosting_multi-domain_reasoning_of_llms_via_curvature-guided_policy_optimization.md)
+- [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
 - [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
 
 </div>

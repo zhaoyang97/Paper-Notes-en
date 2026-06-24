@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates
 description: >-
-  [ICLR 2026][Optimization & Theory][Distributed Training] MT-DAO is proposed as a multi-timescale distributed adaptive optimizer that introduces slow momentum (high $\beta$) to resolve the timescale mismatch problem caused by the rapid decay of standard momentum in low-frequency communication training. It provides the first convergence guarantee for such methods, eliminates t
+  [ICLR 2026][Optimization][Distributed Training] MT-DAO is proposed as a multi-timescale distributed adaptive optimizer that introduces slow momentum (high $\beta$) to resolve the timescale mismatch problem caused by the rapid decay of standard momentum in low-frequency communication training. It provides the first convergence guarantee for such methods, eliminates the performance gap compared to fully synchronous DDP in language model pre-training…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Distributed Training
-  - Adaptive Optimizer
-  - Multi-timescale Momentum
-  - Communication Efficiency
-  - Local SGD
+  - "ICLR 2026"
+  - "Optimization"
+  - "Distributed Training"
+  - "Adaptive Optimizer"
+  - "Multi-timescale Momentum"
+  - "Communication Efficiency"
+  - "Local SGD"
 date: 2026-05-08
-content_hash: af5d847eb2e28e60
+content_hash: 085b6c54bf2ede5a
 ---
+
 # MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates
 
 **Conference**: ICLR 2026  
@@ -160,11 +161,11 @@ Worker alignment (Cosine Similarity):
 
 ## Related Papers
 
+- [\[ICLR 2026\] DES-LOC: Desynced Low Communication Adaptive Optimizers for Foundation Models](des-loc_desynced_low_communication_adaptive_optimizers_for_foundation_models.md)
 - [\[ICLR 2026\] A Tale of Two Geometries: Adaptive Optimizers and Non-Euclidean Descent](a_tale_of_two_geometries_adaptive_optimizers_and_non-euclidean_descent.md)
 - [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
 - [\[ICLR 2026\] Towards Dynamic Interleaving Optimizers](towards_dynamic_interleaving_optimizers.md)
-- [\[ICLR 2026\] DES-LOC: Desynced Low Communication Adaptive Optimizers for Foundation Models](des-loc_desynced_low_communication_adaptive_optimizers_for_foundation_models.md)
-- [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](lca_local_classifier_alignment_for_continual_learning.md)
+- [\[ICLR 2026\] LEGACY: A Lightweight Dynamic Gradient Compression Strategy for Distributed Deep Learning](legacy_a_lightweight_dynamic_gradient_compression_strategy_for_distributed_deep_.md)
 
 </div>
 

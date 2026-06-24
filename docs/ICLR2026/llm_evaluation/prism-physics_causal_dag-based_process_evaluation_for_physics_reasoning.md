@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISM-Physics: Causal DAG-Based Process Evaluation for Physics Reasoning
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] PRISM-Physics models the reference solutions of physics competition problems as "formula DAGs" (where nodes represent formulas and edges represent causal dependencies). Combined with a rule-based physical formula equivalence matcher and an "ancestor-closure scoring" method with proven theoretical optimality, it introdu
+  [ICLR 2026][LLM Evaluation][Physics reasoning] PRISM-Physics models the reference solutions of physics competition problems as "formula DAGs" (where nodes represent formulas and edges represent causal dependencies). Combined with a rule-based physical formula equivalence matcher and an "ancestor-closure scoring" method with proven theoretical optimality, it introduces the first benchmark for step-by-step scoring of physics reasoning. This approach aligns more closely with hum…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Physics reasoning"
+  - "process-level evaluation"
+  - "Directed Acyclic Graph (DAG)"
+  - "formula equivalence matching"
+  - "ancestor-closure scoring"
 date: 2026-05-08
-content_hash: ab2a42af23bb01c4
+content_hash: 2a3935b4750f8c3e
 ---
+
 # PRISM-Physics: Causal DAG-Based Process Evaluation for Physics Reasoning
 
 **Conference**: ICLR 2026  

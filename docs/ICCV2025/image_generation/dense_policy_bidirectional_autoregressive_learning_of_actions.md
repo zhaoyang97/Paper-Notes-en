@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dense Policy: Bidirectional Autoregressive Learning of Actions
 description: >-
-  [ICCV 2025][Image Generation][autoregressive policy] This paper proposes Dense Policy, a robot manipulation policy based on bidirectional autoregressive expansion…
+  [ICCV 2025][Image Generation][autoregressive policy] This paper proposes Dense Policy, a robot manipulation policy based on bidirectional autoregressive expansion, which achieves hierarchical coarse-to-fine action generation in logarithmic time and surpasses mainstream generative policies such as Diffusion Policy and ACT on both simulation and real-world tasks.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion policy"
   - "imitation learning"
 date: 2026-05-08
-content_hash: 078763e0163bfeea
+content_hash: 0050884bcf6a1f5a
 ---
 
 # Dense Policy: Bidirectional Autoregressive Learning of Actions
@@ -170,10 +170,10 @@ Bidirectional prediction demonstrates higher learning efficiency and a higher pe
 ## Related Papers
 
 - [\[ICCV 2025\] Inpaint4Drag: Repurposing Inpainting Models for Drag-Based Image Editing via Bidirectional Warping](inpaint4drag_repurposing_inpainting_models_for_drag-based_image_editing_via_bidi.md)
-- [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](../../NeurIPS2025/image_generation/overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
+- [\[ECCV 2024\] AdaGen: Learning Adaptive Policy for Image Synthesis](../../ECCV2024/image_generation/adagen_learning_adaptive_policy_for_image_synthesis.md)
+- [\[CVPR 2026\] VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation](../../CVPR2026/image_generation/va-p_variational_policy_alignment_for_pixel-aware_autoregressive_generation.md)
+- [\[ICLR 2026\] Group Critical-token Policy Optimization for Autoregressive Image Generation](../../ICLR2026/image_generation/group_critical-token_policy_optimization_for_autoregressive_image_generation.md)
 - [\[ICCV 2025\] Holistic Tokenizer for Autoregressive Image Generation](holistic_tokenizer_for_autoregressive_image_generation.md)
-- [\[AAAI 2026\] EfficientFlow: Efficient Equivariant Flow Policy Learning for Embodied AI](../../AAAI2026/image_generation/efficientflow_efficient_equivariant_flow_policy_learning_for_embodied_ai.md)
-- [\[AAAI 2026\] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation](../../AAAI2026/image_generation/mp1_meanflow_tames_policy_learning_in_1-step_for_robotic_manipulation.md)
 
 </div>
 

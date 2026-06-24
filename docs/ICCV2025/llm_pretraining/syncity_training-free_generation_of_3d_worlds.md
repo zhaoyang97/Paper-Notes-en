@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SynCity: Training-Free Generation of 3D Worlds
 description: >-
-  [ICCV 2025][LLM Pretraining][3D world generation] SynCity proposes a training- and optimization-free method for 3D world generation. Through carefully designed prompt engineering strategies…
+  [ICCV 2025][LLM Pretraining][3D world generation] SynCity proposes a training- and optimization-free method for 3D world generation. Through carefully designed prompt engineering strategies, it combines a pretrained language model, a 2D image generator (Flux), and a 3D generator (TRELLIS) to autoregressively synthesize large-scale, high-quality, freely navigable 3D scenes in a tile-by-tile fashion.
 tags:
   - "ICCV 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "2D/3D generators"
   - "prompt engineering"
 date: 2026-05-08
-content_hash: 601c0344c280cce5
+content_hash: a59d1566807fe2b0
 ---
 
 # SynCity: Training-Free Generation of 3D Worlds
@@ -152,10 +152,10 @@ This method is **training-free** and involves no training or loss functions. All
 ## Related Papers
 
 - [\[NeurIPS 2025\] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training](../../NeurIPS2025/llm_pretraining/through_the_river_understanding_the_benefit_of_schedule-free_methods_for_languag.md)
+- [\[ICLR 2026\] Avey-B: Refactoring Attention-Free Architectures into Bidirectional Encoders](../../ICLR2026/llm_pretraining/avey-b.md)
 - [\[NeurIPS 2025\] Deep Compositional Phase Diffusion for Long Motion Sequence Generation](../../NeurIPS2025/llm_pretraining/deep_compositional_phase_diffusion_for_long_motion_sequence_generation.md)
-- [\[ICCV 2025\] Make Your Training Flexible: Towards Deployment-Efficient Video Models](make_your_training_flexible_towards_deployment-efficient_video_models.md)
-- [\[ICCV 2025\] ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training](aceg_improving_generalization_of_scene_coordinate_regression.md)
-- [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](../../NeurIPS2025/llm_pretraining/enhancing_training_data_attribution_with_representational_optimization.md)
+- [\[CVPR 2025\] ScaMo: Exploring the Scaling Law in Autoregressive Motion Generation Model](../../CVPR2025/llm_pretraining/scamo_exploring_the_scaling_law_in_autoregressive_motion_generation_model.md)
+- [\[CVPR 2025\] Seeing What Matters: Empowering CLIP with Patch Generation-to-Selection](../../CVPR2025/llm_pretraining/seeing_what_matters_empowering_clip_with_patch_generation-to-selection.md)
 
 </div>
 

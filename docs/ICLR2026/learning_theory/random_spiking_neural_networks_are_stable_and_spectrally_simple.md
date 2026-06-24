@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Random Spiking Neural Networks are Stable and Spectrally Simple
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper treats discrete-time LIF Spiking Neural Network (SNN) classifiers as compositions of boolean functions. Using the analysis of boolean functions, it proves that wide SNNs at random initialization are "stable on average"—outputting the same prediction with high probability when input perturbations affect $O(\s
+  [ICLR 2026][Learning Theory][LIF Neurons] This paper treats discrete-time LIF Spiking Neural Network (SNN) classifiers as compositions of boolean functions. Using the analysis of boolean functions, it proves that wide SNNs at random initialization are "stable on average"—outputting the same prediction with high probability when input perturbations affect $O(\sqrt{n})$ coordinates. Based on this, the authors propose the concept of "spectral simplicity…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Spiking Neural Networks"
+  - "LIF Neurons"
+  - "Analysis of Boolean Functions"
+  - "Noise Stability"
+  - "Simplicity Bias"
 date: 2026-05-08
-content_hash: ed534cdeb2135584
+content_hash: 6de31b1348a5957e
 ---
+
 # Random Spiking Neural Networks are Stable and Spectrally Simple
 
 **Conference**: ICLR 2026  
@@ -130,9 +136,9 @@ The authors estimate $\mathrm{ENS}_{1/\sqrt n}$ using Monte Carlo methods to ver
 
 - [\[ICLR 2026\] Overparametrization bends the landscape: BBP transitions at initialization in simple Neural Networks](overparametrization_bends_the_landscape_bbp_transitions_at_initialization_in_sim.md)
 - [\[ICLR 2026\] Random Label Prediction Heads for Studying Memorization in Deep Neural Networks](random_label_prediction_heads_for_studying_memorization_in_deep_neural_networks.md)
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
 - [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
 - [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
-- [\[ICLR 2026\] Proper Velocity Neural Networks](proper_velocity_neural_networks.md)
 
 </div>
 

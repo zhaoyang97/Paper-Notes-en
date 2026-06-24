@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment (CODA)
 description: >-
-  [ICLR 2026][Image Generation][Object-Centric Learning] The CODA framework is proposed to address slot entanglement and weak alignment in diffusion-based object-centric learning by introducing register slots to absorb residual attention, fine-tuning cross-attention projections, and incorporating a contrastive alignment loss. It significantly improves object discovery and co
+  [ICLR 2026][Image Generation][Object-Centric Learning] The CODA framework is proposed to address slot entanglement and weak alignment in diffusion-based object-centric learning by introducing register slots to absorb residual attention, fine-tuning cross-attention projections, and incorporating a contrastive alignment loss. It significantly improves object discovery and compositional generation quality on both synthetic and real-world datasets.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Object-Centric Learning
-  - Slot Attention
-  - Register Slots
-  - contrastive learning
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Object-Centric Learning"
+  - "Slot Attention"
+  - "Register Slots"
+  - "contrastive learning"
+  - "compositional generation"
 date: 2026-05-08
-content_hash: 28b9459dc5512be4
+content_hash: 09d6a3bd07b7c5b7
 ---
+
 # Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment (CODA)
 
 **Conference**: ICLR 2026  

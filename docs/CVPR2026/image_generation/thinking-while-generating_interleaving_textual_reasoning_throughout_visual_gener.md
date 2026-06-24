@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation
 description: >-
-  [CVPR 2026][Image Generation][GRPO] This paper proposes TWIG (Thinking-while-Generating), the first text-to-image framework where textual reasoning "intervenes during generation." By inserting textual thoughts regionally during autoregressive image generation, it provides local guidance for the next segment and performs scoring/error correction for segme
+  [CVPR 2026][Image Generation][Interleaved Reasoning] This paper proposes TWIG (Thinking-while-Generating), the first text-to-image framework where textual reasoning "intervenes during generation." By inserting textual thoughts regionally during autoregressive image generation, it provides local guidance for the next segment and performs scoring/error correction for segments just completed. Evaluated via zero-shot, SFT, and RL routes, it improves color binding on T2I-CompBench…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Interleaved Reasoning"
+  - "Text-to-Image"
+  - "Unified Multimodal Models"
+  - "GRPO"
+  - "On-the-fly Reflection"
 date: 2026-05-08
-content_hash: 6f062362452c6c4d
+content_hash: 80bc21214a5d3526
 ---
+
 # Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation
 
 **Conference**: CVPR 2026  
@@ -137,10 +142,10 @@ Key RL discovery: **Simultaneously optimizing $\text{ULM}_u$ and $\text{ULM}_g$ 
 ## Related Papers
 
 - [\[CVPR 2026\] ThinkGen: Generalized Thinking for Visual Generation](thinkgen_generalized_thinking_for_visual_generation.md)
-- [\[CVPR 2026\] UniVerse: Empower Unified Generation with Reasoning and Knowledge](universe_empower_unified_generation_with_reasoning_and_knowledge.md)
-- [\[CVPR 2026\] Evaluating Reasoning Fidelity in Visual Text Generation](evaluating_reasoning_fidelity_in_visual_text_generation.md)
+- [\[ICLR 2026\] Interleaving Reasoning for Better Text-to-Image Generation](../../ICLR2026/image_generation/interleaving_reasoning_for_better_text-to-image_generation.md)
 - [\[CVPR 2026\] Prompt Yourself: Awakening Textual Semantics in 1D Visual Tokenizers](prompt_yourself_awakening_textual_semantics_in_1d_visual_tokenizers.md)
 - [\[CVPR 2026\] BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment](biovita_biological_dataset_model_and_benchmark_for_visual-textual-acoustic_align.md)
+- [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
 
 </div>
 

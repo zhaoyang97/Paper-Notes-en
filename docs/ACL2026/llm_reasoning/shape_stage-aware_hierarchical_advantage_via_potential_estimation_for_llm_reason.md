@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] SHAPE conceptualizes LLM reasoning as trajectories within a "solvability potential" state space. It utilizes length-aware stage-level advantages and entropy-driven token-level redistribution to simultaneously enhance mathematical reasoning accuracy and reduce generated tokens by approximately 30%.
+  [ACL2026][Reasoning][Process Supervision] SHAPE conceptualizes LLM reasoning as trajectories within a "solvability potential" state space. It utilizes length-aware stage-level advantages and entropy-driven token-level redistribution to simultaneously enhance mathematical reasoning accuracy and reduce generated tokens by approximately 30%.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL2026"
+  - "Reasoning"
+  - "Process Supervision"
+  - "Potential Estimation"
+  - "Credit Assignment"
+  - "Mathematical Reasoning"
+  - "Token Efficiency"
 date: 2026-05-08
-content_hash: 2f5edf1adf2d7545
+content_hash: 4930f4337728ce36
 ---
+
 # SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning
 
 **Conference**: ACL2026  
@@ -145,11 +151,11 @@ The following table summarizes core ablations on AIME 2024/2025 using DeepSeek-R
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning](../../NeurIPS2025/llm_reasoning/ktae_a_model-free_algorithm_to_key-tokens_advantage_estimation_in_mathematical_r.md)
+- [\[ICLR 2026\] Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning](../../ICLR2026/llm_reasoning/quantile_advantage_estimation_stabilizing_rlvr_for_llm_reasoning.md)
+- [\[ICLR 2026\] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models](../../ICLR2026/llm_reasoning/conditional_advantage_estimation_for_reinforcement_learning_in_large_reasoning_m.md)
 - [\[ACL 2026\] Stabilizing Efficient Reasoning with Step-Level Advantage Selection](stabilizing_efficient_reasoning_with_step-level_advantage_selection.md)
 - [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
-- [\[ACL 2026\] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data](budget-aware_anytime_reasoning_with_llm-synthesized_preference_data.md)
-- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](../../ICML2026/llm_reasoning/beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
+- [\[NeurIPS 2025\] KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning](../../NeurIPS2025/llm_reasoning/ktae_a_model-free_algorithm_to_key-tokens_advantage_estimation_in_mathematical_r.md)
 
 </div>
 

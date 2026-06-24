@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] Flower: A Flow-Matching Solver for Inverse Problems
 description: >-
-  [ICLR 2026][Image Restoration][flow matching] Flower transforms a pre-trained flow-matching generative model into a linear inverse problem solver. At each time step, it predicts the clean destination, applies a proximal projection for data consistency using the observation operator, and then advances along the flow trajectory. It achieves superior results compared
+  [ICLR2026][Image Restoration][flow matching] Flower transforms a pre-trained flow-matching generative model into a linear inverse problem solver. At each time step, it predicts the clean destination, applies a proximal projection for data consistency using the observation operator, and then advances along the flow trajectory. It achieves superior results compared to existing flow-based solvers on image restoration tasks such as denoising, deblurring, super-resolution…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - flow matching
-  - posterior sampling
-  - plug-and-play
+  - "ICLR2026"
+  - "Image Restoration"
+  - "flow matching"
+  - "inverse problems"
+  - "posterior sampling"
+  - "plug-and-play"
 date: 2026-05-08
-content_hash: 76b36b6789b7f21e
+content_hash: 6a88f702cb443a49
 ---
+
 # Flower: A Flow-Matching Solver for Inverse Problems
 
 **Conference**: ICLR2026  
@@ -153,15 +155,16 @@ Another crucial ablation is $\gamma$. $\gamma=1$ enables refinement uncertainty,
 - Value: ⭐⭐⭐⭐☆ Highly practical for flow-matching inverse problems, especially when a pre-trained prior is available and low-tuning migration to various linear degradations is desired.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Solving Inverse Problems with Flow-based Models via Model Predictive Control](../../ICML2026/image_restoration/solving_inverse_problems_with_flow-based_models_via_model_predictive_control.md)
 - [\[ICLR 2026\] Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning](noise-adaptive_diffusion_sampling_for_inverse_problems_without_task-specific_tun.md)
+- [\[CVPR 2026\] GSNR: Graph Smooth Null-Space Representation for Inverse Problems](../../CVPR2026/image_restoration/gsnr_graph_smooth_null_space_representation_for_inverse_problems.md)
 - [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](../../CVPR2026/image_restoration/dual_ascent_diffusion_for_inverse_problems.md)
 - [\[CVPR 2025\] FiRe: Fixed-points of Restoration Priors for Solving Inverse Problems](../../CVPR2025/image_restoration/fire_fixed-points_of_restoration_priors_for_solving_inverse_problems.md)
-- [\[ICLR 2026\] FAST-DIPS: Adjoint-Free Analytic Steps and Hard-Constrained Likelihood Correction for Diffusion-Prior Inverse Problems](fastdips_adjointfree_analytic_steps_and_hardconstrained_likelihood_correction_fo.md)
 
 </div>
 

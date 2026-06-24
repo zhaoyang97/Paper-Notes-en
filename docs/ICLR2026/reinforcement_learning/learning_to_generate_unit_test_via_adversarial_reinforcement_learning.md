@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning to Generate Unit Test via Adversarial Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] The UTRL framework is proposed to iteratively train a unit test generator and a code generator through adversarial RL. The test generator learns to produce discriminative test cases that distinguish LLM-generated code from correct code, while the code generator learns to pass these tests. After training, Qwen3-4B surpa
+  [ICLR 2026][Reinforcement Learning][Unit Test Generation] The UTRL framework is proposed to iteratively train a unit test generator and a code generator through adversarial RL. The test generator learns to produce discriminative test cases that distinguish LLM-generated code from correct code, while the code generator learns to pass these tests. After training, Qwen3-4B surpasses GPT-4.1 in test generation quality.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Unit Test Generation"
+  - "Adversarial Training"
+  - "RLVR"
+  - "Self-play"
+  - "Discriminative Reward"
 date: 2026-05-08
-content_hash: b8f6d7a01ec6c8bb
+content_hash: 2e393e9f4cf57e70
 ---
+
 # Learning to Generate Unit Test via Adversarial Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -139,10 +144,10 @@ Evaluation on TACO (Competitive Programming) for Best-of-N performance:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
 - [\[ICLR 2026\] Minimax Optimal Adversarial Reinforcement Learning](minimax_optimal_adversarial_reinforcement_learning.md)
 - [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](latent_wasserstein_adversarial_imitation_learning.md)
 - [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](on_discovering_algorithms_for_adversarial_imitation_learning.md)
-- [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
 - [\[ICLR 2026\] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation](robust_deep_reinforcement_learning_against_adversarial_behavior_manipulation.md)
 
 </div>

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Purrception: Variational Flow Matching for Vector-Quantized Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Ours proposes Purrception, an image generation method that adapts Variational Flow Matching (VFM) to the Vector-Quantized (VQ) latent space. By learning a categorical posterior distribution over codebook indices while calculating the velocity field in continuous embedding space, it bridges continuous transport dynamics
+  [ICLR 2026][Image Generation][Variational Flow Matching] Ours proposes Purrception, an image generation method that adapts Variational Flow Matching (VFM) to the Vector-Quantized (VQ) latent space. By learning a categorical posterior distribution over codebook indices while calculating the velocity field in continuous embedding space, it bridges continuous transport dynamics and discrete supervision, achieving faster training convergence and comparable FID scores to SOTA on I…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Variational Flow Matching"
+  - "Vector Quantization"
+  - "Discrete Diffusion"
+  - "Categorical Posterior"
 date: 2026-05-08
-content_hash: 7f1b7ca6e5e6af03
+content_hash: 5be554d07218eb02
 ---
+
 # Purrception: Variational Flow Matching for Vector-Quantized Image Generation
 
 **Conference**: ICLR 2026  
@@ -156,7 +161,6 @@ Evaluation on ImageNet-1k 256×256 unconditional and class-conditional image gen
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

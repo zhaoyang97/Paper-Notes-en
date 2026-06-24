@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Log-Augmented Generation: Scaling Test-Time Reasoning with Reusable Computation
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] LAG stores reasoning trajectories from past tasks as logs that "retain only a few tokens, but whose KV values encode the full context." When a new task arrives, these KV values are retrieved and concatenated for direct computation reuse. This allows LLMs to learn from historical experience like humans, simultaneously i
+  [ICLR 2026][Reasoning][Test-time Reasoning] LAG stores reasoning trajectories from past tasks as logs that "retain only a few tokens, but whose KV values encode the full context." When a new task arrives, these KV values are retrieved and concatenated for direct computation reuse. This allows LLMs to learn from historical experience like humans, simultaneously improving accuracy and efficiency in multi-hop QA and reasoning tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time Reasoning"
+  - "KV Cache Reuse"
+  - "Log-Augmented Generation"
+  - "Multi-hop QA"
+  - "ReAct Agents"
 date: 2026-05-08
-content_hash: 37b5ba20bb91578c
+content_hash: 88e6b1c0cead275e
 ---
+
 # Log-Augmented Generation: Scaling Test-Time Reasoning with Reusable Computation
 
 **Conference**: ICLR 2026  
@@ -128,11 +134,11 @@ The comparison proves that LAG_text-all is worse with "full context" (more noise
 
 ## Related Papers
 
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 - [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
 - [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
 - [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
 
 </div>
 

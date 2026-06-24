@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FIPER: Factorized Features for Robust Image Super-Resolution and Compression
 description: >-
-  [NeurIPS 2025][Image Restoration][super-resolution] This paper proposes a Factorized Features representation that decomposes images into learnable non-uniform bases and spatially variant coefficients…
+  [NeurIPS 2025][Image Restoration][super-resolution] This paper proposes a Factorized Features representation that decomposes images into learnable non-uniform bases and spatially variant coefficients, augmented with sawtooth coordinate transformation and multi-frequency modulation. The approach achieves a 204.4% relative PSNR gain at 4× super-resolution (HAT-L-F vs. SwinIR) and a 21.09% BD-rate reduction over VTM in image compression.
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -14,7 +14,7 @@ tags:
   - "multi-frequency modulation"
   - "multi-frame compression"
 date: 2026-05-08
-content_hash: a707b32ed028a593
+content_hash: 85ee82f1f4d01dc1
 ---
 
 # FIPER: Factorized Features for Robust Image Super-Resolution and Compression
@@ -172,11 +172,11 @@ The shared basis is transmitted once, while each frame encodes only its own coef
 
 ## Related Papers
 
+- [\[CVPR 2025\] AdcSR: Adversarial Diffusion Compression for Real-World Image Super-Resolution](../../CVPR2025/image_restoration/adversarial_diffusion_compression_for_real-world_image_super-resolution.md)
+- [\[CVPR 2026\] Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features](../../CVPR2026/image_restoration/rethinking_diffusion_model-based_video_super-resolution_leveraging_dense_guidanc.md)
+- [\[ICLR 2026\] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution](../../ICLR2026/image_restoration/improved_adversarial_diffusion_compression_for_real-world_video_super-resolution.md)
 - [\[NeurIPS 2025\] Audio Super-Resolution with Latent Bridge Models](audio_super-resolution_with_latent_bridge_models.md)
 - [\[NeurIPS 2025\] DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution](dp2o-sr_direct_perceptual_preference_optimization_for_real-world_image_super-res.md)
-- [\[NeurIPS 2025\] Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution](implicit_augmentation_from_distributional_symmetry_in_turbulence_super-resolutio.md)
-- [\[CVPR 2026\] SAT: Selective Aggregation Transformer for Image Super-Resolution](../../CVPR2026/image_restoration/sat_selective_aggregation_transformer_for_image_super_resolution.md)
-- [\[ICCV 2025\] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution](../../ICCV2025/image_restoration/emulating_self-attention_with_convolution_for_efficient_image_super-resolution.md)
 
 </div>
 

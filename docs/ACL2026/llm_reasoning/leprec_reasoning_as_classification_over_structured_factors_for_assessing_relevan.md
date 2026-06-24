@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LePREC: Reasoning as Classification over Structured Factors for Assessing Relevance of Legal Issues
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper proposes LePREC, a neuro-symbolic framework inspired by legal professionals that transforms unstructured legal text into structured features via LLM-generated reasoning QA pairs. By utilizing sparse linear models for relevance classification, it achieves a 30–40% performance gain over LLM baselines like GPT-
+  [ACL 2026][Reasoning][Legal Issue Relevance Assessment] This paper proposes LePREC, a neuro-symbolic framework inspired by legal professionals that transforms unstructured legal text into structured features via LLM-generated reasoning QA pairs. By utilizing sparse linear models for relevance classification, it achieves a 30–40% performance gain over LLM baselines like GPT-4o on the LIC dataset constructed from 769 Malaysian contract law cases.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Legal Issue Relevance Assessment"
+  - "Neuro-symbolic Reasoning"
+  - "Feature Selection"
+  - "Legal AI"
+  - "Structured Factor Classification"
 date: 2026-05-08
-content_hash: e08c64f99c195aba
+content_hash: 3ad30a45e220bfb7
 ---
+
 # LePREC: Reasoning as Classification over Structured Factors for Assessing Relevance of Legal Issues
 
 **Conference**: ACL 2026  
@@ -152,8 +158,8 @@ The neural component uses GPT-4o for question generation, which is model-agnosti
 - [\[ACL 2026\] Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication](accurate_legal_reasoning_at_scale_neuro-symbolic_offloading_and_structural_audit.md)
 - [\[ACL 2026\] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models](legaldrill_diagnosis-driven_synthesis_for_legal_reasoning_in_small_language_mode.md)
 - [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
+- [\[ICLR 2026\] LEXam: Benchmarking Legal Reasoning on 340 Law Exams](../../ICLR2026/llm_reasoning/lexam_benchmarking_legal_reasoning_on_340_law_exams.md)
 - [\[AAAI 2026\] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection](../../AAAI2026/llm_reasoning/from_classification_to_ranking_enhancing_llm_reasoning_capabilities_for_mbti_per.md)
-- [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AbdCTBench: Learning Clinical Biomarker Representations from Abdominal Surface Geometry
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] The authors extracted 2D body surface mesh images from 23,506 abdominal CT scans of 18,719 patients, paired them with 16 CT biomarkers and hundreds of disease/comorbidity labels to construct AbdCTBench—the first and largest "surface geometry $\rightarrow$ internal body composition" dataset. Systematically evaluating 7
+  [ICLR 2026][Medical Imaging][Body composition analysis] The authors extracted 2D body surface mesh images from 23,506 abdominal CT scans of 18,719 patients, paired them with 16 CT biomarkers and hundreds of disease/comorbidity labels to construct AbdCTBench—the first and largest "surface geometry $\rightarrow$ internal body composition" dataset. Systematically evaluating 7 mainstream vision architectures, they demonstrated that external abdominal geometry alone can predict cl…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Body composition analysis"
+  - "surface geometry"
+  - "clinical biomarkers"
+  - "dataset benchmark"
+  - "non-invasive screening"
 date: 2026-05-08
-content_hash: 6ebca8842d11780a
+content_hash: 77aefb372a76f763
 ---
+
 # AbdCTBench: Learning Clinical Biomarker Representations from Abdominal Surface Geometry
 
 **Conference**: ICLR 2026  

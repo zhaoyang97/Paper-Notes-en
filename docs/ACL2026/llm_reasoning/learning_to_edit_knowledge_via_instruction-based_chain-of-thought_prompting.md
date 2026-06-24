@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting
 description: >-
-  [ACL 2026][LLM Reasoning][Knowledge Editing] CoT2Edit proposes a new paradigm for teaching LLMs to perform knowledge editing via CoT reasoning. By constructing CoT instruction data for structured and unstructured editing, the model undergoes SFT cold-start followed by GRPO optimization. During inference, it combines RAG to retrieve edited facts, achieving SOTA pe
+  [ACL 2026][Reasoning][Knowledge Editing] CoT2Edit proposes a new paradigm for teaching LLMs to perform knowledge editing via CoT reasoning. By constructing CoT instruction data for structured and unstructured editing, the model undergoes SFT cold-start followed by GRPO optimization. During inference, it combines RAG to retrieve edited facts, achieving SOTA performance on 6 editing benchmarks with strong generalization capabilities from a single training run.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Knowledge Editing
-  - Chain-of-Thought
-  - GRPO
-  - RAG
+  - "ACL 2026"
+  - "Reasoning"
+  - "Knowledge Editing"
+  - "Chain-of-Thought"
+  - "GRPO"
+  - "RAG"
+  - "Multi-hop Reasoning"
 date: 2026-05-08
-content_hash: 2db7355a794f161c
+content_hash: 49d88bd587a70689
 ---
+
 # Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting
 
 **Conference**: ACL 2026  
@@ -145,10 +147,10 @@ SFT: Standard auto-regressive cross-entropy. GRPO: Accuracy reward + Format rewa
 ## Related Papers
 
 - [\[ECCV 2024\] Controllable Navigation Instruction Generation with Chain of Thought Prompting](../../ECCV2024/llm_reasoning/controllable_navigation_instruction_generation_with_chain_of_thought_prompting.md)
+- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
+- [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
 - [\[ACL 2026\] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning](etr_entropy_trend_reward_for_efficient_chain-of-thought_reasoning.md)
 - [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
-- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
 
 </div>
 

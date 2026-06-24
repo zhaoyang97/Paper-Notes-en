@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ONLY: One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models
 description: >-
-  [ICCV 2025][Hallucination Detection][hallucination mitigation] This paper proposes ONLY, a training-free single-layer intervention decoding method. It selects text-biased attention heads via the Text-to-Visual Entropy Ra…
+  [ICCV 2025][Hallucination Detection][hallucination mitigation] This paper proposes ONLY, a training-free single-layer intervention decoding method. It selects text-biased attention heads via the Text-to-Visual Entropy Ratio (TVER) to generate textually-enhanced logits, which are then used in adaptive contrastive or collaborative decoding against the original logits. With only 1.07× inference overhead, ONLY outperforms VCD/M3ID by 3.14% on POPE and reduces CHAIR_S by 6.2 point…
 tags:
   - "ICCV 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "single-layer intervention"
 date: 2026-05-08
-content_hash: deb44216380f8ef1
+content_hash: 816b29955256b420
 ---
 
 # ONLY: One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models
@@ -141,11 +141,11 @@ MME-Hallucination (LLaVA-1.5): ONLY 635.55 vs. second-best M3ID 598.11 (+37.44).
 
 ## Related Papers
 
-- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/hallucination/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
-- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
+- [\[ACL 2025\] Visual Evidence Prompting Mitigates Hallucinations in Large Vision-Language Models](../../ACL2025/hallucination/visual_evidence_prompting.md)
+- [\[ACL 2025\] Activation Steering Decoding: Mitigating Hallucination in Large Vision-Language Models through Bidirectional Hidden State Intervention](../../ACL2025/hallucination/activation_steering_decoding_mitigating_hallucination_in_large_vision-language_m.md)
+- [\[ICCV 2025\] Why LVLMs Are More Prone to Hallucinations in Longer Responses: The Role of Context](why_lvlms_are_more_prone_to_hallucinations_in_longer_responses_the_role_of_conte.md)
 - [\[ICCV 2025\] Mitigating Object Hallucinations via Sentence-Level Early Intervention](mitigating_object_hallucinations_via_sentence-level_early_intervention.md)
-- [\[NeurIPS 2025\] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations](../../NeurIPS2025/hallucination/when_semantics_mislead_vision_mitigating_large_multimodal_models_hallucinations_.md)
-- [\[ACL 2026\] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation](../../ACL2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_without_performance_de.md)
+- [\[CVPR 2025\] One Token, Two Fates: A Unified Framework via Vision Token Manipulation Against MLLMs Hallucination](../../CVPR2025/hallucination/one_token_two_fates_a_unified_framework_via_vision_token_manipulation_against_ml.md)
 
 </div>
 

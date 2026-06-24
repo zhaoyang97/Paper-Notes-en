@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evaluating Memory Capability in Continuous Lifelog Scenario
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper introduces LifeDialBench, a benchmark for evaluating memory capabilities in continuous lifelog scenarios (comprising EgoMem with 7 days of real data and LifeMem with 1 year of simulated data). It introduces an online evaluation protocol to ensure temporal causality and counter-intuitively finds that simple R
+  [ACL 2026 Findings][LLM Evaluation][Lifelog Memory] This paper introduces LifeDialBench, a benchmark for evaluating memory capabilities in continuous lifelog scenarios (comprising EgoMem with 7 days of real data and LifeMem with 1 year of simulated data). It introduces an online evaluation protocol to ensure temporal causality and counter-intuitively finds that simple RAG baselines consistently outperform complex memory systems.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Lifelog Memory"
+  - "Online Evaluation"
+  - "Wearable Devices"
+  - "RAG Baseline"
+  - "Long-term Dialogue"
 date: 2026-05-08
-content_hash: ba0f4bc3301bd17a
+content_hash: 7a81d37b004e0365
 ---
+
 # Evaluating Memory Capability in Continuous Lifelog Scenario
 
 **Conference**: ACL 2026 Findings  
@@ -125,10 +131,10 @@ Traditional offline evaluation assumes the system has read the entire dataset be
 
 ## Related Papers
 
+- [\[ICLR 2026\] RefineBench: Evaluating Refinement Capability of Language Models via Checklists](../../ICLR2026/llm_evaluation/refinebench_evaluating_refinement_capability_of_language_models_via_checklists.md)
 - [\[ACL 2026\] StratMem-Bench: Evaluating Strategic Memory Use in Virtual Character Conversation Beyond Factual Recall](stratmem-bench_evaluating_strategic_memory_use_in_virtual_character_conversation.md)
 - [\[ACL 2026\] Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language](exploring_the_capability_boundaries_of_llms_in_mastering_of_chinese_chouxiang_la.md)
 - [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](scan_structured_capability_assessment_and_navigation_for_llms.md)
-- [\[NeurIPS 2025\] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments](../../NeurIPS2025/llm_evaluation/memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami.md)
 - [\[ACL 2026\] HoWToBench: Holistic Evaluation for LLM's Capability in Human-level Writing using Tree of Writing](howtobench_holistic_evaluation_for_llms_capability_in_human-level_writing_using_.md)
 
 </div>

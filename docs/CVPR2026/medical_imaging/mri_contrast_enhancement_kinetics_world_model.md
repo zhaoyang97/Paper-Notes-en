@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MRI Contrast Enhancement Kinetics World Model
 description: >-
-  [CVPR 2026][Medical Imaging][World Models] The authors first propose the MRI Contrast Enhancement Kinetics World Model (MRI CEKWorld), which employs Spatiotemporal Consistency Learning (STCL) to achieve high-fidelity continuous contrast-enhanced sequence generation from non-contrast MRI using sparsely sampled data, resolving the dual challenges of content disto
+  [CVPR2026][Medical Imaging][MRI Contrast Enhancement] The authors first propose the MRI Contrast Enhancement Kinetics World Model (MRI CEKWorld), which employs Spatiotemporal Consistency Learning (STCL) to achieve high-fidelity continuous contrast-enhanced sequence generation from non-contrast MRI using sparsely sampled data, resolving the dual challenges of content distortion and temporal discontinuity.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - World Models
-  - Diffusion Model
-  - DCE-MRI
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "MRI Contrast Enhancement"
+  - "World Model"
+  - "Spatiotemporal Consistency Learning"
+  - "Latent Alignment"
+  - "Diffusion Model"
+  - "DCE-MRI"
 date: 2026-05-08
-content_hash: 05202fa2ff02f079
+content_hash: cf5818854efbc624
 ---
+
 # MRI Contrast Enhancement Kinetics World Model
 
 **Conference**: CVPR2026  
@@ -139,7 +143,7 @@ MRI CEKWorld achieved the best performance on Avg.SSIM (0.6509) and Avg.cSSIM (0
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

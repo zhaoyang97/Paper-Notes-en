@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TR-PTS: Task-Relevant Parameter and Token Selection for Efficient Tuning
 description: >-
-  [ICCV 2025][Model Compression][PEFT] This paper proposes TR-PTS, a framework that performs task-driven layer-wise parameter selection via the Fisher Information Matrix and dynamically filters/merges tokens using CLS atte…
+  [ICCV 2025][Model Compression][PEFT] This paper proposes TR-PTS, a framework that performs task-driven layer-wise parameter selection via the Fisher Information Matrix and dynamically filters/merges tokens using CLS attention scores. By tuning only 0.34%–0.60% of parameters, TR-PTS surpasses full fine-tuning by 3.40% on FGVC and 10.35% on VTAB.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Fisher Information Matrix"
   - "Parameter Selection"
 date: 2026-05-08
-content_hash: 9b39909c360eb5b8
+content_hash: 7bcac8f08f93876b
 ---
 
 # TR-PTS: Task-Relevant Parameter and Token Selection for Efficient Tuning
@@ -155,10 +155,10 @@ TR-PTS consists of two synergistic modules: Task-Relevant Parameter Selection an
 ## Related Papers
 
 - [\[ICCV 2025\] Generalized Tensor-based Parameter-Efficient Fine-Tuning via Lie Group Transformations](generalized_tensor-based_parameter-efficient_fine-tuning_via_lie_group_transform.md)
-- [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](../../NeurIPS2025/model_compression/recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
-- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](../../ICLR2026/model_compression/memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
-- [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](task_vector_quantization_for_memory-efficient_model_merging.md)
-- [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](../../ICML2026/model_compression/token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
+- [\[CVPR 2025\] Faster Parameter-Efficient Tuning with Token Redundancy Reduction (FPET)](../../CVPR2025/model_compression/faster_parameter-efficient_tuning_with_token_redundancy_reduction.md)
+- [\[ICML 2025\] OrthoRank: Token Selection via Sink Token Orthogonality for Efficient LLM Inference](../../ICML2025/model_compression/orthorank_token_selection_via_sink_token_orthogonality_for_efficient_llm_inferen.md)
+- [\[CVPR 2025\] Expert Pyramid Tuning: Efficient Parameter Fine-Tuning for Expertise-Driven Task Allocation](../../CVPR2025/model_compression/expert_pyramid_tuning_efficient_parameter_fine-tuning_for_expertise-driven_task_.md)
+- [\[ACL 2025\] C3A: Parameter-Efficient Fine-Tuning via Circular Convolution](../../ACL2025/model_compression/parameter-efficient_fine-tuning_via_circular_convolution.md)
 
 </div>
 

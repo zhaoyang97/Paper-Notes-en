@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Bird's-eye-view Informed Reasoning Driver (BIRDriver)
 description: >-
-  [ICLR 2026][Autonomous Driving][BEV] BIRDriver compresses the entire driving scene into a single-frame Bird's-Eye-View (BEV) top-down image fed into a VLM. The VLM outputs no more than three relative coordinate key points to express driving intentions, which are then refined into a trajectory by a motion planner. This low-cost approach grafts the VLM's co
+  [ICLR 2026][Autonomous Driving][Motion Planning] BIRDriver compresses the entire driving scene into a single-frame Bird's-Eye-View (BEV) top-down image fed into a VLM. The VLM outputs no more than three relative coordinate key points to express driving intentions, which are then refined into a trajectory by a motion planner. This low-cost approach grafts the VLM's commonsense reasoning onto long-tail driving scenarios.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - BEV
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Motion Planning"
+  - "BEV"
+  - "Vision-Language Models"
+  - "Long-tail Scenarios"
+  - "Key points"
+  - "Weighted SFT"
 date: 2026-05-08
-content_hash: ee0005cc1ac7fd05
+content_hash: 0b0967fb682681ff
 ---
+
 # Bird's-eye-view Informed Reasoning Driver (BIRDriver)
 
 **Conference**: ICLR 2026  
@@ -134,11 +139,11 @@ Key point extraction method (InternVL2.5-4B, InterPlan):
 
 ## Related Papers
 
+- [\[ICLR 2026\] ARINBEV: Bird's-Eye View Layout Estimation with Conditional Autoregressive Model](arinbev_birds-eye_view_layout_estimation_with_conditional_autoregressive_model.md)
 - [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](../../CVPR2026/autonomous_driving/cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
 - [\[CVPR 2026\] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images](../../CVPR2026/autonomous_driving/bev-sld_self-supervised_scene_landmark_detection_for_global_localization_with_li.md)
 - [\[CVPR 2026\] Spe-BEVHead: Rethinking the Detection Head Design for Bird's-Eye-View Object Detection](../../CVPR2026/autonomous_driving/spe-bevhead_rethinking_the_detection_head_design_for_birds-eye-view_object_detec.md)
 - [\[CVPR 2026\] BEV-CAR: Enhancing Monocular Bird's Eye View Segmentation with Context-Aware Rasterization](../../CVPR2026/autonomous_driving/bev-car_enhancing_monocular_birds_eye_view_segmentation_with_context-aware_raste.md)
-- [\[ICLR 2026\] Loc²: Interpretable Cross-View Localization via Depth-Lifted Local Feature Matching](loc2_interpretable_cross-view_localization_via_depth-lifted_local_feature_matchi.md)
 
 </div>
 

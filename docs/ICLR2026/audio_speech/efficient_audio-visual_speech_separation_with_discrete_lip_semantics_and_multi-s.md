@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Audio-Visual Speech Separation with Discrete Lip Semantics and Multi-Scale Global-Local Attention
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This paper proposes the Dolphin model, which maps lip movements into discrete semantic tokens using a dual-path lightweight video encoder (DP-LipCoder) and designs a Global-Local Attention (GLA) separator. It surpasses SOTA on three benchmarks while reducing parameters by 50%+, MACs by 2.4×, and accelerating GPU infere
+  [ICLR 2026][Audio & Speech][Audio-Visual Speech Separation] This paper proposes the Dolphin model, which maps lip movements into discrete semantic tokens using a dual-path lightweight video encoder (DP-LipCoder) and designs a Global-Local Attention (GLA) separator. It surpasses SOTA on three benchmarks while reducing parameters by 50%+, MACs by 2.4×, and accelerating GPU inference by 6×.
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Audio-Visual Speech Separation"
+  - "Discrete Lip Semantics"
+  - "Vector Quantization"
+  - "Global-Local Attention"
+  - "Lightweight"
 date: 2026-05-08
-content_hash: bba7551304adc4c0
+content_hash: 31ae28070e7162f4
 ---
+
 # Efficient Audio-Visual Speech Separation with Discrete Lip Semantics and Multi-Scale Global-Local Attention
 
 **Conference**: ICLR 2026  

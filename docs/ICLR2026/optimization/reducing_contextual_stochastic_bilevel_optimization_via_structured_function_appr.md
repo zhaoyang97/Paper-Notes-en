@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper parameterizes the context-dependent lower-level solution $y^\star(x,\xi)$ as $W(x)\Phi(\xi)$ using a set of sufficiently expressive basis functions. This reduces the challenging Contextual Stochastic Bilevel Optimization (CSBO) problem to a standard Stochastic Bilevel Optimization (SBO) problem, eliminating
+  [ICLR 2026][Optimization][Contextual Stochastic Bilevel Optimization] This paper parameterizes the context-dependent lower-level solution $y^\star(x,\xi)$ as $W(x)\Phi(\xi)$ using a set of sufficiently expressive basis functions. This reduces the challenging Contextual Stochastic Bilevel Optimization (CSBO) problem to a standard Stochastic Bilevel Optimization (SBO) problem, eliminating the reliance on conditional sampling oracles and improving the sample complexity of CSBO f…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Contextual Stochastic Bilevel Optimization"
+  - "Bilevel Optimization"
+  - "Function Approximation"
+  - "Chebyshev Polynomials"
+  - "Sample Complexity"
 date: 2026-05-08
-content_hash: 620e072933d6b9a5
+content_hash: 9f03d8f9588307ea
 ---
+
 # Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation
 
 **Conference**: ICLR 2026  
@@ -142,11 +148,11 @@ Benchmarks are compared against STOCBIO[N], which partitions $\Xi$ into $N$ regi
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Efficient Optimizer Design for LLM via Structured Fisher Approximation with a Low-Rank Extension](towards_efficient_optimizer_design_for_llm_via_structured_fisher_approximation_w.md)
 - [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
+- [\[ICLR 2026\] Towards Efficient Optimizer Design for LLM via Structured Fisher Approximation with a Low-Rank Extension](towards_efficient_optimizer_design_for_llm_via_structured_fisher_approximation_w.md)
 - [\[ICML 2025\] Efficient Curvature-Aware Hypergradient Approximation for Bilevel Optimization](../../ICML2025/optimization/efficient_curvature-aware_hypergradient_approximation_for_bilevel_optimization.md)
 - [\[ICLR 2026\] Submodular Function Minimization with Dueling Oracle](submodular_function_minimization_with_dueling_oracle.md)
-- [\[ICLR 2026\] Bilevel Optimization with Lower-Level Uniform Convexity: Theory and Algorithm](bilevel_optimization_with_lower-level_uniform_convexity_theory_and_algorithm.md)
+- [\[ICLR 2026\] Single-Loop Byzantine-Resilient Federated Bilevel Optimization](single-loop_byzantine-resilient_federated_bilevel_optimization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception
 description: >-
-  [CVPR 2026][3D Vision][V2X] Long-SCOPE proposes a fully sparse long-range cooperative 3D perception framework. By utilizing geometric-guided query generation and context-aware association modules, it achieves SOTA performance in 100-150m long-range scenarios while maintaining efficient computational and communication costs.
+  [CVPR 2026][3D Vision][Cooperative Perception] Long-SCOPE proposes a fully sparse long-range cooperative 3D perception framework. By utilizing geometric-guided query generation and context-aware association modules, it achieves SOTA performance in 100-150m long-range scenarios while maintaining efficient computational and communication costs.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - V2X
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Cooperative Perception"
+  - "Sparse Architecture"
+  - "Long-range 3D Detection"
+  - "Query Association"
+  - "V2X"
 date: 2026-05-08
-content_hash: 7be45a5866912350
+content_hash: 421186c19fdb3ef1
 ---
+
 # Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ End-to-end training is employed. The 2D detection and depth estimation heads in 
 
 ## Related Papers
 
-- [\[CVPR 2026\] MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification](morel_long-range_flicker-free_4d_motion_modeling_via_anchor_relay-based_bidirect.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[CVPR 2026\] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping](magician_efficient_long-term_planning_with_imagined_gaussians_for_active_mapping.md)
 - [\[CVPR 2026\] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?](can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy.md)
-- [\[CVPR 2026\] Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning](adaptive_3d_perception_for_small_aerial_targets_under_sparse_sampling_via_reinfo.md)
+- [\[CVPR 2026\] Long-Tail Internet Photo Reconstruction](long-tail_internet_photo_reconstruction.md)
+- [\[CVPR 2026\] MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification](morel_long-range_flicker-free_4d_motion.md)
+- [\[ICLR 2026\] IncVGGT: Incremental VGGT for Memory-Bounded Long-Range 3D Reconstruction](../../ICLR2026/3d_vision/incvggt_incremental_vggt_for_memory-bounded_long-range_3d_reconstruction.md)
+- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
 
 </div>
 

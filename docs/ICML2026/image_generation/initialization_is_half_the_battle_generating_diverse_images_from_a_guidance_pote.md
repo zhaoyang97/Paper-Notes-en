@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Initialization is Half the Battle: Generating Diverse Images from a Guidance Potential Posterior
 description: >-
-  [ICML 2026][Image Generation][Paper Note] This paper views "initial noise" as a random variable to be sampled from a posterior defined by a conditional guidance potential. It proposes DivIn: a method using one-step Langevin dynamics to push standard Gaussian noise toward "low-potential, flat" regions. This significantly alleviates mode collapse in diffusion an
+  [ICML 2026 Spotlight][Image Generation][Diversity Enhancement] This paper views "initial noise" as a random variable to be sampled from a posterior defined by a conditional guidance potential. It proposes DivIn: a method using one-step Langevin dynamics to push standard Gaussian noise toward "low-potential, flat" regions. This significantly alleviates mode collapse in diffusion and flow matching models with almost no added inference overhead and is orthogonally compatible wit…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026 Spotlight"
+  - "Image Generation"
+  - "Diversity Enhancement"
+  - "Initial Noise"
+  - "Langevin Dynamics"
+  - "Mode Collapse"
+  - "Guidance Potential"
 date: 2026-05-08
-content_hash: 88ff3eca04022e4d
+content_hash: 8e7f52a6a25322d5
 ---
+
 # Initialization is Half the Battle: Generating Diverse Images from a Guidance Potential Posterior
 
 **Conference**: ICML 2026 Spotlight  
@@ -140,10 +146,10 @@ Removing the random term degrades performance to SAIL levels, **indicating that 
 ## Related Papers
 
 - [\[ICML 2025\] Shielded Diffusion: Generating Novel and Diverse Images using Sparse Repellency](../../ICML2025/image_generation/shielded_diffusion_generating_novel_and_diverse_images_using_sparse_repellency.md)
-- [\[ICLR 2026\] Does Semantic Noise Initialization Transfer from Images to Videos? A Paired Diagnostic Study](../../ICLR2026/image_generation/does_semantic_noise_initialization_transfer_from_images_to_videos_a_paired_diagn.md)
 - [\[CVPR 2026\] Refracting Reality: Generating Images with Realistic Transparent Objects](../../CVPR2026/image_generation/refracting_reality_generating_images_with_realistic_transparent_objects.md)
+- [\[ICML 2026\] Unified Masked Diffusion Models with Diverse Generation Orders](unifying_masked_diffusion_models_with_various_generation_orders_and_beyond.md)
 - [\[CVPR 2026\] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images](../../CVPR2026/image_generation/hifi-inpaint_towards_high-fidelity_reference-based_inpainting_for_generating_det.md)
-- [\[ICML 2026\] PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World](physforge_generating_physics-grounded_3d_assets_for_interactive_virtual_world.md)
+- [\[CVPR 2026\] FINE: Factorizing Knowledge for Initialization of Variable-sized Diffusion Models](../../CVPR2026/image_generation/fine_factorizing_knowledge_for_initialization_of_variable-sized_diffusion_models.md)
 
 </div>
 

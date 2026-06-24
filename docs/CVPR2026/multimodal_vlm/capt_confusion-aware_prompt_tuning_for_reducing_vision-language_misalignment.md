@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment
 description: >-
-  [CVPR 2026][Multimodal VLM][prompt tuning] The CAPT (Confusion-Aware Prompt Tuning) framework is proposed to explicitly model systematic misalignment patterns in VLMs through a Semantic Confusion Miner (SEM) and a Sample Confusion Miner (SAM). By integrating different levels of confusion information via Multi-Granularity Difference Experts (MGDE), it achieves a
+  [CVPR2026][Multimodal VLM][prompt tuning] The CAPT (Confusion-Aware Prompt Tuning) framework is proposed to explicitly model systematic misalignment patterns in VLMs through a Semantic Confusion Miner (SEM) and a Sample Confusion Miner (SAM). By integrating different levels of confusion information via Multi-Granularity Difference Experts (MGDE), it achieves a state-of-the-art HM of 83.90% across 11 benchmarks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - prompt tuning
-  - CLIP
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "prompt tuning"
+  - "vision-language alignment"
+  - "confusion-aware"
+  - "CLIP"
+  - "few-shot"
+  - "fine-grained classification"
 date: 2026-05-08
-content_hash: 7a05fed7fab4ade9
+content_hash: b45723cc14831ff6
 ---
+
 # CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment
 
 **Conference**: CVPR2026  
@@ -130,11 +135,11 @@ $$\mathcal{L} = \mathcal{L}_{ori} + \mathcal{L}_{confuse}$$
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
 - [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
+- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
 - [\[CVPR 2026\] Cluster-Aware Neural Collapse Prompt Tuning for Long-Tailed Generalization of Vision-Language Models](cluster-aware_neural_collapse_prompt_tuning_for_long-tailed_generalization_of_vi.md)
-- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
-- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
+- [\[ICML 2025\] Understanding and Mitigating Miscalibration in Prompt Tuning for Vision-Language Models](../../ICML2025/multimodal_vlm/understanding_and_mitigating_miscalibration_in_prompt_tuning_for_vision-language.md)
+- [\[CVPR 2026\] CF-IPT: Cross-Modal Fusion Interactive Prompt Tuning of Vision-Language Pre-Trained Model for Multisource Remote Sensing Data Classification](cf-ipt_cross-modal_fusion_interactive_prompt_tuning_of_vision-language_pre-train.md)
 
 </div>
 

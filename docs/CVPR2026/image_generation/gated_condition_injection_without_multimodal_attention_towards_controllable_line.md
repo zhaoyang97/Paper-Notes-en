@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers
 description: >-
-  [CVPR 2026][Image Generation][SANA] Aiming at the issues where ControlNet fails to adapt to non-aligned conditions and OminiControl converges extremely slowly on spatially aligned tasks when applied to linear-attention diffusion models (e.g., SANA), this paper proposes GateControl. By utilizing a "shared backbone + unified intra-block interaction + a 0.0
+  [CVPR 2026][Image Generation][Controllable Generation] Aiming at the issues where ControlNet fails to adapt to non-aligned conditions and OminiControl converges extremely slowly on spatially aligned tasks when applied to linear-attention diffusion models (e.g., SANA), this paper proposes GateControl. By utilizing a "shared backbone + unified intra-block interaction + a 0.09M parameter token-level gate," the method speeds up the convergence of spatial tasks by over 10× while a…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - SANA
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Controllable Generation"
+  - "Linear Attention"
+  - "Gating Mechanism"
+  - "On-device Deployment"
+  - "SANA"
 date: 2026-05-08
-content_hash: dc4ce05f122c020e
+content_hash: 589534d15f141f82
 ---
+
 # Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers
 
 **Conference**: CVPR 2026  
@@ -144,8 +149,8 @@ Ablation of gating mechanism dimensions (Table 3, Canny-to-image):
 
 ## Related Papers
 
-- [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](../../ICCV2025/image_generation/edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
 - [\[CVPR 2025\] DiG: Scalable and Efficient Diffusion Models with Gated Linear Attention](../../CVPR2025/image_generation/dig_scalable_and_efficient_diffusion_models_with_gated_linear_attention.md)
+- [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](../../ICCV2025/image_generation/edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
 - [\[CVPR 2026\] The Devil is in Attention Sharing: Improving Complex Non-rigid Image Editing Faithfulness via Attention Synergy](the_devil_is_in_attention_sharing_improving_complex_non-rigid_image_editing_fait.md)
 - [\[CVPR 2026\] Anchoring and Rescaling Attention for Semantically Coherent Inbetweening](anchoring_and_rescaling_attention_for_semantically_coherent_inbetweening.md)
 - [\[CVPR 2026\] Correspondence-Attention Alignment for Multi-View Diffusion Models](correspondence-attention_alignment_for_multi-view_diffusion_models.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor
 description: >-
-  [NeurIPS 2025][AI Safety][Hypothesis Selection] This paper presents the first hypothesis selection algorithm under the central differential privacy model that simultaneously achieves nearly-linear time complexity and the…
+  [NeurIPS 2025][AI Safety][Hypothesis Selection] This paper presents the first hypothesis selection algorithm under the central differential privacy model that simultaneously achieves nearly-linear time complexity and the optimal approximation factor $\alpha=3$, resolving an open problem posed by Bun et al. (NeurIPS 2019).
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Optimal Approximation Factor"
   - "Exponential Mechanism"
 date: 2026-05-08
-content_hash: 2119be9f9a0c1596
+content_hash: 587ef9c578d63476
 ---
 
 # Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor
@@ -123,8 +123,8 @@ A key component is the round complexity analysis: by showing that the normalizat
 - [\[NeurIPS 2025\] Differentially Private High-dimensional Variable Selection via Integer Programming](differentially_private_high-dimensional_variable_selection_via_integer_programmi.md)
 - [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
 - [\[NeurIPS 2025\] Locally Optimal Private Sampling: Beyond the Global Minimax](locally_optimal_private_sampling_beyond_the_global_minimax.md)
+- [\[NeurIPS 2025\] Factor Decorrelation Enhanced Data Removal from Deep Predictive Models](factor_decorrelation_enhanced_data_removal_from_deep_predictive_models.md)
 - [\[ICML 2026\] LAPRAS: Learning-Augmented PRivate Answering for Linear Query Streams](../../ICML2026/ai_safety/lapras_learning-augmented_private_answering_for_linear_query_streams.md)
-- [\[NeurIPS 2025\] Private Continual Counting of Unbounded Streams](private_continual_counting_of_unbounded_streams.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Chain-of-Thought] MindDriver introduces a progressive multimodal reasoning framework that mimics the human "Perception → Imagination → Action" mechanism. It executes textual semantic understanding first, followed by imagining future scene images (bridging semantic and physical spaces), and finally predicting trajectories. Combined with
+  [CVPR 2026][Autonomous Driving][Multimodal Reasoning] MindDriver introduces a progressive multimodal reasoning framework that mimics the human "Perception → Imagination → Action" mechanism. It executes textual semantic understanding first, followed by imagining future scene images (bridging semantic and physical spaces), and finally predicting trajectories. Combined with a feedback-guided data annotation pipeline and progressive reinforcement fine-tuning…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Chain-of-Thought
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Multimodal Reasoning"
+  - "Chain-of-Thought"
+  - "VLM Autonomous Driving"
+  - "Progressive Reasoning"
+  - "Reinforcement Fine-Tuning"
 date: 2026-05-08
-content_hash: be95a4058fa1b143
+content_hash: 27f33a09b522e61f
 ---
+
 # MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving
 
 **Conference**: CVPR 2026  

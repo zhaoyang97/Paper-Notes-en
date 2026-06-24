@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization
 description: >-
-  [ICCV 2025][3D Vision][Mesh Generation] MeshAnything V2 proposes Adjacent Mesh Tokenization (AMT), which represents adjacent faces using a single vertex rather than the conventional three…
+  [ICCV 2025][3D Vision][Mesh Generation] MeshAnything V2 proposes Adjacent Mesh Tokenization (AMT), which represents adjacent faces using a single vertex rather than the conventional three, reducing the average token sequence length by approximately half. This allows the maximum number of generated faces to scale from 800 to 1600 without additional computational cost, significantly improving the efficiency and quality of autoregressive mesh generation.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Autoregressive"
   - "Artist-Created Mesh"
 date: 2026-05-08
-content_hash: 57a928c53a7a983e
+content_hash: ef5822e260b22d1a
 ---
 
 # MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization
@@ -144,9 +144,9 @@ AMT compresses the sequence length to 49.7% (approximately half) while reducing 
 
 - [\[ICCV 2025\] VertexRegen: Mesh Generation with Continuous Level of Detail](vertexregen_mesh_generation_with_continuous_level_of_detail.md)
 - [\[ICCV 2025\] Nautilus: Locality-aware Autoencoder for Scalable Mesh Generation](nautilus_locality-aware_autoencoder_for_scalable_mesh_generation.md)
+- [\[CVPR 2025\] Scaling Mesh Generation via Compressive Tokenization](../../CVPR2025/3d_vision/scaling_mesh_generation_via_compressive_tokenization.md)
 - [\[ICCV 2025\] MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing](meshpad_interactive_sketch-conditioned_artist-reminiscent_mesh_generation_and_ed.md)
 - [\[ICCV 2025\] DeepMesh: Auto-Regressive Artist-Mesh Creation with Reinforcement Learning](deepmesh_auto-regressive_artist-mesh_creation_with_reinforcement_learning.md)
-- [\[CVPR 2026\] Mesh-Pro: Asynchronous Advantage-guided Ranking Preference Optimization for Artist-style Quadrilateral Mesh Generation](../../CVPR2026/3d_vision/mesh-pro_asynchronous_advantage-guided_ranking_preference_optimization_for_artis.md)
 
 </div>
 

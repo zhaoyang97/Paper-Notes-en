@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] R4: Nested Reasoning-Retrieval for Reward Modeling in Role-Playing Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] R4 enables both the "Reward Model" and the "Role-playing Agent" to possess simultaneous **reasoning + retrieval** capabilities. The reward model rewrites the evaluation process into a structured reasoning chain with retrieval. Utilizing preference signals from this model, the dialogue agent is trained via GRPO, improvi
+  [ICLR 2026][Reinforcement Learning][Reward Modeling] R4 enables both the "Reward Model" and the "Role-playing Agent" to possess simultaneous **reasoning + retrieval** capabilities. The reward model rewrites the evaluation process into a structured reasoning chain with retrieval. Utilizing preference signals from this model, the dialogue agent is trained via GRPO, improving the character consistency of the 32B model on CharacterEval from 55.28 to 64.64…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reward Modeling"
+  - "Role-playing"
+  - "Reasoning-Retrieval"
+  - "GRPO"
+  - "Preference Optimization"
 date: 2026-05-08
-content_hash: f67254b7498fba27
+content_hash: 9e9753cc5bb472d3
 ---
+
 # R4: Nested Reasoning-Retrieval for Reward Modeling in Role-Playing Agents
 
 **Conference**: ICLR 2026  

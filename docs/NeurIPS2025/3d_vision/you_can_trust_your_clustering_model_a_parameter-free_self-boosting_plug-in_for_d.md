@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] You Can Trust Your Clustering Model: A Parameter-free Self-Boosting Plug-in for Deep Clustering
 description: >-
-  [NeurIPS 2025][3D Vision][Deep Clustering] This paper proposes DCBoost, a plug-and-play module requiring no additional hyperparameters…
+  [NeurIPS 2025][3D Vision][Deep Clustering] This paper proposes DCBoost, a plug-and-play module requiring no additional hyperparameters, which selects high-confidence samples via adaptive k-NN and leverages reliable local structural information to guide global feature space optimization, substantially improving the performance of existing deep clustering models.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Global Structure Optimization"
   - "Parameter-free"
 date: 2026-05-08
-content_hash: 3bd0b0f4e5c2e781
+content_hash: 37fc448167b0fe4c
 ---
 
 # You Can Trust Your Clustering Model: A Parameter-free Self-Boosting Plug-in for Deep Clustering
@@ -172,8 +172,8 @@ Ablation results on top of ProPos (averaged across CIFAR-10 / CIFAR-20 / STL-10)
 - [\[CVPR 2026\] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering](../../CVPR2026/3d_vision/cghair_compact_gaussian_hair_reconstruction_with_card_clustering.md)
 - [\[AAAI 2026\] MonoCLUE: Object-Aware Clustering Enhances Monocular 3D Object Detection](../../AAAI2026/3d_vision/monoclue_object-aware_clustering_enhances_monocular_3d_object_detection.md)
 - [\[NeurIPS 2025\] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework](copresheaf_topological_neural_networks_a_generalized_deep_learning_framework.md)
-- [\[NeurIPS 2025\] RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes](rgb-only_supervised_camera_parameter_optimization_in_dynamic_scenes.md)
-- [\[NeurIPS 2025\] CosmoBench: A Multiscale, Multiview, Multitask Cosmology Benchmark for Geometric Deep Learning](cosmobench_a_multiscale_multiview_multitask_cosmology_benchmark_for_geometric_de.md)
+- [\[NeurIPS 2025\] U-CAN: Unsupervised Point Cloud Denoising with Consistency-Aware Noise2Noise Matching](u-can_unsupervised_point_cloud_denoising_with_consistency-aware_noise2noise_matc.md)
+- [\[CVPR 2025\] You See it, You Got it: Learning 3D Creation on Pose-Free Videos at Scale](../../CVPR2025/3d_vision/you_see_it_you_got_it_learning_3d_creation_on_pose-free_videos_at_scale.md)
 
 </div>
 

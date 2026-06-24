@@ -4,12 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Model Compression][MoE] SteerMoE is proposed to detect behavior-associated experts via contrastive paired inputs and steer the behavior of MoE LLMs by activating or deactivating specific experts during inference (+20% safety, +27% faithfulness). The study also reveals a unique safety alignment vulnerability in MoE models (safety drop -100%).
 tags:
-  - ICLR 2026
-  - Model Compression
-  - MoE
+  - "ICLR 2026"
+  - "Model Compression"
+  - "MoE"
+  - "Expert Routing"
+  - "Behavior Steering"
+  - "Safety"
+  - "Faithfulness"
+  - "Inference-time Control"
 date: 2026-05-08
-content_hash: 75c433345afdc2a4
+content_hash: c9553852c9411447
 ---
+
 # Steering MoE LLMs via Expert (De)Activation
 
 **Conference**: ICLR 2026  
@@ -136,8 +142,8 @@ A challenge after selecting experts is how to force their presence or absence du
 - [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](../../ICML2026/model_compression/gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
 - [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
 - [\[ICLR 2026\] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models](sere_similarity-based_expert_re-routing_for_efficient_batch_decoding_in_moe_mode.md)
+- [\[ICLR 2026\] TD-MoE: Tensor Decomposition for MoE Models](td-moe_tensor_decomposition_for_moe_models.md)
 - [\[ACL 2026\] Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis](../../ACL2026/model_compression/analytical_ffn-to-moe_restructuring_via_activation_pattern_analysis.md)
-- [\[ICLR 2026\] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)
 
 </div>
 

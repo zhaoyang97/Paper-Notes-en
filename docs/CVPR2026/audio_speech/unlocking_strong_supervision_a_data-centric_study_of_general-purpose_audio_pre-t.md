@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] This paper demonstrates through systematic data-centric experiments that audio pre-training performance is primarily driven by label/supervision quality rather than model design. It proposes the Unified Tag System (UTS) to unify speech, music, and environmental sounds into a fine-grained vocabulary of 800-3k labels. Mo
+  [CVPR 2026][Audio & Speech][Audio Pre-training] This paper demonstrates through systematic data-centric experiments that audio pre-training performance is primarily driven by label/supervision quality rather than model design. It proposes the Unified Tag System (UTS) to unify speech, music, and environmental sounds into a fine-grained vocabulary of 800-3k labels. Models trained with UTS achieve performance surpassing AudioSet baselines on out-of-domain tasks like speech (VoxC…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Audio Pre-training"
+  - "Unified Tag System"
+  - "Data-Centric"
+  - "Label Quality"
+  - "Cross-domain Generalization"
 date: 2026-05-08
-content_hash: e04f832e17e79d7c
+content_hash: f5bcfc660bc1bde8
 ---
+
 # Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,17 @@ The discriminative term MTC uses multi-label binary cross-entropy; contrastive l
 
 <div class="related-papers" markdown="1">
 
-```mermaid
-graph LR
-    A[AS-527] --> B(UTS-1.5k)
-    C[Cap-400k] --> B
-```
+## Related Papers
+
+- [\[CVPR 2026\] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](echoes_over_time_unlocking_length_generalization_in_video-to-audio_generation_mo.md)
+- [\[ICLR 2026\] Data-Centric Lessons To Improve Speech-Language Pretraining](../../ICLR2026/audio_speech/data-centric_lessons_to_improve_speech-language_pretraining.md)
+- [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](../../ACL2026/audio_speech/towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
+- [\[CVPR 2026\] GEM-TFL: Bridging Weak and Full Supervision for Forgery Localization](gem-tfl_bridging_weak_and_full_supervision_for_forgery_localization_through_em-g.md)
+- [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](echoes_over_time_unlocking_length_generalization_in_video-to-audio_generation_mo.md)

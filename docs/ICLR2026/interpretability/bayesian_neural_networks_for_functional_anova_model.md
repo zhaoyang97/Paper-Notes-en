@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Bayesian Neural Networks for Functional ANOVA Model
 description: >-
-  [ICLR 2026][Interpretability][Functional ANOVA] The model treats the selection of components to be estimated within the functional ANOVA framework as learnable parameters. It utilizes an MCMC algorithm with stepwise proposals to automatically search for and estimate high-order interaction components in high-dimensional inputs. This approach circumvents the computati
+  [ICLR 2026][Interpretability][Functional ANOVA] The model treats the selection of components to be estimated within the functional ANOVA framework as learnable parameters. It utilizes an MCMC algorithm with stepwise proposals to automatically search for and estimate high-order interaction components in high-dimensional inputs. This approach circumvents the computational bottleneck of ANOVA-TPNN, where the number of components grows exponentially with the interaction order due…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Functional ANOVA
-  - Tensor Product Neural Network
-  - Bayesian Neural Network
-  - MCMC
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Functional ANOVA"
+  - "Tensor Product Neural Network"
+  - "Bayesian Neural Network"
+  - "High-order Interaction"
+  - "MCMC"
+  - "Posterior Consistency"
 date: 2026-05-08
-content_hash: 75037238572f8d75
+content_hash: 49abb3cd4e8a3390
 ---
+
 # Bayesian Neural Networks for Functional ANOVA Model
 
 **Conference**: ICLR 2026  
@@ -127,8 +130,21 @@ Second-order baselines require ~19,600 networks for third-order tasks and are th
 - **Value**: ⭐⭐⭐⭐ Makes high-dimensional functional ANOVA with high-order interactions practical, supported by posterior consistency and strong UQ.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Certified Evaluation of Model-Level Explanations for Graph Neural Networks](certified_evaluation_of_model-level_explanations_for_graph_neural_networks.md)
+- [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](fame_formal_abstract_minimal_explanation_for_neural_networks.md)
+- [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](explainable_k_-means_neural_networks_for_multi-view_clustering.md)
+- [\[ICLR 2026\] Discovering Alternative Solutions Beyond the Simplicity Bias in Recurrent Neural Networks](discovering_alternative_solutions_beyond_the_simplicity_bias_in_recurrent_neural.md)
+- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

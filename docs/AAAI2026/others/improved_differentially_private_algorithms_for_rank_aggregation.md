@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improved Differentially Private Algorithms for Rank Aggregation
 description: >-
-  [AAAI 2026][differential privacy] This paper presents improved approximation algorithms for rank aggregation under differential privacy. It introduces the first study of differentially private footrule rank aggregation w…
+  [AAAI 2026][differential privacy] This paper presents improved approximation algorithms for rank aggregation under differential privacy. It introduces the first study of differentially private footrule rank aggregation with a near-optimal algorithm (which also yields a 2-approximation for the Kemeny problem), and improves the additive error of the Kemeny PTAS by combining two-way marginal queries with an unbiasedness technique (reducing the exponent of $m$ from 3 to 65/22).
 tags:
   - "AAAI 2026"
   - "differential privacy"
@@ -11,7 +11,7 @@ tags:
   - "footrule distance"
   - "approximation algorithms"
 date: 2026-05-08
-content_hash: 5be801944806212a
+content_hash: e8e26c3b36a69466
 ---
 
 # Improved Differentially Private Algorithms for Rank Aggregation
@@ -140,9 +140,9 @@ This paper is purely theoretical and contains no experimental data. Core results
 
 ## Related Papers
 
-- [\[ICLR 2026\] Missing Mass for Differentially Private Domain Discovery](../../ICLR2026/others/missing_mass_for_differentially_private_domain_discovery.md)
-- [\[AAAI 2026\] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)
+- [\[CVPR 2026\] DP-FedAdamW: An Efficient Optimizer for Differentially Private Federated Large Models](../../CVPR2026/others/dp-fedadamw_an_efficient_optimizer_for_differentially_private_federated_large_mo.md)
 - [\[AAAI 2026\] Private Frequency Estimation via Residue Number Systems](private_frequency_estimation_via_residue_number_systems.md)
+- [\[AAAI 2026\] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)
 - [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
 - [\[AAAI 2026\] Theoretical and Empirical Analysis of Lehmer Codes to Search Permutation Spaces with Evolutionary Algorithms](theoretical_and_empirical_analysis_of_lehmer_codes_to_search_permutation_spaces_.md)
 

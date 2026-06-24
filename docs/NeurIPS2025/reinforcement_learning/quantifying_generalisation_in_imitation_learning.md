@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Quantifying Generalisation in Imitation Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][imitation learning] This paper proposes the Labyrinth benchmark environment, which achieves strict separation between training and evaluation data through controllable maze structur…
+  [NeurIPS 2025][Reinforcement Learning][imitation learning] This paper proposes the Labyrinth benchmark environment, which achieves strict separation between training and evaluation data through controllable maze structure variations. It reveals severe deficiencies in the structural generalisation of current imitation learning methods (best method achieves only 5% success rate on the test set) and provides a systematic tool for evaluating generalisation in imitation learning.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "maze navigation"
   - "benchmark"
 date: 2026-05-08
-content_hash: 4af6652cf7514742
+content_hash: 8df8f3547c78cac2
 ---
 
 # Quantifying Generalisation in Imitation Learning
@@ -135,10 +135,10 @@ Labyrinth itself does not train models but provides the environment. It uses the
 ## Related Papers
 
 - [\[NeurIPS 2025\] Interactive and Hybrid Imitation Learning: Provably Beating Behavior Cloning](interactive_and_hybrid_imitation_learning_provably_beating_behavior_cloning.md)
-- [\[ICLR 2026\] Boolean Satisfiability via Imitation Learning](../../ICLR2026/reinforcement_learning/boolean_satisfiability_via_imitation_learning.md)
 - [\[ICML 2026\] Quantifying and Optimizing Simplicity via Polynomial Representations](../../ICML2026/reinforcement_learning/quantifying_and_optimizing_simplicity_via_polynomial_representations.md)
-- [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](../../ICLR2026/reinforcement_learning/latent_wasserstein_adversarial_imitation_learning.md)
-- [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](../../ICLR2026/reinforcement_learning/on_discovering_algorithms_for_adversarial_imitation_learning.md)
+- [\[ICLR 2026\] Boolean Satisfiability via Imitation Learning](../../ICLR2026/reinforcement_learning/boolean_satisfiability_via_imitation_learning.md)
+- [\[ICML 2025\] Reward-free World Models for Online Imitation Learning](../../ICML2025/reinforcement_learning/reward-free_world_models_for_online_imitation_learning.md)
+- [\[ICML 2026\] Noise-Guided Transport: Imitation Learning from Random Priors](../../ICML2026/reinforcement_learning/noise-guided_transport_for_imitation_learning.md)
 
 </div>
 

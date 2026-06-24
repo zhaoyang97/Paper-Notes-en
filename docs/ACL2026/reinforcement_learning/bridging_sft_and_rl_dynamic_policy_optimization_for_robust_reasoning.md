@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] Ours proposes DYPO (Dynamic Policy Optimization), which routes samples to different optimization paths based on dynamic difficulty grading—Hard samples utilize multi-teacher distillation to reduce SFT bias, while Mid samples use Group Alignment Loss to reduce RL variance. This achieves an average gain of 4.8% on mathem
+  [ACL 2026 Findings][Reinforcement Learning][SFT and RL integration] Ours proposes DYPO (Dynamic Policy Optimization), which routes samples to different optimization paths based on dynamic difficulty grading—Hard samples utilize multi-teacher distillation to reduce SFT bias, while Mid samples use Group Alignment Loss to reduce RL variance. This achieves an average gain of 4.8% on mathematical reasoning benchmarks and 13.3% on OOD tasks.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Reinforcement Learning"
+  - "SFT and RL integration"
+  - "Bias-variance tradeoff"
+  - "Dynamic difficulty grading"
+  - "Multi-teacher distillation"
+  - "Gradient variance reduction"
 date: 2026-05-08
-content_hash: 138b9f99f16426ce
+content_hash: d245634b32c4b53a
 ---
+
 # Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -131,11 +137,11 @@ The total loss is a weighted combination based on graded routing. Hard samples: 
 
 ## Related Papers
 
+- [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](../../ICLR2026/reinforcement_learning/rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
 - [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](visually-guided_policy_optimization_for_multimodal_reasoning.md)
-- [\[ACL 2026\] RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization](rl-plus_countering_capability_boundary_collapse_of_llms_in_reinforcement_learnin.md)
-- [\[ICLR 2026\] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning](../../ICLR2026/reinforcement_learning/fapo_flawed-aware_policy_optimization_for_efficient_and_reliable_reasoning.md)
+- [\[ICLR 2026\] Belief-Based Offline Reinforcement Learning for Delay-Robust Policy Optimization](../../ICLR2026/reinforcement_learning/belief-based_offline_reinforcement_learning_for_delay-robust_policy_optimization.md)
 - [\[ICLR 2026\] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling](../../ICLR2026/reinforcement_learning/rulereasoner_reinforced_rule-based_reasoning_via_domain-aware_dynamic_sampling.md)
-- [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](../../ICLR2026/reinforcement_learning/thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
+- [\[ICLR 2026\] On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting](../../ICLR2026/reinforcement_learning/on-policy_rl_meets_off-policy_experts_harmonizing_supervised_fine-tuning_and_rei.md)
 
 </div>
 

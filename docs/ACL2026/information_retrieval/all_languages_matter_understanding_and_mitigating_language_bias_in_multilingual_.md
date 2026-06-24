@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] The study systematically reveals that multilingual RAG systems exhibit severe language bias (preference for English and query languages) during the reranking stage. It proposes the LAURA framework, which aligns the reranker via supervised signals driven by downstream generation quality, effectively mitigating bias and
+  [ACL 2026][Information Retrieval & RAG][Multilingual RAG] The study systematically reveals that multilingual RAG systems exhibit severe language bias (preference for English and query languages) during the reranking stage. It proposes the LAURA framework, which aligns the reranker via supervised signals driven by downstream generation quality, effectively mitigating bias and improving generation performance.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Multilingual RAG"
+  - "Reranking Bias"
+  - "Language Fairness"
+  - "Evidence Selection"
+  - "Cross-lingual Retrieval"
 date: 2026-05-08
-content_hash: 77b178d88735b7de
+content_hash: 761faadadc2b48e8
 ---
+
 # All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG
 
 **Conference**: ACL 2026  
@@ -124,11 +130,11 @@ Listwise fine-tuning utilizes the softmax cross-entropy loss $\mathcal{L} = -s(q
 
 ## Related Papers
 
-- [\[ACL 2026\] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion](enhancing_multilingual_rag_systems_with_debiased_language_preference-guided_quer.md)
-- [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
-- [\[ACL 2026\] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG](videostir_understanding_long_videos_via_spatio-temporally_structured_and_intent-.md)
 - [\[ACL 2025\] Investigating Language Preference of Multilingual RAG Systems](../../ACL2025/information_retrieval/investigating_language_preference_of_multilingual_rag_systems.md)
-- [\[ACL 2026\] CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG](coral_adaptive_retrieval_loop_for_culturally-aligned_multilingual_rag.md)
+- [\[ACL 2026\] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion](enhancing_multilingual_rag_systems_with_debiased_language_preference-guided_quer.md)
+- [\[ICLR 2026\] MILCO: Learned Sparse Retrieval Across Languages via a Multilingual Connector](../../ICLR2026/information_retrieval/milco_learned_sparse_retrieval_across_languages_via_a_multilingual_connector.md)
+- [\[ICML 2026\] Linguistic Nepotism: Trading-off Quality for Language Preference in Multilingual RAG](../../ICML2026/information_retrieval/linguistic_nepotism_trading-off_quality_for_language_preference_in_multilingual_.md)
+- [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
 
 </div>
 

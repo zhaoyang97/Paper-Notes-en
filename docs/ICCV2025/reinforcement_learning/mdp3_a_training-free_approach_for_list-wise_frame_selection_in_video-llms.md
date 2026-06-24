@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] mDP3: A Training-free Approach for List-wise Frame Selection in Video-LLMs
 description: >-
-  [ICCV 2025][Reinforcement Learning][Frame Selection] This paper proposes mDP3, a training-free and model-agnostic video frame selection method that estimates frame similarity in RKHS via a conditional Gaussian kernel…
+  [ICCV 2025][Reinforcement Learning][Frame Selection] This paper proposes mDP3, a training-free and model-agnostic video frame selection method that estimates frame similarity in RKHS via a conditional Gaussian kernel, leverages Determinantal Point Processes (DPP) to capture query relevance and list-wise diversity, and models temporal structure via a Markov Decision Process (MDP). Using only 8 input frames, mDP3 significantly outperforms uniform sampling and existing frame sel…
 tags:
   - "ICCV 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Video Question Answering"
   - "Training-free"
 date: 2026-05-08
-content_hash: a2a10bcb2c878321
+content_hash: 014b31350d0ef4eb
 ---
 
 # mDP3: A Training-free Approach for List-wise Frame Selection in Video-LLMs
@@ -170,10 +170,10 @@ Performance gains by video duration (LLaVA-OneVision, LVBval):
 ## Related Papers
 
 - [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](../../ICML2026/reinforcement_learning/single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
+- [\[ICLR 2026\] Instance-wise Adaptive Scheduling via Derivative-Free Meta-Learning](../../ICLR2026/reinforcement_learning/instance-wise_adaptive_scheduling_via_derivative-free_meta-learning.md)
 - [\[ICCV 2025\] RL-Selector: Reinforcement Learning-Guided Data Selection via Redundancy Assessment](reinforcement_learning-guided_data_selection_via_redundancy_assessment.md)
-- [\[ACL 2026\] Verifier-Free RL for LLMs via Intrinsic Gradient-Norm Reward](../../ACL2026/reinforcement_learning/verifier-free_rl_for_llms_via_intrinsic_gradient-norm_reward.md)
-- [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](../../AAAI2026/reinforcement_learning/a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
-- [\[CVPR 2026\] See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs](../../CVPR2026/reinforcement_learning/see_it_say_it_sorted_an_iterative_training-free_framework_for_visually-grounded_.md)
+- [\[ICML 2025\] VinePPO: Refining Credit Assignment in RL Training of LLMs](../../ICML2025/reinforcement_learning/vineppo_refining_credit_assignment_in_rl_training_of_llms.md)
+- [\[ICLR 2026\] MIRACLE: Model-free Imitation and Reinforcement Learning for Adaptive Cut-Selection](../../ICLR2026/reinforcement_learning/miracle_model-free_imitation_and_reinforcement_learning_for_adaptive_cut-selecti.md)
 
 </div>
 

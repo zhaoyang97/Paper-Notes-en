@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] From Sparse to Dense: Spatio-Temporal Fusion for Multi-View 3D Human Pose Estimation with DenseWarper
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] This paper proposes a new paradigm called "Sparse Interleaved Input"—where $N$ cameras each capture one frame at different time steps instead of synchronous full-frame sampling. The DenseWarper framework (epipolar spatial fusion + deformable convolution temporal completion) is then used to restore sparse interleaved he
+  [ICLR 2026][Human Understanding][Multi-view 3D Pose Estimation] This paper proposes a new paradigm called "Sparse Interleaved Input"—where $N$ cameras each capture one frame at different time steps instead of synchronous full-frame sampling. The DenseWarper framework (epipolar spatial fusion + deformable convolution temporal completion) is then used to restore sparse interleaved heatmaps into dense, spatio-temporally consistent pose sequences. It outperforms traditional synch…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Multi-view 3D Pose Estimation"
+  - "Sparse Interleaved Input"
+  - "Epipolar Geometry"
+  - "Heatmap Fusion"
+  - "Deformable Convolution"
+  - "Temporal Completion"
 date: 2026-05-08
-content_hash: 0a882ed66e96e676
+content_hash: 985077a73fbba7ba
 ---
+
 # From Sparse to Dense: Spatio-Temporal Fusion for Multi-View 3D Human Pose Estimation with DenseWarper
 
 **Conference**: ICLR 2026  
@@ -132,8 +139,8 @@ The latency is only 44.51ms (about half of Adafuse's 96ms), achieving a processi
 ## Related Papers
 
 - [\[CVPR 2026\] MS^2Gait: A Multi-Scale Spatio-Temporal Fusion Network for LiDAR-based Gait Recognition](../../CVPR2026/human_understanding/ms2gait_a_multi-scale_spatio-temporal_fusion_network_for_lidar-based_gait_recogn.md)
-- [\[ECCV 2024\] RePOSE: 3D Human Pose Estimation via Spatio-Temporal Depth Relational Consistency](../../ECCV2024/human_understanding/repose_3d_human_pose_estimation_via_spatio-temporal_depth_relational_consistency.md)
 - [\[ECCV 2024\] UPose3D: Uncertainty-Aware 3D Human Pose Estimation with Cross-View and Temporal Cues](../../ECCV2024/human_understanding/upose3d_uncertainty-aware_3d_human_pose_estimation_with_cross-view_and_temporal_.md)
+- [\[ECCV 2024\] RePOSE: 3D Human Pose Estimation via Spatio-Temporal Depth Relational Consistency](../../ECCV2024/human_understanding/repose_3d_human_pose_estimation_via_spatio-temporal_depth_relational_consistency.md)
 - [\[ECCV 2024\] 3DSA: Multi-view 3D Human Pose Estimation With 3D Space Attention Mechanisms](../../ECCV2024/human_understanding/3dsa_multi-view_3d_human_pose_estimation_with_3d_space_attention_mechanisms.md)
 - [\[CVPR 2026\] MGDHand: Multi-Granularity Prior-to-Inertial Distillation Framework for Sequential 3D Hand Pose Estimation from Sparse IMUs](../../CVPR2026/human_understanding/mgdhand_multi-granularity_prior-to-inertial_distillation_framework_for_sequentia.md)
 

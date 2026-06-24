@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper provides the first systematic biosecurity assessment of DNA language models from a red-teaming perspective. By constructing the JailbreakDNABench benchmark and proposing the GeneBreaker framework, the authors demonstrate that frontier DNA language models (e.g., Evo series) possess dual-use risks of being ind
+  [LLM Safety] This paper provides the first systematic biosecurity assessment of DNA language models from a red-teaming perspective. By constructing the JailbreakDNABench benchmark and proposing the GeneBreaker framework, the authors demonstrate that frontier DNA language models (e.g., Evo series) possess dual-use risks of being induced to generate "pathogen-like" sequences, calling for the urgent establishment of safety alignment and provenance mechanisms.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "LLM Safety"
 date: 2026-05-08
-content_hash: fc324701750c210a
+content_hash: 669b283a2714408a
 ---
+
 # GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance
 
 Conference: ICLR 2026  

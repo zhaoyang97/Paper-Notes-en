@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VisualSync: Multi-Camera Synchronization via Cross-View Object Motion
 description: >-
-  [NeurIPS 2025][3D Vision][multi-camera synchronization] VisualSync presents a multi-camera temporal synchronization framework grounded in epipolar geometry constraints. By leveraging pretrained vision foundation models (…
+  [NeurIPS 2025][3D Vision][multi-camera synchronization] VisualSync presents a multi-camera temporal synchronization framework grounded in epipolar geometry constraints. By leveraging pretrained vision foundation models (VGGT, CoTracker3, MAST3R) to extract motion trajectories and cross-view correspondences, the method estimates per-camera temporal offsets by minimizing Sampson error, achieving millisecond-level synchronization with median errors below 50 ms across four benchm…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "dynamic scene reconstruction"
   - "temporal offset estimation"
 date: 2026-05-08
-content_hash: 255230fbc6ffaa73
+content_hash: 3aa5154dbf9626d6
 ---
 
 # VisualSync: Multi-Camera Synchronization via Cross-View Object Motion

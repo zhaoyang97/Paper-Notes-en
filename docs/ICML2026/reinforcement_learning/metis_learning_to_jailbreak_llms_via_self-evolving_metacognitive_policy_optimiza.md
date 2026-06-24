@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization
 description: >-
-  [ICML 2026][Reinforcement Learning][jailbreak] Reframes multi-turn jailbreaking as a test-time policy optimization problem under an adversarial POMDP framework. An Attacker and a Metacognitive Evaluator form a closed loop where dense analytical feedback from the Evaluator serves as a "semantic gradient" to guide the Attacker's belief updates and policy improvements
+  [ICML 2026][Reinforcement Learning][Red Teaming] Reframes multi-turn jailbreaking as a test-time policy optimization problem under an adversarial POMDP framework. An Attacker and a Metacognitive Evaluator form a closed loop where dense analytical feedback from the Evaluator serves as a "semantic gradient" to guide the Attacker's belief updates and policy improvements. Without retraining any weights, it achieves an average ASR of 89.2% on 10 frontier models (including O1 / GPT…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - jailbreak
-  - POMDP
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Red Teaming"
+  - "jailbreak"
+  - "POMDP"
+  - "Metacognition"
+  - "Semantic Gradient"
 date: 2026-05-08
-content_hash: c030b0b74a8695b2
+content_hash: db9d56cfd5ad0821
 ---
+
 # Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization
 
 **Conference**: ICML 2026  
@@ -145,9 +149,9 @@ Efficiency Comparison (Budget $T_\text{max}=5$, same backbone):
 ## Related Papers
 
 - [\[ACL 2026\] Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning](../../ACL2026/reinforcement_learning/easy_samples_are_all_you_need_self-evolving_llms_via_data-efficient_reinforcemen.md)
-- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](learning_to_route_languages_for_multilingual_policy_optimization.md)
 - [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](../../ICLR2026/reinforcement_learning/spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
-- [\[ICLR 2026\] Metis-SPECS: Decoupling Multimodal Learning via Self-distilled Preference-based Cold Start](../../ICLR2026/reinforcement_learning/metis-specs_decoupling_multimodal_learning_via_self-distilled_preference-based_c.md)
+- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](learning_to_route_languages_for_multilingual_policy_optimization.md)
+- [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](../../ICLR2026/reinforcement_learning/r-zero_self-evolving_reasoning_llm_from_zero_data.md)
 - [\[ICML 2026\] Dr. Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research](dr_tulu_reinforcement_learning_with_evolving_rubrics_for_deep_research.md)
 
 </div>

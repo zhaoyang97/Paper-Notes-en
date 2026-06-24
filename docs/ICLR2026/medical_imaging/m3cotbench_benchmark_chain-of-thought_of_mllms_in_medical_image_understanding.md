@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding
 description: >-
-  [ICLR 2026][Medical Imaging][Medical MLLM] M3CoTBench is the first benchmark specifically designed to evaluate the quality of Chain-of-Thought (CoT) in MLLMs for medical image understanding. It goes beyond final answer accuracy by quantifying the reasoning paths across four dimensions: correctness, efficiency, impact, and consistency. The study reveals that cur
+  [ICLR 2026][Medical Imaging][Medical MLLM] M3CoTBench is the first benchmark specifically designed to evaluate the quality of Chain-of-Thought (CoT) in MLLMs for medical image understanding. It goes beyond final answer accuracy by quantifying the reasoning paths across four dimensions: correctness, efficiency, impact, and consistency. The study reveals that current MLLMs are neither reliable nor interpretable in clinical reasoning, and accuracy often decreases when CoT is app…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Medical MLLM
-  - Chain-of-Thought
-  - Benchmark
-  - Medical VQA
-  - Reasoning Evaluation
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Medical MLLM"
+  - "Chain-of-Thought"
+  - "Benchmark"
+  - "Medical VQA"
+  - "Reasoning Evaluation"
 date: 2026-05-08
-content_hash: 5fb4572066b31fd7
+content_hash: 8313874b70b60c67
 ---
+
 # M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding
 
 **Conference**: ICLR 2026  
@@ -130,8 +131,8 @@ M3CoTBench is the only medical benchmark providing step-by-step CoT annotations 
 - [\[CVPR 2026\] SurgCoT: Advancing Spatiotemporal Reasoning in Surgical Videos through a Chain-of-Thought Benchmark](../../CVPR2026/medical_imaging/surgcot_advancing_spatiotemporal_reasoning_in_surgical_videos_through_a_chain-of.md)
 - [\[ICLR 2026\] Boosting Medical Visual Understanding From Multi-Granular Language Learning](boosting_medical_visual_understanding_from_multi-granular_language_learning.md)
 - [\[NeurIPS 2025\] THUNDER: Tile-level Histopathology image UNDERstanding benchmark](../../NeurIPS2025/medical_imaging/thunder_tile-level_histopathology_image_understanding_benchmark.md)
+- [\[ICLR 2026\] MedLesionVQA: A Multimodal Benchmark Emulating Clinical Visual Diagnosis for Body Surface Health](medlesionvqa_a_multimodal_benchmark_emulating_clinical_visual_diagnosis_for_body.md)
 - [\[ICLR 2026\] U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding](u2-bench_benchmarking_large_vision-language_models_on_ultrasound_understanding.md)
-- [\[ICLR 2026\] Towards Text–Mask Consistency in Medical Image Segmentation](towards_text-mask_consistency_in_medical_image_segmentation.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DRIFT: Transferring Reasoning Priors for Efficient MLLM Fine-Tuning
 description: >-
-  [ACL 2026][vlm_reasoning][MLLM] DRIFT treats the "parameter difference between a text reasoning expert and a multimodal model" as a directional prior. During multimodal SFT backpropagation, it applies a lightweight bias to gradients (without modifying weights). Using only 4K multimodal CoT data and approximately 2 hours of training, it consistently p
+  [ACL 2026][VLM Reasoning][MLLM] DRIFT treats the "parameter difference between a text reasoning expert and a multimodal model" as a directional prior. During multimodal SFT backpropagation, it applies a lightweight bias to gradients (without modifying weights). Using only 4K multimodal CoT data and approximately 2 hours of training, it consistently pushes Qwen2.5-VL-7B performance on benchmarks like MathVista, MathVerse, and WeMath beyond parameter merging baselines and heavy…
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - MLLM
-  - SFT
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "MLLM"
+  - "reasoning transfer"
+  - "gradient prior"
+  - "SFT"
+  - "model merging"
 date: 2026-05-08
-content_hash: 793975fdd9a81ee8
+content_hash: 5e1fbd026b515822
 ---
+
 # DRIFT: Transferring Reasoning Priors for Efficient MLLM Fine-Tuning
 
 **Conference**: ACL 2026  

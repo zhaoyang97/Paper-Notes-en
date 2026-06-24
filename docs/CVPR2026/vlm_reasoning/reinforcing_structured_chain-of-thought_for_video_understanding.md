@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reinforcing Structured Chain-of-Thought for Video Understanding
 description: >-
-  [CVPR 2026][LLM Reasoning][Reinforcement Learning] Proposes SDRL (Summary-Driven Reinforcement Learning), a single-stage RL framework without SFT. By utilizing structured CoT (Summarize→Think→Answer) and two self-supervised mechanisms (CVK and DVR), it enhances video temporal reasoning and achieves SOTA results on 7 VideoQA benchmarks.
+  [CVPR 2026][VLM Reasoning][VideoQA] Proposes SDRL (Summary-Driven Reinforcement Learning), a single-stage RL framework without SFT. By utilizing structured CoT (Summarize→Think→Answer) and two self-supervised mechanisms (CVK and DVR), it enhances video temporal reasoning and achieves SOTA results on 7 VideoQA benchmarks.
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "VideoQA"
+  - "Reinforcement Learning"
+  - "Structured CoT"
+  - "GRPO"
+  - "Temporal Reasoning"
 date: 2026-05-08
-content_hash: 89ebbb9286908414
+content_hash: 44137bdcf04ea75f
 ---
+
 # Reinforcing Structured Chain-of-Thought for Video Understanding
 
 **Conference**: CVPR 2026  
@@ -182,11 +186,11 @@ Impact of model scale on supervision:
 
 ## Related Papers
 
-- [\[CVPR 2026\] APPO: Attention-guided Perception Policy Optimization for Video Reasoning](appo_attention-guided_perception_policy_optimization_for_video_reasoning.md)
-- [\[CVPR 2026\] FireScope: Wildfire Risk Raster Prediction with a Chain-of-Thought Oracle](firescope_wildfire_risk_raster_prediction_with_a_chain-of-thought_oracle.md)
-- [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](../../NeurIPS2025/llm_reasoning/visual_thoughts_a_unified_perspective_of_understanding_multi.md)
-- [\[CVPR 2025\] VideoEspresso: A Large-Scale Chain-of-Thought Dataset for Fine-Grained Video Reasoning via Core Frame Selection](../../CVPR2025/llm_reasoning/videoespresso_a_large-scale_chain-of-thought_dataset_for_fine-grained_video_reas.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
+- [\[CVPR 2026\] Chain-of-Frames: Advancing Video Understanding in Multimodal LLMs via Frame-Aware Reasoning](chain-of-frames_advancing_video_understanding_in_multimodal_llms_via_frame-aware.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Reinforcing Video Object Segmentation to Think before it Segments](reinforcing_video_object_segmentation_to_think_before_it_segments.md)
+- [\[CVPR 2026\] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning](reagen_adaptive_generation_of_structured_chains-of-thought_for_efficient_multimo.md)
+- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
 
 </div>
 

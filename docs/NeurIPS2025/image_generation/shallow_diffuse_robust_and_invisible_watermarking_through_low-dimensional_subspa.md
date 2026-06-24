@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Digital Watermarking] This paper proposes Shallow Diffuse, a method that exploits the local linearity and low-rank Jacobian of the posterior mean predictor (PMP) in diffusion models to em…
+  [NeurIPS 2025 Spotlight][Image Generation][Digital Watermarking] This paper proposes Shallow Diffuse, a method that exploits the local linearity and low-rank Jacobian of the posterior mean predictor (PMP) in diffusion models to embed watermarks at intermediate diffusion timesteps. This design decouples the watermark from the generation process, achieving, for the first time, both high fidelity and high robustness simultaneously under both server-side and user-side deployment…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "Digital Watermarking"
   - "Diffusion Models"
@@ -12,7 +12,7 @@ tags:
   - "DDIM"
   - "Frequency-Domain Embedding"
 date: 2026-05-08
-content_hash: 1270a9f89284c7c7
+content_hash: a0e52a4458747e8e
 ---
 
 # Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models
@@ -151,10 +151,10 @@ In the user-side scenario, Gaussian Shading and RingID exhibit extremely poor fi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
-- [\[NeurIPS 2025\] WMCopier: Forging Invisible Image Watermarks on Arbitrary Images](wmcopier_forging_invisible_image_watermarks_on_arbitrary_images.md)
-- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
 - [\[ICCV 2025\] Invisible Watermarks, Visible Gains: Steering Machine Unlearning with Bi-Level Watermarking Design](../../ICCV2025/image_generation/invisible_watermarks_visible_gains_steering_machine_unlearning_with_bi-level_wat.md)
-- [\[NeurIPS 2025\] BitMark: Watermarking Bitwise Autoregressive Image Generative Models](bitmark_watermarking_bitwise_autoregressive_image_generative_models.md)
+- [\[ICML 2025\] Distillation of Discrete Diffusion through Dimensional Correlations (Di4C)](../../ICML2025/image_generation/distillation_of_discrete_diffusion_through_dimensional_correlations.md)
+- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
+- [\[NeurIPS 2025\] WMCopier: Forging Invisible Image Watermarks on Arbitrary Images](wmcopier_forging_invisible_image_watermarks_on_arbitrary_images.md)
 
 </div>
 

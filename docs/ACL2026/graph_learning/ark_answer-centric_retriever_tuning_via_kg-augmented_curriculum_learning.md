@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ARK: Answer-Centric Retriever Tuning via KG-augmented Curriculum Learning
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] The ARK framework is proposed, which filters positive samples through a three-dimensional answer sufficiency score (Forward + Backward + Retriever alignment) and utilizes LLM-constructed Knowledge Graphs (KG) to generate hard negative samples of progressive difficulty for curriculum contrastive learning. It achieves an
+  [ACL 2026][Graph Learning][Answer-Centric Retrieval] The ARK framework is proposed, which filters positive samples through a three-dimensional answer sufficiency score (Forward + Backward + Retriever alignment) and utilizes LLM-constructed Knowledge Graphs (KG) to generate hard negative samples of progressive difficulty for curriculum contrastive learning. It achieves an average F1 improvement of 14.5% across 10 datasets.
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Answer-Centric Retrieval"
+  - "Knowledge Graph Enhancement"
+  - "Curriculum Learning"
+  - "Contrastive Learning"
+  - "Long-Context RAG"
 date: 2026-05-08
-content_hash: 4440f2a316f5426f
+content_hash: aa53523379afb124
 ---
+
 # ARK: Answer-Centric Retriever Tuning via KG-augmented Curriculum Learning
 
 **Conference**: ACL 2026  
@@ -135,10 +141,10 @@ The training objective is the standard InfoNCE contrastive loss, with the primar
 ## Related Papers
 
 - [\[AAAI 2026\] Feature-Centric Unsupervised Node Representation Learning Without Homophily Assumption](../../AAAI2026/graph_learning/feature-centric_unsupervised_node_representation_learning_without_homophily_assu.md)
-- [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](../../ICML2026/graph_learning/gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
 - [\[ICML 2026\] Message Tuning Outshines Graph Prompt Tuning: A Prismatic Space Perspective](../../ICML2026/graph_learning/message_tuning_outshines_graph_prompt_tuning_a_prismatic_space_perspective.md)
-- [\[ACL 2026\] AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning](agentgl_towards_agentic_graph_learning_with_llms_via_reinforcement_learning.md)
+- [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](../../ICML2026/graph_learning/gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
 - [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
+- [\[ACL 2026\] ComplianceNLP: Knowledge-Graph-Augmented RAG for Multi-Framework Regulatory Gap Detection](compliancenlp_knowledge-graph-augmented_rag_for_multi-framework_regulatory_gap_d.md)
 
 </div>
 

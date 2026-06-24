@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization
 description: >-
-  [ICLR 2026][Optimization & Theory][CSAM] This paper theoretically proves that the effectiveness of Sharpness-Aware Minimization (SAM) in mitigating "overconfidence" in deep networks stems from its implicit regularization of the negative entropy of the predictive distribution (equivalent to implicit maximum entropy). Based on this, it proposes an improved vers
+  [ICLR 2026][Optimization][Sharpness-Aware Minimization] This paper theoretically proves that the effectiveness of Sharpness-Aware Minimization (SAM) in mitigating "overconfidence" in deep networks stems from its implicit regularization of the negative entropy of the predictive distribution (equivalent to implicit maximum entropy). Based on this, it proposes an improved version, CSAM, which specifically suppresses overconfident samples and achieves lower calibration errors tha…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - CSAM
+  - "ICLR 2026"
+  - "Optimization"
+  - "Sharpness-Aware Minimization"
+  - "Model Calibration"
+  - "Maximum Entropy Regularization"
+  - "Overconfidence"
+  - "CSAM"
 date: 2026-05-08
-content_hash: 6e20e0d6ee33fc29
+content_hash: 067552678def559d
 ---
+
 # Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization
 
 **Conference**: ICLR 2026  
@@ -149,14 +154,14 @@ OOD (ResNet-18 / CIFAR-10 training, transferred to SVHN, CIFAR-10/100-C):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
 - [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
-- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](../../ICML2026/optimization/stability_analysis_of_sharpness-aware_minimization.md)
 - [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
+- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](../../ICML2026/optimization/stability_analysis_of_sharpness-aware_minimization.md)
 - [\[ICML 2025\] Tilted Sharpness-Aware Minimization](../../ICML2025/optimization/tilted_sharpness-aware_minimization.md)
 
 </div>

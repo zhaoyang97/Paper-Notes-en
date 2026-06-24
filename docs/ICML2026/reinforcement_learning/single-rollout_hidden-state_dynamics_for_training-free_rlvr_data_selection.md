@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection
 description: >-
-  [ICML 2026][Reinforcement Learning][RLVR] SHIFT utilizes the "start token → end token" hidden-state difference $\Delta(x)=\mathbf{e}(x)-\mathbf{s}(x)$ from a single greedy decoding rollout as both a utility proxy and a diversity feature for RLVR samples. It then employs a quality-weighted farthest-first CoreSet to select a minimal set of samples from a large u
+  [ICML 2026][Reinforcement Learning][RLVR] SHIFT utilizes the "start token → end token" hidden-state difference $\Delta(x)=\mathbf{e}(x)-\mathbf{s}(x)$ from a single greedy decoding rollout as both a utility proxy and a diversity feature for RLVR samples. It then employs a quality-weighted farthest-first CoreSet to select a minimal set of samples from a large unlabeled pool without training, rewards, or ground truth answers.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - RLVR
-  - CoreSet
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Data Selection"
+  - "Hidden-State Dynamics"
+  - "CoreSet"
+  - "Training-Free"
 date: 2026-05-08
-content_hash: de6455087bfea0ab
+content_hash: c5547ed3b6a71ad2
 ---
+
 # Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection
 
 **Conference**: ICML 2026  
@@ -131,11 +135,11 @@ SHIFT does not train any parameters; the selection phase consists only of one gr
 
 ## Related Papers
 
+- [\[ICLR 2026\] PROS: Towards Compute-Efficient RLVR via Rollout Prefix Reuse](../../ICLR2026/reinforcement_learning/pros_towards_compute-efficient_rlvr_via_rollout_prefix_reuse.md)
 - [\[ICML 2026\] Probing RLVR Training Instability through the Lens of Objective-Level Hacking](probing_rlvr_training_instability_through_the_lens_of_objective-level_hacking.md)
 - [\[ICML 2026\] EchoRL: Reinforcement Learning via Rollout Echoing](echorl_reinforcement_learning_via_rollout_echoing.md)
 - [\[ACL 2026\] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment](../../ACL2026/reinforcement_learning/learnalign_data_selection_for_llm_reinforcement_learning_with_improved_gradient_.md)
-- [\[ICML 2026\] CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning](cpmobius_iterative_coach-player_reasoning_for_data-free_reinforcement_learning.md)
-- [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
+- [\[ICCV 2025\] mDP3: A Training-free Approach for List-wise Frame Selection in Video-LLMs](../../ICCV2025/reinforcement_learning/mdp3_a_training-free_approach_for_list-wise_frame_selection_in_video-llms.md)
 
 </div>
 

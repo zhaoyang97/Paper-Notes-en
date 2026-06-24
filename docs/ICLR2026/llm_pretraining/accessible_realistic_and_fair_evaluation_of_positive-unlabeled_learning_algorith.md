@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms
 description: >-
-  [ICLR 2026][Pretraining][benchmark] This paper proposes the first unified benchmark for PU learning, systematically addressing two key issues: (1) implementing model selection without negative samples using Proxy Accuracy and Proxy AUC; (2) identifying and resolving the Internal Label Shift problem in the one-sample setting through a simple calibration m
+  [ICLR 2026][LLM Pretraining][Positive-Unlabeled Learning] This paper proposes the first unified benchmark for PU learning, systematically addressing two key issues: (1) implementing model selection without negative samples using Proxy Accuracy and Proxy AUC; (2) identifying and resolving the Internal Label Shift problem in the one-sample setting through a simple calibration method that merges positive samples into the unlabeled set, enabling fair comparison of two-sample algo…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - benchmark
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Positive-Unlabeled Learning"
+  - "benchmark"
+  - "model selection"
+  - "label shift"
+  - "fair evaluation"
 date: 2026-05-08
-content_hash: f7861a209b80f242
+content_hash: b4d39c2d0bc8143f
 ---
+
 # Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms
 
 **Conference**: ICLR 2026  
@@ -112,7 +117,7 @@ Logistic loss is used uniformly. The calibration only modifies how the unlabeled
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

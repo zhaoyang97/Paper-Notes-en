@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models
 description: >-
-  [AAAI 2026][LLM/NLP][Symbolic Regression] This paper proposes CoEvo, a framework that integrates LLMs with evolutionary search methodology to achieve continual open-ended evolution of symbolic solutions through a dynamic…
+  [AAAI 2026][LLM (Other)][Symbolic Regression] This paper proposes CoEvo, a framework that integrates LLMs with evolutionary search methodology to achieve continual open-ended evolution of symbolic solutions through a dynamic knowledge library and multi-representation spaces (natural language / mathematical formulas / code), significantly outperforming existing symbolic regression methods on the AI Feynman benchmark.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Symbolic Regression"
   - "LLM-based Evolutionary Search"
   - "Knowledge Library"
   - "Open-ended Innovation"
   - "Multi-representation Space"
 date: 2026-05-08
-content_hash: 826e1492d00bd3e9
+content_hash: ceeb6ce085cba5d1
 ---
 
 # CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models
@@ -203,10 +203,10 @@ CoEvo outperforms LLM-SR on Oscillation 2 and E. coli Growth by **several orders
 ## Related Papers
 
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
+- [\[ICCV 2025\] Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models](../../ICCV2025/llm_nlp/any_ssr_how_recursive_least_squares_works_in_continual_learning_of_large_language_models.md)
 - [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
 - [\[AAAI 2026\] LoKI: Low-damage Knowledge Implanting of Large Language Models](loki_low-damage_knowledge_implanting_of_large_language_models.md)
 - [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
-- [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
 
 </div>
 

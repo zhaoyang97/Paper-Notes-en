@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] Ours proposes the EasyRL framework, inspired by cognitive development theory, which uses only 10% of simple labeled data to initialize the model via knowledge transfer, and then progressively masters difficult unlabeled data through divide-and-conquer pseudo-labeling and difficulty-incremental self-training, consistent
+  [ACL 2026 Findings][Reinforcement Learning][Data-Efficient RL] Ours proposes the EasyRL framework, inspired by cognitive development theory, which uses only 10% of simple labeled data to initialize the model via knowledge transfer, and then progressively masters difficult unlabeled data through divide-and-conquer pseudo-labeling and difficulty-incremental self-training, consistently outperforming GRPO trained on the full dataset.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Reinforcement Learning"
+  - "Data-Efficient RL"
+  - "Self-Evolving LLM"
+  - "Pseudo-labeling"
+  - "Easy-to-Hard"
+  - "Cognitive Learning Theory"
 date: 2026-05-08
-content_hash: 5bdb1a713406e451
+content_hash: 7549e1af2d72781b
 ---
+
 # Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning
 
 **Conference**: ACL 2026 Findings  
@@ -140,10 +146,10 @@ Standard GRPO objective function. Correctness reward $r=1$ (match), $r=-0.5$ (fo
 
 ## Related Papers
 
-- [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](../../ICML2026/reinforcement_learning/metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
+- [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](../../ICLR2026/reinforcement_learning/r-zero_self-evolving_reasoning_llm_from_zero_data.md)
 - [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](../../ICML2026/reinforcement_learning/d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
+- [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](../../ICML2026/reinforcement_learning/metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
 - [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](../../ICLR2026/reinforcement_learning/spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
-- [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](../../ICLR2026/reinforcement_learning/self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
 - [\[ACL 2026\] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment](learnalign_data_selection_for_llm_reinforcement_learning_with_improved_gradient_.md)
 
 </div>

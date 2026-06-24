@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] InnovatorBench: Evaluating Agents' Ability to Conduct Innovative AI Research
 description: >-
-  [ICLR 2026][LLM Agent][ResearchGym] This paper introduces InnovatorBench—the first end-to-end benchmark (20 tasks) constructed from real papers and codebases, covering 6 categories of LLM research sub-problems such as data, loss, reward, and scaffolding. Accompanied by the ResearchGym environment, which supports distributed, asynchronous, and snapshot ca
+  [ICLR 2026][LLM Agent][AI Research Agents] This paper introduces InnovatorBench—the first end-to-end benchmark (20 tasks) constructed from real papers and codebases, covering 6 categories of LLM research sub-problems such as data, loss, reward, and scaffolding. Accompanied by the ResearchGym environment, which supports distributed, asynchronous, and snapshot capabilities, the study evaluates frontier models like Claude-4, GPT-5, and GLM-4.5 using ReAct agents. The findings re…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - ResearchGym
-  - ReAct
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "AI Research Agents"
+  - "End-to-end Benchmark"
+  - "Long-horizon Execution"
+  - "ResearchGym"
+  - "ReAct"
 date: 2026-05-08
-content_hash: 87dd978f0b28dbc3
+content_hash: dabb2ff69b1b8f2e
 ---
+
 # InnovatorBench: Evaluating Agents' Ability to Conduct Innovative AI Research
 
 **Conference**: ICLR 2026  
@@ -132,6 +136,7 @@ Performance in **data-centric tasks (DC/DF/DA) was generally higher than in algo
 - Value: ⭐⭐⭐⭐⭐ Provides a realistic, extensible base for evaluating research agents with the reusable ResearchGym.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper reveals the threat of "Adversarial Smuggling Attacks" (ASA) in multimodal large language model content moderation—encoding harmful content into human-readable but AI-unreadable visual formats to evade automated detection. The authors constructed the SmuggleBench benchmark containing 1,700 samples and 9 attac
+  [ACL 2026][LLM Safety][Adversarial Attacks] This paper reveals the threat of "Adversarial Smuggling Attacks" (ASA) in multimodal large language model content moderation—encoding harmful content into human-readable but AI-unreadable visual formats to evade automated detection. The authors constructed the SmuggleBench benchmark containing 1,700 samples and 9 attack techniques, finding that state-of-the-art (SOTA) models, including GPT-5, suffer from attack success rates exceedi…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Adversarial Attacks"
+  - "Content Moderation"
+  - "Multimodal Large Language Models"
+  - "Perceptual Blindness"
+  - "Reasoning Blockade"
 date: 2026-05-08
-content_hash: 874486a9fa30251e
+content_hash: 8e8c98e81ccfc77e
 ---
+
 # Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation
 
 **Conference**: ACL 2026  

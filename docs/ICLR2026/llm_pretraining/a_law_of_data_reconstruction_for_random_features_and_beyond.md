@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Law of Data Reconstruction for Random Features (and Beyond)
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper demonstrates an information-theoretical and algebraic "data reconstruction law" in random feature (RF) models: when the number of parameters $p \gg dn$ (where $d$ is data dimension and $n$ is the number of samples), the training data can be fully reconstructed. The universality of this threshold is verified
+  [ICLR 2026][LLM Pretraining][Data Reconstruction] This paper demonstrates an information-theoretical and algebraic "data reconstruction law" in random feature (RF) models: when the number of parameters $p \gg dn$ (where $d$ is data dimension and $n$ is the number of samples), the training data can be fully reconstructed. The universality of this threshold is verified across RF, two-layer networks, and ResNet using a projection loss optimization method.
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data Reconstruction"
+  - "Over-parameterization"
+  - "Random Features"
+  - "Memorization"
+  - "Privacy"
 date: 2026-05-08
-content_hash: 5c5ed762c06a2093
+content_hash: 529755adf68d9ee9
 ---
+
 # A Law of Data Reconstruction for Random Features (and Beyond)
 
 **Conference**: ICLR 2026  
@@ -133,8 +139,8 @@ Reconstruction does not involve training a new model; it optimizes candidate inp
 - [\[NeurIPS 2025\] Optimal Online Change Detection via Random Fourier Features](../../NeurIPS2025/llm_pretraining/optimal_online_change_detection_via_random_fourier_features.md)
 - [\[ICLR 2026\] What Scales in Cross-Entropy Scaling Law?](what_scales_in_cross-entropy_scaling_law.md)
 - [\[ICLR 2026\] Understanding the Emergence of Seemingly Useless Features in Next-Token Predictors](understanding_the_emergence_of_seemingly_useless_features_in_next-token_predicto.md)
+- [\[ICLR 2026\] FoNE: Precise Single-Token Number Embeddings via Fourier Features](fone_precise_single-token_number_embeddings_via_fourier_features.md)
 - [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
-- [\[ICLR 2026\] Beyond Multi-Token Prediction: Pretraining LLMs with Future Summaries](beyond_multi-token_prediction_pretraining_llms_with_future_summaries.md)
 
 </div>
 

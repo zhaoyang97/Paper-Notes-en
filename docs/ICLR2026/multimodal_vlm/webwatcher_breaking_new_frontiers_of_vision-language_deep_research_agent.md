@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WebWatcher: Breaking New Frontiers of Vision-Language Deep Research Agent
 description: >-
-  [ICLR 2026][Multimodal VLM][GRPO] WebWatcher is a "deep research" web agent capable of joint reasoning across text and image modalities. It utilizes automatically synthesized high-quality tool-calling trajectories for SFT cold-starts, followed by GRPO reinforcement learning to refine decision-making. It also introduces the BrowseComp-VL benchmark requi
+  [ICLR 2026][Multimodal VLM][Vision-Language Agent] WebWatcher is a "deep research" web agent capable of joint reasoning across text and image modalities. It utilizes automatically synthesized high-quality tool-calling trajectories for SFT cold-starts, followed by GRPO reinforcement learning to refine decision-making. It also introduces the BrowseComp-VL benchmark requiring cross-modal retrieval, outperforming prompt-based workflows and existing open-source multimodal agents o…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - GRPO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Agent"
+  - "Deep Research"
+  - "Tool Call"
+  - "GRPO"
+  - "Multimodal VQA"
 date: 2026-05-08
-content_hash: 6c9fef3325725ce7
+content_hash: d4d5a6789560f22f
 ---
+
 # WebWatcher: Breaking New Frontiers of Vision-Language Deep Research Agent
 
 **Conference**: ICLR 2026  

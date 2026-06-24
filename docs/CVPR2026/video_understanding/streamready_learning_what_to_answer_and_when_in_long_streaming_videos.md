@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StreamReady: Learning What to Answer and When in Long Streaming Videos
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper proposes a readiness-aware streaming video understanding paradigm. By introducing a learnable `<RDY>` token and the Answer Readiness Score (ARS) metric, the model learns not only to provide correct answers but also to answer at the precise moment evidence appears. It achieves SOTA performance across 9 stream
+  [CVPR 2026][Video Understanding][Streaming Video Understanding] This paper proposes a readiness-aware streaming video understanding paradigm. By introducing a learnable `<RDY>` token and the Answer Readiness Score (ARS) metric, the model learns not only to provide correct answers but also to answer at the precise moment evidence appears. It achieves SOTA performance across 9 streaming and offline video benchmarks.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Streaming Video Understanding"
+  - "Answer Readiness"
+  - "Temporal Reasoning"
+  - "Multimodal Large Language Models (MLLMs)"
+  - "Proactive Question Answering"
 date: 2026-05-08
-content_hash: 2a8ccaefbae3cd3c
+content_hash: 27c2e13a067eed3e
 ---
+
 # StreamReady: Learning What to Answer and When in Long Streaming Videos
 
 **Conference**: CVPR 2026  
@@ -169,10 +175,10 @@ StreamReady outperforms the best competitor, StreamBridge, by ~3% in accuracy an
 ## Related Papers
 
 - [\[CVPR 2026\] Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing](color_when_it_counts_grayscale-guided_online_triggering_for_always-on_streaming_.md)
-- [\[CVPR 2026\] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)
-- [\[CVPR 2026\] Time Blindness: Why Video-Language Models Can't See What Humans Can?](time_blindness_why_video-language_models_cant_see_what_humans_can.md)
 - [\[CVPR 2026\] An Empirical Study on How Video-LLMs Answer Video Questions](an_empirical_study_on_how_video-llms_answer_video_questions.md)
 - [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
+- [\[CVPR 2026\] Time Blindness: Why Video-Language Models Can't See What Humans Can?](time_blindness_why_video-language_models_cant_see_what_humans_can.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
 
 </div>
 

@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Safety][large reasoning models] This paper presents the first systematic study of answer attribution in large reasoning models (LRMs), revealing that reasoning (CoT) and retrieval (memory) mechanisms concurrently compete to influence final answers. It proposes Farl (Forgetting-Augmented Reinforcement Learning) to enhance authentic reasoning by suppre
+  [ICLR 2026][LLM Safety][large reasoning models] This paper presents the first systematic study of answer attribution in large reasoning models (LRMs), revealing that reasoning (CoT) and retrieval (memory) mechanisms concurrently compete to influence final answers. It proposes Farl (Forgetting-Augmented Reinforcement Learning) to enhance authentic reasoning by suppressing retrieval shortcuts.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - large reasoning models
-  - CoT reasoning
-  - memory retrieval
-  - answer attribution
-  - reinforcement-learning
-  - unlearning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "large reasoning models"
+  - "CoT reasoning"
+  - "memory retrieval"
+  - "answer attribution"
+  - "reinforcement-learning"
+  - "unlearning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 0da2cecd17edd985
+content_hash: 1e98aad080b8e91c
 ---
+
 # Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -149,11 +151,11 @@ Compared to the baseline, Farl reduced R-PSR by 47.8%, T-PSR by 38.5%, and impro
 
 ## Related Papers
 
+- [\[ICLR 2026\] Distilling the Thought, Watermarking the Answer: A Principle Semantic Guided Watermark for Reasoning Large Language Models](distilling_the_thought_watermarking_the_answer_a_principle_semantic_guided_water.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
 - [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](../../ACL2026/llm_safety/how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
+- [\[ICLR 2026\] Disrupting Hierarchical Reasoning: Adversarial Protection for Geographic Privacy in Multimodal Reasoning Models](disrupting_hierarchical_reasoning_adversarial_protection_for_geographic_privacy_.md)
 - [\[ICLR 2026\] ARMOR: Aligning Secure and Safe Large Language Models via Meticulous Reasoning](armor_aligning_secure_and_safe_large_language_models_via_meticulous_reasoning.md)
-- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](../../ACL2026/llm_safety/reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
-- [\[ICLR 2026\] Strategic Obfuscation of Deceptive Reasoning in Language Models](strategic_obfuscation_of_deceptive_reasoning_in_language_models.md)
-- [\[ACL 2026\] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models](../../ACL2026/llm_safety/autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models.md)
 
 </div>
 

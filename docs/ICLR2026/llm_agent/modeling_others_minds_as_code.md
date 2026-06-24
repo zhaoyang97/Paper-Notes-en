@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Modeling Others' Minds as Code
 description: >-
-  [ICLR 2026][LLM Agent][Theory of Mind] The paper reformulates "predicting others' next actions" as a **program synthesis problem**—using LLMs to generate a set of Python "behavior scripts" that explain observed trajectories, followed by Sequential Monte Carlo for Bayesian inference to filter the most likely programs. This approach enables efficient, interpr
+  [ICLR 2026][LLM Agent][Theory of Mind] The paper reformulates "predicting others' next actions" as a **program synthesis problem**—using LLMs to generate a set of Python "behavior scripts" that explain observed trajectories, followed by Sequential Monte Carlo for Bayesian inference to filter the most likely programs. This approach enables efficient, interpretable, and generalizable prediction of human and AI agent behaviors.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Theory of Mind
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Theory of Mind"
+  - "Program Synthesis"
+  - "Sequential Monte Carlo"
+  - "Behavior Modeling"
+  - "Embodied Agents"
 date: 2026-05-08
-content_hash: ac9fe2c470cf1e47
+content_hash: 3d63a5ac66f55242
 ---
+
 # Modeling Others' Minds as Code
 
 **Conference**: ICLR 2026  
@@ -102,10 +107,10 @@ flowchart LR
 ## Related Papers
 
 - [\[ICLR 2026\] MATHMO: Automated Mathematical Modeling Through Adaptive Search](mathmo_automated_mathematical_modeling_through_adaptive_search.md)
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](reveal_self-evolving_code_agents_via_reliable_self-verification.md)
 - [\[ICLR 2026\] Code Driven Planning with Domain-Adaptive Selector](code_driven_planning_with_domain-adaptive_selector.md)
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](../../AAAI2026/llm_agent/reflection-driven_control_for_trustworthy_code_agents.md)
 - [\[ACL 2026\] CodeStruct: Code Agents over Structured Action Spaces](../../ACL2026/llm_agent/codestruct_code_agents_over_structured_action_spaces.md)
-- [\[ICML 2026\] Probabilistic Modeling of Latent Agentic Substructures in Deep Neural Networks](../../ICML2026/llm_agent/probabilistic_modeling_of_latent_agentic_substructures_in_deep_neural_networks.md)
 
 </div>
 

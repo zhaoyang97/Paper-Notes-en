@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] The Counting Power of Transformers
 description: >-
-  [ICLR 2026][Others][Paper Note] It is proved that Transformers can capture not only (semi-)linear counting properties but also all **semi-algebraic counting properties** (i.e., Boolean combinations of multivariate polynomial inequalities). This generalizes previous results regarding the counting capabilities of Transformers and derives new undecidabi
+  [ICLR 2026][Transformer expressivity] It is proved that Transformers can capture not only (semi-)linear counting properties but also all **semi-algebraic counting properties** (i.e., Boolean combinations of multivariate polynomial inequalities). This generalizes previous results regarding the counting capabilities of Transformers and derives new undecidability conclusions.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Transformer expressivity"
+  - "counting properties"
+  - "semi-algebraic properties"
+  - "undecidability"
+  - "formal languages"
 date: 2026-05-08
-content_hash: b0bf861da3bfeb96
+content_hash: f8de708d549b36c0
 ---
+
 # The Counting Power of Transformers
 
 **Conference**: ICLR 2026  
@@ -117,10 +122,10 @@ The paper re-evaluates the C-RASP characterization, proving it can only capture 
 ## Related Papers
 
 - [\[ICLR 2026\] Neural Dynamics Self-Attention for Spiking Transformers](neural_dynamics_self-attention_for_spiking_transformers.md)
-- [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
 - [\[AAAI 2026\] The Limitations and Power of NP-Oracle-Based Functional Synthesis Techniques](../../AAAI2026/others/the_limitations_and_power_of_np-oracle-based_functional_synthesis_techniques.md)
+- [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
 - [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](../../AAAI2026/others/model_counting_for_dependency_quantified_boolean_formulas.md)
-- [\[AAAI 2026\] Tab-PET: Graph-Based Positional Encodings for Tabular Transformers](../../AAAI2026/others/tab-pet_graph-based_positional_encodings_for_tabular_transformers.md)
+- [\[AAAI 2026\] GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization](../../AAAI2026/others/gdba_revisited_unleashing_the_power_of_guided_local_search_for_distributed_const.md)
 
 </div>
 

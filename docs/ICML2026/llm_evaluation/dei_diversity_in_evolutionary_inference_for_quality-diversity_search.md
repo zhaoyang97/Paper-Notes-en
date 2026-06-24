@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DEI: Diversity in Evolutionary Inference for Quality-Diversity Search
 description: >-
-  [ICML 2026][LLM Evaluation][Quality-Diversity] This paper proposes DEI, which treats multiple **LLMs from different families** as heterogeneous mutation operators distributed across different nodes. By using fully asynchronous gossip to broadcast champions of each round, it creates cross-model adversarial pressure. In Core War program synthesis tasks, it achieves a
+  [ICML 2026][LLM Evaluation][Quality-Diversity] This paper proposes DEI, which treats multiple **LLMs from different families** as heterogeneous mutation operators distributed across different nodes. By using fully asynchronous gossip to broadcast champions of each round, it creates cross-model adversarial pressure. In Core War program synthesis tasks, it achieves a +124% QD-Score and +28% archive coverage compared to single-node baselines under equal total computational budge…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - Quality-Diversity
-  - MAP-Elites
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Quality-Diversity"
+  - "MAP-Elites"
+  - "Heterogeneous LLM Ensemble"
+  - "Asynchronous gossip"
+  - "Program synthesis"
 date: 2026-05-08
-content_hash: 474021f0872119ce
+content_hash: 3575e10926bb4da0
 ---
+
 # DEI: Diversity in Evolutionary Inference for Quality-Diversity Search
 
 **Conference**: ICML 2026  
@@ -145,8 +149,8 @@ The "ablation" is equivalent to degrading Diverse to Homo or Solo (included in t
 - [\[ICML 2025\] The Best of Both Worlds: Bridging Quality and Diversity in Data Selection with Bipartite Graph](../../ICML2025/llm_evaluation/the_best_of_both_worlds_bridging_quality_and_diversity_in_data_selection_with_bi.md)
 - [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](../../NeurIPS2025/llm_evaluation/efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
 - [\[ICML 2026\] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](bespoke_benchmark_for_search-augmented_large_language_model_personalization_via_.md)
-- [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](../../AAAI2026/llm_evaluation/optscale_probabilistic_optimality_for_inference-time_scaling.md)
-- [\[ICML 2026\] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
+- [\[ICLR 2026\] NAIPv2: Debiased Pairwise Learning for Efficient Paper Quality Estimation](../../ICLR2026/llm_evaluation/naipv2_debiased_pairwise_learning_for_efficient_paper_quality_estimation.md)
+- [\[ICLR 2026\] Measuring LLM Novelty as the Frontier of Original and High-Quality Output](../../ICLR2026/llm_evaluation/measuring_llm_novelty_as_the_frontier_of_original_and_high-quality_output.md)
 
 </div>
 

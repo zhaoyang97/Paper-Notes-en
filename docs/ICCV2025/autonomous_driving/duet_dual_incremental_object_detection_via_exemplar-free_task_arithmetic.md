@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic
 description: >-
-  [ICCV 2025][Autonomous Driving][Incremental Object Detection] This paper proposes DuET, a framework that, for the first time, addresses both class-incremental and domain-incremental object detection simultaneously (Dual…
+  [ICCV 2025][Autonomous Driving][Incremental Object Detection] This paper proposes DuET, a framework that, for the first time, addresses both class-incremental and domain-incremental object detection simultaneously (Dual Incremental Object Detection, DuIOD) via exemplar-free Task Arithmetic model merging. It introduces a Directional Consistency Loss to mitigate sign conflicts, achieving substantial improvements over existing methods on the Pascal Series and Diverse Weather Ser…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -15,7 +15,7 @@ tags:
   - "YOLO11"
   - "RT-DETR"
 date: 2026-05-08
-content_hash: 2d8bca9ce33d6b69
+content_hash: 09c5219572df4a0e
 ---
 
 # DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic
@@ -244,10 +244,10 @@ $$\text{RAI} = \frac{\text{Avg RI} + \text{Avg GI}}{2}$$
 ## Related Papers
 
 - [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
-- [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
-- [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
 - [\[ICCV 2025\] IGL-Nav: Incremental 3D Gaussian Localization for Image-goal Navigation](igl-nav_incremental_3d_gaussian_localization_for_image-goal_navigation.md)
-- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
+- [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
+- [\[CVPR 2026\] TACO: Task-Aware Contrastive Learning for Joint LiDAR Localization and 3D Object Detection](../../CVPR2026/autonomous_driving/taco_task-aware_contrastive_learning_for_joint_lidar_localization_and_3d_object_.md)
+- [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
 
 </div>
 

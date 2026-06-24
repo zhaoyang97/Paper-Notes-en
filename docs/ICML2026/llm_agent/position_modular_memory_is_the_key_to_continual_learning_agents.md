@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: Modular Memory is the Key to Continual Learning Agents
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] This is a position paper from the Dagstuhl Continual Learning workshop arguing that relying solely on In-Weight Learning (IWL) leads to catastrophic forgetting, while relying solely on In-Context Learning (ICL) causes computational explosion and rigid foundations. The missing piece for "continual learning agents" is a
+  [ICML 2026][LLM Agent][Continual Learning] This is a position paper from the Dagstuhl Continual Learning workshop arguing that relying solely on In-Weight Learning (IWL) leads to catastrophic forgetting, while relying solely on In-Context Learning (ICL) causes computational explosion and rigid foundations. The missing piece for "continual learning agents" is a **modular memory** that integrates the fast adaptation of ICL with the slow consolidation of IWL (Core Model + Workin…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Continual Learning"
+  - "Modular Memory"
+  - "In-Context Learning"
+  - "In-Weight Learning"
+  - "Consolidation"
 date: 2026-05-08
-content_hash: b5c1ff49a1748f2f
+content_hash: 34b1eb0fb45a38fc
 ---
+
 # Position: Modular Memory is the Key to Continual Learning Agents
 
 **Conference**: ICML 2026  
@@ -127,11 +133,11 @@ Key point: Slot-based capacity is unbounded and selective forgetting is easy, bu
 
 ## Related Papers
 
+- [\[ICLR 2026\] PolySkill: Learning Generalizable Skills through Polymorphic Abstraction for Continual Agents](../../ICLR2026/llm_agent/polyskill_learning_generalizable_skills_through_polymorphic_abstraction_for_cont.md)
+- [\[ICML 2026\] Position: Assistive Agents Need Accessibility Alignment](position_assistive_agents_need_accessibility_alignment.md)
 - [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](../../CVPR2026/llm_agent/cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
 - [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
-- [\[ICML 2026\] Position: Assistive Agents Need Accessibility Alignment](position_assistive_agents_need_accessibility_alignment.md)
-- [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](../../ACL2026/llm_agent/hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
-- [\[ICML 2026\] Position: Agentic AI Orchestration Should Be Bayes-Consistent](position_agentic_ai_orchestration_should_be_bayes-consistent.md)
+- [\[ICLR 2026\] Scaling Agents via Continual Pre-training](../../ICLR2026/llm_agent/scaling_agents_via_continual_pre-training.md)
 
 </div>
 

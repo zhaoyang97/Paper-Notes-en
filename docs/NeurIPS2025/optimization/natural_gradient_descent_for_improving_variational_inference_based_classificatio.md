@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies
 description: >-
-  [NeurIPS 2025][Optimization][Natural Gradient Descent] This work replaces standard SGD with the natural gradient descent optimizer iVON for optimizing BNN parameters under variational inference…
+  [NeurIPS 2025][Optimization][Natural Gradient Descent] This work replaces standard SGD with the natural gradient descent optimizer iVON for optimizing BNN parameters under variational inference, achieving better uncertainty calibration in radio galaxy classification while maintaining predictive performance comparable to HMC and BBB-VI.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Uncertainty Calibration"
   - "Radio Galaxy Classification"
 date: 2026-05-08
-content_hash: 2acab7e5b2f0c75a
+content_hash: 769323b10286d1af
 ---
 
 # Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies
@@ -138,8 +138,8 @@ The **iVON (Improved Variational Online Newton)** algorithm replaces SGD for opt
 
 - [\[NeurIPS 2025\] Least Squares Variational Inference](least_squares_variational_inference.md)
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
-- [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
 - [\[NeurIPS 2025\] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference](neuro-symbolic_entity_alignment_via_variational_inference.md)
+- [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
 - [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
 
 </div>

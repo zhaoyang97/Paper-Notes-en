@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PRECISE: Reducing the Bias of LLM Evaluations Using Prediction-Powered Ranking Estimation
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][LLM Evaluation] This paper extends the Prediction-Powered Inference (PPI) framework to sub-instance-level ranking metrics (e.g., Precision@K)…
+  [AAAI 2026][Information Retrieval & RAG][LLM Evaluation] This paper extends the Prediction-Powered Inference (PPI) framework to sub-instance-level ranking metrics (e.g., Precision@K), achieving unbiased ranking metric estimation using only 30–100 human annotations combined with large-scale LLM judgments. The computational complexity is reduced from $O(2^{|C|})$ to $O(2^K)$, and the approach has been successfully deployed to guide an LLM-based query rewriting system in an Indi…
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Bias Correction"
   - "Human Annotation"
 date: 2026-05-08
-content_hash: b75e84ff19b42314
+content_hash: 4fcd641585d26428
 ---
 
 # PRECISE: Reducing the Bias of LLM Evaluations Using Prediction-Powered Ranking Estimation
@@ -131,11 +131,11 @@ The input consists of a small gold dataset $\mathcal{D}_g$ with human annotation
 
 ## Related Papers
 
-- [\[AAAI 2026\] Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?](positional_bias_in_multimodal_embedding_models_do_they_favor_the_beginning_the_m.md)
-- [\[ICML 2026\] Ranking-Free RAG: Replacing Re-Ranking with Selection in RAG for Sensitive Domains](../../ICML2026/information_retrieval/ranking_free_rag_replacing_re-ranking_with_selection_in_rag_for_sensitive_domain.md)
+- [\[ACL 2025\] Health-LLM: Personalized Retrieval-Augmented Disease Prediction System](../../ACL2025/information_retrieval/health-llm_personalized_retrieval-augmented_disease_prediction_system.md)
 - [\[AAAI 2026\] "As Eastern Powers, I Will Veto." : An Investigation of Nation-Level Bias of Large Language Models in International Relations](as_eastern_powers_i_will_veto_an_investigation_of_nation-level_bias_of_large_lan.md)
 - [\[AAAI 2026\] Exposing the Cracks: Vulnerabilities of Retrieval-Augmented LLM-Based Machine Translation](exposing_the_cracks_vulnerabilities_of_retrieval-augmented_llm-based_machine_tra.md)
-- [\[ICLR 2026\] Leveraging Data to Say No: Memory Augmented Plug-and-Play Selective Prediction](../../ICLR2026/information_retrieval/leveraging_data_to_say_no_memory_augmented_plug-and-play_selective_prediction.md)
+- [\[ICML 2026\] Ranking-Free RAG: Replacing Re-Ranking with Selection in RAG for Sensitive Domains](../../ICML2026/information_retrieval/ranking_free_rag_replacing_re-ranking_with_selection_in_rag_for_sensitive_domain.md)
+- [\[ACL 2026\] All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG](../../ACL2026/information_retrieval/all_languages_matter_understanding_and_mitigating_language_bias_in_multilingual_.md)
 
 </div>
 

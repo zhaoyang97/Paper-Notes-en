@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Implicit Safety Alignment from Crowd Preferences
 description: >-
-  [ICML 2026][Alignment & RLHF][VAE] Addressing the "diverse user goals but shared safety criteria" structure in crowdsourced preference data, the authors prove that traditional reward combination is polluted by majority preferences and sensitive to weights. Instead, they propose Safe Crowd Preference-based RL: using a VAE to encode crowdsourced preferenc
+  [ICML 2026][LLM Alignment][Crowdsourced Preferences] Addressing the "diverse user goals but shared safety criteria" structure in crowdsourced preference data, the authors prove that traditional reward combination is polluted by majority preferences and sensitive to weights. Instead, they propose Safe Crowd Preference-based RL: using a VAE to encode crowdsourced preferences into latent-conditioned low-level skills, then training a high-level policy to compose these in skill sp…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - VAE
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Crowdsourced Preferences"
+  - "Implicit Safety Alignment"
+  - "Skill Discovery"
+  - "VAE"
+  - "Hierarchical Reinforcement Learning"
 date: 2026-05-08
-content_hash: f3ab78c8d8331b76
+content_hash: 7468446b5674ce3e
 ---
+
 # Implicit Safety Alignment from Crowd Preferences
 
 **Conference**: ICML 2026  
@@ -147,13 +152,20 @@ Ours (Safe-VPL/CPL) suppresses cost to 0.02-0.03 (near Oracle's 0.01) while main
 - Value: ⭐⭐⭐⭐ (Methodology is applicable to beyond safety, e.g., style or values)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **VPL**: Poddar et al., 2024. Latent-conditioned preference learning.
-- **CPL**: Hejna et al., 2023. Contrastive Preference Learning.
-- **Safe RLHF**: Dai et al., 2024. Constrained RLHF with separate rewards.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Implicit Preference Alignment for Human Image Animation](implicit_preference_alignment_for_human_image_animation.md)
+- [\[ICLR 2026\] Aligning Deep Implicit Preferences by Learning to Reason Defensively](../../ICLR2026/llm_alignment/aligning_deep_implicit_preferences_by_learning_to_reason_defensively.md)
+- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
+- [\[ICML 2026\] MESA: Improving MoE Safety Alignment via Decentralized Expertise](mesa_improving_moe_safety_alignment_via_decentralized_expertise.md)
+- [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](towards_context-invariant_safety_alignment_for_large_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Implicit Preference Alignment for Human Image Animation](implicit_preference_alignment_for_human_image_animation.md)

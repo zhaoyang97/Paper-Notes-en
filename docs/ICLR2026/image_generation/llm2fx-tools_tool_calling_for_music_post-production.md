@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLM2Fx-Tools: Tool Calling for Music Post-Production
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] LLM2Fx-Tools is the first framework to apply LLM tool calling to audio effect modules. It understands audio input through a multimodal LLM, utilizes CoT reasoning to select effect types, determines their order, and estimates parameters, achieving interpretable and controllable music post-production.
+  [ICLR 2026][Image Generation][Audio Effect Chain Estimation] LLM2Fx-Tools is the first framework to apply LLM tool calling to audio effect modules. It understands audio input through a multimodal LLM, utilizes CoT reasoning to select effect types, determines their order, and estimates parameters, achieving interpretable and controllable music post-production.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Audio Effect Chain Estimation"
+  - "Tool Calling"
+  - "Chain-of-Thought Reasoning"
+  - "Music Post-Production"
+  - "Multimodal LLM"
 date: 2026-05-08
-content_hash: 3cb766a8e9188158
+content_hash: e7417ca387f67655
 ---
+
 # LLM2Fx-Tools: Tool Calling for Music Post-Production
 
 **Conference**: ICLR 2026  
@@ -123,15 +129,14 @@ Training occurs in two stages: modality alignment followed by language ability f
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2025\] FilmComposer: LLM-Driven Music Production for Silent Film Clips](../../CVPR2025/image_generation/filmcomposer_llm-driven_music_production_for_silent_film_clips.md)
 - [\[ICLR 2026\] TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models](treegrpo_tree-advantage_grpo_for_online_rl_post-training_of_diffusion_models.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
 - [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](../../AAAI2026/image_generation/melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
-- [\[CVPR 2026\] Harmonic Canvas: Inversion-Free Editing for Visually-Guided Music Style Transfer](../../CVPR2026/image_generation/harmonic_canvas_inversion-free_editing_for_visually-guided_music_style_transfer.md)
 
 </div>
 

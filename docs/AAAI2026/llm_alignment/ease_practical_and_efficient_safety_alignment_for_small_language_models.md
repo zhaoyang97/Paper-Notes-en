@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EASE: Practical and Efficient Safety Alignment for Small Language Models
 description: >-
-  [AAAI 2026][LLM Alignment][small language models] This paper proposes EASE, a safety alignment framework for edge-deployed small language models (SLMs)…
+  [AAAI 2026][LLM Alignment][small language models] This paper proposes EASE, a safety alignment framework for edge-deployed small language models (SLMs), which addresses the tension between "shallow refusal being insufficiently robust" and "deep reasoning being prohibitively expensive" via a two-stage design. Stage one distills safety reasoning capabilities from a large reasoning model into the SLM; stage two applies selective reasoning activation…
 tags:
   - "AAAI 2026"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "knowledge distillation"
   - "jailbreak defense"
 date: 2026-05-08
-content_hash: 9256c232a70598ef
+content_hash: 6c51d42cb733ae43
 ---
 
 # EASE: Practical and Efficient Safety Alignment for Small Language Models
@@ -146,11 +146,11 @@ The framework consists of two stages: (1) **Stage 1 — Distillation from a larg
 
 ## Related Papers
 
-- [\[AAAI 2026\] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis](intrinsic_barriers_and_practical_pathways_for_human-ai_alignment_an_agreement-ba.md)
+- [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](../../ICML2026/llm_alignment/towards_context-invariant_safety_alignment_for_large_language_models.md)
 - [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](../../ICLR2026/llm_alignment/a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
 - [\[AAAI 2026\] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment](differentiated_directional_intervention_a_framework_for_evading_llm_safety_align.md)
-- [\[AAAI 2026\] Exploring the Effects of Alignment on Numerical Bias in Large Language Models](exploring_the_effects_of_alignment_on_numerical_bias_in_large_language_models.md)
-- [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](../../ICLR2026/llm_alignment/guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
+- [\[NeurIPS 2025\] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models](../../NeurIPS2025/llm_alignment/reinforcement_learning_finetunes_small_subnetworks_in_large_language_models.md)
+- [\[ACL 2025\] Beyond the Tip of Efficiency: Uncovering the Submerged Threats of Jailbreak Attacks in Small Language Models](../../ACL2025/llm_alignment/beyond_the_tip_of_efficiency_uncovering_the_submerged_threats_of_jailbreak_attac.md)
 
 </div>
 

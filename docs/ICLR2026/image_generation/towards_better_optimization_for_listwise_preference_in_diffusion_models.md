@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Towards Better Optimization for Listwise Preference in Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Plackett-Luce] This paper proposes Diffusion-LPO, extending DPO preference alignment for diffusion models from "pairwise comparisons" to "full ranked lists." By deriving a listwise objective using the Plackett-Luce model, it ensures every image is superior to all lower-ranked images in a list. It consistently outperforms pairwise Dif
+  [ICLR 2026][Image Generation][Diffusion Model Alignment] This paper proposes Diffusion-LPO, extending DPO preference alignment for diffusion models from "pairwise comparisons" to "full ranked lists." By deriving a listwise objective using the Plackett-Luce model, it ensures every image is superior to all lower-ranked images in a list. It consistently outperforms pairwise Diffusion-DPO across text-to-image, image editing, and personalized alignment tasks (achieving a >12% Pick…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Plackett-Luce
-  - Direct Preference Optimization
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Model Alignment"
+  - "Listwise Preference Optimization"
+  - "Plackett-Luce"
+  - "Direct Preference Optimization"
+  - "Text-to-Image"
 date: 2026-05-08
-content_hash: 0c62bbf2614de1a2
+content_hash: 29dd6450150ed508
 ---
+
 # Towards Better Optimization for Listwise Preference in Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -141,8 +145,8 @@ Personalization (PPD pipeline, SD1.5): Replacing PPD's pairwise loss with LPO in
 - [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 - [\[ICLR 2026\] Diffusion Negative Preference Optimization Made Simple](diffusion_negative_preference_optimization_made_simple.md)
 - [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
-- [\[AAAI 2026\] Rethinking Direct Preference Optimization in Diffusion Models](../../AAAI2026/image_generation/rethinking_direct_preference_optimization_in_diffusion_models.md)
 - [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Preference Alignment of Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_preference_alignment_of_image_.md)
+- [\[AAAI 2026\] Rethinking Direct Preference Optimization in Diffusion Models](../../AAAI2026/image_generation/rethinking_direct_preference_optimization_in_diffusion_models.md)
 
 </div>
 

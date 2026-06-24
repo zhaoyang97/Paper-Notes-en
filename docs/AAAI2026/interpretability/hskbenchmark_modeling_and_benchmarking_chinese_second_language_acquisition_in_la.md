@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HSKBenchmark: Modeling and Benchmarking Chinese Second Language Acquisition in Large Language Models through Curriculum Tuning
 description: >-
-  [AAAI 2026][Interpretability][Chinese second language acquisition] This paper introduces HSKBenchmark, the first benchmark for staged modeling and writing assessment of Chinese second language acquisition (SLA) in LLMs.…
+  [AAAI 2026][Interpretability][Chinese second language acquisition] This paper introduces HSKBenchmark, the first benchmark for staged modeling and writing assessment of Chinese second language acquisition (SLA) in LLMs. It comprises HSK levels 3–6 textbooks (6.76M tokens), 16K synthetic instruction data, 30 test prompts, a linguistically-grounded evaluation system, and a curriculum tuning framework designed to simulate human acquisition trajectories.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "writing assessment"
   - "linguistic complexity"
 date: 2026-05-08
-content_hash: ed688a205054e043
+content_hash: 1095d785484e4eef
 ---
 
 # HSKBenchmark: Modeling and Benchmarking Chinese Second Language Acquisition in Large Language Models through Curriculum Tuning
@@ -151,10 +151,10 @@ Comparison of human learners and LLMs on 30 HSK writing prompts (selected result
 ## Related Papers
 
 - [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
+- [\[ICLR 2026\] Spilled Energy in Large Language Models](../../ICLR2026/interpretability/spilled_energy_in_large_language_models.md)
+- [\[ICLR 2026\] Comparing the learning dynamics of in-context learning and fine-tuning in language models](../../ICLR2026/interpretability/comparing_the_learning_dynamics_of_in-context_learning_and_fine-tuning_in_langua.md)
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](../../ACL2026/interpretability/tracing_relational_knowledge_recall_in_large_language_models.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](../../ACL2026/interpretability/compositional_steering_of_large_language_models_with_steering_tokens.md)
-- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](../../ACL2026/interpretability/knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[AAAI 2026\] ToC: Tree-of-Claims Search with Multi-Agent Language Models](toc_tree-of-claims_search_with_multi-agent_language_models.md)
 
 </div>
 

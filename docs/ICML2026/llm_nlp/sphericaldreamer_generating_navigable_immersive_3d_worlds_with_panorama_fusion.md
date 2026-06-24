@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SphericalDreamer: Generating Navigable Immersive 3D Worlds with Panorama Fusion
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] SphericalDreamer generates the first outdoor 3D world that simultaneously possesses $360^\circ \times 180^\circ$ omnidirectional immersion and long-distance navigability. It achieves this by lifting multiple text-generated Layered Depth Panoramas (LDP) into 3D "spherical building blocks" and employing harmonic blending
+  [ICML 2026][LLM (Other)][3D world generation] SphericalDreamer generates the first outdoor 3D world that simultaneously possesses $360^\circ \times 180^\circ$ omnidirectional immersion and long-distance navigability. It achieves this by lifting multiple text-generated Layered Depth Panoramas (LDP) into 3D "spherical building blocks" and employing harmonic blending to synthesize and stitch the missing transition regions between adjacent spheres.
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "3D world generation"
+  - "panoramas"
+  - "layered depth panoramas"
+  - "harmonic blending"
+  - "navigable immersive scenes"
 date: 2026-05-08
-content_hash: 310de9a38486eee2
+content_hash: 033307517ac0ed38
 ---
+
 # SphericalDreamer: Generating Navigable Immersive 3D Worlds with Panorama Fusion
 
 **Conference**: ICML 2026  
@@ -128,15 +134,14 @@ Only SphericalDreamer achieves near-perfect coverage across all three trajectori
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] VOYAGER: A Training Free Approach for Generating Diverse Datasets using LLMs](../../ACL2026/llm_nlp/voyager_a_training_free_approach_for_generating_diverse_datasets_using_llms.md)
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](../../AAAI2026/llm_nlp/profuser_progressive_fusion_of_large_language_models.md)
+- [\[ACL 2026\] VOYAGER: A Training Free Approach for Generating Diverse Datasets using LLMs](../../ACL2026/llm_nlp/voyager_a_training_free_approach_for_generating_diverse_datasets_using_llms.md)
 - [\[CVPR 2025\] Dora: Sampling and Benchmarking for 3D Shape Variational Auto-Encoders](../../CVPR2025/llm_nlp/dora_sampling_and_benchmarking_for_3d_shape_variational_auto-encoders.md)
+- [\[ICLR 2026\] TEXT2ARCH: A Dataset for Generating Scientific Architecture Diagrams from Natural Language Descriptions](../../ICLR2026/llm_nlp/text2arch_a_dataset_for_generating_scientific_architecture_diagrams_from_natural.md)
 - [\[ACL 2025\] Combining the Best of Both Worlds: A Method for Hybrid NMT and LLM Translation](../../ACL2025/llm_nlp/combining_the_best_of_both_worlds_a_method_for_hybrid_nmt_and_llm_translation.md)
-- [\[ACL 2025\] FoodTaxo: Generating Food Taxonomies with Large Language Models](../../ACL2025/llm_nlp/foodtaxo_generating_food_taxonomies_with_large_language_models.md)
 
 </div>
 

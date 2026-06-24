@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Resonance: Learning to Predict Social-Aware Pedestrian Trajectories as Co-Vibrations
 description: >-
-  [ICCV 2025][Autonomous Driving][pedestrian trajectory prediction] This paper proposes the Resonance (Re) model, which decomposes pedestrian trajectory prediction into a superposition of multiple "vibrations"—a linear bas…
+  [ICCV 2025][Autonomous Driving][pedestrian trajectory prediction] This paper proposes the Resonance (Re) model, which decomposes pedestrian trajectory prediction into a superposition of multiple "vibrations"—a linear base, a self-bias, and a resonance-bias. By leveraging spectral similarity between trajectories to simulate "resonance" phenomena in social interactions, the method is validated on ETH-UCY, SDD, NBA, and nuScenes benchmarks.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "spectral representation"
   - "social behavior modeling"
 date: 2026-05-08
-content_hash: f00fe76bfc74e369
+content_hash: 98d13b21efabb613
 ---
 
 # Resonance: Learning to Predict Social-Aware Pedestrian Trajectories as Co-Vibrations
@@ -153,10 +153,10 @@ Ablation is performed over the three model components (linear_base, self_bias, r
 ## Related Papers
 
 - [\[ICCV 2025\] Saliency-Aware Quantized Imitation Learning for Efficient Robotic Control](saliency-aware_quantized_imitation_learning_for_efficient_robotic_control.md)
-- [\[CVPR 2026\] WalkGPT: Grounded Vision-Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation](../../CVPR2026/autonomous_driving/walkgpt_grounded_vision-language_conversation_with_depth-aware_segmentation_for_.md)
 - [\[CVPR 2026\] Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction](../../CVPR2026/autonomous_driving/recover_to_predict_progressive_retrospective_learning_for_variable-length_trajec.md)
+- [\[CVPR 2025\] SocialMOIF: Multi-Order Intention Fusion for Pedestrian Trajectory Prediction](../../CVPR2025/autonomous_driving/socialmoif_multi-order_intention_fusion_for_pedestrian_trajectory_prediction.md)
+- [\[CVPR 2026\] WalkGPT: Grounded Vision-Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation](../../CVPR2026/autonomous_driving/walkgpt_grounded_vision-language_conversation_with_depth-aware_segmentation_for_.md)
 - [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](future-aware_interaction_network_for_motion_forecasting.md)
-- [\[ICCV 2025\] Occupancy Learning with Spatiotemporal Memory](occupancy_learning_with_spatiotemporal_memory.md)
 
 </div>
 

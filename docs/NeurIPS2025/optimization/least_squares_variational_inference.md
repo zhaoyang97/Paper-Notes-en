@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Least Squares Variational Inference
 description: >-
-  [NeurIPS 2025][Optimization][variational inference] This paper proposes LSVI (Least Squares Variational Inference), a gradient-free variational inference method based on ordinary least squares regression. Within the expo…
+  [NeurIPS 2025][Optimization][variational inference] This paper proposes LSVI (Least Squares Variational Inference), a gradient-free variational inference method based on ordinary least squares regression. Within the exponential family, LSVI iteratively solves for the optimal variational approximation by performing OLS regression on a tempered log-target, admitting efficient $O(d^3)$ (full-covariance) or $O(d)$ (mean-field) implementations for the Gaussian family.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "least squares"
   - "gradient-free"
 date: 2026-05-08
-content_hash: 20402dbba876556e
+content_hash: d7e27ff9052760b5
 ---
 
 # Least Squares Variational Inference
@@ -168,7 +168,7 @@ This constitutes the first demonstration of variational inference on a Bernoulli
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
 - [\[NeurIPS 2025\] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference](neuro-symbolic_entity_alignment_via_variational_inference.md)
 - [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
-- [\[NeurIPS 2025\] Turbocharging Gaussian Process Inference with Approximate Sketch-and-Project](turbocharging_gaussian_process_inference_with_approximate_sketch-and-project.md)
+- [\[ICLR 2026\] Improved ℓp Regression via Iteratively Reweighted Least Squares](../../ICLR2026/optimization/improved_ell_p_regression_via_iteratively_reweighted_least_squares.md)
 
 </div>
 

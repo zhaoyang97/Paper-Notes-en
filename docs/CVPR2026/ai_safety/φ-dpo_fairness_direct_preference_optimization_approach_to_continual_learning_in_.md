@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models
 description: >-
-  [CVPR 2026][AI Safety][DPO] $\varphi$-DPO is proposed to frame DPO as a continual learning paradigm by using the model from the previous step as the reference policy. It introduces a fairness modulation factor $(1-p)^\gamma$, inspired by focal loss, to balance gradient contributions across different data groups. Theoretically, it is proven that t
+  [CVPR2026][AI Safety][Continual Learning] $\varphi$-DPO is proposed to frame DPO as a continual learning paradigm by using the model from the previous step as the reference policy. It introduces a fairness modulation factor $(1-p)^\gamma$, inspired by focal loss, to balance gradient contributions across different data groups. Theoretically, it is proven that the gradient bias approaches zero as $\gamma \to \infty$. The method achieves SOTA performance on CoIN and MLLM-CL benc…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - DPO
-  - large multimodal model
-  - focal loss
+  - "CVPR2026"
+  - "AI Safety"
+  - "Continual Learning"
+  - "DPO"
+  - "Fairness"
+  - "Catastrophic Forgetting"
+  - "large multimodal model"
+  - "focal loss"
 date: 2026-05-08
-content_hash: 649af354e65aa541
+content_hash: a56bf2ee77e07bbc
 ---
+
 # $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models
 
 **Conference**: CVPR2026  
@@ -148,11 +152,11 @@ $\varphi$-DPO integrates naturally with ER. Old data in the buffer and new data 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
 - [\[CVPR 2026\] FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models](fvbench_benchmarking_deepfake_video_detection_capability_of_large_multimodal_mod.md)
 - [\[CVPR 2026\] DSO: Direct Steering Optimization for Bias Mitigation](dso_direct_steering_optimization_for_bias_mitigation.md)
-- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
-- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
-- [\[CVPR 2026\] Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats](robustness_under_data_scarcity_few-shot_continual_adversarial_training_for_evolv.md)
+- [\[ICLR 2026\] Doubly-Regressing Approach for Subgroup Fairness](../../ICLR2026/ai_safety/doubly-regressing_approach_for_subgroup_fairness.md)
+- [\[ICLR 2026\] Adaptive Logit Adjustment for Debiasing Multimodal Language Models](../../ICLR2026/ai_safety/adaptive_logit_adjustment_for_debiasing_multimodal_language_models.md)
 
 </div>
 

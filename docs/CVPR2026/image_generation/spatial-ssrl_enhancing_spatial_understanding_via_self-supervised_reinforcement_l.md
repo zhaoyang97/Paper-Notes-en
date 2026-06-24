@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning
 description: >-
-  [CVPR 2026][Image Generation][Self-Supervised Learning] This paper proposes Spatial-SSRL, a self-supervised reinforcement learning paradigm. By automatically constructing five pretext tasks (patch reordering, flip identification, crop inpainting, depth ordering, and relative 3D position prediction) from standard RGB/RGB-D images, it utilizes GRPO to optimize the spatial und
+  [CVPR 2026][Image Generation][Spatial Understanding] This paper proposes Spatial-SSRL, a self-supervised reinforcement learning paradigm. By automatically constructing five pretext tasks (patch reordering, flip identification, crop inpainting, depth ordering, and relative 3D position prediction) from standard RGB/RGB-D images, it utilizes GRPO to optimize the spatial understanding capabilities of LVLMs. This approach achieves an average improvement of 3.89%-4.63% across seven…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Spatial Understanding"
+  - "Self-Supervised Learning"
+  - "Reinforcement Learning (RLVR)"
+  - "Large Vision-Language Models"
+  - "Depth Perception"
 date: 2026-05-08
-content_hash: ee2d86fcad6a0208
+content_hash: ca18777fe7b3bbd9
 ---
+
 # Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -162,10 +167,10 @@ Enabling CoT reasoning in the baseline model actually degrades performance (e.g.
 ## Related Papers
 
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
+- [\[CVPR 2026\] StableMaterials: Enhancing Diversity in Material Generation via Semi-Supervised Learning](stablematerials_enhancing_diversity_in_material_generation_via_semi-supervised_l.md)
 - [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](../../ICCV2025/image_generation/compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
 - [\[CVPR 2026\] Exploring Spatial Intelligence from a Generative Perspective](exploring_spatial_intelligence_from_a_generative_perspective.md)
-- [\[CVPR 2026\] Rethinking Glyph Spatial Information in Font Generation](rethinking_glyph_spatial_information_in_font_generation.md)
 
 </div>
 

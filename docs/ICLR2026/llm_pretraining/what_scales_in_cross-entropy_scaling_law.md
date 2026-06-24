@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Scales in Cross-Entropy Scaling Law?
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper precisely decomposes cross-entropy loss into three terms: "Error-Entropy + Self-Alignment + Confidence." Through experiments on 32 models spanning five orders of magnitude, it demonstrates that only the Error-Entropy consistently follows a power-law decay with model size. The other two terms remain largely i
+  [ICLR 2026][LLM Pretraining][Scaling Laws] This paper precisely decomposes cross-entropy loss into three terms: "Error-Entropy + Self-Alignment + Confidence." Through experiments on 32 models spanning five orders of magnitude, it demonstrates that only the Error-Entropy consistently follows a power-law decay with model size. The other two terms remain largely invariant to scale—explaining why the cross-entropy scaling law is accurate for small models but tends to fail for ult…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Scaling Laws"
+  - "Cross-Entropy"
+  - "Error-Entropy"
+  - "Rank-based Error"
+  - "Training Dynamics"
 date: 2026-05-08
-content_hash: 9587e8475b134f5e
+content_hash: 5f227565b5af7f4e
 ---
+
 # What Scales in Cross-Entropy Scaling Law?
 
 **Conference**: ICLR 2026  
@@ -130,15 +136,15 @@ The slope of Error-Entropy is consistently the closest to Cross-Entropy.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](a_law_of_data_reconstruction_for_random_features_and_beyond.md)
+- [\[ICLR 2026\] Scaling Behavior of Discrete Diffusion Language Models](scaling_behavior_of_discrete_diffusion_language_models.md)
 - [\[CVPR 2025\] ScaMo: Exploring the Scaling Law in Autoregressive Motion Generation Model](../../CVPR2025/llm_pretraining/scamo_exploring_the_scaling_law_in_autoregressive_motion_generation_model.md)
-- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
 - [\[ICLR 2026\] Not All Documents Are What You Need for Extracting Instruction Tuning Data](not_all_documents_are_what_you_need_for_extracting_instruction_tuning_data.md)
-- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
 
 </div>
 

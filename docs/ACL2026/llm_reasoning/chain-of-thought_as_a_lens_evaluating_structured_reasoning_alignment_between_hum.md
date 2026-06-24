@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models
 description: >-
-  [ACL 2026][LLM Reasoning][Alignment Score] This paper proposes Alignment Score—a semantic-level metric based on a semantic entropy matrix—to quantify reasoning alignment by comparing intermediate steps of model-generated chains-of-thought with human-preferred reference chains. The study finds that Alignment Score is highly correlated with task accuracy, readabi
+  [ACL 2026][Reasoning][Chain-of-Thought Alignment] This paper proposes Alignment Score—a semantic-level metric based on a semantic entropy matrix—to quantify reasoning alignment by comparing intermediate steps of model-generated chains-of-thought with human-preferred reference chains. The study finds that Alignment Score is highly correlated with task accuracy, readability, and coherence, identifying 2-hop reasoning as the peak depth for alignment.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Alignment Score
+  - "ACL 2026"
+  - "Reasoning"
+  - "Chain-of-Thought Alignment"
+  - "Alignment Score"
+  - "Semantic Entropy"
+  - "Reasoning Quality"
+  - "Structured Reasoning"
 date: 2026-05-08
-content_hash: a51eac6c662c5aa5
+content_hash: 28dec4746d66b289
 ---
+
 # Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models
 
 **Conference**: ACL 2026  

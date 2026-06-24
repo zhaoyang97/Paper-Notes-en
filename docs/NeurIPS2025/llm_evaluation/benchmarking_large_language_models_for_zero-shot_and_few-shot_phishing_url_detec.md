@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection
 description: >-
-  [NeurIPS 2025][LLM Evaluation][phishing URL detection] This paper systematically evaluates three commercial LLMs — GPT-4o, Claude-3.7, and Grok-3-Beta — on phishing URL detection under a unified zero-shot and few-shot pr…
+  [NeurIPS 2025][LLM Evaluation][phishing URL detection] This paper systematically evaluates three commercial LLMs — GPT-4o, Claude-3.7, and Grok-3-Beta — on phishing URL detection under a unified zero-shot and few-shot prompt framework. Results show that few-shot prompting consistently improves performance across all models, with Grok-3-Beta achieving the best F1 (0.9399) on the balanced dataset, while different models exhibit distinct precision–recall trade-off behaviors.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "prompt engineering"
   - "cybersecurity benchmark"
 date: 2026-05-08
-content_hash: 9d65f2d37348418f
+content_hash: 33df34ccbec7b74b
 ---
 
 # Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection
@@ -138,8 +138,8 @@ Six metrics are employed for comprehensive evaluation: Accuracy, Macro-Precision
 - [\[ICCV 2025\] Few-Shot Pattern Detection via Template Matching and Regression](../../ICCV2025/llm_evaluation/few-shot_pattern_detection_via_template_matching_and_regression.md)
 - [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](../../ACL2026/llm_evaluation/zero-shot_large_language_models_for_automatic_readability_assessment.md)
 - [\[ICCV 2025\] Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting](../../ICCV2025/llm_evaluation/rethinking_few_shot_clip_benchmarks_a_critical_analysis_in_the_inductive_setting.md)
+- [\[CVPR 2025\] UniGoal: Towards Universal Zero-shot Goal-oriented Navigation](../../CVPR2025/llm_evaluation/unigoal_towards_universal_zero-shot_goal-oriented_navigation.md)
 - [\[ICCV 2025\] A Conditional Probability Framework for Compositional Zero-shot Learning](../../ICCV2025/llm_evaluation/a_conditional_probability_framework_for_compositional_zerosh.md)
-- [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](hyperbolic_fine-tuning_for_large_language_models.md)
 
 </div>
 

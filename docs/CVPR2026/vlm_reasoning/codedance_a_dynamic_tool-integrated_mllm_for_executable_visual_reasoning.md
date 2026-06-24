@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] CodeDance is proposed to utilize executable code as a universal solver for visual reasoning. The MLLM generates code to define, combine, and execute multiple tools, rendering intermediate visual results (bboxes, lines, and charts) to support a verifiable reasoning chain. Through RL training with a tool-call reward that
+  [CVPR 2026][VLM Reasoning][Executable Visual Reasoning] CodeDance is proposed to utilize executable code as a universal solver for visual reasoning. The MLLM generates code to define, combine, and execute multiple tools, rendering intermediate visual results (bboxes, lines, and charts) to support a verifiable reasoning chain. Through RL training with a tool-call reward that balances exploration and efficiency, emergent behaviors—such as unseen tool combinations and cross-task…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Executable Visual Reasoning"
+  - "Tool Integration"
+  - "Code Generation"
+  - "Reinforcement Learning"
+  - "Emergent Behavior"
 date: 2026-05-08
-content_hash: 0524e2c400fa33cf
+content_hash: a0914e778ef55f01
 ---
+
 # CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning
 
 **Conference**: CVPR 2026  
@@ -112,8 +117,8 @@ Gains of +19.2% on CountBench and +53.0% on PixmoCount were achieved compared to
 
 ## Related Papers
 
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
-- [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)
+- [\[ICLR 2026\] AdaReasoner: Dynamic Tool Orchestration for Iterative Visual Reasoning](../../ICLR2026/vlm_reasoning/adareasoner_dynamic_tool_orchestration_for_iterative_visual_reasoning.md)
+- [\[ICLR 2026\] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning](../../ICLR2026/vlm_reasoning/visionreasoner_unified_reasoning-integrated_visual_perception_via_reinforcement_.md)
 - [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
 - [\[CVPR 2026\] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](arm-thinker_reinforcing_multimodal_generative_reward_models_with_agentic_tool_us.md)
 - [\[CVPR 2026\] Don't Show Pixels, Show Cues: Unlocking Visual Tool Reasoning in Language Models via Perception Programs](dont_show_pixels_show_cues_unlocking_visual_tool_reasoning_in_language_models_vi.md)

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control
 description: >-
-  [ICLR 2026][Image Generation][Shape Editing] Follow-Your-Shape is proposed as a training-free and mask-free shape-aware image editing framework. It constructs a Trajectory Divergence Map (TDM) by calculating token-level velocity differences between inversion and editing trajectories to precisely locate the editing region. Combined with stage-based KV injection, i
+  [ICLR 2026][Image Generation][Shape Editing] Follow-Your-Shape is proposed as a training-free and mask-free shape-aware image editing framework. It constructs a Trajectory Divergence Map (TDM) by calculating token-level velocity differences between inversion and editing trajectories to precisely locate the editing region. Combined with stage-based KV injection, it achieves significant shape transformations while strictly preserving the background.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Shape Editing
-  - Trajectory Divergence Map
-  - training-free
-  - Flow Matching
-  - KV Injection
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Shape Editing"
+  - "Trajectory Divergence Map"
+  - "training-free"
+  - "Flow Matching"
+  - "KV Injection"
 date: 2026-05-08
-content_hash: e694568cedcaf7ad
+content_hash: fc52efa4d7e7d912
 ---
+
 # Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control
 
 **Conference**: ICLR 2026  
@@ -165,9 +166,9 @@ This is a training-free framework. The default configuration uses 14 denoising s
 
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
 - [\[ICLR 2026\] Follow-Your-Preference: Towards Preference-Aligned Image Inpainting](follow-your-preference_towards_preference-aligned_image_inpainting.md)
-- [\[CVPR 2026\] ShapeAR: Generating Editable Shape Layers via Autoregressive Diffusion](../../CVPR2026/image_generation/shapear_generating_editable_shape_layers_via_autoregressive_diffusion.md)
+- [\[ICLR 2026\] RegionE: Adaptive Region-Aware Generation for Efficient Image Editing](regione_adaptive_region-aware_generation_for_efficient_image_editing.md)
 - [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)
-- [\[CVPR 2026\] PhysGen: Physically Grounded 3D Shape Generation for Industrial Design](../../CVPR2026/image_generation/physgen_physically_grounded_3d_shape_generation_for_industrial_design.md)
+- [\[ICLR 2026\] W-Edit: A Wavelet-based Frequency-aware Framework for Text-driven Image Editing](w-edit_a_wavelet-based_frequency-aware_framework_for_text-driven_image_editing.md)
 
 </div>
 

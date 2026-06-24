@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] STCDiT performs real-world video super-resolution (VSR) based on a pre-trained video diffusion model (Wan2.1). It addresses VAE reconstruction distortions under complex camera movements using "Motion-Aware VAE Segmented Reconstruction" and injects well-preserved spatial structure information from the first-frame latent
+  [CVPR 2026][Image Generation][Video Super-Resolution] STCDiT performs real-world video super-resolution (VSR) based on a pre-trained video diffusion model (Wan2.1). It addresses VAE reconstruction distortions under complex camera movements using "Motion-Aware VAE Segmented Reconstruction" and injects well-preserved spatial structure information from the first-frame latent of each segment into the generation process via "Anchor-Frame Guidance." By adding only approximately 7%…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Super-Resolution"
+  - "Video Diffusion Models"
+  - "Motion-Aware VAE"
+  - "Anchor-Frame Guidance"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: 89f182c8cbda5090
+content_hash: 446fd1d484b5bc8f
 ---
+
 # STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -144,16 +150,16 @@ Anchor-Frame Guidance (On RealVSR):
 - Value: ⭐⭐⭐⭐ (Migratable insights for other video diffusion tasks.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
-- [\[CVPR 2026\] PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](ps-sr_pseudo-single-step_video_super-resolution_via_speculative_diffusion.md)
-- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
-- [\[AAAI 2026\] Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment](../../AAAI2026/image_restoration/temporal_inconsistency_guidance_for_super-resolution_video_quality_assessment.md)
+- [\[ECCV 2024\] Enhancing Perceptual Quality in Video Super-Resolution through Temporally-Consistent Detail Synthesis using Diffusion Models](../../ECCV2024/image_generation/enhancing_perceptual_quality_in_video_super-resolution_through_temporally-consis.md)
+- [\[CVPR 2026\] DTG-Restore: Training-Free Diffusion Refinement for Generative Video Super-Resolution](dtg-restore_training-free_diffusion_refinement_for_generative_video_super-resolu.md)
+- [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
+- [\[CVPR 2026\] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)
+- [\[CVPR 2026\] EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing](effecterase_joint_video_object_removal_and_insertion_for_high-quality_effect_era.md)
 
 </div>
 

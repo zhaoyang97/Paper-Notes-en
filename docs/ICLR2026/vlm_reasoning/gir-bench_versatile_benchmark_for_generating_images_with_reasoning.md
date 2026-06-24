@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GIR-Bench: Versatile Benchmark for Generating Images with Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][benchmark] GIR-Bench systematically quantifies the understanding-generation gap in unified multimodal models—where models "can reason but cannot draw"—using three complementary subsets (UGC, T2I, Edit) and a **task-specific, programmable verification pipeline**, effectively bypassing the biases of MLLM-as-a-Judge.
+  [ICLR 2026][VLM Reasoning][Reasoning-driven image generation] GIR-Bench systematically quantifies the understanding-generation gap in unified multimodal models—where models "can reason but cannot draw"—using three complementary subsets (UGC, T2I, Edit) and a **task-specific, programmable verification pipeline**, effectively bypassing the biases of MLLM-as-a-Judge.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - benchmark
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Reasoning-driven image generation"
+  - "Unified multimodal models"
+  - "Understanding-generation consistency"
+  - "Interpretable evaluation"
+  - "benchmark"
 date: 2026-05-08
-content_hash: f2c3f223c14bec6c
+content_hash: 2b9aaa8bede0653c
 ---
+
 # GIR-Bench: Versatile Benchmark for Generating Images with Reasoning
 
 **Conference**: ICLR 2026  

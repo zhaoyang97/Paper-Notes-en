@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] VSRELL jointly solves "Low-Light Enhancement (LLE)" and "Video Super-Resolution (VSR)" tasks, which are traditionally decoupled, using a **synchronous decoupling** approach within a single CNN framework. It simultaneously models illumination and noise within a temporal window using an INCO module and injects illuminati
+  [CVPR 2026][Video Generation][Low-light Video Super-Resolution] VSRELL jointly solves "Low-Light Enhancement (LLE)" and "Video Super-Resolution (VSR)" tasks, which are traditionally decoupled, using a **synchronous decoupling** approach within a single CNN framework. It simultaneously models illumination and noise within a temporal window using an INCO module and injects illumination priors into deformable alignment while applying dynamic decay to memory features via an ISFP…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Low-light Video Super-Resolution"
+  - "Illumination-Noise Co-optimization"
+  - "Deformable Alignment"
+  - "Feature Propagation"
+  - "Synchronous Decoupling"
 date: 2026-05-08
-content_hash: bfe0fd2672eee8c2
+content_hash: 1f06b5f644c7f57d
 ---
+
 # VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ Incremental module addition (evaluated at 180×320, ×4):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
-- [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
-- [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
-- [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
-- [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
+- [\[ICLR 2026\] SimpleGVR: A Simple Baseline for Latent-Cascaded Generative Video Super-Resolution](../../ICLR2026/video_generation/simplegvr_a_simple_baseline_for_latent-cascaded_generative_video_super-resolutio.md)
+- [\[CVPR 2026\] Compressed-Domain-Aware Online Video Super-Resolution](compressed-domain-aware_online_video_super-resolution.md)
+- [\[CVPR 2026\] Thermal Diffusion Matters: Infrared Spatial-Temporal Video Super-Resolution through Heat Conduction Priors](thermal_diffusion_matters_infrared_spatial-temporal_video_super-resolution_throu.md)
+- [\[CVPR 2026\] Generating Humanless Environment Walkthroughs from Egocentric Walking Tour Videos](generating_humanless_environment_walkthroughs_from_egocentric_walking_tour_video.md)
+- [\[CVPR 2026\] Improving Motion in Image-to-Video Models via Adaptive Low-Pass Guidance](improving_motion_in_image-to-video_models_via_adaptive_low-pass_guidance.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Riemannian Federated Learning via Averaging Gradient Streams
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes RFedAGS, which, in the context of Federated Learning on Riemannian manifolds, replaces the averaging of client model points with the weighted averaging of local stochastic gradients transported back to the server's tangent space. This approach provides convergence guarantees even when arbitrary part
+  [ICLR 2026][Optimization][Riemannian Federated Learning] This paper proposes RFedAGS, which, in the context of Federated Learning on Riemannian manifolds, replaces the averaging of client model points with the weighted averaging of local stochastic gradients transported back to the server's tangent space. This approach provides convergence guarantees even when arbitrary partial participation and non-IID data coexist, outperforming existing Riemannian FL methods on tasks such…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Riemannian Federated Learning"
+  - "Gradient Stream Aggregation"
+  - "Arbitrary Partial Participation"
+  - "Non-IID Data"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: 71d465b84171a3ec
+content_hash: 8f2a6b5f90fd5511
 ---
+
 # Riemannian Federated Learning via Averaging Gradient Streams
 
 **Conference**: ICLR 2026  
@@ -187,8 +193,20 @@ The appendix performs several ablation experiments analyzing the core assumption
 - Value: ⭐⭐⭐⭐⭐ (Highly valuable for the intersection of Riemannian optimization and FL; a strong baseline for future work.)
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Riemannian Zeroth-Order Gradient Estimation with Structure-Preserving Metrics for Geodesically Incomplete Manifolds](riemannian_zeroth-order_gradient_estimation_with_structure-preserving_metrics_fo.md)
+- [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
+- [\[ICLR 2026\] DADA: Dual Averaging with Distance Adaptation](dada_dual_averaging_with_distance_adaptation.md)
+- [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
+- [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](strongly_convex_sets_in_riemannian_manifolds.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Riemannian Zeroth-Order Gradient Estimation with Structure-Preserving Metrics for Geodesically Incomplete Manifolds](riemannian_zeroth-order_gradient_estimation_with_structure-preserving_metrics_fo.md)

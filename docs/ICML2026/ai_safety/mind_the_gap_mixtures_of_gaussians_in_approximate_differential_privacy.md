@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper designs a class of Gaussian mixture additive noise mechanisms (multi-Gaussian mixture and hyperparameter-free quasi-Gaussian mixture) for $(\varepsilon,\delta)$-DP. These mechanisms close the optimality gap of the analytic Gaussian mechanism by up to 99% in low-to-medium privacy regimes while preserving the
+  [ICML 2026][AI Safety][Approximate Differential Privacy] This paper designs a class of Gaussian mixture additive noise mechanisms (multi-Gaussian mixture and hyperparameter-free quasi-Gaussian mixture) for $(\varepsilon,\delta)$-DP. These mechanisms close the optimality gap of the analytic Gaussian mechanism by up to 99% in low-to-medium privacy regimes while preserving the tight zCDP composition properties of Gaussians.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Approximate Differential Privacy"
+  - "Gaussian Mixture Mechanism"
+  - "Additive Noise"
+  - "Low-to-Medium Privacy Regime"
+  - "zCDP Composition"
 date: 2026-05-08
-content_hash: a87a37b13955755f
+content_hash: cf0967442a045770
 ---
+
 # Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy
 
 **Conference**: ICML 2026  
@@ -134,10 +140,10 @@ Experiments fix $\Delta=1$, scanning $\varepsilon\in\{0.1, 0.25, 0.5, 0.75, 1, 2
 ## Related Papers
 
 - [\[ICML 2026\] GEM-FI: Gated Evidential Mixtures with Fisher Modulation](gem-fi_gated_evidential_mixtures_with_fisher_modulation.md)
-- [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](../../NeurIPS2025/ai_safety/sequentially_auditing_differential_privacy.md)
 - [\[CVPR 2025\] Mind the Gap: Detecting Black-box Adversarial Attacks in the Making through Query Update Analysis](../../CVPR2025/ai_safety/mind_the_gap_detecting_black-box_adversarial_attacks_in_the_making_through_query.md)
-- [\[ICML 2026\] Persuasive Privacy](persuasive_privacy.md)
-- [\[CVPR 2026\] LDP-Slicing: Local Differential Privacy for Images via Randomized Bit-Plane Slicing](../../CVPR2026/ai_safety/ldp-slicing_local_differential_privacy_for_images_via_randomized_bit-plane_slici.md)
+- [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](../../NeurIPS2025/ai_safety/sequentially_auditing_differential_privacy.md)
+- [\[ICLR 2026\] Convergent Differential Privacy Analysis for General Federated Learning](../../ICLR2026/ai_safety/convergent_differential_privacy_analysis_for_general_federated_learning.md)
+- [\[ICLR 2026\] Federated Learning of Quantile Inference under Local Differential Privacy](../../ICLR2026/ai_safety/federated_learning_of_quantile_inference_under_local_differential_privacy.md)
 
 </div>
 

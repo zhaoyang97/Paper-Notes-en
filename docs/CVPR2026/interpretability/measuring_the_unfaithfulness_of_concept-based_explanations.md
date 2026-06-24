@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Measuring the (Un)Faithfulness of Concept-Based Explanations
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] This paper reveals that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is overestimated due to overly complex surrogate models and flawed deletion-based evaluations. The authors propose SURF (Surrogate Faithfulness), a framework consisting of a simple linear surrogate and dual-spa
+  [CVPR 2026][Interpretability][Concept explanations] This paper reveals that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is overestimated due to overly complex surrogate models and flawed deletion-based evaluations. The authors propose SURF (Surrogate Faithfulness), a framework consisting of a simple linear surrogate and dual-space metrics. Validated by a sanity check ("random concepts should be less faithful")…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Concept explanations"
+  - "faithfulness metrics"
+  - "unsupervised concept methods"
+  - "surrogate models"
+  - "interpretability evaluation"
 date: 2026-05-08
-content_hash: 9f79959949c22b4a
+content_hash: 93794b7038be9453
 ---
+
 # Measuring the (Un)Faithfulness of Concept-Based Explanations
 
 **Conference**: CVPR 2026  
@@ -140,9 +146,9 @@ Key Findings: **C-SHAP-Eval unexpectedly reports 97.6% accuracy for a completely
 ## Related Papers
 
 - [\[NeurIPS 2025\] An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations](../../NeurIPS2025/interpretability/an_analysis_of_concept_bottleneck_models_measuring_understanding_and_mitigating_.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)
 - [\[ICML 2025\] What Makes an Ensemble (Un)interpretable?](../../ICML2025/interpretability/what_makes_an_ensemble_un_interpretable.md)
-- [\[CVPR 2026\] MedLIME: A Distribution-Aligned and Evidence-Supported Framework for Medical Saliency Explanations](medlime_a_distribution-aligned_and_evidence-supported_framework_for_medical_sali.md)
+- [\[ICLR 2026\] Faithfulness Under the Distribution: A New Look at Attribution Evaluation](../../ICLR2026/interpretability/faithfulness_under_the_distribution_a_new_look_at_attribution_evaluation.md)
+- [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
 - [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
 
 </div>

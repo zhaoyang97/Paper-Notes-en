@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified Brain Surface and Volume Registration
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] NeurAlign trains a "volume registration network" and a "spherical registration network" simultaneously within a shared framework, coupled via a cortical consistency loss. This allows the cortical (surface) and subcortical (volume) structures of brain MRI to be aligned consistently in a single forward pass. At inference
+  [ICLR 2026][Medical Imaging][Brain MRI registration] NeurAlign trains a "volume registration network" and a "spherical registration network" simultaneously within a shared framework, coupled via a cortical consistency loss. This allows the cortical (surface) and subcortical (volume) structures of brain MRI to be aligned consistently in a single forward pass. At inference, it requires only a single MRI without the need for meshes or segmentations. Registration accuracy leads s…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Brain MRI registration"
+  - "cortical surface registration"
+  - "spherical registration"
+  - "differentiable deformation"
+  - "consistency loss"
 date: 2026-05-08
-content_hash: 31a52a991abad1cf
+content_hash: 04a5c143521f22d2
 ---
+
 # Unified Brain Surface and Volume Registration
 
 **Conference**: ICLR 2026  
@@ -142,10 +148,10 @@ Component ablation on IXI ($\kappa=1.0, \gamma=0.05$):
 ## Related Papers
 
 - [\[ICLR 2026\] OmniCT: Towards a Unified Slice-Volume LVLM for Comprehensive CT Analysis](omnict_towards_a_unified_slice-volume_lvlm_for_comprehensive_ct_analysis.md)
+- [\[ICLR 2026\] AbdCTBench: Learning Clinical Biomarker Representations from Abdominal Surface Geometry](abdctbench_learning_clinical_biomarker_representations_from_abdominal_surface_ge.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
+- [\[ICLR 2026\] Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation](pixel-level_residual_diffusion_transformer_scalable_3d_ct_volume_generation.md)
 - [\[ICLR 2026\] MedLesionVQA: A Multimodal Benchmark Emulating Clinical Visual Diagnosis for Body Surface Health](medlesionvqa_a_multimodal_benchmark_emulating_clinical_visual_diagnosis_for_body.md)
-- [\[ECCV 2024\] UMBRAE: Unified Multimodal Brain Decoding](../../ECCV2024/medical_imaging/umbrae_unified_multimodal_brain_decoding.md)
-- [\[ICLR 2026\] sleep2vec: Unified Cross-Modal Alignment for Heterogeneous Nocturnal Biosignals](sleep2vec_unified_cross-modal_alignment_for_heterogeneous_nocturnal_biosignals.md)
-- [\[ICLR 2026\] Spike-based Digital Brain: A Novel Fundamental Model for Brain Activity Analysis](spike-based_digital_brain_a_novel_fundamental_model_for_brain_activity_analysis.md)
 
 </div>
 

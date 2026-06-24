@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Motion Prediction] UniMotion proposes a unified motion framework built on a decoder-only Transformer, supporting motion simulation, trajectory prediction…
+  [NeurIPS 2025][Autonomous Driving][Motion Prediction] UniMotion proposes a unified motion framework built on a decoder-only Transformer, supporting motion simulation, trajectory prediction, and ego-vehicle planning simultaneously through task-aware interaction patterns and training strategies. Joint training facilitates cross-task knowledge sharing, and after task-specific fine-tuning, the model achieves state-of-the-art performance across multiple tasks on the Waymo dataset.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Unified Framework"
   - "GPT-style Model"
 date: 2026-05-08
-content_hash: 2e8966c34aaae231
+content_hash: 11cf8428e8464044
 ---
 
 # UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning
@@ -150,11 +150,11 @@ Training uses the AdamW optimizer with batch size 48, 8 A6000 GPUs, 30 epochs, a
 
 ## Related Papers
 
+- [\[ECCV 2024\] UniTraj: A Unified Framework for Scalable Vehicle Trajectory Prediction](../../ECCV2024/autonomous_driving/unitraj_a_unified_framework_for_scalable_vehicle_trajectory_prediction.md)
 - [\[AAAI 2026\] SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction](../../AAAI2026/autonomous_driving/differentiable_semantic_meta-learning_framework_for_long-tail_motion_forecasting.md)
 - [\[NeurIPS 2025\] Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling](flow_matching-based_autonomous_driving_planning_with_advanced_interactive_behavi.md)
 - [\[ICCV 2025\] Long-term Traffic Simulation with Interleaved Autoregressive Motion and Scenario Generation](../../ICCV2025/autonomous_driving/long-term_traffic_simulation_with_interleaved_autoregressive_motion_and_scenario.md)
-- [\[NeurIPS 2025\] Availability-aware Sensor Fusion via Unified Canonical Space](availability-aware_sensor_fusion_via_unified_canonical_space.md)
-- [\[ICCV 2025\] UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving](../../ICCV2025/autonomous_driving/uniocc_a_unified_benchmark_for_occupancy_forecasting_and_prediction_in_autonomou.md)
+- [\[CVPR 2025\] A Neuro-Symbolic Framework Combining Inductive and Deductive Reasoning for Autonomous Driving Planning](../../CVPR2025/autonomous_driving/a_neuro-symbolic_framework_combining_inductive_and_deductive_reasoning_for_auton.md)
 
 </div>
 

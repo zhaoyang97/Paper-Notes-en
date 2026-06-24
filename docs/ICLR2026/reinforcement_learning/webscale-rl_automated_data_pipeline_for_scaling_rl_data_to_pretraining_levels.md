@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Webscale-RL: Automated Data Pipeline for Scaling RL Data to Pretraining Levels
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] This paper proposes the Webscale-RL automated data pipeline, which systematically converts trillion-token pretraining corpora into millions of "verifiable QA pairs" for RL training. By constructing a 1.2-million-sample RL dataset covering 9+ domains, GRPO training significantly outperforms continued pretraining and var
+  [ICLR 2026][Reinforcement Learning][RL Data Scaling] This paper proposes the Webscale-RL automated data pipeline, which systematically converts trillion-token pretraining corpora into millions of "verifiable QA pairs" for RL training. By constructing a 1.2-million-sample RL dataset covering 9+ domains, GRPO training significantly outperforms continued pretraining and various data refinement baselines across multiple benchmarks, achieving comparable effects to continued pretra…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RL Data Scaling"
+  - "Verifiable QA"
+  - "Pretraining Corpus Transformation"
+  - "Data Diversity"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 13b3d4e860d70e59
+content_hash: 2f51c39ca8e9a629
 ---
+
 # Webscale-RL: Automated Data Pipeline for Scaling RL Data to Pretraining Levels
 
 **Conference**: ICLR 2026  
@@ -140,8 +145,8 @@ Key difference: Other large datasets rely on human effort or distillation (limit
 
 - [\[ICLR 2026\] APC-RL: Exceeding Data-Driven Behavior Priors with Adaptive Policy Composition](apc-rl_exceeding_data-driven_behavior_priors_with_adaptive_policy_composition.md)
 - [\[ICLR 2026\] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints](autotool_automatic_scaling_of_tool-use_capabilities_in_rl_via_decoupled_entropy_.md)
-- [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
 - [\[ICLR 2026\] Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?](prosperity_before_collapse_how_far_can_off-policy_rl_reach_with_stale_data_on_ll.md)
+- [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
 - [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](r-zero_self-evolving_reasoning_llm_from_zero_data.md)
 
 </div>

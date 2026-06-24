@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pareto-Guided Optimal Transport for Multi-Reward Alignment
 description: >-
-  [ICML 2026][Image Generation][JDR/JCR] PG-OT transforms "multi-reward T2I alignment" from a "weighted global summation" into "constructing a Pareto frontier for each individual prompt and employing Sinkhorn Optimal Transport to move dominated samples toward that frontier." By introducing Joint Domination Rate (JDR) and Joint Collapse Rate (JCR), the method
+  [ICML 2026][Image Generation][Multi-reward alignment] PG-OT transforms "multi-reward T2I alignment" from a "weighted global summation" into "constructing a Pareto frontier for each individual prompt and employing Sinkhorn Optimal Transport to move dominated samples toward that frontier." By introducing Joint Domination Rate (JDR) and Joint Collapse Rate (JCR), the method exposes reward hacking hidden by average scores, achieving a 47.98% $\text{JDR}_2$ on Parti-Prompts (an 11…
 tags:
-  - ICML 2026
-  - Image Generation
-  - JDR/JCR
+  - "ICML 2026"
+  - "Image Generation"
+  - "Multi-reward alignment"
+  - "reward hacking"
+  - "Pareto frontier"
+  - "optimal transport"
+  - "JDR/JCR"
 date: 2026-05-08
-content_hash: b7ee94d4443e3a57
+content_hash: 1b3166fbf5975b2e
 ---
+
 # Pareto-Guided Optimal Transport for Multi-Reward Alignment
 
 **Conference**: ICML 2026  
@@ -130,10 +135,10 @@ Base model SD3.5-Turbo, 4 rewards: ICT, HP (strong), CLIP, HPS (weak). Evaluatio
 ## Related Papers
 
 - [\[CVPR 2026\] POCA: Pareto-Optimal Curriculum Alignment for Visual Text Generation](../../CVPR2026/image_generation/poca_pareto-optimal_curriculum_alignment_for_visual_text_generation.md)
+- [\[NeurIPS 2025\] Counterfactual Identifiability via Dynamic Optimal Transport](../../NeurIPS2025/image_generation/counterfactual_identifiability_via_dynamic_optimal_transport.md)
+- [\[ICLR 2026\] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport](../../ICLR2026/image_generation/alignflow_improving_flow-based_generative_models_with_semi-discrete_optimal_tran.md)
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](../../NeurIPS2025/image_generation/on_the_relation_between_rectified_flows_and_optimal_transport.md)
 - [\[ICML 2026\] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models](alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models.md)
-- [\[ICML 2026\] Gradient Preconditioning for Efficient and Reliable Reward-Guided Generation](gradient_preconditioning_for_efficient_and_reliable_reward-guided_generation.md)
-- [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](../../ICLR2026/image_generation/training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
 
 </div>
 

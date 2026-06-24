@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Self-supervised learning] This paper proposes DISCOVR, a self-supervised dual-branch framework that transfers fine-grained spatial semantics from an image encoder to the temporal represent…
+  [NeurIPS 2025][Medical Imaging][Self-supervised learning] This paper proposes DISCOVR, a self-supervised dual-branch framework that transfers fine-grained spatial semantics from an image encoder to the temporal representations of a video encoder via online semantic cluster distillation, achieving state-of-the-art performance across six cross-population cardiac ultrasound datasets on anomaly detection, classification, and segmentation tasks.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal distillation"
   - "semantic clustering"
 date: 2026-05-08
-content_hash: 8fb85b9f9360d2d7
+content_hash: 29184b7726f6731f
 ---
 
 # Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation
@@ -142,7 +142,7 @@ Linear probe classification:
 - [\[NeurIPS 2025\] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data](self-supervised_learning_via_flow-guided_neural_operator_on_time-series_data.md)
 - [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](../../ICCV2025/medical_imaging/an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
 - [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](../../CVPR2026/medical_imaging/learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
-- [\[NeurIPS 2025\] UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation](unimrseg_unified_modality-relax_segmentation_via_hierarchical_self-supervised_co.md)
+- [\[ICML 2025\] The Brain's Bitter Lesson: Scaling Speech Decoding With Self-Supervised Learning](../../ICML2025/medical_imaging/the_brains_bitter_lesson_scaling_speech_decoding_with_self-supervised_learning.md)
 
 </div>
 

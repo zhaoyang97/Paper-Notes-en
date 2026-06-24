@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RelaxFlow: Text-Driven Amodal 3D Generation
 description: >-
-  [ICML 2026][3D Vision][Paper Note] RelaxFlow formulates "text-driven completion of occluded 3D objects" as a problem of **decoupling control granularity for dual objectives**. It proposes a training-free dual-branch inference framework: an observation branch maintains pixel-level hard constraints, while a semantic prior branch achieves low-pass relaxati
+  [ICML 2026 Spotlight][3D Vision][amodal 3D generation] RelaxFlow formulates "text-driven completion of occluded 3D objects" as a problem of **decoupling control granularity for dual objectives**. It proposes a training-free dual-branch inference framework: an observation branch maintains pixel-level hard constraints, while a semantic prior branch achieves low-pass relaxation through "multi-prior consensus + Gaussian blur on attention logits." The work theoretically proves tha…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026 Spotlight"
+  - "3D Vision"
+  - "amodal 3D generation"
+  - "text-driven"
+  - "training-free"
+  - "low-pass relaxation"
+  - "dual-branch flow model"
 date: 2026-05-08
-content_hash: c23251f8c7fd5f73
+content_hash: d00af168a136079a
 ---
+
 # RelaxFlow: Text-Driven Amodal 3D Generation
 
 **Conference**: ICML 2026 Spotlight  
@@ -142,12 +148,20 @@ User preference is overwhelmingly in favor of RelaxFlow (68.52%), demonstrating 
 - Value: ⭐⭐⭐⭐⭐ (Broadly applicable paradigm for training-free controllable generation)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **TRELLIS**: Structured 3D Latents for High-Fidelity 3D Diffusion.
-- **SAM3D**: Segment Anything in 3D for Amodal Completion.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](../../CVPR2026/3d_vision/text-driven_3d_hand_motion_generation_from_sign_language_data.md)
+- [\[AAAI 2026\] NURBGen: High-Fidelity Text-to-CAD Generation through LLM-Driven NURBS Modeling](../../AAAI2026/3d_vision/nurbgen_high-fidelity_text-to-cad_generation_through_llm-driven_nurbs_modeling.md)
+- [\[CVPR 2026\] Text–Image Conditioned 3D Generation](../../CVPR2026/3d_vision/text-image_conditioned_3d_generation.md)
+- [\[CVPR 2026\] Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation](../../CVPR2026/3d_vision/are_we_ready_for_rl_in_text-to-3d_generation_a_progressive_investigation.md)
+- [\[ICLR 2026\] PAT3D: Physics-Augmented Text-to-3D Scene Generation](../../ICLR2026/3d_vision/pat3d_physics-augmented_text-to-3d_scene_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](../../CVPR2026/3d_vision/text-driven_3d_hand_motion_generation_from_sign_language_data.md)

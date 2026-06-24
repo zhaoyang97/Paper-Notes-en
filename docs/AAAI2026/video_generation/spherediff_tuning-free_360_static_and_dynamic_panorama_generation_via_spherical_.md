@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SphereDiff: Tuning-free Omnidirectional Panoramic Image and Video Generation via Spherical Latent Representation
 description: >-
-  [AAAI 2026][Video Generation][Panoramic Generation] This paper proposes SphereDiff, which defines a spherical latent representation (uniformly distributed via Fibonacci Lattice) to replace conventional equirectangular pr…
+  [AAAI 2026 Oral][Video Generation][Panoramic Generation] This paper proposes SphereDiff, which defines a spherical latent representation (uniformly distributed via Fibonacci Lattice) to replace conventional equirectangular projection (ERP), combined with a dynamic sampling algorithm and distortion-aware weighted averaging. Without any fine-tuning, SphereDiff leverages pretrained diffusion models such as SANA and LTX Video to generate seamless…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Video Generation"
   - "Panoramic Generation"
   - "Spherical Latent Space"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Models"
   - "VR/AR"
 date: 2026-05-08
-content_hash: 68d39d16a5a9c11a
+content_hash: b12c42790d8681d9
 ---
 
 # SphereDiff: Tuning-free Omnidirectional Panoramic Image and Video Generation via Spherical Latent Representation
@@ -123,11 +123,11 @@ The method is entirely training-free. SANA is used for image generation and LTX 
 
 ## Related Papers
 
+- [\[CVPR 2026\] IP-Adapter Is All You Need: Towards Fine-Tuning-Free Diffusion-Based Talking Face Generation](../../CVPR2026/video_generation/ip-adapter_is_all_you_need_towards_fine-tuning-free_diffusion-based_talking_face.md)
 - [\[CVPR 2026\] From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning](../../CVPR2026/video_generation/from_static_to_dynamic_exploring_self-supervised_image-to-video_representation_t.md)
+- [\[CVPR 2025\] DynamicScaler: Seamless and Scalable Video Generation for Panoramic Scenes](../../CVPR2025/video_generation/dynamicscaler_seamless_and_scalable_video_generation_for_panoramic_scenes.md)
 - [\[ICCV 2025\] Long Context Tuning for Video Generation](../../ICCV2025/video_generation/long_context_tuning_for_video_generation.md)
-- [\[ICML 2026\] LuVe: Latent-Cascaded Ultra-High-Resolution Video Generation with Dual Frequency Experts](../../ICML2026/video_generation/luve_latent-cascaded_ultra-high-resolution_video_generation_with_dual_frequency_.md)
-- [\[ACL 2026\] Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity](../../ACL2026/video_generation/accelerating_training_of_autoregressive_video_generation_models_via_local_optimi.md)
-- [\[CVPR 2026\] DriveLaW: Unifying Planning and Video Generation in a Latent Driving World](../../CVPR2026/video_generation/drivelaw_unifying_planning_and_video_generation_in_a_latent_driving_world.md)
+- [\[CVPR 2026\] FlashLips: 100-FPS Mask-Free Latent Lip-Sync using Reconstruction Instead of Diffusion or GANs](../../CVPR2026/video_generation/flashlips_100-fps_mask-free_latent_lip-sync_using_reconstruction_instead_of_diff.md)
 
 </div>
 

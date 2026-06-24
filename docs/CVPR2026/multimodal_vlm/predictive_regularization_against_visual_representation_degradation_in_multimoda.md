@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper systematically diagnoses the degradation of visual representations in the intermediate layers of MLLMs at both the global functional level and the patch-level semantic structure level. It reveals that the essence of this phenomenon is "visual sacrifice" under the pure text generation objective and proposes P
+  [CVPR 2026][Multimodal VLM][Visual representation degradation] This paper systematically diagnoses the degradation of visual representations in the intermediate layers of MLLMs at both the global functional level and the patch-level semantic structure level. It reveals that the essence of this phenomenon is "visual sacrifice" under the pure text generation objective and proposes Predictive Regularization (PRe). By requiring degraded intermediate features to predict initial vi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual representation degradation"
+  - "MLLM"
+  - "predictive regularization"
+  - "self-supervision"
+  - "visual fidelity"
 date: 2026-05-08
-content_hash: 27337a099dd679cb
+content_hash: 18de2cf785ef1039
 ---
+
 # Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -134,7 +140,7 @@ Three details determine its effectiveness: The anchor uses internal Pre-LLM feat
 - [\[CVPR 2026\] Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models](unleashing_the_intrinsic_visual_representation_capability_of_multimodal_large_la.md)
 - [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
 - [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
-- [\[CVPR 2026\] Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration](multimodal_learning_on_low-quality_data_with_conformal_predictive_self-calibrati.md)
+- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SPEAR-1: Scaling Beyond Robot Demonstrations via 3D Understanding
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] SPEAR-1 argues that the poor generalization of robot foundation models stems from the base VLM only understanding 2D. Therefore, the VLM is first trained into a 3D-aware **SPEAR-VLM** capable of predicting 3D coordinates using "easy-to-collect non-robot 2D images + automatically generated 3D annotations." An action exp
+  [CVPR 2026][Robotics][Robot foundation models] SPEAR-1 argues that the poor generalization of robot foundation models stems from the base VLM only understanding 2D. Therefore, the VLM is first trained into a 3D-aware **SPEAR-VLM** capable of predicting 3D coordinates using "easy-to-collect non-robot 2D images + automatically generated 3D annotations." An action expert is then trained on top of it for VLA. Ultimately, its zero-shot performance in unseen Franka (DROID) environm…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot foundation models"
+  - "VLA"
+  - "3D perception"
+  - "monocular depth"
+  - "flow matching"
 date: 2026-05-08
-content_hash: d1263ff0902ee057
+content_hash: 1965162d0899a570
 ---
+
 # SPEAR-1: Scaling Beyond Robot Demonstrations via 3D Understanding
 
 **Conference**: CVPR 2026  
@@ -133,11 +137,11 @@ Trained on Bridge-V2 subset and evaluated on SIMPLER WidowX to verify 3D pre-tra
 
 ## Related Papers
 
-- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
 - [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
 - [\[CVPR 2026\] Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data via Just-in-Time Intervention](beyond_success_refining_elegant_robot_manipulation_from_mixed-quality_data_via_j.md)
-- [\[CVPR 2026\] RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](robowheel_a_data_engine_from_real-world_human_demonstrations_for_cross-embodimen.md)
 - [\[CVPR 2026\] Structural Action Transformer for 3D Dexterous Manipulation](structural_action_transformer_for_3d_dexterous_manipulation.md)
+- [\[CVPR 2026\] RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](robowheel_a_data_engine_from_real-world_human_demonstrations_for_cross-embodimen.md)
+- [\[CVPR 2026\] GeoPredict: Leveraging Predictive Kinematics and 3D Gaussian Geometry for Precise VLA Manipulation](geopredict_leveraging_predictive_kinematics_and_3d_gaussian_geometry_for_precise.md)
 
 </div>
 

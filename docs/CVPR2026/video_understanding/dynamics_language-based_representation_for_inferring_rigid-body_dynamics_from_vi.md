@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dynamics: Language-Based Representation for Inferring Rigid-Body Dynamics From Videos
 description: >-
-  [CVPR 2026][Others][Vision-Language Model] This paper redefines "inferring rigid-body physical states and parameters from monocular video" as a **text generation** problem: training a VLM (ΔYNAMICS, based on Qwen2.5-VL-3B) to directly output a YAML configuration describing the entire scene (geometry / initial velocity / material / camera / gravity). This is the
+  [CVPR 2026][Video Understanding][Rigid-body dynamics] This paper redefines "inferring rigid-body physical states and parameters from monocular video" as a **text generation** problem: training a VLM (ΔYNAMICS, based on Qwen2.5-VL-3B) to directly output a YAML configuration describing the entire scene (geometry / initial velocity / material / camera / gravity). This is then passed to MuJoCo for re-simulation. Performance is enhanced by "reasoning about motion events in natural…
 tags:
-  - CVPR 2026
-  - Others
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Rigid-body dynamics"
+  - "Vision-Language Models"
+  - "Structured text representation"
+  - "Optical flow"
+  - "Test-time search"
 date: 2026-05-08
-content_hash: e32c3d537efe82ab
+content_hash: b1e621cb9adc3c92
 ---
+
 # Dynamics: Language-Based Representation for Inferring Rigid-Body Dynamics From Videos
 
 **Conference**: CVPR 2026  
@@ -155,11 +160,11 @@ In zero-shot transfer from MuJoCo to the Blender-rendered CLEVRER dataset, ΔYNA
 
 ## Related Papers
 
-- [\[CVPR 2026\] MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics](moocap_a_multi-view_benchmark_for_cow-object-human_interaction_and_behavior_dyna.md)
-- [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](../../ICML2026/others/learning_permutation-invariant_macroscopic_dynamics.md)
-- [\[AAAI 2026\] Deviation Dynamics in Cardinal Hedonic Games](../../AAAI2026/others/deviation_dynamics_in_cardinal_hedonic_games.md)
-- [\[NeurIPS 2025\] Normalization in Attention Dynamics](../../NeurIPS2025/others/normalization_in_attention_dynamics.md)
-- [\[AAAI 2026\] A Phase Transition for Opinion Dynamics with Competing Biases](../../AAAI2026/others/a_phase_transition_for_opinion_dynamics_with_competing_biase.md)
+- [\[CVPR 2026\] FlexiVideo: Variation-Aware Temporal Dynamics Modeling for Efficient Video Understanding](flexivideo_variation-aware_temporal_dynamics_modeling_for_efficient_video_unders.md)
+- [\[NeurIPS 2025\] Token Bottleneck: One Token to Remember Dynamics](../../NeurIPS2025/video_understanding/token_bottleneck_one_token_to_remember_dynamics.md)
+- [\[ICCV 2025\] MikuDance: Animating Character Art with Mixed Motion Dynamics](../../ICCV2025/video_understanding/mikudance_animating_character_art_with_mixed_motion_dynamics.md)
+- [\[CVPR 2026\] CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning](clcr_cross-level_semantic_collaborative_representation_for_multimodal_learning.md)
+- [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
 
 </div>
 

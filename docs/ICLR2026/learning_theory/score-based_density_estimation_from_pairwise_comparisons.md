@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Score-Based Density Estimation from Pairwise Comparisons
 description: >-
-  [ICLR 2026][learning_theory][Diffusion Model] This paper proves an exact **pointwise collinear** relationship between the "score of the target belief density" and the "score of the observable winner marginal density." They are connected by a position-dependent "tempering field" $\tau(x)$. This transforms the difficult problem of learning density from sparse pairwi
+  [ICLR 2026][Learning Theory][Pairwise comparisons] This paper proves an exact **pointwise collinear** relationship between the "score of the target belief density" and the "score of the observable winner marginal density." They are connected by a position-dependent "tempering field" $\tau(x)$. This transforms the difficult problem of learning density from sparse pairwise comparisons $x \succ x'$ into a solvable workflow: learning the winner density with a score model…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Probabilistic Methods"
+  - "Score Matching"
+  - "Expert Knowledge Acquisition"
+  - "Pairwise comparisons"
+  - "Diffusion models"
+  - "Tempering fields"
+  - "Random utility models"
 date: 2026-05-08
-content_hash: 51dcdd93c52fe280
+content_hash: 9622cb44d708cfeb
 ---
+
 # Score-Based Density Estimation from Pairwise Comparisons
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] The authors developed a turn-based multi-agent environment where "helping others is zero-cost and cooperation is the obviously optimal solution," discovering that capability among 8 mainstream LLMs fails to predict cooperation levels ($o3$ reached only 17% of the optimal, while the weaker $o3-mini$ reached 50%). Using
+  [ICML2026][Multi-Agent][Multi-Agent Collaboration] The authors developed a turn-based multi-agent environment where "helping others is zero-cost and cooperation is the obviously optimal solution," discovering that capability among 8 mainstream LLMs fails to predict cooperation levels ($o3$ reached only 17% of the optimal, while the weaker $o3-mini$ reached 50%). Using causal decomposition via "automated one-sided communication," they categorized failures into "unwillingness t…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML2026"
+  - "Multi-Agent"
+  - "Multi-Agent Collaboration"
+  - "Zero-Cost Collaboration"
+  - "Instruction-Utility Gap"
+  - "Causal Decomposition"
+  - "LLM Evaluation"
 date: 2026-05-08
-content_hash: 7705b5b9cce73064
+content_hash: fc4f9f9d84310e6a
 ---
+
 # More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration
 
 **Conference**: ICML2026  
@@ -140,11 +146,11 @@ The most notable finding is the performance inversion: the highly capable $o3$ (
 
 ## Related Papers
 
-- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](../../ACL2026/multi_agent/scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
-- [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](../../ICLR2026/multi_agent/adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
-- [\[NeurIPS 2025\] MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision](../../NeurIPS2025/multi_agent/maszero_designing_multiagent_systems_with_zero_supervision.md)
 - [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](../../AAAI2026/multi_agent/learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
 - [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
+- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](../../ACL2026/multi_agent/scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
+- [\[NeurIPS 2025\] MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision](../../NeurIPS2025/multi_agent/maszero_designing_multiagent_systems_with_zero_supervision.md)
+- [\[ICML 2026\] Toward Culturally Aligned LLMs through Ontology-Guided Multi-Agent Reasoning](toward_culturally_aligned_llms_through_ontology-guided_multi-agent_reasoning.md)
 
 </div>
 

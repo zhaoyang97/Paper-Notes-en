@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] PhyGaP: Physically-Grounded Gaussians with Polarization Cues
 description: >-
-  [CVPR 2026][3D Vision][pBRDF] PhyGaP is proposed to incorporate polarization cues into 2DGS optimization via Polarized Deferred Rendering (PolarDR) and introduces the self-occlusion-aware GridMap environment mapping technique to achieve accurate reflection decomposition and realistic relighting of glossy objects.
+  [CVPR2026][3D Vision][3D Gaussian Splatting] PhyGaP is proposed to incorporate polarization cues into 2DGS optimization via Polarized Deferred Rendering (PolarDR) and introduces the self-occlusion-aware GridMap environment mapping technique to achieve accurate reflection decomposition and realistic relighting of glossy objects.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - pBRDF
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Polarization Imaging"
+  - "Inverse Rendering"
+  - "Relighting"
+  - "Reflection Decomposition"
+  - "pBRDF"
+  - "Environment Lighting"
 date: 2026-05-08
-content_hash: af45af0e00229d44
+content_hash: 96c3ac0005e9adfb
 ---
+
 # PhyGaP: Physically-Grounded Gaussians with Polarization Cues
 
 **Conference**: CVPR2026  
@@ -151,10 +158,10 @@ Evaluation was conducted on 9 scenes (PANDORA/RMVP/SMVP/Mitsuba3 datasets). Comp
 ## Related Papers
 
 - [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
+- [\[CVPR 2026\] PolarGuide-GSDR: 3D Gaussian Splatting Driven by Polarization Priors and Deferred Reflection for Real-World Reflective Scenes](polarguide-gsdr_3d_gaussian_splatting_driven_by_polarization_priors_and_deferred.md)
 - [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
+- [\[CVPR 2026\] IR-HGP: Physically-Aware Gaussian Inverse Rendering for High-Illumination Scenes via Generative Priors](ir-hgp_physically-aware_gaussian_inverse_rendering_for_high-illumination_scenes_.md)
 - [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](../../ICCV2025/3d_vision/geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
-- [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](ggpt_geometry_grounded_point_transformer.md)
 
 </div>
 

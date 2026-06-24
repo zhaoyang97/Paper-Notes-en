@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] FALCON is proposed as a **learning-based mini-batch construction strategy**. It utilizes a negative mining scheduler to adaptively balance the trade-off between hard negatives and false negatives, significantly improving cross-modal alignment quality in vision-language pre-training.
+  [CVPR2026][Object Detection][False Negatives] FALCON is proposed as a **learning-based mini-batch construction strategy**. It utilizes a negative mining scheduler to adaptively balance the trade-off between hard negatives and false negatives, significantly improving cross-modal alignment quality in vision-language pre-training.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "Object Detection"
+  - "False Negatives"
+  - "Contrastive Learning"
+  - "Vision-Language Pre-training"
+  - "Negative Mining"
+  - "Mini-batch Construction"
+  - "Scheduler"
 date: 2026-05-08
-content_hash: 8acf2162d61db062
+content_hash: 7a75b8fabe21d001
 ---
+
 # FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment
 
 **Conference**: CVPR2026  
@@ -153,11 +160,11 @@ where $\Delta_k^{V,T} = \mathcal{L}_{\text{MLM}}(V,T;\theta_k) - \mathcal{L}_{\t
 
 ## Related Papers
 
-- [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
-- [\[CVPR 2026\] The More, the Merrier: Contrastive Fusion for Higher-Order Multimodal Alignment](the_more_the_merrier_contrastive_fusion_for_higher-order_multimodal_alignment.md)
-- [\[CVPR 2026\] No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models](no_hard_negatives_required_concept_centric_learning_leads_to_compositionality_wi.md)
-- [\[CVPR 2026\] PowerCLIP: Powerset Alignment for Contrastive Pre-Training](powerclip_powerset_alignment_for_contrastive_pre-training.md)
-- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
+- [\[CVPR 2026\] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward](saliency-r1_enforcing_interpretable_and_faithful_vision-language_reasoning_via_s.md)
+- [\[CVPR 2026\] DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection](da-mamba_learning_domain-aware_state_space_model_for_global-local_alignment_in_d.md)
+- [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
+- [\[ICML 2025\] Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection](../../ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly.md)
+- [\[AAAI 2026\] MovSemCL: Movement-Semantics Contrastive Learning for Trajectory Similarity (Extension)](../../AAAI2026/object_detection/movsemcl_movement-semantics_contrastive_learning_for_trajectory_similarity_exten.md)
 
 </div>
 

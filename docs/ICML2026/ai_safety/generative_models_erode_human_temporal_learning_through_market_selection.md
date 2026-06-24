@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Models Erode Human Temporal Learning Through Market Selection
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This position paper argues that even before reaching AGI, generative models pose structural risks to knowledge and cultural production through "market adverse selection." As AI outputs increasingly mimic surface features of work traditionally requiring long-term human learning, the cost for evaluators to verify "whethe
+  [ICML 2026][AI Safety][Risks of Generative Models] This position paper argues that even before reaching AGI, generative models pose structural risks to knowledge and cultural production through "market adverse selection." As AI outputs increasingly mimic surface features of work traditionally requiring long-term human learning, the cost for evaluators to verify "whether this is a product of long-term human accumulation" exceeds the benefits. Consequently…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Risks of Generative Models"
+  - "Adverse Selection"
+  - "Verification Costs"
+  - "Value Collapse"
+  - "Sub-AGI Risks"
 date: 2026-05-08
-content_hash: 1ac1dc257b25cd02
+content_hash: 5d97c0d64f5c1fe2
 ---
+
 # Generative Models Erode Human Temporal Learning Through Market Selection
 
 **Conference**: ICML 2026  
@@ -124,15 +130,14 @@ As a position/theory paper, there are no traditional experiments; instead, **cro
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](../../CVPR2026/ai_safety/towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
+- [\[ICLR 2026\] Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction](../../ICLR2026/ai_safety/generative_adversarial_post-training_mitigates_reward_hacking_in_live_human-ai_m.md)
 - [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](../../CVPR2026/ai_safety/runawayevil_jailbreaking_the_image-to-video_generative_models.md)
-- [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](../../CVPR2026/ai_safety/promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
-- [\[CVPR 2026\] WaTeRFlow: Watermark Temporal Robustness via Flow Consistency](../../CVPR2026/ai_safety/waterflow_watermark_temporal_robustness_via_flow_consistency.md)
-- [\[ICCV 2025\] Vulnerability-Aware Spatio-Temporal Learning for Generalizable Deepfake Video Detection](../../ICCV2025/ai_safety/vulnerability-aware_spatio-temporal_learning_for_generalizable_deepfake_video_de.md)
+- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](../../CVPR2026/ai_safety/towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
+- [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
+- [\[ICLR 2026\] STEDiff: Unveiling Spatio-Temporal Redundancy in Backdoor Attacks on Text-to-Image Diffusion Models](../../ICLR2026/ai_safety/stediff_revealing_the_spatial_and_temporal_redundancy_of_backdoor_attacks_in_tex.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PaCX-MAE: Physiology-Augmented Chest X-Ray Masked Autoencoder
 description: >-
-  [ICML 2026][Medical Imaging][MAE] PaCX-MAE builds upon an MAE pre-trained chest X-ray ViT, using LoRA fine-tuning to treat ECG and laboratory test encoders as frozen teachers. Through dual distillation involving InfoNCE contrastive loss and cosine regression, "invisible physiological context" is injected into the image-only encoder. During inference, t
+  [ICML 2026][Medical Imaging][Chest X-ray] PaCX-MAE builds upon an MAE pre-trained chest X-ray ViT, using LoRA fine-tuning to treat ECG and laboratory test encoders as frozen teachers. Through dual distillation involving InfoNCE contrastive loss and cosine regression, "invisible physiological context" is injected into the image-only encoder. During inference, the model requires only chest X-rays to outperform the same-architecture MAE baseline across 9 downstream benchmarks…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - MAE
-  - ECG
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Chest X-ray"
+  - "MAE"
+  - "Physiological Signal Distillation"
+  - "ECG"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: 2b273cf8040b2c31
+content_hash: 15fb48abbcddc67c
 ---
+
 # PaCX-MAE: Physiology-Augmented Chest X-Ray Masked Autoencoder
 
 **Conference**: ICML 2026  
@@ -153,7 +157,7 @@ Stage 1 trains three modalities independently: MAE uses the full CheXpert set, E
 - [\[CVPR 2026\] Phrase-grounded APO for Improving Chest X-ray Report Generation](../../CVPR2026/medical_imaging/phrase-grounded_apo_for_improving_chest_x-ray_report_generation.md)
 - [\[CVPR 2026\] DARC: Dual Adjustment Reasoning with Counterfactuals for Trustworthy Chest X-ray Classification](../../CVPR2026/medical_imaging/darc_dual_adjustment_reasoning_with_counterfactuals_for_trustworthy_chest_x-ray_.md)
 - [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](../../AAAI2026/medical_imaging/a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
-- [\[AAAI 2026\] PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation](../../AAAI2026/medical_imaging/priorrg_prior-guided_contrastive_pre-training_and_coarse-to-fine_decoding_for_ch.md)
+- [\[ICLR 2026\] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation](../../ICLR2026/medical_imaging/learning_self-critiquing_mechanisms_for_region-guided_chest_x-ray_report_generat.md)
 
 </div>
 

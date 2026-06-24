@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Playmate2: Training-Free Multi-Character Audio-Driven Animation via Diffusion Transformer with Reward Feedback
 description: >-
-  [AAAI 2026][Image Generation][Audio-driven animation] This paper proposes a DiT-based audio-driven human video generation framework built on Wan2.1, featuring a LoRA training strategy for long video generation…
+  [AAAI 2026][Image Generation][Audio-driven animation] This paper proposes a DiT-based audio-driven human video generation framework built on Wan2.1, featuring a LoRA training strategy for long video generation, partial parameter updates combined with DPO reward feedback to enhance lip synchronization and motion naturalness, and a novel training-free Mask-CFG method that enables multi-character (≥3 persons) audio-driven animation for the first time.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "training-free inference"
   - "DPO"
 date: 2026-05-08
-content_hash: b2754ae753e1a1ec
+content_hash: dca1d01102b636ff
 ---
 
 # Playmate2: Training-Free Multi-Character Audio-Driven Animation via Diffusion Transformer with Reward Feedback
@@ -195,11 +195,11 @@ On HDTF, FID improves from the second-best 29.05 to 27.63, and FVD from 86.10 to
 
 ## Related Papers
 
-- [\[ICML 2026\] Semantic-Aware Motion Encoding for Topology-Agnostic Character Animation](../../ICML2026/image_generation/semantic-aware_motion_encoding_for_topology-agnostic_character_animation.md)
+- [\[ICML 2025\] FlexiClip: Locality-Preserving Free-Form Character Animation](../../ICML2025/image_generation/flexiclip_locality-preserving_free-form_character_animation.md)
+- [\[CVPR 2026\] Dynamic-eDiTor: Training-Free Text-Driven 4D Scene Editing with Multimodal Diffusion Transformer](../../CVPR2026/image_generation/dynamic-editor_training-free_text-driven_4d_scene_editing_with_multimodal_diffus.md)
+- [\[ICLR 2026\] ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer](../../ICLR2026/image_generation/training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
 - [\[AAAI 2026\] MACS: Multi-source Audio-to-Image Generation with Contextual Significance and Semantic Alignment](macs_multi-source_audio-to-image_generation_with_contextual_significance_and_sem.md)
 - [\[AAAI 2026\] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration](procache_constraint-aware_feature_caching_with_selective_computation_for_diffusi.md)
-- [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](../../ICLR2026/image_generation/training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
-- [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
 
 </div>
 

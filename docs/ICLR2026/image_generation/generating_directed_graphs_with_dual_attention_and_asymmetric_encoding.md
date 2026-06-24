@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generating Directed Graphs with Dual Attention and Asymmetric Encoding
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Directo is proposed as the first directed graph generation model based on Discrete Flow Matching. It captures the directional dependencies of directed edges through a direction-aware dual attention mechanism and asymmetric positional encoding, while establishing a standardized evaluation framework for directed graph ge
+  [ICLR 2026][Image Generation][Directed Graph Generation] Directo is proposed as the first directed graph generation model based on Discrete Flow Matching. It captures the directional dependencies of directed edges through a direction-aware dual attention mechanism and asymmetric positional encoding, while establishing a standardized evaluation framework for directed graph generation.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Directed Graph Generation"
+  - "Discrete Flow Matching"
+  - "Dual Attention Mechanism"
+  - "Asymmetric Positional Encoding"
+  - "Graph Generation Benchmark"
 date: 2026-05-08
-content_hash: e52ff37499abf594
+content_hash: ae49e51f57284701
 ---
+
 # Generating Directed Graphs with Dual Attention and Asymmetric Encoding
 
 **Conference**: ICLR 2026  
@@ -160,9 +166,9 @@ The training objective is the node-edge cross-entropy loss described above. Node
 
 - [\[ICLR 2026\] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction](dual-solver_a_generalized_ode_solver_for_diffusion_models_with_dual_prediction.md)
 - [\[ICLR 2026\] Generating Metamers of Human Scene Understanding](generating_metamers_of_human_scene_understanding.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
 - [\[ICCV 2025\] Video Motion Graphs](../../ICCV2025/image_generation/video_motion_graphs.md)
 - [\[ICML 2025\] Directed Graph Grammars for Sequence-based Learning](../../ICML2025/image_generation/directed_graph_grammars_for_sequence-based_learning.md)
-- [\[ICLR 2026\] EchoGen: Generating Visual Echoes in Any Scene via Feed-Forward Subject-Driven Auto-Regressive Model](echogen_generating_visual_echoes_in_any_scene_via_feed-forward_subject-driven_au.md)
 
 </div>
 

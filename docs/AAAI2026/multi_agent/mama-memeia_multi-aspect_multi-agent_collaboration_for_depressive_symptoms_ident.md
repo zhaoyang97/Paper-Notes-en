@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAMA-Memeia! Multi-Aspect Multi-Agent Collaboration for Depressive Symptoms Identification in Memes
 description: >-
-  [AAAI 2026][Multi-Agent][Depression detection] This paper proposes MAMAMemeia, a multi-agent multi-aspect collaborative discussion framework grounded in the Cognitive Analytic Therapy (CAT) competency framework…
+  [AAAI 2026][Multi-Agent][Depression detection] This paper proposes MAMAMemeia, a multi-agent multi-aspect collaborative discussion framework grounded in the Cognitive Analytic Therapy (CAT) competency framework, designed to identify depressive symptoms from social media memes. It additionally introduces the RESTOREx resource (containing both LLM-generated and human-annotated rationales), achieving a 7.55% improvement in macro-F1 over 30+ competing methods.
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Cognitive Analytic Therapy"
   - "large language models"
 date: 2026-05-08
-content_hash: 28c8b5d0c89f937a
+content_hash: de5f42dabc54cc62
 ---
 
 # MAMA-Memeia! Multi-Aspect Multi-Agent Collaboration for Depressive Symptoms Identification in Memes
@@ -127,11 +127,11 @@ MAMAMemeia operates via LLM in-context learning or fine-tuning and does not requ
 
 ## Related Papers
 
+- [\[ICLR 2026\] Goal-Aware Identification and Rectification of Misinformation in Multi-Agent Systems](../../ICLR2026/multi_agent/goal-aware_identification_and_rectification_of_misinformation_in_multi-agent_sys.md)
 - [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
 - [\[ACL 2026\] ConSensus: Multi-Agent Collaboration for Multimodal Sensing](../../ACL2026/multi_agent/consensus_multi-agent_collaboration_for_multimodal_sensing.md)
-- [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](../../NeurIPS2025/multi_agent/multi-agent_collaboration_via_evolving_orchestration.md)
+- [\[ICLR 2026\] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning](../../ICLR2026/multi_agent/agentpo_enhancing_multi-agent_collaboration_via_reinforcement_learning.md)
 - [\[ACL 2026\] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](../../ACL2026/multi_agent/posterforest_hierarchical_multi-agent_collaboration_for_scientific_poster_genera.md)
-- [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](../../ICLR2026/multi_agent/mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
 
 </div>
 

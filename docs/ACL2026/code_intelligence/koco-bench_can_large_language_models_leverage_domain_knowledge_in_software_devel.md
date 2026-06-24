@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] KoCo-Bench introduces the first code benchmark featuring an explicit domain knowledge corpus, covering 11 frameworks and 25 projects across 6 emerging areas (RL, Agent, RAG, etc.). It evaluates the ability of LLMs to acquire and apply domain knowledge from a corpus for code generation and understanding, revealing that
+  [ACL 2026][Code Intelligence][Domain code generation] KoCo-Bench introduces the first code benchmark featuring an explicit domain knowledge corpus, covering 11 frameworks and 25 projects across 6 emerging areas (RL, Agent, RAG, etc.). It evaluates the ability of LLMs to acquire and apply domain knowledge from a corpus for code generation and understanding, revealing that even the strongest coding agent, Claude Code, achieves only 34.2%.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Domain code generation"
+  - "Benchmark"
+  - "Domain specialization"
+  - "Knowledge corpus"
+  - "Software engineering"
 date: 2026-05-08
-content_hash: 59a6ed1f8f44c99a
+content_hash: 03b2221e918f4240
 ---
+
 # KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?
 
 **Conference**: ACL 2026  
@@ -114,10 +120,10 @@ Code generation presents a mixed signal; errors may stem from missing knowledge 
 ## Related Papers
 
 - [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](swe-qa_can_language_models_answer_repository-level_code_questions.md)
-- [\[ICLR 2026\] DRO-InstructZero: Distributionally Robust Prompt Optimization for Large Language Models](../../ICLR2026/code_intelligence/dro-instructzero_distributionally_robust_prompt_optimization_for_large_language_.md)
-- [\[ICML 2026\] Poison with Style: A Practical Poisoning Attack on Code Large Language Models](../../ICML2026/code_intelligence/poison_with_style_a_practical_poisoning_attack_on_code_large_language_models.md)
-- [\[ICLR 2026\] Training Large Language Models To Reason In Parallel With Global Forking Tokens](../../ICLR2026/code_intelligence/training_large_language_models_to_reason_in_parallel_with_global_forking_tokens.md)
+- [\[ICLR 2026\] From Assistant to Independent Developer — Are GPTs Ready for Software Development?](../../ICLR2026/code_intelligence/from_assistant_to_independent_developer_are_gpts_ready_for_software_development.md)
 - [\[ACL 2026\] River-LLM: Large Language Model Seamless Exit Based on KV Share](river-llm_large_language_model_seamless_exit_based_on_kv_share.md)
+- [\[ICLR 2026\] Local Success Does Not Compose: Benchmarking Large Language Models for Compositional Formal Verification](../../ICLR2026/code_intelligence/local_success_does_not_compose_benchmarking_large_language_models_for_compositio.md)
+- [\[ICML 2026\] Poison with Style: A Practical Poisoning Attack on Code Large Language Models](../../ICML2026/code_intelligence/poison_with_style_a_practical_poisoning_attack_on_code_large_language_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RLVER: Reinforcement Learning with Verifiable Emotion Rewards for Empathetic Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO/GRPO] RLVER treats a "sentient user simulator" with self-consistent emotion updates as an RL environment, using the emotion scores provided by the simulated user at the end of multi-turn dialogues as verifiable rewards to train LLMs end-to-end for empathy. This approach allows Qwen2.5-7B-Instruct to improve from 13.3 to 79.2
+  [ICLR 2026][Reinforcement Learning][Verifiable rewards] RLVER treats a "sentient user simulator" with self-consistent emotion updates as an RL environment, using the emotion scores provided by the simulated user at the end of multi-turn dialogues as verifiable rewards to train LLMs end-to-end for empathy. This approach allows Qwen2.5-7B-Instruct to improve from 13.3 to 79.2 on the Sentient Benchmark, approaching top-tier closed-source models with almost no loss in math or cod…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO/GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Verifiable rewards"
+  - "emotion rewards"
+  - "empathetic agents"
+  - "user simulator"
+  - "PPO/GRPO"
 date: 2026-05-08
-content_hash: 81d5f1524be5888a
+content_hash: 8de0f3f310e428ed
 ---
+
 # RLVER: Reinforcement Learning with Verifiable Emotion Rewards for Empathetic Agents
 
 **Conference**: ICLR 2026  
@@ -145,7 +150,7 @@ The challenging simulator had a policy acceptance rate of only 33.1% (vs. 52.4% 
 - [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
 - [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
-- [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
+- [\[ICLR 2026\] DeepSearch: Overcome the Bottleneck of Reinforcement Learning with Verifiable Rewards via Tree-based Search](deepsearch_overcome_the_bottleneck_of_reinforcement_learning_with_verifiable_rew.md)
 - [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
 
 </div>

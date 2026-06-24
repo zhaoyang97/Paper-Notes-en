@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The authors propose PCE (Planner-Composer-Evaluator), a framework that explicitly extracts implicit environmental assumptions from LLM reasoning chains and organizes them into decision trees. By employing a likelihood-gain-cost scoring mechanism for uncertainty-aware action selection, it significantly reduces communica
+  [ICLR 2026][Reasoning][Uncertainty-Aware Planning] The authors propose PCE (Planner-Composer-Evaluator), a framework that explicitly extracts implicit environmental assumptions from LLM reasoning chains and organizes them into decision trees. By employing a likelihood-gain-cost scoring mechanism for uncertainty-aware action selection, it significantly reduces communication overhead in multi-agent collaboration.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Uncertainty-Aware Planning"
+  - "LLM Multi-Agent Collaboration"
+  - "Decision Tree"
+  - "Partially Observable Environments"
+  - "Communication Optimization"
 date: 2026-05-08
-content_hash: c69705d5836bdf92
+content_hash: 51dc3c6ec65e3ab3
 ---
+
 # From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning
 
 **Conference**: ICLR 2026  
@@ -165,11 +171,11 @@ PCE is a training-free inference-time framework. Default hyperparameters are $D=
 
 ## Related Papers
 
+- [\[ICML 2026\] UCPO: Uncertainty-Aware Policy Optimization](../../ICML2026/llm_reasoning/ucpo_uncertainty-aware_policy_optimization.md)
 - [\[ICLR 2026\] OpenEstimate: Evaluating LLMs on Reasoning Under Uncertainty with Real-World Data](openestimate_evaluating_llms_on_reasoning_under_uncertainty_with_real-world_data.md)
 - [\[ICLR 2026\] PEAR: Phase Entropy Aware Reward for Efficient Reasoning](pear_phase_entropy_aware_reward_for_efficient_reasoning.md)
 - [\[AAAI 2026\] Dropouts in Confidence: Moral Uncertainty in Human-LLM Alignment](../../AAAI2026/llm_reasoning/dropouts_in_confidence_moral_uncertainty_in_human-llm_alignment.md)
 - [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
-- [\[ICML 2026\] Scaling-Aware Adapter for Structure-Grounded LLM Reasoning](../../ICML2026/llm_reasoning/scaling-aware_adapter_for_structure-grounded_llm_reasoning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agentic Reinforcement Learning with Implicit Step Rewards
 description: >-
-  [ICLR 2026][LLM Reasoning][agentic RL] This paper proposes iStar, a universal credit assignment strategy for multi-turn reinforcement learning of LLM agents. By alternately optimizing an **implicit process reward model (PRM)** and a policy model, iStar learns dense rewards for each action step through a multi-turn DPO objective. Step-level advantages are co
+  [ICLR2026][Reasoning][agentic RL] This paper proposes iStar, a universal credit assignment strategy for multi-turn reinforcement learning of LLM agents. By alternately optimizing an **implicit process reward model (PRM)** and a policy model, iStar learns dense rewards for each action step through a multi-turn DPO objective. Step-level advantages are combined with episode-level advantages to update the policy. iStar achieves SOTA results on WebShop, VisualSokoban…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - agentic RL
+  - "ICLR2026"
+  - "Reasoning"
+  - "agentic RL"
+  - "implicit process rewards"
+  - "credit assignment"
+  - "multi-turn DPO"
+  - "step-level advantage"
 date: 2026-05-08
-content_hash: 25fff23f20e32507
+content_hash: 41aa9db4c7dab061
 ---
+
 # Agentic Reinforcement Learning with Implicit Step Rewards
 
 **Conference**: ICLR2026  

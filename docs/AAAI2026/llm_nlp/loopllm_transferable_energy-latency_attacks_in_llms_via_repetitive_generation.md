@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation
 description: >-
-  [AAAI 2026][LLM/NLP][energy-latency attack] This paper proposes LoopLLM, a framework that launches energy-latency attacks by inducing LLMs into repetitive generation modes. Through repetition-inducing prompt optimization…
+  [AAAI 2026][LLM (Other)][energy-latency attack] This paper proposes LoopLLM, a framework that launches energy-latency attacks by inducing LLMs into repetitive generation modes. Through repetition-inducing prompt optimization and token-aligned ensemble optimization, LoopLLM achieves over 90% of maximum output length across 12 open-source and 2 commercial LLMs, with approximately 40% improvement in cross-model transferability.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "energy-latency attack"
   - "repetitive generation"
   - "adversarial suffix"
   - "low-entropy loop"
   - "cross-model transferability"
 date: 2026-05-08
-content_hash: 0d27b77b659f2cfb
+content_hash: 85c0fa476e4fa79e
 ---
 
 # LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation
@@ -145,11 +145,11 @@ The mechanistic insight is deep, the attack effectiveness is significant, and th
 
 ## Related Papers
 
-- [\[AAAI 2026\] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation](vspo_validating_semantic_pitfalls_in_ontology_via_llm-based_cq_generation.md)
 - [\[ACL 2026\] Leveraging Pretrained Language Models as Energy Functions for Glauber Dynamics Text Diffusion](../../ACL2026/llm_nlp/leveraging_pretrained_language_models_as_energy_functions_for_glauber_dynamics_t.md)
 - [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](../../NeurIPS2025/llm_nlp/nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
-- [\[AAAI 2026\] Guess or Recall? Training CNNs to Classify and Localize Memorization in LLMs](guess_or_recall_training_cnns_to_classify_and_localize_memorization_in_llms.md)
-- [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
+- [\[ACL 2025\] Red-Teaming LLM Multi-Agent Systems via Communication Attacks](../../ACL2025/llm_nlp/red-teaming_llm_multi-agent_systems_via_communication_attacks.md)
+- [\[ACL 2025\] Length Controlled Generation for Black-box LLMs](../../ACL2025/llm_nlp/length_controlled_generation_for_black-box_llms.md)
+- [\[ICML 2025\] Defending LVLMs Against Vision Attacks through Partial-Perception Supervision](../../ICML2025/llm_nlp/defending_lvlms_against_vision_attacks_through_partial-perception_supervision.md)
 
 </div>
 

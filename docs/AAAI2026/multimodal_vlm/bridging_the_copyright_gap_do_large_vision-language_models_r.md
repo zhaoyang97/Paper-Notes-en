@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?
 description: >-
-  [AAAI 2026][Multimodal VLM][VLM copyright compliance] This paper presents the first systematic evaluation of LVLMs' ability to recognize and respect copyrighted content in multimodal contexts. It constructs a large-scale…
+  [AAAI 2026 Oral][Multimodal VLM][VLM copyright compliance] This paper presents the first systematic evaluation of LVLMs' ability to recognize and respect copyrighted content in multimodal contexts. It constructs a large-scale benchmark of 50,000 multimodal query–content pairs, finds that 11 out of 12 SOTA LVLMs fail to refuse infringing requests even when explicit copyright notices are present, and proposes CopyGuard—a tool-augmented framework that raises the infringement rej…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multimodal VLM"
   - "VLM copyright compliance"
   - "multimodal benchmark"
@@ -12,7 +12,7 @@ tags:
   - "CopyGuard"
   - "tool-augmented defense"
 date: 2026-05-08
-content_hash: a0ee2927d5885aa3
+content_hash: 8e33a04df36225bf
 ---
 
 # Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?
@@ -134,10 +134,10 @@ The four CopyGuard components execute in parallel: OCR + search ($T_1$) and quer
 ## Related Papers
 
 - [\[AAAI 2026\] Remember Me: Bridging the Long-Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies](remember_me_bridging_the_long-range_gap_in_lvlms_with_three-step_inference-only_.md)
-- [\[AAAI 2026\] SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge](safer-clip_mitigating_nsfw_content_in_vision-language_models_while_preserving_pr.md)
-- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](../../CVPR2026/multimodal_vlm/do_vision_language_models_need_to_process_image_tokens.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](../../CVPR2026/multimodal_vlm/text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
 - [\[ICML 2026\] CG-MLLM: Captioning and Generating 3D Content via Multi-modal Large Language Models](../../ICML2026/multimodal_vlm/cg-mllm_captioning_and_generating_3d_content_via_multi-modal_large_language_mode.md)
-- [\[CVPR 2026\] Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in Augmented Reality](../../CVPR2026/multimodal_vlm/benchmarking_vision-language_models_under_contradictory_virtual_content_attacks_.md)
+- [\[AAAI 2026\] SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge](safer-clip_mitigating_nsfw_content_in_vision-language_models_while_preserving_pr.md)
+- [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](../../CVPR2026/multimodal_vlm/bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
 
 </div>
 

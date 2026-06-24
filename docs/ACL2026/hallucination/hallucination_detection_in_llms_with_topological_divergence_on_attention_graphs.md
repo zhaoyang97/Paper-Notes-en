@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs
 description: >-
-  [ACL 2026][Hallucination Detection][TDA] TOHA treats the LLM attention matrix as a weighted graph, utilizes Manifold Topology Divergence from topological data analysis (TDA) to measure the "topological novelty of the response subgraph relative to the prompt subgraph," and discovers "hallucination-aware heads" that are stable across datasets. Averaging only 10
+  [ACL 2026][Hallucination Detection][TDA] TOHA treats the LLM attention matrix as a weighted graph, utilizes Manifold Topology Divergence from topological data analysis (TDA) to measure the "topological novelty of the response subgraph relative to the prompt subgraph," and discovers "hallucination-aware heads" that are stable across datasets. Averaging only 10 such heads achieves a training-free solution in RAG scenarios that is 70× faster than SelfCheckGPT with significantly…
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - TDA
-  - Manifold Topology Divergence
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "TDA"
+  - "Attention Graphs"
+  - "Manifold Topology Divergence"
+  - "Hallucination-aware Heads"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 216c009134299dcc
+content_hash: e2d59a95a5bb090e
 ---
+
 # Hallucination Detection in LLMs with Topological Divergence on Attention Graphs
 
 **Conference**: ACL 2026  
@@ -147,11 +151,11 @@ Ours improves by 11.7% on MS MARCO over the strongest baseline and by 21.6% on C
 
 ## Related Papers
 
-- [\[ACL 2025\] Mixture of Decoding: An Attention-Inspired Adaptive Decoding Strategy to Mitigate Hallucination in Multimodal LLMs](../../ACL2025/hallucination/mixture_of_decoding_an_attention-inspired_adaptive_decoding_strategy_to_mitigate.md)
-- [\[NeurIPS 2025\] Robust Hallucination Detection in LLMs via Adaptive Token Selection](../../NeurIPS2025/hallucination/robust_hallucination_detection_in_llms_via_adaptive_token_selection.md)
+- [\[ICLR 2026\] Neural Message-Passing on Attention Graphs for Hallucination Detection](../../ICLR2026/hallucination/neural_message-passing_on_attention_graphs_for_hallucination_detection.md)
+- [\[ACL 2026\] Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation](spotlight_and_shadow_attention-guided_dual-anchor_introspective_decoding_for_mll.md)
 - [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
-- [\[ACL 2026\] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps](detecting_hallucinations_in_speechllms_at_inference_time_using_attention_maps.md)
-- [\[ACL 2025\] Cracking the Code of Hallucination in LVLMs with Vision-aware Head Divergence](../../ACL2025/hallucination/cracking_hallucination_vhd.md)
+- [\[ACL 2026\] Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process](why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
+- [\[ACL 2026\] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models](halluaudio_a_comprehensive_benchmark_for_hallucination_detection_in_large_audio-.md)
 
 </div>
 

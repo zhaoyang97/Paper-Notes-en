@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance
 description: >-
-  [ICCV 2025][Medical Imaging][Interactive Segmentation] This paper proposes MultiverSeg, a progressive interactive segmentation system in which each image annotated by the user reduces the number of interactions required…
+  [ICCV 2025][Medical Imaging][Interactive Segmentation] This paper proposes MultiverSeg, a progressive interactive segmentation system in which each image annotated by the user reduces the number of interactions required for subsequent images. By incorporating previously segmented images as in-context inputs, the system improves with use. On 12 unseen datasets, it reduces click counts by 36% and scribble steps by 25% compared to ScribblePrompt.
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Dataset Annotation"
   - "Progressive Segmentation"
 date: 2026-05-08
-content_hash: 3b9e1f0077c3f29a
+content_hash: 005335479da8e144
 ---
 
 # MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance
@@ -201,11 +201,11 @@ Evaluated on 12 unseen datasets (covering 8 modalities, 187 segmentation tasks),
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains](../../NeurIPS2025/medical_imaging/pancakes_consistent_multi-protocol_image_segmentation_across_biomedical_domains.md)
+- [\[ICLR 2026\] You Point, I Learn: Online Adaptation of Interactive Segmentation Models for Handling Distribution Shifts in Medical Imaging](../../ICLR2026/medical_imaging/you_point_i_learn_online_adaptation_of_interactive_segmentation_models_for_handl.md)
 - [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](radgpt_constructing_3d_image-text_tumor_datasets.md)
-- [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](../../NeurIPS2025/medical_imaging/scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
-- [\[NeurIPS 2025\] Orochi: Versatile Biomedical Image Processor](../../NeurIPS2025/medical_imaging/orochi_versatile_biomedical_image_processor.md)
-- [\[ICML 2026\] Factored Classifier-Free Guidance](../../ICML2026/medical_imaging/factored_classifier-free_guidance.md)
+- [\[CVPR 2025\] Show and Segment: Universal Medical Image Segmentation via In-Context Learning](../../CVPR2025/medical_imaging/show_and_segment_universal_medical_image_segmentation_via_in-context_learning.md)
+- [\[NeurIPS 2025\] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains](../../NeurIPS2025/medical_imaging/pancakes_consistent_multi-protocol_image_segmentation_across_biomedical_domains.md)
+- [\[CVPR 2025\] Interactive Medical Image Segmentation: A Benchmark Dataset and Baseline](../../CVPR2025/medical_imaging/interactive_medical_image_segmentation_a_benchmark_dataset_and_baseline.md)
 
 </div>
 

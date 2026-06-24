@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] X-VLA encodes hardware and collection variances from each robot data source into a set of learnable soft prompts. Combined with a concise Transformer + flow matching action generation framework, it achieves robust cross-embodiment adaptation after pre-training on large-scale heterogeneous robot data.
+  [ICLR2026][Robotics][Cross-embodiment robotics] X-VLA encodes hardware and collection variances from each robot data source into a set of learnable soft prompts. Combined with a concise Transformer + flow matching action generation framework, it achieves robust cross-embodiment adaptation after pre-training on large-scale heterogeneous robot data.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - soft prompt
-  - flow matching
+  - "ICLR2026"
+  - "Robotics"
+  - "Cross-embodiment robotics"
+  - "VLA"
+  - "soft prompt"
+  - "flow matching"
+  - "robot pre-training"
 date: 2026-05-08
-content_hash: 2014e40a3c041f53
+content_hash: 2947a18b4ffbecf0
 ---
+
 # X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model
 
 **Conference**: ICLR2026  
@@ -184,11 +187,11 @@ BACKBONE comparison: X-VLA's standard Transformer encoder (Val Error 0.041) outp
 
 ## Related Papers
 
-- [\[ICLR 2026\] Spatially Guided Training for Vision-Language-Action Model](spatially_guided_training_for_vision-language-action_model.md)
+- [\[ICLR 2026\] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations](on_robustness_of_vision-language-action_model_against_multi-modal_perturbations.md)
 - [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[ICLR 2026\] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process](unified_diffusion_vla_vision-language-action_model_via_joint_discrete_denosing_d.md)
+- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](../../CVPR2026/robotics/acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
-- [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
 
 </div>
 

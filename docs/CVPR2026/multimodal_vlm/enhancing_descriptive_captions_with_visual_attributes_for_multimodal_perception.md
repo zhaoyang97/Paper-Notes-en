@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Descriptive Captions with Visual Attributes for Multimodal Perception
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes Cap-Workflow, which utilizes a suite of off-the-shelf visual expert models (detection, depth, emotion, OCR, fine-grained recognition, HOI) to extract fine-grained attributes and object relationships "unseen by general LMMs" from images. These attributes are integrated into accurate and detailed imag
+  [CVPR 2026][Multimodal VLM][Descriptive image captioning] This paper proposes Cap-Workflow, which utilizes a suite of off-the-shelf visual expert models (detection, depth, emotion, OCR, fine-grained recognition, HOI) to extract fine-grained attributes and object relationships "unseen by general LMMs" from images. These attributes are integrated into accurate and detailed image descriptions using a two-stage LLM approach. This process re-labels 1.1M images into superior LMM pr…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Descriptive image captioning"
+  - "Visual expert models"
+  - "Fine-grained attributes"
+  - "3D spatial relations"
+  - "LMM pre-training data"
 date: 2026-05-08
-content_hash: 281639256013590d
+content_hash: e646f8037f993edd
 ---
+
 # Enhancing Descriptive Captions with Visual Attributes for Multimodal Perception
 
 **Conference**: CVPR 2026  
@@ -144,9 +150,9 @@ Human evaluation of attribute richness (100 images, 5–10 evaluators) shows tha
 
 - [\[CVPR 2026\] Same or Not? Enhancing Visual Perception in Vision-Language Models](same_or_not_enhancing_visual_perception_in_vision-language_models.md)
 - [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
-- [\[CVPR 2026\] Act2See: Emergent Active Visual Perception for Video Reasoning](act2see_emergent_active_visual_perception_for_video_reasoning.md)
-- [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
+- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
 - [\[CVPR 2026\] CodePercept: Code-Grounded Visual STEM Perception for MLLMs](codepercept_code-grounded_visual_stem_perception_for_mllms.md)
+- [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
 
 </div>
 

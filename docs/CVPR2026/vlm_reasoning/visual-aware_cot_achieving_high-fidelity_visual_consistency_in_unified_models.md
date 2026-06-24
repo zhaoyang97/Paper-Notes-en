@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models
 description: >-
-  [CVPR 2026][Multimodal VLM][flow-GRPO] VACoT enables unified understanding-generation models to achieve high-fidelity multi-reference image generation by first generating a structured "Adaptive Visual Planning" checklist of elements to preserve, followed by "Iterative Visual Correction" through self-reflection. By injecting this "look-and-check" capability
+  [CVPR 2026][VLM Reasoning][Unified models] VACoT enables unified understanding-generation models to achieve high-fidelity multi-reference image generation by first generating a structured "Adaptive Visual Planning" checklist of elements to preserve, followed by "Iterative Visual Correction" through self-reflection. By injecting this "look-and-check" capability into BAGEL via two-stage SFT + flow-GRPO training, it improves the average score on OmniContext from 5.55 to 8.26…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - flow-GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Unified models"
+  - "multi-modal CoT"
+  - "visual consistency"
+  - "multi-reference image generation"
+  - "flow-GRPO"
 date: 2026-05-08
-content_hash: 31f68ee3046b5678
+content_hash: 67081ea8afba7d5c
 ---
+
 # Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models
 
 **Conference**: CVPR 2026  
@@ -138,16 +143,16 @@ VACoT significantly improves the BAGEL base (5.55) to 8.26, outperforming GPT-4o
 - **Value**: ⭐⭐⭐⭐ The "structured checklist + typed visual rewards" framework provides direct guidance for ID preservation and high-fidelity generation tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient and High-Fidelity Omni Modality Retrieval](efficient_and_high-fidelity_omni_modality_retrieval.md)
-- [\[CVPR 2026\] HiFICL: High-Fidelity In-Context Learning for Multimodal Tasks](hificl_highfidelity_incontext_learning_for_multimo.md)
-- [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](vq-va_world_towards_high-quality_visual_question-visual_answering.md)
+- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
 - [\[CVPR 2026\] ViRC: Enhancing Visual Interleaved Mathematical CoT with Reason Chunking](virc_enhancing_visual_interleaved_mathematical_cot_with_reason_chunking.md)
-- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
+- [\[NeurIPS 2025\] SpatialTraceGen: High-Fidelity Traces for Efficient VLM Spatial Reasoning Distillation](../../NeurIPS2025/vlm_reasoning/spatialtracegen_high-fidelity_traces_for_efficient_vlm_spatial_reasoning_distill.md)
+- [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
 
 </div>
 

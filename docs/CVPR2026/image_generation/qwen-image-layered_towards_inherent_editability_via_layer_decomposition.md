@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition
 description: >-
-  [CVPR 2026][Image Generation][RGBA] This work decomposes a single RGB image into multiple semantically decoupled RGBA layers end-to-end. Each layer can be independently edited without affecting other content, fundamentally solving semantic drift and geometric misalignment in raster image editing. The decomposition quality significantly exceeds previous r
+  [CVPR 2026][Image Generation][Layer Decomposition] This work decomposes a single RGB image into multiple semantically decoupled RGBA layers end-to-end. Each layer can be independently edited without affecting other content, fundamentally solving semantic drift and geometric misalignment in raster image editing. The decomposition quality significantly exceeds previous recursive methods.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - RGBA
-  - Diffusion Model
-  - MMDiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Layer Decomposition"
+  - "RGBA"
+  - "Consistent Editing"
+  - "Diffusion Models"
+  - "MMDiT"
 date: 2026-05-08
-content_hash: 0b03c55564b189b7
+content_hash: db5449c7aa83393f
 ---
+
 # Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition
 
 **Conference**: CVPR 2026  
@@ -143,7 +146,7 @@ Components added sequentially on Crello (L=Layer3D RoPE, R=RGBA-VAE, M=Multi-sta
 - [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
 - [\[CVPR 2026\] Cycle-Consistent Tuning for Layered Image Decomposition](cycle-consistent_tuning_for_layered_image_decomposition.md)
 - [\[ICLR 2026\] Referring Layer Decomposition](../../ICLR2026/image_generation/referring_layer_decomposition.md)
-- [\[CVPR 2025\] Generative Image Layer Decomposition with Visual Effects](../../CVPR2025/image_generation/generative_image_layer_decomposition_with_visual_effects.md)
+- [\[CVPR 2026\] Illustrator's Depth: Monocular Layer Index Prediction for Image Decomposition](illustrators_depth_monocular_layer_index_prediction_for_image_decomposition.md)
 - [\[CVPR 2025\] Improving Editability in Image Generation with Layer-wise Memory](../../CVPR2025/image_generation/improving_editability_in_image_generation_with_layer-wise_memory.md)
 
 </div>

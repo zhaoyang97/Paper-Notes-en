@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Can Speech LLMs Think while Listening?
 description: >-
-  [ICLR 2026][Audio & Speech][Chain-of-Thought] This paper inserts text Chain-of-Thought (CoT) into the text monologue stream of a multi-stream speech LLM (Moshi), enabling reasoning in the text space and improving accuracy by an average of 2.4x. It further proposes a "question completeness" metric based on KL divergence, allowing the model to "think while listening
+  [ICLR 2026][Audio & Speech][Speech LLM] This paper inserts text Chain-of-Thought (CoT) into the text monologue stream of a multi-stream speech LLM (Moshi), enabling reasoning in the text space and improving accuracy by an average of 2.4x. It further proposes a "question completeness" metric based on KL divergence, allowing the model to "think while listening" and initiate reasoning before the user finishes speaking. Combined with DPO preference fine-tuning…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Chain-of-Thought
-  - Streaming ASR
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech LLM"
+  - "Chain-of-Thought"
+  - "Streaming ASR"
+  - "Thinking while Listening"
+  - "Preference Fine-tuning"
 date: 2026-05-08
-content_hash: 9bcb04dafbbe645a
+content_hash: f8b6ba7ffbce6b7b
 ---
+
 # Can Speech LLMs Think while Listening?
 
 **Conference**: ICLR 2026  
@@ -149,6 +153,7 @@ DPO Length Preference (Base $\theta=0.75$) results:
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the "reasoning vs. latency" pain point for speech assistants; methodology is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

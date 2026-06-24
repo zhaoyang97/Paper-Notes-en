@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] ATAAT systematically reveals that the root cause of VLA backdoor injection difficulty is "Gradient Interference" (where benign and backdoor gradient directions cancel out, with a long-term negative correlation of ~ -0.4). By utilizing two complementary paths—implicit orthogonal perturbation (data poisoning) and dormant
+  [ACL 2026 Findings][LLM Safety][VLA Backdoor] ATAAT systematically reveals that the root cause of VLA backdoor injection difficulty is "Gradient Interference" (where benign and backdoor gradient directions cancel out, with a long-term negative correlation of ~ -0.4). By utilizing two complementary paths—implicit orthogonal perturbation (data poisoning) and dormant neuron anchoring (white-box fine-tuning)—it pushes the Target Attack Success Rate (TASR) to 80%+…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "VLA Backdoor"
+  - "Gradient Interference"
+  - "Orthogonal Decoupling"
+  - "Dormant Neurons"
+  - "Semantic Trigger"
 date: 2026-05-08
-content_hash: 82354623f26e82c6
+content_hash: 4948ff77beab9c4a
 ---
+
 # ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models
 
 **Conference**: ACL 2026 Findings  
@@ -150,11 +156,11 @@ Benign objective: $\mathcal{L}_\text{benign}(\theta) = \mathbb{E}_{(v,l,a)\sim\m
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](../../ICLR2026/llm_safety/sampling-aware_adversarial_attacks_against_large_language_models.md)
 - [\[ACL 2026\] VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models](vla-forget_vision-language-action_unlearning_for_embodied_foundation_models.md)
-- [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
-- [\[ACL 2026\] ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks](proxyprompt_securing_system_prompts_against_prompt_extraction_attacks.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](../../ICLR2026/llm_safety/transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 - [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](jailbreaking_large_language_models_with_morality_attacks.md)
-- [\[CVPR 2025\] TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in Vision-Language Models](../../CVPR2025/llm_safety/tapt_test-time_adversarial_prompt_tuning_for_robust_inference_in_vision-language.md)
+- [\[ACL 2026\] ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks](proxyprompt_securing_system_prompts_against_prompt_extraction_attacks.md)
 
 </div>
 

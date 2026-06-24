@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Toward Efficient Exploration by Large Language Model Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][PSRL] Instead of designing new LLM agent architectures to hope for "emergent" exploration capabilities, this paper advocates for the explicit implementation of Posterior Sampling Reinforcement Learning (PSRL)—a classical RL algorithm with proven exploration efficiency—using LLMs. By outsourcing the three core steps of PSRL t
+  [ICLR 2026][Reinforcement Learning][Efficient Exploration] Instead of designing new LLM agent architectures to hope for "emergent" exploration capabilities, this paper advocates for the explicit implementation of Posterior Sampling Reinforcement Learning (PSRL)—a classical RL algorithm with proven exploration efficiency—using LLMs. By outsourcing the three core steps of PSRL to three distinct LLMs, the authors achieve cumulative regret curves that significantly outperform mai…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PSRL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Efficient Exploration"
+  - "Posterior Sampling"
+  - "Thompson Sampling"
+  - "PSRL"
+  - "LLM Agent"
 date: 2026-05-08
-content_hash: 37ee051005dcbe2b
+content_hash: 6e9f216d3f9ca466
 ---
+
 # Toward Efficient Exploration by Large Language Model Agents
 
 **Conference**: ICLR 2026  
@@ -128,11 +133,11 @@ Experiments select tasks where "exploration is the unique or primary bottleneck 
 
 ## Related Papers
 
+- [\[ICLR 2026\] CDE: Curiosity-Driven Exploration for Efficient Reinforcement Learning in Large Language Models](cde_curiosity-driven_exploration_for_efficient_reinforcement_learning_in_large_l.md)
 - [\[ICLR 2026\] Squeeze the Soaked Sponge: Efficient Off-Policy RFT for Large Language Model](squeeze_the_soaked_sponge_efficient_off-policy_rft_for_large_language_model.md)
 - [\[ICLR 2026\] Structured In-context Environment Scaling for Large Language Model Reasoning](structured_in-context_environment_scaling_for_large_language_model_reasoning.md)
+- [\[ICLR 2026\] Risk-Sensitive Reinforcement Learning for Alleviating Exploration Dilemmas in Large Language Models](risk-sensitive_reinforcement_learning_for_alleviating_exploration_dilemmas_in_la.md)
 - [\[ICLR 2026\] Learning to Orchestrate Agents in Natural Language with the Conductor](learning_to_orchestrate_agents_in_natural_language_with_the_conductor.md)
-- [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
-- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 
 </div>
 

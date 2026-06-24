@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BIRD: Behavior Induction via Representation-structure Distillation
 description: >-
-  [ICLR 2026][Alignment & RLHF][CKA] BIRD transfers "alignment behaviors" such as robustness and safety from a heterogeneous teacher to a student by matching the internal representation **structure** (the geometry of pairwise similarities within a batch, measured via CKA) of the student to that of an aligned teacher. The teacher and student can differ ent
+  [ICLR2026][LLM Alignment][Representation Structure Distillation] BIRD transfers "alignment behaviors" such as robustness and safety from a heterogeneous teacher to a student by matching the internal representation **structure** (the geometry of pairwise similarities within a batch, measured via CKA) of the student to that of an aligned teacher. The teacher and student can differ entirely in tasks, data, architectures, and output spaces. In image OOD robustness transfer…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - CKA
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Representation Structure Distillation"
+  - "CKA"
+  - "Weak-to-Strong Generalization"
+  - "Safety Alignment"
+  - "Behavior Transfer"
 date: 2026-05-08
-content_hash: ed408026aa40481f
+content_hash: 0567562fbee703ad
 ---
+
 # BIRD: Behavior Induction via Representation-structure Distillation
 
 **Conference**: ICLR2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Visual Corruptions in LVLMs: A Shape-Texture Perspective on Model Failures
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Starting from "corruption type heterogeneity," this paper finds that image corruptions disrupt LVLM perception along two complementary dimensions—**shape** and **texture**—inducing two opposite failure modes. Accordingly, a training-free dual-path contrastive decoding framework, ST-CD, is proposed. It utilizes edge map
+  [CVPR 2026][Multimodal VLM][Visual Corruption Robustness] Starting from "corruption type heterogeneity," this paper finds that image corruptions disrupt LVLM perception along two complementary dimensions—**shape** and **texture**—inducing two opposite failure modes. Accordingly, a training-free dual-path contrastive decoding framework, ST-CD, is proposed. It utilizes edge maps and jigsaw puzzles as probes to amplify respective biases and adaptively fuses correction signals vi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Corruption Robustness"
+  - "Shape-Texture"
+  - "Contrastive Decoding"
+  - "Training-Free Inference"
+  - "Failure Mode Analysis"
 date: 2026-05-08
-content_hash: 349db35f3c5480a8
+content_hash: 0ebaafb3812ce73c
 ---
+
 # Revisiting Visual Corruptions in LVLMs: A Shape-Texture Perspective on Model Failures
 
 **Conference**: CVPR 2026  
@@ -124,15 +130,15 @@ Edge views excel at shape degradation (blur/geometry), while jigsaw views excel 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Revisiting Model Stitching in the Foundation Model Era](revisiting_model_stitching_in_the_foundation_model.md)
 - [\[CVPR 2026\] HBridge: H-Shape Bridging of Heterogeneous Experts for Unified Multimodal Understanding and Generation](hbridge_h-shape_bridging_of_heterogeneous_experts_for_unified_multimodal_underst.md)
-- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
 - [\[CVPR 2026\] Is the Modality Gap a Bug or a Feature? A Robustness Perspective](is_the_modality_gap_a_bug_or_a_feature_a_robustness_perspective.md)
-- [\[CVPR 2026\] SoPE: Spherical Coordinate-Based Positional Embedding for 3D LVLMs](sope_spherical_positional_encoding_3d_lvlm.md)
+- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
+- [\[ICML 2026\] Self-Prophetic Decoding to Unlock Visual Search in LVLMs](../../ICML2026/multimodal_vlm/self-prophetic_decoding_to_unlock_visual_search_in_lvlms.md)
 
 </div>
 

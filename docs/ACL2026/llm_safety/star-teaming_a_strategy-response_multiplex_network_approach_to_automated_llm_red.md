@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes STAR-Teaming, an automated red teaming framework based on a strategy-response multiplex network. By modeling attack strategy selection as a probabilistic optimization of an inverse Ising problem, it achieves a 74.5% average attack success rate on HarmBench, surpassing the strongest baseline by 13.5%
+  [ACL 2026 Findings][LLM Safety][Red Teaming] This paper proposes STAR-Teaming, an automated red teaming framework based on a strategy-response multiplex network. By modeling attack strategy selection as a probabilistic optimization of an inverse Ising problem, it achieves a 74.5% average attack success rate on HarmBench, surpassing the strongest baseline by 13.5% while significantly reducing computational overhead.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Red Teaming"
+  - "Multiplex Network"
+  - "Strategy Sampling"
+  - "Jailbreak Attacks"
 date: 2026-05-08
-content_hash: 757a6c29adf3040b
+content_hash: 08056c6a398b7bc2
 ---
+
 # STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming
 
 **Conference**: ACL 2026 Findings  
@@ -125,11 +130,11 @@ The network constructed from warm-up logs is static and may not withstand new de
 
 ## Related Papers
 
+- [\[ICLR 2026\] STAR: Strategy-driven Automatic Jailbreak Red-teaming for Large Language Model](../../ICLR2026/llm_safety/star_strategy-driven_automatic_jailbreak_red-teaming_for_large_language_model.md)
 - [\[ACL 2026\] Red-Bandit: Test-Time Adaptation for LLM Red-Teaming via Bandit-Guided LoRA Experts](red-bandit_test-time_adaptation_for_llm_red-teaming_via_bandit-guided_lora_exper.md)
 - [\[ICLR 2026\] Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models](../../ICLR2026/llm_safety/auto-rt_automatic_jailbreak_strategy_exploration_for_red-teaming_large_language_.md)
-- [\[ICLR 2026\] Tree-based Dialogue Reinforced Policy Optimization for Red-Teaming Attacks (DialTree)](../../ICLR2026/llm_safety/tree-based_dialogue_reinforced_policy_optimization_for_red-teaming_attacks.md)
 - [\[ACL 2026\] ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs](astra_an_automated_framework_for_strategy_discovery_retrieval_and_evolution_for_.md)
-- [\[ICLR 2026\] ARMS: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks](../../ICLR2026/llm_safety/arms_adaptive_red-teaming_agent_against_multimodal_models_with_plug-and-play_att.md)
+- [\[ICLR 2026\] RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents](../../ICLR2026/llm_safety/redcodeagent_automatic_red-teaming_agent_against_diverse_code_agents.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RESTRAIN: From Spurious Votes to Signals — Self-Training RL with Self-Penalization
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] RESTRAIN transforms the problem of "missing golden labels" into training signals. By adding triple self-penalization mechanisms—pseudo-label weighting, negative rollout penalization, and prompt-level weighting—onto GRPO, the model avoids blindly trusting majority votes. This pushes the average Pass@1 of Qwen3-4B on lab
+  [ICLR 2026][Reasoning][Self-driven RL] RESTRAIN transforms the problem of "missing golden labels" into training signals. By adding triple self-penalization mechanisms—pseudo-label weighting, negative rollout penalization, and prompt-level weighting—onto GRPO, the model avoids blindly trusting majority votes. This pushes the average Pass@1 of Qwen3-4B on label-free data to 51.0%, nearly matching the upper bound of GRPO trained with golden labels (51.4%).
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Self-driven RL"
+  - "Self-penalization"
+  - "Pseudo-label weighting"
+  - "GRPO"
+  - "Label-free reasoning"
 date: 2026-05-08
-content_hash: 6d8d1ccb4ef494b2
+content_hash: e5cbd8d96c934e7b
 ---
+
 # RESTRAIN: From Spurious Votes to Signals — Self-Training RL with Self-Penalization
 
 **Conference**: ICLR 2026  
@@ -133,15 +138,14 @@ Component removal results on Qwen3-4B (Avg Pass@1):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
 - [\[ICLR 2026\] SkillFactory: Self-Distillation for Learning Cognitive Behaviors](skillfactory_self-distillation_for_learning_cognitive_behaviors.md)
 - [\[ICLR 2026\] HiPO: Self-Hint Policy Optimization for RLVR](hipo_self-hint_policy_optimization_for_rlvr.md)
+- [\[ICLR 2026\] Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks](semantic_voting_a_self-evaluation-free_approach_for_efficient_llm_self-improveme.md)
 - [\[ICLR 2026\] Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning](toward_effective_tool-integrated_reasoning_via_self-evolved_preference_learning.md)
-- [\[ICML 2026\] The Role of Feedback Alignment in Self-Distillation](../../ICML2026/llm_reasoning/the_role_of_feedback_alignment_in_self-distillation.md)
 
 </div>
 

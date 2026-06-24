@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gaussian Splatting with Discretized SDF for Relightable Assets
 description: >-
-  [ICCV 2025][3D Vision][Inverse Rendering] This paper proposes encoding a continuous SDF as an additional per-Gaussian attribute via an SDF-to-opacity transformation that unifies Gaussian splatting and SDF representations…
+  [ICCV 2025][3D Vision][Inverse Rendering] This paper proposes encoding a continuous SDF as an additional per-Gaussian attribute via an SDF-to-opacity transformation that unifies Gaussian splatting and SDF representations. Combined with a projection-based consistency loss and spherical initialization, the method achieves relighting quality surpassing existing Gaussian-based inverse rendering approaches using only 4 GB of GPU memory.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Geometry Regularization"
   - "Relighting"
 date: 2026-05-08
-content_hash: aa5cbf9b51a8bc2d
+content_hash: 67abf5e0bf0e24bd
 ---
 
 # Gaussian Splatting with Discretized SDF for Relightable Assets
@@ -150,10 +150,10 @@ Individual terms: $\mathcal{L}_c$ (rendering loss), $\mathcal{L}_n$ (normal cons
 ## Related Papers
 
 - [\[ICCV 2025\] Discretized Gaussian Representation for Tomographic Reconstruction](discretized_gaussian_representation_for_tomographic_reconstruction.md)
+- [\[CVPR 2025\] HRAvatar: High-Quality and Relightable Gaussian Head Avatar](../../CVPR2025/3d_vision/hravatar_high-quality_and_relightable_gaussian_head_avatar.md)
 - [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
-- [\[NeurIPS 2025\] BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading](../../NeurIPS2025/3d_vision/becominglit_relightable_gaussian_avatars_with_hybrid_neural_shading.md)
-- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](../../CVPR2026/3d_vision/ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
-- [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
+- [\[CVPR 2025\] RNG: Relightable Neural Gaussians](../../CVPR2025/3d_vision/rng_relightable_neural_gaussians.md)
+- [\[CVPR 2025\] SVG-IR: Spatially-Varying Gaussian Splatting for Inverse Rendering](../../CVPR2025/3d_vision/svg-ir_spatially-varying_gaussian_splatting_for_inverse_rendering.md)
 
 </div>
 

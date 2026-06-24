@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Tensor Product Attention Is All You Need
 description: >-
-  [NeurIPS 2025][LLM Efficiency][tensor decomposition] By decomposing Q/K/V into weighted sums of low-rank factors via contextual tensor products, TPA compresses the KV cache by 10–16×…
+  [NeurIPS 2025 Spotlight][LLM Efficiency][tensor decomposition] By decomposing Q/K/V into weighted sums of low-rank factors via contextual tensor products, TPA compresses the KV cache by 10–16×, while surpassing standard MHA/MQA/GQA/MLA on both validation loss and downstream task accuracy.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Efficiency"
   - "tensor decomposition"
   - "KV cache"
@@ -12,7 +12,7 @@ tags:
   - "low-rank"
   - "RoPE compatibility"
 date: 2026-05-08
-content_hash: 42e01bc4c6f87c53
+content_hash: 4fc3d0caa1a670be
 ---
 
 # Tensor Product Attention Is All You Need
@@ -128,11 +128,11 @@ Tensor Product Attention (TPA) decomposes the Q/K/V matrices in standard attenti
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
-- [\[ICML 2026\] Do Transformers Need Three Projections? A Systematic Study of QKV Sharing Schemes](../../ICML2026/llm_efficiency/do_transformers_need_three_projections_systematic_study_of_qkv_variants.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](../../ICLR2026/llm_efficiency/attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
 - [\[NeurIPS 2025\] UMoE: Unifying Attention and FFN with Shared Experts](umoe_unifying_attention_and_ffn_with_shared_experts.md)
-- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
-- [\[ICLR 2026\] Universe Routing: Why Self-Evolving Agents Need Epistemic Control](../../ICLR2026/llm_efficiency/universe_routing_why_self-evolving_agents_need_epistemic_control.md)
+- [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
+- [\[NeurIPS 2025\] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE](moesd_unveil_speculative_decodings_potential_for_accelerating_sparse_moe.md)
+- [\[NeurIPS 2025\] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search](jet-nemotron_efficient_language_model_with_post_neural_architecture_search.md)
 
 </div>
 

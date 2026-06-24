@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Editprint: General Digital Image Forensics via Editing Fingerprint with Self-Augmentation Training
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Editprint utilizes an "online editing pool" to self-augment a mere 10 original raw images into tens of millions of "imaging + post-processing" editing chains with text labels. Through Self-Augmentation Training (SAT), it learns a universal "editing fingerprint" feature, allowing it to approach or even surpass supervise
+  [CVPR 2026][AI Safety][Digital Image Forensics] Editprint utilizes an "online editing pool" to self-augment a mere 10 original raw images into tens of millions of "imaging + post-processing" editing chains with text labels. Through Self-Augmentation Training (SAT), it learns a universal "editing fingerprint" feature, allowing it to approach or even surpass supervised methods in unannotated, zero-shot tasks such as Synthetic Image Detection (SID)…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Digital Image Forensics"
+  - "Editing Fingerprint"
+  - "Self-Augmentation Training"
+  - "Language-Guided Contrastive Learning"
+  - "Synthetic Image Detection"
 date: 2026-05-08
-content_hash: a889775792661cad
+content_hash: 85bf80f0a35ff465
 ---
+
 # Editprint: General Digital Image Forensics via Editing Fingerprint with Self-Augmentation Training
 
 **Conference**: CVPR 2026  
@@ -150,7 +156,7 @@ SNP results demonstrate the value of modeling out-camera traces: competitors fai
 - [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](image-based_outlier_synthesis_with_training_data.md)
 - [\[CVPR 2026\] Improving Adversarial Transferability with Local Perturbation Augmentation](improving_adversarial_transferability_with_local_perturbation_augmentation.md)
 - [\[CVPR 2026\] Protego: User-Centric Pose-Invariant Privacy Protection Against Face Recognition-Induced Digital Footprint Exposure](protego_user-centric_pose-invariant_privacy_protection_against_face_recognition-.md)
-- [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](../../ICML2026/ai_safety/training-free_coverless_multi-image_steganography_with_access_control.md)
+- [\[CVPR 2026\] PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing](pinpoint_evaluation_of_composed_image_retrieval_with_explicit_negatives_multi-im.md)
 
 </div>
 

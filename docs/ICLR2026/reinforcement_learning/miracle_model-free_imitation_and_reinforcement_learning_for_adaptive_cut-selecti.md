@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MIRACLE: Model-free Imitation and Reinforcement Learning for Adaptive Cut-Selection
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] Treating the Mixed-Integer Programming (MIP) solver SCIP as the environment and its default cut selection heuristic as the expert, this work utilizes GAIL to learn a dense reward function and PPO to train a lightweight cut selection policy. By selecting only a few high-value cuts within a budget per round, the approach
+  [ICLR 2026][Reinforcement Learning][Cut Selection] Treating the Mixed-Integer Programming (MIP) solver SCIP as the environment and its default cut selection heuristic as the expert, this work utilizes GAIL to learn a dense reward function and PPO to train a lightweight cut selection policy. By selecting only a few high-value cuts within a budget per round, the approach compresses peak memory from GB-level to dozens of MBs (up to 98.5% reduction) while achieving 100% solving s…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
-  - GAIL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Cut Selection"
+  - "Mixed-Integer Programming"
+  - "PPO"
+  - "GAIL"
+  - "Curriculum Learning"
+  - "Memory-Efficient Solving"
 date: 2026-05-08
-content_hash: 0a55066318b5f5ea
+content_hash: f929d3500d998e6a
 ---
+
 # MIRACLE: Model-free Imitation and Reinforcement Learning for Adaptive Cut-Selection
 
 **Conference**: ICLR 2026  
@@ -127,10 +132,10 @@ Settings: Trained on 1000 SetCover instances. Evaluated on 150 SetCover + 150 di
 ## Related Papers
 
 - [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
-- [\[ICLR 2026\] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning](near-optimal_second-order_guarantees_for_model-based_adversarial_imitation_learn.md)
 - [\[ICLR 2026\] Instance-wise Adaptive Scheduling via Derivative-Free Meta-Learning](instance-wise_adaptive_scheduling_via_derivative-free_meta-learning.md)
+- [\[ICLR 2026\] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning](near-optimal_second-order_guarantees_for_model-based_adversarial_imitation_learn.md)
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
-- [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](on_discovering_algorithms_for_adversarial_imitation_learning.md)
+- [\[ICLR 2026\] A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning](a_reward-free_viewpoint_on_multi-objective_reinforcement_learning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification
 description: >-
-  [ICLR 2026][Self-Supervised Learning][ClearCLIP] PSCL utilizes ClearCLIP to decouple "region selection" and "region representation" into two separate branches. Combined with multi-scale multi-part progressive reasoning and a vision-language contrastive loss incorporating intermediate-granularity categories, it achieves SOTA or highly competitive accuracy across five
+  [ICLR 2026][Self-Supervised Learning][Fine-grained Classification] PSCL utilizes ClearCLIP to decouple "region selection" and "region representation" into two separate branches. Combined with multi-scale multi-part progressive reasoning and a vision-language contrastive loss incorporating intermediate-granularity categories, it achieves SOTA or highly competitive accuracy across five FGVC datasets.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - ClearCLIP
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Fine-grained Classification"
+  - "ClearCLIP"
+  - "Part Localization"
+  - "Multi-granularity Text"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 2466a250faf6edb7
+content_hash: 1a15601cd0454c3f
 ---
+
 # Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification
 
 **Conference**: ICLR 2026  
@@ -125,8 +130,21 @@ Module-wise ablation (RN50):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification](../../CVPR2026/self_supervised/from_few-way_to_many-way_rethinking_few-shot_fine-grained_image_classification.md)
+- [\[CVPR 2026\] Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model](../../CVPR2026/self_supervised/nonparametric_deep_fine-grained_clustering_with_low-rank_guided_vision-language_.md)
+- [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](../../ICML2026/self_supervised/partco_part-level_correspondence_priors_enhance_category_discovery.md)
+- [\[AAAI 2026\] FineXtrol: Controllable Motion Generation via Fine-Grained Text](../../AAAI2026/self_supervised/finextrol_controllable_motion_generation_via_fine-grained_text.md)
+- [\[CVPR 2026\] Learning from Semantic Dictionaries: Discriminative Codebook Contrastive Learning for Unified Visual Representation and Generation](../../CVPR2026/self_supervised/learning_from_semantic_dictionaries_discriminative_codebook_contrastive_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

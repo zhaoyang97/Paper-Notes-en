@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CBMAS: Cognitive Behavioral Modeling via Activation Steering
 description: >-
-  [NeurIPS 2025][Interpretability][activation steering] CBMAS proposes a framework that repurposes activation steering as a continuous diagnostic tool. By conducting dense α-sweeps and decoupling injection layers from read…
+  [NeurIPS 2025][Interpretability][activation steering] CBMAS proposes a framework that repurposes activation steering as a continuous diagnostic tool. By conducting dense α-sweeps and decoupling injection layers from readout layers, the framework elevates cognitive bias analysis from a binary "biased / unbiased" judgment to a continuous trajectory analysis capable of tracking flip points, propagation paths, and attenuation patterns. Experiments on GPT-2 Small reveal that appea…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "logit lens"
   - "layer sensitivity analysis"
 date: 2026-05-08
-content_hash: 88d269ffd9ea9171
+content_hash: 4b74ed9e510bbc4d
 ---
 
 # CBMAS: Cognitive Behavioral Modeling via Activation Steering
@@ -131,11 +131,11 @@ Analysis results for the reassurance (appeasement behavior) steering vector on G
 
 ## Related Papers
 
+- [\[ICLR 2026\] Activation Steering with a Feedback Controller](../../ICLR2026/interpretability/activation_steering_with_a_feedback_controller.md)
 - [\[ICML 2026\] Steer Like the LLM: Activation Steering that Mimics Prompting](../../ICML2026/interpretability/steer_like_the_llm_activation_steering_that_mimics_prompting.md)
 - [\[NeurIPS 2025\] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis](toward_explainable_offline_rl_analyzing_representations_in_intrinsically_motivat.md)
+- [\[ICML 2026\] Closing the Loop: PID Feedback Control for Interpretable Activation Steering in Symbolic Music Generation](../../ICML2026/interpretability/closing_the_loop_pid_feedback_control_for_interpretable_activation_steering_in_s.md)
 - [\[NeurIPS 2025\] Curvature Tuning: Provable Training-free Model Steering From a Single Parameter](curvature_tuning_provable_training-free_model_steering_from_a_single_parameter.md)
-- [\[NeurIPS 2025\] Steering Information Utility in Key-Value Memory for Language Model Post-Training](steering_information_utility_in_key-value_memory_for_language_model_post-trainin.md)
-- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](../../ACL2026/interpretability/compositional_steering_of_large_language_models_with_steering_tokens.md)
 
 </div>
 

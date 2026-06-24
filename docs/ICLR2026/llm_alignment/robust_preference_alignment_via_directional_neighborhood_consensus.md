@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust Preference Alignment via Directional Neighborhood Consensus
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] The authors propose Robust Preference Selection (RPS), a training-free inference-time method for enhancing preference alignment. By sampling multiple candidate directions from the local neighborhood of the target preference to generate responses and selecting the optimal one according to the original preference, RPS ac
+  [ICLR 2026][LLM Alignment][Preference Alignment] The authors propose Robust Preference Selection (RPS), a training-free inference-time method for enhancing preference alignment. By sampling multiple candidate directions from the local neighborhood of the target preference to generate responses and selecting the optimal one according to the original preference, RPS achieves up to a 69% win rate over baselines on OOD preferences.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference Alignment"
+  - "Robustness"
+  - "Inference-time Adjustment"
+  - "Directional Neighborhood Consensus"
+  - "Out-of-Distribution Preferences"
 date: 2026-05-08
-content_hash: a93fcbd52a8bc4e7
+content_hash: 86e94e2dbe3a0d61
 ---
+
 # Robust Preference Alignment via Directional Neighborhood Consensus
 
 **Conference**: ICLR 2026  

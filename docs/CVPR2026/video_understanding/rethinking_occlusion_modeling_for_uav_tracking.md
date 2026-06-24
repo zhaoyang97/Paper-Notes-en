@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Occlusion Modeling for UAV Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the "clustered" nature of real-world occlusions in UAV perspectives, this paper generates spatially correlated occlusion masks (COM) via cluster sampling to train robust representations. Combined with a cost-aware depth bias (CADB) that ties inference to layer costs for automatic shallow-layer termination, t
+  [CVPR 2026][Video Understanding][UAV Tracking] Addressing the "clustered" nature of real-world occlusions in UAV perspectives, this paper generates spatially correlated occlusion masks (COM) via cluster sampling to train robust representations. Combined with a cost-aware depth bias (CADB) that ties inference to layer costs for automatic shallow-layer termination, the resulting OCTrack achieves a balance between accuracy and a real-time speed of 265 FPS across four UAV benchma…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "UAV Tracking"
+  - "Occlusion Modeling"
+  - "Clustering Mask"
+  - "Dynamic Depth"
+  - "Single-stream Transformer"
 date: 2026-05-08
-content_hash: 5cb08266f32aa4d7
+content_hash: f15b3b44e8c8ff32
 ---
+
 # Rethinking Occlusion Modeling for UAV Tracking
 
 **Conference**: CVPR 2026  
@@ -146,15 +152,16 @@ Masking strategy comparison on VisDrone2018:
 - Value: ⭐⭐⭐⭐ Real-time performance (265 FPS) and modular design provide high utility for airborne UAV deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
-- [\[CVPR 2026\] FlexHook: Rethinking Two-Stage Referring-by-Tracking in RMOT](rethinking_two-stage_referring-by-tracking_in_referring_multi-object_tracking_ma.md)
 - [\[CVPR 2026\] Toward Low-Cost yet Effective Temporal Learning for UAV Tracking](toward_low-cost_yet_effective_temporal_learning_for_uav_tracking.md)
+- [\[CVPR 2026\] Tracking through Severe Occlusion via Event-Derived Transient Cues](tracking_through_severe_occlusion_via_event-derived_transient_cues.md)
+- [\[CVPR 2026\] FlexHook: Rethinking Two-Stage Referring-by-Tracking in RMOT](rethinking_two-stage_referring-by-tracking_in_referring_multi-object_tracking_ma.md)
 - [\[CVPR 2026\] Breaking Smooth-Motion Assumptions: A UAV Benchmark for Multi-Object Tracking in Complex and Adverse Conditions](breaking_smooth-motion_assumptions_a_uav_benchmark_for_multi-object_tracking_in_.md)
-- [\[CVPR 2026\] Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking](beyond_explicit_language_plug-and-play_visual-to-linguistic_modeling_toward_gene.md)
 
 </div>
 

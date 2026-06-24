@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GenMatter: Perceiving Physical Objects with Generative Matter Models
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GenMatter reformulates the task of "segmenting independently moving objects from motion" as online probabilistic inference under a two-level hierarchical generative model (cluster → particle → 3D point). By inverting this model using parallel block Gibbs sampling, the authors reproduce human perception across random do
+  [CVPR 2026][3D Vision][Generative Matter Models] GenMatter reformulates the task of "segmenting independently moving objects from motion" as online probabilistic inference under a two-level hierarchical generative model (cluster → particle → 3D point). By inverting this model using parallel block Gibbs sampling, the authors reproduce human perception across random dot kinematograms (RDK), camouflaged rotating objects, and natural RGB videos—scenarios where current CV systems…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Generative Matter Models"
+  - "Hierarchical Bayesian"
+  - "Block Gibbs Sampling"
+  - "Spelke Objects"
+  - "Motion Grouping"
 date: 2026-05-08
-content_hash: 2cb8c2f5f27e4850
+content_hash: 06c720f5c2baf95b
 ---
+
 # GenMatter: Perceiving Physical Objects with Generative Matter Models
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ Alignment with Human Judgments on RDK: Ours correlates with human binary same-ob
 
 ## Related Papers
 
-- [\[CVPR 2026\] BrickNet: Graph-Backed Generative Brick Assembly](bricknet_graph-backed_generative_brick_assembly.md)
-- [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
-- [\[CVPR 2026\] AssemblyBench: Physics-Aware Assembly of Complex Industrial Objects](assemblybench_physics-aware_assembly_of_complex_industrial_objects.md)
-- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
+- [\[CVPR 2026\] Circular-DPO: Aligning Multi-Stage 3D Generative Models via Preference Feedback Loop](circular-dpo_aligning_multi-stage_3d_generative_models_via_preference_feedback_l.md)
+- [\[CVPR 2026\] Choreographing a World of Dynamic Objects](choreographing_a_world_of_dynamic_objects.md)
+- [\[CVPR 2026\] P3Sim: Perceptual 3D Simulation with Physical World Modeling](perceptual_3d_simulation_with_physical_world_modeling.md)
+- [\[NeurIPS 2025\] ROGR: Relightable 3D Objects using Generative Relighting](../../NeurIPS2025/3d_vision/rogr_relightable_3d_objects_using_generative_relighting.md)
+- [\[CVPR 2026\] PhysGS: Bayesian-Inferred Gaussian Splatting for Physical Property Estimation](physgs_bayesian-inferred_gaussian_splatting_for_physical_property_estimation.md)
 
 </div>
 

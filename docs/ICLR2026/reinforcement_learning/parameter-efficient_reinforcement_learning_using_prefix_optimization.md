@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Parameter-Efficient Reinforcement Learning using Prefix Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes optimizing only the first $k$ tokens (the prefix) of a response while delegating the subsequent generation to a frozen reference model. This demonstrates that a significant portion of RLVR gains in mathematical reasoning stems from "selecting a better problem-solving strategy/format." Based on this,
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes optimizing only the first $k$ tokens (the prefix) of a response while delegating the subsequent generation to a frozen reference model. This demonstrates that a significant portion of RLVR gains in mathematical reasoning stems from "selecting a better problem-solving strategy/format." Based on this, a computationally efficient method, Prefix-RL, is derived: using a 1B adapter to generate prefixes that guide 7B~72B…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Prefix Optimization"
+  - "Mathematical Reasoning"
+  - "Parameter-Efficient"
+  - "PPO"
 date: 2026-05-08
-content_hash: 0c240d1a78676f7c
+content_hash: d32e9edbc18f3beb
 ---
+
 # Parameter-Efficient Reinforcement Learning using Prefix Optimization
 
 **Conference**: ICLR 2026  

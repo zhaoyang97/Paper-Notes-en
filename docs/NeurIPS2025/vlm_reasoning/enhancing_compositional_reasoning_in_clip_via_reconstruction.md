@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions
 description: >-
-  [NeurIPS 2025][Multimodal VLM][CLIP] This paper proposes READ, a fine-tuning method that enhances the compositional reasoning capability of CLIP's text encoder via two auxiliary objectives: (1) token-level reconstruction…
+  [NeurIPS 2025][VLM Reasoning][CLIP] This paper proposes READ, a fine-tuning method that enhances the compositional reasoning capability of CLIP's text encoder via two auxiliary objectives: (1) token-level reconstruction, where a frozen decoder reconstructs alternative descriptions from text embeddings, and (2) sentence-level alignment, which enforces consistency among embeddings of paraphrases. READ achieves state-of-the-art performance on 5 compositional reasoning benchmarks…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "CLIP"
   - "compositional reasoning"
   - "text reconstruction"
   - "paraphrase alignment"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 68b7c5f2736f6b31
+content_hash: c2c0630d22d95527
 ---
 
 # READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions
@@ -135,11 +135,11 @@ A weighted combination of three training losses: $\mathcal{L} = \mathcal{L}_{Con
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning](advancing_compositional_awareness_in_clip_with_efficient_fin.md)
 - [\[NeurIPS 2025\] To See or To Read: User Behavior Reasoning in Multimodal LLMs](to_see_or_to_read_user_behavior_reasoning_in_multimodal_llms.md)
-- [\[NeurIPS 2025\] VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions](vitrix-clipin_enhancing_fine-grained_visual_understanding_in_clip_via_instructio.md)
-- [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
 - [\[NeurIPS 2025\] SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning](ssr_enhancing_depth_perception_in_vision-language_models_via_rationale-guided_sp.md)
+- [\[NeurIPS 2025\] Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling](enhancing_the_outcome_reward-based_rl_training_of_mllms_with_self-consistency_sa.md)
+- [\[NeurIPS 2025\] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning](can_llms_reason_over_non-text_modalities_in_a_training-free_manner_a_case_study_.md)
+- [\[ICCV 2025\] Boosting MLLM Reasoning with Text-Debiased Hint-GRPO](../../ICCV2025/vlm_reasoning/boosting_mllm_reasoning_with_text-debiased_hint-grpo.md)
 
 </div>
 

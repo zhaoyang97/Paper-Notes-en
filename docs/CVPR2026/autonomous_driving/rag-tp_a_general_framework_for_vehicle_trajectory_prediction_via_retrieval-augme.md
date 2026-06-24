@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This work reformulates vehicle trajectory prediction from "dependency on online perception priors" to a Retrieval-Augmented Generation (RAG) problem that retrieves historical experiences from large-scale offline knowledge bases. By dynamically fusing retrieved priors into the decoder using a retrieval-driven MoE, RAG-T
+  [CVPR 2026][Autonomous Driving][Trajectory Prediction] This work reformulates vehicle trajectory prediction from "dependency on online perception priors" to a Retrieval-Augmented Generation (RAG) problem that retrieves historical experiences from large-scale offline knowledge bases. By dynamically fusing retrieved priors into the decoder using a retrieval-driven MoE, RAG-TP matches map-based SOTA, outperforms map-free methods on Argoverse/WOMD…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Trajectory Prediction"
+  - "Retrieval-Augmented Generation"
+  - "Mixture of Experts"
+  - "Cross-domain Generalization"
+  - "Knowledge Base"
 date: 2026-05-08
-content_hash: 391cef0eb53b8abd
+content_hash: 4dd4dbd23e8546d5
 ---
+
 # RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation
 
 **Conference**: CVPR 2026  
@@ -139,9 +145,9 @@ Ablation on AV2 validation set (M1: Baseline → M5: Full Model):
 
 - [\[CVPR 2026\] Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction](den_tp_a_density_balanced_data_curation_and_evaluation_framework_for_trajectory.md)
 - [\[AAAI 2026\] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction](../../AAAI2026/autonomous_driving/rast_a_retrieval_augmented_spatio-temporal_framework_for_traffic_prediction.md)
+- [\[CVPR 2026\] Spatial Retrieval Augmented Autonomous Driving](spatial_retrieval_augmented_autonomous_driving.md)
 - [\[ECCV 2024\] UniTraj: A Unified Framework for Scalable Vehicle Trajectory Prediction](../../ECCV2024/autonomous_driving/unitraj_a_unified_framework_for_scalable_vehicle_trajectory_prediction.md)
 - [\[CVPR 2026\] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning](w2w_language-model-based_trajectory_prediction_with_reinforcement_learning.md)
-- [\[CVPR 2026\] A Prediction-as-Perception Framework for 3D Object Detection](a_prediction-as-perception_framework_for_3d_object_detection.md)
 
 </div>
 

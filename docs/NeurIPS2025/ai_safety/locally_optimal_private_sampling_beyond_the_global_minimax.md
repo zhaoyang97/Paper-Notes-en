@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Locally Optimal Private Sampling: Beyond the Global Minimax
 description: >-
-  [NeurIPS 2025][AI Safety][Local Differential Privacy] Under local differential privacy (LDP), this paper proposes a **local minimax** framework that leverages neighborhood constraints defined by a public distribution $P_…
+  [NeurIPS 2025][AI Safety][Local Differential Privacy] Under local differential privacy (LDP), this paper proposes a **local minimax** framework that leverages neighborhood constraints defined by a public distribution $P_0$ to derive closed-form optimal samplers, achieving **consistent and significant improvements over the global minimax sampler** both theoretically and empirically.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "$f$-Divergence"
   - "Public Data"
 date: 2026-05-08
-content_hash: 3de63e373cb3c793
+content_hash: 7ebfafd37a7204a9
 ---
 
 # Locally Optimal Private Sampling: Beyond the Global Minimax
@@ -152,8 +152,8 @@ The local sampler consistently outperforms the global sampler across all privacy
 - [\[NeurIPS 2025\] Beyond Last-Click: An Optimal Mechanism for Ad Attribution](beyond_last-click_an_optimal_mechanism_for_ad_attribution.md)
 - [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
 - [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
+- [\[ICLR 2026\] Dual Randomized Smoothing: Beyond Global Noise Variance](../../ICLR2026/ai_safety/dual_randomized_smoothing_beyond_global_noise_variance.md)
 - [\[NeurIPS 2025\] Private Continual Counting of Unbounded Streams](private_continual_counting_of_unbounded_streams.md)
-- [\[NeurIPS 2025\] DictPFL: Efficient and Private Federated Learning on Encrypted Gradients](dictpfl_efficient_and_private_federated_learning_on_encrypted_gradients.md)
 
 </div>
 

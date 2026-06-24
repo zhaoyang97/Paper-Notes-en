@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting
 description: >-
-  [NeurIPS 2025 (Spotlight)][Time Series][Spatio-temporal forecasting] This paper proposes ST-TTC, a lightweight test-time computing paradigm that corrects periodic biases in spatio-temporal forecasting during inference vi…
+  [NeurIPS 2025 (Spotlight)][Time Series][Spatio-temporal forecasting] This paper proposes ST-TTC, a lightweight test-time computing paradigm that corrects periodic biases in spatio-temporal forecasting during inference via a frequency-domain phase-amplitude calibrator and a flash gradient update mechanism, consistently improving the performance of diverse backbone models without modifying their architectures.
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "non-stationarity"
   - "online adaptation"
 date: 2026-05-08
-content_hash: ba032644dce40b81
+content_hash: c68e0d9ae8f68d1e
 ---
 
 # Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting
@@ -149,9 +149,9 @@ NeurIPS 2025 Spotlight. The paper presents clear motivation, well-grounded desig
 
 - [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](../../ICML2026/time_series/nested_spatio-temporal_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Exploring Neural Granger Causality with xLSTMs: Unveiling Temporal Dependencies in Complex Data](exploring_neural_granger_causality_with_xlstms_unveiling_temporal_dependencies_i.md)
-- [\[NeurIPS 2025\] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization](strap_spatio-temporal_pattern_retrieval_for_out-of-distribution_generalization.md)
 - [\[NeurIPS 2025\] Probability Calibration for Precipitation Nowcasting](probability_calibration_for_precipitation_nowcasting.md)
-- [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
+- [\[NeurIPS 2025\] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization](strap_spatio-temporal_pattern_retrieval_for_out-of-distribution_generalization.md)
+- [\[ACL 2026\] Test of Time: Rethinking Temporal Signal of Benchmark Contamination](../../ACL2026/time_series/test_of_time_rethinking_temporal_signal_of_benchmark_contamination.md)
 
 </div>
 

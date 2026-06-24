@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Denoising Neural Reranker for Recommender Systems
 description: >-
-  [ICLR 2026][Image Restoration][Denoising] This paper points out that retrieval scores in industrial two-stage "retrieval → reranking" pipelines are useful but noisy signals that are often ignored. It reformulates reranking as a denoising task for retrieval scores, utilizing an adversarial noise generator. By jointly training with denoising, adversarial, and di
+  [ICLR2026][Image Restoration][Recommender Systems] This paper points out that retrieval scores in industrial two-stage "retrieval → reranking" pipelines are useful but noisy signals that are often ignored. It reformulates reranking as a denoising task for retrieval scores, utilizing an adversarial noise generator. By jointly training with denoising, adversarial, and distribution regularization objectives, it consistently outperforms existing SOTA reranking methods on three pu…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Denoising
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Recommender Systems"
+  - "Multi-stage Reranking"
+  - "Denoising"
+  - "Adversarial Learning"
+  - "Retrieval Scores"
 date: 2026-05-08
-content_hash: f48cc548c700b9a8
+content_hash: daa5786837e15157
 ---
+
 # Denoising Neural Reranker for Recommender Systems
 
 **Conference**: ICLR2026  
@@ -141,11 +146,11 @@ Using Kuaivideo / N@6 as an example: PRM 55.93 → w/G 67.34 → DNR-G 69.60, va
 
 ## Related Papers
 
+- [\[ICLR 2026\] Divergence-Free Neural Networks with Application to Image Denoising](divergence-free_neural_networks_with_application_to_image_denoising.md)
 - [\[ICLR 2026\] DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation](diffusionblocks_block-wise_neural_network_training_via_diffusion_interpretation.md)
 - [\[CVPR 2026\] The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations](../../CVPR2026/image_restoration/the_surprising_effectiveness_of_noise_pretraining_for_implicit_neural_representa.md)
 - [\[ICLR 2026\] SuperF: Neural Implicit Fields for Multi-Image Super-Resolution](superf_neural_implicit_fields_for_multi-image_super-resolution.md)
 - [\[CVPR 2025\] A Physics-Informed Blur Learning Framework for Imaging Systems](../../CVPR2025/image_restoration/a_physics-informed_blur_learning_framework_for_imaging_systems.md)
-- [\[ICML 2026\] Semi-Supervised Neural Super-Resolution for Mesh-Based Simulations](../../ICML2026/image_restoration/semi-supervised_neural_super-resolution_for_mesh-based_simulations.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DesignX: Human-Competitive Algorithm Designer for Black-Box Optimization
 description: >-
-  [NeurIPS 2025][Computational Biology][Black-Box Optimization] This paper proposes DesignX, the first automated algorithm design framework that jointly learns two sub-tasks—optimizer workflow generation and dynamic hyperp…
+  [NeurIPS 2025][Computational Biology][Black-Box Optimization] This paper proposes DesignX, the first automated algorithm design framework that jointly learns two sub-tasks—optimizer workflow generation and dynamic hyperparameter control—through dual Transformer agents pre-trained at scale on 10k synthetic problems. DesignX surpasses human-designed optimizers on both synthetic benchmarks and real-world tasks including protein docking, AutoML, and UAV path planning.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "MetaBBO"
   - "Transformer"
 date: 2026-05-08
-content_hash: de5adea6c770d4dd
+content_hash: 5e2e3c22b73e52a7
 ---
 
 # DesignX: Human-Competitive Algorithm Designer for Black-Box Optimization
@@ -143,10 +143,10 @@ DesignX ranks first on nearly all test instances; its normalized mean is 37% low
 ## Related Papers
 
 - [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](g-dpo_scalable_preference_optimization_for_protein_language_models.md)
+- [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
 - [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
 - [\[ICLR 2026\] A Genetic Algorithm for Navigating Synthesizable Molecular Spaces](../../ICLR2026/computational_biology/a_genetic_algorithm_for_navigating_synthesizable_molecular_spaces.md)
 - [\[NeurIPS 2025\] Flow Density Control: Generative Optimization Beyond Entropy-Regularized Fine-Tuning](flow_density_control_generative_optimization_beyond_entropy-regularized_fine-tun.md)
-- [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
 
 </div>
 

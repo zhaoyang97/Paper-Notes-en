@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] DiBO: 用扩散语言模型做离线黑盒优化（DNA + 机器人形态）
+  [Paper Note] DiBO: Offline Black-box Optimization with Diffusion Language Models (DNA + Robot Morphology)
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] DiBO adapts the diffusion language model LLaDA-8B for offline black-box optimization. It uses delimiter tokens to unify three heterogeneous signals (prompt/design/label), followed by a three-stage post-training pipeline: Domain Adaptation, Masked-response SFT, and Label-improvement RL. The model achieves SOTA results o
+  [ICML 2026 Spotlight][Robotics][Offline BBO] DiBO adapts the diffusion language model LLaDA-8B for offline black-box optimization. It uses delimiter tokens to unify three heterogeneous signals (prompt/design/label), followed by a three-stage post-training pipeline: Domain Adaptation, Masked-response SFT, and Label-improvement RL. The model achieves SOTA results on several Design-Bench tasks with only 500 labeled samples (e.g., a +8% normalized score gain on DNA tasks) and com…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026 Spotlight"
+  - "Robotics"
+  - "Offline BBO"
+  - "Diffusion LLM"
+  - "Bidirectional Modeling"
+  - "Domain Adaptation"
+  - "Offline RL"
 date: 2026-05-08
-content_hash: 4ff4697b98231934
+content_hash: 8101911be7948d14
 ---
+
 # DiBO: Offline Black-box Optimization with Diffusion Language Models (DNA + Robot Morphology)
 
 **Conference**: ICML 2026 Spotlight  
@@ -166,11 +172,11 @@ On discrete DNA tasks (TF8/TF10), the diffusion backbone significantly outperfor
 
 ## Related Papers
 
-- [\[ICML 2026\] Position: Good Embodied Reward Models Need Bad Behavior Data](position_good_embodied_reward_models_need_bad_behavior_data.md)
-- [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
-- [\[ICML 2026\] TimeRewarder: Learning Dense Reward from Passive Videos via Frame-wise Temporal Distance](timerewarder_learning_dense_reward_from_passive_videos_via_frame-wise_temporal_d.md)
-- [\[ICML 2026\] WestWorld: 知识编码的可扩展轨迹世界模型](westworld_a_knowledge-encoded_scalable_trajectory_world_model_for_diverse_roboti.md)
-- [\[ICML 2026\] Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges](optimal_and_scalable_mapf_via_multi-marginal_optimal_transport_and_schrödinger_b.md)
+- [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](../../ICLR2026/robotics/cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
+- [\[CVPR 2026\] SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models](../../CVPR2026/robotics/srpo_self-referential_policy_optimization_for_vision-language-action_models.md)
+- [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](../../ICLR2026/robotics/wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
+- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
+- [\[ICLR 2026\] Statistical Guarantees for Offline Domain Randomization](../../ICLR2026/robotics/statistical_guarantees_for_offline_domain_randomization.md)
 
 </div>
 

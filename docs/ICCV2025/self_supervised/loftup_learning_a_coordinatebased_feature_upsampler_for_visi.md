@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models
 description: >-
-  [ICCV 2025][Self-Supervised Learning][feature upsampling] LoftUp is proposed to map low-resolution VFM features to arbitrary high resolutions via a coordinate-cross-attention architecture…
+  [ICCV 2025][Self-Supervised Learning][feature upsampling] LoftUp is proposed to map low-resolution VFM features to arbitrary high resolutions via a coordinate-cross-attention architecture, with class-agnostic mask refinement and self-distillation to construct full-resolution pseudo-GT for training, achieving average improvements of 10–20% across 6 downstream tasks and nearly 50% on video object segmentation.
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -13,7 +13,7 @@ tags:
   - "DINOv2"
   - "dense prediction"
 date: 2026-05-08
-content_hash: 2958934f2a73a8c6
+content_hash: 2a673a5373ac5a8b
 ---
 
 # LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models
@@ -107,10 +107,10 @@ The coordinate-based design confers resolution-agnostic flexibility, which is va
 ## Related Papers
 
 - [\[NeurIPS 2025\] Implicit Modeling for Transferability Estimation of Vision Foundation Models](../../NeurIPS2025/self_supervised/implicit_modeling_for_transferability_estimation_of_vision_foundation_models.md)
-- [\[CVPR 2026\] Robustness of Vision Foundation Models to Common Perturbations](../../CVPR2026/self_supervised/robustness_of_vision_foundation_models_to_common_perturbations.md)
-- [\[ICCV 2025\] Improving Large Vision and Language Models by Learning from a Panel of Peers](improving_large_vision_and_language_models_by_learning_from_a_panel_of_peers.md)
+- [\[ICML 2025\] Proxy-FDA: Proxy-based Feature Distribution Alignment for Fine-tuning Vision Foundation Models without Forgetting](../../ICML2025/self_supervised/proxy-fda_proxy-based_feature_distribution_alignment_for_fine-tuning_vision_foun.md)
+- [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](../../CVPR2026/self_supervised/scaling_parallel_sequence_models_to_vision_foundation_models.md)
 - [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](../../CVPR2026/self_supervised/com_pt_chain_of_models_pretraining.md)
-- [\[CVPR 2026\] TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction](../../CVPR2026/self_supervised/talo_pushing_3d_vision_foundation_models_towards_globally_consistent_online_reco.md)
+- [\[ICCV 2025\] Improving Large Vision and Language Models by Learning from a Panel of Peers](improving_large_vision_and_language_models_by_learning_from_a_panel_of_peers.md)
 
 </div>
 

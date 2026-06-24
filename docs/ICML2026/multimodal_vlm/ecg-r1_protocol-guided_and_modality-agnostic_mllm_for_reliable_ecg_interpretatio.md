@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ECG-R1: Protocol-Guided and Modality-Agnostic MLLM for Reliable ECG Interpretation
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] ECG-R1 is the first "reasoning-type" medical multimodal large model dedicated to ECG interpretation. Through a suite of **protocol-guided instruction data synthesis + decoupled signal/image encoding + interleaved modality dropout training + evidence-driven process reward RL**, it improves ECG diagnostic accuracy from t
+  [ICML 2026][Multimodal VLM][ECG Interpretation] ECG-R1 is the first "reasoning-type" medical multimodal large model dedicated to ECG interpretation. Through a suite of **protocol-guided instruction data synthesis + decoupled signal/image encoding + interleaved modality dropout training + evidence-driven process reward RL**, it improves ECG diagnostic accuracy from the previous SOTA (GEM) of 74.7 to 80.3, while maintaining cross-modal consistency even when a modality is missin…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "ECG Interpretation"
+  - "Medical MLLM"
+  - "Protocol Guidance"
+  - "Modality Dropout"
+  - "Process-Reward RL"
 date: 2026-05-08
-content_hash: d4992ddb82eff557
+content_hash: fecdb999a117dd1f
 ---
+
 # ECG-R1: Protocol-Guided and Modality-Agnostic MLLM for Reliable ECG Interpretation
 
 **Conference**: ICML 2026  
@@ -150,8 +156,8 @@ BLEU-4 more than doubled, proving that the model's output remains highly consist
 - [\[AAAI 2026\] anyECG-chat: A Generalist ECG-MLLM for Flexible ECG Input and Multi-Task Understanding](../../AAAI2026/multimodal_vlm/anyecg-chat_a_generalist_ecg-mllm_for_flexible_ecg_input_and.md)
 - [\[NeurIPS 2025\] GEM: Empowering MLLM for Grounded ECG Understanding with Time Series and Images](../../NeurIPS2025/multimodal_vlm/gem_empowering_mllm_for_grounded_ecg_understanding_with_time_series_and_images.md)
 - [\[ICML 2026\] AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning](aoept_breaking_the_implicit_modality-reduction_bottleneck_in_modality-missing_pr.md)
-- [\[ICML 2026\] RESTORE: 通过矫正失真改进视觉 Token 缩减以提升 MLLM 推理效率](improving_visual_token_reduction_via_rectifying_distortions_for_efficient_multim.md)
 - [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
+- [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
 
 </div>
 

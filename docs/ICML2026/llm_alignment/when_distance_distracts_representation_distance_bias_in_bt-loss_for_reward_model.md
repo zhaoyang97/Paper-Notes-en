@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Distance Distracts: Representation Distance Bias in BT-Loss for Reward Models
 description: >-
-  [ICML 2026][Alignment & RLHF][RLHF] This paper decomposes the gradient norm of the Bradley-Terry (BT) reward model loss into two terms: "prediction error × representation distance." It points out that representation distance can overshadow the prediction error—hard-to-distinguish pairs with similar representations receive only weak updates even if misran
+  [ICML 2026][LLM Alignment][Reward Models] This paper decomposes the gradient norm of the Bradley-Terry (BT) reward model loss into two terms: "prediction error × representation distance." It points out that representation distance can overshadow the prediction error—hard-to-distinguish pairs with similar representations receive only weak updates even if misranked. Consequently, the authors propose NormBT, which uses a pairwise weight inversely proportional to the representati…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Reward Models"
+  - "Bradley-Terry Loss"
+  - "Gradient Analysis"
+  - "Representation Distance"
+  - "RLHF"
 date: 2026-05-08
-content_hash: b1852fd4061fd92b
+content_hash: bbe13bb24253b9f4
 ---
+
 # When Distance Distracts: Representation Distance Bias in BT-Loss for Reward Models
 
 **Conference**: ICML 2026  
@@ -128,15 +133,15 @@ Evaluated on RewardBench using two backbones (gemma-2b-it, Llama-3.2-3B-Instruct
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Eliminating Inductive Bias in Reward Models with Information-Theoretic Guidance](../../ICLR2026/llm_alignment/eliminating_inductive_bias_in_reward_models_with_information-theoretic_guidance.md)
 - [\[AAAI 2026\] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](../../AAAI2026/llm_alignment/when_human_preferences_flip_an_instance-dependent_robust_loss_for_rlhf.md)
-- [\[AAAI 2026\] Exploring the Effects of Alignment on Numerical Bias in Large Language Models](../../AAAI2026/llm_alignment/exploring_the_effects_of_alignment_on_numerical_bias_in_large_language_models.md)
 - [\[ICML 2026\] The Realignment Problem: When Right becomes Wrong in LLMs](the_realignment_problem_when_right_becomes_wrong_in_llms.md)
-- [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](../../ACL2026/llm_alignment/mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
-- [\[ACL 2026\] Topology-Enhanced Alignment for Large Language Models: Trajectory Topology Loss and Topological Preference Optimization](../../ACL2026/llm_alignment/topology-enhanced_alignment_for_large_language_models_trajectory_topology_loss_a.md)
+- [\[ICML 2026\] Steerable Cultural Preference Optimization of Reward Models](steerable_cultural_preference_optimization_of_reward_models.md)
+- [\[ACL 2026\] Pref-CTRL: Preference Driven LLM Alignment using Representation Editing](../../ACL2026/llm_alignment/pref-ctrl_preference_driven_llm_alignment_using_representation_editing.md)
 
 </div>
 

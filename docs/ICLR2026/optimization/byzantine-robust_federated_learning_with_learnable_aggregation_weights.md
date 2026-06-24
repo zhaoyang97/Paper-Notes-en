@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Byzantine-Robust Federated Learning with Learnable Aggregation Weights
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The paper reformulates the discrete decision of "detecting and removing malicious clients" into a continuous optimization of aggregation weights $w$. By jointly solving this with the global model $\theta$, the authors propose FedLAW—a federated learning framework that suppresses Byzantine clients while adaptively re-we
+  [ICLR 2026][Optimization][Federated Learning] The paper reformulates the discrete decision of "detecting and removing malicious clients" into a continuous optimization of aggregation weights $w$. By jointly solving this with the global model $\theta$, the authors propose FedLAW—a federated learning framework that suppresses Byzantine clients while adaptively re-weighting honest clients in data-heterogeneous scenarios, backed by provable robustness and convergence guarantees.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Byzantine-robust"
+  - "adaptive aggregation weights"
+  - "alternating minimization"
+  - "convergence analysis"
+  - "data heterogeneity"
 date: 2026-05-08
-content_hash: 05f696aaca6a7c76
+content_hash: 0b508c766d2d9693
 ---
+
 # Byzantine-Robust Federated Learning with Learnable Aggregation Weights
 
 **Conference**: ICLR 2026  
@@ -98,7 +105,6 @@ flowchart LR
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -106,7 +112,7 @@ flowchart LR
 - [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
 - [\[ICLR 2026\] Distributionally Robust Linear Regression with Block Lewis Weights](distributionally_robust_linear_regression_with_block_lewis_weights.md)
 - [\[ICLR 2026\] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning](beyond_aggregation_guiding_clients_in_heterogeneous_federated_learning.md)
-- [\[ICLR 2026\] FedMuon: Federated Learning with Bias-corrected LMO-based Optimization](fedmuon_federated_learning_with_bias-corrected_lmo-based_optimization.md)
+- [\[ICLR 2026\] Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity](unified_analyses_for_hierarchical_federated_learning_topology_selection_under_da.md)
 
 </div>
 

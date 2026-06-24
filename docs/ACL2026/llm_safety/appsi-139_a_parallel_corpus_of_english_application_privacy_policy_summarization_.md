@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] APPSI-139: A Parallel Corpus of English Application Privacy Policy Summarization and Interpretation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] APPSI-139 is the first parallel corpus of English application privacy policy summarization and interpretation finely annotated by legal experts (139 policies / 36,351 annotations / 15,692 rewrite pairs). The accompanying TCSI-pp-V2 framework utilizes a shared encoder with five alternately trained expert heads for five
+  [ACL 2026][LLM Safety][Privacy Policy] APPSI-139 is the first parallel corpus of English application privacy policy summarization and interpretation finely annotated by legal experts (139 policies / 36,351 annotations / 15,692 rewrite pairs). The accompanying TCSI-pp-V2 framework utilizes a shared encoder with five alternately trained expert heads for five sub-tasks: "Importance / Risk / Sensitivity / Topic / Rewriting." Compared to TCSI-pp v1…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Privacy Policy"
+  - "Parallel Corpus"
+  - "Multi-task Learning"
+  - "Summarization and Interpretation"
+  - "Legal NLP"
 date: 2026-05-08
-content_hash: 0f8b1c2312e498a7
+content_hash: f798bba974212b1a
 ---
+
 # APPSI-139: A Parallel Corpus of English Application Privacy Policy Summarization and Interpretation
 
 **Conference**: ACL 2026  
@@ -157,7 +163,7 @@ Subjective readability voting (53 undergraduate/graduate participants, 10 multip
 - [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](../../ICLR2026/llm_safety/heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
 - [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
 - [\[ACL 2026\] Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models](privacy_collapse_benign_fine-tuning_can_break_contextual_privacy_in_language_mod.md)
-- [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](../../ICLR2026/llm_safety/reinforcement_unlearning_via_group_relative_policy_optimization.md)
+- [\[ACL 2025\] Improving Fairness of Large Language Models in Multi-document Summarization](../../ACL2025/llm_safety/improving_fairness_of_large_language_models_in_multi-document_summarization.md)
 
 </div>
 

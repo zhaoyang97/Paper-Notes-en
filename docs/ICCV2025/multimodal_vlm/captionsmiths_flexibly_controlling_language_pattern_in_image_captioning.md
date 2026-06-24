@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CaptionSmiths: Flexibly Controlling Language Pattern in Image Captioning
 description: >-
-  [ICCV 2025][Multimodal VLM][image captioning] CaptionSmiths is a framework that enables slider-style flexible control over three caption attributes — length, descriptiveness…
+  [ICCV 2025][Multimodal VLM][image captioning] CaptionSmiths is a framework that enables slider-style flexible control over three caption attributes — length, descriptiveness, and lexical uniqueness — via continuous scalar interpolation rather than discrete clustering. Trained jointly on multiple datasets, it achieves more precise attribute control and higher lexical alignment quality than baselines.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "vision-language models"
   - "language pattern control"
 date: 2026-05-08
-content_hash: fc96916157c487bd
+content_hash: 166d1ef896e13b40
 ---
 
 # CaptionSmiths: Flexibly Controlling Language Pattern in Image Captioning
@@ -140,9 +140,9 @@ Continuous conditioning reduces length control error from 9.7 to 1.6 — a 506% 
 
 - [\[ICCV 2025\] Controlling Multimodal LLMs via Reward-guided Decoding](controlling_multimodal_llms_via_rewardguided_decoding.md)
 - [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
-- [\[CVPR 2026\] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](../../CVPR2026/multimodal_vlm/text-only_training_for_image_captioning_with_retrieval_augmentation_and_modality.md)
+- [\[ICLR 2026\] ScaleCap: Scalable Image Captioning via Dual-Modality Debiasing](../../ICLR2026/multimodal_vlm/scalecap_scalable_image_captioning_via_dual-modality_debiasing.md)
+- [\[ICML 2025\] Toward Robust Hyper-Detailed Image Captioning: A Multiagent Approach and Dual Evaluation Metrics for Factuality and Coverage](../../ICML2025/multimodal_vlm/toward_robust_hyper-detailed_image_captioning_a_multiagent_approach_and_dual_eva.md)
 - [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
-- [\[AAAI 2026\] DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning](../../AAAI2026/multimodal_vlm/discode_distribution-aware_score_decoder_for_robust_automatic_evaluation_of_imag.md)
 
 </div>
 

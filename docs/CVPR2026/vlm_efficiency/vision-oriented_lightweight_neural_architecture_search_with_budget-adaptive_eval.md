@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the dilemma between "accurate but slow training-based" and "fast but unreliable and family-specific training-free" NAS, this paper proposes six "vision-specific micro-tasks" with negligible training costs as architecture quality proxies. Combined with a quadratic response surface that automatically allocates
+  [CVPR 2026][Multimodal Efficiency][Neural Architecture Search] Addressing the dilemma between "accurate but slow training-based" and "fast but unreliable and family-specific training-free" NAS, this paper proposes six "vision-specific micro-tasks" with negligible training costs as architecture quality proxies. Combined with a quadratic response surface that automatically allocates data volume and training epochs within a given time budget, the method achieves SOTA rank correl…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Neural Architecture Search"
+  - "Training-free Proxies"
+  - "Visual Probing Tasks"
+  - "Budget-Adaptive"
+  - "Rank Correlation"
 date: 2026-05-08
-content_hash: e98707243eb8a6c8
+content_hash: 595b1ddc83ef624a
 ---
+
 # Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Necessity of joint D & E optimization (Top-1 Acc, Budget 1h):
 
 ## Related Papers
 
-- [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
-- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
-- [\[CVPR 2026\] Adaptive Depth Lightweight RGB-T Tracking with Holistic Token Routing](adaptive_depth_lightweight_rgb-t_tracking_with_holistic_token_routing.md)
+- [\[CVPR 2026\] S2D: Selective Spectral Decay for Quantization-Friendly Conditioning of Neural Activations](s2d_selective_spectral_decay_for_quantization-friendly_conditioning_of_neural_ac.md)
+- [\[CVPR 2026\] MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data and Training Recipes](minicpm-v_45_cooking_efficient_mllms_via_architecture_data_and_training_recipe.md)
 - [\[CVPR 2026\] NuWa: Deriving Lightweight Class-Specific Vision Transformers for Edge Devices](nuwa_deriving_lightweight_class-specific_vision_transformers_for_edge_devices.md)
-- [\[ACL 2026\] ArcLight: A Lightweight LLM Inference Architecture for Many-Core CPUs](../../ACL2026/model_compression/arclight_a_lightweight_llm_inference_architecture_for_many-core_cpus.md)
+- [\[CVPR 2026\] SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer](soda_sensitivity-oriented_dynamic_acceleration_for_diffusion_transformer.md)
+- [\[CVPR 2026\] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition](adaptvision_efficient_vision-language_models_via_adaptive_visual_acquisition.md)
 
 </div>
 

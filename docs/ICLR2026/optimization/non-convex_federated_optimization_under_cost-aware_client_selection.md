@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Non-Convex Federated Optimization under Cost-Aware Client Selection
 description: >-
-  [ICLR 2026][Optimization & Theory][SAGA] This paper proposes a cost-aware framework for federated optimization that explicitly models different communication costs associated with various client selection strategies. By combining the Inexact Composite Gradient Method (I-CGM) with a new RG-SAGA gradient estimator, the authors achieve optimal communication and
+  [ICLR 2026][Optimization][Federated Optimization] This paper proposes a cost-aware framework for federated optimization that explicitly models different communication costs associated with various client selection strategies. By combining the Inexact Composite Gradient Method (I-CGM) with a new RG-SAGA gradient estimator, the authors achieve optimal communication and local computation complexities for non-convex optimization within this model.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - SAGA
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Optimization"
+  - "Client Selection"
+  - "Communication Complexity"
+  - "Variance Reduction"
+  - "SAGA"
+  - "Non-convex Optimization"
 date: 2026-05-08
-content_hash: 239d4259deb9f967
+content_hash: c8dffde7958783b4
 ---
+
 # Non-Convex Federated Optimization under Cost-Aware Client Selection
 
 **Conference**: ICLR 2026  
@@ -122,8 +128,8 @@ Setting $m=1, n=10$, measurements of local $L_1$ and $\delta$ along iterations c
 - [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
 - [\[ICLR 2026\] Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity](unified_analyses_for_hierarchical_federated_learning_topology_selection_under_da.md)
 - [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](../../ICML2026/optimization/cost-aware_stopping_for_bayesian_optimization.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 - [\[ICLR 2026\] Globally Aware Optimization with Resurgence](globally_aware_optimization_with_resurgence.md)
-- [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
 
 </div>
 

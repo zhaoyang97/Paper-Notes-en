@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Simultaneous Motion And Noise Estimation with Event Cameras
 description: >-
-  [ICCV 2025][Video Understanding][Event cameras] This paper presents the first joint method for simultaneous motion estimation and noise estimation with event cameras. It scores each event using the local contrast in the…
+  [ICCV 2025][Video Understanding][Event cameras] This paper presents the first joint method for simultaneous motion estimation and noise estimation with event cameras. It scores each event using the local contrast in the motion-compensated image of warped events (IWE) within the Contrast Maximization (CMax) framework, and obtains motion parameters along with signal/noise classification through alternating optimization. The method achieves state-of-the-art performance on the E-…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "contrast maximization"
   - "joint estimation"
 date: 2026-05-08
-content_hash: df182dcf216afd97
+content_hash: 4fb7317db4253865
 ---
 
 # Simultaneous Motion And Noise Estimation with Event Cameras
@@ -95,9 +95,9 @@ Iterative alternating optimization built on the Contrast Maximization (CMax) fra
    Signal/noise classification and motion estimation form a circular dependency—classification requires true motion, and motion estimation requires signal events.
 
    The solution is **iterative alternating optimization**:
-   - Initialization: randomly partition events into signal and noise sets
-   - Each iteration: ① run one CMax motion estimation step using current signal events → ② warp all events using the estimated motion → ③ compute scores $c_k$ for all events → ④ reclassify signal/noise sets
-   - Convergence criterion: convergence of motion parameters
+    - Initialization: randomly partition events into signal and noise sets
+    - Each iteration: ① run one CMax motion estimation step using current signal events → ② warp all events using the estimated motion → ③ compute scores $c_k$ for all events → ④ reclassify signal/noise sets
+    - Convergence criterion: convergence of motion parameters
 
    **Computational complexity**: $O(N_p + N_e \log N_e)$ per iteration, only a $\log$ factor more than the original CMax's $O(N_p + N_e)$, owing to the sorting step.
 
@@ -198,8 +198,8 @@ Optical flow estimation (MVSEC dataset) + denoising combination:
 - [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
 - [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
 - [\[ICCV 2025\] egoPPG: Heart Rate Estimation from Eye-Tracking Cameras in Egocentric Systems to Benefit Downstream Vision Tasks](egoppg_heart_rate_estimation_from_eye-tracking_cameras_in_egocentric_systems_to_.md)
+- [\[ECCV 2024\] Motion-prior Contrast Maximization for Dense Continuous-Time Motion Estimation](../../ECCV2024/video_understanding/motion-prior_contrast_maximization_for_dense_continuous-time_motion_estimation.md)
 - [\[ICCV 2025\] MikuDance: Animating Character Art with Mixed Motion Dynamics](mikudance_animating_character_art_with_mixed_motion_dynamics.md)
-- [\[NeurIPS 2025\] EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes](../../NeurIPS2025/video_understanding/eag3r_event-augmented_3d_geometry_estimation_for_dynamic_and_extreme-lighting_sc.md)
 
 </div>
 

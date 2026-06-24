@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sentient: Detecting APTs Via Capturing Indirect Dependencies and Behavioral Logic
 description: >-
-  [AAAI 2026][Graph Learning][APT Detection] This paper proposes Sentient, an APT detection method combining **Graph Transformer pre-training** and **bidirectional Mamba2 intent analysis**. Trained exclusively on benign da…
+  [AAAI 2026][Graph Learning][APT Detection] This paper proposes Sentient, an APT detection method combining **Graph Transformer pre-training** and **bidirectional Mamba2 intent analysis**. Trained exclusively on benign data, it captures indirect dependencies, removes contextual noise, and correlates behavioral logic, achieving an average 44% reduction in false positive rate across three standard benchmarks.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Mamba"
   - "Behavioral Intent Analysis"
 date: 2026-05-08
-content_hash: 0a42d2abd2e310a7
+content_hash: 28b588b78fcf5921
 ---
 
 # Sentient: Detecting APTs Via Capturing Indirect Dependencies and Behavioral Logic

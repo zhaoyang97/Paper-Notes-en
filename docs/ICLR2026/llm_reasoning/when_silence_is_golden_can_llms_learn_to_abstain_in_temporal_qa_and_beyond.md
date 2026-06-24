@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Silence is Golden: Can LLMs Learn to Abstain in Temporal QA and Beyond?
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper systematically investigates "how to teach LLMs to abstain when they don't know the answer in temporal QA," proposing a pipeline involving **CoT-SFT cold-start + GRPO reinforcement learning (with abstention-aware rewards)**. This allows a 1.5B small model to outperform GPT-4o in Exact-Match (EM) on TimeQA (+3
+  [ICLR 2026][Reasoning][Abstention] This paper systematically investigates "how to teach LLMs to abstain when they don't know the answer in temporal QA," proposing a pipeline involving **CoT-SFT cold-start + GRPO reinforcement learning (with abstention-aware rewards)**. This allows a 1.5B small model to outperform GPT-4o in Exact-Match (EM) on TimeQA (+3.46% on Easy / +5.80% on Hard). It also reveals the trade-offs where SFT causes overconfidence and RL improves accuracy but d…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Abstention"
+  - "Temporal QA"
+  - "CoT Cold-start"
+  - "GRPO"
+  - "Reward Design"
 date: 2026-05-08
-content_hash: 5deaaa085afd1cdb
+content_hash: 63ce7bf73e5a0fb3
 ---
+
 # When Silence is Golden: Can LLMs Learn to Abstain in Temporal QA and Beyond?
 
 **Conference**: ICLR 2026  

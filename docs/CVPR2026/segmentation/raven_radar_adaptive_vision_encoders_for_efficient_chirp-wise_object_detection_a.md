@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation
 description: >-
-  [CVPR 2026][Segmentation][State Space Model] RAVEN treats the raw ADC stream of mmWave FMCW radar as a temporal sequence based on "chirp arrival time." It employs independent State Space Models (SSMs) for each receiving channel to preserve the phase structure of the MIMO array, utilizes a lightweight cross-attention mechanism as a "learnable beamformer" to recons
+  [CVPR 2026][Segmentation][FMCW Radar] RAVEN treats the raw ADC stream of mmWave FMCW radar as a temporal sequence based on "chirp arrival time." It employs independent State Space Models (SSMs) for each receiving channel to preserve the phase structure of the MIMO array, utilizes a lightweight cross-attention mechanism as a "learnable beamformer" to reconstruct virtual antenna features, and enables detection/segmentation results before a frame is fully collected through chirp…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - State Space Model
+  - "CVPR 2026"
+  - "Segmentation"
+  - "FMCW Radar"
+  - "State Space Models"
+  - "Virtual MIMO"
+  - "Streaming Chirp-wise Inference"
+  - "Early Exit"
 date: 2026-05-08
-content_hash: e50694c4faa35549
+content_hash: 2e82ecf491c9a4ee
 ---
+
 # RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation
 
 **Conference**: CVPR 2026  
@@ -142,14 +147,17 @@ The core ablation focuses on the early exit/chirp budget analysis:
 
 <div class="related-papers" markdown="1">
 
-1. **Mamba: Linear-Time Sequence Modeling with Selective State Spaces**, Gu et al., 2023.
-2. **RADIal: A Multi-modal Antenna-level Automotive Radar Dataset**, Rebut et al., 2022.
-3. **TransRadar: Adaptive-Directional Transformer for Real-Time Radar Object Detection**, 2023.
+## Related Papers
+
+- [\[CVPR 2026\] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel](efficient_video_object_segmentation_and_tracking_with_recurrent_dynamic_submodel.md)
+- [\[CVPR 2026\] MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models](marss_radar_semantic_segmentation_via_modular_attention_and_state_space_models.md)
+- [\[CVPR 2026\] Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt](training-free_open-vocabulary_camouflaged_object_segmentation_via_fine-grained_o.md)
+- [\[CVPR 2026\] Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding](synthetic_object_compositions_for_scalable_and_accurate_learning_in_detection_se.md)
+- [\[CVPR 2026\] Beyond Appearance: Camouflaged Object Detection via Geometric Structure](beyond_appearance_camouflaged_object_detection_via_geometric_structure.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel](efficient_video_object_segmentation_and_tracking_with_recurrent_dynamic_submodel.md)

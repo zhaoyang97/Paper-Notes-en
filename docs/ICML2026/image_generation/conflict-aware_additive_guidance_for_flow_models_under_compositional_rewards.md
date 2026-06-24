@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Conflict-Aware Additive Guidance for Flow Models under Compositional Rewards
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] To address the off-manifold drift issue in flow models during inference-time guidance under multi-objective compositional rewards, this paper proposes Conflict-Aware Additive Guidance (CAR). By detecting gradient conflicts and dynamically switching to learnable value gradient corrections, it improves identity preservat
+  [ICML2026][Image Generation][Inference-time guidance] To address the off-manifold drift issue in flow models during inference-time guidance under multi-objective compositional rewards, this paper proposes Conflict-Aware Additive Guidance (CAR). By detecting gradient conflicts and dynamically switching to learnable value gradient corrections, it improves identity preservation by 25.4% and planning success rate by 38.75% with minimal additional computational overhead.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
+  - "ICML2026"
+  - "Image Generation"
+  - "Inference-time guidance"
+  - "flow matching"
+  - "compositional rewards"
+  - "gradient conflict"
+  - "off-manifold drift"
 date: 2026-05-08
-content_hash: bea0fba492d39160
+content_hash: 2876d283ce190d32
 ---
+
 # Conflict-Aware Additive Guidance for Flow Models under Compositional Rewards
 
 **Conference**: ICML2026  
@@ -137,11 +142,11 @@ where a mask $\mathbb{I}_t = \mathbf{1}(w(x_t) > \tau)$ ensures training only oc
 
 ## Related Papers
 
-- [\[ICLR 2026\] Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models](../../ICLR2026/image_generation/uni-x_mitigating_modality_conflict_with_a_two-end-separated_architecture_for_uni.md)
-- [\[ICLR 2026\] Translate Policy to Language: Flow Matching Generated Rewards for LLM Explanations](../../ICLR2026/image_generation/translate_policy_to_language_flow_matching_generated_rewards_for_llm_explanation.md)
 - [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](../../NeurIPS2025/image_generation/entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
-- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](../../CVPR2026/image_generation/freqflow_frequency_aware_flow_matching.md)
-- [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](../../NeurIPS2025/image_generation/value_gradient_guidance_for_flow_matching_alignment.md)
+- [\[ICLR 2026\] Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models](../../ICLR2026/image_generation/uni-x_mitigating_modality_conflict_with_a_two-end-separated_architecture_for_uni.md)
+- [\[ICML 2026\] Adversarial Flow Models](adversarial_flow_models.md)
+- [\[ICLR 2026\] Translate Policy to Language: Flow Matching Generated Rewards for LLM Explanations](../../ICLR2026/image_generation/translate_policy_to_language_flow_matching_generated_rewards_for_llm_explanation.md)
+- [\[ICML 2026\] Compositional Generative Modeling from Decentralized Data](compositional_generative_modeling_from_decentralized_data.md)
 
 </div>
 

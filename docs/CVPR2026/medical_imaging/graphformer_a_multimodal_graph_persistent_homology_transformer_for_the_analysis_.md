@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GraPHFormer: A Multimodal Graph Persistent Homology Transformer for the Analysis of Neuroscience Morphologies
 description: >-
-  [CVPR 2026][Medical Imaging][CLIP] Ours aligns complementary "Graph Structure" and "Topological Persistent Homology" views of neuronal skeletons into a shared embedding space using CLIP-style symmetric InfoNCE. The graph encoder (TreeLSTM) captures local geometry, while the visual encoder (DINOv2 processing 3-channel persistence images) captures global
+  [CVPR 2026][Medical Imaging][Neuronal Morphology] Ours aligns complementary "Graph Structure" and "Topological Persistent Homology" views of neuronal skeletons into a shared embedding space using CLIP-style symmetric InfoNCE. The graph encoder (TreeLSTM) captures local geometry, while the visual encoder (DINOv2 processing 3-channel persistence images) captures global topology. This approach achieves SOTA on 5 out of 6 neuronal morphology benchmarks…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - CLIP
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Neuronal Morphology"
+  - "Persistent Homology"
+  - "Topological Data Analysis"
+  - "Multimodal Contrastive Learning"
+  - "CLIP"
 date: 2026-05-08
-content_hash: eec04220a4387a54
+content_hash: da29130e03d984eb
 ---
+
 # GraPHFormer: A Multimodal Graph Persistent Homology Transformer for the Analysis of Neuroscience Morphologies
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ Channel encoding and augmentation results (AVG refers to mean across three datas
 
 ## Related Papers
 
-- [\[CVPR 2026\] SPECTRE：面向体积 CT Transformer 的自监督与跨模态预训练](scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
 - [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
+- [\[ICLR 2026\] Lightweight Transformer for EEG Classification via Balanced Signed Graph Algorithm Unrolling](../../ICLR2026/medical_imaging/lightweight_transformer_for_eeg_classification_via_balanced_signed_graph_algorit.md)
 - [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
+- [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
 - [\[CVPR 2026\] Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)](diffusion_mri_transformer_with_a_diffusion_space_rotary_positional_embedding_d-r.md)
-- [\[CVPR 2025\] Transformer-Based Multi-Region Segmentation and Radiomic Analysis of HR-pQCT Imaging for Osteoporosis Classification](../../CVPR2025/medical_imaging/transformer-based_multi-region_segmentation_and_radiomic_analysis_of_hr-pqct_ima.md)
 
 </div>
 

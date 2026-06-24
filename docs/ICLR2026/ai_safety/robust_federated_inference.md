@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robust Federated Inference
 description: >-
-  [ICLR 2026][AI Safety][DeepSet] Ours first formalizes the "Robust Federated Inference" problem—where predictions from multiple local models are aggregated at the server, but outputs from up to $f < n/2$ clients may be arbitrarily tampered with. It provides the first robustness analysis: deriving provable certifications for mean-based aggregators and
+  [ICLR 2026][AI Safety][Federated Inference] Ours first formalizes the "Robust Federated Inference" problem—where predictions from multiple local models are aggregated at the server, but outputs from up to $f < n/2$ clients may be arbitrarily tampered with. It provides the first robustness analysis: deriving provable certifications for mean-based aggregators and transforming the problem into adversarial learning for non-linear neural network aggregators. By combining DeepSet…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - DeepSet
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Federated Inference"
+  - "Byzantine Robustness"
+  - "Adversarial Training"
+  - "DeepSet"
+  - "Robust Aggregation"
 date: 2026-05-08
-content_hash: a05b552ed0cad0ef
+content_hash: ad8d6f8b4c8e2c2d
 ---
+
 # Robust Federated Inference
 
 **Conference**: ICLR 2026  
@@ -153,6 +158,7 @@ Component breakdown ($n=17, f=4$, worst-case accuracy %):
 - Value: ⭐⭐⭐⭐⭐ Establishes a benchmark for a neglected security gap in federated/edge deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

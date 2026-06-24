@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes
 description: >-
-  [CVPR 2026][Video Generation][Video Editing] RecEdit-Drive integrates a 3D reconstruction model (SV3D multi-view synthesis) into a video diffusion editing pipeline. It utilizes "Spatial Feature Warping" to construct foreground object views from multiple relevant novel perspectives and "Spatiotemporal Collaborative Modeling" with Gaussian cross-frame attention to
+  [CVPR 2026][Video Generation][Video Editing] RecEdit-Drive integrates a 3D reconstruction model (SV3D multi-view synthesis) into a video diffusion editing pipeline. It utilizes "Spatial Feature Warping" to construct foreground object views from multiple relevant novel perspectives and "Spatiotemporal Collaborative Modeling" with Gaussian cross-frame attention to blend edited foregrounds into backgrounds. Coupled with an inference-time background noise replacement strategy…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video Editing
-  - Autonomous Driving
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Editing"
+  - "Autonomous Driving"
+  - "3D Reconstruction Prior"
+  - "Spatiotemporal Consistency"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 290dbb373f51baa2
+content_hash: a9a886b41bf7562d
 ---
+
 # RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes
 
 **Conference**: CVPR 2026  
@@ -139,11 +142,20 @@ Effectiveness of individual modules (quality and 3D control metrics):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](../../ICLR2026/video_generation/drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
+- [\[CVPR 2026\] Generative Video Motion Editing with 3D Point Tracks](generative_video_motion_editing_with_3d_point_tracks.md)
+- [\[CVPR 2026\] VIVA: VLM-Guided Instruction-Based Video Editing with Reward Optimization](viva_vlm-guided_instruction-based_video_editing_with_reward_optimization.md)
+- [\[ICLR 2026\] Pixel-Perfect Puppetry: Precision-Guided Enhancement for Face Image and Video Editing](../../ICLR2026/video_generation/pixel-perfect_puppetry_precision-guided_enhancement_for_face_image_and_video_edi.md)
+- [\[NeurIPS 2025\] RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation](../../NeurIPS2025/video_generation/rlgf_reinforcement_learning_with_geometric_feedback_for_autonomous_driving_video.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](../../ICLR2026/video_generation/drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)

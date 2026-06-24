@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] CRFT is proposed as a unified coarse-to-fine cross-modal image registration framework. It learns modality-independent feature flow representations within a Transformer architecture, utilizing $1/8$ resolution global correspondence in the coarse stage and $1/2$-$1/4$ multi-scale local refinement in the fine stage. Combi
+  [CVPR 2026][Medical Imaging][Cross-modal registration] CRFT is proposed as a unified coarse-to-fine cross-modal image registration framework. It learns modality-independent feature flow representations within a Transformer architecture, utilizing $1/8$ resolution global correspondence in the coarse stage and $1/2$-$1/4$ multi-scale local refinement in the fine stage. Combined with iterative discrepancy-guided attention and Spatial Geometric Transform (SGT) to recursively refi…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Cross-modal registration"
+  - "feature flow learning"
+  - "coarse-to-fine"
+  - "discrepancy-guided attention"
+  - "spatial geometric transform"
 date: 2026-05-08
-content_hash: d3474085f0946465
+content_hash: 4fb28a1f98752779
 ---
+
 # CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration
 
 **Conference**: CVPR 2026  
@@ -145,9 +151,9 @@ Ours achieves the lowest AEPE (2.37) and highest CMR@1px (18.2%) on RoadScene.
 
 - [\[CVPR 2026\] CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference](cofida-m_concept-aware_feature_modulation_for_cross-domain_adaptation_with_image.md)
 - [\[CVPR 2026\] MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation](mambaliteunet_cross-gated_adaptive_feature_fusion_for_robust_skin_lesion_segment.md)
+- [\[CVPR 2026\] SPECTRE: Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers](scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
 - [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
 - [\[CVPR 2026\] Cross-domain Dual-stream Feature Disentanglement for Brain Disorder Prediction with Sparsely Labeled PET](cross-domain_dual-stream_feature_disentanglement_for_brain_disorder_prediction_w.md)
-- [\[ECCV 2024\] Unsupervised Multi-modal Medical Image Registration via Invertible Translation](../../ECCV2024/medical_imaging/unsupervised_multi-modal_medical_image_registration_via_invertible_translation.md)
 
 </div>
 

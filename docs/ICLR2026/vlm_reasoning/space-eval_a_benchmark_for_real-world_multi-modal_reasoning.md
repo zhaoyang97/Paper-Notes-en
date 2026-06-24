@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpaCE-Eval: A Benchmark for Real-World Multi-Modal Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] SpaCE-Eval constructs a real-world physical spatial multimodal reasoning VQA benchmark consisting of newly hand-drawn human diagrams. It systematically examines MLLMs using three task categories: spatial reasoning, commonsense knowledge, and environmental interaction. The results demonstrate that current state-of-the-a
+  [ICLR 2026][VLM Reasoning][Real-world reasoning] SpaCE-Eval constructs a real-world physical spatial multimodal reasoning VQA benchmark consisting of newly hand-drawn human diagrams. It systematically examines MLLMs using three task categories: spatial reasoning, commonsense knowledge, and environmental interaction. The results demonstrate that current state-of-the-art models remain far below human performance in both overall accuracy and spatial reasoning.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Real-world reasoning"
+  - "spatial reasoning"
+  - "large multimodal models"
+  - "VQA benchmark"
+  - "environmental interaction"
 date: 2026-05-08
-content_hash: c0a856b0267948f8
+content_hash: 1ace72d0bf18701b
 ---
+
 # SpaCE-Eval: A Benchmark for Real-World Multi-Modal Reasoning
 
 **Conference**: ICLR 2026  
@@ -167,8 +173,8 @@ As this is a benchmark paper, there is no model module ablation; instead, "analy
 - [\[ICLR 2026\] Reasoning in Space via Grounding in the World](reasoning_in_space_via_grounding_in_the_world.md)
 - [\[ICLR 2026\] LLMs as Rules Oracles: Exploring Real-World Multimodal Reasoning in Tabletop Strategy Game Environments](llms_as_rules_oracles_exploring_real-world_multimodal_reasoning_in_tabletop_stra.md)
 - [\[ICLR 2026\] MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning](mmr-life_piecing_together_real-life_scenes_for_multimodal_multi-image_reasoning.md)
-- [\[ICLR 2026\] MMReD: A Cross-Modal Benchmark for Dense Context Reasoning](mmred_a_cross-modal_benchmark_for_dense_context_reasoning.md)
 - [\[ICLR 2026\] Reasoning-Aligned Perception Decoupling for Scalable Multi-modal Reasoning](reasoning-aligned_perception_decoupling_for_scalable_multi-modal_reasoning.md)
+- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EasyCreator: Empowering 4D Creation through Video Inpainting
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] EasyCreator reformulates the task of "generating 4D video with variable camera trajectories and editable content from monocular video" as a **video inpainting task**. It renders visibility masks of occluded regions using dynamic point clouds and employs a strong video inpainting base (Wan2.1) for completion. Combined w
+  [ICLR2026][3D Vision][4D Video Generation] EasyCreator reformulates the task of "generating 4D video with variable camera trajectories and editable content from monocular video" as a **video inpainting task**. It renders visibility masks of occluded regions using dynamic point clouds and employs a strong video inpainting base (Wan2.1) for completion. Combined with composite masks, self-iterative tuning, and temporal packing inference, it outperforms several camera redirection…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "4D Video Generation"
+  - "Video Inpainting"
+  - "Dynamic Point Clouds"
+  - "Camera Trajectory Control"
+  - "Multi-view Consistency"
 date: 2026-05-08
-content_hash: 16e59c2aadb92e92
+content_hash: 655ccaf6cb663334
 ---
+
 # EasyCreator: Empowering 4D Creation through Video Inpainting
 
 **Conference**: ICLR2026  
@@ -139,10 +145,10 @@ Improvements on Kubric-4D are significant: PSNR increased from 15.82 to **22.15*
 ## Related Papers
 
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](../../ICCV2025/3d_vision/vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
+- [\[ICLR 2026\] Trace Anything: Representing Any Video in 4D via Trajectory Fields](trace_anything_representing_any_video_in_4d_via_trajectory_fields.md)
 - [\[ICLR 2026\] WorldTree: Towards 4D Dynamic Worlds from Monocular Video Using Tree-Chains](worldtree_towards_4d_dynamic_worlds_from_monocular_video_using_tree-chains.md)
+- [\[ICLR 2026\] Unified 3D Scene Understanding Through Physical World Modeling](unified_3d_scene_understanding_through_physical_world_modeling.md)
 - [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
-- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](../../CVPR2026/3d_vision/vista4d_video_reshooting_with_4d_point_clouds.md)
-- [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
 
 </div>
 

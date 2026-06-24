@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction
 description: >-
-  [AAAI 2026][Microstructure evolution] This paper introduces MicroEvoEval, the first standardized benchmark for image-level microstructure evolution prediction…
+  [AAAI 2026][Microstructure evolution] This paper introduces MicroEvoEval, the first standardized benchmark for image-level microstructure evolution prediction, encompassing 4 representative physical tasks (planar wave propagation, grain growth, spinodal decomposition, dendritic solidification), 14 models (5 domain-specific + 9 general spatiotemporal architectures), and a multi-dimensional evaluation framework (numerical accuracy + physical fidelity + computational efficiency)…
 tags:
   - "AAAI 2026"
   - "Microstructure evolution"
@@ -11,7 +11,7 @@ tags:
   - "deep learning surrogate models"
   - "materials science"
 date: 2026-05-08
-content_hash: 016ca2136c0cd92a
+content_hash: d9c324de2d5d1bea
 ---
 
 # MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction
@@ -128,11 +128,11 @@ VMamba achieves the highest accuracy while maintaining extremely high inference 
 
 ## Related Papers
 
+- [\[ACL 2025\] What Matters in Evaluating Book-Length Stories? A Systematic Study of Long Story Evaluation](../../ACL2025/others/what_matters_in_evaluating_book-length_stories_a_systematic_study_of_long_story_.md)
 - [\[ICML 2026\] Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation](../../ICML2026/others/industrializing_prediction-powered_inference_the_glide_library_for_reliable_gena.md)
-- [\[AAAI 2026\] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation](forest_vs_tree_the_n_k_trade-off_in_reproducible_ml_evaluation.md)
-- [\[AAAI 2026\] PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks](piphen_physical_interaction_prediction_with_hamiltonian_energy_networks.md)
 - [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](hierarchical_semantic_alignment_for_image_clustering.md)
-- [\[AAAI 2026\] Judging by the Rules: Compliance-Aligned Framework for Modern Slavery Statement Monitoring](judging_by_the_rules_compliance-aligned_framework_for_modern_slavery_statement_m.md)
+- [\[AAAI 2026\] PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks](piphen_physical_interaction_prediction_with_hamiltonian_energy_networks.md)
+- [\[ECCV 2024\] A Framework for Efficient Model Evaluation through Stratification, Sampling, and Estimation](../../ECCV2024/others/a_framework_for_efficient_model_evaluation_through_stratific.md)
 
 </div>
 

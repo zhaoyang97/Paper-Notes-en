@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving
 description: >-
-  [ICLR 2026][Optimization & Theory][GRPO] CogFlow proposes a cognitive-inspired three-stage visual mathematical reasoning framework (Perception → Internalization → Reasoning). By employing Synergistic Visual Rewards to enhance perception, a Knowledge Internalization Reward to bridge perception and reasoning, and Visual-Gated Policy Optimization to anchor visua
+  [ICLR 2026][Optimization][Visual Mathematical Reasoning] CogFlow proposes a cognitive-inspired three-stage visual mathematical reasoning framework (Perception → Internalization → Reasoning). By employing Synergistic Visual Rewards to enhance perception, a Knowledge Internalization Reward to bridge perception and reasoning, and Visual-Gated Policy Optimization to anchor visual reasoning, it addresses the core issue of "correct perception but drifted reasoning" in existing meth…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - GRPO
+  - "ICLR 2026"
+  - "Optimization"
+  - "Visual Mathematical Reasoning"
+  - "Knowledge Internalization"
+  - "GRPO"
+  - "Perception-Reasoning Alignment"
+  - "Cognitive-inspired"
 date: 2026-05-08
-content_hash: 4f16006984ef3928
+content_hash: fe72e8a96e42c88c
 ---
+
 # CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving
 
 **Conference**: ICLR 2026  
@@ -135,11 +140,11 @@ Training consists of two stages. The SFT stage uses MathCog-SFT (120K+ perceptio
 
 ## Related Papers
 
+- [\[ICLR 2026\] Solving the 2-norm k-hyperplane clustering problem via multi-norm formulations](solving_the_2-norm_k-hyperplane_clustering_problem_via_multi-norm_formulations.md)
+- [\[ICLR 2026\] ViTSP: Guiding Large-Scale Traveling Salesman Problem Solving with Vision-Language Models](vitsp_a_vision_language_models_guided_framework_for_solving_large-scale_travelin.md)
 - [\[AAAI 2026\] GHOST: Solving the Traveling Salesman Problem on Graphs of Convex Sets](../../AAAI2026/optimization/ghost_solving_the_traveling_salesman_problem_on_graphs_of_convex_sets.md)
 - [\[NeurIPS 2025\] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](../../NeurIPS2025/optimization/autoopt_a_dataset_and_a_unified_framework_for_automating_optimization_problem_so.md)
 - [\[ICLR 2026\] Learning to Solve Orienteering Problem with Time Windows and Variable Profits](learning_to_solve_orienteering_problem_with_time_windows_and_variable_profits.md)
-- [\[ICLR 2026\] Landing with the Score: Riemannian Optimization through Denoising](landing_with_the_score_riemannian_optimization_through_denoising.md)
-- [\[ICLR 2026\] Generalizable Heuristic Generation Through LLMs with Meta-Optimization](generalizable_heuristic_generation_through_llms_with_meta-optimization.md)
 
 </div>
 

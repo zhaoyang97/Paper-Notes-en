@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MoGen: Detailed Neuronal Morphology Generation via Point Cloud Flow Matching
 description: >-
-  [ICLR 2026][3D Vision][Flow Matching] MoGen utilizes flow matching on high-resolution 3D point clouds to generate realistic mouse cortical axon/dendrite fragment morphologies. By feeding millions of synthetic samples into a shape plausibility classifier within a production-grade connectome reconstruction pipeline, it reduces residual reconstruction errors
+  [ICLR 2026][3D Vision][Flow matching] MoGen utilizes flow matching on high-resolution 3D point clouds to generate realistic mouse cortical axon/dendrite fragment morphologies. By feeding millions of synthetic samples into a shape plausibility classifier within a production-grade connectome reconstruction pipeline, it reduces residual reconstruction errors by 4.4%, equivalent to saving approximately 157 person-years of manual proofreading for whole-brain reconstruction.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Flow Matching
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Flow matching"
+  - "Point cloud generation"
+  - "Neuronal morphology"
+  - "Connectomics"
+  - "Synthetic data augmentation"
 date: 2026-05-08
-content_hash: 6bf0a08444012b28
+content_hash: 327f9eca456869e5
 ---
+
 # MoGen: Detailed Neuronal Morphology Generation via Point Cloud Flow Matching
 
 **Conference**: ICLR 2026  
@@ -118,10 +123,10 @@ The error rate decreased by **4.4%**, simultaneously improving both split and me
 ## Related Papers
 
 - [\[AAAI 2026\] Class-Partitioned VQ-VAE and Latent Flow Matching for Point Cloud Scene Generation](../../AAAI2026/3d_vision/class-partitioned_vq-vae_and_latent_flow_matching_for_point_cloud_scene_generati.md)
+- [\[ICLR 2026\] Quartet of Diffusions: Structure-Aware Point Cloud Generation through Part and Symmetry Guidance](quartet_of_diffusions_structure-aware_point_cloud_generation_through_part_and_sy.md)
+- [\[CVPR 2026\] Optical Flow Matching: Reframing Optical Flow as Continuous Transport Dynamics](../../CVPR2026/3d_vision/optical_flow_matching_reframing_optical_flow_as_continuous_transport_dynamics.md)
 - [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](spiking_discrepancy_transformer_for_point_cloud_analysis.md)
 - [\[CVPR 2026\] UniPixie: Unified and Probabilistic 3D Physics Learning via Flow Matching](../../CVPR2026/3d_vision/unipixie_unified_and_probabilistic_3d_physics_learning_via_flow_matching.md)
-- [\[ICLR 2026\] RayI2P: Learning Rays for Image-to-Point Cloud Registration](rayi2p_learning_rays_for_image-to-point_cloud_registration.md)
-- [\[CVPR 2026\] Optical Flow Matching: Reframing Optical Flow as Continuous Transport Dynamics](../../CVPR2026/3d_vision/optical_flow_matching_reframing_optical_flow_as_continuous_transport_dynamics.md)
 
 </div>
 

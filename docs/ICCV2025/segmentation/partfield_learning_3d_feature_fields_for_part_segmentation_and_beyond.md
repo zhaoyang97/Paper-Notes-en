@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PartField: Learning 3D Feature Fields for Part Segmentation and Beyond
 description: >-
-  [ICCV 2025][Segmentation][3D part segmentation] PartField learns a continuous 3D feature field via a feed-forward model, distilling knowledge from mixed 2D/3D part proposals through contrastive learning. It outperforms e…
+  [ICCV 2025][Segmentation][3D part segmentation] PartField learns a continuous 3D feature field via a feed-forward model, distilling knowledge from mixed 2D/3D part proposals through contrastive learning. It outperforms existing methods by 20%+ on category-agnostic 3D part segmentation while achieving inference speeds orders of magnitude faster.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "feed-forward model"
   - "hierarchical decomposition"
 date: 2026-05-08
-content_hash: 429fcd17ab870d66
+content_hash: 9b44ea05daf912c7
 ---
 
 # PartField: Learning 3D Feature Fields for Part Segmentation and Beyond
@@ -175,10 +175,10 @@ PartField achieves 79.18% mIoU, surpassing the second-best method SAMesh (56.86%
 
 ## Related Papers
 
+- [\[ECCV 2024\] PartSTAD: 2D-to-3D Part Segmentation Task Adaptation](../../ECCV2024/segmentation/partstad_2d-to-3d_part_segmentation_task_adaptation.md)
 - [\[NeurIPS 2025\] PartNeXt: A Next-Generation Dataset for Fine-Grained and Hierarchical 3D Part Understanding](../../NeurIPS2025/segmentation/partnext_a_next-generation_dataset_for_fine-grained_and_hierarchical_3d_part_und.md)
-- [\[ICCV 2025\] LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity](legrad_an_explainability_method_for_vision_transformers_via_feature_formation_se.md)
-- [\[ICCV 2025\] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation](exploring_probabilistic_modeling_beyond_domain_generalization_for_semantic_segme.md)
 - [\[ICCV 2025\] Implicit Counterfactual Learning for Audio-Visual Segmentation](implicit_counterfactual_learning_for_audio-visual_segmentation.md)
+- [\[ICCV 2025\] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation](exploring_probabilistic_modeling_beyond_domain_generalization_for_semantic_segme.md)
 - [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
 
 </div>

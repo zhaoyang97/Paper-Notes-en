@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Salience of Low-Probability Tokens for AI-Generated Text Detection: A Multiscale Uncertainty Perspective
 description: >-
-  [ICML 2026][AIGC Detection][Paper Note] To address the chronic issues of "high-frequency boilerplate signal dilution" and "brittle point estimates" in zero-shot AI-generated text detection, the authors propose the Uncertainty / Uncertainty++ detectors. These detectors aggregate log-probs only on low-probability tokens at the bottom $\rho$-percentile of each
+  [ICML 2026][AIGC Detection][AIGT Detection] To address the chronic issues of "high-frequency boilerplate signal dilution" and "brittle point estimates" in zero-shot AI-generated text detection, the authors propose the Uncertainty / Uncertainty++ detectors. These detectors aggregate log-probs only on low-probability tokens at the bottom $\rho$-percentile of each text segment and overlay Rényi entropy from the same positions as a distribution shape signal. This approach improve…
 tags:
-  - ICML 2026
-  - AIGC Detection
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "AIGT Detection"
+  - "Low-probability tokens"
+  - "Rényi entropy"
+  - "Multiscale uncertainty"
+  - "Conditional independent sampling"
 date: 2026-05-08
-content_hash: f0d08a0b3afa0a54
+content_hash: f28bf7674968b758
 ---
+
 # On the Salience of Low-Probability Tokens for AI-Generated Text Detection: A Multiscale Uncertainty Perspective
 
 **Conference**: ICML 2026  
@@ -136,10 +142,10 @@ Across 12 generators, Ours achieved the best or tied-for-best performance on GPT
 ## Related Papers
 
 - [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
+- [\[ICML 2026\] Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection](dissect_and_prune_enhancing_robustness_in_ai-generated_image_detection.md)
 - [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
 - [\[ACL 2025\] Low-Perplexity LLM-Generated Sequences and Where To Find Them](../../ACL2025/aigc_detection/low-perplexity_llm-generated_sequences_and_where_to_find_them.md)
-- [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](../../ACL2026/aigc_detection/c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
-- [\[ICML 2026\] Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection](dissect_and_prune_enhancing_robustness_in_ai-generated_image_detection.md)
+- [\[ICLR 2026\] D&R: Recovery-based AI-Generated Text Detection via a Single Black-box LLM Call](../../ICLR2026/aigc_detection/dr_recovery-based_ai-generated_text_detection_via_a_single_black-box_llm_call.md)
 
 </div>
 

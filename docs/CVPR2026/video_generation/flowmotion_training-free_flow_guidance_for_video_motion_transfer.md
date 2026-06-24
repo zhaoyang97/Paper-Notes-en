@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer
 description: >-
-  [CVPR 2026][Video Generation][video motion transfer] FlowMotion is proposed as a training-free video motion transfer framework that constructs motion guidance signals directly using the latent prediction from flow-based T2V models. By avoiding gradient backpropagation through internal model layers, it achieves high motion fidelity while significantly reducing inference t
+  [CVPR2026][Video Generation][video motion transfer] FlowMotion is proposed as a training-free video motion transfer framework that constructs motion guidance signals directly using the latent prediction from flow-based T2V models. By avoiding gradient backpropagation through internal model layers, it achieves high motion fidelity while significantly reducing inference time and GPU memory overhead.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - video motion transfer
-  - flow matching
-  - training-free
-  - latent prediction
-  - velocity regularization
+  - "CVPR2026"
+  - "Video Generation"
+  - "video motion transfer"
+  - "flow matching"
+  - "training-free"
+  - "latent prediction"
+  - "velocity regularization"
 date: 2026-05-08
-content_hash: c32f708e57f4e7f6
+content_hash: 70955631d887b0d4
 ---
+
 # FlowMotion: Training-Free Flow Guidance for Video Motion Transfer
 
 **Conference**: CVPR2026  
@@ -162,9 +163,9 @@ Latent prediction guidance only adds 1.6 GB over pure inference, whereas using v
 
 - [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
 - [\[CVPR 2026\] FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement](flowportal_residual-corrected_flow_for_training-free_video_relighting_and_backgr.md)
-- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](../../ICLR2026/video_generation/frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
-- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
+- [\[ICLR 2026\] FastVMT: Eliminating Redundancy in Video Motion Transfer](../../ICLR2026/video_generation/fastvmt_eliminating_redundancy_in_video_motion_transfer.md)
+- [\[ICLR 2026\] LightCtrl: Training-free Controllable Video Relighting](../../ICLR2026/video_generation/lightctrl_training-free_controllable_video_relighting.md)
 
 </div>
 

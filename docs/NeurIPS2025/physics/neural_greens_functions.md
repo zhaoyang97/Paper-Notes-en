@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Green's Functions
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Green's functions] This paper proposes Neural Green's Functions, a learnable linear PDE solution operator based on eigendecomposition: pointwise geometric features are extra…
+  [NeurIPS 2025][Physics & Scientific Computing][Green's functions] This paper proposes Neural Green's Functions, a learnable linear PDE solution operator based on eigendecomposition: pointwise geometric features are extracted from the domain geometry to predict the eigendecomposition of the Green's function, enabling one-time training to solve for arbitrary source functions and boundary conditions via numerical integration. On mechanical part thermal analysis…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "eigendecomposition"
   - "domain generalization"
 date: 2026-05-08
-content_hash: 1ef9d4dec47a5652
+content_hash: d709723d96c74154
 ---
 
 # Neural Green's Functions
@@ -138,11 +138,11 @@ $$\mathbf{u} = \mathbf{K}^T \{\mathbf{G}(\mathbf{K}\mathbf{M}\mathbf{f} - \mathb
 
 ## Related Papers
 
+- [\[ICLR 2026\] Generalized Spherical Neural Operators: Green's Function Formulation](../../ICLR2026/physics/generalized_spherical_neural_operators_greens_function_formulation.md)
 - [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
 - [\[ICML 2026\] PINNfluence: Interpreting PINNs Through Influence Functions](../../ICML2026/physics/pinnfluence_interpreting_pinns_through_influence_functions.md)
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)
 - [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](../../ICLR2026/physics/dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
-- [\[NeurIPS 2025\] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon](stable_minima_of_relu_neural_networks_suffer_from_the_curse_of_dimensionality_th.md)
 
 </div>
 

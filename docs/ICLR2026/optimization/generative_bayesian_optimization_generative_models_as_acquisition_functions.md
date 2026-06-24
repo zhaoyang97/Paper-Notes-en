@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Generative Bayesian Optimization: Generative Models as Acquisition Functions
 description: >-
-  [ICLR 2026][Optimization & Theory][Bayesian Optimization] GenBO trains a generative model directly as a proposal distribution whose sampling density is proportional to the acquisition function. By leveraging DPO-style logic to train in a single step using noisy utility values, it bypasses the need to fit surrogate regression or classification models, making it simple and scal
+  [ICLR 2026][Optimization][Bayesian Optimization] GenBO trains a generative model directly as a proposal distribution whose sampling density is proportional to the acquisition function. By leveraging DPO-style logic to train in a single step using noisy utility values, it bypasses the need to fit surrogate regression or classification models, making it simple and scalable for high-dimensional, combinatorial, and large-batch black-box optimization (e.g., protein design).
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Bayesian Optimization
-  - Generative Model
-  - DPO
+  - "ICLR 2026"
+  - "Optimization"
+  - "Bayesian Optimization"
+  - "Generative Models"
+  - "DPO"
+  - "Black-box Optimization"
+  - "Batch Optimization"
+  - "Protein Design"
 date: 2026-05-08
-content_hash: 45483764c8240474
+content_hash: c55dbb897191e1ab
 ---
+
 # Generative Bayesian Optimization: Generative Models as Acquisition Functions
 
 **Conference**: ICLR 2026  
@@ -120,9 +124,9 @@ Evaluation metrics include simple regret $r_t=f(x^*)-\max_{i\le n_t}f(x_i)$ and 
 
 - [\[ICLR 2026\] Distributionally Robust Optimization via Generative Ambiguity Modeling](distributionally_robust_optimization_via_generative_ambiguity_modeling.md)
 - [\[ICLR 2026\] Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models](adaptive_acquisition_selection_for_bayesian_optimization_with_large_language_mod.md)
-- [\[ICLR 2026\] Local Entropy Search over Descent Sequences for Bayesian Optimization](local_entropy_search_over_descent_sequences_for_bayesian_optimization.md)
-- [\[ICLR 2026\] Incorporating Expert Priors into Bayesian Optimization via Dynamic Mean Decay](incorporating_expert_priors_into_bayesian_optimization_via_dynamic_mean_decay.md)
-- [\[ICLR 2026\] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces](from_sorting_algorithms_to_scalable_kernels_bayesian_optimization_in_high-dimens.md)
+- [\[ICLR 2026\] Gen-DFL: Decision-Focused Generative Learning for Robust Decision Making](gen-dfl_decision-focused_generative_learning_for_robust_decision_making.md)
+- [\[ICLR 2026\] Scaling Multi-Task Bayesian Optimization with Large Language Models](scaling_multi-task_bayesian_optimization_with_large_language_models.md)
+- [\[ICLR 2026\] Symmetry-Aware Bayesian Optimization via Max Kernels](symmetry-aware_bayesian_optimization_via_max_kernels.md)
 
 </div>
 

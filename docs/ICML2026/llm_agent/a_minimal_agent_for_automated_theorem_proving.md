@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Minimal Agent for Automated Theorem Proving
 description: >-
-  [ICML 2026][LLM Agent][Lean 4] This paper proposes AxProverBase—a minimalist Lean 4 theorem-proving agent. By relying on only three components—"compiler feedback + self-managed notebook + lightweight tool search"—it achieves or exceeds the performance of specialized systems like Hilbert/Seed-Prover using non-fine-tuned frontier LLMs (Claude Opus), w
+  [ICML 2026][LLM Agent][Theorem Proving] This paper proposes AxProverBase—a minimalist Lean 4 theorem-proving agent. By relying on only three components—"compiler feedback + self-managed notebook + lightweight tool search"—it achieves or exceeds the performance of specialized systems like Hilbert/Seed-Prover using non-fine-tuned frontier LLMs (Claude Opus), while reducing costs by 100x.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Lean 4
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Theorem Proving"
+  - "Lean 4"
+  - "Agent Architecture"
+  - "Iterative Refinement"
+  - "Self-Managed Memory"
 date: 2026-05-08
-content_hash: c93e0ff4da055416
+content_hash: 14ca0e2f28f272ec
 ---
+
 # A Minimal Agent for Automated Theorem Proving
 
 **Conference**: ICML 2026  
@@ -143,9 +148,9 @@ No training; frontier LLMs are used directly for inference.
 
 - [\[AAAI 2026\] Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents](../../AAAI2026/llm_agent/structured_personalization_modeling_constraints_as_matroids_for_data-minimal_llm.md)
 - [\[ACL 2025\] Theorem-of-Thought: A Multi-Agent Framework for Abductive, Deductive, and Inductive Reasoning in Language Models](../../ACL2025/llm_agent/theorem-of-thought_a_multi-agent_framework_for_abductive_deductive_and_inductive.md)
-- [\[ACL 2025\] An Empirical Study on LLM-based Agents for Automated Bug Fixing](../../ACL2025/llm_agent/an_empirical_study_on_llm-based_agents_for_automated_bug_fixing.md)
-- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](../../ACL2026/llm_agent/feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[ACL 2025\] Auto-TA: Towards Scalable Automated Thematic Analysis (TA) via Multi-Agent Large Language Models with Reinforcement Learning](../../ACL2025/llm_agent/auto-ta_towards_scalable_automated_thematic_analysis_ta_via_multi-agent_large_la.md)
+- [\[ICLR 2026\] TaskCraft: Automated Generation of Agentic Tasks](../../ICLR2026/llm_agent/taskcraft_automated_generation_of_agentic_tasks.md)
+- [\[ICLR 2026\] MATHMO: Automated Mathematical Modeling Through Adaptive Search](../../ICLR2026/llm_agent/mathmo_automated_mathematical_modeling_through_adaptive_search.md)
+- [\[ICLR 2026\] WebFactory: Automated Compression of Foundational Language Intelligence into Grounded Web Agents](../../ICLR2026/llm_agent/webfactory_automated_compression_of_foundational_language_intelligence_into_grou.md)
 
 </div>
 

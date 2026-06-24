@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Continual Multimodal Contrastive Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Continual Learning] This paper is the first to formally define the Continual Multimodal Contrastive Learning (CMCL) problem and proposes Dual-side Null-space gradient projection (DNS)…
+  [NeurIPS 2025][Multimodal VLM][Continual Learning] This paper is the first to formally define the Continual Multimodal Contrastive Learning (CMCL) problem and proposes Dual-side Null-space gradient projection (DNS), which projects gradients from new data into subspaces that do not interfere with previously acquired knowledge. DNS achieves the best stability–plasticity trade-off across 7 datasets.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Catastrophic Forgetting"
   - "Modality Binding"
 date: 2026-05-08
-content_hash: 76d18f33eb11619a
+content_hash: a4dc8f5439ba462a
 ---
 
 # Continual Multimodal Contrastive Learning
@@ -135,11 +135,11 @@ Evaluated on 7 datasets (UCF101, ESC50, NYUDv2, VGGSound-S, Clotho, TVL, LLVIP) 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning](bioclip_2_emergent_properties_from_scaling_hierarchical_contrastive_learning.md)
+- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](generalized_contrastive_learning_for_universal_multimodal_re.md)
 - [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](../../ICLR2026/multimodal_vlm/keeplora_continual_learning_with_residual_gradient_adaptation.md)
-- [\[ICML 2026\] Multimodal Continual Learning with MLLMs from Multi-scenario Perspectives](../../ICML2026/multimodal_vlm/multimodal_continual_learning_with_mllms_from_multi-scenario_perspectives.md)
-- [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](../../ICLR2026/multimodal_vlm/enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
-- [\[NeurIPS 2025\] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning](on_the_value_of_cross-modal_misalignment_in_multimodal_representation_learning.md)
+- [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](../../CVPR2026/multimodal_vlm/towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
+- [\[CVPR 2026\] Re-evaluating Continual VQA: Toward Fair and Robust Evaluation for Multimodal Continual Learning](../../CVPR2026/multimodal_vlm/re-evaluating_continual_vqa_toward_fair_and_robust_evaluation_for_multimodal_con.md)
+- [\[NeurIPS 2025\] BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning](bioclip_2_emergent_properties_from_scaling_hierarchical_contrastive_learning.md)
 
 </div>
 

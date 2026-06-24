@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TraceGen: World Modeling in 3D Trace Space Enables Learning from Cross-Embodiment Videos
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][World Models] TraceGen shifts "world modeling" from pixel space to a compact scene-level 3D trace space. Accompanied by the TraceForge data engine, it unifies 123,000 human and robot videos into consistent 3D traces to pre-train a cross-embodiment motion prior. Consequently, it achieves an 80% success rate on new robots/tasks with o
+  [CVPR 2026][Robotics][World Models] TraceGen shifts "world modeling" from pixel space to a compact scene-level 3D trace space. Accompanied by the TraceForge data engine, it unifies 123,000 human and robot videos into consistent 3D traces to pre-train a cross-embodiment motion prior. Consequently, it achieves an 80% success rate on new robots/tasks with only 5 target demonstrations while inferring 50–600 times faster than video-generative world models.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - World Models
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "World Models"
+  - "Cross-Embodiment Learning"
+  - "3D Traces"
+  - "Flow Matching"
+  - "Few-Shot Manipulation"
 date: 2026-05-08
-content_hash: 686ea554ccfe0494
+content_hash: 19e6a4753e82e217
 ---
+
 # TraceGen: World Modeling in 3D Trace Space Enables Learning from Cross-Embodiment Videos
 
 **Conference**: CVPR 2026  
@@ -142,14 +146,15 @@ Source of Pre-training Data (with 5-demo warm-up):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](robowheel_a_data_engine_from_real-world_human_demonstrations_for_cross-embodimen.md)
-- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
 - [\[CVPR 2026\] Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency](learning_a_unified_latent_action_space_from_videos_with_action-centric_cycle_con.md)
 - [\[CVPR 2026\] GraspGen-X: Cross-Embodiment 6-DOF Diffusion-based Grasping](graspgen-x_cross-embodiment_6-dof_diffusion-based_grasping.md)
+- [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](../../ICLR2026/robotics/cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
 - [\[CVPR 2026\] SemanticVLA: Towards Semantic Reasoning over Action Memorization via Synergistic Explicit Trace and Latent Action Planning](semanticvla_towards_semantic_reasoning_over_action_memorization_via_synergistic_.md)
 
 </div>

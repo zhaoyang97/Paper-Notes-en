@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] See What We Cannot See: A Geo-guided Reasoning Benchmark for Object Counting under Adverse Earth Observation Conditions
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This work proposes GROC—the first large-scale benchmark for "geo-guided reasoning counting under adverse Earth observation conditions" (14K images, 1.2M point annotations, with each image aligned to land use / map / DSM geo-modalities alongside clear-degraded pairs). Constructed via a controllable degradation + interac
+  [CVPR 2026][Object Detection][Remote Sensing Counting] This work proposes GROC—the first large-scale benchmark for "geo-guided reasoning counting under adverse Earth observation conditions" (14K images, 1.2M point annotations, with each image aligned to land use / map / DSM geo-modalities alongside clear-degraded pairs). Constructed via a controllable degradation + interactive annotation data engine, it includes a GROC Agent (GPT-5 backbone calling expert counting tools) as a…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Remote Sensing Counting"
+  - "Geo-multimodal"
+  - "amodal reasoning"
+  - "data engine"
+  - "counting Agent"
 date: 2026-05-08
-content_hash: 23f11d0be3beb63d
+content_hash: 4b165fe472c8fd2c
 ---
+
 # See What We Cannot See: A Geo-guided Reasoning Benchmark for Object Counting under Adverse Earth Observation Conditions
 
 **Conference**: CVPR 2026  
@@ -134,8 +140,8 @@ All methods drop significantly under clouds or low light, confirming heavy relia
 - [\[CVPR 2026\] Does YOLO Really Need to See Every Training Image in Every Epoch?](does_yolo_really_need_to_see_every_training_image_in_every_epoch.md)
 - [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
 - [\[CVPR 2026\] Boosting Quantitive and Spatial Awareness for Zero-Shot Object Counting](boosting_quantitive_and_spatial_awareness_for_zero-shot_object_counting.md)
-- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
 - [\[CVPR 2026\] Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](heuristic-inspired_reasoning_priors_facilitate_data-efficient_referring_object_d.md)
+- [\[CVPR 2026\] RHCNet: Residual-Guided Hierarchical Calibration Network for Robust Underwater Object Detection](rhcnet_residual-guided_hierarchical_calibration_network_for_robust_underwater_ob.md)
 
 </div>
 

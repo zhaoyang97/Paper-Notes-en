@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Conformal Reliability: A New Evaluation Metric for Conditional Generation
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The paper proposes CReL, a reliability score based on Conformal Prediction. By constructing convex prediction sets in latent space and optimizing for worst-case metric performance, it achieves uncertainty-aware evaluation for conditional generative models. Experiments on image-to-text and text-to-image tasks reveal rel
+  [ICML2026][Image Generation][Reliability Evaluation] The paper proposes CReL, a reliability score based on Conformal Prediction. By constructing convex prediction sets in latent space and optimizing for worst-case metric performance, it achieves uncertainty-aware evaluation for conditional generative models. Experiments on image-to-text and text-to-image tasks reveal reliability differences that traditional single-output metrics fail to capture.
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML2026"
+  - "Image Generation"
+  - "Reliability Evaluation"
+  - "Conformal Prediction"
+  - "Conditional Generation"
+  - "Worst-case Analysis"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: f4bf9aadafba0625
+content_hash: e7b33de5e067d220
 ---
+
 # Conformal Reliability: A New Evaluation Metric for Conditional Generation
 
 **Conference**: ICML2026  
@@ -134,11 +140,11 @@ For the reliability score to be trustworthy, the prediction set must cover the t
 
 ## Related Papers
 
-- [\[ICML 2026\] From Talking to Singing: A New Challenge for Audio-Visual Deepfake Detection](from_talking_to_singing_a_new_challenge_for_audio-visual_deepfake_detection.md)
 - [\[ICML 2026\] Conf-Gen: Conformal Uncertainty Quantification for Generative Models](conf-gen_conformal_uncertainty_quantification_for_generative_models.md)
-- [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
-- [\[ICML 2026\] Skipping the Zeros in Diffusion Models for Sparse Data Generation](skipping_the_zeros_in_diffusion_models_for_sparse_data_generation.md)
-- [\[ICML 2026\] Unified Masked Diffusion Models with Diverse Generation Orders](unifying_masked_diffusion_models_with_various_generation_orders_and_beyond.md)
+- [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](../../ICLR2026/image_generation/polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)
+- [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](../../CVPR2026/image_generation/markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
+- [\[ICML 2026\] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters](ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters.md)
+- [\[ICML 2026\] HoloFair: Unified T2I Fairness Evaluation and Fair-GRPO Debiasing](holofair_unified_t2i_fairness_evaluation_and_fair-grpo_debiasing.md)
 
 </div>
 

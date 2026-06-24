@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment
 description: >-
-  [AAAI 2026][Medical Imaging][EEG decoding] This paper proposes NeuroBridge, a framework that employs Cognitive Prior Augmentation (CPA…
+  [AAAI 2026][Medical Imaging][EEG decoding] This paper proposes NeuroBridge, a framework that employs Cognitive Prior Augmentation (CPA, asymmetric augmentation to simulate perceptual variability) and a Shared Semantic Projector (SSP, bidirectional alignment into a unified semantic space). On the THINGS-EEG dataset under a 200-class zero-shot EEG-to-image retrieval task, the method achieves 63.2% Top-1 (+12.3%) and 89.9% Top-5 (+10.2%), substantially surpassing the existing st…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "zero-shot retrieval"
   - "brain-computer interface"
 date: 2026-05-08
-content_hash: ab5e147c28687221
+content_hash: 0b3b557a13eeb5bd
 ---
 
 # NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment
@@ -163,9 +163,9 @@ Image Prior contributes the most (+19.5% Top-1) and is the key driver of perform
 
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
 - [\[AAAI 2026\] Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment](shrinking_the_teacher_an_adaptive_teaching_paradigm_for_asymmetric_eeg-vision_al.md)
+- [\[ICLR 2026\] A Cognitive Process-Inspired Architecture for Subject-Agnostic Brain Visual Decoding](../../ICLR2026/medical_imaging/a_cognitive_process-inspired_architecture_for_subject-agnostic_brain_visual_deco.md)
+- [\[CVPR 2026\] D$^2$-FOSA: Dual-Diffusion Guided EEG-to-Image Reconstruction with Frequency-Oriented Semantic Alignment](../../CVPR2026/medical_imaging/d2-fosa_dual-diffusion_guided_eeg-to-image_reconstruction_with_frequency-oriente.md)
 - [\[AAAI 2026\] Self-supervised Multiplex Consensus Mamba for General Image Fusion](self-supervised_multiplex_consensus_mamba_for_general_image_fusion.md)
-- [\[AAAI 2026\] SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization](spa_achieving_consensus_in_llm_alignment_via_self-priority_optimization.md)
-- [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
 
 </div>
 

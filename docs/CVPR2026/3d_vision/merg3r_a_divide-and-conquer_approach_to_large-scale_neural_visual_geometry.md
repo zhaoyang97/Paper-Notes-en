@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MERG3R is a **training-free** divide-and-conquer framework that sorts thousands of unordered images, partitions them into overlapping subsets for reconstruction using geometric foundation models such as VGGT or π³, and finally merges them into a globally consistent point cloud through global alignment and confidence-we
+  [CVPR 2026][3D Vision][Neural Visual Geometry] MERG3R is a **training-free** divide-and-conquer framework that sorts thousands of unordered images, partitions them into overlapping subsets for reconstruction using geometric foundation models such as VGGT or π³, and finally merges them into a globally consistent point cloud through global alignment and confidence-weighted bundle adjustment. This enables feed-forward reconstruction models, originally limited by VRAM…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Neural Visual Geometry"
+  - "Large-scale Reconstruction"
+  - "Divide-and-Conquer"
+  - "Global Bundle Adjustment"
+  - "Memory Scalability"
 date: 2026-05-08
-content_hash: 73fedb182a657123
+content_hash: 64348be15677bda4
 ---
+
 # MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry
 
 **Conference**: CVPR 2026  
@@ -141,10 +147,10 @@ Pose comparison on T&T / Cambridge Landmarks (Lower is better):
 ## Related Papers
 
 - [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
+- [\[CVPR 2026\] SpatialVID: A Large-Scale Video Dataset with Spatial Annotations](spatialvid_a_large-scale_video_dataset_with_spatial_annotations.md)
+- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
 
 </div>
 

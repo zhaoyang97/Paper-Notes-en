@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine
 description: >-
-  [ICLR 2026][LLM Agent][Gödel Machine] Aiming at the problem of "allowing coding agents to rewrite their own code to become stronger," this paper points out that existing methods using single-step benchmark scores as expansion guidance are unreliable (high-scoring parents do not necessarily produce high-quality descendants). It proposes **Clade-Metaproducti
+  [ICLR 2026][LLM Agent][Self-Improving Agents] Aiming at the problem of "allowing coding agents to rewrite their own code to become stronger," this paper points out that existing methods using single-step benchmark scores as expansion guidance are unreliable (high-scoring parents do not necessarily produce high-quality descendants). It proposes **Clade-Metaproductivity (CMP)**—the aggregated performance of an entire lineage—as the metric for self-improvement potential. It prov…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Gödel Machine
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Self-Improving Agents"
+  - "Coding Agents"
+  - "Tree Search"
+  - "Thompson Sampling"
+  - "Gödel Machine"
 date: 2026-05-08
-content_hash: b9a470d666eb407e
+content_hash: f287a91f64ed204a
 ---
+
 # Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine
 
 **Conference**: ICLR 2026  

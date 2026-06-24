@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Contact-Aware Neural Dynamics
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][sim-to-real] Addressing the sim-to-real gap in contact-rich manipulation with dexterous hands, this paper utilizes off-the-shelf simulators as priors and develops a neural forward dynamics model that implicitly aligns simulation and reality through a "predict contact events first, then predict contact-conditional diffusion poses" a
+  [CVPR 2026][Robotics][sim-to-real] Addressing the sim-to-real gap in contact-rich manipulation with dexterous hands, this paper utilizes off-the-shelf simulators as priors and develops a neural forward dynamics model that implicitly aligns simulation and reality through a "predict contact events first, then predict contact-conditional diffusion poses" approach. By anchoring physical reality with binary contact signals from robot tactile sensors…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - sim-to-real
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Robotics"
+  - "sim-to-real"
+  - "contact dynamics"
+  - "tactile sensing"
+  - "neural dynamics model"
+  - "diffusion models"
 date: 2026-05-08
-content_hash: 108bfd68a76171fd
+content_hash: 7d5a7691137f4590
 ---
+
 # Contact-Aware Neural Dynamics
 
 **Conference**: CVPR 2026  
@@ -144,10 +148,10 @@ Diffusion-UNet with contact performs best across all regimes; in the co-training
 ## Related Papers
 
 - [\[ICML 2025\] Geometric Contact Flows: Contactomorphisms for Dynamics and Control](../../ICML2025/robotics/geometric_contact_flows_contactomorphisms_for_dynamics_and_control.md)
+- [\[ICLR 2026\] DexNDM: Closing the Reality Gap for Dexterous In-Hand Rotation via Joint-Wise Neural Dynamics Model](../../ICLR2026/robotics/dexndm_closing_the_reality_gap_for_dexterous_in-hand_rotation_via_joint-wise_neu.md)
 - [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
 - [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Cross-Task Sim-to-Real Transfer](geco-srt_geometry-aware_continual_adaptation_for_cross-task_sim-to-real_transfer.md)
 - [\[CVPR 2026\] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](clad_planning_with_grounded_foresight_via_cross-modal_latent_dynamics.md)
-- [\[CVPR 2026\] ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation](forcevla2_unleashing_hybrid_force-position_control_with_force_awareness_for_cont.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniDAC: Universal Metric Depth Estimation for Any Camera
 description: >-
-  [CVPR 2026][3D Vision][ERP] UniDAC decouples monocular metric depth into two components: relative depth and a spatially-varying scale map. Using a unified model trained exclusively on perspective views, it achieves zero-shot metric depth estimation on wide field-of-view cameras like fisheye and 360°. By leveraging a depth-guided scale upsampling
+  [CVPR 2026][3D Vision][Monocular Metric Depth] UniDAC decouples monocular metric depth into two components: relative depth and a spatially-varying scale map. Using a unified model trained exclusively on perspective views, it achieves zero-shot metric depth estimation on wide field-of-view cameras like fisheye and 360°. By leveraging a depth-guided scale upsampling module and RoPE-ϕ, a positional encoding adapted for Equirectangular Projection (ERP) geometry…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - ERP
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular Metric Depth"
+  - "Cross-Camera Generalization"
+  - "ERP"
+  - "Scale Estimation"
+  - "Rotary Positional Embedding"
 date: 2026-05-08
-content_hash: 83fd5433a8f0fc36
+content_hash: 7239cbb8c8e5fbbb
 ---
+
 # UniDAC: Universal Metric Depth Estimation for Any Camera
 
 **Conference**: CVPR 2026  

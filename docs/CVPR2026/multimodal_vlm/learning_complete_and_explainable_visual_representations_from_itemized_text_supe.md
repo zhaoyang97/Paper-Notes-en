@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning complete and explainable visual representations from itemized text supervision
 description: >-
-  [CVPR 2026][Interpretability][CLIP] Addressing supervision scenarios like medical imaging and remote sensing where "one image is paired with multiple non-overlapping independent text descriptions (itemized text)," this paper proposes ItemizedCLIP. It utilizes a masked cross-attention module to generate "text-item-modulated" visual representations, paired
+  [CVPR 2026][Multimodal VLM][Itemized text supervision] Addressing supervision scenarios like medical imaging and remote sensing where "one image is paired with multiple non-overlapping independent text descriptions (itemized text)," this paper proposes ItemizedCLIP. It utilizes a masked cross-attention module to generate "text-item-modulated" visual representations, paired with four SigLIP-style objectives to enforce "item independence" and "representation completeness." Zero…
 tags:
-  - CVPR 2026
-  - Interpretability
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Itemized text supervision"
+  - "CLIP"
+  - "cross-attention"
+  - "medical imaging"
+  - "explainable representations"
 date: 2026-05-08
-content_hash: 45bc8945c624ded0
+content_hash: 87e4a320113bed5c
 ---
+
 # Learning complete and explainable visual representations from itemized text supervision
 
 **Conference**: CVPR 2026  
@@ -141,14 +146,17 @@ Ablations performed by incrementally adding components (ILA split into TCS/UWP/M
 
 <div class="related-papers" markdown="1">
 
-- [SIGLIP] Sigmoid Loss for Language-Image Pre-training (ICCV 2023)
-- [FLAIR] Fast Learning of Annotations from Image Reports (BioNLP 2024)
-- [HLIP] Health-CLIP: Contrastive Language-Image Pre-training for Radiology (Nature Communications 2024)
+## Related Papers
+
+- [\[ICML 2026\] Text-Conditional JEPA for Learning Semantically Rich Visual Representations](../../ICML2026/multimodal_vlm/text-conditional_jepa_for_learning_semantically_rich_visual_representations.md)
+- [\[CVPR 2026\] Training-Only Heterogeneous Image-Patch-Text Graph Supervision for Advancing Few-Shot Learning Adapters](training-only_heterogeneous_image-patch-text_graph_supervision_for_advancing_few.md)
+- [\[ICML 2026\] ScreenParse: Moving Beyond Sparse Grounding with Complete Screen Parsing Supervision](../../ICML2026/multimodal_vlm/screenparse_moving_beyond_sparse_grounding_with_complete_screen_parsing_supervis.md)
+- [\[CVPR 2026\] Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models](mostly_text_smart_visuals_asymmetric_text-visual_pruning_for_large_vision-langua.md)
+- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)

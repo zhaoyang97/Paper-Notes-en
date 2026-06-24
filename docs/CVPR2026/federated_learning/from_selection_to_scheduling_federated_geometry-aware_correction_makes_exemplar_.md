@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Selection to Scheduling: Federated Geometry-Aware Correction Makes Exemplar Replay Work Better under Continual Dynamic Heterogeneity
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] Addressing the pain point in Federated Continual Learning (FCL) where "selecting samples is easy, but utilizing them is difficult," FEAT does not modify the replay strategy itself. Instead, it employs a set of fixed ETF prototypes shared across all clients. It uses geometric structure distillation during training to al
+  [CVPR 2026][Federated Learning][Federated Continual Learning] Addressing the pain point in Federated Continual Learning (FCL) where "selecting samples is easy, but utilizing them is difficult," FEAT does not modify the replay strategy itself. Instead, it employs a set of fixed ETF prototypes shared across all clients. It uses geometric structure distillation during training to align feature angles across clients and applies energy-based geometric correction during inference t…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Federated Continual Learning"
+  - "Exemplar Replay"
+  - "Equiangular Tight Frame"
+  - "Geometric Alignment"
+  - "Class Imbalance Debiasing"
 date: 2026-05-08
-content_hash: 27ba7f69ebf62d45
+content_hash: 30cd89cc0963953f
 ---
+
 # From Selection to Scheduling: Federated Geometry-Aware Correction Makes Exemplar Replay Work Better under Continual Dynamic Heterogeneity
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ On CIFAR10 (3-task) / CIFAR100 (5-task) with 5 clients, incrementally adding mod
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
 - [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
-- [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
-- [\[ICCV 2025\] Federated Continual Instruction Tuning](../../ICCV2025/optimization/federated_continual_instruction_tuning.md)
-- [\[CVPR 2026\] FedSST: Rethinking Fair Federated Graph Learning under Structural Shift](fedsst_rethinking_fair_federated_graph_learning_under_structural_shift.md)
-- [\[CVPR 2026\] Dynamic Momentum Recalibration in Online Gradient Learning](dynamic_momentum_recalibration_in_online_gradient_learning.md)
+- [\[CVPR 2026\] GDFA: Geometry-Driven Federated Unlearning with Directional Task Vector Alignment](gdfa_geometry-driven_federated_unlearning_with_directional_task_vector_alignment.md)
+- [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
+- [\[CVPR 2026\] FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization](fedadamom_adaptive_momentum_for_improved_generalization_in_federated_optimizatio.md)
 
 </div>
 

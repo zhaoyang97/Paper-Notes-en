@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Efficient Agent Training for Computer Use
 description: >-
-  [ICLR 2026][LLM Agent][computer use agent] PC Agent-E utilizes only 312 human-annotated Windows operation trajectories. Through the Trajectory Boost method, it prompts Claude 3.7 Sonnet to synthesize diverse alternative action decisions at each time step. The trained Qwen2.5-VL-72B achieves a 141% relative improvement on WindowsAgentArena-V2, even surpassing th
+  [ICLR 2026][LLM Agent][computer use agent] PC Agent-E utilizes only 312 human-annotated Windows operation trajectories. Through the Trajectory Boost method, it prompts Claude 3.7 Sonnet to synthesize diverse alternative action decisions at each time step. The trained Qwen2.5-VL-72B achieves a 141% relative improvement on WindowsAgentArena-V2, even surpassing the teacher model Claude 3.7 Sonnet by 10%.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - computer use agent
-  - trajectory augmentation
-  - data efficiency
-  - GUI agent
-  - SFT
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "computer use agent"
+  - "trajectory augmentation"
+  - "data efficiency"
+  - "GUI agent"
+  - "SFT"
 date: 2026-05-08
-content_hash: cd3042fcd04ae8f3
+content_hash: 86dba16047ee05bd
 ---
+
 # Efficient Agent Training for Computer Use
 
 **Conference**: ICLR 2026  
@@ -137,11 +138,11 @@ PC Agent-E shows a 141% relative improvement over Qwen2.5-VL-72B, surpassing Cla
 
 ## Related Papers
 
-- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
-- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
 - [\[ICLR 2026\] ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data](scalecua_scaling_open-source_computer_use_agents_with_cross-platform_data.md)
+- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
 - [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
-- [\[ICLR 2026\] R-WoM: Retrieval-augmented World Model for Computer-use Agents](r-wom_retrieval-augmented_world_model_for_computer-use_agents.md)
+- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
+- [\[ICML 2026\] MacArena: Benchmarking Computer Use Agents on an Online macOS Environment](../../ICML2026/llm_agent/macarena_benchmarking_computer_use_agents_on_an_online_macos_environment.md)
 
 </div>
 

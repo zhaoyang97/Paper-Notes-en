@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Flexible Kernels for Protein Property Prediction
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] This paper designs a family of "flexible kernels" (LOCK / CLOCK) for protein sequences, directly encoding biophysical priors from evolutionary substitution matrices (BLOSUM) and the local linearity assumption of "property additivity under mutation" into Gaussian Process kernels. These kernels frequently outperform comp
+  [ICML 2026][Computational Biology][Gaussian Processes] This paper designs a family of "flexible kernels" (LOCK / CLOCK) for protein sequences, directly encoding biophysical priors from evolutionary substitution matrices (BLOSUM) and the local linearity assumption of "property additivity under mutation" into Gaussian Process kernels. These kernels frequently outperform complex methods relying on large-scale model embeddings in data-scarce protein property prediction tasks and…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Gaussian Processes"
+  - "Sequence Kernels"
+  - "Substitution Matrices"
+  - "Local Linearity"
+  - "Structural Conditional Kernels"
 date: 2026-05-08
-content_hash: e24deee404439f24
+content_hash: 25aa9223558d6067
 ---
+
 # Flexible Kernels for Protein Property Prediction
 
 **Conference**: ICML 2026  
@@ -143,11 +149,11 @@ The authors compared different model classes and prior information, highlighting
 
 ## Related Papers
 
+- [\[ICLR 2026\] RankFlow: Property-aware Transport for Protein Optimization](../../ICLR2026/computational_biology/rankflow_property-aware_transport_for_protein_optimization.md)
 - [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
 - [\[ICLR 2026\] Learning Molecular Chirality via Chiral Determinant Kernels](../../ICLR2026/computational_biology/learning_molecular_chirality_via_chiral_determinant_kernels.md)
-- [\[ICLR 2026\] Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions](../../ICLR2026/computational_biology/enhancing_molecular_property_predictions_by_learning_from_bond_modelling_and_int.md)
-- [\[NeurIPS 2025\] Quantifying the Role of OpenFold Components in Protein Structure Prediction](../../NeurIPS2025/computational_biology/quantifying_the_role_of_openfold_components_in_protein_structure_prediction.md)
-- [\[ICML 2026\] SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes](spatia_multimodal_generation_and_prediction_of_spatial_cell_phenotypes.md)
+- [\[ICLR 2026\] Property-Driven Protein Inverse Folding with Multi-Objective Preference Alignment](../../ICLR2026/computational_biology/property-driven_protein_inverse_folding_with_multi-objective_preference_alignmen.md)
+- [\[ICLR 2026\] Learning Flexible Forward Trajectories for Masked Molecular Diffusion](../../ICLR2026/computational_biology/learning_flexible_forward_trajectories_for_masked_molecular_diffusion.md)
 
 </div>
 

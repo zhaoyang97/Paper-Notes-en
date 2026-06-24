@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper introduces Self-Consistent Stochastic Interpolants (SCSI), which recovers clean data distributions and enables training of generative models by iteratively learning a self-consistent transport of "observation distribution $\to$ latent clean distribution $\to$ re-corruption back to observation distribution,"
+  [ICLR2026][Image Generation][Black-box corruption] This paper introduces Self-Consistent Stochastic Interpolants (SCSI), which recovers clean data distributions and enables training of generative models by iteratively learning a self-consistent transport of "observation distribution $\to$ latent clean distribution $\to$ re-corruption back to observation distribution," requiring only corrupted samples and a black-box simulator without clean samples or explicit likelihoods.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Black-box corruption"
+  - "Stochastic Interpolants"
+  - "Inverse Generative Modeling"
+  - "Self-consistent training"
+  - "Image restoration"
 date: 2026-05-08
-content_hash: bbe98f491812a156
+content_hash: 2befe599a993c547
 ---
+
 # Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants
 
 **Conference**: ICLR2026  
@@ -145,10 +151,10 @@ For generative modeling, training a diffusion model on SCSI-recovered samples ac
 ## Related Papers
 
 - [\[ICLR 2026\] Latent Stochastic Interpolants](latent_stochastic_interpolants.md)
-- [\[ICLR 2026\] Strictly Constrained Generative Modeling via Split Augmented Langevin Sampling](strictly_constrained_generative_modeling_via_split_augmented_langevin_sampling.md)
-- [\[ICLR 2026\] Continuously Augmented Discrete Diffusion model for Categorical Generative Modeling](continuously_augmented_discrete_diffusion_model_for_categorical_generative_model.md)
-- [\[ICLR 2026\] SESaMo: Symmetry-Enforcing Stochastic Modulation for Normalizing Flows](sesamo_symmetry-enforcing_stochastic_modulation_for_normalizing_flows.md)
-- [\[ICLR 2026\] BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation](bézierflow_learning_bézier_stochastic_interpolant_schedulers_for_few-step_genera.md)
+- [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
+- [\[ICLR 2026\] Score Distillation Beyond Acceleration: Generative Modeling from Corrupted Data](score_distillation_beyond_acceleration_generative_modeling_from_corrupted_data.md)
+- [\[NeurIPS 2025\] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants](../../NeurIPS2025/image_generation/boltznce_learning_likelihoods_for_boltzmann_generation_with_stochastic_interpola.md)
+- [\[ICML 2026\] Support-Proximity Augmented Diffusion Estimation for Offline Black-Box Optimization](../../ICML2026/image_generation/support-proximity_augmented_diffusion_estimation_for_offline_black-box_optimizat.md)
 
 </div>
 

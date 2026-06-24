@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual-Path Condition Alignment for Diffusion Transformers
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] DUPA replaces the representation alignment in REPA (which uses external vision encoders to label noisy images) with an unsupervised self-alignment mechanism. By independently noising the same image twice and aligning the two sets of conditional features extracted by the model itself, it requires no external images, par
+  [ICLR 2026][Image Generation][Diffusion Transformer] DUPA replaces the representation alignment in REPA (which uses external vision encoders to label noisy images) with an unsupervised self-alignment mechanism. By independently noising the same image twice and aligning the two sets of conditional features extracted by the model itself, it requires no external images, parameters, or additional compute. On ImageNet 256×256, it achieves FID=1.46 in only 400 epochs…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Representation Alignment"
+  - "Unsupervised"
+  - "Self-alignment"
+  - "Decoupled Architecture"
 date: 2026-05-08
-content_hash: efee61336fb0578a
+content_hash: fdc2df21b6b3fc84
 ---
+
 # Dual-Path Condition Alignment for Diffusion Transformers
 
 **Conference**: ICLR 2026  
@@ -132,6 +138,7 @@ DUPA consistently outperforms SiT/DDT across different backbone sizes.
 - Value: ⭐⭐⭐⭐⭐ Extremely practical for domain-specific generation where external encoders are unavailable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Language Models Can Explain Visual Features via Steering
 description: >-
-  [CVPR 2026][Interpretability][VLM] Ours proposes performing causal intervention (steering) using SAE features on VLM vision encoders. By inputting blank images and allowing the language model to describe the visual concepts it "sees," this method achieves scalable automated interpretation of visual features without needing evaluation image sets. The hyb
+  [CVPR 2026][Interpretability][Sparse Autoencoders (SAE)] Ours proposes performing causal intervention (steering) using SAE features on VLM vision encoders. By inputting blank images and allowing the language model to describe the visual concepts it "sees," this method achieves scalable automated interpretation of visual features without needing evaluation image sets. The hybrid approach, Steering-informed Top-k, achieves SOTA performance.
 tags:
-  - CVPR 2026
-  - Interpretability
-  - VLM
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders (SAE)"
+  - "Visual Feature Interpretation"
+  - "Causal Intervention"
+  - "VLM"
+  - "Automated Interpretability"
 date: 2026-05-08
-content_hash: 96b8dc04a16d1db7
+content_hash: 488ef74d1a8dbb68
 ---
+
 # Language Models Can Explain Visual Features via Steering
 
 **Conference**: CVPR 2026  
@@ -139,10 +144,10 @@ Explanation quality improves continuously with language model scale with no sign
 ## Related Papers
 
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](../../ACL2026/interpretability/compositional_steering_of_large_language_models_with_steering_tokens.md)
+- [\[CVPR 2026\] Align Once to Explain: Feature Alignment for Scalable B-cosification of Foundational Vision Transformers](align_once_to_explain_feature_alignment_for_scalable_b-cosification_of_foundatio.md)
 - [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
 - [\[CVPR 2026\] Draft and Refine with Visual Experts](draft_and_refine_with_visual_experts.md)
-- [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
-- [\[ICML 2026\] Interpretability Can Be Actionable](../../ICML2026/interpretability/interpretability_can_be_actionable.md)
+- [\[CVPR 2026\] Pixel2Phys: Distilling Governing Laws from Visual Dynamics](pixel2phys_distilling_governing_laws_from_visual_dynamics.md)
 
 </div>
 

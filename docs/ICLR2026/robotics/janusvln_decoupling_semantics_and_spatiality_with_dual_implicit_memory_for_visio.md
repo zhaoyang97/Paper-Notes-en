@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Vision-Language Navigation] Inspired by the human brain's left-hemisphere semantic understanding and right-hemisphere spatial cognition, this paper proposes JanusVLN—the first dual implicit neural memory framework designed for VLN. It models spatial-geometric and visual-semantic memories as fixed-size KV Caches, achieving efficient spatial reason
+  [ICLR2026][Robotics][Vision-Language Navigation] Inspired by the human brain's left-hemisphere semantic understanding and right-hemisphere spatial cognition, this paper proposes JanusVLN—the first dual implicit neural memory framework designed for VLN. It models spatial-geometric and visual-semantic memories as fixed-size KV Caches, achieving efficient spatial reasoning using only RGB video and reaching SOTA performance on the VLN-CE benchmark.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Vision-Language Navigation
-  - Dual Implicit Memory
-  - Spatial-Geometric Encoding
-  - KV Cache
-  - Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "Dual Implicit Memory"
+  - "Spatial-Geometric Encoding"
+  - "KV Cache"
+  - "Embodied AI"
 date: 2026-05-08
-content_hash: d69e645319b21c1f
+content_hash: 2059bcc69e28e556
 ---
+
 # JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation
 
 **Conference**: ICLR2026  
@@ -160,10 +161,10 @@ The KV caching method reduces inference overhead by 69%-90% while slightly impro
 ## Related Papers
 
 - [\[ICLR 2026\] Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation](ground_slow_move_fast_a_dual-system_foundation_model_for_generalizable_vision-la.md)
-- [\[ECCV 2024\] DISCO: Embodied Navigation and Interaction via Differentiable Scene Semantics and Dual-Level Control](../../ECCV2024/robotics/disco_embodied_navigation_and_interaction_via_differentiable_scene_semantics_and.md)
+- [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[CVPR 2026\] NavForesee: A Unified Vision-Language World Model for Hierarchical Planning and Dual-Horizon Navigation Prediction](../../CVPR2026/robotics/navforesee_a_unified_vision-language_world_model_for_hierarchical_planning_and_d.md)
-- [\[CVPR 2026\] Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation](../../CVPR2026/robotics/global_prior_meets_local_consistency_dual-memory_augmented_vision-language-actio.md)
-- [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
+- [\[ECCV 2024\] DISCO: Embodied Navigation and Interaction via Differentiable Scene Semantics and Dual-Level Control](../../ECCV2024/robotics/disco_embodied_navigation_and_interaction_via_differentiable_scene_semantics_and.md)
+- [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
 
 </div>
 

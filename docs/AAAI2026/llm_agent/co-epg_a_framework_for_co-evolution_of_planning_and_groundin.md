@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes Co-EPG, a framework that decouples a GUI Agent into separate Planning and Grounding models…
+  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes Co-EPG, a framework that decouples a GUI Agent into separate Planning and Grounding models, establishes a positive feedback loop via GRPO co-training and a Confidence-based Dynamic Reward Ensemble Mechanism (C-DREM), enabling both models to co-evolve through self-iteration. Using only benchmark datasets (no external data), Co-EPG achieves state-of-the-art results on Multimodal-Mind2Web (58.4%) and AndroidControl (83.1%).
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Self-Iterative Training"
   - "Reward Ensemble"
 date: 2026-05-08
-content_hash: 5fafca2fb760a5b8
+content_hash: c56b131f9864757a
 ---
 
 # Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents
@@ -195,10 +195,10 @@ Each round of iteration yields consistent gains; GRPO consistently outperforms p
 ## Related Papers
 
 - [\[ICML 2026\] SE-GA: Memory-Augmented Self-Evolution for GUI Agents](../../ICML2026/llm_agent/se-ga_memory-augmented_self-evolution_for_gui_agents.md)
+- [\[ICLR 2026\] K²-Agent: Co-Evolving Know-What and Know-How for Hierarchical Mobile Device Control](../../ICLR2026/llm_agent/k²-agent_co-evolving_know-what_and_know-how_for_hierarchical_mobile_device_contr.md)
 - [\[AAAI 2026\] AutoGLM: Autonomous Foundation Agents for GUIs](autoglm_autonomous_foundation_agents_for_guis.md)
 - [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](../../ACL2026/llm_agent/mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
 - [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](../../CVPR2026/llm_agent/towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
-- [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiffTrans: Differentiable Geometry-Materials Decomposition for Reconstructing Transparent Objects
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] DiffTrans targets transparent objects with complex topologies and internal absorption textures. It initializes geometry and environment light from multi-view images and masks, then jointly optimizes geometry, index of refraction (IoR), and absorption via a differentiable recursive mesh ray tracer, achieving superior ge
+  [ICLR2026][3D Vision][Transparent object reconstruction] DiffTrans targets transparent objects with complex topologies and internal absorption textures. It initializes geometry and environment light from multi-view images and masks, then jointly optimizes geometry, index of refraction (IoR), and absorption via a differentiable recursive mesh ray tracer, achieving superior geometric reconstruction and relighting performance in both synthetic and real-world scenes.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Transparent object reconstruction"
+  - "differentiable rendering"
+  - "refractive index estimation"
+  - "absorptive materials"
+  - "multi-view reconstruction"
 date: 2026-05-08
-content_hash: da04d06316d3c448
+content_hash: e4f35d014c90f5b6
 ---
+
 # DiffTrans: Differentiable Geometry-Materials Decomposition for Reconstructing Transparent Objects
 
 **Conference**: ICLR2026  
@@ -127,7 +133,7 @@ The study highlights the role of tone regularization in stabilizing color ratios
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

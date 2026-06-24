@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning
 description: >-
-  [CVPR 2026][Others][Paper Note] AdaPrior reinterprets Long-Tailed Continual Learning (LTCIL) as a "model-induced prior drift" problem. It uses EMA to online estimate the model's self-learned prior $P_m(y)$, followed by Bayesian alignment for debiasing in both training loss and inference post-processing. This single-stage, plug-and-play approach consi
+  [CVPR 2026][Self-Supervised Learning][Long-Tailed Class Incremental Learning (LTCIL)] AdaPrior reinterprets Long-Tailed Continual Learning (LTCIL) as a "model-induced prior drift" problem. It uses EMA to online estimate the model's self-learned prior $P_m(y)$, followed by Bayesian alignment for debiasing in both training loss and inference post-processing. This single-stage, plug-and-play approach consistently outperforms recent LTCIL baselines on CIFAR100-LT…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Long-Tailed Class Incremental Learning (LTCIL)"
+  - "Bayesian Prior Correction"
+  - "EMA Prior Estimation"
+  - "Logit Adjustment"
+  - "Model-Induced Prior"
 date: 2026-05-08
-content_hash: 0135ee4c56a5583b
+content_hash: b7497bff99ba3d8d
 ---
+
 # AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning
 
 **Conference**: CVPR 2026  
@@ -137,16 +143,16 @@ Comparison with other logit adjustment methods (Table 5):
 - Value: ⭐⭐⭐⭐ Practical, single-stage, and plug-and-play.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Confusion-Aware Spectral Regularizer for Long-Tailed Recognition](confusion-aware_spectral_regularizer_for_long-tailed_recognition.md)
-- [\[CVPR 2026\] Adaptive Bayesian Early-Exit Networks for Efficient Non-Transferable Learning](adaptive_bayesian_early-exit_networks_for_efficient_non-transferable_learning.md)
-- [\[CVPR 2026\] A Faster Path to Continual Learning](a_faster_path_to_continual_learning.md)
-- [\[CVPR 2026\] FEAT: Federated Geometry-Aware Correction for Exemplar Replay under Continual Dynamic Heterogeneity](feat_federated_geometry_aware_correction_for_exemplar_replay_under_continual_dynamic_heterogeneity.md)
-- [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)
+- [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](reframing_long-tailed_learning_via_loss_landscape_geometry.md)
+- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)
+- [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
+- [\[CVPR 2026\] CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning](cue_concept-aware_multi-label_expansion_to_mitigate_concept_confusion_in_long-ta.md)
+- [\[ICLR 2026\] SCAD: Super-Class-Aware Debiasing for Long-Tailed Semi-Supervised Learning](../../ICLR2026/self_supervised/scad_super-class-aware_debiasing_for_long-tailed_semi-supervised_learning.md)
 
 </div>
 

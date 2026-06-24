@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Token Distillation: Attention-Aware Input Embeddings for New Tokens
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] Ours proposes the Token Distillation method, which distills multi-subword interaction information encoded by Transformer layers into a single token embedding. This achieves high-quality initialization for new token embeddings without pre-training hypernetworks and outperforms existing methods.
+  [ICLR 2026][Model Compression][Vocabulary Expansion] Ours proposes the Token Distillation method, which distills multi-subword interaction information encoded by Transformer layers into a single token embedding. This achieves high-quality initialization for new token embeddings without pre-training hypernetworks and outperforms existing methods.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Vocabulary Expansion"
+  - "Token Embedding Initialization"
+  - "Knowledge Distillation"
+  - "Domain Adaptation"
+  - "Language Adaptation"
 date: 2026-05-08
-content_hash: 2d105cbc5bad9c66
+content_hash: 97ed30bbd287cf2b
 ---
+
 # Token Distillation: Attention-Aware Input Embeddings for New Tokens
 
 **Conference**: ICLR 2026  
@@ -156,7 +161,7 @@ The distillation objective only constrains the input-side hidden states. Because
 - [\[ICLR 2026\] Differentiable JPEG-based Input Perturbation for Knowledge Distillation Amplification via Conditional Mutual Information Maximization](differentiable_jpeg-based_input_perturbation_for_knowledge_distillation_amplific.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
 - [\[ICLR 2026\] Entropy-Monitored Kernelized Token Distillation for Audio-Visual Compression](entropy-monitored_kernelized_token_distillation_for_audio-visual_compression.md)
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
+- [\[ICLR 2026\] Reassessing Layer Pruning in LLMs: New Insights and Methods](reassessing_layer_pruning_in_llms_new_insights_and_methods.md)
 
 </div>
 

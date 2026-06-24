@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] POP is a training-free, plug-and-play method that performs element-wise fusion of language-guided attention maps from MLLMs (providing semantic and referential capabilities but remaining coarse) and bidirectional visual correspondences of self-supervised DINOv3 features (precise but ambiguous with multiple objects). Th
+  [CVPR 2026][Multimodal VLM][Part-level pointing] POP is a training-free, plug-and-play method that performs element-wise fusion of language-guided attention maps from MLLMs (providing semantic and referential capabilities but remaining coarse) and bidirectional visual correspondences of self-supervised DINOv3 features (precise but ambiguous with multiple objects). This allows MLLMs to achieve precise **part-level** (e.g., "laptop keyboard") rather than just instance-level poi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Part-level pointing"
+  - "training-free"
+  - "few-shot"
+  - "attention maps"
+  - "visual semantic correspondence"
 date: 2026-05-08
-content_hash: 97e5b51c840a5059
+content_hash: b975b9612cbad129
 ---
+
 # Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs
 
 **Conference**: CVPR 2026  
@@ -134,10 +140,10 @@ For **MLLMs without native pointing capabilities** (InternVL-3-8B, Kimi-VL-A3B),
 ## Related Papers
 
 - [\[CVPR 2026\] PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs](pas_a_training-free_stabilizer_for_temporal_encoding_in_video_llms.md)
-- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
 - [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
+- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
+- [\[CVPR 2026\] MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models](modix_a_training-free_multimodal_information-driven_positional_index_scaling_for.md)
 - [\[CVPR 2026\] Training-Only Heterogeneous Image-Patch-Text Graph Supervision for Advancing Few-Shot Learning Adapters](training-only_heterogeneous_image-patch-text_graph_supervision_for_advancing_few.md)
-- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
 
 </div>
 

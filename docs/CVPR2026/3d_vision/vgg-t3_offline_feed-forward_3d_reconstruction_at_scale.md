@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale
 description: >-
-  [CVPR 2026][3D Vision][Test-Time Training] VGG-T3 is proposed, which compresses the variable-length KV representation of global attention layers in VGGT into a fixed-size MLP via **Test-Time Training (TTT)**. This reduces the computational complexity of offline feed-forward 3D reconstruction from $O(n^2)$ to $O(n)$, enabling large-scale scene reconstruction wit
+  [CVPR 2026][3D Vision][3D Reconstruction] VGG-T3 is proposed, which compresses the variable-length KV representation of global attention layers in VGGT into a fixed-size MLP via **Test-Time Training (TTT)**. This reduces the computational complexity of offline feed-forward 3D reconstruction from $O(n^2)$ to $O(n)$, enabling large-scale scene reconstruction with thousands of images (1k images in 58 seconds).
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Test-Time Training
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Reconstruction"
+  - "Test-Time Training"
+  - "Linear Complexity"
+  - "KV Compression"
+  - "Visual Localization"
 date: 2026-05-08
-content_hash: 66375728444095f4
+content_hash: d4f041a1476cbd3c
 ---
+
 # VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale
 
 **Conference**: CVPR 2026  
@@ -158,9 +163,9 @@ The fast-weight network $T_\theta$ utilizes a SwiGLU MLP and a Muon optimizer. D
 
 - [\[CVPR 2026\] AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend](amb3r_accurate_feed-forward_metric-scale_3d_reconstruction_with_backend.md)
 - [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
-- [\[CVPR 2026\] Speed3R: Sparse Feed-forward 3D Reconstruction Models](speed3r_sparse_feed-forward_3d_reconstruction_models.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](any4d_unified_feed-forward_metric_4d_reconstruction.md)
 - [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
-- [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compress then Merge: From Multiple LoRAs into One Low-Rank Adapter
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The Compress-then-Merge (CtM) pipeline is proposed to learn a shared $r$-dimensional subspace and project each adapter into $r \times r$ coordinate matrices before merging multiple LoRAs. Merging is then executed in the low-dimensional space, architecturally ensuring the output is a rank-$r$ LoRA and avoiding the perfo
+  [ICML2026][Model Compression][LoRA Merging] The Compress-then-Merge (CtM) pipeline is proposed to learn a shared $r$-dimensional subspace and project each adapter into $r \times r$ coordinate matrices before merging multiple LoRAs. Merging is then executed in the low-dimensional space, architecturally ensuring the output is a rank-$r$ LoRA and avoiding the performance loss associated with truncated SVD in traditional Merge-then-Compress methods.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML2026"
+  - "Model Compression"
+  - "LoRA Merging"
+  - "Low-rank Constraint"
+  - "Shared Subspace"
+  - "Tucker Decomposition"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: caa387a3d1227e42
+content_hash: 5a1f7e5ba99f4ec5
 ---
+
 # Compress then Merge: From Multiple LoRAs into One Low-Rank Adapter
 
 **Conference**: ICML2026  

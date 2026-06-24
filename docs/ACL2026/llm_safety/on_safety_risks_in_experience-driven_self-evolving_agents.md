@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On Safety Risks in Experience-Driven Self-Evolving Agents
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper systematically investigates safety risks in experience-driven self-evolving agents, finding that accumulating experience even from harmless tasks leads to significant safety degradation (ASR increases by 13-49%), rooted in the execution-oriented nature of experience that reinforces action over refusal.
+  [ACL 2026 Findings][LLM Safety][Self-evolving Agents] This paper systematically investigates safety risks in experience-driven self-evolving agents, finding that accumulating experience even from harmless tasks leads to significant safety degradation (ASR increases by 13-49%), rooted in the execution-oriented nature of experience that reinforces action over refusal.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Self-evolving Agents"
+  - "Experience-driven"
+  - "Safety degradation"
+  - "Execution bias"
+  - "Safety-utility trade-off"
 date: 2026-05-08
-content_hash: 4c9fb2ebe13c0552
+content_hash: f6f69042504e92ab
 ---
+
 # On Safety Risks in Experience-Driven Self-Evolving Agents
 
 **Conference**: ACL 2026 Findings  
@@ -137,10 +143,10 @@ Human labeling of degradation causes reveals that Sensitive Execution and Standa
 ## Related Papers
 
 - [\[ACL 2026\] Why Agents Compromise Safety Under Pressure](why_agents_compromise_safety_under_pressure.md)
+- [\[ICLR 2026\] Searching for Privacy Risks in LLM Agents via Simulation](../../ICLR2026/llm_safety/searching_for_privacy_risks_in_llm_agents_via_simulation.md)
 - [\[ACL 2026\] A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](a_survey_on_the_safety_and_security_threats_of_computer-using_agents_jarvis_or_u.md)
 - [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
-- [\[ACL 2026\] From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models](from_passive_metric_to_active_signal_the_evolving_role_of_uncertainty_quantifica.md)
-- [\[ICLR 2026\] Self-Destructive Language Model](../../ICLR2026/llm_safety/self-destructive_language_model.md)
+- [\[ICLR 2026\] The Alignment Waltz: Jointly Training Agents to Collaborate for Safety](../../ICLR2026/llm_safety/the_alignment_waltz_jointly_training_agents_to_collaborate_for_safety.md)
 
 </div>
 

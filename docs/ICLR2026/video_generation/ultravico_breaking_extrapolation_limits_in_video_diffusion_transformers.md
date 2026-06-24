@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UltraViCo: Breaking Extrapolation Limits in Video Diffusion Transformers
 description: >-
-  [ICLR 2026][Video Generation][RoPE] This paper identifies that two failure modes—"periodic repetition" and "general quality degradation"—occurring in Video Diffusion Transformers during out-of-distribution length generation both stem from a single mechanism: **attention dissipation** (out-of-window tokens dilute the attention distribution learned within
+  [ICLR 2026][Video Generation][Video length extrapolation] This paper identifies that two failure modes—"periodic repetition" and "general quality degradation"—occurring in Video Diffusion Transformers during out-of-distribution length generation both stem from a single mechanism: **attention dissipation** (out-of-window tokens dilute the attention distribution learned within the training window). Based on this, it proposes UltraViCo, a training-free and plug-and-play method:…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - RoPE
-  - training-free
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video length extrapolation"
+  - "attention dissipation"
+  - "RoPE"
+  - "training-free"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: fbcc91b39a9b73f6
+content_hash: 04c8d8d11877d7f6
 ---
+
 # UltraViCo: Breaking Extrapolation Limits in Video Diffusion Transformers
 
 **Conference**: ICLR 2026  
@@ -146,10 +150,10 @@ For Wan2.1-1.3B (no repetition), all baselines collapsed to static videos (Dynam
 ## Related Papers
 
 - [\[ICML 2025\] RIFLEx: A Free Lunch for Length Extrapolation in Video Diffusion Transformers](../../ICML2025/video_generation/riflex_a_free_lunch_for_length_extrapolation_in_video_diffusion_transformers.md)
+- [\[ICLR 2026\] Syncphony: Audio-to-Video Generation with Synchronized Visual Dynamics using Diffusion Transformers](syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)
 - [\[ICLR 2026\] BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching](bwcache_accelerating_video_diffusion_transformers_through_block-wise_caching.md)
 - [\[CVPR 2025\] PatchVSR: Breaking Video Diffusion Resolution Limits with Patch-Wise Video Super-Resolution](../../CVPR2025/video_generation/patchvsr_breaking_video_diffusion_resolution_limits_with_patch-wise_video_super-.md)
 - [\[ICLR 2026\] FastVMT: Eliminating Redundancy in Video Motion Transfer](fastvmt_eliminating_redundancy_in_video_motion_transfer.md)
-- [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](../../CVPR2026/video_generation/vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
 
 </div>
 

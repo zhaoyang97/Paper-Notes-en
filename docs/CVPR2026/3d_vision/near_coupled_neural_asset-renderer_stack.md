@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NeAR: Coupled Neural Asset–Renderer Stack
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] NeAR proposes co-designing neural asset creation and neural rendering as a coupled stack. It utilizes an illumination-homogenized structured 3D latent (LH-SLAT) to eliminate baked lighting from input images, followed by a light-aware neural decoder to synthesize relightable 3D Gaussian fields in real-time. The method o
+  [CVPR 2026][3D Vision][Neural Rendering] NeAR proposes co-designing neural asset creation and neural rendering as a coupled stack. It utilizes an illumination-homogenized structured 3D latent (LH-SLAT) to eliminate baked lighting from input images, followed by a light-aware neural decoder to synthesize relightable 3D Gaussian fields in real-time. The method outperforms existing approaches across four tasks: forward rendering, reconstruction, relighting…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Neural Rendering"
+  - "Illumination Homogenization"
+  - "3D Gaussian Splatting"
+  - "Relightable"
+  - "Asset-Renderer Co-design"
 date: 2026-05-08
-content_hash: 77696bb10be5759c
+content_hash: db8df99afbf15e4f
 ---
+
 # NeAR: Coupled Neural Asset–Renderer Stack
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Training data: 87K 3D assets with PBR textures + 2K 4K-resolution HDR environmen
 
 ## Related Papers
 
+- [\[CVPR 2026\] Lighting-grounded Video Generation with Renderer-based Agent Reasoning](lighting-grounded_video_generation_with_renderer-based_agent_reasoning.md)
+- [\[CVPR 2026\] Spectrum from Defocus: Fast Spectral Imaging with Chromatic Focal Stack](spectrum_from_defocus_fast_spectral_imaging_with_chromatic_focal_stack.md)
+- [\[CVPR 2026\] Faithful Contouring: Near-Lossless 3D Voxel Representation Free from Iso-surface](faithful_contouring_near-lossless_3d_voxel_representation_free_from_iso-surface.md)
 - [\[CVPR 2026\] Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow](easy3e_feed-forward_3d_asset_editing_via_rectified_voxel_flow.md)
-- [\[CVPR 2026\] Evidential Neural Radiance Fields](evidential_neural_radiance_fields.md)
-- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
-- [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
-- [\[NeurIPS 2025\] PhysX-3D: Physical-Grounded 3D Asset Generation](../../NeurIPS2025/3d_vision/physx-3d_physical-grounded_3d_asset_generation.md)
+- [\[CVPR 2026\] NVGS: Neural Visibility for Occlusion Culling in 3D Gaussian Splatting](nvgs_neural_visibility_for_occlusion_culling_in_3d_gaussian_splatting.md)
 
 </div>
 

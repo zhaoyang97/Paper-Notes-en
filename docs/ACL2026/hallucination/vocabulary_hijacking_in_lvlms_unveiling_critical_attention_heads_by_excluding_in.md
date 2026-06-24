@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Vocabulary Hijacking in LVLMs: Unveiling Critical Attention Heads by Excluding Inert Tokens to Mitigate Hallucination
 description: >-
-  [ACL 2026][Hallucination Detection][Logit Lens] This paper discovers that certain invalid visual tokens in LVLMs consistently decode into a set of irrelevant words and hijack attention. Consequently, it proposes HABI to locate these tokens, NHAR to identify reliable visual heads, and HAVAE to enhance these heads during inference to mitigate hallucinations.
+  [ACL2026][Hallucination Detection][LVLM Hallucination] This paper discovers that certain invalid visual tokens in LVLMs consistently decode into a set of irrelevant words and hijack attention. Consequently, it proposes HABI to locate these tokens, NHAR to identify reliable visual heads, and HAVAE to enhance these heads during inference to mitigate hallucinations.
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Logit Lens
-  - Vocabulary Hijacking
+  - "ACL2026"
+  - "Hallucination Detection"
+  - "LVLM Hallucination"
+  - "Attention Head Interpretation"
+  - "Logit Lens"
+  - "Vocabulary Hijacking"
+  - "Training-Free Intervention"
 date: 2026-05-08
-content_hash: ec066198ef44fc0a
+content_hash: 14326af9c469dd76
 ---
+
 # Vocabulary Hijacking in LVLMs: Unveiling Critical Attention Heads by Excluding Inert Tokens to Mitigate Hallucination
 
 **Conference**: ACL2026  
@@ -142,8 +146,8 @@ The ablation study focuses on proving that heads cannot be selected based on tot
 - [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](../../CVPR2026/hallucination/same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
 - [\[AAAI 2026\] Causally-Grounded Dual-Path Attention Intervention for Object Hallucination Mitigation in LVLMs](../../AAAI2026/hallucination/causally-grounded_dual-path_attention_intervention_for_objec.md)
 - [\[ACL 2025\] Mixture of Decoding: An Attention-Inspired Adaptive Decoding Strategy to Mitigate Hallucination in Multimodal LLMs](../../ACL2025/hallucination/mixture_of_decoding_an_attention-inspired_adaptive_decoding_strategy_to_mitigate.md)
-- [\[ICML 2026\] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy](../../ICML2026/hallucination/finding_the_correct_visual_evidence_without_forgetting_mitigating_hallucination_.md)
 - [\[ACL 2026\] Aligning with Your Own Voice: Self-Corrected Preference Learning for Hallucination Mitigation in LVLMs](aligning_with_your_own_voice_self-corrected_preference_learning_for_hallucinatio.md)
+- [\[ICML 2026\] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy](../../ICML2026/hallucination/finding_the_correct_visual_evidence_without_forgetting_mitigating_hallucination_.md)
 
 </div>
 

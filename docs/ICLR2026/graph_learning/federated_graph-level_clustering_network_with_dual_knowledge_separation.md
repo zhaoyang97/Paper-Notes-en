@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Federated Graph-Level Clustering Network with Dual Knowledge Separation
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] FGCN-DKS decomposes each graph into a "cluster-oriented shared invariant subgraph" and a "client-private personalized subgraph." Only the pattern summaries of the invariant subgraphs are uploaded to the server, and personalized aggregation is performed by calculating inter-cluster affinity using graph kernels. This add
+  [ICLR 2026][Graph Learning][Federated Graph Clustering] FGCN-DKS decomposes each graph into a "cluster-oriented shared invariant subgraph" and a "client-private personalized subgraph." Only the pattern summaries of the invariant subgraphs are uploaded to the server, and personalized aggregation is performed by calculating inter-cluster affinity using graph kernels. This addresses the challenge of "consensus failure" in federated graph-level clustering caused by attempts to sh…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Federated Graph Clustering"
+  - "Invariant Graph Learning"
+  - "Subgraph Decoupling"
+  - "Personalized Aggregation"
+  - "Graph Kernels"
 date: 2026-05-08
-content_hash: 31b1a586582dd3e0
+content_hash: 80a050089339cc29
 ---
+
 # Federated Graph-Level Clustering Network with Dual Knowledge Separation
 
 **Conference**: ICLR 2026  
@@ -123,7 +129,7 @@ The paper validates the effectiveness of each module by removing components (num
 - [\[ICML 2026\] Anchor-guided Hypergraph Condensation with Dual-level Discrimination](../../ICML2026/graph_learning/anchor-guided_hypergraph_condensation_with_dual-level_discrimination.md)
 - [\[ICLR 2026\] Latent Geometry-Driven Network Automata for Complex Network Dismantling](latent_geometry-driven_network_automata_for_complex_network_dismantling.md)
 - [\[ICLR 2026\] Dual-Branch Representations with Dynamic Gated Fusion and Triple-Granularity Alignment for Deep Multi-View Clustering](dual-branch_representations_with_dynamic_gated_fusion_and_triple-granularity_ali.md)
-- [\[ICLR 2026\] Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion](low-rank_few-shot_node_classification_by_node-level_graph_diffusion.md)
+- [\[ICLR 2026\] A Graph Meta-Network for Learning on Kolmogorov–Arnold Networks](a_graph_meta-network_for_learning_on_kolmogorovarnold_networks.md)
 
 </div>
 

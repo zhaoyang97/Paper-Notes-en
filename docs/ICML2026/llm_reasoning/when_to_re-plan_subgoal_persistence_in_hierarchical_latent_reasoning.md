@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When to Re-Plan: Subgoal Persistence in Hierarchical Latent Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][HRM] This paper introduces manager-worker style persistent subgoals into Hierarchical Reasoning Models (HRM). It find that the key in latent reasoning is not simply injecting subgoals, but ensuring that subgoals persist for $P=3$ to $6$ low-level update steps. Rapid re-planning disrupts compositional structure, while excess
+  [ICML 2026][Reasoning][Hierarchical Reasoning] This paper introduces manager-worker style persistent subgoals into Hierarchical Reasoning Models (HRM). It find that the key in latent reasoning is not simply injecting subgoals, but ensuring that subgoals persist for $P=3$ to $6$ low-level update steps. Rapid re-planning disrupts compositional structure, while excessive alignment interferes with task learning.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - HRM
+  - "ICML 2026"
+  - "Reasoning"
+  - "Hierarchical Reasoning"
+  - "Latent Computation"
+  - "Subgoal Persistence"
+  - "HRM"
+  - "Planning Stability"
 date: 2026-05-08
-content_hash: f8ad184b72a94a07
+content_hash: 87ca43184164347c
 ---
+
 # When to Re-Plan: Subgoal Persistence in Hierarchical Latent Reasoning
 
 **Conference**: ICML 2026  
@@ -124,10 +129,17 @@ A key ablation in the paper addresses whether the performance drop when $\lambda
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
+- [\[ICLR 2026\] $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving](../../ICLR2026/llm_reasoning/textbfre2_unlocking_llm_reasoning_via_reinforcement_learning_with_re-solving.md)
+- [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](modeling_hierarchical_thinking_in_large_reasoning_models.md)
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](../../ICLR2026/llm_reasoning/adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
+- [\[ICML 2026\] The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary](the_deterministic_horizon_when_extended_reasoning_fails_and_tool_delegation_beco.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Dictionary Learning for Remote Sensing Image Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Dynamic Dictionary Learning] This paper proposes D2LS, a dynamic dictionary learning framework that iteratively updates category-aware semantic embeddings (the dictionary) via multi-stage altern…
+  [ICCV 2025][Segmentation][Dynamic Dictionary Learning] This paper proposes D2LS, a dynamic dictionary learning framework that iteratively updates category-aware semantic embeddings (the dictionary) via multi-stage alternating cross-attention, and incorporates contrastive constraints to enhance inter-class separability. D2LS surpasses the state of the art on both coarse-grained and fine-grained remote sensing image segmentation benchmarks.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Attention"
   - "Contrastive Learning"
 date: 2026-05-08
-content_hash: a6f5859743332122
+content_hash: 91aa2fca3833a7a2
 ---
 
 # Dynamic Dictionary Learning for Remote Sensing Image Segmentation
@@ -136,10 +136,10 @@ D2LS achieves top results on two online test benchmarks (LoveDA and UAVid), demo
 ## Related Papers
 
 - [\[ICCV 2025\] SCORE: Scene Context Matters in Open-Vocabulary Remote Sensing Instance Segmentation](score_scene_context_matters_in_openvocabulary_remote_sensing.md)
-- [\[AAAI 2026\] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation](../../AAAI2026/segmentation/rs2-sam2_customized_sam2_for_referring_remote_sensing_image_segmentation.md)
 - [\[ICCV 2025\] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup](dictas_a_framework_for_class-generalizable_few-shot_anomaly_segmentation_via_dic.md)
-- [\[ICCV 2025\] Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation](learn2synth_learning_optimal_data_synthesis_using_hypergradients_for_brain_image.md)
-- [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
+- [\[CVPR 2025\] RDNet: Region Proportion-Aware Dynamic Adaptive Salient Object Detection Network in Optical Remote Sensing Images](../../CVPR2025/segmentation/rdnet_region_proportion-aware_dynamic_adaptive_salient_object_detection_network_.md)
+- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](../../CVPR2026/segmentation/hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
+- [\[AAAI 2026\] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation](../../AAAI2026/segmentation/rs2-sam2_customized_sam2_for_referring_remote_sensing_image_segmentation.md)
 
 </div>
 

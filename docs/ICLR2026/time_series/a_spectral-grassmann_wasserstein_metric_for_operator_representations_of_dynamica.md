@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Spectral-Grassmann Wasserstein metric for operator representations of dynamical systems
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper represents the Koopman / transfer operators of dynamical systems as discrete distributions consisting of "eigenvalues + spectral projection subspaces." It defines the Spectral-Grassmann Optimal Transport (SGOT) distance on spectral spaces and Grassmann geometry, enabling dynamical systems under different sam
+  [ICLR2026][Time Series][Koopman Operator] This paper represents the Koopman / transfer operators of dynamical systems as discrete distributions consisting of "eigenvalues + spectral projection subspaces." It defines the Spectral-Grassmann Optimal Transport (SGOT) distance on spectral spaces and Grassmann geometry, enabling dynamical systems under different sampling frequencies to be compared, classified, and interpolated via Fréchet barycenters.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Koopman Operator"
+  - "Dynamical System Metric"
+  - "Optimal Transport"
+  - "Grassmann Manifold"
+  - "Spectral Decomposition"
 date: 2026-05-08
-content_hash: ffa7ce0915755132
+content_hash: c563cddf0bece71d
 ---
+
 # A Spectral-Grassmann Wasserstein metric for operator representations of dynamical systems
 
 **Conference**: ICLR2026  
@@ -167,13 +173,14 @@ The paper compares SGOT against its constituent parts: SOT (eigenvalues only) an
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Mixtures of Linear Dynamical Systems via Hybrid Tensor-EM Method](learning_mixtures_of_linear_dynamical_systems_via_hybrid_tensor-em_method.md)
-- [\[ICML 2026\] Self-Supervised Dynamical System Representations for Physiological Time-Series](../../ICML2026/time_series/self-supervised_dynamical_system_representations_for_physiological_time-series.md)
 - [\[AAAI 2026\] Sonnet: Spectral Operator Neural Network for Multivariable Time Series Forecasting](../../AAAI2026/time_series/sonnet_spectral_operator_neural_network_for_multivariable_time_series_forecastin.md)
+- [\[ICML 2026\] Self-Supervised Dynamical System Representations for Physiological Time-Series](../../ICML2026/time_series/self-supervised_dynamical_system_representations_for_physiological_time-series.md)
 - [\[ICLR 2026\] Detection of Unknown Unknowns in Autonomous Systems](detection_of_unknown_unknowns_in_autonomous_systems.md)
 - [\[ICLR 2026\] DistDF: Time-series Forecasting Needs Joint-distribution Wasserstein Alignment](distdf_time-series_forecasting_needs_joint-distribution_wasserstein_alignment.md)
 

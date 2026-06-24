@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Bayes Adaptive MDP] This work introduces Bayes Adaptive MDP (BAMDP) into offline model-based RL for the first time, proposing Continuous BAMCP to solve Bayesian planning in continuous state/action spaces. By combining pessimistic reward penalties with search-based policy iteration (the "RL + Search" paradigm), it significantly outperforms
+  [ICLR 2026][Reinforcement Learning][Offline RL] This work introduces Bayes Adaptive MDP (BAMDP) into offline model-based RL for the first time, proposing Continuous BAMCP to solve Bayesian planning in continuous state/action spaces. By combining pessimistic reward penalties with search-based policy iteration (the "RL + Search" paradigm), it significantly outperforms 19 baselines on 12 D4RL tasks (Cohen's $d > 1.8$) and is successfully applied to nuclear fusion tokamak control…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Bayes Adaptive MDP
-  - MCTS
-  - deep ensemble
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Model-based RL"
+  - "Bayes Adaptive MDP"
+  - "MCTS"
+  - "Uncertainty Quantification"
+  - "Deep Ensemble"
 date: 2026-05-08
-content_hash: 1d8771d1d1356fbd
+content_hash: 6e172ab6f7208bcd
 ---
+
 # BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL
 
 **Conference**: ICLR 2026  
@@ -152,11 +156,11 @@ Successful validation on highly stochastic real physical systems demonstrates th
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
 - [\[ICML 2026\] Reinforced Sequential Monte Carlo for Amortised Sampling](../../ICML2026/reinforcement_learning/reinforced_sequential_monte_carlo_for_amortised_sampling.md)
-- [\[ICLR 2026\] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL](gas_enhancing_reward-cost_balance_of_generative_model-assisted_offline_safe_rl.md)
 - [\[ICLR 2026\] Offline Reinforcement Learning with Adaptive Feature Fusion](offline_reinforcement_learning_with_adaptive_feature_fusion.md)
-- [\[NeurIPS 2025\] Sequential Monte Carlo for Policy Optimization in Continuous POMDPs](../../NeurIPS2025/reinforcement_learning/sequential_monte_carlo_for_policy_optimization_in_continuous_pomdps.md)
+- [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
 
 </div>
 

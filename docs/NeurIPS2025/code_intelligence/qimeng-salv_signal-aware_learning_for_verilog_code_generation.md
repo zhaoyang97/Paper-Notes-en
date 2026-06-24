@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation
 description: >-
-  [NeurIPS 2025][Code Intelligence][Verilog code generation] This paper proposes QiMeng-SALV, a signal-aware learning method that extracts functionally correct signal-level code snippets from partially incorrect Verilog mo…
+  [NeurIPS 2025][Code Intelligence][Verilog code generation] This paper proposes QiMeng-SALV, a signal-aware learning method that extracts functionally correct signal-level code snippets from partially incorrect Verilog modules as reward signals for DPO training, elevating the optimization granularity from module level to signal level and achieving SOTA on VerilogEval and RTLLM.
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "AST"
   - "reinforcement learning"
 date: 2026-05-08
-content_hash: a3be034b39daf8f7
+content_hash: a032e61bf6141426
 ---
 
 # QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation
@@ -136,9 +136,9 @@ $$\mathcal{L}(\pi_\theta;\pi_{\text{ref}}) = -\mathbb{E}\left[\log\sigma\left(\b
 
 - [\[ACL 2026\] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization](../../ACL2026/code_intelligence/qimeng-prepair_precise_code_repair_via_edit-aware_reward_optimization.md)
 - [\[ACL 2026\] ChipSeek: Optimizing Verilog Generation via EDA-Integrated Reinforcement Learning](../../ACL2026/code_intelligence/chipseek_optimizing_verilog_generation_via_eda-integrated_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](co-evolving_llm_coder_and_unit_tester_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Embedding Alignment in Code Generation for Audio](embedding_alignment_in_code_generation_for_audio.md)
-- [\[NeurIPS 2025\] MaintainCoder: Maintainable Code Generation Under Dynamic Requirements](maintaincoder_maintainable_code_generation_under_dynamic_requirements.md)
+- [\[ACL 2025\] DynaCode: A Dynamic Complexity-Aware Code Benchmark for Evaluating Large Language Models in Code Generation](../../ACL2025/code_intelligence/dynacode_a_dynamic_complexity-aware_code_benchmark_for_evaluating_large_language.md)
+- [\[NeurIPS 2025\] Learning to Solve Complex Problems via Dataset Decomposition](learning_to_solve_complex_problems_via_dataset_decomposition.md)
 
 </div>
 

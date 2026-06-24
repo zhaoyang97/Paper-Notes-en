@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Flatter Tokens are More Valuable for Speculative Draft Model Training
 description: >-
-  [ICLR 2026][LLM Efficiency][Speculative Decoding] This paper discovers from a data-centric perspective that during speculative decoding draft model training, tokens with "flatter" (closer to uniform) target model prediction distributions are more valuable. Based on this, it proposes a target-model-only, offline-calculable flatness metric and the SFDD data distillation
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] This paper discovers from a data-centric perspective that during speculative decoding draft model training, tokens with "flatter" (closer to uniform) target model prediction distributions are more valuable. Based on this, it proposes a target-model-only, offline-calculable flatness metric and the SFDD data distillation method, achieving over 2× training acceleration with 50% data while incurring less than a 4% loss in inferenc…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Speculative Decoding
-  - Draft Model
-  - Knowledge Distillation
-  - Data Selection
-  - Flatness
-  - EAGLE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Draft Model"
+  - "Knowledge Distillation"
+  - "Data Selection"
+  - "Flatness"
+  - "EAGLE"
 date: 2026-05-08
-content_hash: 79e292cd0cb37a70
+content_hash: f768b4d39f60e6ab
 ---
+
 # Flatter Tokens are More Valuable for Speculative Draft Model Training
 
 **Conference**: ICLR 2026  
@@ -127,10 +128,10 @@ At a 70% retain ratio, SFDD's speedup nearly matches "No Filter" and even surpas
 ## Related Papers
 
 - [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
 - [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
 - [\[ICLR 2026\] Global Resolution: Optimal Multi-Draft Speculative Sampling via Convex Optimization](global_resolution_optimal_multi-draft_speculative_sampling_via_convex_optimizati.md)
-- [\[ACL 2025\] FastDraft: How to Train Your Draft](../../ACL2025/llm_efficiency/fastdraft_how_to_train_your_draft.md)
-- [\[ICLR 2026\] Unlocking Full Efficiency of Token Filtering in Large Language Model Training](unlocking_full_efficiency_of_token_filtering_in_large_language_model_training.md)
 
 </div>
 

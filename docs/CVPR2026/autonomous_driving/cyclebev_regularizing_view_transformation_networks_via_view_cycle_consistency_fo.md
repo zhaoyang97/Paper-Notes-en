@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes the CycleBEV regularization framework: an Inverse View Transformation (IVT) network is introduced during training to map BEV segmentation maps back to Perspective View (PV) segmentation maps. The existing BEV semantic segmentation models are enhanced through cycle consistency loss, height-aware geometric
+  [CVPR2026][Autonomous Driving][BEV Semantic Segmentation] Ours proposes the CycleBEV regularization framework: an Inverse View Transformation (IVT) network is introduced during training to map BEV segmentation maps back to Perspective View (PV) segmentation maps. The existing BEV semantic segmentation models are enhanced through cycle consistency loss, height-aware geometric regularization, and cross-view latent space alignment, with zero additional overhead during inference.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "BEV Semantic Segmentation"
+  - "View Transformation"
+  - "Cycle Consistency"
+  - "Inverse View Transformation"
+  - "Regularization"
 date: 2026-05-08
-content_hash: 091059e4e96967f3
+content_hash: eaf79c789d2741f4
 ---
+
 # CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation
 
 **Conference**: CVPR2026  
@@ -155,9 +161,9 @@ Compared to BEV Auto-Encoder supervision, the multi-resolution BEV features prov
 
 - [\[CVPR 2026\] BEV-CAR: Enhancing Monocular Bird's Eye View Segmentation with Context-Aware Rasterization](bev-car_enhancing_monocular_birds_eye_view_segmentation_with_context-aware_raste.md)
 - [\[CVPR 2026\] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation](vird_view-invariant_representation_through_dual-axis_transformation_for_cross-vi.md)
+- [\[ICLR 2026\] Bird's-eye-view Informed Reasoning Driver (BIRDriver)](../../ICLR2026/autonomous_driving/birds-eye-view_informed_reasoning_driver.md)
 - [\[CVPR 2026\] Spe-BEVHead: Rethinking the Detection Head Design for Bird's-Eye-View Object Detection](spe-bevhead_rethinking_the_detection_head_design_for_birds-eye-view_object_detec.md)
-- [\[CVPR 2026\] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images](bev-sld_self-supervised_scene_landmark_detection_for_global_localization_with_li.md)
-- [\[CVPR 2026\] SToRe3D: Sparse Token Relevance in ViTs for Efficient Multi-View 3D Object Detection](store3d_sparse_token_relevance_in_vits_for_efficient_multi-view_3d_object_detect.md)
+- [\[ICLR 2026\] ARINBEV: Bird's-Eye View Layout Estimation with Conditional Autoregressive Model](../../ICLR2026/autonomous_driving/arinbev_birds-eye_view_layout_estimation_with_conditional_autoregressive_model.md)
 
 </div>
 

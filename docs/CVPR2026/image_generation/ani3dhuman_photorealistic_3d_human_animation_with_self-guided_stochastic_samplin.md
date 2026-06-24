@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The Ani3DHuman framework is proposed, combining kinematic-driven mesh animation with video diffusion priors. Through Self-guided Stochastic Sampling, low-quality rigid renderings are restored into high-fidelity videos, achieving realistic modeling of non-rigid clothing dynamics.
+  [CVPR2026][Image Generation][3D Human Animation] The Ani3DHuman framework is proposed, combining kinematic-driven mesh animation with video diffusion priors. Through Self-guided Stochastic Sampling, low-quality rigid renderings are restored into high-fidelity videos, achieving realistic modeling of non-rigid clothing dynamics.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR2026"
+  - "Image Generation"
+  - "3D Human Animation"
+  - "Video Diffusion Prior"
+  - "Stochastic Sampling"
+  - "Non-rigid Motion"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: 5d4d506b4dd8d13a
+content_hash: 5349afa6765fca4b
 ---
+
 # Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling
 
 **Conference**: CVPR2026  
@@ -147,10 +153,10 @@ Non-rigid physical plausibility leads at 61.8%, with an overall preference of 54
 ## Related Papers
 
 - [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
-- [\[CVPR 2026\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](interedit_navigating_textguided_multihuman_3d_moti.md)
-- [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](../../ICLR2026/image_generation/stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
 - [\[CVPR 2026\] BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation](bimotion_b-spline_motion_for_text-guided_dynamic_3d_character_generation.md)
 - [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](vinedresser3d_agentic_text-guided_3d_editing.md)
+- [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](../../ICLR2026/image_generation/stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
+- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
 
 </div>
 

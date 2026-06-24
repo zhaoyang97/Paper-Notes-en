@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models
 description: >-
-  [CVPR 2026][AI Safety][Vision-Language-Action] Targeting flow-matching-based VLA robotics policies such as π0, this paper proposes FlowHijack, the first backdoor attack directed at "vector field dynamics." By utilizing semantic context triggers, hijacking the vector field only during the early generation stage (small $\tau$), and employing a dynamics mimicry regula
+  [CVPR 2026][AI Safety][Backdoor Attack] Targeting flow-matching-based VLA robotics policies such as π0, this paper proposes FlowHijack, the first backdoor attack directed at "vector field dynamics." By utilizing semantic context triggers, hijacking the vector field only during the early generation stage (small $\tau$), and employing a dynamics mimicry regularizer, the attack achieves an Attack Success Rate (ASR) up to 100% while maintaining the original mission success rate.…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Vision-Language-Action
-  - Flow Matching
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Backdoor Attack"
+  - "Vision-Language-Action"
+  - "Flow Matching"
+  - "Vector Field Dynamics"
+  - "Embodied AI Safety"
 date: 2026-05-08
-content_hash: 4570476f29896146
+content_hash: 2e7fae429888dfae
 ---
+
 # FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -156,10 +160,10 @@ Key comparison: Both methods succeed with conspicuous pixel triggers, but when s
 ## Related Papers
 
 - [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
+- [\[CVPR 2026\] AdvFM: Lookahead Flow-Matching Velocity-Field Attacks for Imperceptible and Transferable Adversarial Examples](advfm_lookahead_flow-matching_velocity-field_attacks_for_imperceptible_and_trans.md)
 - [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 - [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
 - [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
-- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SVG-Head: Hybrid Surface-Volumetric Gaussians for High-Fidelity Head Reconstruction and Real-Time Editing
 description: >-
-  [ICCV 2025][3D Vision][head reconstruction] SVG-Head is proposed as a hybrid representation combining surface Gaussians (with explicit texture maps) and volumetric Gaussians (for supplementary modeling of non-Lambertian…
+  [ICCV 2025][3D Vision][head reconstruction] SVG-Head is proposed as a hybrid representation combining surface Gaussians (with explicit texture maps) and volumetric Gaussians (for supplementary modeling of non-Lambertian regions), achieving, for the first time, real-time appearance editing of high-fidelity Gaussian head avatars.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "FLAME mesh"
   - "surface-volumetric hybrid"
 date: 2026-05-08
-content_hash: cea79300d780c643
+content_hash: db9326c93a12c921
 ---
 
 # SVG-Head: Hybrid Surface-Volumetric Gaussians for High-Fidelity Head Reconstruction and Real-Time Editing
@@ -133,10 +133,10 @@ SVG-Head achieves the best metrics among editable methods and is on par with the
 ## Related Papers
 
 - [\[ICCV 2025\] SHeaP: Self-Supervised Head Geometry Predictor Learned via 2D Gaussians](sheap_self-supervised_head_geometry_predictor_learned_via_2d_gaussians.md)
-- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](../../CVPR2026/3d_vision/feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[ICCV 2025\] RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians](rayletdf_raylet_distance_fields_for_generalizable_3d_surface_reconstruction_from.md)
 - [\[ICCV 2025\] HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity](hineus_high-fidelity_neural_surface_mitigating_low-texture_and_reflective_ambigu.md)
-- [\[ICCV 2025\] Identity Preserving 3D Head Stylization with Multiview Score Distillation](identity_preserving_3d_head_stylization_with_multiview_score_distillation.md)
+- [\[CVPR 2025\] HRAvatar: High-Quality and Relightable Gaussian Head Avatar](../../CVPR2025/3d_vision/hravatar_high-quality_and_relightable_gaussian_head_avatar.md)
+- [\[CVPR 2026\] PercHead: Perceptual Head Model for Single-Image 3D Head Reconstruction & Editing](../../CVPR2026/3d_vision/perchead_perceptual_head_model_for_single-image_3d_head_reconstruction_editing.md)
+- [\[ICCV 2025\] RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians](rayletdf_raylet_distance_fields_for_generalizable_3d_surface_reconstruction_from.md)
 
 </div>
 

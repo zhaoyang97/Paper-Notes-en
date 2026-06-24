@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fine-Tuning Impairs the Balancedness of Foundation Models in Long-tailed Personalized Federated Learning
 description: >-
-  [CVPR 2026][AI Safety][CLIP] This paper empirically reveals that fine-tuning CLIP in long-tailed federated scenarios destroys its inherent class balance, even falling below zero-shot performance. It proposes FedPuReL: using zero-shot predictions to "purify" local gradients into directions that preserve balance for a global model, and reframing per
+  [CVPR 2026][Federated Learning][Personalized Federated Learning] This paper empirically reveals that fine-tuning CLIP in long-tailed federated scenarios destroys its inherent class balance, even falling below zero-shot performance. It proposes FedPuReL: using zero-shot predictions to "purify" local gradients into directions that preserve balance for a global model, and reframing personalization as "residual correction" atop a frozen global model. FedPuReL outperforms existing…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - CLIP
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Personalized Federated Learning"
+  - "Long-tailed Distribution"
+  - "CLIP"
+  - "Gradient Purification"
+  - "Residual Learning"
 date: 2026-05-08
-content_hash: 44faf81d1c644414
+content_hash: 97b19bdafe059d2f
 ---
+
 # Fine-Tuning Impairs the Balancedness of Foundation Models in Long-tailed Personalized Federated Learning
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ TKL outperforms standard KL in both accuracy and balancedness, proving "temperat
 
 ## Related Papers
 
-- [\[CVPR 2026\] FedCART: Tackling Long-Tailed Distributions in Federated Adversarial Training via Classifier Refinement](fedcart_tackling_long-tailed_distributions_in_federated_adversarial_training_via.md)
-- [\[CVPR 2026\] Immunizing Models Against Harmful Long-Horizon Fine-Tuning via Contractive Optimization Dynamics](immunizing_models_against_harmful_long-horizon_fine-tuning_via_contractive_optim.md)
+- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
 - [\[CVPR 2026\] Taming Noise-Induced Prototype Degradation for Privacy-Preserving Personalized Federated Fine-Tuning](taming_noise-induced_prototype_degradation_for_privacy-preserving_personalized_f.md)
-- [\[CVPR 2026\] SubFLOT: Submodel Extraction for Efficient and Personalized Federated Learning via Optimal Transport](subflot_submodel_extraction_for_efficient_and_personalized_federated_learning_vi.md)
-- [\[ICML 2025\] Rethinking the Bias of Foundation Model under Long-tailed Distribution](../../ICML2025/ai_safety/rethinking_the_bias_of_foundation_model_under_long-tailed_distribution.md)
+- [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
+- [\[CVPR 2026\] FedARA: Resource-adaptive Low-rank Personalized Federated Learning via Anchor-driven Representation Alignment on Heterogeneous Edge Devices](fedara_resource-adaptive_low-rank_personalized_federated_learning_via_anchor-dri.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
 
 </div>
 

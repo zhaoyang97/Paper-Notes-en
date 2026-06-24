@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Learnable Sparsity for Vision Generative Models
 description: >-
-  [ICLR 2026][Model Compression][Diffusion Model] EcoDiff utilizes an end-to-end differentiable masking objective spanning the **entire denoising trajectory** to perform structured pruning on diffusion and flow matching models. Combined with "Timestep Gradient Checkpointing," it reduces memory consumption from $O(T)$ to $O(1)$, enabling the pruning of 20% of parameter
+  [ICLR 2026][Model Compression][Structured Pruning] EcoDiff utilizes an end-to-end differentiable masking objective spanning the **entire denoising trajectory** to perform structured pruning on diffusion and flow matching models. Combined with "Timestep Gradient Checkpointing," it reduces memory consumption from $O(T)$ to $O(1)$, enabling the pruning of 20% of parameters in SDXL/FLUX with minimal quality loss using only 100 samples and 10 A100 GPU hours.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Diffusion Model
-  - Flow Matching
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Structured Pruning"
+  - "Differentiable Mask"
+  - "Diffusion Model"
+  - "Flow Matching"
+  - "End-to-End Pruning"
+  - "Gradient Checkpointing"
 date: 2026-05-08
-content_hash: 192dcef48da462e8
+content_hash: c04b79f45678aee0
 ---
+
 # Learnable Sparsity for Vision Generative Models
 
 **Conference**: ICLR 2026  

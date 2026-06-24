@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PVChat: Personalized Video Chat with One-Shot Learning
 description: >-
-  [ICCV 2025][Medical Imaging][personalized video LLM] This paper proposes PVChat, the first video large language model supporting personalized subject learning from a single reference video. Through a ReLU-routed Mixture-…
+  [ICCV 2025][Medical Imaging][personalized video LLM] This paper proposes PVChat, the first video large language model supporting personalized subject learning from a single reference video. Through a ReLU-routed Mixture-of-Heads (ReMoH) attention mechanism, a systematic data augmentation pipeline, and a progressive image-to-video training strategy, PVChat achieves identity-aware video question answering and surpasses existing state-of-the-art ViLLMs across diverse scenarios i…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "video question answering"
   - "identity-aware"
 date: 2026-05-08
-content_hash: 33d898047103adc4
+content_hash: d128a8f1d93f1f8d
 ---
 
 # PVChat: Personalized Video Chat with One-Shot Learning
@@ -151,11 +151,11 @@ Accuracy improves from 0.470 to 0.901 (+91.7%), BLEU from 0.082 to 0.562 (+585%)
 
 ## Related Papers
 
-- [\[ICCV 2025\] UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation](ukbob_one_billion_mri_labeled_masks_for_generalizable_3d_medical_image_segmentat.md)
 - [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
+- [\[ICCV 2025\] UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation](ukbob_one_billion_mri_labeled_masks_for_generalizable_3d_medical_image_segmentat.md)
+- [\[CVPR 2026\] Beyond the Static-World: Lifelong Learning for All-in-One Medical Image Restoration](../../CVPR2026/medical_imaging/beyond_the_static-world_lifelong_learning_for_all-in-one_medical_image_restorati.md)
+- [\[CVPR 2025\] EchoONE: Segmenting Multiple Echocardiography Planes in One Model](../../CVPR2025/medical_imaging/echoone_segmenting_multiple_echocardiography_planes_in_one_model.md)
 - [\[NeurIPS 2025\] A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking](../../NeurIPS2025/medical_imaging/a_unified_solution_to_video_fusion_from_multi-frame_learning_to_benchmarking.md)
-- [\[ICCV 2025\] SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications](scivid_cross-domain_evaluation_of_video_models_in_scientific_applications.md)
-- [\[AAAI 2026\] MPA: Multimodal Prototype Augmentation for Few-Shot Learning](../../AAAI2026/medical_imaging/mpa_multimodal_prototype_augmentation_for_few-shot_learning.md)
 
 </div>
 

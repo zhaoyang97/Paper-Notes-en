@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The authors propose MoVieS, a feed-forward 4D dynamic scene reconstruction framework. By utilizing a **Dynamic Splatter Pixel** representation to unify appearance, geometry, and motion modeling, it achieves 4D reconstruction from monocular video in approximately 1 second. It supports multiple tasks including novel view
+  [CVPR 2026][3D Vision][Dynamic View Synthesis] The authors propose MoVieS, a feed-forward 4D dynamic scene reconstruction framework. By utilizing a **Dynamic Splatter Pixel** representation to unify appearance, geometry, and motion modeling, it achieves 4D reconstruction from monocular video in approximately 1 second. It supports multiple tasks including novel view synthesis, 3D point tracking, scene flow estimation, and moving object segmentation.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic View Synthesis"
+  - "4D Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Point Tracking"
+  - "Feed-forward Reconstruction"
 date: 2026-05-08
-content_hash: 6f0ac04b0a1f5e7a
+content_hash: 8dd7332def7e005a
 ---
+
 # MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second
 
 **Conference**: CVPR 2026  
@@ -175,11 +181,11 @@ The total loss is a weighted combination: $\mathcal{L} = \lambda_d \mathcal{L}_{
 
 ## Related Papers
 
+- [\[CVPR 2026\] Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis](motion_3-to-4_3d_motion_reconstruction_for_4d_synthesis.md)
+- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
 - [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
-- [\[CVPR 2026\] Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](efficiently_reconstructing_dynamic_scenes_one_d4rt_at_a_time.md)
-- [\[CVPR 2026\] Inferring Compositional 4D Scenes without Ever Seeing One](inferring_compositional_4d_scenes_without_ever_seeing_one.md)
-- [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
-- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
+- [\[CVPR 2026\] ReFlow: Self-correction Motion Learning for Dynamic Scene Reconstruction](reflow_self-correction_motion_learning_for_dynamic_scene_reconstruction.md)
+- [\[ICLR 2026\] Sharp Monocular View Synthesis in Less Than a Second](../../ICLR2026/3d_vision/sharp_monocular_view_synthesis_in_less_than_a_second.md)
 
 </div>
 

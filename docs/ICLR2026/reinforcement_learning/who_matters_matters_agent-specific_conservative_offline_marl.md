@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Who Matters Matters: Agent-Specific Conservative Offline MARL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Addressing the "one-size-fits-all" conservatism applied to all agents in offline MARL, this paper proposes OMCDA: it decouples the Q-function into "reward" and "policy divergence" components, then dynamically allocates conservatism to each agent based on its influence on system returns. This allows high-influence agent
+  [ICLR 2026][Reinforcement Learning][Offline MARL] Addressing the "one-size-fits-all" conservatism applied to all agents in offline MARL, this paper proposes OMCDA: it decouples the Q-function into "reward" and "policy divergence" components, then dynamically allocates conservatism to each agent based on its influence on system returns. This allows high-influence agents to deviate more from the behavior policy while keeping low-influence agents cautious…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline MARL"
+  - "Conservatism Allocation"
+  - "Value Decomposition"
+  - "Heterogeneous Agents"
+  - "Credit Assignment"
 date: 2026-05-08
-content_hash: ec6b1f92e5d7a5cc
+content_hash: 566f714a3db01990
 ---
+
 # Who Matters Matters: Agent-Specific Conservative Offline MARL
 
 **Conference**: ICLR 2026  
@@ -134,7 +140,7 @@ Three sets of ablations on HalfCheetah and 6h_vs_8z verify the specific contribu
 - [\[ICLR 2026\] Learning What Matters Now: Dynamic Preference Inference under Contextual Shifts](learning_what_matters_now_dynamic_preference_inference_under_contextual_shifts.md)
 - [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
 - [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
-- [\[ICLR 2026\] Triple-BERT：在网约车派单上我们真的需要 MARL 吗？](triple-bert_do_we_really_need_marl_for_order_dispatch_on_ride-sharing_platforms.md)
+- [\[ICLR 2026\] Buffer Matters: Unleashing the Power of Off-Policy Reinforcement Learning in Large Language Model Reasoning](buffer_matters_unleashing_the_power_of_off-policy_reinforcement_learning_in_larg.md)
 
 </div>
 

@@ -1,19 +1,20 @@
 ---
 title: >-
-  [Paper Note] ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space
+  [Paper Note] $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space
 description: >-
-  [ICLR 2026][LLM Reasoning][test-time scaling] $\nabla$-Reasoner is proposed to upgrade inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By using Differentiable Text Optimization (DTO) on token logits, it iteratively improves decoding strategies by combining reward gradients with LLM likelihood. It achieves 10-40% a
+  [ICLR 2026][Reasoning][test-time scaling] $\nabla$-Reasoner is proposed to upgrade inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By using Differentiable Text Optimization (DTO) on token logits, it iteratively improves decoding strategies by combining reward gradients with LLM likelihood. It achieves 10-40% accuracy improvements on mathematical reasoning tasks while reducing model calls by 10-40%.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - test-time scaling
-  - gradient-based optimization
-  - differentiable optimization
-  - reward model
-  - inference-time reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "test-time scaling"
+  - "gradient-based optimization"
+  - "differentiable optimization"
+  - "reward model"
+  - "inference-time reasoning"
 date: 2026-05-08
-content_hash: 1da9772a826643f5
+content_hash: 66a55d21c27292e7
 ---
+
 # $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space
 
 **Conference**: ICLR 2026  
@@ -132,11 +133,11 @@ This is a training-free inference-time method. The DTO optimization target is $\
 
 ## Related Papers
 
-- [\[ICLR 2026\] On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning](on_the_design_of_kl-regularized_policy_gradient_algorithms_for_llm_reasoning.md)
-- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
 - [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
+- [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
+- [\[ICLR 2026\] On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning](on_the_design_of_kl-regularized_policy_gradient_algorithms_for_llm_reasoning.md)
 - [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](../../ICML2026/llm_reasoning/beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
+- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](../../ACL2026/llm_reasoning/parallel_test-time_scaling_for_latent_reasoning_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Inference-Time Conformal Reasoning with Valid Factuality Control for Large Language Models
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] ITCR transforms conformal prediction from a post-hoc "generate-then-prune" approach into an inference-time mechanism. It learns a graph-level factuality uncertainty function on the LLM reasoning graph and constructs a non-conformity score that increases monotonically with subgraph expansion. By stopping expansion immed
+  [ICML2026][Reasoning][Conformal Prediction] ITCR transforms conformal prediction from a post-hoc "generate-then-prune" approach into an inference-time mechanism. It learns a graph-level factuality uncertainty function on the LLM reasoning graph and constructs a non-conformity score that increases monotonically with subgraph expansion. By stopping expansion immediately once a calibrated threshold is crossed, it provides valid $1-\alpha$ coverage guarantees for "no-false steps"…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Conformal Prediction"
+  - "Reasoning Graph"
+  - "Factuality Control"
+  - "Inference-time Intervention"
+  - "Coverage Guarantee"
 date: 2026-05-08
-content_hash: 50e3b2c26de3917a
+content_hash: 92acb0aea275625f
 ---
+
 # Inference-Time Conformal Reasoning with Valid Factuality Control for Large Language Models
 
 **Conference**: ICML2026  
@@ -125,14 +131,15 @@ The learned $\mathrm{FU}_\theta$ was replaced with heuristic aggregation rules (
 - Value: ⭐⭐⭐⭐⭐ Provides a practical inference-time paradigm for factuality control with statistical guarantees.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Conformal Thinking: Risk Control for Reasoning on a Compute Budget](conformal_thinking_risk_control_for_reasoning_on_a_compute_budget.md)
-- [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](inference_time_optimization_with_confidence_dynamics.md)
 - [\[ICML 2026\] Reasoning Structure of Large Language Models](reasoning_structure_of_large_language_models.md)
-- [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
+- [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](inference_time_optimization_with_confidence_dynamics.md)
+- [\[ICML 2026\] Geometry of Reason: Spectral Signatures of Valid Mathematical Reasoning](geometry_of_reason_spectral_signatures_of_valid_mathematical_reasoning.md)
 - [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](../../ICLR2026/llm_reasoning/atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
 
 </div>

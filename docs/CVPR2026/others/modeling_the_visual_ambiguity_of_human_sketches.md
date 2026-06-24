@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Modeling the Visual Ambiguity of Human Sketches
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper points out that **visual ambiguity**, where "one sketch corresponds to multiple plausible images," can degrade sketch-image matching training. It proposes **AmbiScore**, calculated using CLIP, to quantify the ambiguity of each sketch-image pair. The **DisAmb** framework is introduced to explicitly model and
+  [CVPR 2026][Sketch Visual Ambiguity] This paper points out that **visual ambiguity**, where "one sketch corresponds to multiple plausible images," can degrade sketch-image matching training. It proposes **AmbiScore**, calculated using CLIP, to quantify the ambiguity of each sketch-image pair. The **DisAmb** framework is introduced to explicitly model and eliminate ambiguity through Elastic Matching (dynamically adjusting supervision strength based on ambiguity) and Purified M…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Sketch Visual Ambiguity"
+  - "Zero-shot Sketch-based Image Retrieval (ZS-SBIR)"
+  - "Noisy Supervision"
+  - "Elastic Matching"
+  - "Shape-Texture Decoupling"
 date: 2026-05-08
-content_hash: 4f647de04d2488b9
+content_hash: 88c1988aed4a3548
 ---
+
 # Modeling the Visual Ambiguity of Human Sketches
 
 **Conference**: CVPR 2026  
@@ -166,11 +171,11 @@ B-DisAmb outperforms ZSE-SBIR by 4.32% acc@1, proving that purified supervision 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)
+- [\[CVPR 2026\] Order Matters: 3D Shape Generation from Sequential VR Sketches](order_matters_3d_shape_generation_from_sequential_vr_sketches.md)
 - [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](../../AAAI2026/others/tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
-- [\[ACL 2025\] Visual Cues Enhance Predictive Turn-Taking for Two-Party Human Interaction](../../ACL2025/others/visual_cues_enhance_predictive_turn-taking_for_two-party_human_interaction.md)
 - [\[CVPR 2026\] Negative Binomial Variational Autoencoders for Overdispersed Latent Modeling](negative_binomial_variational_autoencoders_for_overdispersed_latent_modeling.md)
-- [\[CVPR 2026\] Advancing Image Classification with Discrete Diffusion Classification Modeling](advancing_image_classification_with_discrete_diffusion_classification_modeling.md)
+- [\[ACL 2025\] Visual Cues Enhance Predictive Turn-Taking for Two-Party Human Interaction](../../ACL2025/others/visual_cues_enhance_predictive_turn-taking_for_two-party_human_interaction.md)
+- [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
 
 </div>
 

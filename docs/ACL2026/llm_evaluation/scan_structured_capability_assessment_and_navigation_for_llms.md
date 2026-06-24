@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SCAN: Structured Capability Assessment and Navigation for LLMs
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] SCAN advances LLM evaluation from a single leaderboard to a navigable capability profile: it automatically constructs a hierarchical capability taxonomy, generates realistic queries covering long-tail capabilities using RealMix, and improves automatic scoring reliability via the PC2 judge. This reveals fine-grained str
+  [ACL2026][LLM Evaluation][Fine-grained evaluation] SCAN advances LLM evaluation from a single leaderboard to a navigable capability profile: it automatically constructs a hierarchical capability taxonomy, generates realistic queries covering long-tail capabilities using RealMix, and improves automatic scoring reliability via the PC2 judge. This reveals fine-grained strengths and weaknesses across 21 mainstream LLMs that are otherwise masked by total scores.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Fine-grained evaluation"
+  - "capability taxonomy tree"
+  - "synthetic evaluation data"
+  - "LLM-as-a-Judge"
+  - "model diagnosis"
 date: 2026-05-08
-content_hash: db291f32a4da9a95
+content_hash: f6d0fc58d6305388
 ---
+
 # SCAN: Structured Capability Assessment and Navigation for LLMs
 
 **Conference**: ACL2026  

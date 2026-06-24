@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The authors propose BeyondBench, an evaluation framework that algorithmically and dynamically generates mathematical problems (44 tasks / 117 variants / 3 difficulty levels). This ensures each test is free from training data contamination. After evaluating 101 language models (0.5B to 141B parameters), it was found tha
+  [ICLR 2026][Model Compression][Benchmark Evaluation] The authors propose BeyondBench, an evaluation framework that algorithmically and dynamically generates mathematical problems (44 tasks / 117 variants / 3 difficulty levels). This ensures each test is free from training data contamination. After evaluating 101 language models (0.5B to 141B parameters), it was found that even the strongest models only achieve a 56% accuracy rate on the Hard Suite…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Benchmark Evaluation"
+  - "Data Contamination"
+  - "Reasoning Ability"
+  - "Algorithmic Task Generation"
+  - "NP-Complete Problems"
 date: 2026-05-08
-content_hash: 697b3501fd949d16
+content_hash: 49007d789630a208
 ---
+
 # BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models
 
 **Conference**: ICLR 2026  

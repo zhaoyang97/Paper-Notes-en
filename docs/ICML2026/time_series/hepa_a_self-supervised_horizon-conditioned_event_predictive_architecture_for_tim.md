@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series
 description: >-
-  [ICML 2026][Time Series][JEPA] HEPA learns predictable dynamics in time series through **horizon-conditioned JEPA self-supervised pre-training**. By freezing the encoder and fine-tuning only the predictor, it outperforms multiple SOTA methods across 14 benchmarks in 11 domains using a single architecture and fixed hyperparameters, achieving 92% perf
+  [ICML 2026 Spotlight][Time Series][Event Prediction] HEPA learns predictable dynamics in time series through **horizon-conditioned JEPA self-supervised pre-training**. By freezing the encoder and fine-tuning only the predictor, it outperforms multiple SOTA methods across 14 benchmarks in 11 domains using a single architecture and fixed hyperparameters, achieving 92% performance with only 2% labeled data.
 tags:
-  - ICML 2026
-  - Time Series
-  - JEPA
+  - "ICML 2026 Spotlight"
+  - "Time Series"
+  - "Event Prediction"
+  - "JEPA"
+  - "Self-Supervised Pre-training"
+  - "Label Efficiency"
+  - "Survival Analysis"
 date: 2026-05-08
-content_hash: b56049e8b6e75f55
+content_hash: 8f7ba10c00414e9b
 ---
+
 # HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series
 
 **Conference**: ICML 2026 Spotlight  
@@ -147,7 +152,7 @@ $I(H_t; E_{t + \Delta t}) \geq I(H^*; E_{t + \Delta t}) - C_\eta L^2 \varepsilon
 - [\[ICML 2026\] Self-Supervised Dynamical System Representations for Physiological Time-Series](self-supervised_dynamical_system_representations_for_physiological_time-series.md)
 - [\[NeurIPS 2025\] Towards Self-Supervised Foundation Models for Critical Care Time Series](../../NeurIPS2025/time_series/towards_self-supervised_foundation_models_for_critical_care_time_series.md)
 - [\[AAAI 2026\] Detecting the Future: All-at-Once Event Sequence Forecasting with Horizon Matching](../../AAAI2026/time_series/detecting_the_future_all-at-once_event_sequence_forecasting_with_horizon_matchin.md)
-- [\[NeurIPS 2025\] Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning](../../NeurIPS2025/time_series/universal_spectral_tokenization_via_self-supervised_panchromatic_representation_.md)
+- [\[ECCV 2024\] OmniSat: Self-Supervised Modality Fusion for Earth Observation](../../ECCV2024/time_series/omnisat_self-supervised_modality_fusion_for_earth_observation.md)
 - [\[ICML 2025\] TimePoint: Accelerated Time Series Alignment via Self-Supervised Keypoint and Descriptor Learning](../../ICML2025/time_series/timepoint_accelerated_time_series_alignment_via_self-supervised_keypoint_and_des.md)
 
 </div>

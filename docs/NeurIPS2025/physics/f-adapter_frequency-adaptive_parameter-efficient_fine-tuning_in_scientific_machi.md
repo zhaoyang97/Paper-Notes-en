@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Parameter-efficient fine-tuning] This paper presents the first systematic study of parameter-efficient fine-tuning (PEFT) for pretrained large operator models (LOMs) in scie…
+  [NeurIPS 2025][Physics & Scientific Computing][Parameter-efficient fine-tuning] This paper presents the first systematic study of parameter-efficient fine-tuning (PEFT) for pretrained large operator models (LOMs) in scientific machine learning. It demonstrates that LoRA exhibits a depth-amplified approximation error lower bound in Fourier layers, whereas Adapter preserves universal approximation capacity. Building on this analysis, the paper proposes the Frequency-Adaptive Ad…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "scientific machine learning"
   - "large operator model"
 date: 2026-05-08
-content_hash: ae97a906f70c4011
+content_hash: 48d6afe4bfd96087
 ---
 
 # F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning
@@ -131,8 +131,8 @@ Among frequency-domain Adapter variants: Chebyshev Adapter achieves slightly low
 - [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
 - [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
 - [\[AAAI 2026\] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study](../../AAAI2026/physics/scientific_knowledge-guided_machine_learning_for_vessel_power_prediction_a_compa.md)
+- [\[ICLR 2026\] MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials](../../ICLR2026/physics/matris_toward_reliable_and_efficient_pretrained_machine_learning_interatomic_pot.md)
 - [\[NeurIPS 2025\] Neural Emulator Superiority: When Machine Learning for PDEs Surpasses its Training Data](neural_emulator_superiority_when_machine_learning_for_pdes_surpasses_its_trainin.md)
-- [\[NeurIPS 2025\] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)
 
 </div>
 

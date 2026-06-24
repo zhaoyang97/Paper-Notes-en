@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Federated Learning of Quantile Inference under Local Differential Privacy
 description: >-
-  [ICLR 2026][AI Safety][Local SGD] This paper proposes a Local SGD algorithm for federated quantile **inference** (not just point estimation) under Local Differential Privacy (LDP). By utilizing a privacy mechanism that transforms the LDP problem into an equivalent non-private one, the authors establish the first weak convergence theory for Local SGD un
+  [ICLR 2026][AI Safety][Local Differential Privacy] This paper proposes a Local SGD algorithm for federated quantile **inference** (not just point estimation) under Local Differential Privacy (LDP). By utilizing a privacy mechanism that transforms the LDP problem into an equivalent non-private one, the authors establish the first weak convergence theory for Local SGD under non-smooth quantile loss and employ self-normalization to construct valid confidence intervals without es…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Local SGD
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Local Differential Privacy"
+  - "Quantile Inference"
+  - "Federated Learning"
+  - "Local SGD"
+  - "Self-normalization"
+  - "Functional Central Limit Theorem"
 date: 2026-05-08
-content_hash: fa29b8fa0282dc5b
+content_hash: 5ce33a4d042da8f2
 ---
+
 # Federated Learning of Quantile Inference under Local Differential Privacy
 
 **Conference**: ICLR 2026  

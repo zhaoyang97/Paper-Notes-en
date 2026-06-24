@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] I2Mole merges pairs of drug molecules into a "merged graph," first using attention to model cross-molecular interactions between atoms, then employing an improved Graph Information Bottleneck (GIB) to extract decisive core substructures (rationales). It utilizes vector quantization to cluster training environments into
+  [ICLR 2026][Computational Biology][Drug-Drug Interaction (DDI)] I2Mole merges pairs of drug molecules into a "merged graph," first using attention to model cross-molecular interactions between atoms, then employing an improved Graph Information Bottleneck (GIB) to extract decisive core substructures (rationales). It utilizes vector quantization to cluster training environments into an "environment codebook" as a controllable noise source for invariant learning…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Drug-Drug Interaction (DDI)"
+  - "Molecular Relationship Learning"
+  - "Graph Information Bottleneck (GIB)"
+  - "Invariant Learning"
+  - "Vector Quantization"
+  - "OOD Generalization"
 date: 2026-05-08
-content_hash: 368fe03e3cf54f4c
+content_hash: 9a57792bfc933c90
 ---
+
 # I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction
 
 **Conference**: ICLR 2026  
@@ -126,15 +133,16 @@ Removing the VQ environment codebook results in the largest performance drop (AU
 - **Value**: ⭐⭐⭐⭐ — DDI prediction has clear clinical significance. The dual focus on cross-molecular interaction modeling and real-world environment codebooks has practical and methodological implications for computational pharmacy and general molecular relationship learning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] GRAM-DTI: Adaptive Multimodal Representation Learning for Drug-Target Interaction Prediction](gram-dti_adaptive_multimodal_representation_learning_for_drugtarget_interaction_.md)
+- [\[ICLR 2026\] DeepSADR: Deep Transfer Learning with Subsequence Interaction and Adaptive Readout for Cancer Drug Response Prediction](deepsadr_deep_transfer_learning_with_subsequence_interaction_and_adaptive_readou.md)
 - [\[NeurIPS 2025\] GFlowNets for Learning Better Drug-Drug Interaction Representations](../../NeurIPS2025/computational_biology/gflownets_for_learning_better_drug-drug_interaction_representations.md)
+- [\[ICLR 2026\] Physically Valid Biomolecular Interaction Modeling with Gauss-Seidel Projection](physically_valid_biomolecular_interaction_modeling_with_gauss-seidel_projection.md)
 - [\[ICLR 2026\] h-MINT: Modeling Pocket-Ligand Binding with Hierarchical Molecular Interaction Network](h-mint_modeling_pocket-ligand_binding_with_hierarchical_molecular_interaction_ne.md)
-- [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](../../ICML2026/computational_biology/learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
-- [\[ICLR 2026\] KGOT: Unified Knowledge Graph and Optimal Transport Pseudo-Labeling for Molecule-Protein Interaction Prediction](kgot_unified_knowledge_graph_and_optimal_transport_pseudo-labeling_for_molecule-.md)
-- [\[ICLR 2026\] Quantifying Cross-Attention Interaction in Transformers for Interpreting TCR-pMHC Binding](quantifying_cross-attention_interaction_in_transformers_for_interpreting_tcr-pmh.md)
 
 </div>
 

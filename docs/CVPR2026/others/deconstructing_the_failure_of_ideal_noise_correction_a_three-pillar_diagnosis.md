@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Deconstructing the Failure of Ideal Noise Correction: A Three-Pillar Diagnosis
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper demonstrates through controlled experiments that Forward Correction (FC) still suffers from performance collapse in the late stages of training even given a perfect noise transition matrix $T$. It provides a systematic diagnosis of this failure from three perspectives: macro-convergence states, micro-optimiz
+  [CVPR2026][Learning with Noisy Labels] This paper demonstrates through controlled experiments that Forward Correction (FC) still suffers from performance collapse in the late stages of training even given a perfect noise transition matrix $T$. It provides a systematic diagnosis of this failure from three perspectives: macro-convergence states, micro-optimization dynamics, and information theory.
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR2026"
+  - "Learning with Noisy Labels"
+  - "Noise Transition Matrix"
+  - "Forward Correction"
+  - "Statistical Consistency"
+  - "Information Theory"
 date: 2026-05-08
-content_hash: e0af9955b3e541df
+content_hash: bf8b12e89acbe031
 ---
+
 # Deconstructing the Failure of Ideal Noise Correction: A Three-Pillar Diagnosis
 
 **Conference**: CVPR2026  
@@ -128,9 +133,9 @@ Diagnosis points to "insufficient information + excessive capacity leading to ov
 ## Related Papers
 
 - [\[CVPR 2026\] Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning](mitigating_instance_entanglement_in_instance-dependent_partial_label_learning.md)
+- [\[CVPR 2026\] Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation](shoe_style-invariant_and_ground-aware_learning_for_dense_foot_contact_estimation.md)
 - [\[CVPR 2026\] What Is Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution](what_is_wrong_with_synthetic_data_for_scene_text_recognition_a_strong_synthetic_.md)
-- [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](debiased_sample_selection_for_learning_with_noisy_labels.md)
-- [\[CVPR 2026\] Affine Perspective-Three-Point Problem](affine_perspective-three-point_problem.md)
+- [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](../../ICLR2026/others/noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
 - [\[CVPR 2026\] DiffBMP: Differentiable Rendering with Bitmap Primitives](diffbmp_differentiable_rendering_with_bitmap_primitives.md)
 
 </div>

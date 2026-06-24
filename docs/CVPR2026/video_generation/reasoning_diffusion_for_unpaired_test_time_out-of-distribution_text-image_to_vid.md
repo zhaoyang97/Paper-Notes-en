@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reasoning Diffusion for Unpaired Test Time Out-of-distribution Text-Image to Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Addressing common real-world unpaired inputs where text and image semantics are misaligned and the image is not necessarily the first frame, this paper utilizes an MLLM (VisionNarrator) to reason seemingly unrelated conditions into a frame-by-frame script. An AlignFormer then converts the reasoning results into frame-w
+  [CVPR 2026][Video Generation][Text-to-Image-to-Video] Addressing common real-world unpaired inputs where text and image semantics are misaligned and the image is not necessarily the first frame, this paper utilizes an MLLM (VisionNarrator) to reason seemingly unrelated conditions into a frame-by-frame script. An AlignFormer then converts the reasoning results into frame-wise latents injected into the Wan2.1 diffusion model to generate videos that are both visually and semanti…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-to-Image-to-Video"
+  - "Unpaired Conditions"
+  - "OOD Generation"
+  - "MLLM Reasoning"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: 4053c4977d5ebff6
+content_hash: d8ab2795372b5a51
 ---
+
 # Reasoning Diffusion for Unpaired Test Time Out-of-distribution Text-Image to Video Generation
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ The metrics for four variants are reported as "relative ratios to the full model
 ## Related Papers
 
 - [\[CVPR 2026\] VISTA: A Test-Time Self-Improving Video Generation Agent](vista_a_test-time_self-improving_video_generation_agent.md)
-- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
+- [\[CVPR 2026\] EffectMaker: Unifying Reasoning and Generation for Customized Visual Effect Creation](effectmaker_unifying_reasoning_and_generation_for_customized_visual_effect_creat.md)
 - [\[CVPR 2025\] One-Minute Video Generation with Test-Time Training](../../CVPR2025/video_generation/one-minute_video_generation_with_test-time_training.md)
+- [\[CVPR 2026\] MoReGen: Multi-Agent Motion-Reasoning Engine for Code-based Text-to-Video Synthesis](moregen_multi-agent_motion-reasoning_engine_for_code-based_text-to-video_synthes.md)
 - [\[ICLR 2026\] TTOM: Test-Time Optimization and Memorization for Compositional Video Generation](../../ICLR2026/video_generation/ttom_test-time_optimization_and_memorization_for_compositional_video_generation.md)
-- [\[CVPR 2026\] Lighting-grounded Video Generation with Renderer-based Agent Reasoning](lighting-grounded_video_generation_with_renderer-based_agent_reasoning.md)
 
 </div>
 

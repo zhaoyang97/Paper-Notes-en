@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Text: Visual Description Assembly by Probabilistic Model for CLIP-based Weakly Supervised Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][CLIP] To address the issues of "modality gap between text prototypes and visual features" and "static text failing to adapt to diverse instances" in CLIP-based weakly supervised segmentation, this paper uses an Invertible Neural Network to model CLIP visual features as a Hierarchical Gaussian Mixture Model (H-GMM). It explic
+  [CVPR 2026][Segmentation][Weakly Supervised Semantic Segmentation] To address the issues of "modality gap between text prototypes and visual features" and "static text failing to adapt to diverse instances" in CLIP-based weakly supervised segmentation, this paper uses an Invertible Neural Network to model CLIP visual features as a Hierarchical Gaussian Mixture Model (H-GMM). It explicitly decouples intra-class attributes in the visual space, dynamically assembles them into vi…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Weakly Supervised Semantic Segmentation"
+  - "CLIP"
+  - "Probabilistic Model/GMM"
+  - "Visual Prototype"
+  - "Modality Gap"
 date: 2026-05-08
-content_hash: c84e1905450eae27
+content_hash: c142b5a9956660e2
 ---
+
 # Beyond Text: Visual Description Assembly by Probabilistic Model for CLIP-based Weakly Supervised Semantic Segmentation
 
 **Conference**: CVPR 2026  

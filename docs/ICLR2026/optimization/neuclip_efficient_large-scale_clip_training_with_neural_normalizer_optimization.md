@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] NeuCLIP: Efficient Large-Scale CLIP Training with Neural Normalizer Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] NeuCLIP reformulates contrastive loss as a "minimization problem with auxiliary variables" using convex conjugation. It then employs variational analysis to collapse $n$ sample-wise auxiliary variables into a lightweight Neural Partitioning Network (NPN) to predict log-partition functions. This eliminates optimization
+  [ICLR 2026][Optimization][Contrastive Loss] NeuCLIP reformulates contrastive loss as a "minimization problem with auxiliary variables" using convex conjugation. It then employs variational analysis to collapse $n$ sample-wise auxiliary variables into a lightweight Neural Partitioning Network (NPN) to predict log-partition functions. This eliminates optimization errors that scale with the dataset/batch size ratio ($O(n/B)$) found in FastCLIP, consistently outperforming existin…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Contrastive Loss"
+  - "Partition Function Estimation"
+  - "Convex Conjugate"
+  - "Variational Analysis"
+  - "Neural Partitioning Network"
+  - "Alternating Optimization"
 date: 2026-05-08
-content_hash: 57f579819c09e7c3
+content_hash: 1305c8c48fc9e8a3
 ---
+
 # NeuCLIP: Efficient Large-Scale CLIP Training with Neural Normalizer Optimization
 
 **Conference**: ICLR 2026  
@@ -125,7 +132,7 @@ Partition function estimation error (MSE, lower is better):
 - [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
 - [\[ICLR 2026\] FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization](frontierco_real-world_and_large-scale_evaluation_of_machine_learning_solvers_for.md)
 - [\[ICLR 2026\] From Sequential to Parallel: Reformulating Dynamic Programming as GPU Kernels for Large-Scale Stochastic Combinatorial Optimization](from_sequential_to_parallel_reformulating_dynamic_programming_as_gpu_kernels_for.md)
-- [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
+- [\[ICLR 2026\] ViTSP: Guiding Large-Scale Traveling Salesman Problem Solving with Vision-Language Models](vitsp_a_vision_language_models_guided_framework_for_solving_large-scale_travelin.md)
 
 </div>
 

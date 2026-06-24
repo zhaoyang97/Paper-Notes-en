@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dr.LLM: Dynamic Layer Routing in LLMs
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Lightweight routers are attached to each layer of a frozen pretrained LLM to decide whether a layer should be "skipped, executed, or repeated." Using high-quality paths searched via offline MCTS as supervision, this approach improves accuracy and saves computation without modifying base weights or requiring inference-t
+  [ICLR 2026][Model Compression][Dynamic Layer Routing] Lightweight routers are attached to each layer of a frozen pretrained LLM to decide whether a layer should be "skipped, executed, or repeated." Using high-quality paths searched via offline MCTS as supervision, this approach improves accuracy and saves computation without modifying base weights or requiring inference-time search.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dynamic Layer Routing"
+  - "Adaptive Depth"
+  - "Layer Skip/Repeat"
+  - "MCTS Supervision"
+  - "Frozen LLM Retrofitting"
 date: 2026-05-08
-content_hash: eb86b127162b02b5
+content_hash: 959ecbc3321b87df
 ---
+
 # Dr.LLM: Dynamic Layer Routing in LLMs
 
 **Conference**: ICLR 2026  
@@ -112,6 +118,7 @@ Evaluation across six backbones: LLaMA-3.2 (3B/8B Instruct/Base) and Qwen-2.5 (3
 - **Value**: ⭐⭐⭐⭐ — Being able to retrofit frozen LLMs in 4 hours on a single GPU to improve accuracy while saving computation is highly valuable for resource-constrained deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

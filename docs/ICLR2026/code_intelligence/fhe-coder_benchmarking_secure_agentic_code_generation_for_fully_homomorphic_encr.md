@@ -2,18 +2,21 @@
 title: >-
   [Paper Note] FHE-Coder: Benchmarking Secure Agentic Code Generation for Fully Homomorphic Encryption
 description: >-
-  [ICLR 2026][Code Intelligence][FHE] To address the fatal blind spot where "LLM-generated FHE code is functional but cryptographically insecure," research introduces FHE-Coder, a three-stage agentic framework (Prompt Formalizer + Expert-Augmented RAG + Security Verifier). Accompanied by a new metric $Pass@1(func \ sec)$ and a 10-task benchmark, it enables
+  [ICLR 2026][Code Intelligence][FHE] To address the fatal blind spot where "LLM-generated FHE code is functional but cryptographically insecure," research introduces FHE-Coder, a three-stage agentic framework (Prompt Formalizer + Expert-Augmented RAG + Security Verifier). Accompanied by a new metric $Pass@1(func \ sec)$ and a 10-task benchmark, it enables various LLMs to consistently produce compilable, functionally correct, and verifiably secure homomorphic encryption code fo…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - FHE
-  - TFHE
-  - CKKS
-  - LLM Agent
-  - RAG
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "FHE"
+  - "TFHE"
+  - "CKKS"
+  - "LLM Agent"
+  - "RAG"
+  - "Security Verification"
+  - "Lattice Estimator"
 date: 2026-05-08
-content_hash: c8c414f36a7c916a
+content_hash: 0b266ea00f30fbbd
 ---
+
 # FHE-Coder: Benchmarking Secure Agentic Code Generation for Fully Homomorphic Encryption
 
 **Conference**: ICLR 2026  
@@ -116,15 +119,16 @@ Conclusions are consistent across four LLMs: baseline security flaws are **model
 - **Value**: ⭐⭐⭐⭐ Provides a reusable methodology for safety-critical code generation and lowering the barrier to entry for FHE.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] RESCUE: Retrieval Augmented Secure Code Generation](rescue_retrieval_augmented_secure_code_generation.md)
 - [\[ICLR 2026\] VERINA: Benchmarking Verifiable Code Generation](verina_benchmarking_verifiable_code_generation.md)
-- [\[ICML 2026\] CentaurEval: Benchmarking Human-in-the-Loop Value in Agentic Coding](../../ICML2026/code_intelligence/centaureval_benchmarking_human-in-the-loop_value_in_agentic_coding.md)
 - [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
-- [\[ACL 2026\] DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation](../../ACL2026/code_intelligence/deepguard_secure_code_generation_via_multi-layer_semantic_aggregation.md)
+- [\[ICLR 2026\] Code Aesthetics with Agentic Reward Feedback](code_aesthetics_with_agentic_reward_feedback.md)
+- [\[ICML 2026\] CentaurEval: Benchmarking Human-in-the-Loop Value in Agentic Coding](../../ICML2026/code_intelligence/centaureval_benchmarking_human-in-the-loop_value_in_agentic_coding.md)
 
 </div>
 

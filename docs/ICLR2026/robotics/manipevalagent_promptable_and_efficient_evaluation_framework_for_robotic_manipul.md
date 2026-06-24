@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ManipEvalAgent: Promptable and Efficient Evaluation Framework for Robotic Manipulation Policies
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLM Agent] ManipEvalAgent utilizes a collaborative group of VLM Agents to mimic how human experts form judgments by "trying it out a few times," performing promptable, multi-turn, and dynamically planned evaluations of robotic manipulation policies. By generating task and evaluation tool code within a simulator, it achieves concl
+  [ICLR 2026][Robotics][Robotic manipulation policy] ManipEvalAgent utilizes a collaborative group of VLM Agents to mimic how human experts form judgments by "trying it out a few times," performing promptable, multi-turn, and dynamically planned evaluations of robotic manipulation policies. By generating task and evaluation tool code within a simulator, it achieves conclusions comparable to full-scale benchmarks using significantly fewer samples…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLM Agent
+  - "ICLR 2026"
+  - "Robotics"
+  - "Robotic manipulation policy"
+  - "evaluation framework"
+  - "VLM Agent"
+  - "code generation"
+  - "simulation evaluation"
 date: 2026-05-08
-content_hash: e90906b637cc4db4
+content_hash: c478dd44e8f49ec2
 ---
+
 # ManipEvalAgent: Promptable and Efficient Evaluation Framework for Robotic Manipulation Policies
 
 **Conference**: ICLR 2026  

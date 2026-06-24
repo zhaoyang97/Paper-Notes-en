@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks
 description: >-
-  [ACL 2026][LLM Safety][LVLM unlearning] The authors point out that existing LVLM unlearning benchmarks (FIUBench / MLLMU-Bench / CLEAR) fail to truly memorize fictional identities during the Stage 1 fine-tuning phase, rendering Stage 2 "unlearning" evaluations invalid. They diagnose the root causes as "insufficient data repetition + multi-hop curse" and prop
+  [ACL 2026 Findings][LLM Safety][LVLM unlearning] The authors point out that existing LVLM unlearning benchmarks (FIUBench / MLLMU-Bench / CLEAR) fail to truly memorize fictional identities during the Stage 1 fine-tuning phase, rendering Stage 2 "unlearning" evaluations invalid. They diagnose the root causes as "insufficient data repetition + multi-hop curse" and propose ReMem—featuring 100 QAs × 100 multi-view images per identity, a 70%:30% single-hop/multi-hop mix…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - LVLM unlearning
-  - multi-hop curse
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "LVLM unlearning"
+  - "memorization failure"
+  - "multi-hop curse"
+  - "multi-view synthesis"
+  - "Exposure metric"
 date: 2026-05-08
-content_hash: 52e2e434b0ad355d
+content_hash: 1f039294860268fd
 ---
+
 # Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks
 
 **Conference**: ACL 2026 Findings  

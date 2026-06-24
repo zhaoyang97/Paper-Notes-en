@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pragmatic Heterogeneous Collaborative Perception via Generative Communication Mechanism
 description: >-
-  [NeurIPS 2025][Image Generation][Heterogeneous Collaborative Perception] This paper proposes GenComm — a generative communication mechanism for heterogeneous multi-agent collaborative perception. By extracting spatial me…
+  [NeurIPS 2025][Image Generation][Heterogeneous Collaborative Perception] This paper proposes GenComm — a generative communication mechanism for heterogeneous multi-agent collaborative perception. By extracting spatial messages and employing a conditional diffusion model, the ego agent locally generates aligned collaborator features without modifying any existing network, enabling new heterogeneous agents to be onboarded at minimal cost.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "BEV Feature Generation"
   - "Scalability"
 date: 2026-05-08
-content_hash: f41f0e66ab90d8d6
+content_hash: 5741f346f497a000
 ---
 
 # Pragmatic Heterogeneous Collaborative Perception via Generative Communication Mechanism
@@ -135,11 +135,11 @@ When onboarding a new agent, only a lightweight extractor needs to be initialize
 
 ## Related Papers
 
+- [\[CVPR 2025\] Traversing Distortion-Perception Tradeoff Using a Single Score-Based Generative Model](../../CVPR2025/image_generation/traversing_distortion-perception_tradeoff_using_a_single_score-based_generative_.md)
+- [\[ACL 2025\] Multimodal Pragmatic Jailbreak on Text-to-image Models](../../ACL2025/image_generation/multimodal_pragmatic_jailbreak_on_text-to-image_models.md)
 - [\[NeurIPS 2025\] Janus-Pro-R1: Advancing Collaborative Visual Comprehension and Generation via Reinforcement Learning](janus-pro-r1_advancing_collaborative_visual_comprehension_and_generation_via_rei.md)
 - [\[ICLR 2026\] Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models](../../ICLR2026/image_generation/bridging_generalization_gap_of_heterogeneous_federated_clients_using_generative_.md)
-- [\[CVPR 2026\] Heterogeneous Decentralized Diffusion Models](../../CVPR2026/image_generation/heterogeneous_decentralized_diffusion_models.md)
-- [\[NeurIPS 2025\] Failure Prediction at Runtime for Generative Robot Policies](failure_prediction_at_runtime_for_generative_robot_policies.md)
-- [\[NeurIPS 2025\] Coupling Generative Modeling and an Autoencoder with the Causal Bridge](coupling_generative_modeling_and_an_autoencoder_with_the_causal_bridge.md)
+- [\[CVPR 2025\] Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/multi-party_collaborative_attention_control_for_image_customization.md)
 
 </div>
 

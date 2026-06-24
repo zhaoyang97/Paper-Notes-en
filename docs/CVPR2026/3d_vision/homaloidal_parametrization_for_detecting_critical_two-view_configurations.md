@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Homaloidal parametrization for detecting critical two-view configurations
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes a novel quadratic transformation parametrization for detecting general critical surface degeneracies in two-view configurations using the "homaloidal net of conics" from projective geometry. By solving a **linear system** with 7 image correspondences to fit the quadratic transformation and using an
+  [CVPR 2026][3D Vision][Fundamental Matrix] This paper proposes a novel quadratic transformation parametrization for detecting general critical surface degeneracies in two-view configurations using the "homaloidal net of conics" from projective geometry. By solving a **linear system** with 7 image correspondences to fit the quadratic transformation and using an 8th point for verification, the method identifies degeneracies **without pre-estimating the fundamental matrix**. It…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Fundamental Matrix"
+  - "Critical Configurations"
+  - "Degeneracy Detection"
+  - "Quadratic Transformation"
+  - "Homaloidal Net"
 date: 2026-05-08
-content_hash: e5269a650451df39
+content_hash: 56cf427464900093
 ---
+
 # Homaloidal parametrization for detecting critical two-view configurations
 
 **Conference**: CVPR 2026  
@@ -125,11 +131,11 @@ Experiments were primarily conducted on synthetic critical configurations (consi
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
 - [\[CVPR 2026\] ArchSym: Detecting 3D-Grounded Architectural Symmetries in the Wild](archsym_detecting_3d-grounded_architectural_symmetries_in_the_wild.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
-- [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
+- [\[CVPR 2026\] Unlocking the Power of Critical Factors for 3D Visual Geometry Estimation](unlocking_the_power_of_critical_factors_for_3d_visual_geometry_estimation.md)
+- [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](../../ICLR2026/3d_vision/ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
+- [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
+- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
 
 </div>
 

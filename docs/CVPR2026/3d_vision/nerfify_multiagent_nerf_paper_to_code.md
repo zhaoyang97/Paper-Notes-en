@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code
 description: >-
-  [CVPR 2026][LLM Agent][NeRF] Ours proposes Nerfify, a multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plug-in code through context-free grammar constraints, Graph of Thoughts code synthesis, and compositional citation recovery. It achieves a 100% execution rate on a 30-paper benchmark, with visual quality di
+  [CVPR 2026][3D Vision][NeRF] Ours proposes Nerfify, a multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plug-in code through context-free grammar constraints, Graph of Thoughts code synthesis, and compositional citation recovery. It achieves a 100% execution rate on a 30-paper benchmark, with visual quality differing from expert implementations by only $\pm 0.5$ dB PSNR.
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - NeRF
-  - paper-to-code
-  - multi-agent
-  - code synthesis
-  - context-free grammar
+  - "CVPR 2026"
+  - "3D Vision"
+  - "NeRF"
+  - "paper-to-code"
+  - "multi-agent"
+  - "code synthesis"
+  - "context-free grammar"
 date: 2026-05-08
-content_hash: e4a0bbca1ba00760
+content_hash: bc1457605f3bbe2d
 ---
+
 # Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code
 
 **Conference**: CVPR 2026  
@@ -134,11 +135,11 @@ All baselines (Paper2Code, AutoP2C, GPT-5, R1) **failed to generate trainable co
 
 ## Related Papers
 
-- [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
-- [\[CVPR 2026\] CarePilot: A Multi-Agent Framework for Long-Horizon Computer Task Automation in Healthcare](carepilot_a_multi-agent_framework_for_long-horizon_computer_task_automation_in_h.md)
-- [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
-- [\[ACL 2025\] METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling](../../ACL2025/llm_agent/metal_a_multi-agent_framework_for_chart_generation_with_test-time_scaling.md)
-- [\[ACL 2025\] MAM: Modular Multi-Agent Framework for Multi-Modal Medical Diagnosis via Role-Specialized Collaboration](../../ACL2025/llm_agent/mam_modular_multi-agent_framework_for_multi-modal_medical_diagnosis_via_role-spe.md)
+- [\[CVPR 2026\] TopoMA: Topology-Guided Multi-Agent Dense RGB 3D Reconstruction via Distributed Inference](topoma_topology-guided_multi-agent_dense_rgb_3d_reconstruction_via_distributed_i.md)
+- [\[CVPR 2026\] Lighting-grounded Video Generation with Renderer-based Agent Reasoning](lighting-grounded_video_generation_with_renderer-based_agent_reasoning.md)
+- [\[CVPR 2026\] Seeing through Light and Darkness: Sensor-Physics Grounded Deblurring HDR NeRF from Single-Exposure Images and Events](seeing_through_light_and_darkness_sensor-physics_grounded_deblurring_hdr_nerf_fr.md)
+- [\[CVPR 2026\] NG-GS: NeRF-Guided 3D Gaussian Splatting Segmentation](ng_gs_nerf_guided_3d_gaussian_splatting_segmentation.md)
+- [\[CVPR 2025\] MAGiC-SLAM: Multi-Agent Gaussian Globally Consistent SLAM](../../CVPR2025/3d_vision/magic-slam_multi-agent_gaussian_globally_consistent_slam.md)
 
 </div>
 

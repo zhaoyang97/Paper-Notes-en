@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Cultural Alien Sampler: Open-ended Art Generation Balancing Originality and Coherence
 description: >-
-  [NeurIPS 2025][LLM/NLP][Creative generation] This paper proposes the Cultural Alien Sampler (CAS), which employs two GPT-2 models to separately model "concept coherence" and "cultural typicality…
+  [NeurIPS 2025][LLM (Other)][Creative generation] This paper proposes the Cultural Alien Sampler (CAS), which employs two GPT-2 models to separately model "concept coherence" and "cultural typicality," selecting concept combinations with high coherence but low cultural typicality to generate original yet harmonious artistic ideas. In human evaluations, CAS approaches the level of art students and substantially outperforms GPT-4o.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Creative generation"
   - "concept composition"
   - "cultural debiasing"
   - "open-ended art"
   - "GPT-2 fine-tuning"
 date: 2026-05-08
-content_hash: a5d9eb657ac8cf63
+content_hash: 585f65930d96f15d
 ---
 
 # Cultural Alien Sampler: Open-ended Art Generation Balancing Originality and Coherence
@@ -142,10 +142,10 @@ CAS approaches human performance on originality (no statistically significant di
 ## Related Papers
 
 - [\[NeurIPS 2025\] AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise](autodiscovery_open-ended_scientific_discovery_via_bayesian_surprise.md)
+- [\[ACL 2025\] Culture is Not Trivia: Sociocultural Theory for Cultural NLP](../../ACL2025/llm_nlp/culture_is_not_trivia_sociocultural_theory_for_cultural_nlp.md)
+- [\[ACL 2025\] Towards Style Alignment in Cross-Cultural Translation](../../ACL2025/llm_nlp/towards_style_alignment_in_cross-cultural_translation.md)
 - [\[NeurIPS 2025\] GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models](geocad_local_geometry-controllable_cad_generation_with_large_language_models.md)
-- [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
-- [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
-- [\[NeurIPS 2025\] Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning](sparse_mezo_less_parameters_for_better_performance_in_zeroth-order_llm_fine-tuni.md)
+- [\[ACL 2025\] Cultural Learning-Based Culture Adaptation of Language Models](../../ACL2025/llm_nlp/cultural_learning-based_culture_adaptation_of_language_models.md)
 
 </div>
 

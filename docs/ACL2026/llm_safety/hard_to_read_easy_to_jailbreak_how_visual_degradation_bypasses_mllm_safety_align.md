@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hard to Read, Easy to Jailbreak: How Visual Degradation Bypasses MLLM Safety Alignment
 description: >-
-  [ACL 2026][LLM Safety][Attack Comfort Zone] This paper reveals a safety blind spot in MLLMs under the "visual text compression" paradigm. When rendered image DPI falls within the Attack Comfort Zone (ACZ) of 45–150, model OCR remains accurate while safety alignment collapses (ASR surges from 0% to 70%+). This occurs because shallow computational resources are ex
+  [ACL 2026 Findings][LLM Safety][Attack Comfort Zone] This paper reveals a safety blind spot in MLLMs under the "visual text compression" paradigm. When rendered image DPI falls within the Attack Comfort Zone (ACZ) of 45–150, model OCR remains accurate while safety alignment collapses (ASR surges from 0% to 70%+). This occurs because shallow computational resources are exhausted by "character recognition," causing harmful semantics to emerge only in deeper layers and bypassing…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Attack Comfort Zone
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Attack Comfort Zone"
+  - "Cognitive Overload"
+  - "Safety Feature Delay"
+  - "Structured Offloading"
+  - "Visual Text Compression"
 date: 2026-05-08
-content_hash: b4b937524699674f
+content_hash: 8682528619774c54
 ---
+
 # Hard to Read, Easy to Jailbreak: How Visual Degradation Bypasses MLLM Safety Alignment
 
 **Conference**: ACL 2026 Findings  
@@ -161,8 +166,8 @@ No new models were trained. Probes used logistic regression as an analytical too
 - [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
 - [\[ACL 2026\] LLM-VA: Resolving the Jailbreak-Overrefusal Trade-off via Vector Alignment](llm-va_resolving_the_jailbreak-overrefusal_trade-off_via_vector_alignment.md)
 - [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
-- [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
-- [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
+- [\[ICLR 2026\] DiffuGuard: How Intrinsic Safety is Lost and Found in Diffusion Large Language Models](../../ICLR2026/llm_safety/diffuguard_how_intrinsic_safety_is_lost_and_found_in_diffusion_large_language_mo.md)
+- [\[ICLR 2026\] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning](../../ICLR2026/llm_safety/safety_mirage_how_spurious_correlations_undermine_vlm_safety_fine-tuning_and_can.md)
 
 </div>
 

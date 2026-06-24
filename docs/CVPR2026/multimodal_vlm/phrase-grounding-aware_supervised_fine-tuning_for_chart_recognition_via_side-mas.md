@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Phrase-Grounding-Aware Supervised Fine-Tuning for Chart Recognition via Side-Masked Attention
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] During the VLM fine-tuning phase, a zero-parameter "Side-Masked Attention Module" (SMAM) is inserted to align each phrase in the answer to text regions on the chart. By supervising the logit contribution of these regions, the model learns to "ground" its generation to correct visual areas during chart QA, consistently
+  [CVPR 2026][Multimodal VLM][Chart Recognition] During the VLM fine-tuning phase, a zero-parameter "Side-Masked Attention Module" (SMAM) is inserted to align each phrase in the answer to text regions on the chart. By supervising the logit contribution of these regions, the model learns to "ground" its generation to correct visual areas during chart QA, consistently outperforming standard SFT on benchmarks like ChartQA and C2T.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chart Recognition"
+  - "Phrase Grounding"
+  - "Supervised Fine-Tuning"
+  - "Masked Attention"
+  - "Logit Contribution"
 date: 2026-05-08
-content_hash: 168fe3a82ba75233
+content_hash: 46062bd233a857f5
 ---
+
 # Phrase-Grounding-Aware Supervised Fine-Tuning for Chart Recognition via Side-Masked Attention
 
 **Conference**: CVPR 2026  
@@ -152,10 +158,10 @@ Ablation of loss terms and coefficients $\gamma, \alpha$ on ChartQA (Qwen7B / LL
 ## Related Papers
 
 - [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
+- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
 - [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
+- [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
 - [\[CVPR 2026\] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More](sketchvl_policy_optimization_via_fine-grained_credit_assignment_for_chart_unders.md)
-- [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
 
 </div>
 

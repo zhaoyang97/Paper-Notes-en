@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LogART: Pushing the Limit of Efficient Logarithmic Post-Training Quantization
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] LogART introduces "learnable rounding" into logarithmic post-training quantization (log-PTQ) for the first time. Combined with a logarithmic quantizer supporting dynamic multi-bases, asymmetry, and outlier resistance alongside efficient hyperparameter search, it pushes log-PTQ to ultra-low 3/4-bit widths. It achieves S
+  [ICLR 2026][Model Compression][Post-training quantization] LogART introduces "learnable rounding" into logarithmic post-training quantization (log-PTQ) for the first time. Combined with a logarithmic quantizer supporting dynamic multi-bases, asymmetry, and outlier resistance alongside efficient hyperparameter search, it pushes log-PTQ to ultra-low 3/4-bit widths. It achieves SOTA accuracy on LLMs, CNNs, and ViTs while enabling multiplier-less hardware with reduced area and po…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "logarithmic quantization"
+  - "learnable rounding"
+  - "dynamic base"
+  - "hardware-friendly"
 date: 2026-05-08
-content_hash: 90647440d3d911eb
+content_hash: 20bc5f6f45beab3f
 ---
+
 # LogART: Pushing the Limit of Efficient Logarithmic Post-Training Quantization
 
 **Conference**: ICLR 2026  
@@ -146,8 +152,8 @@ LogART outperforms log baselines on MobileNetV2 by over 40% top-1 and is 3.9× t
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 - [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
 - [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[ICLR 2026\] Qronos: Correcting the Past by Shaping the Future... in Post-Training Quantization](qronos_correcting_the_past_by_shaping_the_future_in_post-training_quantization.md)
+- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
 
 </div>
 

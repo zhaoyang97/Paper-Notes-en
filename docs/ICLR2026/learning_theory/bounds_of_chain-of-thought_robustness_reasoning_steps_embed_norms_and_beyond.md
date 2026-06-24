@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Bounds of Chain-of-Thought Robustness: Reasoning Steps, Embed Norms, and Beyond
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper establishes the first set of theoretical upper bounds for the robustness of Chain-of-Thought (CoT) against input perturbations. Under the Lipschitz continuity assumption, it is proven that "more reasoning steps result in a smaller upper bound for output fluctuation, yet perturbations cannot be eliminated eve
+  [ICLR2026][Learning Theory][Chain-of-Thought Robustness] This paper establishes the first set of theoretical upper bounds for the robustness of Chain-of-Thought (CoT) against input perturbations. Under the Lipschitz continuity assumption, it is proven that "more reasoning steps result in a smaller upper bound for output fluctuation, yet perturbations cannot be eliminated even with infinite steps." Taking Linear Self-Attention (LSA) as a case study…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "LLM Reasoning"
+  - "Chain-of-Thought Robustness"
+  - "Input Perturbation"
+  - "Lipschitz Continuity"
+  - "Linear Self-Attention"
+  - "Embedding Norms"
 date: 2026-05-08
-content_hash: 9fc883c083be6600
+content_hash: de2cc10540664227
 ---
+
 # Bounds of Chain-of-Thought Robustness: Reasoning Steps, Embed Norms, and Beyond
 
 **Conference**: ICLR2026  
@@ -142,14 +149,17 @@ As capability increases, EM rises while OF falls. Theoretical explanation: Stron
 
 <div class="related-papers" markdown="1">
 
-1.  **TextGrad: Automatic "Gradient" Optimization of Text via Large Language Models** (ArXiv 2024)
-2.  **Large Language Models as Optimizers** (ICLR 2024)
-3.  **Measuring and Improving Chain-of-Thought Robustness in Large Language Models** (ACL 2023)
+## Related Papers
+
+- [\[ICLR 2026\] Poisson Midpoint Method for Log-Concave Sampling: Beyond the Strong Error Lower Bounds](poisson_midpoint_method_for_log_concave_sampling_beyond_the_strong_error_lower_b.md)
+- [\[ICLR 2026\] Computing Equilibrium beyond Unilateral Deviation](computing_equilibrium_beyond_unilateral_deviation.md)
+- [\[ICLR 2026\] Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection](reshaping_reasoning_in_llms_a_theoretical_analysis_of_rl_training_dynamics_throu.md)
+- [\[ICLR 2026\] Better Bounds for the Distributed Experts Problem](better_bounds_for_the_distributed_experts_problem.md)
+- [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](../../ICML2026/learning_theory/multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Poisson Midpoint Method for Log-Concave Sampling: Beyond the Strong Error Lower Bounds](poisson_midpoint_method_for_log_concave_sampling_beyond_the_strong_error_lower_b.md)

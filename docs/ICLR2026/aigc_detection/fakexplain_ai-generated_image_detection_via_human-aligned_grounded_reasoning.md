@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning
 description: >-
-  [ICLR 2026][AIGC Detection][MLLM] By constructing the FakeXplained dataset with human-annotated bounding boxes and descriptions and fine-tuning an MLLM using SFT + progressive GRPO, the model detects AI-generated images while providing spatially grounded, human-aligned explanations of "where and why" it is fake, achieving 98.2% detection accuracy and 3
+  [ICLR 2026][AIGC Detection][AI-Generated Image Detection] By constructing the FakeXplained dataset with human-annotated bounding boxes and descriptions and fine-tuning an MLLM using SFT + progressive GRPO, the model detects AI-generated images while providing spatially grounded, human-aligned explanations of "where and why" it is fake, achieving 98.2% detection accuracy and 36.0% IoU.
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - MLLM
-  - GRPO
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "AI-Generated Image Detection"
+  - "Visual Grounded Reasoning"
+  - "MLLM"
+  - "GRPO"
+  - "Human-Aligned Annotation"
+  - "Artifact Localization"
 date: 2026-05-08
-content_hash: 62ae36371c2268b5
+content_hash: cba080b8ab374b4a
 ---
+
 # FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning
 
 **Conference**: ICLR 2026  
@@ -146,10 +151,10 @@ The method leads across five OoD datasets, validating the strong generalization 
 ## Related Papers
 
 - [\[CVPR 2026\] Locate-Then-Examine: Grounded Region Reasoning Improves Detection of AI-Generated Images](../../CVPR2026/aigc_detection/locate-then-examine_grounded_region_reasoning_improves_detection_of_ai-generated.md)
+- [\[ICLR 2026\] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images](semantic_visual_anomaly_detection_and_reasoning_in_ai-generated_images.md)
 - [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
-- [\[ICML 2026\] Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection](../../ICML2026/aigc_detection/dissect_and_prune_enhancing_robustness_in_ai-generated_image_detection.md)
 - [\[ICLR 2026\] No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection](no_pixel_left_behind_a_detail-preserving_architecture_for_robust_high-resolution.md)
-- [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](../../CVPR2026/aigc_detection/ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
+- [\[ICML 2026\] Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection](../../ICML2026/aigc_detection/dissect_and_prune_enhancing_robustness_in_ai-generated_image_detection.md)
 
 </div>
 

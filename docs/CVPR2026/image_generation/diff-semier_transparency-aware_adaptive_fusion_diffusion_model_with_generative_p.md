@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diff-SemiER: Transparency-Aware Adaptive Fusion Diffusion Model with Generative Prior for Semi-Transparent Eyeglasses Removal
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Aiming at the challenge of "semi-transparent sunglasses" where residual information exists under the lens but is partially occluded, Diff-SemiER employs a **Generative Prior Diffusion Branch (GPDM)** to reconstruct a structurally sound glass-free face, followed by a **Transparency-Aware Fusion Diffusion Branch (TAFDM)*
+  [CVPR 2026][Image Generation][Semi-transparent eyeglasses removal] Aiming at the challenge of "semi-transparent sunglasses" where residual information exists under the lens but is partially occluded, Diff-SemiER employs a **Generative Prior Diffusion Branch (GPDM)** to reconstruct a structurally sound glass-free face, followed by a **Transparency-Aware Fusion Diffusion Branch (TAFDM)**. Combined with a soft mask, it adaptively fuses "generated content" and "sub-lens real deta…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Semi-transparent eyeglasses removal"
+  - "Diffusion models"
+  - "Generative prior"
+  - "Soft-mask adaptive fusion"
+  - "Face restoration"
 date: 2026-05-08
-content_hash: 1bce67dab756af0a
+content_hash: bffdd54fa5adde1a
 ---
+
 # Diff-SemiER: Transparency-Aware Adaptive Fusion Diffusion Model with Generative Prior for Semi-Transparent Eyeglasses Removal
 
 **Conference**: CVPR 2026  
@@ -157,8 +162,8 @@ Four variants on FFHQ-Test:
 ## Related Papers
 
 - [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
+- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
 - [\[CVPR 2026\] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion](careflow_cyclic_adaptive_rectified_flow_for_multimodal_fusion.md)
-- [\[CVPR 2026\] Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation](denoising_fast_and_slow_difficulty-aware_adaptive_sampling_for_image_generation.md)
 - [\[CVPR 2026\] Streaming Diffusion Model for Fast Infrared and Visible Video Fusion](streaming_diffusion_model_for_fast_infrared_and_visible_video_fusion.md)
 - [\[NeurIPS 2025\] Diff-ICMH: Harmonizing Machine and Human Vision in Image Compression with Generative Prior](../../NeurIPS2025/image_generation/diff-icmh_harmonizing_machine_and_human_vision_in_image_compression_with_generat.md)
 

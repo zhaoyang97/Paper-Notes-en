@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Matroid Algorithms Under Size-Sensitive Independence Oracles
 description: >-
-  [ICML 2026][learning_theory][Paper Note] The authors propose a "size-sensitive matroid oracle" model where the query cost grows linearly with the size of the query set. They prove that under this model, the optimal query costs for finding a basis, estimating the rank, and estimating the partition number are all $\tilde{\Theta}(n^2)$. Furthermore, for matroids
+  [ICML 2026 Spotlight][Algorithm Theory][Matroids] The authors propose a "size-sensitive matroid oracle" model where the query cost grows linearly with the size of the query set. They prove that under this model, the optimal query costs for finding a basis, estimating the rank, and estimating the partition number are all $\tilde{\Theta}(n^2)$. Furthermore, for matroids with a bounded girth $c$, they provide a maximum weight basis algorithm with a complexity of $\mathcal{O}(n^{…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026 Spotlight"
+  - "Algorithm Theory"
+  - "Combinatorial Optimization"
+  - "Matroids"
+  - "independence oracle"
+  - "size-sensitive query cost"
+  - "lower bounds"
+  - "bounded girth"
 date: 2026-05-08
-content_hash: e014c794c7ef2011
+content_hash: 796058130d4c7cba
 ---
+
 # Matroid Algorithms Under Size-Sensitive Independence Oracles
 
 **Conference**: ICML 2026 Spotlight  
@@ -114,11 +121,11 @@ This is a purely theoretical paper with no training involved. Lower bounds use Y
 
 ## Related Papers
 
-- [\[ICML 2026\] The Data Manifold under the Microscope](the_data_manifold_under_the_microscope.md)
 - [\[ICML 2026\] Sequential Kernel-based Conditional Independence Testing via Adaptive Betting](sequential_kernel-based_conditional_independence_testing_via_adaptive_betting.md)
-- [\[ICML 2026\] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)
-- [\[ICML 2026\] Quantum Algorithms for Triangle Cut Sparsification](quantum_algorithms_for_triangle_cut_sparsification.md)
+- [\[ICLR 2026\] Metric $k$-Clustering using only Weak Comparison Oracles](../../ICLR2026/learning_theory/metric_k-clustering_using_only_weak_comparison_oracles.md)
 - [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
+- [\[ICML 2026\] The Data Manifold under the Microscope](the_data_manifold_under_the_microscope.md)
+- [\[ICML 2026\] Quantum Algorithms for Triangle Cut Sparsification](quantum_algorithms_for_triangle_cut_sparsification.md)
 
 </div>
 

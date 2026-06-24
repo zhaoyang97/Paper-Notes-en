@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UPLiFT: Efficient Pixel-Dense Feature Upsampling with Local Attenders
 description: >-
-  [CVPR 2026][Others][DINOv2] UPLiFT uses a weight-sharing convolutional $2\times$ decoder to iteratively upsample low-resolution features from pretrained backbones (e.g., DINOv2) to pixel-level density. It introduces a **Local Attender** operator based entirely on fixed local offsets to replace cross-attention, reducing complexity from quadratic t
+  [CVPR 2026][Self-Supervised Learning][Feature Upsampling] UPLiFT uses a weight-sharing convolutional $2\times$ decoder to iteratively upsample low-resolution features from pretrained backbones (e.g., DINOv2) to pixel-level density. It introduces a **Local Attender** operator based entirely on fixed local offsets to replace cross-attention, reducing complexity from quadratic to linear while maintaining semantic consistency and avoiding "upsampling semantic drift"—outperforming…
 tags:
-  - CVPR 2026
-  - Others
-  - DINOv2
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Feature Upsampling"
+  - "Local Attention"
+  - "Linear Complexity"
+  - "DINOv2"
+  - "VAE Features"
 date: 2026-05-08
-content_hash: ee4dd775bc453a2f
+content_hash: d0728472f8a78a49
 ---
+
 # UPLiFT: Efficient Pixel-Dense Feature Upsampling with Local Attenders
 
 **Conference**: CVPR 2026  
@@ -136,11 +141,20 @@ On Cityscapes, UPLiFT improves LiFT's 61.98 to 65.38, proving the Local Attender
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links or lists would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] In Pursuit of Pixel Supervision for Visual Pre-training](in_pursuit_of_pixel_supervision_for_visual_pre-training.md)
+- [\[CVPR 2026\] Scaling Dense Event-Stream Pretraining from Visual Foundation Models](scaling_dense_event-stream_pretraining_from_visual_foundation_models.md)
+- [\[CVPR 2026\] Stabilizing Feature Geometry in Noisy Pretrained Models for Robust Downstream Tasks](stabilizing_feature_geometry_in_noisy_pretrained_models_for_robust_downstream_ta.md)
+- [\[CVPR 2026\] Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning](dual-estimator_decoupling_global_and_local_semantic_shift_for_drift_compensation.md)
+- [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering](naf_zero-shot_feature_upsampling_via_neighborhood_attention_filtering.md)

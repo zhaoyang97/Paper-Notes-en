@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] iManip: Skill-Incremental Learning for Robotic Manipulation
 description: >-
-  [ICCV 2025][Robotics][Incremental learning] This paper proposes the iManip framework, which enables robots to continually acquire new manipulation skills without retraining through a temporal replay strategy and a scalab…
+  [ICCV 2025][Robotics][Incremental learning] This paper proposes the iManip framework, which enables robots to continually acquire new manipulation skills without retraining through a temporal replay strategy and a scalable PerceiverIO architecture, while mitigating catastrophic forgetting of previously learned skills. iManip achieves an average improvement of 9.4% over conventional incremental learning baselines on RLBench.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "temporal replay"
   - "scalable Transformer"
 date: 2026-05-08
-content_hash: 32dba3c0540da49a
+content_hash: b634112d13ece431
 ---
 
 # iManip: Skill-Incremental Learning for Robotic Manipulation
@@ -145,8 +145,8 @@ On RLBench under the B5-5N1 setting (pre-trained on 5 base skills, then incremen
 - [\[NeurIPS 2025\] Policy Compatible Skill Incremental Learning via Lazy Learning Interface](../../NeurIPS2025/robotics/policy_compatible_skill_incremental_learning_via_lazy_learning_interface.md)
 - [\[ICCV 2025\] PASG: A Closed-Loop Framework for Automated Geometric Primitive Extraction and Semantic Anchoring in Robotic Manipulation](pasg_a_closed-loop_framework_for_automated_geometric_primitive_extraction_and_se.md)
 - [\[ICCV 2025\] Weakly-Supervised Learning of Dense Functional Correspondences](weakly-supervised_learning_of_dense_functional_correspondences.md)
-- [\[ICCV 2025\] Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos](moto_latent_motion_token_as_the_bridging_language_for_learning_robot_manipulatio.md)
 - [\[CVPR 2026\] Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment](../../CVPR2026/robotics/lifelong_imitation_learning_multimodal_latent_rep.md)
+- [\[ACL 2025\] Task-aware MoILE: Hierarchical-Task-Aware Multi-modal Mixture of Incremental LoRA Experts for Embodied Continual Learning](../../ACL2025/robotics/hierarchical-task-aware_multi-modal_mixture_of_incremental_lora_experts_for_embo.md)
 
 </div>
 

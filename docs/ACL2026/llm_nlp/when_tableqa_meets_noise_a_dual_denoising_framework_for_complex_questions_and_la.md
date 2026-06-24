@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] 当 TableQA 遇到噪声：复杂问题与大表的双重去噪框架
+  [Paper Note] When TableQA Meets Noise: A Dual Denoising Framework for Complex Questions and Large Tables
 description: >-
-  [ACL 2026][LLM (Other)][LLM Reasoning] By decomposing semantic units in questions and constructing evidence trees for transparent table pruning, the EnoTab framework achieves significant performance gains when processing complex questions and ultra-large tables, effectively mitigating the negative impact of noisy data on reasoning through a dual denoising m
+  [ACL 2026][LLM (Other)][Table Question Answering] By decomposing semantic units in questions and constructing evidence trees for transparent table pruning, the EnoTab framework achieves significant performance gains when processing complex questions and ultra-large tables, effectively mitigating the negative impact of noisy data on reasoning through a dual denoising mechanism.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - LLM Reasoning
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Table Question Answering"
+  - "Data Denoising"
+  - "LLM Reasoning"
+  - "Evidence Filtering"
+  - "Table Pruning"
 date: 2026-05-08
-content_hash: bad51edfd2e6907d
+content_hash: fc221fd6e09a3af2
 ---
+
 # When TableQA Meets Noise: A Dual Denoising Framework for Complex Questions and Large Tables
 
 **Conference**: ACL 2026  
@@ -155,15 +160,15 @@ Conclusion: Consistency and usability evaluations contribute the most (5-8% drop
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] 等等，还有出路：一个对话脱轨预测的决策机制](wait_theres_a_way_out_a_decision_mechanism_for_forecasting_conversational_derail.md)
-- [\[ACL 2026\] Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness](masked_by_consensus_disentangling_privileged_knowledge_in_llm_correctness.md)
-- [\[ACL 2026\] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models](costomcausal-oriented_steering_for_intrinsic_theory-of-mind_alignment_in_large_l.md)
-- [\[ACL 2026\] Mind the Gap: How Elicitation Protocols Shape the Stated-Revealed Preference Gap in Language Models](mind_the_gap_how_elicitation_protocols_shape_the_stated-revealed_preference_gap_.md)
-- [\[ACL 2026\] Hot-Start from Pixels: Low-Resolution Visual Tokens for Chinese Language Modeling](hot-start_from_pixels_low-resolution_visual_tokens_for_chinese_language_modeling.md)
+- [\[ACL 2025\] Can LLMs Ground when they (Don't) Know: A Study on Direct and Loaded Political Questions](../../ACL2025/llm_nlp/can_llms_ground_when_they_dont_know_a_study_on_direct_and_loaded_political_quest.md)
+- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
+- [\[ACL 2026\] From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?](from_fallback_to_frontline_when_can_llms_be_superior_annotators_of_human_perspec.md)
+- [\[ACL 2026\] EVE: A Domain-Specific LLM Framework for Earth Intelligence](eve_a_domain-specific_llm_framework_for_earth_intelligence.md)
+- [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](../../ICLR2026/llm_nlp/d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
 
 </div>
 

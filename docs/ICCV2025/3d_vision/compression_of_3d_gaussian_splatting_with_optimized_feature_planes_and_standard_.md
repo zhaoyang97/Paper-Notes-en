@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes CodecGS, which represents all Gaussian attributes via compact Tri-plane feature planes…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes CodecGS, which represents all Gaussian attributes via compact Tri-plane feature planes, combined with frequency-domain DCT entropy modeling and a channel-level bit allocation strategy, enabling efficient compression of feature planes using standard video codecs (HEVC). The method achieves storage sizes within ~10 MB while maintaining high rendering quality, yielding up to 146× compression over vanilla 3DGS.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "video codec"
   - "entropy modeling"
 date: 2026-05-08
-content_hash: afcabe0030411d65
+content_hash: c43db7bc7abc9aba
 ---
 
 # Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs
@@ -168,8 +168,8 @@ $$\mathcal{L} = \mathcal{L}_{\text{render}} + \lambda_{\text{ent}} \mathcal{L}_{
 - [\[ICCV 2025\] CF³: Compact and Fast 3D Feature Fields](cf3_compact_and_fast_3d_feature_fields.md)
 - [\[ICCV 2025\] Neural Compression for 3D Geometry Sets](neural_compression_for_3d_geometry_sets.md)
 - [\[NeurIPS 2025\] Temporal Smoothness-Aware Rate-Distortion Optimized 4D Gaussian Splatting](../../NeurIPS2025/3d_vision/temporal_smoothness-aware_rate-distortion_optimized_4d_gaussian_splatting.md)
+- [\[CVPR 2025\] GIFStream: 4D Gaussian-based Immersive Video with Feature Stream](../../CVPR2025/3d_vision/gifstream_4d_gaussian-based_immersive_video_with_feature_stream.md)
 - [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
-- [\[ICCV 2025\] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting](gazegaussian_high-fidelity_gaze_redirection_with_3d_gaussian_splatting.md)
 
 </div>
 

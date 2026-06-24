@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Ensembling Pruned Attention Heads for Uncertainty-Aware Efficient Transformers
 description: >-
-  [ICLR 2026][Model Compression][Transformer] Hydra Ensembles achieves uncertainty quantification (UQ) performance comparable to or even superior to Deep Ensembles under near-single-model inference overheads (only 1.07×). This is achieved by applying differentiated attention head pruning to the same pre-trained Transformer and then fusing multiple pruned sub-netwo
+  [ICLR 2026][Model Compression][Attention head pruning] Hydra Ensembles achieves uncertainty quantification (UQ) performance comparable to or even superior to Deep Ensembles under near-single-model inference overheads (only 1.07×). This is achieved by applying differentiated attention head pruning to the same pre-trained Transformer and then fusing multiple pruned sub-networks into a single ensemble model for a single forward pass.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Transformer
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Attention head pruning"
+  - "Uncertainty quantification"
+  - "Efficient ensemble learning"
+  - "Transformer"
+  - "Calibration"
 date: 2026-05-08
-content_hash: 743c8c55ea6e6d99
+content_hash: ef79c17c0c5470ee
 ---
+
 # Ensembling Pruned Attention Heads for Uncertainty-Aware Efficient Transformers
 
 **Conference**: ICLR 2026  
@@ -156,11 +161,11 @@ A key question is how to generate $M$ "different but complementary" sub-networks
 
 ## Related Papers
 
-- [\[CVPR 2026\] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers](../../CVPR2026/model_compression/trainable_log-linear_sparse_attention_for_efficient_diffusion_transformers.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
-- [\[ICLR 2026\] TP-Spikformer: Token Pruned Spiking Transformer](tp-spikformer_token_pruned_spiking_transformer.md)
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](../../CVPR2026/model_compression/binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
+- [\[ICLR 2026\] IGU-LoRA: Adaptive Rank Allocation via Integrated Gradients and Uncertainty-Aware Scoring](igu-lora_adaptive_rank_allocation_via_integrated_gradients_and_uncertainty-aware.md)
+- [\[ICLR 2026\] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention](sla_beyond_sparsity_in_diffusion_transformers_via_fine-tunable_sparselinear_atte.md)
+- [\[CVPR 2026\] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers](../../CVPR2026/model_compression/trainable_log-linear_sparse_attention_for_efficient_diffusion_transformers.md)
+- [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
 
 </div>
 

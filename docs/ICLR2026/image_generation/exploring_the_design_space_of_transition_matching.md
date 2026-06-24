@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Exploring the Design Space of Transition Matching
 description: >-
-  [ICLR 2026][Image Generation][Transition Matching] This paper conducts a large-scale systematic ablation (56 models of 1.7B params, 549 evaluations) on the "head" module in Transition Matching (TM), which has long been treated as a fixed attachment. It proposes a zero-overhead stochastic sampler and derives the optimal recipe, DTM++ (MLP head + log-normal time weightin
+  [ICLR 2026][Image Generation][Transition Matching] This paper conducts a large-scale systematic ablation (56 models of 1.7B params, 549 evaluations) on the "head" module in Transition Matching (TM), which has long been treated as a fixed attachment. It proposes a zero-overhead stochastic sampler and derives the optimal recipe, DTM++ (MLP head + log-normal time weighting + high-frequency stochastic sampling), achieving SOTA across aggregated metric rankings.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Transition Matching
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Transition Matching"
+  - "Text-to-Image Generation"
+  - "Flow Matching"
+  - "backbone-head architecture"
+  - "stochastic sampler"
 date: 2026-05-08
-content_hash: 48fce5e86fd03837
+content_hash: 4be1e8ec6af2694c
 ---
+
 # Exploring the Design Space of Transition Matching
 
 **Conference**: ICLR 2026  
@@ -114,15 +118,14 @@ TM was introduced by Shaul et al. (2025), unifying Diffusion (Sohl-Dickstein/Ho/
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models](../../CVPR2026/image_generation/eda_arbitrary_noise_diffusion_design_space.md)
 - [\[ICML 2026\] Exploring and Exploiting Stability in Latent Flow Matching](../../ICML2026/image_generation/exploring_and_exploiting_stability_in_latent_flow_matching.md)
+- [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models](../../CVPR2026/image_generation/eda_arbitrary_noise_diffusion_design_space.md)
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
 - [\[ICLR 2026\] Terminal Velocity Matching](terminal_velocity_matching.md)
-- [\[ICLR 2026\] Branched Schrödinger Bridge Matching](branched_schrödinger_bridge_matching.md)
+- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
 
 </div>
 

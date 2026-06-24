@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CONCUR: A Framework for Continual Constrained and Unconstrained Routing
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] CONCUR trains a pair of (accuracy classifier + cost regressor) predictors individually for each "model + decoding method" strategy. It then formulates the task assignment as an optimization problem with or without a budget. Consequently, when new strategies emerge, only new predictors need to be added without retrainin
+  [ICLR2026][LLM Efficiency][LLM routing] CONCUR trains a pair of (accuracy classifier + cost regressor) predictors individually for each "model + decoding method" strategy. It then formulates the task assignment as an optimization problem with or without a budget. Consequently, when new strategies emerge, only new predictors need to be added without retraining the entire router. It achieves higher accuracy and lower inference FLOPs than the strongest single strategy and existi…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "LLM routing"
+  - "continual learning"
+  - "modular predictors"
+  - "accuracy-cost trade-off"
+  - "constrained optimization"
 date: 2026-05-08
-content_hash: 9b21007f691a14a7
+content_hash: 3241d4e41afeba10
 ---
+
 # CONCUR: A Framework for Continual Constrained and Unconstrained Routing
 
 **Conference**: ICLR2026  
@@ -144,10 +150,10 @@ Continual Routing training cost (Setting 2: Large + Small models mixed, relative
 ## Related Papers
 
 - [\[ICLR 2026\] Merge before Forget: A Single LoRA Continual Learning via Continual Merging](merge_before_forget_a_single_lora_continual_learning_via_continual_merging.md)
+- [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](../../ICML2026/llm_efficiency/variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
 - [\[ICLR 2026\] Cactus: Accelerating Auto-Regressive Decoding with Constrained Acceptance Speculative Sampling](cactus_accelerating_auto-regressive_decoding_with_constrained_acceptance_specula.md)
+- [\[ICLR 2026\] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning](one-prompt_strikes_back_sparse_mixture_of_experts_for_prompt-based_continual_lea.md)
 - [\[ICLR 2026\] Efficient Resource-Constrained Training of Transformers via Subspace Optimization](efficient_resource-constrained_training_of_transformers_via_subspace_optimizatio.md)
-- [\[ICLR 2026\] Composer: A Search Framework for Hybrid Neural Architecture Design](composer_a_search_framework_for_hybrid_neural_architecture_design.md)
-- [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
 
 </div>
 

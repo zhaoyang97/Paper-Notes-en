@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This work treats each MRI modality as a graph node and assigns a set of zero-initialized learnable "virtual nodes" to each. A graph attention network with an adjacency matrix that dynamically rewrites based on available modalities is used for fusion. This **single-stage training** framework robustly handles brain tumor
+  [CVPR 2026][Medical Imaging][Brain Tumor Segmentation] This work treats each MRI modality as a graph node and assigns a set of zero-initialized learnable "virtual nodes" to each. A graph attention network with an adjacency matrix that dynamically rewrites based on available modalities is used for fusion. This **single-stage training** framework robustly handles brain tumor segmentation under arbitrary modality omissions, outperforming SOTA on almost all missing subsets of Bra…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Brain Tumor Segmentation"
+  - "Missing Modalities"
+  - "Graph Neural Networks"
+  - "Virtual Nodes"
+  - "Dynamic Graphs"
 date: 2026-05-08
-content_hash: 5e1b42c8253dcdaa
+content_hash: 2e5beb49fb79f8ba
 ---
+
 # Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities
 
 **Conference**: CVPR 2026  
@@ -145,16 +151,16 @@ Sensitivity to virtual node length (BraTS-2018, mean across combinations):
 - Value: ⭐⭐⭐⭐ The single-stage, plug-and-play nature with reduced parameter overhead is highly practical for clinical deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities](uni-encoder_meets_multi-encoders_representation_before_fusion_for_brain_tumor_se.md)
 - [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
-- [\[CVPR 2026\] CLoE: Expert Consistency Learning for Missing Modality Segmentation](cloe_expert_consistency_learning_for_missing_modality_segmentation.md)
-- [\[CVPR 2026\] Virtual Full-stack Scanning of Brain MRI via Imputing Any Quantised Code](virtual_full-stack_scanning_of_brain_mri_via_imputing_any_quantised_code.md)
+- [\[CVPR 2026\] Virtual Full-stack Scanning of Brain MRI via Imputing Any Quantized Code](virtual_full-stack_scanning_of_brain_mri_via_imputing_any_quantised_code.md)
 - [\[CVPR 2026\] Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration](dynamic_stream_network_for_combinatorial_explosion_problem_in_deformable_medical.md)
+- [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](../../AAAI2026/medical_imaging/mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Thinking-Language Modeling Gap in Large Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper uses a Structural Causal Model (SCM) to characterize the process of "LLMs learning to think from human language," pointing out that language is merely a vehicle for knowledge rather than thought itself. Consequently, expression habits in training data inject biases into models—LLMs ignore critical informatio
+  [ICLR 2026][Reasoning][Structural Causal Model] This paper uses a Structural Causal Model (SCM) to characterize the process of "LLMs learning to think from human language," pointing out that language is merely a vehicle for knowledge rather than thought itself. Consequently, expression habits in training data inject biases into models—LLMs ignore critical information when it appears as "implicit expressions." A prompt-level intervention called LoT (observe / expand / echo) is…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Structural Causal Model"
+  - "Implicit Expression"
+  - "Language-of-Thought Gap"
+  - "Prompt Intervention"
+  - "Reasoning Bias"
 date: 2026-05-08
-content_hash: 4f77b6393eeab3f6
+content_hash: 40d57fda08ece9da
 ---
+
 # On the Thinking-Language Modeling Gap in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -138,10 +144,10 @@ Evaluated on 4 LLMs (DeepSeek-V3 / GPT-4o-mini / Qwen2-72B / Llama-3.1-70B) acro
 ## Related Papers
 
 - [\[ICLR 2026\] TSLM: Tree-Structured Language Modeling for Divergent Thinking](tslm_tree-structured_language_modeling_for_divergent_thinking.md)
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
+- [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](../../ICML2026/llm_reasoning/modeling_hierarchical_thinking_in_large_reasoning_models.md)
 - [\[ICLR 2026\] Enhancing Language Model Reasoning with Structured Multi-Level Modeling](enhancing_language_model_reasoning_with_structured_multi-level_modeling.md)
 - [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
-- [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](../../ICML2026/llm_reasoning/modeling_hierarchical_thinking_in_large_reasoning_models.md)
-- [\[ICLR 2026\] Inpainting-Guided Policy Optimization for Diffusion Large Language Models](inpainting-guided_policy_optimization_for_diffusion_large_language_models.md)
 
 </div>
 

@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][Region-Level MLLM] GAR (Grasp Any Region) is proposed to extract high-fidelity local features while maintaining global context via RoI-aligned feature replay. It achieves precise single-region description, multi-region interaction modeling, and complex reasoning, with the 1B model outperforming InternVL3-78B.
+  [ICLR2026][Multimodal VLM][Region-Level MLLM] GAR (Grasp Any Region) is proposed to extract high-fidelity local features while maintaining global context via RoI-aligned feature replay. It achieves precise single-region description, multi-region interaction modeling, and complex reasoning, with the 1B model outperforming InternVL3-78B.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Region-Level MLLM
-  - RoI-Aligned Feature Replay
-  - Multi-Prompt Reasoning
-  - Visual Grounding
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Region-Level MLLM"
+  - "RoI-Aligned Feature Replay"
+  - "Multi-Prompt Reasoning"
+  - "Visual Grounding"
 date: 2026-05-08
-content_hash: ac9da5ab8cca3dd3
+content_hash: 447194ade1274240
 ---
+
 # Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs
 
 **Conference**: ICLR2026  
@@ -168,11 +169,11 @@ The core advantage of GAR lies in resolving the fundamental conflict between glo
 
 ## Related Papers
 
+- [\[ICLR 2026\] FlowBind: Efficient Any-to-Any Generation with Bidirectional Flows](flowbind_efficient_any-to-any_generation_with_bidirectional_flows.md)
+- [\[ACL 2025\] R-VLM: Region-Aware Vision Language Model for Precise GUI Grounding](../../ACL2025/multimodal_vlm/r-vlm_region-aware_vision_language_model_for_precise_gui_grounding.md)
+- [\[ICLR 2026\] NExT-OMNI: Towards Any-to-Any Omnimodal Foundation Models with Discrete Flow Matching](next-omni_towards_any-to-any_omnimodal_foundation_models_with_discrete_flow_matc.md)
 - [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
 - [\[ICLR 2026\] MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs](motionsight_boosting_fine-grained_motion_understanding_in_multimodal_llms.md)
-- [\[ICLR 2026\] NExT-OMNI: Towards Any-to-Any Omnimodal Foundation Models with Discrete Flow Matching](next-omni_towards_any-to-any_omnimodal_foundation_models_with_discrete_flow_matc.md)
-- [\[ICLR 2026\] FlowBind: Efficient Any-to-Any Generation with Bidirectional Flows](flowbind_efficient_any-to-any_generation_with_bidirectional_flows.md)
-- [\[ICLR 2026\] Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing](visual_self-refine_a_pixel-guided_paradigm_for_accurate_chart_parsing.md)
 
 </div>
 

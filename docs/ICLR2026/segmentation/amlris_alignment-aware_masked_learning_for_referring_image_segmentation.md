@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation
 description: >-
-  [ICLR 2026][Segmentation][referring image segmentation] The authors propose an Alignment-aware Masked Learning (AML) strategy that quantifies vision-language patch-level alignment and filters low-alignment pixels. This allows the RIS model to focus on reliable regions during training, achieving SOTA results across all 8 RefCOCO splits without any architectural modifications
+  [ICLR 2026][Segmentation][referring image segmentation] The authors propose an Alignment-aware Masked Learning (AML) strategy that quantifies vision-language patch-level alignment and filters low-alignment pixels. This allows the RIS model to focus on reliable regions during training, achieving SOTA results across all 8 RefCOCO splits without any architectural modifications.
 tags:
-  - ICLR 2026
-  - Segmentation
-  - referring image segmentation
-  - vision-language alignment
-  - masked learning
-  - cross-modal similarity
+  - "ICLR 2026"
+  - "Segmentation"
+  - "referring image segmentation"
+  - "vision-language alignment"
+  - "masked learning"
+  - "cross-modal similarity"
 date: 2026-05-08
-content_hash: 6dab564106140ed7
+content_hash: 567960a1abebab5b
 ---
+
 # AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation
 
 **Conference**: ICLR 2026  
@@ -129,11 +130,11 @@ The loss remains the standard segmentation loss $\mathcal{L}_{seg}$ used by the 
 
 ## Related Papers
 
-- [\[CVPR 2026\] SARMAE: Masked Autoencoder for SAR Representation Learning](../../CVPR2026/segmentation/sarmae_masked_autoencoder_for_sar_representation_learning.md)
-- [\[ICLR 2026\] Deforming Videos to Masks: Flow Matching for Referring Video Segmentation](deforming_videos_to_masks_flow_matching_for_referring_video_segmentation.md)
-- [\[ICLR 2026\] Efficient-SAM2: Accelerating SAM2 with Object-Aware Visual Encoding and Memory Retrieval](efficient-sam2_accelerating_sam2_with_object-aware_visual_encoding_and_memory_re.md)
 - [\[ECCV 2024\] ReMamber: Referring Image Segmentation with Mamba Twister](../../ECCV2024/segmentation/remamber_referring_image_segmentation_with_mamba_twister.md)
-- [\[AAAI 2026\] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation](../../AAAI2026/segmentation/rs2-sam2_customized_sam2_for_referring_remote_sensing_image_segmentation.md)
+- [\[CVPR 2026\] SARMAE: Masked Autoencoder for SAR Representation Learning](../../CVPR2026/segmentation/sarmae_masked_autoencoder_for_sar_representation_learning.md)
+- [\[ICCV 2025\] Latent Expression Generation for Referring Image Segmentation and Grounding](../../ICCV2025/segmentation/latent_expression_generation_for_referring_image_segmentation_and_grounding.md)
+- [\[NeurIPS 2025\] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation](../../NeurIPS2025/segmentation/safire_saccade-fixation_reiteration_with_mamba_for_referring_image_segmentation.md)
+- [\[ICLR 2026\] Deforming Videos to Masks: Flow Matching for Referring Video Segmentation](deforming_videos_to_masks_flow_matching_for_referring_video_segmentation.md)
 
 </div>
 

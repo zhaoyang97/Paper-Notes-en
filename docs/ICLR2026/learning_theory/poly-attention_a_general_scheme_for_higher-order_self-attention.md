@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Poly-attention: a general scheme for higher-order self-attention
 description: >-
-  [ICLR 2026][learning_theory][tree-attention] This paper proposes poly-attention—a class of higher-order self-attention mechanisms unified by an "attention polynomial" $h$ (where self-attention, tensor attention, and Strassen attention are special cases). It provides tight characterizations of the time complexity for exact/approximate computation and the expressiv
+  [ICLR 2026][Learning Theory][Higher-order attention] This paper proposes poly-attention—a class of higher-order self-attention mechanisms unified by an "attention polynomial" $h$ (where self-attention, tensor attention, and Strassen attention are special cases). It provides tight characterizations of the time complexity for exact/approximate computation and the expressivity of each mechanism. Consequently, it identifies a new mechanism, tree-attention…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - tree-attention
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Attention Mechanisms"
+  - "Computational Complexity"
+  - "Higher-order attention"
+  - "Function composition"
+  - "Fine-grained complexity"
+  - "Expressivity"
+  - "tree-attention"
 date: 2026-05-08
-content_hash: aa11a5c3713b8de6
+content_hash: 766a3898117fa189
 ---
+
 # Poly-attention: a general scheme for higher-order self-attention
 
 **Conference**: ICLR 2026  
@@ -139,9 +146,9 @@ Empirical validation on function composition and COGS compositional generalizati
 
 - [\[ICLR 2026\] Subquadratic Algorithms and Hardness for Attention with Any Temperature](subquadratic_algorithms_and_hardness_for_attention_with_any_temperature.md)
 - [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
-- [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
 - [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
-- [\[ICLR 2026\] Minimax Rates for Learning Pairwise Interactions in Attention-Style Models](minimax_rates_for_learning_pairwise_interactions_in_attention-style_models.md)
+- [\[ICLR 2026\] The Effect of Attention Head Count on Transformer Approximation](the_effect_of_attention_head_count_on_transformer_approximation.md)
+- [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
 
 </div>
 

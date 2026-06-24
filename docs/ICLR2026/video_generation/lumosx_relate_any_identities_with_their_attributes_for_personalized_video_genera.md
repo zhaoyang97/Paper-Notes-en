@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation
 description: >-
-  [ICLR 2026][Video Generation][DiT] LumosX introduces "Relational Self-Attention" and "Relational Cross-Attention" into the Wan2.1 video DiT. By utilizing Relational Rotary Positional Encoding (R2PE), Causal Self-Attention Mask (CSAM), and Multi-level Cross-Attention Mask (MCAM), it explicitly binds each face with its attributes (clothing, accessories, h
+  [ICLR 2026][Video Generation][Multi-subject video generation] LumosX introduces "Relational Self-Attention" and "Relational Cross-Attention" into the Wan2.1 video DiT. By utilizing Relational Rotary Positional Encoding (R2PE), Causal Self-Attention Mask (CSAM), and Multi-level Cross-Attention Mask (MCAM), it explicitly binds each face with its attributes (clothing, accessories, hairstyle) into independent subject groups. Combined with a data pipeline featuring face-attribute…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - DiT
-  - Wan2.1
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Multi-subject video generation"
+  - "face-attribute binding"
+  - "DiT"
+  - "Rotary Positional Encoding"
+  - "Attention Mask"
+  - "Wan2.1"
 date: 2026-05-08
-content_hash: 8347b46b53529c34
+content_hash: ae7c2114093ff426
 ---
+
 # LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation
 
 **Conference**: ICLR 2026  

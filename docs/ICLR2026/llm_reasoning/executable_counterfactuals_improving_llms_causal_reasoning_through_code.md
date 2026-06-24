@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Executable Counterfactuals: Improving LLMs' Causal Reasoning Through Code
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] This paper restores "counterfactual reasoning" to its three-step process of "abduction $\to$ intervention $\to$ prediction." By constructing executable Python functions (and equivalent GSM math problems) with latent variables that necessitate abduction for correct answers, the authors find that SOTA models experience a
+  [ICLR 2026][Reasoning][Counterfactual Reasoning] This paper restores "counterfactual reasoning" to its three-step process of "abduction $\to$ intervention $\to$ prediction." By constructing executable Python functions (and equivalent GSM math problems) with latent variables that necessitate abduction for correct answers, the authors find that SOTA models experience a 25–40% performance drop from intervention to counterfactual reasoning. While SFT merely memorizes shallow patt…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Counterfactual Reasoning"
+  - "Abduction"
+  - "Executable Code"
+  - "RLVR"
+  - "GRPO"
+  - "Out-of-Distribution Generalization"
 date: 2026-05-08
-content_hash: 805f4722798c50a7
+content_hash: 7f5d6bb3e427929b
 ---
+
 # Executable Counterfactuals: Improving LLMs' Causal Reasoning Through Code
 
 **Conference**: ICLR 2026  
@@ -133,8 +138,8 @@ Despite being trained only on code, RLVR transfers to natural language math prob
 - [\[ICLR 2026\] On Code-Induced Reasoning in LLMs](on_code-induced_reasoning_in_llms.md)
 - [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
 - [\[ICLR 2026\] AceReason-Nemotron 1.1: Advancing Math and Code Reasoning through SFT and RL Synergy](acereason-nemotron_11_advancing_math_and_code_reasoning_through_sft_and_rl_syner.md)
-- [\[ICLR 2026\] Improving Reasoning for Diffusion Language Models via Group Diffusion Policy Optimization](improving_reasoning_for_diffusion_language_models_via_group_diffusion_policy_opt.md)
 - [\[NeurIPS 2025\] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](../../NeurIPS2025/llm_reasoning/core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)
+- [\[ICLR 2026\] Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a Causal Lens](selection_reflection_and_self-refinement_revisit_reasoning_tasks_via_a_causal_le.md)
 
 </div>
 

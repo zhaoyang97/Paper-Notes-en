@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stochastic Minimum-Cost Reach-Avoid Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][reach-avoid] Ours proposes the Reach-Avoid Probability Certificate (RAPC), which utilizes a max-min-clamped Bellman contraction operator to lower-bound the reach-avoid probability. Combined with a "compensation factor" to normalize against adversarial $\gamma^T$ decay and symmetric gradient projection to jointly optimize conflictin
+  [ICML 2026][Reinforcement Learning][reach-avoid] Ours proposes the Reach-Avoid Probability Certificate (RAPC), which utilizes a max-min-clamped Bellman contraction operator to lower-bound the reach-avoid probability. Combined with a "compensation factor" to normalize against adversarial $\gamma^T$ decay and symmetric gradient projection to jointly optimize conflicting "cost" and "reach-avoid probability" objectives, the method achieves lower cumulative costs and higher reach…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - reach-avoid
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "reach-avoid"
+  - "probabilistic certificate"
+  - "Bellman contraction"
+  - "compensation factor"
+  - "gradient correction"
 date: 2026-05-08
-content_hash: 5192f07f629fb53e
+content_hash: c6463cbab7a7eea6
 ---
+
 # Stochastic Minimum-Cost Reach-Avoid Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -148,9 +153,9 @@ Fig 2 further demonstrates that RAPCPO achieves lower cumulative costs than RESP
 
 - [\[ICLR 2026\] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning](../../ICLR2026/reinforcement_learning/solving_parameter-robust_avoid_problems_with_unknown_feasibility_using_reinforce.md)
 - [\[ICML 2026\] Convergence of Two-Timescale Markovian Stochastic Approximations with Applications in Reinforcement Learning](convergence_of_two-timescale_markovian_stochastic_approximations_with_applicatio.md)
+- [\[ICLR 2026\] Distributional value gradients for stochastic environments](../../ICLR2026/reinforcement_learning/distributional_value_gradients_for_stochastic_environments.md)
 - [\[NeurIPS 2025\] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling](../../NeurIPS2025/reinforcement_learning/robust_adversarial_reinforcement_learning_in_stochastic_games_via_sequence_model.md)
-- [\[AAAI 2026\] DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs](../../AAAI2026/reinforcement_learning/deepprooflog_efficient_proving_in_deep_stochastic_logic_programs.md)
-- [\[AAAI 2026\] Good-for-MDP State Reduction for Stochastic LTL Planning](../../AAAI2026/reinforcement_learning/good-for-mdp_state_reduction_for_stochastic_ltl_planning.md)
+- [\[ICLR 2026\] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL](../../ICLR2026/reinforcement_learning/gas_enhancing_reward-cost_balance_of_generative_model-assisted_offline_safe_rl.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Relational Graph Transformer
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] RelGT is proposed as the first Graph Transformer specifically designed for relational databases. By utilizing multi-element tokenization (a 5-tuple of features/type/hop/time/local structure) and a hybrid local-global attention mechanism, it consistently outperforms GNN baselines across 21 tasks in the RelBench benchmar
+  [ICLR 2026][Graph Learning][Graph Transformer] RelGT is proposed as the first Graph Transformer specifically designed for relational databases. By utilizing multi-element tokenization (a 5-tuple of features/type/hop/time/local structure) and a hybrid local-global attention mechanism, it consistently outperforms GNN baselines across 21 tasks in the RelBench benchmark, achieving gains of up to 18%.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Transformer"
+  - "Relational Deep Learning"
+  - "Multi-element Tokenization"
+  - "Heterogeneous Temporal Graphs"
+  - "Positional Encoding"
 date: 2026-05-08
-content_hash: 2c79e906befe2a2a
+content_hash: c7ea2fce6bb97ad5
 ---
+
 # Relational Graph Transformer
 
 **Conference**: ICLR 2026  
@@ -172,9 +178,9 @@ $$h_{\text{output}}(v_i) = \text{FFN}([h_{\text{local}}(v_i) \| h_{\text{global}
 ## Related Papers
 
 - [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](relatron_automating_relational_machine_learning_over_relational_databases.md)
-- [\[NeurIPS 2025\] Wavy Transformer](../../NeurIPS2025/graph_learning/wavy_transformer.md)
 - [\[ICLR 2026\] PRISM: Partial-label Relational Inference with Spatial and Spectral Cues](prism_partial-label_relational_inference_with_spatial_and_spectral_cues.md)
 - [\[ICML 2026\] What Makes a Desired Graph for Relational Deep Learning?](../../ICML2026/graph_learning/what_makes_a_desired_graph_for_relational_deep_learning.md)
+- [\[NeurIPS 2025\] Wavy Transformer](../../NeurIPS2025/graph_learning/wavy_transformer.md)
 - [\[AAAI 2026\] NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification](../../AAAI2026/graph_learning/ntsformer_a_self-teaching_graph_transformer_for_multimodal_isolated_cold-start_n.md)
 
 </div>

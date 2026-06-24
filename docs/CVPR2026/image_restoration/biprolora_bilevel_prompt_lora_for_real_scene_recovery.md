@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BiProLoRA: Bilevel Prompt LoRA for Real Scene Recovery
 description: >-
-  [CVPR 2026][Image Restoration][LoRA] To address the severe degradation issue when large diffusion models "trained on synthetic data generalize to real scenes," BiProLoRA first calibrates the VAE auto-encoder path to the real degradation distribution via self-supervised distribution fidelity learning. It then formulates "LoRA for structure recovery and Pro
+  [CVPR 2026][Image Restoration][Real Scene Recovery] To address the severe degradation issue when large diffusion models "trained on synthetic data generalize to real scenes," BiProLoRA first calibrates the VAE auto-encoder path to the real degradation distribution via self-supervised distribution fidelity learning. It then formulates "LoRA for structure recovery and Prompt for degradation-aware modulation" as a bilevel (hyperparameter optimization) problem for joint training.…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - LoRA
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Real Scene Recovery"
+  - "Synthetic-to-Real Adaptation"
+  - "LoRA"
+  - "Prompt Embedding"
+  - "Bilevel Optimization"
 date: 2026-05-08
-content_hash: 560f0412d87d3303
+content_hash: eaf372562a2ceea8
 ---
+
 # BiProLoRA: Bilevel Prompt LoRA for Real Scene Recovery
 
 **Conference**: CVPR 2026  
@@ -155,15 +160,16 @@ Analysis of DFL (Pretrain vs. Finetune) and Joint Modeling (LoRA vs. Prompt vs. 
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning](diffusion-based_srgb_real_noise_generation_via_prompt-driven_noise_representatio.md)
+- [\[CVPR 2026\] Self-Attention Driven Tensor Representation for High-Order Data Recovery](self-attention_driven_tensor_representation_for_high-order_data_recovery.md)
 - [\[CVPR 2026\] Gaussian Splatting-based Low-Rank Tensor Representation for Multi-Dimensional Image Recovery](gaussian_splatting-based_low-rank_tensor_representation_for_multi-dimensional_im.md)
 - [\[CVPR 2026\] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)
-- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
-- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
+- [\[CVPR 2026\] TextOVSR: Text-Guided Real-World Opera Video Super-Resolution](textovsr_text-guided_real-world_opera_video_super-resolution.md)
 
 </div>
 

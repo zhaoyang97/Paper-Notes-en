@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis
 description: >-
-  [AAAI 2026][Medical Imaging][Medical VQA] MedEyes is a hybrid-policy reinforcement learning framework that introduces a Gaze-guided Reasoning Navigator (GRN) to simulate the "scan-and-drill" visual search pattern of clin…
+  [AAAI 2026][Medical Imaging][Medical VQA] MedEyes is a hybrid-policy reinforcement learning framework that introduces a Gaze-guided Reasoning Navigator (GRN) to simulate the "scan-and-drill" visual search pattern of clinical physicians. Combined with a Confidence Value Sampler (CVS) and dual-stream GRPO optimization, the framework enables dynamic visual focus for progressive medical diagnostic reasoning, achieving an average improvement of 8.5 pp across five medical VQA bench…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Attention"
   - "GRPO"
 date: 2026-05-08
-content_hash: 71c30cf14c424b06
+content_hash: b9fa94d0582f4319
 ---
 
 # MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis
@@ -159,11 +159,11 @@ Evaluation is conducted on five medical VQA benchmarks: VQA-RAD, SLAKE, PathVQA,
 
 ## Related Papers
 
+- [\[CVPR 2026\] X-PCR: A Benchmark for Cross-modality Progressive Clinical Reasoning in Ophthalmic Diagnosis](../../CVPR2026/medical_imaging/x-pcr_a_benchmark_for_cross-modality_progressive_clinical_reasoning_in_ophthalmi.md)
 - [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
-- [\[AAAI 2026\] GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis](giim_graph-based_learning_of_inter-_and_intra-view_dependencies_for_multi-view_m.md)
 - [\[ICLR 2026\] Glance and Focus Reinforcement for Pan-cancer Screening](../../ICLR2026/medical_imaging/glance_and_focus_reinforcement_for_pan-cancer_screening.md)
+- [\[AAAI 2026\] GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis](giim_graph-based_learning_of_inter-_and_intra-view_dependencies_for_multi-view_m.md)
 - [\[AAAI 2026\] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](q-fsru_quantum-augmented_frequency-spectral_fusion_for_medical_visual_question_a.md)
-- [\[ICLR 2026\] Boosting Medical Visual Understanding From Multi-Granular Language Learning](../../ICLR2026/medical_imaging/boosting_medical_visual_understanding_from_multi-granular_language_learning.md)
 
 </div>
 

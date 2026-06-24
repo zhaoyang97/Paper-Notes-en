@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Working Memory Constraints Scaffold Learning in Transformers under Data Scarcity
 description: >-
-  [ACL 2026][Pretraining][Paper Note] This paper integrates human working memory constraints (fixed window, exponential decay, logistic decay, primacy-recency effects) into the GPT-2 attention mechanism. By training from scratch on developmentally plausible small-scale corpora (10M/100M words), it finds that these constraints significantly improve syntacti
+  [ACL 2026 Findings][LLM Pretraining][Working Memory] This paper integrates human working memory constraints (fixed window, exponential decay, logistic decay, primacy-recency effects) into the GPT-2 attention mechanism. By training from scratch on developmentally plausible small-scale corpora (10M/100M words), it finds that these constraints significantly improve syntactic accuracy and the predictability of human reading times under data scarcity…
 tags:
-  - ACL 2026
-  - Pretraining
+  - "ACL 2026 Findings"
+  - "LLM Pretraining"
+  - "Working Memory"
+  - "Attention Constraints"
+  - "Inductive Bias"
+  - "Data Scarcity"
+  - "Cognitive Alignment"
 date: 2026-05-08
-content_hash: c90b55d6f97fd3bd
+content_hash: 11e243ba0aa1047f
 ---
+
 # Working Memory Constraints Scaffold Learning in Transformers under Data Scarcity
 
 **Conference**: ACL 2026 Findings  
@@ -144,9 +150,9 @@ Standard language modeling loss (next-token prediction). AdamW optimizer, lr=5e-
 
 - [\[ACL 2026\] FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](forever_forgetting_curve-inspired_memory_replay_for_language_model_continual_lea.md)
 - [\[ACL 2026\] SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](sage_sign-adaptive_gradient_for_memory-efficient_llm_optimization.md)
+- [\[ICLR 2026\] Pre-training under Infinite Compute](../../ICLR2026/llm_pretraining/pre-training_under_infinite_compute.md)
+- [\[ICLR 2026\] Energy-Based Transformers are Scalable Learners and Thinkers](../../ICLR2026/llm_pretraining/energy-based_transformers_are_scalable_learners_and_thinkers.md)
 - [\[NeurIPS 2025\] Memory Mosaics at Scale](../../NeurIPS2025/llm_pretraining/memory_mosaics_at_scale.md)
-- [\[NeurIPS 2025\] Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data](../../NeurIPS2025/llm_pretraining/neural_collapse_under_gradient_flow_on_shallow_relu_networks_for_orthogonally_se.md)
-- [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
 
 </div>
 

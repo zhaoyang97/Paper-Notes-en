@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DETR-ViP: Detection Transformer with Robust Discriminative Visual Prompts
 description: >-
-  [ICLR 2026][Object Detection][Grounding DINO] DETR-ViP attributes the performance gap between "visual prompts and text prompts" to a lack of global discriminability in visual prompts. By expanding negative samples through global prompt integration, reshaping the visual prompt space topology via text-based relationship distillation, and stabilizing inference with s
+  [ICLR2026][Object Detection][Visual Prompt Detection] DETR-ViP attributes the performance gap between "visual prompts and text prompts" to a lack of global discriminability in visual prompts. By expanding negative samples through global prompt integration, reshaping the visual prompt space topology via text-based relationship distillation, and stabilizing inference with selective fusion, it achieves a new SOTA in visual prompt detection across COCO / LVIS / ODinW / Roboflow10…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Grounding DINO
+  - "ICLR2026"
+  - "Object Detection"
+  - "Visual Prompt Detection"
+  - "Open-Vocabulary Detection"
+  - "Grounding DINO"
+  - "Prompt Discriminability"
+  - "Relationship Distillation"
 date: 2026-05-08
-content_hash: e0f5fe75bc17061b
+content_hash: eda9305c1cb16eaf
 ---
+
 # DETR-ViP: Detection Transformer with Robust Discriminative Visual Prompts
 
 **Conference**: ICLR2026  

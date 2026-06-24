@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Assembling the Mind's Mosaic: Towards EEG Semantic Intent Decoding
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper proposes SID, a semantic intent decoding framework that redefines "brain signal-to-language" as a process of first deconstructing EEG/SEEG into a set of unordered semantic units, then retrieving them in a continuous semantic space, and finally reconstructing sentences using an LLM. Its implementation, BrainM
+  [ICLR2026][EEG Semantic Decoding] This paper proposes SID, a semantic intent decoding framework that redefines "brain signal-to-language" as a process of first deconstructing EEG/SEEG into a set of unordered semantic units, then retrieving them in a continuous semantic space, and finally reconstructing sentences using an LLM. Its implementation, BrainMosaic, significantly outperforms classification-based and end-to-end generative baselines on multilingual EEG and clinical SEE…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR2026"
+  - "EEG Semantic Decoding"
+  - "Brain-Computer Interface"
+  - "Set Matching"
+  - "Continuous Semantic Space"
+  - "LLM Reconstruction"
 date: 2026-05-08
-content_hash: 8df04e055f277b40
+content_hash: 453a19ca6ab77f89
 ---
+
 # Assembling the Mind's Mosaic: Towards EEG Semantic Intent Decoding
 
 **Conference**: ICLR2026  

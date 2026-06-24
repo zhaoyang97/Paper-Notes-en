@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Astraea: A Token-wise Acceleration Framework for Video Diffusion Transformers
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Addressing the inference bottlenecks of Video Diffusion Transformers, Astraea proposes a framework comprising token-wise selection, GPU-friendly sparse attention, and evolutionary token budget search, achieving up to 2.4× acceleration on a single GPU and up to 13.2× in multi-GPU scenarios while maintaining generation q
+  [ICLR2026][Video Generation][Video Diffusion Transformer] Addressing the inference bottlenecks of Video Diffusion Transformers, Astraea proposes a framework comprising token-wise selection, GPU-friendly sparse attention, and evolutionary token budget search, achieving up to 2.4× acceleration on a single GPU and up to 13.2× in multi-GPU scenarios while maintaining generation quality.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Video Diffusion Transformer"
+  - "token-wise acceleration"
+  - "sparse attention"
+  - "token caching"
+  - "evolutionary search"
 date: 2026-05-08
-content_hash: 7f9b777c852d52a1
+content_hash: 2f4ca8e0d23c39bd
 ---
+
 # Astraea: A Token-wise Acceleration Framework for Video Diffusion Transformers
 
 **Conference**: ICLR2026  
@@ -155,10 +161,17 @@ These results demonstrate: first, naive $Q$ and $K$ pruning significantly damage
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching](bwcache_accelerating_video_diffusion_transformers_through_block-wise_caching.md)
+- [\[ICML 2025\] AsymRnR: Video Diffusion Transformers Acceleration with Asymmetric Reduction and Restoration](../../ICML2025/video_generation/asymrnr_video_diffusion_transformers_acceleration_with_asymmetric_reduction_and_.md)
+- [\[ICLR 2026\] TS-Attn: Temporal-wise Separable Attention for Multi-Event Video Generation](ts-attn_temporal-wise_separable_attention_for_multi-event_video_generation.md)
+- [\[ICLR 2026\] UltraViCo: Breaking Extrapolation Limits in Video Diffusion Transformers](ultravico_breaking_extrapolation_limits_in_video_diffusion_transformers.md)
+- [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](../../CVPR2026/video_generation/vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching](bwcache_accelerating_video_diffusion_transformers_through_block-wise_caching.md)

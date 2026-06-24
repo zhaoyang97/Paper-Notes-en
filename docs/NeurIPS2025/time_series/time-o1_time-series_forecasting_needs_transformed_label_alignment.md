@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment
 description: >-
-  [NeurIPS 2025][Time Series][Learning Objective] This paper proposes Time-O1, which addresses the autocorrelation bias and task overload of the TMSE loss in time series forecasting by transforming label sequences into dec…
+  [NeurIPS 2025][Time Series][Learning Objective] This paper proposes Time-O1, which addresses the autocorrelation bias and task overload of the TMSE loss in time series forecasting by transforming label sequences into decorrelated, importance-ranked principal components. The method achieves state-of-the-art performance while remaining compatible with a wide range of forecasting models.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -11,7 +11,7 @@ tags:
   - "SVD Transform"
   - "Decorrelation"
 date: 2026-05-08
-content_hash: 73e07601b0be8030
+content_hash: 58a65803f865bef0
 ---
 
 # Time-O1: Time-Series Forecasting Needs Transformed Label Alignment
@@ -124,7 +124,7 @@ Time-O1 is model-agnostic — it can directly replace the training loss of any f
 
 ## Related Papers
 
-- [\[AAAI 2026\] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting](../../AAAI2026/time_series/revitalizing_canonical_pre-alignment_for_irregular_multivariate_time_series_fore.md)
+- [\[ICLR 2026\] DistDF: Time-series Forecasting Needs Joint-distribution Wasserstein Alignment](../../ICLR2026/time_series/distdf_time-series_forecasting_needs_joint-distribution_wasserstein_alignment.md)
 - [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)
 - [\[NeurIPS 2025\] How Foundational are Foundation Models for Time Series Forecasting?](how_foundational_are_foundation_models_for_time_series_forecasting.md)
 - [\[NeurIPS 2025\] SEMPO: Lightweight Foundation Models for Time Series Forecasting](sempo_lightweight_foundation_models_for_time_series_forecasting.md)

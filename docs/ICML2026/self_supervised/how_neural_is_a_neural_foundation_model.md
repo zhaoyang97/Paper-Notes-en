@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How 'Neural' is a Neural Foundation Model?
 description: >-
-  [ICML 2026][Self-Supervised Learning][Neural Foundation Model] The authors treat a "SOTA foundation model of mouse visual cortex (FNN)" as a physiological experimental subject. By analyzing its encoder, recurrent, and readout modules using a trinity of decoding manifolds, encoding manifolds, and decoding trajectories, they discovered that FNN's fitting accuracy is primarily sustai
+  [ICML 2026][Self-Supervised Learning][Neural Foundation Model] The authors treat a "SOTA foundation model of mouse visual cortex (FNN)" as a physiological experimental subject. By analyzing its encoder, recurrent, and readout modules using a trinity of decoding manifolds, encoding manifolds, and decoding trajectories, they discovered that FNN's fitting accuracy is primarily sustained by a large number of homogeneous feature maps in the readout…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - Neural Foundation Model
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Neural Foundation Model"
+  - "Decoding Manifold"
+  - "Encoding Manifold"
+  - "tubularity metric"
+  - "Digital Twin"
 date: 2026-05-08
-content_hash: f4da40b605cd4d74
+content_hash: 3c571b1de28faae2
 ---
+
 # How 'Neural' is a Neural Foundation Model?
 
 **Conference**: ICML 2026  

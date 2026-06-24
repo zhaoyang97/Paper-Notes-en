@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Feedback-driven Recurrent Quantum Neural Network Universality
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][quantum reservoir computing] This work establishes the first quantitative approximation error bounds and universality proofs for feedback-driven Recurrent Quantum Neural Networks (RQNNs). It demonstrates that RQNNs can approximate any fading memory filter using a linear readout layer, with the number of qubits increasing only logarithmically as $\
+  [ICLR2026][Physics & Scientific Computing][quantum reservoir computing] This work establishes the first quantitative approximation error bounds and universality proofs for feedback-driven Recurrent Quantum Neural Networks (RQNNs). It demonstrates that RQNNs can approximate any fading memory filter using a linear readout layer, with the number of qubits increasing only logarithmically as $\lceil\log_2(\varepsilon^{-1})\rceil$, effectively avoiding the curse of dimensionality.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - quantum reservoir computing
-  - recurrent quantum neural network
-  - universal approximation
-  - fading memory filter
-  - NISQ
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "quantum reservoir computing"
+  - "recurrent quantum neural network"
+  - "universal approximation"
+  - "fading memory filter"
+  - "NISQ"
 date: 2026-05-08
-content_hash: 64224d39accd72ac
+content_hash: 3c4cc09397d3f31e
 ---
+
 # Feedback-driven Recurrent Quantum Neural Network Universality
 
 **Conference**: ICLR2026  
@@ -118,7 +119,7 @@ Compared to classical RNNs, the RQNN requires lower smoothness for the target fu
 - [\[ICLR 2026\] Test-Time Accuracy-Cost Control in Neural Simulators via Recurrent-Depth](test-time_accuracy-cost_control_in_neural_simulators_via_recurrent-depth.md)
 - [\[ICLR 2026\] Accelerating Inference for Multilayer Neural Networks with Quantum Computers](accelerating_inference_for_multilayer_neural_networks_with_quantum_computers.md)
 - [\[ICLR 2026\] A Function-Centric Graph Neural Network Approach for Predicting Electron Densities](a_function-centric_graph_neural_network_approach_for_predicting_electron_densiti.md)
-- [\[NeurIPS 2025\] Neural Network for Simulating Radio Emission from Extensive Air Showers](../../NeurIPS2025/physics/neural_network_for_simulating_radio_emission_from_extensive_air_showers.md)
+- [\[ICLR 2026\] Enhancing Stability of Physics-Informed Neural Network Training Through Saddle-Point Reformulation](enhancing_stability_of_physics-informed_neural_network_training_through_saddle-p.md)
 - [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](../../NeurIPS2025/physics/physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
 
 </div>

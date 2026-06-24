@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IBGS: Image-Based Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes Image-Based Gaussian Splatting (IBGS), which enhances standard 3DGS rendering quality by learning color residuals from neighboring training images. The…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes Image-Based Gaussian Splatting (IBGS), which enhances standard 3DGS rendering quality by learning color residuals from neighboring training images. The method significantly improves the modeling of high-frequency details and view-dependent effects without introducing additional storage overhead.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Color Residual"
   - "View-Dependent Effects"
 date: 2026-05-08
-content_hash: 23abec463aaa0c4d
+content_hash: 0e9bc644e22ef661
 ---
 
 # IBGS: Image-Based Gaussian Splatting
@@ -169,7 +169,7 @@ PSNR improvements on the Shiny dataset exceed **5.2 dB**, with fewer Gaussians.
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting](quantifying_and_alleviating_co-adaptation_in_sparse-view_3d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] Anti-Aliased 2D Gaussian Splatting](anti-aliased_2d_gaussian_splatting.md)
-- [\[NeurIPS 2025\] DGH: Dynamic Gaussian Hair](dgh_dynamic_gaussian_hair.md)
+- [\[CVPR 2025\] Gaussian Splatting for Efficient Satellite Image Photogrammetry (EOGS)](../../CVPR2025/3d_vision/gaussian_splatting_for_efficient_satellite_image_photogrammetry.md)
 
 </div>
 

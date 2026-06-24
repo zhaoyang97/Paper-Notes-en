@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?
 description: >-
-  [ICCV 2025][Segmentation][Remote Sensing Foundation Models] This paper proposes SatDiFuser, a framework that repurposes a generative geospatial diffusion model (DiffusionSat) as a discriminative remote sensing foundation…
+  [ICCV 2025][Segmentation][Remote Sensing Foundation Models] This paper proposes SatDiFuser, a framework that repurposes a generative geospatial diffusion model (DiffusionSat) as a discriminative remote sensing foundation model. Through systematic analysis of multi-stage, multi-timestep diffusion features and three designed fusion strategies (Global Weighted, Localized Weighted, and MoE Joint Fusion), SatDiFuser outperforms existing state-of-the-art geospatial foundation model…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Self-Supervised Learning"
   - "Satellite Imagery"
 date: 2026-05-08
-content_hash: 34e1fca86dd83fa2
+content_hash: b1489ce7766b5ae7
 ---
 
 # Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?
@@ -146,9 +146,9 @@ SatDiFuser builds upon DiffusionSat, a latent diffusion model (LDM) pretrained o
 ## Related Papers
 
 - [\[ICCV 2025\] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models](tavis_text-bridged_audio-visual_segmentation_with_foundation_models.md)
+- [\[CVPR 2025\] CrossEarth-SAR: A SAR-Centric and Billion-Scale Geospatial Foundation Model for Domain Generalizable Semantic Segmentation](../../CVPR2025/segmentation/crossearth-sar_a_sar-centric_and_billion-scale_geospatial_foundation_model_for_d.md)
 - [\[NeurIPS 2025\] RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing](../../NeurIPS2025/segmentation/roma_scaling_up_mamba-based_foundation_models_for_remote_sensing.md)
-- [\[NeurIPS 2025\] Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks](../../NeurIPS2025/segmentation/mars-bench_a_benchmark_for_evaluating_foundation_models_for_mars_science_tasks.md)
-- [\[ICML 2026\] Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models](../../ICML2026/segmentation/geometry-preserving_unsupervised_alignment_for_heterogeneous_foundation_models.md)
+- [\[ECCV 2024\] Diffusion Models for Open-Vocabulary Segmentation](../../ECCV2024/segmentation/diffusion_models_for_open-vocabulary_segmentation.md)
 - [\[ICCV 2025\] ReferEverything: Towards Segmenting Everything We Can Speak of in Videos](refereverything_towards_segmenting_everything_we_can_speak_of_in_videos.md)
 
 </div>

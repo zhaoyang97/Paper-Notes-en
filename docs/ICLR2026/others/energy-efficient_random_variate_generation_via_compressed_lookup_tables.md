@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Energy-Efficient Random Variate Generation via Compressed Lookup Tables
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper proposes the cLUT (compressed lookup table) method: a "geometric frequency" scheme for lossless lookup table compression that compresses a naive table into a "tall and narrow" 2D array. Combined with a sampling step requiring only a few random bits and a single memory lookup, it achieves exact sampling for a
+  [ICLR 2026][Random Variate Generation] This paper proposes the cLUT (compressed lookup table) method: a "geometric frequency" scheme for lossless lookup table compression that compresses a naive table into a "tall and narrow" 2D array. Combined with a sampling step requiring only a few random bits and a single memory lookup, it achieves exact sampling for any finite discrete distribution, with speeds 10–100$\times$ faster than mainstream Python samplers and 25–50% lower energ…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Random Variate Generation"
+  - "Compressed Lookup Tables"
+  - "Energy Efficiency"
+  - "Entropy-Optimal Sampling"
+  - "Exact Sampling"
 date: 2026-05-08
-content_hash: e2c1dad7eaa30632
+content_hash: 90fde3a8481922e2
 ---
+
 # Energy-Efficient Random Variate Generation via Compressed Lookup Tables
 
 **Conference**: ICLR 2026  

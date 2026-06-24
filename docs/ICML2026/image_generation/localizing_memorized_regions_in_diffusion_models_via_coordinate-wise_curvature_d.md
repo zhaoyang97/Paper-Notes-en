@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Localizing Memorized Regions in Diffusion Models via Coordinate-Wise Curvature Differences
 description: >-
-  [ICML 2026][Image Generation][score difference] This paper characterizes "local memory in diffusion models" as **variance collapse (high curvature)** of log-density on specific coordinates. By computing the **coordinate-wise curvature difference** between a conditional model and an underfitted baseline (unconditional model or early checkpoint), the method subtracts
+  [ICML 2026][Image Generation][Diffusion Model Memorization] This paper characterizes "local memory in diffusion models" as **variance collapse (high curvature)** of log-density on specific coordinates. By computing the **coordinate-wise curvature difference** between a conditional model and an underfitted baseline (unconditional model or early checkpoint), the method subtracts "pseudo-memory" caused by the inherent low variance of the data manifold. This isolates **overfittin…
 tags:
-  - ICML 2026
-  - Image Generation
-  - score difference
+  - "ICML 2026"
+  - "Image Generation"
+  - "Diffusion Model Memorization"
+  - "Local Memory Localization"
+  - "Curvature Difference"
+  - "Score Difference"
+  - "Fisher Information"
 date: 2026-05-08
-content_hash: a1608b17d0bcdc9a
+content_hash: 94a6533bda05d170
 ---
+
 # Localizing Memorized Regions in Diffusion Models via Coordinate-Wise Curvature Differences
 
 **Conference**: ICML 2026  
@@ -132,9 +137,9 @@ All four differential metrics achieve AUC > 0.99 and TPR@1%FPR near 0.97–0.99,
 
 - [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
 - [\[ICML 2026\] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models](stage-wise_distortion-perception_traversal_in_zero-shot_inverse_problems_with_di.md)
+- [\[ICLR 2026\] Scale-wise Distillation of Diffusion Models](../../ICLR2026/image_generation/scale-wise_distillation_of_diffusion_models.md)
 - [\[CVPR 2026\] Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models](../../CVPR2026/image_generation/attention_may_i_have_your_decision_localizing_generative_choices_in_diffusion_mo.md)
 - [\[ICML 2025\] Localizing and Mitigating Memorization in Image Autoregressive Models](../../ICML2025/image_generation/localizing_and_mitigating_memorization_in_image_autoregressive_models.md)
-- [\[ICML 2026\] WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation](wise_a_world_knowledge-informed_semantic_evaluation_for_text-to-image_generation.md)
 
 </div>
 

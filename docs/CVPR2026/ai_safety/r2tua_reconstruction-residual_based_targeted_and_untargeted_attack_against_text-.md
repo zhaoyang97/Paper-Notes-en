@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] R$^2$TUA: Reconstruction-residual Based Targeted and Untargeted Attack Against Text-Image Person Re-Identification
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] $R^2$TUA is the first multi-modal adversarial attack specifically designed for Text-Image Person Re-Identification (TI-ReID). Given an image and an adversarial text prompt, it utilizes progressive multi-modal fusion to inject adversarial identity attributes into the image, followed by a "reconstruction-residual" proces
+  [CVPR 2026][AI Safety][Text-Image Person Re-Identification] $R^2$TUA is the first multi-modal adversarial attack specifically designed for Text-Image Person Re-Identification (TI-ReID). Given an image and an adversarial text prompt, it utilizes progressive multi-modal fusion to inject adversarial identity attributes into the image, followed by a "reconstruction-residual" process to extract nearly invisible perturbations. This approach effectively prevents the original image f…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Text-Image Person Re-Identification"
+  - "Adversarial Attack"
+  - "Multi-modal Fusion"
+  - "Reconstruction-residual"
+  - "Targeted/Untargeted Attack"
 date: 2026-05-08
-content_hash: 99636383c29c302a
+content_hash: 4344a9333f603e82
 ---
+
 # R$^2$TUA: Reconstruction-residual Based Targeted and Untargeted Attack Against Text-Image Person Re-Identification
 
 **Conference**: CVPR 2026  
@@ -120,14 +126,15 @@ $R^2$TUA successfully directs retrieval towards the adversarial identity, with t
 - Value: ⭐⭐⭐⭐⭐ Systematically reveals security vulnerabilities in TI-ReID; critical for surveillance security research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](../../NeurIPS2025/ai_safety/unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
 - [\[CVPR 2026\] Detect Any AI-Counterfeited Text Image](detect_any_ai-counterfeited_text_image.md)
+- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
-- [\[CVPR 2026\] Good Can Sometimes be Bad: A Unified Attack against 3D Point Cloud Classifier by a Flexible Isotropic Resampling](good_can_sometimes_be_bad_a_unified_attack_against_3d_point_cloud_classifier_by_.md)
 - [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Shape of Addition: Geometric Structures of Arithmetic in Large Language Models
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The authors discover that activations in the final layer residual stream of Qwen3-4B are organized into a hierarchical manifold of "digit basins × carry fibers" during multi-operand addition. "Off-by-one" errors are reinterpreted as geometric slippage across quantization thresholds of a continuous carry potential along
+  [ICML 2026][Model Compression][Residual stream geometry] The authors discover that activations in the final layer residual stream of Qwen3-4B are organized into a hierarchical manifold of "digit basins × carry fibers" during multi-operand addition. "Off-by-one" errors are reinterpreted as geometric slippage across quantization thresholds of a continuous carry potential along Isoremainder-sum Trajectories (IRST). Based on this, a dual-stream consistency check is proposed to co…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Residual stream geometry"
+  - "isoremainder-sum trajectories"
+  - "noise quantization model"
+  - "carry potential"
+  - "inference-time self-correction"
 date: 2026-05-08
-content_hash: 47eea5c0fe92ee1f
+content_hash: e60101b4247a34c5
 ---
+
 # The Shape of Addition: Geometric Structures of Arithmetic in Large Language Models
 
 **Conference**: ICML 2026  

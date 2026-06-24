@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Gated KalmaNet: A Fading Memory Layer Through Test-Time Ridge Regression
 description: >-
-  [CVPR 2026][LLM Efficiency][Paper Note] This work reinterprets the state updates of Linear State Space Models (SSMs) as "performing test-time ridge regression on the entire history." By replacing the one-step gradient approximation in existing SSMs with the exact gain from Kalman filtering and overcoming the dual obstacles of low-precision numerical instabil
+  [CVPR2026][LLM Efficiency][Linear SSM] This work reinterprets the state updates of Linear State Space Models (SSMs) as "performing test-time ridge regression on the entire history." By replacing the one-step gradient approximation in existing SSMs with the exact gain from Kalman filtering and overcoming the dual obstacles of low-precision numerical instability and parallel training via adaptive regularization and Chebyshev iterations, it outperforms linear SSMs like Mamba2 an…
 tags:
-  - CVPR 2026
-  - LLM Efficiency
+  - "CVPR2026"
+  - "LLM Efficiency"
+  - "Linear SSM"
+  - "Kalman Filter"
+  - "Test-time Ridge Regression"
+  - "Chebyshev Iteration"
+  - "Long Context"
 date: 2026-05-08
-content_hash: 3952123d9f5206b7
+content_hash: 34c12b38be48e2d0
 ---
+
 # Gated KalmaNet: A Fading Memory Layer Through Test-Time Ridge Regression
 
 **Conference**: CVPR2026  
@@ -143,11 +149,11 @@ Exceeds MambaVision without any vision-specific modifications and approaches Pur
 
 ## Related Papers
 
-- [\[AAAI 2026\] MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm](../../AAAI2026/llm_efficiency/moetta_test-time_adaptation_under_mixed_distribution_shifts_with_moe-layernorm.md)
-- [\[CVPR 2025\] Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training](../../CVPR2025/llm_efficiency/spatial-ttt_streaming_visual-based_spatial_intelligence_with_test-time_training.md)
-- [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](../../ICML2026/llm_efficiency/remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
-- [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](../../ACL2026/llm_efficiency/comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
-- [\[AAAI 2026\] HN-MVTS: HyperNetwork-based Multivariate Time Series Forecasting](../../AAAI2026/llm_efficiency/hn-mvts_hypernetwork-based_multivariate_time_series_forecasting.md)
+- [\[ICLR 2026\] Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression](../../ICLR2026/llm_efficiency/local_linear_attention_an_optimal_interpolation_of_linear_and_softmax_attention_.md)
+- [\[ICLR 2026\] In-Place Test-Time Training](../../ICLR2026/llm_efficiency/in-place_test-time_training.md)
+- [\[ICLR 2026\] Test-Time Training Done Right](../../ICLR2026/llm_efficiency/test-time_training_done_right.md)
+- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts](../../ICLR2026/llm_efficiency/race_attention_a_strictly_linear-time_attention_layer_for_training_on_outrageous.md)
+- [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](../../ICLR2026/llm_efficiency/lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
 
 </div>
 

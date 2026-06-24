@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper establishes the first task-stratified knowledge scaling laws for post-training quantization (PTQ), categorizing LLM capabilities into memory, application, and reasoning layers. It provides a unified model for four factors: model size, bit-width, group size, and calibration set size. Validated across 293 PTQ
+  [ACL 2026 Findings][Model Compression][Post-training quantization] This paper establishes the first task-stratified knowledge scaling laws for post-training quantization (PTQ), categorizing LLM capabilities into memory, application, and reasoning layers. It provides a unified model for four factors: model size, bit-width, group size, and calibration set size. Validated across 293 PTQ configurations, the study reveals distinct patterns: reasoning is highly sensitive to precisi…
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "Scaling laws"
+  - "Knowledge stratification"
+  - "Memory application reasoning"
+  - "Fine-grained quantization factors"
 date: 2026-05-08
-content_hash: 8c6287f92c5dffba
+content_hash: 9ce1b668a6cb9820
 ---
+
 # Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs
 
 **Conference**: ACL 2026 Findings  
@@ -110,15 +116,13 @@ No training is involved. GPTQ is used to minimize quantization reconstruction er
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICML 2026\] LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws](../../ICML2026/model_compression/llms_as_noisy_channels_a_shannon_perspective_on_model_capacity_and_scaling_laws.md)
+- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](../../ICLR2026/model_compression/sliderquant_accurate_post-training_quantization_for_llms.md)
 - [\[ACL 2026\] TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination](tell-tale_task_efficient_llms_with_task_aware_layer_elimination.md)
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](../../ICML2026/model_compression/model_merging_scaling_laws_in_large_language_models.md)
 - [\[ACL 2026\] WISCA: A Lightweight Model Transition Method to Improve LLM Training via Weight Scaling](wisca_a_lightweight_model_transition_method_to_improve_llm_training_via_weight_s.md)
-- [\[AAAI 2026\] Stratified Knowledge-Density Super-Network for Scalable Vision Transformers](../../AAAI2026/model_compression/stratified_knowledge-density_super-network_for_scalable_vision_transformers.md)
 
 </div>
 

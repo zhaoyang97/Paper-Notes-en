@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Effective Training Data Synthesis for Improving MLLM Chart Understanding
 description: >-
-  [ICCV 2025][Multimodal VLM][chart understanding] This paper proposes a modular five-stage chart data synthesis pipeline that produces a high-quality training set, ECD (Effective Chart Dataset)…
+  [ICCV 2025][Multimodal VLM][chart understanding] This paper proposes a modular five-stage chart data synthesis pipeline that produces a high-quality training set, ECD (Effective Chart Dataset), comprising 10k+ chart images and 300k+ QA pairs, consistently improving chart understanding across multiple open-source MLLMs.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "training data"
   - "data quality"
 date: 2026-05-08
-content_hash: 10ee43df5027929b
+content_hash: b913f8210176f916
 ---
 
 # Effective Training Data Synthesis for Improving MLLM Chart Understanding
@@ -141,7 +141,7 @@ Other training sets typically improve only benchmarks whose distribution closely
 - [\[ICCV 2025\] CompCap: Improving Multimodal Large Language Models with Composite Captions](compcap_improving_multimodal_large_language_models_with_composite_captions.md)
 - [\[ICCV 2025\] Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis](oasis_one_image_is_all_you_need_for_multimodal_instruction_data_synthesis.md)
 - [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
-- [\[ICCV 2025\] ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning](chartpoint_guiding_mllms_with_grounding_reflection_for_chart_reasoning.md)
+- [\[ACL 2025\] MegaPairs: Massive Data Synthesis For Universal Multimodal Retrieval](../../ACL2025/multimodal_vlm/megapairs_massive_data_synthesis_for_universal_multimodal_retrieval.md)
 - [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
 
 </div>

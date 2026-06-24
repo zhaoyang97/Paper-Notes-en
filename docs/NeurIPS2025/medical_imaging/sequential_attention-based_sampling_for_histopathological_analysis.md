@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sequential Attention-based Sampling for Histopathological Analysis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Whole slide image analysis] This paper proposes SASHA, a framework integrating a Hierarchical Attention-based Feature Distillation (HAFED) module with deep reinforcement learning (RL). By…
+  [NeurIPS 2025][Medical Imaging][Whole slide image analysis] This paper proposes SASHA, a framework integrating a Hierarchical Attention-based Feature Distillation (HAFED) module with deep reinforcement learning (RL). By sampling only 10–20% of high-resolution patches, SASHA achieves classification performance on par with full-resolution SOTA methods, while yielding a 4–8× inference speedup and a WSI compression ratio exceeding 16×.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "attention-based sampling"
   - "pathological diagnosis"
 date: 2026-05-08
-content_hash: 5215aeba051fcdbc
+content_hash: b73fce1a651c3f3c
 ---
 
 # Sequential Attention-based Sampling for Histopathological Analysis
@@ -133,11 +133,11 @@ The CLAM toolkit is used for tissue segmentation and patch extraction (256×256�
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics](posterior_sampling_by_combining_diffusion_models_with_annealed_langevin_dynamics.md)
+- [\[CVPR 2025\] Boltzmann Attention Sampling for Image Analysis with Small Objects](../../CVPR2025/medical_imaging/boltzmann_attention_sampling_for_image_analysis_with_small_objects.md)
 - [\[NeurIPS 2025\] MTBBench: A Multimodal Sequential Clinical Decision-Making Benchmark in Oncology](mtbbench_a_multimodal_sequential_clinical_decision-making_benchmark_in_oncology.md)
-- [\[NeurIPS 2025\] EndoBench: A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis](endobench_a_comprehensive_evaluation_of_multi-modal_large_language_models_for_en.md)
+- [\[NeurIPS 2025\] Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics](posterior_sampling_by_combining_diffusion_models_with_annealed_langevin_dynamics.md)
 - [\[NeurIPS 2025\] RadZero: Similarity-Based Cross-Attention for Explainable Vision-Language Alignment in Chest X-ray](radzero_similarity-based_cross-attention_for_explainable_vision-language_alignme.md)
-- [\[ICCV 2025\] M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast](../../ICCV2025/medical_imaging/m-net_mri_brain_tumor_sequential_segmentation_network_via_mesh-cast.md)
+- [\[NeurIPS 2025\] EndoBench: A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis](endobench_a_comprehensive_evaluation_of_multi-modal_large_language_models_for_en.md)
 
 </div>
 

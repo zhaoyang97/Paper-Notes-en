@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLA] DUST utilizes a "dual-stream" multi-modal diffusion Transformer (MMDiT) to process action flows and future visual embedding flows in parallel. By employing shared attention for cross-modal fusion, combined with independent noise scheduling and asynchronous action-vision sampling, it enables the VLA to simultaneously le
+  [ICML 2026][Robotics][VLA] DUST utilizes a "dual-stream" multi-modal diffusion Transformer (MMDiT) to process action flows and future visual embedding flows in parallel. By employing shared attention for cross-modal fusion, combined with independent noise scheduling and asynchronous action-vision sampling, it enables the VLA to simultaneously learn "what actions to perform" and "what consequences those actions produce." It consistently outperforms GR00T-N1.5+FLARE on RoboCasa…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLA
-  - World Models
-  - flow matching
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA"
+  - "World Model"
+  - "Multi-modal Diffusion"
+  - "flow matching"
+  - "asynchronous sampling"
 date: 2026-05-08
-content_hash: bc787449f0caa335
+content_hash: ac9b5789a90180ce
 ---
+
 # Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model
 
 **Conference**: ICML 2026  
@@ -152,11 +155,11 @@ DUST consistently outperforms FLARE across all scales. Real-world performance sh
 
 ## Related Papers
 
-- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
-- [\[CVPR 2026\] NavForesee: A Unified Vision-Language World Model for Hierarchical Planning and Dual-Horizon Navigation Prediction](../../CVPR2026/robotics/navforesee_a_unified_vision-language_world_model_for_hierarchical_planning_and_d.md)
 - [\[ICML 2026\] From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model](from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-.md)
 - [\[CVPR 2026\] Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation](../../CVPR2026/robotics/global_prior_meets_local_consistency_dual-memory_augmented_vision-language-actio.md)
-- [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](../../CVPR2026/robotics/chain_of_world_world_model_thinking_in_latent_motion.md)
+- [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](../../ICLR2026/robotics/unified_vision-language-action_model.md)
+- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
+- [\[ICLR 2026\] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process](../../ICLR2026/robotics/unified_diffusion_vla_vision-language-action_model_via_joint_discrete_denosing_d.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] I²-World: Intra-Inter Tokenization for Efficient Dynamic 4D Scene Forecasting
 description: >-
-  [ICCV 2025][Time Series][4D occupancy forecasting] This paper proposes I²-World, which decouples 3D scene tokenization into two complementary processes — intra-scene multi-scale residual quantization and inter-scene temp…
+  [ICCV 2025][Time Series][4D occupancy forecasting] This paper proposes I²-World, which decouples 3D scene tokenization into two complementary processes — intra-scene multi-scale residual quantization and inter-scene temporal quantization — thereby retaining the high compression ratio of 3D tokenizers while incorporating the temporal modeling capability of 4D tokenizers, enabling efficient and high-quality 4D occupancy forecasting.
 tags:
   - "ICCV 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "autoregressive generation"
   - "autonomous driving"
 date: 2026-05-08
-content_hash: 38d096414c6cadbc
+content_hash: 81b6dd89e246ecf7
 ---
 
 # I²-World: Intra-Inter Tokenization for Efficient Dynamic 4D Scene Forecasting
@@ -147,10 +147,10 @@ The transformation matrix is decomposed into translation (L2 loss) and rotation 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning](../../NeurIPS2025/time_series/universal_spectral_tokenization_via_self-supervised_panchromatic_representation_.md)
-- [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](../../ICLR2026/time_series/towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
 - [\[NeurIPS 2025\] Diffusion Transformers as Open-World Spatiotemporal Foundation Models](../../NeurIPS2025/time_series/diffusion_transformers_as_open-world_spatiotemporal_foundation_models.md)
-- [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](../../ICML2026/time_series/u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
-- [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](../../NeurIPS2025/time_series/simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
+- [\[ICML 2025\] TQNet: Temporal Query Network for Efficient Multivariate Time Series Forecasting](../../ICML2025/time_series/temporal_query_network_for_efficient_multivariate_time_series_forecasting.md)
+- [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](../../ICLR2026/time_series/towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
+- [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
 
 </div>
 

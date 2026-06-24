@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection
 description: >-
-  [NeurIPS 2025][3D Vision][multilingual pretraining] This paper proposes a transparent, simple, and efficient model-based data selection framework for multilingual pretraining. It leverages FastText and Transformer (XLM-R…
+  [NeurIPS 2025][3D Vision][multilingual pretraining] This paper proposes a transparent, simple, and efficient model-based data selection framework for multilingual pretraining. It leverages FastText and Transformer (XLM-RoBERTa) embedding classifiers to identify structured and knowledge-rich samples. On the FineWeb-2 dataset, the framework matches baseline MMLU scores using only 15% of tokens, and is extended to 20 languages with publicly released curated pretraining datasets.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "FineWeb-2"
   - "data curation"
 date: 2026-05-08
-content_hash: 5d9976982055fa10
+content_hash: 1e6ec0202f2be803
 ---
 
 # Enhancing Multilingual LLM Pretraining with Model-Based Data Selection
@@ -180,8 +180,8 @@ The proposed method also achieves the best overall ranking on English.
 - [\[ICLR 2026\] COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception](../../ICLR2026/3d_vision/coopertrim_adaptive_data_selection_for_uncertainty-aware_cooperative_perception.md)
 - [\[ICCV 2025\] Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data](../../ICCV2025/3d_vision/bootstrap3d_improving_multi-view_diffusion_model_with_synthetic_data.md)
 - [\[NeurIPS 2025\] SceneForge: Enhancing 3D-text alignment with Structured Scene Compositions](sceneforge_enhancing_3d-text_alignment_with_structured_scene_compositions.md)
-- [\[NeurIPS 2025\] VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment](va-gs_enhancing_the_geometric_representation_of_gaussian_splatting_via_view_alig.md)
 - [\[NeurIPS 2025\] Web-Scale Collection of Video Data for 4D Animal Reconstruction](web-scale_collection_of_video_data_for_4d_animal_reconstruction.md)
+- [\[NeurIPS 2025\] VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment](va-gs_enhancing_the_geometric_representation_of_gaussian_splatting_via_view_alig.md)
 
 </div>
 

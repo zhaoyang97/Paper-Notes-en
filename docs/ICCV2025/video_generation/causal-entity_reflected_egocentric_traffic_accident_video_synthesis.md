@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causal-Entity Reflected Egocentric Traffic Accident Video Synthesis
 description: >-
-  [ICCV 2025][Video Generation][Traffic accident video synthesis] This paper proposes Causal-VidSyn, a diffusion model that achieves causal entity localization via an Accident-Reason Answering (ArA) module and a gaze-condi…
+  [ICCV 2025][Video Generation][Traffic accident video synthesis] This paper proposes Causal-VidSyn, a diffusion model that achieves causal entity localization via an Accident-Reason Answering (ArA) module and a gaze-conditioned visual token selection mechanism. The authors also construct the Drive-Gaze dataset comprising 1.54 million frames of gaze data. The method outperforms state-of-the-art approaches across three tasks: accident video editing…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model"
   - "autonomous driving safety"
 date: 2026-05-08
-content_hash: f6303bf8afe511b1
+content_hash: 10f403dc28b182db
 ---
 
 # Causal-Entity Reflected Egocentric Traffic Accident Video Synthesis
@@ -120,9 +120,9 @@ CTS/CTG extended to CogVideoX-2B and Latte also yield consistent and significant
 
 - [\[ICCV 2025\] FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation](fvgen_accelerating_novel-view_synthesis_with_adversarial_video_diffusion_distill.md)
 - [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_i.md)
-- [\[CVPR 2026\] Chain of Event-Centric Causal Thought for Physically Plausible Video Generation](../../CVPR2026/video_generation/chain_of_event-centric_causal_thought_for_physically_plausible_video_generation.md)
-- [\[NeurIPS 2025\] PoseCrafter: Extreme Pose Estimation with Hybrid Video Synthesis](../../NeurIPS2025/video_generation/posecrafter_extreme_pose_estimation_with_hybrid_video_synthesis.md)
-- [\[CVPR 2026\] DreamShot: Personalized Storyboard Synthesis with Video Diffusion Prior](../../CVPR2026/video_generation/dreamshot_storyboard_synthesis.md)
+- [\[ECCV 2024\] DragAnything: Motion Control for Anything using Entity Representation](../../ECCV2024/video_generation/draganything_motion_control_for_anything_using_entity_representation.md)
+- [\[CVPR 2026\] EgoX: Egocentric Video Generation from a Single Exocentric Video](../../CVPR2026/video_generation/egox_egocentric_video_generation_from_a_single_exocentric_video.md)
+- [\[ICML 2025\] Ca2-VDM: Efficient Autoregressive Video Diffusion Model with Causal Generation and Cache Sharing](../../ICML2025/video_generation/ca2-vdm_efficient_autoregressive_video_diffusion_model_with_causal_generation_an.md)
 
 </div>
 

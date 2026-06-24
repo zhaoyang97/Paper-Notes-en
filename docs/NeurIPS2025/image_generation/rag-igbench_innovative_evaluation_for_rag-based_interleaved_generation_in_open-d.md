@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RAG-IGBench: Innovative Evaluation for RAG-based Interleaved Generation in Open-domain Question Answering
 description: >-
-  [NeurIPS 2025][Image Generation][interleaved image-text generation] This paper introduces RAG-IGBench, a benchmark specifically designed to evaluate the quality of interleaved image-text content generated via retrieval-a…
+  [NeurIPS 2025][Image Generation][interleaved image-text generation] This paper introduces RAG-IGBench, a benchmark specifically designed to evaluate the quality of interleaved image-text content generated via retrieval-augmented generation. It proposes novel automatic evaluation metrics spanning three dimensions—text quality, image quality, and image-text consistency—and demonstrates strong correlation with human evaluation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "open-domain question answering"
   - "benchmark"
 date: 2026-05-08
-content_hash: 24c4d63a8295b307
+content_hash: 25eb847815b679c1
 ---
 
 # RAG-IGBench: Innovative Evaluation for RAG-based Interleaved Generation in Open-domain Question Answering
@@ -119,11 +119,11 @@ The RAG-IG framework: given a user query → retrieve relevant documents and ima
 
 ## Related Papers
 
+- [\[CVPR 2025\] AvatarArtist: Open-Domain 4D Avatarization](../../CVPR2025/image_generation/avatarartist_open-domain_4d_avatarization.md)
+- [\[ECCV 2024\] Learning Trimodal Relation for Audio-Visual Question Answering with Missing Modality](../../ECCV2024/image_generation/learning_trimodal_relation_for_audio-visual_question_answering_with_missing_moda.md)
 - [\[NeurIPS 2025\] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](overt_a_benchmark_for_over-refusal_evaluation_on_text-to-image_models.md)
-- [\[CVPR 2026\] SHOE: Semantic HOI Open-Vocabulary Evaluation Metric](../../CVPR2026/image_generation/shoe_semantic_hoi_open-vocabulary_evaluation_metric.md)
 - [\[NeurIPS 2025\] Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers](seg4diff_unveiling_open-vocabulary_segmentation_in_text-to-image_diffusion_trans.md)
 - [\[NeurIPS 2025\] RLZero: Direct Policy Inference from Language Without In-Domain Supervision](rlzero_direct_policy_inference_from_language_without_in-domain_supervision.md)
-- [\[NeurIPS 2025\] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation](vicinity-guided_discriminative_latent_diffusion_for_privacy-preserving_domain_ad.md)
 
 </div>
 

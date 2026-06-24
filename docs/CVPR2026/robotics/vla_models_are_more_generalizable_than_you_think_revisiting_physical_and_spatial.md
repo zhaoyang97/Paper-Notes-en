@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] This paper decomposes pre-trained VLA models into "Spatial Modeling (Vision Encoder)" and "Physical Modeling (VLM + Action Expert)". It demonstrates that the failure of VLAs under new viewpoints or visual perturbations is caused by representation drift in spatial modeling rather than the loss of physical modeling capab
+  [CVPR 2026][Robotics][VLA] This paper decomposes pre-trained VLA models into "Spatial Modeling (Vision Encoder)" and "Physical Modeling (VLM + Action Expert)". It demonstrates that the failure of VLAs under new viewpoints or visual perturbations is caused by representation drift in spatial modeling rather than the loss of physical modeling capabilities. By using two extremely lightweight one-shot adaptations—Feature Token Modulation (FTM) with 4K parameters for affine modulat…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Viewpoint Robustness"
+  - "Parameter-Efficient Adaptation"
+  - "Spatial Modeling"
+  - "One-shot Adaptation"
 date: 2026-05-08
-content_hash: 0bab7986eb15f5df
+content_hash: 38ca1762a553f879
 ---
+
 # VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling
 
 **Conference**: CVPR 2026  
@@ -163,10 +168,10 @@ The zero-shot collapse occurs almost entirely in the "Camera Viewpoint" dimensio
 ## Related Papers
 
 - [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
+- [\[ICLR 2026\] When a Robot is More Capable than a Human: Learning from Constrained Demonstrators](../../ICLR2026/robotics/when_a_robot_is_more_capable_than_a_human_learning_from_constrained_demonstrator.md)
 - [\[CVPR 2026\] SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead](swiftvla_unlocking_spatiotemporal_dynamics_for_lightweight_vla_models_at_minimal.md)
 - [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
-- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
+- [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](../../ICLR2026/robotics/vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SEA: Evaluating Sketch Abstraction Efficiency via Element-level Commonsense Visual Question Answering
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the lack of suitable metrics for "sketch quality," this paper proposes SEA, a reference-free metric that combines three signals—recognition probability $P$, total number of commonsense elements $E$, and the number of elements actually drawn $V$—into a reward-penalty score. It specifically measures the abstra
+  [CVPR 2026][Multimodal VLM][Sketch understanding] Addressing the lack of suitable metrics for "sketch quality," this paper proposes SEA, a reference-free metric that combines three signals—recognition probability $P$, total number of commonsense elements $E$, and the number of elements actually drawn $V$—into a reward-penalty score. It specifically measures the abstraction efficiency of "preserving recognizability with minimal strokes." The authors also release CommonSketch…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Sketch understanding"
+  - "abstraction efficiency evaluation"
+  - "reference-free metrics"
+  - "commonsense visual elements"
+  - "element-level VQA"
 date: 2026-05-08
-content_hash: 291a61a30f6d66b2
+content_hash: bebe70f9d7bfce4d
 ---
+
 # SEA: Evaluating Sketch Abstraction Efficiency via Element-level Commonsense Visual Question Answering
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Evaluation of VLMs detecting "which elements are drawn" against CommonSketch gro
 
 ## Related Papers
 
-- [\[CVPR 2026\] ChartR: Evaluating Reasoning Accuracy and Robustness in Chart Question Answering](chartr_evaluating_reasoning_accuracy_and_robustness_in_chart_question_answering.md)
 - [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](vq-va_world_towards_high-quality_visual_question-visual_answering.md)
-- [\[CVPR 2026\] StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering](star-kvqa_structured_reasoning_traces_for_implicit-knowledge_visual_question_ans.md)
-- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
 - [\[ACL 2025\] MAGIC-VQA: Multimodal and Grounded Inference with Commonsense Knowledge for Visual Question Answering](../../ACL2025/multimodal_vlm/magic-vqa_multimodal_and_grounded_inference_with_commonsense_knowledge_for_visua.md)
+- [\[CVPR 2026\] Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](boosting_document_parsing_efficiency_and_performance_with_coarse-to-fine_visual_.md)
+- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
+- [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](../../ICLR2026/multimodal_vlm/meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
 
 </div>
 

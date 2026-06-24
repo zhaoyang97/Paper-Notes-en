@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Facts at Scale with Active Reading
 description: >-
-  [ICLR 2026][Pretraining][Active Reading] The model is allowed to generate a set of "learning strategies" (paraphrasing, self-testing, knowledge association, analogy, etc.) for each document, which are then used to synthesize diverse training data to efficiently embed closed-form knowledge into parameters. The 8B WikiExpert outperforms 405B Llama and 236B Deep
+  [ICLR 2026][LLM Pretraining][Active Reading] The model is allowed to generate a set of "learning strategies" (paraphrasing, self-testing, knowledge association, analogy, etc.) for each document, which are then used to synthesize diverse training data to efficiently embed closed-form knowledge into parameters. The 8B WikiExpert outperforms 405B Llama and 236B DeepSeekV2 on SimpleQA.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Active Reading
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Active Reading"
+  - "Synthetic Data Generation"
+  - "Fact Recall"
+  - "Knowledge Injection"
+  - "Continued Pre-training"
 date: 2026-05-08
-content_hash: 67dbcf6f9e3af38a
+content_hash: 30b013a7db321524
 ---
+
 # Learning Facts at Scale with Active Reading
 
 **Conference**: ICLR 2026  

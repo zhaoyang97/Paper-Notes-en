@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Addressing the long-standing blind spot in deep functional map matching—where only "features" are optimized while the "spectral basis" remains fixed—this paper proposes Advanced Functional Maps. By utilizing a set of learnable "suppression functions" $G$, the fixed Laplacian basis $\Phi$ is transformed into a learnable
+  [CVPR 2026][3D Vision][Shape Matching] Addressing the long-standing blind spot in deep functional map matching—where only "features" are optimized while the "spectral basis" remains fixed—this paper proposes Advanced Functional Maps. By utilizing a set of learnable "suppression functions" $G$, the fixed Laplacian basis $\Phi$ is transformed into a learnable basis $\Psi=\Phi G$. Features and the spectral basis are jointly optimized end-to-end via a lightweight multi-scale heat…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Shape Matching"
+  - "Functional Maps"
+  - "Spectral Basis Learning"
+  - "Heat Diffusion"
+  - "Unsupervised Learning"
 date: 2026-05-08
-content_hash: de98b3f948875b0d
+content_hash: afdfef76912cfa0d
 ---
+
 # From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ Non-isometry is the core strength: On SMAL (2.6) and DT4D-H inter-class (3.5), i
 
 ## Related Papers
 
-- [\[CVPR 2026\] MemFlow: A Lightweight Forward Memorizing Framework for Quick Domain Adaptive Feature Mapping](memflow_a_lightweight_forward_memorizing_framework_for_quick_domain_adaptive_fea.md)
-- [\[CVPR 2026\] Stabilizing Feature Geometry in Noisy Pretrained Models for Robust Downstream Tasks](stabilizing_feature_geometry_in_noisy_pretrained_models_for_robust_downstream_ta.md)
-- [\[CVPR 2026\] Learning by Analogy: A Causal Framework for Compositional Generalization](learning_by_analogy_a_causal_framework_for_compositional_generalization.md)
+- [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
+- [\[CVPR 2026\] TextFM: Robust Semi-dense Feature Matching with Language Guidance](textfm_robust_semi-dense_feature_matching_with_language_guidance.md)
+- [\[CVPR 2026\] RigMo: Unifying Rig and Motion Learning for Generative Animation](rigmo_unifying_rig_and_motion_learning_for_generative_animation.md)
+- [\[CVPR 2026\] Learning Convex Decomposition via Feature Fields](learning_convex_decomposition_via_feature_fields.md)
 - [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
-- [\[AAAI 2026\] HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association](../../AAAI2026/self_supervised/hilomix_robust_high-_and_low-frequency_graph_learning_framework_for_mixing_addre.md)
 
 </div>
 

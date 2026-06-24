@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Trajectory Bellman Residual Minimization: A Simple Value-Based Method for LLM Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Bellman residual] TBRM minimizes trajectory-level Bellman residuals by treating LLM output logits as implicit Q-values…
+  [NeurIPS 2025][Reasoning][Bellman residual] TBRM minimizes trajectory-level Bellman residuals by treating LLM output logits as implicit Q-values, requiring only a single forward rollout per prompt during training. This yields substantially lower complexity than PPO/GRPO while achieving comparable or superior performance on mathematical reasoning benchmarks.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Bellman residual"
   - "value learning"
   - "single-sample"
   - "critic-free"
   - "mathematical reasoning"
 date: 2026-05-08
-content_hash: 76913e8d29cf6703
+content_hash: 27be0823d1817e2e
 ---
 
 # Trajectory Bellman Residual Minimization: A Simple Value-Based Method for LLM Reasoning

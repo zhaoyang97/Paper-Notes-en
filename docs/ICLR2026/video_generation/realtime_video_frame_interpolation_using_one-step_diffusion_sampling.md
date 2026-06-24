@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Realtime Video Frame Interpolation Using One-Step Diffusion Sampling
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] RDVFI transforms video frame interpolation from "directly drawing intermediate frames with diffusion" into "using one-step diffusion to generate sparse latent keyframes and fitting high-order continuous pixel trajectories to warp input pixels." It achieves real-time speeds of 17 FPS at 1024×576 (approx. 44× faster than
+  [ICLR 2026][Video Generation][Video Frame Interpolation] RDVFI transforms video frame interpolation from "directly drawing intermediate frames with diffusion" into "using one-step diffusion to generate sparse latent keyframes and fitting high-order continuous pixel trajectories to warp input pixels." It achieves real-time speeds of 17 FPS at 1024×576 (approx. 44× faster than SOTA) while minimizing ghosting and deformation in large-motion scenes.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Frame Interpolation"
+  - "Latent Video Diffusion"
+  - "One-step Sampling"
+  - "Continuous Pixel Trajectory"
+  - "Real-time"
 date: 2026-05-08
-content_hash: ff1fe33f08870589
+content_hash: d7ea739d8d957db6
 ---
+
 # Realtime Video Frame Interpolation Using One-Step Diffusion Sampling
 
 **Conference**: ICLR 2026  
@@ -132,13 +138,11 @@ Resolution ablation shows that since diffusion is fixed at low resolution, the r
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICLR 2026\] Towards One-Step Causal Video Generation via Adversarial Self-Distillation](towards_one-step_causal_video_generation_via_adversarial_self-distillation.md)
 - [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](../../CVPR2026/video_generation/towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
 - [\[ICLR 2026\] Arbitrary Generative Video Interpolation](arbitrary_generative_video_interpolation.md)
+- [\[ICLR 2026\] Towards One-Step Causal Video Generation via Adversarial Self-Distillation](towards_one-step_causal_video_generation_via_adversarial_self-distillation.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
 - [\[AAAI 2026\] Phased One-Step Adversarial Equilibrium for Video Diffusion Models](../../AAAI2026/video_generation/phased_one-step_adversarial_equilibrium_for_video_diffusion_models.md)
 

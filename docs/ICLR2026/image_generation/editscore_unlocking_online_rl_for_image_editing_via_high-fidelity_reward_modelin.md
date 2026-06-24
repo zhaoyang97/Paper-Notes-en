@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling
 description: >-
-  [ICLR 2026][Image Generation][reward model] The authors propose the first systematic "benchmark evaluation → reward model → reinforcement learning training" pipeline for image editing: constructing the EditReward-Bench benchmark, training the EditScore series of reward models (7B-72B, outperforming GPT-5), and successfully applying it to Online RL training to si
+  [ICLR 2026][Image Generation][reward model] The authors propose the first systematic "benchmark evaluation → reward model → reinforcement learning training" pipeline for image editing: constructing the EditReward-Bench benchmark, training the EditScore series of reward models (7B-72B, outperforming GPT-5), and successfully applying it to Online RL training to significantly enhance the performance of image editing models.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - reward model
-  - Reinforcement Learning
-  - image editing
-  - Online RL
-  - Flow-GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "reward model"
+  - "Reinforcement Learning"
+  - "image editing"
+  - "Online RL"
+  - "Flow-GRPO"
 date: 2026-05-08
-content_hash: b443f56cdce42b04
+content_hash: 6aad3ad7c8213c5f
 ---
+
 # EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling
 
 **Conference**: ICLR 2026  
@@ -135,10 +136,10 @@ Reward models are fine-tuned using a standard autoregressive objective with LoRA
 ## Related Papers
 
 - [\[ICML 2026\] SpatialReward: Bridging the Perception Gap in Online RL for Image Editing via Explicit Spatial Reasoning](../../ICML2026/image_generation/spatialreward_bridging_the_perception_gap_in_online_rl_for_image_editing_via_exp.md)
-- [\[ICLR 2026\] TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models](treegrpo_tree-advantage_grpo_for_online_rl_post-training_of_diffusion_models.md)
+- [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
 - [\[CVPR 2026\] UniGen-1.5: Enhancing Image Generation and Editing through Reward Unification in RL](../../CVPR2026/image_generation/unigen-15_enhancing_image_generation_and_editing_through_reward_unification_in_r.md)
-- [\[CVPR 2026\] PaCo-RL: Advancing Reinforcement Learning for Consistent Image Generation with Pairwise Reward Modeling](../../CVPR2026/image_generation/paco-rl_advancing_reinforcement_learning_for_consistent_image_generation_with_pa.md)
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
+- [\[CVPR 2025\] Trust Your Critic: Robust Reward Modeling and Reinforcement Learning for Faithful Image Editing and Generation](../../CVPR2025/image_generation/trust_your_critic_robust_reward_modeling_and_reinforcement_learning_for_faithful.md)
 
 </div>
 

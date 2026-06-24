@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Orientation Matters: Making 3D Generative Models Orientation-Aligned
 description: >-
-  [NeurIPS 2025][3D Vision][3D generation] This paper introduces the task of orientation-aligned 3D object generation, constructs the Objaverse-OA dataset comprising 14,832 orientation-aligned 3D models across 1…
+  [NeurIPS 2025][3D Vision][3D generation] This paper introduces the task of orientation-aligned 3D object generation, constructs the Objaverse-OA dataset comprising 14,832 orientation-aligned 3D models across 1,008 categories, fine-tunes two mainstream 3D generation frameworks (Trellis and Wonder3D) to achieve orientation-aligned object generation, and demonstrates two downstream applications: zero-shot orientation estimation and arrow-guided rotation manipulation.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Objaverse"
   - "pose estimation"
 date: 2026-05-08
-content_hash: 3fa1d08f61a3739a
+content_hash: 09bb1a1d07f412a5
 ---
 
 # Orientation Matters: Making 3D Generative Models Orientation-Aligned
@@ -53,9 +53,9 @@ Objaverse-OA dataset construction (VLM preprocessing + human correction) → Fin
 1. **Objaverse-OA Dataset Construction**
 
    **VLM Preprocessing**: Starting from 46,219 models in Objaverse-LVIS, four orthogonal views (front/back/left/right) are rendered per model, and Gemini-2.0 is used to identify the frontal view for alignment. Among these, 20,664 are successfully identified; however, VLMs exhibit three typical failure modes:
-   - Stick-like objects (e.g., forks, keys)—roll/pitch misalignment
-   - Narrow/thin objects (e.g., fish, bicycles)—VLMs rely solely on frontal features without lateral reasoning
-   - Ambiguously fronted objects (e.g., teapots, fire extinguishers)—inherent ambiguity in orientation definition
+    - Stick-like objects (e.g., forks, keys)—roll/pitch misalignment
+    - Narrow/thin objects (e.g., fish, bicycles)—VLMs rely solely on frontal features without lateral reasoning
+    - Ambiguously fronted objects (e.g., teapots, fire extinguishers)—inherent ambiguity in orientation definition
 
    **Human Correction**: Objects in approximately 600 categories require manual correction using Blender. For ambiguous objects, orientation definitions from ImageNet3D are adopted as reference. Low-quality geometry and multi-object scenes are filtered out.
 
@@ -70,10 +70,10 @@ Objaverse-OA dataset construction (VLM preprocessing + human correction) → Fin
 3. **Wonder3D-OA (Fine-tuning a Multi-view Diffusion Model)**
 
    Core modifications:
-   - **Fixed camera configuration**: renders 6 canonical views (front/front-left/front-right/left/right/back), replacing the original input-view-dependent setup.
-   - **LoRA fine-tuning**: serves as a lightweight adapter to preserve the original 3D prior.
-   - **Pixel injector**: injects the input image as a 7th view into 3D self-attention (inspired by ImageDream), resolving the failure of the original feature alignment under the fixed camera configuration.
-   - **LGM replacing NeuS**: uses 4 views (front/left/right/back) to directly generate 3DGS, replacing the time-consuming optimization-based 3D lifting.
+    - **Fixed camera configuration**: renders 6 canonical views (front/front-left/front-right/left/right/back), replacing the original input-view-dependent setup.
+    - **LoRA fine-tuning**: serves as a lightweight adapter to preserve the original 3D prior.
+    - **Pixel injector**: injects the input image as a 7th view into 3D self-attention (inspired by ImageDream), resolving the failure of the original feature alignment under the fixed camera configuration.
+    - **LGM replacing NeuS**: uses 4 views (front/left/right/back) to directly generate 3DGS, replacing the time-consuming optimization-based 3D lifting.
 
 4. **Zero-Shot Orientation Estimation**
 
@@ -160,9 +160,9 @@ Objaverse-OA dataset construction (VLM preprocessing + human correction) → Fin
 ## Related Papers
 
 - [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
+- [\[ICML 2025\] Symmetry-Robust 3D Orientation Estimation](../../ICML2025/3d_vision/symmetry-robust_3d_orientation_estimation.md)
 - [\[NeurIPS 2025\] SoFar: Language-Grounded Orientation Bridges Spatial Reasoning and Object Manipulation](sofar_language-grounded_orientation_bridges_spatial_reasoning_and_object_manipul.md)
 - [\[NeurIPS 2025\] SyncHuman: Synchronizing 2D and 3D Generative Models for Single-View Human Reconstruction](synchuman_synchronizing_2d_and_3d_generative_models_for_single-view_human_recons.md)
-- [\[NeurIPS 2025\] ROGR: Relightable 3D Objects using Generative Relighting](rogr_relightable_3d_objects_using_generative_relighting.md)
 - [\[NeurIPS 2025\] TP-MDDN: Task-Preferenced Multi-Demand-Driven Navigation with Autonomous Decision-Making](tp-mddn_task-preferenced_multi-demand-driven_navigation_with_autonomous_decision.md)
 
 </div>

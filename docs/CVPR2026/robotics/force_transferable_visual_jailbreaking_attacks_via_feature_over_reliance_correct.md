@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction
 description: >-
-  [CVPR 2026][LLM Safety][visual jailbreaking] Analysis reveals that the root cause of poor transferability in visual jailbreak attacks is that the attack resides in a high-sharpness loss region—stemming from an over-reliance of shallow features on model-specific representations and the excessive influence of high-frequency information. This work proposes the FORCE
+  [CVPR2026][Robotics][visual jailbreaking] Analysis reveals that the root cause of poor transferability in visual jailbreak attacks is that the attack resides in a high-sharpness loss region—stemming from an over-reliance of shallow features on model-specific representations and the excessive influence of high-frequency information. This work proposes the FORCE method, which expands the feasible region of shallow layers through layer-aware regularization and suppresses high-fr…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - visual jailbreaking
-  - loss landscape
-  - MLLM safety
+  - "CVPR2026"
+  - "Robotics"
+  - "visual jailbreaking"
+  - "adversarial attack"
+  - "transferability"
+  - "loss landscape"
+  - "MLLM safety"
+  - "red-teaming"
 date: 2026-05-08
-content_hash: bce2b18250d30363
+content_hash: a194532a6476f3aa
 ---
+
 # FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction
 
 **Conference**: CVPR2026  
@@ -177,11 +181,11 @@ FORCE achieves transferability comparable to or better than ensemble methods usi
 
 ## Related Papers
 
-- [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](../../ACL2026/llm_safety/jailbreaking_large_language_models_with_morality_attacks.md)
-- [\[ICML 2025\] X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP](../../ICML2025/llm_safety/x-transfer_attacks_towards_super_transferable_adversarial_attacks_on_clip.md)
-- [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](../../ICLR2026/llm_safety/beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
-- [\[CVPR 2026\] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding](iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding.md)
-- [\[ICLR 2026\] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs](../../ICLR2026/llm_safety/model_collapse_is_not_a_bug_but_a_feature_in_machine_unlearning_for_llms.md)
+- [\[CVPR 2026\] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](flare_a_failure-aware_framework_for_autonomous_correction_and_recovery_in_visual.md)
+- [\[CVPR 2026\] ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation](forcevla2_unleashing_hybrid_force-position_control_with_force_awareness_for_cont.md)
+- [\[NeurIPS 2025\] DynaNav: Dynamic Feature and Layer Selection for Efficient Visual Navigation](../../NeurIPS2025/robotics/dynanav_dynamic_feature_and_layer_selection_for_efficient_visual_navigation.md)
+- [\[CVPR 2026\] Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](hoi_-_a_multimodal_dataset_for_force-grounded_cross-view_articulated_manipulatio.md)
+- [\[CVPR 2026\] Visual-RRT: Finding Paths toward Visual-Goals via Differentiable Rendering](visual-rrt_finding_paths_toward_visual-goals_via_differentiable_rendering.md)
 
 </div>
 

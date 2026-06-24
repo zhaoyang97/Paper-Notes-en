@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] 4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models
 description: >-
-  [CVPR 2026][Others][LLM-as-judge] 4DWorldBench proposes a unified, multimodal, physics-aware 4D world generation evaluation framework. By mapping text/image/video conditions into a unified textual space, it evaluates models across four dimensions: Perceptual Quality, Condition-4D Alignment, Physical Realism, and 4D Consistency. It employs an adaptive h
+  [CVPR 2026][Multimodal VLM][World Generation Models] 4DWorldBench proposes a unified, multimodal, physics-aware 4D world generation evaluation framework. By mapping text/image/video conditions into a unified textual space, it evaluates models across four dimensions: Perceptual Quality, Condition-4D Alignment, Physical Realism, and 4D Consistency. It employs an adaptive hybrid scoring strategy involving LLM-as-judge, MLLM-as-judge, and traditional metrics…
 tags:
-  - CVPR 2026
-  - Others
-  - LLM-as-judge
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "World Generation Models"
+  - "Evaluation Benchmark"
+  - "Physical Realism"
+  - "4D Consistency"
+  - "LLM-as-judge"
 date: 2026-05-08
-content_hash: 9dda9a58d1192ccf
+content_hash: 78f7621e0eb07f74
 ---
+
 # 4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models
 
 **Conference**: CVPR 2026  
@@ -129,11 +134,11 @@ Findings: ① **LLM-as-judge consistently outperforms MLLM-based judgment** (0.4
 
 ## Related Papers
 
-- [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
+- [\[CVPR 2026\] SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence](spatialscore_towards_comprehensive_evaluation_for_spatial_intelligence.md)
+- [\[ACL 2025\] FlagEvalMM: A Flexible Framework for Comprehensive Multimodal Model Evaluation](../../ACL2025/multimodal_vlm/flagevalmm_a_flexible_framework_for_comprehensive_multimodal_model_evaluation.md)
+- [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
+- [\[CVPR 2026\] 4DP-QA: Scalable QA for 4D Perception in Vision Language Models](4dp-qa_scalable_qa_for_4d_perception_in_vision_language_models.md)
 - [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
-- [\[CVPR 2026\] 3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)
-- [\[ICCV 2025\] C4D: 4D Made from 3D through Dual Correspondences](../../ICCV2025/others/c4d_4d_made_from_3d_through_dual_correspondences.md)
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark For Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
 
 </div>
 

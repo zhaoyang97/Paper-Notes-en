@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EAST: Early Action Prediction Sampling Strategy with Token Masking
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] EAST introduces a training strategy that randomly samples the observation ratio $\rho$, allowing a **single model** to perform early action prediction across all observation ratios. Combined with a "dual classification compound loss (present + future)" and "difference masking" that discards half of the tokens based on
+  [ICLR2026][Video Understanding][Early Action Prediction] EAST introduces a training strategy that randomly samples the observation ratio $\rho$, allowing a **single model** to perform early action prediction across all observation ratios. Combined with a "dual classification compound loss (present + future)" and "difference masking" that discards half of the tokens based on temporal redundancy, it outperforms previous state-of-the-art methods by 10.1, 7.7…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Early Action Prediction"
+  - "Observation Ratio Sampling"
+  - "Token Masking"
+  - "ViT Video Encoder"
+  - "Predictive Decoder"
 date: 2026-05-08
-content_hash: ad56354c2d069a21
+content_hash: d4917090aa4a8e46
 ---
+
 # EAST: Early Action Prediction Sampling Strategy with Token Masking
 
 **Conference**: ICLR2026  
@@ -146,8 +152,8 @@ On NTU60, RGB-only EAST outperforms multi-modal methods using skeleton/depth. On
 - [\[CVPR 2026\] EarlyTom: Early Token Compression Completes Fast Video Understanding](../../CVPR2026/video_understanding/earlytom_early_token_compression_completes_fast_video_understanding.md)
 - [\[CVPR 2026\] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](../../CVPR2026/video_understanding/progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)
 - [\[CVPR 2026\] Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining](../../CVPR2026/video_understanding/cluster-wise_spatio-temporal_masking_for_efficient_video-language_pretraining.md)
+- [\[ICLR 2026\] EgoBrain: Synergizing Minds and Eyes For Human Action Understanding](egobrain_synergizing_minds_and_eyes_for_human_action_understanding.md)
 - [\[ICLR 2026\] Video-KTR: Reinforcing Video Reasoning via Key Token Attribution](video-ktr_reinforcing_video_reasoning_via_key_token_attribution.md)
-- [\[CVPR 2026\] Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation](../../CVPR2026/video_understanding/self-paced_and_self-corrective_masked_prediction_for_movie_trailer_generation.md)
 
 </div>
 

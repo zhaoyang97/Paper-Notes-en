@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Behavior Tokens Speak Louder: Disentangled Explainable Recommendation with Behavior Vocabulary
 description: >-
-  [AAAI2026][Recommender Systems][Explainable Recommendation] This paper proposes BEAT, a framework that discretizes user/item behavior representations into interpretable behavior tokens via vector-quantized autoencoders…
+  [AAAI2026][Recommender Systems][Explainable Recommendation] This paper proposes BEAT, a framework that discretizes user/item behavior representations into interpretable behavior tokens via vector-quantized autoencoders, and aligns collaborative filtering signals to the semantic space of a frozen LLM through multi-level semantic supervision, enabling zero-shot explainable recommendation.
 tags:
   - "AAAI2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "LLM"
   - "Disentangled Representation"
 date: 2026-05-08
-content_hash: 1f0c9ce5f926d6f7
+content_hash: f365a012bf9f2bc8
 ---
 
 # Behavior Tokens Speak Louder: Disentangled Explainable Recommendation with Behavior Vocabulary
@@ -130,9 +130,9 @@ BEAT achieves the best performance across all three metrics on Amazon, and reach
 
 - [\[ICML 2026\] GCIB: Graph Contrastive Information Bottleneck for Multi-Behavior Recommendation](../../ICML2026/recommender/gcib_graph_contrastive_information_bottleneck_for_multi-behavior_recommendation.md)
 - [\[AAAI 2026\] When Top-ranked Recommendations Fail: Modeling Multi-Granular Negative Feedback for Explainable and Robust Video Recommendation](when_top-ranked_recommendations_fail_modeling_multi-granular_negative_feedback_f.md)
+- [\[ICLR 2026\] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](../../ICLR2026/recommender/more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)
 - [\[AAAI 2026\] Hard vs. Noise: Resolving Hard-Noisy Sample Confusion in Recommender Systems via Large Language Models](hard_vs_noise_resolving_hard-noisy_sample_confusion_in_recommender_systems_via_l.md)
 - [\[AAAI 2026\] Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation](wavelet_enhanced_adaptive_frequency_filter_for_sequential_re.md)
-- [\[NeurIPS 2025\] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens](../../NeurIPS2025/recommender/face_a_general_framework_for_mapping_collaborative_filtering_embeddings_into_llm.md)
 
 </div>
 

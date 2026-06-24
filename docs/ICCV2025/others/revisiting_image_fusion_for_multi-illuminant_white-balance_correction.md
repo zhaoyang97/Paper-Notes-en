@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction
 description: >-
-  [ICCV 2025][White Balance] This paper addresses white-balance (WB) correction under multi-illuminant scenes by proposing an efficient Transformer-based fusion model to replace conventional linear fusion…
+  [ICCV 2025][White Balance] This paper addresses white-balance (WB) correction under multi-illuminant scenes by proposing an efficient Transformer-based fusion model to replace conventional linear fusion, alongside a large-scale multi-illuminant WB dataset containing 16,000+ images. The proposed method achieves a 100% improvement in correction quality over existing methods on the new dataset.
 tags:
   - "ICCV 2025"
   - "White Balance"
@@ -11,7 +11,7 @@ tags:
   - "Transformer"
   - "Dataset"
 date: 2026-05-08
-content_hash: dffd62e762c6bb7a
+content_hash: ac1f102cccae32cc
 ---
 
 # Revisiting Image Fusion for Multi-Illuminant White-Balance Correction
@@ -135,11 +135,11 @@ Comparison on the proposed multi-illuminant dataset:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](../../CVPR2026/others/customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
 - [\[ICCV 2025\] EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration](edffdnet_towards_accurate_and_efficient_unsupervised_multi-grid_image_registrati.md)
 - [\[NeurIPS 2025\] Depth-Supervised Fusion Network for Seamless-Free Image Stitching](../../NeurIPS2025/others/depth-supervised_fusion_network_for_seamless-free_image_stitching.md)
-- [\[CVPR 2026\] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion](../../CVPR2026/others/omnifood8k_nutrition_estimation.md)
 - [\[ICCV 2025\] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval](learning_visual_hierarchies_in_hyperbolic_space_for_image_retrieval.md)
-- [\[NeurIPS 2025\] Hybrid-Balance GFlowNet for Solving Vehicle Routing Problems](../../NeurIPS2025/others/hybrid-balance_gflownet_for_solving_vehicle_routing_problems.md)
+- [\[ICCV 2025\] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations](nappure_adversarial_purification_for_robust_image_classification_under_non-addit.md)
 
 </div>
 

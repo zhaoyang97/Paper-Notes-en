@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation
 description: >-
-  [NeurIPS 2025][Audio & Speech][Video-to-Audio] This paper proposes MGAudio, the first video-to-audio generation framework that replaces classifier-free guidance (CFG) with model-guided (MG) training…
+  [NeurIPS 2025][Audio & Speech][Video-to-Audio] This paper proposes MGAudio, the first video-to-audio generation framework that replaces classifier-free guidance (CFG) with model-guided (MG) training, combined with a dual-role audio-video encoder (DRAVE) for simultaneous condition injection and feature alignment. With only 131M parameters, MGAudio achieves state-of-the-art performance on VGGSound (FAD=0.40) and surpasses most competing methods using only 10% of the training da…
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Dual-Role Alignment"
   - "CFG Alternative"
 date: 2026-05-08
-content_hash: 1f08f98b173a76f4
+content_hash: 6b9c90a896a2b8f6
 ---
 
 # MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation
@@ -166,10 +166,10 @@ Notably, training on 10% of the data (FAD=0.73) outperforms training on 100% (FA
 ## Related Papers
 
 - [\[NeurIPS 2025\] LeVo: High-Quality Song Generation with Multi-Preference Alignment](levo_high-quality_song_generation_with_multi-preference_alignment.md)
+- [\[CVPR 2025\] MultiFoley: Video-Guided Foley Sound Generation with Multimodal Controls](../../CVPR2025/audio_speech/video-guided_foley_sound_generation_with_multimodal_controls.md)
 - [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](../../ICLR2026/audio_speech/ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
-- [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
-- [\[NeurIPS 2025\] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)
 - [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](../../ICLR2026/audio_speech/flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
+- [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
 
 </div>
 

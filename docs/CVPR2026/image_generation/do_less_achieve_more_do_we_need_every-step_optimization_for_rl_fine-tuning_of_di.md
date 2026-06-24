@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Do Less, Achieve More: Do We Need Every-Step Optimization for RL Fine-tuning of Diffusion Models?
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Addressing high variance and reward hacking in diffusion RL fine-tuning caused by "uniformly backfilling the final reward to every denoising step," this paper proposes AdaScope. By sensing semantic structural evolution and reward gain trends during denoising, it adaptively performs RL only on middle timesteps where "st
+  [CVPR 2026][Image Generation][Diffusion RL Fine-tuning] Addressing high variance and reward hacking in diffusion RL fine-tuning caused by "uniformly backfilling the final reward to every denoising step," this paper proposes AdaScope. By sensing semantic structural evolution and reward gain trends during denoising, it adaptively performs RL only on middle timesteps where "structure is formed but rewards are still increasing," achieving a 66% performance gain over SOTA while cu…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion RL Fine-tuning"
+  - "Adaptive Timesteps"
+  - "Reward Backfilling"
+  - "Reward Hacking"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: bd627ccdcf129ac0
+content_hash: 0902c7afe8e7c5a3
 ---
+
 # Do Less, Achieve More: Do We Need Every-Step Optimization for RL Fine-tuning of Diffusion Models?
 
 **Conference**: CVPR 2026  
@@ -147,8 +153,8 @@ No fixed window could match the performance of the adaptive strategy, proving th
 ## Related Papers
 
 - [\[CVPR 2026\] Reward Sharpness-Aware Fine-Tuning for Diffusion Models](reward_sharpness-aware_fine-tuning_for_diffusion_models.md)
+- [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](../../ICLR2026/image_generation/do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)
 - [\[CVPR 2026\] RealUnify: Do Unified Models Truly Benefit from Unification? A Comprehensive Benchmark](realunify_do_unified_models_truly_benefit_from_unification_a_comprehensive_bench.md)
-- [\[ICCV 2025\] Less is More: Improving Motion Diffusion Models with Sparse Keyframes](../../ICCV2025/image_generation/less_is_more_improving_motion_diffusion_models_with_sparse_keyframes.md)
 - [\[CVPR 2026\] CRAFT: Aligning Diffusion Models with Fine-Tuning Is Easier Than You Think](craft_aligning_diffusion_models_with_finetuning_is_easier_than_you_think.md)
 - [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
 

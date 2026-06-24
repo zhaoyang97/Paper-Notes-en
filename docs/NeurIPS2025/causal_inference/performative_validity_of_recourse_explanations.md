@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Performative Validity of Recourse Explanations
 description: >-
-  [NeurIPS 2025][Causal Inference][Algorithmic recourse] This paper formally analyzes the "performative" effects of recourse explanations — when a large number of rejected applicants act on recourse recommendations…
+  [NeurIPS 2025][Causal Inference][Algorithmic recourse] This paper formally analyzes the "performative" effects of recourse explanations — when a large number of rejected applicants act on recourse recommendations, their collective behavior induces distribution shift that renders recourse invalid after model retraining — and proves that only Improvement-based Causal Recourse (ICR), which intervenes solely on causal variables, preserves "performative validity" under broad condi…
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -11,7 +11,7 @@ tags:
   - "counterfactual explanations"
   - "distribution shift"
 date: 2026-05-08
-content_hash: d5a3f75edfec6dce
+content_hash: 19384072b4c207e3
 ---
 
 # Performative Validity of Recourse Explanations
@@ -168,9 +168,9 @@ Conditional distribution shift analysis (Q1) — comparing pointwise differences
 
 - [\[AAAI 2026\] KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education](../../AAAI2026/causal_inference/ktcf_actionable_recourse_in_knowledge_tracing_via_counterfactual_explanations_fo.md)
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
+- [\[ACL 2025\] Counterfactual Explanations for Aspect-Based Sentiment Analysis](../../ACL2025/causal_inference/counterfactual_explanations_for_aspect-based_sentiment_analysis.md)
 - [\[ICLR 2026\] Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders](../../ICLR2026/causal_inference/synthesising_counterfactual_explanations_via_label-conditional_gaussian_mixture_.md)
-- [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](../../ICLR2026/causal_inference/counterfactual_explanations_on_robust_perceptual_geodesics.md)
-- [\[ICML 2026\] Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity](../../ICML2026/causal_inference/density-guided_robust_counterfactual_explanations_on_tabular_data_under_model_mu.md)
+- [\[CVPR 2025\] FG-VCE: Towards Fine-Grained Interpretability — Counterfactual Explanations for Misclassification with Saliency Partition](../../CVPR2025/causal_inference/towards_fine-grained_interpretability_counterfactual_explanations_for_misclassif.md)
 
 </div>
 

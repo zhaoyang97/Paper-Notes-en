@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Multi-Task Bayesian Optimization with Large Language Models
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] BOLT distills a large number of historical Bayesian Optimization (BO) trajectories into an LLM, enabling the LLM to generate high-quality initial solutions for new tasks. These candidates are then passed to standard single-task BO for continued search, overcoming the performance saturation issues encountered by traditi
+  [ICLR2026][Optimization][Multi-task Bayesian Optimization] BOLT distills a large number of historical Bayesian Optimization (BO) trajectories into an LLM, enabling the LLM to generate high-quality initial solutions for new tasks. These candidates are then passed to standard single-task BO for continued search, overcoming the performance saturation issues encountered by traditional multi-task BO as the number of tasks increases in domains such as database query plan optimizati…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Multi-task Bayesian Optimization"
+  - "Large Language Models"
+  - "Initialization Transfer"
+  - "Black-box Optimization"
+  - "Self-augmented Fine-tuning"
 date: 2026-05-08
-content_hash: f1aa7e5bc75089d7
+content_hash: 39501ec303a4cb2f
 ---
+
 # Scaling Multi-Task Bayesian Optimization with Large Language Models
 
 **Conference**: ICLR2026  

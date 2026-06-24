@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NGD: Neural Gradient Based Deformation for Monocular Garment Reconstruction
 description: >-
-  [ICCV 2025][Human Understanding][garment reconstruction] This paper proposes NGD, a neural gradient-based deformation method that decomposes the Jacobian field into a frame-invariant static component and a frame-dependen…
+  [ICCV 2025][Human Understanding][garment reconstruction] This paper proposes NGD, a neural gradient-based deformation method that decomposes the Jacobian field into a frame-invariant static component and a frame-dependent dynamic component. Combined with an adaptive remeshing strategy, NGD reconstructs high-fidelity dynamic garment geometry and appearance from monocular video, significantly outperforming existing SOTA methods on challenging scenarios such as loose-fitting gar…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "monocular video"
   - "differentiable rendering"
 date: 2026-05-08
-content_hash: b43243d5264d769d
+content_hash: 83956842cb764616
 ---
 
 # NGD: Neural Gradient Based Deformation for Monocular Garment Reconstruction
@@ -156,10 +156,10 @@ Ablation of design choices (4D-Dress dataset, averaged over 5 sequences):
 ## Related Papers
 
 - [\[ICCV 2025\] Monocular Facial Appearance Capture in the Wild](monocular_facial_appearance_capture_in_the_wild.md)
+- [\[CVPR 2025\] ChatGarment: Garment Estimation, Generation and Editing via Large Language Models](../../CVPR2025/human_understanding/chatgarment_garment_estimation_generation_and_editing_via_large_language_models.md)
+- [\[CVPR 2025\] D3-Human: Dynamic Disentangled Digital Human from Monocular Video](../../CVPR2025/human_understanding/d3-human_dynamic_disentangled_digital_human_from_monocular_video.md)
 - [\[ICCV 2025\] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation](dynamic_reconstruction_of_hand-object_interaction_with_distributed_force-aware_c.md)
 - [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
-- [\[CVPR 2026\] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](../../CVPR2026/human_understanding/cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)
-- [\[CVPR 2026\] 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction](../../CVPR2026/human_understanding/textit4dsurf_high-fidelity_dynamic_scene_surface_reconstruction.md)
 
 </div>
 

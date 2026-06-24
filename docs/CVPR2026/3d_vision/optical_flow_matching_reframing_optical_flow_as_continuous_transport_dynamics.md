@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Optical Flow Matching: Reframing Optical Flow as Continuous Transport Dynamics
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] This work reframes optical flow from "discrete displacement regression between two frames" to "learning a velocity field for continuous transport of pixel coordinates over time." By employing a Triangular Velocity Synergetics (TVS) technique, the theoretical objectives of Flow Matching are aligned with the supervision
+  [CVPR 2026][3D Vision][Optical Flow Estimation] This work reframes optical flow from "discrete displacement regression between two frames" to "learning a velocity field for continuous transport of pixel coordinates over time." By employing a Triangular Velocity Synergetics (TVS) technique, the theoretical objectives of Flow Matching are aligned with the supervision signals usable by optical flow networks, achieving SOTA accuracy on Sintel / KITTI / Spring datasets alongside s…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Optical Flow Estimation"
+  - "Flow Matching"
+  - "Continuous Transport"
+  - "ODE Solving"
+  - "Velocity Field"
 date: 2026-05-08
-content_hash: 469f8b58805b79aa
+content_hash: 2b10e88501cfc132
 ---
+
 # Optical Flow Matching: Reframing Optical Flow as Continuous Transport Dynamics
 
 **Conference**: CVPR 2026  
@@ -132,11 +137,11 @@ Regarding efficiency (KITTI 376×1248): OFM(3-NFE) requires 15.6M parameters and
 
 ## Related Papers
 
-- [\[CVPR 2026\] Rethinking Dense Optical Flow without Test-Time Scaling](rethinking_dense_optical_flow_without_test-time_scaling.md)
 - [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
-- [\[NeurIPS 2025\] E-MoFlow: Learning Egomotion and Optical Flow from Event Data via Implicit Regularization](../../NeurIPS2025/3d_vision/e-moflow_learning_egomotion_and_optical_flow_from_event_data_via_implicit_regula.md)
+- [\[ICLR 2026\] WAFT: Warping-Alone Field Transforms for Optical Flow](../../ICLR2026/3d_vision/waft_warping-alone_field_transforms_for_optical_flow.md)
 - [\[CVPR 2026\] UniPixie: Unified and Probabilistic 3D Physics Learning via Flow Matching](unipixie_unified_and_probabilistic_3d_physics_learning_via_flow_matching.md)
+- [\[ICLR 2026\] RobustSpring: Benchmarking Robustness to Image Corruptions for Optical Flow, Scene Flow and Stereo](../../ICLR2026/3d_vision/robustspring_benchmarking_robustness_to_image_corruptions_for_optical_flow_scene.md)
+- [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
 
 </div>
 

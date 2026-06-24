@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos
 description: >-
-  [ICML 2026][Video Generation][Paper Note] MIGA enables base video models to generate **infinitely long** and **highly temporally consistent** videos without training through two core mechanisms: **Two-Stage Training-Inference Alignment** (TTA) and **Dual Consistency Enhancement** (DCE: Self-Reflection + Long-Range Frame Guidance). It achieves a 2.8% improvemen
+  [ICML 2026][Video Generation][Long Video Generation] MIGA enables base video models to generate **infinitely long** and **highly temporally consistent** videos without training through two core mechanisms: **Two-Stage Training-Inference Alignment** (TTA) and **Dual Consistency Enhancement** (DCE: Self-Reflection + Long-Range Frame Guidance). It achieves a 2.8% improvement in VBench composite score compared to FIFO-Diffusion (97.82 vs 95.02).
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Long Video Generation"
+  - "Training-free Extension"
+  - "Temporal Consistency"
+  - "Autoregressive Generation"
 date: 2026-05-08
-content_hash: ef4fe452e48e0f4c
+content_hash: 77307d0f24c88c6d
 ---
+
 # Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos
 
 **Conference**: ICML 2026  
@@ -125,15 +130,15 @@ The two core mechanisms contribute independently to a ~2% improvement in total s
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Explainable Forensics of Manipulated Segments in Untrimmed Long Videos](explainable_forensics_of_manipulated_segments_in_untrimmed_long_videos.md)
+- [\[CVPR 2025\] StreamingT2V: Consistent, Dynamic, and Extendable Long Video Generation from Text](../../CVPR2025/video_generation/streamingt2v_consistent_dynamic_and_extendable_long_video_generation_from_text.md)
 - [\[CVPR 2026\] TempoMaster: Efficient Long Video Generation via Next-Frame-Rate Prediction](../../CVPR2026/video_generation/tempomaster_efficient_long_video_generation_via_next-frame-rate_prediction.md)
 - [\[CVPR 2026\] Free-Lunch Long Video Generation via Layer-Adaptive O.O.D Correction](../../CVPR2026/video_generation/free-lunch_long_video_generation_via_layer-adaptive_ood_correction.md)
-- [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](../../ICLR2026/video_generation/frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
-- [\[AAAI 2026\] FilmWeaver: Weaving Consistent Multi-Shot Videos with Cache-Guided Autoregressive Diffusion](../../AAAI2026/video_generation/filmweaver_weaving_consistent_multi-shot_videos_with_cache-guided_autoregressive.md)
+- [\[ICLR 2026\] Stable Video Infinity: Achieving Infinite-Length Video Generation via "Error Recycling"](../../ICLR2026/video_generation/stable_video_infinity_infinite-length_video_generation_with_error_recycling.md)
 
 </div>
 

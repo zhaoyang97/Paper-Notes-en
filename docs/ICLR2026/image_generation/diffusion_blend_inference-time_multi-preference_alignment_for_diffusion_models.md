@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][multi-preference alignment] Diffusion Blend is proposed to achieve multi-preference alignment by blending the backward diffusion processes of multiple reward-finetuned models at inference time. DB-MPA supports arbitrary linear combinations of rewards; DB-KLA enables dynamic KL regularization control; and DB-MPA-LS eliminates inference overhead th
+  [ICLR 2026][Image Generation][multi-preference alignment] Diffusion Blend is proposed to achieve multi-preference alignment by blending the backward diffusion processes of multiple reward-finetuned models at inference time. DB-MPA supports arbitrary linear combinations of rewards; DB-KLA enables dynamic KL regularization control; and DB-MPA-LS eliminates inference overhead through stochastic LoRA sampling. The method theoretically proves error bounds for the blending approxim…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - multi-preference alignment
-  - inference-time
-  - backward SDE blending
-  - KL regularization control
-  - Pareto-optimal
+  - "ICLR 2026"
+  - "Image Generation"
+  - "multi-preference alignment"
+  - "inference-time"
+  - "backward SDE blending"
+  - "KL regularization control"
+  - "Pareto-optimal"
 date: 2026-05-08
-content_hash: 7e3f4e7cd4ac1f3a
+content_hash: bc9a40b4ecab95f2
 ---
+
 # Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -143,15 +144,13 @@ DB-KLA provides smooth control over KL: $\lambda > 1$ strengthens alignment but 
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
 - [\[ICLR 2026\] $\alpha$-DPO: Robust Preference Alignment for Diffusion Models via $\alpha$ Divergence](alpha-dpo_robust_preference_alignment_for_diffusion_models_via_alpha_divergence.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
 - [\[ICLR 2026\] RNE: plug-and-play diffusion inference-time control and energy-based training](rne_plug-and-play_diffusion_inference-time_control_and_energy-based_training.md)
 - [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](compositional_visual_planning_via_inference-time_diffusion_scaling.md)
-- [\[ICLR 2026\] GLASS Flows: Efficient Inference for Reward Alignment of Flow and Diffusion Models](glass_flows_reward_alignment_diffusion.md)
 
 </div>
 

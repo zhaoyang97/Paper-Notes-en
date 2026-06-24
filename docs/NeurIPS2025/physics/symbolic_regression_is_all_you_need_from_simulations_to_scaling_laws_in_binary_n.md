@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Symbolic Regression Is All You Need: From Simulations to Scaling Laws in Binary Neutron Star Mergers
 description: >-
-  [NeurIPS 2025 (AI for Science Workshop)][Physics & Scientific Computing][Symbolic Regression] This work applies Symbolic Regression (SR) to automatically discover analytic calibration relations for post-merger accretion…
+  [NeurIPS 2025 (AI for Science Workshop)][Physics & Scientific Computing][Symbolic Regression] This work applies Symbolic Regression (SR) to automatically discover analytic calibration relations for post-merger accretion disk mass in binary neutron star mergers from numerical relativity simulation data. The resulting compact expressions comprehensively outperform existing empirical fitting formulae in the literature in terms of predictive accuracy, generalization…
 tags:
   - "NeurIPS 2025 (AI for Science Workshop)"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Kilonova"
   - "Equation of State"
 date: 2026-05-08
-content_hash: 8ca051f19176be66
+content_hash: b28be45d6f9ae2f1
 ---
 
 # Symbolic Regression Is All You Need: From Simulations to Scaling Laws in Binary Neutron Star Mergers
@@ -143,10 +143,10 @@ With a complexity-9 expression $M_{\text{disk}} = 0.1188 - 0.1430 \times \sin(\s
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scaling Laws and Pathologies of Single-Layer PINNs: Network Width and PDE Nonlinearity](scaling_laws_and_pathologies_of_single-layer_pinns_network_width_and_pde_nonline.md)
+- [\[ICLR 2026\] GenSR: Symbolic Regression based on Equation Generative Space](../../ICLR2026/physics/gensr_symbolic_regression_based_on_equation_generative_space.md)
+- [\[ICLR 2026\] Scaling Laws and Symmetry, Evidence from Neural Force Fields](../../ICLR2026/physics/scaling_laws_and_symmetry_evidence_from_neural_force_fields.md)
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
 - [\[NeurIPS 2025\] GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations](gyroswin_5d_surrogates_for_gyrokinetic_plasma_turbulence_simulations.md)
-- [\[NeurIPS 2025\] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale](eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca.md)
-- [\[ICLR 2026\] Deep Learning for Subspace Regression](../../ICLR2026/physics/deep_learning_for_subspace_regression.md)
 
 </div>
 

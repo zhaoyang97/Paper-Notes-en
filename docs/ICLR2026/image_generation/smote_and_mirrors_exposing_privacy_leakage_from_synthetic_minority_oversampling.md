@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Image Generation][SMOTE] This work provides the first systematic study of privacy leakage in SMOTE, proposing two attacks, DistinSMOTE and ReconSMOTE. It demonstrates that SMOTE is inherently non-privacy-preserving and excessively exposes minority class records.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - SMOTE
+  - "ICLR 2026"
+  - "Image Generation"
+  - "SMOTE"
+  - "Privacy Leakage"
+  - "Reconstruction Attack"
+  - "Distinction Attack"
+  - "Minority Oversampling"
 date: 2026-05-08
-content_hash: 2b607c07e496a29c
+content_hash: c0727b17227d0edc
 ---
+
 # SMOTE and Mirrors: Exposing Privacy Leakage from Synthetic Minority Oversampling
 
 **Conference**: ICLR 2026  
@@ -124,8 +129,8 @@ Both attacks have a time complexity of $O(n^2 d + n(kr)^2)$, requiring only minu
 - [\[ICML 2025\] Privacy Amplification Through Synthetic Data: Insights from Linear Regression](../../ICML2025/image_generation/privacy_amplification_through_synthetic_data_insights_from_linear_regression.md)
 - [\[AAAI 2026\] Exposing DeepFakes via Hyperspectral Domain Mapping](../../AAAI2026/image_generation/exposing_deepfakes_via_hyperspectral_domain_mapping.md)
 - [\[ICLR 2026\] DeLeaker: Dynamic Inference-Time Reweighting For Semantic Leakage Mitigation in Text-to-Image Models](deleaker_dynamic_inference-time_reweighting_for_semantic_leakage_mitigation_in_t.md)
+- [\[ICLR 2026\] Synthetic History: Evaluating Visual Representations of the Past in Diffusion Models](synthetic_history_evaluating_visual_representations_of_the_past_in_diffusion_mod.md)
 - [\[ICML 2026\] Beyond Generative Priors: Minority Sampling with JEPA-Guided Diffusion](../../ICML2026/image_generation/beyond_generative_priors_minority_sampling_with_jepa-guided_diffusion.md)
-- [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)
 
 </div>
 

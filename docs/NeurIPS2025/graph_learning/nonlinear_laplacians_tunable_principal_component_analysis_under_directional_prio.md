@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Nonlinear Laplacians: Tunable Principal Component Analysis under Directional Prior Information
 description: >-
-  [NeurIPS 2025][Graph Learning][Nonlinear Laplacian] This paper proposes a nonlinear Laplacian spectral algorithm that fuses spectral information with directional prior information by adding a diagonal matrix—obtained by…
+  [NeurIPS 2025][Graph Learning][Nonlinear Laplacian] This paper proposes a nonlinear Laplacian spectral algorithm that fuses spectral information with directional prior information by adding a diagonal matrix—obtained by applying a nonlinear function $\sigma$ to the degree vector of the observation matrix $\bm{Y}$—to $\hat{\bm{Y}}$. The approach significantly reduces the signal detection threshold in the biased sparse PCA problem (from $\beta^*=1$ to approximately $0.76$).
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Random Matrix Theory"
   - "Directional Prior"
 date: 2026-05-08
-content_hash: d201f526c7501493
+content_hash: f9edd75c34f9520c
 ---
 
 # Nonlinear Laplacians: Tunable Principal Component Analysis under Directional Prior Information
@@ -143,11 +143,11 @@ The paper exhibits exceptional theoretical depth, elegantly combining random mat
 
 ## Related Papers
 
-- [\[ACL 2026\] Comparing Human and Large Language Model Interpretation of Implicit Information](../../ACL2026/graph_learning/comparing_human_and_large_language_model_interpretation_of_implicit_information.md)
+- [\[ICLR 2026\] Sheaves Reloaded: A Directional Awakening](../../ICLR2026/graph_learning/sheaves_reloaded_a_direction_awakening.md)
+- [\[ACL 2025\] A Mutual Information Perspective on Knowledge Graph Embedding](../../ACL2025/graph_learning/a_mutual_information_perspective_on_knowledge_graph_embedding.md)
 - [\[ICCV 2025\] PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior](../../ICCV2025/graph_learning/pasta_part-aware_sketch-to-3d_shape_generation_with_text-aligned_prior.md)
-- [\[AAAI 2026\] Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data](../../AAAI2026/graph_learning/format_as_a_prior_quantifying_and_analyzing_bias_in_llms_for_heterogeneous_data.md)
-- [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
-- [\[NeurIPS 2025\] When No Paths Lead to Rome: Benchmarking Systematic Neural Relational Reasoning](when_no_paths_lead_to_rome_benchmarking_systematic_neural_relational_reasoning.md)
+- [\[ICML 2025\] LLM Enhancers for GNNs: An Analysis from the Perspective of Causal Mechanism Identification](../../ICML2025/graph_learning/llm_enhancers_for_gnns_an_analysis_from_the_perspective_of_causal_mechanism_iden.md)
+- [\[ICML 2025\] Does Graph Prompt Work? A Data Operation Perspective with Theoretical Analysis](../../ICML2025/graph_learning/does_graph_prompt_work_a_data_operation_perspective_with_theoretical_analysis.md)
 
 </div>
 

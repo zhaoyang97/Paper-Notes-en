@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UniSonate: A Unified Model for Speech, Music, and Sound Effect Generation with Text Instructions
 description: >-
-  [ACL 2026][Audio & Speech][Flow Matching] UniSonate utilizes a unified Instruction-Content representation, dynamic SFX token injection, and multi-stage curriculum learning to integrate Text-to-Speech (TTS), Text-to-Music (TTM), and Text-to-Audio (TTA) into a single flow-matching MM-DiT. It achieves performance comparable to or exceeding specialized models in T
+  [ACL2026 Oral][Audio & Speech][Unified Audio Generation] UniSonate utilizes a unified Instruction-Content representation, dynamic SFX token injection, and multi-stage curriculum learning to integrate Text-to-Speech (TTS), Text-to-Music (TTM), and Text-to-Audio (TTA) into a single flow-matching MM-DiT. It achieves performance comparable to or exceeding specialized models in TTS and TTM while maintaining functional sound effect generation capabilities in TTA.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Flow Matching
-  - MM-DiT
+  - "ACL2026 Oral"
+  - "Audio & Speech"
+  - "Unified Audio Generation"
+  - "Text Instruction Control"
+  - "Flow Matching"
+  - "Dynamic SFX Tokens"
+  - "MM-DiT"
 date: 2026-05-08
-content_hash: 3fb942be8c58c410
+content_hash: 25045516a26cb04c
 ---
+
 # UniSonate: A Unified Model for Speech, Music, and Sound Effect Generation with Text Instructions
 
 **Conference**: ACL2026 Oral  
@@ -141,15 +145,16 @@ Ablations comparison between single-task training and joint data training demons
 - Value: ⭐⭐⭐⭐⭐ A significant reference for unifying diverse audio tasks via text instructions and structured tokens.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)
+- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
+- [\[ICLR 2026\] UALM: Unified Audio Language Model for Understanding, Generation and Reasoning](../../ICLR2026/audio_speech/ualm_unified_audio_language_model_for_understanding_generation_and_reasoning.md)
 - [\[AAAI 2026\] DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling](../../AAAI2026/audio_speech/dualspeechlm_towards_unified_speech_understanding_and_generation_via_dual_speech.md)
-- [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
 - [\[ICML 2026\] Attend to Anything: Foundation Model for Unified Human Attention Modeling](../../ICML2026/audio_speech/attend_to_anything_foundation_model_for_unified_human_attention_modeling.md)
-- [\[ACL 2026\] Anchored Cyclic Generation: A Novel Paradigm for Long-Sequence Symbolic Music Generation](anchored_cyclic_generation_a_novel_paradigm_for_long-sequence_symbolic_music_gen.md)
+- [\[ACL 2026\] UniVocal: Unified Speech-Singing Code-Mixed Synthesis](univocal_unified_speech-singing_code-switching_synthesis.md)
 
 </div>
 

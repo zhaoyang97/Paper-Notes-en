@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] This paper proposes Unsafe2Safe, a fully automated privacy protection pipeline utilizing a four-stage scheme: VLM privacy inspection → dual caption generation (private/public) → LLM editing instructions → text-guided diffusion editing. The approach achieves significant improvements in the VLMScore privacy metric while
+  [CVPR 2026][AI Safety][Image Anonymization] This paper proposes Unsafe2Safe, a fully automated privacy protection pipeline utilizing a four-stage scheme: VLM privacy inspection → dual caption generation (private/public) → LLM editing instructions → text-guided diffusion editing. The approach achieves significant improvements in the VLMScore privacy metric while improving accuracy on Caltech-101 classification and OK-VQA compared to original images.
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Image Anonymization"
+  - "Privacy Protection"
+  - "Diffusion Editing"
+  - "VLM Inspection"
+  - "Downstream Task Maintenance"
 date: 2026-05-08
-content_hash: 246c5a71c79f95bb
+content_hash: 582dfc5a4df7940b
 ---
+
 # Unsafe2Safe: Controllable Image Anonymization for Downstream Utility
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ The core pipeline requires no training and can be run by serializing off-the-she
 
 ## Related Papers
 
-- [\[ACL 2026\] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](../../ACL2026/llm_safety/adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)
+- [\[CVPR 2026\] Forensic-Friendly Image Manipulation via Controllable Latent Diffusion](forensic-friendly_image_manipulation_via_controllable_latent_diffusion.md)
+- [\[CVPR 2026\] PrivateEyes: Gaze-Preserving Anonymization for Data Sharing](privateeyes_gaze-preserving_anonymization_for_data_sharing.md)
 - [\[CVPR 2026\] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)
-- [\[CVPR 2026\] A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks](a_closedform_solution_for_debiasing_visionlanguage.md)
-- [\[ACL 2026\] CAP: Controllable Alignment Prompting for Unlearning in LLMs](../../ACL2026/llm_safety/cap_controllable_alignment_prompting_for_unlearning_in_llms.md)
-- [\[ACL 2026\] De-Anonymization at Scale via Tournament-Style Attribution](../../ACL2026/llm_safety/de-anonymization_at_scale_via_tournament-style_attribution.md)
+- [\[CVPR 2026\] PrivSynth: Alternating and Control-Based Optimization for Privacy and Utility in Synthetic Data](privsynth_alternating_and_control-based_optimization_for_privacy_and_utility_in_.md)
+- [\[CVPR 2026\] PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing](pinpoint_evaluation_of_composed_image_retrieval_with_explicit_negatives_multi-im.md)
 
 </div>
 

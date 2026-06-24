@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CORE: Constraint-Aware One-Step Reinforcement Learning for Simulation-Guided Neural Network Accelerator Design
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][one-step RL] This paper proposes CORE (Constraint-aware One-step REinforcement learning), a critic-free single-step RL framework that efficiently explores the joint hardware–mapping…
+  [NeurIPS 2025][Reinforcement Learning][one-step RL] This paper proposes CORE (Constraint-aware One-step REinforcement learning), a critic-free single-step RL framework that efficiently explores the joint hardware–mapping design space of DNN accelerators via structured distribution sampling, a scaling-graph decoder, and constraint-aware reward shaping, achieving at least 15× latency improvement across 7 DNN models.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "constraint-aware"
   - "scaling graph"
 date: 2026-05-08
-content_hash: c0aec535105a6389
+content_hash: f40e70b37473fcf7
 ---
 
 # CORE: Constraint-Aware One-Step Reinforcement Learning for Simulation-Guided Neural Network Accelerator Design
@@ -141,10 +141,10 @@ CORE substantially outperforms all baselines on all 7 DNN models, achieving an a
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation](scalable_neural_incentive_design_with_parameterized_mean-field_approximation.md)
-- [\[NeurIPS 2025\] Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning](counteractive_rl_rethinking_core_principles_for_efficient_and_scalable_deep_rein.md)
-- [\[AAAI 2026\] One-Step Generative Policies with Q-Learning: A Reformulation of MeanFlow](../../AAAI2026/reinforcement_learning/one-step_generative_policies_with_q-learning_a_reformulation_of_meanflow.md)
+- [\[ICLR 2026\] Mean Flow Policy with Instantaneous Velocity Constraint for One-step Action Generation](../../ICLR2026/reinforcement_learning/mean_flow_policy_with_instantaneous_velocity_constraint_for_one-step_action_gene.md)
 - [\[NeurIPS 2025\] Reward-Aware Proto-Representations in Reinforcement Learning](reward-aware_proto-representations_in_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Thompson Sampling in Function Spaces via Neural Operators](thompson_sampling_in_function_spaces_via_neural_operators.md)
+- [\[NeurIPS 2025\] Adaptive Cooperative Transmission Design for URLLC via Deep RL](adaptive_cooperative_transmission_design_for_ultra-reliable_low-latency_communic.md)
+- [\[NeurIPS 2025\] Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning](counteractive_rl_rethinking_core_principles_for_efficient_and_scalable_deep_rein.md)
 
 </div>
 

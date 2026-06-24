@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A tale of two tails: Preferred and anti-preferred natural stimuli in visual cortex
 description: >-
-  [ICLR 2026][Computational Biology][ImageBeagle] This paper discovers that primate visual cortex V4 neurons do not just possess a "preferred stimulus" end; instead, they simultaneously exhibit preferred images that enhance firing and anti-preferred images that suppress baseline firing. Through electrophysiological validation, encoding models, psychophysical experimen
+  [ICLR 2026][Computational Biology][V4 Visual Cortex] This paper discovers that primate visual cortex V4 neurons do not just possess a "preferred stimulus" end; instead, they simultaneously exhibit preferred images that enhance firing and anti-preferred images that suppress baseline firing. Through electrophysiological validation, encoding models, psychophysical experiments, and the ImageBeagle search tool, the authors demonstrate that anti-preferred stimuli are an indispensab…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - ImageBeagle
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "V4 Visual Cortex"
+  - "Anti-preferred Stimuli"
+  - "Neural Tuning"
+  - "Two-tailed Response Distribution"
+  - "ImageBeagle"
 date: 2026-05-08
-content_hash: 39973b546f7d9a8d
+content_hash: 1fead87cae156441
 ---
+
 # A tale of two tails: Preferred and anti-preferred natural stimuli in visual cortex
 
 **Conference**: ICLR 2026  
@@ -131,9 +136,9 @@ The study does not propose a single new end-to-end loss but involves training in
 
 - [\[ICLR 2026\] Uncovering Semantic Selectivity of Latent Groups in Higher Visual Cortex with Mutual Information-Guided Diffusion](uncovering_semantic_selectivity_of_latent_groups_in_higher_visual_cortex_with_mu.md)
 - [\[NeurIPS 2025\] MEIcoder: Decoding Visual Stimuli from Neural Activity by Leveraging Most Exciting Inputs](../../NeurIPS2025/computational_biology/meicoder_decoding_visual_stimuli_from_neural_activity_by_leveraging_most_excitin.md)
+- [\[ICLR 2026\] SC-Arena: A Natural Language Benchmark and Knowledge-Enhanced Evaluation for Single-Cell Reasoning](sc-arena_a_natural_language_benchmark_for_single-cell_reasoning_with_knowledge-a.md)
 - [\[ICLR 2026\] Learning Brain Representation with Hierarchical Visual Embeddings](learning_brain_representation_with_hierarchical_visual_embeddings.md)
 - [\[ICLR 2026\] Model-Guided Microstimulation Steers Primate Visual Behavior](model-guided_microstimulation_steers_primate_visual_behavior.md)
-- [\[ICLR 2026\] MindPilot: Closed-loop Visual Stimulation Optimization for Brain Modulation with EEG-guided Diffusion](mindpilot_closed-loop_visual_stimulation_optimization_for_brain_modulation_with_.md)
 
 </div>
 

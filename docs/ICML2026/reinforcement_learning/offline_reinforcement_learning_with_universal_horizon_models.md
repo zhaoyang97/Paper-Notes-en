@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Offline Reinforcement Learning with Universal Horizon Models
 description: >-
-  [ICML 2026][Reinforcement Learning][universal horizon model] The authors lift the restriction that the "Geometric Horizon Model (GHM) can only sample from a fixed discounted distribution" by proposing a Universal Horizon Model (UHM) capable of directly sampling future states over an arbitrary horizon $n$. By truncating excessively long horizons using a Winsorized geometric distr
+  [ICML 2026][Reinforcement Learning][universal horizon model] The authors lift the restriction that the "Geometric Horizon Model (GHM) can only sample from a fixed discounted distribution" by proposing a Universal Horizon Model (UHM) capable of directly sampling future states over an arbitrary horizon $n$. By truncating excessively long horizons using a Winsorized geometric distribution, the proposed method achieves an average success rate improvement of approximately 14% over…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - universal horizon model
-  - geometric horizon model
-  - n-step TD
-  - winsorized geometric
-  - flow matching
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "universal horizon model"
+  - "geometric horizon model"
+  - "n-step TD"
+  - "winsorized geometric"
+  - "flow matching"
 date: 2026-05-08
-content_hash: f447f773389eabdf
+content_hash: b174ccdc7877ad6e
 ---
+
 # Offline Reinforcement Learning with Universal Horizon Models
 
 **Conference**: ICML 2026  
@@ -171,9 +172,9 @@ For long-horizon reasoning tasks (25 total), UHM averaged 22 vs. GHM 16 vs. DTD(
 
 - [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
 - [\[ICML 2026\] InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning](inftythink_effective_and_efficient_infinite-horizon_reasoning_via_reinforcement_.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
+- [\[ICLR 2026\] ADM-v2: Pursuing Full-Horizon Roll-out in Dynamics Models for Offline Policy Learning and Evaluation](../../ICLR2026/reinforcement_learning/adm-v2_pursuing_full-horizon_roll-out_in_dynamics_models_for_offline_policy_lear.md)
+- [\[ICLR 2026\] Universal Value-Function Uncertainties](../../ICLR2026/reinforcement_learning/universal_value-function_uncertainties.md)
 - [\[ICML 2026\] Learning to Bet for Horizon-Aware Anytime-Valid Testing](learning_to_bet_for_horizon-aware_anytime-valid_testing.md)
-- [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
 
 </div>
 

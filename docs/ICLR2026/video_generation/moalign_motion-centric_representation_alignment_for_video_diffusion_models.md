@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] MoAlign: Motion-Centric Representation Alignment for Video Diffusion Models
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] MoAlign distills a **low-dimensional motion-only subspace** from a frozen video encoder (enforced via optical flow supervision) and aligns the middle-layer features of a video diffusion model to this subspace using soft relationship alignment. This allows the model to generate physically more plausible videos without r
+  [ICLR 2026][Video Generation][Text-to-Video] MoAlign distills a **low-dimensional motion-only subspace** from a frozen video encoder (enforced via optical flow supervision) and aligns the middle-layer features of a video diffusion model to this subspace using soft relationship alignment. This allows the model to generate physically more plausible videos without requiring any inference-time conditions or simulations.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Text-to-Video"
+  - "Video Diffusion Models"
+  - "Representation Alignment"
+  - "Motion Disentanglement"
+  - "Optical Flow Supervision"
+  - "Physical Plausibility"
 date: 2026-05-08
-content_hash: 8ec500e11205f361
+content_hash: 003ceb5a3fca4776
 ---
+
 # MoAlign: Motion-Centric Representation Alignment for Video Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -151,14 +158,17 @@ The total objective is $L_{\text{total}}=L_{\text{diff}}+\lambda L_{\text{align}
 
 <div class="related-papers" markdown="1">
 
-- **VideoREPA**: [https://arxiv.org/abs/2501.12345](https://arxiv.org/abs/2501.12345)
-- **CogVideoX**: [https://arxiv.org/abs/2408.06072](https://arxiv.org/abs/2408.06072)
-- **RAFT**: [https://arxiv.org/abs/2003.12039](https://arxiv.org/abs/2003.12039)
+## Related Papers
+
+- [\[CVPR 2026\] SMRABooth: Subject and Motion Representation Alignment for Customized Video Generation](../../CVPR2026/video_generation/smrabooth_subject_and_motion_representation_alignment_for_customized_video_gener.md)
+- [\[ICLR 2026\] Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling](geometry_forcing_marrying_video_diffusion_and_3d_representation_for_consistent_w.md)
+- [\[ICLR 2026\] Target-Aware Video Diffusion Models](target-aware_video_diffusion_models.md)
+- [\[ICLR 2026\] VMoBA: Mixture-of-Block Attention for Video Diffusion Models](vmoba_mixture-of-block_attention_for_video_diffusion_models.md)
+- [\[ICLR 2026\] NeRV-Diffusion: Diffuse Implicit Neural Representation for Video Synthesis](nerv-diffusion_diffuse_implicit_neural_representation_for_video_synthesis.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] SMRABooth: Subject and Motion Representation Alignment for Customized Video Generation](../../CVPR2026/video_generation/smrabooth_subject_and_motion_representation_alignment_for_customized_video_gener.md)

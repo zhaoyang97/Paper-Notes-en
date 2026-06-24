@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LASeR: Learning to Adaptively Select Reward Models with Multi-Armed Bandits
 description: >-
-  [NeurIPS 2025][LLM Alignment][reward model selection] This work frames the selection of multiple reward models (RMs) as a contextual multi-armed bandit (LinUCB) problem…
+  [NeurIPS 2025][LLM Alignment][reward model selection] This work frames the selection of multiple reward models (RMs) as a contextual multi-armed bandit (LinUCB) problem, adaptively choosing the most suitable RM for each training batch during iterative LLM training. LASeR comprehensively outperforms RM ensemble and single-RM baselines on reasoning, instruction-following, and long-context tasks, while achieving a 2–3× efficiency advantage.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "multi-RM alignment"
 date: 2026-05-08
-content_hash: 15d62d9ada7968d0
+content_hash: fe7a681357afa70c
 ---
 
 # LASeR: Learning to Adaptively Select Reward Models with Multi-Armed Bandits
@@ -145,10 +145,10 @@ The iterative training pipeline proceeds as follows each round: (1) generate mul
 ## Related Papers
 
 - [\[NeurIPS 2025\] Alignment of Large Language Models with Constrained Learning](alignment_of_large_language_models_with_constrained_learning.md)
-- [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
-- [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
-- [\[NeurIPS 2025\] Mechanism Design for LLM Fine-tuning with Multiple Reward Models](mechanism_design_for_llm_fine-tuning_with_multiple_reward_models.md)
+- [\[ACL 2025\] AMoPO: Adaptive Multi-objective Preference Optimization without Reward Models and Reference Models](../../ACL2025/llm_alignment/amopo_adaptive_multi-objective_preference_optimization_without_reward_models_and.md)
 - [\[NeurIPS 2025\] Generalizing while Preserving Monotonicity in Comparison-based Preference Learning Models](generalizing_while_preserving_monotonicity_in_comparison-based_preference_learni.md)
+- [\[NeurIPS 2025\] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models](reinforcement_learning_finetunes_small_subnetworks_in_large_language_models.md)
+- [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
 
 </div>
 

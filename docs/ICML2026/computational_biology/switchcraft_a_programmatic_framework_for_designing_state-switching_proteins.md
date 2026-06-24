@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SwitchCraft: A Programmatic Framework for Designing State-Switching Proteins
 description: >-
-  [ICML 2026][Computational Biology][Boltz-1] SwitchCraft formalizes the task of "designing a protein that switches between multiple functional states" as an optimization problem over combinatorial constraints. By backpropagating multiple state-dependent losses (motif, binding, conformational change, contact) through the structure prediction model Boltz-1, it dire
+  [ICML 2026][Computational Biology][Multi-state protein design] SwitchCraft formalizes the task of "designing a protein that switches between multiple functional states" as an optimization problem over combinatorial constraints. By backpropagating multiple state-dependent losses (motif, binding, conformational change, contact) through the structure prediction model Boltz-1, it directly optimizes amino acid logits via gradient descent. This represents the first general computat…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Boltz-1
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Multi-state protein design"
+  - "Boltz-1"
+  - "Differentiable structure prediction"
+  - "Allosteric regulation"
+  - "Biosensors"
 date: 2026-05-08
-content_hash: 413cc7b3728ff62f
+content_hash: 21254b5b23c7ea07
 ---
+
 # SwitchCraft: A Programmatic Framework for Designing State-Switching Proteins
 
 **Conference**: ICML 2026  
@@ -138,11 +143,11 @@ The authors defined 6 multi-state design primitives with increasing complexity a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Pallatom-Ligand: an All-Atom Diffusion Model for Designing Ligand-Binding Proteins](../../ICLR2026/computational_biology/pallatom-ligand_an_all-atom_diffusion_model_for_designing_ligand-binding_protein.md)
 - [\[ICML 2026\] Viral Proteins Reveal Geometry of Protein Language Models](viral_proteins_reveal_geometry_of_protein_language_models.md)
-- [\[NeurIPS 2025\] Learning Conformational Ensembles of Proteins Based on Backbone Geometry](../../NeurIPS2025/computational_biology/learning_conformational_ensembles_of_proteins_based_on_backbone_geometry.md)
-- [\[ICLR 2026\] HeurekaBench: A Benchmarking Framework for AI Co-scientist](../../ICLR2026/computational_biology/heurekabench_a_benchmarking_framework_for_ai_co-scientist.md)
-- [\[NeurIPS 2025\] BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research](../../NeurIPS2025/computational_biology/barcodemamba_advancing_state-space_models_for_fungal_biodiversity_research.md)
-- [\[ICML 2025\] Designing Cyclic Peptides via Harmonic SDE with Atom-Bond Modeling](../../ICML2025/computational_biology/designing_cyclic_peptides_via_harmonic_sde_with_atom-bond_modeling.md)
+- [\[ICLR 2026\] Multi-state Protein Sequence Design with DynamicMPNN](../../ICLR2026/computational_biology/multi-state_protein_sequence_design_with_dynamicmpnn.md)
+- [\[ICLR 2026\] MarS-FM: Generative Modeling of Molecular Dynamics via Markov State Models](../../ICLR2026/computational_biology/mars-fm_generative_modeling_of_molecular_dynamics_via_markov_state_models.md)
+- [\[ICLR 2026\] VenusX: Unlocking Fine-Grained Functional Understanding of Proteins](../../ICLR2026/computational_biology/venusx_unlocking_fine-grained_functional_understanding_of_proteins.md)
 
 </div>
 

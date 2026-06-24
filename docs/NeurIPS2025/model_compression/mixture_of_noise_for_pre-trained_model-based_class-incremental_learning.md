@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning
 description: >-
-  [NeurIPS 2025][Model Compression][Class-incremental learning] This paper proposes learning beneficial "mixture of noise" to suppress parameter drift in pre-trained models during class-incremental learning. By dynamically…
+  [NeurIPS 2025][Model Compression][Class-incremental learning] This paper proposes learning beneficial "mixture of noise" to suppress parameter drift in pre-trained models during class-incremental learning. By dynamically mixing task-specific noise with learned weights across tasks, the method achieves state-of-the-art performance, particularly in the challenging 50-step incremental setting.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "positive noise"
   - "catastrophic forgetting suppression"
 date: 2026-05-08
-content_hash: 6f03ee8a5854d712
+content_hash: 44a8aaf259811e91
 ---
 
 # Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning
@@ -136,9 +136,9 @@ The auxiliary classifier learns residuals, and the noise ultimately acts as pert
 
 - [\[ICCV 2025\] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning](../../ICCV2025/model_compression/integrating_task-specific_and_universal_adapters_for_pre-trained_model-based_cla.md)
 - [\[AAAI 2026\] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](../../AAAI2026/model_compression/compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)
-- [\[ICCV 2025\] Achieving More with Less: Additive Prompt Tuning for Rehearsal-Free Class-Incremental Learning](../../ICCV2025/model_compression/achieving_more_with_less_additive_prompt_tuning_for_rehearsal-free_class-increme.md)
-- [\[ICML 2026\] AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning](../../ICML2026/model_compression/area_attribute_extraction_and_aggregation_for_clip-based_class-incremental_learn.md)
-- [\[NeurIPS 2025\] Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts](toward_efficient_inference_attacks_shadow_model_sharing_via_mixture-of-experts.md)
+- [\[CVPR 2025\] Adapter Merging with Centroid Prototype Mapping for Scalable Class-Incremental Learning](../../CVPR2025/model_compression/adapter_merging_with_centroid_prototype_mapping_for_scalable_class-incremental_l.md)
+- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](../../CVPR2026/model_compression/qkd_quantum_gated_incremental_learning.md)
+- [\[CVPR 2025\] CL-LoRA: Continual Low-Rank Adaptation for Rehearsal-Free Class-Incremental Learning](../../CVPR2025/model_compression/cl-lora_continual_low-rank_adaptation_for_rehearsal-free_class-incremental_learn.md)
 
 </div>
 

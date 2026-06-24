@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Enhancing Communication Compression via Discrepancy-aware Calibration for Federated Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Existing communication compression methods in Federated Learning (e.g., Top-k, ATOMO) decide which parameters to discard based on "magnitude." This paper proposes using a small set of local calibration data to directly measure "how much dropping a specific compression unit changes the layer output." By sorting based on
+  [ICLR 2026][Optimization][Federated Learning] Existing communication compression methods in Federated Learning (e.g., Top-k, ATOMO) decide which parameters to discard based on "magnitude." This paper proposes using a small set of local calibration data to directly measure "how much dropping a specific compression unit changes the layer output." By sorting based on this output discrepancy, the method provides a plug-and-play enhancement for mainstream compression schemes…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Communication Compression"
+  - "Sparsification"
+  - "Low-rank Decomposition"
+  - "Calibration Data"
+  - "Output Discrepancy"
 date: 2026-05-08
-content_hash: ddcfd4bd3ac7783b
+content_hash: 0cced0b4979e42f8
 ---
+
 # Enhancing Communication Compression via Discrepancy-aware Calibration for Federated Learning
 
 **Conference**: ICLR 2026  
@@ -109,15 +116,15 @@ At a 0.1 compression ratio, CIFAR-10/ViT-tiny shows an 18.9% relative improvemen
 - **Value**: ⭐⭐⭐⭐ Plug-and-play with significant gains under high compression, offering practical utility for bandwidth-constrained FL deployments.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Unlocking the Potential of Weighting Methods in Federated Learning through Communication Compression](unlocking_the_potential_of_weighting_methods_in_federated_learning_through_commu.md)
 - [\[ICLR 2026\] FedMC: Federated Manifold Calibration](fedmc_federated_manifold_calibration.md)
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 - [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
+- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 - [\[ICLR 2026\] LEGACY: A Lightweight Dynamic Gradient Compression Strategy for Distributed Deep Learning](legacy_a_lightweight_dynamic_gradient_compression_strategy_for_distributed_deep_.md)
 
 </div>

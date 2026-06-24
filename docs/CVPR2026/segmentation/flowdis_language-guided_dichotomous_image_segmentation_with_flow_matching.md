@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching
 description: >-
-  [CVPR 2026][Segmentation][Flow Matching] FlowDIS reformulates high-precision Dichotomous Image Segmentation (DIS) as a **flow matching** problem—directly learning a time-dependent velocity field to transport the "image distribution" to the "mask distribution," replacing the stochastic denoising process of diffusion models with a deterministic ODE. Combined wi
+  [CVPR 2026][Segmentation][Dichotomous Image Segmentation (DIS)] FlowDIS reformulates high-precision Dichotomous Image Segmentation (DIS) as a **flow matching** problem—directly learning a time-dependent velocity field to transport the "image distribution" to the "mask distribution," replacing the stochastic denoising process of diffusion models with a deterministic ODE. Combined with the PAIP instance-pairing training strategy to enhance language controllability…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Dichotomous Image Segmentation (DIS)"
+  - "Flow Matching"
+  - "Language-controllable"
+  - "Instance Pairing"
+  - "Deterministic Generation"
 date: 2026-05-08
-content_hash: 9bb91d20aa2a9d37
+content_hash: de668a8404c00626
 ---
+
 # FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching
 
 **Conference**: CVPR 2026  
@@ -149,15 +154,14 @@ PAIP specific evaluation (DIS-VD-Complex is a multi-object scene test set constr
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Universal 3D Shape Matching via Coarse-to-Fine Language Guidance](universal_3d_shape_matching_via_coarse-to-fine_language_guidance.md)
+- [\[ICLR 2026\] Deforming Videos to Masks: Flow Matching for Referring Video Segmentation](../../ICLR2026/segmentation/deforming_videos_to_masks_flow_matching_for_referring_video_segmentation.md)
 - [\[CVPR 2026\] High-Precision Dichotomous Image Segmentation via Depth Integrity-Prior and Fine-Grained Patch Strategy](high-precision_dichotomous_image_segmentation_via_depth_integrity-prior_and_fine.md)
+- [\[CVPR 2026\] Universal 3D Shape Matching via Coarse-to-Fine Language Guidance](universal_3d_shape_matching_via_coarse-to-fine_language_guidance.md)
 - [\[ICCV 2025\] LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation](../../ICCV2025/segmentation/lawdis_language-window-based_controllable_dichotomous_image_segmentation.md)
 - [\[CVPR 2026\] PR-MaGIC: Prompt Refinement Via Mask Decoder Gradient Flow For In-Context Segmentation](pr-magic_prompt_refinement_via_mask_decoder_gradient_flow_for_in-context_segment.md)
-- [\[CVPR 2026\] Differentiable Laplacian Matrix Guided Superpixel Segmentation](differentiable_laplacian_matrix_guided_superpixel_segmentation.md)
 
 </div>
 

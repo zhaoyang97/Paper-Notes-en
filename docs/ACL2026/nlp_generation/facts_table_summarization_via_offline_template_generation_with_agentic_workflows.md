@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FACTS: Table Summarization via Offline Template Generation with Agentic Workflows
 description: >-
-  [ACL 2026][Text Generation][Paper Note] Ours proposes FACTS (Fast, Accurate, and Privacy-Compliant Table Summarization), which automatically generates reusable offline templates (SQL queries + Jinja2 templates) through a three-stage Agentic workflow. It achieves rapid, accurate, and privacy-compliant query-focused table summarization, outperforming baselines
+  [ACL 2026 Findings][Text Generation][Table Summarization] Ours proposes FACTS (Fast, Accurate, and Privacy-Compliant Table Summarization), which automatically generates reusable offline templates (SQL queries + Jinja2 templates) through a three-stage Agentic workflow. It achieves rapid, accurate, and privacy-compliant query-focused table summarization, outperforming baselines across FeTaQA, QTSumm, and QFMTS benchmarks.
 tags:
-  - ACL 2026
-  - Text Generation
+  - "ACL 2026 Findings"
+  - "Text Generation"
+  - "Table Summarization"
+  - "Offline Template"
+  - "Agentic Workflow"
+  - "SQL Generation"
+  - "Privacy Compliance"
 date: 2026-05-08
-content_hash: ee9bc8a5f76b4efc
+content_hash: 6035926baa182e37
 ---
+
 # FACTS: Table Summarization via Offline Template Generation with Agentic Workflows
 
 **Conference**: ACL 2026 Findings  

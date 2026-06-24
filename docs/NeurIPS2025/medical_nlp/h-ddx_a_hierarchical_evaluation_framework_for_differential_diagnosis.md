@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] H-DDx: A Hierarchical Evaluation Framework for Differential Diagnosis
 description: >-
-  [NeurIPS 2025][Medical NLP][Differential Diagnosis] H-DDx proposes a differential diagnosis evaluation framework grounded in the ICD-10 classification hierarchy. By expanding both predicted and ground-truth diagnoses to…
+  [NeurIPS 2025][Medical LLM][Differential Diagnosis] H-DDx proposes a differential diagnosis evaluation framework grounded in the ICD-10 classification hierarchy. By expanding both predicted and ground-truth diagnoses to their ancestor nodes and computing a Hierarchical Diagnostic F1 (HDF1), the framework rewards "clinically relevant approximate correctness" rather than exact match only. Evaluating 22 LLMs reveals that the domain-specialized model MediPhi rises from 20th to 2n…
 tags:
   - "NeurIPS 2025"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Differential Diagnosis"
   - "ICD-10 Hierarchy"
   - "Hierarchical F1"
   - "LLM Medical Evaluation"
   - "Approximate Correctness"
 date: 2026-05-08
-content_hash: 7665ce31fd7f97b0
+content_hash: 5a897b752d6b5a35
 ---
 
 # H-DDx: A Hierarchical Evaluation Framework for Differential Diagnosis
@@ -123,9 +123,9 @@ H-DDx proposes a differential diagnosis evaluation framework grounded in the ICD
 
 - [\[NeurIPS 2025\] Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs](shallow_robustness_deep_vulnerabilities_multi-turn_evaluation_of_medical_llms.md)
 - [\[NeurIPS 2025\] CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning](cureagent_a_training-free_executor-analyst_framework_for_clinical_reasoning.md)
+- [\[NeurIPS 2025\] Faithful Summarization of Consumer Health Queries: A Cross-Lingual Framework with LLMs](faithful_summarization_of_consumer_health_queries_a_cross-lingual_framework_with.md)
 - [\[ICLR 2026\] Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis](../../ICLR2026/medical_nlp/resp-agent_an_agent-based_system_for_multimodal_respiratory_sound_generation_and.md)
-- [\[ACL 2026\] Responsible Evaluation of AI for Mental Health](../../ACL2026/medical_nlp/responsible_evaluation_of_ai_for_mental_health.md)
-- [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](../../ACL2026/medical_nlp/multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
+- [\[AAAI 2026\] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling](../../AAAI2026/medical_nlp/learning_cell-aware_hierarchical_multi-modal_representations.md)
 
 </div>
 

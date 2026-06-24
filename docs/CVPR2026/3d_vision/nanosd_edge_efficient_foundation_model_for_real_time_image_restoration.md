@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration
 description: >-
-  [CVPR 2026][Image Generation][Model Compression] NanoSD is proposed as a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters, fastest 12ms inference) constructed through hardware-aware U-Net decomposition, block-wise feature distillation, and multi-objective Bayesian optimization. It serves as a drop-in backbone achieving SOTA perfo
+  [CVPR2026][3D Vision][Diffusion model distillation] NanoSD is proposed as a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters, fastest 12ms inference) constructed through hardware-aware U-Net decomposition, block-wise feature distillation, and multi-objective Bayesian optimization. It serves as a drop-in backbone achieving SOTA performance in tasks such as super-resolution, face restoration, deblurring, and monocular depth estimation.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Model Compression
+  - "CVPR2026"
+  - "3D Vision"
+  - "Diffusion model distillation"
+  - "edge deployment"
+  - "image restoration"
+  - "super-resolution"
+  - "model compression"
+  - "multi-objective optimization"
+  - "Stable Diffusion"
 date: 2026-05-08
-content_hash: aa0d6b44366e9fac
+content_hash: 833d35bc2013b5e2
 ---
+
 # NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration
 
 **Conference**: CVPR2026  
@@ -132,15 +139,14 @@ Nano-OSDFace achieves ~5x reduction in MACs and ~4.5x reduction in parameters wh
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] CoD: A Diffusion Foundation Model for Image Compression](cod_a_diffusion_foundation_model_for_image_compression.md)
-- [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
-- [\[CVPR 2026\] DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos](dreamstereo_towards_real-time_stereo_inpainting_for_hd_videos.md)
-- [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
-- [\[ECCV 2024\] MotionLCM: Real-time Controllable Motion Generation via Latent Consistency Model](../../ECCV2024/image_generation/motionlcm_real-time_controllable_motion_generation_via_latent_consistency_model.md)
+- [\[CVPR 2026\] Foundry: Distilling 3D Foundation Models for the Edge](foundry_distilling_3d_foundation_models_for_the_edge.md)
+- [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
+- [\[AAAI 2026\] RTGaze: Real-Time 3D-Aware Gaze Redirection from a Single Image](../../AAAI2026/3d_vision/rtgaze_real-time_3d-aware_gaze_redirection_from_a_single_image.md)
+- [\[CVPR 2026\] SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation](swifttailor_efficient_3d_garment_generation_with_geometry_image_representation.md)
+- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] RecoverMark is proposed as a robust watermarking framework that embeds the face content itself as a watermark into the background. It achieves simultaneous tamper localization, original content recovery, and copyright verification, remaining effective even under watermark removal attacks.
+  [CVPR 2026][AI Safety][Face Manipulation Detection] RecoverMark is proposed as a robust watermarking framework that embeds the face content itself as a watermark into the background. It achieves simultaneous tamper localization, original content recovery, and copyright verification, remaining effective even under watermark removal attacks.
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Face Manipulation Detection"
+  - "Robust Watermarking"
+  - "Tamper Localization"
+  - "Content Recovery"
+  - "Copyright Verification"
 date: 2026-05-08
-content_hash: b4a1e3409140eb29
+content_hash: 672034485153708a
 ---
+
 # RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces
 
 **Conference**: CVPR 2026  
@@ -141,7 +147,7 @@ Comparison of face recovery quality (PSNR/MS-SSIM) on the ID dataset:
 - [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
 - [\[CVPR 2026\] MaxMark: High-Capacity Diffusion-Native Watermarking via Robust and Invertible Latent Embedding](maxmark_high-capacity_diffusion-native_watermarking_via_robust_and_invertible_la.md)
-- [\[CVPR 2026\] AdvMark: Decoupling Defense Strategies for Robust Image Watermarking](decoupling_defense_strategies_for_robust_image_watermarking.md)
+- [\[CVPR 2026\] TokenTrace: Multi-Concept Attribution through Watermarked Token Recovery](tokentrace_multi-concept_attribution_through_watermarked_token_recovery.md)
 
 </div>
 

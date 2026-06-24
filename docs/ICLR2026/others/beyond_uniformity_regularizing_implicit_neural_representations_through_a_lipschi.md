@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Beyond Uniformity: Regularizing Implicit Neural Representations through a Lipschitz Lens
 description: >-
-  [ICLR 2026][Others][Implicit Neural Representation] This work reframes Lipschitz regularization for INRs from a "rigid uniform 1-Lipschitz constraint" into a framework of "estimable, non-uniformly distributable Lipschitz budgets." By deriving a global budget $K$ from task priors and intelligently allocating it across layers, the method achieves a superior balance betwee
+  [ICLR 2026][Implicit Neural Representation] This work reframes Lipschitz regularization for INRs from a "rigid uniform 1-Lipschitz constraint" into a framework of "estimable, non-uniformly distributable Lipschitz budgets." By deriving a global budget $K$ from task priors and intelligently allocating it across layers, the method achieves a superior balance between smoothness and expressivity.
 tags:
-  - ICLR 2026
-  - Others
-  - Implicit Neural Representation
+  - "ICLR 2026"
+  - "Implicit Neural Representation"
+  - "Lipschitz Regularization"
+  - "Spectral Normalization"
+  - "Deformable Registration"
+  - "Image Inpainting"
 date: 2026-05-08
-content_hash: 9f985acb4cc1edd0
+content_hash: 3f773000fe60cb2a
 ---
+
 # Beyond Uniformity: Regularizing Implicit Neural Representations through a Lipschitz Lens
 
 **Conference**: ICLR 2026  
@@ -112,8 +116,8 @@ To strictly enforce the allocated values, the paper compares several implementat
 ## Related Papers
 
 - [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
-- [\[ICLR 2026\] Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields](refine_now_query_fast_a_decoupled_refinement_paradigm_for_implicit_neural_fields.md)
 - [\[ICLR 2026\] Exploring State-Space Models for Data-Specific Neural Representations](exploring_state-space_models_for_data-specific_neural_representations.md)
+- [\[ICLR 2026\] Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields](refine_now_query_fast_a_decoupled_refinement_paradigm_for_implicit_neural_fields.md)
 - [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](../../NeurIPS2025/others/improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
 - [\[ACL 2025\] Implicit Reasoning in Transformers is Reasoning through Shortcuts](../../ACL2025/others/implicit_reasoning_in_transformers_is_reasoning_through_shortcuts.md)
 

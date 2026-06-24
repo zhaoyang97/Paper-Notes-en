@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stable Score Distillation
 description: >-
-  [ICCV 2025][3D Vision][Score Distillation] This paper proposes Stable Score Distillation (SSD), which achieves more stable and precise text-guided 2D/3D editing through single-classifier cross-prompt guidance and cross-t…
+  [ICCV 2025][3D Vision][Score Distillation] This paper proposes Stable Score Distillation (SSD), which achieves more stable and precise text-guided 2D/3D editing through single-classifier cross-prompt guidance and cross-trajectory regularization via a null-text branch, improving editing alignment while preserving the structural content of the source.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -14,7 +14,7 @@ tags:
   - "NeRF"
   - "3DGS"
 date: 2026-05-08
-content_hash: 5f83d5701c5ccf29
+content_hash: e0c1687c44178213
 ---
 
 # Stable Score Distillation
@@ -166,9 +166,9 @@ The authors find a structural correspondence between SSD and the single-step inv
 ## Related Papers
 
 - [\[ICCV 2025\] Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation](advancing_text-to-3d_generation_with_linearized_lookahead_variational_score_dist.md)
+- [\[CVPR 2025\] Stable-SCore: A Stable Registration-Based Framework for 3D Shape Correspondence](../../CVPR2025/3d_vision/stable-score_a_stable_registration-based_framework_for_3d_shape_correspondence.md)
 - [\[ICCV 2025\] Identity Preserving 3D Head Stylization with Multiview Score Distillation](identity_preserving_3d_head_stylization_with_multiview_score_distillation.md)
 - [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
-- [\[ICCV 2025\] Generating Physically Stable and Buildable Brick Structures from Text](generating_physically_stable_and_buildable_brick_structures_from_text.md)
 - [\[ICCV 2025\] G2SF: Geometry-Guided Score Fusion for Multimodal Industrial Anomaly Detection](g2sf_geometry-guided_score_fusion_for_multimodal_industrial_anomaly_detection.md)
 
 </div>

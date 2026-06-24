@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Reinforcement Fine-Tuning] This paper systematically investigates whether explicit thinking is necessary in rule-based reinforcement fine-tuning (RFT). It finds that on visual perception ta…
+  [NeurIPS 2025 Spotlight][VLM Reasoning][Reinforcement Fine-Tuning] This paper systematically investigates whether explicit thinking is necessary in rule-based reinforcement fine-tuning (RFT). It finds that on visual perception tasks, No-Thinking-RFT consistently outperforms the conventional think-then-answer paradigm, and proposes an Adaptive-Thinking approach that allows models to autonomously determine whether to reason based on their own capability and task complexity.
 tags:
-  - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "NeurIPS 2025 Spotlight"
+  - "VLM Reasoning"
   - "Reinforcement Fine-Tuning"
   - "Chain-of-Thought"
   - "Multimodal Large Language Models"
   - "GRPO"
   - "Visual Reasoning"
 date: 2026-05-08
-content_hash: 6ddf79ad229a3604
+content_hash: 5b997e63e628455c
 ---
 
 # To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning
@@ -121,11 +121,11 @@ Training time comparison (CVBench, 2B): No-Thinking-RFT requires only 139 minute
 
 ## Related Papers
 
-- [\[ICCV 2025\] DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding](../../ICCV2025/multimodal_vlm/docthinker_explainable_multimodal_large_language_models_with.md)
-- [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](../../CVPR2026/multimodal_vlm/when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
-- [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](visual_instruction_bottleneck_tuning.md)
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/multimodal_vlm/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
-- [\[NeurIPS 2025\] Uni-MuMER: Unified Multi-Task Fine-Tuning of Vision-Language Model for Handwritten Mathematical Expression Recognition](uni-mumer_unified_multi-task_fine-tuning_of_vision-language_model_for_handwritte.md)
+- [\[ICML 2026\] 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding](../../ICML2026/vlm_reasoning/3d-rft_reinforcement_fine-tuning_for_video-based_3d_scene_understanding.md)
+- [\[CVPR 2025\] Spatial Reasoning is Not a Free Lunch: A Controlled Study on LLaVA](../../CVPR2025/vlm_reasoning/spatial_reasoning_is_not_a_free_lunch_a_controlled_study_on_llava.md)
+- [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](../../CVPR2026/vlm_reasoning/when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
+- [\[CVPR 2026\] Reinforcing Video Object Segmentation to Think before it Segments](../../CVPR2026/vlm_reasoning/reinforcing_video_object_segmentation_to_think_before_it_segments.md)
+- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/vlm_reasoning/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
 
 </div>
 

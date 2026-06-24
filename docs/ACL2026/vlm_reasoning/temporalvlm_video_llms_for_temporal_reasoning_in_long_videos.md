@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos
 description: >-
-  [ACL 2026][vlm_reasoning][BiLSTM] This paper proposes TemporalVLM, which extracts local fine-grained temporal features through a time-aware segment encoder (overlapping sliding Video Q-Former + fusion module) and aggregates global long-range dependencies using a BiLSTM. This marks the first introduction of LSTM into Video LLMs, outperforming previous m
+  [ACL 2026][VLM Reasoning][Video Large Language Models] This paper proposes TemporalVLM, which extracts local fine-grained temporal features through a time-aware segment encoder (overlapping sliding Video Q-Former + fusion module) and aggregates global long-range dependencies using a BiLSTM. This marks the first introduction of LSTM into Video LLMs, outperforming previous methods across four tasks: dense video captioning, temporal localization, highlight detection…
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - BiLSTM
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Video Large Language Models"
+  - "Time-Aware Encoding"
+  - "BiLSTM"
+  - "Long Video Understanding"
+  - "Industrial Assembly Dataset"
 date: 2026-05-08
-content_hash: 6dd1f948cf03e179
+content_hash: f4088c1f24a0039a
 ---
+
 # TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos
 
 **Conference**: ACL 2026  
@@ -149,11 +154,11 @@ Standard autoregressive cross-entropy loss is used (Eq. 8). The LLM and image en
 
 ## Related Papers
 
+- [\[ICLR 2026\] VideoZoomer: Reinforcement-Learned Temporal Focusing for Long Video Reasoning](../../ICLR2026/vlm_reasoning/videozoomer_reinforcement-learned_temporal_focusing_for_long_video_reasoning.md)
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/vlm_reasoning/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](../../CVPR2026/vlm_reasoning/learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)
+- [\[ICLR 2026\] TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning](../../ICLR2026/vlm_reasoning/timesearch-r_adaptive_temporal_search_for_long-form_video_understanding_via_self.md)
 - [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](../../CVPR2026/vlm_reasoning/thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
-- [\[ICML 2026\] Temporal-Aware Reasoning Optimization for Video Temporal Grounding](../../ICML2026/vlm_reasoning/temporal-aware_reasoning_optimization_for_video_temporal_grounding.md)
-- [\[CVPR 2026\] LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling](../../CVPR2026/vlm_reasoning/longvt_incentivizing_thinking_with_long_videos_via_native_tool_calling.md)
 
 </div>
 

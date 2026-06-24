@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Estimating Worst-Case Frontier Risks of Open-Weight LLMs
 description: >-
-  [ICLR 2026][LLM Safety][Preparedness Framework] Before releasing gpt-oss, OpenAI proactively utilized "Malicious Fine-Tuning (MFT)" to maximize the model's capabilities in the high-risk domains of biology and cybersecurity to estimate the worst-case risks of open-weight release. The conclusion is that even under the strongest adversarial pressure, gpt-oss does not o
+  [ICLR 2026][LLM Safety][Open-weight models] Before releasing gpt-oss, OpenAI proactively utilized "Malicious Fine-Tuning (MFT)" to maximize the model's capabilities in the high-risk domains of biology and cybersecurity to estimate the worst-case risks of open-weight release. The conclusion is that even under the strongest adversarial pressure, gpt-oss does not outperform the closed-source o3 and does not substantially advance the existing open-source capability frontier…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Preparedness Framework
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Open-weight models"
+  - "Malicious Fine-tuning"
+  - "Bio-risks"
+  - "Cybersecurity risks"
+  - "Marginal risk"
+  - "Preparedness Framework"
 date: 2026-05-08
-content_hash: 0abf5457b3bff971
+content_hash: fbebcada426042aa
 ---
+
 # Estimating Worst-Case Frontier Risks of Open-Weight LLMs
 
 **Conference**: ICLR 2026  

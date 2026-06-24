@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SplitLoRA: Balancing Stability and Plasticity in Continual Learning Through Gradient Space Splitting
 description: >-
-  [ICLR 2026][Self-Supervised Learning][LoRA] SplitLoRA transforms the long-standing challenge of "determining the minor subspace dimension" in continual learning from a heuristic threshold into a solvable optimization problem. It derives a theoretical upper bound for "Stability Loss + Plasticity Loss" as a function of the subspace dimension $k$, solves for the mo
+  [ICLR 2026][Self-Supervised Learning][Continual Learning] SplitLoRA transforms the long-standing challenge of "determining the minor subspace dimension" in continual learning from a heuristic threshold into a solvable optimization problem. It derives a theoretical upper bound for "Stability Loss + Plasticity Loss" as a function of the subspace dimension $k$, solves for the module-specific optimal $k^*$ for each LoRA module, and fixes the LoRA down-projection matrix $A$ to thi…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - LoRA
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Learning"
+  - "Gradient Projection"
+  - "LoRA"
+  - "Stability-Plasticity"
+  - "Minor Subspace"
 date: 2026-05-08
-content_hash: 43d984886999ddbc
+content_hash: f1ed5515f3cd4ba3
 ---
+
 # SplitLoRA: Balancing Stability and Plasticity in Continual Learning Through Gradient Space Splitting
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Plana3R: Zero-shot Metric Planar 3D Reconstruction via Feed-Forward Planar Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][Planar 3D reconstruction] This paper proposes Plana3R, a feed-forward framework that requires neither camera poses nor planar annotations…
+  [NeurIPS 2025][3D Vision][Planar 3D reconstruction] This paper proposes Plana3R, a feed-forward framework that requires neither camera poses nor planar annotations, predicting sparse 3D planar primitives and metric-scale relative poses from unpaired two-view images for zero-shot metric planar 3D reconstruction of indoor scenes.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "indoor scenes"
   - "feed-forward model"
 date: 2026-05-08
-content_hash: 8cdb34d9f677d0ec
+content_hash: bfea47525b85e6ae
 ---
 
 # Plana3R: Zero-shot Metric Planar 3D Reconstruction via Feed-Forward Planar Splatting
@@ -136,9 +136,9 @@ Plana3R achieves zero-shot metric depth estimation on NYUv2, a dataset unseen du
 
 - [\[NeurIPS 2025\] PlanarGS: High-Fidelity Indoor 3D Gaussian Splatting Guided by Vision-Language Planar Priors](planargs_high-fidelity_indoor_3d_gaussian_splatting_guided_by_vision-language_pl.md)
 - [\[NeurIPS 2025\] Learning Efficient Fuse-and-Refine for Feed-Forward 3D Gaussian Splatting](learning_efficient_fuse-and-refine_for_feed-forward_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](../../CVPR2026/3d_vision/any4d_unified_feed-forward_metric_4d_reconstruction.md)
+- [\[CVPR 2026\] REArtGS++: Generalizable Articulation Reconstruction with Temporal Geometry Constraint via Planar Gaussian Splatting](../../CVPR2026/3d_vision/reartgs_generalizable_articulation_reconstruction_with_temporal_geometry_constra.md)
 - [\[CVPR 2026\] AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend](../../CVPR2026/3d_vision/amb3r_accurate_feed-forward_metric-scale_3d_reconstruction_with_backend.md)
-- [\[NeurIPS 2025\] ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS](zpressor_bottleneck-aware_compression_for_scalable_feed-forward_3dgs.md)
-- [\[CVPR 2026\] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](../../CVPR2026/3d_vision/feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
 
 </div>
 

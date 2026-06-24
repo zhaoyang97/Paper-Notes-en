@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Statistical Theory of Overfitting for Imbalanced Classification
 description: >-
-  [ICLR 2026][learning_theory][margin rebalancing] This paper establishes a statistical theory for high-dimensional imbalanced linear classification: under a two-class Gaussian Mixture Model (2-GMM), test logits follow $N(0,1)$, while training logits converge to $\max\{\kappa, N(0,1)\}$ (rectified Gaussian). A variational problem characterizes how this "truncation" occ
+  [ICLR2026][Statistical Learning Theory][Imbalanced Classification] This paper establishes a statistical theory for high-dimensional imbalanced linear classification: under a two-class Gaussian Mixture Model (2-GMM), test logits follow $N(0,1)$, while training logits converge to $\max\{\kappa, N(0,1)\}$ (rectified Gaussian). A variational problem characterizes how this "truncation" occurs as a function of dimensionality, rigorously explaining why minority classes suffer more f…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - margin rebalancing
+  - "ICLR2026"
+  - "Statistical Learning Theory"
+  - "Imbalanced Classification"
+  - "Overfitting"
+  - "High-dimensional Asymptotics"
+  - "Rectified Gaussian"
+  - "margin rebalancing"
 date: 2026-05-08
-content_hash: 6fbdcd1b24e9e95d
+content_hash: a45bfbf80c42fe0c
 ---
+
 # A Statistical Theory of Overfitting for Imbalanced Classification
 
 **Conference**: ICLR2026  
@@ -120,15 +125,16 @@ Numerical simulations ($n=100, d=200$) align perfectly with Theorem 2.1. Without
 - Value: ⭐⭐⭐⭐⭐ Provides calculable theory and actionable rules for long-tail classification and LLM probing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] AI4SLT: Empirical Processes in Lean 4 for Formal Statistical Learning Theory](../../ICML2026/learning_theory/ai4slt_empirical_processes_in_lean_4_for_formal_statistical_learning_theory.md)
+- [\[ICLR 2026\] Risk Phase Transitions in Spiked Regression: Alignment Driven Benign and Catastrophic Overfitting](risk_phase_transitions_in_spiked_regression_alignment_driven_benign_and_catastro.md)
 - [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
-- [\[ICLR 2026\] Learning Admissible Heuristics for A*: Theory and Practice](learning_admissible_heuristics_for_a_theory_and_practice.md)
-- [\[ICLR 2026\] Statistical and Structural Identifiability in Representation Learning](statistical_and_structural_identifiability_in_representation_learning.md)
-- [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
+- [\[ICLR 2026\] Learning from Label Proportions via Proportional Value Classification](learning_from_label_proportions_via_proportional_value_classification.md)
+- [\[ICLR 2026\] Softmax is not Enough (for Adaptive Conformal Classification)](softmax_is_not_enough_for_adaptive_conformal_classification.md)
 
 </div>
 

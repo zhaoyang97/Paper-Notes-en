@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Block-Sparse Global Attention for Efficient Multi-View Geometry Transformers
 description: >-
-  [CVPR 2026][3D Vision][Inference Acceleration] For feed-forward multi-view geometry Transformers such as VGGT / π³ / MapAnything, the authors observed that global attention matrices are highly sparse (probability mass is concentrated on a few patch pairs corresponding to cross-view geometric matches). Consequently, a **training-free** block-sparse attention was use
+  [CVPR 2026][3D Vision][Multi-view geometry] For feed-forward multi-view geometry Transformers such as VGGT / π³ / MapAnything, the authors observed that global attention matrices are highly sparse (probability mass is concentrated on a few patch pairs corresponding to cross-view geometric matches). Consequently, a **training-free** block-sparse attention was used to directly replace dense global attention, achieving 3× inference speedup (even more on long sequences) with negl…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Inference Acceleration
-  - VGGT
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view geometry"
+  - "block-sparse attention"
+  - "feed-forward reconstruction"
+  - "inference acceleration"
+  - "VGGT"
 date: 2026-05-08
-content_hash: 1841c16615c96869
+content_hash: de33437d30cc25e4
 ---
+
 # Block-Sparse Global Attention for Efficient Multi-View Geometry Transformers
 
 **Conference**: CVPR 2026  
@@ -140,11 +144,11 @@ Implemented on VGGT, π³, and MapAnything across tasks including relative pose 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
 - [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
-- [\[CVPR 2026\] Generalizable Human Gaussian Splatting via Multi-view Semantic Consistency](generalizable_human_gaussian_splatting_via_multi-view_semantic_consistency.md)
-- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
+- [\[CVPR 2026\] Emergent Outlier View Rejection in Visual Geometry Grounded Transformers](emergent_outlier_view_rejection_in_visual_geometry_grounded_transformers.md)
+- [\[CVPR 2026\] Sculpt4D: Generating 4D Shapes via Sparse-Attention Diffusion Transformers](sculpt4d_generating_4d_shapes_via_sparse-attention_diffusion_transformers.md)
+- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
+- [\[CVPR 2026\] AVGGT: Rethinking Global Attention for Accelerating VGGT](avggt_rethinking_global_attention_for_accelerating_vggt.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Language Reconstruction with Brain Predictive Coding from fMRI Data
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] Ours proposes PredFT, an end-to-end fMRI-to-Text decoding model that integrates a main network (language decoding) and a side network (brain predictive coding representation). By extracting forward-looking semantic representations from predictive brain regions (PTO areas) and fusing them into the decoding process, Pred
+  [ACL 2026][Medical LLM][fMRI language reconstruction] Ours proposes PredFT, an end-to-end fMRI-to-Text decoding model that integrates a main network (language decoding) and a side network (brain predictive coding representation). By extracting forward-looking semantic representations from predictive brain regions (PTO areas) and fusing them into the decoding process, PredFT achieves a BLEU-1 of 34.95% (Sub-1) on the LeBel dataset, a Gain of 7.84 percentage points compared to…
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026"
+  - "Medical LLM"
+  - "fMRI language reconstruction"
+  - "predictive coding"
+  - "brain signal decoding"
+  - "neurolinguistics"
+  - "lateral network"
 date: 2026-05-08
-content_hash: 817744718d8e4c91
+content_hash: 5e00e156b7bba59b
 ---
+
 # Language Reconstruction with Brain Predictive Coding from fMRI Data
 
 **Conference**: ACL 2026  
@@ -157,10 +163,10 @@ Joint end-to-end training is performed with the total loss $\mathcal{L} = \mathc
 ## Related Papers
 
 - [\[ACL 2025\] Aligning AI Research with the Needs of Clinical Coding Workflows: Eight Recommendations Based on US Data Analysis and Critical Review](../../ACL2025/medical_nlp/clinical_coding_eight_recommendations.md)
+- [\[ICML 2026\] Exploring Accurate and Transparent Domain Adaptation in Predictive Healthcare via Concept-Grounded Orthogonal Inference](../../ICML2026/medical_nlp/exploring_accurate_and_transparent_domain_adaptation_in_predictive_healthcare_vi.md)
 - [\[ACL 2026\] Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers](ryze_evidence-enriched_data_synthesis_from_biomedical_papers.md)
 - [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
 - [\[ACL 2026\] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)
-- [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
 
 </div>
 

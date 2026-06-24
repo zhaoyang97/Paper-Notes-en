@@ -4,15 +4,16 @@ title: >-
 description: >-
   [ICLR 2026][LLM Safety][machine_unlearning] This paper reveals that the true driver of "benign relearning" in LLM machine unlearning is **syntactic similarity** rather than topical relevance, and proposes a **syntactic diversification** strategy to enhance unlearning robustness.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - machine_unlearning
-  - LLM_safety
-  - syntactic_similarity
-  - benign_relearning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "machine_unlearning"
+  - "LLM_safety"
+  - "syntactic_similarity"
+  - "benign_relearning"
 date: 2026-05-08
-content_hash: d01a791efb182776
+content_hash: ed644f693c3567e9
 ---
+
 # Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures
 
 **Conference**: ICLR 2026  
@@ -158,9 +159,9 @@ Syntactic diversification not only enhances unlearning robustness but also signi
 
 - [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
 - [\[ACL 2026\] Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks](../../ACL2026/llm_safety/before_forgetting_learn_to_remember_revisiting_foundational_learning_failures_in.md)
+- [\[ICLR 2026\] Silent Leaks: Implicit Knowledge Extraction Attack on RAG Systems through Benign Queries](silent_leaks_implicit_knowledge_extraction_attack_on_rag_systems.md)
 - [\[ICLR 2026\] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction](hiddenecho_mitigating_noise_amplification_in_differentially_private_llms_with_hi.md)
 - [\[NeurIPS 2025\] Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning](../../NeurIPS2025/llm_safety/simplicity_prevails_rethinking_negative_preference_optimization_for_llm_unlearni.md)
-- [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](../../AAAI2026/llm_safety/uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
 
 </div>
 

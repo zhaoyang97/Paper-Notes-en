@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Psychometric Evaluation of LLMs: When and Why Self-Reports Predict Behavior
 description: >-
-  [ICML 2026][LLM Evaluation][Big5] This paper systematically deconstructs "when exactly psychometric self-reports (SR) of LLMs predict their actual behavior." Using a $2\times2\times2$ factorial experiment (Theory of Planned Behavior TPB vs Big5 × In-session vs Cross-session × Parameter Grid vs Persona Induction) across 4 behavioral tasks and 11 frontie
+  [ICML 2026][LLM Evaluation][Self-reports] This paper systematically deconstructs "when exactly psychometric self-reports (SR) of LLMs predict their actual behavior." Using a $2\times2\times2$ factorial experiment (Theory of Planned Behavior TPB vs Big5 × In-session vs Cross-session × Parameter Grid vs Persona Induction) across 4 behavioral tasks and 11 frontier models, it finds that SR–behavior consistency **exists but is selective**. While fine-grained TPB achieves human-lev…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - Big5
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Self-reports"
+  - "Theory of Planned Behavior"
+  - "Big5"
+  - "Contextual Priming"
+  - "Behavioral Auditing"
 date: 2026-05-08
-content_hash: 2be2a629b5b512d7
+content_hash: 930597ffe633705d
 ---
+
 # Rethinking Psychometric Evaluation of LLMs: When and Why Self-Reports Predict Behavior
 
 **Conference**: ICML 2026  
@@ -128,10 +133,10 @@ Cross-session survival in RQ3 is the most critical "ablation," breaking down con
 ## Related Papers
 
 - [\[ICML 2026\] Hacking Generative Perplexity: Why Unconditional Text Evaluation Needs Distributional Metrics](hacking_generative_perplexity_why_unconditional_text_evaluation_needs_distributi.md)
+- [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](../../ICLR2026/llm_evaluation/rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)
 - [\[ICML 2026\] Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs](who_flips_self-_and_cross-model_counterarguments_reveal_answer_instability_in_ll.md)
 - [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](../../NeurIPS2025/llm_evaluation/bayesian_evaluation_of_large_language_model_behavior.md)
-- [\[ICML 2026\] When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation](when_ai_benchmarks_plateau_a_systematic_study_of_benchmark_saturation.md)
-- [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](../../ACL2026/llm_evaluation/rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
+- [\[ICML 2026\] Toward Training Superintelligent Software Agents through Self-Play SWE-RL](toward_training_superintelligent_software_agents_through_self-play_swe-rl.md)
 
 </div>
 

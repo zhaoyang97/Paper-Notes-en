@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] IR-HGP: Physically-Aware Gaussian Inverse Rendering for High-Illumination Scenes via Generative Priors
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] IR-HGP utilizes three collaborative modules—Hybrid Visibility Decomposition (HVD), Generative Illumination Prior (GIFP), and Physically-Aware Radiance Correction (PARC)—to extend 3DGS inverse rendering to high-illumination and strong specular reflection scenes. It solves the challenge of "baked-in shadows and highlight
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] IR-HGP utilizes three collaborative modules—Hybrid Visibility Decomposition (HVD), Generative Illumination Prior (GIFP), and Physically-Aware Radiance Correction (PARC)—to extend 3DGS inverse rendering to high-illumination and strong specular reflection scenes. It solves the challenge of "baked-in shadows and highlights" in materials, achieving SOTA results (mean PSNR 33.61 on synthetic sets) in relighting and novel view synthesis…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Inverse Rendering"
+  - "High-Illumination Scenes"
+  - "Visibility Decomposition"
+  - "Diffusion Illumination Priors"
+  - "HDR Tone Mapping"
 date: 2026-05-08
-content_hash: beabcf29ca017e64
+content_hash: f88ce132949d6551
 ---
+
 # IR-HGP: Physically-Aware Gaussian Inverse Rendering for High-Illumination Scenes via Generative Priors
 
 **Conference**: CVPR 2026  
@@ -150,16 +157,20 @@ Leave-one-out results (Table 2, using Ficus and Car):
 - Value: ⭐⭐⭐⭐ Pushes the boundaries of 3DGS into difficult high-illumination scenarios while maintaining real-time usage.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **GS-IR**: Gaussian Splatting for Inverse Rendering, CVPR 2024
-- **DiscretizedSDF**: Discretized Signed Distance Fields for 3DGS Inverse Rendering, ECCV 2024
-- **TensoIR**: Tensorial Inverse Rendering, CVPR 2023
-- **2DGS**: 2D Gaussian Splatting for Geometrically Accurate Radiance Fields, SIGGRAPH 2024
+## Related Papers
+
+- [\[CVPR 2025\] SVG-IR: Spatially-Varying Gaussian Splatting for Inverse Rendering](../../CVPR2025/3d_vision/svg-ir_spatially-varying_gaussian_splatting_for_inverse_rendering.md)
+- [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](../../ICCV2025/3d_vision/geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
+- [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
+- [\[CVPR 2026\] SunFaded: Illumination-Aware Gaussian Splatting for Dark Scenes with Camera-Mounted Active Lighting](sunfaded_illumination-aware_gaussian_splatting_for_dark_scenes_with_camera-mount.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] SunFaded: Illumination-Aware Gaussian Splatting for Dark Scenes with Camera-Mounted Active Lighting](sunfaded_illumination-aware_gaussian_splatting_for_dark_scenes_with_camera-mount.md)

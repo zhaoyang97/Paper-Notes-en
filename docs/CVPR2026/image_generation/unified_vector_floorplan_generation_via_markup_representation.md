@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified Vector Floorplan Generation via Markup Representation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper proposes Floorplan Markup Language (FML) to encode floorplan elements such as rooms and doors into structured token sequences. A LLaMA-style Transformer model (FMLM) is employed to uniformly solve various floorplan generation tasks, including unconditional, boundary-conditioned, graph-conditioned, and comple
+  [CVPR 2026][Image Generation][Floorplan generation] This paper proposes Floorplan Markup Language (FML) to encode floorplan elements such as rooms and doors into structured token sequences. A LLaMA-style Transformer model (FMLM) is employed to uniformly solve various floorplan generation tasks, including unconditional, boundary-conditioned, graph-conditioned, and completion tasks, achieving FID metrics over 80% lower than HouseDiffusion.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Floorplan generation"
+  - "markup language"
+  - "autoregressive sequence model"
+  - "constrained decoding"
+  - "vectorized representation"
 date: 2026-05-08
-content_hash: fd0c9fab5733548c
+content_hash: d6f5fac1032d1963
 ---
+
 # Unified Vector Floorplan Generation via Markup Representation
 
 **Conference**: CVPR 2026  

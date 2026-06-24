@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] Proposes PCPO, which fixes the disproportionate credit assignment inherent in the policy gradients of diffusion/flow models through stable objective reconstruction and principled timestep re-weighting, significantly accelerating convergence and mitigating model collapse.
+  [ICLR 2026][Image Generation][Policy Gradient] Proposes PCPO, which fixes the disproportionate credit assignment inherent in the policy gradients of diffusion/flow models through stable objective reconstruction and principled timestep re-weighting, significantly accelerating convergence and mitigating model collapse.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Policy Gradient"
+  - "Credit Assignment"
+  - "Diffusion Models"
+  - "Flow Matching"
+  - "Model Collapse"
 date: 2026-05-08
-content_hash: 5871d01baaccd963
+content_hash: 54ee9d0529831db2
 ---
+
 # PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models
 
 **Conference**: ICLR 2026  
@@ -119,10 +123,10 @@ Having diagnosed non-uniform $w(t)$ as the root cause, PCPO flattens it directly
 ## Related Papers
 
 - [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Preference Alignment of Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_preference_alignment_of_image_.md)
-- [\[ICLR 2026\] STORK: 通过同时解决刚性与结构依赖来加速扩散与流匹配采样](stork_faster_diffusion_and_flow_matching_sampling_by_resolving_both_stiffness_an.md)
+- [\[ICLR 2026\] LayerSync: Self-aligning Intermediate Layers](layersync_self-aligning_intermediate_layers.md)
+- [\[ICLR 2026\] STORK: Accelerating Diffusion and Flow Matching Sampling by Simultaneously Solving Stiffness and Structural Dependency](stork_faster_diffusion_and_flow_matching_sampling_by_resolving_both_stiffness_an.md)
 - [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
 - [\[ICLR 2026\] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance](mitigating_noise_shift_in_denoising_generative_models_with_noise_awareness_guida.md)
-- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 
 </div>
 

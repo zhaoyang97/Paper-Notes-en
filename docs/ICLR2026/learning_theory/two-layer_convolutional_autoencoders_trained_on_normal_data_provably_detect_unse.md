@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Two-Layer Convolutional Autoencoders Trained on Normal Data Provably Detect Unseen Anomalies
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Utilizing feature learning tools, this paper provides the first provable theoretical explanation for why a two-layer convolutional autoencoder can detect unseen anomalies when trained only on normal data: during training, convolutional kernels are absorbed by a "cone set" of normal features and align with these feature
+  [ICLR 2026][Learning Theory][Reconstruction-Based Anomaly Detection] Utilizing feature learning tools, this paper provides the first provable theoretical explanation for why a two-layer convolutional autoencoder can detect unseen anomalies when trained only on normal data: during training, convolutional kernels are absorbed by a "cone set" of normal features and align with these feature directions; consequently, they show almost no response to signals where patches are replac…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Anomaly Detection"
+  - "Feature Learning"
+  - "Reconstruction-Based Anomaly Detection"
+  - "Convolutional Autoencoder"
+  - "Cone Set"
+  - "Training Dynamics"
 date: 2026-05-08
-content_hash: 3052b03827bbf74b
+content_hash: 3a34861c7f15a2e1
 ---
+
 # Two-Layer Convolutional Autoencoders Trained on Normal Data Provably Detect Unseen Anomalies
 
 **Conference**: ICLR 2026  
@@ -140,10 +147,10 @@ Data scale: 4000 training and 1000 testing samples each for normal, semantic ano
 ## Related Papers
 
 - [\[ICLR 2026\] On the Convergence of Two-Layer Kolmogorov-Arnold Networks with First-Layer Training](on_the_convergence_of_two-layer_kolmogorov-arnold_networks_with_first-layer_trai.md)
+- [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 - [\[ICLR 2026\] SVD Provably Denoises Nearest Neighbor Data](svd_provably_denoises_nearest_neighbor_data.md)
 - [\[ICLR 2026\] Covariate-Guided Clusterwise Linear Regression for Generalization to Unseen Data](covariate-guided_clusterwise_linear_regression_for_generalization_to_unseen_data.md)
 - [\[ICML 2026\] Two-Layer Linear Auto-Regressive Models Estimate Latent States](../../ICML2026/learning_theory/two-layer_linear_auto-regressive_models_estimate_latent_states.md)
-- [\[ICLR 2026\] T-Tamer: Provably Taming Trade-offs in ML Serving](t-tamer_provably_taming_trade-offs_in_ml_serving.md)
 
 </div>
 

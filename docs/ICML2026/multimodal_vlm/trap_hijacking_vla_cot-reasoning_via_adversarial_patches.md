@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] TRAP: 用对抗 patch 劫持 VLA 的 CoT 推理实现目标行为攻击
+  [Paper Note] TRAP: Hijacking CoT Reasoning of VLA for Targeted Behavior Attacks via Adversarial Patches
 description: >-
-  [ICML 2026][Multimodal VLM][VLA] TRAP is the first targeted behavior hijacking attack against reasoning VLAs. It hijacks the VLA's CoT reasoning (bounding boxes/trajectories/subtasks) through a tablecloth-sized physical adversarial patch. This forces the robot to perform an attacker-defined action (e.g., "give a knife to a person") while the user inst
+  [ICML 2026][Multimodal VLM][VLA] TRAP is the first targeted behavior hijacking attack against reasoning VLAs. It hijacks the VLA's CoT reasoning (bounding boxes/trajectories/subtasks) through a tablecloth-sized physical adversarial patch. This forces the robot to perform an attacker-defined action (e.g., "give a knife to a person") while the user instruction remains "pick up the apple." Across MolmoAct, GraspVLA, and InstructVLA CoT paradigms…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - VLA
-  - Chain-of-Thought
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "VLA"
+  - "Chain-of-Thought"
+  - "Adversarial Patch"
+  - "Targeted Behavior Hijacking"
+  - "Physical Attack"
 date: 2026-05-08
-content_hash: f8a0c98e8661b4c3
+content_hash: 22b5bad5cdfc4ea3
 ---
+
 # TRAP: Hijacking CoT Reasoning of VLA for Targeted Behavior Attacks via Adversarial Patches
 
 **Conference**: ICML 2026  
@@ -164,11 +168,11 @@ DIP optimization makes the patch visually similar to a standard patterned tablec
 
 ## Related Papers
 
-- [\[ICML 2026\] VLA-Arena：评估视觉语言动作模型的开源框架](vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
-- [\[ICML 2026\] VLANeXt：构建强大 VLA 模型的配方](vlanext_recipes_for_building_strong_vla_models.md)
+- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](../../CVPR2026/multimodal_vlm/hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
+- [\[NeurIPS 2025\] MIP against Agent: Malicious Image Patches Hijacking Multimodal OS Agents](../../NeurIPS2025/multimodal_vlm/mip_against_agent_malicious_image_patches_hijacking_multimod.md)
 - [\[ICML 2026\] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds](any3d-vla_enhancing_vla_robustness_via_diverse_point_clouds.md)
-- [\[CVPR 2026\] TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment](../../CVPR2026/multimodal_vlm/tipsv2_patch_text_alignment.md)
-- [\[CVPR 2026\] One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework](../../CVPR2026/multimodal_vlm/one_patch_to_caption_them_all_a_unified_zero-shot_captioning_framework.md)
+- [\[AAAI 2026\] Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks](../../AAAI2026/multimodal_vlm/phantom_menace_exploring_and_enhancing_the_robustness_of_vla_models_against_phys.md)
+- [\[ICML 2026\] VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning](visionpulse_dynamic_visual_sparsity_for_efficient_multimodal_reasoning.md)
 
 </div>
 

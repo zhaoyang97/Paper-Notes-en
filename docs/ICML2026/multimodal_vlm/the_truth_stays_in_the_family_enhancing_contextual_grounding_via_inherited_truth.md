@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Truth Stays in the Family: Enhancing Contextual Truthfulness via Inherited Heads in Model Lineages
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors discovered that "attention heads encoding contextual faithfulness" are **inherited** across LLMs/MLLMs derived from the same base model. They propose TruthProbe—a plug-and-play mechanism using head-level Truth Scores for soft gating. Scores probed from a base LLM can be directly transferred to its fine-tune
+  [ICML2026][Multimodal VLM][Hallucination Mitigation] The authors discovered that "attention heads encoding contextual faithfulness" are **inherited** across LLMs/MLLMs derived from the same base model. They propose TruthProbe—a plug-and-play mechanism using head-level Truth Scores for soft gating. Scores probed from a base LLM can be directly transferred to its fine-tuned LLM and multimodal descendants, simultaneously reducing hallucinations in HaluEval, POPE, and CHAIR.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Hallucination Mitigation"
+  - "Attention Head Probes"
+  - "Model Lineages"
+  - "Soft Gating"
+  - "Contextual Faithfulness"
 date: 2026-05-08
-content_hash: 38f2e38734d0b8ce
+content_hash: febcd817694d2004
 ---
+
 # The Truth Stays in the Family: Enhancing Contextual Truthfulness via Inherited Heads in Model Lineages
 
 **Conference**: ICML2026  
@@ -137,7 +143,7 @@ Transferring **base scores** to MLLMs (POPE measures Acc/Recall; CHAIR measures 
 - [\[CVPR 2025\] Your Large Vision-Language Model Only Needs a Few Attention Heads for Visual Grounding](../../CVPR2025/multimodal_vlm/your_large_vision-language_model_only_needs_a_few_attention_heads_for_visual_gro.md)
 - [\[ECCV 2024\] The Hard Positive Truth About Vision-Language Compositionality](../../ECCV2024/multimodal_vlm/the_hard_positive_truth_about_visionlanguage_compositionalit.md)
 - [\[ACL 2026\] From Heads to Neurons: Causal Attribution and Steering in Multi-Task Vision-Language Models](../../ACL2026/multimodal_vlm/from_heads_to_neurons_causal_attribution_and_steering_in_multi-task_vision-langu.md)
-- [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](../../CVPR2026/multimodal_vlm/vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
+- [\[ICLR 2026\] Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs](../../ICLR2026/multimodal_vlm/grasp_any_region_towards_precise_contextual_pixel_understanding_for_multimodal_l.md)
 
 </div>
 

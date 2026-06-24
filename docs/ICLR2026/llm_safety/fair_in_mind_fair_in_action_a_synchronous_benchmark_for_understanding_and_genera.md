@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs
 description: >-
-  [ICLR 2026][LLM Safety][Fairness Benchmark] Ours proposes IRIS Benchmark, the first framework to synchronously evaluate the fairness of Unified Multimodal Large Language Models (UMLLMs) in both understanding and generation tasks. Through a three-dimensional evaluation framework, 60 fine-grained metrics, and a high-dimensional fairness space, it reveals key pheno
+  [ICLR 2026][LLM Safety][Fairness Benchmark] Ours proposes IRIS Benchmark, the first framework to synchronously evaluate the fairness of Unified Multimodal Large Language Models (UMLLMs) in both understanding and generation tasks. Through a three-dimensional evaluation framework, 60 fine-grained metrics, and a high-dimensional fairness space, it reveals key phenomena such as cross-task "personality splits" and systemic "generation gaps."
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Fairness Benchmark
-  - Unified Multimodal LLM
-  - Bias Evaluation
-  - Demographic Fairness
-  - Generation-Understanding Gap
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Fairness Benchmark"
+  - "Unified Multimodal LLM"
+  - "Bias Evaluation"
+  - "Demographic Fairness"
+  - "Generation-Understanding Gap"
 date: 2026-05-08
-content_hash: b0f2fd0ee4b8bbcd
+content_hash: 4f654e533492bdff
 ---
+
 # Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs
 
 **Conference**: ICLR 2026  
@@ -131,8 +132,8 @@ L1 experts of the ARES classifier were fine-tuned on the IRIS-Classifier-25 data
 - Value: ⭐⭐⭐⭐⭐ Fills a gap in UMLLM fairness evaluation; mechanism probes and anti-stereotype rewards provide direct practical guidance.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -140,7 +141,7 @@ L1 experts of the ARES classifier were fine-tuned on the IRIS-Classifier-25 data
 - [\[AAAI 2026\] Designing Truthful Mechanisms for Asymptotic Fair Division](../../AAAI2026/llm_safety/designing_truthful_mechanisms_for_asymptotic_fair_division.md)
 - [\[ICLR 2026\] Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness](understanding_sensitivity_of_differential_attention_through_the_lens_of_adversar.md)
 - [\[ICLR 2026\] Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory](understanding_and_improving_continuous_llm_adversarial_training_via_in-context_l.md)
-- [\[ICLR 2026\] CodeGenGuard: A Watermark for Code Generation Models](codegenguard_a_watermark_for_code_generation_models.md)
+- [\[ICLR 2026\] CIMemories: A Compositional Benchmark For Contextual Integrity In LLMs](cimemories_a_compositional_benchmark_for_contextual_integrity_in_llms.md)
 
 </div>
 

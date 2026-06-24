@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes BezierGS, a 3D Gaussian Splatting method that models dynamic object motion trajectories using learnable Bézier curves…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes BezierGS, a 3D Gaussian Splatting method that models dynamic object motion trajectories using learnable Bézier curves, eliminating reliance on precise bounding box annotations. The method achieves state-of-the-art performance on both dynamic and static scene reconstruction on the Waymo and nuPlan datasets.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "novel view synthesis"
   - "autonomous driving"
 date: 2026-05-08
-content_hash: 98b14a8b411669d7
+content_hash: 1f7424fb103574cd
 ---
 
 # BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting
@@ -144,8 +144,8 @@ On Waymo, PSNR improves by 1.87 dB and Dyn-PSNR by 2.66 dB; on nuPlan, PSNR impr
 ## Related Papers
 
 - [\[ICCV 2025\] Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction](curve-aware_gaussian_splatting_for_3d_parametric_curve_reconstruction.md)
-- [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
 - [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
+- [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
 - [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
 

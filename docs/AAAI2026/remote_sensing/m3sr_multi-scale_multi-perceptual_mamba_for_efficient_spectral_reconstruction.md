@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] M3SR: Multi-Scale Multi-Perceptual Mamba for Efficient Spectral Reconstruction
 description: >-
-  [AAAI 2026][Remote Sensing][Spectral Reconstruction] This paper proposes M3SR, a Mamba-based multi-scale multi-perceptual architecture that integrates spatial, frequency…
+  [AAAI 2026][Remote Sensing][Spectral Reconstruction] This paper proposes M3SR, a Mamba-based multi-scale multi-perceptual architecture that integrates spatial, frequency, and spectral branches in parallel within a U-Net multi-scale structure. With only 2.17M parameters and 100.9G FLOPs, M3SR surpasses existing state-of-the-art methods on four spectral reconstruction benchmarks.
 tags:
   - "AAAI 2026"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Scale"
   - "Hyperspectral Imaging"
 date: 2026-05-08
-content_hash: 3bab6b9af0d40e18
+content_hash: e111b834f5c8ea40
 ---
 
 # M3SR: Multi-Scale Multi-Perceptual Mamba for Efficient Spectral Reconstruction
@@ -182,11 +182,11 @@ $G=4$ achieves the best trade-off between performance and efficiency.
 
 ## Related Papers
 
+- [\[CVPR 2026\] Regulating Rather than Constraining: Adaptive Guidance for Complex Spectral Reconstruction in Pansharpening](../../CVPR2026/remote_sensing/regulating_rather_than_constraining_adaptive_guidance_for_complex_spectral_recon.md)
 - [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](../../CVPR2026/remote_sensing/exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
 - [\[AAAI 2026\] Consistency-based Abductive Reasoning over Perceptual Errors of Multiple Pre-trained Models in Novel Environments](consistency-based_abductive_reasoning_over_perceptual_errors_of_multiple_pre-tra.md)
-- [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](../../ICCV2025/remote_sensing/skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
-- [\[NeurIPS 2025\] GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction](../../NeurIPS2025/remote_sensing/greenhyperspectra_a_multi-source_hyperspectral_dataset_for_global_vegetation_tra.md)
-- [\[ICLR 2026\] Spectral Gaps and Spatial Priors: Studying Hyperspectral Downstream Adaptation Using TerraMind](../../ICLR2026/remote_sensing/spectral_gaps_and_spatial_priors_studying_hyperspectral_downstream_adaptation_us.md)
+- [\[CVPR 2025\] MFogHub: Bridging Multi-Regional and Multi-Satellite Data for Global Marine Fog Detection and Forecasting](../../CVPR2025/remote_sensing/mfoghub_bridging_multi-regional_and_multi-satellite_data_for_global_marine_fog_d.md)
+- [\[CVPR 2026\] PhenoYieldNet: Learning Crop-Aware Phenological Responses for Multi-Crop Yield Prediction](../../CVPR2026/remote_sensing/phenoyieldnet_learning_crop-aware_phenological_responses_for_multi-crop_yield_pr.md)
 
 </div>
 

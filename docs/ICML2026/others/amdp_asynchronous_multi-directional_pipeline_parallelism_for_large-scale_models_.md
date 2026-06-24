@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] AMDP: Asynchronous Multi-Directional Pipeline Parallelism for Large-Scale Models Training
 description: >-
-  [ICML 2026][Others][pipeline parallelism] AMDP utilizes multi-directional asynchronous pipelines, a one-step parameter mismatch upper bound, gradient accumulation, and ZeRO state sharding to improve the throughput of large-scale model pipeline parallel training while maintaining near-synchronous convergence. In 8-GPU GPT/BERT experiments, it achieves a maximum
+  [ICML 2026][pipeline parallelism] AMDP utilizes multi-directional asynchronous pipelines, a one-step parameter mismatch upper bound, gradient accumulation, and ZeRO state sharding to improve the throughput of large-scale model pipeline parallel training while maintaining near-synchronous convergence. In 8-GPU GPT/BERT experiments, it achieves a maximum improvement of approximately 17% relative to the strongest asynchronous baselines.
 tags:
-  - ICML 2026
-  - Others
-  - pipeline parallelism
-  - ZeRO
+  - "ICML 2026"
+  - "pipeline parallelism"
+  - "asynchronous training"
+  - "parameter mismatch"
+  - "gradient accumulation"
+  - "ZeRO"
 date: 2026-05-08
-content_hash: a17d21d6ad86cc0b
+content_hash: 8daaa4aa49884130
 ---
+
 # AMDP: Asynchronous Multi-Directional Pipeline Parallelism for Large-Scale Models Training
 
 **Conference**: ICML 2026  

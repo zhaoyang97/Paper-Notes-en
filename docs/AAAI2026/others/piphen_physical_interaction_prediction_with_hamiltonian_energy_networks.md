@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks
 description: >-
-  [AAAI 2026][multi-robot collaboration] This paper proposes PIPHEN, a distributed physical cognition-control framework that employs a Physical Interaction Prediction Network (PIPN) for "semantic distillation" to compress…
+  [AAAI 2026][multi-robot collaboration] This paper proposes PIPHEN, a distributed physical cognition-control framework that employs a Physical Interaction Prediction Network (PIPN) for "semantic distillation" to compress high-dimensional perceptual data to less than 5% of the original data volume, while a Hamiltonian energy conservation-based HEN controller generates coordinated actions, thereby addressing the "shared brain dilemma" in multi-robot systems.
 tags:
   - "AAAI 2026"
   - "multi-robot collaboration"
@@ -11,7 +11,7 @@ tags:
   - "knowledge distillation"
   - "physical interaction prediction"
 date: 2026-05-08
-content_hash: a4f3f23a5e9d26a5
+content_hash: 41a3440ad669c596
 ---
 
 # PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks
@@ -180,11 +180,11 @@ This paper integrates ideas from multiple research frontiers:
 
 ## Related Papers
 
-- [\[AAAI 2026\] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)
+- [\[CVPR 2025\] FIction: 4D Future Interaction Prediction from Video](../../CVPR2025/others/fiction_4d_future_interaction_prediction_from_video.md)
 - [\[AAAI 2026\] A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles](a_fast_heuristic_search_approach_for_energy-optimal_profile_.md)
 - [\[AAAI 2026\] Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters](deadline-aware_energy-efficient_control_of_domestic_immersion_hot_water_heater.md)
 - [\[AAAI 2026\] Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect](human_cognitive_biases_in_explanation-based_interaction_the_case_of_within_and_b.md)
-- [\[AAAI 2026\] Decomposition and Preprocessing of Ternary Constraint Networks](decomposition_and_preprocessing_of_ternary_constraint_networks.md)
+- [\[AAAI 2026\] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)
 
 </div>
 

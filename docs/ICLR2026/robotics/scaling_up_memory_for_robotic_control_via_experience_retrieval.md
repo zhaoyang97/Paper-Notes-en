@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling up Memory for Robotic Control via Experience Retrieval
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] MemER decouples the task of "remembering the past" in long-horizon robotic tasks to a high-level VLM. It nominates task-relevant keyframes from recent observations, compresses them into stable visual memory via lightweight temporal clustering, and assigns current sub-tasks to a low-level VLA for execution, achieving pe
+  [ICLR 2026][Robotics][Long-horizon robot manipulation] MemER decouples the task of "remembering the past" in long-horizon robotic tasks to a high-level VLM. It nominates task-relevant keyframes from recent observations, compresses them into stable visual memory via lightweight temporal clustering, and assigns current sub-tasks to a low-level VLA for execution, achieving performance close to human high-level strategies across three types of real-world long-horizon manipulation…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICLR 2026"
+  - "Robotics"
+  - "Long-horizon robot manipulation"
+  - "visual memory"
+  - "keyframe retrieval"
+  - "hierarchical policy"
+  - "VLA"
 date: 2026-05-08
-content_hash: 43e343030de7fcdb
+content_hash: 0dfcac54e54dfe2e
 ---
+
 # Scaling up Memory for Robotic Control via Experience Retrieval
 
 **Conference**: ICLR 2026  

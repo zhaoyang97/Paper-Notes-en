@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SCOPE: Selective Conformal Optimized Pairwise LLM Judging
 description: >-
-  [ICML 2026][Social Computing][LLM-as-Judge] SCOPE eliminates position bias in LLM judging through **Bidirectional Preference Entropy (BPE)** and implements finite-sample FDR control via **Conformal Risk Control**—providing statistically valid risk guarantees while maintaining high coverage (FDR is only 0.099 at 0.583 coverage vs. Vanilla FDR of 0.198 at 1.000 co
+  [ICML 2026][Social Computing][LLM-as-Judge] SCOPE eliminates position bias in LLM judging through **Bidirectional Preference Entropy (BPE)** and implements finite-sample FDR control via **Conformal Risk Control**—providing statistically valid risk guarantees while maintaining high coverage (FDR is only 0.099 at 0.583 coverage vs. Vanilla FDR of 0.198 at 1.000 coverage).
 tags:
-  - ICML 2026
-  - Social Computing
-  - LLM-as-Judge
+  - "ICML 2026"
+  - "Social Computing"
+  - "LLM-as-Judge"
+  - "Conformal Prediction"
+  - "Position Bias"
+  - "False Discovery Rate Control"
+  - "Bidirectional Preference Entropy"
 date: 2026-05-08
-content_hash: d027fc082f70292b
+content_hash: 14442f4a899fe5c2
 ---
+
 # SCOPE: Selective Conformal Optimized Pairwise LLM Judging
 
 **Conference**: ICML 2026  
@@ -131,10 +136,10 @@ Guarantees alone are insufficient if the model abstains too often. Constraint fe
 ## Related Papers
 
 - [\[ACL 2026\] Beyond the Crowd: LLM-Augmented Community Notes for Governing Health Misinformation](../../ACL2026/social_computing/beyond_the_crowd_llm-augmented_community_notes_for_governing_health_misinformati.md)
+- [\[ICLR 2026\] Steering the Herd: A Framework for LLM-Based Control of Social Learning](../../ICLR2026/social_computing/steering_the_herd_a_framework_for_llm-based_control_of_social_learning.md)
 - [\[ICLR 2026\] SocialHarmBench: Revealing LLM Vulnerabilities to Socially Harmful Requests](../../ICLR2026/social_computing/socialharmbench_revealing_llm_vulnerabilities_to_socially_harmful_requests.md)
 - [\[AAAI 2026\] Bias Association Discovery Framework for Open-Ended LLM Generations](../../AAAI2026/social_computing/bias_association_discovery_framework_for_open-ended_llm_generations.md)
 - [\[ACL 2026\] Why Are We Moral? An LLM-based Agent Simulation Approach to Study Moral Evolution](../../ACL2026/social_computing/why_are_we_moral_an_llm-based_agent_simulation_approach_to_study_moral_evolution.md)
-- [\[ACL 2026\] Justice in Judgment: Unveiling (Hidden) Bias in LLM-assisted Peer Reviews](../../ACL2026/social_computing/justice_in_judgment_unveiling_hidden_bias_in_llm-assisted_peer_reviews.md)
 
 </div>
 

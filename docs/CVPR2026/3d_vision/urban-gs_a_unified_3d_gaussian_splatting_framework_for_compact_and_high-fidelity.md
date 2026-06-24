@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Urban-GS unifies drone aerial viewpoints and street-level viewpoints into a single 3D Gaussian Splatting framework. It employs "projected area weighted densification + contribution weighted anchor pruning + global-to-local two-stage optimization" to simultaneously address cross-view scale conflicts, memory explosion, a
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] Urban-GS unifies drone aerial viewpoints and street-level viewpoints into a single 3D Gaussian Splatting framework. It employs "projected area weighted densification + contribution weighted anchor pruning + global-to-local two-stage optimization" to simultaneously address cross-view scale conflicts, memory explosion, and under-optimized regions. It outperforms the SOTA Horizon-GS in rendering quality across multiple urban scenes w…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "urban reconstruction"
+  - "aerial-street joint"
+  - "adaptive densification"
+  - "anchor pruning"
 date: 2026-05-08
-content_hash: e52befeedd052732
+content_hash: c767c09d3b29b4df
 ---
+
 # Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction
 
 **Conference**: CVPR 2026  
@@ -171,11 +177,11 @@ Densification strategy comparison (replacing AJAD):
 
 ## Related Papers
 
+- [\[CVPR 2026\] GS²: Graph-based Spatial Distribution Optimization for Compact 3D Gaussian Splatting](gs2_graph-based_spatial_distribution_optimization_for_compact_3d_gaussian_splatt.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
 - [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
 - [\[CVPR 2026\] Seele: A Unified Acceleration Framework for Real-Time Gaussian Splatting on Mobile Devices](seele_a_unified_acceleration_framework_for_real-time_gaussian_splatting_on_mobil.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
-- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
-- [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting at Arbitrary Resolutions with Compact Proxy Anchors](3d_gaussian_splatting_at_arbitrary_resolutions_with_compact_proxy_anchors.md)
 
 </div>
 

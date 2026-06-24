@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SimpleFold: Folding Proteins is Simpler Than You Think
 description: >-
-  [ICLR 2026][Computational Biology][Flow Matching] SimpleFold treats protein folding as a conditional generation task from "amino acid sequence to all-atom 3D structure." By utilizing only standard Transformer blocks with a flow-matching objective, it completely discards AlphaFold2’s MSA, pair representations, triangle updates, and equivariant modules. Scaled to 3B par
+  [ICLR 2026][Computational Biology][Protein Folding] SimpleFold treats protein folding as a conditional generation task from "amino acid sequence to all-atom 3D structure." By utilizing only standard Transformer blocks with a flow-matching objective, it completely discards AlphaFold2’s MSA, pair representations, triangle updates, and equivariant modules. Scaled to 3B parameters on 9M distilled structures, it approaches SOTA on standard folding benchmarks and excels particularl…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Folding"
+  - "Flow Matching"
+  - "General Transformer"
+  - "Generative Models"
+  - "Conformational Ensembles"
 date: 2026-05-08
-content_hash: 71ff6c72282a3e8d
+content_hash: 85a7b4f3474ab36e
 ---
+
 # SimpleFold: Folding Proteins is Simpler Than You Think
 
 **Conference**: ICLR 2026  

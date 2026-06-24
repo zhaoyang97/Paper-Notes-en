@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bridging the Performance-Gap Between Target-Free and Target-Based Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][iterated Q-learning] By using an old copy of the last linear head of the online network as the target network—while sharing all other parameters—and integrating iterated Q-learning to learn multi-step Bellman iterations in parallel, this method closes the performance gap between target-free and target-based RL with almost no additional mem
+  [ICLR 2026][Reinforcement Learning][target networks] By using an old copy of the last linear head of the online network as the target network—while sharing all other parameters—and integrating iterated Q-learning to learn multi-step Bellman iterations in parallel, this method closes the performance gap between target-free and target-based RL with almost no additional memory overhead.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - iterated Q-learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "target networks"
+  - "value function learning"
+  - "memory-efficient RL"
+  - "iterated Q-learning"
+  - "shared features"
 date: 2026-05-08
-content_hash: b0736f2c1a0dd442
+content_hash: 14effbab813cbc3b
 ---
+
 # Bridging the Performance-Gap Between Target-Free and Target-Based Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -120,8 +125,8 @@ This work stands at the intersection of **iterated Q-learning** (Vincent et al. 
 - [\[ICLR 2026\] Q-Learning with Fine-Grained Gap-Dependent Regret](q-learning_with_fine-grained_gap-dependent_regret.md)
 - [\[ICLR 2026\] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization](on_the_tension_between_optimality_and_adversarial_robustness_in_policy_optimizat.md)
 - [\[ICLR 2026\] A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning](a_reward-free_viewpoint_on_multi-objective_reinforcement_learning.md)
+- [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
 - [\[ICLR 2026\] RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks](rlac_reinforcement_learning_with_adversarial_critic_for_free-form_generation_tas.md)
-- [\[ICLR 2026\] MIRACLE: Model-free Imitation and Reinforcement Learning for Adaptive Cut-Selection](miracle_model-free_imitation_and_reinforcement_learning_for_adaptive_cut-selecti.md)
 
 </div>
 

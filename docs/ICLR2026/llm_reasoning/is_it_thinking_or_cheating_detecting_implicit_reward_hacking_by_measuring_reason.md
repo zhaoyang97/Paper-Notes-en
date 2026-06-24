@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort
 description: >-
-  [ICLR 2026][LLM Reasoning][reward hacking] Ours proposes TRACE (Truncated Reasoning AUC Evaluation), a method that quantifies reasoning effort by progressively truncating reasoning chains and measuring "how early" a model obtains rewards. It detects implicit reward hacking behaviors that CoT monitoring fails to identify, improving detection F1 by over 65% in ma
+  [ICLR 2026 Oral][Reasoning][reward hacking] Ours proposes TRACE (Truncated Reasoning AUC Evaluation), a method that quantifies reasoning effort by progressively truncating reasoning chains and measuring "how early" a model obtains rewards. It detects implicit reward hacking behaviors that CoT monitoring fails to identify, improving detection F1 by over 65% in math and 30% in code tasks compared to the strongest CoT monitors.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - reward hacking
-  - chain-of-thought
-  - reasoning effort
-  - TRACE
-  - AI safety
-  - scalable oversight
+  - "ICLR 2026 Oral"
+  - "Reasoning"
+  - "reward hacking"
+  - "chain-of-thought"
+  - "reasoning effort"
+  - "TRACE"
+  - "AI safety"
+  - "scalable oversight"
 date: 2026-05-08
-content_hash: 4ae2bde62e5a19fe
+content_hash: cb2ca260fa9a4eb1
 ---
+
 # Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort
 
 **Conference**: ICLR 2026 Oral  
@@ -156,10 +157,10 @@ Hacking behaviors originate from four manually injected vulnerability environmen
 ## Related Papers
 
 - [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](why_is_your_language_model_a_poor_implicit_reward_model.md)
+- [\[ICLR 2026\] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs](the_illusion_of_diminishing_returns_measuring_long_horizon_execution_in_llms.md)
 - [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](agentic_reinforcement_learning_with_implicit_step_rewards.md)
 - [\[ICLR 2026\] SIM-CoT: Supervised Implicit Chain-of-Thought](sim-cot_supervised_implicit_chain-of-thought.md)
-- [\[ICLR 2026\] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs](the_illusion_of_diminishing_returns_measuring_long_horizon_execution_in_llms.md)
-- [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
+- [\[ICLR 2026\] SCI-Verifier: Scientific Verifier with Thinking](sci-verifier_scientific_verifier_with_thinking.md)
 
 </div>
 

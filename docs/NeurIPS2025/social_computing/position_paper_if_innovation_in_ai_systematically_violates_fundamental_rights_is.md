@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Position Paper: If Innovation in AI Systematically Violates Fundamental Rights, Is It Innovation at All?
 description: >-
-  [NeurIPS 2025][Social Computing][AI regulation] This paper challenges the prevailing belief that regulation and innovation are inherently at odds. Through historical analogies from pharmaceuticals, aviation…
+  [NeurIPS 2025 Oral][Social Computing][AI regulation] This paper challenges the prevailing belief that regulation and innovation are inherently at odds. Through historical analogies from pharmaceuticals, aviation, and welfare systems, combined with an analysis of the Collingridge dilemma, it argues that well-designed regulation serves as the foundation for sustainable innovation rather than an impediment to it. The regulatory sandbox, SME support mechanisms…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Social Computing"
   - "AI regulation"
   - "fundamental rights"
@@ -12,7 +12,7 @@ tags:
   - "responsible innovation"
   - "Collingridge dilemma"
 date: 2026-05-08
-content_hash: f5122d1cbb4bbc15
+content_hash: be0b4c1357f32d24
 ---
 
 # Position Paper: If Innovation in AI Systematically Violates Fundamental Rights, Is It Innovation at All?
@@ -134,11 +134,11 @@ The paper adopts a multi-layered argumentative structure: historical analogies r
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents](policy-as-prompt_turning_ai_governance_rules_into_guardrails_for_ai_agents.md)
 - [\[NeurIPS 2025\] IF-GUIDE: Influence Function-Guided Detoxification of LLMs](if-guide_influence_function-guided_detoxification_of_llms.md)
+- [\[NeurIPS 2025\] Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents](policy-as-prompt_turning_ai_governance_rules_into_guardrails_for_ai_agents.md)
 - [\[NeurIPS 2025\] Don't Let It Fade: Preserving Edits in Diffusion Language Models via Token Timestep Allocation](dont_let_it_fade_preserving_edits_in_diffusion_language_mode.md)
 - [\[ACL 2026\] Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies](../../ACL2026/social_computing/imperfectly_cooperative_human-ai_interactions_comparing_the_impacts_of_human_and.md)
-- [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](../../ICLR2026/social_computing/propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
+- [\[ICLR 2026\] The Value of Information in Human-AI Decision-Making](../../ICLR2026/social_computing/the_value_of_information_in_human-ai_decision-making.md)
 
 </div>
 

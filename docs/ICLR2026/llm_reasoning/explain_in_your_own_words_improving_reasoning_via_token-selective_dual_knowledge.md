@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distillation
 description: >-
-  [ICLR 2026][LLM Reasoning][Knowledge Distillation] TSD-KD enables small student models to reason "in their own words" by distilling only on high-entropy key tokens at the beginning of responses. It combines indirect preference distillation (where the teacher ranks student candidates) with direct distillation (targeting tokens where the student is uncertain but the teac
+  [ICLR 2026][Reasoning][Knowledge Distillation] TSD-KD enables small student models to reason "in their own words" by distilling only on high-entropy key tokens at the beginning of responses. It combines indirect preference distillation (where the teacher ranks student candidates) with direct distillation (targeting tokens where the student is uncertain but the teacher is certain) and entropy regularization. TSD-KD achieves SOTA results on 10 reasoning benchmarks for a 1.5B st…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Knowledge Distillation
-  - on-policy KD
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Knowledge Distillation"
+  - "Reasoning Distillation"
+  - "on-policy KD"
+  - "Preference Ranking"
+  - "Token Entropy"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 3b34baaaf8a16ec9
+content_hash: 6b4d6cecd819124d
 ---
+
 # Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distillation
 
 **Conference**: ICLR 2026  
@@ -121,7 +126,7 @@ On MATH, TSD-KD (26.1) is 40.3% higher than the runner-up and outperforms the 14
 - [\[ICLR 2026\] Probing to Refine: Reinforcement Distillation of LLMs via Explanatory Inversion](probing_to_refine_reinforcement_distillation_of_llm_reasoners_via_explanatory_in.md)
 - [\[ICLR 2026\] Where Did This Sentence Come From? Tracing Provenance in LLM Reasoning Distillation](where_did_this_sentence_come_from_tracing_provenance_in_llm_reasoning_distillati.md)
 - [\[ICLR 2026\] KaVa: Latent Reasoning via Compressed KV-Cache Distillation](kava_latent_reasoning_via_compressed_kv-cache_distillation.md)
-- [\[ICLR 2026\] SkillFactory: Self-Distillation for Learning Cognitive Behaviors](skillfactory_self-distillation_for_learning_cognitive_behaviors.md)
+- [\[ICLR 2026\] Reasoning with Sampling: Your Base Model is Smarter Than You Think](reasoning_with_sampling_your_base_model_is_smarter_than_you_think.md)
 
 </div>
 

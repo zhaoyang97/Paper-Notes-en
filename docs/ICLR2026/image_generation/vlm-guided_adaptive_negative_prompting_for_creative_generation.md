@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VLM-Guided Adaptive Negative Prompting for Creative Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper proposes a training-free VLM-guided adaptive negative prompting method that continuously identifies conventional concepts emerging in the image during the diffusion denoising process and accumulates them into negative prompts to push the generation trajectory away, thereby generating novel images that still
+  [ICLR2026][Image Generation][Creative Generation] This paper proposes a training-free VLM-guided adaptive negative prompting method that continuously identifies conventional concepts emerging in the image during the diffusion denoising process and accumulates them into negative prompts to push the generation trajectory away, thereby generating novel images that still belong to the target category.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Creative Generation"
+  - "T2I Diffusion Models"
+  - "VLM Feedback"
+  - "Negative Prompting"
+  - "Inference-time Control"
 date: 2026-05-08
-content_hash: 291b03423766a4b2
+content_hash: 83472d7ec2cc886d
 ---
+
 # VLM-Guided Adaptive Negative Prompting for Creative Generation
 
 **Conference**: ICLR2026  

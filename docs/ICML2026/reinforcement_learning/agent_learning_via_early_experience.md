@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Agent Learning via Early Experience
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper proposes the "early experience" paradigm, which allows language agents to utilize the future states of their own actions to learn environment dynamics and decision-making reflections without external rewards. This approach consistently outperforms pure imitation learning across 8 agent environments and provi
+  [ICML2026][Reinforcement Learning][Early Experience] This paper proposes the "early experience" paradigm, which allows language agents to utilize the future states of their own actions to learn environment dynamics and decision-making reflections without external rewards. This approach consistently outperforms pure imitation learning across 8 agent environments and provides a superior initialization for subsequent GRPO reinforcement learning.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Early Experience"
+  - "Implicit World Model"
+  - "Self-Reflection"
+  - "Imitation Learning"
+  - "Agent Reinforcement Learning"
 date: 2026-05-08
-content_hash: 0890abfed23cbf5f
+content_hash: 6e1ef2c088a3bd6f
 ---
+
 # Agent Learning via Early Experience
 
 **Conference**: ICML2026  
@@ -129,15 +135,16 @@ Models used include Llama-3.2-3B, Qwen-2.5-7B, and Llama-3.1-8B. Environments co
 - Value: ⭐⭐⭐⭐⭐ Highly practical for current LLM Agent training, especially as an intermediate stage between SFT and RL. 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] ExGRPO: Learning to Reason from Experience](../../ICLR2026/reinforcement_learning/exgrpo_learning_to_reason_from_experience.md)
+- [\[ICLR 2026\] Reliability-Adjusted Prioritized Experience Replay](../../ICLR2026/reinforcement_learning/reliability-adjusted_prioritized_experience_replay.md)
 - [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
-- [\[ICML 2026\] Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning](interaction-breaking_adversarial_learning_framework_for_robust_multi-agent_reinf.md)
-- [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
+- [\[ICML 2026\] Multi-Agent Reinforcement Learning from Delayed Marketplace Feedback for Objective-Weight Adaptation in Three-Sided Dispatch](multi-agent_reinforcement_learning_from_delayed_marketplace_feedback_for_objecti.md)
 
 </div>
 

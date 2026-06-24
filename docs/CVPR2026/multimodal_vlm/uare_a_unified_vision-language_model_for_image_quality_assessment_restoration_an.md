@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement
 description: >-
-  [CVPR 2026][Multimodal VLM][reason-then-restore] UARE integrates Image Quality Assessment (IQA), restoration, and enhancement into a single Mixture-of-Transformers (MoT) based vision-language model. By employing a two-stage training strategy with interleaved "reason-then-restore" data, the authors systematically validate the hypothesis that "explicit quality analysis
+  [CVPR 2026][Multimodal VLM][Unified Vision-Language Model] UARE integrates Image Quality Assessment (IQA), restoration, and enhancement into a single Mixture-of-Transformers (MoT) based vision-language model. By employing a two-stage training strategy with interleaved "reason-then-restore" data, the authors systematically validate the hypothesis that "explicit quality analysis improves restoration results" for the first time. The model achieves competitive performance across…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - reason-then-restore
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Unified Vision-Language Model"
+  - "Image Quality Assessment"
+  - "Image Restoration"
+  - "MoT Experts"
+  - "reason-then-restore"
 date: 2026-05-08
-content_hash: bc0f7cd41d2cd688
+content_hash: 1603dcc87f510a93
 ---
+
 # UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement
 
 **Conference**: CVPR 2026  

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Hallucination Reduction with CASAL: Contrastive Activation Steering for Amortized Learning
 description: >-
-  [ICLR 2026][Hallucination Detection][MoE] CASAL "amortizes" inference-time activation steering into model weights—by training only a sub-module of a single layer using only representation loss (without cross-entropy), the LLM learns to "answer what it knows and abstain from what it doesn't." This reduces hallucination rates by 30%–40% on multiple short-form QA
+  [ICLR 2026][Hallucination Detection][Hallucination] CASAL "amortizes" inference-time activation steering into model weights—by training only a sub-module of a single layer using only representation loss (without cross-entropy), the LLM learns to "answer what it knows and abstain from what it doesn't." This reduces hallucination rates by 30%–40% on multiple short-form QA benchmarks while requiring ~30× less compute and ~20× less data than LoRA-style baselines.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - MoE
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Hallucination"
+  - "Activation Steering"
+  - "Amortized Optimization"
+  - "Knowledge Boundary"
+  - "Representation Loss"
+  - "MoE"
 date: 2026-05-08
-content_hash: b387a6853498019a
+content_hash: 09987961967e45b3
 ---
+
 # Hallucination Reduction with CASAL: Contrastive Activation Steering for Amortized Learning
 
 **Conference**: ICLR 2026  
@@ -125,7 +131,7 @@ CASAL matches or exceeds the performance of baselines using only 640 samples (20
 - [\[ICLR 2026\] Learning to Reason for Hallucination Span Detection](learning_to_reason_for_hallucination_span_detection.md)
 - [\[ACL 2025\] Activation Steering Decoding: Mitigating Hallucination in Large Vision-Language Models through Bidirectional Hidden State Intervention](../../ACL2025/hallucination/activation_steering_decoding_mitigating_hallucination_in_large_vision-language_m.md)
 - [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](../../ICML2026/hallucination/learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
-- [\[ICLR 2026\] Leveraging Pretrained Knowledge at Inference Time: LoRA-Gated Contrastive Decoding for Multilingual Factual Language Generation in Adapted LLMs](leveraging_pretrained_knowledge_at_inference_time_lora-gated_contrastive_decodin.md)
+- [\[ICLR 2026\] AFTER: Mitigating Object Hallucinations in LVLMs with Adaptive Fact-guided Activation Editing](after_mitigating_the_object_hallucination_of_lvlm_via_adaptive_factual-guided_ac.md)
 
 </div>
 

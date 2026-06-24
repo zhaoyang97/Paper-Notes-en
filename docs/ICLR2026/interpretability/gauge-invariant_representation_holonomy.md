@@ -4,17 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Interpretability][representation holonomy] The authors define "the cumulative rotation of features along a closed input loop" as **representation holonomy**—a gauge-invariant scalar used to characterize "path-dependent geometry" invisible to pointwise similarities like CKA/SVCCA, and link it to the adversarial/corruption robustness of models.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - representation holonomy
-  - gauge invariance
-  - parallel transport
-  - Procrustes alignment
-  - representation geometry
-  - robustness diagnostic
+  - "ICLR 2026"
+  - "Interpretability"
+  - "representation holonomy"
+  - "gauge invariance"
+  - "parallel transport"
+  - "Procrustes alignment"
+  - "representation geometry"
+  - "robustness diagnostic"
 date: 2026-05-08
-content_hash: 23ec9c83543e4d1b
+content_hash: 69aeb19da68c85bf
 ---
+
 # Gauge-invariant Representation Holonomy
 
 **Conference**: ICLR 2026  
@@ -136,10 +137,10 @@ Regime means: $h$ vs (clean/FGSM/corrupt) ≈ (−0.96 / 0.94 / −0.96). **Adve
 ## Related Papers
 
 - [\[ICLR 2026\] The Deleuzian Representation Hypothesis](the_deleuzian_representation_hypothesis.md)
+- [\[ICLR 2026\] Information Shapes Koopman Representation](information_shapes_koopman_representation.md)
 - [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
 - [\[ICLR 2026\] On the Predictive Power of Representation Dispersion in Language Models](on_the_predictive_power_of_representation_dispersion_in_language_models.md)
 - [\[ICLR 2026\] MICLIP: Learning to Interpret Representation in Vision Models](miclip_learning_to_interpret_representation_in_vision_models.md)
-- [\[ICLR 2026\] Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement](decoupling_dynamical_richness_from_representation_learning_towards_practical_mea.md)
 
 </div>
 

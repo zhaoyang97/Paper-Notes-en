@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Noise is Worth Diffusion Guidance
 description: >-
-  [ICLR 2026][Image Generation][classifier-free guidance] This paper proposes NoiseRefine: instead of modifying the diffusion model itself, it trains a lightweight network to "refine" random Gaussian noise into a structured noise. This enables generating images with quality close to CFG guidance using only a single forward pass **without any sampling guidance**, thereby elimi
+  [ICLR2026][Image Generation][Diffusion Guidance] This paper proposes NoiseRefine: instead of modifying the diffusion model itself, it trains a lightweight network to "refine" random Gaussian noise into a structured noise. This enables generating images with quality close to CFG guidance using only a single forward pass **without any sampling guidance**, thereby eliminating the overhead of dual forward passes per step.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - classifier-free guidance
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Guidance"
+  - "Classifier-free Guidance"
+  - "Noise Refinement"
+  - "Guidance Distillation"
+  - "Guidance-free Sampling"
 date: 2026-05-08
-content_hash: c57693b6d3e991d8
+content_hash: 0a296a346dfd9dad
 ---
+
 # A Noise is Worth Diffusion Guidance
 
 **Conference**: ICLR2026  
@@ -141,7 +146,7 @@ User Study (Tab. 3): For image quality, Refined Noise Unguided (53.96%) vs. Gaus
 - [\[ICLR 2026\] Deconstructing Guidance: A Semantic Hierarchy for Precise Diffusion Model Editing](deconstructing_guidance_a_semantic_hierarchy_for_precise_diffusion_model_editing.md)
 - [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
 - [\[ICLR 2026\] Contrastive Diffusion Guidance for Spatial Inverse Problems](contrastive_diffusion_guidance_for_spatial_inverse_problems.md)
-- [\[ICLR 2026\] Guidance Watermarking for Diffusion Models](guidance_watermarking_for_diffusion_models.md)
+- [\[ICLR 2026\] Dynamic Classifier-Free Diffusion Guidance via Online Feedback](dynamic_classifier-free_diffusion_guidance_via_online_feedback.md)
 
 </div>
 

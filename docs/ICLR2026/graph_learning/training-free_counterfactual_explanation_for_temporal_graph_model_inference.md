@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Training-Free Counterfactual Explanation for Temporal Graph Model Inference
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] TemGX is a training-free, model-agnostic, and queryable explanation framework for Temporal Graph Neural Networks (TGNNs). It formalizes the question "which historical subgraph led to the current prediction" as a sliding-window counterfactual analysis. Using an explainability score that integrates "cascade influence + t
+  [ICLR 2026][Graph Learning][Temporal Graph Neural Networks] TemGX is a training-free, model-agnostic, and queryable explanation framework for Temporal Graph Neural Networks (TGNNs). It formalizes the question "which historical subgraph led to the current prediction" as a sliding-window counterfactual analysis. Using an explainability score that integrates "cascade influence + temporal effective resistance + temporal decay," it identifies nodes that truly impact decisions. The…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Temporal Graph Neural Networks"
+  - "Counterfactual Explanation"
+  - "Temporal Influence"
+  - "Submodular Optimization"
+  - "Queryable Explanations"
 date: 2026-05-08
-content_hash: 6b60b8c5d198e28b
+content_hash: d0da736eb27056cc
 ---
+
 # Training-Free Counterfactual Explanation for Temporal Graph Model Inference
 
 **Conference**: ICLR 2026  
@@ -135,10 +141,20 @@ TemGX is significantly faster (up to 10× vs CoDy on Wiki) because it is one-pas
 - Value: ⭐⭐⭐⭐⭐ Highly applicable to high-stakes fields like AML and cybersecurity.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](../../ICML2026/graph_learning/gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
+- [\[ICLR 2026\] Revisiting Node Affinity Prediction in Temporal Graphs](revisting_node_affinity_prediction_in_temporal_graphs.md)
+- [\[ICML 2025\] CoDy: Counterfactual Explainers for Dynamic Graphs](../../ICML2025/graph_learning/cody_counterfactual_explainers_for_dynamic_graphs.md)
+- [\[CVPR 2025\] Knowledge Bridger: Towards Training-Free Missing Modality Completion](../../CVPR2025/graph_learning/knowledge_bridger_towards_training-free_missing_modality_completion.md)
+- [\[ICLR 2026\] Escaping the Homophily Trap: A Threshold-free Graph Outlier Detection Framework via Clustering-guided Edge Reweighting](escaping_the_homophily_trap_a_threshold-free_graph_outlier_detection_framework_v.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](../../ICML2026/graph_learning/gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)

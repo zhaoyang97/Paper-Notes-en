@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoLA: Co-Calibrated Logit Adjustment for Long-Tailed Semi-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Logit Adjustment] To address two weaknesses of Logit Adjustment in long-tailed semi-supervised learning—"over-suppression of head classes caused by frequency counting" and "the global adjustment intensity $\tau$ being a fixed hyperparameter decoupled from class-level adjustment"—CoLA introduces De-duplicated Distribution Estimation (DDD
+  [ICLR2026][Self-Supervised Learning][Long-tailed Semi-supervised] To address two weaknesses of Logit Adjustment in long-tailed semi-supervised learning—"over-suppression of head classes caused by frequency counting" and "the global adjustment intensity $\tau$ being a fixed hyperparameter decoupled from class-level adjustment"—CoLA introduces De-duplicated Distribution Estimation (DDDE) using effective rank and learns the optimal $\tau$ (LMC) via meta-learning on a proxy valid…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - Logit Adjustment
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Long-tailed Semi-supervised"
+  - "Logit Adjustment"
+  - "Effective Rank"
+  - "Meta-learning"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: be18f02954cbeb90
+content_hash: 387c663becbdad9c
 ---
+
 # CoLA: Co-Calibrated Logit Adjustment for Long-Tailed Semi-Supervised Learning
 
 **Conference**: ICLR2026  
@@ -154,11 +159,11 @@ Decomposing DDDE and LMC on CIFAR-10/100-LT: `w/o D-τ` removes DDDE with $\tau$
 
 ## Related Papers
 
+- [\[ICLR 2026\] SCAD: Super-Class-Aware Debiasing for Long-Tailed Semi-Supervised Learning](scad_super-class-aware_debiasing_for_long-tailed_semi-supervised_learning.md)
 - [\[ICLR 2026\] Learning Dynamics of Logits Debiasing for Long-Tailed Semi-Supervised Learning](learning_dynamics_of_logits_debiasing_for_long-tailed_semi-supervised_learning.md)
 - [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](../../CVPR2026/self_supervised/trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
 - [\[ICLR 2026\] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments](fedopenmatch_towards_semi-supervised_federated_learning_in_open-set_environments.md)
-- [\[ICLR 2026\] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition](guide_gated_uncertainty-informed_disentangled_experts_for_long-tailed_recognitio.md)
-- [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](mini-cluster_guided_long-tailed_deep_clustering.md)
+- [\[ICLR 2026\] In Context Semi-Supervised Learning](in_context_semi-supervised_learning.md)
 
 </div>
 

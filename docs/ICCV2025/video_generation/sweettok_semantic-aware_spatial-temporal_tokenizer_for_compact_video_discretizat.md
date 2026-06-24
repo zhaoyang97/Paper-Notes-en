@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SweetTok: Semantic-Aware Spatial-Temporal Tokenizer for Compact Video Discretization
 description: >-
-  [ICCV 2025][Video Generation][video discretization] This paper proposes SweetTok, a video tokenizer that decouples spatial and temporal information compression via a Decoupled Query AutoEncoder (DQAE)…
+  [ICCV 2025][Video Generation][video discretization] This paper proposes SweetTok, a video tokenizer that decouples spatial and temporal information compression via a Decoupled Query AutoEncoder (DQAE), and assigns codewords by part-of-speech through a Motion-enhanced Language Codebook (MLC). Using only 25% of the token count, SweetTok achieves 42.8% improvement in rFVD and 15.1% improvement in gFVD, attaining an optimal balance between compression ratio and reconstruction fid…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "vector quantization"
   - "language codebook"
 date: 2026-05-08
-content_hash: 7a9901ee28a02f3b
+content_hash: ffc2f1e3f012ee80
 ---
 
 # SweetTok: Semantic-Aware Spatial-Temporal Tokenizer for Compact Video Discretization
@@ -186,11 +186,11 @@ Codebook ablation:
 
 ## Related Papers
 
+- [\[ICLR 2026\] EffiVMT: Video Motion Transfer via Efficient Spatial-Temporal Decoupled Finetuning](../../ICLR2026/video_generation/effivmt_video_motion_transfer_via_efficient_spatial-temporal_decoupled_finetunin.md)
 - [\[ICML 2026\] iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance](../../ICML2026/video_generation/itryon_mastering_interactive_video_virtual_try-on_with_spatial-semantic_guidance.md)
+- [\[CVPR 2025\] BF-STVSR: B-Splines and Fourier—Best Friends for High Fidelity Spatial-Temporal Video Super-Resolution](../../CVPR2025/video_generation/bf-stvsr_b-splines_and_fourier---best_friends_for_high_fidelity_spatia.md)
 - [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
 - [\[ICCV 2025\] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models](efficientmt_efficient_temporal_adaptation_for_motion_transfer_in_text-to-video_d.md)
-- [\[CVPR 2026\] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models](../../CVPR2026/video_generation/tear_temporal-aware_automated_red-teaming_for_text-to-video_models.md)
-- [\[NeurIPS 2025\] DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models](../../NeurIPS2025/video_generation/densedpo_finegrained_temporal_preference_optimization_for_vi.md)
 
 </div>
 

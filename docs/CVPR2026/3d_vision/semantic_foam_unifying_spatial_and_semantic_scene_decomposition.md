@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Semantic Foam: Unifying Spatial and Semantic Scene Decomposition
 description: >-
-  [CVPR 2026][3D Vision][Radiant Foam] The recently proposed Radiant Foam (a differentiable radiance field representation based on Voronoi grids) is extended to semantic decomposition tasks. By explicitly attaching a set of semantic features to each Voronoi cell and leveraging the natural spatial adjacency of the grid for direct spatial regularization, the
+  [CVPR 2026 (Highlight)][3D Vision][Radiant Foam] The recently proposed Radiant Foam (a differentiable radiance field representation based on Voronoi grids) is extended to semantic decomposition tasks. By explicitly attaching a set of semantic features to each Voronoi cell and leveraging the natural spatial adjacency of the grid for direct spatial regularization, the method avoids occlusion and cross-view inconsistent supervision artifacts common in point-based representations…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Radiant Foam
+  - "CVPR 2026 (Highlight)"
+  - "3D Vision"
+  - "Radiant Foam"
+  - "Voronoi Grids"
+  - "3D Gaussian Splatting"
+  - "Semantic Feature Fields"
+  - "Scene Decomposition"
 date: 2026-05-08
-content_hash: 34f31b6bcef23b67
+content_hash: 28e03c83017883e6
 ---
+
 # Semantic Foam: Unifying Spatial and Semantic Scene Decomposition
 
 **Conference**: CVPR 2026 (Highlight)  
@@ -124,16 +129,17 @@ This is the most core design, relying on the "explicit structure," targeting the
 
 <div class="related-papers" markdown="1">
 
-| Paper | Key Connection |
-|-------|----------------|
-| Radiant Foam (CVPR 2024) | Underlying base representation |
-| Gaussian Grouping (CVPR 2024) | Main baseline for comparison |
-| SAGA (CVPR 2023/2024) | Contrastive feature-based baseline |
+## Related Papers
+
+- [\[CVPR 2026\] Multi-modal Frequency Decomposition Network for Semantic Scene Completion](multi-modal_frequency_decomposition_network_for_semantic_scene_completion.md)
+- [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)
+- [\[CVPR 2026\] TGSFormer: Scalable Temporal Gaussian Splatting for Embodied Semantic Scene Completion](tgsformer_scalable_temporal_gaussian_splatting_for_embodied_semantic_scene_compl.md)
+- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[AAAI 2026\] SplatSSC: Decoupled Depth-Guided Gaussian Splatting for Semantic Scene Completion](../../AAAI2026/3d_vision/splatssc_decoupled_depth-guided_gaussian_splatting_for_semantic_scene_completion.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)

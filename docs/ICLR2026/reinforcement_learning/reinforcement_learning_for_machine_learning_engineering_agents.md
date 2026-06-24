@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reinforcement Learning for Machine Learning Engineering Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper identifies that in Machine Learning Engineering (MLE) tasks with reliable verifiers, updating the parameters of a small model (Qwen2.5-3B) via RL is more effective than repeatedly prompting a frozen large model. Given sufficient compute, the RL-adapted small model outperforms Claude-3.5-Sonnet driven by a SO
+  [ICLR 2026][Reinforcement Learning][ML Engineering Agent] This paper identifies that in Machine Learning Engineering (MLE) tasks with reliable verifiers, updating the parameters of a small model (Qwen2.5-3B) via RL is more effective than repeatedly prompting a frozen large model. Given sufficient compute, the RL-adapted small model outperforms Claude-3.5-Sonnet driven by a SOTA scaffold (AIDE) by an average of 22% across 12 Kaggle tasks. To achieve this…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "ML Engineering Agent"
+  - "Asynchronous RL"
+  - "Duration-Aware Gradient"
+  - "Environment Instrumentation"
+  - "Partial Reward"
 date: 2026-05-08
-content_hash: c32afe016f9f6b25
+content_hash: e047289e1ba059ad
 ---
+
 # Reinforcement Learning for Machine Learning Engineering Agents
 
 **Conference**: ICLR 2026  
@@ -129,15 +135,16 @@ The RL-trained Qwen2.5-3B achieved the best performance in 8 out of 12 tasks, wi
 - **Value**: ⭐⭐⭐⭐ Provides convincing empirical evidence on the allocation of compute between inference and gradient updates.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] RLVER: Reinforcement Learning with Verifiable Emotion Rewards for Empathetic Agents](rlver_reinforcement_learning_with_verifiable_emotion_rewards_for_empathetic_agen.md)
+- [\[ICLR 2026\] Deconstructing Memory in Reinforcement Learning Agents: A Taxonomy and Evaluation Methodology](unraveling_the_complexity_of_memory_in_rl_agents_an_approach_for_classification_.md)
 - [\[ICLR 2026\] Learning to Orchestrate Agents in Natural Language with the Conductor](learning_to_orchestrate_agents_in_natural_language_with_the_conductor.md)
 - [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
 - [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
-- [\[ICLR 2026\] ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents](computerrl_scaling_end-to-end_online_reinforcement_learning_for_computer_use_age.md)
 
 </div>
 

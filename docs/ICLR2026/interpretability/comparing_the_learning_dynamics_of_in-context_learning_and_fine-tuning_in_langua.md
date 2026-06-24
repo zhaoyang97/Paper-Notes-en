@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Comparing the learning dynamics of in-context learning and fine-tuning in language models
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The authors treat In-Context Learning (ICL) and Supervised Fine-Tuning (SFT) as two "learning algorithms" and compare their learning trajectories and internal representations shot-by-shot on a geometrically controllable 2D linear classification toy task. They find that while both achieve similar generalization accuracy
+  [ICLR2026][Interpretability][In-context learning] The authors treat In-Context Learning (ICL) and Supervised Fine-Tuning (SFT) as two "learning algorithms" and compare their learning trajectories and internal representations shot-by-shot on a geometrically controllable 2D linear classification toy task. They find that while both achieve similar generalization accuracy, their mechanisms differ significantly: ICL preserves rich input representations but carries stronger pre-tra…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "In-context learning"
+  - "supervised fine-tuning"
+  - "learning dynamics"
+  - "inductive bias"
+  - "representation collapse"
 date: 2026-05-08
-content_hash: 855b57a102c09010
+content_hash: 99ca17534b02d734
 ---
+
 # Comparing the learning dynamics of in-context learning and fine-tuning in language models
 
 **Conference**: ICLR2026  
@@ -107,15 +113,16 @@ In matched data and order settings, Llama3-8B solves the task using both ICL and
 - Value: ⭐⭐⭐⭐ The "similar accuracy, different mechanism" and "SFT representation collapse" findings provide practical insights into fine-tuning fragility and ICL vs. SFT selection.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Reinforcement Learning Fine-Tuning Enhances Activation Intensity and Diversity in the Internal Circuitry of LLMs](reinforcement_learning_fine-tuning_enhances_activation_intensity_and_diversity_i.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](../../NeurIPS2025/interpretability/understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
+- [\[ICLR 2026\] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations](understanding_task_vectors_in_in-context_learning_emergence_functionality_and_li.md)
 - [\[ICLR 2026\] InputDSA: Demixing, then comparing recurrent and externally driven dynamics](inputdsa_demixing_then_comparing_recurrent_and_externally_driven_dynamics.md)
-- [\[ICLR 2026\] Learning to Interpret Weight Differences in Language Models](learning_to_interpret_weight_differences_in_language_models.md)
-- [\[ICML 2026\] Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers](../../ICML2026/interpretability/dissecting_multimodal_in-context_learning_modality_asymmetries_and_circuit_dynam.md)
+- [\[ICLR 2026\] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis](localizing_task_recognition_and_task_learning_in_in-context_learning_via_attenti.md)
 
 </div>
 

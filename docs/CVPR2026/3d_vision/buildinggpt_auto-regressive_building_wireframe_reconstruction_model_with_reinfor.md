@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BuildingGPT: Auto-Regressive Building Wireframe Reconstruction Model with Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][DPO] BuildingGPT reformulates "building wireframe reconstruction from point clouds" as a sequence generation problem: it first encodes wireframes into discrete tokens using a hierarchical tokenization scheme in the order of "foundation → wall → roof," then generates tokens sequentially using a point-cloud-conditioned auto-r
+  [CVPR 2026][3D Vision][Building wireframe reconstruction] BuildingGPT reformulates "building wireframe reconstruction from point clouds" as a sequence generation problem: it first encodes wireframes into discrete tokens using a hierarchical tokenization scheme in the order of "foundation → wall → roof," then generates tokens sequentially using a point-cloud-conditioned auto-regressive Transformer. Finally, it employs DPO post-training based on a custom Preference Score Functi…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - DPO
-  - tokenization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Building wireframe reconstruction"
+  - "auto-regressive generation"
+  - "point cloud"
+  - "DPO"
+  - "tokenization"
 date: 2026-05-08
-content_hash: 6dcb96b0c9934cbe
+content_hash: 58aa61a910cbe2d2
 ---
+
 # BuildingGPT: Auto-Regressive Building Wireframe Reconstruction Model with Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -151,11 +155,11 @@ Compared to the previous SOTA, EdgeDiff, WED and ACO decreased by 29.5% and 33.3
 
 ## Related Papers
 
-- [\[CVPR 2026\] Masked Auto-Regressive Variational Acceleration: Fast Inference Makes Practical Reinforcement Learning](masked_auto-regressive_variational_acceleration_fast_inference_makes_practical_r.md)
-- [\[ICLR 2026\] cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning](../../ICLR2026/reinforcement_learning/cadrille_multi-modal_cad_reconstruction_with_reinforcement_learning.md)
-- [\[ICML 2026\] LASER: Learning Active Sensing for Continuum Field Reconstruction](../../ICML2026/reinforcement_learning/laser_learning_active_sensing_for_continuum_field_reconstruction.md)
-- [\[ICML 2026\] The Surprising Difficulty of Search in Model-Based Reinforcement Learning](../../ICML2026/reinforcement_learning/the_surprising_difficulty_of_search_in_model-based_reinforcement_learning.md)
-- [\[CVPR 2026\] EVA: Efficient Reinforcement Learning for End-to-End Video Agent](eva_efficient_reinforcement_learning_for_end-to-end_video_agent.md)
+- [\[ICCV 2025\] DeepMesh: Auto-Regressive Artist-Mesh Creation with Reinforcement Learning](../../ICCV2025/3d_vision/deepmesh_auto-regressive_artist-mesh_creation_with_reinforcement_learning.md)
+- [\[CVPR 2026\] Edges Compete for Trust: Group Relative Edge Optimization for Building Reconstruction from Point Clouds](edges_compete_for_trust_group_relative_edge_optimization_for_building_reconstruc.md)
+- [\[ICLR 2026\] Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk](../../ICLR2026/3d_vision/topology-preserved_auto-regressive_mesh_generation_in_the_manner_of_weaving_silk.md)
+- [\[CVPR 2026\] Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning](adaptive_3d_perception_for_small_aerial_targets_under_sparse_sampling_via_reinfo.md)
+- [\[CVPR 2026\] Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model](online3r_online_learning_for_consistent_sequential_reconstruction_based_on_geome.md)
 
 </div>
 

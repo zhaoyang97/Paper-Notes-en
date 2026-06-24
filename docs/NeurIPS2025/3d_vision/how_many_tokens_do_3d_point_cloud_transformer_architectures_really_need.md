@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?
 description: >-
-  [NeurIPS 2025][3D Vision][Point Cloud Transformer] This paper systematically demonstrates that 90–95% of tokens in 3D point cloud Transformers (e.g., PTv3, Sonata) are redundant…
+  [NeurIPS 2025][3D Vision][Point Cloud Transformer] This paper systematically demonstrates that 90–95% of tokens in 3D point cloud Transformers (e.g., PTv3, Sonata) are redundant, and proposes gitmerge3D — a globally informed graph-based token merging method that achieves up to 5.3× FLOPs reduction and 6.4× memory savings with negligible accuracy loss, via an energy-score-driven adaptive merging strategy.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Semantic Segmentation"
   - "Computational Efficiency"
 date: 2026-05-08
-content_hash: 78d42f2212149378
+content_hash: e66a165398a68bc4
 ---
 
 # How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?
@@ -137,11 +137,11 @@ Merging 90% of tokens results in virtually unchanged 3D reconstruction quality, 
 
 ## Related Papers
 
+- [\[ECCV 2024\] When Do We Not Need Larger Vision Models?](../../ECCV2024/3d_vision/when_do_we_not_need_larger_vision_models.md)
+- [\[ICLR 2026\] Do 3D Large Language Models Really Understand 3D Spatial Relationships?](../../ICLR2026/3d_vision/do_3d_large_language_models_really_understand_3d_spatial_relationships.md)
 - [\[NeurIPS 2025\] Rectified Point Flow: Generic Point Cloud Pose Estimation](rectified_point_flow_generic_point_cloud_pose_estimation.md)
 - [\[NeurIPS 2025\] Locality-Sensitive Hashing-Based Efficient Point Transformer for Charged Particle Reconstruction](locality-sensitive_hashing-based_efficient_point_transformer_for_charged_particl.md)
-- [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](../../ICCV2025/3d_vision/efficient_spiking_point_mamba_for_point_cloud_analysis.md)
-- [\[NeurIPS 2025\] U-CAN: Unsupervised Point Cloud Denoising with Consistency-Aware Noise2Noise Matching](u-can_unsupervised_point_cloud_denoising_with_consistency-aware_noise2noise_matc.md)
-- [\[NeurIPS 2025\] PointMAC: Meta-Learned Adaptation for Robust Test-Time Point Cloud Completion](pointmac_meta-learned_adaptation_for_robust_test-time_point_cloud_completion.md)
+- [\[CVPR 2026\] LitePT: Lighter Yet Stronger Point Transformer](../../CVPR2026/3d_vision/litept_lighter_yet_stronger_point_transformer.md)
 
 </div>
 

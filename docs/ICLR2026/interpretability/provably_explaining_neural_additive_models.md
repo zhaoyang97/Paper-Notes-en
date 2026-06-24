@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Provably Explaining Neural Additive Models
 description: >-
-  [ICLR 2026][Interpretability][Neural Additive Models] Specialized efficient explanation algorithms are designed for Neural Additive Models (NAMs). By requiring only logarithmic verification queries, these algorithms generate cardinally-minimal explanations that outperform existing general-purpose subset-minimal explanation algorithms in terms of both speed and explanation
+  [ICLR 2026][Interpretability][Neural Additive Models] Specialized efficient explanation algorithms are designed for Neural Additive Models (NAMs). By requiring only logarithmic verification queries, these algorithms generate cardinally-minimal explanations that outperform existing general-purpose subset-minimal explanation algorithms in terms of both speed and explanation quality.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Neural Additive Models
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Neural Additive Models"
+  - "Provable Explanations"
+  - "Cardinally-minimal Explanations"
+  - "Formal Verification"
+  - "Explainable AI"
 date: 2026-05-08
-content_hash: 7de54f98d2d77cb3
+content_hash: 3f4b31cf7af516d0
 ---
+
 # Provably Explaining Neural Additive Models
 
 **Conference**: ICLR 2026  

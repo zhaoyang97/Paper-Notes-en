@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Latent Concepts for Detecting Out-of-Distribution Objects
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] UNO-Adapter injects "unknown" concepts into a **fully frozen** detector in a plug-and-play manner. It first abstracts the entire image into sparse concepts using unsupervised object-centric slots, then binds these concepts to the detector's instance features during inference, combined with an image-level OOD score. Wit
+  [CVPR 2026][AI Safety][OOD Object Detection] UNO-Adapter injects "unknown" concepts into a **fully frozen** detector in a plug-and-play manner. It first abstracts the entire image into sparse concepts using unsupervised object-centric slots, then binds these concepts to the detector's instance features during inference, combined with an image-level OOD score. Without modifying any detector weights, it reduces the FPR95 on BDD-100K by up to 11.96% compared to the previous stat…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "OOD Object Detection"
+  - "Object-Centric Learning"
+  - "Slot Attention"
+  - "Concept Binding"
+  - "Open World"
 date: 2026-05-08
-content_hash: 84ff113b1f042f51
+content_hash: 95ee77bce2dfdb74
 ---
+
 # Learning Latent Concepts for Detecting Out-of-Distribution Objects
 
 **Conference**: CVPR 2026  

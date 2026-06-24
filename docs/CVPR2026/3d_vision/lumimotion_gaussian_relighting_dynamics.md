@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LumiMotion: Improving Gaussian Relighting with Scene Dynamics
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] LumiMotion is the first Gaussian-based method to utilize scene dynamics (moving regions) as supervision signals to improve inverse rendering. By implementing motion-static separation and leveraging motion-revealed material changes, it achieves better decoupling of lighting and material, resulting in a 23% improvement i
+  [CVPR 2026][3D Vision][Inverse Rendering] LumiMotion is the first Gaussian-based method to utilize scene dynamics (moving regions) as supervision signals to improve inverse rendering. By implementing motion-static separation and leveraging motion-revealed material changes, it achieves better decoupling of lighting and material, resulting in a 23% improvement in albedo LPIPS and a 15% improvement in relighting.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Inverse Rendering"
+  - "2D Gaussian Splatting"
+  - "Dynamic Scenes"
+  - "Material Estimation"
+  - "Relighting"
 date: 2026-05-08
-content_hash: f05022e77798b700
+content_hash: 1c568a4898ee6c64
 ---
+
 # LumiMotion: Improving Gaussian Relighting with Scene Dynamics
 
 **Conference**: CVPR 2026  
@@ -128,10 +134,10 @@ The Stage 1 total loss includes reconstruction loss, normal consistency, depth d
 ## Related Papers
 
 - [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
-- [\[CVPR 2026\] GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator](gaussfusion_improving_3d_reconstruction_in_the_wild_with_a_geometry-informed_vid.md)
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
+- [\[CVPR 2025\] ReCap: Better Gaussian Relighting with Cross-Environment Captures](../../CVPR2025/3d_vision/recap_better_gaussian_relighting_with_cross-environment_captures.md)
+- [\[CVPR 2026\] Node-RF: Learning Generalized Continuous Space-Time Scene Dynamics with Neural ODE-based NeRFs](node-rf_learning_generalized_continuous_space-time_scene_dynamics_with_neural_od.md)
+- [\[CVPR 2026\] ParticleGS: Learning Neural Gaussian Particle Dynamics from Videos for Prior-free Physical Motion Extrapolation](particlegs_learning_neural_gaussian_particle_dynamics_from_videos_for_prior-free.md)
+- [\[CVPR 2026\] Relightable Holoported Characters: Capturing and Relighting Dynamic Human Performance from Sparse Views](relightable_holoported_characters_capturing_and_relighting_dynamic_human_perform.md)
 
 </div>
 

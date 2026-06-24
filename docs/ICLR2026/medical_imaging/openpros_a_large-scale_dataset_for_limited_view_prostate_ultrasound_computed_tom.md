@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This paper constructs OpenPros, the first large-scale dataset for limited-view prostate Ultrasound Computed Tomography (USCT). By synthesizing anatomically realistic 3D Speed-of-Sound (SOS) volumes based on clinical MRI/CT and ex-vivo measurements, the authors generate 280,000 pairs of 2D SOS maps and full-waveform ult
+  [ICLR 2026][Medical Imaging][Prostate USCT] This paper constructs OpenPros, the first large-scale dataset for limited-view prostate Ultrasound Computed Tomography (USCT). By synthesizing anatomically realistic 3D Speed-of-Sound (SOS) volumes based on clinical MRI/CT and ex-vivo measurements, the authors generate 280,000 pairs of 2D SOS maps and full-waveform ultrasound data. Accompanied by an open-source FDTD solver and a physics/deep learning inversion benchmark…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Prostate USCT"
+  - "Limited-view reconstruction"
+  - "Speed-of-Sound inversion"
+  - "Full-waveform simulation"
+  - "Inverse problem benchmark"
 date: 2026-05-08
-content_hash: e4a7bf32d1100bc7
+content_hash: 39b439105902989b
 ---
+
 # OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography
 
 **Conference**: ICLR 2026  
@@ -121,8 +127,8 @@ Deep models reduce RMSE by 5–6× compared to physical methods and push SSIM ne
 - Value: ⭐⭐⭐⭐⭐ Open-source data, solver, and benchmark for clinical inverse problems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

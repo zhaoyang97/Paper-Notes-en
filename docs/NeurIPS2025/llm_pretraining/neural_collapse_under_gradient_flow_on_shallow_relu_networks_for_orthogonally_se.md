@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Neural Collapse] This paper provides the first provable convergence guarantee that gradient flow (GF) on two-layer ReLU networks with small initialization converges to a Neural Collapse (N…
+  [NeurIPS 2025][LLM Pretraining][Neural Collapse] This paper provides the first provable convergence guarantee that gradient flow (GF) on two-layer ReLU networks with small initialization converges to a Neural Collapse (NC) solution on orthogonally separable data, revealing the critical role of GF's implicit bias—early neuron alignment followed by asymptotic maximum-margin bias—in driving the emergence of NC.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -13,7 +13,7 @@ tags:
   - "Orthogonally Separable Data"
   - "Maximum Margin"
 date: 2026-05-08
-content_hash: c71b5b79c217045a
+content_hash: 086c00a7d9208a54
 ---
 
 # Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data

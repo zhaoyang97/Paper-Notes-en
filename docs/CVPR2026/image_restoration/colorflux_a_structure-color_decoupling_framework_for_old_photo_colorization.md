@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ColorFLUX: A Structure-Color Decoupling Framework for Old Photo Colorization
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] ColorFLUX decouples "structure preservation" and "color completion" into two mutually frozen training stages. This allows the FLUX generative diffusion model to learn accurate semantic colorization without interference from structural tasks. Subsequently, a coarse-to-fine progressive DPO post-training corrects fading u
+  [CVPR 2026][Image Restoration][Old photo colorization] ColorFLUX decouples "structure preservation" and "color completion" into two mutually frozen training stages. This allows the FLUX generative diffusion model to learn accurate semantic colorization without interference from structural tasks. Subsequently, a coarse-to-fine progressive DPO post-training corrects fading unique to old photos, surpassing existing open-source and closed-source commercial models on both syntheti…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Old photo colorization"
+  - "structure-color decoupling"
+  - "FLUX diffusion"
+  - "progressive DPO"
+  - "visual semantic prompt"
 date: 2026-05-08
-content_hash: bde5b6b4f84c0e3c
+content_hash: c0af046a3d147d07
 ---
+
 # ColorFLUX: A Structure-Color Decoupling Framework for Old Photo Colorization
 
 **Conference**: CVPR 2026  
@@ -165,9 +171,9 @@ While Doubao has higher CRI (83.10), its results are **over-saturated and distor
 ## Related Papers
 
 - [\[CVPR 2026\] CanonCGT: Reference-Based Color Grading via Canonical Pivot Representation](canoncgt_reference-based_color_grading_via_canonical_pivot_representation.md)
-- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
+- [\[CVPR 2026\] Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective](rethinking_knowledge_transfer_in_image_quality_assessment_a_perceptual_preferenc.md)
 - [\[CVPR 2026\] Polarization State Tracing for Reflection Removal and Color-Consistent Reconstruction](polarization_state_tracing_for_reflection_removal_and_color-consistent_reconstru.md)
-- [\[CVPR 2026\] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)
+- [\[CVPR 2026\] Life-IQA: Boosting Blind Image Quality Assessment through GCN-enhanced Layer Interaction and MoE-based Feature Decoupling](life-iqa_boosting_blind_image_quality_assessment_through_gcn-enhanced_layer_inte.md)
 - [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
 
 </div>

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper points out that the long-standing joint assumptions of "sparse noise labels + low-rank true labels" in Partial Multi-Label Learning (PML) are actually contradictory. It proves that sparse perturbations instead **preserve** the high-rank property of predicted label matrices. Accordingly, the authors propose S
+  [CVPR 2026][Partial Multi-Label Learning] This paper points out that the long-standing joint assumptions of "sparse noise labels + low-rank true labels" in Partial Multi-Label Learning (PML) are actually contradictory. It proves that sparse perturbations instead **preserve** the high-rank property of predicted label matrices. Accordingly, the authors propose Schirn—which applies a sparsity constraint to the noise matrix and a high-rank (nuclear norm) constraint to the predict…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Partial Multi-Label Learning"
+  - "Sparsity Constraint"
+  - "High-Rank Property"
+  - "Nuclear Norm"
+  - "Label Disambiguation"
 date: 2026-05-08
-content_hash: b89dfb3f3fff32ae
+content_hash: 512936ffae359595
 ---
+
 # Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning
 
 **Conference**: CVPR 2026  

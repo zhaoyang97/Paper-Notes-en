@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Adaptive Residual-Update Steering for Low-Overhead Hallucination Mitigation in Large Vision Language Models
 description: >-
-  [ICML 2026][Hallucination Detection][inference-time steering] This paper proposes RUDDER, which extracts per-sample visual evidence directions from residual updates during the prefill stage of LVLMs and adaptively injects them via a Beta Gate during decoding, mitigating object hallucinations with overhead close to a single forward pass.
+  [ICML 2026][Hallucination Detection][LVLM hallucination] This paper proposes RUDDER, which extracts per-sample visual evidence directions from residual updates during the prefill stage of LVLMs and adaptively injects them via a Beta Gate during decoding, mitigating object hallucinations with overhead close to a single forward pass.
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - inference-time steering
-  - residual stream
-  - Beta Gate
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "LVLM hallucination"
+  - "inference-time steering"
+  - "residual stream"
+  - "Beta Gate"
+  - "vision grounding"
 date: 2026-05-08
-content_hash: 9ff4fe27b383de19
+content_hash: fdf2b7c91792cd2c
 ---
+
 # Adaptive Residual-Update Steering for Low-Overhead Hallucination Mitigation in Large Vision Language Models
 
 **Conference**: ICML 2026  
@@ -144,8 +147,8 @@ Analysis focuses on adaptive gating, layer selection, strength sensitivity, and 
 - [\[ICML 2026\] Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models](revis_sparse_latent_steering_to_mitigate_object_hallucination_in_large_vision-la.md)
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
 - [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/hallucination/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
+- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
 - [\[ICLR 2026\] Look Carefully: Adaptive Visual Reinforcements in Multimodal Large Language Models for Hallucination Mitigation](../../ICLR2026/hallucination/look_carefully_adaptive_visual_reinforcements_in_multimodal_large_language_model.md)
-- [\[CVPR 2026\] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models](../../CVPR2026/hallucination/causallens_sensitivity-guided_multi-head_causal_intervention_for_hallucination_m.md)
 
 </div>
 

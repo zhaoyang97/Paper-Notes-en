@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining
 description: >-
-  [ICLR 2026][Pretraining][Chinchilla] This paper introduces a dimensionless data quality parameter $Q \in (0,1]$ into the classic Chinchilla scaling law, obtaining $L(N,D,Q)=A/N^\alpha + B/(D^\beta Q^\gamma) + E$. Through systematic controlled experiments involving noise injection in machine translation and causal language modeling, the authors demonstrate
+  [ICLR 2026][LLM Pretraining][Data Quality] This paper introduces a dimensionless data quality parameter $Q \in (0,1]$ into the classic Chinchilla scaling law, obtaining $L(N,D,Q)=A/N^\alpha + B/(D^\beta Q^\gamma) + E$. Through systematic controlled experiments involving noise injection in machine translation and causal language modeling, the authors demonstrate that loss decreases predictably with improved data quality, and high-quality data can compensate for smaller model s…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Chinchilla
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data Quality"
+  - "Scaling Laws"
+  - "Effective Sample Size"
+  - "Chinchilla"
+  - "Pretraining"
 date: 2026-05-08
-content_hash: c2977de28463afa4
+content_hash: f2684f4a57bc4ed8
 ---
+
 # Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining
 
 **Conference**: ICLR 2026  
@@ -129,14 +134,17 @@ Evaluating the trained model on unseen data shows fitted $\beta,\gamma$ values v
 
 <div class="related-papers" markdown="1">
 
-- **Chinchilla**: Hoffmann et al., "Training Compute-Optimal Large Language Models", 2022.
-- **Data Deficiency**: Chang et al., "Scaling Laws for Data Filtering", 2024.
-- **Noise Robustness**: Bansal et al., "How data quality affects the scaling laws of NMT", 2022.
+## Related Papers
+
+- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
+- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](../../ICML2026/llm_pretraining/infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
+- [\[ICLR 2026\] How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study](how_text_quality_interventions_reshape_neural_scaling_laws_for_llms_empirical_st.md)
+- [\[ICML 2026\] Explaining Data Mixing Scaling Laws](../../ICML2026/llm_pretraining/explaining_data_mixing_scaling_laws.md)
+- [\[ICLR 2026\] Learned Meta-Tokens for Language Modeling](learned_meta-tokens_for_language_modeling.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)

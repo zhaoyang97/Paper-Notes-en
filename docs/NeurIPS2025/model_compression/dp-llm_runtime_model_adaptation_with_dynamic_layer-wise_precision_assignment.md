@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment
 description: >-
-  [NeurIPS 2025][Model Compression][Dynamic mixed precision] DP-LLM identifies that per-layer quantization sensitivity varies dynamically across decoding steps…
+  [NeurIPS 2025][Model Compression][Dynamic mixed precision] DP-LLM identifies that per-layer quantization sensitivity varies dynamically across decoding steps, and proposes a dynamic layer-wise precision selection mechanism based on relative error. At runtime, each layer is assigned a precision (h-bit or l-bit) conditioned on the current input, achieving a better performance–latency trade-off than static mixed-precision methods.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "on-device LLM inference"
   - "relative error"
 date: 2026-05-08
-content_hash: 325978072bac2d41
+content_hash: a23a6c73e8d1eb1e
 ---
 
 # DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment
@@ -134,9 +134,9 @@ The PPL difference between the approximate and exact estimators is less than 0.0
 
 - [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
 - [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
+- [\[ICLR 2026\] Dr.LLM: Dynamic Layer Routing in LLMs](../../ICLR2026/model_compression/drllm_dynamic_layer_routing_in_llms.md)
 - [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
 - [\[NeurIPS 2025\] Less is More but Where: Dynamic Token Compression via LLM-Guided Keyframe Prior](less_is_more_but_where_dynamic_token_compression_via_llm-guided_keyframe_prior.md)
-- [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](../../ICML2026/model_compression/respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
 
 </div>
 

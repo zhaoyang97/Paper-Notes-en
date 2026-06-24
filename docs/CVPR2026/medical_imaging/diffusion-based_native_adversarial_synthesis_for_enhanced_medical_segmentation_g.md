@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diffusion-Based Native Adversarial Synthesis for Enhanced Medical Segmentation Generalization
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This paper points out that when diffusion models are used for medical segmentation data augmentation, the true driver of generalization is not visual realism but "synthetic adversariality" (the empirical loss induced by synthetic samples). Furthermore, only **native adversariality** residing on the manifold is effectiv
+  [CVPR 2026][Medical Imaging][Diffusion enhancement] This paper points out that when diffusion models are used for medical segmentation data augmentation, the true driver of generalization is not visual realism but "synthetic adversariality" (the empirical loss induced by synthetic samples). Furthermore, only **native adversariality** residing on the manifold is effective. Based on this, a lightweight plugin, Adversariality Miner, is proposed. By resampling initial noise witho…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Diffusion enhancement"
+  - "Adversarial synthesis"
+  - "Noise resampling"
+  - "Medical segmentation"
+  - "Generalization"
 date: 2026-05-08
-content_hash: 035549b00dc1a1a0
+content_hash: 028244c48df524f5
 ---
+
 # Diffusion-Based Native Adversarial Synthesis for Enhanced Medical Segmentation Generalization
 
 **Conference**: CVPR 2026  

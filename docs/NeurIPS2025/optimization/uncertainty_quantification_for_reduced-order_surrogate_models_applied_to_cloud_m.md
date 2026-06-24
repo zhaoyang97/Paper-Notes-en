@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncertainty Quantification for Reduced-Order Surrogate Models Applied to Cloud Microphysics
 description: >-
-  [NeurIPS 2025][Optimization][reduced-order models] This paper proposes the first post-hoc, model-agnostic uncertainty quantification framework for latent-space reduced-order models. By applying conformal prediction to th…
+  [NeurIPS 2025][Optimization][reduced-order models] This paper proposes the first post-hoc, model-agnostic uncertainty quantification framework for latent-space reduced-order models. By applying conformal prediction to the reconstruction, latent dynamics, and end-to-end prediction components independently, it constructs distribution-free prediction intervals and reveals component-level uncertainty propagation in cloud microphysics ROMs — showing that structural errors in the a…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "surrogate models"
   - "prediction intervals"
 date: 2026-05-08
-content_hash: 30d039d058965b09
+content_hash: befc78ef2cc39b5c
 ---
 
 # Uncertainty Quantification for Reduced-Order Surrogate Models Applied to Cloud Microphysics
@@ -155,10 +155,10 @@ Component-level temporal behavior of uncertainty propagation:
 ## Related Papers
 
 - [\[ICML 2026\] Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation](../../ICML2026/optimization/distribution-free_uncertainty_quantification_for_continuous_ai_agent_evaluation.md)
+- [\[NeurIPS 2025\] Conformal Prediction in The Loop: A Feedback-Based Uncertainty Model for Trajectory Optimization](conformal_prediction_in_the_loop_a_feedback-based_uncertainty_model_for_trajecto.md)
 - [\[NeurIPS 2025\] The Trilemma of Truth in Large Language Models](the_trilemma_of_truth_in_large_language_models.md)
 - [\[NeurIPS 2025\] Private Zeroth-Order Optimization with Public Data](private_zeroth-order_optimization_with_public_data.md)
 - [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](improving_the_straight-through_estimator_with_zeroth-order_information.md)
-- [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
 
 </div>
 

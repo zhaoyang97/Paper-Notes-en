@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StreamRAG: Enhancing Real-Time Video Understanding with Retrieval Augmentation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] StreamRAG systematically introduces RAG to streaming video QA for the first time. By employing three plug-and-play modules—Real-time Event Segmentation, Low-latency Knowledge Extraction via historical token reuse, and Dynamic Retrieval Range selection based on query recency—it enhances models like Qwen2-VL and ViSpeak
+  [CVPR 2026][Video Understanding][Streaming Video QA] StreamRAG systematically introduces RAG to streaming video QA for the first time. By employing three plug-and-play modules—Real-time Event Segmentation, Low-latency Knowledge Extraction via historical token reuse, and Dynamic Retrieval Range selection based on query recency—it enhances models like Qwen2-VL and ViSpeak on OVO-Bench/StreamingBench with accuracy gains of approximately 11%~20% without altering the backbone MLLM…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Streaming Video QA"
+  - "Retrieval Augmented Generation"
+  - "Event Segmentation"
+  - "Low-latency Captioning"
+  - "Dynamic Knowledge Injection"
 date: 2026-05-08
-content_hash: 2fde7e058a17d1eb
+content_hash: f12c7b92befa6b79
 ---
+
 # StreamRAG: Enhancing Real-Time Video Understanding with Retrieval Augmentation
 
 **Conference**: CVPR 2026  
@@ -123,10 +129,20 @@ Additional results: At ~18% token reuse, latency drops 27% while accuracy increa
 - Value: ⭐⭐⭐⭐ Significant practical value for real-world deployments in AI glasses and autonomous systems without retraining costs.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2025\] VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by Video SpatioTemporal Augmentation](../../CVPR2025/video_understanding/vista_enhancing_long-duration_and_high-resolution_video_understanding_by_video_s.md)
+- [\[ICLR 2026\] RIVER: A Real-Time Interaction Benchmark for Video LLMs](../../ICLR2026/video_understanding/river_a_real-time_interaction_benchmark_for_video_llms.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
+- [\[CVPR 2026\] D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network](d2fanet_enhancing_video_object_detection_with_dual-domain_feature_aggregation_ne.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2025\] VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by Video SpatioTemporal Augmentation](../../CVPR2025/video_understanding/vista_enhancing_long-duration_and_high-resolution_video_understanding_by_video_s.md)

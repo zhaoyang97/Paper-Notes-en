@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Additive Decompositions: Interpretability Through Separability
 description: >-
-  [ICML 2026][Interpretability][Paper Note] Ours proposes Tensor Separable Learning (TSL), a stagewise greedy regression method that models the conditional mean as the difference between positive rank-1 separable products. By utilizing a separable structure, it avoids signal cancellation and interaction masking issues inherent in additive decompositions under st
+  [ICML2026][Interpretability][Interpretable Machine Learning] Ours proposes Tensor Separable Learning (TSL), a stagewise greedy regression method that models the conditional mean as the difference between positive rank-1 separable products. By utilizing a separable structure, it avoids signal cancellation and interaction masking issues inherent in additive decompositions under strong interactions, while its partial dependence functions can precisely recover the shapes of the f…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Interpretable Machine Learning"
+  - "Tensor Separable Learning"
+  - "Separable Models"
+  - "Partial Dependence Analysis"
+  - "Glass-box Models"
 date: 2026-05-08
-content_hash: f32ba9e64d27aab3
+content_hash: d026516b54ee4fbe
 ---
+
 # Beyond Additive Decompositions: Interpretability Through Separability
 
 **Conference**: ICML2026  
@@ -116,11 +122,11 @@ Under matched total separation rank (≤4), the positivity constraint + differen
 
 ## Related Papers
 
+- [\[ICLR 2026\] Circuit Insights: Towards Interpretability Beyond Activations](../../ICLR2026/interpretability/circuit_insights_towards_interpretability_beyond_activations.md)
 - [\[CVPR 2026\] Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability](../../CVPR2026/interpretability/beyond_top_activations_efficient_and_reliable_crowdsourced_evaluation_of_automat.md)
-- [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](../../NeurIPS2025/interpretability/beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
 - [\[ICLR 2026\] Provably Explaining Neural Additive Models](../../ICLR2026/interpretability/provably_explaining_neural_additive_models.md)
+- [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](../../NeurIPS2025/interpretability/beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
 - [\[ACL 2026\] Mechanistic Interpretability of Large-Scale Counting in LLMs through a System-2 Strategy](../../ACL2026/interpretability/mechanistic_interpretability_of_large-scale_counting_in_llms_through_a_system-2_.md)
-- [\[ICML 2026\] Interpretability Can Be Actionable](interpretability_can_be_actionable.md)
 
 </div>
 

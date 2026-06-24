@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GRASPrune: Global Gating for Budgeted Structured Pruning of Large Language Models
 description: >-
-  [ACL 2026][Model Compression][Paper Note] GRASPrune proposes a structured pruning framework with global budget constraints. By using a Projected Straight-Through Estimator (Projected STE) to enforce hard mask budget constraints during each training step, it jointly prunes FFN channels and KV head groups. It achieves 12.18 PPL on LLaMA-2-7B with 50% parameter r
+  [ACL 2026][Model Compression][Structured Pruning] GRASPrune proposes a structured pruning framework with global budget constraints. By using a Projected Straight-Through Estimator (Projected STE) to enforce hard mask budget constraints during each training step, it jointly prunes FFN channels and KV head groups. It achieves 12.18 PPL on LLaMA-2-7B with 50% parameter retention, requiring only 6 minutes of training on a single A100 GPU.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "Structured Pruning"
+  - "Global Budget"
+  - "Gating Learning"
+  - "KV Head Pruning"
+  - "Projected STE"
 date: 2026-05-08
-content_hash: fd64e276386823f6
+content_hash: 69f1dfc1e0a0fa4b
 ---
+
 # GRASPrune: Global Gating for Budgeted Structured Pruning of Large Language Models
 
 **Conference**: ACL 2026  
@@ -132,10 +138,10 @@ The language modeling loss is optimized on a calibration set to learn gating sco
 ## Related Papers
 
 - [\[ICML 2025\] SlimLLM: Accurate Structured Pruning for Large Language Models](../../ICML2025/model_compression/slimllm_accurate_structured_pruning_for_large_language_models.md)
+- [\[ICLR 2026\] RCPU: Rotation-Constrained Error Compensation for Structured Pruning of Large Language Models](../../ICLR2026/model_compression/rcpu_rotation-constrained_error_compensation_for_structured_pruning_of_large_lan.md)
 - [\[ICML 2025\] Olica: Efficient Structured Pruning of Large Language Models without Retraining](../../ICML2025/model_compression/olica_efficient_structured_pruning_of_large_language_models_without_retraining.md)
 - [\[ACL 2026\] Two-Stage Regularization-Based Structured Pruning for LLMs](two-stage_regularization-based_structured_pruning_for_llms.md)
 - [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
-- [\[ICML 2025\] Instruction-Following Pruning for Large Language Models](../../ICML2025/model_compression/instruction-following_pruning_for_large_language_models.md)
 
 </div>
 

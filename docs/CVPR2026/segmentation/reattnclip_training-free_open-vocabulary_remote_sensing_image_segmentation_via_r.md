@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP
 description: >-
-  [CVPR 2026][Segmentation][Remote Sensing] ReAttnCLIP decomposes the attention map of the final CLIP layer into three components—"patch↔patch, [CLS]→patch, and patch→[CLS]"—and applies specialized modifications to each. It replaces patch-patch attention with raw patch embedding similarity (enhanced by rotation and middle-layer fusion), reconstructs a more infor
+  [CVPR 2026][Segmentation][Open-vocabulary segmentation] ReAttnCLIP decomposes the attention map of the final CLIP layer into three components—"patch↔patch, [CLS]→patch, and patch→[CLS]"—and applies specialized modifications to each. It replaces patch-patch attention with raw patch embedding similarity (enhanced by rotation and middle-layer fusion), reconstructs a more informative global [CLS] representation using middle-layer attention, and zeros out the [CLS]-to-patch column…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Remote Sensing
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary segmentation"
+  - "Remote sensing"
+  - "CLIP"
+  - "Training-free"
+  - "Attention redefinition"
 date: 2026-05-08
-content_hash: 4c111fccb77f024f
+content_hash: 137a87afb456ba0d
 ---
+
 # ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP
 
 **Conference**: CVPR 2026  
@@ -157,15 +161,14 @@ Module decomposition (mIoU across three datasets):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
 - [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
-- [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
 - [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
+- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
 
 </div>
 

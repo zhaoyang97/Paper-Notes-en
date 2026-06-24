@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RISE: Single Static Radar-based Indoor Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] RISE utilizes a single **static** mmWave radar to transform "multipath ghosts"—traditionally discarded as noise—into geometric cues. By integrating Dual-angle Multipath Enhancement (BAME) and Sim-to-Real Hierarchical Diffusion (SRHD), it achieves the first indoor wall layout reconstruction and furniture detection under
+  [CVPR 2026][3D Vision][mmWave Radar] RISE utilizes a single **static** mmWave radar to transform "multipath ghosts"—traditionally discarded as noise—into geometric cues. By integrating Dual-angle Multipath Enhancement (BAME) and Sim-to-Real Hierarchical Diffusion (SRHD), it achieves the first indoor wall layout reconstruction and furniture detection under a single static radar, reducing Chamfer distance by 60% (to 16 cm) compared to the SOTA…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "mmWave Radar"
+  - "Indoor Scene Understanding"
+  - "Multipath Reflection"
+  - "Layout Reconstruction"
+  - "Diffusion Model"
 date: 2026-05-08
-content_hash: 174025810bef1402
+content_hash: 8c665c02652b1803
 ---
+
 # RISE: Single Static Radar-based Indoor Scene Understanding
 
 **Conference**: CVPR 2026  
@@ -128,9 +133,9 @@ Layout Reconstruction: RISE achieves a Chamfer distance of **16.03 cm** vs EMT's
 
 - [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
 - [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
 - [\[CVPR 2026\] PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding](pointtpa_dynamic_network_parameter_adaptation_for_3d_scene_understanding.md)
 - [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
+- [\[CVPR 2026\] X-band Radar Non-Line-of-Sight Imaging](x-band_radar_non-line-of-sight_imaging.md)
 
 </div>
 

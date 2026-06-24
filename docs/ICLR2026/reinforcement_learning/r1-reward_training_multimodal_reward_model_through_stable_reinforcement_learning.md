@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper reformulates the task of "judging which of two multimodal responses is better" as a rule-based RL task. To address the training collapse issues when directly applying Reinforce++, the authors propose the StableReinforce algorithm (Pre-CLIP + Advantage Filtering + Consistency Reward + Progressive Difficulty C
+  [ICLR 2026][Reinforcement Learning][Multimodal Reward Model] This paper reformulates the task of "judging which of two multimodal responses is better" as a rule-based RL task. To address the training collapse issues when directly applying Reinforce++, the authors propose the StableReinforce algorithm (Pre-CLIP + Advantage Filtering + Consistency Reward + Progressive Difficulty Cold Start). They trained a 7B reward model, R1-Reward, which improves upon previous SOTA by approxi…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multimodal Reward Model"
+  - "Training Stability"
+  - "Long Chain of Thought"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 788a4578417a7342
+content_hash: 27a695c8ea2abac7
 ---
+
 # R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -143,9 +148,9 @@ Regarding training stability (Figure 2), Reinforce++ collapsed around step 150 (
 
 - [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](rm-r1_reward_modeling_as_reasoning.md)
 - [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](../../CVPR2026/reinforcement_learning/msrl_scaling_generative_multimodal_reward_modeling.md)
-- [\[ICLR 2026\] Exploration vs Exploitation: Rethinking RLVR through Clipping, Entropy, and Spurious Reward](exploration_vs_exploitation_rethinking_rlvr_through_clipping_entropy_and_spuriou.md)
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
+- [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
 - [\[ICLR 2026\] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings](ume-r1_exploring_reasoning-driven_generative_multimodal_embeddings.md)
-- [\[ICLR 2026\] A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning](a_reward-free_viewpoint_on_multi-objective_reinforcement_learning.md)
 
 </div>
 

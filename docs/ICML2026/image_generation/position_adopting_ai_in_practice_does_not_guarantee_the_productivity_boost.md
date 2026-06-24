@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: Adopting AI in Practice Does Not Guarantee the Productivity Boost
 description: >-
-  [ICML 2026][Image Generation][Paper Note] This position paper argues that "introducing AI into an organization does not automatically equate to productivity gains." It identifies five human and environmental moderators ignored by traditional economic models (personnel composition, individual baseline capability, learning curves, equitable use incentives, and g
+  [ICML 2026][Image Generation][AI Adoption] This position paper argues that "introducing AI into an organization does not automatically equate to productivity gains." It identifies five human and environmental moderators ignored by traditional economic models (personnel composition, individual baseline capability, learning curves, equitable use incentives, and goal flexibility). By incorporating organizational effectiveness $\Omega$, capability adjustment $\phi(z,\kappa_i)$…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "AI Adoption"
+  - "Productivity Paradox"
+  - "Gries-Naudé Model"
+  - "Organizational Factors"
+  - "Learning Curve"
 date: 2026-05-08
-content_hash: 5f7b81583490ab80
+content_hash: f9232fba637d5a22
 ---
+
 # Position: Adopting AI in Practice Does Not Guarantee the Productivity Boost
 
 **Conference**: ICML 2026  
@@ -118,10 +124,10 @@ As a position paper, this contains no experiments. This section provides two tab
 ## Related Papers
 
 - [\[ICML 2026\] Position: AI Evaluations Should be Grounded on a Theory of Capability](position_ai_evaluations_should_be_grounded_on_a_theory_of_capability.md)
+- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](../../ICLR2026/image_generation/overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
 - [\[ICML 2026\] OmniAID: Decoupling Semantic and Artifacts for Universal AI-Generated Image Detection in the Wild](omniaid_decoupling_semantic_and_artifacts_for_universal_ai-generated_image_detec.md)
 - [\[ICML 2026\] Order within Chaos: Capturing Intrinsic Energy Anomalies for AI-Manipulated Image Forgery Localization](order_within_chaos_capturing_intrinsic_energy_anomalies_for_ai-manipulated_image.md)
 - [\[CVPR 2026\] PositionIC: Unified Position and Identity Consistency for Image Customization](../../CVPR2026/image_generation/positionic_unified_position_and_identity_consistency_for_image_customization.md)
-- [\[AAAI 2026\] HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models](../../AAAI2026/image_generation/hierarchicalprune_position-aware_compression_for_large-scale_diffusion_models.md)
 
 </div>
 

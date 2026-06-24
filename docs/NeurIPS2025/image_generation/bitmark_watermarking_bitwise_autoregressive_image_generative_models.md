@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BitMark: Watermarking Bitwise Autoregressive Image Generative Models
 description: >-
-  [NeurIPS 2025][Image Generation][Bit-level watermarking] This paper proposes BitMark—the first watermarking scheme for bitwise autoregressive image generative models (Infinity, Instella). During generation…
+  [NeurIPS 2025][Image Generation][Bit-level watermarking] This paper proposes BitMark—the first watermarking scheme for bitwise autoregressive image generative models (Infinity, Instella). During generation, it steers bit sequences toward a "green list" by adding logit biases, enabling reliable detection (z-test), high image fidelity (negligible FID change), robustness against diverse attacks, and radioactivity (downstream models trained on watermarked images also carry the wa…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "radioactive watermarking"
   - "Infinity"
 date: 2026-05-08
-content_hash: c1eab051824b9221
+content_hash: 10fc362a18916865
 ---
 
 # BitMark: Watermarking Bitwise Autoregressive Image Generative Models
@@ -140,9 +140,9 @@ Watermarking performance on Infinity and Instella:
 
 - [\[NeurIPS 2025\] EditInfinity: Image Editing with Binary-Quantized Generative Models](editinfinity_image_editing_with_binary-quantized_generative_models.md)
 - [\[NeurIPS 2025\] ARGenSeg: Image Segmentation with Autoregressive Image Generation Model](argenseg_image_segmentation_with_autoregressive_image_generation_model.md)
-- [\[NeurIPS 2025\] Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models](shallow_diffuse_robust_and_invisible_watermarking_through_low-dimensional_subspa.md)
 - [\[NeurIPS 2025\] Conditional Panoramic Image Generation via Masked Autoregressive Modeling](conditional_panoramic_image_generation_via_masked_autoregres.md)
-- [\[NeurIPS 2025\] Image Super-Resolution with Guarantees via Conformalized Generative Models](image_super-resolution_with_guarantees_via_conformalized_generative_models.md)
+- [\[ICLR 2026\] Guidance Watermarking for Diffusion Models](../../ICLR2026/image_generation/guidance_watermarking_for_diffusion_models.md)
+- [\[NeurIPS 2025\] ThermalGen: Style-Disentangled Flow-Based Generative Models for RGB-to-Thermal Image Translation](thermalgen_style-disentangled_flow-based_generative_models_for_rgb-to-thermal_im.md)
 
 </div>
 

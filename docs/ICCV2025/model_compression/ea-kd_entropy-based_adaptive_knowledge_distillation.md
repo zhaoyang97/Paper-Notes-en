@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EA-KD: Entropy-based Adaptive Knowledge Distillation
 description: >-
-  [ICCV 2025][Model Compression][Knowledge Distillation] This paper proposes EA-KD, a plug-and-play knowledge distillation method based on information entropy. It dynamically reweights distillation losses by combining the…
+  [ICCV 2025][Model Compression][Knowledge Distillation] This paper proposes EA-KD, a plug-and-play knowledge distillation method based on information entropy. It dynamically reweights distillation losses by combining the entropy values of teacher and student outputs, prioritizing learning from high-entropy (high-information) samples. EA-KD consistently improves multiple KD frameworks across image classification, object detection, and LLM distillation tasks with negligible comp…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Plug-and-Play"
   - "Sample Importance"
 date: 2026-05-08
-content_hash: f95894634861732d
+content_hash: e808c4d27221059a
 ---
 
 # EA-KD: Entropy-based Adaptive Knowledge Distillation

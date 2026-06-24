@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] From Embedding to Control: Representations for Stochastic Multi-Object Systems
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper proposes Graph Controllable Embeddings (GCE), which embeds the conditional distributions of stochastic multi-body systems into a Reproducing Kernel Hilbert Space (RKHS) to linearize non-linear dynamics. Combined with Graph Neural Networks and mean-field approximations for adaptive modeling of non-uniform int
+  [ICLR 2026][Robotics][Controllable embedding] This paper proposes Graph Controllable Embeddings (GCE), which embeds the conditional distributions of stochastic multi-body systems into a Reproducing Kernel Hilbert Space (RKHS) to linearize non-linear dynamics. Combined with Graph Neural Networks and mean-field approximations for adaptive modeling of non-uniform interactions, it enables efficient control and few-shot generalization of stochastic…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Controllable embedding"
+  - "Reproducing Kernel Hilbert Space"
+  - "Mean-field approximation"
+  - "Graph Neural Networks"
+  - "Stochastic dynamics"
+  - "Linear control"
 date: 2026-05-08
-content_hash: 3ad0dddda9cc568e
+content_hash: 9c860606e456bf8c
 ---
+
 # From Embedding to Control: Representations for Stochastic Multi-Object Systems
 
 **Conference**: ICLR 2026  

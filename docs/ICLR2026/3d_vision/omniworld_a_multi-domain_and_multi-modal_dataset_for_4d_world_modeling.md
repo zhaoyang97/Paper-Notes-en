@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniWorld: A Multi-Domain and Multi-Modal Dataset for 4D World Modeling
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] The authors construct OmniWorld, a 4D world modeling dataset spanning four domains (simulator, robot, human, and internet) with over 300 million frames, featuring five modalities: depth, camera pose, text, optical flow, and foreground masks. By combining self-collected game engine data with 12 public datasets and an au
+  [ICLR 2026][3D Vision][4D world modeling] The authors construct OmniWorld, a 4D world modeling dataset spanning four domains (simulator, robot, human, and internet) with over 300 million frames, featuring five modalities: depth, camera pose, text, optical flow, and foreground masks. By combining self-collected game engine data with 12 public datasets and an automated annotation pipeline, they demonstrate that fine-tuning existing SOTA models on OmniWorld leads to significant…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "4D world modeling"
+  - "multi-domain dataset"
+  - "multi-modal annotation"
+  - "geometric foundation models"
+  - "camera-controllable video generation"
 date: 2026-05-08
-content_hash: 9421dcc237cb5020
+content_hash: fd187ec014408484
 ---
+
 # OmniWorld: A Multi-Domain and Multi-Modal Dataset for 4D World Modeling
 
 **Conference**: ICLR 2026  
@@ -134,10 +140,17 @@ Camera-controllable video generation benchmarks also expose issues: among I2V mo
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] RoRE: Rotary Ray Embedding for Generalised Multi-Modal Scene Understanding](rore_rotary_ray_embedding_for_generalised_multi-modal_scene_understanding.md)
+- [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](../../AAAI2026/3d_vision/multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
+- [\[ICLR 2026\] Point-MoE: Large-Scale Multi-Dataset Training with Mixture-of-Experts for 3D Semantic Segmentation](point-moe_large-scale_multi-dataset_training_with_mixture-of-experts_for_3d_sema.md)
+- [\[ICLR 2026\] FantasyWorld: Geometry-Consistent World Modeling via Unified Video and 3D Prediction](fantasyworld_geometry-consistent_world_modeling_via_unified_video_and_3d_predict.md)
+- [\[CVPR 2026\] WonderZoom: Multi-Scale 3D World Generation](../../CVPR2026/3d_vision/wonderzoom_multi-scale_3d_world_generation.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] RoRE: Rotary Ray Embedding for Generalised Multi-Modal Scene Understanding](rore_rotary_ray_embedding_for_generalised_multi-modal_scene_understanding.md)

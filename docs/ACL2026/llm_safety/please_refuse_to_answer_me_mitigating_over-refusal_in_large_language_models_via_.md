@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes AdaCD (Adaptive Contrastive Decoding), which extracts a refusal token distribution by comparing the differences in token distributions under extreme safety prompts versus no prompts. It then dynamically decides to enhance or suppress refusal behavior based on an agreement ratio, reducing over-refusa
+  [ACL 2026][LLM Safety][Over-refusal] This paper proposes AdaCD (Adaptive Contrastive Decoding), which extracts a refusal token distribution by comparing the differences in token distributions under extreme safety prompts versus no prompts. It then dynamically decides to enhance or suppress refusal behavior based on an agreement ratio, reducing over-refusal by 10.35% while improving the refusal rate for malicious queries by 0.13%.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Over-refusal"
+  - "Contrastive Decoding"
+  - "Safety Alignment"
+  - "Test-time Intervention"
+  - "Adaptive Decoding"
 date: 2026-05-08
-content_hash: 7c648df14abdb1b2
+content_hash: e19b03909c0b9c30
 ---
+
 # Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding
 
 **Conference**: ACL 2026  
@@ -120,15 +126,14 @@ This is a pure inference-time method requiring no training. Evaluations were con
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](../../ICLR2026/llm_safety/prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
+- [\[ICLR 2026\] Discern Truth from Falsehood: Reducing Over-Refusal via Contrastive Refinement](../../ICLR2026/llm_safety/discern_truth_from_falsehood_reducing_over-refusal_via_contrastive_refinement.md)
 - [\[ACL 2026\] SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering](safeconstellations_mitigating_over-refusals_in_llms_through_task-aware_represent.md)
 - [\[ACL 2026\] DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training](dart_mitigating_harm_drift_in_difference-aware_llms_via_distill-audit-repair_tra.md)
 - [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
-- [\[ACL 2026\] Abstain-R1: Calibrated Abstention and Post-Refusal Clarification via Verifiable RL](abstain-r1_calibrated_abstention_and_post-refusal_clarification_via_verifiable_r.md)
-- [\[ICLR 2026\] Stop Tracking Me! Proactive Defense Against Attribute Inference Attack in LLMs](../../ICLR2026/llm_safety/stop_tracking_me_proactive_defense_against_attribute_inference_attack_in_llms.md)
 
 </div>
 

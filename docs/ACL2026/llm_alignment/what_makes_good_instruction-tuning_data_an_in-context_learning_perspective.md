@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] This paper proposes weighted In-Context Influence (wICI), which evaluates the value of instruction data by measuring whether a candidate sample, used as a one-shot demonstration, can reduce the instruction-following difficulty of related hard probes. Under a 10% data budget, it outperforms or matches selection methods
+  [ACL2026][LLM Alignment][Instruction tuning] This paper proposes weighted In-Context Influence (wICI), which evaluates the value of instruction data by measuring whether a candidate sample, used as a one-shot demonstration, can reduce the instruction-following difficulty of related hard probes. Under a 10% data budget, it outperforms or matches selection methods such as IFD, DEITA, NUGGETS, and SelectIT.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL2026"
+  - "LLM Alignment"
+  - "Instruction tuning"
+  - "data selection"
+  - "in-context learning"
+  - "sample influence"
+  - "diversity constraints"
 date: 2026-05-08
-content_hash: 3d123177eeeb1f02
+content_hash: ed7fcfaaa98d6517
 ---
+
 # What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective
 
 **Conference**: ACL2026  
@@ -144,15 +150,16 @@ Ablations tested two diversity modules: w/o DA (no semantic clustering in probe 
 - **Value**: ⭐⭐⭐⭐☆ Practical for low-budget SFT selection and provides an operational metric for the ICL-tuning relationship.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] What Makes a Reward Model a Good Teacher? An Optimization Perspective](../../NeurIPS2025/llm_alignment/what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)
 - [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
+- [\[ICLR 2026\] Holdout-Loss-Based Data Selection for LLM Finetuning via In-Context Learning](../../ICLR2026/llm_alignment/holdout-loss-based_data_selection_for_llm_finetuning_via_in-context_learning.md)
 - [\[NeurIPS 2025\] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning](../../NeurIPS2025/llm_alignment/t-shirt_token-selective_hierarchical_data_selection_for_instruction_tuning.md)
 - [\[ACL 2026\] SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe](sftmix_elevating_language_model_instruction_tuning_with_mixup_recipe.md)
-- [\[ICLR 2026\] ContextIF: Enhancing Instruction-Following through Context Reward](../../ICLR2026/llm_alignment/contextif_enhancing_instruction-following_through_context_reward.md)
 
 </div>
 

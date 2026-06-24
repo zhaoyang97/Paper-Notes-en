@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Task-Aware Structured Memory for Dynamic Multi-modal In-Context Learning
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] To address the KV cache explosion in multi-modal many-shot in-context learning, TASM proposes a training-free framework: using "task vectors" instead of sample-specific attention for scoring (de-biasing), bipartite graph matching for semantic-aware token merging rather than hard pruning (topology preservation), and hie
+  [ICML 2026][Multimodal VLM][Multi-modal ICL] To address the KV cache explosion in multi-modal many-shot in-context learning, TASM proposes a training-free framework: using "task vectors" instead of sample-specific attention for scoring (de-biasing), bipartite graph matching for semantic-aware token merging rather than hard pruning (topology preservation), and hierarchical dynamic retrieval triggered by JS divergence (allowing compressed details to be recalled when needed). It…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Multi-modal ICL"
+  - "KV cache compression"
+  - "Task vector"
+  - "token merging"
+  - "dynamic retrieval"
 date: 2026-05-08
-content_hash: 01bf2ff500828dd4
+content_hash: 8af181ae97afbff1
 ---
+
 # Task-Aware Structured Memory for Dynamic Multi-modal In-Context Learning
 
 **Conference**: ICML 2026  
@@ -134,10 +140,10 @@ Full context OOMs at 100 images. Hard pruning methods (SparseVLM/FastV) collapse
 ## Related Papers
 
 - [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](../../CVPR2026/multimodal_vlm/tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
-- [\[ICLR 2026\] TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding](../../ICLR2026/multimodal_vlm/tabledart_dynamic_adaptive_multi-modal_routing_for_table_understanding.md)
 - [\[ICML 2026\] CyberJurors: A Multi-Agent Simulation Task for E-Commerce Disputes Verdict](cyberjurors_a_multi-agent_simulation_task_for_e-commerce_disputes_verdict.md)
+- [\[ICLR 2026\] TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding](../../ICLR2026/multimodal_vlm/tabledart_dynamic_adaptive_multi-modal_routing_for_table_understanding.md)
 - [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](../../CVPR2026/multimodal_vlm/cluster-aware_anchor_learning_for_multi-view_clustering.md)
-- [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](../../ICLR2026/multimodal_vlm/multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
+- [\[ICML 2026\] Multimodal Continual Learning with MLLMs from Multi-scenario Perspectives](multimodal_continual_learning_with_mllms_from_multi-scenario_perspectives.md)
 
 </div>
 

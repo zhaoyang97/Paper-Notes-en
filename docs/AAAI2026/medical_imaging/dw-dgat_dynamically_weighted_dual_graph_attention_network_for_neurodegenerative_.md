@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis
 description: >-
-  [AAAI 2026][Medical Imaging][Graph Attention Network] To address three core challenges in early diagnosis of neurodegenerative diseases (PD/AD)—multi-indicator data fusion, heterogeneous information extraction…
+  [AAAI 2026][Medical Imaging][Graph Attention Network] To address three core challenges in early diagnosis of neurodegenerative diseases (PD/AD)—multi-indicator data fusion, heterogeneous information extraction, and class imbalance—this paper proposes DW-DGAT, a dynamically weighted dual graph attention network. By introducing a universal data fusion strategy, micro-macro dual-level graph feature learning, and a dynamic class weight generation mechanism…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Class Imbalance"
   - "Parkinson's/Alzheimer's"
 date: 2026-05-08
-content_hash: ced295cacb01eec4
+content_hash: 27fed791f82c184b
 ---
 
 # DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis
@@ -210,7 +210,7 @@ The largest contributing module is **GGA** (+7.92%), followed by **DF** (+7.11%)
 - [\[AAAI 2026\] NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening](nutriscreener_retrieval-augmented_multi-pose_graph_attention_network_for_malnour.md)
 - [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
 - [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
-- [\[AAAI 2026\] DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening](deepgb-tb_a_risk-balanced_cross-attention_gradient-boosted_convolutional_network.md)
+- [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
 - [\[AAAI 2026\] GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis](giim_graph-based_learning_of_inter-_and_intra-view_dependencies_for_multi-view_m.md)
 
 </div>

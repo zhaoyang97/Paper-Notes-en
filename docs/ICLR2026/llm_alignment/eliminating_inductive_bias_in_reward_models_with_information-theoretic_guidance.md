@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Eliminating Inductive Bias in Reward Models with Information-Theoretic Guidance
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] DIR formalizes reward model debiasing as an information-theoretic optimization problem—maximizing the mutual information between "reward prediction ↔ human preference" while minimizing it between "reward latent representation ↔ bias attributes." Using Barber-Agakov (BA) lower bounds and CLUB upper bounds for variationa
+  [ICLR 2026][LLM Alignment][Reward Models] DIR formalizes reward model debiasing as an information-theoretic optimization problem—maximizing the mutual information between "reward prediction ↔ human preference" while minimizing it between "reward latent representation ↔ bias attributes." Using Barber-Agakov (BA) lower bounds and CLUB upper bounds for variational estimation, it unifiedly handles non-linear inductive biases such as length, sycophancy, and formatting.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Models"
+  - "RLHF"
+  - "Inductive Bias"
+  - "Reward Hacking"
+  - "Mutual Information"
+  - "Information Bottleneck"
+  - "Debiasing"
 date: 2026-05-08
-content_hash: f3316aea3fc37ba8
+content_hash: 4dc57c3f988b353a
 ---
+
 # Eliminating Inductive Bias in Reward Models with Information-Theoretic Guidance
 
 **Conference**: ICLR 2026  
@@ -115,10 +122,10 @@ DPO+DIR outperformed specialized Length-Controlled DPO in both win rate and leng
 ## Related Papers
 
 - [\[ICML 2026\] When Distance Distracts: Representation Distance Bias in BT-Loss for Reward Models](../../ICML2026/llm_alignment/when_distance_distracts_representation_distance_bias_in_bt-loss_for_reward_model.md)
-- [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](robust_reward_modeling_via_causal_rubrics.md)
-- [\[ICLR 2026\] Learning to Summarize User Information for Personalized RLHF（PLUS）](learning_to_summarize_user_information_for_personalized_reinforcement_learning_f.md)
+- [\[ICLR 2026\] Learning to Summarize User Information for Personalized RLHF (PLUS)](learning_to_summarize_user_information_for_personalized_reinforcement_learning_f.md)
 - [\[ACL 2025\] Cheems: A Practical Guidance for Building and Evaluating Chinese Reward Models from Scratch](../../ACL2025/llm_alignment/cheems_chinese_reward_models.md)
-- [\[ICLR 2026\] Reward Models Inherit Value Biases from Pretraining](reward_models_inherit_value_biases_from_pretraining.md)
+- [\[CVPR 2026\] DRM: Diffusion-based Reward Model With Step-wise Guidance](../../CVPR2026/llm_alignment/drm_diffusion-based_reward_model_with_step-wise_guidance.md)
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
 
 </div>
 

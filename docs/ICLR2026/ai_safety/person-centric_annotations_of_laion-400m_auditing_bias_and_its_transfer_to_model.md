@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Person-Centric Annotations of LAION-400M: Auditing Bias and Its Transfer to Models
 description: >-
-  [ICLR 2026][AI Safety][LAION-400M] The authors generated 276 million person bounding boxes with perceived gender/race labels and person-centric captions for the entire LAION-400M dataset. Using this first full-scale web data annotation, they audited systematic biases where "men, Black, and Middle Eastern individuals are over-associated with crime and ne
+  [ICLR 2026][AI Safety][Dataset Bias] The authors generated 276 million person bounding boxes with perceived gender/race labels and person-centric captions for the entire LAION-400M dataset. Using this first full-scale web data annotation, they audited systematic biases where "men, Black, and Middle Eastern individuals are over-associated with crime and negative content." Furthermore, they demonstrated that 60–70% of the gender bias in CLIP and Stable Diffusion can be directly…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - LAION-400M
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Dataset Bias"
+  - "LAION-400M"
+  - "Demographic Annotation"
+  - "Bias Transfer"
+  - "Sparse Autoencoders"
 date: 2026-05-08
-content_hash: 04a6146aa1529474
+content_hash: baad735d5dce9cf8
 ---
+
 # Person-Centric Annotations of LAION-400M: Auditing Bias and Its Transfer to Models
 
 **Conference**: ICLR 2026  
@@ -158,11 +163,11 @@ By performing linear fitting between data bias and model bias, the $R^2$ represe
 
 ## Related Papers
 
-- [\[ICLR 2026\] Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling](robust_fine-tuning_from_non-robust_pretrained_models_mitigating_suboptimal_trans.md)
 - [\[ICLR 2026\] Optimizing Canaries for Privacy Auditing with Metagradient Descent](optimizing_canaries_for_privacy_auditing_with_metagradient_descent.md)
+- [\[ICLR 2026\] Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling](robust_fine-tuning_from_non-robust_pretrained_models_mitigating_suboptimal_trans.md)
 - [\[ICLR 2026\] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning](on_optimal_hyperparameters_for_differentially_private_deep_transfer_learning.md)
-- [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](../../CVPR2026/ai_safety/transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
 - [\[ICLR 2026\] Wring Out the Bias: A Rotation-Based Alternative to Projection Debiasing](wring_out_the_bias_a_rotation-based_alternative_to_projection_debiasing.md)
+- [\[ICLR 2026\] Benchmarking Bias Mitigation Toward Fairness Without Harm from Vision to LVLMs](benchmarking_bias_mitigation_toward_fairness_without_harm_from_vision_to_lvlms.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Logit-Margin Repulsion for Backdoor Defense
 description: >-
-  [CVPR 2026][AI Safety][logit margin] LMR reformulates backdoor defense as a **geometric problem in logit space**: using only a minimal amount of clean samples (as low as 0.1%), it first locates the backdoor class, then artificially enlarges the margin between the "backdoor class logit and the strongest competitor logit" on clean data, and prunes classific
+  [CVPR 2026][AI Safety][Backdoor Attack] LMR reformulates backdoor defense as a **geometric problem in logit space**: using only a minimal amount of clean samples (as low as 0.1%), it first locates the backdoor class, then artificially enlarges the margin between the "backdoor class logit and the strongest competitor logit" on clean data, and prunes classification head channels strongly correlated with the backdoor. This ensures that logit shifts caused by triggers or quantiza…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - logit margin
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Backdoor Attack"
+  - "Backdoor Purification"
+  - "Logit Margin"
+  - "Conditional Backdoor"
+  - "Selective Pruning"
 date: 2026-05-08
-content_hash: 9aa92f69467bfacb
+content_hash: c637138685167e44
 ---
+
 # Logit-Margin Repulsion for Backdoor Defense
 
 **Conference**: CVPR 2026  
@@ -120,9 +125,8 @@ Ablation of Loss terms (CIFAR-10 / ResNet-18, BadNets, low learning rate + 0.6% 
 - **Value**: ⭐⭐⭐⭐⭐ Strong practical significance for supply chain security in model compression and deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- Related papers here if any -->
-</div>
 
 ## Related Papers
 
@@ -130,7 +134,7 @@ Ablation of Loss terms (CIFAR-10 / ResNet-18, BadNets, low learning rate + 0.6% 
 - [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
 - [\[CVPR 2026\] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models](eliminate_distance_differences_induced_by_backdoor_attacks_layer-selective_train.md)
 - [\[CVPR 2026\] Unleashing Stealthy Backdoor Pandemic by Infecting a Single Diffusion Model](unleashing_stealthy_backdoor_pandemic_by_infecting_a_single_diffusion_model.md)
-- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
+- [\[NeurIPS 2025\] MARS: A Malignity-Aware Backdoor Defense in Federated Learning](../../NeurIPS2025/ai_safety/mars_a_malignity-aware_backdoor_defense_in_federated_learning.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Interpretable Reward Model via Sparse Autoencoder
 description: >-
-  [AAAI 2026][Recommender Systems][Reward Model] This paper proposes SARM (Sparse Autoencoder-enhanced Reward Model), which integrates a pretrained sparse autoencoder into a reward model to map hidden-layer activations int…
+  [AAAI 2026 Oral][Recommender Systems][Reward Model] This paper proposes SARM (Sparse Autoencoder-enhanced Reward Model), which integrates a pretrained sparse autoencoder into a reward model to map hidden-layer activations into an interpretable, sparse, monosemantic feature space. This design enables feature-level reward attribution and dynamic preference steering, while achieving the highest overall score among all models on RewardBench 2.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Recommender Systems"
   - "Reward Model"
   - "Sparse Autoencoder"
@@ -12,7 +12,7 @@ tags:
   - "RLHF"
   - "Preference Steering"
 date: 2026-05-08
-content_hash: dce072412f49e6a4
+content_hash: ab1beb27676fb93a
 ---
 
 # Interpretable Reward Model via Sparse Autoencoder
@@ -213,11 +213,11 @@ After steering the weights of safety-related features:
 
 ## Related Papers
 
-- [\[ICLR 2026\] GoalRank: Group-Relative Optimization for a Large Ranking Model](../../ICLR2026/recommender/goalrank_group-relative_optimization_for_a_large_ranking_model.md)
+- [\[ICML 2025\] PARM: Multi-Objective Test-Time Alignment via Preference-Aware Autoregressive Reward Model](../../ICML2025/recommender/parm_multi-objective_test-time_alignment_via_preference-aware_autoregressive_rew.md)
+- [\[ICLR 2026\] Adaptive Regularization for Large-Scale Sparse Feature Embedding Models](../../ICLR2026/recommender/adaptive_regularization_for_large-scale_sparse_feature_embedding_models.md)
 - [\[NeurIPS 2025\] Inference-Time Reward Hacking in Large Language Models](../../NeurIPS2025/recommender/inference-time_reward_hacking_in_large_language_models.md)
-- [\[NeurIPS 2025\] Measuring What Matters: Construct Validity in Large Language Model Benchmarks](../../NeurIPS2025/recommender/measuring_what_matters_construct_validity_in_large_language_model_benchmarks.md)
-- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
-- [\[AAAI 2026\] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction](length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_.md)
+- [\[ICLR 2026\] GoalRank: Group-Relative Optimization for a Large Ranking Model](../../ICLR2026/recommender/goalrank_group-relative_optimization_for_a_large_ranking_model.md)
+- [\[ICML 2025\] Recommendations with Sparse Comparison Data: Provably Fast Convergence for Nonconvex Matrix Factorization](../../ICML2025/recommender/recommendations_with_sparse_comparison_data_provably_fast_convergence_for_noncon.md)
 
 </div>
 

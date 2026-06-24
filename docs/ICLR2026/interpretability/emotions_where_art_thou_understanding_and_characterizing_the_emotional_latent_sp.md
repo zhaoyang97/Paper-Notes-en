@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Emotions Where Art Thou: Understanding and Characterizing the Emotional Latent Space of Large Language Models
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper systematically characterizes the "emotional latent space" within LLM hidden states using SVD subspaces, geometric alignment, neuronal selectivity (ML-AURA), and learned steering modules. It identifies emotion as a directional, cross-layer, and cross-lingual low-dimensional manifold (generalizing across 8 dat
+  [ICLR 2026][Interpretability][Emotion Representation] This paper systematically characterizes the "emotional latent space" within LLM hidden states using SVD subspaces, geometric alignment, neuronal selectivity (ML-AURA), and learned steering modules. It identifies emotion as a directional, cross-layer, and cross-lingual low-dimensional manifold (generalizing across 8 datasets and 5 languages) that can be precisely manipulated while preserving semantics.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Emotion Representation"
+  - "Latent Space Geometry"
+  - "SVD Subspace"
+  - "Cross-lingual Alignment"
+  - "Activation Steering"
 date: 2026-05-08
-content_hash: e58cf15e91196ca9
+content_hash: f4d3976bef59c807
 ---
+
 # Emotions Where Art Thou: Understanding and Characterizing the Emotional Latent Space of Large Language Models
 
 **Conference**: ICLR 2026  

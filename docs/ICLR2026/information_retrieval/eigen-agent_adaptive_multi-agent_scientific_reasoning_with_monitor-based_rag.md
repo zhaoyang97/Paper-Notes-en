@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Eigen-Agent: Adaptive Multi-Agent Scientific Reasoning with Monitor-Based RAG
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Monitor-based RAG] Eigen-Agent utilizes a triad of "token-level monitored implicit retrieval + anchor-reference hierarchical refinement + quality-aware iteration" to eliminate the "tool tax" where explicit RAG interrupts reasoning and prevents multi-agent systems from averaging strong solutions into weak ones. It achieves a state-of-the-
+  [ICLR 2026][Information Retrieval & RAG][Monitor-based RAG] Eigen-Agent utilizes a triad of "token-level monitored implicit retrieval + anchor-reference hierarchical refinement + quality-aware iteration" to eliminate the "tool tax" where explicit RAG interrupts reasoning and prevents multi-agent systems from averaging strong solutions into weak ones. It achieves a state-of-the-art accuracy of 48.3% on HLE Bio/Chem Gold while reducing token usage by 53.5% and agent steps by 43…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Monitor-based RAG
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Monitor-based RAG"
+  - "implicit retrieval"
+  - "multi-agent"
+  - "scientific reasoning"
+  - "hierarchical refinement"
+  - "quality-aware iteration"
 date: 2026-05-08
-content_hash: 16b2190d807ef81f
+content_hash: 0a8d135a55514764
 ---
+
 # Eigen-Agent: Adaptive Multi-Agent Scientific Reasoning with Monitor-Based RAG
 
 **Conference**: ICLR 2026  

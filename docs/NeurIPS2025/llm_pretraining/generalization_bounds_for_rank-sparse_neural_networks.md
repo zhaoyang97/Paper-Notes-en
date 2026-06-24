@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalization Bounds for Rank-sparse Neural Networks
 description: >-
-  [NeurIPS 2025][LLM Pretraining][generalization bounds] This paper establishes generalization bounds that exploit the approximate low-rank structure of neural network weight matrices. When the Schatten $p$ quasi-norm is s…
+  [NeurIPS 2025][LLM Pretraining][generalization bounds] This paper establishes generalization bounds that exploit the approximate low-rank structure of neural network weight matrices. When the Schatten $p$ quasi-norm is small, the sample complexity reduces to $\widetilde{O}(WrL^2)$, where $W$, $L$, and $r$ denote the width, depth, and rank of the weight matrices, respectively.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "bottleneck rank"
   - "sample complexity"
 date: 2026-05-08
-content_hash: 97fba39ebabfc333
+content_hash: e3f90c7b3a7f00b4
 ---
 
 # Generalization Bounds for Rank-sparse Neural Networks
@@ -157,8 +157,8 @@ This is a purely theoretical work; its core contribution lies in the mathematica
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking](flatness_is_necessary_neural_collapse_is_not_rethinking_generalization_via_grokk.md)
-- [\[NeurIPS 2025\] Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks](alternating_gradient_flows_a_theory_of_feature_learning_in_two-layer_neural_netw.md)
 - [\[ICLR 2026\] Block-Sample MAC-Bayes Generalization Bounds](../../ICLR2026/llm_pretraining/block-sample_mac-bayes_generalization_bounds.md)
+- [\[NeurIPS 2025\] Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks](alternating_gradient_flows_a_theory_of_feature_learning_in_two-layer_neural_netw.md)
 - [\[NeurIPS 2025\] Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data](neural_collapse_under_gradient_flow_on_shallow_relu_networks_for_orthogonally_se.md)
 - [\[ICLR 2026\] Intrinsic Training Dynamics of Deep Neural Networks](../../ICLR2026/llm_pretraining/intrinsic_training_dynamics_of_deep_neural_networks.md)
 

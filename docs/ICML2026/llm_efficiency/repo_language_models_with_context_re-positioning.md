@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RePo: Language Models with Context Re-Positioning
 description: >-
-  [ICML 2026][LLM Efficiency][RoPE] Existing LLMs force tokens into linear integer indices $0 \dots L-1$, making the attention layers bear the heavy burden of "organizing context structure." RePo introduces a lightweight differentiable module $f_\phi$ that assigns **continuous, non-linear** position values based on token hidden states. This offloads the
+  [ICML 2026][LLM Efficiency][Position encoding] Existing LLMs force tokens into linear integer indices $0 \dots L-1$, making the attention layers bear the heavy burden of "organizing context structure." RePo introduces a lightweight differentiable module $f_\phi$ that assigns **continuous, non-linear** position values based on token hidden states. This offloads the "extra cognitive load," leading to consistent gains in noisy contexts, structured data, and long-context tasks…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - RoPE
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Position encoding"
+  - "Context Re-positioning"
+  - "RoPE"
+  - "Long context"
+  - "Attention allocation"
 date: 2026-05-08
-content_hash: 00d89390da90d953
+content_hash: dc61c3e0a78f2317
 ---
+
 # RePo: Language Models with Context Re-Positioning
 
 **Conference**: ICML 2026  
@@ -132,11 +137,11 @@ On LongBench (1B, YaRN extrapolated to 16K), RoPE averaged 20.93, while NoPE plu
 
 ## Related Papers
 
-- [\[CVPR 2025\] LOCORE: Image Re-ranking with Long-Context Sequence Modeling](../../CVPR2025/llm_efficiency/locore_image_re-ranking_with_long-context_sequence_modeling.md)
+- [\[ICLR 2026\] The Pensieve Paradigm: Stateful Language Models Mastering Their Own Context](../../ICLR2026/llm_efficiency/the_pensieve_paradigm_stateful_language_models_mastering_their_own_context.md)
+- [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](../../ICLR2026/llm_efficiency/ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
 - [\[ICML 2026\] IR3DE: A Linear Router for Large Language Models](ir3de_a_linear_router_for_large_language_models.md)
-- [\[AAAI 2026\] Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models](../../AAAI2026/llm_efficiency/harnessing_the_unseen_the_hidden_influence_of_intrinsic_knowledge_in_long-contex.md)
-- [\[ACL 2025\] Literary Evidence Retrieval via Long-Context Language Models](../../ACL2025/llm_efficiency/literary_evidence_retrieval_via_long-context_language_models.md)
-- [\[ACL 2025\] How to Train Long-Context Language Models (Effectively)](../../ACL2025/llm_efficiency/train_long_context_effectively.md)
+- [\[CVPR 2025\] LOCORE: Image Re-ranking with Long-Context Sequence Modeling](../../CVPR2025/llm_efficiency/locore_image_re-ranking_with_long-context_sequence_modeling.md)
+- [\[ICML 2026\] ProactiveLLM: Learning Active Interaction for Streaming Large Language Models](proactivellm_learning_active_interaction_for_streaming_large_language_models.md)
 
 </div>
 

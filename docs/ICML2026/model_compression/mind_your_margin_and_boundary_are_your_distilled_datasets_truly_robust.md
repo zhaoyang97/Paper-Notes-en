@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mind Your Margin and Boundary: Are Your Distilled Datasets Truly Robust?
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper proposes the C2R framework, which reframes the robustness issue in dataset distillation as a "minimum robust margin" problem. By utilizing a triad of "Attack-Aware Curriculum (AAC) + Contrastive Robustness Loss (CRL) + Line-Search PGD (LS-PGD)," models trained on the resulting synthetic sets achieve approxim
+  [ICML 2026][Model Compression][Dataset Distillation] This paper proposes the C2R framework, which reframes the robustness issue in dataset distillation as a "minimum robust margin" problem. By utilizing a triad of "Attack-Aware Curriculum (AAC) + Contrastive Robustness Loss (CRL) + Line-Search PGD (LS-PGD)," models trained on the resulting synthetic sets achieve approximately 2.8% higher average robust accuracy across six types of attacks compared to previous robust distillat…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Robust Distillation"
+  - "Adversarial Curriculum"
+  - "Robust Margin"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 1d32f740ce286f94
+content_hash: 61320d607bfcbffb
 ---
+
 # Mind Your Margin and Boundary: Are Your Distilled Datasets Truly Robust?
 
 **Conference**: ICML 2026  
@@ -146,7 +152,7 @@ Averaged across six attacks: **C2R achieves ~2.8% higher robust accuracy** than 
 - [\[ICML 2026\] DIVER: Diving Deeper into Distilled Data via Expressive Semantic Recovery](diverdiving_deeper_into_distilled_data_via_expressive_semantic_recovery.md)
 - [\[ICML 2026\] IDLM: Inverse-distilled Diffusion Language Models](idlm_inverse-distilled_diffusion_language_models.md)
 - [\[ICML 2026\] ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin](arcvq-vae_a_spherical_vector_quantization_framework_with_arccosine_additive_marg.md)
-- [\[ICML 2026\] Critique-Guided Distillation for Robust Reasoning via Refinement](critique-guided_distillation_for_robust_reasoning_via_refinement.md)
+- [\[AAAI 2026\] Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated](../../AAAI2026/model_compression/your_ai-generated_image_detector_can_secretly_achieve_sota_accuracy_if_calibrate.md)
 
 </div>
 

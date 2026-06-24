@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Make it SING: Analyzing Semantic Invariants in Classifiers
 description: >-
-  [CVPR 2026][Interpretability][SVD] SING projects invariant directions in the null space of a classifier's linear head—which "change the input without changing logits"—into the CLIP vision-language space via a linear translator. By using two angular metrics (AS/IS) to quantify the semantic content of these invariants, the authors diagnose "semantic infor
+  [CVPR 2026][Interpretability][Null Space Geometry] SING projects invariant directions in the null space of a classifier's linear head—which "change the input without changing logits"—into the CLIP vision-language space via a linear translator. By using two angular metrics (AS/IS) to quantify the semantic content of these invariants, the authors diagnose "semantic information leakage into the invariant subspace" across model, class, and image levels…
 tags:
-  - CVPR 2026
-  - Interpretability
-  - SVD
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Null Space Geometry"
+  - "Invariance"
+  - "SVD"
+  - "CLIP Translator"
+  - "Semantic Leakage"
 date: 2026-05-08
-content_hash: 7f4a5b5a9a900da2
+content_hash: e33faddcbda89b8a
 ---
+
 # Make it SING: Analyzing Semantic Invariants in Classifiers
 
 **Conference**: CVPR 2026  
@@ -119,16 +124,16 @@ Using 5 ImageNet-1k pretrained models (DinoViT, ResNet50, ResNext101, EfficientN
 - **Value**: ⭐⭐⭐⭐ (Provides a reusable tool for invariance diagnosis and robustness research)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
 - [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
 - [\[ACL 2026\] Flattery in Motion: Benchmarking and Analyzing Sycophancy in Video-LLMs](../../ACL2026/interpretability/flattery_in_motion_benchmarking_and_analyzing_sycophancy_in_video-llms.md)
 - [\[ICLR 2026\] Conjuring Semantic Similarity](../../ICLR2026/interpretability/conjuring_semantic_similarity.md)
 - [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
-- [\[ACL 2026\] Make Mechanistic Interpretability Auditable: A Call to Develop Guidelines via Continuous Collaborative Reviewing](../../ACL2026/interpretability/make_mechanistic_interpretability_auditable_a_call_to_develop_guidelines_via_con.md)
 
 </div>
 

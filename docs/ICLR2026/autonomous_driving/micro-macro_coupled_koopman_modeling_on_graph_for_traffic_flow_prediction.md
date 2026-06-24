@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Micro-Macro Coupled Koopman Modeling on Graph for Traffic Flow Prediction
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] The authors unify "microscopic vehicle trajectories" and "macroscopic traffic density" by lifting them into a linear Koopman observation space. By discretizing the Lighthill-Whitham-Richards (LWR) equations on a Lagrangian dynamic graph with vehicles as nodes, the model achieves trajectory prediction performance compar
+  [ICLR 2026][Autonomous Driving][Koopman Operator] The authors unify "microscopic vehicle trajectories" and "macroscopic traffic density" by lifting them into a linear Koopman observation space. By discretizing the Lighthill-Whitham-Richards (LWR) equations on a Lagrangian dynamic graph with vehicles as nodes, the model achieves trajectory prediction performance comparable to or better than history-dependent SOTA methods using only the current snapshot (no history required).
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Koopman Operator"
+  - "Vehicle Trajectory Prediction"
+  - "Traffic Flow PDE"
+  - "Graph Neural Networks"
+  - "Micro-Macro Coupling"
+  - "History-free Prediction"
 date: 2026-05-08
-content_hash: e689bafd9523279f
+content_hash: da61bb48274b2114
 ---
+
 # Micro-Macro Coupled Koopman Modeling on Graph for Traffic Flow Prediction
 
 **Conference**: ICLR 2026  
@@ -128,9 +135,9 @@ Diffusion Term Ablation (NGSIM, Macro Density Error): Full LC yields 3.2%→9.5%
 
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](../../AAAI2026/autonomous_driving/meta_dynamic_graph_for_traffic_flow_prediction.md)
 - [\[ICLR 2026\] Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling](plan-r1_safe_and_feasible_trajectory_planning_as_language_modeling.md)
-- [\[AAAI 2026\] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction](../../AAAI2026/autonomous_driving/rast_a_retrieval_augmented_spatio-temporal_framework_for_traffic_prediction.md)
 - [\[ICLR 2026\] FlowAD: Ego-Scene Interactive Modeling for Autonomous Driving](flowad_ego-scene_interactive_modeling_for_autonomous_driving.md)
 - [\[ICLR 2026\] NeMo-map: Neural Implicit Flow Fields for Spatio-Temporal Motion Mapping](nemo-map_neural_implicit_flow_fields_for_spatio-temporal_motion_mapping.md)
+- [\[ICLR 2026\] AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection](asyncbev_cross-modal_flow_alignment_in_asynchronous_3d_object_detection.md)
 
 </div>
 

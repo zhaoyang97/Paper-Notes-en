@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper proposes **PLD (Probe-Learn-Distill)**, a three-stage post-training framework: it freezes the VLA backbone, uses lightweight residual RL to "take over" and train experts on states where the base policy fails, collects distribution-aligned recovery data via hybrid rollouts ("base policy first, then residual e
+  [ICLR 2026][Robotics][Vision-Language-Action Models] This paper proposes **PLD (Probe-Learn-Distill)**, a three-stage post-training framework: it freezes the VLA backbone, uses lightweight residual RL to "take over" and train experts on states where the base policy fails, collects distribution-aligned recovery data via hybrid rollouts ("base policy first, then residual expert"), and finally distills this knowledge back into the base model using standard SFT. Without any addit…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language-Action Models"
+  - "Residual RL"
+  - "Self-improvement"
+  - "Data Generation"
+  - "Supervised Fine-Tuning"
 date: 2026-05-08
-content_hash: 7d9863cfbfeba3e7
+content_hash: 3b020d793ae67b3a
 ---
+
 # Self-Improving Vision-Language-Action Models with Data Generation via Residual RL
 
 **Conference**: ICLR 2026  
@@ -122,15 +128,16 @@ PLD provides consistent absolute gains across both architectures and all suites 
 - Value: ⭐⭐⭐⭐⭐ Provides a scalable, architecture-agnostic VLA self-improvement recipe. 1-hour autonomous operation is highly convincing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](../../NeurIPS2025/robotics/dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
+- [\[NeurIPS 2025\] Self-Improving Embodied Foundation Models](../../NeurIPS2025/robotics/self-improving_embodied_foundation_models.md)
 - [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
+- [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](../../NeurIPS2025/robotics/dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
 - [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
 - [\[ICLR 2026\] Hybrid Training for Vision-Language-Action Models](hybrid_training_for_vision-language-action_models.md)
-- [\[ICLR 2026\] RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation](rfs_reinforcement_learning_with_residual_flow_steering_for_dexterous_manipulatio.md)
 
 </div>
 

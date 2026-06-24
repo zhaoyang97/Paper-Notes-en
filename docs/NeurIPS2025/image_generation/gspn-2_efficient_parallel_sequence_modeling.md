@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GSPN-2: Efficient Parallel Sequence Modeling
 description: >-
-  [NeurIPS 2025][Image Generation][efficient attention] GSPN-2 achieves up to 40× speedup over GSPN-1's 2D spatial propagation through algorithm-system co-design — specifically, single-kernel fusion…
+  [NeurIPS 2025][Image Generation][efficient attention] GSPN-2 achieves up to 40× speedup over GSPN-1's 2D spatial propagation through algorithm-system co-design — specifically, single-kernel fusion, compact channel propagation, and shared memory optimization — while matching Transformer-level accuracy on ImageNet classification and text-to-image generation at significantly lower computational cost.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -11,7 +11,7 @@ tags:
   - "CUDA optimization"
   - "vision transformer"
 date: 2026-05-08
-content_hash: 0a6865c79640dce0
+content_hash: 8fee7fa7144bc118
 ---
 
 # GSPN-2: Efficient Parallel Sequence Modeling
@@ -238,11 +238,11 @@ GSPN-2's propagation pattern is neither matrix multiplication nor prefix scan, n
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DiCo: Revitalizing ConvNets for Scalable and Efficient Diffusion Modeling](dico_revitalizing_convnets_for_scalable_and_efficient_diffus.md)
+- [\[CVPR 2025\] Parallel Sequence Modeling via Generalized Spatial Propagation Network](../../CVPR2025/image_generation/parallel_sequence_modeling_via_generalized_spatial_propagation_network.md)
 - [\[NeurIPS 2025\] Accelerating Parallel Diffusion Model Serving with Residual Compression](accelerating_parallel_diffusion_model_serving_with_residual_compression.md)
-- [\[ICLR 2026\] Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation](../../ICLR2026/image_generation/locality-aware_parallel_decoding_for_efficient_autoregressive_image_generation.md)
+- [\[NeurIPS 2025\] DiCo: Revitalizing ConvNets for Scalable and Efficient Diffusion Modeling](dico_revitalizing_convnets_for_scalable_and_efficient_diffus.md)
 - [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
-- [\[ICCV 2025\] MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence](../../ICCV2025/image_generation/mamtiff-cad_multi-scale_latent_diffusion_with_mamba_for_complex_parametric_seque.md)
+- [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](efficient_rectified_flow_for_image_fusion.md)
 
 </div>
 

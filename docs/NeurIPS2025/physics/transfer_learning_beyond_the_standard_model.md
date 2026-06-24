@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Transfer Learning Beyond the Standard Model
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Transfer Learning] This work investigates whether neural networks pre-trained on the standard cosmological model (ΛCDM) can transfer to beyond-standard-model scenarios (mass…
+  [NeurIPS 2025][Physics & Scientific Computing][Transfer Learning] This work investigates whether neural networks pre-trained on the standard cosmological model (ΛCDM) can transfer to beyond-standard-model scenarios (massive neutrinos, modified gravity, primordial non-Gaussianity). The study finds that a dummy node architecture can reduce simulation requirements by an order of magnitude, but negative transfer emerges when parameters exhibit strong physical degeneracies (e.g.…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Negative Transfer"
   - "Foundation Models"
 date: 2026-05-08
-content_hash: ecc298a9384011c7
+content_hash: c5a3b2176d1055bf
 ---
 
 # Transfer Learning Beyond the Standard Model
@@ -128,8 +128,8 @@ Pre-training on Quijote ΛCDM simulations (32,768 samples) → frozen/fine-tuned
 - [\[NeurIPS 2025\] One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs](oneshot_transfer_learning_nonlinear_pdes_perturbative_pinns.md)
 - [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
 - [\[NeurIPS 2025\] Encoding and Understanding Astrophysical Information in Large Language Model-Generated Summaries](encoding_and_understanding_astrophysical_information_in_large_language_model-gen.md)
-- [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
-- [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
+- [\[ICML 2025\] Maximal Update Parametrization and Zero-Shot Hyperparameter Transfer for Fourier Neural Operators](../../ICML2025/physics/maximal_update_parametrization_and_zero-shot_hyperparameter_transfer_for_fourier.md)
+- [\[ICML 2025\] OmniArch: Building Foundation Model For Scientific Computing](../../ICML2025/physics/omniarch_building_foundation_model_for_scientific_computing.md)
 
 </div>
 

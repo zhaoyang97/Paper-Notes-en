@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] InterAgent: Physics-based Multi-agent Command Execution via Diffusion on Interaction Graphs
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] InterAgent is the first text-driven, physics-based **dual-humanoid agent** control framework. It employs a multi-stream autoregressive diffusion Transformer (Inter-DiT) to decouple proprioception, exteroception, and action, and utilizes an "Interaction Graph + Sparse Edge Attention" to characterize fine-grained joint-t
+  [CVPR 2026][Human Understanding][Multi-agent interaction] InterAgent is the first text-driven, physics-based **dual-humanoid agent** control framework. It employs a multi-stream autoregressive diffusion Transformer (Inter-DiT) to decouple proprioception, exteroception, and action, and utilizes an "Interaction Graph + Sparse Edge Attention" to characterize fine-grained joint-to-joint relationships, generating physically plausible and semantically faithful dual-humanoid interac…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-agent interaction"
+  - "physics-based humanoid control"
+  - "text-driven motion generation"
+  - "interaction graph"
+  - "sparse attention"
 date: 2026-05-08
-content_hash: 0ab759c2d8cef090
+content_hash: e5bd69450b1b85ad
 ---
+
 # InterAgent: Physics-based Multi-agent Command Execution via Diffusion on Interaction Graphs
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Evaluated on InterHuman (dual-human MoCap with text) using standard protocols. P
 
 ## Related Papers
 
-- [\[CVPR 2026\] AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL](assistmimic_physics_grounded_humanoid_assistance.md)
+- [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
+- [\[CVPR 2026\] PAMotion: Physics-Aware Motion Generation for Full-Body Interaction with Multiple Objects](pamotion_physics-aware_motion_generation_for_full-body_interaction_with_multiple.md)
+- [\[CVPR 2026\] Unifying Precise Keyframes and Semantic Control via Multi-level Diffusion](unifying_precise_keyframes_and_semantic_control_via_multi-level_diffusion.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
 - [\[CVPR 2026\] DyaDiT: A Multi-Modal Diffusion Transformer for Socially Favorable Dyadic Gesture Generation](dyadit_a_multi-modal_diffusion_transformer_for_socially_favorable_dyadic_gesture.md)
-- [\[CVPR 2026\] HSI-GPT2: A Dual-Granularity Large Motion Reasoning Model with Diffusion Refinement for Human-Scene Interaction](hsi-gpt2_a_dual-granularity_large_motion_reasoning_model_with_diffusion_refineme.md)
-- [\[CVPR 2026\] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body](vibes_a_conversational_agent_with_behaviorally_intelligent_3d_virtual_body.md)
-- [\[CVPR 2026\] FusionAgent: A Multimodal Agent with Dynamic Model Selection for Human Recognition](fusionagent_a_multimodal_agent_with_dynamic_model_selection_for_human_recognitio.md)
 
 </div>
 

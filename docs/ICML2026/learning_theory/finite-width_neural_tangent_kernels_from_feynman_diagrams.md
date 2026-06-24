@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Finite-Width Neural Tangent Kernels from Feynman Diagrams
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper adapts Feynman diagrams from quantum field theory to neural network analysis, providing a graphical framework of rules for the "finite-width statistical corrections of NTK." This transforms extremely tedious layer-wise recursive derivations into a "draw and translate" process. It proves the critical stabilit
+  [ICML2026][Learning Theory][Finite-width] This paper adapts Feynman diagrams from quantum field theory to neural network analysis, providing a graphical framework of rules for the "finite-width statistical corrections of NTK." This transforms extremely tedious layer-wise recursive derivations into a "draw and translate" process. It proves the critical stability of NTK and demonstrates that scale-invariant activations like ReLU have no finite-width corrections on the diagonal.…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "Neural Tangent Kernel"
+  - "Finite-width corrections"
+  - "Finite-width"
+  - "Feynman diagrams"
+  - "1/n expansion"
+  - "Critical initialization"
 date: 2026-05-08
-content_hash: 0e0a9e52b98b932d
+content_hash: 3d599f079bc760d8
 ---
+
 # Finite-Width Neural Tangent Kernels from Feynman Diagrams
 
 **Conference**: ICML2026  
@@ -112,10 +119,20 @@ Numerical solutions of the recursions were compared against statistics from samp
 - **Value**: ⭐⭐⭐⭐⭐ Provides a reusable, extensible, and open-source computational tool for finite-width theory.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](../../ICLR2026/learning_theory/training-free_determination_of_network_width_via_neural_tangent_kernel.md)
+- [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](../../ICLR2026/learning_theory/understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
+- [\[ICLR 2026\] UniCon: Unified Framework for Efficient Contrastive Alignment via Kernels](../../ICLR2026/learning_theory/unicon_unified_framework_for_efficient_contrastive_alignment_via_kernels.md)
+- [\[ICLR 2026\] Persistence Spheres: Bi-Continuous Representations of Persistence Diagrams](../../ICLR2026/learning_theory/persistence_spheres_bi-continuous_representations_of_persistence_diagrams.md)
+- [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](../../ICLR2026/learning_theory/transfer_learning_in_infinite_width_feature_learning_networks.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](../../ICLR2026/learning_theory/function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)

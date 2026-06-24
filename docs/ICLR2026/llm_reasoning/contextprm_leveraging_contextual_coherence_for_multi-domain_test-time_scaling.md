@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ContextPRM: Leveraging Contextual Coherence for multi-domain Test-Time Scaling
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] ContextPRM shifts the learning objective of Process Reward Models (PRMs) from "verifying whether a step is factually correct" to "evaluating whether the logical transition between adjacent reasoning steps is coherent." By proposing a coherence annotation standard and a context-aware training method, it enables a PRM tr
+  [ICLR2026][Reasoning][Process Reward Model] ContextPRM shifts the learning objective of Process Reward Models (PRMs) from "verifying whether a step is factually correct" to "evaluating whether the logical transition between adjacent reasoning steps is coherent." By proposing a coherence annotation standard and a context-aware training method, it enables a PRM trained only on mathematical data to generalize to non-mathematical domains such as law, history…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Process Reward Model"
+  - "Test-Time Scaling"
+  - "Contextual Coherence"
+  - "Cross-domain Generalization"
+  - "CoT Annotation"
 date: 2026-05-08
-content_hash: 0dbabbaf9fcd36a3
+content_hash: c9bd09bf429c76cf
 ---
+
 # ContextPRM: Leveraging Contextual Coherence for multi-domain Test-Time Scaling
 
 **Conference**: ICLR2026  
@@ -134,11 +140,11 @@ Contextual training and Contextual labeling components were evaluated separately
 
 ## Related Papers
 
-- [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 - [\[ICLR 2026\] TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture](tumix_multi-agent_test-time_scaling_with_tool-use_mixture.md)
-- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
+- [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
 - [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
-- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
+- [\[ICLR 2026\] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning](tattoo_tool-grounded_thinking_prm_for_test-time_scaling_in_tabular_reasoning.md)
 
 </div>
 

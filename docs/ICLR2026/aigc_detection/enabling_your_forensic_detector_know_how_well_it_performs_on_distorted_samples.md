@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enabling Your Forensic Detector Know How Well It Performs on Distorted Samples
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] DACOM (Distortion-Aware Confidence Model) is proposed to enable AI-generated image detectors to output sample-level reliability scores. This allows detectors to actively refuse decisions or route inputs to more reliable detectors when distortions are severe, addressing the "silent failure" problem in wild deployments.
+  [ICLR 2026][AIGC Detection][Image Forensics] DACOM (Distortion-Aware Confidence Model) is proposed to enable AI-generated image detectors to output sample-level reliability scores. This allows detectors to actively refuse decisions or route inputs to more reliable detectors when distortions are severe, addressing the "silent failure" problem in wild deployments.
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Image Forensics"
+  - "Confidence Estimation"
+  - "Image Distortion"
+  - "AIGI Detection"
+  - "Multi-detector Routing"
 date: 2026-05-08
-content_hash: 2507cd6d9f746f0d
+content_hash: 22f66a0dc1a77fb1
 ---
+
 # Enabling Your Forensic Detector Know How Well It Performs on Distorted Samples
 
 **Conference**: ICLR 2026  
@@ -135,11 +141,11 @@ Confidence scores support two downstream applications: selective abstention (rej
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tell me Habibi, is it Real or Fake?](tell_me_habibi_is_it_real_or_fake.md)
 - [\[ICLR 2026\] Is Your Paper Being Reviewed by an LLM? Benchmarking AI Text Detection in Peer Review](is_your_paper_being_reviewed_by_an_llm_benchmarking_ai_text_detection_in_peer_re.md)
 - [\[ICML 2026\] ForensicConcept: Transferable Forensic Concepts for AIGI Detection](../../ICML2026/aigc_detection/forensicconcept_transferable_forensic_concepts_for_aigi_detection.md)
 - [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](../../CVPR2026/aigc_detection/enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
 - [\[CVPR 2026\] Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency](../../CVPR2026/aigc_detection/learning_where_to_look_and_how_to_judge_resolution-agnostic_image_quality_assess.md)
-- [\[ACL 2026\] AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](../../ACL2026/aigc_detection/aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)
 
 </div>
 

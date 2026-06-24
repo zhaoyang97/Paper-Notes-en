@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OrthoSolver: A Neural Proper Orthogonal Decomposition Solver For PDEs
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper reinterprets the classical Proper Orthogonal Decomposition (POD) from an information-theoretic perspective, proving that the "energy maximization" criterion is equivalent to "mutual information (MI) maximization" under linear Gaussian assumptions. Based on this, it proposes OrthoSolver—a neural operator fram
+  [ICLR 2026][Physics & Scientific Computing][Proper Orthogonal Decomposition (POD)] This paper reinterprets the classical Proper Orthogonal Decomposition (POD) from an information-theoretic perspective, proving that the "energy maximization" criterion is equivalent to "mutual information (MI) maximization" under linear Gaussian assumptions. Based on this, it proposes OrthoSolver—a neural operator framework that generalizes POD to nonlinear domains via MI maximization combined…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Proper Orthogonal Decomposition (POD)"
+  - "Mutual Information Maximization"
+  - "Neural Operators"
+  - "Mode Collapse"
+  - "Reduced Order Models (ROM)"
 date: 2026-05-08
-content_hash: cc4673174fb7d72d
+content_hash: 8dcbd6e68d6338bd
 ---
+
 # OrthoSolver: A Neural Proper Orthogonal Decomposition Solver For PDEs
 
 **Conference**: ICLR 2026  
@@ -127,13 +133,17 @@ Sensitivity to $K$: Performance improves from $K=1$ to $K=4$ but slightly declin
 
 <div class="related-papers" markdown="1">
 
-- **Transolver**: [https://arxiv.org/abs/2310.12196](https://arxiv.org/abs/2310.12196) (A transformer-based solver using slice-based decomposition)
-- **F-FNO**: [https://arxiv.org/abs/2211.12761](https://arxiv.org/abs/2211.12761) (The backbone operator used in this work)
+## Related Papers
+
+- [\[ICLR 2026\] $\partial^\infty$-Grid: A Neural Differential Equation Solver with Differentiable Feature Grids](boldsymbolpartialinfty-grid_a_neural_differential_equation_solver_with_different.md)
+- [\[ICML 2026\] Topology-Preserving Neural Operator Learning via Hodge Decomposition](../../ICML2026/physics/topology-preserving_neural_operator_learning_via_hodge_decomposition.md)
+- [\[ICLR 2026\] (U)NFV: (Un)supervised Neural Finite Volume Methods for Solving Hyperbolic PDEs](unfv_unsupervised_neural_finite_volume_methods_for_solving_hyperbolic_pdes.md)
+- [\[ICLR 2026\] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](operator_learning_with_domain_decomposition_for_geometry_generalization_in_pde_s.md)
+- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](operator_learning_with_domain_decomposition_for_geometry_generalization_in_pde_s.md)

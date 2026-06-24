@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PSG-Nav: Probabilistic Scene Graph Navigation via Multiverse Decision Making
 description: >-
-  [ICML 2026][Robotics & Embodied AI][ObjectNav] This paper proposes PSG-Nav, which replaces traditional deterministic scene graph navigation with a "three-piece suite": a 3D probabilistic scene graph that retains full category distributions, a multiverse decision-making process that samples multiple consistent worlds from a joint distribution, and an evidential cali
+  [ICML 2026][Robotics][ObjectNav] This paper proposes PSG-Nav, which replaces traditional deterministic scene graph navigation with a "three-piece suite": a 3D probabilistic scene graph that retains full category distributions, a multiverse decision-making process that samples multiple consistent worlds from a joint distribution, and an evidential calibration library based on success/failure memories. It achieves new SOTA results on three major ObjectNav benchmarks—HM3D, MP3D…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - ObjectNav
+  - "ICML 2026"
+  - "Robotics"
+  - "ObjectNav"
+  - "Probabilistic Scene Graph"
+  - "Multiverse Sampling"
+  - "Evidential Calibration"
+  - "Lifelong Adaptation"
 date: 2026-05-08
-content_hash: dc8cca96401f7024
+content_hash: 88374ea10b2376af
 ---
+
 # PSG-Nav: Probabilistic Scene Graph Navigation via Multiverse Decision Making
 
 **Conference**: ICML 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mimic Human Cognition, Master Multi-Image Reasoning: A Meta-Action Framework for Enhanced Visual Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the significant performance drop of Multimodal Large Language Models (MLLMs) in multi-image reasoning, this paper mimics human cognition by decomposing multi-image reasoning into five structured "meta-actions": Global / Focus / Hint / Think / Answer (the CINEMA framework). It utilizes "Retrieval-Based Tree S
+  [CVPR 2026][VLM Reasoning][Multi-image Reasoning] To address the significant performance drop of Multimodal Large Language Models (MLLMs) in multi-image reasoning, this paper mimics human cognition by decomposing multi-image reasoning into five structured "meta-actions": Global / Focus / Hint / Think / Answer (the CINEMA framework). It utilizes "Retrieval-Based Tree Sampling" to generate two high-quality trajectories for cold-start and implements a two-stage reinforcement lea…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multi-image Reasoning"
+  - "Meta-Action"
+  - "Cognitive Framework"
+  - "Tree-sampling Cold Start"
+  - "Diversity-Preserving Reinforcement Learning"
 date: 2026-05-08
-content_hash: 4612b8907efecf61
+content_hash: 9b0481ae8b56a101
 ---
+
 # Mimic Human Cognition, Master Multi-Image Reasoning: A Meta-Action Framework for Enhanced Visual Understanding
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ Consider a multi-image ordering task (identifying the correct sequence A/B/C/D).
 
 ## Related Papers
 
-- [\[CVPR 2026\] Will Multimodal Models Be Dazzled by Multi-Image Visual Puzzles?](will_multimodal_models_be_dazzled_by_multi-image_visual_puzzles.md)
-- [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
-- [\[CVPR 2026\] KEC: Hierarchical Textual Knowledge for Enhanced Image Clustering](kec_hierarchical_textual_knowledge_clustering.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
-- [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](../../ACL2026/multimodal_vlm/slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
+- [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
+- [\[CVPR 2026\] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection](decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp.md)
+- [\[ICML 2026\] From Correspondence to Actions: Human-Like Multi-Image Spatial Reasoning in Multi-modal Large Language Models](../../ICML2026/vlm_reasoning/from_correspondence_to_actions_human-like_multi-image_spatial_reasoning_in_multi.md)
+- [\[CVPR 2026\] Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](prototypical_action_reasoning_facilitated_by_vision-language_alignment_for_egoce.md)
+- [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
 
 </div>
 

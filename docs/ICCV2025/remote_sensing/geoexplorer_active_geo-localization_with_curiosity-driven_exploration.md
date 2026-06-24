@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration
 description: >-
-  [ICCV 2025][Remote Sensing][Active Geo-Localization] This paper proposes GeoExplorer, an active geo-localization (AGL) agent that integrates goal-directed extrinsic rewards with curiosity-driven intrinsic rewards. By joi…
+  [ICCV 2025][Remote Sensing][Active Geo-Localization] This paper proposes GeoExplorer, an active geo-localization (AGL) agent that integrates goal-directed extrinsic rewards with curiosity-driven intrinsic rewards. By jointly modeling action-state dynamics and curiosity-based exploration within a reinforcement learning framework, GeoExplorer achieves more robust UAV search strategies and demonstrates superior generalization to unseen targets and environments.
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "UAV Navigation"
   - "Multi-Modal Target"
 date: 2026-05-08
-content_hash: 583acda1daddcff9
+content_hash: 69c96fc94289346d
 ---
 
 # GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration
@@ -154,11 +154,11 @@ The full combination of state modeling and curiosity reward yields the best perf
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Scaling Image Geo-Localization to Continent Level](../../NeurIPS2025/remote_sensing/scaling_image_geo-localization_to_continent_level.md)
 - [\[ICCV 2025\] Information-Bottleneck Driven Binary Neural Network for Change Detection](information-bottleneck_driven_binary_neural_network_for_change_detection.md)
+- [\[NeurIPS 2025\] Scaling Image Geo-Localization to Continent Level](../../NeurIPS2025/remote_sensing/scaling_image_geo-localization_to_continent_level.md)
+- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](../../CVPR2026/remote_sensing/unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
+- [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](../../CVPR2026/remote_sensing/mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
 - [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](../../CVPR2026/remote_sensing/rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
-- [\[ICCV 2025\] GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization](geodistill_geometry-guided_self-distillation_for_weakly_supervised_cross-view_lo.md)
-- [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
 
 </div>
 

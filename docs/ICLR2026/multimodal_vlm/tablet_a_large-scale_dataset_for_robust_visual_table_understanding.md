@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] TABLET reorganizes 14 seed datasets for table understanding into 4 million visual table instruction samples. It prioritizes retrieving original table screenshots from actual web pages or documents, enabling VLMs to learn layouts, colors, merged cells, and image cues from real-world tables beyond synthetic renderings.
+  [ICLR 2026][Multimodal VLM][Visual Table Understanding] TABLET reorganizes 14 seed datasets for table understanding into 4 million visual table instruction samples. It prioritizes retrieving original table screenshots from actual web pages or documents, enabling VLMs to learn layouts, colors, merged cells, and image cues from real-world tables beyond synthetic renderings.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Visual Table Understanding"
+  - "Table Datasets"
+  - "Document Intelligence"
+  - "Visual Question Answering"
+  - "Multimodal Training"
 date: 2026-05-08
-content_hash: 3c3ce88eb427f4fe
+content_hash: 11e66a482e5c5be7
 ---
+
 # TABLET: A Large-Scale Dataset for Robust Visual Table Understanding
 
 **Conference**: ICLR 2026  

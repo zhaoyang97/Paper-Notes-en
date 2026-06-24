@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PIArena: A Platform for Prompt Injection Evaluation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes PIArena, a unified and extensible evaluation platform for Prompt Injection. It integrates multiple SOTA attack and defense methods, supports plug-and-play evaluation, and introduces a policy-based adaptive attack method. It systematically reveals key limitations of existing defenses in terms of gene
+  [ACL 2026][LLM Safety][Prompt Injection Attack] This paper proposes PIArena, a unified and extensible evaluation platform for Prompt Injection. It integrates multiple SOTA attack and defense methods, supports plug-and-play evaluation, and introduces a policy-based adaptive attack method. It systematically reveals key limitations of existing defenses in terms of generalization, adaptive attacks, and task alignment scenarios.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Prompt Injection Attack"
+  - "Defense Evaluation Platform"
+  - "Adaptive Attack"
+  - "LLM Security"
+  - "Benchmark Unification"
 date: 2026-05-08
-content_hash: d19654afbb576e63
+content_hash: ddad67648ac87bd1
 ---
+
 # PIArena: A Platform for Prompt Injection Evaluation
 
 **Conference**: ACL 2026  
@@ -134,8 +140,8 @@ PIArena itself does not involve training. The adaptive attack uses an LLM as a r
 - [\[ACL 2026\] ACIArena: Toward Unified Evaluation for Agent Cascading Injection](aciarena_toward_unified_evaluation_for_agent_cascading_injection.md)
 - [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
 - [\[ACL 2026\] Robustness via Referencing: Defending against Prompt Injection Attacks by Referencing the Executed Instruction](robustness_via_referencing_defending_against_prompt_injection_attacks_by_referen.md)
+- [\[ICLR 2026\] TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness](../../ICLR2026/llm_safety/trustgen_a_platform_of_dynamic_benchmarking_on_the_trustworthiness_of_generative.md)
 - [\[ACL 2026\] Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning](know_thy_enemy_securing_llms_against_prompt_injection_via_diverse_data_synthesis.md)
-- [\[ACL 2025\] Can Indirect Prompt Injection Attacks Be Detected and Removed?](../../ACL2025/llm_safety/indirect_prompt_injection_detection.md)
 
 </div>
 

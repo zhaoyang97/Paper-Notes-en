@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths
 description: >-
-  [NeurIPS 2025][LLM/NLP][Agent framework] This paper proposes the Probabilistic Angelic Nondeterminism (PAN) programming model and the EnCompass Python framework…
+  [NeurIPS 2025][LLM (Other)][Agent framework] This paper proposes the Probabilistic Angelic Nondeterminism (PAN) programming model and the EnCompass Python framework, which decouple an agent's core workflow logic from its inference-time search strategy. Programmers only need to insert `branchpoint()` markers at LLM call sites and switch among best-of-N, beam search, tree search, and other strategies via a few configuration parameters, reducing the amount of code modification b…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Agent framework"
   - "inference-time search"
   - "nondeterministic programming"
   - "Beam Search"
   - "program execution paths"
 date: 2026-05-08
-content_hash: 8bffa31b8a70a778
+content_hash: 62110c76d381d9c6
 ---
 
 # EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths
@@ -124,10 +124,10 @@ EnCompass is a Python framework implementing the PAN programming model. Programm
 ## Related Papers
 
 - [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
-- [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
+- [\[ACL 2025\] Planning-Driven Programming: A Large Language Model Programming Workflow](../../ACL2025/llm_nlp/planning-driven_programming_a_large_language_model_programming_workflow.md)
+- [\[ACL 2025\] AutoExp: Automatic Experiment Design and Execution by LLMs](../../ACL2025/llm_nlp/autoexp_automatic_experiment_design_and_execution_by_llms.md)
+- [\[ACL 2025\] Enhancing the Rule Learning Ability of Large Language Model Agent through Induction, Deduction, and Abduction](../../ACL2025/llm_nlp/idea_enhancing_the_rule_learning_ability_of_large_language_model_agent_through_i.md)
 - [\[NeurIPS 2025\] SYMPHONY: Synergistic Multi-agent Planning with Heterogeneous Language Model Assemblies](symphony_synergistic_multi-agent_planning_with_heterogeneous_language_model_asse.md)
-- [\[NeurIPS 2025\] Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search](wider_or_deeper_scaling_llm_inference-time_compute_with_adaptive_branching_tree_.md)
-- [\[ACL 2026\] A Study of LLMs' Preferences for Libraries and Programming Languages](../../ACL2026/llm_nlp/a_study_of_llms39_preferences_for_libraries_and_programming_languages.md)
 
 </div>
 

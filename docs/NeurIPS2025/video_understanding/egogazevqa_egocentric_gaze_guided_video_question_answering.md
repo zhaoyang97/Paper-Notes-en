@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark
 description: >-
-  [NeurIPS 2025][Video Understanding][Egocentric Video] This paper introduces EgoGazeVQA, the first egocentric video question answering benchmark that incorporates user eye-gaze data. Through gaze-guided prompting strategi…
+  [NeurIPS 2025][Video Understanding][Egocentric Video] This paper introduces EgoGazeVQA, the first egocentric video question answering benchmark that incorporates user eye-gaze data. Through gaze-guided prompting strategies (textual, visual, and salience map), the benchmark demonstrates substantial improvements in MLLMs' ability to understand user intent. The Gaze Salience Map strategy raises MiniCPM-o's accuracy from 35.9% to 53.7%.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "User Intent Understanding"
   - "Multimodal Large Language Models"
 date: 2026-05-08
-content_hash: c44d9789cd4444b5
+content_hash: 79129bb7d0153e7c
 ---
 
 # EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark
@@ -118,11 +118,11 @@ No training strategy is involved in the benchmark evaluation. LoRA fine-tuning e
 
 ## Related Papers
 
+- [\[CVPR 2025\] EgoTextVQA: Towards Egocentric Scene-Text Aware Video Question Answering](../../CVPR2025/video_understanding/egotextvqa_towards_egocentric_scene-text_aware_video_question_answering.md)
+- [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](../../CVPR2026/video_understanding/ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
 - [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](../../CVPR2026/video_understanding/movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
-- [\[CVPR 2026\] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering](../../CVPR2026/video_understanding/do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri.md)
 - [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](../../CVPR2026/video_understanding/herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
 - [\[NeurIPS 2025\] Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task](toolaugmented_spatiotemporal_reasoning_for_streamlining_vide.md)
-- [\[NeurIPS 2025\] MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence](muvr_a_multi-modal_untrimmed_video_retrieval_benchmark_with_multi-level_visual_c.md)
 
 </div>
 

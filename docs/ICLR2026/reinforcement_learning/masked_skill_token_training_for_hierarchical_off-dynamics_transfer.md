@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Masked Skill Token Training for Hierarchical Off-Dynamics Transfer
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] MSTT abstracts the condition where "structural changes in the environment render certain skills unexecutable" into a binary skill mask. It utilizes VQ-VAE to segment trajectories into discrete skill tokens, trains a "feasibility-aware" critic by simulating dynamics drift with random masks, and employs a diffusion traje
+  [ICLR 2026][Reinforcement Learning][off-dynamics transfer] MSTT abstracts the condition where "structural changes in the environment render certain skills unexecutable" into a binary skill mask. It utilizes VQ-VAE to segment trajectories into discrete skill tokens, trains a "feasibility-aware" critic by simulating dynamics drift with random masks, and employs a diffusion trajectory generator for feasibility filtering. This allows for zero-shot transfer to new environments wit…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "off-dynamics transfer"
+  - "offline hierarchical RL"
+  - "skill tokens"
+  - "masked Bellman"
+  - "diffusion policy"
 date: 2026-05-08
-content_hash: 78f53eabba136054
+content_hash: 4c7e19274ffcca48
 ---
+
 # Masked Skill Token Training for Hierarchical Off-Dynamics Transfer
 
 **Conference**: ICLR 2026  
@@ -148,8 +154,8 @@ Note: On FetchReach, MSTT's Goal (88%) is lower than Diffuser† (which reached 
 - [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
 - [\[ICLR 2026\] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?](breaking_barriers_do_reinforcement_post_training_gains_transfer_to_unseen_domain.md)
 - [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
-- [\[ICLR 2026\] Spotlight on Token Perception for Multimodal Reinforcement Learning](spotlight_on_token_perception_for_multimodal_reinforcement_learning.md)
 - [\[ICLR 2026\] Reference Grounded Skill Discovery](reference_grounded_skill_discovery.md)
+- [\[ICLR 2026\] SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models](spg_sandwiched_policy_gradient_for_masked_diffusion_language_models.md)
 
 </div>
 

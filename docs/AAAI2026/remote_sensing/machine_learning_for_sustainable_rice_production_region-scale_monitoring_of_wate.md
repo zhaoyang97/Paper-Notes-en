@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Machine Learning for Sustainable Rice Production: Region-Scale Monitoring of Water-Saving Practices in Punjab, India
 description: >-
-  [AAAI 2026][Remote Sensing][Rice cultivation monitoring] This paper proposes a dimensional classification approach that decouples the recognition of water-saving rice practices into two independent binary classification…
+  [AAAI 2026][Remote Sensing][Rice cultivation monitoring] This paper proposes a dimensional classification approach that decouples the recognition of water-saving rice practices into two independent binary classification tasks — a seeding dimension (DSR vs. PTR) and an irrigation dimension (AWD vs. CF). Using only Sentinel-1 SAR imagery, the method achieves seeding F1=0.80 and irrigation F1=0.74, and performs large-scale inference over 3 million+ parcels in Punjab…
 tags:
   - "AAAI 2026"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "dimensional classification"
   - "direct-seeded rice (DSR)"
 date: 2026-05-08
-content_hash: a8ac5d22454a30e7
+content_hash: 64561613662c93ed
 ---
 
 # Machine Learning for Sustainable Rice Production: Region-Scale Monitoring of Water-Saving Practices in Punjab, India
@@ -135,9 +135,9 @@ Dimensional classification consistently outperforms three-class classification (
 
 - [\[AAAI 2026\] Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data](debiasing_machine_learning_predictions_for_causal_inference_without_additional_g.md)
 - [\[NeurIPS 2025\] Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction](../../NeurIPS2025/remote_sensing/connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)
+- [\[ICLR 2026\] MoRA: Mobility as the Backbone for Geospatial Representation Learning at Scale](../../ICLR2026/remote_sensing/mora_mobility_as_the_backbone_for_geospatial_representation_learning_at_scale.md)
 - [\[AAAI 2026\] M3SR: Multi-Scale Multi-Perceptual Mamba for Efficient Spectral Reconstruction](m3sr_multi-scale_multi-perceptual_mamba_for_efficient_spectral_reconstruction.md)
 - [\[AAAI 2026\] TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD](spatio-temporal_context_learning_with_temporal_difference_convolution_for_moving.md)
-- [\[CVPR 2026\] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark](../../CVPR2026/remote_sensing/cross-scale_pansharpening_via_scaleformer_and_the_panscale_benchmark.md)
 
 </div>
 

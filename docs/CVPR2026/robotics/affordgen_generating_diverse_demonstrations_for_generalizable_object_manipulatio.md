@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][affordance] AffordGen transforms "affordance semantic correspondence" from an online planning signal into an **offline data generation prior**. By establishing keypoint correspondences across large-scale 3D meshes using DINOv2, it batch-transfers grasping and skill segments from a single human demonstration to hundreds of new obje
+  [CVPR 2026][Robotics][Imitation Learning] AffordGen transforms "affordance semantic correspondence" from an online planning signal into an **offline data generation prior**. By establishing keypoint correspondences across large-scale 3D meshes using DINOv2, it batch-transfers grasping and skill segments from a single human demonstration to hundreds of new objects. This process synthesizes a trajectory dataset covering full 6D poses and multiple categories…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - affordance
+  - "CVPR 2026"
+  - "Robotics"
+  - "Imitation Learning"
+  - "Data Generation"
+  - "Semantic Correspondence"
+  - "affordance"
+  - "Cross-category Generalization"
 date: 2026-05-08
-content_hash: 41d7bdc7b662f0b4
+content_hash: 6501b6a18851459e
 ---
+
 # AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence
 
 **Conference**: CVPR 2026  
@@ -134,7 +139,7 @@ AffordGen is the only method to achieve **meaningful non-zero success rates** on
 - [\[ICLR 2026\] MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation](../../ICLR2026/robotics/momagen_generating_demonstrations_under_soft_and_hard_constraints_for_multi-step.md)
 - [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
 - [\[CVPR 2026\] BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration](bipremanip_learning_affordance-based_bimanual_preparatory_manipulation_through_a.md)
-- [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
+- [\[CVPR 2026\] Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation](affordance_field_intervention_enabling_vlas_to_escape_memory_traps_in_robotic_ma.md)
 
 </div>
 

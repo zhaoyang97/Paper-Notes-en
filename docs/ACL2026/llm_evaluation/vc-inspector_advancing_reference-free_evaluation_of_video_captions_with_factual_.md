@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes VC-Inspector, a reference-free video caption evaluation metric based on lightweight open-source multimodal models (Qwen2.5-VL 3B/7B). By generating training data through a controllable factual error synthesis pipeline, it achieves a human judgment correlation of $\tau_b$=42.58 on VATEX-Eval, surpass
+  [ACL 2026][LLM Evaluation][Video Caption Evaluation] This paper proposes VC-Inspector, a reference-free video caption evaluation metric based on lightweight open-source multimodal models (Qwen2.5-VL 3B/7B). By generating training data through a controllable factual error synthesis pipeline, it achieves a human judgment correlation of $\tau_b$=42.58 on VATEX-Eval, surpassing the GPT-4o-dependent G-VEval ($\tau_b$=39.40), and reaches 99.6% accuracy on hallucination detection be…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Video Caption Evaluation"
+  - "Reference-free Evaluation"
+  - "Factual Accuracy"
+  - "Large Multimodal Models"
+  - "Hallucination Detection"
 date: 2026-05-08
-content_hash: bde62d133ca39de1
+content_hash: 677b217ee739bc72
 ---
+
 # VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis
 
 **Conference**: ACL 2026  
@@ -153,10 +159,10 @@ Standard language modeling loss (next-token prediction) is employed with LoRA fi
 ## Related Papers
 
 - [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
-- [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](../../ICLR2026/llm_evaluation/talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
-- [\[ACL 2026\] TabReX: Tabular Referenceless eXplainable Evaluation](tabrex_tabular_referenceless_explainable_evaluation.md)
-- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
 - [\[ACL 2026\] Illusions of the Gold Standard: A Large-scale Analysis of Human Evaluation Protocols for Long-form Text Generation](illusions_of_the_gold_standard_a_large-scale_analysis_of_human_evaluation_protoc.md)
+- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
+- [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](../../ICLR2026/llm_evaluation/talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
+- [\[ICLR 2026\] Computer Agent Arena: Toward Human-Centric Evaluation and Analysis of Computer-Use Agents](../../ICLR2026/llm_evaluation/computer_agent_arena_toward_human-centric_evaluation_and_analysis_of_computer-us.md)
 
 </div>
 

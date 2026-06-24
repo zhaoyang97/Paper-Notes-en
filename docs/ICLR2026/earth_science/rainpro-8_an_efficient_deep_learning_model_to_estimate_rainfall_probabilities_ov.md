@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RainPro-8: An Efficient Deep Learning Model to Estimate Rainfall Probabilities Over 8 Hours
 description: >-
-  [ICLR 2026][Earth Science][MaxViT U-Net] RainPro-8 utilizes a MaxViT-U-Net with only 36.7M parameters to fuse multi-source data from radar, satellite, and Numerical Weather Prediction (NWP). Through "ordered consistent loss + single-forward prediction," it outputs high-resolution probabilistic precipitation forecasts for Europe over 8 hours in one go. It outp
+  [ICLR 2026][Earth Science][Probabilistic precipitation forecasting] RainPro-8 utilizes a MaxViT-U-Net with only 36.7M parameters to fuse multi-source data from radar, satellite, and Numerical Weather Prediction (NWP). Through "ordered consistent loss + single-forward prediction," it outputs high-resolution probabilistic precipitation forecasts for Europe over 8 hours in one go. It outperforms existing NWP, extrapolation, and deep learning nowcasting methods while being 48x fa…
 tags:
-  - ICLR 2026
-  - Earth Science
-  - MaxViT U-Net
+  - "ICLR 2026"
+  - "Earth Science"
+  - "Probabilistic precipitation forecasting"
+  - "Multi-source data fusion"
+  - "Ordered consistent loss"
+  - "Single-forward prediction"
+  - "MaxViT U-Net"
 date: 2026-05-08
-content_hash: 05a84a52ba860412
+content_hash: a4182c6340656811
 ---
+
 # RainPro-8: An Efficient Deep Learning Model to Estimate Rainfall Probabilities Over 8 Hours
 
 **Conference**: ICLR 2026  
@@ -141,10 +146,10 @@ Contribution of design components measured by CRPS/CSI/FSS (Table 2):
 ## Related Papers
 
 - [\[ICLR 2026\] OmniField: Conditioned Neural Fields for Robust Multimodal Spatiotemporal Learning](omnifield_conditioned_neural_fields_for_robust_multimodal_spatiotemporal_learnin.md)
-- [\[ICLR 2026\] TianQuan-S2S：通过引入气候态构建次季节-季节全球天气预报模型](tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
-- [\[ICLR 2026\] 揭示连续表示全波形反演的机制：一个基于波的神经正切核框架](unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
+- [\[ICLR 2026\] Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models](task-adaptive_parameter-efficient_fine-tuning_for_weather_foundation_models.md)
+- [\[ICLR 2026\] TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology](tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
+- [\[ICLR 2026\] Uncovering the Mechanism of Continuous Representation Full Waveform Inversion: A Wave-based Neural Tangent Kernel Framework](unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
 - [\[ICLR 2026\] The Seismic Wavefield Common Task Framework](the_seismic_wavefield_common_task_framework.md)
-- [\[CVPR 2026\] PhyOceanCast: Global Ocean Forecasting with Physics-Informed Diffusion](../../CVPR2026/earth_science/phyoceancast_global_ocean_forecasting_with_physics-informed_diffusion.md)
 
 </div>
 

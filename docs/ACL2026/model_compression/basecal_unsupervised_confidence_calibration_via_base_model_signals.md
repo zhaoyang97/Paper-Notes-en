@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] BaseCal: Unsupervised Confidence Calibration via Base Model Signals
 description: >-
-  [ACL 2026][Model Compression][confidence calibration] Observing that base LLMs remain well-calibrated on free-form QA while post-trained LLMs (PoLLMs) are severely overconfident, BaseCal proposes two unsupervised schemes—feeding PoLLM's answers into the base LLM to use token probabilities as confidence (BaseCal-ReEval), or using a linear projection layer to map PoLLM's fi
+  [ACL 2026][Model Compression][confidence calibration] Observing that base LLMs remain well-calibrated on free-form QA while post-trained LLMs (PoLLMs) are severely overconfident, BaseCal proposes two unsupervised schemes—feeding PoLLM's answers into the base LLM to use token probabilities as confidence (BaseCal-ReEval), or using a linear projection layer to map PoLLM's final hidden states back to the base LLM space and passing them through the base output layer (BaseCal-Proj)…
 tags:
-  - ACL 2026
-  - Model Compression
-  - confidence calibration
-  - post-trained LLM
-  - base model
+  - "ACL 2026"
+  - "Model Compression"
+  - "confidence calibration"
+  - "post-trained LLM"
+  - "base model"
+  - "hidden state projection"
+  - "unsupervised"
 date: 2026-05-08
-content_hash: 87751465a3f296a0
+content_hash: 497b890c12bde573
 ---
+
 # BaseCal: Unsupervised Confidence Calibration via Base Model Signals
 
 **Conference**: ACL 2026  
@@ -154,7 +157,7 @@ BaseCal achieved the best results in 29 out of 30 (dataset $\times$ model $\time
 
 - [\[ACL 2026\] CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration](improving_the_throughput_of_diffusion-based_large_language_models_via_a_training.md)
 - [\[NeurIPS 2025\] PPG-Distill: Efficient Photoplethysmography Signals Analysis via Foundation Model Distillation](../../NeurIPS2025/model_compression/ppg-distill_efficient_photoplethysmography_signals_analysis_via_foundation_model.md)
-- [\[ICML 2026\] Multi-Adapter Representation Interventions via Energy Calibration](../../ICML2026/model_compression/multi-adapter_representation_interventions_via_energy_calibration.md)
+- [\[ICLR 2026\] Expert Merging: Model Merging with Unsupervised Expert Alignment and Importance-Guided Layer Chunking](../../ICLR2026/model_compression/expert_merging_model_merging_with_unsupervised_expert_alignment_and_importance-g.md)
 - [\[ACL 2026\] VecCISC: Improving Confidence-Informed Self-Consistency with Reasoning Trace Clustering and Candidate Answer Selection](veccisc_improving_confidence-informed_self-consistency_with_reasoning_trace_clus.md)
 - [\[ICML 2025\] ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization](../../ICML2025/model_compression/confpo_exploiting_policy_model_confidence_for_critical_token_selection_in_prefer.md)
 

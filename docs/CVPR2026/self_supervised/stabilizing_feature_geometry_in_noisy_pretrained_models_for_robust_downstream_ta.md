@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stabilizing Feature Geometry in Noisy Pretrained Models for Robust Downstream Tasks
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] The authors discover that pre-training noise not only weakens spectral energy but also causes a "rotation" of the principal feature subspace. They propose the Principal Direction Angle (PDA) to quantify this rotation and design the FGS framework—a lightweight projection head inserted after a frozen backbone using a tri
+  [CVPR 2026][Self-Supervised Learning][Catastrophic inheritance] The authors discover that pre-training noise not only weakens spectral energy but also causes a "rotation" of the principal feature subspace. They propose the Principal Direction Angle (PDA) to quantify this rotation and design the FGS framework—a lightweight projection head inserted after a frozen backbone using a trio of Perturbation Consistency, Variance-Activation Regularization…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Catastrophic inheritance"
+  - "feature geometry"
+  - "principal direction rotation"
+  - "noisy pre-training"
+  - "black-box fine-tuning"
 date: 2026-05-08
-content_hash: fc890f0b5eed838a
+content_hash: eb00c81535721827
 ---
+
 # Stabilizing Feature Geometry in Noisy Pretrained Models for Robust Downstream Tasks
 
 **Conference**: CVPR 2026  
@@ -152,8 +158,8 @@ Gain on OOD over MLP/NMTune: ResNetv2-152x2 +2.82%/+3.56%, ViT-L +3.03%/+2.59%. 
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)
 - [\[AAAI 2026\] Robust Tabular Foundation Models](../../AAAI2026/self_supervised/robust_tabular_foundation_models.md)
+- [\[CVPR 2026\] Teaching DINOv3 About Partial 3D Geometry: A Self-Supervised Geometry-Aware Approach](teaching_dinov3_about_partial_3d_geometry_a_self-supervised_geometry-aware_appro.md)
 - [\[CVPR 2026\] OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](openvision_2_a_family_of_generative_pretrained_visual_encoders_for_multimodal_le.md)
 - [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](reframing_long-tailed_learning_via_loss_landscape_geometry.md)
 - [\[CVPR 2026\] Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)

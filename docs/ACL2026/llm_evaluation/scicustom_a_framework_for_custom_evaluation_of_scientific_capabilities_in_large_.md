@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][ontology] SciCustom decomposes scientific evaluation requirements into reusable ontological knowledge units and automatically constructs domain-specific benchmarks via a tagger, multi-model voting, binary-search relevance filtering, and proxy subset selection, achieving the highest Spearman rank consistency across 10/11 chemistr
+  [ACL2026][LLM Evaluation][Scientific LLM evaluation] SciCustom decomposes scientific evaluation requirements into reusable ontological knowledge units and automatically constructs domain-specific benchmarks via a tagger, multi-model voting, binary-search relevance filtering, and proxy subset selection, achieving the highest Spearman rank consistency across 10/11 chemistry and medical subtasks.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - ontology
-  - knowledge units
-  - ranking consistency
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Scientific LLM evaluation"
+  - "custom benchmark"
+  - "ontology"
+  - "knowledge units"
+  - "ranking consistency"
 date: 2026-05-08
-content_hash: 36ae104e8bed0942
+content_hash: 9e638ed331950530
 ---
+
 # SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models
 
 **Conference**: ACL2026  
@@ -152,10 +155,10 @@ Component analysis indicates that ontology-driven units, binary-search cutoff, a
 ## Related Papers
 
 - [\[ACL 2026\] Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry](capabilities_and_evaluation_biases_of_large_language_models_in_classical_chinese.md)
+- [\[ICLR 2026\] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](../../ICLR2026/llm_evaluation/dont_passk_a_bayesian_framework_for_large_language_model_evaluation.md)
 - [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](reward_modeling_for_scientific_writing_evaluation.md)
 - [\[ACL 2025\] AbGen: Evaluating Large Language Models in Ablation Study Design and Evaluation for Scientific Research](../../ACL2025/llm_evaluation/abgen_evaluating_large_language_models_in.md)
 - [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](zero-shot_large_language_models_for_automatic_readability_assessment.md)
-- [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
 
 </div>
 

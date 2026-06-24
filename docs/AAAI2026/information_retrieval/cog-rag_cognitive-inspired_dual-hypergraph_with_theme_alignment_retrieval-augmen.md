@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Hypergraph] This paper proposes Cog-RAG, which constructs a dual-hypergraph index comprising a theme hypergraph and an entity hypergraph to simulate the human "top-down" cognitive…
+  [AAAI 2026][Information Retrieval & RAG][Hypergraph] This paper proposes Cog-RAG, which constructs a dual-hypergraph index comprising a theme hypergraph and an entity hypergraph to simulate the human "top-down" cognitive process via a two-stage retrieval strategy (theme first, then details), achieving global-to-local semantic alignment for generation.
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Cognitive-Inspired Retrieval"
   - "RAG"
 date: 2026-05-08
-content_hash: 327540910ce2204c
+content_hash: 2f709f979fc100f6
 ---
 
 # Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation
@@ -137,7 +137,7 @@ Cog-RAG achieves overwhelming superiority across all datasets, performing strong
 - [\[AAAI 2026\] RAGFort: Dual-Path Defense Against Proprietary Knowledge Base Extraction in Retrieval-Augmented Generation](ragfort_dual-path_defense_against_proprietary_knowledge_base_extraction_in_retri.md)
 - [\[NeurIPS 2025\] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation](../../NeurIPS2025/information_retrieval/hypergraphrag_retrieval-augmented_generation_via_hypergraph-structured_knowledge.md)
 - [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
-- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
+- [\[ACL 2025\] GainRAG: Preference Alignment in Retrieval-Augmented Generation through Gain Signal Synthesis](../../ACL2025/information_retrieval/gainrag_preference_alignment.md)
 
 </div>
 

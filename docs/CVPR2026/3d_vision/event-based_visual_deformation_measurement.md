@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Event-based Visual Deformation Measurement
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper proposes an event-frame fusion visual deformation measurement (VDM) system. It utilizes event cameras to provide temporally dense motion cues and standard frames to provide spatially dense accurate constraints. Through an Affine Invariant Simplex (AIS) framework, the high-dimensional deformation field is par
+  [CVPR 2026][3D Vision][Event Camera] This paper proposes an event-frame fusion visual deformation measurement (VDM) system. It utilizes event cameras to provide temporally dense motion cues and standard frames to provide spatially dense accurate constraints. Through an Affine Invariant Simplex (AIS) framework, the high-dimensional deformation field is partitioned into low-parameter triangular sub-regions. Combined with a neighborhood greedy optimization to suppress long-range…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event Camera"
+  - "Visual Deformation Measurement"
+  - "Affine Invariant"
+  - "Contrast Maximization"
+  - "Dense Optical Flow Tracking"
 date: 2026-05-08
-content_hash: ad59851bff143779
+content_hash: 461d150c9c61ae5c
 ---
+
 # Event-based Visual Deformation Measurement
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Optimization strategy ablation:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
 - [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
+- [\[CVPR 2026\] Deep Feature Deformation Weights](deep_feature_deformation_weights.md)
+- [\[CVPR 2026\] Moving Border Ownership for Event-based Motion Segmentation](moving_border_ownership_for_event-based_motion_segmentation.md)
 - [\[CVPR 2026\] Event Stream Filtering via Probability Flux Estimation](event_stream_filtering_via_probability_flux_estimation.md)
-- [\[CVPR 2026\] Adaptive Spatial-Temporal Window: Unlocking the Potential of Event Cameras in Heterogeneous Velocity Scenarios](adaptive_spatial-temporal_window_unlocking_the_potential_of_event_cameras_in_het.md)
-- [\[CVPR 2026\] Modeling the Visual Ambiguity of Human Sketches](modeling_the_visual_ambiguity_of_human_sketches.md)
-- [\[CVPR 2025\] Event Ellipsometer: Event-based Mueller-Matrix Video Imaging](../../CVPR2025/others/event_ellipsometer_event-based_mueller-matrix_video_imaging.md)
 
 </div>
 

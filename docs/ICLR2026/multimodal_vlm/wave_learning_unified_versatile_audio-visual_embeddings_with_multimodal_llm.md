@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM
 description: >-
-  [ICLR 2026][Multimodal VLM][prompt-aware] WAVE projects text, audio, silent video, and synchronized audio-visual streams into a unified semantic space based on Qwen2.5-Omni. By employing "dual-audio encoders + hierarchical full-layer feature fusion + joint multimodal multi-task training," it achieves any-to-any retrieval and instruction-dependent prompt-aware
+  [ICLR 2026][Multimodal VLM][Multimodal Embedding] WAVE projects text, audio, silent video, and synchronized audio-visual streams into a unified semantic space based on Qwen2.5-Omni. By employing "dual-audio encoders + hierarchical full-layer feature fusion + joint multimodal multi-task training," it achieves any-to-any retrieval and instruction-dependent prompt-aware embeddings, reaching SOTA on the MMEB-v2 video track.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - prompt-aware
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Embedding"
+  - "Audio-Visual Representation"
+  - "MLLM Embedding"
+  - "Cross-modal Retrieval"
+  - "prompt-aware"
 date: 2026-05-08
-content_hash: babce834a442e544
+content_hash: 445530319bb6e95a
 ---
+
 # WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM
 
 **Conference**: ICLR 2026  
@@ -163,11 +168,11 @@ The role of the prompt in QA is extremely significant: using "specific questions
 
 ## Related Papers
 
+- [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](../../ACL2026/multimodal_vlm/vill-e_video_llm_embeddings_for_retrieval.md)
 - [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
-- [\[ICLR 2026\] OptMerge: Unifying Multimodal LLM Capabilities and Modalities via Model Merging](optmerge_unifying_multimodal_llm_capabilities_and_modalities_via_model_merging.md)
-- [\[ICLR 2026\] Language-Instructed Vision Embeddings for Controllable and Generalizable Perception](language-instructed_vision_embeddings_for_controllable_and_generalizable_percept.md)
-- [\[ICLR 2026\] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](omnivinci_enhancing_architecture_and_data_for_omni-modal_understanding_llm.md)
-- [\[ICLR 2026\] VisCodex: Unified Multimodal Code Generation via Merging Vision and Coding Models](viscodex_unified_multimodal_code_generation_via_merging_vision_and_coding_models.md)
+- [\[NeurIPS 2025\] Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM](../../NeurIPS2025/multimodal_vlm/watch_and_listen_understanding_audio-visual-speech_moments_with_multimodal_llm.md)
+- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](../../CVPR2026/multimodal_vlm/semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
+- [\[CVPR 2026\] Illuminating Visual Identity in Universal Multimodal Embeddings](../../CVPR2026/multimodal_vlm/illuminating_visual_identity_in_universal_multimodal_embeddings.md)
 
 </div>
 

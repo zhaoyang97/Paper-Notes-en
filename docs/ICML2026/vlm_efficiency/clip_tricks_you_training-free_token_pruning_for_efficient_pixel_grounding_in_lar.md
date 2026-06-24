@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLIP Tricks You: Training-free Token Pruning for Efficient Pixel Grounding in Large Vision-Language Models
 description: >-
-  [ICML 2026][vlm_efficiency][Paper Note] This work identifies an anti-intuitive "similarity reversal" phenomenon in CLIP, where visual tokens of referring regions exhibit the lowest similarity with [EOS] text tokens. Based on this observation, the authors propose LiteLVLM—a training-free, text-guided visual token pruning method. It retains 90.3% of the origin
+  [ICML2026][Multimodal Efficiency][Visual Token Pruning] This work identifies an anti-intuitive "similarity reversal" phenomenon in CLIP, where visual tokens of referring regions exhibit the lowest similarity with [EOS] text tokens. Based on this observation, the authors propose LiteLVLM—a training-free, text-guided visual token pruning method. It retains 90.3% of the original pixel grounding performance even after discarding 66.7% of tokens, while achieving a 22% inference ac…
 tags:
-  - ICML 2026
-  - vlm_efficiency
+  - "ICML2026"
+  - "Multimodal Efficiency"
+  - "Visual Token Pruning"
+  - "CLIP Similarity Reversal"
+  - "Pixel-level Grounding"
+  - "Training-free Inference Acceleration"
+  - "Large Vision-Language Models"
 date: 2026-05-08
-content_hash: c4a2ac240ef89eec
+content_hash: 7b71f96638a184a3
 ---
+
 # CLIP Tricks You: Training-free Token Pruning for Efficient Pixel Grounding in Large Vision-Language Models
 
 **Conference**: ICML2026  
@@ -143,11 +149,11 @@ Fixed ratios (e.g., 75%/25%) exhibit inconsistent performance across scenarios. 
 
 ## Related Papers
 
-- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](../../CVPR2026/vlm_efficiency/transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
 - [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](../../CVPR2026/vlm_efficiency/zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
-- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/vlm_efficiency/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
-- [\[ACL 2025\] EffiVLM-Bench: A Comprehensive Benchmark for Evaluating Training-Free Acceleration in Large Vision-Language Models](../../ACL2025/vlm_efficiency/effivlm_bench_vlm_acceleration.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](../../CVPR2026/vlm_efficiency/transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
 - [\[ICLR 2026\] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding](../../ICLR2026/vlm_efficiency/enhancing_visual_token_representations_for_video_large_language_models_via_train.md)
+- [\[ICLR 2026\] VisionTrim: Unified Vision Token Compression for Training-Free MLLM Acceleration](../../ICLR2026/vlm_efficiency/visiontrim_unified_vision_token_compression_for_training-free_mllm_acceleration.md)
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](../../CVPR2026/vlm_efficiency/if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
 
 </div>
 

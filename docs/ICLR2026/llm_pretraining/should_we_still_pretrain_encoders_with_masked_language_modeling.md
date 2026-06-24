@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Should We Still Pretrain Encoders with Masked Language Modeling?
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] The authors conducted a strictly controlled comparative experiment with 38 models (210M to 1B parameters) and over 15,000 fine-tuning runs to answer whether MLM is still necessary for pre-training encoders. The study concludes that while MLM remains generally stronger for text representation tasks, CLM is more data-eff
+  [ICLR 2026][LLM Pretraining][Encoder Pre-training] The authors conducted a strictly controlled comparative experiment with 38 models (210M to 1B parameters) and over 15,000 fine-tuning runs to answer whether MLM is still necessary for pre-training encoders. The study concludes that while MLM remains generally stronger for text representation tasks, CLM is more data-efficient and offers more stable fine-tuning. Consequently, a **two-stage strategy of CLM followed by MLM** (esp…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Encoder Pre-training"
+  - "Masked Language Modeling (MLM)"
+  - "Causal Language Modeling (CLM)"
+  - "Controlled Ablation"
+  - "Two-stage Pre-training"
 date: 2026-05-08
-content_hash: aee161eaa5c191f9
+content_hash: b48ee168b876cbfd
 ---
+
 # Should We Still Pretrain Encoders with Masked Language Modeling?
 
 **Conference**: ICLR 2026  
@@ -134,7 +140,7 @@ The conclusion is clear: **MLM CPT on a CLM model is overall superior to continu
 - [\[ICLR 2026\] Learned Meta-Tokens for Language Modeling](learned_meta-tokens_for_language_modeling.md)
 - [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 - [\[ICLR 2026\] Seq vs Seq: An Open Suite of Paired Encoders and Decoders](seq_vs_seq_an_open_suite_of_paired_encoders_and_decoders.md)
-- [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)
+- [\[ICLR 2026\] Avey-B: Refactoring Attention-Free Architectures into Bidirectional Encoders](avey-b.md)
 
 </div>
 

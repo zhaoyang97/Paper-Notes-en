@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs
 description: >-
-  [NeurIPS 2025][LLM Pretraining][distributed training] This paper proposes Arnold, a scheduling system that aligns the communication patterns of LLM training (DP/PP groups) with the physical network topology of data cente…
+  [NeurIPS 2025][LLM Pretraining][distributed training] This paper proposes Arnold, a scheduling system that aligns the communication patterns of LLM training (DP/PP groups) with the physical network topology of data centers. In simulation, Arnold reduces the maximum communication group span by 1.67×, and achieves a 10.6% end-to-end throughput improvement in production-scale training on 9,600+ GPUs.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -13,7 +13,7 @@ tags:
   - "hybrid parallelism"
   - "MIP"
 date: 2026-05-08
-content_hash: b0b1e7f81c25fcc8
+content_hash: 4b22288e38d848f3
 ---
 
 # Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs
@@ -131,10 +131,10 @@ A reservation mechanism is adopted: after an LPJ is planned, its nodes are reser
 ## Related Papers
 
 - [\[NeurIPS 2025\] LCDB 1.1: A Database Illustrating Learning Curves Are More Ill-Behaved Than Previously Thought](lcdb_11_a_database_illustrating_learning_curves_are_more_ill-behaved_than_previo.md)
+- [\[ACL 2025\] AsyncLM: Efficient and Adaptive Async Pre-training of Language Models](../../ACL2025/llm_pretraining/asynclm_efficient_and_adaptive_async_pre-training_of_language_models.md)
+- [\[ACL 2025\] TokAlign: Efficient Vocabulary Adaptation via Token Alignment](../../ACL2025/llm_pretraining/tokalign_vocab_adaptation.md)
+- [\[ACL 2025\] Towards Effective and Efficient Continual Pre-training of Large Language Models](../../ACL2025/llm_pretraining/towards_effective_and_efficient_continual_pre-training_of_large_language_models.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
-- [\[NeurIPS 2025\] Vocabulary Customization for Efficient Domain-Specific LLM Deployment](vocabulary_customization_for_efficient_domain-specific_llm_deployment.md)
-- [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
-- [\[NeurIPS 2025\] Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training](power_lines_scaling_laws_for_weight_decay_and_batch_size_in_llm_pre-training.md)
 
 </div>
 

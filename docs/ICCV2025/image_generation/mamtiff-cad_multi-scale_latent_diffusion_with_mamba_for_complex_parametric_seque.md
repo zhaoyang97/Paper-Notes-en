@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence
 description: >-
-  [Image Generation] This paper proposes MamTiff-CAD, a framework that combines a Mamba+-based encoder with a Transformer decoder in an autoencoder to learn latent representations of CAD command sequences…
+  [Image Generation] This paper proposes MamTiff-CAD, a framework that combines a Mamba+-based encoder with a Transformer decoder in an autoencoder to learn latent representations of CAD command sequences, followed by a multi-scale Transformer diffusion model for generation. It is the first method to generate complex CAD models with sequence lengths of 60–256 commands.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: d427521e369eaabe
+content_hash: 18cdba328f84771a
 ---
 
 # MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence
@@ -148,9 +148,9 @@ The paper introduces a dataset of 13,705 CAD models with an average sequence len
 
 - [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
 - [\[ICCV 2025\] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability](dynamicid_zero-shot_multi-id_image_personalization_with_flexible_facial_editabil.md)
+- [\[CVPR 2025\] Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/multi-party_collaborative_attention_control_for_image_customization.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](joint_diffusion_models_in_continual_learning.md)
 - [\[ICCV 2025\] OminiControl: Minimal and Universal Control for Diffusion Transformer](ominicontrol_minimal_and_universal_control_for_diffusion_transformer.md)
-- [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
 
 </div>
 

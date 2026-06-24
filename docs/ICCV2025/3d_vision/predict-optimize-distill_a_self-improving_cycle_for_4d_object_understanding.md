@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Predict-Optimize-Distill: A Self-Improving Cycle for 4D Object Understanding
 description: >-
-  [ICCV 2025][3D Vision][4D Reconstruction] This paper proposes Predict-Optimize-Distill (POD), a self-improving framework that recovers 4D part poses of articulated objects from long monocular videos through iterative pre…
+  [ICCV 2025][3D Vision][4D Reconstruction] This paper proposes Predict-Optimize-Distill (POD), a self-improving framework that recovers 4D part poses of articulated objects from long monocular videos through iterative predict–optimize–distill cycles, with performance that improves consistently with video length and iteration count.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Inverse Rendering"
   - "Monocular Video"
 date: 2026-05-08
-content_hash: bb31cdd08b89d76b
+content_hash: 108b5fb4c19550f9
 ---
 
 # Predict-Optimize-Distill: A Self-Improving Cycle for 4D Object Understanding
@@ -132,8 +132,8 @@ POD achieves a gain of over **32 percentage points** in PCP (α=0.05) compared t
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
 - [\[ICCV 2025\] ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail](excap3d_expressive_3d_scene_understanding_via_object_captioning_with_varying_det.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](../../CVPR2026/3d_vision/bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
 - [\[ICCV 2025\] Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description](articulate3d_holistic_understanding_of_3d_scenes_as_universal_scene_description.md)
+- [\[ICCV 2025\] Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data](bootstrap3d_improving_multi-view_diffusion_model_with_synthetic_data.md)
 
 </div>
 

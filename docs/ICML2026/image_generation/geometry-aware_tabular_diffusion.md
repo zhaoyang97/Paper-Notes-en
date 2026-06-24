@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Geometry-Aware Tabular Diffusion
 description: >-
-  [ICML 2026][Image Generation][TabDiff] The authors propose GATD (Geometry-Aware Tabular Diffusion), which explicitly incorporates "angles and lengths between column pairs" as geometric features into the denoising inputs and loss functions as auxiliary supervision signals. Using a small MLP with only 1/3.5 the parameters of TabDiff (and as low as 1/25 for cl
+  [ICML 2026][Image Generation][Tabular Diffusion] The authors propose GATD (Geometry-Aware Tabular Diffusion), which explicitly incorporates "angles and lengths between column pairs" as geometric features into the denoising inputs and loss functions as auxiliary supervision signals. Using a small MLP with only 1/3.5 the parameters of TabDiff (and as low as 1/25 for classification tasks), GATD achieves wins in 8/10 Shape, 7/10 Trend, and 9/10 downstream utility metrics across 1…
 tags:
-  - ICML 2026
-  - Image Generation
-  - TabDiff
+  - "ICML 2026"
+  - "Image Generation"
+  - "Tabular Diffusion"
+  - "Inter-column Geometric Features"
+  - "Auxiliary Supervision"
+  - "Portable Inductive Bias"
+  - "TabDiff"
 date: 2026-05-08
-content_hash: 22bb474a584a9c64
+content_hash: faef5e73e62376f2
 ---
+
 # Geometry-Aware Tabular Diffusion
 
 **Conference**: ICML 2026  

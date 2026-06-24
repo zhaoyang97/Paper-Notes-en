@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Foundation Models for Causal Inference via Prior-Data Fitted Networks
 description: >-
-  [ICLR 2026][Causal Inference][PFN] CausalFM adapts the "tabular foundation model" PFN to causal inference: it uses Structural Causal Models (SCMs) to generate synthetic priors and pre-trains a Transformer on synthetic data. This enables the model to directly provide Bayesian-style CATE estimates for backdoor, front-door, and instrumental variable settin
+  [ICLR 2026][Causal Inference][PFN] CausalFM adapts the "tabular foundation model" PFN to causal inference: it uses Structural Causal Models (SCMs) to generate synthetic priors and pre-trains a Transformer on synthetic data. This enables the model to directly provide Bayesian-style CATE estimates for backdoor, front-door, and instrumental variable settings via in-context learning without retraining.
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - PFN
-  - CATE
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "PFN"
+  - "CATE"
+  - "Structural Causal Model"
+  - "Bayesian Inference"
+  - "Instrumental Variables"
+  - "Front-door Adjustment"
 date: 2026-05-08
-content_hash: 6309052c9ae1a403
+content_hash: cf60b69e6a1beac2
 ---
+
 # Foundation Models for Causal Inference via Prior-Data Fitted Networks
 
 **Conference**: ICLR 2026  
@@ -114,10 +119,10 @@ where the context data $D_N$ is sampled from the observational distribution, whi
 ## Related Papers
 
 - [\[ICLR 2026\] Stochastic Neural Networks for Causal Inference with Missing Confounders](stochastic_neural_networks_for_causal_inference_with_missing_confounders.md)
-- [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
 - [\[ICLR 2026\] Exploratory Causal Inference in SAEnce](exploratory_causal_inference_in_saence.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
+- [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
 - [\[ICLR 2026\] Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks](frequency-domain_better_than_time-domain_for_causal_structure_recovery_in_dynami.md)
-- [\[ICLR 2026\] Ice Cream Doesn't Cause Drowning: Benchmarking LLMs Against Statistical Pitfalls in Causal Inference](ice_cream_doesnt_cause_drowning_benchmarking_llms_against_statistical_pitfalls_i.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] Through large-scale experiments (15 LLMs × 8 tasks, 72K candidate solutions), this paper finds that excellent LLM optimizers function as "local refiners"—continuously producing frequent incremental improvements and gradually concentrating search within semantic space, rather than generating high-novelty jumpy breakthro
+  [ACL 2026 Findings][LLM Agent][LLM Optimizer] Through large-scale experiments (15 LLMs × 8 tasks, 72K candidate solutions), this paper finds that excellent LLM optimizers function as "local refiners"—continuously producing frequent incremental improvements and gradually concentrating search within semantic space, rather than generating high-novelty jumpy breakthroughs. A key finding is that novelty itself does not predict optimization performance…
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "LLM Optimizer"
+  - "Evolutionary Search"
+  - "Trajectory Analysis"
+  - "Exploration-Exploitation Trade-off"
+  - "Semantic Geometry"
 date: 2026-05-08
-content_hash: 36aff135694b2ece
+content_hash: 256731f841ce165f
 ---
+
 # What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search
 
 **Conference**: ACL 2026 Findings  
@@ -140,8 +146,8 @@ Intuitively, higher novelty should aid exploration and find better solutions. Ho
 - [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](../../AAAI2026/llm_agent/agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
 - [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
 - [\[ACL 2026\] LiTS: A Modular Framework for LLM Tree Search](lits_a_modular_framework_for_llm_tree_search.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](../../ICLR2026/llm_agent/tree_search_for_llm_agent_reinforcement_learning.md)
 - [\[CVPR 2026\] RAAS: LLM Agentic System Architecture Search with GRPO](../../CVPR2026/llm_agent/raas_llm_agentic_system_architecture_search_with_grpo.md)
-- [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
 
 </div>
 

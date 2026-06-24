@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] A Unified Framework for Diffusion Model Unlearning with f-Divergence
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper generalizes MSE/KL alignment in diffusion model concept unlearning to arbitrary $f$-divergence, proposing the f-DMU framework. It identifies that closed-form Hellinger loss is often more stable and better at preserving non-target concepts than MSE.
+  [ICML 2026][Image Generation][Diffusion Models] This paper generalizes MSE/KL alignment in diffusion model concept unlearning to arbitrary $f$-divergence, proposing the f-DMU framework. It identifies that closed-form Hellinger loss is often more stable and better at preserving non-target concepts than MSE.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - Concept Erasure
-  - f-divergence
+  - "ICML 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Concept Erasure"
+  - "Model Unlearning"
+  - "$f$-divergence"
+  - "Hellinger Distance"
 date: 2026-05-08
-content_hash: 33566b5253b5f98d
+content_hash: e6cec40578d95bc5
 ---
+
 # A Unified Framework for Diffusion Model Unlearning with f-Divergence
 
 **Conference**: ICML 2026  
@@ -114,11 +117,11 @@ Van Gogh style erasure on SD 2.1 demonstrates the main effects of closed-form di
 
 ## Related Papers
 
+- [\[ICML 2026\] Forgetting in Diffusion Models: A Unified Framework via KL Divergence and Likelihood Constraints](unlearning_in_diffusion_models_a_unified_framework_with_kl_divergence_and_likeli.md)
 - [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
-- [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](../../ICCV2025/image_generation/holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
-- [\[CVPR 2026\] UniPercept: A Unified Diffusion Model for Generalizable Visual Perception](../../CVPR2026/image_generation/unipercept_a_unified_diffusion_model_for_generalizable_visual_perception.md)
-- [\[ICML 2026\] Quantifying Error Propagation and Model Collapse in Diffusion Models](quantifying_error_propagation_and_model_collapse_in_diffusion_models.md)
-- [\[CVPR 2025\] SVFR: A Unified Framework for Generalized Video Face Restoration](../../CVPR2025/image_generation/svfr_a_unified_framework_for_generalized_video_face_restoration.md)
+- [\[ICML 2026\] UnHype: CLIP-Guided Hypernetworks for Dynamic LoRA Unlearning](unhype_clip-guided_hypernetworks_for_dynamic_lora_unlearning.md)
+- [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](../../ICLR2026/image_generation/continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
+- [\[ICML 2026\] SAEmnesia: Erasing Concepts in Diffusion Models with Supervised Sparse Autoencoders](saemnesia_erasing_concepts_in_diffusion_models_with_supervised_sparse_autoencode.md)
 
 </div>
 

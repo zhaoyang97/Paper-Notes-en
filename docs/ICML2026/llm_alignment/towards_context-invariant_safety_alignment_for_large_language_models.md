@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Context-Invariant Safety Alignment for Large Language Models
 description: >-
-  [ICML 2026][Alignment & RLHF][GRPO] The authors propose AIR (Anchor Invariance Regularization), which treats verifiable prompts as "anchors" and utilizes stop-gradients to pull open-ended variants toward the anchor's performance. Inserted as an auxiliary loss in GRPO, it improves OOD group-level consistency across safety, moral, and mathematical domains
+  [ICML 2026][LLM Alignment][Context invariance] The authors propose AIR (Anchor Invariance Regularization), which treats verifiable prompts as "anchors" and utilizes stop-gradients to pull open-ended variants toward the anchor's performance. Inserted as an auxiliary loss in GRPO, it improves OOD group-level consistency across safety, moral, and mathematical domains by an average of 33.49% and ID by 12.71%.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - GRPO
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Context invariance"
+  - "safety alignment"
+  - "GRPO"
+  - "invariant risk minimization"
+  - "reward hacking"
 date: 2026-05-08
-content_hash: e2cfc5d4a1093eb4
+content_hash: d14fc3a1ab19f9b7
 ---
+
 # Towards Context-Invariant Safety Alignment for Large Language Models
 
 **Conference**: ICML 2026  
@@ -142,11 +147,11 @@ On average, GRPO+AIR improved OOD $\text{Acc}_{\text{group}}$ from 23.05% to 56.
 
 ## Related Papers
 
-- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
-- [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](../../ICLR2026/llm_alignment/guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
-- [\[AAAI 2026\] EASE: Practical and Efficient Safety Alignment for Small Language Models](../../AAAI2026/llm_alignment/ease_practical_and_efficient_safety_alignment_for_small_language_models.md)
-- [\[ICML 2026\] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization](picaco_pluralistic_in-context_value_alignment_of_llms_via_total_correlation_opti.md)
 - [\[ICML 2026\] VALUEFLOW: Toward Pluralistic and Steerable Value-based Alignment in Large Language Models](valueflow_toward_pluralistic_and_steerable_value-based_alignment_in_large_langua.md)
+- [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](../../ICLR2026/llm_alignment/guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
+- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
+- [\[AAAI 2026\] EASE: Practical and Efficient Safety Alignment for Small Language Models](../../AAAI2026/llm_alignment/ease_practical_and_efficient_safety_alignment_for_small_language_models.md)
+- [\[ACL 2025\] SEA: Low-Resource Safety Alignment for Multimodal Large Language Models via Synthetic Embeddings](../../ACL2025/llm_alignment/sea_lowresource_safety_alignment_for_multimodal.md)
 
 </div>
 

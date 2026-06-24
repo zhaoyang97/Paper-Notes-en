@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides a **solvable theoretical model** for deep linear self-attention in in-context linear regression (ICL). By analyzing the joint limit where data dimension, context length, and residual stream width scale proportionally, the authors precisely determine the asymptotic behavior of risk. They reveal that
+  [ICLR 2026][Learning Theory][linear attention] This paper provides a **solvable theoretical model** for deep linear self-attention in in-context linear regression (ICL). By analyzing the joint limit where data dimension, context length, and residual stream width scale proportionally, the authors precisely determine the asymptotic behavior of risk. They reveal that "when depth is useful" depends entirely on the covariance structure of pre-training tasks…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "In-Context Learning"
+  - "Scaling Law"
+  - "linear attention"
+  - "neural scaling laws"
+  - "depth and width"
+  - "solvable models"
 date: 2026-05-08
-content_hash: 24059a239ea337a8
+content_hash: 9caddece33b1ba8c
 ---
+
 # Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time
 
 **Conference**: ICLR 2026  
@@ -147,7 +154,7 @@ Given a fixed compute budget $C=tP^2N^2L$, the compute-optimal width and depth s
 - [\[ICLR 2026\] Intrinsic Entropy of Context Length Scaling in LLMs](intrinsic_entropy_of_context_length_scaling_in_llms.md)
 - [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
 - [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
-- [\[ICLR 2026\] Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime](scaling_laws_and_spectra_of_shallow_neural_networks_in_the_feature_learning_regi.md)
+- [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
 
 </div>
 

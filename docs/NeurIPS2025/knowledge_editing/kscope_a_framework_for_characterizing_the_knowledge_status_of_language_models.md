@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KScope: A Framework for Characterizing the Knowledge Status of Language Models
 description: >-
-  [NeurIPS 2025][Knowledge Editing][knowledge status characterization] This paper proposes a five-category taxonomy of LLM knowledge status (Consistent Correct / Conflicting Correct / Missing / Conflicting Incorrect / Cons…
+  [NeurIPS 2025][Knowledge Editing][knowledge status characterization] This paper proposes a five-category taxonomy of LLM knowledge status (Consistent Correct / Conflicting Correct / Missing / Conflicting Incorrect / Consistent Incorrect) and the KScope hierarchical statistical testing framework. By combining repeated sampling with multi-step hypothesis testing, KScope precisely characterizes the modal structure of an LLM's knowledge for a given question…
 tags:
   - "NeurIPS 2025"
   - "Knowledge Editing"
@@ -12,7 +12,7 @@ tags:
   - "RAG knowledge updating"
   - "LLM reliability"
 date: 2026-05-08
-content_hash: dae4753aa9bf5e07
+content_hash: 848fa21016c365c1
 ---
 
 # KScope: A Framework for Characterizing the Knowledge Status of Language Models
@@ -127,10 +127,10 @@ Across all models, providing gold context significantly increases the proportion
 ## Related Papers
 
 - [\[NeurIPS 2025\] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models](uniedit_a_unified_knowledge_editing_benchmark_for_large_language_models.md)
-- [\[ACL 2026\] Aligning Language Models with Real-time Knowledge Editing](../../ACL2026/knowledge_editing/aligning_language_models_with_real-time_knowledge_editing.md)
-- [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](../../ICML2026/knowledge_editing/revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
-- [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
+- [\[ACL 2025\] Context-Robust Knowledge Editing for Language Models](../../ACL2025/knowledge_editing/context-robust_knowledge_editing_for_language_models.md)
+- [\[ACL 2025\] A General Knowledge Injection Framework for ICD Coding](../../ACL2025/knowledge_editing/a_general_knowledge_injection_framework_for_icd_coding.md)
+- [\[ACL 2025\] Structure-aware Domain Knowledge Injection for Large Language Models](../../ACL2025/knowledge_editing/structure-aware_domain_knowledge_injection_for_large_language_models.md)
+- [\[ACL 2025\] Neuron-Level Sequential Editing for Large Language Models](../../ACL2025/knowledge_editing/neuron-level_sequential_editing_for_large_language_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Task-Aware Data Selection via Proxy-Label Enhanced Distribution Matching for LLM Fine-Tuning
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] Addressing the task of selecting the most relevant instruction data from a large corpus given a small target set, this paper argues that aligning only input features $X$ is insufficient. It proposes reconstructing the problem as joint distribution $P(X,Y)$ alignment by using LLMs to infer **proxy labels** $Y$. This is
+  [ICLR 2026][LLM Pretraining][Task-aware data selection] Addressing the task of selecting the most relevant instruction data from a large corpus given a small target set, this paper argues that aligning only input features $X$ is insufficient. It proposes reconstructing the problem as joint distribution $P(X,Y)$ alignment by using LLMs to infer **proxy labels** $Y$. This is implemented via a four-step pipeline called TADS: "annotation → cluster propagation → LLM scoring/filter…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Task-aware data selection"
+  - "joint distribution alignment"
+  - "proxy labels"
+  - "open-set label noise"
+  - "incremental sampling"
 date: 2026-05-08
-content_hash: e1a5beed2c656076
+content_hash: a016a363d9cc071a
 ---
+
 # Task-Aware Data Selection via Proxy-Label Enhanced Distribution Matching for LLM Fine-Tuning
 
 **Conference**: ICLR 2026  

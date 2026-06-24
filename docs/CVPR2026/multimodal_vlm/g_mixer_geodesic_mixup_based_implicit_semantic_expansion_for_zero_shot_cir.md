@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][composed image retrieval] Ours proposes G-MIXER, which achieves training-free state-of-the-art (SOTA) performance in zero-shot composed image retrieval. It utilizes Geodesic Mixup for implicit semantic expansion (expanding the retrieval range along a hypersphere with varying mixup ratios) and Explicit Semantic Re-ranking (filtering noisy candid
+  [CVPR 2026][Multimodal VLM][composed image retrieval] Ours proposes G-MIXER, which achieves training-free state-of-the-art (SOTA) performance in zero-shot composed image retrieval. It utilizes Geodesic Mixup for implicit semantic expansion (expanding the retrieval range along a hypersphere with varying mixup ratios) and Explicit Semantic Re-ranking (filtering noisy candidates using MLLM-generated attributes).
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - composed image retrieval
-  - zero-shot
-  - geodesic mixup
-  - semantic expansion
-  - re-ranking
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "composed image retrieval"
+  - "zero-shot"
+  - "geodesic mixup"
+  - "semantic expansion"
+  - "re-ranking"
 date: 2026-05-08
-content_hash: cb7b55d903f35d7f
+content_hash: f817ba9a0318d108
 ---
+
 # G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -123,9 +124,9 @@ Ours achieves SOTA on multiple ZS-CIR benchmarks.
 
 - [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
 - [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
-- [\[CVPR 2026\] Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval](air-know_arbiter-calibrated_knowledge-internalizing_robust_network_for_composed_.md)
-- [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
 - [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
+- [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)
 
 </div>
 

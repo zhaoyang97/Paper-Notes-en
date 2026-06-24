@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AdaSpark: Adaptive Sparsity for Efficient Long-Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][long video] Ours proposes AdaSpark, which reduces long-video processing FLOPs by up to 57% while maintaining performance through 3D spatiotemporal cube partitioning and two synergistic adaptive sparsity mechanisms: cube-level attention selection and token-level FFN selection.
+  [CVPR 2026 Highlight][Video Understanding][long video] Ours proposes AdaSpark, which reduces long-video processing FLOPs by up to 57% while maintaining performance through 3D spatiotemporal cube partitioning and two synergistic adaptive sparsity mechanisms: cube-level attention selection and token-level FFN selection.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - long video
-  - adaptive sparsity
-  - Video-LLM
-  - efficient inference
-  - 3D cube
+  - "CVPR 2026 Highlight"
+  - "Video Understanding"
+  - "long video"
+  - "adaptive sparsity"
+  - "Video-LLM"
+  - "efficient inference"
+  - "3D cube"
 date: 2026-05-08
-content_hash: ae008dc5a61db0ec
+content_hash: ca5aa839133e379c
 ---
+
 # AdaSpark: Adaptive Sparsity for Efficient Long-Video Understanding
 
 **Conference**: CVPR 2026 Highlight  
@@ -126,10 +127,10 @@ The sparsity strategy is applied to Qwen2.5-VL with minor fine-tuning for adapta
 ## Related Papers
 
 - [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[NeurIPS 2025\] AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](../../NeurIPS2025/video_understanding/adavideorag_omnicontextual_adaptive_retrievalaugmented_effic.md)
+- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](../../ICLR2026/video_understanding/focus_efficient_keyframe_selection_for_long_video_understanding.md)
+- [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)
 - [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
-- [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
 
 </div>
 

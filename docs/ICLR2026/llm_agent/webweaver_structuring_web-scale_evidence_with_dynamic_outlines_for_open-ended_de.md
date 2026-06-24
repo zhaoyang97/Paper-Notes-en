@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] WebWeaver utilizes a "Planner + Writer" dual-agent system to simulate the human research process: the Planner iteratively optimizes a cited outline during searching, while the Writer performs "evidence retrieval-writing-pruning" section by section. It achieves SOTA on DeepResearch Bench, DeepConsult, and DeepResearchGy
+  [ICLR 2026][LLM Agent][Open-Ended Deep Research] WebWeaver utilizes a "Planner + Writer" dual-agent system to simulate the human research process: the Planner iteratively optimizes a cited outline during searching, while the Writer performs "evidence retrieval-writing-pruning" section by section. It achieves SOTA on DeepResearch Bench, DeepConsult, and DeepResearchGym, with a citation accuracy of up to 92%.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Open-Ended Deep Research"
+  - "Dual-Agent"
+  - "Dynamic Outline"
+  - "Memory Bank"
+  - "Citation Anchoring"
 date: 2026-05-08
-content_hash: 3ec5c48906f5cca2
+content_hash: af162f11aa37281a
 ---
+
 # WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,10 @@ Outline optimization distribution: 1 round (15%), 2 rounds (59%), 3 rounds (21%)
 ## Related Papers
 
 - [\[ICLR 2026\] Open Data Synthesis for Deep Research](open_data_synthesis_for_deep_research.md)
+- [\[ICLR 2026\] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents](darwin_gödel_machine_open-ended_evolution_of_self-improving_agents.md)
 - [\[ICLR 2026\] ChinaTravel: An Open-Ended Travel Planning Benchmark with Compositional Constraint Validation for Language Agents](chinatravel_an_open-ended_travel_planning_benchmark_with_compositional_constrain.md)
 - [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](a_benchmark_for_deep_information_synthesis.md)
 - [\[ICLR 2026\] Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs](deep_ignorance_filtering_pretraining_data_builds_tamper-resistant_safeguards_int.md)
-- [\[ICLR 2026\] EXP-Bench: Can AI Conduct AI Research Experiments?](exp-bench_can_ai_conduct_ai_research_experiments.md)
 
 </div>
 

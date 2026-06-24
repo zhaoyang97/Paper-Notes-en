@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] HARP: Hallucination Detection via Reasoning Subspace Projection
 description: >-
-  [ICLR 2026][Hallucination Detection][SVD] HARP decomposes the LLM hidden state space into "Semantic Subspace ⊕ Reasoning Subspace." By performing SVD on the Unembedding layer to identify basis vectors for the reasoning subspace and projecting hidden states onto this subspace (occupying only ~5% of dimensions) as a hallucination detection feature, it pushes AUR
+  [ICLR 2026][Hallucination Detection][Reasoning subspace] HARP decomposes the LLM hidden state space into "Semantic Subspace ⊕ Reasoning Subspace." By performing SVD on the Unembedding layer to identify basis vectors for the reasoning subspace and projecting hidden states onto this subspace (occupying only ~5% of dimensions) as a hallucination detection feature, it pushes AUROC to 92.8% on TriviaQA (7.5 percentage points higher than the previous best).
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - SVD
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Reasoning subspace"
+  - "SVD"
+  - "Hidden state decomposition"
+  - "Unembedding layer"
 date: 2026-05-08
-content_hash: 3acb8f4af80be0fe
+content_hash: 2c2acac916890b0f
 ---
+
 # HARP: Hallucination Detection via Reasoning Subspace Projection
 
 **Conference**: ICLR 2026  
@@ -141,8 +145,8 @@ Removing the projection or using random projections lead to significant performa
 
 - [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
 - [\[ICML 2026\] Harnessing Reasoning Trajectories for Hallucination Detection via Answer-agreement Representation Shaping](../../ICML2026/hallucination/harnessing_reasoning_trajectories_for_hallucination_detection_via_answer-agreeme.md)
-- [\[ICLR 2026\] BARREL: Boundary-Aware Reasoning for Factual and Reliable LRMs](barrel_boundary-aware_reasoning_for_factual_and_reliable_lrms.md)
 - [\[ICLR 2026\] HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs](halluguard_demystifying_data-driven_and_reasoning-driven_hallucinations_in_llms.md)
+- [\[ICLR 2026\] BARREL: Boundary-Aware Reasoning for Factual and Reliable LRMs](barrel_boundary-aware_reasoning_for_factual_and_reliable_lrms.md)
 - [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](enhancing_hallucination_detection_through_noise_injection.md)
 
 </div>

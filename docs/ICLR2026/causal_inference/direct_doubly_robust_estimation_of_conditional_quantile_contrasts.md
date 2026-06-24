@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Direct Doubly Robust Estimation of Conditional Quantile Contrasts
 description: >-
-  [ICLR 2026][Causal Inference][heterogeneous treatment effect] Ours proposes the first **direct estimation method** for the Conditional Quantile Comparator (CQC). By explicitly parameterizing the CQC and combining it with doubly robust gradient descent, the method maintains theoretical double robustness while consistently outperforming existing indirect inversion methods in estima
+  [ICLR 2026][Causal Inference][heterogeneous treatment effect] Ours proposes the first **direct estimation method** for the Conditional Quantile Comparator (CQC). By explicitly parameterizing the CQC and combining it with doubly robust gradient descent, the method maintains theoretical double robustness while consistently outperforming existing indirect inversion methods in estimation accuracy, interpretability, and computational efficiency in experiments.
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - heterogeneous treatment effect
-  - conditional quantile comparator
-  - doubly robust estimation
-  - quantile treatment effect
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "heterogeneous treatment effect"
+  - "conditional quantile comparator"
+  - "doubly robust estimation"
+  - "quantile treatment effect"
 date: 2026-05-08
-content_hash: 70f1b4313eaa491d
+content_hash: 6a48ef81a7abe492
 ---
+
 # Direct Doubly Robust Estimation of Conditional Quantile Contrasts
 
 **Conference**: ICLR 2026  
@@ -159,9 +160,9 @@ Sensitivity to nuisance parameter estimation error (adding different levels of b
 
 - [\[ICLR 2026\] Overlap-Adaptive Regularization for Conditional Average Treatment Effect Estimation](overlap-adaptive_regularization_for_conditional_average_treatment_effect_estimat.md)
 - [\[ICLR 2026\] IGC-Net for Conditional Average Potential Outcome Estimation Over Time](igc-net_for_conditional_average_potential_outcome_estimation_over_time.md)
+- [\[ICLR 2026\] Causal Discovery via Quantile Partial Effect](causal_discovery_via_quantile_partial_effect.md)
+- [\[ICML 2025\] Doubly Protected Estimation for Survival Outcomes Utilizing External Controls for Randomized Clinical Trials](../../ICML2025/causal_inference/doubly_protected_estimation_for_survival_outcomes_utilizing_external_controls_fo.md)
 - [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](counterfactual_explanations_on_robust_perceptual_geodesics.md)
-- [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](learning_robust_intervention_representations_with_delta_embeddings.md)
-- [\[ICLR 2026\] Matching without Group Barrier for Heterogeneous Treatment Effect Estimation](matching_without_group_barrier_for_heterogeneous_treatment_effect_estimation.md)
 
 </div>
 

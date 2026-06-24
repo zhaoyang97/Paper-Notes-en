@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SelfHVD: Self-Supervised Handheld Video Deblurring
 description: >-
-  [CVPR 2026][Image Restoration][Self-Supervised Learning] SelfHVD utilizes naturally existing sharp frames in handheld videos as supervisory signals. Through Self-Enriched Video Deblurring (SEVD) for constructing high-quality training pairs and Self-Constrained Spatial Consistency Maintenance (SCSCM) to prevent displacement shifts, it achieves handheld video deblurring withou
+  [CVPR 2026][Image Restoration][Video deblurring] SelfHVD utilizes naturally existing sharp frames in handheld videos as supervisory signals. Through Self-Enriched Video Deblurring (SEVD) for constructing high-quality training pairs and Self-Constrained Spatial Consistency Maintenance (SCSCM) to prevent displacement shifts, it achieves handheld video deblurring without paired data.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Video deblurring"
+  - "self-supervised learning"
+  - "handheld devices"
+  - "OIS"
+  - "self-augmented training"
 date: 2026-05-08
-content_hash: 06ab0e2a3924002b
+content_hash: 0449355bd71d8919
 ---
+
 # SelfHVD: Self-Supervised Handheld Video Deblurring
 
 **Conference**: CVPR 2026  
@@ -120,7 +125,7 @@ The total loss consists of three $L_1$ terms: the mask-weighted reconstruction l
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -128,7 +133,7 @@ The total loss consists of three $L_1$ terms: the mask-weighted reconstruction l
 - [\[CVPR 2026\] LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising](lf-bvn_blind-view_network_for_self-supervised_light_field_denoising.md)
 - [\[CVPR 2026\] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising](next-scale_prediction_a_self-supervised_approach_for_real-world_image_denoising.md)
 - [\[CVPR 2026\] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration](self-supervised_dynamic_heterogeneous_degradation_modeling_for_unified_zero-shot.md)
-- [\[CVPR 2026\] Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising](convexity-aware_noise_calibration_a_self-supervised_framework_for_noise-level-un.md)
+- [\[CVPR 2026\] SGDE: Self-supervised Geometry Degradation Estimation Framework for Coded Aperture Compressive Spectral Imaging](sgde_self-supervised_geometry_degradation_estimation_framework_for_coded_apertur.md)
 
 </div>
 

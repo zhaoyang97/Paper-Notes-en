@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Coloring the Noise: Adversarial Sobolev Alignment for Faithful Image Super Resolution
 description: >-
-  [ICML 2026][Image Restoration][Image Super-Resolution] ASASR achieves the optimal balance between perceptual quality and structural fidelity in super-resolution by replacing the Flow Matching noise prior from isotropic Gaussian to Sobolev spectral coloring noise, combined with adversarial manifold guidance to generate hard negative samples, constructing the AS-DPO framewor
+  [ICML 2026][Image Restoration][Image Super-Resolution] ASASR achieves the optimal balance between perceptual quality and structural fidelity in super-resolution by replacing the Flow Matching noise prior from isotropic Gaussian to Sobolev spectral coloring noise, combined with adversarial manifold guidance to generate hard negative samples, constructing the AS-DPO framework.
 tags:
-  - ICML 2026
-  - Image Restoration
-  - Image Super-Resolution
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Image Super-Resolution"
+  - "Sobolev Space"
+  - "DPO Alignment"
+  - "Adversarial Learning"
+  - "Spectral Consistency"
 date: 2026-05-08
-content_hash: 43c4eac61db0d873
+content_hash: e94f090a6d227b8f
 ---
+
 # Coloring the Noise: Adversarial Sobolev Alignment for Faithful Image Super Resolution
 
 **Conference**: ICML 2026  
@@ -141,11 +146,11 @@ Downstream task evaluation (OCR / Object Detection / Instance Segmentation / Sem
 
 ## Related Papers
 
-- [\[CVPR 2026\] Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization](../../CVPR2026/image_restoration/spectral_super-resolution_via_adversarial_unfolding_and_data-driven_spectrum_reg.md)
 - [\[ICLR 2026\] Are Deep Speech Denoising Models Robust to Adversarial Noise?](../../ICLR2026/image_restoration/are_deep_speech_denoising_models_robust_to_adversarial_noise.md)
+- [\[CVPR 2026\] Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization](../../CVPR2026/image_restoration/spectral_super-resolution_via_adversarial_unfolding_and_data-driven_spectrum_reg.md)
+- [\[ICLR 2026\] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution](../../ICLR2026/image_restoration/improved_adversarial_diffusion_compression_for_real-world_video_super-resolution.md)
 - [\[CVPR 2025\] AdcSR: Adversarial Diffusion Compression for Real-World Image Super-Resolution](../../CVPR2025/image_restoration/adversarial_diffusion_compression_for_real-world_image_super-resolution.md)
 - [\[ICML 2026\] Semi-Supervised Neural Super-Resolution for Mesh-Based Simulations](semi-supervised_neural_super-resolution_for_mesh-based_simulations.md)
-- [\[CVPR 2026\] CASR: A Robust Cyclic Framework for Arbitrary Large-Scale Super-Resolution with Distribution Alignment and Self-Similarity Awareness](../../CVPR2026/image_restoration/casr_a_robust_cyclic_framework_for_arbitrary_large-scale_super-resolution_with_d.md)
 
 </div>
 

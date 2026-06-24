@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Model Selection in VLM Through the Lens of Gromov-Wasserstein Distance
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the perennial challenge of "which vision encoder to choose for VLM," this paper systematically validates that traditional intuitions—selecting the largest model or the one with the highest zero-shot accuracy—are nearly uncorrelated with final VLM performance. Instead, it proposes using **Gromov-Wasserstein (
+  [CVPR 2026 (Highlight)][Multimodal VLM][Visual Encoder Selection] Addressing the perennial challenge of "which vision encoder to choose for VLM," this paper systematically validates that traditional intuitions—selecting the largest model or the one with the highest zero-shot accuracy—are nearly uncorrelated with final VLM performance. Instead, it proposes using **Gromov-Wasserstein (GW) distance** to measure the "structural similarity" between visual representations and LLM t…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026 (Highlight)"
+  - "Multimodal VLM"
+  - "Visual Encoder Selection"
+  - "Gromov-Wasserstein Distance"
+  - "Cross-modal Structural Similarity"
+  - "Training-free Evaluation"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: 3117e0a253dcdb98
+content_hash: 683a6ffffbe66b52
 ---
+
 # Rethinking Model Selection in VLM Through the Lens of Gromov-Wasserstein Distance
 
 **Conference**: CVPR 2026 (Highlight)  
@@ -158,11 +164,11 @@ The paper does not use traditional "component on/off" ablations but rather relie
 
 ## Related Papers
 
-- [\[ICLR 2026\] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs](../../ICLR2026/multimodal_vlm/through_the_lens_of_contrast_self-improving_visual_reasoning_in_vlms.md)
 - [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
+- [\[ICLR 2026\] Mordal: Automated Pretrained Model Selection for Vision Language Models](../../ICLR2026/multimodal_vlm/mordal_automated_pretrained_model_selection_for_vision_language_models.md)
 - [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
-- [\[CVPR 2026\] Beyond Graph Model: Reliable VLM Fine-Tuning via Random Graph Adapter](beyond_graph_model_reliable_vlm_fine-tuning_via_random_graph_adapter.md)
 - [\[NeurIPS 2025\] Metacognitive Sensitivity for Test-Time Dynamic Model Selection](../../NeurIPS2025/multimodal_vlm/metacognitive_sensitivity_for_test-time_dynamic_model_selection.md)
+- [\[ICML 2025\] Vision-Language Model Selection and Reuse for Downstream Adaptation](../../ICML2025/multimodal_vlm/vision-language_model_selection_and_reuse_for_downstream_adaptation.md)
 
 </div>
 

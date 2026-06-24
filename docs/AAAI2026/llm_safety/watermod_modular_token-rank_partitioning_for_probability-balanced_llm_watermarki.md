@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] WaterMod: Modular Token-Rank Partitioning for Probability-Balanced LLM Watermarking
 description: >-
-  [AAAI 2026][LLM Safety][LLM watermarking] This paper proposes WaterMod, an LLM text watermarking method based on modular arithmetic ($\text{rank} \bmod k$) that partitions the vocabulary into modular residue classes afte…
+  [AAAI 2026 Oral][LLM Safety][LLM watermarking] This paper proposes WaterMod, an LLM text watermarking method based on modular arithmetic ($\text{rank} \bmod k$) that partitions the vocabulary into modular residue classes after sorting tokens by probability. Under both zero-bit ($k=2$) and multi-bit ($k>2$) watermarking settings, WaterMod achieves high detection rates and low quality degradation within a unified framework, requiring no external thesaurus or hashing tricks.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Safety"
   - "LLM watermarking"
   - "text watermarking"
@@ -12,7 +12,7 @@ tags:
   - "zero-bit/multi-bit watermarking"
   - "probability balancing"
 date: 2026-05-08
-content_hash: da977e978b783790
+content_hash: 16c1453248be321b
 ---
 
 # WaterMod: Modular Token-Rank Partitioning for Probability-Balanced LLM Watermarking
@@ -204,9 +204,9 @@ After paraphrasing, the z-score drops from 14.89 to 9.95 but remains far above t
 
 - [\[ACL 2026\] SSG: Logit-Balanced Vocabulary Partitioning for LLM Watermarking](../../ACL2026/llm_safety/ssg_logit-balanced_vocabulary_partitioning_for_llm_watermarking.md)
 - [\[AAAI 2026\] ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs](alter_asymmetric_lora_for_token-entropy-guided_unlearning_of.md)
-- [\[ICML 2026\] Optimizing Token Choice for Code Watermarking: An RL Approach](../../ICML2026/llm_safety/optimizing_token_choice_for_code_watermarking_an_rl_approach.md)
-- [\[AAAI 2026\] Democratizing LLM Efficiency: From Hyperscale Optimizations to Universal Deployability](democratizing_llm_efficiency_from_hyperscale_optimizations_to_universal_deployab.md)
-- [\[AAAI 2026\] LLM Targeted Underperformance Disproportionately Impacts Vulnerable Users](llm_targeted_underperformance_disproportionately_impacts_vulnerable_users.md)
+- [\[ICLR 2026\] Dual-Space Smoothness for Robust and Balanced LLM Unlearning](../../ICLR2026/llm_safety/dual-space_smoothness_for_robust_and_balanced_llm_unlearning.md)
+- [\[ICLR 2026\] Watermarking Diffusion Language Models](../../ICLR2026/llm_safety/watermarking_diffusion_language_models.md)
+- [\[ICLR 2026\] Auditing Black-Box LLM APIs with a Rank-Based Uniformity Test](../../ICLR2026/llm_safety/auditing_black-box_llm_apis_with_a_rank-based_uniformity_test.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the "unrecoverable scale in monocular metric depth when camera intrinsics are unavailable during both training and inference," this paper observes that while RGB remains nearly invariant when focal length and scene depth change couplingly, the **spectral statistics of edges shift systematically**. The author
+  [CVPR 2026][3D Vision][Monocular metric depth] Addressing the "unrecoverable scale in monocular metric depth when camera intrinsics are unavailable during both training and inference," this paper observes that while RGB remains nearly invariant when focal length and scene depth change couplingly, the **spectral statistics of edges shift systematically**. The authors propose the Spectral Quantile Estimator (SQE) to extract a scalar score as a scale proxy from the Fourier spect…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular metric depth"
+  - "Camera-intrinsic-free"
+  - "Edge spectral cues"
+  - "Frequency domain calibration"
+  - "Zero-shot generalization"
 date: 2026-05-08
-content_hash: c8dd1e8f532aa410
+content_hash: b6c871674de9476d
 ---
+
 # MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -132,16 +138,15 @@ Compared to Metric3D v2: iBIMS-1 A.Rel decreased by 53.0% and RMS by 41.9%; ETH3
 
 ## Related Papers
 
+- [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](unidac_universal_metric_depth_estimation_for_any_camera.md)
+- [\[CVPR 2026\] Radar-Guided Polynomial Fitting for Metric Depth Estimation](radar-guided_polynomial_fitting_for_metric_depth_estimation.md)
+- [\[CVPR 2026\] The Midas Touch for Metric Depth](the_midas_touch_for_metric_depth.md)
 - [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
-- [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
+- [\[CVPR 2026\] Seeing Depth Through Frequency and Motion: A Progressive Training Paradigm for Monocular Depth Estimation](seeing_depth_through_frequency_and_motion_a_progressive_training_paradigm_for_mo.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](unidac_universal_metric_depth_estimation_for_any_camera.md)

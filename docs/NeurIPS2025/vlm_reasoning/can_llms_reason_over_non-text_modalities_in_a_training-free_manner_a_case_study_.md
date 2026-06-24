@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][In-context representation learning] This paper proposes In-Context Representation Learning (ICRL), the first training-free framework that injects representations from non-text-modality foun…
+  [NeurIPS 2025][VLM Reasoning][In-context representation learning] This paper proposes In-Context Representation Learning (ICRL), the first training-free framework that injects representations from non-text-modality foundation models (FMs) into a text-only LLM for few-shot reasoning. Two strategies are introduced: PCA-based text-level injection and optimal transport (OT)-based embedding alignment, enabling cross-modal knowledge utilization without any parameter updates.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "In-context representation learning"
   - "training-free multimodal reasoning"
   - "optimal transport alignment"
   - "foundation models"
   - "few-shot learning"
 date: 2026-05-08
-content_hash: 0906ad4672025f04
+content_hash: a0c62975b9dd4d12
 ---
 
 # Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning
@@ -198,11 +198,11 @@ The paper addresses a novel problem formulation (training-free cross-modal reaso
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning](vt-fsl_bridging_vision_and_text_with_llms_for_few-shot_learning.md)
-- [\[NeurIPS 2025\] What Can RL Bring to VLA Generalization? An Empirical Study](what_can_rl_bring_to_vla_generalization_an_empirical_study.md)
-- [\[NeurIPS 2025\] Training-free Online Video Step Grounding](training-free_online_video_step_grounding.md)
-- [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](../../ICML2026/multimodal_vlm/calibrated_multimodal_representation_learning_with_missing_modalities.md)
-- [\[NeurIPS 2025\] In-Context Compositional Learning via Sparse Coding Transformer](in-context_compositional_learning_via_sparse_coding_transformer.md)
+- [\[NeurIPS 2025\] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?](can_multi-modal_llms_provide_live_step-by-step_task_guidance.md)
+- [\[ICML 2025\] Reasoning Limitations of Multimodal Large Language Models. A Case Study of Bongard Problems](../../ICML2025/vlm_reasoning/reasoning_limitations_of_multimodal_large_language_models_a_case_study_of_bongar.md)
+- [\[ICCV 2025\] Training-Free Personalization via Retrieval and Reasoning on Fingerprints](../../ICCV2025/vlm_reasoning/training-free_personalization_via_retrieval_and_reasoning_on_fingerprints.md)
+- [\[CVPR 2025\] Spatial Reasoning is Not a Free Lunch: A Controlled Study on LLaVA](../../CVPR2025/vlm_reasoning/spatial_reasoning_is_not_a_free_lunch_a_controlled_study_on_llava.md)
+- [\[ICML 2026\] Find, Fix, Reason: Context Repair for Video Reasoning](../../ICML2026/vlm_reasoning/find_fix_reason_context_repair_for_video_reasoning.md)
 
 </div>
 

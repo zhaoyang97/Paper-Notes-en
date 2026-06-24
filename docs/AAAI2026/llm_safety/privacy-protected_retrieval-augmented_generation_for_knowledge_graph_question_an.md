@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering
 description: >-
-  [AAAI 2026][LLM Safety][Privacy-preserving RAG] This work is the first to explore privacy-protected RAG for Knowledge Graph Question Answering (KGQA). It proposes ARoG (Abstraction Reasoning on Graph)…
+  [AAAI 2026][LLM Safety][Privacy-preserving RAG] This work is the first to explore privacy-protected RAG for Knowledge Graph Question Answering (KGQA). It proposes ARoG (Abstraction Reasoning on Graph), a framework that employs two strategies—relation-centric abstraction and structure-oriented abstraction—to enable effective retrieval and utilization of knowledge graphs for question answering even when entities are anonymized (replaced with semantically meaningless MIDs).
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Abstract Reasoning"
   - "LLM Privacy"
 date: 2026-05-08
-content_hash: 81a581bd3ff4bcbb
+content_hash: a4062f97893743b7
 ---
 
 # Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering
@@ -188,11 +188,11 @@ ARoG's advantage is especially pronounced under the **#Filtered setting** (quest
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fine-Grained Privacy Extraction from Retrieval-Augmented Generation Systems by Exploiting Knowledge Asymmetry](../../ICLR2026/llm_safety/fine-grained_privacy_extraction_from_retrieval-augmented_generation_systems_by_e.md)
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](../../ACL2026/llm_safety/knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
+- [\[ICLR 2026\] Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval](../../ICLR2026/llm_safety/pisces_cryptography-based_private_retrieval-augmented_generation_with_dual-path_.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](../../ACL2026/llm_safety/differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 - [\[ACL 2026\] Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation](../../ACL2026/llm_safety/beyond_explicit_refusals_soft-failure_attacks_on_retrieval-augmented_generation.md)
-- [\[AAAI 2026\] PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration](prism_privacy-aware_routing_for_adaptive_cloud-edge_llm_inference_via_semantic_s.md)
-- [\[NeurIPS 2025\] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation](../../NeurIPS2025/llm_safety/imagesentinel_protecting_visual_datasets_from_unauthorized_retrieval-augmented_i.md)
 
 </div>
 

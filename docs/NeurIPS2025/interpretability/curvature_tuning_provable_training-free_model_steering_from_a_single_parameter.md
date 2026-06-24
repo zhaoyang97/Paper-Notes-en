@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Curvature Tuning: Provable Training-free Model Steering From a Single Parameter
 description: >-
-  [NeurIPS 2025][Interpretability][curvature tuning] This paper proposes Curvature Tuning (CT), which provably modulates the curvature of a model's decision boundary by injecting a single hyperparameter $\beta$ into the ac…
+  [NeurIPS 2025][Interpretability][curvature tuning] This paper proposes Curvature Tuning (CT), which provably modulates the curvature of a model's decision boundary by injecting a single hyperparameter $\beta$ into the activation function. CT improves generalization and robustness without modifying weights, and as a fine-tuning method requires far fewer parameters than LoRA rank 1.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "parameter-efficient fine-tuning"
   - "decision boundary"
 date: 2026-05-08
-content_hash: 3c95dfffe97db509
+content_hash: ff82031974c81d94
 ---
 
 # Curvature Tuning: Provable Training-free Model Steering From a Single Parameter
@@ -137,9 +137,9 @@ S-CT significantly improves robustness without any adversarial training.
 
 - [\[NeurIPS 2025\] Steering Information Utility in Key-Value Memory for Language Model Post-Training](steering_information_utility_in_key-value_memory_for_language_model_post-trainin.md)
 - [\[AAAI 2026\] GateRA: Token-Aware Modulation for Parameter-Efficient Fine-Tuning](../../AAAI2026/interpretability/gatera_token-aware_modulation_for_parameter-efficient_fine-tuning.md)
-- [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
-- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
+- [\[ICLR 2026\] An Information-Theoretic Parameter-Free Bayesian Framework for Probing Labeled Dependency Trees from Attention Score](../../ICLR2026/interpretability/an_information-theoretic_parameter-free_bayesian_framework_for_probing_labeled_d.md)
 - [\[CVPR 2026\] Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events](../../CVPR2026/interpretability/cut_to_the_chase_training-free_multimodal_summarization_via_chain-of-events.md)
+- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][SMPL-X] Inspired by the Turing Test, the authors propose the "Motion Turing Test" (MTT), which evaluates whether a human can distinguish between pose sequences of humans and humanoid robots based solely on motion (stripping away appearance). They release the HHMotion dataset containing 1,000 segments across 15 action categorie
+  [CVPR 2026][Robotics][Humanoid Robot] Inspired by the Turing Test, the authors propose the "Motion Turing Test" (MTT), which evaluates whether a human can distinguish between pose sequences of humans and humanoid robots based solely on motion (stripping away appearance). They release the HHMotion dataset containing 1,000 segments across 15 action categories from 11 robot types and humans (annotated with 0–5 human-likeness scores). A regression baseline, PTR-Net…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - SMPL-X
+  - "CVPR 2026"
+  - "Robotics"
+  - "Humanoid Robot"
+  - "Human-Likeness Evaluation"
+  - "Motion Turing Test"
+  - "SMPL-X"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 08c4fee0113325c5
+content_hash: f6c86a20f8853ecb
 ---
+
 # Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots
 
 **Conference**: CVPR 2026  
@@ -153,15 +158,15 @@ Ablation of PTR-Net components (Table 4):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
+- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
 - [\[CVPR 2026\] Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control](iterative_closed-loop_motion_synthesis_for_scaling_the_capabilities_of_humanoid_.md)
+- [\[ICLR 2026\] From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance](../../ICLR2026/robotics/from_language_to_locomotion_retargeting-free_humanoid_control_via_motion_latent_.md)
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](../../NeurIPS2025/robotics/adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
-- [\[CVPR 2026\] Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control](do_you_have_freestyle_expressive_humanoid_locomotion_via_audio_control.md)
-- [\[CVPR 2026\] Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains](gallant_voxel_grid-based_humanoid_locomotion_and_local-navigation_across_3-d_con.md)
 
 </div>
 

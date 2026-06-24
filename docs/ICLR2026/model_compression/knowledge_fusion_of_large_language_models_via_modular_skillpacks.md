@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Knowledge Fusion of Large Language Models Via Modular Skillpacks
 description: >-
-  [ICLR 2026][Model Compression][knowledge grafting] Ours proposes GraftLLM—extracting the capabilities of heterogeneous source models into compact and transferable "SkillPacks" (modular skill packages). By storing parameter increments through a module-aware adaptive compression strategy, it supports knowledge transfer, heterogeneous model fusion, and non-forgetting cont
+  [ICLR 2026][Model Compression][knowledge grafting] Ours proposes GraftLLM—extracting the capabilities of heterogeneous source models into compact and transferable "SkillPacks" (modular skill packages). By storing parameter increments through a module-aware adaptive compression strategy, it supports knowledge transfer, heterogeneous model fusion, and non-forgetting continual learning, significantly outperforming existing PEFT and parameter fusion methods across multiple scenar…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - knowledge grafting
-  - SkillPack
-  - heterogeneous model fusion
-  - continual learning
-  - delta compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "knowledge grafting"
+  - "SkillPack"
+  - "heterogeneous model fusion"
+  - "continual learning"
+  - "delta compression"
 date: 2026-05-08
-content_hash: f9cb2a6228263b74
+content_hash: f65b9a9535b1e98f
 ---
+
 # Knowledge Fusion of Large Language Models Via Modular Skillpacks
 
 **Conference**: ICLR 2026  
@@ -172,9 +173,9 @@ This paper integrates research from three directions: **Knowledge Distillation**
 
 - [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](knowledge_distillation_for_large_language_models_through_residual_learning.md)
 - [\[ICLR 2026\] S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion](s2r-hdr_a_large-scale_rendered_dataset_for_hdr_fusion.md)
+- [\[ICLR 2026\] Entropy-Based Block Pruning for Efficient Large Language Models](entropy-based_block_pruning_for_efficient_large_language_models.md)
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](distillation_of_large_language_models_via_concrete_score_matching.md)
 - [\[ICLR 2026\] MoSA: Mosaic Shared Adaptation of Large Language Models](mosa_mosaic_shared_adaptation_of_large_language_models.md)
-- [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
 
 </div>
 

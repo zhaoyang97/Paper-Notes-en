@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PhysInOne: Visual Physics Learning and Reasoning in One Suite
 description: >-
-  [CVPR 2026][Multimodal VLM][World Models] PhysInOne is a large-scale synthetic dataset containing $153,810$ dynamic 3D scenes and 2 million annotated videos. It covers 71 fundamental physical phenomena across mechanics, optics, fluid dynamics, and magnetism, establishing a new benchmark for physics-aware world models.
+  [CVPR 2026][VLM Reasoning][Physics Learning] PhysInOne is a large-scale synthetic dataset containing $153,810$ dynamic 3D scenes and 2 million annotated videos. It covers 71 fundamental physical phenomena across mechanics, optics, fluid dynamics, and magnetism, establishing a new benchmark for physics-aware world models.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - World Models
-  - Video Generation
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Physics Learning"
+  - "Synthetic Dataset"
+  - "World Models"
+  - "Video Generation"
+  - "Physics Reasoning"
 date: 2026-05-08
-content_hash: 3d2455562fe9ded7
+content_hash: f59597ad1f758416
 ---
+
 # PhysInOne: Visual Physics Learning and Reasoning in One Suite
 
 **Conference**: CVPR 2026  
@@ -137,10 +141,10 @@ PhysInOne is a dataset rather than a model. The paper demonstrates fine-tuning e
 ## Related Papers
 
 - [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/multimodal_vlm/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
-- [\[CVPR 2026\] One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework](one_patch_to_caption_them_all_a_unified_zero-shot_captioning_framework.md)
-- [\[AAAI 2026\] ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration](../../AAAI2026/multimodal_vlm/clearair_a_human-visual-perception-inspired_all-in-one_image_restoration.md)
+- [\[CVPR 2026\] Conan: Progressive Learning to Reason Like a Detective over Multi-Scale Visual Evidence](conan_progressive_learning_to_reason_like_a_detective_over_multi-scale_visual_ev.md)
+- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/vlm_reasoning/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
+- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/vlm_reasoning/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
+- [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
 
 </div>
 

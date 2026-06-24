@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Neologism Learning for Controllability and Self-Verbalization
 description: >-
-  [ICLR 2026][LLM (Other)][neologism learning] By adding a "neologism" word embedding to a frozen LLM and training only this embedding to fit examples of a specific concept, one can precisely control model behavior (short, flattery, wrong answers, etc.). Conversely, the model can "self-verbalize" the meaning of this new word in natural language, revealing "machine-
+  [ICLR 2026][LLM (Other)][neologism learning] By adding a "neologism" word embedding to a frozen LLM and training only this embedding to fit examples of a specific concept, one can precisely control model behavior (short, flattery, wrong answers, etc.). Conversely, the model can "self-verbalize" the meaning of this new word in natural language, revealing "machine-only synonyms"—terms that seem irrelevant to humans but stably manipulate machine behavior.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - neologism learning
-  - self-verbalization
-  - machine-only synonym
-  - AxBench
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "neologism learning"
+  - "concept controllability"
+  - "self-verbalization"
+  - "machine-only synonym"
+  - "word embedding training"
+  - "AxBench"
 date: 2026-05-08
-content_hash: 364588cf4d978eb3
+content_hash: 523a4970ea84aa1a
 ---
+
 # Neologism Learning for Controllability and Self-Verbalization
 
 **Conference**: ICLR 2026  

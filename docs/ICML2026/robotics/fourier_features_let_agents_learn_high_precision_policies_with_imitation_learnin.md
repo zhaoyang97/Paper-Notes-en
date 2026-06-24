@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fourier Features Let Agents Learn High Precision Policies with Imitation Learning
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] By applying a NeRF-style Fourier feature mapping to point cloud Cartesian coordinates before feeding them into a point cloud encoder, this work eliminates the "spectral bias" where point cloud policies focus on low frequencies and fail to capture high frequencies. This approach significantly improves the success rates
+  [ICML 2026][Robotics][Imitation Learning] By applying a NeRF-style Fourier feature mapping to point cloud Cartesian coordinates before feeding them into a point cloud encoder, this work eliminates the "spectral bias" where point cloud policies focus on low frequencies and fail to capture high frequencies. This approach significantly improves the success rates of diffusion imitation learning policies in high-precision manipulation tasks across RoboCasa, ManiSkill3…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026"
+  - "Robotics"
+  - "Imitation Learning"
+  - "Point Cloud Policy"
+  - "Fourier Features"
+  - "Spectral Bias"
+  - "High-Precision Manipulation"
 date: 2026-05-08
-content_hash: fe62d654a09d3e18
+content_hash: b1a47c5cd213b3b8
 ---
+
 # Fourier Features Let Agents Learn High Precision Policies with Imitation Learning
 
 **Conference**: ICML 2026  
@@ -129,11 +135,11 @@ The improvement on ManiSkill3 was smaller (slight improvement for PointPatch / P
 
 ## Related Papers
 
-- [\[ECCV 2024\] Learning Cross-Hand Policies of High-DOF Reaching and Grasping](../../ECCV2024/robotics/learning_cross-hand_policies_of_high-dof_reaching_and_grasping.md)
+- [\[ICLR 2026\] Difference-Aware Retrieval Policies for Imitation Learning](../../ICLR2026/robotics/difference-aware_retrieval_policies_for_imitation_learning.md)
 - [\[CVPR 2026\] RealAppliance: Let High-fidelity Appliance Assets Controllable and Workable as Aligned Real Manuals](../../CVPR2026/robotics/realappiance_let_high-fidelity_appliance_assets_controllable_and_workable_as_ali.md)
-- [\[CVPR 2026\] NIL: No-data Imitation Learning](../../CVPR2026/robotics/nil_no-data_imitation_learning.md)
-- [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
+- [\[ECCV 2024\] Learning Cross-Hand Policies of High-DOF Reaching and Grasping](../../ECCV2024/robotics/learning_cross-hand_policies_of_high-dof_reaching_and_grasping.md)
 - [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](../../NeurIPS2025/robotics/labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
+- [\[CVPR 2026\] NIL: No-data Imitation Learning](../../CVPR2026/robotics/nil_no-data_imitation_learning.md)
 
 </div>
 

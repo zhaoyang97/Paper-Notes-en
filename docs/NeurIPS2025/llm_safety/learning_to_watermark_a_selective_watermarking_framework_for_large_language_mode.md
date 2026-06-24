@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM watermarking] This paper proposes LTW (Learning to Watermark), a framework that employs a lightweight selector network to adaptively determine when to apply watermarks based on sentence emb…
+  [NeurIPS 2025][LLM Safety][LLM watermarking] This paper proposes LTW (Learning to Watermark), a framework that employs a lightweight selector network to adaptively determine when to apply watermarks based on sentence embeddings, token entropy, and the current watermarking ratio. By leveraging multi-objective optimization via MGDA, LTW achieves a Pareto-optimal balance between detectability and text quality, substantially improving watermarked text quality without compromising…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "text quality"
   - "watermark detectability"
 date: 2026-05-08
-content_hash: 002a4eb7a5b7d686
+content_hash: b2c54328f88ed3a2
 ---
 
 # Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization
@@ -151,11 +151,11 @@ Key finding: LTW achieves perfect detectability (AUROC = 1.0) while attaining a 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection](on_the_empirical_power_of_goodness-of-fit_tests_in_watermark_detection.md)
-- [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](simu_selective_influence_machine_unlearning.md)
-- [\[ACL 2026\] Multi-component Causal Tracing in Large Language Models](../../ACL2026/llm_safety/multi-component_causal_tracing_in_large_language_models.md)
-- [\[NeurIPS 2025\] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models](exploring_the_limits_of_strong_membership_inference_attacks_on_large_language_mo.md)
-- [\[NeurIPS 2025\] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values](distributive_fairness_in_large_language_models_evaluating_alignment_with_human_v.md)
+- [\[ACL 2025\] MorphMark: Flexible Adaptive Watermarking for Large Language Models](../../ACL2025/llm_safety/morphmark_adaptive_watermarking.md)
+- [\[ACL 2025\] From Trade-off to Synergy: A Versatile Symbiotic Watermarking Framework for Large Language Models](../../ACL2025/llm_safety/from_tradeoff_to_synergy_a_versatile.md)
+- [\[CVPR 2026\] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](../../CVPR2026/llm_safety/machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)
+- [\[ICML 2025\] De-mark: Watermark Removal in Large Language Models](../../ICML2025/llm_safety/de-mark_watermark_removal_in_large_language_models.md)
+- [\[ACL 2025\] Improved Unbiased Watermark for Large Language Models](../../ACL2025/llm_safety/improved_unbiased_watermark_for_large_language.md)
 
 </div>
 

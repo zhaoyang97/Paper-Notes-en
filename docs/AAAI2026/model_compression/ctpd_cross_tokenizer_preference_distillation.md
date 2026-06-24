@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CTPD: Cross Tokenizer Preference Distillation
 description: >-
-  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes Cross-Tokenizer Preference Distillation (CTPD), the first unified framework supporting preference distillation across heterogeneous tokenizers. T…
+  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes Cross-Tokenizer Preference Distillation (CTPD), the first unified framework supporting preference distillation across heterogeneous tokenizers. Through three key innovations—Aligned Span Projection, cross-tokenizer importance weighting, and Teacher-Anchored Reference—CTPD achieves substantial improvements over existing methods on multiple benchmarks.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "Language Models"
 date: 2026-05-08
-content_hash: 6612c31b49dfe4a7
+content_hash: b0d13f8c0f4e1f6c
 ---
 
 # CTPD: Cross Tokenizer Preference Distillation
@@ -168,10 +168,10 @@ Training hyperparameters:
 ## Related Papers
 
 - [\[AAAI 2026\] MetaGDPO: Alleviating Catastrophic Forgetting with Metacognitive Knowledge through Group Direct Preference Optimization](metagdpo_alleviating_catastrophic_forgetting_with_metacognitive_knowledge_throug.md)
+- [\[ICLR 2026\] Cross-Tokenizer Likelihood Scoring Algorithms for Language Model Distillation](../../ICLR2026/model_compression/cross-tokenizer_likelihood_scoring_algorithms_for_language_model_distillation.md)
 - [\[NeurIPS 2025\] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching](../../NeurIPS2025/model_compression/universal_cross-tokenizer_distillation_via_approximate_likelihood_matching.md)
 - [\[NeurIPS 2025\] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](../../NeurIPS2025/model_compression/orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](distillation_dynamics_towards_understanding_feature-based_di.md)
-- [\[AAAI 2026\] Distilling Cross-Modal Knowledge via Feature Disentanglement](distilling_cross-modal_knowledge_via_feature_disentanglement.md)
 
 </div>
 

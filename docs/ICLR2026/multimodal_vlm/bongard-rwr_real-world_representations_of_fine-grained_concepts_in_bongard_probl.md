@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Bongard-RWR+: Real-World Representations of Fine-Grained Concepts in Bongard Problems
 description: >-
-  [ICLR 2026][Multimodal VLM][Bongard problems] The authors construct Bongard-RWR+, a benchmark containing 5400 Bongard problems, using a VLM pipeline (Pixtral-12B + Flux.1-dev) to automatically generate photorealistic images representing abstract concepts. Systematic evaluation reveals that state-of-the-art (SOTA) VLMs struggle to discern fine-grained visual concep
+  [ICLR 2026][Multimodal VLM][Bongard problems] The authors construct Bongard-RWR+, a benchmark containing 5400 Bongard problems, using a VLM pipeline (Pixtral-12B + Flux.1-dev) to automatically generate photorealistic images representing abstract concepts. Systematic evaluation reveals that state-of-the-art (SOTA) VLMs struggle to discern fine-grained visual concepts such as contours, rotation, and angles, with accuracy reaching as low as 19%.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Bongard problems
-  - abstract visual reasoning
-  - few-shot learning
-  - VLM benchmark
-  - fine-grained concepts
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Bongard problems"
+  - "abstract visual reasoning"
+  - "few-shot learning"
+  - "VLM benchmark"
+  - "fine-grained concepts"
 date: 2026-05-08
-content_hash: 8f57f547a11cbf88
+content_hash: 764e8857d35fd3f8
 ---
+
 # Bongard-RWR+: Real-World Representations of Fine-Grained Concepts in Bongard Problems
 
 **Conference**: ICLR 2026  
@@ -134,9 +135,9 @@ N/A (Benchmark paper; evaluates existing models without training).
 
 - [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
 - [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
+- [\[ICLR 2026\] P2P: Automated Paper-to-Poster Generation and Fine-Grained Benchmark](p2p_automated_paper-to-poster_generation_and_fine-grained_benchmark.md)
 - [\[ICLR 2026\] MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs](motionsight_boosting_fine-grained_motion_understanding_in_multimodal_llms.md)
 - [\[CVPR 2025\] FLAIR: VLM with Fine-grained Language-informed Image Representations](../../CVPR2025/multimodal_vlm/flair_vlm_with_fine-grained_language-informed_image_representations.md)
-- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
 
 </div>
 

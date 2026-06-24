@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][LoD] CLoD-GS assigns a learnable "distance decay factor" to each 3D Gaussian, allowing primitive opacity to decrease smoothly with viewing distance. This achieves Continuous Level-of-Detail (CLoD) within a **single model**, eliminating the multi-version storage and "popping" artifacts of traditional discrete LoD while simul
+  [ICLR2026][3D Vision][3D Gaussian Splatting] CLoD-GS assigns a learnable "distance decay factor" to each 3D Gaussian, allowing primitive opacity to decrease smoothly with viewing distance. This achieves Continuous Level-of-Detail (CLoD) within a **single model**, eliminating the multi-version storage and "popping" artifacts of traditional discrete LoD while simultaneously reducing primitive counts and VRAM usage.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - LoD
+  - "ICLR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Continuous Level-of-Detail"
+  - "Real-time Rendering"
+  - "Distance-Adaptive Opacity"
+  - "LoD"
 date: 2026-05-08
-content_hash: fc88398946b5a587
+content_hash: 11db249535e20c41
 ---
+
 # CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting
 
 **Conference**: ICLR2026  
@@ -138,13 +143,20 @@ Training with $s_v$ upper bound of 5, removing components:
 - Value: ⭐⭐⭐⭐ High practical value for 3DGS-based engineering with zero popping and reduced storage.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **LODGE**: [LODGE: Level-of-Detail of Gaussian Splatting for Large-scale Scene](https://arxiv.org/abs/2410.16035)
-- **Octree-GS**: [Octree-GS: Towards Consistent Real-time Rendering with Octree-based 3D Gaussian Splatting](https://arxiv.org/abs/2403.17822)
-- **MaskGaussian**: [MaskGaussian: Towards Efficient 3D Gaussian Splatting with Masking](https://arxiv.org/abs/2403.11181)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)
+- [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
+- [\[ICCV 2025\] VertexRegen: Mesh Generation with Continuous Level of Detail](../../ICCV2025/3d_vision/vertexregen_mesh_generation_with_continuous_level_of_detail.md)
+- [\[ICLR 2026\] D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction](d2gs_depth-and-density_guided_gaussian_splatting_for_stable_and_accurate_sparse-.md)
+- [\[NeurIPS 2025\] LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering](../../NeurIPS2025/3d_vision/lodge_level-of-detail_large-scale_gaussian_splatting_with_efficient_rendering.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)

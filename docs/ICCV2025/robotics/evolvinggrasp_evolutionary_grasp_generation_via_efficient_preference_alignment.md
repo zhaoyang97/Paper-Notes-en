@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EvolvingGrasp: Evolutionary Grasp Generation via Efficient Preference Alignment
 description: >-
-  [ICCV 2025][Robotics][Dexterous Grasping] This paper proposes EvolvingGrasp, which achieves efficient evolutionary generation and human preference alignment for dexterous grasp pose synthesis via Handpose-wise Preference…
+  [ICCV 2025][Robotics][Dexterous Grasping] This paper proposes EvolvingGrasp, which achieves efficient evolutionary generation and human preference alignment for dexterous grasp pose synthesis via Handpose-wise Preference Optimization (HPO) and a Physics-Aware Consistency Model (PCM), attaining state-of-the-art performance on four benchmark datasets with a 30× inference speedup.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Models"
   - "Physical Constraints"
 date: 2026-05-08
-content_hash: c98f944df723274b
+content_hash: 34d91ce3c6a192be
 ---
 
 # EvolvingGrasp: Evolutionary Grasp Generation via Efficient Preference Alignment
@@ -149,10 +149,10 @@ Module contributions validated on the MultiDex dataset (4-step):
 ## Related Papers
 
 - [\[ICCV 2025\] DexVLG: Dexterous Vision-Language-Grasp Model at Scale](dexvlg_dexterous_vision-language-grasp_model_at_scale.md)
+- [\[CVPR 2026\] DextER: Language-driven Dexterous Grasp Generation with Embodied Reasoning](../../CVPR2026/robotics/dexter_language-driven_dexterous_grasp_generation_with_embodied_reasoning.md)
+- [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](../../CVPR2026/robotics/geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
 - [\[ICCV 2025\] Embodied Representation Alignment with Mirror Neurons](embodied_representation_alignment_with_mirror_neurons.md)
-- [\[NeurIPS 2025\] Human-assisted Robotic Policy Refinement via Action Preference Optimization](../../NeurIPS2025/robotics/human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)
-- [\[ICCV 2025\] PacGDC: Label-Efficient Generalizable Depth Completion with Projection Ambiguity and Consistency](pacgdc_label-efficient_generalizable_depth_completion_with_projection_ambiguity_.md)
-- [\[NeurIPS 2025\] STAIR: Addressing Stage Misalignment through Temporal-Aligned Preference Reinforcement Learning](../../NeurIPS2025/robotics/stair_addressing_stage_misalignment_through_temporal-aligned_preference_reinforc.md)
+- [\[ECCV 2024\] SemGrasp: Semantic Grasp Generation via Language Aligned Discretization](../../ECCV2024/robotics/semgrasp_semantic_grasp_generation_via_language_aligned_discretization.md)
 
 </div>
 

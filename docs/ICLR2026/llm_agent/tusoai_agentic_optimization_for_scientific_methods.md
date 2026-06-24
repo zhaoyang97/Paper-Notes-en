@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] TusoAI: Agentic Optimization for Scientific Methods
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] TusoAI is an agent specifically designed for "scientific computing method development." Given a task description, data, and an evaluation function $h(\cdot)$, it organizes domain knowledge into a knowledge tree and utilizes hierarchical planning with Bayesian updates combined with diagnostic fine-grained optimization t
+  [ICLR 2026][LLM Agent][Scientific Method Optimization] TusoAI is an agent specifically designed for "scientific computing method development." Given a task description, data, and an evaluation function $h(\cdot)$, it organizes domain knowledge into a knowledge tree and utilizes hierarchical planning with Bayesian updates combined with diagnostic fine-grained optimization to iteratively improve solutions within a candidate pool. TusoAI consistently outperforms expert methods…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Scientific Method Optimization"
+  - "Knowledge Tree"
+  - "Bayesian Sampling"
+  - "Single-cell Analysis"
 date: 2026-05-08
-content_hash: f826fd0c7def4429
+content_hash: c29c362b87e025dc
 ---
+
 # TusoAI: Agentic Optimization for Scientific Methods
 
 **Conference**: ICLR 2026  
@@ -134,10 +139,10 @@ On the 5 scientific deep learning tasks, TusoAI achieved an average score of 0.7
 ## Related Papers
 
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
+- [\[ICLR 2026\] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](in-the-flow_agentic_system_optimization_for_effective_planning_and_tool_use.md)
+- [\[ICLR 2026\] SciNav: A General Agent Framework for Scientific Coding Tasks](scinav_a_general_agent_framework_for_scientific_coding_tasks.md)
 - [\[ICLR 2026\] AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations](autofigure_generating_and_refining_publication-ready_scientific_illustrations.md)
 - [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
-- [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
-- [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](../../ACL2026/llm_agent/bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
 
 </div>
 

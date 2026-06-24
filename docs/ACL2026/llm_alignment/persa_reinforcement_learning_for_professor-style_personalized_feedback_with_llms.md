@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs
 description: >-
-  [ACL 2026][Alignment & RLHF][RLHF] PERSA utilizes "professor demonstrations + professor preference rewards + PPO updating only high-level LoRA" to tune general LLMs into specific teacher programming feedback styles. It significantly improves style consistency across APPS, PyFiXV, and CodeReviewQA while maintaining nearly 100% diagnostic accuracy.
+  [ACL2026][LLM Alignment][Educational feedback] PERSA utilizes "professor demonstrations + professor preference rewards + PPO updating only high-level LoRA" to tune general LLMs into specific teacher programming feedback styles. It significantly improves style consistency across APPS, PyFiXV, and CodeReviewQA while maintaining nearly 100% diagnostic accuracy.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - RLHF
-  - LoRA
+  - "ACL2026"
+  - "LLM Alignment"
+  - "Educational feedback"
+  - "Personalized LLMs"
+  - "RLHF"
+  - "LoRA"
+  - "Style alignment"
 date: 2026-05-08
-content_hash: e1ac2ad54f24d867
+content_hash: e5b3d45181c191ce
 ---
+
 # PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs
 
 **Conference**: ACL2026  
@@ -153,10 +157,10 @@ Evaluations were conducted on three code feedback datasets: 200 instances for th
 ## Related Papers
 
 - [\[NeurIPS 2025\] Strategyproof Reinforcement Learning from Human Feedback](../../NeurIPS2025/llm_alignment/strategyproof_reinforcement_learning_from_human_feedback.md)
+- [\[ICLR 2026\] Text2Grad: Reinforcement Learning from Natural Language Feedback](../../ICLR2026/llm_alignment/text2grad_reinforcement_learning_from_natural_language_feedback.md)
 - [\[ACL 2025\] Curiosity-Driven Reinforcement Learning from Human Feedback](../../ACL2025/llm_alignment/curiosity_driven_rlhf.md)
-- [\[ACL 2026\] WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback](wildfeedback_aligning_llms_with_in-situ_user_interactions_and_feedback.md)
 - [\[ACL 2026\] P-Check: Advancing Personalized Reward Model via Learning to Generate Dynamic Checklist](p-check_advancing_personalized_reward_model_via_learning_to_generate_dynamic_che.md)
-- [\[ACL 2026\] Too Correct to Learn: Reinforcement Learning on Saturated Reasoning Data](too_correct_to_learn_reinforcement_learning_on_saturated_reasoning_data.md)
+- [\[ICML 2026\] TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning](../../ICML2026/llm_alignment/truthrl_incentivizing_truthful_llms_via_reinforcement_learning.md)
 
 </div>
 

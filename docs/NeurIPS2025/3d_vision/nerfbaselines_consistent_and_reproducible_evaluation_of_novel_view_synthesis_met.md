@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods
 description: >-
-  [NeurIPS 2025][3D Vision][novel view synthesis] This paper proposes NerfBaselines, an evaluation framework that addresses unfair comparisons in novel view synthesis (NVS) caused by inconsistent evaluation protocols. By w…
+  [NeurIPS 2025][3D Vision][novel view synthesis] This paper proposes NerfBaselines, an evaluation framework that addresses unfair comparisons in novel view synthesis (NVS) caused by inconsistent evaluation protocols. By wrapping original method code with a unified API and enforcing environment isolation, the framework ensures that each method's behavior exactly matches its original release. Experiments reveal that seemingly minor protocol differences—such as image resizing str…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Gaussian Splatting"
   - "benchmark"
 date: 2026-05-08
-content_hash: 2c390884d3e9f138
+content_hash: 63e18cbe72721b79
 ---
 
 # NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods
@@ -129,9 +129,9 @@ NerfBaselines does not involve training; each method's original training strateg
 
 - [\[NeurIPS 2025\] Novel View Synthesis from A Few Glimpses via Test-Time Natural Video Completion](novel_view_synthesis_from_a_few_glimpses_via_test-time_natural_video_completion.md)
 - [\[NeurIPS 2025\] HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis](hyrf_hybrid_radiance_fields_for_memory-efficient_and_high-quality_novel_view_syn.md)
-- [\[NeurIPS 2025\] Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-View Synthesis from Monocular Videos](reconstruct_inpaint_test-time_finetune_dynamic_novel-view_synthesis_from_monocul.md)
-- [\[ICCV 2025\] BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis](../../ICCV2025/3d_vision/billboard_splatting_bbsplat_learnable_textured_primitives_fo.md)
-- [\[ICCV 2025\] Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis](../../ICCV2025/3d_vision/self-ensembling_gaussian_splatting_for_few-shot_novel_view_synthesis.md)
+- [\[ICML 2025\] High Dynamic Range Novel View Synthesis with Single Exposure](../../ICML2025/3d_vision/high_dynamic_range_novel_view_synthesis_with_single_exposure.md)
+- [\[CVPR 2025\] Novel View Synthesis with Pixel-Space Diffusion Models](../../CVPR2025/3d_vision/novel_view_synthesis_with_pixel-space_diffusion_models.md)
+- [\[CVPR 2025\] DiffPortrait360: Consistent Portrait Diffusion for 360° View Synthesis](../../CVPR2025/3d_vision/diffportrait360_consistent_portrait_diffusion_for_360_view_synthesis.md)
 
 </div>
 

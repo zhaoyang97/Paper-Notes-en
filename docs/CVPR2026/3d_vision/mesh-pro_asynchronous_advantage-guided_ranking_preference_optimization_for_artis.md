@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Mesh-Pro: Asynchronous Advantage-guided Ranking Preference Optimization for Artist-style Quadrilateral Mesh Generation
 description: >-
-  [CVPR 2026][3D Vision][mesh generation] Mesh-Pro is proposed as the first asynchronous online reinforcement learning framework for 3D quadrilateral mesh generation. Its core algorithm, ARPO (Advantage-guided Ranking Preference Optimization), combines the Plackett-Luce ranking model with advantage function weighting. This approach achieves simultaneous improv
+  [CVPR2026][3D Vision][mesh generation] Mesh-Pro is proposed as the first asynchronous online reinforcement learning framework for 3D quadrilateral mesh generation. Its core algorithm, ARPO (Advantage-guided Ranking Preference Optimization), combines the Plackett-Luce ranking model with advantage function weighting. This approach achieves simultaneous improvements in efficiency (3.75x faster than offline DPO) and generalization, reaching SOTA generation quality for both artist…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - mesh generation
-  - reinforcement-learning
-  - preference optimization
-  - artist-style mesh
-  - quadrilateral mesh
-  - online RL
+  - "CVPR2026"
+  - "3D Vision"
+  - "mesh generation"
+  - "reinforcement-learning"
+  - "preference optimization"
+  - "artist-style mesh"
+  - "quadrilateral mesh"
+  - "online RL"
 date: 2026-05-08
-content_hash: ce8a6e1ed64eed03
+content_hash: 1d1d3cc1b78212c8
 ---
+
 # Mesh-Pro: Asynchronous Advantage-guided Ranking Preference Optimization for Artist-style Quadrilateral Mesh Generation
 
 **Conference**: CVPR2026  
@@ -150,10 +151,10 @@ There is no standard scalar reward for mesh quality, and broken faces are the mo
 
 ## Related Papers
 
+- [\[CVPR 2026\] MeshMosaic: Scaling Artist Mesh Generation via Local-to-Global Assembly](meshmosaic_scaling_artist_mesh_generation_via_local-to-global_assembly.md)
 - [\[ICCV 2025\] MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization](../../ICCV2025/3d_vision/meshanything_v2_artist-created_mesh_generation_with_adjacent_mesh_tokenization.md)
-- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
 - [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
-- [\[CVPR 2026\] MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer](meshflow_efficient_artistic_mesh_generation_via_meshvae_and_flow-based_diffusion.md)
+- [\[ICML 2025\] ADHMR: Aligning Diffusion-based Human Mesh Recovery via Direct Preference Optimization](../../ICML2025/3d_vision/adhmr_aligning_diffusion-based_human_mesh_recovery_via_direct_preference_optimiz.md)
 - [\[AAAI 2026\] Learning Conjugate Direction Fields for Planar Quadrilateral Mesh Generation](../../AAAI2026/3d_vision/learning_conjugate_direction_fields_for_planar_quadrilateral_mesh_generation.md)
 
 </div>

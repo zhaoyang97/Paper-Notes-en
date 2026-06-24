@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Projecting Assumptions: The Duality Between Sparse Autoencoders and Concept Geometry
 description: >-
-  [NeurIPS 2025][Optimization][Sparse Autoencoders] This paper reveals a fundamental duality between sparse autoencoder (SAE) architectures and the concept structures they are capable of discovering — each SAE implicitly a…
+  [NeurIPS 2025][Optimization][Sparse Autoencoders] This paper reveals a fundamental duality between sparse autoencoder (SAE) architectures and the concept structures they are capable of discovering — each SAE implicitly assumes a particular organization of concepts, and when this assumption is mismatched, concepts are systematically missed. Based on this analysis, the authors propose SpaDE, a novel SAE that accounts for nonlinear separability and dimensional heterogeneity.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Interpretability"
   - "Duality"
 date: 2026-05-08
-content_hash: dc15d008b43a3133
+content_hash: 5155e2e9862f6840
 ---
 
 # Projecting Assumptions: The Duality Between Sparse Autoencoders and Concept Geometry
@@ -54,8 +54,8 @@ The three dominant SAE variants (ReLU, TopK, JumpReLU) are unified under a "proj
    Key insight: the essential difference among SAE variants lies in the choice of projection set $\mathcal{S}$.
 
 2. **Bilevel Optimization Formalization (Claim 3.1)**: SAEs solve the following bilevel problem:
-   $$\arg\min_{\mathbf{D}, \mathbf{z} \geq 0} \sum_\mathbf{x} \|\mathbf{x} - \mathbf{D}\mathbf{z}\|^2 + \lambda\mathcal{R}(\mathbf{z})$$
-   $$\text{s.t.} \quad \mathbf{z} = \mathbf{f}(\mathbf{x}) \in \arg\min_{\pi \in \mathcal{S}} \mathbf{F}(\pi, \mathbf{W}, \mathbf{x})$$
+    $\arg\min_{\mathbf{D}, \mathbf{z} \geq 0} \sum_\mathbf{x} \|\mathbf{x} - \mathbf{D}\mathbf{z}\|^2 + \lambda\mathcal{R}(\mathbf{z})$
+    $\text{s.t.} \quad \mathbf{z} = \mathbf{f}(\mathbf{x}) \in \arg\min_{\pi \in \mathcal{S}} \mathbf{F}(\pi, \mathbf{W}, \mathbf{x})$
    The inner optimization (determined by the encoder architecture) constrains the solution space of the outer dictionary learning problem.
 
 3. **Receptive Fields and Implicit Assumptions (Definition 3.2 & Table 2)**:
@@ -166,11 +166,11 @@ SpaDE identifies interpretable concepts on DINOv2 such as foreground/background,
 
 ## Related Papers
 
+- [\[ICLR 2026\] Matched Data, Better Models: Target Aligned Data Filtering with Sparse Autoencoders](../../ICLR2026/optimization/matched_data_better_models_target_aligned_data_filtering_with_sparse_autoencoder.md)
 - [\[NeurIPS 2025\] Understanding Adam Requires Better Rotation Dependent Assumptions](understanding_adam_requires_better_rotation_dependent_assumptions.md)
 - [\[NeurIPS 2025\] Learning Sparse Approximate Inverse Preconditioners for Conjugate Gradient Solvers on GPUs](learning_sparse_approximate_inverse_preconditioners_for_conjugate_gradient_solve.md)
+- [\[ICML 2025\] Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation](../../ICML2025/optimization/sparse_causal_discovery_with_generative_intervention_for_unsupervised_graph_doma.md)
 - [\[ICLR 2026\] Generalization Below the Edge of Stability: The Role of Data Geometry](../../ICLR2026/optimization/generalization_below_the_edge_of_stability_the_role_of_data_geometry.md)
-- [\[AAAI 2026\] Tackling Resource-Constrained and Data-Heterogeneity in Federated Learning with Double-Weight Sparse Pack](../../AAAI2026/optimization/tackling_resource-constrained_and_data-heterogeneity_in_federated_learning_with_.md)
-- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)
 
 </div>
 

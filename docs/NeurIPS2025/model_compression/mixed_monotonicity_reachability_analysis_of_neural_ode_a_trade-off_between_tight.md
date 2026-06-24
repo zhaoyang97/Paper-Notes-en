@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mixed Monotonicity Reachability Analysis of Neural ODE: A Trade-Off Between Tightness and Efficiency
 description: >-
-  [NeurIPS 2025 (NeurReps 2025 Workshop, co-located with NeurIPS 2025)][Model Compression][Neural ODE] This paper applies continuous-time mixed monotonicity techniques to the reachability analysis of Neural ODEs. By embedd…
+  [NeurIPS 2025 (NeurReps 2025 Workshop, co-located with NeurIPS 2025)][Model Compression][Neural ODE] This paper applies continuous-time mixed monotonicity techniques to the reachability analysis of Neural ODEs. By embedding Neural ODE dynamics into a mixed monotone system, it exploits the geometric simplicity of interval boxes to achieve efficient over-approximation, providing a controllable trade-off between tightness and computational efficiency.
 tags:
   - "NeurIPS 2025 (NeurReps 2025 Workshop, co-located with NeurIPS 2025)"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Interval Propagation"
   - "Formal Verification"
 date: 2026-05-08
-content_hash: 725053ba3366e946
+content_hash: 72eeac619da56100
 ---
 
 # Mixed Monotonicity Reachability Analysis of Neural ODE: A Trade-Off Between Tightness and Efficiency
@@ -169,10 +169,10 @@ Evaluation is conducted on two standard Neural ODE systems:
 ## Related Papers
 
 - [\[NeurIPS 2025\] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization](when_worse_is_better_navigating_the_compression-generation_tradeoff_in_visual_to.md)
+- [\[ICML 2025\] Rethinking the Stability-Plasticity Trade-off in Continual Learning from an Architectural Perspective](../../ICML2025/model_compression/rethinking_the_stability-plasticity_trade-off_in_continual_learning_from_an_arch.md)
+- [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](../../ICLR2026/model_compression/navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
+- [\[ICLR 2026\] DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation](../../ICLR2026/model_compression/dto-kd_dynamic_trade-off_optimization_for_effective_knowledge_distillation.md)
 - [\[NeurIPS 2025\] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing](synergy_between_the_strong_and_the_weak_spiking_neural_networks_are_inherently_s.md)
-- [\[NeurIPS 2025\] The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis](the_graphon_limit_hypothesis_understanding_neural_network_pruning_via_infinite_w.md)
-- [\[NeurIPS 2025\] Adaptive Prediction-Powered AutoEval with Reliability and Efficiency Guarantees](adaptive_predictionpowered_autoeval_with_reliability_and_eff.md)
-- [\[NeurIPS 2025\] RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling](rat_bridging_rnn_efficiency_and_attention_accuracy_via_chunk-based_sequence_mode.md)
 
 </div>
 

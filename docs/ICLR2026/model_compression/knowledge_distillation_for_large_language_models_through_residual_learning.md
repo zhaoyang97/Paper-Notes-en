@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Knowledge Distillation for Large Language Models through Residual Learning
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] Addressing the issue where "the teacher itself can be wrong" in white-box distillation, this paper proposes residual learning: allowing the student to learn the difference between its own representation and the teacher's only at positions where the teacher makes incorrect predictions. By incorporating low-dimensional p
+  [ICLR 2026][Model Compression][Knowledge Distillation] Addressing the issue where "the teacher itself can be wrong" in white-box distillation, this paper proposes residual learning: allowing the student to learn the difference between its own representation and the teacher's only at positions where the teacher makes incorrect predictions. By incorporating low-dimensional projection, MoE expert fusion, and cross-tokenizer attention, the method consistently outperforms existing…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Residual Learning"
+  - "White-box Distillation"
+  - "Cross-tokenizer Distillation"
+  - "MoE Distillation"
+  - "LLM Compression"
 date: 2026-05-08
-content_hash: ca82479000282590
+content_hash: a83d04c7caf0c396
 ---
+
 # Knowledge Distillation for Large Language Models through Residual Learning
 
 **Conference**: ICLR 2026  
@@ -140,10 +146,10 @@ Mixtral-8×7B $\to$ GPT2-120M (Avg. Rouge-L %):
 ## Related Papers
 
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](distillation_of_large_language_models_via_concrete_score_matching.md)
-- [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
-- [\[ICLR 2026\] FutureMind: Equipping Small Language Models with Strategic Thinking-Pattern Priors via Adaptive Knowledge Distillation](futuremind_equipping_small_language_models_with_strategic_thinking-pattern_prior.md)
-- [\[ICLR 2026\] What Layers When: Learning to Skip Compute in LLMs with Residual Gates](what_layers_when_learning_to_skip_compute_in_llms_with_residual_gates.md)
+- [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
+- [\[ICLR 2026\] AMiD: Knowledge Distillation for LLMs with $\alpha$-mixture Assistant Distribution](amid_knowledge_distillation_for_llms_with_alpha-mixture_assistant_distribution.md)
 
 </div>
 

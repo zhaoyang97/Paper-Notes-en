@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PINO: Person-Interaction Noise Optimization for Long-Duration and Customizable Motion Generation of Arbitrary-Sized Groups
 description: >-
-  [ICCV 2025][Image Generation][multi-person interaction generation] This paper proposes Person-Interaction Noise Optimization (PINO), a training-free framework that decomposes complex multi-person group interactions into…
+  [ICCV 2025][Image Generation][multi-person interaction generation] This paper proposes Person-Interaction Noise Optimization (PINO), a training-free framework that decomposes complex multi-person group interactions into semantically well-defined dyadic interaction pairs. By leveraging a pretrained two-person interaction diffusion model with noise optimization and physical penalty terms, PINO sequentially synthesizes group interaction motions of arbitrary scale…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "motion diffusion model"
   - "physical constraints"
 date: 2026-05-08
-content_hash: 5f94488a043739e1
+content_hash: 9fc8ff6fc3edd55f
 ---
 
 # PINO: Person-Interaction Noise Optimization for Long-Duration and Customizable Motion Generation of Arbitrary-Sized Groups
@@ -69,10 +69,10 @@ PINO takes two inputs: (1) an ordered participant list specifying the target and
    $\mathcal{L}_{overlap} = \sum_i \sum_n \max\left(0, \delta - \|\mathbf{p}_{root}^p(n) - \hat{\mathbf{p}}_{root}^i(n)\|_2\right)$
 
    **Spatiotemporal motion control loss** $\mathcal{L}_{control}$ comprises four differentiable penalties:
-   - Root position penalty: constrains a character to reach a specified position at a given timestep.
-   - Motion region penalty: restricts a character's movement to within a defined region.
-   - Orientation penalty: controls the facing direction at specific frames.
-   - Relative position penalty: maintains desired distance or orientation relationships between characters.
+    - Root position penalty: constrains a character to reach a specified position at a given timestep.
+    - Motion region penalty: restricts a character's movement to within a defined region.
+    - Orientation penalty: controls the facing direction at specific frames.
+    - Relative position penalty: maintains desired distance or orientation relationships between characters.
 
    The total optimization loss is: $\mathcal{L} = \mathcal{L}_{overlap} + \mathcal{L}_{control}$
 

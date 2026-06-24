@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Manifolds and Modules: How Function Develops in a Neural Foundation Model
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Neural Foundation Models] This work opens the "black box" of a state-of-the-art neural activity foundation model (FNN) from a computational neuroscience perspective. By constructi…
+  [NeurIPS 2025 Findings][Self-Supervised Learning][Neural Foundation Models] This work opens the "black box" of a state-of-the-art neural activity foundation model (FNN) from a computational neuroscience perspective. By constructing decoding and encoding manifolds, the study reveals that each processing module (encoder, recurrent, readout) exhibits qualitatively distinct representational structures, and identifies critical discrepancies between the model and the biological vis…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Findings"
   - "Self-Supervised Learning"
   - "Neural Foundation Models"
   - "Encoding Manifolds"
@@ -12,7 +12,7 @@ tags:
   - "Interpretability"
   - "Mouse Visual System"
 date: 2026-05-08
-content_hash: 170a1a5b019cbac6
+content_hash: fd530f06b993b2ab
 ---
 
 # Manifolds and Modules: How Function Develops in a Neural Foundation Model
@@ -140,9 +140,9 @@ Stimulus classification accuracy per layer (Logistic Regression / 3-NN):
 
 - [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](../../ICML2026/self_supervised/how_neural_is_a_neural_foundation_model.md)
 - [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
-- [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
-- [\[NeurIPS 2025\] Implicit Modeling for Transferability Estimation of Vision Foundation Models](implicit_modeling_for_transferability_estimation_of_vision_foundation_models.md)
-- [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
+- [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](../../AAAI2026/self_supervised/spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
+- [\[CVPR 2025\] Few-Shot Implicit Function Generation via Equivariance](../../CVPR2025/self_supervised/few-shot_implicit_function_generation_via_equivariance.md)
+- [\[ICML 2025\] Griffin: Towards a Graph-Centric Relational Database Foundation Model](../../ICML2025/self_supervised/griffin_towards_a_graph-centric_relational_database_foundation_model.md)
 
 </div>
 

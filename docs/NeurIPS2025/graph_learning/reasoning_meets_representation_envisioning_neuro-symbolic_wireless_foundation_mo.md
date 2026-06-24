@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reasoning Meets Representation: Envisioning Neuro-Symbolic Wireless Foundation Models
 description: >-
-  [NeurIPS 2025][Graph Learning][Neuro-Symbolic AI] This paper proposes a vision framework that integrates the neuro-symbolic (NeSy) paradigm with Wireless Physical-layer Foundation Models (WPFMs)—employing WPFMs as a neur…
+  [NeurIPS 2025][Graph Learning][Neuro-Symbolic AI] This paper proposes a vision framework that integrates the neuro-symbolic (NeSy) paradigm with Wireless Physical-layer Foundation Models (WPFMs)—employing WPFMs as a neural perception engine to generate RF embedding vectors, and an ontology-driven knowledge graph together with a differentiable logic layer as the symbolic reasoning component. The resulting system achieves interpretable, generalizable…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Differentiable Logic"
   - "6G"
 date: 2026-05-08
-content_hash: 9d53c6876af3671f
+content_hash: fe1febb46575ba55
 ---
 
 # Reasoning Meets Representation: Envisioning Neuro-Symbolic Wireless Foundation Models
@@ -141,11 +141,11 @@ The paper presents three major open research challenges as qualitative analysis:
 
 ## Related Papers
 
+- [\[ICLR 2026\] CLAUSE: Agentic Neuro-Symbolic Knowledge Graph Reasoning via Dynamic Learnable Context Engineering](../../ICLR2026/graph_learning/clause_agentic_neuro-symbolic_knowledge_graph_reasoning_via_dynamic_learnable_co.md)
 - [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
 - [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
-- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](../../ICML2026/graph_learning/when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
-- [\[NeurIPS 2025\] The Underappreciated Power of Vision Models for Graph Structural Understanding](the_underappreciated_power_of_vision_models_for_graph_structural_understanding.md)
-- [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](../../CVPR2026/graph_learning/mario_multimodal_graph_reasoning_with_large_language_models.md)
+- [\[NeurIPS 2025\] From Sequence to Structure: Uncovering Substructure Reasoning in Transformers](from_sequence_to_structure_uncovering_substructure_reasoning_in_transformers.md)
+- [\[ACL 2025\] Beyond Completion: A Foundation Model for General Knowledge Graph Reasoning](../../ACL2025/graph_learning/beyond_completion_a_foundation_model_for_general_knowledge_graph_reasoning.md)
 
 </div>
 

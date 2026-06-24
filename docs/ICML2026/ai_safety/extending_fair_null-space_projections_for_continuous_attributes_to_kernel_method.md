@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods
 description: >-
-  [ICML 2026][AI Safety][SVR] This paper extends the "Iterative Null-Space Projection (INLP)" fairness method, originally designed for linear models, to kernel methods. By deriving a closed-form transformation $\mathbf{T}$ in the empirical feature space that acts directly on the kernel matrix $\mathbf{K}$, the transformed $\mathbf{K}_{(m)}$ remains
+  [ICML 2026][AI Safety][Continuous Fairness] This paper extends the "Iterative Null-Space Projection (INLP)" fairness method, originally designed for linear models, to kernel methods. By deriving a closed-form transformation $\mathbf{T}$ in the empirical feature space that acts directly on the kernel matrix $\mathbf{K}$, the transformed $\mathbf{K}_{(m)}$ remains a positive semi-definite (PSD) kernel while being stripped of predictive information regarding continuous protected…
 tags:
-  - ICML 2026
-  - AI Safety
-  - SVR
+  - "ICML 2026"
+  - "AI Safety"
+  - "Continuous Fairness"
+  - "Null-Space Projection"
+  - "Kernel Methods"
+  - "Empirical Feature Space"
+  - "SVR"
 date: 2026-05-08
-content_hash: 41e57235f6b04ee7
+content_hash: 2cab80a209c74504
 ---
+
 # Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods
 
 **Conference**: ICML 2026  

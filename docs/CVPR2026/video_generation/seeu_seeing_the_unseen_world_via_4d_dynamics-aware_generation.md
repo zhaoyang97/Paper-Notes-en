@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] SeeU is proposed as a 2D→4D→2D learning framework: it reconstructs a 4D world representation from sparse monocular 2D frames, learns continuous and physically consistent 4D dynamics on a low-rank representation (via B-spline parameterization and physical constraints), and finally re-projects the 4D world back to 2D. A
+  [CVPR 2026][Video Generation][4D Dynamic Modeling] SeeU is proposed as a 2D→4D→2D learning framework: it reconstructs a 4D world representation from sparse monocular 2D frames, learns continuous and physically consistent 4D dynamics on a low-rank representation (via B-spline parameterization and physical constraints), and finally re-projects the 4D world back to 2D. A spatiotemporal context-aware video generator completes unseen regions, enabling the generation of unseen visu…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "4D Dynamic Modeling"
+  - "Continuous Dynamics"
+  - "Spatiotemporal Generation"
+  - "B-spline"
+  - "Physical Consistency"
 date: 2026-05-08
-content_hash: 536ffca32730b859
+content_hash: a12e555e490863cf
 ---
+
 # SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation
 
 **Conference**: CVPR 2026  
@@ -145,10 +151,10 @@ Unseen generation in the spatial domain (EE↓ lower is better, EIR↑ higher is
 ## Related Papers
 
 - [\[AAAI 2026\] Seeing the Unseen: Zooming in the Dark with Event Cameras](../../AAAI2026/video_generation/seeing_the_unseen_zooming_in_the_dark_with_event_cameras.md)
-- [\[CVPR 2026\] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control](versecrafter_dynamic_realistic_video_world_model_with_4d_geometric_control.md)
 - [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
+- [\[CVPR 2026\] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control](versecrafter_dynamic_realistic_video_world_model_with_4d_geometric_control.md)
 - [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
-- [\[CVPR 2026\] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation](unityvideo_unified_multi-modal_multi-task_learning_for_enhancing_world-aware_vid.md)
+- [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video](physvid_physics_aware_local_conditioning_for_generative_video_models.md)
 
 </div>
 

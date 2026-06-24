@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GeoComplete: Geometry-Aware Diffusion for Reference-Driven Image Completion
 description: >-
-  [NeurIPS 2025][3D Vision][image completion] This paper proposes GeoComplete, which injects projected point clouds as geometric conditions into a dual-branch diffusion model and employs a target-aware masking strategy to…
+  [NeurIPS 2025][3D Vision][image completion] This paper proposes GeoComplete, which injects projected point clouds as geometric conditions into a dual-branch diffusion model and employs a target-aware masking strategy to achieve geometrically consistent reference-driven image completion, achieving a 17.1% improvement in PSNR.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "point cloud projection"
   - "reference image"
 date: 2026-05-08
-content_hash: 2128950d7be7ba1c
+content_hash: ae730463265bac19
 ---
 
 # GeoComplete: Geometry-Aware Diffusion for Reference-Driven Image Completion
@@ -187,11 +187,11 @@ Robustness test (point cloud noise / sparsity / LangSAM errors):
 
 ## Related Papers
 
+- [\[CVPR 2025\] Reference-Based 3D-Aware Image Editing with Triplanes](../../CVPR2025/3d_vision/reference-based_3d-aware_image_editing_with_triplanes.md)
 - [\[NeurIPS 2025\] GOATex: Geometry & Occlusion-Aware Texturing](goatex_geometry_occlusion-aware_texturing.md)
 - [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](../../CVPR2026/3d_vision/pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
 - [\[NeurIPS 2025\] WildCAT3D: Appearance-Aware Multi-View Diffusion in the Wild](wildcat3d_appearance-aware_multi-view_diffusion_in_the_wild.md)
-- [\[ICCV 2025\] From Image to Video: An Empirical Study of Diffusion Representations](../../ICCV2025/3d_vision/from_image_to_video_an_empirical_study_of_diffusion_representations.md)
-- [\[NeurIPS 2025\] SingRef6D: Monocular Novel Object Pose Estimation with a Single RGB Reference](singref6d_monocular_novel_object_pose_estimation_with_a_single_rgb_reference.md)
+- [\[NeurIPS 2025\] Linearly Constrained Diffusion Implicit Models](linearly_constrained_diffusion_implicit_models.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Learning Long-term Motion Embeddings for Efficient Kinematics Generation
 description: >-
-  [CVPR 2026][Human Understanding][Flow Matching] Instead of modeling "appearance + motion" pixel-by-pixel using video generation models, this work proposes learning a **motion-only long-term latent space with $64\times$ temporal compression**. A Trajectory VAE first compresses sparse tracking trajectories into a dense, queryable motion grid, followed by a conditional
+  [CVPR 2026][Long-term Motion Embeddings] Instead of modeling "appearance + motion" pixel-by-pixel using video generation models, this work proposes learning a **motion-only long-term latent space with $64\times$ temporal compression**. A Trajectory VAE first compresses sparse tracking trajectories into a dense, queryable motion grid, followed by a conditional flow matching model that generates long-term goal-directed motion based on text or "pokes." This approach is over 10…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Flow Matching
+  - "CVPR 2026"
+  - "Long-term Motion Embeddings"
+  - "Temporal Compression"
+  - "Flow Matching"
+  - "Goal-conditioned Motion Generation"
+  - "Trajectory Autoencoder"
 date: 2026-05-08
-content_hash: c46ea727fe034e5a
+content_hash: b5b29b26dc7c5b30
 ---
+
 # Learning Long-term Motion Embeddings for Efficient Kinematics Generation
 
 **Conference**: CVPR 2026  
@@ -133,15 +137,16 @@ Video models must synthesize pixels and require CoTracker3 to extract trajectori
 - Value: ⭐⭐⭐⭐⭐ (Enables real-time exploration of multiple futures for world models and robotics).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ECCV 2024\] Motion Mamba: Efficient and Long Sequence Motion Generation](../../ECCV2024/human_understanding/motion_mamba_efficient_and_long_sequence_motion_generation.md)
-- [\[AAAI 2026\] Robust Long-term Test-Time Adaptation for 3D Human Pose Estimation through Motion Discretization](../../AAAI2026/human_understanding/robust_long-term_test-time_adaptation_for_3d_human_pose_estimation_through_motio.md)
-- [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
-- [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] Geometric Neural Distance Fields for Learning Human Motion Priors](geometric_neural_distance_fields_for_learning_human_motion_priors.md)
+- [\[CVPR 2026\] CHIRP dataset: towards long-term, individual-level, behavioral monitoring of bird populations in the wild](chirp_dataset_towards_long-term_individual-level_behavioral_monitoring_of_bird_p.md)
+- [\[AAAI 2026\] Predict and Resist: Long-Term Accident Anticipation under Sensor Noise](../../AAAI2026/others/predict_and_resist_long-term_accident_anticipation_under_sensor_noise.md)
+- [\[CVPR 2025\] Effortless Active Labeling for Long-Term Test-Time Adaptation](../../CVPR2025/others/effortless_active_labeling_for_long-term_test-time_adaptation.md)
+- [\[CVPR 2026\] Adaptive Bayesian Early-Exit Networks for Efficient Non-Transferable Learning](adaptive_bayesian_early-exit_networks_for_efficient_non-transferable_learning.md)
+- [\[CVPR 2026\] Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation](bi-directional_autoregressive_diffusion_for_large_complex_motion_interpolation.md)
 
 </div>
 

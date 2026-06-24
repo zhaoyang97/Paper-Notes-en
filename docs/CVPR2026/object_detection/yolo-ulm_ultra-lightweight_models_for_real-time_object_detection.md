@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] YOLO-ULM: Ultra-Lightweight Models for Real-Time Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] By replacing two types of high-cost operators in the YOLOv12 framework (feature aggregation replaced by D3C2f based on cascaded large-kernel depthwise convolutions; downsampling replaced by re-parameterizable dual-path RepDown) and incorporating a hardness-aware FoCIoU loss, an ultra-lightweight real-time detector is d
+  [CVPR 2026][Object Detection][Real-Time Detection] By replacing two types of high-cost operators in the YOLOv12 framework (feature aggregation replaced by D3C2f based on cascaded large-kernel depthwise convolutions; downsampling replaced by re-parameterizable dual-path RepDown) and incorporating a hardness-aware FoCIoU loss, an ultra-lightweight real-time detector is developed that achieves higher accuracy than YOLOv11/12/13 and RT-DETR with fewer parameters and lower computa…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Real-Time Detection"
+  - "Lightweight"
+  - "Large-kernel Depthwise Convolution"
+  - "Re-parameterized Downsampling"
+  - "IoU Loss"
 date: 2026-05-08
-content_hash: 030b94240b608d5b
+content_hash: 5f0d0eb9dd3a0d53
 ---
+
 # YOLO-ULM: Ultra-Lightweight Models for Real-Time Object Detection
 
 **Conference**: CVPR 2026  
@@ -150,8 +156,8 @@ Ablation of components on N / M variants (Row 1/6 are baselines):
 - [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)
 - [\[CVPR 2026\] YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection](yolo-master_moe-accelerated_with_specialized_transformers_for_enhanced_real-time.md)
 - [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
+- [\[ICLR 2026\] RF-DETR: Neural Architecture Search for Real-Time Detection Transformers](../../ICLR2026/object_detection/rf-detr_neural_architecture_search_for_real-time_detection_transformers.md)
 - [\[CVPR 2026\] Does YOLO Really Need to See Every Training Image in Every Epoch?](does_yolo_really_need_to_see_every_training_image_in_every_epoch.md)
-- [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
 
 </div>
 

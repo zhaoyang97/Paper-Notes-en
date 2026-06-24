@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][iBOT++] This paper proposes TIPSv2, discovering that distillation significantly enhances patch-text alignment. This insight is transformed into a new pretraining objective, iBOT++ (where visible tokens also participate in loss computation). Combined with Head-only EMA and multi-granularity text augmentation, the model achieves
+  [CVPR 2026][Multimodal VLM][Vision-Language Pretraining] This paper proposes TIPSv2, discovering that distillation significantly enhances patch-text alignment. This insight is transformed into a new pretraining objective, iBOT++ (where visible tokens also participate in loss computation). Combined with Head-only EMA and multi-granularity text augmentation, the model achieves SOTA across 20 datasets in 9 tasks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - iBOT++
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Pretraining"
+  - "patch-text alignment"
+  - "iBOT++"
+  - "distillation"
+  - "zero-shot segmentation"
 date: 2026-05-08
-content_hash: 7deb63ddc526c5a0
+content_hash: 5cc5a17dbb1df6f3
 ---
+
 # TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment
 
 **Conference**: CVPR 2026  
@@ -141,8 +146,8 @@ The total objective is a combination of three supervisions: CLIP contrastive los
 - [\[CVPR 2026\] Training-Only Heterogeneous Image-Patch-Text Graph Supervision for Advancing Few-Shot Learning Adapters](training-only_heterogeneous_image-patch-text_graph_supervision_for_advancing_few.md)
 - [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
 - [\[CVPR 2026\] Concept-Aware Batch Sampling Improves Language-Image Pretraining](concept-aware_batch_sampling_improves_language-image_pretraining.md)
+- [\[CVPR 2026\] CLEP: Contrastive Language-Pose Pretraining](clep_contrastive_language-pose_pretraining.md)
 - [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
-- [\[CVPR 2026\] Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models](mostly_text_smart_visuals_asymmetric_text-visual_pruning_for_large_vision-langua.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning
 description: >-
-  [NeurIPS 2025][LLM Agent][tool-use] This paper introduces T1, a dataset of 13.5K multi-turn dialogues spanning 9 domains (4 single-domain + 5 cross-domain) and 14 tools…
+  [NeurIPS 2025][LLM Agent][tool-use] This paper introduces T1, a dataset of 13.5K multi-turn dialogues spanning 9 domains (4 single-domain + 5 cross-domain) and 14 tools, with a focus on inter-tool dependencies and dynamic replanning. A baseline system, T1-Agent (code generation + caching mechanism), is proposed for systematic evaluation. Experiments show that SFT-tuned Llama 8B achieves 87.17% Tool Call F1, surpassing untuned 70B models, yet still trailing closed-source model…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "inter-tool dependency"
 date: 2026-05-08
-content_hash: 0951b19611bdc81f
+content_hash: b71535a99d4a8069
 ---
 
 # T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning
@@ -149,11 +149,11 @@ Closed-source models (small dataset):
 
 ## Related Papers
 
+- [\[ACL 2025\] Can a Single Model Master Both Multi-turn Conversations and Tool Use? CoALM: A Unified Conversational Agentic Language Model](../../ACL2025/llm_agent/can_a_single_model_master_both_multi-turn_conversations_and_tool_use_coalm_a_uni.md)
 - [\[NeurIPS 2025\] Enhancing Demand-Oriented Regionalization with Agentic AI and Local Heterogeneous Data for Adaptation Planning](enhancing_demand-oriented_regionalization_with_agentic_ai_and_local_heterogeneou.md)
 - [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
-- [\[AAAI 2026\] Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance](../../AAAI2026/llm_agent/towards_trustworthy_multi-turn_llm_agents_via_behavioral_guidance.md)
+- [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](../../ICLR2026/llm_agent/orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
 - [\[NeurIPS 2025\] Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding](deep_video_discovery_agentic_search_with_tool_use_for_longfo.md)
-- [\[NeurIPS 2025\] MAT-Agent: Adaptive Multi-Agent Training Optimization](mat-agent_adaptive_multi-agent_training_optimization.md)
 
 </div>
 

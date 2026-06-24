@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Visual Prompting] VP-Bench introduces the first systematic two-stage benchmark for evaluating MLLMs' understanding of visual prompts (VPs): Stage 1 covers 30K+ images across 8 VP shape types ×…
+  [AAAI 2026][Multimodal VLM][Visual Prompting] VP-Bench introduces the first systematic two-stage benchmark for evaluating MLLMs' understanding of visual prompts (VPs): Stage 1 covers 30K+ images across 8 VP shape types × 355 attribute combinations to assess VP perception ability, while Stage 2 evaluates the practical effectiveness of VPs on 6 downstream tasks. Experiments on 28 MLLMs reveal the critical impact of VP shape selection on model performance.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Region Referring"
   - "Benchmark Design"
 date: 2026-05-08
-content_hash: 84a87512169b7a86
+content_hash: 5a850885d651557d
 ---
 
 # VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models
@@ -121,11 +121,11 @@ A two-stage evaluation paradigm: Stage 1 (VP Perception) assesses models' abilit
 
 ## Related Papers
 
-- [\[AAAI 2026\] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models](crossvid_a_comprehensive_benchmark_for_evaluating_cross-vide.md)
-- [\[AAAI 2026\] Graph-of-Mark: Promote Spatial Reasoning in Multimodal Language Models with Graph-Based Visual Prompting](graph-of-mark_promote_spatial_reasoning_in_multimodal_langua.md)
-- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/multimodal_vlm/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
-- [\[CVPR 2026\] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](../../CVPR2026/multimodal_vlm/ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models.md)
-- [\[AAAI 2026\] SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models](sdeval_safety_dynamic_evaluation_for_multimodal_large_language_models.md)
+- [\[ICLR 2026\] SpaCE-10: A Comprehensive Benchmark for Multimodal Large Language Models in Compositional Spatial Intelligence](../../ICLR2026/multimodal_vlm/space-10_a_comprehensive_benchmark_for_multimodal_large_language_models_in_compo.md)
+- [\[CVPR 2026\] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](../../CVPR2026/multimodal_vlm/if-bench_benchmarking_and_enhancing_mllms_for_infrared_images_with_generative_vi.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](../../ICLR2026/multimodal_vlm/mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
+- [\[ECCV 2024\] Attention Prompting on Image for Large Vision-Language Models](../../ECCV2024/multimodal_vlm/attention_prompting_on_image_for_large_visionlanguage_models.md)
+- [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
 
 </div>
 

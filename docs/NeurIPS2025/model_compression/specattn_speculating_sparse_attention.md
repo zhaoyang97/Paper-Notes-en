@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SpecAttn: Speculating Sparse Attention
 description: >-
-  [NeurIPS 2025][Model Compression][Sparse Attention] SpecAttn proposes a training-free method that leverages attention weights already computed by the draft model in speculative decoding to predict important tokens for th…
+  [NeurIPS 2025][Model Compression][Sparse Attention] SpecAttn proposes a training-free method that leverages attention weights already computed by the draft model in speculative decoding to predict important tokens for the verification model. Through KL divergence layer mapping, sorting-free top-p nucleus selection, and dynamic KV cache pruning, it achieves a 78.4% reduction in KV cache accesses with only a 15.29% increase in perplexity, significantly outperforming existing sp…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -13,7 +13,7 @@ tags:
   - "Sorting-Free Top-p Selection"
   - "Triton Kernel"
 date: 2026-05-08
-content_hash: ac3e36568d85b541
+content_hash: aaea238b288d16c4
 ---
 
 # SpecAttn: Speculating Sparse Attention
@@ -144,10 +144,10 @@ SpecAttn integrates seamlessly into existing speculative decoding pipelines and 
 ## Related Papers
 
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](../../ICLR2026/model_compression/fasa_frequency-aware_sparse_attention.md)
-- [\[NeurIPS 2025\] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts](dense_backpropagation_improves_training_for_sparse_mixture-of-experts.md)
+- [\[CVPR 2026\] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers](../../CVPR2026/model_compression/trainable_log-linear_sparse_attention_for_efficient_diffusion_transformers.md)
 - [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](../../ICML2026/model_compression/token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
-- [\[NeurIPS 2025\] GraSS: Scalable Data Attribution with Gradient Sparsification and Sparse Projection](grass_scalable_data_attribution_with_gradient_sparsification_and_sparse_projecti.md)
-- [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
+- [\[ICLR 2026\] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention](../../ICLR2026/model_compression/sla_beyond_sparsity_in_diffusion_transformers_via_fine-tunable_sparselinear_atte.md)
+- [\[NeurIPS 2025\] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts](dense_backpropagation_improves_training_for_sparse_mixture-of-experts.md)
 
 </div>
 

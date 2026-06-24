@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Gradient Volume to Shapley Fairness: Towards Fair Multi-Task Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Addressing the unfairness issue in multi-task learning where gradient conflicts cause "strong tasks to dominate update directions and weak tasks to be repeatedly sacrificed," this paper proposes SVFair. It uses the volume of the parallelepiped spanned by normalized gradients (Gram determinant) as the utility function f
+  [ICLR 2026][Optimization][Multi-Task Learning] Addressing the unfairness issue in multi-task learning where gradient conflicts cause "strong tasks to dominate update directions and weak tasks to be repeatedly sacrificed," this paper proposes SVFair. It uses the volume of the parallelepiped spanned by normalized gradients (Gram determinant) as the utility function for a Shapley cooperative game. This allows for calculating the degree of task gradient deviation from the whole i…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Multi-Task Learning"
+  - "Gradient Conflict"
+  - "Shapley Value"
+  - "Fair Optimization"
+  - "Gram Matrix"
 date: 2026-05-08
-content_hash: c0fed7aafb7083e9
+content_hash: bce51a0c0366895c
 ---
+
 # From Gradient Volume to Shapley Fairness: Towards Fair Multi-Task Learning
 
 **Conference**: ICLR 2026  

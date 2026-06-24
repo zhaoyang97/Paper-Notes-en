@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Overlap-Adaptive Regularization for Conditional Average Treatment Effect Estimation
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] Addressing the persistent challenge of learning in "low-overlap regions" for Conditional Average Treatment Effect (CATE) estimation, this paper proposes Overlap-Adaptive Regularization (OAR). The regularization strength of the second-stage model in two-stage meta-learners varies inversely with the overlap weight $\nu(x
+  [ICLR 2026][Causal Inference][Conditional Average Treatment Effect] Addressing the persistent challenge of learning in "low-overlap regions" for Conditional Average Treatment Effect (CATE) estimation, this paper proposes Overlap-Adaptive Regularization (OAR). The regularization strength of the second-stage model in two-stage meta-learners varies inversely with the overlap weight $\nu(x)$ (stronger regularization for lower overlap). It further introduces dOAR…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Conditional Average Treatment Effect"
+  - "overlap weights"
+  - "adaptive regularization"
+  - "Neyman orthogonality"
+  - "meta-learners"
 date: 2026-05-08
-content_hash: d2b6d76c0cd67dda
+content_hash: f13a8f2d582436d0
 ---
+
 # Overlap-Adaptive Regularization for Conditional Average Treatment Effect Estimation
 
 **Conference**: ICLR 2026  
@@ -121,7 +127,7 @@ ACIC 2016 (DR-learner, % of datasets where OAR/dOAR significantly outperforms CR
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

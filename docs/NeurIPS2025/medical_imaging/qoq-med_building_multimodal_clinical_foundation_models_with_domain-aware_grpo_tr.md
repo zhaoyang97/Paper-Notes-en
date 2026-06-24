@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multimodal clinical] QoQ-Med constructs a multimodal clinical foundation model spanning 9 clinical modalities (1D ECG + 6 types of 2D images + 2 types of 3D scans)…
+  [NeurIPS 2025 Oral][Medical Imaging][Multimodal clinical] QoQ-Med constructs a multimodal clinical foundation model spanning 9 clinical modalities (1D ECG + 6 types of 2D images + 2 types of 3D scans), and proposes Domain-aware Relative Policy Optimization (DRPO)—which employs hierarchical temperature scaling (inter-domain × intra-domain K-means clustering) to address modality/difficulty imbalance. Trained on 2.61 million instruction-tuning pairs…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Medical Imaging"
   - "Multimodal clinical"
   - "GRPO"
@@ -12,7 +12,7 @@ tags:
   - "ECG + imaging + text"
   - "interpretable reasoning"
 date: 2026-05-08
-content_hash: 48245dea5f9b4830
+content_hash: aa12a20da52e643a
 ---
 
 # QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training
@@ -141,11 +141,11 @@ QoQ-Med constructs a multimodal clinical foundation model spanning 9 clinical mo
 
 ## Related Papers
 
+- [\[CVPR 2026\] Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning](../../CVPR2026/medical_imaging/med-cmr_a_fine-grained_benchmark_integrating_visual_evidence_and_clinical_logic_.md)
 - [\[NeurIPS 2025\] MTBBench: A Multimodal Sequential Clinical Decision-Making Benchmark in Oncology](mtbbench_a_multimodal_sequential_clinical_decision-making_benchmark_in_oncology.md)
+- [\[CVPR 2026\] MedLoc-R1: Performance-Aware Curriculum Reward Scheduling for GRPO-Based Medical Visual Grounding](../../CVPR2026/medical_imaging/medloc-r1_performance-aware_curriculum_reward_scheduling_for_grpo-based_medical_.md)
+- [\[ICLR 2026\] Bridging Radiology and Pathology Foundation Models via Concept-Based Multimodal Co-Adaptation](../../ICLR2026/medical_imaging/bridging_radiology_and_pathology_foundation_models_via_concept-based_multimodal_.md)
 - [\[NeurIPS 2025\] Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens](brain_harmony_a_multimodal_foundation_model_unifying_morphology_and_function_int.md)
-- [\[NeurIPS 2025\] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation](toward_a_vision-language_foundation_model_for_medical_data_multimodal_dataset_an.md)
-- [\[ICCV 2025\] SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications](../../ICCV2025/medical_imaging/scivid_cross-domain_evaluation_of_video_models_in_scientific_applications.md)
-- [\[NeurIPS 2025\] NeurIPT: Foundation Model for Neural Interfaces](neuript_foundation_model_for_neural_interfaces.md)
 
 </div>
 

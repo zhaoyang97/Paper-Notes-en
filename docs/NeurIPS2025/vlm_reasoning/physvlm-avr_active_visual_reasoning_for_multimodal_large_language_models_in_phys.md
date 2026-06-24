@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Active visual reasoning] This paper proposes the Active Visual Reasoning (AVR) task paradigm, constructs the CLEVR-AVR simulation benchmark and the AVR-152k dataset (with rich CoT annotatio…
+  [NeurIPS 2025][VLM Reasoning][Active visual reasoning] This paper proposes the Active Visual Reasoning (AVR) task paradigm, constructs the CLEVR-AVR simulation benchmark and the AVR-152k dataset (with rich CoT annotations), and trains the PhysVLM-AVR model to iteratively acquire information through a perception–reasoning–action closed loop in partially observable interactive environments, significantly outperforming existing MLLMs.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Active visual reasoning"
   - "partially observable environments"
   - "multi-step interaction"
   - "Chain-of-Thought"
   - "embodied intelligence"
 date: 2026-05-08
-content_hash: beba30dec95991df
+content_hash: 77fabbb13c7a7979
 ---
 
 # PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments
@@ -127,9 +127,9 @@ A four-stage incremental training strategy with mixed data is adopted:
 
 - [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
 - [\[NeurIPS 2025\] FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models](flexac_towards_flexible_control_of_associative_reasoning_in_multimodal_large_lan.md)
-- [\[ICML 2026\] The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design](../../ICML2026/multimodal_vlm/the_perceptual_bandwidth_bottleneck_in_vision-language_models_active_visual_reas.md)
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/multimodal_vlm/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
-- [\[NeurIPS 2025\] Evaluating Multimodal Large Language Models on Core Music Perception Tasks](evaluating_multimodal_large_language_models_on_core_music_perception_tasks.md)
+- [\[CVPR 2025\] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World](../../CVPR2025/vlm_reasoning/thinking_in_dynamics_how_multimodal_large_language_models_perceive_track_and_rea.md)
+- [\[ICML 2026\] The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design](../../ICML2026/vlm_reasoning/the_perceptual_bandwidth_bottleneck_in_vision-language_models_active_visual_reas.md)
+- [\[CVPR 2025\] Insight-V: Exploring Long-Chain Visual Reasoning with Multimodal Large Language Models](../../CVPR2025/vlm_reasoning/insight-v_exploring_long-chain_visual_reasoning_with_multimodal_large_language_m.md)
 
 </div>
 

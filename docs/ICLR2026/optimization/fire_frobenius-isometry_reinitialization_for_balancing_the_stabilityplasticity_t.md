@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability–Plasticity Tradeoff
 description: >-
-  [ICLR 2026][Optimization & Theory][stability-plasticity tradeoff] FIRE reformulates the long-standing problem of "how much to reset weights" as a constrained optimization problem with a closed-form solution. By projecting weights onto an orthogonal (isometric) manifold to restore plasticity while minimizing Frobenius error relative to old weights (maintaining stability), FIRE uses Ne
+  [ICLR 2026][Optimization][stability-plasticity tradeoff] FIRE reformulates the long-standing problem of "how much to reset weights" as a constrained optimization problem with a closed-form solution. By projecting weights onto an orthogonal (isometric) manifold to restore plasticity while minimizing Frobenius error relative to old weights (maintaining stability), FIRE uses Newton-Schulz iterations for efficient approximation. It outperforms naive training and standard reinitia…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - stability-plasticity tradeoff
-  - loss of plasticity
-  - reinitialization
-  - dynamical isometry
-  - Newton–Schulz
-  - continual learning
+  - "ICLR 2026"
+  - "Optimization"
+  - "stability-plasticity tradeoff"
+  - "loss of plasticity"
+  - "reinitialization"
+  - "dynamical isometry"
+  - "Newton–Schulz"
+  - "continual learning"
 date: 2026-05-08
-content_hash: c7cb5e3b9de7f956
+content_hash: f817a54342994637
 ---
+
 # FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability–Plasticity Tradeoff
 
 **Conference**: ICLR 2026  
@@ -121,8 +122,8 @@ flowchart LR
 - [\[ICLR 2026\] Activation Function Design Sustains Plasticity in Continual Learning](activation_function_design_sustains_plasticity_in_continual_learning.md)
 - [\[ICLR 2026\] Seesaw: Accelerating Training by Balancing Learning Rate and Batch Size Scheduling](seesaw_accelerating_training_by_balancing_batch_size_and_learning_rate_schedulin.md)
 - [\[ICLR 2026\] Generalization Below the Edge of Stability: The Role of Data Geometry](generalization_below_the_edge_of_stability_the_role_of_data_geometry.md)
+- [\[ICLR 2026\] HBO: Hierarchical Balancing Optimization for Fine-Tuning Large Language Models](hbo_hierarchical_balancing_optimization_for_fine-tuning_large_language_models.md)
 - [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](../../ICML2026/optimization/stability_analysis_of_sharpness-aware_minimization.md)
-- [\[ICML 2026\] AdaGC: Enhancing LLM Pretraining Stability via Adaptive Gradient Clipping](../../ICML2026/optimization/adagc_enhancing_llm_pretraining_stability_via_adaptive_gradient_clipping.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] STaMP proposes a reversible linear transformation along the **sequence dimension** (utilizing DCT/wavelets to compact activation energy into a few tokens) and سپس allocating higher bits to these high-energy tokens. This significantly reduces activation quantization errors under a fixed average bit budget. It is orthogo
+  [ICLR 2026][Model Compression][Activation Quantization] STaMP proposes a reversible linear transformation along the **sequence dimension** (utilizing DCT/wavelets to compact activation energy into a few tokens) and سپس allocating higher bits to these high-energy tokens. This significantly reduces activation quantization errors under a fixed average bit budget. It is orthogonally complementary to existing feature-dimension transformations (Hadamard/QuaRot)…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Activation Quantization"
+  - "Post-Training Quantization"
+  - "Sequence Transformation"
+  - "Mixed Precision"
+  - "Energy Compaction"
 date: 2026-05-08
-content_hash: 86f1e674c0ded116
+content_hash: 6af9ebf52404bd1e
 ---
+
 # STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization
 
 **Conference**: ICLR 2026  
@@ -150,8 +156,8 @@ After adding STaMP, SQNR and Image Reward improve for most configurations, and g
 - [\[ICLR 2026\] PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs](pm-kvq_progressive_mixed-precision_kv_cache_quantization_for_long-cot_llms.md)
 - [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
 - [\[ICLR 2026\] MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models](micromix_efficient_mixed-precision_quantization_with_microscaling_formats_for_la.md)
+- [\[ICCV 2025\] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective](../../ICCV2025/model_compression/mixa-q_revisiting_activation_sparsity_for_vision_transformers_from_a_mixed-preci.md)
 - [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](../../AAAI2026/model_compression/dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
-- [\[AAAI 2026\] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache](../../AAAI2026/model_compression/kvmix_gradient-based_layer_importance-aware_mixed-precision_.md)
 
 </div>
 

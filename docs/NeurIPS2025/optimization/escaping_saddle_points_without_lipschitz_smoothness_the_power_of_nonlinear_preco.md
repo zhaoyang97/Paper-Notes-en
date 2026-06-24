@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Escaping Saddle Points without Lipschitz Smoothness: The Power of Nonlinear Preconditioning
 description: >-
-  [NeurIPS 2025][Optimization][nonlinear preconditioning] This paper proposes a unified sufficient condition connecting the $(L_0,L_1)$-smoothness and anisotropic smoothness frameworks…
+  [NeurIPS 2025 Spotlight][Optimization][nonlinear preconditioning] This paper proposes a unified sufficient condition connecting the $(L_0,L_1)$-smoothness and anisotropic smoothness frameworks, proves that nonlinear preconditioned gradient methods (including gradient clipping variants) retain saddle-point avoidance under these relaxed conditions, and establishes that a perturbed variant achieves second-order stationary points with polylogarithmic dimension dependence.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Optimization"
   - "nonlinear preconditioning"
   - "saddle point escaping"
@@ -13,7 +13,7 @@ tags:
   - "L_1)$-smoothness"
   - "gradient clipping"
 date: 2026-05-08
-content_hash: 9a81216b30639cd9
+content_hash: c2cadc6fa9d5d549
 ---
 
 # Escaping Saddle Points without Lipschitz Smoothness: The Power of Nonlinear Preconditioning
@@ -136,10 +136,10 @@ Three kernel functions are examined: $h_1(x) = \cosh(x) - 1$, $h_2(x) = \exp(|x|
 ## Related Papers
 
 - [\[NeurIPS 2025\] Extragradient Method for $(L_0, L_1)$-Lipschitz Root-finding Problems](extragradient_method_for_l_0_l_1-lipschitz_root-finding_problems.md)
-- [\[NeurIPS 2025\] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization](set_smoothness_unlocks_clarke_hyper-stationarity_in_bilevel_optimization.md)
-- [\[NeurIPS 2025\] Better NTK Conditioning: A Free Lunch from ReLU Nonlinear Activation in Wide Neural Networks](better_ntk_conditioning_a_free_lunch_from_relu_nonlinear_activation_in_wide_neur.md)
 - [\[NeurIPS 2025\] Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training](unveiling_the_power_of_multiple_gossip_steps_a_stability-based_generalization_an.md)
+- [\[NeurIPS 2025\] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization](set_smoothness_unlocks_clarke_hyper-stationarity_in_bilevel_optimization.md)
 - [\[ICLR 2026\] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](../../ICLR2026/optimization/saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)
+- [\[NeurIPS 2025\] From Linear to Nonlinear: Provable Weak-to-Strong Generalization through Feature Learning](from_linear_to_nonlinear_provable_weak-to-strong_generalization_through_feature_.md)
 
 </div>
 

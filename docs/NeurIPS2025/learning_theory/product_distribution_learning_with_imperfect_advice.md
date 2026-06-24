@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Product Distribution Learning with Imperfect Advice
 description: >-
-  [NeurIPS 2025][Learning Theory / Distribution Learning][distribution learning] This paper studies the problem of learning product distributions over the Boolean hypercube given an imperfect advice distribution…
+  [NeurIPS 2025][Learning Theory][algorithms with predictions] This paper studies the problem of learning product distributions over the Boolean hypercube given an imperfect advice distribution, and proposes an efficient algorithm that achieves sub-linear dependence on dimension $d$ in sample complexity when the advice is of sufficient quality.
 tags:
   - "NeurIPS 2025"
-  - "Learning Theory / Distribution Learning"
-  - "distribution learning"
+  - "Learning Theory"
+  - "Distribution Learning"
   - "algorithms with predictions"
   - "product distributions"
   - "sample complexity"
   - "tolerant testing"
 date: 2026-05-08
-content_hash: bc1ea4ca50344e16
+content_hash: f4b59363ec974de6
 ---
 
 # Product Distribution Learning with Imperfect Advice
@@ -143,11 +143,11 @@ This paper is a purely theoretical contribution. The central results consist of 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Deep Learning with Learnable Product-Structured Activations](../../ICLR2026/learning_theory/deep_learning_with_learnable_product-structured_activations.md)
+- [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](../../ICLR2026/learning_theory/distribution-informed_online_conformal_prediction.md)
 - [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
-- [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
+- [\[ICLR 2026\] Prediction with Expert Advice under Local Differential Privacy](../../ICLR2026/learning_theory/prediction_with_expert_advice_under_local_differential_privacy.md)
 - [\[NeurIPS 2025\] Kernel Conditional Tests from Learning-Theoretic Bounds](kernel_conditional_tests_from_learning-theoretic_bounds.md)
-- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
-- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
 
 </div>
 

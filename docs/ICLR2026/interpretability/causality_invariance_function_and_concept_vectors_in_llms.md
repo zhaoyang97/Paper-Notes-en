@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Causality ≠ Invariance: Function and Concept Vectors in LLMs
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper distinguishes between two distinct types of attention heads in LLMs: "causal heads" identified via activation patching (forming Function Vectors, which truly drive in-context learning behavior) and "invariant heads" identified via Representational Similarity Analysis (forming Concept Vectors, which stably en
+  [ICLR2026][Interpretability][Function Vectors] This paper distinguishes between two distinct types of attention heads in LLMs: "causal heads" identified via activation patching (forming Function Vectors, which truly drive in-context learning behavior) and "invariant heads" identified via Representational Similarity Analysis (forming Concept Vectors, which stably encode abstract relational concepts across input formats and languages). The study proves that these two sets of he…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Function Vectors"
+  - "Concept Vectors"
+  - "Representational Similarity Analysis"
+  - "In-Context Learning"
+  - "Activation Patching"
 date: 2026-05-08
-content_hash: 43b70971f268c258
+content_hash: e42e852c74893d64
 ---
+
 # Causality ≠ Invariance: Function and Concept Vectors in LLMs
 
 **Conference**: ICLR2026  
@@ -147,8 +153,8 @@ Overlap is nearly zero for small K, and even at K=100, the overlap is far less t
 - [\[ICLR 2026\] CoT Vectors: Transferring and Probing the Reasoning Mechanisms of LLMs](cot_vectors_transferring_and_probing_the_reasoning_mechanisms_of_llms.md)
 - [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](../../ICML2026/interpretability/how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
 - [\[ICLR 2026\] Dissecting Representation Misalignment in Contrastive Learning via Influence Function](dissecting_representation_misalignment_in_contrastive_learning_via_influence_fun.md)
-- [\[ICML 2026\] Where Computation Lives Inside TabPFN: Causal Localisation of Attention Head Function](../../ICML2026/interpretability/where_computation_lives_inside_tabpfn_causal_localisation_of_attention_head_func.md)
-- [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution](concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept_a.md)
+- [\[ICLR 2026\] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations](understanding_task_vectors_in_in-context_learning_emergence_functionality_and_li.md)
+- [\[ICLR 2026\] Latent Concept Disentanglement in Transformer-based Language Models](latent_concept_disentanglement_in_transformer-based_language_models.md)
 
 </div>
 

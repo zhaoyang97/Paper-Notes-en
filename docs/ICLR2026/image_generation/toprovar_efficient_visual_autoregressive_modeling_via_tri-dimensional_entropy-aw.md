@@ -2,16 +2,13 @@
 title: >-
   [Paper Note] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization
 description: >-
-  [ICLR 2026][Image Generation][VAR] The ToProVAR framework is proposed, which utilizes attention entropy to uniformly analyze the sparsity of VAR models across token, layer, and scale dimensions. It achieves up to 3.4× acceleration with near-zero loss in image quality, significantly outperforming FastVAR and SkipVAR.
+  [Image Generation] The ToProVAR framework is proposed, which utilizes attention entropy to uniformly analyze the sparsity of VAR models across token, layer, and scale dimensions. It achieves up to 3.4× acceleration with near-zero loss in image quality, significantly outperforming FastVAR and SkipVAR.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VAR
-  - attention entropy
-  - Model Acceleration
+  - "Image Generation"
 date: 2026-05-08
-content_hash: 80a1bed2d8f0c275
+content_hash: cb8b8a58fbdc0634
 ---
+
 # ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization
 
 ## Meta Information

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pixel to Gaussian: Ultra-Fast Continuous Super-Resolution with 2D Gaussian Modeling
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] This paper proposes ContinuousSR, which reconstructs a low-resolution image into a continuous 2D Gaussian field at once via the "pixel-to-Gaussian" paradigm. Any subsequent magnification is achieved through a single fast rendering (approx. 1ms), surpassing SOTA in quality across seven benchmarks (+0.18 dB on Manga109)
+  [ICLR 2026][Image Restoration][Arbitrary-Scale SR] This paper proposes ContinuousSR, which reconstructs a low-resolution image into a continuous 2D Gaussian field at once via the "pixel-to-Gaussian" paradigm. Any subsequent magnification is achieved through a single fast rendering (approx. 1ms), surpassing SOTA in quality across seven benchmarks (+0.18 dB on Manga109) while achieving a 19.5× speedup when continuously scaling across 40 levels.
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Arbitrary-Scale SR"
+  - "2D Gaussian"
+  - "Gaussian Splatting"
+  - "Continuous Signal Reconstruction"
+  - "Efficient Inference"
 date: 2026-05-08
-content_hash: a167d6ce82e0240a
+content_hash: 827bd1b064f01aa8
 ---
+
 # Pixel to Gaussian: Ultra-Fast Continuous Super-Resolution with 2D Gaussian Modeling
 
 **Conference**: ICLR 2026  

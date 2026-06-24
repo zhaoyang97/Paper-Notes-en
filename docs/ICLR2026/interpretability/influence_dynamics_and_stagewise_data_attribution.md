@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Influence Dynamics and Stagewise Data Attribution
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper uses Singular Learning Theory (SLT) to upgrade "training data attribution" from a static perspective to a **stagewise perspective**: it proves that the influence of one sample on another is not fixed but undergoes **sign flips** and **peaks** at phase transition points of model development, verifying this pr
+  [ICLR 2026][Interpretability][Training data attribution] This paper uses Singular Learning Theory (SLT) to upgrade "training data attribution" from a static perspective to a **stagewise perspective**: it proves that the influence of one sample on another is not fixed but undergoes **sign flips** and **peaks** at phase transition points of model development, verifying this prediction using Bayesian Influence Functions (BIF) on both toy models and real language models.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Training data attribution"
+  - "influence functions"
+  - "singular learning theory"
+  - "stagewise learning"
+  - "Bayesian influence functions"
+  - "phase transitions"
 date: 2026-05-08
-content_hash: 08d8b0f7e41ff02e
+content_hash: 91612a6d29bf15ef
 ---
+
 # Influence Dynamics and Stagewise Data Attribution
 
 **Conference**: ICLR 2026  
@@ -111,8 +118,8 @@ where $\mu_{i,U}=\mathbb{E}[\ell_i|U]$. Without a phase transition ($\pi_U=1$), 
 ## Related Papers
 
 - [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](learning_to_weight_parameters_for_training_data_attribution.md)
-- [\[ICLR 2026\] Dissecting Representation Misalignment in Contrastive Learning via Influence Function](dissecting_representation_misalignment_in_contrastive_learning_via_influence_fun.md)
 - [\[ICML 2026\] ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](../../ICML2026/interpretability/explaind_unifying_model_data_and_training_attribution_to_study_model_behavior.md)
+- [\[ICLR 2026\] Signal in the Noise: Polysemantic Interference Transfers and Predicts Cross-Model Influence](signal_in_the_noise_polysemantic_interference_transfers_and_predicts_cross-model.md)
 - [\[ICLR 2026\] The Shape of Adversarial Influence: Characterizing LLM Latent Spaces with Persistent Homology](the_shape_of_adversarial_influence_characterizing_llm_latent_spaces_with_persist.md)
 - [\[ICLR 2026\] f-INE: A Hypothesis Testing Framework for Estimating Influence under Training Randomness](f-ine_a_hypothesis_testing_framework_for_estimating_influence_under_training_ran.md)
 

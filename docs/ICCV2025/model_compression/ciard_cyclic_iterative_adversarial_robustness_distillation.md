@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CIARD: Cyclic Iterative Adversarial Robustness Distillation
 description: >-
-  [ICCV 2025][Model Compression][adversarial robustness distillation] This paper proposes CIARD, which addresses the optimization objective conflict between the clean teacher and robust teacher in dual-teacher ARD framewor…
+  [ICCV 2025][Model Compression][adversarial robustness distillation] This paper proposes CIARD, which addresses the optimization objective conflict between the clean teacher and robust teacher in dual-teacher ARD frameworks via a Contrastive Push Loss, and introduces an Iterative Teacher Training (ITT) strategy to continuously update the robust teacher and prevent performance degradation. CIARD simultaneously improves adversarial robustness by +3.53% and clean accuracy by +5.8…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "dual-teacher"
   - "contrastive push loss"
 date: 2026-05-08
-content_hash: 8de05d348eea9370
+content_hash: cd11cdf325b77907
 ---
 
 # CIARD: Cyclic Iterative Adversarial Robustness Distillation
@@ -136,8 +136,8 @@ CIARD consists of a fixed clean teacher, a continuously updated robust teacher, 
 ## Related Papers
 
 - [\[ICML 2026\] Toward Understanding Adversarial Distillation: Why Robust Teachers Fail](../../ICML2026/model_compression/toward_understanding_adversarial_distillation_why_robust_teachers_fail.md)
-- [\[CVPR 2026\] Adversarial Concept Distillation for One-Step Diffusion Personalization](../../CVPR2026/model_compression/adversarial_concept_distillation_for_one-step_diffusion_personalization.md)
 - [\[ICCV 2025\] Knowledge Distillation with Refined Logits](knowledge_distillation_with_refined_logits.md)
+- [\[CVPR 2025\] IterIS: Iterative Inference-Solving Alignment for LoRA Merging](../../CVPR2025/model_compression/iteris_iterative_inference-solving_alignment_for_lora_merging.md)
 - [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](a_good_teacher_adapts_their_knowledge_for_distillation.md)
 - [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
 

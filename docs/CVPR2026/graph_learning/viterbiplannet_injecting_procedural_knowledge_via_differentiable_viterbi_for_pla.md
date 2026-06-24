@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ViterbiPlanNet: Injecting Procedural Knowledge via Differentiable Viterbi for Planning
 description: >-
-  [CVPR 2026][Graph Learning][Paper Note] Ours embeds the Procedural Knowledge Graph (PKG) into a planning model end-to-end via a differentiable Viterbi layer, allowing the neural network to focus on learning emission probabilities rather than memorizing complete procedural structures. This achieves SOTA success rates on CrossTask/COIN/NIV with only 5-7M param
+  [CVPR 2026][Graph Learning][Procedure Planning] Ours embeds the Procedural Knowledge Graph (PKG) into a planning model end-to-end via a differentiable Viterbi layer, allowing the neural network to focus on learning emission probabilities rather than memorizing complete procedural structures. This achieves SOTA success rates on CrossTask/COIN/NIV with only 5-7M parameters (1-3 orders of magnitude fewer than Diffusion/LLM methods) and establishes a unified evaluation benchmark.
 tags:
-  - CVPR 2026
-  - Graph Learning
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Procedure Planning"
+  - "Differentiable Viterbi"
+  - "Procedural Knowledge Graph"
+  - "Instructional Video"
+  - "Structure-Aware Training"
 date: 2026-05-08
-content_hash: 8fd38014bdfed5bc
+content_hash: e0db964410364bc7
 ---
+
 # ViterbiPlanNet: Injecting Procedural Knowledge via Differentiable Viterbi for Planning
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ The total loss is the sum of three terms: $\mathcal{L} = \mathcal{L}_{plan} + \m
 
 ## Related Papers
 
+- [\[ICLR 2026\] Differentiable Lifting for Topological Neural Networks](../../ICLR2026/graph_learning/differentiable_lifting_for_topological_neural_networks.md)
 - [\[CVPR 2026\] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs](graph2eval_automatic_multimodal_task_generation_for_agents_via_knowledge_graphs.md)
-- [\[ACL 2026\] What Makes AI Research Replicable? Executable Knowledge Graphs as Scientific Knowledge Representations](../../ACL2026/graph_learning/what_makes_ai_research_replicable_executable_knowledge_graphs_as_scientific_know.md)
 - [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
-- [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
-- [\[NeurIPS 2025\] MedMKG: Benchmarking Medical Knowledge Exploitation with Multimodal Knowledge Graph](../../NeurIPS2025/graph_learning/medmkg_benchmarking_medical_knowledge_exploitation_with_multimodal_knowledge_gra.md)
+- [\[ICLR 2026\] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning](../../ICLR2026/graph_learning/knowledge_reasoning_language_model_unifying_knowledge_and_language_for_inductive.md)
+- [\[ACL 2026\] What Makes AI Research Replicable? Executable Knowledge Graphs as Scientific Knowledge Representations](../../ACL2026/graph_learning/what_makes_ai_research_replicable_executable_knowledge_graphs_as_scientific_know.md)
 
 </div>
 

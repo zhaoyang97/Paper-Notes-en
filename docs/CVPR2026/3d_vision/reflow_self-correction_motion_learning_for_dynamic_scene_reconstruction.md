@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReFlow: Self-correction Motion Learning for Dynamic Scene Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ReFlow proposes a "self-correction" monocular dynamic scene reconstruction framework that uses inter-frame video differences to directly supervise 3D motion without external optical flow or tracking priors. Combined with complete canonical space initialization and static-dynamic decoupling, it achieves new Prev. SOTA p
+  [CVPR 2026][3D Vision][Monocular dynamic reconstruction] ReFlow proposes a "self-correction" monocular dynamic scene reconstruction framework that uses inter-frame video differences to directly supervise 3D motion without external optical flow or tracking priors. Combined with complete canonical space initialization and static-dynamic decoupling, it achieves new Prev. SOTA performance on NVIDIA Monocular and Nerfies-HyperNeRF (average PSNR 28.20 dB on NVIDIA).
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular dynamic reconstruction"
+  - "4D reconstruction"
+  - "Self-correction flow matching"
+  - "3D Gaussian Splatting"
+  - "Motion supervision"
 date: 2026-05-08
-content_hash: a282537ef850e3f0
+content_hash: e0cb868584de5d38
 ---
+
 # ReFlow: Self-correction Motion Learning for Dynamic Scene Reconstruction
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ On NVIDIA Monocular: CompInit.=Complete Canonical Initialization, Sep.=Decoupled
 
 ## Related Papers
 
+- [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
+- [\[CVPR 2026\] DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving](dynamicvggt_learning_dynamic_point_maps_for_4d_scene_reconstruction_in_autonomou.md)
+- [\[CVPR 2026\] MAPo: Motion-Aware Partitioning of Deformable 3D Gaussian Splatting for High-Fidelity Dynamic Scene Reconstruction](mapo_motion-aware_partitioning_of_deformable_3d_gaussian_splatting_for_high-fide.md)
 - [\[CVPR 2026\] MOSAIC-GS: Monocular Scene Reconstruction via Advanced Initialization for Complex Dynamic Environments](mosaic-gs_monocular_scene_reconstruction_via_advanced_initialization_for_complex.md)
 - [\[CVPR 2026\] Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting](point4cast_streaming_dynamic_scene_reconstruction_and_forecasting.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] 4D Reconstruction from Sparse Dynamic Cameras](4d_reconstruction_from_sparse_dynamic_cameras.md)
-- [\[CVPR 2026\] MSCD-GS: Motion-Separated Cooperative Deblurring Dynamic Reconstruction via Gaussian Splatting](mscd-gs_motion-separated_cooperative_deblurring_dynamic_reconstruction_via_gauss.md)
 
 </div>
 

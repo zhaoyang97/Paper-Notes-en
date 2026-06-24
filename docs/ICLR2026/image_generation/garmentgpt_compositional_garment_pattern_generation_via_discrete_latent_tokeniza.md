@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GarmentGPT: Compositional Garment Pattern Generation via Discrete Latent Tokenization
 description: >-
-  [ICLR 2026][Image Generation][RVQ-VAE] GarmentGPT quantizes the continuous boundary curves of sewing patterns into discrete codebook tokens using RVQ-VAE. It then enables a fine-tuned VLM to autoregressively "select words" to generate these tokens, transforming pattern generation from low-level coordinate regression into high-level symbolic compositional re
+  [ICLR 2026][Image Generation][Sewing Pattern Generation] GarmentGPT quantizes the continuous boundary curves of sewing patterns into discrete codebook tokens using RVQ-VAE. It then enables a fine-tuned VLM to autoregressively "select words" to generate these tokens, transforming pattern generation from low-level coordinate regression into high-level symbolic compositional reasoning. The work is supported by a million-scale dataset of paired real human portraits and patterns.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - RVQ-VAE
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Sewing Pattern Generation"
+  - "RVQ-VAE"
+  - "Discrete Tokenization"
+  - "Vision-Language Model"
+  - "Garment Digitization"
 date: 2026-05-08
-content_hash: 1286b789113d4697
+content_hash: fc878187aee999d6
 ---
+
 # GarmentGPT: Compositional Garment Pattern Generation via Discrete Latent Tokenization
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FALCON: Few-step Accurate Likelihoods for Continuous Flows
 description: >-
-  [NeurIPS 2025][Image Generation][Continuous Normalizing Flows] This paper proposes FALCON, which employs a hybrid training objective (flow matching + mean velocity loss + invertibility regularization) to enable continuou…
+  [NeurIPS 2025][Image Generation][Continuous Normalizing Flows] This paper proposes FALCON, which employs a hybrid training objective (flow matching + mean velocity loss + invertibility regularization) to enable continuous normalizing flows to provide sufficiently accurate likelihood estimates under few-step sampling, achieving Boltzmann sampling two orders of magnitude faster than conventional CNFs.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Importance Sampling"
   - "Molecular Sampling"
 date: 2026-05-08
-content_hash: 017878a37e4ddfdc
+content_hash: ddbc664a90d47c11
 ---
 
 # FALCON: Few-step Accurate Likelihoods for Continuous Flows
@@ -155,11 +155,11 @@ The following broader insights emerge from this work:
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] HollowFlow: Efficient Sample Likelihood Evaluation using Hollow Message Passing](hollowflow_efficient_sample_likelihood_evaluation_using_hollow_message_passing.md)
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](on_the_relation_between_rectified_flows_and_optimal_transport.md)
-- [\[ICCV 2025\] SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency Distillation](../../ICCV2025/image_generation/sana-sprint_one-step_diffusion_with_continuous-time_consistency_distillation.md)
 - [\[NeurIPS 2025\] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants](boltznce_learning_likelihoods_for_boltzmann_generation_with_stochastic_interpola.md)
-- [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
-- [\[ICCV 2025\] Learning Few-Step Diffusion Models by Trajectory Distribution Matching](../../ICCV2025/image_generation/learning_few-step_diffusion_models_by_trajectory_distribution_matching.md)
+- [\[NeurIPS 2025\] Counterfactual Identifiability via Dynamic Optimal Transport](counterfactual_identifiability_via_dynamic_optimal_transport.md)
+- [\[NeurIPS 2025\] Real-Time Execution of Action Chunking Flow Policies](real-time_execution_of_action_chunking_flow_policies.md)
 
 </div>
 

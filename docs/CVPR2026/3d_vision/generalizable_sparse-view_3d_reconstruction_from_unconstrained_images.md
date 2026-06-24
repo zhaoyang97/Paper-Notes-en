@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generalizable Sparse-View 3D Reconstruction from Unconstrained Images
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GenWildSplat transforms "in-the-wild internet photo reconstruction" from per-scene optimization into a single feedforward pass: given 2–6 pose-free, variably-lit sparse images with transient occlusions (pedestrians, vehicles), it predicts 3D Gaussians with controllable appearance in under 3 seconds. By employing an app
+  [CVPR 2026][3D Vision][Sparse-view reconstruction] GenWildSplat transforms "in-the-wild internet photo reconstruction" from per-scene optimization into a single feedforward pass: given 2–6 pose-free, variably-lit sparse images with transient occlusions (pedestrians, vehicles), it predicts 3D Gaussians with controllable appearance in under 3 seconds. By employing an appearance adapter for color modulation in 3D space, segmentation masks to filter transients…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Sparse-view reconstruction"
+  - "Feedforward 3D Gaussians"
+  - "Appearance disentanglement"
+  - "Occlusion handling"
+  - "Curriculum learning"
 date: 2026-05-08
-content_hash: 0d36a6bf278d6d7c
+content_hash: 8fa749376cc99cd9
 ---
+
 # Generalizable Sparse-View 3D Reconstruction from Unconstrained Images
 
 **Conference**: CVPR 2026  
@@ -147,14 +153,17 @@ Removing components sequentially on MegaScenes (6-view setting):
 
 <div class="related-papers" markdown="1">
 
-- **AnySplat**: [2404.14392](https://arxiv.org/abs/2404.14392) (Geometric foundation)
-- **WildGaussians**: [2403.11184](https://arxiv.org/abs/2403.11184) (Optimization-based SOTA)
-- **NexusSplats**: [2411.05581](https://arxiv.org/abs/2411.05581) (Per-scene wild reconstruction)
+## Related Papers
+
+- [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
+- [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
+- [\[AAAI 2026\] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting](../../AAAI2026/3d_vision/meshsplat_generalizable_sparse-view_surface_reconstruction_via_gaussian_splattin.md)
+- [\[CVPR 2026\] S2D: Sparse to Dense Lifting for 3D Reconstruction with Minimal Inputs](s2d_sparse_to_dense_lifting_for_3d_reconstruction_with_minimal_inputs.md)
+- [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)

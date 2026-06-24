@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] ChronoEdit: Towards Temporal Reasoning for In-Context Image Editing and World Simulation
 description: >-
-  [ICLR 2026][Image Generation][Image Editing] This work reformulates image editing as a "two-frame video generation" problem, leveraging the temporal priors of pre-trained large video models to ensure the physical consistency of edits. By inserting discardable "temporal reasoning tokens" during inference to imagine a plausible editing trajectory, the proposed meth
+  [ICLR 2026][Image Generation][Image Editing] This work reformulates image editing as a "two-frame video generation" problem, leveraging the temporal priors of pre-trained large video models to ensure the physical consistency of edits. By inserting discardable "temporal reasoning tokens" during inference to imagine a plausible editing trajectory, the proposed method achieves SOTA performance on world simulation editing tasks.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Image Editing
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Video Generation Priors"
+  - "Physical Consistency"
+  - "Temporal Reasoning"
+  - "World Simulation"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 4fecbd31a64b484b
+content_hash: 4e803cc901a8a254
 ---
+
 # ChronoEdit: Towards Temporal Reasoning for In-Context Image Editing and World Simulation
 
 **Conference**: ICLR 2026  
@@ -143,8 +148,8 @@ Only 10 reasoning steps are needed to reach the highest score of 4.53. Gains sat
 - [\[CVPR 2026\] Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing](../../CVPR2026/image_generation/re-align_structured_reasoning-guided_alignment_for_in-context_image_generation_a.md)
 - [\[ICLR 2026\] WorldEdit: Towards Open-World Image Editing with a Knowledge-Informed Benchmark](worldedit_towards_open-world_image_editing_with_a_knowledge-informed_benchmark.md)
 - [\[ICLR 2026\] Geometric Image Editing via Effects-Sensitive In-Context Inpainting with Diffusion Transformers](geometric_image_editing_via_effects-sensitive_in-context_inpainting_with_diffusi.md)
-- [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)
-- [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
+- [\[ICLR 2026\] Learning an Image Editing Model without Image Editing Pairs](learning_an_image_editing_model_without_image_editing_pairs.md)
+- [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](edit-based_flow_matching_for_temporal_point_processes.md)
 
 </div>
 

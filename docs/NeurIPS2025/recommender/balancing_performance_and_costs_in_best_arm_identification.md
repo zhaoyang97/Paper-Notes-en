@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Balancing Performance and Costs in Best Arm Identification
 description: >-
-  [NeurIPS 2025][Recommender Systems][Best Arm Identification] This paper proposes to reformulate Best Arm Identification (BAI) from the fixed-budget/fixed-confidence paradigm into a risk functional minimization problem ov…
+  [NeurIPS 2025][Recommender Systems][Best Arm Identification] This paper proposes to reformulate Best Arm Identification (BAI) from the fixed-budget/fixed-confidence paradigm into a risk functional minimization problem over misidentification probability (or simple regret) plus sampling cost. It derives lower bounds exhibiting a phase transition phenomenon (when the gap is too small, the optimal strategy is to guess directly), and designs the DBCARE algorithm that achieves opti…
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Budget"
   - "Risk Functional"
 date: 2026-05-08
-content_hash: 4a08146531999bf7
+content_hash: c6b183d20fb1d18a
 ---
 
 # Balancing Performance and Costs in Best Arm Identification

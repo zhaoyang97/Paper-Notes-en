@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dual-Flow: Transferable Multi-Target, Instance-Agnostic Attacks via In-the-wild Cascading Flow Optimization
 description: >-
-  [NeurIPS 2025][AI Safety][adversarial attacks] This paper proposes the Dual-Flow framework, which leverages the forward ODE flow of a pretrained diffusion model and the reverse flow of a fine-tuned LoRA velocity function…
+  [NeurIPS 2025][AI Safety][adversarial attacks] This paper proposes the Dual-Flow framework, which leverages the forward ODE flow of a pretrained diffusion model and the reverse flow of a fine-tuned LoRA velocity function to perform multi-target, instance-agnostic adversarial attacks. Through a cascading distribution shift training strategy, the method significantly improves transfer attack success rates (e.g., +34.58% from Inc-v3 to Res-152) and demonstrates strong robustness…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "flow matching"
   - "multi-target attacks"
 date: 2026-05-08
-content_hash: bf2e0b455cb9a542
+content_hash: e8de283e3c8246a8
 ---
 
 # Dual-Flow: Transferable Multi-Target, Instance-Agnostic Attacks via In-the-wild Cascading Flow Optimization
@@ -132,11 +132,11 @@ An input image $x$ is mapped to a perturbed distribution $X_\tau$ via the forwar
 
 ## Related Papers
 
-- [\[ICML 2026\] Exposing Vulnerabilities in Explanation for Time Series Classifiers via Dual-Target Adversarial Attack](../../ICML2026/ai_safety/exposing_vulnerabilities_in_explanation_for_time_series_classifiers_via_dual-tar.md)
-- [\[NeurIPS 2025\] Fairness-Regularized Online Optimization with Switching Costs](fairness-regularized_online_optimization_with_switching_costs.md)
+- [\[CVPR 2026\] AdvFM: Lookahead Flow-Matching Velocity-Field Attacks for Imperceptible and Transferable Adversarial Examples](../../CVPR2026/ai_safety/advfm_lookahead_flow-matching_velocity-field_attacks_for_imperceptible_and_trans.md)
+- [\[CVPR 2025\] Lyapunov Stable Graph Neural Flow](../../CVPR2025/ai_safety/lyapunov_stable_graph_neural_flow.md)
+- [\[CVPR 2026\] WaTeRFlow: Watermark Temporal Robustness via Flow Consistency](../../CVPR2026/ai_safety/waterflow_watermark_temporal_robustness_via_flow_consistency.md)
+- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](../../CVPR2026/ai_safety/flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
-- [\[NeurIPS 2025\] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization](stochastic_regret_guarantees_for_online_zeroth-_and_first-order_bilevel_optimiza.md)
-- [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
 
 </div>
 

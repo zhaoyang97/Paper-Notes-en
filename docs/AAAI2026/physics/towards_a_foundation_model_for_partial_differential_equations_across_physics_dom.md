@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards a Foundation Model for Partial Differential Equations Across Physics Domains
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][PDE] This paper proposes PDE-FM, a modular PDE foundation model combining spatial-spectral dual-modal tokenization, FiLM-based physics modulation…
+  [AAAI 2026][Physics & Scientific Computing][PDE] This paper proposes PDE-FM, a modular PDE foundation model combining spatial-spectral dual-modal tokenization, FiLM-based physics modulation, and a Mamba state-space backbone. It achieves an average 46% reduction in VRMSE across 12 heterogeneous physics-domain datasets from The Well benchmark.
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -14,7 +14,7 @@ tags:
   - "multi-physics"
   - "The Well benchmark"
 date: 2026-05-08
-content_hash: 79987a92f9f8e3c1
+content_hash: 435cb94b80d20656
 ---
 
 # Towards a Foundation Model for Partial Differential Equations Across Physics Domains
@@ -136,11 +136,11 @@ PDE-FM achieves state-of-the-art on 6 of 12 datasets and second-best on 5. Avera
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data](../../NeurIPS2025/physics/multi-trajectory_physics-informed_neural_networks_for_hjb_equations_with_hard-ze.md)
-- [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](../../NeurIPS2025/physics/transfer_learning_beyond_the_standard_model.md)
-- [\[NeurIPS 2025\] The Platonic Universe: Do Foundation Models See the Same Sky?](../../NeurIPS2025/physics/the_platonic_universe_do_foundation_models_see_the_same_sky.md)
-- [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](../../NeurIPS2025/physics/simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
-- [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](../../ICLR2026/physics/riesz_neural_operator_for_solving_partial_differential_equations.md)
+- [\[ICLR 2026\] Disentangled Representation Learning for Parametric Partial Differential Equations](../../ICLR2026/physics/disentangled_representation_learning_for_parametric_partial_differential_equatio.md)
+- [\[ICML 2026\] Foundation Inference Models for Ordinary Differential Equations](../../ICML2026/physics/foundation_inference_models_for_ordinary_differential_equations.md)
+- [\[ICLR 2026\] FM4NPP: A Scaling Foundation Model for Nuclear and Particle Physics](../../ICLR2026/physics/fm4npp_a_scaling_foundation_model_for_nuclear_and_particle_physics.md)
+- [\[ICLR 2026\] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction](../../ICLR2026/physics/physics-informed_inference_time_scaling_for_solving_high-dimensional_partial_dif.md)
 
 </div>
 

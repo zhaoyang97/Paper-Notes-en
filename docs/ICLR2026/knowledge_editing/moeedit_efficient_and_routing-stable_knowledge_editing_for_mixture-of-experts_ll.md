@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] MoEEdit: Efficient and Routing-Stable Knowledge Editing for Mixture-of-Experts LLMs
 description: >-
-  [ICLR 2026][Knowledge Editing][MoE] MoEEdit is the first "routing-stable" parameter-modifying knowledge editing framework for MoE LLMs. It employs "per-expert null space projection" to ensure that edits do not perturb input manifolds for downstream routers, combined with a stochastic Block Coordinate Descent (BCD) solver to decouple computational costs f
+  [ICLR 2026][Knowledge Editing][MoE] MoEEdit is the first "routing-stable" parameter-modifying knowledge editing framework for MoE LLMs. It employs "per-expert null space projection" to ensure that edits do not perturb input manifolds for downstream routers, combined with a stochastic Block Coordinate Descent (BCD) solver to decouple computational costs from the total number of experts to the expert hidden dimension. This achieves high editing success rates…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - MoE
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "MoE"
+  - "Routing Stability"
+  - "Null Space Projection"
+  - "Block Coordinate Descent"
 date: 2026-05-08
-content_hash: 4555c9220352ebe1
+content_hash: 0443071d755b6307
 ---
+
 # MoEEdit: Efficient and Routing-Stable Knowledge Editing for Mixture-of-Experts LLMs
 
 **Conference**: ICLR 2026  
@@ -121,9 +125,9 @@ Routing stability (Qwen3-30B-A3B / COUNTERFACT, RS = Jaccard similarity of pre/p
 
 - [\[ICLR 2026\] MobiEdit: Resource-efficient Knowledge Editing for Personalized On-device LLMs](mobiedit_resource-efficient_knowledge_editing_for_personalized_on-device_llms.md)
 - [\[ICLR 2026\] KnowledgeSmith: Uncovering Knowledge Updating in LLMs with Model Editing and Unlearning](knowledgesmith_uncovering_knowledge_updating_in_llms_with_model_editing_and_unle.md)
-- [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](../../ACL2026/knowledge_editing/evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
+- [\[ICLR 2026\] Scaling Knowledge Editing in LLMs to 100,000 Facts with Neural KV Database](scaling_knowledge_editing_in_llms_to_100000_facts_with_neural_kv_database.md)
 - [\[ACL 2025\] Efficient Knowledge Editing via Minimal Precomputation](../../ACL2025/knowledge_editing/efficient_knowledge_editing.md)
-- [\[ICLR 2026\] SUIT: Knowledge Editing with Subspace-Aware Key-Value Mappings](suit_knowledge_editing_with_subspace-aware_key-value_mappings.md)
+- [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](../../ACL2026/knowledge_editing/evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
 
 </div>
 

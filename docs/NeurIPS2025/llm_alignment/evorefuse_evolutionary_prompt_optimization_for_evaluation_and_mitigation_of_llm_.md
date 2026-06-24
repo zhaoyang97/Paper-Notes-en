@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization
 description: >-
-  [NeurIPS 2025][LLM Alignment][over-refusal] This paper proposes EvoRefuse, a framework that employs evolutionary search to maximize the ELBO for automatically generating diverse pseudo-malicious instructions…
+  [NeurIPS 2025][LLM Alignment][over-refusal] This paper proposes EvoRefuse, a framework that employs evolutionary search to maximize the ELBO for automatically generating diverse pseudo-malicious instructions, yielding a more challenging over-refusal evaluation benchmark (EvoRefuse-Test) and an effective alignment mitigation dataset (EvoRefuse-Align).
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "prompt optimization"
   - "pseudo-malicious instructions"
 date: 2026-05-08
-content_hash: f181d15053dc2f59
+content_hash: 9d2de6540dd0f608
 ---
 
 # EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization
@@ -157,11 +157,11 @@ SFT reduces over-refusal by **29.85%** and DPO by **45.96%**, with only a 4.82% 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](../../ICLR2026/llm_alignment/mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
+- [\[ACL 2025\] Don't Say No: Jailbreaking LLM by Suppressing Refusal](../../ACL2025/llm_alignment/dont_say_no_jailbreaking_llm_by_suppressing_refusal.md)
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](../../ICLR2026/llm_alignment/evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
 - [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](llm_safety_alignment_is_divergence_estimation_in_disguise.md)
-- [\[ICLR 2026\] Obscure but Effective: Classical Chinese Jailbreak Prompt Optimization via Bio-Inspired Search](../../ICLR2026/llm_alignment/obscure_but_effective_classical_chinese_jailbreak_prompt_optimization_via_bio-in.md)
-- [\[NeurIPS 2025\] Preference Optimization by Estimating the Ratio of the Data Distribution](preference_optimization_by_estimating_the_ratio_of_the_data_distribution.md)
-- [\[NeurIPS 2025\] Mechanism Design for LLM Fine-tuning with Multiple Reward Models](mechanism_design_for_llm_fine-tuning_with_multiple_reward_models.md)
+- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](../../ICLR2026/llm_alignment/mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
+- [\[ICLR 2026\] GuidedBench: Measuring and Mitigating the Evaluation Discrepancies of In-the-wild LLM Jailbreak Methods](../../ICLR2026/llm_alignment/guidedbench_measuring_and_mitigating_the_evaluation_discrepancies_of_in-the-wild.md)
 
 </div>
 

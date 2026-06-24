@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Object-Centric Refinement for Enhanced Zero-Shot Segmentation
 description: >-
-  [ICLR 2026][Segmentation][CLIP] Aiming at the limitation where CLIP patch features "lack object structure and are difficult to cluster into coherent semantic regions," OC-ZSS injects "object prompts" guided by DINO clustering into the frozen CLIP encoder. It then iteratively refines patch features into object-centric representations using two-stage O
+  [ICLR 2026][Segmentation][Zero-Shot Segmentation] Aiming at the limitation where CLIP patch features "lack object structure and are difficult to cluster into coherent semantic regions," OC-ZSS injects "object prompts" guided by DINO clustering into the frozen CLIP encoder. It then iteratively refines patch features into object-centric representations using two-stage Object Refinement Attention (ORA) coupled with multi-scale granularity attention…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - CLIP
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Zero-Shot Segmentation"
+  - "CLIP"
+  - "Object-Centric Representation"
+  - "Self-Supervised Prompting"
+  - "Cross-Attention Refinement"
 date: 2026-05-08
-content_hash: df1f7c9c1a29cf00
+content_hash: 57f327b0932a13a9
 ---
+
 # Object-Centric Refinement for Enhanced Zero-Shot Segmentation
 
 **Conference**: ICLR 2026  

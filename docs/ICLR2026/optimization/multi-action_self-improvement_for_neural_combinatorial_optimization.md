@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Multi-Action Self-Improvement for Neural Combinatorial Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Multi-Agent] MACSIM extends the self-improvement paradigm of neural combinatorial optimization (NCO) from "single-step actions" to "multi-agent joint actions." By predicting all agent-task assignments in parallel and using a permutation-invariant set prediction loss, it explicitly leverages agent permutation symmetry to improve sam
+  [ICLR 2026][Optimization][Neural Combinatorial Optimization] MACSIM extends the self-improvement paradigm of neural combinatorial optimization (NCO) from "single-step actions" to "multi-agent joint actions." By predicting all agent-task assignments in parallel and using a permutation-invariant set prediction loss, it explicitly leverages agent permutation symmetry to improve sample efficiency and coordination while significantly compressing solution generation latency in the…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Optimization"
+  - "Neural Combinatorial Optimization"
+  - "Self-Improvement"
+  - "Multi-Agent"
+  - "Set Prediction Loss"
+  - "Agent Permutation Symmetry"
+  - "Scheduling"
+  - "Routing"
 date: 2026-05-08
-content_hash: 4fa5fe21a5e52649
+content_hash: fa49a8d3d3c3b1a3
 ---
+
 # Multi-Action Self-Improvement for Neural Combinatorial Optimization
 
 **Conference**: ICLR 2026  
@@ -127,11 +134,11 @@ MACSIM consistently outperforms neural baselines across all problems and scales.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
 - [\[ICLR 2026\] Provable and Practical In-Context Policy Optimization for Self-Improvement](provable_and_practical_in-context_policy_optimization_for_self-improvement.md)
 - [\[ICLR 2026\] Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems](neural_multi-objective_combinatorial_optimization_for_flexible_job_shop_scheduli.md)
-- [\[ICLR 2026\] Combinatorial Bandit Bayesian Optimization for Tensor Outputs](combinatorial_bandit_bayesian_optimization_for_tensor_outputs.md)
-- [\[ICLR 2026\] ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types](conrep4co_contrastive_representation_learning_of_combinatorial_optimization_inst.md)
+- [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
+- [\[ICLR 2026\] NExCO: Native Solution Expansion for Diffusion-based Combinatorial Optimization](nexco_native_solution_expansion_for_diffusion-based_combinatorial_optimization.md)
+- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](../../NeurIPS2025/optimization/probing_neural_combinatorial_optimization_models.md)
 
 </div>
 

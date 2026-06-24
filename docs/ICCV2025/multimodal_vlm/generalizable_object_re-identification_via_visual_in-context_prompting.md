@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalizable Object Re-Identification via Visual In-Context Prompting
 description: >-
-  [ICCV 2025][Multimodal VLM][Object Re-Identification] VICP proposes a generalizable object re-identification framework in which an LLM infers identity-discriminative rules from a small set of positive/negative image pair…
+  [ICCV 2025][Multimodal VLM][Object Re-Identification] VICP proposes a generalizable object re-identification framework in which an LLM infers identity-discriminative rules from a small set of positive/negative image pairs and converts them into dynamic visual prompts injected into a frozen visual foundation model (DINOv2), enabling zero-parameter-update generalization to unseen object categories.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "LLM-Guided"
   - "Visual Foundation Model"
 date: 2026-05-08
-content_hash: 7f96f134b01a1cfb
+content_hash: 96b929ca54ccbe5a
 ---
 
 # Generalizable Object Re-Identification via Visual In-Context Prompting

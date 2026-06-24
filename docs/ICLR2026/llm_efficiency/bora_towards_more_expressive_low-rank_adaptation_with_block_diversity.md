@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BoRA: Towards More Expressive Low-Rank Adaptation with Block Diversity
 description: >-
-  [ICLR 2026][LLM Efficiency][LoRA] BoRA interprets the LoRA product $BA$ as block matrix multiplication and breaks inter-block correlations by inserting an independent diagonal matrix $\Sigma_{i,j}$ into each block product $B_iA_j$. Using only $b^2r$ additional parameters, BoRA scales the rank of LoRA weights by $b$ times, achieving a 2-4% accuracy impr
+  [ICLR2026][LLM Efficiency][LoRA] BoRA interprets the LoRA product $BA$ as block matrix multiplication and breaks inter-block correlations by inserting an independent diagonal matrix $\Sigma_{i,j}$ into each block product $B_iA_j$. Using only $b^2r$ additional parameters, BoRA scales the rank of LoRA weights by $b$ times, achieving a 2-4% accuracy improvement over LoRA on GLUE, mathematics, and commonsense reasoning tasks with comparable parameter counts.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LoRA
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "LoRA"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Block Matrix"
+  - "Low-Rank Adaptation"
+  - "Expressiveness"
 date: 2026-05-08
-content_hash: 43b4bfdb5a5ef7dd
+content_hash: 284a6f8453affbf4
 ---
+
 # BoRA: Towards More Expressive Low-Rank Adaptation with Block Diversity
 
 **Conference**: ICLR2026  

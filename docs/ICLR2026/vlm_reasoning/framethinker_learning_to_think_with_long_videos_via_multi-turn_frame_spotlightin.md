@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FrameThinker: Learning to Think with Long Videos via Multi-Turn Frame Spotlighting
 description: >-
-  [ICLR 2026][vlm_reasoning][LVLM] FrameThinker enables visual language models to "think while watching long videos" like a detective—initially performing a sparse scan, then "zooming in" to key segments for multi-turn frame selection based on reasoning needs. Using SFT for action syntax and RL for decision strategy, it achieves a new SOTA of 76.1% on L
+  [ICLR 2026][VLM Reasoning][Long Video Reasoning] FrameThinker enables visual language models to "think while watching long videos" like a detective—initially performing a sparse scan, then "zooming in" to key segments for multi-turn frame selection based on reasoning needs. Using SFT for action syntax and RL for decision strategy, it achieves a new SOTA of 76.1% on LongVideo-Reason with an average of 20.6 frames (compared to 512 frames used by competitors).
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - LVLM
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Long Video Reasoning"
+  - "LVLM"
+  - "Multi-turn Interaction"
+  - "Active Frame Selection"
+  - "GRPO"
+  - "Reward Design"
 date: 2026-05-08
-content_hash: 03d4502dea92f035
+content_hash: d9e30bd82183d01c
 ---
+
 # FrameThinker: Learning to Think with Long Videos via Multi-Turn Frame Spotlighting
 
 **Conference**: ICLR 2026  
@@ -135,10 +140,10 @@ Average accuracy across six benchmarks is **53.2%**, a **+10.4%** improvement ov
 ## Related Papers
 
 - [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](../../CVPR2026/vlm_reasoning/thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[ICLR 2026\] STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning](stvg-r1_incentivizing_instance-level_reasoning_and_grounding_in_videos_via_reinf.md)
 - [\[CVPR 2026\] LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling](../../CVPR2026/vlm_reasoning/longvt_incentivizing_thinking_with_long_videos_via_native_tool_calling.md)
 - [\[CVPR 2026\] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](../../CVPR2026/vlm_reasoning/learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)
-- [\[ICLR 2026\] TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning](timesearch-r_adaptive_temporal_search_for_long-form_video_understanding_via_self.md)
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
+- [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/vlm_reasoning/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
 
 </div>
 

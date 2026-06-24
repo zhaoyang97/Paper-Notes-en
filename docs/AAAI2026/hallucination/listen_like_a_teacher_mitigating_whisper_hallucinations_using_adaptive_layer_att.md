@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Listen Like a Teacher: Mitigating Whisper Hallucinations using Adaptive Layer Attention and Knowledge Distillation
 description: >-
-  [AAAI2026][Hallucination Detection][Speech Recognition] A two-stage framework is proposed: Adaptive Layer Attention (ALA) fuses multi-layer representations from the Whisper encoder to enhance noise robustness…
+  [AAAI2026][Hallucination Detection][Speech Recognition] A two-stage framework is proposed: Adaptive Layer Attention (ALA) fuses multi-layer representations from the Whisper encoder to enhance noise robustness, while Multi-Objective Knowledge Distillation (MOKD) aligns the semantic and attention distributions of a clean-speech teacher with a noisy-speech student — achieving significant reductions in hallucination rate and WER on multilingual noisy ASR benchmarks.
 tags:
   - "AAAI2026"
   - "Hallucination Detection"
@@ -13,7 +13,7 @@ tags:
   - "Knowledge Distillation"
   - "Noise Robustness"
 date: 2026-05-08
-content_hash: 2dc55e4cb31af6b2
+content_hash: cfb06c9df06b4a7d
 ---
 
 # Listen Like a Teacher: Mitigating Whisper Hallucinations using Adaptive Layer Attention and Knowledge Distillation
@@ -158,10 +158,10 @@ The inter-layer similarity analysis and block fusion design of ALA can be genera
 ## Related Papers
 
 - [\[ICML 2026\] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy](../../ICML2026/hallucination/finding_the_correct_visual_evidence_without_forgetting_mitigating_hallucination_.md)
+- [\[ICLR 2026\] AFTER: Mitigating Object Hallucinations in LVLMs with Adaptive Fact-guided Activation Editing](../../ICLR2026/hallucination/after_mitigating_the_object_hallucination_of_lvlm_via_adaptive_factual-guided_ac.md)
+- [\[CVPR 2025\] Seeing Far and Clearly: Mitigating Hallucinations in MLLMs with Attention Causal Decoding](../../CVPR2025/hallucination/seeing_far_and_clearly_mitigating_hallucinations_in_mllms_with_attention_causal_.md)
+- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
 - [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](../../CVPR2026/hallucination/tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
-- [\[ICLR 2026\] LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals](../../ICLR2026/hallucination/lumina_detecting_hallucinations_in_rag_system_with_context-knowledge_signals.md)
-- [\[CVPR 2026\] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](../../CVPR2026/hallucination/mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)
-- [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](../../ACL2026/hallucination/understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
 
 </div>
 

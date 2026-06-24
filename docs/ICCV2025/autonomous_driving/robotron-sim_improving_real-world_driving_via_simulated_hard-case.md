@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RoboTron-Sim: Improving Real-World Driving via Simulated Hard-Case
 description: >-
-  [ICCV2025][Autonomous Driving][End-to-end autonomous driving] This paper proposes RoboTron-Sim, a framework that constructs a hard-case simulation dataset (HASS)…
+  [ICCV2025][Autonomous Driving][End-to-end autonomous driving] This paper proposes RoboTron-Sim, a framework that constructs a hard-case simulation dataset (HASS), introduces Scenario-aware Prompt Engineering (SPE) and an Image-to-Ego encoder (I2E), enabling MLLMs to effectively leverage simulated hard cases to improve real-world driving performance. On nuScenes hard scenarios, it achieves ~48% reduction in L2 distance and ~46% reduction in collision rate…
 tags:
   - "ICCV2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "simulation data augmentation"
   - "hard-case scenarios"
 date: 2026-05-08
-content_hash: 1d8be7e4e2cc73ed
+content_hash: 8344e98bfa65d0ad
 ---
 
 # RoboTron-Sim: Improving Real-World Driving via Simulated Hard-Case
@@ -176,9 +176,9 @@ A structured environmental description is prepended to the input sequence: `"You
 
 - [\[ICCV 2025\] LookOut: Real-World Humanoid Egocentric Navigation](lookout_real-world_humanoid_egocentric_navigation.md)
 - [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
+- [\[CVPR 2026\] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World](../../CVPR2026/autonomous_driving/worldlens_full-spectrum_evaluations_of_driving_world_models_in_real_world.md)
 - [\[NeurIPS 2025\] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset](../../NeurIPS2025/autonomous_driving/chronograph_a_real-world_graph-based_multivariate_time_series_dataset.md)
-- [\[CVPR 2026\] SimScale: Learning to Drive via Real-World Simulation at Scale](../../CVPR2026/autonomous_driving/simscale_learning_to_drive_via_real-world_simulation_at_scale.md)
-- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
+- [\[CVPR 2025\] Toward Real-World BEV Perception: Depth Uncertainty Estimation via Gaussian Splatting](../../CVPR2025/autonomous_driving/toward_real-world_bev_perception_depth_uncertainty_estimation_via_gaussian_splat.md)
 
 </div>
 

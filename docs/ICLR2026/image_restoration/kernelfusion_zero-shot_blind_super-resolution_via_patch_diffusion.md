@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] KernelFusion: Zero-Shot Blind Super-Resolution via Patch Diffusion
 description: >-
-  [ICLR 2026][Image Restoration][patch diffusion] KernelFusion trains a patch-based diffusion model on a single LR image. Based on the principle that the correct kernel is one that maximizes cross-scale patch similarity, it recovers arbitrary (including non-Gaussian) downsampling kernels and corresponding HR images during the reverse diffusion process, pushing blind s
+  [ICLR 2026][Image Restoration][Blind Super-Resolution] KernelFusion trains a patch-based diffusion model on a single LR image. Based on the principle that the correct kernel is one that maximizes cross-scale patch similarity, it recovers arbitrary (including non-Gaussian) downsampling kernels and corresponding HR images during the reverse diffusion process, pushing blind super-resolution into a zero-shot paradigm entirely free of training distribution assumptions.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - patch diffusion
-  - INR
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Blind Super-Resolution"
+  - "SR-kernel estimation"
+  - "Zero-shot diffusion"
+  - "patch diffusion"
+  - "internal learning"
+  - "INR"
 date: 2026-05-08
-content_hash: 1c30741dead7c6a9
+content_hash: 53f83858c0cc179e
 ---
+
 # KernelFusion: Zero-Shot Blind Super-Resolution via Patch Diffusion
 
 **Conference**: ICLR 2026  
@@ -129,10 +134,10 @@ flowchart LR
 
 ## Related Papers
 
+- [\[ICLR 2026\] Turbo-DDCM: Fast and Flexible Zero-Shot Diffusion-Based Image Compression](turbo-ddcm_fast_and_flexible_zero-shot_diffusion-based_image_compression.md)
 - [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](../../CVPR2026/image_restoration/mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
-- [\[ICLR 2026\] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution](trust_but_verify_adaptive_conditioning_for_reference-based_diffusion_super-resol.md)
 - [\[CVPR 2026\] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation](../../CVPR2026/image_restoration/zero-shot_image_denoising_via_hybrid_prior-guided_pseudo_sample_generation.md)
-- [\[CVPR 2026\] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration](../../CVPR2026/image_restoration/self-supervised_dynamic_heterogeneous_degradation_modeling_for_unified_zero-shot.md)
+- [\[ICLR 2026\] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution](trust_but_verify_adaptive_conditioning_for_reference-based_diffusion_super-resol.md)
 - [\[ICLR 2026\] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution](improved_adversarial_diffusion_compression_for_real-world_video_super-resolution.md)
 
 </div>

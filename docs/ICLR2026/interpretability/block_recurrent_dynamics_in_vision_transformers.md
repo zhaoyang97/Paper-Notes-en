@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Block Recurrent Dynamics in Vision Transformers
 description: >-
-  [ICLR 2026][Interpretability][Knowledge Distillation] This paper proposes the "Block Recurrent Hypothesis" (BRH), suggesting that the depth of an $L$-layer pre-trained ViT can be approximated by the recurrent unrolling of $k \ll L$ weight-shared blocks. Using a distillation framework called Raptor, the authors compress DINOv2 into 2–3 recurrent blocks while retaining 96%–
+  [ICLR2026][Interpretability][ViT Mechanistic Interpretability] This paper proposes the "Block Recurrent Hypothesis" (BRH), suggesting that the depth of an $L$-layer pre-trained ViT can be approximated by the recurrent unrolling of $k \ll L$ weight-shared blocks. Using a distillation framework called Raptor, the authors compress DINOv2 into 2–3 recurrent blocks while retaining 96%–98% of ImageNet linear probe accuracy. Based on this, they interpret ViT's layer-wise computation…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Knowledge Distillation
-  - DINOv2
+  - "ICLR2026"
+  - "Interpretability"
+  - "ViT Mechanistic Interpretability"
+  - "Block Recurrence"
+  - "Dynamical Systems"
+  - "Knowledge Distillation"
+  - "DINOv2"
 date: 2026-05-08
-content_hash: 5405e11444f2c0f9
+content_hash: c3ce4f12393c7ee5
 ---
+
 # Block Recurrent Dynamics in Vision Transformers
 
 **Conference**: ICLR2026  
@@ -141,10 +145,10 @@ Step-wise components for Raptor (k=3) on ImageNet-1k:
 ## Related Papers
 
 - [\[ICLR 2026\] InputDSA: Demixing, then comparing recurrent and externally driven dynamics](inputdsa_demixing_then_comparing_recurrent_and_externally_driven_dynamics.md)
+- [\[ICLR 2026\] The Potential of CoT for Reasoning: A Closer Look at Trace Dynamics](the_potential_of_cot_for_reasoning_a_closer_look_at_trace_dynamics.md)
 - [\[ICLR 2026\] Decoupling Positional and Symbolic Attention in Transformers](decoupling_positional_and_symbolic_attention_in_transformers.md)
 - [\[ICLR 2026\] Discovering Alternative Solutions Beyond the Simplicity Bias in Recurrent Neural Networks](discovering_alternative_solutions_beyond_the_simplicity_bias_in_recurrent_neural.md)
 - [\[ICML 2026\] Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers](../../ICML2026/interpretability/dissecting_multimodal_in-context_learning_modality_asymmetries_and_circuit_dynam.md)
-- [\[CVPR 2026\] Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings](../../CVPR2026/interpretability/inside-out_measuring_generalization_in_vision_transformers_through_inner_working.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Test-time Sparsity for Extreme Fast Action Diffusion
 description: >-
-  [CVPR 2026][Model Compression][Inference Acceleration] This paper proposes "test-time sparsity," utilizing a lightweight pruner with a shared encoder to dynamically predict residual blocks that can be pruned during each forward pass. Combined with an "omni-reuse" strategy that organizes historical features into a 3D lattice, it achieves 95% sparsity, a 92% reduction in FLO
+  [CVPR 2026][Model Compression][Action Diffusion] This paper proposes "test-time sparsity," utilizing a lightweight pruner with a shared encoder to dynamically predict residual blocks that can be pruned during each forward pass. Combined with an "omni-reuse" strategy that organizes historical features into a 3D lattice, it achieves 95% sparsity, a 92% reduction in FLOPs, and a 5× actual speedup in robotic action diffusion. This increases the inference frequency from 6Hz to 47.…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Inference Acceleration
-  - VLA
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Action Diffusion"
+  - "Test-time Sparsity"
+  - "Feature Reuse"
+  - "Inference Acceleration"
+  - "VLA"
 date: 2026-05-08
-content_hash: 1bb5eadbb397bd14
+content_hash: db26ba9d33623361
 ---
+
 # Test-time Sparsity for Extreme Fast Action Diffusion
 
 **Conference**: CVPR 2026  
@@ -150,11 +154,11 @@ Ablating "omni-reuse" directions on PH data at 93% sparsity (Success Rate %):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
 - [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
 - [\[CVPR 2026\] Cross-Architecture Adaptation: Cloud-Edge Continual Test-Time Adaptation with Dynamic Sampling and Heterogeneous Distillation](cross-architecture_adaptation_cloud-edge_continual_test-time_adaptation_with_dyn.md)
 - [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
-- [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
-- [\[AAAI 2026\] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing](../../AAAI2026/model_compression/towards_test-time_efficient_visual_place_recognition_via_asymmetric_query_proces.md)
+- [\[CVPR 2026\] InstantViR: Real-Time Video Inverse Problem Solver with Distilled Diffusion Prior](instantvir_real-time_video_inverse_problem_solver_with_distilled_diffusion_prior.md)
 
 </div>
 

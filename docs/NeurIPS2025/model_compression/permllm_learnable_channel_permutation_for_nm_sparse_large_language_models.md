@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][N:M sparsity] This paper proposes PermLLM, the first learnable channel permutation (LCP) framework for N:M sparse LLMs. By relaxing discrete permutation matrices into differentiable soft…
+  [NeurIPS 2025][Model Compression][N:M sparsity] This paper proposes PermLLM, the first learnable channel permutation (LCP) framework for N:M sparse LLMs. By relaxing discrete permutation matrices into differentiable soft permutation matrices via Sinkhorn normalization, PermLLM enables end-to-end optimization. Combined with a block-level permutation strategy that substantially reduces computational overhead, the framework effectively improves the performance of N:M sparse LLMs…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LLM compression"
   - "Sinkhorn normalization"
 date: 2026-05-08
-content_hash: b944f05b200302ef
+content_hash: 9cf4f5fcd7ecede7
 ---
 
 # PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models
@@ -162,11 +162,11 @@ PermLLM is a post-training pruning framework that integrates seamlessly with exi
 
 ## Related Papers
 
+- [\[ICLR 2026\] FlexHiNM-GP: Flexible Hierarchical Pruning via Region Allocation and Channel Permutation](../../ICLR2026/model_compression/flexhinm-gp_flexible_hierarchical_pruning_via_region_allocation_and_channel_perm.md)
 - [\[NeurIPS 2025\] LayerIF: Estimating Layer Quality for Large Language Models using Influence Functions](layerif_estimating_layer_quality_for_large_language_models_using_influence_funct.md)
+- [\[ACL 2025\] Unveiling Language-Specific Features in Large Language Models via Sparse Autoencoders](../../ACL2025/model_compression/language_specific_features.md)
 - [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
-- [\[NeurIPS 2025\] The Structure of Relation Decoding Linear Operators in Large Language Models](the_structure_of_relation_decoding_linear_operators_in_large_language_models.md)
-- [\[NeurIPS 2025\] Restoring Pruned Large Language Models via Lost Component Compensation](restoring_pruned_large_language_models_via_lost_component_compensation.md)
-- [\[NeurIPS 2025\] A Simple Linear Patch Revives Layer-Pruned Large Language Models](a_simple_linear_patch_revives_layerpruned_large_language_mod.md)
+- [\[ICML 2026\] LEAP: Learnable End-to-End Adaptive Pruning of Large Language Models](../../ICML2026/model_compression/leap_learnable_end-to-end_adaptive_pruning_of_large_language_models.md)
 
 </div>
 

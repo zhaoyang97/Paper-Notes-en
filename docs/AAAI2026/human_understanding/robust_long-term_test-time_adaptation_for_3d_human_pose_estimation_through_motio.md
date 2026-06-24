@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Long-term Test-Time Adaptation for 3D Human Pose Estimation through Motion Discretization
 description: >-
-  [AAAI 2026][Human Understanding][3D human pose estimation] To address error accumulation in online test-time adaptation (TTA) for 3D human pose estimation…
+  [AAAI 2026][Human Understanding][3D human pose estimation] To address error accumulation in online test-time adaptation (TTA) for 3D human pose estimation, this paper proposes a framework combining motion discretization (an anchor motion set obtained via unsupervised clustering), a self-replay mechanism, and a soft reset strategy. The approach enables robust long-term continuous adaptation by leveraging subject-specific body shape and habitual motion patterns…
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -14,7 +14,7 @@ tags:
   - "soft reset"
   - "self-replay"
 date: 2026-05-08
-content_hash: a5333e353fb2fb62
+content_hash: 82fcea8412838c3b
 ---
 
 # Robust Long-term Test-Time Adaptation for 3D Human Pose Estimation through Motion Discretization
@@ -162,11 +162,11 @@ where $L_p$ is the denoised motion pseudo-label loss, $L_s$ is the shape consist
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization](../../NeurIPS2025/human_understanding/cycle-sync_robust_global_camera_pose_estimation_through_enhanced_cycle-consisten.md)
-- [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](../../CVPR2026/human_understanding/e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
+- [\[CVPR 2025\] CRISP: Object Pose and Shape Estimation with Test-Time Adaptation](../../CVPR2025/human_understanding/crisp_object_pose_and_shape_estimation_with_test-time_adaptation.md)
+- [\[ECCV 2024\] Human Motion Forecasting in Dynamic Domain Shifts: A Homeostatic Continual Test-Time Adaptation Framework](../../ECCV2024/human_understanding/human_motion_forecasting_in_dynamic_domain_shifts_a_homeostatic_continual_test-t.md)
+- [\[CVPR 2026\] Render-to-Adapt: Unsupervised Personal Adaptation for Gaze Estimation](../../CVPR2026/human_understanding/render-to-adapt_unsupervised_personal_adaptation_for_gaze_estimation.md)
 - [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
-- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](../../NeurIPS2025/human_understanding/raptr_radar-based_3d_pose_estimation_using_transformer.md)
-- [\[NeurIPS 2025\] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space](../../NeurIPS2025/human_understanding/pandapose_3d_human_pose_lifting_from_a_single_image_via_propagating_2d_pose_prio.md)
+- [\[AAAI 2026\] VPHO: Joint Visual-Physical Cue Learning and Aggregation for Hand-Object Pose Estimation](vpho_joint_visual-physical_cue_learning_and_aggregation_for_hand-object_pose_est.md)
 
 </div>
 

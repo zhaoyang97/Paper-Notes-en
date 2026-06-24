@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication
 description: >-
-  [ICML 2026][Reinforcement Learning][QMIX] SeqComm-DFL treats "multi-agent communication" as a predictor and "joint policy selection" as a downstream optimizer. By combining value-aware message generation, Stackelberg sequential conditions, and implicit differential bi-level optimization, it aligns communication learning directly with team rewards. It achieves
+  [ICML 2026][Reinforcement Learning][Multi-agent communication] SeqComm-DFL treats "multi-agent communication" as a predictor and "joint policy selection" as a downstream optimizer. By combining value-aware message generation, Stackelberg sequential conditions, and implicit differential bi-level optimization, it aligns communication learning directly with team rewards. It achieves 4-6x cumulative reward gains in hospital scheduling and a >13 percentage point win rate increase…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - QMIX
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Multi-agent communication"
+  - "Decision-focused learning"
+  - "Stackelberg sequential decision"
+  - "Bi-level optimization"
+  - "QMIX"
 date: 2026-05-08
-content_hash: 163cb0ba6c102db4
+content_hash: 14f39085d9e3e3ac
 ---
+
 # Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication
 
 **Conference**: ICML 2026  
@@ -133,6 +138,7 @@ Evaluated on a multi-specialty hospital collaboration Dec-POMDP ($N=3$ specialis
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -141,7 +147,7 @@ Evaluated on a multi-specialty hospital collaboration Dec-POMDP ($N=3$ specialis
 - [\[ICML 2025\] Counterfactual Effect Decomposition in Multi-Agent Sequential Decision Making](../../ICML2025/reinforcement_learning/counterfactual_effect_decomposition_in_multi-agent_sequential_decision_making.md)
 - [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
 - [\[ICML 2026\] Learning Query-Aware Budget-Tier Routing for Runtime Agent Memory](learning_query-aware_budget-tier_routing_for_runtime_agent_memory.md)
-- [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](../../ICLR2026/reinforcement_learning/continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
+- [\[ICLR 2026\] Bayesian Ensemble for Sequential Decision-Making](../../ICLR2026/reinforcement_learning/bayesian_ensemble_for_sequential_decision-making.md)
 
 </div>
 

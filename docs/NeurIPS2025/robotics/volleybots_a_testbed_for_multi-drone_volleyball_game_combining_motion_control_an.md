@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VolleyBots: A Testbed for Multi-Drone Volleyball Game Combining Motion Control and Strategic Play
 description: >-
-  [NeurIPS 2025][Robotics][Multi-drone systems] This paper presents VolleyBots, a multi-drone volleyball competition testbed that integrates cooperative-adversarial gameplay, turn-based interaction…
+  [NeurIPS 2025][Robotics][Multi-drone systems] This paper presents VolleyBots, a multi-drone volleyball competition testbed that integrates cooperative-adversarial gameplay, turn-based interaction, and agile 3D motion control. Built on Isaac Sim, it establishes a task curriculum from single-agent training to multi-agent competition. A hierarchical policy achieves a 69.5% win rate on the 3v3 task, with demonstrated zero-shot sim-to-real transfer.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "game theory"
   - "sim-to-real"
 date: 2026-05-08
-content_hash: dd0677ac6ffb65c3
+content_hash: e3309b96580458d0
 ---
 
 # VolleyBots: A Testbed for Multi-Drone Volleyball Game Combining Motion Control and Strategic Play
@@ -131,8 +131,8 @@ VolleyBots is built on NVIDIA Isaac Sim, leveraging the OmniDrones simulator for
 - [\[AAAI 2026\] A Computable Game-Theoretic Framework for Multi-Agent Theory of Mind](../../AAAI2026/robotics/a_computable_game-theoretic_framework_for_multi-agent_theory_of_mind.md)
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
 - [\[NeurIPS 2025\] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning](sample-efficient_tabular_self-play_for_offline_robust_reinforcement_learning.md)
-- [\[CVPR 2026\] DAWN: Pixel Motion Diffusion is What We Need for Robot Control](../../CVPR2026/robotics/dawn_pixel_motion_diffusion_robot_control.md)
-- [\[NeurIPS 2025\] Memory-Augmented Potential Field Theory: A Framework for Adaptive Control in Non-Convex Domains](memory-augmented_potential_field_theory_a_framework_for_adaptive_control_in_non-.md)
+- [\[NeurIPS 2025\] HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data](himacon_discovering_hierarchical_manipulation_concepts_from_unlabeled_multi-moda.md)
+- [\[ICLR 2026\] From Embedding to Control: Representations for Stochastic Multi-Object Systems](../../ICLR2026/robotics/from_embedding_to_control_representations_for_stochastic_multi-object_systems.md)
 
 </div>
 

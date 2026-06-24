@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Select to Think: Unlocking SLM Potential with Local Sufficiency
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper discovers that Small Language Models (SLMs) often **already include the token preferred by Large Language Models (LLMs) in their top-K candidate sets** at reasoning "divergence points" (the top-8 of a 1.5B model hits the 32B teacher's choice 95% of the time), but these are missed by greedy decoding. The auth
+  [ICML 2026][Reasoning][Small Language Models] This paper discovers that Small Language Models (SLMs) often **already include the token preferred by Large Language Models (LLMs) in their top-K candidate sets** at reasoning "divergence points" (the top-8 of a 1.5B model hits the 32B teacher's choice 95% of the time), but these are missed by greedy decoding. The authors reframe the LLM's role from "open-ended generation" to "selecting from SLM candidates" and distill this select…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Small Language Models"
+  - "Collaborative Reasoning"
+  - "Local Sufficiency"
+  - "Candidate Reranking"
+  - "Distillation"
 date: 2026-05-08
-content_hash: 53e50fce0cc6a0c8
+content_hash: 18aefaf3b8464810
 ---
+
 # Select to Think: Unlocking SLM Potential with Local Sufficiency
 
 **Conference**: ICML 2026  
@@ -133,11 +139,11 @@ The 1.5B model's Math Avg. rose from 36.9 → 45.8 (**+24.1% relative gain**), a
 
 ## Related Papers
 
+- [\[ICLR 2026\] SLM-MUX: Orchestrating Small Language Models for Reasoning](../../ICLR2026/llm_reasoning/slm-mux_orchestrating_small_language_models_for_reasoning.md)
 - [\[ICML 2026\] SuCo: Sufficiency-guided Continuous Adaptive Reasoning](suco_sufficiency-guided_continuous_adaptive_reasoning.md)
 - [\[ICML 2026\] PowerFlow: Unlocking the Dual Nature of LLMs via Principled Distribution Matching](powerflow_unlocking_the_dual_nature_of_llms_via_principled_distribution_matching.md)
+- [\[ICLR 2026\] Deep Think with Confidence](../../ICLR2026/llm_reasoning/deep_think_with_confidence.md)
 - [\[ACL 2026\] SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning](../../ACL2026/llm_reasoning/shape_stage-aware_hierarchical_advantage_via_potential_estimation_for_llm_reason.md)
-- [\[ACL 2026\] When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning](../../ACL2026/llm_reasoning/when_is_thinking_enough_early_exit_via_sufficiency_assessment_for_efficient_reas.md)
-- [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](../../ACL2026/llm_reasoning/think_outside_the_policy_in-context_steered_policy_optimization.md)
 
 </div>
 

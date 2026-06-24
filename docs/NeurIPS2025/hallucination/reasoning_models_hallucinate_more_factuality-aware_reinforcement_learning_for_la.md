@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models
 description: >-
-  [NeurIPS 2025][Hallucination Detection][Hallucination] This paper reveals that RL-trained reasoning models (e.g., DeepSeek-R1) hallucinate significantly more than non-reasoning models…
+  [NeurIPS 2025][Hallucination Detection][Hallucination] This paper reveals that RL-trained reasoning models (e.g., DeepSeek-R1) hallucinate significantly more than non-reasoning models, theoretically identifies three root causes (high-variance gradients, entropy constraints, and spurious local optima), and proposes the FSPO algorithm, which adjusts token-level advantages via step-level factuality verification to reduce hallucination while maintaining or even improving reasonin…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -13,7 +13,7 @@ tags:
   - "GRPO"
   - "Step-level Reward"
 date: 2026-05-08
-content_hash: 749f4e324bc99cd1
+content_hash: 1860136e650bdb30
 ---
 
 # Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models
@@ -138,7 +138,7 @@ Key comparison: R1-Distill-Qwen-7B exhibits extremely high hallucination rates (
 - [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](../../CVPR2026/hallucination/understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
 - [\[NeurIPS 2025\] Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models](seeing_is_believing_mitigating_ocr_hallucinations_in_multimodal_large_language_m.md)
 - [\[NeurIPS 2025\] Generalization or Hallucination? Understanding Out-of-Context Reasoning in Transformers](generalization_or_hallucination_understanding_out-of-context_reasoning_in_transf.md)
-- [\[AAAI 2026\] Hallucinate Less by Thinking More: Aspect-Based Causal Abstention for Large Language Models](../../AAAI2026/hallucination/hallucinate_less_by_thinking_more_aspect-based_causal_absten.md)
+- [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](../../ICLR2026/hallucination/mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
 
 </div>
 

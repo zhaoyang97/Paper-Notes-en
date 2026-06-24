@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Toward Low-Cost yet Effective Temporal Learning for UAV Tracking
 description: >-
-  [CVPR 2026][Video Understanding][PPF] Addressing single object tracking for Unmanned Aerial Vehicles (UAVs), this paper first proposes an evaluation metric, Precision per FLOP (PPF), which couples accuracy gain with computational overhead. This metric reveals that existing temporal modules generally possess low "cost-effectiveness." Consequently, a lightwe
+  [CVPR 2026][Video Understanding][UAV tracking] Addressing single object tracking for Unmanned Aerial Vehicles (UAVs), this paper first proposes an evaluation metric, Precision per FLOP (PPF), which couples accuracy gain with computational overhead. This metric reveals that existing temporal modules generally possess low "cost-effectiveness." Consequently, a lightweight temporal module (LETL) is designed that propagates and merges only a small number of representative appearan…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - PPF
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "UAV tracking"
+  - "temporal modeling"
+  - "token propagation"
+  - "efficiency evaluation"
+  - "PPF"
 date: 2026-05-08
-content_hash: 34651dba621e720c
+content_hash: 4a49a4cff6163a69
 ---
+
 # Toward Low-Cost yet Effective Temporal Learning for UAV Tracking
 
 **Conference**: CVPR 2026  
@@ -159,10 +164,17 @@ Internal Ablations:
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Rethinking Occlusion Modeling for UAV Tracking](rethinking_occlusion_modeling_for_uav_tracking.md)
+- [\[CVPR 2026\] TGTrack: Temporal Generative Learning for Unified Single Object Tracking](tgtrack_temporal_generative_learning_for_unified_single_object_tracking.md)
+- [\[CVPR 2026\] LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding](longvideo-r1_smart_navigation_for_low-cost_long_video_understanding.md)
+- [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](drift-resilient_temporal_priors_for_visual_tracking.md)
+- [\[CVPR 2026\] Breaking Smooth-Motion Assumptions: A UAV Benchmark for Multi-Object Tracking in Complex and Adverse Conditions](breaking_smooth-motion_assumptions_a_uav_benchmark_for_multi-object_tracking_in_.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Occlusion Modeling for UAV Tracking](rethinking_occlusion_modeling_for_uav_tracking.md)

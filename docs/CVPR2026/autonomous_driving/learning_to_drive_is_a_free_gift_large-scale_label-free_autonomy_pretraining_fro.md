@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes LFG (Learning to drive is a Free Gift), a completely label-free, teacher-guided autonomous driving pretraining framework. It learns a unified geometry-, semantic-, and motion-aware pseudo-4D representation from large-scale unposed YouTube driving videos. On the NAVSIM benchmark, it outperforms multi-camer
+  [CVPR 2026][Autonomous Driving][Autonomous Driving Pretraining] Ours proposes LFG (Learning to drive is a Free Gift), a completely label-free, teacher-guided autonomous driving pretraining framework. It learns a unified geometry-, semantic-, and motion-aware pseudo-4D representation from large-scale unposed YouTube driving videos. On the NAVSIM benchmark, it outperforms multi-camera + LiDAR BEV methods (PDMS 85.2) using only a monocular front-facing camera and demonstrates ex…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Autonomous Driving Pretraining"
+  - "Label-Free Learning"
+  - "Video Foundation Models"
+  - "4D Scene Understanding"
+  - "Planning"
 date: 2026-05-08
-content_hash: c38743347d6289ad
+content_hash: 8ebe240b3acaaebb
 ---
+
 # Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos
 
 **Conference**: CVPR 2026  
@@ -165,8 +171,8 @@ Each part contains four sub-losses: $\lambda_{\text{seg}}\mathcal{L}_{\text{seg}
 - [\[CVPR 2026\] SimScale: Learning to Drive via Real-World Simulation at Scale](simscale_learning_to_drive_via_real-world_simulation_at_scale.md)
 - [\[CVPR 2026\] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration](lirec-net_a_target-free_and_learning-based_network_for_lidar_rgb_and_event_calib.md)
 - [\[CVPR 2026\] SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving](searchad_large-scale_rare_image_retrieval_dataset_for_autonomous_driving.md)
-- [\[CVPR 2026\] Unposed-to-3D: Learning Simulation-Ready Vehicles from Real-World Images](unposed-to-3d_learning_simulation-ready_vehicles_from_real-world_images.md)
 - [\[CVPR 2026\] SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](sgnlf_spectralgeometric_neural_fields_for_posefre.md)
+- [\[CVPR 2026\] Unposed-to-3D: Learning Simulation-Ready Vehicles from Real-World Images](unposed-to-3d_learning_simulation-ready_vehicles_from_real-world_images.md)
 
 </div>
 

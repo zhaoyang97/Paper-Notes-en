@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] RADAR: Learning to Route with Asymmetry-aware Distance Representations
 description: >-
-  [ICLR 2026][Others][Paper Note] RADAR equips existing neural VRP solvers with a pair of "asymmetry-aware" components—using truncated SVD to decompose asymmetric distance matrices into "departure/arrival" dual-role node embeddings for initialization, and replacing the softmax in the encoder's attention with Sinkhorn normalization (balancing rows and c
+  [ICLR 2026][Asymmetric VRP] RADAR equips existing neural VRP solvers with a pair of "asymmetry-aware" components—using truncated SVD to decompose asymmetric distance matrices into "departure/arrival" dual-role node embeddings for initialization, and replacing the softmax in the encoder's attention with Sinkhorn normalization (balancing rows and columns). This allows solvers originally limited to symmetric Euclidean distances to generalize stably on real-world asymmetric road…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Asymmetric VRP"
+  - "Neural Solver"
+  - "SVD Initialization"
+  - "Sinkhorn Normalization"
+  - "Generalization"
 date: 2026-05-08
-content_hash: 2e2425e2c1d23b4c
+content_hash: f170d0e3fe5c478a
 ---
+
 # RADAR: Learning to Route with Asymmetry-aware Distance Representations
 
 **Conference**: ICLR 2026  
@@ -136,7 +141,7 @@ RADAR achieves the lowest gap among all learning-based methods, maintaining a sm
 - [\[CVPR 2026\] RaUF: Learning the Spatial Uncertainty Field of Radar](../../CVPR2026/others/rauf_learning_the_spatial_uncertainty_field_of_radar.md)
 - [\[ICLR 2026\] Mixed-Curvature Tree-Sliced Wasserstein Distance](mixed-curvature_tree-sliced_wasserstein_distance.md)
 - [\[ICML 2026\] Continual Learning of Domain-Invariant Representations](../../ICML2026/others/continual_learning_of_domain-invariant_representations.md)
-- [\[ICML 2026\] DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation](../../ICML2026/others/disco_mitigating_bias_in_deep_learning_with_conditional_distance_correlation.md)
+- [\[AAAI 2026\] Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast](../../AAAI2026/others/radar-aplanc_unsupervised_radar-based_heartbeat_sensing_via_augmented_pseudo-lab.md)
 
 </div>
 

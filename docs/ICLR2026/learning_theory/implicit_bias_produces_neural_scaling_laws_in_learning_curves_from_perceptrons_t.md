@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Implicit bias produces neural scaling laws in learning curves, from perceptrons to deep networks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] The authors propose a new perspective that plots learning curves throughout the training process as a function of the model norm $\lambda(t)$. Within a perceptron, two **dynamic scaling laws** are analytically derived using statistical mechanics, proving their product reproduces the classic "test error vs. dataset size
+  [ICLR 2026][learning_theory][Neural Scaling Laws] The authors propose a new perspective that plots learning curves throughout the training process as a function of the model norm $\lambda(t)$. Within a perceptron, two **dynamic scaling laws** are analytically derived using statistical mechanics, proving their product reproduces the classic "test error vs. dataset size" endpoint scaling law; these patterns also hold for CNN / ResNet / ViT, rooted in the implicit bias of gradie…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "learning_theory"
+  - "Neural Scaling Laws"
+  - "Implicit Bias"
+  - "Perceptron"
+  - "Statistical Mechanics"
+  - "Learning Curves"
+  - "Spectral Complexity"
+  - "Replica Method"
 date: 2026-05-08
-content_hash: 671ff543fe778847
+content_hash: fc320d9fe9f77baf
 ---
+
 # Implicit bias produces neural scaling laws in learning curves, from perceptrons to deep networks
 
 **Conference**: ICLR 2026  
@@ -121,9 +129,9 @@ Across nine configurations, $\gamma_{\text{pred}}$ and $\gamma_{\text{meas}}$ ag
 
 - [\[ICLR 2026\] Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime](scaling_laws_and_spectra_of_shallow_neural_networks_in_the_feature_learning_regi.md)
 - [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
+- [\[ICLR 2026\] Tversky Neural Networks: Psychologically Plausible Deep Learning with Differentiable Tversky Similarity](tversky_neural_networks_psychologically_plausible_deep_learning_with_differentia.md)
 - [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
-- [\[ICLR 2026\] Random Label Prediction Heads for Studying Memorization in Deep Neural Networks](random_label_prediction_heads_for_studying_memorization_in_deep_neural_networks.md)
-- [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
+- [\[ICLR 2026\] Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape](saddle-to-saddle_dynamics_in_deep_relu_networks_low-rank_bias_in_the_first_saddl.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hallucination as an Upper Bound: A New Perspective on Text-to-Image Evaluation
 description: >-
-  [NeurIPS 2025 (Workshop: Generative and Protective AI for Content Creation)][Hallucination Detection][Hallucination] This paper proposes a definition of hallucination in text-to-image (T2I) models as **bias-driven deviat…
+  [NeurIPS 2025 (Workshop: Generative and Protective AI for Content Creation)][Hallucination Detection][Hallucination] This paper proposes a definition of hallucination in text-to-image (T2I) models as **bias-driven deviation**, establishes a taxonomy of three hallucination categories—attribute, relation, and object—and argues that hallucination evaluation serves as an "upper bound" for prompt alignment evaluation, thereby revealing hidden model biases.
 tags:
   - "NeurIPS 2025 (Workshop: Generative and Protective AI for Content Creation)"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "Bias Detection"
   - "Taxonomy"
 date: 2026-05-08
-content_hash: e5876081d001cd3d
+content_hash: f1d092fc5f291561
 ---
 
 # Hallucination as an Upper Bound: A New Perspective on Text-to-Image Evaluation
@@ -197,10 +197,10 @@ As a position paper, this work contains no conventional experiments. The core co
 ## Related Papers
 
 - [\[ACL 2026\] Rethinking Evaluation for LLM Hallucination Detection: A Desiderata, A New RAG-based Benchmark, New Insights](../../ACL2026/hallucination/rethinking_evaluation_for_llm_hallucination_detection_a_desiderata_a_new_rag-bas.md)
-- [\[AAAI 2026\] Bridging Day and Night: Target-Class Hallucination Suppression in Unpaired Image Translation](../../AAAI2026/hallucination/bridging_day_and_night_target-class_hallucination_suppressio.md)
-- [\[NeurIPS 2025\] Generalization or Hallucination? Understanding Out-of-Context Reasoning in Transformers](generalization_or_hallucination_understanding_out-of-context_reasoning_in_transf.md)
-- [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
-- [\[NeurIPS 2025\] Intervene-All-Paths: Unified Mitigation of LVLM Hallucinations across Alignment Formats](intervene-all-paths_unified_mitigation_of_lvlm_hallucinations_across_alignment_f.md)
+- [\[ICLR 2026\] ChainMPQ: Interleaved Text-Image Reasoning Chains for Mitigating Relation Hallucinations](../../ICLR2026/hallucination/chainmpq_interleaved_text-image_reasoning_chains_for_mitigating_relation_halluci.md)
+- [\[ACL 2025\] ReefKnot: A Comprehensive Benchmark for Relation Hallucination Evaluation, Analysis and Mitigation in Multimodal Large Language Models](../../ACL2025/hallucination/reefknot_a_comprehensive_benchmark_for_relation_hallucination_evaluation_analysi.md)
+- [\[ACL 2025\] Automated Explanation Generation and Hallucination Detection for Heritage Image Retrieval](../../ACL2025/hallucination/automated_explanation_generation_and_hallucination_detection_for_heritage_image_.md)
+- [\[CVPR 2025\] PhD: A ChatGPT-Prompted Visual Hallucination Evaluation Dataset](../../CVPR2025/hallucination/phd_a_chatgpt-prompted_visual_hallucination_evaluation_dataset.md)
 
 </div>
 

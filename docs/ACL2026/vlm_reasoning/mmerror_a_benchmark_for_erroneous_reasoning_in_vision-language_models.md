@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] This paper proposes MMErroR, a multi-modal erroneous reasoning benchmark containing 1,997 samples. Each sample embeds a single reasoning error across 6 domains and 4 error types. It requires VLMs to not only detect the presence of errors in a reasoning chain but also classify the error type (Vision Perception, Knowledg
+  [ACL 2026][VLM Reasoning][Error reasoning diagnosis] This paper proposes MMErroR, a multi-modal erroneous reasoning benchmark containing 1,997 samples. Each sample embeds a single reasoning error across 6 domains and 4 error types. It requires VLMs to not only detect the presence of errors in a reasoning chain but also classify the error type (Vision Perception, Knowledge Application, Question Understanding, or Reasoning Error). Evaluation of 12 representative VLMs reveals th…
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Error reasoning diagnosis"
+  - "Vision-Language Model evaluation"
+  - "process-level evaluation"
+  - "error classification"
+  - "multi-modal reasoning"
 date: 2026-05-08
-content_hash: c1f1eaf4ebbe409b
+content_hash: 6f063f07a49e1280
 ---
+
 # MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models
 
 **Conference**: ACL 2026  
@@ -149,10 +155,10 @@ This paper presents an evaluation benchmark and does not involve model training.
 ## Related Papers
 
 - [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/vlm_reasoning/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
+- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/vlm_reasoning/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
+- [\[CVPR 2026\] QUANTIPHY: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models](../../CVPR2026/vlm_reasoning/quantiphy_a_quantitative_benchmark_evaluating_physical_reasoning_abilities_of_vi.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
-- [\[ACL 2026\] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization](addressing_overthinking_in_large_vision-language_models_via_gated_perception-rea.md)
-- [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
-- [\[ACL 2026\] PROGRESSLM: Towards Progress Reasoning in Vision-Language Models](progresslm_towards_progress_reasoning_in_vision-language_models.md)
 
 </div>
 

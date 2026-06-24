@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation
 description: >-
-  [CVPR 2026][3D Vision][value map] Context-Nav promotes contextual information from long-text descriptions from posterior verification signals to prior exploration priors—guiding frontier selection via a context-driven value map and performing viewpoint-aware 3D spatial relationship verification at candidate targets, achieving SOTA on InstanceNav and Co
+  [CVPR 2026][3D Vision][Instance Navigation] Context-Nav promotes contextual information from long-text descriptions from posterior verification signals to prior exploration priors—guiding frontier selection via a context-driven value map and performing viewpoint-aware 3D spatial relationship verification at candidate targets, achieving SOTA on InstanceNav and CoIN-Bench without any training.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - value map
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Instance Navigation"
+  - "Spatial Reasoning"
+  - "value map"
+  - "Viewpoint-Aware"
+  - "Zero-shot"
 date: 2026-05-08
-content_hash: 91d3a7dbdba34655
+content_hash: 78c37df03ecd444c
 ---
+
 # Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation
 
 **Conference**: CVPR 2026  
@@ -163,9 +168,9 @@ Results on InstanceNav and CoIN-Bench:
 
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
 - [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
-- [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
 - [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
+- [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
+- [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
 
 </div>
 

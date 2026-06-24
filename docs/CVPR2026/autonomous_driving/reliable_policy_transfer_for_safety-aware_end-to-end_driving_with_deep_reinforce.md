@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This paper proposes an end-to-end (E2E) driving deep reinforcement learning (DRL) framework organized around a "reliability interface at the control layer." A single normalized uncertainty signal $\bar{\sigma}$ simultaneously drives ego-centric relational attention, gated policy entropy, and regularizes cross-domain tr
+  [CVPR 2026][Autonomous Driving][End-to-end driving] This paper proposes an end-to-end (E2E) driving deep reinforcement learning (DRL) framework organized around a "reliability interface at the control layer." A single normalized uncertainty signal $\bar{\sigma}$ simultaneously drives ego-centric relational attention, gated policy entropy, and regularizes cross-domain transfer alignment. Experiments in CARLA under adverse weather and cross-city closed-loop tests demonstrate si…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-end driving"
+  - "Deep reinforcement learning"
+  - "Uncertainty modeling"
+  - "Policy transfer"
+  - "Safety control"
 date: 2026-05-08
-content_hash: ca736b3c3fec2c42
+content_hash: 49fe0fea0a553600
 ---
+
 # Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,14 @@ Ablation on components (Town10HD / Town02):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] LEAD: Minimizing Learner-Expert Asymmetry in End-to-End Driving](lead_minimizing_learner-expert_asymmetry_in_end-to-end_driving.md)
+- [\[CVPR 2026\] EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving](ee-rl_vision_language_guided_reinforcement_learning_with_explorer_and_expert_mod.md)
 - [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
 - [\[CVPR 2026\] WOD-E2E: Waymo Open Dataset for End-to-End Driving in Challenging Long-tail Scenarios](wod-e2e_waymo_open_dataset_for_end-to-end_driving_in_challenging_long-tail_scena.md)
-- [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
 - [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
-- [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
 
 </div>
 

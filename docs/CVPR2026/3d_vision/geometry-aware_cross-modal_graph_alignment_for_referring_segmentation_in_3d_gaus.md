@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GeoCGA reformulates the task of "identifying and segmenting target objects in 3DGS scenes using natural language" as a **geometry-aware cross-modal graph alignment** problem. It expands text into a semantic-spatial graph representing spatial relationships while abstracting Gaussian point clouds into an object-level geo
+  [CVPR 2026][3D Vision][Referring Segmentation] GeoCGA reformulates the task of "identifying and segmenting target objects in 3DGS scenes using natural language" as a **geometry-aware cross-modal graph alignment** problem. It expands text into a semantic-spatial graph representing spatial relationships while abstracting Gaussian point clouds into an object-level geometric graph. By aligning these graphs at both node and edge levels and applying multi-view consistency constrain…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Referring Segmentation"
+  - "3D Gaussian Splatting"
+  - "Cross-Modal Alignment"
+  - "Graph Matching"
+  - "Spatial Reasoning"
 date: 2026-05-08
-content_hash: 8663ce8d8564c245
+content_hash: 8580453fbbf07303
 ---
+
 # Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Ablation of Semantic and Geometric graphs (mIoU on Ramen / Kitchen):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
+- [\[ICML 2025\] ReferSplat: Referring Segmentation in 3D Gaussian Splatting](../../ICML2025/3d_vision/refersplat_referring_segmentation_in_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
 - [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
-- [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
 - [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
-- [\[CVPR 2026\] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
 
 </div>
 

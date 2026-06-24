@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection
 description: >-
-  [ICLR 2026][Object Detection][source-free domain adaptation] This work introduces Object-Centric Learning (Slot Attention) to Source-Free Domain Adaptive Object Detection (SF-DAOD) for the first time. By extracting domain-invariant object-level structural priors through a Hierarchical Slot Awareness module and driving domain-invariant representations with class-guided contrastiv
+  [ICLR 2026][Object Detection][source-free domain adaptation] This work introduces Object-Centric Learning (Slot Attention) to Source-Free Domain Adaptive Object Detection (SF-DAOD) for the first time. By extracting domain-invariant object-level structural priors through a Hierarchical Slot Awareness module and driving domain-invariant representations with class-guided contrastive learning, the method significantly outperforms existing approaches across multiple cross-domain b…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - source-free domain adaptation
-  - object-centric learning
-  - slot attention
-  - DETR
-  - contrastive learning
+  - "ICLR 2026"
+  - "Object Detection"
+  - "source-free domain adaptation"
+  - "object-centric learning"
+  - "slot attention"
+  - "DETR"
+  - "contrastive learning"
 date: 2026-05-08
-content_hash: 740661e352755521
+content_hash: d25f886d9c9ea0d0
 ---
+
 # CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection
 
 **Conference**: ICLR 2026  
@@ -147,7 +148,7 @@ The work provides a theoretical bound proof showing that the target domain risk 
 - [\[AAAI 2026\] Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection](../../AAAI2026/object_detection/beyond_boundaries_leveraging_vision_foundation_models_for_so.md)
 - [\[ICLR 2026\] OD3: Optimization-Free Dataset Distillation for Object Detection](od3_optimization-free_dataset_distillation_for_object_detection.md)
 - [\[CVPR 2026\] Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection](../../CVPR2026/object_detection/foundation_model_priors_enhance_object_focus_in_feature_space_for_source-free_ob.md)
-- [\[ICLR 2026\] Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing](enhancing_vision_transformers_for_object_detection_via_context-aware_token_selec.md)
+- [\[ICLR 2026\] Self-Guided Low Light Object Detection Framework](self-guided_low_light_object_detection_framework.md)
 
 </div>
 

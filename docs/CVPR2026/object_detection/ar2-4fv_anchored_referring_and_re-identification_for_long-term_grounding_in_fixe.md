@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Ours leverages the time-invariance of background structures in fixed-view videos to construct an offline Anchor Bank and an online Anchor Map as persistent language-scene memory. Combined with anchor-guided re-entry priors and a ReID-Gating identity verification mechanism, it achieves robust target re-capture after occ
+  [CVPR 2026][Object Detection][Long-term referring] Ours leverages the time-invariance of background structures in fixed-view videos to construct an offline Anchor Bank and an online Anchor Map as persistent language-scene memory. Combined with anchor-guided re-entry priors and a ReID-Gating identity verification mechanism, it achieves robust target re-capture after occlusion or departure, improving RCR by 10.3% and reducing RCL by 24.2%.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Long-term referring"
+  - "fixed-view video"
+  - "background anchors"
+  - "re-entry detection"
+  - "identity re-identification"
 date: 2026-05-08
-content_hash: bb191e7d1df7599c
+content_hash: 0cc9da45231a588e
 ---
+
 # AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos
 
 **Conference**: CVPR 2026  
@@ -202,9 +208,9 @@ mAP increases by 6.7%, mIoU by 4.2%, with more significant advantages at high Io
 
 - [\[CVPR 2026\] Object-Generalized Re-Identification: A Step Towards Universal Instance Perception](object-generalized_re-identification_a_step_towards_universal_instance_perceptio.md)
 - [\[CVPR 2026\] FSLoRA: Harmonizing Detection and Re-Identification via Freq-Spatial Low-Rank Adapter for One-Stage Person Search](fslora_harmonizing_detection_and_re-identification_via_freq-spatial_low-rank_ada.md)
-- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
-- [\[CVPR 2026\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](show_dont_tell_detecting_novel_objects_by_watching.md)
 - [\[CVPR 2026\] Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](heuristic-inspired_reasoning_priors_facilitate_data-efficient_referring_object_d.md)
+- [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
+- [\[CVPR 2026\] PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training](pet-dino_unifying_visual_cues_into_grounding_dino_with_prompt-enriched_training.md)
 
 </div>
 

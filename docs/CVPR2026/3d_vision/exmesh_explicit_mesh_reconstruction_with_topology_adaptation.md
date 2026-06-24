@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ExMesh embeds "discrete topology operations (vertex splitting/merging)" directly into a "continuous differentiable optimization" pipeline to optimize an explicit triangle mesh end-to-end from multi-view images. Without intermediate representations like Marching Cubes/TSDF or post-processing, and featuring real-time UV
+  [CVPR 2026][3D Vision][Explicit Mesh Reconstruction] ExMesh embeds "discrete topology operations (vertex splitting/merging)" directly into a "continuous differentiable optimization" pipeline to optimize an explicit triangle mesh end-to-end from multi-view images. Without intermediate representations like Marching Cubes/TSDF or post-processing, and featuring real-time UV maintenance, it achieves a superior balance between precision, efficiency…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Explicit Mesh Reconstruction"
+  - "Topology Adaptation"
+  - "Vertex Splitting/Merging"
+  - "Differentiable Rendering"
+  - "UV Decoupling"
 date: 2026-05-08
-content_hash: 578874ac36cc4874
+content_hash: 5de7d0550d346f5e
 ---
+
 # ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ Comparing five variants on NeRF-synthetic:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] Anny-Fit: All-Age Human Mesh Recovery](anny-fit_all-age_human_mesh_recovery.md)
-- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
-- [\[CVPR 2026\] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion](craftmesh_high-fidelity_generative_mesh_manipulation_via_poisson_seamless_fusion.md)
-- [\[CVPR 2026\] Fall Risk and Gait Analysis using World-Spaced 3D Human Mesh Recovery](fall_risk_gait_analysis_hmr.md)
+- [\[CVPR 2026\] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking](tagsplat_topology-aware_gaussian_splatting_for_dynamic_mesh_modeling_and_trackin.md)
+- [\[ICLR 2026\] Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk](../../ICLR2026/3d_vision/topology-preserved_auto-regressive_mesh_generation_in_the_manner_of_weaving_silk.md)
+- [\[CVPR 2026\] ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction](reweaver_towards_simulation-ready_and_topology-accurate_garment_reconstruction.md)
+- [\[CVPR 2026\] TopoMA: Topology-Guided Multi-Agent Dense RGB 3D Reconstruction via Distributed Inference](topoma_topology-guided_multi-agent_dense_rgb_3d_reconstruction_via_distributed_i.md)
+- [\[CVPR 2026\] Mesh4D: 4D Mesh Reconstruction and Tracking from Monocular Video](mesh4d_4d_mesh_reconstruction_and_tracking_from_monocular_video.md)
 
 </div>
 

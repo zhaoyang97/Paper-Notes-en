@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection
 description: >-
-  [ICCV 2025][Autonomous Driving][BEV representation] This paper proposes EVT, a framework that achieves efficient LiDAR-guided view transformation via Adaptive Sampling and Adaptive Projection (ASAP)…
+  [ICCV 2025][Autonomous Driving][BEV representation] This paper proposes EVT, a framework that achieves efficient LiDAR-guided view transformation via Adaptive Sampling and Adaptive Projection (ASAP), combined with group-wise mixed query selection and geometry-aware cross-attention, attaining state-of-the-art performance of 75.3% NDS on the nuScenes test set at real-time inference speed.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "multi-modal 3D detection"
   - "real-time inference"
 date: 2026-05-08
-content_hash: 52ad0836b4b99c04
+content_hash: 8855ad0e467b5503
 ---
 
 # EVT: Efficient View Transformation for Multi-Modal 3D Object Detection
@@ -161,8 +161,8 @@ Group-wise mixed initialization significantly outperforms other strategies acros
 - [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](../../CVPR2026/autonomous_driving/ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
 - [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
 - [\[AAAI 2026\] FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection](../../AAAI2026/autonomous_driving/fq-petr_fully_quantized_position_embedding_transformation_fo.md)
+- [\[CVPR 2026\] SToRe3D: Sparse Token Relevance in ViTs for Efficient Multi-View 3D Object Detection](../../CVPR2026/autonomous_driving/store3d_sparse_token_relevance_in_vits_for_efficient_multi-view_3d_object_detect.md)
 - [\[ICCV 2025\] UAVScenes: A Multi-Modal Dataset for UAVs](uavscenes_a_multi-modal_dataset_for_uavs.md)
-- [\[ICCV 2025\] 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation](3d_gaussian_splatting_driven_multiview_robust_physical_adver.md)
 
 </div>
 

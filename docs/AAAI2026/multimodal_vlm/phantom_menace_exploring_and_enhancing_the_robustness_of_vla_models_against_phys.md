@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks
 description: >-
-  [AAAI 2026][Multimodal VLM][VLA model security] This paper presents the first systematic study of the security of Vision-Language-Action (VLA) models under physical sensor attacks. It proposes a "Real-Sim-Real" framework…
+  [AAAI 2026][Multimodal VLM][VLA model security] This paper presents the first systematic study of the security of Vision-Language-Action (VLA) models under physical sensor attacks. It proposes a "Real-Sim-Real" framework to evaluate six camera attacks and two microphone attacks against four VLA models, reveals critical vulnerabilities across all evaluated models, and introduces an adversarial training defense that improves performance under moderate-strength attacks by up to…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "adversarial training"
   - "robot safety"
 date: 2026-05-08
-content_hash: 6ff79fa63769c95f
+content_hash: 8652aa14f94c77e6
 ---
 
 # Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks
@@ -161,7 +161,7 @@ Real-world validation:
 
 - [\[ICML 2026\] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds](../../ICML2026/multimodal_vlm/any3d-vla_enhancing_vla_robustness_via_diverse_point_clouds.md)
 - [\[AAAI 2026\] VILTA: A VLM-in-the-Loop Adversary for Enhancing Driving Policy Robustness](vilta_a_vlm-in-the-loop_adversary_for_enhancing_driving_poli.md)
-- [\[ICML 2026\] TRAP: Hijacking CoT Reasoning of VLA with Adversarial Patches for Targeted Behavior Attacks](../../ICML2026/multimodal_vlm/trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
+- [\[ICML 2026\] TRAP: Hijacking CoT Reasoning of VLA for Targeted Behavior Attacks via Adversarial Patches](../../ICML2026/multimodal_vlm/trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
 - [\[AAAI 2026\] Exploring LLMs for Scientific Information Extraction using the SciEx Framework](exploring_llms_for_scientific_information_extraction_using_the_sciex_framework.md)
 - [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
 

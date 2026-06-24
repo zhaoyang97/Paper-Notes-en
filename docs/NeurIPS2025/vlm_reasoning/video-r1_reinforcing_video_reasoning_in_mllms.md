@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Video-R1: Reinforcing Video Reasoning in MLLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][video reasoning] Inspired by DeepSeek-R1, this paper presents the first systematic exploration of applying the R1 paradigm (rule-based RL) to video reasoning. It proposes the T-GRPO algorit…
+  [NeurIPS 2025][VLM Reasoning][video reasoning] Inspired by DeepSeek-R1, this paper presents the first systematic exploration of applying the R1 paradigm (rule-based RL) to video reasoning. It proposes the T-GRPO algorithm to explicitly encourage temporal reasoning, constructs a mixed image-video training dataset, and achieves 37.1% accuracy on VSI-Bench, surpassing GPT-4o.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "video reasoning"
   - "reinforcement learning"
   - "GRPO"
   - "temporal modeling"
   - "chain-of-thought"
 date: 2026-05-08
-content_hash: d531e4f39d8769ae
+content_hash: 220fc413b4838f23
 ---
 
 # Video-R1: Reinforcing Video Reasoning in MLLMs
@@ -160,11 +160,11 @@ T-GRPO increases the proportion of temporal reasoning behavior by 14.8 percentag
 
 ## Related Papers
 
-- [\[ICLR 2026\] VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL](../../ICLR2026/multimodal_vlm/vidguard-r1_ai-generated_video_detection_and_explanation_via_reasoning_mllms_and.md)
-- [\[NeurIPS 2025\] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](video-safetybench_a_benchmark_for_safety_evaluation_of_video_lvlms.md)
-- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
-- [\[NeurIPS 2025\] VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents](vagen_reinforcing_world_model_reasoning_for_multi-turn_vlm_agents.md)
-- [\[ICLR 2026\] SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward](../../ICLR2026/multimodal_vlm/sophiavl-r1_reinforcing_mllms_reasoning_with_thinking_reward.md)
+- [\[CVPR 2026\] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](../../CVPR2026/vlm_reasoning/videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](../../CVPR2026/vlm_reasoning/reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](../../CVPR2026/vlm_reasoning/incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
+- [\[CVPR 2026\] Reinforcing Video Object Segmentation to Think before it Segments](../../CVPR2026/vlm_reasoning/reinforcing_video_object_segmentation_to_think_before_it_segments.md)
+- [\[ICLR 2026\] VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL](../../ICLR2026/vlm_reasoning/vidguard-r1_ai-generated_video_detection_and_explanation_via_reasoning_mllms_and.md)
 
 </div>
 

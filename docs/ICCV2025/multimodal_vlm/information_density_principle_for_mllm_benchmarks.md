@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Information Density Principle for MLLM Benchmarks
 description: >-
-  [ICCV 2025][Multimodal VLM][Benchmark evaluation] This paper proposes an "information density" principle to evaluate MLLM benchmark quality along four dimensions — Fallacy, Difficulty, Redundancy…
+  [ICCV 2025][Multimodal VLM][Benchmark evaluation] This paper proposes an "information density" principle to evaluate MLLM benchmark quality along four dimensions — Fallacy, Difficulty, Redundancy, and Diversity — and constructs a three-tier automated evaluation pipeline (Human–Model–Data) to conduct a systematic "benchmark for benchmark" analysis of 19 mainstream benchmarks.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "benchmark quality"
   - "meta-evaluation"
 date: 2026-05-08
-content_hash: 84689a93b465ee18
+content_hash: 0b5bd50816eb3be0
 ---
 
 # Information Density Principle for MLLM Benchmarks
@@ -148,11 +148,11 @@ This paper presents an evaluation methodology and does not involve model trainin
 
 ## Related Papers
 
-- [\[ICCV 2025\] Pi-GPS: Enhancing Geometry Problem Solving by Unleashing the Power of Diagrammatic Information](pi-gps_enhancing_geometry_problem_solving_by_unleashing_the_power_of_diagrammati.md)
-- [\[ICML 2026\] Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs](../../ICML2026/multimodal_vlm/density-aware_translation_of_spurious_correlations_in_zero-shot_vlms.md)
+- [\[ACL 2025\] Redundancy Principles for MLLMs Benchmarks](../../ACL2025/multimodal_vlm/redundancy_principles_for_mllms_benchmarks.md)
 - [\[ICCV 2025\] Calibrating MLLM-as-a-Judge via Multimodal Bayesian Prompt Ensembles](calibrating_mllm-as-a-judge_via_multimodal_bayesian_prompt_ensembles.md)
-- [\[ICCV 2025\] Boosting MLLM Reasoning with Text-Debiased Hint-GRPO](boosting_mllm_reasoning_with_text-debiased_hint-grpo.md)
 - [\[ICCV 2025\] Effective Training Data Synthesis for Improving MLLM Chart Understanding](effective_training_data_synthesis_for_improving_mllm_chart_understanding.md)
+- [\[ICCV 2025\] Pi-GPS: Enhancing Geometry Problem Solving by Unleashing the Power of Diagrammatic Information](pi-gps_enhancing_geometry_problem_solving_by_unleashing_the_power_of_diagrammati.md)
+- [\[ICCV 2025\] PhysSplat: Efficient Physics Simulation for 3D Scenes via MLLM-Guided Gaussian Splatting](physsplat_efficient_physics_simulation_for_3d_scenes_via_mllm-guided_gaussian_sp.md)
 
 </div>
 

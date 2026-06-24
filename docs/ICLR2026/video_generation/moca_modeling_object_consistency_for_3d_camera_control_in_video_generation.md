@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoCa: Modeling Object Consistency for 3D Camera Control in Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] MoCa avoids explicit 3D reconstruction by decomposing the observation that "smooth camera motion maintains object consistency in viewpoint, appearance, and motion" into three types of consistency constraints. Using a dual-branch diffusion framework, it simultaneously manages camera trajectories, appearance stability, a
+  [ICLR 2026][Video Generation][Camera controllable video generation] MoCa avoids explicit 3D reconstruction by decomposing the observation that "smooth camera motion maintains object consistency in viewpoint, appearance, and motion" into three types of consistency constraints. Using a dual-branch diffusion framework, it simultaneously manages camera trajectories, appearance stability, and motion disentanglement to implicitly learn the 3D relationship between the camera and the…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Camera controllable video generation"
+  - "object consistency"
+  - "Plücker embedding"
+  - "motion disentanglement"
+  - "dual-branch diffusion"
 date: 2026-05-08
-content_hash: b73d7adc4df80394
+content_hash: 564d57605f3ccde0
 ---
+
 # MoCa: Modeling Object Consistency for 3D Camera Control in Video Generation
 
 **Conference**: ICLR 2026  
@@ -124,11 +130,11 @@ MoCa leads in quality metrics for static scenes (RealEstate10K) and excels in CL
 
 ## Related Papers
 
-- [\[ICLR 2026\] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation](3d_scene_prompting_for_scene-consistent_camera-controllable_video_generation.md)
 - [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](../../CVPR2026/video_generation/symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
+- [\[ICLR 2026\] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation](3d_scene_prompting_for_scene-consistent_camera-controllable_video_generation.md)
 - [\[ICLR 2026\] Light-X: Generative 4D Video Rendering with Camera and Illumination Control](light-x_generative_4d_video_rendering_with_camera_and_illumination_control.md)
 - [\[ICLR 2026\] Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling](geometry_forcing_marrying_video_diffusion_and_3d_representation_for_consistent_w.md)
-- [\[ICLR 2026\] MIMIC: Mask-Injected Manipulation Video Generation with Interaction Control](mimic_mask-injected_manipulation_video_generation_with_interaction_control.md)
+- [\[CVPR 2025\] GEN3C: 3D-Informed World-Consistent Video Generation with Precise Camera Control](../../CVPR2025/video_generation/gen3c_3d-informed_world-consistent_video_generation_with_precise_camera_control.md)
 
 </div>
 

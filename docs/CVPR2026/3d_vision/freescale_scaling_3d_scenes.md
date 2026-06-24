@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] FreeScale scales limited real-world data into large-scale training data by sampling high-quality free-view images in a certainty-guided manner from existing scene reconstructions, achieving a 2.7 dB PSNR improvement for feed-forward novel view synthesis models.
+  [CVPR 2026][3D Vision][Novel View Synthesis] FreeScale scales limited real-world data into large-scale training data by sampling high-quality free-view images in a certainty-guided manner from existing scene reconstructions, achieving a 2.7 dB PSNR improvement for feed-forward novel view synthesis models.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Data Augmentation"
+  - "3D Gaussian Splatting"
+  - "Feed-forward Reconstruction"
+  - "Certainty-aware Sampling"
 date: 2026-05-08
-content_hash: d5f0dafd50c709e1
+content_hash: a838d90c17b14cc5
 ---
+
 # FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation
 
 **Conference**: CVPR 2026  
@@ -124,11 +130,11 @@ Some filtered views may still fail quality standards due to being too far from a
 
 ## Related Papers
 
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
-- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
-- [\[CVPR 2026\] AnyLift: Scaling Motion Reconstruction from Internet Videos via 2D Diffusion](anylift_scaling_motion_reconstruction_from_internet_videos_via_2d_diffusion.md)
+- [\[CVPR 2026\] Scaling View Synthesis Transformers (SVSM)](scaling_view_synthesis_transformers.md)
+- [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
+- [\[CVPR 2026\] Gaussian Mapping for Evolving Scenes](gaussian_mapping_for_evolving_scenes.md)
+- [\[CVPR 2026\] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction](manifoldneus_manifold-aware_view_optimizability_for_pose-free_neural_surface_rec.md)
+- [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
 
 </div>
 

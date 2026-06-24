@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Rashomon Theory to PRAXIS: Efficient Decision Tree Rashomon Sets
 description: >-
-  [ICML 2026][Interpretability][Paper Note] PRAXIS utilizes a "fast but approximate" proxy algorithm (an improved version of LicketySPLIT) to estimate the optimal objective value of subproblems, enabling "expand-on-demand" pruning search for sparse decision tree Rashomon sets. This reduces runtime and memory complexity from being exponential in tree space to "po
+  [ICML 2026][Interpretability][Rashomon Sets] PRAXIS utilizes a "fast but approximate" proxy algorithm (an improved version of LicketySPLIT) to estimate the optimal objective value of subproblems, enabling "expand-on-demand" pruning search for sparse decision tree Rashomon sets. This reduces runtime and memory complexity from being exponential in tree space to "polynomial time per output tree," successfully processing datasets with 11M samples and 472 features while maintainin…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Rashomon Sets"
+  - "Sparse Decision Trees"
+  - "Approximation Algorithms"
+  - "Proxy Optimization"
+  - "Branch-and-Bound"
 date: 2026-05-08
-content_hash: 1c72644497d24e00
+content_hash: eb4894cdf8caf482
 ---
+
 # From Rashomon Theory to PRAXIS: Efficient Decision Tree Rashomon Sets
 
 **Conference**: ICML 2026  
@@ -125,15 +131,16 @@ PRAXIS achieves up to a 5-order-of-magnitude speedup over TreeFARMS, 3 over SORT
 - **Value**: ⭐⭐⭐⭐⭐ Enables practical application of Rashomon sets for explainable ML, fairness auditing, and variable importance on industrial-scale data.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] DIVERSE: Disagreement-Inducing Vector Evolution for Rashomon Set Exploration](../../ICLR2026/interpretability/diverse_disagreement-inducing_vector_evolution_for_rashomon_set_exploration.md)
 - [\[ICML 2026\] Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory](diagnosing_the_reliability_of_llm-as-a-judge_via_item_response_theory.md)
 - [\[ICML 2026\] PINE: Pruning Boosted Tree Ensembles with Conformal In-Distribution Prediction Equivalence](pine_pruning_boosted_tree_ensembles_with_conformal_in-distribution_prediction_eq.md)
-- [\[CVPR 2025\] Learning on Model Weights using Tree Experts](../../CVPR2025/interpretability/learning_on_model_weights_using_tree_experts.md)
-- [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](../../CVPR2026/interpretability/h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
-- [\[AAAI 2026\] ToC: Tree-of-Claims Search with Multi-Agent Language Models](../../AAAI2026/interpretability/toc_tree-of-claims_search_with_multi-agent_language_models.md)
+- [\[ICML 2026\] Verified SHAP: Provable Bounds for Precise Shapley Values in Neural Networks](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes GaussFusion, a geometry-informed video-to-video generative model. By rendering a Gaussian Primitives Buffer (GP-Buffer) containing depth, normals, opacity, and covariance to condition a video generator, it effectively removes floaters, flickering, and blur in 3DGS reconstructions. It is compatible w
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes GaussFusion, a geometry-informed video-to-video generative model. By rendering a Gaussian Primitives Buffer (GP-Buffer) containing depth, normals, opacity, and covariance to condition a video generator, it effectively removes floaters, flickering, and blur in 3DGS reconstructions. It is compatible with both optimization-based and feed-forward reconstruction paradigms, with a distilled version achieving real-tim…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Video Generative Models"
+  - "Geometric Priors"
+  - "Artifact Removal"
+  - "Real-time Inference"
 date: 2026-05-08
-content_hash: 111feba08381dc3b
+content_hash: 687ae46be27ecbff
 ---
+
 # GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator
 
 **Conference**: CVPR 2026  
@@ -125,11 +131,11 @@ Training utilizes a flow-matching objective: $\mathcal{L} = \mathbb{E}[\|u_\thet
 
 ## Related Papers
 
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
-- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
-- [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](lumimotion_gaussian_relighting_dynamics.md)
-- [\[CVPR 2026\] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields](dynamic_black-hole_emission_tomography_with_physics-informed_neural_fields.md)
+- [\[CVPR 2026\] ORBIT: Benchmarking SfM in the Wild with 360° Video](orbit_benchmarking_sfm_in_the_wild_with_360deg_video.md)
+- [\[ICLR 2026\] Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator](../../ICLR2026/3d_vision/text-to-3d_by_stitching_a_multi-view_reconstruction_network_to_a_video_generator.md)
+- [\[CVPR 2026\] Selfi: Self-improving Reconstruction Engine via 3D Geometric Feature Alignment](selfi_self-improving_reconstruction_engine_via_3d_geometric_feature_alignment.md)
 - [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
+- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
 
 </div>
 

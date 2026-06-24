@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A2SG: Adaptive and Asymmetric Surrogate Gradients for Training Deep Spiking Neural Networks
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] To address the dual issues of "sharp loss landscapes" and "conflicting gradients across timesteps" in deep Spiking Neural Networks (SNNs) trained with surrogate gradients, this paper proposes a unified framework, A2SG. On one hand, it employs an adaptive effective window width (automatically adjusting $\beta$ based on
+  [ICML2026][Optimization][Spiking Neural Networks] To address the dual issues of "sharp loss landscapes" and "conflicting gradients across timesteps" in deep Spiking Neural Networks (SNNs) trained with surrogate gradients, this paper proposes a unified framework, A2SG. On one hand, it employs an adaptive effective window width (automatically adjusting $\beta$ based on Spatial Gradient Variation (SGV) and Temporal Gradient Consistency (TGC)) to suppress gradient variation and a…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Spiking Neural Networks"
+  - "Surrogate Gradient"
+  - "Flat Minima"
+  - "Loss Curvature"
+  - "Temporal Gradient Consistency"
 date: 2026-05-08
-content_hash: 1d72a746b9ffa3ac
+content_hash: 90809d4c712a1d15
 ---
+
 # A2SG: Adaptive and Asymmetric Surrogate Gradients for Training Deep Spiking Neural Networks
 
 **Conference**: ICML2026  
@@ -140,11 +146,11 @@ A2SG compared against existing adaptive surrogate methods, generally using only 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Training Robust Graph Neural Networks by Modeling Noise Dependencies](../../NeurIPS2025/optimization/training_robust_graph_neural_networks_by_modeling_noise_dependencies.md)
+- [\[ICLR 2026\] Difference Predictive Coding for Training Spiking Neural Networks](../../ICLR2026/optimization/difference_predictive_coding_for_training_spiking_neural_networks.md)
 - [\[ICML 2026\] Asymmetric Perturbation in Solving Bilinear Saddle-Point Optimization](asymmetric_perturbation_in_solving_bilinear_saddle-point_optimization.md)
-- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
+- [\[ICML 2026\] ePC: Fast and Deep Predictive Coding in Digital Simulation](epc_fast_and_deep_predictive_coding_in_digital_simulation.md)
 - [\[ICML 2026\] Gradient Descent with Large Step Size Restores Symmetry in Deep Linear Networks with Multi-Pathway](gradient_descent_with_large_step_size_restores_symmetry_in_deep_linear_networks_.md)
-- [\[ICLR 2026\] Rapid Training of Hamiltonian Graph Networks using Random Features](../../ICLR2026/optimization/rapid_training_of_hamiltonian_graph_networks_using_random_features.md)
+- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
 
 </div>
 

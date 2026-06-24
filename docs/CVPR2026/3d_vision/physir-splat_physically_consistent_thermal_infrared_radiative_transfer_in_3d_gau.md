@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhysIR-Splat: Physically Consistent Thermal Infrared Radiative Transfer in 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PhysIR-Splat moves beyond simply treating 3DGS color as thermal radiation. Instead, it explicitly assigns three physical quantities—temperature, emissivity, and ambient irradiance—to each Gaussian primitive and embeds the thermal infrared imaging chain ("self-emission + ambient reflection $\rightarrow$ atmospheric tran
+  [CVPR 2026][3D Vision][Thermal Infrared Reconstruction] PhysIR-Splat moves beyond simply treating 3DGS color as thermal radiation. Instead, it explicitly assigns three physical quantities—temperature, emissivity, and ambient irradiance—to each Gaussian primitive and embeds the thermal infrared imaging chain ("self-emission + ambient reflection $\rightarrow$ atmospheric transmittance $\rightarrow$ radiometric response") directly into the renderer. Combined with VGGT-IR…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Thermal Infrared Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Radiative Transfer"
+  - "Novel View Synthesis"
+  - "Feed-forward Pose Initialization"
 date: 2026-05-08
-content_hash: 576fef4303161d74
+content_hash: aa0e3c3dc13ce63d
 ---
+
 # PhysIR-Splat: Physically Consistent Thermal Infrared Radiative Transfer in 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ Component-wise ablation on TI-NSD (Average, relative change to Full):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
+- [\[CVPR 2026\] Thermal is Always Wild: Characterizing and Addressing Challenges in Thermal-Only Novel View Synthesis](thermal_is_always_wild_characterizing_and_addressing_challenges_in_thermal-only_.md)
 - [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
-- [\[CVPR 2026\] Physically Inspired Gaussian Splatting for HDR Novel View Synthesis](physically_inspired_gaussian_splatting_for_hdr_novel_view_synthesis.md)
-- [\[ECCV 2024\] Thermal3D-GS: Physics-induced 3D Gaussians for Thermal Infrared Novel-view Synthesis](../../ECCV2024/3d_vision/thermal3d-gs_physics-induced_3d_gaussians_for_thermal_infrared_novel-view_synthe.md)
-- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3D Gaussian Splatting](pointgs_semantic-consistent_unsupervised_3d_point_cloud_segmentation_with_3d_gau.md)
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
 
 </div>
 

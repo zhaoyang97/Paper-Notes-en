@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] R-WoM: Retrieval-augmented World Model for Computer-use Agents
 description: >-
-  [ICLR 2026][LLM Agent][World Models] The authors systematically verify that "LLMs as World Models" work for short-term but fail for long-term horizons. They propose R-WoM, which uses external tutorial retrieval to "ground" the multi-step imagination and reward estimation of the world model, achieving up to a 23.4% improvement over the strongest baselines
+  [ICLR 2026][LLM Agent][World Model] The authors systematically verify that "LLMs as World Models" work for short-term but fail for long-term horizons. They propose R-WoM, which uses external tutorial retrieval to "ground" the multi-step imagination and reward estimation of the world model, achieving up to a 23.4% improvement over the strongest baselines on OSWorld / WebArena, with increasing advantages for longer trajectories.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - World Models
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "World Model"
+  - "Computer-use Agent"
+  - "Retrieval-augmented"
+  - "Long-horizon Planning"
+  - "List-wise Reward"
 date: 2026-05-08
-content_hash: e9650fb9d1da3e50
+content_hash: 1bb72001bbde8d3a
 ---
+
 # R-WoM: Retrieval-augmented World Model for Computer-use Agents
 
 **Conference**: ICLR 2026  
@@ -132,11 +137,11 @@ On OSWorld (sampled 87/361) and WebArena (sampled 113/301), R-WoM was compared a
 
 ## Related Papers
 
-- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
-- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
-- [\[ICLR 2026\] ViMo: A Generative Visual GUI World Model for App Agents](vimo_a_generative_visual_gui_world_model_for_app_agents.md)
-- [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
 - [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
+- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
+- [\[ICLR 2026\] ViMo: A Generative Visual GUI World Model for App Agents](vimo_a_generative_visual_gui_world_model_for_app_agents.md)
+- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
+- [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
 
 </div>
 

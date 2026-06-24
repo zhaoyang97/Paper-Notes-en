@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SHAPE: Unifying Safety, Helpfulness and Pedagogy for Educational LLMs
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper unifies the safety, helpfulness, and pedagogy of educational LLMs within a knowledge mastery graph. It proposes the SHAPE benchmark to evaluate whether models can choose between "scaffolding" or "direct answering" based on the student's mastery state under answer-inducing pressure, while introducing a graph-
+  [ACL2026][LLM Safety][Educational LLM] This paper unifies the safety, helpfulness, and pedagogy of educational LLMs within a knowledge mastery graph. It proposes the SHAPE benchmark to evaluate whether models can choose between "scaffolding" or "direct answering" based on the student's mastery state under answer-inducing pressure, while introducing a graph-augmented gating pipeline to significantly improve robustness.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL2026"
+  - "LLM Safety"
+  - "Educational LLM"
+  - "Knowledge Mastery Graph"
+  - "Pedagogical Safety"
+  - "Answer Induction"
+  - "Personalized Tutoring"
 date: 2026-05-08
-content_hash: 6a199b233bae2466
+content_hash: 5d3614f0fcc493b3
 ---
+
 # SHAPE: Unifying Safety, Helpfulness and Pedagogy for Educational LLMs
 
 **Conference**: ACL2026  
@@ -122,11 +128,11 @@ The study compares the robustness of the graph-augmented pipeline against vanill
 
 ## Related Papers
 
+- [\[ICLR 2026\] Pragma-VL: Towards a Pragmatic Arbitration of Safety and Helpfulness in MLLMs](../../ICLR2026/llm_safety/pragma-vl_towards_a_pragmatic_arbitration_of_safety_and_helpfulness_in_mllms.md)
 - [\[ACL 2026\] Responsible Federated LLMs via Safety Filtering and Constitutional AI](responsible_federated_llms_via_safety_filtering_and_constitutional_ai.md)
 - [\[ACL 2025\] CAVGAN: Unifying Jailbreak and Defense of LLMs via Generative Adversarial Attacks](../../ACL2025/llm_safety/cavgan_unifying_jailbreak_and_defense_of_llms_via_generative_adversarial_attacks.md)
 - [\[ACL 2026\] Robust Multimodal Safety via Conditional Decoding](robust_multimodal_safety_via_conditional_decoding.md)
-- [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
-- [\[ACL 2026\] PARASITE: Conditional System Prompt Poisoning to Hijack LLMs](parasite_conditional_system_prompt_poisoning_to_hijack_llms.md)
+- [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](../../ICLR2026/llm_safety/prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
 
 </div>
 

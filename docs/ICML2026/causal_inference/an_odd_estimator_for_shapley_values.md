@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] An Odd Estimator for Shapley Values
 description: >-
-  [ICML 2026][Causal Inference][OddSHAP] This paper demonstrates that the Shapley value depends solely on the odd component of a set function. Based on this, it proposes OddSHAP: a method that isolates odd signals via paired sampling, screens high-order odd Fourier interactions using GBT, and performs sparse odd regression. It significantly outperforms flexib
+  [ICML2026][Causal Inference][Shapley values] This paper demonstrates that the Shapley value depends solely on the odd component of a set function. Based on this, it proposes OddSHAP: a method that isolates odd signals via paired sampling, screens high-order odd Fourier interactions using GBT, and performs sparse odd regression. It significantly outperforms flexible-budget Shapley estimators on mid-to-high dimensional explanation tasks.
 tags:
-  - ICML 2026
-  - Causal Inference
-  - OddSHAP
+  - "ICML2026"
+  - "Causal Inference"
+  - "Shapley values"
+  - "feature attribution"
+  - "OddSHAP"
+  - "paired sampling"
+  - "Fourier regression"
 date: 2026-05-08
-content_hash: 1718eddd69bbe700
+content_hash: a093c1a075e1a386
 ---
+
 # An Odd Estimator for Shapley Values
 
 **Conference**: ICML2026  
@@ -129,10 +134,10 @@ The ablation study validates the three core choices of OddSHAP: the number of in
 ## Related Papers
 
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](../../NeurIPS2025/causal_inference/practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
+- [\[ICML 2026\] Toward Scalable and Valid Conditional Independence Testing with Spectral Representations](toward_scalable_and_valid_conditional_independence_testing_with_spectral_represe.md)
 - [\[ICML 2026\] Causal-JEPA: Learning World Models through Object-Level Latent Masking](causal-jepa_learning_world_models_through_object-level_latent_masking.md)
-- [\[ICML 2026\] Evaluating Bivariate Causal Statements Based on Mutual Compatibility](evaluating_bivariate_causal_statements_based_on_mutual_compatibility.md)
-- [\[ICML 2026\] The (Marginal) Value of a Search Ad: An Online Causal Framework for Repeated Second-price Auctions](the_marginal_value_of_a_search_ad_an_online_causal_framework_for_repeated_second.md)
-- [\[ICML 2026\] Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity](density-guided_robust_counterfactual_explanations_on_tabular_data_under_model_mu.md)
+- [\[ICML 2026\] Causal Modeling of Selection in Evolution](causal_modeling_of_selection_in_evolution.md)
+- [\[ICML 2026\] From Observation to Intervention: A Causal Audit of Expert Importance in Mixture-of-Experts Models](from_observation_to_intervention_a_causal_audit_of_expert_importance_in_mixture-.md)
 
 </div>
 

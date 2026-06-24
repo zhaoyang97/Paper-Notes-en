@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Policy Compatible Skill Incremental Learning via Lazy Learning Interface
 description: >-
-  [NeurIPS 2025][Robotics][Skill Incremental Learning] This paper proposes SIL-C, a framework that achieves skill-policy compatibility in skill incremental learning via a bilateral lazy learning interface…
+  [NeurIPS 2025 Spotlight][Robotics][Skill Incremental Learning] This paper proposes SIL-C, a framework that achieves skill-policy compatibility in skill incremental learning via a bilateral lazy learning interface, enabling incrementally updated skills to directly improve downstream policy performance without retraining or structural modification.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Robotics"
   - "Skill Incremental Learning"
   - "Hierarchical Policy"
@@ -13,7 +13,7 @@ tags:
   - "Skill-Policy Compatibility"
   - "Embodied Intelligence"
 date: 2026-05-08
-content_hash: 57f2014b798a8690
+content_hash: ce2e5d0f248af43e
 ---
 
 # Policy Compatible Skill Incremental Learning via Lazy Learning Interface
@@ -143,10 +143,10 @@ As input noise increases from ×1 to ×5, SIL-C maintains a BWT of +4.3% at ×5 
 ## Related Papers
 
 - [\[ICCV 2025\] iManip: Skill-Incremental Learning for Robotic Manipulation](../../ICCV2025/robotics/imanip_skill-incremental_learning_for_robotic_manipulation.md)
+- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
 - [\[NeurIPS 2025\] Opinion: Towards Unified Expressive Policy Optimization for Robust Robot Learning](opinion_towards_unified_expressive_policy_optimization_for_robust_robot_learning.md)
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Learning Parameterized Skills from Demonstrations](learning_parameterized_skills_from_demonstrations.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Stable Federated Continual Test-Time Adaptation in Wild World
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper proposes **BPFedCTTA**, which unifies "Federated Continual Test-Time Adaptation (FedCTTA)" from a Bayesian perspective: treating the global model as a Gaussian prior, stabilizing the local adaptation of each unlabeled client through MAP estimation (BPA), and selectively fusing client updates via an uncertain
+  [CVPR 2026][Federated Learning][Federated Continual Test-Time Adaptation] This paper proposes **BPFedCTTA**, which unifies "Federated Continual Test-Time Adaptation (FedCTTA)" from a Bayesian perspective: treating the global model as a Gaussian prior, stabilizing the local adaptation of each unlabeled client through MAP estimation (BPA), and selectively fusing client updates via an uncertainty gate calculated from output entropy (UGSA). This approach achieves adaptation to ne…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Federated Continual Test-Time Adaptation"
+  - "Bayesian Prior"
+  - "MAP Estimation"
+  - "Uncertainty Gating"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 1b25fc02f4e7143d
+content_hash: 3998ef5247f300a4
 ---
+
 # Towards Stable Federated Continual Test-Time Adaptation in Wild World
 
 **Conference**: CVPR 2026  
@@ -141,15 +147,14 @@ Component ablation (Table 4, incremental addition) and comparison of uncertainty
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
-- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
-- [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](../../ICML2026/others/private_and_stable_test-time_adaptation_with_differential_privacy.md)
-- [\[CVPR 2026\] Dance Across Shifts: Forward-Facilitation Continual Test-Time Adaptation through Dynamic Style Bridging](dance_across_shifts_forward-facilitation_continual_test-time_adaptation_through_.md)
-- [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
+- [\[CVPR 2026\] From Selection to Scheduling: Federated Geometry-Aware Correction Makes Exemplar Replay Work Better under Continual Dynamic Heterogeneity](from_selection_to_scheduling_federated_geometry-aware_correction_makes_exemplar_.md)
+- [\[CVPR 2026\] FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization](fedadamom_adaptive_momentum_for_improved_generalization_in_federated_optimizatio.md)
+- [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
+- [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
 
 </div>
 

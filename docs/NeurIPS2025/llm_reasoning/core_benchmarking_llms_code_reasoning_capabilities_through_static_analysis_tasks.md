@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks
 description: >-
-  [NeurIPS 2025][LLM Reasoning][code reasoning] This paper introduces CoRe, a high-quality benchmark comprising 12,553 manually validated task instances. Through three categories of fundamental static analysis tasks—data d…
+  [NeurIPS 2025 Spotlight][Reasoning][code reasoning] This paper introduces CoRe, a high-quality benchmark comprising 12,553 manually validated task instances. Through three categories of fundamental static analysis tasks—data dependency, control dependency, and information flow—CoRe directly evaluates the code semantic reasoning capabilities of LLMs, revealing that current models remain severely deficient on tasks requiring multi-step reasoning…
 tags:
-  - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "NeurIPS 2025 Spotlight"
+  - "Reasoning"
   - "code reasoning"
   - "static analysis"
   - "benchmark"
@@ -13,7 +13,7 @@ tags:
   - "control dependency"
   - "information flow"
 date: 2026-05-08
-content_hash: e020b57ec4e00970
+content_hash: f8cab1d46e4bcee5
 ---
 
 # CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks
@@ -171,11 +171,11 @@ The CoRe benchmark construction consists of four stages: **program sampling** �
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks](value-guided_search_for_efficient_chain-of-thought_reasoning.md)
-- [\[ICLR 2026\] TopoBench: Benchmarking LLMs on Hard Topological Reasoning](../../ICLR2026/llm_reasoning/topobench_benchmarking_llms_on_hard_topological_reasoning.md)
-- [\[ICLR 2026\] GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs](../../ICLR2026/llm_reasoning/geogrambench_benchmarking_the_geometric_program_reasoning_in_modern_llms.md)
-- [\[NeurIPS 2025\] The Ouroboros of Benchmarking: Reasoning Evaluation in an Era of Saturation](the_ouroboros_of_benchmarking_reasoning_evaluation_in_an_era_of_saturation.md)
-- [\[NeurIPS 2025\] Note 4: WebThinker — Empowering Reasoning Models with Deep Research Capabilities](webthinker_empowering_large_reasoning_models_with_deep_research_capability.md)
+- [\[ICML 2025\] DyCodeEval: Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models Under Data Contamination](../../ICML2025/llm_reasoning/dynamic_benchmarking_of_reasoning_capabilities_in_code_large_language_models_und.md)
+- [\[ICLR 2026\] USTBench: Benchmarking and Dissecting Spatiotemporal Reasoning Capabilities of LLMs as Urban Agents](../../ICLR2026/llm_reasoning/ustbench_benchmarking_and_dissecting_spatiotemporal_reasoning_capabilities_of_ll.md)
+- [\[ICLR 2026\] Executable Counterfactuals: Improving LLMs' Causal Reasoning Through Code](../../ICLR2026/llm_reasoning/executable_counterfactuals_improving_llms_causal_reasoning_through_code.md)
+- [\[ICLR 2026\] On Code-Induced Reasoning in LLMs](../../ICLR2026/llm_reasoning/on_code-induced_reasoning_in_llms.md)
+- [\[ICML 2025\] Putnam-AXIOM: A Functional & Static Benchmark for Measuring Higher Level Mathematical Reasoning in LLMs](../../ICML2025/llm_reasoning/putnam-axiom_a_functional_and_static_benchmark_for_measuring_higher_level_mathem.md)
 
 </div>
 

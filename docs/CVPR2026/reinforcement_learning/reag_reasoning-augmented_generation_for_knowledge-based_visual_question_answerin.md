@@ -4,13 +4,16 @@ title: >-
 description: >-
   [CVPR 2026][Reinforcement Learning][KB-VQA] ReAG is proposed as a reasoning-augmented multimodal RAG method that combines coarse and fine-grained retrieval with a Critic filtering model to reduce noise. It employs GRPO reinforcement learning to train the generator for explicit reasoning, achieving a new SOTA on knowledge-intensive VQA tasks.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - KB-VQA
-  - RAG
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "KB-VQA"
+  - "RAG"
+  - "Reasoning Augmentation"
+  - "Multimodal Retrieval"
 date: 2026-05-08
-content_hash: ccdd5a88f9ac0211
+content_hash: 9b3c8f528446332c
 ---
+
 # ReAG: Reasoning-Augmented Generation for Knowledge-based Visual Question Answering
 
 **Conference**: CVPR 2026  
@@ -170,9 +173,9 @@ Using Oracle Wikipedia pages (upper bound experiment): ReAG (7B) achieves 81.5% 
 
 - [\[NeurIPS 2025\] Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering](../../NeurIPS2025/reinforcement_learning/knowledge-based_visual_question_answer_with_multimodal_processing_retrieval_and_.md)
 - [\[AAAI 2026\] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction](../../AAAI2026/reinforcement_learning/tadarag_task_adaptive_retrieval-augmented_generation_via_on-the-fly_knowledge_gr.md)
+- [\[ICLR 2026\] A$^2$Search: Ambiguity-Aware Question Answering with Reinforcement Learning](../../ICLR2026/reinforcement_learning/a2search_ambiguity-aware_question_answering_with_reinforcement_learning.md)
+- [\[ICLR 2026\] QuRL: Rubrics As Judge For Open-Ended Question Answering](../../ICLR2026/reinforcement_learning/qurl_rubrics_as_judge_for_open-ended_question_answering.md)
 - [\[NeurIPS 2025\] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/improving_retrieval-augmented_generation_through_multi-agent_reinforcement_learn.md)
-- [\[CVPR 2026\] Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement](seeing_is_improving_visual_feedback_for_iterative_text_layout_refinement.md)
-- [\[CVPR 2026\] CME-CAD: Heterogeneous Collaborative Multi-Expert Reinforcement Learning for CAD Code Generation](cme-cad_heterogeneous_collaborative_multi-expert_reinforcement_learning_for_cad_code_gen.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning
 description: >-
-  [ICML 2026][Graph Learning][Transformer] GILT reformulates node, edge, and graph few-shot classification into a unified token-based in-context learning problem. By utilizing a pure numerical architecture consisting of "linear GCN for structural extraction + asymmetric prototype tokens + two-stage attention Transformer + prototype head," it achieves graph-nati
+  [ICML 2026][Graph Learning][Graph Foundation Models] GILT reformulates node, edge, and graph few-shot classification into a unified token-based in-context learning problem. By utilizing a pure numerical architecture consisting of "linear GCN for structural extraction + asymmetric prototype tokens + two-stage attention Transformer + prototype head," it achieves graph-native ICL without relying on LLMs or requiring any downstream tuning. In 5-shot settings…
 tags:
-  - ICML 2026
-  - Graph Learning
-  - Transformer
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Graph Foundation Models"
+  - "Graph ICL"
+  - "Few-shot Graph Learning"
+  - "Prototype Classification"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 4f004d3ba66c2019
+content_hash: ddb0cb8880a4cbc7
 ---
+
 # GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning
 
 **Conference**: ICML 2026  
@@ -138,10 +143,20 @@ Highlights: In 5-shot settings, GILT outperforms all ICL/tuning baselines and ev
 - Value: ⭐⭐⭐⭐ Significant benefits for latency-sensitive industrial graph tasks; provides a reproducible template for graph ICL.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
+- [\[ICLR 2026\] Training-Free Counterfactual Explanation for Temporal Graph Model Inference](../../ICLR2026/graph_learning/training-free_counterfactual_explanation_for_temporal_graph_model_inference.md)
+- [\[ICML 2026\] Message Tuning Outshines Graph Prompt Tuning: A Prismatic Space Perspective](message_tuning_outshines_graph_prompt_tuning_a_prismatic_space_perspective.md)
+- [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
+- [\[ICLR 2026\] Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion](../../ICLR2026/graph_learning/glance_for_context_learning_when_to_leverage_llms_for_node-aware_gnn-llm_fusion.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)

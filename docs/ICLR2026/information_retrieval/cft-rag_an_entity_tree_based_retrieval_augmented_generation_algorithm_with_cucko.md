@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CFT-RAG: An Entity Tree Based Retrieval Augmented Generation Algorithm With Cuckoo Filter
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Tree-RAG] CFT-RAG integrates a Cuckoo Filter into the entity localization stage of Tree-RAG. By combining fingerprints, block linked lists, and temperature-based sorting, it reduces the complexity of "searching entities in a forest" from $O(n)$ breadth-first search to approximately $O(1)$. On the DART dataset, it achieves an 800
+  [ICLR2026][Information Retrieval & RAG][Tree-RAG] CFT-RAG integrates a Cuckoo Filter into the entity localization stage of Tree-RAG. By combining fingerprints, block linked lists, and temperature-based sorting, it reduces the complexity of "searching entities in a forest" from $O(n)$ breadth-first search to approximately $O(1)$. On the DART dataset, it achieves an 800%+ speedup in retrieval compared to naive Tree-RAG, while simultaneously improving generation accuracy.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Tree-RAG
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Tree-RAG"
+  - "Cuckoo Filter"
+  - "Entity Tree"
+  - "Retrieval Acceleration"
+  - "Temperature Sorting"
 date: 2026-05-08
-content_hash: cdacaaa23fc7863e
+content_hash: 06f5090a7ecc59db
 ---
+
 # CFT-RAG: An Entity Tree Based Retrieval Augmented Generation Algorithm With Cuckoo Filter
 
 **Conference**: ICLR2026  
@@ -135,10 +140,10 @@ CFT-RAG achieved the lowest retrieval time across all datasets. In DART, time dr
 ## Related Papers
 
 - [\[ICML 2026\] Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation](../../ICML2026/information_retrieval/hierarchical_abstract_tree_for_cross-document_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] Counterfactual Reasoning for Retrieval-Augmented Generation](counterfactual_reasoning_for_retrieval-augmented_generation.md)
 - [\[ACL 2026\] Retrieval-Augmented Tutoring for Algorithm Tracing and Problem-Solving in AI Education](../../ACL2026/information_retrieval/retrieval-augmented_tutoring_for_algorithm_tracing_and_problem-solving_in_ai_edu.md)
 - [\[ICLR 2026\] Bridging Draft Policy Misalignment: Group Tree Optimization for Speculative Decoding](bridging_draft_policy_misalignment_group_tree_optimization_for_speculative_decod.md)
-- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
-- [\[ICLR 2026\] GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation](gro-rag_gradient-aware_re-rank_optimization_for_multi-source_retrieval-augmented.md)
+- [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
 
 </div>
 

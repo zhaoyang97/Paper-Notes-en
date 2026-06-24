@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiffVax: Optimization-Free Image Immunization Against Diffusion-Based Editing
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] DiffVax trains a feed-forward immunizer (UNet++) that generates imperceptible adversarial perturbations for any image in a single forward pass (~70ms). This causes diffusion-based malicious editing to fail, achieving a 250,000× speedup over prior per-image optimization methods and extending immunization to video conten
+  [ICLR 2026][Model Compression][Image Immunization] DiffVax trains a feed-forward immunizer (UNet++) that generates imperceptible adversarial perturbations for any image in a single forward pass (~70ms). This causes diffusion-based malicious editing to fail, achieving a 250,000× speedup over prior per-image optimization methods and extending immunization to video content for the first time.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Image Immunization"
+  - "Adversarial Perturbation"
+  - "Diffusion Editing Protection"
+  - "Feed-forward Network"
+  - "Video Protection"
 date: 2026-05-08
-content_hash: 444006cb452cd5a5
+content_hash: ad8d0bfb92a3c574
 ---
+
 # DiffVax: Optimization-Free Image Immunization Against Diffusion-Based Editing
 
 **Conference**: ICLR 2026  

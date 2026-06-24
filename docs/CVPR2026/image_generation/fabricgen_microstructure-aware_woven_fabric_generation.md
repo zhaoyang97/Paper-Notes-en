@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FabricGen: Microstructure-Aware Woven Fabric Generation
 description: >-
-  [CVPR 2026][Image Generation][WeavingLLM] FabricGen decouples woven fabric generation into two paths: "macro texture" and "micro weaving structure." Specifically, a diffusion model fine-tuned on microstructure-free data generates albedo maps without microstructure, while a Language Model (WeavingLLM) designs weaving drafts and yarn parameters directly from tex
+  [CVPR 2026][Image Generation][Fabric material generation] FabricGen decouples woven fabric generation into two paths: "macro texture" and "micro weaving structure." Specifically, a diffusion model fine-tuned on microstructure-free data generates albedo maps without microstructure, while a Language Model (WeavingLLM) designs weaving drafts and yarn parameters directly from text. These drive an enhanced procedural geometry model to synthesize yarn-level microstructures. The fin…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - WeavingLLM
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Fabric material generation"
+  - "microstructure"
+  - "procedural geometry"
+  - "WeavingLLM"
+  - "text-to-material"
 date: 2026-05-08
-content_hash: 3880bcdab87b1511
+content_hash: 15f10c32312635d1
 ---
+
 # FabricGen: Microstructure-Aware Woven Fabric Generation
 
 **Conference**: CVPR 2026  
@@ -145,10 +150,10 @@ Even a powerful general LLM like GPT-5 underperforms compared to the SFT-trained
 ## Related Papers
 
 - [\[CVPR 2026\] Property-Informed Diffusion-Based Text-to-Microstructure Generation](property-informed_diffusion-based_text-to-microstructure_generation.md)
-- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)
 - [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
 - [\[CVPR 2026\] VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation](va-p_variational_policy_alignment_for_pixel-aware_autoregressive_generation.md)
 - [\[CVPR 2026\] DiverseGRPO: Mitigating Mode Collapse in Image Generation via Diversity-Aware GRPO](diversegrpo_mitigating_mode_collapse_in_image_generation_via_diversity-aware_grp.md)
+- [\[CVPR 2026\] Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation](denoising_fast_and_slow_difficulty-aware_adaptive_sampling_for_image_generation.md)
 
 </div>
 

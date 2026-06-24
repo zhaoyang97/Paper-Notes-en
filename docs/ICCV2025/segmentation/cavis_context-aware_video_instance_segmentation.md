@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CAVIS: Context-Aware Video Instance Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Video Instance Segmentation] This paper proposes CAVIS, which introduces a Context-Aware Instance Tracker (CAIT) to incorporate contextual information around object boundaries for enhanced insta…
+  [ICCV 2025][Segmentation][Video Instance Segmentation] This paper proposes CAVIS, which introduces a Context-Aware Instance Tracker (CAIT) to incorporate contextual information around object boundaries for enhanced instance association, and designs a Prototypical Cross-frame Contrastive loss (PCC) to enforce cross-frame feature consistency, achieving state-of-the-art performance on both VIS and VPS benchmarks.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Instance Tracking"
   - "Mask2Former"
 date: 2026-05-08
-content_hash: 9a023939ce9c7d23
+content_hash: 8c66f7189bab3030
 ---
 
 # CAVIS: Context-Aware Video Instance Segmentation
@@ -180,9 +180,9 @@ Comparison of context extraction strategies:
 
 - [\[ICCV 2025\] Hierarchical Visual Prompt Learning for Continual Video Instance Segmentation](hierarchical_visual_prompt_learning_for_continual_video_instance_segmentation.md)
 - [\[ICCV 2025\] SCORE: Scene Context Matters in Open-Vocabulary Remote Sensing Instance Segmentation](score_scene_context_matters_in_openvocabulary_remote_sensing.md)
-- [\[ICLR 2026\] VINCIE: Unlocking In-context Image Editing from Video](../../ICLR2026/segmentation/vincie_unlocking_in-context_image_editing_from_video.md)
-- [\[CVPR 2026\] Towards Context-Aware Image Anonymization with Multi-Agent Reasoning](../../CVPR2026/segmentation/towards_context-aware_image_anonymization_with_multi-agent_reasoning.md)
-- [\[CVPR 2026\] ELVIS: Enhance Low-Light for Video Instance Segmentation in the Dark](../../CVPR2026/segmentation/elvis_enhance_low-light_for_video_instance_segmentation_in_the_dark.md)
+- [\[ECCV 2024\] VISAGE: Video Instance Segmentation with Appearance-Guided Enhancement](../../ECCV2024/segmentation/visage_video_instance_segmentation_with_appearance-guided_enhancement.md)
+- [\[CVPR 2025\] RipVIS: Rip Currents Video Instance Segmentation Benchmark for Beach Monitoring](../../CVPR2025/segmentation/ripvis_rip_currents_video_instance_segmentation_benchmark_for_beach_monitoring_a.md)
+- [\[ICML 2025\] ConText: Driving In-context Learning for Text Removal and Segmentation](../../ICML2025/segmentation/context_driving_in-context_learning_for_text_removal_and_segmentation.md)
 
 </div>
 

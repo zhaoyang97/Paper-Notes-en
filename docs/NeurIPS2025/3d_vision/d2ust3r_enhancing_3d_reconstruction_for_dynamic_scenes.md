@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes
 description: >-
-  [NEURIPS2025][3D Vision][dynamic 3D reconstruction] This paper proposes the Static-Dynamic Aligned Pointmap (SDAP) representation, which unifies 3D alignment of static and dynamic regions into a single framework…
+  [NEURIPS2025][3D Vision][dynamic 3D reconstruction] This paper proposes the Static-Dynamic Aligned Pointmap (SDAP) representation, which unifies 3D alignment of static and dynamic regions into a single framework, enabling DUSt3R-based methods to achieve accurate dense 3D reconstruction and correspondence estimation in dynamic scenes.
 tags:
   - "NEURIPS2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "optical flow"
   - "DUSt3R"
 date: 2026-05-08
-content_hash: c31fabd756367901
+content_hash: c7f99ade3a5762d8
 ---
 
 # D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes
@@ -133,11 +133,11 @@ Broader insights:
 
 ## Related Papers
 
+- [\[CVPR 2025\] SpectroMotion: Dynamic 3D Reconstruction of Specular Scenes](../../CVPR2025/3d_vision/spectromotion_dynamic_3d_reconstruction_of_specular_scenes.md)
 - [\[ICCV 2025\] Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction](../../ICCV2025/3d_vision/dynamic_point_maps_a_versatile_representation_for_dynamic_3d_reconstruction.md)
+- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](../../ICLR2026/3d_vision/uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
 - [\[NeurIPS 2025\] RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes](rgb-only_supervised_camera_parameter_optimization_in_dynamic_scenes.md)
-- [\[NeurIPS 2025\] Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles](styl3r_instant_3d_stylized_reconstruction_for_arbitrary_scenes_and_styles.md)
-- [\[ICCV 2025\] InstaScene: Towards Complete 3D Instance Decomposition and Reconstruction from Cluttered Scenes](../../ICCV2025/3d_vision/instascene_towards_complete_3d_instance_decomposition_and_reconstruction_from_cl.md)
-- [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](../../CVPR2026/3d_vision/featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
+- [\[CVPR 2025\] MOVIS: Enhancing Multi-Object Novel View Synthesis for Indoor Scenes](../../CVPR2025/3d_vision/movis_enhancing_multi-object_novel_view_synthesis_for_indoor_scenes.md)
 
 </div>
 

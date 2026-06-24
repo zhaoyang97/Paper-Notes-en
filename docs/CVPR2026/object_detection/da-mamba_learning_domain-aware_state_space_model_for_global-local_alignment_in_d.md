@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection
 description: >-
-  [CVPR 2026][Object Detection][State Space Model] The authors propose DA-Mamba, a CNN-SSM hybrid architecture that achieves image-level and instance-level global-local domain-invariant feature alignment with linear complexity via two modules: Image-Aware SSM (IA-SSM) and Object-Aware SSM (OA-SSM). It achieves SOTA performance on four domain adaptive detection benchmar
+  [CVPR2026][Object Detection][Domain Adaptive Object Detection] The authors propose DA-Mamba, a CNN-SSM hybrid architecture that achieves image-level and instance-level global-local domain-invariant feature alignment with linear complexity via two modules: Image-Aware SSM (IA-SSM) and Object-Aware SSM (OA-SSM). It achieves SOTA performance on four domain adaptive detection benchmarks.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - State Space Model
-  - Mamba
+  - "CVPR2026"
+  - "Object Detection"
+  - "Domain Adaptive Object Detection"
+  - "State Space Model"
+  - "Mamba"
+  - "Global-Local Alignment"
+  - "Feature Alignment"
+  - "CNN-SSM Hybrid Architecture"
 date: 2026-05-08
-content_hash: 44b58b22a368cca1
+content_hash: 581215ad9bd54710
 ---
+
 # DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection
 
 **Conference**: CVPR2026  
@@ -150,11 +155,11 @@ $$\mathcal{L} = \mathcal{L}_{cls}^S + \mathcal{L}_{cls}^T + \lambda^I \mathcal{L
 
 ## Related Papers
 
-- [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)
 - [\[CVPR 2026\] Expert-Teacher-Student Collaborative Learning for Domain Adaptive Object Detection](expert-teacher-student_collaborative_learning_for_domain_adaptive_object_detecti.md)
+- [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)
 - [\[CVPR 2025\] Large Self-Supervised Models Bridge the Gap in Domain Adaptive Object Detection](../../CVPR2025/object_detection/large_self-supervised_models_bridge_the_gap_in_domain_adaptive_object_detection.md)
-- [\[CVPR 2026\] Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection](foundation_model_priors_enhance_object_focus_in_feature_space_for_source-free_ob.md)
 - [\[CVPR 2026\] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)
+- [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
 
 </div>
 

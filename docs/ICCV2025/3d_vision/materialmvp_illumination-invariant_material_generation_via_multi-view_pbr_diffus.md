@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion
 description: >-
-  [ICCV 2025][3D Vision][PBR texture] MaterialMVP is an end-to-end multi-view PBR texture generation model that decouples illumination via consistency-regularized training and employs a dual-channel material generation fra…
+  [ICCV 2025][3D Vision][PBR texture] MaterialMVP is an end-to-end multi-view PBR texture generation model that decouples illumination via consistency-regularized training and employs a dual-channel material generation framework (MCAA + Learnable Material Embeddings) to align albedo and metallic-roughness maps, enabling single-pass generation of high-quality, illumination-invariant, multi-view-consistent PBR materials from a 3D mesh and an image prompt.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "material generation"
   - "dual-channel"
 date: 2026-05-08
-content_hash: 1c3e07c5d8b15673
+content_hash: dfa2405303c06b0b
 ---
 
 # MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion
@@ -139,10 +139,10 @@ Qualitative ablation validating the contribution of each component:
 ## Related Papers
 
 - [\[ICCV 2025\] SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates](supermat_physically_consistent_pbr_material_estimation_at_interactive_rates.md)
+- [\[ICLR 2026\] LumiTex: Towards High-Fidelity PBR Texture Generation with Illumination Context](../../ICLR2026/3d_vision/lumitex_towards_high-fidelity_pbr_texture_generation_with_illumination_context.md)
+- [\[CVPR 2026\] MatLat: Material Latent Space for PBR Texture Generation](../../CVPR2026/3d_vision/matlat_material_latent_space_for_pbr_texture_generation.md)
 - [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
-- [\[ICCV 2025\] Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data](bootstrap3d_improving_multi-view_diffusion_model_with_synthetic_data.md)
 - [\[ICCV 2025\] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models](mvgbench_a_comprehensive_benchmark_for_multi-view_generation_models.md)
-- [\[ICCV 2025\] FlexGen: Flexible Multi-View Generation from Text and Image Inputs](flexgen_flexible_multi-view_generation_from_text_and_image_inputs.md)
 
 </div>
 

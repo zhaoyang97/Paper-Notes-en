@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][POMDP] This work re-examines the visual processing of VLA models from a POMDP perspective and proposes the AVA-VLA framework. By utilizing a recurrent state and an active visual attention module, it dynamically modulates the importance of current-frame visual tokens based on historical context, achieving SOTA performance on b
+  [CVPR 2026 Highlight][Robotics][VLA Models] This work re-examines the visual processing of VLA models from a POMDP perspective and proposes the AVA-VLA framework. By utilizing a recurrent state and an active visual attention module, it dynamically modulates the importance of current-frame visual tokens based on historical context, achieving SOTA performance on benchmarks such as LIBERO and CALVIN.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - POMDP
+  - "CVPR 2026 Highlight"
+  - "Robotics"
+  - "VLA Models"
+  - "Active Visual Attention"
+  - "POMDP"
+  - "Recurrent State"
+  - "Visual Token Modulation"
 date: 2026-05-08
-content_hash: 5b813381dd548ed8
+content_hash: 7c3dcdbc9f2f4aa8
 ---
+
 # AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
 
 **Conference**: CVPR 2026 Highlight  
@@ -132,11 +137,11 @@ To apply the weights calculated by AVA, the LLM backbone's attention mechanism i
 
 ## Related Papers
 
-- [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](sapave_active_perception_manipulation_vla_roboti.md)
-- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
 - [\[AAAI 2026\] TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models](../../AAAI2026/robotics/ttf-vla_temporal_token_fusion_via_pixel-attention_integratio.md)
-- [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
-- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
+- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
+- [\[CVPR 2026\] LIBERO-Plus: A Progressive Robustness Benchmark for Visual-Language-Action Models](libero-plus_a_progressive_robustness_benchmark_for_visual-language-action_models.md)
+- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
+- [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](../../ICLR2026/robotics/self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
 
 </div>
 

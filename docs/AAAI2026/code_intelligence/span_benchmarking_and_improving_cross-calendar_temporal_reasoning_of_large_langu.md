@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models
 description: >-
-  [AAAI 2026][Code Intelligence][cross-calendar reasoning] This paper proposes SPAN, a cross-calendar temporal reasoning benchmark (6 calendars × 10 reasoning directions × 100-year range × 37…
+  [AAAI 2026][Code Intelligence][cross-calendar reasoning] This paper proposes SPAN, a cross-calendar temporal reasoning benchmark (6 calendars × 10 reasoning directions × 100-year range × 37,380 instances). Baseline LLMs achieve an average accuracy of only 34.5% (none exceeding 80%), revealing two systematic failure modes—Future-Date Degradation and Calendar Asymmetry Bias. A tool-augmented Time Agent achieves 95.31%, demonstrating that cross-calendar reasoning requires extern…
 tags:
   - "AAAI 2026"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "tool-augmented agent"
   - "evaluation benchmark"
 date: 2026-05-08
-content_hash: bc9fc8216ff68501
+content_hash: 22bcf3872752780a
 ---
 
 # SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models
@@ -130,11 +130,11 @@ Six calendars: Gregorian, Chinese Lunar, Saka, Hebrew, Islamic, and Persian. Ten
 
 ## Related Papers
 
+- [\[ICLR 2026\] CrossPL: Systematic Evaluation of Large Language Models for Cross Programming Language Interoperating Code Generation](../../ICLR2026/code_intelligence/crosspl_systematic_evaluation_of_large_language_models_for_cross_programming_lan.md)
+- [\[ACL 2025\] CodeIF: Benchmarking the Instruction-Following Capabilities of Large Language Models for Code Generation](../../ACL2025/code_intelligence/codeif_benchmarking_the_instruction-following_capabilities_of_large_language_mod.md)
 - [\[AAAI 2026\] EquaCode: A Multi-Strategy Jailbreak Approach for Large Language Models via Equation Solving and Code Completion](equacode_a_multi-strategy_jailbreak_approach_for_large_language_models_via_equat.md)
+- [\[ICLR 2026\] Local Success Does Not Compose: Benchmarking Large Language Models for Compositional Formal Verification](../../ICLR2026/code_intelligence/local_success_does_not_compose_benchmarking_large_language_models_for_compositio.md)
 - [\[ICLR 2026\] Training Large Language Models To Reason In Parallel With Global Forking Tokens](../../ICLR2026/code_intelligence/training_large_language_models_to_reason_in_parallel_with_global_forking_tokens.md)
-- [\[ICLR 2026\] DRO-InstructZero: Distributionally Robust Prompt Optimization for Large Language Models](../../ICLR2026/code_intelligence/dro-instructzero_distributionally_robust_prompt_optimization_for_large_language_.md)
-- [\[ICML 2026\] Poison with Style: A Practical Poisoning Attack on Code Large Language Models](../../ICML2026/code_intelligence/poison_with_style_a_practical_poisoning_attack_on_code_large_language_models.md)
-- [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](../../ACL2026/code_intelligence/koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] EpiAgent: An Agent-Centric System for Ancient Inscription Restoration
 description: >-
-  [CVPR 2026][LLM Agent][Paper Note] EpiAgent is the first Agent system for ancient inscription restoration. By utilizing an LLM central planner to coordinate multimodal analysis, specialized restoration tools, and iterative self-optimization, it outperforms existing methods in both textual authenticity and visual fidelity.
+  [CVPR 2026][LLM Agent][Ancient Inscription Restoration] EpiAgent is the first Agent system for ancient inscription restoration. By utilizing an LLM central planner to coordinate multimodal analysis, specialized restoration tools, and iterative self-optimization, it outperforms existing methods in both textual authenticity and visual fidelity.
 tags:
-  - CVPR 2026
-  - LLM Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Ancient Inscription Restoration"
+  - "Multimodal Analysis"
+  - "Iterative Optimization"
+  - "Cultural Heritage Protection"
 date: 2026-05-08
-content_hash: 031622e2c2a9609e
+content_hash: 426404557bc0f87b
 ---
+
 # EpiAgent: An Agent-Centric System for Ancient Inscription Restoration
 
 **Conference**: CVPR 2026  
@@ -136,11 +141,11 @@ EpiAgent primarily involves Agent orchestration during inference and does not un
 
 ## Related Papers
 
+- [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
+- [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
+- [\[CVPR 2026\] SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System](scieducator_scientific_video_understanding_and_educating_via_deming-cycle_multi-.md)
+- [\[CVPR 2026\] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper](paper2figure_a_multi-agent_collaborative_system_for_figure_generation_towards_ac.md)
 - [\[CVPR 2026\] RAAS: LLM Agentic System Architecture Search with GRPO](raas_llm_agentic_system_architecture_search_with_grpo.md)
-- [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](../../ACL2026/llm_agent/higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
-- [\[ICML 2025\] AGACCI: Affiliated Grading Agents for Criteria-Centric Interface in Educational Coding Contexts](../../ICML2025/llm_agent/agacci_affiliated_grading_agents_for_criteria-centric_interface_in_educational_c.md)
-- [\[ICML 2025\] Open Source Planning & Control System with Language Agents for Autonomous Scientific Discovery](../../ICML2025/llm_agent/open_source_planning_control_system_with_language_agents_for_autonomous_scientif.md)
-- [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
 
 </div>
 

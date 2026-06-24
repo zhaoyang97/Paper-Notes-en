@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PromptMoE: A Segmentation Refinement Framework Leveraging Mixture of Experts for Improved Prompting
 description: >-
-  [CVPR 2026][Segmentation][SAM] PromptMoE transforms the task of "generating prompts for SAM to refine coarse masks" from a fixed heuristic rule into a Mixture of Experts (MoE) problem: using 10 complementary pixel-wise visual cues as experts, a sparse router selects the two most relevant experts to fuse into a guidance map, while a spatially diverse
+  [CVPR 2026][Segmentation][Segmentation refinement] PromptMoE transforms the task of "generating prompts for SAM to refine coarse masks" from a fixed heuristic rule into a Mixture of Experts (MoE) problem: using 10 complementary pixel-wise visual cues as experts, a sparse router selects the two most relevant experts to fuse into a guidance map, while a spatially diverse sampling module places prompts on the guidance map. This achieves an average improvement of +6.24 IoU / +8.9…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Segmentation refinement"
+  - "Mixture of Experts"
+  - "SAM"
+  - "prompt generation"
+  - "model-agnostic"
 date: 2026-05-08
-content_hash: 818d781857dccf65
+content_hash: c2b41430a739f6f0
 ---
+
 # PromptMoE: A Segmentation Refinement Framework Leveraging Mixture of Experts for Improved Prompting
 
 **Conference**: CVPR 2026  
@@ -135,15 +140,15 @@ Ablation of components (Avg $\Delta$IoU/$\Delta$BIoU):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Generalizable Slum Detection from Satellite Imagery with Mixture-of-Experts](../../AAAI2026/segmentation/generalizable_slum_detection_from_satellite_imagery_with_mixture-of-experts.md)
-- [\[CVPR 2026\] M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](m4-sam_multi-modal_mixture-of-experts_with_memory-augmented_sam_for_rgb-d_video_.md)
 - [\[CVPR 2026\] PR-MaGIC: Prompt Refinement Via Mask Decoder Gradient Flow For In-Context Segmentation](pr-magic_prompt_refinement_via_mask_decoder_gradient_flow_for_in-context_segment.md)
 - [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
 - [\[CVPR 2025\] Spatio-Semantic Expert Routing Architecture with Mixture-of-Experts for Referring Image Segmentation](../../CVPR2025/segmentation/spatio-semantic_expert_routing_architecture_with_mixture-of-experts_for_referrin.md)
+- [\[CVPR 2026\] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation](leveraging_class_distributions_in_clip_for_weakly_supervised_semantic_segmentati.md)
 
 </div>
 

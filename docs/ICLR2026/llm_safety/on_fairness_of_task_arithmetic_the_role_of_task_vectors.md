@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On Fairness of Task Arithmetic: The Role of Task Vectors
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This is the first systematic work investigating the impact of task arithmetic on group fairness: the authors merge task vectors, obtained by fine-tuning on demographic subgroups, using a global scalar $\lambda$. They find that tuning a single $\lambda$ significantly reduces Demographic Parity Difference (DPD) and Equal
+  [ICLR 2026][LLM Safety][Task Arithmetic] This is the first systematic work investigating the impact of task arithmetic on group fairness: the authors merge task vectors, obtained by fine-tuning on demographic subgroups, using a global scalar $\lambda$. They find that tuning a single $\lambda$ significantly reduces Demographic Parity Difference (DPD) and Equalized Odds Difference (EOD) while maintaining accuracy, providing a theoretical upper bound linking $\lambda$ scaling to…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Task Arithmetic"
+  - "Task Vectors"
+  - "Group Fairness"
+  - "Model Merging"
+  - "Fairness-Accuracy Trade-off"
 date: 2026-05-08
-content_hash: 5eacfd903cf39ce5
+content_hash: 4f79f99c27e77249
 ---
+
 # On Fairness of Task Arithmetic: The Role of Task Vectors
 
 **Conference**: ICLR 2026  

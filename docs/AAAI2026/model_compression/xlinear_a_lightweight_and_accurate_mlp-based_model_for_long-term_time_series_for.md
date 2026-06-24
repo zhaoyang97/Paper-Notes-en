@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs
 description: >-
-  [AAAI2026][Model Compression][time series forecasting] This paper proposes XLinear, a lightweight time series forecasting model based on MLP with sigmoid gating. Through a global token mechanism…
+  [AAAI2026][Model Compression][time series forecasting] This paper proposes XLinear, a lightweight time series forecasting model based on MLP with sigmoid gating. Through a global token mechanism, it efficiently integrates endogenous and exogenous variable information, achieving an optimal accuracy–efficiency trade-off across 12 datasets.
 tags:
   - "AAAI2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "gating mechanism"
   - "lightweight model"
 date: 2026-05-08
-content_hash: ab7c367b5777fe09
+content_hash: e9863e82f29440de
 ---
 
 # XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs
@@ -124,11 +124,11 @@ $$[E'_{\text{exo}}, X''_{\text{glob}}] = \sigma(\text{Linear}_4(\phi(\text{Linea
 
 ## Related Papers
 
+- [\[ICML 2025\] LightGTS: A Lightweight General Time Series Forecasting Model](../../ICML2025/model_compression/lightgts_a_lightweight_general_time_series_forecasting_model.md)
 - [\[ICLR 2026\] Enhancing Multivariate Time Series Forecasting with Global Temporal Retrieval](../../ICLR2026/model_compression/enhancing_multivariate_time_series_forecasting_with_global_temporal_retrieval.md)
 - [\[ICCV 2025\] Gain-MLP: Improving HDR Gain Map Encoding via a Lightweight MLP](../../ICCV2025/model_compression/gain-mlp_improving_hdr_gain_map_encoding_via_a_lightweight_mlp.md)
 - [\[AAAI 2026\] LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph](loom_personalized_learning_informed_by_daily_llm_conversations_toward_long-term_.md)
 - [\[ICML 2026\] EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments](../../ICML2026/model_compression/epicache_episodic_kv_cache_management_for_long-term_conversation_on_resource-con.md)
-- [\[ICCV 2025\] SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting](../../ICCV2025/model_compression/frequency-aligned_knowledge_distillation_for_lightweight_spatiotemporal_forecast.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials
 description: >-
-  [ICML 2026][AI Safety][MLIP] This paper proposes PFT (Phonon Fine-tuning), which stochastically samples Hessian columns via Hessian-vector products and directly supervises the energy Hessian to align with DFT force constants during MLIP fine-tuning. Combined with co-training to alleviate catastrophic forgetting, it reduces thermodynamic phonon err
+  [ICML 2026][AI Safety][MLIP] This paper proposes PFT (Phonon Fine-tuning), which stochastically samples Hessian columns via Hessian-vector products and directly supervises the energy Hessian to align with DFT force constants during MLIP fine-tuning. Combined with co-training to alleviate catastrophic forgetting, it reduces thermodynamic phonon errors of Nequix MP on the MDR Phonon benchmark by an average of 55% and lowers thermal conductivity $\kappa_{\text{SRME}}$ from 0.446…
 tags:
-  - ICML 2026
-  - AI Safety
-  - MLIP
-  - Hessian
-  - Fine-tuning
+  - "ICML 2026"
+  - "AI Safety"
+  - "MLIP"
+  - "Phonon"
+  - "Hessian"
+  - "Force Constants"
+  - "Fine-tuning"
 date: 2026-05-08
-content_hash: 1164a594e1604fde
+content_hash: 0a554ed3dc6106f4
 ---
+
 # PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials
 
 **Conference**: ICML 2026  
@@ -151,10 +154,10 @@ Errors in four phonon thermodynamic quantities were reduced by an average of 55%
 ## Related Papers
 
 - [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
+- [\[ICLR 2026\] Eliciting Harmful Capabilities by Fine-Tuning on Safeguarded Outputs](../../ICLR2026/ai_safety/eliciting_harmful_capabilities_by_fine-tuning_on_safeguarded_outputs.md)
 - [\[ICML 2026\] TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning](tcap_tri-component_attention_profiling_for_unsupervised_backdoor_detection_in_ml.md)
 - [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 - [\[ICML 2026\] From Parameter Dynamics to Risk Scoring: Quantifying Sample-Level Safety Degradation in LLM Fine-tuning](from_parameter_dynamics_to_risk_scoring_quantifying_sample-level_safety_degradat.md)
-- [\[ICML 2026\] FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning](fedtreelora_reconciling_statistical_and_functional_heterogeneity_in_federated_lo.md)
 
 </div>
 

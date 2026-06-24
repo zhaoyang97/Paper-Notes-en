@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Contamination Detection for VLMs Using Multi-Modal Semantic Perturbations
 description: >-
-  [ICLR 2026][LLM Evaluation][Vision-Language Model] To address the risk that high scores of VLMs on public benchmarks may derive from training set leakage rather than genuine reasoning, this paper proposes **multi-modal semantic perturbations** for detection. By using LLMs and diffusion models to slightly modify image semantics while simultaneously changing the correct
+  [ICLR 2026][LLM Evaluation][Data Contamination] To address the risk that high scores of VLMs on public benchmarks may derive from training set leakage rather than genuine reasoning, this paper proposes **multi-modal semantic perturbations** for detection. By using LLMs and diffusion models to slightly modify image semantics while simultaneously changing the correct answer, the method compares model accuracy on original vs. perturbed benchmarks. Clean models correctly answer b…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Data Contamination"
+  - "Test-set Leakage"
+  - "Vision-Language Models"
+  - "Semantic Perturbations"
+  - "Generalization Detection"
 date: 2026-05-08
-content_hash: 6426411317f7bf33
+content_hash: 83671240cc70d530
 ---
+
 # Contamination Detection for VLMs Using Multi-Modal Semantic Perturbations
 
 **Conference**: ICLR 2026  
@@ -125,10 +130,20 @@ The work contrasts with text-centric LLM detectors (N-gram, Shared Likelihood), 
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
+- [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](detecting_data_contamination_in_llms_via_in-context_learning.md)
+- [\[ACL 2025\] MMLU-CF: A Contamination-free Multi-task Language Understanding Benchmark](../../ACL2025/llm_evaluation/mmlu-cf_a_contamination-free_multi-task_language_understanding_benchmark.md)
+- [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
+- [\[ICLR 2026\] vCache: Verified Semantic Prompt Caching](vcache_verified_semantic_prompt_caching.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)

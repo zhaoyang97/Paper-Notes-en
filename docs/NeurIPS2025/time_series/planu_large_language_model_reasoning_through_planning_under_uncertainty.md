@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PlanU: Large Language Model Reasoning through Planning under Uncertainty
 description: >-
-  [NeurIPS 2025][Time Series][LLM decision-making] This paper proposes PlanU—an LLM decision-making method that models node returns via quantile distributions within MCTS and balances exploration and exploitation through a…
+  [NeurIPS 2025][Time Series][LLM decision-making] This paper proposes PlanU—an LLM decision-making method that models node returns via quantile distributions within MCTS and balances exploration and exploitation through an Upper Confidence Bounds with Curiosity (UCC) score. PlanU is the first approach to systematically and simultaneously address both LLM uncertainty and environmental uncertainty, achieving substantial improvements over existing methods across multiple stochast…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "quantile distribution"
   - "exploration and exploitation"
 date: 2026-05-08
-content_hash: 6f2483cfdb8dad4c
+content_hash: 1af5dcb5fd7abec1
 ---
 
 # PlanU: Large Language Model Reasoning through Planning under Uncertainty
@@ -170,7 +170,7 @@ PlanU improves task completion rate on TravelPlanner by 61% (vs. LATS) and succe
 - [\[NeurIPS 2025\] Human-Machine Ritual: Synergic Performance through Real-Time Motion Recognition](human-machine_ritual_synergic_performance_through_real-time_motion_recognition.md)
 - [\[NeurIPS 2025\] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift](frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift.md)
 - [\[NeurIPS 2025\] CausalDynamics: A Large-Scale Benchmark for Structural Discovery of Dynamical Causal Models](causaldynamics_a_large-scale_benchmark_for_structural_discovery_of_dynamical_cau.md)
-- [\[AAAI 2026\] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition](../../AAAI2026/time_series/probfm_probabilistic_time_series_foundation_model_with_uncertainty_decomposition.md)
+- [\[ICML 2026\] Building Social World Models with Large Language Models](../../ICML2026/time_series/building_social_world_models_with_large_language_models.md)
 
 </div>
 

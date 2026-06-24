@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Fine-Grained Analysis of Shared Syntactic Mechanisms in Language Models
 description: >-
-  [ACL 2026][Interpretability][Activation Patching] The paper employs activation patching at the attention head granularity to demonstrate that Pythia and Gemma share a unified mechanism involving three attention heads in early-to-mid layers for processing seven types of English filler-gap dependencies (FGD). Scaling the activations of these specific heads by $1.5 \time
+  [ACL 2026][Interpretability][Activation Patching] The paper employs activation patching at the attention head granularity to demonstrate that Pythia and Gemma share a unified mechanism involving three attention heads in early-to-mid layers for processing seven types of English filler-gap dependencies (FGD). Scaling the activations of these specific heads by $1.5 \times$ improves performance on the BLiMP benchmark. Conversely, Negative Polarity Item (NPI) licensing lacks such…
 tags:
-  - ACL 2026
-  - Interpretability
-  - Activation Patching
-  - DAS
-  - Filler-Gap Dependency
-  - NPI
-  - Pythia
+  - "ACL 2026"
+  - "Interpretability"
+  - "Activation Patching"
+  - "DAS"
+  - "Filler-Gap Dependency"
+  - "NPI"
+  - "Pythia"
 date: 2026-05-08
-content_hash: ab5cbd265c74e1b4
+content_hash: 2384b02d319bfc63
 ---
+
 # Fine-Grained Analysis of Shared Syntactic Mechanisms in Language Models
 
 **Conference**: ACL 2026  
@@ -155,7 +156,7 @@ Scaling: Across Pythia (1B to 6.9B) and Gemma 3, mechanisms transition to earlie
 - [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
 - [\[CVPR 2025\] Prompt-CAM: Making Vision Transformers Interpretable for Fine-Grained Analysis](../../CVPR2025/interpretability/prompt-cam_making_vision_transformers_interpretable_for_fine-grained_analysis.md)
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
-- [\[ACL 2026\] How Language Models Conflate Logical Validity with Plausibility: A Representational Analysis of Content Effects](how_language_models_conflate_logical_validity_with_plausibility_a_representation.md)
+- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](../../ICLR2026/interpretability/linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
 - [\[CVPR 2026\] SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World](../../CVPR2026/interpretability/safedrive_fine-grained_safety_reasoning_for_end-to-end_driving_in_a_sparse_world.md)
 
 </div>

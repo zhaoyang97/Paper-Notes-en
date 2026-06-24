@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Aggregate vs. Personalized Judges in Business Idea Evaluation: Evidence from Expert Disagreement
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] Addressing the reality of systematic expert disagreement in business idea evaluation, this work constructs the PBIG-DATA dataset containing 3,000 individual expert ratings. It empirically demonstrates that "personalized judges" (conditioned on a target reviewer's history) align better with expert behavior than "aggrega
+  [ACL 2026 Oral][LLM Evaluation][LLM-as-a-Judge] Addressing the reality of systematic expert disagreement in business idea evaluation, this work constructs the PBIG-DATA dataset containing 3,000 individual expert ratings. It empirically demonstrates that "personalized judges" (conditioned on a target reviewer's history) align better with expert behavior than "aggregate judges" (conditioned on mixed reviewer histories), challenging the common assumption of using pooled labels a…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
+  - "ACL 2026 Oral"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "Business idea evaluation"
+  - "Expert disagreement"
+  - "Personalized judging"
+  - "Multi-dimensional scoring"
 date: 2026-05-08
-content_hash: 09db1e2f2b9a687f
+content_hash: 1f5148b48267b760
 ---
+
 # Aggregate vs. Personalized Judges in Business Idea Evaluation: Evidence from Expert Disagreement
 
 **Conference**: ACL 2026 Oral  
@@ -150,9 +155,9 @@ The larger the model, the more pronounced the gap between Personalized and Aggre
 ## Related Papers
 
 - [\[ACL 2026\] Stability vs. Manipulability: Evaluating Robustness Under Post-Decision Interaction in LLM Judges](stability_vs_manipulability_evaluating_robustness_under_post-decision_interactio.md)
+- [\[ICLR 2026\] FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial Search and Reasoning](../../ICLR2026/llm_evaluation/finsearchcomp_towards_a_realistic_expert-level_evaluation_of_financial_search_an.md)
 - [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
-- [\[ACL 2026\] K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology](k-metbench_a_multi-dimensional_benchmark_for_fine-grained_evaluation_of_expert_r.md)
-- [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
+- [\[ICLR 2026\] Noisy but Valid: Robust Statistical Evaluation of LLMs with Imperfect Judges](../../ICLR2026/llm_evaluation/noisy_but_valid_robust_statistical_evaluation_of_llms_with_imperfect_judges.md)
 - [\[ACL 2026\] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications](bizcompass_benchmarking_the_reasoning_capabilities_of_llms_in_business_knowledge.md)
 
 </div>

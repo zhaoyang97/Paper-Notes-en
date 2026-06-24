@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching
 description: >-
-  [ICCV 2025][Information Retrieval & RAG][image-text matching] This paper proposes D2S-VSE, a two-stage training framework that addresses the information density asymmetry in image-text matching. In the first stage…
+  [ICCV 2025][Multimodal VLM][image-text matching] This paper proposes D2S-VSE, a two-stage training framework that addresses the information density asymmetry in image-text matching. In the first stage, the model is pre-trained on LLaVA-generated dense captions to enhance information capacity; in the second stage, dense text embeddings are distilled into sparse text embeddings. The method achieves state-of-the-art performance on MS-COCO and Flickr30K.
 tags:
   - "ICCV 2025"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "image-text matching"
   - "visual semantic embedding"
   - "dense-to-sparse distillation"
   - "information capacity"
   - "cross-modal retrieval"
 date: 2026-05-08
-content_hash: 4891bdee7bb8e0b4
+content_hash: 80ca92d977488591
 ---
 
 # Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching
@@ -109,11 +109,11 @@ D2S-VSE surpasses the latest state-of-the-art methods across multiple backbone a
 
 ## Related Papers
 
-- [\[ICCV 2025\] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation](aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md)
-- [\[ICCV 2025\] LangBridge: Interpreting Image as a Combination of Language Embeddings](langbridge_interpreting_image_as_a_combination_of_language_embeddings.md)
-- [\[ICCV 2025\] MonSTeR: a Unified Model for Motion, Scene, Text Retrieval](monster_a_unified_model_for_motion_scene_text_retrieval.md)
-- [\[ICCV 2025\] ViLU: Learning Vision-Language Uncertainties for Failure Prediction](vilu_learning_vision-language_uncertainties_for_failure_prediction.md)
-- [\[ICCV 2025\] OCR Hinders RAG: Evaluating the Cascading Impact of OCR on Retrieval-Augmented Generation](ocr_hinders_rag_evaluating_the_cascading_impact_of_ocr_on_retrieval-augmented_ge.md)
+- [\[CVPR 2026\] Multimodal Distribution Matching for Vision-Language Dataset Distillation](../../CVPR2026/multimodal_vlm/multimodal_distribution_matching_for_vision-language_dataset_distillation.md)
+- [\[ICLR 2026\] Asynchronous Matching with Dynamic Sampling for Multimodal Dataset Distillation](../../ICLR2026/multimodal_vlm/asynchronous_matching_with_dynamic_sampling_for_multimodal_dataset_distillation.md)
+- [\[ICLR 2026\] Multimodal Aligned Semantic Knowledge for Unpaired Image-text Matching](../../ICLR2026/multimodal_vlm/multimodal_aligned_semantic_knowledge_for_unpaired_image-text_matching.md)
+- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](../../CVPR2026/multimodal_vlm/aif_adaptive_information_flow_vlm.md)
+- [\[ACL 2025\] Maximal Matching Matters: Preventing Representation Collapse for Robust Cross-Modal Retrieval](../../ACL2025/multimodal_vlm/maximal_matching_matters_preventing_representation_collapse_for_robust_cross-mod.md)
 
 </div>
 

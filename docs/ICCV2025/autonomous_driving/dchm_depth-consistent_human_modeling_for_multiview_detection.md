@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DCHM: Depth-Consistent Human Modeling for Multiview Detection
 description: >-
-  [ICCV 2025][Autonomous Driving][multiview pedestrian detection] This paper proposes DCHM, a depth-consistent human modeling framework that requires no 3D annotations. It generates pseudo depth labels via superpixel-level…
+  [ICCV 2025][Autonomous Driving][multiview pedestrian detection] This paper proposes DCHM, a depth-consistent human modeling framework that requires no 3D annotations. It generates pseudo depth labels via superpixel-level Gaussian splatting to fine-tune a monocular depth estimation network, and combines multiview label matching to achieve high-accuracy pedestrian detection under sparse-view and heavily occluded scenarios. DCHM achieves 84.2% MODA on Wildtrack and improves MODP…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "monocular depth estimation"
   - "label-free method"
 date: 2026-05-08
-content_hash: d71407779b2ae5ef
+content_hash: 95a2c8c4b92a863f
 ---
 
 # DCHM: Depth-Consistent Human Modeling for Multiview Detection
@@ -139,11 +139,11 @@ Wildtrack MODP surpasses UMPD by **31.2%** (80.3 vs. 61.2); MultiviewX MODA surp
 
 ## Related Papers
 
-- [\[CVPR 2026\] PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency](../../CVPR2026/autonomous_driving/ptc-depth_pose-refined_monocular_depth_estimation_with_temporal_consistency.md)
+- [\[CVPR 2026\] Bezier Degradation Modeling for LiDAR-based Human Motion Capture](../../CVPR2026/autonomous_driving/bezier_degradation_modeling_for_lidar-based_human_motion_capture.md)
 - [\[ICCV 2025\] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation](dist-4d_disentangled_spatiotemporal_diffusion_with_metric_depth_for_4d_driving_s.md)
-- [\[ICCV 2025\] EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting](emd_explicit_motion_modeling_for_high-quality_street_gaussian_splatting.md)
-- [\[ICCV 2025\] DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving](drivex_omni_scene_modeling_for_learning_generalizable_world_knowledge_in_autonom.md)
-- [\[NeurIPS 2025\] Towards Predicting Any Human Trajectory in Context](../../NeurIPS2025/autonomous_driving/towards_predicting_any_human_trajectory_in_context.md)
+- [\[CVPR 2026\] Neuro-Cognitive Reward Modeling for Human-Centered Autonomous Vehicle Control](../../CVPR2026/autonomous_driving/neuro-cognitive_reward_modeling_for_human-centered_autonomous_vehicle_control.md)
+- [\[CVPR 2025\] Prompting Depth Anything for 4K Resolution Accurate Metric Depth Estimation](../../CVPR2025/autonomous_driving/prompting_depth_anything_for_4k_resolution_accurate_metric_depth_estimation.md)
+- [\[CVPR 2026\] PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency](../../CVPR2026/autonomous_driving/ptc-depth_pose-refined_monocular_depth_estimation_with_temporal_consistency.md)
 
 </div>
 

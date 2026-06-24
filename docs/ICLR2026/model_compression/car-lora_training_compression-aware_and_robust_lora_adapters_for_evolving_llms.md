@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CAR-LoRA: Training Compression-Aware and Robust LoRA Adapters for Evolving LLMs
 description: >-
-  [ICLR 2026][Model Compression][LoRA] CAR-LoRA trains a "compression-aware and temporally robust" universal LoRA adapter by injecting random variations such as quantization, pruning, and layer skipping during training (using compressed weights for the forward pass and full-precision gradients for the backward pass). This allows a single adapter to be deplo
+  [ICLR 2026][Model Compression][LoRA] CAR-LoRA trains a "compression-aware and temporally robust" universal LoRA adapter by injecting random variations such as quantization, pruning, and layer skipping during training (using compressed weights for the forward pass and full-precision gradients for the backward pass). This allows a single adapter to be deployed directly to edge devices with various compression formats and future evolved base models without retraining…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Quantization-Aware Training"
+  - "Edge Deployment"
+  - "Model Evolution"
+  - "Universal Adapter"
 date: 2026-05-08
-content_hash: b5dd8779c846addb
+content_hash: 738f906e2315fcbc
 ---
+
 # CAR-LoRA: Training Compression-Aware and Robust LoRA Adapters for Evolving LLMs
 
 **Conference**: ICLR 2026  
@@ -133,8 +138,8 @@ CAR-LoRA is nearly identical to specialized QLoRA under quantization (gap < 0.5%
 - [\[ICLR 2026\] IGU-LoRA: Adaptive Rank Allocation via Integrated Gradients and Uncertainty-Aware Scoring](igu-lora_adaptive_rank_allocation_via_integrated_gradients_and_uncertainty-aware.md)
 - [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
 - [\[ICLR 2026\] LoRA-Mixer: Coordinate Modular LoRA Experts Through Serial Attention Routing](lora-mixer_coordinate_modular_lora_experts_through_serial_attention_routing.md)
-- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment: 弥合 LoRA 与全量微调之间的鸿沟](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[NeurIPS 2025\] Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA](../../NeurIPS2025/model_compression/robust_federated_finetuning_of_llms_via_alternating_optimization_of_lora.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 
 </div>
 

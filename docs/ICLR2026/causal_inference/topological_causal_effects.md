@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Topological Causal Effects
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper defines causal treatment effects on the **topological structure** of outcomes. By using power-weighted silhouette functions of persistence diagrams to characterize "treatment-induced topological changes," the authors propose a fully non-parametric, $\sqrt{n}$-consistent doubly robust AIPW estimator. Furtherm
+  [ICLR 2026][Causal Inference][Persistence Homology] This paper defines causal treatment effects on the **topological structure** of outcomes. By using power-weighted silhouette functions of persistence diagrams to characterize "treatment-induced topological changes," the authors propose a fully non-parametric, $\sqrt{n}$-consistent doubly robust AIPW estimator. Furthermore, they construct a formal hypothesis test for the existence of topological effects based on functional we…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Persistence Homology"
+  - "Topological Data Analysis"
+  - "Doubly Robust Estimation"
+  - "Functional Outcome"
 date: 2026-05-08
-content_hash: 1af4eb33d005398a
+content_hash: 246f92be24f15a73
 ---
+
 # Topological Causal Effects
 
 **Conference**: ICLR 2026  
@@ -148,8 +153,8 @@ In the SARS-CoV-2 experiment, ground-glass opacities in CT scans manifest as iso
 ## Related Papers
 
 - [\[ICLR 2026\] Debiased Front-Door Learners for Heterogeneous Effects](debiased_front-door_learners_for_heterogeneous_effects.md)
+- [\[ICML 2025\] Isolated Causal Effects of Natural Language](../../ICML2025/causal_inference/isolated_causal_effects_of_natural_language.md)
 - [\[ICLR 2026\] Influence without Confounding: Causal Discovery from Temporal Data with Long-term Carry-over Effects](influence_without_confounding_causal_discovery_from_temporal_data_with_long-term.md)
-- [\[AAAI 2026\] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](../../AAAI2026/causal_inference/learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)
 - [\[ICLR 2026\] Learning Exposure Mapping Functions for Inferring Heterogeneous Peer Effects](learning_exposure_mapping_functions_for_inferring_heterogeneous_peer_effects.md)
 - [\[NeurIPS 2025\] Transferring Causal Effects using Proxies](../../NeurIPS2025/causal_inference/transferring_causal_effects_using_proxies.md)
 

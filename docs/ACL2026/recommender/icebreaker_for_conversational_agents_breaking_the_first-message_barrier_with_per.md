@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IceBreaker for Conversational Agents: Breaking the First-Message Barrier with Personalized Starters
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] This paper proposes IceBreaker, which addresses the "first-message barrier" for conversational agents through a two-step "handshake"—Resonance-aware Interest Distillation to capture trigger interests and Interaction-oriented Starter Generation coupled with Personalized Preference Alignment. In A/B testing on one of the
+  [ACL 2026][Recommender Systems][Proactive Dialogue Initiation] This paper proposes IceBreaker, which addresses the "first-message barrier" for conversational agents through a two-step "handshake"—Resonance-aware Interest Distillation to capture trigger interests and Interaction-oriented Starter Generation coupled with Personalized Preference Alignment. In A/B testing on one of the world's largest conversational products, it increased active user days by +1.84‰ and click-throu…
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Proactive Dialogue Initiation"
+  - "Personalized Session Starters"
+  - "Interest Distillation"
+  - "Preference Alignment"
+  - "Cold Start"
 date: 2026-05-08
-content_hash: 151591ca951c5645
+content_hash: ed40416ddc1d6bf5
 ---
+
 # IceBreaker for Conversational Agents: Breaking the First-Message Barrier with Personalized Starters
 
 **Conference**: ACL 2026  

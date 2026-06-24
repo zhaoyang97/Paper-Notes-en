@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Does YOLO Really Need to See Every Training Image in Every Epoch?
 description: >-
-  [CVPR 2026][Object Detection][YOLO] Ours proposes the Anti-Forgetting Sampling Strategy (AFSS), which dynamically decides which training images to participate in training and which can be skipped based on the learning sufficiency ($\min(\text{Precision, Recall})$) of each image. This achieves a training acceleration of over 1.43× for the YOLO series dete
+  [CVPR 2026][Object Detection][YOLO] Ours proposes the Anti-Forgetting Sampling Strategy (AFSS), which dynamically decides which training images to participate in training and which can be skipped based on the learning sufficiency ($\min(\text{Precision, Recall})$) of each image. This achieves a training acceleration of over 1.43× for the YOLO series detectors while maintaining or even improving detection accuracy.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - YOLO
+  - "CVPR 2026"
+  - "Object Detection"
+  - "YOLO"
+  - "training acceleration"
+  - "adaptive sampling"
+  - "anti-forgetting"
+  - "data-efficient learning"
 date: 2026-05-08
-content_hash: 64c4ffabe2baf9d1
+content_hash: 28103d313bc1741b
 ---
+
 # Does YOLO Really Need to See Every Training Image in Every Epoch?
 
 **Conference**: CVPR 2026  
@@ -192,7 +197,7 @@ State Update (SU) is crucial for speedup.
 - [\[CVPR 2026\] YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection](yolo-master_moe-accelerated_with_specialized_transformers_for_enhanced_real-time.md)
 - [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)
 - [\[ICML 2025\] When Every Millisecond Counts: Real-Time Anomaly Detection via the Multimodal Asynchronous Hybrid Network](../../ICML2025/object_detection/when_every_millisecond_counts_real-time_anomaly_detection_via_the_multimodal_asy.md)
-- [\[ICCV 2025\] YOLO-Count: Differentiable Object Counting for Text-to-Image Generation](../../ICCV2025/object_detection/yolo-count_differentiable_object_counting_for_text-to-image_generation.md)
+- [\[CVPR 2026\] YOLO-ULM: Ultra-Lightweight Models for Real-Time Object Detection](yolo-ulm_ultra-lightweight_models_for_real-time_object_detection.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes SpatialScore, the most comprehensive multimodal spatial intelligence benchmark to date (5K samples / 30 tasks), and enhances the spatial understanding capabilities of MLLMs through two complementary paths: a data-driven SpatialCorpus (331K QA) fine-tuning scheme and a training-free SpatialAgent (12
+  [CVPR 2026 Highlight][Multimodal VLM][Spatial Intelligence] This paper proposes SpatialScore, the most comprehensive multimodal spatial intelligence benchmark to date (5K samples / 30 tasks), and enhances the spatial understanding capabilities of MLLMs through two complementary paths: a data-driven SpatialCorpus (331K QA) fine-tuning scheme and a training-free SpatialAgent (12 tools).
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026 Highlight"
+  - "Multimodal VLM"
+  - "Spatial Intelligence"
+  - "Multimodal Evaluation"
+  - "Spatial Reasoning"
+  - "Agent Systems"
+  - "Spatial Corpus"
 date: 2026-05-08
-content_hash: f20652738af28eee
+content_hash: e750cbc310ac1e34
 ---
+
 # SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence
 
 **Conference**: CVPR 2026 Highlight  
@@ -116,7 +122,7 @@ SpatialCorpus fine-tuning follows the standard Supervised Fine-Tuning (SFT) para
 
 - [\[CVPR 2026\] Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation](is_your_vlm_sky-ready_a_comprehensive_spatial_intelligence_benchmark_for_uav_nav.md)
 - [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](scaling_spatial_intelligence_with_multimodal_foundation_models.md)
-- [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](../../ICML2026/multimodal_vlm/revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
+- [\[ICLR 2026\] SpaCE-10: A Comprehensive Benchmark for Multimodal Large Language Models in Compositional Spatial Intelligence](../../ICLR2026/multimodal_vlm/space-10_a_comprehensive_benchmark_for_multimodal_large_language_models_in_compo.md)
 - [\[CVPR 2026\] SpatialTree: How Spatial Intelligence Branches Out in MLLMs](spatialtree_how_spatial_intelligence_branches_out_in_mllms.md)
 - [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
 

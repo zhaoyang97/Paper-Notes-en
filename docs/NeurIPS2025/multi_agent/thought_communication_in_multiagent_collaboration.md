@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Thought Communication in Multiagent Collaboration
 description: >-
-  [NeurIPS 2025][Multi-Agent][multiagent collaboration] This paper proposes ThoughtComm, a framework that formalizes multiagent communication as a latent variable generative model. It proves that both shared and private th…
+  [NeurIPS 2025 Spotlight][Multi-Agent][multiagent collaboration] This paper proposes ThoughtComm, a framework that formalizes multiagent communication as a latent variable generative model. It proves that both shared and private thoughts are identifiable under nonparametric conditions, extracts latent thoughts via a sparsity-regularized autoencoder, and feeds them back to each agent through prefix injection. ThoughtComm achieves an average improvement of 19.06% over the curren…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Multi-Agent"
   - "multiagent collaboration"
   - "thought communication"
@@ -13,7 +13,7 @@ tags:
   - "prefix injection"
   - "sparse autoencoder"
 date: 2026-05-08
-content_hash: 42d585eb8d86ce1e
+content_hash: f3773837ce0a4343
 ---
 
 # Thought Communication in Multiagent Collaboration
@@ -200,11 +200,11 @@ Key statistics: ThoughtComm achieves an average relative improvement of **67.23%
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](multi-agent_collaboration_via_evolving_orchestration.md)
 - [\[ICML 2026\] ProtocolBench: Which LLM MultiAgent Protocol to Choose?](../../ICML2026/multi_agent/protocolbench_which_llm_multiagent_protocol_to_choose.md)
+- [\[ICML 2025\] Theorem-of-Thought: A Multi-Agent Framework for Abductive, Deductive, and Inductive Reasoning in Language Models](../../ICML2025/multi_agent/theorem-of-thought_a_multi-agent_framework_for_abductive_deductive_and_inductive.md)
 - [\[AAAI 2026\] A Graph-Theoretical Perspective on Law Design for Multiagent Systems](../../AAAI2026/multi_agent/a_graph-theoretical_perspective_on_law_design_for_multiagent_systems.md)
-- [\[NeurIPS 2025\] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies](gaudp_reinventing_multi-agent_collaboration_through_gaussian-image_synergy_in_di.md)
-- [\[NeurIPS 2025\] 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation](3d-agenttri-modal_multi-agent_collaboration_for_scalable_3d_object_annotation.md)
+- [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](multi-agent_collaboration_via_evolving_orchestration.md)
+- [\[ACL 2025\] CoMet: Metaphor-Driven Covert Communication for Multi-Agent Language Games](../../ACL2025/multi_agent/comet_metaphor-driven_covert_communication_for_multi-agent_language_games.md)
 
 </div>
 

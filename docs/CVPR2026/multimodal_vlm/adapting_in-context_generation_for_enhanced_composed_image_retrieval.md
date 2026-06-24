@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adapting In-context Generation for Enhanced Composed Image Retrieval
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper proposes DAIG: using 32 target domain samples to perform in-context fine-tuning (CIR-LoRA) on a pre-trained T2I model (Flux). This allows the model to synthesize "unbiased, domain-aligned" Composed Image Retrieval (CIR) triplets in batches. A two-stage training framework (feature-perturbed pre-training DRSP
+  [CVPR 2026][Multimodal VLM][Composed Image Retrieval] This paper proposes DAIG: using 32 target domain samples to perform in-context fine-tuning (CIR-LoRA) on a pre-trained T2I model (Flux). This allows the model to synthesize "unbiased, domain-aligned" Composed Image Retrieval (CIR) triplets in batches. A two-stage training framework (feature-perturbed pre-training DRSP + angular margin fine-tuning FRA) is then used to feed these synthetic data into any off-the-shelf CIR mod…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Composed Image Retrieval"
+  - "Few-shot"
+  - "T2I Fine-tuning"
+  - "Synthetic Triplets"
+  - "Domain Adaptation"
 date: 2026-05-08
-content_hash: dda24867e39fa7f5
+content_hash: 5df8aa95f3be32f6
 ---
+
 # Adapting In-context Generation for Enhanced Composed Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -139,15 +145,16 @@ Using only 20k synthetic triplets (DAIG-DRSP) outperforms existing datasets with
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Life-IQA: Boosting Blind Image Quality Assessment through GCN-enhanced Layer Interaction and MoE-based Feature Decoupling](life-iqa_boosting_blind_image_quality_assessment_through_gcn-enhanced_layer_inte.md)
-- [\[ACL 2025\] Towards Text-Image Interleaved Retrieval](../../ACL2025/others/towards_text-image_interleaved_retrieval.md)
-- [\[ECCV 2024\] Active Generation for Image Classification](../../ECCV2024/others/active_generation_for_image_classification.md)
-- [\[CVPR 2026\] Large-scale Robust Enhanced Ensemble Clustering via Outlier Decoupling](large-scale_robust_enhanced_ensemble_clustering_via_outlier_decoupling.md)
-- [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](../../AAAI2026/others/leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
+- [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)
+- [\[CVPR 2026\] Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval](air-know_arbiter-calibrated_knowledge-internalizing_robust_network_for_composed_.md)
+- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
 
 </div>
 

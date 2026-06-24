@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SAND-Math: Using LLMs to Generate Novel, Difficult and Useful Mathematics Questions and Answers
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Mathematical Reasoning] This paper proposes SAND-Math, a fully automated synthetic mathematics question generation pipeline that requires no seed dataset. By employing Difficulty Hiking to s…
+  [NeurIPS 2025][Reasoning][Mathematical Reasoning] This paper proposes SAND-Math, a fully automated synthetic mathematics question generation pipeline that requires no seed dataset. By employing Difficulty Hiking to systematically increase problem difficulty, augmenting the LIMO baseline with as few as 500 problems yields a 4.39pp improvement on AIME25.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Mathematical Reasoning"
   - "Synthetic Data"
   - "Difficulty Hiking"
   - "Data Quality"
   - "Post-Training"
 date: 2026-05-08
-content_hash: 0d1a5babbc92f270
+content_hash: f952e6cc7799bad3
 ---
 
 # SAND-Math: Using LLMs to Generate Novel, Difficult and Useful Mathematics Questions and Answers
@@ -147,10 +147,10 @@ The method is concise and effective, and the Difficulty Hiking concept is novel.
 ## Related Papers
 
 - [\[NeurIPS 2025\] RealMath: A Continuous Benchmark for Evaluating Language Models on Research-Level Mathematics](realmath_a_continuous_benchmark_for_evaluating_language_models_on_research-level.md)
+- [\[ICML 2025\] MARGE: Improving Math Reasoning for LLMs with Guided Exploration](../../ICML2025/llm_reasoning/marge_improving_math_reasoning_for_llms_with_guided_exploration.md)
 - [\[ICLR 2026\] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics](../../ICLR2026/llm_reasoning/from_abstract_to_contextual_what_llms_still_cannot_do_in_math_word_problem_solvi.md)
 - [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](../../ICLR2026/llm_reasoning/dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
 - [\[AAAI 2026\] ARCHE: A Novel Task to Evaluate LLMs on Latent Reasoning Chain Extraction](../../AAAI2026/llm_reasoning/arche_a_novel_task_to_evaluate_llms_on_latent_reasoning_chai.md)
-- [\[NeurIPS 2025\] Many LLMs Are More Utilitarian Than One](many_llms_are_more_utilitarian_than_one.md)
 
 </div>
 

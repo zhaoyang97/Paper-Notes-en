@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Diverse Dictionary Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] When the generative process $g$ of observations $X=g(Z)$ and the latent variables $Z$ are both unknown, and one is reluctant to introduce strong assumptions like linearity or auxiliary supervision, this paper proves that the intersection, complement, symmetric difference of latent variable "sets," as well as the latent
+  [ICLR 2026][Self-Supervised Learning][Identifiability] When the generative process $g$ of observations $X=g(Z)$ and the latent variables $Z$ are both unknown, and one is reluctant to introduce strong assumptions like linearity or auxiliary supervision, this paper proves that the intersection, complement, symmetric difference of latent variable "sets," as well as the latent-observation dependency structure, remain identifiable under minimal assumptions. It identifies that achi…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Identifiability"
+  - "Nonlinear ICA"
+  - "Dictionary Learning"
+  - "Disentangled Representations"
+  - "Set Theory"
+  - "Dependency Sparsity"
+  - "Sparse Autoencoders"
 date: 2026-05-08
-content_hash: ba499f32c0f89fa6
+content_hash: effd9e62b5f68fe4
 ---
+
 # Diverse Dictionary Learning
 
 **Conference**: ICLR 2026  
@@ -119,9 +127,9 @@ Dependency sparsity (L1 on the Jacobian) consistently outperforms the original m
 ## Related Papers
 
 - [\[CVPR 2026\] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers](../../CVPR2026/self_supervised/diversedit_towards_diverse_representation_learning_in_diffusion_transformers.md)
+- [\[ICLR 2026\] Mechanistic Independence: A Principle for Identifiable Disentangled Representations](mechanistic_independence_a_principle_for_identifiable_disentangled_representatio.md)
 - [\[CVPR 2025\] UniSTD: Towards Unified Spatio-Temporal Learning Across Diverse Disciplines](../../CVPR2025/self_supervised/unistd_towards_unified_spatio-temporal_learning_across_diverse_disciplines.md)
 - [\[ICLR 2026\] A Bayesian Nonparametric Framework for Learning Disentangled Representations](a_bayesian_nonparametric_framework_for_learning_disentangled_representations.md)
-- [\[ICLR 2026\] Mechanistic Independence: A Principle for Identifiable Disentangled Representations](mechanistic_independence_a_principle_for_identifiable_disentangled_representatio.md)
 - [\[ICLR 2026\] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods](understanding_the_learning_phases_in_self-supervised_learning_via_critical_perio.md)
 
 </div>

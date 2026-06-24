@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] YEZE at SemEval-2026 Task 9: Detecting Multilingual, Multicultural and Multievent Online Polarization via Heterogeneous Ensembling
 description: >-
-  [ACL 2026][Social Computing][SemEval] The YEZE system decomposes the online polarization recognition of 22 languages in SemEval-2026 Task 9 into independent subtasks. By fine-tuning XLM-RoBERTa-large and mDeBERTa-v3-base separately and utilizing weighted probability averaging alongside weighted BCE to alleviate multi-label sparsity, the system achieved sta
+  [ACL2026][Social Computing][Multilingual Polarization Detection] The YEZE system decomposes the online polarization recognition of 22 languages in SemEval-2026 Task 9 into independent subtasks. By fine-tuning XLM-RoBERTa-large and mDeBERTa-v3-base separately and utilizing weighted probability averaging alongside weighted BCE to alleviate multi-label sparsity, the system achieved stable official Top-10 rankings in fine-grained polarization type and manifestation prediction.
 tags:
-  - ACL 2026
-  - Social Computing
-  - SemEval
-  - XLM-R
+  - "ACL2026"
+  - "Social Computing"
+  - "Multilingual Polarization Detection"
+  - "SemEval"
+  - "Class Imbalance"
+  - "XLM-R"
+  - "Heterogeneous Ensembling"
 date: 2026-05-08
-content_hash: 817ff8dbef747c9e
+content_hash: 0cf2d5f9983b6129
 ---
+
 # YEZE at SemEval-2026 Task 9: Detecting Multilingual, Multicultural and Multievent Online Polarization via Heterogeneous Ensembling
 
 **Conference**: ACL2026  

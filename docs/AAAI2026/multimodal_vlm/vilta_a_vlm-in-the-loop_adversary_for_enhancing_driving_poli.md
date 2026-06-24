@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VILTA: A VLM-in-the-Loop Adversary for Enhancing Driving Policy Robustness
 description: >-
-  [AAAI 2026][Multimodal VLM][VLM-in-the-Loop] VILTA embeds a VLM (Gemini-2.5-Flash) directly into the RL training loop for autonomous driving. Via a Vision-Language-Editing (VLE) paradigm…
+  [AAAI 2026][Multimodal VLM][VLM-in-the-Loop] VILTA embeds a VLM (Gemini-2.5-Flash) directly into the RL training loop for autonomous driving. Via a Vision-Language-Editing (VLE) paradigm, the VLM edits the future trajectories of surrounding vehicles to generate challenging hazardous scenarios. The resulting driving policy achieves a 13.3% improvement in route completion rate and a 28.5% reduction in collision rate on CARLA challenging scenarios.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Long-Tail Scenarios"
   - "Driving Policy Robustness"
 date: 2026-05-08
-content_hash: f7bc097ece7cedf0
+content_hash: 179d55c078666356
 ---
 
 # VILTA: A VLM-in-the-Loop Adversary for Enhancing Driving Policy Robustness
@@ -126,10 +126,10 @@ The ego driving policy is trained using SAC (Soft Actor-Critic). Normal and chal
 ## Related Papers
 
 - [\[AAAI 2026\] Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks](phantom_menace_exploring_and_enhancing_the_robustness_of_vla_models_against_phys.md)
-- [\[ICML 2026\] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds](../../ICML2026/multimodal_vlm/any3d-vla_enhancing_vla_robustness_via_diverse_point_clouds.md)
 - [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](../../ICCV2025/multimodal_vlm/hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
+- [\[ICML 2026\] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds](../../ICML2026/multimodal_vlm/any3d-vla_enhancing_vla_robustness_via_diverse_point_clouds.md)
 - [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
-- [\[AAAI 2026\] Format Matters: The Robustness of Multimodal LLMs in Reviewing Evidence from Tables and Charts](format_matters_the_robustness_of_multimodal_llms_in_reviewing_evidence_from_tabl.md)
+- [\[CVPR 2026\] DPL: Decoupled Prototype Learning for Enhancing Robustness of Vision-Language Transformers to Missing Modalities](../../CVPR2026/multimodal_vlm/dpl_decoupled_prototype_learning_for_enhancing_robustness_of_vision-language_tra.md)
 
 </div>
 

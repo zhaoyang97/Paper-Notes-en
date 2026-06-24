@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CaMiT: A Time-Aware Car Model Dataset for Classification and Generation
 description: >-
-  [NeurIPS 2025][Image Generation][temporal dataset] This paper introduces the CaMiT dataset (787K labeled + 5.1M unlabeled car images, 2005–2023) to systematically study temporal drift in fine-grained visual categories…
+  [NeurIPS 2025][Image Generation][temporal dataset] This paper introduces the CaMiT dataset (787K labeled + 5.1M unlabeled car images, 2005–2023) to systematically study temporal drift in fine-grained visual categories, providing benchmarks across four settings: static pre-training, time-incremental pre-training, time-incremental classifier learning, and time-aware image generation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "time-aware generation"
   - "car model recognition"
 date: 2026-05-08
-content_hash: 2fefafb116ad19bb
+content_hash: 90c177c654ef408e
 ---
 
 # CaMiT: A Time-Aware Car Model Dataset for Classification and Generation
@@ -142,11 +142,11 @@ The dataset contribution is solid and comprehensive, and the four experimental s
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising](tidmad_time_series_dataset_for_discovering_dark_matter_with_ai_denoising.md)
 - [\[NeurIPS 2025\] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking](a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co.md)
+- [\[NeurIPS 2025\] TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising](tidmad_time_series_dataset_for_discovering_dark_matter_with_ai_denoising.md)
+- [\[ICML 2026\] Geometry-Aware Dataset Condensation for Diffusion Model Training](../../ICML2026/image_generation/geometry-aware_dataset_condensation_for_diffusion_model_training.md)
 - [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
-- [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](../../ICCV2025/image_generation/inference-time_diffusion_model_distillation.md)
-- [\[NeurIPS 2025\] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](instanceassemble_layoutaware_image_generation_via_instance_a.md)
+- [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
 
 </div>
 

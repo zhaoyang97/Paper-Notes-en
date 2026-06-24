@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Shared Latent Queries] SLQ appends a small set of "Shared Latent Queries" $\mathbf{Q}$ to the end of image/text token sequences, leveraging the causal attention of the MLLM to aggregate global context. By **training only a few thousand query parameters** while keeping the MLLM frozen, it transforms the model into a retriever. It outperforms
+  [ICML 2026][Multimodal VLM][Frozen MLLM] SLQ appends a small set of "Shared Latent Queries" $\mathbf{Q}$ to the end of image/text token sequences, leveraging the causal attention of the MLLM to aggregate global context. By **training only a few thousand query parameters** while keeping the MLLM frozen, it transforms the model into a retriever. It outperforms full fine-tuning and LoRA on COCO/Flickr30K. The authors also release KARR-Bench to evaluate "implicit knowledge reason…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Shared Latent Queries
-  - KARR-Bench
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Frozen MLLM"
+  - "Shared Latent Queries"
+  - "Knowledge-Aware Reasoning Retrieval"
+  - "Contrastive Learning"
+  - "KARR-Bench"
 date: 2026-05-08
-content_hash: d7e6d019bfe3bfef
+content_hash: 3d284f9fc6bf6d56
 ---
+
 # SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs
 
 **Conference**: ICML 2026  
@@ -134,13 +138,20 @@ Comparison between dual-tower models (CLIP, BLIP, FLAME), fine-tuned MLLM baseli
 - Value: ⭐⭐⭐⭐⭐ (Significant reduction in training cost; immediately applicable for engineering)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- InternVL: Scaling up Vision Foundation Models and Aligning for Generic Visual-Linguistic Tasks (CVPR 2024)
-- VLM2VEC: Training Vision-Language Models for Massive Multimodal Embedding Tasks (arXiv 2024)
-- MMEB: A Massive Multimodal Embedding Benchmark (arXiv 2024)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)](../../AAAI2026/multimodal_vlm/bridging_modalities_via_progressive_re-alignment_for_multimo.md)
+- [\[CVPR 2026\] CodeMMR: Bridging Natural Language, Code, and Image for Unified Retrieval](../../CVPR2026/multimodal_vlm/codemmr_bridging_natural_language_code_and_image_for_unified_retrieval.md)
+- [\[NeurIPS 2025\] CyIN: Cyclic Informative Latent Space for Bridging Complete and Incomplete Multimodal Learning](../../NeurIPS2025/multimodal_vlm/cyin_cyclic_informative_latent_space_for_bridging_complete_and_incomplete_multim.md)
+- [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](calibrated_multimodal_representation_learning_with_missing_modalities.md)
+- [\[ICML 2026\] Referring Multiple Regions with Large Multimodal Models via Contextual Latent Steering](referring_multiple_regions_with_large_multimodal_models_via_contextual_latent_st.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)](../../AAAI2026/multimodal_vlm/bridging_modalities_via_progressive_re-alignment_for_multimo.md)

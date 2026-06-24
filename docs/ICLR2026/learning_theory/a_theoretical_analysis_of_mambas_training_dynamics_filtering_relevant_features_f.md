@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models
 description: >-
-  [ICLR 2026][learning_theory][Mamba] This paper provides the first characterization of the Gradient Descent (GD) training dynamics of Mamba (a selective SSM with input-dependent gating) from a feature learning perspective. It proves that under two types of structured data, the gating vector $w_\Delta$ automatically aligns with class-relevant features and
+  [ICLR 2026][learning theory][Mamba] This paper provides the first characterization of the Gradient Descent (GD) training dynamics of Mamba (a selective SSM with input-dependent gating) from a feature learning perspective. It proves that under two types of structured data, the gating vector $w_\Delta$ automatically aligns with class-relevant features and suppresses irrelevant ones. The authors provide non-asymptotic sample complexity and convergence rate bounds…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Mamba
+  - "ICLR 2026"
+  - "learning theory"
+  - "Mamba"
+  - "Selective State Space Models"
+  - "Training Dynamics"
+  - "Generalization Analysis"
+  - "Feature Learning"
+  - "Gating Mechanism"
 date: 2026-05-08
-content_hash: 7bb512f4cc31740d
+content_hash: 384970b2d90b3a69
 ---
+
 # A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models
 
 **Conference**: ICLR 2026  
@@ -97,10 +103,10 @@ Synthetic experiments are conducted solely to validate the theory.
 ## Related Papers
 
 - [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
+- [\[ICLR 2026\] To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models](to_infinity_and_beyond_tool-use_unlocks_length_generalization_in_state_space_mod.md)
 - [\[ICLR 2026\] On the Expressiveness of State Space Models via Temporal Logics](on_the_expressiveness_of_state_space_models_via_temporal_logics.md)
 - [\[ICLR 2026\] Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection](reshaping_reasoning_in_llms_a_theoretical_analysis_of_rl_training_dynamics_throu.md)
-- [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
-- [\[ICLR 2026\] The Expressive Limits of Diagonal SSMs for State-Tracking](the_expressive_limits_of_diagonal_ssms_for_state-tracking.md)
+- [\[ICLR 2026\] $\mathbf{Li_2}$: A Theoretical Framework Characterizing Feature Emergence and Delayed Generalization Dynamics](mathbfli_2_a_framework_on_dynamics_of_feature_emergence_and_delayed_generalizati.md)
 
 </div>
 

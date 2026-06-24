@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer
 description: >-
-  [CVPR 2026][3D Vision][Rectified Flow] MeshFlow employs a MeshVAE that encodes vertex positions, normals, and "discrete connectivity" entirely into a **continuous latent space**. Combined with a Rectified Flow diffusion Transformer, it **parallelly** generates all vertices and edges, producing artist-level triangular meshes in approximately 1 second—about 1
+  [CVPR 2026][3D Vision][Artist-level mesh generation] MeshFlow employs a MeshVAE that encodes vertex positions, normals, and "discrete connectivity" entirely into a **continuous latent space**. Combined with a Rectified Flow diffusion Transformer, it **parallelly** generates all vertices and edges, producing artist-level triangular meshes in approximately 1 second—about 18x faster than the fastest autoregressive generators while avoiding quantization errors.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Rectified Flow
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Artist-level mesh generation"
+  - "MeshVAE"
+  - "Rectified Flow"
+  - "Continuous latent space"
+  - "Non-autoregressive"
 date: 2026-05-08
-content_hash: 4c42c2b1c0f74eef
+content_hash: e5cac738bad01ed7
 ---
+
 # MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer
 
 **Conference**: CVPR 2026  
@@ -132,16 +137,15 @@ MeshFlow achieves the lowest CD/HD with an inference time of 1.2s—nearly 3x fa
 
 ## Related Papers
 
+- [\[CVPR 2026\] Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics](efficient_hybrid_se3-equivariant_visuomotor_flow_policy_via_spherical_harmonics_.md)
+- [\[CVPR 2026\] PartDiffuser: Part-wise 3D Mesh Generation via Discrete Diffusion](partdiffuser_part-wise_3d_mesh_generation_via_discrete_diffusion.md)
 - [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
-- [\[CVPR 2026\] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)
-- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] LitePT: Lighter Yet Stronger Point Transformer](litept_lighter_yet_stronger_point_transformer.md)
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
+- [\[CVPR 2025\] TreeMeshGPT: Artistic Mesh Generation with Autoregressive Tree Sequencing](../../CVPR2025/3d_vision/treemeshgpt_artistic_mesh_generation_with_autoregressive_tree_sequencing.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics](efficient_hybrid_se3-equivariant_visuomotor_flow_policy_via_spherical_harmonics_.md)

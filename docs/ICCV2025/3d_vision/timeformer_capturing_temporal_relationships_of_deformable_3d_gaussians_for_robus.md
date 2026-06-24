@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TimeFormer: Capturing Temporal Relationships of Deformable 3D Gaussians for Robust Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Dynamic scene reconstruction] This paper proposes the TimeFormer module, which implicitly learns temporal relationships among deformable 3D Gaussians via a cross-time Transformer encoder…
+  [ICCV 2025][3D Vision][Dynamic scene reconstruction] This paper proposes the TimeFormer module, which implicitly learns temporal relationships among deformable 3D Gaussians via a cross-time Transformer encoder, and introduces a dual-stream optimization strategy that transfers motion knowledge during training with no additional overhead at inference.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "temporal relationship modeling"
   - "plug-and-play"
 date: 2026-05-08
-content_hash: 95bba0286fd9414d
+content_hash: d68cd0a5b8215e2a
 ---
 
 # TimeFormer: Capturing Temporal Relationships of Deformable 3D Gaussians for Robust Reconstruction
@@ -130,10 +130,10 @@ TimeFormer can be applied to various deformable 3DGS backbone networks, consiste
 ## Related Papers
 
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
+- [\[CVPR 2025\] SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video](../../CVPR2025/3d_vision/splinegs_robust_motion-adaptive_spline_for_real-time_dynamic_3d_gaussians_from_m.md)
 - [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
 - [\[ICCV 2025\] Can3Tok: Canonical 3D Tokenization and Latent Modeling of Scene-Level 3D Gaussians](can3tok_canonical_3d_tokenization_and_latent_modeling_of_scene-level_3d_gaussian.md)
-- [\[ICCV 2025\] StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions](stealthattack_robust_3d_gaussian_splatting_poisoning_via_density-guided_illusion.md)
-- [\[ICCV 2025\] AAA-Gaussians: Anti-Aliased and Artifact-Free 3D Gaussian Rendering](aaa_gaussians_anti_aliased_artifact_free_3d_gaussian_rendering.md)
+- [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
 
 </div>
 

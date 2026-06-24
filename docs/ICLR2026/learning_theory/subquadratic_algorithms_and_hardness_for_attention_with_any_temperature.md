@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Subquadratic Algorithms and Hardness for Attention with Any Temperature
 description: >-
-  [ICLR 2026][learning_theory][Attention] This paper answers the fundamental question of whether attention can be computed efficiently at any temperature. For head dimension $d=O(1)$, it provides the first true subquadratic algorithm $\tilde{O}(n^{2-1/d}\cdot\mathrm{polylog}(B/\varepsilon))$ with only logarithmic dependence on the entry bound $B$. Furthermore,
+  [ICLR 2026][Learning Theory][Attention Mechanism] This paper answers the fundamental question of whether attention can be computed efficiently at any temperature. For head dimension $d=O(1)$, it provides the first true subquadratic algorithm $\tilde{O}(n^{2-1/d}\cdot\mathrm{polylog}(B/\varepsilon))$ with only logarithmic dependence on the entry bound $B$. Furthermore, it uses Max-IP / OV reductions to prove that the standard algorithm is essentially optimal in the ranges $d=2…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Attention
-  - SETH
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Attention Complexity"
+  - "Attention Mechanism"
+  - "Subquadratic Algorithms"
+  - "Fine-grained Complexity"
+  - "Polynomial Method"
+  - "SETH"
 date: 2026-05-08
-content_hash: 926eed0581f69b13
+content_hash: a4bd386d217491e2
 ---
+
 # Subquadratic Algorithms and Hardness for Attention with Any Temperature
 
 **Conference**: ICLR 2026  

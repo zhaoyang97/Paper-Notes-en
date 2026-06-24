@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] This study constructs XSeg, the largest X-ray contraband segmentation dataset to date (98,644 images, 295,932 instance masks, 30 fine-grained categories), and proposes APSAM. By leveraging X-ray dual-energy physical properties via an Energy-Aware Encoder and intelligently expanding user clicks with an Adaptive Point Ge
+  [CVPR 2026][Segmentation][X-ray contraband segmentation] This study constructs XSeg, the largest X-ray contraband segmentation dataset to date (98,644 images, 295,932 instance masks, 30 fine-grained categories), and proposes APSAM. By leveraging X-ray dual-energy physical properties via an Energy-Aware Encoder and intelligently expanding user clicks with an Adaptive Point Generator, APSAM achieves 72.83% mIoU, outperforming SAM fine-tuning by 4.96%.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "X-ray contraband segmentation"
+  - "security screening datasets"
+  - "SAM adaptation"
+  - "dual-energy encoder"
+  - "adaptive point prompts"
 date: 2026-05-08
-content_hash: 53f948836d918022
+content_hash: 8012dafe9d3e45b8
 ---
+
 # XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening
 
 **Conference**: CVPR 2026  
@@ -138,9 +144,9 @@ Standard SAM training loss (Dice + Cross-Entropy) is used. The model employs a V
 ## Related Papers
 
 - [\[CVPR 2026\] RealVLG-R1: A Large-Scale Real-World Visual-Language Grounding Benchmark for Robotic Perception and Manipulation](realvlg-r1_a_large-scale_real-world_visual-language_grounding_benchmark_for_robo.md)
-- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
-- [\[CVPR 2026\] PRUE: A Practical Recipe for Field Boundary Segmentation at Scale](prue_a_practical_recipe_for_field_boundary_segmentation_at_scale.md)
+- [\[CVPR 2026\] CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation](clp_a_real-world_dataset_of_contaminated_lens_protectors_for_robust_semantic_seg.md)
 - [\[ICCV 2025\] RAGNet: Large-scale Reasoning-based Affordance Segmentation Benchmark towards General Grasping](../../ICCV2025/segmentation/ragnet_large-scale_reasoning-based_affordance_segmentation_benchmark_towards_gen.md)
+- [\[CVPR 2026\] PRUE: A Practical Recipe for Field Boundary Segmentation at Scale](prue_a_practical_recipe_for_field_boundary_segmentation_at_scale.md)
 - [\[CVPR 2026\] Exploring the Underwater World Segmentation without Extra Training](exploring_the_underwater_world_segmentation_without_extra_training.md)
 
 </div>

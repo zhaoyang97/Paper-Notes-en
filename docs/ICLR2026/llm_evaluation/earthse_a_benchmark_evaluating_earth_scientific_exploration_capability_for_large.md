@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] EARTHSE：地球科学知识探索基准
+  [Paper Note] EARTHSE: A Benchmark for Earth Science Knowledge Exploration
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] EARTHSE constructs a three-layer progressive benchmark (Breadth QA → Professional QA → Open Conversation) from 100,000 Earth science papers. It covers 5 major Earth spheres, 114 subfields, and 11 task categories. The benchmark systematically evaluates LLMs across basic knowledge and scientific exploration dimensions, r
+  [ICLR 2026][LLM Evaluation][Earth Science Benchmark] EARTHSE constructs a three-layer progressive benchmark (Breadth QA → Professional QA → Open Conversation) from 100,000 Earth science papers. It covers 5 major Earth spheres, 114 subfields, and 11 task categories. The benchmark systematically evaluates LLMs across basic knowledge and scientific exploration dimensions, revealing significant shortcomings of existing LLMs in domain depth and open-ended scientific thinking.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Earth Science Benchmark"
+  - "Scientific Exploration"
+  - "Multi-task"
+  - "Open-ended Dialogue"
 date: 2026-05-08
-content_hash: c81adae90285202d
+content_hash: df0bed62836e60cb
 ---
+
 # EARTHSE: A Benchmark for Earth Science Knowledge Exploration
 
 **Conference**: ICLR 2026  
@@ -159,11 +164,11 @@ Earth-Iron/Silver QA includes four formats: Multiple Choice (MC), Fill-in-the-Bl
 
 ## Related Papers
 
-- [\[ICLR 2026\] POEMetric: The Last Stanza of Humanity](poemetric_the_last_stanza_of_humanity.md)
-- [\[ICLR 2026\] EIP: Weighted Ranking of LLMs by Quantifying Question Difficulty](eip_weighted_ranking_of_llms_by_quantifying_question_difficulty.md)
+- [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
 - [\[ICLR 2026\] Towards Self-Evolving Agent Benchmarks: Validatable Agent Trajectory via Test-Time Exploration](towards_self-evolving_agent_benchmarks_validatable_agent_trajectory_via_test-tim.md)
-- [\[ICLR 2026\] CMPhysBench: A Benchmark for Evaluating Large Language Models in Condensed Matter Physics](cmphysbench_a_benchmark_for_evaluating_large_language_models_in_condensed_matter.md)
-- [\[ICLR 2026\] PRISM-Physics: Causal DAG-Based Process Evaluation for Physics Reasoning](prism-physics_causal_dag-based_process_evaluation_for_physics_reasoning.md)
+- [\[ICLR 2026\] CatalystBench: A Comprehensive Multi-Task Benchmark for Advancing Language Models in Catalysis Science](catalystbench_a_comprehensive_multi-task_benchmark_for_advancing_language_models.md)
+- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
+- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
 
 </div>
 

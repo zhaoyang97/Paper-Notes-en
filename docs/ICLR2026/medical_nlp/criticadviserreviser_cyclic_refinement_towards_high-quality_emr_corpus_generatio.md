@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Critic-Adviser-Reviser Cyclic Refinement: Towards High-Quality EMR Corpus Generation with LLMs
 description: >-
-  [ICLR 2026][Medical NLP][Multi-Agent] Addressing the issues where LLMs directly generating Electronic Medical Records (EMR) "only imitate, suffer from distribution distortion, and lack quality constraints," this paper proposes LLM-CARe. This framework employs a "corpus → section → document" three-level granularity, with each level refined by a Critic/Advis
+  [ICLR 2026][Medical LLM][EMR Synthesis] Addressing the issues where LLMs directly generating Electronic Medical Records (EMR) "only imitate, suffer from distribution distortion, and lack quality constraints," this paper proposes LLM-CARe. This framework employs a "corpus → section → document" three-level granularity, with each level refined by a Critic/Adviser/Reviser agent cycle. Without accessing any real EMR text, it significantly pushes the quality of synthetic records an…
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "EMR Synthesis"
+  - "Cyclic Refinement"
+  - "Multi-Agent"
+  - "Clinical Quality"
+  - "Privacy Protection"
 date: 2026-05-08
-content_hash: a8465fa7c906f4f9
+content_hash: c50cca066cdd2e56
 ---
+
 # Critic-Adviser-Reviser Cyclic Refinement: Towards High-Quality EMR Corpus Generation with LLMs
 
 **Conference**: ICLR 2026  
@@ -147,9 +152,9 @@ Removing each agent individually (Figure 8) and observing the impact on quality 
 
 - [\[ACL 2025\] Evaluation of LLMs in Medical Text Summarization: The Role of Vocabulary Adaptation in High OOV Settings](../../ACL2025/medical_nlp/evaluation_of_llms_in_medical_text_summarization_the_role_of_vocabulary_adaptati.md)
 - [\[ACL 2025\] Enhancing Medical Dialogue Generation through Knowledge Refinement and Dynamic Prompt Adjustment](../../ACL2025/medical_nlp/enhancing_medical_dialogue_generation_through_knowledge_refinement_and_dynamic_p.md)
+- [\[NeurIPS 2025\] Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID](../../NeurIPS2025/medical_nlp/demo_guide-rag_evidence-driven_corpus_curation_for_retrieval-augmented_generatio.md)
 - [\[ICLR 2026\] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?](can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare.md)
 - [\[ICLR 2026\] SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs](simpletom_exposing_the_gap_between_explicit_tom_inference_and_implicit_tom_appli.md)
-- [\[NeurIPS 2025\] Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID](../../NeurIPS2025/medical_nlp/demo_guide-rag_evidence-driven_corpus_curation_for_retrieval-augmented_generatio.md)
 
 </div>
 

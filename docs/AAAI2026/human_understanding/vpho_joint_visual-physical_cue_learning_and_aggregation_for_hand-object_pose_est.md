@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VPHO: Joint Visual-Physical Cue Learning and Aggregation for Hand-Object Pose Estimation
 description: >-
-  [AAAI 2026][Human Understanding][Hand-object pose estimation] This paper proposes VPHO, a framework for hand-object pose estimation that jointly leverages visual and physical cues. It introduces a force prediction module…
+  [AAAI 2026][Human Understanding][Hand-object pose estimation] This paper proposes VPHO, a framework for hand-object pose estimation that jointly leverages visual and physical cues. It introduces a force prediction module to learn 3D physical cues and designs a two-stage candidate pose aggregation strategy (visual-guided + physics-guided) to achieve physical plausibility while preserving visual consistency. VPHO attains state-of-the-art performance in both pose accuracy and ph…
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "force prediction"
   - "candidate pose aggregation"
 date: 2026-05-08
-content_hash: 25c2665b4aba5c78
+content_hash: 53068459015ce93c
 ---
 
 # VPHO: Joint Visual-Physical Cue Learning and Aggregation for Hand-Object Pose Estimation
@@ -221,11 +221,11 @@ Contact percentage increases from 95.9% to 98.85%, penetration depth decreases f
 
 ## Related Papers
 
+- [\[CVPR 2025\] UniHOPE: A Unified Approach for Hand-Only and Hand-Object Pose Estimation](../../CVPR2025/human_understanding/unihope_a_unified_approach_for_hand-only_and_hand-object_pose_estimation.md)
 - [\[AAAI 2026\] New Synthetic Goldmine: Hand Joint Angle-Driven EMG Data Generation Framework for Micro-Gesture Recognition](new_synthetic_goldmine_hand_joint_angle-driven_emg_data_generation_framework_for.md)
+- [\[ICLR 2026\] Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation](../../ICLR2026/human_understanding/pose_prior_learner_unsupervised_categorical_prior_learning_for_pose_estimation.md)
 - [\[ICCV 2025\] CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation](../../ICCV2025/human_understanding/cleanpose_category-level_object_pose_estimation_via_causal_learning_and_knowledg.md)
-- [\[AAAI 2026\] CoordAR: One-Reference 6D Pose Estimation of Novel Objects via Autoregressive Coordinate Map Generation](coordar_one-reference_6d_pose_estimation_of_novel_objects_via_autoregressive_coo.md)
-- [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](../../ICCV2025/human_understanding/raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
-- [\[CVPR 2026\] COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation](../../CVPR2026/human_understanding/cog_confidence-aware_optimal_geometric_correspondence_for_unsupervised_single-re.md)
+- [\[NeurIPS 2025\] Learning Dense Hand Contact Estimation from Imbalanced Data](../../NeurIPS2025/human_understanding/learning_dense_hand_contact_estimation_from_imbalanced_data.md)
 
 </div>
 

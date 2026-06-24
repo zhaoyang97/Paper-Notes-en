@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Disrupting Model Merging: A Parameter-Level Defense Without Sacrificing Accuracy
 description: >-
-  [ICCV 2025][Image Generation][model merging defense] This paper proposes PaRaMS (Parameter Rearrangement & Random Multi-head Scaling), a parameter-level proactive defense method that displaces a protected model away from…
+  [ICCV 2025][Image Generation][model merging defense] This paper proposes PaRaMS (Parameter Rearrangement & Random Multi-head Scaling), a parameter-level proactive defense method that displaces a protected model away from the shared loss basin via functionally equivalent parameter transformations, causing severe performance degradation upon merging while preserving original performance when the model is used standalone.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "attention head scaling"
   - "functionally equivalent transformation"
 date: 2026-05-08
-content_hash: 2155d130d7effddd
+content_hash: 3087dd50f1a0f028
 ---
 
 # Disrupting Model Merging: A Parameter-Level Defense Without Sacrificing Accuracy
@@ -163,8 +163,8 @@ Text classification (Llama2):
 - [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
 - [\[ICCV 2025\] Omegance: A Single Parameter for Various Granularities in Diffusion-Based Synthesis](omegance_a_single_parameter_for_various_granularities_in_diffusion-based_synthes.md)
 - [\[ICCV 2025\] Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification](towards_robust_defense_against_customization_via_protective_perturbation_resista.md)
-- [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](../../ICLR2026/image_generation/latent_diffusion_model_without_variational_autoencoder.md)
 - [\[ICCV 2025\] DCT-Shield: A Robust Frequency Domain Defense against Malicious Image Editing](dct-shield_a_robust_frequency_domain_defense_against_malicious_image_editing.md)
+- [\[CVPR 2025\] Efficient Personalization of Quantized Diffusion Model without Backpropagation (ZOODiP)](../../CVPR2025/image_generation/efficient_personalization_of_quantized_diffusion_model_without_backpropagation.md)
 
 </div>
 

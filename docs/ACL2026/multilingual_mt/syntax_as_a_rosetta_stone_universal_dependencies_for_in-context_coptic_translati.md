@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Syntax as a Rosetta Stone: Universal Dependencies for In-Context Coptic Translation
 description: >-
-  [ACL 2026][Multilingual & Translation][Universal Dependencies] This paper represents the first exploration of using Universal Dependencies (UD) syntactic information as an enhancement source for In-Context Learning (ICL) in low-resource Coptic-to-English machine translation. The findings indicate that while syntactic information alone is less effective than a lexicon, combining th
+  [ACL 2026 Findings][Multilingual & Machine Translation][Low-Resource Machine Translation] This paper represents the first exploration of using Universal Dependencies (UD) syntactic information as an enhancement source for In-Context Learning (ICL) in low-resource Coptic-to-English machine translation. The findings indicate that while syntactic information alone is less effective than a lexicon, combining the lexicon with syntax (LEX+SYN) achieves the best performance across a…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - Universal Dependencies
+  - "ACL 2026 Findings"
+  - "Multilingual & Machine Translation"
+  - "Low-Resource Machine Translation"
+  - "Coptic"
+  - "Universal Dependencies"
+  - "In-Context Learning"
+  - "Syntax Enhancement"
 date: 2026-05-08
-content_hash: 62ecf7d5ee18e38b
+content_hash: 1dbb628b26870a32
 ---
+
 # Syntax as a Rosetta Stone: Universal Dependencies for In-Context Coptic Translation
 
 **Conference**: ACL 2026 Findings  
@@ -144,7 +149,7 @@ Pure ICL setting with no training. Three models were used: Gemma-12B/27B and GPT
 - [\[ACL 2025\] Understanding In-Context Machine Translation for Low-Resource Languages: A Case Study on Manchu](../../ACL2025/multilingual_mt/understanding_in-context_machine_translation_for_low-resource_languages_a_case_s.md)
 - [\[ACL 2025\] GrammaMT: Improving Machine Translation with Grammar-Informed In-Context Learning](../../ACL2025/multilingual_mt/grammamt_improving_machine_translation_with_grammar-informed_in-context_learning.md)
 - [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
-- [\[ACL 2025\] THOR-MoE: Hierarchical Task-Guided and Context-Responsive Routing for Neural Machine Translation](../../ACL2025/multilingual_mt/thor-moe_hierarchical_task-guided_and_context-responsive_routing_for_neural_mach.md)
+- [\[ACL 2025\] Blessing of Multilinguality: A Systematic Analysis of Multilingual In-Context Learning](../../ACL2025/multilingual_mt/blessing_of_multilinguality_a_systematic_analysis_of_multilingual_in-context_lea.md)
 
 </div>
 

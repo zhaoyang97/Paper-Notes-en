@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation
 description: >-
-  [CVPR 2026][Image Generation][GAN] Uni-DAD is proposed as the first method to unify diffusion model distillation and adaptation into a single-stage pipeline. By employing a dual-domain DMD loss and a multi-head GAN loss, it achieves high-quality and diverse generation in few-shot domains with only 1–4 sampling steps.
+  [CVPR 2026][Image Generation][Diffusion Model Distillation] Uni-DAD is proposed as the first method to unify diffusion model distillation and adaptation into a single-stage pipeline. By employing a dual-domain DMD loss and a multi-head GAN loss, it achieves high-quality and diverse generation in few-shot domains with only 1–4 sampling steps.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GAN
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model Distillation"
+  - "Few-shot Image Generation"
+  - "Domain Adaptation"
+  - "GAN"
+  - "Distribution Matching Distillation"
 date: 2026-05-08
-content_hash: a7467144e6e11aa0
+content_hash: 2b099b8f0ee72485
 ---
+
 # Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation
 
 **Conference**: CVPR 2026  
@@ -198,11 +203,11 @@ The source model is SDv1.5, evaluated on the DreamBooth benchmark (30 subjects, 
 
 ## Related Papers
 
+- [\[CVPR 2026\] LogCD: Local-to-global Consistency Distillation for Few-step Image Generation](logcd_local-to-global_consistency_distillation_for_few-step_image_generation.md)
+- [\[CVPR 2026\] Flash-DMD: Towards High-Fidelity Few-Step Image Generation with Efficient Distillation and Joint Reinforcement Learning](flash-dmd_towards_high-fidelity_few-step_image_generation_with_efficient_distill.md)
 - [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
+- [\[CVPR 2026\] InverFill: One-Step Inversion for Enhanced Few-Step Diffusion Inpainting](inverfill_one-step_inversion_for_enhanced_few-step_diffusion_inpainting.md)
 - [\[CVPR 2026\] FlowSteer: Guiding Few-Step Image Synthesis with Authentic Trajectories](flowsteer_guiding_few-step_image_synthesis_with_authentic_trajectories.md)
-- [\[CVPR 2026\] Few-Step Diffusion Sampling Through Instance-Aware Discretizations](few-step_diffusion_sampling_through_instance-aware_discretizations.md)
-- [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
-- [\[CVPR 2026\] Beyond Patches: Global-aware Autoregressive Model for Multimodal Few-Shot Font Generation](beyond_patches_global-aware_autoregressive_model_for_multimodal_few-shot_font_ge.md)
 
 </div>
 

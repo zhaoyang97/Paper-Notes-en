@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Document Summarization with Conformal Importance Guarantees
 description: >-
-  [NeurIPS 2025][Medical NLP][Document Summarization] This work presents the first application of Conformal Prediction to document summarization. By calibrating a threshold on sentence importance scores…
+  [NeurIPS 2025][Medical LLM][Document Summarization] This work presents the first application of Conformal Prediction to document summarization. By calibrating a threshold on sentence importance scores, it provides rigorous statistical guarantees on user-controllable coverage ($1-\alpha$) and recall ($\beta$) for extractive summaries. The method is model-agnostic and requires only a small calibration set.
 tags:
   - "NeurIPS 2025"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Document Summarization"
   - "Conformal Prediction"
   - "Importance Coverage Guarantee"
   - "Extractive Summarization"
   - "Distribution-Free"
 date: 2026-05-08
-content_hash: b7930cf24d68c4c8
+content_hash: f1d604e11e35e98c
 ---
 
 # Document Summarization with Conformal Importance Guarantees
@@ -129,11 +129,11 @@ Empirical coverage strictly falls within the theoretical bounds across all exper
 
 ## Related Papers
 
-- [\[ACL 2026\] PCoA: A New Benchmark for Medical Aspect-Based Summarization With Phrase-Level Context Attribution](../../ACL2026/medical_nlp/pcoa_a_new_benchmark_for_medical_aspect-based_summarization_with_phrase-level_co.md)
-- [\[NeurIPS 2025\] Mind the Gap: Aligning Knowledge Bases with User Needs to Enhance Mental Health Retrieval](mind_the_gap_aligning_knowledge_bases_with_user_needs_to_enhance_mental_health_r.md)
-- [\[NeurIPS 2025\] AI Should Sense Better, Not Just Scale Bigger: Adaptive Sensing as a Paradigm Shift](ai_should_sense_better_not_just_scale_bigger_adaptive_sensin.md)
-- [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
-- [\[NeurIPS 2025\] Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series](time-imm_a_dataset_and_benchmark_for_irregular_multimodal_multivariate_time_seri.md)
+- [\[NeurIPS 2025\] Faithful Summarization of Consumer Health Queries: A Cross-Lingual Framework with LLMs](faithful_summarization_of_consumer_health_queries_a_cross-lingual_framework_with.md)
+- [\[ACL 2025\] SECRET: Semi-supervised Clinical Trial Document Similarity Search](../../ACL2025/medical_nlp/secret_semi-supervised_clinical_trial_document_similarity_search.md)
+- [\[ACL 2025\] Query-driven Document-level Scientific Evidence Extraction from Biomedical Studies](../../ACL2025/medical_nlp/urca_biomedical_evidence_extraction.md)
+- [\[ACL 2025\] CSTRL: Context-Driven Sequential Transfer Learning for Abstractive Radiology Report Summarization](../../ACL2025/medical_nlp/cstrl_context-driven_sequential_transfer_learning_for_abstractive_radiology_repo.md)
+- [\[ACL 2025\] Evaluation of LLMs in Medical Text Summarization: The Role of Vocabulary Adaptation in High OOV Settings](../../ACL2025/medical_nlp/evaluation_of_llms_in_medical_text_summarization_the_role_of_vocabulary_adaptati.md)
 
 </div>
 

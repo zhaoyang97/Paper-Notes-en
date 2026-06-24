@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size
 description: >-
-  [ACL 2026][Causal Inference][Paper Note] This paper establishes the first scaling laws for the "contextual entrainment effect," discovering that larger models are more resistant to false information in semantic contexts (negative exponent) but more prone to copying irrelevant tokens in non-semantic contexts (positive exponent), revealing opposing scaling beha
+  [ACL 2026 Findings][Causal Inference][Contextual entrainment effect] This paper establishes the first scaling laws for the "contextual entrainment effect," discovering that larger models are more resistant to false information in semantic contexts (negative exponent) but more prone to copying irrelevant tokens in non-semantic contexts (positive exponent), revealing opposing scaling behaviors between semantic filtering and mechanical copying functions.
 tags:
-  - ACL 2026
-  - Causal Inference
+  - "ACL 2026 Findings"
+  - "Causal Inference"
+  - "Contextual entrainment effect"
+  - "Scaling laws"
+  - "Semantic filtering"
+  - "Pattern copying"
+  - "Robustness"
 date: 2026-05-08
-content_hash: c2efc44691c34989
+content_hash: 6ee768d6ea2c8cee
 ---
+
 # Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size
 
 **Conference**: ACL 2026 Findings  
@@ -108,9 +114,9 @@ To attribute observed scaling trends to context manipulation, it must be proven 
 
 - [\[ICLR 2026\] Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement](../../ICLR2026/causal_inference/resisting_contextual_interference_in_rag_via_parametric-knowledge_reinforcement.md)
 - [\[NeurIPS 2025\] Cyclic Counterfactuals under Shift–Scale Interventions](../../NeurIPS2025/causal_inference/cyclic_counterfactuals_under_shift-scale_interventions.md)
+- [\[ICLR 2026\] Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks](../../ICLR2026/causal_inference/frequency-domain_better_than_time-domain_for_causal_structure_recovery_in_dynami.md)
 - [\[ICML 2026\] Investigating Memory in Model-Free RL with POPGym Arcade](../../ICML2026/causal_inference/investigating_memory_in_model-free_rl_with_popgym_arcade.md)
-- [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
-- [\[NeurIPS 2025\] Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization](../../NeurIPS2025/causal_inference/bi-level_decision-focused_causal_learning_for_large-scale_marketing_optimization.md)
+- [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](../../ICLR2026/causal_inference/adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
 
 </div>
 

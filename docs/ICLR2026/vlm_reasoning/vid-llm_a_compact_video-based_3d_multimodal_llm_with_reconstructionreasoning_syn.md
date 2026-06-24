@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Vid-LLM: A Compact Video-based 3D Multimodal LLM with Reconstruction–Reasoning Synergy
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] Vid-LLM utilizes only monocular video as input. Through a Cross-Task Adapter that mutually enhances "reconstruction" and "reasoning," it injects geometric priors directly reconstructed from the video into the LLM. It achieves performance levels close to models using explicit 3D point clouds across 3D Question Answering
+  [ICLR 2026][VLM Reasoning][3D Multimodal Large Language Model] Vid-LLM utilizes only monocular video as input. Through a Cross-Task Adapter that mutually enhances "reconstruction" and "reasoning," it injects geometric priors directly reconstructed from the video into the LLM. It achieves performance levels close to models using explicit 3D point clouds across 3D Question Answering (QA), dense captioning, and visual grounding, without requiring any external point cloud, depth…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "3D Multimodal Large Language Model"
+  - "Video Input"
+  - "3D Reconstruction"
+  - "Geometry-Semantic Alignment"
+  - "Dual-Teacher Distillation"
 date: 2026-05-08
-content_hash: 1bf1cc080bdfed45
+content_hash: 408a5b2400c2e705
 ---
+
 # Vid-LLM: A Compact Video-based 3D Multimodal LLM with Reconstruction–Reasoning Synergy
 
 **Conference**: ICLR 2026  

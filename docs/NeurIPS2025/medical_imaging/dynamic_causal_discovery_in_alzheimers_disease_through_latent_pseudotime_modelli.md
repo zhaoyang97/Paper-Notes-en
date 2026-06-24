@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling
 description: >-
-  [NEURIPS2025][Medical Imaging][Causal discovery] This paper applies BN-LTE (Bayesian Network with Latent Time Embedding) to real-world ADNI data from AD patients to infer dynamic causal graphs that evolve along a disease…
+  [NEURIPS2025][Medical Imaging][Causal discovery] This paper applies BN-LTE (Bayesian Network with Latent Time Embedding) to real-world ADNI data from AD patients to infer dynamic causal graphs that evolve along a disease pseudotime axis. The learned pseudotime achieves a diagnostic AUC of 0.82, substantially outperforming chronological age (AUC 0.59), and reveals dynamic causal relationships between emerging biomarkers NfL/GFAP and established AD markers.
 tags:
   - "NEURIPS2025"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "time-varying causal graphs"
   - "biomarkers"
 date: 2026-05-08
-content_hash: fabb66e6e6333608
+content_hash: 64e7108d57841498
 ---
 
 # Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling
@@ -159,7 +159,7 @@ This paper applies BN-LTE (Bayesian Network with Latent Time Embedding) to real-
 - [\[CVPR 2026\] EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease](../../CVPR2026/medical_imaging/emad_evidence-centric_grounded_multimodal_diagnosis_for_alzheimers_disease.md)
 - [\[NeurIPS 2025\] Active Target Discovery under Uninformative Prior: The Power of Permanent and Transient Memory](active_target_discovery_under_uninformative_prior_the_power_of_permanent_and_tra.md)
 - [\[NeurIPS 2025\] The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective](the_boundaries_of_fair_ai_in_medical_image_prognosis_a_causal_perspective.md)
-- [\[NeurIPS 2025\] Online Feedback Efficient Active Target Discovery in Partially Observable Environments](online_feedback_efficient_active_target_discovery_in_partially_observable_enviro.md)
+- [\[ICLR 2026\] Joint Adaptation of Uni-modal Foundation Models for Multi-modal Alzheimer's Disease Diagnosis](../../ICLR2026/medical_imaging/joint_adaptation_of_uni-modal_foundation_models_for_multi-modal_alzheimers_disea.md)
 
 </div>
 

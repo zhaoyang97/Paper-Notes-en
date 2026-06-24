@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Learning Dense Hand Contact Estimation from Imbalanced Data
 description: >-
-  [NeurIPS 2025][hand contact estimation] This paper proposes the HACO framework, which addresses class imbalance via Balanced Contact Sampling (BCS) and spatial imbalance via a Vertex-level Class-Balanced Loss (VCB Loss).…
+  [NeurIPS 2025][Human Understanding][hand contact estimation] This paper proposes the HACO framework, which addresses class imbalance via Balanced Contact Sampling (BCS) and spatial imbalance via a Vertex-level Class-Balanced Loss (VCB Loss). HACO is the first dense hand contact estimation model trained across 14 datasets (655K images) and achieves state-of-the-art performance across diverse interaction scenarios.
 tags:
   - "NeurIPS 2025"
+  - "Human Understanding"
   - "hand contact estimation"
   - "data imbalance"
   - "class-balanced loss"
   - "large-scale training"
   - "ViT"
 date: 2026-05-08
-content_hash: aa3f548a6396952b
+content_hash: a3d8456f9ce486ec
 ---
 
 # Learning Dense Hand Contact Estimation from Imbalanced Data
@@ -175,11 +176,11 @@ HACO achieves an F1-score **2.65×** higher than DECO.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation](../../CVPR2026/human_understanding/shoe_style-invariant_and_ground-aware_learning_for_dense_foot_contact_estimation.md)
 - [\[ICCV 2025\] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation](../../ICCV2025/human_understanding/dynamic_reconstruction_of_hand-object_interaction_with_distributed_force-aware_c.md)
-- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](raptr_radar-based_3d_pose_estimation_using_transformer.md)
-- [\[NeurIPS 2025\] HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion](hoi-dyn_learning_interaction_dynamics_for_human-object_motion_diffusion.md)
-- [\[NeurIPS 2025\] OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild](omnigaze_reward-inspired_generalizable_gaze_estimation_in_the_wild.md)
+- [\[CVPR 2025\] UniHOPE: A Unified Approach for Hand-Only and Hand-Object Pose Estimation](../../CVPR2025/human_understanding/unihope_a_unified_approach_for_hand-only_and_hand-object_pose_estimation.md)
+- [\[AAAI 2026\] VPHO: Joint Visual-Physical Cue Learning and Aggregation for Hand-Object Pose Estimation](../../AAAI2026/human_understanding/vpho_joint_visual-physical_cue_learning_and_aggregation_for_hand-object_pose_est.md)
+- [\[ICCV 2025\] PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data](../../ICCV2025/human_understanding/posesyn_synthesizing_diverse_3d_pose_data_from_in-the-wild_2d_data.md)
+- [\[ICCV 2025\] HccePose(BF): Predicting Front & Back Surfaces to Construct Ultra-Dense 2D-3D Correspondences for Pose Estimation](../../ICCV2025/human_understanding/hcceposebf_predicting_front_back_surfaces_to_construct_ultra-dense_2d-3d_corresp.md)
 
 </div>
 

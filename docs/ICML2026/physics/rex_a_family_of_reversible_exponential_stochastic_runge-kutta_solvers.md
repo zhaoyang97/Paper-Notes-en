@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] REX: A Family of Reversible Exponential Stochastic Runge-Kutta Solvers
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] This paper proposes Rex—a family of algebraically reversible (stochastic) Runge-Kutta solvers constructed based on Lawson exponential integrators. It automatically transforms any explicit (S)RK scheme into a precisely invertible ODE/SDE solver, ensuring arbitrary high-order convergence and non-zero stability regions wh
+  [ICML 2026 Oral][Physics & Scientific Computing][Reversible solvers] This paper proposes Rex—a family of algebraically reversible (stochastic) Runge-Kutta solvers constructed based on Lawson exponential integrators. It automatically transforms any explicit (S)RK scheme into a precisely invertible ODE/SDE solver, ensuring arbitrary high-order convergence and non-zero stability regions while achieving near machine-precision inversion for diffusion model image reconstruction/edi…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML 2026 Oral"
+  - "Physics & Scientific Computing"
+  - "Reversible solvers"
+  - "exponential integrators"
+  - "stochastic Runge-Kutta"
+  - "diffusion model inversion"
+  - "Boltzmann sampling"
 date: 2026-05-08
-content_hash: 4a58e08401d06fd2
+content_hash: 54cd13a5d87a0e67
 ---
+
 # REX: A Family of Reversible Exponential Stochastic Runge-Kutta Solvers
 
 **Conference**: ICML 2026 Oral  
@@ -148,7 +154,7 @@ Rex is a pure **inference-time solver** and requires no new training loss. It ca
 - [\[NeurIPS 2025\] Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling](../../NeurIPS2025/physics/adaptive_stochastic_coefficients_for_accelerating_diffusion_sampling.md)
 - [\[ICML 2026\] Iterative Refinement Neural Operators are Learned Fixed-Point Solvers: A Principled Approach to Spectral Bias Mitigation](iterative_refinement_neural_operators_are_learned_fixed-point_solvers_a_principl.md)
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](../../NeurIPS2025/physics/hamiltonian_neural_pde_solvers_through_functional_approximation.md)
-- [\[ICLR 2026\] One Operator to Rule Them All? On Boundary-Indexed Operator Families in Neural PDE Solvers](../../ICLR2026/physics/one_operator_to_rule_them_all_on_boundary-indexed_operator_families_in_neural_pd.md)
+- [\[NeurIPS 2025\] INC: An Indirect Neural Corrector for Auto-Regressive Hybrid PDE Solvers](../../NeurIPS2025/physics/inc_an_indirect_neural_corrector_for_auto-regressive_hybrid_pde_solvers.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Memory-Efficient Training with In-Place FFT Implementation
 description: >-
-  [NeurIPS 2025][Model Compression][FFT] This paper proposes rdFFT—the first truly in-place real-domain Fast Fourier Transform framework—which eliminates intermediate buffers via an implicit complex encoding scheme…
+  [NeurIPS 2025][Model Compression][FFT] This paper proposes rdFFT—the first truly in-place real-domain Fast Fourier Transform framework—which eliminates intermediate buffers via an implicit complex encoding scheme, achieving zero extra memory overhead for FFT/IFFT computation during training, with memory efficiency improvements exceeding 1500× in extreme cases.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "circulant matrix"
   - "parameter-efficient fine-tuning"
 date: 2026-05-08
-content_hash: 97ee61de690ca280
+content_hash: b51ec3841036a82a
 ---
 
 # Memory-Efficient Training with In-Place FFT Implementation
@@ -139,11 +139,11 @@ rdFFT is based on the Cooley–Tukey algorithm and maintains conjugate symmetry 
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] EMLoC: Emulator-based Memory-efficient Fine-tuning with LoRA Correction](emloc_emulator-based_memory-efficient_fine-tuning_with_lora_correction.md)
+- [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](../../ICLR2026/model_compression/towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
 - [\[ICCV 2025\] MSQ: Memory-Efficient Bit Sparsification Quantization](../../ICCV2025/model_compression/msq_memory-efficient_bit_sparsification_quantization.md)
-- [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](../../ICCV2025/model_compression/task_vector_quantization_for_memory-efficient_model_merging.md)
 - [\[AAAI 2026\] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing](../../AAAI2026/model_compression/towards_test-time_efficient_visual_place_recognition_via_asymmetric_query_proces.md)
-- [\[ICLR 2026\] LightMem: Lightweight and Efficient Memory-Augmented Generation](../../ICLR2026/model_compression/lightmem_lightweight_and_efficient_memory-augmented_generation.md)
-- [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
+- [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](../../ICCV2025/model_compression/task_vector_quantization_for_memory-efficient_model_merging.md)
 
 </div>
 

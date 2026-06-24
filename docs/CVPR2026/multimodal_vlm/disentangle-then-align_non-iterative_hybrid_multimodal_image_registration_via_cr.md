@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Disentangle-then-Align: Non-Iterative Hybrid Multimodal Image Registration via Cross-Scale Feature Disentanglement
 description: >-
-  [CVPR 2026][Multimodal VLM][Mamba] The authors propose HRNet, which learns clean shared representations through Cross-scale Feature Disentanglement and Adaptive Projection (CDAP) and non-iteratively predicts joint rigid and non-rigid transformations in a unified coarse-to-fine pipeline, achieving SOTA performance on four multimodal datasets.
+  [CVPR 2026][Multimodal VLM][Multimodal registration] The authors propose HRNet, which learns clean shared representations through Cross-scale Feature Disentanglement and Adaptive Projection (CDAP) and non-iteratively predicts joint rigid and non-rigid transformations in a unified coarse-to-fine pipeline, achieving SOTA performance on four multimodal datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Mamba
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal registration"
+  - "hybrid transformation"
+  - "feature disentanglement"
+  - "cross-scale consistency"
+  - "Mamba"
 date: 2026-05-08
-content_hash: 621abb626b904419
+content_hash: 7ab26ee3b4004e59
 ---
+
 # Disentangle-then-Align: Non-Iterative Hybrid Multimodal Image Registration via Cross-Scale Feature Disentanglement
 
 **Conference**: CVPR 2026  
@@ -141,9 +146,9 @@ RE reduction relative to ADRNet: 61.2%, 62.5%, 66.9%, 23.3%.
 
 - [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
 - [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
+- [\[CVPR 2026\] Mask to Align, Weight to Disambiguate: Reliable Unsupervised Cross-Modal Hashing with Masked-Weight Contrast](mask_to_align_weight_to_disambiguate_reliable_unsupervised_cross-modal_hashing_w.md)
 - [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
-- [\[AAAI 2026\] To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](../../AAAI2026/multimodal_vlm/to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)
-- [\[CVPR 2026\] EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](ebmc_multimodal_sentiment_analysis.md)
+- [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
 
 </div>
 

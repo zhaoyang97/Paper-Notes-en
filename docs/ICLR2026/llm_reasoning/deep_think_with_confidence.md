@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deep Think with Confidence
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] DeepConf leverages local confidence signals inherent in LLM generation to dynamically filter low-quality reasoning chains atop parallel thinking (multi-sampling + majority voting). It uses confidence-weighted voting with Top-η% filtering in offline mode and employs the least grouped confidence as a trigger for early st
+  [ICLR 2026][Reasoning][Test-time scaling] DeepConf leverages local confidence signals inherent in LLM generation to dynamically filter low-quality reasoning chains atop parallel thinking (multi-sampling + majority voting). It uses confidence-weighted voting with Top-η% filtering in offline mode and employs the least grouped confidence as a trigger for early stopping and adaptive sampling in online mode. Without training or hyperparameter tuning…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "confidence"
+  - "self-consistency"
+  - "majority voting"
+  - "inference efficiency"
 date: 2026-05-08
-content_hash: 7dab659a8fa3800b
+content_hash: 0b0a1e4d1aaa8697
 ---
+
 # Deep Think with Confidence
 
 **Conference**: ICLR 2026  

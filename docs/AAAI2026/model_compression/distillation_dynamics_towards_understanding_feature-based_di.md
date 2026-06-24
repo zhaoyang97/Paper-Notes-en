@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers
 description: >-
-  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes a "Distillation Dynamics" analytical framework (channel-wise FFT spectral analysis + Shannon entropy + activation magnitude tracking) to reveal t…
+  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes a "Distillation Dynamics" analytical framework (channel-wise FFT spectral analysis + Shannon entropy + activation magnitude tracking) to reveal that ViTs exhibit a distinctive U-shaped information processing pattern (compression followed by expansion). The work demonstrates that the fundamental cause of feature-based distillation failure in ViTs is a representational paradigm mismatch between the teach…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Information Bottleneck"
   - "Negative Transfer"
 date: 2026-05-08
-content_hash: 66155f8d8e8c9b95
+content_hash: 67e4bee7f353b807
 ---
 
 # Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers
@@ -140,10 +140,10 @@ Core insight: ViT distillation should align only early-to-middle layers (the com
 ## Related Papers
 
 - [\[ICML 2026\] From Per-Image Low-Rank to Encoding Mismatch: Rethinking Feature Distillation in Vision Transformers](../../ICML2026/model_compression/from_per-image_low-rank_to_encoding_mismatch_rethinking_feature_distillation_in_.md)
+- [\[ACL 2025\] Beyond Logits: Aligning Feature Dynamics for Effective Knowledge Distillation](../../ACL2025/model_compression/beyond_logits_aligning_feature_dynamics_for_effective_knowledge_distillation.md)
 - [\[AAAI 2026\] Stratified Knowledge-Density Super-Network for Scalable Vision Transformers](stratified_knowledge-density_super-network_for_scalable_vision_transformers.md)
 - [\[AAAI 2026\] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)
 - [\[AAAI 2026\] EfficientFSL: Enhancing Few-Shot Classification via Query-Only Tuning in Vision Transformers](efficientfsl_enhancing_few-shot_classification_via_query-only_tuning_in_vision_t.md)
-- [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](ctpd_cross_tokenizer_preference_distillation.md)
 
 </div>
 

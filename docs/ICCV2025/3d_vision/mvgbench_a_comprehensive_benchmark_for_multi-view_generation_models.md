@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models
 description: >-
-  [ICCV 2025][3D Vision][multi-view generation] This paper presents MVGBench, a comprehensive evaluation framework for multi-view generation (MVG) models. It introduces a novel 3D consistency metric based on 3DGS self-cons…
+  [ICCV 2025][3D Vision][multi-view generation] This paper presents MVGBench, a comprehensive evaluation framework for multi-view generation (MVG) models. It introduces a novel 3D consistency metric based on 3DGS self-consistency (requiring no 3D ground truth), systematically evaluates 12 state-of-the-art methods across three dimensions—peak performance, generalization, and robustness—and derives a new method, ViFiGen, from the identified best practices.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3DGS"
   - "vision-language model evaluation"
 date: 2026-05-08
-content_hash: b9847d3a7debaa50
+content_hash: cf21af77eaadf737
 ---
 
 # MVGBench: a Comprehensive Benchmark for Multi-view Generation Models
@@ -163,8 +163,8 @@ VLM metrics align well with human preference (400 images, 10 users): Pearson con
 - [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
 - [\[ICCV 2025\] FlexGen: Flexible Multi-View Generation from Text and Image Inputs](flexgen_flexible_multi-view_generation_from_text_and_image_inputs.md)
 - [\[ICCV 2025\] MV-Adapter: Multi-view Consistent Image Generation Made Easy](mv-adapter_multi-view_consistent_image_generation_made_easy.md)
-- [\[ICCV 2025\] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion](materialmvp_illumination-invariant_material_generation_via_multi-view_pbr_diffus.md)
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images](auto-regressively_generating_multi-view_consistent_images.md)
+- [\[ICCV 2025\] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion](materialmvp_illumination-invariant_material_generation_via_multi-view_pbr_diffus.md)
 
 </div>
 

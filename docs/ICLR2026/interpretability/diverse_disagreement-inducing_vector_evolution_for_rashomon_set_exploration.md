@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] DIVERSE: Disagreement-Inducing Vector Evolution for Rashomon Set Exploration
 description: >-
-  [ICLR 2026][Interpretability][Rashomon Set] A frozen FiLM modulation layer is attached to a pre-trained network. CMA-ES is then used to perform a gradient-free search in a low-dimensional latent space for variants that are as accurate as the reference model but exhibit different predictive behaviors. This enables the systematic exploration of the Rashomon set of
+  [ICLR 2026][Interpretability][Rashomon Set] A frozen FiLM modulation layer is attached to a pre-trained network. CMA-ES is then used to perform a gradient-free search in a low-dimensional latent space for variants that are as accurate as the reference model but exhibit different predictive behaviors. This enables the systematic exploration of the Rashomon set of deep networks without retraining.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Rashomon Set
-  - Predictive Multiplicity
-  - FiLM
-  - CMA-ES
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Rashomon Set"
+  - "Predictive Multiplicity"
+  - "FiLM"
+  - "CMA-ES"
+  - "Gradient-free search"
+  - "Model diversity"
 date: 2026-05-08
-content_hash: 9f70fc6feff1c471
+content_hash: 50a2917e5ad6da69
 ---
+
 # DIVERSE: Disagreement-Inducing Vector Evolution for Rashomon Set Exploration
 
 **Conference**: ICLR 2026  
@@ -118,7 +121,7 @@ While retraining takes hours, DIVERSE completes in minutes (two to three orders 
 - [\[ICML 2026\] From Rashomon Theory to PRAXIS: Efficient Decision Tree Rashomon Sets](../../ICML2026/interpretability/from_rashomon_theory_to_praxis_efficient_decision_tree_rashomon_sets.md)
 - [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](evolution_of_concepts_in_language_model_pre-training.md)
 - [\[ICLR 2026\] Hyper-SET: Designing Transformers via Hyperspherical Energy Minimization](hyper-set_designing_transformers_via_hyperspherical_energy_minimization.md)
-- [\[ICLR 2026\] GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](gepa_reflective_prompt_evolution_can_outperform_reinforcement_learning.md)
+- [\[ICLR 2026\] Tackling the XAI Disagreement Problem with Adaptive Feature Grouping](tackling_the_xai_disagreement_problem_with_adaptive_feature_grouping.md)
 
 </div>
 

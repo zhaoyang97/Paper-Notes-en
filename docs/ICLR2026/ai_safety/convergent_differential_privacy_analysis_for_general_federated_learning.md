@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Convergent Differential Privacy Analysis for General Federated Learning
 description: >-
-  [ICLR 2026][AI Safety][f-DP] This paper utilizes the f-DP framework and shifted interpolation techniques to prove, for the first time, that the "worst-case privacy" of two classic Federated Learning methods (Noisy-FedAvg / Noisy-FedProx) under non-convex smooth objectives **converges to a constant lower bound** as the number of communication round
+  [ICLR2026][AI Safety][Differential Privacy] This paper utilizes the f-DP framework and shifted interpolation techniques to prove, for the first time, that the "worst-case privacy" of two classic Federated Learning methods (Noisy-FedAvg / Noisy-FedProx) under non-convex smooth objectives **converges to a constant lower bound** as the number of communication rounds $T \to \infty$ rather than diverging. This theoretically refutes the long-standing perception that "long-term FL-D…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - f-DP
-  - shifted interpolation
+  - "ICLR2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Federated Learning"
+  - "f-DP"
+  - "Convergent Privacy"
+  - "shifted interpolation"
 date: 2026-05-08
-content_hash: a97f34733f37320a
+content_hash: dccb1d6fe8b99393
 ---
+
 # Convergent Differential Privacy Analysis for General Federated Learning
 
 **Conference**: ICLR2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Semi-supervised segmentation] VQ-Seg is proposed as the first method to introduce vector quantization into semi-supervised medical image segmentation. A Quantization Perturbation Module (Q…
+  [NeurIPS 2025][Medical Imaging][Semi-supervised segmentation] VQ-Seg is proposed as the first method to introduce vector quantization into semi-supervised medical image segmentation. A Quantization Perturbation Module (QPM) replaces conventional dropout to achieve more controllable feature perturbation, complemented by a dual-branch architecture and foundation-model-guided alignment to compensate for quantization information loss.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "consistency learning"
   - "medical image segmentation"
 date: 2026-05-08
-content_hash: f411ad4f9205e894
+content_hash: 0f0521f0cd37bb25
 ---
 
 # VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation
@@ -140,11 +140,11 @@ Compared to UA-MT (Monte Carlo Dropout), BCP, and Unimatch, the core distinction
 
 ## Related Papers
 
+- [\[CVPR 2025\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/semantic_class_distribution_learning_for_debiasing_semi-supervised_medical_image.md)
 - [\[NeurIPS 2025\] MATCH: Multi-faceted Adaptive Topo-Consistency for Semi-Supervised Histopathology Segmentation](match_multi-faceted_adaptive_topo-consistency_for_semi-supervised_histopathology.md)
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semantic_class_distribution_learning_for_debiasing.md)
-- [\[ICML 2026\] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](../../ICML2026/medical_imaging/are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)
-- [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](../../AAAI2026/medical_imaging/bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
-- [\[NeurIPS 2025\] Interpretable Next-token Prediction via the Generalized Induction Head](interpretable_next-token_prediction_via_the_generalized_induction_head.md)
+- [\[CVPR 2025\] Enhancing SAM with Efficient Prompting and Preference Optimization for Semi-supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/sam_dpo_semi_supervised.md)
+- [\[ECCV 2024\] Alternate Diverse Teaching for Semi-supervised Medical Image Segmentation](../../ECCV2024/medical_imaging/alternate_diverse_teaching_for_semi-supervised_medical_image_segmentation.md)
+- [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
 
 </div>
 

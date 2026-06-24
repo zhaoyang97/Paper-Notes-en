@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MobiEdit: Resource-efficient Knowledge Editing for Personalized On-device LLMs
 description: >-
-  [ICLR 2026][Knowledge Editing][locate-and-edit] MobiEdit replaces the resource-heavy backpropagation in the classic locate-and-edit knowledge editing (ROME) with "quantization + forward zeroth-order gradient estimation," coupled with two system optimizations: early stopping and prefix activation reuse. This allows real-time knowledge editing for 3B LLMs to run on co
+  [ICLR 2026][Knowledge Editing][locate-and-edit] MobiEdit replaces the resource-heavy backpropagation in the classic locate-and-edit knowledge editing (ROME) with "quantization + forward zeroth-order gradient estimation," coupled with two system optimizations: early stopping and prefix activation reuse. This allows real-time knowledge editing for 3B LLMs to run on commercial smartphone NPUs for the first time, reducing memory by 7.1×, energy consumption by 15.8×…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - locate-and-edit
-  - Quantization
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "locate-and-edit"
+  - "zeroth-order optimization"
+  - "mobile NPU"
+  - "quantization"
+  - "on-device personalization"
 date: 2026-05-08
-content_hash: 7609a7e2a66b4a41
+content_hash: 92580092e2d16858
 ---
+
 # MobiEdit: Resource-efficient Knowledge Editing for Personalized On-device LLMs
 
 **Conference**: ICLR 2026  
@@ -124,10 +128,10 @@ Baselines running at full CPU load for 100s cause temperatures to rise by ~10°C
 ## Related Papers
 
 - [\[ICLR 2026\] MoEEdit: Efficient and Routing-Stable Knowledge Editing for Mixture-of-Experts LLMs](moeedit_efficient_and_routing-stable_knowledge_editing_for_mixture-of-experts_ll.md)
+- [\[ICLR 2026\] Scaling Knowledge Editing in LLMs to 100,000 Facts with Neural KV Database](scaling_knowledge_editing_in_llms_to_100000_facts_with_neural_kv_database.md)
 - [\[ICLR 2026\] KnowledgeSmith: Uncovering Knowledge Updating in LLMs with Model Editing and Unlearning](knowledgesmith_uncovering_knowledge_updating_in_llms_with_model_editing_and_unle.md)
 - [\[ACL 2025\] Efficient Knowledge Editing via Minimal Precomputation](../../ACL2025/knowledge_editing/efficient_knowledge_editing.md)
 - [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](../../ACL2026/knowledge_editing/evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
-- [\[ACL 2026\] Representation Interventions Enable Lifelong Knowledge Memory Control in LLMs](../../ACL2026/knowledge_editing/representation_interventions_enable_lifelong_knowledge_memory_control_in_llms.md)
 
 </div>
 

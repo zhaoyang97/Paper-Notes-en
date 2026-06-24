@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This work inverts "moving infrared small target detection" from "direct learning of weak target features" to "learning normal background patterns and treating targets as anomalies within the background." By utilizing spatio-temporal neural fields for background evolution modeling, hierarchical anomaly awareness (appear
+  [CVPR 2026][Object Detection][Infrared small targets] This work inverts "moving infrared small target detection" from "direct learning of weak target features" to "learning normal background patterns and treating targets as anomalies within the background." By utilizing spatio-temporal neural fields for background evolution modeling, hierarchical anomaly awareness (appearance anomaly → motion consistency verification), and causal backdoor adjustment to sever background confus…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Infrared small targets"
+  - "anomaly detection"
+  - "causal learning"
+  - "background modeling"
+  - "spatio-temporal neural fields"
 date: 2026-05-08
-content_hash: dfdfc977c521c2fa
+content_hash: 037c654d6fab6425
 ---
+
 # CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection
 
 **Conference**: CVPR 2026  
@@ -143,14 +149,15 @@ General anomaly detection methods largely fail in infrared scenarios: DiffusionA
 - Value: ⭐⭐⭐⭐ (Strong potential for replication and transfer to other weak signal tasks)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection](target-aware_invertible_encoder_with_reconstruction_guidance_for_infrared_small_.md)
 - [\[CVPR 2026\] Seeing Through the Noise: Improving Infrared Small Target Detection and Segmentation from Noise Suppression Perspective](seeing_through_the_noise_improving_infrared_small_target_detection_and_segmentat.md)
+- [\[CVPR 2026\] RHCNet: Residual-Guided Hierarchical Calibration Network for Robust Underwater Object Detection](rhcnet_residual-guided_hierarchical_calibration_network_for_robust_underwater_ob.md)
 - [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/object_detection/rethinking_evaluation_of_infrared_small_target_detection.md)
-- [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
 - [\[CVPR 2026\] Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection](towards_persistence_learning_topological_constraints_for_event-based_small_objec.md)
 
 </div>

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models
 description: >-
-  [CVPR 2026][LLM Safety][adversarial attack] Proposes the MPCAttack framework, which integrates feature representations from three learning paradigms—cross-modal alignment, multi-modal understanding, and visual self-supervision. By employing a multi-paradigm collaborative optimization strategy to generate highly transferable adversarial samples, it achieves SOTA
+  [CVPR 2026][AI Safety][adversarial attack] Proposes the MPCAttack framework, which integrates feature representations from three learning paradigms—cross-modal alignment, multi-modal understanding, and visual self-supervision. By employing a multi-paradigm collaborative optimization strategy to generate highly transferable adversarial samples, it achieves SOTA attack performance on both open-source and closed-source MLLMs.
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - adversarial attack
-  - MLLM
-  - Transferability
-  - Multi-Paradigm
-  - Collaborative Optimization
+  - "CVPR 2026"
+  - "AI Safety"
+  - "adversarial attack"
+  - "MLLM"
+  - "Transferability"
+  - "Multi-Paradigm"
+  - "Collaborative Optimization"
 date: 2026-05-08
-content_hash: e9be64dcc0460e7e
+content_hash: b0de2b0f9edcbe88
 ---
+
 # Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -167,11 +168,11 @@ MPCAttack improves Targeted ASR by **+14.73%** (open) and **+15.65%** (closed) o
 
 ## Related Papers
 
-- [\[AAAI 2026\] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models](../../AAAI2026/llm_safety/auvic_adversarial_unlearning_of_visual_concepts_for_multi-mo.md)
 - [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
-- [\[AAAI 2026\] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models](../../AAAI2026/llm_safety/multi-faceted_attack_exposing_cross-model_vulnerabilities_in_defense-equipped_vi.md)
-- [\[ACL 2026\] Multi-component Causal Tracing in Large Language Models](../../ACL2026/llm_safety/multi-component_causal_tracing_in_large_language_models.md)
-- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](../../ICLR2026/llm_safety/doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)
+- [\[ICLR 2026\] Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients](../../ICLR2026/ai_safety/co-lora_collaborative_model_personalization_on_heterogeneous_multi-modal_clients.md)
+- [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
+- [\[CVPR 2026\] Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting](generative_adversarial_perturbations_with_cross-paradigm_transferability_on_loca.md)
+- [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
 
 </div>
 

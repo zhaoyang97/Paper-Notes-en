@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging Explainability and Embeddings: BEE Aware of Spuriousness
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Proposes the BEE framework, which identifies and names spurious correlations (SC) by analyzing how fine-tuning perturbs the weight space geometry of pre-trained representations. It discovers hidden data biases directly from classifier weights without needing counter-examples, identifying spurious associations in ImageN
+  [ICLR 2026][Interpretability][Spurious correlation detection] Proposes the BEE framework, which identifies and names spurious correlations (SC) by analyzing how fine-tuning perturbs the weight space geometry of pre-trained representations. It discovers hidden data biases directly from classifier weights without needing counter-examples, identifying spurious associations in ImageNet-1k that cause accuracy drops of up to 95%.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Spurious correlation detection"
+  - "weight space analysis"
+  - "embedding geometry"
+  - "linear probing"
+  - "foundation models"
 date: 2026-05-08
-content_hash: 01f80a2f7e56ecfb
+content_hash: 6269a8b373370138
 ---
+
 # Bridging Explainability and Embeddings: BEE Aware of Spuriousness
 
 **Conference**: ICLR 2026  

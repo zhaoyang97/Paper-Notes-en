@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RAR: Reversing Visual Attention Re-Sinking for Unlocking Potential in Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] This paper discovers that the final layers of MLLMs are often inferior to intermediate layers ("sub-optimal output layers") and traces the root cause to "visual attention re-sinking." Text-only supervision causes visual token attention gradients to become sparse, forcing late-stage attention to retreat to low-semantic
+  [ICLR 2026][Multimodal VLM][MLLM] This paper discovers that the final layers of MLLMs are often inferior to intermediate layers ("sub-optimal output layers") and traces the root cause to "visual attention re-sinking." Text-only supervision causes visual token attention gradients to become sparse, forcing late-stage attention to retreat to low-semantic background tokens. The proposed parameter-free SADS framework retains all visual heads and minimal sink heads (including one s…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
-  - attention sink
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "Visual Attention"
+  - "Attention Sink"
+  - "Sub-optimal Output Layer"
+  - "Parameter-free Sparsification"
 date: 2026-05-08
-content_hash: 417e74122b99319c
+content_hash: c3d4d0812484f398
 ---
+
 # RAR: Reversing Visual Attention Re-Sinking for Unlocking Potential in Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -130,10 +134,10 @@ Inference efficiency (Table 4, Qwen2.5-VL-3B): latency is 1.332 (base) / 1.332 (
 ## Related Papers
 
 - [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](../../ICML2026/multimodal_vlm/seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
-- [\[ICLR 2026\] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping](constructive_distortion_improving_mllms_with_attention-guided_image_warping.md)
 - [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
-- [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](../../ICML2026/multimodal_vlm/large_vision-language_models_get_lost_in_attention.md)
+- [\[ICLR 2026\] InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models](internsvg_towards_unified_svg_tasks_with_multimodal_large_language_models.md)
 - [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
+- [\[ICLR 2026\] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models](mme-emotion_a_holistic_evaluation_benchmark_for_emotional_intelligence_in_multim.md)
 
 </div>
 

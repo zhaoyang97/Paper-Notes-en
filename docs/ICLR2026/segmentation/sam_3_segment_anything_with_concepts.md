@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAM 3: Segment Anything with Concepts
 description: >-
-  [ICLR 2026][Segmentation][presence token] SAM 3 unifies "finding and segmenting all instances of a concept in images/videos" (Promptable Concept Segmentation, PCS) into a single model. By using noun phrases or visual exemplars as prompts, it outputs masks and cross-frame identities for all matching instances via a shared backbone + detector + memory tracker. S
+  [ICLR 2026][Segmentation][Promptable Concept Segmentation] SAM 3 unifies "finding and segmenting all instances of a concept in images/videos" (Promptable Concept Segmentation, PCS) into a single model. By using noun phrases or visual exemplars as prompts, it outputs masks and cross-frame identities for all matching instances via a shared backbone + detector + memory tracker. Supported by a human-AI collaborative data engine producing a training set with 4M concept labels…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - presence token
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Promptable Concept Segmentation"
+  - "Open-Vocabulary Detection"
+  - "presence token"
+  - "Data Engine"
+  - "Video Tracking"
 date: 2026-05-08
-content_hash: 2899510a7f217aa2
+content_hash: 3bc94d86a714df4d
 ---
+
 # SAM 3: Segment Anything with Concepts
 
 **Conference**: ICLR 2026  
@@ -155,6 +160,7 @@ PVS (Visual Prompt)—SAM 3 generally outperforms SAM 2 in VOS tasks, leading by
 - Value: ⭐⭐⭐⭐⭐ Open-source models and the SA-Co benchmark will deeply impact MLLMs, robotics, and AR.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

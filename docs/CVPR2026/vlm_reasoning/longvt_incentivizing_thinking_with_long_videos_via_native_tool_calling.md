@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling
 description: >-
-  [CVPR 2026][Video Understanding][Reinforcement Learning] LongVT enables multimodal large language models to process long videos by emulating the human strategy of "global skimming followed by zooming into suspicious clips." It encapsulates the model's inherent temporal grounding capability into a native `crop_video` tool, which is interleaved within the reasoning chain to it
+  [CVPR2026][VLM Reasoning][Long Video Reasoning] LongVT enables multimodal large language models to process long videos by emulating the human strategy of "global skimming followed by zooming into suspicious clips." It encapsulates the model's inherent temporal grounding capability into a native `crop_video` tool, which is interleaved within the reasoning chain to iteratively "re-examine" and correct errors. Supported by the self-constructed VideoSIAH data suite and a three-st…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Reinforcement Learning
+  - "CVPR2026"
+  - "VLM Reasoning"
+  - "Long Video Reasoning"
+  - "Agents"
+  - "Tool Calling"
+  - "Temporal Grounding"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 6a9788cb312edf6d
+content_hash: 078f1654c6a50c6f
 ---
+
 # LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling
 
 **Conference**: CVPR2026  
@@ -140,11 +145,11 @@ On VideoSIAH-Eval, which best reflects "sparse evidence retrieval," LongVT-7B-RF
 
 ## Related Papers
 
-- [\[CVPR 2026\] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking](videoseek_long-horizon_video_agent_with_tool-guided_seeking.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
+- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](../../ICLR2026/vlm_reasoning/deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
-- [\[CVPR 2026\] META: Meta Evolution of Tool Trajectory Adaptation for Long-Video Understanding](meta_meta_evolution_of_tool_trajectory_adaptation_for_long-video_understanding.md)
-- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
-- [\[CVPR 2025\] T*: Re-thinking Temporal Search for Long-Form Video Understanding](../../CVPR2025/video_understanding/re-thinking_temporal_search_for_long-form_video_understanding.md)
+- [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
 
 </div>
 

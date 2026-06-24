@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Can LLMs Refuse Questions They Do Not Know? Measuring Knowledge-Aware Refusal in Factual Tasks
 description: >-
-  [ICLR 2026][LLM Evaluation][Refusal Index] This paper proposes the **Refusal Index (RI)**—a measure defined as the Spearman rank correlation between "refusal probability" and "error probability." Using a lightweight procedure that requires only two standard evaluation passes, it quantifies the LLM's capability to "actively refuse questions beyond its knowledge,
+  [ICLR 2026][LLM Evaluation][Refusal Index] This paper proposes the **Refusal Index (RI)**—a measure defined as the Spearman rank correlation between "refusal probability" and "error probability." Using a lightweight procedure that requires only two standard evaluation passes, it quantifies the LLM's capability to "actively refuse questions beyond its knowledge," a dimension overlooked by existing metrics.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Refusal Index
-  - SimpleQA
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Refusal Index"
+  - "Knowledge-Aware Refusal"
+  - "Calibration"
+  - "Hallucination Evaluation"
+  - "SimpleQA"
 date: 2026-05-08
-content_hash: 43b347088c67598f
+content_hash: c5b4cfdd1d32b469
 ---
+
 # Can LLMs Refuse Questions They Do Not Know? Measuring Knowledge-Aware Refusal in Factual Tasks
 
 **Conference**: ICLR 2026  
@@ -105,8 +109,8 @@ RI exhibits approximately **70%** less fluctuation than heuristic metrics. Chang
 
 ## Related Papers
 
+- [\[ICLR 2026\] Are LLMs Really Not Knowledgeable? Mining the Submerged Knowledge in LLMs' Memory](are_llms_really_not_knowledgeable_mining_the_submerged_knowledge_in_llms_memory.md)
 - [\[ICLR 2026\] Do LLM Agents Know How to Ground, Recover, and Assess? Evaluating Epistemic Competence in Information-Seeking Agents](do_llm_agents_know_how_to_ground_recover_and_assess_evaluating_epistemic_compete.md)
-- [\[ICLR 2026\] Choices Speak Louder than Questions](choices_speak_louder_than_questions.md)
 - [\[ICLR 2026\] Harnessing Temporal Databases for Systematic Evaluation of Factual Time-Sensitive Question-Answering in LLMs](harnessing_temporal_databases_for_systematic_evaluation_of_factual_time-sensitiv.md)
 - [\[ICLR 2026\] Measuring LLM Novelty as the Frontier of Original and High-Quality Output](measuring_llm_novelty_as_the_frontier_of_original_and_high-quality_output.md)
 - [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)

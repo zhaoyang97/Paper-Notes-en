@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Identifiable Equivariant Networks are Layerwise Equivariant
 description: >-
-  [ICML 2026][Others][MLP] This paper proves within an architecture-agnostic abstract framework that as long as parameters satisfy "weak identifiability," an end-to-end $G$-equivariant deep network must possess an equivalent parameterization where each layer is equivariant to some latent group action. This provides a theoretical explanation for
+  [ICML 2026][Equivariance] This paper proves within an architecture-agnostic abstract framework that as long as parameters satisfy "weak identifiability," an end-to-end $G$-equivariant deep network must possess an equivalent parameterization where each layer is equivariant to some latent group action. This provides a theoretical explanation for the long-observed experimental phenomenon where "end-to-end equivariance spontaneously collapses into layerwise equivariance."
 tags:
-  - ICML 2026
-  - Others
-  - MLP
+  - "ICML 2026"
+  - "Equivariance"
+  - "Identifiability"
+  - "Submodel"
+  - "Latent space symmetry"
+  - "MLP"
+  - "Multi-head attention"
 date: 2026-05-08
-content_hash: 6f2e2632d3a13423
+content_hash: 45bb812407d7aaef
 ---
+
 # Identifiable Equivariant Networks are Layerwise Equivariant
 
 **Conference**: ICML 2026  
@@ -126,9 +131,9 @@ Conclusion: Even though the objective only requires *end-to-end* mirror equivari
 
 - [\[ICML 2026\] How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks](how_the_optimizer_shapes_learned_solutions_in_equivariant_neural_networks.md)
 - [\[NeurIPS 2025\] Equivariance by Contrast: Identifiable Equivariant Embeddings from Unlabeled Finite Group Actions](../../NeurIPS2025/others/equivariance_by_contrast_identifiable_equivariant_embeddings_from_unlabeled_fini.md)
+- [\[ICLR 2026\] Any-Subgroup Equivariant Networks via Symmetry Breaking](../../ICLR2026/others/any-subgroup_equivariant_networks_via_symmetry_breaking.md)
 - [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](../../NeurIPS2025/others/learning_approximately_equivariant_networks_via_constrained_optimization.md)
 - [\[NeurIPS 2025\] On Universality Classes of Equivariant Networks](../../NeurIPS2025/others/on_universality_classes_of_equivariant_networks.md)
-- [\[ICML 2025\] Permutation Equivariant Neural Networks for Symmetric Tensors](../../ICML2025/others/permutation_equivariant_neural_networks_for_symmetric_tensors.md)
 
 </div>
 

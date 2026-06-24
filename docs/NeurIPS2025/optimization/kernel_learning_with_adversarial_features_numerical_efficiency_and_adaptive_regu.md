@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Kernel Learning with Adversarial Features: Numerical Efficiency and Adaptive Regularization
 description: >-
-  [NeurIPS 2025][Optimization][adversarial training] This paper proposes a new paradigm that relocates adversarial perturbations from the input space to the feature space within reproducing kernel Hilbert spaces (RKHS)…
+  [NeurIPS 2025][Optimization][adversarial training] This paper proposes a new paradigm that relocates adversarial perturbations from the input space to the feature space within reproducing kernel Hilbert spaces (RKHS), enabling exact closed-form solutions to the inner maximization problem. The outer minimization is solved efficiently via iterative reweighted kernel ridge regression, and the resulting adaptive regularization matches cross-validation performance without any hype…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "adaptive regularization"
   - "multiple kernel learning"
 date: 2026-05-08
-content_hash: a7ed645d271cd727
+content_hash: 36668874dc0f014f
 ---
 
 # Kernel Learning with Adversarial Features: Numerical Efficiency and Adaptive Regularization
@@ -154,10 +154,10 @@ The adaptive regularization property can inspire the design of regularization st
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Theory for Kernel Bilevel Optimization](learning_theory_for_kernel_bilevel_optimization.md)
+- [\[ICML 2025\] AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs](../../ICML2025/optimization/advprompter_fast_adaptive_adversarial_prompting_for_llms.md)
 - [\[NeurIPS 2025\] Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models](fantastic_features_and_where_to_find_them_a_probing_method_to_combine_features_f.md)
 - [\[NeurIPS 2025\] Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints](beyond_tildeosqrtt_constraint_violation_for_online_convex_optimization_with_adve.md)
-- [\[NeurIPS 2025\] FlyLoRA: Boosting Task Decoupling and Parameter Efficiency via Implicit Rank-Wise Mixture-of-Experts](flylora_boosting_task_decoupling_and_parameter_efficiency_via_implicit_rank-wise.md)
-- [\[ICLR 2026\] Weak-SIGReg: Covariance Regularization for Stable Deep Learning](../../ICLR2026/optimization/weak-sigreg_covariance_regularization_for_stable_deep_learning.md)
+- [\[NeurIPS 2025\] Functional Scaling Laws in Kernel Regression: Loss Dynamics and Learning Rate Schedules](functional_scaling_laws_in_kernel_regression_loss_dynamics_and_learning_rate_sch.md)
 
 </div>
 

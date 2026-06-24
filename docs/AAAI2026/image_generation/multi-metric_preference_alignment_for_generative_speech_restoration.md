@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Metric Preference Alignment for Generative Speech Restoration
 description: >-
-  [AAAI 2026][Image Generation][Preference alignment] This paper proposes a Multi-Metric Preference Alignment strategy that constructs a preference dataset, GenSR-Pref (80K pairs)…
+  [AAAI 2026][Image Generation][Preference alignment] This paper proposes a Multi-Metric Preference Alignment strategy that constructs a preference dataset, GenSR-Pref (80K pairs), requiring unanimous agreement across multiple complementary metrics. DPO is applied to post-training alignment of three generative speech restoration paradigms (AR, MGM, FM), achieving substantial quality improvements while effectively mitigating reward hacking.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "multi-metric"
   - "generative models"
 date: 2026-05-08
-content_hash: bda140a8216ae154
+content_hash: 76de3cfd3dcfd593
 ---
 
 # Multi-Metric Preference Alignment for Generative Speech Restoration
@@ -138,10 +138,10 @@ Single-metric alignment improves only the target metric, while non-target metric
 ## Related Papers
 
 - [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
+- [\[CVPR 2026\] MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment](../../CVPR2026/image_generation/multicrafter_high-fidelity_multi-subject_generation_via_disentangled_attention_a.md)
 - [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](../../ICLR2026/image_generation/diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
 - [\[AAAI 2026\] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement](rethinking_flow_and_diffusion_bridge_models_for_speech_enhancement.md)
-- [\[AAAI 2026\] Multi-Aspect Cross-modal Quantization for Generative Recommendation](multi-aspect_cross-modal_quantization_for_generative_recommendation.md)
-- [\[AAAI 2026\] MACS: Multi-source Audio-to-Image Generation with Contextual Significance and Semantic Alignment](macs_multi-source_audio-to-image_generation_with_contextual_significance_and_sem.md)
+- [\[ICLR 2026\] GenDR: Lighten Generative Detail Restoration](../../ICLR2026/image_generation/gendr_lighten_generative_detail_restoration.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-Modal Image Fusion via Intervention-Stable Feature Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] A multi-modal image fusion framework inspired by causal inference is proposed. By probing true inter-modal dependencies through three structured intervention strategies (complementary masking, random masking, and modality dropout), and designing a Causal Feature Integrator (CFI) to learn intervention-stable features, t
+  [CVPR 2026][Multimodal VLM][Multi-modal image fusion] A multi-modal image fusion framework inspired by causal inference is proposed. By probing true inter-modal dependencies through three structured intervention strategies (complementary masking, random masking, and modality dropout), and designing a Causal Feature Integrator (CFI) to learn intervention-stable features, the method achieves a PSNR of 66.02 and AG of 4.129 on MSRS, with an object detection mAP of 0.821.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-modal image fusion"
+  - "causal inference"
+  - "intervention learning"
+  - "infrared and visible image fusion"
+  - "feature stability"
 date: 2026-05-08
-content_hash: 31b7b1f694837b45
+content_hash: a98af9f0b033bac8
 ---
+
 # Multi-Modal Image Fusion via Intervention-Stable Feature Learning
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,11 @@ The total loss $\mathcal{L} = \mathcal{L}_f + \alpha \mathcal{L}_{\text{inv}} + 
 
 ## Related Papers
 
+- [\[CVPR 2026\] ReCoFuse: Ultra-Robust Image Fusion via Restorative Multi-Modal Diffusion Reciprocal Coupling](recofuse_ultra-robust_image_fusion_via_restorative_multi-modal_diffusion_recipro.md)
 - [\[CVPR 2026\] Intervention-Aware Multiscale Representation Learning from Imaging Phenomics and Perturbation Transcriptomics](intervention-aware_multiscale_representation_learning_from_imaging_phenomics_and.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
 - [\[CVPR 2026\] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion](videofusion_a_spatio-temporal_collaborative_network_for_multi-modal_video_fusion.md)
-- [\[CVPR 2026\] OmniZip: Learning a Unified and Lightweight Lossless Compressor for Multi-Modal Data](omnizip_learning_a_unified_and_lightweight_lossless_compressor_for_multi-modal_d.md)
 - [\[CVPR 2025\] Multi-Layer Visual Feature Fusion in Multimodal LLMs: Methods, Analysis, and Best Practices](../../CVPR2025/multimodal_vlm/multi-layer_visual_feature_fusion_in_multimodal_llms_methods_analysis_and_best_p.md)
-- [\[CVPR 2026\] Stable and Efficient Single-Rollout RL for Multimodal Reasoning](stable_and_efficient_single-rollout_rl_for_multimodal_reasoning.md)
 
 </div>
 

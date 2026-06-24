@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Flattery in Motion: Benchmarking and Analyzing Sycophancy in Video-LLMs
 description: >-
-  [ACL 2026][Interpretability][Video-LLM] The authors construct the first Video-LLM sycophancy benchmark, ViSE (367 videos / 6,367 multiple-choice questions / 7 categories of sycophantic scenarios). They systematically reveal the universal phenomenon across 9 SOTA Video-LLMs where "models abandon visual evidence to cater to users" and propose two training-free
+  [ACL 2026][Interpretability][Video-LLM] The authors construct the first Video-LLM sycophancy benchmark, ViSE (367 videos / 6,367 multiple-choice questions / 7 categories of sycophantic scenarios). They systematically reveal the universal phenomenon across 9 SOTA Video-LLMs where "models abandon visual evidence to cater to users" and propose two training-free mitigation methods: (i) key-frame selection reduces sycophancy by up to 22.01% (and is proven via attention analysis to…
 tags:
-  - ACL 2026
-  - Interpretability
-  - Video-LLM
-  - representation steering
+  - "ACL 2026"
+  - "Interpretability"
+  - "Video-LLM"
+  - "sycophancy"
+  - "key-frame selection"
+  - "representation steering"
+  - "attention analysis"
 date: 2026-05-08
-content_hash: 1d7a3195335175e9
+content_hash: d3d347ddb03101e5
 ---
+
 # Flattery in Motion: Benchmarking and Analyzing Sycophancy in Video-LLMs
 
 **Conference**: ACL 2026  
@@ -150,8 +154,8 @@ Both mitigation methods are training-free inference-time interventions requiring
 - [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](../../CVPR2026/interpretability/back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
 - [\[AAAI 2026\] Can LLMs Truly Embody Human Personality? Analyzing AI and Human Behavior Alignment in Dispute Resolution](../../AAAI2026/interpretability/can_llms_truly_embody_human_personality_analyzing_ai_and_human_behavior_alignmen.md)
 - [\[CVPR 2026\] Make it SING: Analyzing Semantic Invariants in Classifiers](../../CVPR2026/interpretability/make_it_sing_analyzing_semantic_invariants_in_classifiers.md)
-- [\[ACL 2026\] Jacobian Scopes: Token-Level Causal Attributions in LLMs](jacobian_scopes_token-level_causal_attributions_in_llms.md)
 - [\[CVPR 2025\] Geometry-Guided Camera Motion Understanding in VideoLLMs](../../CVPR2025/interpretability/geometry-guided_camera_motion_understanding_in_videollms.md)
+- [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text Alignment](../../ICLR2026/interpretability/dynamic_reflections_probing_video_representations_with_text_alignment.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] D-Convexity: A Unified Differentiable Convex Shape Prior via Quasi-Concavity for Data-driven Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] The "convex segmentation" prior is reformulated from a global constraint on binary sets into a **quasi-concavity** constraint on the network's output probability map $u$. This yields a threshold-free, differentiable, and densely computable convexity loss. Further, a Convex Gradient Projection Module (CGPM) is used to e
+  [CVPR 2026][Medical Imaging][Convex shape prior] The "convex segmentation" prior is reformulated from a global constraint on binary sets into a **quasi-concavity** constraint on the network's output probability map $u$. This yields a threshold-free, differentiable, and densely computable convexity loss. Further, a Convex Gradient Projection Module (CGPM) is used to enforce hard convexity during inference. The method consistently improves Dice/IoU and reduces Hausdorff distanc…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Convex shape prior"
+  - "Quasi-concavity"
+  - "Differentiable segmentation"
+  - "Retinal segmentation"
+  - "Level set"
 date: 2026-05-08
-content_hash: 77575cf2aa485178
+content_hash: 43fc1cafdf25bf6e
 ---
+
 # D-Convexity: A Unified Differentiable Convex Shape Prior via Quasi-Concavity for Data-driven Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -146,6 +152,7 @@ Orders of conditions and backbone adaptability (Table 3, 10 paired trials on REF
 - Value: ⭐⭐⭐⭐ (A practical plug-and-play module for medical segmentation with strong theoretical backing)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

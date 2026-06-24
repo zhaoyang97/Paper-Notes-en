@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper provides the first rigorous sample complexity proof for "easy-to-hard" curriculum RL post-training: on the state-conditioned autoregressive reasoning trees of transformers, if the curriculum maintains the difficulty ratio of adjacent stages at the level of the $L/p$-th root of the target difficulty, the tota
+  [ICML 2026][Reinforcement Learning][Curriculum Learning] This paper provides the first rigorous sample complexity proof for "easy-to-hard" curriculum RL post-training: on the state-conditioned autoregressive reasoning trees of transformers, if the curriculum maintains the difficulty ratio of adjacent stages at the level of the $L/p$-th root of the target difficulty, the total sample complexity can be reduced from exponential $(C^\star)^L$ in direct training to polynomial $L\c…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Curriculum Learning"
+  - "CoT Post-training"
+  - "Sample Complexity"
+  - "Coverage Coefficient"
+  - "Rejection Sampling"
 date: 2026-05-08
-content_hash: d0727dfbb611386b
+content_hash: 6107f919fa68bde5
 ---
+
 # Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training
 
 **Conference**: ICML 2026  
@@ -112,11 +118,11 @@ The paper is primarily theoretical; experiments consist of small-scale simulatio
 
 ## Related Papers
 
+- [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](../../ICLR2026/reinforcement_learning/prompt_curriculum_learning_for_efficient_llm_post-training.md)
 - [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
 - [\[ICML 2026\] RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search](rl4rla_teaching_ml_to_discover_randomized_linear_algebra_algorithms_through_curr.md)
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](../../ICLR2026/reinforcement_learning/representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](../../ICLR2026/reinforcement_learning/post-training_large_language_models_for_diverse_high-quality_responses.md)
-- [\[ACL 2026\] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study](../../ACL2026/reinforcement_learning/scaling_behaviors_of_llm_reinforcement_learning_post-training_an_empirical_study.md)
-- [\[ICLR 2026\] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?](../../ICLR2026/reinforcement_learning/breaking_barriers_do_reinforcement_post_training_gains_transfer_to_unseen_domain.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] UniSS discretizes speech into three types of tokens—speaker, linguistic, and semantic—and integrates them directly into a pre-trained text LLM (Qwen2.5-1.5B). By employing a single-stage autoregressive model with a "Listen-Translate-Speak" cross-modal Chain-of-Thought (CoT) prompt, it transfers the LLM's inherent text
+  [ICLR 2026][Audio & Speech][Speech-to-Speech Translation] UniSS discretizes speech into three types of tokens—speaker, linguistic, and semantic—and integrates them directly into a pre-trained text LLM (Qwen2.5-1.5B). By employing a single-stage autoregressive model with a "Listen-Translate-Speak" cross-modal Chain-of-Thought (CoT) prompt, it transfers the LLM's inherent text translation capabilities to the speech domain. This approach achieves accurate translation while prese…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech-to-Speech Translation"
+  - "Expressiveness Preservation"
+  - "Cross-modal Chain-of-Thought"
+  - "Unified Language Model"
+  - "S2ST Dataset"
 date: 2026-05-08
-content_hash: 312fcc63f280fafe
+content_hash: 5c54bfe2d770206f
 ---
+
 # UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice
 
 **Conference**: ICLR 2026  

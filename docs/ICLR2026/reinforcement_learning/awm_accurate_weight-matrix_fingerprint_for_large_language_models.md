@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AWM: Accurate Weight-Matrix Fingerprint for Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][model fingerprinting] The paper proposes AWM, a training-free LLM weight matrix fingerprinting method. It utilizes the Linear Assignment Problem (LAP) to recover permutations and sign flips of the embedding layer, followed by unbiased CKA to eliminate the impact of orthogonal transformations on Q/K matrices. It achieves a perfect AUC (1.0)
+  [ICLR 2026][Reinforcement Learning][model fingerprinting] The paper proposes AWM, a training-free LLM weight matrix fingerprinting method. It utilizes the Linear Assignment Problem (LAP) to recover permutations and sign flips of the embedding layer, followed by unbiased CKA to eliminate the impact of orthogonal transformations on Q/K matrices. It achieves a perfect AUC (1.0) across 150 LLM pairs and remains robust against six types of post-training—including SFT…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - model fingerprinting
-  - intellectual property
-  - weight manipulation
-  - CKA
-  - linear assignment problem
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "model fingerprinting"
+  - "intellectual property"
+  - "weight manipulation"
+  - "CKA"
+  - "linear assignment problem"
 date: 2026-05-08
-content_hash: c3ec4e4d25b846be
+content_hash: a84ecdb3cb8e07f2
 ---
+
 # AWM: Accurate Weight-Matrix Fingerprint for Large Language Models
 
 **Conference**: ICLR 2026  

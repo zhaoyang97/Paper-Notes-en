@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Exploring State-Space Models for Data-Specific Neural Representations
 description: >-
-  [ICLR 2026][Others][State Space Model] This paper introduces State-Space Models (SSMs) to "data-specific neural representations" for the first time (overfitting a compact network to a single image/video/3D instance). It theoretically demonstrates that the hidden states of SSMs inherently encode the input signal itself and proposes the Structured State-Space
+  [ICLR 2026][State-Space Models] This paper introduces State-Space Models (SSMs) to "data-specific neural representations" for the first time (overfitting a compact network to a single image/video/3D instance). It theoretically demonstrates that the hidden states of SSMs inherently encode the input signal itself and proposes the Structured State-Space Kernel (S3K). By distilling SSMs into convolutional kernels to support multi-dimensional inputs and downsampling…
 tags:
-  - ICLR 2026
-  - Others
-  - State Space Model
-  - S3K
-  - NeRV
+  - "ICLR 2026"
+  - "State-Space Models"
+  - "Implicit Neural Representation"
+  - "Neural Compression"
+  - "S3K"
+  - "NeRV"
+  - "Laplacian Pyramid"
 date: 2026-05-08
-content_hash: feaa6566703d4284
+content_hash: 8d89316f29a35791
 ---
+
 # Exploring State-Space Models for Data-Specific Neural Representations
 
 **Conference**: ICLR 2026  
@@ -118,10 +121,10 @@ SSM Type × Encoder Variant (CIFAR-100 image reconstruction PSNR), selected resu
 ## Related Papers
 
 - [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
-- [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](../../NeurIPS2025/others/deep_continuous-time_state-space_models_for_marked_event_sequences.md)
-- [\[ICML 2025\] UnHiPPO: Uncertainty-Aware Initialization for State Space Models](../../ICML2025/others/unhippo_uncertainty-aware_initialization_for_state_space_models.md)
 - [\[ICLR 2026\] Beyond Uniformity: Regularizing Implicit Neural Representations through a Lipschitz Lens](beyond_uniformity_regularizing_implicit_neural_representations_through_a_lipschi.md)
-- [\[ICLR 2026\] From atom to space：面向材料空间性质的区域化读出函数 SpatialRead](from_atom_to_space_a_region-based_readout_function_for_spatial_properties_of_mat.md)
+- [\[ICML 2025\] UnHiPPO: Uncertainty-Aware Initialization for State Space Models](../../ICML2025/others/unhippo_uncertainty-aware_initialization_for_state_space_models.md)
+- [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](../../NeurIPS2025/others/deep_continuous-time_state-space_models_for_marked_event_sequences.md)
+- [\[ACL 2026\] Neural Induction of Finite-State Transducers](../../ACL2026/others/neural_induction_of_finite-state_transducers.md)
 
 </div>
 

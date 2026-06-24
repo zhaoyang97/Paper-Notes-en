@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Text-to-Code Generation for Modular Building Layouts in Building Information Modeling
 description: >-
-  [NeurIPS 2025][Code Intelligence][Text-to-Code] This paper proposes Text2MBL, a framework that translates natural language descriptions into executable BIM code (rather than coordinate sequences). Through an object-orien…
+  [NeurIPS 2025][Code Intelligence][Text-to-Code] This paper proposes Text2MBL, a framework that translates natural language descriptions into executable BIM code (rather than coordinate sequences). Through an object-oriented code architecture and LLM fine-tuning, it enables automatic generation of modular building layouts, achieving 10%+ IoU improvement in geometric consistency over coordinate-driven methods.
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "Code Generation"
   - "LLM Fine-tuning"
 date: 2026-05-08
-content_hash: d27a2caf4ba96821
+content_hash: bbddd6ebd8b05eca
 ---
 
 # Text-to-Code Generation for Modular Building Layouts in Building Information Modeling
@@ -133,11 +133,11 @@ The input is a natural language architectural description (e.g., "two modules; t
 
 ## Related Papers
 
+- [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](../../ICLR2026/code_intelligence/viscoder2_building_multi-language_visualization_coding_agents.md)
 - [\[NeurIPS 2025\] Embedding Alignment in Code Generation for Audio](embedding_alignment_in_code_generation_for_audio.md)
-- [\[ICML 2026\] Entropy-informed Decoding: Adaptive Information-Driven Branching](../../ICML2026/code_intelligence/entropy-informed_decoding_adaptive_information-driven_branching.md)
-- [\[NeurIPS 2025\] MaintainCoder: Maintainable Code Generation Under Dynamic Requirements](maintaincoder_maintainable_code_generation_under_dynamic_requirements.md)
 - [\[NeurIPS 2025\] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation](qimeng-salv_signal-aware_learning_for_verilog_code_generation.md)
-- [\[ICML 2026\] NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents](../../ICML2026/code_intelligence/nemo_execution-aware_optimization_modeling_via_autonomous_coding_agents.md)
+- [\[NeurIPS 2025\] MaintainCoder: Maintainable Code Generation Under Dynamic Requirements](maintaincoder_maintainable_code_generation_under_dynamic_requirements.md)
+- [\[NeurIPS 2025\] Once Upon an Input: Reasoning via Per-Instance Program Synthesis](once_upon_an_input_reasoning_via_per-instance_program_synthesis.md)
 
 </div>
 

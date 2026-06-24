@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][OOD Detection] This paper proposes CoEvo, a training-free and annotation-free test-time framework that dynamically updates positive and negative proxy caches through a bidirectional sample-con…
+  [AAAI 2026][Multimodal VLM][OOD Detection] This paper proposes CoEvo, a training-free and annotation-free test-time framework that dynamically updates positive and negative proxy caches through a bidirectional sample-conditioned text/visual proxy co-evolution mechanism. On ImageNet-1K, CoEvo improves AUROC by 1.33% and reduces FPR95 by 45.98% (from 18.92% to 10.22%) over the strongest negative-label baseline, achieving state-of-the-art zero-shot OOD detection.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -14,7 +14,7 @@ tags:
   - "CLIP"
   - "Negative Labels"
 date: 2026-05-08
-content_hash: 27ccde48e7d931ea
+content_hash: 3c12dd91bea4bce0
 ---
 
 # Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models
@@ -166,11 +166,11 @@ The co-evolution paradigm generalizes naturally to other test-time adaptation sc
 
 ## Related Papers
 
+- [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](../../CVPR2026/multimodal_vlm/ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
 - [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](../../CVPR2026/multimodal_vlm/activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
 - [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](../../ICCV2025/multimodal_vlm/negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
+- [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](../../CVPR2026/multimodal_vlm/uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
 - [\[CVPR 2026\] Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs](../../CVPR2026/multimodal_vlm/mind_the_way_you_select_negative_texts_pursuing_the_distance_consistency_in_ood_.md)
-- [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](../../ACL2026/multimodal_vlm/cross-modal_taxonomic_generalization_in_vision-_language_models.md)
-- [\[AAAI 2026\] RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)](rmadapter_reconstructionbased_multimodal_adapter_for_visionlanguage.md)
 
 </div>
 

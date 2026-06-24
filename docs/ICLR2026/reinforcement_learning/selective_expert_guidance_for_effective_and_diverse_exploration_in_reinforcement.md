@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Selective Expert Guidance for Effective and Diverse Exploration in Reinforcement Learning of LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] Addressing the issues of ineffective exploration and entropy collapse in RLVR training for weak models, this paper proposes MENTOR. It injects expert distributions for mixed-policy sampling only at "critical decision points" (high-entropy tokens) and utilizes a Mixed-policy GRPO with asymmetric advantages. This allows
+  [ICLR 2026][Reinforcement Learning][RLVR] Addressing the issues of ineffective exploration and entropy collapse in RLVR training for weak models, this paper proposes MENTOR. It injects expert distributions for mixed-policy sampling only at "critical decision points" (high-entropy tokens) and utilizes a Mixed-policy GRPO with asymmetric advantages. This allows the model to absorb the essence of expert reasoning rather than superficial imitation…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Exploration Diversity"
+  - "Expert Guidance"
+  - "Entropy Collapse"
+  - "Mixed Policy"
 date: 2026-05-08
-content_hash: c70a8a630452c243
+content_hash: 7bd031e0ca1f80a4
 ---
+
 # Selective Expert Guidance for Effective and Diverse Exploration in Reinforcement Learning of LLMs
 
 **Conference**: ICLR 2026  
@@ -144,15 +149,16 @@ Evaluated on Qwen2.5-7B/3B-Base and LLaMA3.1-8B-Base. Compared to On-policy RL, 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] EvoCoT: Overcoming the Exploration Bottleneck in Reinforcement Learning for LLMs](../../ACL2026/reinforcement_learning/evocot_overcoming_the_exploration_bottleneck_in_reinforcement_learning.md)
 - [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
+- [\[ICLR 2026\] Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning](controllable_exploration_in_hybrid-policy_rlvr_for_multi-modal_reasoning.md)
 - [\[ICLR 2026\] MIRA: Memory-Integrated Reinforcement Learning Agent with Limited LLM Guidance](mira_memory-integrated_reinforcement_learning_agent_with_limited_llm_guidance.md)
 - [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](../../ACL2026/reinforcement_learning/dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
-- [\[ICLR 2026\] Getting Your LLMs Ready for Reinforcement Learning with Lightweight SFT](getting_your_llms_ready_for_reinforcement_learning_with_lightweight_sft.md)
 
 </div>
 

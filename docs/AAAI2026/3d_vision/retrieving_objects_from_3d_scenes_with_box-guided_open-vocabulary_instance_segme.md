@@ -2,183 +2,183 @@
 title: >-
   [Paper Note] Retrieving Objects from 3D Scenes with Box-Guided Open-Vocabulary Instance Segmentation
 description: >-
-  [AAAI 2026][3D Vision][Open-vocabulary 3D instance segmentation] This paper proposes a box-guided approach that leverages 2D bounding boxes from the open-vocabulary detector YOLO-World to guide the assembly of 3D instanc…
+  [AAAI 2026][3D Vision][Open-Vocabulary 3D Instance Segmentation] A Box-Guided approach is proposed, which leverages detection boxes from the 2D open-vocabulary detector YOLO-World to guide the construction of 3D instance masks from superpoints. Eliminating the need for SAM and CLIP, it achieves high efficiency (< 1 minute per scene) while significantly improving the retrieval capability for low-frequency target categories.
 tags:
   - "AAAI 2026"
   - "3D Vision"
-  - "Open-vocabulary 3D instance segmentation"
-  - "3D object retrieval"
-  - "superpoints"
+  - "Open-Vocabulary 3D Instance Segmentation"
+  - "3D Object Retrieval"
+  - "Superpoints"
   - "YOLO-World"
-  - "2D-to-3D lifting"
+  - "2D-to-3D Lifting"
 date: 2026-05-08
-content_hash: 85eede20057cb6ec
+content_hash: 37e25696baad93fa
 ---
 
 # Retrieving Objects from 3D Scenes with Box-Guided Open-Vocabulary Instance Segmentation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2512.19088](https://arxiv.org/abs/2512.19088)  
 **Code**: [https://github.com/ndkhanh360/BoxOVIS](https://github.com/ndkhanh360/BoxOVIS)  
-**Area**: 3D Vision
-**Keywords**: Open-vocabulary 3D instance segmentation, 3D object retrieval, superpoints, YOLO-World, 2D-to-3D lifting
+**Area**: 3D Vision  
+**Keywords**: Open-Vocabulary 3D Instance Segmentation, 3D Object Retrieval, Superpoints, YOLO-World, 2D-to-3D Lifting
 
 ## TL;DR
 
-This paper proposes a box-guided approach that leverages 2D bounding boxes from the open-vocabulary detector YOLO-World to guide the assembly of 3D instance masks from superpoints, without relying on SAM or CLIP. The method achieves high efficiency (<1 min/scene) while substantially improving retrieval performance on rare-category objects.
+A Box-Guided approach is proposed, which leverages detection boxes from the 2D open-vocabulary detector YOLO-World to guide the construction of 3D instance masks from superpoints. Eliminating the need for SAM and CLIP, it achieves high efficiency (< 1 minute per scene) while significantly improving the retrieval capability for low-frequency target categories.
 
 ## Background & Motivation
 
-### State of the Field
+### Background
 
-Open-vocabulary 3D instance segmentation (OV-3DIS) aims to retrieve objects of arbitrary categories from 3D point clouds given text queries, and is a core problem in robotics and augmented reality. Existing methods fall into two main categories:
+Open-vocabulary 3D instance segmentation (OV-3DIS) aims to retrieve objects of arbitrary categories in 3D point clouds based on text queries, which is a core problem in robotics and augmented reality. Existing methods are mainly divided into two categories:
 
-- **SAM+CLIP-based methods** (OpenMask3D, Open3DIS, OVIR-3D): generate 2D masks with SAM → lift to 3D → classify with CLIP. Reasonable accuracy but **extremely slow** (5–10 min/scene), making deployment impractical.
-- **Efficient method** Open-YOLO 3D: uses the class-agnostic 3D segmentor Mask3D to generate candidate masks and YOLO-World for classification, ~22 s/scene, eliminating SAM and CLIP.
+- **SAM+CLIP-based methods** (OpenMask3D, Open3DIS, OVIR-3D): Use SAM to generate 2D masks -> lift to 3D -> classify with CLIP. Although accurate, they are **extremely slow** (5-10 minutes per scene), making them impractical for deployment.
+- **Efficient methods** (Open-YOLO 3D): Use a pre-trained 3D segmenter Mask3D to generate class-agnostic masks + YOLO-World for classification, taking about 22 seconds per scene by eliminating SAM and CLIP.
 
 ### Limitations of Prior Work
 
-Despite its speed, Open-YOLO 3D has a **critical weakness**: it relies entirely on Mask3D (a pretrained 3D segmentor) to generate 3D candidate masks. Due to limited 3D training data (e.g., incomplete category coverage in ScanNet), Mask3D frequently **misses low-frequency or rare categories** (e.g., calendars, thermometers). Although YOLO-World can recognize such objects, Open-YOLO 3D uses it only for classification and not for generating new masks.
+Although Open-YOLO 3D is fast, it has a **critical drawback**: it completely relies on Mask3D (a pre-trained 3D segmenter) to generate 3D candidate masks. Due to the limited size of 3D training data (incomplete category coverage in datasets like ScanNet), Mask3D often misses **low-frequency/rare categories** (such as calendars, thermometers, etc.). While 2D detectors (YOLO-World) can recognize these objects, Open-YOLO 3D only utilizes them for classification rather than for generating new masks.
 
-### Root Cause & Starting Point
+### Key Challenge & Key Insight
 
-The tension lies between the limited generalization of 3D segmentors and the rich world knowledge of 2D detectors. The paper's core idea is to **use 2D detection boxes to guide the assembly of new 3D instance masks from superpoints**—inheriting the generalization capacity of 2D models while avoiding SAM and thus preserving efficiency.
+Challenge: The generalization ability of 3D segmenters is limited vs. 2D detectors possess rich world knowledge. The core idea is: **using detection boxes from 2D detectors to guide the construction of new instance masks from 3D superpoints**, thereby inheriting the generalization capabilities of 2D models without relying on SAM (maintaining high efficiency).
 
 ## Method
 
 ### Overall Architecture
 
-**Input**: 3D point cloud $P$ + multi-view RGB-D images + camera intrinsics/extrinsics + text query.
-**Output**: 3D instance masks matching the query.
+Input: 3D point cloud $P$ + multi-view RGB-D images + camera intrinsics and extrinsics + text query.  
+Output: 3D instance masks matching the query.
 
-**Pipeline**:
-1. Generate 3D superpoints (geometrically consistent regions) via graph-based segmentation.
-2. Generate point-based masks using Mask3D (conventional path).
-3. Run YOLO-World on RGB frames to produce 2D bounding boxes.
-4. **Box-Guided RGBD-Based Mask Generation**: lift 2D boxes to 3D and assemble new instance masks from superpoints.
-5. Merge both types of masks; use detection box results for classification.
+Pipeline:
+1. Generate 3D superpoints (geometrically consistent regions) using a graph segmentation algorithm.
+2. Generate point-based masks using Mask3D (traditional path).
+3. Generate 2D bounding boxes on RGB images using YOLO-World.
+4. **Box-Guided RGBD-Based Mask Generation**: Lift 2D boxes to 3D, and assemble new instance masks using superpoints.
+5. Merge the two types of masks and perform classification using detection results.
 
 ### Key Designs
 
-#### 1. Box-Guided RGBD-Based Mask Generation
+#### 1. Box-Guided RGBD-Based Mask Generation (New Instance Discovery Guided by Boxes)
 
-**Function**: Generate 3D masks for rare objects missed by the 3D segmentor.
+**Function**: Generate 3D masks for rare objects missed by the 3D segmenter.
 
-**Core pipeline**:
+**Core Pipeline**:
 
-**(a) Lifting 2D boxes to 3D**:
-- For each RGB frame, YOLO-World produces detections $B_i = \{(b_{ij}, c_{ij})\}$.
-- Pixels within each box are projected to 3D via depth maps and camera parameters.
-- Open3D is used to compute a 3D oriented bounding box $b_{ij}^{3D}$ enclosing all projected points.
+**(a) 2D-to-3D Box Lifting**:
+- For each RGB frame, YOLO-World generates detection boxes $B_i = \{(b_{ij}, c_{ij})\}$
+- Project pixels within the bounding box into 3D using depth information and camera parameters.
+- Compute the 3D oriented bounding box $b_{ij}^{3D}$ containing all projected points using Open3D.
 
-**(b) Redundancy filtering**:
-- If the overlap between a 3D box and any existing point-based mask exceeds $\tau_{\text{box}}\%$, the object has already been detected by the 3D segmentor and the box is discarded.
+**(b) Redundancy Filtering**:
+- If the intersection of the 3D box with an existing point-based mask is > $\tau_{\text{box}}\%$, it indicates that the object has already been detected by the 3D segmenter, and the box is discarded.
 
-**(c) Superpoint assembly**:
-- Superpoints are assigned to a box if $\geq \tau_{\text{spp}}\%$ of their points fall inside the box.
-- This yields a coarse mask $S_{ij}$ for each box.
+**(c) Superpoint Assembly**:
+- Extract superpoints within the box: if a superpoint has $\geq \tau_{\text{spp}}\%$ of its points inside the box, it is assigned to that box.
+- Obtain a coarse mask $S_{ij}$ for each box.
 
-**(d) Cross-frame merging**:
-- Frames are processed sequentially; if a new mask has IoU $\geq \tau_{\text{merge}}$ with an existing candidate of the same category, their superpoints are merged; otherwise the new mask is added as a new candidate.
-- A final filtering pass discards new masks whose IoU with any point-based mask exceeds $\tau_{\text{filter}}$, preserving the geometrically superior point-based masks for already-detected objects.
+**(d) Cross-Frame Merging**:
+- Process frame-by-frame: if the IoU between the new mask and an existing candidate is $\geq \tau_{\text{merge}}$ and they share the same category, merge the superpoints; otherwise, add it as a new candidate.
+- Perform a final round of filtering: new masks with an IoU > $\tau_{\text{filter}}$ with a point-based mask are discarded (prioritizing the retention of point-based masks which have higher geometric quality).
 
 **Design Motivation**:
-- Superpoint assembly instead of SAM: superpoints are computed via the efficient Felzenszwalb graph-based algorithm, incurring far lower computational cost than SAM.
-- Redundancy filtering ensures the new masks complement rather than replace the 3D segmentor's output.
+- Using superpoint assembly instead of SAM: Superpoints are based on an efficient graph segmentation algorithm (Felzenszwalb), making the computational cost much lower than SAM.
+- Redundancy filtering ensures that new masks supplement rather than replace the output of the 3D segmenter—objects already detected retain their more accurate point-based masks.
 
-#### 2. Box-Based Mask Classification
+#### 2. Box-Based Mask Classification (Box-Based Classification)
 
 **Function**: Assign category labels to each 3D candidate mask.
 
-Following Open-YOLO 3D, CLIP is not used:
-- **Label map construction**: for each frame, box regions are filled with detected category labels; larger boxes are filled first, then overwritten by smaller ones (intuition: a visible small object is closer to the camera than a larger one).
-- **Visibility computation**: all 3D points are projected to all frames at once to compute in-frame and occlusion-aware visibility.
-- **Category aggregation**: for each 3D mask, projected points in the top-$k$ most visible frames are polled for their label map entries, and the most frequent category is assigned.
+Following the approach of Open-YOLO 3D, entirely without CLIP:
+- **Construct Label Map**: For each frame, fill the detection box regions with corresponding category labels, filling large boxes first and overwriting them with smaller boxes (intuition: if a small object is visible, it is likely closer to the camera than a larger object).
+- **Calculate Visibility**: Project all 3D points to all frames at once to calculate in-frame visibility and occlusion visibility.
+- **Aggregate Category Distribution**: For each 3D mask, count the category labels that the projected points fall into across the top-$k$ visible frames, and then assign the most frequently occurring category.
 
 ### Loss & Training
 
-This is a training-free / zero-shot method requiring no additional training. Pretrained components used:
-- **Mask3D**: class-agnostic 3D instance segmentor pretrained on ScanNet.
-- **YOLO-World extra-large**: open-vocabulary 2D detector.
-- **Graph-based segmentation**: the classical Felzenszwalb & Huttenlocher (2004) algorithm.
+This paper presents a training-free/zero-shot method and does not require training. The pre-trained models used are:
+- Mask3D: A class-agnostic 3D instance segmenter pre-trained on ScanNet.
+- YOLO-World extra-large: An open-vocabulary 2D detector.
+- Graph Segmentation: The classic algorithm by Felzenszwalb & Huttenlocher (2004).
 
-Inference settings:
-- ScanNet200: YOLO-World is applied to every 10th frame.
-- Replica: all frames are processed.
-- Images are downsampled by a factor of 5 during superpoint generation for efficiency.
+Inference Settings:
+- ScanNet200: 1 frame out of every 10 frames is used for YOLO-World detection.
+- Replica: All frames are detected.
+- Images are downsampled by 5 times during superpoint generation to increase efficiency.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**ScanNet200 validation set**:
+**ScanNet200 Validation Set**:
 
-| Method | SAM | CLIP | mAP | mAP50 | mAP25 | mAP_tail | Time/scene |
-|--------|-----|------|-----|-------|-------|----------|------------|
+| Method | SAM | CLIP | mAP | mAP50 | mAP25 | mAP_tail | Time/Scene |
+|------|-----|------|-----|-------|-------|----------|----------|
 | OpenMask3D | ✓ | ✓ | 15.4 | 19.9 | 23.1 | 14.9 | 553.87s |
 | Open3DIS | ✓ | ✓ | 23.7 | 29.4 | 32.8 | 21.8 | 360.12s |
 | Open-YOLO 3D | × | × | 24.7 | 31.7 | 36.2 | 21.6 | **21.8s** |
 | **Ours** | **×** | **×** | **24.9** | **32.1** | **36.8** | **22.4** | 55.9s |
 
-- Compared to Open-YOLO 3D: mAP +0.2, mAP50 +0.4, mAP25 +0.6, **tail mAP +0.8**.
-- Speed (55.9s) is slower than Open-YOLO 3D (21.8s) but far faster than SAM/CLIP-based methods (360s+).
+- Compared with Open-YOLO 3D: mAP +0.2, mAP50 +0.4, mAP25 +0.6, and **tail class mAP +0.8**.
+- Although slower than Open-YOLO 3D (55.9s vs. 21.8s), it is far faster than SAM/CLIP-based methods (360s+).
 
-**Replica dataset**:
+**Replica Dataset**:
 
-| Method | mAP | mAP50 | mAP25 | Time/scene |
-|--------|-----|-------|-------|------------|
+| Method | mAP | mAP50 | mAP25 | Time/Scene |
+|------|-----|-------|-------|----------|
 | OpenMask3D | 13.1 | 18.4 | 24.2 | 547.32s |
 | Open3DIS | 18.5 | 24.5 | 28.2 | 187.97s |
 | Open-YOLO 3D | 23.7 | 28.6 | 34.8 | **16.6s** |
 | **Ours** | **24.0** | **31.8** | **37.4** | 43.7s |
 
-Gains on Replica are more pronounced: mAP50 +3.2, mAP25 +2.6.
+On Replica, mAP50 improves by +3.2 and mAP25 by +2.6, showing a more pronounced improvement.
 
 ### Ablation Study
 
-No formal ablation table is presented; key observations are extracted from comparisons and discussion:
+While the paper does not show a formal ablation table, key ablation insights can be extracted from method comparisons and discussion:
 
-| Configuration | Key Change | Effect |
-|---------------|-----------|--------|
-| Point-based masks only (Open-YOLO 3D) | No RGBD-based masks | tail mAP 21.6; rare objects missed |
-| + Box-guided RGBD masks (Ours) | Novel instance discovery added | tail mAP 22.4 (+0.8); rare objects such as "calendar" detectable |
-| RGBD mask quality | Superpoint assembly vs. SAM | Larger gains at IoU 50/25 thresholds; lower quality under strict IoU |
+| Configuration | Key Change | Effect / Explanation |
+|------|---------|---------|
+| Point-based mask only (Open-YOLO 3D) | No RGBD-based mask | Tail class mAP of 21.6, missing rare objects |
+| + Box-guided RGBD mask (Ours) | Add new instance discovery | Tail class mAP of 22.4 (+0.8), capable of detecting rare objects like "calendar" |
+| RGBD mask quality | Superpoint-based instead of SAM | Large gains in IoU 50/25, but slightly lower quality under strict IoU thresholds |
 
 ### Key Findings
 
-1. **Tail categories are the key gap**: differences on head categories are minimal (slightly negative, −0.2), while tail categories show clear improvement (+0.8), confirming the core hypothesis that 3D segmentors generalize poorly to rare objects.
-2. **Gains are larger at lower IoU thresholds**: improvement diminishes from mAP25 > mAP50 > mAP, since superpoint-assembled masks have coarser boundaries than SAM-based masks.
-3. Qualitative results explicitly demonstrate that objects such as "calendar"—completely undetected by Open-YOLO 3D—are successfully retrieved by the proposed method.
+1. **Tail categories are the key gap**: There is little difference in head categories on ScanNet200 (even slightly lower by -0.2), but there is a clear improvement in tail categories (+0.8). This validates the core hypothesis that "3D segmenters generalize poorly to rare objects."
+2. **Gains are larger at lower IoU thresholds**: The improvement magnitude decreases in the order of mAP25 > mAP50 > mAP, as the mask boundaries assembled by superpoints are not as detailed as those from SAM.
+3. The visualization clearly demonstrates that the "calendar" object, which is completely missed by Open-YOLO 3D, is successfully retrieved by the proposed method.
 
 ## Highlights & Insights
 
-1. **Clear design philosophy**: rather than optimizing every component, the method strikes a practical balance between efficiency and generalization.
-2. **No additional training required**: the entire pipeline is zero-shot, combining existing pretrained models without any training on 3D data.
-3. **Superpoints as a SAM substitute**: an elegant solution to the 2D-to-3D mask lifting efficiency problem, relying on the classical and highly efficient Felzenszwalb graph-based segmentation.
-4. **Incremental design**: new masks supplement rather than replace point-based masks, preserving the geometric accuracy of the 3D segmentor for common categories.
+1. **Clear design philosophy**: Rather than pursuing the absolute optimum for every single component, it finds a practical trade-off between efficiency and generalization capability.
+2. **No extra training needed**: The entire pipeline is zero-shot, requiring no training on 3D data, simply combining existing pre-trained models.
+3. **Superpoints replacing SAM**: This elegantly solves the efficiency issue of lifting 2D masks to 3D. Superpoints are based on a classic graph segmentation algorithm, which is far more efficient than SAM.
+4. **Incremental design**: New masks supplement rather than replace point-based masks, preserving the geometric accuracy advantages of 3D segmenters on common categories.
 
 ## Limitations & Future Work
 
-1. **Speed bottleneck**: primarily caused by Open3D's computation of 3D oriented bounding boxes; GPU-accelerated implementations are identified as an important direction.
-2. **Mask quality**: superpoint-assembled masks are insufficiently precise under high IoU thresholds; future work could explore applying SAM refinement exclusively to final candidates.
-3. **Insufficient ablation**: sensitivity analyses for hyperparameters ($\tau_{\text{box}}, \tau_{\text{spp}}, \tau_{\text{merge}}, \tau_{\text{filter}}$) are absent.
-4. **Indoor-only evaluation**: both ScanNet200 and Replica are indoor datasets; generalization to outdoor scenes (e.g., autonomous driving) remains unvalidated.
-5. The absolute mAP gain is modest (+0.2); the primary contribution lies in improving tail-category performance.
+1. **Speed bottleneck**: Primarily in Open3D calculating the 3D oriented bounding boxes. The authors mention that developing a GPU-accelerated implementation is a critical next step.
+2. **Mask quality**: The masks assembled from superpoints lack precision at high IoU thresholds. Future work could explore using SAM refinement solely on final candidates.
+3. **Insufficient ablation**: Lacks sensitivity analysis for various hyperparameters ($\tau_{\text{box}}, \tau_{\text{spp}}, \tau_{\text{merge}}, \tau_{\text{filter}}$).
+4. **Indoor only**: Both ScanNet200 and Replica are indoor datasets. Performance in outdoor scenarios (e.g., autonomous driving) has not been verified.
+5. The absolute improvement in mAP is limited (+0.2), with the primary value lying in the improvements for tail categories.
 
 ## Related Work & Insights
 
-- **Open-YOLO 3D** (ICLR 2025): the direct predecessor of this work, demonstrating the feasibility of eliminating SAM and CLIP.
-- **Open3DIS** (CVPR 2024): pioneered the fusion of point-based and RGBD-based masks but relies on SAM.
-- **YOLO-World** (CVPR 2024): real-time open-vocabulary detector serving as the core 2D module in this method.
-- **Felzenszwalb graph segmentation (2004)**: a 20-year-old classical algorithm finds renewed relevance in modern 3D understanding pipelines.
-- Future work could explore replacing the 2D detector-based classifier with 3D open-vocabulary classifiers such as OpenShape or DuoMamba.
+- **Open-YOLO 3D** (ICLR 2025): Direct predecessor of this paper, which proved the feasibility of eliminating SAM/CLIP.
+- **Open3DIS** (CVPR 2024): A pioneer in merging point-based and RGBD-based masks, but relies heavily on SAM.
+- **YOLO-World** (CVPR 2024): A real-time open-vocabulary detector, acting as the core 2D module of the proposed approach.
+- **Felzenszwalb Graph Segmentation (2004)**: A classic algorithm from 20 years ago finding new life in modern 3D understanding pipelines.
+- Future work could consider replacing 2D detector classification with 3D open-vocabulary classifiers such as OpenShape or DuoMamba.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ — Straightforward yet effective; a component-level improvement rather than a paradigm shift.
-- Experimental Thoroughness: ⭐⭐⭐ — Validated on two datasets but lacks ablations; performance gains are modest.
-- Writing Quality: ⭐⭐⭐⭐ — Clear and concise, with well-motivated problem framing.
-- Value: ⭐⭐⭐⭐ — Strong practical utility; provides an efficient solution for retrieving rare objects in 3D scenes.
+- Novelty: ⭐⭐⭐ — Direct and effective approach, representing a component-level optimization rather than a paradigm shift.
+- Experimental Thoroughness: ⭐⭐⭐ — Verified on two datasets but lacks deep ablation; the performance gains are relatively small.
+- Writing Quality: ⭐⭐⭐⭐ — Clear and concise, with well-formulated problem motivation.
+- Value: ⭐⭐⭐⭐ — Highly practical, providing an efficient solution for retrieving rare objects in 3D scenes.
 
 <!-- RELATED:START -->
 
@@ -186,11 +186,11 @@ No formal ablation table is presented; key observations are extracted from compa
 
 ## Related Papers
 
+- [\[ICLR 2026\] OVSeg3R: Learn Open-vocabulary Instance Segmentation from 2D via 3D Reconstruction](../../ICLR2026/3d_vision/ovseg3r_learn_open-vocabulary_instance_segmentation_from_2d_via_3d_reconstructio.md)
 - [\[AAAI 2026\] OpenScan: A Benchmark for Generalized Open-Vocabulary 3D Scene Understanding](openscan_a_benchmark_for_generalized_open-vocabulary_3d_scene_understanding.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](../../CVPR2026/3d_vision/jopp3d_joint_open_vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] OVI-MAP: Open-Vocabulary Instance-Semantic Mapping](../../CVPR2026/3d_vision/ovi-map_open-vocabulary_instance-semantic_mapping.md)
+- [\[CVPR 2025\] Sketchy Bounding-Box Supervision for 3D Instance Segmentation](../../CVPR2025/3d_vision/sketchy_bounding-box_supervision_for_3d_instance_segmentation.md)
 - [\[AAAI 2026\] UniC-Lift: Unified 3D Instance Segmentation via Contrastive Learning](unic-lift_unified_3d_instance_segmentation_via_contrastive_learning.md)
-- [\[ICLR 2026\] GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation](../../ICLR2026/3d_vision/geopurify_a_data-efficient_geometric_distillation_framework_for_open-vocabulary_.md)
-- [\[AAAI 2026\] ASSIST-3D: Adapted Scene Synthesis for Class-Agnostic 3D Instance Segmentation](assist-3d_adapted_scene_synthesis_for_class-agnostic_3d_instance_segmentation.md)
 
 </div>
 

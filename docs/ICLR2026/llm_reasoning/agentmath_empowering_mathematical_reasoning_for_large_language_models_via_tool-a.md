@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] AgentMath proposes a tool-augmented agent framework that seamlessly integrates LLM reasoning with the computational precision of a code interpreter through automated data synthesis, multi-turn interactive reinforcement learning (RL), and an efficient asynchronous training system. It achieves SOTA performance on AIME24/
+  [ICLR 2026][Reasoning][Mathematical Reasoning] AgentMath proposes a tool-augmented agent framework that seamlessly integrates LLM reasoning with the computational precision of a code interpreter through automated data synthesis, multi-turn interactive reinforcement learning (RL), and an efficient asynchronous training system. It achieves SOTA performance on AIME24/25 and HMMT25 at the 30B-A3B scale (90.6%/86.4%/73.8%), surpassing o3-mini and Claude-Opus-4.0-Thinking.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Mathematical Reasoning"
+  - "Tool Augmentation"
+  - "Reinforcement Learning"
+  - "Code Interpreter"
+  - "Agent Framework"
 date: 2026-05-08
-content_hash: 1cde2e50d9b72922
+content_hash: 866cf15137e94890
 ---
+
 # AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent
 
 **Conference**: ICLR 2026  
@@ -131,16 +136,16 @@ AgentMath-30B-A3B (only 3B active parameters) surpasses OpenAI-o3-mini (87.3%/86
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture](tumix_multi-agent_test-time_scaling_with_tool-use_mixture.md)
+- [\[ACL 2026\] TInR: Exploring Tool-Internalized Reasoning in Large Language Models](../../ACL2026/llm_reasoning/tinr_exploring_tool-internalized_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](thor_tool-integrated_hierarchical_optimization_via_rl_for_mathematical_reasoning.md)
 - [\[ICLR 2026\] SealQA: Raising the Bar for Reasoning in Search-Augmented Language Models](sealqa_raising_the_bar_for_reasoning_in_search-augmented_language_models.md)
 - [\[ICLR 2026\] Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking](latent-guided_reasoning_empowering_small_llms_with_large-model_thinking.md)
-- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[ICLR 2026\] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](thor_tool-integrated_hierarchical_optimization_via_rl_for_mathematical_reasoning.md)
 
 </div>
 

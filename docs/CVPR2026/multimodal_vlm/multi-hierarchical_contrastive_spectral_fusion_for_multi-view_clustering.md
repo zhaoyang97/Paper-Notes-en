@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering
 description: >-
-  [CVPR 2026][Others][Paper Note] MCSF integrates differentiable deep spectral embedding into multi-view encoders and fuses multiple views into a "structure-aware" consensus representation using a tri-level contrastive loss (Intra-view Structure Preservation / View-Consensus Alignment / Consensus Structure Refinement), achieving leading clustering accu
+  [CVPR 2026][Multimodal VLM][Multi-view clustering] MCSF integrates differentiable deep spectral embedding into multi-view encoders and fuses multiple views into a "structure-aware" consensus representation using a tri-level contrastive loss (Intra-view Structure Preservation / View-Consensus Alignment / Consensus Structure Refinement), achieving leading clustering accuracy across 8 benchmarks.
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-view clustering"
+  - "Deep spectral embedding"
+  - "Contrastive learning"
+  - "Consensus representation"
+  - "Manifold structure"
 date: 2026-05-08
-content_hash: 1e25975e0b10dbb5
+content_hash: 83e235ff42c5e69c
 ---
+
 # Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Contribution of each loss component (ACC %):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
 - [\[CVPR 2026\] Reliable Clustering Number Estimation for Contrastive Multi-View Clustering](reliable_clustering_number_estimation_for_contrastive_multi-view_clustering.md)
 - [\[CVPR 2026\] Anti-Degradation Lifelong Multi-View Clustering](anti-degradation_lifelong_multi-view_clustering.md)
-- [\[CVPR 2026\] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance](scalable_multi-view_subspace_clustering_with_tensorized_anchor_guidance.md)
 - [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
-- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
 
 </div>
 

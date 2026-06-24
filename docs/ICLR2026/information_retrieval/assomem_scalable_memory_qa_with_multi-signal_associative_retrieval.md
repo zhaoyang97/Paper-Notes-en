@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AssoMem: Scalable Memory QA with Multi-Signal Associative Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] AssoMem constructs a "clue-utterance" associative memory graph for large-scale personal memory QA and adaptively fuses three signals—relevance, importance, and temporal alignment—using mutual information for ranking. It significantly outperforms SOTA models based solely on semantic similarity in both retrieval and gene
+  [ICLR2026][Information Retrieval & RAG][Memory QA] AssoMem constructs a "clue-utterance" associative memory graph for large-scale personal memory QA and adaptively fuses three signals—relevance, importance, and temporal alignment—using mutual information for ranking. It significantly outperforms SOTA models based solely on semantic similarity in both retrieval and generation across multiple benchmarks.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Memory QA"
+  - "Associative Memory Graph"
+  - "Multi-Signal Retrieval"
+  - "Personalized PageRank"
+  - "Mutual Information Fusion"
 date: 2026-05-08
-content_hash: 6bfdb7222d0c4e32
+content_hash: 6fc2cf7e1afba28e
 ---
+
 # AssoMem: Scalable Memory QA with Multi-Signal Associative Retrieval
 
 **Conference**: ICLR2026  
@@ -155,7 +161,7 @@ Step-wise removal on LongMemEval 'm' (Table 3):
 - [\[ICLR 2026\] ZeroGR: A Generalizable and Scalable Framework for Zero-Shot Generative Retrieval](zerogr_a_generalizable_and_scalable_framework_for_zero-shot_generative_retrieval.md)
 - [\[ICLR 2026\] Summaries as Centroids for Interpretable and Scalable Text Clustering](summaries_as_centroids_for_interpretable_and_scalable_text_clustering.md)
 - [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
-- [\[ACL 2025\] Mitigating Lost-in-Retrieval Problems in RAG Multi-Hop QA](../../ACL2025/information_retrieval/mitigating_lost-in-retrieval_problems_in_retrieval_augmented_multi-hop_question_.md)
+- [\[ICLR 2026\] Q-RAG: Long Context Multi‑Step Retrieval via Value‑Based Embedder Training](q-rag_long_context_multistep_retrieval_via_valuebased_embedder_training.md)
 
 </div>
 

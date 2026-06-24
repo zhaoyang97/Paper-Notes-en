@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalizable Non-Line-of-Sight Imaging with Learnable Physical Priors
 description: >-
-  [ICCV 2025][Signal & Communication][non-line-of-sight imaging] This paper proposes two modules — Learnable Path Compensation (LPC) and Adaptive Phasor Field (APF) — to address material-dependent radiance intensity fallof…
+  [ICCV 2025][Signal & Communication][non-line-of-sight imaging] This paper proposes two modules — Learnable Path Compensation (LPC) and Adaptive Phasor Field (APF) — to address material-dependent radiance intensity falloff and frequency-domain denoising under varying SNR conditions in NLOS imaging, respectively. Trained solely on synthetic data, the method achieves state-of-the-art generalization across multiple real-world datasets.
 tags:
   - "ICCV 2025"
   - "Signal & Communication"
@@ -12,7 +12,7 @@ tags:
   - "adaptive phasor field"
   - "SPAD"
 date: 2026-05-08
-content_hash: 602a4c42e604f9c2
+content_hash: b6c3aa62f63064db
 ---
 
 # Generalizable Non-Line-of-Sight Imaging with Learnable Physical Priors
@@ -163,11 +163,11 @@ where both $\mathcal{L_I}$ and $\mathcal{L_D}$ are MSE losses and $\lambda=1$.
 
 ## Related Papers
 
+- [\[ECCV 2024\] Optimizing Illuminant Estimation in Dual-Exposure HDR Imaging](../../ECCV2024/signal_comm/optimizing_illuminant_estimation_in_dual-exposure_hdr_imaging.md)
+- [\[ICLR 2026\] Lossy Common Information in a Learnable Gray-Wyner Network](../../ICLR2026/signal_comm/lossy_common_information_in_a_learnable_gray-wyner_network.md)
 - [\[ICCV 2025\] Rectifying Magnitude Neglect in Linear Attention](rectifying_magnitude_neglect_in_linear_attention.md)
 - [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](boosting_multimodal_learning_via_disentangled_gradient_learning.md)
-- [\[NeurIPS 2025\] Angular Steering: Behavior Control via Rotation in Activation Space](../../NeurIPS2025/signal_comm/angular_steering_behavior_control_via_rotation_in_activation_space.md)
-- [\[NeurIPS 2025\] Masked Symbol Modeling for Demodulation of Oversampled Baseband Communication Signals](../../NeurIPS2025/signal_comm/masked_symbol_modeling_for_demodulation_of_oversampled_baseband_communication_si.md)
-- [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](../../NeurIPS2025/signal_comm/feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
+- [\[CVPR 2025\] Continuous Space-Time Video Resampling with Invertible Motion Steganography](../../CVPR2025/signal_comm/continuous_space-time_video_resampling_with_invertible_motion_steganography.md)
 
 </div>
 

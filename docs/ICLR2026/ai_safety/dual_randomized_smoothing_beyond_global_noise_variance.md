@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual Randomized Smoothing: Beyond Global Noise Variance
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper points out that standard Randomized Smoothing (RS) serves all inputs with a single global noise variance, leading to an inability to balance performance across small and large radii. The authors first theoretically prove that RS certification remains valid as long as the noise variance is "locally constant"
+  [ICLR 2026][AI Safety][Randomized Smoothing] This paper points out that standard Randomized Smoothing (RS) serves all inputs with a single global noise variance, leading to an inability to balance performance across small and large radii. The authors first theoretically prove that RS certification remains valid as long as the noise variance is "locally constant" within the certified region. Consequently, the **Dual RS framework** is proposed—first using an RS model to predict…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Randomized Smoothing"
+  - "Certified Robustness"
+  - "Input-dependent Noise"
+  - "Accuracy-Robustness Trade-off"
+  - "Expert Routing"
 date: 2026-05-08
-content_hash: fc8c9a12a91594a4
+content_hash: 919877d9f36f9356
 ---
+
 # Dual Randomized Smoothing: Beyond Global Noise Variance
 
 **Conference**: ICLR 2026  

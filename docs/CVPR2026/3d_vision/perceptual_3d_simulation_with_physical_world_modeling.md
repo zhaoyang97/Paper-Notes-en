@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] P3Sim：基于物理世界建模的感知式 3D 模拟
+  [Paper Note] P3Sim: Perceptual 3D Simulation with Physical World Modeling
 description: >-
-  [CVPR 2026][3D Vision][World Models] P3Sim models "predicting scene evolution from a single image" as probabilistic inference over multimodal scene variables (RGB / depth / optical flow). Utilizing a 7B autoregressive Transformer with pointer-value sequences for random-access decoding, combined with a geometric conditioning module and persistent scene mem
+  [CVPR 2026][3D Vision][Perceptual 3D Simulation] P3Sim models "predicting scene evolution from a single image" as probabilistic inference over multimodal scene variables (RGB / depth / optical flow). Utilizing a 7B autoregressive Transformer with pointer-value sequences for random-access decoding, combined with a geometric conditioning module and persistent scene memory, the system supports Novel View Synthesis (NVS), rigid/deformable manipulation, collisions…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - World Models
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Perceptual 3D Simulation"
+  - "World Models"
+  - "Probabilistic Graphical Models"
+  - "Autoregressive Sequence Modeling"
+  - "Geometric Conditioning"
 date: 2026-05-08
-content_hash: c8a496d0bef294f3
+content_hash: aa2659dd152f7000
 ---
+
 # P3Sim: Perceptual 3D Simulation with Physical World Modeling
 
 **Conference**: CVPR 2026  
@@ -119,11 +124,11 @@ NVS: Evaluated on the Reconfusion split of the SEVA benchmark across RE10K, LLFF
 
 ## Related Papers
 
-- [\[CVPR 2026\] 3D-IDE: 3D Implicit Depth Emergent](3d-ide_3d_implicit_depth_emergent.md)
-- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
-- [\[CVPR 2026\] Nope-SGS：从无位姿脉冲流重建 3D 高斯](3d_gaussian_splatting_from_unposed_spike_stream.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
+- [\[CVPR 2026\] PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image](physx-anything_simulation-ready_physical_3d_assets_from_single_image.md)
+- [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
+- [\[ICLR 2026\] Unified 3D Scene Understanding Through Physical World Modeling](../../ICLR2026/3d_vision/unified_3d_scene_understanding_through_physical_world_modeling.md)
+- [\[CVPR 2026\] Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI](wanderland_geometrically_grounded_simulation_for_open-world_embodied_ai.md)
+- [\[CVPR 2026\] CoSMo3D: Open-World Promptable 3D Semantic Segmentation through LLM-Guided Canonical Spatial Modeling](cosmo3d_open-world_promptable_3d_semantic_segmentation_through_llm-guided_canoni.md)
 
 </div>
 

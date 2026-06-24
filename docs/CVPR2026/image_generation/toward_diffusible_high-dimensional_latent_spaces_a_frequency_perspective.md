@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The authors use frequency perturbation experiments to dissect the high-dimensional trade-off in latent diffusion—where better reconstruction often leads to worse generation. The root cause is identified as the decoder's extreme reliance on high-frequency latent components, while the encoder tends to discard them. Based
+  [CVPR 2026][Image Generation][Latent Diffusion] The authors use frequency perturbation experiments to dissect the high-dimensional trade-off in latent diffusion—where better reconstruction often leads to worse generation. The root cause is identified as the decoder's extreme reliance on high-frequency latent components, while the encoder tends to discard them. Based on this, FreqWarm is proposed: a curriculum that feeds low-pass filtered images to the diffusion model during e…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Latent Diffusion"
+  - "High-Dimensional Latent Spaces"
+  - "Frequency Analysis"
+  - "Autoencoders"
+  - "Plug-and-Play Curriculum"
 date: 2026-05-08
-content_hash: 004714ad7ecfe0b3
+content_hash: b18947e32e84673a
 ---
+
 # Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective
 
 **Conference**: CVPR 2026  
@@ -143,10 +149,10 @@ The improvement is consistent across four denoisers (DiT-XL, UViT-H, USiT-H, USi
 ## Related Papers
 
 - [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
+- [\[ICML 2026\] The Latent Color Subspace: Emergent Order in High-Dimensional Chaos](../../ICML2026/image_generation/the_latent_color_subspace_emergent_order_in_high-dimensional_chaos.md)
 - [\[CVPR 2026\] FreqEdit: Preserving High-Frequency Features for Robust Multi-Turn Image Editing](freqedit_preserving_high-frequency_features_for_robust_multi-turn_image_editing.md)
 - [\[ECCV 2024\] FouriScale: A Frequency Perspective on Training-Free High-Resolution Image Synthesis](../../ECCV2024/image_generation/fouriscale_a_frequency_perspective_on_training-free_high-resolution_image_synthe.md)
-- [\[CVPR 2026\] Vibe Spaces for Creatively Connecting and Expressing Visual Concepts](vibe_spaces_for_creatively_connecting_and_expressing_visual_concepts.md)
-- [\[CVPR 2026\] Exploring Spatial Intelligence from a Generative Perspective](exploring_spatial_intelligence_from_a_generative_perspective.md)
+- [\[CVPR 2026\] Latent Diffusion Inversion Requires Understanding the Latent Space](latent_diffusion_inversion_requires_understanding_the_latent_space.md)
 
 </div>
 

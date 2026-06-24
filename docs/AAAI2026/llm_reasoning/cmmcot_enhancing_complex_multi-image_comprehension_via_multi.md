@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation
 description: >-
-  [AAAI 2026][LLM Reasoning][Multi-image understanding] This paper proposes the CMMCoT framework, which constructs interleaved multimodal multi-step reasoning chains (with visual region token supervision) and a test-time r…
+  [AAAI 2026][Reasoning][Multi-image understanding] This paper proposes the CMMCoT framework, which constructs interleaved multimodal multi-step reasoning chains (with visual region token supervision) and a test-time retrieval-based memory augmentation module (RIFREM) to enhance slow-thinking reasoning in multi-image scenarios without increasing model parameters. Built on Qwen2.5-VL-7B, the method achieves an average improvement of 1.4 points on multi-image benchmarks.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Multi-image understanding"
   - "multimodal chain-of-thought"
   - "test-time memory augmentation"
   - "visual reasoning"
   - "slow thinking"
 date: 2026-05-08
-content_hash: 49ed0004fd477956
+content_hash: 22808152fb2495e0
 ---
 
 # CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation
@@ -159,7 +159,7 @@ CMMCoT is built upon Qwen2-VL / Qwen2.5-VL and consists of two phases: training 
 ## Related Papers
 
 - [\[CVPR 2026\] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought](../../CVPR2026/llm_reasoning/rationale-enhanced_decoding_for_multi-modal_chain-of-thought.md)
-- [\[AAAI 2026\] L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention](l2v-cot_cross-modal_transfer_of_chain-of-thought_reasoning_v.md)
+- [\[ACL 2025\] RSVP: Reasoning Segmentation via Visual Prompting and Multi-modal Chain-of-Thought](../../ACL2025/llm_reasoning/rsvp_reasoning_segmentation_via_visual_prompting_and_multi-modal_chain-of-though.md)
 - [\[AAAI 2026\] Relation-R1: Progressively Cognitive Chain-of-Thought Guided Reinforcement Learning for Unified Relation Comprehension](relation-r1_progressively_cognitive_chain-of-thought_guided_reinforcement_learni.md)
 - [\[ICLR 2026\] Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning](../../ICLR2026/llm_reasoning/fine-r1_make_multi-modal_llms_excel_in_fine-grained_visual_recognition_by_chain-.md)
 - [\[AAAI 2026\] ActiShade: Activating Overshadowed Knowledge to Guide Multi-Hop Reasoning in Large Language Models](actishade_activating_overshadowed_knowledge_to_guide_multi-h.md)

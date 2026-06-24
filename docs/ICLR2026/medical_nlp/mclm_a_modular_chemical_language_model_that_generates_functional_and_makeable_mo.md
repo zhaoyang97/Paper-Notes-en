@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules
 description: >-
-  [ICLR 2026][Medical NLP][Paper Note] The paper proposes mCLM (Modular Chemical Language Model), which represents molecules as sequences of synthesizable building blocks. This allows LLMs to generate molecules that satisfy both pharmacological functions and automated synthesis feasibility, showing significant improvements in pharmacokinetic and toxicologic
+  [ICLR 2026 Oral][Medical LLM][Chemical Language Model] The paper proposes mCLM (Modular Chemical Language Model), which represents molecules as sequences of synthesizable building blocks. This allows LLMs to generate molecules that satisfy both pharmacological functions and automated synthesis feasibility, showing significant improvements in pharmacokinetic and toxicological properties across 430 FDA-approved drugs.
 tags:
-  - ICLR 2026
-  - Medical NLP
+  - "ICLR 2026 Oral"
+  - "Medical LLM"
+  - "Chemical Language Model"
+  - "Molecule Optimization"
+  - "Automated Synthesis"
+  - "Modular Design"
+  - "Drug Discovery"
 date: 2026-05-08
-content_hash: 61419c4c4350bafc
+content_hash: b2c2455592f394f8
 ---
+
 # mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules
 
 **Conference**: ICLR 2026 Oral  
@@ -119,9 +125,9 @@ Molecular optimization was performed on 430 FDA-approved drugs, evaluating six p
 ## Related Papers
 
 - [\[ICLR 2026\] GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine](galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra.md)
-- [\[ICLR 2026\] HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction](histoprism_unlocking_functional_pathway_analysis_from_pan-cancer_histology_via_g.md)
 - [\[ACL 2025\] A Modular Approach for Clinical SLMs Driven by Synthetic Data with Pre-Instruction Tuning, Model Merging, and Clinical-Tasks Alignment](../../ACL2025/medical_nlp/a_modular_approach_for_clinical_slms_driven_by_synthetic_data_with_pre-instructi.md)
 - [\[ACL 2026\] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](../../ACL2026/medical_nlp/cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)
+- [\[ICLR 2026\] HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction](histoprism_unlocking_functional_pathway_analysis_from_pan-cancer_histology_via_g.md)
 - [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](../../NeurIPS2025/medical_nlp/cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
 
 </div>

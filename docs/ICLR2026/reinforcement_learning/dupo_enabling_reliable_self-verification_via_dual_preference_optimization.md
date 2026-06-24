@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] DuPO relaxes traditional dual learning from "strictly reversible task pairs" to "complementary dependency relationships"—allowing the dual task to reconstruct only an **unknown component** of the input from the primary task output. By using reconstruction consistency as a self-supervised reward, it achieves RL optimiza
+  [ICLR 2026][Reinforcement Learning][Dual Learning] DuPO relaxes traditional dual learning from "strictly reversible task pairs" to "complementary dependency relationships"—allowing the dual task to reconstruct only an **unknown component** of the input from the primary task output. By using reconstruction consistency as a self-supervised reward, it achieves RL optimization without any labels for irreversible tasks like mathematical reasoning and multilingual translation.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Dual Learning"
+  - "Preference Optimization"
+  - "Self-Supervised Rewards"
+  - "Unlabeled RL"
+  - "Self-Verification"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 8cc42821e484201b
+content_hash: d591e24c4024bf5f
 ---
+
 # DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization
 
 **Conference**: ICLR 2026  

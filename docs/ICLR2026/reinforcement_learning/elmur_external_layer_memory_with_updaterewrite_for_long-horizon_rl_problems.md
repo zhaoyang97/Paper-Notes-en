@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ELMUR: External Layer Memory with Update/Rewrite for Long-Horizon RL Problems
 description: >-
-  [ICLR 2026][Reinforcement Learning][LRU] ELMUR equips **every layer** of a Transformer with a structured external memory. Through bi-directional cross-attention for reading/writing and LRU rules (replacement/convex combination) for maintenance, it achieves a bounded yet persistent memory. It extends the effective memory horizon to 100,000 times the attention
+  [ICLR2026][Reinforcement Learning][External Memory] ELMUR equips **every layer** of a Transformer with a structured external memory. Through bi-directional cross-attention for reading/writing and LRU rules (replacement/convex combination) for maintenance, it achieves a bounded yet persistent memory. It extends the effective memory horizon to 100,000 times the attention window, achieving a 100% success rate on the million-step T-Maze and nearly doubling the success rate of str…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - LRU
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "External Memory"
+  - "Segment-level Recurrence"
+  - "LRU"
+  - "Partially Observable"
+  - "Imitation Learning"
 date: 2026-05-08
-content_hash: 98b9d9fa5137e3c5
+content_hash: f9497b52db775707
 ---
+
 # ELMUR: External Layer Memory with Update/Rewrite for Long-Horizon RL Problems
 
 **Conference**: ICLR2026  
@@ -133,8 +138,8 @@ Ablations on RememberColor3-v0 (Table 3):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning](strict_subgoal_execution_reliable_long-horizon_planning_in_hierarchical_reinforc.md)
 - [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
+- [\[ICLR 2026\] Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning](strict_subgoal_execution_reliable_long-horizon_planning_in_hierarchical_reinforc.md)
 - [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
 - [\[ICLR 2026\] RD-HRL: Generating Reliable Sub-Goals for Long-Horizon Sparse-Reward Tasks](rd-hrl_generating_reliable_sub-goals_for_long-horizon_sparse-reward_tasks.md)
 - [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](../../ICML2026/reinforcement_learning/long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)

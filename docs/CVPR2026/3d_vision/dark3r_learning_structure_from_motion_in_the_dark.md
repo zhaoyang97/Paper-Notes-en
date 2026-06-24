@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Dark3R: Learning Structure from Motion in the Dark
 description: >-
-  [CVPR 2026][3D Vision][Knowledge Distillation] The Dark3R framework is proposed to transfer 3D priors from MASt3R to extreme low-light (SNR $< -4$ dB) raw images through teacher-student distillation, enabling Structure from Motion (SfM) and novel view synthesis in dark environments where traditional methods fail completely.
+  [CVPR2026][3D Vision][Low-light 3D reconstruction] The Dark3R framework is proposed to transfer 3D priors from MASt3R to extreme low-light (SNR $< -4$ dB) raw images through teacher-student distillation, enabling Structure from Motion (SfM) and novel view synthesis in dark environments where traditional methods fail completely.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Knowledge Distillation
-  - NeRF
+  - "CVPR2026"
+  - "3D Vision"
+  - "Low-light 3D reconstruction"
+  - "Structure from Motion"
+  - "Knowledge Distillation"
+  - "Feature Matching"
+  - "Novel View Synthesis"
+  - "NeRF"
 date: 2026-05-08
-content_hash: ae61f2c1ed13894d
+content_hash: 8d99c53f84c82d2e
 ---
+
 # Dark3R: Learning Structure from Motion in the Dark
 
 **Conference**: CVPR2026  
@@ -177,10 +182,10 @@ The combination of Dark3R poses + Dark3R-NeRF achieves the best overall performa
 ## Related Papers
 
 - [\[CVPR 2026\] Global Structure-from-Motion Meets Feedforward Reconstruction](global_structure-from-motion_meets_feedforward_reconstruction.md)
-- [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
+- [\[CVPR 2026\] PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts](promptstereo_zero-shot_stereo_matching_via_structure_and_motion_prompts.md)
+- [\[CVPR 2025\] Dense-SfM: Structure from Motion with Dense Consistent Matching](../../CVPR2025/3d_vision/dense-sfm_structure_from_motion_with_dense_consistent_matching.md)
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
-- [\[CVPR 2026\] AnthroTAP: Learning Point Tracking with Real-World Motion](anthrotap_learning_point_tracking_with_real-world_motion.md)
+- [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
 
 </div>
 

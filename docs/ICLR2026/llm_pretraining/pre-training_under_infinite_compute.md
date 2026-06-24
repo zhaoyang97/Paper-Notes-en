@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pre-training under Infinite Compute
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] When compute far exceeds available web data, the authors use "heavy regularization + model ensemble + joint parameter/ensemble scaling + distillation" to compress the pre-training loss of a fixed 200M token budget to an asymptotic value of 3.17. This achieves a 5.17× data efficiency gain over standard recipes, with 83%
+  [ICLR 2026][LLM Pretraining][Data-constrained pre-training] When compute far exceeds available web data, the authors use "heavy regularization + model ensemble + joint parameter/ensemble scaling + distillation" to compress the pre-training loss of a fixed 200M token budget to an asymptotic value of 3.17. This achieves a 5.17× data efficiency gain over standard recipes, with 83% of the ensemble benefits retained even when distilled into an 8× smaller student model.
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data-constrained pre-training"
+  - "regularization"
+  - "ensemble"
+  - "distillation"
+  - "asymptotic Scaling Law"
 date: 2026-05-08
-content_hash: 47b03eb1d84b880f
+content_hash: 90ab968b67193fb0
 ---
+
 # Pre-training under Infinite Compute
 
 **Conference**: ICLR 2026  
@@ -132,6 +138,7 @@ The baseline is standard autoregressive cross-entropy pre-training. The core str
 - Value: ⭐⭐⭐⭐⭐ Provides an actionable recipe for a "compute > data" future.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

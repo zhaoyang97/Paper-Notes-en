@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback
 description: >-
-  [ICML 2026][LLM Evaluation][Benchmark] The Bespoke benchmark is proposed, collecting 2,870 sessions from 30 annotators over 3 weeks of real chat and search history. It constructs an evaluation framework with fine-grained preference ratings and diagnostic feedback to systematically assess the personalization capabilities of search-augmented LLMs. Findings in
+  [ICML2026][LLM Evaluation][Personalization evaluation] The Bespoke benchmark is proposed, collecting 2,870 sessions from 30 annotators over 3 weeks of real chat and search history. It constructs an evaluation framework with fine-grained preference ratings and diagnostic feedback to systematically assess the personalization capabilities of search-augmented LLMs. Findings indicate that current models score below 60 on average across all configurations…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - Benchmark
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "Personalization evaluation"
+  - "search-augmented LLMs"
+  - "user preferences"
+  - "diagnostic feedback"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 9f1ad874cc91b24f
+content_hash: 5c4fd10977cdf4ea
 ---
+
 # BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback
 
 **Conference**: ICML2026  
@@ -117,16 +122,16 @@ Performance of 6 models across different user context configurations (Best confi
 - Value: 8/10 — Fills a critical gap in personalized search LLM evaluation; diagnostic feedback design has practical utility.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICML 2026\] Prescriptive Scaling Reveals the Evolution of Language Model Capabilities](prescriptive_scaling_reveals_the_evolution_of_language_model_capabilities.md)
+- [\[ICML 2026\] Estimating Tail Risks in Language Model Output Distributions](estimating_tail_risks_in_language_model_output_distributions.md)
+- [\[ICML 2026\] Authority, Truth, and Citation Bias: A Large-Scale Multi-Domain Benchmark for Studying Epistemic Susceptibility in Large Language Models](authority_truth_and_citation_bias_a_large-scale_multi-domain_benchmark_for_study.md)
 - [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
-- [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](../../NeurIPS2025/llm_evaluation/bayesian_evaluation_of_large_language_model_behavior.md)
-- [\[ACL 2026\] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](../../ACL2026/llm_evaluation/recoqa_a_benchmark_for_tool-augmented_and_multi-step_reasoning_in_real_estate_qu.md)
-- [\[AAAI 2026\] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory](../../AAAI2026/llm_evaluation/lost_in_benchmarks_rethinking_large_language_model_benchmarking_with_item_respon.md)
-- [\[ICML 2026\] DEI: Diversity in Evolutionary Inference for Quality-Diversity Search](dei_diversity_in_evolutionary_inference_for_quality-diversity_search.md)
+- [\[ICLR 2026\] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](../../ICLR2026/llm_evaluation/dont_passk_a_bayesian_framework_for_large_language_model_evaluation.md)
 
 </div>
 

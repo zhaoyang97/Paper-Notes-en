@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NeuROK: Generative 4D Neural Object Kinematics
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] NeuROK reformulates the task of generating physically plausible 4D deformations for static 3D objects—traditionally dependent on category-specific physical models—into "learning a low-dimensional latent kinematic state space + solving an ODE using Lagrangian mechanics within this space." This allows for unified 4D dyna
+  [CVPR 2026][3D Vision][4D Kinematic Generation] NeuROK reformulates the task of generating physically plausible 4D deformations for static 3D objects—traditionally dependent on category-specific physical models—into "learning a low-dimensional latent kinematic state space + solving an ODE using Lagrangian mechanics within this space." This allows for unified 4D dynamic generation across various objects (e.g., elastomers, cloth, continua, articulated objects) without physical…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Kinematic Generation"
+  - "Kinematic State Parameterization"
+  - "Lagrangian Mechanics"
+  - "Conditional VAE"
+  - "Mesh Deformation"
 date: 2026-05-08
-content_hash: a484d66f34eebafe
+content_hash: ef1c3994a1fdb21f
 ---
+
 # NeuROK: Generative 4D Neural Object Kinematics
 
 **Conference**: CVPR 2026  
@@ -161,11 +167,11 @@ Ablations share data with Tab. 1 (Inverse Kinematics setting):
 
 ## Related Papers
 
+- [\[CVPR 2026\] CUPID: Generative 3D Reconstruction via Joint Object and Pose Modeling](cupid_generative_3d_reconstruction_via_joint_object_and_pose_modeling.md)
 - [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
 - [\[ICLR 2026\] Scaling Sequence-to-Sequence Generative Neural Rendering](../../ICLR2026/3d_vision/scaling_sequence-to-sequence_generative_neural_rendering.md)
+- [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](../../ICLR2026/3d_vision/spatialhand_generative_object_manipulation_from_3d_prespective.md)
 - [\[CVPR 2026\] ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions](arthoi_taming_foundation_models_for_monocular_4d_reconstruction_of_hand-articula.md)
-- [\[AAAI 2026\] 4DSTR: Advancing Generative 4D Gaussians with Spatial-Temporal Rectification for High-Quality and Consistent 4D Generation](../../AAAI2026/3d_vision/4dstr_advancing_generative_4d_gaussians_with_spatial-tempora.md)
-- [\[CVPR 2026\] BrickNet: Graph-Backed Generative Brick Assembly](bricknet_graph-backed_generative_brick_assembly.md)
 
 </div>
 

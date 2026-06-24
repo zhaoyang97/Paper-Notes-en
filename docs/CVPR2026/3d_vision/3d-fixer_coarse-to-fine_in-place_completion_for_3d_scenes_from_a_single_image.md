@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] A new "in-place completion" paradigm is proposed, extending pre-trained object-level generative priors to the scene level. It directly completes fragmented geometry at its original location without explicit pose alignment. Simultaneously, a large-scale scene dataset ARSG-110K is constructed, significantly outperforming
+  [CVPR 2026][3D Vision][Single-image 3D scene generation] A new "in-place completion" paradigm is proposed, extending pre-trained object-level generative priors to the scene level. It directly completes fragmented geometry at its original location without explicit pose alignment. Simultaneously, a large-scale scene dataset ARSG-110K is constructed, significantly outperforming baselines like MIDI and Gen3DSR.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-image 3D scene generation"
+  - "in-place completion"
+  - "coarse-to-fine completion"
+  - "occlusion robustness"
+  - "large-scale scene dataset"
 date: 2026-05-08
-content_hash: 409f85dcd97e322c
+content_hash: 8efcb22b058c0a37
 ---
+
 # 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Suppose a scene contains a chair where only the back and half the seat are visib
 
 ## Related Papers
 
-- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[CVPR 2026\] Dehallu3D: Hallucination-Mitigated 3D Generation from a Single Image via Cyclic View Consistency Refinement](dehallu3d_hallucination-mitigated_3d_generation_from_a_single_image_via_cyclic_v.md)
-- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
+- [\[CVPR 2026\] FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing](fishuman_fine-grained_single-image_3d_human_reconstruction_via_multi-view_4d_rem.md)
+- [\[ICLR 2026\] Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints](../../ICLR2026/3d_vision/generalizable_coarse-to-fine_robot_manipulation_via_language-aligned_3d_keypoint.md)
+- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
+- [\[CVPR 2026\] PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image](physx-anything_simulation-ready_physical_3d_assets_from_single_image.md)
+- [\[CVPR 2025\] Wonderland: Navigating 3D Scenes from a Single Image](../../CVPR2025/3d_vision/wonderland_navigating_3d_scenes_from_a_single_image.md)
 
 </div>
 

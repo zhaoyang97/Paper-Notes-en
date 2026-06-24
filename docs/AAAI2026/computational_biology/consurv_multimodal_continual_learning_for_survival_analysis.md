@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ConSurv: Multimodal Continual Learning for Survival Analysis
 description: >-
-  [AAAI 2026][Computational Biology][Continual Learning] This paper proposes ConSurv, the first multimodal continual learning framework for survival analysis. Through two core components — Multi-Stage Mixture-of-Experts (M…
+  [AAAI 2026][Computational Biology][Continual Learning] This paper proposes ConSurv, the first multimodal continual learning framework for survival analysis. Through two core components — Multi-Stage Mixture-of-Experts (MS-MoE) and Feature-Constrained Replay (FCR) — ConSurv effectively mitigates catastrophic forgetting in settings that integrate whole slide pathology images and genomic data, comprehensively outperforming existing methods on the newly constructed MSAIL benchmar…
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Whole Slide Images"
   - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: b73fcb13dd4f3cd9
+content_hash: fb7f7e95eb30765e
 ---
 
 # ConSurv: Multimodal Continual Learning for Survival Analysis
@@ -134,10 +134,10 @@ Comparison with multiple continual learning methods on the MSAIL benchmark.
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning the Neighborhood: Contrast-Free Multimodal Self-Supervised Molecular Graph Pretraining](../../ICML2026/computational_biology/learning_the_neighborhood_contrast-free_multimodal_self-supervised_molecular_gra.md)
-- [\[AAAI 2026\] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection](spacrd_multimodal_deep_fusion_of_histology_and_spatial_transcriptomics_for_cance.md)
+- [\[ICLR 2026\] Structural Prognostic Event Modeling for Multimodal Cancer Survival Analysis](../../ICLR2026/computational_biology/structural_prognostic_event_modeling_for_multimodal_cancer_survival_analysis.md)
 - [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](gene_incremental_learning_for_single-cell_transcriptomics.md)
-- [\[CVPR 2026\] Sampling-Aware 3D Spatial Analysis in Multiplexed Imaging](../../CVPR2026/computational_biology/sampling-aware_3d_spatial_analysis_in_multiplexed_imaging.md)
+- [\[AAAI 2026\] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection](spacrd_multimodal_deep_fusion_of_histology_and_spatial_transcriptomics_for_cance.md)
+- [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
 - [\[ACL 2026\] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling](../../ACL2026/computational_biology/aroma_augmented_reasoning_over_a_multimodal_architecture_for_virtual_cell_geneti.md)
 
 </div>

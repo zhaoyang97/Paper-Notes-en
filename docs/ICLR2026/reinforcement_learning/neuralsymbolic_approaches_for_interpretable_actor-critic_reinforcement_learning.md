@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Actor-Critic] NSAC replaces the black-box actor in A2C with "additive rule ensembles." It uses a neural network critic for value estimation, while a set of IF-THEN rules directly handles decision-making. Rules are learned online via policy gradients and Orthogonal Gradient Boosting (OGB), achieving performance comparable to black-bo
+  [ICLR 2026][Reinforcement Learning][Actor-Critic] NSAC replaces the black-box actor in A2C with "additive rule ensembles." It uses a neural network critic for value estimation, while a set of IF-THEN rules directly handles decision-making. Rules are learned online via policy gradients and Orthogonal Gradient Boosting (OGB), achieving performance comparable to black-box methods like DQN, PPO, and A2C while maintaining intrinsic interpretability.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Actor-Critic
-  - Interpretability
-  - A2C
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Actor-Critic"
+  - "Rule Ensembles"
+  - "Interpretability"
+  - "A2C"
+  - "Orthogonal Gradient Boosting"
+  - "Neuro-Symbolic"
 date: 2026-05-08
-content_hash: 33159d37dcd2522f
+content_hash: 06b7ed6d932795a7
 ---
+
 # Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning
 
 **Conference**: ICLR 2026  

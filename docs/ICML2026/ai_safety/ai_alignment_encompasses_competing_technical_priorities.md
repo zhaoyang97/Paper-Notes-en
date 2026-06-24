@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: 'AI Alignment' Encompasses Competing Technical Priorities
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This ICML position paper argues that "AI alignment" is a **polysemous** term: the ML literature contains at least three high-level alignment ideals that are competing rather than merely different (Task Reliability / Social Judiciousness / Takeover Avoidance). In practice, advancing one type of alignment often **activel
+  [ICML 2026][AI Safety][AI Alignment] This ICML position paper argues that "AI alignment" is a **polysemous** term: the ML literature contains at least three high-level alignment ideals that are competing rather than merely different (Task Reliability / Social Judiciousness / Takeover Avoidance). In practice, advancing one type of alignment often **actively undermines** another. The authors explain these tensions via two cross-cutting distinctions—"threat model differences" an…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "AI Alignment"
+  - "Position Paper"
+  - "Threat Models"
+  - "Conceptual Analysis"
+  - "Alignment Tension"
 date: 2026-05-08
-content_hash: da21b054088190f1
+content_hash: d511719da569d5a4
 ---
+
 # Position: 'AI Alignment' Encompasses Competing Technical Priorities
 
 **Conference**: ICML 2026  
@@ -116,11 +122,11 @@ These cases share a common structure: **the same technical intervention is simul
 
 ## Related Papers
 
-- [\[ICML 2026\] Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks](ai_researchers_must_help_lead_arms_control_to_mitigate_military_ai_risks.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
+- [\[ICML 2026\] Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks](ai_researchers_must_help_lead_arms_control_to_mitigate_military_ai_risks.md)
+- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
 - [\[ICML 2026\] Position: Retire the "Positive Backdoor" Label -- Secret Alignment Requires Strict and Systematic Evaluation](position_retire_the_positive_backdoor_label_--_secret_alignment_requires_strict_.md)
 - [\[ICML 2025\] Distributed and Decentralised Training: Technical Governance Challenges in a Shifting AI Landscape](../../ICML2025/ai_safety/distributed_and_decentralised_training_technical_governance_challenges_in_a_shif.md)
-- [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](../../NeurIPS2025/ai_safety/position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
 
 </div>
 

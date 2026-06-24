@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Context-Conditioned Predicate Semantics via Prototype Feedback
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] AlignG transforms the static predicate prototypes of PE-Net into "image-conditioned" dynamic prototypes: it first performs incremental GRU updates on prototypes using relation candidates to obtain image-specific prototypes, then uses these back to recalibrate relation features, while anchoring the alignment loss to sta
+  [ICML 2026][Optimization][Scene Graph Generation] AlignG transforms the static predicate prototypes of PE-Net into "image-conditioned" dynamic prototypes: it first performs incremental GRU updates on prototypes using relation candidates to obtain image-specific prototypes, then uses these back to recalibrate relation features, while anchoring the alignment loss to static global prototypes to prevent drift. It achieves F@100 gains of 1.4 and 2.7 on VG-150 and GQA-200 SGDet set…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Scene Graph Generation"
+  - "Relational Reasoning"
+  - "Prototype Learning"
+  - "Contextual Conditioning"
+  - "Predicate Disambiguation"
 date: 2026-05-08
-content_hash: bd632e5819c7c333
+content_hash: 7eba34a5439d9174
 ---
+
 # Learning Context-Conditioned Predicate Semantics via Prototype Feedback
 
 **Conference**: ICML 2026  
@@ -137,15 +143,20 @@ GRU outperforms concat across all settings, verifying that "gated incremental up
 - Value: ⭐⭐⭐⭐ — Provides interpretable gains in a mature task like SGG.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **PE-Net**: Prototype-based Embedding Network for Scene Graph Generation (CVPR 2023)
-- **C-SGG**: Context-aware Scene Graph Generation with Multi-prototype Learning (ICCV 2023)
-- **MCL**: Multi-Concept Learning for Predicate Disambiguation (TIP 2025)
+## Related Papers
+
+- [\[ICML 2026\] $α$-PFN: Fast Entropy Search via In-Context Learning](α-pfn_fast_entropy_search_via_in-context_learning.md)
+- [\[CVPR 2026\] Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning](../../CVPR2026/optimization/enhancing_visual_representation_with_textual_semantics_textual_semantics_powered_p.md)
+- [\[ICML 2026\] Test time training enhances in-context learning of nonlinear functions](test_time_training_enhances_in-context_learning_of_nonlinear_functions.md)
+- [\[ICLR 2026\] Bayesian Evidence-Driven Prototype Evolution for Federated Domain Adaptation](../../ICLR2026/optimization/bayesian_evidence-driven_prototype_evolution_for_federated_domain_adaptation.md)
+- [\[ICLR 2026\] Error Feedback for Muon and Friends](../../ICLR2026/optimization/error_feedback_for_muon_and_friends.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning](../../CVPR2026/optimization/enhancing_visual_representation_with_textual_semantics_textual_semantics_powered_p.md)

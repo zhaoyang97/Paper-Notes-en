@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning
 description: >-
-  [CVPR 2026][Social Computing][open-set active learning] Ours proposes E2OAL, a detector-free open-set active learning framework that discovers latent structures of unknown classes via label-guided clustering, jointly models known and unknown categories using a Dirichlet-calibrated auxiliary head, and designs a two-stage adaptive querying strategy to simultaneously achieve h
+  [CVPR2026][Social Computing][open-set active learning] Ours proposes E2OAL, a detector-free open-set active learning framework that discovers latent structures of unknown classes via label-guided clustering, jointly models known and unknown categories using a Dirichlet-calibrated auxiliary head, and designs a two-stage adaptive querying strategy to simultaneously achieve high accuracy, high query purity, and high training efficiency across multiple benchmarks.
 tags:
-  - CVPR 2026
-  - Social Computing
-  - open-set active learning
-  - Dirichlet calibration
-  - unknown class exploitation
-  - adaptive querying
-  - detector-free
+  - "CVPR2026"
+  - "Social Computing"
+  - "open-set active learning"
+  - "Dirichlet calibration"
+  - "unknown class exploitation"
+  - "adaptive querying"
+  - "detector-free"
 date: 2026-05-08
-content_hash: ecbf33f2730b7fd3
+content_hash: 42a11d99c36f8f67
 ---
+
 <!-- 由 src/gen_stubs.py 自动生成 -->
 # Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning
 
@@ -169,10 +170,10 @@ The equivalent training time of E2OAL is comparable to lightweight baselines suc
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](../../NeurIPS2025/social_computing/active_slice_discovery_in_large_language_models.md)
+- [\[CVPR 2026\] Instance-level Visual Active Tracking with Occlusion-Aware Planning](instance-level_visual_active_tracking_with_occlusion-aware_planning.md)
 - [\[AAAI 2026\] Bias Association Discovery Framework for Open-Ended LLM Generations](../../AAAI2026/social_computing/bias_association_discovery_framework_for_open-ended_llm_generations.md)
+- [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](../../NeurIPS2025/social_computing/active_slice_discovery_in_large_language_models.md)
 - [\[ACL 2026\] Building Arabic NLP from the Ground Up: Twenty Years of Lessons, Failures, and Open Problems](../../ACL2026/social_computing/building_arabic_nlp_from_the_ground_up_twenty_years_of_lessons_failures_and_open.md)
-- [\[CVPR 2026\] Learning from Synthetic Data via Provenance-Based Input Gradient Guidance](learning_from_synthetic_data_via_provenance-based_input_gradient_guidance.md)
 - [\[ICLR 2026\] SAGE: Spatial-visual Adaptive Graph Exploration for Efficient Visual Place Recognition](../../ICLR2026/social_computing/sage_spatial-visual_adaptive_graph_exploration_for_efficient_visual_place_recogn.md)
 
 </div>

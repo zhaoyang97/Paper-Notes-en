@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Time Series][financial benchmark] The study constructs EDINET-Bench, a financial benchmark based on ten years of Japanese EDINET annual reports. It includes three expert-level tasks: accounting fraud detection, earnings forecasting, and industry classification, finding that even SOTA LLMs only slightly outperform logistic regression.
 tags:
-  - ICLR 2026
-  - Time Series
-  - financial benchmark
-  - LLM evaluation
-  - fraud detection
-  - earnings forecasting
-  - Japanese NLP
+  - "ICLR 2026"
+  - "Time Series"
+  - "financial benchmark"
+  - "LLM evaluation"
+  - "fraud detection"
+  - "earnings forecasting"
+  - "Japanese NLP"
 date: 2026-05-08
-content_hash: 111ac8110921553b
+content_hash: d872128b80056d47
 ---
+
 # EDINET-Bench: Evaluating LLMs on Complex Financial Tasks using Japanese Financial Statements
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ConvMix: A Mixed-Criteria Data Augmentation Framework for Conversational Dense Retrieval
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Conversational Retrieval] This paper proposes ConvMix, a mixed-criteria data augmentation framework that leverages LLMs to perform scalable relevance annotation augmentation from…
+  [AAAI 2026][Information Retrieval & RAG][Conversational Retrieval] This paper proposes ConvMix, a mixed-criteria data augmentation framework that leverages LLMs to perform scalable relevance annotation augmentation from both query and document directions, combined with clustering-based diversity selection and Fisher information-based in-distribution supervision, to systematically improve conversational dense retrieval performance.
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "In-Distribution Supervision"
   - "Fisher Information"
 date: 2026-05-08
-content_hash: 50c486fe596a947e
+content_hash: 8ff3395e23e133be
 ---
 
 # ConvMix: A Mixed-Criteria Data Augmentation Framework for Conversational Dense Retrieval
@@ -134,10 +134,10 @@ ConvMix-Combine achieves an MRR improvement of 5.5 on the out-of-domain CAsT-21 
 ## Related Papers
 
 - [\[ACL 2026\] MTR-Suite: A Framework for Evaluating and Synthesizing Conversational Retrieval Benchmarks](../../ACL2026/information_retrieval/mtr-suite_a_framework_for_evaluating_and_synthesizing_conversational_retrieval_b.md)
+- [\[ACL 2025\] Drama: Diverse Augmentation from Large Language Models to Smaller Dense Retrievers](../../ACL2025/information_retrieval/drama_diverse_augmentation_from_large_language_models_to_smaller_dense_retriever.md)
 - [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](../../ACL2026/information_retrieval/domain-specific_data_generation_framework_for_rag_adaptation.md)
-- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
-- [\[ACL 2026\] Test-Time Training for Zero-Resource Dense Retrieval Reranking](../../ACL2026/information_retrieval/test-time_training_for_zero-resource_dense_retrieval_reranking.md)
 - [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](../../ACL2026/information_retrieval/chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
+- [\[ACL 2026\] Test-Time Training for Zero-Resource Dense Retrieval Reranking](../../ACL2026/information_retrieval/test-time_training_for_zero-resource_dense_retrieval_reranking.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Topology-Preserving Neural Operator Learning via Hodge Decomposition
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] This paper proposes the Hodge Spectral Duality (HSD) neural operator, which decomposes the solution operator of manifold PDEs according to Hodge orthogonal decomposition into a dual-branch structure: a "low-frequency topological component (spectral basis) + high-frequency geometric component (FNO auxiliary grid)." Thes
+  [ICML 2026][Physics & Scientific Computing][Hodge decomposition] This paper proposes the Hodge Spectral Duality (HSD) neural operator, which decomposes the solution operator of manifold PDEs according to Hodge orthogonal decomposition into a dual-branch structure: a "low-frequency topological component (spectral basis) + high-frequency geometric component (FNO auxiliary grid)." These are coupled via a commutator correction term, achieving both high precision and conservation…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Hodge decomposition"
+  - "Neural operators"
+  - "Discrete exterior calculus"
+  - "Manifold PDEs"
+  - "Spectral methods"
 date: 2026-05-08
-content_hash: dafe4b3f80ae17d2
+content_hash: b32d60f99bb6c8eb
 ---
+
 # Topology-Preserving Neural Operator Learning via Hodge Decomposition
 
 **Conference**: ICML 2026  
@@ -156,11 +162,11 @@ Experiments with spectral mode count $k=64\to 256$ showed monotonically decreasi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](../../ICLR2026/physics/operator_learning_with_domain_decomposition_for_geometry_generalization_in_pde_s.md)
+- [\[ICLR 2026\] OrthoSolver: A Neural Proper Orthogonal Decomposition Solver For PDEs](../../ICLR2026/physics/orthosolver_a_neural_proper_orthogonal_decomposition_solver_for_pdes.md)
+- [\[ICLR 2026\] KANO: Kolmogorov–Arnold Neural Operator](../../ICLR2026/physics/kano_kolmogorov-arnold_neural_operator.md)
 - [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
-- [\[ICLR 2026\] One Operator to Rule Them All? On Boundary-Indexed Operator Families in Neural PDE Solvers](../../ICLR2026/physics/one_operator_to_rule_them_all_on_boundary-indexed_operator_families_in_neural_pd.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
-- [\[CVPR 2026\] Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening](../../CVPR2026/physics/spatial-spectral_residuals_informed_diffusion_neural_operator_for_pan-sharpening.md)
-- [\[ICCV 2025\] JPEG Processing Neural Operator for Backward-Compatible Coding](../../ICCV2025/physics/jpeg_processing_neural_operator_for_backward-compatible_coding.md)
+- [\[ICLR 2026\] ATOM: A Pretrained Neural Operator for Multitask Molecular Dynamics](../../ICLR2026/physics/atom_a_pretrained_neural_operator_for_multitask_molecular_dynamics.md)
 
 </div>
 

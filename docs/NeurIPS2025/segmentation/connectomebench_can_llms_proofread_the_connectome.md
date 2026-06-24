@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ConnectomeBench: Can LLMs Proofread the Connectome?
 description: >-
-  [NeurIPS 2025][Segmentation][connectomics proofreading] This paper introduces ConnectomeBench, the first standardized benchmark for evaluating multimodal LLMs on three key connectomics proofreading tasks: segment identif…
+  [NeurIPS 2025][Segmentation][connectomics proofreading] This paper introduces ConnectomeBench, the first standardized benchmark for evaluating multimodal LLMs on three key connectomics proofreading tasks: segment identification, split error correction, and merge error detection. o4-mini achieves 85% on the split correction multiple-choice task, yet merge error detection remains significantly below human expert performance.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "segmentation error detection"
   - "benchmark"
 date: 2026-05-08
-content_hash: 0a875f5e1d78d136
+content_hash: 8560b809284a26a7
 ---
 
 # ConnectomeBench: Can LLMs Proofread the Connectome?
@@ -167,8 +167,8 @@ The CAVEClient is used to access segmentation edit histories, obtaining pre- and
 
 - [\[ICCV 2025\] ReferEverything: Towards Segmenting Everything We Can Speak of in Videos](../../ICCV2025/segmentation/refereverything_towards_segmenting_everything_we_can_speak_of_in_videos.md)
 - [\[ICCV 2025\] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](../../ICCV2025/segmentation/can_generative_geospatial_diffusion_models_excel_as_discriminative_geospatial_fo.md)
+- [\[ICML 2025\] Using Multiple Input Modalities Can Improve Data-Efficiency and O.O.D. Generalization for ML with Satellite Imagery](../../ICML2025/segmentation/using_multiple_input_modalities_can_improve_data-efficiency_and_ood_generalizati.md)
 - [\[NeurIPS 2025\] Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks](mars-bench_a_benchmark_for_evaluating_foundation_models_for_mars_science_tasks.md)
-- [\[NeurIPS 2025\] PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding](partonomy_large_multimodal_models_with_part-level_visual_understanding.md)
 - [\[NeurIPS 2025\] Interpreting ResNet-based CLIP via Neuron-Attention Decomposition](interpreting_resnet-based_clip_via_neuron-attention_decomposition.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM trading] This paper introduces DeepFund — the first live fund investment benchmark for LLMs — which employs a multi-agent architecture (Financial Planner + Analyst Team + Portfolio Mana…
+  [NeurIPS 2025][LLM Evaluation][LLM trading] This paper introduces DeepFund — the first live fund investment benchmark for LLMs — which employs a multi-agent architecture (Financial Planner + Analyst Team + Portfolio Manager) connected to real-time market data, eliminating the information leakage caused by LLM "time travel" in traditional backtesting. Over 24 trading days of live testing across 9 flagship LLMs, only Grok 3 achieves positive returns…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "information leakage"
   - "financial evaluation"
 date: 2026-05-08
-content_hash: 61157255abfa4b32
+content_hash: 3faf53ec229eaaa8
 ---
 
 # Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking
@@ -144,11 +144,11 @@ No model training is involved. DeepFund is an evaluation framework that performs
 
 ## Related Papers
 
+- [\[ACL 2025\] TripTailor: A Real-World Benchmark for Personalized Travel Planning](../../ACL2025/llm_evaluation/triptailor_a_real-world_benchmark_for_personalized_travel_planning.md)
+- [\[ICML 2025\] Bounded Rationality for LLMs: Satisficing Alignment at Inference-Time](../../ICML2025/llm_evaluation/bounded_rationality_for_llms_satisficing_alignment_at_inference-time.md)
 - [\[ICCV 2025\] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP](../../ICCV2025/llm_evaluation/batclip_bimodal_online_test-time_adaptation_for_clip.md)
 - [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](../../AAAI2026/llm_evaluation/optscale_probabilistic_optimality_for_inference-time_scaling.md)
-- [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](../../AAAI2026/llm_evaluation/test-time_diverse_reasoning_by_riemannian_activation_steering.md)
-- [\[ICLR 2026\] GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time](../../ICLR2026/llm_evaluation/guidedsampling_steering_llms_towards_diverse_candidate_solutions_at_inference-ti.md)
-- [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](../../ACL2026/llm_evaluation/beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
+- [\[ACL 2025\] TiC-LM: A Web-Scale Benchmark for Time-Continual LLM Pretraining](../../ACL2025/llm_evaluation/tic-lm_a_web-scale_benchmark_for_time-continual_llm_pretraining.md)
 
 </div>
 

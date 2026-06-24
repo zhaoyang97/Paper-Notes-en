@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][bilevel optimization] By reinterpreting the F2SA method as a forward difference approximation of the hyper-gradient, this work proposes the F2SA-p algorithmic family utilizing higher-order finite differences. Under high-order smoothness conditions, it improves the SFO complexity of stochastic bilevel optimization from $\tilde{\mathcal{O}}(\
+  [ICLR2026][Optimization][bilevel optimization] By reinterpreting the F2SA method as a forward difference approximation of the hyper-gradient, this work proposes the F2SA-p algorithmic family utilizing higher-order finite differences. Under high-order smoothness conditions, it improves the SFO complexity of stochastic bilevel optimization from $\tilde{\mathcal{O}}(\epsilon^{-6})$ to $\tilde{\mathcal{O}}(p\epsilon^{-4-2/p})$, and proves an $\Omega(\epsilon^{-4})$ lower bound in…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - bilevel optimization
-  - stochastic optimization
-  - finite difference
-  - hyper-gradient estimation
-  - complexity lower bound
+  - "ICLR2026"
+  - "Optimization"
+  - "bilevel optimization"
+  - "stochastic optimization"
+  - "finite difference"
+  - "hyper-gradient estimation"
+  - "complexity lower bound"
 date: 2026-05-08
-content_hash: 277d0cbef4fecdd0
+content_hash: 5dd710fa9ae5856d
 ---
+
 # Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization
 
 **Conference**: ICLR2026  
@@ -107,10 +108,10 @@ Compared to Chayti & Jaggi (2024), which focused on finite differences in meta-l
 ## Related Papers
 
 - [\[ICLR 2026\] Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation](reducing_contextual_stochastic_bilevel_optimization_via_structured_function_appr.md)
-- [\[NeurIPS 2025\] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization](../../NeurIPS2025/optimization/stochastic_momentum_methods_for_non-smooth_non-convex_finite-sum_coupled_composi.md)
-- [\[ICML 2026\] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization](../../ICML2026/optimization/safeguarded_stochastic_polyak_step_sizes_for_non-smooth_optimization_robust_perf.md)
 - [\[ICLR 2026\] Bilevel Optimization with Lower-Level Uniform Convexity: Theory and Algorithm](bilevel_optimization_with_lower-level_uniform_convexity_theory_and_algorithm.md)
 - [\[NeurIPS 2025\] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis](../../NeurIPS2025/optimization/nonlinearly_preconditioned_gradient_methods_momentum_and_stochastic_analysis.md)
+- [\[ICLR 2026\] Diffusion-DFL: Decision-focused Diffusion Models for Stochastic Optimization](diffusion-dfl_decision-focused_diffusion_models_for_stochastic_optimization.md)
+- [\[NeurIPS 2025\] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization](../../NeurIPS2025/optimization/stochastic_momentum_methods_for_non-smooth_non-convex_finite-sum_coupled_composi.md)
 
 </div>
 

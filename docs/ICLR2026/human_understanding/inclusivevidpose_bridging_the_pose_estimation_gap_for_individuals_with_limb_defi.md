@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] InclusiveVidPose: Bridging the Pose Estimation Gap for Individuals with Limb Deficiencies in Videos
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] This paper constructs the first large-scale video human pose estimation dataset specifically for **individuals with limb deficiencies** (amputation, congenital limb differences, prosthetic users), named InclusiveVidPose. Building on the COCO 17-point schema, it adds 8 new residual limb keypoints and proposes the LiCC m
+  [ICLR 2026][Human Understanding][Human Pose Estimation] This paper constructs the first large-scale video human pose estimation dataset specifically for **individuals with limb deficiencies** (amputation, congenital limb differences, prosthetic users), named InclusiveVidPose. Building on the COCO 17-point schema, it adds 8 new residual limb keypoints and proposes the LiCC metric to quantify a model's ability to distinguish between "actual residual limbs/missing limbs" and "co…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Human Pose Estimation"
+  - "Limb Deficiencies"
+  - "Residual Limb Keypoints"
+  - "Video Datasets"
+  - "Fairness"
+  - "Confidence Calibration"
 date: 2026-05-08
-content_hash: a38feeb0aaaaf230
+content_hash: f3ed0fb1f3ed05c3
 ---
+
 # InclusiveVidPose: Bridging the Pose Estimation Gap for Individuals with Limb Deficiencies in Videos
 
 **Conference**: ICLR 2026  

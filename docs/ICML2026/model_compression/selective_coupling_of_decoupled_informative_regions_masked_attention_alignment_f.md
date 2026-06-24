@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers
 description: >-
-  [ICML 2026][Model Compression][ViT] MaskAQ redefines Data-Free Quantization (DFQ) for ViTs as "aligning the attention of the full-precision model $P$ and quantized model $Q$ on sparse informative regions of synthetic samples." By decoupling foreground patches through differential entropy maximization, aligning attention with adaptive masks, and utilizing
+  [ICML 2026][Model Compression][Data-Free Quantization] MaskAQ redefines Data-Free Quantization (DFQ) for ViTs as "aligning the attention of the full-precision model $P$ and quantized model $Q$ on sparse informative regions of synthetic samples." By decoupling foreground patches through differential entropy maximization, aligning attention with adaptive masks, and utilizing periodic refreshing to let samples evolve with $Q$, MaskAQ improves ImageNet Top-1 accuracy by 3.1% over…
 tags:
-  - ICML 2026
-  - Model Compression
-  - ViT
+  - "ICML 2026"
+  - "Model Compression"
+  - "Data-Free Quantization"
+  - "ViT"
+  - "Attention Alignment"
+  - "Information Bottleneck"
+  - "Sample Synthesis"
 date: 2026-05-08
-content_hash: fa1a65ef5e81b1d8
+content_hash: 9cf30374bf5fdef0
 ---
+
 # Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers
 
 **Conference**: ICML 2026  
@@ -148,11 +153,11 @@ Full-precision (FP) baselines: ViT-T 72.01 / ViT-B 84.53 / DeiT-T 72.21 / DeiT-S
 
 ## Related Papers
 
+- [\[ICLR 2026\] DVD-Quant: Data-free Video Diffusion Transformers Quantization](../../ICLR2026/model_compression/dvd-quant_data-free_video_diffusion_transformers_quantization.md)
 - [\[ICCV 2025\] OuroMamba: A Data-Free Quantization Framework for Vision Mamba](../../ICCV2025/model_compression/ouromamba_a_data-free_quantization_framework_for_vision_mamba.md)
+- [\[ICLR 2026\] Zeros Can Be Informative: Masked Binary U-Net for Image Segmentation on Tensor Cores](../../ICLR2026/model_compression/zeros_can_be_informative_masked_binary_u-net_for_image_segmentation_on_tensor_co.md)
 - [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](../../CVPR2026/model_compression/binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
-- [\[ICML 2026\] From Per-Image Low-Rank to Encoding Mismatch: Rethinking Feature Distillation in Vision Transformers](from_per-image_low-rank_to_encoding_mismatch_rethinking_feature_distillation_in_.md)
 - [\[ICML 2026\] Float8@2bits: Entropy Coding Enables Data-Free Model Compression](float82bits_entropy_coding_enables_data-free_model_compression.md)
-- [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](../../AAAI2026/model_compression/distillation_dynamics_towards_understanding_feature-based_di.md)
 
 </div>
 

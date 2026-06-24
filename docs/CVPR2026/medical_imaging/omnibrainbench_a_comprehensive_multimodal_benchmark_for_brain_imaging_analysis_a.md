@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] OmniBrainBench is the first multimodal VQA benchmark covering the complete clinical workflow of brain imaging analysis. It collects 15 imaging modalities from 30 validated data sources and constructs 9,527 radiologist-verified QA pairs (31,706 images). The benchmark is divided into 15 multi-stage tasks across five majo
+  [CVPR 2026][Medical Imaging][Brain Imaging] OmniBrainBench is the first multimodal VQA benchmark covering the complete clinical workflow of brain imaging analysis. It collects 15 imaging modalities from 30 validated data sources and constructs 9,527 radiologist-verified QA pairs (31,706 images). The benchmark is divided into 15 multi-stage tasks across five major clinical phases: "Anatomical Assessment → Lesion Localization → Diagnostic Reasoning → Prognostic Judgment → Treat…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Brain Imaging"
+  - "Multimodal VQA"
+  - "Clinical Workflow"
+  - "Benchmarking"
+  - "MLLM Evaluation"
 date: 2026-05-08
-content_hash: 56f54ad3fa1a80b3
+content_hash: b41c2613fa03eb0a
 ---
+
 # OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks
 
 **Conference**: CVPR 2026  
@@ -127,15 +133,14 @@ To ensure clinical accuracy, a hierarchical manual verification workflow was int
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
-- [\[CVPR 2026\] MuViT: Multi-Resolution Vision Transformers for Learning Across Scales in Microscopy](muvit_multi-resolution_vision_transformers_for_learning_across_scales_in_microsc.md)
 - [\[CVPR 2026\] X-PCR: A Benchmark for Cross-modality Progressive Clinical Reasoning in Ophthalmic Diagnosis](x-pcr_a_benchmark_for_cross-modality_progressive_clinical_reasoning_in_ophthalmi.md)
-- [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](../../NeurIPS2025/medical_imaging/3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
 - [\[NeurIPS 2025\] EndoBench: A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis](../../NeurIPS2025/medical_imaging/endobench_a_comprehensive_evaluation_of_multi-modal_large_language_models_for_en.md)
+- [\[CVPR 2026\] Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning](med-cmr_a_fine-grained_benchmark_integrating_visual_evidence_and_clinical_logic_.md)
+- [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](../../NeurIPS2025/medical_imaging/3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
 
 </div>
 

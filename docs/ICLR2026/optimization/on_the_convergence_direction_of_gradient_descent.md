@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On the Convergence Direction of Gradient Descent
 description: >-
-  [ICLR 2026][Optimization & Theory][Edge of Stability] This paper demonstrates that when Gradient Descent (GD) converges to a local strongly convex minimum, its trajectory does not approach from an arbitrary direction. Instead, it either **aligns to a fixed direction** (small learning rate) or **converges while oscillating back and forth along a straight line** (large lear
+  [ICLR 2026][Optimization][Gradient Descent] This paper demonstrates that when Gradient Descent (GD) converges to a local strongly convex minimum, its trajectory does not approach from an arbitrary direction. Instead, it either **aligns to a fixed direction** (small learning rate) or **converges while oscillating back and forth along a straight line** (large learning rate). The boundary is exactly $\eta = 2/(\lambda_1+\lambda_n)$. This discrete version of the "Gradient Conject…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Edge of Stability
-  - sharpness
+  - "ICLR 2026"
+  - "Optimization"
+  - "Gradient Descent"
+  - "Convergence Direction"
+  - "Edge of Stability"
+  - "sharpness"
+  - "Gradient Conjecture"
 date: 2026-05-08
-content_hash: 1db04b6ea0329606
+content_hash: 2fe2444c5d9d0263
 ---
+
 # On the Convergence Direction of Gradient Descent
 
 **Conference**: ICLR 2026  
@@ -154,7 +158,7 @@ As a theoretical paper, these "experiments" serve to validate the theorem rather
 - [\[ICLR 2026\] Gradient Descent with Large Step Sizes: Chaos and Fractal Convergence Region](gradient_descent_with_large_step_sizes_chaos_and_fractal_convergence_region.md)
 - [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](../../ICML2026/optimization/on_the_convergence_rate_of_lora_gradient_descent.md)
 - [\[ICLR 2026\] Fast Convergence of Natural Gradient Descent for Over-parameterized Physics-Informed Neural Networks](fast_convergence_of_natural_gradient_descent_for_over-parameterized_physics-info.md)
-- [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](../../NeurIPS2025/optimization/learning_provably_improves_the_convergence_of_gradient_descent.md)
+- [\[ICLR 2026\] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks](directional_convergence_benign_overfitting_of_gradient_descent_in_leaky_relu_two.md)
 
 </div>
 

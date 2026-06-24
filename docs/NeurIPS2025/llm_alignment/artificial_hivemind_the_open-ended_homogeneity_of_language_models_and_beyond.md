@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)
 description: >-
-  [NeurIPS 2025 (D&B Oral)][LLM Alignment][mode collapse] This work introduces the Infinity-Chat dataset (26K open-ended real-world user queries with 31…
+  [NeurIPS 2025 (D&B Oral)][LLM Alignment][mode collapse] This work introduces the Infinity-Chat dataset (26K open-ended real-world user queries with 31,250 human annotations) to expose the "Artificial Hivemind" phenomenon in language models — severe intra-model repetition and inter-model homogeneity in open-ended generation — and demonstrates that Reward Models and LM Judges fail to calibrate on samples with high inter-annotator preference divergence.
 tags:
   - "NeurIPS 2025 (D&B Oral)"
   - "LLM Alignment"
@@ -13,7 +13,7 @@ tags:
   - "artificial hivemind"
   - "human preferences"
 date: 2026-05-08
-content_hash: 31f7e46e8c5ae341
+content_hash: 52d118142a5d415e
 ---
 
 # Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)
@@ -133,10 +133,10 @@ In the experimental setup, the same query is sampled multiple times from a singl
 ## Related Papers
 
 - [\[ACL 2026\] ModeX: Evaluator-Free Best-of-N Selection for Open-Ended Generation](../../ACL2026/llm_alignment/modex_evaluator-free_best-of-n_selection_for_open-ended_generation.md)
+- [\[ACL 2025\] Beyond the Tip of Efficiency: Uncovering the Submerged Threats of Jailbreak Attacks in Small Language Models](../../ACL2025/llm_alignment/beyond_the_tip_of_efficiency_uncovering_the_submerged_threats_of_jailbreak_attac.md)
 - [\[NeurIPS 2025\] Alignment of Large Language Models with Constrained Learning](alignment_of_large_language_models_with_constrained_learning.md)
 - [\[NeurIPS 2025\] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models](reinforcement_learning_finetunes_small_subnetworks_in_large_language_models.md)
 - [\[NeurIPS 2025\] Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency](adjacent_words_divergent_intents_jailbreaking_large_language_models_via_task_con.md)
-- [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
 
 </div>
 

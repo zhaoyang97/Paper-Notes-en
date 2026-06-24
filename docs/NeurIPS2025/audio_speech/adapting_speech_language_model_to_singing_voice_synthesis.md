@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adapting Speech Language Model to Singing Voice Synthesis
 description: >-
-  [NeurIPS 2025 (Workshop)][Audio & Speech][Speech Language Model] This paper adapts a 1.7B-parameter TTS-pretrained Speech Language Model to the Singing Voice Synthesis (SVS) task via score tokenization…
+  [NeurIPS 2025 (Workshop)][Audio & Speech][Speech Language Model] This paper adapts a 1.7B-parameter TTS-pretrained Speech Language Model to the Singing Voice Synthesis (SVS) task via score tokenization, multi-stream LM prediction, conditional flow matching refinement, and a vocoder. Using only 135 hours of synthesized singing data, the system achieves performance comparable to dedicated SVS systems.
 tags:
   - "NeurIPS 2025 (Workshop)"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Codec"
   - "Singing Voice Synthesis"
 date: 2026-05-08
-content_hash: 18c52fcfcef09934
+content_hash: a6cdcdcdf2c44acb
 ---
 
 # Adapting Speech Language Model to Singing Voice Synthesis
@@ -128,11 +128,11 @@ The proposed system achieves SingMOS (perceptual quality) on par with the best d
 
 ## Related Papers
 
-- [\[ACL 2026\] UniVocal: Unified Speech-Singing Code-mixed Synthesis](../../ACL2026/audio_speech/univocal_unified_speech-singing_code-switching_synthesis.md)
+- [\[ACL 2025\] TCSinger 2: Customizable Multilingual Zero-shot Singing Voice Synthesis](../../ACL2025/audio_speech/tcsinger_2_customizable_multilingual_zero-shot_singing_voice_synthesis.md)
+- [\[ACL 2026\] UniVocal: Unified Speech-Singing Code-Mixed Synthesis](../../ACL2026/audio_speech/univocal_unified_speech-singing_code-switching_synthesis.md)
 - [\[NeurIPS 2025\] Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis](shallow_flow_matching_for_coarse-to-fine_text-to-speech_synthesis.md)
 - [\[NeurIPS 2025\] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space](efficient_speech_language_modeling_via_energy_distance_in_continuous_latent_spac.md)
 - [\[NeurIPS 2025\] E2E-VGuard: Adversarial Prevention for Production LLM-based End-To-End Speech Synthesis](e2e-vguard_adversarial_prevention_for_production_llm-based_end-to-end_speech_syn.md)
-- [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
 
 </div>
 

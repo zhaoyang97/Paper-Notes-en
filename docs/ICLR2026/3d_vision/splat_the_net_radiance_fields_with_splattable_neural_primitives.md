@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Splat the Net: Radiance Fields with Splattable Neural Primitives
 description: >-
-  [ICLR 2026][3D Vision][splatting] This paper proposes "splattable neural primitives," where the density field of each primitive is represented by a shallow neural network (SIREN) bounded spatially by an ellipsoid. By deriving a **closed-form solution** for the density integral along view rays, the method maintains the high expressivity of neural repres
+  [ICLR 2026][3D Vision][Radiance fields] This paper proposes "splattable neural primitives," where the density field of each primitive is represented by a shallow neural network (SIREN) bounded spatially by an ellipsoid. By deriving a **closed-form solution** for the density integral along view rays, the method maintains the high expressivity of neural representations while achieving the efficient splatting of 3DGS. It achieves quality and speed comparable to 3DGS using 10× fe…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Radiance fields"
+  - "neural primitives"
+  - "splatting"
+  - "closed-form integration"
+  - "novel view synthesis"
 date: 2026-05-08
-content_hash: d9f999dbc17c7291
+content_hash: 842fe4b169046aba
 ---
+
 # Splat the Net: Radiance Fields with Splattable Neural Primitives
 
 **Conference**: ICLR 2026  
@@ -138,6 +143,7 @@ On the Synthetic NeRF dataset under constrained memory budgets, Ours consistentl
 - Value: ⭐⭐⭐⭐⭐ Significant reduction in primitive count (10×) and memory (1/8×) with portable representation insights.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

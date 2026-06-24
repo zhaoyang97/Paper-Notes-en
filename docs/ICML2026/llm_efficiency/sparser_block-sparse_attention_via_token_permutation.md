@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Sparser Block-Sparse Attention via Token Permutation
 description: >-
-  [ICML 2026][LLM Efficiency][Token Permutation] Academic paper note for Sparser Block-Sparse Attention via Token Permutation.
+  [ICML 2026][LLM Efficiency][Block-Sparse Attention] This paper proposes PBS-Attn, which leverages the permutation invariance of attention to reorder keys within segments based on "global importance." This聚拢 (gathers) scattered heavy hitters into continuous high-density blocks before performing block-sparse computation, achieving up to 2.75x end-to-end acceleration for long-context prefilling while maintaining accuracy nearly equal to full attention.
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - Token Permutation
-  - FlashAttention
-  - Heavy Hitter
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Block-Sparse Attention"
+  - "Token Permutation"
+  - "Long-Context Prefilling"
+  - "FlashAttention"
+  - "Heavy Hitter"
 date: 2026-05-08
-content_hash: d6612364293c8137
+content_hash: 9705f052ff6603cf
 ---
+
 # Sparser Block-Sparse Attention via Token Permutation
 
 **Conference**: ICML 2026  
@@ -142,9 +145,9 @@ Efficiency: TTFT measured on H100 shows PBS-Attn achieves **2.75×** end-to-end 
 ## Related Papers
 
 - [\[ICML 2026\] Prism: Spectral-Aware Block-Sparse Attention](prism_spectral-aware_block-sparse_attention.md)
-- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](stochastic_sparse_attention_for_memory-bound_inference.md)
 - [\[ACL 2025\] Efficient Many-Shot In-Context Learning with Dynamic Block-Sparse Attention](../../ACL2025/llm_efficiency/efficient_many-shot_in-context_learning_with_dynamic_block-sparse_attention.md)
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
+- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](stochastic_sparse_attention_for_memory-bound_inference.md)
+- [\[ICLR 2026\] InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation](../../ICLR2026/llm_efficiency/infllm-v2_dense-sparse_switchable_attention_for_seamless_short-to-long_adaptatio.md)
 - [\[ICML 2026\] Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing](efficient_training-free_multi-token_prediction_via_embedding-space_probing.md)
 
 </div>

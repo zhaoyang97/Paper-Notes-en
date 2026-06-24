@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench
 description: >-
-  [ICML 2026][Code Intelligence][SWE-bench] Traditional PPL on SWE-bench is disrupted by the "long context tax" and fails to predict agent capability after SFT. This paper proposes the "Entropy Compression Hypothesis" and the HE-SNR metric, which calculates the signal-to-noise ratio only at "high-entropy decision points" where Top-10 entropy exceeds $(\ln 3 + \l
+  [ICML 2026][Code Intelligence][SWE-bench] Traditional PPL on SWE-bench is disrupted by the "long context tax" and fails to predict agent capability after SFT. This paper proposes the "Entropy Compression Hypothesis" and the HE-SNR metric, which calculates the signal-to-noise ratio only at "high-entropy decision points" where Top-10 entropy exceeds $(\ln 3 + \ln 4)/2$. This achieves a Pearson correlation of 0.96 and a Kendall consistency of 0.98 with downstream SWE-bench score…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - SWE-bench
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "SWE-bench"
+  - "Mid-training Evaluation"
+  - "Top-k Entropy"
+  - "High-entropy Decision Points"
+  - "Entropy Compression"
 date: 2026-05-08
-content_hash: c7217ca5a3420502
+content_hash: 56016547870273be
 ---
+
 # HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench
 
 **Conference**: ICML 2026  
@@ -133,10 +138,10 @@ Threshold sensitivity: Within the $\ln 2$ to $\ln 5$ range, $(\ln 3 + \ln 4)/2$ 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Kimi-Dev: Agentless Training as Skill Prior for SWE-agents](../../ICLR2026/code_intelligence/kimi-dev_agentless_training_as_skill_prior_for_swe-agents.md)
 - [\[ICML 2025\] Training Software Engineering Agents and Verifiers with SWE-Gym](../../ICML2025/code_intelligence/training_software_engineering_agents_and_verifiers_with_swe-gym.md)
 - [\[ACL 2025\] UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench](../../ACL2025/code_intelligence/utboost_rigorous_evaluation_of_coding_agents_on_swe-bench.md)
 - [\[ICML 2026\] Entropy-informed Decoding: Adaptive Information-Driven Branching](entropy-informed_decoding_adaptive_information-driven_branching.md)
-- [\[ICML 2026\] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale](swe-rebench_v2_language-agnostic_swe_task_collection_at_scale.md)
 - [\[ICML 2026\] Probability-Entropy Calibration: An Elastic Indicator for Adaptive Fine-tuning](probability-entropy_calibration_an_elastic_indicator_for_adaptive_fine-tuning.md)
 
 </div>

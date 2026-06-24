@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards 3D Objectness Learning in an Open World
 description: >-
-  [NeurIPS 2025][3D Vision][3D objectness] This paper proposes OP3Det, a class-agnostic open-world 3D detector that requires no text prompts. It leverages 2D foundation models for 3D object discovery and introduces a cross…
+  [NeurIPS 2025][3D Vision][3D objectness] This paper proposes OP3Det, a class-agnostic open-world 3D detector that requires no text prompts. It leverages 2D foundation models for 3D object discovery and introduces a cross-modal Mixture-of-Experts (MoE) module to dynamically fuse point cloud and image features, substantially improving recall on novel object categories.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal MoE"
   - "SAM"
 date: 2026-05-08
-content_hash: 2045f5ee642b6bdf
+content_hash: 14c9aa3c15816a57
 ---
 
 # Towards 3D Objectness Learning in an Open World
@@ -170,10 +170,10 @@ Naive fusion strategies underperform the single-modality baseline; only CM-MoE e
 ## Related Papers
 
 - [\[NeurIPS 2025\] EA3D: Online Open-World 3D Object Extraction from Streaming Videos](ea3d_online_open-world_3d_object_extraction_from_streaming_videos.md)
+- [\[CVPR 2025\] Open-World Amodal Appearance Completion](../../CVPR2025/3d_vision/open-world_amodal_appearance_completion.md)
+- [\[CVPR 2025\] Open-Vocabulary Functional 3D Scene Graphs for Real-World Indoor Spaces](../../CVPR2025/3d_vision/open-vocabulary_functional_3d_scene_graphs_for_real-world_indoor_spaces.md)
 - [\[NeurIPS 2025\] 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos](4dgt_learning_a_4d_gaussian_transformer_using_realworld_mono.md)
-- [\[AAAI 2026\] Open-World 3D Scene Graph Generation for Retrieval-Augmented Reasoning](../../AAAI2026/3d_vision/open-world_3d_scene_graph_generation_for_retrieval-augmented_reasoning.md)
-- [\[NeurIPS 2025\] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations](openlex3d_a_tiered_evaluation_benchmark_for_open-vocabulary_3d_scene_representat.md)
-- [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](../../CVPR2026/3d_vision/learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
+- [\[CVPR 2025\] DepthCrafter: Generating Consistent Long Depth Sequences for Open-world Videos](../../CVPR2025/3d_vision/depthcrafter_generating_consistent_long_depth_sequences_for_open-world_videos.md)
 
 </div>
 

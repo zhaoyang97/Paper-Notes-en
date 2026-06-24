@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning Boltzmann Generators via Constrained Mass Transport
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Boltzmann generator] Addressing the common issues of "mass teleportation" and mode collapse in geometric annealing paths during Boltzmann generator training, this work proposes **Constrained Mass Transport (CMT)**. By decomposing direct reverse KL minimization into a sequence of sub-optimization problems that constrain both the KL divergen
+  [ICLR 2026][Physics & Scientific Computing][Boltzmann generator] Addressing the common issues of "mass teleportation" and mode collapse in geometric annealing paths during Boltzmann generator training, this work proposes **Constrained Mass Transport (CMT)**. By decomposing direct reverse KL minimization into a sequence of sub-optimization problems that constrain both the KL divergence between adjacent distributions and the entropy decay rate, CMT automatically induces smoothe…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Boltzmann generator
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Boltzmann generator"
+  - "variational sampling"
+  - "annealing path"
+  - "trust-region constraint"
+  - "entropy constraint"
+  - "normalizing flows"
 date: 2026-05-08
-content_hash: 06876dca810500fb
+content_hash: 23788edacf06d3a7
 ---
+
 # Learning Boltzmann Generators via Constrained Mass Transport
 
 **Conference**: ICLR 2026  
@@ -124,11 +130,11 @@ The paper analyzes the two types of constraints and the impact of the trust-regi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Regression-based Training of Normalizing Flows for Boltzmann Generators](efficient_regression-based_training_of_normalizing_flows_for_boltzmann_generator.md)
 - [\[ICLR 2026\] Physics-Constrained Fine-Tuning of Flow-Matching Models for Generation and Inverse Problems](physics-constrained_fine-tuning_of_flow-matching_models_for_generation_and_inver.md)
-- [\[ICML 2025\] Universal Neural Optimal Transport](../../ICML2025/physics/universal_neural_optimal_transport.md)
-- [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](../../NeurIPS2025/physics/neural_deprojection_of_galaxy_stellar_mass_profiles.md)
-- [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](../../ICML2026/physics/teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
-- [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](../../NeurIPS2025/physics/feat_free_energy_estimators_with_adaptive_transport.md)
+- [\[ICLR 2026\] Learning Escorted Protocols For Multistate Free-Energy Estimation](learning_escorted_protocols_for_multistate_free-energy_estimation.md)
+- [\[ICLR 2026\] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](operator_learning_with_domain_decomposition_for_geometry_generalization_in_pde_s.md)
+- [\[ICLR 2026\] MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials](matris_toward_reliable_and_efficient_pretrained_machine_learning_interatomic_pot.md)
 
 </div>
 

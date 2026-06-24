@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] The RoboPARA framework is proposed to optimize task parallelism for dual-arm robots through a two-stage process of dependency graph construction and graph re-traversal. It achieves a 30-50% reduction in execution time and a 34% improvement in success rate across multi-scenario benchmarks compared to existing methods.
+  [ICLR 2026][Robotics][Dual-arm Robots] The RoboPARA framework is proposed to optimize task parallelism for dual-arm robots through a two-stage process of dependency graph construction and graph re-traversal. It achieves a 30-50% reduction in execution time and a 34% improvement in success rate across multi-scenario benchmarks compared to existing methods.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Dual-arm Robots"
+  - "Parallel Task Planning"
+  - "DAG Dependency Graph"
+  - "LLM Planning"
+  - "Multi-task Scheduling"
 date: 2026-05-08
-content_hash: 3b25deb2d29e85b0
+content_hash: 23b3015afbe182e2
 ---
+
 # RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,10 @@ No training required—the entire framework is built upon zero-shot/few-shot pro
 ## Related Papers
 
 - [\[CVPR 2025\] RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins](../../CVPR2025/robotics/robotwin_dual-arm_robot_benchmark_with_generative_digital_twins.md)
+- [\[ICLR 2026\] Experience-based Knowledge Correction for Robust Planning in Minecraft](experience-based_knowledge_correction_for_robust_planning_in_minecraft.md)
 - [\[ICLR 2026\] ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning](exopredicator_learning_abstract_models_of_dynamic_worlds_for_robot_planning.md)
 - [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
 - [\[ICLR 2026\] Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning](memory_benchmark_robots_a_benchmark_for_solving_complex_tasks_with_reinforcement.md)
-- [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
 
 </div>
 

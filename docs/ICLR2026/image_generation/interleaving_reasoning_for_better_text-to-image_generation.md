@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Interleaving Reasoning for Better Text-to-Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper proposes Interleaving Reasoning Generation, which enables unified multimodal models to generate images following a trajectory of "text thinking $\rightarrow$ initial image $\rightarrow$ text reflection $\rightarrow$ improved image." By training this process with six decomposed learning tasks in the IRGL-300K
+  [ICLR2026][Image Generation][Interleaved Reasoning] This paper proposes Interleaving Reasoning Generation, which enables unified multimodal models to generate images following a trajectory of "text thinking $\rightarrow$ initial image $\rightarrow$ text reflection $\rightarrow$ improved image." By training this process with six decomposed learning tasks in the IRGL-300K dataset, the model outperforms BAGEL self-CoT and other unified models on multiple T2I benchmarks…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Interleaved Reasoning"
+  - "Text-to-Image Generation"
+  - "Unified Multimodal Models"
+  - "Reflective Generation"
+  - "Fine-grained Fidelity"
 date: 2026-05-08
-content_hash: 0b4ffe4aa3f24654
+content_hash: e5504d6a566b5299
 ---
+
 # Interleaving Reasoning for Better Text-to-Image Generation
 
 **Conference**: ICLR2026  
@@ -126,10 +132,20 @@ The ablation compares high-quality training, IRG trajectories, and decomposed le
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation](../../CVPR2026/image_generation/thinking-while-generating_interleaving_textual_reasoning_throughout_visual_gener.md)
+- [\[ICLR 2026\] ImageDoctor: Diagnosing Text-to-Image Generation via Grounded Image Reasoning](imagedoctor_diagnosing_text-to-image_generation_via_grounded_image_reasoning.md)
+- [\[ICLR 2026\] RePrompt: Reasoning-Augmented Reprompting for Text-to-Image Generation via Reinforcement Learning](reprompt_reasoning-augmented_reprompting_for_text-to-image_generation_via_reinfo.md)
+- [\[ECCV 2024\] Textual-Visual Logic Challenge: Understanding and Reasoning in Text-to-Image Generation](../../ECCV2024/image_generation/textual-visual_logic_challenge_understanding_and_reasoning_in_text-to-image_gene.md)
+- [\[ICLR 2026\] MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning](milr_improving_multimodal_image_generation_via_test-time_latent_reasoning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation](../../CVPR2026/image_generation/thinking-while-generating_interleaving_textual_reasoning_throughout_visual_gener.md)

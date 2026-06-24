@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry
 description: >-
-  [ICLR 2026][Others][Paper Note] This work reveals a simple product structure on Cholesky manifolds, leading to two fast and numerically stable SPD metrics (PCM and BWCM). All Riemannian operators possess closed-form expressions, achieving triple improvements in performance, efficiency, and stability for SPD deep learning.
+  [ICLR 2026][SPD manifolds] This work reveals a simple product structure on Cholesky manifolds, leading to two fast and numerically stable SPD metrics (PCM and BWCM). All Riemannian operators possess closed-form expressions, achieving triple improvements in performance, efficiency, and stability for SPD deep learning.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "SPD manifolds"
+  - "Riemannian metrics"
+  - "Cholesky decomposition"
+  - "product geometry"
+  - "SPD neural networks"
 date: 2026-05-08
-content_hash: 57d60bbcb5e0b382
+content_hash: e38f3c52bd8504d4
 ---
+
 # Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry
 
 **Conference**: ICLR 2026  
@@ -204,10 +209,10 @@ Log-Cholesky metrics (DLM/LCM) fail almost 100% of the time with small eigenvalu
 ## Related Papers
 
 - [\[ICLR 2026\] Evaluating GFlowNet from Partial Episodes for Stable and Flexible Policy-Based Training](evaluating_gflownet_from_partial_episodes_for_stable_and_flexible_policy-based_t.md)
+- [\[ICML 2026\] Riemannian Networks over Full-Rank Correlation Matrices](../../ICML2026/others/riemannian_networks_over_full-rank_correlation_matrices.md)
 - [\[ICLR 2026\] Stable and Scalable Deep Predictive Coding Networks with Meta-Prediction Errors](stable_and_scalable_deep_predictive_coding_networks_with_meta-prediction_errors.md)
 - [\[ICML 2026\] Decision Tree Learning on Product Spaces](../../ICML2026/others/decision_tree_learning_on_product_spaces.md)
 - [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](probabilistic_kernel_function_for_fast_angle_testing.md)
-- [\[ICLR 2026\] Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields](refine_now_query_fast_a_decoupled_refinement_paradigm_for_implicit_neural_fields.md)
 
 </div>
 

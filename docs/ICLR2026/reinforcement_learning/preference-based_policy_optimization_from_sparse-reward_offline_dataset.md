@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Preference-based Policy Optimization from Sparse-reward Offline Dataset
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] PREFORL reformulates sparse-reward offline RL as a contrastive preference learning problem. By bypassing value function estimation and contrasting successful trajectories against both "in-dataset failures" and "synthesized out-of-distribution failures," it suppresses value overestimation and enhances robustness. It con
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] PREFORL reformulates sparse-reward offline RL as a contrastive preference learning problem. By bypassing value function estimation and contrasting successful trajectories against both "in-dataset failures" and "synthesized out-of-distribution failures," it suppresses value overestimation and enhances robustness. It consistently outperforms SOTA methods like CQL, IQL, CPL, and ReBRAC on sparse-reward benchmark…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Sparse Rewards"
+  - "Contrastive Preference Learning"
+  - "Value Overestimation"
+  - "Data Degradation"
 date: 2026-05-08
-content_hash: 6e861ab15bb3d05c
+content_hash: 732a947f71e9e4bc
 ---
+
 # Preference-based Policy Optimization from Sparse-reward Offline Dataset
 
 **Conference**: ICLR 2026  
@@ -142,11 +148,11 @@ On Maze2D navigation (umaze/medium/large, where training and evaluation distribu
 
 ## Related Papers
 
+- [\[ICLR 2026\] OPRIDE: Efficient Offline Preference Reinforcement Learning via In-Dataset Exploration](opride_efficient_offline_preference-based_reinforcement_learning_via_in-dataset_.md)
 - [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
+- [\[ICLR 2026\] Belief-Based Offline Reinforcement Learning for Delay-Robust Policy Optimization](belief-based_offline_reinforcement_learning_for_delay-robust_policy_optimization.md)
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
 - [\[ICLR 2026\] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](enhancing_generative_auto-bidding_with_offline_reward_evaluation_and_policy_sear.md)
-- [\[ICLR 2026\] Causally Robust Reward Learning from Reason-Augmented Preference Feedback](causally_robust_reward_learning_from_reason-augmented_preference_feedback.md)
-- [\[ICLR 2026\] RD-HRL: Generating Reliable Sub-Goals for Long-Horizon Sparse-Reward Tasks](rd-hrl_generating_reliable_sub-goals_for_long-horizon_sparse-reward_tasks.md)
-- [\[ICLR 2026\] DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization](dupo_enabling_reliable_self-verification_via_dual_preference_optimization.md)
 
 </div>
 

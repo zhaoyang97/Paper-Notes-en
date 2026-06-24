@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Speculative decoding] To address the difficulty of draft models in handling redundant visual tokens during VLM speculative decoding, this paper proposes ViSpec…
+  [NeurIPS 2025][Multimodal Efficiency][Speculative decoding] To address the difficulty of draft models in handling redundant visual tokens during VLM speculative decoding, this paper proposes ViSpec, a framework that achieves significant acceleration (up to 3.22×) in VLM speculative decoding for the first time, via a visual adapter for image token compression, global visual feature injection, and synthetic training data generation.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Speculative decoding"
   - "VLM acceleration"
   - "image token compression"
   - "draft model"
   - "inference acceleration"
 date: 2026-05-08
-content_hash: 60d3c3acde6f5777
+content_hash: 185b72d5a88d3fd4
 ---
 
 # ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding
@@ -145,11 +145,11 @@ $$L = \text{CrossEntropy}(p_i, \hat{p}_i)$$
 
 ## Related Papers
 
+- [\[CVPR 2026\] VVS: Accelerating Speculative Decoding for Visual Autoregressive Generation via Partial Verification Skipping](../../CVPR2026/vlm_efficiency/vvs_accelerating_speculative_decoding_for_visual_autoregressive_generation_via_p.md)
 - [\[NeurIPS 2025\] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization](balanced_token_pruning_accelerating_vision_language_models_b.md)
-- [\[NeurIPS 2025\] Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding](enhancing_visionlanguage_model_reliability_with_uncertaintyg.md)
-- [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
-- [\[NeurIPS 2025\] Scene-Aware Urban Design: A Human-AI Recommendation Framework Using Co-Occurrence Embeddings and Vision-Language Models](scene-aware_urban_design_a_human-ai_recommendation_framework_using_co-occurrence.md)
-- [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](../../ICCV2025/multimodal_vlm/folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
+- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](../../CVPR2026/vlm_efficiency/attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
+- [\[NeurIPS 2025\] FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models](flowcut_rethinking_redundancy_via_information_flow_for_effic.md)
+- [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](../../ICCV2025/vlm_efficiency/folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
 
 </div>
 

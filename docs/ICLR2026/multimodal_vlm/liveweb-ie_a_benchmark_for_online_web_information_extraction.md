@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LiveWeb-IE: A Benchmark For Online Web Information Extraction
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper proposes LiveWeb-IE, the first benchmark for online Web Information Extraction (WIE), which covers various data types including text, images, and hyperlinks. It also introduces the Visual Grounding Scraper (VGS) framework, which achieves robust information extraction on dynamic web pages by simulating human
+  [ICLR 2026][Multimodal VLM][Web Information Extraction] This paper proposes LiveWeb-IE, the first benchmark for online Web Information Extraction (WIE), which covers various data types including text, images, and hyperlinks. It also introduces the Visual Grounding Scraper (VGS) framework, which achieves robust information extraction on dynamic web pages by simulating human cognitive processes—visually scanning to locate regions, precisely pinpointing elements…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Web Information Extraction"
+  - "Online Evaluation"
+  - "Visual Grounding"
+  - "XPath Generation"
+  - "Multimodal Agent"
 date: 2026-05-08
-content_hash: f02226624135c6cb
+content_hash: 38653c34394840a9
 ---
+
 # LiveWeb-IE: A Benchmark For Online Web Information Extraction
 
 **Conference**: ICLR 2026  
@@ -155,9 +161,9 @@ LiveWeb-IE differs from web agent benchmarks like WebArena, which focus on multi
 
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](webds_an_end-to-end_benchmark_for_web-based_data_science.md)
 - [\[AAAI 2026\] Exploring LLMs for Scientific Information Extraction using the SciEx Framework](../../AAAI2026/multimodal_vlm/exploring_llms_for_scientific_information_extraction_using_the_sciex_framework.md)
+- [\[ICLR 2026\] DAVE: A VLM Vision Encoder for Document Understanding and Web Agents](dave_a_vlm_vision_encoder_for_document_understanding_and_web_agents.md)
 - [\[CVPR 2025\] Relation-Rich Visual Document Generator for Visual Information Extraction](../../CVPR2025/multimodal_vlm/relation-rich_visual_document_generator_for_visual_information_extraction.md)
 - [\[ICML 2025\] LAION-C: An Out-of-Distribution Benchmark for Web-Scale Vision Models](../../ICML2025/multimodal_vlm/laion-c_an_out-of-distribution_benchmark_for_web-scale_vision_models.md)
-- [\[AAAI 2026\] Towards Scalable Web Accessibility Audit with MLLMs as Copilots](../../AAAI2026/multimodal_vlm/towards_scalable_web_accessibility_audit_with_mllms_as_copilots.md)
 
 </div>
 

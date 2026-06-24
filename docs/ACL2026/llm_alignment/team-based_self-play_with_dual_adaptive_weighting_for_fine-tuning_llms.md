@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] TPAW transforms LLM self-training into an alignment process of "teaming up current and historical models for competition." It stabilizes preference optimization through two adaptive mechanisms—target response weighting and main player weighting—improving performance on the Open LLM Leaderboard and GSM8K without additio
+  [ACL 2026][LLM Alignment][Self-play fine-tuning] TPAW transforms LLM self-training into an alignment process of "teaming up current and historical models for competition." It stabilizes preference optimization through two adaptive mechanisms—target response weighting and main player weighting—improving performance on the Open LLM Leaderboard and GSM8K without additional human preference annotations.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Self-play fine-tuning"
+  - "historical checkpoints"
+  - "preference optimization"
+  - "adaptive weighting"
 date: 2026-05-08
-content_hash: 55d9420de0e82b87
+content_hash: 28cbaf1fcc83c36e
 ---
+
 # Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs
 
 **Conference**: ACL 2026  
@@ -151,11 +156,11 @@ The paper removes three key components on GSM8K: target response weighting, main
 
 ## Related Papers
 
+- [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
+- [\[ICLR 2026\] Towards Self-Robust LLMs: Intrinsic Prompt Noise Resistance via CoIPO](../../ICLR2026/llm_alignment/towards_self-robust_llms_intrinsic_prompt_noise_resistance_via_coipo.md)
 - [\[ICML 2025\] AMPO: Active Multi-Preference Optimization for Self-play Preference Selection](../../ICML2025/llm_alignment/ampo_active_multi-preference_optimization_for_self-play_preference_selection.md)
+- [\[ICLR 2026\] Anchored Supervised Fine-Tuning](../../ICLR2026/llm_alignment/anchored_supervised_fine-tuning.md)
 - [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
-- [\[NeurIPS 2025\] Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs](../../NeurIPS2025/llm_alignment/attack_via_overfitting_10-shot_benign_fine-tuning_to_jailbreak_llms.md)
-- [\[ACL 2026\] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training](consistrm_improving_generative_reward_models_via_consistency-aware_self-training.md)
-- [\[ACL 2025\] Intuitive Fine-Tuning: Towards Simplifying Alignment into a Single Process](../../ACL2025/llm_alignment/intuitive_fine_tuning_simplifying_alignment_into_single_process.md)
 
 </div>
 

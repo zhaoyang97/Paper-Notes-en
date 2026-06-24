@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs
 description: >-
-  [ICLR 2026][Reinforcement Learning][vehicle routing problem] Proposes Chain-of-Context Learning (CCL), which achieves step-by-step dynamic constraint-aware decoding through Relevance-Guided Context Reformulation (RGCR, adaptively aggregating constraint information to build context) and Trajectory-Shared Node Re-embedding (TSNR, updating nodes shared across trajectories to avoid
+  [ICLR2026][Reinforcement Learning][vehicle routing problem] Proposes Chain-of-Context Learning (CCL), which achieves step-by-step dynamic constraint-aware decoding through Relevance-Guided Context Reformulation (RGCR, adaptively aggregating constraint information to build context) and Trajectory-Shared Node Re-embedding (TSNR, updating nodes shared across trajectories to avoid redundant computation). It comprehensively outperforms existing methods on 48 VRP variants (16 in-di…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - vehicle routing problem
-  - multi-task learning
-  - reinforcement-learning
-  - constraint-aware decoding
-  - neural combinatorial optimization
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "vehicle routing problem"
+  - "multi-task learning"
+  - "reinforcement-learning"
+  - "constraint-aware decoding"
+  - "neural combinatorial optimization"
 date: 2026-05-08
-content_hash: 1521ae92d4b92987
+content_hash: b72163c0662cf393
 ---
+
 # Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs
 
 **Conference**: ICLR2026  
@@ -129,11 +130,11 @@ The REINFORCE algorithm is used with multi-trajectory parallel exploration (diff
 
 ## Related Papers
 
-- [\[ICLR 2026\] MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding](mergemix_a_unified_augmentation_paradigm_for_visual_and_multi-modal_understandin.md)
-- [\[ICLR 2026\] Scalable In-Context Q-Learning](scalable_in-context_q-learning.md)
 - [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](../../CVPR2026/reinforcement_learning/taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
+- [\[ICLR 2026\] MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding](mergemix_a_unified_augmentation_paradigm_for_visual_and_multi-modal_understandin.md)
+- [\[ICLR 2026\] Efficient Offline Reinforcement Learning via Peer-Influenced Constraint](efficient_offline_reinforcement_learning_via_peer-influenced_constraint.md)
+- [\[ICLR 2026\] Scalable In-Context Q-Learning](scalable_in-context_q-learning.md)
 - [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
-- [\[ICLR 2026\] Understanding and Improving Hyperbolic Deep Reinforcement Learning](understanding_and_improving_hyperbolic_deep_reinforcement_learning.md)
 
 </div>
 

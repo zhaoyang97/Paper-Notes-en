@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models
 description: >-
-  [AAAI 2026][Interpretability][Reward Model Evaluation] This paper proposes MRMBench, a benchmark that evaluates whether reward models (RMs) effectively capture multi-dimensional preferences via probing tasks across 6 dim…
+  [AAAI 2026][Interpretability][Reward Model Evaluation] This paper proposes MRMBench, a benchmark that evaluates whether reward models (RMs) effectively capture multi-dimensional preferences via probing tasks across 6 dimensions (harmlessness, helpfulness, correctness, coherence, complexity, and verbosity). Probe performance is shown to strongly correlate with PPO alignment quality (Pearson $r > 0.8$), and an inference-time probing method is proposed that improves AlpacaEval w…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Dimensional Preferences"
   - "Inference-Time Probing"
 date: 2026-05-08
-content_hash: 48d4f13c359daecc
+content_hash: e0bc3b26a352d5ec
 ---
 
 # Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models
@@ -142,9 +142,9 @@ The framework consists of three components: (1) constructing MRMBench—a probin
 
 - [\[NeurIPS 2025\] Rectifying Shortcut Behaviors in Preference-based Reward Learning](../../NeurIPS2025/interpretability/rectifying_shortcut_behaviors_in_preference-based_reward_learning.md)
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
-- [\[AAAI 2026\] ToC: Tree-of-Claims Search with Multi-Agent Language Models](toc_tree-of-claims_search_with_multi-agent_language_models.md)
+- [\[CVPR 2025\] Towards Human-Understandable Multi-Dimensional Concept Discovery](../../CVPR2025/interpretability/towards_human-understandable_multi-dimensional_concept_discovery.md)
 - [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
-- [\[ICML 2026\] Accurate Evaluation of Quickest Changepoint Detectors via Non-parametric Survival Analysis](../../ICML2026/interpretability/accurate_evaluation_of_quickest_changepoint_detectors_via_non-parametric_surviva.md)
+- [\[AAAI 2026\] SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models](som_directions_are_better_than_one_multi-directional_refusal_suppression_in_lang.md)
 
 </div>
 

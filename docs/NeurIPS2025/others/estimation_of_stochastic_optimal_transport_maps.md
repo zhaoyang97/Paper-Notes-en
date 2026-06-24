@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Estimation of Stochastic Optimal Transport Maps
 description: >-
-  [NeurIPS 2025][Stochastic OT maps] This paper introduces a transport error metric $\mathcal{E}_p$ for stochastic OT maps, decomposed into an optimality gap and a feasibility gap. Under minimal assumptions that require ne…
+  [NeurIPS 2025][Stochastic OT maps] This paper introduces a transport error metric $\mathcal{E}_p$ for stochastic OT maps, decomposed into an optimality gap and a feasibility gap. Under minimal assumptions that require neither the existence nor uniqueness of a Brenier map, a computationally efficient rounding estimator is constructed that achieves a near-optimal convergence rate of $\tilde{O}(n^{-1/(d+2p)})$. The framework is further extended to Hölder-continuous kernels and a…
 tags:
   - "NeurIPS 2025"
   - "Stochastic OT maps"
@@ -11,7 +11,7 @@ tags:
   - "robust statistics"
   - "Markov kernels"
 date: 2026-05-08
-content_hash: 3b51f053b99766aa
+content_hash: 216c147c48be98e5
 ---
 
 # Estimation of Stochastic Optimal Transport Maps
@@ -114,10 +114,10 @@ The paper validates the theory on two synthetic settings (Setting A: 1D→2D sto
 ## Related Papers
 
 - [\[NeurIPS 2025\] Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport](bispectral_ot_dataset_comparison_using_symmetry-aware_optimal_transport.md)
+- [\[ICML 2025\] Hierarchical Refinement: Optimal Transport to Infinity and Beyond](../../ICML2025/others/hierarchical_refinement_optimal_transport_to_infinity_and_beyond.md)
 - [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](../../ICCV2025/others/lacoot_layer_collapse_through_optimal_transport.md)
-- [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
-- [\[NeurIPS 2025\] Active Measurement: Efficient Estimation at Scale](active_measurement_efficient_estimation_at_scale.md)
-- [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
+- [\[ACL 2025\] Quantifying Lexical Semantic Shift via Unbalanced Optimal Transport](../../ACL2025/others/quantifying_lexical_semantic_shift_via_unbalanced_optimal_transport.md)
+- [\[ICML 2025\] Lightspeed Geometric Dataset Distance via Sliced Optimal Transport](../../ICML2025/others/lightspeed_geometric_dataset_distance_via_sliced_optimal_transport.md)
 
 </div>
 

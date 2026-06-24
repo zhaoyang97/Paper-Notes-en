@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causal Masking on Spatial Data: An Information-Theoretic Case for Learning Spatial Datasets with Unimodal Language Models
 description: >-
-  [NeurIPS 2025][Time Series][causal masking] This paper demonstrates that applying causal masking directly to spatial data (chess board states in FEN format) for training a unimodal LLM outperforms first linearizing the d…
+  [NeurIPS 2025][Time Series][causal masking] This paper demonstrates that applying causal masking directly to spatial data (chess board states in FEN format) for training a unimodal LLM outperforms first linearizing the data into sequences (PGN move records) and then applying causal masking — Llama 1.3B trained with FEN + causal masking achieves ~2630 Elo, whereas PGN + causal masking yields only ~2130 Elo.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -14,7 +14,7 @@ tags:
   - "information theory"
   - "unimodal LLM"
 date: 2026-05-08
-content_hash: f3a9526d7bccc114
+content_hash: a66b822789a50fe8
 ---
 
 # Causal Masking on Spatial Data: An Information-Theoretic Case for Learning Spatial Datasets with Unimodal Language Models
@@ -144,8 +144,8 @@ A controlled comparison across four configurations (FEN + causal masking, FEN + 
 
 - [\[NeurIPS 2025\] CausalDynamics: A Large-Scale Benchmark for Structural Discovery of Dynamical Causal Models](causaldynamics_a_large-scale_benchmark_for_structural_discovery_of_dynamical_cau.md)
 - [\[ACL 2026\] STReasoner: Empowering LLMs for Spatio-Temporal Reasoning in Time Series via Spatial-Aware Reinforcement Learning](../../ACL2026/time_series/streasoner_empowering_llms_for_spatio-temporal_reasoning_in_time_series_via_spat.md)
-- [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
 - [\[NeurIPS 2025\] How Patterns Dictate Learnability in Sequential Data](how_patterns_dictate_learnability_in_sequential_data.md)
+- [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
 - [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
 
 </div>

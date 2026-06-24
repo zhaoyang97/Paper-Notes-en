@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Near-Optimal Online Deployment and Routing for Streaming LLMs
 description: >-
-  [ICLR 2026][LLM (Other)][streaming bandits] This work formalizes the joint problem of streaming online deployment and routing for LLMs for the first time: as new models continuously emerge and old ones become obsolete, the authors propose the StageRoute hierarchical algorithm under a concurrency limit $M_{\max}$ and cost budget constraints. The study proves a $\
+  [ICLR 2026][LLM (Other)][LLM routing] This work formalizes the joint problem of streaming online deployment and routing for LLMs for the first time: as new models continuously emerge and old ones become obsolete, the authors propose the StageRoute hierarchical algorithm under a concurrency limit $M_{\max}$ and cost budget constraints. The study proves a $\tilde{\mathcal{O}}(T^{2/3})$ regret bound and provides a matching lower bound, achieving near-optimality.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - streaming bandits
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "LLM routing"
+  - "online deployment"
+  - "streaming bandits"
+  - "concurrency limit"
+  - "budget constraints"
 date: 2026-05-08
-content_hash: 88b8deab9fd80f0e
+content_hash: 78eb86f03bdc9e09
 ---
+
 # Near-Optimal Online Deployment and Routing for Streaming LLMs
 
 **Conference**: ICLR 2026  
@@ -132,9 +137,9 @@ Theorem 1 provides an upper bound $\text{Regret} \leq \mathcal{O}(\sqrt{M_{\max}
 
 - [\[ICML 2025\] BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute](../../ICML2025/llm_nlp/best-route_adaptive_llm_routing_with_test-time_optimal_compute.md)
 - [\[ICLR 2026\] BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning](bots_a_unified_framework_for_bayesian_online_task_selection_in_llm_reinforcement.md)
-- [\[ICML 2026\] In-Context Routing (ICR): 一次训练、处处可用的 attention-level 隐式 ICL](../../ICML2026/llm_nlp/train_once_reuse_everywhere_generalizable_implicit_in-context_learning_by_routin.md)
 - [\[AAAI 2026\] ICL-Router: In-Context Learned Model Representations for LLM Routing](../../AAAI2026/llm_nlp/icl-router_in-context_learned_model_representations_for_llm_routing.md)
 - [\[ACL 2025\] Are Optimal Algorithms Still Optimal? Rethinking Sorting in LLM-Based Pairwise Ranking with Batching and Caching](../../ACL2025/llm_nlp/are_optimal_algorithms_still_optimal_rethinking_sorting_in_llm-based_pairwise_ra.md)
+- [\[ACL 2025\] LLM as Effective Streaming Processor: Bridging Streaming-Batch Mismatches with Group Position Encoding](../../ACL2025/llm_nlp/llm_as_effective_streaming_processor_bridging_streaming-batch_mismatches_with_gr.md)
 
 </div>
 

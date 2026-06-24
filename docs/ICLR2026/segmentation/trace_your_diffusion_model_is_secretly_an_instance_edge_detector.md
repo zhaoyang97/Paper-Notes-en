@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TRACE: Your Diffusion Model is Secretly an Instance Edge Detector
 description: >-
-  [ICLR 2026][Segmentation][Diffusion Model] It is discovered that the self-attention of text-to-image diffusion models exhibits an "Instance Emergence Point" (IEP) during the denoising process, where the self-attention shows intense divergence at object boundaries. TRACE generates high-quality instance edges through IEP localization + ABDiv edge extraction + sin
+  [ICLR 2026 Oral][Segmentation][Diffusion Models] It is discovered that the self-attention of text-to-image diffusion models exhibits an "Instance Emergence Point" (IEP) during the denoising process, where the self-attention shows intense divergence at object boundaries. TRACE generates high-quality instance edges through IEP localization + ABDiv edge extraction + single-step distillation, achieving 81× inference acceleration. Without any instance annotations…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Diffusion Model
-  - IEP
+  - "ICLR 2026 Oral"
+  - "Segmentation"
+  - "Diffusion Models"
+  - "Instance Edges"
+  - "Self-Attention"
+  - "IEP"
+  - "Unsupervised Segmentation"
 date: 2026-05-08
-content_hash: f08c845994c4b66e
+content_hash: 544f37af4988ec81
 ---
+
 # TRACE: Your Diffusion Model is Secretly an Instance Edge Detector
 
 **Conference**: ICLR 2026 Oral  
@@ -177,8 +181,8 @@ Diffusion vs. Non-diffusion Backbone Comparison:
 - [\[CVPR 2026\] VidEoMT: Your ViT is Secretly Also a Video Segmentation Model](../../CVPR2026/segmentation/videomt_your_vit_is_secretly_also_a_video_segmentation_model.md)
 - [\[CVPR 2025\] Your ViT is Secretly an Image Segmentation Model](../../CVPR2025/segmentation/your_vit_is_secretly_an_image_segmentation_model.md)
 - [\[ICLR 2026\] Universal Multi-Domain Translation via Diffusion Routers](universal_multi-domain_translation_via_diffusion_routers.md)
-- [\[ICLR 2026\] gen2seg: Generative Models Enable Generalizable Instance Segmentation](gen2seg_generative_models_enable_generalizable_instance_segmentation.md)
 - [\[ICML 2025\] FeatSharp: Your Vision Model Features, Sharper](../../ICML2025/segmentation/featsharp_your_vision_model_features_sharper.md)
+- [\[AAAI 2026\] Text-guided Controllable Diffusion for Realistic Camouflage Images Generation](../../AAAI2026/segmentation/text-guided_controllable_diffusion_for_realistic_camouflage_images_generation.md)
 
 </div>
 

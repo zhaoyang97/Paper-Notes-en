@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Envisioning the Future, One Step at a Time
 description: >-
-  [CVPR 2026][Video Understanding][World Models] Ours models open-set future scene dynamic prediction as step-by-step reasoning on sparse point trajectories. Through an autoregressive diffusion model, it achieves rapid generation of thousands of diverse future hypotheses from a single image, at speeds several orders of magnitude faster than dense models.
+  [CVPR 2026][Video Understanding][Open-set motion prediction] Ours models open-set future scene dynamic prediction as step-by-step reasoning on sparse point trajectories. Through an autoregressive diffusion model, it achieves rapid generation of thousands of diverse future hypotheses from a single image, at speeds several orders of magnitude faster than dense models.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - World Models
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Open-set motion prediction"
+  - "sparse trajectories"
+  - "autoregressive diffusion models"
+  - "future prediction"
+  - "world models"
 date: 2026-05-08
-content_hash: dc8c508066d4e991
+content_hash: b5f41805ee823141
 ---
+
 # Envisioning the Future, One Step at a Time
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,10 @@ The model is trained on diverse in-the-wild videos using standard conditional pr
 ## Related Papers
 
 - [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
+- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)
 - [\[CVPR 2026\] Your One-Stop Solution for AI-Generated Video Detection](your_one-stop_solution_for_ai-generated_video_detection.md)
+- [\[ICLR 2026\] What Happens Next? Anticipating Future Motion by Generating Point Trajectories](../../ICLR2026/video_understanding/what_happens_next_anticipating_future_motion_by_generating_point_trajectories.md)
 - [\[CVPR 2026\] StreamRAG: Enhancing Real-Time Video Understanding with Retrieval Augmentation](streamrag_enhancing_real-time_video_understanding_with_retrieval_augmentation.md)
-- [\[CVPR 2026\] From Contrast to Consistency: Rethinking Event-based Continuous-Time Optical Flow Estimation](from_contrast_to_consistency_rethinking_event-based_continuous-time_optical_flow.md)
-- [\[CVPR 2026\] Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation](bootstrapping_video_semantic_segmentation_model_via_distillation-assisted_test-t.md)
 
 </div>
 

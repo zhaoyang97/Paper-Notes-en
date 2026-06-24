@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Supervised Fine-Tuning or Contrastive Learning? Towards Better Multimodal LLM Reranking
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] This paper systematically compares two mainstream routes for training LLM rerankers: Contrastive Learning (CL) and Supervised Fine-Tuning (SFT). By decomposing the gradients into "weight × direction" components, it proves that SFT's superiority stems primarily from the **weight** term (providing larger update steps for
+  [ICLR 2026][Information Retrieval & RAG][Reranking] This paper systematically compares two mainstream routes for training LLM rerankers: Contrastive Learning (CL) and Supervised Fine-Tuning (SFT). By decomposing the gradients into "weight × direction" components, it proves that SFT's superiority stems primarily from the **weight** term (providing larger update steps for hard samples). Based on this, GMR-3B / GMR-7B are trained using pure SFT…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Reranking"
+  - "Contrastive Learning"
+  - "Supervised Fine-Tuning"
+  - "Multimodal Retrieval"
+  - "Loss Decomposition"
 date: 2026-05-08
-content_hash: 055d5893de6eab89
+content_hash: 4e5c8f4b849aebde
 ---
+
 # Supervised Fine-Tuning or Contrastive Learning? Towards Better Multimodal LLM Reranking
 
 **Conference**: ICLR 2026  
@@ -141,9 +147,9 @@ Loss component combinations (MRB average score) and weight function probes:
 
 - [\[ICML 2025\] FedRAG: A Framework for Fine-Tuning Retrieval-Augmented Generation Systems](../../ICML2025/information_retrieval/fedrag_a_framework_for_fine-tuning_retrieval-augmented_generation_systems.md)
 - [\[ACL 2026\] GIFT: Guided Fine-Tuning and Transfer for Enhancing Instruction-Tuned Language Models](../../ACL2026/information_retrieval/gift_guided_fine-tuning_and_transfer_for_enhancing_instruction-tuned_language_mo.md)
+- [\[ICLR 2026\] MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction](metaembed_scaling_multimodal_retrieval_at_test-time_with_flexible_late_interacti.md)
 - [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
 - [\[ICLR 2026\] MRMR: A Realistic and Expert-Level Multidisciplinary Benchmark for Reasoning-Intensive Multimodal Retrieval](mrmr_a_realistic_and_expert-level_multidisciplinary_benchmark_for_reasoning-inte.md)
-- [\[ICLR 2026\] Think Then Embed: Generative Context Improves Multimodal Embedding](think_then_embed_generative_context_improves_multimodal_embedding.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Safeguarding Vision-Language Models: Mitigating Vulnerabilities to Gaussian Noise in Perturbation-based Attacks
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM safety] This work identifies a pervasive vulnerability of mainstream VLMs to Gaussian noise, proposes the Robust-VLGuard safety dataset (covering both image-text aligned and misaligned sce…
+  [ICCV 2025][Multimodal VLM][VLM safety] This work identifies a pervasive vulnerability of mainstream VLMs to Gaussian noise, proposes the Robust-VLGuard safety dataset (covering both image-text aligned and misaligned scenarios) with noise-augmented fine-tuning to improve Gaussian noise robustness, and combines it with DiffPure to convert adversarial noise into Gaussian-like noise, forming the DiffPure-VLM general defense framework that effectively resists adversarial attacks…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "diffusion purification"
   - "safety fine-tuning"
 date: 2026-05-08
-content_hash: fec437232ebfbef3
+content_hash: 0622501de7ffe903
 ---
 
 # Safeguarding Vision-Language Models: Mitigating Vulnerabilities to Gaussian Noise in Perturbation-based Attacks
@@ -148,10 +148,10 @@ DiffPure-VLM consists of two cascaded components:
 ## Related Papers
 
 - [\[ICCV 2025\] One Perturbation is Enough: On Generating Universal Adversarial Perturbations against Vision-Language Pre-training Models](one_perturbation_is_enough_on_generating_universal_adversarial_perturbations_aga.md)
-- [\[ICCV 2025\] Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-of-distribution Detection](adaptive_prompt_learning_via_gaussian_outlier_synthesis_for_out_of_distribution_detection.md)
-- [\[ICML 2026\] Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling](../../ICML2026/multimodal_vlm/mitigating_perceptual_judgment_bias_in_multimodal_llm-as-a-judge_via_perceptual_.md)
-- [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
-- [\[CVPR 2026\] LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models](../../CVPR2026/multimodal_vlm/llavashield_multimodal_multiturn_safety.md)
+- [\[CVPR 2025\] NLPrompt: Noise-Label Prompt Learning for Vision-Language Models](../../CVPR2025/multimodal_vlm/nlprompt_noise-label_prompt_learning_for_vision-language_models.md)
+- [\[ICML 2025\] Understanding and Mitigating Miscalibration in Prompt Tuning for Vision-Language Models](../../ICML2025/multimodal_vlm/understanding_and_mitigating_miscalibration_in_prompt_tuning_for_vision-language.md)
+- [\[ICML 2025\] LlavaGuard: An Open VLM-based Framework for Safeguarding Vision Datasets and Models](../../ICML2025/multimodal_vlm/llavaguard_an_open_vlm-based_framework_for_safeguarding_vision_datasets_and_mode.md)
+- [\[CVPR 2025\] Identifying and Mitigating Position Bias of Multi-image Vision-Language Models](../../CVPR2025/multimodal_vlm/identifying_and_mitigating_position_bias_of_multi-image_vision-language_models.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] GeomMotif: A Benchmark for Arbitrary Geometric Preservation in Protein Generation
 description: >-
-  [ICLR 2026][Computational Biology][motif scaffolding] GeomMotif decouples the protein motif scaffolding task from "functional sites," constructing 57 guaranteed solvable, modality-agnostic "pure geometric preservation" tasks. Through a unified SUN (Success × Unique × Novel) metric system, it reveals counterintuitive phenomena, such as structural models significantly outpe
+  [ICLR 2026][Computational Biology][motif scaffolding] GeomMotif decouples the protein motif scaffolding task from "functional sites," constructing 57 guaranteed solvable, modality-agnostic "pure geometric preservation" tasks. Through a unified SUN (Success × Unique × Novel) metric system, it reveals counterintuitive phenomena, such as structural models significantly outperforming sequence models and structural conditioning potentially interfering with generation.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - motif scaffolding
-  - SUN score
-  - modality-agnostic benchmark
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "motif scaffolding"
+  - "geometric preservation"
+  - "protein generation"
+  - "SUN score"
+  - "modality-agnostic benchmark"
 date: 2026-05-08
-content_hash: 39bce1eeedc5c796
+content_hash: 31d07ad91f7533ba
 ---
+
 # GeomMotif: A Benchmark for Arbitrary Geometric Preservation in Protein Generation
 
 **Conference**: ICLR 2026  
@@ -135,9 +138,9 @@ Structure-based models outperform sequence-based models by an order of magnitude
 ## Related Papers
 
 - [\[ICLR 2026\] Protein Structure Tokenization via Geometric Byte Pair Encoding](protein_structure_tokenization_via_geometric_byte_pair_encoding.md)
+- [\[ICLR 2026\] Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles](rigidity-aware_geometric_pretraining_for_protein_design_and_conformational_ensem.md)
 - [\[ICLR 2026\] CAPSUL: A Comprehensive Human Protein Benchmark for Subcellular Localization](capsul_a_comprehensive_human_protein_benchmark_for_subcellular_localization.md)
 - [\[ICLR 2026\] La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](la-proteina_atomistic_protein_generation_via_partially_latent_flow_matching.md)
-- [\[ICML 2025\] Geometric Representation Condition Improves Equivariant Molecule Generation](../../ICML2025/computational_biology/geometric_representation_condition_improves_equivariant_molecule_generation.md)
 - [\[ICLR 2026\] DCFold: Efficient Protein Structure Generation with Single Forward Pass](dcfold_efficient_protein_structure_generation_with_single_forward_pass.md)
 
 </div>

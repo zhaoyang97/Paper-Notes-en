@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?
 description: >-
-  [ACL 2026][Model Compression][LoRA] LightReasoner uses the token distribution difference between a weaker Amateur model and a stronger Expert model to automatically identify high-value reasoning steps. It then performs contrastive self-distillation only on these steps, allowing mathematical reasoning models to match or exceed SFT performance while signif
+  [ACL 2026][Model Compression][Small model teacher] LightReasoner uses the token distribution difference between a weaker Amateur model and a stronger Expert model to automatically identify high-value reasoning steps. It then performs contrastive self-distillation only on these steps, allowing mathematical reasoning models to match or exceed SFT performance while significantly reducing sampling, training time, and tuning tokens.
 tags:
-  - ACL 2026
-  - Model Compression
-  - LoRA
+  - "ACL 2026"
+  - "Model Compression"
+  - "Small model teacher"
+  - "reasoning distillation"
+  - "KL divergence"
+  - "selective fine-tuning"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 84d94aec0166d3cf
+content_hash: 1c1e2785b9c010da
 ---
+
 # LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?
 
 **Conference**: ACL 2026  

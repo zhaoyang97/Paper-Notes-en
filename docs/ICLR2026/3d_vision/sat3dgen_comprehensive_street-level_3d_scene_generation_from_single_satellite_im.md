@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sat3DGen: Comprehensive Street-level 3D Scene Generation from Single Satellite Image
 description: >-
-  [ICLR 2026][3D Vision][NeRF] Given a single top-down satellite image, Sat3DGen injects three types of geometric constraints (gravity density prior, satellite-view depth prior, spatial boundary tokens) and panorama-to-perspective view augmentation into a feed-forward tri-plane NeRF framework. This approach reduces street-level 3D geometric RMSE fro
+  [ICLR 2026][3D Vision][Satellite-to-3D] Given a single top-down satellite image, Sat3DGen injects three types of geometric constraints (gravity density prior, satellite-view depth prior, spatial boundary tokens) and panorama-to-perspective view augmentation into a feed-forward tri-plane NeRF framework. This approach reduces street-level 3D geometric RMSE from 6.76m to 5.20m and improves rendering FID from ~40 to 19.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - NeRF
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Satellite-to-3D"
+  - "Street view synthesis"
+  - "Feed-forward image-to-3D"
+  - "Geometric priors"
+  - "NeRF"
 date: 2026-05-08
-content_hash: 986fc25a5ceed060
+content_hash: f8cf4fdc5ac500ce
 ---
+
 # Sat3DGen: Comprehensive Street-level 3D Scene Generation from Single Satellite Image
 
 **Conference**: ICLR 2026  
@@ -160,9 +165,9 @@ Component-wise ablation on VIGOR-OOD (Lower FID indicates better realism, lower 
 
 - [\[ICLR 2026\] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image](one2scene_geometric_consistent_explorable_3d_scene_generation_from_a_single_imag.md)
 - [\[ICLR 2026\] SceneTransporter: Optimal Transport-Guided Compositional Latent Diffusion for Single-Image Structured 3D Scene Generation](scenetransporter_optimal_transport-guided_compositional_latent_diffusion_for_sin.md)
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
 - [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](../../ICCV2025/3d_vision/sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
 - [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](../../CVPR2026/3d_vision/pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
-- [\[CVPR 2025\] WonderWorld: Interactive 3D Scene Generation from a Single Image](../../CVPR2025/3d_vision/wonderworld_interactive_3d_scene_generation_from_a_single_image.md)
 
 </div>
 

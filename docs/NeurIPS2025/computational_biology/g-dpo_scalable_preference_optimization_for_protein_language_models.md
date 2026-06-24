@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] g-DPO: Scalable Preference Optimization for Protein Language Models
 description: >-
-  [NeurIPS 2025][Computational Biology][DPO] To address the quadratic growth of preference pairs with respect to sample size when applying DPO to protein language models (PLMs)—which renders training intractable—this paper…
+  [NeurIPS 2025][Computational Biology][DPO] To address the quadratic growth of preference pairs with respect to sample size when applying DPO to protein language models (PLMs)—which renders training intractable—this paper proposes g-DPO: (1) redundant preference pairs are pruned via union-mask-based clustering in sequence space, retaining more informative comparisons within local neighborhoods; (2) grouped likelihood amortization via shared union masks enables computation of l…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Scalability"
   - "Mutational Landscape"
 date: 2026-05-08
-content_hash: bf310ded7c224f25
+content_hash: a5fb16357aec4719
 ---
 
 # g-DPO: Scalable Preference Optimization for Protein Language Models
@@ -130,11 +130,11 @@ g-DPO training proceeds in three stages: (1) **Evo-tuning**—unsupervised fine-
 
 ## Related Papers
 
+- [\[ACL 2025\] Enhancing Safe and Controllable Protein Generation via Knowledge Preference Optimization](../../ACL2025/computational_biology/kpo_protein_safety.md)
 - [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
+- [\[ICML 2025\] Steering Protein Language Models](../../ICML2025/computational_biology/steering_protein_language_models.md)
+- [\[ACL 2025\] Concept Bottleneck Language Models For Protein Design](../../ACL2025/computational_biology/concept_bottleneck_language_models_for_protein_design.md)
 - [\[AAAI 2026\] EPO: Diverse and Realistic Protein Ensemble Generation via Energy Preference Optimization](../../AAAI2026/computational_biology/epo_diverse_and_realistic_protein_ensemble_generation_via_energy_preference_opti.md)
-- [\[ICLR 2026\] Controlling Repetition in Protein Language Models](../../ICLR2026/computational_biology/controlling_repetition_in_protein_language_models.md)
-- [\[NeurIPS 2025\] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models](mol-llama_towards_general_understanding_of_molecules_in_large_molecular_language.md)
-- [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond the Individual: Virtualizing Multi-Disciplinary Reasoning for Clinical Intake via Collaborative Agents
 description: >-
-  [ACL 2026][Medical NLP][Multi-Agent] The proposed Aegle framework virtualizes Multi-Disciplinary Teams (MDT) through a graph-structured multi-agent architecture. By introducing decoupled parallel reasoning and dynamic topology into the clinical intake process, it outperforms SOTA models on 53 metrics across 24 clinical departments.
+  [ACL 2026 Findings][Medical LLM][Multi-Disciplinary Consultation] The proposed Aegle framework virtualizes Multi-Disciplinary Teams (MDT) through a graph-structured multi-agent architecture. By introducing decoupled parallel reasoning and dynamic topology into the clinical intake process, it outperforms SOTA models on 53 metrics across 24 clinical departments.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Multi-Disciplinary Consultation"
+  - "Multi-Agent"
+  - "Clinical Intake"
+  - "SOAP Notes"
+  - "Dynamic Topology"
 date: 2026-05-08
-content_hash: fb692379e941029b
+content_hash: 657795c2194466e8
 ---
+
 # Beyond the Individual: Virtualizing Multi-Disciplinary Reasoning for Clinical Intake via Collaborative Agents
 
 **Conference**: ACL 2026 Findings  
@@ -130,10 +135,10 @@ The evaluation covers 24 clinical departments with 53 fine-grained metrics.
 ## Related Papers
 
 - [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
+- [\[ICLR 2026\] KnowGuard: Knowledge-Driven Abstention for Multi-Round Clinical Reasoning](../../ICLR2026/medical_nlp/knowguard_knowledge-driven_abstention_for_multi-round_clinical_reasoning.md)
 - [\[ACL 2026\] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)
 - [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
 - [\[ACL 2026\] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)
-- [\[ACL 2025\] ReflecTool: Towards Reflection-Aware Tool-Augmented Clinical Agents](../../ACL2025/medical_nlp/reflectool_clinical_agent.md)
 
 </div>
 

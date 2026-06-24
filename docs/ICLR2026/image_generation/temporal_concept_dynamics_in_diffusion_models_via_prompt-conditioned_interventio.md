@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Concept Dynamics in Diffusion Models via Prompt-Conditioned Interventions
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The PCI (Prompt-Conditioned Intervention) framework is proposed to quantify when concepts are fixed in diffusion models by switching text prompts at different timesteps of the denoising trajectory, applying these findings to time-aware image editing.
+  [ICLR 2026][Image Generation][Temporal Concept Dynamics] The PCI (Prompt-Conditioned Intervention) framework is proposed to quantify when concepts are fixed in diffusion models by switching text prompts at different timesteps of the denoising trajectory, applying these findings to time-aware image editing.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Temporal Concept Dynamics"
+  - "Prompt-Conditioned Intervention"
+  - "Concept Insertion Success"
+  - "Diffusion Interpretability"
+  - "Training-free Editing"
 date: 2026-05-08
-content_hash: 5fe2dd5833bc7cc2
+content_hash: 7cca09aedf3d7991
 ---
+
 # Temporal Concept Dynamics in Diffusion Models via Prompt-Conditioned Interventions
 
 **Conference**: ICLR 2026  
@@ -144,6 +150,7 @@ Editing windows guided by CIS $[\tau_{50}, \tau_{70}]$ achieve the best balance 
 - **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear structure, interesting findings, and precise delivery.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

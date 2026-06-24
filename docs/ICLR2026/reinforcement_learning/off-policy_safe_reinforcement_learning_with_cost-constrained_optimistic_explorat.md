@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration
 description: >-
-  [ICLR 2026][Reinforcement Learning][off-policy] This paper proposes COX-Q, an off-policy safe reinforcement learning algorithm. In the online exploration phase, it utilizes Policy-MGDA to resolve gradient conflicts between rewards and costs in the action space and employs an adaptive step size to keep data collection costs within thresholds. In the offline learning
+  [ICLR 2026][Reinforcement Learning][Safe RL] This paper proposes COX-Q, an off-policy safe reinforcement learning algorithm. In the online exploration phase, it utilizes Policy-MGDA to resolve gradient conflicts between rewards and costs in the action space and employs an adaptive step size to keep data collection costs within thresholds. In the offline learning phase, it uses Truncated Quantile Critics (TQC) to stabilize cost value estimation and quantify epistemic uncertain…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - off-policy
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Safe RL"
+  - "off-policy"
+  - "optimistic exploration"
+  - "gradient conflict"
+  - "quantile critics"
 date: 2026-05-08
-content_hash: e2563917f902ec48
+content_hash: a1c7e311dd761296
 ---
+
 # Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration
 
 **Conference**: ICLR 2026  
@@ -141,7 +146,7 @@ Two variants (TQC only without exploration; TQC + ORAC-style exploration) were c
 - [\[ICLR 2026\] SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration](shapo_sharpness-aware_policy_optimization_for_safe_exploration.md)
 - [\[ICML 2025\] Controlling Underestimation Bias in Constrained Reinforcement Learning for Safe Exploration](../../ICML2025/reinforcement_learning/controlling_underestimation_bias_in_constrained_reinforcement_learning_for_safe_.md)
 - [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
-- [\[ICLR 2026\] On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting](on-policy_rl_meets_off-policy_experts_harmonizing_supervised_fine-tuning_and_rei.md)
+- [\[ICLR 2026\] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training](revisiting_group_relative_policy_optimization_insights_into_on-policy_and_off-po.md)
 
 </div>
 

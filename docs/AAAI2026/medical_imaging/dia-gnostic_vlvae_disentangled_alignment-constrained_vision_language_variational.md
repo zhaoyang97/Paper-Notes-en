@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities
 description: >-
-  [AAAI 2026][Medical Imaging][Radiology Report Generation] This paper proposes DiA-gnostic VLVAE, a vision-language mixture-of-experts VAE that learns a three-factor latent space ($Z_v$ visual-specific / $Z_l$ language-sp…
+  [AAAI 2026][Medical Imaging][Radiology Report Generation] This paper proposes DiA-gnostic VLVAE, a vision-language mixture-of-experts VAE that learns a three-factor latent space ($Z_v$ visual-specific / $Z_l$ language-specific / $Z_s$ shared), with dual constraints of orthogonality and contrastive alignment for disentanglement. The model generates reliable radiology reports even when clinical context is absent, achieving competitive BLEU@4 on IU X-Ray and MIMIC-CXR.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "VAE"
   - "MoE"
 date: 2026-05-08
-content_hash: 149bd6724ddd3c9d
+content_hash: 1546b040b488b615
 ---
 
 # DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities
@@ -128,11 +128,11 @@ $\mathcal{L}_{total} = \mathcal{L}_{CE} + \mathcal{L}_{ELBO} + \lambda_1 \mathca
 
 ## Related Papers
 
-- [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
 - [\[NeurIPS 2025\] Variational Autoencoder with Normalizing Flow for X-ray Spectral Fitting](../../NeurIPS2025/medical_imaging/variational_autoencoder_with_normalizing_flow_for_x-ray_spectral_fitting.md)
-- [\[AAAI 2026\] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks](sim4seg_boosting_multimodal_multi-disease_medical_diagnosis_segmentation_with_re.md)
+- [\[CVPR 2026\] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities](../../CVPR2026/medical_imaging/virtual_nodes_guided_dynamic_graph_neural_network_for_brain_tumor_segmentation_w.md)
+- [\[CVPR 2026\] PETAR: Localized Findings Generation with Mask-Aware Vision-Language Modeling for PET Automated Reporting](../../CVPR2026/medical_imaging/petar_localized_findings_generation_with_mask-aware_vision-language_modeling_for.md)
 - [\[AAAI 2026\] Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment](shrinking_the_teacher_an_adaptive_teaching_paradigm_for_asymmetric_eeg-vision_al.md)
-- [\[AAAI 2026\] Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection](personality-guided_public-private_domain_disentangled_hypergraph-former_network_.md)
+- [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
 
 </div>
 

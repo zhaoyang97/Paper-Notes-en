@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Condensed Test-Time Adaptation of VLMs for Action Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the non-transitivity of the mapping chain in training-free cache-based Test-Time Adaptation (TDA) — where "vision-vision alignment is dominated by appearance while vision-text alignment is dominated by semantics" — CONDA uses text semantics to guide the construction of visual caches. It condenses only patche
+  [CVPR 2026][Multimodal VLM][Test-time adaptation] Addressing the non-transitivity of the mapping chain in training-free cache-based Test-Time Adaptation (TDA) — where "vision-vision alignment is dominated by appearance while vision-text alignment is dominated by semantics" — CONDA uses text semantics to guide the construction of visual caches. It condenses only patches positively correlated with action semantics (PSPS) into spatio-temporal tubes (ATC)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Test-time adaptation"
+  - "zero-shot action recognition"
+  - "video feature condensation"
+  - "training-free"
+  - "cache adapter"
 date: 2026-05-08
-content_hash: e93e9b8c1df3db2a
+content_hash: cf975dcc316e54e4
 ---
+
 # Condensed Test-Time Adaptation of VLMs for Action Recognition
 
 **Conference**: CVPR 2026  
@@ -158,15 +164,14 @@ Based on ViCLIP / ViT-B/16, reporting K600 / COIN top-1 (%):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Test-Time Distillation for Continual Model Adaptation](test-time_distillation_for_continual_model_adaptation.md)
 - [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
 - [\[CVPR 2026\] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation](decoupling_stability_and_plasticity_for_multi-modal_test-time_adaptation.md)
 - [\[CVPR 2026\] Multi-modal Test-time Adaptation via Adaptive Probabilistic Gaussian Calibration](multi-modal_test-time_adaptation_via_adaptive_probabilistic_gaussian_calibration.md)
+- [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
 
 </div>
 

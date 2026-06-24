@@ -4,15 +4,17 @@ title: >-
 description: >-
   [ACL 2026][Audio & Speech][Mamba] This work presents the first comprehensive exploration of Mamba as a foundation model for speech self-supervised learning (SSL). It finds that Mamba-based HuBERT outperforms Transformers in long-context ASR, streaming ASR, and causal probing tasks while maintaining linear time complexity.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Mamba
-  - HuBERT
-  - State Space Model
-  - Streaming ASR
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Mamba"
+  - "Speech SSL"
+  - "HuBERT"
+  - "State Space Models"
+  - "Streaming ASR"
 date: 2026-05-08
-content_hash: 4e52554bbd2ee027
+content_hash: a2dc3efcc128608c
 ---
+
 # An Exploration of Mamba for Speech Self-Supervised Models
 
 **Conference**: ACL 2026  

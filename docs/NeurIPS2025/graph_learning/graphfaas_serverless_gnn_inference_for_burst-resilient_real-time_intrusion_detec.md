@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GraphFaaS: Serverless GNN Inference for Burst-Resilient, Real-Time Intrusion Detection
 description: >-
-  [NeurIPS 2025][Graph Learning][GNN Inference] This paper proposes GraphFaaS, a serverless inference architecture for GNN-based intrusion detection. Through incremental provenance graph construction…
+  [NeurIPS 2025][Graph Learning][GNN Inference] This paper proposes GraphFaaS, a serverless inference architecture for GNN-based intrusion detection. Through incremental provenance graph construction, feature-length-aware parallel node embedding, and greedy best-fit subgraph partitioning, GraphFaaS reduces mean detection latency from 14.16 seconds to 2.1 seconds (6.7×) and the coefficient of variation from 1.46 to 0.52 (64% reduction), maintaining stable low latency under burst…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Burst Traffic"
   - "Graph Partitioning"
 date: 2026-05-08
-content_hash: cca77ab3458e92dd
+content_hash: 37635d8bf48d521a
 ---
 
 # GraphFaaS: Serverless GNN Inference for Burst-Resilient, Real-Time Intrusion Detection
@@ -137,10 +137,10 @@ Evaluated on the DARPA TC Engagement 3 dataset (11 days of audit logs, 4 attacks
 ## Related Papers
 
 - [\[NeurIPS 2025\] Practical Bayes-Optimal Membership Inference Attacks](practical_bayes-optimal_membership_inference_attacks.md)
-- [\[NeurIPS 2025\] GnnXemplar: Exemplars to Explanations -- Natural Language Rules for Global GNN Interpretability](gnnxemplar_exemplars_to_explanations_--_natural_language_rules_for_global_gnn_in.md)
 - [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
-- [\[NeurIPS 2025\] Spatio-Temporal Directed Graph Learning for Account Takeover Fraud Detection](spatio-temporal_directed_graph_learning_for_account_takeover_fraud_detection.md)
-- [\[ICLR 2026\] A Geometric Perspective on the Difficulties of Learning GNN-based SAT Solvers](../../ICLR2026/graph_learning/a_geometric_perspective_on_the_difficulties_of_learning_gnn-based_sat_solvers.md)
+- [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](../../ICLR2026/graph_learning/gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
+- [\[NeurIPS 2025\] GnnXemplar: Exemplars to Explanations -- Natural Language Rules for Global GNN Interpretability](gnnxemplar_exemplars_to_explanations_--_natural_language_rules_for_global_gnn_in.md)
+- [\[ICLR 2026\] $\ell_1$ Latent Distance Based Continuous-Time Graph Representation](../../ICLR2026/graph_learning/ell_1_latent_distance_based_continuous-time_graph_representation.md)
 
 </div>
 

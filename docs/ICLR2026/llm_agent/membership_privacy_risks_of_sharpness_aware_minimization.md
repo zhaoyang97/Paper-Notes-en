@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development
 description: >-
-  [ICLR 2026][LLM Agent][agentic coding] The authors propose FeatureBench—a benchmark for evaluating code agents in feature-level software development. Using a test-driven automated pipeline to extract verifiable feature implementation tasks from open-source repositories, the results show that the strongest model, Claude Opus 4.5, solves only 11.0%, revealing
+  [ICLR 2026][LLM Agent][agentic coding] The authors propose FeatureBench—a benchmark for evaluating code agents in feature-level software development. Using a test-driven automated pipeline to extract verifiable feature implementation tasks from open-source repositories, the results show that the strongest model, Claude Opus 4.5, solves only 11.0%, revealing a substantial performance gap in complex feature development.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - agentic coding
-  - benchmark
-  - feature development
-  - test-driven
-  - SWE-bench
-  - code agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "agentic coding"
+  - "benchmark"
+  - "feature development"
+  - "test-driven"
+  - "SWE-bench"
+  - "code agent"
 date: 2026-05-08
-content_hash: 0faec8ed83b4aa6e
+content_hash: 4e3f7d1694108c0b
 ---
+
 # FeatureBench: Benchmarking Agentic Coding for Complex Feature Development
 
 **Conference**: ICLR 2026  
@@ -155,11 +156,11 @@ PaperBench (20 cases) and DevEval (22 cases) are limited in scale and rely on ex
 
 ## Related Papers
 
+- [\[ICLR 2026\] Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine](huxley-godel_machine_human-level_coding_agent_development_by_an_approximation_of.md)
 - [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
-- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](../../ACL2026/llm_agent/octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
+- [\[ICLR 2026\] SciNav: A General Agent Framework for Scientific Coding Tasks](scinav_a_general_agent_framework_for_scientific_coding_tasks.md)
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
-- [\[ICLR 2026\] PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement](physcensis_physics-augmented_llm_agents_for_complex_physical_scene_arrangement.md)
-- [\[ICLR 2026\] Mix-ECom: Towards Mixed-Type E-Commerce Dialogues with Complex Domain Rules](mix-ecom_towards_mixed-type_e-commerce_dialogues_with_complex_domain_rules.md)
+- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](../../ACL2026/llm_agent/octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
 
 </div>
 

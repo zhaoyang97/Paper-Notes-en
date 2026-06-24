@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Are Tools Always Beneficial? Learning to Invoke Tools Adaptively for Dual-Mode Multimodal LLM Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Reinforcement Learning] AutoTool utilizes reinforcement learning to enable Multimodal Large Language Models (MLLMs) to first determine whether a "zoom-in tool" is truly necessary for a given task. By adaptively switching between tool-assisted reasoning and pure text reasoning, the model achieves simultaneous improvements in accuracy and effic
+  [ICML2026][Reasoning][Adaptive Tool Invocation] AutoTool utilizes reinforcement learning to enable Multimodal Large Language Models (MLLMs) to first determine whether a "zoom-in tool" is truly necessary for a given task. By adaptively switching between tool-assisted reasoning and pure text reasoning, the model achieves simultaneous improvements in accuracy and efficiency across high-resolution perception, grounding, hallucination detection, and reasoning tasks.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reasoning"
+  - "Adaptive Tool Invocation"
+  - "Multimodal Reasoning"
+  - "Reinforcement Learning"
+  - "Visual Grounding"
+  - "Mode Balancing"
 date: 2026-05-08
-content_hash: 38c88bd4fab61956
+content_hash: 8df534c4cc98f66f
 ---
+
 # Are Tools Always Beneficial? Learning to Invoke Tools Adaptively for Dual-Mode Multimodal LLM Reasoning
 
 **Conference**: ICML2026  
@@ -142,15 +147,14 @@ Ablations show that forcing tool usage is not optimal. The combination of dual-m
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](../../NeurIPS2025/llm_reasoning/srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
 - [\[ICML 2026\] Chain-of-Thought Reasoning in the Wild Is Not Always Faithful](chain-of-thought_reasoning_in_the_wild_is_not_always_faithful.md)
 - [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](../../ICLR2026/llm_reasoning/adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
-- [\[ICML 2026\] PowerFlow: Unlocking the Dual Nature of LLMs via Principled Distribution Matching](powerflow_unlocking_the_dual_nature_of_llms_via_principled_distribution_matching.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
+- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](../../ICLR2026/llm_reasoning/vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
+- [\[ICML 2026\] Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback](critique-grpo_advancing_llm_reasoning_with_natural_language_and_numerical_feedba.md)
 
 </div>
 

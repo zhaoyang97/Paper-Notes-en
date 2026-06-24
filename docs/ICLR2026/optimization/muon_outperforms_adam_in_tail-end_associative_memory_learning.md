@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Muon Outperforms Adam in Tail-End Associative Memory Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][Adam] This paper reveals the mechanism behind Muon's speed advantage over Adam through the lens of "associative memory": Muon's update rule normalizes gradient singular values, which naturally matches the outer-product superposition structure of associative memory, thereby enabling more balanced learning of low-frequency "ta
+  [ICLR 2026][Optimization][Muon Optimizer] This paper reveals the mechanism behind Muon's speed advantage over Adam through the lens of "associative memory": Muon's update rule normalizes gradient singular values, which naturally matches the outer-product superposition structure of associative memory, thereby enabling more balanced learning of low-frequency "tail" knowledge in heavy-tailed data.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Adam
+  - "ICLR 2026"
+  - "Optimization"
+  - "Muon Optimizer"
+  - "Adam"
+  - "Associative Memory"
+  - "Heavy-tailed Distribution"
+  - "Singular Spectrum Isotropy"
+  - "Long-tail Learning"
 date: 2026-05-08
-content_hash: 76392518cc68be7b
+content_hash: ba58c264d1dafb0e
 ---
+
 # Muon Outperforms Adam in Tail-End Associative Memory Learning
 
 **Conference**: ICLR 2026  
@@ -111,10 +117,10 @@ flowchart TD
 ## Related Papers
 
 - [\[ICML 2026\] Muon in Associative Memory Learning: Training Dynamics and Scaling Laws](../../ICML2026/optimization/muon_in_associative_memory_learning_training_dynamics_and_scaling_laws.md)
+- [\[ICLR 2026\] The Polar Express: Optimal Matrix Sign Methods and their Application to the Muon Algorithm](the_polar_express_optimal_matrix_sign_methods_and_their_application_to_the_muon_.md)
 - [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
 - [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
-- [\[ICLR 2026\] Error Feedback for Muon and Friends](error_feedback_for_muon_and_friends.md)
-- [\[ICLR 2026\] MuonBP: Faster Muon via Block-Periodic Orthogonalization](muonbp_faster_muon_via_block-periodic_orthogonalization.md)
+- [\[ICLR 2026\] Convergence of Muon with Newton-Schulz](convergence_of_muon_with_newton-schulz.md)
 
 </div>
 

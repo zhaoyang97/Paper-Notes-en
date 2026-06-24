@@ -2,46 +2,45 @@
 title: >-
   [Paper Note] InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference
 description: >-
-  [AAAI 2026][AI Safety][Split inference] InfoDecom is proposed to reduce redundant information in smashed data via two-level information decomposition (frequency-domain visual information removal + mutual information supp…
+  [AAAI 2026][AI Safety][Split Inference] This paper proposes InfoDecom, which reduces redundant information in smashed data via two-stage information decomposition (frequency-domain visual information removal + mutual information suppression). It then injects closed-form computed Gaussian noise to provide theoretical privacy guarantees, achieving a utility-privacy trade-off (UPT) far superior to existing methods under shallow client-side models.
 tags:
   - "AAAI 2026"
   - "AI Safety"
-  - "Split inference"
-  - "data reconstruction attack"
-  - "privacy protection"
-  - "information decomposition"
-  - "frequency domain transformation"
+  - "Split Inference"
+  - "Data Reconstruction Attacks"
+  - "Privacy Protection"
+  - "Information Decomposition"
+  - "Frequency-domain Transformation"
 date: 2026-05-08
-content_hash: a4daefd5a21ff2f7
+content_hash: c43c316010024fdd
 ---
 
 # InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.13365](https://arxiv.org/abs/2511.13365)  
 **Code**: [github.com/SASA-cloud/InfoDecom](https://github.com/SASA-cloud/InfoDecom)  
-**Area**: AI Security
-**Keywords**: Split inference, data reconstruction attack, privacy protection, information decomposition, frequency domain transformation
+**Area**: AI Security  
+**Keywords**: Split Inference, Data Reconstruction Attacks, Privacy Protection, Information Decomposition, Frequency-domain Transformation
 
 ## TL;DR
 
-InfoDecom is proposed to reduce redundant information in smashed data via two-level information decomposition (frequency-domain visual information removal + mutual information suppression), followed by closed-form Gaussian noise injection for theoretical privacy guarantees, achieving a significantly superior utility-privacy trade-off over existing methods under shallow client models.
+This paper proposes InfoDecom, which reduces redundant information in smashed data via two-stage information decomposition (frequency-domain visual information removal + mutual information suppression). It then injects closed-form computed Gaussian noise to provide theoretical privacy guarantees, achieving a utility-privacy trade-off (UPT) far superior to existing methods under shallow client-side models.
 
 ## Background & Motivation
 
-**Split Inference (SI)** partitions a DNN into a shallow client-side model (bottom model) and a server-side model (top model), where the client transmits only intermediate representations (smashed data) to the server. However, data reconstruction attacks (DRA) can recover the original input from smashed data, resulting in severe privacy leakage.
+**Split Inference (SI)** partitions a DNN into a shallow client-side model (bottom model) and a server-side model (top model), where the client only transmits the intermediate representation (smashed data) to the server. However, Data Reconstruction Attacks (DRAs) can reconstruct the original input from the smashed data, causing severe privacy leakage.
 
-**Two existing defense paradigms and their limitations**:
+**Two paradigms of existing defenses and their limitations**:
 
-**Regularization-based methods** (Shredder, Nopeek, InfoScissors, etc.): perturb smashed data via heuristic optimization objectives (e.g., mutual information upper bounds, distance correlation)
-   - Limitation: no rigorous provable privacy guarantees
+*   **Regularization-based methods** (e.g., Shredder, Nopeek, InfoScissors): Guide perturbation generation in smashed data through heuristic optimization objectives (such as mutual information upper bounds or distance correlation).
+    *   *Limitations*: Lack of strict provable privacy guarantees.
+*   **Closed-form noise computation** (e.g., dFIL, FSInfo): Compute noise scales satisfying specific privacy budgets based on Fisher Information or conditional entropy.
+    *   *Limitations*: When the bottom model is shallow (a common scenario for resource-constrained devices), the smashed data retains a large amount of input information $\rightarrow$ requiring massive noise to meet privacy requirements $\rightarrow$ severely degrading task performance.
 
-**Closed-form noise computation** (dFIL, FSInfo, etc.): compute noise scale satisfying a given privacy budget based on Fisher Information or conditional entropy
-   - Limitation: when the bottom model is shallow (common in resource-constrained devices), smashed data retains substantial input information → large noise is required to satisfy privacy constraints → severe task performance degradation
+**Key Insight**: The root cause of the poor utility-privacy trade-off (UPT) in existing defenses is that they waste perturbations on large amounts of **task-irrelevant redundant information** in the smashed data.
 
-**Core Insight**: The poor utility-privacy trade-off (UPT) of existing defenses stems from wasting perturbation budget on the large volume of **task-irrelevant redundant information** in smashed data.
-
-**Mechanism**: First decompose and remove redundant information to reduce the amount of sensitive content requiring protection → less noise needed for the same privacy guarantee → less performance degradation → better UPT.
+**Mechanism**: Decompose and remove redundant information first to reduce the amount of sensitive content requiring protection $\rightarrow$ less noise is needed under the same privacy guarantees $\rightarrow$ smaller performance degradation $\rightarrow$ better UPT.
 
 ## Method
 
@@ -49,96 +48,96 @@ InfoDecom is proposed to reduce redundant information in smashed data via two-le
 
 InfoDecom consists of three stages:
 
-1. **Visual Information Removal**: frequency-domain transformation → discarding low-frequency components essential for human visual perception
-2. **Mutual Information Suppression**: regularizing the bottom model via IB principles → retaining task-relevant information while suppressing task-irrelevant information
-3. **Noise Perturbation**: closed-form FSInfo-guided Gaussian noise → theoretical privacy guarantee
+1.  **Visual Information Removal**: Frequency-domain transformation $\rightarrow$ discarding low-frequency components essential for human visual perception.
+2.  **Mutual Information Suppression**: Regularizing the bottom model based on the Information Bottleneck (IB) principle $\rightarrow$ retaining task-relevant information and suppressing task-irrelevant information.
+3.  **Noise Perturbation**: Closed-form computation of Gaussian noise guided by FSInfo $\rightarrow$ theoretical privacy guarantees.
 
 ### Key Designs
 
-1. **Visual Information Removal (Frequency-Domain Decomposition)**
+1.  **Visual Information Removal (Frequency-domain Decomposition)**
 
-   **Inspiration from the communication trinity**: syntactic communication (transmit all bits) → semantic communication (transmit meaning) → pragmatic communication (transmit task-relevant contributions). Feeding raw images directly constitutes syntactic communication, containing substantial redundancy.
+    **Inspiration from Communication Triads**: Syntactic communication (transmitting all bits) $\rightarrow$ semantic communication (transmitting meaning) $\rightarrow$ pragmatic communication (transmitting task contributions). Directly inputting raw images is syntactic communication, containing significant redundancy.
 
-   **Processing pipeline**:
-    - RGB → YUV color space
-    - Each channel divided into 8×8 blocks
-    - Forward DCT (Discrete Cosine Transform) → 64 frequency coefficients
-    - Remove the $K$ DCT coefficients with the highest amplitude (low-frequency components $X_l$)
-    - Only the high-frequency coefficients $X_h$ are passed to the DNN
+    **Workflow**:
+    *   RGB $\rightarrow$ YUV color space
+    *   Each component is partitioned into $8 \times 8$ blocks
+    *   Forward DCT (Discrete Cosine Transform) $\rightarrow$ 64 frequency coefficients
+    *   Discarding the $K$ DCT coefficients with the highest amplitudes (low-frequency components $X_l$)
+    *   Keeping only high-frequency coefficients $X_h$ for the DNN
 
-   **Design Motivation**: JPEG compression theory establishes that low-frequency components are critical for human visual perception (containing primary visual information), while experiments from DuetFace demonstrate that high-frequency components still contain sufficient semantic information for DNN classification. Therefore, discarding low-frequency components hides most human-perceptible private information while preserving the semantic information required by the DNN.
+    **Design Motivation**: JPEG compression theory indicates that low-frequency components are crucial for human visual perception (containing primary visual details), while experiments in DuetFace demonstrate that high-frequency components still contain sufficient semantic information for the DNN to complete classification tasks. Therefore, discarding low-frequency components hides most human-perceptible private details while retaining the semantic information required by the DNN.
 
-2. **Mutual Information Suppression (IB-Based)**
+2.  **Mutual Information Suppression (Based on the IB Principle)**
 
-   Although partial visual information is removed, the remaining high-frequency components $X_h$ may still contain privacy-sensitive information exploitable by DRA.
+    Although some visual information is removed, the remaining high-frequency components $X_h$ may still contain privacy-sensitive information that can be exploited by DRAs.
 
-   **Optimization objective**: $\min_Z \lambda I(X_h; Z) - I(Y; Z)$
+    **Optimization Objective**: $\min_Z \lambda I(X_h; Z) - I(Y; Z)$
 
-   **(a) Minimizing $I(X_h; Z)$** — Clustering Loss:
+    **(a) Minimize $I(X_h; Z)$** — Clustering Loss:
 
-   Drawing on the CLUB (MI upper bound) framework, a clustering loss is designed to entangle smashed data from different inputs, reducing their distinguishability:
+    Drawing inspiration from CLUB (Mutual Information upper bound), a clustering loss is designed to entangle the smashed data of different inputs, reducing discriminability:
     $\mathcal{L}_{cl} = \frac{1}{N} \sum_{i=1}^{N} \|z_i - z_j\|_2^2$
-   where $j$ is sampled uniformly from $\{1, ..., N\}$.
+    where $j$ is uniformly sampled from $\{1, ..., N\}$.
 
-   **Design Motivation**: Pushing different smashed data representations closer together → the conditional distribution $p(Z|X)$ becomes more ambiguous → attackers find it harder to reconstruct the original input from smashed data.
+    **Design Motivation**: Pushing different smashed data points closer to each other $\rightarrow$ the conditional distribution $p(Z|X)$ becomes more ambiguous $\rightarrow$ making it harder for attackers to reconstruct the original inputs from the smashed data.
 
-   **(b) Minimizing $-I(Y; Z)$** — Cross-Entropy Loss:
+    **(b) Minimize $-I(Y; Z)$** — Cross-entropy Loss:
 
-   Replaced by the Barber-Agakov lower bound, ultimately simplified to standard cross-entropy:
+    Replacing it with the Barber-Agakov lower bound, it is simplified to standard cross-entropy:
     $\mathcal{L}_{ce} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{k=1}^{K} y_i^{(k)} \log(f_{\theta_2}(z_i))^{(k)}$
 
-3. **Closed-Form Noise Perturbation (Theoretical Privacy Guarantee)**
+3.  **Closed-form Noise Perturbation (Theoretical Privacy Guarantee)**
 
-   The FSInfo privacy metric is used to compute the Gaussian noise scale:
-    $\tilde{Z} = Z + \delta, \quad \delta \sim \mathcal{N}\left(0, \frac{\det(J^T J)^{\frac{1}{2d}}}{e^{FSInfo}(2\pi e)^{\frac{1}{2}}}\right)$
+    The FSInfo privacy metric is adopted to compute the Gaussian noise scale:
+    $$\tilde{Z} = Z + \delta, \quad \delta \sim \mathcal{N}\left(0, \frac{\det(J^T J)^{\frac{1}{2d}}}{e^{FSInfo}(2\pi e)^{\frac{1}{2}}}\right)$$
 
-   where $J$ is the Jacobian of $Z$ with respect to the original input $X$. A lower FSInfo value (e.g., -1) implies less privacy leakage.
+    where $J$ is the Jacobian of $Z$ with respect to the original input $X$. A lower FSInfo value (e.g., -1) implies less privacy leakage.
 
-   **Key Innovation**: Since the preceding two levels have already removed redundant information, the amount of content requiring protection in smashed data is substantially reduced → smaller noise scale is needed to achieve the same FSInfo level → less performance degradation.
+    **Key Innovation**: Since the first two stages have already removed redundant information, the volume of content needing protection in the smashed data is significantly reduced $\rightarrow$ the noise scale required to reach the same FSInfo level becomes smaller $\rightarrow$ resulting in less performance degradation.
 
 ### Loss & Training
 
 $$\mathcal{L} = \lambda \mathcal{L}_{cl} + \mathcal{L}_{ce}$$
 
-- Top model is optimized by $\mathcal{L}_{ce}$
-- Bottom model is optimized by $\lambda \mathcal{L}_{cl} + \mathcal{L}_{ce}$
-- At inference: high-frequency input → updated bottom model → regularized smashed data → noise addition → transmitted to server
+*   The top model is optimized by $\mathcal{L}_{ce}$.
+*   The bottom model is optimized by $\lambda \mathcal{L}_{cl} + \mathcal{L}_{ce}$.
+*   During inference: high-frequency input $\rightarrow$ updated bottom model $\rightarrow$ regularized smashed data $\rightarrow$ noise perturbation $\rightarrow$ transmission to the server.
 
 **Hyperparameters**:
-- Adam optimizer, lr = 3e-4, weight decay = 0.01
-- 150 epochs global training, batch size = 128
-- Default $|X_h| = 54$ (retaining 54/64 frequency coefficients), $\lambda = 10$, FSInfo = -1
-- CIFAR-10: 2× RTX 4090; CelebA: 4× A100
+*   Adam optimizer, lr = 3e-4, weight decay = 0.01
+*   Global training for 150 epochs, batch size = 128
+*   Default $|X_h| = 54$ (retaining 54/64 frequency coefficients), $\lambda = 10$, FSInfo = -1
+*   CIFAR-10: 2$\times$RTX 4090; CelebA: 4$\times$A100
 
 ## Key Experimental Results
 
 ### Main Results: Utility-Privacy Trade-off Comparison
 
-On CIFAR-10 and CelebA using ResNet-18, with the split point at the C64 layer (shallow model):
+On CIFAR-10 and CelebA, using ResNet-18 with the split point at the C64 layer (shallow model):
 
 | Method | CIFAR-10 Acc. | CIFAR-10 MSE | CelebA Acc. | CelebA MSE |
 |------|:---:|:---:|:---:|:---:|
-| Raw (no defense) | High | Low (privacy leakage) | High | Low |
+| Raw (No Defense) | High | Low (Privacy Leakage) | High | Low |
 | Nopeek | Medium | Medium | Medium | Medium |
 | Shredder | Medium | Medium | Medium | Medium |
 | inv_dFIL_def | Low | High | Medium | Medium |
 | FSInfoGuard | Medium | Medium | Medium | Medium |
 | **InfoDecom** | **0.7329** | **0.0843** | **0.9693** | **0.1942** |
 
-InfoDecom achieves the best trade-off in the utility-privacy plane (curve lying to the upper-right of all other methods).
+InfoDecom achieves the best trade-off on the utility-privacy plane (its curve is located at the top-right / outermost relative to other methods).
 
 ### Ablation Study
 
-| Configuration | CIFAR-10 Acc. | CIFAR-10 MSE | Notes |
+| Configuration | CIFAR-10 Acc. | CIFAR-10 MSE | Description |
 |------|:---:|:---:|------|
-| **InfoDecom (full)** | **0.7329** | **0.0843** | Default setting |
-| w/o Visual Information Removal | 0.6273 | 0.0849 | Acc drops due to larger noise required to satisfy FSInfo=-1 |
-| w/o $\mathcal{L}_{cl}$ | 0.7453 | 0.0835 | Acc slightly higher but MSE lower (weakened defense) |
-| w/o FSInfo noise | 0.7274 | 0.0826 | Loss of theoretical privacy guarantee |
+| **InfoDecom (Full)** | **0.7329** | **0.0843** | Default setting |
+| w/o Visual Information Removal | 0.6273 | 0.0849 | Acc drops due to more noise required to satisfy FSInfo=-1 |
+| w/o $\mathcal{L}_{cl}$ | 0.7453 | 0.0835 | Acc slightly increases but MSE decreases (weaker defense) |
+| w/o FSInfo Noise | 0.7274 | 0.0826 | Loses theoretical privacy guarantees |
 
-### Effect of Information Controller Parameters
+### Impact of Information Controller Parameters
 
-**Number of retained coefficients $|X_h|$** (FSInfo=-1, λ=10):
+**Number of Retained Coefficients $|X_h|$** (FSInfo=-1, $\lambda=10$):
 
 | $|X_h|$ | CIFAR-10 Acc. | CIFAR-10 MSE | CelebA Acc. | CelebA MSE |
 |---------|:---:|:---:|:---:|:---:|
@@ -147,9 +146,9 @@ InfoDecom achieves the best trade-off in the utility-privacy plane (curve lying 
 | 32 | 0.3645 | 0.2337 | 0.6135 | 1.1024 |
 | 18 | 0.1004 | 0.2492 | 0.6135 | 1.1022 |
 
-**Weight factor λ** ($|X_h|$=54, FSInfo=-1):
+**Weight Factor $\lambda$** ($|X_h|$=54, FSInfo=-1):
 
-| λ | CIFAR-10 Acc. | CIFAR-10 MSE | CelebA Acc. | CelebA MSE |
+| $\lambda$ | CIFAR-10 Acc. | CIFAR-10 MSE | CelebA Acc. | CelebA MSE |
 |---|:---:|:---:|:---:|:---:|
 | 1 | 0.7570 | 0.0822 | 0.9515 | 0.1925 |
 | 10 | 0.7329 | 0.0843 | 0.9693 | 0.1942 |
@@ -157,40 +156,40 @@ InfoDecom achieves the best trade-off in the utility-privacy plane (curve lying 
 
 ### Key Findings
 
-1. **Information decomposition is the key to UPT improvement**: at the same privacy level, InfoDecom achieves substantially higher accuracy than direct noise injection methods
-2. **Visual information removal is indispensable**: removing it causes accuracy to drop from 0.7329 to 0.6273 (due to the larger noise required to satisfy FSInfo=-1)
-3. **Subtle role of mutual information suppression**: removing it slightly increases accuracy but weakens privacy defense → regularization does compress content beyond task-relevant information
-4. **Superior performance on CelebA**: in the binary classification task (attractiveness classification), InfoDecom achieves 96.93% accuracy with MSE=0.1942
-5. **Acceptable computational overhead**: InfoDecom requires 6.64ms per sample at inference (vs. 0.26ms for basic forward pass), comparable to other Jacobian-based methods
+1.  **Information decomposition is the key to UPT improvement**: At the same privacy level, the accuracy of InfoDecom is far higher than that of direct noise-addition methods.
+2.  **Visual information removal is indispensable**: Removing it causes the Acc to drop from 0.7329 to 0.6273 (due to the larger noise required to satisfy FSInfo=-1).
+3.  **Subtle trade-off in mutual information suppression**: Excluding it slightly increases Acc but weakens privacy defense $\rightarrow$ indicating that regularization indeed compresses content beyond useful task information.
+4.  **Superior performance on CelebA**: On the binary classification task (attractiveness classification), InfoDecom achieves a 96.93% Acc while maintaining MSE = 0.1942.
+5.  **Acceptable computational overhead**: InfoDecom requires 6.64 ms of inference time per sample (vs. 0.26 ms for basic forward propagation), which is comparable to other Jacobian-based methods.
 
 ## Highlights & Insights
 
-1. **Innovation of the "decompose-then-denoise" paradigm**: rather than directly adding noise to protect all information, redundant content is first removed before protecting the essential content → conceptually simple yet highly effective
-2. **Elegant application of frequency-domain processing**: borrowing from JPEG compression theory, discarding low-frequency visual information → the DNN can complete tasks using high-frequency information while human observers cannot recognize the content
-3. **Three-level controller design**: $|X_h|$ (degree of visual redundancy), λ (degree of semantic redundancy), and FSInfo (privacy guarantee level) provide flexible trade-off tuning
-4. **Theoretical guarantees combined with practicality**: FSInfo provides a provable privacy lower bound, while the two-level information decomposition ensures that noise does not become excessively large
+1.  **Novel "Decompose then Perturb" Paradigm**: Rather than directly injecting noise to protect all information, this method removes redundancy first before protecting the target features $\rightarrow$ conceptually simple yet highly effective.
+2.  **Clever Application of Frequency-domain Processing**: Inspired by JPEG compression theory, discarding low-frequency visual details ensures that the DNN can complete tasks using high-frequency components while making the input unrecognizable to the human eye.
+3.  **Three-level Controller Design**: $|X_h|$ (visual redundancy), $\lambda$ (semantic redundancy), and FSInfo (privacy guarantee level) provide flexible trade-off adjustments.
+4.  **Both Theoretical Guarantees and Practical Utility**: FSInfo provides a provable privacy lower bound, whereas the two-stage information decomposition ensures the injected noise remains bounded.
 
 ## Limitations & Future Work
 
-- Currently applicable only to vision tasks (visual information removal relies on frequency-domain transformation) → the authors note that the MIS and NP components are modality-agnostic
-- Computational overhead is higher than non-Jacobian methods (6.64ms vs. <1ms) → more efficient Jacobian approximation strategies warrant exploration
-- Validation limited to two datasets (CIFAR-10, CelebA), without coverage of high-resolution or more complex vision tasks
-- Split point fixed at the first (shallowest) layer → the effect of different split points is not thoroughly investigated
-- Only one DRA method (invNet) is evaluated → robustness against more advanced attacks (e.g., GAN-based DRA) remains to be verified
+*   Currently limited to vision tasks (as visual information removal relies on frequency-domain transformations) $\rightarrow$ the authors mention that the MIS and NP components are modality-agnostic.
+*   Higher computational overhead compared to non-Jacobian methods (6.64 ms vs. <1 ms) $\rightarrow$ more efficient Jacobian approximation strategies are worth exploring.
+*   Verified only on two datasets (CIFAR-10, CelebA), lacking coverage on high-resolution or more complex vision tasks.
+*   The split point is fixed at the first layer (shallowest) $\rightarrow$ the effects of different split points have not been fully explored.
+*   Only invNet was used as the DRA attack method $\rightarrow$ robustness against more advanced attack approaches (e.g., GAN-based DRAs) remains to be validated.
 
 ## Related Work & Insights
 
-- **Distinction from regularization-based methods**: Shredder/Nopeek/InfoScissors rely solely on optimization objectives without theoretical guarantees; InfoDecom first reduces the amount of information to protect and then applies guaranteed noise
-- **Distinction from closed-form noise methods**: dFIL/FSInfoGuard compute noise scale directly but produce excessively large noise under shallow models; InfoDecom reduces the required noise scale by decomposing redundant information
-- **Practical instantiation of Information Bottleneck (IB) principles**: translates the IB theoretical framework into practically trainable clustering loss and cross-entropy loss
-- **Implication for privacy-preserving ML**: "reducing the amount of information requiring protection" is more effective than "adding more noise"
+*   **Difference from Regularization-based Methods**: Shredder, Nopeek, and InfoScissors rely solely on optimization objectives without theoretical guarantees; InfoDecom first reduces the volume of information to be protected before applying guaranteed noise.
+*   **Difference from Closed-form Noise Methods**: dFIL and FSInfoGuard directly compute noise scale, which leads to excessive noise under shallow models; InfoDecom reduces the required noise scale by decomposing redundant information.
+*   **Practicalization of the Information Bottleneck (IB) Principle**: Translating the theoretical framework of IB into practically trainable clustering and cross-entropy losses.
+*   **Insight for Privacy-Preserving ML**: "Reducing the amount of information requiring protection" is more effective than "adding more noise."
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (the "decompose-then-denoise" concept is intuitive and effective; the combination of frequency domain + IB + closed-form noise is novel)
-- Experimental Thoroughness: ⭐⭐⭐ (two datasets + complete parameter sensitivity analysis, but limited scenario coverage)
-- Writing Quality: ⭐⭐⭐⭐⭐ (clear motivation, rigorous mathematical derivations, strong logical coherence across the three-level decomposition)
-- Value: ⭐⭐⭐⭐ (addresses the core pain point of privacy-utility trade-off under shallow client models)
+*   Novelty: ⭐⭐⭐⭐ (The "decompose-then-perturb" idea is intuitive and effective; the combination of frequency-domain + IB + closed-form noise is novel)
+*   Experimental Thoroughness: ⭐⭐⭐ (Two datasets + parameter sensitivity analysis are complete, but scenarios are relatively limited)
+*   Writing Quality: ⭐⭐⭐⭐⭐ (Clear motivation, rigorous mathematical derivations, and logically coherent three-level decomposition)
+*   Value: ⭐⭐⭐⭐ (Addresses the core pain point of the privacy-utility trade-off under shallow client models)
 
 <!-- RELATED:START -->
 
@@ -198,11 +197,11 @@ InfoDecom achieves the best trade-off in the utility-privacy plane (curve lying 
 
 ## Related Papers
 
+- [\[ICML 2026\] From Prompts to Responses: Dual-Sided Data Leakage and Defense in Split Large Language Models](../../ICML2026/ai_safety/from_prompts_to_responses_dual-sided_data_leakage_and_defense_in_split_large_lan.md)
+- [\[ICML 2025\] Privacy-Shielded Image Compression: Defending Against Exploitation from Vision-Language Pretrained Models](../../ICML2025/ai_safety/privacy-shielded_image_compression_defending_against_exploitation_from_vision-la.md)
+- [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](../../ICLR2026/ai_safety/defending_against_backdoor_attacks_via_module_switching.md)
 - [\[AAAI 2026\] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems](reference_recommendation_based_membership_inference_attack_against_hybrid-based_.md)
-- [\[AAAI 2026\] An Information Theoretic Evaluation Metric for Strong Unlearning](an_information_theoretic_evaluation_metric_for_strong_unlearning.md)
-- [\[AAAI 2026\] HealSplit: Towards Self-Healing through Adversarial Distillation in Split Federated Learning](healsplit_towards_self-healing_through_adversarial_distillation_in_split_federat.md)
-- [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
-- [\[AAAI 2026\] Yours or Mine? Overwriting Attacks Against Neural Audio Watermarking](yours_or_mine_overwriting_attacks_against_neural_audio_watermarking.md)
+- [\[ACL 2025\] Crafting Privacy-Preserving Adversarial Examples: A Defense Against Membership Inference](../../ACL2025/ai_safety/crafting_privacy-preserving_adversarial_examples_a_defense_against_membership_inf.md)
 
 </div>
 

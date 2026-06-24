@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][zero-knowledge proof] This paper proposes PHAZE, a framework that combines cryptographic hashing (Rabin fingerprinting) and zero-knowledge machine learning (zkML) to enable…
+  [NeurIPS 2025][Physics & Scientific Computing][zero-knowledge proof] This paper proposes PHAZE, a framework that combines cryptographic hashing (Rabin fingerprinting) and zero-knowledge machine learning (zkML) to enable verifiable early-exit inference at LHC trigger latency, achieving a theoretical online latency of ~152–253 ns while providing built-in anomaly detection capability.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "cryptographic hashing"
   - "verifiable inference"
 date: 2026-05-08
-content_hash: 3244914d6c5f13de
+content_hash: 9e632192ad6b1466
 ---
 
 # Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC
@@ -132,10 +132,10 @@ The baseline model training is decoupled from the framework and is compatible wi
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Primacy of Magnitude in Low-Rank Adaptation](the_primacy_of_magnitude_in_low-rank_adaptation.md)
-- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](../../CVPR2026/physics/qkd_quantum_gated_incremental_learning.md)
+- [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](../../ICLR2026/physics/learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
 - [\[AAAI 2026\] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study](../../AAAI2026/physics/scientific_knowledge-guided_machine_learning_for_vessel_power_prediction_a_compa.md)
+- [\[AAAI 2026\] Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction](../../AAAI2026/physics/knowledge-guided_masked_autoencoder_with_linear_spectral_mixing_and_spectral-ang.md)
 - [\[NeurIPS 2025\] Exoplanet Formation Inference Using Conditional Invertible Neural Networks](exoplanet_formation_inference_using_conditional_invertible_neural_networks.md)
-- [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper introduces the GUIDE benchmark, containing 67.5 hours of screen recordings and think-aloud annotations from 120 novice users across 10 software applications. It defines three hierarchical tasks: behavioral state detection, intent prediction, and assistance prediction. Evaluations reveal that current state-of
+  [CVPR 2026][Multimodal VLM][GUI Understanding] This paper introduces the GUIDE benchmark, containing 67.5 hours of screen recordings and think-aloud annotations from 120 novice users across 10 software applications. It defines three hierarchical tasks: behavioral state detection, intent prediction, and assistance prediction. Evaluations reveal that current state-of-the-art multimodal models show limited performance in understanding user behavior and judging assistance needs (…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "GUI Understanding"
+  - "User Behavior Detection"
+  - "Intent Prediction"
+  - "Assistance Prediction"
+  - "Novice Users"
 date: 2026-05-08
-content_hash: 9539acfc5643af3a
+content_hash: 0b56725f299dfc36
 ---
+
 # GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks
 
 **Conference**: CVPR 2026  

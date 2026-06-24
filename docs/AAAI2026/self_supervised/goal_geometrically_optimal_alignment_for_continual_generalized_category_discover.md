@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery
 description: >-
-  [AAAI 2026][Self-Supervised Learning][continual generalized category discovery] Grounded in Neural Collapse theory, this paper replaces dynamic classifiers with a fixed Equiangular Tight Frame (ETF) classifier and achiev…
+  [AAAI 2026][Self-Supervised Learning][continual generalized category discovery] Grounded in Neural Collapse theory, this paper replaces dynamic classifiers with a fixed Equiangular Tight Frame (ETF) classifier and achieves continual generalized category discovery via supervised alignment and confidence-guided unsupervised alignment, reducing forgetting by 16.1% and improving novel category discovery by 3.2% across four benchmarks.
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "forgetting mitigation"
   - "confidence-guided alignment"
 date: 2026-05-08
-content_hash: a2a402a1bccc59ab
+content_hash: 8257f24429979287
 ---
 
 # GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery
@@ -126,11 +126,11 @@ GOAL consists of a base session and incremental sessions. In the base session, a
 
 ## Related Papers
 
-- [\[CVPR 2026\] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](../../CVPR2026/self_supervised/omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)
-- [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](../../CVPR2026/self_supervised/learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
-- [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](../../NeurIPS2025/self_supervised/seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
-- [\[ICCV 2025\] A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention](../../ICCV2025/self_supervised/a_hidden_stumbling_block_in_generalized_category_discovery_d.md)
-- [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](../../ICML2026/self_supervised/partco_part-level_correspondence_priors_enhance_category_discovery.md)
+- [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](../../CVPR2026/self_supervised/decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
+- [\[NeurIPS 2025\] Consistent Supervised-Unsupervised Alignment for Generalized Category Discovery](../../NeurIPS2025/self_supervised/consistent_supervised-unsupervised_alignment_for_generalized_category_discovery.md)
+- [\[ICLR 2026\] Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery](../../ICLR2026/self_supervised/bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery.md)
+- [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](../../CVPR2026/self_supervised/tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
+- [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](../../CVPR2026/self_supervised/seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
 
 </div>
 

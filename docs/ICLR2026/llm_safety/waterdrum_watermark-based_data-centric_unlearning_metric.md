@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WaterDrum: Watermark-based Data-centric Unlearning Metric
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Addressing the issues where existing "utility-centric" unlearning metrics require comparison with a retrained model and fail when the forget and retain sets are semantically similar, this paper proposes the first "data-centric" unlearning metric, WaterDrum. By embedding a unique watermark into each data owner's trainin
+  [ICLR 2026][LLM Safety][Machine Unlearning] Addressing the issues where existing "utility-centric" unlearning metrics require comparison with a retrained model and fail when the forget and retain sets are semantically similar, this paper proposes the first "data-centric" unlearning metric, WaterDrum. By embedding a unique watermark into each data owner's training text, the "remaining influence of the data" is directly read via watermark verification scores. It enables continu…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Unlearning Metric"
+  - "Text Watermarking"
+  - "Data Copyright"
+  - "Counterfactual"
 date: 2026-05-08
-content_hash: 0c4750e30fecabf5
+content_hash: ffc7afb98474ab78
 ---
+
 # WaterDrum: Watermark-based Data-centric Unlearning Metric
 
 **Conference**: ICLR 2026  
@@ -124,8 +130,8 @@ Only WaterDrum approaches 1.0. Negative values for baselines indicate they canno
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

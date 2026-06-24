@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learn-to-Distance: Distance Learning for Detecting LLM-Generated Text
 description: >-
-  [ICLR 2026][AIGC Detection][rewrite-based detection] This paper explains the effectiveness of "rewrite-based" LLM text detection methods from a geometric projection perspective and proposes L2D. Instead of using fixed distances to measure the difference between original and rewritten text, L2D adaptively **learns a distance function**, achieving an average improvement of
+  [ICLR 2026][AIGC Detection][rewrite-based detection] This paper explains the effectiveness of "rewrite-based" LLM text detection methods from a geometric projection perspective and proposes L2D. Instead of using fixed distances to measure the difference between original and rewritten text, L2D adaptively **learns a distance function**, achieving an average improvement of 41.5%~75.4% over the strongest baselines across 100+ settings.
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - rewrite-based detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "rewrite-based detection"
+  - "distance learning"
+  - "geometric perspective"
+  - "rewriting error"
+  - "zero-shot detection"
 date: 2026-05-08
-content_hash: ee845329dd258690
+content_hash: c80a037896f611e5
 ---
+
 # Learn-to-Distance: Distance Learning for Detecting LLM-Generated Text
 
 **Conference**: ICLR 2026  
@@ -114,8 +119,8 @@ where $p_\phi$ is a learnable language model. This form satisfies non-negativity
 - [\[ICLR 2026\] TSM-Bench: Detecting LLM-Generated Text in Real-World Wikipedia Editing Practices](tsm-bench_detecting_llm-generated_text_in_real-world_wikipedia_editing_practices.md)
 - [\[ICLR 2026\] HLD: Approximate Hierarchical Linguistic Distribution Modeling for LLM-Generated Text Detection](hld_approximate_hierarchical_linguistic_distribution_modeling_for_llm-generated_.md)
 - [\[ACL 2025\] Learning to Rewrite: Generalized LLM-Generated Text Detection](../../ACL2025/aigc_detection/learning_to_rewrite_generalized_llm-generated_text_detection.md)
+- [\[ICLR 2026\] Learning From Dictionary: Enhancing Robustness of Machine-Generated Text Detection in Zero-Shot Language via Adversarial Training](learning_from_dictionary_enhancing_robustness_of_machine-generated_text_detectio.md)
 - [\[ACL 2026\] GigaCheck: Detecting LLM-generated Content via Object-Centric Span Localization](../../ACL2026/aigc_detection/gigacheck_detecting_llm-generated_content_via_object-centric_span_localization.md)
-- [\[ACL 2025\] KatFishNet: Detecting LLM-Generated Korean Text through Linguistic Feature Analysis](../../ACL2025/aigc_detection/katfishnet_detecting_llm-generated_korean_text_through_linguistic_feature_analys.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards
 description: >-
-  [ICLR 2026][Multi-Agent][LLM-as-a-judge] CoMAS enables multiple LLM agents to propose solutions, critique, and score each other within a forum-like discussion environment. These discussion dynamics are converted into intrinsic reward signals via LLM-as-a-judge, which are then used to update individual policies through RL, achieving decentralized and scalable
+  [ICLR2026][Multi-Agent][Multi-Agent Systems] CoMAS enables multiple LLM agents to propose solutions, critique, and score each other within a forum-like discussion environment. These discussion dynamics are converted into intrinsic reward signals via LLM-as-a-judge, which are then used to update individual policies through RL, achieving decentralized and scalable collaborative self-evolution without relying on external verifiers or reward models.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - LLM-as-a-judge
-  - REINFORCE++
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Multi-Agent Systems"
+  - "Self-Evolution"
+  - "Interaction Rewards"
+  - "LLM-as-a-judge"
+  - "REINFORCE++"
 date: 2026-05-08
-content_hash: a5f5e2af39d5b5c0
+content_hash: 4e0ce72c543db63e
 ---
+
 # CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards
 
 **Conference**: ICLR2026  
@@ -131,6 +135,7 @@ Removing either Evaluation or Scoring causes performance to drop below the untra
 - Value: ⭐⭐⭐⭐ A decentralized, heterogeneous, and external-reward-free co-evolution paradigm with clear implications for MAS research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

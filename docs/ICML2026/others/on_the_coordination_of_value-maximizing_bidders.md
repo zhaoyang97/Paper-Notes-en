@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] On the Coordination of Value-Maximizing Bidders
 description: >-
-  [ICML 2026][Others][Paper Note] This paper formally investigates the "coordination" problem of multiple value-maximizing auto-bidders in online advertising. It proposes a simple coordination mechanism where "only the alliance member with the highest value bids, while others bid 0." It proves that for a large class of auto-bidding algorithms, this mec
+  [ICML 2026][Value-maximization] This paper formally investigates the "coordination" problem of multiple value-maximizing auto-bidders in online advertising. It proposes a simple coordination mechanism where "only the alliance member with the highest value bids, while others bid 0." It proves that for a large class of auto-bidding algorithms, this mechanism simultaneously reduces the RoS violation for each member and drives the total alliance value to the asymptotic optimum am…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Value-maximization"
+  - "Auto-bidding"
+  - "Second-price auction"
+  - "RoS constraint"
+  - "Coordination mechanism"
 date: 2026-05-08
-content_hash: 08844d0e29486cec
+content_hash: adf202228dc0c2eb
 ---
+
 # On the Coordination of Value-Maximizing Bidders
 
 **Conference**: ICML 2026  
@@ -126,10 +131,10 @@ While there is no typical ablation, comparisons between i.i.d./non-i.i.d. settin
 ## Related Papers
 
 - [\[ICML 2025\] Learning Safe Strategies for Value Maximizing Buyers in Uniform Price Auctions](../../ICML2025/others/learning_safe_strategies_for_value_maximizing_buyers_in_uniform_price_auctions.md)
-- [\[ICLR 2026\] Key and Value Weights Are Probably All You Need: On the Necessity of the Query, Key, and Value Weight Triplet in Self-Attention](../../ICLR2026/others/key_and_value_weights_are_probably_all_you_need_on_the_necessity_of_the_query_ke.md)
 - [\[ACL 2025\] Value Residual Learning](../../ACL2025/others/value_residual_learning.md)
 - [\[AAAI 2026\] Extreme Value Monte Carlo Tree Search for Classical Planning](../../AAAI2026/others/extreme_value_monte_carlo_tree_search_for_classical_planning.md)
 - [\[NeurIPS 2025\] Faithful Group Shapley Value](../../NeurIPS2025/others/faithful_group_shapley_value.md)
+- [\[ICML 2025\] Prediction via Shapley Value Regression (ViaSHAP)](../../ICML2025/others/prediction_via_shapley_value_regression.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Does Less Hallucination Mean Less Creativity? An Empirical Investigation in LLMs
 description: >-
-  [AAAI 2026][Hallucination Detection][Hallucination Mitigation] This paper systematically investigates how three hallucination mitigation methods (CoVe, DoLa, RAG) affect LLM creativity…
+  [AAAI 2026][Hallucination Detection][Hallucination Mitigation] This paper systematically investigates how three hallucination mitigation methods (CoVe, DoLa, RAG) affect LLM creativity, finding that they exert diametrically opposite effects on divergent creativity—CoVe enhances it, DoLa suppresses it, and RAG has no significant impact—while convergent creativity remains largely unaffected. These patterns hold consistently across model families and parameter scales.
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "Divergent Thinking"
   - "Convergent Thinking"
 date: 2026-05-08
-content_hash: b74355fa47b354fc
+content_hash: bbb7f3f8ca9edd8b
 ---
 
 # Does Less Hallucination Mean Less Creativity? An Empirical Investigation in LLMs
@@ -185,9 +185,9 @@ All generations are run independently three times and averaged. GPT-4o-mini is u
 ## Related Papers
 
 - [\[AAAI 2026\] Hallucinate Less by Thinking More: Aspect-Based Causal Abstention for Large Language Models](hallucinate_less_by_thinking_more_aspect-based_causal_absten.md)
-- [\[ACL 2026\] Distorted or Fabricated? A Survey on Hallucination in Video LLMs](../../ACL2026/hallucination/distorted_or_fabricated_a_survey_on_hallucination_in_video_llms.md)
-- [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](../../ACL2026/hallucination/hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
-- [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](../../ACL2026/hallucination/meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
+- [\[ICLR 2026\] High Accuracy, Less Talk (HALT): Reliable LLMs through Capability-Aligned Finetuning](../../ICLR2026/hallucination/high_accuracy_less_talk_halt_reliable_llms_through_capability-aligned_finetuning.md)
+- [\[CVPR 2025\] 3D-GRAND: A Million-Scale Dataset for 3D-LLMs with Better Grounding and Less Hallucination](../../CVPR2025/hallucination/3d-grand_a_million-scale_dataset_for_3d-llms_with_better_grounding_and_less_hall.md)
+- [\[ACL 2025\] Aligning Large Language Models to Follow Instructions and Hallucinate Less via Effective Data Filtering](../../ACL2025/hallucination/aligning_large_language_models_to_follow_instructions_and_hallucinate_less_via_e.md)
 - [\[AAAI 2026\] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation](esg-bench_benchmarking_long-context_esg_reports_for_hallucination_mitigation.md)
 
 </div>

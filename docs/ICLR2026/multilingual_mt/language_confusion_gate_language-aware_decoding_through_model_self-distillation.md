@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Language Confusion Gate: Language-Aware Decoding Through Model Self-Distillation
 description: >-
-  [ICLR 2026][Multilingual & Translation][Paper Note] This paper proposes the **Language Confusion Gate (LCG)**: a lightweight two-layer MLP that masks tokens from incorrect language families on-demand during decoding without modifying the base LLM. Trained via "norm-calibrated self-distillation," it reduces language confusion rates by approximately an order of magnitude
+  [ICLR 2026][Multilingual & Machine Translation][Language confusion] This paper proposes the **Language Confusion Gate (LCG)**: a lightweight two-layer MLP that masks tokens from incorrect language families on-demand during decoding without modifying the base LLM. Trained via "norm-calibrated self-distillation," it reduces language confusion rates by approximately an order of magnitude across multiple models without sacrificing task performance.
 tags:
-  - ICLR 2026
-  - Multilingual & Translation
+  - "ICLR 2026"
+  - "Multilingual & Machine Translation"
+  - "Language confusion"
+  - "language-aware decoding"
+  - "self-distillation"
+  - "embedding norm"
+  - "plug-in intervention"
 date: 2026-05-08
-content_hash: 7d1cf8729d0c4a4b
+content_hash: 962a4d5fcf2f08cd
 ---
+
 # Language Confusion Gate: Language-Aware Decoding Through Model Self-Distillation
 
 **Conference**: ICLR 2026  
@@ -110,8 +116,8 @@ Norm calibration makes the gate more accurate and suppression more precise; the 
 
 ## Related Papers
 
-- [\[ACL 2026\] TLPO: Token-Level Policy Optimization for Mitigating Language Confusion in Large Language Models](../../ACL2026/multilingual_mt/tlpo_token-level_policy_optimization_for_mitigating_language_confusion_in_large_.md)
 - [\[ACL 2026\] SERM: Self-Evolving Relevance Model with Agent-Driven Learning from Massive Query Streams](../../ACL2026/multilingual_mt/serm_self-evolving_relevance_model_with_agent-driven_learning_from_massive_query.md)
+- [\[ACL 2026\] TLPO: Token-Level Policy Optimization for Mitigating Language Confusion in Large Language Models](../../ACL2026/multilingual_mt/tlpo_token-level_policy_optimization_for_mitigating_language_confusion_in_large_.md)
 - [\[NeurIPS 2025\] ParallelPrompt: Extracting Parallelism from Large Language Model Queries](../../NeurIPS2025/multilingual_mt/parallelprompt_extracting_parallelism_from_large_language_model_queries.md)
 - [\[ICLR 2026\] ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality](atlas_adaptive_transfer_scaling_laws_for_multilingual_pretraining_finetuning_and.md)
 - [\[ACL 2025\] LangSAMP: Language-Script Aware Multilingual Pretraining](../../ACL2025/multilingual_mt/langsamp_multilingual_pretraining.md)

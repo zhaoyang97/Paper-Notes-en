@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LinguaMap: Which Layers of LLMs Speak Your Language and How to Tune Them?
 description: >-
-  [ICLR 2026][Multilingual & Translation][logit lens] By utilizing logit lens and hidden state similarity analysis, this work localizes the final few layers responsible for "language control" in mLLMs. Fine-tuning only these 3-5% of parameters increases language consistency across six languages from <20% to over 98%, achieving performance nearly equivalent to full fine-tu
+  [ICLR 2026][Multilingual & Machine Translation][Multilingual LLM] By utilizing logit lens and hidden state similarity analysis, this work localizes the final few layers responsible for "language control" in mLLMs. Fine-tuning only these 3-5% of parameters increases language consistency across six languages from <20% to over 98%, achieving performance nearly equivalent to full fine-tuning.
 tags:
-  - ICLR 2026
-  - Multilingual & Translation
-  - logit lens
+  - "ICLR 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual LLM"
+  - "Language Consistency"
+  - "logit lens"
+  - "Selective Fine-tuning"
+  - "Layer Localization"
 date: 2026-05-08
-content_hash: 16a387c6f0884440
+content_hash: f2321296d24b0bfe
 ---
+
 # LinguaMap: Which Layers of LLMs Speak Your Language and How to Tune Them?
 
 **Conference**: ICLR 2026  
@@ -113,7 +118,7 @@ flowchart LR
 - [\[ICLR 2026\] Language Confusion Gate: Language-Aware Decoding Through Model Self-Distillation](language_confusion_gate_language-aware_decoding_through_model_self-distillation.md)
 - [\[ICLR 2026\] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs](sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod.md)
 - [\[ACL 2026\] Mitigating Catastrophic Forgetting in Target Language Adaptation of LLMs via Source-Shielded Updates](../../ACL2026/multilingual_mt/mitigating_catastrophic_forgetting_in_target_language_adaptation_of_llms_via_sou.md)
-- [\[NeurIPS 2025\] How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs](../../NeurIPS2025/multilingual_mt/how_data_mixing_shapes_in-context_learning_asymptotic_equivalence_for_transforme.md)
+- [\[AAAI 2026\] Focusing on Language: Revealing and Exploiting Language Attention Heads in Multilingual Large Language Models](../../AAAI2026/multilingual_mt/focusing_on_language_revealing_and_exploiting_language_attention_heads_in_multil.md)
 
 </div>
 

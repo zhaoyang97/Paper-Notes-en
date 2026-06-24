@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization
 description: >-
-  [ICML 2026][Model Compression][Paper Note] TWLA is the first **post-training quantization** (PTQ) framework capable of simultaneously compressing weights to 1.58-bit (ternary) and activations to 4-bit. By employing a "two-stage ternary calibration from Euclidean to manifold + Kronecker orthogonal rotation for tri-modal weight shaping and outlier suppression + i
+  [ICML 2026][Model Compression][Ternary Quantization] TWLA is the first **post-training quantization** (PTQ) framework capable of simultaneously compressing weights to 1.58-bit (ternary) and activations to 4-bit. By employing a "two-stage ternary calibration from Euclidean to manifold + Kronecker orthogonal rotation for tri-modal weight shaping and outlier suppression + inter-layer aware activation mixed-precision allocation" trio, it maintains high accuracy under W1.58A4 and…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Ternary Quantization"
+  - "Post-Training Quantization"
+  - "Activation Quantization"
+  - "Orthogonal Rotation"
+  - "Mixed Precision"
 date: 2026-05-08
-content_hash: c550b2c66719ebb8
+content_hash: 970ed72d2adb6fac
 ---
+
 # TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization
 
 **Conference**: ICML 2026  
@@ -132,11 +138,11 @@ Key Observation: Under W1.58A4 (4-bit activation), all other methods collapse (0
 
 ## Related Papers
 
-- [\[ICML 2026\] ReQAT: Achieving Full-Precision Reasoning Accuracy with 4-bit Floating-Point Quantization-Aware Training](reqat_achieving_full-precision_reasoning_accuracy_with_4-bit_floating-point_quan.md)
-- [\[ICLR 2026\] Achieving low-bit Muon through subspace preservation and grid quantization](../../ICLR2026/model_compression/achieving_low-bit_muon_through_subspace_preservation_and_grid_quantization.md)
-- [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
 - [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
 - [\[ICML 2026\] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs](lfq_logit-aware_final-block_quantization_for_boosting_the_generation_quality_of_.md)
+- [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
+- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](../../ICLR2026/model_compression/sliderquant_accurate_post-training_quantization_for_llms.md)
+- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](../../ICLR2026/model_compression/quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
 
 </div>
 

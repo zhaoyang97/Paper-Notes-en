@@ -2,15 +2,13 @@
 title: >-
   [Paper Note] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM-as-a-Judge] This paper proposes VisJudge-Bench, the first comprehensive benchmark for evaluating the aesthetics and quality of data visualizations (comprising 3,090 samples across 32 chart types). It further introduces the VisJudge model, which reduces MAE by 23.9% compared to GPT-5 and improves consistency with human experts by 6
+  [Multimodal VLM] This paper proposes VisJudge-Bench, the first comprehensive benchmark for evaluating the aesthetics and quality of data visualizations (comprising 3,090 samples across 32 chart types). It further introduces the VisJudge model, which reduces MAE by 23.9% compared to GPT-5 and improves consistency with human experts by 60.5%.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM-as-a-Judge
-  - benchmark
+  - "Multimodal VLM"
 date: 2026-05-08
-content_hash: 6317c197c93d3056
+content_hash: f165f44ecf251bcd
 ---
+
 # VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations
 
 ## Meta Information

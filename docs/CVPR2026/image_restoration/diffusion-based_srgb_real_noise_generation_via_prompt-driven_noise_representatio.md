@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning
 description: >-
-  [CVPR 2026][Image Restoration][Denoising] PNG proposes using learnable Global/Local Prompt components to automatically extract noise features from real noise (replacing metadata like ISO/camera model). By encoding noise into a latent space via a Prompt AutoEncoder and using Prompt DiT (based on consistency models) for single-step latent code generation, it ach
+  [CVPR 2026][Image Restoration][sRGB noise generation] PNG proposes using learnable Global/Local Prompt components to automatically extract noise features from real noise (replacing metadata like ISO/camera model). By encoding noise into a latent space via a Prompt AutoEncoder and using Prompt DiT (based on consistency models) for single-step latent code generation, it achieves metadata-free real sRGB noise synthesis. Downstream DnCNN denoising on SIDD lags behind real data by…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Denoising
-  - metadata-free
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "sRGB noise generation"
+  - "prompt learning"
+  - "consistency models"
+  - "denoising"
+  - "metadata-free"
 date: 2026-05-08
-content_hash: de7a461c8290174b
+content_hash: 2ff2213fce4ca790
 ---
+
 # PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning
 
 **Conference**: CVPR 2026  
@@ -175,10 +179,10 @@ Metadata classification experiment: Camera sensor classification accuracy using 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning to Translate Noise for Robust Image Denoising](learning_to_translate_noise_for_robust_image_denoising.md)
 - [\[CVPR 2026\] The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations](the_surprising_effectiveness_of_noise_pretraining_for_implicit_neural_representa.md)
 - [\[CVPR 2026\] Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising](convexity-aware_noise_calibration_a_self-supervised_framework_for_noise-level-un.md)
 - [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
+- [\[CVPR 2026\] Self-Attention Driven Tensor Representation for High-Order Data Recovery](self-attention_driven_tensor_representation_for_high-order_data_recovery.md)
 - [\[CVPR 2026\] BiProLoRA: Bilevel Prompt LoRA for Real Scene Recovery](biprolora_bilevel_prompt_lora_for_real_scene_recovery.md)
 
 </div>

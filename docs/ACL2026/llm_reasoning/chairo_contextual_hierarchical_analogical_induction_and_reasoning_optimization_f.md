@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ChAIRO: Contextual Hierarchical Analogical Induction and Reasoning Optimization for LLMs
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] The authors propose ChAIRO, a framework for contextual hierarchical analogical induction and reasoning optimization. Through a three-stage pipeline (analogical case generation → rule induction → rule-injected fine-tuning), the framework enables LLMs to autonomously generate analogical cases and induce explicit moderati
+  [ACL 2026][Reasoning][Content Moderation] The authors propose ChAIRO, a framework for contextual hierarchical analogical induction and reasoning optimization. Through a three-stage pipeline (analogical case generation → rule induction → rule-injected fine-tuning), the framework enables LLMs to autonomously generate analogical cases and induce explicit moderation rules for content moderation. It achieves a 4.5% $F1$ improvement over single-instance rule generation and a 2.3% i…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Content Moderation"
+  - "Rule Induction"
+  - "Analogical Reasoning"
+  - "Hierarchical Chain-of-Thought"
+  - "End-to-End Optimization"
 date: 2026-05-08
-content_hash: c21340ce5a53e76b
+content_hash: d18214b1ac10836d
 ---
+
 # ChAIRO: Contextual Hierarchical Analogical Induction and Reasoning Optimization for LLMs
 
 **Conference**: ACL 2026  
@@ -138,10 +144,10 @@ If rules and analogies are loosely concatenated, the model may not know when to 
 ## Related Papers
 
 - [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](calibration-aware_policy_optimization_for_reasoning_llms.md)
-- [\[ICLR 2026\] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics](../../ICLR2026/llm_reasoning/from_abstract_to_contextual_what_llms_still_cannot_do_in_math_word_problem_solvi.md)
 - [\[ICLR 2026\] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](../../ICLR2026/llm_reasoning/thor_tool-integrated_hierarchical_optimization_via_rl_for_mathematical_reasoning.md)
+- [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](../../ICLR2026/llm_reasoning/emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
+- [\[ICLR 2026\] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics](../../ICLR2026/llm_reasoning/from_abstract_to_contextual_what_llms_still_cannot_do_in_math_word_problem_solvi.md)
 - [\[ACL 2026\] Strategy-Induct: Task-Level Strategy Induction for Instruction Generation](strategy-induct_task-level_strategy_induction_for_instruction_generation.md)
-- [\[AAAI 2026\] The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models](../../AAAI2026/llm_reasoning/the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua.md)
 
 </div>
 

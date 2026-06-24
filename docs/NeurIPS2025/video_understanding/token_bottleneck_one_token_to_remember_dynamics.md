@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Token Bottleneck: One Token to Remember Dynamics
 description: >-
-  [NeurIPS 2025][Video Understanding][Self-supervised learning] This paper proposes Token Bottleneck (ToBo), a self-supervised visual representation learning pipeline that compresses a reference scene into a single bottlen…
+  [NeurIPS 2025][Video Understanding][Self-supervised learning] This paper proposes Token Bottleneck (ToBo), a self-supervised visual representation learning pipeline that compresses a reference scene into a single bottleneck token and uses this token together with a minimal number of target scene patches to reconstruct the subsequent scene, thereby training visual backbone networks to simultaneously encode scene information conservatively and capture temporal dynamics.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "token bottleneck"
   - "sequential scene understanding"
 date: 2026-05-08
-content_hash: a6cbb63d0b986536
+content_hash: 2fec80b439ec1931
 ---
 
 # Token Bottleneck: One Token to Remember Dynamics
@@ -169,11 +169,11 @@ The decoder comprises 8 Transformer blocks and incurs a computational cost of on
 
 ## Related Papers
 
+- [\[CVPR 2025\] DivPrune: Diversity-Based Visual Token Pruning for Large Multimodal Models](../../CVPR2025/video_understanding/divprune_diversity-based_visual_token_pruning_for_large_multimodal_models.md)
 - [\[ICCV 2025\] AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning](../../ICCV2025/video_understanding/aim_adaptive_inference_multimodal_llms_token_merging_pruning.md)
+- [\[CVPR 2025\] Omni-RGPT: Unifying Image and Video Region-level Understanding via Token Marks](../../CVPR2025/video_understanding/omni-rgpt_unifying_image_and_video_region-level_understanding_via_token_marks.md)
 - [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](../../CVPR2026/video_understanding/streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
-- [\[CVPR 2026\] UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking](../../CVPR2026/video_understanding/utptrack_towards_simple_and_unified_token_pruning_for_visual_tracking.md)
-- [\[NeurIPS 2025\] When One Moment Isn't Enough: Multi-Moment Retrieval with Cross-Moment Interactions](when_one_moment_isnt_enough_multi-moment_retrieval_with_cross-moment_interaction.md)
-- [\[ICLR 2026\] Video-KTR: Enhancing Video Reasoning via Key Token Attribution](../../ICLR2026/video_understanding/video-ktr_reinforcing_video_reasoning_via_key_token_attribution.md)
+- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](../../CVPR2026/video_understanding/an_efficient_token_compression_framework_for_visual_object_tracking.md)
 
 </div>
 

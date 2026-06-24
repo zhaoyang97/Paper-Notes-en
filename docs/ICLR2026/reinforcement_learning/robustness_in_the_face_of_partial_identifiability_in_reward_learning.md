@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robustness in the Face of Partial Identifiability in Reward Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper reformulates "partial identifiability" in reward learning from a qualitative risk into a measurable worst-case loss. It proposes Rob-ReL to output robust predictions and error certificates using a minimax approach in preference evaluation tasks.
+  [ICLR 2026][Reinforcement Learning][Reward Learning] This paper reformulates "partial identifiability" in reward learning from a qualitative risk into a measurable worst-case loss. It proposes Rob-ReL to output robust predictions and error certificates using a minimax approach in preference evaluation tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reward Learning"
+  - "Partial Identifiability"
+  - "Inverse Reinforcement Learning"
+  - "Robust Optimization"
+  - "Preference Feedback"
 date: 2026-05-08
-content_hash: 57cb6f7cd89ba873
+content_hash: 3b5b280acb5320f2
 ---
+
 # Robustness in the Face of Partial Identifiability in Reward Learning
 
 **Conference**: ICLR 2026  
@@ -160,6 +166,7 @@ Optimization uses PDSM-MIN and PDSM-MAX. In each iteration, $r$ undergoes projec
 - Value: ⭐⭐⭐⭐☆ provides a theoretical baseline for "how to deploy when rewards are non-unique."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

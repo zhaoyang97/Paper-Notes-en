@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fast-dLLM v2: Efficient Block-Diffusion LLM
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Fast-dLLM v2 transforms pre-trained autoregressive Qwen2.5 models into block-diffusion language models via lightweight fine-tuning with approximately 1B tokens. Combined with hierarchical caching and confidence-based parallel decoding, it achieves up to 2.5× speedup over AR decoding without performance degradation.
+  [ICLR 2026][LLM Efficiency][Block Diffusion] Fast-dLLM v2 transforms pre-trained autoregressive Qwen2.5 models into block-diffusion language models via lightweight fine-tuning with approximately 1B tokens. Combined with hierarchical caching and confidence-based parallel decoding, it achieves up to 2.5× speedup over AR decoding without performance degradation.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Block Diffusion"
+  - "Parallel Decoding"
+  - "AR Model Adaptation"
+  - "Hierarchical Caching"
+  - "Complementary Masking"
 date: 2026-05-08
-content_hash: 86df879c3bb6d3b0
+content_hash: 452abb49e1cd699d
 ---
+
 # Fast-dLLM v2: Efficient Block-Diffusion LLM
 
 **Conference**: ICLR 2026  
@@ -139,11 +145,11 @@ The full recipe improves the average score by +3.7 over the naive version. Paddi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
+- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](../../ICML2026/llm_efficiency/fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
+- [\[CVPR 2026\] Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference](../../CVPR2026/llm_efficiency/rejection_mixing_fast_semantic_propagation_of_mask_tokens_for_efficient_dllm_inf.md)
 - [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
-- [\[ICLR 2026\] Prima.cpp: Fast 30-70B LLM Inference on Heterogeneous and Low-Resource Home Clusters](primacpp_fast_30-70b_llm_inference_on_heterogeneous_and_low-resource_home_cluste.md)
-- [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
-- [\[ICLR 2026\] Beyond Masks: Efficient, Flexible Diffusion Language Models via Deletion-Insertion Processes](beyond_masks_efficient_flexible_diffusion_language_models_via_deletion-insertion.md)
-- [\[ICLR 2026\] Planned Diffusion](planned_diffusion.md)
+- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
 
 </div>
 

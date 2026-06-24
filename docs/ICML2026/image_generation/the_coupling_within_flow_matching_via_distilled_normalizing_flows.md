@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] The Coupling Within: Flow Matching via Distilled Normalizing Flows
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] This paper introduces Normalized Flow Matching (NFM), which utilizes the "accurate deterministic data-to-noise bijection" produced by a pre-trained TarFlow (an autoregressive normalizing flow) as the noise-data coupling for Flow Matching. This advances FM's convergence speed and low-step FID to new levels while signifi
+  [ICML 2026][Image Generation][Flow Matching] This paper introduces Normalized Flow Matching (NFM), which utilizes the "accurate deterministic data-to-noise bijection" produced by a pre-trained TarFlow (an autoregressive normalizing flow) as the noise-data coupling for Flow Matching. This advances FM's convergence speed and low-step FID to new levels while significantly exceeding the inference speed of the teacher NF model.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
-  - Normalizing Flow
-  - coupling
-  - TarFlow
+  - "ICML 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Normalizing Flow"
+  - "coupling"
+  - "distillation"
+  - "TarFlow"
 date: 2026-05-08
-content_hash: 3e965c43a1bd8c26
+content_hash: 14c6b3a9df291d5b
 ---
+
 # The Coupling Within: Flow Matching via Distilled Normalizing Flows
 
 **Conference**: ICML 2026  
@@ -129,13 +131,20 @@ The student’s FID reaches 1.78 on ImageNet64, outperforming the TarFlow teache
 - **Value**: ⭐⭐⭐⭐ Provides a low-cost FID improvement for existing FM models, particularly effective in the practical low-step sampling regime.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **SD-FM**: Statistical Distance Flow Matching.
-- **TarFlow**: Transformer-based Autoregressive Flow.
-- **SiT**: Scalable Interpolant Transformers.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] Flowing Backwards: Improving Normalizing Flows via Reverse Representation Alignment](../../AAAI2026/image_generation/flowing_backwards_improving_normalizing_flows_via_reverse_representation_alignme.md)
+- [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](../../CVPR2026/image_generation/learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
+- [\[ICML 2026\] Stable Velocity: A Variance Perspective on Flow Matching](stable_velocity_a_variance_perspective_on_flow_matching.md)
+- [\[CVPR 2026\] Bidirectional Normalizing Flow: From Data to Noise and Back](../../CVPR2026/image_generation/bidirectional_normalizing_flow_from_data_to_noise_and_back.md)
+- [\[ICLR 2026\] SESaMo: Symmetry-Enforcing Stochastic Modulation for Normalizing Flows](../../ICLR2026/image_generation/sesamo_symmetry-enforcing_stochastic_modulation_for_normalizing_flows.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] Flowing Backwards: Improving Normalizing Flows via Reverse Representation Alignment](../../AAAI2026/image_generation/flowing_backwards_improving_normalizing_flows_via_reverse_representation_alignme.md)

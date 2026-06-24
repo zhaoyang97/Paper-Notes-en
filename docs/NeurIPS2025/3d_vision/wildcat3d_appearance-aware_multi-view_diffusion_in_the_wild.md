@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WildCAT3D: Appearance-Aware Multi-View Diffusion in the Wild
 description: >-
-  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes WildCAT3D, which extends the multi-view diffusion model CAT3D to learn scene-level novel view synthesis from in-the-wild internet data (e.g.…
+  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes WildCAT3D, which extends the multi-view diffusion model CAT3D to learn scene-level novel view synthesis from in-the-wild internet data (e.g., tourist photographs) by explicitly modeling global appearance conditions, while simultaneously supporting appearance-controlled generation.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Scene-Level NVS"
   - "In-the-Wild Data"
 date: 2026-05-08
-content_hash: 4df92d9a6449b325
+content_hash: 24e462c4b8f0adc5
 ---
 
 # WildCAT3D: Appearance-Aware Multi-View Diffusion in the Wild
@@ -128,11 +128,11 @@ WildCAT3D extends the CAT3D framework with two core modifications: (1) an appear
 
 ## Related Papers
 
-- [\[ICCV 2025\] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion](../../ICCV2025/3d_vision/materialmvp_illumination-invariant_material_generation_via_multi-view_pbr_diffus.md)
+- [\[CVPR 2025\] Sharp-It: A Multi-view to Multi-view Diffusion Model for 3D Synthesis and Manipulation](../../CVPR2025/3d_vision/sharp-it_a_multi-view_to_multi-view_diffusion_model_for_3d_synthesis_and_manipul.md)
+- [\[CVPR 2025\] 3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement](../../CVPR2025/3d_vision/3denhancer_consistent_multi-view_diffusion_for_3d_enhancement.md)
+- [\[CVPR 2025\] MVGD: Zero-Shot Novel View and Depth Synthesis with Multi-View Geometric Diffusion](../../CVPR2025/3d_vision/zero-shot_novel_view_and_depth_synthesis_with_multi-view_geometric_diffusion.md)
+- [\[CVPR 2025\] EnvGS: Modeling View-Dependent Appearance with Environment Gaussian](../../CVPR2025/3d_vision/envgs_modeling_view-dependent_appearance_with_environment_gaussian.md)
 - [\[NeurIPS 2025\] Scaffold Diffusion: Sparse Multi-Category Voxel Structure Generation with Discrete Diffusion](scaffold_diffusion_sparse_multi-category_voxel_structure_generation_with_discret.md)
-- [\[ICCV 2025\] Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data](../../ICCV2025/3d_vision/bootstrap3d_improving_multi-view_diffusion_model_with_synthetic_data.md)
-- [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](../../ICCV2025/3d_vision/spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
-- [\[NeurIPS 2025\] GeoComplete: Geometry-Aware Diffusion for Reference-Driven Image Completion](geocomplete_geometry-aware_diffusion_for_reference-driven_image_completion.md)
 
 </div>
 

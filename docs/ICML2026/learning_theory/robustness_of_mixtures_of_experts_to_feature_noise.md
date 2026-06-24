@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Robustness of Mixtures of Experts to Feature Noise
 description: >-
-  [ICML 2026][learning_theory][Mixture-of-Experts] Under the fair "iso-parameter" setting, this paper demonstrates using a block-diagonal noisy linear regression model that MoE's sparse expert activation acts as a noise filter. This allows it to achieve lower generalization error, stronger perturbation robustness, and faster convergence compared to a dense model of equ
+  [ICML 2026][Learning Theory][Mixture-of-Experts] Under the fair "iso-parameter" setting, this paper demonstrates using a block-diagonal noisy linear regression model that MoE's sparse expert activation acts as a noise filter. This allows it to achieve lower generalization error, stronger perturbation robustness, and faster convergence compared to a dense model of equal size under feature noise.
 tags:
-  - ICML 2026
-  - learning_theory
-  - Mixture-of-Experts
+  - "ICML 2026"
+  - "Learning Theory"
+  - "MoE"
+  - "Robustness"
+  - "Mixture-of-Experts"
+  - "Feature Noise"
+  - "Sparse Activation"
+  - "Generalization Error"
+  - "Iso-parameter Comparison"
 date: 2026-05-08
-content_hash: a3e8c5a023cef2ac
+content_hash: b6d3703ee421fceb
 ---
+
 # Robustness of Mixtures of Experts to Feature Noise
 
 **Conference**: ICML 2026  
@@ -142,9 +149,9 @@ Even with maximum overlap $\alpha=1.0$, the sparse advantage persists at approxi
 ## Related Papers
 
 - [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
-- [\[ICML 2026\] Efficiently Learning Drifting Halfspaces with Massart Noise](efficiently_learning_drifting_halfspaces_with_massart_noise.md)
-- [\[ICML 2026\] Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts](geometric_and_stochastic_analysis_of_discontinuities_in_sparse_mixture-of-expert.md)
 - [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)
+- [\[ICML 2026\] On the Robustness of Langevin Dynamics to Score Function Error](on_the_robustness_of_langevin_dynamics_to_score_function_error.md)
+- [\[ICML 2026\] Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts](geometric_and_stochastic_analysis_of_discontinuities_in_sparse_mixture-of-expert.md)
 - [\[ICLR 2026\] Transformers as Unsupervised Learning Algorithms: A study on Gaussian Mixtures](../../ICLR2026/learning_theory/transformers_as_unsupervised_learning_algorithms_a_study_on_gaussian_mixtures.md)
 
 </div>

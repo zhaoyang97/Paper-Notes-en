@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] H$^3$DP: Triply-Hierarchical Diffusion Policy for Visuomotor Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] H3DP simultaneously introduces "Input Hierarchy (depth-slicing RGB-D) + Representation Hierarchy (multi-scale visual features) + Action Hierarchy (coarse-to-fine hierarchical conditional denoising)" into visuomotor diffusion policies. By explicitly coupling visual perception with action generation, it achieves an avera
+  [ICLR 2026][Robotics][Diffusion Policy] H3DP simultaneously introduces "Input Hierarchy (depth-slicing RGB-D) + Representation Hierarchy (multi-scale visual features) + Action Hierarchy (coarse-to-fine hierarchical conditional denoising)" into visuomotor diffusion policies. By explicitly coupling visual perception with action generation, it achieves an average improvement of +27.5% across 44 simulation tasks and +72.4% on real-world dual-arm tasks relative to baselines.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Diffusion Policy"
+  - "Visuomotor Learning"
+  - "Hierarchical Modeling"
+  - "Depth Stratification"
+  - "Multi-scale Representation"
+  - "Robot Manipulation"
 date: 2026-05-08
-content_hash: 8fae4e1f4bb081da
+content_hash: a4fc621c98d3176c
 ---
+
 # H$^3$DP: Triply-Hierarchical Diffusion Policy for Visuomotor Learning
 
 **Conference**: ICLR 2026  
@@ -117,8 +124,8 @@ Ablation on number of layers $N$: $N=1\to46.5$, $N=2\to50.2$, $N=3\to59.6$, $N=4
 
 ## Related Papers
 
-- [\[ICML 2026\] Sample from What You See: Visuomotor Policy Learning via Diffusion Bridge with Observation-Embedded Stochastic Differential Equation](../../ICML2026/robotics/sample_from_what_you_see_visuomotor_policy_learning_via_diffusion_bridge_with_ob.md)
 - [\[ICLR 2026\] Block-wise Adaptive Caching for Accelerating Diffusion Policy](block-wise_adaptive_caching_for_accelerating_diffusion_policy.md)
+- [\[ICML 2026\] Sample from What You See: Visuomotor Policy Learning via Diffusion Bridge with Observation-Embedded Stochastic Differential Equation](../../ICML2026/robotics/sample_from_what_you_see_visuomotor_policy_learning_via_diffusion_bridge_with_ob.md)
 - [\[ICLR 2026\] Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](cosmos_policy_fine-tuning_video_models_for_visuomotor_control_and_planning.md)
 - [\[ICML 2026\] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](../../ICML2026/robotics/online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)
 - [\[ICLR 2026\] Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning](rethinking_policy_diversity_in_ensemble_policy_gradient_in_large-scale_reinforce.md)

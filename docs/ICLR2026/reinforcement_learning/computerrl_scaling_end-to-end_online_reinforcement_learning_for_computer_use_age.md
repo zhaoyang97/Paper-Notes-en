@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][API-GUI] ComputerRL proposes an end-to-end online RL framework for desktop computer use agents. It unifies programmatic API calls and human-like GUI operations into a single action space via the API-GUI paradigm, establishes a distributed asynchronous RL infrastructure capable of running thousands of concurrent virtual desktops
+  [ICLR2026][Reinforcement Learning][End-to-end Online RL] ComputerRL proposes an end-to-end online RL framework for desktop computer use agents. It unifies programmatic API calls and human-like GUI operations into a single action space via the API-GUI paradigm, establishes a distributed asynchronous RL infrastructure capable of running thousands of concurrent virtual desktops, and utilizes Entropulse (alternating RL and SFT) to combat entropy collapse during long training. Con…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - API-GUI
-  - step-level GRPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "End-to-end Online RL"
+  - "API-GUI"
+  - "Desktop Agent"
+  - "Entropy Collapse"
+  - "step-level GRPO"
 date: 2026-05-08
-content_hash: 659fb583b0eecd4c
+content_hash: cbe47babb2b3b6a5
 ---
+
 # ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents
 
 **Conference**: ICLR2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Interpretability from the Ground Up
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This work derives four principles—FGTI (Faithful, Grounded, Traceable, Interchangeable)—from the requirements of educational assessment stakeholders. It develops the AnalyticScore three-stage framework to achieve interpretable automated scoring, trailing non-interpretable SOTA by only 0.06 in average QWK on the ASAP-SA
+  [ACL 2026 Findings][Interpretability][Interpretable Automated Scoring] This work derives four principles—FGTI (Faithful, Grounded, Traceable, Interchangeable)—from the requirements of educational assessment stakeholders. It develops the AnalyticScore three-stage framework to achieve interpretable automated scoring, trailing non-interpretable SOTA by only 0.06 in average QWK on the ASAP-SAS dataset.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Interpretability"
+  - "Interpretable Automated Scoring"
+  - "Educational Assessment"
+  - "FGTI Principles"
+  - "Analytic Scoring"
+  - "Stakeholder-centered Design"
 date: 2026-05-08
-content_hash: a1ff712eb487fba5
+content_hash: e2257276d749123b
 ---
+
 # Interpretability from the Ground Up
 
 **Conference**: ACL 2026 Findings  
@@ -113,14 +119,14 @@ Scoring accuracy (QWK) was evaluated on 10 prompts from the ASAP-SAS dataset, co
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Letting Tutor Personas Speak Up for LLMs: Learning Steering Vectors from Dialogue via Preference Optimization](letting_tutor_personas_speak_up_for_llms_learning_steering_vectors_from_dialogue.md)
+- [\[ICLR 2026\] Setting Up for Failure: Automatic Discovery of the Neural Mechanisms of Cognitive Errors](../../ICLR2026/interpretability/setting_up_for_failure_automatic_discovery_of_the_neural_mechanisms_of_cognitive.md)
 - [\[ACL 2026\] Revitalizing Black-Box Interpretability: Actionable Interpretability for LLMs via Proxy Models](revitalizing_black-box_interpretability_actionable_interpretability_for_llms_via.md)
 - [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](../../ICML2026/interpretability/how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
-- [\[ICML 2026\] Interpretability Can Be Actionable](../../ICML2026/interpretability/interpretability_can_be_actionable.md)
 - [\[ACL 2026\] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models](from_interpretability_to_performance_optimizing_retrieval_heads_for_long-context.md)
 
 </div>

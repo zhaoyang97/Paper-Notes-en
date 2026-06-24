@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robust Remote Sensing Image–Text Retrieval with Noisy Correspondence
 description: >-
-  [CVPR 2026][Remote Sensing][CLIP] This paper investigates the "Noisy Correspondence" issue (misaligned image-text pairs) in Remote Sensing Image-Text Retrieval (RSITR) for the first time and proposes the RRSITR framework. By categorizing training pairs into clean, fuzzy, and noisy sets based on contrastive loss, the method utilizes multimodal self-pace
+  [CVPR 2026][Remote Sensing][Noisy Correspondence] This paper investigates the "Noisy Correspondence" issue (misaligned image-text pairs) in Remote Sensing Image-Text Retrieval (RSITR) for the first time and proposes the RRSITR framework. By categorizing training pairs into clean, fuzzy, and noisy sets based on contrastive loss, the method utilizes multimodal self-paced learning for easy-to-hard scheduling and applies a robust triplet loss with dynamic soft margins to noisy pa…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - CLIP
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Noisy Correspondence"
+  - "RSITR"
+  - "Self-paced Learning"
+  - "Robust Triplet Loss"
+  - "CLIP"
 date: 2026-05-08
-content_hash: b33a9e41c2d49594
+content_hash: 1bb0c1a10bac3f04
 ---
+
 # Robust Remote Sensing Image–Text Retrieval with Noisy Correspondence
 
 **Conference**: CVPR 2026  
@@ -136,13 +141,12 @@ Key observation: As noise rates increase from 20% to 80%, almost all baselines e
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence](paul_uncertainty-guided_partition_and_augmentation_for_robust_cross-view_geo-loc.md)
+- [\[CVPR 2026\] TriSim: Tri-Dimensional Similarity Modeling with Extreme Value Theory for False-Negative Mitigation in Remote Sensing Image-Text Retrieval](trisim_tri-dimensional_similarity_modeling_with_extreme_value_theory_for_false-n.md)
 - [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
-- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] Remote Sensing Image Super-Resolution for Imbalanced Textures: A Texture-Aware Diffusion Framework](remote_sensing_image_super-resolution_for_imbalanced_textures_a_texture-aware_di.md)
 - [\[CVPR 2026\] QuCNet: Quantum Deep Learning Driven Multi-Circuit Network for Remote Sensing Image Classification](qucnet_quantum_deep_learning_driven_multi-circuit_network_for_remote_sensing_ima.md)
 

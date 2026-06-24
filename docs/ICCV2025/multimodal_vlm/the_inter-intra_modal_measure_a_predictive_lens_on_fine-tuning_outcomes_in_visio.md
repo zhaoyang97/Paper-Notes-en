@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Inter-Intra Modal Measure: A Predictive Lens on Fine-Tuning Outcomes in Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Transferability estimation] This paper proposes the Inter-Intra Modal Measure (IIMM)—a metric that requires only a single forward pass to predict both the performance gain and the degree of ca…
+  [ICCV 2025][Multimodal VLM][Transferability estimation] This paper proposes the Inter-Intra Modal Measure (IIMM)—a metric that requires only a single forward pass to predict both the performance gain and the degree of catastrophic forgetting following fine-tuning of vision-language dual-encoder models. By quantifying intra-modal image embedding similarity and inter-modal misaligned label alignment, IIMM demonstrates strong linear predictive power ($R^2 > 0.85$) across 4 found…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "catastrophic forgetting"
 date: 2026-05-08
-content_hash: f95dcfa70c18194d
+content_hash: 1c41ecb3c3eb7f24
 ---
 
 # The Inter-Intra Modal Measure: A Predictive Lens on Fine-Tuning Outcomes in Vision-Language Models
@@ -56,17 +56,17 @@ IIMM derives from the InfoNCE loss of contrastive learning and decomposes the em
 
    The InfoNCE loss optimizes two objectives: positive-pair alignment and negative-pair separation. IIMM captures the current state of both effects:
 
-   - **Inter-modal misalignment**:
-     $S_{inter} = \frac{1}{|X|} \sum_{x \in X} \frac{1}{|Y|-1} \sum_{y' \in Y \setminus \{y(x)\}} x^\top y'$
-     High $S_{inter}$ indicates that image embeddings exhibit high similarity to incorrect text labels, implying the model has not sufficiently separated negative pairs—large fine-tuning potential but high forgetting risk.
+    - **Inter-modal misalignment**:
+      $S_{inter} = \frac{1}{|X|} \sum_{x \in X} \frac{1}{|Y|-1} \sum_{y' \in Y \setminus \{y(x)\}} x^\top y'$
+      High $S_{inter}$ indicates that image embeddings exhibit high similarity to incorrect text labels, implying the model has not sufficiently separated negative pairs—large fine-tuning potential but high forgetting risk.
 
-   - **Intra-modal uniformity**:
-     $S_{intra} = \frac{2}{|X|(|X|-1)} \sum_{1 \leq i < j \leq |X|} x_i^\top x_j$
-     High $S_{intra}$ indicates overly clustered image embeddings, suggesting room for further separation or reorganization.
+    - **Intra-modal uniformity**:
+      $S_{intra} = \frac{2}{|X|(|X|-1)} \sum_{1 \leq i < j \leq |X|} x_i^\top x_j$
+      High $S_{intra}$ indicates overly clustered image embeddings, suggesting room for further separation or reorganization.
 
-   - **IIMM definition**:
-     $\text{IIMM} = \frac{1}{2}(S_{inter} + S_{intra})$
-     The range is $[-1, 1]$; higher values predict greater learning gain but also greater forgetting risk.
+    - **IIMM definition**:
+      $\text{IIMM} = \frac{1}{2}(S_{inter} + S_{intra})$
+      The range is $[-1, 1]$; higher values predict greater learning gain but also greater forgetting risk.
 
 2. **Theoretical Guarantee—Wasserstein Distance Bound**:
 
@@ -166,11 +166,11 @@ For comparison, GBC (the second strongest metric) achieves $R^2$ of only 0.59–
 
 ## Related Papers
 
-- [\[ICCV 2025\] AirCache: Activating Inter-Modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference](aircache_activating_inter-modal_relevancy_kv_cache_compression_for_efficient_lar.md)
+- [\[ICLR 2026\] MergeTune: Continued Fine-Tuning of Vision-Language Models](../../ICLR2026/multimodal_vlm/mergetune_continued_fine-tuning_of_vision-language_models.md)
 - [\[ICCV 2025\] Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving](fine-grained_evaluation_of_large_vision-language_models_in_autonomous_driving.md)
 - [\[ICCV 2025\] FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models](fedmvp_federated_multimodal_visual_prompt_tuning_for_vision-language_models.md)
-- [\[ICCV 2025\] From Holistic to Localized: Local Enhanced Adapters for Efficient Visual Instruction Fine-Tuning](from_holistic_to_localized_local_enhanced_adapters_for_efficient_visual_instruct.md)
-- [\[NeurIPS 2025\] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning](../../NeurIPS2025/multimodal_vlm/advancing_compositional_awareness_in_clip_with_efficient_fin.md)
+- [\[ICLR 2026\] pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models](../../ICLR2026/multimodal_vlm/pfedmma_personalized_federated_fine-tuning_with_multi-modal_adapter_for_vision-l.md)
+- [\[CVPR 2025\] VladVA: Discriminative Fine-tuning of LVLMs](../../CVPR2025/multimodal_vlm/vladva_discriminative_fine-tuning_of_lvlms.md)
 
 </div>
 

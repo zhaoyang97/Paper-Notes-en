@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] The MUST framework is proposed to explicitly decompose multimodal representations into modality-specific and cross-modal shared components via algebraic constraints. A conditional Latent Diffusion Model (LDM) is employed to generate specific information when modalities are missing. MUST achieves SOTA performance with a
+  [CVPR 2026][Medical Imaging][Survival Prediction] The MUST framework is proposed to explicitly decompose multimodal representations into modality-specific and cross-modal shared components via algebraic constraints. A conditional Latent Diffusion Model (LDM) is employed to generate specific information when modalities are missing. MUST achieves SOTA performance with a 0.742 C-index across five TCGA cancer datasets, with performance drops limited to approximately 0.4%-3.5% in…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Survival Prediction"
+  - "Missing Modality"
+  - "Algebraic Decomposition"
+  - "Latent Diffusion Models"
+  - "Multimodal Fusion"
 date: 2026-05-08
-content_hash: a37cbd02e78fa7a0
+content_hash: 14c3a65cb0bfd445
 ---
+
 # MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality
 
 **Conference**: CVPR 2026  
@@ -137,14 +143,17 @@ Comparison of C-index across 5 TCGA datasets (BLCA/BRCA/GBMLGG/LUAD/UCEC):
 
 <div class="related-papers" markdown="1">
 
-[1] **CMTA**: Cross-Modal Transformer for Survival Prediction.  
-[2] **ShaSpec**: Shared-Specific Feature Learning for Missing Modality.  
-[3] **SurvPath**: Pathological Whole Slide Image Analysis via Genomics Informative.
+## Related Papers
+
+- [\[CVPR 2026\] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction](h2-surv_hierarchical_hyperbolic_multimodal_representation_learning_for_survival_.md)
+- [\[CVPR 2025\] CLoE: Expert Consistency Learning for Missing Modality Segmentation](../../CVPR2025/medical_imaging/cloe_expert_consistency_learning_for_missing_modality_segmentation.md)
+- [\[ICCV 2025\] SimMLM: A Simple Framework for Multi-modal Learning with Missing Modality](../../ICCV2025/medical_imaging/simmlm_a_simple_framework_for_multi-modal_learning_with_missing_modality.md)
+- [\[CVPR 2026\] Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities](uni-encoder_meets_multi-encoders_representation_before_fusion_for_brain_tumor_se.md)
+- [\[CVPR 2026\] Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction](turning_pre-trained_vision_transformers_into_end-to-end_histopathology_whole_sli.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] CLoE: Expert Consistency Learning for Missing Modality Segmentation](cloe_expert_consistency_learning_for_missing_modality_segmentation.md)

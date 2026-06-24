@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification
 description: >-
-  [ICLR 2026][Others][Paper Note] Addressing the "dual missingness" of views and labels in multi-view multi-label classification (iM3C), this paper proposes the PCVE framework. Under an Information Bottleneck objective, it utilizes cross-view variational encoders to learn shared semantic distributions for each view, further aligned via a "permutation c
+  [ICLR2026][Incomplete Multi-View] Addressing the "dual missingness" of views and labels in multi-view multi-label classification (iM3C), this paper proposes the PCVE framework. Under an Information Bottleneck objective, it utilizes cross-view variational encoders to learn shared semantic distributions for each view, further aligned via a "permutation consistency" regularization. The method consistently outperforms 9 strong baselines even under 50% view and 50% label missingne…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR2026"
+  - "Incomplete Multi-View"
+  - "Missing Multi-Labels"
+  - "Information Bottleneck"
+  - "Variational Encoding"
+  - "Permutation Consistency"
 date: 2026-05-08
-content_hash: 7888b8521ebb63b0
+content_hash: 1148e8715d1b6443
 ---
+
 # Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification
 
 **Conference**: ICLR2026  
@@ -139,10 +144,20 @@ The roles of various components are identified:
 - Value: ⭐⭐⭐⭐ Missingness inference without imputation and complexity reduction are valuable for real-world multi-view deployments.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](../../CVPR2026/others/exotic_external_vision-driven_incomplete_multi-view_classification.md)
+- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](../../CVPR2026/others/df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[ICLR 2026\] Aligning Collaborative View Recovery and Tensorial Subspace Learning via Latent Representation for Incomplete Multi-View Clustering](aligning_collaborative_view_recovery_and_tensorial_subspace_learning_via_latent_.md)
+- [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](../../CVPR2026/others/prototype-based_causal_intervention_for_multi-label_image_classification.md)
+- [\[AAAI 2026\] Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](../../AAAI2026/others/deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](../../CVPR2026/others/exotic_external_vision-driven_incomplete_multi-view_classification.md)

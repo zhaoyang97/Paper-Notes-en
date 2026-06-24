@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Ours proposes A4VL, a training-free multi-agent perception-action alliance framework. Through event-driven video chunking, clue-guided keyframe selection, and a multi-round agent negotiation-pruning mechanism, it consistently outperforms 28 baseline methods across five VideoQA benchmarks with significantly lower infere
+  [CVPR2026][VLM Reasoning][Long Video Reasoning] Ours proposes A4VL, a training-free multi-agent perception-action alliance framework. Through event-driven video chunking, clue-guided keyframe selection, and a multi-round agent negotiation-pruning mechanism, it consistently outperforms 28 baseline methods across five VideoQA benchmarks with significantly lower inference latency.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR2026"
+  - "VLM Reasoning"
+  - "Long Video Reasoning"
+  - "Multi-Agent Collaboration"
+  - "Video Question Answering"
+  - "Perception-Action Exploration"
+  - "Training-Free Framework"
 date: 2026-05-08
-content_hash: d3ae4a1cc4b64c38
+content_hash: 1768993f0a90062f
 ---
+
 # A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning
 
 **Conference**: CVPR2026  
@@ -156,11 +162,11 @@ On MLVU long videos, A4VL requires only 74s/sample, which is 42% faster than GPT
 
 ## Related Papers
 
-- [\[CVPR 2026\] SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration](svagent_storyline_guided_long_video_understanding_via_cross_modal_multi_agent_collaboration.md)
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
-- [\[CVPR 2026\] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking](videoseek_long-horizon_video_agent_with_tool-guided_seeking.md)
 - [\[CVPR 2026\] MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning](minerva-cultural_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
-- [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](../../ICML2026/video_understanding/video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
+- [\[CVPR 2026\] VAST: Video Ability-Stratified Taxonomy for Data-Efficient Video Reasoning](vast_video_ability-stratified_taxonomy_for_data-efficient_video_reasoning.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[CVPR 2026\] Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](prototypical_action_reasoning_facilitated_by_vision-language_alignment_for_egoce.md)
 
 </div>
 

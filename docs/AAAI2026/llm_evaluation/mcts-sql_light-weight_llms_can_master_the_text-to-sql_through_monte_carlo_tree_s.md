@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search
 description: >-
-  [AAAI 2026][LLM Evaluation][Text-to-SQL] This paper proposes MCTS-SQL, enabling lightweight LLMs (e.g., Qwen-1.5B) to achieve strong Text-to-SQL performance via Monte Carlo Tree Search — a three-component architecture (S…
+  [AAAI 2026][LLM Evaluation][Text-to-SQL] This paper proposes MCTS-SQL, enabling lightweight LLMs (e.g., Qwen-1.5B) to achieve strong Text-to-SQL performance via Monte Carlo Tree Search — a three-component architecture (Selector for schema pruning + Direct Generator for initial SQL generation + MCTS-Refiner for iterative refinement), combined with a prefix caching mechanism that reduces inference time by 53%. Qwen-1.5B achieves 40.69% execution accuracy on BIRD…
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Prefix Caching"
   - "Schema Pruning"
 date: 2026-05-08
-content_hash: 83811ac10c53f329
+content_hash: 6bac461ad2c2ad3c
 ---
 
 # MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search
@@ -129,11 +129,11 @@ Three stages: (1) **Selector**: uses an LLM to filter irrelevant tables/columns 
 
 ## Related Papers
 
+- [\[ICLR 2026\] BIRD-INTERACT: Re-imagining Text-to-SQL Evaluation via Lens of Dynamic Interactions](../../ICLR2026/llm_evaluation/bird-interact_re-imagining_text-to-sql_evaluation_via_lens_of_dynamic_interactio.md)
 - [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](../../NeurIPS2025/llm_evaluation/parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
-- [\[AAAI 2026\] Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment](gaming_the_answer_matcher_examining_the_impact_of_text_manipulation_on_automated.md)
 - [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](../../NeurIPS2025/llm_evaluation/can_large_language_models_master_complex_card_games.md)
-- [\[NeurIPS 2025\] OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling](../../NeurIPS2025/llm_evaluation/optitree_hierarchical_thoughts_generation_with_tree_search_for_llm_optimization_.md)
-- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](../../ACL2026/llm_evaluation/can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
+- [\[AAAI 2026\] Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment](gaming_the_answer_matcher_examining_the_impact_of_text_manipulation_on_automated.md)
+- [\[ICLR 2026\] Culture in Action: Evaluating Text-to-Image Models through Social Activities](../../ICLR2026/llm_evaluation/culture_in_action_evaluating_text-to-image_models_through_social_activities.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory
 description: >-
-  [AAAI2026][Object Detection][hypergraph learning] This paper proposes CIF, which leverages hypergraphs to extract intra-class structural commonalities from a small number of training samples…
+  [AAAI2026][Object Detection][hypergraph learning] This paper proposes CIF, which leverages hypergraphs to extract intra-class structural commonalities from a small number of training samples, guiding memory bank construction and retrieval for few-shot multimodal industrial anomaly detection, achieving state-of-the-art performance.
 tags:
   - "AAAI2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "memory bank"
   - "training-free message passing"
 date: 2026-05-08
-content_hash: f75de15bc2642054
+content_hash: e7194c7026f6d1ee
 ---
 
 # Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory
@@ -155,8 +155,8 @@ The advantages of hypergraphs in structured data modeling are transferable to ot
 - [\[ICLR 2026\] Dual Distillation for Few-Shot Anomaly Detection](../../ICLR2026/object_detection/dual_distillation_for_few-shot_anomaly_detection.md)
 - [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](../../CVPR2026/object_detection/bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
 - [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](../../CVPR2026/object_detection/subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
+- [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](../../CVPR2026/object_detection/fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)
 - [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
-- [\[CVPR 2026\] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](../../CVPR2026/object_detection/remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding
 description: >-
-  [NeurIPS 2025][Autonomous Driving][LiDAR Generation] SPIRAL proposes a semantic-aware range-view LiDAR diffusion model that jointly generates depth maps, reflectance images…
+  [NeurIPS 2025][Autonomous Driving][LiDAR Generation] SPIRAL proposes a semantic-aware range-view LiDAR diffusion model that jointly generates depth maps, reflectance images, and semantic segmentation maps. By introducing progressive semantic prediction and a closed-loop inference mechanism to enhance cross-modal consistency, the model achieves state-of-the-art performance with a minimal parameter count of 61M.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Range-View"
   - "Closed-Loop Inference"
 date: 2026-05-08
-content_hash: fb8534225e4d1ecb
+content_hash: 768f23a54e55204a
 ---
 
 # SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding
@@ -133,8 +133,8 @@ The paper also introduces a new semantic-aware evaluation framework:
 - [\[NeurIPS 2025\] CymbaDiff: Structured Spatial Diffusion for Sketch-based 3D Semantic Urban Scene Generation](cymbadiff_structured_spatial_diffusion_for_sketch-based_3d_semantic_urban_scene_.md)
 - [\[NeurIPS 2025\] X-Scene: Large-Scale Driving Scene Generation with High Fidelity and Flexible Controllability](x-scene_large-scale_driving_scene_generation_with_high_fidelity_and_flexible_con.md)
 - [\[ICCV 2025\] Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation](../../ICCV2025/autonomous_driving/hermes_a_unified_self-driving_world_model_for_simultaneous_3d_scene_understandin.md)
-- [\[ICCV 2025\] Controllable 3D Outdoor Scene Generation via Scene Graphs](../../ICCV2025/autonomous_driving/controllable_3d_outdoor_scene_generation_via_scene_graphs.md)
-- [\[NeurIPS 2025\] FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance](learning_temporal_3d_semantic_scene_completion_via_optical_flow_guidance.md)
+- [\[CVPR 2026\] DrivePTS: A Progressive Learning Framework with Textual and Structural Enhancement for Driving Scene Generation](../../CVPR2026/autonomous_driving/drivepts_a_progressive_learning_framework_with_textual_and_structural_enhancemen.md)
+- [\[CVPR 2025\] Exploring Scene Affinity for Semi-Supervised LiDAR Semantic Segmentation](../../CVPR2025/autonomous_driving/exploring_scene_affinity_for_semi-supervised_lidar_semantic_segmentation.md)
 
 </div>
 

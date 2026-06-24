@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era
 description: >-
-  [NeurIPS 2025][LLM/NLP][Visual Place Recognition] This paper proposes ImAge (Implicit Aggregation), which inserts learnable aggregation tokens at a specific layer of a Transformer backbone and leverages the intrinsic sel…
+  [NeurIPS 2025][LLM (Other)][Visual Place Recognition] This paper proposes ImAge (Implicit Aggregation), which inserts learnable aggregation tokens at a specific layer of a Transformer backbone and leverages the intrinsic self-attention mechanism to implicitly aggregate patch features into a global descriptor, completely eliminating the need for an external aggregator. With the smallest descriptor dimensionality (6144) and fastest inference speed…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Visual Place Recognition"
   - "Implicit Aggregation"
   - "ViT"
   - "Aggregation Token"
   - "DINOv2"
 date: 2026-05-08
-content_hash: 92abf2a9511d9ef0
+content_hash: 133421943345874b
 ---
 
 # Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era
@@ -140,9 +140,9 @@ Training uses multi-similarity loss with 120 places per batch and 4 images per p
 
 - [\[NeurIPS 2025\] Writing in Symbiosis: Mapping Human Creative Agency in the AI Era](writing_in_symbiosis_mapping_human_creative_agency_in_the_ai_era.md)
 - [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](spectral_conditioning_of_attention_improves_transformer_performance.md)
-- [\[NeurIPS 2025\] Characterizing the Expressivity of Fixed-Precision Transformer Language Models](characterizing_the_expressivity_of_fixed-precision_transformer_language_models.md)
+- [\[ACL 2025\] Explicit and Implicit Data Augmentation for Social Event Detection](../../ACL2025/llm_nlp/explicit_and_implicit_data_augmentation_for_social_event_detection.md)
+- [\[ACL 2025\] SkillAggregation: Reference-free LLM-Dependent Aggregation](../../ACL2025/llm_nlp/skillaggregation_reference-free_llm-dependent_aggregation.md)
 - [\[NeurIPS 2025\] On the Role of Hidden States of Modern Hopfield Network in Transformer](on_the_role_of_hidden_states_of_modern_hopfield_network_in_transformer.md)
-- [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](../../ICML2026/llm_nlp/the_cylindrical_representation_hypothesis_for_language_model_steering.md)
 
 </div>
 

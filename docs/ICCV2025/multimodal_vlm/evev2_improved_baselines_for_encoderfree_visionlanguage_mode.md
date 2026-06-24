@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EVEv2: Improved Baselines for Encoder-Free Vision-Language Models
 description: >-
-  [ICCV 2025 (Highlight)][Multimodal VLM][encoder-free VLM] This work systematically investigates the optimal architecture and training strategy for encoder-free VLMs…
+  [ICCV 2025 (Highlight)][Multimodal VLM][encoder-free VLM] This work systematically investigates the optimal architecture and training strategy for encoder-free VLMs, proposing a Divide-and-Conquer architecture that fully decomposes a transformer into modality-specific components (independent attention/FFN/LayerNorm per modality). Using only 100M publicly available data, EVEv2 surpasses all encoder-free counterparts and approaches the performance of encoder-based VLMs.
 tags:
   - "ICCV 2025 (Highlight)"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "decoder-only"
   - "visual perception learned from scratch"
 date: 2026-05-08
-content_hash: 01a605aa21f9a0e7
+content_hash: 5dd7552956a8b3ae
 ---
 
 # EVEv2: Improved Baselines for Encoder-Free Vision-Language Models
@@ -115,11 +115,11 @@ EVEv2.0 is built upon Qwen2.5-7B. A two-layer convolutional patch embedding (str
 
 ## Related Papers
 
-- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
+- [\[CVPR 2025\] Florence-VL: Enhancing Vision-Language Models with Generative Vision Encoder and Depth-Breadth Fusion](../../CVPR2025/multimodal_vlm/florence-vl_enhancing_vision-language_models_with_generative_vision_encoder_and_.md)
 - [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](scaling_inferencetime_search_with_vision_value_model_for_imp.md)
-- [\[ICCV 2025\] Exploiting Vision Language Model for Training-Free 3D Point Cloud OOD Detection](exploiting_vision_language_model_for_training-free_3d_point_cloud_ood_detection_.md)
+- [\[CVPR 2026\] Efficient Encoder-Free Fourier-based 3D Large Multimodal Model](../../CVPR2026/multimodal_vlm/efficient_encoder-free_fourier-based_3d_large_multimodal_model.md)
 - [\[ICML 2026\] Layer-Specific Fine-Tuning for Improved Negation Handling in Medical Vision-Language Models](../../ICML2026/multimodal_vlm/layer-specific_fine-tuning_for_improved_negation_handling_in_medical_vision-lang.md)
-- [\[ICCV 2025\] CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models](capellm_support-free_category-agnostic_pose_estimation_with_multimodal_large_lan.md)
+- [\[ICCV 2025\] Exploiting Vision Language Model for Training-Free 3D Point Cloud OOD Detection](exploiting_vision_language_model_for_training-free_3d_point_cloud_ood_detection_.md)
 
 </div>
 

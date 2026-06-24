@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RebRL: Reinforcing Discrete Visual Diffusion Models with Rebalanced Timestep Credits
 description: >-
-  [CVPR 2026][Image Generation][Reinforcement Learning] Addressing the neglected issue of "severe structural imbalance in timestep credit assignment" when applying GRPO to Discrete Diffusion Models (DDM), this paper derives the mathematical roots of this imbalance from policy gradients. It proposes RebRL, a plug-and-play method that flattens cumulative gradients using two l
+  [CVPR 2026][Image Generation][Discrete Diffusion Models] Addressing the neglected issue of "severe structural imbalance in timestep credit assignment" when applying GRPO to Discrete Diffusion Models (DDM), this paper derives the mathematical roots of this imbalance from policy gradients. It proposes RebRL, a plug-and-play method that flattens cumulative gradients using two levels of rebalancing factors—timestep-level and token-level. It achieves SOTA on GenEval…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Discrete Diffusion Models"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Credit Assignment"
+  - "Text-to-Image Generation"
 date: 2026-05-08
-content_hash: 3baba5203339bde0
+content_hash: a7741e4a0c80a26c
 ---
+
 # RebRL: Reinforcing Discrete Visual Diffusion Models with Rebalanced Timestep Credits
 
 **Conference**: CVPR 2026  
@@ -135,10 +139,20 @@ Comparison of four rebalancing strategies:
 - Value: ⭐⭐⭐⭐ Plug-and-play, ~40% speedup, high practical value for RL post-training of mask-based models.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)
+- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](../../ICLR2026/image_generation/reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
+- [\[ICLR 2026\] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models](../../ICLR2026/image_generation/consolidating_reinforcement_learning_for_multimodal_discrete_diffusion_models.md)
+- [\[CVPR 2026\] VAR RL Done Right: Tackling Asynchronous Policy Conflicts in Visual Autoregressive Generation](var_rl_done_right_tackling_asynchronous_policy_conflicts_in_visual_autoregressiv.md)
+- [\[CVPR 2026\] Visual Diffusion Models are Geometric Solvers](visual_diffusion_models_are_geometric_solvers.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][combinatorial optimization] FrontierCO is a large-scale real-world benchmark covering 8 categories of combinatorial optimization (CO) problems (TSP, MIS, CVRP, etc.). It evaluates 16 ML solvers (neural methods + LLM Agents) against SOTA traditional solvers, finding that ML methods still lag significantly behind traditional approaches on structura
+  [ICLR 2026][Optimization][combinatorial optimization] FrontierCO is a large-scale real-world benchmark covering 8 categories of combinatorial optimization (CO) problems (TSP, MIS, CVRP, etc.). It evaluates 16 ML solvers (neural methods + LLM Agents) against SOTA traditional solvers, finding that ML methods still lag significantly behind traditional approaches on structurally complex and extreme-scale instances, despite showing potential in specific scenarios.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - combinatorial optimization
-  - ML solver
-  - benchmark
-  - real-world instances
-  - LLM agent
+  - "ICLR 2026"
+  - "Optimization"
+  - "combinatorial optimization"
+  - "ML solver"
+  - "benchmark"
+  - "real-world instances"
+  - "LLM agent"
 date: 2026-05-08
-content_hash: dc26ec190716120e
+content_hash: 4c3f9492ae74345e
 ---
+
 # FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization
 
 **Conference**: ICLR 2026  
@@ -126,9 +127,9 @@ Comparisons across papers have long been hindered by inconsistent synthetic data
 
 - [\[ICLR 2026\] From Sequential to Parallel: Reformulating Dynamic Programming as GPU Kernels for Large-Scale Stochastic Combinatorial Optimization](from_sequential_to_parallel_reformulating_dynamic_programming_as_gpu_kernels_for.md)
 - [\[ICLR 2026\] NeuCLIP: Efficient Large-Scale CLIP Training with Neural Normalizer Optimization](neuclip_efficient_large-scale_clip_training_with_neural_normalizer_optimization.md)
+- [\[ICLR 2026\] ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types](conrep4co_contrastive_representation_learning_of_combinatorial_optimization_inst.md)
 - [\[ICLR 2026\] Beyond the Heatmap: A Rigorous Evaluation of Component Impact in MCTS-Based TSP Solvers](beyond_the_heatmap_a_rigorous_evaluation_of_component_impact_in_mcts-based_tsp_s.md)
 - [\[ICLR 2026\] SCRAPL: Scattering Transform with Random Paths for Machine Learning](scrapl_scattering_transform_with_random_paths_for_machine_learning.md)
-- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
 
 </div>
 

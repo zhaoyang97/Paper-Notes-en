@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] U2-BENCH is the first benchmark to systematically evaluate the ultrasound understanding capabilities of Large Vision-Language Models (LVLMs). By sampling 7,241 cases across 15 anatomy sites from 40 authorized datasets and defining 8 clinical tasks across four categories (classification, detection, regression, and text
+  [ICLR 2026][Medical Imaging][Ultrasound Understanding] U2-BENCH is the first benchmark to systematically evaluate the ultrasound understanding capabilities of Large Vision-Language Models (LVLMs). By sampling 7,241 cases across 15 anatomy sites from 40 authorized datasets and defining 8 clinical tasks across four categories (classification, detection, regression, and text generation), the evaluation of 20 open-source and closed-source models reveals that while models perform…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Ultrasound Understanding"
+  - "Medical Benchmark"
+  - "Large Vision-Language Models"
+  - "Spatial Reasoning"
+  - "Clinical Report Generation"
 date: 2026-05-08
-content_hash: 24c0a9cb9445a02f
+content_hash: dd5f375fa382b1e5
 ---
+
 # U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding
 
 **Conference**: ICLR 2026  

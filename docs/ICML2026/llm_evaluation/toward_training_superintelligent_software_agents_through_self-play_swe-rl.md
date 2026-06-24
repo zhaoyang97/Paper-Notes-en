@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Toward Training Superintelligent Software Agents through Self-Play SWE-RL
 description: >-
-  [ICML 2026][LLM Evaluation][SWE-RL] This paper proposes Self-play SWE-RL (SSR), where a single LLM acts as both a "bug-creating proposer" and a "bug-fixing solver" within sandboxed code repositories. Using only Docker images as input and employing consistency checks and solve-rates as rewards for joint RL, SSR achieves self-improvements of +10.4 and +7.8
+  [ICML 2026][LLM Evaluation][Self-play] This paper proposes Self-play SWE-RL (SSR), where a single LLM acts as both a "bug-creating proposer" and a "bug-fixing solver" within sandboxed code repositories. Using only Docker images as input and employing consistency checks and solve-rates as rewards for joint RL, SSR achieves self-improvements of +10.4 and +7.8 points on SWE-bench Verified and SWE-Bench Pro, respectively, consistently outperforming "human-data" baselines that rel…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - SWE-RL
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Self-play"
+  - "SWE-RL"
+  - "Bug Injection"
+  - "Consistency Check"
+  - "Curriculum Evolution"
 date: 2026-05-08
-content_hash: 0b2f4eeaf13c54d4
+content_hash: 27ea559f9b41eb1d
 ---
+
 # Toward Training Superintelligent Software Agents through Self-Play SWE-RL
 
 **Conference**: ICML 2026  
@@ -157,9 +162,9 @@ The average resolve rate is calculated across 1231 tasks (500 from SWE-bench Ver
 ## Related Papers
 
 - [\[ICML 2026\] On Effectiveness and Efficiency of Agentic Tool-calling and RL Training](on_effectiveness_and_efficiency_of_agentic_tool-calling_and_rl_training.md)
-- [\[ICML 2026\] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
 - [\[ACL 2025\] AndroidLab: Training and Systematic Benchmarking of Android Autonomous Agents](../../ACL2025/llm_evaluation/androidlab_autonomous_agent.md)
 - [\[NeurIPS 2025\] AdaSTaR: Adaptive Data Sampling for Training Self-Taught Reasoners](../../NeurIPS2025/llm_evaluation/adastar_adaptive_data_sampling_for_training_self-taught_reasoners.md)
+- [\[ICML 2026\] REAL: Integrating Regression-Aware Rewards into RL, Teaching LLM-as-a-Judge that "Even a One-Point Difference Matters"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
 - [\[ACL 2026\] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks](../../ACL2026/llm_evaluation/enhancing_linguistic_competence_of_language_models_through_pre-training_with_lan.md)
 
 </div>

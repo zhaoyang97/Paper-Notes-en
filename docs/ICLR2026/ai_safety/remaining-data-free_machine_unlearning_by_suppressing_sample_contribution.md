@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution
 description: >-
-  [ICLR 2026][AI Safety][remaining-data-free] This paper characterizes "sample contribution to training" as the input sensitivity of the pre-trained model toward that sample. It proposes MU-Mis, which utilizes only the pre-trained model and forget data without accessing any remaining data. By minimizing the "sensitivity difference between target and irrelevant cla
+  [ICLR 2026][AI Safety][Machine Unlearning] This paper characterizes "sample contribution to training" as the input sensitivity of the pre-trained model toward that sample. It proposes MU-Mis, which utilizes only the pre-trained model and forget data without accessing any remaining data. By minimizing the "sensitivity difference between target and irrelevant classes," it directly erases the contribution of forget samples. It is the first remaining-data-free method to achieve u…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - remaining-data-free
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "input sensitivity"
+  - "sample contribution"
+  - "right to be forgotten"
+  - "remaining-data-free"
 date: 2026-05-08
-content_hash: 813839fe4bd8648d
+content_hash: 2761c05b3fc23516
 ---
+
 # Remaining-data-free Machine Unlearning by Suppressing Sample Contribution
 
 **Conference**: ICLR 2026  
@@ -145,9 +150,9 @@ The paper analyzes consistency with retraining (stability of proportional change
 
 - [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](distributional_machine_unlearning_via_selective_data_removal.md)
 - [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](label_smoothing_improves_machine_unlearning.md)
-- [\[CVPR 2025\] Towards Source-Free Machine Unlearning](../../CVPR2025/ai_safety/towards_source-free_machine_unlearning.md)
 - [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](machine_unlearning_under_retainforget_entanglement.md)
-- [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
+- [\[CVPR 2025\] Towards Source-Free Machine Unlearning](../../CVPR2025/ai_safety/towards_source-free_machine_unlearning.md)
+- [\[ICLR 2026\] Mitigating Privacy Risk via Forget Set-Free Unlearning](mitigating_privacy_risk_via_forget_set-free_unlearning.md)
 
 </div>
 

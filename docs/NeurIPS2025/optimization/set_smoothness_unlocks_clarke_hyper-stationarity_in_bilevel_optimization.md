@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization
 description: >-
-  [NeurIPS 2025][Optimization][bilevel optimization] This paper introduces *set smoothness*, a novel structural property of set-valued mappings, proves that it holds naturally in the nonconvex-PŁ bilevel setting…
+  [NeurIPS 2025][Optimization][bilevel optimization] This paper introduces *set smoothness*, a novel structural property of set-valued mappings, proves that it holds naturally in the nonconvex-PŁ bilevel setting, and uses it to reveal hidden weak convexity/concavity structure in the hyper-objective. This yields the first computability guarantee for Clarke stationary points of nonsmooth hyper-objectives.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "weak convexity"
   - "zeroth-order methods"
 date: 2026-05-08
-content_hash: eaf7483c083af265
+content_hash: 84f3dfff998273b1
 ---
 
 # Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization
@@ -132,7 +132,7 @@ This paper is primarily a theoretical contribution and contains no standard nume
 - [\[NeurIPS 2025\] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds](an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds.md)
 - [\[NeurIPS 2025\] Learning Theory for Kernel Bilevel Optimization](learning_theory_for_kernel_bilevel_optimization.md)
 - [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
-- [\[NeurIPS 2025\] Escaping Saddle Points without Lipschitz Smoothness: The Power of Nonlinear Preconditioning](escaping_saddle_points_without_lipschitz_smoothness_the_power_of_nonlinear_preco.md)
+- [\[ACL 2025\] ScaleBiO: Scalable Bilevel Optimization for LLM Data Reweighting](../../ACL2025/optimization/scalebio_bilevel_data_reweighting.md)
 
 </div>
 

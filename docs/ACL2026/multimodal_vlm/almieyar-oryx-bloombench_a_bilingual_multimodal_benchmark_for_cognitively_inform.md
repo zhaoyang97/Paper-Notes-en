@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Almieyar-Oryx-BloomBench: A Bilingual Multimodal Benchmark for Cognitively Informed Evaluation of Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Likelihood-based Scoring] BloomBench reconstructs VLM evaluation using Bloom’s cognitive taxonomy by organizing 7,747 bilingual image-text QA samples into 6 cognitive levels and 106 task types. It finds that high scores in current VLMs often mask significant shortcomings in factual recall, creative synthesis, and cross-lingual reasoning.
+  [ACL2026 Findings][Multimodal VLM][Bloom's Taxonomy] BloomBench reconstructs VLM evaluation using Bloom’s cognitive taxonomy by organizing 7,747 bilingual image-text QA samples into 6 cognitive levels and 106 task types. It finds that high scores in current VLMs often mask significant shortcomings in factual recall, creative synthesis, and cross-lingual reasoning.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Likelihood-based Scoring
+  - "ACL2026 Findings"
+  - "Multimodal VLM"
+  - "Bloom's Taxonomy"
+  - "Multimodal Evaluation"
+  - "Bilingual (English-Arabic)"
+  - "Cognitive Diagnosis"
+  - "Likelihood-based Scoring"
 date: 2026-05-08
-content_hash: 46293158827754ce
+content_hash: fcd30e66ccd64bca
 ---
+
 # Almieyar-Oryx-BloomBench: A Bilingual Multimodal Benchmark for Cognitively Informed Evaluation of Vision-Language Models
 
 **Conference**: ACL2026 Findings  
@@ -149,11 +154,11 @@ The paper does not provide structural ablations of models but offers two valuabl
 
 ## Related Papers
 
+- [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
+- [\[ICLR 2026\] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/mme-emotion_a_holistic_evaluation_benchmark_for_emotional_intelligence_in_multim.md)
 - [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
 - [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](../../CVPR2026/multimodal_vlm/crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
 - [\[ACL 2026\] Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models](cross-cultural_expert-level_art_critique_evaluation_with_vision-language_models.md)
-- [\[ACL 2026\] VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation](vauq_vision-aware_uncertainty_quantification_for_lvlm_self-evaluation.md)
-- [\[AAAI 2026\] SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/sdeval_safety_dynamic_evaluation_for_multimodal_large_language_models.md)
 
 </div>
 

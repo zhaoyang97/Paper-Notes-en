@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] Ours proposes the new task of "Free-Form Hand-Object Interaction (HOI) Generation" along with WildO2, an in-the-wild 3D dataset automatically reconstructed from web videos. A three-stage framework, TOUCH (Contact Map Prediction → Multi-level Conditional Diffusion → Physical Constraint Refinement), is designed to move b
+  [ICLR 2026][Human Understanding][Hand-Object Interaction] Ours proposes the new task of "Free-Form Hand-Object Interaction (HOI) Generation" along with WildO2, an in-the-wild 3D dataset automatically reconstructed from web videos. A three-stage framework, TOUCH (Contact Map Prediction → Multi-level Conditional Diffusion → Physical Constraint Refinement), is designed to move beyond "stable grasping" priors, enabling the generation of diverse and physically plausible hand poses…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Hand-Object Interaction"
+  - "Free-Form Interaction"
+  - "Contact Map"
+  - "Multi-level Diffusion"
+  - "Textual Control"
 date: 2026-05-08
-content_hash: 3782d80b97ea139f
+content_hash: 96c752a2b420e11a
 ---
+
 # TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions
 
 **Conference**: ICLR 2026  

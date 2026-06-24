@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sparfels: Fast Reconstruction from Sparse Unposed Imagery
 description: >-
-  [ICCV 2025][3D Vision][Sparse-view reconstruction] Sparfels integrates a 3D foundation model (MASt3R) with efficient test-time optimization (2DGS). MASt3R provides an initial point cloud, camera poses…
+  [ICCV 2025][3D Vision][Sparse-view reconstruction] Sparfels integrates a 3D foundation model (MASt3R) with efficient test-time optimization (2DGS). MASt3R provides an initial point cloud, camera poses, and dense correspondences to guide optimization. A novel splat color variance loss is introduced, enabling state-of-the-art geometric reconstruction from sparse unposed images in under three minutes.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "MASt3R"
   - "color variance regularization"
 date: 2026-05-08
-content_hash: fd75406ae11f70f9
+content_hash: ee478b56e8ff4478
 ---
 
 # Sparfels: Fast Reconstruction from Sparse Unposed Imagery
@@ -160,9 +160,9 @@ The correspondence loss and variance regularization contribute approximately 0.5
 
 - [\[ICCV 2025\] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images](spatialsplat_efficient_semantic_3d_from_sparse_unposed_images.md)
 - [\[ICCV 2025\] RegGS: Unposed Sparse Views Gaussian Splatting with 3DGS Registration](reggs_unposed_sparse_views_gaussian_splatting_with_3dgs_registration.md)
+- [\[CVPR 2025\] DroneSplat: 3D Gaussian Splatting for Robust 3D Reconstruction from In-the-Wild Drone Imagery](../../CVPR2025/3d_vision/dronesplat_3d_gaussian_splatting_for_robust_3d_reconstruction_from_in-the-wild_d.md)
+- [\[CVPR 2025\] Speedy-Splat: Fast 3D Gaussian Splatting with Sparse Pixels and Sparse Primitives](../../CVPR2025/3d_vision/speedy-splat_fast_3d_gaussian_splatting_with_sparse_pixels_and_sparse_primitives.md)
 - [\[ICCV 2025\] TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update](2d_gaussian_splattingbased_sparseview_transparent_object_dep.md)
-- [\[ICCV 2025\] Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction](baking_gaussian_splatting_into_diffusion_denoiser_for_fast_and_scalable_single-s.md)
-- [\[ICCV 2025\] CF³: Compact and Fast 3D Feature Fields](cf3_compact_and_fast_3d_feature_fields.md)
 
 </div>
 

@@ -1,0 +1,148 @@
+---
+title: >-
+  [Paper Note] ConECT Dataset: Overcoming Data Scarcity in Context-Aware E-Commerce MT
+description: >-
+  [ACL 2025][Multimodal VLM][Multimodal Machine Translation] This paper constructs ConECT—the first Czech-Polish e-commerce multimodal translation dataset (11,400 sentence pairs + product images + category paths). Through a systematic comparison of three technical routes (VLM end-to-end translation, NMT + category path prefix, and NMT + image description prefix), the authors find that structured category context consistently improves translation quality (COMET $+0.005$)…
+tags:
+  - "ACL 2025"
+  - "Multimodal VLM"
+  - "Multimodal Machine Translation"
+  - "E-Commerce Translation"
+  - "Context-Aware"
+  - "Low-Resource Language Pairs"
+  - "Dataset"
+date: 2026-05-08
+content_hash: d551a88385c0f97a
+---
+
+# ConECT Dataset: Overcoming Data Scarcity in Context-Aware E-Commerce MT
+
+**Conference**: ACL 2025  
+**arXiv**: [2506.04929](https://arxiv.org/abs/2506.04929)  
+**Code**: [Yes (Dataset)](https://huggingface.co/datasets/allegro/ConECT)  
+**Area**: Others  
+**Keywords**: Multimodal Machine Translation, E-Commerce Translation, Context-Aware, Low-Resource Language Pairs, Dataset
+
+## TL;DR
+
+This paper constructs ConECT—the first Czech-Polish e-commerce multimodal translation dataset (11,400 sentence pairs + product images + category paths). Through a systematic comparison of three technical routes (VLM end-to-end translation, NMT + category path prefix, and NMT + image description prefix), the authors find that structured category context consistently improves translation quality (COMET $+0.005$), whereas injecting synthetic image descriptions in a cascaded manner severely damages translation performance (COMET plunges by $0.11+$).
+
+## Background & Motivation
+
+**Background**: Neural Machine Translation (NMT) has achieved near-human performance in general domains thanks to the Transformer architecture, while Multimodal Machine Translation (MMT) integrates visual information such as images into the translation workflow, demonstrating potential in disambiguation on benchmarks like the WMT 2016-2018 shared tasks and Multi30K. Recently, the development of VLMs (e.g., PaliGemma) has further enabled end-to-end image-text translation.
+
+**Limitations of Prior Work**: The e-commerce scenario is a natural testbed for context-aware translation: product titles are concise and terminology-heavy, descriptions are filled with domain-specific terms, and product images and hierarchical category information are natively attached. However, almost all existing MMT research revolves around general-domain datasets such as Multi30K, lacking high-quality multimodal parallel corpora for the e-commerce domain. More critically, high-quality image-text aligned training data only covers a tiny fraction of parallel corpora, with almost zero coverage for low-resource language pairs (such as Czech-Polish).
+
+**Key Challenge**: While context resolution in e-commerce translation indeed requires additional contextual information (images, categories), there is: (1) a lack of in-domain controllable multimodal test suites to fairly compare different context integration strategies; (2) uncertainty regarding how much visual information actually contributes to real e-commerce translation—whether it truly aids in disambiguation or merely acts as noise.
+
+**Goal**: Two core objectives: ① construct a high-quality e-commerce multimodal translation dataset to bridge the resource gap; ② systematically evaluate three context integration strategies (VLM end-to-end, category path prefix, image description prefix) on this dataset, quantifying the impact of different contextual information on translation quality.
+
+**Key Insight**: The authors, from Allegro.com (the largest e-commerce platform in Poland), leverage the natural advantage of having large-scale real product data. They focus on Czech-Polish, a low-resource but geographically close language pair, utilizing products listed on both countries' platforms by merchants as a natural source of parallel corpora, supplemented by professional translators for quality calibration.
+
+**Core Idea**: Build an e-commerce translation dataset with product images + category paths + three types of aligned texts, and demonstrate through rigorous controlled experiments that structured context (category paths) outperforms unstructured context (synthetic image descriptions).
+
+## Method
+
+### Overall Architecture
+
+The paper designs three parallel technical routes to compare how extra context can be integrated into translation. The input is uniformly Czech e-commerce text (product names / product descriptions / promotional titles), and the output is the Polish translation. The three routes are: (1) VLM (PaliGemma-3b) receiving image + text for end-to-end translation; (2) NMT (Transformer big) prepending the category path prefix to the source text; (3) NMT prepending an image description prefix pre-generated by a VLM to the source text. Control groups with/without context are set up for each route to ensure that observed performance differences result solely from the contextual information itself.
+
+### Key Designs
+
+1. **ConECT Dataset Construction Pipeline**:
+
+    - **Function**: Provides the first Czech-Polish e-commerce multimodal translation benchmark, covering three text categories: product names (4,691 sentences), product descriptions (3,680 sentences), and promotional titles (1,924 sentences). Each sample is aligned with a main product image and a category path.
+    - **Mechanism**: Polish product text is extracted from the allegro.pl platform, manually translated into Czech by professional translators, and double-checked. The training set leverages cross-lingual descriptions of identical products on both allegro.pl and mall.cz, aligning sentence-level parallel pairs using language-agnostic BERT sentence embeddings to generate 230k sentence pairs. Additionally, another 440k Polish product names and images are collected, with back-translation used to synthesize the Czech side to construct the image-text aligned data needed for VLM training.
+    - **Design Motivation**: Existing MMT datasets (such as Multi30K) consist of general image descriptions and lack e-commerce terminology and category metadata. ConECT's three text types cover the diversity of e-commerce translation from short texts (product names, ~7.4 words) to long texts (descriptions, ~10.6 words), while category paths provide hierarchically structured domain signals.
+
+2. **VLM End-to-End Translation + Real/Black Image Ablation**:
+
+    - **Function**: Evaluates the true contribution of visual information to translation quality.
+    - **Mechanism**: Based on PaliGemma-3b-pt-224 fine-tuned using LoRA (rank=8, alpha=8), a $2 \times 2$ experimental matrix is designed—training and inference each use either real product images or fully black images, yielding 4 combinations. If the model merely learns the bias of "having or not having an image" instead of actually utilizing visual content, replacing the image with a black image during inference should not affect performance; conversely, a decline in performance indicates that visual information is indeed utilized.
+    - **Design Motivation**: Directly comparing VLM vs NMT is unfair due to differences in model size and training data. However, the performance gap of the same VLM between real and black images cleanly isolates the visual contribution. This sidesteps the long-standing skepticism in the MMT community regarding "whether the model actually looks at the images."
+
+3. **NMT Context Prefix Injection Mechanism**:
+
+    - **Function**: Inject category paths or image descriptions as additional context into the text translation model without modifying the model architecture.
+    - **Mechanism**: Category paths are wrapped in special tokens `<SC>...<EC>` and prepended to the source sentence (e.g., `<SC> Sport <SEP> Rowery <SEP> Opony <EC> Source Text`); image descriptions are similarly wrapped as `<SD>...<ED>`. The baseline NMT uses the Transformer big architecture, pre-trained on 53M sentence pairs, and then fine-tuned on data containing context prefixes. To ensure fairness, each context experiment is paired with a control group trained on the same amount of data but with the prefixes removed. The learning rate is set to 5e-6, and 7M context-free sentence pairs are mixed in during training to prevent the model from over-relying on prefixes.
+    - **Design Motivation**: Prefix injection is the most lightweight context integration approach as it does not require modifications to the encoder-decoder architecture, allowing the direct reuse of existing NMT baseline weights for fine-tuning. Meanwhile, the existence of the control group ensures that performance differences do not stem from extra fine-tuning data, but indeed from the contextual signals.
+
+### Loss & Training
+
+VLM training uses a learning rate of 1e-4, batch size of 16, and 4 epochs, completed on a single A100. NMT baselines are trained on 4 A100 GPUs using a 32K shared vocabulary and chrF early stopping. During the fine-tuning phase, all NMT variants use a learning rate of 5e-6. Regarding training data, the category path experiments use the original 230k parallel sentences + 7M back-translated product names and descriptions (with category paths) + 7M category-free sentences; the image description experiments use the aforementioned image-text data (where Czech descriptions generated by PaliGemma are injected) + 700k description-free sentences.
+
+## Key Experimental Results
+
+### Main Results (ConECT Test Set)
+
+| Model | Product Name chrF | Promotional Title chrF | Product Description chrF | Full Dataset chrF | Full Dataset COMET |
+|------|-----------|-------------|-------------|---------|-----------|
+| NLLB-600M (Zero-shot) | 48.46 | 38.01 | 48.50 | 46.85 | 0.7288 |
+| PaliGemma (Real Train + Real Eval) | **83.48** | 79.41 | 61.92 | 72.31 | 0.9152 |
+| PaliGemma (Real Train + Black Eval) | 81.36 | 77.10 | 61.75 | 71.12 | 0.9095 |
+| PaliGemma (Black Train + Black Eval) | 82.49 | 77.97 | 60.87 | 71.24 | 0.9091 |
+| NMT Baseline | 84.83 | 83.73 | 70.76 | 77.74 | 0.9311 |
+| NMT + No-Category Control | 85.27 | 83.66 | 72.78 | 78.87 | 0.9354 |
+| NMT + Category Path | **85.51** | 83.73 | 71.95 | 78.56 | **0.9362** |
+| NMT + No-Description Control | 85.10 | 83.99 | 70.81 | 77.90 | 0.9341 |
+| NMT + Image Description | 83.25 | 82.63 | 48.26 | 65.97 | 0.8219 |
+
+### Quantitative Analysis of Context Contribution
+
+| Comparison Scenario | Product Name chrF $\Delta$ | Full Dataset COMET $\Delta$ | Analysis |
+|----------|-------------|------------|------|
+| VLM Real Image vs. Black Image (Train + Eval) | +0.99 | +0.0061 | Visual information has a positive but limited contribution |
+| VLM Real Train $\rightarrow$ Real Eval vs. Real Train $\rightarrow$ Black Eval | +2.12 | +0.0086 | Real images help more during inference |
+| NMT Category vs. No Category (Control) | +0.24 | +0.0008 | Category path contribution is stable but small |
+| NMT Description vs. No Description (Control) | −1.85 | −0.1122 | Synthetic image descriptions severely hurt translation |
+| NMT Baseline vs. PaliGemma Best (Product Desc) | +8.84 | +0.0159 | NMT substantially outperforms VLM on long text |
+
+### Key Findings
+
+- **VLMs indeed utilize visual information, but the gains are limited**: Training + evaluating with real images yields a ~1 point chrF improvement on product names and ~1.4 points on promotional titles compared to using black images. However, the difference is negligible for product descriptions (longer texts), indicating that the context window and parameter size of PaliGemma-3b limit its capacity to handle long texts.
+- **Category paths are the most reliable context signal**: COMET shows positive gains across all three subsets and does not introduce noise. The most significant chrF improvement is on product names (+0.24), where the ambiguity of short text is higher, making the domain signals provided by hierarchical categories more critical.
+- **Synthetic image descriptions failed catastrophically**: On the product description subset, chrF plummeted from 70.81 to 48.26 (a drop of 22.55), and the overall COMET dropped sharply from 0.9341 to 0.8219. This is because the image descriptions generated by PaliGemma are of low quality; the synthetic noise is propagated and amplified through the prefix to the translation output.
+- **NMT fully dominates VLM on product descriptions**: The baseline NMT achieved a chrF of 70.76 compared to PaliGemma's best of 61.92, a gap of nearly 9 points. The language modeling capability gained by NMT from 53M sentence pairs provides a clear advantage in long-text translation.
+
+## Highlights & Insights
+
+- **Ingenious Real/Black Image Ablation Design**: By substituting real images with black images and cross-combining them in training and evaluation, the study cleanly isolates the core controversy in the MMT community—"whether visual information is actually utilized"—avoiding confounding factors such as model capacity and training data.
+- **Scientific Value of Negative Results**: The spectacular failure of cascading synthetic image descriptions into NMT serves as a warning to the community: one cannot naively hope to use VLMs to generate image descriptions and plug them into text translation models. The accumulation of noise during the information conversion process far outweighs the contextual benefits.
+- **Minimalist Design of Prefix Injection**: Without changing the architecture, using special tokens to wrap the context and prepending it to the source text is a zero-cost context integration paradigm that can be easily adapted to any seq2seq model. The positive gains from category paths prove the value of structured metadata.
+
+## Limitations & Future Work
+
+- **Limited Test Set Size and High Reliance on Synthetic Training Data**: The test set contains approximately 10K sentence pairs, while training utilizes over 7M back-translated sentences. The domain shift of synthetic data could potentially impact the generalizability of the experimental conclusions.
+- **Context is Not Always Needed**: Many product names and descriptions are self-consistent and unambiguous, where extra context yields zero or even negative contributions. The paper does not analyze "what proportion of translations truly benefit from context," lacking a sample-level fine-grained analysis.
+- **Crude Image Description Generation**: The Czech descriptions were generated using PaliGemma's default prompt without exploring more targeted prompt designs (e.g., "describe product material and purpose") or multi-turn generation to filter out low-quality descriptions.
+- **Single Low-Resource Language Pair**: Testing is limited to cs $\rightarrow$ pl, making it impossible to confirm whether the conclusions hold for high-resource language pairs or languages from more distant families.
+- **Lighter VLM Selection**: PaliGemma-3b is relatively small. Larger VLMs (e.g., InternVL2, Qwen-VL) might perform better in long-text translation, but this comparison is not addressed in the paper.
+
+## Related Work & Insights
+
+- **vs. Multi30K / WMT MMT Shared Tasks**: Multi30K is a trilingual dataset of general image descriptions that lacks e-commerce domain characteristics (terminology, category hierarchy, promotional text styles). ConECT fills the gap for a controllable e-commerce MMT benchmark.
+- **vs. Song et al. (2021)**: They proposed a large-scale e-commerce cross-modal pre-training framework (featuring joint pre-training tasks for bilingual text + images) targeting high-resource language pairs. ConECT focuses on the low-resource cs-pl pair and is more invested in ablation analysis regarding "what form of context is most effective" rather than pre-training.
+- **vs. Futeral et al. (2023) CoMMuTE**: CoMMuTE evaluates MMT disambiguation capabilities specifically with contrastive samples, but is restricted to the general domain. The e-commerce scenario in ConECT naturally provides richer cases for context resolution (e.g., the same word carries distinct meanings under different categories).
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐ — Structural innovation is limited (prefix injection and VLM fine-tuning are existing techniques); the core contribution resides in the dataset and experimental design.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Three technical routes $\times$ multiple control groups $\times$ two evaluation metrics, with the real/black image ablation being particularly impressive. However, it lacks a fine-grained sample-level analysis and comparison with more VLMs.
+- **Writing Quality**: ⭐⭐⭐⭐ — Highly structured, setting details are comprehensive, and negative results are honestly presented.
+- **Value**: ⭐⭐⭐ — The dataset is pragmatically valuable for low-resource e-commerce translation, and the ablation results provide useful references for the MMT community, though the technical contribution is relatively modest.
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2025\] Context-Aware Multimodal Pretraining](../../CVPR2025/multimodal_vlm/context-aware_multimodal_pretraining.md)
+- [\[ACL 2025\] ViGiL3D: A Linguistically Diverse Dataset for 3D Visual Grounding](vigil3d_a_linguistically_diverse_dataset_for_3d_visual_grounding.md)
+- [\[ICML 2025\] CoCoA-Mix: Confusion-and-Confidence-Aware Mixture Model for Context Optimization](../../ICML2025/multimodal_vlm/cocoa-mix_confusion-and-confidence-aware_mixture_model_for_context_optimization.md)
+- [\[ACL 2026\] CARES: Context-Aware Resolution Selector for VLMs](../../ACL2026/multimodal_vlm/cares_context-aware_resolution_selector_for_vlms.md)
+- [\[ACL 2025\] iNews: A Multimodal Dataset for Modeling Personalized Affective Responses to News](inews_a_multimodal_dataset_for_modeling_personalized_affective_responses_to_news.md)
+
+</div>
+
+<!-- RELATED:END -->

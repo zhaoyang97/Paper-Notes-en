@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distributionally Robust Online Markov Game with Linear Function Approximation
 description: >-
-  [AAAI 2026][Robotics][Markov Game] This paper studies online distributionally robust Markov games with linear function approximation. It is the first to identify the hardness of learning in this setting…
+  [AAAI 2026][Robotics][Markov Game] This paper studies online distributionally robust Markov games with linear function approximation. It is the first to identify the hardness of learning in this setting, and proposes the DR-CCE-LSI algorithm, which achieves minimax-optimal sample complexity with respect to the feature dimension $d$ under a specific feature mapping condition.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Coarse Correlated Equilibrium"
   - "Sample Complexity"
 date: 2026-05-08
-content_hash: 5418897578e2326e
+content_hash: a2fdce3f19053beb
 ---
 
 # Distributionally Robust Online Markov Game with Linear Function Approximation
@@ -177,11 +177,11 @@ In a simulated game with 5 states, 2 players, and $H=3$ (structured as in Figure
 
 ## Related Papers
 
-- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization](../../ICLR2026/robotics/distributionally_robust_cooperative_multi-agent_reinforcement_learning_via_robus.md)
 - [\[NeurIPS 2025\] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning](../../NeurIPS2025/robotics/sample_complexity_of_distributionally_robust_average-reward_reinforcement_learni.md)
 - [\[AAAI 2026\] A Computable Game-Theoretic Framework for Multi-Agent Theory of Mind](a_computable_game-theoretic_framework_for_multi-agent_theory_of_mind.md)
 - [\[AAAI 2026\] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception](touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept.md)
-- [\[AAAI 2026\] SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation](spatialactor_exploring_disentangled_spatial_representations_for_robust_robotic_m.md)
+- [\[AAAI 2026\] Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity](robust_out-of-order_retrieval_for_grid-based_storage_at_maximum_capacity.md)
+- [\[ICML 2026\] DLO-Lab: Benchmarking Deformable Linear Object Manipulations with Differentiable Physics](../../ICML2026/robotics/dlo-lab_benchmarking_deformable_linear_object_manipulations_with_differentiable_.md)
 
 </div>
 

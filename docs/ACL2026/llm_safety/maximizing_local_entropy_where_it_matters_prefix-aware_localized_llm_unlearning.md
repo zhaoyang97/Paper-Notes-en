@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Maximizing Local Entropy Where It Matters: Prefix-Aware Localized LLM Unlearning
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes PALU (Prefix-Aware Localized Unlearning), which achieves localized entropy maximization unlearning across both temporal and vocabulary dimensions: it applies unlearning objectives only to sensitive prefix tokens in the temporal dimension and flattens only the top-K logits in the vocabulary dimension
+  [ACL 2026][LLM Safety][LLM Unlearning] This paper proposes PALU (Prefix-Aware Localized Unlearning), which achieves localized entropy maximization unlearning across both temporal and vocabulary dimensions: it applies unlearning objectives only to sensitive prefix tokens in the temporal dimension and flattens only the top-K logits in the vocabulary dimension. This enables efficient unlearning with minimal parameter perturbation while maintaining the model's general capabilitie…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "LLM Unlearning"
+  - "Localized Entropy Maximization"
+  - "Prefix-Aware"
+  - "Vocabulary Sparsification"
+  - "Privacy Protection"
 date: 2026-05-08
-content_hash: 450c7617cebf768a
+content_hash: 410cf78068d97b2f
 ---
+
 # Maximizing Local Entropy Where It Matters: Prefix-Aware Localized LLM Unlearning
 
 **Conference**: ACL 2026  
@@ -165,11 +171,11 @@ The total loss is $\mathcal{L}_{\text{all}} = \mathcal{L}_f + \lambda \mathcal{L
 
 ## Related Papers
 
+- [\[ICLR 2026\] Where Did It Go Wrong? Attributing Undesirable LLM Behaviors via Representation Gradient Tracing](../../ICLR2026/llm_safety/where_did_it_go_wrong_attributing_undesirable_llm_behaviors_via_representation_g.md)
 - [\[ACL 2026\] Forget What Matters, Keep the Rest: Selective Unlearning of Informative Tokens](forget_what_matters_keep_the_rest_selective_unlearning_of_informative_tokens.md)
+- [\[ACL 2026\] Modeling LLM Unlearning as an Asymmetric Two-Task Learning Problem](modeling_llm_unlearning_as_an_asymmetric_two-task_learning_problem.md)
 - [\[ACL 2026\] STELA: A Linguistics-Aware LLM Watermarking via Syntactic Predictability](a_linguistics-aware_llm_watermarking_via_syntactic_predictability.md)
 - [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
-- [\[AAAI 2026\] ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs](../../AAAI2026/llm_safety/alter_asymmetric_lora_for_token-entropy-guided_unlearning_of.md)
-- [\[ACL 2025\] Which Retain Set Matters for LLM Unlearning? A Case Study on Entity Unlearning](../../ACL2025/llm_safety/which_retain_set_matters_for_llm_unlearning_a_case_study_on_entity_unlearning.md)
 
 </div>
 

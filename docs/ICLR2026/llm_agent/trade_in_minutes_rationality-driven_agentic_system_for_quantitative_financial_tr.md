@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Trade in Minutes! Rationality-driven Agentic System for Quantitative Financial Trading
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] TiMi (Trade in Minutes) is a "rationality-driven" multi-agent quantitative trading system. It utilizes three specialized LLMs (semantic analysis, programming, and mathematical reasoning) to offline refine trading strategies into standalone programmable trading bots. These bots are then deployed for minute-level live tr
+  [ICLR 2026][LLM Agent][Multi-Agent System] TiMi (Trade in Minutes) is a "rationality-driven" multi-agent quantitative trading system. It utilizes three specialized LLMs (semantic analysis, programming, and mathematical reasoning) to offline refine trading strategies into standalone programmable trading bots. These bots are then deployed for minute-level live trading, completely decoupling "heavy reasoning" from "fast execution." It achieves stable returns, low latency…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multi-Agent System"
+  - "Quantitative Trading"
+  - "Analysis-Deployment Decoupling"
+  - "Mathematical Reflection Optimization"
+  - "Minute-level Trading"
 date: 2026-05-08
-content_hash: 0e5fbb353d20584d
+content_hash: 332616417d8a1c42
 ---
+
 # Trade in Minutes! Rationality-driven Agentic System for Quantitative Financial Trading
 
 **Conference**: ICLR 2026  
@@ -146,15 +152,16 @@ Component ablation in 2024 crypto markets:
 - **Value**: ⭐⭐⭐⭐⭐ (Provides a reusable decoupling paradigm for deploying LLM agents in high-frequency, low-latency scenarios.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading](../../NeurIPS2025/llm_agent/orchestration_framework_for_financial_agents_from_algorithmic_trading_to_agentic.md)
 - [\[ICLR 2026\] An Information Theoretic Perspective on Agentic System Design](an_information_theoretic_perspective_on_agentic_system_design.md)
+- [\[ICLR 2026\] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](in-the-flow_agentic_system_optimization_for_effective_planning_and_tool_use.md)
 - [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
 - [\[ICLR 2026\] When AI Agents Collude Online: Financial Fraud Risks by Collaborative LLM Agents on Social Platforms](when_ai_agents_collude_online_financial_fraud_risks_by_collaborative_llm_agents_.md)
-- [\[ICLR 2026\] CoMind: Towards Community-Driven Agents for Machine Learning Engineering](comind_towards_community-driven_agents_for_machine_learning_engineering.md)
 
 </div>
 

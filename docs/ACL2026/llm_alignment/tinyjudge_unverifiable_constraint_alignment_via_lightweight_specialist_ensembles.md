@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TinyJudge: Unverifiable Constraint Alignment via Lightweight Specialist Ensembles
 description: >-
-  [ACL 2026][Alignment & RLHF][LLM-as-a-judge] To address low reward accuracy and slow training performance when using large models as judges (LLM-as-a-judge) for soft constraints in RLVR instruction following, TinyJudge first identifies that "only style/structure/semantic categories possess high generalizability among soft constraints." It then distills the judgme
+  [ACL 2026][LLM Alignment][Unverifiable constraints] To address low reward accuracy and slow training performance when using large models as judges (LLM-as-a-judge) for soft constraints in RLVR instruction following, TinyJudge first identifies that "only style/structure/semantic categories possess high generalizability among soft constraints." It then distills the judgment expertise of frontier models into several 0.6B small specialist models to form an ensemble reward. This i…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - LLM-as-a-judge
-  - GRPO
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Unverifiable constraints"
+  - "LLM-as-a-judge"
+  - "Reward hacking"
+  - "Specialist distillation"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 0ff0d185ece8ab49
+content_hash: c8f7a997eb855efe
 ---
+
 # TinyJudge: Unverifiable Constraint Alignment via Lightweight Specialist Ensembles
 
 **Conference**: ACL 2026  
@@ -134,9 +138,9 @@ TinyJudge-7B outperforms the version using Qwen3-32B as a judge by ~4.3 points o
 
 - [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 - [\[ICLR 2026\] AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint](../../ICLR2026/llm_alignment/alphasteer_learning_refusal_steering_with_principled_null-space_constraint.md)
-- [\[ACL 2026\] On the Rejection Criterion for Proxy-Based Test-Time Alignment](on_the_rejection_criterion_for_proxy-based_test-time_alignment.md)
-- [\[ACL 2026\] Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms](towards_bridging_the_reward-generation_gap_in_direct_alignment_algorithms.md)
-- [\[ACL 2026\] Alignment Data Map for Efficient Preference Data Selection and Diagnosis](alignment_data_map_for_efficient_preference_data_selection_and_diagnosis.md)
+- [\[ICLR 2026\] RECAST: Expanding the Boundaries of LLMs' Complex Instruction Following with Multi-Constraint Data](../../ICLR2026/llm_alignment/recast_expanding_the_boundaries_of_llms_complex_instruction_following_with_multi.md)
+- [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](../../ICML2026/llm_alignment/towards_context-invariant_safety_alignment_for_large_language_models.md)
+- [\[ACL 2026\] To Intervene or Not: Guiding Inference-time Alignment with Probabilistic Model Blending](to_intervene_or_not_guiding_inference-time_alignment_with_probabilistic_model_bl.md)
 
 </div>
 

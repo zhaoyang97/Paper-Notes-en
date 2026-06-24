@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation
 description: >-
-  [CVPR 2026][3D Vision][State Space Model] MVCHead achieves SOTA perceptual quality and texture/geometry consistency by directly regressing 240,000 3D Gaussians from randomly sampled 2D face images (without multi-view data, 3D supervision, or intermediate view generation). It leverages a single-forward State Space Model (SSM) featuring "Hierarchical Bi-directio
+  [CVPR 2026][3D Vision][3D Gaussian head avatar] MVCHead achieves SOTA perceptual quality and texture/geometry consistency by directly regressing 240,000 3D Gaussians from randomly sampled 2D face images (without multi-view data, 3D supervision, or intermediate view generation). It leverages a single-forward State Space Model (SSM) featuring "Hierarchical Bi-directional State Scanning" aligned with multi-view drift axes and an "SE(3) multi-view evaluator" to bake consistency d…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - State Space Model
-  - Mamba
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian head avatar"
+  - "multi-view consistency"
+  - "State Space Model"
+  - "Mamba"
+  - "zero multi-view supervision"
 date: 2026-05-08
-content_hash: 094ff94f6d30ef3c
+content_hash: 56f2f75cfb964ed5
 ---
+
 # Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation
 
 **Conference**: CVPR 2026  
@@ -147,11 +151,11 @@ Ablation on FFHQ-C (512×512):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
-- [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
+- [\[CVPR 2026\] Skullptor: High Fidelity 3D Head Reconstruction in Seconds with Multi-View Normal Prediction](skullptor_high_fidelity_3d_head_reconstruction_in_seconds_with_multi-view_normal.md)
 - [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
+- [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
+- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
 
 </div>
 

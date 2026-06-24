@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Can Model-Free Reinforcement Learning be Enough for Thinking?
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Thought MDP] This paper proposes the Thought MDP formalism to characterize the conditions under which "thinking" behavior emerges under model-free RL: policy initialization is the d…
+  [NeurIPS 2025][Reinforcement Learning][Thought MDP] This paper proposes the Thought MDP formalism to characterize the conditions under which "thinking" behavior emerges under model-free RL: policy initialization is the decisive factor; thinking actions are equivalent to the agent performing one step of policy improvement before acting; and open-source LLMs satisfy the necessary conditions for thinking to emerge.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "policy initialization"
   - "dual-process theory"
 date: 2026-05-08
-content_hash: bacae85eb597d59f
+content_hash: 18e255d93a9675bb
 ---
 
 # When Can Model-Free Reinforcement Learning be Enough for Thinking?
@@ -134,9 +134,9 @@ The Thought MDP is defined as $\langle \mathcal{S}, \mathcal{A}, p, r, \gamma, \
 
 - [\[NeurIPS 2025\] Parameter-Free Algorithms for the Stochastically Extended Adversarial Model](parameter-free_algorithms_for_the_stochastically_extended_adversarial_model.md)
 - [\[NeurIPS 2025\] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents](deep_rl_needs_deep_behavior_analysis_exploring_implicit_planning_by_model-free_a.md)
-- [\[NeurIPS 2025\] Optimizing the Unknown: Black Box Bayesian Optimization with Energy-Based Model and Reinforcement Learning](optimizing_the_unknown_black_box_bayesian_optimization_with_energy-based_model_a.md)
+- [\[ICML 2025\] BRITE: Bootstrapping Reinforced Thinking Process to Enhance Language Model Reasoning](../../ICML2025/reinforcement_learning/brite_bootstrapping_reinforced_thinking_process_to_enhance_language_model_reason.md)
+- [\[ICLR 2026\] MIRACLE: Model-free Imitation and Reinforcement Learning for Adaptive Cut-Selection](../../ICLR2026/reinforcement_learning/miracle_model-free_imitation_and_reinforcement_learning_for_adaptive_cut-selecti.md)
 - [\[NeurIPS 2025\] When Less Language is More: Language-Reasoning Disentanglement Makes LLMs Better Multilingual Reasoners](when_less_language_is_more_language-reasoning_disentanglement_makes_llms_better_.md)
-- [\[NeurIPS 2025\] Actor-Free Continuous Control via Structurally Maximizable Q-Functions](actorfree_continuous_control_via_structurally_maximizable_qf.md)
 
 </div>
 

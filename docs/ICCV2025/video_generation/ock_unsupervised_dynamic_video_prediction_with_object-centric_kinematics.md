@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OCK: Unsupervised Dynamic Video Prediction with Object-Centric Kinematics
 description: >-
-  [ICCV 2025][Video Generation][Object-centric learning] This paper proposes OCK (Object-Centric Kinematics), which augments object-centric video prediction by introducing explicit kinematic attributes (position, velocity…
+  [ICCV 2025][Video Generation][Object-centric learning] This paper proposes OCK (Object-Centric Kinematics), which augments object-centric video prediction by introducing explicit kinematic attributes (position, velocity, acceleration) as complements to slot representations. Two Transformer variants — Joint-OCK and Cross-OCK — are designed to fuse appearance and motion information, achieving significant improvements in dynamic video prediction quality across complex synthetic…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Slot Attention"
   - "autoregressive Transformer"
 date: 2026-05-08
-content_hash: d6ddc950f7a65882
+content_hash: 359a45beca578553
 ---
 
 # OCK: Unsupervised Dynamic Video Prediction with Object-Centric Kinematics
@@ -153,10 +153,10 @@ Ablation of Transformer components (MOVi-A):
 ## Related Papers
 
 - [\[ICCV 2025\] DreamRelation: Relation-Centric Video Customization](dreamrelation_relation-centric_video_customization.md)
+- [\[CVPR 2025\] Articulated Kinematics Distillation from Video Diffusion Models](../../CVPR2025/video_generation/articulated_kinematics_distillation_from_video_diffusion_models.md)
 - [\[ICCV 2025\] FuXi-RTM: A Physics-Guided Prediction Framework with Radiative Transfer Modeling](fuxi-rtm_a_physics-guided_prediction_framework_with_radiative_transfer_modeling.md)
-- [\[NeurIPS 2025\] Training-Free Efficient Video Generation via Dynamic Token Carving](../../NeurIPS2025/video_generation/training-free_efficient_video_generation_via_dynamic_token_carving.md)
-- [\[AAAI 2026\] Mask2IV: Interaction-Centric Video Generation via Mask Trajectories](../../AAAI2026/video_generation/mask2iv_interaction-centric_video_generation_via_mask_trajectories.md)
-- [\[ACL 2026\] OSCBench: Benchmarking Object State Change in Text-to-Video Generation](../../ACL2026/video_generation/oscbench_benchmarking_object_state_change_in_text-to-video_generation.md)
+- [\[CVPR 2026\] Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos](../../CVPR2026/video_generation/ego-inbetween_generating_object_state_transitions_in_ego-centric_videos.md)
+- [\[CVPR 2025\] Unified Dense Prediction of Video Diffusion](../../CVPR2025/video_generation/unified_dense_prediction_of_video_diffusion.md)
 
 </div>
 

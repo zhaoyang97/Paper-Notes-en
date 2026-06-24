@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models
 description: >-
-  [NeurIPS 2025][LLM Safety][Federated Learning] FedRW proposes the first privacy-preserving soft deduplication framework for federated learning that requires no trusted third party. By leveraging secure multi-party comput…
+  [NeurIPS 2025][LLM Safety][Federated Learning] FedRW proposes the first privacy-preserving soft deduplication framework for federated learning that requires no trusted third party. By leveraging secure multi-party computation to obtain global sample frequencies and performing frequency-aware sample reweighting, it achieves up to 28.78× preprocessing speedup and approximately 11.42% improvement in perplexity over prior methods.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Sample Weighting"
   - "Secure Multi-Party Computation"
 date: 2026-05-08
-content_hash: dd2c8fcff5f83152
+content_hash: cf3ccda74da80679
 ---
 
 # FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models
@@ -136,8 +136,8 @@ Model updates follow the standard FedAvg aggregation; the reweighting mechanism 
 - [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](../../ICLR2026/llm_safety/secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
 - [\[NeurIPS 2025\] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing](cryptomoe_privacy-preserving_and_scalable_mixture_of_experts_inference_via_balan.md)
 - [\[NeurIPS 2025\] FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA](fedsvd_adaptive_orthogonalization_for_private_federated_learning_with_lora.md)
+- [\[ICML 2025\] POPri: Private Federated Learning using Preference-Optimized Synthetic Data](../../ICML2025/llm_safety/popri_private_federated_learning_using_preference-optimized_synthetic_data.md)
 - [\[ACL 2026\] Exploring Cross-Client Memorization of Training Data in Large Language Models for Federated Learning](../../ACL2026/llm_safety/exploring_cross-client_memorization_of_training_data_in_large_language_models_fo.md)
-- [\[ICCV 2025\] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning](../../ICCV2025/llm_safety/latte_collaborative_test-time_adaptation_of_vision-language_models_in_federated_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AnchorDS: Anchoring Dynamic Sources for Semantically Consistent Text-to-3D Generation
 description: >-
-  [AAAI 2026][3D Vision][Text-to-3D] This paper identifies a critical yet overlooked issue in SDS: the source distribution is dynamically evolving rather than static. AnchorDS is proposed to anchor the source distribution…
+  [AAAI 2026][3D Vision][Text-to-3D] This paper reveals a key issue in SDS: the source distribution is dynamically evolving rather than static. To address this, it proposes AnchorDS, which anchors the source distribution by feeding the current rendered image as an image condition into a dual-conditioned diffusion model. This resolves semantic over-smoothing and multi-view inconsistency in SDS, comprehensively outperforming SDS/VSD/SDS-Bridge on T3Bench.
 tags:
   - "AAAI 2026"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Dynamic Source Distribution"
   - "Semantic Consistency"
 date: 2026-05-08
-content_hash: 2c57753713ec1167
+content_hash: 8d8eb16ef3246473
 ---
 
 # AnchorDS: Anchoring Dynamic Sources for Semantically Consistent Text-to-3D Generation
@@ -25,67 +25,67 @@ content_hash: 2c57753713ec1167
 **Keywords**: Text-to-3D, Score Distillation Sampling, Diffusion Models, 3DGS, Dynamic Source Distribution, Semantic Consistency
 
 ## TL;DR
-This paper identifies a critical yet overlooked issue in SDS: the source distribution is dynamically evolving rather than static. AnchorDS is proposed to anchor the source distribution by feeding the current rendered image as an image condition into a dual-conditioned diffusion model, thereby resolving semantic over-smoothing and multi-view inconsistency in SDS. The method comprehensively outperforms SDS, VSD, and SDS-Bridge on T3Bench.
+This paper reveals a key issue in SDS: the source distribution is dynamically evolving rather than static. To address this, it proposes AnchorDS, which anchors the source distribution by feeding the current rendered image as an image condition into a dual-conditioned diffusion model. This resolves semantic over-smoothing and multi-view inconsistency in SDS, comprehensively outperforming SDS/VSD/SDS-Bridge on T3Bench.
 
 ## Background & Motivation
-**Background**: Optimization-based text-to-3D methods distill gradients from pretrained 2D diffusion models via SDS to train NeRF/3DGS, enabling 3D content generation without 3D data.
+**Background**：Optimization-based text-to-3D methods distill gradients from pretrained 2D diffusion models using SDS to train NeRF/3DGS, generating 3D content without requiring 3D data.
 
-**Limitations of Prior Work**: SDS suffers from two well-known failure modes — (1) **semantic over-smoothing**: object-specific semantic features degrade into blurry, uniform representations (e.g., swans and lake surfaces blending together); (2) **multi-view inconsistency**: geometry and appearance are incoherent across viewpoints (e.g., the multi-head/Janus problem).
+**Limitations of Prior Work**：SDS suffers from two typical limitations: (1) **Semantic over-smoothing**: unique semantic features of objects degrade into blurry, uniform representations (e.g., a swan merging into the lake water); (2) **Multi-view inconsistency**: incoherent geometry and appearance across different viewpoints (e.g., the multi-head/Janus problem).
 
-**Key Challenge**: Through mathematical analysis, the authors identify the underlying cause — the CFG gradient in SDS can be decomposed into a "target term $m_1$" (pushing toward the text-conditioned distribution) and a "variance term $m_2$" (pushing away from the source distribution). The source distribution is approximated by the unconditional prior $p(z_t; t, \emptyset)$, which entirely ignores the dynamic evolution of the 3D model during optimization. As a result, $\hat{z}_{t \to 0}^{\text{source}}$ encodes neither the semantics of the current 3D state nor the existing geometric structure, causing the gradient direction to be inconsistent with the actual 3D state.
+**Key Challenge**：Through mathematical analysis, the authors identify the root cause: the CFG gradient in SDS can be decomposed into a "target term $m_1$" (pushing towards the text-conditioned distribution) and a "variance term $m_2$" (pushing away from the source distribution). Crucially, the source distribution is approximated by an unconditional prior $p(z_t; t, \emptyset)$, completely ignoring the dynamic changes of the 3D model during optimization. Therefore, $\hat{z}_{t \to 0}^{\text{source}}$ neither encodes the semantics of the current 3D state nor reflects the existing geometry, causing the gradient direction to mismatch the actual 3D state.
 
-**Key Insight**: SDS is reinterpreted as a **dynamic editing process** — each step is a progressive edit conditioned on the current 3D state, and the source distribution should co-evolve with the 3D model.
+**Key Insight**：Re-interpreting SDS as a **dynamic editing process**—each step acts as a progressive edit based on the current 3D state, meaning the source distribution should evolve together with the 3D model.
 
-**Core Idea**: The current rendered image is used as an image condition for the diffusion model, replacing the unconditional prior to estimate the source distribution, thereby achieving state-anchored gradient guidance.
+**Core Idea**：Utilizing the current rendered image as an image condition to input into the diffusion model, replacing the unconditional prior to estimate the source distribution, thus achieving "state-anchored" gradient guidance.
 
 ## Method
 
 ### Overall Architecture
-The core modification of AnchorDS lies in the SDS gradient computation: the source distribution estimate is replaced from the unconditional noise prediction $\hat{\epsilon}_\phi(z_t; t, \emptyset)$ to an image-conditioned noise prediction $\hat{\epsilon}_\phi(z_t; t, \emptyset, I^{(\tau)})$, where $I^{(\tau)}$ is the rendered image at the current optimization step $\tau$.
+The core modification of AnchorDS lies in the SDS gradient computation: replacing the unconditional noise prediction $\hat{\epsilon}_\phi(z_t; t, \emptyset)$ in the source distribution estimation with an image-conditioned noise prediction $\hat{\epsilon}_\phi(z_t; t, \emptyset, I^{(\tau)})$, where $I^{(\tau)}$ is the rendered image at the current optimization step $\tau$.
 
 The new guidance gradient is: $g_t^{(\tau)} = \hat{\epsilon}_\phi(z_t; t, y) - \hat{\epsilon}_\phi(z_t; t, \emptyset, I^{(\tau)})$
 
-The target term remains unchanged (text-conditioned), while the source term now encodes the structural and semantic information of the current 3D state.
+The target term remains unchanged (text-conditioned), but the source term now encodes the structural and semantic information of the current 3D state.
 
-Overall pipeline: render the current 3D model at each step → encode to latent and add noise → query the diffusion model twice (text-conditioned for target prediction, image-conditioned for source prediction) → backpropagate the difference gradient to update 3D parameters.
+Overall pipeline: Render the current 3D model at each step $\to$ encode to latent + add noise $\to$ query the diffusion model twice (text condition for target prediction, image condition for source prediction) $\to$ backpropagate the difference gradient to update 3D parameters.
 
 ### Key Designs
 
 1. **Dynamic Source Distribution Anchoring (Core)**:
 
-    - Function: Replace the unconditional prior with an image-conditioned diffusion model to estimate the source distribution.
-    - Mechanism: Using IP-Adapter or ControlNet, the current rendered image $I^{(\tau)}$ is fed as an image condition into the diffusion model. The image condition does not constrain the output content but serves as a **contextual anchor** that guides generation while preserving the structural information of the current 3D state.
-    - Design Motivation: Pretrained image-conditioned diffusion models inherently possess image inversion capability — the model's intrinsic image-to-latent mapping is directly leveraged for accurate source anchoring without additional inversion steps. Only one extra U-Net forward pass is required (parallelizable with the original pass), keeping runtime identical to standard SDS.
+    - **Function**: Replacing the unconditional prior with an image-conditioned diffusion model to estimate the source distribution.
+    - **Mechanism**: Utilizing IP-Adapter or ControlNet to feed the current rendered image $I^{(\tau)}$ as an image condition into the diffusion model. The image condition does not constrain the output content but acts as a **contextual anchor** to guide the generation, preserving the structural information of the current 3D state.
+    - **Design Motivation**: Pretrained image-conditioned diffusion models naturally possess image inversion capabilities—directly utilizing the model's intrinsic image $\to$ latent mapping to achieve precise source anchoring without extra inversion steps. This only requires one extra U-Net forward pass (which can be run in parallel with the original pass), maintaining the same runtime as standard SDS.
 
-2. **Pseudo-Source Reconstruction and Quality Assessment**:
+2. **Pseudo-source Reconstruction and Quality Assessment**:
 
-    - Function: Explicitly reconstruct the source image and provide a quantitative metric for source distribution estimation quality.
-    - Mechanism: The one-step denoised latent $\hat{z}_{t \to 0}^{\text{anchored}}$ is recovered from the image-conditioned noise prediction and decoded to a reconstructed image; the L2 distance to the original rendered image is computed: $\mathcal{L}_{\text{rec}} = \| \varepsilon(\hat{z}_{t \to 0}^{\text{anchored}}) - I^{(\tau)} \|_2^2$
-    - Design Motivation: This reconstruction loss serves both as a quality metric and as the foundation for two complementary enhancement strategies.
+    - **Function**: Explicitly reconstructing source images and providing a quantitative metric for the estimation quality of the source distribution.
+    - **Mechanism**: Deriving the one-step denoised latent $\hat{z}_{t \to 0}^{\text{anchored}}$ from the image-conditioned noise prediction, decoding it to obtain a reconstructed image, and computing the L2 distance from the original rendered image: $\mathcal{L}_{\text{rec}} = \| \varepsilon(\hat{z}_{t \to 0}^{\text{anchored}}) - I^{(\tau)} \|_2^2$
+    - **Design Motivation**: This reconstruction loss serves as both a quality metric and the foundation for two enhancement strategies.
 
 3. **Filtering Strategy**:
 
-    - Function: A threshold $\gamma$ is applied based on $\mathcal{L}_{\text{rec}}$ to discard source estimates with excessively large reconstruction errors.
-    - Mechanism: When $\mathcal{L}_{\text{rec}} > \gamma$, the AnchorDS loss for that step is set to zero, skipping unreliable gradient updates.
-    - Design Motivation: A simple yet effective mechanism to filter out anomalous predictions caused by domain shift in the image condition, improving training stability.
+    - **Function**: Setting a threshold $\gamma$ based on $\mathcal{L}_{\text{rec}}$ to discard source estimations with excessively large reconstruction errors.
+    - **Mechanism**: Zeroing out the AnchorDS loss when $\mathcal{L}_{\text{rec}} > \gamma$ to skip unreliable gradient updates.
+    - **Design Motivation**: Simply and effectively filtering out abnormal predictions caused by domain shifts in the image condition, thereby improving training stability.
 
 4. **Fine-tuning Strategy**:
 
-    - Function: Lightweight fine-tuning of a single layer in the IP-Adapter to bridge the domain gap between real image distributions and rendered image distributions.
-    - Mechanism: Gradient updates from $\mathcal{L}_{\text{rec}}$ are used to update the parameters of one layer in the image adapter, exposing it to rendered-domain data. The overhead is minimal (training time increases from ~25 min to ~30 min).
-    - Design Motivation: Pretrained 2D models are trained on real images and exhibit a distributional bias when processing synthetic rendered images.
+    - **Function**: Lightly fine-tuning a single layer of IP-Adapter to bridge the domain gap between real and rendered image distributions.
+    - **Mechanism**: Updating the parameters of a single layer of the image adapter using the gradient of $\mathcal{L}_{\text{rec}}$, allowing it to "see" data from the rendering domain. The overhead is minimal (training time increases from ~25 minutes to ~30 minutes).
+    - **Design Motivation**: Pretrained 2D models are trained on real images, causing distribution discrepancies when processing synthetic rendered images.
 
 ### Loss & Training
 - AnchorDS gradient: $\nabla_\Theta \mathcal{L}_{\text{AnchorDS}} = w(t) \cdot g_t^{(\tau)} \cdot \frac{\partial z_t}{\partial \Theta}$
 - Source reconstruction loss: $\mathcal{L}_{\text{rec}} = \| \varepsilon(\hat{z}_{t \to 0}^{\text{anchored}}) - I^{(\tau)} \|_2^2$
-- Filtering and Fine-tuning are used as alternative complementary strategies.
-- Default image conditioners: IP-Adapter (SD 1.5) or ControlNet (SD 2.1)
-- 3D representations: supports 3DGS (GaussianDreamer) and NeRF
+- Filtering and Fine-tuning are mutually exclusive options (complementary strategies).
+- Default image conditioner: IP-Adapter (SD 1.5) or ControlNet (SD 2.1).
+- 3D representation: Supports 3DGS (GaussianDreamer) and NeRF.
 
 ## Key Experimental Results
 
 ### Main Results
-T3Bench benchmark (300 prompts, covering single object / single object with surroundings / multiple objects):
+T3Bench benchmark (300 prompts, consisting of three categories: single object, single object with environment, and multi-object):
 
 | Method | All↑ | Single↑ | Surr↑ | Multi↑ |
 |------|------|---------|-------|--------|
@@ -94,7 +94,7 @@ T3Bench benchmark (300 prompts, covering single object / single object with surr
 | AnchorDS (IP-Adapter) + Finetune | **33.3** | **45.3** | **29.0** | 25.7 |
 | AnchorDS (ControlNet) + Filter | 33.2 | **46.1** | 29.4 | 24.0 |
 
-Human evaluation (912 participants):
+User Study (912 participants):
 
 | Method | CLIP↑ | 3D Consistency Q1↓ | Text Alignment Q2↓ | Visual Quality Q3↓ |
 |------|-------|------------|-----------|-----------|
@@ -106,40 +106,40 @@ Human evaluation (912 participants):
 
 ### Ablation Study
 
-| Configuration | All↑ | Notes |
+| Configuration | All↑ | Description |
 |------|------|------|
 | SDS baseline | 29.7 | Baseline |
-| AnchorDS (IP-Adapter) | 30.7 | Source anchoring only, +1.0 |
-| + Filter | 32.8 | Filter unstable predictions, +3.1 |
-| + Finetune | **33.3** | Fine-tune adapter, +3.6 |
+| AnchorDS (IP-Adapter) | 30.7 | Source anchoring only +1.0 |
+| + Filter | 32.8 | Filter unstable predictions +3.1 |
+| + Finetune | **33.3** | Fine-tune adapter +3.6 |
 
 ### Key Findings
-- **Source anchoring alone is effective** (+1.0); Filter and Finetune each provide additional gains.
-- **Largest improvement on multi-object scenes**: the Multi category improves from 20.6 to 25.7 (+24.8%), as source anchoring effectively prevents semantic mixing between different objects.
-- **Method is insensitive to the choice of image conditioner**: both IP-Adapter and ControlNet are effective, demonstrating the generality of the approach.
-- **VSD, despite more refined distribution modeling, still produces unnatural colors and structural artifacts due to neglect of source dynamics.**
-- **SDS-Bridge's hand-crafted negative prompts introduce new biases** (e.g., material and texture artifacts), limiting flexibility.
+- **Source anchoring itself is effective** (+1.0), with Filter and Finetune providing additional individual gains.
+- **Largest improvement in multi-object scenes**: The Multi category jumps from 20.6 to 25.7 (+24.8%) because source anchoring effectively prevents semantic blending between different objects.
+- **Insensitive to the choice of image-conditioning model**: Both IP-Adapter and ControlNet are effective, demonstrating the generalizability of the method.
+- **VSD, although more elaborate in distribution modeling, still exhibits unnatural colors and structures** due to neglecting source dynamics.
+- **SDS-Bridge introduces new biases** (such as materials and texture biases) via manual negative prompts, showing less flexibility.
 
 ## Highlights & Insights
-- **Precise problem analysis with mathematical grounding**: Decomposing the SDS gradient into $m_1$ and $m_2$, and further expanding it into a pseudo-editing formulation (Eq. 8), clearly exposes the information loss caused by the unconditional source estimate. This analytical framework is far more convincing than intuitive explanations alone.
-- **Extremely lightweight method**: The core modification amounts to replacing the unconditional branch in CFG with an image-conditioned branch — a change on the order of a single line of code, requiring no additional networks or training data. The Filter/Finetune strategies are equally simple.
-- **The "dynamic source distribution" perspective may generalize to other distillation scenarios**: e.g., SDS variants in 2D editing and video generation — any iterative optimization setting using SDS could benefit from analogous source anchoring.
+- **Precise mathematical and analytical grounding**: Decomposing the SDS gradient into $m_1$ and $m_2$, and further expanding it into a pseudo-editing formulation (Eq.8), clearly exposes how unconditional source estimation discards current 3D state details. This analytical framework is far more convincing than intuitive explanations.
+- **Extremely lightweight**: The core modification simply replaces the unconditional branch of the CFG with an image-conditioned branch—a one-line code change requiring no extra networks or training data. The Filter/Finetune strategies are also inherently simple.
+- **"Dynamic source distribution" perspective is generalizable to other distillation scenarios**: Such as 2D editing or video generation variants of SDS. Any context employing SDS for iterative optimization could benefit from similar source anchoring.
 
 ## Limitations & Future Work
-- **Still reliant on the SDS paradigm**: inherits SDS's inherently slow optimization (requiring thousands of steps), making it unsuitable for real-time applications.
-- **Upper-bounded by image conditioner capability**: if IP-Adapter/ControlNet exhibits poor inversion capability for certain rendering styles, source estimation quality degrades (which motivates the Filter strategy).
-- **No comparison with feed-forward 3D generation methods**: the T3Bench evaluation only compares against SDS variants, lacking comparison with 3D-native generative models.
+- **Still reliant on the SDS paradigm**: Inherits the native slowness of SDS (requiring thousands of optimization steps), making it less suitable for real-time applications.
+- **Upper bound of image-conditioned model capacity**: If IP-Adapter/ControlNet has poor inversion performance on specific rendering styles, the quality of source estimation degrades (which is why the Filter strategy is necessary).
+- **Lack of comparison against feed-forward 3D generation methods**: Evaluation on T3Bench only compares against SDS variants, lacking comparisons with native 3D generative models.
 
 ## Related Work & Insights
-- **vs. VSD (ProlificDreamer)**: VSD trains a LoRA-based particle distribution model to approximate the source distribution, incurring high computational overhead (4 models). AnchorDS directly conditions on the rendered image with zero additional models and achieves superior performance.
-- **vs. SDS-Bridge**: SDS-Bridge corrects source bias via hand-crafted negative prompts describing the 3D state, introducing new biases. AnchorDS lets the model directly "see" the current rendering, introducing no additional bias.
-- **vs. DDS**: DDS also uses a reference image but requires a paired reference prompt and serves a different purpose. AnchorDS acquires its image condition automatically (the current rendering).
+- **vs VSD (ProlificDreamer)**: VSD trains a particle distribution model using LoRA to approximate the source distribution, incurring high computational costs (running 4 models). AnchorDS directly uses the rendered image as a condition, requiring zero additional models while performing better.
+- **vs SDS-Bridge**: SDS-Bridge manually describes the 3D state using negative prompts to correct source deviations, which introduces brand new biases. AnchorDS lets the model directly "see" the current rendering, resulting in zero bias.
+- **vs DDS**: DDS also uses reference images, but requires paired reference prompts and serves a different purpose. In AnchorDS, the image condition is automatically acquired (as the current rendering).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ In-depth analysis of the source distribution problem in SDS; method is elegant and concise.
-- Experimental Thoroughness: ⭐⭐⭐⭐ T3Bench + human evaluation + ablation + multi-baseline comparison.
-- Writing Quality: ⭐⭐⭐⭐⭐ Analysis and derivations are clear, figures are intuitive, and the logical chain is complete.
-- Value: ⭐⭐⭐⭐ A significant improvement within the SDS framework; the method is simple and reproducible.
+- Novelty: ⭐⭐⭐⭐ Deep mathematical analysis of the SDS source distribution issue; elegant and simple method.
+- Experimental Thoroughness: ⭐⭐⭐⭐ T3Bench + User Study + Ablation + comparisons across multiple baselines.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear mathematical derivations, intuitive illustrations, and a complete logical chain.
+- Value: ⭐⭐⭐⭐ Significant improvement within the SDS framework; simple and highly reproducible.
 
 <!-- RELATED:START -->
 
@@ -147,11 +147,11 @@ Human evaluation (912 participants):
 
 ## Related Papers
 
+- [\[ECCV 2024\] DreamView: Injecting View-specific Text Guidance into Text-to-3D Generation](../../ECCV2024/3d_vision/dreamview_injecting_view-specific_text_guidance_into_text-to-3d_generation.md)
+- [\[ECCV 2024\] DreamDissector: Learning Disentangled Text-to-3D Generation from 2D Diffusion Priors](../../ECCV2024/3d_vision/dreamdissector_learning_disentangled_text-to-3d_generation_from_2d_diffusion_pri.md)
 - [\[CVPR 2026\] Text–Image Conditioned 3D Generation](../../CVPR2026/3d_vision/text-image_conditioned_3d_generation.md)
 - [\[AAAI 2026\] Debiasing Diffusion Priors via 3D Attention for Consistent Gaussian Splatting](debiasing_diffusion_priors_via_3d_attention_for_consistent_gaussian_splatting.md)
 - [\[ICML 2026\] RelaxFlow: Text-Driven Amodal 3D Generation](../../ICML2026/3d_vision/relaxflow_text-driven_amodal_3d_generation.md)
-- [\[NeurIPS 2025\] Walking the Schrödinger Bridge: A Direct Trajectory for Text-to-3D Generation](../../NeurIPS2025/3d_vision/walking_the_schrödinger_bridge_a_direct_trajectory_for_text-to-3d_generation.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation using Corrective Hand Shape Guidance](../../CVPR2026/3d_vision/handdreamer_zero-shot_text_to_3d_hand_model_generation_using_corrective_hand_sha.md)
 
 </div>
 

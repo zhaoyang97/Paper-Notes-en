@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Verified Critical Step Optimization for LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][DPO] CSO identifies "verified critical steps" from an agent's own failed trajectories where "changing a single action leads to task success." It constructs DPO preference pairs only at these critical decision points, enhancing the post-training performance of long-horizon LLM agents with fewer and more reliable supervisory
+  [ACL2026 Findings][LLM Agent][Critical Step Optimization] CSO identifies "verified critical steps" from an agent's own failed trajectories where "changing a single action leads to task success." It constructs DPO preference pairs only at these critical decision points, enhancing the post-training performance of long-horizon LLM agents with fewer and more reliable supervisory signals.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - DPO
+  - "ACL2026 Findings"
+  - "LLM Agent"
+  - "Critical Step Optimization"
+  - "DPO"
+  - "Process Reward Model"
+  - "Credit Assignment"
 date: 2026-05-08
-content_hash: 4993e9ed50bbacc0
+content_hash: cd15f2abd7ae76c4
 ---
+
 # Verified Critical Step Optimization for LLM Agents
 
 **Conference**: ACL2026 Findings  
@@ -159,10 +163,10 @@ Experiments use GAIA-Text-103 and XBench-DeepSearch2505. GAIA-Text-103 is a text
 ## Related Papers
 
 - [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
+- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](../../ICML2026/llm_agent/self-evolving_llm_agents_with_in-distribution_optimization.md)
 - [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
 - [\[AAAI 2026\] DEPO: Dual-Efficiency Preference Optimization for LLM Agents](../../AAAI2026/llm_agent/depo_dual-efficiency_preference_optimization_for_llm_agents.md)
-- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](../../ICML2026/llm_agent/self-evolving_llm_agents_with_in-distribution_optimization.md)
-- [\[ACL 2026\] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models](agent-gwo_collaborative_agents_for_dynamic_prompt_optimization_in_large_language.md)
+- [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](../../NeurIPS2025/llm_agent/groupingroup_policy_optimization_for_llm_agent_training.md)
 
 </div>
 

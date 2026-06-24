@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding
 description: >-
-  [ICCV 2025][Robotics][articulated object manipulation] This paper proposes AdaRPG, a framework that leverages foundation vision-language models for part-level segmentation and affordance reasoning on articulated objects…
+  [ICCV 2025][Robotics][articulated object manipulation] This paper proposes AdaRPG, a framework that leverages foundation vision-language models for part-level segmentation and affordance reasoning on articulated objects, and employs GPT-4o to generate high-level control code for adaptively scheduling atomic manipulation skills, achieving cross-category zero-shot generalization in both simulation and real-world environments.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "affordance prediction"
   - "adaptive policy"
 date: 2026-05-08
-content_hash: e135656a961dc5c4
+content_hash: f1539bc6b166d82d
 ---
 
 # Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding
@@ -126,11 +126,11 @@ Real-world performance comprehensively exceeds simulation results, attributed to
 
 ## Related Papers
 
-- [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](../../ICLR2026/robotics/from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
+- [\[ICLR 2026\] PA3FF: Part-Aware Dense 3D Feature Fields for Generalizable Articulated Object Manipulation](../../ICLR2026/robotics/pa3fflearning_part-aware_dense_3d_feature_field_for_generalizable_articulated_ob.md)
+- [\[CVPR 2026\] Physically Ground Commonsense Knowledge for Articulated Object Manipulation with Analytic Concepts](../../CVPR2026/robotics/physically_ground_commonsense_knowledge_for_articulated_object_manipulation_with.md)
 - [\[ICCV 2025\] Selective Contrastive Learning for Weakly Supervised Affordance Grounding](selective_contrastive_learning_for_weakly_supervised_affordance_grounding.md)
-- [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](../../NeurIPS2025/robotics/autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
 - [\[ICCV 2025\] Self-supervised Learning of Hybrid Part-aware 3D Representations of 2D Gaussians and Superquadrics](self-supervised_learning_of_hybrid_part-aware_3d_representations_of_2d_gaussians.md)
-- [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](../../NeurIPS2025/robotics/learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
+- [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](../../ICLR2026/robotics/from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Universal Verifier as Multimodal Meta-Reasoner
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] This paper elevates the task of "checking whether visual outcomes satisfy task requirements" to a fundamental capability of multimodal reasoning systems. The authors construct ViVerBench to evaluate existing VLM shortcomings in visual verification, train OmniVerifier-7B as a generative universal verifier, and employ Om
+  [ICLR2026][VLM Reasoning][Multimodal Meta-reasoning] This paper elevates the task of "checking whether visual outcomes satisfy task requirements" to a fundamental capability of multimodal reasoning systems. The authors construct ViVerBench to evaluate existing VLM shortcomings in visual verification, train OmniVerifier-7B as a generative universal verifier, and employ OmniVerifier-TTS to convert verification feedback into multi-turn image editing during test-time…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Multimodal Meta-reasoning"
+  - "Visual Outcome Verification"
+  - "Generative Verifier"
+  - "Sequential Test-time Scaling"
+  - "Image Self-correction"
 date: 2026-05-08
-content_hash: 28c25dd9cc672496
+content_hash: 545a725c25e05cb7
 ---
+
 # Generative Universal Verifier as Multimodal Meta-Reasoner
 
 **Conference**: ICLR2026  
@@ -141,6 +147,7 @@ Sequential TTS outperformed parallel TTS across all backbones. For Qwen-Image, s
 - **Value**: ⭐⭐⭐⭐⭐ (High impact for MLLM critic training and test-time scaling strategies).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

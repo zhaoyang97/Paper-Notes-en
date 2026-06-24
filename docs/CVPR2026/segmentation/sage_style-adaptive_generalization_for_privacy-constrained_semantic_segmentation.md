@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAGE: Style-Adaptive Generalization for Privacy-Constrained Semantic Segmentation Across Domains
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Addressing privacy-constrained deployment scenarios where "segmentation models are frozen and internal parameters cannot be accessed," SAGE avoids fine-tuning the backbone. Instead, it learns a generator for each style to produce border-shaped visual prompts, then adaptively fuses these prompts using cross-attention ba
+  [CVPR 2026][Segmentation][Domain Generalization Semantic Segmentation] Addressing privacy-constrained deployment scenarios where "segmentation models are frozen and internal parameters cannot be accessed," SAGE avoids fine-tuning the backbone. Instead, it learns a generator for each style to produce border-shaped visual prompts, then adaptively fuses these prompts using cross-attention based on the input style to re-apply them to the input image. This allows a frozen model to…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Domain Generalization Semantic Segmentation"
+  - "Privacy Constraints"
+  - "Visual Prompting"
+  - "Style Transfer"
+  - "Cross-Attention Fusion"
 date: 2026-05-08
-content_hash: 101db3ddfff5addb
+content_hash: 44c64a3650ddf7e0
 ---
+
 # SAGE: Style-Adaptive Generalization for Privacy-Constrained Semantic Segmentation Across Domains
 
 **Conference**: CVPR 2026  
@@ -127,11 +133,11 @@ Ours uses only 1.53M trainable parameters (approx. 1/55 of full fine-tuning) and
 
 ## Related Papers
 
-- [\[CVPR 2026\] SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation](saqn_semantic-based_adaptive_query_network_for_3d_referring_expression_segmentat.md)
 - [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
+- [\[CVPR 2026\] Generalizable Co-Salient Object Detection via Mixed Content-Style Modulation](generalizable_co-salient_object_detection_via_mixed_content-style_modulation.md)
 - [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](mrm_masked_representation_modeling_domain_adaptive.md)
 - [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
-- [\[CVPR 2026\] Generalizable Co-Salient Object Detection via Mixed Content-Style Modulation](generalizable_co-salient_object_detection_via_mixed_content-style_modulation.md)
+- [\[CVPR 2026\] Revisiting Geometric Obfuscation with Dual Convergent Lines for Privacy-Preserving Image Queries in Visual Localization](revisiting_geometric_obfuscation_with_dual_convergent_lines_for_privacy-preservi.md)
 
 </div>
 

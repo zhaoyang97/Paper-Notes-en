@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VisualPrompter: Semantic-Aware Prompt Optimization with Visual Feedback for Text-to-Image Synthesis
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] VisualPrompter is a training-free prompt engineering framework for text-to-image synthesis. It utilizes an LLM to decompose user prompts into atomic concepts, employs a VLM to verify these concepts against generated images to identify "missing" elements, and performs atomic-level expansion and reorganization specifical
+  [ICLR 2026][Image Generation][Text-to-Image] VisualPrompter is a training-free prompt engineering framework for text-to-image synthesis. It utilizes an LLM to decompose user prompts into atomic concepts, employs a VLM to verify these concepts against generated images to identify "missing" elements, and performs atomic-level expansion and reorganization specifically for these missing concepts. By rewriting prompts into sentences preferred by the model without compromising user…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Prompt Optimization"
+  - "Visual Feedback"
+  - "Self-Reflection"
+  - "Atomic Semantics"
 date: 2026-05-08
-content_hash: d8bc0b34a7ab2b2c
+content_hash: e3a6a6e28bb8d009
 ---
+
 # VisualPrompter: Semantic-Aware Prompt Optimization with Visual Feedback for Text-to-Image Synthesis
 
 **Conference**: ICLR 2026  
@@ -119,15 +125,14 @@ Key Observations: Existing methods actually **decrease** semantic consistency (N
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] TIPO: Text to Image with Text Pre-sampling for Prompt Optimization](tipo_text_to_image_with_text_pre-sampling_for_prompt_optimization.md)
+- [\[CVPR 2025\] Minority-Focused Text-to-Image Generation via Prompt Optimization](../../CVPR2025/image_generation/minority-focused_text-to-image_generation_via_prompt_optimization.md)
 - [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
 - [\[ICLR 2026\] DeLeaker: Dynamic Inference-Time Reweighting For Semantic Leakage Mitigation in Text-to-Image Models](deleaker_dynamic_inference-time_reweighting_for_semantic_leakage_mitigation_in_t.md)
 - [\[ICLR 2026\] Long-Text-to-Image Generation via Compositional Prompt Decomposition](long-text-to-image_generation_via_compositional_prompt_decomposition.md)
-- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
 
 </div>
 

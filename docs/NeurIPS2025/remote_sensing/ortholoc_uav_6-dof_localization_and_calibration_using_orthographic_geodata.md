@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata
 description: >-
-  [NeurIPS 2025][Remote Sensing][UAV localization] OrthoLoC establishes the first large-scale UAV 6-DoF localization benchmark dataset based on orthographic geodata (DOP+DSM), comprising 16…
+  [NeurIPS 2025][Remote Sensing][UAV localization] OrthoLoC establishes the first large-scale UAV 6-DoF localization benchmark dataset based on orthographic geodata (DOP+DSM), comprising 16,425 real UAV images across 47 regions in Germany and the United States. It further introduces AdHoP (Adaptive Homography Preprocessing), a matching enhancement technique that improves matching performance by 95% and reduces translation error by 63% without modifying the underlying feature ma…
 tags:
   - "NeurIPS 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "feature matching"
   - "domain adaptation"
 date: 2026-05-08
-content_hash: 8087ba504cc67b68
+content_hash: 71ba410b73a53e4e
 ---
 
 # OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata
@@ -121,11 +121,11 @@ The OrthoLoC localization pipeline proceeds as follows: (1) *Initial localizatio
 
 ## Related Papers
 
+- [\[CVPR 2026\] PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization](../../CVPR2026/remote_sensing/pilot_neural_pixel-to-3d_registration_for_uav-based_ego_and_target_geo-localizat.md)
 - [\[NeurIPS 2025\] Scaling Image Geo-Localization to Continent Level](scaling_image_geo-localization_to_continent_level.md)
+- [\[CVPR 2025\] Hierarchical Dual-Change Collaborative Learning for UAV Scene Change Captioning](../../CVPR2025/remote_sensing/hierarchical_dual-change_collaborative_learning_for_uav_scene_change_captioning.md)
+- [\[CVPR 2025\] Learning Occlusion-Robust Vision Transformers for Real-Time UAV Tracking](../../CVPR2025/remote_sensing/learning_occlusion-robust_vision_transformers_for_real-time_uav_tracking.md)
 - [\[ICCV 2025\] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration](../../ICCV2025/remote_sensing/geoexplorer_active_geo-localization_with_curiosity-driven_exploration.md)
-- [\[ICCV 2025\] GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization](../../ICCV2025/remote_sensing/geodistill_geometry-guided_self-distillation_for_weakly_supervised_cross-view_lo.md)
-- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](../../CVPR2026/remote_sensing/rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
-- [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
 
 </div>
 

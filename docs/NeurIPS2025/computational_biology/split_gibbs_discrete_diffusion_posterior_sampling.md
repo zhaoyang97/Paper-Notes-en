@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Split Gibbs Discrete Diffusion Posterior Sampling
 description: >-
-  [NeurIPS 2025][Computational Biology][Discrete Diffusion Models] This paper proposes SGDD (Split Gibbs Discrete Diffusion), a plug-and-play posterior sampling algorithm for discrete diffusion models based on the split Gi…
+  [NeurIPS 2025][Computational Biology][Discrete Diffusion Models] This paper proposes SGDD (Split Gibbs Discrete Diffusion), a plug-and-play posterior sampling algorithm for discrete diffusion models based on the split Gibbs sampling principle. By introducing auxiliary variables and a Hamming-distance-based regularization potential, SGDD decomposes posterior sampling into alternating likelihood and prior sampling steps, achieving substantial improvements over baselines on DNA…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Inverse Problems"
   - "DNA Sequence Design"
 date: 2026-05-08
-content_hash: eb3f77fe2477f0e1
+content_hash: 66785ad0a375a125
 ---
 
 # Split Gibbs Discrete Diffusion Posterior Sampling
@@ -145,8 +145,8 @@ SGDD improves PSNR by **8.36 dB** on the XOR task.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](constrained_discrete_diffusion.md)
-- [\[NeurIPS 2025\] Remasking Discrete Diffusion Models with Inference-Time Scaling](remasking_discrete_diffusion_models_with_inference-time_scaling.md)
 - [\[NeurIPS 2025\] Why Masking Diffusion Works: Condition on the Jump Schedule for Improved Discrete Diffusion](why_masking_diffusion_works_condition_on_the_jump_schedule_for_improved_discrete.md)
+- [\[NeurIPS 2025\] Remasking Discrete Diffusion Models with Inference-Time Scaling](remasking_discrete_diffusion_models_with_inference-time_scaling.md)
 - [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
 - [\[ICML 2026\] Stein Diffusion Guidance: Training-Free Posterior Correction for Sampling Beyond High-Density Regions](../../ICML2026/computational_biology/stein_diffusion_guidance_training-free_posterior_correction_for_sampling_beyond_.md)
 

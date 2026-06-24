@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness
 description: >-
-  [NeurIPS 2025][LLM Agent][benchmark] AgentChangeBench is the first benchmark that systematically evaluates the adaptability of LLM agents when user goals shift mid-conversation: 315 base tasks × 9 variants = 2…
+  [NeurIPS 2025][LLM Agent][benchmark] AgentChangeBench is the first benchmark that systematically evaluates the adaptability of LLM agents when user goals shift mid-conversation: 315 base tasks × 9 variants = 2,835 sequences, spanning 3 enterprise domains (banking/retail/airline) and 5 user personas. It introduces 4 complementary metrics including GSRT (Goal-Shift Recovery Time), revealing efficiency and robustness gaps masked by high pass@k—e.g.…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "agent robustness"
   - "tool calling"
 date: 2026-05-08
-content_hash: ad551498c7a895eb
+content_hash: 5b6cb177710212b4
 ---
 
 # AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness
@@ -136,9 +136,9 @@ AgentChangeBench consists of two components—a dataset and an evaluation protoc
 
 - [\[NeurIPS 2025\] T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning](t1_a_tool-oriented_conversational_dataset_for_multi-turn_agentic_planning.md)
 - [\[NeurIPS 2025\] CORE: Full-Path Evaluation of LLM Agents Beyond Final State](core_full-path_evaluation_of_llm_agents_beyond_final_state.md)
+- [\[ACL 2025\] FACT-AUDIT: An Adaptive Multi-Agent Framework for Dynamic Fact-Checking Evaluation of Large Language Models](../../ACL2025/llm_agent/fact_audit_factcheck.md)
+- [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](../../CVPR2026/llm_agent/mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
 - [\[ACL 2026\] GOAT: A Training Framework for Goal-Oriented Agent with Tools](../../ACL2026/llm_agent/goat_a_training_framework_for_goal-oriented_agent_with_tools.md)
-- [\[NeurIPS 2025\] AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents](agentauditor_humanlevel_safety_and_security_evaluation_for_l.md)
-- [\[NeurIPS 2025\] MAT-Agent: Adaptive Multi-Agent Training Optimization](mat-agent_adaptive_multi-agent_training_optimization.md)
 
 </div>
 

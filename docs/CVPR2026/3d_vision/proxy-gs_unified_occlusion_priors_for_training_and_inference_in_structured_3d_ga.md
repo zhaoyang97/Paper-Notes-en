@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Proxy-GS: Unified Occlusion Priors for Training and Inference in Structured 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Proxy-GS utilizes a "lightweight proxy mesh + hardware rasterization" to generate an occlusion depth map in under 1 ms. This depth map is used both during inference to cull occluded anchors/Gaussians for accelerated rendering and during training to guide anchor densification onto visible surfaces. Compared to Octree-GS
+  [CVPR 2026][3D Vision][Gaussian Splatting] Proxy-GS utilizes a "lightweight proxy mesh + hardware rasterization" to generate an occlusion depth map in under 1 ms. This depth map is used both during inference to cull occluded anchors/Gaussians for accelerated rendering and during training to guide anchor densification onto visible surfaces. Compared to Octree-GS, it achieves a 3×+ FPS improvement in heavily occluded large-scale urban scenes while simultaneously enhancing rende…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Occlusion Culling"
+  - "Proxy Mesh"
+  - "Level of Detail (LOD)"
+  - "Large-scale Rendering"
 date: 2026-05-08
-content_hash: 8385932222e07258
+content_hash: ccd52fc9d3a873ce
 ---
+
 # Proxy-GS: Unified Occlusion Priors for Training and Inference in Structured 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -129,8 +135,8 @@ Decomposition of training/inference strategies on Block 5 (Average anchor = avg.
 - [\[CVPR 2026\] NVGS: Neural Visibility for Occlusion Culling in 3D Gaussian Splatting](nvgs_neural_visibility_for_occlusion_culling_in_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] 3D Gaussian Splatting at Arbitrary Resolutions with Compact Proxy Anchors](3d_gaussian_splatting_at_arbitrary_resolutions_with_compact_proxy_anchors.md)
 - [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](unified_primitive_proxies_for_structured_shape_completion.md)
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
 - [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
-- [\[CVPR 2026\] SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting](sv-gs_sparse_view_4d_reconstruction_with_skeleton-driven_gaussian_splatting.md)
 
 </div>
 

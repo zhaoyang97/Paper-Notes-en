@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] VSFOT liberates Source-Free Domain Adaptation (SFDA) from the self-training "dead loop" of generating pseudo-labels for itself. Instead, it utilizes a frozen CLIP as an external semantic prior to soft-align target features with source classifier prototypes via Optimal Transport (OT). Simultaneously, the task model fine
+  [CVPR 2026][Multimodal VLM][Source-Free Domain Adaptation] VSFOT liberates Source-Free Domain Adaptation (SFDA) from the self-training "dead loop" of generating pseudo-labels for itself. Instead, it utilizes a frozen CLIP as an external semantic prior to soft-align target features with source classifier prototypes via Optimal Transport (OT). Simultaneously, the task model fine-tunes CLIP through reverse distillation, forming a complementary bidirectional distillation framewor…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Source-Free Domain Adaptation"
+  - "Vision-Language Models"
+  - "Optimal Transport"
+  - "Bidirectional Distillation"
+  - "CLIP"
 date: 2026-05-08
-content_hash: a82bd441996b0db5
+content_hash: 5dc2bc6719e4d5e8
 ---
+
 # Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ The most significant gain (+2.55%) was achieved on DomainNet-126, the most chall
 ## Related Papers
 
 - [\[CVPR 2026\] SOTA: Self-adaptive Optimal Transport for Zero-Shot Classification with Multiple Foundation Models](sota_self-adaptive_optimal_transport_for_zero-shot_classification_with_multiple_.md)
-- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
 - [\[CVPR 2026\] Addressing Exacerbated Attention Sink for Source-Free Cross-Domain Few-Shot Learning](addressing_exacerbated_attention_sink_for_source-free_cross-domain_few-shot_lear.md)
-- [\[CVPR 2026\] Test-Time Distillation for Continual Model Adaptation](test-time_distillation_for_continual_model_adaptation.md)
-- [\[CVPR 2026\] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning](generate_analyze_and_refine_training-free_sound_source_localization_via_mllm_met.md)
+- [\[ICML 2026\] ATHA: Improving CLIP Adaptation on Source-Free Cross-Domain Few-Shot Learning by Breaking Tail Alignment](../../ICML2026/multimodal_vlm/improving_clip_adaptation_by_breaking_tail_alignment_for_source-free_cross-domai.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
+- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
 
 </div>
 

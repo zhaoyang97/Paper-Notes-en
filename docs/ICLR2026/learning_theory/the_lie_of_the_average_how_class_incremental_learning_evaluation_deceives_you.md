@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] The Lie of the Average: How Class Incremental Learning Evaluation Deceives You?
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper points out that the common "randomly sample 3-5 class sequences and report mean/variance" evaluation method in Class-Incremental Learning (CIL) systematically overestimates the mean and severely underestimates the variance, fundamentally missing extreme sequences. The authors theoretically prove the infeasib
+  [ICLR 2026][Learning Theory][Class-Incremental Learning] This paper points out that the common "randomly sample 3-5 class sequences and report mean/variance" evaluation method in Class-Incremental Learning (CIL) systematically overestimates the mean and severely underestimates the variance, fundamentally missing extreme sequences. The authors theoretically prove the infeasibility of random sampling and propose the EDGE protocol—utilizing CLIP text encoders to calculate inter-…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Continual Learning Evaluation"
+  - "Class-Incremental Learning"
+  - "Evaluation Protocols"
+  - "Extreme Sequences"
+  - "Inter-task Similarity"
+  - "Performance Distribution Estimation"
 date: 2026-05-08
-content_hash: 75578bf9966a44b2
+content_hash: 931a33df7b77e1b0
 ---
+
 # The Lie of the Average: How Class Incremental Learning Evaluation Deceives You?
 
 **Conference**: ICLR 2026  
@@ -141,11 +148,11 @@ Conclusions for non-pre-trained methods are consistent: on CIFAR-100, the true l
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Persistent Noise-Tolerant Active Learning of Regular Languages with Class Query](towards_persistent_noise-tolerant_active_learning_of_regular_languages_with_clas.md)
-- [\[ICLR 2026\] Physics-informed learning under mixing: How physical knowledge speeds up learning](physics-informed_learning_under_mixing_how_physical_knowledge_speeds_up_learning.md)
-- [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 - [\[ICLR 2026\] Quantum Machine Learning Advantages Beyond Hardness of Evaluation](quantum_machine_learning_advantages_beyond_hardness_of_evaluation.md)
-- [\[ICLR 2026\] Two Failure Modes of Deep Transformers and How to Avoid Them: A Unified Theory of Signal Propagation at Initialisation](two_failure_modes_of_deep_transformers_and_how_to_avoid_them_a_unified_theory_of.md)
+- [\[ICLR 2026\] Why Ask One When You Can Ask k? Learning-to-Defer to the Top-k Experts](why_ask_one_when_you_can_ask_k_learning-to-defer_to_the_top-k_experts.md)
+- [\[ICLR 2026\] Towards Persistent Noise-Tolerant Active Learning of Regular Languages with Class Query](towards_persistent_noise-tolerant_active_learning_of_regular_languages_with_clas.md)
+- [\[ICLR 2026\] How Reinforcement Learning after Next-Token Prediction Facilitates Learning](how_reinforcement_learning_after_next-token_prediction_facilitates_learning.md)
+- [\[ICLR 2026\] Physics-informed learning under mixing: How physical knowledge speeds up learning](physics-informed_learning_under_mixing_how_physical_knowledge_speeds_up_learning.md)
 
 </div>
 

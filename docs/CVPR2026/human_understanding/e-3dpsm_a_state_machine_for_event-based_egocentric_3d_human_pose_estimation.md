@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation
 description: >-
-  [CVPR 2026][Human Understanding][State Space Model] E-3DPSM is proposed as an event-based state machine for egocentric 3D human pose estimation. It models pose estimation as a continuous-time state evolution process, utilizing bidirectional SSMs for temporal modeling and a learnable Kalman-style fusion module to integrate direct and incremental predictions. It achieves
+  [CVPR 2026][Human Understanding][Event camera] E-3DPSM is proposed as an event-based state machine for egocentric 3D human pose estimation. It models pose estimation as a continuous-time state evolution process, utilizing bidirectional SSMs for temporal modeling and a learnable Kalman-style fusion module to integrate direct and incremental predictions. It achieves 80Hz real-time inference, reduces MPJPE by 19%, and improves temporal stability by 2.7 times.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - State Space Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Event camera"
+  - "Egocentric pose estimation"
+  - "State space model"
+  - "3D human pose"
+  - "Temporal consistency"
 date: 2026-05-08
-content_hash: c4f2b9c4c019ec36
+content_hash: 89b527cbbb657384
 ---
+
 # E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -172,10 +177,10 @@ Where $\mathcal{L}_{3D}$ is the 3D joint position MSE, $\mathcal{L}_\Delta$ is t
 
 ## Related Papers
 
-- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
 - [\[CVPR 2026\] Forecasting 3D Scanpaths in Egocentric Video](forecasting_3d_scanpaths_in_egocentric_video.md)
 - [\[CVPR 2026\] EventGait: Towards Robust Gait Recognition with Event Streams](eventgait_towards_robust_gait_recognition_with_event_streams.md)
 - [\[CVPR 2026\] EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR](egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr.md)
+- [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
 - [\[ECCV 2024\] Event-based Head Pose Estimation: Benchmark and Method](../../ECCV2024/human_understanding/event-based_head_pose_estimation_benchmark_and_method.md)
 
 </div>

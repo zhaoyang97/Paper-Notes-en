@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] CrowdGaussian proposes a unified framework for reconstructing multi-person 3D Gaussian Splatting (3DGS) representations from a single image. It recovers complete geometry in occluded regions through a self-supervised adapted Large Occlusion-aware Reconstruction Model (LORM) and enhances texture detail quality using a s
+  [CVPR 2026][3D Vision][Human Reconstruction] CrowdGaussian proposes a unified framework for reconstructing multi-person 3D Gaussian Splatting (3DGS) representations from a single image. It recovers complete geometry in occluded regions through a self-supervised adapted Large Occlusion-aware Reconstruction Model (LORM) and enhances texture detail quality using a single-step diffusion refiner (CrowdRefiner) trained with Self-Calibrated Learning (SCL).
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Occlusion Recovery"
+  - "Diffusion Refinement"
+  - "Crowd Scenes"
 date: 2026-05-08
-content_hash: 0cc5abbcf5c1e01d
+content_hash: 097f12092dd1b59d
 ---
+
 # CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image
 
 **Conference**: CVPR 2026  
@@ -176,11 +182,11 @@ Ablation of SCL strategy and geometric condition input for CrowdRefiner:
 
 ## Related Papers
 
-- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
-- [\[CVPR 2026\] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion](craftmesh_high-fidelity_generative_mesh_manipulation_via_poisson_seamless_fusion.md)
-- [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
+- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
+- [\[CVPR 2026\] VIAFormer: Voxel-Image Alignment Transformer for High-Fidelity Voxel Refinement](viaformer_voxel-image_alignment_transformer_for_high-fidelity_voxel_refinement.md)
+- [\[CVPR 2026\] High-Fidelity Mobile Avatars with Pruned Local Blendshapes](high-fidelity_mobile_avatars_with_pruned_local_blendshapes.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[CVPR 2026\] FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing](fishuman_fine-grained_single-image_3d_human_reconstruction_via_multi-view_4d_rem.md)
 
 </div>
 

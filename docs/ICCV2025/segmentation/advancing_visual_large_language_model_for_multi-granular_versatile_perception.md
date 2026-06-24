@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Advancing Visual Large Language Model for Multi-granular Versatile Perception
 description: >-
-  [ICCV 2025][Segmentation][VLLM] This paper proposes MVP-LM, a multi-granular versatile perception framework built upon a visual large language model. Through a novel multi-granular decoder and a CoT-inspired data unifica…
+  [ICCV 2025][Segmentation][VLLM] This paper proposes MVP-LM, a multi-granular versatile perception framework built upon a visual large language model. Through a novel multi-granular decoder and a CoT-inspired data unification strategy, MVP-LM is the first single model to simultaneously support all four perception combinations—box and mask predictions under both word-level and sentence-level instructions—achieving competitive performance on panoptic segmentation…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "CoT data curation"
   - "panoptic segmentation"
 date: 2026-05-08
-content_hash: ec643c0550a8c7a5
+content_hash: 321b09916dfe5619
 ---
 
 # Advancing Visual Large Language Model for Multi-granular Versatile Perception
@@ -136,9 +136,9 @@ With only 1.3B parameters, MVP-LM comprehensively outperforms 7B/13B models on R
 
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 - [\[CVPR 2026\] RealVLG-R1: A Large-Scale Real-World Visual-Language Grounding Benchmark for Robotic Perception and Manipulation](../../CVPR2026/segmentation/realvlg-r1_a_large-scale_real-world_visual-language_grounding_benchmark_for_robo.md)
-- [\[ICCV 2025\] RAGNet: Large-scale Reasoning-based Affordance Segmentation Benchmark towards General Grasping](ragnet_large-scale_reasoning-based_affordance_segmentation_benchmark_towards_gen.md)
-- [\[ICCV 2025\] Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss](prompt_guidance_and_human_proximal_perception_for_hot_prediction_with_regional_j.md)
-- [\[ICCV 2025\] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy](deris_decoupling_perception_and_cognition_for_enhanced_referring_image_segmentat.md)
+- [\[CVPR 2025\] GLUS: Global-Local Reasoning Unified into A Single Large Language Model for Video Segmentation](../../CVPR2025/segmentation/glus_global-local_reasoning_unified_into_a_single_large_language_model_for_video.md)
+- [\[CVPR 2025\] SAM2-LOVE: Segment Anything Model 2 in Language-Aided Audio-Visual Scenes](../../CVPR2025/segmentation/sam2-love_segment_anything_model_2_in_language-aided_audio-visual_scenes.md)
+- [\[CVPR 2025\] StoryGPT-V: Large Language Models as Consistent Story Visualizers](../../CVPR2025/segmentation/storygpt-v_large_language_models_as_consistent_story_visualizers.md)
 
 </div>
 

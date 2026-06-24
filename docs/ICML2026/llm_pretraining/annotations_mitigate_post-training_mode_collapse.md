@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Annotations Mitigate Post-Training Mode Collapse
 description: >-
-  [ICML 2026][Pretraining][SFT] The authors observe that SFT aligns models with a low-entropy semantic prior, leading to "inverse scaling" where larger instruction-tuned models become increasingly repetitive. They propose "Annotation-Anchored Training"—tagging documents with semantic tags during pre-training and masking the loss on these tags during
+  [ICML 2026][LLM Pretraining][Mode Collapse] The authors observe that SFT aligns models with a low-entropy semantic prior, leading to "inverse scaling" where larger instruction-tuned models become increasingly repetitive. They propose "Annotation-Anchored Training"—tagging documents with semantic tags during pre-training and masking the loss on these tags during SFT—enabling the model to sample semantics before generating responses, which reduces the semantic diversity gap by…
 tags:
-  - ICML 2026
-  - Pretraining
-  - SFT
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "Mode Collapse"
+  - "SFT"
+  - "Semantic Entropy"
+  - "Annotation Anchoring"
+  - "Diversity-Quality Trade-off"
 date: 2026-05-08
-content_hash: 033781660abeaf6e
+content_hash: fd38a3be112372a8
 ---
+
 # Annotations Mitigate Post-Training Mode Collapse
 
 **Conference**: ICML 2026  

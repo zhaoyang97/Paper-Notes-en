@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MedLIME: A Distribution-Aligned and Evidence-Supported Framework for Medical Saliency Explanations
 description: >-
-  [CVPR 2026][Interpretability][LIME] MedLIME enhances the classic black-box explanation method LIME with three key components: Generative Masking (GM) using MAE to ensure perturbed samples remain in-distribution, Supervised Test-Time Adaptation (STTA) to align inputs with the model's distribution, and Evidence-Based Regularization (EBR) via kNN and kernel
+  [CVPR 2026][Interpretability][XAI] MedLIME enhances the classic black-box explanation method LIME with three key components: Generative Masking (GM) using MAE to ensure perturbed samples remain in-distribution, Supervised Test-Time Adaptation (STTA) to align inputs with the model's distribution, and Evidence-Based Regularization (EBR) via kNN and kernel estimation to incorporate historical clinical evidence. This framework improves the quality of saliency maps (AUPRC) for med…
 tags:
-  - CVPR 2026
-  - Interpretability
-  - LIME
+  - "CVPR 2026"
+  - "Interpretability"
+  - "XAI"
+  - "Saliency Map"
+  - "LIME"
+  - "Black-box Explanation"
+  - "Test-time Adaptation"
 date: 2026-05-08
-content_hash: 5818f9e62a0b2881
+content_hash: 36827c564b791073
 ---
+
 # MedLIME: A Distribution-Aligned and Evidence-Supported Framework for Medical Saliency Explanations
 
 **Conference**: CVPR 2026  
@@ -129,11 +134,11 @@ Ours improves by up to 7% relative to the best baseline. On BUID (small lesions)
 
 ## Related Papers
 
-- [\[CVPR 2026\] Measuring the (Un)Faithfulness of Concept-Based Explanations](measuring_the_unfaithfulness_of_concept-based_explanations.md)
+- [\[ICLR 2026\] Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations](../../ICLR2026/interpretability/joint_distributioninformed_shapley_values_for_sparse_counterfactual_explanations.md)
 - [\[ICML 2025\] Evaluating Neuron Explanations: A Unified Framework with Sanity Checks](../../ICML2025/interpretability/evaluating_neuron_explanations_a_unified_framework_with_sanity_checks.md)
-- [\[CVPR 2026\] Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency](learning_where_to_look_and_how_to_judge_resolution-agnostic_image_quality_assess.md)
-- [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
-- [\[ICML 2026\] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution](../../ICML2026/interpretability/manifold-aligned_guided_integrated_gradients_for_reliable_feature_attribution.md)
+- [\[CVPR 2026\] Measuring the (Un)Faithfulness of Concept-Based Explanations](measuring_the_unfaithfulness_of_concept-based_explanations.md)
+- [\[ICLR 2026\] Evidence for Limited Metacognition in LLMs](../../ICLR2026/interpretability/evidence_for_limited_metacognition_in_llms.md)
+- [\[ICLR 2026\] Medical Interpretability and Knowledge Maps of Large Language Models](../../ICLR2026/interpretability/medical_interpretability_and_knowledge_maps_of_large_language_models.md)
 
 </div>
 

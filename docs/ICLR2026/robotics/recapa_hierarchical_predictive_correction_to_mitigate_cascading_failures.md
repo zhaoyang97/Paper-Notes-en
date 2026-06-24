@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReCAPA: Hierarchical Predictive Correction to Mitigate Cascading Failures
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] ReCAPA decomposes long-horizon trajectories of embodied agents into three levels: "Action—Subgoal—Trajectory." It utilizes low-level predictions of high-level semantics to backpropagate correction signals. Combined with Sinkhorn global alignment and Score-field local alignment, it suppresses deviations during the train
+  [ICLR 2026][Robotics][Embodied Agents] ReCAPA decomposes long-horizon trajectories of embodied agents into three levels: "Action—Subgoal—Trajectory." It utilizes low-level predictions of high-level semantics to backpropagate correction signals. Combined with Sinkhorn global alignment and Score-field local alignment, it suppresses deviations during the training phase before they accumulate into cascading failures. ReCAPA achieves higher success rates than strong LLM/LMM baseli…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICLR 2026"
+  - "Robotics"
+  - "Embodied Agents"
+  - "VLA"
+  - "Cascading Failures"
+  - "Cross-layer Prediction"
+  - "Trajectory Alignment"
 date: 2026-05-08
-content_hash: 5df6a77b244d9e09
+content_hash: 7e6cc93e05e5fd70
 ---
+
 # ReCAPA: Hierarchical Predictive Correction to Mitigate Cascading Failures
 
 **Conference**: ICLR 2026  

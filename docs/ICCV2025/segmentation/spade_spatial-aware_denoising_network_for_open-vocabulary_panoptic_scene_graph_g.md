@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SPADE: Spatial-Aware Denoising Network for Open-vocabulary Panoptic Scene Graph Generation
 description: >-
-  [ICCV 2025][Segmentation][Panoptic Scene Graph Generation] This paper proposes SPADE — a spatial-aware denoising network for open-vocabulary panoptic scene graph generation (PSG). It adapts a pretrained diffusion model i…
+  [ICCV 2025][Segmentation][Panoptic Scene Graph Generation] This paper proposes SPADE — a spatial-aware denoising network for open-vocabulary panoptic scene graph generation (PSG). It adapts a pretrained diffusion model into a PSG-specific spatial prior extractor via DDIM inversion-guided calibration, and designs a relational graph Transformer to capture both long-range and local context. SPADE substantially outperforms prior state-of-the-art methods in both closed-set and ope…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Spatial Relation Reasoning"
   - "Graph Transformer"
 date: 2026-05-08
-content_hash: dd1baefa2c791fdf
+content_hash: 07cd48ea63fde054
 ---
 
 # SPADE: Spatial-Aware Denoising Network for Open-vocabulary Panoptic Scene Graph Generation
@@ -155,10 +155,10 @@ SPADE is a two-stage approach:
 ## Related Papers
 
 - [\[CVPR 2026\] DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime](../../CVPR2026/segmentation/dsflash_panoptic_scene_graph_realtime.md)
+- [\[CVPR 2025\] Learning 4D Panoptic Scene Graph Generation from Rich 2D Visual Scene](../../CVPR2025/segmentation/learning_4d_panoptic_scene_graph_generation_from_rich_2d_visual_scene.md)
+- [\[ECCV 2024\] OpenPSG: Open-set Panoptic Scene Graph Generation via Large Multimodal Models](../../ECCV2024/segmentation/openpsg_open-set_panoptic_scene_graph_generation_via_large_multimodal_models.md)
 - [\[ICCV 2025\] SCORE: Scene Context Matters in Open-Vocabulary Remote Sensing Instance Segmentation](score_scene_context_matters_in_openvocabulary_remote_sensing.md)
 - [\[ICCV 2025\] Auto-Vocabulary Semantic Segmentation](auto-vocabulary_semantic_segmentation.md)
-- [\[ICCV 2025\] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation](floss_free_lunch_in_openvocabulary_semantic_segmentation.md)
-- [\[ICCV 2025\] Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation](understanding_personal_concept_in_open-vocabulary_semantic_segmentation.md)
 
 </div>
 

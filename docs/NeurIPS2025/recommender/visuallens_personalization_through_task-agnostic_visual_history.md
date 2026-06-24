@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VisualLens: Personalization through Task-Agnostic Visual History
 description: >-
-  [NeurIPS 2025][Recommender Systems][Multimodal Recommendation] This paper proposes VisualLens, a framework that leverages users' task-agnostic visual history (everyday photos) to enable cross-domain personalized recommen…
+  [NeurIPS 2025][Recommender Systems][Multimodal Recommendation] This paper proposes VisualLens, a framework that leverages users' task-agnostic visual history (everyday photos) to enable cross-domain personalized recommendation via spectrum user profiles and multimodal large language models. On the newly constructed Google Review-V and Yelp-V datasets, VisualLens surpasses GPT-4o by 2–5% in Hit@3.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "MLLM"
   - "User Profiling"
 date: 2026-05-08
-content_hash: d8e960290040419f
+content_hash: 35dffd2146a74c2b
 ---
 
 # VisualLens: Personalization through Task-Agnostic Visual History
@@ -137,9 +137,9 @@ VisualLens comprises two main stages: offline user profile generation and online
 
 - [\[NeurIPS 2025\] MMPB: It's Time for Multi-Modal Personalization](mmpb_its_time_for_multi-modal_personalization.md)
 - [\[ACL 2026\] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction](../../ACL2026/recommender/learning_to_retrieve_user_history_and_generate_user_profiles_for_personalized_pe.md)
-- [\[ICLR 2026\] ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation](../../ICLR2026/recommender/propersim_developing_proactive_and_personalized_ai_assistants_through_user-assis.md)
 - [\[ICML 2026\] T-POP: Test-Time Personalization with Online Preference Feedback](../../ICML2026/recommender/t-pop_test-time_personalization_with_online_preference_feedback.md)
 - [\[ACL 2026\] From Past To Path: Masked History Learning for Next-Item Prediction in Generative Recommendation](../../ACL2026/recommender/from_past_to_path_masked_history_learning_for_next-item_prediction_in_generative.md)
+- [\[ICLR 2026\] RPM: Reasoning-Level Personalization for Black-Box Large Language Models](../../ICLR2026/recommender/rpm_reasoning-level_personalization_for_black-box_large_language_models.md)
 
 </div>
 

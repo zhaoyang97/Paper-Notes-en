@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging
 description: >-
-  [ICCV 2025][3D generation] This paper proposes Hi3DGen, a framework that uses normal maps as an intermediate representation to bridge 2D images and 3D geometry. Through two core components — a Noise-injected Regressive N…
+  [ICCV 2025][3D Vision][3D generation] This paper proposes Hi3DGen, a framework that uses normal maps as an intermediate representation to bridge 2D images and 3D geometry. Through two core components — a Noise-injected Regressive Normal Estimation (NiRNE) module and Normal-Regularized Latent Diffusion (NoRLD) — the framework significantly improves the geometric detail fidelity of generated 3D models.
 tags:
   - "ICCV 2025"
+  - "3D Vision"
   - "3D generation"
   - "normal map bridging"
   - "noise-injected regression"
@@ -12,7 +13,7 @@ tags:
   - "latent diffusion regularization"
   - "high-fidelity geometry"
 date: 2026-05-08
-content_hash: 345cbc47e8b1e189
+content_hash: edfbc1b02bd495d7
 ---
 
 # Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging
@@ -157,9 +158,9 @@ NiRNE simultaneously achieves the sharpness of diffusion-based methods and the s
 
 - [\[ICCV 2025\] Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation](bridging_3d_anomaly_localization_and_repair_via_high-qualit.md)
 - [\[ICCV 2025\] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting](gazegaussian_high-fidelity_gaze_redirection_with_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] LATTICE: Democratize High-Fidelity 3D Generation at Scale](../../CVPR2026/3d_vision/lattice_democratize_high-fidelity_3d_generation_at_scale.md)
 - [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
-- [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
-- [\[ICCV 2025\] HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity](hineus_high-fidelity_neural_surface_mitigating_low-texture_and_reflective_ambigu.md)
+- [\[CVPR 2026\] Skullptor: High Fidelity 3D Head Reconstruction in Seconds with Multi-View Normal Prediction](../../CVPR2026/3d_vision/skullptor_high_fidelity_3d_head_reconstruction_in_seconds_with_multi-view_normal.md)
 
 </div>
 

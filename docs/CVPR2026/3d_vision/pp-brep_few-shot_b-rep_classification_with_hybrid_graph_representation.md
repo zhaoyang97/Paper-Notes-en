@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PP-Brep: Few-Shot B-rep Classification with Hybrid Graph Representation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper deconstructs the B-rep model of CAD into a three-layer hybrid graph (local topology graph + global parallel graph + region correlation hypergraph), paired with a hierarchical heterogeneous GNN. It utilizes RL-adaptive perturbation for contrastive pre-training to learn general representations and structure-aw
+  [CVPR 2026][3D Vision][B-rep Classification] This paper deconstructs the B-rep model of CAD into a three-layer hybrid graph (local topology graph + global parallel graph + region correlation hypergraph), paired with a hierarchical heterogeneous GNN. It utilizes RL-adaptive perturbation for contrastive pre-training to learn general representations and structure-aware graph prompts for few-shot fine-tuning. It significantly outperforms general graph prompt methods at 1/3/5-shot…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "B-rep Classification"
+  - "Few-Shot Learning"
+  - "Hybrid Graph Representation"
+  - "Contrastive Pre-training"
+  - "Graph Prompt"
 date: 2026-05-08
-content_hash: 76dcf118f4bedfb4
+content_hash: c984704c6b6476d2
 ---
+
 # PP-Brep: Few-Shot B-rep Classification with Hybrid Graph Representation
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,17 @@ Pre-training and fine-tuning strategies: Ours (RL) achieved 72.89% Accuracy, sig
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] HiFi-BRep: High-Fidelity Latent Representation for Robust B-Rep Generation](hifi-brep_high-fidelity_latent_representation_for_robust_b-rep_generation.md)
+- [\[CVPR 2026\] AutoRegressive Generation with B-rep Holistic Token Sequence Representation](autoregressive_generation_with_b-rep_holistic_token_sequence_representation.md)
+- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
+- [\[CVPR 2026\] EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization](emotag_emotion-aware_talking_head_synthesis_on_gaussian_splatting_with_few-shot_.md)
+- [\[CVPR 2026\] CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation](clipoint3d_language-grounded_few-shot_unsupervised_3d_point_cloud_domain_adaptat.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation](scope_scene-contextualized_incremental_few-shot_3d_segmentation.md)

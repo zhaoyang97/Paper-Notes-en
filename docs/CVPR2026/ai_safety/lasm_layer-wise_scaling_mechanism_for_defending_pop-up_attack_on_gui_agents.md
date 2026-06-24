@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LaSM: Layer-wise Scaling Mechanism for Defending Pop-up Attack on GUI Agents
 description: >-
-  [CVPR 2026][AI Safety][GUI Agent] Through a systematic analysis of how pop-up injection attacks distort the layer-wise attention of GUI Agents, the authors found that deep-layer attention diverges significantly between "correct" and "incorrect" samples. They propose LaSM—a training-free, plug-and-play layer-wise scaling mechanism that amplifies attenti
+  [CVPR 2026][AI Safety][GUI Agent] Through a systematic analysis of how pop-up injection attacks distort the layer-wise attention of GUI Agents, the authors found that deep-layer attention diverges significantly between "correct" and "incorrect" samples. They propose LaSM—a training-free, plug-and-play layer-wise scaling mechanism that amplifies attention and MLP weights specifically in middle semantic layers. This mechanism improves the defense success rate (DSR) of Qwen2-VL-…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - GUI Agent
+  - "CVPR 2026"
+  - "AI Safety"
+  - "GUI Agent"
+  - "Pop-up Injection Attack"
+  - "Attention Alignment"
+  - "Layer-wise Scaling"
+  - "Training-free Defense"
 date: 2026-05-08
-content_hash: 439e0b33ecd8dd88
+content_hash: 37e530f3a2c45ed4
 ---
+
 # LaSM: Layer-wise Scaling Mechanism for Defending Pop-up Attack on GUI Agents
 
 **Conference**: CVPR 2026  
@@ -131,9 +136,9 @@ LaSM acts as a plug-and-play plugin that can resolve gaps in DPO, Direct Awarene
 
 - [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
 - [\[ICML 2026\] Scaling Unsupervised Multi-Source Federated Domain Adaptation through Group-Wise Discrepancy Minimization](../../ICML2026/ai_safety/scaling_unsupervised_multi-source_federated_domain_adaptation_through_group-wise.md)
-- [\[CVPR 2026\] DualMirage: Hunting Stealthy Multimodal LLM Agents via CAPTCHAs with Contour and Adversarial Illusions](dualmirage_hunting_stealthy_multimodal_llm_agents_via_captchas_with_contour_and_.md)
-- [\[CVPR 2026\] AntiStyler: Defending Object Detection Models Against Adversarial Patch Attacks Using Style Removal](antistyler_defending_object_detection_models_against_adversarial_patch_attacks_u.md)
 - [\[CVPR 2026\] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models](eliminate_distance_differences_induced_by_backdoor_attacks_layer-selective_train.md)
+- [\[CVPR 2026\] AntiStyler: Defending Object Detection Models Against Adversarial Patch Attacks Using Style Removal](antistyler_defending_object_detection_models_against_adversarial_patch_attacks_u.md)
+- [\[CVPR 2026\] SafeRoPE: Risk-specific Head-wise Embedding Rotation for Safe Generation in Rectified Flow Transformers](saferope_risk-specific_head-wise_embedding_rotation_for_safe_generation_in_recti.md)
 
 </div>
 

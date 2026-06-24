@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Addressing Text Embedding Leakage in Diffusion-Based Image Editing
 description: >-
-  [ICCV 2025][Image Generation][Image Editing] This work identifies the root cause of attribute leakage in text-driven diffusion-based image editing — semantic entanglement in EOS embeddings of autoregressive text encoders…
+  [ICCV 2025][Image Generation][Image Editing] This work identifies the root cause of attribute leakage in text-driven diffusion-based image editing — semantic entanglement in EOS embeddings of autoregressive text encoders — and proposes the ALE framework (ORE + RGB-CAM + BB) to comprehensively eliminate attribute leakage through embedding disentanglement, attention masking, and background blending.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Text Embeddings"
   - "Cross-Attention"
 date: 2026-05-08
-content_hash: f196a04d19793690
+content_hash: 425e69ddf2949404
 ---
 
 # Addressing Text Embedding Leakage in Diffusion-Based Image Editing
@@ -205,8 +205,8 @@ ALE outperforms all baselines across every metric: TEL is reduced by 3.56 over I
 ## Related Papers
 
 - [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](ale_attribute_leakage_free_editing.md)
-- [\[ICCV 2025\] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing](early_timestep_zero-shot_candidate_selection_for_instruction-guided_image_editin.md)
 - [\[ICCV 2025\] Text Embedding Knows How to Quantize Text-Guided Diffusion Models](text_embedding_knows_how_to_quantize_text-guided_diffusion_models.md)
+- [\[ICCV 2025\] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing](early_timestep_zero-shot_candidate_selection_for_instruction-guided_image_editin.md)
 - [\[ICCV 2025\] Fair Generation without Unfair Distortions: Debiasing Text-to-Image Generation with Entanglement-Free Attention](fair_generation_without_unfair_distortions_debiasing_text-to-image_generation_wi.md)
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](../../NeurIPS2025/image_generation/training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
 

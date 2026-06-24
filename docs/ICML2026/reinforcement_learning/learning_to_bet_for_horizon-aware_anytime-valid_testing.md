@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning to Bet for Horizon-Aware Anytime-Valid Testing
 description: >-
-  [ICML 2026][Reinforcement Learning][DQN] This paper reformulates the design of anytime-valid sequential tests under a strict observation limit $N$ as a finite-horizon optimal control problem with state space $(t,\log W_t)$. It theoretically proves a three-zone "phase portrait"—optimal Kelly betting in the "on-schedule" middle band, aggressive betting when fal
+  [ICML 2026][Reinforcement Learning][Testing martingales] This paper reformulates the design of anytime-valid sequential tests under a strict observation limit $N$ as a finite-horizon optimal control problem with state space $(t,\log W_t)$. It theoretically proves a three-zone "phase portrait"—optimal Kelly betting in the "on-schedule" middle band, aggressive betting when falling behind, and conservative betting when ahead. A unified DQN agent…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - DQN
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Testing martingales"
+  - "Kelly betting"
+  - "Confidence sequences"
+  - "Phase portrait"
+  - "DQN"
+  - "Finite-horizon decision-making"
 date: 2026-05-08
-content_hash: 65a7c97be585449d
+content_hash: de7f52e822048e2a
 ---
+
 # Learning to Bet for Horizon-Aware Anytime-Valid Testing
 
 **Conference**: ICML 2026  
@@ -124,6 +130,7 @@ The DQN, trained only on synthetic Beta distributions, maintains dominance acros
 - **vs orabona2023tight (Universal Portfolio)**: Uses universal portfolios for strong regret guarantees in horizon-agnostic settings. Ours is a complementary route for horizon-aware power maximization using DRL.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

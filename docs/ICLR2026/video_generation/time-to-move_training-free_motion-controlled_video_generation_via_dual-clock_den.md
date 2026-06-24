@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Time-to-Move: Training-Free Motion-Controlled Video Generation via Dual-Clock Denoising
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Time-to-Move treats rough animations obtained via dragging or depth re-projection as motion sketches. By anchoring appearance using the first frame and employing different noise clocks for controlled and uncontrolled regions during sampling, it achieves precise motion and pixel-level appearance control without training
+  [ICLR2026][Video Generation][Motion-Controlled Video Generation] Time-to-Move treats rough animations obtained via dragging or depth re-projection as motion sketches. By anchoring appearance using the first frame and employing different noise clocks for controlled and uncontrolled regions during sampling, it achieves precise motion and pixel-level appearance control without training or modifying the backbone.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Motion-Controlled Video Generation"
+  - "Image-to-Video Diffusion"
+  - "Training-Free Control"
+  - "Dual-Clock Denoising"
+  - "Appearance Control"
 date: 2026-05-08
-content_hash: be1f132ff09923d7
+content_hash: 93c6a99414f3a678
 ---
+
 # Time-to-Move: Training-Free Motion-Controlled Video Generation via Dual-Clock Denoising
 
 **Conference**: ICLR2026  
@@ -135,14 +141,14 @@ In the SVD group, TTM's quality matches MotionPro while producing fewer artifact
 - Value: ⭐⭐⭐⭐⭐ Highly practical for real-world creative applications due to its training-free nature.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](../../CVPR2026/video_generation/flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
-- [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
 - [\[ICLR 2026\] LightCtrl: Training-free Controllable Video Relighting](lightctrl_training-free_controllable_video_relighting.md)
+- [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
 - [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
 - [\[ICML 2026\] MotiMotion: Motion-Controlled Video Generation with Visual Reasoning](../../ICML2026/video_generation/motimotion_motion-controlled_video_generation_with_visual_reasoning.md)
 

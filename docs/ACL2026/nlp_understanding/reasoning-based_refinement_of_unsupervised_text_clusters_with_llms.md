@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] A reasoning-based cluster refinement framework is proposed, positioning LLMs as semantic judges (rather than embedding generators) to verify and restructure unsupervised clustering outputs. Through three reasoning stages—consistency verification, redundancy adjudication, and label grounding—this framework significantly
+  [ACL 2026 Findings][NLP Understanding][Text Cluster Refinement] A reasoning-based cluster refinement framework is proposed, positioning LLMs as semantic judges (rather than embedding generators) to verify and restructure unsupervised clustering outputs. Through three reasoning stages—consistency verification, redundancy adjudication, and label grounding—this framework significantly improves cluster coherence and human-aligned labeling quality on social media corpora.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026 Findings"
+  - "NLP Understanding"
+  - "Text Cluster Refinement"
+  - "LLM Semantic Juror"
+  - "Consistency Verification"
+  - "Redundancy Adjudication"
+  - "Label Grounding"
 date: 2026-05-08
-content_hash: 4d0c53efb14c3743
+content_hash: cc1fb5cc705168b6
 ---
+
 # Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs
 
 **Conference**: ACL 2026 Findings  
@@ -134,11 +140,11 @@ The framework requires no training and is entirely based on zero-shot reasoning 
 
 ## Related Papers
 
+- [\[ACL 2026\] Revealing Temporal Framing in News Text](uncovering_temporal_framing_in_the_news.md)
+- [\[ACL 2026\] DiZiNER: Disagreement-guided Instruction Refinement via Pilot Annotation Simulation for Zero-shot Named Entity Recognition](diziner_disagreement-guided_instruction_refinement_via_pilot_annotation_simulati.md)
 - [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
 - [\[ACL 2026\] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines](llm-guided_semantic_bootstrapping_for_interpretable_text_classification_with_tse.md)
-- [\[ACL 2026\] DiZiNER: Disagreement-guided Instruction Refinement via Pilot Annotation Simulation for Zero-shot Named Entity Recognition](diziner_disagreement-guided_instruction_refinement_via_pilot_annotation_simulati.md)
-- [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
-- [\[ACL 2026\] MTSQL-R1: Towards Long-Horizon Multi-Turn Text-to-SQL via Agentic Training](mtsql-r1_towards_long-horizon_multi-turn_text-to-sql_via_agentic_training.md)
+- [\[ACL 2026\] AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models](adaptime_enabling_adaptive_temporal_reasoning_in_large_language_models.md)
 
 </div>
 

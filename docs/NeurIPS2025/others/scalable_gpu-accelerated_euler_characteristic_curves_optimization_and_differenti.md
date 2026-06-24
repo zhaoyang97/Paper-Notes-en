@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scalable GPU-Accelerated Euler Characteristic Curves: Optimization and Differentiable Learning for PyTorch
 description: >-
-  [NeurIPS 2025 (NeurReps Workshop)][Euler characteristic curves] This paper proposes an ECC CUDA kernel optimized for modern Ampere GPUs, achieving 16–2000× speedup over prior GPU implementations…
+  [NeurIPS 2025 (NeurReps Workshop)][Euler characteristic curves] This paper proposes an ECC CUDA kernel optimized for modern Ampere GPUs, achieving 16–2000× speedup over prior GPU implementations, and introduces a differentiable PyTorch layer supporting end-to-end topological feature learning on dense grid images via DECT-style sigmoid relaxation.
 tags:
   - "NeurIPS 2025 (NeurReps Workshop)"
   - "Euler characteristic curves"
@@ -11,7 +11,7 @@ tags:
   - "CUDA kernels"
   - "topological data analysis"
 date: 2026-05-08
-content_hash: af8bed90c2d41ee6
+content_hash: ec911da008d7dd87
 ---
 
 # Scalable GPU-Accelerated Euler Characteristic Curves: Optimization and Differentiable Learning for PyTorch
@@ -136,11 +136,11 @@ The PyTorch layer exposes learnable threshold and optional direction parameters.
 
 ## Related Papers
 
+- [\[CVPR 2025\] Locally Orderless Images for Optimization in Differentiable Rendering](../../CVPR2025/others/locally_orderless_images_for_optimization_in_differentiable_rendering.md)
 - [\[NeurIPS 2025\] Exact Learning of Arithmetic with Differentiable Agents](exact_learning_of_arithmetic_with_differentiable_agents.md)
 - [\[ICML 2026\] DisjunctiveNet: Neural Symbolic Learning via Differentiable Convexified Optimization Layers](../../ICML2026/others/disjunctivenet_neural_symbolic_learning_via_differentiable_convexified_optimizat.md)
 - [\[NeurIPS 2025\] A Differentiable Model of Supply-Chain Shocks](a_differentiable_model_of_supply-chain_shocks.md)
 - [\[NeurIPS 2025\] Learning to Condition: A Neural Heuristic for Scalable MPE Inference](learning_to_condition_a_neural_heuristic_for_scalable_mpe_inference.md)
-- [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
 
 </div>
 

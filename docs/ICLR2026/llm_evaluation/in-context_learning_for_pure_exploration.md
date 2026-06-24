@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] In-Context Learning for Pure Exploration
 description: >-
-  [ICLR 2026][LLM Evaluation][Best Arm Identification] The paper proposes ICPE (In-Context Pure Exploration), an in-context learning framework combining supervised and reinforcement learning. It uses Transformers to directly learn exploration strategies from experience, achieving near-optimal instance-adaptive performance in active sequential hypothesis testing/pure explor
+  [ICLR 2026][LLM Evaluation][In-Context Learning] The paper proposes ICPE (In-Context Pure Exploration), an in-context learning framework combining supervised and reinforcement learning. It uses Transformers to directly learn exploration strategies from experience, achieving near-optimal instance-adaptive performance in active sequential hypothesis testing/pure exploration problems without explicit modeling of information structures.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Best Arm Identification
-  - Transformer
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "In-Context Learning"
+  - "Pure Exploration"
+  - "Hypothesis Testing"
+  - "Best Arm Identification"
+  - "Transformer"
 date: 2026-05-08
-content_hash: daf720a2d222b3ad
+content_hash: 3dd41baaf28d7b68
 ---
+
 # In-Context Learning for Pure Exploration
 
 **Conference**: ICLR 2026  
@@ -178,8 +182,8 @@ The inference network uses cross-entropy: $\mathcal{L}_{\text{inf}}(\phi) = -\fr
 - [\[ICLR 2026\] In-Context Learning of Temporal Point Processes with Foundation Inference Models](in-context_learning_of_temporal_point_processes_with_foundation_inference_models.md)
 - [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](detecting_data_contamination_in_llms_via_in-context_learning.md)
 - [\[ICML 2025\] Sample Efficient Demonstration Selection for In-Context Learning](../../ICML2025/llm_evaluation/sample_efficient_demonstration_selection_for_in-context_learning.md)
+- [\[ICLR 2026\] EARTHSE: A Benchmark for Earth Science Knowledge Exploration](earthse_a_benchmark_evaluating_earth_scientific_exploration_capability_for_large.md)
 - [\[ICLR 2026\] Towards Self-Evolving Agent Benchmarks: Validatable Agent Trajectory via Test-Time Exploration](towards_self-evolving_agent_benchmarks_validatable_agent_trajectory_via_test-tim.md)
-- [\[ICLR 2026\] Human-LLM Collaborative Feature Engineering for Tabular Learning](human-llm_collaborative_feature_engineering_for_tabular_data.md)
 
 </div>
 

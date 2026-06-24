@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval
 description: >-
-  [AAAI 2026][Multi-Agent][Named Entity Recognition] This paper proposes KDR-Agent, a multi-agent framework in which a central planner coordinates three specialized agents—knowledge retrieval, contextual disambiguation…
+  [AAAI 2026][Multi-Agent][Named Entity Recognition] This paper proposes KDR-Agent, a multi-agent framework in which a central planner coordinates three specialized agents—knowledge retrieval, contextual disambiguation, and reflective error correction—combined with natural language type definitions and entity-level positive/negative contrastive demonstrations. Without any fine-tuning, KDR-Agent comprehensively outperforms zero-shot and few-shot baselines across 10 low-resource…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -14,7 +14,7 @@ tags:
   - "Contrastive Demonstrations"
   - "Reflective Error Correction"
 date: 2026-05-08
-content_hash: 2b47571ce79ae715
+content_hash: 75a4dfb508451329
 ---
 
 # KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval
@@ -148,11 +148,11 @@ The paradigm of distributing different error types across specialized agents is 
 
 ## Related Papers
 
-- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](../../ACL2026/multi_agent/scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
 - [\[AAAI 2026\] LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval](llandmark_a_multi-agent_framework_for_landmark-aware_multimodal_interactive_vide.md)
+- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](../../ACL2026/multi_agent/scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
+- [\[ICLR 2026\] AI-for-Science Low-code Platform with Bayesian Adversarial Multi-Agent Framework](../../ICLR2026/multi_agent/ai-for-science_low-code_platform_with_bayesian_adversarial_multi-agent_framework.md)
 - [\[AAAI 2026\] ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment](arcane_a_multi-agent_framework_for_interpretable_and_configurable_alignment.md)
 - [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](../../ICML2026/multi_agent/e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
-- [\[AAAI 2026\] FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](finrpt_dataset_evaluation_system_and_llm-based_multi-agent_framework_for_equity_.md)
 
 </div>
 

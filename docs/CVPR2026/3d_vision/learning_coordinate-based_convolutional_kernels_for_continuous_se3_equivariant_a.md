@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ECKConv is proposed to define convolutional kernels on the double coset space $\text{SO(2)}\backslash\text{SE(3)}/\text{SO(2)}$ within the intertwiner framework. By explicitly parameterizing kernel functions via coordinate networks, it achieves both continuous SE(3) equivariance and large-scale scalability for the firs
+  [CVPR 2026][3D Vision][Point Cloud Analysis] ECKConv is proposed to define convolutional kernels on the double coset space $\text{SO(2)}\backslash\text{SE(3)}/\text{SO(2)}$ within the intertwiner framework. By explicitly parameterizing kernel functions via coordinate networks, it achieves both continuous SE(3) equivariance and large-scale scalability for the first time, validated across classification, registration, and segmentation tasks.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Analysis"
+  - "SE(3) Equivariance"
+  - "Group Convolution"
+  - "Double Coset Space"
+  - "Coordinate Network"
+  - "intertwiner framework"
 date: 2026-05-08
-content_hash: 792499a944a01604
+content_hash: 91185415470c9514
 ---
+
 # ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis
 
 **Conference**: CVPR 2026  
@@ -163,10 +170,10 @@ Aggregating $\omega_j f(x_i)$ over neighbors first, then multiplying by the basi
 ## Related Papers
 
 - [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
+- [\[CVPR 2026\] Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics](efficient_hybrid_se3-equivariant_visuomotor_flow_policy_via_spherical_harmonics_.md)
+- [\[AAAI 2026\] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis](../../AAAI2026/3d_vision/graph_smoothing_for_enhanced_local_geometry_learning_in_point_cloud_analysis.md)
 - [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
+- [\[ECCV 2024\] Equi-GSPR: Equivariant SE(3) Graph Network Model for Sparse Point Cloud Registration](../../ECCV2024/3d_vision/equi-gspr_equivariant_se3_graph_network_model_for_sparse_point_cloud_registratio.md)
 
 </div>
 

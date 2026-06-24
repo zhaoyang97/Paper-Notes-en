@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Implicit 4D Gaussian Splatting for Fast Motion with Large Inter-Frame Displacements
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] SPIN-4DGS reformulates the failure mode where "poorly learned Gaussian attributes lead to blurred or disappearing dynamic objects" under fast motion as a problem of "explicitly slicing by $(x,y,z,t)$ to obtain reliable spatiotemporal positions, and then using a lightweight feedforward network to decode scale, rotation,
+  [ICLR 2026][3D Vision][4D Gaussian Splatting] SPIN-4DGS reformulates the failure mode where "poorly learned Gaussian attributes lead to blurred or disappearing dynamic objects" under fast motion as a problem of "explicitly slicing by $(x,y,z,t)$ to obtain reliable spatiotemporal positions, and then using a lightweight feedforward network to decode scale, rotation, color, and opacity directly from these positions." It achieves an average PSNR 1.4–1.7 dB higher than the stronge…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Dynamic Scene Reconstruction"
+  - "Fast Motion with Large Displacements"
+  - "Implicit Neural Networks"
+  - "Spatiotemporal Slicing"
 date: 2026-05-08
-content_hash: cea1f886cd2d225f
+content_hash: 2cb84b9a79c015c1
 ---
+
 # Implicit 4D Gaussian Splatting for Fast Motion with Large Inter-Frame Displacements
 
 **Conference**: ICLR 2026  
@@ -146,16 +152,16 @@ Ours achieves the best PSNR across all six scenes, surpassing Realtime-4DGS by +
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction](../../AAAI2026/3d_vision/sparse4dgs_4d_gaussian_splatting_for_sparse-frame_dynamic_scene_reconstruction.md)
-- [\[CVPR 2026\] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling](../../CVPR2026/3d_vision/cat-gs_efficient_3dgs_rendering_for_large-scale_scenes_with_inter-frame_caching_.md)
 - [\[ICLR 2026\] Mango-GS: Enhancing Spatio-Temporal Consistency in Dynamic Scenes Reconstruction using Multi-Frame Node-Guided 4D Gaussian Splatting](mango-gs_enhancing_spatio-temporal_consistency_in_dynamic_scenes_reconstruction_.md)
+- [\[CVPR 2026\] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling](../../CVPR2026/3d_vision/cat-gs_efficient_3dgs_rendering_for_large-scale_scenes_with_inter-frame_caching_.md)
+- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](../../CVPR2026/3d_vision/4c4d_4_camera_4d_gaussian_splatting.md)
 - [\[ICLR 2026\] FastAvatar: Towards Unified and Fast 3D Avatar Reconstruction with Large Gaussian Reconstruction Transformers](fastavatar_towards_unified_and_fast_3d_avatar_reconstruction_with_large_gaussian.md)
-- [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
 
 </div>
 

@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] PAI-Bench: A Comprehensive Benchmark For Physical AI
 description: >-
-  [CVPR 2026][Others][Physical AI] PAI-Bench decomposes "Physical AI" into two capability tracks—perception and prediction—and maps them to three tracks: video generation, conditional video generation, and video understanding. Using 2,808 real-world samples paired with task-aligned physical plausibility metrics, the authors systematically evaluate 15 vi
+  [CVPR 2026][Physical AI] PAI-Bench decomposes "Physical AI" into two capability tracks—perception and prediction—and maps them to three tracks: video generation, conditional video generation, and video understanding. Using 2,808 real-world samples paired with task-aligned physical plausibility metrics, the authors systematically evaluate 15 video generation models, 4 controllable generation models, and 16 Multimodal Large Language Models (MLLMs). The findings indicate that wh…
 tags:
-  - CVPR 2026
-  - Others
-  - Physical AI
-  - Video Generation
-  - World Models
+  - "CVPR 2026"
+  - "Physical AI"
+  - "Video Generation"
+  - "World Models"
+  - "Conditional Video Generation"
+  - "Video Understanding"
 date: 2026-05-08
-content_hash: 64abbfc6fd83f221
+content_hash: c596fdaca37b3305
 ---
+
 # PAI-Bench: A Comprehensive Benchmark For Physical AI
 
 **Conference**: CVPR 2026  
@@ -164,15 +166,14 @@ PAI-Bench-U Reasoning Mode Ablation: Pure text reasoning provides almost no help
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases](../../NeurIPS2025/others/rdb2g-bench_a_comprehensive_benchmark_for_automatic_graph_modeling_of_relational.md)
 - [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
+- [\[ICLR 2026\] PU-Bench: A Unified Benchmark for Rigorously Reproducible PU Learning](../../ICLR2026/others/pu-bench_a_unified_benchmark_for_rigorous_and_reproducible_pu_learning.md)
 - [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
 - [\[CVPR 2026\] MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention](mspt_efficient_large-scale_physical_modeling_via_parallelized_multi-scale_attent.md)
-- [\[CVPR 2026\] 4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models](4dworldbench_a_comprehensive_evaluation_framework_for_3d4d_world_generation_mode.md)
 
 </div>
 

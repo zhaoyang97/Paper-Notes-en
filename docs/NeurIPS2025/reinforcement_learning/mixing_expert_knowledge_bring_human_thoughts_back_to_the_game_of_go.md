@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mixing Expert Knowledge: Bring Human Thoughts Back to the Game of Go
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][LLM] This paper proposes LoGos, which applies mixed-domain expert data (Go) and general long chain-of-thought (CoT) reasoning data for cold-start fine-tuning followed by GRPO reinfo…
+  [NeurIPS 2025][Reinforcement Learning][LLM] This paper proposes LoGos, which applies mixed-domain expert data (Go) and general long chain-of-thought (CoT) reasoning data for cold-start fine-tuning followed by GRPO reinforcement learning, enabling a general-purpose LLM to reach professional-level Go performance while preserving strong general reasoning capabilities.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Domain Expert Knowledge"
   - "GRPO"
 date: 2026-05-08
-content_hash: 0dd99a6f6a420f0a
+content_hash: 3d3c9239141aa0da
 ---
 
 # Mixing Expert Knowledge: Bring Human Thoughts Back to the Game of Go
@@ -135,11 +135,11 @@ LoGos achieves 88.6% on the Go benchmark, surpassing KataGo-HumanSL-9d (87.8%), 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Human-Inspired Multi-Level Reinforcement Learning](human-inspired_multi-level_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Continual Knowledge Adaptation for Reinforcement Learning](continual_knowledge_adaptation_for_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Human-Inspired Multi-Level Reinforcement Learning](human-inspired_multi-level_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering](knowledge-based_visual_question_answer_with_multimodal_processing_retrieval_and_.md)
-- [\[NeurIPS 2025\] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization](learning_human-like_rl_agents_through_trajectory_optimization_with_action_quanti.md)
 - [\[NeurIPS 2025\] TRiCo: Triadic Game-Theoretic Co-Training for Robust Semi-Supervised Learning](trico_triadic_game-theoretic_co-training_for_robust_semi-supervised_learning.md)
+- [\[NeurIPS 2025\] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach](multi-objective_reinforcement_learning_with_max-min_criterion_a_game-theoretic_a.md)
 
 </div>
 

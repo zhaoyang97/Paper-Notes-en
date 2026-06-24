@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seizure-Semiology-Suite (S³): A Clinically Multimodal Dataset, Benchmark, and Models for Seizure Semiology Understanding
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] This paper constructs S³, the first large-scale expert-annotated seizure video dataset (438 videos, 35,000+ dense labels, 20 ILAE semiological features), accompanied by a seven-level hierarchical task benchmark and a clinically aligned Seizure-RQI report quality metric. It systematically exposes the failure modes of 11
+  [ICML 2026 Spotlight][Medical Imaging][Seizure Semiology] This paper constructs S³, the first large-scale expert-annotated seizure video dataset (438 videos, 35,000+ dense labels, 20 ILAE semiological features), accompanied by a seven-level hierarchical task benchmark and a clinically aligned Seizure-RQI report quality metric. It systematically exposes the failure modes of 11 open-source MLLMs in temporal localization, spatial lateralization, and clinical faithfulness…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026 Spotlight"
+  - "Medical Imaging"
+  - "Seizure Semiology"
+  - "Clinical Video Understanding"
+  - "Multimodal Large Language Models"
+  - "Report Quality Assessment"
+  - "Neuro-symbolic Classification"
 date: 2026-05-08
-content_hash: a424e1f3e538b987
+content_hash: 3357d74e209a4235
 ---
+
 # Seizure-Semiology-Suite (S³): A Clinically Multimodal Dataset, Benchmark, and Models for Seizure Semiology Understanding
 
 **Conference**: ICML 2026 Spotlight  
@@ -155,7 +161,7 @@ Two types of seizure-specific fine-tuning were applied to Qwen2.5-Omni-7B: **(i)
 - [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](../../CVPR2026/medical_imaging/gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
 - [\[NeurIPS 2025\] FAPEX: Fractional Amplitude-Phase Expressor for Robust Cross-Subject Seizure Prediction](../../NeurIPS2025/medical_imaging/fapex_fractional_amplitude-phase_expressor_for_robust_cross-subject_seizure_pred.md)
 - [\[ICML 2026\] SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment](synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas.md)
-- [\[CVPR 2026\] MedMO: Grounding and Understanding Multimodal Large Language Model for Medical Images](../../CVPR2026/medical_imaging/medmo_grounding_and_understanding_multimodal_large_language_model_for_medical_im.md)
+- [\[ICLR 2026\] M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding](../../ICLR2026/medical_imaging/m3cotbench_benchmark_chain-of-thought_of_mllms_in_medical_image_understanding.md)
 
 </div>
 

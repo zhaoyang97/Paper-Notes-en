@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CARES: Context-Aware Resolution Selector for VLMs
 description: >-
-  [ACL 2026][Multimodal VLM][ANLS] CARES adds a lightweight query-aware resolution selector before the target VLM. Using low-resolution images and text queries, it predicts the minimal input resolution "sufficient to answer." It maintains accuracy across 9 multimodal benchmarks while saving approximately 65–85% of prefill computational costs on average.
+  [ACL2026 Oral][Multimodal VLM][Resolution Selection] CARES adds a lightweight query-aware resolution selector before the target VLM. Using low-resolution images and text queries, it predicts the minimal input resolution "sufficient to answer." It maintains accuracy across 9 multimodal benchmarks while saving approximately 65–85% of prefill computational costs on average.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - ANLS
+  - "ACL2026 Oral"
+  - "Multimodal VLM"
+  - "Resolution Selection"
+  - "Visual Token Compression"
+  - "VLM Inference Acceleration"
+  - "ANLS"
+  - "Continuous Routing"
 date: 2026-05-08
-content_hash: 0075d234478ab4f2
+content_hash: 7e58c9bf55c62b54
 ---
+
 # CARES: Context-Aware Resolution Selector for VLMs
 
 **Conference**: ACL2026 Oral  
@@ -143,7 +148,7 @@ CARES uses an 80K training set (20K each from TextVQA, ChartQA, DocVQA, LLaVA-Mu
 - [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](../../ICCV2025/multimodal_vlm/hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
 - [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](../../CVPR2026/multimodal_vlm/hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)
 - [\[ICML 2026\] Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs](../../ICML2026/multimodal_vlm/density-aware_translation_of_spurious_correlations_in_zero-shot_vlms.md)
-- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
+- [\[ICML 2026\] Task-Aware Structured Memory for Dynamic Multi-modal In-Context Learning](../../ICML2026/multimodal_vlm/task-aware_structured_memory_for_dynamic_multi-modal_in-context_learning.md)
 
 </div>
 

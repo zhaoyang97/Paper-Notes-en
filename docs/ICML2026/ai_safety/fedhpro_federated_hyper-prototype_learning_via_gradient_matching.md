@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching
 description: >-
-  [ICML 2026][AI Safety][Paper Note] To address the "inheritance of client bias by global prototypes" in prototype-based federated learning, this paper proposes a set of learnable global hyper-prototypes. These hyper-prototypes simulate prototypes from centralized training via gradient matching on the server side. Combined with client-side contrastive lea
+  [ICML 2026][AI Safety][Federated Learning] To address the "inheritance of client bias by global prototypes" in prototype-based federated learning, this paper proposes a set of learnable global hyper-prototypes. These hyper-prototypes simulate prototypes from centralized training via gradient matching on the server side. Combined with client-side contrastive learning and alignment loss, this approach significantly improves accuracy in heterogeneous scenarios.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Data Heterogeneity"
+  - "Hyper-Prototype"
+  - "Gradient Matching"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 849f2ccbfbe6316a
+content_hash: 637fcd0bcdd4eea1
 ---
+
 # FedHPro: Federated Hyper-Prototype Learning via Gradient Matching
 
 **Conference**: ICML 2026  
@@ -128,9 +134,9 @@ Covering label skew, quantity skew, and domain skew across 9 datasets and 8 SOTA
 
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](../../CVPR2026/ai_safety/feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
 - [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](gradient_transformer_learning_to_generate_updates_for_llms.md)
+- [\[ICML 2026\] Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Re-learning Attacks](unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
+- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
 - [\[ICML 2026\] Frequency Matching in Spiking Neural Networks for mmWave Sensing](frequency_matching_in_spiking_neural_networks_for_mmwave_sensing.md)
-- [\[CVPR 2026\] ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning](../../CVPR2026/ai_safety/proxyfl_a_proxy-guided_framework_for_federated_semi-supervised_learning.md)
-- [\[ICML 2026\] Flatness-Aware Stochastic Gradient Langevin Dynamics](flatness-aware_stochastic_gradient_langevin_dynamics.md)
 
 </div>
 

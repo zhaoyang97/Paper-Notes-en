@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReMoE: Region-Mixture Experts for Adversarially-Robust Vision Transformers
 description: >-
-  [CVPR 2026][AI Safety][ViT] ReMoE replaces the standard FFN in ViT with a "Region-aware Mixture-of-Experts layer"—utilizing experts across three granularities (global/center/region) coupled with attention-guided routing. By reweighting based on regional vulnerability and aligning regional attention distributions between clean and adversarial samp
+  [CVPR 2026][AI Safety][Adversarial Robustness] ReMoE replaces the standard FFN in ViT with a "Region-aware Mixture-of-Experts layer"—utilizing experts across three granularities (global/center/region) coupled with attention-guided routing. By reweighting based on regional vulnerability and aligning regional attention distributions between clean and adversarial samples during adversarial training, it significantly enhances the adversarial robustness of ViTs with negligible com…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - ViT
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Robustness"
+  - "Mixture of Experts (MoE)"
+  - "Region-level modeling"
+  - "ViT"
+  - "Attention routing"
 date: 2026-05-08
-content_hash: eff7ba6b74f13995
+content_hash: 9cdc199868901607
 ---
+
 # ReMoE: Region-Mixture Experts for Adversarially-Robust Vision Transformers
 
 **Conference**: CVPR 2026  
@@ -164,9 +169,9 @@ Gating strategy comparison (DeiT-T, CIFAR-10):
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training](towards_robust_vision_transformers_path_dependency_analysis_and_a_simple_two-sta.md)
-- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
 - [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](../../ICCV2025/ai_safety/fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
 - [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](../../ICML2026/ai_safety/metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
+- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
 - [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
 
 </div>

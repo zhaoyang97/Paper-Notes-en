@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DynamicInfer: Runtime-Aware Sparse Offloading for LLMs Inference on a Consumer-Grade GPU
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] DynamicInfer targets consumer-grade GPUs with insufficient VRAM by dynamically scheduling LLM FFN neurons between CPU and GPU based on runtime activation patterns. It utilizes cross-layer prediction, layered neuron caching, and load-aware thresholds to ensure more neurons that are actually used reside on the GPU, achie
+  [ICLR 2026][LLM Efficiency][Sparse activation] DynamicInfer targets consumer-grade GPUs with insufficient VRAM by dynamically scheduling LLM FFN neurons between CPU and GPU based on runtime activation patterns. It utilizes cross-layer prediction, layered neuron caching, and load-aware thresholds to ensure more neurons that are actually used reside on the GPU, achieving significant speedups over llama.cpp and PowerInfer while maintaining near-constant accuracy.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sparse activation"
+  - "Model offloading"
+  - "LLM inference"
+  - "Dynamic scheduling"
+  - "Consumer-grade GPU"
 date: 2026-05-08
-content_hash: c113ba7a9afe87be
+content_hash: 389af55fe4bc9dd4
 ---
+
 # DynamicInfer: Runtime-Aware Sparse Offloading for LLMs Inference on a Consumer-Grade GPU
 
 **Conference**: ICLR 2026  
@@ -156,15 +162,16 @@ Accuracy across RTE, PIQA, COPA, and Winogrande shows minimal variance between d
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
-- [\[ICML 2026\] WarmServe：一次加载多模型的 GPU 预热机制](../../ICML2026/llm_efficiency/warmserve_enabling_one-for-many_gpu_prewarming_for_multi-llm_serving.md)
 - [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
 - [\[ICLR 2026\] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs](scaling_laws_meet_model_architecture_toward_inference-efficient_llms.md)
 - [\[ICLR 2026\] On-the-Fly Adaptation to Quantization: Configuration-Aware LoRA for Efficient Fine-Tuning of Quantized LLMs](on-the-fly_adaptation_to_quantization_configuration-aware_lora_for_efficient_fin.md)
+- [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
 
 </div>
 

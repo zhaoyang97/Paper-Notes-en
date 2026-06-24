@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding
 description: >-
-  [ICLR 2026][Reinforcement Learning][Mixup] MergeMix proposes a mixup data augmentation method based on token merging. It generates mixed images in the attention space through bipartite soft matching and uses the mixing ratio as a soft margin in preference optimization, unifying SFT and RL training paradigms for both image classification and Multi-modal Large La
+  [ICLR 2026][Reinforcement Learning][Mixup] MergeMix proposes a mixup data augmentation method based on token merging. It generates mixed images in the attention space through bipartite soft matching and uses the mixing ratio as a soft margin in preference optimization, unifying SFT and RL training paradigms for both image classification and Multi-modal Large Language Models (MLLMs).
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Mixup
-  - Token Merging
-  - Preference Alignment
-  - MLLM
-  - Data Augmentation
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Mixup"
+  - "Token Merging"
+  - "Preference Alignment"
+  - "MLLM"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: b1e5be837676a029
+content_hash: 2bf9ead5cc75b5aa
 ---
+
 # MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding
 
 **Conference**: ICLR 2026  
@@ -163,7 +164,7 @@ CIFAR-100 for 200 epochs. MergeMix significantly leads across all model sizes, o
 - [\[NeurIPS 2025\] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation](../../NeurIPS2025/reinforcement_learning/noisyrollout_reinforcing_visual_reasoning_with_data_augmenta.md)
 - [\[ICLR 2026\] Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs](chain-of-context_learning_dynamic_constraint_understanding_for_multi-task_vrps.md)
 - [\[ICLR 2026\] Understanding and Improving Hyperbolic Deep Reinforcement Learning](understanding_and_improving_hyperbolic_deep_reinforcement_learning.md)
-- [\[ICLR 2026\] QuestA: Expanding Reasoning Capacity in LLMs via Question Augmentation](questa_expanding_reasoning_capacity_in_llms_via_question_augmentation.md)
+- [\[ICLR 2026\] RewardMap: Tackling Sparse Rewards in Fine-grained Visual Reasoning via Multi-Stage Reinforcement Learning](rewardmap_tackling_sparse_rewards_in_fine-grained_visual_reasoning_via_multi-sta.md)
 
 </div>
 

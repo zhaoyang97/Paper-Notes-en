@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CARD: Correlation Aware Restoration with Diffusion
 description: >-
-  [CVPR 2026][Image Restoration][DDRM] CARD generalizes the DDRM diffusion inverse problem solver from the "i.i.d. Gaussian noise" assumption to the "spatially correlated noise" found in real sensors. By applying the inverse square root of the covariance matrix $\Sigma^{-1/2}$ to whiten observations into i.i.d. noise, it performs DDRM closed-form updates in
+  [CVPR 2026][Image Generation][Correlated Noise] CARD generalizes the DDRM diffusion inverse problem solver from the "i.i.d. Gaussian noise" assumption to the "spatially correlated noise" found in real sensors. By applying the inverse square root of the covariance matrix $\Sigma^{-1/2}$ to whiten observations into i.i.d. noise, it performs DDRM closed-form updates in the whitened measurement space. The method is entirely training-free and consistently outperforms existing meth…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - DDRM
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Correlated Noise"
+  - "Diffusion Inverse Problems"
+  - "DDRM"
+  - "Noise Whitening"
+  - "Covariance Estimation"
 date: 2026-05-08
-content_hash: 672821a0b55a8ae9
+content_hash: db27c8f14ae92cdc
 ---
+
 # CARD: Correlation Aware Restoration with Diffusion
 
 **Conference**: CVPR 2026  
@@ -163,11 +168,11 @@ Sensitivity to covariance estimation error (Denoising PSNR with random perturbat
 
 ## Related Papers
 
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
+- [\[AAAI 2026\] CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement](../../AAAI2026/image_generation/cad-vae_leveraging_correlation-aware_latents_for_comprehensive_fair_disentanglem.md)
 - [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
-- [\[CVPR 2026\] FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration](fape-ir_frequency-aware_planning_and_execution_framework_for_all-in-one_image_re.md)
-- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
+- [\[CVPR 2026\] Face2Scene: Using Facial Degradation as an Oracle for Diffusion-Based Scene Restoration](face2scene_using_facial_degradation_as_an_oracle_for_diffusion-based_scene_resto.md)
+- [\[CVPR 2026\] Reward Sharpness-Aware Fine-Tuning for Diffusion Models](reward_sharpness-aware_fine-tuning_for_diffusion_models.md)
+- [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
 
 </div>
 

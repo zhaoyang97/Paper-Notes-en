@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation
 description: >-
-  [AAAI 2026][Medical Imaging][Cardiac MRI reconstruction] This paper proposes MoCo-INR, which for the first time integrates implicit neural representation (INR) into a motion compensation (MoCo) framework. Through an unsu…
+  [AAAI 2026][Medical Imaging][Cardiac MRI reconstruction] This paper proposes MoCo-INR, which for the first time integrates implicit neural representation (INR) into a motion compensation (MoCo) framework. Through an unsupervised approach, it achieves high-quality dynamic reconstruction of cardiac MRI, significantly outperforming existing unsupervised methods at ultra-high acceleration factors (20× Cartesian / 69× Non-Cartesian).
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "unsupervised learning"
   - "undersampled reconstruction"
 date: 2026-05-08
-content_hash: 7972f182c544a2f3
+content_hash: c861a969eb809ccf
 ---
 
 # Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation
@@ -131,10 +131,10 @@ The advantage is most pronounced at ultra-high acceleration factors (20×, 69×)
 ## Related Papers
 
 - [\[AAAI 2026\] Unsupervised Multi-Parameter Inverse Solving for Reducing Ring Artifacts in 3D X-Ray CBCT](unsupervised_multi-parameter_inverse_solving_for_reducing_ring_artifacts_in_3d_x.md)
-- [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
-- [\[AAAI 2026\] Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks](neural_bandit_based_optimal_llm_selection_for_a_pipeline_of_tasks.md)
-- [\[AAAI 2026\] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction](grover_graph-guided_representation_of_omics_and_vision_with_expert_regulation_fo.md)
-- [\[AAAI 2026\] CoCoLIT: ControlNet-Conditioned Latent Image Translation for MRI to Amyloid PET Synthesis](cocolit_controlnet-conditioned_latent_image_translation_for_mri_to_amyloid_pet_s.md)
+- [\[CVPR 2026\] Prospective Dynamic 3D MRI Reconstruction via Latent-Space Motion Tracking from Single Measurement](../../CVPR2026/medical_imaging/prospective_dynamic_3d_mri_reconstruction_via_latent-space_motion_tracking_from_.md)
+- [\[ICLR 2026\] Reliable Evaluation of MRI Motion Correction: Dataset and Insights](../../ICLR2026/medical_imaging/reliable_evaluation_of_mri_motion_correction_dataset_and_insights.md)
+- [\[ICLR 2026\] NAB: Neural Adaptive Binning for Sparse-View CT Reconstruction](../../ICLR2026/medical_imaging/nab_neural_adaptive_binning_for_sparse-view_ct_reconstruction.md)
+- [\[CVPR 2026\] Breaking the Continuum: Discrete Distribution Learning for Structural MRI Reconstruction](../../CVPR2026/medical_imaging/breaking_the_continuum_discrete_distribution_learning_for_structural_mri_reconst.md)
 
 </div>
 

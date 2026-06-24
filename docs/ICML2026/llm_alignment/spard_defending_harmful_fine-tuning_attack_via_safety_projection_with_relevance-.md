@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection
 description: >-
-  [ICML 2026][Alignment & RLHF][LoRA] SPARD combines "Safety-Projected Alternating Gradient (SPAG)" and "Relevance-Diversity DPP Safety Data Selection" to explicitly formulate "post-fine-tuning safety constraints" as a constrained optimization problem. It updates parameters for utility first and then uses a closed-form projection to pull them back into the
+  [ICML 2026][LLM Alignment][Harmful Fine-tuning Attack] SPARD combines "Safety-Projected Alternating Gradient (SPAG)" and "Relevance-Diversity DPP Safety Data Selection" to explicitly formulate "post-fine-tuning safety constraints" as a constrained optimization problem. It updates parameters for utility first and then uses a closed-form projection to pull them back into the safety half-space. By using only 3% task-relevant yet diverse safety samples…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - LoRA
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Harmful Fine-tuning Attack"
+  - "Safety Projection"
+  - "Determinant Point Process (DPP)"
+  - "Safety-Constrained Optimization"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 29c6a9fa7cd60324
+content_hash: b450843be0be1e10
 ---
+
 # SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection
 
 **Conference**: ICML 2026  
@@ -132,16 +137,16 @@ Ours achieves the lowest ASR/HS across all combinations of models and attacks (B
 - Value: ⭐⭐⭐⭐⭐ A parameter-free, plug-and-play defense paradigm for fine-tuning-as-a-service with high safety efficiency.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Safety Anchor: Defending Harmful Fine-tuning via Geometric Bottlenecks](safety_anchor_defending_harmful_fine-tuning_via_geometric_bottlenecks.md)
-- [\[ICML 2026\] GIST: 用梯度子空间投影做 instruction tuning 的 targeted 数据选择](gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
+- [\[ICML 2026\] GIST: Targeted Data Selection for Instruction Tuning with Gradient Subspace Projection](gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
 - [\[ICML 2026\] Efficient Preference Poisoning Attack on Offline RLHF](efficient_preference_poisoning_attack_on_offline_rlhf.md)
+- [\[ICLR 2026\] Data Selection for LLM Alignment Using Fine-Grained Preferences](../../ICLR2026/llm_alignment/data_selection_for_llm_alignment_using_fine-grained_preferences.md)
 - [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
-- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO
 description: >-
-  [NeurIPS 2025][LLM Alignment][Video reasoning] This paper proposes DeepVideo-R1, which reformulates GRPO as Reg-GRPO that directly regresses advantage values (eliminating clipping/min safeguards)…
+  [NeurIPS 2025][LLM Alignment][Video reasoning] This paper proposes DeepVideo-R1, which reformulates GRPO as Reg-GRPO that directly regresses advantage values (eliminating clipping/min safeguards), and mitigates the vanishing advantage problem via difficulty-aware data augmentation, achieving up to 10.1 percentage points improvement over standard GRPO on video reasoning tasks.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "regression objective"
   - "difficulty-aware augmentation"
 date: 2026-05-08
-content_hash: fc1b3331c1213652
+content_hash: 4115eaeafde651fa
 ---
 
 # DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO
@@ -143,7 +143,7 @@ DeepVideo-R1 achieves a 10.1-point gain over GRPO on SEED-Bench-R1.
 - [\[NeurIPS 2025\] Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay](improving_data_efficiency_for_llm_reinforcement_fine-tuning_through_difficulty-t.md)
 - [\[NeurIPS 2025\] Mechanism Design for LLM Fine-tuning with Multiple Reward Models](mechanism_design_for_llm_fine-tuning_with_multiple_reward_models.md)
 - [\[NeurIPS 2025\] Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs](attack_via_overfitting_10-shot_benign_fine-tuning_to_jailbreak_llms.md)
-- [\[NeurIPS 2025\] Strategyproof Reinforcement Learning from Human Feedback](strategyproof_reinforcement_learning_from_human_feedback.md)
+- [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](../../ACL2026/llm_alignment/compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
 - [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](../../ACL2026/llm_alignment/mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
 
 </div>

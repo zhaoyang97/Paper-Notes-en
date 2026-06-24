@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detect Any AI-Counterfeited Text Image
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Aiming at the detection of generative AI-counterfeited text images, the authors utilized an MLLM-driven Creative Proposer pipeline to construct the DanceText dataset, which is over 100 times larger than previous works. They proposed DS-Net, which leverages an "Artifact-Content Decoupling Encoder" to learn general artif
+  [CVPR 2026][AI Safety][AI-Counterfeited Text Image Detection] Aiming at the detection of generative AI-counterfeited text images, the authors utilized an MLLM-driven Creative Proposer pipeline to construct the DanceText dataset, which is over 100 times larger than previous works. They proposed DS-Net, which leverages an "Artifact-Content Decoupling Encoder" to learn general artifacts from massive fake images in non-text domains, and a "Synergy Denoising Decoder" to enable mut…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "AI-Counterfeited Text Image Detection"
+  - "Forensic Localization"
+  - "Artifact Decoupling"
+  - "Tamper Localization"
+  - "Cross-domain Generalization"
 date: 2026-05-08
-content_hash: cd2b7a0604bbeda1
+content_hash: fc224b3b5a54afc1
 ---
+
 # Detect Any AI-Counterfeited Text Image
 
 **Conference**: CVPR 2026  
@@ -142,7 +148,7 @@ Performance drops significantly across all models on Cross-Generator (CG), Cross
 - [\[CVPR 2026\] JANUS: A Lightweight Framework for Jailbreaking Text-to-Image Models via Distribution Optimization](janus_a_lightweight_framework_for_jailbreaking_text-to-image_models_via_distribu.md)
 - [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
 - [\[CVPR 2026\] When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters](when_lora_betrays_backdooring_text-to-image_models_by_masquerading_as_benign_ada.md)
-- [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
+- [\[CVPR 2026\] Hidden Dangers of Compositional Generation: Diagnosing Semantic Safety Failures in Text-to-Image Models](hidden_dangers_of_compositional_generation_diagnosing_semantic_safety_failures_i.md)
 
 </div>
 

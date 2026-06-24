@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DepthLM: Metric Depth from Vision Language Models
 description: >-
-  [ICLR 2026][3D Vision][metric depth] DepthLM demonstrates that a standard VLM does not require a dense prediction head or specialized depth losses. By relying solely on visual markers, intrinsic-conditioned data augmentation, and text-based SFT, it achieves pixel-level metric depth performance that approximates or even surpasses various specialized vision
+  [ICLR2026][3D Vision][metric depth] DepthLM demonstrates that a standard VLM does not require a dense prediction head or specialized depth losses. By relying solely on visual markers, intrinsic-conditioned data augmentation, and text-based SFT, it achieves pixel-level metric depth performance that approximates or even surpasses various specialized vision-only depth models for the first time.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - metric depth
-  - VLM
+  - "ICLR2026"
+  - "3D Vision"
+  - "metric depth"
+  - "VLM"
+  - "visual prompting"
+  - "camera intrinsics"
+  - "3D understanding"
 date: 2026-05-08
-content_hash: 24213fdb2e17354a
+content_hash: 3e8442aff0c4a1a4
 ---
+
 # DepthLM: Metric Depth from Vision Language Models
 
 **Conference**: ICLR2026  
@@ -149,11 +153,11 @@ The ablation experiments explain why DepthLM is effective.
 
 ## Related Papers
 
+- [\[CVPR 2026\] The Midas Touch for Metric Depth](../../CVPR2026/3d_vision/the_midas_touch_for_metric_depth.md)
 - [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](../../CVPR2026/3d_vision/zero-shot_depth_completion_with_vision-language_model.md)
 - [\[CVPR 2026\] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models](../../CVPR2026/3d_vision/monovlm_monocular_3d_visual_grounding_with_vision_language_models.md)
 - [\[CVPR 2025\] Vision-Language Embodiment for Monocular Depth Estimation](../../CVPR2025/3d_vision/vision-language_embodiment_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] The Midas Touch for Metric Depth](../../CVPR2026/3d_vision/the_midas_touch_for_metric_depth.md)
-- [\[CVPR 2026\] TR2M: Transferring Monocular Relative Depth to Metric Depth with Language Descriptions and Dual-Level Scale-Oriented Contrast](../../CVPR2026/3d_vision/tr2m_transferring_monocular_relative_depth_to_metric_depth_with_language_descrip.md)
+- [\[ICLR 2026\] PatchRefiner V2: Fast and Lightweight Real-Domain High-Resolution Metric Depth Estimation](patchrefiner_v2_fast_and_lightweight_real-domain_high-resolution_metric_depth_es.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AudioStory: Generating Long-Form Narrative Audio with Large Language Models
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] AudioStory integrates LLM narrative reasoning with a DiT diffusion audio generator into an end-to-end framework. The LLM first decomposes complex instructions into timestamped sub-events, then generates short audio segments sequentially to form long-form narrative audio. Decoupled bridging via "semantic tokens + residu
+  [CVPR 2026][Audio & Speech][Long-Form Narrative Audio] AudioStory integrates LLM narrative reasoning with a DiT diffusion audio generator into an end-to-end framework. The LLM first decomposes complex instructions into timestamped sub-events, then generates short audio segments sequentially to form long-form narrative audio. Decoupled bridging via "semantic tokens + residual tokens" ensures intra-segment alignment and cross-segment coherence, enabling stable generation of mul…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Long-Form Narrative Audio"
+  - "LLM+Diffusion"
+  - "Bridging Tokens"
+  - "Interleaved Reasoning-Generation"
+  - "End-to-End Training"
 date: 2026-05-08
-content_hash: 0cee594cf13b4362
+content_hash: c23803ca3b018802
 ---
+
 # AudioStory: Generating Long-Form Narrative Audio with Large Language Models
 
 **Conference**: CVPR 2026  
@@ -141,15 +147,16 @@ Bridging Feature Ablation (Table 5, values denote single/multi FAD):
 - **Value**: ⭐⭐⭐⭐ Practical for audiobooks/game soundscapes; the planning-rendering paradigm is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2025\] Long-Form Speech Generation with Spoken Language Models](../../ICML2025/audio_speech/long-form_speech_generation_with_spoken_language_models.md)
+- [\[ICLR 2026\] YuE: Scaling Open Foundation Models for Long-Form Music Generation](../../ICLR2026/audio_speech/yue_scaling_open_foundation_models_for_long-form_music_generation.md)
 - [\[ACL 2026\] PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding](../../ACL2026/audio_speech/planrag-audio_planning_and_retrieval_augmented_generation_for_long-form_audio_un.md)
+- [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](infinityhuman_towards_long-term_audio-driven_human_animation.md)
 - [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
-- [\[CVPR 2026\] TAPE: Task-Adaptive Prototype Evolution in Audio-Language Models for Fully Few-shot Class-incremental Audio Classification](tape_task-adaptive_prototype_evolution_in_audio-language_models_for_fully_few-sh.md)
-- [\[ACL 2026\] Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios](../../ACL2026/audio_speech/comprehensive_benchmarking_of_long-form_speech_generation_in_diverse_scenarios.md)
 
 </div>
 

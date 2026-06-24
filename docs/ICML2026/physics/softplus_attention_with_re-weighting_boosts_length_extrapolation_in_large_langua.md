@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models
 description: >-
-  [ICML 2026][Physics & Scientific Computing][attention sink] The authors deconstruct traditional Softmax attention into two independent components: "non-negativity" and "L1 normalization." They demonstrate that L1 normalization, rather than the exponential function, is the critical factor. By replacing the exponential with Softplus paired with a dynamic length scale factor, they
+  [ICML 2026][Physics & Scientific Computing][Softmax Alternatives] The authors deconstruct traditional Softmax attention into two independent components: "non-negativity" and "L1 normalization." They demonstrate that L1 normalization, rather than the exponential function, is the critical factor. By replacing the exponential with Softplus paired with a dynamic length scale factor, they derive LSSA. Adding a power-function-based "re-weighting" for sharpening results in LSSAR…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - attention sink
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Softmax Alternatives"
+  - "Softplus Attention"
+  - "Length Extrapolation"
+  - "Attention Sharpening"
+  - "Attention Sink"
 date: 2026-05-08
-content_hash: 89525d9c0e60e93e
+content_hash: b19fa9124361c774
 ---
+
 # Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models
 
 **Conference**: ICML 2026  

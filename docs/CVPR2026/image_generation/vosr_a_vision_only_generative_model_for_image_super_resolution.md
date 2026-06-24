@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] VOSR: A Vision-Only Generative Model for Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Generation][super-resolution] This work proposes VOSR, the first to demonstrate that a vision-only trained generative super-resolution (SR) model can match or even surpass methods based on T2I pre-training. By utilizing visual semantic conditions and a restoration-oriented guidance strategy, VOSR achieves high-quality SR with training costs only 1/
+  [CVPR 2026][Image Generation][super-resolution] This work proposes VOSR, the first to demonstrate that a vision-only trained generative super-resolution (SR) model can match or even surpass methods based on T2I pre-training. By utilizing visual semantic conditions and a restoration-oriented guidance strategy, VOSR achieves high-quality SR with training costs only 1/10 of T2I-based methods.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - super-resolution
-  - vision-only
-  - diffusion model
-  - classifier-free guidance
-  - one-step distillation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "super-resolution"
+  - "vision-only"
+  - "diffusion model"
+  - "classifier-free guidance"
+  - "one-step distillation"
 date: 2026-05-08
-content_hash: 7200035a04f4297c
+content_hash: e1e9f285b31aa789
 ---
+
 # VOSR: A Vision-Only Generative Model for Image Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -129,11 +130,11 @@ The multi-step model uses a standard velocity-parameterized diffusion training o
 
 ## Related Papers
 
-- [\[CVPR 2026\] OARS: Process-Aware Online Alignment for Generative Real-World Image Super-Resolution](oars_process-aware_online_alignment_for_generative_real-world_image_super-resolu.md)
+- [\[CVPR 2026\] DTG-Restore: Training-Free Diffusion Refinement for Generative Video Super-Resolution](dtg-restore_training-free_diffusion_refinement_for_generative_video_super-resolu.md)
+- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
 - [\[NeurIPS 2025\] Image Super-Resolution with Guarantees via Conformalized Generative Models](../../NeurIPS2025/image_generation/image_super-resolution_with_guarantees_via_conformalized_generative_models.md)
 - [\[AAAI 2026\] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution](../../AAAI2026/image_generation/gewdiff_geometric_enhanced_wavelet-based_diffusion_model_for_hyperspectral_image.md)
-- [\[CVPR 2025\] Uncertainty-guided Perturbation for Image Super-Resolution Diffusion Model](../../CVPR2025/image_generation/uncertainty-guided_perturbation_for_image_super-resolution_diffusion_model.md)
-- [\[CVPR 2025\] FaithDiff: Unleashing Diffusion Priors for Faithful Image Super-Resolution](../../CVPR2025/image_generation/faithdiff_unleashing_diffusion_priors_for_faithful_image_super-resolution.md)
+- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 
 </div>
 

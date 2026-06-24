@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging
 description: >-
-  [AAAI 2026][Model Compression][model merging] This paper proposes ReACT, which shifts controllable model merging from parameter-space optimization to representation-space correction. By deriving a closed-form solution…
+  [AAAI 2026][Model Compression][model merging] This paper proposes ReACT, which shifts controllable model merging from parameter-space optimization to representation-space correction. By deriving a closed-form solution, ReACT enables instant generation of Pareto-optimal models under arbitrary user preferences, achieving 36–208× speedup over existing methods while delivering superior performance.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "representation correction"
   - "multi-objective optimization"
 date: 2026-05-08
-content_hash: 2c2a8d23a1ea67d1
+content_hash: 34068fa63f25cb23
 ---
 
 # From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging
@@ -129,11 +129,11 @@ No training is required. The entire pipeline is based on closed-form computation
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Weight Weaving: Parameter Pooling for Data-Free Model Merging](../../NeurIPS2025/model_compression/weight_weaving_parameter_pooling_for_data-free_model_merging.md)
-- [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
+- [\[ACL 2025\] Bone Soups: A Seek-and-Soup Model Merging Approach for Controllable Multi-Objective Generation](../../ACL2025/model_compression/bone_soups_multi_objective_gen.md)
 - [\[AAAI 2026\] Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging](do_not_merge_my_model_safeguarding_open-source_llms_against_unauthorized_model_m.md)
-- [\[ICLR 2026\] RAIN-Merging: A Gradient-Free Method to Enhance Instruction Following Through Model Merging](../../ICLR2026/model_compression/rain-merging_a_gradient-free_method_to_enhance_instruction_following_through_mod.md)
-- [\[ICCV 2025\] FREE-Merging: Fourier Transform for Efficient Model Merging](../../ICCV2025/model_compression/free-merging_fourier_transform_for_efficient_model_merging.md)
+- [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
+- [\[NeurIPS 2025\] Weight Weaving: Parameter Pooling for Data-Free Model Merging](../../NeurIPS2025/model_compression/weight_weaving_parameter_pooling_for_data-free_model_merging.md)
+- [\[ICML 2026\] Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing](../../ICML2026/model_compression/post-hoc_merging_is_not_enough_many-shot_model_merging_with_loss-gap_balancing.md)
 
 </div>
 

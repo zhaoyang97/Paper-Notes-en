@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReDDiT: Rehashing Noise for Discrete Visual Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] ReDDiT extends the single `[mask]` absorbing state in discrete diffusion to a set of random multi-index absorbing states (rehashing noise). It employs a rehash sampler utilizing `torch.multinomial` for low-discrepancy sampling, replacing the Gumbel-max-based remask heuristics in MVTM. This approach reduces the gFID on
+  [ICLR 2026][Image Generation][Discrete Diffusion] ReDDiT extends the single `[mask]` absorbing state in discrete diffusion to a set of random multi-index absorbing states (rehashing noise). It employs a rehash sampler utilizing `torch.multinomial` for low-discrepancy sampling, replacing the Gumbel-max-based remask heuristics in MVTM. This approach reduces the gFID on ImageNet-256 from a baseline of 6.18 to 1.61, marking the first time discrete diffusion matches continuous dif…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Discrete Diffusion"
+  - "Absorbing State Noise"
+  - "Rehash Sampling"
+  - "Multi-index Corruption"
+  - "ImageNet Generation"
 date: 2026-05-08
-content_hash: 65dcda074ca439ac
+content_hash: 7e3c70e959d85fdb
 ---
+
 # ReDDiT: Rehashing Noise for Discrete Visual Generation
 
 **Conference**: ICLR 2026  

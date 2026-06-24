@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SimpleGVR: A Simple Baseline for Latent-Cascaded Generative Video Super-Resolution
 description: >-
-  [ICLR 2026][Video Generation][Rectified Flow] SimpleGVR moves the super-resolution (VSR) stage of cascaded text-to-video generation entirely into the latent space. By using a "latent upsampler" to eliminate redundant decoding/re-encoding and employing two AIGC-aligned degradation strategies along with three training optimizations, this lightweight diffusion VSR ou
+  [ICLR 2026][Video Generation][Cascaded Video Generation] SimpleGVR moves the super-resolution (VSR) stage of cascaded text-to-video generation entirely into the latent space. By using a "latent upsampler" to eliminate redundant decoding/re-encoding and employing two AIGC-aligned degradation strategies along with three training optimizations, this lightweight diffusion VSR outperforms existing methods on AIGC100. Furthermore, the "512p + SR" cascaded scheme surpasses end-to-en…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Rectified Flow
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Cascaded Video Generation"
+  - "Latent Super-Resolution"
+  - "Degradation Modeling"
+  - "Rectified Flow"
+  - "Long Video"
 date: 2026-05-08
-content_hash: 14f1742983dc10b8
+content_hash: 92187c508b46a223
 ---
+
 # SimpleGVR: A Simple Baseline for Latent-Cascaded Generative Video Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -137,15 +142,15 @@ Evaluation is performed on the self-built AIGC100 (100 T2V generated videos, no 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment](../../CVPR2026/video_generation/vsrell_a_simple_baseline_for_video_super-resolution_and_enhancement_in_low-light.md)
 - [\[ICML 2026\] LuVe: Latent-Cascaded Ultra-High-Resolution Video Generation with Dual Frequency Experts](../../ICML2026/video_generation/luve_latent-cascaded_ultra-high-resolution_video_generation_with_dual_frequency_.md)
-- [\[ICLR 2026\] Generative View Stitching](generative_view_stitching.md)
 - [\[ICLR 2026\] Arbitrary Generative Video Interpolation](arbitrary_generative_video_interpolation.md)
-- [\[CVPR 2026\] Compressed-Domain-Aware Online Video Super-Resolution](../../CVPR2026/video_generation/compressed-domain-aware_online_video_super-resolution.md)
+- [\[ICLR 2026\] Generative View Stitching](generative_view_stitching.md)
+- [\[ICLR 2026\] Uniform Discrete Diffusion with Metric Path for Video Generation](uniform_discrete_diffusion_with_metric_path_for_video_generation.md)
 
 </div>
 

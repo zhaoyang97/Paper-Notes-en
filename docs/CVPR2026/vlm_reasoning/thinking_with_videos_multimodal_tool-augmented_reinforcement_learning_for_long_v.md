@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] VITAL equips Multimodal Large Language Models (MLLMs) with a "video clipping" tool, allowing them to densely resample suspicious time intervals into new frames during the reasoning chain to form a "multimodal chain-of-thought." Combined with difficulty-aware DGRPO reinforcement learning to stabilize multi-task training
+  [CVPR 2026][VLM Reasoning][Long Video Reasoning] VITAL equips Multimodal Large Language Models (MLLMs) with a "video clipping" tool, allowing them to densely resample suspicious time intervals into new frames during the reasoning chain to form a "multimodal chain-of-thought." Combined with difficulty-aware DGRPO reinforcement learning to stabilize multi-task training, it achieves 7B-level SOTA performance in long video QA and temporal grounding.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Long Video Reasoning"
+  - "Multimodal CoT"
+  - "Tool Augmentation"
+  - "Temporal Grounding"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 4ea2626fac45635c
+content_hash: 4c6b8f367517fbba
 ---
+
 # Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -137,15 +142,16 @@ Tool selection ablation (Tab. 7/8): In zero-shot settings, adding captioning or 
 - Value: ⭐⭐⭐⭐ Provides a reusable recipe for video agents and RL post-training for developers.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
+- [\[CVPR 2026\] LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling](longvt_incentivizing_thinking_with_long_videos_via_native_tool_calling.md)
+- [\[CVPR 2026\] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)
 - [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
-- [\[CVPR 2026\] CURVE: A Benchmark for Cultural and Multilingual Long Video Reasoning](curve_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
-- [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
+- [\[ICLR 2026\] FrameThinker: Learning to Think with Long Videos via Multi-Turn Frame Spotlighting](../../ICLR2026/vlm_reasoning/framethinker_learning_to_think_with_long_videos_via_multi-turn_frame_spotlightin.md)
 
 </div>
 

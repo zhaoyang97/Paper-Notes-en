@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] U-CAN: Unsupervised Point Cloud Denoising with Consistency-Aware Noise2Noise Matching
 description: >-
-  [NeurIPS 2025][3D Vision][Point cloud denoising] This paper proposes U-CAN, an unsupervised point cloud denoising framework that infers multi-step denoising paths via a Noise2Noise matching scheme and geometric consisten…
+  [NeurIPS 2025][3D Vision][Point cloud denoising] This paper proposes U-CAN, an unsupervised point cloud denoising framework that infers multi-step denoising paths via a Noise2Noise matching scheme and geometric consistency constraints. The method approaches supervised performance and demonstrates that the consistency constraint generalizes to 2D image denoising.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "consistency constraint"
   - "geometry reconstruction"
 date: 2026-05-08
-content_hash: 9f8d913e3704b840
+content_hash: 538554fdc6703bd5
 ---
 
 # U-CAN: Unsupervised Point Cloud Denoising with Consistency-Aware Noise2Noise Matching
@@ -159,7 +159,7 @@ $$\mathcal{L} = \mathcal{L}_{\text{N2N}} + \lambda_1 \mathcal{L}_{\text{geo}} + 
 - [\[ICML 2026\] SIMPC: Learning Self-Induced Mirror-Point Consistency for Unsupervised Point Cloud Denoising](../../ICML2026/3d_vision/simpc_learning_self-induced_mirror-point_consistency_for_unsupervised_point_clou.md)
 - [\[NeurIPS 2025\] UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss](ugm2n_an_unsupervised_and_generalizable_mesh_movement_network_via_m-uniform_loss.md)
 - [\[NeurIPS 2025\] Rectified Point Flow: Generic Point Cloud Pose Estimation](rectified_point_flow_generic_point_cloud_pose_estimation.md)
-- [\[NeurIPS 2025\] Flux4D: Flow-based Unsupervised 4D Reconstruction](flux4d_flow-based_unsupervised_4d_reconstruction.md)
+- [\[CVPR 2025\] Consistency-aware Self-Training for Iterative-based Stereo Matching](../../CVPR2025/3d_vision/consistency-aware_self-training_for_iterative-based_stereo_matching.md)
 
 </div>
 

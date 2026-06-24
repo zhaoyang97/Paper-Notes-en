@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] GuidedBridge: Training-freely Improving Bridge Models with Prior Guidance
 description: >-
-  [ICML 2026][Image Generation][bridge model] Addressing diffusion bridge models (data-to-data generation), the paper proposes training-free Prior Guidance (PG): by perturbing a clean prior to construct a "weak prior," the model extrapolates between the denoising results of strong and weak priors to amplify prior utilization. Further incorporating a U-shaped Frequ
+  [ICML 2026][Image Generation][bridge model] Addressing diffusion bridge models (data-to-data generation), the paper proposes training-free Prior Guidance (PG): by perturbing a clean prior to construct a "weak prior," the model extrapolates between the denoising results of strong and weak priors to amplify prior utilization. Further incorporating a U-shaped Frequency-modulated PG (FMPG) and a CFG-FMPG cascaded framework, the method consistently improves the FID of pre-trained…
 tags:
-  - ICML 2026
-  - Image Generation
-  - bridge model
-  - prior guidance
-  - frequency modulation
-  - image translation
-  - training-free
+  - "ICML 2026"
+  - "Image Generation"
+  - "bridge model"
+  - "prior guidance"
+  - "frequency modulation"
+  - "image translation"
+  - "training-free"
 date: 2026-05-08
-content_hash: 265cfdffcf069afa
+content_hash: ac028d343ed631be
 ---
+
 # GuidedBridge: Training-freely Improving Bridge Models with Prior Guidance
 
 **Conference**: ICML 2026  
@@ -153,10 +154,10 @@ Comparison of PG variants and FMPG on DIODE (Baseline: DBIM):
 ## Related Papers
 
 - [\[CVPR 2026\] Understanding, Accelerating, and Improving MeanFlow Training](../../CVPR2026/image_generation/understanding_accelerating_and_improving_meanflow_training.md)
+- [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](../../ICLR2026/image_generation/improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
 - [\[CVPR 2026\] Improving Diffusion Generalization with Weak-to-Strong Segmented Guidance](../../CVPR2026/image_generation/improving_diffusion_generalization_with_weak-to-strong_segmented_guidance.md)
 - [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](../../ICLR2026/image_generation/stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
 - [\[ICML 2026\] Spectral Guidance for Flexible and Efficient Control of Diffusion Models](spectral_guidance_for_flexible_and_efficient_control_of_diffusion_models.md)
-- [\[CVPR 2026\] Improving Controllable Generation: Faster Training and Better Performance via x0-Supervision](../../CVPR2026/image_generation/improving_controllable_generation_faster_training_and_better_performance_via_x0-.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Fresh in Memory: Training-order Recency is Linearly Encoded in Language Model Activations
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] By sequentially fine-tuning Llama-3.2-1B on six disjoint entity datasets, the authors discovered a **linear direction in the language model's activation space that sorts the centroids of data from different stages according to their training order**. This suggests that models implicitly "timestamp" learned information.
+  [ICLR 2026][Interpretability][Training order] By sequentially fine-tuning Llama-3.2-1B on six disjoint entity datasets, the authors discovered a **linear direction in the language model's activation space that sorts the centroids of data from different stages according to their training order**. This suggests that models implicitly "timestamp" learned information. This temporal signal can be extracted by linear probes (>90% accuracy in distinguishing early vs. late entities)…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Training order"
+  - "Linear probe"
+  - "Activation direction"
+  - "Temporal encoding"
+  - "Knowledge recency"
+  - "Sequential fine-tuning"
 date: 2026-05-08
-content_hash: 34b791f50884b90d
+content_hash: 52e90cc625f6c3f2
 ---
+
 # Fresh in Memory: Training-order Recency is Linearly Encoded in Language Model Activations
 
 **Conference**: ICLR 2026  

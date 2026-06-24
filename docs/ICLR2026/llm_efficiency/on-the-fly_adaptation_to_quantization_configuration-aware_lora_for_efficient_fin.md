@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On-the-Fly Adaptation to Quantization: Configuration-Aware LoRA for Efficient Fine-Tuning of Quantized LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][Quantization] CoA-LoRA trains a "configuration-aware model" that directly maps any layer-wise quantization configuration to lightweight low-rank adjustments. This allows a single LoRA adapter to adapt to various bit-width combinations without per-configuration fine-tuning. Combined with a Pareto-based Gaussian Process configuration
+  [ICLR 2026][LLM Efficiency][Quantization] CoA-LoRA trains a "configuration-aware model" that directly maps any layer-wise quantization configuration to lightweight low-rank adjustments. This allows a single LoRA adapter to adapt to various bit-width combinations without per-configuration fine-tuning. Combined with a Pareto-based Gaussian Process configuration search to select high-quality training sets, it achieves a $1.74\%–8.89\%$ accuracy improvement over SOTA on four GLUE…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Quantization
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Quantization"
+  - "LoRA"
+  - "Configuration-Aware"
+  - "Pareto Search"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: 193aa9db8dbb8242
+content_hash: 9a3869287c31fda0
 ---
+
 # On-the-Fly Adaptation to Quantization: Configuration-Aware LoRA for Efficient Fine-Tuning of Quantized LLMs
 
 **Conference**: ICLR 2026  
@@ -126,10 +130,20 @@ Ablation of configuration search (Fig. 8) and rank (Table 3):
 *   Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] LoRA-S: An Efficient Low Rank Adaptation scheme via Sylvester equation](lora-s_an_efficient_low_rank_adaptation_scheme_via_sylvester_equation.md)
+- [\[ICLR 2026\] Developmental Federated Tuning: A Cognitive-Inspired Paradigm for Efficient LLM Adaptation](developmental_federated_tuning_a_cognitive-inspired_paradigm_for_efficient_llm_a.md)
+- [\[ICLR 2026\] Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning](difficultydiversity_collaborative_filtering_for_data-efficient_llm_fine-tuning.md)
+- [\[ICLR 2026\] FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment](florg_federated_fine-tuning_with_low-rank_gram_matrices_and_procrustes_alignment.md)
+- [\[ICLR 2026\] PLoP: Precise LoRA Placement for Efficient Finetuning of Large Models](plop_precise_lora_placement_for_efficient_finetuning_of_large_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] LoRA-S: An Efficient Low Rank Adaptation scheme via Sylvester equation](lora-s_an_efficient_low_rank_adaptation_scheme_via_sylvester_equation.md)

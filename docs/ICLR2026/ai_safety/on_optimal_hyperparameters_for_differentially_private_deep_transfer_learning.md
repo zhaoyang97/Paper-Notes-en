@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper systematically investigates the critical hyperparameters of clipping bound $C$ and batch size $B$ in Differentially Private (DP) transfer learning. It demonstrates that prevalent heuristics—such as "use small $C$ for strong privacy" and "use large batch sizes for a fixed number of steps"—are erroneous. Based
+  [ICLR 2026][AI Safety][Differential Privacy] This paper systematically investigates the critical hyperparameters of clipping bound $C$ and batch size $B$ in Differentially Private (DP) transfer learning. It demonstrates that prevalent heuristics—such as "use small $C$ for strong privacy" and "use large batch sizes for a fixed number of steps"—are erroneous. Based on a theory of optimal clipping via MSE decomposition and an analysis of cumulative DP noise…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Transfer Learning"
+  - "Gradient Clipping"
+  - "Batch Size"
+  - "Hyperparameter Tuning"
 date: 2026-05-08
-content_hash: 7c6e1c60e745eaeb
+content_hash: 61d251c0df5a7596
 ---
+
 # On Optimal Hyperparameters for Differentially Private Deep Transfer Learning
 
 **Conference**: ICLR 2026  
@@ -133,9 +139,9 @@ Comparing fixed $(C, B)$ vs. difficulty-aware joint tuning:
 
 - [\[ICLR 2026\] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text](pe-sgd_differentially_private_deep_learning_via_evolution_of_gradient_subspace_f.md)
 - [\[ICLR 2026\] Back to Square Roots: An Optimal Bound on the Matrix Factorization Error for Multi-Epoch Differentially Private SGD](back_to_square_roots_an_optimal_bound_on_the_matrix_factorization_error_for_mult.md)
+- [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](../../NeurIPS2025/ai_safety/impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
 - [\[ICLR 2026\] Missing Mass for Differentially Private Domain Discovery](differentially_private_domain_discovery.md)
 - [\[ICLR 2026\] Private Rate-Constrained Optimization with Applications to Fair Learning](private_rate-constrained_optimization_with_applications_to_fair_learning.md)
-- [\[ICLR 2026\] PateGAIL++: Utility Optimized Private Trajectory Generation with Imitation Learning](pategail_utility_optimized_private_trajectory_generation_with_imitation_learning.md)
 
 </div>
 

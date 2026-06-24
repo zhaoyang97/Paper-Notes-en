@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Jailbreaking Large Language Models with Morality Attacks
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper constructs a 10.3K morality attack dataset (Value Ambiguity + Value Conflict) and manipulates LLM moral judgments through four adversarial strategies. The study finds that LLMs and guardrail models are extremely vulnerable to morality attacks, and larger models are surprisingly easier to break.
+  [ACL 2026 Findings][LLM Safety][Morality Attack] This paper constructs a 10.3K morality attack dataset (Value Ambiguity + Value Conflict) and manipulates LLM moral judgments through four adversarial strategies. The study finds that LLMs and guardrail models are extremely vulnerable to morality attacks, and larger models are surprisingly easier to break.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Morality Attack"
+  - "Jailbreak Attack"
+  - "Pluralistic Values"
+  - "LLM Robustness"
+  - "Moral Judgment"
 date: 2026-05-08
-content_hash: 24bbab616046de84
+content_hash: 0f8731cb95ac6726
 ---
+
 # Jailbreaking Large Language Models with Morality Attacks
 
 **Conference**: ACL 2026 Findings  
@@ -122,10 +128,10 @@ To understand why attacks succeed, the authors label each Golden Norm across thr
 ## Related Papers
 
 - [\[ACL 2026\] Topic-Based Watermarks for Large Language Models](topic-based_watermarks_for_large_language_models.md)
-- [\[ACL 2026\] ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs](astra_an_automated_framework_for_strategy_discovery_retrieval_and_evolution_for_.md)
+- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](../../ICLR2026/llm_safety/sampling-aware_adversarial_attacks_against_large_language_models.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](../../ICLR2026/llm_safety/transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
+- [\[ICLR 2026\] TAO-Attack: Toward Advanced Optimization-based Jailbreak Attacks for Large Language Models](../../ICLR2026/llm_safety/tao-attack_toward_advanced_optimization-based_jailbreak_attacks_for_large_langua.md)
 - [\[AAAI 2026\] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models](../../AAAI2026/llm_safety/badthink_triggered_overthinking_attacks_on_chain-of-thought_reasoning_in_large_l.md)
-- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
-- [\[ACL 2026\] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models](ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment
 description: >-
-  [ACL 2026][Audio & Speech][flow matching] ImmersiveTTS utilizes a dual-stream MM-DiT to simultaneously model transcript content and environmental descriptions, stabilized by dual-teacher representation alignment with WavLM and ATST-Frame, enhancing speech naturalness, intelligibility, and speech-environment fusion quality in background-noise TTS.
+  [ACL2026][Audio & Speech][Environment-aware speech synthesis] ImmersiveTTS utilizes a dual-stream MM-DiT to simultaneously model transcript content and environmental descriptions, stabilized by dual-teacher representation alignment with WavLM and ATST-Frame, enhancing speech naturalness, intelligibility, and speech-environment fusion quality in background-noise TTS.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - flow matching
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Environment-aware speech synthesis"
+  - "multimodal diffusion Transformer"
+  - "flow matching"
+  - "representation alignment"
+  - "audio generation"
 date: 2026-05-08
-content_hash: 1333537b56d4aa4e
+content_hash: 419368720b7492d1
 ---
+
 # ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment
 
 **Conference**: ACL2026  
@@ -160,9 +165,9 @@ Main results indicate ImmersiveTTS achieves the lowest WER, lowest FAD, and high
 
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 - [\[ICLR 2026\] Latent Speech-Text Transformer](../../ICLR2026/audio_speech/latent_speech_text_transformer.md)
-- [\[CVPR 2026\] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization](../../CVPR2026/audio_speech/hear_what_you_see_video-to-audio_generation_with_diffusion_transformer_and_seman.md)
 - [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
 - [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](privacy-preserving_prosody_representation_learning.md)
+- [\[ICML 2026\] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer](../../ICML2026/audio_speech/towards_streaming_synchronized_spatial_audio_generation_via_autoregressive_diffu.md)
 
 </div>
 

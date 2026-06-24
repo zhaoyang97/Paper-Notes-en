@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HCFD: A Benchmark for Audio Deepfake Detection in Healthcare
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper proposes HCFD, a task for codec-based fake speech detection in healthcare scenarios. It constructs HCFK, the first codec-based fake speech dataset containing various clinical pathological conditions (Depression, Alzheimer's, Dysarthria), and proposes the PHOENIX-Mamba framework—which models multi-modal forge
+  [ACL 2026][Audio & Speech][Audio Deepfake Detection] This paper proposes HCFD, a task for codec-based fake speech detection in healthcare scenarios. It constructs HCFK, the first codec-based fake speech dataset containing various clinical pathological conditions (Depression, Alzheimer's, Dysarthria), and proposes the PHOENIX-Mamba framework—which models multi-modal forgery evidence prototypes in hyperbolic space to achieve 97.04% accuracy in English depression detection.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Audio Deepfake Detection"
+  - "Pathological Speech"
+  - "Neural Audio Codec"
+  - "Hyperbolic Prototypes"
+  - "Healthcare Security"
 date: 2026-05-08
-content_hash: a03ce5c6e62c638d
+content_hash: 179f7b00ff739497
 ---
+
 # HCFD: A Benchmark for Audio Deepfake Detection in Healthcare
 
 **Conference**: ACL 2026  
@@ -127,12 +133,12 @@ The model is trained using the AdamW optimizer for 20 epochs with a batch size o
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection](xlsr-mambo_scaling_the_hybrid_mamba-attention_backbone_for_audio_deepfake_detect.md)
 - [\[ACL 2026\] RTCFake: Speech Deepfake Detection in Real-Time Communication](rtcfake_speech_deepfake_detection_in_real-time_communication.md)
+- [\[ACL 2026\] XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection](xlsr-mambo_scaling_the_hybrid_mamba-attention_backbone_for_audio_deepfake_detect.md)
 - [\[ACL 2026\] Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation](analyzing_reasoning_shifts_in_audio_deepfake_detection_under_adversarial_attacks.md)
 - [\[ACL 2026\] MSU-Bench: Musical Score Understanding Benchmark](musical_score_understanding_benchmark_evaluating_large_language_models39_compreh.md)
 - [\[NeurIPS 2025\] A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings](../../NeurIPS2025/audio_speech/a_multitask_benchmark_for_abusive_language_detection_in_lowr.md)

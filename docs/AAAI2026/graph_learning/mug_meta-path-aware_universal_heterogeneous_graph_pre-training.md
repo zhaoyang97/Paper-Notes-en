@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training
 description: >-
-  [AAAI 2026][Graph Learning][Heterogeneous graph] MUG is the first universal heterogeneous graph pre-training method that requires no LLM. It unifies heterogeneous node/relation types via contextual structural encoding…
+  [AAAI 2026][Graph Learning][Heterogeneous graph] MUG is the first universal heterogeneous graph pre-training method that requires no LLM. It unifies heterogeneous node/relation types via contextual structural encoding, aligns representation spaces across graphs with a dimension-aware encoder, and achieves transferable encoding and aggregation through a shared GNN encoder over meta-path views combined with global scatter regularization. MUG substantially outperforms existing m…
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -14,7 +14,7 @@ tags:
   - "self-supervised learning"
   - "masked autoencoding"
 date: 2026-05-08
-content_hash: 0040e5ff6480c4ab
+content_hash: a524458b73e7304a
 ---
 
 # MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training
@@ -190,8 +190,8 @@ Ablation experiments trained on Freebase and evaluated across four datasets show
 - [\[AAAI 2026\] EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning](echoless_label-based_pre-computation_for_memory-efficient_heterogeneous_graph_le.md)
 - [\[AAAI 2026\] Spiking Heterogeneous Graph Attention Networks](spiking_heterogeneous_graph_attention_networks.md)
 - [\[AAAI 2026\] RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA](rfkg-cot_relation-driven_adaptive_hop-count_selection_and_few-shot_path_guidance.md)
-- [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
 - [\[AAAI 2026\] Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation](enhancing_logical_expressiveness_in_graph_neural_networks_via_path-neighbor_aggr.md)
+- [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
 
 </div>
 

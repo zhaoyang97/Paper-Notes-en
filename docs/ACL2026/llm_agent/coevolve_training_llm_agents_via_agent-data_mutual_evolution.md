@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution
 description: >-
-  [ACL 2026][LLM Agent][Reinforcement Learning] CoEvolve proposes an **agent-data mutual evolution framework** that extracts three types of weakness signals—forgetting, boundary, and rare patterns—from training trajectories to guide targeted environment re-exploration and task synthesis. This enables the training data distribution to dynamically adapt to agent capab
+  [ACL 2026][LLM Agent][Agent training] CoEvolve proposes an **agent-data mutual evolution framework** that extracts three types of weakness signals—forgetting, boundary, and rare patterns—from training trajectories to guide targeted environment re-exploration and task synthesis. This enables the training data distribution to dynamically adapt to agent capabilities, yielding absolute gains of 19-23% on AppWorld and BFCL.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Agent training"
+  - "data synthesis"
+  - "co-evolution"
+  - "forgetting signals"
+  - "reinforcement learning"
 date: 2026-05-08
-content_hash: 9f0d18eb9be680c3
+content_hash: 9a97c418cb076def
 ---
+
 # CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution
 
 **Conference**: ACL 2026  
@@ -126,15 +131,15 @@ The agent is trained using GRPO: for each task, $K$ trajectories are sampled, po
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](from_storage_to_experience_a_survey_on_the_evolution_of_llm_agent_memory_mechani.md)
-- [\[ACL 2026\] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents](zara_training-free_motion_time-series_reasoning_via_evidence-grounded_llm_agents.md)
 - [\[ACL 2026\] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning](webclipper_efficient_evolution_of_web_agents_with_graph-based_trajectory_pruning.md)
+- [\[ACL 2026\] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents](zara_training-free_motion_time-series_reasoning_via_evidence-grounded_llm_agents.md)
 - [\[ACL 2026\] GOAT: A Training Framework for Goal-Oriented Agent with Tools](goat_a_training_framework_for_goal-oriented_agent_with_tools.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
+- [\[ICLR 2026\] Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents](../../ICLR2026/llm_agent/agent_data_protocol_unifying_datasets_for_diverse_effective_fine-tuning_of_llm_a.md)
 
 </div>
 

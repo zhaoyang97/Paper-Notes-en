@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Surprising Difficulty of Search in Model-Based Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] The authors counter-intuitively demonstrate that search failure in model-based RL is not caused by model inaccuracy, but rather by overestimation bias stemming from the policy mismatch between the MPC behavior policy and the value function training policy. They propose the MRS.Q algorithm, which utilizes a "min" operat
+  [ICML 2026][Reinforcement Learning][Model Predictive Control] The authors counter-intuitively demonstrate that search failure in model-based RL is not caused by model inaccuracy, but rather by overestimation bias stemming from the policy mismatch between the MPC behavior policy and the value function training policy. They propose the MRS.Q algorithm, which utilizes a "min" operation over an ensemble of 10 value functions, consistently outperforming SOTA methods like TD-MPC2…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Model Predictive Control"
+  - "Value Overestimation"
+  - "Ensemble Minimum"
+  - "Model-as-Representation"
+  - "Search"
 date: 2026-05-08
-content_hash: 61253b9c28908ff9
+content_hash: 348c5e9478e164e3
 ---
+
 # The Surprising Difficulty of Search in Model-Based Reinforcement Learning
 
 **Conference**: ICML 2026  

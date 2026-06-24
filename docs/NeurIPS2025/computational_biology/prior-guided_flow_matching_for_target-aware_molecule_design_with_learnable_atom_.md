@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number
 description: >-
-  [NeurIPS 2025][Computational Biology][Structure-based drug design] This paper proposes PAFlow, a 3D molecule generation model built on the flow matching framework…
+  [NeurIPS 2025][Computational Biology][Structure-based drug design] This paper proposes PAFlow, a 3D molecule generation model built on the flow matching framework, which guides the vector field via a protein–ligand interaction predictor and determines atom counts through a learnable atom number predictor. PAFlow achieves a new state-of-the-art Avg. Vina Score of −8.31 on CrossDocked2020, substantially outperforming existing methods.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "atom number prediction"
   - "3D molecule generation"
 date: 2026-05-08
-content_hash: 5fd69b32a88f2d5a
+content_hash: 3ddfd225b9004089
 ---
 
 # Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number
@@ -121,9 +121,9 @@ The total loss comprises three components: (1) coordinate CFM loss $\mathcal{L}_
 
 - [\[NeurIPS 2025\] Unified All-Atom Molecule Generation with Neural Fields](unified_all-atom_molecule_generation_with_neural_fields.md)
 - [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
-- [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
-- [\[ICML 2026\] LineageFlow: Flow Matching for High-Fidelity Family-Aware Protein Sequence Generation](../../ICML2026/computational_biology/lineageflow_flow_matching_for_high-fidelity_family-aware_protein_sequence_genera.md)
-- [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
+- [\[ICML 2025\] Flexibility-conditioned Protein Structure Design with Flow Matching](../../ICML2025/computational_biology/flexibility-conditioned_protein_structure_design_with_flow_matching.md)
+- [\[NeurIPS 2025\] Curly Flow Matching for Learning Non-gradient Field Dynamics](curly_flow_matching_for_learning_non-gradient_field_dynamics.md)
+- [\[ICML 2025\] Improving Flow Matching by Aligning Flow Divergence](../../ICML2025/computational_biology/improving_flow_matching_by_aligning_flow_divergence.md)
 
 </div>
 

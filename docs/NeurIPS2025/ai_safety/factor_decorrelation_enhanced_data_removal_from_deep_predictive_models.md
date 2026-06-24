@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Factor Decorrelation Enhanced Data Removal from Deep Predictive Models
 description: >-
-  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes DecoRemoval, a framework that achieves data removal without full retraining via two modules: discriminability-preserving factor decorrelation (RFF-based s…
+  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes DecoRemoval, a framework that achieves data removal without full retraining via two modules: discriminability-preserving factor decorrelation (RFF-based spatial mapping with adaptive weighting) and smoothed loss perturbation. The method significantly outperforms existing approaches, particularly under out-of-distribution (OOD) settings.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "OOD robustness"
   - "random Fourier features"
 date: 2026-05-08
-content_hash: c8487ae19ee4eac2
+content_hash: 9090288affdd85fa
 ---
 
 # Factor Decorrelation Enhanced Data Removal from Deep Predictive Models
@@ -142,11 +142,11 @@ That is, the influence of removing a single data point on the model output does 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Preserving Task-Relevant Information Under Linear Concept Removal](preserving_task-relevant_information_under_linear_concept_removal.md)
 - [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
-- [\[NeurIPS 2025\] Distributional Adversarial Attacks and Training in Deep Hedging](distributional_adversarial_attacks_and_training_in_deep_hedging.md)
+- [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](../../ICLR2026/ai_safety/distributional_machine_unlearning_via_selective_data_removal.md)
+- [\[NeurIPS 2025\] Preserving Task-Relevant Information Under Linear Concept Removal](preserving_task-relevant_information_under_linear_concept_removal.md)
 - [\[AAAI 2026\] Privacy on the Fly: A Predictive Adversarial Transformation Network for Mobile Sensor Data](../../AAAI2026/ai_safety/privacy_on_the_fly_a_predictive_adversarial_transformation_network_for_mobile_se.md)
-- [\[NeurIPS 2025\] Provable Watermarking for Data Poisoning Attacks](provable_watermarking_for_data_poisoning_attacks.md)
+- [\[NeurIPS 2025\] Distributional Adversarial Attacks and Training in Deep Hedging](distributional_adversarial_attacks_and_training_in_deep_hedging.md)
 
 </div>
 

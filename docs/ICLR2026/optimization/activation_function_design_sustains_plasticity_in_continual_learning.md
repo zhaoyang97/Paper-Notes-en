@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Activation Function Design Sustains Plasticity in Continual Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][Reinforcement Learning] This paper repositions "activation functions" as the primary, architecture-agnostic lever for mitigating **loss of plasticity** in continual learning. Through an attribute-level analysis of negative slope and saturation behavior, three design principles are refined. Based on these, two plug-and-play non-linearities, Sm
+  [ICLR 2026][Optimization][Loss of Plasticity] This paper repositions "activation functions" as the primary, architecture-agnostic lever for mitigating **loss of plasticity** in continual learning. Through an attribute-level analysis of negative slope and saturation behavior, three design principles are refined. Based on these, two plug-and-play non-linearities, Smooth-Leaky and Randomized Smooth-Leaky, are proposed, which consistently improve late-stage adaptation in supervis…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Optimization"
+  - "Loss of Plasticity"
+  - "Activation Functions"
+  - "Continual Learning"
+  - "Dead Neurons"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 68f2f450558a83ae
+content_hash: 2696fe38ace2b47e
 ---
+
 # Activation Function Design Sustains Plasticity in Continual Learning
 
 **Conference**: ICLR 2026  
@@ -123,10 +128,10 @@ The Plasticity Score uses Min-Max normalization + IQM aggregation of final-round
 
 ## Related Papers
 
+- [\[ICLR 2026\] FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability–Plasticity Tradeoff](fire_frobenius-isometry_reinitialization_for_balancing_the_stabilityplasticity_t.md)
+- [\[ICLR 2026\] Leveraging Discrete Function Decomposability for Scientific Design](leveraging_discrete_function_decomposability_for_scientific_design.md)
 - [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](lca_local_classifier_alignment_for_continual_learning.md)
 - [\[ICLR 2026\] Submodular Function Minimization with Dueling Oracle](submodular_function_minimization_with_dueling_oracle.md)
-- [\[ICLR 2026\] FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability–Plasticity Tradeoff](fire_frobenius-isometry_reinitialization_for_balancing_the_stabilityplasticity_t.md)
-- [\[ICLR 2026\] Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation](reducing_contextual_stochastic_bilevel_optimization_via_structured_function_appr.md)
 - [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
 
 </div>

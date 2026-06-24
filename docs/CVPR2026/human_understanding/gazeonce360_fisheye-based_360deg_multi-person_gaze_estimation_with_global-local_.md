@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Using a single upward-facing desktop fisheye camera to capture a 360° scene, GazeOnce360 employs rotational convolutions, eye keypoint supervision, and global-local dual-resolution cross-attention to simultaneously detect and regress 3D gaze directions for multiple people in an end-to-end manner. On the self-built synt
+  [CVPR 2026][Human Understanding][Multi-person gaze estimation] Using a single upward-facing desktop fisheye camera to capture a 360° scene, GazeOnce360 employs rotational convolutions, eye keypoint supervision, and global-local dual-resolution cross-attention to simultaneously detect and regress 3D gaze directions for multiple people in an end-to-end manner. On the self-built synthetic dataset MPSGaze360, it reduces gaze error from 18.96° (multi-stage pipeline) to 10.39° whil…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-person gaze estimation"
+  - "fisheye camera"
+  - "rotational convolution"
+  - "dual-resolution fusion"
+  - "synthetic dataset"
 date: 2026-05-08
-content_hash: 6d6a360a144d82ec
+content_hash: d9519c71513ea559
 ---
+
 # GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,14 @@ The end-to-end approach nearly halves the gaze error under the most difficult D2
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ECCV 2024\] Gaze Target Detection Based on Head-Local-Global Coordination](../../ECCV2024/human_understanding/gaze_target_detection_based_on_head-local-global_coordination.md)
 - [\[CVPR 2026\] Pose-guided Enriched Feature Learning for Federated-by-camera Person Re-identification](pose-guided_enriched_feature_learning_for_federated-by-camera_person_re-identifi.md)
+- [\[CVPR 2026\] MS^2Gait: A Multi-Scale Spatio-Temporal Fusion Network for LiDAR-based Gait Recognition](ms2gait_a_multi-scale_spatio-temporal_fusion_network_for_lidar-based_gait_recogn.md)
 - [\[CVPR 2026\] Gaze Target Estimation Anywhere with Concepts](gaze_target_estimation_anywhere_with_concepts.md)
 - [\[CVPR 2026\] MAMMA: Markerless Accurate Multi-person Motion Acquisition](mamma_markerless_accurate_multi-person_motion_acquisition.md)
-- [\[CVPR 2026\] GazeShift: Unsupervised Gaze Estimation and Dataset for VR](gazeshift_unsupervised_gaze_estimation_and_dataset_for_vr.md)
-- [\[CVPR 2026\] Render-to-Adapt: Unsupervised Personal Adaptation for Gaze Estimation](render-to-adapt_unsupervised_personal_adaptation_for_gaze_estimation.md)
 
 </div>
 

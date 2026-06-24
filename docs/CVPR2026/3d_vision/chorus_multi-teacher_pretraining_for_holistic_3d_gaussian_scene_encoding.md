@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Chorus: Multi-Teacher Pretraining for Holistic 3D Gaussian Scene Encoding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Chorus utilizes three types of 2D foundation models—language-aligned (SigLIP2), general vision (DINOv3), and object-aware (PE-Spatial)—as teachers. By employing a "shared 3DGS encoder + independent projectors for each teacher," it distills a versatile feed-forward 3D Gaussian scene encoder in a single pass. It achieves
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] Chorus utilizes three types of 2D foundation models—language-aligned (SigLIP2), general vision (DINOv3), and object-aware (PE-Spatial)—as teachers. By employing a "shared 3DGS encoder + independent projectors for each teacher," it distills a versatile feed-forward 3D Gaussian scene encoder in a single pass. It achieves SOTA performance across a wide range of tasks including semantic/instance segmentation, open-vocabulary tasks…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Multi-teacher Distillation"
+  - "Scene Encoding Pre-training"
+  - "Open-vocabulary Segmentation"
+  - "Cross-modal Distillation"
 date: 2026-05-08
-content_hash: 7fdf5c6dc47fb521
+content_hash: 37779bbb6389f1e5
 ---
+
 # Chorus: Multi-Teacher Pretraining for Holistic 3D Gaussian Scene Encoding
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ Notably, the point cloud-only variant • Chorus matches or exceeds the SOTA sel
 
 ## Related Papers
 
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
-- [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
+- [\[CVPR 2026\] SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors](spe-mvs_spatial_position_encoding_enhanced_multi-view_stereo_with_monocular_dept.md)
+- [\[CVPR 2026\] AutoRegressive Generation with B-rep Holistic Token Sequence Representation](autoregressive_generation_with_b-rep_holistic_token_sequence_representation.md)
 - [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
+- [\[CVPR 2026\] VDFE: Difference-Aware 3D Scene Editing with Non-Intrusive Video Diffusion Priors for Multi-View Consistency and Efficiency](vdfe_difference-aware_3d_scene_editing_with_non-intrusive_video_diffusion_priors.md)
+- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
 
 </div>
 

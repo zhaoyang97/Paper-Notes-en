@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Matchings Under Biased and Correlated Evaluations
 description: >-
-  [NeurIPS 2025][AI Safety][stable matching] This paper introduces a correlation parameter $\gamma$ (the degree of alignment between institutional evaluations) into a two-institution stable matching model…
+  [NeurIPS 2025][AI Safety][stable matching] This paper introduces a correlation parameter $\gamma$ (the degree of alignment between institutional evaluations) into a two-institution stable matching model, and analyzes how bias $\beta$ and correlation $\gamma$ jointly affect the representation ratio of disadvantaged groups. It proves that even a slight loss of correlation can cause a sharp drop in representation, and characterizes the Pareto frontier of fairness interventions.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "fairness"
   - "representation ratio"
 date: 2026-05-08
-content_hash: 8eeb51154f777976
+content_hash: c521b12a2f0effa3
 ---
 
 # Matchings Under Biased and Correlated Evaluations
@@ -138,8 +138,8 @@ This paper is a purely theoretical study with no training procedure. The core eq
 - [\[NeurIPS 2025\] Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI](understanding_challenges_to_the_interpretation_of_disaggregated_evaluations_of_a.md)
 - [\[NeurIPS 2025\] CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D](ctrl-alt-deceit_sabotage_evaluations_for_automated_ai_rd.md)
 - [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
-- [\[NeurIPS 2025\] Reconstruction and Secrecy under Approximate Distance Queries](reconstruction_and_secrecy_under_approximate_distance_queries.md)
 - [\[NeurIPS 2025\] Cost Efficient Fairness Audit Under Partial Feedback](cost_efficient_fairness_audit_under_partial_feedback.md)
+- [\[ICLR 2026\] Robust Optimization for Mitigating Reward Hacking with Correlated Proxies](../../ICLR2026/ai_safety/robust_optimization_for_mitigating_reward_hacking_with_correlated_proxies.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion
 description: >-
-  [AAAI 2026][3D Vision][point cloud completion] This paper proposes the DANCE framework, which achieves density-agnostic point cloud completion via ray-based candidate point sampling and an opacity prediction mechanism…
+  [AAAI2026][3D Vision][point cloud completion] The proposed DANCE framework achieves density-agnostic point cloud completion through ray-based candidate point sampling and an opacity prediction mechanism, while introducing a classification head to provide semantic priors, achieving state-of-the-art performance on PCN and MVP benchmarks.
 tags:
-  - "AAAI 2026"
+  - "AAAI2026"
   - "3D Vision"
   - "point cloud completion"
   - "density-agnostic"
@@ -13,79 +13,79 @@ tags:
   - "ray-based sampling"
   - "opacity prediction"
 date: 2026-05-08
-content_hash: 8e8779f25a4a4634
+content_hash: b9a12eaac73dac8b
 ---
 
 # DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion
 
-**Conference**: AAAI 2026
+**Conference**: AAAI2026  
 **arXiv**: [2511.07978](https://arxiv.org/abs/2511.07978)  
 **Code**: [ayeong0909/DANCE](https://github.com/ayeong0909/DANCE)  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: point cloud completion, density-agnostic, class-aware, transformer, ray-based sampling, opacity prediction
 
 ## TL;DR
 
-This paper proposes the DANCE framework, which achieves density-agnostic point cloud completion via ray-based candidate point sampling and an opacity prediction mechanism, while introducing a classification head to provide semantic priors. The method achieves state-of-the-art performance on the PCN and MVP benchmarks.
+The proposed DANCE framework achieves density-agnostic point cloud completion through ray-based candidate point sampling and an opacity prediction mechanism, while introducing a classification head to provide semantic priors, achieving state-of-the-art performance on PCN and MVP benchmarks.
 
 ## Background & Motivation
 
-Point cloud completion aims to recover missing geometric structures from incomplete 3D scans caused by occlusion or sensor viewpoint limitations, serving as a critical prerequisite for autonomous driving, robotics, and 3D reconstruction.
+Point cloud completion aims to recover missing geometric structures from incomplete 3D scans caused by occlusion or sensor perspective limitations. It constitutes a key preprocessing task for autonomous driving, robotics, and 3D reconstruction.
 
-Existing methods suffer from two core limitations:
+Existing methods have two core limitations:
 
-1. **Fixed-density assumption**: The vast majority of methods assume fixed densities for both input and output point clouds (e.g., a fixed output of 4096 points), making them ill-suited for real-world scenarios where sparsity varies with object distance and sensor resolution.
-2. **Reliance on image supervision**: Recent generative methods (e.g., GenPC, PCDreamer) convert partial point clouds into 2D images and leverage image-to-3D models for completion; strong 2D priors often cause the completed results to deviate from the original 3D geometry.
+1. **Fixed Density Assumption**: The vast majority of methods assume a fixed density for input and output point clouds (e.g., outputting a fixed number of 4096 points), which fails to adapt to sparsity variations caused by different object distances and sensor resolutions in real-world scenes.
+2. **Reliance on Image Supervision**: Recent generative methods (such as GenPC, PCDreamer) convert partial point clouds into 2D images and then utilize image-to-3D models for completion. Such strong 2D priors often lead the completion results to deviate from the original 3D geometry.
 
-The authors argue that an ideal completion method should: (a) be density-agnostic, capable of handling inputs of arbitrary sparsity and flexibly controlling output density; and (b) learn semantic priors directly from 3D geometry rather than relying on external image representations.
+An ideal completion method should: (a) be density-agnostic, handling inputs of arbitrary sparsity and flexibly controlling the output density; (b) directly learn semantic priors from 3D geometry, rather than relying on external image representations.
 
 ## Core Problem
 
-How to complete only the missing regions while preserving observed geometry—without relying on fixed density assumptions or image supervision—and simultaneously incorporate class-level semantic information to improve completion quality?
+How to complete only the missing regions and preserve the observed geometry without relying on fixed density and image supervision, while introducing class semantic information to enhance completion quality?
 
 ## Method
 
 ### Overall Architecture
 
-DANCE consists of three stages: candidate point generation → encoder feature extraction → decoder completion prediction.
+DANCE consists of three stages: candidate point generation -> encoder feature extraction -> decoder completion prediction.
 
-### 1. Candidate Point Generation (Ray-based Sampling)
+### 1. Ray-based Sampling
 
-Inspired by NeRF, $V$ viewpoints (default $V=6$, forming a hexahedral configuration) are placed around the incomplete point cloud, each corresponding to a face oriented toward the object. An $R \times R$ grid (default $R=21$) is placed on each face, and rays are cast from each viewpoint through every grid point. One 3D candidate point is sampled along each ray according to a Gaussian distribution, yielding a total of $M = V \cdot R^2$ candidate points $P^S$.
+Inspired by NeRF, $V$ viewpoints are placed around the incomplete point cloud (default $V=6$, forming a hexahedron), where each viewpoint corresponds to a face facing the object. An $R \times R$ grid is placed on each face (default $R=21$). Rays are cast from the viewpoints through each grid point, and a 3D candidate point is sampled along the ray based on a Gaussian distribution. This generates a total of $M = V \cdot R^2$ candidate points $P^S$.
 
-These candidate points are intentionally imprecise and are subsequently refined to accurate positions by the encoder-decoder.
+These candidate points are initially coarse and are subsequently refined into precise locations by the encoder-decoder.
 
 ### 2. Encoder (3D Feature Extraction)
 
-The candidate points $P^S$ and the incomplete point cloud $P^I$ share the same encoder $E$ (e.g., PointNet, DGCNN), extracting respectively:
+The candidate points $P^S$ and the incomplete point cloud $P^I$ share the same encoder $E$ (which can be PointNet, DGCNN, etc.) to extract:
 
 - Candidate features $f^S = E(P^S) \in \mathbb{R}^{M \times d_{en}}$
-- Global feature $f^I = \text{maxpool}(E(P^I)) \in \mathbb{R}^{1 \times d_{en}}$
+- Global features $f^I = \text{maxpool}(E(P^I)) \in \mathbb{R}^{1 \times d_{en}}$
 
-The shared encoder ensures both sets of features are aligned in the same feature space.
+The shared encoder ensures that both sets of features are aligned within the same feature space.
 
-### 3. Decoder (Three Components)
+### 3. Decoder
 
-**(a) Face Transformer**: Processes candidate features grouped by viewpoint. Each viewpoint group $f_v^S$ first undergoes cross-attention with the global feature $f^I$ (injecting global shape priors), followed by intra-group self-attention (enhancing local geometric consistency). Viewpoint positional encodings $E_v^{fpos}$ are used to preserve spatial relationships.
+**(a) Face Transformer**: Candidate features are processed in groups according to their viewpoints. Each viewpoint group $f_v^S$ first performs cross-attention with the global feature $f^I$ (injecting a global shape prior), and then performs self-attention within the group (enhancing local geometric consistency). Viewpoint positional encodings $E_v^{fpos}$ are utilized to maintain spatial relationships.
 
-**(b) Classification Head**: Applies MLP + softmax to the global feature $f^I$ to predict a class probability distribution $\mathbf{p}^{cls} \in \mathbb{R}^c$, providing class-level semantic priors for completion.
+**(b) Classification Head**: Predicting class probability distributions $\mathbf{p}^{cls} \in \mathbb{R}^c$ on the global feature $f^I$ via an MLP + softmax, providing semantic priors for completion.
 
-**(c) Fusion Network**: The geometric features $F^S$ are first processed by a compress-expand MLP (bottleneck dimension of 4, aligned with the output dimension), then concatenated with the class probabilities $\mathbf{p}^{cls}$. A prediction head then outputs for each candidate point:
+**(c) Fusion Network**: Geometric features $F^S$ are first passed through a compression-expansion MLP (with a bottleneck dimension of 4, aligned with the output dimension) and then concatenated with class probabilities $\mathbf{p}^{cls}$. The prediction head then outputs the following for each candidate point:
 
-- **Offset** $o_m = \{o_x, o_y, o_z\}$: a positional correction in the local coordinate frame centered at the candidate point
-- **Opacity** $\sigma_m$: determines whether the point is valid (retained if $\sigma \geq 0.5$)
+- **Offset** $o_m = \{o_x, o_y, o_z\}$: Position correction in the local coordinate system with the candidate point as the origin.
+- **Opacity** $\sigma_m$: Determines whether the point is valid (retained if $\sigma \geq 0.5$).
 
-The final completed point cloud is $P^{out} = \{p_m + o_m \mid \sigma_m \geq 0.5\}$, which is merged with the input to obtain $P^{pred} = P^I \cup P^{out}$.
+The final missing point cloud is $P^{out} = \{p_m + o_m \mid \sigma_m \geq 0.5\}$, which is merged with the input to obtain $P^{pred} = P^I \cup P^{out}$.
 
 ### 4. Loss & Training
 
 $$\mathcal{L}_{total} = \lambda \cdot \text{CD}(P^{pred}, P^{GT}) + (1-\lambda) \cdot \mathcal{L}_{cls}$$
 
-where CD denotes Chamfer Distance and $\mathcal{L}_{cls}$ is the cross-entropy classification loss.
+where CD represents Chamfer Distance, and $\mathcal{L}_{cls}$ is the cross-entropy classification loss.
 
 ## Key Experimental Results
 
-### PCN Dataset (8 classes, L1-CD)
+### Main Results on PCN Dataset (8 Classes, L1-CD)
 
 | Method | CD-Avg ↓ | DCD-Avg ↓ | F1 ↑ |
 |---|---|---|---|
@@ -94,66 +94,66 @@ where CD denotes Chamfer Distance and $\mathcal{L}_{cls}$ is the cross-entropy c
 | PCDreamer | 6.52 | 0.531 | 0.856 |
 | **DANCE (Ours)** | **6.46** | **0.528** | **0.859** |
 
-### MVP Dataset (16 classes)
+### Main Results on MVP Dataset (16 Classes)
 
 | Resolution | CD-Avg ↓ | F1 ↑ |
 |---|---|---|
 | 4096 points | **4.19** | **0.662** |
 | 8192 points | **3.37** | **0.754** |
 
-Both settings outperform prior SOTA methods including DualGenerator and PDR.
+Both outperform previous SOTA models such as DualGenerator and PDR.
 
 ### Ablation Study (PCN)
 
-- Removing the Classification Head: CD-Avg increases from 6.42 → 6.46, F1 drops from 0.859 → 0.856
-- Removing Face Attention: CD-Avg increases from 6.42 → 6.52, F1 drops from 0.859 → 0.849
+- Removing Classification Head: CD-Avg increases from 6.42 → 6.46, F1 decreases from 0.859 → 0.856.
+- Removing Face Attention: CD-Avg increases from 6.42 → 6.52, F1 decreases from 0.859 → 0.849.
 
-Both components contribute positively, with the Face Transformer having a larger impact.
+Both components contribute positively, with the Face Transformer having a greater impact.
 
 ### Robustness
 
-- **Noise robustness**: Under varying levels of Gaussian noise, DANCE exhibits smaller performance degradation compared to SVDFormer and SeedFormer.
-- **Density flexibility**: Trained with fixed $R=21$, the model can directly use $R=17$ or $R=29$ at inference to adjust output density without retraining.
+- **Noise Robustness**: Under different Gaussian noise levels, the performance degradation of DANCE is smaller than that of SVDFormer and SeedFormer.
+- **Density Flexibility**: While $R=21$ is fixed during training, $R$ can be directly changed to $R=17$ or $R=29$ during inference to adjust the output density without retraining.
 
 ## Highlights & Insights
 
-1. **Density-agnostic design**: The first point cloud completion method to achieve density-agnosticism for both input and output, with output point count naturally controlled via opacity filtering.
-2. **Pure 3D semantic priors**: The classification head learns class information directly from 3D geometric features without image supervision, making it more suitable for real-world deployment.
-3. **Completion of missing regions only**: Original observed geometry is preserved, avoiding detail loss introduced by global regeneration.
-4. **Ray-based sampling strategy**: The NeRF-inspired idea is elegantly transferred to point cloud completion, providing a structured distribution of candidate points.
-5. **Inference-time density control**: Output resolution can be flexibly adjusted by modifying $R$, offering strong practical utility.
+1. **Density-Agnostic Design**: This work achieves density-agnostic 3D point cloud completion for the first time, where both input and output densities are variable, and the number of output points is naturally controlled through opacity filtering.
+2. **Pure 3D Semantic Priors**: The classification head directly learns class information from 3D geometric features without requiring image supervision, making it more suitable for real-world deployment.
+3. **Completing Only Missing Regions**: The original observed geometry is preserved, avoiding detail loss caused by global regeneration.
+4. **Ray Sampling Strategy**: The NeRF concept is elegantly transferred to point cloud completion, providing a structured distribution of candidate points.
+5. **Controllable Density at Inference**: Adjusting $R$ allows flexible changes to the output resolution, offering high practicality.
 
 ## Limitations & Future Work
 
-1. **Fixed viewpoint configuration**: The current hexahedral viewpoint layout and uniform grid may not constitute an optimal sampling strategy for highly asymmetric or geometrically complex objects.
-2. **Computational overhead from candidate points**: When $R$ is large, $M = V \cdot R^2$ generates a substantial number of candidate points, increasing computational cost.
-3. **Limited category set**: The classification head relies on a predefined set of categories, raising concerns about generalization to unseen classes.
-4. **Evaluation on synthetic data only**: Both PCN and MVP are ShapeNet-based synthetic benchmarks; the method has not been validated on real sensor scans (e.g., ScanNet, KITTI).
-5. The authors propose adaptive viewpoint sampling as a future direction, dynamically adjusting sampling positions and viewpoint count based on input geometry.
+1. **Fixed Viewpoint Configuration**: Placing fixed hexahedral viewpoints and uniform grids may not be the optimal sampling strategy for highly asymmetric or complex structured objects.
+2. **Candidate Point Overhead**: $M = V \cdot R^2$ yields a large number of candidate points when $R$ is large, increasing computational overhead.
+3. **Limited Classes**: The classification head relies on a predefined set of classes, which raises issues regarding generalization capability to unseen classes in the training set.
+4. **Evaluation Only on Synthetic Data**: Both PCN and MVP are based on synthetic data from ShapeNet, and have not been validated on real sensor scan data (such as ScanNet, KITTI).
+5. Future direction proposed by the authors: Adaptive viewpoint sampling, dynamically adjusting sampling positions and the number of viewpoints according to the input geometric features.
 
 ## Related Work & Insights
 
 | Dimension | PCN / PoinTr | GenPC / PCDreamer | DANCE |
 |---|---|---|---|
-| Completion scope | Global / missing only | Global regeneration | Missing regions only |
-| Density assumption | Fixed input & output | Fixed | **Density-agnostic** |
-| Semantic prior | None | 2D image supervision | **3D classification head** |
-| Output density control | Not supported | Not supported | **Adjustable $R$ at inference** |
+| Completion Scope | Global / Missing only | Global Regeneration | Missing regions only |
+| Density Assumption | Fixed input/output | Fixed | **Density-Agnostic** |
+| Semantic Prior | None | 2D image supervision | **3D classification head** |
+| Output Density Control | Unsupported | Unsupported | **Adjustable $R$ at inference** |
 
-DANCE belongs to the same "complete missing regions only" category as PoinTr, but achieves density flexibility through the opacity mechanism and, with the addition of semantic priors, reduces CD-Avg on PCN from PoinTr's 7.76 to 6.46.
+While sharing the "missing only" paradigm with PoinTr, DANCE achieves density flexibility through the opacity mechanism. Furthermore, with the introduction of semantic priors, the CD-Avg of DANCE on PCN decreases to 6.46 compared to PoinTr's 7.76.
 
-The following broader insights are noteworthy:
+## Inspirations & Connections
 
-- **Cross-domain transfer from NeRF to point cloud completion**: The combination of ray-based sampling and opacity prediction can be generalized to other 3D generation tasks (e.g., scene completion, point cloud upsampling).
-- **Lightweight semantic guidance**: A simple classification head yields significant improvements in completion quality, suggesting that semantic priors can be incorporated at low cost in other 3D tasks as well.
-- **Density-controllable inference**: The opacity filtering mechanism can be adopted in scenarios requiring flexible output resolution control (e.g., level-of-detail generation).
+- **Cross-domain Transfer from NeRF to Point Cloud Completion**: The concept of ray sampling + opacity prediction can be extended to other 3D generation tasks (e.g., scene completion, point cloud upsampling).
+- **Lightweight Semantic Guidance**: A simple classification head significantly improves completion quality, suggesting that semantic priors can be introduced cost-effectively in other 3D tasks.
+- **Density-Controllable Inference**: The opacity filtering mechanism can be adapted to scenarios requiring flexible control over output resolution (e.g., Level of Detail (LOD) generation).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The density-agnostic design and NeRF-style sampling transfer are novel, though the classification head itself is relatively straightforward
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive comparisons on PCN/MVP with complete ablations, but real-world data validation is lacking
-- Writing Quality: ⭐⭐⭐⭐ — Motivation is clearly articulated, structure is well-organized, and figures effectively aid understanding
-- Value: ⭐⭐⭐⭐ — Density-agnostic completion addresses a practically meaningful challenge with clear implications for real-world deployment
+- Novelty: ⭐⭐⭐⭐ — The density-agnostic design and NeRF-style sampling transfer are novel, although the classification head design is relatively simple.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive baseline comparisons on PCN/MVP and complete ablation studies are provided, but real-world data validation is lacking.
+- Writing Quality: ⭐⭐⭐⭐ — The motivation is clear, the structure is well-organized, and the illustrations aid understanding effectively.
+- Value: ⭐⭐⭐⭐ — The direction of density-agnostic completion holds practical significance and provides valuable insights for real-world deployment.
 
 <!-- RELATED:START -->
 
@@ -163,8 +163,8 @@ The following broader insights are noteworthy:
 
 - [\[AAAI 2026\] Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective](rethinking_multimodal_point_cloud_completion_a_completion-by-correction_perspect.md)
 - [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
-- [\[AAAI 2026\] Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion](simba_towards_high-fidelity_and_geometrically-consistent_point_cloud_completion_.md)
-- [\[AAAI 2026\] ASSIST-3D: Adapted Scene Synthesis for Class-Agnostic 3D Instance Segmentation](assist-3d_adapted_scene_synthesis_for_class-agnostic_3d_instance_segmentation.md)
+- [\[AAAI 2026\] Class-Partitioned VQ-VAE and Latent Flow Matching for Point Cloud Scene Generation](class-partitioned_vq-vae_and_latent_flow_matching_for_point_cloud_scene_generati.md)
+- [\[ECCV 2024\] Explicitly Guided Information Interaction Network for Cross-modal Point Cloud Completion](../../ECCV2024/3d_vision/explicitly_guided_information_interaction_network_for_cross-modal_point_cloud_co.md)
 - [\[CVPR 2026\] Geometric-Aware Hypergraph Reasoning for Novel Class Discovery in Point Cloud Segmentation](../../CVPR2026/3d_vision/geometric-aware_hypergraph_reasoning_for_novel_class_discovery_in_point_cloud_se.md)
 
 </div>

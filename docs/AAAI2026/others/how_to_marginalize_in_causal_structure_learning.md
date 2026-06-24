@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How to Marginalize in Causal Structure Learning?
 description: >-
-  [AAAI 2026][Bayesian structure learning] This paper employs tractable Probabilistic Circuits (PCs) as a replacement for traditional dynamic programming to perform marginalization in Bayesian structure learning. Through a…
+  [AAAI 2026][Bayesian structure learning] This paper employs tractable Probabilistic Circuits (PCs) as a replacement for traditional dynamic programming to perform marginalization in Bayesian structure learning. Through a novel two-stage training strategy—first learning full parent set scores and then progressively fine-tuning for marginal queries—the method eliminates the artificial restriction on the number of candidate parent sets, achieving improved posterior distribution…
 tags:
   - "AAAI 2026"
   - "Bayesian structure learning"
@@ -11,7 +11,7 @@ tags:
   - "directed acyclic graphs"
   - "causal discovery"
 date: 2026-05-08
-content_hash: 1eedb4ef736e5564
+content_hash: b7d85c90c932bc8b
 ---
 
 # How to Marginalize in Causal Structure Learning?
@@ -130,10 +130,10 @@ Experiments are conducted within the TRUST framework using synthetic data (Erdő
 ## Related Papers
 
 - [\[AAAI 2026\] How Wide and How Deep? Mitigating Over-Squashing of GNNs via Channel Capacity Constrained Estimation](how_wide_and_how_deep_mitigating_over-squashing_of_gnns_via_channel_capacity_con.md)
-- [\[ICLR 2026\] CHLU: The Causal Hamiltonian Learning Unit as a Symplectic Primitive for Deep Learning](../../ICLR2026/others/chlu_the_causal_hamiltonian_learning_unit_as_a_symplectic_primitive_for_deep_lea.md)
+- [\[ACL 2025\] Using Shapley Interactions to Understand How Models Use Structure](../../ACL2025/others/using_shapley_interactions_to_understand_how_models_use_structure.md)
 - [\[AAAI 2026\] Structure-Aware Encodings of Argumentation Properties for Clique-width](structure-aware_encodings_of_argumentation_properties_for_clique-width.md)
+- [\[ICLR 2026\] Robust Equation Structure Learning with Adaptive Refinement (RESTART)](../../ICLR2026/others/robust_equation_structure_learning_with_adaptive_refinement.md)
 - [\[AAAI 2026\] How Hard is it to Explain Preferences Using Few Boolean Attributes?](how_hard_is_it_to_explain_preferences_using_few_boolean_attributes.md)
-- [\[ICLR 2026\] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation](../../ICLR2026/others/learning_structure-semantic_evolution_trajectories_for_graph_domain_adaptation.md)
 
 </div>
 

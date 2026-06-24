@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revisiting Agnostic Boosting
 description: >-
-  [NeurIPS 2025][Machine Learning Theory][Boosting] This paper proposes a new agnostic boosting algorithm that substantially improves the sample complexity of prior work under very general assumptions…
+  [NeurIPS 2025][Machine Learning Theory][Boosting] This paper proposes a new agnostic boosting algorithm that substantially improves the sample complexity of prior work under very general assumptions, and establishes nearly matching lower bounds, thereby resolving the sample complexity of agnostic boosting up to logarithmic factors.
 tags:
   - "NeurIPS 2025"
   - "Machine Learning Theory"
@@ -12,7 +12,7 @@ tags:
   - "weak-to-strong learning"
   - "lower bounds"
 date: 2026-05-08
-content_hash: 06e7994b40312308
+content_hash: 868741de808ae80f
 ---
 
 # Revisiting Agnostic Boosting
@@ -151,10 +151,10 @@ Effect of margin filtering threshold on sample efficiency (simulation):
 ## Related Papers
 
 - [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
+- [\[ICLR 2026\] Boosting for Predictive Sufficiency](../../ICLR2026/learning_theory/boosting_for_predictive_sufficiency.md)
 - [\[NeurIPS 2025\] Sample-Adaptivity Tradeoff in On-Demand Sampling](sample-adaptivity_tradeoff_in_on-demand_sampling.md)
-- [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
-- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
-- [\[NeurIPS 2025\] Adaptive Data Analysis for Growing Data](adaptive_data_analysis_for_growing_data.md)
+- [\[ICLR 2026\] Revisiting Active Sequential Prediction-Powered Mean Estimation](../../ICLR2026/learning_theory/revisiting_active_sequential_prediction-powered_mean_estimation.md)
+- [\[ICLR 2026\] Revisiting Nonstationary Kernel Design for Multi-Output Gaussian Processes](../../ICLR2026/learning_theory/revisiting_nonstationary_kernel_design_for_multi-output_gaussian_processes.md)
 
 </div>
 

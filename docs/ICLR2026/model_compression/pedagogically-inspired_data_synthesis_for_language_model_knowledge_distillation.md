@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes the IOA (Identifier-Organizer-Adapter) framework, which draws on Bloom’s mastery learning principles and Vygotsky’s Zone of Proximal Development (ZPD) theory. It achieves pedagogy-driven LLM knowledge distillation through three stages: diagnosing knowledge deficiencies, designing progressive curricu
+  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes the IOA (Identifier-Organizer-Adapter) framework, which draws on Bloom’s mastery learning principles and Vygotsky’s Zone of Proximal Development (ZPD) theory. It achieves pedagogy-driven LLM knowledge distillation through three stages: diagnosing knowledge deficiencies, designing progressive curricula, and adapting to cognitive levels.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Synthetic Data"
+  - "Curriculum Learning"
+  - "Pedagogically-Inspired"
+  - "LLM Compression"
 date: 2026-05-08
-content_hash: 181dcc07ff9b1a82
+content_hash: 69d5f51210554a39
 ---
+
 # Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation
 
 **Conference**: ICLR 2026  
@@ -128,15 +133,13 @@ Each stage follows a closed-loop of "Synthetic Data → Fine-tuning → Evaluati
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
+- [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](knowledge_distillation_for_large_language_models_through_residual_learning.md)
 - [\[AAAI 2026\] Condensed Data Expansion Using Model Inversion for Knowledge Distillation](../../AAAI2026/model_compression/condensed_data_expansion_using_model_inversion_for_knowledge_distillation.md)
+- [\[ICLR 2026\] Knowledge Distillation as Decontamination? Revisiting the "Data Laundering" Concern in Classification Tasks](knowledge_distillation_as_decontamination_revisiting_the_data_laundering_concern.md)
 - [\[ACL 2026\] Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation](../../ACL2026/model_compression/find_your_optimal_teacher_personalized_data_synthesis_via_router-guided_multi-te.md)
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](distillation_of_large_language_models_via_concrete_score_matching.md)
-- [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](knowledge_distillation_for_large_language_models_through_residual_learning.md)
-- [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
 
 </div>
 

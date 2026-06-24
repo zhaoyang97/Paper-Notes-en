@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Label-Free Mitigation of Spurious Correlations in VLMs using Sparse Autoencoders
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] DIAL utilizes a pre-trained Sparse Autoencoder (SAE) to decompose CLIP image embeddings into interpretable monosemantic feature directions. It identifies subspaces encoding spurious attributes in a zero-shot manner and removes them from affected samples via orthogonal projection, requiring no training, additional data,
+  [ICLR 2026][Multimodal VLM][Spurious Correlations] DIAL utilizes a pre-trained Sparse Autoencoder (SAE) to decompose CLIP image embeddings into interpretable monosemantic feature directions. It identifies subspaces encoding spurious attributes in a zero-shot manner and removes them from affected samples via orthogonal projection, requiring no training, additional data, class labels, or spurious feature labels.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Spurious Correlations"
+  - "CLIP Debiasing"
+  - "Sparse Autoencoders"
+  - "Zero-Shot"
+  - "Worst-Group Accuracy"
+  - "Orthogonal Projection"
 date: 2026-05-08
-content_hash: cdbc43222def54a1
+content_hash: 364cba721b1df9cb
 ---
+
 # Label-Free Mitigation of Spurious Correlations in VLMs using Sparse Autoencoders
 
 **Conference**: ICLR 2026  
@@ -134,9 +141,9 @@ In CelebA, DIAL outperforms all zero-shot baselines on ViT-B/32 and even beats m
 
 - [\[ICML 2026\] Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs](../../ICML2026/multimodal_vlm/density-aware_translation_of_spurious_correlations_in_zero-shot_vlms.md)
 - [\[NeurIPS 2025\] Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models](../../NeurIPS2025/multimodal_vlm/sparse_autoencoders_learn_monosemantic_features_in_visionlan.md)
-- [\[CVPR 2026\] Sparse Spectral LoRA: Routed Experts for Medical VLMs](../../CVPR2026/multimodal_vlm/sparse_spectral_lora_routed_experts_for_medical_vlms.md)
 - [\[ICML 2025\] The Devil Is in the Details: Tackling Unimodal Spurious Correlations for Generalizable Multimodal Reward Models](../../ICML2025/multimodal_vlm/the_devil_is_in_the_details_tackling_unimodal_spurious_correlations_for_generali.md)
-- [\[ICLR 2026\] MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs](mmtok_multimodal_coverage_maximization_for_efficient_inference_of_vlms.md)
+- [\[ICLR 2026\] Unlocking the Power of Co-Occurrence in CLIP: A DualPrompt-Driven Method for Training-Free Zero-Shot Multi-Label Classification](unlocking_the_power_of_co-occurrence_in_clip_a_dualprompt-driven_method_for_trai.md)
+- [\[CVPR 2026\] Sparse Spectral LoRA: Routed Experts for Medical VLMs](../../CVPR2026/multimodal_vlm/sparse_spectral_lora_routed_experts_for_medical_vlms.md)
 
 </div>
 

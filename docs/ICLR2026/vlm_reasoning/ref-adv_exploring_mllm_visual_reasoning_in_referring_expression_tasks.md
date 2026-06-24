@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks
 description: >-
-  [ICLR 2026][vlm_reasoning][Referring Expression Comprehension] The authors propose the Ref-Adv benchmark, constructed through a pipeline of **Hard Distractor Pairing + LLM-assisted Minimally Sufficient Expression Generation + Three-annotator Consistency Verification**. This benchmark eliminates "grounding shortcuts" in modern REC. On Ref-Adv, the accuracy of 13 contemporary MLLMs
+  [ICLR 2026][VLM Reasoning][Referring Expression Comprehension] The authors propose the Ref-Adv benchmark, constructed through a pipeline of **Hard Distractor Pairing + LLM-assisted Minimally Sufficient Expression Generation + Three-annotator Consistency Verification**. This benchmark eliminates "grounding shortcuts" in modern REC. On Ref-Adv, the accuracy of 13 contemporary MLLMs (including GPT-4o, Gemini 2.5, Qwen2.5-VL-72B, etc.) drops significantly from 90%+ on RefCOCO(+/g…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Referring Expression Comprehension
-  - Visual Grounding
-  - Hard Distractors
-  - Benchmark
-  - Shortcut Suppression
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Referring Expression Comprehension"
+  - "Visual Grounding"
+  - "Hard Distractors"
+  - "Benchmark"
+  - "Shortcut Suppression"
 date: 2026-05-08
-content_hash: 377387f1872c19f1
+content_hash: 2017867face2d24d
 ---
+
 # Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks
 
 **Conference**: ICLR 2026  
@@ -158,11 +159,11 @@ Compared to 90%+ on RefCOCO, no model exceeds 64% Acc@0.5 on Ref-Adv. Even **GPT
 
 ## Related Papers
 
-- [\[ICLR 2026\] Agent-X: Evaluating Deep Multimodal Reasoning in Vision-Centric Agentic Tasks](agent-x_evaluating_deep_multimodal_reasoning_in_vision-centric_agentic_tasks.md)
-- [\[ICLR 2026\] Mixture-of-Visual-Thoughts: Exploring Context-Adaptive Reasoning Mode Selection for General Visual Reasoning](mixture-of-visual-thoughts_exploring_context-adaptive_reasoning_mode_selection_f.md)
-- [\[ICLR 2026\] MIMIC-Bench: Exploring the User-Like Thinking and Mimicking Capabilities of Multimodal Large Language Models](mimic-bench_exploring_the_user-like_thinking_and_mimicking_capabilities_of_multi.md)
-- [\[ICLR 2026\] CircuitSense: A Hierarchical MLLM Benchmark Bridging Visual Comprehension and Symbolic Reasoning in Engineering Design Process](circuitsense_a_hierarchical_mllm_benchmark_bridging_visual_comprehension_and_sym.md)
 - [\[ICLR 2026\] Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning](rex-thinker_grounded_object_referring_via_chain-of-thought_reasoning.md)
+- [\[ICLR 2026\] Mixture-of-Visual-Thoughts: Exploring Context-Adaptive Reasoning Mode Selection for General Visual Reasoning](mixture-of-visual-thoughts_exploring_context-adaptive_reasoning_mode_selection_f.md)
+- [\[ICLR 2026\] Agent-X: Evaluating Deep Multimodal Reasoning in Vision-Centric Agentic Tasks](agent-x_evaluating_deep_multimodal_reasoning_in_vision-centric_agentic_tasks.md)
+- [\[ICLR 2026\] LLMs as Rules Oracles: Exploring Real-World Multimodal Reasoning in Tabletop Strategy Game Environments](llms_as_rules_oracles_exploring_real-world_multimodal_reasoning_in_tabletop_stra.md)
+- [\[ICLR 2026\] MIMIC-Bench: Exploring the User-Like Thinking and Mimicking Capabilities of Multimodal Large Language Models](mimic-bench_exploring_the_user-like_thinking_and_mimicking_capabilities_of_multi.md)
 
 </div>
 

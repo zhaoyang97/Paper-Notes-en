@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG
 description: >-
-  [NeurIPS 2025][Graph Learning][Knowledge Graph] This paper proposes ReMindRAG, a KG-RAG system that combines LLM-guided KG traversal (node exploration + exploitation) with a training-free memory replay mechanism. The sys…
+  [NeurIPS 2025][Graph Learning][Knowledge Graph] This paper proposes ReMindRAG, a KG-RAG system that combines LLM-guided KG traversal (node exploration + exploitation) with a training-free memory replay mechanism. The system stores LLM traversal experience in edge embeddings, enabling significant reduction in LLM calls for subsequent similar queries (~50% cost reduction) while improving answer accuracy (5%–10% gain).
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Memory Replay"
   - "Training-Free Memory"
 date: 2026-05-08
-content_hash: bcac3306fe26ca8f
+content_hash: c10e7d58bb7568b5
 ---
 
 # ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG
@@ -169,9 +169,9 @@ Multi-round memory + cost savings (Multi-Hop QA, GPT-4o-mini):
 
 - [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
 - [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
+- [\[ICLR 2026\] DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS](../../ICLR2026/graph_learning/damr_efficient_and_adaptive_context-aware_knowledge_graph_question_answering_wit.md)
+- [\[ACL 2025\] Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation (K-RagRec)](../../ACL2025/graph_learning/kg_rag_recommendation.md)
 - [\[AAAI 2026\] Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving](../../AAAI2026/graph_learning/human_cognition_inspired_rag_with_knowledge_graph_for_complex_problem_solving.md)
-- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](../../ICLR2026/graph_learning/entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
-- [\[NeurIPS 2025\] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids](graph_neural_networks_for_efficient_ac_power_flow_prediction_in_power_grids.md)
 
 </div>
 

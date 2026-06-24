@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] InternSpatial: A Comprehensive Dataset for Spatial Reasoning in Vision-Language Models
 description: >-
-  [ICLR 2026][vlm_reasoning][Vision-Language Model] InternSpatial constructs a large-scale open dataset and diagnostic evaluation set for VLM spatial reasoning. By utilizing a unified data engine to organize single-view, multi-view, diverse scenarios, and various visual/textual instruction formats into over 12 million QA pairs, the model achieves significant improvement
+  [ICLR2026][VLM Reasoning][Spatial Reasoning] InternSpatial constructs a large-scale open dataset and diagnostic evaluation set for VLM spatial reasoning. By utilizing a unified data engine to organize single-view, multi-view, diverse scenarios, and various visual/textual instruction formats into over 12 million QA pairs, the model achieves significant improvements in spatial reasoning benchmarks while maintaining general multimodal capabilities.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Vision-Language Model
-  - Dataset
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Spatial Reasoning"
+  - "Vision-Language Models"
+  - "Instruction Formats"
+  - "Multi-view Understanding"
+  - "Dataset"
 date: 2026-05-08
-content_hash: dc51f258b174a775
+content_hash: c1d8f5f5ee9d5b5a
 ---
+
 # InternSpatial: A Comprehensive Dataset for Spatial Reasoning in Vision-Language Models
 
 **Conference**: ICLR2026  
@@ -170,10 +174,10 @@ General capability evaluation confirmed that spatial training did not degrade or
 ## Related Papers
 
 - [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[ICLR 2026\] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)
 - [\[ICLR 2026\] Zebra-CoT: A Dataset for Interleaved Vision-Language Reasoning](zebra-cot_a_dataset_for_interleaved_vision-language_reasoning.md)
-- [\[ICLR 2026\] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)
-- [\[ICLR 2026\] Agentic Jigsaw Interaction Learning for Enhancing Visual Perception and Reasoning in Vision-Language Models](agentic_jigsaw_interaction_learning_for_enhancing_visual_perception_and_reasonin.md)
+- [\[ICLR 2026\] SpatialLadder: Building Spatial Reasoning Capabilities for Vision-Language Models via Progressive Training](spatialladder_progressive_training_for_spatial_reasoning_in_vision-language_mode.md)
 
 </div>
 

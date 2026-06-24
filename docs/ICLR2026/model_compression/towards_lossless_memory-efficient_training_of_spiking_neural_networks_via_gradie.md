@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression
 description: >-
-  [ICLR 2026][Model Compression][SNN] Addressing the $O(LT)$ memory explosion issue in Spiking Neural Networks (SNNs) during direct training with BPTT, this work packages "layer-wise gradient checkpointing + lossless binary spike compression + multi-stage checkpoint adjustment" into an automatic optimization pass. It reduces peak memory to 0.12×–0.47× with
+  [ICLR 2026][Model Compression][SNN] Addressing the $O(LT)$ memory explosion issue in Spiking Neural Networks (SNNs) during direct training with BPTT, this work packages "layer-wise gradient checkpointing + lossless binary spike compression + multi-stage checkpoint adjustment" into an automatic optimization pass. It reduces peak memory to 0.12×–0.47× without accuracy loss and with less than 20% slowdown.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - SNN
-  - BPTT
+  - "ICLR 2026"
+  - "Model Compression"
+  - "SNN"
+  - "BPTT"
+  - "Gradient Checkpointing"
+  - "Lossless Spike Compression"
+  - "Memory Optimization"
 date: 2026-05-08
-content_hash: 4696e2931b704b66
+content_hash: 0d8a3699e3540a02
 ---
+
 # Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression
 
 **Conference**: ICLR 2026  
@@ -161,8 +165,8 @@ Online learning has the lowest memory but biased gradients. BPTT-to-BP has high 
 - [\[ICLR 2026\] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks](cannistraci-hebb_training_on_ultra-sparse_spiking_neural_networks.md)
 - [\[ICLR 2026\] Otters: An Energy-Efficient Spiking Transformer via Optical Time-to-First-Spike Encoding](otters_an_energy-efficient_spiking_transformer_via_optical_time-to-first-spike_e.md)
 - [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](quantized_gradient_projection_for_memory-efficient_continual_learning.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 - [\[NeurIPS 2025\] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks](../../NeurIPS2025/model_compression/spiking_brain_compression_post-training_second-order_compression_for_spiking_neu.md)
-- [\[ICLR 2026\] Many Eyes, One Mind: Temporal Multi-Perspective and Progressive Distillation for Spiking Neural Networks](many_eyes_one_mind_temporal_multi-perspective_and_progressive_distillation_for_s.md)
 
 </div>
 

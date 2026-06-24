@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Omni-Supervised Motion Editing: Balancing Change and Invariance through Positive-Negative Learning
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] OmniME addresses text-driven human motion editing by decomposing supervision into two complementary branches: "positive supervision" (retrospective intermediate feature supervision + similarity-based motion preservation) and "negative supervision" (triplet semantic alignment). Within a diffusion framework, it simultane
+  [CVPR 2026][Human Understanding][Motion editing] OmniME addresses text-driven human motion editing by decomposing supervision into two complementary branches: "positive supervision" (retrospective intermediate feature supervision + similarity-based motion preservation) and "negative supervision" (triplet semantic alignment). Within a diffusion framework, it simultaneously constrains "what to change" and "what to keep," reducing the Average Rank (AvgR) from 20.88 to 13.06 on M…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Motion editing"
+  - "Positive-negative supervision"
+  - "Retrospective feature supervision"
+  - "Motion preservation"
+  - "Triplet alignment"
 date: 2026-05-08
-content_hash: b5af78273514e291
+content_hash: 6a2490571b535f11
 ---
+
 # Omni-Supervised Motion Editing: Balancing Change and Invariance through Positive-Negative Learning
 
 **Conference**: CVPR 2026  
@@ -158,10 +164,10 @@ Cross-dataset Robustness (Train on MotionFix $\to$ Test on STANCE, Test Set):
 ## Related Papers
 
 - [\[CVPR 2026\] MotionMaster: Generalizable Text-Driven Motion Generation and Editing](motionmaster_generalizable_text-driven_motion_generation_and_editing.md)
-- [\[CVPR 2026\] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)
 - [\[ECCV 2024\] CoMo: Controllable Motion Generation Through Language Guided Pose Code Editing](../../ECCV2024/human_understanding/como_controllable_motion_generation_through_language_guided_pose_code_editing.md)
+- [\[CVPR 2026\] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)
+- [\[AAAI 2026\] Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification](../../AAAI2026/human_understanding/modality-aware_bias_mitigation_and_invariance_learning_for_unsupervised_visible-.md)
 - [\[CVPR 2026\] Geometric Neural Distance Fields for Learning Human Motion Priors](geometric_neural_distance_fields_for_learning_human_motion_priors.md)
-- [\[CVPR 2026\] Learning Long-term Motion Embeddings for Efficient Kinematics Generation](learning_long-term_motion_embeddings_for_efficient_kinematics_generation.md)
 
 </div>
 

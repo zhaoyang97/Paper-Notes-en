@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation
 description: >-
-  [CVPR 2026][Autonomous Driving][cross-view pose estimation] VIRD is proposed to construct view-invariant representations through dual-axis transformation (polar transformation + context-enhanced positional attention). It achieves SOTA cross-view pose estimation without orientation priors, reducing position and orientation errors on KITTI by 50.7% and 76.5%, respectively.
+  [CVPR2026][Autonomous Driving][cross-view pose estimation] VIRD is proposed to construct view-invariant representations through dual-axis transformation (polar transformation + context-enhanced positional attention). It achieves SOTA cross-view pose estimation without orientation priors, reducing position and orientation errors on KITTI by 50.7% and 76.5%, respectively.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - cross-view pose estimation
-  - view-invariant representation
-  - polar transformation
-  - positional attention
-  - autonomous driving localization
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "cross-view pose estimation"
+  - "view-invariant representation"
+  - "polar transformation"
+  - "positional attention"
+  - "autonomous driving localization"
 date: 2026-05-08
-content_hash: b83757ec824adec7
+content_hash: 8db5c2a08c3943c3
 ---
+
 # VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation
 
 **Conference**: CVPR2026  
@@ -179,12 +180,13 @@ $$\mathcal{L} = \mathcal{L}_{\text{recon}} + \mathcal{L}_{\text{match}} + \mathc
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation](towards_balanced_multi-modal_learning_in_3d_human_pose_estimation.md)
 - [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
+- [\[CVPR 2026\] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation](towards_balanced_multi-modal_learning_in_3d_human_pose_estimation.md)
 - [\[CVPR 2026\] SToRe3D: Sparse Token Relevance in ViTs for Efficient Multi-View 3D Object Detection](store3d_sparse_token_relevance_in_vits_for_efficient_multi-view_3d_object_detect.md)
 - [\[CVPR 2026\] CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection](coin3d_revisiting_configuration-invariant_multi-camera_3d_object_detection.md)
 - [\[CVPR 2026\] LA-Pose: Latent Action Pretraining Meets Pose Estimation](la-pose_latent_action_pretraining_meets_pose_estimation.md)

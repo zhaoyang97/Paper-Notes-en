@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][self-play RL] The SPELL framework is proposed, where an LLM simultaneously plays three roles—Questioner, Answerer, and Verifier—to perform self-play reinforcement learning. This approach continuously enhances long-context reasoning capabilities without human annotations, achieving consistent performance gains across 6 long-context b
+  [Reinforcement Learning] The SPELL framework is proposed, where an LLM simultaneously plays three roles—Questioner, Answerer, and Verifier—to perform self-play reinforcement learning. This approach continuously enhances long-context reasoning capabilities without human annotations, achieving consistent performance gains across 6 long-context benchmarks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - self-play RL
-  - long-context reasoning
-  - GRPO
-  - LLM
-  - verifiable rewards
-  - curriculum learning
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: aa59680b11cdee4b
+content_hash: 25a9fc0c8ea16336
 ---
+
 # SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models
 
 ## Meta Information

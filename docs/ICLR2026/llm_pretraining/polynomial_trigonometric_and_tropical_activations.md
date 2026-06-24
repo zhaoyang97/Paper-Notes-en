@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Polynomial, trigonometric, and tropical activations
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper systematically explores a family of learnable activation functions based on orthogonal bases (Hermite polynomials, Fourier trigonometric bases) and tropicalization. By addressing the gradient explosion/vanishing issues of polynomial activations through variance-preserving initialization, it successfully repl
+  [ICLR 2026][LLM Pretraining][Activation functions] This paper systematically explores a family of learnable activation functions based on orthogonal bases (Hermite polynomials, Fourier trigonometric bases) and tropicalization. By addressing the gradient explosion/vanishing issues of polynomial activations through variance-preserving initialization, it successfully replaces GELU to achieve effective training on GPT-2 and ConvNeXt.
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Activation functions"
+  - "Hermite polynomials"
+  - "Fourier trigonometric bases"
+  - "Tropical polynomials"
+  - "Variance-preserving initialization"
 date: 2026-05-08
-content_hash: 724d34f60ce59471
+content_hash: 4fae9b1073e2e747
 ---
+
 # Polynomial, trigonometric, and tropical activations
 
 **Conference**: ICLR 2026  
@@ -119,11 +125,11 @@ The training objective follows standard paradigms. Activation coefficients are o
 
 ## Related Papers
 
-- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
-- [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
-- [\[ICLR 2026\] Pre-training Limited Memory Language Models with Internal and External Knowledge](pre-training_limited_memory_language_models_with_internal_and_external_knowledge.md)
-- [\[ICLR 2026\] StochasTok: Improving Fine-Grained Subword Understanding in LLMs](stochastok_improving_fine-grained_subword_understanding_in_llms.md)
-- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ICLR 2026\] Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms](accessible_realistic_and_fair_evaluation_of_positive-unlabeled_learning_algorith.md)
+- [\[ICLR 2026\] How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study](how_text_quality_interventions_reshape_neural_scaling_laws_for_llms_empirical_st.md)
+- [\[ICLR 2026\] Lossless Vocabulary Reduction for Auto-Regressive Language Models](lossless_vocabulary_reduction_for_auto-regressive_language_models.md)
+- [\[ICLR 2026\] ADEPT: Continual Pretraining via Adaptive Expansion and Dynamic Decoupled Tuning](adept_continual_pretraining_via_adaptive_expansion_and_dynamic_decoupled_tuning.md)
+- [\[ICLR 2026\] How Learning Rate Decay Wastes Your Best Data in Curriculum-Based LLM Pretraining](how_learning_rate_decay_wastes_your_best_data_in_curriculum-based_llm_pretrainin.md)
 
 </div>
 

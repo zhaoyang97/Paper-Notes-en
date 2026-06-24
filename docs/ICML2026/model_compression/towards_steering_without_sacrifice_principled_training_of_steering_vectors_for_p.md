@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Steering without Sacrifice: Principled Training of Steering Vectors for Prompt-only Interventions
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The authors derive a scaling constraint for the joint training of steering vector factors and directions, $\eta_{\mathbf{v}}\eta_{\alpha}=\Theta(1)$, using infinite-width neural network scaling theory, thereby eliminating manual $\alpha$ selection during inference. Simultaneously inspired by ReFT, they implement additi
+  [ICML 2026][Model Compression][Steering Vectors] The authors derive a scaling constraint for the joint training of steering vector factors and directions, $\eta_{\mathbf{v}}\eta_{\alpha}=\Theta(1)$, using infinite-width neural network scaling theory, thereby eliminating manual $\alpha$ selection during inference. Simultaneously inspired by ReFT, they implement additive interventions only on the first 4 prompt tokens (PrOSV). This approach maintains model utility while consist…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Steering Vectors"
+  - "Joint Training"
+  - "Scaling Theory"
+  - "Prompt-only Intervention"
+  - "Concept Guidance"
 date: 2026-05-08
-content_hash: a7aec8e0d5fd08fd
+content_hash: 707bdaffe20cf491
 ---
+
 # Towards Steering without Sacrifice: Principled Training of Steering Vectors for Prompt-only Interventions
 
 **Conference**: ICML 2026  
@@ -123,8 +129,8 @@ Intervention location and budget (optimal overall O / concept C score, 0–2):
 - [\[AAAI 2026\] Steering Pretrained Drafters during Speculative Decoding](../../AAAI2026/model_compression/steering_pretrained_drafters_during_speculative_decoding.md)
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
 - [\[ICLR 2026\] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](../../ICLR2026/model_compression/odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)
-- [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](../../CVPR2026/model_compression/fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
 - [\[ICML 2026\] Multi-Adapter Representation Interventions via Energy Calibration](multi-adapter_representation_interventions_via_energy_calibration.md)
+- [\[ACL 2026\] Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics](../../ACL2026/model_compression/why_steering_works_toward_a_unified_view_of_language_model_parameter_dynamics.md)
 
 </div>
 

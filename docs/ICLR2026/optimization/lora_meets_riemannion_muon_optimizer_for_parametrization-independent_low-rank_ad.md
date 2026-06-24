@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] LoRA meets Riemannion: Muon Optimizer for Parametrization-independent Low-Rank Adapters
 description: >-
-  [ICLR 2026][Optimization & Theory][LoRA] This work treats LoRA low-rank updates as points on a "fixed-rank manifold" for direct optimization, lifting the Muon optimizer to the Riemannian manifold (termed Riemannion). This fundamentally eliminates the parameterization ambiguity caused by LoRA factorization. Combined with a gradient-aligned initialization and a
+  [ICLR 2026][Optimization][LoRA] This work treats LoRA low-rank updates as points on a "fixed-rank manifold" for direct optimization, lifting the Muon optimizer to the Riemannian manifold (termed Riemannion). This fundamentally eliminates the parameterization ambiguity caused by LoRA factorization. Combined with a gradient-aligned initialization and a single-backpropagation implementation, it improves both convergence speed and final accuracy for LLM and diffusion model fine-t…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - LoRA
-  - Riemannian optimization
-  - Muon
-  - fixed-rank manifold
-  - transformation invariance
-  - LLM fine-tuning
+  - "ICLR 2026"
+  - "Optimization"
+  - "LoRA"
+  - "Riemannian optimization"
+  - "Muon"
+  - "fixed-rank manifold"
+  - "transformation invariance"
+  - "LLM fine-tuning"
+  - "diffusion model"
 date: 2026-05-08
-content_hash: cc47570ddb0cb14b
+content_hash: 345b84fcc7942aba
 ---
+
 # LoRA meets Riemannion: Muon Optimizer for Parametrization-independent Low-Rank Adapters
 
 **Conference**: ICLR 2026  
@@ -117,16 +119,20 @@ flowchart TD
 - **Value**: ⭐⭐⭐⭐ (Immediate practical relevance for LoRA training with zero overhead and consistent gains.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **LoRA: Low-Rank Adaptation of Large Language Models** (Hu et al., 2021)
-- **DoRA: Weight-Decomposed Low-Rank Adaptation** (Liu et al., 2024)
-- **Muon: An Optimizer for Out-of-Distribution Generalization** (Jordan et al., 2024)
-- **LoRA-GA: Low-Rank Adaptation with Gradient Alignment** (Chu et al., 2024)
+## Related Papers
+
+- [\[ICLR 2026\] Towards Efficient Optimizer Design for LLM via Structured Fisher Approximation with a Low-Rank Extension](towards_efficient_optimizer_design_for_llm_via_structured_fisher_approximation_w.md)
+- [\[NeurIPS 2025\] Training-Free Bayesianization for Low-Rank Adapters of Large Language Models](../../NeurIPS2025/optimization/training-free_bayesianization_for_low-rank_adapters_of_large_language_models.md)
+- [\[ICLR 2026\] The Power of Small Initialization in Noisy Low-Tubal-Rank Tensor Recovery](the_power_of_small_initialization_in_noisy_low-tubal-rank_tensor_recovery.md)
+- [\[ICLR 2026\] Trion: FFT-based Dynamic Subspace Selection for Low-Rank Adaptive Optimization of LLMs](trion_fft-based_dynamic_subspace_selection_for_low-rank_adaptive_optimization_of.md)
+- [\[ICLR 2026\] Error Feedback for Muon and Friends](error_feedback_for_muon_and_friends.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Efficient Optimizer Design for LLM via Structured Fisher Approximation with a Low-Rank Extension](towards_efficient_optimizer_design_for_llm_via_structured_fisher_approximation_w.md)

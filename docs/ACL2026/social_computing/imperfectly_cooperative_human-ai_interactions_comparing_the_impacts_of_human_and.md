@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies
 description: >-
-  [ACL 2026][Social Computing][Paper Note] Through a dual-framework experiment involving 2000 LLM simulations and a 290-person user study, this paper compares the impacts of human personality traits and AI design attributes in imperfectly cooperative scenarios (recruitment negotiation, partially honest transactions). Findings indicate that while personality tra
+  [ACL 2026 Findings][Social Computing][Human-AI Interaction] Through a dual-framework experiment involving 2000 LLM simulations and a 290-person user study, this paper compares the impacts of human personality traits and AI design attributes in imperfectly cooperative scenarios (recruitment negotiation, partially honest transactions). Findings indicate that while personality traits dominate in simulations, AI transparency is the key driver in real-world human experiments.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026 Findings"
+  - "Social Computing"
+  - "Human-AI Interaction"
+  - "Imperfect Cooperation"
+  - "Personality Traits"
+  - "AI Transparency"
+  - "Simulation vs. User Study"
 date: 2026-05-08
-content_hash: c72967525b05f5f7
+content_hash: 18633689fa6807e7
 ---
+
 # Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies
 
 **Conference**: ACL 2026 Findings  
@@ -129,11 +135,11 @@ Ranking of Causal Impact Factors (Simplified):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents](../../NeurIPS2025/social_computing/policy-as-prompt_turning_ai_governance_rules_into_guardrails_for_ai_agents.md)
+- [\[ICLR 2026\] The Value of Information in Human-AI Decision-Making](../../ICLR2026/social_computing/the_value_of_information_in_human-ai_decision-making.md)
+- [\[ICLR 2026\] INTIMA: A Benchmark for Human-AI Companionship Behavior](../../ICLR2026/social_computing/intima_a_benchmark_for_human-ai_companionship_behavior.md)
 - [\[ACL 2026\] Reheat Nachos for Dinner? Evaluating AI Support for Cross-Cultural Communication of Neologisms](reheat_nachos_for_dinner_evaluating_ai_support_for_cross-cultural_communication_.md)
 - [\[ACL 2026\] Persona-E2: A Human-Grounded Dataset for Personality-Shaped Emotional Responses to Textual Events](persona-e2_a_human-grounded_dataset_for_personality-shaped_emotional_responses_t.md)
-- [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](../../ICLR2026/social_computing/propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
-- [\[ICLR 2026\] Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction](../../ICLR2026/social_computing/human_or_machine_a_preliminary_turing_test_for_speech-to-speech_interaction.md)
+- [\[NeurIPS 2025\] Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents](../../NeurIPS2025/social_computing/policy-as-prompt_turning_ai_governance_rules_into_guardrails_for_ai_agents.md)
 
 </div>
 

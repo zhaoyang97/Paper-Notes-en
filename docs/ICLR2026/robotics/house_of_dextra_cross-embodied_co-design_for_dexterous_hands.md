@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] House Of Dextra : Cross-Embodied Co-Design for Dexterous Hands
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][sim-to-real] House of Dextra proposes a cross-embodiment co-design framework for dexterous hands that connects a manufacturable modular hand grammar, morphology-conditioned control policies, and graph-heuristic search. It filters and fine-tunes hand morphologies in simulation, eventually deploying multiple designs (3-fingered, 4-fi
+  [ICLR2026][Robotics][Dexterous Hand Design] House of Dextra proposes a cross-embodiment co-design framework for dexterous hands that connects a manufacturable modular hand grammar, morphology-conditioned control policies, and graph-heuristic search. It filters and fine-tunes hand morphologies in simulation, eventually deploying multiple designs (3-fingered, 4-fingered, 5-fingered, etc.) zero-shot to real hardware for blind in-hand rotation.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - sim-to-real
+  - "ICLR2026"
+  - "Robotics"
+  - "Dexterous Hand Design"
+  - "Morphology-Control Co-optimization"
+  - "Cross-embodiment Control"
+  - "Sim-to-real"
+  - "In-hand Rotation"
 date: 2026-05-08
-content_hash: d9ec30c7023085da
+content_hash: de8718f02b0e2cd1
 ---
+
 # House Of Dextra : Cross-Embodied Co-Design for Dexterous Hands
 
 **Conference**: ICLR2026  

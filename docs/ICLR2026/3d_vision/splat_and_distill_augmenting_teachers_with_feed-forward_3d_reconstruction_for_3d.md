@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation
 description: >-
-  [ICLR 2026][3D Vision][3D-Aware Distillation] In a student-teacher distillation framework, the teacher is augmented with a pre-trained feed-forward 3D reconstruction model (MVSplat). By lifting 2D features to a 3D Gaussian representation and rendering them to novel views, the student learns geometrically consistent 3D-aware 2D features. This approach comprehensive
+  [ICLR 2026][3D Vision][3D-Aware Distillation] In a student-teacher distillation framework, the teacher is augmented with a pre-trained feed-forward 3D reconstruction model (MVSplat). By lifting 2D features to a 3D Gaussian representation and rendering them to novel views, the student learns geometrically consistent 3D-aware 2D features. This approach comprehensively outperforms existing methods across downstream tasks including depth estimation, normal estimation…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D-Aware Distillation
-  - 3D Gaussian Splatting
-  - Feed-Forward Reconstruction
-  - Vision Foundation Models
-  - Student-Teacher
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D-Aware Distillation"
+  - "3D Gaussian Splatting"
+  - "Feed-Forward Reconstruction"
+  - "Vision Foundation Models"
+  - "Student-Teacher"
 date: 2026-05-08
-content_hash: 088afa5902388cc4
+content_hash: 4e6dae83e9a01fd8
 ---
+
 # Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation
 
 **Conference**: ICLR 2026  
@@ -154,11 +155,11 @@ Findings: (1) Semantic blending and mask-aware up-sampling are key to depth esti
 
 ## Related Papers
 
+- [\[ICLR 2026\] ARTDECO: High-Fidelity Online 3D Reconstruction with Hierarchical Gaussian Structure + Feed-forward Priors](artdeco_toward_high-fidelity_on-the-fly_reconstruction_with_hierarchical_gaussia.md)
+- [\[CVPR 2026\] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting](../../CVPR2026/3d_vision/sr3r_rethinking_super-resolution_3d_reconstruction_with_feed-forward_gaussian_sp.md)
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](../../CVPR2026/3d_vision/tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](../../CVPR2026/3d_vision/anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
 - [\[ICLR 2026\] Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation](lyra_generative_3d_scene_reconstruction_via_video_diffusion_model_self-distillat.md)
-- [\[AAAI 2026\] Splat-SAP: Feed-Forward Gaussian Splatting for Human-Centered Scene with Scale-Aware Point Map Reconstruction](../../AAAI2026/3d_vision/splat-sap_feed-forward_gaussian_splatting_for_human-centered_scene_with_scale-aw.md)
-- [\[ICLR 2026\] Splat Feature Solver](splat_feature_solver.md)
-- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
-- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](../../CVPR2026/3d_vision/more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
 
 </div>
 

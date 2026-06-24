@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening
 description: >-
-  [AAAI 2026][Medical Imaging][Childhood malnutrition detection] This paper proposes NutriScreener, a framework combining a CLIP visual encoder, a multi-pose graph attention network (GAT)…
+  [AAAI 2026][Medical Imaging][Childhood malnutrition detection] This paper proposes NutriScreener, a framework combining a CLIP visual encoder, a multi-pose graph attention network (GAT), and a FAISS-based retrieval-augmented classification/regression module. Through cross-pose attention and category-enhanced retrieval, the system achieves robust childhood malnutrition detection and anthropometric prediction, attaining 0.79 recall and 0.82 AUC on cross-continental datasets inc…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "retrieval augmentation"
   - "anthropometric prediction"
 date: 2026-05-08
-content_hash: 6c96a92843132790
+content_hash: 14ade3ec27b1b3b2
 ---
 
 # NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening
@@ -198,8 +198,8 @@ Twelve medical professionals (mean 9.5 years of experience) evaluated the system
 - [\[AAAI 2026\] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis](dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_.md)
 - [\[AAAI 2026\] DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening](deepgb-tb_a_risk-balanced_cross-attention_gradient-boosted_convolutional_network.md)
 - [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
-- [\[AAAI 2026\] GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis](giim_graph-based_learning_of_inter-_and_intra-view_dependencies_for_multi-view_m.md)
 - [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
+- [\[CVPR 2026\] MR-RAG: Multimodal Relevance-Aware Retrieval-Augmented Generation for Medical Visual Question Answering](../../CVPR2026/medical_imaging/mr-rag_multimodal_relevance-aware_retrieval-augmented_generation_for_medical_vis.md)
 
 </div>
 

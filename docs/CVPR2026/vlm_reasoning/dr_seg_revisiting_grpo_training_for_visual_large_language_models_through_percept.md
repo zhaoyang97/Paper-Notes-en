@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] The paper argues that the common assumption that "the GRPO training paradigm for linguistic reasoning can be directly transferred to visual perception tasks" is invalid. Addressing two neglected characteristics of perception tasks—the need for a wider output space and finer, more stable rewards—the authors propose the
+  [CVPR 2026][VLM Reasoning][GRPO] The paper argues that the common assumption that "the GRPO training paradigm for linguistic reasoning can be directly transferred to visual perception tasks" is invalid. Addressing two neglected characteristics of perception tasks—the need for a wider output space and finer, more stable rewards—the authors propose the plug-and-play **Dr. Seg**. It uses `<look>` tags to encourage breadth of exploration and Distribution-Ranked Reward to map mult…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "GRPO"
+  - "visual perception"
+  - "reinforcement learning"
+  - "reasoning segmentation"
+  - "reward design"
 date: 2026-05-08
-content_hash: a2372c2608081ff9
+content_hash: 459d78f8657e204e
 ---
+
 # Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design
 
 **Conference**: CVPR 2026  
@@ -157,10 +161,10 @@ Normalization strategy ablation confirms the value of FIFO quantile mapping over
 ## Related Papers
 
 - [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
-- [\[ICLR 2026\] DIVA-GRPO: Enhancing Multimodal Reasoning through Difficulty-Adaptive Variant Advantage](../../ICLR2026/multimodal_vlm/diva-grpo_enhancing_multimodal_reasoning_through_difficulty-adaptive_variant_adv.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
-- [\[AAAI 2026\] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View](../../AAAI2026/multimodal_vlm/revisiting_the_data_sampling_in_multimodal_post-training_from_a_difficulty-disti.md)
-- [\[CVPR 2026\] Linking Perception, Confidence and Accuracy in MLLMs](linking_perception_confidence_and_accuracy_in_mllms.md)
+- [\[CVPR 2026\] DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation](discriminative_perception_via_anchored_description_for_reasoning_segmentation.md)
+- [\[CVPR 2026\] DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models](deepscan_a_training-free_framework_for_visually_grounded_reasoning_in_large_visi.md)
+- [\[ICLR 2026\] DIVA-GRPO: Enhancing Multimodal Reasoning through Difficulty-Adaptive Variant Advantage](../../ICLR2026/vlm_reasoning/diva-grpo_enhancing_multimodal_reasoning_through_difficulty-adaptive_variant_adv.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
 
 </div>
 

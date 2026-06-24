@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] The Expressive Limits of Diagonal SSMs for State-Tracking
 description: >-
-  [ICLR 2026][learning_theory][State Space Model] This work establishes a complete characterization of the expressive power of input-dependent complex diagonal (DCD) SSMs on group state-tracking tasks: a single layer cannot track any non-abelian group, whereas $k$ layers can track a group $G$ if and only if $G$ admits a subnormal series of length $k$ with abelian fact
+  [ICLR 2026][Sequence Modeling][State Space Models] This work establishes a complete characterization of the expressive power of input-dependent complex diagonal (DCD) SSMs on group state-tracking tasks: a single layer cannot track any non-abelian group, whereas $k$ layers can track a group $G$ if and only if $G$ admits a subnormal series of length $k$ with abelian factors—precisely defining the strict benefit of depth for expressivity. Furthermore…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - State Space Model
-  - Mamba
+  - "ICLR 2026"
+  - "Sequence Modeling"
+  - "Theory"
+  - "State Space Models"
+  - "Expressivity"
+  - "Group State-Tracking"
+  - "Diagonal SSM"
+  - "Solvable Groups"
+  - "Mamba"
 date: 2026-05-08
-content_hash: 727b72725682bb98
+content_hash: 32ec217f3b3db4c6
 ---
+
 # The Expressive Limits of Diagonal SSMs for State-Tracking
 
 **Conference**: ICLR 2026  
@@ -128,10 +134,10 @@ Applying this characterization to mainstream SSMs reveals their bottlenecks base
 ## Related Papers
 
 - [\[ICLR 2026\] On the Expressiveness of State Space Models via Temporal Logics](on_the_expressiveness_of_state_space_models_via_temporal_logics.md)
-- [\[ICLR 2026\] On the Computational Limits of AI4S-RL：A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
+- [\[ICLR 2026\] On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
 - [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
 - [\[ICLR 2026\] Characterizing Pattern Matching and Its Limits on Compositional Task Structures](characterizing_pattern_matching_and_its_limits_on_compositional_task_structures.md)
-- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
+- [\[ICLR 2026\] To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models](to_infinity_and_beyond_tool-use_unlocks_length_generalization_in_state_space_mod.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] It is discovered that LLM Agents exhibit human-like "Actor-Observer Asymmetry" (AOA) cognitive bias during role-playing—tending to attribute their own failures to external factors as actors, while attributing others' failures to internal errors as observers. ReTAS is proposed to eliminate this bias through dialectical
+  [ACL 2026][LLM Agent][Actor-observer asymmetry] It is discovered that LLM Agents exhibit human-like "Actor-Observer Asymmetry" (AOA) cognitive bias during role-playing—tending to attribute their own failures to external factors as actors, while attributing others' failures to internal errors as observers. ReTAS is proposed to eliminate this bias through dialectical reasoning (Thesis-Antithesis-Synthesis) and GRPO alignment.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Actor-observer asymmetry"
+  - "attribution bias"
+  - "dialectical alignment"
+  - "multi-agent collaboration"
+  - "self-reflection"
 date: 2026-05-08
-content_hash: f2dec5ecf56077af
+content_hash: a7bfc61a45db027b
 ---
+
 # Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment
 
 **Conference**: ACL 2026  
@@ -132,10 +138,10 @@ The training utilizes the GRPO optimization framework with attribution consisten
 ## Related Papers
 
 - [\[ICML 2026\] Position: Assistive Agents Need Accessibility Alignment](../../ICML2026/llm_agent/position_assistive_agents_need_accessibility_alignment.md)
+- [\[ICLR 2026\] ProRe: A Proactive Reward System for GUI Agents via Reasoner–Actor Collaboration](../../ICLR2026/llm_agent/prore_a_proactive_reward_system_for_gui_agents_via_reasoneractor_collaboration.md)
 - [\[ACL 2025\] Multiple LLM Agents Debate for Equitable Cultural Alignment](../../ACL2025/llm_agent/multiple_llm_agents_debate_for_equitable.md)
 - [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](../../AAAI2026/llm_agent/moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
 - [\[ACL 2026\] ProPer Agents: Proactivity Driven Personalized Agents for Advancing Knowledge Gap Navigation](proper_agents_proactivity_driven_personalized_agents_for_advancing_knowledge_gap.md)
-- [\[ACL 2026\] Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities](uncertainty_quantification_in_llm_agents_foundations_emerging_challenges_and_opp.md)
 
 </div>
 

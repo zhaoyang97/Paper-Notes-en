@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GeoRanker: Distance-Aware Ranking for Worldwide Image Geolocalization
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Image geolocalization] This paper proposes GeoRanker, a distance-aware ranking framework that leverages large vision-language models (LVLMs) to model spatial relationships between queries a…
+  [NeurIPS 2025][Multimodal VLM][Image geolocalization] This paper proposes GeoRanker, a distance-aware ranking framework that leverages large vision-language models (LVLMs) to model spatial relationships between queries and candidates, achieving state-of-the-art worldwide image geolocalization via a multi-order distance loss.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "learning-to-rank"
   - "spatial reasoning"
 date: 2026-05-08
-content_hash: b3e712a8f0df5e04
+content_hash: ba29707453dd6f6c
 ---
 
 # GeoRanker: Distance-Aware Ranking for Worldwide Image Geolocalization
@@ -146,10 +146,10 @@ Training configuration: AdamW, lr=1e-4, batch size=4, 1 epoch, on 4 × NVIDIA L4
 ## Related Papers
 
 - [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](../../ICLR2026/multimodal_vlm/self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
+- [\[CVPR 2025\] Completion as Enhancement: A Degradation-Aware Selective Image Guided Network](../../CVPR2025/multimodal_vlm/completion_as_enhancement_a_degradation-aware_selective_image_guided_network_for.md)
+- [\[ICML 2025\] Ranked from Within: Ranking Large Multimodal Models Without Labels](../../ICML2025/multimodal_vlm/ranked_from_within_ranking_large_multimodal_models_without_labels.md)
 - [\[AAAI 2026\] DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning](../../AAAI2026/multimodal_vlm/discode_distribution-aware_score_decoder_for_robust_automatic_evaluation_of_imag.md)
 - [\[NeurIPS 2025\] Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment](aligning_by_misaligning_boundaryaware_curriculum_learning_fo.md)
-- [\[CVPR 2026\] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/g_mixer_geodesic_mixup_based_implicit_semantic_expansion_for_zero_shot_cir.md)
-- [\[NeurIPS 2025\] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning](structure-aware_fusion_with_progressive_injection_for_multimodal_molecular_repre.md)
 
 </div>
 

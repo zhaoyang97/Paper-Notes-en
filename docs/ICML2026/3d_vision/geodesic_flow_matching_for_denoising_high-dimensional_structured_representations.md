@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geodesic Flow Matching for Denoising High-Dimensional Structured Representations
 description: >-
-  [ICML 2026][3D Vision][Paper Note] Focusing on high-dimensional structured representations like Spatial Semantic Pointers (SSPs) in Vector Symbolic Architectures—which are "embedded in a Clifford torus within a unit hypersphere"—the authors observe that Euclidean linear interpolation in standard Flow Matching passes through the sphere's interior, causin
+  [ICML 2026][3D Vision][Geodesic Flow Matching] Focusing on high-dimensional structured representations like Spatial Semantic Pointers (SSPs) in Vector Symbolic Architectures—which are "embedded in a Clifford torus within a unit hypersphere"—the authors observe that Euclidean linear interpolation in standard Flow Matching passes through the sphere's interior, causing amplitude collapse and phase destruction. By using Log/Exp maps to constrain the flow to the sphere via **Geode…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026"
+  - "3D Vision"
+  - "Geodesic Flow Matching"
+  - "Spatial Semantic Pointer (SSP)"
+  - "Clifford Torus"
+  - "Neuro-symbolic Cleanup"
+  - "Spiking Neural SLAM"
 date: 2026-05-08
-content_hash: 8cef5bb3e597bd7a
+content_hash: 6849d1987d97d991
 ---
+
 # Geodesic Flow Matching for Denoising High-Dimensional Structured Representations
 
 **Conference**: ICML 2026  
@@ -130,6 +136,7 @@ Core SLAM results (Table 1, RMSE in meters):
 - Value: ⭐⭐⭐⭐ (Practical engineering improvements for neuromorphic and neuro-symbolic SLAM).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

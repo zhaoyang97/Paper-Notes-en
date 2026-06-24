@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GAGA: Gaussianity-Aware Gaussian Approximation for Efficient 3D Molecular Generation
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] GAGA discovers that 3D molecular data reaches a "sufficiently Gaussian" state **much earlier than images** during the forward noising process. By using statistical tests to locate this characteristic timestep $T^*$ and replacing the subsequent redundant trajectory with a closed-form Gaussian approximation, GAGA acceler
+  [ICLR 2026][Computational Biology][Gaussian Probability Path Generative Models] GAGA discovers that 3D molecular data reaches a "sufficiently Gaussian" state **much earlier than images** during the forward noising process. By using statistical tests to locate this characteristic timestep $T^*$ and replacing the subsequent redundant trajectory with a closed-form Gaussian approximation, GAGA accelerates both training and sampling while improving generation quality—all **without…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Gaussian Probability Path Generative Models"
+  - "3D Molecular Generation"
+  - "Trajectory Truncation"
+  - "Gaussian Approximation"
+  - "Training and Sampling Acceleration"
 date: 2026-05-08
-content_hash: 27e0d7be5a425e9e
+content_hash: 7e768864a94bab51
 ---
+
 # GAGA: Gaussianity-Aware Gaussian Approximation for Efficient 3D Molecular Generation
 
 **Conference**: ICLR 2026  
@@ -127,10 +133,10 @@ flowchart LR
 
 ## Related Papers
 
-- [\[ICLR 2026\] DCFold: Efficient Protein Structure Generation with Single Forward Pass](dcfold_efficient_protein_structure_generation_with_single_forward_pass.md)
 - [\[AAAI 2026\] Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models](../../AAAI2026/computational_biology/apo2mol_3d_molecule_generation_via_dynamic_pocket-aware_diff.md)
-- [\[ICLR 2026\] Convex Efficient Coding](convex_efficient_coding.md)
+- [\[ICLR 2026\] DCFold: Efficient Protein Structure Generation with Single Forward Pass](dcfold_efficient_protein_structure_generation_with_single_forward_pass.md)
 - [\[ICLR 2026\] SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling](syncogen_synthesizable_3d_molecule_generation_via_joint_reaction_and_coordinate_.md)
+- [\[ICLR 2026\] Convex Efficient Coding](convex_efficient_coding.md)
 - [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
 
 </div>

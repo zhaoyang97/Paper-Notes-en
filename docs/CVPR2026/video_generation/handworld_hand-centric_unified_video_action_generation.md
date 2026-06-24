@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HandWorld: Hand-Centric Unified Video Action Generation
 description: >-
-  [CVPR 2026][Video Generation][Flow Matching] HandWorld utilizes a shared cross-domain conditioning network to bind "hand action" and "egocentric video" domains together, followed by decoupled Diffusion Transformers for each. Combined with MANO-rendered hands as an intermediate bridge and flexible multi-task training, it enables simultaneous action-conditioned vid
+  [CVPR 2026][Video Generation][Hand-Object Interaction] HandWorld utilizes a shared cross-domain conditioning network to bind "hand action" and "egocentric video" domains together, followed by decoupled Diffusion Transformers for each. Combined with MANO-rendered hands as an intermediate bridge and flexible multi-task training, it enables simultaneous action-conditioned video generation and future hand action prediction within a single framework…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Hand-Object Interaction"
+  - "Egocentric Video"
+  - "Joint Action-Video Generation"
+  - "Cross-Domain Conditioning"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 35db18c0682a39e3
+content_hash: 4e459f7b3eef1b9c
 ---
+
 # HandWorld: Hand-Centric Unified Video Action Generation
 
 **Conference**: CVPR 2026  
@@ -151,10 +156,10 @@ Compared to imitation learning policies under the X-IL framework (BC / DDPM / FM
 ## Related Papers
 
 - [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
-- [\[CVPR 2026\] PerpetualWonder: Long-horizon Action-conditioned 4D Scene Generation](perpetualwonder_long-horizon_action-conditioned_4d_scene_generation.md)
+- [\[ICLR 2026\] VideoPhy-2: A Challenging Action-Centric Physical Commonsense Evaluation in Video Generation](../../ICLR2026/video_generation/videophy-2_a_challenging_action-centric_physical_commonsense_evaluation_in_video.md)
+- [\[CVPR 2026\] GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection](genhoi_towards_object-consistent_hand-object_interaction_with_temporally_balance.md)
+- [\[CVPR 2026\] Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos](ego-inbetween_generating_object_state_transitions_in_ego-centric_videos.md)
 - [\[CVPR 2026\] Chain of Event-Centric Causal Thought for Physically Plausible Video Generation](chain_of_event-centric_causal_thought_for_physically_plausible_video_generation.md)
-- [\[CVPR 2026\] Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout](infinity-rope_action-controllable_infinite_video_generation_emerges_from_autoreg.md)
-- [\[CVPR 2026\] TV2TV: A Unified Framework for Interleaved Language and Video Generation](tv2tv_a_unified_framework_for_interleaved_language_and_video_generation.md)
 
 </div>
 

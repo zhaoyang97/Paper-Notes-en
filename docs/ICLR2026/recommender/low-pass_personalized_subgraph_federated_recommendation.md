@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Low-pass Personalized Subgraph Federated Recommendation
 description: >-
-  [ICLR 2026][Recommender Systems][Paper Note] Addressing the issues of representation misalignment and popularity bias caused by immense differences in "subgraph size and connectivity" among clients in federated recommendation, LPSFed utilizes low-pass spectral filtering to extract structural signals that remain stable across subgraphs. These signals measure the s
+  [ICLR 2026][Recommender Systems][Federated Recommendation Systems] Addressing the issues of representation misalignment and popularity bias caused by immense differences in "subgraph size and connectivity" among clients in federated recommendation, LPSFed utilizes low-pass spectral filtering to extract structural signals that remain stable across subgraphs. These signals measure the similarity between clients and a neutral anchor graph to guide personalized parameter aggregat…
 tags:
-  - ICLR 2026
-  - Recommender Systems
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "Federated Recommendation Systems"
+  - "Subgraph Structural Imbalance"
+  - "Graph Fourier Transform"
+  - "Low-pass Spectral Filtering"
+  - "Popularity Bias"
+  - "Personalized Federated Learning"
 date: 2026-05-08
-content_hash: 001f7ef0520d4e84
+content_hash: 61c47f9454a5fd2a
 ---
+
 # Low-pass Personalized Subgraph Federated Recommendation
 
 **Conference**: ICLR 2026  

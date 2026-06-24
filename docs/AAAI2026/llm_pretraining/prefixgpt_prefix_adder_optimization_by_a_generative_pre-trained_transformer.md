@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer
 description: >-
-  [AAAI 2026][LLM Pretraining][prefix adder optimization] PrefixGPT frames prefix adder optimization as a sequence generation problem. A customized GPT model is pretrained to learn design rules…
+  [AAAI 2026][LLM Pretraining][prefix adder optimization] PrefixGPT frames prefix adder optimization as a sequence generation problem. A customized GPT model is pretrained to learn design rules, then fine-tuned via RL to generate optimized designs, achieving state-of-the-art area-delay product (ADP) with robustness to initialization.
 tags:
   - "AAAI 2026"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "reinforcement learning fine-tuning"
   - "legality mask"
 date: 2026-05-08
-content_hash: 69ee5a644a07fae6
+content_hash: bbccc55114b2eee2
 ---
 
 # PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer
@@ -152,10 +152,10 @@ PrefixGPT achieves the best size across all 12 (bit-width × depth-limit) combin
 ## Related Papers
 
 - [\[AAAI 2026\] No-Regret Strategy Solving in Imperfect-Information Games via Pre-Trained Embedding](no-regret_strategy_solving_in_imperfect-information_games_via_pre-trained_embedd.md)
+- [\[ICML 2026\] Different Layers, Different Manifolds: Module-Wise Weight-Space Geometry in Transformer Optimization](../../ICML2026/llm_pretraining/different_layers_different_manifolds_module-wise_weight-space_geometry_in_transf.md)
 - [\[AAAI 2026\] Rectified Noise: A Generative Model Using Positive-incentive Noise](rectified_noise_a_generative_model_using_positive-incentive_noise.md)
+- [\[CVPR 2026\] Unlocking Pre-trained Weights: Parameter Inheritance for Zero-Shot Initialization](../../CVPR2026/llm_pretraining/unlocking_pre-trained_weights_parameter_inheritance_for_zero-shot_initialization.md)
 - [\[ICCV 2025\] Dataset Ownership Verification for Pre-trained Masked Models](../../ICCV2025/llm_pretraining/dataset_ownership_verification_for_pre-trained_masked_models.md)
-- [\[AAAI 2026\] TRACE: A Generalizable Drift Detector for Streaming Data-Driven Optimization](trace_a_generalizable_drift_detector_for_streaming_data-driven_optimization.md)
-- [\[ACL 2026\] SCRIPT: A Subcharacter Compositional Representation Injection Module for Korean Pre-Trained Language Models](../../ACL2026/llm_pretraining/script_a_subcharacter_compositional_representation_injection_module_for_korean_p.md)
 
 </div>
 

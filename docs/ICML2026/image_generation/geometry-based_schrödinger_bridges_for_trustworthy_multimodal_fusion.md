@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion
 description: >-
-  [ICML 2026][Image Generation][Rectified Flow] Ours proposes GMF: using Diffusion Schrödinger Bridge + Rectified Flow in latent space to estimate the "transport correction cost" for each modality (the squared initial velocity $\|v_\theta(z,0)\|^2$). This serves as a geometric reliability signal **decoupled from classifier confidence** to dynamically weight multimod
+  [ICML 2026][Image Generation][Trustworthy Multimodal Fusion] Ours proposes GMF: using Diffusion Schrödinger Bridge + Rectified Flow in latent space to estimate the "transport correction cost" for each modality (the squared initial velocity $\|v_\theta(z,0)\|^2$). This serves as a geometric reliability signal **decoupled from classifier confidence** to dynamically weight multimodal fusion, thereby breaking the circular dependency of "the model judging itself." It significantly…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Rectified Flow
+  - "ICML 2026"
+  - "Image Generation"
+  - "Trustworthy Multimodal Fusion"
+  - "Schrödinger Bridge"
+  - "Rectified Flow"
+  - "Transport Energy"
+  - "Evidential Learning"
 date: 2026-05-08
-content_hash: bdb121eb101e7e4b
+content_hash: 630fa9bb1e6500fb
 ---
+
 # Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion
 
 **Conference**: ICML 2026  
@@ -160,11 +165,11 @@ The conflict rejection rate is **41.6 pp** higher than the runner-up DBF, with A
 
 ## Related Papers
 
+- [\[ICLR 2026\] Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting](../../ICLR2026/image_generation/diffusion_adversarial_schrödinger_bridges_via_iterative_proportional_markovian_f.md)
 - [\[NeurIPS 2025\] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges](../../NeurIPS2025/image_generation/grasp2grasp_vision-based_dexterous_grasp_translation_via_schrödinger_bridges.md)
 - [\[ICLR 2026\] Branched Schrödinger Bridge Matching](../../ICLR2026/image_generation/branched_schrödinger_bridge_matching.md)
-- [\[CVPR 2026\] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion](../../CVPR2026/image_generation/careflow_cyclic_adaptive_rectified_flow_for_multimodal_fusion.md)
-- [\[ICML 2026\] Geometry-Aware Tabular Diffusion](geometry-aware_tabular_diffusion.md)
-- [\[ICML 2026\] Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces](discrete_diffusion_samplers_and_bridges_off-policy_algorithms_and_applications_i.md)
+- [\[ICLR 2026\] Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport](../../ICLR2026/image_generation/entering_the_era_of_discrete_diffusion_models_a_benchmark_for_schrödinger_bridge.md)
+- [\[NeurIPS 2025\] Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions](../../NeurIPS2025/image_generation/dynamic_diffusion_schrödinger_bridge_in_astrophysical_observational_inversions.md)
 
 </div>
 

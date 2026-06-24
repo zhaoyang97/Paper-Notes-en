@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Offline Reinforcement Learning with Adaptive Feature Fusion
 description: >-
-  [ICLR 2026][Reinforcement Learning][RCSL] Addressing the issue where Decision Transformer-style "RL as sequence modeling" methods overfit historical sub-optimal sub-trajectories and fail to stitch superior trajectories, this paper proposes QDFFDT. It utilizes a learnable, state-dependent fusion coefficient to adaptively weight and fuse "global sequence feature
+  [ICLR 2026][Reinforcement Learning][Offline RL] Addressing the issue where Decision Transformer-style "RL as sequence modeling" methods overfit historical sub-optimal sub-trajectories and fail to stitch superior trajectories, this paper proposes QDFFDT. It utilizes a learnable, state-dependent fusion coefficient to adaptively weight and fuse "global sequence features" and "local single-step Markov features," combined with a Q-learning module for value guidance…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RCSL
-  - Decision Transformer
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "RCSL"
+  - "Decision Transformer"
+  - "Feature Fusion"
+  - "Trajectory Stitching"
 date: 2026-05-08
-content_hash: 65813a642c61794c
+content_hash: d7673d69a589b788
 ---
+
 # Offline Reinforcement Learning with Adaptive Feature Fusion
 
 **Conference**: ICLR 2026  
@@ -155,10 +159,10 @@ Notably, in Atari (high-dimensional pixel environments where compression causes 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
 - [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
-- [\[ICLR 2026\] In-Context Compositional Q-Learning for Offline Reinforcement Learning](in-context_compositional_q-learning_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL](bayes_adaptive_monte_carlo_tree_search_for_offline_model-based_reinforcement_lea.md)
+- [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
 - [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
 
 </div>

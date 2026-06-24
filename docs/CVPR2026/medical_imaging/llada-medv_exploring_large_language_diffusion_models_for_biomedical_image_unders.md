@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLaDA-MedV: Exploring Large Language Diffusion Models for Biomedical Image Understanding
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] The general-domain masked diffusion language model LLaDA is introduced to the biomedical image understanding field for the first time via visual instruction tuning, resulting in the first diffusion-based biomedical VLM. It outperforms LLaVA-Med in open-ended medical dialogues, sets new SOTA records on the closed-set su
+  [CVPR 2026][Medical Imaging][Masked Diffusion Models] The general-domain masked diffusion language model LLaDA is introduced to the biomedical image understanding field for the first time via visual instruction tuning, resulting in the first diffusion-based biomedical VLM. It outperforms LLaVA-Med in open-ended medical dialogues, sets new SOTA records on the closed-set subsets of three VQA benchmarks, and enables explicit control over response length for more detailed answer…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Masked Diffusion Models"
+  - "Biomedical VLM"
+  - "Visual Instruction Tuning"
+  - "Medical VQA"
+  - "Controllable Response Length"
 date: 2026-05-08
-content_hash: f9b9e60358562bb8
+content_hash: 0d8ef3d783170db4
 ---
+
 # LLaDA-MedV: Exploring Large Language Diffusion Models for Biomedical Image Understanding
 
 **Conference**: CVPR 2026  
@@ -137,15 +143,14 @@ Response length / Sampling steps analysis (OE dialogue, 193 questions):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] MLLM-HWSI: A Multimodal Large Language Model for Hierarchical Whole Slide Image Understanding](mllm-hwsi_a_multimodal_large_language_model_for_hierarchical_whole_slide_image_u.md)
 - [\[CVPR 2026\] MedMO: Grounding and Understanding Multimodal Large Language Model for Medical Images](medmo_grounding_and_understanding_multimodal_large_language_model_for_medical_im.md)
+- [\[ICLR 2026\] U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding](../../ICLR2026/medical_imaging/u2-bench_benchmarking_large_vision-language_models_on_ultrasound_understanding.md)
 - [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
 - [\[CVPR 2026\] OralGPT-Omni: A Versatile Dental Multimodal Large Language Model](oralgpt-omni_a_versatile_dental_multimodal_large_language_model.md)
-- [\[CVPR 2026\] fMRI-LM: Towards a Universal Foundation Model for Language-Aligned fMRI Understanding](fmri-lm_towards_a_universal_foundation_model_for_language-aligned_fmri_understan.md)
 
 </div>
 

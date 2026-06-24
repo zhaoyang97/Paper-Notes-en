@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlowNar: Scalable Streaming Narration for Long-Form Videos
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] FlowNar employs a combination of "segment-end visual KV cache clearing + compressing historical visual information into fixed-length memory tokens via gated linear attention." This allows the streaming video narration model to maintain constant memory and computational overhead, enabling the processing of $10\times$ lo
+  [ICML 2026][Multimodal VLM][Streaming Video Narration] FlowNar employs a combination of "segment-end visual KV cache clearing + compressing historical visual information into fixed-length memory tokens via gated linear attention." This allows the streaming video narration model to maintain constant memory and computational overhead, enabling the processing of $10\times$ longer videos with $3\times$ throughput. Simultaneously, the introduction of a self-conditioned evaluation…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Streaming Video Narration"
+  - "KV Cache Pruning"
+  - "Linear Attention"
+  - "Long-form Video Understanding"
+  - "Self-conditioned Evaluation"
 date: 2026-05-08
-content_hash: f9189c78d7c6b606
+content_hash: 2052fafad6e09863
 ---
+
 # FlowNar: Scalable Streaming Narration for Long-Form Videos
 
 **Conference**: ICML 2026  
@@ -132,10 +138,10 @@ Ablation of visual history strategies under self-conditioning on Ego4D:
 ## Related Papers
 
 - [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
+- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](../../AAAI2026/multimodal_vlm/mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
 - [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](../../CVPR2026/multimodal_vlm/vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
-- [\[CVPR 2025\] ReVisionLLM: Recursive Vision-Language Model for Temporal Grounding in Hour-Long Videos](../../CVPR2025/multimodal_vlm/revisionllm_recursive_vision-language_model_for_temporal_grounding_in_hour-long_.md)
 - [\[CVPR 2026\] Streaming Video Instruction Tuning (Streamo)](../../CVPR2026/multimodal_vlm/streaming_video_instruction_tuning.md)
-- [\[ICML 2026\] Very Efficient Listwise Multimodal Reranking for Long Documents](very_efficient_listwise_multimodal_reranking_for_long_documents.md)
+- [\[CVPR 2025\] ReVisionLLM: Recursive Vision-Language Model for Temporal Grounding in Hour-Long Videos](../../CVPR2025/multimodal_vlm/revisionllm_recursive_vision-language_model_for_temporal_grounding_in_hour-long_.md)
 
 </div>
 

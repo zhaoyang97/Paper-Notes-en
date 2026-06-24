@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STiV: Scalable Text and Image Conditioned Video Generation
 description: >-
-  [ICCV 2025][Video Generation][Diffusion Transformer] This paper proposes STIV, a unified text-image conditioned video generation framework based on Diffusion Transformer. It integrates image conditioning via a frame repl…
+  [ICCV 2025][Video Generation][Diffusion Transformer] This paper proposes STIV, a unified text-image conditioned video generation framework based on Diffusion Transformer. It integrates image conditioning via a frame replacement strategy and introduces joint image-text classifier-free guidance, enabling both T2V and TI2V generation within a single model. The 8.7B-parameter model achieves state-of-the-art scores of 83.1 and 90.1 on VBench T2V and I2V, respectively.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "text-to-video"
   - "scalable training"
 date: 2026-05-08
-content_hash: 54697b4ae890c0d4
+content_hash: a8cee1644ad92430
 ---
 
 # STiV: Scalable Text and Image Conditioned Video Generation
@@ -149,7 +149,7 @@ Ablation on TI2V image conditioning integration:
 - [\[ICCV 2025\] TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation](tip-i2v_a_million-scale_real_text_and_image_prompt_dataset_for_image-to-video_ge.md)
 - [\[ICCV 2025\] OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](omnihuman-1_rethinking_the_scaling-up_of_one-stage_conditioned_human_animation_m.md)
 - [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
-- [\[ICCV 2025\] Versatile Transition Generation with Image-to-Video Diffusion](versatile_transition_generation_with_image-to-video_diffusion.md)
+- [\[ICML 2026\] CamGeo: Sparse Camera-Conditioned Image-to-Video Generation with 3D Geometry Prior](../../ICML2026/video_generation/camgeo_sparse_camera-conditioned_image-to-video_generation_with_3d_geometry_prio.md)
 
 </div>
 

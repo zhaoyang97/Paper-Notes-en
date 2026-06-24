@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GmNet: Revisiting Gating Mechanisms From A Frequency View
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper provides the first systematic frequency-domain explanation for the effectiveness of Gated Linear Units (GLUs): element-wise multiplication corresponds to frequency-domain convolution that widens the spectrum, and non-smooth activations preserve high-frequency energy. Based on this, the authors design GmNet,
+  [ICLR 2026][Model Compression][Gated Linear Unit (GLU)] This paper provides the first systematic frequency-domain explanation for the effectiveness of Gated Linear Units (GLUs): element-wise multiplication corresponds to frequency-domain convolution that widens the spectrum, and non-smooth activations preserve high-frequency energy. Based on this, the authors design GmNet, a minimalist architecture using a simple $\sigma(x)\cdot x$ gate to correct the spectral bias in lightwe…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Gated Linear Unit (GLU)"
+  - "Frequency Analysis"
+  - "Spectral Bias"
+  - "Lightweight Networks"
+  - "Convolution Theorem"
 date: 2026-05-08
-content_hash: 1360a54d320393e5
+content_hash: c266633798c4f8b5
 ---
+
 # GmNet: Revisiting Gating Mechanisms From A Frequency View
 
 **Conference**: ICLR 2026  
@@ -139,8 +145,8 @@ The minimalist $\sigma(x)\cdot x$ is simultaneously optimal in accuracy, paramet
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
 - [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](revisiting_weight_regularization_for_low-rank_continual_learning.md)
 - [\[ICLR 2026\] Multi-View Encoders for Performance Prediction in LLM-Based Agentic Workflows](multi-view_encoders_for_performance_prediction_in_llm-based_agentic_workflows.md)
+- [\[ICLR 2026\] Knowledge Distillation as Decontamination? Revisiting the "Data Laundering" Concern in Classification Tasks](knowledge_distillation_as_decontamination_revisiting_the_data_laundering_concern.md)
 - [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](../../CVPR2026/model_compression/cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[ICLR 2026\] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension](freqkv_key-value_compression_in_frequency_domain_for_context_window_extension.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Marrying Generative Model of Healthcare Events with Digital Twin of Social Determinants of Health for Disease Reasoning
 description: >-
-  [ICML 2026][Medical Imaging][digital twin] This paper proposes DiffDT: a conditional Latent Diffusion framework connecting electronic health records (ICD-coded event sequences) with multi-organ biomarker digital twins (tabular features derived from brain/heart/liver/kidney imaging and brain functional connectivity SPD matrices). The key innovation is an SPD-VQV
+  [ICML 2026][Medical Imaging][digital twin] This paper proposes DiffDT: a conditional Latent Diffusion framework connecting electronic health records (ICD-coded event sequences) with multi-organ biomarker digital twins (tabular features derived from brain/heart/liver/kidney imaging and brain functional connectivity SPD matrices). The key innovation is an SPD-VQVAE based on Cholesky decomposition that reduces $\mathcal{O}(N^3)$ SPD manifold diffusion to a manifold-preserving an…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - digital twin
-  - latent diffusion
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "digital twin"
+  - "ICD autoregressive"
+  - "latent diffusion"
+  - "SPD manifold"
+  - "Cholesky decomposition"
+  - "multi-organ biomarkers"
 date: 2026-05-08
-content_hash: 11832de1a521307d
+content_hash: 4ab8f47cdc60544c
 ---
+
 # Marrying Generative Model of Healthcare Events with Digital Twin of Social Determinants of Health for Disease Reasoning
 
 **Conference**: ICML 2026  
@@ -143,10 +148,10 @@ Tabular DT: Heart RMSE 0.265 / WD 17.27, Liver 0.184 / 2.48, Kidney 0.146 / 0.99
 
 ## Related Papers
 
+- [\[ICML 2026\] DIYHealth Suite: Dataset, Model, and Benchmark for Health Management at Home](diyhealth_suite_dataset_model_and_benchmark_for_health_management_at_home.md)
 - [\[ICML 2026\] Evidential Reasoning Advances Interpretable Real-World Disease Screening](evidential_reasoning_advances_interpretable_real-world_disease_screening.md)
 - [\[CVPR 2026\] Uni-Hema: Unified Model for Digital Hematopathology](../../CVPR2026/medical_imaging/uni-hema_unified_model_for_digital_hematopathology.md)
-- [\[ICML 2026\] DIYHealth Suite: Dataset, Model, and Benchmark for Health Management at Home](diyhealth_suite_dataset_model_and_benchmark_for_health_management_at_home.md)
-- [\[CVPR 2026\] GenTract: Generative Global Tractography](../../CVPR2026/medical_imaging/gentract_generative_global_tractography.md)
+- [\[ICLR 2026\] Spike-based Digital Brain: A Novel Fundamental Model for Brain Activity Analysis](../../ICLR2026/medical_imaging/spike-based_digital_brain_a_novel_fundamental_model_for_brain_activity_analysis.md)
 - [\[ICML 2026\] Auditing Sybil: Explaining Deep Lung Cancer Risk Prediction Through Generative Interventional Attributions](auditing_sybil_explaining_deep_lung_cancer_risk_prediction_through_generative_in.md)
 
 </div>

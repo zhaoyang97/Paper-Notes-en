@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Agentic NL2SQL to Reduce Computational Costs
 description: >-
-  [NeurIPS 2025][LLM Agent][NL2SQL] This paper proposes Datalake Agent, an agentic NL2SQL system built on an interactive reasoning loop. Through a hierarchical information retrieval strategy (GetDBDescription → GetTables →…
+  [NeurIPS 2025][LLM Agent][NL2SQL] This paper proposes Datalake Agent, an agentic NL2SQL system built on an interactive reasoning loop. Through a hierarchical information retrieval strategy (GetDBDescription → GetTables → GetColumns → DBQueryFinalSQL), the system enables LLMs to request database schema information on demand rather than receiving it all at once. In a setting with 319 tables, the approach reduces token usage by 87% and cost by 8×…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "token reduction"
   - "datalake"
 date: 2026-05-08
-content_hash: dbe1870191abe9a2
+content_hash: af15edb2d7e70c36
 ---
 
 # Agentic NL2SQL to Reduce Computational Costs
@@ -116,10 +116,10 @@ No training is required. The system uses GPT-4-mini with temperature = 0.1. A be
 ## Related Papers
 
 - [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
+- [\[ACL 2025\] Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools](../../ACL2025/llm_agent/agentic_reasoning_tools.md)
 - [\[NeurIPS 2025\] CAM: A Constructivist View of Agentic Memory for LLM-Based Reading Comprehension](cam_a_constructivist_view_of_agentic_memory_for_llm-based_reading_comprehension.md)
 - [\[NeurIPS 2025\] Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading](orchestration_framework_for_financial_agents_from_algorithmic_trading_to_agentic.md)
 - [\[NeurIPS 2025\] T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning](t1_a_tool-oriented_conversational_dataset_for_multi-turn_agentic_planning.md)
-- [\[NeurIPS 2025\] Ground-Compose-Reinforce: Grounding Language in Agentic Behaviours using Limited Data](ground-compose-reinforce_grounding_language_in_agentic_behaviours_using_limited_.md)
 
 </div>
 

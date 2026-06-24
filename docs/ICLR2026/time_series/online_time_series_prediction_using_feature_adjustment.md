@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Online Time Series Prediction Using Feature Adjustment
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper proposes ADAPT-Z (Automatic Delta Adjustment via Persistent Tracking in Z-space), shifting the adaptation target of online time series forecasting from model parameter updates to feature space correction. By using a lightweight adapter to fuse current features with historical gradients, it addresses the dela
+  [ICLR 2026][Time Series][Online learning] This paper proposes ADAPT-Z (Automatic Delta Adjustment via Persistent Tracking in Z-space), shifting the adaptation target of online time series forecasting from model parameter updates to feature space correction. By using a lightweight adapter to fuse current features with historical gradients, it addresses the delayed feedback issue in multi-step forecasting and consistently outperforms existing online learning methods across 13 d…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Online learning"
+  - "distribution shift"
+  - "feature space adaptation"
+  - "delayed feedback"
+  - "time series forecasting"
 date: 2026-05-08
-content_hash: 750f2d6cdc0df6ba
+content_hash: c2fb209baf378734
 ---
+
 # Online Time Series Prediction Using Feature Adjustment
 
 **Conference**: ICLR 2026  
@@ -149,8 +155,8 @@ Feature position analysis (iTransformer): Performance remains stable when using 
 - [\[ICLR 2026\] ST-HHOL: Spatio-Temporal Hierarchical Hypergraph Online Learning for Crime Prediction](st-hhol_spatio-temporal_hierarchical_hypergraph_online_learning_for_crime_predic.md)
 - [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
 - [\[ICLR 2026\] Relational Feature Caching for Accelerating Diffusion Transformers](relational_feature_caching_for_accelerating_diffusion_transformers.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 - [\[ICLR 2026\] ResCP: Reservoir Conformal Prediction for Time Series Forecasting](rescp_reservoir_conformal_prediction_for_time_series_forecasting.md)
-- [\[ICLR 2026\] Extreme Weather Nowcasting via Local Precipitation Pattern Prediction](extreme_weather_nowcasting_via_local_precipitation_pattern_prediction.md)
 
 </div>
 

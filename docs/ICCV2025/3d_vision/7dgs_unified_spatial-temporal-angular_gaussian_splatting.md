@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 7DGS: Unified Spatial-Temporal-Angular Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][Gaussian Splatting] This work extends 3DGS to seven dimensions (spatial 3D + temporal 1D + directional 3D). A conditional slicing mechanism projects 7D Gaussians into 3D Gaussians compatible with t…
+  [ICCV 2025][3D Vision][Gaussian Splatting] This work extends 3DGS to seven dimensions (spatial 3D + temporal 1D + directional 3D). A conditional slicing mechanism projects 7D Gaussians into 3D Gaussians compatible with the standard 3DGS pipeline, achieving up to 7.36 dB PSNR improvement on dynamic scenes with view-dependent effects while maintaining 401 FPS real-time rendering.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Real-Time Rendering"
   - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 445d3dd6112d4ef5
+content_hash: ba642a54db466c33
 ---
 
 # 7DGS: Unified Spatial-Temporal-Angular Gaussian Splatting
@@ -128,8 +128,8 @@ Even without AGR, 7DGS surpasses 4DGS by +3.98 dB while doubling FPS to 376 (377
 
 - [\[ICCV 2025\] Spatial-Temporal Aware Visuomotor Diffusion Policy Learning](spatial-temporal_aware_visuomotor_diffusion_policy_learning.md)
 - [\[ICCV 2025\] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting](surfacesplat_connecting_surface_reconstruction_and_gaussian_splatting.md)
-- [\[ICCV 2025\] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling](ust-ssm_unified_spatio-temporal_state_space_models_for_point_cloud_video_modelin.md)
 - [\[NeurIPS 2025\] TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming](../../NeurIPS2025/3d_vision/trim_scalable_3d_gaussian_diffusion_inference_with_temporal_and_spatial_trimming.md)
+- [\[ICCV 2025\] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling](ust-ssm_unified_spatio-temporal_state_space_models_for_point_cloud_video_modelin.md)
 - [\[ICCV 2025\] CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from A Single-View Image](catsplat_contextaware_transformer_with_spatial_guidance_for.md)
 
 </div>

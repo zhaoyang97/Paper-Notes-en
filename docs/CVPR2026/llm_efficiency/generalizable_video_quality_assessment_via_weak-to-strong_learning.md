@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generalizable Video Quality Assessment via Weak-to-Strong Learning
 description: >-
-  [CVPR 2026][LLM Efficiency][Paper Note] Without relying on any human annotation labels, off-the-shelf VQA models are utilized as "weak teachers" to supervise a high-capacity Multimodal Large Language Model (MLLM) "strong student." The student is then recycled as the teacher for subsequent iterative rounds. The final model matches in-distribution performance
+  [CVPR2026][LLM Efficiency][Video Quality Assessment] Without relying on any human annotation labels, off-the-shelf VQA models are utilized as "weak teachers" to supervise a high-capacity Multimodal Large Language Model (MLLM) "strong student." The student is then recycled as the teacher for subsequent iterative rounds. The final model matches in-distribution performance and significantly surpasses all teachers in OOD scenarios, improving the overall OOD SRCC of VQA from 0.59…
 tags:
-  - CVPR 2026
-  - LLM Efficiency
+  - "CVPR2026"
+  - "LLM Efficiency"
+  - "Video Quality Assessment"
+  - "weak-to-strong generalization"
+  - "learning-to-rank"
+  - "pseudo-labeling"
+  - "OOD generalization"
 date: 2026-05-08
-content_hash: 4bba488eb81174b6
+content_hash: 046feccffd64350b
 ---
+
 # Generalizable Video Quality Assessment via Weak-to-Strong Learning
 
 **Conference**: CVPR2026  
@@ -128,15 +134,16 @@ Incremental component analysis (Table 2) and iterative strategy ablation (Table 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](../../ICLR2026/llm_efficiency/learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
+- [\[CVPR 2026\] Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty](few-shot_hybrid_incremental_learningcontinually_learning_under_data_scarcity_and.md)
 - [\[ICML 2025\] Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling](../../ICML2025/llm_efficiency/efficient_length-generalizable_attention_via_causal_retrieval_for_long-context_l.md)
 - [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](../../ICLR2026/llm_efficiency/expert_divergence_learning_for_moe-based_language_models.md)
-- [\[ICML 2026\] ProactiveLLM: Learning Active Interaction for Streaming Large Language Models](../../ICML2026/llm_efficiency/proactivellm_learning_active_interaction_for_streaming_large_language_models.md)
-- [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](../../ICLR2026/llm_efficiency/deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
 
 </div>
 

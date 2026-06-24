@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] One for Two: A Unified Framework for Imbalanced Graph Classification via Dynamic Balanced Prototype
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] UniImb employs a unified framework of "Dynamic Balanced Prototypes + Load Balancing Regularization" to simultaneously address **class imbalance** (too few samples for minority classes) and **topological imbalance** (small graphs being overwhelmed by large graphs) in graph classification. It achieves comprehensive leads
+  [ICLR 2026][Graph Learning][Imbalanced Graph Classification] UniImb employs a unified framework of "Dynamic Balanced Prototypes + Load Balancing Regularization" to simultaneously address **class imbalance** (too few samples for minority classes) and **topological imbalance** (small graphs being overwhelmed by large graphs) in graph classification. It achieves comprehensive leads across 19 datasets compared to 23 baselines.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Imbalanced Graph Classification"
+  - "Class Imbalance"
+  - "Topological Imbalance"
+  - "Dynamic Balanced Prototype"
+  - "Information Bottleneck"
 date: 2026-05-08
-content_hash: a24eb93964e53189
+content_hash: 57b7a0ab5f91867d
 ---
+
 # One for Two: A Unified Framework for Imbalanced Graph Classification via Dynamic Balanced Prototype
 
 **Conference**: ICLR 2026  
@@ -142,8 +148,8 @@ Topological Imbalance (extreme, Macro-F1):
 ## Related Papers
 
 - [\[ACL 2026\] AutoPKG: An Automated Framework for Dynamic E-commerce Product-Attribute Knowledge Graph Construction](../../ACL2026/graph_learning/autopkg_an_automated_framework_for_dynamic_e-commerce_product-attribute_knowledg.md)
+- [\[ICLR 2026\] <SOG$_k$>: One LLM Token for Explicit Graph Structural Understanding](sog_k_one_llm_token_for_explicit_graph_structural_understanding.md)
 - [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](forest-based_graph_learning_for_semi-supervised_node_classification.md)
-- [\[ICLR 2026\] Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion](low-rank_few-shot_node_classification_by_node-level_graph_diffusion.md)
 - [\[ICML 2026\] ProMoS: Generalist Graph Anomaly Detection via Prototype-Based Distillation](../../ICML2026/graph_learning/generalist_graph_anomaly_detection_via_prototype-based_distillation.md)
 - [\[ICLR 2026\] Learning Posterior Predictive Distributions for Node Classification from Synthetic Graph Priors](learning_posterior_predictive_distributions_for_node_classification_from_synthet.md)
 

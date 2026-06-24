@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] χ: Symmetry Understanding of 3D Shapes via Chirality Disentanglement
 description: >-
-  [ICCV 2025][3D Vision][Chirality features] This paper proposes an unsupervised chirality feature extraction pipeline that distills left-right chirality information from 2D foundation model features to augment 3D shape ve…
+  [ICCV 2025][3D Vision][Chirality features] This paper proposes an unsupervised chirality feature extraction pipeline that distills left-right chirality information from 2D foundation model features to augment 3D shape vertex descriptors, effectively resolving left-right ambiguity in shape analysis.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "left-right disambiguation"
   - "2D foundation model distillation"
 date: 2026-05-08
-content_hash: d19b51f3a570f82f
+content_hash: 94f973c653ee8d59
 ---
 
 # χ: Symmetry Understanding of 3D Shapes via Chirality Disentanglement
@@ -138,9 +138,9 @@ Total loss: $\mathcal{L} = \mathcal{L}_{dis} + \lambda_1\mathcal{L}_{inv} + \lam
 
 - [\[ICCV 2025\] Representing 3D Shapes with 64 Latent Vectors for 3D Diffusion Models](representing_3d_shapes_with_64_latent_vectors_for_3d_diffusion_models.md)
 - [\[ICCV 2025\] DMesh++: An Efficient Differentiable Mesh for Complex Shapes](dmesh_an_efficient_differentiable_mesh_for_complex_shapes.md)
+- [\[CVPR 2025\] Symmetry Strikes Back: From Single-Image Symmetry Detection to 3D Generation](../../CVPR2025/3d_vision/symmetry_strikes_back_from_single-image_symmetry_detection_to_3d_generation.md)
 - [\[ICCV 2025\] NeuraLeaf: Neural Parametric Leaf Models with Shape and Deformation Disentanglement](neuraleaf_neural_parametric_leaf_models_with_shape_and_deformation_disentangleme.md)
-- [\[ICCV 2025\] HIS-GPT: Towards 3D Human-In-Scene Multimodal Understanding](his-gpt_towards_3d_human-in-scene_multimodal_understanding.md)
-- [\[ICCV 2025\] Open-Vocabulary Octree-Graph for 3D Scene Understanding](open-vocabulary_octree-graph_for_3d_scene_understanding.md)
+- [\[ICML 2025\] Symmetry-Robust 3D Orientation Estimation](../../ICML2025/3d_vision/symmetry-robust_3d_orientation_estimation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Private Zeroth-Order Optimization with Public Data
 description: >-
-  [NeurIPS 2025][Optimization][Differential Privacy] This paper proposes the PAZO framework, which leverages public data to guide gradient approximation in private zeroth-order optimization. PAZO achieves a superior privac…
+  [NeurIPS 2025][Optimization][Differential Privacy] This paper proposes the PAZO framework, which leverages public data to guide gradient approximation in private zeroth-order optimization. PAZO achieves a superior privacy-utility tradeoff compared to DP-SGD on both vision and text tasks, while delivering up to a 16× speedup.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "DP-SGD"
   - "Privacy-Utility Tradeoff"
 date: 2026-05-08
-content_hash: f342de936f84b4ed
+content_hash: 4bbb58c60aaf9e18
 ---
 
 # Private Zeroth-Order Optimization with Public Data
@@ -150,9 +150,9 @@ Performance under varying privacy budgets (CIFAR-10):
 
 - [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](improving_the_straight-through_estimator_with_zeroth-order_information.md)
 - [\[ICML 2026\] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective](../../ICML2026/optimization/learning_dynamics_of_zeroth-order_optimization_a_kernel_perspective.md)
+- [\[ICML 2025\] Improved Sample Complexity for Private Nonsmooth Nonconvex Optimization](../../ICML2025/optimization/improved_sample_complexity_for_private_nonsmooth_nonconvex_optimization.md)
 - [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](../../ICML2026/optimization/learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
-- [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
 
 </div>
 

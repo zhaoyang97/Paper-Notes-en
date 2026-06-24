@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition
 description: >-
-  [ICML 2026][Audio & Speech][PID] This paper treats the decision-making of multimodal large models as an information decomposition from input to output. Using Partial Information Decomposition (PID), the mutual information of VL/omni-modal model predictions is decomposed into four terms: "Vision-unique / Text-unique / Redundant / Synergistic." It disco
+  [ICML 2026][Audio & Speech][PID] This paper treats the decision-making of multimodal large models as an information decomposition from input to output. Using Partial Information Decomposition (PID), the mutual information of VL/omni-modal model predictions is decomposed into four terms: "Vision-unique / Text-unique / Redundant / Synergistic." It discovers that the synergistic term is the best indicator of predictive vision sensitivity and that omni-modal models suffer from a…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - PID
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "PID"
+  - "Modality Synergy"
+  - "Omni-modal Models"
+  - "Visual Dominance"
+  - "LoRA Reweighting"
 date: 2026-05-08
-content_hash: 122b9e65e7fbb431
+content_hash: d71c7582de32a330
 ---
+
 # Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition
 
 **Conference**: ICML 2026  
@@ -149,8 +154,8 @@ Evaluation covers 20 VL models (Qwen2.5/2/3-VL, InternVL3, LLaVA-OneVision, Camb
 - [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](../../ACL2026/audio_speech/closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
 - [\[AAAI 2026\] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](../../AAAI2026/audio_speech/improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)
 - [\[CVPR 2026\] Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding](../../CVPR2026/audio_speech/omni-mmsi_toward_identity-attributed_social_interaction_understanding.md)
+- [\[ICLR 2026\] Music Flamingo: Scaling Music Understanding in Audio Language Models](../../ICLR2026/audio_speech/music_flamingo_scaling_music_understanding_in_audio_language_models.md)
 - [\[ICLR 2026\] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](../../ICLR2026/audio_speech/paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)
-- [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](probing_cross-modal_information_hubs_in_audio-visual_llms.md)
 
 </div>
 

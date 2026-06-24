@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from A Single-View Image
 description: >-
-  [ICCV 2025][3D Vision][Single-view 3D reconstruction] This paper proposes CATSplat, a generalizable Transformer framework for feed-forward single-view 3DGS reconstruction. It enhances image features via dual cross-attent…
+  [ICCV 2025][3D Vision][Single-view 3D reconstruction] This paper proposes CATSplat, a generalizable Transformer framework for feed-forward single-view 3DGS reconstruction. It enhances image features via dual cross-attention using VLM text embeddings (contextual prior) and 3D point cloud features (spatial prior), achieving comprehensive improvements over Flash3D in PSNR/SSIM/LPIPS on RE10K and other datasets, with strong cross-dataset generalization.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "spatial guidance"
   - "point cloud features"
 date: 2026-05-08
-content_hash: 1d13830f94da99f8
+content_hash: d89c6577c05cd186
 ---
 
 # CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from A Single-View Image
@@ -139,8 +139,8 @@ How to compensate for the extreme information deficiency inherent to single-imag
 - [\[ICCV 2025\] FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads](facelift_learning_generalizable_single_image_3d_face_reconstruction_from_synthet.md)
 - [\[ICCV 2025\] Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction](baking_gaussian_splatting_into_diffusion_denoiser_for_fast_and_scalable_single-s.md)
 - [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
-- [\[ICCV 2025\] SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing](sehdr_single-exposure_hdr_novel_view_synthesis_via_3d_gaussian_bracketing.md)
 - [\[ICCV 2025\] Sequential Gaussian Avatars with Hierarchical Motion Context](sequential_gaussian_avatars_with_hierarchical_motion_context.md)
+- [\[ICCV 2025\] SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing](sehdr_single-exposure_hdr_novel_view_synthesis_via_3d_gaussian_bracketing.md)
 
 </div>
 

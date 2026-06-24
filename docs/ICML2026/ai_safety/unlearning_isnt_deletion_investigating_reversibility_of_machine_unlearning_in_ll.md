@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 遗忘并非删除：大语言模型机器遗忘中的可逆性调查
+  [Paper Note] Forgetting is Not Deletion: An Investigation of Reversibility in LLM Machine Unlearning
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper systematically analyzes the reversibility of LLM unlearning through representation-level diagnostic tools—finding that many unlearning methods merely suppress rather than truly delete information. It proposes a four-tier unlearning taxonomy to distinguish true information erasure from superficial performance
+  [ICML 2026][AI Safety][Machine Unlearning] This paper systematically analyzes the reversibility of LLM unlearning through representation-level diagnostic tools—finding that many unlearning methods merely suppress rather than truly delete information. It proposes a four-tier unlearning taxonomy to distinguish true information erasure from superficial performance degradation.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Reversibility"
+  - "Representation Analysis"
+  - "LLM Safety"
+  - "Privacy"
 date: 2026-05-08
-content_hash: 09874356433ec1a7
+content_hash: 0d1836f70aedb4fe
 ---
+
 # Forgetting is Not Deletion: An Investigation of Reversibility in LLM Machine Unlearning
 
 **Conference**: ICML 2026  
@@ -114,11 +120,11 @@ With signals from the two branches, the evaluation is decomposed into two indepe
 
 ## Related Papers
 
-- [\[ICML 2026\] 机器遗忘的两个盲点：过度遗忘与原型重学习攻击](unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
+- [\[ICML 2026\] Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Re-learning Attacks](unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
+- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[ICML 2026\] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models](dualoptim_bridging_shared_and_decoupled_optimizer_states_for_better_machine_unle.md)
-- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
-- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
-- [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
+- [\[ICLR 2026\] FaLW: A Forgetting-aware Loss Reweighting for Long-tailed Unlearning](../../ICLR2026/ai_safety/falw_a_forgetting-aware_loss_reweighting_for_long-tailed_unlearning.md)
+- [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](../../ICLR2026/ai_safety/label_smoothing_improves_machine_unlearning.md)
 
 </div>
 

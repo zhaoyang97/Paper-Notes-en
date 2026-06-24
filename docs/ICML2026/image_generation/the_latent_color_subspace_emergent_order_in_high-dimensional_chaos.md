@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Latent Color Subspace: Emergent Order in High-Dimensional Chaos
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] The authors discover that "color" occupies only a three-dimensional subspace (Latent Color Subspace, LCS) within the VAE latent space of FLUX.1. Its geometry closely mirrors the bicone of the HSL color model. Based on this, they propose a **completely training-free, pure closed-form latent space transformation** method
+  [ICML2026][Image Generation][Flow Matching] The authors discover that "color" occupies only a three-dimensional subspace (Latent Color Subspace, LCS) within the VAE latent space of FLUX.1. Its geometry closely mirrors the bicone of the HSL color model. Based on this, they propose a **completely training-free, pure closed-form latent space transformation** method that can both "read out" the emergent colors during generation and precisely modify specific objects to a target co…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
-  - FLUX
+  - "ICML2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "FLUX"
+  - "VAE Latent Space"
+  - "Color Control"
+  - "Training-free Intervention"
 date: 2026-05-08
-content_hash: 297cba5e39f546f7
+content_hash: f0d13fb87b6939f8
 ---
+
 # The Latent Color Subspace: Emergent Order in High-Dimensional Chaos
 
 **Conference**: ICML2026  
@@ -150,8 +154,8 @@ Using only mechanism intervention **without changing the prompt**, GenEval color
 - [\[CVPR 2026\] Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective](../../CVPR2026/image_generation/toward_diffusible_high-dimensional_latent_spaces_a_frequency_perspective.md)
 - [\[ICML 2026\] Order within Chaos: Capturing Intrinsic Energy Anomalies for AI-Manipulated Image Forgery Localization](order_within_chaos_capturing_intrinsic_energy_anomalies_for_ai-manipulated_image.md)
 - [\[ICML 2026\] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation](occlusionformer_arranging_z-order_for_layout-grounded_image_generation.md)
-- [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
 - [\[CVPR 2026\] When Local Rules Create Global Order: Self-Organized Representation Learning for Latent Diffusion Models](../../CVPR2026/image_generation/when_local_rules_create_global_order_self-organized_representation_learning_for_.md)
+- [\[ICLR 2026\] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis](../../ICLR2026/image_generation/latent_wavelet_diffusion_for_ultra_high-resolution_image_synthesis.md)
 
 </div>
 

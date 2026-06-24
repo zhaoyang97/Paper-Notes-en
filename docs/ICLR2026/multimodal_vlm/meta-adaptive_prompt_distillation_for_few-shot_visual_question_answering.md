@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering
 description: >-
-  [ICLR 2026][Multimodal VLM][LMM] Ours proposes MAPD (Meta-Adaptive Prompt Distillation), a prompt distillation method based on MAML meta-learning. It distills soft prompts from task-related image features through an attention mapper, enabling LMMs to adapt to new VQA tasks with only a few gradient steps at test time, surpassing ICL performance by 21.2
+  [ICLR 2026][Multimodal VLM][Meta-Learning] Ours proposes MAPD (Meta-Adaptive Prompt Distillation), a prompt distillation method based on MAML meta-learning. It distills soft prompts from task-related image features through an attention mapper, enabling LMMs to adapt to new VQA tasks with only a few gradient steps at test time, surpassing ICL performance by 21.2%.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - LMM
-  - MAML
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Meta-Learning"
+  - "Prompt Distillation"
+  - "Few-Shot VQA"
+  - "LMM"
+  - "MAML"
 date: 2026-05-08
-content_hash: f996380fa2f9d7b8
+content_hash: 4188ef59583e21c0
 ---
+
 # Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering
 
 **Conference**: ICLR 2026  

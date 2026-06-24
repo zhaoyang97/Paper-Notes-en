@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Online Learning and Equilibrium Computation with Ranking Feedback
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper generalizes the classic "numerical utility feedback" online learning to scenarios where only **action rankings** are observed. It first proves when sublinear regret is impossible in adversarial environments under pure ranking feedback, then constructs a modular algorithm that "estimates utility from rankings
+  [ICLR 2026][Online Learning][Ranking Feedback] This paper generalizes the classic "numerical utility feedback" online learning to scenarios where only **action rankings** are observed. It first proves when sublinear regret is impossible in adversarial environments under pure ranking feedback, then constructs a modular algorithm that "estimates utility from rankings + feeds into an arbitrary black-box no-regret algorithm." Under the assumption of limited utility variation…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Online Learning"
+  - "Game Theory"
+  - "Learning Theory"
+  - "Ranking Feedback"
+  - "No-regret Learning"
+  - "Coarse Correlated Equilibrium"
+  - "Plackett-Luce Model"
 date: 2026-05-08
-content_hash: ac587b82ef854ca5
+content_hash: acdc3b4b0f856a5d
 ---
+
 # Online Learning and Equilibrium Computation with Ranking Feedback
 
 **Conference**: ICLR 2026  
@@ -132,6 +139,7 @@ The paper is primarily theoretical, with experiments focused on an **online LLM 
 - Value: ⭐⭐⭐⭐⭐ Bridges the gap between numerical and ordinal feedback in online learning, with guidance for RLHF and matching platforms.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -140,7 +148,7 @@ The paper is primarily theoretical, with experiments focused on an **online LLM 
 - [\[ICLR 2026\] Differentially Private Equilibrium Finding in Polymatrix Games](differentially_private_equilibrium_finding_in_polymatrix_games.md)
 - [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
 - [\[ICLR 2026\] Toward Practical Equilibrium Propagation: Brain-Inspired Recurrent Neural Network with Feedback Regulation and Residual Connections](toward_practical_equilibrium_propagation_brain-inspired_recurrent_neural_network.md)
-- [\[ICLR 2026\] Computing Equilibrium beyond Unilateral Deviation](computing_equilibrium_beyond_unilateral_deviation.md)
+- [\[ICLR 2026\] Enabling Fine-Tuning of Direct Feedback Alignment via Feedback-Weight Matching](enabling_fine-tuning_of_direct_feedback_alignment_via_feedback-weight_matching.md)
 
 </div>
 

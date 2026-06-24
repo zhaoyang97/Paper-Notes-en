@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Dataset Distillation: Hard Truths about Soft Labels
 description: >-
-  [CVPR 2026][Model Compression][coreset] This is an analysis paper with a "myth-busting" nature: the authors systematically prove that **the apparent lead of large-scale dataset distillation (DD) methods is primarily sustained by the use of soft labels during downstream training**. Once scalability analysis is performed across different label regimes, the adv
+  [CVPR 2026 (Oral)][Model Compression][Dataset Distillation] This is an analysis paper with a "myth-busting" nature: the authors systematically prove that **the apparent lead of large-scale dataset distillation (DD) methods is primarily sustained by the use of soft labels during downstream training**. Once scalability analysis is performed across different label regimes, the advantage of high-quality subsets over random subsets nearly disappears. Based on this…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - coreset
+  - "CVPR 2026 (Oral)"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Soft Labels"
+  - "coreset"
+  - "compute budget"
+  - "difficulty pruning"
 date: 2026-05-08
-content_hash: 200a72564fd5af91
+content_hash: ba5e38b6ae57e974
 ---
+
 # Rethinking Dataset Distillation: Hard Truths about Soft Labels
 
 **Conference**: CVPR 2026 (Oral)  

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] PhysX-3D: Physical-Grounded 3D Asset Generation
 description: >-
-  [NeurIPS 2025][3D Vision][Physical-property 3D generation] PhysX proposes the first end-to-end physical-property-driven 3D asset generation paradigm…
+  [NeurIPS 2025 Spotlight][3D Vision][Physical-property 3D generation] PhysX proposes the first end-to-end physical-property-driven 3D asset generation paradigm, comprising PhysXNet (the first 3D dataset with systematic annotations across five physical dimensions—absolute scale, material, functional affordance, kinematics, and functional description—covering 26K+ objects) and PhysXGen (a dual-branch feed-forward generation framework that injects physical knowledge into a pretra…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "3D Vision"
   - "Physical-property 3D generation"
   - "3D dataset"
@@ -12,7 +12,7 @@ tags:
   - "articulated object modeling"
   - "embodied AI"
 date: 2026-05-08
-content_hash: a302c56389f22ef1
+content_hash: 0d7e7ef3260a1dd6
 ---
 
 # PhysX-3D: Physical-Grounded 3D Asset Generation
@@ -160,10 +160,10 @@ PhysXGen achieves gains of 24%, 64%, 28%, and 72% over the GPT baseline on absol
 
 ## Related Papers
 
+- [\[CVPR 2026\] PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image](../../CVPR2026/3d_vision/physx-anything_simulation-ready_physical_3d_assets_from_single_image.md)
+- [\[CVPR 2025\] Kiss3DGen: Repurposing Image Diffusion Models for 3D Asset Generation](../../CVPR2025/3d_vision/kiss3dgen_repurposing_image_diffusion_models_for_3d_asset_generation.md)
 - [\[ICCV 2025\] GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs](../../ICCV2025/3d_vision/gaussianproperty_integrating_physical_properties_to_3d_gaussians_with_lmms.md)
 - [\[ICCV 2025\] DSO: Aligning 3D Generators with Simulation Feedback for Physical Soundness](../../ICCV2025/3d_vision/dso_aligning_3d_generators_with_simulation_feedback_for_physical_soundness.md)
-- [\[NeurIPS 2025\] Hybrid Physical-Neural Simulator for Fast Cosmological Hydrodynamics](hybrid_physical-neural_simulator_for_fast_cosmological_hydrodynamics.md)
-- [\[ICML 2026\] LabBuilder: Protocol-Grounded 3D Layout Generation for Interactable and Safe Laboratory](../../ICML2026/3d_vision/labbuilder_protocol-grounded_3d_layout_generation_for_interactable_and_safe_labo.md)
 - [\[NeurIPS 2025\] SoFar: Language-Grounded Orientation Bridges Spatial Reasoning and Object Manipulation](sofar_language-grounded_orientation_bridges_spatial_reasoning_and_object_manipul.md)
 
 </div>

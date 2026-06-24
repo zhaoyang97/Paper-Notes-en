@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CyIN: Cyclic Informative Latent Space for Bridging Complete and Incomplete Multimodal Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][incomplete multimodal learning] This paper proposes the CyIN framework, which constructs an informative latent space via token-level and label-level information bottlenecks (IB)…
+  [NeurIPS 2025][Multimodal VLM][incomplete multimodal learning] This paper proposes the CyIN framework, which constructs an informative latent space via token-level and label-level information bottlenecks (IB), and employs cyclic cross-modal translation to reconstruct missing modality information, simultaneously optimizing complete and incomplete multimodal learning within a single unified model.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "variational approximation"
   - "modality missing"
 date: 2026-05-08
-content_hash: 89bb160b1d19219a
+content_hash: 28f9a5acdf3a9e81
 ---
 
 # CyIN: Cyclic Informative Latent Space for Bridging Complete and Incomplete Multimodal Learning
@@ -214,11 +214,11 @@ The framework design is comprehensive, and the integration of information bottle
 
 ## Related Papers
 
+- [\[CVPR 2026\] Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning](../../CVPR2026/multimodal_vlm/anchor-guided_gradient_alignment_for_incomplete_multimodal_learning.md)
 - [\[NeurIPS 2025\] VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning](vt-fsl_bridging_vision_and_text_with_llms_for_few-shot_learning.md)
 - [\[ICML 2026\] SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs](../../ICML2026/multimodal_vlm/slq_bridging_modalities_via_shared_latent_queries_for_retrieval_with_frozen_mllm.md)
 - [\[NeurIPS 2025\] AntiGrounding: Lifting Robotic Actions into VLM Representation Space for Decision Making](antigrounding_lifting_robotic_actions_into_vlm_representatio.md)
 - [\[NeurIPS 2025\] Multimodal Negative Learning](multimodal_negative_learning.md)
-- [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](continual_multimodal_contrastive_learning.md)
 
 </div>
 

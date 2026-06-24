@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] LaRP transforms a pre-trained 2D diffusion inpainting model into an "innately 3D-aware" multi-view inpainter. It clones a UNet encoder to process clean reference views and reprojects reference features onto the target view coordinates using camera poses estimated by a 3D foundation model. These features are injected in
+  [CVPR 2026][Image Generation][Multi-view Inpainting] LaRP transforms a pre-trained 2D diffusion inpainting model into an "innately 3D-aware" multi-view inpainter. It clones a UNet encoder to process clean reference views and reprojects reference features onto the target view coordinates using camera poses estimated by a 3D foundation model. These features are injected into the decoder to guarantee 3D consistency at the source. The resulting images allow for NeRF training usin…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-view Inpainting"
+  - "Diffusion Models"
+  - "Cross-view Conditioning"
+  - "3D Foundation Models"
+  - "Latent Reprojection"
 date: 2026-05-08
-content_hash: 7d712f079f6cd9ff
+content_hash: 751c7b63353bace7
 ---
+
 # LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors
 
 **Conference**: CVPR 2026  
@@ -148,7 +153,7 @@ Training efficiency: Unlike MVInpainter-F (8×A100 for 3 days), LaRP trains on a
 - [\[CVPR 2026\] InstructMix2Mix: Consistent Sparse-View Editing Through Multi-View Model Personalization](instructmix2mix_consistent_sparse-view_editing_through_multi-view_model_personal.md)
 - [\[CVPR 2026\] Correspondence-Attention Alignment for Multi-View Diffusion Models](correspondence-attention_alignment_for_multi-view_diffusion_models.md)
 - [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
-- [\[NeurIPS 2025\] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors](../../NeurIPS2025/image_generation/a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors.md)
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
 - [\[ICLR 2026\] MVCustom: Multi-View Customized Diffusion via Geometric Latent Rendering and Completion](../../ICLR2026/image_generation/mvcustom_multi-view_customized_diffusion_via_geometric_latent_rendering_and_comp.md)
 
 </div>

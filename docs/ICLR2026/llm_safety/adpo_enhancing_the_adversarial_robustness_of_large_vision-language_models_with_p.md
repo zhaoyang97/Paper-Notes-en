@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization
 description: >-
-  [ICLR 2026][LLM Safety][DPO] AdPO is the first to reformulate the adversarial training of Large Vision-Language Models (LVLMs) as a preference optimization problem. By ensuring the model "prefers" correct outputs on clean images and "rejects" misleading outputs on adversarial images, and by fine-tuning only the CLIP image encoder, the method trans
+  [ICLR2026][LLM Safety][Large Vision-Language Models] AdPO is the first to reformulate the adversarial training of Large Vision-Language Models (LVLMs) as a preference optimization problem. By ensuring the model "prefers" correct outputs on clean images and "rejects" misleading outputs on adversarial images, and by fine-tuning only the CLIP image encoder, the method transfers from small models to large ones. This significantly improves adversarial robustness with almost no deg…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - DPO
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Large Vision-Language Models"
+  - "Adversarial Defense"
+  - "Preference Optimization"
+  - "DPO"
+  - "CLIP Image Encoder"
 date: 2026-05-08
-content_hash: 0b2d1b8c2135d86e
+content_hash: 88520cbddb254810
 ---
+
 # AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization
 
 **Conference**: ICLR2026  
@@ -144,11 +149,11 @@ AdPO reduces the targeted attack success rate to 0%, compared to 100% for the or
 
 ## Related Papers
 
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 - [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](../../ACL2026/llm_safety/cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
+- [\[ICLR 2026\] Time-To-Inconsistency: A Survival Analysis of Large Language Model Robustness to Adversarial Attacks](time-to-inconsistency_a_survival_analysis_of_large_language_model_robustness_to_.md)
 - [\[ACL 2026\] Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking](../../ACL2026/llm_safety/seeing_no_evil_blinding_large_vision-language_models_to_safety_instructions_via_.md)
 - [\[ICLR 2026\] VEAttack: Downstream-Agnostic Vision Encoder Attack Against Large Vision Language Models](veattack_downstream-agnostic_vision_encoder_attack_against_large_vision_language.md)
-- [\[ICLR 2026\] TAO-Attack: Toward Advanced Optimization-based Jailbreak Attacks for Large Language Models](tao-attack_toward_advanced_optimization-based_jailbreak_attacks_for_large_langua.md)
-- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
 
 </div>
 

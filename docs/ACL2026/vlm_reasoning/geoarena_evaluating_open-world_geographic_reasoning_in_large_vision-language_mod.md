@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models
 description: >-
-  [ACL 2026][vlm_reasoning][Bradley-Terry] Ours proposes **GeoArena**, a "dynamic, label-free, process-oriented" evaluation platform for open-world geographic reasoning in LVLMs. It reformulates geographic localization assessment under in-the-wild images into a pairwise reasoning alignment task, ranking 17 frontier LVLMs using human preferences and Bradley-Terr
+  [ACL 2026][VLM Reasoning][Geographic Reasoning] Ours proposes **GeoArena**, a "dynamic, label-free, process-oriented" evaluation platform for open-world geographic reasoning in LVLMs. It reformulates geographic localization assessment under in-the-wild images into a pairwise reasoning alignment task, ranking 17 frontier LVLMs using human preferences and Bradley-Terry scores, achieving a 78% expert-crowdsource agreement rate.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - Bradley-Terry
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Geographic Reasoning"
+  - "LVLM Evaluation"
+  - "Human Preference"
+  - "Bradley-Terry"
+  - "Open-world"
 date: 2026-05-08
-content_hash: 53c742e9ec57ee00
+content_hash: b9c14dd84206dce5
 ---
+
 # GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models
 
 **Conference**: ACL 2026  
@@ -152,9 +157,9 @@ The Gemini series leads significantly. Open-source models like Qwen 2.5 VL 72B a
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](../../CVPR2026/vlm_reasoning/from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
 - [\[ACL 2026\] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization](addressing_overthinking_in_large_vision-language_models_via_gated_perception-rea.md)
 - [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
+- [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](../../CVPR2026/vlm_reasoning/from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
 - [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](../../NeurIPS2025/vlm_reasoning/mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
 - [\[ACL 2026\] MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models](mmerror_a_benchmark_for_erroneous_reasoning_in_vision-language_models.md)
 

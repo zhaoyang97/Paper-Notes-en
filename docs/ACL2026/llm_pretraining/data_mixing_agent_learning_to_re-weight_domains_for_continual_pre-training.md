@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training
 description: >-
-  [ACL 2026][Pretraining][Reinforcement Learning] This paper proposes Data Mixing Agent, the first model-based end-to-end domain re-weighting framework. By training a small agent using CQL reinforcement learning on extensive data mixing trajectories, it learns generalizable data mixing heuristics. It balances performance between source and target domains in mathematic
+  [ACL 2026][LLM Pretraining][Data Mixing] This paper proposes Data Mixing Agent, the first model-based end-to-end domain re-weighting framework. By training a small agent using CQL reinforcement learning on extensive data mixing trajectories, it learns generalizable data mixing heuristics. It balances performance between source and target domains in mathematical reasoning continual pre-training and generalizes to unseen source domains, target models, and domain spaces.
 tags:
-  - ACL 2026
-  - Pretraining
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Data Mixing"
+  - "Domain Re-weighting"
+  - "Continual Pre-training"
+  - "Reinforcement Learning"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 9e6ae239cd598d12
+content_hash: cc4687c76e06b87b
 ---
+
 # Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training
 
 **Conference**: ACL 2026  
@@ -134,11 +139,11 @@ CQL Loss = Standard Q-learning Loss + Conservative Regularization Term (penalizi
 
 ## Related Papers
 
-- [\[ACL 2025\] Improving Continual Pre-training Through Seamless Data Packing](../../ACL2025/llm_pretraining/improving_continual_pre-training_through_seamless_data_packing.md)
-- [\[ICLR 2026\] Predicting Training Re-evaluation Curves Enables Effective Data Curriculums](../../ICLR2026/llm_pretraining/predicting_training_re-evaluation_curves_enables_effective_data_curriculums_for_.md)
 - [\[ACL 2026\] FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](forever_forgetting_curve-inspired_memory_replay_for_language_model_continual_lea.md)
+- [\[ACL 2025\] Improving Continual Pre-training Through Seamless Data Packing](../../ACL2025/llm_pretraining/improving_continual_pre-training_through_seamless_data_packing.md)
 - [\[ACL 2025\] Towards Effective and Efficient Continual Pre-training of Large Language Models](../../ACL2025/llm_pretraining/towards_effective_and_efficient_continual_pre-training_of_large_language_models.md)
 - [\[ACL 2025\] Velocitune: A Velocity-based Dynamic Domain Reweighting Method for Continual Pre-training](../../ACL2025/llm_pretraining/velocitune_a_velocity-based_dynamic_domain_reweighting_method_for_continual_pre-.md)
+- [\[ICML 2026\] Explaining Data Mixing Scaling Laws](../../ICML2026/llm_pretraining/explaining_data_mixing_scaling_laws.md)
 
 </div>
 

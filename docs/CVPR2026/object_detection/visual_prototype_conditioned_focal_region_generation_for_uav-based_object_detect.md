@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection
 description: >-
-  [CVPR 2026][Object Detection][layout-to-image] UAVGen uses diffusion models to synthesize annotated training data for UAV object detection. It replaces blurry small object layout conditions with high-quality reference instances via "visual prototypes," generates images only within target-dense "focal regions," and refines labels using a detector back-check. On VisD
+  [CVPR 2026][Object Detection][UAV object detection] UAVGen uses diffusion models to synthesize annotated training data for UAV object detection. It replaces blurry small object layout conditions with high-quality reference instances via "visual prototypes," generates images only within target-dense "focal regions," and refines labels using a detector back-check. On VisDrone, it improved mAP from 24.5 to 25.9 using only 738 synthetic images.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - layout-to-image
+  - "CVPR 2026"
+  - "Object Detection"
+  - "UAV object detection"
+  - "layout-to-image"
+  - "visual prototype"
+  - "focal region"
+  - "label refinement"
 date: 2026-05-08
-content_hash: 78663ffcda6dcc54
+content_hash: f1735d5e2d0a7d4b
 ---
+
 # Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection
 
 **Conference**: CVPR 2026  
@@ -182,10 +187,10 @@ Impact of modules: Visual Prototype (VP), Layout Embedding (LE), Focal Region (F
 
 ## Related Papers
 
-- [\[CVPR 2026\] UAVGen: Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](uavgen_visual_prototype_conditioned_focal_region_generation_for_uav_based_object_detection.md)
 - [\[CVPR 2026\] Tri-Modal Fusion Transformers for UAV-based Object Detection](tri-modal_fusion_transformers_for_uav-based_object_detection.md)
 - [\[CVPR 2026\] UAV-CB: A Complex-Background RGB-T Dataset and Local Frequency Bridge Network for UAV Detection](uav-cb_a_complex-background_rgb-t_dataset_and_local_frequency_bridge_network_for.md)
 - [\[CVPR 2026\] Prompt-Free Universal Region Proposal Network](prompt-free_universal_region_proposal_network.md)
+- [\[CVPR 2025\] Unseen Visual Anomaly Generation](../../CVPR2025/object_detection/unseen_visual_anomaly_generation.md)
 - [\[CVPR 2026\] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection](beyond_prompt_degradation_prototype-guided_dual-pool_prompting_for_incremental_o.md)
 
 </div>

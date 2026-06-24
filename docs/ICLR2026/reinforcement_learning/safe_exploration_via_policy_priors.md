@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Safe Exploration via Policy Priors
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Ours proposes SOOPER, a model-based safe exploration algorithm: it utilizes a "suboptimal but conservative" prior policy as a safety guardrail. During online interaction, the agent pessimistically falls back to it to ensure safety; during simulation, it aggressively explores the world model with optimism. By reframing
+  [ICLR 2026][Reinforcement Learning][Safe Exploration] Ours proposes SOOPER, a model-based safe exploration algorithm: it utilizes a "suboptimal but conservative" prior policy as a safety guardrail. During online interaction, the agent pessimistically falls back to it to ensure safety; during simulation, it aggressively explores the world model with optimism. By reframing the constrained task into an unconstrained "terminating planning MDP"—where trajectories terminate upon fa…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Safe Exploration"
+  - "Policy Priors"
+  - "Optimism-Pessimism"
+  - "Cumulative Regret"
+  - "Constrained Markov Decision Processes"
 date: 2026-05-08
-content_hash: 38854fa3c4bd08db
+content_hash: 6e69baaeb84bfd2e
 ---
+
 # Safe Exploration via Policy Priors
 
 **Conference**: ICLR 2026  
@@ -119,6 +125,7 @@ Evaluations were conducted on RWRL, SafetyGym, and RaceCar, comparing SOOPER aga
 - Value: ⭐⭐⭐⭐⭐ Simultaneously achieves safety throughout learning, performance guarantees, and scalability to real hardware.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

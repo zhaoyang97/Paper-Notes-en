@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Medical Thinking with Multiple Images
 description: >-
-  [ICLR 2026][vlm_reasoning][think-with-images] This paper introduces MedThinkVQA—the first expert-annotated multi-image medical diagnostic reasoning benchmark, averaging 6.62 images per case. Through a three-step "Think-with-Images" supervision and beyond-accuracy step-level evaluation, it reveals that the true bottleneck for current top-tier multimodal large model
+  [ICLR 2026][VLM Reasoning][Multi-image diagnostic reasoning] This paper introduces MedThinkVQA—the first expert-annotated multi-image medical diagnostic reasoning benchmark, averaging 6.62 images per case. Through a three-step "Think-with-Images" supervision and beyond-accuracy step-level evaluation, it reveals that the true bottleneck for current top-tier multimodal large models is not the length of the reasoning chain, but the ability to "extract-align-compose" visual evide…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - think-with-images
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multi-image diagnostic reasoning"
+  - "think-with-images"
+  - "medical VQA"
+  - "cross-view evidence fusion"
+  - "beyond-accuracy evaluation"
 date: 2026-05-08
-content_hash: c1de15723589d2ce
+content_hash: 36fe4932a6b8874c
 ---
+
 # Medical Thinking with Multiple Images
 
 **Conference**: ICLR 2026  

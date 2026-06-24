@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] D-Prism: Differentiable Primitives for Structured Dynamic Modeling
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian] D-Prism extends differentiable geometric primitives (superquadrics) from static scenes to the dynamic domain. It utilizes a deformation network to drive rigid primitive motions, binds 3D Gaussians to each primitive to supplement appearance, and incorporates a "clone/merge/prune" dynamic adaptive control system. This en
+  [CVPR 2026][3D Vision][Geometric Primitives] D-Prism extends differentiable geometric primitives (superquadrics) from static scenes to the dynamic domain. It utilizes a deformation network to drive rigid primitive motions, binds 3D Gaussians to each primitive to supplement appearance, and incorporates a "clone/merge/prune" dynamic adaptive control system. This enables the simultaneous reconstruction of structured geometry with **part decomposition** and precise part motion fr…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Geometric Primitives"
+  - "Dynamic Reconstruction"
+  - "Monocular Video"
+  - "Structured Modeling"
+  - "3D Gaussian"
 date: 2026-05-08
-content_hash: 9117679e73dc65d0
+content_hash: e59e92e2bb09f3f2
 ---
+
 # D-Prism: Differentiable Primitives for Structured Dynamic Modeling
 
 **Conference**: CVPR 2026  
@@ -139,10 +144,10 @@ General scenes (D-NeRF humanoid cases, Tab.3): D-Prism's rendering quality is sl
 ## Related Papers
 
 - [\[CVPR 2026\] Differentiable Adaptive 4D Structured Illumination for Joint Capture of Shape and Reflectance](differentiable_adaptive_4d_structured_illumination_for_joint_capture_of_shape_an.md)
-- [\[CVPR 2026\] Bringing Your Portrait to 3D Presence](bringing_your_portrait_to_3d_presence.md)
-- [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
-- [\[CVPR 2026\] Hermite Radial Basis Function for Surface Reconstruction via Differentiable Rendering](hermite_radial_basis_function_for_surface_reconstruction_via_differentiable_rend.md)
+- [\[CVPR 2026\] PhysHO: Physics-Based Dynamic 3D Gaussian Human and Object from Monocular Video](physho_physics-based_dynamic_3d_gaussian_human_and_object_from_monocular_video.md)
 - [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
+- [\[NeurIPS 2025\] LinPrim: Linear Primitives for Differentiable Volumetric Rendering](../../NeurIPS2025/3d_vision/linprim_linear_primitives_for_differentiable_volumetric_rendering.md)
+- [\[CVPR 2026\] MeshSplatting: Differentiable Rendering with Opaque Meshes](meshsplatting_differentiable_rendering_with_opaque_meshes.md)
 
 </div>
 

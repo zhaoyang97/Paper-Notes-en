@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic Triggers Optimization
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The authors identify a "stylistic inconsistency" vulnerability in VLMs—they can understand content in almost any artistic style, yet their safety alignment is easily bypassed by specific visual style triggers. Based on this, they propose ASO, which fine-tunes an image editing model using GRPO to overlay optimal styles
+  [CVPR 2026][VLM Reasoning][VLM Jailbreak Attack] The authors identify a "stylistic inconsistency" vulnerability in VLMs—they can understand content in almost any artistic style, yet their safety alignment is easily bypassed by specific visual style triggers. Based on this, they propose ASO, which fine-tunes an image editing model using GRPO to overlay optimal styles onto existing adversarial images, consistently improving the Attack Success Rate (ASR) across four SOTA VLMs.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "VLM Jailbreak Attack"
+  - "Stylistic Sensitivity"
+  - "GRPO Reinforcement Learning"
+  - "Tiered Rewards"
+  - "Plug-and-play Red Teaming"
 date: 2026-05-08
-content_hash: db01ac585d46c63c
+content_hash: 8d12968f3a1fddc3
 ---
+
 # Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic Triggers Optimization
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Decomposition of the contributions from the two phases (Qwen3-VL / LLaVA-OV-1.5,
 
 ## Related Papers
 
-- [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](dynamics-aware_preference_optimization_for_vision-language_models.md)
-- [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)
 - [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
-- [\[CVPR 2026\] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More](sketchvl_policy_optimization_via_fine-grained_credit_assignment_for_chart_unders.md)
-- [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
+- [\[CVPR 2026\] Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs](beyond_perceptual_shortcuts_causal-inspired_debiasing_optimization_for_generaliz.md)
+- [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](../../ICLR2026/vlm_reasoning/perception-aware_policy_optimization_for_multimodal_reasoning.md)
+- [\[ICML 2026\] Temporal-Aware Reasoning Optimization for Video Temporal Grounding](../../ICML2026/vlm_reasoning/temporal-aware_reasoning_optimization_for_video_temporal_grounding.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Gaussian Splatting] A multi-scale bilateral grid pyramid is proposed to unify global appearance codes and pixel-level bilateral grids. A 3-level hierarchy (coarse→medium→fine) captures…
+  [NeurIPS 2025][Autonomous Driving][Gaussian Splatting] A multi-scale bilateral grid pyramid is proposed to unify global appearance codes and pixel-level bilateral grids. A 3-level hierarchy (coarse→medium→fine) captures global/regional/pixel-level photometric variation respectively. By employing a luminance-guided slice-and-blend pipeline and adaptive regularization, the method addresses photometric inconsistency in driving scene 3DGS, achieving a 28.2% improvement in Chamfer…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Driving Scene"
   - "Photometric Consistency"
 date: 2026-05-08
-content_hash: 68d071d9b110d3c2
+content_hash: 6fb6bb62ea6b240a
 ---
 
 # Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting
@@ -130,11 +130,11 @@ CD improvement on Waymo: **28.2%** (1.378→0.989)
 
 ## Related Papers
 
+- [\[CVPR 2026\] UFO: Unifying Feed-Forward and Optimization-based Methods for Large Driving Scene Modeling](../../CVPR2026/autonomous_driving/ufo_unifying_feed-forward_and_optimization-based_methods_for_large_driving_scene.md)
+- [\[CVPR 2025\] LR-SGS: Robust LiDAR-Reflectance-Guided Salient Gaussian Splatting for Self-Driving Scene Reconstruction](../../CVPR2025/autonomous_driving/lr-sgs_robust_lidar-reflectance-guided_salient_gaussian_splatting_for_self-drivi.md)
 - [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](../../ICCV2025/autonomous_driving/ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
 - [\[ICCV 2025\] Splat-LOAM: Gaussian Splatting LiDAR Odometry and Mapping](../../ICCV2025/autonomous_driving/splat-loam_gaussian_splatting_lidar_odometry_and_mapping.md)
-- [\[ICCV 2025\] CoDa-4DGS: Dynamic Gaussian Splatting with Context and Deformation Awareness for Autonomous Driving](../../ICCV2025/autonomous_driving/coda-4dgs_dynamic_gaussian_splatting_with_context_and_deformation_awareness_for_.md)
-- [\[NeurIPS 2025\] X-Scene: Large-Scale Driving Scene Generation with High Fidelity and Flexible Controllability](x-scene_large-scale_driving_scene_generation_with_high_fidelity_and_flexible_con.md)
-- [\[NeurIPS 2025\] SQS: Enhancing Sparse Perception Models via Query-based Splatting in Autonomous Driving](sqs_enhancing_sparse_perception_models_via_query-based_splatting_in_autonomous_d.md)
+- [\[CVPR 2025\] PanSplat: 4K Panorama Synthesis with Feed-Forward Gaussian Splatting](../../CVPR2025/autonomous_driving/pansplat_4k_panorama_synthesis_with_feed-forward_gaussian_splatting.md)
 
 </div>
 

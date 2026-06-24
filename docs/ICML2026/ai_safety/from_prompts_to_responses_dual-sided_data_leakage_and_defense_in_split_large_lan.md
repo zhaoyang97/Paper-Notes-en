@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Prompts to Responses: Dual-Sided Data Leakage and Defense in Split Large Language Models
 description: >-
-  [ICML 2026][AI Safety][Paper Note] In "Split Large Language Models (Split-LLM)," private data is leaked from **both ends**—the model head and the model tail. This paper proposes the PIDI attack, which uses dual-sided initialization and patched inversion to reconstruct user input prompts and model-generated responses with high fidelity. Simultaneously, i
+  [ICML2026][AI Safety][Split Learning] In "Split Large Language Models (Split-LLM)," private data is leaked from **both ends**—the model head and the model tail. This paper proposes the PIDI attack, which uses dual-sided initialization and patched inversion to reconstruct user input prompts and model-generated responses with high fidelity. Simultaneously, it proposes the ADMI defense, which utilizes adapter local warm-up and mutual information regularization to suppress attack…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Split Learning"
+  - "Model Inversion Attack"
+  - "Privacy Protection"
+  - "Mutual Information Regularization"
+  - "Large Language Models"
 date: 2026-05-08
-content_hash: ca24518676a5ab79
+content_hash: 55568cc8b406b2bf
 ---
+
 # From Prompts to Responses: Dual-Sided Data Leakage and Defense in Split Large Language Models
 
 **Conference**: ICML2026  
@@ -137,15 +143,16 @@ ADMI suppresses PIDI's AP to **0.004~0.017** while maintaining performance (~0.5
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
+- [\[AAAI 2026\] InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference](../../AAAI2026/ai_safety/infodecom_decomposing_information_for_defending_against_privacy_leakage_in_split.md)
 - [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 - [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](../../CVPR2026/ai_safety/a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
 - [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
-- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
 
 </div>
 

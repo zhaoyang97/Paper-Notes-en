@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Align While Search: Belief-Guided Exploratory Inference for World-Grounded Embodied Agents
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] To address the issue where LLM embodied agents "mechanically replay training trajectories" during object search in partially observable environments, AWS models search as a single-state Bayes-adaptive control. It maintains a hierarchical belief (global linguistic hypotheses + low-level action distribution) at test time
+  [CVPR 2026][Robotics][Partial observability] To address the issue where LLM embodied agents "mechanically replay training trajectories" during object search in partially observable environments, AWS models search as a single-state Bayes-adaptive control. It maintains a hierarchical belief (global linguistic hypotheses + low-level action distribution) at test time, utilizes a frozen LLM to simulate observations for "update $\to$ projection" belief refreshes…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Partial observability"
+  - "belief inference"
+  - "information gain"
+  - "test-time adaptation"
+  - "object search"
 date: 2026-05-08
-content_hash: 3644f7b8136d43b3
+content_hash: b5cf8f6f7c265824
 ---
+
 # Align While Search: Belief-Guided Exploratory Inference for World-Grounded Embodied Agents
 
 **Conference**: CVPR 2026  
@@ -154,15 +160,16 @@ Comparison of four search strategies (same backbone, SR % / Avg. Steps):
 - Value: ⭐⭐⭐⭐⭐ Training-free, outperforms SOTA, and reduces token costs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/robotics/compositional_diffusion_with_guided_search_for_long-horizon_planning.md)
 - [\[CVPR 2026\] AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions](agentsafe_benchmarking_the_safety_of_embodied_agents_on_hazardous_instructions.md)
-- [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](../../ICLR2026/robotics/test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
 - [\[CVPR 2026\] UAST: Unified Active Search and Tracking for Arbitrary Targets with UAVs](uast_unified_active_search_and_tracking_for_arbitrary_targets_with_uavs.md)
-- [\[NeurIPS 2025\] Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents](../../NeurIPS2025/robotics/benchmarking_egocentric_multimodal_goal_inference_for_assist.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
+- [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](../../ICLR2026/robotics/test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DynaTok: Token-Based 4D Reconstruction from Partial Point Clouds
 description: >-
-  [ICML 2026][3D Vision][flow matching] DynaTok encodes incomplete, unordered, and non-correspondence partial point clouds of each frame into a set of compact latent tokens. It aggregates complementary observations across frames using a spatio-temporal Transformer, decouples deformation using a unified latent space of "reference geometry + residual motion,"
+  [ICML2026][3D Vision][4D reconstruction] DynaTok encodes incomplete, unordered, and non-correspondence partial point clouds of each frame into a set of compact latent tokens. It aggregates complementary observations across frames using a spatio-temporal Transformer, decouples deformation using a unified latent space of "reference geometry + residual motion," and reconstructs time-consistent complete 4D point cloud sequences via a flow-matching decoder.
 tags:
-  - ICML 2026
-  - 3D Vision
-  - flow matching
+  - "ICML2026"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "partial point clouds"
+  - "temporal aggregation"
+  - "latent tokens"
+  - "flow matching"
 date: 2026-05-08
-content_hash: f2460d334bcbe7f9
+content_hash: d1b9ab831eced6a5
 ---
+
 # DynaTok: Token-Based 4D Reconstruction from Partial Point Clouds
 
 **Conference**: ICML2026  
@@ -148,11 +153,11 @@ Per-frame 3D baselines perform decently in Accuracy but fail significantly in Co
 
 ## Related Papers
 
-- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](../../CVPR2026/3d_vision/vista4d_video_reshooting_with_4d_point_clouds.md)
 - [\[AAAI 2026\] TOSC: Task-Oriented Shape Completion for Open-World Dexterous Grasp Generation from Partial Point Clouds](../../AAAI2026/3d_vision/tosc_task-oriented_shape_completion_for_open-world_dexterous_grasp_generation_fr.md)
+- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](../../CVPR2026/3d_vision/vista4d_video_reshooting_with_4d_point_clouds.md)
+- [\[CVPR 2026\] mmWaveFlow: Unified Enhancement and Generation of mmWave Human Point Clouds](../../CVPR2026/3d_vision/mmwaveflow_unified_enhancement_and_generation_of_mmwave_human_point_clouds.md)
 - [\[CVPR 2026\] V-DPM: 4D Video Reconstruction with Dynamic Point Maps](../../CVPR2026/3d_vision/v-dpm_4d_video_reconstruction_with_dynamic_point_maps.md)
-- [\[CVPR 2026\] Edges Compete for Trust: Group Relative Edge Optimization for Building Reconstruction from Point Clouds](../../CVPR2026/3d_vision/edges_compete_for_trust_group_relative_edge_optimization_for_building_reconstruc.md)
-- [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](../../CVPR2026/3d_vision/aligning_text_images_and_3d_structure_token-by-token.md)
+- [\[ICML 2026\] Zero-Shot 3D Question Answering via Hierarchical View-to-Token Transportation](zero-shot_3d_question_answering_via_hierarchical_view-to-token_transportation.md)
 
 </div>
 

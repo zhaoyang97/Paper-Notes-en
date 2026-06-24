@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MindVote: When AI Meets the Wild West of Social Media Opinion
 description: >-
-  [AAAI 2026][LLM Evaluation][Social media public opinion] MindVote is a bilingual benchmark (3,918 naturally occurring Reddit/Weibo polls × 23 topics) for evaluating the opinion prediction capabilities of 15 LLMs. A key f…
+  [AAAI 2026 Oral][LLM Evaluation][Social media public opinion] MindVote is a bilingual benchmark (3,918 naturally occurring Reddit/Weibo polls × 23 topics) for evaluating the opinion prediction capabilities of 15 LLMs. A key finding is that survey-specialized fine-tuned models underperform general-purpose models (the "specialization trap").
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Evaluation"
   - "Social media public opinion"
   - "bilingual polling"
 date: 2026-05-08
-content_hash: 32323f13cc9dac38
+content_hash: 57ab0fa7e5d84477
 ---
 
 # MindVote: When AI Meets the Wild West of Social Media Opinion
@@ -143,10 +143,10 @@ MindVote is a bilingual benchmark (3,918 naturally occurring Reddit/Weibo polls 
 ## Related Papers
 
 - [\[ICML 2026\] When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation](../../ICML2026/llm_evaluation/when_ai_benchmarks_plateau_a_systematic_study_of_benchmark_saturation.md)
+- [\[ACL 2026\] WildIFEval: Instruction Following in the Wild](../../ACL2026/llm_evaluation/wildifeval_instruction_following_in_the_wild.md)
+- [\[ICLR 2026\] Mapping Overlaps in Benchmarks through Perplexity in the Wild](../../ICLR2026/llm_evaluation/mapping_overlaps_in_benchmarks_through_perplexity_in_the_wild.md)
 - [\[ICML 2026\] From Human-Level AI Tales to AI Leveling Human Scales](../../ICML2026/llm_evaluation/from_human-level_ai_tales_to_ai_leveling_human_scales.md)
-- [\[ACL 2026\] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues](../../ACL2026/llm_evaluation/are_they_lovers_or_friends_evaluating_llms39_social_reasoning_in_english_and_kor.md)
-- [\[ICLR 2026\] AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite](../../ICLR2026/llm_evaluation/astabench_benchmarking_ai_agents.md)
-- [\[ICCV 2025\] InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild](../../ICCV2025/llm_evaluation/intersyn_interleaved_learning_for_dynamic_motion_synthesis_in_the_wild.md)
+- [\[ICLR 2026\] LiveResearchBench: A Live Benchmark for User-Centric Deep Research in the Wild](../../ICLR2026/llm_evaluation/liveresearchbench_a_live_benchmark_for_user-centric_deep_research_in_the_wild.md)
 
 </div>
 

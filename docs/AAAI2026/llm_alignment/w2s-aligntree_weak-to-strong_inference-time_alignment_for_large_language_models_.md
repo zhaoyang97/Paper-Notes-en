@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search
 description: >-
-  [AAAI 2026][LLM Alignment][inference-time alignment] This paper proposes W2S-AlignTree, the first inference-time alignment framework that integrates Monte Carlo Tree Search (MCTS) with the weak-to-strong generalization (…
+  [AAAI 2026 Oral][LLM Alignment][inference-time alignment] This paper proposes W2S-AlignTree, the first inference-time alignment framework that integrates Monte Carlo Tree Search (MCTS) with the weak-to-strong generalization (W2SG) paradigm. It leverages step-level proxy value functions derived from a weak model to guide the generation of a strong model at inference time, achieving significant improvements over baselines across sentiment control, summarization…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Alignment"
   - "inference-time alignment"
   - "weak-to-strong generalization"
   - "Monte Carlo tree search"
   - "preference optimization"
 date: 2026-05-08
-content_hash: 9a548e62da402b16
+content_hash: b738ba9da28e8390
 ---
 
 # W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search
@@ -136,11 +136,11 @@ This is a purely inference-time method that **requires no training**. The weak m
 
 ## Related Papers
 
+- [\[ICLR 2026\] Weak-to-Strong Generalization with Failure Trajectories](../../ICLR2026/llm_alignment/weak-to-strong_generalization_with_failure_trajectories.md)
 - [\[ACL 2026\] Student Guides Teacher: Weak-to-Strong Inference via Spectral Orthogonal Exploration](../../ACL2026/llm_alignment/student_guides_teacher_weak-to-strong_inference_via_spectral_orthogonal_explorat.md)
+- [\[ICML 2026\] Reward Shaping for (Inference-Time) Alignment: A Stackelberg Game Perspective](../../ICML2026/llm_alignment/reward_shaping_for_inference-time_alignment_a_stackelberg_game_perspective.md)
+- [\[ACL 2025\] Tempest: Autonomous Multi-Turn Jailbreaking of Large Language Models with Tree Search](../../ACL2025/llm_alignment/tempest_autonomous_multi-turn_jailbreaking_of_large_language_models_with_tree_se.md)
 - [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](../../NeurIPS2025/llm_alignment/inference-time_alignment_in_continuous_space.md)
-- [\[AAAI 2026\] Exploring the Effects of Alignment on Numerical Bias in Large Language Models](exploring_the_effects_of_alignment_on_numerical_bias_in_large_language_models.md)
-- [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](../../ICLR2026/llm_alignment/guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
-- [\[AAAI 2026\] AMaPO: Adaptive Margin-attached Preference Optimization for Language Model Alignment](amapo_adaptive_margin-attached_preference_optimization_for_l.md)
 
 </div>
 

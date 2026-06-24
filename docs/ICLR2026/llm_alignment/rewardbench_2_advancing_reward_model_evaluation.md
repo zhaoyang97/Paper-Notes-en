@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RewardBench 2: Advancing Reward Model Evaluation
 description: >-
-  [ICLR 2026][Alignment & RLHF][best-of-N] This paper introduces RewardBench 2, a reward model evaluation benchmark utilizing completely new, unseen human prompts and transitioning from a "1-vs-1" to a "1-vs-3 (1 positive, 3 negatives)" format. Covering six major domains (including new areas like Ties, Precise IF, and Factuality), it is on average 20 points mor
+  [ICLR 2026][LLM Alignment][Reward Model] This paper introduces RewardBench 2, a reward model evaluation benchmark utilizing completely new, unseen human prompts and transitioning from a "1-vs-1" to a "1-vs-3 (1 positive, 3 negatives)" format. Covering six major domains (including new areas like Ties, Precise IF, and Factuality), it is on average 20 points more difficult than the original RewardBench and exhibits significantly stronger correlation with downstream applications…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - best-of-N
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Evaluation Benchmark"
+  - "best-of-N"
+  - "RLHF"
+  - "Downstream Correlation"
 date: 2026-05-08
-content_hash: dd1286b934cb9680
+content_hash: 3ba481d64e816bbc
 ---
+
 # RewardBench 2: Advancing Reward Model Evaluation
 
 **Conference**: ICLR 2026  

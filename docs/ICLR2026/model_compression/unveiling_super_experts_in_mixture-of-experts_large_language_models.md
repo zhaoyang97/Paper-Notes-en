@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Model Compression][Mixture-of-Experts] This paper identifies and systematically investigates "Super Experts" (SE) in MoE LLMs—an extremely small subset of experts crucial for model inference, which drive massive activations and attention sinks through extreme activation outliers in `down_proj`.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Mixture-of-Experts
-  - super experts
-  - massive activations
-  - attention sinks
-  - expert pruning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "super experts"
+  - "massive activations"
+  - "attention sinks"
+  - "expert pruning"
 date: 2026-05-08
-content_hash: 7dc80278f8855110
+content_hash: 13a9e312f1414a30
 ---
+
 # Unveiling Super Experts in Mixture-of-Experts Large Language Models
 
 **Conference**: ICLR 2026  

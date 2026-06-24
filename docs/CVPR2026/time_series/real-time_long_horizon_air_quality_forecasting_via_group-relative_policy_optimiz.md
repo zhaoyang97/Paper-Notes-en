@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Real-Time Long Horizon Air Quality Forecasting via Group-Relative Policy Optimization
 description: >-
-  [CVPR 2026][Time Series][GRPO] This paper addresses long-horizon (48–120 hours) PM concentration forecasting in East Asia. It first releases CMAQ–OBS, a regional dataset aligned with observations, and then employs a two-stage training framework (FAKER-Air) consisting of "SFT with temporal accumulation loss + GRPO with categorical AQI rewards." This
+  [CVPR 2026][Time Series][Air Quality Forecasting] This paper addresses long-horizon (48–120 hours) PM concentration forecasting in East Asia. It first releases CMAQ–OBS, a regional dataset aligned with observations, and then employs a two-stage training framework (FAKER-Air) consisting of "SFT with temporal accumulation loss + GRPO with categorical AQI rewards." This aligns the inherent "over-forecasting and high false alarm" issues of MSE training with actual operational cos…
 tags:
-  - CVPR 2026
-  - Time Series
-  - GRPO
+  - "CVPR 2026"
+  - "Time Series"
+  - "Air Quality Forecasting"
+  - "GRPO"
+  - "Long-horizon Spatiotemporal Prediction"
+  - "Categorical Reward"
+  - "Curriculum Rollout"
 date: 2026-05-08
-content_hash: 177cd5ca4c680e0d
+content_hash: 0513c97741239f71
 ---
+
 # Real-Time Long Horizon Air Quality Forecasting via Group-Relative Policy Optimization
 
 **Conference**: CVPR 2026  
@@ -145,8 +150,8 @@ Contribution of each component to long-horizon F1 in the SFT stage (PM2.5, overa
 
 - [\[AAAI 2026\] AirDDE: Multifactor Neural Delay Differential Equations for Air Quality Forecasting](../../AAAI2026/time_series/airdde_multifactor_neural_delay_differential_equations_for_air_quality_forecasti.md)
 - [\[AAAI 2026\] Optimal Look-back Horizon for Time Series Forecasting in Federated Learning](../../AAAI2026/time_series/optimal_look-back_horizon_for_time_series_forecasting_in_federated_learning.md)
-- [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](../../ICLR2026/time_series/towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
 - [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](../../ICLR2026/time_series/rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
+- [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](../../ICLR2026/time_series/towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
 - [\[AAAI 2026\] Detecting the Future: All-at-Once Event Sequence Forecasting with Horizon Matching](../../AAAI2026/time_series/detecting_the_future_all-at-once_event_sequence_forecasting_with_horizon_matchin.md)
 
 </div>

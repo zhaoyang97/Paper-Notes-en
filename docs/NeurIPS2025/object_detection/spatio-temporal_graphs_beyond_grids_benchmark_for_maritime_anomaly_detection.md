@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection
 description: >-
-  [NeurIPS 2025 (Workshop: AI for Science)][Object Detection][maritime anomaly detection] This paper proposes the first graph anomaly detection benchmark for non-grid spatio-temporal systems in the maritime domain. It exte…
+  [NeurIPS 2025 (Workshop: AI for Science)][Object Detection][maritime anomaly detection] This paper proposes the first graph anomaly detection benchmark for non-grid spatio-temporal systems in the maritime domain. It extends the OMTAD dataset to support node/edge/graph-level anomaly detection, and plans to employ LLM agents for trajectory synthesis and anomaly injection.
 tags:
   - "NeurIPS 2025 (Workshop: AI for Science)"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "LLM agents"
   - "AIS data"
 date: 2026-05-08
-content_hash: e6d4162cd4b00af4
+content_hash: 17b5bed26ce0d6ff
 ---
 
 # Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection
@@ -134,11 +134,11 @@ A two-stage extension pipeline based on the OMTAD dataset:
 
 ## Related Papers
 
+- [\[CVPR 2025\] VCBench: A Streaming Counting Benchmark for Spatial-Temporal State Maintenance in Long Videos](../../CVPR2025/object_detection/vcbench_a_streaming_counting_benchmark_for_spatial-temporal_state_maintenance_in.md)
 - [\[NeurIPS 2025\] ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection](scatterad_temporal-topological_scattering_mechanism_for_time_series_anomaly_dete.md)
+- [\[ECCV 2024\] WALKER: Self-supervised Multiple Object Tracking by Walking on Temporal Appearance Graphs](../../ECCV2024/object_detection/walker_self-supervised_multiple_object_tracking_by_walking_on_temporal_appearanc.md)
 - [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
 - [\[AAAI 2026\] TubeRMC: Tube-conditioned Reconstruction with Mutual Constraints for Weakly-supervised Spatio-Temporal Video Grounding](../../AAAI2026/object_detection/tubermc_tube-conditioned_reconstruction_with_mutual_constraints_for_weakly-super.md)
-- [\[NeurIPS 2025\] BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes](burstdeflicker_a_benchmark_dataset_for_flicker_removal_in_dynamic_scenes.md)
-- [\[ICCV 2025\] Sim-DETR: Unlock DETR for Temporal Sentence Grounding](../../ICCV2025/object_detection/sim-detr_unlock_detr_for_temporal_sentence_grounding.md)
 
 </div>
 

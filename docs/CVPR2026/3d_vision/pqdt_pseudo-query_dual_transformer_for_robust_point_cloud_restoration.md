@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PQDT: Pseudo-Query Dual Transformer for Robust Point Cloud Restoration
 description: >-
-  [CVPR 2026][3D Vision][Transformer] PQDT utilizes a "Pseudo-Query Dual-stage Transformer" to unify three types of point cloud degradations—completion, denoising, and deformation. It first generates a batch of noise-resistant pseudo-query anchors guided by observations, then refines them using shape priors. Combined with sparse geometric embedding attenti
+  [CVPR 2026][3D Vision][Point cloud restoration] PQDT utilizes a "Pseudo-Query Dual-stage Transformer" to unify three types of point cloud degradations—completion, denoising, and deformation. It first generates a batch of noise-resistant pseudo-query anchors guided by observations, then refines them using shape priors. Combined with sparse geometric embedding attention and dynamic query selection, it achieves new SOTA performance on ShapeNet-55/34 and three newly established d…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud restoration"
+  - "pseudo-query"
+  - "Transformer"
+  - "geometric embedding"
+  - "dynamic query selection"
 date: 2026-05-08
-content_hash: 2875f047318c7537
+content_hash: c0364e685ed2a813
 ---
+
 # PQDT: Pseudo-Query Dual Transformer for Robust Point Cloud Restoration
 
 **Conference**: CVPR 2026  
@@ -134,15 +139,16 @@ Evolution from vanilla Transformer on ShapeNetCar-Occ:
 - Value: ⭐⭐⭐⭐ Robust backbone for practical industrial applications like the PFS dataset.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] DualSplat: Robust 3D Gaussian Splatting via Pseudo-Mask Bootstrapping from Reconstruction Failures](dualsplat_robust_3d_gaussian_splatting_via_pseudo-mask_bootstrapping_from_recons.md)
 - [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](ggpt_geometry_grounded_point_transformer.md)
-- [\[CVPR 2026\] LitePT: Lighter Yet Stronger Point Transformer](litept_lighter_yet_stronger_point_transformer.md)
+- [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](../../ICLR2026/3d_vision/spiking_discrepancy_transformer_for_point_cloud_analysis.md)
 - [\[CVPR 2026\] MORE-STEM: Long-Short MemOry REcall and Spatio-TEmporal Consistency Model for Query-Driven 3D/4D Point Cloud Segmentation](more-stem_long-short_memory_recall_and_spatio-temporal_consistency_model_for_que.md)
 - [\[CVPR 2026\] SuP: Sub-cloud Driven Point Cloud Registration](sup_sub-cloud_driven_point_cloud_registration.md)
-- [\[CVPR 2026\] Towards Visual Query Localization in the 3D World](towards_visual_query_localization_in_the_3d_world.md)
 
 </div>
 

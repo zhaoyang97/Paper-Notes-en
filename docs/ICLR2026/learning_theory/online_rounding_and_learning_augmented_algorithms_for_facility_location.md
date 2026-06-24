@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Online Rounding and Learning Augmented Algorithms for Facility Location
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the **first online rounding algorithms** for the metric facility location problem—rounding an online maintained fractional solution on the fly into an integer solution. For the uniform opening cost case, a deterministic algorithm incurs only an $O(1)$ constant factor loss; for the non-uniform case,
+  [ICLR 2026][Learning Augmented Algorithms][Facility location] This paper provides the **first online rounding algorithms** for the metric facility location problem—rounding an online maintained fractional solution on the fly into an integer solution. For the uniform opening cost case, a deterministic algorithm incurs only an $O(1)$ constant factor loss; for the non-uniform case, a randomized algorithm incurs an expected $O(\log\log\Delta)$ factor loss ($\Delta$ is the aspect…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Augmented Algorithms"
+  - "Online Algorithms"
+  - "Clustering Theory"
+  - "Facility location"
+  - "online rounding"
+  - "competitive ratio"
+  - "metric space"
 date: 2026-05-08
-content_hash: 85b818bb71fa9abc
+content_hash: 2878931699ea099e
 ---
+
 # Online Rounding and Learning Augmented Algorithms for Facility Location
 
 **Conference**: ICLR 2026  
@@ -134,6 +141,7 @@ The rounding algorithms serve as building blocks. Under multiple predictions, ea
 - Value: ⭐⭐⭐⭐⭐ "Difficulty is in fractional" is a path-breaking structural insight.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -141,8 +149,8 @@ The rounding algorithms serve as building blocks. Under multiple predictions, ea
 - [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
 - [\[ICLR 2026\] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion](better_learning-augmented_spanning_tree_algorithms_via_metric_forest_completion.md)
 - [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/learning_theory/parsimonious_learning-augmented_online_metric_matching.md)
+- [\[ICLR 2026\] ATLAS: Alibaba Dataset and Benchmark for Learning-Augmented Scheduling](atlas_alibaba_dataset_and_benchmark_for_learning-augmented_scheduling.md)
 - [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/learning_theory/learning-augmented_online_bipartite_fractional_matching.md)
-- [\[ICML 2025\] Learning-Augmented Algorithms for MTS with Bandit Access to Multiple Predictors](../../ICML2025/learning_theory/learning-augmented_algorithms_for_mts_with_bandit_access_to_multiple_predictors.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers
 description: >-
-  [CVPR 2026][Model Compression][attention quantization] BinaryAttention is proposed to quantize the Query and Key in Transformer attention into 1-bit binary representations. By replacing floating-point dot products with XNOR + popcount bitwise operations, it achieves over $2\times$ speedup compared to FlashAttention2 on A100 GPUs, while maintaining or even surpassing full-p
+  [CVPR 2026][Model Compression][attention quantization] BinaryAttention is proposed to quantize the Query and Key in Transformer attention into 1-bit binary representations. By replacing floating-point dot products with XNOR + popcount bitwise operations, it achieves over $2\times$ speedup compared to FlashAttention2 on A100 GPUs, while maintaining or even surpassing full-precision attention performance across vision classification, detection, segmentation…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - attention quantization
-  - binary quantization
-  - vision transformer
-  - diffusion transformer
-  - 1-bit attention
-  - FlashAttention
+  - "CVPR 2026"
+  - "Model Compression"
+  - "attention quantization"
+  - "binary quantization"
+  - "vision transformer"
+  - "diffusion transformer"
+  - "1-bit attention"
+  - "FlashAttention"
 date: 2026-05-08
-content_hash: f446d72640e9c8f4
+content_hash: 9341ffedb647243d
 ---
+
 # BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -165,10 +166,10 @@ Since 1-bit quantization introduces large approximation errors, Quantization-Awa
 ## Related Papers
 
 - [\[CVPR 2026\] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers](trainable_log-linear_sparse_attention_for_efficient_diffusion_transformers.md)
-- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
-- [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
-- [\[CVPR 2026\] Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)
-- [\[CVPR 2026\] PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers](ppcl_pluggable_pruning_dit_distillation.md)
+- [\[ICLR 2026\] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention](../../ICLR2026/model_compression/sla_beyond_sparsity_in_diffusion_transformers_via_fine-tunable_sparselinear_atte.md)
+- [\[AAAI 2026\] QuEPT: Quantized Elastic Precision Transformers with One-Shot Calibration for Multi-Bit Switching](../../AAAI2026/model_compression/quept_quantized_elastic_precision_transformers_with_one-shot_calibration_for_mul.md)
+- [\[CVPR 2026\] DeltaQuant: 4-bit Video Diffusion Models with Spatiotemporal Delta Smoothing](deltaquant_4-bit_video_diffusion_models_with_spatiotemporal_delta_smoothing.md)
+- [\[ICLR 2026\] Faster Vision Transformers with Adaptive Patches](../../ICLR2026/model_compression/faster_vision_transformers_with_adaptive_patches.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Easier Painting Than Thinking: Can Text-to-Image Models Set the Stage, but Not Direct the Play?
 description: >-
-  [ICLR 2026][Image Generation][benchmark] Proposes T2I-CoReBench, the first comprehensive benchmark to systematically evaluate both the **Composition** and **Reasoning** capabilities of T2I models. It covers 12 evaluation dimensions, 1080 high-difficulty prompts, and approximately 13,500 checklist questions. A large-scale evaluation of 38 models reveals that r
+  [ICLR 2026][Image Generation][T2I Evaluation] Proposes T2I-CoReBench, the first comprehensive benchmark to systematically evaluate both the **Composition** and **Reasoning** capabilities of T2I models. It covers 12 evaluation dimensions, 1080 high-difficulty prompts, and approximately 13,500 checklist questions. A large-scale evaluation of 38 models reveals that reasoning capabilities lag far behind compositional ones, identifying reasoning as the core bottleneck in current T…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - benchmark
+  - "ICLR 2026"
+  - "Image Generation"
+  - "T2I Evaluation"
+  - "Compositional Generation"
+  - "Reasoning Capability"
+  - "Benchmark"
+  - "Scene Graph"
 date: 2026-05-08
-content_hash: 36c349d0ae0cd426
+content_hash: 80f0fdb1b7a32c3b
 ---
+
 # Easier Painting Than Thinking: Can Text-to-Image Models Set the Stage, but Not Direct the Play?
 
 **Conference**: ICLR 2026  
@@ -138,10 +143,10 @@ As a benchmark, there is no training process. During evaluation, the checklists 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Aligning Text to Image in Diffusion Models is Easier Than You Think](../../NeurIPS2025/image_generation/aligning_text_to_image_in_diffusion_models_is_easier_than_you_think.md)
+- [\[ICLR 2026\] Charts Are Not Images: On the Challenges of Scientific Chart Editing](charts_are_not_images_on_the_challenges_of_scientific_chart_editing.md)
 - [\[CVPR 2026\] CRAFT: Aligning Diffusion Models with Fine-Tuning Is Easier Than You Think](../../CVPR2026/image_generation/craft_aligning_diffusion_models_with_finetuning_is_easier_than_you_think.md)
 - [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
 - [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
-- [\[ICLR 2026\] Generation then Reconstruction: Accelerating Masked Autoregressive Models via Two-Stage Sampling](generation_then_reconstruction_accelerating_masked_autoregressive_models_via_two.md)
 
 </div>
 

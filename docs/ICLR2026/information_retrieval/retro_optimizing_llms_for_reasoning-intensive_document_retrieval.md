@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Reinforcement Learning] Retro* reformulates the task of "determining relevance between query and document" into a **pointwise reasoning task based on an explicit 0–100 rubric**. It utilizes score integration across multiple samples during test-time and a customized SFT + RL training strategy designed for the scoring mechanism. It achieves SOT
+  [ICLR 2026][Information Retrieval & RAG][Reasoning-Intensive Retrieval] Retro* reformulates the task of "determining relevance between query and document" into a **pointwise reasoning task based on an explicit 0–100 rubric**. It utilizes score integration across multiple samples during test-time and a customized SFT + RL training strategy designed for the scoring mechanism. It achieves SOTA on the reasoning-intensive retrieval benchmark BRIGHT while being significantly faster…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Reasoning-Intensive Retrieval"
+  - "Scoring Rubric"
+  - "Test-time Scaling"
+  - "Reinforcement Learning"
+  - "Composite Reward"
 date: 2026-05-08
-content_hash: 9cc15bd074af32e6
+content_hash: 183aed4b5cea93f2
 ---
+
 # Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval
 
 **Conference**: ICLR 2026  
@@ -152,7 +157,7 @@ Table 3, contribution of training components to Retro* (7B) Avg. nDCG@10:
 - [\[ICLR 2026\] MRMR: A Realistic and Expert-Level Multidisciplinary Benchmark for Reasoning-Intensive Multimodal Retrieval](mrmr_a_realistic_and_expert-level_multidisciplinary_benchmark_for_reasoning-inte.md)
 - [\[ICLR 2026\] Rethinking Reasoning in Document Ranking: Why Chain-of-Thought Falls Short](rethinking_reasoning_in_document_ranking_why_chain-of-thought_falls_short.md)
 - [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
-- [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
+- [\[ACL 2026\] A Survey of Reasoning-Intensive Retrieval: Progress and Challenges](../../ACL2026/information_retrieval/a_survey_of_reasoning-intensive_retrieval_progress_and_challenges.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Quantized Visual Geometry Grounded Transformer
 description: >-
-  [ICLR 2026][3D Vision][VGGT] To address the deployment needs of the billion-scale 3D reconstruction model VGGT, this paper proposes QuantVGGT, the first dedicated PTQ framework. It resolves the heavy-tail distribution caused by special tokens through dual-smoothed fine-grained quantization (Hadamard rotation + channel smoothing) and addresses cali
+  [ICLR 2026][3D Vision][VGGT] To address the deployment needs of the billion-scale 3D reconstruction model VGGT, this paper proposes QuantVGGT, the first dedicated PTQ framework. It resolves the heavy-tail distribution caused by special tokens through dual-smoothed fine-grained quantization (Hadamard rotation + channel smoothing) and addresses calibration instability via noise-filtered diverse sampling. 4-bit quantization achieves 3.7× memory compression and 2.5× speedup while…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - VGGT
-  - post-training quantization
-  - 3D reconstruction
-  - Hadamard rotation
-  - calibration
+  - "ICLR 2026"
+  - "3D Vision"
+  - "VGGT"
+  - "post-training quantization"
+  - "3D reconstruction"
+  - "Hadamard rotation"
+  - "calibration"
 date: 2026-05-08
-content_hash: 6280231a65857d2f
+content_hash: ebbc88dbfa949664
 ---
+
 # Quantized Visual Geometry Grounded Transformer
 
 **Conference**: ICLR 2026  
@@ -133,15 +134,14 @@ Semantic complexity in 3D multi-view data causes large accuracy fluctuations for
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] FastVGGT: Fast Visual Geometry Transformer](fastvggt_fast_visual_geometry_transformer.md)
+- [\[ICLR 2026\] Streaming Visual Geometry Transformer](streaming_visual_geometry_transformer.md)
 - [\[CVPR 2025\] VGGT: Visual Geometry Grounded Transformer](../../CVPR2025/3d_vision/vggt_visual_geometry_grounded_transformer.md)
+- [\[ICLR 2026\] IGGT: Instance-Grounded Geometry Transformer for Semantic 3D Reconstruction](iggt_instance-grounded_geometry_transformer_for_semantic_3d_reconstruction.md)
 - [\[CVPR 2026\] OmniVGGT: Omni-Modality Driven Visual Geometry Grounded Transformer](../../CVPR2026/3d_vision/omnivggt_omni-modality_driven_visual_geometry_grounded_transformer.md)
-- [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](../../CVPR2026/3d_vision/ggpt_geometry_grounded_point_transformer.md)
-- [\[CVPR 2026\] Emergent Outlier View Rejection in Visual Geometry Grounded Transformers](../../CVPR2026/3d_vision/emergent_outlier_view_rejection_in_visual_geometry_grounded_transformers.md)
 
 </div>
 

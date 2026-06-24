@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Provable Suboptimality of Momentum SGD in Nonstationary Stochastic Optimization
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper theoretically proves that in nonstationary strongly convex stochastic optimization where the optimum drifts over time, Momentum SGD is systematically inferior to vanilla SGD due to "inertial lag," with performance degradation amplified by a factor of the order $(1 - \beta)^{-2}$. Through information-theoreti
+  [ICML 2026][Optimization][Momentum methods] This paper theoretically proves that in nonstationary strongly convex stochastic optimization where the optimum drifts over time, Momentum SGD is systematically inferior to vanilla SGD due to "inertial lag," with performance degradation amplified by a factor of the order $(1 - \beta)^{-2}$. Through information-theoretic lower bounds, it demonstrates that this cost is a fundamental obstacle rather than an analytical artifact.
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Momentum methods"
+  - "nonstationary optimization"
+  - "tracking error"
+  - "distribution shift"
+  - "information-theoretic lower bounds"
 date: 2026-05-08
-content_hash: c3491911f1ff7cdd
+content_hash: 6fc49fb8f82b555b
 ---
+
 # On the Provable Suboptimality of Momentum SGD in Nonstationary Stochastic Optimization
 
 **Conference**: ICML 2026  
@@ -129,9 +135,9 @@ Tracking error after 5000 steps. As $\beta$ increases from 0.50 to 0.99, HB/NAG 
 
 - [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](../../ICLR2026/optimization/high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
 - [\[ICML 2026\] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization](rmnp_row-momentum_normalized_preconditioning_for_scalable_matrix-based_optimizat.md)
+- [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](../../ICLR2026/optimization/sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
+- [\[ICLR 2026\] DNT: a Deeply Normalized Transformer that can be trained by Momentum SGD](../../ICLR2026/optimization/dnt_a_deeply_normalized_transformer_that_can_be_trained_by_momentum_sgd.md)
 - [\[ICML 2026\] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization](safeguarded_stochastic_polyak_step_sizes_for_non-smooth_optimization_robust_perf.md)
-- [\[ICLR 2026\] Provable and Practical In-Context Policy Optimization for Self-Improvement](../../ICLR2026/optimization/provable_and_practical_in-context_policy_optimization_for_self-improvement.md)
-- [\[NeurIPS 2025\] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis](../../NeurIPS2025/optimization/nonlinearly_preconditioned_gradient_methods_momentum_and_stochastic_analysis.md)
 
 </div>
 

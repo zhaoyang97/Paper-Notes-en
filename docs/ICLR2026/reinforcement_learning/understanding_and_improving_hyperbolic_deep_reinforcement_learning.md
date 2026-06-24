@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Understanding and Improving Hyperbolic Deep Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][hyperbolic geometry] Through closed-form gradient analysis, this work reveals the root causes of PPO trust region failure in hyperbolic deep RL: conformal factor explosion and large-norm embeddings. A four-component solution, Hyper++ (RMSNorm + learnable scaling + HL-Gauss + Hyperboloid), is proposed, comprehensively outperforming previous
+  [ICLR 2026][Reinforcement Learning][hyperbolic geometry] Through closed-form gradient analysis, this work reveals the root causes of PPO trust region failure in hyperbolic deep RL: conformal factor explosion and large-norm embeddings. A four-component solution, Hyper++ (RMSNorm + learnable scaling + HL-Gauss + Hyperboloid), is proposed, comprehensively outperforming previous baselines across 16 ProcGen environments and Atari-5.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - hyperbolic geometry
-  - PPO
-  - gradient analysis
-  - RMSNorm
-  - categorical value loss
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "hyperbolic geometry"
+  - "PPO"
+  - "gradient analysis"
+  - "RMSNorm"
+  - "categorical value loss"
 date: 2026-05-08
-content_hash: 9c1cff5901a6e329
+content_hash: b9d9f7baf10dd082
 ---
+
 # Understanding and Improving Hyperbolic Deep Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -138,10 +139,17 @@ The PPO clipped surrogate objective remains unchanged. The critic utilizes HL-Ga
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning](cuda-l1_improving_cuda_optimization_via_contrastive_reinforcement_learning.md)
+- [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
+- [\[ICLR 2026\] Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning](mastering_sparse_cuda_generation_through_pretrained_models_and_deep_reinforcemen.md)
+- [\[ICLR 2026\] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation](robust_deep_reinforcement_learning_against_adversarial_behavior_manipulation.md)
+- [\[ICLR 2026\] XQC: Well-Conditioned Optimization Accelerates Deep Reinforcement Learning](xqc_well-conditioned_optimization_accelerates_deep_reinforcement_learning.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning](cuda-l1_improving_cuda_optimization_via_contrastive_reinforcement_learning.md)

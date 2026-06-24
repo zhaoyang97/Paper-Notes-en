@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unifying Vision-Language Latents for Zero-Label Image Caption Enhancement
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Zero-label learning] This paper proposes the ViZer framework, which improves the image captioning capability of VLMs through a unified vision-language latent space alignment training paradi…
+  [NeurIPS 2025][Multimodal VLM][Zero-label learning] This paper proposes the ViZer framework, which improves the image captioning capability of VLMs through a unified vision-language latent space alignment training paradigm—requiring no text annotations whatsoever. Using only raw image data, the model learns to generate more grounded and descriptive captions.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "joint embedding"
   - "self-supervised"
 date: 2026-05-08
-content_hash: 74d3a8218d3ff12b
+content_hash: 87fe3600eb17f0c9
 ---
 
 # Unifying Vision-Language Latents for Zero-Label Image Caption Enhancement
@@ -130,11 +130,11 @@ ViZer introduces a lightweight alignment mapper between the frozen visual encode
 
 ## Related Papers
 
+- [\[ACL 2025\] RATE-Nav: Region-Aware Termination Enhancement for Zero-shot Object Navigation with Vision-Language Models](../../ACL2025/multimodal_vlm/rate-nav_region-aware_termination_enhancement_for_zero-shot_object_navigation_wi.md)
 - [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](../../ICCV2025/multimodal_vlm/negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
 - [\[NeurIPS 2025\] CAPability: A Comprehensive Visual Caption Benchmark for Evaluating Both Correctness and Thoroughness](capability_a_comprehensive_visual_caption_benchmark_for_eval.md)
-- [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
-- [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
-- [\[AAAI 2026\] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM](../../AAAI2026/multimodal_vlm/empowering_semantic-sensitive_underwater_image_enhancement_with_vlm.md)
+- [\[CVPR 2026\] CaptionQA: Is Your Caption as Useful as the Image Itself?](../../CVPR2026/multimodal_vlm/captionqa_is_your_caption_as_useful_as_the_image_itself.md)
+- [\[CVPR 2026\] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement](../../CVPR2026/multimodal_vlm/uare_a_unified_vision-language_model_for_image_quality_assessment_restoration_an.md)
 
 </div>
 

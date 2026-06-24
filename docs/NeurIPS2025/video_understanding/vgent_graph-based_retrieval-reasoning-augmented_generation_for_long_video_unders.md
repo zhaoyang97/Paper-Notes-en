@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][long video understanding] This paper proposes VGEnt, a graph-based retrieval-reasoning-augmented generation framework that constructs a video knowledge graph to preserve cross-segment…
+  [NeurIPS 2025 Spotlight][Video Understanding][long video understanding] This paper proposes VGEnt, a graph-based retrieval-reasoning-augmented generation framework that constructs a video knowledge graph to preserve cross-segment semantic relationships, and introduces structured reasoning steps to filter noise and aggregate information. VGEnt consistently improves open-source LVLMs by 3.0%–5.4% across multiple long video understanding benchmarks and outperforms existing video…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Video Understanding"
   - "long video understanding"
   - "graph RAG"
@@ -12,7 +12,7 @@ tags:
   - "retrieval-augmented generation"
   - "video language model"
 date: 2026-05-08
-content_hash: f7bc185ae19ad681
+content_hash: 1fea036301f42cc0
 ---
 
 # VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding
@@ -135,9 +135,9 @@ Highlight: Qwen2.5-VL (3B) + VGEnt achieves 70.4% on MLVU, **surpassing its 7B c
 
 - [\[NeurIPS 2025\] AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](adavideorag_omnicontextual_adaptive_retrievalaugmented_effic.md)
 - [\[CVPR 2026\] RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation](../../CVPR2026/video_understanding/ragtrack_language-aware_rgbt_tracking_with_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization](longvpo_from_anchored_cues_to_selfreasoning_for_longform_vid.md)
-- [\[NeurIPS 2025\] VideoLucy: Deep Memory Backtracking for Long Video Understanding](videolucy_deep_memory_backtracking_for_long_video_understanding.md)
-- [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
+- [\[CVPR 2025\] DrVideo: Document Retrieval Based Long Video Understanding](../../CVPR2025/video_understanding/drvideo_document_retrieval_based_long_video_understanding.md)
+- [\[NeurIPS 2025\] Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task](toolaugmented_spatiotemporal_reasoning_for_streamlining_vide.md)
+- [\[CVPR 2025\] HyperGLM: HyperGraph for Video Scene Graph Generation and Anticipation](../../CVPR2025/video_understanding/hyperglm_hypergraph_for_video_scene_graph_generation_and_anticipation.md)
 
 </div>
 

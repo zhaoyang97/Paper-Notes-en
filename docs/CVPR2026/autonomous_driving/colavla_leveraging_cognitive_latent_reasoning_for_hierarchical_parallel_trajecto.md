@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] ColaVLA proposes a unified Vision-Language-Action (VLA) framework that shifts VLM reasoning from textual Chain-of-Thought (CoT) to the latent space. Through a Cognitive Latent Reasoner and a Hierarchical Parallel Planner, it efficiently completes scene understanding and trajectory decoding in just two VLM forward passe
+  [CVPR 2026][Autonomous Driving][End-to-end Autonomous Driving] ColaVLA proposes a unified Vision-Language-Action (VLA) framework that shifts VLM reasoning from textual Chain-of-Thought (CoT) to the latent space. Through a Cognitive Latent Reasoner and a Hierarchical Parallel Planner, it efficiently completes scene understanding and trajectory decoding in just two VLM forward passes, achieving SOTA performance on both nuScenes open-loop and closed-loop benchmarks.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-end Autonomous Driving"
+  - "VLM Reasoning"
+  - "Latent Space Reasoning"
+  - "Multi-scale Trajectory Planning"
+  - "Vision-Language-Action"
 date: 2026-05-08
-content_hash: 6e924faca9272b39
+content_hash: 0fb77bb5f28dac87
 ---
+
 # ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -193,8 +199,8 @@ Inference latency comparison: ColaVLA 727ms vs. OmniDrive 3727ms vs. SOLVE-VLM 3
 - [\[CVPR 2026\] CogDriver: Integrating Cognitive Inertia for Temporally Coherent Planning in Autonomous Driving](cogdriver_integrating_cognitive_inertia_for_temporally_coherent_planning_in_auto.md)
 - [\[CVPR 2026\] WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving](wam-flow_parallel_coarse-to-fine_motion_planning_via_discrete_flow_matching_for_.md)
 - [\[CVPR 2026\] Perceiving the Near, Reasoning the Distant: Coherent Long-Horizon Trajectory Prediction for Autonomous Driving](perceiving_the_near_reasoning_the_distant_coherent_long-horizon_trajectory_predi.md)
-- [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
 - [\[CVPR 2026\] TopoHR: Hierarchical Centerline Representation for Cyclic Topology Reasoning in Driving Scenes with Point-to-Instance Relations](topohr_hierarchical_centerline_representation_for_cyclic_topology_reasoning_in_d.md)
+- [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
 
 </div>
 

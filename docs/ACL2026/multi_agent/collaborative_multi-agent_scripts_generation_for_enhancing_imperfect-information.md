@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Collaborative Multi-Agent Scripts Generation for Enhancing Imperfect-Information Reasoning in Murder Mystery Games
 description: >-
-  [ACL 2026][Multi-Agent][Vision-Language Model] Ours proposes a collaborative multi-agent framework for the automated generation of high-quality Murder Mystery game scripts and training data. Through a two-stage training strategy (CoT fine-tuning + GRPO reinforcement learning with ScoreAgent reward shaping), the multi-hop reasoning capability of VLMs under imperfect
+  [ACL 2026 Findings][Multi-Agent][Imperfect-information reasoning] Ours proposes a collaborative multi-agent framework for the automated generation of high-quality Murder Mystery game scripts and training data. Through a two-stage training strategy (CoT fine-tuning + GRPO reinforcement learning with ScoreAgent reward shaping), the multi-hop reasoning capability of VLMs under imperfect information is enhanced. This significantly improves VLM narrative reasoning, fact extraction…
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - Vision-Language Model
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Multi-Agent"
+  - "Imperfect-information reasoning"
+  - "Murder Mystery"
+  - "Multi-agent data generation"
+  - "Vision-language model"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: d4046bbfbbdf74cb
+content_hash: d1c8e6c188d022ae
 ---
+
 # Collaborative Multi-Agent Scripts Generation for Enhancing Imperfect-Information Reasoning in Murder Mystery Games
 
 **Conference**: ACL 2026 Findings  
@@ -145,7 +149,7 @@ Two stages: Stage 1 SFT uses generated script data to establish foundational rea
 - [\[AAAI 2026\] MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning](../../AAAI2026/multi_agent/maps_multi-agent_personality_shaping_for_collaborative_reaso.md)
 - [\[ICML 2026\] Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs](../../ICML2026/multi_agent/systematic_failures_in_collective_reasoning_under_distributed_information_in_mul.md)
 - [\[ACL 2025\] GETReason: Enhancing Image Context Extraction through Hierarchical Multi-Agent Reasoning](../../ACL2025/multi_agent/getreason_enhancing_image_context_extraction_through_hierarchical_multi-agent_re.md)
-- [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](../../AAAI2026/multi_agent/lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
+- [\[ICLR 2026\] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning](../../ICLR2026/multi_agent/agentpo_enhancing_multi-agent_collaboration_via_reinforcement_learning.md)
 
 </div>
 

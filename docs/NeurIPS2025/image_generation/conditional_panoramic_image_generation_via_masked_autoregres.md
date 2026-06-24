@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Conditional Panoramic Image Generation via Masked Autoregressive Modeling
 description: >-
-  [NeurIPS 2025][Image Generation][panoramic image generation] This paper proposes PAR (Panoramic AutoRegressive model), the first framework to unify text-to-panorama (T2P) and panorama outpainting (PO) under masked autore…
+  [NeurIPS 2025][Image Generation][panoramic image generation] This paper proposes PAR (Panoramic AutoRegressive model), the first framework to unify text-to-panorama (T2P) and panorama outpainting (PO) under masked autoregressive modeling. PAR addresses the boundary discontinuity inherent in ERP panoramas through a circular translation consistency loss and dual-space circular padding, achieving an FID of 37.37 on Matterport3D while demonstrating strong scalability and zero-sho…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "circular padding"
   - "consistency alignment"
 date: 2026-05-08
-content_hash: 9798b3f3b9a020f7
+content_hash: 53d9be2de2ba97a4
 ---
 
 # Conditional Panoramic Image Generation via Masked Autoregressive Modeling
@@ -155,11 +155,11 @@ The MAR framework's flexibility in unifying multiple tasks by controlling $\math
 
 ## Related Papers
 
+- [\[ECCV 2024\] MacDiff: Unified Skeleton Modeling with Masked Conditional Diffusion](../../ECCV2024/image_generation/macdiff_unified_skeleton_modeling_with_masked_conditional_diffusion.md)
 - [\[NeurIPS 2025\] InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation](infinitystar_unified_spacetime_autoregressive_modeling_for_v.md)
 - [\[NeurIPS 2025\] ARGenSeg: Image Segmentation with Autoregressive Image Generation Model](argenseg_image_segmentation_with_autoregressive_image_generation_model.md)
-- [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](../../ICCV2025/image_generation/dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
-- [\[ICCV 2025\] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching](../../ICCV2025/image_generation/lazymar_accelerating_masked_autoregressive_models_via_feature_caching.md)
 - [\[NeurIPS 2025\] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation](understand_before_you_generate_self-guided_training_for_autoregressive_image_gen.md)
+- [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](../../ICCV2025/image_generation/dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
 
 </div>
 

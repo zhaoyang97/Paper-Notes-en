@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] HypoDepth reformulates event-image monocular depth estimation from "direct regression of continuous depth" to "constrained search within discrete depth hypotheses." By utilizing a lightweight 3D cost volume and a GRU iterative unit, it progressively refines residual depth from low to high resolution. It achieves SOTA o
+  [CVPR 2026][3D Vision][Event camera] HypoDepth reformulates event-image monocular depth estimation from "direct regression of continuous depth" to "constrained search within discrete depth hypotheses." By utilizing a lightweight 3D cost volume and a GRU iterative unit, it progressively refines residual depth from low to high resolution. It achieves SOTA on DSEC and MVSEC, with a Tiny version capable of real-time operation on resource-constrained devices.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event camera"
+  - "Monocular depth estimation"
+  - "Depth hypothesis volume"
+  - "Cost volume"
+  - "Iterative refinement"
 date: 2026-05-08
-content_hash: 864b30ab95481b67
+content_hash: bceaa5875e0afbe6
 ---
+
 # Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -159,10 +165,10 @@ On MVSEC (Abs Rel):
 ## Related Papers
 
 - [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
+- [\[CVPR 2026\] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation](iris_integrating_language_into_diffusion-based_monocular_depth_estimation.md)
+- [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
 - [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
 - [\[CVPR 2026\] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting](idesplat_iterative_depth_probability_estimation_for_generalizable_3d_gaussian_sp.md)
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] DepthFocus: Controllable Depth Estimation for See-Through Scenes](depthfocus_controllable_depth_estimation_for_see-through_scenes.md)
 
 </div>
 

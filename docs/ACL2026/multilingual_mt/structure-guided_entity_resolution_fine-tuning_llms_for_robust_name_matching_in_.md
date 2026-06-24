@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Structure-Guided Entity Resolution: Fine-Tuning LLMs for Robust Name Matching in Complex Linguistic Contexts
 description: >-
-  [ACL 2026][Multilingual & Translation][KYC] SGER proposes a two-stage curriculum learning framework to fine-tune Llama 3 8B for entity name matching: Phase 1 trains the model to parse name structures (outputting JSON), and Phase 2 trains a binary matcher starting from the Phase 1 checkpoint. It achieves 99.02% accuracy and 0.994 F1 on a dataset of 50,000 Indian
+  [ACL2026][Multilingual & Machine Translation][Entity Resolution] SGER proposes a two-stage curriculum learning framework to fine-tune Llama 3 8B for entity name matching: Phase 1 trains the model to parse name structures (outputting JSON), and Phase 2 trains a binary matcher starting from the Phase 1 checkpoint. It achieves 99.02% accuracy and 0.994 F1 on a dataset of 50,000 Indian KYC pairs and has been deployed in the production environment of Dream11 (250 million users).
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - KYC
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Entity Resolution"
+  - "Name Matching"
+  - "Curriculum Learning"
+  - "KYC"
+  - "LoRA Fine-tuning"
+  - "Multilingual"
 date: 2026-05-08
-content_hash: da214a70ac6f64c7
+content_hash: c8e0e7c8e7572e85
 ---
+
 # Structure-Guided Entity Resolution: Fine-Tuning LLMs for Robust Name Matching in Complex Linguistic Contexts
 
 **Conference**: ACL2026  

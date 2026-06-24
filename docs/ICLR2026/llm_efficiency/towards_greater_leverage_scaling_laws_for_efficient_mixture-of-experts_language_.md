@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Greater Leverage: Scaling Laws for Efficient Mixture-of-Experts Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][MoE] This paper introduces "Efficiency Leverage" (EL) to quantify the compute savings of MoE relative to dense models. By training 300+ MoE models up to 28B parameters, the authors fit a unified scaling law using activation rate, expert granularity, and compute budget as variables. Based on this, they design MoE-mini with o
+  [ICLR 2026][LLM Efficiency][MoE] This paper introduces "Efficiency Leverage" (EL) to quantify the compute savings of MoE relative to dense models. By training 300+ MoE models up to 28B parameters, the authors fit a unified scaling law using activation rate, expert granularity, and compute budget as variables. Based on this, they design MoE-mini with only 0.85B active parameters, which matches a 6.1B dense model using 7x less compute.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - MoE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "MoE"
+  - "Scaling Laws"
+  - "Efficiency Leverage"
+  - "Activation Rate"
+  - "Expert Granularity"
 date: 2026-05-08
-content_hash: 9bf89a1d2a0d3d0b
+content_hash: fe131e841b976fc5
 ---
+
 # Towards Greater Leverage: Scaling Laws for Efficient Mixture-of-Experts Language Models
 
 **Conference**: ICLR 2026  
@@ -125,15 +130,16 @@ MoE-mini outperformed Dense-6.1B with an average of 45.5 vs 44.0, with notable g
 - Value: ⭐⭐⭐⭐⭐ Provides a concrete formula and design recipe for efficient MoE.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs](scaling_laws_meet_model_architecture_toward_inference-efficient_llms.md)
-- [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
-- [\[ICLR 2026\] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity](xlstm_scaling_laws_competitive_performance_with_linear_time-complexity.md)
 - [\[ICLR 2026\] Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws](fast_catch-up_late_switching_optimal_batch_size_scheduling_via_functional_scalin.md)
+- [\[ICLR 2026\] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity](xlstm_scaling_laws_competitive_performance_with_linear_time-complexity.md)
 - [\[ICLR 2026\] Mixture-of-Experts Can Surpass Dense LLMs Under Strictly Equal Resource](mixture-of-experts_can_surpass_dense_llms_under_strictly_equal_resource.md)
+- [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Robotics][time reversal symmetry] This paper proposes the TR-DRL framework, which exploits time reversal symmetry in robotic manipulation tasks—via trajectory reversal augmentation (for fully reversible tr…
+  [NeurIPS 2025][Robotics][time reversal symmetry] This paper proposes the TR-DRL framework, which exploits time reversal symmetry in robotic manipulation tasks—via trajectory reversal augmentation (for fully reversible transitions) and time-reversal-guided potential-based reward shaping (for partially reversible transitions)—to significantly improve sample efficiency and final performance of DRL on paired tasks (e.g., door opening/closing).
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "robotic manipulation"
   - "sample efficiency"
 date: 2026-05-08
-content_hash: 8c72148b4ade93a2
+content_hash: 46ee3a92f21fe965
 ---
 
 # Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning
@@ -135,8 +135,8 @@ Given a pair of tasks with a time reversal relationship (e.g., door open/close),
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning](sample-efficient_tabular_self-play_for_offline_robust_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] PROFIT: A Specialized Optimizer for Deep Fine Tuning](profit_a_specialized_optimizer_for_deep_fine_tuning.md)
 - [\[NeurIPS 2025\] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts](zero-shot_context_generalization_in_reinforcement_learning_from_few_training_con.md)
 - [\[ICLR 2026\] Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments](../../ICLR2026/robotics/partially_equivariant_reinforcement_learning_in_symmetry-breaking_environments.md)

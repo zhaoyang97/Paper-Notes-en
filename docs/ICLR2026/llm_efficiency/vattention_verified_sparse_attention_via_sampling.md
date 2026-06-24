@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] vAttention: Verified Sparse Attention via Sampling
 description: >-
-  [ICLR 2026][LLM Efficiency][KV Cache] vAttention unifies "deterministic top-k selection of key tokens" and "random sampling of the long tail" into a single attention calculation framework. By using the Central Limit Theorem to adaptively determine the sampling budget, it provides the first user-specified $(\epsilon, \delta)$ approximation guarantee for eac
+  [ICLR 2026][LLM Efficiency][Sparse Attention] vAttention unifies "deterministic top-k selection of key tokens" and "random sampling of the long tail" into a single attention calculation framework. By using the Central Limit Theorem to adaptively determine the sampling budget, it provides the first user-specified $(\epsilon, \delta)$ approximation guarantee for each attention head. On RULER-HARD at 10% sparsity, it outperforms HashAttention by approximately 4.5 percentage poin…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV Cache
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sparse Attention"
+  - "KV Cache"
+  - "Sampling Estimation"
+  - "Approximation Guarantees"
+  - "Long Context Decoding"
 date: 2026-05-08
-content_hash: 9a589a55ea189c74
+content_hash: 634a58e11a72bc5e
 ---
+
 # vAttention: Verified Sparse Attention via Sampling
 
 **Conference**: ICLR 2026  
@@ -144,8 +149,8 @@ At ~10–15% density for 32K token generation, vAttention maintains full model a
 - [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
 - [\[ICLR 2026\] RESA: Bringing Back What Sparse Attention Ignores with Residual Estimation](resa_bringing_back_what_sparse_attention_ignores_with_residual_estimation.md)
 - [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
+- [\[ICLR 2026\] ProxyAttn: Guided Sparse Attention via Representative Heads](proxyattn_guided_sparse_attention_via_representative_heads.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
 
 </div>
 

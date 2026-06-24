@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Do 3D Large Language Models Really Understand 3D Spatial Relationships?
 description: >-
-  [ICLR 2026][3D Vision][3D-LLM] The authors find that the high scores of existing 3D Large Language Models (3D-LLMs) on benchmarks like SQA3D are largely driven by "language shortcuts"—a **"blind model" that ignores 3D input and fine-tunes only on text QA pairs** can match or even outperform SOTA models. Consequently, they construct the more rigorous
+  [ICLR2026][3D Vision][3D-LLM] The authors find that the high scores of existing 3D Large Language Models (3D-LLMs) on benchmarks like SQA3D are largely driven by "language shortcuts"—a **"blind model" that ignores 3D input and fine-tunes only on text QA pairs** can match or even outperform SOTA models. Consequently, they construct the more rigorous Real-3DQA benchmark (filtering questions guessable without 3D and introducing viewpoint rotation consistency evaluation) and prop…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D-LLM
+  - "ICLR2026"
+  - "3D Vision"
+  - "3D-LLM"
+  - "spatial reasoning"
+  - "language shortcuts"
+  - "diagnostic benchmark"
+  - "viewpoint rotation"
 date: 2026-05-08
-content_hash: 4e4419a2a036ad75
+content_hash: bcdecc278acf93aa
 ---
+
 # Do 3D Large Language Models Really Understand 3D Spatial Relationships?
 
 **Conference**: ICLR2026  
@@ -144,15 +149,16 @@ The strongest model, GPT4Scene, drops from 55.5% (single match) to 0.5% (four ma
 - Value: ⭐⭐⭐⭐⭐ Serves as a wake-up call for the 3D-LLM evaluation community; both the benchmark and training strategy are highly reusable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ECCV 2024\] PointLLM: Empowering Large Language Models to Understand Point Clouds](../../ECCV2024/3d_vision/pointllm_empowering_large_language_models_to_understand_point_clouds.md)
 - [\[CVPR 2026\] Scalable Object Relation Encoding for Better 3D Spatial Reasoning in Large Language Models](../../CVPR2026/3d_vision/scalable_object_relation_encoding_for_better_3d_spatial_reasoning_in_large_langu.md)
+- [\[ICLR 2026\] DepthLM: Metric Depth from Vision Language Models](depthlm_metric_depth_from_vision_language_models.md)
 - [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](../../ICCV2025/3d_vision/learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
 - [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
-- [\[CVPR 2025\] Empowering Large Language Models with 3D Situation Awareness](../../CVPR2025/3d_vision/empowering_large_language_models_with_3d_situation_awareness.md)
 
 </div>
 

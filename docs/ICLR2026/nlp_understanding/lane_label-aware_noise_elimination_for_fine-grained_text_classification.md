@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LANE: Label-Aware Noise Elimination for Fine-Grained Text Classification
 description: >-
-  [ICLR 2026][NLP Understanding][AUM] LANE upgrades the classic margin indicator for identifying mislabeled samples to a **Label-aware Margin**. For negative margins, the penalty is reduced if the mislabeled category is semantically similar to the model's prediction (e.g., "Anger" labeled as "Fear") and increased if they are semantically distant (e.g., "Tr
+  [ICLR 2026][NLP Understanding][Noisy labels] LANE upgrades the classic margin indicator for identifying mislabeled samples to a **Label-aware Margin**. For negative margins, the penalty is reduced if the mislabeled category is semantically similar to the model's prediction (e.g., "Anger" labeled as "Fear") and increased if they are semantically distant (e.g., "Trust" labeled as "Fear"). Based on this, it applies dynamic weighting to each sample rather than hard deletion…
 tags:
-  - ICLR 2026
-  - NLP Understanding
-  - AUM
+  - "ICLR 2026"
+  - "NLP Understanding"
+  - "Noisy labels"
+  - "label-aware margin"
+  - "text classification"
+  - "contrastive learning"
+  - "sample weighting"
+  - "AUM"
 date: 2026-05-08
-content_hash: 83384de850c99a19
+content_hash: 9a5fde683415ff1e
 ---
+
 # LANE: Label-Aware Noise Elimination for Fine-Grained Text Classification
 
 **Conference**: ICLR 2026  
@@ -136,9 +142,9 @@ Ablation (Table 4):
 
 - [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](../../ACL2026/nlp_understanding/made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
 - [\[ACL 2026\] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines](../../ACL2026/nlp_understanding/llm-guided_semantic_bootstrapping_for_interpretable_text_classification_with_tse.md)
+- [\[ACL 2026\] Revealing Temporal Framing in News Text](../../ACL2026/nlp_understanding/uncovering_temporal_framing_in_the_news.md)
 - [\[ICML 2026\] Causal Fine-Tuning under Latent Confounded Shift](../../ICML2026/nlp_understanding/causal_fine-tuning_under_latent_confounded_shift.md)
 - [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](../../ACL2026/nlp_understanding/beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
-- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](../../ACL2026/nlp_understanding/reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
 
 </div>
 

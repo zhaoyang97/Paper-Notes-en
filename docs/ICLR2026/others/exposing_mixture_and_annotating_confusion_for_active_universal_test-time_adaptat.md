@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Exposing Mixture and Annotating Confusion for Active Universal Test-Time Adaptation
 description: >-
-  [ICLR 2026][Others][Universal Test-Time Adaptation] This paper proposes a new paradigm of Active Universal Test-Time Adaptation (AUTTA) and introduces the EMAC method to incorporate sparse human annotations during testing. It decouples domain and class shifts using SVD + GMM to expose samples in the "mixed region," employs a reward-driven strategy to select representati
+  [ICLR 2026][Universal Test-Time Adaptation] This paper proposes a new paradigm of Active Universal Test-Time Adaptation (AUTTA) and introduces the EMAC method to incorporate sparse human annotations during testing. It decouples domain and class shifts using SVD + GMM to expose samples in the "mixed region," employs a reward-driven strategy to select representative samples for annotation, and utilizes a clustering contrastive loss to balance annotations and pseudo-labels…
 tags:
-  - ICLR 2026
-  - Others
-  - Universal Test-Time Adaptation
-  - Active Learning
+  - "ICLR 2026"
+  - "Universal Test-Time Adaptation"
+  - "Active Learning"
+  - "Dual Shift"
+  - "Gaussian Mixture Model"
+  - "Open-Set Recognition"
 date: 2026-05-08
-content_hash: d5c0d6a8d962adfb
+content_hash: 3049673fba6637a0
 ---
+
 # Exposing Mixture and Annotating Confusion for Active Universal Test-Time Adaptation
 
 **Conference**: ICLR 2026  
@@ -141,9 +144,9 @@ EMAC with a budget of 800 outperforms other methods using 1000, demonstrating hi
 
 - [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](prior-free_tabular_test-time_adaptation.md)
 - [\[ICLR 2026\] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference](priorguide_test-time_prior_adaptation_for_simulation-based_inference.md)
-- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
 - [\[CVPR 2025\] Effortless Active Labeling for Long-Term Test-Time Adaptation](../../CVPR2025/others/effortless_active_labeling_for_long-term_test-time_adaptation.md)
-- [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](../../ICML2026/others/tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
+- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
+- [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](active_learning_for_decision_trees_with_provable_guarantees.md)
 
 </div>
 

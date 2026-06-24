@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] RetouchIQ: MLLM Agents for Instruction-Based Image Retouching with Generalist Reward
 description: >-
-  [CVPR 2026][LLM Agent][MLLM agent] Addressing the challenges that "creative retouching is inherently subjective" and "rule-based rewards from single reference images are unreliable," this paper proposes RetouchIQ. The framework enables an MLLM agent to translate natural language instructions into executable Lightroom parameters. It utilizes a Generalist
+  [CVPR 2026][LLM Agent][MLLM agent] Addressing the challenges that "creative retouching is inherently subjective" and "rule-based rewards from single reference images are unreliable," this paper proposes RetouchIQ. The framework enables an MLLM agent to translate natural language instructions into executable Lightroom parameters. It utilizes a Generalist Reward Model (GRM) that "generates case-by-case evaluation metrics and then assigns scores…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - MLLM agent
-  - Reinforcement Learning
-  - Lightroom
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "MLLM agent"
+  - "Image Retouching"
+  - "Reinforcement Learning"
+  - "Generalist Reward Model"
+  - "Lightroom"
 date: 2026-05-08
-content_hash: ff19ec00f9e0af08
+content_hash: 6823ac890198fbd8
 ---
+
 # RetouchIQ: MLLM Agents for Instruction-Based Image Retouching with Generalist Reward
 
 **Conference**: CVPR 2026  
@@ -146,16 +149,17 @@ Comparison of reward signal types (RetouchEval Enhancement, SC/PQ higher is bett
 
 <div class="related-papers" markdown="1">
 
-| Paper | Area | Key Difference |
-|-------|------|----------------|
-| JarvisArt | Agent | Rule-based rewards for reproducing reference edits |
-| MonetGPT | Agent | Focused on quality enhancement; weaker in style transfer |
-| InstructPix2Pix | Diffusion | Pixel-based editing; less controllable than parameters |
+## Related Papers
+
+- [\[AAAI 2026\] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching](../../AAAI2026/llm_agent/pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching.md)
+- [\[CVPR 2026\] Universal Guideline-Driven Image Clustering via a Hybrid LLM Agent](universal_guideline-driven_image_clustering_via_a_hybrid_llm_agent.md)
+- [\[CVPR 2026\] REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting](realm_mllm_agent_3d_reasoning_gaussian.md)
+- [\[ICLR 2026\] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents](../../ICLR2026/llm_agent/webarbiter_a_principle-guided_reasoning_process_reward_model_for_web_agents.md)
+- [\[ACL 2026\] Exploring Reasoning Reward Model for Agents](../../ACL2026/llm_agent/exploring_reasoning_reward_model_for_agents.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching](../../AAAI2026/llm_agent/pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching.md)

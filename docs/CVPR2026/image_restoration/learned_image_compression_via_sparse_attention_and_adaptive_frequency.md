@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learned Image Compression via Sparse Attention and Adaptive Frequency
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] SAAF utilizes a "spatial-frequency dual-path" transform network for learned image compression. The spatial path employs Cross-Sparse Window Attention (CSWA) to efficiently model long-range dependencies with minimal global tokens, while the frequency path replaces fixed wavelet transforms with content-adaptive frequency
+  [CVPR 2026][Image Restoration][Learned Image Compression] SAAF utilizes a "spatial-frequency dual-path" transform network for learned image compression. The spatial path employs Cross-Sparse Window Attention (CSWA) to efficiently model long-range dependencies with minimal global tokens, while the frequency path replaces fixed wavelet transforms with content-adaptive frequency reweighting (AFB). A Denoising-as-Regularizer (DaR), active only during training…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Learned Image Compression"
+  - "Sparse Attention"
+  - "Adaptive Frequency Transform"
+  - "Denoising Regularization"
+  - "Rate-Distortion"
 date: 2026-05-08
-content_hash: 04b969abfec6a23f
+content_hash: 9028a0ce0e9f9c9b
 ---
+
 # Learned Image Compression via Sparse Attention and Adaptive Frequency
 
 **Conference**: CVPR 2026  
@@ -134,16 +140,16 @@ SAB (CSWA) reduces latency compared to the BASE WMSA (0.33 ms vs 0.44 ms per blo
 - Value: ⭐⭐⭐⭐ Simultaneously achieving SOTA RD and lowest latency provides high practical value for LIC deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Variational Garrote for Sparse Inverse Problems](variational_garrote_for_sparse_inverse_problems.md)
+- [\[ICLR 2026\] Content-Aware Mamba for Learned Image Compression](../../ICLR2026/image_restoration/content-aware_mamba_for_learned_image_compression.md)
+- [\[CVPR 2026\] RL-ScanIQA: Reinforcement-Learned Scanpaths for Blind 360deg Image Quality Assessment](rl-scaniqa_reinforcement-learned_scanpaths_for_blind_360deg_image_quality_assess.md)
 - [\[CVPR 2026\] FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration](fape-ir_frequency-aware_planning_and_execution_framework_for_all-in-one_image_re.md)
-- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
-- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
-- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
+- [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
+- [\[CVPR 2026\] RegionFuse: Region-Adaptive Pixel Distribution Learning for Infrared and Visible Image Fusion](regionfuse_region-adaptive_pixel_distribution_learning_for_infrared_and_visible_.md)
 
 </div>
 

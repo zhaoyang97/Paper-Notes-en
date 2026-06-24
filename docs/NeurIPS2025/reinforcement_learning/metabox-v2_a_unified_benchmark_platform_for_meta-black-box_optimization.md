@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MetaBox-v2: A Unified Benchmark Platform for Meta-Black-Box Optimization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Meta-Black-Box Optimization] MetaBox-v2 is a milestone upgrade to the Meta-Black-Box Optimization (MetaBBO) benchmark platform. It provides unified support for four learning paradig…
+  [NeurIPS 2025][Reinforcement Learning][Meta-Black-Box Optimization] MetaBox-v2 is a milestone upgrade to the Meta-Black-Box Optimization (MetaBBO) benchmark platform. It provides unified support for four learning paradigms (RL/SL/NE/ICL), reproduces 23 baseline algorithms, integrates 18 test suites (1900+ problem instances), and achieves 10–40× speedup via vectorized environments and distributed evaluation.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "RL-based optimization"
   - "generalization"
 date: 2026-05-08
-content_hash: cabaca6805103bc7
+content_hash: 232837436b1a2e75
 ---
 
 # MetaBox-v2: A Unified Benchmark Platform for Meta-Black-Box Optimization
@@ -135,10 +135,10 @@ MetaBox-v2 achieves its upgrade through four synergistic enhancements: (1) a uni
 ## Related Papers
 
 - [\[NeurIPS 2025\] Optimizing the Unknown: Black Box Bayesian Optimization with Energy-Based Model and Reinforcement Learning](optimizing_the_unknown_black_box_bayesian_optimization_with_energy-based_model_a.md)
+- [\[ICML 2025\] Meta-Black-Box-Optimization through Offline Q-function Learning (Q-Mamba)](../../ICML2025/reinforcement_learning/meta-black-box-optimization_through_offline_q-function_learning.md)
 - [\[NeurIPS 2025\] Meta-World+: An Improved, Standardized, RL Benchmark](meta-world_an_improved_standardized_rl_benchmark.md)
 - [\[NeurIPS 2025\] Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality](improved_regret_and_contextual_linear_extension_for_pandoras_box_and_prophet_ine.md)
 - [\[NeurIPS 2025\] Complexity Scaling Laws for Neural Models using Combinatorial Optimization](complexity_scaling_laws_for_neural_models_using_combinatorial_optimization.md)
-- [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](online_optimization_for_offline_safe_reinforcement_learning.md)
 
 </div>
 

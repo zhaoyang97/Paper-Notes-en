@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention
 description: >-
-  [ICLR 2026][Model Compression][GPU kernel] The authors discover that attention weights in Diffusion Transformers can be decomposed into a "small number of high-rank + large number of extremely low-rank" components. They propose SLA—applying precise sparse attention to critical blocks, linear attention to marginal blocks, and skipping negligible blocks. Integrat
+  [ICLR 2026][Model Compression][Sparse Attention] The authors discover that attention weights in Diffusion Transformers can be decomposed into a "small number of high-rank + large number of extremely low-rank" components. They propose SLA—applying precise sparse attention to critical blocks, linear attention to marginal blocks, and skipping negligible blocks. Integrated into a single GPU kernel and requiring only a few thousand fine-tuning steps…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - GPU kernel
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Sparse Attention"
+  - "Linear Attention"
+  - "Diffusion Transformer"
+  - "Video Generation Acceleration"
+  - "GPU kernel"
 date: 2026-05-08
-content_hash: 2bd7fed3ec4cfefd
+content_hash: e6b9e3c3f4f3fb17
 ---
+
 # SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention
 
 **Conference**: ICLR 2026  
@@ -150,9 +155,9 @@ Fine-tuning steps ablation (VA): 0 steps 41.11 → 250 steps 64.46 → 1000 step
 
 - [\[CVPR 2026\] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers](../../CVPR2026/model_compression/trainable_log-linear_sparse_attention_for_efficient_diffusion_transformers.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
-- [\[ICLR 2026\] Ensembling Pruned Attention Heads for Uncertainty-Aware Efficient Transformers](ensembling_pruned_attention_heads_for_uncertainty-aware_efficient_transformers.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](../../CVPR2026/model_compression/binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
+- [\[ICLR 2026\] LaplacianFormer: Rethinking Linear Attention with Laplacian Kernels](laplacianformerrethinking_linear_attention_with_laplacian_kernel.md)
 - [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
+- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](../../CVPR2026/model_compression/binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
 
 </div>
 

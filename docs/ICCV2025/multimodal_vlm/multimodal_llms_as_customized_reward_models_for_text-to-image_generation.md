@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multimodal LLMs as Customized Reward Models for Text-to-Image Generation
 description: >-
-  [ICCV2025][Multimodal VLM][reward model] This paper proposes LLaVA-Reward, which leverages the hidden states (rather than text generation outputs) of a pretrained MLLM to directly predict reward scores. A Skip-connection…
+  [ICCV2025][Multimodal VLM][reward model] This paper proposes LLaVA-Reward, which leverages the hidden states (rather than text generation outputs) of a pretrained MLLM to directly predict reward scores. A Skip-connection Cross Attention (SkipCA) module is introduced to enhance bidirectional visual-text interaction, and LoRA adapters are employed to handle different evaluation dimensions. The method achieves state-of-the-art performance on text-image alignment, fidelity…
 tags:
   - "ICCV2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "preference learning"
   - "inference-time scaling"
 date: 2026-05-08
-content_hash: 4b8cbd73aa6c3a43
+content_hash: dbc0f808dea9f898
 ---
 
 # Multimodal LLMs as Customized Reward Models for Text-to-Image Generation
@@ -181,11 +181,11 @@ LLaVA-Reward achieves the best generation quality improvement in diffusion infer
 
 ## Related Papers
 
+- [\[CVPR 2026\] Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image](../../CVPR2026/multimodal_vlm/multimodal_rewardbench_2_evaluating_omni_reward_models_for_interleaved_text_and_.md)
 - [\[ICCV 2025\] Controlling Multimodal LLMs via Reward-guided Decoding](controlling_multimodal_llms_via_rewardguided_decoding.md)
-- [\[CVPR 2026\] Customized Visual Storytelling with Unified Multimodal LLMs](../../CVPR2026/multimodal_vlm/customized_visual_storytelling_with_unified_multimodal_llms.md)
-- [\[ICCV 2025\] AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs](autocompose_automatic_generation_of_pose_transition_descriptions_for_composed_po.md)
-- [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](on_large_multimodal_models_as_open-world_image_classifiers.md)
-- [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
+- [\[ACL 2025\] Enhance Multimodal Consistency and Coherence for Text-Image Plan Generation](../../ACL2025/multimodal_vlm/enhance_multimodal_consistency_and_coherence_for_text-image_plan_generation.md)
+- [\[CVPR 2025\] CoMM: A Coherent Interleaved Image-Text Dataset for Multimodal Understanding and Generation](../../CVPR2025/multimodal_vlm/comm_a_coherent_interleaved_image-text_dataset_for_multimodal_understanding_and_.md)
+- [\[ACL 2025\] Scaling Text-Rich Image Understanding via Code-Guided Synthetic Multimodal Data Generation](../../ACL2025/multimodal_vlm/code_guided_text_rich_image.md)
 
 </div>
 

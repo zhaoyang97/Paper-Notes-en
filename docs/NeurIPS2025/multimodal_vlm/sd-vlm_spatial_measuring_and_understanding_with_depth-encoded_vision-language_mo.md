@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial reasoning] This paper proposes MSMU, a large-scale quantitative spatial reasoning dataset (700K QA pairs, 2.5M numerical annotations), and Depth Positional Encoding (DPE)…
+  [NeurIPS 2025][Multimodal VLM][Spatial reasoning] This paper proposes MSMU, a large-scale quantitative spatial reasoning dataset (700K QA pairs, 2.5M numerical annotations), and Depth Positional Encoding (DPE), enabling VLMs to achieve strong quantitative spatial measurement and understanding without relying on 3D point clouds. SD-VLM outperforms GPT-4o by 26.91% on MSMU-Bench.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "quantitative spatial understanding"
   - "3D perception"
 date: 2026-05-08
-content_hash: 6fb33176b6dec331
+content_hash: bf6e489eb7a12f71
 ---
 
 # SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models
@@ -54,11 +54,11 @@ SD-VLM is built upon LLaVA-1.5-7B and comprises: a CLIP visual encoder for image
 1. **MSMU Dataset Construction**
 
    Precise spatial annotations are derived from real 3D scenes in ScanNet and ScanNet++. The data generation pipeline proceeds as follows:
-   - **Scene graph construction**: Object categories and 3D bounding boxes (center coordinates + dimensions) are extracted from 3D point clouds.
-   - **3D-to-2D mapping**: Official tools rasterize 3D instances into 2D image masks, establishing 3D–2D correspondences per object.
-   - **Filtering**: Uncommon, occluded, truncated, or semantically ambiguous objects are excluded; Qwen2.5-VL relabels objects with descriptive names (e.g., "white table," "wooden desk").
-   - **Templated QA generation**: Seven task categories are covered: scale estimation, object localization, distance measurement, size comparison, reference object reasoning, counting, and existence judgment.
-   - **LLM-collaborative CoT augmentation**: Reference objects are sampled randomly; Qwen2.5-VL generates reasoning chains, and DeepSeek-V3 evaluates their quality.
+    - **Scene graph construction**: Object categories and 3D bounding boxes (center coordinates + dimensions) are extracted from 3D point clouds.
+    - **3D-to-2D mapping**: Official tools rasterize 3D instances into 2D image masks, establishing 3D–2D correspondences per object.
+    - **Filtering**: Uncommon, occluded, truncated, or semantically ambiguous objects are excluded; Qwen2.5-VL relabels objects with descriptive names (e.g., "white table," "wooden desk").
+    - **Templated QA generation**: Seven task categories are covered: scale estimation, object localization, distance measurement, size comparison, reference object reasoning, counting, and existence judgment.
+    - **LLM-collaborative CoT augmentation**: Reference objects are sampled randomly; Qwen2.5-VL generates reasoning chains, and DeepSeek-V3 evaluates their quality.
 
    The final dataset comprises 2K scenes, 25K images, 75K objects, **700K QA pairs, 2.5M numerical annotations**, and 10K CoT reasoning samples.
 
@@ -149,11 +149,11 @@ SD-VLM is fine-tuned from LLaVA-1.5-7B using LoRA for 1 epoch on MSMU. The visua
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning](ssr_enhancing_depth_perception_in_vision-language_models_via_rationale-guided_sp.md)
-- [\[NeurIPS 2025\] SpatialTraceGen: High-Fidelity Traces for Efficient VLM Spatial Reasoning Distillation](spatialtracegen_high-fidelity_traces_for_efficient_vlm_spatial_reasoning_distill.md)
-- [\[NeurIPS 2025\] RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics](roborefer_towards_spatial_referring_with_reasoning_in_vision-language_models_for.md)
+- [\[CVPR 2025\] RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics](../../CVPR2025/multimodal_vlm/robospatial_teaching_spatial_understanding_to_2d_and_3d_vision-language_models_f.md)
 - [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](../../CVPR2026/multimodal_vlm/hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
 - [\[ICCV 2025\] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs](../../ICCV2025/multimodal_vlm/mm-spatial_exploring_3d_spatial_understanding_in_multimodal_llms.md)
+- [\[CVPR 2025\] Florence-VL: Enhancing Vision-Language Models with Generative Vision Encoder and Depth-Breadth Fusion](../../CVPR2025/multimodal_vlm/florence-vl_enhancing_vision-language_models_with_generative_vision_encoder_and_.md)
+- [\[ICCV 2025\] Spatial Preference Rewarding for MLLMs Spatial Understanding](../../ICCV2025/multimodal_vlm/spatial_preference_rewarding_for_mllms_spatial_understanding.md)
 
 </div>
 

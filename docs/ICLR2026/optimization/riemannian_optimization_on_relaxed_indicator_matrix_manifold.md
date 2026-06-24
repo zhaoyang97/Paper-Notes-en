@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Riemannian Optimization on Relaxed Indicator Matrix Manifold
 description: >-
-  [ICLR 2026][Optimization & Theory][Ratio Cut] Ours proposes a new relaxation for indicator matrices by relaxing column sum constraints from "equal to a fixed value" to "falling within an interval $(l,u)$." It is proven that this relaxation set forms an $(n-1)c$-dimensional embedded submanifold (RIM manifold). A complete Riemannian optimization toolbox is provided,
+  [ICLR 2026][Optimization][Indicator Matrix] Ours proposes a new relaxation for indicator matrices by relaxing column sum constraints from "equal to a fixed value" to "falling within an interval $(l,u)$." It is proven that this relaxation set forms an $(n-1)c$-dimensional embedded submanifold (RIM manifold). A complete Riemannian optimization toolbox is provided, reducing the computational complexity of gradients and Hessians from $O(n^3)$ (required by doubly stochastic manifo…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Ratio Cut
+  - "ICLR 2026"
+  - "Optimization"
+  - "Indicator Matrix"
+  - "Riemannian Optimization"
+  - "Manifold"
+  - "Doubly Stochastic Matrix"
+  - "Ratio Cut"
 date: 2026-05-08
-content_hash: f16d4b41403f41ab
+content_hash: 3ea92a378e62b5eb
 ---
+
 # Riemannian Optimization on Relaxed Indicator Matrix Manifold
 
 **Conference**: ICLR 2026  
@@ -153,7 +158,7 @@ In clustering (Table 6, ACC/NMI/ARI metrics across 8 real datasets, comparing 10
 - [\[ICLR 2026\] Scalable Second-Order Riemannian Optimization for K-means Clustering](scalable_second-order_riemannian_optimization_for_k-means_clustering.md)
 - [\[ICLR 2026\] FedMC: Federated Manifold Calibration](fedmc_federated_manifold_calibration.md)
 - [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](strongly_convex_sets_in_riemannian_manifolds.md)
-- [\[ICML 2026\] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization](../../ICML2026/optimization/rmnp_row-momentum_normalized_preconditioning_for_scalable_matrix-based_optimizat.md)
+- [\[ICLR 2026\] Riemannian Federated Learning via Averaging Gradient Streams](riemannian_federated_learning_via_averaging_gradient_streams.md)
 
 </div>
 

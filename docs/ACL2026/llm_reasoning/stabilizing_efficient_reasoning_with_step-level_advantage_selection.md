@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Stabilizing Efficient Reasoning with Step-Level Advantage Selection
 description: >-
-  [ACL 2026][LLM Reasoning][GRPO] This paper discovers that short-context GRPO inherently compresses reasoning length but suffers from training instability due to incorrect credit assignment of truncated samples. The authors propose Step-level Advantage Selection (SAS), which selectively zeroes out advantages at the granularity of reasoning steps to si
+  [ACL2026 Findings][Reasoning][Reasoning Compression] This paper discovers that short-context GRPO inherently compresses reasoning length but suffers from training instability due to incorrect credit assignment of truncated samples. The authors propose Step-level Advantage Selection (SAS), which selectively zeroes out advantages at the granularity of reasoning steps to significantly reduce inference tokens while maintaining or even improving Pass@1.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - GRPO
-  - step-level advantage
+  - "ACL2026 Findings"
+  - "Reasoning"
+  - "Reasoning Compression"
+  - "GRPO"
+  - "Credit Assignment"
+  - "Short-context Training"
+  - "step-level advantage"
 date: 2026-05-08
-content_hash: bebce0041430c064
+content_hash: 30c8bb2b4ad7881c
 ---
+
 # Stabilizing Efficient Reasoning with Step-Level Advantage Selection
 
 **Conference**: ACL2026 Findings  
@@ -157,11 +161,11 @@ Ablations indicate that gains do not come from simple advantage sparsification, 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning](../../ICLR2026/llm_reasoning/quantile_advantage_estimation_stabilizing_rlvr_for_llm_reasoning.md)
 - [\[ACL 2026\] On the Step Length Confounding in LLM Reasoning Data Selection](on_the_step_length_confounding_in_llm_reasoning_data_selection.md)
 - [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
-- [\[ACL 2026\] SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning](shape_stage-aware_hierarchical_advantage_via_potential_estimation_for_llm_reason.md)
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](../../ICLR2026/llm_reasoning/stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
-- [\[ACL 2026\] Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards](process_reward_models_meet_planning_generating_precise_and_scalable_datasets_for.md)
+- [\[ACL 2026\] SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning](shape_stage-aware_hierarchical_advantage_via_potential_estimation_for_llm_reason.md)
 
 </div>
 

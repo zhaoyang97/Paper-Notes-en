@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TIM: Temporal Decoupling with Iterative Mutual-Refinement Model for Longitudinal Radiology Report Generation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] TIM decomposes longitudinal radiology report generation into two decoupled branches: "Static Pathology Recognition" and "Dynamic Progression Modeling." It further employs an iterative refinement stage where previous and current reports perform mutual error correction, setting a new SOTA for both linguistic and clinical
+  [CVPR 2026][Medical Imaging][Longitudinal Report Generation] TIM decomposes longitudinal radiology report generation into two decoupled branches: "Static Pathology Recognition" and "Dynamic Progression Modeling." It further employs an iterative refinement stage where previous and current reports perform mutual error correction, setting a new SOTA for both linguistic and clinical metrics on the Longitudinal-MIMIC dataset.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Longitudinal Report Generation"
+  - "Temporal Decoupling"
+  - "Dynamic Progression Modeling"
+  - "Mutual-Refinement"
+  - "Chest X-ray"
 date: 2026-05-08
-content_hash: 2e860b56829376a5
+content_hash: 83f86f5f8ce5ba3f
 ---
+
 # TIM: Temporal Decoupling with Iterative Mutual-Refinement Model for Longitudinal Radiology Report Generation
 
 **Conference**: CVPR 2026  
@@ -148,7 +154,7 @@ Incremental addition of Stage I components (F1 perspective):
 - [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 - [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
 - [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
-- [\[CVPR 2026\] Temporal Inversion for Learning Interval Change in Chest X-Rays](temporal_inversion_for_learning_interval_change_in_chest_x-rays.md)
+- [\[ICLR 2026\] Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings](../../ICLR2026/medical_imaging/rethinking_radiology_report_generation_from_narrative_flow_to_topic-guided_findi.md)
 
 </div>
 

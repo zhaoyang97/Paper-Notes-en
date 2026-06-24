@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] mmWalk: Towards Multi-modal Multi-view Walking Assistance
 description: >-
-  [NeurIPS 2025][Multimodal VLM][blind and low-vision assistance] mmWalk constructs the first multi-modal multi-view dataset for walking assistance targeting blind and low-vision (BLV) individuals (62K frames / 559K panora…
+  [NeurIPS 2025][Multimodal VLM][blind and low-vision assistance] mmWalk constructs the first multi-modal multi-view dataset for walking assistance targeting blind and low-vision (BLV) individuals (62K frames / 559K panoramic images generated via the CARLA simulator, plus 69K VQA pairs), and benchmarks reveal that state-of-the-art VLMs perform inadequately on safety-critical tasks such as risk assessment and navigation landmark recognition (best accuracy only 55.21%)…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "multi-view"
   - "CARLA simulation"
 date: 2026-05-08
-content_hash: 1d0d56b95e355b54
+content_hash: 8e336e95689ca3a7
 ---
 
 # mmWalk: Towards Multi-modal Multi-view Walking Assistance
@@ -121,11 +121,11 @@ mmWalk constructs the first multi-modal multi-view dataset for walking assistanc
 
 ## Related Papers
 
+- [\[ICCV 2025\] ViewSRD: 3D Visual Grounding via Structured Multi-View Decomposition](../../ICCV2025/multimodal_vlm/viewsrd_3d_visual_grounding_via_structured_multi-view_decomposition.md)
 - [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
 - [\[NeurIPS 2025\] DanmakuTPPBench: A Multi-modal Benchmark for Temporal Point Process Modeling and Understanding](danmakutppbench_a_multimodal_benchmark_for_temporal_point_pr.md)
 - [\[NeurIPS 2025\] Efficient Multi-modal Large Language Models via Progressive Consistency Distillation](efficient_multi-modal_large_language_models_via_progressive_consistency_distilla.md)
 - [\[NeurIPS 2025\] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models](vamp_variational_multi-modal_prompt_learning_for_vision-language_models.md)
-- [\[NeurIPS 2025\] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?](can_multi-modal_llms_provide_live_step-by-step_task_guidance.md)
 
 </div>
 

@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Universal Reasoner: 冻结 LLM 的可组合即插即用推理器
+  [Paper Note] Universal Reasoner: Composable Plug-and-Play Reasoners for Frozen LLMs
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] The authors propose Universal Reasoner (UniR), which trains independent lightweight reasoning modules to capture reward-oriented behaviors. At inference, these modules are combined with frozen LLMs via logit superposition, enabling reasoning enhancement without fine-tuning the backbone, cross-model scale transfer, and
+  [ICML 2026][LLM (Other)][Reasoning Enhancement] The authors propose Universal Reasoner (UniR), which trains independent lightweight reasoning modules to capture reward-oriented behaviors. At inference, these modules are combined with frozen LLMs via logit superposition, enabling reasoning enhancement without fine-tuning the backbone, cross-model scale transfer, and multi-task composition.
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Reasoning Enhancement"
+  - "Modular Reasoning"
+  - "Composable Reasoning"
+  - "Frozen LLM"
+  - "Verifiable Rewards"
 date: 2026-05-08
-content_hash: 64e7c604068bdcb4
+content_hash: eb8e9930d40966ee
 ---
+
 # Universal Reasoner: Composable Plug-and-Play Reasoners for Frozen LLMs
 
 **Conference**: ICML 2026  
@@ -122,11 +128,11 @@ Since a single reward results in an additive module, multiple constraints can be
 
 ## Related Papers
 
-- [\[ACL 2025\] Efficient Universal Goal Hijacking with Semantics-guided Prompt Organization](../../ACL2025/llm_nlp/goal_hijacking_attack.md)
-- [\[ICML 2025\] Towards Universal Offline Black-Box Optimization via Learning Language Model Embeddings](../../ICML2025/llm_nlp/towards_universal_offline_black-box_optimization_via_learning_language_model_emb.md)
-- [\[ICML 2026\] YAQA: 端到端 KL 最小化的 LLM 自适应权重量化](model-preserving_adaptive_rounding.md)
-- [\[ICML 2026\] "I've Seen How This Goes"：用渐进条件惊奇度刻画 LLM 与人类写作的多样性](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
-- [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](token-efficient_change_detection_in_llm_apis.md)
+- [\[ACL 2025\] LLMs + Persona-Plug = Personalized LLMs](../../ACL2025/llm_nlp/llms_persona-plug_personalized_llms.md)
+- [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](../../NeurIPS2025/llm_nlp/acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
+- [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](../../NeurIPS2025/llm_nlp/are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
+- [\[ICML 2026\] Differential Syntactic and Semantic Encoding in LLMs](differential_syntactic_and_semantic_encoding_in_llms.md)
+- [\[NeurIPS 2025\] Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs](../../NeurIPS2025/llm_nlp/triplets_better_than_pairs_towards_stable_and_effective_self-play_fine-tuning_fo.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiffBench Meets DiffAgent: End-to-End LLM-Driven Diffusion Acceleration Code Generation
 description: >-
-  [AAAI 2026][Code Intelligence][LLM Agent] This paper proposes DiffBench (an evaluation benchmark comprising 604 diffusion model acceleration tasks across 5 difficulty levels) and DiffAgent (a closed-loop framework integr…
+  [AAAI 2026][Code Intelligence][LLM Agent] This paper proposes DiffBench (an evaluation benchmark comprising 604 diffusion model acceleration tasks across 5 difficulty levels) and DiffAgent (a closed-loop framework integrating Planning, Coding, and Debugging agents with a genetic algorithm-based selector). On Claude Sonnet 4, the framework improves the pass rate for diffusion acceleration code generation from 54.30% to 81.59%, achieving a 68.27% success rate on complex optimiz…
 tags:
   - "AAAI 2026"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "genetic algorithm optimization"
 date: 2026-05-08
-content_hash: 8b6f75fe8bc8404d
+content_hash: 4cd00de80c08398a
 ---
 
 # DiffBench Meets DiffAgent: End-to-End LLM-Driven Diffusion Acceleration Code Generation
@@ -125,11 +125,11 @@ Four LLMs are evaluated on DiffBench; DiffAgent yields substantial improvements 
 
 ## Related Papers
 
+- [\[ACL 2025\] Tree-of-Code: A Tree-Structured Exploring Framework for End-to-End Code Generation](../../ACL2025/code_intelligence/tree-of-code_a_tree-structured_exploring_framework_for_end-to-end_code_generatio.md)
+- [\[ICLR 2026\] DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation](../../ICLR2026/code_intelligence/diffucoder_understanding_and_improving_masked_diffusion_models_for_code_generati.md)
+- [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](recode_updating_code_api_knowledge_with_reinforcement_learning.md)
 - [\[ACL 2026\] StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation](../../ACL2026/code_intelligence/storycoder_narrative_reformulation_for_structured_reasoning_in_llm_code_generati.md)
 - [\[ICML 2026\] Locally Coherent Parallel Decoding in Diffusion Language Models](../../ICML2026/code_intelligence/locally_coherent_parallel_decoding_in_diffusion_language_models.md)
-- [\[ACL 2026\] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution](../../ACL2026/code_intelligence/solidcoder_bridging_the_mental-reality_gap_in_llm_code_generation_through_concre.md)
-- [\[ICML 2026\] Entropy-informed Decoding: Adaptive Information-Driven Branching](../../ICML2026/code_intelligence/entropy-informed_decoding_adaptive_information-driven_branching.md)
-- [\[ACL 2026\] EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents](../../ACL2026/code_intelligence/eet_experience-driven_early_termination_for_cost-efficient_software_engineering_.md)
 
 </div>
 

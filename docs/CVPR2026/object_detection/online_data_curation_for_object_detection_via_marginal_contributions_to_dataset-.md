@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Online Data Curation for Object Detection via Marginal Contributions to Dataset-level Average Precision
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] DetGain is the first truly effective online data curation method for object detection. Instead of relying on unstable training losses, it estimates the "marginal contribution" of each image to the "dataset-level mAP." By using the teacher–student contribution difference as the learnability signal to select the most inf
+  [CVPR 2026][Object Detection][Online Data Curation] DetGain is the first truly effective online data curation method for object detection. Instead of relying on unstable training losses, it estimates the "marginal contribution" of each image to the "dataset-level mAP." By using the teacher–student contribution difference as the learnability signal to select the most informative samples in each iteration, it is architecture-agnostic and plug-and-play. It brings stable improvem…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Online Data Curation"
+  - "Marginal mAP Contribution"
+  - "Teacher–Student Learnability"
+  - "Plug-and-play Sampling"
 date: 2026-05-08
-content_hash: 893bdf23978584b1
+content_hash: 410b6eb450fe8d68
 ---
+
 # Online Data Curation for Object Detection via Marginal Contributions to Dataset-level Average Precision
 
 **Conference**: CVPR 2026  
@@ -146,8 +151,8 @@ Loss/gradient-based metrics fluctuate significantly due to internal loss scales 
 - [\[CVPR 2025\] Interpreting Object-level Foundation Models via Visual Precision Search](../../CVPR2025/object_detection/interpreting_object-level_foundation_models_via_visual_precision_search.md)
 - [\[CVPR 2026\] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision](reasoning-driven_anomaly_detection_and_localization_with_image-level_supervision.md)
 - [\[CVPR 2026\] Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](heuristic-inspired_reasoning_priors_facilitate_data-efficient_referring_object_d.md)
-- [\[CVPR 2026\] HeROD: Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](herod_heuristic_inspired_reasoning_data_efficient_rod.md)
 - [\[CVPR 2026\] Toward Generalizable Whole Brain Representations with High-Resolution Light-Sheet Data](toward_generalizable_whole_brain_representations_with_high-resolution_light-shee.md)
+- [\[CVPR 2026\] MMR-AD: A Large-Scale Multimodal Dataset for Benchmarking General Anomaly Detection with MLLMs](mmrad_multimodal_anomaly_detection.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RAGNet: Large-scale Reasoning-based Affordance Segmentation Benchmark towards General Grasping
 description: >-
-  [ICCV 2025][Segmentation][affordance segmentation] This paper introduces RAGNet, the first large-scale reasoning-based affordance segmentation benchmark (273k images, 180 categories, 26k reasoning instructions)…
+  [ICCV 2025][Segmentation][affordance segmentation] This paper introduces RAGNet, the first large-scale reasoning-based affordance segmentation benchmark (273k images, 180 categories, 26k reasoning instructions), and proposes the AffordanceNet framework, which integrates VLM-pretrained affordance prediction with grasp pose generation, demonstrating strong open-world generalization and reasoning capabilities.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "large-scale benchmark"
   - "vision-language model"
 date: 2026-05-08
-content_hash: a251524e8d9ae7ba
+content_hash: 7e3850620ee98446
 ---
 
 # RAGNet: Large-scale Reasoning-based Affordance Segmentation Benchmark towards General Grasping
@@ -172,11 +172,11 @@ RAGNet is the first large-scale affordance benchmark to simultaneously cover all
 
 ## Related Papers
 
+- [\[CVPR 2025\] Scale Efficient Training for Large Datasets](../../CVPR2025/segmentation/scale_efficient_training_for_large_datasets.md)
 - [\[CVPR 2026\] XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening](../../CVPR2026/segmentation/xseg_a_large-scale_x-ray_contraband_segmentation_benchmark_for_real-world_securi.md)
 - [\[CVPR 2026\] RealVLG-R1: A Large-Scale Real-World Visual-Language Grounding Benchmark for Robotic Perception and Manipulation](../../CVPR2026/segmentation/realvlg-r1_a_large-scale_real-world_visual-language_grounding_benchmark_for_robo.md)
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 - [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
-- [\[ICCV 2025\] Online Reasoning Video Segmentation with Just-in-Time Digital Twins](online_reasoning_video_segmentation_with_just-in-time_digital_twins.md)
 
 </div>
 

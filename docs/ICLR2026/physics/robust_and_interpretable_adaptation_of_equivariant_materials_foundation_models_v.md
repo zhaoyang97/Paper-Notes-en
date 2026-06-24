@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robust and Interpretable Adaptation of Equivariant Materials Foundation Models via Sparsity-promoting Fine-tuning
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][STR] This paper proposes a **sparsity-promoting fine-tuning** method that, while strictly maintaining equivariance, updates only approximately 0.5–3% of path weight parameters in Materials Foundation Models (MLIPs). It achieves or exceeds the energy/force prediction accuracy of full fine-tuning and ELoRA on molecular, cryst
+  [ICLR 2026][Physics & Scientific Computing][Machine Learning Interatomic Potentials] This paper proposes a **sparsity-promoting fine-tuning** method that, while strictly maintaining equivariance, updates only approximately 0.5–3% of path weight parameters in Materials Foundation Models (MLIPs). It achieves or exceeds the energy/force prediction accuracy of full fine-tuning and ELoRA on molecular, crystal, and magnetic systems, while the resulting sparse update patterns provid…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - STR
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Machine Learning Interatomic Potentials"
+  - "E(3) Equivariance"
+  - "Sparse Fine-tuning"
+  - "STR"
+  - "Magnetic Prediction"
 date: 2026-05-08
-content_hash: e6c1aa559fabbd29
+content_hash: c4120fd7fcc75fda
 ---
+
 # Robust and Interpretable Adaptation of Equivariant Materials Foundation Models via Sparsity-promoting Fine-tuning
 
 **Conference**: ICLR 2026  
@@ -176,10 +181,10 @@ Ours (L) leads across energy, force, and magnetic moment metrics while updating 
 ## Related Papers
 
 - [\[ICLR 2026\] Physics-Constrained Fine-Tuning of Flow-Matching Models for Generation and Inverse Problems](physics-constrained_fine-tuning_of_flow-matching_models_for_generation_and_inver.md)
-- [\[ICLR 2026\] VisionLaw: Inferring Interpretable Intrinsic Dynamics from Visual Observations via Bilevel Optimization](visionlaw_inferring_interpretable_intrinsic_dynamics_from_visual_observations_vi.md)
 - [\[ICML 2026\] Interpretable Equivariant Marks for Contrastive Cosmological Inference](../../ICML2026/physics/interpretable_neural_marked_statistics_for_cosmological_inference.md)
 - [\[ICLR 2026\] Advancing Universal Deep Learning for Electronic-Structure Hamiltonian Prediction of Materials](advancing_universal_deep_learning_for_electronic-structure_hamiltonian_predictio.md)
-- [\[ICLR 2026\] AQER: A Scalable and Efficient Data Loader for Digital Quantum Computers](aqer_a_scalable_and_efficient_data_loader_for_digital_quantum_computers.md)
+- [\[ICML 2026\] Foundation Inference Models for Ordinary Differential Equations](../../ICML2026/physics/foundation_inference_models_for_ordinary_differential_equations.md)
+- [\[ICLR 2026\] VisionLaw: Inferring Interpretable Intrinsic Dynamics from Visual Observations via Bilevel Optimization](visionlaw_inferring_interpretable_intrinsic_dynamics_from_visual_observations_vi.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DLLM-JEPA: Joint Embedding Predictive Architectures for Masked Diffusion Language Models
 description: >-
-  [ICML 2026][Interpretability][JEPA] The study incorporates a JEPA representation alignment objective into the fine-tuning phase of masked diffusion language models. By partitioning the same sentence into a "low-mask context view" and a "high-mask target view" via different masking ratios, the model performs a single gradient-based forward pass on the con
+  [ICML 2026][Interpretability][JEPA] The study incorporates a JEPA representation alignment objective into the fine-tuning phase of masked diffusion language models. By partitioning the same sentence into a "low-mask context view" and a "high-mask target view" via different masking ratios, the model performs a single gradient-based forward pass on the context view to simultaneously compute diffusion loss and JEPA embeddings, while utilizing an EMA replica for a gradient-free f…
 tags:
-  - ICML 2026
-  - Interpretability
-  - JEPA
-  - Fine-tuning
+  - "ICML 2026"
+  - "Interpretability"
+  - "JEPA"
+  - "Masked Diffusion Language Models"
+  - "Representation Learning"
+  - "Fine-tuning"
+  - "EMA Target Encoder"
 date: 2026-05-08
-content_hash: 4171af58139ea9f3
+content_hash: 5bc5e51ee5cd257b
 ---
+
 # DLLM-JEPA: Joint Embedding Predictive Architectures for Masked Diffusion Language Models
 
 **Conference**: ICML 2026  
@@ -138,13 +142,17 @@ DLLM-JEPA is the only method to achieve both task gains and a Wikitext loss lowe
 
 <div class="related-papers" markdown="1">
 
-- **I-JEPA**: [V-JEPA: Video Joint-Embedding Predictive Architecture](https://arxiv.org/abs/2404.08471)
-- **LLM-JEPA**: [Joint Embedding Predictive Architecture for Language Models](https://arxiv.org/abs/2501.00001) (Hypothetical ArXiv)
+## Related Papers
+
+- [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
+- [\[ICLR 2026\] On the Predictive Power of Representation Dispersion in Language Models](../../ICLR2026/interpretability/on_the_predictive_power_of_representation_dispersion_in_language_models.md)
+- [\[ACL 2026\] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](../../ACL2026/interpretability/towards_intrinsic_interpretability_of_large_language_modelsa_survey_of_design_pr.md)
+- [\[ICLR 2026\] Patronus: Interpretable Diffusion Models with Prototypes](../../ICLR2026/interpretability/patronus_interpretable_diffusion_models_with_prototypes.md)
+- [\[NeurIPS 2025\] Far from the Shallow: Brain-Predictive Reasoning Embedding through Residual Disentanglement](../../NeurIPS2025/interpretability/far_from_the_shallow_brain-predictive_reasoning_embedding_through_residual_disen.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)

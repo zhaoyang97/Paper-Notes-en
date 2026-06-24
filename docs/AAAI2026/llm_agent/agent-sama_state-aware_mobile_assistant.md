@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Agent-SAMA: State-Aware Mobile Assistant
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes Agent-SAMA, which for the first time introduces a finite state machine (FSM) into mobile GUI agents…
+  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes Agent-SAMA, which for the first time introduces a finite state machine (FSM) into mobile GUI agents, modeling UI screens as states and user actions as transitions. Four specialized agents collaborate to achieve state-aware task planning, execution verification, and error recovery, improving success rate by up to 12% and recovery rate by 13.8% on cross-app benchmarks.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Error Recovery"
   - "Mobile Task Automation"
 date: 2026-05-08
-content_hash: 96bd0638d0d6ed45
+content_hash: ced27bee4145dcee
 ---
 
 # Agent-SAMA: State-Aware Mobile Assistant

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Text-Conditional JEPA for Learning Semantically Rich Visual Representations
 description: >-
-  [ICML 2026][Multimodal VLM][JEPA] This paper proposes TC-JEPA, which additionally conditions the I-JEPA masked feature predictor on image captions. Through multi-layer sparse cross-attention, patch representations become predictable under text "prompts," thereby learning semantically richer visual representations that are particularly friendly to dense
+  [ICML 2026][Multimodal VLM][JEPA] This paper proposes TC-JEPA, which additionally conditions the I-JEPA masked feature predictor on image captions. Through multi-layer sparse cross-attention, patch representations become predictable under text "prompts," thereby learning semantically richer visual representations that are particularly friendly to dense prediction tasks without using contrastive loss.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - JEPA
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "JEPA"
+  - "text-conditional"
+  - "feature prediction"
+  - "fine-grained vision-language"
+  - "cross-attention"
 date: 2026-05-08
-content_hash: 52f81a86a1ab5060
+content_hash: cad085d067c5e5b1
 ---
+
 # Text-Conditional JEPA for Learning Semantically Rich Visual Representations
 
 **Conference**: ICML 2026  
@@ -149,8 +154,8 @@ The second table compares image-text pre-training: TC-JEPA on IN-21k achieves AD
 ## Related Papers
 
 - [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](../../CVPR2026/multimodal_vlm/learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
-- [\[ICML 2026\] CHARM: 用 Multimodal JEPA + 通道描述做时间序列 foundation embedding](giving_sensors_a_voice_multimodal_jepa_for_semantic_time-series_embeddings.md)
 - [\[ICML 2026\] Conditional Diffusion Sampling](conditional_diffusion_sampling.md)
+- [\[ICML 2026\] CHARM: Using Multimodal JEPA + Channel Descriptions for Time Series Foundation Embedding](giving_sensors_a_voice_multimodal_jepa_for_semantic_time-series_embeddings.md)
 - [\[ICML 2025\] M3-JEPA: Multimodal Alignment via Multi-gate MoE based on JEPA](../../ICML2025/multimodal_vlm/m3-jepa_multimodal_alignment_via_multi-gate_moe_based_on_the_joint-embedding_pre.md)
 - [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
 

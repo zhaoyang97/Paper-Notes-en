@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] The ELLMob framework is proposed based on the Fuzzy-Trace Theory (FTT) from cognitive psychology. It reconciles the competition between user daily patterns and social event constraints by extracting and iteratively aligning "habit gists" and "event gists," achieving explainable event-driven trajectory generation.
+  [ICLR 2026][LLM (Other)][Human Mobility Generation] The ELLMob framework is proposed based on the Fuzzy-Trace Theory (FTT) from cognitive psychology. It reconciles the competition between user daily patterns and social event constraints by extracting and iteratively aligning "habit gists" and "event gists," achieving explainable event-driven trajectory generation.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Human Mobility Generation"
+  - "Event-Driven Trajectories"
+  - "LLM Self-Alignment"
+  - "Fuzzy-Trace Theory"
+  - "Cognitive Decision Making"
 date: 2026-05-08
-content_hash: 8807067e1734ecd9
+content_hash: b1fd014778c5187c
 ---
+
 # ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events
 description: >-
-  [NeurIPS 2025][Remote Sensing][change captioning] This work introduces RSCC — the first large-scale disaster-aware remote sensing change captioning dataset comprising 62…
+  [NeurIPS 2025][Remote Sensing][change captioning] This work introduces RSCC — the first large-scale disaster-aware remote sensing change captioning dataset comprising 62,351 pre/post-disaster image pairs with detailed change descriptions, covering 31 global disaster events including earthquakes, floods, and wildfires. High-quality annotations are generated using the QvQ-Max visual reasoning model, and a comprehensive benchmark evaluation framework is established.
 tags:
   - "NeurIPS 2025"
   - "Remote Sensing"
@@ -11,7 +11,7 @@ tags:
   - "bi-temporal"
   - "vision-language model"
 date: 2026-05-08
-content_hash: 773c3d3180a4ab9a
+content_hash: 8049e2fba93976f1
 ---
 
 # RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events
@@ -123,10 +123,10 @@ Standard autoregressive language modeling loss. The original RSCC resolution of 
 ## Related Papers
 
 - [\[ICCV 2025\] CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../../ICCV2025/remote_sensing/citynav_a_large-scale_dataset_for_real-world_aerial_navigation.md)
-- [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 - [\[CVPR 2026\] Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments](../../CVPR2026/remote_sensing/olbedo_an_albedo_and_shading_aerial_dataset_for_large-scale_outdoor_environments.md)
+- [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 - [\[NeurIPS 2025\] Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction](connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)
-- [\[NeurIPS 2025\] GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction](greenhyperspectra_a_multi-source_hyperspectral_dataset_for_global_vegetation_tra.md)
+- [\[CVPR 2025\] Hierarchical Dual-Change Collaborative Learning for UAV Scene Change Captioning](../../CVPR2025/remote_sensing/hierarchical_dual-change_collaborative_learning_for_uav_scene_change_captioning.md)
 
 </div>
 

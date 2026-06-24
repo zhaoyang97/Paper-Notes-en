@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] F2Net: A Frequency-Fused Network for Ultra-High Resolution Remote Sensing Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] F2Net decomposes ultra-high resolution (UHR) remote sensing images in the frequency domain into high-frequency and low-frequency components for separate processing. A high-frequency branch preserves full resolution for boundary details, while the low-frequency branch is downsampled and split into two sub-branches (shor
+  [CVPR 2026][Segmentation][Ultra-high resolution remote sensing] F2Net decomposes ultra-high resolution (UHR) remote sensing images in the frequency domain into high-frequency and low-frequency components for separate processing. A high-frequency branch preserves full resolution for boundary details, while the low-frequency branch is downsampled and split into two sub-branches (short-range and long-range) for semantic capture. A Hybrid Frequency Fusion (HFF) module integrates…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Ultra-high resolution remote sensing"
+  - "frequency domain decomposition"
+  - "multi-branch network"
+  - "semantic segmentation"
+  - "gradient balancing"
 date: 2026-05-08
-content_hash: ac6972c12cf16c0d
+content_hash: 3fc17b593baad293
 ---
+
 # F2Net: A Frequency-Fused Network for Ultra-High Resolution Remote Sensing Segmentation
 
 **Conference**: CVPR 2026  
@@ -134,11 +140,11 @@ Other findings: The high-frequency branch is highly sensitive to resolution (dro
 
 ## Related Papers
 
-- [\[CVPR 2026\] RDNet: Region Proportion-Aware Dynamic Adaptive Salient Object Detection Network in Optical Remote Sensing Images](rdnet_region_proportion-aware_dynamic_adaptive_salient_object_detection_network_.md)
-- [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
+- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
 - [\[CVPR 2026\] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation](task-oriented_data_synthesis_and_control-rectify_sampling_for_remote_sensing_sem.md)
 - [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
 - [\[CVPR 2026\] ReSAM: Refine, Requery, and Reinforce: Self-Prompting Point-Supervised Segmentation for Remote Sensing Images](resam_refine_requery_and_reinforce_self-prompting_point-supervised_segmentation_.md)
+- [\[CVPR 2025\] ROS-SAM: High-Quality Interactive Segmentation for Remote Sensing Moving Object](../../CVPR2025/segmentation/ros-sam_high-quality_interactive_segmentation_for_remote_sensing_moving_object.md)
 
 </div>
 

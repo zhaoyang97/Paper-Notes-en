@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] To Lie or Not to Lie? Investigating The Biased Spread of Global Lies by LLMs
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This paper proposes GlobalLies—a multilingual parallel dataset containing 440 misinformation generation templates and 6,867 entities (spanning 8 languages and 195 countries). It reveals systematic national and linguistic biases in LLM misinformation propagation: misinformation generation rates are significantly higher
+  [ACL 2026][Social Computing][Misinformation] This paper proposes GlobalLies—a multilingual parallel dataset containing 440 misinformation generation templates and 6,867 entities (spanning 8 languages and 195 countries). It reveals systematic national and linguistic biases in LLM misinformation propagation: misinformation generation rates are significantly higher for low HDI countries (statistical correlation $\rho=-0.355$, $p=5\times10^{-7}$)…
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Misinformation"
+  - "Multilingual Safety"
+  - "Global Bias"
+  - "Safety Classifiers"
+  - "Retrieval-Augmented Fact-checking"
 date: 2026-05-08
-content_hash: 6ec844ca2beafe2a
+content_hash: ee89b00d7f7efa50
 ---
+
 # To Lie or Not to Lie? Investigating The Biased Spread of Global Lies by LLMs
 
 **Conference**: ACL 2026  

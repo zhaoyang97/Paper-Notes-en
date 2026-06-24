@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization
 description: >-
-  [NeurIPS 2025][Video Understanding][video LLM] This paper proposes RRPO (Refined Regularized Preference Optimization), which replaces DPO's response-level rewards with subsequence-level fine-grained rewards and token-wis…
+  [NeurIPS 2025][Video Understanding][video LLM] This paper proposes RRPO (Refined Regularized Preference Optimization), which replaces DPO's response-level rewards with subsequence-level fine-grained rewards and token-wise KL regularization. Combined with a self-alignment data generation framework, RRPO reduces hallucinations and improves temporal reasoning on video understanding tasks.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "hallucination"
   - "temporal understanding"
 date: 2026-05-08
-content_hash: b80e43130e00155e
+content_hash: 0c6c0b2680efba51
 ---
 
 # Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] CyberGym-E2E: Scalable Real-World Benchmark for AI Agents' End-to-End Cybersecurity Capabilities
 description: >-
-  [ICML 2026][Others][OSS-Fuzz] The authors construct CyberGym-E2E, the first large-scale real-world AI Agent security benchmark covering the full lifecycle of "vulnerability discovery $\rightarrow$ PoC generation $\rightarrow$ patch generation $\rightarrow$ functional regression testing" (920 vulnerabilities across 139 open-source projects). Using a
+  [ICML2026][Vulnerability Discovery] The authors construct CyberGym-E2E, the first large-scale real-world AI Agent security benchmark covering the full lifecycle of "vulnerability discovery $\rightarrow$ PoC generation $\rightarrow$ patch generation $\rightarrow$ functional regression testing" (920 vulnerabilities across 139 open-source projects). Using an agent-assisted pipeline with expert final review, manual costs are minimized. Evaluations show that while frontier models…
 tags:
-  - ICML 2026
-  - Others
-  - OSS-Fuzz
+  - "ICML2026"
+  - "Vulnerability Discovery"
+  - "PoC Generation"
+  - "Patch Generation"
+  - "Agent Evaluation"
+  - "OSS-Fuzz"
 date: 2026-05-08
-content_hash: 6a3cacae76060eee
+content_hash: b875805e1ae5bec4
 ---
+
 # CyberGym-E2E: Scalable Real-World Benchmark for AI Agents' End-to-End Cybersecurity Capabilities
 
 **Conference**: ICML2026  

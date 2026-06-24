@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReFocusEraser: Refocusing for Small Object Removal with Robust Context-Shadow Repair
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Addressing the issue of detail loss when diffusion models remove small objects, ReFocusEraser utilizes "Camera-adaptive magnification + LoRA fine-tuning" to enlarge and repair small targets first, followed by "Mask-based stitching + Seam-Shadow Aware Decoder" to seamlessly re-insert them into the original image while a
+  [ICLR 2026][Image Generation][Object removal] Addressing the issue of detail loss when diffusion models remove small objects, ReFocusEraser utilizes "Camera-adaptive magnification + LoRA fine-tuning" to enlarge and repair small targets first, followed by "Mask-based stitching + Seam-Shadow Aware Decoder" to seamlessly re-insert them into the original image while automatically removing residual shadows. This elevates the PSNR from 25.0 to 31.3 on the RORD dataset.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Object removal"
+  - "image inpainting"
+  - "small objects"
+  - "camera refocusing"
+  - "shadow repair"
 date: 2026-05-08
-content_hash: 12b51a20ee3bada7
+content_hash: f830cf26d6348906
 ---
+
 # ReFocusEraser: Refocusing for Small Object Removal with Robust Context-Shadow Repair
 
 **Conference**: ICLR 2026  
@@ -131,10 +137,10 @@ Table 2 incrementally adds components ((a) baseline trained on original image, (
 
 ## Related Papers
 
-- [\[CVPR 2025\] MetaShadow: Object-Centered Shadow Detection, Removal, and Synthesis](../../CVPR2025/image_generation/metashadow_object-centered_shadow_detection_removal_and_synthesis.md)
-- [\[ICLR 2026\] Geometric Image Editing via Effects-Sensitive In-Context Inpainting with Diffusion Transformers](geometric_image_editing_via_effects-sensitive_in-context_inpainting_with_diffusi.md)
 - [\[ICML 2026\] AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression](../../ICML2026/image_generation/adaeraser_training-free_object_removal_via_adaptive_attention_suppression.md)
+- [\[CVPR 2025\] MetaShadow: Object-Centered Shadow Detection, Removal, and Synthesis](../../CVPR2025/image_generation/metashadow_object-centered_shadow_detection_removal_and_synthesis.md)
 - [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](../../CVPR2026/image_generation/precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
+- [\[CVPR 2025\] RORem: Training a Robust Object Remover with Human-in-the-Loop](../../CVPR2025/image_generation/rorem_training_a_robust_object_remover_with_human-in-the-loop.md)
 - [\[CVPR 2026\] ShadowDraw: From Any Object to Shadow-Drawing Compositional Art](../../CVPR2026/image_generation/shadowdraw_from_any_object_to_shadow-drawing_compositional_art.md)
 
 </div>

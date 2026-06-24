@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Measurement-Consistent Langevin Corrector for Stabilizing Latent Diffusion Inverse Problem Solvers
 description: >-
-  [ICML 2026][Image Restoration][Paper Note] This paper reinterprets the instability of Latent Diffusion Model (LDM) inverse problem solvers as "solver dynamics deviating from the time-marginal distributions learned by the diffusion model." It proposes the MCLC module—a plug-and-play component that inserts a Langevin correction step, constrained to the orthogonal
+  [ICML 2026][Image Restoration][Latent Diffusion] This paper reinterprets the instability of Latent Diffusion Model (LDM) inverse problem solvers as "solver dynamics deviating from the time-marginal distributions learned by the diffusion model." It proposes the MCLC module—a plug-and-play component that inserts a Langevin correction step, constrained to the orthogonal complement of the measurement gradient, after the measurement consistency step. This pulls the latent variable…
 tags:
-  - ICML 2026
-  - Image Restoration
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Latent Diffusion"
+  - "Inverse Problems"
+  - "Langevin Correction"
+  - "Measurement Consistency"
+  - "Plug-and-Play"
 date: 2026-05-08
-content_hash: 3ce161b352681fbf
+content_hash: 9d6ab584d158efaf
 ---
+
 # Measurement-Consistent Langevin Corrector for Stabilizing Latent Diffusion Inverse Problem Solvers
 
 **Conference**: ICML 2026  
@@ -138,9 +144,9 @@ MCLC relies on the combination of Langevin correction (to reduce KL) and orthogo
 
 - [\[CVPR 2026\] Outlier-Robust Diffusion Solvers for Inverse Problems](../../CVPR2026/image_restoration/outlier-robust_diffusion_solvers_for_inverse_problems.md)
 - [\[ICML 2026\] Consistent Diffusion Language Models](consistent_diffusion_language_models.md)
+- [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
 - [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
-- [\[ICML 2026\] PODiff: Latent Diffusion in Proper Orthogonal Decomposition Space for Scientific Super-Resolution](podiff_latent_diffusion_in_proper_orthogonal_decomposition_space_for_scientific_.md)
-- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](../../CVPR2026/image_restoration/dual_ascent_diffusion_for_inverse_problems.md)
+- [\[ICML 2026\] Solving Inverse Problems with Flow-based Models via Model Predictive Control](solving_inverse_problems_with_flow-based_models_via_model_predictive_control.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ECSEL: Explainable Classification via Signomial Equation Learning
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] ECSEL employs "one signomial (sum of power-law terms with real exponents) per category + softmax" as a classifier. Combined with L1 sparse regularization and multi-stage optimization, it recovers 95.86% of target equations on symbolic regression benchmarks like AI Feynman with significantly lower compute than SOTA, whi
+  [ICML 2026][Causal Inference][signomial functions] ECSEL employs "one signomial (sum of power-law terms with real exponents) per category + softmax" as a classifier. Combined with L1 sparse regularization and multi-stage optimization, it recovers 95.86% of target equations on symbolic regression benchmarks like AI Feynman with significantly lower compute than SOTA, while achieving parity with XGBoost/MLP on 11 classification datasets. All feature attributions are derived in c…
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML 2026"
+  - "Causal Inference"
+  - "signomial functions"
+  - "symbolic regression"
+  - "explainable classification"
+  - "L1 sparse regularization"
+  - "closed-form attribution"
 date: 2026-05-08
-content_hash: 4f6b14c5f4aa85ea
+content_hash: b135cdd532a7d535
 ---
+
 # ECSEL: Explainable Classification via Signomial Equation Learning
 
 **Conference**: ICML 2026  
@@ -149,8 +155,8 @@ ECSEL ranked first in F1 on 4 out of 11 datasets and maintained a margin of $<1\
 - [\[ICML 2026\] Outcome-Aware Spectral Feature Learning for Instrumental Variable Regression](outcome-aware_spectral_feature_learning_for_instrumental_variable_regression.md)
 - [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
 - [\[ICLR 2026\] Self-Supervised Learning from Structural Invariance](../../ICLR2026/causal_inference/self-supervised_learning_from_structural_invariance.md)
+- [\[ICLR 2026\] Coarse-to-Fine Learning of Dynamic Causal Structures](../../ICLR2026/causal_inference/coarse-to-fine_learning_of_dynamic_causal_structures.md)
 - [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](../../ICLR2026/causal_inference/learning_robust_intervention_representations_with_delta_embeddings.md)
-- [\[CVPR 2026\] Retrieving Counterfactuals Improves Visual In-Context Learning](../../CVPR2026/causal_inference/retrieving_counterfactuals_improves_visual_in-context_learning.md)
 
 </div>
 

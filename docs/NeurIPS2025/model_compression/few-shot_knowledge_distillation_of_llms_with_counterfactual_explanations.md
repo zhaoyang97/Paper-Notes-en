@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations
 description: >-
-  [NeurIPS 2025][Model Compression][knowledge distillation] This paper proposes CoD (Counterfactual-explanation-infused Distillation), which injects counterfactual explanations into few-shot training sets to precisely map…
+  [NeurIPS 2025][Model Compression][knowledge distillation] This paper proposes CoD (Counterfactual-explanation-infused Distillation), which injects counterfactual explanations into few-shot training sets to precisely map the teacher's decision boundary, achieving significant improvements over standard distillation methods across 6 datasets using only 8–512 samples.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LLM Compression"
   - "Decision Boundary"
 date: 2026-05-08
-content_hash: 76e6c7581d1c52d4
+content_hash: 7eef010c805179b7
 ---
 
 # Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations
@@ -169,10 +169,10 @@ Experiments on CoLA and Yelp confirm that CoD is equally effective for generativ
 ## Related Papers
 
 - [\[NeurIPS 2025\] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification](preference-driven_knowledge_distillation_for_few-shot_node_classification.md)
+- [\[CVPR 2025\] Logits DeConfusion with CLIP for Few-Shot Learning](../../CVPR2025/model_compression/logits_deconfusion_with_clip_for_few-shot_learning.md)
 - [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
 - [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
-- [\[NeurIPS 2025\] KINDLE: Knowledge-Guided Distillation for Prior-Free Gene Regulatory Network Inference](kindle_knowledge-guided_distillation_for_prior-free_gene_regulatory_network_infe.md)
-- [\[ICLR 2026\] AMiD: Knowledge Distillation for LLMs with α-mixture Assistant Distribution](../../ICLR2026/model_compression/amid_knowledge_distillation_for_llms_with_α-mixture_assistant_distribution.md)
+- [\[CVPR 2025\] Tripartite Weight-Space Ensemble for Few-Shot Class-Incremental Learning](../../CVPR2025/model_compression/tripartite_weight-space_ensemble_for_few-shot_class-incremental_learning.md)
 
 </div>
 

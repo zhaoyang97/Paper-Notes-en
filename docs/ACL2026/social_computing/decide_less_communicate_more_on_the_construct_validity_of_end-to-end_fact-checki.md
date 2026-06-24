@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Decide less, communicate more: On the construct validity of end-to-end fact-checking in medicine
 description: >-
-  [ACL 2026][Social Computing][construct validity] The authors conducted an annotation study of 1,000 instances using 5 clinical experts on authentic claims from RedHOT (Reddit Health Discussions). They found that end-to-end medical fact-checking lacks construct validity due to three insurmountable barriers: difficulties in linking evidence, underspecified claims, and
+  [ACL 2026 Findings][Social Computing][Medical fact-checking] The authors conducted an annotation study of 1,000 instances using 5 clinical experts on authentic claims from RedHOT (Reddit Health Discussions). They found that end-to-end medical fact-checking lacks construct validity due to three insurmountable barriers: difficulties in linking evidence, underspecified claims, and subjective severity judgments. Consequently, the paper proposes reframing medical fact-checking as…
 tags:
-  - ACL 2026
-  - Social Computing
-  - construct validity
-  - RedHOT
-  - RCT
+  - "ACL 2026 Findings"
+  - "Social Computing"
+  - "Medical fact-checking"
+  - "construct validity"
+  - "RedHOT"
+  - "RCT"
+  - "Communication Model"
 date: 2026-05-08
-content_hash: ba1b1063f4d44f5a
+content_hash: d5e9d583c4fbf76c
 ---
+
 # Decide less, communicate more: On the construct validity of end-to-end fact-checking in medicine
 
 **Conference**: ACL 2026 Findings  
@@ -155,9 +158,9 @@ Engineering optimizations failed to significantly improve synthesis-level agreem
 
 - [\[ICCV 2025\] PropVG: End-to-End Proposal-Driven Visual Grounding with Multi-Granularity Discrimination](../../ICCV2025/social_computing/propvg_end-to-end_proposal-driven_visual_grounding_with_multi-granularity_discri.md)
 - [\[ACL 2026\] VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking](veritas_the_first_dynamic_benchmark_for_multimodal_automated_fact-checking.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 - [\[AAAI 2026\] Fact2Fiction: Targeted Poisoning Attack to Agentic Fact-checking System](../../AAAI2026/social_computing/fact2fiction_targeted_poisoning_attack_to_agentic_fact-check.md)
 - [\[ICML 2025\] DEFAME: Dynamic Evidence-based FAct-checking with Multimodal Experts](../../ICML2025/social_computing/defame_dynamic_evidence-based_fact-checking_with_multimodal_experts.md)
-- [\[ACL 2026\] ClaimDB: A Fact Verification Benchmark over Large Structured Data](claimdb_a_fact_verification_benchmark_over_large_structured_data.md)
 
 </div>
 

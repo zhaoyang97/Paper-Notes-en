@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Can Adaptive Gradient Methods Converge under Heavy-Tailed Noise? A Case Study of AdaGrad
 description: >-
-  [ICML 2026][Optimization & Theory][AdaGrad] This paper provides the first proof that AdaGrad converges under heavy-tailed noise ($p \in (4/3, 2]$) without any algorithmic modifications. It also establishes an algorithm-dependent lower bound showing that AdaGrad cannot achieve the minimax optimal rate, while proving that AdaGrad-Norm can achieve a faster rate of
+  [ICML 2026][Optimization][Adaptive gradient methods] This paper provides the first proof that AdaGrad converges under heavy-tailed noise ($p \in (4/3, 2]$) without any algorithmic modifications. It also establishes an algorithm-dependent lower bound showing that AdaGrad cannot achieve the minimax optimal rate, while proving that AdaGrad-Norm can achieve a faster rate of $O(1/T^{(p-1)/(2p)})$ under the assumption of a bounded objective function.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - AdaGrad
+  - "ICML 2026"
+  - "Optimization"
+  - "Adaptive gradient methods"
+  - "Heavy-tailed noise"
+  - "AdaGrad"
+  - "Non-convex optimization"
+  - "Convergence rates"
 date: 2026-05-08
-content_hash: 00f9f6d2b47bb25b
+content_hash: dfecdd02835f956d
 ---
+
 # Can Adaptive Gradient Methods Converge under Heavy-Tailed Noise? A Case Study of AdaGrad
 
 **Conference**: ICML 2026  
@@ -111,11 +116,11 @@ Since the coordinate-wise stepsize of standard AdaGrad leads to a trivial rate w
 
 ## Related Papers
 
+- [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](../../ICLR2026/optimization/clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
 - [\[ICML 2025\] Clipping Improves Adam-Norm and AdaGrad-Norm when the Noise Is Heavy-Tailed](../../ICML2025/optimization/clipping_improves_adam-norm_and_adagrad-norm_when_the_noise_is_heavy-tailed.md)
 - [\[ICML 2026\] Bregman meets Lévy: Stochastic Mirror Descent with Heavy-Tailed Noise in Continuous and Discrete Time](bregman_meets_lévy_stochastic_mirror_descent_with_heavy-tailed_noise_in_continuo.md)
-- [\[NeurIPS 2025\] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity](../../NeurIPS2025/optimization/second-order_optimization_under_heavy-tailed_noise_hessian_clipping_and_sample_c.md)
+- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](../../ICLR2026/optimization/decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
 - [\[ICML 2026\] On the Interaction of Batch Noise, Adaptivity, and Compression, under $(L_0,L_1)$-Smoothness: An SDE Approach](on_the_interaction_of_batch_noise_adaptivity_and_compression_under_l_0l_1-smooth.md)
-- [\[ICML 2026\] Mirror Descent Under Generalized Smoothness](mirror_descent_under_generalized_smoothness.md)
 
 </div>
 

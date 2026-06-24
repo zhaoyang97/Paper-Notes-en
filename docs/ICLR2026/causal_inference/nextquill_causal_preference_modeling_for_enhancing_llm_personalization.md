@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] NextQuill: Causal Preference Modeling for Enhancing LLM Personalization
 description: >-
-  [ICLR 2026][Causal Inference][do-calculus] NextQuill reformulates LLM personalization as a causal problem—viewing both model predictions and ground-truth user responses as the joint result of "User History/Features $\times$ Context." By using causal effects (do-calculus), it isolates the core preference-driven components and employs two alignment losses to lear
+  [ICLR 2026][Causal Inference][LLM Personalization] NextQuill reformulates LLM personalization as a causal problem—viewing both model predictions and ground-truth user responses as the joint result of "User History/Features $\times$ Context." By using causal effects (do-calculus), it isolates the core preference-driven components and employs two alignment losses to learn only these parts, achieving deeper personalization than undifferentiated alignment.
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - do-calculus
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "LLM Personalization"
+  - "Causal Preference Modeling"
+  - "Causal Effects"
+  - "do-calculus"
+  - "Preference Alignment"
+  - "Supervised Fine-Tuning"
 date: 2026-05-08
-content_hash: 1eae4e28ede408a4
+content_hash: 79ebff7698123eb9
 ---
+
 # NextQuill: Causal Preference Modeling for Enhancing LLM Personalization
 
 **Conference**: ICLR 2026  
@@ -120,15 +126,20 @@ Using SFT as the Base, components were added progressively (RI% reports Relative
 - **Value**: ⭐⭐⭐⭐ Plug-and-play for SFT pipelines with practical utility for personalized generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **ContextSFT**: The baseline for history-augmented fine-tuning.
-- **LaMP (Language Model Personalization)**: Benchmark for personalized generation across diverse tasks.
-- **OPPU**: Using Parameter-Efficient Fine-Tuning for personalized user adapters.
+## Related Papers
+
+- [\[ICLR 2026\] Meta-Router: Bridging Gold-standard and Preference-based Evaluations in LLM Routing](meta-router_bridging_gold-standard_and_preference-based_evaluations_in_llm_routi.md)
+- [\[ICLR 2026\] Counterfactual LLM-based Framework for Measuring Rhetorical Style](counterfactual_llm-based_framework_for_measuring_rhetorical_style.md)
+- [\[ICLR 2026\] Flattery, Fluff, and Fog: Diagnosing and Mitigating Idiosyncratic Biases in Preference Models](flattery_fluff_and_fog_diagnosing_and_mitigating_idiosyncratic_biases_in_prefere.md)
+- [\[ICML 2026\] Causal Modeling of Selection in Evolution](../../ICML2026/causal_inference/causal_modeling_of_selection_in_evolution.md)
+- [\[ICLR 2026\] Modeling Interference for Treatment Effect Estimation in Network Dynamic Environment](modeling_interference_for_treatment_effect_estimation_in_network_dynamic_environ.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Meta-Router: Bridging Gold-standard and Preference-based Evaluations in LLM Routing](meta-router_bridging_gold-standard_and_preference-based_evaluations_in_llm_routi.md)

@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] SVD Provably Denoises Nearest Neighbor Data
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Under the semi-random model of "low-dimensional signal + high-dimensional Gaussian noise," this paper proves that performing SVD twice on noisy data and projecting points onto the top-$k$ singular subspace allows for accurate recovery of the noise-free nearest neighbors within a noise level $\sigma = O(1/k^{1/4})$, an
+  [ICLR 2026][Learning Theory][Nearest Neighbor Search] Under the semi-random model of "low-dimensional signal + high-dimensional Gaussian noise," this paper proves that performing SVD twice on noisy data and projecting points onto the top-$k$ singular subspace allows for accurate recovery of the noise-free nearest neighbors within a noise level $\sigma = O(1/k^{1/4})$, an interval **significantly wider** than previous work. It also provides a matching information-theoretic imp…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "High-dimensional Statistics"
+  - "Spectral Methods"
+  - "Nearest Neighbor Search"
+  - "SVD Denoising"
+  - "Subspace Perturbation"
+  - "Semi-random Models"
+  - "Information-theoretic Lower Bounds"
 date: 2026-05-08
-content_hash: 572e2b6787e127f8
+content_hash: 6985367d8263c104
 ---
+
 # SVD Provably Denoises Nearest Neighbor Data
 
 **Conference**: ICLR 2026  
@@ -131,15 +139,14 @@ Synthetic data were constructed using SVD with controllable $s_k(B)$ to verify t
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Two-Layer Convolutional Autoencoders Trained on Normal Data Provably Detect Unseen Anomalies](two-layer_convolutional_autoencoders_trained_on_normal_data_provably_detect_unse.md)
-- [\[ICLR 2026\] T-Tamer: Provably Taming Trade-offs in ML Serving](t-tamer_provably_taming_trade-offs_in_ml_serving.md)
 - [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](../../ICML2026/learning_theory/provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
-- [\[ICLR 2026\] Why Less is More (Sometimes): A Theory of Data Curation](why_less_is_more_sometimes_a_theory_of_data_curation.md)
+- [\[ICLR 2026\] T-Tamer: Provably Taming Trade-offs in ML Serving](t-tamer_provably_taming_trade-offs_in_ml_serving.md)
 - [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
+- [\[ICLR 2026\] Why Less is More (Sometimes): A Theory of Data Curation](why_less_is_more_sometimes_a_theory_of_data_curation.md)
 
 </div>
 

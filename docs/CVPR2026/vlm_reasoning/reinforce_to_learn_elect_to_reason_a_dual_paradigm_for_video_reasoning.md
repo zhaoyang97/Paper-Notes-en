@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning
 description: >-
-  [CVPR 2026][Reinforcement Learning][Paper Note] Ours proposes the RLER dual-paradigm framework. In the training phase, GRPO is employed with three novel rewards (Frame-sensitive, Think-transparency, Anti-repetition) to teach the model to generate structured evidence. In the inference phase, a training-free orchestrator performs weighted election and self-check among
+  [CVPR 2026][VLM Reasoning][Video Reasoning] Ours proposes the RLER dual-paradigm framework. In the training phase, GRPO is employed with three novel rewards (Frame-sensitive, Think-transparency, Anti-repetition) to teach the model to generate structured evidence. In the inference phase, a training-free orchestrator performs weighted election and self-check among multiple candidates based on evidence consistency. This approach comprehensively outperforms open-source and RL-bas…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Reasoning"
+  - "Reinforcement Learning"
+  - "Evidence-driven"
+  - "Multi-candidate Election"
+  - "Test-time Inference"
 date: 2026-05-08
-content_hash: 825fd0de464dca86
+content_hash: 968fd8a5c8799377
 ---
+
 # Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ RLER deliberately aligns training rewards with inference scoring: the frame-sens
 
 ## Related Papers
 
-- [\[ICLR 2026\] How LLMs Learn to Reason: A Complex Network Perspective](../../ICLR2026/reinforcement_learning/how_llms_learn_to_reason_a_complex_network_perspective.md)
-- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](videossr_video_self-supervised_reinforcement_learning.md)
-- [\[CVPR 2026\] EVA: Efficient Reinforcement Learning for End-to-End Video Agent](eva_efficient_reinforcement_learning_for_end-to-end_video_agent.md)
-- [\[CVPR 2026\] Local Motion Matters: A Deconstruct-Recompose Paradigm for Reinforcement Learning Pre-training from Videos](local_motion_matters_a_deconstruct-recompose_paradigm_for_reinforcement_learning.md)
-- [\[CVPR 2026\] CCCaption: Dual-Reward Reinforcement Learning for Complete and Correct Image Captioning](cccaption_dual-reward_reinforcement_learning_for_complete_and_correct_image_capt.md)
+- [\[CVPR 2026\] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning](select_less_reason_more_prioritizing_evidence_purity_for_video_reasoning.md)
+- [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
+- [\[ICML 2026\] Find, Fix, Reason: Context Repair for Video Reasoning](../../ICML2026/vlm_reasoning/find_fix_reason_context_repair_for_video_reasoning.md)
+- [\[CVPR 2026\] POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs](points-long_adaptive_dual-mode_visual_reasoning_in_mllms.md)
+- [\[CVPR 2026\] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)
 
 </div>
 

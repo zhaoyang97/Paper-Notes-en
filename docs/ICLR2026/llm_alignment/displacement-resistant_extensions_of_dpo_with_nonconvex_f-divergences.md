@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Displacement-Resistant Extensions of DPO with Nonconvex $f$-Divergences
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] It is discovered that the solvability of f-DPO does not require $f$ to be convex (only $\lim_{t\to 0^+} f'(t) = -\infty$). Furthermore, it is proven that $\arg\min f(t) \geq 1$ is a necessary condition to resist probability displacement. Based on this, SquaredPO ($f(t) = \frac{1}{2}(\log t)^2$, non-convex) is proposed,
+  [ICLR 2026][LLM Alignment][DPO] It is discovered that the solvability of f-DPO does not require $f$ to be convex (only $\lim_{t\to 0^+} f'(t) = -\infty$). Furthermore, it is proven that $\arg\min f(t) \geq 1$ is a necessary condition to resist probability displacement. Based on this, SquaredPO ($f(t) = \frac{1}{2}(\log t)^2$, non-convex) is proposed, which significantly alleviates the decline in winner probability while maintaining performance.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
-  - f-divergence
-  - likelihood displacement
-  - preference optimization
-  - SquaredPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "DPO"
+  - "f-divergence"
+  - "likelihood displacement"
+  - "preference optimization"
+  - "SquaredPO"
 date: 2026-05-08
-content_hash: 9191c4fe4ccc3795
+content_hash: a0561e03d163ecd5
 ---
+
 # Displacement-Resistant Extensions of DPO with Nonconvex $f$-Divergences
 
 **Conference**: ICLR 2026  

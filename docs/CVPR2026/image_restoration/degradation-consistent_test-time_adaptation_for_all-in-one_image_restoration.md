@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] To address the performance drop of All-in-One Image Restoration (AiOIR) models when test-time degradation distributions deviate from training data, this paper proposes DCTTA. It utilizes a diffusion degradation generator at test time to learn the mapping from "pseudo-clean images to degraded images," constructing "degr
+  [CVPR 2026][Image Restoration][Test-Time Adaptation] To address the performance drop of All-in-One Image Restoration (AiOIR) models when test-time degradation distributions deviate from training data, this paper proposes DCTTA. It utilizes a diffusion degradation generator at test time to learn the mapping from "pseudo-clean images to degraded images," constructing "degradation–re-degradation" self-supervised pairs. The model is fine-tuned online based on restoration consiste…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Test-Time Adaptation"
+  - "All-in-One Image Restoration"
+  - "Degradation Consistency"
+  - "Diffusion Degradation Generation"
+  - "Source-free Domain Adaptation"
 date: 2026-05-08
-content_hash: 0a6cf4d6c9ce5378
+content_hash: 2c139297be1a850b
 ---
+
 # Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration
 
 **Conference**: CVPR 2026  
@@ -130,9 +136,9 @@ Degradation generator comparison (deraining): A CNN generator yielded only 17.43
 ## Related Papers
 
 - [\[CVPR 2026\] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)
-- [\[CVPR 2025\] Visual-Instructed Degradation Diffusion for All-in-One Image Restoration](../../CVPR2025/image_restoration/visual-instructed_degradation_diffusion_for_all-in-one_image_restoration.md)
 - [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
 - [\[CVPR 2026\] FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration](fape-ir_frequency-aware_planning_and_execution_framework_for_all-in-one_image_re.md)
+- [\[ICLR 2026\] Rethinking Expressivity and Degradation-Awareness in Attention for All-in-One Blind Image Restoration](../../ICLR2026/image_restoration/rethinking_expressivity_and_degradation-awareness_in_attention_for_all-in-one_bl.md)
 - [\[CVPR 2025\] Degradation-Aware Feature Perturbation for All-in-One Image Restoration](../../CVPR2025/image_restoration/degradation-aware_feature_perturbation_for_all-in-one_image_restoration.md)
 
 </div>

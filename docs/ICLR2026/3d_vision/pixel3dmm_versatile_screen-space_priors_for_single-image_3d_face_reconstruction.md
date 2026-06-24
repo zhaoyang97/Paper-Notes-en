@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pixel3DMM: Versatile Screen-Space Priors for Single-Image 3D Face Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][3DMM] Pixel3DMM utilizes DINOv2-driven pixel-level normal and UV coordinate priors to constrain FLAME optimization, significantly improving 3D face reconstruction accuracy—especially in exaggerated expression scenarios—and proposes a new benchmark for simultaneously evaluating posed and neutral geometry.
+  [ICLR2026][3D Vision][3D Face Reconstruction] Pixel3DMM utilizes DINOv2-driven pixel-level normal and UV coordinate priors to constrain FLAME optimization, significantly improving 3D face reconstruction accuracy—especially in exaggerated expression scenarios—and proposes a new benchmark for simultaneously evaluating posed and neutral geometry.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3DMM
-  - FLAME
+  - "ICLR2026"
+  - "3D Vision"
+  - "3D Face Reconstruction"
+  - "3DMM"
+  - "FLAME"
+  - "Surface Normals"
+  - "UV Coordinates"
 date: 2026-05-08
-content_hash: 2b048eb1098452d9
+content_hash: 91e6f94815aff271
 ---
+
 # Pixel3DMM: Versatile Screen-Space Priors for Single-Image 3D Face Reconstruction
 
 **Conference**: ICLR2026  
@@ -139,8 +143,8 @@ Ablations demonstrate two points: traditional landmark/photometric terms are ins
 - Value: ⭐⭐⭐⭐⭐ (Directly advances single-image 3DMM fitting and expression capture).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

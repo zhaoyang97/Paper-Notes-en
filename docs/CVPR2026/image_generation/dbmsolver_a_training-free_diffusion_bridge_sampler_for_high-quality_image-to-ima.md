@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DBMSolver: A Training-free Diffusion Bridge Sampler for High-Quality Image-to-Image Translation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Addressing the slow sampling issue of Diffusion Bridge Models (DBM) in image-to-image translation (often requiring dozens or hundreds of network evaluations), DBMSolver requires no network modification or training. By revealing the "semi-linear structure" of Bridge SDEs/ODEs and deriving closed-form solutions using Exp
+  [CVPR 2026][Image Generation][Diffusion Bridge Models] Addressing the slow sampling issue of Diffusion Bridge Models (DBM) in image-to-image translation (often requiring dozens or hundreds of network evaluations), DBMSolver requires no network modification or training. By revealing the "semi-linear structure" of Bridge SDEs/ODEs and deriving closed-form solutions using Exponential Integrators (EI), it surpasses previous SOTA results with only 6 steps (NFE). On DIODE…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Bridge Models"
+  - "Training-free Sampler"
+  - "Exponential Integrator"
+  - "Semi-linear Structure"
+  - "High-order ODE Solver"
 date: 2026-05-08
-content_hash: 5328ef6d4a186a5c
+content_hash: 03ba1247efa456f2
 ---
+
 # DBMSolver: A Training-free Diffusion Bridge Sampler for High-Quality Image-to-Image Translation
 
 **Conference**: CVPR 2026  
@@ -136,6 +142,7 @@ Results on Face2Comics / ImageNet Inpainting:
 - Value: ⭐⭐⭐⭐⭐ High practical value for real-time DBM deployment; code is open-source.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -144,7 +151,7 @@ Results on Face2Comics / ImageNet Inpainting:
 - [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
 - [\[CVPR 2026\] Efficient and Training-Free Single-Image Diffusion Models](efficient_and_training-free_single-image_diffusion_models.md)
 - [\[CVPR 2026\] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)
-- [\[CVPR 2026\] DiT360: High-Fidelity Panoramic Image Generation via Hybrid Training](dit360_high-fidelity_panoramic_image_generation_via_hybrid_training.md)
+- [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
 
 </div>
 

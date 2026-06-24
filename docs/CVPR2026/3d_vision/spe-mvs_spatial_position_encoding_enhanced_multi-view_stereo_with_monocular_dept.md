@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SPE-MVS utilizes metric monocular depth priors to construct a "Spatial Position Encoding (SPE)" in a unified coordinate system for each pixel across views. This encoding is fed into feature extraction and cost volume construction alongside the images. A monocular depth-guided two-stage refinement module is then used to
+  [CVPR 2026][3D Vision][Multi-View Stereo] SPE-MVS utilizes metric monocular depth priors to construct a "Spatial Position Encoding (SPE)" in a unified coordinate system for each pixel across views. This encoding is fed into feature extraction and cost volume construction alongside the images. A monocular depth-guided two-stage refinement module is then used to polish the probability maps, significantly improving MVS reconstruction quality in areas where photometric matching f…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-View Stereo"
+  - "Spatial Position Encoding"
+  - "Monocular Depth Priors"
+  - "Cost Volume"
+  - "Weak-texture Reconstruction"
 date: 2026-05-08
-content_hash: f73d0825adc12cd6
+content_hash: 1ee0bf5b32fa57c4
 ---
+
 # SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors
 
 **Conference**: CVPR 2026  
@@ -134,10 +140,10 @@ Ablation on DTU using the ET-MVSNet backbone as the baseline:
 ## Related Papers
 
 - [\[CVPR 2026\] Unsupervised Monocular 3D Keypoint Discovery from Multi-View Diffusion Priors](unsupervised_monocular_3d_keypoint_discovery_from_multi-view_diffusion_priors.md)
+- [\[CVPR 2026\] Spatial Matters: Position-Guided 3D Referring Expression Segmentation](spatial_matters_position-guided_3d_referring_expression_segmentation.md)
 - [\[CVPR 2026\] LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving](lidar_prompted_spatio-temporal_multi-view_stereo_for_autonomous_driving.md)
 - [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
 - [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
 
 </div>
 

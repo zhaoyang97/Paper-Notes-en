@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper proposes Prefix-RFT, which constructs mixed trajectories by sampling prefixes from expert demonstrations and concatenating model continuations. This approach injects knowledge guidance from SFT while maintaining the objective-oriented optimization of RFT, significantly outperforming independent SFT, RFT, and
+  [ICML 2026][Reasoning][Post-training] This paper proposes Prefix-RFT, which constructs mixed trajectories by sampling prefixes from expert demonstrations and concatenating model continuations. This approach injects knowledge guidance from SFT while maintaining the objective-oriented optimization of RFT, significantly outperforming independent SFT, RFT, and existing hybrid methods on mathematical reasoning tasks.
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Post-training"
+  - "Supervised Fine-Tuning"
+  - "Reinforcement Fine-Tuning"
+  - "Prefix Sampling"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 1197ca42c84e46db
+content_hash: b5a2d07b3ebb36e1
 ---
+
 # Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling
 
 **Conference**: ICML 2026  
@@ -123,11 +129,11 @@ The prefix length is determined by $L = \lfloor l \cdot |y^*| \rfloor$, where th
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](../../ICLR2026/llm_reasoning/learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
+- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](../../ICLR2026/llm_reasoning/nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 - [\[AAAI 2026\] Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning](../../AAAI2026/llm_reasoning/well_begun_half_done_reinforcement_learning_with_prefix_optimization_for_llm_rea.md)
-- [\[NeurIPS 2025\] VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via Reinforced Fine-Tuning](../../NeurIPS2025/llm_reasoning/videorft_incentivizing_video_reasoning_capability_in_mllms_via_reinforced_fine-t.md)
+- [\[ICLR 2026\] TRAPO: Enhancing LLM Reasoning with Semi-supervised Reinforcement Learning](../../ICLR2026/llm_reasoning/trapo_a_semi-supervised_reinforcement_learning_framework_for_boosting_llm_reason.md)
 - [\[ACL 2025\] Enhancing Chain-of-Thought Reasoning with Critical Representation Fine-tuning](../../ACL2025/llm_reasoning/enhancing_chain-of-thought_reasoning_with_critical_representation_fine-tuning.md)
-- [\[ACL 2025\] TRACT: Regression-Aware Fine-tuning Meets Chain-of-Thought Reasoning](../../ACL2025/llm_reasoning/tract_regression_cot.md)
-- [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](../../AAAI2026/llm_reasoning/small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
 
 </div>
 

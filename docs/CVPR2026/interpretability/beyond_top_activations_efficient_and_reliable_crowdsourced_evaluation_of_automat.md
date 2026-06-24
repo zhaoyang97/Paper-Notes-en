@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] For the problem of "how to evaluate automated neuron explanations," this paper utilizes **Model-Guided Importance Sampling (MG-IS)** to select the most informative inputs for crowdsourced labeling and **Bayesian Rating Aggregation (BRAgg)** to remove noise. This reduces the cost of a reliable full-distribution correlat
+  [CVPR 2026][Interpretability][Neuron explanation] For the problem of "how to evaluate automated neuron explanations," this paper utilizes **Model-Guided Importance Sampling (MG-IS)** to select the most informative inputs for crowdsourced labeling and **Bayesian Rating Aggregation (BRAgg)** to remove noise. This reduces the cost of a reliable full-distribution correlation evaluation from approximately \$90k to \$2.16k (~40×). Using this method…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Neuron explanation"
+  - "crowdsourced evaluation"
+  - "importance sampling"
+  - "Bayesian aggregation"
+  - "mechanistic interpretability"
 date: 2026-05-08
-content_hash: a2ad60e4ad850d97
+content_hash: 0ec881019e637293
 ---
+
 # Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ With the optimized parameters, the large-scale study evaluates only **180 inputs
 
 ## Related Papers
 
+- [\[ICLR 2026\] Circuit Insights: Towards Interpretability Beyond Activations](../../ICLR2026/interpretability/circuit_insights_towards_interpretability_beyond_activations.md)
 - [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](../../ICLR2026/interpretability/formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
 - [\[ICML 2026\] Beyond Additive Decompositions: Interpretability Through Separability](../../ICML2026/interpretability/beyond_additive_decompositions_interpretability_through_separability.md)
+- [\[CVPR 2026\] VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension](viro_robust_and_efficient_neuro-symbolic_reasoning_with_verification_for_referri.md)
 - [\[ACL 2025\] Enhancing Automated Interpretability with Output-Centric Feature Descriptions](../../ACL2025/interpretability/output_centric_interpretability.md)
-- [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](../../NeurIPS2025/interpretability/beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
-- [\[ACL 2026\] Similarity-Distance-Magnitude Activations](../../ACL2026/interpretability/similarity-distance-magnitude_activations.md)
 
 </div>
 

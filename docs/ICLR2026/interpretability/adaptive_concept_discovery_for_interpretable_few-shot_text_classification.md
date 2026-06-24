@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Adaptive Concept Discovery for Interpretable Few-Shot Text Classification
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] StructCBM transforms the Concept Bottleneck Model (CBM) into a paradigm that relies solely on sample-concept similarity for prediction without training a classification head. It uses an LLM to generate a dual-layer concept library—consisting of "Prototype Concepts + Discriminative Concepts"—from a minimal set of sample
+  [ICLR2026][Interpretability][Concept Bottleneck Models] StructCBM transforms the Concept Bottleneck Model (CBM) into a paradigm that relies solely on sample-concept similarity for prediction without training a classification head. It uses an LLM to generate a dual-layer concept library—consisting of "Prototype Concepts + Discriminative Concepts"—from a minimal set of samples. It produces interpretable predictions through two-stage similarity matching (recalling candidate labe…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Few-shot Learning"
+  - "Text Classification"
+  - "LLM Concept Generation"
 date: 2026-05-08
-content_hash: 43bef8ad5351cf65
+content_hash: b76ed7dfaff348e2
 ---
+
 # Adaptive Concept Discovery for Interpretable Few-Shot Text Classification
 
 **Conference**: ICLR2026  
@@ -129,8 +134,8 @@ Using $\alpha=0.75$, the components were incrementally added:
 
 - [\[ICML 2026\] CB-SLICE: Concept-Based Interpretable Error Slice Discovery](../../ICML2026/interpretability/cb-slice_concept-based_interpretable_error_slice_discovery.md)
 - [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](../../CVPR2026/interpretability/hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
-- [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](debugging_concept_bottleneck_models_through_removal_and_retraining.md)
 - [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](../../ICML2026/interpretability/how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
+- [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](debugging_concept_bottleneck_models_through_removal_and_retraining.md)
 - [\[ICLR 2026\] From Concepts to Components: Concept-Agnostic Attention Module Discovery in Transformers](from_concepts_to_components_concept-agnostic_attention_module_discovery_in_trans.md)
 
 </div>

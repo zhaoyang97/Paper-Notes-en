@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Riemannian MeanFlow for One-Step Generation on Manifolds
 description: >-
-  [ICML 2026][Image Generation][MeanFlow] The paper extends the "average velocity one-step generation" of MeanFlow to Riemannian manifolds. By using **parallel transport** to move instantaneous velocities from different tangent spaces to a common one before averaging, it defines the average velocity on manifolds and derives the **Riemannian MeanFlow Identity**
+  [ICML2026][Image Generation][MeanFlow] The paper extends the "average velocity one-step generation" of MeanFlow to Riemannian manifolds. By using **parallel transport** to move instantaneous velocities from different tangent spaces to a common one before averaging, it defines the average velocity on manifolds and derives the **Riemannian MeanFlow Identity**. It employs intrinsic training via log maps in the common tangent space (avoiding trajectory simulation and Christoffel…
 tags:
-  - ICML 2026
-  - Image Generation
-  - MeanFlow
+  - "ICML2026"
+  - "Image Generation"
+  - "MeanFlow"
+  - "Riemannian Manifold"
+  - "One-step Generation"
+  - "Average Velocity"
+  - "Parallel Transport"
+  - "Multi-task Optimization"
 date: 2026-05-08
-content_hash: b5342e44264ca5c2
+content_hash: 39b9ad42a6b30114
 ---
+
 # Riemannian MeanFlow for One-Step Generation on Manifolds
 
 **Conference**: ICML2026  
@@ -156,9 +162,9 @@ RMF Leads in success rate for minimal steps (1/2), remaining competitive as step
 
 - [\[ICML 2026\] OMP: One-step Meanflow Policy with Directional Alignment](omp_one-step_meanflow_policy_with_directional_alignment.md)
 - [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](../../CVPR2026/image_generation/temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
-- [\[ICML 2026\] Rao-Blackwellized Score Matching on Manifolds](rao-blackwellized_score_matching_on_manifolds.md)
+- [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](../../ICLR2026/image_generation/generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
+- [\[CVPR 2026\] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation](../../CVPR2026/image_generation/emf_meanflow_text_to_image.md)
 - [\[AAAI 2026\] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation](../../AAAI2026/image_generation/mp1_meanflow_tames_policy_learning_in_1-step_for_robotic_manipulation.md)
-- [\[CVPR 2026\] InverFill: One-Step Inversion for Enhanced Few-Step Diffusion Inpainting](../../CVPR2026/image_generation/inverfill_one-step_inversion_for_enhanced_few-step_diffusion_inpainting.md)
 
 </div>
 

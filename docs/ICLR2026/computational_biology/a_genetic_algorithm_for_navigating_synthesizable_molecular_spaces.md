@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Genetic Algorithm for Navigating Synthesizable Molecular Spaces
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] SynGA is proposed as a genetic algorithm that operates directly on synthesis routes (synthesis trees). By using customized crossover and mutation operators, it strictly constrains the search to the synthesizable molecular space. Combined with ML-driven building block filtering, it achieves SOTA performance in synthesiz
+  [ICLR 2026][Computational Biology][Genetic Algorithm] SynGA is proposed as a genetic algorithm that operates directly on synthesis routes (synthesis trees). By using customized crossover and mutation operators, it strictly constrains the search to the synthesizable molecular space. Combined with ML-driven building block filtering, it achieves SOTA performance in synthesizable analog search and property optimization.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Genetic Algorithm"
+  - "Synthesizable Molecular Design"
+  - "Synthesis Route"
+  - "Bayesian Optimization"
+  - "Building Block Filtering"
 date: 2026-05-08
-content_hash: 0d045c3c39a4c951
+content_hash: 48fff0db4f109c81
 ---
+
 # A Genetic Algorithm for Navigating Synthesizable Molecular Spaces
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,7 @@ The analog search filter is trained using binary cross-entropy. The SynGBO NAM i
 - [\[ICLR 2026\] SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling](syncogen_synthesizable_3d_molecule_generation_via_joint_reaction_and_coordinate_.md)
 - [\[ICLR 2026\] Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction](adaptive_data-knowledge_alignment_in_genetic_perturbation_prediction.md)
 - [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
-- [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](graph_diffusion_transformers_are_in-context_molecular_designers.md)
+- [\[ACL 2026\] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling](../../ACL2026/computational_biology/aroma_augmented_reasoning_over_a_multimodal_architecture_for_virtual_cell_geneti.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Latent Diffusion Pretraining for Crystal Property Prediction
 description: >-
-  [ICML 2026][Image Generation][Paper Note] CrysLDNet migrates "diffusion pretraining" from the raw crystal feature space to a smooth latent space learned by a VAE. This allows the PDDFormer encoder to learn more compact and symmetry-aware structural semantics on 380,000 unlabeled GNoME crystals. Downstream property predictions on JARVIS / MP show an average MAE
+  [ICML2026][Image Generation][Crystal property prediction] CrysLDNet migrates "diffusion pretraining" from the raw crystal feature space to a smooth latent space learned by a VAE. This allows the PDDFormer encoder to learn more compact and symmetry-aware structural semantics on 380,000 unlabeled GNoME crystals. Downstream property predictions on JARVIS / MP show an average MAE reduction of 4.26% / 4.90% compared to strong supervised SOTA models…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML2026"
+  - "Image Generation"
+  - "Crystal property prediction"
+  - "Latent diffusion"
+  - "Variational Autoencoder"
+  - "GNoME pretraining"
+  - "Materials foundation model"
 date: 2026-05-08
-content_hash: 2593966d1a927439
+content_hash: 031c41956e928b0e
 ---
+
 # Latent Diffusion Pretraining for Crystal Property Prediction
 
 **Conference**: ICML2026  
@@ -148,8 +154,8 @@ Overall average: CrysLDNet vs PDDFormer = **-4.26% (JARVIS) / -4.90% (MP)**; Cry
 
 - [\[CVPR 2026\] Property-Informed Diffusion-Based Text-to-Microstructure Generation](../../CVPR2026/image_generation/property-informed_diffusion-based_text-to-microstructure_generation.md)
 - [\[CVPR 2026\] Latent Diffusion Inversion Requires Understanding the Latent Space](../../CVPR2026/image_generation/latent_diffusion_inversion_requires_understanding_the_latent_space.md)
+- [\[ICML 2026\] MIRO: Multi-Reward Conditioned Pretraining for Simultaneously Improving T2I Quality and Efficiency](miro_multi-reward_conditioned_pretraining_improves_t2i_quality_and_efficiency.md)
 - [\[ECCV 2024\] Learning Semantic Latent Directions for Accurate and Controllable Human Motion Prediction](../../ECCV2024/image_generation/learning_semantic_latent_directions_for_accurate_and_controllable_human_motion_p.md)
-- [\[CVPR 2025\] Generative Multimodal Pretraining with Discrete Diffusion Timestep Tokens](../../CVPR2025/image_generation/generative_multimodal_pretraining_with_discrete_diffusion_timestep_tokens.md)
 - [\[NeurIPS 2025\] LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation](../../NeurIPS2025/image_generation/llm_meets_diffusion_a_hybrid_framework_for_crystal_material_generation.md)
 
 </div>

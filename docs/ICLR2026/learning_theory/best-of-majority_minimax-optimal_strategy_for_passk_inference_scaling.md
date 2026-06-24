@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Best-of-Majority: Minimax-Optimal Strategy for Pass@k Inference Scaling
 description: >-
-  [ICLR 2026][learning_theory][Best-of-N] This paper formalizes LLM Pass@k inference (sampling $N$ candidates, submitting at most $k$, and evaluating the best one) as a regret minimization problem. It proves that both majority voting and Best-of-N are sub-optimal in this setting. The authors propose the Best-of-Majority (BoM) strategy—which "pre-screens by fre
+  [ICLR 2026][Learning Theory][Pass@k Inference] This paper formalizes LLM Pass@k inference (sampling $N$ candidates, submitting at most $k$, and evaluating the best one) as a regret minimization problem. It proves that both majority voting and Best-of-N are sub-optimal in this setting. The authors propose the Best-of-Majority (BoM) strategy—which "pre-screens by frequency and then selects top-$k$ by reward"—and provide a regret upper bound of $\tilde O(\epsilon_{\mathrm{opt}}+…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Best-of-N
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Test-time Compute"
+  - "Pass@k Inference"
+  - "Inference Scaling"
+  - "Minimax Optimality"
+  - "Best-of-N"
+  - "Majority Voting"
 date: 2026-05-08
-content_hash: 5a719153b55e5540
+content_hash: 803417284e299f52
 ---
+
 # Best-of-Majority: Minimax-Optimal Strategy for Pass@k Inference Scaling
 
 **Conference**: ICLR 2026  
@@ -138,8 +144,8 @@ On AIME24, fixing $k\in\{1,3,5\}$ and sweeping $N$ from 100 to 2000:
 ## Related Papers
 
 - [\[ICLR 2026\] Minimax-Optimal Aggregation for Density Ratio Estimation](minimax-optimal_aggregation_for_density_ratio_estimation.md)
-- [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
 - [\[ICLR 2026\] Learning Shrinks the Hard Tail: Training-Dependent Inference Scaling in a Solvable Linear Model](learning_shrinks_the_hard_tail_trainingdependent_inference_scaling_in_a_solvable.md)
+- [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
 - [\[ICLR 2026\] A Near-Optimal Best-of-Both-Worlds Algorithm for Federated Bandits](a_near-optimal_best-of-both-worlds_algorithm_for_federated_bandits.md)
 - [\[ICLR 2026\] Variational Inference for Cyclic Learning](variational_inference_for_cyclic_learning.md)
 

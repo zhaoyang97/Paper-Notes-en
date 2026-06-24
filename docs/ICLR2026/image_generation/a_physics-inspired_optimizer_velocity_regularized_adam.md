@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Physics-Inspired Optimizer: Velocity Regularized Adam
 description: >-
-  [ICLR 2026][Image Generation][Adam] This paper proposes VRAdam (Velocity-Regularized Adam), which translates a physical stability mechanism—the "quartic kinetic energy term"—into a **global dynamic learning rate that automatically contracts with velocity** $\eta_t=\alpha_0/(1+\min(\beta_3\|v_t\|^2,\alpha_1))$. Embedded into AdamW, it automatically decele
+  [ICLR2026][Image Generation][Physics-inspired optimizer] This paper proposes VRAdam (Velocity-Regularized Adam), which translates a physical stability mechanism—the "quartic kinetic energy term"—into a **global dynamic learning rate that automatically contracts with velocity** $\eta_t=\alpha_0/(1+\min(\beta_3\|v_t\|^2,\alpha_1))$. Embedded into AdamW, it automatically decelerates when weight updates are too large, suppressing oscillations near the Edge of Stability. Complemen…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Adam
+  - "ICLR2026"
+  - "Image Generation"
+  - "Physics-inspired optimizer"
+  - "velocity regularization"
+  - "Edge of Stability"
+  - "Adam"
+  - "Lyapunov stability"
 date: 2026-05-08
-content_hash: d4db6326f65ff6f2
+content_hash: bb9a2f5d4432b4be
 ---
+
 # A Physics-Inspired Optimizer: Velocity Regularized Adam
 
 **Conference**: ICLR2026  

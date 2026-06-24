@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models
 description: >-
-  [ACL 2026][Text Generation][backchannel] This paper trains BERT, GPT-2, TurnGPT, LLaMA-3 8B, and Qwen-3 8B on English and Japanese spoken dialogue corpora using three fine-tuning tasks: MASK, NTP, and TTP. It utilizes t-SNE visualization and silhouette clustering to quantify the representation quality of "backchannels" (e.g., *uh-huh*) and "fillers" (e.g., *u
+  [ACL 2026][Text Generation][backchannel] This paper trains BERT, GPT-2, TurnGPT, LLaMA-3 8B, and Qwen-3 8B on English and Japanese spoken dialogue corpora using three fine-tuning tasks: MASK, NTP, and TTP. It utilizes t-SNE visualization and silhouette clustering to quantify the representation quality of "backchannels" (e.g., *uh-huh*) and "fillers" (e.g., *um*). The study finds that fine-tuning significantly distinguishes these "semantically bleached" functional words within…
 tags:
-  - ACL 2026
-  - Text Generation
-  - backchannel
-  - filler
-  - Fine-tuning
+  - "ACL 2026"
+  - "Text Generation"
+  - "backchannel"
+  - "filler"
+  - "fine-tuning"
+  - "silhouette clustering"
+  - "dialogue language models"
 date: 2026-05-08
-content_hash: 71c577c1420b94f0
+content_hash: 4cd95125c97ed096
 ---
+
 # Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models
 
 **Conference**: ACL 2026  
@@ -164,11 +167,11 @@ In Japanese, frequency increased from 0.31% → 7.57% (LLaMA-3) and PPL dropped 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Planner Aware Path Learning in Diffusion Language Models Training](../../ICLR2026/nlp_generation/planner_aware_path_learning_in_diffusion_language_models_training.md)
+- [\[ICLR 2026\] Antislop: A Comprehensive Framework for Identifying and Eliminating Repetitive Patterns in Language Models](../../ICLR2026/nlp_generation/antislop_a_comprehensive_framework_for_identifying_and_eliminating_repetitive_pa.md)
 - [\[ACL 2026\] Children's English Reading Story Generation via Supervised Fine-Tuning of Compact LLMs with Controllable Difficulty and Safety](childrens_english_reading_story_generation_via_supervised_fine-tuning_of_compact.md)
 - [\[ACL 2025\] An Empirical Study of Many-to-Many Summarization with Large Language Models](../../ACL2025/nlp_generation/an_empirical_study_of_manytomany_summarization.md)
 - [\[ACL 2025\] Theme-Explanation Structure for Table Summarization Using Large Language Models](../../ACL2025/nlp_generation/theme-explanation_structure_for_table_summarization_using_large_language_models_.md)
-- [\[ICLR 2026\] Antislop: A Comprehensive Framework for Identifying and Eliminating Repetitive Patterns in Language Models](../../ICLR2026/nlp_generation/antislop_a_comprehensive_framework_for_identifying_and_eliminating_repetitive_pa.md)
-- [\[ACL 2026\] In-depth Research Impact Summarization through Fine-Grained Temporal Citation Analysis](in-depth_research_impact_summarization_through_fine-grained_temporal_citation_an.md)
 
 </div>
 

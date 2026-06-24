@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours introduces LASER, a training-free framework that converts offline feed-forward reconstruction models (e.g., VGGT, π³) into streaming systems via Layer-wise Scale Alignment (LSA). It achieves real-time streaming 4D reconstruction of kilometer-level videos at 14 FPS with a 6GB peak memory on an RTX A6000.
+  [CVPR2026][3D Vision][Streaming 4D reconstruction] Ours introduces LASER, a training-free framework that converts offline feed-forward reconstruction models (e.g., VGGT, π³) into streaming systems via Layer-wise Scale Alignment (LSA). It achieves real-time streaming 4D reconstruction of kilometer-level videos at 14 FPS with a 6GB peak memory on an RTX A6000.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Streaming 4D reconstruction"
+  - "Training-free framework"
+  - "Layer-wise scale alignment"
+  - "Sliding window"
+  - "Sim(3) registration"
 date: 2026-05-08
-content_hash: 2c153d79196e3b02
+content_hash: 2de784184198aafd
 ---
+
 # LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction
 
 **Conference**: CVPR2026  
@@ -163,11 +169,11 @@ Ours reduces ATE by 68.6% on Sintel compared to the previous best streaming meth
 
 ## Related Papers
 
+- [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
+- [\[CVPR 2026\] DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video](detany4d_detect_anything_4d_temporally_in_a_streaming_rgb_video.md)
+- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
-- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
-- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
+- [\[CVPR 2026\] Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting](point4cast_streaming_dynamic_scene_reconstruction_and_forecasting.md)
 
 </div>
 

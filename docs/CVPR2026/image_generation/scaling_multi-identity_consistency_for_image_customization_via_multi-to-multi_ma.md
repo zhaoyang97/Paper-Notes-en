@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] UMO reformulates "multi-identity customization" as a global assignment problem between multiple reference images and multiple generated faces. By utilizing a plug-and-play Reference Reward Feedback Learning (ReReFL) framework combined with a Multi-Identity Matching Reward (MIMR) based on Hungarian matching, it signific
+  [CVPR 2026][Image Generation][Image Customization] UMO reformulates "multi-identity customization" as a global assignment problem between multiple reference images and multiple generated faces. By utilizing a plug-and-play Reference Reward Feedback Learning (ReReFL) framework combined with a Multi-Identity Matching Reward (MIMR) based on Hungarian matching, it significantly enhances identity similarity and suppresses identity confusion without retraining the base models.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Customization"
+  - "Multi-Identity Preservation"
+  - "Reward Feedback Learning"
+  - "Bipartite Matching"
+  - "Identity Confusion"
 date: 2026-05-08
-content_hash: 8fcb650301e74943
+content_hash: 44f77997b1953e3d
 ---
+
 # Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm
 
 **Conference**: CVPR 2026  
@@ -157,8 +163,8 @@ Based on UNO on XVerseBench Multi-Subject (Table 4):
 - [\[CVPR 2026\] PositionIC: Unified Position and Identity Consistency for Image Customization](positionic_unified_position_and_identity_consistency_for_image_customization.md)
 - [\[CVPR 2026\] PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards](psr_scaling_multi-subject_personalized_image_generation_with_pairwise_subject-co.md)
 - [\[CVPR 2026\] Aligning Multi-Character Narrative Image Generation with Multi-Aspect Human Preferences](aligning_multi-character_narrative_image_generation_with_multi-aspect_human_pref.md)
+- [\[CVPR 2026\] PhotoFramer: Multi-modal Image Composition Instruction](photoframer_multi-modal_image_composition_instruction.md)
 - [\[CVPR 2026\] MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment](multicrafter_high-fidelity_multi-subject_generation_via_disentangled_attention_a.md)
-- [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Geometric Obfuscation with Dual Convergent Lines for Privacy-Preserving Image Queries in Visual Localization
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Addressing the vulnerability of geometric obfuscation—replacing keypoints with random lines—to neighborhood geometric recovery attacks, this paper proposes Dual Convergent Lines (DCL). By lifting each keypoint into a line pointing toward one of two fixed anchors, DCL transforms the attacker's recovery optimization into
+  [CVPR 2026][Segmentation][Privacy-Preserving Image Queries] Addressing the vulnerability of geometric obfuscation—replacing keypoints with random lines—to neighborhood geometric recovery attacks, this paper proposes Dual Convergent Lines (DCL). By lifting each keypoint into a line pointing toward one of two fixed anchors, DCL transforms the attacker's recovery optimization into an ill-posed problem (either collapsing to anchors or diverging with high variance at the boundary)…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Privacy-Preserving Image Queries"
+  - "Visual Localization"
+  - "Geometric Obfuscation"
+  - "Keypoint Recovery Attack"
+  - "Dual Convergent Lines"
 date: 2026-05-08
-content_hash: 7a70dae915391925
+content_hash: 8b1ca5f9dd1745d3
 ---
+
 # Revisiting Geometric Obfuscation with Dual Convergent Lines for Privacy-Preserving Image Queries in Visual Localization
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ DCL is the **only method providing both "security against recent attacks" and "r
 
 ## Related Papers
 
-- [\[CVPR 2026\] VisiLock: Authorizing Instruction-based Image editing with Dual Score Distillation](visilock_authorizing_instruction-based_image_editing_with_dual_score_distillatio.md)
-- [\[CVPR 2026\] Frequency-domain Manipulation for Face Obfuscation](frequency-domain_manipulation_for_face_obfuscation.md)
-- [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
-- [\[CVPR 2026\] PECCAVI: Overcoming the Brittleness of AI Image Watermarking Under Visual Paraphrasing Attacks](peccvai_overcoming_the_brittleness_of_ai_image_watermarking_under_visual_paraphr.md)
-- [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
+- [\[CVPR 2026\] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts](souple_enhancing_audio-visual_localization_and_segmentation_with_learnable_promp.md)
+- [\[CVPR 2026\] Hilbert Curve-Based Attention Enabling Topology-Preserving Image Tensor Representation for Semantic Segmentation Network](hilbert_curve-based_attention_enabling_topology-preserving_image_tensor_represen.md)
+- [\[CVPR 2026\] Beyond Appearance: Camouflaged Object Detection via Geometric Structure](beyond_appearance_camouflaged_object_detection_via_geometric_structure.md)
+- [\[CVPR 2025\] Robust Audio-Visual Segmentation via Audio-Guided Visual Convergent Alignment](../../CVPR2025/segmentation/robust_audio-visual_segmentation_via_audio-guided_visual_convergent_alignment.md)
+- [\[CVPR 2026\] SAGE: Style-Adaptive Generalization for Privacy-Constrained Semantic Segmentation Across Domains](sage_style-adaptive_generalization_for_privacy-constrained_semantic_segmentation.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] FastFlow is a training-free, plug-and-play inference acceleration framework for flow matching (FM). It approximates redundant denoising steps that are "nearly linear" at zero cost using finite difference extrapolation, and employs a Multi-Armed Bandit (MAB) to online decide the safe jump length at each step. It achieve
+  [ICLR2026][Image Generation][Flow Matching] FastFlow is a training-free, plug-and-play inference acceleration framework for flow matching (FM). It approximates redundant denoising steps that are "nearly linear" at zero cost using finite difference extrapolation, and employs a Multi-Armed Bandit (MAB) to online decide the safe jump length at each step. It achieves over 2.6× acceleration on image/video generation and editing tasks with minimal quality degradation.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - Inference Acceleration
+  - "ICLR2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Inference Acceleration"
+  - "Multi-Armed Bandit"
+  - "Finite Difference Extrapolation"
+  - "Training-free"
 date: 2026-05-08
-content_hash: be70157a17b3639d
+content_hash: 5a5baa515fb34860
 ---
+
 # FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference
 
 **Conference**: ICLR2026  
@@ -143,10 +147,10 @@ Under equivalent acceleration levels, FastFlow achieves higher Overall and CLIPI
 ## Related Papers
 
 - [\[ICLR 2026\] MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference](meancache_from_instantaneous_to_average_velocity_for_accelerating_flow_matching_.md)
-- [\[ICLR 2026\] Gauge Flow Matching: Efficient Constrained Generative Modeling over General Convex Set and Beyond](gauge_flow_matching_efficient_constrained_generative_modeling_over_general_conve.md)
-- [\[ICLR 2026\] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport](alignflow_improving_flow-based_generative_models_with_semi-discrete_optimal_tran.md)
+- [\[ICLR 2026\] STORK: Accelerating Diffusion and Flow Matching Sampling by Simultaneously Solving Stiffness and Structural Dependency](stork_faster_diffusion_and_flow_matching_sampling_by_resolving_both_stiffness_an.md)
 - [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 
 </div>
 

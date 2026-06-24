@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Hardness of Conditional Independence Testing In Practice
 description: >-
-  [NeurIPS 2025][AI Safety][conditional independence testing] This paper systematically analyzes the root causes of failure in kernel-based conditional independence (CI) testing in practice: estimation error in conditional…
+  [NeurIPS 2025][AI Safety][conditional independence testing] This paper systematically analyzes the root causes of failure in kernel-based conditional independence (CI) testing in practice: estimation error in conditional mean embeddings is identified as the central driver of Type-I error inflation, while the inherent tension between the choice of conditioning kernel $k_C$—which is critical for test power—and its tendency to exacerbate false positives is formally characterized…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -14,7 +14,7 @@ tags:
   - "conditional mean embedding"
   - "causal discovery"
 date: 2026-05-08
-content_hash: cd1eda913f5a09a0
+content_hash: 09dc11220ec49594
 ---
 
 # On the Hardness of Conditional Independence Testing In Practice
@@ -136,10 +136,10 @@ In Scenario 1, regression error leaks correlated noise into the test statistic t
 ## Related Papers
 
 - [\[NeurIPS 2025\] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack](taught_well_learned_ill_towards_distillation-conditional_backdoor_attack.md)
+- [\[ICML 2025\] Disparate Conditional Prediction in Multiclass Classifiers](../../ICML2025/ai_safety/disparate_conditional_prediction_in_multiclass_classifiers.md)
+- [\[ICLR 2026\] Fairness via Independence: A General Regularization Framework for Machine Learning](../../ICLR2026/ai_safety/fairness_via_independence_a_general_regularization_framework_for_machine_learnin.md)
+- [\[ICML 2025\] Generalization in Federated Learning: A Conditional Mutual Information Framework](../../ICML2025/ai_safety/generalization_in_federated_learning_a_conditional_mutual_information_framework.md)
 - [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](../../ICML2026/ai_safety/how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
-- [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
-- [\[NeurIPS 2025\] PubSub-VFL: Towards Efficient Two-Party Split Learning in Heterogeneous Environments via Publisher/Subscriber Architecture](pubsub-vfl_towards_efficient_two-party_split_learning_in_heterogeneous_environme.md)
-- [\[NeurIPS 2025\] Improved Balanced Classification with Theoretically Grounded Loss Functions](improved_balanced_classification_with_theoretically_grounded_loss_functions.md)
 
 </div>
 

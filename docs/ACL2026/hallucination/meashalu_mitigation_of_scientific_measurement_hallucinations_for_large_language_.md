@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs
 description: >-
-  [ACL 2026][Hallucination Detection][MeasEval] This paper proposes the MeasHalu framework, which mitigates LLM hallucinations in scientific measurement extraction through a fine-grained measurement hallucination taxonomy and a two-stage optimization (reasoning-aware SFT + hallucination-targeted GRPO reward), significantly outperforming baselines on MeasEval.
+  [ACL 2026][Hallucination Detection][Scientific Measurement Hallucination] This paper proposes the MeasHalu framework, which mitigates LLM hallucinations in scientific measurement extraction through a fine-grained measurement hallucination taxonomy and a two-stage optimization (reasoning-aware SFT + hallucination-targeted GRPO reward), significantly outperforming baselines on MeasEval.
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - MeasEval
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Scientific Measurement Hallucination"
+  - "Information Extraction"
+  - "Reasoning-Enhanced Fine-Tuning"
+  - "GRPO Reinforcement Learning"
+  - "MeasEval"
 date: 2026-05-08
-content_hash: f6ef2e5010f12605
+content_hash: c96161d4118b32b7
 ---
+
 # MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs
 
 **Conference**: ACL 2026  
@@ -133,8 +138,8 @@ Both branches adopt a two-stage optimization: "Progressive Reasoning-Aware SFT â
 - [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
 - [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
 - [\[NeurIPS 2025\] Teaming LLMs to Detect and Mitigate Hallucinations](../../NeurIPS2025/hallucination/teaming_llms_to_detect_and_mitigate_hallucinations.md)
-- [\[ACL 2026\] Distorted or Fabricated? A Survey on Hallucination in Video LLMs](distorted_or_fabricated_a_survey_on_hallucination_in_video_llms.md)
-- [\[ACL 2026\] Aligning with Your Own Voice: Self-Corrected Preference Learning for Hallucination Mitigation in LVLMs](aligning_with_your_own_voice_self-corrected_preference_learning_for_hallucinatio.md)
+- [\[ICLR 2026\] HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs](../../ICLR2026/hallucination/halluguard_demystifying_data-driven_and_reasoning-driven_hallucinations_in_llms.md)
+- [\[ACL 2026\] Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process](why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
 
 </div>
 

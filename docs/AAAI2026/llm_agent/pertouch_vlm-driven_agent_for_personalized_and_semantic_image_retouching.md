@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching
 description: >-
-  [AAAI 2026][LLM Agent][VLM Agent] This paper proposes PerTouch, a framework that integrates a semantic region-level retouching model based on Stable Diffusion + ControlNet with a VLM-driven Agent (incorporating feedback-…
+  [AAAI 2026][LLM Agent][VLM Agent] This paper proposes PerTouch, a framework that integrates a semantic region-level retouching model based on Stable Diffusion + ControlNet with a VLM-driven Agent (incorporating feedback-driven rethinking and scene-aware memory) to achieve fine-grained, personalized image retouching.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -13,7 +13,7 @@ tags:
   - "Diffusion Model"
   - "Scene Memory"
 date: 2026-05-08
-content_hash: 5fb6e4ed971407fb
+content_hash: 9844a6229098419a
 ---
 
 # PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching
@@ -155,11 +155,11 @@ vs. **PhotoArtAgent/MonetGPT and similar Agent retouching systems**: these rely 
 
 ## Related Papers
 
+- [\[CVPR 2026\] RetouchIQ: MLLM Agents for Instruction-Based Image Retouching with Generalist Reward](../../CVPR2026/llm_agent/retouchiq_mllm_agents_for_instruction-based_image_retouching_with_generalist_rew.md)
+- [\[CVPR 2026\] Universal Guideline-Driven Image Clustering via a Hybrid LLM Agent](../../CVPR2026/llm_agent/universal_guideline-driven_image_clustering_via_a_hybrid_llm_agent.md)
 - [\[ACL 2026\] ProPer Agents: Proactivity Driven Personalized Agents for Advancing Knowledge Gap Navigation](../../ACL2026/llm_agent/proper_agents_proactivity_driven_personalized_agents_for_advancing_knowledge_gap.md)
 - [\[ACL 2026\] AVA: Attentive VLM Agent for Mastering StarCraft II](../../ACL2026/llm_agent/ava_attentive_vlm_agent_for_mastering_starcraft_ii.md)
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](reflection-driven_control_for_trustworthy_code_agents.md)
-- [\[ICCV 2025\] Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions](../../ICCV2025/llm_agent/embodied_image_captioning_self-supervised_learning_agents_for_spatially_coherent.md)
-- [\[ICML 2026\] HawkesLLM: Semantic Uncertainty Propagation in Agentic Text Simulation](../../ICML2026/llm_agent/hawkesllm_semantic_uncertainty_propagation_in_agentic_text_simulation.md)
 
 </div>
 

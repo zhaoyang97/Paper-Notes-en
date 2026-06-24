@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlearning During Training: Domain-Specific Gradient Ascent for Domain Generalization
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes Identify and Unlearn (IU): a model-agnostic "in-training unlearning" module. After each epoch, influence functions are used to identify training samples that "increase model complexity while contributing little to generalization," and Inter-Domain Variance (IDV) is employed to precisely locate chann
+  [ICLR 2026][Domain Generalization][Influence Function] This paper proposes Identify and Unlearn (IU): a model-agnostic "in-training unlearning" module. After each epoch, influence functions are used to identify training samples that "increase model complexity while contributing little to generalization," and Inter-Domain Variance (IDV) is employed to precisely locate channels capturing domain-specific features. Domain-Specific Gradient Ascent (DSGA) is then performed on these…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Domain Generalization"
+  - "Generalization Theory"
+  - "Machine Unlearning"
+  - "Influence Function"
+  - "Domain-Specific Channels"
+  - "Gradient Ascent"
 date: 2026-05-08
-content_hash: ae4aa95a36210fed
+content_hash: 2bc178f2686efcf7
 ---
+
 # Unlearning During Training: Domain-Specific Gradient Ascent for Domain Generalization
 
 **Conference**: ICLR 2026  
@@ -132,10 +138,10 @@ Breakdown of Unlearning Set Selection (USS) and Domain-Specific Channel Selectio
 ## Related Papers
 
 - [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](../../NeurIPS2025/learning_theory/how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
-- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 - [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](../../ICML2026/learning_theory/semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
+- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 - [\[ICLR 2026\] Memorizing Long-tail Data Can Help Generalization Through Composition](memorizing_long-tail_data_can_help_generalization_through_composition.md)
-- [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
+- [\[ICLR 2026\] From Predictors to Samplers via the Training Trajectory](from_predictors_to_samplers_via_the_training_trajectory.md)
 
 </div>
 

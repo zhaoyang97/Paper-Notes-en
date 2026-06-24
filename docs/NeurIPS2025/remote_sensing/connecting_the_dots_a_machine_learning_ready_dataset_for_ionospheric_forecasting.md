@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction
 description: >-
-  [NeurIPS 2025][Remote Sensing][Ionospheric prediction] This paper constructs an open, ML-ready ionospheric prediction dataset that integrates 8 heterogeneous data sources (solar observations, geomagnetic indices…
+  [NeurIPS 2025][Remote Sensing][Ionospheric prediction] This paper constructs an open, ML-ready ionospheric prediction dataset that integrates 8 heterogeneous data sources (solar observations, geomagnetic indices, TEC maps, etc.) spanning approximately 14 years (2010–2024). Three spatiotemporal baseline models—LSTM, SFNO, and GraphCast—are trained on this dataset, achieving TEC forecasts with lead times up to 12 hours.
 tags:
   - "NeurIPS 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "time series forecasting"
   - "space weather"
 date: 2026-05-08
-content_hash: 336f34ee81662c88
+content_hash: 678cc7ae847e263d
 ---
 
 # Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction
@@ -154,10 +154,10 @@ As a dataset paper, no traditional ablation experiments are conducted. However, 
 ## Related Papers
 
 - [\[NeurIPS 2025\] GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction](greenhyperspectra_a_multi-source_hyperspectral_dataset_for_global_vegetation_tra.md)
+- [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](../../CVPR2026/remote_sensing/yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
 - [\[NeurIPS 2025\] C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)
 - [\[NeurIPS 2025\] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)
 - [\[AAAI 2026\] Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data](../../AAAI2026/remote_sensing/debiasing_machine_learning_predictions_for_causal_inference_without_additional_g.md)
-- [\[NeurIPS 2025\] OrbitZoo: Real Orbital Systems Challenges for Reinforcement Learning](orbitzoo_real_orbital_systems_challenges_for_reinforcement_learning.md)
 
 </div>
 

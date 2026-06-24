@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] $\mathbb{R}^{2k}$ is Theoretically Large Enough for Embedding-based Top-$k$ Retrieval
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] This paper proves that for three scoring functions—inner product, Euclidean distance, and cosine similarity—the Minimum Embeddable Dimension (MED) required to precisely retrieve all subsets of $m$ objects with size $\le k$ via score-thresholding is $\Theta(k)$, independent of $m$. With unit normalization and a positive
+  [ICML 2026][Physics & Scientific Computing][Minimum Embeddable Dimension] This paper proves that for three scoring functions—inner product, Euclidean distance, and cosine similarity—the Minimum Embeddable Dimension (MED) required to precisely retrieve all subsets of $m$ objects with size $\le k$ via score-thresholding is $\Theta(k)$, independent of $m$. With unit normalization and a positive score margin $\epsilon$, the feasible margin for robust MED is locked by an upper bou…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Minimum Embeddable Dimension"
+  - "top-k retrieval"
+  - "cyclic polytope"
+  - "VC dimension"
+  - "robust bounds"
 date: 2026-05-08
-content_hash: a23d2da0e6b865c7
+content_hash: c4ac9bffd202a159
 ---
+
 # $\mathbb{R}^{2k}$ is Theoretically Large Enough for Embedding-based Top-$k$ Retrieval
 
 **Conference**: ICML 2026  

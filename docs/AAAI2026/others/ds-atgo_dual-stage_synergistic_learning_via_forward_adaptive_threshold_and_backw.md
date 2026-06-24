@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks
 description: >-
-  [AAAI 2026][Spiking Neural Networks] To address spike firing imbalance and gradient vanishing caused by membrane potential distribution shifts during SNN training…
+  [AAAI 2026][Spiking Neural Networks] To address spike firing imbalance and gradient vanishing caused by membrane potential distribution shifts during SNN training, this paper proposes DS-ATGO — a dual-stage synergistic learning algorithm combining forward adaptive thresholding (AT) and backward threshold-driven gradient optimization (TGO) — achieving state-of-the-art performance on CIFAR-10/100 and ImageNet with low time-step latency.
 tags:
   - "AAAI 2026"
   - "Spiking Neural Networks"
@@ -11,7 +11,7 @@ tags:
   - "Membrane Potential Dynamics"
   - "Low-Latency Inference"
 date: 2026-05-08
-content_hash: 44d10d1699b9d5a3
+content_hash: 05386a45f53f195d
 ---
 
 # DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks
@@ -160,11 +160,11 @@ DS-ATGO achieves state-of-the-art performance across all datasets, surpassing co
 
 ## Related Papers
 
-- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
+- [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](../../ICLR2026/others/breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
 - [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
+- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
 - [\[AAAI 2026\] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)
-- [\[ICML 2026\] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks](../../ICML2026/others/bullet_trains_parallelizing_training_of_temporally_precise_spiking_neural_networ.md)
-- [\[AAAI 2026\] Autonomous Concept Drift Threshold Determination](autonomous_concept_drift_threshold_determination.md)
+- [\[ICLR 2026\] Beyond Linear Processing: Dendritic Bilinear Integration in Spiking Neural Networks](../../ICLR2026/others/beyond_linear_processing_dendritic_bilinear_integration_in_spiking_neural_networ.md)
 
 </div>
 

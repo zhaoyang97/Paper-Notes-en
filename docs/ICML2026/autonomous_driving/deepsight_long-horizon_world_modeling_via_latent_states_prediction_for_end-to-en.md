@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving
 description: >-
-  [ICML 2026][Autonomous Driving][World Models] DeepSight shifts "future world prediction" from explicit pixel reconstruction (single-frame codebook) to **parallel implicit multi-frame prediction** of DINOv3 semantic features in BEV space. Combined with an on-demand Adaptive Chain-of-Thought, it achieves a Driving Score of 86.23 (+7.39) and a Success Rate of 71.36%
+  [ICML 2026][Autonomous Driving][End-to-End Driving] DeepSight shifts "future world prediction" from explicit pixel reconstruction (single-frame codebook) to **parallel implicit multi-frame prediction** of DINOv3 semantic features in BEV space. Combined with an on-demand Adaptive Chain-of-Thought, it achieves a Driving Score of 86.23 (+7.39) and a Success Rate of 71.36% (+13.63) on the Bench2Drive closed-loop benchmark while adding only ~4% inference latency.
 tags:
-  - ICML 2026
-  - Autonomous Driving
-  - World Models
+  - "ICML 2026"
+  - "Autonomous Driving"
+  - "End-to-End Driving"
+  - "World Model"
+  - "Implicit Semantic Features"
+  - "Long-Horizon BEV Prediction"
+  - "Adaptive CoT"
 date: 2026-05-08
-content_hash: 8b866a5c43a868b1
+content_hash: 84c10f187f1b5290
 ---
+
 # DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving
 
 **Conference**: ICML 2026  
@@ -144,15 +149,14 @@ View Comparison: Front-view DS=77.77 vs BEV DS=86.57 (Gain of 8.8 DS).
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](../../ICLR2026/autonomous_driving/resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
+- [\[ICML 2026\] RoCA: Robust Cross-Domain End-to-End Autonomous Driving](roca_robust_cross-domain_end-to-end_autonomous_driving.md)
+- [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
 - [\[ICCV 2025\] World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model](../../ICCV2025/autonomous_driving/world4drive_end-to-end_autonomous_driving_via_intention-aware_physical_latent_wo.md)
 - [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
-- [\[CVPR 2026\] WOD-E2E: Waymo Open Dataset for End-to-End Driving in Challenging Long-tail Scenarios](../../CVPR2026/autonomous_driving/wod-e2e_waymo_open_dataset_for_end-to-end_driving_in_challenging_long-tail_scena.md)
-- [\[CVPR 2026\] Perceiving the Near, Reasoning the Distant: Coherent Long-Horizon Trajectory Prediction for Autonomous Driving](../../CVPR2026/autonomous_driving/perceiving_the_near_reasoning_the_distant_coherent_long-horizon_trajectory_predi.md)
+- [\[NeurIPS 2025\] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](../../NeurIPS2025/autonomous_driving/future-aware_end-to-end_driving_bidirectional_modeling_of_trajectory_planning_an.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficiently Learning Drifting Halfspaces with Massart Noise
 description: >-
-  [ICML 2026][learning_theory][Paper Note] In online learning scenarios where the distribution drifts over time and labels are corrupted by Massart noise, this paper provides the first **polynomial-time** algorithm for learning $\gamma$-margin halfspaces with an error of $\eta+\tilde{O}(\Delta^{1/3}/\gamma)$. Using low-degree polynomial lower bounds, it further
+  [ICML2026][Learning Theory][Distribution Drift] In online learning scenarios where the distribution drifts over time and labels are corrupted by Massart noise, this paper provides the first **polynomial-time** algorithm for learning $\gamma$-margin halfspaces with an error of $\eta+\tilde{O}(\Delta^{1/3}/\gamma)$. Using low-degree polynomial lower bounds, it further demonstrates that the $\Delta^{1/3}$ exponent is unavoidable for efficient algorithms…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "Distribution Drift"
+  - "Halfspace Learning"
+  - "Massart Noise"
+  - "Information-Computation Gap"
+  - "Low-degree Polynomial Lower Bounds"
 date: 2026-05-08
-content_hash: f4a0960a22322a1e
+content_hash: ae852703a7c23d1d
 ---
+
 # Efficiently Learning Drifting Halfspaces with Massart Noise
 
 **Conference**: ICML2026  
@@ -115,15 +121,16 @@ The algorithm uses no trainable parameters in the traditional sense; "training" 
 - Value: ⭐⭐⭐⭐⭐ Provides a computational benchmark for learnability on non-stationary data, fundamental for drift learning theory.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](../../ICLR2026/learning_theory/noise_tolerance_of_distributionally_robust_learning.md)
 - [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
 - [\[ICML 2026\] Robustness of Mixtures of Experts to Feature Noise](robustness_of_mixtures_of_experts_to_feature_noise.md)
-- [\[ICML 2026\] Performative Learning Theory](performative_learning_theory.md)
-- [\[ICML 2026\] Bandit Social Learning with Exploration Episodes](bandit_social_learning_with_exploration_episodes.md)
-- [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)
+- [\[ICLR 2026\] Towards Persistent Noise-Tolerant Active Learning of Regular Languages with Class Query](../../ICLR2026/learning_theory/towards_persistent_noise-tolerant_active_learning_of_regular_languages_with_clas.md)
+- [\[ICLR 2026\] "Noisier" Noise Contrastive Estimation is (Almost) Maximum Likelihood](../../ICLR2026/learning_theory/noisier_noise_contrastive_estimation_is_almost_maximum_likelihood.md)
 
 </div>
 

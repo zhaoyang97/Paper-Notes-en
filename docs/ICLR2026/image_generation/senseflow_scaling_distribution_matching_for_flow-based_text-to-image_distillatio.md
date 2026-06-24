@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Image Generation][distribution matching distillation] Proposes SenseFlow, which scales Distribution Matching Distillation (DMD) to large-scale flow-based text-to-image models (SD 3.5 Large 8B / FLUX.1 dev 12B) via Implicit Distribution Alignment (IDA) and Intra-Segment Guidance (ISG), achieving high-quality 4-step image generation.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - distribution matching distillation
-  - flow matching
-  - text-to-image
-  - few-step generation
-  - FLUX
+  - "ICLR 2026"
+  - "Image Generation"
+  - "distribution matching distillation"
+  - "flow matching"
+  - "text-to-image"
+  - "few-step generation"
+  - "FLUX"
 date: 2026-05-08
-content_hash: 014d6fcfb832b6c9
+content_hash: e6c8dac216bbfbaa
 ---
+
 # SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation
 
 **Conference**: ICLR 2026  
@@ -154,10 +155,10 @@ IDA is critical for SD 3.5 convergence; ISG is an additional necessary condition
 ## Related Papers
 
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
-- [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](edit-based_flow_matching_for_temporal_point_processes.md)
-- [\[ICLR 2026\] DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment](densegrpo_from_sparse_to_dense_reward_for_flow_matching_model_alignment.md)
+- [\[ICLR 2026\] Discrete Guidance Matching: Exact Guidance for Discrete Flow Matching](discrete_guidance_matching_exact_guidance_for_discrete_flow_matching.md)
+- [\[ICLR 2026\] Decoupled DMD: CFG Augmentation as the Spear, Distribution Matching as the Shield](decoupled_dmd_cfg_augmentation_as_the_spear_distribution_matching_as_the_shield.md)
 
 </div>
 

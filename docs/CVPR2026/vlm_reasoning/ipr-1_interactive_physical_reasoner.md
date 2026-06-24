@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] IPR-1: Interactive Physical Reasoner
 description: >-
-  [CVPR 2026][Multimodal VLM][World Models] IPR enables an 8B VLM to learn physics and causality across 1000+ heterogeneous games through a closed-loop "world model imagination rollout scoring $\rightarrow$ reinforced VLM strategy" paradigm. It utilizes a physics-centric latent action code, PhysCode, to align "semantic intent" with "visual dynamics" into a share
+  [CVPR 2026][VLM Reasoning][Interactive Physical Reasoning] IPR enables an 8B VLM to learn physics and causality across 1000+ heterogeneous games through a closed-loop "world model imagination rollout scoring $\rightarrow$ reinforced VLM strategy" paradigm. It utilizes a physics-centric latent action code, PhysCode, to align "semantic intent" with "visual dynamics" into a shared action space for both prediction and reasoning, achieving an overall competitiveness (average rank)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - World Models
-  - VLM agent
-  - PhysCode
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Interactive Physical Reasoning"
+  - "World Models"
+  - "VLM agent"
+  - "Latent Action Space"
+  - "PhysCode"
 date: 2026-05-08
-content_hash: f82c96b4077eecb7
+content_hash: 7b80e5bf0d30a0c0
 ---
+
 # IPR-1: Interactive Physical Reasoner
 
 **Conference**: CVPR 2026  
@@ -145,11 +148,11 @@ Table 3 decomposes the contributions of world model prediction and GRPO on the s
 
 ## Related Papers
 
-- [\[CVPR 2026\] Interactive Episodic Memory with User Feedback](interactive_episodic_memory_with_user_feedback.md)
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
 - [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
 - [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
-- [\[CVPR 2026\] PhyCritic: Multimodal Critic Models for Physical AI](phycritic_multimodal_critic_models_for_physical_ai.md)
+- [\[CVPR 2026\] AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models](axg-reasoner_error_detection_and_explanation_in_long_task_videos_with_vision-lan.md)
+- [\[CVPR 2026\] QUANTIPHY: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models](quantiphy_a_quantitative_benchmark_evaluating_physical_reasoning_abilities_of_vi.md)
+- [\[ICLR 2026\] Generative Universal Verifier as Multimodal Meta-Reasoner](../../ICLR2026/vlm_reasoning/generative_universal_verifier_as_multimodal_meta-reasoner.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion
 description: >-
-  [CVPR 2026][Video Generation][3D Cache] Pantheon360 utilizes explicit 3D point clouds ("3D Cache") reconstructed from sparse 360° inputs to render "geometry-only, texture-less" panoramic videos along user-specified camera trajectories. A fine-tuned SVD diffusion model then "paints" realistic textures onto this geometric skeleton. This achieves precise trajec
+  [CVPR 2026][Video Generation][360° Panoramic Video] Pantheon360 utilizes explicit 3D point clouds ("3D Cache") reconstructed from sparse 360° inputs to render "geometry-only, texture-less" panoramic videos along user-specified camera trajectories. A fine-tuned SVD diffusion model then "paints" realistic textures onto this geometric skeleton. This achieves precise trajectory control and globally consistent digital twin video generation for in-the-wild panoramic scenes…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - 3D Cache
+  - "CVPR 2026"
+  - "Video Generation"
+  - "360° Panoramic Video"
+  - "Digital Twin"
+  - "Camera Trajectory Control"
+  - "3D Cache"
+  - "Video Diffusion"
 date: 2026-05-08
-content_hash: 9fa1da8c437bc855
+content_hash: 6d5a83b7934ff737
 ---
+
 # Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion
 
 **Conference**: CVPR 2026  
@@ -141,10 +146,20 @@ Verified on 30 Google Street View scenes for dual-anchor latent fusion:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
+- [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
+- [\[CVPR 2026\] Content-Aware Dynamic Patchification for Efficient Video Diffusion](content-aware_dynamic_patchification_for_efficient_video_diffusion.md)
+- [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
+- [\[CVPR 2026\] CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video](cubecomposer_spatio-temporal_autoregressive_4k_360_video_generation_from_perspec.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)

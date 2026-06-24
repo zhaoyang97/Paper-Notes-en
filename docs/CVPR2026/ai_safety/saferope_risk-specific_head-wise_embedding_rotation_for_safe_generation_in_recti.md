@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] SafeRoPE: Risk-specific Head-wise Embedding Rotation for Safe Generation in Rectified Flow Transformers
 description: >-
-  [CVPR 2026][AI Safety][Concept Erasure] SafeRoPE observes that in MMDiTs (e.g., FLUX), only a few "safety-critical attention heads" carry unsafe semantics, and these semantics are concentrated in low-dimensional subspaces. Consequently, it learns low-rank orthogonal rotation matrices for these specific heads to adaptively rotate unsafe components based on th
+  [CVPR 2026][AI Safety][Safe generation] SafeRoPE observes that in MMDiTs (e.g., FLUX), only a few "safety-critical attention heads" carry unsafe semantics, and these semantics are concentrated in low-dimensional subspaces. Consequently, it learns low-rank orthogonal rotation matrices for these specific heads to adaptively rotate unsafe components based on the "latent risk score" of each token. This precisely suppresses unsafe content—such as nudity, violence…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Concept Erasure
-  - RoPE
-  - MMDiT
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Safe generation"
+  - "Concept erasure"
+  - "RoPE"
+  - "MMDiT"
+  - "Attention heads"
+  - "Rectified flow"
 date: 2026-05-08
-content_hash: 3a53efa998b0bb74
+content_hash: dc67cffcecabb00f
 ---
+
 # SafeRoPE: Risk-specific Head-wise Embedding Rotation for Safe Generation in Rectified Flow Transformers
 
 **Conference**: CVPR 2026  
@@ -143,11 +147,11 @@ SafeRoPE achieved the lowest UR across all concepts while improving FID compared
 
 ## Related Papers
 
-- [\[CVPR 2026\] Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models](roots_beneath_the_cut_uncovering_the_risk_of_concept_revival_in_pruning-based_un.md)
+- [\[CVPR 2026\] When Understanding Becomes a Risk: Authenticity and Safety Risks in the Emerging Image Generation Paradigm](when_understanding_becomes_a_risk_authenticity_and_safety_risks_in_the_emerging_.md)
 - [\[CVPR 2026\] WaTeRFlow: Watermark Temporal Robustness via Flow Consistency](waterflow_watermark_temporal_robustness_via_flow_consistency.md)
-- [\[ICLR 2026\] Risk-Sensitive Agent Compositions](../../ICLR2026/ai_safety/risk-sensitive_agent_compositions.md)
-- [\[CVPR 2026\] Stealing Split Learning Bottom Models by Recovering Embedding Geometry](stealing_split_learning_bottom_models_by_recovering_embedding_geometry.md)
+- [\[CVPR 2026\] Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models](roots_beneath_the_cut_uncovering_the_risk_of_concept_revival_in_pruning-based_un.md)
 - [\[CVPR 2026\] ReMoE: Region-Mixture Experts for Adversarially-Robust Vision Transformers](remoe_region-mixture_experts_for_adversarially-robust_vision_transformers.md)
+- [\[CVPR 2026\] Stealing Split Learning Bottom Models by Recovering Embedding Geometry](stealing_split_learning_bottom_models_by_recovering_embedding_geometry.md)
 
 </div>
 

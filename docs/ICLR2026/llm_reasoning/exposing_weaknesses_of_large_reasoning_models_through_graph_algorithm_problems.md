@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exposing Weaknesses of Large Reasoning Models through Graph Algorithm Problems
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper proposes GRALGOBENCH—a benchmark evaluating Large Reasoning Models (LRMs) using graph algorithm problems (8–160 nodes, three reasoning paradigms, nine tasks). Leveraging programmatic verification, controllable difficulty, and intrinsic long-context features, it systematically exposes two major weaknesses of
+  [ICLR 2026][Reasoning][Large Reasoning Models] This paper proposes GRALGOBENCH—a benchmark evaluating Large Reasoning Models (LRMs) using graph algorithm problems (8–160 nodes, three reasoning paradigms, nine tasks). Leveraging programmatic verification, controllable difficulty, and intrinsic long-context features, it systematically exposes two major weaknesses of LRMs: a sharp drop in accuracy as context length increases and "over-thinking" driven by excessive but inefficien…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Large Reasoning Models"
+  - "Graph Algorithms"
+  - "Long-context Reasoning"
+  - "Over-thinking"
+  - "Self-verification"
 date: 2026-05-08
-content_hash: b43742e3b7c536db
+content_hash: e492d6c4e31bbf81
 ---
+
 # Exposing Weaknesses of Large Reasoning Models through Graph Algorithm Problems
 
 **Conference**: ICLR 2026  
@@ -117,11 +123,11 @@ Accuracy collapses even when only extending token length with fixed graph struct
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
+- [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](../../NeurIPS2025/llm_reasoning/topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
 - [\[ICLR 2026\] Training Large Reasoning Models Efficiently via Progressive Thought Encoding](training_large_reasoning_models_efficiently_via_progressive_thought_encoding.md)
-- [\[ICLR 2026\] Dynamic Early Exit in Reasoning Models](dynamic_early_exit_in_reasoning_models.md)
 - [\[ICLR 2026\] MetaMuse: Algorithm Generation via Creative Ideation](metamuse_algorithm_generation_via_creative_ideation.md)
 - [\[ICLR 2026\] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models](dynamics-predictive_sampling_for_active_rl_finetuning_of_large_reasoning_models.md)
+- [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_reasoning_interv.md)
 
 </div>
 

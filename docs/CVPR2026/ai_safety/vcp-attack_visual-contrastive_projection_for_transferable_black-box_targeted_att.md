@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models
 description: >-
-  [CVPR 2026][AI Safety][Vision-Language Model] VCP-Attack achieves SOTA in black-box targeted attacks on Large Vision-Language Models (LVLMs) by constraining adversarial perturbations within a low-dimensional semantic subspace derived via dynamic PCA and using multi-sample contrastive loss to pull adversarial features toward target semantics while pushing them away
+  [CVPR 2026][AI Safety][Black-box targeted attacks] VCP-Attack achieves SOTA in black-box targeted attacks on Large Vision-Language Models (LVLMs) by constraining adversarial perturbations within a low-dimensional semantic subspace derived via dynamic PCA and using multi-sample contrastive loss to pull adversarial features toward target semantics while pushing them away from source semantics—achieving average Attack Success Rates (ASR) of 94.2% on open-source models…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Black-box targeted attacks"
+  - "transferable adversarial examples"
+  - "PCA subspace projection"
+  - "contrastive supervision"
+  - "vision-language models"
 date: 2026-05-08
-content_hash: 15a20c527fc3f052
+content_hash: e7f0592803b1bb03
 ---
+
 # VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -116,9 +121,9 @@ Evaluated on 7 open-source and 3 closed-source LVLMs (including GPT-4o, Claude, 
 
 - [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 - [\[CVPR 2026\] Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction](towards_highly_transferable_vision-language_attack_via_semantic-augmented_dynami.md)
-- [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
 - [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
-- [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
+- [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
+- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
 
 </div>
 

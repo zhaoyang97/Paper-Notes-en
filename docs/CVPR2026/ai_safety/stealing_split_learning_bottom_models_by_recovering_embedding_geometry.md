@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stealing Split Learning Bottom Models by Recovering Embedding Geometry
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] In the context of split learning for Vertical Federated Learning (VFL), the authors propose VENOM—a "geometry-aware" model stealing attack. Instead of performing point-wise fitting of embedding coordinates seen by the server, VENOM first uses contrastive learning to reconstruct a stable neighborhood geometric space on
+  [CVPR 2026][AI Safety][Vertical Federated Learning] In the context of split learning for Vertical Federated Learning (VFL), the authors propose VENOM—a "geometry-aware" model stealing attack. Instead of performing point-wise fitting of embedding coordinates seen by the server, VENOM first uses contrastive learning to reconstruct a stable neighborhood geometric space on these embeddings. It then trains a surrogate model to simultaneously align coordinates, feature shapes…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Vertical Federated Learning"
+  - "Split Learning"
+  - "Model Stealing"
+  - "Contrastive Learning"
+  - "Embedding Geometry"
 date: 2026-05-08
-content_hash: ddcb2533b05e0936
+content_hash: 48a4c2ada95710c3
 ---
+
 # Stealing Split Learning Bottom Models by Recovering Embedding Geometry
 
 **Conference**: CVPR 2026  
@@ -140,15 +146,16 @@ The table below shows S-ACC (%) under strong defenses, highlighting VENOM's adva
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
+- [\[ICML 2026\] From Prompts to Responses: Dual-Sided Data Leakage and Defense in Split Large Language Models](../../ICML2026/ai_safety/from_prompts_to_responses_dual-sided_data_leakage_and_defense_in_split_large_lan.md)
+- [\[NeurIPS 2025\] PubSub-VFL: Towards Efficient Two-Party Split Learning in Heterogeneous Environments via Publisher/Subscriber Architecture](../../NeurIPS2025/ai_safety/pubsub-vfl_towards_efficient_two-party_split_learning_in_heterogeneous_environme.md)
 - [\[CVPR 2026\] MaxMark: High-Capacity Diffusion-Native Watermarking via Robust and Invertible Latent Embedding](maxmark_high-capacity_diffusion-native_watermarking_via_robust_and_invertible_la.md)
 - [\[AAAI 2026\] HealSplit: Towards Self-Healing through Adversarial Distillation in Split Federated Learning](../../AAAI2026/ai_safety/healsplit_towards_self-healing_through_adversarial_distillation_in_split_federat.md)
-- [\[CVPR 2026\] Fine-Tuning Impairs the Balancedness of Foundation Models in Long-tailed Personalized Federated Learning](fine-tuning_impairs_the_balancedness_of_foundation_models_in_long-tailed_persona.md)
-- [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
 
 </div>
 

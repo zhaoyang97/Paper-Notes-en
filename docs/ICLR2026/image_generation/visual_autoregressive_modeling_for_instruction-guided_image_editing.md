@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Image Generation][Image Editing] VAREdit is proposed, redefining instruction-guided image editing as a multi-scale prediction problem. It addresses scale mismatch in fine-scale conditioning through the Scale-Aligned Reference module, significantly outperforming diffusion-based methods in edit faithfulness and efficiency.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Image Editing
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Visual Autoregressive"
+  - "Multi-scale Prediction"
+  - "Instruction-guided"
+  - "Scale Alignment"
 date: 2026-05-08
-content_hash: 4a00404428399690
+content_hash: 0c659a0736f9511f
 ---
+
 # Visual Autoregressive Modeling for Instruction-Guided Image Editing
 
 **Conference**: ICLR 2026  
@@ -140,9 +145,9 @@ For 512×512 editing, VAREdit-8B requires only 1.2 seconds, which is **2.2x fast
 
 - [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
 - [\[ICLR 2026\] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](mvar_visual_autoregressive_modeling_with_scale_and_spatial_markovian_conditionin.md)
+- [\[ICLR 2026\] SoftCFG: Uncertainty-guided Stable Guidance for Visual Autoregressive Model](softcfg_uncertainty-guided_stable_guidance_for_visual_autoregressive_model.md)
 - [\[ICML 2026\] Visual Implicit Autoregressive Modeling](../../ICML2026/image_generation/visual_implicit_autoregressive_modeling.md)
-- [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](../../CVPR2026/image_generation/fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
-- [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](../../CVPR2026/image_generation/compbench_benchmarking_complex_instruction-guided_image_editing.md)
+- [\[ICLR 2026\] EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling](editscore_unlocking_online_rl_for_image_editing_via_high-fidelity_reward_modelin.md)
 
 </div>
 

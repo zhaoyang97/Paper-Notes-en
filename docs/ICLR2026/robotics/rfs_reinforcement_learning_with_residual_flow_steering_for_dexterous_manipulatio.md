@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Sim-to-Real] RFS unifies "residual reinforcement learning" and "diffusion/flow steering" into a single policy modulation framework. For a pre-trained flow matching policy, it simultaneously learns a latent space noise distribution (for global exploration) and a residual action correction (for local refinement). Without modifying th
+  [ICLR 2026][Robotics][Residual Reinforcement Learning] RFS unifies "residual reinforcement learning" and "diffusion/flow steering" into a single policy modulation framework. For a pre-trained flow matching policy, it simultaneously learns a latent space noise distribution (for global exploration) and a residual action correction (for local refinement). Without modifying the base policy parameters, it enables efficient fine-tuning, increasing the average success rate from 0.25…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Sim-to-Real
+  - "ICLR 2026"
+  - "Robotics"
+  - "Residual Reinforcement Learning"
+  - "Flow Matching Policy"
+  - "Noise Steering"
+  - "Dexterous Grasping"
+  - "Sim-to-Real"
 date: 2026-05-08
-content_hash: ef9c98015272c3b9
+content_hash: 9caed19c99f0e667
 ---
+
 # RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation
 
 **Conference**: ICLR 2026  
@@ -139,15 +144,15 @@ RFS achieved the highest success rates across all six tasks, with an average of 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] DemoGrasp: Universal Dexterous Grasping from a Single Demonstration](demograsp_universal_dexterous_grasping_from_a_single_demonstration.md)
 - [\[ICLR 2026\] DexMove: Learning Tactile-Guided Non-Prehensile Manipulation with Dexterous Hands](dexmove_learning_tactile-guided_non-prehensile_manipulation_with_dexterous_hands.md)
 - [\[CVPR 2025\] ManipTrans: Efficient Dexterous Bimanual Manipulation Transfer via Residual Learning](../../CVPR2025/robotics/maniptrans_efficient_dexterous_bimanual_manipulation_transfer_via_residual_learn.md)
-- [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
 - [\[ICLR 2026\] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)
+- [\[ICLR 2026\] Emergent Dexterity via Diverse Resets and Large-Scale Reinforcement Learning](emergent_dexterity_via_diverse_resets_and_large-scale_reinforcement_learning.md)
 
 </div>
 

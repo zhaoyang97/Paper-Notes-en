@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Ours proposes CoMo, which synergistically addresses the shortcut learning problem in continuous latent motion learning through two mechanisms: Early Temporal Differencing (Td) and Temporal Contrastive Learning (Tcl). It extracts fine-grained continuous pseudo-action labels from internet videos, allowing video data and
+  [CVPR 2026][Robotics][Continuous latent motion] Ours proposes CoMo, which synergistically addresses the shortcut learning problem in continuous latent motion learning through two mechanisms: Early Temporal Differencing (Td) and Temporal Contrastive Learning (Tcl). It extracts fine-grained continuous pseudo-action labels from internet videos, allowing video data and robot actions to be co-trained under a unified continuous distribution, significantly improving policy performan…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Continuous latent motion"
+  - "pseudo-action labels"
+  - "inverse dynamics model"
+  - "temporal contrastive learning"
+  - "video-robot co-training"
 date: 2026-05-08
-content_hash: 817e28b84e01a916
+content_hash: b1d0955c0d88cd20
 ---
+
 # CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,20 @@ CALVIN ABC $\rightarrow$ D Benchmark:
 - **Value**: ⭐⭐⭐⭐⭐ Provides a practical and principled solution for scaling robot learning from internet videos.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency](learning_a_unified_latent_action_space_from_videos_with_action-centric_cycle_con.md)
+- [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
+- [\[CVPR 2026\] StaMo: Unsupervised Learning of Generalizable Robot Motion from Compact State Representation](stamo_unsupervised_learning_of_generalizable_robot_motion_from_compact_state_rep.md)
+- [\[CVPR 2026\] Video2Robo: 3DGS-based Synthetic Data from One Video Enables Scalable Robot Learning](video2robo_3dgs-based_synthetic_data_from_one_video_enables_scalable_robot_learn.md)
+- [\[ICCV 2025\] Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos](../../ICCV2025/robotics/moto_latent_motion_token_as_the_bridging_language_for_learning_robot_manipulatio.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)

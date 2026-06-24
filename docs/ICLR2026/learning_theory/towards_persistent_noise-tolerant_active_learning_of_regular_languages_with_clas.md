@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Towards Persistent Noise-Tolerant Active Learning of Regular Languages with Class Query
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes the pMAT (Probabilistic Minimally Adequate Teacher) formal framework to capture the scenario where an LLM serves as a persistent noisy Membership Query (MQ) Oracle and a simulator/checker serves as an exact Equivalence Query (EQ) Oracle. It introduces the CAPAL algorithm—which replaces blind trust i
+  [ICLR 2026][Learning Theory][DFA Active Learning] This paper proposes the pMAT (Probabilistic Minimally Adequate Teacher) formal framework to capture the scenario where an LLM serves as a persistent noisy Membership Query (MQ) Oracle and a simulator/checker serves as an exact Equivalence Query (EQ) Oracle. It introduces the CAPAL algorithm—which replaces blind trust in single MQ labels with statistical "homomorphical class queries" and uses discrimination trees to compress th…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Automata Learning"
+  - "Neuro-symbolic"
+  - "DFA Active Learning"
+  - "Persistent Noise"
+  - "Class Query"
+  - "Discrimination Tree"
+  - "LLM as Oracle"
 date: 2026-05-08
-content_hash: a25c018ce5a597a1
+content_hash: 9be79228199b1138
 ---
+
 # Towards Persistent Noise-Tolerant Active Learning of Regular Languages with Class Query
 
 **Conference**: ICLR 2026  
@@ -143,8 +151,20 @@ Learning Accuracy (ratio of tasks where the exact target DFA was learned):
 - **Writing Quality**: ⭐⭐⭐⭐⭐ Excellent articulation of the "persistent error" problem and its theoretical implications.
 - **Value**: ⭐⭐⭐⭐ Provides a robust path for neuro-symbolic pipelines to synthesize certifiable formal artifacts using fallible LLMs.
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](noise_tolerance_of_distributionally_robust_learning.md)
+- [\[ICLR 2026\] The Lie of the Average: How Class Incremental Learning Evaluation Deceives You?](the_lie_of_the_average_how_class_incremental_learning_evaluation_deceives_you.md)
+- [\[ICML 2026\] Active Learning with Low-Rank Structure for Data Selection](../../ICML2026/learning_theory/active_learning_with_low-rank_structure_for_data_selection.md)
+- [\[ICLR 2026\] Revisiting Active Sequential Prediction-Powered Mean Estimation](revisiting_active_sequential_prediction-powered_mean_estimation.md)
+- [\[ICML 2026\] Efficiently Learning Drifting Halfspaces with Massart Noise](../../ICML2026/learning_theory/efficiently_learning_drifting_halfspaces_with_massart_noise.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](noise_tolerance_of_distributionally_robust_learning.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Problem-Oriented Perspective and Anchor Verification for Code Optimization
 description: >-
-  [ICLR 2026][Code Intelligence][LLM] The paper proposes a problem-oriented (rather than user-oriented) approach to construct optimization pairs to integrate strategic diversity from multiple programmers. It also designs an anchor verification framework that utilizes "slow but correct code" to generate test cases, mitigating the "optimization tax" (correct
+  [ICLR 2026][Code Intelligence][Code Optimization] The paper proposes a problem-oriented (rather than user-oriented) approach to construct optimization pairs to integrate strategic diversity from multiple programmers. It also designs an anchor verification framework that utilizes "slow but correct code" to generate test cases, mitigating the "optimization tax" (correctness loss), thereby increasing the optimization ratio from 31.24% to 71.06% and the speedup from 2.95x to 6.08…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - LLM
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Code Optimization"
+  - "LLM"
+  - "Problem-Oriented"
+  - "Anchor Verification"
+  - "Program Performance"
 date: 2026-05-08
-content_hash: 00302b6c55f7463d
+content_hash: 10e46af4f81404b6
 ---
+
 # A Problem-Oriented Perspective and Anchor Verification for Code Optimization
 
 **Conference**: ICLR 2026  
@@ -136,10 +141,10 @@ The Code LLM (e.g., DeepSeek-Coder, Qwen2.5-Coder) is finetuned using SFT on PCO
 ## Related Papers
 
 - [\[ICLR 2026\] SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification](spotit_evaluating_text-to-sql_evaluation_with_formal_verification.md)
-- [\[ICLR 2026\] Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning](paper2code_automating_code_generation_from_scientific_papers_in_machine_learning.md)
-- [\[ICLR 2026\] Behavioral Embeddings of Programs: A Quasi-Dynamic Approach for Optimization Prediction](behavioral_embeddings_of_programs_a_quasi-dynamic_approach_for_optimization_pred.md)
+- [\[ICLR 2026\] Local Success Does Not Compose: Benchmarking Large Language Models for Compositional Formal Verification](local_success_does_not_compose_benchmarking_large_language_models_for_compositio.md)
 - [\[ICLR 2026\] From Large to Small: Transferring CUDA Optimization Expertise via Reasoning Graph](from_large_to_small_transferring_cuda_optimization_expertise_via_reasoning_graph.md)
 - [\[ICLR 2026\] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization](boad_discovering_hierarchical_software_engineering_agents_via_bandit_optimizatio.md)
+- [\[ICLR 2026\] Behavioral Embeddings of Programs: A Quasi-Dynamic Approach for Optimization Prediction](behavioral_embeddings_of_programs_a_quasi-dynamic_approach_for_optimization_pred.md)
 
 </div>
 

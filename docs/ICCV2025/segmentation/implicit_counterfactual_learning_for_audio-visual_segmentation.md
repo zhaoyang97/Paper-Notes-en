@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Implicit Counterfactual Learning for Audio-Visual Segmentation
 description: >-
-  [ICCV 2025][Segmentation][audio-visual segmentation] This paper proposes the Implicit Counterfactual Framework (ICF), which employs multi-granularity implicit text as a modality bridge to reduce the audio-visual represen…
+  [ICCV 2025][Segmentation][audio-visual segmentation] This paper proposes the Implicit Counterfactual Framework (ICF), which employs multi-granularity implicit text as a modality bridge to reduce the audio-visual representation gap, and leverages semantic counterfactuals to generate orthogonal counterfactual samples that mitigate modality preference. Combined with Collaborative Distribution-Aware Contrastive Learning (CDCL), ICF achieves unbiased cross-modal understanding and…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "implicit text bridging"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: ccb0103436f6ca41
+content_hash: 54b84dc930327ff2
 ---
 
 # Implicit Counterfactual Learning for Audio-Visual Segmentation
@@ -149,11 +149,11 @@ Detailed comparison under different settings (S4: single sound source; MS3: mult
 
 ## Related Papers
 
+- [\[CVPR 2025\] Robust Audio-Visual Segmentation via Audio-Guided Visual Convergent Alignment](../../CVPR2025/segmentation/robust_audio-visual_segmentation_via_audio-guided_visual_convergent_alignment.md)
 - [\[ICCV 2025\] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models](tavis_text-bridged_audio-visual_segmentation_with_foundation_models.md)
 - [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
 - [\[ICCV 2025\] How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation?](how_do_optical_flow_and_textual_prompts_collaborate_to_assist_in_audio-visual_se.md)
-- [\[ICCV 2025\] Hierarchical Visual Prompt Learning for Continual Video Instance Segmentation](hierarchical_visual_prompt_learning_for_continual_video_instance_segmentation.md)
-- [\[ICCV 2025\] Region-based Cluster Discrimination for Visual Representation Learning](region-based_cluster_discrimination_for_visual_representation_learning.md)
+- [\[CVPR 2025\] Audio-Visual Instance Segmentation](../../CVPR2025/segmentation/audio-visual_instance_segmentation.md)
 
 </div>
 

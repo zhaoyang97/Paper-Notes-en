@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning
 description: >-
-  [ICCV 2025][Interpretability][zero-shot learning] This paper proposes the SVIP framework, which addresses semantic misalignment in zero-shot learning at its source by identifying and replacing semantically irrelevant ima…
+  [ICCV 2025][Interpretability][zero-shot learning] This paper proposes the SVIP framework, which addresses semantic misalignment in zero-shot learning at its source by identifying and replacing semantically irrelevant image patches **at the input stage** with learnable embeddings initialized from attribute-level word embeddings.
 tags:
   - "ICCV 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "patch selection"
   - "attribute localization"
 date: 2026-05-08
-content_hash: 203e5a8b6d16245a
+content_hash: b028f190a49dede8
 ---
 
 # SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning
@@ -148,11 +148,11 @@ The backbone is ViT-base (ImageNet-1k pretrained); the 196 patches are pooled in
 
 ## Related Papers
 
+- [\[CVPR 2025\] L-SWAG: Layer-Sample Wise Activation with Gradients Information for Zero-Shot NAS on Vision Transformers](../../CVPR2025/interpretability/l-swag_layer-sample_wise_activation_with_gradients_information_for_zero-shot_nas.md)
+- [\[CVPR 2025\] Open Ad-Hoc Categorization with Contextualized Feature Learning](../../CVPR2025/interpretability/open_ad-hoc_categorization_with_contextualized_feature_learning.md)
 - [\[AAAI 2026\] Induce, Align, Predict: Zero-Shot Stance Detection via Cognitive Inductive Reasoning](../../AAAI2026/interpretability/induce_align_predict_zero-shot_stance_detection_via_cognitive_inductive_reasonin.md)
+- [\[CVPR 2025\] Learning Visual Composition through Improved Semantic Guidance](../../CVPR2025/interpretability/learning_visual_composition_through_improved_semantic_guidance.md)
 - [\[NeurIPS 2025\] Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Cortex](../../NeurIPS2025/interpretability/time-evolving_dynamical_system_for_learning_latent_representations_of_mouse_visu.md)
-- [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](../../ICML2026/interpretability/how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
-- [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](../../NeurIPS2025/interpretability/understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
-- [\[CVPR 2026\] Draft and Refine with Visual Experts](../../CVPR2026/interpretability/draft_and_refine_with_visual_experts.md)
 
 </div>
 

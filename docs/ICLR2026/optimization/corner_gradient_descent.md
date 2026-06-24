@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Corner Gradient Descent
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes a "contour perspective" that equates generalized (S)GD with arbitrary linear memory to a contour $\gamma$ on the complex plane (via the response mapping $\Psi=P/Q$). It proves that by forming a "sharp corner" at the origin with an exterior angle $\theta\pi$ ($1<\theta<2$), the loss convergence rate
+  [ICLR2026][Optimization][Stochastic Gradient Descent] This paper proposes a "contour perspective" that equates generalized (S)GD with arbitrary linear memory to a contour $\gamma$ on the complex plane (via the response mapping $\Psi=P/Q$). It proves that by forming a "sharp corner" at the origin with an exterior angle $\theta\pi$ ($1<\theta<2$), the loss convergence rate of SGD on power-law quadratic problems can be accelerated from $O(t^{-\zeta})$ to $O(t^{-\theta\zeta})$. T…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Stochastic Gradient Descent"
+  - "convergence acceleration"
+  - "power-law spectrum"
+  - "complex plane contour"
+  - "infinite-memory optimizer"
 date: 2026-05-08
-content_hash: fd2fc47e0fabc212
+content_hash: 9244d8682bac21da
 ---
+
 # Corner Gradient Descent
 
 **Conference**: ICLR2026  

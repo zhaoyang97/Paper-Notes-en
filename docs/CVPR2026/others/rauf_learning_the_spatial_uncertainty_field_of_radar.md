@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] RaUF: Learning the Spatial Uncertainty Field of Radar
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] RaUF reformulates "low-fidelity radar point cloud reconstruction" as a Bayesian problem of learning a **spatial uncertainty field**. It employs anisotropic Gaussians to characterize the "crescent-shaped" azimuth/range uncertainty of radar, converting conflicting "feature-to-label" supervision into learnable confidence
+  [CVPR 2026][Millimeter-Wave Radar] RaUF reformulates "low-fidelity radar point cloud reconstruction" as a Bayesian problem of learning a **spatial uncertainty field**. It employs anisotropic Gaussians to characterize the "crescent-shaped" azimuth/range uncertainty of radar, converting conflicting "feature-to-label" supervision into learnable confidence signals. By injecting Doppler consistency into spatial features via bidirectional domain attention to suppress ghost points…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Millimeter-Wave Radar"
+  - "Spatial Uncertainty"
+  - "Anisotropic Gaussian"
+  - "Doppler Consistency"
+  - "Point Cloud Reconstruction"
 date: 2026-05-08
-content_hash: 7fa42fa5504e35dc
+content_hash: edc0df00a7fce934
 ---
+
 # RaUF: Learning the Spatial Uncertainty Field of Radar
 
 **Conference**: CVPR 2026  
@@ -126,16 +131,16 @@ Uncertainty calibration (NLL) reduces CD by **30.55%–37.18%**, proving that an
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] SpaceDrive: Infusing Spatial Awareness into VLM-based Autonomous Driving](spacedrive_infusing_spatial_awareness_into_vlm-based_autonomous_driving.md)
-- [\[CVPR 2026\] C-LaV: Conditional Latent Velocity Field Denoising for Weather-Robust LiDAR Place Recognition](c-lav_conditional_latent_velocity_field_denoising_for_weather-robust_lidar_place.md)
-- [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](../../AAAI2026/autonomous_driving/dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
-- [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
-- [\[CVPR 2026\] GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception](gsv2x_geometry-aware_uncertainty_modeling_and_orthogonal_fusion_for_robust_roads.md)
+- [\[CVPR 2026\] Evidential Deep Partial Label Learning to Quantify Disambiguation Uncertainty](evidential_deep_partial_label_learning_to_quantify_disambiguation_uncertainty.md)
+- [\[ICLR 2026\] RADAR: Learning to Route with Asymmetry-aware Distance Representations](../../ICLR2026/others/radar_learning_to_route_with_asymmetry-aware_distance_representations.md)
+- [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](../../ICML2026/others/possibilistic_predictive_uncertainty_for_deep_learning.md)
+- [\[CVPR 2025\] Potential Field Based Deep Metric Learning](../../CVPR2025/others/potential_field_based_deep_metric_learning.md)
+- [\[AAAI 2026\] Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast](../../AAAI2026/others/radar-aplanc_unsupervised_radar-based_heartbeat_sensing_via_augmented_pseudo-lab.md)
 
 </div>
 

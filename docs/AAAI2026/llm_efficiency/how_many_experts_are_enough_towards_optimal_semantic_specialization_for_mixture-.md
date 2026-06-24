@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts
 description: >-
-  [AAAI 2026][LLM Efficiency][Mixture-of-Experts] This paper proposes MASS, a framework that adaptively expands the MoE expert pool via gradient-based semantic drift detection…
+  [AAAI 2026][LLM Efficiency][Mixture-of-Experts] This paper proposes MASS, a framework that adaptively expands the MoE expert pool via gradient-based semantic drift detection, combined with a Top-p confidence routing strategy, to automatically discover the optimal number of experts without hyperparameter search while enhancing semantic differentiation across experts.
 tags:
   - "AAAI 2026"
   - "LLM Efficiency"
@@ -13,7 +13,7 @@ tags:
   - "dynamic routing"
   - "Top-p routing"
 date: 2026-05-08
-content_hash: ae2e6ebdd7341792
+content_hash: 2f4dce7efe923d19
 ---
 
 # How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts
@@ -162,11 +162,11 @@ MASS outperforms DynMoE across all four DomainBed visual domain generalization d
 
 ## Related Papers
 
-- [\[ACL 2026\] The Hallucination of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models](../../ACL2026/llm_efficiency/the_illusion_of_specialization_unveiling_the_domain-invariant_34standing_committ.md)
+- [\[ACL 2026\] The Illusion of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models](../../ACL2026/llm_efficiency/the_illusion_of_specialization_unveiling_the_domain-invariant_34standing_committ.md)
+- [\[ICLR 2026\] DirMoE: Dirichlet-Routed Mixture of Experts](../../ICLR2026/llm_efficiency/dirmoe_dirichlet-routed_mixture_of_experts.md)
+- [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](../../ICML2026/llm_efficiency/probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
-- [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](../../ICML2026/llm_efficiency/hyperparameter_transfer_with_mixture-of-expert_layers.md)
-- [\[ACL 2026\] Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference](../../ACL2026/llm_efficiency/alloc-moe_budget-aware_expert_activation_allocation_for_efficient_mixture-of-exp.md)
-- [\[NeurIPS 2025\] On the Expressive Power of Mixture-of-Experts for Structured Complex Tasks](../../NeurIPS2025/llm_efficiency/on_the_expressive_power_of_mixture-of-experts_for_structured_complex_tasks.md)
+- [\[ICLR 2026\] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel](../../ICLR2026/llm_efficiency/understanding_the_mixture-of-experts_with_nadaraya-watson_kernel.md)
 
 </div>
 

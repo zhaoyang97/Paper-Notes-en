@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OTora: A Unified Red Teaming Framework for Reasoning-Level Denial-of-Service in LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][Reasoning-Level DoS] OTora proposes a novel attack paradigm called Reasoning-Level Denial-of-Service (R-DoS): without compromising task correctness, it employs a two-stage red teaming pipeline (first inducing the agent to actively access attacker-controlled external resources via insertion-aware optimization, then deploying "reasoning payl
+  [ICML 2026][LLM Agent][Reasoning-Level DoS] OTora proposes a novel attack paradigm called Reasoning-Level Denial-of-Service (R-DoS): without compromising task correctness, it employs a two-stage red teaming pipeline (first inducing the agent to actively access attacker-controlled external resources via insertion-aware optimization, then deploying "reasoning payloads" optimized through ICL genetic search within those resources) to force LLM agents into sustained multi-round ov…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Reasoning-Level DoS
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Reasoning-Level DoS"
+  - "Red Teaming"
+  - "Tool Call Hijacking"
+  - "Reasoning Payload Optimization"
+  - "ICL Genetic Search"
 date: 2026-05-08
-content_hash: 30393a4a83f9b2f6
+content_hash: 3ceb975c70c5c648
 ---
+
 # OTora: A Unified Red Teaming Framework for Reasoning-Level Denial-of-Service in LLM Agents
 
 **Conference**: ICML 2026  

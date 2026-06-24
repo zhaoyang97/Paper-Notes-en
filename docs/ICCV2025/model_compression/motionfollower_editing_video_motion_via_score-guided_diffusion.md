@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MotionFollower: Editing Video Motion via Lightweight Score-Guided Diffusion
 description: >-
-  [ICCV2025][Model Compression][video motion editing] This paper proposes MotionFollower, which achieves video motion editing via two lightweight convolutional controllers (pose + appearance) and a consistency guidance mec…
+  [ICCV2025][Model Compression][video motion editing] This paper proposes MotionFollower, which achieves video motion editing via two lightweight convolutional controllers (pose + appearance) and a consistency guidance mechanism based on score function regularization, surpassing strong baselines such as MotionEditor while reducing GPU memory consumption by approximately 80%.
 tags:
   - "ICCV2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "lightweight controller"
   - "pose transfer"
 date: 2026-05-08
-content_hash: 4590a4dd000a81da
+content_hash: 7982216129cf9613
 ---
 
 # MotionFollower: Editing Video Motion via Lightweight Score-Guided Diffusion
@@ -182,7 +182,7 @@ Achieves state-of-the-art results on the simpler motion transfer task as well.
 - [\[ICLR 2026\] DiffVax: Optimization-Free Image Immunization Against Diffusion-Based Editing](../../ICLR2026/model_compression/diffvax_optimization-free_image_immunization_against_diffusion-based_editing.md)
 - [\[CVPR 2026\] PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion](../../CVPR2026/model_compression/prism_video_dataset_condensation_with_progressive_refinement_and_insertion_for_s.md)
 - [\[ICCV 2025\] Multi-Object Sketch Animation by Scene Decomposition and Motion Planning](multi-object_sketch_animation_by_scene_decomposition_and_motion_planning.md)
-- [\[ICML 2026\] Active Tabular Augmentation via Policy-Guided Diffusion Inpainting](../../ICML2026/model_compression/active_tabular_augmentation_via_policy-guided_diffusion_inpainting.md)
+- [\[CVPR 2026\] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](../../CVPR2026/model_compression/f2hdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_motion_mo.md)
 
 </div>
 

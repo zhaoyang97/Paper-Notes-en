@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][mathematical reasoning] This paper formalizes CoT reasoning in LLMs as a rule-based stochastic process on Directed Acyclic Graphs (DAGs) and proposes the "logical closeness" metric to assess whether a model reaches an answer through search or rigorous logical derivation. By constructing the DAG-MATH benchmark with 2,894 gold-standard DAGs, th
+  [ICLR 2026][Reasoning][mathematical reasoning] This paper formalizes CoT reasoning in LLMs as a rule-based stochastic process on Directed Acyclic Graphs (DAGs) and proposes the "logical closeness" metric to assess whether a model reaches an answer through search or rigorous logical derivation. By constructing the DAG-MATH benchmark with 2,894 gold-standard DAGs, the authors find that even models with similar PASS@k exhibit significant differences in reasoning faithfulness.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - mathematical reasoning
-  - DAG
-  - chain-of-thought
-  - logical closeness
-  - evaluation metric
+  - "ICLR 2026"
+  - "Reasoning"
+  - "mathematical reasoning"
+  - "DAG"
+  - "chain-of-thought"
+  - "logical closeness"
+  - "evaluation metric"
 date: 2026-05-08
-content_hash: d2029f74f71d44bb
+content_hash: 09bcd67677f9c53b
 ---
+
 # DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs
 
 **Conference**: ICLR 2026  
@@ -132,11 +133,11 @@ This work does not involve model training but rather an evaluation framework and
 
 ## Related Papers
 
+- [\[ICML 2025\] MARGE: Improving Math Reasoning for LLMs with Guided Exploration](../../ICML2025/llm_reasoning/marge_improving_math_reasoning_for_llms_with_guided_exploration.md)
+- [\[ICLR 2026\] MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task](mathfimer_enhancing_mathematical_reasoning_by_expanding_reasoning_steps_through_.md)
 - [\[ICLR 2026\] Verifying Chain-of-Thought Reasoning via Its Computational Graph](verifying_chain-of-thought_reasoning_via_its_computational_graph.md)
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
-- [\[ICLR 2026\] Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking](latent-guided_reasoning_empowering_small_llms_with_large-model_thinking.md)
-- [\[ICLR 2026\] Reasoning Scaffolding: Distilling the Flow of Thought from LLMs](reasoning_scaffolding_distilling_the_flow_of_thought_from_llms.md)
-- [\[ICLR 2026\] MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task](mathfimer_enhancing_mathematical_reasoning_by_expanding_reasoning_steps_through_.md)
+- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 
 </div>
 

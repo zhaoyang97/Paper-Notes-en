@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] Ours proposes VarSplat, the first 3DGS-SLAM system that learns **per-splat appearance variance** $\sigma^2$ and renders a **pixel-wise uncertainty map** $V$ via the Law of Total Variance. This uncertainty is unified across tracking, submap registration, and loop closure, achieving robust and leading performance across
+  [CVPR2026][3D Vision][3D Gaussian Splatting] Ours proposes VarSplat, the first 3DGS-SLAM system that learns **per-splat appearance variance** $\sigma^2$ and renders a **pixel-wise uncertainty map** $V$ via the Law of Total Variance. This uncertainty is unified across tracking, submap registration, and loop closure, achieving robust and leading performance across four datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - SLAM
-  - uncertainty modeling
-  - RGB-D
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "SLAM"
+  - "uncertainty modeling"
+  - "RGB-D"
+  - "alpha blending"
 date: 2026-05-08
-content_hash: 46a17415a71515d5
+content_hash: cc9e7bb8d78e9433
 ---
+
 # VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM
 
 **Conference**: CVPR2026  
@@ -184,8 +186,8 @@ Runtime (Replica/Room0, A100 80GB): Mapping 1.9s/f, Tracking 2.0s/f, comparable 
 - [\[CVPR 2026\] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)
 - [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
 - [\[CVPR 2026\] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM](odgs-slam_omnidirectional_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] DROID-W: DROID-SLAM in the Wild](droid-slam_in_the_wild.md)
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
+- [\[ECCV 2024\] CG-SLAM: Efficient Dense RGB-D SLAM in a Consistent Uncertainty-Aware 3D Gaussian Field](../../ECCV2024/3d_vision/cg-slam_efficient_dense_rgb-d_slam_in_a_consistent_uncertainty-aware_3d_gaussian.md)
+- [\[CVPR 2026\] UST-Hand: An Uncertainty-aware Spatiotemporal Point Cloud Interaction Network for 3D Self-supervised Hand Pose Estimation](ust-hand_an_uncertainty-aware_spatiotemporal_point_cloud_interaction_network_for.md)
 
 </div>
 

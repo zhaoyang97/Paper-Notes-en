@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Combinative Matching for Geometric Shape Assembly
 description: >-
-  [ICCV 2025][LLM Evaluation][shape assembly] This paper proposes Combinative Matching (CMNet), which jointly models two fundamental properties of interlocking parts — *surface shape consistency* and *volumetric occupancy…
+  [ICCV 2025][LLM Evaluation][shape assembly] This paper proposes Combinative Matching (CMNet), which jointly models two fundamental properties of interlocking parts — *surface shape consistency* and *volumetric occupancy complementarity* — via an equivariant network trained with three objectives: orientation alignment, shape matching, and occupancy matching, substantially reducing local ambiguity in geometric assembly.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "volumetric complementarity"
   - "optimal transport"
 date: 2026-05-08
-content_hash: 481c4f8fc2f28d57
+content_hash: 81fe76eaf5f116de
 ---
 
 # Combinative Matching for Geometric Shape Assembly

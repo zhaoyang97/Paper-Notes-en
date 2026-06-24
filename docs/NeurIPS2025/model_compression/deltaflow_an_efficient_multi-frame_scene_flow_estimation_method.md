@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DeltaFlow: An Efficient Multi-frame Scene Flow Estimation Method
 description: >-
-  [NeurIPS 2025][Model Compression][scene flow] This paper proposes DeltaFlow (ΔFlow), which extracts motion cues via inter-frame voxel differences (Δ scheme) to enable multi-frame scene flow estimation with feature sizes…
+  [NeurIPS 2025 Spotlight][Model Compression][scene flow] This paper proposes DeltaFlow (ΔFlow), which extracts motion cues via inter-frame voxel differences (Δ scheme) to enable multi-frame scene flow estimation with feature sizes that remain constant regardless of the number of input frames. The method achieves state-of-the-art performance on Argoverse 2, Waymo, and nuScenes while running 2× faster than the second-best multi-frame approach.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "scene flow"
   - "multi-frame"
@@ -12,7 +12,7 @@ tags:
   - "autonomous driving"
   - "computational efficiency"
 date: 2026-05-08
-content_hash: f2e8dbf25aee8761
+content_hash: 1be9ebb9a3ea8771
 ---
 
 # DeltaFlow: An Efficient Multi-frame Scene Flow Estimation Method
@@ -140,10 +140,10 @@ Total loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{deflow}} + \mathcal
 ## Related Papers
 
 - [\[ICCV 2025\] Multi-Object Sketch Animation by Scene Decomposition and Motion Planning](../../ICCV2025/model_compression/multi-object_sketch_animation_by_scene_decomposition_and_motion_planning.md)
+- [\[CVPR 2025\] AutoSSVH: Exploring Automated Frame Sampling for Efficient Self-Supervised Video Hashing](../../CVPR2025/model_compression/autossvh_exploring_automated_frame_sampling_for_efficient_self-supervised_video_h.md)
 - [\[NeurIPS 2025\] How to Build a Consistency Model: Learning Flow Maps via Self-Distillation](how_to_build_a_consistency_model_learning_flow_maps_via_self-distillation.md)
 - [\[NeurIPS 2025\] C-LoRA: Contextual Low-Rank Adaptation for Uncertainty Estimation in Large Language Models](c-lora_contextual_low-rank_adaptation_for_uncertainty_estimation_in_large_langua.md)
-- [\[NeurIPS 2025\] Loquetier: A Virtualized Multi-LoRA Framework for Unified LLM Fine-tuning and Serving](loquetier_a_virtualized_multi-lora_framework_for_unified_llm_fine-tuning_and_ser.md)
-- [\[NeurIPS 2025\] Find your Needle: Small Object Image Retrieval via Multi-Object Attention Optimization](find_your_needle_small_object_image_retrieval_via_multi-object_attention_optimiz.md)
+- [\[CVPR 2026\] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation](../../CVPR2026/model_compression/dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation.md)
 
 </div>
 

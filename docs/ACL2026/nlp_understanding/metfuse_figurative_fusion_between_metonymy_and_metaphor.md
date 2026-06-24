@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MetFuse: Figurative Fusion between Metonymy and Metaphor
 description: >-
-  [ACL 2026][NLP Understanding][figurative fusion] The authors propose a three-stage pipeline (candidate generation → MLM scoring/selection → LLM refinement) to rewrite literal sentences into three figurative variants: metonymic, metaphoric, and hybrid. They construct the first MetFuse dataset (1,000 quadruplets, 4,000 sentences) and empirically discover that "the pres
+  [ACL 2026][NLP Understanding][Metonymy] The authors propose a three-stage pipeline (candidate generation → MLM scoring/selection → LLM refinement) to rewrite literal sentences into three figurative variants: metonymic, metaphoric, and hybrid. They construct the first MetFuse dataset (1,000 quadruplets, 4,000 sentences) and empirically discover that "the presence of metaphorical verbs makes metonymic nouns in the same sentence more explicit," yielding consistent improvements w…
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - figurative fusion
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Metonymy"
+  - "Metaphor"
+  - "figurative fusion"
+  - "data augmentation"
+  - "LLM generation"
 date: 2026-05-08
-content_hash: f3f0ff4e9dce09be
+content_hash: 94a1d5865ed7c300
 ---
+
 # MetFuse: Figurative Fusion between Metonymy and Metaphor
 
 **Conference**: ACL 2026  
@@ -146,9 +151,9 @@ BERT embedding similarity confirms $\text{sim}(N_{\text{lit}}, N_{\text{hyb}}) >
 
 - [\[ACL 2026\] Exploring Concreteness Through a Figurative Lens](exploring_concreteness_through_a_figurative_lens.md)
 - [\[ICCV 2025\] Balancing Task-Invariant Interaction and Task-Specific Adaptation for Unified Image Fusion](../../ICCV2025/nlp_understanding/balancing_task-invariant_interaction_and_task-specific_adaptation_for_unified_im.md)
+- [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 - [\[ACL 2026\] LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases](lexrel_benchmarking_legal_relation_extraction_for_chinese_civil_cases.md)
 - [\[ACL 2026\] Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation](knowledge-driven_augmentation_and_retrieval_for_integrative_temporal_adaptation.md)
-- [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 
 </div>
 

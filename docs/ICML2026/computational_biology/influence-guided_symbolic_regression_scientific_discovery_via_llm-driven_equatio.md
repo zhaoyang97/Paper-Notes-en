@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Influence-Guided Symbolic Regression: Scientific Discovery via LLM-Driven Equation Search with Granular Feedback
 description: >-
-  [ICML 2026][Computational Biology][MCTS] IGSR decomposes symbolic regression into a two-step "LLM proposes basis functions $\psi_j$ + pruning via granular influence scores $\Delta_j$" cycle. This cycle is embedded into Monte Carlo Tree Search (MCTS) to explore the combinatorial space. It achieves state-of-the-art MSE and symbolic recall across six biomedical
+  [ICML 2026][Computational Biology][Symbolic Regression] IGSR decomposes symbolic regression into a two-step "LLM proposes basis functions $\psi_j$ + pruning via granular influence scores $\Delta_j$" cycle. This cycle is embedded into Monte Carlo Tree Search (MCTS) to explore the combinatorial space. It achieves state-of-the-art MSE and symbolic recall across six biomedical benchmarks and LLM-SRBench, while discovering a novel relationship between DNA methylation and RNA Pol I…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - MCTS
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Symbolic Regression"
+  - "Influence Score"
+  - "LLM Equation Discovery"
+  - "MCTS"
+  - "Interpretable Modeling"
 date: 2026-05-08
-content_hash: 9bb42296e9710254
+content_hash: 409622fd700e83c0
 ---
+
 # Influence-Guided Symbolic Regression: Scientific Discovery via LLM-Driven Equation Search with Granular Feedback
 
 **Conference**: ICML 2026  
@@ -134,10 +139,10 @@ On LLM-SRBench (128 discovery problems), IGSR achieved the best average rank acr
 ## Related Papers
 
 - [\[ACL 2025\] LADDER: Language Driven Slice Discovery and Error Rectification in Vision Classifiers](../../ACL2025/computational_biology/ladder_language-driven_slice_discovery_and_error_rectification_in_vision_classif.md)
+- [\[ICLR 2026\] Continuous Multinomial Logistic Regression for Neural Decoding](../../ICLR2026/computational_biology/continuous_multinomial_logistic_regression_for_neural_decoding.md)
 - [\[CVPR 2026\] BiGMINT: Biologically-guided Hierarchical Multimodal Integration for Modeling Multiple Compound Activities in Drug Discovery](../../CVPR2026/computational_biology/bigmint_biologically-guided_hierarchical_multimodal_integration_for_modeling_mul.md)
 - [\[ICML 2026\] TadA-Bench: A Million-Variant Benchmark for Future-Round Discovery Toward Agentic Protein Engineering](tada-bench_a_million-variant_benchmark_for_future-round_discovery_toward_agentic.md)
 - [\[ICML 2026\] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition](learning_protein_structure-function_relationships_through_knowledge-guided_repre.md)
-- [\[NeurIPS 2025\] Post Hoc Regression Refinement via Pairwise Rankings](../../NeurIPS2025/computational_biology/post_hoc_regression_refinement_via_pairwise_rankings.md)
 
 </div>
 

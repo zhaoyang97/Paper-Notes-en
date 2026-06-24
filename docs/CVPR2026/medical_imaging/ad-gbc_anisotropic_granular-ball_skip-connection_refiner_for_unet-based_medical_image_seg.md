@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AD-GBC: Anisotropic Granular-Ball Skip-Connection Refiner for UNet-Based Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][UNet skip-connection] The study upgrades "point prototypes / isotropic balls" used as semantic anchors in UNet to **differentiable granular balls with anisotropic vector scales**. A bidirectional "Pixel Set ↔ Ball" aggregation-broadcasting mechanism serves as a semantic refiner for skip-connections, supplemented by two geometric regularizat
+  [CVPR 2026][Medical Imaging][Medical Image Segmentation] The study upgrades "point prototypes / isotropic balls" used as semantic anchors in UNet to **differentiable granular balls with anisotropic vector scales**. A bidirectional "Pixel Set ↔ Ball" aggregation-broadcasting mechanism serves as a semantic refiner for skip-connections, supplemented by two geometric regularizations to prevent anchor collapse. This approach yields consistent performance gains (average IoU +1.3~1.…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - UNet skip-connection
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical Image Segmentation"
+  - "Granular-Ball Computing"
+  - "Anisotropic Prototypes"
+  - "Differentiable Clustering"
+  - "UNet skip-connection"
 date: 2026-05-08
-content_hash: 9c7a9f4a58ceabbc
+content_hash: 37b7f516f7d555ab
 ---
+
 # AD-GBC: Anisotropic Granular-Ball Skip-Connection Refiner for UNet-Based Medical Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -169,7 +174,7 @@ Components dissected on GlaS:
 - [\[CVPR 2026\] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation](segmote_token-level_mixture_of_experts_for_medical_image_segmentation.md)
 - [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
 - [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)
-- [\[CVPR 2026\] SHAPE: Structure-aware Hierarchical Unsupervised Domain Adaptation with Plausibility Evaluation for Medical Image Segmentation](shape_structure-aware_hierarchical_unsupervised_domain_adaptation_with_plausibil.md)
+- [\[CVPR 2026\] Simple-ViLMedSAM: Simple Text Prompts Meet Vision-Language Models for Medical Image Segmentation](simple-vilmedsam_simple_text_prompts_meet_vision-language_models_for_medical_ima.md)
 
 </div>
 

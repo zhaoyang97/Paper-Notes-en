@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FakeRadar: Probing Forgery Outliers to Detect Unknown Deepfake Videos
 description: >-
-  [ICCV 2025][AI Safety][Deepfake Detection] This paper proposes FakeRadar, a deepfake video detection framework that actively generates outlier samples simulating unknown forgeries in the feature space via Forgery Outlier…
+  [ICCV 2025][AI Safety][Deepfake Detection] This paper proposes FakeRadar, a deepfake video detection framework that actively generates outlier samples simulating unknown forgeries in the feature space via Forgery Outlier Probing, and designs an Outlier-Guided Tri-Training strategy with three-class optimization (Real/Fake/Outlier). FakeRadar significantly outperforms existing methods on cross-dataset and cross-manipulation evaluations.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "CLIP"
 date: 2026-05-08
-content_hash: 33643035c3ef9687
+content_hash: 4f3a614fd6ce2159
 ---
 
 # FakeRadar: Probing Forgery Outliers to Detect Unknown Deepfake Videos
@@ -137,11 +137,11 @@ FakeRadar builds upon a frozen CLIP ViT-B/16 backbone with ST-Adapters inserted 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Beyond \[CLS\] Token: Query-Driven Token-Level Forgery Purification for Generalizable Deepfake Detection](../../CVPR2026/ai_safety/beyond_cls_token_query-driven_token-level_forgery_purification_for_generalizable.md)
 - [\[ICCV 2025\] Vulnerability-Aware Spatio-Temporal Learning for Generalizable Deepfake Video Detection](vulnerability-aware_spatio-temporal_learning_for_generalizable_deepfake_video_de.md)
 - [\[AAAI 2026\] Detect All-Type Deepfake Audio: Wavelet Prompt Tuning for Enhanced Auditory Perception](../../AAAI2026/ai_safety/detect_all-type_deepfake_audio_wavelet_prompt_tuning_for_enhanced_auditory_perce.md)
-- [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](../../CVPR2026/ai_safety/tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
-- [\[NeurIPS 2025\] Not All Deepfakes Are Created Equal: Triaging Audio Forgeries for Robust Deepfake Singer Identification](../../NeurIPS2025/ai_safety/not_all_deepfakes_are_created_equal_triaging_audio_forgeries_for_robust_deepfake.md)
-- [\[ICML 2026\] Regret-Based Federated Causal Discovery with Unknown Interventions](../../ICML2026/ai_safety/regret-based_federated_causal_discovery_with_unknown_interventions.md)
+- [\[CVPR 2026\] SAGA: Source Attribution of Generative AI Videos](../../CVPR2026/ai_safety/saga_source_attribution_of_generative_ai_videos.md)
+- [\[CVPR 2026\] Detect Any AI-Counterfeited Text Image](../../CVPR2026/ai_safety/detect_any_ai-counterfeited_text_image.md)
 
 </div>
 

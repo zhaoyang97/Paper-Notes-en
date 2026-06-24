@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] IDEAL: Data Equilibrium Adaptation for Multi-Capability Language Model Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][K-FAC] IDEAL models the problem of "how much data to allocate for each SFT domain" as a bilevel optimization problem. It utilizes second-order (Hessian) gradient information to determine whether each domain's data should be upsampled or downsampled. Iterating for two rounds results in a balanced overall improvement of approxi
+  [ICLR 2026][LLM Alignment][Data Mixing] IDEAL models the problem of "how much data to allocate for each SFT domain" as a bilevel optimization problem. It utilizes second-order (Hessian) gradient information to determine whether each domain's data should be upsampled or downsampled. Iterating for two rounds results in a balanced overall improvement of approximately 7% across four capabilities: Math, Code, Reasoning, and Instruction Following.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - K-FAC
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Data Mixing"
+  - "Supervised Fine-Tuning"
+  - "Multi-Capability Alignment"
+  - "Influence Function"
+  - "Bilevel Optimization"
+  - "K-FAC"
 date: 2026-05-08
-content_hash: 811e7b48168fb6f1
+content_hash: dd9170071a70e2a5
 ---
+
 # IDEAL: Data Equilibrium Adaptation for Multi-Capability Language Model Alignment
 
 **Conference**: ICLR 2026  
@@ -114,8 +120,8 @@ Added MATH / ARC-C / MBPP / TruthfulQA and a TrustAI domain, with D0(FULL) (~66k
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 - [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
+- [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 - [\[ICLR 2026\] Capability-Based Scaling Trends for LLM-Based Red-Teaming](capability-based_scaling_trends_for_llm-based_red-teaming.md)
 - [\[ICLR 2026\] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment](semantic-aware_wasserstein_policy_regularization_for_large_language_model_alignm.md)
 - [\[ICLR 2026\] Test-Time Alignment for Large Language Models via Textual Model Predictive Control](test-time_alignment_for_large_language_models_via_textual_model_predictive_contr.md)

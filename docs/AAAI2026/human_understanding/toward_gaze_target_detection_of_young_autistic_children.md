@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Toward Gaze Target Detection in Young Autistic Children
 description: >-
-  [AAAI 2026][Gaze Target Detection] To address the severe class imbalance in gaze target detection for autistic children—where face-directed gaze accounts for only 6.6% of samples—this paper proposes the Socially Aware Co…
+  [AAAI 2026][Human Understanding][Gaze Target Detection] To address the severe class imbalance in gaze target detection for autistic children—where face-directed gaze accounts for only 6.6% of samples—this paper proposes the Socially Aware Coarse-to-Fine (SACF) framework. A fine-tuned Qwen2.5-VL serves as a social-context-aware gate that routes inputs to either a socially aware or a socially agnostic expert model. Evaluated on the newly introduced AGT dataset…
 tags:
   - "AAAI 2026"
+  - "Human Understanding"
   - "Gaze Target Detection"
   - "Autism Spectrum Disorder"
   - "Class Imbalance"
   - "Multimodal Large Language Models"
   - "Coarse-to-Fine Framework"
 date: 2026-05-08
-content_hash: 8975ea353c41e4b8
+content_hash: 0b3d3c9fd5323d71
 ---
 
 # Toward Gaze Target Detection in Young Autistic Children
@@ -130,11 +131,11 @@ An input image $I$ and the child's head bounding box $B_\text{head}$ are passed 
 
 ## Related Papers
 
+- [\[ECCV 2024\] Gaze Target Detection Based on Head-Local-Global Coordination](../../ECCV2024/human_understanding/gaze_target_detection_based_on_head-local-global_coordination.md)
+- [\[CVPR 2026\] Gaze Target Estimation Anywhere with Concepts](../../CVPR2026/human_understanding/gaze_target_estimation_anywhere_with_concepts.md)
 - [\[ICCV 2025\] Multi-view Gaze Target Estimation](../../ICCV2025/human_understanding/multi-view_gaze_target_estimation.md)
 - [\[AAAI 2026\] GazeInterpreter: Parsing Eye Gaze to Generate Eye-Body-Coordinated Narrations](gazeinterpreter_parsing_eye_gaze_to_generate_eye-body-coordinated_narrations.md)
 - [\[AAAI 2026\] MVGD-Net: A Novel Motion-aware Video Glass Surface Detection Network](mvgd-net_a_novel_motion-aware_video_glass_surface_detection_network.md)
-- [\[CVPR 2026\] GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion](../../CVPR2026/human_understanding/gazeonce360_fisheye-based_360_multi-person_gaze_estimation_with_global-local_fea.md)
-- [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](../../CVPR2026/human_understanding/unleashing_vision-language_semantics_for_deepfake_video_detection.md)
 
 </div>
 

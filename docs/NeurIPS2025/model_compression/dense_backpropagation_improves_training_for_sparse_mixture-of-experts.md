@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts
 description: >-
-  [NeurIPS 2025][Model Compression][Mixture-of-Experts] This paper proposes Default MoE, a method that maintains exponential moving averages (EMA) of inactive expert outputs as surrogate signals…
+  [NeurIPS 2025][Model Compression][Mixture-of-Experts] This paper proposes Default MoE, a method that maintains exponential moving averages (EMA) of inactive expert outputs as surrogate signals, enabling dense gradient updates for the MoE router without significant computational overhead, thereby improving sparse MoE training performance.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "EMA"
   - "TopK routing"
 date: 2026-05-08
-content_hash: 808634d91c8ff16c
+content_hash: a3a2de86084c1f6b
 ---
 
 # Dense Backpropagation Improves Training for Sparse Mixture-of-Experts
@@ -136,9 +136,9 @@ The Improvement Score (percentage improvement relative to a random baseline) inc
 
 - [\[NeurIPS 2025\] Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts](toward_efficient_inference_attacks_shadow_model_sharing_via_mixture-of-experts.md)
 - [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](../../ICML2026/model_compression/dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
-- [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](../../ICLR2026/model_compression/coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
-- [\[NeurIPS 2025\] Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making](online_mixture_of_experts_no-regret_learning_for_optimal_collective_decision-mak.md)
 - [\[NeurIPS 2025\] REOrdering Patches Improves Vision Models](reordering_patches_improves_vision_models.md)
+- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](../../CVPR2026/model_compression/teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
+- [\[NeurIPS 2025\] Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making](online_mixture_of_experts_no-regret_learning_for_optimal_collective_decision-mak.md)
 
 </div>
 

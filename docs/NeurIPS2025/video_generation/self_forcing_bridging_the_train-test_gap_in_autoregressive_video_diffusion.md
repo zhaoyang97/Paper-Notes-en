@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion
 description: >-
-  [NeurIPS 2025][Video Generation][Autoregressive video generation] This paper proposes the Self Forcing training paradigm, which eliminates the exposure bias caused by train-inference distribution mismatch in Teacher Forc…
+  [NeurIPS 2025 Spotlight][Video Generation][Autoregressive video generation] This paper proposes the Self Forcing training paradigm, which eliminates the exposure bias caused by train-inference distribution mismatch in Teacher Forcing and Diffusion Forcing by performing autoregressive self-rollout during training and applying a holistic video-level distribution matching loss (DMD/SiD/GAN). Built on Wan2.1-1.3B, it achieves real-time streaming video generation at 17 FPS on a si…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Video Generation"
   - "Autoregressive video generation"
   - "exposure bias"
@@ -12,7 +12,7 @@ tags:
   - "real-time video generation"
   - "KV cache"
 date: 2026-05-08
-content_hash: 44da4649d2d60b86
+content_hash: 47ced04e2ac10d2d
 ---
 
 # Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion
@@ -137,11 +137,11 @@ Self Forcing surpasses Wan2.1 on VBench — a bidirectional model that is 150× 
 
 ## Related Papers
 
+- [\[ECCV 2024\] FreeInit: Bridging Initialization Gap in Video Diffusion Models](../../ECCV2024/video_generation/freeinit_bridging_initialization_gap_in_video_diffusion_models.md)
+- [\[CVPR 2025\] Taming Teacher Forcing for Masked Autoregressive Video Generation](../../CVPR2025/video_generation/taming_teacher_forcing_for_masked_autoregressive_video_generation.md)
 - [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](../../ICML2026/video_generation/light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
 - [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](autoregressive_adversarial_posttraining_for_realtime_interac.md)
-- [\[CVPR 2026\] Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout](../../CVPR2026/video_generation/infinity-rope_action-controllable_infinite_video_generation_emerges_from_autoreg.md)
-- [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
-- [\[NeurIPS 2025\] LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation](lemica_lexicographic_minimax_path_caching_for_efficient_diffusion-based_video_ge.md)
+- [\[ICLR 2026\] Rolling Forcing: Autoregressive Long Video Diffusion in Real Time](../../ICLR2026/video_generation/rolling_forcing_autoregressive_long_video_diffusion_in_real_time.md)
 
 </div>
 

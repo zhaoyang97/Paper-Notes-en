@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diversity-Incentivized Exploration for Versatile Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] DIVER identifies a strong positive correlation between "global sequence-level diversity of a set of responses" and the reasoning capability of LLMs. By formulating this diversity as an intrinsic reward, applying potential function shaping to preserve optimal policy invariance, and using conditional shaping to prevent r
+  [ICLR2026][Reinforcement Learning][RLVR] DIVER identifies a strong positive correlation between "global sequence-level diversity of a set of responses" and the reasoning capability of LLMs. By formulating this diversity as an intrinsic reward, applying potential function shaping to preserve optimal policy invariance, and using conditional shaping to prevent reward hacking, RLVR significantly improves Pass@k and cross-domain generalization in mathematical reasoning without com…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Deep Exploration"
+  - "Sequence-level Diversity"
+  - "Intrinsic Reward"
+  - "Potential-based Reward Shaping"
 date: 2026-05-08
-content_hash: 373a0638392a0223
+content_hash: 09884576eac46eba
 ---
+
 # Diversity-Incentivized Exploration for Versatile Reasoning
 
 **Conference**: ICLR2026  

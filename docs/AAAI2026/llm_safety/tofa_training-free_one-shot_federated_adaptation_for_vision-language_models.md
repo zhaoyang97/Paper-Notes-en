@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models
 description: >-
-  [AAAI 2026][LLM Safety][Federated Learning] TOFA is a federated learning framework that adapts CLIP via hierarchical Bayesian inference of personalized visual prototype distributions…
+  [AAAI 2026][LLM Safety][Federated Learning] TOFA is a federated learning framework that adapts CLIP via hierarchical Bayesian inference of personalized visual prototype distributions, globally aligned LLM-based text augmentation, and adaptive modality fusion — achieving training-free, single-round communication adaptation that outperforms one-shot baselines and even some multi-round training methods across 9 datasets.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Hierarchical Bayes"
   - "Training-Free"
 date: 2026-05-08
-content_hash: 505ecdfedb421c86
+content_hash: 1fdf1f7c448ef993
 ---
 
 # TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models
@@ -146,8 +146,8 @@ CIFAR-10/100 (100 clients, Dir(0.3)):
 - [\[ICCV 2025\] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning](../../ICCV2025/llm_safety/latte_collaborative_test-time_adaptation_of_vision-language_models_in_federated_.md)
 - [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](../../ICLR2026/llm_safety/heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
 - [\[AAAI 2026\] FedALT: Federated Fine-Tuning through Adaptive Local Training with Rest-of-World LoRA](fedalt_federated_fine-tuning_through_adaptive_local_training_with_rest-of-world_.md)
-- [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
 - [\[ACL 2026\] Exploring Cross-Client Memorization of Training Data in Large Language Models for Federated Learning](../../ACL2026/llm_safety/exploring_cross-client_memorization_of_training_data_in_large_language_models_fo.md)
+- [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
 
 </div>
 

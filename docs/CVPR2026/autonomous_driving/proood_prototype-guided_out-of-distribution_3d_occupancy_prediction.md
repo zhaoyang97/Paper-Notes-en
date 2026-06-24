@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This paper proposes the ProOOD framework, which for the first time treats long-tail recognition and Out-of-Distribution (OOD) detection in 3D occupancy prediction from a unified perspective of voxel prototype guidance. Through Prototype-Guided Semantic Infilling (PGSI), Prototype-Guided Tail Mining (PGTM), and the trai
+  [CVPR 2026][Autonomous Driving][3D Occupancy Prediction] This paper proposes the ProOOD framework, which for the first time treats long-tail recognition and Out-of-Distribution (OOD) detection in 3D occupancy prediction from a unified perspective of voxel prototype guidance. Through Prototype-Guided Semantic Infilling (PGSI), Prototype-Guided Tail Mining (PGTM), and the training-free EchoOOD scoring mechanism, it achieves a +3.57% mIoU improvement on SemanticKITTI (+24.80% fo…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "3D Occupancy Prediction"
+  - "Out-of-Distribution Detection"
+  - "Prototype Learning"
+  - "Long-tail Distribution"
+  - "Semantic Completion"
 date: 2026-05-08
-content_hash: ae37497b70298c2a
+content_hash: 850531daa46ae3dd
 ---
+
 # ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction
 
 **Conference**: CVPR 2026  
@@ -137,9 +143,9 @@ Prototypes are updated via EMA (momentum $\beta$) using only ground-truth voxels
 
 - [\[CVPR 2026\] Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation](learning_to_identify_out-of-distribution_objects_for_3d_lidar_anomaly_segmentati.md)
 - [\[CVPR 2026\] Neural Distribution Prior for LiDAR Out-of-Distribution Detection](neural_distribution_prior_for_lidar_ood_detection.md)
+- [\[CVPR 2026\] Gau-Occ: Geometry-Completed Gaussians for Multi-Modal 3D Occupancy Prediction](gau-occ_geometry-completed_gaussians_for_multi-modal_3d_occupancy_prediction.md)
 - [\[CVPR 2026\] OccAny: Generalized Unconstrained Urban 3D Occupancy](occany_generalized_unconstrained_urban_3d_occupancy.md)
-- [\[CVPR 2026\] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving](drocc_depth_region_guided_3d_occupancy.md)
-- [\[CVPR 2025\] SDGOcc: Semantic and Depth-Guided BEV Transformation for 3D Multimodal Occupancy Prediction](../../CVPR2025/autonomous_driving/sdgocc_semantic_and_depth-guided_birds-eye_view_transformation_for_3d_multimodal.md)
+- [\[CVPR 2026\] TT-Occ: Test-Time 3D Occupancy Prediction](test-time_3d_occupancy_prediction.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space
 description: >-
-  [ICLR 2026][Computational Biology][score-guided Langevin] This paper embeds a temporal propagator, GLDP, into the pre-trained LD-FPG all-atom latent space, upgrading it from "only sampling static conformational ensembles" to "simulating conformational evolution over time." By conducting a fair comparison of three types of propagators (autoregressive neural network, Koopman li
+  [ICLR2026][Computational Biology][Latent space simulation] This paper embeds a temporal propagator, GLDP, into the pre-trained LD-FPG all-atom latent space, upgrading it from "only sampling static conformational ensembles" to "simulating conformational evolution over time." By conducting a fair comparison of three types of propagators (autoregressive neural network, Koopman linear operator, and score-guided Langevin) within the same frozen latent space…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - score-guided Langevin
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Latent space simulation"
+  - "all-atom protein dynamics"
+  - "autoregressive propagator"
+  - "Koopman operator"
+  - "score-guided Langevin"
 date: 2026-05-08
-content_hash: 9020603d87160093
+content_hash: afbcab81ced32cfa
 ---
+
 # Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space
 
 **Conference**: ICLR2026  
@@ -143,13 +148,14 @@ Comparison of propagator fidelity for free energy surfaces (JSD):
 - **Value**: ⭐⭐⭐⭐ (Provides practical guidelines for propagator selection in latent protein simulation).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] BioMD: All-atom Generative Model for Biomolecular Dynamics Simulation](biomd_all-atom_generative_model_for_biomolecular_dynamics_simulation.md)
+- [\[ICLR 2026\] Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles](rigidity-aware_geometric_pretraining_for_protein_design_and_conformational_ensem.md)
 - [\[ICLR 2026\] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction](towards_all-atom_foundation_models_for_biomolecular_binding_affinity_prediction.md)
-- [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
 - [\[ICLR 2026\] Pallatom-Ligand: an All-Atom Diffusion Model for Designing Ligand-Binding Proteins](pallatom-ligand_an_all-atom_diffusion_model_for_designing_ligand-binding_protein.md)
 - [\[ICLR 2026\] One Protein Is All You Need](one_protein_is_all_you_need.md)
 

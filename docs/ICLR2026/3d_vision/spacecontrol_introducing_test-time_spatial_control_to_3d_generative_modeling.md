@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpaceControl: Introducing Test-Time Spatial Control to 3D Generative Modeling
 description: >-
-  [ICLR 2026][3D Vision][rectified flow] SpaceControl proposes a **training-free** test-time method that voxelizes user-provided 3D geometry (from coarse superquadrics to fine meshes) and encodes it into the latent space of a pre-trained 3D generative model (Trellis). By utilizing an SDEdit-style "add noise to $t_0$ then denoise" mechanism to inject spatial g
+  [ICLR 2026][3D Vision][3D Generation] SpaceControl proposes a **training-free** test-time method that voxelizes user-provided 3D geometry (from coarse superquadrics to fine meshes) and encodes it into the latent space of a pre-trained 3D generative model (Trellis). By utilizing an SDEdit-style "add noise to $t_0$ then denoise" mechanism to inject spatial guidance and a single parameter $\tau_0$ to smoothly adjust "geometric fidelity ↔ generative realism…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - rectified flow
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Generation"
+  - "Spatial Control"
+  - "Training-free Guidance"
+  - "rectified flow"
+  - "superquadrics"
 date: 2026-05-08
-content_hash: 462d6ba97fd54cc4
+content_hash: 584f4c30d5108c29
 ---
+
 # SpaceControl: Introducing Test-Time Spatial Control to 3D Generative Modeling
 
 **Conference**: ICLR 2026  
@@ -131,14 +136,17 @@ Scanning $\tau_0$ (P=Superquadric, M=Mesh, Toys4K data):
 
 <div class="related-papers" markdown="1">
 
-- **Trellis**: Structured 3D Latent Diffusion for Scalable 3D Generation (Foundational backbone)
-- **Spice-E**: Spatially Conditioned 3D Generation (Training-based baseline)
-- **SDEdit**: Guided Image Synthesis via Denoising Diffusion Probabilistic Models (Algorithm inspiration)
+## Related Papers
+
+- [\[ICLR 2026\] TTT3R: 3D Reconstruction as Test-Time Training](ttt3r_3d_reconstruction_as_test-time_training.md)
+- [\[ICLR 2026\] GOOD: Geometry-guided Out-of-Distribution Modeling for Open-set Test-time Adaptation in Point Cloud Semantic Segmentation](good_geometry-guided_out-of-distribution_modeling_for_open-set_test-time_adaptat.md)
+- [\[ICLR 2026\] Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](test-time_optimization_of_3d_point_cloud_llm_via_manifold-aware_in-context_guida.md)
+- [\[CVPR 2026\] Learning 3D Reconstruction with Priors in Test Time](../../CVPR2026/3d_vision/tco_learning_3d_reconstruction_with_priors_in_test_time.md)
+- [\[CVPR 2026\] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](../../CVPR2026/3d_vision/zipmap_linear-time_stateful_3d_reconstruction_via_test-time_training.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] TTT3R: 3D Reconstruction as Test-Time Training](ttt3r_3d_reconstruction_as_test-time_training.md)

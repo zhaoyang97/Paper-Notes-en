@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evaluating Reasoning Models for Queries with Presuppositions
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper constructs ≈13K true/false claims across health, science, and common sense with five levels of presupposition intensity to evaluate 6 major models (GPT-OSS / Qwen3 / GPT-5 Mini / Gemini 2.5) in both thinking-on and thinking-off modes. It finds that reasoning only yields a slight 2-11% accuracy improvement wh
+  [ACL 2026 Findings][LLM Evaluation][Reasoning models] This paper constructs ≈13K true/false claims across health, science, and common sense with five levels of presupposition intensity to evaluate 6 major models (GPT-OSS / Qwen3 / GPT-5 Mini / Gemini 2.5) in both thinking-on and thinking-off modes. It finds that reasoning only yields a slight 2-11% accuracy improvement while **making models more "decisive"—being wrong with higher confidence**—and remaining sycophantic to 26-4…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Reasoning models"
+  - "presupposition"
+  - "sycophancy"
+  - "factuality"
+  - "misinformation"
 date: 2026-05-08
-content_hash: 4232130328643c68
+content_hash: fc751cbe22aa2e15
 ---
+
 # Evaluating Reasoning Models for Queries with Presuppositions
 
 **Conference**: ACL 2026 Findings  
@@ -143,8 +149,8 @@ Decisiveness: Neutral responses decrease sharply in reasoning-on states. Specifi
 
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
 - [\[ACL 2026\] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics](evaluating_legal_reasoning_traces_with_legal_issue_tree_rubrics.md)
+- [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](../../ICLR2026/llm_evaluation/evaluating_language_models_evaluations_of_games.md)
 - [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
-- [\[ACL 2026\] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues](are_they_lovers_or_friends_evaluating_llms39_social_reasoning_in_english_and_kor.md)
 - [\[ACL 2026\] Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models](revisiting_a_pain_in_the_neck_a_semantic_reasoning_benchmark_for_language_models.md)
 
 </div>

@@ -50,11 +50,11 @@ To be added after reading the paper in depth.
 
 ## Related Papers
 
-- [\[ACL 2026\] NSF-SciFy: Mining the NSF Awards Database for Scientific Claims](nsf-scify_mining_the_nsf_awards_database_for_scientific_claims.md)
-- [\[ACL 2026\] Qayyem: A Real-time Platform for Scoring Proficiency of Arabic Essays](qayyem_a_real-time_platform_for_scoring_proficiency_of_arabic_essays.md)
 - [\[ICLR 2026\] Exploring State-Space Models for Data-Specific Neural Representations](../../ICLR2026/others/exploring_state-space_models_for_data-specific_neural_representations.md)
+- [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](../../NeurIPS2025/others/revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
+- [\[CVPR 2026\] NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction](../../CVPR2026/others/neurorule_bridging_vision_and_logic_with_differentiable_rule_induction.md)
 - [\[ICML 2026\] AutoNumerics-Zero: Automated Discovery of State-of-the-Art Mathematical Functions](../../ICML2026/others/autonumerics-zero_automated_discovery_of_state-of-the-art_mathematical_functions.md)
-- [\[CVPR 2026\] Progressive Neural Architecture Generation](../../CVPR2026/others/progressive_neural_architecture_generation.md)
+- [\[NeurIPS 2025\] Equivariance by Contrast: Identifiable Equivariant Embeddings from Unlabeled Finite Group Actions](../../NeurIPS2025/others/equivariance_by_contrast_identifiable_equivariant_embeddings_from_unlabeled_fini.md)
 
 </div>
 

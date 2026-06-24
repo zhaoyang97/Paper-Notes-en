@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting Regularized Policy Optimization for Stable and Efficient Reinforcement Learning in Two-Player Games
 description: >-
-  [ICML 2026][Reinforcement Learning][λ-return] KLENT recombines three mature components—reverse-KL regularization (to control policy update scale), entropy regularization (to maintain exploration), and λ-return (to balance bias and variance)—into model-free self-play RL. It achieves 4x the training efficiency of Gumbel AlphaZero across five board games and provides
+  [ICML 2026][Reinforcement Learning][Regularized Policy Optimization] KLENT recombines three mature components—reverse-KL regularization (to control policy update scale), entropy regularization (to maintain exploration), and λ-return (to balance bias and variance)—into model-free self-play RL. It achieves 4x the training efficiency of Gumbel AlphaZero across five board games and provides convergence proofs for both normal-form and finite-length scenarios.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - λ-return
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Regularized Policy Optimization"
+  - "Reverse KL"
+  - "Entropy Regularization"
+  - "λ-return"
+  - "Searchless AlphaZero"
 date: 2026-05-08
-content_hash: cdafe632e2cc125c
+content_hash: 137e12746a629925
 ---
+
 # Revisiting Regularized Policy Optimization for Stable and Efficient Reinforcement Learning in Two-Player Games
 
 **Conference**: ICML 2026  
@@ -130,15 +135,15 @@ On average, KLENT reaches 50% win rate in ~75M evaluations, compared to ~300M fo
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](global_policy-space_response_oracles_for_two-player_zero-sum_games.md)
 - [\[ICML 2026\] Convergence of Two-Timescale Markovian Stochastic Approximations with Applications in Reinforcement Learning](convergence_of_two-timescale_markovian_stochastic_approximations_with_applicatio.md)
-- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](learning_to_route_languages_for_multilingual_policy_optimization.md)
 - [\[ICML 2026\] CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning](cpmobius_iterative_coach-player_reasoning_for_data-free_reinforcement_learning.md)
-- [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
+- [\[ICLR 2026\] GEPO: Group Expectation Policy Optimization for Stable Heterogeneous Reinforcement Learning](../../ICLR2026/reinforcement_learning/gepo_group_expectation_policy_optimization_for_stable_heterogeneous_reinforcemen.md)
+- [\[ICLR 2026\] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training](../../ICLR2026/reinforcement_learning/revisiting_group_relative_policy_optimization_insights_into_on-policy_and_off-po.md)
 
 </div>
 

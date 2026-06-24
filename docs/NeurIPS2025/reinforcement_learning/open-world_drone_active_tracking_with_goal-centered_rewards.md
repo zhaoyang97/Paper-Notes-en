@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Open-World Drone Active Tracking with Goal-Centered Rewards
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Drone Active Tracking] This paper introduces DAT, the first open-world drone active tracking benchmark comprising 24 city-scale scenes with high-fidelity dynamics simulation…
+  [NeurIPS 2025][Reinforcement Learning][Drone Active Tracking] This paper introduces DAT, the first open-world drone active tracking benchmark comprising 24 city-scale scenes with high-fidelity dynamics simulation, along with GC-VAT, a reinforcement learning tracking method based on goal-centered rewards and curriculum learning, achieving approximately 72% tracking success rate in simulation.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Curriculum Learning"
   - "Open-World Benchmark"
 date: 2026-05-08
-content_hash: 06c350d701458037
+content_hash: ccc8ea4e6cf3e53b
 ---
 
 # Open-World Drone Active Tracking with Goal-Centered Rewards
@@ -171,10 +171,10 @@ A systematic contribution with value in both the benchmark and the method. The r
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning from Demonstrations via Capability-Aware Goal Sampling](learning_from_demonstrations_via_capability-aware_goal_sampling.md)
-- [\[NeurIPS 2025\] Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards](reasoning_gym_reasoning_environments_for_reinforcement_learning_with_verifiable_.md)
-- [\[NeurIPS 2025\] The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis](the_world_is_bigger_a_computationally-embedded_perspective_on_the_big_world_hypo.md)
 - [\[NeurIPS 2025\] ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition](aline_joint_amortization_for_bayesian_inference_and_active_data_acquisition.md)
 - [\[NeurIPS 2025\] Open Vision Reasoner: Transferring Linguistic Cognitive Behavior for Visual Reasoning](open_vision_reasoner_transferring_linguistic_cognitive_behavior_for_visual_reaso.md)
+- [\[CVPR 2026\] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification](../../CVPR2026/reinforcement_learning/specificity-aware_reinforcement_learning_for_fine-grained_open-world_classificat.md)
+- [\[NeurIPS 2025\] Meta-World+: An Improved, Standardized, RL Benchmark](meta-world_an_improved_standardized_rl_benchmark.md)
 
 </div>
 

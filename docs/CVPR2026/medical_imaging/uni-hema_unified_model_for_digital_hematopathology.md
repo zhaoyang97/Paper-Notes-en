@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Uni-Hema: Unified Model for Digital Hematopathology
 description: >-
-  [CVPR 2026][Medical Imaging][Hema-Former] Uni-Hema utilizes a unified architecture (comprising a CNN+Transformer visual branch, a T5 text branch, and a multimodal fusion module named Hema-Former) trained in a single pass. It simultaneously performs six categories of tasks in hematopathology—detection, classification, segmentation, morphological prediction, vis
+  [CVPR 2026][Medical Imaging][Digital Hematopathology] Uni-Hema utilizes a unified architecture (comprising a CNN+Transformer visual branch, a T5 text branch, and a multimodal fusion module named Hema-Former) trained in a single pass. It simultaneously performs six categories of tasks in hematopathology—detection, classification, segmentation, morphological prediction, visual question answering (VQA), and masked language modeling (MLM)—across six diseases including leukemia…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Hema-Former
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Digital Hematopathology"
+  - "Unified Multi-task Model"
+  - "Vision-Language"
+  - "Single-cell Analysis"
+  - "Hema-Former"
 date: 2026-05-08
-content_hash: b9f7b8e80773edcc
+content_hash: 3332a89d0e99427d
 ---
+
 # Uni-Hema: Unified Model for Digital Hematopathology
 
 **Conference**: CVPR 2026  
@@ -132,15 +137,16 @@ Uni-Hema matched or outperformed dedicated models in detection, classification, 
 - Value: ⭐⭐⭐⭐ (Consolidates fragmented DHP data into a unified baseline; highly practical for resource-constrained medical AI).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
+- [\[ICLR 2026\] Spike-based Digital Brain: A Novel Fundamental Model for Brain Activity Analysis](../../ICLR2026/medical_imaging/spike-based_digital_brain_a_novel_fundamental_model_for_brain_activity_analysis.md)
 - [\[ICML 2026\] Marrying Generative Model of Healthcare Events with Digital Twin of Social Determinants of Health for Disease Reasoning](../../ICML2026/medical_imaging/marrying_generative_model_of_healthcare_events_with_digital_twin_of_social_deter.md)
 - [\[CVPR 2026\] Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities](uni-encoder_meets_multi-encoders_representation_before_fusion_for_brain_tumor_se.md)
 - [\[CVPR 2026\] NeuroFlow: Toward Unified Visual Encoding and Decoding from Neural Activity](neuroflow_toward_unified_visual_encoding_and_decoding_from_neural_activity.md)
-- [\[CVPR 2025\] VISTA3D: A Unified Segmentation Foundation Model For 3D Medical Imaging](../../CVPR2025/medical_imaging/vista3d_a_unified_segmentation_foundation_model_for_3d_medical_imaging.md)
 
 </div>
 

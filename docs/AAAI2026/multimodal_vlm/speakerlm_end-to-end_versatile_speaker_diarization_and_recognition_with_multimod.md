@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SpeakerLM: End-to-End Versatile Speaker Diarization and Recognition with Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Speaker Diarization and Recognition] SpeakerLM is the first multimodal large language model designed specifically for end-to-end Speaker Diarization and Recognition (SDR). Through an audio enc…
+  [AAAI 2026][Multimodal VLM][Speaker Diarization and Recognition] SpeakerLM is the first multimodal large language model designed specifically for end-to-end Speaker Diarization and Recognition (SDR). Through an audio encoder–projector–LLM architecture and a flexible speaker enrollment mechanism, it significantly outperforms cascaded baseline systems on multiple public benchmarks (absolute cpCER reduction up to 13.82%) and demonstrates strong robustness on out-of-domain test s…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Speaker Enrollment"
   - "Speech Understanding"
 date: 2026-05-08
-content_hash: 15fdd13822466a27
+content_hash: 80fba34619f00717
 ---
 
 # SpeakerLM: End-to-End Versatile Speaker Diarization and Recognition with Multimodal Large Language Models
@@ -160,8 +160,8 @@ SpeakerLM adopts an **encoder–projector–LLM** architecture comprising five c
 - [\[CVPR 2026\] MarkushGrapher-2: End-to-end Multimodal Recognition of Chemical Structures](../../CVPR2026/multimodal_vlm/markushgrapher-2_end-to-end_multimodal_recognition_of_chemical_structures.md)
 - [\[ACL 2026\] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition](../../ACL2026/multimodal_vlm/e2e-gmner_end-to-end_generative_grounded_multimodal_named_entity_recognition.md)
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
-- [\[AAAI 2026\] SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models](sdeval_safety_dynamic_evaluation_for_multimodal_large_language_models.md)
-- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
+- [\[AAAI 2026\] Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?](positional_bias_in_multimodal_embedding_models_do_they_favor_the_beginning_the_m.md)
+- [\[ICLR 2026\] LEGATO: Large-scale End-to-end Generalizable Approach to Typeset OMR](../../ICLR2026/multimodal_vlm/legato_large-scale_end-to-end_generalizable_approach_to_typeset_omr.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection
 description: >-
-  [ACL 2026][AIGC Detection][PsyCoMark] The authors port the finetuning paradigm of their PAN@CLEF2025-winning machine-generated text (MGT) detector, mdok, to conspiracy detection: four types of data augmentation (anonymization, case variation, homoglyphs, and deduplication) are used to expand the training set, followed by a round of self-training (retaining
+  [ACL 2026 (SemEval-2026 Task 10)][AIGC Detection][PsyCoMark] The authors port the finetuning paradigm of their PAN@CLEF2025-winning machine-generated text (MGT) detector, mdok, to conspiracy detection: four types of data augmentation (anonymization, case variation, homoglyphs, and deduplication) are used to expand the training set, followed by a round of self-training (retaining only high-confidence pseudo-labels where $p \ge 0.99$ or $p \le 0.01$). Qwen3-32B is then finetune…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - PsyCoMark
-  - QLoRA
-  - Qwen3-32B
+  - "ACL 2026 (SemEval-2026 Task 10)"
+  - "AIGC Detection"
+  - "PsyCoMark"
+  - "QLoRA"
+  - "Self-training"
+  - "Data Augmentation"
+  - "Qwen3-32B"
 date: 2026-05-08
-content_hash: 899988f6a94c527f
+content_hash: c1e980a71691d72f
 ---
+
 # mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection
 
 **Conference**: ACL 2026 (SemEval-2026 Task 10)  

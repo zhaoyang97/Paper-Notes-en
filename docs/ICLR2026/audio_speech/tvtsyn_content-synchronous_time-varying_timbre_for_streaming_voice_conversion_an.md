@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] TVTSyn：面向流式语音转换与匿名化的内容同步时变音色
+  [Paper Note] TVTSyn: Content-Synchronized Time-Varying Timbre for Streaming Voice Conversion and Anonymization
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] To address the representation mismatch in streaming voice conversion—where "content varies frame-by-frame while speaker identity is injected as a static global vector"—TVTSyn utilizes a retrievable Global Timbre Memory (GTM) to expand static timbre into multiple timbre facets. Frame-level content performs attention-bas
+  [ICLR 2026][Audio & Speech][Streaming Voice Conversion] To address the representation mismatch in streaming voice conversion—where "content varies frame-by-frame while speaker identity is injected as a static global vector"—TVTSyn utilizes a retrievable Global Timbre Memory (GTM) to expand static timbre into multiple timbre facets. Frame-level content performs attention-based retrieval, followed by gating and spherical interpolation to generate content-synchronized Time-Varyi…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Streaming Voice Conversion"
+  - "Speaker Anonymization"
+  - "Time-Varying Timbre"
+  - "Vector Quantization"
+  - "Low-Latency Synthesis"
 date: 2026-05-08
 content_hash: a405f76c2fea97c8
 ---
+
 # TVTSyn: Content-Synchronized Time-Varying Timbre for Streaming Voice Conversion and Anonymization
 
 **Conference**: ICLR 2026  
@@ -152,11 +158,11 @@ GTM component ablation:
 
 ## Related Papers
 
-- [\[ICLR 2026\] WearVox: An Egocentric Multichannel Voice Assistant Benchmark for Wearables](wearvox_an_egocentric_multichannel_voice_assistant_benchmark_for_wearables.md)
+- [\[ICML 2026\] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer](../../ICML2026/audio_speech/towards_streaming_synchronized_spatial_audio_generation_via_autoregressive_diffu.md)
+- [\[ICLR 2026\] Bridging Piano Transcription and Rendering via Disentangled Score Content and Style](bridging_piano_transcription_and_rendering_via_disentangled_score_content_and_st.md)
+- [\[AAAI 2026\] HQ-SVC: Towards High-Quality Zero-Shot Singing Voice Conversion in Low-Resource Scenarios](../../AAAI2026/audio_speech/hq-svc_towards_high-quality_zero-shot_singing_voice_conversion_in_low-resource_s.md)
 - [\[ICLR 2026\] SpeechOp: Inference-Time Task Composition for Generative Speech Processing](speechop_inference-time_task_composition_for_generative_speech_processing.md)
-- [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
 - [\[ICLR 2026\] When and Where to Reset Matters for Long-Term Test-Time Adaptation](when_and_where_to_reset_matters_for_long-term_test-time_adaptation.md)
-- [\[ICLR 2026\] DrVoice: Parallel Speech-Text Voice Conversation Model via Dual-Resolution Speech Representations](drvoice_parallel_speech-text_voice_conversation_model_via_dual-resolution_speech.md)
 
 </div>
 

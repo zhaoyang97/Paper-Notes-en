@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][World Model] This paper proposes DriveX, a self-supervised world model framework that learns transferable general scene representations in a BEV latent space via Omni Scene Modeling (OSM)—…
+  [ICCV 2025][Autonomous Driving][World Model] This paper proposes DriveX, a self-supervised world model framework that learns transferable general scene representations in a BEV latent space via Omni Scene Modeling (OSM)—jointly supervising 3D point cloud prediction, 2D semantic representation, and image generation. A Future Spatial Attention (FSA) paradigm is designed to seamlessly integrate predicted future states into downstream tasks such as occupancy prediction…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Point Cloud Prediction"
   - "End-to-End Driving"
 date: 2026-05-08
-content_hash: 5c4030c5a7e1a159
+content_hash: c4a8381a4df1b9dd
 ---
 
 # DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving
@@ -179,10 +179,10 @@ Downstream applications adopt the Future Spatial Attention (FSA) paradigm, where
 ## Related Papers
 
 - [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
-- [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
 - [\[ICCV 2025\] Passing the Driving Knowledge Test](passing_the_driving_knowledge_test.md)
-- [\[ICML 2026\] DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving](../../ICML2026/autonomous_driving/deepsight_long-horizon_world_modeling_via_latent_states_prediction_for_end-to-en.md)
+- [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
 - [\[NeurIPS 2025\] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](../../NeurIPS2025/autonomous_driving/future-aware_end-to-end_driving_bidirectional_modeling_of_trajectory_planning_an.md)
+- [\[CVPR 2026\] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System](../../CVPR2026/autonomous_driving/knowval_a_knowledge-augmented_and_value-guided_autonomous_driving_system.md)
 
 </div>
 

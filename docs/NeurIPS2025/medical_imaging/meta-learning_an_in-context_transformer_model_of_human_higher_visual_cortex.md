@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex
 description: >-
-  [NeurIPS 2025][Medical Imaging][fMRI encoding models] This paper proposes BraInCoRL (Brain In-Context Representation Learning), a Transformer-based meta-learning framework that predicts voxel-level neural responses for n…
+  [NeurIPS 2025][Medical Imaging][fMRI encoding models] This paper proposes BraInCoRL (Brain In-Context Representation Learning), a Transformer-based meta-learning framework that predicts voxel-level neural responses for new subjects directly from a small number of stimulus–response samples via in-context learning (ICL), requiring no fine-tuning to generalize to new subjects or stimuli. With only 100 images as context, it approaches the performance of a reference model fully tr…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "higher visual cortex"
   - "hypernetworks"
 date: 2026-05-08
-content_hash: 79dc3db1e65b6a54
+content_hash: 6c2721eb900bf981
 ---
 
 # Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex
@@ -137,11 +137,11 @@ where $l$ is the context length. Combined with randomly sampled context sizes du
 
 ## Related Papers
 
-- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](../../CVPR2026/medical_imaging/meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
 - [\[ICCV 2025\] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction](../../ICCV2025/medical_imaging/neurons_emulating_the_human_visual_cortex_improves_fidelity_and_interpretability.md)
 - [\[NeurIPS 2025\] SMMILE: An Expert-Driven Benchmark for Multimodal Medical In-Context Learning](smmile_an_expert-driven_benchmark_for_multimodal_medical_in-context_learning.md)
 - [\[NeurIPS 2025\] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning](synbrain_enhancing_visual-to-fmri_synthesis_via_probabilistic_representation_lea.md)
 - [\[ICLR 2026\] LaVCa: LLM-assisted Visual Cortex Captioning](../../ICLR2026/medical_imaging/lavca_llm-assisted_visual_cortex_captioning.md)
+- [\[CVPR 2025\] Show and Segment: Universal Medical Image Segmentation via In-Context Learning](../../CVPR2025/medical_imaging/show_and_segment_universal_medical_image_segmentation_via_in-context_learning.md)
 
 </div>
 

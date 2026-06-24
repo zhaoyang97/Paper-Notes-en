@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Instance-Specific Test-Time Training for Speech Editing in the Wild
 description: >-
-  [NeurIPS 2025 (Workshop on GenProCC)][Audio & Speech][speech editing] This paper proposes an instance-specific test-time training (TTT) method for in-the-wild speech editing. Prior to inference…
+  [NeurIPS 2025 (Workshop on GenProCC)][Audio & Speech][speech editing] This paper proposes an instance-specific test-time training (TTT) method for in-the-wild speech editing. Prior to inference, the model is fine-tuned at the instance level using direct supervision from the acoustic features of unedited regions, and indirect supervision over edited regions via duration constraints and a phoneme prediction auxiliary loss. This approach effectively mitigates bandwidth discontin…
 tags:
   - "NeurIPS 2025 (Workshop on GenProCC)"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "phoneme prediction"
   - "in-the-wild adaptation"
 date: 2026-05-08
-content_hash: 865f116f2637c34e
+content_hash: 5475b69f224525b5
 ---
 
 # Instance-Specific Test-Time Training for Speech Editing in the Wild

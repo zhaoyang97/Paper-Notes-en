@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper proposes the FCaps large-scale dataset (47k hours of speech, 19M fine-grained annotations) and the CLSP contrastive learning model. Through an end-to-end annotation pipeline and fine-grained multi-granular contrastive supervision, it realizes the first speech-text alignment model capable of unifying global a
+  [ACL 2026][Audio & Speech][Speaking style modeling] This paper proposes the FCaps large-scale dataset (47k hours of speech, 19M fine-grained annotations) and the CLSP contrastive learning model. Through an end-to-end annotation pipeline and fine-grained multi-granular contrastive supervision, it realizes the first speech-text alignment model capable of unifying global and fine-grained speaking style representations.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Speaking style modeling"
+  - "contrastive learning pre-training"
+  - "fine-grained annotation"
+  - "speech-text alignment"
+  - "paralinguistics"
 date: 2026-05-08
-content_hash: 45ca03b1487edeb6
+content_hash: 10b9ce182dcb79e2
 ---
+
 # Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training
 
 **Conference**: ACL 2026  
@@ -151,11 +157,11 @@ CLSP consists of 724M parameters (SPEAR-XLarge 599M + RoBERTa 125M), trained on 
 
 ## Related Papers
 
+- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
+- [\[ACL 2026\] FIGMA: Towards Fine-Grained Music Retrieval](figma_towards_fine-grained_music_retrieval.md)
 - [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
 - [\[ACL 2026\] SegTune: Structured and Fine-Grained Control for Song Generation](segtune_structured_and_fine-grained_control_for_song_generation.md)
-- [\[ACL 2026\] FIGMA: Towards Fine-Grained Music Retrieval](figma_towards_fine-grained_music_retrieval.md)
 - [\[ICML 2026\] MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks](../../ICML2026/audio_speech/mecat_a_multi-experts_constructed_benchmark_for_fine-grained_audio_understanding.md)
-- [\[AAAI 2026\] MF-Speech: Achieving Fine-Grained and Compositional Control in Speech Generation via Factor Disentanglement](../../AAAI2026/audio_speech/mf-speech_achieving_fine-grained_and_compositional_control_in_speech_generation_.md)
 
 </div>
 

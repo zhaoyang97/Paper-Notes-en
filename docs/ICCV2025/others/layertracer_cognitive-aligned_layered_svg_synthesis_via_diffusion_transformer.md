@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer
 description: >-
-  [ICCV 2025][SVG generation] LayerTracer presents the first cognitive-aligned layered SVG generation framework built upon a Diffusion Transformer (DiT). It constructs a dataset of 20,000+ designer operation sequences…
+  [ICCV 2025][SVG generation] LayerTracer presents the first cognitive-aligned layered SVG generation framework built upon a Diffusion Transformer (DiT). It constructs a dataset of 20,000+ designer operation sequences, trains a DiT to generate multi-stage rasterized blueprints that simulate designer workflows, and converts these blueprints into clean, editable layered SVGs via layer-wise vectorization and path deduplication. The framework supports both text-driven generation an…
 tags:
   - "ICCV 2025"
   - "SVG generation"
@@ -13,7 +13,7 @@ tags:
   - "vectorization"
   - "LoRA"
 date: 2026-05-08
-content_hash: 48ac31fc7bf33014
+content_hash: dfb8cdb942ab32d6
 ---
 
 # LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer
@@ -165,9 +165,9 @@ LayerTracer consists of four components:
 
 - [\[ICCV 2025\] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)
 - [\[AAAI 2026\] SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer](../../AAAI2026/others/synweather_weather_observation_data_synthesis_across_multiple_regions_and_variab.md)
-- [\[NeurIPS 2025\] Rethinking Losses for Diffusion Bridge Samplers](../../NeurIPS2025/others/rethinking_losses_for_diffusion_bridge_samplers.md)
-- [\[AAAI 2026\] Axis-Aligned Document Dewarping](../../AAAI2026/others/axis-aligned_document_dewarping.md)
-- [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](../../NeurIPS2025/others/frequency-aware_token_reduction_for_efficient_vision_transformer.md)
+- [\[ICML 2025\] Gradient Aligned Regression via Pairwise Losses](../../ICML2025/others/gradient_aligned_regression_via_pairwise_losses.md)
+- [\[ACL 2025\] Unifying Continuous and Discrete Text Diffusion with Non-simultaneous Diffusion Processes](../../ACL2025/others/neodiff_unified_text_diffusion.md)
+- [\[CVPR 2025\] CARE Transformer: Mobile-Friendly Linear Visual Transformer via Decoupled Dual Interaction](../../CVPR2025/others/care_transformer_linear_attention.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Coresets for Clustering Under Stochastic Noise
 description: >-
-  [NeurIPS 2025][Coreset] This paper presents the first systematic study of $(k,z)$-clustering coreset construction under noisy data. It proposes a novel surrogate error metric $\mathsf{Err}_\alpha$ to replace the traditio…
+  [NeurIPS 2025][Coreset] This paper presents the first systematic study of $(k,z)$-clustering coreset construction under noisy data. It proposes a novel surrogate error metric $\mathsf{Err}_\alpha$ to replace the traditional $\mathsf{Err}$, achieving a $\text{poly}(k)$-fold reduction in coreset size and a $\text{poly}(k)$-fold tightening of quality guarantees under mild data assumptions, along with a noise-aware cluster-wise sampling algorithm.
 tags:
   - "NeurIPS 2025"
   - "Coreset"
@@ -11,7 +11,7 @@ tags:
   - "k-Means"
   - "Surrogate Error Metric"
 date: 2026-05-08
-content_hash: 811bfc1115a22cc6
+content_hash: ae191575875580eb
 ---
 
 # Coresets for Clustering Under Stochastic Noise
@@ -150,9 +150,9 @@ Even when datasets violate Assumption 3.2 (e.g., weakly separated data with smal
 
 - [\[NeurIPS 2025\] Estimation of Stochastic Optimal Transport Maps](estimation_of_stochastic_optimal_transport_maps.md)
 - [\[NeurIPS 2025\] Statistical Inference Under Performativity](statistical_inference_under_performativity.md)
-- [\[AAAI 2026\] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer](../../AAAI2026/others/enhancing_noise_resilience_in_face_clustering_via_sparse_differential_transforme.md)
 - [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
-- [\[AAAI 2026\] Predict and Resist: Long-Term Accident Anticipation under Sensor Noise](../../AAAI2026/others/predict_and_resist_long-term_accident_anticipation_under_sensor_noise.md)
+- [\[AAAI 2026\] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer](../../AAAI2026/others/enhancing_noise_resilience_in_face_clustering_via_sparse_differential_transforme.md)
+- [\[ICLR 2026\] Distributed Algorithms for Euclidean Clustering](../../ICLR2026/others/distributed_algorithms_for_euclidean_clustering.md)
 
 </div>
 

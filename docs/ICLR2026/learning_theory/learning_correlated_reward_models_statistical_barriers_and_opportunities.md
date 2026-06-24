@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Learning Correlated Reward Models: Statistical Barriers and Opportunities
 description: >-
-  [ICLR 2026][learning_theory][Random Utility Model] This paper demonstrates that mainstream pairwise preference data in RLHF **cannot** learn the correlation between user utilities, while best-of-three (ranking one out of three) data is both necessary and sufficient. Based on this, it provides the first identifiability results for the correlated probit model and a near-
+  [ICLR 2026][Learning Theory][Random Utility Model] This paper demonstrates that mainstream pairwise preference data in RLHF **cannot** learn the correlation between user utilities, while best-of-three (ranking one out of three) data is both necessary and sufficient. Based on this, it provides the first identifiability results for the correlated probit model and a near-optimal polynomial-time estimator.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Random Utility Model
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Preference Modeling"
+  - "RLHF Reward Models"
+  - "Random Utility Model"
+  - "Correlated Probit Model"
+  - "IIA Hypothesis"
+  - "best-of-three preferences"
+  - "Identifiability"
+  - "Sample Complexity"
 date: 2026-05-08
-content_hash: 54137070677b8a2c
+content_hash: b81576f6bec815bf
 ---
+
 # Learning Correlated Reward Models: Statistical Barriers and Opportunities
 
 **Conference**: ICLR 2026  
@@ -121,8 +129,8 @@ Key findings: In **pure correlation** scenarios ($\mu=0$, $\Sigma=$ bin), both l
 
 ## Related Papers
 
-- [\[ICLR 2026\] Barriers for Learning in an Evolving World: Mathematical Understanding of Loss of Plasticity](barriers_for_learning_in_an_evolving_world_mathematical_understanding_of_loss_of.md)
 - [\[ICLR 2026\] Statistical and Structural Identifiability in Representation Learning](statistical_and_structural_identifiability_in_representation_learning.md)
+- [\[ICLR 2026\] Barriers for Learning in an Evolving World: Mathematical Understanding of Loss of Plasticity](barriers_for_learning_in_an_evolving_world_mathematical_understanding_of_loss_of.md)
 - [\[ICLR 2026\] Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs](near-optimal_sample_complexity_bounds_for_constrained_average-reward_mdps.md)
 - [\[ICLR 2026\] Automata Learning and Identification of the Support of Language Models](automata_learning_and_identification_of_the_support_of_language_models.md)
 - [\[ICLR 2026\] Interactive Learning of Single-Index Models via Stochastic Gradient Descent](interactive_learning_of_single-index_models_via_stochastic_gradient_descent.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Post-training quantization] This paper reveals an error accumulation phenomenon in diffusion model quantization—where quantization errors at each step propagate and amplify into subsequen…
+  [NeurIPS 2025][Image Generation][Post-training quantization] This paper reveals an error accumulation phenomenon in diffusion model quantization—where quantization errors at each step propagate and amplify into subsequent steps—and proposes explicitly simulating consecutive multi-step denoising during PTQ calibration to jointly optimize quantization parameters, while reducing memory from O(n) to O(1) through a carefully designed objective function.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "multi-step sampling simulation"
   - "O(1) memory optimization"
 date: 2026-05-08
-content_hash: d54158358c0f19e0
+content_hash: 768f29eb378d0455
 ---
 
 # AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models
@@ -150,8 +150,8 @@ $k=2$–$4$ is the optimal range—jointly optimizing the nearest 2–4 steps ca
 - [\[NeurIPS 2025\] Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising](two-steps_diffusion_policy_for_robotic_manipulation_via_genetic_denoising.md)
 - [\[NeurIPS 2025\] MultiHuman-Testbench: Benchmarking Image Generation for Multiple Humans](multihuman-testbench_benchmarking_image_generation_for_multiple_humans.md)
 - [\[ICCV 2025\] Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment](../../ICCV2025/image_generation/fewer_denoising_steps_or_cheaper_per-step_inference_towards_compute-optimal_diff.md)
+- [\[CVPR 2026\] Stepwise-Flow-GRPO: Assigning Stepwise Credit to Denoising Steps in Flow-Matching Models](../../CVPR2026/image_generation/stepwise_credit_assignment_for_grpo_on_flow-matching_models.md)
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
-- [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
 
 </div>
 

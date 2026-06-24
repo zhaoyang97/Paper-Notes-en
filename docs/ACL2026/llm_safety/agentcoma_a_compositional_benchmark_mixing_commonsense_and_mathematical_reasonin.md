@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AgentCoMa: A Compositional Benchmark Mixing Commonsense and Mathematical Reasoning in Real-World Scenarios
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] AgentCoMa constructs an agentic benchmark that forcibly combines commonsense selection with single-step mathematical operations. Evaluations across 61 LLMs reveal that while models typically solve both sub-problems independently (80%), the average accuracy drops to 51% when combined, exposing significant vulnerabilitie
+  [ACL2026][LLM Safety][Mixed-type Compositional Reasoning] AgentCoMa constructs an agentic benchmark that forcibly combines commonsense selection with single-step mathematical operations. Evaluations across 61 LLMs reveal that while models typically solve both sub-problems independently (80%), the average accuracy drops to 51% when combined, exposing significant vulnerabilities in mixed-type compositional reasoning.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL2026"
+  - "LLM Safety"
+  - "Mixed-type Compositional Reasoning"
+  - "Commonsense Reasoning"
+  - "Mathematical Reasoning"
+  - "Agent Evaluation"
+  - "Model Vulnerability"
 date: 2026-05-08
-content_hash: acb41b0145440bfd
+content_hash: 49cc3129173822e3
 ---
+
 # AgentCoMa: A Compositional Benchmark Mixing Commonsense and Mathematical Reasoning in Real-World Scenarios
 
 **Conference**: ACL2026  
@@ -123,11 +129,11 @@ The "ablations" in this paper function as diagnostic experiments, systematically
 
 ## Related Papers
 
+- [\[ICLR 2026\] MCP-SafetyBench: A Benchmark for Safety Evaluation of Large Language Models with Real-World MCP Servers](../../ICLR2026/llm_safety/mcp-safetybench_a_benchmark_for_safety_evaluation_of_large_language_models_with_.md)
+- [\[ICLR 2026\] CIMemories: A Compositional Benchmark For Contextual Integrity In LLMs](../../ICLR2026/llm_safety/cimemories_a_compositional_benchmark_for_contextual_integrity_in_llms.md)
+- [\[ICLR 2026\] MSCR: Exploring the Vulnerability of LLMs' Mathematical Reasoning Abilities Using Multi-Source Candidate Replacement](../../ICLR2026/llm_safety/mscr_exploring_the_vulnerability_of_llms_mathematical_reasoning_abilities_using_.md)
 - [\[ICLR 2026\] Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark](../../ICLR2026/llm_safety/measuring_physical-world_privacy_awareness_of_large_language_models_an_evaluatio.md)
 - [\[ICLR 2026\] Moving Beyond Medical Exams: A Clinician-Annotated Fairness Dataset of Real-World Tasks and Ambiguity in Mental Healthcare](../../ICLR2026/llm_safety/moving_beyond_medical_exams_a_clinician-annotated_fairness_dataset_of_real-world.md)
-- [\[NeurIPS 2025\] SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications](../../NeurIPS2025/llm_safety/swe-sql_illuminating_llm_pathways_to_solve_user_sql_issues_in_real-world_applica.md)
-- [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
-- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
 
 </div>
 

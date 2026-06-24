@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RHINO: Reconstructing Human Interactions with Novel Objects from Monocular Videos
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] From a single monocular RGB video with a moving perspective, RHINO reconstructs the "Human + Manipulated Unknown Object + Static Scene" into detailed 4D geometry within a unified world coordinate system. It leverages 3D foundation models to stabilize motion estimation for low-texture objects, decouples true object moti
+  [CVPR 2026][3D Vision][Human-Object Interaction (HOI) Reconstruction] From a single monocular RGB video with a moving perspective, RHINO reconstructs the "Human + Manipulated Unknown Object + Static Scene" into detailed 4D geometry within a unified world coordinate system. It leverages 3D foundation models to stabilize motion estimation for low-texture objects, decouples true object motion from "apparent motion" via camera motion subtraction, and performs joint optimization u…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human-Object Interaction (HOI) Reconstruction"
+  - "Monocular Video"
+  - "Neural SDF"
+  - "Camera-Object Motion Decoupling"
+  - "Contact Priors"
 date: 2026-05-08
-content_hash: 9a3cd3d33a80b197
+content_hash: 7813d3bfed309c8e
 ---
+
 # RHINO: Reconstructing Human Interactions with Novel Objects from Monocular Videos
 
 **Conference**: CVPR 2026  
@@ -159,7 +165,7 @@ RHINO is the first to reconstruct H/O/S simultaneously. It drastically outperfor
 - [\[CVPR 2026\] Scaling4D: Pushing the Frontier of Video Novel View Synthesis through Large-Scale Monocular Videos](scaling4d_pushing_the_frontier_of_video_novel_view_synthesis_through_large-scale.md)
 - [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
 - [\[CVPR 2026\] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos](funrec_reconstructing_functional_3d_scenes_from_egocentric_interaction_videos.md)
-- [\[CVPR 2026\] PhysHO: Physics-Based Dynamic 3D Gaussian Human and Object from Monocular Video](physho_physics-based_dynamic_3d_gaussian_human_and_object_from_monocular_video.md)
+- [\[CVPR 2026\] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)
 
 </div>
 

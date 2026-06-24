@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RKSC: Reasoning-Aware KV Cache Sharing and Confident Early Exit for Multi-Step LLM Inference
 description: >-
-  [ICML 2026][LLM Efficiency][KV Cache] RKSC is a **training-free** inference framework addressing two types of structural waste in "multi-branch inference" (running multiple reasoning trajectories followed by voting/verification). By employing "KV sharing via hidden state similarity" and "dual-level confidence early exit," it eliminates redundant prefix KV
+  [ICML2026][LLM Efficiency][KV Cache] RKSC is a **training-free** inference framework addressing two types of structural waste in "multi-branch inference" (running multiple reasoning trajectories followed by voting/verification). By employing "KV sharing via hidden state similarity" and "dual-level confidence early exit," it eliminates redundant prefix KV computations and excessive verification forwards. It achieves an average speedup of $3.008\times$ compared to a no-cache ba…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - KV Cache
-  - Inference Acceleration
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "KV Cache"
+  - "Inference Acceleration"
+  - "Multi-branch Inference"
+  - "Early Exit"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 290170b584623c15
+content_hash: 8694940015433df3
 ---
+
 # RKSC: Reasoning-Aware KV Cache Sharing and Confident Early Exit for Multi-Step LLM Inference
 
 **Conference**: ICML2026  
@@ -139,10 +143,10 @@ Latency breakdown (GPQA Diamond, Qwen2.5-7B, $t=32$) and isolated ASKS testing:
 ## Related Papers
 
 - [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
-- [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
-- [\[ACL 2025\] KV-Latent: Dimensional-level KV Cache Reduction with Frequency-aware Rotary Positional Embedding](../../ACL2025/llm_efficiency/kv_latent_cache_reduction.md)
-- [\[ICLR 2026\] Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs](../../ICLR2026/llm_efficiency/cache_what_lasts_token_retention_for_memory-bounded_kv_cache_in_llms.md)
-- [\[ACL 2026\] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](../../ACL2026/llm_efficiency/mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](../../ICLR2026/llm_efficiency/freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
+- [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](../../ICLR2026/llm_efficiency/defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](../../ICLR2026/llm_efficiency/fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](../../ICLR2026/llm_efficiency/attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
 
 </div>
 

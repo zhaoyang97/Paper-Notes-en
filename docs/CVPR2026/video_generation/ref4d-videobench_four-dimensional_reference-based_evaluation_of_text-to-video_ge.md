@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ref4D-VideoBench: Four-Dimensional Reference-Based Evaluation of Text-to-Video Generative Models
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] To address the issue where sample-level failures in existing text-to-video (T2V) evaluations cannot be attributed due to "no-reference, prompt-only" paradigms, this paper proposes Ref4D-VideoBench. Using 600 real reference videos as structured spatio-temporal evidence, it designs 12 interpretable atomic metrics across
+  [CVPR 2026][Video Generation][Text-to-video evaluation] To address the issue where sample-level failures in existing text-to-video (T2V) evaluations cannot be attributed due to "no-reference, prompt-only" paradigms, this paper proposes Ref4D-VideoBench. Using 600 real reference videos as structured spatio-temporal evidence, it designs 12 interpretable atomic metrics across four dimensions: semantic alignment, motion consistency, event temporal order…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-to-video evaluation"
+  - "Reference video"
+  - "Multi-dimensional benchmark"
+  - "Event graph alignment"
+  - "World knowledge consistency"
 date: 2026-05-08
-content_hash: 828bfd7bf61162f2
+content_hash: 1381cd6bdf1845fc
 ---
+
 # Ref4D-VideoBench: Four-Dimensional Reference-Based Evaluation of Text-to-Video Generative Models
 
 **Conference**: CVPR 2026  
@@ -120,14 +126,15 @@ The framework effectively decouples capabilities: ViduQ2 leads in semantics, Sor
 - Value: ⭐⭐⭐⭐⭐ Provides an auditable, diagnostic evaluation for T2V; structured evidence can also support reward design and safety audits.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](thinking_with_frames_generative_video_distortion_evaluation_via_frame_reward_mod.md)
+- [\[CVPR 2026\] SVBench: Evaluation of Video Generation Models on Social Reasoning](svbench_evaluation_of_video_generation_models_on_social_reasoning.md)
+- [\[ICLR 2026\] $PhyWorldBench$: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models](../../ICLR2026/video_generation/phyworldbench_a_comprehensive_evaluation_of_physical_realism_in_text-to-video_mo.md)
 - [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
 - [\[CVPR 2026\] SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation](slvmeval_synthetic_meta_evaluation_benchmark_for_text-to-long_video_generation.md)
-- [\[CVPR 2026\] TempoControl: Temporal Attention Guidance for Text-to-Video Models](tempocontrol_temporal_attention_guidance_for_text-to-video_models.md)
 - [\[CVPR 2025\] NeuS-V: Neuro-Symbolic Evaluation of Text-to-Video Models using Formal Verification](../../CVPR2025/video_generation/neuro-symbolic_evaluation_of_text-to-video_models_using_formal_verification.md)
 
 </div>

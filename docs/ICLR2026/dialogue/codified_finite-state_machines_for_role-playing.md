@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Codified Finite-state Machines for Role-playing
 description: >-
-  [ICLR 2026][Dialogue Systems][Paper Note] Addressing the issue where LLMs in role-playing only mimic surface-level actions but fail to remember a character's "internal state," this paper proposes automatically **compiling character profiles into executable Finite State Machines (CFSM)**. It uses code to explicitly record character states and transition rules,
+  [ICLR2026][Dialogue Systems][Role-playing] Addressing the issue where LLMs in role-playing only mimic surface-level actions but fail to remember a character's "internal state," this paper proposes automatically **compiling character profiles into executable Finite State Machines (CFSM)**. It uses code to explicitly record character states and transition rules, further extending this to CPFSM for modeling states via probability distributions. On both synthetic validation and F…
 tags:
-  - ICLR 2026
-  - Dialogue Systems
+  - "ICLR2026"
+  - "Dialogue Systems"
+  - "Role-playing"
+  - "Finite-state Machines"
+  - "State Modeling"
+  - "LLM Codification"
+  - "Probabilistic Transitions"
 date: 2026-05-08
-content_hash: 3b07c7f02e86e42d
+content_hash: b28cf9a3706d2386
 ---
+
 # Codified Finite-state Machines for Role-playing
 
 **Conference**: ICLR2026  
@@ -137,6 +143,7 @@ Even with a 1B RP model, CFSM significantly outperformed textual/codified profil
 - Value: ⭐⭐⭐⭐ Provides a practical, auditable, and reusable state modeling paradigm for RP and dialogue agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

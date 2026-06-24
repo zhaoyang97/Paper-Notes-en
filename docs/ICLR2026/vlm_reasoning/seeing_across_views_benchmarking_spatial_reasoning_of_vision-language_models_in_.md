@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes
 description: >-
-  [ICLR 2026][vlm_reasoning][multi-view spatial reasoning] The authors introduce MV-RoboBench, the first benchmark integrating multi-view spatial reasoning with robotic manipulation execution. It contains 1.7K human-annotated QA pairs and reveals a massive gap between the strongest current VLMs (GPT-5 at only 56.4%) and humans (91.0%).
+  [ICLR2026][VLM Reasoning][multi-view spatial reasoning] The authors introduce MV-RoboBench, the first benchmark integrating multi-view spatial reasoning with robotic manipulation execution. It contains 1.7K human-annotated QA pairs and reveals a massive gap between the strongest current VLMs (GPT-5 at only 56.4%) and humans (91.0%).
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - multi-view spatial reasoning
-  - robotic manipulation
-  - VLM benchmark
-  - embodied AI
-  - MV-RoboBench
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "multi-view spatial reasoning"
+  - "robotic manipulation"
+  - "VLM benchmark"
+  - "embodied AI"
+  - "MV-RoboBench"
 date: 2026-05-08
-content_hash: 9c575ad39f91ef0b
+content_hash: 42b5ed35fc5910d6
 ---
+
 # Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes
 
 **Conference**: ICLR2026  
@@ -124,9 +125,9 @@ The benchmark also uses two analysis axes to challenge common assumptions. The i
 
 - [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
 - [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
-- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/vlm_reasoning/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
-- [\[ICLR 2026\] MindCube: Spatial Mental Modeling from Limited Views](mindcube_spatial_mental_modeling_from_limited_views.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[ICLR 2026\] InternSpatial: A Comprehensive Dataset for Spatial Reasoning in Vision-Language Models](internspatial_a_comprehensive_dataset_for_spatial_reasoning_in_vision-language_m.md)
 
 </div>
 

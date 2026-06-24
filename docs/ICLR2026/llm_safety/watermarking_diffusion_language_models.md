@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Watermarking Diffusion Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Diffusion Language Model] This paper proposes the first text watermark tailored for Diffusion Language Models (DLMs). It formulates the "contextual hash-based" Red-Green watermark as a sequence-wide constrained optimization problem. This enables watermarking tokens even when their context has not been unmasked by operating on the "expectation o
+  [ICLR 2026][LLM Safety][Diffusion Language Models] This paper proposes the first text watermark tailored for Diffusion Language Models (DLMs). It formulates the "contextual hash-based" Red-Green watermark as a sequence-wide constrained optimization problem. This enables watermarking tokens even when their context has not been unmasked by operating on the "expectation of the context hash," achieving >99% True Positive Rate (TPR) with almost no quality loss while keeping the or…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Diffusion Language Model
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Diffusion Language Models"
+  - "Text Watermarking"
+  - "Red-Green Watermarking"
+  - "Constrained Optimization"
+  - "Content Provenance"
 date: 2026-05-08
-content_hash: 42b3bc608c114c97
+content_hash: 217fedd396311b55
 ---
+
 # Watermarking Diffusion Language Models
 
 **Conference**: ICLR 2026  
@@ -139,8 +144,8 @@ Under comparable quality loss, this method consistently achieves 99% TPR@1, whil
 - [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
 - [\[ICLR 2026\] DiffuGuard: How Intrinsic Safety is Lost and Found in Diffusion Large Language Models](diffuguard_how_intrinsic_safety_is_lost_and_found_in_diffusion_large_language_mo.md)
-- [\[ACL 2026\] Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models](../../ACL2026/llm_safety/retrievals_can_be_detrimental_unveiling_the_backdoor_vulnerability_of_retrieval-.md)
-- [\[ACL 2025\] MorphMark: Flexible Adaptive Watermarking for Large Language Models](../../ACL2025/llm_safety/morphmark_adaptive_watermarking.md)
+- [\[ICLR 2026\] Distilling the Thought, Watermarking the Answer: A Principle Semantic Guided Watermark for Reasoning Large Language Models](distilling_the_thought_watermarking_the_answer_a_principle_semantic_guided_water.md)
+- [\[ICLR 2026\] An Ensemble Framework for Unbiased Language Model Watermarking](an_ensemble_framework_for_unbiased_language_model_watermarking.md)
 
 </div>
 

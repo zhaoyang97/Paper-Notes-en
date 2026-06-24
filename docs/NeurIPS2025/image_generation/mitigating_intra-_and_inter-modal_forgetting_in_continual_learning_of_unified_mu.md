@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mitigating Intra- and Inter-modal Forgetting in Continual Learning of Unified Multimodal Models
 description: >-
-  [NeurIPS 2025][Image Generation][Unified Multimodal Generation Models] This paper proposes Modality-Decoupled Experts (MoDE), which decouples text and image adapters into independent T-MoE and V-Adapter subspaces…
+  [NeurIPS 2025][Image Generation][Unified Multimodal Generation Models] This paper proposes Modality-Decoupled Experts (MoDE), which decouples text and image adapters into independent T-MoE and V-Adapter subspaces, combined with knowledge distillation, to simultaneously mitigate intra-modal and inter-modal forgetting in continual instruction tuning of unified multimodal generation models.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "LoRA Mixture of Experts"
   - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 2f59b8f3815afba4
+content_hash: b24fa7eeb6a36f6b
 ---
 
 # Mitigating Intra- and Inter-modal Forgetting in Continual Learning of Unified Multimodal Models
@@ -149,8 +149,8 @@ Sequential fine-tuning on Chameleon across 5 datasets (ScienceQA→TextVQA→Ima
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
 - [\[NeurIPS 2025\] Show-o2: Improved Native Unified Multimodal Models](show-o2_improved_native_unified_multimodal_models.md)
-- [\[ICLR 2026\] Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models](../../ICLR2026/image_generation/uni-x_mitigating_modality_conflict_with_a_two-end-separated_architecture_for_uni.md)
-- [\[NeurIPS 2025\] Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models](mitigating_sexual_content_generation_via_embedding_distortion_in_text-conditione.md)
+- [\[CVPR 2025\] ConceptGuard: Continual Personalized Text-to-Image Generation with Forgetting and Confusion Mitigation](../../CVPR2025/image_generation/conceptguard_continual_personalized_text-to-image_generation_with_forgetting_and.md)
+- [\[ECCV 2024\] Diffusion-Driven Data Replay: A Novel Approach to Combat Forgetting in Federated Class Continual Learning](../../ECCV2024/image_generation/diffusion-driven_data_replay_a_novel_approach_to_combat_forgetting_in_federated_.md)
 
 </div>
 

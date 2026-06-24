@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NuWa: Deriving Lightweight Class-Specific Vision Transformers for Edge Devices
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the overlooked scenario where "edge devices only focus on specific classes," NuWa first employs Self-Knowledge Purification (SKP) to learn binary masks that remove "class-harmful weights." Subsequently, it formulates MHA/MLP pruning as closed-form optimization problems, enabling the derivation of smaller ViT
+  [CVPR 2026][Multimodal Efficiency][Structured Pruning] Addressing the overlooked scenario where "edge devices only focus on specific classes," NuWa first employs Self-Knowledge Purification (SKP) to learn binary masks that remove "class-harmful weights." Subsequently, it formulates MHA/MLP pruning as closed-form optimization problems, enabling the derivation of smaller ViTs from large ones **without retraining**. These derived models achieve **higher accuracy** than the origi…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Structured Pruning"
+  - "Class-Specific Models"
+  - "Closed-Form Solution"
+  - "Training-Free Pruning"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: 16cb4e5bbd6e5fac
+content_hash: 24667a814f9d0fd5
 ---
+
 # NuWa: Deriving Lightweight Class-Specific Vision Transformers for Edge Devices
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,16 @@ NuWa differentiates itself from **training-free structured pruning** (e.g., Wand
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[AAAI 2026\] Lightweight Optimal-Transport Harmonization on Edge Devices](../../AAAI2026/model_compression/lightweight_optimal-transport_harmonization_on_edge_devices.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
 - [\[CVPR 2026\] Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)
-- [\[CVPR 2026\] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction](memo_human-like_crisp_edge_detection_using_masked_edge_prediction.md)
 - [\[CVPR 2026\] Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation](vision-oriented_lightweight_neural_architecture_search_with_budget-adaptive_eval.md)
+- [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
+- [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
+- [\[CVPR 2026\] MM-SeR: Multimodal Self-Refinement for Lightweight Image Captioning](mm-ser_multimodal_self-refinement_for_lightweight_image_captioning.md)
 
 </div>
 

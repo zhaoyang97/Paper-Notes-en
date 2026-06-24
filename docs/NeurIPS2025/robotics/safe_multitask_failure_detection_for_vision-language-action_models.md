@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAFE: Multitask Failure Detection for Vision-Language-Action Models
 description: >-
-  [NeurIPS 2025][Robotics][Failure Detection] SAFE identifies consistent "failure regions" in the internal feature space of VLA models that generalize across tasks. Leveraging this observation…
+  [NeurIPS 2025][Robotics][Failure Detection] SAFE identifies consistent "failure regions" in the internal feature space of VLA models that generalize across tasks. Leveraging this observation, it trains lightweight MLP/LSTM failure detectors and applies Functional Conformal Prediction (FCP) for threshold calibration. The approach achieves 78% ROC-AUC on unseen tasks with less than 1% computational overhead, substantially outperforming token-uncertainty and action-consistency b…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Functional Conformal Prediction"
   - "MLP/LSTM Detector"
 date: 2026-05-08
-content_hash: c21f2b83358440cc
+content_hash: 1b72dfe8683a9a07
 ---
 
 # SAFE: Multitask Failure Detection for Vision-Language-Action Models
@@ -127,11 +127,11 @@ During VLA execution → extract the last-layer hidden state $\mathbf{e}_t$ at e
 
 ## Related Papers
 
-- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](../../CVPR2026/robotics/adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
+- [\[ICLR 2026\] Self-Refining Vision Language Model for Robotic Failure Detection and Reasoning](../../ICLR2026/robotics/self-refining_vision_language_model_for_robotic_failure_detection_and_reasoning.md)
+- [\[NeurIPS 2025\] Bridging Embodiment Gaps: Deploying Vision-Language-Action Models on Soft Robots](bridging_embodiment_gaps_deploying_vision-language-action_models_on_soft_robots.md)
 - [\[NeurIPS 2025\] ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning](thinkact_vision-language-action_reasoning_via_reinforced_visual_latent_planning.md)
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
-- [\[ACL 2026\] Capability-Oriented Failure Attribution for Vision-Language Navigation Agents](../../ACL2026/robotics/where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)
-- [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](../../CVPR2026/robotics/sapave_active_perception_manipulation_vla_roboti.md)
+- [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
+- [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
 
 </div>
 

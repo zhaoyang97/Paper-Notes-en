@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference
 description: >-
-  [NeurIPS 2025][Image Restoration][discrete diffusion] This paper proposes E2D2, an encoder-decoder architecture for discrete diffusion language models that performs iterative denoising via a lightweight decoder while per…
+  [NeurIPS 2025][Image Restoration][discrete diffusion] This paper proposes E2D2, an encoder-decoder architecture for discrete diffusion language models that performs iterative denoising via a lightweight decoder while periodically updating representations through a large encoder, achieving faster inference (~3× vs. MDLM) and more efficient block diffusion training (halving FLOPs).
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "language model"
   - "KV caching"
 date: 2026-05-08
-content_hash: afa4fc4488c7a1b3
+content_hash: 2a5d5d022d6fedcb
 ---
 
 # Encoder-Decoder Diffusion Language Models for Efficient Training and Inference
@@ -161,9 +161,9 @@ By fine-tuning from pretrained Qwen3 1.7B, E2D2 achieves competitive pass@1 accu
 
 - [\[NeurIPS 2025\] Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates](rethinking_circuit_completeness_in_language_models_and_or_and_adder_gates.md)
 - [\[ICML 2026\] Consistent Diffusion Language Models](../../ICML2026/image_restoration/consistent_diffusion_language_models.md)
-- [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
+- [\[ICML 2025\] HarmoniCa: Harmonizing Training and Inference for Better Feature Caching in Diffusion Transformer Acceleration](../../ICML2025/image_restoration/harmonica_harmonizing_training_and_inference_for_better_feature_caching_in_diffu.md)
 - [\[NeurIPS 2025\] Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics](elucidated_rolling_diffusion_models_for_probabilistic_forecasting_of_complex_dyn.md)
-- [\[ICML 2026\] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention](../../ICML2026/image_restoration/dyllm_efficient_diffusion_llm_inference_via_saliency-based_token_selection_and_p.md)
+- [\[ICML 2026\] Plan for Speed: Dilated Scheduling for Masked Diffusion Language Models](../../ICML2026/image_restoration/plan_for_speed_dilated_scheduling_for_masked_diffusion_language_models.md)
 
 </div>
 

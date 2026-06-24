@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DispViT: Direct Stereo Disparity Regression with a Single-Stream Vision Transformer
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] DispViT discards the "cost volume construction + iterative refinement" paradigm dominated by the stereo matching field for decades. It utilizes a single-stream ViT to tokenize left and right images into a single sequence for **direct disparity regression**. Supported by lightweight designs like shift-embedding tokenize
+  [ICLR2026][3D Vision][Stereo disparity estimation] DispViT discards the "cost volume construction + iterative refinement" paradigm dominated by the stereo matching field for decades. It utilizes a single-stream ViT to tokenize left and right images into a single sequence for **direct disparity regression**. Supported by lightweight designs like shift-embedding tokenizer, asymmetric initialization, probabilistic disparity parameterization, and disparity-aware RoPE…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Stereo disparity estimation"
+  - "single-stream ViT"
+  - "direct regression"
+  - "stereo tokenization"
+  - "relative position encoding"
 date: 2026-05-08
-content_hash: 63b4f1c54a0b44c1
+content_hash: 1c7f0343bfccaffb
 ---
+
 # DispViT: Direct Stereo Disparity Regression with a Single-Stream Vision Transformer
 
 **Conference**: ICLR2026  
@@ -152,14 +158,17 @@ ViT-B backbone, Scene Flow training, including "removal study" and "addition stu
 
 <div class="related-papers" markdown="1">
 
-- **[NMRF]** [Learning Normal-regularized Matching Cost Volume for Multi-view Stereo](https://arxiv.org/abs/2403.11183) (CVPR 2024)
-- **[DAv2]** [Depth Anything V2](https://arxiv.org/abs/2406.09414) (arXiv 2024)
-- **[Zholus]** [Probabilistic Disparity Estimation](https://arxiv.org/abs/2303.13454) (CVPR 2023)
+## Related Papers
+
+- [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](../../CVPR2026/3d_vision/240fps_stereo_vision_from_monocular_mixed_spikes.md)
+- [\[ICLR 2026\] Reducing Class-Wise Performance Disparity via Margin Regularization](reducing_class-wise_performance_disparity_via_margin_regularization.md)
+- [\[ICLR 2026\] Fast Estimation of Wasserstein Distances via Regression on Sliced Wasserstein Distances](fast_estimation_of_wasserstein_distances_via_regression_on_sliced_wasserstein_di.md)
+- [\[ECCV 2024\] BeNeRF: Neural Radiance Fields from a Single Blurry Image and Event Stream](../../ECCV2024/3d_vision/benerf_neural_radiance_fields_from_a_single_blurry_image_and_event_stream.md)
+- [\[ICLR 2026\] DepthLM: Metric Depth from Vision Language Models](depthlm_metric_depth_from_vision_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](../../CVPR2026/3d_vision/240fps_stereo_vision_from_monocular_mixed_spikes.md)

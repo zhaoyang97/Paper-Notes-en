@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Confident Block Diagonal Structure-Aware Invariable Graph Completion for Incomplete Multi-view Clustering
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] Addressing Incomplete Multi-view Clustering (IMVC) with partial view missing, this paper employs a "confident block diagonal regularizer" to recover **strictly consistent local block diagonal structures** across all views. It utilizes an "invariable graph completion" term to infer the latent structures of missing insta
+  [ICLR2026][Graph Learning][Incomplete Multi-view Clustering] Addressing Incomplete Multi-view Clustering (IMVC) with partial view missing, this paper employs a "confident block diagonal regularizer" to recover **strictly consistent local block diagonal structures** across all views. It utilizes an "invariable graph completion" term to infer the latent structures of missing instances and jointly learns a consensus spectral clustering representation. The method outperforms exis…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Incomplete Multi-view Clustering"
+  - "Block Diagonal Structure"
+  - "Graph Completion"
+  - "Self-representation"
+  - "Tensor Low-Rank"
 date: 2026-05-08
-content_hash: 780d76c89a55e76f
+content_hash: 5258932e63f6a481
 ---
+
 # Confident Block Diagonal Structure-Aware Invariable Graph Completion for Incomplete Multi-view Clustering
 
 **Conference**: ICLR2026  

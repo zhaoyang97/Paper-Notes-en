@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Off-Trajectory Reasoning: Can LLMs Collaborate on Reasoning Trajectories?
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper introduces the problem of "off-trajectory reasoning"—whether multiple reasoning models can collaborate in a relay fashion on the same chain-of-thought. By designing a "twin test" system evaluating Recoverability and Guidability across 15 open-source reasoning LLMs, the study reveals that models with stronger
+  [ICLR 2026][Reasoning][Off-Trajectory Reasoning] This paper introduces the problem of "off-trajectory reasoning"—whether multiple reasoning models can collaborate in a relay fashion on the same chain-of-thought. By designing a "twin test" system evaluating Recoverability and Guidability across 15 open-source reasoning LLMs, the study reveals that models with stronger benchmarks are often more susceptible to interference, and almost all models fail to leverage correct guidance…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Off-Trajectory Reasoning"
+  - "Multi-Model Collaboration"
+  - "Recoverability"
+  - "Guidability"
+  - "Distillation Transfer"
 date: 2026-05-08
-content_hash: 83ba4fe2bce2ba32
+content_hash: ad10cb0c3e0a017f
 ---
+
 # Off-Trajectory Reasoning: Can LLMs Collaborate on Reasoning Trajectories?
 
 **Conference**: ICLR 2026  

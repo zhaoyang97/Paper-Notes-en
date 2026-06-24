@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Why Specialist Models Still Matter: A Heterogeneous Multi-Agent Paradigm for Medical Artificial Intelligence
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] HetMedAgent organizes generalist LLMs, modality-specific models, and clinicians into a heterogeneous multi-agent system. Through conflict-aware evidence fusion and uncertainty routing, it demonstrates that specialist models and human supervision remain irreplaceable components of medical AI in cardiovascular and chest
+  [ICML2026][Multi-Agent][Medical Multi-Agents] HetMedAgent organizes generalist LLMs, modality-specific models, and clinicians into a heterogeneous multi-agent system. Through conflict-aware evidence fusion and uncertainty routing, it demonstrates that specialist models and human supervision remain irreplaceable components of medical AI in cardiovascular and chest X-ray clinical decision-making tasks.
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML2026"
+  - "Multi-Agent"
+  - "Medical Multi-Agents"
+  - "Specialist Models"
+  - "Clinical Decision Support"
+  - "Uncertainty Routing"
+  - "Evidence Fusion"
 date: 2026-05-08
-content_hash: 14aac73ad309a78d
+content_hash: 47f4c94c0d0def5d
 ---
+
 # Why Specialist Models Still Matter: A Heterogeneous Multi-Agent Paradigm for Medical Artificial Intelligence
 
 **Conference**: ICML2026  
@@ -150,10 +156,10 @@ The authors report that Ours achieves an average AUROC improvement of +6.6% and 
 ## Related Papers
 
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
+- [\[ICLR 2026\] From What to Why: A Multi-Agent System for Evidence-based Chemical Reaction Condition Reasoning](../../ICLR2026/multi_agent/from_what_to_why_a_multi-agent_system_for_evidence-based_chemical_reaction_condi.md)
 - [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](../../ICLR2026/multi_agent/mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
+- [\[ICLR 2026\] Emergent Coordination in Multi-Agent Language Models](../../ICLR2026/multi_agent/emergent_coordination_in_multi-agent_language_models.md)
 - [\[AAAI 2026\] LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models](../../AAAI2026/multi_agent/liecraft_a_multi-agent_framework_for_evaluating_deceptive_capabilities_in_langua.md)
-- [\[NeurIPS 2025\] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks](../../NeurIPS2025/multi_agent/medagentboard_benchmarking_multi-agent_collaboration_with_conventional_methods_f.md)
-- [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](../../ACL2026/multi_agent/agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
 
 </div>
 

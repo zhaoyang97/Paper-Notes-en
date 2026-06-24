@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Towards Robust Sequential Decomposition for Complex Image Editing
 description: >-
-  [CVPR 2026][Image Generation][in-context editing] Addressing complex image editing where "multiple interdependent operations are packed into a single instruction," this work investigates "sequential decomposition" within an in-context editing framework. High-quality editing chains with decomposition labels are synthesized via Blender to fine-tune BAGEL. A Context-Guid
+  [CVPR 2026][Image Generation][Complex Instruction Editing] Addressing complex image editing where "multiple interdependent operations are packed into a single instruction," this work investigates "sequential decomposition" within an in-context editing framework. High-quality editing chains with decomposition labels are synthesized via Blender to fine-tune BAGEL. A Context-Guided Sequential Editing (CGSE) paradigm is designed to regulate the influence of "historical editing re…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - in-context editing
-  - sim-to-real
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Complex Instruction Editing"
+  - "Sequential Decomposition"
+  - "In-context Editing"
+  - "Synthetic Data"
+  - "Sim-to-Real"
 date: 2026-05-08
-content_hash: 7ca0a214050acf9b
+content_hash: e9ea606d2ec23501
 ---
+
 # Towards Robust Sequential Decomposition for Complex Image Editing
 
 **Conference**: CVPR 2026  

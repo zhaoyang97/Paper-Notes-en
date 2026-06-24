@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Critical Attention Scaling in Long-Context Transformers
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper demonstrates, using an analytically simplified attention model, that attention behavior undergoes a **phase transition** as the context length $n$ increases, driven by the scaling factor $\beta_n = \gamma \log n$. The critical point occurs precisely at $\beta_n \asymp \log n$ (specifically $\gamma_c = \tfrac
+  [ICLR 2026][Learning Theory][Attention Scaling] This paper demonstrates, using an analytically simplified attention model, that attention behavior undergoes a **phase transition** as the context length $n$ increases, driven by the scaling factor $\beta_n = \gamma \log n$. The critical point occurs precisely at $\beta_n \asymp \log n$ (specifically $\gamma_c = \tfrac{1}{1-\rho}$), providing the first rigorous theoretical justification for the logarithmic scaling used in method…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Attention Mechanism Theory"
+  - "Attention Scaling"
+  - "Long Context"
+  - "Phase Transition"
+  - "Rank Collapse"
+  - "Critical Scaling"
 date: 2026-05-08
-content_hash: 3d42c70e1d6a5f65
+content_hash: 2506f16222264045
 ---
+
 # Critical Attention Scaling in Long-Context Transformers
 
 **Conference**: ICLR 2026  
@@ -138,10 +145,10 @@ As this is theoretical work, numerical experiments are used to verify phase tran
 ## Related Papers
 
 - [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
+- [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
+- [\[ICLR 2026\] Intrinsic Entropy of Context Length Scaling in LLMs](intrinsic_entropy_of_context_length_scaling_in_llms.md)
+- [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
-- [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
-- [\[ICLR 2026\] Adversarially Pretrained Transformers May Be Universally Robust In-Context Learners](adversarially_pretrained_transformers_may_be_universally_robust_in-context_learn.md)
-- [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
 
 </div>
 

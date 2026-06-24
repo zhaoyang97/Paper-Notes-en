@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] To Trust or Not to Trust: Attention-Based Trust Management for LLM Multi-Agent Systems
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper proposes the first comprehensive definition of "trustworthiness" for LLM Multi-Agent Systems (LLM-MAS) based on six orthogonal dimensions of Grice's Cooperative Principle. It discovers that LLM attention patterns can distinguish different types of trustworthiness violations, leading to the design of A-Trust,
+  [ACL 2026][Multi-Agent][LLM Multi-Agent Trust Management] This paper proposes the first comprehensive definition of "trustworthiness" for LLM Multi-Agent Systems (LLM-MAS) based on six orthogonal dimensions of Grice's Cooperative Principle. It discovers that LLM attention patterns can distinguish different types of trustworthiness violations, leading to the design of A-Trust, a lightweight evaluation method and an end-to-end Trust Management System (TMS) that improves malicio…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "LLM Multi-Agent Trust Management"
+  - "Attention Pattern Analysis"
+  - "Trustworthiness Evaluation"
+  - "Malicious Message Detection"
+  - "Trusted Communication"
 date: 2026-05-08
-content_hash: 7959f6c82a9c2d0e
+content_hash: 50762fb599c3d005
 ---
+
 # To Trust or Not to Trust: Attention-Based Trust Management for LLM Multi-Agent Systems
 
 **Conference**: ACL 2026  
@@ -161,9 +167,9 @@ A-Trust utilizes logistic regression and does not require complex training. For 
 
 - [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 - [\[ACL 2026\] CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems](cia_inferring_the_communication_topology_from_llm-based_multi-agent_systems.md)
+- [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 - [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
 - [\[ACL 2026\] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing](masfactory_a_graph-centric_framework_for_orchestrating_llm-based_multi-agent_sys.md)
-- [\[ACL 2026\] LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey](llm-based_human-agent_collaboration_and_interaction_systems_a_survey.md)
 
 </div>
 

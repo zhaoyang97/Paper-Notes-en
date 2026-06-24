@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unifying Dataset Pruning and Distillation for Efficient Large-scale Compression
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper first exposes the illusion that "Dataset Distillation (DD) outperforms Pruning" using a unified dataset compression benchmark—revealing that DD's gains primarily stem from soft labels rather than synthetic images. It then proposes the **hard-label-only** PCA (Prune-Combine-Augment) framework, which significa
+  [ICML 2026][Model Compression][Dataset Distillation] This paper first exposes the illusion that "Dataset Distillation (DD) outperforms Pruning" using a unified dataset compression benchmark—revealing that DD's gains primarily stem from soft labels rather than synthetic images. It then proposes the **hard-label-only** PCA (Prune-Combine-Augment) framework, which significantly outperforms existing DD and DP methods under extreme compression ratios on ImageNet-1K while eliminati…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Dataset Pruning"
+  - "Soft Labels"
+  - "Hard Labels"
+  - "ImageNet Compression"
 date: 2026-05-08
-content_hash: a1a85a6db5b29ee5
+content_hash: 5f1800f0c2fd6250
 ---
+
 # Unifying Dataset Pruning and Distillation for Efficient Large-scale Compression
 
 **Conference**: ICML 2026  
@@ -116,9 +122,9 @@ It is evident that classic DD (SRe2L/CDA) collapses under hard labels (dropping 
 
 - [\[ICLR 2026\] S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion](../../ICLR2026/model_compression/s2r-hdr_a_large-scale_rendered_dataset_for_hdr_fusion.md)
 - [\[AAAI 2026\] EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training](../../AAAI2026/model_compression/eeg-dlite_dataset_distillation_for_efficient_large_eeg_model_training.md)
+- [\[CVPR 2026\] Dataset Distillation by Influence Matching](../../CVPR2026/model_compression/dataset_distillation_by_influence_matching.md)
+- [\[CVPR 2026\] Rethinking Dataset Distillation: Hard Truths about Soft Labels](../../CVPR2026/model_compression/rethinking_dataset_distillation_hard_truths_about_soft_labels.md)
 - [\[ACL 2025\] UniICL: An Efficient ICL Framework Unifying Compression, Selection, and Generation](../../ACL2025/model_compression/uniicl_icl_framework.md)
-- [\[AAAI 2026\] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression](../../AAAI2026/model_compression/infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf.md)
-- [\[ACL 2025\] UniQuanF: Unifying Uniform and Binary-coding Quantization for Accurate Compression of Large Language Models](../../ACL2025/model_compression/uniquanf_unified_quantization.md)
 
 </div>
 

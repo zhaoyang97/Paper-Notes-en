@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Detect Anything 3D in the Wild
 description: >-
-  [ICCV 2025][Autonomous Driving][3D detection foundation model] DetAny3D is a promptable 3D detection foundation model that transfers prior knowledge from two 2D foundation models—SAM and depth-pretrained DINO—via a propo…
+  [ICCV 2025][Autonomous Driving][3D detection foundation model] DetAny3D is a promptable 3D detection foundation model that transfers prior knowledge from two 2D foundation models—SAM and depth-pretrained DINO—via a proposed 2D Aggregator and Zero-Embedding Mapping (ZEM) mechanism, enabling stable 2D-to-3D knowledge transfer. Using only monocular images, it achieves zero-shot 3D object detection across arbitrary scenes and camera configurations…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "2D-to-3D knowledge transfer"
   - "open-world detection"
 date: 2026-05-08
-content_hash: 2eb6b239852f598f
+content_hash: 1de7f7e684574a6d
 ---
 
 # Detect Anything 3D in the Wild
@@ -144,8 +144,8 @@ Training details: The SAM encoder is frozen; ViT-L DINOv2 and ViT-H SAM are used
 - [\[NeurIPS 2025\] LabelAny3D: Label Any Object 3D in the Wild](../../NeurIPS2025/autonomous_driving/labelany3d_label_any_object_3d_in_the_wild.md)
 - [\[ICCV 2025\] SAM4D: Segment Anything in Camera and LiDAR Streams](sam4d_segment_anything_in_camera_and_lidar_streams.md)
 - [\[ICCV 2025\] 3DRealCar: An In-the-wild RGB-D Car Dataset with 360-degree Views](3drealcar_an_in-the-wild_rgb-d_car_dataset_with_360-degree_views.md)
-- [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
-- [\[ICCV 2025\] TrackAny3D: Transferring Pretrained 3D Models for Category-unified 3D Point Cloud Tracking](trackany3d_transferring_pretrained_3d_models_for_category-unified_3d_point_cloud.md)
+- [\[CVPR 2025\] Segment Anything, Even Occluded](../../CVPR2025/autonomous_driving/segment_anything_even_occluded.md)
+- [\[CVPR 2025\] Cubify Anything: Scaling Indoor 3D Object Detection](../../CVPR2025/autonomous_driving/cubify_anything_scaling_indoor_3d_object_detection.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Study of Posterior Stability in Time-Series Latent Diffusion
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper systematically analyzes the posterior collapse issue in latent diffusion for time series—proving that collapse causes the model to degenerate into a weakened version of a VAE—and proposes the "Posterior-Stable Latent Diffusion" framework. It reinterprets the diffusion process as variational inference to elim
+  [ICLR 2026][Time Series][Latent Diffusion] This paper systematically analyzes the posterior collapse issue in latent diffusion for time series—proving that collapse causes the model to degenerate into a weakened version of a VAE—and proposes the "Posterior-Stable Latent Diffusion" framework. It reinterprets the diffusion process as variational inference to eliminate the dangerous KL regularization and utilizes the diffusion process to simulate collapse to penalize decoder ins…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Latent Diffusion"
+  - "Posterior Collapse"
+  - "Time-Series Generation"
+  - "Variational Inference"
+  - "Dependence Metrics"
 date: 2026-05-08
-content_hash: 0b927d340dffa1cc
+content_hash: 26efeecd624d4caf
 ---
+
 # A Study of Posterior Stability in Time-Series Latent Diffusion
 
 **Conference**: ICLR 2026  
@@ -141,8 +147,8 @@ Configuration: $L=1000$ diffusion steps, $\gamma=2, \eta=1$. Values averaged ove
 - [\[ICLR 2026\] Latent-to-Data Cascaded Diffusion Models for Unconditional Time Series Generation](latent-to-data_cascaded_diffusion_models_for_unconditional_time_series_generatio.md)
 - [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](../../ICML2026/time_series/latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
 - [\[ICLR 2026\] Understanding Transformers in Time Series Forecasting: A Case Study on MOIRAI](understanding_transformers_for_time_series_forecasting_a_case_study_on_moirai.md)
+- [\[ICLR 2026\] TEDM: Elucidated Diffusion Models for Time Series Forecasting](tedm_time_series_forecasting_with_elucidated_diffusion_models.md)
 - [\[ICLR 2026\] ICDiffAD: Implicit Conditioning Diffusion Model for Time Series Anomaly Detection](icdiffad_implicit_conditioning_diffusion_model_for_time_series_anomaly_detection.md)
-- [\[ICLR 2026\] MMPD: Diverse Time Series Forecasting via Multi-Mode Patch Diffusion Loss](mmpd_diverse_time_series_forecasting_via_multi-mode_patch_diffusion_loss.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decoupling the Class Label and the Target Concept in Machine Unlearning
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper points out that traditional class unlearning assumes "class label = target concept to be removed," whereas real-world deletion requests often involve a mismatch between the two. To address this, the authors decouple forget data, model output, and target concepts into three label domains, defining target/mode
+  [ICLR 2026][AI Safety][Machine Unlearning] This paper points out that traditional class unlearning assumes "class label = target concept to be removed," whereas real-world deletion requests often involve a mismatch between the two. To address this, the authors decouple forget data, model output, and target concepts into three label domains, defining target/model/data mismatch tasks. They propose the TARF framework, which utilizes "representational gravity" to identify data sh…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Class Unlearning"
+  - "Target Concept Decoupling"
+  - "Representational Gravity"
+  - "Annealed Unlearning"
 date: 2026-05-08
-content_hash: 6440cd7150d836f4
+content_hash: 165611ba409dd03a
 ---
+
 # Decoupling the Class Label and the Target Concept in Machine Unlearning
 
 **Conference**: ICLR 2026  
@@ -152,10 +158,10 @@ Table 2 provides fine-grained evaluation under Model Mismatch, splitting "subcla
 ## Related Papers
 
 - [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](label_smoothing_improves_machine_unlearning.md)
-- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
-- [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](distributional_machine_unlearning_via_selective_data_removal.md)
 - [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](machine_unlearning_under_retainforget_entanglement.md)
-- [\[ICLR 2026\] Concept-based Adversarial Attack: a Probabilistic Perspective](concept-based_adversarial_attack_a_probabilistic_perspective.md)
+- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
+- [\[ICLR 2026\] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution](remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md)
+- [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](distributional_machine_unlearning_via_selective_data_removal.md)
 
 </div>
 

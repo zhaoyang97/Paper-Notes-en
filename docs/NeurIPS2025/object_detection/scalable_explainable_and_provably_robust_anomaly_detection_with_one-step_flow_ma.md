@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching
 description: >-
-  [NeurIPS 2025][Object Detection][anomaly detection] This paper proposes TCCM (Time-Conditioned Contraction Matching), a flow matching-inspired semi-supervised anomaly detection method for tabular data. By learning a time…
+  [NeurIPS 2025][Object Detection][anomaly detection] This paper proposes TCCM (Time-Conditioned Contraction Matching), a flow matching-inspired semi-supervised anomaly detection method for tabular data. By learning a time-conditioned velocity field that contracts normal data toward the origin, TCCM computes anomaly scores in a single forward pass, achieving top AUROC and AUPRC rankings across 47 ADBench datasets while running 1573× faster than DTE.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "explainability"
   - "Lipschitz robustness"
 date: 2026-05-08
-content_hash: 557b5c07af12d01e
+content_hash: e2276bbebc201d2c
 ---
 
 # Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching
@@ -144,9 +144,9 @@ This paper proposes TCCM (Time-Conditioned Contraction Matching), a flow matchin
 
 - [\[ICML 2026\] Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection](../../ICML2026/object_detection/mixture_prototype_flow_matching_for_open-set_supervised_anomaly_detection.md)
 - [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
+- [\[CVPR 2025\] One-for-More: Continual Diffusion Model for Anomaly Detection](../../CVPR2025/object_detection/one-for-more_continual_diffusion_model_for_anomaly_detection.md)
+- [\[CVPR 2025\] Odd-One-Out: Anomaly Detection by Comparing with Neighbors](../../CVPR2025/object_detection/odd-one-out_anomaly_detection_by_comparing_with_neighbors.md)
 - [\[NeurIPS 2025\] DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection](dcad-2000_a_multilingual_dataset_across_2000_languages_with_data_cleaning_as_ano.md)
-- [\[NeurIPS 2025\] EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination](an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data.md)
-- [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
 
 </div>
 

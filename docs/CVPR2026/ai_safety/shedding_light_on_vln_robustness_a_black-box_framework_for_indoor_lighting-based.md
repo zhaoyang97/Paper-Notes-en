@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack
 description: >-
-  [CVPR 2026][AI Safety][Embodied AI] This paper points out that robustness evaluations for Vision-Language Navigation (VLN) agents have traditionally relied on "weird textures that rarely appear in reality." Instead, it proposes ILA, a black-box attack framework that only manipulates global indoor lighting intensity. Its static mode (SILA) searches for a
+  [CVPR 2026][AI Safety][VLN Robustness] This paper points out that robustness evaluations for Vision-Language Navigation (VLN) agents have traditionally relied on "weird textures that rarely appear in reality." Instead, it proposes ILA, a black-box attack framework that only manipulates global indoor lighting intensity. Its static mode (SILA) searches for a constant brightness that best disrupts navigation, while the dynamic mode (DILA) suddenly switches lights on/off at criti…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Embodied AI
+  - "CVPR 2026"
+  - "AI Safety"
+  - "VLN Robustness"
+  - "Black-box Adversarial Attack"
+  - "Indoor Lighting"
+  - "Embodied AI"
+  - "Trajectory Deviation"
 date: 2026-05-08
-content_hash: 9ed33cbd6fee7d8f
+content_hash: 7dcd3a2ffac1ded2
 ---
+
 # Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack
 
 **Conference**: CVPR 2026  
@@ -133,11 +138,11 @@ Ablation on SILA's loss design and DILA's switching trigger strategy (ASR↑%):
 
 ## Related Papers
 
-- [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 - [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
+- [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 - [\[CVPR 2026\] What Your Features Reveal: Data-Efficient Black-Box Feature Inversion Attack for Split DNNs](what_your_features_reveal_data-efficient_black-box_feature_inversion_attack_for_.md)
-- [\[CVPR 2026\] DASH: A Meta-Attack Framework for Synthesizing Effective and Stealthy Adversarial Examples](dash_a_meta-attack_framework_for_synthesizing_effective_and_stealthy_adversarial.md)
 - [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
+- [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](../../ICLR2026/ai_safety/a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)
 
 </div>
 

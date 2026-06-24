@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] The SPEGC framework is proposed to refine the raw similarity matrix into high-order structural representations using semantic-prompt-enhanced features and a differentiable graph clustering solver. This guides the adaptation of medical image segmentation models on continuously changing target domains, effectively allevi
+  [CVPR2026][Medical Imaging][Continual Test-Time Adaptation] The SPEGC framework is proposed to refine the raw similarity matrix into high-order structural representations using semantic-prompt-enhanced features and a differentiable graph clustering solver. This guides the adaptation of medical image segmentation models on continuously changing target domains, effectively alleviating error accumulation and catastrophic forgetting.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Continual Test-Time Adaptation"
+  - "Graph Clustering"
+  - "Semantic Prompt"
+  - "Optimal Transport"
+  - "Domain Shift"
+  - "Retina/Polyp Segmentation"
 date: 2026-05-08
-content_hash: a2ed19ac612ccec6
+content_hash: b0d6f2a6494f81ed
 ---
+
 # SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation
 
 **Conference**: CVPR2026  
@@ -152,7 +159,7 @@ $$L = L_G + \lambda L_C$$
 - [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
 - [\[AAAI 2026\] Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction](../../AAAI2026/medical_imaging/cross-sample_augmented_test-time_adaptation_for_personalized_intraoperative_hypo.md)
 - [\[ICML 2026\] MedCRP-CL: Continual Medical Image Segmentation via Bayesian Nonparametric Semantic Modality Discovery](../../ICML2026/medical_imaging/medcrp-cl_continual_medical_image_segmentation_via_bayesian_nonparametric_semant.md)
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](semantic_class_distribution_learning_for_debiasing.md)
+- [\[CVPR 2026\] Diffusion-Based Native Adversarial Synthesis for Enhanced Medical Segmentation Generalization](diffusion-based_native_adversarial_synthesis_for_enhanced_medical_segmentation_g.md)
 
 </div>
 

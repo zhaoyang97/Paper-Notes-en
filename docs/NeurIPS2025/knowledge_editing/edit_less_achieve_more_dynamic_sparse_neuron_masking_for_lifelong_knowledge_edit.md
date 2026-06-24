@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs
 description: >-
-  [NEURIPS2025][Knowledge Editing][lifelong learning] This paper proposes NMKE, a framework that identifies two categories of knowledge neurons—knowledge-general and knowledge-specific—via neuron-level attribution…
+  [NEURIPS2025][Knowledge Editing][lifelong learning] This paper proposes NMKE, a framework that identifies two categories of knowledge neurons—knowledge-general and knowledge-specific—via neuron-level attribution, and applies entropy-guided dynamic sparse masking to achieve precise neuron-level knowledge editing. NMKE maintains high edit success rates and general model capabilities after 5,000 consecutive edits.
 tags:
   - "NEURIPS2025"
   - "Knowledge Editing"
@@ -11,7 +11,7 @@ tags:
   - "neuron attribution"
   - "LLM"
 date: 2026-05-08
-content_hash: b8cde85bed3535ab
+content_hash: 09487472c1f3f4ea
 ---
 
 # Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs
@@ -125,10 +125,10 @@ This paper proposes NMKE, a framework that identifies two categories of knowledg
 ## Related Papers
 
 - [\[NeurIPS 2025\] MEMOIR: Lifelong Model Editing with Minimal Overwrite and Informed Retention for LLMs](memoir_lifelong_model_editing_with_minimal_overwrite_and_informed_retention_for_.md)
+- [\[ICML 2025\] WikiBigEdit: Understanding the Limits of Lifelong Knowledge Editing in LLMs](../../ICML2025/knowledge_editing/wikibigedit_understanding_the_limits_of_lifelong_knowledge_editing_in_llms.md)
 - [\[ACL 2026\] Representation Interventions Enable Lifelong Knowledge Memory Control in LLMs](../../ACL2026/knowledge_editing/representation_interventions_enable_lifelong_knowledge_memory_control_in_llms.md)
 - [\[NeurIPS 2025\] Rethinking Residual Distribution in Locate-then-Edit Model Editing](rethinking_residual_distribution_in_locate-then-edit_model_editing.md)
-- [\[NeurIPS 2025\] MemEIC: A Step Toward Continual and Compositional Knowledge Editing](memeic_a_step_toward_continual_and_compositional_knowledge_editing.md)
-- [\[AAAI 2026\] Hybrid-DMKG: A Hybrid Reasoning Framework over Dynamic Multimodal Knowledge Graphs for Multimodal Multihop QA with Knowledge Editing](../../AAAI2026/knowledge_editing/hybrid-dmkg_a_hybrid_reasoning_framework_over_dynamic_multimodal_knowledge_graph.md)
+- [\[ACL 2025\] Neuron-Level Sequential Editing for Large Language Models](../../ACL2025/knowledge_editing/neuron-level_sequential_editing_for_large_language_models.md)
 
 </div>
 

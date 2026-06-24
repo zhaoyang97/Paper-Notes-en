@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Draw-In-Mind: Rebalancing Designer-Painter Roles in Unified Multimodal Models Benefits Image Editing
 description: >-
-  [ICLR 2026][Image Generation][Unified Multimodal Model] This paper identifies a responsibility imbalance in current unified multimodal models where the understanding module acts merely as a translator, forcing the generative module to simultaneously serve as both "designer" and "painter." By constructing the DIM dataset (14M long-context image-text pairs + 233K CoT editing
+  [ICLR 2026][Image Generation][Unified Multimodal Model] This paper identifies a responsibility imbalance in current unified multimodal models where the understanding module acts merely as a translator, forcing the generative module to simultaneously serve as both "designer" and "painter." By constructing the DIM dataset (14M long-context image-text pairs + 233K CoT editing blueprints), the design responsibility is shifted to the understanding module…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Unified Multimodal Model
-  - Chain-of-Thought
-  - image editing
-  - Designer-Painter
-  - Data-Centric
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Unified Multimodal Model"
+  - "Chain-of-Thought"
+  - "image editing"
+  - "Designer-Painter"
+  - "Data-Centric"
 date: 2026-05-08
-content_hash: e5a409965c0bcb6b
+content_hash: 4cd28280b46777d4
 ---
+
 # Draw-In-Mind: Rebalancing Designer-Painter Roles in Unified Multimodal Models Benefits Image Editing
 
 **Conference**: ICLR 2026  
@@ -139,11 +140,11 @@ The entire process uses vanilla flow matching as the objective function without 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning an Image Editing Model without Image Editing Pairs](learning_an_image_editing_model_without_image_editing_pairs.md)
 - [\[ICLR 2026\] Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models](uni-x_mitigating_modality_conflict_with_a_two-end-separated_architecture_for_uni.md)
 - [\[ICLR 2026\] MMaDA-Parallel: Multimodal Large Diffusion Language Models for Thinking-Aware Editing and Generation](mmada-parallel_multimodal_large_diffusion_language_models_for_thinking-aware_edi.md)
 - [\[ECCV 2024\] LayoutDETR: Detection Transformer Is a Good Multimodal Layout Designer](../../ECCV2024/image_generation/layoutdetr_detection_transformer_is_a_good_multimodal_layout_designer.md)
-- [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](../../CVPR2026/image_generation/consistcompose_multimodal_layout_control.md)
-- [\[ICLR 2026\] EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling](editscore_unlocking_online_rl_for_image_editing_via_high-fidelity_reward_modelin.md)
+- [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?
 description: >-
-  [ICLR 2026][LLM Safety][Vision-Language Model] Based on Helen Nissenbaum's Contextual Integrity (CI) theory, this work constructs the VLM-GEOPRIVACY benchmark. By utilizing a hierarchy of 7 context-aware questions and three levels of location disclosure granularity (Abstain/City-level/Precise), it systematically evaluates whether 14 mainstream VLMs can determine th
+  [ICLR 2026][LLM Safety][Visual Language Models] Based on Helen Nissenbaum's Contextual Integrity (CI) theory, this work constructs the VLM-GEOPRIVACY benchmark. By utilizing a hierarchy of 7 context-aware questions and three levels of location disclosure granularity (Abstain/City-level/Precise), it systematically evaluates whether 14 mainstream VLMs can determine the appropriate level of location disclosure based on social norm cues in images. The results reveal a severe bias…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Visual Language Models"
+  - "Contextual Integrity"
+  - "Geographic Privacy"
+  - "Location Disclosure"
+  - "VLM Safety"
 date: 2026-05-08
-content_hash: f88a7a9302c2ac09
+content_hash: 6c6d7c86209ec839
 ---
+
 # Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?
 
 **Conference**: ICLR 2026  
@@ -145,7 +150,7 @@ A higher score indicates a more restrained model. Over-disclosure tracks general
 - [\[ICLR 2026\] CIMemories: A Compositional Benchmark For Contextual Integrity In LLMs](cimemories_a_compositional_benchmark_for_contextual_integrity_in_llms.md)
 - [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](../../ACL2026/llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
 - [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
-- [\[ICLR 2026\] VEAttack: Downstream-Agnostic Vision Encoder Attack Against Large Vision Language Models](veattack_downstream-agnostic_vision_encoder_attack_against_large_vision_language.md)
+- [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](../../NeurIPS2025/llm_safety/contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
 - [\[ICLR 2026\] Do LLMs Forget What They Should? Evaluating In-Context Forgetting in Large Language Models](do_llms_forget_what_they_should_evaluating_in-context_forgetting_in_large_langua.md)
 
 </div>

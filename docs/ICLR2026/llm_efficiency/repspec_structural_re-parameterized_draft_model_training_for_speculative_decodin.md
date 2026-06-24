@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding
 description: >-
-  [ICLR 2026][LLM Efficiency][EAGLE] RepSpec adopts the structural re-parameterization idea from RepVGG, splitting each linear layer of the speculative decoding draft model into a multi-branch redundant structure during **training** and merging them back losslessly into a single layer during **inference**. This enhances the draft model's capability withou
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] RepSpec adopts the structural re-parameterization idea from RepVGG, splitting each linear layer of the speculative decoding draft model into a multi-branch redundant structure during **training** and merging them back losslessly into a single layer during **inference**. This enhances the draft model's capability without increasing inference overhead. By adding a "LoRA-style non-linear hybrid branch" to further extend the accep…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - EAGLE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Draft Model"
+  - "Structural Re-parameterization"
+  - "EAGLE"
+  - "Training-Inference Decoupling"
 date: 2026-05-08
-content_hash: 733c34d9ad5e063f
+content_hash: 35a2fb02e9a70fb7
 ---
+
 # RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding
 
 **Conference**: ICLR 2026  
@@ -136,10 +141,10 @@ RepSpec is a plug-and-play training framework that does not modify the original 
 ## Related Papers
 
 - [\[ICLR 2026\] Flatter Tokens are More Valuable for Speculative Draft Model Training](flatter_tokens_are_more_valuable_for_speculative_draft_model_training.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
 - [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)
-- [\[ICLR 2026\] Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding](overcoming_joint_intractability_with_lossless_hierarchical_speculative_decoding.md)
-- [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](../../NeurIPS2025/llm_efficiency/3model_speculative_decoding.md)
-- [\[ICLR 2026\] Global Resolution: Optimal Multi-Draft Speculative Sampling via Convex Optimization](global_resolution_optimal_multi-draft_speculative_sampling_via_convex_optimizati.md)
+- [\[ICLR 2026\] Training-Free Loosely Speculative Decoding: Accepting Semantically Correct Drafts Beyond Exact Match](training-free_loosely_speculative_decoding_accepting_semantically_correct_drafts.md)
 
 </div>
 

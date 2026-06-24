@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LuVe: Latent-Cascaded Ultra-High-Resolution Video Generation with Dual Frequency Experts
 description: >-
-  [ICML 2026][Video Generation][Diffusion Model] LuVe redefines UHR video generation from "passive detail enhancement" to "active content completion." Through a three-stage cascade (Low-Resolution Motion → Latent Space Upsampling → High-Resolution Refinement) and frequency domain analysis-driven Dual Frequency Experts (Low-Frequency Expert for global semantic consist
+  [ICML 2026][Video Generation][Ultra-High-Resolution Video Generation] LuVe redefines UHR video generation from "passive detail enhancement" to "active content completion." Through a three-stage cascade (Low-Resolution Motion → Latent Space Upsampling → High-Resolution Refinement) and frequency domain analysis-driven Dual Frequency Experts (Low-Frequency Expert for global semantic consistency, High-Frequency Expert for texture refinement), it achieves a total score of 84.03 on…
 tags:
-  - ICML 2026
-  - Video Generation
-  - Diffusion Model
+  - "ICML 2026"
+  - "Video Generation"
+  - "Ultra-High-Resolution Video Generation"
+  - "Diffusion Models"
+  - "Dual Frequency Experts"
+  - "Latent Space Upsampling"
+  - "Cascaded Architecture"
 date: 2026-05-08
-content_hash: c880d0bd5632d56e
+content_hash: 781aaad1934ab38a
 ---
+
 # LuVe: Latent-Cascaded Ultra-High-Resolution Video Generation with Dual Frequency Experts
 
 **Conference**: ICML 2026  
@@ -144,11 +149,11 @@ At 4K, the model achieves an overall score of 84.03, surpassing UltraWan-4K (83.
 
 ## Related Papers
 
-- [\[ICCV 2025\] Dual-Expert Consistency Model for Efficient and High-Quality Video Generation](../../ICCV2025/video_generation/dual-expert_consistency_model_for_efficient_and_high-quality_video_generation.md)
-- [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](../../ICLR2026/video_generation/dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
+- [\[ICLR 2026\] SimpleGVR: A Simple Baseline for Latent-Cascaded Generative Video Super-Resolution](../../ICLR2026/video_generation/simplegvr_a_simple_baseline_for_latent-cascaded_generative_video_super-resolutio.md)
 - [\[ICML 2026\] OLAF-World: Orienting Latent Actions for Video World Modeling](olaf-world_orienting_latent_actions_for_video_world_modeling.md)
-- [\[CVPR 2026\] Dual-Granularity Memory for Efficient Video Generation](../../CVPR2026/video_generation/dual-granularity_memory_for_efficient_video_generation.md)
-- [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](../../ICCV2025/video_generation/magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
+- [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](../../ICLR2026/video_generation/dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
+- [\[ICML 2026\] iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance](itryon_mastering_interactive_video_virtual_try-on_with_spatial-semantic_guidance.md)
+- [\[ICML 2026\] Quantized Keys Steal Attention: Bias Correction for KV-Cache Compression in Video Generation](quantized_keys_steal_attention_bias_correction_for_kv-cache_compression_in_video.md)
 
 </div>
 

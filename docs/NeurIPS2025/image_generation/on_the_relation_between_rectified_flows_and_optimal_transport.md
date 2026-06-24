@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Relation between Rectified Flows and Optimal Transport
 description: >-
-  [NeurIPS 2025][Image Generation][Rectified Flow] This paper presents a rigorous theoretical investigation of the relationship between rectified flows (flow matching) and optimal transport (OT). Through the construction o…
+  [NeurIPS 2025][Image Generation][Rectified Flow] This paper presents a rigorous theoretical investigation of the relationship between rectified flows (flow matching) and optimal transport (OT). Through the construction of multiple counterexamples, it demonstrates that previously published claims asserting the asymptotic equivalence between gradient-constrained rectified flows and OT do not hold in general, and that stronger assumptions than those previously identified are req…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Counterexample Construction"
   - "Wasserstein Distance"
 date: 2026-05-08
-content_hash: 0957be9503446a64
+content_hash: 8e5c87043fbac583
 ---
 
 # On the Relation between Rectified Flows and Optimal Transport
@@ -127,8 +127,8 @@ The paper identifies sufficient conditions for equivalence (Theorem 11): the add
 - [\[NeurIPS 2025\] Counterfactual Identifiability via Dynamic Optimal Transport](counterfactual_identifiability_via_dynamic_optimal_transport.md)
 - [\[ICCV 2025\] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation](../../ICCV2025/image_generation/the_curse_of_conditions_analyzing_and_improving_optimal_transport_for_conditiona.md)
 - [\[NeurIPS 2025\] Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model](pairwise_optimal_transports_for_training_all-to-all_flow-based_condition_transfe.md)
-- [\[CVPR 2026\] COT-FM: Cluster-wise Optimal Transport Flow Matching](../../CVPR2026/image_generation/cot-fm_cluster-wise_optimal_transport_flow_matching.md)
 - [\[NeurIPS 2025\] Rectified-CFG++ for Flow Based Models](rectified-cfg_for_flow_based_models.md)
+- [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](efficient_rectified_flow_for_image_fusion.md)
 
 </div>
 

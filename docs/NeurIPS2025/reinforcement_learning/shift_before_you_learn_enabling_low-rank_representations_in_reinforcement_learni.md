@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Shift Before You Learn: Enabling Low-Rank Representations in Reinforcement Learning
 description: >-
-  [NeurIPS 2025 (Spotlight)][Reinforcement Learning][Low-Rank] This paper reveals that the successor measure in reinforcement learning is not intrinsically approximately low-rank…
+  [NeurIPS 2025 (Spotlight)][Reinforcement Learning][Low-Rank] This paper reveals that the successor measure in reinforcement learning is not intrinsically approximately low-rank, but a "shifted successor measure"—obtained by skipping the first few transition steps—naturally exhibits low-rank structure. A novel Type II Poincaré inequality is introduced to quantify the required shift, providing finite-sample theoretical guarantees and practical improvements for goal-conditioned…
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Spectral Analysis"
   - "Goal-Conditioned RL"
 date: 2026-05-08
-content_hash: 80cb31d0ccf0a03c
+content_hash: b590d0c0d4797369
 ---
 
 # Shift Before You Learn: Enabling Low-Rank Representations in Reinforcement Learning
@@ -144,11 +144,11 @@ Experiments evaluate the low-rank approximation quality and goal-conditioned RL 
 
 ## Related Papers
 
+- [\[ICLR 2026\] QeRL: Quantization-enhanced Low-rank Reinforcement Learning for LLMs](../../ICLR2026/reinforcement_learning/qerl_beyond_efficiency_-_quantization-enhanced_reinforcement_learning_for_llms.md)
 - [\[ICML 2026\] You Can Learn Tokenization End-to-End with Reinforcement Learning](../../ICML2026/reinforcement_learning/you_can_learn_tokenization_end-to-end_with_reinforcement_learning.md)
 - [\[ACL 2026\] GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR](../../ACL2026/reinforcement_learning/geora_geometry-aware_low-rank_adaptation_for_rlvr.md)
-- [\[NeurIPS 2025\] Reward-Aware Proto-Representations in Reinforcement Learning](reward-aware_proto-representations_in_reinforcement_learning.md)
 - [\[ICLR 2026\] Online Minimization of Polarization and Disagreement via Low-Rank Matrix Bandits](../../ICLR2026/reinforcement_learning/online_minimization_of_polarization_and_disagreement_via_low-rank_matrix_bandits.md)
-- [\[NeurIPS 2025\] Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control](succeed_or_learn_slowly_sample_efficient_off-policy_reinforcement_learning_for_m.md)
+- [\[NeurIPS 2025\] Reward-Aware Proto-Representations in Reinforcement Learning](reward-aware_proto-representations_in_reinforcement_learning.md)
 
 </div>
 

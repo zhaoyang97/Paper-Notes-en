@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
 description: >-
-  [ICML 2026][Model Compression][EAGLE/MEDUSA] This paper argues that using KL divergence as a proxy for acceptance rate in speculative decoding training is sub-optimal—minimizing KL for small-capacity draft models does not imply maximizing the acceptance rate. The authors propose LK losses (direct maximization of the negative log acceptance rate + a trust-region h
+  [ICML 2026][Model Compression][Speculative Decoding] This paper argues that using KL divergence as a proxy for acceptance rate in speculative decoding training is sub-optimal—minimizing KL for small-capacity draft models does not imply maximizing the acceptance rate. The authors propose LK losses (direct maximization of the negative log acceptance rate + a trust-region hybrid with KL) as a plug-in replacement. Across 4 draft architectures and 6 target models (8B-685B)…
 tags:
-  - ICML 2026
-  - Model Compression
-  - EAGLE/MEDUSA
+  - "ICML 2026"
+  - "Model Compression"
+  - "Speculative Decoding"
+  - "Acceptance Rate Optimization"
+  - "KL vs TV Divergence"
+  - "Draft Model Training"
+  - "EAGLE/MEDUSA"
 date: 2026-05-08
-content_hash: 85fe1302e7a1da49
+content_hash: 5d94bdf9675b302b
 ---
+
 # LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
 
 **Conference**: ICML 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] ViPER reformulates the enhancement of fine-grained visual perception in VLMs as a coarse-to-fine two-stage task. It utilizes a closed-loop framework where the model "generates its own data and learns from it." By utilizing a diffusion model to reconstruct images from textual descriptions as a critic for the VLM, combin
+  [ICLR 2026][Multimodal VLM][Visual Perception] ViPER reformulates the enhancement of fine-grained visual perception in VLMs as a coarse-to-fine two-stage task. It utilizes a closed-loop framework where the model "generates its own data and learns from it." By utilizing a diffusion model to reconstruct images from textual descriptions as a critic for the VLM, combined with two-stage reinforcement learning, Qwen2.5-VL evolves stronger perception capabilities without relying on…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Visual Perception"
+  - "Self-evolution"
+  - "Reinforcement Learning Fine-tuning"
+  - "Data Synthesis"
+  - "Closed-loop Training"
 date: 2026-05-08
-content_hash: 3ed406308df47e90
+content_hash: 329be3fe22f341e0
 ---
+
 # ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -133,15 +139,15 @@ Broken down by MMStar sub-domains, the Gain is most significant in **Fine-graine
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Evolution via Multi-Agent Self-Play](vision-zero_scalable_vlm_self-evolution_via_multi-agent_self-play.md)
 - [\[ICLR 2026\] ASCIIEval: Benchmarking Models' Visual Perception in Text Strings via ASCII Art](asciieval_benchmarking_models_visual_perception_in_text_strings_via_ascii_art.md)
 - [\[ICLR 2026\] Visual Prompt-Agnostic Evolution](visual_prompt-agnostic_evolution.md)
-- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](../../CVPR2026/multimodal_vlm/deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
 - [\[ICLR 2026\] Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing](visual_self-refine_a_pixel-guided_paradigm_for_accurate_chart_parsing.md)
+- [\[ICLR 2026\] Catching the Details: Self-Distilled RoI Predictors for Fine-Grained MLLM Perception](catching_the_details_self-distilled_roi_predictors_for_fine-grained_mllm_percept.md)
 
 </div>
 

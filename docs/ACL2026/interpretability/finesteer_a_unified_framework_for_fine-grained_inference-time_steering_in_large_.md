@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models
 description: >-
-  [ACL 2026][Interpretability][Paper Note] FineSteer decomposes inference-time steering into two complementary stages: Subspace-guided Conditional Steering (SCS) determines "when to steer" using the energy ratio of the IR query subspace as a gate; Mixture of Steering Experts (MoSE) determines "how to steer" by dynamically aggregating prototype experts and resid
+  [ACL 2026][Interpretability][Inference-time steering] FineSteer decomposes inference-time steering into two complementary stages: Subspace-guided Conditional Steering (SCS) determines "when to steer" using the energy ratio of the IR query subspace as a gate; Mixture of Steering Experts (MoSE) determines "how to steer" by dynamically aggregating prototype experts and residual refinement via an attention gating network to generate query-specific steering vectors. It outperforms…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Inference-time steering"
+  - "Conditional steering"
+  - "Mixture of steering experts"
+  - "Jailbreak defense"
+  - "Hallucination mitigation"
 date: 2026-05-08
-content_hash: 12f774a1484fc64a
+content_hash: a5314e48767f68a0
 ---
+
 # FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models
 
 **Conference**: ACL 2026  

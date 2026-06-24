@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Multiple Choice Learning of Low-Rank Adapters for Language Modeling
 description: >-
-  [ICML 2026][Audio & Speech][LoRA] This paper introduces LoRA-MCL, which integrates the "Winner-Takes-All" training paradigm of Multiple Choice Learning into LoRA fine-tuning. By treating $K$ sets of low-rank adapters as $K$ competing hypotheses and updating only the most suitable adapter for each training sample, a single base model can generate multip
+  [ICML 2026][Audio & Speech][LoRA] This paper introduces LoRA-MCL, which integrates the "Winner-Takes-All" training paradigm of Multiple Choice Learning into LoRA fine-tuning. By treating $K$ sets of low-rank adapters as $K$ competing hypotheses and updating only the most suitable adapter for each training sample, a single base model can generate multiple diverse and plausible texts covering different modes of the conditional distribution in a single forward pass. It achieves…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - LoRA
-  - Multiple Choice Learning
-  - Winner-Takes-All
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "LoRA"
+  - "Multiple Choice Learning"
+  - "Winner-Takes-All"
+  - "Diverse Generation"
+  - "Mixture Distribution"
 date: 2026-05-08
-content_hash: 5fc52d82afaba3a9
+content_hash: 0f8a00be0875990d
 ---
+
 # Multiple Choice Learning of Low-Rank Adapters for Language Modeling
 
 **Conference**: ICML 2026  
@@ -135,8 +138,8 @@ The final training objective is relaxed WTA: $\mathcal{L}^{\mathrm{WTA}}(\theta_
 - [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](../../ACL2026/audio_speech/multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
 - [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](algorithmic_recourse_of_in-context_learning_for_tabular_data.md)
 - [\[ICLR 2026\] TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](../../ICLR2026/audio_speech/taste_text-aligned_speech_tokenization_and_embedding_for_spoken_language_modelin.md)
-- [\[ICML 2025\] FLAM: Frame-Wise Language-Audio Modeling](../../ICML2025/audio_speech/flam_frame-wise_language-audio_modeling.md)
 - [\[ICML 2026\] The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning](the_silent_thought_modeling_internal_cognition_in_full-duplex_spoken_dialogue_mo.md)
+- [\[NeurIPS 2025\] A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings](../../NeurIPS2025/audio_speech/a_multitask_benchmark_for_abusive_language_detection_in_lowr.md)
 
 </div>
 

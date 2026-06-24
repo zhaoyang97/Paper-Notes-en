@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection
 description: >-
-  [ICLR 2026][Object Detection][Remote Sensing] The first unified framework for oriented object detection, SPWOOD, is proposed to handle "sparse annotation + weak annotation (HBox/Point)". It utilizes SOS-Student to parallelize three learning signals—unlabeled, missing angle, and missing scale—within a single student model, then incorporates Multi-level Pseudo-label
+  [ICLR 2026][Object Detection][Oriented Object Detection] The first unified framework for oriented object detection, SPWOOD, is proposed to handle "sparse annotation + weak annotation (HBox/Point)". It utilizes SOS-Student to parallelize three learning signals—unlabeled, missing angle, and missing scale—within a single student model, then incorporates Multi-level Pseudo-labels Filtering (MPF) for self-training from unlabeled data. It achieves performance close to full supervis…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Remote Sensing
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Oriented Object Detection"
+  - "Weakly-Supervised"
+  - "Sparse Annotation"
+  - "Semi-Supervised"
+  - "Remote Sensing"
 date: 2026-05-08
-content_hash: 97fc32c7f8ed1aa5
+content_hash: 3e2db6df6f07d02f
 ---
+
 # SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection
 
 **Conference**: ICLR 2026  
@@ -149,7 +154,7 @@ The total supervised loss is a weighted sum: $\mathcal{L}^s=w_{cls}\mathcal{L}_{
 - [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting](bootstrapping_mllm_for_weaklysupervised_classagnostic_object_counting.md)
 - [\[CVPR 2026\] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](../../CVPR2026/object_detection/fourier_angle_alignment_for_oriented_object_detection_in_remote_sensing.md)
 - [\[ICLR 2026\] Long-Context Generalization with Sparse Attention](long-context_generalization_with_sparse_attention.md)
-- [\[ICLR 2026\] Point2RBox-v3: Self-Bootstrapping from Point Annotations via Integrated Pseudo-Label Refinement and Utilization](point2rbox-v3_self-bootstrapping_from_point_annotations_via_integrated_pseudo-la.md)
+- [\[ICLR 2026\] PGRF-Net: A Prototype-Guided Relational Fusion Network for Diagnostic Multivariate Time-Series Anomaly Detection](pgrf-net_a_prototype-guided_relational_fusion_network_for_diagnostic_multivariat.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper introduces the Forward-Backward (FB) framework from Reward-Free Reinforcement Learning (RFRL) into Multi-Objective Reinforcement Learning (MORL) for the first time. It proposes MORL-FB, which utilizes preference-guided exploration to construct latent vectors $z$ relevant to MORL tasks and incorporates an aux
+  [ICLR 2026][Reinforcement Learning][Multi-Objective Reinforcement Learning] This paper introduces the Forward-Backward (FB) framework from Reward-Free Reinforcement Learning (RFRL) into Multi-Objective Reinforcement Learning (MORL) for the first time. It proposes MORL-FB, which utilizes preference-guided exploration to construct latent vectors $z$ relevant to MORL tasks and incorporates an auxiliary Q-loss. This approach enables a preference-conditioned policy to significantl…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-Objective Reinforcement Learning"
+  - "Reward-Free Reinforcement Learning"
+  - "Forward-Backward Representation"
+  - "Preference-Guided Exploration"
+  - "Auxiliary Tasks"
 date: 2026-05-08
-content_hash: 6118776b0c8684fb
+content_hash: 5cfc97dd6e97a105
 ---
+
 # A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -146,10 +152,10 @@ Key Observation: ED(ALG, MORL-FB) is below 0.5 across the board, indicating MORL
 ## Related Papers
 
 - [\[ICLR 2026\] BoreaRL: A Multi-Objective Reinforcement Learning Environment for Climate-Adaptive Boreal Forest Management](borearl_a_multi-objective_reinforcement_learning_environment_for_climate-adaptiv.md)
+- [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](../../ICML2026/reinforcement_learning/from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
 - [\[ICLR 2026\] RLP: Reinforcement as a Pretraining Objective](rlp_reinforcement_as_a_pretraining_objective.md)
 - [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](robust_multi-objective_controlled_decoding_of_large_language_models.md)
 - [\[ICLR 2026\] AMPED: Adaptive Multi-objective Projection for balancing Exploration and skill Diversification](amped_adaptive_multi-objective_projection_for_balancing_exploration_and_skill_di.md)
-- [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](../../ICML2026/reinforcement_learning/from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
 
 </div>
 

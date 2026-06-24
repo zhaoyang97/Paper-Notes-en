@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DRM: Diffusion-based Reward Model With Step-wise Guidance
 description: >-
-  [CVPR 2026][Alignment & RLHF][Step-wise GRPO] This paper utilizes the pre-trained diffusion model itself as the reward model backbone (DRM). By leveraging its unique ability to score noise latents at any denoising step, the authors design Step-GRPO for training with dense step-wise rewards and Step-wise Sampling for "explore-and-select" during inference. This appr
+  [CVPR 2026][LLM Alignment][Diffusion Reward Model] This paper utilizes the pre-trained diffusion model itself as the reward model backbone (DRM). By leveraging its unique ability to score noise latents at any denoising step, the authors design Step-GRPO for training with dense step-wise rewards and Step-wise Sampling for "explore-and-select" during inference. This approach significantly improves the generation quality of SD3.5-Medium without adding parameters and achieves 2.5…
 tags:
-  - CVPR 2026
-  - Alignment & RLHF
-  - Step-wise GRPO
-  - credit assignment
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Diffusion Reward Model"
+  - "Human Preference Alignment"
+  - "Step-wise GRPO"
+  - "Intermediate Noisy Latents"
+  - "credit assignment"
 date: 2026-05-08
-content_hash: 12d1a6456eb1faac
+content_hash: c96cd33cd210a71d
 ---
+
 # DRM: Diffusion-based Reward Model With Step-wise Guidance
 
 **Conference**: CVPR 2026  
@@ -162,9 +166,9 @@ As a completely training-free method, quality increases with $k$. LPIPS scores i
 
 - [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](../../ICLR2026/llm_alignment/a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
 - [\[CVPR 2026\] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](thinking_with_frames_generative_video_distortion_evaluation_via_frame_reward_mod.md)
-- [\[ACL 2025\] Rethinking Reward Model Evaluation Through the Lens of Reward Overoptimization](../../ACL2025/llm_alignment/rethinking_reward_model_evaluation_through_the_lens_of_reward_overoptimization.md)
-- [\[ACL 2025\] Cheems: A Practical Guidance for Building and Evaluating Chinese Reward Models from Scratch](../../ACL2025/llm_alignment/cheems_chinese_reward_models.md)
-- [\[ACL 2025\] Chain-of-Jailbreak Attack for Image Generation Models via Editing Step by Step](../../ACL2025/llm_alignment/chain-of-jailbreak_attack_for_image_generation_models_via_editing_step_by_step.md)
+- [\[ICLR 2026\] Eliminating Inductive Bias in Reward Models with Information-Theoretic Guidance](../../ICLR2026/llm_alignment/eliminating_inductive_bias_in_reward_models_with_information-theoretic_guidance.md)
+- [\[ICLR 2026\] Reward Model Routing in Alignment](../../ICLR2026/llm_alignment/reward_model_routing_in_alignment.md)
+- [\[CVPR 2026\] Unlocking Token Rewards via Training-Free Reward Attribution](unlocking_token_rewards_via_training-free_reward_attribution.md)
 
 </div>
 

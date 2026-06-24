@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Is a Document Educational or Just Wikipedia-Style? -- Pitfalls of Classifier-Based Quality Filtering
 description: >-
-  [ACL 2026][Pretraining][Paper Note] This paper discovers that Classifier-based Quality Filtering (CQF) mistakenly equates "Wikipedia-style writing" with "higher educational value." Simple rewriting allows low-quality web pages to bypass pre-training data filtering thresholds; approximately 7% of samples in FineWeb-Edu flip their filtering decisions as a
+  [ACL2026][LLM Pretraining][Pre-training corpus] This paper discovers that Classifier-based Quality Filtering (CQF) mistakenly equates "Wikipedia-style writing" with "higher educational value." Simple rewriting allows low-quality web pages to bypass pre-training data filtering thresholds; approximately 7% of samples in FineWeb-Edu flip their filtering decisions as a result.
 tags:
-  - ACL 2026
-  - Pretraining
+  - "ACL2026"
+  - "LLM Pretraining"
+  - "Pre-training corpus"
+  - "quality filtering"
+  - "educational classifier"
+  - "data bias"
+  - "Wikipedia-style rewriting"
 date: 2026-05-08
-content_hash: 03b4f50850b32b1d
+content_hash: daf5040c5e3d09aa
 ---
+
 # Is a Document Educational or Just Wikipedia-Style? -- Pitfalls of Classifier-Based Quality Filtering
 
 **Conference**: ACL2026  
@@ -133,9 +139,9 @@ This work does not train new models but defines an evaluation protocol. CQF scor
 
 - [\[ICCV 2025\] ConstStyle: Robust Domain Generalization with Unified Style Transformation](../../ICCV2025/llm_pretraining/conststyle_robust_domain_generalization_with_unified_style_transformation.md)
 - [\[AAAI 2026\] Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?](../../AAAI2026/llm_pretraining/perspective_from_a_broader_context_can_room_style_knowledge_help_visual_floorpla.md)
-- [\[ACL 2025\] CritiQ: Mining Data Quality Criteria from Human Preferences](../../ACL2025/llm_pretraining/critiq_mining_data_quality_criteria_from_human_preferences.md)
-- [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](../../AAAI2026/llm_pretraining/beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
-- [\[NeurIPS 2025\] Predict Training Data Quality via Its Geometry in Metric Space](../../NeurIPS2025/llm_pretraining/predict_training_data_quality_via_its_geometry_in_metric_space.md)
+- [\[ICLR 2026\] GneissWeb: Preparing High Quality Data for LLMs at Scale](../../ICLR2026/llm_pretraining/gneissweb_preparing_high_quality_data_for_llms_at_scale.md)
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](../../ICLR2026/llm_pretraining/scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ACL 2025\] SCAR: Data Selection via Style Consistency-Aware Response Ranking for Efficient Instruction-Tuning](../../ACL2025/llm_pretraining/scar_style_consistency_data_selection.md)
 
 </div>
 

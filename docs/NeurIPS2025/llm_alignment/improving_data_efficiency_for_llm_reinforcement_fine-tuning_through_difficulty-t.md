@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay
 description: >-
-  [NeurIPS 2025][LLM Alignment][LLM reinforcement fine-tuning] Two complementary techniques are proposed to improve the data efficiency of LLM reinforcement fine-tuning (GRPO): (1) DOTS — an attention-based mechanism for p…
+  [NeurIPS 2025][LLM Alignment][LLM reinforcement fine-tuning] Two complementary techniques are proposed to improve the data efficiency of LLM reinforcement fine-tuning (GRPO): (1) DOTS — an attention-based mechanism for predicting adaptive difficulty that prioritizes moderate-difficulty questions to maximize gradient signal; and (2) Rollout Replay — reusing recent rollouts to reduce per-step computational overhead. Together, these techniques reduce training time by an average…
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -13,7 +13,7 @@ tags:
   - "experience replay"
   - "GRPO"
 date: 2026-05-08
-content_hash: a8b9d840133aa48b
+content_hash: 2c46e97d028932c0
 ---
 
 # Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay
@@ -180,9 +180,9 @@ All settings yield ρ > 0.7, demonstrating that the attention-based prediction f
 
 - [\[NeurIPS 2025\] DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO](deepvideor1_video_reinforcement_finetuning_via_difficultyawa.md)
 - [\[NeurIPS 2025\] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning](t-shirt_token-selective_hierarchical_data_selection_for_instruction_tuning.md)
-- [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
+- [\[ICML 2026\] GIST: Targeted Data Selection for Instruction Tuning with Gradient Subspace Projection](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
 - [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
-- [\[ICML 2026\] GIST: Targeted Data Selection for Instruction Tuning via Gradient Subspace Projection](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
+- [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
 
 </div>
 

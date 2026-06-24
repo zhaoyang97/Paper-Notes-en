@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ULD-Net: Enabling Ultra-Low-Degree Fully Polynomial Networks for Homomorphically Encrypted Inference
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] ULD-Net proposes a method to train "fully polynomial networks" from scratch. By utilizing a polynomial-only normalization layer, PolyNorm (consisting only of additions and multiplications), activation values are stabilized within a well-behaved range. This allows ultra-low-degree fully polynomial models with multiplica
+  [ICLR 2026][AI Safety][Homomorphic Encryption] ULD-Net proposes a method to train "fully polynomial networks" from scratch. By utilizing a polynomial-only normalization layer, PolyNorm (consisting only of additions and multiplications), activation values are stabilized within a well-behaved range. This allows ultra-low-degree fully polynomial models with multiplication depth $\le 3$ to scale to ViT/ImageNet for the first time (ViT-Small achieves 76.70% top-1 on ImageNet)…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Homomorphic Encryption"
+  - "Fully Polynomial Networks"
+  - "Ultra-Low-Degree Polynomials"
+  - "Normalization"
+  - "Privacy-Preserving Inference"
 date: 2026-05-08
-content_hash: eb357949dcdeb09b
+content_hash: 61b620f9cfeca028
 ---
+
 # ULD-Net: Enabling Ultra-Low-Degree Fully Polynomial Networks for Homomorphically Encrypted Inference
 
 **Conference**: ICLR 2026  

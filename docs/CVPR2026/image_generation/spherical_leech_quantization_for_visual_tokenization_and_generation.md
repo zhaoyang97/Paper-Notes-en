@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spherical Leech Quantization for Visual Tokenization and Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper unifies non-parametric quantization (NPQ) methods like LFQ, FSQ, and BSQ into the language of "lattice codes." It identifies that entropy regularization essentially performs lattice relocation. Consequently, based on the "densest sphere packing" principle, the authors derive $\Lambda_{24}$-SQ using the 24-di
+  [CVPR 2026][Image Generation][Non-parametric quantization] This paper unifies non-parametric quantization (NPQ) methods like LFQ, FSQ, and BSQ into the language of "lattice codes." It identifies that entropy regularization essentially performs lattice relocation. Consequently, based on the "densest sphere packing" principle, the authors derive $\Lambda_{24}$-SQ using the 24-dimensional Leech lattice. This pushes the visual codebook size to approximately 200,000…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Non-parametric quantization"
+  - "Lattice code"
+  - "Leech lattice"
+  - "Visual tokenizer"
+  - "Ultra-large codebook autoregressive generation"
 date: 2026-05-08
-content_hash: 2a2a2a669190d1fe
+content_hash: 56706f8aa2edca83
 ---
+
 # Spherical Leech Quantization for Visual Tokenization and Generation
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ Prediction Head Ablation ($\rightleftharpoons$-CC, Table 9): $\Lambda_{24}$-SQ w
 
 ## Related Papers
 
-- [\[CVPR 2026\] EVATok: 自适应长度视频Tokenization用于高效视觉自回归生成](evatok_adaptive_length_video_tokenization_for_eff.md)
+- [\[CVPR 2026\] MacTok: Robust Continuous Tokenization for Image Generation](mactok_robust_continuous_tokenization_for_image_generation.md)
+- [\[ICLR 2026\] WeTok: Powerful Discrete Tokenization for High-Fidelity Visual Reconstruction](../../ICLR2026/image_generation/wetok_powerful_discrete_tokenization_for_high-fidelity_visual_reconstruction.md)
+- [\[ICLR 2026\] Arbitrary-Shaped Image Generation via Spherical Neural Field Diffusion](../../ICLR2026/image_generation/arbitrary-shaped_image_generation_via_spherical_neural_field_diffusion.md)
 - [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
 - [\[CVPR 2026\] ThinkGen: Generalized Thinking for Visual Generation](thinkgen_generalized_thinking_for_visual_generation.md)
-- [\[CVPR 2026\] CaTok: Taming Mean Flows for One-Dimensional Causal Image Tokenization](catok_taming_mean_flows_for_one-dimensional_causal_image_tokenization.md)
-- [\[CVPR 2026\] Mirai: Autoregressive Visual Generation Needs Foresight](mirai_autoregressive_visual_generation_needs_foresight.md)
 
 </div>
 

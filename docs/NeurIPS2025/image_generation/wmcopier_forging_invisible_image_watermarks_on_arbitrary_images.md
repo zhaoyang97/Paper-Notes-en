@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WMCopier: Forging Invisible Image Watermarks on Arbitrary Images
 description: >-
-  [NeurIPS 2025][Image Generation][Watermark Forging Attack] This paper proposes WMCopier, the first diffusion-model-based no-box watermark forging attack that requires no prior knowledge of the target watermarking algorit…
+  [NeurIPS 2025][Image Generation][Watermark Forging Attack] This paper proposes WMCopier, the first diffusion-model-based no-box watermark forging attack that requires no prior knowledge of the target watermarking algorithm. By training an unconditional diffusion model to learn the watermark distribution, injecting watermark signals via shallow DDIM inversion, and refining results through iterative optimization, WMCopier achieves high forging success rates against both open-so…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Invisible Watermark"
   - "No-Box Attack"
 date: 2026-05-08
-content_hash: df6af8b7fb46d1a1
+content_hash: c2b56f8b84a50913
 ---
 
 # WMCopier: Forging Invisible Image Watermarks on Arbitrary Images
@@ -148,9 +148,9 @@ WMCopier consists of three stages:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Transferable Black-Box One-Shot Forging of Watermarks via Image Preference Models](transferable_black-box_one-shot_forging_of_watermarks_via_image_preference_model.md)
-- [\[NeurIPS 2025\] Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models](shallow_diffuse_robust_and_invisible_watermarking_through_low-dimensional_subspa.md)
 - [\[ICCV 2025\] Invisible Watermarks, Visible Gains: Steering Machine Unlearning with Bi-Level Watermarking Design](../../ICCV2025/image_generation/invisible_watermarks_visible_gains_steering_machine_unlearning_with_bi-level_wat.md)
 - [\[NeurIPS 2025\] DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images](diffeye_diffusion-based_continuous_eye-tracking_data_generation_conditioned_on_n.md)
+- [\[NeurIPS 2025\] Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models](shallow_diffuse_robust_and_invisible_watermarking_through_low-dimensional_subspa.md)
 - [\[NeurIPS 2025\] Detecting Generated Images by Fitting Natural Image Distributions](detecting_generated_images_by_fitting_natural_image_distributions.md)
 
 </div>

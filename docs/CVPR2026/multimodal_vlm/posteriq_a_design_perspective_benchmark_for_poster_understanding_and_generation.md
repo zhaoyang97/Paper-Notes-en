@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper proposes PosterIQ, a comprehensive benchmark for poster design containing 7,765 understanding annotations and 822 generation prompts. Spanning 24 task categories such as OCR, font awareness, layout reasoning, design intent understanding, and composition-aware generation, it systematically evaluates the gap i
+  [CVPR 2026][Multimodal VLM][Poster Design] This paper proposes PosterIQ, a comprehensive benchmark for poster design containing 7,765 understanding annotations and 822 generation prompts. Spanning 24 task categories such as OCR, font awareness, layout reasoning, design intent understanding, and composition-aware generation, it systematically evaluates the gap in design cognition between MLLMs and diffusion models.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Poster Design"
+  - "Multi-modal Benchmark"
+  - "Visual Understanding"
+  - "Image Generation"
+  - "Typography Design"
 date: 2026-05-08
-content_hash: 7c8265090b9552d4
+content_hash: 5147f32330c0eb73
 ---
+
 # PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation
 
 **Conference**: CVPR 2026  
@@ -124,11 +130,11 @@ PosterIQ is an evaluation benchmark, not a training method, and thus involves no
 
 ## Related Papers
 
-- [\[CVPR 2026\] SkyReels-Text: Fine-Grained Font-Controllable Text Editing for Poster Design](skyreels-text_fine-grained_font-controllable_text_editing_for_poster_design.md)
-- [\[CVPR 2026\] SimplePoster: A Simple Baseline for Product Poster Generation](simpleposter_a_simple_baseline_for_product_poster_generation.md)
-- [\[CVPR 2026\] InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation](innoads-composer_efficient_condition_composition_for_e-commerce_poster_generatio.md)
-- [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
-- [\[CVPR 2026\] PhysGen: Physically Grounded 3D Shape Generation for Industrial Design](physgen_physically_grounded_3d_shape_generation_for_industrial_design.md)
+- [\[ICLR 2026\] P2P: Automated Paper-to-Poster Generation and Fine-Grained Benchmark](../../ICLR2026/multimodal_vlm/p2p_automated_paper-to-poster_generation_and_fine-grained_benchmark.md)
+- [\[CVPR 2026\] Is the Modality Gap a Bug or a Feature? A Robustness Perspective](is_the_modality_gap_a_bug_or_a_feature_a_robustness_perspective.md)
+- [\[ICLR 2026\] UrbanFeel: A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective](../../ICLR2026/multimodal_vlm/urbanfeela_comprehensive_benchmark_for_temporal_and_perceptual_understanding_of_.md)
+- [\[CVPR 2026\] MMLandmarks: a Cross-View Instance-Level Benchmark for Geo-Spatial Understanding](mmlandmarks_a_cross-view_instance-level_benchmark_for_geo-spatial_understanding.md)
+- [\[CVPR 2026\] GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks](guide_a_benchmark_for_understanding_and_assisting_users_in_open-ended_gui_tasks.md)
 
 </div>
 

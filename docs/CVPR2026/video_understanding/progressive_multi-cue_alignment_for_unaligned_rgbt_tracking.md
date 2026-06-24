@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Progressive Multi-cue Alignment for Unaligned RGBT Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] PMATrack decomposes the "one-time regression" of cross-modal alignment parameters in unaligned RGBT tracking into a three-stage progressive estimation: "center offset → scale transformation → global refinement." By employing difficulty-aware routing to select the most cost-effective expert from three alignment cues at
+  [CVPR 2026][Video Understanding][RGBT Tracking] PMATrack decomposes the "one-time regression" of cross-modal alignment parameters in unaligned RGBT tracking into a three-stage progressive estimation: "center offset → scale transformation → global refinement." By employing difficulty-aware routing to select the most cost-effective expert from three alignment cues at each stage, it sets new SOTA records on benchmarks like the newly created MUART244 with reduced computational ov…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "RGBT Tracking"
+  - "Cross-modal Alignment"
+  - "Progressive Estimation"
+  - "Difficulty-aware Expert"
+  - "Deformable Attention"
 date: 2026-05-08
-content_hash: e0f62da74fc66f45
+content_hash: c3209df3f5b7e1db
 ---
+
 # Progressive Multi-cue Alignment for Unaligned RGBT Tracking
 
 **Conference**: CVPR 2026  
@@ -151,15 +157,15 @@ Progressive strategy (LasHeR-Unaligned):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)
 - [\[CVPR 2026\] Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking](spatio-temporal_conditional_denoising_transformer_for_modality-missing_rgbt_trac.md)
 - [\[CVPR 2026\] RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation](ragtrack_language-aware_rgbt_tracking_with_retrieval-augmented_generation.md)
-- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
 - [\[CVPR 2026\] DETACH: Decomposed Spatio-Temporal Alignment for Exocentric Video and Ambient Sensors with Staged Learning](detach_decomposed_spatio-temporal_alignment_for_exocentric_video_and_ambient_sen.md)
+- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
 
 </div>
 

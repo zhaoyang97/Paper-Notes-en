@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Transformer] Motion 3-to-4 decomposes the ill-posed problem of "generating 4D dynamic objects from monocular video" into two steps: **static 3D shape generation + dynamic motion reconstruction**. By using a (generatable) static reference mesh as an anchor, it performs feed-forward prediction of per-frame vertex motion flow relative
+  [CVPR 2026][3D Vision][4D Synthesis] Motion 3-to-4 decomposes the ill-posed problem of "generating 4D dynamic objects from monocular video" into two steps: **static 3D shape generation + dynamic motion reconstruction**. By using a (generatable) static reference mesh as an anchor, it performs feed-forward prediction of per-frame vertex motion flow relative to the reference frame. Leveraging DINOv2 video features for "surface point-to-pixel" alignment…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Synthesis"
+  - "Motion Reconstruction"
+  - "Feed-forward Framework"
+  - "Scene Flow"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 18a7f05b260f1509
+content_hash: b1698fb615f3022d
 ---
+
 # Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis
 
 **Conference**: CVPR 2026  
@@ -157,11 +162,11 @@ Replacing the generated mesh with the GT mesh drops the CD from 0.1113 to 0.0437
 
 ## Related Papers
 
+- [\[CVPR 2026\] MotionCrafter: Dense Geometry and Motion Reconstruction with a 4D VAE](motioncrafter_dense_geometry_and_motion_reconstruction_with_a_4d_vae.md)
 - [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
+- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
 - [\[CVPR 2026\] AnyLift: Scaling Motion Reconstruction from Internet Videos via 2D Diffusion](anylift_scaling_motion_reconstruction_from_internet_videos_via_2d_diffusion.md)
-- [\[CVPR 2026\] MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification](morel_long-range_flicker-free_4d_motion_modeling_via_anchor_relay-based_bidirect.md)
-- [\[CVPR 2026\] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?](can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy.md)
-- [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives
 description: >-
-  [ACL 2026][Interpretability][proximal/distal] Academic paper note for Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives.
+  [ACL 2026][Interpretability][Demonstratives] The authors use demonstratives such as "this/that" and "这/那" as probes to construct a bilingual English-Chinese dataset (80 items/language × 4 cues × 4 perspectives × 5 scenarios). By establishing a human baseline from 6,400 responses from 320 native speakers, the study finds that English speakers excel at proximal–distal differentiation but are weaker in other-perspective taking, while Chinese speakers show the opposite pattern. I…
 tags:
-  - ACL 2026
-  - Interpretability
-  - proximal/distal
+  - "ACL 2026"
+  - "Interpretability"
+  - "Demonstratives"
+  - "embodied cognition"
+  - "cross-cultural"
+  - "symmetry index"
+  - "proximal/distal"
+  - "self/other perspective"
 date: 2026-05-08
-content_hash: bb2d0e180d0ba18d
+content_hash: 9f110b097ea56f55
 ---
+
 # Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives
 
 **Conference**: ACL 2026  
@@ -129,11 +135,11 @@ This work does not involve model training. The source of response distributions 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Evidence for Limited Metacognition in LLMs](../../ICLR2026/interpretability/evidence_for_limited_metacognition_in_llms.md)
 - [\[ACL 2026\] Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations](do_llms_know_tool_irrelevance_demystifying_structural_alignment_bias_in_tool_inv.md)
 - [\[ACL 2026\] Aligning What LLMs Do and Say: Towards Self-Consistent Explanations](aligning_what_llms_do_and_say_towards_self-consistent_explanations.md)
-- [\[AAAI 2026\] PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics](../../AAAI2026/interpretability/pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic.md)
+- [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](../../ICLR2026/interpretability/understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
 - [\[ACL 2026\] Crosscoding Through Time: Tracking Emergence & Consolidation Of Linguistic Representations Throughout LLM Pretraining](crosscoding_through_time_tracking_emergence_consolidation_of_linguistic_represen.md)
-- [\[CVPR 2026\] Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](../../CVPR2026/interpretability/where_culture_fades_revealing_the_cultural_gap_in_text-to-image_generation.md)
 
 </div>
 

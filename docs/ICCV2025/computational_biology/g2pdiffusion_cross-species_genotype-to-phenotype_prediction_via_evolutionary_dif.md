@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] G2PDiffusion: Cross-Species Genotype-to-Phenotype Prediction via Evolutionary Diffusion
 description: >-
-  [ICCV 2025][Computational Biology][genotype-to-phenotype] This paper proposes G2PDiffusion, the first diffusion model-based cross-species genotype-to-phenotype prediction framework…
+  [ICCV 2025][Computational Biology][genotype-to-phenotype] This paper proposes G2PDiffusion, the first diffusion model-based cross-species genotype-to-phenotype prediction framework, which generates morphological images conditioned on evolutionary signals (multiple sequence alignments, MSA, and environmental context) to predict species appearance from DNA sequences.
 tags:
   - "ICCV 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "cross-species"
   - "evolutionary biology"
 date: 2026-05-08
-content_hash: beeccc00ee4d6a94
+content_hash: d0efc2ba858471c8
 ---
 
 # G2PDiffusion: Cross-Species Genotype-to-Phenotype Prediction via Evolutionary Diffusion
@@ -145,11 +145,11 @@ G2PDiffusion comprises three core components: (1) an MSA retrieval engine that r
 
 ## Related Papers
 
-- [\[ICLR 2026\] EvoFlows: Evolutionary Edit-Based Flow-Matching for Protein Engineering](../../ICLR2026/computational_biology/evoflows_evolutionary_edit-based_flow-matching_for_protein_engineering.md)
+- [\[ICLR 2026\] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding](../../ICLR2026/computational_biology/a_cross-species_neural_foundation_model_for_end-to-end_speech_decoding.md)
+- [\[CVPR 2026\] Deciphering Genotype-Phenotype Mechanisms from High-Content Profiling via Knowledge-Guided Multi-modal Graph Learning](../../CVPR2026/computational_biology/deciphering_genotype-phenotype_mechanisms_from_high-content_profiling_via_knowle.md)
+- [\[ICLR 2026\] PepTri: Physical, Evolutionary, and Mutual Information Tri-guided All-atom Diffusion Peptide Design](../../ICLR2026/computational_biology/peptri_tri-guided_all-atom_diffusion_for_peptide_design_via_physics_evolution_an.md)
 - [\[NeurIPS 2025\] Inferring Stochastic Dynamics with Growth from Cross-Sectional Data](../../NeurIPS2025/computational_biology/inferring_stochastic_dynamics_with_growth_from_cross-sectional_data.md)
 - [\[ICML 2026\] Protein Circuit Tracing via Cross-layer Transcoders](../../ICML2026/computational_biology/protein_circuit_tracing_via_cross-layer_transcoders.md)
-- [\[NeurIPS 2025\] Quantifying the Role of OpenFold Components in Protein Structure Prediction](../../NeurIPS2025/computational_biology/quantifying_the_role_of_openfold_components_in_protein_structure_prediction.md)
-- [\[NeurIPS 2025\] GraphFLA: Augmenting Biological Fitness Prediction Benchmarks with Landscape Features](../../NeurIPS2025/computational_biology/augmenting_biological_fitness_prediction_benchmarks_with_landscapes_features_fro.md)
 
 </div>
 

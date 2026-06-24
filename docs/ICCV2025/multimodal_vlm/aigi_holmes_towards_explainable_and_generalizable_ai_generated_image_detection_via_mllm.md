@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][AIGC detection] This paper proposes AIGI-Holmes, which achieves explainable and generalizable AI-generated image detection through the construction of Holmes-Set — an annotated dataset with in…
+  [ICCV 2025][Multimodal VLM][AIGC detection] This paper proposes AIGI-Holmes, which achieves explainable and generalizable AI-generated image detection through the construction of Holmes-Set — an annotated dataset with interpretive labels — a three-stage training pipeline (visual expert pre-training → SFT → DPO), and a collaborative decoding strategy. The method attains state-of-the-art detection accuracy on three benchmarks while providing human-verifiable explanations.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "collaborative decoding"
 date: 2026-05-08
-content_hash: a40d1fc43181767b
+content_hash: e8e2ea88db54767c
 ---
 
 # AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models
@@ -111,10 +111,10 @@ Generalization performance on the latest generators (FLUX, SD3.5, VAR, etc.) sig
 ## Related Papers
 
 - [\[ICCV 2025\] Spatial Preference Rewarding for MLLMs Spatial Understanding](spatial_preference_rewarding_for_mllms_spatial_understanding.md)
+- [\[ICCV 2025\] Visual-Oriented Fine-Grained Knowledge Editing for MultiModal Large Language Models](visual-oriented_fine-grained_knowledge_editing_for_multimodal_large_language_mod.md)
 - [\[ICCV 2025\] BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models](basic_boosting_visual_alignment_with_intrinsic_refined_embeddings_in_multimodal_.md)
 - [\[ICCV 2025\] CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models](capellm_support-free_category-agnostic_pose_estimation_with_multimodal_large_lan.md)
 - [\[ICCV 2025\] Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis](oasis_one_image_is_all_you_need_for_multimodal_instruction_data_synthesis.md)
-- [\[ICCV 2025\] DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding](docthinker_explainable_multimodal_large_language_models_with.md)
 
 </div>
 

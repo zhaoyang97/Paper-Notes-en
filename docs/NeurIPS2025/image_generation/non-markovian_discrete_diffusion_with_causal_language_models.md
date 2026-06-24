@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Non-Markovian Discrete Diffusion with Causal Language Models
 description: >-
-  [NeurIPS 2025][Image Generation][discrete diffusion models] This paper proposes CaDDi, a framework that enables each denoising step to access the full generation trajectory via a non-Markovian discrete diffusion process…
+  [NeurIPS 2025][Image Generation][discrete diffusion models] This paper proposes CaDDi, a framework that enables each denoising step to access the full generation trajectory via a non-Markovian discrete diffusion process, and unifies this process within a causal language model architecture, allowing pretrained LLMs to be directly reused as discrete diffusion models.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "sequence generation"
   - "autoregressive"
 date: 2026-05-08
-content_hash: 7dd7d635aba8d518
+content_hash: cfe25aca098fe1c7
 ---
 
 # Non-Markovian Discrete Diffusion with Causal Language Models

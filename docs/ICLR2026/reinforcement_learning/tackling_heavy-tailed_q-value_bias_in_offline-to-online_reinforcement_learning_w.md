@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tackling Heavy-Tailed Q-Value Bias in Offline-to-Online Reinforcement Learning with Laplace-Robust Modeling
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline-to-Online RL] This paper reveals for the first time that the Q-value bias during the online fine-tuning stage of Offline-to-Online Reinforcement Learning (O2O RL) follows a **heavy-tailed distribution**. It proposes LAROO: using an adaptive Laplace noise to "absorb" the heavy-tailed nature of the bias into the noise, combined with a
+  [ICLR 2026][Reinforcement Learning][Offline-to-Online RL] This paper reveals for the first time that the Q-value bias during the online fine-tuning stage of Offline-to-Online Reinforcement Learning (O2O RL) follows a **heavy-tailed distribution**. It proposes LAROO: using an adaptive Laplace noise to "absorb" the heavy-tailed nature of the bias into the noise, combined with a robust loss $D_b(x)$ to reduce estimation variance, and a conservative ensemble estimate to pull the…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Offline-to-Online RL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline-to-Online RL"
+  - "Q-value Bias"
+  - "Heavy-tailed Distribution"
+  - "Laplace-Robust Modeling"
+  - "Ensemble Models"
 date: 2026-05-08
-content_hash: 84d3c7fc8ceaeff4
+content_hash: 48d874ae7785911b
 ---
+
 # Tackling Heavy-Tailed Q-Value Bias in Offline-to-Online Reinforcement Learning with Laplace-Robust Modeling
 
 **Conference**: ICLR 2026  
@@ -134,11 +139,11 @@ Total performance gain across all tasks within 100k steps $\delta_{\text{sum}}(0
 
 ## Related Papers
 
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
 - [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
 - [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
 - [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
-- [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
 
 </div>
 

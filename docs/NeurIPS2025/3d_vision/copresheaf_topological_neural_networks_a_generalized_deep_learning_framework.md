@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework
 description: >-
-  [NeurIPS 2025][3D Vision][Topological Neural Networks] This paper proposes Copresheaf Topological Neural Networks (CTNNs), which leverage the algebraic-topological notion of copresheaves to define directional…
+  [NeurIPS 2025][3D Vision][Topological Neural Networks] This paper proposes Copresheaf Topological Neural Networks (CTNNs), which leverage the algebraic-topological notion of copresheaves to define directional, heterogeneous message passing on combinatorial complexes. The framework unifies CNNs, GNNs, Transformers, Sheaf Neural Networks, and Topological Neural Networks as special cases, and surpasses conventional baselines on physics simulation, graph classification…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Message Passing"
   - "Anisotropic Representation Learning"
 date: 2026-05-08
-content_hash: fafe389d02948055
+content_hash: 7fdf6224f6556dbf
 ---
 
 # Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework
@@ -133,9 +133,9 @@ where attention weights $a_{xy}$ are computed via standard query–key dot produ
 
 - [\[NeurIPS 2025\] CosmoBench: A Multiscale, Multiview, Multitask Cosmology Benchmark for Geometric Deep Learning](cosmobench_a_multiscale_multiview_multitask_cosmology_benchmark_for_geometric_de.md)
 - [\[NeurIPS 2025\] FedFACT: A Provable Framework for Controllable Group-Fairness Calibration in Federated Learning](fedfact_a_provable_framework_for_controllable_group-fairness_calibration_in_fede.md)
+- [\[ICML 2025\] Thickness-aware E(3)-Equivariant 3D Mesh Neural Networks](../../ICML2025/3d_vision/thickness-aware_e3-equivariant_3d_mesh_neural_networks.md)
 - [\[NeurIPS 2025\] Learning Neural Exposure Fields for View Synthesis](learning_neural_exposure_fields_for_view_synthesis.md)
 - [\[NeurIPS 2025\] High Resolution UDF Meshing via Iterative Networks](high_resolution_udf_meshing_via_iterative_networks.md)
-- [\[CVPR 2026\] Node-RF: Learning Generalized Continuous Space-Time Scene Dynamics with Neural ODE-based NeRFs](../../CVPR2026/3d_vision/node-rf_learning_generalized_continuous_space-time_scene_dynamics_with_neural_od.md)
 
 </div>
 

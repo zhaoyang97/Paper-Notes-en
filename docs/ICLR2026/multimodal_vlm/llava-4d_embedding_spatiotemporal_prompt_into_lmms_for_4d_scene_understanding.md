@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LLaVA-4D: Embedding SpatioTemporal Prompt into LMMs for 4D Scene Understanding
 description: >-
-  [ICLR 2026][Multimodal VLM][LMM] LLaVA-4D encodes "3D position + 1D time" into dynamic-aware 4D coordinates as spatiotemporal prompts. It decouples visual features into spatial and temporal components before fusing them with these prompts via cross-attention, enabling multimodal models to simultaneously understand static backgrounds and dynamic object
+  [ICLR 2026][Multimodal VLM][LMM] LLaVA-4D encodes "3D position + 1D time" into dynamic-aware 4D coordinates as spatiotemporal prompts. It decouples visual features into spatial and temporal components before fusing them with these prompts via cross-attention, enabling multimodal models to simultaneously understand static backgrounds and dynamic objects for the first time.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - LMM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "LMM"
+  - "4D Scene Understanding"
+  - "Spatiotemporal Prompt"
+  - "Spatiotemporal Decoupling"
+  - "Multi-view Video"
+  - "Dynamic Objects"
 date: 2026-05-08
-content_hash: d7aec349308f83ea
+content_hash: f425ce1af8690d8f
 ---
+
 # LLaVA-4D: Embedding SpatioTemporal Prompt into LMMs for 4D Scene Understanding
 
 **Conference**: ICLR 2026  

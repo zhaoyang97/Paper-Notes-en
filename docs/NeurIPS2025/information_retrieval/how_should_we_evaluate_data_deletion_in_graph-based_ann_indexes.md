@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Should We Evaluate Data Deletion in Graph-Based ANN Indexes?
 description: >-
-  [NeurIPS 2025 (Workshop on ML for Systems)][Information Retrieval & RAG][ANNS] To address the lack of a unified evaluation methodology for data deletion in graph-based ANN indexes…
+  [NeurIPS 2025 (Workshop on ML for Systems)][Information Retrieval & RAG][ANNS] To address the lack of a unified evaluation methodology for data deletion in graph-based ANN indexes, this paper formally defines three baseline approaches—lazy deletion, eager deletion, and reconstruction—proposes a deployment-oriented evaluation framework and metric suite, and introduces the Deletion Control algorithm, which dynamically switches deletion strategies under accuracy constraints base…
 tags:
   - "NeurIPS 2025 (Workshop on ML for Systems)"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "vector database"
   - "evaluation framework"
 date: 2026-05-08
-content_hash: 119f68c56e971caa
+content_hash: 7b0e41c881a719cd
 ---
 
 # How Should We Evaluate Data Deletion in Graph-Based ANN Indexes?
@@ -138,10 +138,10 @@ Deletion Control validation (SIFT1B, b=10⁵, α=0.84):
 ## Related Papers
 
 - [\[ICML 2026\] Seeing to Generalize: How Visual Data Corrects Binding Shortcuts](../../ICML2026/information_retrieval/seeing_to_generalize_how_visual_data_corrects_binding_shortcuts.md)
+- [\[ACL 2025\] When Should Dense Retrievers Be Updated in Evolving Corpora? Detecting Out-of-Distribution Corpora Using GradNormIR](../../ACL2025/information_retrieval/when_should_dense_retrievers_be_updated_in_evolving_corpora_detecting_out-of-dis.md)
 - [\[NeurIPS 2025\] MuRating: A High Quality Data Selecting Approach to Multilingual Large Language Model Pretraining](murating_a_high_quality_data_selecting_approach_to_multilingual_large_language_m.md)
-- [\[ICML 2026\] How can embedding models bind concepts?](../../ICML2026/information_retrieval/how_can_embedding_models_bind_concepts.md)
-- [\[ACL 2026\] How Retrieved Context Shapes Internal Representations in RAG](../../ACL2026/information_retrieval/how_retrieved_context_shapes_internal_representations_in_rag.md)
-- [\[ICLR 2026\] G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge](../../ICLR2026/information_retrieval/g-reasoner_foundation_models_for_unified_reasoning_over_graph-structured_knowled.md)
+- [\[ACL 2025\] On Synthetic Data Strategies for Domain-Specific Generative Retrieval](../../ACL2025/information_retrieval/on_synthetic_data_strategies_for_domain-specific_generative_retrieval.md)
+- [\[ACL 2025\] KnowShiftQA: How Robust are RAG Systems when Textbook Knowledge Shifts in K-12 Education?](../../ACL2025/information_retrieval/knowshiftqa_rag_knowledge_shifts.md)
 
 </div>
 

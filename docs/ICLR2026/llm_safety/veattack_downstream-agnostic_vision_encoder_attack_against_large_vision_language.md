@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VEAttack: Downstream-Agnostic Vision Encoder Attack Against Large Vision Language Models
 description: >-
-  [ICLR 2026][LLM Safety][LVLM] This paper proposes VEAttack, a grey-box adversarial attack that targets only the vision encoder of LVLMs without accessing downstream LLMs, tasks, or labels. By minimizing the cosine similarity between clean and perturbed **patch token** features to generate adversarial examples, it degrades image captioning performan
+  [ICLR 2026][LLM Safety][Adversarial Attack] This paper proposes VEAttack, a grey-box adversarial attack that targets only the vision encoder of LVLMs without accessing downstream LLMs, tasks, or labels. By minimizing the cosine similarity between clean and perturbed **patch token** features to generate adversarial examples, it degrades image captioning performance by 94.5% and VQA by 75.7% under small perturbation budgets, while exhibiting natural transferability across diffe…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LVLM
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Adversarial Attack"
+  - "Vision Encoder"
+  - "LVLM"
+  - "Grey-box Attack"
+  - "Task-agnostic"
 date: 2026-05-08
-content_hash: 04c5f88c6526d31f
+content_hash: afab3b3daeb343e2
 ---
+
 # VEAttack: Downstream-Agnostic Vision Encoder Attack Against Large Vision Language Models
 
 **Conference**: ICLR 2026  
@@ -138,7 +143,7 @@ Attacking on CLIP-ViT-L/14 and evaluating on OpenFlamingo-9B / LLaVA1.5-7B / LLa
 
 ## Related Papers
 
-- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 - [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
 - [\[ICLR 2026\] From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons](from_sure_to_sorry_detecting_jailbreak_in_large_vision_language_model_via_jailne.md)
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)

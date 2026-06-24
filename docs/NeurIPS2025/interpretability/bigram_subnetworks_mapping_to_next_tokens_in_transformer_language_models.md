@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models
 description: >-
-  [NeurIPS 2025][Interpretability][Bigram Subnetworks] Using continuous sparsification, the authors identify bigram subnetworks containing only ~10M parameters within Transformer language models. These subnetworks are conc…
+  [NeurIPS 2025][Interpretability][Bigram Subnetworks] Using continuous sparsification, the authors identify bigram subnetworks containing only ~10M parameters within Transformer language models. These subnetworks are concentrated in the first MLP layer, suffice to reproduce bigram predictions ($r>0.95$), and cause dramatic performance degradation when ablated — demonstrating that they constitute minimal next-token prediction circuits that are both necessary and sufficient in l…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Residual Stream"
   - "Minimal Circuit"
 date: 2026-05-08
-content_hash: 719cfa13e33fb486
+content_hash: 11d1af261a7001eb
 ---
 
 # Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models
@@ -121,11 +121,11 @@ Freeze LLM parameters → Learn parameter masks $M$ via continuous sparsificatio
 
 ## Related Papers
 
+- [\[ICLR 2026\] Hedonic Neurons: A Mechanistic Mapping of Latent Coalitions in Transformer MLPs](../../ICLR2026/interpretability/hedonic_neurons_a_mechanistic_mapping_of_latent_coalitions_in_transformer_mlps.md)
+- [\[ICLR 2026\] Latent Concept Disentanglement in Transformer-based Language Models](../../ICLR2026/interpretability/latent_concept_disentanglement_in_transformer-based_language_models.md)
 - [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
-- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](../../ACL2026/interpretability/compositional_steering_of_large_language_models_with_steering_tokens.md)
 - [\[NeurIPS 2025\] Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework](discovering_transformer_circuits_via_a_hybrid_attribution_and_pruning_framework.md)
-- [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
-- [\[NeurIPS 2025\] Emergence of Linear Truth Encodings in Language Models](emergence_of_linear_truth_encodings_in_language_models.md)
+- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](../../ACL2026/interpretability/compositional_steering_of_large_language_models_with_steering_tokens.md)
 
 </div>
 

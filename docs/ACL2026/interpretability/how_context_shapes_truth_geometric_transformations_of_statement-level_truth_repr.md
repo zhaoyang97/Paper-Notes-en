@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Context Shapes Truth: Geometric Transformations of Statement-level Truth Representations in LLMs
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper characterizes the geometric evolution of internal truth representations in LLMs when context is introduced. By measuring the **directional angle $\theta$** and **relative magnitude** of truth vectors under context-present vs. context-absent conditions across 4 models and multiple datasets, the study identifi
+  [ACL2026][Interpretability][Truth Vector] This paper characterizes the geometric evolution of internal truth representations in LLMs when context is introduced. By measuring the **directional angle $\theta$** and **relative magnitude** of truth vectors under context-present vs. context-absent conditions across 4 models and multiple datasets, the study identifies a three-phase pattern: "near-orthogonal in early layers → rapid convergence in middle layers → stabilization or fur…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL2026"
+  - "Interpretability"
+  - "Truth Vector"
+  - "Residual Stream"
+  - "Context"
+  - "Directional Change"
+  - "Relative Magnitude"
 date: 2026-05-08
-content_hash: 15bf57da1d543085
+content_hash: 4cbff6a6d964e095
 ---
+
 # How Context Shapes Truth: Geometric Transformations of Statement-level Truth Representations in LLMs
 
 **Conference**: ACL2026  
@@ -140,15 +146,16 @@ By pairing a statement with relevant context, random "word salad," or scrambled 
 - Value: ⭐⭐⭐⭐ (Practical implications for RAG/ICL and context-aware interpretability.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] Probing the Geometry of Truth: Consistency and Generalization of Truth Directions](../../ACL2025/interpretability/probing_the_geometry_of_truth_consistency_and_generalization_of_truth_directions.md)
-- [\[ACL 2026\] Jacobian Scopes: Token-Level Causal Attributions in LLMs](jacobian_scopes_token-level_causal_attributions_in_llms.md)
 - [\[NeurIPS 2025\] Emergence of Linear Truth Encodings in Language Models](../../NeurIPS2025/interpretability/emergence_of_linear_truth_encodings_in_language_models.md)
+- [\[ACL 2026\] Jacobian Scopes: Token-Level Causal Attributions in LLMs](jacobian_scopes_token-level_causal_attributions_in_llms.md)
 - [\[NeurIPS 2025\] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis](../../NeurIPS2025/interpretability/toward_explainable_offline_rl_analyzing_representations_in_intrinsically_motivat.md)
-- [\[ICLR 2026\] Information Shapes Koopman Representation](../../ICLR2026/interpretability/information_shapes_koopman_representation.md)
+- [\[ICLR 2026\] How Stable is the Next Token? A Geometric View of LLM Prediction Stability](../../ICLR2026/interpretability/how_stable_is_the_next_token_a_geometric_view_of_llm_prediction_stability.md)
 
 </div>
 

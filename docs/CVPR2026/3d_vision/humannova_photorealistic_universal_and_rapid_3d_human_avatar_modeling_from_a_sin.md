@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] HumanNOVA transfers the Large Reconstruction Model (LRM) paradigm for general objects to the human domain. Utilizing a "dual-modal token conditioning + tri-plane" feed-forward architecture, it reconstructs photorealistic 3D humans from a single image in under 1 second. The study also introduces a scalable data generati
+  [CVPR2026][3D Vision][Single-image human reconstruction] HumanNOVA transfers the Large Reconstruction Model (LRM) paradigm for general objects to the human domain. Utilizing a "dual-modal token conditioning + tri-plane" feed-forward architecture, it reconstructs photorealistic 3D humans from a single image in under 1 second. The study also introduces a scalable data generation pipeline that expands training assets to 100,000 (roughly a 20x increase)…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Single-image human reconstruction"
+  - "feed-forward LRM"
+  - "tri-plane representation"
+  - "SMPL prior"
+  - "large-scale data generation"
 date: 2026-05-08
-content_hash: f176c801c43d2900
+content_hash: 2bec77f67ec1b8bc
 ---
+
 # HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image
 
 **Conference**: CVPR2026  
@@ -133,16 +139,15 @@ Conducted on CustomHuman (LPIPS ×100):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
+- [\[CVPR 2026\] FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing](fishuman_fine-grained_single-image_3d_human_reconstruction_via_multi-view_4d_rem.md)
 - [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[CVPR 2026\] Fresco: Frequency-Spatial Consistent Optimization for Fine-Grained Head Avatar Modeling](fresco_frequency-spatial_consistent_optimization_for_fine-grained_head_avatar_mo.md)
-- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
-- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
+- [\[CVPR 2026\] UIKA: Fast Universal Head Avatar from Pose-Free Images](uika_fast_universal_head_avatar_from_pose-free_images.md)
+- [\[ICCV 2025\] GAS: Generative Avatar Synthesis from a Single Image](../../ICCV2025/3d_vision/gas_generative_avatar_synthesis_from_a_single_image.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)

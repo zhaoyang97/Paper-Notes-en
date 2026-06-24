@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EfficientVPR: Toward Efficient Visual Place Recognition via Scene-Aware Prompt Tuning and Adaptive Feature Enhancement
 description: >-
-  [CVPR 2026][3D Vision][DINOv2] By employing a "Scene-aware Visual Prompt Tuning (SceneVPT) + instance-specific key local feature enhancement module," this work performs single-stage Visual Place Recognition (VPR) on the lightweight DINOv2-small backbone. With a descriptor dimension of only 3456, it outperforms all methods of similar scale. Compared
+  [CVPR 2026][3D Vision][Visual Place Recognition] By employing a "Scene-aware Visual Prompt Tuning (SceneVPT) + instance-specific key local feature enhancement module," this work performs single-stage Visual Place Recognition (VPR) on the lightweight DINOv2-small backbone. With a descriptor dimension of only 3456, it outperforms all methods of similar scale. Compared to the two-stage SOTA based on DINOv2-large, it achieves a ~73× speedup while maintaining an average R@1 within…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - DINOv2
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Visual Place Recognition"
+  - "Visual Prompt Tuning"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Local Feature Enhancement"
+  - "DINOv2"
 date: 2026-05-08
-content_hash: 21074c18d1b05cb1
+content_hash: 4f351aab6c11bbca
 ---
+
 # EfficientVPR: Toward Efficient Visual Place Recognition via Scene-Aware Prompt Tuning and Adaptive Feature Enhancement
 
 **Conference**: CVPR 2026  
@@ -156,10 +161,10 @@ Tuning strategy ablation: SceneVPT (0.15M) achieved 94.5/48.4/96.7 across the th
 ## Related Papers
 
 - [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
+- [\[AAAI 2026\] VPN: Visual Prompt Navigation](../../AAAI2026/3d_vision/vpn_visual_prompt_navigation.md)
+- [\[NeurIPS 2025\] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation](../../NeurIPS2025/3d_vision/on_geometry-enhanced_parameter-efficient_fine-tuning_for_3d_scene_segmentation.md)
+- [\[ECCV 2024\] Improving 2D Feature Representations by 3D-Aware Fine-Tuning](../../ECCV2024/3d_vision/improving_2d_feature_representations_by_3d-aware_fine-tuning.md)
 - [\[CVPR 2026\] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting](hierarchical_visual_relocalization_with_nearest_view_synthesis_from_feature_gaus.md)
-- [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
-- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ETCH: Generalizing Body Fitting to Clothed Humans via Equivariant Tightness
 description: >-
-  [ICCV 2025][3D Vision][Body Fitting] This paper proposes ETCH, a framework that models SE(3)-equivariant tightness vectors from clothing surfaces to body surfaces…
+  [ICCV 2025][3D Vision][Body Fitting] This paper proposes ETCH, a framework that models SE(3)-equivariant tightness vectors from clothing surfaces to body surfaces, reducing clothed human body fitting to a tightness-aware sparse marker fitting task. On the CAPE and 4D-Dress datasets, ETCH achieves 16.7%–69.5% reduction in joint error on loose garments and an average 49.9% improvement in shape accuracy compared to state-of-the-art methods (both tightness-agnostic and tightness-…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "SMPL"
   - "Point Cloud"
 date: 2026-05-08
-content_hash: 1f88ecb3a59593a6
+content_hash: 87b94ec49af19f3a
 ---
 
 # ETCH: Generalizing Body Fitting to Clothed Humans via Equivariant Tightness

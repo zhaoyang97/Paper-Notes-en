@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SpatialTraceGen: High-Fidelity Traces for Efficient VLM Spatial Reasoning Distillation
 description: >-
-  [NeurIPS 2025 (Workshop on Efficient Reasoning)][Multimodal VLM][VLM] This paper proposes SpatialTraceGen, a framework that distills high-quality multi-step tool-use reasoning traces from large teacher models via automat…
+  [NeurIPS 2025 (Workshop on Efficient Reasoning)][VLM Reasoning][VLM] This paper proposes SpatialTraceGen, a framework that distills high-quality multi-step tool-use reasoning traces from large teacher models via automated verification, enabling efficient fine-tuning of small VLMs for spatial reasoning.
 tags:
   - "NeurIPS 2025 (Workshop on Efficient Reasoning)"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "VLM"
   - "spatial reasoning"
   - "knowledge distillation"
   - "reasoning traces"
   - "data generation"
 date: 2026-05-08
-content_hash: 7987968e1cc6b205
+content_hash: eb973cb0c9753039
 ---
 
 # SpatialTraceGen: High-Fidelity Traces for Efficient VLM Spatial Reasoning Distillation
@@ -133,11 +133,11 @@ Experiments are conducted on the CLEVR-Humans benchmark, primarily comparing dif
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models](sd-vlm_spatial_measuring_and_understanding_with_depth-encoded_vision-language_mo.md)
+- [\[CVPR 2026\] Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models](../../CVPR2026/vlm_reasoning/visual-aware_cot_achieving_high-fidelity_visual_consistency_in_unified_models.md)
 - [\[NeurIPS 2025\] SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning](ssr_enhancing_depth_perception_in_vision-language_models_via_rationale-guided_sp.md)
-- [\[NeurIPS 2025\] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM](hawaii_hierarchical_visual_knowledge_transfer_for_efficient_vision-language_mode.md)
-- [\[CVPR 2026\] HiFICL: High-Fidelity In-Context Learning for Multimodal Tasks](../../CVPR2026/multimodal_vlm/hificl_highfidelity_incontext_learning_for_multimo.md)
-- [\[ICLR 2026\] GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-Guided Latent Diffusion Model?](../../ICLR2026/multimodal_vlm/glyph-sr_can_we_achieve_both_high-quality_image_super-resolution_and_high-fideli.md)
+- [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](../../CVPR2026/vlm_reasoning/spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
+- [\[CVPR 2025\] Spatial Reasoning is Not a Free Lunch: A Controlled Study on LLaVA](../../CVPR2025/vlm_reasoning/spatial_reasoning_is_not_a_free_lunch_a_controlled_study_on_llava.md)
+- [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
 
 </div>
 

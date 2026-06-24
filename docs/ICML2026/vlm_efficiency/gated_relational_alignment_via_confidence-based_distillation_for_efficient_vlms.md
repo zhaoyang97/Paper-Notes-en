@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Gated Relational Alignment via Confidence-based Distillation for Efficient VLMs
 description: >-
-  [ICML 2026][vlm_efficiency][Knowledge Distillation] This paper unifies Quantization-Aware Training (QAT) and Knowledge Distillation (KD) from an Information Bottleneck (IB) perspective, proposing the GRACE framework (Gated Decoupled Distillation + Relational Centered Kernel Alignment + Adaptive IB Controller). This enables INT4-quantized LLaVA / Qwen-VL to not only avoi
+  [ICML 2026][Multimodal Efficiency][VLM Quantization] This paper unifies Quantization-Aware Training (QAT) and Knowledge Distillation (KD) from an Information Bottleneck (IB) perspective, proposing the GRACE framework (Gated Decoupled Distillation + Relational Centered Kernel Alignment + Adaptive IB Controller). This enables INT4-quantized LLaVA / Qwen-VL to not only avoid performance degradation but outperform BF16 baselines across multiple benchmarks…
 tags:
-  - ICML 2026
-  - vlm_efficiency
-  - Knowledge Distillation
-  - Information Bottleneck
+  - "ICML 2026"
+  - "Multimodal Efficiency"
+  - "VLM Quantization"
+  - "Knowledge Distillation"
+  - "Information Bottleneck"
+  - "CKA Relational Alignment"
+  - "Confidence Gating"
 date: 2026-05-08
-content_hash: 15eced83d5c720cb
+content_hash: cce5e76525a7ef14
 ---
+
 # Gated Relational Alignment via Confidence-based Distillation for Efficient VLMs
 
 **Conference**: ICML 2026  
@@ -136,11 +140,11 @@ Two backbone families: LLaVA-1.5 (7B/13B) and Qwen2-VL (2B/7B). Teachers are lar
 
 ## Related Papers
 
-- [\[ICML 2026\] Less Precise Can Be More Reliable: A Systematic Evaluation of Quantization's Impact on VLMs Beyond Accuracy](less_precise_can_be_more_reliable_a_systematic_evaluation_of_quantizations_impac.md)
 - [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](../../CVPR2026/vlm_efficiency/apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
+- [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](../../ICLR2026/vlm_efficiency/surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
 - [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](../../CVPR2026/vlm_efficiency/co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
-- [\[ICLR 2026\] BOLT: Decision‑Aligned Distillation and Budget-Aware Routing for Constrained Multimodal QA on Robots](../../ICLR2026/vlm_efficiency/bolt_decisionaligned_distillation_and_budget-aware_routing_for_constrained_multi.md)
-- [\[CVPR 2026\] LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models](../../CVPR2026/vlm_efficiency/lift_and_place_a_simple_stable_and_effective_knowledge_distillation_framework_fo.md)
+- [\[ICML 2026\] Less Precise Can Be More Reliable: A Systematic Evaluation of Quantization's Impact on VLMs Beyond Accuracy](less_precise_can_be_more_reliable_a_systematic_evaluation_of_quantizations_impac.md)
+- [\[ICLR 2026\] Lightweight Spatio-Temporal Modeling via Temporally Shifted Distillation for Real-Time Accident Anticipation](../../ICLR2026/vlm_efficiency/lightweight_spatio-temporal_modeling_via_temporally_shifted_distillation_for_rea.md)
 
 </div>
 

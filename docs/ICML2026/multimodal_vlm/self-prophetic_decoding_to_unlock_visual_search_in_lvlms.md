@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Prophetic Decoding to Unlock Visual Search in LVLMs
 description: >-
-  [ICML 2026][Multimodal VLM][LVLM] SeProD pairs a post-trained LVLM optimized for visual search with its non-finetuned pre-trained version. The pre-trained model acts as a "prophet," generating single-step draft prefixes at each turn, while the post-trained model selectively accepts these prefixes based on a probability threshold. This approach restores
+  [ICML 2026][Multimodal VLM][Visual Search] SeProD pairs a post-trained LVLM optimized for visual search with its non-finetuned pre-trained version. The pre-trained model acts as a "prophet," generating single-step draft prefixes at each turn, while the post-trained model selectively accepts these prefixes based on a probability threshold. This approach restores single-step foundational capabilities and maintains multi-step reasoning coherence without additional training or ex…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - LVLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Visual Search"
+  - "LVLM"
+  - "Prophetic Decoding"
+  - "Speculative Decoding"
+  - "Multi-step Reasoning"
 date: 2026-05-08
-content_hash: 9538f06fb40f1b6d
+content_hash: 21d53b1ce185d96a
 ---
+
 # Self-Prophetic Decoding to Unlock Visual Search in LVLMs
 
 **Conference**: ICML 2026  
@@ -145,10 +150,10 @@ Improvement was observed across all 12/12 splits, with more significant gains in
 ## Related Papers
 
 - [\[ICML 2026\] CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception](cvsearch_empowering_multimodal_llms_with_cognitive_visual_search_for_high-resolu.md)
-- [\[ICML 2025\] Towards Rationale-Answer Alignment of LVLMs via Self-Rationale Calibration](../../ICML2025/multimodal_vlm/towards_rationale-answer_alignment_of_lvlms_via_self-rationale_calibration.md)
 - [\[ICLR 2026\] Self-Aug: Query and Entropy Adaptive Decoding for Large Vision-Language Models](../../ICLR2026/multimodal_vlm/self-aug_query_and_entropy_adaptive_decoding_for_large_vision-language_models.md)
+- [\[ICML 2025\] Towards Rationale-Answer Alignment of LVLMs via Self-Rationale Calibration](../../ICML2025/multimodal_vlm/towards_rationale-answer_alignment_of_lvlms_via_self-rationale_calibration.md)
+- [\[ICLR 2026\] InSight-o3: Empowering Multimodal Foundation Models with Generalized Visual Search](../../ICLR2026/multimodal_vlm/insight-o3_empowering_multimodal_foundation_models_with_generalized_visual_searc.md)
 - [\[ICML 2026\] LBR/LBP: Language Bias in LVLMs — From In-Depth Analysis to Simple and Effective Mitigation](language_bias_in_lvlms_from_in-depth_analysis_to_simple_and_effective_mitigation.md)
-- [\[CVPR 2026\] Revisiting Visual Corruptions in LVLMs: A Shape-Texture Perspective on Model Failures](../../CVPR2026/multimodal_vlm/revisiting_visual_corruptions_in_lvlms_a_shape-texture_perspective_on_model_fail.md)
 
 </div>
 

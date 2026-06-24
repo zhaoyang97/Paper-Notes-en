@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning
 description: >-
-  [ICLR 2026][Image Generation][Next-Scale Prediction] Proposes MVAR (Markovian Visual AutoRegressive), which reduces the attention calculation complexity of VAR models from $\mathcal{O}(N^2)$ to $\mathcal{O}(Nk)$ by introducing the scale Markov assumption (depending only on adjacent scales rather than all preceding scales) and spatial Markov attention (restricting the nei
+  [ICLR 2026][Image Generation][Visual Autoregressive] Proposes MVAR (Markovian Visual AutoRegressive), which reduces the attention calculation complexity of VAR models from $\mathcal{O}(N^2)$ to $\mathcal{O}(Nk)$ by introducing the scale Markov assumption (depending only on adjacent scales rather than all preceding scales) and spatial Markov attention (restricting the neighborhood size $k$). It achieves comparable or superior performance on ImageNet 256×256…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Next-Scale Prediction
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Autoregressive"
+  - "Next-Scale Prediction"
+  - "Markov Assumption"
+  - "Attention Optimization"
+  - "Memory Efficiency"
 date: 2026-05-08
-content_hash: cd65a4afca841026
+content_hash: 1d01e4547007c37b
 ---
+
 # MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning
 
 **Conference**: ICLR 2026  
@@ -159,8 +164,8 @@ Using only 1 adjacent scale yields the best results, improving IS by 13.5 while 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](../../CVPR2026/image_generation/markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
 - [\[ICLR 2026\] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation](ssg_scaled_spatial_guidance_for_multi-scale_visual_autoregressive_generation.md)
+- [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](../../CVPR2026/image_generation/markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
 - [\[ICML 2026\] Visual Implicit Autoregressive Modeling](../../ICML2026/image_generation/visual_implicit_autoregressive_modeling.md)
 - [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)

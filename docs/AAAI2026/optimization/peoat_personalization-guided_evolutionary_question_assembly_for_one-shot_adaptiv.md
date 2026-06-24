@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing
 description: >-
-  [AAAI 2026][Optimization][Adaptive Testing] This paper is the first to propose the One-shot Adaptive Testing (OAT) task, formulating it as a combinatorial optimization problem…
+  [AAAI 2026][Optimization][Adaptive Testing] This paper is the first to propose the One-shot Adaptive Testing (OAT) task, formulating it as a combinatorial optimization problem, and introduces the PEOAT framework—combining personalized initialization, cognitively enhanced evolutionary search, and diversity-preserving selection—to select an optimal question set for each examinee in a single shot without interactive feedback, substantially outperforming conventional CAT methods.
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Combinatorial Optimization"
   - "Intelligent Education"
 date: 2026-05-08
-content_hash: 765b1058055c41d4
+content_hash: 5cb97fea125ba0eb
 ---
 
 # PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing
@@ -230,11 +230,11 @@ Even the baseline version substantially outperforms CAT baselines, confirming th
 
 ## Related Papers
 
+- [\[ICML 2026\] Distribution Alignment for One-Shot Federated Learning via Optimal Transport](../../ICML2026/optimization/distribution_alignment_for_one-shot_federated_learning_via_optimal_transport.md)
+- [\[ICLR 2026\] Learning from Algorithm Feedback: One-Shot SAT Solver Guidance with GNNs](../../ICLR2026/optimization/learning_from_algorithm_feedback_one-shot_sat_solver_guidance_with_gnns.md)
 - [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 - [\[AAAI 2026\] Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation](bridging_synthetic_and_real_routing_problems_via_llm-guided_instance_generation_.md)
-- [\[ICCV 2025\] Class-Wise Federated Averaging for Efficient Personalization](../../ICCV2025/optimization/class-wise_federated_averaging_for_efficient_personalization.md)
 - [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
-- [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](../../CVPR2026/optimization/bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
 
 </div>
 

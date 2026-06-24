@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReFlex: Text-Guided Editing of Real Images in Rectified Flow via Mid-Step Feature Extraction and Attention Adaptation
 description: >-
-  [ICCV 2025][Image Generation][Image Editing] To address the challenge of real image editing in Rectified Flow (ReFlow) models, this paper systematically analyzes intermediate representations in MM-DiT…
+  [ICCV 2025][Image Generation][Image Editing] To address the challenge of real image editing in Rectified Flow (ReFlow) models, this paper systematically analyzes intermediate representations in MM-DiT, identifies three key features (I2I-SA, I2T-CA, and residual features), and proposes mid-step feature extraction along with two attention adaptation techniques. The resulting training-free, user-mask-free method achieves high-quality real image editing on the FLUX model…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Feature Injection"
   - "Attention Adaptation"
 date: 2026-05-08
-content_hash: a380285e03cefd49
+content_hash: 149f743b71891594
 ---
 
 # ReFlex: Text-Guided Editing of Real Images in Rectified Flow via Mid-Step Feature Extraction and Attention Adaptation
@@ -148,10 +148,10 @@ ReFlex operates in three stages:
 ## Related Papers
 
 - [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
+- [\[ICML 2025\] Taming Rectified Flow for Inversion and Editing](../../ICML2025/image_generation/taming_rectified_flow_for_inversion_and_editing.md)
 - [\[ICCV 2025\] Straighten Viscous Rectified Flow via Noise Optimization](straighten_viscous_rectified_flow_via_noise_optimization.md)
+- [\[CVPR 2026\] Delta Rectified Flow Sampling for Text-to-Image Editing](../../CVPR2026/image_generation/delta_rectified_flow_sampling_for_text-to-image_editing.md)
 - [\[NeurIPS 2025\] GuideFlow3D: Optimization-Guided Rectified Flow For Appearance Transfer](../../NeurIPS2025/image_generation/guideflow3d_optimization-guided_rectified_flow_for_appearance_transfer.md)
-- [\[ICCV 2025\] LUSD: Localized Update Score Distillation for Text-Guided Image Editing](lusd_localized_update_score_distillation_for_text-guided_image_editing.md)
-- [\[NeurIPS 2025\] Rectified-CFG++ for Flow Based Models](../../NeurIPS2025/image_generation/rectified-cfg_for_flow_based_models.md)
 
 </div>
 

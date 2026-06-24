@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Error Notebook-Guided, Training-Free Part Retrieval in 3D CAD Assemblies via Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Error Notebook] A training-free two-stage VLM framework is proposed that uses an Error Notebook to record corrected reasoning trajectories combined with RAG for test-time adaptation. On specification-driven part retrieval tasks for 3D CAD assemblies, GPT-4o accuracy improves from 41.7% to 65.1% (+23.4%), with a further 4.5% gain via a
+  [ICLR 2026][Multimodal VLM][CAD Part Retrieval] A training-free two-stage VLM framework is proposed that uses an Error Notebook to record corrected reasoning trajectories combined with RAG for test-time adaptation. On specification-driven part retrieval tasks for 3D CAD assemblies, GPT-4o accuracy improves from 41.7% to 65.1% (+23.4%), with a further 4.5% gain via a Grammar Constraint verifier.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Error Notebook
-  - RAG
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CAD Part Retrieval"
+  - "Test-time Adaptation"
+  - "Error Notebook"
+  - "RAG"
+  - "Training-free VLM Inference"
 date: 2026-05-08
-content_hash: 9fdfcd4f3c5c3170
+content_hash: b27e87267d9ba58a
 ---
+
 # Error Notebook-Guided, Training-Free Part Retrieval in 3D CAD Assemblies via Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -131,15 +135,15 @@ The framework is entirely training-free. VLMs are called via API with exponentia
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](flatness_guided_test-time_adaptation_for_vision-language_models.md)
 - [\[CVPR 2026\] Uncertainty-guided Compositional Alignment with Part-to-Whole Semantic Representativeness in Hyperbolic Vision-Language Models](../../CVPR2026/multimodal_vlm/uncertainty-guided_compositional_alignment_with_part-to-whole_semantic_represent.md)
 - [\[ICLR 2026\] CAD-Tokenizer: Towards Text-Based CAD Prototyping via Modality-Specific Tokenization](cad-tokenizer_towards_text-based_cad_prototyping_via_modality-specific_tokenizat.md)
 - [\[ICLR 2026\] GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models](gpt4scene_understand_3d_scenes_from_videos_with_vision-language_models.md)
-- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](flatness_guided_test-time_adaptation_for_vision-language_models.md)
 - [\[ICLR 2026\] Pay Less Attention to Function Words for Free Robustness of Vision-Language Models](pay_less_attention_to_function_words_for_free_robustness_of_vision-language_mode.md)
 
 </div>

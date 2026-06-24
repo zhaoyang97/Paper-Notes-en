@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] High-Precision Dichotomous Image Segmentation via Depth Integrity-Prior and Fine-Grained Patch Strategy
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Addressing the dilemma in high-precision Dichotomous Image Segmentation (DIS) where "non-diffusion models are fast but semantically weak, while diffusion models are accurate but heavy and slow," this paper observes that complete objects in depth maps exhibit "low variance, smooth interiors, and sharp boundaries," while
+  [CVPR 2026][Segmentation][Dichotomous Image Segmentation (DIS)] Addressing the dilemma in high-precision Dichotomous Image Segmentation (DIS) where "non-diffusion models are fast but semantically weak, while diffusion models are accurate but heavy and slow," this paper observes that complete objects in depth maps exhibit "low variance, smooth interiors, and sharp boundaries," while the background shows "high variance and chaos." Termed the **depth integrity-prior**…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Dichotomous Image Segmentation (DIS)"
+  - "Pseudo-depth Prior"
+  - "Cross-modal Attention"
+  - "Fine-grained Patching"
+  - "High-resolution Segmentation"
 date: 2026-05-08
-content_hash: 7e37a35a653dc63d
+content_hash: 9d94e392a0ffed02
 ---
+
 # High-Precision Dichotomous Image Segmentation via Depth Integrity-Prior and Fine-Grained Patch Strategy
 
 **Conference**: CVPR 2026  
@@ -168,8 +174,8 @@ Patch size ablation (Table 5):
 - [\[CVPR 2026\] FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching](flowdis_language-guided_dichotomous_image_segmentation_with_flow_matching.md)
 - [\[CVPR 2026\] CDICS: Delving Into Fine-Grained Attribute for In-Context Segmentation via Compositional Prompts and Phased Decoupling](cdics_delving_into_fine-grained_attribute_for_in-context_segmentation_via_compos.md)
 - [\[CVPR 2026\] Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt](training-free_open-vocabulary_camouflaged_object_segmentation_via_fine-grained_o.md)
-- [\[CVPR 2026\] CompetitorFormer: Mitigating Query Conflicts for 3D Instance Segmentation via Competitive Strategy](competitorformer_mitigating_query_conflicts_for_3d_instance_segmentation_via_com.md)
-- [\[ICCV 2025\] LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation](../../ICCV2025/segmentation/lawdis_language-window-based_controllable_dichotomous_image_segmentation.md)
+- [\[ICCV 2025\] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation](../../ICCV2025/segmentation/inter2former_dynamic_hybrid_attention_for_efficient_high-precision_interactive_s.md)
+- [\[CVPR 2026\] SegGBC: Justifiable Coarse-to-Fine Granular-Ball Computing for Enhancing Clustering Image Segmentation](seggbc_justifiable_coarse-to-fine_granular-ball_computing_for_enhancing_clusteri.md)
 
 </div>
 

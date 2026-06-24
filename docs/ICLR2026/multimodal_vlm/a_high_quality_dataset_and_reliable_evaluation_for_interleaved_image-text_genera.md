@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] A High Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation
 description: >-
-  [ICLR 2026][Multimodal VLM][InterSyn] Addressing the pain points of scarce training data and unreliable evaluation for interleaved image-text generation in unified Large Multimodal Models (LMMs), this paper introduces InterSyn, a large-scale dataset with 1.8 million samples and 3,500 topics featuring automated quality control (SEIR iterative refinement). I
+  [ICLR 2026][Multimodal VLM][Interleaved image-text generation] Addressing the pain points of scarce training data and unreliable evaluation for interleaved image-text generation in unified Large Multimodal Models (LMMs), this paper introduces InterSyn, a large-scale dataset with 1.8 million samples and 3,500 topics featuring automated quality control (SEIR iterative refinement). It also presents SynJudge, an evaluation model providing four-dimensional interpretable scores hig…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - InterSyn
-  - SEIR
-  - SynJudge
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Interleaved image-text generation"
+  - "InterSyn"
+  - "SEIR"
+  - "SynJudge"
+  - "Image-text synergy"
 date: 2026-05-08
-content_hash: 6a71163abbe52a14
+content_hash: a120471108428b36
 ---
+
 # A High Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation
 
 **Conference**: ICLR 2026  
@@ -143,10 +146,10 @@ On a 4,000-question benchmark, SEIR-generated samples (InterSyn itself) ranked f
 ## Related Papers
 
 - [\[CVPR 2025\] CoMM: A Coherent Interleaved Image-Text Dataset for Multimodal Understanding and Generation](../../CVPR2025/multimodal_vlm/comm_a_coherent_interleaved_image-text_dataset_for_multimodal_understanding_and_.md)
+- [\[CVPR 2025\] OpenING: A Comprehensive Benchmark for Judging Open-ended Interleaved Image-Text Generation](../../CVPR2025/multimodal_vlm/opening_a_comprehensive_benchmark_for_judging_open-ended_interleaved_image-text_.md)
+- [\[ICLR 2026\] Bee: A High-Quality Corpus and Full-Stack Suite to Unlock Advanced Fully Open MLLMs](bee_a_high-quality_corpus_and_full-stack_suite_to_unlock_advanced_fully_open_mll.md)
 - [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](../../CVPR2026/multimodal_vlm/chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
 - [\[ICLR 2026\] Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment](grounding-iqa_grounding_multimodal_language_model_for_image_quality_assessment.md)
-- [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
-- [\[ICLR 2026\] K-Sort Eval: Efficient Preference Evaluation for Visual Generation via Corrected VLM-as-a-Judge](k-sort_eval_efficient_preference_evaluation_for_visual_generation_via_corrected_.md)
 
 </div>
 

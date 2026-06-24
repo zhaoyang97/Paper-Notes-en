@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] SketchVL enables MLLMs to "draw" each step of chart reasoning as visual annotation actions (boxes, lines, points, circles) on the image. It introduces the FinePO algorithm to **redistribute** the coarse-grained advantage of an entire trajectory to each step based on scores from a Process Reward Model (FinePRM). This ac
+  [CVPR 2026][Multimodal VLM][Chart Understanding] SketchVL enables MLLMs to "draw" each step of chart reasoning as visual annotation actions (boxes, lines, points, circles) on the image. It introduces the FinePO algorithm to **redistribute** the coarse-grained advantage of an entire trajectory to each step based on scores from a Process Reward Model (FinePRM). This achieves step-level fine-grained credit assignment, yielding an average improvement of 7.23% over base models acr…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - Reasoning on Image
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chart Understanding"
+  - "Reinforcement Learning"
+  - "Process Reward Model"
+  - "Credit Assignment"
+  - "Reasoning on Image"
 date: 2026-05-08
-content_hash: 41cc559fdd773795
+content_hash: 087b78f7a091a8ab
 ---
+
 # SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More
 
 **Conference**: CVPR 2026  
@@ -154,11 +158,11 @@ Further process quality evaluation (Table 2, using FinePRM as an automated evalu
 
 ## Related Papers
 
-- [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
 - [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)
-- [\[ACL 2026\] Learning More from Less: Exploiting Counterfactuals for Data-Efficient Chart Understanding](../../ACL2026/multimodal_vlm/learning_more_from_less_exploiting_counterfactuals_for_data-efficient_chart_unde.md)
+- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](language-driven_fine-grained_retrieval.md)
+- [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
+- [\[CVPR 2026\] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding](artimuse_fine-grained_image_aesthetics_assessment_with_joint_scoring_and_expert-.md)
 
 </div>
 

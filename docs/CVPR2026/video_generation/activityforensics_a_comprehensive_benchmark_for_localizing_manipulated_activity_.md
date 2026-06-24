@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] This paper introduces the activity-level video forgery localization task and the ActivityForensics large-scale benchmark (6K+ forged clips). It utilizes a grounding-assisted automated data construction pipeline to create highly realistic activity manipulations and proposes the Temporal Artifact Diffuser (TADiff) baseli
+  [CVPR 2026][Video Generation][Video Manipulation Detection] This paper introduces the activity-level video forgery localization task and the ActivityForensics large-scale benchmark (6K+ forged clips). It utilizes a grounding-assisted automated data construction pipeline to create highly realistic activity manipulations and proposes the Temporal Artifact Diffuser (TADiff) baseline, which amplifies forgery clues through diffusion-based feature regularization.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Manipulation Detection"
+  - "Activity-level Forgery"
+  - "Temporal Localization"
+  - "Diffusion Feature Regularization"
+  - "Video Forensics"
 date: 2026-05-08
-content_hash: b0aa844f13fafa5f
+content_hash: 74ee2e26c5606b79
 ---
+
 # ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos
 
 **Conference**: CVPR 2026  
@@ -153,7 +159,7 @@ Module ablation (noise = forward injection, denoise = reverse denoising):
 - [\[CVPR 2026\] VABench: A Comprehensive Benchmark for Audio-Video Generation](vabench_a_comprehensive_benchmark_for_audio-video_generation.md)
 - [\[ICML 2026\] Explainable Forensics of Manipulated Segments in Untrimmed Long Videos](../../ICML2026/video_generation/explainable_forensics_of_manipulated_segments_in_untrimmed_long_videos.md)
 - [\[CVPR 2026\] VideoRealBench: A Chain-of-Thought Realism Evaluation Benchmark for Generated Human-Centric Videos](videorealbench_a_chain-of-thought_realism_evaluation_benchmark_for_generated_hum.md)
-- [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](../../ICLR2026/video_generation/drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
+- [\[ICML 2026\] V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation](../../ICML2026/video_generation/v2v-bench_a_comprehensive_benchmark_for_video-to-video_generation_evaluation.md)
 - [\[CVPR 2026\] SemVideo: Reconstructs What You Watch from Brain Activity via Hierarchical Semantic Guidance](semvideo_reconstructs_what_you_watch_from_brain_activity_via_hierarchical_semant.md)
 
 </div>

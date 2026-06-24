@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients
 description: >-
-  [NeurIPS 2025][Optimization][federated learning] This paper proposes Fed-NGA, an algorithm that aggregates client gradients via weighted averaging after $\ell_2$ normalization…
+  [NeurIPS 2025][Optimization][federated learning] This paper proposes Fed-NGA, an algorithm that aggregates client gradients via weighted averaging after $\ell_2$ normalization, achieving Byzantine robustness and resilience to data heterogeneity simultaneously at an extremely low time complexity of $\mathcal{O}(pM)$. Under non-convex loss functions, it is the first to prove zero optimality gap convergence under certain mild conditions.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Non-IID Data"
   - "Non-Convex Optimization"
 date: 2026-05-08
-content_hash: 2115beccf94e316c
+content_hash: 9ed51898dc667451
 ---
 
 # Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients
@@ -141,10 +141,10 @@ Gradient normalization as a general technique has been applied in settings such 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Streaming Federated Learning with Markovian Data](streaming_federated_learning_with_markovian_data.md)
+- [\[CVPR 2025\] Model Poisoning Attacks to Federated Learning via Multi-Round Consistency](../../CVPR2025/optimization/model_poisoning_attacks_to_federated_learning_via_multi-round_consistency.md)
 - [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
 - [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](../../ICML2026/optimization/delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
-- [\[NeurIPS 2025\] MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System](mar-fl_a_communication_efficient_peer-to-peer_federated_learning_system.md)
 
 </div>
 

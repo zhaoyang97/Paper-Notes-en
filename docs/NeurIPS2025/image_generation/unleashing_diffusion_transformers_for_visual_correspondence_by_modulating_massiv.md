@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unleashing Diffusion Transformers for Visual Correspondence by Modulating Massive Activations
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper identifies the massive activations phenomenon in Diffusion Transformers (DiTs) that renders features indiscriminable…
+  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper identifies the massive activations phenomenon in Diffusion Transformers (DiTs) that renders features indiscriminable, reveals its intrinsic connection to AdaLN, and proposes a training-free framework DiTF for extracting semantically discriminative features, surpassing DINO and SD models on visual correspondence tasks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Visual Correspondence"
   - "Feature Extraction"
 date: 2026-05-08
-content_hash: b07b082c03467e7c
+content_hash: f7f14db33ae67fbc
 ---
 
 # Unleashing Diffusion Transformers for Visual Correspondence by Modulating Massive Activations
@@ -137,11 +137,11 @@ This paper identifies the massive activations phenomenon in Diffusion Transforme
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation](mind-the-glitch_visual_correspondence_for_detecting_inconsistencies_in_subject-d.md)
+- [\[ICLR 2026\] Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers](../../ICLR2026/image_generation/massive_activations_are_the_key_to_local_detail_synthesis_in_diffusion_transform.md)
 - [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](scaling_diffusion_transformers_efficiently_via_μp.md)
+- [\[NeurIPS 2025\] Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation](mind-the-glitch_visual_correspondence_for_detecting_inconsistencies_in_subject-d.md)
 - [\[NeurIPS 2025\] OmniSync: Towards Universal Lip Synchronization via Diffusion Transformers](omnisync_towards_universal_lip_synchronization_via_diffusion.md)
 - [\[NeurIPS 2025\] Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers](seg4diff_unveiling_open-vocabulary_segmentation_in_text-to-image_diffusion_trans.md)
-- [\[ICLR 2026\] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](../../ICLR2026/image_generation/a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)
 
 </div>
 

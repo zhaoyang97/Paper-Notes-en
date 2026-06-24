@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Hierarchical Circuit Symbolic Discovery Framework for Efficient Logic Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] HIS utilizes a "hierarchical symbolic tree" to distill the layer-wise message passing of GNNs into a lightweight, interpretable symbolic scoring function. It "generates" this tree end-to-end using a structure-aware Transformer and group-advantage PPO to accurately and rapidly identify invalid transformations in logic o
+  [ICLR2026][Reinforcement Learning][Logic Optimization] HIS utilizes a "hierarchical symbolic tree" to distill the layer-wise message passing of GNNs into a lightweight, interpretable symbolic scoring function. It "generates" this tree end-to-end using a structure-aware Transformer and group-advantage PPO to accurately and rapidly identify invalid transformations in logic optimization (LO) for chip design. Compared to state-of-the-art (SOTA) GNN inference…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Logic Optimization"
+  - "Symbolic Regression"
+  - "Hierarchical Symbolic Tree"
+  - "PPO"
+  - "Interpretable GNN Distillation"
 date: 2026-05-08
-content_hash: 7f72b1fdd83e4ba7
+content_hash: 9e8f087db013e823
 ---
+
 # A Hierarchical Circuit Symbolic Discovery Framework for Efficient Logic Optimization
 
 **Conference**: ICLR2026  
@@ -140,8 +145,21 @@ Running HIS-Mfs2 twice (2HIS-Mfs2) yields circuits that are both smaller and fas
 - Value: ⭐⭐⭐⭐⭐ (Addresses the critical "GNN is too slow for EDA" problem with a deployment-ready solution).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] EGG-SR: Embedding Symbolic Equivalence into Symbolic Regression via Equality Graph](egg-sr_embedding_symbolic_equivalence_into_symbolic_regression_via_equality_grap.md)
+- [\[ICLR 2026\] Direct Preference Optimization for Primitive-Enabled Hierarchical RL: A Bilevel Approach](direct_preference_optimization_for_primitive-enabled_hierarchical_rl_a_bilevel_a.md)
+- [\[ICLR 2026\] AutoQD: Automatic Discovery of Diverse Behaviors with Quality-Diversity Optimization](autoqd_automatic_discovery_of_diverse_behaviors_with_quality-diversity_optimizat.md)
+- [\[AAAI 2026\] DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs](../../AAAI2026/reinforcement_learning/deepprooflog_efficient_proving_in_deep_stochastic_logic_programs.md)
+- [\[ICLR 2026\] Parameter-Efficient Reinforcement Learning using Prefix Optimization](parameter-efficient_reinforcement_learning_using_prefix_optimization.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

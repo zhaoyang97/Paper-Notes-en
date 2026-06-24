@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Online Generic Event Boundary Detection
 description: >-
-  [ICCV2025][Segmentation][Online event boundary detection] This paper proposes Online Generic Event Boundary Detection (On-GEBD) as a new task—detecting event boundaries in real time from streaming video—and introduces th…
+  [ICCV2025][Segmentation][Online event boundary detection] This paper proposes Online Generic Event Boundary Detection (On-GEBD) as a new task—detecting event boundaries in real time from streaming video—and introduces the ESTimator framework inspired by the cognitive science Event Segmentation Theory (EST). Through the collaboration of a Consistent Event Anticipator (CEA) and an Online Boundary Discriminator (OBD), ESTimator achieves an Avg F1 of 0.748 on Kinetics-GEBD…
 tags:
   - "ICCV2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "dynamic thresholding"
   - "Transformer decoder"
 date: 2026-05-08
-content_hash: 542948cf8d8c4097
+content_hash: 8be75dd0db03512e
 ---
 
 # Online Generic Event Boundary Detection
@@ -192,9 +192,9 @@ ESTimator achieves state-of-the-art performance while maintaining real-time proc
 
 - [\[ICCV 2025\] Online Reasoning Video Segmentation with Just-in-Time Digital Twins](online_reasoning_video_segmentation_with_just-in-time_digital_twins.md)
 - [\[NeurIPS 2025\] GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset](../../NeurIPS2025/segmentation/gtpbd_a_fine-grained_global_terraced_parcel_and_boundary_dataset.md)
-- [\[NeurIPS 2025\] Re-coding for Uncertainties: Edge-awareness Semantic Concordance for Resilient Event-RGB Segmentation](../../NeurIPS2025/segmentation/re-coding_for_uncertainties_edge-awareness_semantic_concordance_for_resilient_ev.md)
-- [\[CVPR 2026\] PRUE: A Practical Recipe for Field Boundary Segmentation at Scale](../../CVPR2026/segmentation/prue_a_practical_recipe_for_field_boundary_segmentation_at_scale.md)
-- [\[ICCV 2025\] LEGION: Learning to Ground and Explain for Synthetic Image Detection](legion_learning_to_ground_and_explain_for_synthetic_image_detection.md)
+- [\[ICML 2025\] unMORE: Unsupervised Multi-Object Segmentation via Center-Boundary Reasoning](../../ICML2025/segmentation/unmore_unsupervised_multi-object_segmentation_via_center-boundary_reasoning.md)
+- [\[CVPR 2026\] Boundary-Responsive Differentiable Gating for Superpixel-Based Segmentation](../../CVPR2026/segmentation/boundary-responsive_differentiable_gating_for_superpixel-based_segmentation.md)
+- [\[ECCV 2024\] Un-EVIMO: Unsupervised Event-based Independent Motion Segmentation](../../ECCV2024/segmentation/un-evimo_unsupervised_event-based_independent_motion_segmentation.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Multi-turn Evaluation of Anthropomorphic Behaviours in Large Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-Judge] This paper introduces **AnthroBench**, a scalable evaluation benchmark that utilizes an LLM to simulate users, automatically executes multi-turn dialogues, and employs multiple LLM judges to annotate 14 types of anthropomorphic behaviors. A human experiment ($N=1101$) demonstrates that these automated behavioral measur
+  [ICLR 2026][LLM Evaluation][Anthropomorphism] This paper introduces **AnthroBench**, a scalable evaluation benchmark that utilizes an LLM to simulate users, automatically executes multi-turn dialogues, and employs multiple LLM judges to annotate 14 types of anthropomorphic behaviors. A human experiment ($N=1101$) demonstrates that these automated behavioral measurements effectively predict human perceptions of AI anthropomorphism. furthermore…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Anthropomorphism"
+  - "multi-turn evaluation"
+  - "user simulation"
+  - "LLM-as-Judge"
+  - "construct validity"
+  - "human subjects validation"
 date: 2026-05-08
-content_hash: f9ba8030aff7f94b
+content_hash: eabe4b212e63a3fc
 ---
+
 # Multi-turn Evaluation of Anthropomorphic Behaviours in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -118,11 +124,11 @@ flowchart LR
 
 ## Related Papers
 
-- [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](../../ACL2026/llm_evaluation/evaluating_temporal_consistency_in_multi-turn_language_models.md)
+- [\[ICLR 2026\] ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models](chemeval_a_multi-level_and_fine-grained_chemical_capability_evaluation_for_large.md)
 - [\[ICLR 2026\] LLMs Get Lost In Multi-Turn Conversation](llms_get_lost_in_multi-turn_conversation.md)
+- [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](../../ACL2026/llm_evaluation/evaluating_temporal_consistency_in_multi-turn_language_models.md)
 - [\[ICLR 2026\] SparseEval: Efficient Evaluation of Large Language Models by Sparse Optimization](sparseeval_efficient_evaluation_of_large_language_models_by_sparse_optimization.md)
 - [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Models](prompt_and_parameter_co-optimization_for_large_language_models.md)
-- [\[ICLR 2026\] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](dont_passk_a_bayesian_framework_for_large_language_model_evaluation.md)
 
 </div>
 

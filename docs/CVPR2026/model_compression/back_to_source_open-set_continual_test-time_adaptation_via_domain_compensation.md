@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation
 description: >-
-  [CVPR 2026][Others][Paper Note] Aiming at the Open-set Continual Test-Time Adaptation (OCTTA) scenario where "continual domain drift" and "unknown novel classes" occur simultaneously, this paper proposes DOCO. The method first splits the current batch into ID-like and OOD-like subsets. It then learns a visual prompt on the ID samples to "pull" featur
+  [CVPR 2026][Model Compression][Test-Time Adaptation] Aiming at the Open-set Continual Test-Time Adaptation (OCTTA) scenario where "continual domain drift" and "unknown novel classes" occur simultaneously, this paper proposes DOCO. The method first splits the current batch into ID-like and OOD-like subsets. It then learns a visual prompt on the ID samples to "pull" feature statistics back to the source domain. Finally, this prompt is directly reused for OOD samples in the same…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Test-Time Adaptation"
+  - "Continual Learning"
+  - "Open-Set"
+  - "OOD Detection"
+  - "Visual Prompt Learning"
 date: 2026-05-08
-content_hash: 60061ac1b0457f0b
+content_hash: e1a236ec6c014fcd
 ---
+
 # Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ Breaking down the three main components—Sample Splitting (S), OOD Propagation 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
-- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
-- [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
-- [\[CVPR 2026\] Dance Across Shifts: Forward-Facilitation Continual Test-Time Adaptation through Dynamic Style Bridging](dance_across_shifts_forward-facilitation_continual_test-time_adaptation_through_.md)
-- [\[ICML 2025\] Ranked Entropy Minimization for Continual Test-Time Adaptation](../../ICML2025/others/ranked_entropy_minimization_for_continual_test-time_adaptation.md)
+- [\[CVPR 2026\] Cross-Architecture Adaptation: Cloud-Edge Continual Test-Time Adaptation with Dynamic Sampling and Heterogeneous Distillation](cross-architecture_adaptation_cloud-edge_continual_test-time_adaptation_with_dyn.md)
+- [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
+- [\[CVPR 2026\] DiT-Distill: Open-Set Fine-Grained Retrieval via Generative Curriculum Knowledge](dit-distill_open-set_fine-grained_retrieval_via_generative_curriculum_knowledge.md)
+- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
+- [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
 
 </div>
 

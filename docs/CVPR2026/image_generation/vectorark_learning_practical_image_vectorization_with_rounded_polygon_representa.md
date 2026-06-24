@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VectorArk: Learning Practical Image Vectorization with Rounded Polygon Representation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] VectorArk redesigns the "Raster to Vector (SVG)" task into a generative-model-friendly rounded polygon representation. Combined with outline-based input, vectorization-driven degradation training, and DINO-ranked test-time scaling, a multimodal LLM with only 1B parameters significantly outperforms StarVector and OmniSV
+  [CVPR 2026][Image Generation][Image Vectorization] VectorArk redesigns the "Raster to Vector (SVG)" task into a generative-model-friendly rounded polygon representation. Combined with outline-based input, vectorization-driven degradation training, and DINO-ranked test-time scaling, a multimodal LLM with only 1B parameters significantly outperforms StarVector and OmniSVG in geometric completeness and artifact removal on real-world tasks (including T2I outputs).
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Vectorization"
+  - "SVG Generation"
+  - "Rounded Polygon Representation"
+  - "Degradation Model"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 867af3b956355fa3
+content_hash: 57d40e7b34e76c95
 ---
+
 # VectorArk: Learning Practical Image Vectorization with Rounded Polygon Representation
 
 **Conference**: CVPR 2026  
@@ -128,6 +134,7 @@ Evaluated on two SVG benchmarks (SArena, SVGenius) across Easy/Medium/Hard diffi
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical for real-world applications by bridging the gap between synthetic benchmarks and T2I outputs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -136,7 +143,7 @@ Evaluated on two SVG benchmarks (SArena, SVGenius) across Easy/Medium/Hard diffi
 - [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
 - [\[CVPR 2026\] SketchAssist: A Practical Assistant for Semantic Edits and Precise Local Redrawing](sketchassist_a_practical_assistant_for_semantic_edits_and_precise_local_redrawin.md)
 - [\[CVPR 2026\] Diversity over Uniformity: Rethinking Representation in Generated Image Detection](diversity_over_uniformity_rethinking_representation_in_generated_image_detection.md)
-- [\[CVPR 2026\] MeanFlow Transformers with Representation Autoencoders](meanflow_transformers_with_representation_autoencoders.md)
+- [\[ICLR 2026\] Learning AND-OR Templates for Compositional Representation in Art and Design](../../ICLR2026/image_generation/learning_andor_templates_for_compositional_representation_in_art_and_design.md)
 
 </div>
 

@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Group Representational Position Encoding (GRAPE)
 description: >-
-  [ICLR 2026][LLM Efficiency][RoPE] Ours proposes the GRAPE framework to unify the multiplicative (RoPE) and additive (ALiBi/FoX) position encoding families in Transformers based on group actions. It proves RoPE and ALiBi are exact special cases and introduces a path-integral additive variant, GRAPE-AP, which outperforms existing methods on downstream ta
+  [ICLR 2026][LLM Efficiency][Position Encoding] Ours proposes the GRAPE framework to unify the multiplicative (RoPE) and additive (ALiBi/FoX) position encoding families in Transformers based on group actions. It proves RoPE and ALiBi are exact special cases and introduces a path-integral additive variant, GRAPE-AP, which outperforms existing methods on downstream tasks.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - RoPE
-  - ALiBi
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Position Encoding"
+  - "Group Theory"
+  - "RoPE"
+  - "ALiBi"
+  - "Lie Groups"
+  - "Rotary Encoding"
+  - "Long Context"
 date: 2026-05-08
-content_hash: d2010e8ed38eb5a4
+content_hash: 442d7d6c5bcecb86
 ---
+
 # Group Representational Position Encoding (GRAPE)
 
 **Conference**: ICLR 2026  
@@ -155,11 +161,11 @@ Using a monotonic 1-Lipschitz link function $g$ (e.g., $g(z)=\log\mathrm{Sigmoid
 
 ## Related Papers
 
+- [\[ICLR 2026\] Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs](beyond_real_imaginary_extension_of_rotary_position_embeddings_for_long-context_l.md)
+- [\[ICLR 2026\] From Collapse to Control: Understanding and Extending Context Length in Emerging Hybrid Models via Universal Position Interpolation](from_collapse_to_control_understanding_and_extending_context_length_in_emerging_.md)
 - [\[ACL 2025\] LaMPE: Length-aware Multi-grained Positional Encoding for Adaptive Long-context Scaling Without Training](../../ACL2025/llm_efficiency/adaptive_grouped_pe_context_window.md)
 - [\[ICLR 2026\] Extending the Context of Pretrained LLMs by Dropping Their Positional Embedding](extending_the_context_of_pretrained_llms_by_dropping_their_positional_embedding.md)
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
 - [\[ICML 2026\] RePo: Language Models with Context Re-Positioning](../../ICML2026/llm_efficiency/repo_language_models_with_context_re-positioning.md)
-- [\[ICLR 2026\] Test-Time Training Done Right](test-time_training_done_right.md)
 
 </div>
 

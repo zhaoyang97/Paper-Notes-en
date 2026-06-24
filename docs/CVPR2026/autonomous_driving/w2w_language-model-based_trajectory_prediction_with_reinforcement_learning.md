@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning
 description: >-
-  [CVPR 2026][Autonomous Driving][Reinforcement Learning] Pedestrian trajectory prediction is reformulated as a "parsable language generation" task. Multi-pedestrian coordinates and interaction relationships (companion/following/obstacle) are translated into fixed-format text prompts. T5-Small undergoes full-parameter SFT to learn the output format, followed by reinforcement
+  [CVPR 2026][Autonomous Driving][Trajectory Prediction] Pedestrian trajectory prediction is reformulated as a "parsable language generation" task. Multi-pedestrian coordinates and interaction relationships (companion/following/obstacle) are translated into fixed-format text prompts. T5-Small undergoes full-parameter SFT to learn the output format, followed by reinforcement learning alignment using PPO+LoRA with a "ADE error + boundary penalty" reward. This achieves ADE/FDE com…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Reinforcement Learning
-  - PPO
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Trajectory Prediction"
+  - "Language Models"
+  - "Reinforcement Learning"
+  - "PPO"
+  - "Scene Compliance"
 date: 2026-05-08
-content_hash: 7e469bd0dc82659b
+content_hash: 872dbb359f7de86a
 ---
+
 # W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -160,7 +164,7 @@ Ablation on prompt length (Table 4) shows that long scene descriptions (W2W-SFT+
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
+- [\[CVPR 2026\] EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving](ee-rl_vision_language_guided_reinforcement_learning_with_explorer_and_expert_mod.md)
 - [\[CVPR 2026\] Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction](recover_to_predict_progressive_retrospective_learning_for_variable-length_trajec.md)
 - [\[CVPR 2026\] ReMoT: Reinforcement Learning with Motion Contrast Triplets](remot_reinforcement_learning_with_motion_contrast_triplets.md)
 - [\[CVPR 2026\] RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation](rag-tp_a_general_framework_for_vehicle_trajectory_prediction_via_retrieval-augme.md)

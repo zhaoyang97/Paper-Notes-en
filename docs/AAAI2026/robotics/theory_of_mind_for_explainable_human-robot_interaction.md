@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Theory of Mind for Explainable Human-Robot Interaction
 description: >-
-  [AAAI 2026][Robotics][Theory of Mind] This paper proposes positioning Theory of Mind (ToM) as a form of Explainable AI (XAI), systematically evaluates existing ToM research in HRI using the seven criteria of the VXAI fra…
+  [AAAI 2026][Robotics][Theory of Mind] This paper proposes positioning Theory of Mind (ToM) as a form of Explainable AI (XAI), systematically evaluates existing ToM research in HRI using the seven criteria of the VXAI framework, identifies critical deficiencies (most notably the absence of fidelity assessment), and advocates for integrating ToM into XAI frameworks to achieve user-oriented explanations.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "VXAI Framework"
   - "User-Centered Evaluation"
 date: 2026-05-08
-content_hash: 2547c63e30f9af4d
+content_hash: 90bb890331a59501
 ---
 
 # Theory of Mind for Explainable Human-Robot Interaction
@@ -175,10 +175,10 @@ This paper substitutes comparative analysis for ablation experiments:
 ## Related Papers
 
 - [\[AAAI 2026\] A Computable Game-Theoretic Framework for Multi-Agent Theory of Mind](a_computable_game-theoretic_framework_for_multi-agent_theory_of_mind.md)
+- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](../../CVPR2026/robotics/beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
 - [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](../../NeurIPS2025/robotics/mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
+- [\[CVPR 2026\] SIR: Structured Image Representations for Explainable Robot Learning](../../CVPR2026/robotics/sir_structured_image_representations_for_explainable_robot_learning.md)
 - [\[AAAI 2026\] RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms](rlslm_a_hybrid_reinforcement_learning_framework_aligning_rule-based_social_locom.md)
-- [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
-- [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
 
 </div>
 

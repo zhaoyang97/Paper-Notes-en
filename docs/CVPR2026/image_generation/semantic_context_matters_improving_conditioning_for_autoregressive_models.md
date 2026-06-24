@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Semantic Context Matters: Improving Conditioning for Autoregressive Models
 description: >-
-  [CVPR 2026][Image Generation][DINOv2] SCAR replaces the "prefix conditioning" of autoregressive image editing from lengthy, semantically sparse VQ tokens to dense semantic prefixes (Compressed Semantic Prefilling) extracted by a frozen visual foundation model and compressed 4× via a learnable module. During decoding, an auxiliary loss is used to align the
+  [CVPR 2026][Image Generation][Autoregressive Image Editing] SCAR replaces the "prefix conditioning" of autoregressive image editing from lengthy, semantically sparse VQ tokens to dense semantic prefixes (Compressed Semantic Prefilling) extracted by a frozen visual foundation model and compressed 4× via a learnable module. During decoding, an auxiliary loss is used to align the "internal hidden states" of the source image with the target image semantics (Semantic Alignment Gui…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DINOv2
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Autoregressive Image Editing"
+  - "Prefix Conditioning"
+  - "Semantic Compression"
+  - "DINOv2"
+  - "Hidden State Alignment"
 date: 2026-05-08
-content_hash: 9645a6b7046a1060
+content_hash: 153d479f874bfa04
 ---
+
 # Semantic Context Matters: Improving Conditioning for Autoregressive Models
 
 **Conference**: CVPR 2026  
@@ -159,10 +164,10 @@ The total loss is $L = L_{CE} + L_{pres} + \delta L_{align}$, with $\delta=0.5$.
 ## Related Papers
 
 - [\[ICLR 2026\] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](../../ICLR2026/image_generation/mvar_visual_autoregressive_modeling_with_scale_and_spatial_markovian_conditionin.md)
-- [\[CVPR 2025\] Conditional Balance: Improving Multi-Conditioning Trade-Offs in Image Generation](../../CVPR2025/image_generation/conditional_balance_improving_multi-conditioning_trade-offs_in_image_generation.md)
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
-- [\[CVPR 2026\] Understanding, Accelerating, and Improving MeanFlow Training](understanding_accelerating_and_improving_meanflow_training.md)
-- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
+- [\[CVPR 2025\] Conditional Balance: Improving Multi-Conditioning Trade-Offs in Image Generation](../../CVPR2025/image_generation/conditional_balance_improving_multi-conditioning_trade-offs_in_image_generation.md)
+- [\[CVPR 2026\] Breaking Semantic Boundaries: Distribution-Guided Semantic Exploration for Creative Generation](breaking_semantic_boundaries_distribution-guided_semantic_exploration_for_creati.md)
+- [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
 
 </div>
 

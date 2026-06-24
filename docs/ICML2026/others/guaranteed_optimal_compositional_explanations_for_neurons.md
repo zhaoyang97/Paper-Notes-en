@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Guaranteed Optimal Compositional Explanations for Neurons
 description: >-
-  [ICML 2026][Others][Paper Note] Compositional explanations typically use beam search to find the "logical formula that best aligns with neuron activations," but beam search lacks optimality guarantees. This paper proposes an exact decomposition of IoU (dIoU) + an admissible heuristic + a best-first optimal algorithm. For the first time, it **guarante
+  [ICML 2026 Oral][Neuron explanation] Compositional explanations typically use beam search to find the "logical formula that best aligns with neuron activations," but beam search lacks optimality guarantees. This paper proposes an exact decomposition of IoU (dIoU) + an admissible heuristic + a best-first optimal algorithm. For the first time, it **guarantees a globally optimal solution** within a runtime comparable to beam search, revealing that 10–40% of explanations in previ…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026 Oral"
+  - "Neuron explanation"
+  - "IoU decomposition"
+  - "optimal compositional explanations"
+  - "heuristic search"
+  - "beam search"
 date: 2026-05-08
-content_hash: 99637b75caec1f09
+content_hash: de86c9466192a089
 ---
+
 # Guaranteed Optimal Compositional Explanations for Neurons
 
 **Conference**: ICML 2026 Oral  
@@ -143,10 +148,10 @@ At high complexity, 10–40% of beam search explanations deviate from the optimu
 ## Related Papers
 
 - [\[AAAI 2026\] Formal Abductive Latent Explanations for Prototype-Based Networks](../../AAAI2026/others/formal_abductive_latent_explanations_for_prototype-based_networks.md)
-- [\[ICML 2026\] Optimal Regularization for Performative Learning](optimal_regularization_for_performative_learning.md)
-- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/others/compositional_diffusion_long_horizon_planning.md)
 - [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](../../CVPR2026/others/simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
+- [\[ICML 2026\] Optimal Regularization for Performative Learning](optimal_regularization_for_performative_learning.md)
 - [\[ICCV 2025\] On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations](../../ICCV2025/others/on_the_complexity-faithfulness_trade-off_of_gradient-based_explanations.md)
+- [\[ACL 2025\] Neuron Empirical Gradient: Discovering and Quantifying Neurons' Global Linear Controllability](../../ACL2025/others/neuron_empirical_gradient_discovering_and_quantifying_neurons_global_linear_cont.md)
 
 </div>
 

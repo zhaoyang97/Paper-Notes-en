@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Anonymity Breaks: Identifying Models Behind Text-to-Image Leaderboards
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Authors discover that different Text-to-Image (T2I) models generate images for the same prompt that form tight, distinct clusters in image embedding spaces. Applying a **zero-training, black-box, nearest-centroid classification** method across 22 models and 280 prompts (150k images), they identify the "anonymous" sourc
+  [CVPR 2026][Image Generation][Text-to-Image] Authors discover that different Text-to-Image (T2I) models generate images for the same prompt that form tight, distinct clusters in image embedding spaces. Applying a **zero-training, black-box, nearest-centroid classification** method across 22 models and 280 prompts (150k images), they identify the "anonymous" source model with 91% top-1 accuracy, undermining the anonymity assumption essential for fair voting-based T2I leaderboa…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Leaderboard Deanonymization"
+  - "Model Fingerprinting"
+  - "Embedding Clustering"
+  - "Voting-based Evaluation Security"
 date: 2026-05-08
-content_hash: 1b25b8a944d92d2f
+content_hash: 2d4615624c6061ce
 ---
+
 # When Anonymity Breaks: Identifying Models Behind Text-to-Image Leaderboards
 
 **Conference**: CVPR 2026  
@@ -159,15 +165,16 @@ Case 2 shows that even without knowledge of other models, model signatures are s
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] When Pretty Isn't Useful: Investigating Why Modern Text-to-Image Models Fail as Reliable Training Data Generators](when_pretty_isnt_useful_investigating_why_modern_text-to-image_models_fail_as_re.md)
+- [\[CVPR 2026\] Selectively Extracting and Injecting Visual Attributes into Text-to-Image Models](selectively_extracting_and_injecting_visual_attributes_into_text-to-image_models.md)
 - [\[CVPR 2026\] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](when_safety_collides_resolving_multi-category_harmful_conflicts_in_text-to-image.md)
-- [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
 - [\[CVPR 2026\] The Drift Kernel: Why Diffusion Models Change Even When Told Not To](the_drift_kernel_why_diffusion_models_change_even_when_told_not_to.md)
-- [\[CVPR 2026\] When Understanding Becomes a Risk: Authenticity and Safety Risks in the Emerging Image Generation Paradigm](when_understanding_becomes_a_risk_authenticity_and_safety_risks_in_the_emerging_.md)
+- [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
 
 </div>
 

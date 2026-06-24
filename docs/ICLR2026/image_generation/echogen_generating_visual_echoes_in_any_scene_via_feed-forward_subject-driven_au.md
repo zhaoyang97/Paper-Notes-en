@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EchoGen: Generating Visual Echoes in Any Scene via Feed-Forward Subject-Driven Auto-Regressive Model
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] EchoGen introduces "subject-driven generation" to the Visual Autoregressive (VAR/Infinity) framework for the first time. By using a dual-path injection mechanism—a semantic path and a content path—the model decouples subject "identity" from "details." It achieves fidelity comparable to or better than diffusion-based me
+  [ICLR 2026][Image Generation][Visual Autoregression (VAR)] EchoGen introduces "subject-driven generation" to the Visual Autoregressive (VAR/Infinity) framework for the first time. By using a dual-path injection mechanism—a semantic path and a content path—the model decouples subject "identity" from "details." It achieves fidelity comparable to or better than diffusion-based methods on DreamBench, while reducing sampling latency from 10s+ to 0.5–5.2s.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Autoregression (VAR)"
+  - "Subject-Driven Generation"
+  - "Feed-Forward"
+  - "Dual-Path Injection"
+  - "Zero-Shot Customization"
 date: 2026-05-08
-content_hash: 861fbea469016624
+content_hash: 0940d2dd7d39bb35
 ---
+
 # EchoGen: Generating Visual Echoes in Any Scene via Feed-Forward Subject-Driven Auto-Regressive Model
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding
 description: >-
-  [CVPR 2026][Signal & Communications][Vision-Language Model] This paper proposes ChartNet, a million-scale chart understanding dataset containing 1.5 million high-quality multimodal aligned samples. Through a code-guided synthesis pipeline, it generates quintuplet data (code, image, data table, text description, and reasoning-based QA) covering 24 chart types and 6 plotting libr
+  [CVPR 2026][Multimodal VLM][Chart understanding] This paper proposes ChartNet, a million-scale chart understanding dataset containing 1.5 million high-quality multimodal aligned samples. Through a code-guided synthesis pipeline, it generates quintuplet data (code, image, data table, text description, and reasoning-based QA) covering 24 chart types and 6 plotting libraries. A 2B model fine-tuned on ChartNet outperforms GPT-4o and 72B open-source models.
 tags:
-  - CVPR 2026
-  - Signal & Communications
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chart understanding"
+  - "multimodal dataset"
+  - "code-guided synthesis"
+  - "vision-language models"
+  - "data visualization"
 date: 2026-05-08
-content_hash: bf3154fd7fdf541e
+content_hash: 849826f7b7fd302c
 ---
+
 # ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding
 
 **Conference**: CVPR 2026  
@@ -165,11 +170,11 @@ Ultra-compact models also gained significant capabilities: SmolVLM-256M and Gran
 
 ## Related Papers
 
-- [\[CVPR 2026\] MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals](merlin_building_low-snr_robust_multimodal_llms_for_electromagnetic_signals.md)
-- [\[AAAI 2026\] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](../../AAAI2026/signal_comm/balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)
-- [\[CVPR 2026\] CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space](clay_conditional_visual_similarity.md)
-- [\[ECCV 2024\] Defect Spectrum: A Granular Look of Large-Scale Defect Datasets with Rich Semantics](../../ECCV2024/signal_comm/defect_spectrum_a_granular_look_of_large-scale_defect_datasets_with_rich_semanti.md)
-- [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](../../ICCV2025/signal_comm/boosting_multimodal_learning_via_disentangled_gradient_learning.md)
+- [\[CVPR 2026\] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset](towards_open-vocabulary_industrial_defect_understanding_with_a_large-scale_multi.md)
+- [\[ICLR 2026\] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](../../ICLR2026/multimodal_vlm/tablet_a_large-scale_dataset_for_robust_visual_table_understanding.md)
+- [\[ICLR 2026\] ChartGalaxy: A Dataset for Infographic Chart Understanding and Generation](../../ICLR2026/multimodal_vlm/chartgalaxy_a_dataset_for_infographic_chart_understanding_and_generation.md)
+- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
+- [\[CVPR 2026\] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More](sketchvl_policy_optimization_via_fine-grained_credit_assignment_for_chart_unders.md)
 
 </div>
 

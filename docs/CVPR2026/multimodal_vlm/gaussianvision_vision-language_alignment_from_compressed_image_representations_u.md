@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GaussianVision: Vision-Language Alignment from Compressed Image Representations using 2D Gaussian Splatting
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] This work uses a set of anisotropic 2D Gaussians (position + covariance + color) as a compact surrogate representation for images fed into vision-language models. By "reusing a frozen RGB ViT backbone + a lightweight splat input head + two-stage transfer training," it achieves 3–23.5× compression of visual inputs and u
+  [CVPR 2026][Multimodal VLM][2D Gaussian Splatting] This work uses a set of anisotropic 2D Gaussians (position + covariance + color) as a compact surrogate representation for images fed into vision-language models. By "reusing a frozen RGB ViT backbone + a lightweight splat input head + two-stage transfer training," it achieves 3–23.5× compression of visual inputs and up to 31× faster loading on the 12.8M DataComp dataset. It maintains 90–98% of the zero-shot accuracy of RGB b…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "2D Gaussian Splatting"
+  - "Vision-Language Alignment"
+  - "CLIP"
+  - "Compressed Image Representations"
+  - "Visual Token Compression"
 date: 2026-05-08
-content_hash: da17c8864403090a
+content_hash: fe8951af455d9f09
 ---
+
 # GaussianVision: Vision-Language Alignment from Compressed Image Representations using 2D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Batched CUDA kernels achieve a 90.3× speedup for fitting compared to previous b
 ## Related Papers
 
 - [\[CVPR 2026\] Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment](proxy3d_efficient_3d_representations_for_vision-language_models_via_semantic_clu.md)
-- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
+- [\[CVPR 2026\] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding](see_what_i_mean_aligning_vision_and_language_representations_for_video_fine-grai.md)
 - [\[CVPR 2025\] 4D LangSplat: 4D Language Gaussian Splatting via Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/4d_langsplat_4d_language_gaussian_splatting_via_multimodal_large_language_models.md)
-- [\[CVPR 2026\] LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models](llmind_bio-inspired_training-free_adaptive_visual_representations_for_vision-lan.md)
-- [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
+- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
+- [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
 
 </div>
 

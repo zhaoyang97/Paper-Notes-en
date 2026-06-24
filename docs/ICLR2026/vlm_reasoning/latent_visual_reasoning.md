@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Latent Visual Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][MLLM] LVR enables Multimodal Large Language Models (MLLMs) to move beyond "thinking" solely in text space. Instead, it uses the LLM's last hidden states to autoregressively reconstruct question-related visual semantics directly in the visual embedding space ("think before speaking"). Combined with a modified GRPO reinforceme
+  [ICLR 2026][VLM Reasoning][Latent Space Reasoning] LVR enables Multimodal Large Language Models (MLLMs) to move beyond "thinking" solely in text space. Instead, it uses the LLM's last hidden states to autoregressively reconstruct question-related visual semantics directly in the visual embedding space ("think before speaking"). Combined with a modified GRPO reinforcement learning, this approach significantly outperforms the "Think about/with Images" paradigms on perception-in…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - MLLM
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Latent Space Reasoning"
+  - "Visual Semantic Reconstruction"
+  - "MLLM"
+  - "GRPO"
+  - "Fine-grained Visual Understanding"
 date: 2026-05-08
-content_hash: 8b0461d572e586c6
+content_hash: ff3ffd16cee64f7f
 ---
+
 # Latent Visual Reasoning
 
 **Conference**: ICLR 2026  
@@ -124,10 +128,10 @@ The backbone is Qwen2.5-VL 3B/7B; SFT uses VISUAL CoT (438k VQA with boxes) data
 ## Related Papers
 
 - [\[CVPR 2026\] Latent Implicit Visual Reasoning](../../CVPR2026/vlm_reasoning/latent_implicit_visual_reasoning.md)
+- [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](../../CVPR2026/vlm_reasoning/monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
 - [\[ICML 2026\] Imagination Helps Visual Reasoning, But Not Yet in Latent Space](../../ICML2026/vlm_reasoning/imagination_helps_visual_reasoning_but_not_yet_in_latent_space.md)
 - [\[ICLR 2026\] Composition-Grounded Data Synthesis for Visual Reasoning](composition-grounded_data_synthesis_for_visual_reasoning.md)
-- [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](../../CVPR2026/vlm_reasoning/monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
-- [\[CVPR 2026\] Machine Mental Imagery: Empower Multimodal Reasoning with Latent Visual Tokens](../../CVPR2026/vlm_reasoning/machine_mental_imagery_empower_multimodal_reasoning_with_latent_visual_tokens.md)
+- [\[ACL 2026\] Forest Before Trees: Latent Superposition for Efficient Visual Reasoning](../../ACL2026/vlm_reasoning/forest_before_trees_latent_superposition_for_efficient_visual_reasoning.md)
 
 </div>
 

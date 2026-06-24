@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][domain generalization] This paper proposes PDAF (Probabilistic Diffusion Alignment Framework), which explicitly estimates a Latent Domain Prior (LDP) via probabilistic diffusion modeling to prov…
+  [ICCV 2025][Segmentation][domain generalization] This paper proposes PDAF (Probabilistic Diffusion Alignment Framework), which explicitly estimates a Latent Domain Prior (LDP) via probabilistic diffusion modeling to provide domain-shift compensation for existing segmentation networks, achieving state-of-the-art cross-domain generalization without requiring paired target-domain samples.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "latent domain prior"
   - "probabilistic modeling"
 date: 2026-05-08
-content_hash: 84916a8606dbf230
+content_hash: 97da1e6b26c6549a
 ---
 
 # Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation
@@ -146,8 +146,8 @@ Contribution of each module (Cityscapes → other domains, DeepLabV3+ ResNet-50)
 - [\[ICCV 2025\] Exploiting Domain Properties in Language-Driven Domain Generalization for Semantic Segmentation](exploiting_domain_properties_in_language-driven_domain_generalization_for_semant.md)
 - [\[ICCV 2025\] On the Generalization of Representation Uncertainty in Earth Observation](on_the_generalization_of_representation_uncertainty_in_earth_observation.md)
 - [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](../../CVPR2026/segmentation/mrm_masked_representation_modeling_domain_adaptive.md)
-- [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](../../NeurIPS2025/segmentation/towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
-- [\[ICCV 2025\] PartField: Learning 3D Feature Fields for Part Segmentation and Beyond](partfield_learning_3d_feature_fields_for_part_segmentation_and_beyond.md)
+- [\[CVPR 2026\] Beyond Text: Visual Description Assembly by Probabilistic Model for CLIP-based Weakly Supervised Semantic Segmentation](../../CVPR2026/segmentation/beyond_text_visual_description_assembly_by_probabilistic_model_for_clip-based_we.md)
+- [\[CVPR 2025\] Universal Domain Adaptation for Semantic Segmentation](../../CVPR2025/segmentation/universal_domain_adaptation_for_semantic_segmentation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes
 description: >-
-  [CVPR 2026][3D Vision][OLAT] LuxRemix utilizes a generative single-image lighting decomposition model to break down complex indoor illumination into "One-Light-At-a-Time" (OLAT) components. These results are consistently propagated across all viewpoints via multi-view lighting harmonization and encoded into a relightable 3D Gaussian Splatting repr
+  [CVPR 2026][3D Vision][Indoor scene relighting] LuxRemix utilizes a generative single-image lighting decomposition model to break down complex indoor illumination into "One-Light-At-a-Time" (OLAT) components. These results are consistently propagated across all viewpoints via multi-view lighting harmonization and encoded into a relightable 3D Gaussian Splatting representation, enabling users to independently toggle, recolor, or adjust the brightness of each light source in re…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - OLAT
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Indoor scene relighting"
+  - "lighting decomposition"
+  - "OLAT"
+  - "multi-view consistency"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: 4955cfc487ed81e2
+content_hash: 4d48a99eec121f1e
 ---
+
 # LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,15 @@ General image editing models (ScribbleLight, Qwen-Image) lack precise per-light 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
+- [\[CVPR 2026\] Lighting in Motion: Spatiotemporal HDR Lighting Estimation](lighting_in_motion_spatiotemporal_hdr_lighting_estimation.md)
 - [\[CVPR 2026\] SunFaded: Illumination-Aware Gaussian Splatting for Dark Scenes with Camera-Mounted Active Lighting](sunfaded_illumination-aware_gaussian_splatting_for_dark_scenes_with_camera-mount.md)
 - [\[CVPR 2026\] UniLight: A Unified Representation for Lighting](unilight_a_unified_representation_for_lighting.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[ICCV 2025\] InstaScene: Towards Complete 3D Instance Decomposition and Reconstruction from Cluttered Scenes](../../ICCV2025/3d_vision/instascene_towards_complete_3d_instance_decomposition_and_reconstruction_from_cl.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Does Weak-to-strong Generalization Happen under Spurious Correlations?
 description: >-
-  [ICLR 2026][learning_theory][weak-to-strong generalization] This paper provides the first precise theoretical characterization of Weak-to-Strong (W2S) generalization on downstream tasks with spurious correlations. It demonstrates that W2S inevitably occurs when the minority group proportions in the weak teacher's labeled data and the unlabeled data are equal ($\eta_u=\eta_\ell$
+  [ICLR 2026][learning theory][superalignment] This paper provides the first precise theoretical characterization of Weak-to-Strong (W2S) generalization on downstream tasks with spurious correlations. It demonstrates that W2S inevitably occurs when the minority group proportions in the weak teacher's labeled data and the unlabeled data are equal ($\eta_u=\eta_\ell$); otherwise, the W2S gain decays by $(\eta_u-\eta_\ell)^2$ or even fails. Based on this…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - weak-to-strong generalization
-  - superalignment
-  - spurious correlations
-  - group imbalance
-  - ridgeless regression
-  - proportional asymptotics
+  - "ICLR 2026"
+  - "learning theory"
+  - "weak-to-strong generalization"
+  - "superalignment"
+  - "spurious correlations"
+  - "group imbalance"
+  - "ridgeless regression"
+  - "proportional asymptotics"
 date: 2026-05-08
-content_hash: d967f321e65d2d36
+content_hash: c6d2aa17b0d63f19
 ---
+
 # Does Weak-to-strong Generalization Happen under Spurious Correlations?
 
 **Conference**: ICLR 2026  
@@ -146,10 +147,10 @@ Values represent the mean over all $N, n$ combinations. Most entries are positiv
 ## Related Papers
 
 - [\[ICLR 2026\] Strong Correlations Induce Cause Only Predictions in Transformer Training](strong_correlations_induce_cause_only_predictions_in_transformer_training.md)
+- [\[ICLR 2026\] Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems](weak_correlations_as_the_underlying_principle_for_linearization_of_gradient-base.md)
 - [\[ICLR 2026\] Metric $k$-Clustering using only Weak Comparison Oracles](metric_k-clustering_using_only_weak_comparison_oracles.md)
 - [\[ICLR 2026\] The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens](the_softmax_bottleneck_does_not_limit_the_probabilities_of_the_most_likely_token.md)
 - [\[ICLR 2026\] Does the Data Processing Inequality Reflect Practice? On the Utility of Low-Level Tasks](does_the_data_processing_inequality_reflect_practice_on_the_utility_of_low-level.md)
-- [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
 
 </div>
 

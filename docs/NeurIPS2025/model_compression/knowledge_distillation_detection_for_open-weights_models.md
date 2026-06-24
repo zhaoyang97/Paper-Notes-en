@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Knowledge Distillation Detection for Open-weights Models
 description: >-
-  [NeurIPS 2025][Model Compression][knowledge distillation detection] This paper introduces the task of knowledge distillation detection, proposing a data-free input synthesis and statistical scoring framework to determine…
+  [NeurIPS 2025][Model Compression][knowledge distillation detection] This paper introduces the task of knowledge distillation detection, proposing a data-free input synthesis and statistical scoring framework to determine whether an open-weights student model has been distilled from a specific teacher model.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "statistical detection"
   - "text-to-image generation"
 date: 2026-05-08
-content_hash: 789f2abe5d859bbf
+content_hash: b6685514a970c786
 ---
 
 # Knowledge Distillation Detection for Open-weights Models
@@ -153,9 +153,9 @@ A three-stage detection pipeline: **Input Construction** → **Score Computation
 ## Related Papers
 
 - [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
+- [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](ai-generated_video_detection_via_perceptual_straightening.md)
 - [\[NeurIPS 2025\] Fin3R: Fine-tuning Feed-forward 3D Reconstruction Models via Monocular Knowledge Distillation](fin3r_fine-tuning_feed-forward_3d_reconstruction_models_via_monocular_knowledge_.md)
 - [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
-- [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](ai-generated_video_detection_via_perceptual_straightening.md)
 - [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
 
 </div>

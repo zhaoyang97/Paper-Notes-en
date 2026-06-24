@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VADv2: End-to-End Vectorized Autonomous Driving via Probabilistic Planning
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] VADv2 reformulates end-to-end driving planning from "regressing a single trajectory" to "learning a probability distribution over the action space." It first discretizes the continuous action space into a 4096-word planning vocabulary via furthest trajectory sampling, then uses a NeRF-inspired probabilistic field and c
+  [ICLR 2026][Autonomous Driving][End-to-end driving] VADv2 reformulates end-to-end driving planning from "regressing a single trajectory" to "learning a probability distribution over the action space." It first discretizes the continuous action space into a 4096-word planning vocabulary via furthest trajectory sampling, then uses a NeRF-inspired probabilistic field and cascaded Transformer to predict probabilities for each candidate action, and finally samples a trajectory for…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "End-to-end driving"
+  - "probabilistic planning"
+  - "planning vocabulary"
+  - "probabilistic field"
+  - "imitation learning"
 date: 2026-05-08
-content_hash: b8393489c5f00bd3
+content_hash: ba3b17e4d93d6ed2
 ---
+
 # VADv2: End-to-End Vectorized Autonomous Driving via Probabilistic Planning
 
 **Conference**: ICLR 2026  
@@ -144,10 +150,10 @@ Planning method × Traffic density (Table 8, PDMS):
 ## Related Papers
 
 - [\[ICLR 2026\] ReCogDrive: A Reinforced Cognitive Framework for End-to-End Autonomous Driving](recogdrive_a_reinforced_cognitive_framework_for_end-to-end_autonomous_driving.md)
+- [\[ICLR 2026\] RAP: 3D Rasterization Augmented End-to-End Planning](rap_3d_rasterization_augmented_end-to-end_planning.md)
 - [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
 - [\[CVPR 2026\] LEAD: Minimizing Learner-Expert Asymmetry in End-to-End Driving](../../CVPR2026/autonomous_driving/lead_minimizing_learner-expert_asymmetry_in_end-to-end_driving.md)
-- [\[CVPR 2026\] GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/guideflow_constraint-guided_flow_matching_for_planning_in_end-to-end_autonomous_.md)
 
 </div>
 

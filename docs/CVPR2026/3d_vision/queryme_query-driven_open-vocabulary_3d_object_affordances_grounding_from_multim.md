@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QueryMe: Query-Driven Open-Vocabulary 3D Object Affordances Grounding from Multimodal Evidence
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] QueryMe projects a single Human-Object Interaction (HOI) image into 3D space via feed-forward monocular reconstruction, then utilizes a set of learnable query vectors to retrieve evidence in a fixed "Text → 3D HOI → Object Point Cloud" sequence. This enables the localization of object functional regions in an open-voca
+  [CVPR 2026][3D Vision][Open-vocabulary affordance] QueryMe projects a single Human-Object Interaction (HOI) image into 3D space via feed-forward monocular reconstruction, then utilizes a set of learnable query vectors to retrieve evidence in a fixed "Text → 3D HOI → Object Point Cloud" sequence. This enables the localization of object functional regions in an open-vocabulary setting, achieving a 4.19% higher AUC on unseen affordances compared to the previous SOTA, GREAT.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Open-vocabulary affordance"
+  - "3D object functional regions"
+  - "Multimodal query"
+  - "HOI images"
+  - "Cross-domain generalization"
 date: 2026-05-08
-content_hash: dc3446cf311e2dc0
+content_hash: 0c0d9a773c9b8d1f
 ---
+
 # QueryMe: Query-Driven Open-Vocabulary 3D Object Affordances Grounding from Multimodal Evidence
 
 **Conference**: CVPR 2026  
@@ -132,11 +138,11 @@ QueryMe leads across almost all metrics in the Seen and two Unseen settings, wit
 
 ## Related Papers
 
+- [\[CVPR 2025\] GREAT: Geometry-Intention Collaborative Inference for Open-Vocabulary 3D Object Affordance Grounding](../../CVPR2025/3d_vision/great_geometry-intention_collaborative_inference_for_open-vocabulary_3d_object_a.md)
 - [\[CVPR 2026\] Ov3R: Open-Vocabulary Semantic 3D Reconstruction from RGB Videos](ov3r_open-vocabulary_semantic_3d_reconstruction_from_rgb_videos.md)
+- [\[ICLR 2026\] H2OFlow: Grounding Human-Object Affordances with 3D Generative Models and Dense Diffused Flows](../../ICLR2026/3d_vision/h2oflow_grounding_human-object_affordances_with_3d_generative_models_and_dense_d.md)
+- [\[CVPR 2026\] OVI-MAP: Open-Vocabulary Instance-Semantic Mapping](ovi-map_open-vocabulary_instance-semantic_mapping.md)
 - [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] HAMMER: Harnessing MLLMs via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding](hammer_harnessing_mllms_via_cross-modal_integration_for_intention-driven_3d_affo.md)
-- [\[CVPR 2026\] ORD: Object-Relation Decoupling for Generalized 3D Visual Grounding](ord_object-relation_decoupling_for_generalized_3d_visual_grounding.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
 
 </div>
 

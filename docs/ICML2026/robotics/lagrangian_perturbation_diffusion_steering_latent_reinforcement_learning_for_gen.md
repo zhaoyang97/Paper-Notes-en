@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Lagrangian] LP-DS treats a frozen diffusion/flow-matching policy as a black-box decoder $\Phi(s,w)$ and learns a state-conditional residual only on its initial noise $w=\epsilon+\Delta_\theta(s)$. By using a Lagrangian trust region $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$ to constrain the perturbation magnitude, it achiev
+  [ICML 2026][Robotics][Diffusion Policy] LP-DS treats a frozen diffusion/flow-matching policy as a black-box decoder $\Phi(s,w)$ and learns a state-conditional residual only on its initial noise $w=\epsilon+\Delta_\theta(s)$. By using a Lagrangian trust region $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$ to constrain the perturbation magnitude, it achieves sample-efficient online RL fine-tuning while preserving multimodal priors. It is more stable than DSRL and DPPO on Ro…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Lagrangian
+  - "ICML 2026"
+  - "Robotics"
+  - "Diffusion Policy"
+  - "Latent RL"
+  - "Trust Region"
+  - "Lagrangian"
+  - "Mode Collapse"
 date: 2026-05-08
-content_hash: 85d0a289bb12fd79
+content_hash: c8db63bbc2fa7a6d
 ---
+
 # Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies
 
 **Conference**: ICML 2026  
@@ -135,15 +140,15 @@ Cross-domain comparison (summarized from Figure 3, average of 6 seeds, units: su
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
-- [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](../../CVPR2026/robotics/reach_explicit_recovery_behavior_for_diffusion_policies.md)
-- [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](../../CVPR2026/robotics/graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
 - [\[ICML 2026\] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)
-- [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
+- [\[ICLR 2026\] Contractive Diffusion Policies](../../ICLR2026/robotics/contractive_diffusion_policies.md)
+- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
+- [\[ICLR 2026\] RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation](../../ICLR2026/robotics/rfs_reinforcement_learning_with_residual_flow_steering_for_dexterous_manipulatio.md)
+- [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](../../CVPR2026/robotics/reach_explicit_recovery_behavior_for_diffusion_policies.md)
 
 </div>
 

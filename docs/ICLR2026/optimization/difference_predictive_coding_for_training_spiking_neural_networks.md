@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Difference Predictive Coding for Training Spiking Neural Networks
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper transforms the bio-inspired local learning framework "Predictive Coding" into a **spike-native** training algorithm named DiffPC. Instead of transmitting dense floating-point numbers between layers, it only emits sparse ternary spikes (-1/0/1) when states change. DiffPC achieves 99.3% on MNIST and 89.6% on F
+  [ICLR2026][Optimization][Difference Predictive Coding] This paper transforms the bio-inspired local learning framework "Predictive Coding" into a **spike-native** training algorithm named DiffPC. Instead of transmitting dense floating-point numbers between layers, it only emits sparse ternary spikes (-1/0/1) when states change. DiffPC achieves 99.3% on MNIST and 89.6% on Fashion-MNIST, outperforming backpropagation baselines on CIFAR-10 while reducing training communication v…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Difference Predictive Coding"
+  - "Spiking Neural Networks"
+  - "Predictive Coding"
+  - "Local Learning"
+  - "Ternary Spikes"
 date: 2026-05-08
-content_hash: 9deb44a0ade0b127
+content_hash: be74475d1e67b157
 ---
+
 # Difference Predictive Coding for Training Spiking Neural Networks
 
 **Conference**: ICLR2026  
@@ -135,15 +141,14 @@ On CIFAR-10, DiffPC-Long requires 1.9 bits/neuron and DiffPC-Efficient requires 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] A2SG: Adaptive and Asymmetric Surrogate Gradients for Training Deep Spiking Neural Networks](../../ICML2026/optimization/a2sgadaptive_and_asymmetric_surrogate_gradients_for_training_deep_spiking_neural.md)
 - [\[ICML 2026\] ePC: Fast and Deep Predictive Coding in Digital Simulation](../../ICML2026/optimization/epc_fast_and_deep_predictive_coding_in_digital_simulation.md)
 - [\[ICLR 2026\] Predictive Differential Training Guided by Training Dynamics](predictive_differential_training_guided_by_training_dynamics.md)
+- [\[ICLR 2026\] Harmonized Cone for Feasible and Non-conflict Directions in Training Physics-Informed Neural Networks](harmonized_cone_for_feasible_and_non-conflict_directions_in_training_physics-inf.md)
 - [\[ICLR 2026\] Differentiable Model Predictive Control on the GPU](differentiable_model_predictive_control_on_the_gpu.md)
-- [\[ICLR 2026\] Rapid Training of Hamiltonian Graph Networks using Random Features](rapid_training_of_hamiltonian_graph_networks_using_random_features.md)
 
 </div>
 

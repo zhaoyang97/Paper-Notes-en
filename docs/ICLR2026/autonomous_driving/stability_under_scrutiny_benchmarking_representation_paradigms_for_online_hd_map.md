@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stability under Scrutiny: Benchmarking Representation Paradigms for Online HD Map Construction
 description: >-
-  [ICLR 2026][Autonomous Driving][mAS] This paper points out that the field of online high-definition (HD) mapping has exclusively focused on single-frame accuracy (mAP) while neglecting the issue of temporal stability (jittering/flickering) between consecutive frames. It proposes the first multi-dimensional stability evaluation framework (merging Presence,
+  [ICLR 2026][Autonomous Driving][Online HD Map] This paper points out that the field of online high-definition (HD) mapping has exclusively focused on single-frame accuracy (mAP) while neglecting the issue of temporal stability (jittering/flickering) between consecutive frames. It proposes the first multi-dimensional stability evaluation framework (merging Presence, Localization, and Shape metrics into a mean Average Stability, mAS). Through large-scale evaluation of 42 models…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - mAS
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Online HD Map"
+  - "Temporal Stability"
+  - "Benchmarking"
+  - "mAS"
+  - "Representation Paradigms"
 date: 2026-05-08
-content_hash: 26b6d0a6aa9bdd2d
+content_hash: 487029fcca0eaa42
 ---
+
 # Stability under Scrutiny: Benchmarking Representation Paradigms for Online HD Map Construction
 
 **Conference**: ICLR 2026  
@@ -143,10 +148,10 @@ Key findings: (1) **High mAP does not guarantee high mAS**—MapQR has higher mA
 ## Related Papers
 
 - [\[CVPR 2026\] AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction](../../CVPR2026/autonomous_driving/amap_distilling_future_priors_for_ahead-aware_online_hd_map_construction.md)
+- [\[AAAI 2026\] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors](../../AAAI2026/autonomous_driving/priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
 - [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](../../NeurIPS2025/autonomous_driving/sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
 - [\[CVPR 2025\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](../../CVPR2025/autonomous_driving/mapgclr_geospatial_contrastive_learning_of_representations_for_online_vectorized.md)
 - [\[ECCV 2024\] Stream Query Denoising for Vectorized HD-Map Construction](../../ECCV2024/autonomous_driving/stream_query_denoising_for_vectorized_hd-map_construction.md)
-- [\[ICML 2025\] SafeMap: Robust HD Map Construction from Incomplete Observations](../../ICML2025/autonomous_driving/safemap_robust_hd_map_construction_from_incomplete_observations.md)
 
 </div>
 

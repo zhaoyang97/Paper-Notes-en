@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations
 description: >-
-  [ACL 2026][LLM Evaluation][Gemma 3] This paper conducts systematic pressure tests on deception probes using internal activations of LLMs, finding that near-perfect AUROC on clean data does not equate to deployable robustness: single-direction and entropy proxy explanations are untenable; instead, deceptive signals appear dispersed across multi-dimensiona
+  [ACL2026][LLM Evaluation][Deception detection] This paper conducts systematic pressure tests on deception probes using internal activations of LLMs, finding that near-perfect AUROC on clean data does not equate to deployable robustness: single-direction and entropy proxy explanations are untenable; instead, deceptive signals appear dispersed across multi-dimensional weak features. Style-augmented training can restore probes on 27B models from near-random performance to a held…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Gemma 3
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Deception detection"
+  - "activation probes"
+  - "representation geometry"
+  - "style robustness"
+  - "Gemma 3"
 date: 2026-05-08
-content_hash: bf6f43cf0767d9b0
+content_hash: 71a80f7a82c1ef34
 ---
+
 # Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations
 
 **Conference**: ACL2026  
@@ -157,9 +162,9 @@ Cross-domain transfer and entropy tests yielded clear negative results.
 
 ## Related Papers
 
-- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
 - [\[ICML 2026\] Top-W: Geometry-Aware Decoding with Wasserstein-Regularized Truncation and Mass Penalties for LLMs](../../ICML2026/llm_evaluation/geometry-aware_decoding_with_wasserstein-regularized_truncation_and_mass_penalti.md)
 - [\[ACL 2026\] Stability vs. Manipulability: Evaluating Robustness Under Post-Decision Interaction in LLM Judges](stability_vs_manipulability_evaluating_robustness_under_post-decision_interactio.md)
+- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
 - [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](../../AAAI2026/llm_evaluation/optscale_probabilistic_optimality_for_inference-time_scaling.md)
 - [\[ICLR 2026\] Same Content, Different Representations: A Controlled Study for Table QA](../../ICLR2026/llm_evaluation/same_content_different_representations_a_controlled_study_for_t.md)
 

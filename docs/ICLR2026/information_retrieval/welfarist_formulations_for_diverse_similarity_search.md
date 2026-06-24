@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Welfarist Formulations for Diverse Similarity Search
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][ANN] This paper models "attribute diversity in retrieval results" as a **welfare function maximization** problem from mathematical economics—treating each attribute as an agent and replacing the similarity sum of standard nearest neighbor search with **Nash Social Welfare (geometric mean)**. This achieves a **query-adaptive
+  [ICLR 2026][Information Retrieval & RAG][Nearest Neighbor Search] This paper models "attribute diversity in retrieval results" as a **welfare function maximization** problem from mathematical economics—treating each attribute as an agent and replacing the similarity sum of standard nearest neighbor search with **Nash Social Welfare (geometric mean)**. This achieves a **query-adaptive** trade-off between "relevance" and "diversity" and provides efficient algorithms with provab…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - ANN
-  - RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Nearest Neighbor Search"
+  - "Diversity"
+  - "Nash Social Welfare"
+  - "ANN"
+  - "RAG"
 date: 2026-05-08
-content_hash: 9bbc6e97740e0df3
+content_hash: a56b0e0b9b1ddf1b
 ---
+
 # Welfarist Formulations for Diverse Similarity Search
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TransiT: Transient Transformer for Non-line-of-sight Videography
 description: >-
-  [ICCV 2025][Robotics][Non-line-of-sight imaging] TransiT is a novel architecture for real-time NLOS video reconstruction that achieves 64×64 resolution at 10 FPS from sparse fast-scan (16×16…
+  [ICCV 2025][Robotics][Non-line-of-sight imaging] TransiT is a novel architecture for real-time NLOS video reconstruction that achieves 64×64 resolution at 10 FPS from sparse fast-scan (16×16, 0.4 ms/point) transient measurements. The system integrates transient compression, inter-frame feature fusion, and a spatiotemporal Transformer, and further proposes an MMD-based transfer learning strategy to bridge the distribution gap between synthetic and real data.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "transient signals"
   - "transfer learning"
 date: 2026-05-08
-content_hash: 1e8d7a4120d0e522
+content_hash: 5661ff5cb714cf72
 ---
 
 # TransiT: Transient Transformer for Non-line-of-sight Videography
@@ -160,10 +160,10 @@ Two-stage training procedure:
 ## Related Papers
 
 - [\[ICCV 2025\] Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning](resolving_token-space_gradient_conflicts_token_space_manipulation_for_transforme.md)
-- [\[AAAI 2026\] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception](../../AAAI2026/robotics/touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept.md)
 - [\[NeurIPS 2025\] Memory-Augmented Potential Field Theory: A Framework for Adaptive Control in Non-Convex Domains](../../NeurIPS2025/robotics/memory-augmented_potential_field_theory_a_framework_for_adaptive_control_in_non-.md)
-- [\[ICCV 2025\] Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding](adaptive_articulated_object_manipulation_on_the_fly_with_foundation_model_reason.md)
-- [\[ICCV 2025\] Selective Contrastive Learning for Weakly Supervised Affordance Grounding](selective_contrastive_learning_for_weakly_supervised_affordance_grounding.md)
+- [\[CVPR 2025\] Decision SpikeFormer: Spike-Driven Transformer for Decision Making](../../CVPR2025/robotics/decision_spikeformer_spike-driven_transformer_for_decision_making.md)
+- [\[AAAI 2026\] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception](../../AAAI2026/robotics/touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept.md)
+- [\[ICLR 2026\] DexMove: Learning Tactile-Guided Non-Prehensile Manipulation with Dexterous Hands](../../ICLR2026/robotics/dexmove_learning_tactile-guided_non-prehensile_manipulation_with_dexterous_hands.md)
 
 </div>
 

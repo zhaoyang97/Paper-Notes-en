@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] 跨域离线强化学习中统一值对齐与值分配
+  [Paper Note] Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper reveals the "value misassignment" problem under heterogeneous cross-domain offline RL settings—where source data originates from multiple domains and policies, leading to inaccurate advantage evaluations that cause data filtering failure. The proposed V2A framework addresses value alignment and assignment is
+  [ICML 2026][Reinforcement Learning][Offline Reinforcement Learning] This paper reveals the "value misassignment" problem under heterogeneous cross-domain offline RL settings—where source data originates from multiple domains and policies, leading to inaccurate advantage evaluations that cause data filtering failure. The proposed V2A framework addresses value alignment and assignment issues through time-consistent modal representation learning and modal-aware advantage learnin…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Cross-Domain Transfer"
+  - "Value Alignment"
+  - "Heterogeneous Datasets"
 date: 2026-05-08
-content_hash: a3805d8a000e8db4
+content_hash: f4df059353e818dc
 ---
+
 # Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -111,10 +116,10 @@ Tested on 4 tasks (HalfCheetah / Hopper / Walker2d / Ant) × 6 source-target com
 ## Related Papers
 
 - [\[ICLR 2026\] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts](../../ICLR2026/reinforcement_learning/dual-robust_cross-domain_offline_reinforcement_learning_against_dynamics_shifts.md)
-- [\[ICML 2026\] 视觉工具使用强化学习究竟学到了什么？](what_does_vision_tool-use_reinforcement_learning_really_learn_disentangling_tool.md)
-- [\[ICML 2026\] RL-SPH: Learning to Achieve Feasible Solutions for Integer Linear Programs](rl-sph_learning_to_achieve_feasible_solutions_for_integer_linear_programs.md)
-- [\[ICML 2026\] Probing RLVR Training Instability through the Lens of Objective-Level Hacking](probing_rlvr_training_instability_through_the_lens_of_objective-level_hacking.md)
-- [\[ICML 2026\] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](global_policy-space_response_oracles_for_two-player_zero-sum_games.md)
+- [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
+- [\[ICML 2026\] DRIVE: Distributional and Retrieval-Augmented Bidding with Value Evaluation](drive_distributional_and_retrieval-augmented_bidding_with_value_evaluation.md)
+- [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
+- [\[ICML 2026\] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies](reverse_flow_matching_a_unified_framework_for_online_reinforcement_learning_with.md)
 
 </div>
 

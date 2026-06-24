@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient, Validation-Free Intrinsic Quality Estimation for Large-Scale Face Recognition Datasets
 description: >-
-  [ICML 2026][Human Understanding][Paper Note] Ours proposes Intrinsic Quality (IQ): after extracting embeddings using a proxy model, it weightedly fuses "Neighborhood Label Consistency (Consis)" and "Normalized Spectral Entropy Effective Rank $\tilde{r}_{\mathrm{ent}}$". It provides a "trainability" score for million-scale face recognition datasets without full tr
+  [ICML 2026][Human Understanding][Intrinsic Quality] Ours proposes Intrinsic Quality (IQ): after extracting embeddings using a proxy model, it weightedly fuses "Neighborhood Label Consistency (Consis)" and "Normalized Spectral Entropy Effective Rank $\tilde{r}_{\mathrm{ent}}$". It provides a "trainability" score for million-scale face recognition datasets without full training or clean validation sets. On WebFace4/12/42M and noise-injected settings…
 tags:
-  - ICML 2026
-  - Human Understanding
+  - "ICML 2026"
+  - "Human Understanding"
+  - "Intrinsic Quality"
+  - "Effective Rank"
+  - "Neighborhood Consistency"
+  - "Face Recognition Datasets"
+  - "Validation-Free Evaluation"
 date: 2026-05-08
-content_hash: 34fef15a0dd48468
+content_hash: 00854dd9d61f81fc
 ---
+
 # Efficient, Validation-Free Intrinsic Quality Estimation for Large-Scale Face Recognition Datasets
 
 **Conference**: ICML 2026  
@@ -128,10 +134,10 @@ Under clean scaling (WebFace 4M → 12M → 42M), IQ increases in alignment with
 ## Related Papers
 
 - [\[CVPR 2026\] OpenT2M: No-frill Motion Generation with Open-source, Large-scale, High-quality Data](../../CVPR2026/human_understanding/opent2m_no-frill_motion_generation_with_open-source_large-scale_high-quality_dat.md)
+- [\[ICLR 2026\] SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual Dyadic Interactive Human Generation](../../ICLR2026/human_understanding/speakervid-5m_a_large-scale_high-quality_dataset_for_audio-visual_dyadic_interac.md)
 - [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](../../CVPR2026/human_understanding/lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
 - [\[ICCV 2025\] LVFace: Progressive Cluster Optimization for Large Vision Models in Face Recognition](../../ICCV2025/human_understanding/lvface_progressive_cluster_optimization_for_large_vision_models_in_face_recognit.md)
 - [\[CVPR 2026\] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data](../../CVPR2026/human_understanding/opendance_multimodal_controllable_3d_dance_generation_with_large-scale_internet_.md)
-- [\[CVPR 2026\] M4Human: A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction](../../CVPR2026/human_understanding/m4human_a_large-scale_multimodal_mmwave_radar_benchmark_for_human_mesh_reconstru.md)
 
 </div>
 

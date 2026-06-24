@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Less is More: Local Intrinsic Dimensions of Contextual Language Models
 description: >-
-  [NeurIPS 2025][Dialogue Systems][intrinsic dimension] This paper proposes using the Local Intrinsic Dimension (LID) of contextual token embeddings as an unsupervised signal for monitoring LLM training dynamics — a decrea…
+  [NeurIPS 2025][Dialogue Systems][intrinsic dimension] This paper proposes using the Local Intrinsic Dimension (LID) of contextual token embeddings as an unsupervised signal for monitoring LLM training dynamics — a decrease in LID indicates improved generalization, while an increase signals overfitting. The utility of this geometric signal is validated on tasks including dialogue state tracking, grokking, and sentiment recognition.
 tags:
   - "NeurIPS 2025"
   - "Dialogue Systems"
@@ -13,7 +13,7 @@ tags:
   - "overfitting detection"
   - "embedding geometry"
 date: 2026-05-08
-content_hash: 02062b30b434fedd
+content_hash: b469709a9347e719
 ---
 
 # Less is More: Local Intrinsic Dimensions of Contextual Language Models
@@ -159,11 +159,11 @@ A base model $\mathcal{M}$ and its fine-tuned counterpart $\mathcal{M}^\Delta$ s
 
 ## Related Papers
 
+- [\[ACL 2025\] UniConv: Unifying Retrieval and Response Generation for Large Language Models in Conversations](../../ACL2025/dialogue/uniconv_retrieval_response_gen.md)
 - [\[ACL 2026\] Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky](../../ACL2026/dialogue/disambiguation-centric_finetuning_makes_enterprise_tool-calling_llms_more_realis.md)
+- [\[ICLR 2026\] Flipping the Dialogue: Training and Evaluating User Language Models](../../ICLR2026/dialogue/flipping_the_dialogue_training_and_evaluating_user_language_models.md)
 - [\[ACL 2026\] LOCKET: Robust Feature-Locking Technique for Language Models](../../ACL2026/dialogue/locket_robust_feature-locking_technique_for_language_models.md)
 - [\[AAAI 2026\] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL](../../AAAI2026/dialogue/teaching_large_language_models_to_maintain_contextual_faithfulness_via_synthetic.md)
-- [\[ICLR 2026\] Understanding Language Prior of LVLMs by Contrasting Chain-of-Embedding](../../ICLR2026/dialogue/understanding_language_prior_of_lvlms_by_contrasting_chain-of-embedding.md)
-- [\[ACL 2026\] Stress-Testing Emotional Support Models: Moving from Homogeneous to Diverse Help Seekers](../../ACL2026/dialogue/stress-testing_emotional_support_models_moving_from_homogeneous_to_diverse_help_.md)
 
 </div>
 

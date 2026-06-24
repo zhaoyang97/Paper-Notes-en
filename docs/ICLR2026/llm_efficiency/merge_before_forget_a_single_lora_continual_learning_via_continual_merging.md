@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Merge before Forget: A Single LoRA Continual Learning via Continual Merging
 description: >-
-  [ICLR 2026][LLM Efficiency][LoRA] This paper reformulates "Continual Learning" as a "Sequential Model Merging" problem, maintaining only **one pair** of LoRA matrices `{A, B}` throughout the process. It initializes `A` for new tasks using the orthogonal basis of the previous task and performs time-aware scaling for merging `B` based on LoRA asymmetry.
+  [ICLR 2026][LLM Efficiency][LoRA] This paper reformulates "Continual Learning" as a "Sequential Model Merging" problem, maintaining only **one pair** of LoRA matrices `{A, B}` throughout the process. It initializes `A` for new tasks using the orthogonal basis of the previous task and performs time-aware scaling for merging `B` based on LoRA asymmetry. This reduces memory complexity from linear growth to constant while mitigating forgetting and rigidity.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "LoRA"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "Model Merging"
+  - "Orthogonal Initialization"
+  - "PEFT"
 date: 2026-05-08
-content_hash: 6e7b44ec736405b6
+content_hash: 73664a7cbd8deccf
 ---
+
 # Merge before Forget: A Single LoRA Continual Learning via Continual Merging
 
 **Conference**: ICLR 2026  
@@ -126,10 +132,20 @@ Llama-2-7B-chat across three benchmarks (Standard CL / Long Sequence / SuperNI),
 - **Value**: ⭐⭐⭐⭐ — Highly attractive for practical deployment due to constant memory and data-free setup.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
+- [\[ICLR 2026\] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning](one-prompt_strikes_back_sparse_mixture_of_experts_for_prompt-based_continual_lea.md)
+- [\[ICLR 2026\] CONCUR: A Framework for Continual Constrained and Unconstrained Routing](concur_a_framework_for_continual_constrained_and_unconstrained_routing.md)
+- [\[ICML 2026\] Turning Back Without Forgetting: Selective Backward Refinement for Parameter-Efficient Continual Learning](../../ICML2026/llm_efficiency/turning_back_without_forgetting_selective_backward_refinement_for_parameter-effi.md)
+- [\[ICLR 2026\] LoRAGen: Structure-Aware Weight Space Learning for LoRA Generation](loragen_structure-aware_weight_space_learning_for_lora_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)

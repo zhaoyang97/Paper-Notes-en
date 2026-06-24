@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SpecGuard: Spectral Projection-based Advanced Invisible Watermarking
 description: >-
-  [ICCV2025][AI Safety][Invisible Watermarking] SpecGuard embeds watermark information into the spectral domain of high-frequency subbands obtained via wavelet decomposition (approximated through FFT-based spectral project…
+  [ICCV2025][AI Safety][Invisible Watermarking] SpecGuard embeds watermark information into the spectral domain of high-frequency subbands obtained via wavelet decomposition (approximated through FFT-based spectral projection). The encoder employs a strength factor to enhance robustness, while the decoder applies a learnable threshold derived from Parseval's theorem for bit recovery. The method achieves high image quality (PSNR > 42 dB) alongside comprehensive robustness agains…
 tags:
   - "ICCV2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "FFT"
   - "Parseval's Theorem"
 date: 2026-05-08
-content_hash: 849a688252215c65
+content_hash: 89104831ec8c7bc9
 ---
 
 # SpecGuard: Spectral Projection-based Advanced Invisible Watermarking
@@ -159,11 +159,11 @@ Image quality improves with resolution (PSNR reaching up to 48 dB), as the water
 
 ## Related Papers
 
+- [\[ICML 2025\] Accelerating Spectral Clustering under Fairness Constraints](../../ICML2025/ai_safety/accelerating_spectral_clustering_under_fairness_constraints.md)
 - [\[ICCV 2025\] IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization](iap_invisible_adversarial_patch_attack_through_perceptibility-aware_localization.md)
 - [\[NeurIPS 2025\] Spectral Perturbation Bounds for Low-Rank Approximation with Applications to Privacy](../../NeurIPS2025/ai_safety/spectral_perturbation_bounds_for_low-rank_approximation_with_applications_to_pri.md)
-- [\[NeurIPS 2025\] Provable Watermarking for Data Poisoning Attacks](../../NeurIPS2025/ai_safety/provable_watermarking_for_data_poisoning_attacks.md)
-- [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
-- [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](../../CVPR2026/ai_safety/recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
+- [\[CVPR 2025\] INACTIVE: Invisible Backdoor Attack against Self-supervised Learning](../../CVPR2025/ai_safety/invisible_backdoor_attack_against_self-supervised_learning.md)
+- [\[CVPR 2026\] RAVEN: Erasing Invisible Watermarks via Novel View Synthesis](../../CVPR2026/ai_safety/raven_erasing_invisible_watermarks_via_novel_view_synthesis.md)
 
 </div>
 

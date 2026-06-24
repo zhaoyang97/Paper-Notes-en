@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function
 description: >-
-  [ICML 2026][learning_theory][data-driven algorithm design] This paper utilizes "real algebraic geometry + first-order logic quantifier elimination" to provide the first provable generalization bound for multi-dimensional hyper-parameter tuning. It extends the Balcan 2025 framework, which was limited to scalar hyper-parameters, to arbitrary $p$-dimensions, bi-level validation l
+  [ICML 2026][Learning Theory][pseudo-dimension] This paper utilizes "real algebraic geometry + first-order logic quantifier elimination" to provide the first provable generalization bound for multi-dimensional hyper-parameter tuning. It extends the Balcan 2025 framework, which was limited to scalar hyper-parameters, to arbitrary $p$-dimensions, bi-level validation loss, and approximate inner-level optimization, while providing the first matching lower bound.
 tags:
-  - ICML 2026
-  - learning_theory
-  - data-driven algorithm design
-  - pseudo-dimension
-  - quantifier elimination
-  - multi-dimensional hyperparameter
-  - semi-algebraic
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Automated Hyper-parameter Tuning"
+  - "Data-driven Algorithm Design"
+  - "pseudo-dimension"
+  - "quantifier elimination"
+  - "multi-dimensional hyperparameter"
+  - "semi-algebraic"
 date: 2026-05-08
-content_hash: 5e6a3a421b1bb26e
+content_hash: 3cecfcce59f89146
 ---
+
 # Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function
 
 **Conference**: ICML 2026  
@@ -116,11 +118,11 @@ This paper is purely theoretical and does not train a model; it provides upper a
 
 ## Related Papers
 
-- [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](../../ICLR2026/learning_theory/an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
-- [\[ICML 2026\] Tree-Structured Orthonormal Decomposition of the Aitchison Simplex](tree-structured_orthonormal_decomposition_of_the_aitchison_simplex.md)
-- [\[ICML 2026\] The Data Manifold under the Microscope](the_data_manifold_under_the_microscope.md)
 - [\[ICML 2026\] On the Robustness of Langevin Dynamics to Score Function Error](on_the_robustness_of_langevin_dynamics_to_score_function_error.md)
-- [\[ICML 2026\] Understanding the Parameter Space Geometry of Transformers Encoding Boolean Functions](understanding_the_parameter_space_geometry_of_transformers_encoding_boolean_func.md)
+- [\[ICLR 2026\] SVD Provably Denoises Nearest Neighbor Data](../../ICLR2026/learning_theory/svd_provably_denoises_nearest_neighbor_data.md)
+- [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](../../ICLR2026/learning_theory/an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
+- [\[ICML 2026\] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation](catastrophic_forgetting_is_low-rank_a_function-space_theory_for_continual_adapta.md)
+- [\[ICML 2026\] Tree-Structured Orthonormal Decomposition of the Aitchison Simplex](tree-structured_orthonormal_decomposition_of_the_aitchison_simplex.md)
 
 </div>
 

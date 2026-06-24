@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLEX: Complementary Label Exchange Learning for Noisy Facial Expression Recognition
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] CLEX suppresses spurious activations by **randomly exchanging a subset of non-target logits** between a primary and an augmented branch, followed by scale-invariant normalization. It then employs a "complementary suppression loss" to specifically suppress responses of randomly retained non-target classes. Without requi
+  [CVPR 2026][Human Understanding][Noisy facial expression recognition] CLEX suppresses spurious activations by **randomly exchanging a subset of non-target logits** between a primary and an augmented branch, followed by scale-invariant normalization. It then employs a "complementary suppression loss" to specifically suppress responses of randomly retained non-target classes. Without requiring clean data or noise priors, CLEX achieves SOTA performance across various noise rates…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Noisy facial expression recognition"
+  - "complementary labels"
+  - "non-target logit exchange"
+  - "consistency regularization"
+  - "robust learning"
 date: 2026-05-08
-content_hash: 3c2c321b58eaae5d
+content_hash: cd793c527a9df8bc
 ---
+
 # CLEX: Complementary Label Exchange Learning for Noisy Facial Expression Recognition
 
 **Conference**: CVPR 2026  
@@ -152,10 +158,10 @@ Verifying incremental contributions of each module:
 ## Related Papers
 
 - [\[CVPR 2026\] Dynamic Label Noise Suppression with Optimal Teacher Pool for Facial Expression Recognition](dynamic_label_noise_suppression_with_optimal_teacher_pool_for_facial_expression_.md)
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
 - [\[CVPR 2026\] Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)
 - [\[CVPR 2026\] D³FER: Dual Channel and Dual Branch Network for Robust Facial Expression Recognition under Dual Challenges](d3fer_dual_channel_and_dual_branch_network_for_robust_facial_expression_recognit.md)
 - [\[ECCV 2024\] Generalizable Facial Expression Recognition](../../ECCV2024/human_understanding/generalizable_facial_expression_recognition.md)
+- [\[ICLR 2026\] From Pixels to Semantics: Unified Facial Action Representation Learning for Micro-Expression Analysis](../../ICLR2026/human_understanding/from_pixels_to_semantics_unified_facial_action_representation_learning_for_micro.md)
 
 </div>
 

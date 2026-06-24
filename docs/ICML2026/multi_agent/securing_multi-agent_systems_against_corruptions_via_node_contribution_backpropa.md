@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Securing Multi-Agent Systems Against Corruptions via Node Contribution Backpropagation
 description: >-
-  [ICML 2026][Multi-Agent][Multi-Agent System] BPD reconstructs the multi-round interactions of an LLM Multi-Agent System (MAS) into a "signed Directed Acyclic Graph (DAG)," scoring each message as $\{-1, 0, 1\}$ for agreement, indifference, or disagreement. It then utilizes a PageRank-style single-pass reverse topological propagation to calculate the contribution
+  [ICML 2026][Multi-Agent][Multi-Agent System] BPD reconstructs the multi-round interactions of an LLM Multi-Agent System (MAS) into a "signed Directed Acyclic Graph (DAG)," scoring each message as $\{-1, 0, 1\}$ for agreement, indifference, or disagreement. It then utilizes a PageRank-style single-pass reverse topological propagation to calculate the contribution score of each agent to the final answer. Outliers are identified as malicious agents and their outgoing edges are p…
 tags:
-  - ICML 2026
-  - Multi-Agent
-  - Multi-Agent System
-  - PageRank
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "Multi-Agent System"
+  - "Corruption Attack"
+  - "Signed DAG"
+  - "Backpropagation"
+  - "PageRank"
 date: 2026-05-08
-content_hash: 08fe1aa20cc9726f
+content_hash: f5d026ddcc86ae8e
 ---
+
 # Securing Multi-Agent Systems Against Corruptions via Node Contribution Backpropagation
 
 **Conference**: ICML 2026  
@@ -149,9 +153,9 @@ Trends as reported in the paper:
 
 - [\[ICLR 2026\] Breaking and Fixing Defenses Against Control Flow Hijacking in Multi-Agent Systems](../../ICLR2026/multi_agent/breaking_and_fixing_defenses_against_control_flow_hijacking_in_multi-agent_syste.md)
 - [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
-- [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
-- [\[ICLR 2026\] Stochastic Self-Organization in Multi-Agent Systems](../../ICLR2026/multi_agent/stochastic_self-organization_in_multi-agent_systems.md)
 - [\[ICML 2026\] Multi-Agent Systems are Mixtures of Experts: Who Becomes an Influencer?](multi-agent_systems_are_mixtures_of_experts_who_becomes_an_influencer.md)
+- [\[ICLR 2026\] Goal-Aware Identification and Rectification of Misinformation in Multi-Agent Systems](../../ICLR2026/multi_agent/goal-aware_identification_and_rectification_of_misinformation_in_multi-agent_sys.md)
+- [\[ICLR 2026\] MARTI: A Framework for Multi-Agent LLM Systems Reinforced Training and Inference](../../ICLR2026/multi_agent/marti_a_framework_for_multi-agent_llm_systems_reinforced_training_and_inference.md)
 
 </div>
 

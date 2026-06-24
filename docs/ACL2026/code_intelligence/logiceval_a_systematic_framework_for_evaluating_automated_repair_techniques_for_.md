@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] This paper constructs LogicEval, the first evaluation framework for logical vulnerability repair, and LogicDS (61 real-world logical vulnerabilities + 61 synthetic Java samples). It systematically evaluates the capabilities of traditional AVR tools and LLMs in repairing logical vulnerabilities, finding that LLMs perfor
+  [ACL 2026][Code Intelligence][Logical Vulnerabilities] This paper constructs LogicEval, the first evaluation framework for logical vulnerability repair, and LogicDS (61 real-world logical vulnerabilities + 61 synthetic Java samples). It systematically evaluates the capabilities of traditional AVR tools and LLMs in repairing logical vulnerabilities, finding that LLMs perform best when provided with auxiliary information, yet the overall repair rate remains very low (only 5 out…
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Logical Vulnerabilities"
+  - "Automated Repair Evaluation"
+  - "LLM Code Repair"
+  - "Patch Generation"
+  - "Benchmark Dataset"
 date: 2026-05-08
-content_hash: 06a00e611eab12fe
+content_hash: 3e95ce67d710977c
 ---
+
 # LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software
 
 **Conference**: ACL 2026  
@@ -141,10 +147,10 @@ Logical vulnerabilities have no unified repair template. A patch might pass comp
 ## Related Papers
 
 - [\[ACL 2026\] ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization](referee_reference-free_and_fine-grained_method_for_evaluating_factual_consistenc.md)
-- [\[ACL 2025\] CompileAgent: Automated Real-World Repo-Level Compilation with Tool-Integrated LLM-based Agent System](../../ACL2025/code_intelligence/compileagent_automated_real-world_repo-level_compilation_with_tool-integrated_ll.md)
+- [\[ICLR 2026\] EDIT-Bench: Evaluating LLM Abilities to Perform Real-World Instructed Code Edits](../../ICLR2026/code_intelligence/edit-bench_evaluating_llm_abilities_to_perform_real-world_instructed_code_edits.md)
 - [\[ACL 2026\] Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4](discover_and_prove_an_open-source_agentic_framework_for_hard_mode_automated_theo.md)
-- [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
-- [\[ACL 2026\] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization](qimeng-prepair_precise_code_repair_via_edit-aware_reward_optimization.md)
+- [\[ACL 2025\] CompileAgent: Automated Real-World Repo-Level Compilation with Tool-Integrated LLM-based Agent System](../../ACL2025/code_intelligence/compileagent_automated_real-world_repo-level_compilation_with_tool-integrated_ll.md)
+- [\[ICLR 2026\] CodeSense: a Real-World Benchmark and Dataset for Code Semantic Reasoning](../../ICLR2026/code_intelligence/codesense_a_real-world_benchmark_and_dataset_for_code_semantic_reasoning.md)
 
 </div>
 

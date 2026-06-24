@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-Based VLM Agent
 description: >-
-  [ICCV 2025][Multimodal VLM][Chain-of-Thought Reasoning] This paper identifies that relying solely on outcome rewards during RL training of VLM agents leads to "thought collapse," and proposes the GTR framework…
+  [ICCV 2025][Multimodal VLM][Chain-of-Thought Reasoning] This paper identifies that relying solely on outcome rewards during RL training of VLM agents leads to "thought collapse," and proposes the GTR framework, which employs an external VLM corrector to automatically rectify reasoning processes and jointly trains thoughts and actions via PPO + SFT, achieving 3–5× improvement in task success rates on the Game of 24 and ALFWorld benchmarks.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Process Supervision"
   - "Thought Collapse"
 date: 2026-05-08
-content_hash: 8cb72f0f548be1da
+content_hash: 724ea1adabd152db
 ---
 
 # GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-Based VLM Agent
@@ -171,11 +171,11 @@ GTR achieves a **7×** improvement in success rate over the SOTA method (RL4VLM)
 
 ## Related Papers
 
-- [\[ICML 2026\] Spectral-Progressive Thought Flow for Lightweight Multimodal Reasoning](../../ICML2026/multimodal_vlm/spectral-progressive_thought_flow_for_lightweight_multimodal_reasoning.md)
-- [\[ICCV 2025\] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning](mmat1m_a_large_reasoning_dataset_for_multimodal_agent_tuning.md)
 - [\[CVPR 2026\] GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training](../../CVPR2026/multimodal_vlm/gtr_turbo_merged_checkpoint_free_teacher.md)
-- [\[ICCV 2025\] Controlling Multimodal LLMs via Reward-guided Decoding](controlling_multimodal_llms_via_rewardguided_decoding.md)
-- [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
+- [\[ICML 2025\] Towards Efficient Online Tuning of VLM Agents via Counterfactual Soft Reinforcement Learning](../../ICML2025/multimodal_vlm/towards_efficient_online_tuning_of_vlm_agents_via_counterfactual_soft_reinforcem.md)
+- [\[ICML 2025\] ERL-VLM: Enhancing Rating-Based RL to Leverage Feedback from Large VLMs](../../ICML2025/multimodal_vlm/enhancing_rating-based_reinforcement_learning_to_effectively_leverage_feedback_f.md)
+- [\[ICLR 2026\] Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning](../../ICLR2026/multimodal_vlm/enhancing_geometric_perception_in_vlms_via_translator-guided_reinforcement_learn.md)
+- [\[AAAI 2026\] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](../../AAAI2026/multimodal_vlm/vipact_visual-perception_enhancement_via_specialized_vlm_age.md)
 
 </div>
 

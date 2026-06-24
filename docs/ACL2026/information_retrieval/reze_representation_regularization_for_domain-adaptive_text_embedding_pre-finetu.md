@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] REZE: Representation Regularization for Domain-adaptive Text Embedding Pre-finetuning
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] REZE performs eigenspace decomposition on anchor-positive relation representations during domain embedding pre-finetuning. It uses robust statistics to identify and soft-shrink task-specific shifts, thereby absorbing shared domain knowledge while suppressing representation drift caused by heterogeneous tasks.
+  [ACL2026][Information Retrieval & RAG][Text Embeddings] REZE performs eigenspace decomposition on anchor-positive relation representations during domain embedding pre-finetuning. It uses robust statistics to identify and soft-shrink task-specific shifts, thereby absorbing shared domain knowledge while suppressing representation drift caused by heterogeneous tasks.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL2026"
+  - "Information Retrieval & RAG"
+  - "Text Embeddings"
+  - "Domain Adaptation"
+  - "Pre-finetuning"
+  - "Representation Regularization"
+  - "Negative Transfer"
 date: 2026-05-08
-content_hash: 08966bf5109f7e17
+content_hash: 36f2f0b38f842c50
 ---
+
 # REZE: Representation Regularization for Domain-adaptive Text Embedding Pre-finetuning
 
 **Conference**: ACL2026  
@@ -146,10 +152,10 @@ The paper analyzes regularization weights, median vs. mean, isotropy, and repres
 ## Related Papers
 
 - [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
+- [\[ACL 2026\] SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation](skmteb_slovak_massive_text_embedding_benchmark_and_model_adaptation.md)
 - [\[ACL 2026\] PL-MTEB: Polish Massive Text Embedding Benchmark](pl-mteb_polish_massive_text_embedding_benchmark.md)
 - [\[ACL 2025\] Accelerating Adaptive Retrieval Augmented Generation via Instruction-Driven Representation Reduction of Retrieval Overlaps](../../ACL2025/information_retrieval/accelerating_adaptive_retrieval_augmented_generation_via_instruction-driven_repr.md)
-- [\[ACL 2026\] SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation](skmteb_slovak_massive_text_embedding_benchmark_and_model_adaptation.md)
-- [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](../../ICLR2026/information_retrieval/hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
+- [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](../../ICLR2026/information_retrieval/let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
 
 </div>
 

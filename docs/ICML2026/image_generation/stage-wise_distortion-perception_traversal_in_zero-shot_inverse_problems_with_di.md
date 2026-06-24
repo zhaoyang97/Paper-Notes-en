@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][distortion-perception tradeoff] A two-stage framework, MAP-RPS, is proposed: it first uses the diffusion model's score for Maximum A Posteriori (MAP) estimation to approach the Minimum Mean Square Error (MMSE) solution (low-distortion anchor), then re-noises the MAP result to time $t_0$ followed by posterior sampling (sliding along the D-P curve towa
+  [ICML 2026][Image Generation][distortion-perception tradeoff] A two-stage framework, MAP-RPS, is proposed: it first uses the diffusion model's score for Maximum A Posteriori (MAP) estimation to approach the Minimum Mean Square Error (MMSE) solution (low-distortion anchor), then re-noises the MAP result to time $t_0$ followed by posterior sampling (sliding along the D-P curve towards high perceptual quality). A single pre-trained diffusion model enables flexible traversal of t…
 tags:
-  - ICML 2026
-  - Image Generation
-  - distortion-perception tradeoff
-  - zero-shot inverse problem
-  - diffusion posterior sampling
-  - MAP estimation
-  - latent diffusion
+  - "ICML 2026"
+  - "Image Generation"
+  - "distortion-perception tradeoff"
+  - "zero-shot inverse problem"
+  - "diffusion posterior sampling"
+  - "MAP estimation"
+  - "latent diffusion"
 date: 2026-05-08
-content_hash: 7ef10384ff720129
+content_hash: f960a5b0e9388ee6
 ---
+
 # Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models
 
 **Conference**: ICML 2026  
@@ -126,15 +127,16 @@ Evaluated on 6 latent-space inverse problems (inpainting, SR 4×, deblur, CS 2×
 - Value: ⭐⭐⭐⭐ Provides a zero-cost "traversal slider" for engineers using diffusion inverse problems and links D-P theory to the diffusion process for researchers.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](saving_foundation_flow-matching_priors_for_inverse_problems.md)
-- [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
+- [\[ICLR 2026\] Contrastive Diffusion Guidance for Spatial Inverse Problems](../../ICLR2026/image_generation/contrastive_diffusion_guidance_for_spatial_inverse_problems.md)
+- [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](../../ICLR2026/image_generation/stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
 - [\[CVPR 2025\] Traversing Distortion-Perception Tradeoff Using a Single Score-Based Generative Model](../../CVPR2025/image_generation/traversing_distortion-perception_tradeoff_using_a_single_score-based_generative_.md)
-- [\[NeurIPS 2025\] A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models](../../NeurIPS2025/image_generation/a_gradient_flow_approach_to_solving_inverse_problems_with_latent_diffusion_model.md)
-- [\[AAAI 2026\] Constrained Particle Seeking: Solving Diffusion Inverse Problems with Just Forward Passes](../../AAAI2026/image_generation/constrained_particle_seeking_solving_diffusion_inverse_problems_with_just_forwar.md)
+- [\[ICML 2026\] Localizing Memorized Regions in Diffusion Models via Coordinate-Wise Curvature Differences](localizing_memorized_regions_in_diffusion_models_via_coordinate-wise_curvature_d.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] STCast: Adaptive Boundary Alignment for Global and Regional Weather Forecasting
 description: >-
-  [CVPR 2026][Time Series][weather forecasting] The STCast framework is proposed, which replaces static boundaries with learnable global-regional distributions through Spatial-Aligned Attention (SAA) to adaptively fuse global atmospheric information into regional forecasts. It utilizes Temporal Mixture-of-Experts (TMoE) with monthly dynamic routing to enhance tempor
+  [CVPR 2026][Time Series][weather forecasting] The STCast framework is proposed, which replaces static boundaries with learnable global-regional distributions through Spatial-Aligned Attention (SAA) to adaptively fuse global atmospheric information into regional forecasts. It utilizes Temporal Mixture-of-Experts (TMoE) with monthly dynamic routing to enhance temporal modeling, outperforming existing methods across four tasks: global forecasting…
 tags:
-  - CVPR 2026
-  - Time Series
-  - weather forecasting
-  - spatial-aligned attention
-  - temporal MoE
-  - global-regional coupling
-  - adaptive boundary
+  - "CVPR 2026"
+  - "Time Series"
+  - "weather forecasting"
+  - "spatial-aligned attention"
+  - "temporal MoE"
+  - "global-regional coupling"
+  - "adaptive boundary"
 date: 2026-05-08
-content_hash: d5f681398bfc3277
+content_hash: 18440aa024f79102
 ---
+
 # STCast: Adaptive Boundary Alignment for Global and Regional Weather Forecasting
 
 **Conference**: CVPR 2026  
@@ -133,15 +134,15 @@ Global and regional models are trained separately using the AdamW optimizer with
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICCV 2025\] VA-MoE: Variables-Adaptive Mixture of Experts for Incremental Weather Forecasting](../../ICCV2025/time_series/va-moe_variables-adaptive_mixture_of_experts_for_incremental_weather_forecasting.md)
-- [\[CVPR 2026\] L2GTX: From Local to Global Time Series Explanations](l2gtx_from_local_to_global_time_series_explanations.md)
-- [\[NeurIPS 2025\] Graph-based Neural Space Weather Forecasting](../../NeurIPS2025/time_series/graph-based_neural_space_weather_forecasting.md)
 - [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](../../ICML2026/time_series/u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
-- [\[AAAI 2026\] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting](../../AAAI2026/time_series/revitalizing_canonical_pre-alignment_for_irregular_multivariate_time_series_fore.md)
+- [\[ICLR 2026\] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting](../../ICLR2026/time_series/storm_synergistic_cross-scale_spatio-temporal_modeling_for_weather_forecasting.md)
+- [\[NeurIPS 2025\] Graph-based Neural Space Weather Forecasting](../../NeurIPS2025/time_series/graph-based_neural_space_weather_forecasting.md)
+- [\[NeurIPS 2025\] DemandCast: Global hourly electricity demand forecasting](../../NeurIPS2025/time_series/demandcast_global_hourly_electricity_demand_forecasting.md)
 
 </div>
 

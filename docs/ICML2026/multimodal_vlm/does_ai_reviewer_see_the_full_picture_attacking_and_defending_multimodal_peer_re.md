@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Does AI Reviewer See the Full Picture? Attacking and Defending Multimodal Peer Review
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] As conferences such as AAAI, ICML, and NeurIPS officially incorporate AI-generated reviews into the preliminary review process, this paper presents PaperGuard—the first benchmark to systematically evaluate the vulnerability of multimodal AI reviewers under adversarial manipulation. It unifies black-box prompt injection
+  [ICML 2026][Multimodal VLM][AI Peer Review] As conferences such as AAAI, ICML, and NeurIPS officially incorporate AI-generated reviews into the preliminary review process, this paper presents PaperGuard—the first benchmark to systematically evaluate the vulnerability of multimodal AI reviewers under adversarial manipulation. It unifies black-box prompt injection with white-box gradient attacks (Text GCG; Image PGD/APGD/CW), demonstrating that text-only protection is insuffici…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "AI Peer Review"
+  - "Multimodal Adversarial Attack"
+  - "Prompt Injection"
+  - "Score Inflation"
+  - "Embedding Retrieval Defense"
 date: 2026-05-08
-content_hash: dbc36dbd34840aef
+content_hash: 2a54690eb335f386
 ---
+
 # Does AI Reviewer See the Full Picture? Attacking and Defending Multimodal Peer Review
 
 **Conference**: ICML 2026  
@@ -126,8 +132,8 @@ Comparison of defense strategies in binary classification (distinguishing normal
 - [\[ICLR 2026\] PRISMM-Bench: A Benchmark of Peer-Review Grounded Multimodal Inconsistencies](../../ICLR2026/multimodal_vlm/prismm-bench_a_benchmark_of_peer-review_grounded_multimodal_inconsistencies.md)
 - [\[CVPR 2025\] UPME: An Unsupervised Peer Review Framework for Multimodal Large Language Model Evaluation](../../CVPR2025/multimodal_vlm/upme_an_unsupervised_peer_review_framework_for_multimodal_large_language_model_e.md)
 - [\[CVPR 2026\] PhyCritic: Multimodal Critic Models for Physical AI](../../CVPR2026/multimodal_vlm/phycritic_multimodal_critic_models_for_physical_ai.md)
-- [\[CVPR 2026\] ARGUS: Defending Against Multimodal Indirect Prompt Injection via Steering Instruction-Following Behavior](../../CVPR2026/multimodal_vlm/argus_defending_against_multimodal_indirect_prompt_injection_via_steering_instru.md)
 - [\[ECCV 2024\] MathVerse: Does Your Multi-modal LLM Truly See the Diagrams in Visual Math Problems?](../../ECCV2024/multimodal_vlm/mathverse_does_your_multi-modal_llm_truly_see_the_diagrams_in_visual_math_proble.md)
+- [\[CVPR 2026\] ARGUS: Defending Against Multimodal Indirect Prompt Injection via Steering Instruction-Following Behavior](../../CVPR2026/multimodal_vlm/argus_defending_against_multimodal_indirect_prompt_injection_via_steering_instru.md)
 
 </div>
 

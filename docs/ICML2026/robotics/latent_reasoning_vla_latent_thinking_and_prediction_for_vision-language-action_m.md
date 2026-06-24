@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLA] LaRA-VLA internalizes both textual and visual Chain-of-Thought (CoT) into continuous latents. Through a three-stage curriculum training process (explicit CoT → latent replacement → action expert adaptation), reasoning is performed within the latent space. This reduces inference latency by up to 90% compared to explicit
+  [ICML 2026][Robotics][VLA] LaRA-VLA internalizes both textual and visual Chain-of-Thought (CoT) into continuous latents. Through a three-stage curriculum training process (explicit CoT → latent replacement → action expert adaptation), reasoning is performed within the latent space. This reduces inference latency by up to 90% compared to explicit CoT, restoring control frequencies to real-time ranges.
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Latent CoT
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA"
+  - "Latent CoT"
+  - "Visual Prediction"
+  - "Curriculum Training"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: 8597f2cc442102d9
+content_hash: 701857e85af5ae4f
 ---
+
 # Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models
 
 **Conference**: ICML 2026  
@@ -141,9 +145,9 @@ Both EMA and visual prediction supervision are indispensable for maintaining lat
 
 - [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
 - [\[CVPR 2026\] Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning](../../CVPR2026/robotics/fast-thinkact_efficient_vision-language-action_reasoning_via_verbalizable_latent.md)
-- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
-- [\[CVPR 2026\] Cross-Hand Latent Representation for Vision-Language-Action Models](../../CVPR2026/robotics/cross-hand_latent_representation_for_vision-language-action_models.md)
+- [\[ICML 2026\] Think Less, Act Early: Reinforced Latent Reasoning with Early Exit in Vision-Language-Action Models](think_less_act_early_reinforced_latent_reasoning_with_early_exit_in_vision-langu.md)
 - [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](../../CVPR2026/robotics/chain_of_world_world_model_thinking_in_latent_motion.md)
+- [\[ICLR 2026\] villa-X: Enhancing Latent Action Modeling in Vision-Language-Action Models](../../ICLR2026/robotics/villa-x_enhancing_latent_action_modeling_in_vision-language-action_models.md)
 
 </div>
 

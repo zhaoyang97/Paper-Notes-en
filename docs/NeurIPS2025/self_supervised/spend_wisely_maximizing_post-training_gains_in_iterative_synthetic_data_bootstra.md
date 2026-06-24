@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][synthetic data] This paper provides the first theoretical analysis of the budget allocation problem in iterative synthetic data bootstrapping…
+  [NeurIPS 2025 Spotlight][Self-Supervised Learning][synthetic data] This paper provides the first theoretical analysis of the budget allocation problem in iterative synthetic data bootstrapping, proving that constant strategies fail to converge with high probability, that exponential growth strategies outperform polynomial strategies in the worst case, and validating these findings empirically on image denoising (DPM) and mathematical reasoning (LLM) tasks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Self-Supervised Learning"
   - "synthetic data"
   - "iterative bootstrapping"
@@ -14,7 +14,7 @@ tags:
   - "large language models"
   - "post-training optimization"
 date: 2026-05-08
-content_hash: c4f21da6cd6b6010
+content_hash: 18adae379552b8c7
 ---
 
 # Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping
@@ -159,10 +159,10 @@ Llama-3-8B-Base is fully fine-tuned and evaluated on three difficulty levels of 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
-- [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
-- [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
-- [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
 - [\[ICLR 2026\] Maximizing Asynchronicity in Event-based Neural Networks](../../ICLR2026/self_supervised/maximizing_asynchronicity_in_event-based_neural_networks.md)
+- [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
+- [\[ICLR 2026\] Maximizing Incremental Information Entropy for Contrastive Learning](../../ICLR2026/self_supervised/maximizing_incremental_information_entropy_for_contrastive_learning.md)
+- [\[ICML 2025\] Beyond Sensor Data: Foundation Models of Behavioral Data from Wearables Improve Health Predictions](../../ICML2025/self_supervised/beyond_sensor_data_foundation_models_of_behavioral_data_from_wearables_improve_h.md)
 
 </div>
 

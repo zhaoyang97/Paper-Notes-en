@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Two-Stage Regularization-Based Structured Pruning for LLMs
 description: >-
-  [ACL 2026][Model Compression][Paper Note] TRSP employs a first-stage regularization to learn the importance of each Transformer layer and a second-stage regularization to minimize the distance between the input and output of candidate layers. This facilitates the transfer of knowledge to retained layers, enabling layer-wise structured pruning and actual infere
+  [ACL2026][Model Compression][Structured Pruning] TRSP employs a first-stage regularization to learn the importance of each Transformer layer and a second-stage regularization to minimize the distance between the input and output of candidate layers. This facilitates the transfer of knowledge to retained layers, enabling layer-wise structured pruning and actual inference acceleration for LLMs without requiring retraining.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL2026"
+  - "Model Compression"
+  - "Structured Pruning"
+  - "Layer Pruning"
+  - "Two-Stage Regularization"
+  - "LLM Acceleration"
+  - "Retraining-Free Compression"
 date: 2026-05-08
-content_hash: e3d95f7970aab636
+content_hash: ead3e06e5f20ea07
 ---
+
 # Two-Stage Regularization-Based Structured Pruning for LLMs
 
 **Conference**: ACL2026  
@@ -146,11 +152,11 @@ Analytical experiments address acceleration, necessity of stages, and iterative 
 
 ## Related Papers
 
+- [\[ICLR 2026\] DTP: Delta-Guided Two Stage Pruning for Mamba-based Multimodal Large Language Models](../../ICLR2026/model_compression/dtp_delta-guided_two_stage_pruning_for_mamba-based_multimodal_large_language_mod.md)
 - [\[ACL 2025\] CFSP: An Efficient Structured Pruning Framework for LLMs with Coarse-to-Fine Activation Information](../../ACL2025/model_compression/cfsp_an_efficient_structured_pruning_framework_for_llms_with_coarse-to-fine_acti.md)
 - [\[ACL 2026\] GRASPrune: Global Gating for Budgeted Structured Pruning of Large Language Models](grasprune_global_gating_for_budgeted_structured_pruning_of_large_language_models.md)
 - [\[CVPR 2026\] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](../../CVPR2026/model_compression/f2hdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_motion_mo.md)
-- [\[ACL 2025\] STUN: Structured-Then-Unstructured Pruning for Scalable MoE Pruning](../../ACL2025/model_compression/stun_moe_pruning.md)
-- [\[ICML 2025\] RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](../../ICML2025/model_compression/rocketkv_accelerating_long-context_llm_inference_via_two-stage_kv_cache_compress.md)
+- [\[ICML 2026\] ToaSt: Token Channel Selection and Structured Pruning for Efficient ViT](../../ICML2026/model_compression/toast_token_channel_selection_and_structured_pruning_for_efficient_vit.md)
 
 </div>
 

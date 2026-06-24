@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] M4Human: A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] M4Human is the largest multimodal mmWave radar benchmark for Human Mesh Reconstruction (HMR) to date, featuring 661k frames, 50 actions, and 20 subjects. It provides synchronized RGB, Depth, Raw Radar Tensor (RT), and Radar Point Cloud (RPC) modalities with high-fidelity 3D mesh annotations based on optical motion capt
+  [CVPR 2026][Human Understanding][mmWave Radar] M4Human is the largest multimodal mmWave radar benchmark for Human Mesh Reconstruction (HMR) to date, featuring 661k frames, 50 actions, and 20 subjects. It provides synchronized RGB, Depth, Raw Radar Tensor (RT), and Radar Point Cloud (RPC) modalities with high-fidelity 3D mesh annotations based on optical motion capture (MoCap). It also introduces RT-Mesh, the first lightweight baseline for direct HMR from RT.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "mmWave Radar"
+  - "Human Mesh Reconstruction"
+  - "Multimodal Dataset"
+  - "Raw Radar Tensor"
+  - "Privacy-Preserving Sensing"
 date: 2026-05-08
-content_hash: 5f226056262c8dd7
+content_hash: de398747d1dc803f
 ---
+
 # M4Human: A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction
 
 **Conference**: CVPR 2026  
@@ -110,16 +116,16 @@ Radar monomodality surpasses RGB in S1/S2 and matches Depth in TE, as radar is s
 - Value: ⭐⭐⭐⭐⭐ (Publicly available infrastructure for the community)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data](opendance_multimodal_controllable_3d_dance_generation_with_large-scale_internet_.md)
-- [\[CVPR 2026\] ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications](immeriris_a_large-scale_dataset_and_benchmark_for_off-axis_and_unconstrained_iri.md)
 - [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
 - [\[CVPR 2026\] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation](romo_a_large-scale_richly_organized_dataset_and_semantic_taxonomy_for_human_moti.md)
-- [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
+- [\[CVPR 2025\] 3D Face Reconstruction From Radar Images](../../CVPR2025/human_understanding/3d_face_reconstruction_from_radar_images.md)
+- [\[CVPR 2026\] SAM 3D Body: Robust Full-Body Human Mesh Recovery](sam_3d_body_robust_full-body_human_mesh_recovery.md)
 
 </div>
 

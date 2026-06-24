@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VLMgineer: Vision-Language Models as Robotic Toolsmiths
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLM] VLMgineer integrates the vision-language understanding, code generation, and commonsense priors of VLMs into an evolutionary search loop to automatically co-design URDF tools and discrete action trajectories for robotic tasks. It demonstrates superior task completion capabilities over human prompts, naive sampling, and
+  [ICLR 2026][Robotics][Robotic Tool Design] VLMgineer integrates the vision-language understanding, code generation, and commonsense priors of VLMs into an evolutionary search loop to automatically co-design URDF tools and discrete action trajectories for robotic tasks. It demonstrates superior task completion capabilities over human prompts, naive sampling, and off-the-shelf tools across 12 tool-use tasks, evolutionary ablations, and real-world Franka robot validations.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLM
-  - sim-to-real
+  - "ICLR 2026"
+  - "Robotics"
+  - "Robotic Tool Design"
+  - "VLM"
+  - "Evolutionary Search"
+  - "Tool-Action Co-design"
+  - "sim-to-real"
 date: 2026-05-08
-content_hash: b7a1549e69b788c1
+content_hash: 895e6adb5e165d71
 ---
+
 # VLMgineer: Vision-Language Models as Robotic Toolsmiths
 
 **Conference**: ICLR 2026  
@@ -146,8 +150,8 @@ Qualitatively, VLMgineer's tools prioritize simplifying interaction over mimicki
 - Value: ⭐⭐⭐⭐⭐ Demonstrates that "intelligent robotics" involves physical geometry invention as much as control policies.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -155,7 +159,7 @@ Qualitatively, VLMgineer's tools prioritize simplifying interaction over mimicki
 - [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
 - [\[ICLR 2026\] Hybrid Training for Vision-Language-Action Models](hybrid_training_for_vision-language-action_models.md)
 - [\[ICLR 2026\] Self-Refining Vision Language Model for Robotic Failure Detection and Reasoning](self-refining_vision_language_model_for_robotic_failure_detection_and_reasoning.md)
-- [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
+- [\[ICLR 2026\] Policy Contrastive Decoding for Robotic Foundation Models](policy_contrastive_decoding_for_robotic_foundation_models.md)
 
 </div>
 

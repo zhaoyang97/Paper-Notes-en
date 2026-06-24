@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RRRA: Resampling and Reranking through a Retriever Adapter
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Dense Retrieval] This paper proposes the RRRA framework, which attaches a lightweight learnable adapter to a Bi-Encoder to model the false-negative probability of each candidate d…
+  [AAAI 2026][Information Retrieval & RAG][Dense Retrieval] This paper proposes the RRRA framework, which attaches a lightweight learnable adapter to a Bi-Encoder to model the false-negative probability of each candidate document. The adapter is used simultaneously for negative resampling during training and reranking during inference, consistently outperforming strong baselines such as SimANS and TriSampler on NQ, TQ, and MS MARCO.
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Lightweight Adapter"
   - "Reranking"
 date: 2026-05-08
-content_hash: ebdc8606da7e5651
+content_hash: 438d89bc3479b51f
 ---
 
 # RRRA: Resampling and Reranking through a Retriever Adapter
@@ -183,7 +183,7 @@ RRRA outperforms SimANS by +6.2 on NQ R@1 and +4.7 on MS-Doc R@1.
 - [\[ICLR 2026\] Revela: Dense Retriever Learning via Language Modeling](../../ICLR2026/information_retrieval/revela_dense_retriever_learning_via_language_modeling.md)
 - [\[ICML 2026\] Retriever Portfolios: A Principled Approach to Adaptive RAG](../../ICML2026/information_retrieval/retriever_portfolios_a_principled_approach_to_adaptive_rag.md)
 - [\[ACL 2026\] Test-Time Training for Zero-Resource Dense Retrieval Reranking](../../ACL2026/information_retrieval/test-time_training_for_zero-resource_dense_retrieval_reranking.md)
-- [\[NeurIPS 2025\] AcuRank: Uncertainty-Aware Adaptive Computation for Reranking](../../NeurIPS2025/information_retrieval/acurank_uncertainty-aware_adaptive_computation_for_listwise_reranking.md)
+- [\[ACL 2025\] Reranking-based Generation for Unbiased Perspective Summarization](../../ACL2025/information_retrieval/reranking-based_generation_for_unbiased_perspective_summarization.md)
 
 </div>
 

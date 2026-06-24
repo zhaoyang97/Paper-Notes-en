@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] The authors construct AnesSuite, the first comprehensive dataset suite for anesthesiology reasoning. It includes the benchmark AnesBench (7,972 bilingual multiple-choice questions across three cognitive levels) and three training datasets (AnesCorpus/AnesQA/AnesR1). The Morpheus model, trained using SFT+GRPO, allows a
+  [ICLR 2026][LLM Evaluation][Anesthesiology Reasoning] The authors construct AnesSuite, the first comprehensive dataset suite for anesthesiology reasoning. It includes the benchmark AnesBench (7,972 bilingual multiple-choice questions across three cognitive levels) and three training datasets (AnesCorpus/AnesQA/AnesR1). The Morpheus model, trained using SFT+GRPO, allows a 7B model to match the 14B baseline performance while revealing significant bottlenecks in complex clinical…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Anesthesiology Reasoning"
+  - "Medical Benchmark"
+  - "Bilingual Evaluation"
+  - "Cognitive Demand Grading"
+  - "GRPO Reinforcement Learning"
 date: 2026-05-08
-content_hash: 0542f2fab9e35f36
+content_hash: edb3331e78812145
 ---
+
 # AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning
 
 **Conference**: ICLR 2026  

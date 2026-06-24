@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper **precisely maps** the Empirical Risk Minimization (ERM) problem of two-layer neural networks (diagonal and quadratic) under weight decay training to LASSO and low-rank matrix compressed sensing. This mapping allows for the first analytical characterization of a complete excess risk phase diagram (8 phases,
+  [ICLR 2026][Learning Theory][Scaling Laws] This paper **precisely maps** the Empirical Risk Minimization (ERM) problem of two-layer neural networks (diagonal and quadratic) under weight decay training to LASSO and low-rank matrix compressed sensing. This mapping allows for the first analytical characterization of a complete excess risk phase diagram (8 phases, including benign/harmful overfitting and interpolation peaks) in a regime where "true feature learning occurs." Furth…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Neural Scaling Laws"
+  - "Feature Learning"
+  - "Scaling Laws"
+  - "Weight Spectra"
+  - "Compressed Sensing"
+  - "Approximate Message Passing"
 date: 2026-05-08
-content_hash: 85ca762a649848ee
+content_hash: 363eb3164cd96f56
 ---
+
 # Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime
 
 **Conference**: ICLR 2026  
@@ -151,8 +158,8 @@ Figure 2 compares eigenvalue histograms (blue) of learned weights with theoretic
 - [\[ICLR 2026\] Implicit bias produces neural scaling laws in learning curves, from perceptrons to deep networks](implicit_bias_produces_neural_scaling_laws_in_learning_curves_from_perceptrons_t.md)
 - [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
 - [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](transfer_learning_in_infinite_width_feature_learning_networks.md)
-- [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
 - [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
+- [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
 
 </div>
 

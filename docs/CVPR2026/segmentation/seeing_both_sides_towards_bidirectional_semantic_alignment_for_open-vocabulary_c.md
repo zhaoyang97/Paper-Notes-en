@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation
 description: >-
-  [CVPR 2026][Segmentation][CLIP] BaCLIP utilizes a Mutual Refinement Enhancement Module (MREM) to enable bidirectional calibration between text and visual features. By transforming refined text embeddings into semantic prompts for SAM, BaCLIP achieves SOTA performance on the OVCamo benchmark for Open-Vocabulary Camouflaged Object Segmentation (OVCOS)
+  [CVPR 2026][Segmentation][Camouflaged Object Segmentation] BaCLIP utilizes a Mutual Refinement Enhancement Module (MREM) to enable bidirectional calibration between text and visual features. By transforming refined text embeddings into semantic prompts for SAM, BaCLIP achieves SOTA performance on the OVCamo benchmark for Open-Vocabulary Camouflaged Object Segmentation (OVCOS) with a lightweight architecture, surpassing the previous SOTA by 4.5% in cIoU.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP
-  - SAM
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Camouflaged Object Segmentation"
+  - "Open-Vocabulary"
+  - "Bidirectional Cross-modal Alignment"
+  - "CLIP"
+  - "SAM"
 date: 2026-05-08
-content_hash: fc18461a919772d6
+content_hash: 1d4be09bb0e038a6
 ---
+
 # Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation
 
 **Conference**: CVPR 2026  
@@ -153,8 +157,8 @@ Incremental component addition (Tab. 3) and MREM internal breakdown (Tab. 5):
 ## Related Papers
 
 - [\[CVPR 2026\] Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt](training-free_open-vocabulary_camouflaged_object_segmentation_via_fine-grained_o.md)
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection](sddf_specificity-driven_dynamic_focusing_for_open-vocabulary_camouflaged_object.md)
+- [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
 - [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Continuous Simplicial Neural Networks
 description: >-
-  [NEURIPS2025][Autonomous Driving][Simplicial Neural Networks] This paper proposes COSIMO, the first continuous simplicial neural network based on partial differential equations (PDEs)…
+  [NEURIPS2025][Autonomous Driving][Simplicial Neural Networks] This paper proposes COSIMO, the first continuous simplicial neural network based on partial differential equations (PDEs), which realizes continuous information flow by defining heat diffusion dynamics on the Hodge Laplacian. COSIMO demonstrates superior stability and over-smoothing control compared to discrete SNNs.
 tags:
   - "NEURIPS2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Hodge Laplacian"
   - "Topological Deep Learning"
 date: 2026-05-08
-content_hash: fa2a16d672e25872
+content_hash: e8b10ebefe277b28
 ---
 
 # Continuous Simplicial Neural Networks
@@ -142,11 +142,11 @@ When perturbations are sufficiently small, $\delta_{\mathbf{X}_k} = \mathcal{O}(
 
 ## Related Papers
 
+- [\[CVPR 2025\] Neural Inverse Rendering from Propagating Light](../../CVPR2025/autonomous_driving/neural_inverse_rendering_from_propagating_light.md)
+- [\[CVPR 2025\] SOLVE: Synergy of Language-Vision and End-to-End Networks for Autonomous Driving](../../CVPR2025/autonomous_driving/solve_synergy_of_language-vision_and_end-to-end_networks_for_autonomous_driving.md)
 - [\[ICCV 2025\] Unleashing the Temporal Potential of Stereo Event Cameras for Continuous-Time 3D Perception](../../ICCV2025/autonomous_driving/unleashing_the_temporal_potential_of_stereo_event_cameras_for_continuous-time_3d.md)
+- [\[ICLR 2026\] SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction](../../ICLR2026/autonomous_driving/scenestreamer_continuous_scenario_generation_as_next_token_group_prediction.md)
 - [\[AAAI 2026\] I-INR: Iterative Implicit Neural Representations](../../AAAI2026/autonomous_driving/i-inr_iterative_implicit_neural_representations.md)
-- [\[ICML 2026\] Mitigating Error Accumulation in Continuous Navigation via Memory-Augmented Kalman Filtering](../../ICML2026/autonomous_driving/mitigating_error_accumulation_in_continuous_navigation_via_memory-augmented_kalm.md)
-- [\[CVPR 2026\] Neural Distribution Prior for LiDAR Out-of-Distribution Detection](../../CVPR2026/autonomous_driving/neural_distribution_prior_for_lidar_ood_detection.md)
-- [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](../../CVPR2026/autonomous_driving/cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
 
 </div>
 

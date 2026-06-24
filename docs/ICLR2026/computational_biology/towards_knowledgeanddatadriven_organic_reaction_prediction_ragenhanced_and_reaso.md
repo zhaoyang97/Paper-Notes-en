@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Towards Knowledge-and-Data-Driven Organic Reaction Prediction: RAG-Enhanced and Reasoning-Powered Hybrid System with LLMs
 description: >-
-  [ICLR 2026][Computational Biology][RAG] This paper proposes **Reaction-Thinker**, a hybrid organic reaction prediction system driven by both knowledge and data. It utilizes a classifier and a similarity-based retrieval library to divert samples: those with similar cases follow a RAG path (injecting reaction types and analogous cases into prompts), while thos
+  [ICLR 2026][Computational Biology][Organic Reaction Prediction] This paper proposes **Reaction-Thinker**, a hybrid organic reaction prediction system driven by both knowledge and data. It utilizes a classifier and a similarity-based retrieval library to divert samples: those with similar cases follow a RAG path (injecting reaction types and analogous cases into prompts), while those without follow a "CoT Reasoning + GRPO Reinforcement Learning" path. The system achieves an Ex…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - RAG
-  - Chain-of-Thought
-  - GRPO
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Organic Reaction Prediction"
+  - "RAG"
+  - "Chain-of-Thought"
+  - "GRPO"
+  - "Retrosynthetic Verification"
 date: 2026-05-08
-content_hash: 84b84df5f6ee9bc7
+content_hash: 71ad7ad2f60b1377
 ---
+
 # Towards Knowledge-and-Data-Driven Organic Reaction Prediction: RAG-Enhanced and Reasoning-Powered Hybrid System with LLMs
 
 **Conference**: ICLR 2026  
@@ -146,11 +149,11 @@ Threshold $M$ impact: At $M=10$, 81.7% coverage with 94.70% accuracy (Overall 89
 
 ## Related Papers
 
+- [\[ICLR 2026\] SC-Arena: A Natural Language Benchmark and Knowledge-Enhanced Evaluation for Single-Cell Reasoning](sc-arena_a_natural_language_benchmark_for_single-cell_reasoning_with_knowledge-a.md)
 - [\[ICLR 2026\] Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction](adaptive_data-knowledge_alignment_in_genetic_perturbation_prediction.md)
 - [\[ICLR 2026\] CellDuality: Unlocking Biological Reasoning in LLMs with Self-Supervised RLVR](cellduality_unlocking_biological_reasoning_in_llms_with_self-supervised_rlvr.md)
 - [\[ICLR 2026\] Automatic and Structure-Aware Sparsification of Hybrid Neural ODEs with Application to Glucose Prediction](automatic_and_structure-aware_sparsification_of_hybrid_neural_odes_with_applicat.md)
-- [\[ICLR 2026\] Test-Time Adaptation without Source Data for Out-of-Domain Bioactivity Prediction](test-time_adaptation_without_source_data_for_out-of-domain_bioactivity_predictio.md)
-- [\[ICLR 2026\] KGOT: Unified Knowledge Graph and Optimal Transport Pseudo-Labeling for Molecule-Protein Interaction Prediction](kgot_unified_knowledge_graph_and_optimal_transport_pseudo-labeling_for_molecule-.md)
+- [\[ICLR 2026\] SpectraLLM: Uncovering the Ability of LLMs for Molecular Structure Elucidation from Multi-Spectral Data](spectrallm_uncovering_the_ability_of_llms_for_molecular_structure_elucidation_fr.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CSRv2: Unlocking Ultra-Sparse Embeddings
 description: >-
-  [ICLR 2026][Self-Supervised Learning][k-annealing] CSRv2 utilizes "progressive k-annealing + sparse supervised contrastive learning + full-backbone fine-tuning" to advance Contrastive Sparse Representation (CSR) into the ultra-sparse range of $k\le 4$. This approach reduces dead neurons from 80% to 20% and achieves a 14% accuracy gain at $k=2$. It enables embeddings wi
+  [ICLR2026][Self-Supervised Learning][Sparse Embeddings] CSRv2 utilizes "progressive k-annealing + sparse supervised contrastive learning + full-backbone fine-tuning" to advance Contrastive Sparse Representation (CSR) into the ultra-sparse range of $k\le 4$. This approach reduces dead neurons from 80% to 20% and achieves a 14% accuracy gain at $k=2$. It enables embeddings with only 2 active dimensions to match the performance of CSR at $k=8$ or MRL at 32 dimensions…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - k-annealing
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Sparse Embeddings"
+  - "Ultra-Sparse"
+  - "k-annealing"
+  - "Supervised Contrastive Learning"
+  - "Retrieval Efficiency"
 date: 2026-05-08
-content_hash: cc5f7568cbedb38e
+content_hash: b2c5f65628474362
 ---
+
 # CSRv2: Unlocking Ultra-Sparse Embeddings
 
 **Conference**: ICLR2026  
@@ -150,9 +155,9 @@ At $k=2$, CSRv2 averages 58.38, which is 14 percentage points higher than CSR (4
 
 - [\[ICLR 2026\] Temporal Slowness in Central Vision Drives Semantic Object Learning](temporal_slowness_in_central_vision_drives_semantic_object_learning.md)
 - [\[ICLR 2026\] Disentangled representation learning through unsupervised symmetry group discovery](disentangled_representation_learning_through_unsupervised_symmetry_group_discove.md)
+- [\[ICLR 2026\] In Context Semi-Supervised Learning](in_context_semi-supervised_learning.md)
+- [\[ICLR 2026\] Better Together: Leveraging Unpaired Multimodal Data for Stronger Unimodal Models](better_together_leveraging_unpaired_multimodal_data_for_stronger_unimodal_models.md)
 - [\[ICLR 2026\] Bayesian Test-Time Adaptation via Dirichlet feature projection and GMM-Driven Inference for Motor Imagery EEG Decoding](bayesian_test-time_adaptation_via_dirichlet_feature_projection_and_gmm-driven_in.md)
-- [\[ICLR 2026\] Boosting Open Set Recognition Performance through Modulated Representation Learning](boosting_open_set_recognition_performance_through_modulated_representation_learn.md)
-- [\[ICLR 2026\] PonderLM: Pretraining Language Models to Ponder in Continuous Space](ponderlm_pretraining_language_models_to_ponder_in_continuous_space.md)
 
 </div>
 

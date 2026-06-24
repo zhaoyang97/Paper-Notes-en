@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Binary Quadratic Quantization: Beyond First-Order Quantization for Real-Valued Matrix Compression
 description: >-
-  [NeurIPS 2025][Model Compression][Binary quantization] BQQ proposes quadratic binary quantization—representing weight matrices as products (rather than linear combinations) of binary matrices—thereby surpassing the expre…
+  [NeurIPS 2025][Model Compression][Binary quantization] BQQ proposes quadratic binary quantization—representing weight matrices as products (rather than linear combinations) of binary matrices—thereby surpassing the expressive capacity of conventional first-order quantization. By extending AMFD (Annealed Mean-Field Descent) to PUBO problems for mixed-integer optimization, BQQ achieves a dramatic accuracy leap from 10.83% to 58.25% on 2-bit data-free ViT quantization.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "ViT compression"
   - "ultra-low bitwidth"
 date: 2026-05-08
-content_hash: e158348ba8b42521
+content_hash: a21ac1a1c432a930
 ---
 
 # Binary Quadratic Quantization: Beyond First-Order Quantization for Real-Valued Matrix Compression
@@ -123,11 +123,11 @@ Input weight matrix $W$ → greedy term-by-term decomposition → solve a PUBO (
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
+- [\[ACL 2025\] UniQuanF: Unifying Uniform and Binary-coding Quantization for Accurate Compression of Large Language Models](../../ACL2025/model_compression/uniquanf_unified_quantization.md)
 - [\[NeurIPS 2025\] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks](spiking_brain_compression_post-training_second-order_compression_for_spiking_neu.md)
-- [\[NeurIPS 2025\] Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization](tighter_cmi-based_generalization_bounds_via_stochastic_projection_and_quantizati.md)
-- [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
-- [\[ICLR 2026\] AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs](../../ICLR2026/model_compression/anybcq_hardware_efficient_flexible_binary-coded_quantization_for_multi-precision.md)
+- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
+- [\[ICML 2025\] An Efficient Matrix Multiplication Algorithm for Accelerating Inference in Binary and Ternary Neural Networks](../../ICML2025/model_compression/an_efficient_matrix_multiplication_algorithm_for_accelerating_inference_in_binar.md)
+- [\[CVPR 2025\] FIMA-Q: Post-Training Quantization for Vision Transformers by Fisher Information Matrix Approximation](../../CVPR2025/model_compression/fima-q_post-training_quantization_for_vision_transformers_by_fisher_information_.md)
 
 </div>
 

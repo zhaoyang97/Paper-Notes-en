@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Propose SpikeTrack, the first RGB visual tracking framework fully compliant with the spike-driven paradigm. By utilizing asymmetric timestep expansion, unidirectional information flow, and a brain-inspired Memory Retrieval Module (MRM), it achieves SOTA performance among SNN trackers and performs on par with ANN tracke
+  [CVPR 2026][Video Understanding][Spiking Neural Networks] Propose SpikeTrack, the first RGB visual tracking framework fully compliant with the spike-driven paradigm. By utilizing asymmetric timestep expansion, unidirectional information flow, and a brain-inspired Memory Retrieval Module (MRM), it achieves SOTA performance among SNN trackers and performs on par with ANN trackers, while consuming only 1/26 the energy of TransT.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Spiking Neural Networks"
+  - "Visual Tracking"
+  - "Energy Efficiency"
+  - "Asymmetric Architecture"
+  - "Memory Retrieval"
 date: 2026-05-08
-content_hash: 53f985d2a3c245ff
+content_hash: bdda07ebd72e017c
 ---
+
 # SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ SpikeTrack-B256-T3 outperforms TransT by 2.2% AUC on LaSOT while consuming only 
 
 ## Related Papers
 
-- [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
 - [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
+- [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
+- [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
 - [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](drift-resilient_temporal_priors_for_visual_tracking.md)
 - [\[CVPR 2026\] Adaptive Capacity Autoregressive Visual Tracking](adaptive_capacity_autoregressive_visual_tracking.md)
-- [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
 
 </div>
 

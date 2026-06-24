@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Correspondence-Attention Alignment for Multi-View Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The authors reveal that 3D self-attention in multi-view diffusion models spontaneously learns "cross-view geometric correspondence" in deep layers, but this signal degrades under large viewpoint changes. Based on this, they propose CAMEO—a method that directly supervises a **single deep attention layer** with geometric
+  [CVPR 2026][Image Generation][Multi-view Diffusion] The authors reveal that 3D self-attention in multi-view diffusion models spontaneously learns "cross-view geometric correspondence" in deep layers, but this signal degrades under large viewpoint changes. Based on this, they propose CAMEO—a method that directly supervises a **single deep attention layer** with geometric correspondence maps. This approach doubles convergence speed, improves novel view synthesis quality…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-view Diffusion"
+  - "Novel View Synthesis"
+  - "3D Self-attention"
+  - "Geometric Correspondence"
+  - "Attention Supervision"
 date: 2026-05-08
-content_hash: 5fd0071f5ddf8620
+content_hash: 7b6369cad7f367d9
 ---
+
 # Correspondence-Attention Alignment for Multi-View Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -140,9 +146,9 @@ The baseline is CAT3D (reproduced via MVGenMaster, SD2.1 initialization), compar
 
 - [\[CVPR 2026\] InstructMix2Mix: Consistent Sparse-View Editing Through Multi-View Model Personalization](instructmix2mix_consistent_sparse-view_editing_through_multi-view_model_personal.md)
 - [\[CVPR 2026\] MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment](multicrafter_high-fidelity_multi-subject_generation_via_disentangled_attention_a.md)
+- [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](../../ICLR2026/image_generation/mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
 - [\[CVPR 2026\] LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors](larp_efficient_multi-view_inpainting_with_latent_reprojection_priors.md)
-- [\[ICML 2026\] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models](../../ICML2026/image_generation/viewmask-1-to-3_multi-view_consistent_image_generation_via_multimodal_discrete_d.md)
-- [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](../../ICLR2026/image_generation/diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
 
 </div>
 

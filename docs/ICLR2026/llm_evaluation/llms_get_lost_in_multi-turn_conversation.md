@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLMs Get Lost In Multi-Turn Conversation
 description: >-
-  [ICLR 2026][LLM Evaluation][Lost-in-Conversation] Through large-scale experiments involving "instruction sharding + simulated dialogue" (200k+ dialogues, 15 LLMs), this paper demonstrates that all top-tier LLMs suffer an average performance drop of 39% in multi-turn underspecified conversations compared to single-turn full instructions. This degradation is primarily c
+  [ICLR 2026][LLM Evaluation][Multi-turn dialogue] Through large-scale experiments involving "instruction sharding + simulated dialogue" (200k+ dialogues, 15 LLMs), this paper demonstrates that all top-tier LLMs suffer an average performance drop of 39% in multi-turn underspecified conversations compared to single-turn full instructions. This degradation is primarily caused not by a decline in aptitude, but by a **reliability collapse**—once a model takes a wrong turn…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Lost-in-Conversation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Multi-turn dialogue"
+  - "Underspecification"
+  - "Reliability"
+  - "Simulated evaluation"
+  - "Lost-in-Conversation"
 date: 2026-05-08
-content_hash: 1f810a72fbdebc74
+content_hash: 593fef973be311c8
 ---
+
 # LLMs Get Lost In Multi-Turn Conversation
 
 **Conference**: ICLR 2026  

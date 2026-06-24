@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FALCON: Resolving Visual Redundancy and Fragmentation in High-resolution Multimodal Large Language Models via Visual Registers
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Registers] This paper proposes FALCON, which introduces learnable Visual Registers into the ViT encoder. Through the ReCompact mechanism…
+  [ICCV 2025][Multimodal VLM][Visual Registers] This paper proposes FALCON, which introduces learnable Visual Registers into the ViT encoder. Through the ReCompact mechanism, visual redundancy is eliminated directly during the encoding stage (achieving 9× token compression), while the ReAtten module resolves visual fragmentation caused by image cropping via inter-register interactions.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Visual Fragmentation"
   - "High-resolution MLLM"
 date: 2026-05-08
-content_hash: 1f8a927e0c66b0f1
+content_hash: a84a5d73867c5ff6
 ---
 
 # FALCON: Resolving Visual Redundancy and Fragmentation in High-resolution Multimodal Large Language Models via Visual Registers
@@ -150,11 +150,11 @@ ReAtten achieves the best performance across all metrics and effectively reduces
 
 ## Related Papers
 
+- [\[ACL 2025\] Teaching Vision-Language Models to Ask: Resolving Ambiguity in Visual Questions](../../ACL2025/multimodal_vlm/teaching_vlm_ask_ambiguity.md)
 - [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
+- [\[ICCV 2025\] Visual-Oriented Fine-Grained Knowledge Editing for MultiModal Large Language Models](visual-oriented_fine-grained_knowledge_editing_for_multimodal_large_language_mod.md)
+- [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](../../ICLR2026/multimodal_vlm/ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
 - [\[ICCV 2025\] BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models](basic_boosting_visual_alignment_with_intrinsic_refined_embeddings_in_multimodal_.md)
-- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
-- [\[AAAI 2026\] Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models](../../AAAI2026/multimodal_vlm/global_compression_commander_plug-and-play_inference_acceler.md)
-- [\[ICML 2026\] CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception](../../ICML2026/multimodal_vlm/cvsearch_empowering_multimodal_llms_with_cognitive_visual_search_for_high-resolu.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA
 description: >-
-  [CVPR 2026][Segmentation][LLaVA] Treating a frozen LLaVA as a segmenter: through structured question-answering, it is prompted to "acknowledge" which classes are present in the image. Activation regions are then back-traced from the visual-category token distances in the LLM's intermediate layers. Finally, high-confidence regions purified by prototype
+  [CVPR 2026][Segmentation][Training-free] Treating a frozen LLaVA as a segmenter: through structured question-answering, it is prompted to "acknowledge" which classes are present in the image. Activation regions are then back-traced from the visual-category token distances in the LLM's intermediate layers. Finally, high-confidence regions purified by prototypes are fed as point/box prompts to SAM. Without any training, this method establishes a new SOTA on VOC21 (68.0% mIoU) a…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - LLaVA
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Training-free"
+  - "Open-vocabulary semantic segmentation"
+  - "MLLM Prior"
+  - "LLaVA"
+  - "SAM Prompting"
 date: 2026-05-08
-content_hash: bafcdb35f8489d59
+content_hash: d4f6f178d90820d8
 ---
+
 # The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA
 
 **Conference**: CVPR 2026  
@@ -131,7 +136,7 @@ Conducted on VOC21 using LLaVA1.5 / LLaVA1.6 (Vicuna-7B) configurations.
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
 - [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
-- [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 
 </div>

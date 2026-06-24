@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving
 description: >-
-  [ICCV 2025][Multimodal VLM][vision-language model evaluation] This paper proposes VLADBench, a fine-grained vision-language model evaluation benchmark for autonomous driving scenarios, covering 5 major domains…
+  [ICCV 2025][Multimodal VLM][vision-language model evaluation] This paper proposes VLADBench, a fine-grained vision-language model evaluation benchmark for autonomous driving scenarios, covering 5 major domains, 11 second-level dimensions, and 29 third-level tasks. Using a closed-ended QA format, it progressively assesses VLM capabilities from static knowledge to dynamic reasoning, and trains small-scale domain-specific (DS) models on 1.4M domain-specific QA data to validate c…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "visual question answering"
   - "driving scene understanding"
 date: 2026-05-08
-content_hash: c76152942e58615b
+content_hash: 59aa98a70c8e27ac
 ---
 
 # Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving
@@ -131,11 +131,11 @@ DS models are fine-tuned using a standard vision-language model training strateg
 
 ## Related Papers
 
-- [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
 - [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
-- [\[CVPR 2026\] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving](../../CVPR2026/multimodal_vlm/prune2drive_a_plug-and-play_framework_for_accelerating_vision-language_models_in.md)
-- [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](../../NeurIPS2025/multimodal_vlm/affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
-- [\[NeurIPS 2025\] Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards](../../NeurIPS2025/multimodal_vlm/unveiling_chain_of_step_reasoning_for_visionlanguage_models.md)
+- [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
+- [\[ICCV 2025\] Visual-Oriented Fine-Grained Knowledge Editing for MultiModal Large Language Models](visual-oriented_fine-grained_knowledge_editing_for_multimodal_large_language_mod.md)
+- [\[ICLR 2026\] Benchmarking Large Vision-Language Models on Fine-Grained Image Tasks: A Comprehensive Evaluation](../../ICLR2026/multimodal_vlm/benchmarking_large_vision-language_models_on_fine-grained_image_tasks_a_comprehe.md)
+- [\[ACL 2025\] A Parameter-Efficient and Fine-Grained Prompt Learning for Vision-Language Models](../../ACL2025/multimodal_vlm/a_parameter-efficient_and_fine-grained_prompt_learning_for_vision-language_model.md)
 
 </div>
 

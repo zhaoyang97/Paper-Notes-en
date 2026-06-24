@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AURA: Multi-modal Shared Autonomy for Urban Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] AURA decomposes urban sidewalk navigation into hierarchical shared autonomy where "humans provide high-level instructions and AI handles low-level control." By using a Spatial-Aware Instruction Encoder (SIE) to align text, sketches, and arrows with scene semantics and geometry, and an anchor-based diffusion policy to g
+  [CVPR 2026][Robotics][Shared Autonomy] AURA decomposes urban sidewalk navigation into hierarchical shared autonomy where "humans provide high-level instructions and AI handles low-level control." By using a Spatial-Aware Instruction Encoder (SIE) to align text, sketches, and arrows with scene semantics and geometry, and an anchor-based diffusion policy to generate trajectories, it reduces human takeover frequency by 44% and operational costs by over 70% in both simulation and…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Shared Autonomy"
+  - "Vision-Language-Action (VLA)"
+  - "Urban Sidewalk Navigation"
+  - "Diffusion Policy"
+  - "Instruction Following"
 date: 2026-05-08
-content_hash: a285758fb9fbdd78
+content_hash: 88776fe0b04ed401
 ---
+
 # AURA: Multi-modal Shared Autonomy for Urban Navigation
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,16 @@ Instruction understanding capability (ROUGE-L and Intent/Qwen Score):
 - Value: ⭐⭐⭐⭐ Strong potential for deployment in sidewalk delivery and assistive robotics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FloVerse: Floor Plan-Guided Multi-Modal Navigation](floverse_floor_plan-guided_multi-modal_navigation.md)
-- [\[CVPR 2026\] Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models](multi-spatialmllm_multi-frame_spatial_understanding_with_multi-modal_large_langu.md)
 - [\[CVPR 2026\] HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation](htnav_a_hybrid_navigation_framework_with_tiered_structure_for_urban_aerial_visio.md)
 - [\[CVPR 2026\] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](clad_planning_with_grounded_foresight_via_cross-modal_latent_dynamics.md)
 - [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
+- [\[ICLR 2026\] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations](../../ICLR2026/robotics/on_robustness_of_vision-language-action_model_against_multi-modal_perturbations.md)
 
 </div>
 

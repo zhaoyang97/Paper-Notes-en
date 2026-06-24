@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Diff4Splat is proposed as a feed-forward framework that unifies video diffusion models and deformable 3D Gaussian fields into an end-to-end trainable model. it directly generates dynamic 4D scene representations from a single image in approximately 30 seconds, which is 60 times faster than optimization-based methods.
+  [CVPR 2026][Video Generation][4D Generation] Diff4Splat is proposed as a feed-forward framework that unifies video diffusion models and deformable 3D Gaussian fields into an end-to-end trainable model. it directly generates dynamic 4D scene representations from a single image in approximately 30 seconds, which is 60 times faster than optimization-based methods.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "4D Generation"
+  - "3D Gaussian Splatting"
+  - "Video Diffusion Models"
+  - "Deformable Gaussian Fields"
+  - "Feed-forward Generation"
 date: 2026-05-08
-content_hash: 5b7264ca602ac86c
+content_hash: e444109900735075
 ---
+
 # Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation
 
 **Conference**: CVPR 2026  
@@ -158,10 +164,10 @@ Training utilizes AdamW with a learning rate of $10^{-5}$, taking about 7 days o
 ## Related Papers
 
 - [\[CVPR 2026\] Content-Aware Dynamic Patchification for Efficient Video Diffusion](content-aware_dynamic_patchification_for_efficient_video_diffusion.md)
-- [\[CVPR 2026\] PerpetualWonder: Long-horizon Action-conditioned 4D Scene Generation](perpetualwonder_long-horizon_action-conditioned_4d_scene_generation.md)
+- [\[CVPR 2026\] LaVR: Scene Latent Conditioned Generative Video Trajectory Re-Rendering using Large 4D Reconstruction Models](lavr_scene_latent_conditioned_generative_video_trajectory_re-rendering_using_lar.md)
 - [\[CVPR 2026\] CineScene: Implicit 3D as Effective Scene Representation for Cinematic Video Generation](cinescene_implicit_3d_as_effective_scene_representation_for_cinematic_video_gene.md)
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
-- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
+- [\[ICLR 2026\] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation](../../ICLR2026/video_generation/3d_scene_prompting_for_scene-consistent_camera-controllable_video_generation.md)
+- [\[CVPR 2026\] SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time](spacetimepilot_generative_rendering_of_dynamic_scenes_across_space_and_time.md)
 
 </div>
 

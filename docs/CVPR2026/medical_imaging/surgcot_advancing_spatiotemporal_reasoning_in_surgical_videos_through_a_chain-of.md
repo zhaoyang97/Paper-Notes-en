@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SurgCoT: Advancing Spatiotemporal Reasoning in Surgical Videos through a Chain-of-Thought Benchmark
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This paper constructs SurgCoT, the first cross-specialty surgical video spatiotemporal reasoning benchmark (covering 7 surgical specialties, 35 procedures, 2,841 videos, 19,345 main questions + 59,177 sub-questions). By employing a "three-stage progressive reasoning + five-tuple annotation protocol (Question→Option→Kno
+  [CVPR 2026][Medical Imaging][Surgical Videos] This paper constructs SurgCoT, the first cross-specialty surgical video spatiotemporal reasoning benchmark (covering 7 surgical specialties, 35 procedures, 2,841 videos, 19,345 main questions + 59,177 sub-questions). By employing a "three-stage progressive reasoning + five-tuple annotation protocol (Question→Option→Knowledge→Clue→Answer)," surgical CoT reasoning is decomposed into a "Video-level → Clip-level → Frame-level" hierarc…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Surgical Videos"
+  - "Spatiotemporal Reasoning"
+  - "Chain-of-Thought"
+  - "Benchmark"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
-content_hash: d75e127c854f8a13
+content_hash: dd7c133ee3e41d70
 ---
+
 # SurgCoT: Advancing Spatiotemporal Reasoning in Surgical Videos through a Chain-of-Thought Benchmark
 
 **Conference**: CVPR 2026  
@@ -132,7 +138,7 @@ LLaVA-Med-7B improved by nearly 7% from BL → KE, indicating that explicit know
 
 ## Related Papers
 
-- [\[CVPR 2026\] Event-Level Detection of Surgical Instrument Handovers in Videos](event_level_detection_of_surgical_instrument_handovers_in_videos.md)
+- [\[ICLR 2026\] M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding](../../ICLR2026/medical_imaging/m3cotbench_benchmark_chain-of-thought_of_mllms_in_medical_image_understanding.md)
 - [\[CVPR 2026\] Synergistic Bleeding Region and Point Detection in Laparoscopic Surgical Videos](synergistic_bleeding_region_and_point_detection_in_laparoscopic_surgical_videos.md)
 - [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
 - [\[CVPR 2026\] TRCoRSurg: Temporal-Relational Co-Reasoning for Surgical Video Triplet Recognition](trcorsurg_temporal-relational_co-reasoning_for_surgical_video_triplet_recognitio.md)

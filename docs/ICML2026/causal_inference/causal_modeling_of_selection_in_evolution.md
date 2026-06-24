@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Causal Modeling of Selection in Evolution
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] The paper argues that "selection" consists of two types: **static selection** (one-time filtering) and **evolutionary selection** (accumulation of differential reproduction over multiple generations). Existing graphical models conflate the two, leading to erroneous causal discoveries on evolutionary data. The authors d
+  [ICML2026][Causal Inference][Selection bias] The paper argues that "selection" consists of two types: **static selection** (one-time filtering) and **evolutionary selection** (accumulation of differential reproduction over multiple generations). Existing graphical models conflate the two, leading to erroneous causal discoveries on evolutionary data. The authors define a causal graphical model that explicitly characterizes evolution and prove that its conditional independence…
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML2026"
+  - "Causal Inference"
+  - "Selection bias"
+  - "Evolutionary selection"
+  - "Causal discovery"
+  - "Graphical models"
+  - "Conditional independence"
 date: 2026-05-08
-content_hash: 82d13e22f51f800a
+content_hash: fea7c228ff90340f
 ---
+
 # Causal Modeling of Selection in Evolution
 
 **Conference**: ICML2026  
@@ -136,9 +142,9 @@ Synthetic data were generated according to Definition 1: Random Erdős–Rényi 
 
 - [\[ICML 2026\] Towards a Holistic Understanding of Selection Bias for Causal Effect Identification](towards_a_holistic_understanding_of_selection_bias_for_causal_effect_identificat.md)
 - [\[ICML 2025\] Latent Variable Causal Discovery under Selection Bias](../../ICML2025/causal_inference/latent_variable_causal_discovery_under_selection_bias.md)
+- [\[ICLR 2026\] NextQuill: Causal Preference Modeling for Enhancing LLM Personalization](../../ICLR2026/causal_inference/nextquill_causal_preference_modeling_for_enhancing_llm_personalization.md)
+- [\[ICLR 2026\] Characterization and Learning of Causal Graphs with Latent Confounders and Post-treatment Selection from Interventional Data](../../ICLR2026/causal_inference/characterization_and_learning_of_causal_graphs_with_latent_confounders_and_post-.md)
 - [\[AAAI 2026\] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](../../AAAI2026/causal_inference/causal_inference_under_threshold_manipulation_bayesian_mixtu.md)
-- [\[ECCV 2024\] Understanding Physical Dynamics with Counterfactual World Modeling](../../ECCV2024/causal_inference/understanding_physical_dynamics_with_counterfactual_world_modeling.md)
-- [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](controllable_generative_sandbox_for_causal_inference.md)
 
 </div>
 

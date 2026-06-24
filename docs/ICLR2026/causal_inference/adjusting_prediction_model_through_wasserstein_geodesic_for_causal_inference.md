@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] To address the issue where distributional imbalance between treated and control groups prevents prediction models from generalizing across groups, this paper proposes G-learner. Instead of aligning covariates (which leads to information loss and over-balancing), G-learner generates a sequence of intermediate population
+  [ICLR 2026][Causal Inference][Optimal Transport] To address the issue where distributional imbalance between treated and control groups prevents prediction models from generalizing across groups, this paper proposes G-learner. Instead of aligning covariates (which leads to information loss and over-balancing), G-learner generates a sequence of intermediate populations along the Wasserstein geodesic between the two distributions. It then uses gradual self-training to step-by-s…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Optimal Transport"
+  - "Wasserstein Geodesic"
+  - "Gradual Self-training"
+  - "Counterfactual Prediction"
 date: 2026-05-08
-content_hash: 499916e8db82d458
+content_hash: 6821531adaf4b764
 ---
+
 # Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference
 
 **Conference**: ICLR 2026  
@@ -140,15 +145,16 @@ G-learner maintains the best performance as confounding increases, demonstrating
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Conformalized Survival Counterfactuals Prediction for General Right-Censored Data](conformalized_survival_counterfactuals_prediction_for_general_right-censored_dat.md)
 - [\[ICML 2025\] Classifier Reconstruction Through Counterfactual-Aware Wasserstein Prototypes](../../ICML2025/causal_inference/classifier_reconstruction_through_counterfactual-aware_wasserstein_prototypes.md)
-- [\[ICLR 2026\] Foundation Models for Causal Inference via Prior-Data Fitted Networks](foundation_models_for_causal_inference_via_prior-data_fitted_networks.md)
 - [\[ICLR 2026\] Exploratory Causal Inference in SAEnce](exploratory_causal_inference_in_saence.md)
-- [\[ICLR 2026\] Ice Cream Doesn't Cause Drowning: Benchmarking LLMs Against Statistical Pitfalls in Causal Inference](ice_cream_doesnt_cause_drowning_benchmarking_llms_against_statistical_pitfalls_i.md)
+- [\[ICLR 2026\] Matching without Group Barrier for Heterogeneous Treatment Effect Estimation](matching_without_group_barrier_for_heterogeneous_treatment_effect_estimation.md)
+- [\[ICLR 2026\] Stochastic Neural Networks for Causal Inference with Missing Confounders](stochastic_neural_networks_for_causal_inference_with_missing_confounders.md)
 
 </div>
 

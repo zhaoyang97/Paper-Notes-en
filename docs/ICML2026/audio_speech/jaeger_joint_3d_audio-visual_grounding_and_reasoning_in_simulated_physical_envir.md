@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] JAEGER: Joint 3D Audio-Visual Grounding and Reasoning in Simulated Physical Environments
 description: >-
-  [ICML 2026][Audio & Speech][FOA] Based on Qwen2.5-Omni, JAEGER adapts an end-to-end 3D audio-visual large model using LoRA. By integrating RGB-D depth positional encoding + First-Order Ambisonics (FOA) dual-track audio + a newly proposed Neural Intensity Vector, it extends traditional AV-LLMs from "2D RGB + Monophonic" to "3D Geometry + Multi-channel
+  [ICML 2026][Audio & Speech][Spatial Audio] Based on Qwen2.5-Omni, JAEGER adapts an end-to-end 3D audio-visual large model using LoRA. By integrating RGB-D depth positional encoding + First-Order Ambisonics (FOA) dual-track audio + a newly proposed Neural Intensity Vector, it extends traditional AV-LLMs from "2D RGB + Monophonic" to "3D Geometry + Multi-channel Spatial Audio," and releases the SpatialSceneQA simulation benchmark with 61k samples.
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - FOA
-  - RGB-D
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Spatial Audio"
+  - "FOA"
+  - "RGB-D"
+  - "3D Visual Grounding"
+  - "Audio-Visual LLM"
 date: 2026-05-08
-content_hash: 089dad05a9eea81b
+content_hash: d10f6ac072f3cb73
 ---
+
 # JAEGER: Joint 3D Audio-Visual Grounding and Reasoning in Simulated Physical Environments
 
 **Conference**: ICML 2026  
@@ -151,9 +155,9 @@ Ablation of 3D-aware Encoding (Task C): Adding depth improved Mean 3D IoU from 0
 
 - [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](probing_cross-modal_information_hubs_in_audio-visual_llms.md)
 - [\[ICML 2026\] Multimodal Fact-Level Attribution for Verifiable Reasoning](multimodal_fact-level_attribution_for_verifiable_reasoning.md)
-- [\[ACL 2026\] Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation](../../ACL2026/audio_speech/analyzing_reasoning_shifts_in_audio_deepfake_detection_under_adversarial_attacks.md)
+- [\[ICLR 2026\] Incentivizing Consistent, Effective and Scalable Reasoning Capability in Audio LLMs via Reasoning Process Rewards](../../ICLR2026/audio_speech/incentivizing_consistent_effective_and_scalable_reasoning_capability_in_audio_ll.md)
 - [\[ICML 2025\] Teaching Physical Awareness to LLMs through Sounds](../../ICML2025/audio_speech/teaching_physical_awareness_to_llms_through_sounds.md)
-- [\[CVPR 2025\] VinTAGe: Joint Video and Text Conditioning for Holistic Audio Generation](../../CVPR2025/audio_speech/vintage_joint_video_and_text_conditioning_for_holistic_audio_generation.md)
+- [\[ICLR 2026\] From Text to Talk: Audio-Language Model Needs Non-Autoregressive Joint Training](../../ICLR2026/audio_speech/from_text_to_talk_audio-language_model_needs_non-autoregressive_joint_training.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] The Logical Expressiveness of Topological Neural Networks
 description: >-
-  [ICLR 2026][learning_theory][Weisfeiler-Leman] This paper establishes the first "algorithm–logic–game" tripartite characterization for Topological Neural Networks (TNNs). It proposes the $k$-CCWL, a higher-order WL test on combinatorial complexes; the topological counting logic $\text{TC}_k$ with pairwise counting quantifiers; and the topological $(k{+}2)$-pebble g
+  [ICLR 2026][Learning Theory][Topological Neural Networks] This paper establishes the first "algorithm–logic–game" tripartite characterization for Topological Neural Networks (TNNs). It proposes the $k$-CCWL, a higher-order WL test on combinatorial complexes; the topological counting logic $\text{TC}_k$ with pairwise counting quantifiers; and the topological $(k{+}2)$-pebble game. The authors strictly prove the equivalence: $k\text{-CCWL} \equiv \text{TC}_{k+2} \equiv$ topolog…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Weisfeiler-Leman
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Graph & Topological Representation Learning"
+  - "Topological Neural Networks"
+  - "Expressive Power"
+  - "Weisfeiler-Leman"
+  - "Counting Logic"
+  - "Pebble Games"
 date: 2026-05-08
-content_hash: 89a243a60e55a8fe
+content_hash: 3ed0df1483cc274d
 ---
+
 # The Logical Expressiveness of Topological Neural Networks
 
 **Conference**: ICLR 2026  
@@ -138,15 +144,15 @@ where $\text{CYCLE}$ requires a 4-cycle via $N_\downarrow$, distinguishes them b
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
-- [\[ICLR 2026\] On the Expressiveness of State Space Models via Temporal Logics](on_the_expressiveness_of_state_space_models_via_temporal_logics.md)
 - [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
 - [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
 - [\[ICLR 2026\] A New Initialization to Control Gradients in Sinusoidal Neural Networks](a_new_initialization_to_control_gradients_in_sinusoidal_neural_networks.md)
+- [\[ICLR 2026\] On the Expressiveness of State Space Models via Temporal Logics](on_the_expressiveness_of_state_space_models_via_temporal_logics.md)
 
 </div>
 

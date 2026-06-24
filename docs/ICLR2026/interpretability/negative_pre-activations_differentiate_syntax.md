@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Negative Pre-activations Differentiate Syntax
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper discovers that in modern LLMs using smooth activations like GELU/SiLU, a small subset of "Wasserstein neurons" (approx. 1%) specifically utilize the **negative pre-activation region** to differentiate syntax. Zeroing out the negative pre-activations of only these 1% of neurons significantly impairs grammatic
+  [ICLR 2026][Interpretability][Wasserstein neurons] This paper discovers that in modern LLMs using smooth activations like GELU/SiLU, a small subset of "Wasserstein neurons" (approx. 1%) specifically utilize the **negative pre-activation region** to differentiate syntax. Zeroing out the negative pre-activations of only these 1% of neurons significantly impairs grammatical capabilities while causing minimal damage to other tasks, revealing that the long-neglected negative regio…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Wasserstein neurons"
+  - "negative pre-activations"
+  - "smooth activation functions"
+  - "syntactic processing"
+  - "causal ablation"
+  - "double dissociation"
 date: 2026-05-08
-content_hash: 87b79a06c34ab1e3
+content_hash: cc2dfbde2cbda76d
 ---
+
 # Negative Pre-activations Differentiate Syntax
 
 **Conference**: ICLR 2026  
@@ -121,9 +128,9 @@ flowchart LR
 
 - [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](evolution_of_concepts_in_language_model_pre-training.md)
 - [\[ICLR 2026\] LatentQA: Teaching LLMs to Decode Activations Into Natural Language](latentqa_teaching_llms_to_decode_activations_into_natural_language.md)
-- [\[ICLR 2026\] Sparling: End-to-End Spatial Concept Learning via Extremely Sparse Activations](sparling_end-to-end_spatial_concept_learning_via_extremely_sparse_activations.md)
-- [\[ACL 2026\] Similarity-Distance-Magnitude Activations](../../ACL2026/interpretability/similarity-distance-magnitude_activations.md)
+- [\[ICLR 2026\] Circuit Insights: Towards Interpretability Beyond Activations](circuit_insights_towards_interpretability_beyond_activations.md)
 - [\[ICLR 2026\] Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training](learning_to_see_before_seeing_demystifying_llm_visual_priors_from_language_pre-t.md)
+- [\[ICLR 2026\] Sparling: End-to-End Spatial Concept Learning via Extremely Sparse Activations](sparling_end-to-end_spatial_concept_learning_via_extremely_sparse_activations.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations
 description: >-
-  [NeurIPS 2025][3D Vision][open-vocabulary] This paper proposes OpenLex3D, a tiered evaluation benchmark for open-vocabulary 3D scene representations. Built upon Replica, ScanNet++, and HM3D…
+  [NeurIPS 2025][3D Vision][open-vocabulary] This paper proposes OpenLex3D, a tiered evaluation benchmark for open-vocabulary 3D scene representations. Built upon Replica, ScanNet++, and HM3D, it provides language annotations 13× richer than the original labels, supporting evaluation on two tasks: open-set 3D semantic segmentation and object retrieval.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "semantic segmentation"
   - "object retrieval"
 date: 2026-05-08
-content_hash: 8e0933eabb9de39b
+content_hash: c149f26a58961c5d
 ---
 
 # OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations
@@ -147,7 +147,7 @@ OpenLex3D organizes its evaluation into three tiers:
 - [\[AAAI 2026\] OpenScan: A Benchmark for Generalized Open-Vocabulary 3D Scene Understanding](../../AAAI2026/3d_vision/openscan_a_benchmark_for_generalized_open-vocabulary_3d_scene_understanding.md)
 - [\[NeurIPS 2025\] NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods](nerfbaselines_consistent_and_reproducible_evaluation_of_novel_view_synthesis_met.md)
 - [\[NeurIPS 2025\] Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting](segment_then_splat_unified_3d_open-vocabulary_segmentation_via_gaussian_splattin.md)
-- [\[NeurIPS 2025\] From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes](from_objects_to_anywhere_a_holistic_benchmark_for_multi-level_visual_grounding_i.md)
+- [\[CVPR 2025\] Open-Vocabulary Functional 3D Scene Graphs for Real-World Indoor Spaces](../../CVPR2025/3d_vision/open-vocabulary_functional_3d_scene_graphs_for_real-world_indoor_spaces.md)
 
 </div>
 

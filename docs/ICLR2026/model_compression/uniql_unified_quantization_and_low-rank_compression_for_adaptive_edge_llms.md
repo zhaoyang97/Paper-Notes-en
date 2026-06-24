@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniQL: Unified Quantization and Low-Rank Compression for Adaptive Edge LLMs
 description: >-
-  [ICLR 2026][Model Compression][State Space Model] UniQL unifies post-training quantization and structured low-rank pruning into a "compute once in cloud, trim as needed on edge" pipeline. By employing pseudo-inverse-free weight ordering, quantization-aware SVD, and state-aware ordering, it enables Transformer, SSM, and hybrid models to configure 0–35% pruning rates in
+  [ICLR 2024 (Note: Input stated ICLR 2026, keeping as-is)][Model Compression][Post-training quantization] UniQL unifies post-training quantization and structured low-rank pruning into a "compute once in cloud, trim as needed on edge" pipeline. By employing pseudo-inverse-free weight ordering, quantization-aware SVD, and state-aware ordering, it enables Transformer, SSM, and hybrid models to configure 0–35% pruning rates in real-time on-device based on system load. After a sing…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - State Space Model
+  - "ICLR 2024 (Note: Input stated ICLR 2026, keeping as-is)"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "structured pruning"
+  - "low-rank decomposition"
+  - "edge LLMs"
+  - "state space models"
 date: 2026-05-08
-content_hash: a0753961eae8aae1
+content_hash: 36189d380a187556
 ---
+
 # UniQL: Unified Quantization and Low-Rank Compression for Adaptive Edge LLMs
 
 **Conference**: ICLR 2024 (Note: Input stated ICLR 2026, keeping as-is)  
@@ -149,15 +154,16 @@ Contribution of components to accuracy (Table 10, 4-bit, 25% pruning):
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the edge dynamic memory bottleneck; high engineering value for adaptive deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] GlowQ: Group-Shared Low-Rank Approximation for Quantized LLMs](glowq_group-shared_low-rank_approximation_for_quantized_llms.md)
 - [\[ICLR 2026\] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization](serq_saliency-aware_low-rank_error_reconstruction_for_llm_quantization.md)
+- [\[AAAI 2026\] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization](../../AAAI2026/model_compression/specquant_spectral_decomposition_and_adaptive_truncation_for_ultra-low-bit_llms_.md)
+- [\[ICLR 2026\] CodeQuant: Unified Clustering and Quantization for Enhanced Outlier Smoothing in Low-Precision Mixture-of-Experts](codequant_unified_clustering_and_quantization_for_enhanced_outlier_smoothing_in_.md)
 - [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
-- [\[ICLR 2026\] E²LoRA: Efficient and Effective Low-Rank Adaptation with Entropy-Guided Adaptive Sharing](e²lora_efficient_and_effective_low-rank_adaptation_with_entropy-guided_adaptive_.md)
-- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 
 </div>
 

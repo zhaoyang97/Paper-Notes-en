@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] OD3: Optimization-Free Dataset Distillation for Object Detection
 description: >-
-  [ICLR 2026][Object Detection][Knowledge Distillation] OD3 extends dataset distillation from image classification to object detection by proposing a **completely optimization-free** synthesis pipeline. Starting from a blank canvas, it iteratively pastes real objects (candidate selection) and uses a pre-trained observer model to filter out low-confidence objects (candidate
+  [ICLR 2026][Object Detection][Dataset Distillation] OD3 extends dataset distillation from image classification to object detection by proposing a **completely optimization-free** synthesis pipeline. Starting from a blank canvas, it iteratively pastes real objects (candidate selection) and uses a pre-trained observer model to filter out low-confidence objects (candidate screening). Combined with channel-level soft labels to train student detectors…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Dataset Distillation"
+  - "Optimization-Free Synthesis"
+  - "Knowledge Distillation"
+  - "Soft Labels"
 date: 2026-05-08
-content_hash: b94bffdc5c55902c
+content_hash: 5c286c5a98f8412b
 ---
+
 # OD3: Optimization-Free Dataset Distillation for Object Detection
 
 **Conference**: ICLR 2026  

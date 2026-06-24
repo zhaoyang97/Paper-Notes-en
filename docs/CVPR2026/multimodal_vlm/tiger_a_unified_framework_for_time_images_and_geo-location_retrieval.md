@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TIGeR: A Unified Framework for Time, Images and Geo-location Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The TIGeR framework is proposed to learn a unified geo-temporal embedding space for images, locations, and time using a multimodal Transformer. It unifies three tasks—geolocation, time-of-capture prediction, and geo-temporal aware image retrieval—and introduces a high-quality benchmark dataset of 4.5M images.
+  [CVPR2026][Multimodal VLM][Geo-temporal aware retrieval] The TIGeR framework is proposed to learn a unified geo-temporal embedding space for images, locations, and time using a multimodal Transformer. It unifies three tasks—geolocation, time-of-capture prediction, and geo-temporal aware image retrieval—and introduces a high-quality benchmark dataset of 4.5M images.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Geo-temporal aware retrieval"
+  - "Multimodal Transformer"
+  - "Geolocation"
+  - "Time prediction"
+  - "Webcam data cleaning"
 date: 2026-05-08
-content_hash: 6f1ef0f47b7f39bf
+content_hash: 50069027f775103b
 ---
+
 # TIGeR: A Unified Framework for Time, Images and Geo-location Retrieval
 
 **Conference**: CVPR2026  
@@ -141,11 +147,11 @@ The training strategy utilizes 5 pairs of InfoNCE contrastive losses (excluding 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
+- [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
 - [\[CVPR 2026\] Factorize, Reconstruct, Enhance: A Unified Framework for Multimodal Sentiment Analysis](factorize_reconstruct_enhance_a_unified_framework_for_multimodal_sentiment_analy.md)
-- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
 - [\[CVPR 2026\] CodeMMR: Bridging Natural Language, Code, and Image for Unified Retrieval](codemmr_bridging_natural_language_code_and_image_for_unified_retrieval.md)
 - [\[CVPR 2026\] One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework](one_patch_to_caption_them_all_a_unified_zero-shot_captioning_framework.md)
+- [\[ICLR 2026\] Modal Aphasia: Can Unified Multimodal Models Describe Images From Memory?](../../ICLR2026/multimodal_vlm/modal_aphasia_can_unified_multimodal_models_describe_images_from_memory.md)
 
 </div>
 

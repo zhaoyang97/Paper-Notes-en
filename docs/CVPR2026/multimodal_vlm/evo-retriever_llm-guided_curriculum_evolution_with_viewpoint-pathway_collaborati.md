@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evo-Retriever: LLM-Guided Curriculum Evolution with Viewpoint-Pathway Collaboration for Multimodal Document Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Evo-Retriever couples the "model" and "training curriculum" into a synergistic evolutionary pair—stabilizing representations through multi-viewpoint alignment and bidirectional contrastive learning, while an external LLM meta-controller dynamically adjusts the difficulty of hard negatives based on real-time training st
+  [CVPR 2026][Multimodal VLM][Visual document retrieval] Evo-Retriever couples the "model" and "training curriculum" into a synergistic evolutionary pair—stabilizing representations through multi-viewpoint alignment and bidirectional contrastive learning, while an external LLM meta-controller dynamically adjusts the difficulty of hard negatives based on real-time training states. It achieves new SOTA results on ViDoRe V2 and MMEB(VisDoc) with nDCG@5 scores of 65.2% and 77.1%…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual document retrieval"
+  - "curriculum learning"
+  - "hard negative mining"
+  - "LLM meta-controller"
+  - "late interaction"
 date: 2026-05-08
-content_hash: 65977e8c15a8a3e0
+content_hash: 894e7ffb0c74618b
 ---
+
 # Evo-Retriever: LLM-Guided Curriculum Evolution with Viewpoint-Pathway Collaboration for Multimodal Document Retrieval
 
 **Conference**: CVPR 2026  
@@ -137,10 +143,10 @@ Notably, Evo-Retriever-3B (63.3%) outperforms the architecturally similar colqwe
 ## Related Papers
 
 - [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
+- [\[ICLR 2026\] Guided Query Refinement: Multimodal Hybrid Retrieval with Test-Time Optimization](../../ICLR2026/multimodal_vlm/guided_query_refinement_multimodal_hybrid_retrieval_with_test-time_optimization.md)
 - [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
-- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](../../ACL2026/multimodal_vlm/vill-e_video_llm_embeddings_for_retrieval.md)
 - [\[CVPR 2026\] Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning](anchor-guided_gradient_alignment_for_incomplete_multimodal_learning.md)
-- [\[CVPR 2026\] SO-Bench: A Structural Output Evaluation of Multimodal LLM](so-bench_a_structural_output_evaluation_of_multimodal_llm.md)
 
 </div>
 

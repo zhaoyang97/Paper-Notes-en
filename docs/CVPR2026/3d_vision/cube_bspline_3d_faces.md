@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CUBE: Representing 3D Faces with Learnable B-Spline Volumes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes CUBE (Control-based Unified B-spline Encoding), a hybrid geometric representation combining B-spline volumes with learnable high-dimensional control features. It achieves editable, high-precision 3D face reconstruction and scan registration through two-stage decoding (B-spline basis interpolation + lightw
+  [CVPR 2026 Highlight][3D Vision][B-spline Volumes] Ours proposes CUBE (Control-based Unified B-spline Encoding), a hybrid geometric representation combining B-spline volumes with learnable high-dimensional control features. It achieves editable, high-precision 3D face reconstruction and scan registration through two-stage decoding (B-spline basis interpolation + lightweight MLP residuals).
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026 Highlight"
+  - "3D Vision"
+  - "B-spline Volumes"
+  - "Face Representation"
+  - "Scan Registration"
+  - "Local Control"
+  - "Geometric Editing"
 date: 2026-05-08
-content_hash: 33c4c315caa1ecc3
+content_hash: f3cd32e23a6451cc
 ---
+
 # CUBE: Representing 3D Faces with Learnable B-Spline Volumes
 
 **Conference**: CVPR 2026 Highlight  
@@ -141,11 +147,11 @@ Vertex-to-vertex L2 loss + Normal consistency loss + Laplacian smoothing regular
 
 ## Related Papers
 
-- [\[CVPR 2026\] 3D-IDE: 3D Implicit Depth Emergent](3d-ide_3d_implicit_depth_emergent.md)
+- [\[CVPR 2026\] Registration-Free Learnable Multi-View Capture of Faces in Dense Semantic Correspondence](registration-free_learnable_multi-view_capture_of_faces_in_dense_semantic_corres.md)
+- [\[CVPR 2026\] TokenGS: Decoupling 3D Gaussian Prediction from Pixels with Learnable Tokens](tokengs_decoupling_3d_gaussian_prediction_from_pixels_with_learnable_tokens.md)
+- [\[CVPR 2026\] PaNDaS: Learnable Shape Interpolation Modeling with Localized Control](pandas_learnable_shape_interpolation_modeling_with_localized_control.md)
 - [\[CVPR 2026\] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?](can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy.md)
-- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
+- [\[ICLR 2026\] Trace Anything: Representing Any Video in 4D via Trajectory Fields](../../ICLR2026/3d_vision/trace_anything_representing_any_video_in_4d_via_trajectory_fields.md)
 
 </div>
 

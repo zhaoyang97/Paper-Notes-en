@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] High-Probability Bounds for the Last Iterate of Clipped SGD
 description: >-
-  [ICLR 2026][Optimization & Theory][Clipped-SGD] This paper provides the first high-probability convergence rate for the **last iterate** of Clipped-SGD under convex and smooth objectives with heavy-tailed noise (only finite $\alpha$-th moments, $\alpha\in(1,2]$). It also introduces a general technique to convert high-probability bounds into expectation bounds.
+  [ICLR 2026][Optimization][Clipped-SGD] This paper provides the first high-probability convergence rate for the **last iterate** of Clipped-SGD under convex and smooth objectives with heavy-tailed noise (only finite $\alpha$-th moments, $\alpha\in(1,2]$). It also introduces a general technique to convert high-probability bounds into expectation bounds.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Clipped-SGD
+  - "ICLR 2026"
+  - "Optimization"
+  - "Clipped-SGD"
+  - "heavy-tailed noise"
+  - "last iterate"
+  - "high-probability convergence bound"
+  - "stochastic optimization"
 date: 2026-05-08
-content_hash: cd0f5116f70b6d48
+content_hash: 3586f13cf2ce78d8
 ---
+
 # High-Probability Bounds for the Last Iterate of Clipped SGD
 
 **Conference**: ICLR 2026  
@@ -121,10 +126,10 @@ Where $D:=\max\{R_0\sigma,\ L^{(\alpha-1)/(3\alpha-1)}R_0^{(4\alpha-2)/(3\alpha-
 ## Related Papers
 
 - [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
-- [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
 - [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
+- [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
 - [\[NeurIPS 2025\] From Average-Iterate to Last-Iterate Convergence in Games: A Reduction and Its Applications](../../NeurIPS2025/optimization/from_average-iterate_to_last-iterate_convergence_in_games_a_reduction_and_its_ap.md)
-- [\[ICLR 2026\] Birch SGD: A Tree Graph Framework for Local and Asynchronous SGD Methods](birch_sgd_a_tree_graph_framework_for_local_and_asynchronous_sgd_methods.md)
+- [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] PPA treats the choice of text prompt for scoring as a latent variable. By performing probabilistic weighted marginalization over a pool of antithetical prompts pre-sampled by an LLM, it simultaneously learns a high-precision task scorer and a general aesthetics/quality evaluator controllable by arbitrary text prompts.
+  [CVPR 2026][Multimodal VLM][Image Aesthetics Assessment] PPA treats the choice of text prompt for scoring as a latent variable. By performing probabilistic weighted marginalization over a pool of antithetical prompts pre-sampled by an LLM, it simultaneously learns a high-precision task scorer and a general aesthetics/quality evaluator controllable by arbitrary text prompts. This is achieved using only **(task, image, score) triplets without requiring any prompt or attribute a…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Image Aesthetics Assessment"
+  - "Image Quality Assessment"
+  - "CLIP"
+  - "prompt marginalization"
+  - "probabilistic mixture model"
 date: 2026-05-08
-content_hash: 0b1e290476df1470
+content_hash: 5d30fd107dc169f3
 ---
+
 # Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment
 
 **Conference**: CVPR 2026  
@@ -156,9 +161,9 @@ Prompt quantity (SRCC/PLCC):
 ## Related Papers
 
 - [\[CVPR 2026\] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement](uare_a_unified_vision-language_model_for_image_quality_assessment_restoration_an.md)
+- [\[CVPR 2026\] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding](artimuse_fine-grained_image_aesthetics_assessment_with_joint_scoring_and_expert-.md)
 - [\[ICLR 2026\] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](../../ICLR2026/multimodal_vlm/visjudge-bench_aesthetics_and_quality_assessment_of_visualizations.md)
 - [\[CVPR 2026\] R4-CGQA: Retrieval-based Vision Language Models for Computer Graphics Image Quality Assessment](r4-cgqa_retrieval-based_vision_language_models_for_computer_graphics_image_quali.md)
-- [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
 - [\[CVPR 2026\] FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy](fluoclip_stain-aware_focus_quality_assessment_in_fluorescence_microscopy.md)
 
 </div>

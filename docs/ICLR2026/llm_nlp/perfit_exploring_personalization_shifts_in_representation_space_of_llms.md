@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PerFit: Exploring Personalization Shifts in Representation Space of LLMs
 description: >-
-  [ICLR 2026][LLM (Other)][activation steering] PerFit discovers that personalized information in LLMs can be characterized by low-rank representation shifts. By employing a two-stage representation space intervention consisting of "collective shared shifts + personalized exclusive shifts," it approaches or exceeds LoRA/OPPU performance on six LaMP personalization t
+  [ICLR 2026][LLM (Other)][Personalized LLM] PerFit discovers that personalized information in LLMs can be characterized by low-rank representation shifts. By employing a two-stage representation space intervention consisting of "collective shared shifts + personalized exclusive shifts," it approaches or exceeds LoRA/OPPU performance on six LaMP personalization tasks while reducing trainable parameters by approximately 92.3% on average compared to OPPU.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - activation steering
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Personalized LLM"
+  - "Representation Fine-tuning"
+  - "Activation Steering"
+  - "Low-rank Subspace"
+  - "User Preference"
 date: 2026-05-08
-content_hash: 5d076c73cc06e6c6
+content_hash: 6b000397bf76db22
 ---
+
 # PerFit: Exploring Personalization Shifts in Representation Space of LLMs
 
 **Conference**: ICLR 2026  
@@ -163,7 +168,7 @@ The paper evaluates on six tasks from the LaMP benchmark, including three classi
 - [\[ICLR 2026\] The Lattice Representation Hypothesis of Large Language Models](the_lattice_representation_hypothesis_of_large_language_models.md)
 - [\[ACL 2025\] HiCUPID: Exploring the Potential of LLMs as Personalized Assistants](../../ACL2025/llm_nlp/exploring_the_potential_of_llms_as.md)
 - [\[ACL 2025\] LLMs Know Their Vulnerabilities: Uncover Safety Gaps through Natural Distribution Shifts](../../ACL2025/llm_nlp/llms_know_their_vulnerabilities_uncover_safety_gaps_through_natural_distribution.md)
-- [\[AAAI 2026\] An Invariant Latent Space Perspective on Language Model Inversion](../../AAAI2026/llm_nlp/an_invariant_latent_space_perspective_on_language_model_inve.md)
+- [\[ACL 2025\] Can LLMs Understand Unvoiced Speech? Exploring EMG-to-Text Conversion with LLMs](../../ACL2025/llm_nlp/can_llms_understand_unvoiced_speech_exploring_emg-to-text_conversion_with_llms.md)
 
 </div>
 

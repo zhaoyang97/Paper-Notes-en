@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Short Window Attention Enables Long-Term Memorization
 description: >-
-  [ICLR 2026][LLM Efficiency][xLSTM] This paper investigates the division of labor between short-term and long-term memory in SWAX, a hybrid architecture alternating Sliding Window Attention (SWA) and xLSTM linear RNNs. It uncovers a counter-intuitive finding: **the shorter the sliding window, the better the long-context retrieval** (as short windows comp
+  [ICLR 2026][LLM Efficiency][Sliding Window Attention] This paper investigates the division of labor between short-term and long-term memory in SWAX, a hybrid architecture alternating Sliding Window Attention (SWA) and xLSTM linear RNNs. It uncovers a counter-intuitive finding: **the shorter the sliding window, the better the long-context retrieval** (as short windows compel the linear RNN to learn long-range dependencies). Based on this, it proposes stochastic window training…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - xLSTM
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sliding Window Attention"
+  - "xLSTM"
+  - "Linear RNN"
+  - "Hybrid Architecture"
+  - "Long-context Memory"
 date: 2026-05-08
-content_hash: a74a245f0d772c26
+content_hash: 33877a8278c3a1bc
 ---
+
 # Short Window Attention Enables Long-Term Memorization
 
 **Conference**: ICLR 2026  
@@ -139,15 +144,15 @@ Stochastic training achieved a lower validation PPL (2.502 for 1.4B) than any fi
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation](infllm-v2_dense-sparse_switchable_attention_for_seamless_short-to-long_adaptatio.md)
-- [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
-- [\[ICLR 2026\] Smooth Reading: Bridging the Gap of Recurrent LLM to Self-Attention LLM on Long-Context Understanding](smooth_reading_bridging_the_gap_of_recurrent_llm_to_self-attention_llm_on_long-c.md)
-- [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](../../NeurIPS2025/llm_efficiency/hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
+- [\[ICLR 2026\] SoLoPO: Unlocking Long-Context Capabilities in LLMs via Short-to-Long Preference Optimization](solopo_unlocking_long-context_capabilities_in_llms_via_short-to-long_preference_.md)
 - [\[ICLR 2026\] Stacked From One: Multi-Scale Self-Injection for Context Window Extension](stacked_from_one_multi-scale_self-injection_for_context_window_extension.md)
+- [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
+- [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](../../NeurIPS2025/llm_efficiency/hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
 
 </div>
 

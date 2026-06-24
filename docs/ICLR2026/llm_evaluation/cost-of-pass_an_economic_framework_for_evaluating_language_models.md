@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cost-of-Pass: An Economic Framework for Evaluating Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] Borrowing the "production frontier" theory from economics, this paper proposes **cost-of-pass** (the expected dollar cost to generate one correct answer) as a unified evaluation framework that merges "accuracy × inference cost" into a single metric. It uses this framework to reveal the economic niches of models of diff
+  [ICLR2026][LLM Evaluation][Language model evaluation] Borrowing the "production frontier" theory from economics, this paper proposes **cost-of-pass** (the expected dollar cost to generate one correct answer) as a unified evaluation framework that merges "accuracy × inference cost" into a single metric. It uses this framework to reveal the economic niches of models of different sizes across various tasks, the rate of decline in the cost frontier over the past year…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Language model evaluation"
+  - "inference cost"
+  - "production frontier"
+  - "cost-benefit"
+  - "economic framework"
 date: 2026-05-08
-content_hash: 1b4c15acc49091e1
+content_hash: 0e1b923af2f9bb55
 ---
+
 # Cost-of-Pass: An Economic Framework for Evaluating Language Models
 
 **Conference**: ICLR2026  

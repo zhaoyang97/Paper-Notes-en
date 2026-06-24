@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning
 description: >-
-  [CVPR 2026][Autonomous Driving][Realism Meta-metric] A pre-trained imitation learning traffic simulation model (SMART) is fine-tuned in a closed-loop setting using Reinforcement Learning. By utilizing Waymo's Realism Meta-metric (RMM) as the reward and transforming it into a low-variance, dense per-rollout reward via a Leave-One-Out modification (MLOO), the method achiev
+  [CVPR2026][Autonomous Driving][Multi-agent traffic simulation] A pre-trained imitation learning traffic simulation model (SMART) is fine-tuned in a closed-loop setting using Reinforcement Learning. By utilizing Waymo's Realism Meta-metric (RMM) as the reward and transforming it into a low-variance, dense per-rollout reward via a Leave-One-Out modification (MLOO), the method achieves SOTA realism on WOMD. Furthermore, the ability to "controllably generate specific scenarios" i…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Realism Meta-metric
-  - Hindsight Experience Replay
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Multi-agent traffic simulation"
+  - "Reinforcement Learning Fine-Tuning"
+  - "Realism Meta-metric"
+  - "Goal-conditioned control"
+  - "Hindsight Experience Replay"
 date: 2026-05-08
-content_hash: 232e9726777c20cb
+content_hash: d7e2acaa9420af82
 ---
+
 # RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning
 
 **Conference**: CVPR2026  
@@ -159,14 +163,15 @@ Goal-conditioning ablation (Representation × Criterion, Passing Miss Rate ↓ i
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning](../../ICLR2026/autonomous_driving/advancing_multi-agent_traffic_simulation_via_r1-style_reinforcement_fine-tuning.md)
-- [\[AAAI 2026\] WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving](../../AAAI2026/autonomous_driving/worldrft_latent_world_model_planning_with_reinforcement_fine-tuning_for_autonomo.md)
-- [\[CVPR 2026\] Beyond Rule-Based Agents: Active Markov Games for Realistic Multi-Agent Interaction in Autonomous Driving](beyond_rule-based_agents_active_markov_games_for_realistic_multi-agent_interacti.md)
+- [\[ICLR 2026\] DecompGAIL: Learning Realistic Traffic Behaviors with Decomposed Multi-Agent Generative Adversarial Imitation Learning](../../ICLR2026/autonomous_driving/decompgail_learning_realistic_traffic_behaviors_with_decomposed_multi-agent_gene.md)
 - [\[ECCV 2024\] Improving Agent Behaviors with RL Fine-tuning for Autonomous Driving](../../ECCV2024/autonomous_driving/improving_agent_behaviors_with_rl_fine-tuning_for_autonomous_driving.md)
+- [\[CVPR 2026\] Beyond Rule-Based Agents: Active Markov Games for Realistic Multi-Agent Interaction in Autonomous Driving](beyond_rule-based_agents_active_markov_games_for_realistic_multi-agent_interacti.md)
 - [\[CVPR 2026\] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views](unsupervised_multi-agent_and_single-agent_perception_from_cooperative_views.md)
 
 </div>

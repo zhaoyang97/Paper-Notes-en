@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention
 description: >-
-  [Image Generation] EDiT proposes a linear compressed attention mechanism that enhances query local information via ConvFusion and compresses key/value tokens via a Spatial Compressor…
+  [Image Generation] EDiT proposes a linear compressed attention mechanism that enhances query local information via ConvFusion and compresses key/value tokens via a Spatial Compressor, achieving up to 2.2× acceleration over DiT and MM-DiT architectures while maintaining comparable image quality.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 19ee8871f019b9d6
+content_hash: 961b708376702b4f
 ---
 
 # EDiT: Efficient Diffusion Transformers with Linear Compressed Attention
@@ -175,8 +175,8 @@ The hybrid attention in MM-EDiT substantially outperforms fully linearized basel
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
 - [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
 - [\[ICCV 2025\] EEdit: Rethinking the Spatial and Temporal Redundancy for Efficient Image Editing](eedit_rethinking_the_spatial_and_temporal_redundancy_for_efficient_image_editing.md)
-- [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](joint_diffusion_models_in_continual_learning.md)
-- [\[ICCV 2025\] OminiControl: Minimal and Universal Control for Diffusion Transformer](ominicontrol_minimal_and_universal_control_for_diffusion_transformer.md)
+- [\[CVPR 2025\] Dual Prompting Image Restoration with Diffusion Transformers (DPIR)](../../CVPR2025/image_generation/dual_prompting_image_restoration_with_diffusion_transformers.md)
+- [\[CVPR 2025\] Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/multi-party_collaborative_attention_control_for_image_customization.md)
 
 </div>
 

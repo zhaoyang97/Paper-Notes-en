@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] Ours proposes a feed-forward 3D asset editing framework based on the TRELLIS 3D generative backbone. It achieves globally consistent geometric deformation in a sparse voxel latent space through Voxel FlowEdit and recovers high-frequency details using normal-guided multi-view texture refinement.
+  [CVPR 2026][3D Vision][3D Editing] Ours proposes a feed-forward 3D asset editing framework based on the TRELLIS 3D generative backbone. It achieves globally consistent geometric deformation in a sparse voxel latent space through Voxel FlowEdit and recovers high-frequency details using normal-guided multi-view texture refinement.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Editing"
+  - "Feed-forward Generation"
+  - "Voxel Flow"
+  - "Flow Matching"
+  - "Texture Optimization"
 date: 2026-05-08
-content_hash: 52c3e77577b8c01a
+content_hash: 776b794d556d31e2
 ---
+
 # Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow
 
 **Conference**: CVPR 2026  
@@ -155,10 +160,10 @@ Easy3E leads across all metrics: FID is reduced by 43.7% and LPIPS by 43.2% comp
 ## Related Papers
 
 - [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] Affostruction: 3D Affordance Grounding with Generative Reconstruction](affostruction_3d_affordance_grounding_with_generative_reconstruction.md)
-- [\[CVPR 2026\] Human Geometry Distribution for 3D Animation Generation](human_geometry_distribution_for_3d_animation_generation.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
+- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
+- [\[CVPR 2026\] AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows](anchorflow_training-free_3d_editing_via_latent_anchor-aligned_flows.md)
+- [\[CVPR 2026\] VIAFormer: Voxel-Image Alignment Transformer for High-Fidelity Voxel Refinement](viaformer_voxel-image_alignment_transformer_for_high-fidelity_voxel_refinement.md)
+- [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
 
 </div>
 

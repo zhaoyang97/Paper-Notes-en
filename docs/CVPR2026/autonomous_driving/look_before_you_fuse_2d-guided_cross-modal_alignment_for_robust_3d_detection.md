@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This paper reveals that feature misalignment in LiDAR-Camera fusion is primarily concentrated at **foreground-background depth discontinuity boundaries**. It proposes three collaborative modules—PGDC (Prior-Guided Depth Calibration), DAGF (Discontinuity-Aware Geometric Fusion), and SGDM (Structure-Guided Depth Modulato
+  [CVPR 2026][Autonomous Driving][3D Object Detection] This paper reveals that feature misalignment in LiDAR-Camera fusion is primarily concentrated at **foreground-background depth discontinuity boundaries**. It proposes three collaborative modules—PGDC (Prior-Guided Depth Calibration), DAGF (Discontinuity-Aware Geometric Fusion), and SGDM (Structure-Guided Depth Modulator)—to actively correct misalignment before fusion. The method achieves SOTA performance on the nuScenes val…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "3D Object Detection"
+  - "LiDAR-Camera Fusion"
+  - "Cross-Modal Alignment"
+  - "BEV Perception"
+  - "Depth Estimation"
 date: 2026-05-08
-content_hash: cba7223b5545b0dd
+content_hash: 54f4026caa598241
 ---
+
 # Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection
 
 **Conference**: CVPR 2026  
@@ -189,10 +195,10 @@ $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{focal}} + \mathcal{L}_{\text{e
 ## Related Papers
 
 - [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
+- [\[ICLR 2026\] AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection](../../ICLR2026/autonomous_driving/asyncbev_cross-modal_flow_alignment_in_asynchronous_3d_object_detection.md)
+- [\[CVPR 2026\] Think Before You Drive: World Model-Inspired Multimodal Grounding](think_before_you_drive_world_model-inspired_multimodal_grounding.md)
 - [\[CVPR 2026\] LiDAR-to-4DRadar Diffusion Bridge via Cross-Modal Alignment and Translation in Latent Space](lidar-to-4dradar_diffusion_bridge_via_cross-modal_alignment_and_translation_in_l.md)
 - [\[ECCV 2024\] GraphBEV: Towards Robust BEV Feature Alignment for Multi-Modal 3D Object Detection](../../ECCV2024/autonomous_driving/graphbev_towards_robust_bev_feature_alignment_for_multi-modal_3d_object_detectio.md)
-- [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
-- [\[CVPR 2026\] Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift](query2uncertainty_robust_uncertainty_quantification_and_calibration_for_3d_objec.md)
 
 </div>
 

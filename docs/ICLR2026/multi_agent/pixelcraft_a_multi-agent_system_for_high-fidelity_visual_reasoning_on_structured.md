@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] PixelCraft: A Multi-Agent System for High-Fidelity Visual Reasoning on Structured Images
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] PixelCraft introduces a multi-agent system comprising a "dispatcher + planner + reasoner + dual critic + visual tool agents." By treating a fine-tuned pixel-level localization model as "eyes" and traditional CV operators as "hands," combined with a backtrackable branch-based image memory, it significantly improves the
+  [ICLR 2026][Multi-Agent][Structured Images] PixelCraft introduces a multi-agent system comprising a "dispatcher + planner + reasoner + dual critic + visual tool agents." By treating a fine-tuned pixel-level localization model as "eyes" and traditional CV operators as "hands," combined with a backtrackable branch-based image memory, it significantly improves the reasoning accuracy of MLLMs like GPT-4o and Claude on structured images such as charts and geometry (+5.6 to 9.5 poi…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Structured Images"
+  - "High-Fidelity Localization"
+  - "Image Memory"
+  - "Self-Criticism"
 date: 2026-05-08
-content_hash: 21d453def21ef233
+content_hash: 623eee47ade1a6ab
 ---
+
 # PixelCraft: A Multi-Agent System for High-Fidelity Visual Reasoning on Structured Images
 
 **Conference**: ICLR 2026  
@@ -154,10 +159,10 @@ Incremental ablation of roles (GPT-4.1-mini):
 ## Related Papers
 
 - [\[ICLR 2026\] From What to Why: A Multi-Agent System for Evidence-based Chemical Reaction Condition Reasoning](from_what_to_why_a_multi-agent_system_for_evidence-based_chemical_reaction_condi.md)
+- [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](../../ACL2026/multi_agent/from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
+- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
+- [\[ICLR 2026\] MAC-AMP: A Closed-Loop Multi-Agent Collaboration System for Multi-Objective Antimicrobial Peptide Design](mac-amp_a_closed-loop_multi-agent_collaboration_system_for_multi-objective_antim.md)
 - [\[ICLR 2026\] CoAct-1: Computer-using Multi-agent System with Coding Actions](coact-1_computer-using_multi-agent_system_with_coding_actions.md)
-- [\[ICLR 2026\] Benefits and Limitations of Communication in Multi-Agent Reasoning](benefits_and_limitations_of_communication_in_multi-agent_reasoning.md)
-- [\[ICLR 2026\] MAD-Logic: Multi-Agent Debate Enhances Symbolic Translation and Reasoning](mad-logic_multi-agent_debate_enhances_symbolic_translation_and_reasoning.md)
-- [\[ICLR 2026\] Unlocking the Power of Multi-Agent LLM for Reasoning: From Lazy Agents to Deliberation](unlocking_the_power_of_multi-agent_llm_for_reasoning_from_lazy_agents_to_deliber.md)
 
 </div>
 

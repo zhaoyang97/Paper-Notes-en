@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces
 description: >-
-  [ICLR 2026][Optimization & Theory][Bayesian Optimization] The paper reinterprets "comparison-based sorting algorithms" as feature generators for permutations. This perspective unifies the SOTA Mallows kernel as a special case of enumeration sort and derives the **Merge Kernel** with a length of only $\Theta(n\log n)$ using merge sort. It significantly outperforms Mallows kern
+  [ICLR 2026][Optimization][Bayesian Optimization] The paper reinterprets "comparison-based sorting algorithms" as feature generators for permutations. This perspective unifies the SOTA Mallows kernel as a special case of enumeration sort and derives the **Merge Kernel** with a length of only $\Theta(n\log n)$ using merge sort. It significantly outperforms Mallows kernels in high-dimensional permutation Bayesian Optimization due to its orders of magnitude smaller feature dimens…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Bayesian Optimization
-  - Permutation Space
-  - Mallows Kernel
-  - Merge Sort
-  - Gaussian Process
-  - High-Dimensional
+  - "ICLR 2026"
+  - "Optimization"
+  - "Bayesian Optimization"
+  - "Permutation Space"
+  - "Mallows Kernel"
+  - "Merge Sort"
+  - "Gaussian Process"
+  - "High-Dimensional"
 date: 2026-05-08
-content_hash: b1fcb4b2506e7210
+content_hash: 8f649f7673167489
 ---
+
 # From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces
 
 **Conference**: ICLR 2026  
@@ -113,14 +114,14 @@ The advantage grows with dimensionality: at $n=280$, the Merge feature is approx
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Symmetry-Aware Bayesian Optimization via Max Kernels](symmetry-aware_bayesian_optimization_via_max_kernels.md)
-- [\[ICLR 2026\] High-dimensional Mean-Field Games by Particle-based Flow Matching](high-dimensional_mean-field_games_by_particle-based_flow_matching.md)
+- [\[ICLR 2026\] GIT-BO: High-Dimensional Bayesian Optimization with Tabular Foundation Models](git-bo_high-dimensional_bayesian_optimization_with_tabular_foundation_models.md)
 - [\[ICLR 2026\] Local Entropy Search over Descent Sequences for Bayesian Optimization](local_entropy_search_over_descent_sequences_for_bayesian_optimization.md)
-- [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
+- [\[ICLR 2026\] High-dimensional Mean-Field Games by Particle-based Flow Matching](high-dimensional_mean-field_games_by_particle-based_flow_matching.md)
 - [\[ICLR 2026\] Incorporating Expert Priors into Bayesian Optimization via Dynamic Mean Decay](incorporating_expert_priors_into_bayesian_optimization_via_dynamic_mean_decay.md)
 
 </div>

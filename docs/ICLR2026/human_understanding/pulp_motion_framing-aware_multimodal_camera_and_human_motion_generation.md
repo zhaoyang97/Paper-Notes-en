@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PulpMotion: Framing-Aware Multimodal Camera and Human Motion Generation
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] This paper introduces the text-conditioned **joint generation** of "human motion + camera trajectories" for the first time. Using a model-agnostic framework, it treats "screen composition (projection of human joints onto the camera view)" as an auxiliary modality bridge. During the sampling stage, generation is guided
+  [ICLR 2026][Human Understanding][Joint Generation] This paper introduces the text-conditioned **joint generation** of "human motion + camera trajectories" for the first time. Using a model-agnostic framework, it treats "screen composition (projection of human joints onto the camera view)" as an auxiliary modality bridge. During the sampling stage, generation is guided toward compositional consistency, ensuring characters remain in-frame with a cinematic aesthetic. It achieves…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Joint Generation"
+  - "Screen Composition"
+  - "Auxiliary Sampling"
+  - "Multimodal Consistency"
+  - "Cinematography"
 date: 2026-05-08
-content_hash: c1ae1d73a787d0ce
+content_hash: 5bc5fe7ad4f8aafe
 ---
+
 # PulpMotion: Framing-Aware Multimodal Camera and Human Motion Generation
 
 **Conference**: ICLR 2026  
@@ -137,6 +143,7 @@ Data refinement also proved effective: Table 3 shows refinement reduced human mo
 - Value: ⭐⭐⭐⭐⭐ High value for AI cinematography and virtual production, providing both a new dataset and a generalizable sampling paradigm.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

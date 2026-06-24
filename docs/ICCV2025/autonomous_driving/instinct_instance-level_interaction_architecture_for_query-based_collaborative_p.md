@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception
 description: >-
-  [ICCV 2025][Autonomous Driving][collaborative perception] This paper proposes INSTINCT, a LiDAR-based instance-level collaborative perception framework that achieves state-of-the-art performance across multiple datasets…
+  [ICCV 2025][Autonomous Driving][collaborative perception] This paper proposes INSTINCT, a LiDAR-based instance-level collaborative perception framework that achieves state-of-the-art performance across multiple datasets through three core modules — quality-aware filtering, dual-branch detection routing, and cross-agent local instance fusion — while reducing communication bandwidth to approximately 1/264–1/281 of that required by existing methods.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "LiDAR"
   - "bandwidth efficiency"
 date: 2026-05-08
-content_hash: c32f5dd09543a6b2
+content_hash: 7bf15d2646ef4912
 ---
 
 # INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception
@@ -127,8 +127,8 @@ Individual module contributions: QAF reduces bandwidth by 94.1%; DDR yields +3.4
 - [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](future-aware_interaction_network_for_motion_forecasting.md)
 - [\[NeurIPS 2025\] SQS: Enhancing Sparse Perception Models via Query-based Splatting in Autonomous Driving](../../NeurIPS2025/autonomous_driving/sqs_enhancing_sparse_perception_models_via_query-based_splatting_in_autonomous_d.md)
 - [\[ICCV 2025\] CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception](cooptrack_exploring_end-to-end_learning_for_efficient_cooperative_sequential_per.md)
+- [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](../../CVPR2026/autonomous_driving/catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](../../CVPR2026/autonomous_driving/colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
-- [\[ICLR 2026\] SiMO: Single-Modality-Operable Multimodal Collaborative Perception](../../ICLR2026/autonomous_driving/simo_single-modality-operable_multimodal_collaborative_perceptio.md)
 
 </div>
 

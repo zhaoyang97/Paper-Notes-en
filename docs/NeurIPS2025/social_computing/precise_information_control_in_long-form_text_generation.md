@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Precise Information Control in Long-Form Text Generation
 description: >-
-  [NeurIPS 2025][Social Computing][precise information control] This paper proposes the Precise Information Control (PIC) task, which requires LLMs to generate long-form text that strictly adheres to a given set of claims…
+  [NeurIPS 2025][Social Computing][precise information control] This paper proposes the Precise Information Control (PIC) task, which requires LLMs to generate long-form text that strictly adheres to a given set of claims (neither omitting nor adding information). The authors construct PIC-Bench to evaluate 8 tasks, finding that over 70% of outputs from state-of-the-art models contain faithfulness hallucinations. Through weakly supervised preference data construction combined w…
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "preference learning"
   - "long-form generation"
 date: 2026-05-08
-content_hash: cb370869d23a7a24
+content_hash: 3f89b3a94133803c
 ---
 
 # Precise Information Control in Long-Form Text Generation
@@ -127,10 +127,10 @@ Two stages: (1) PIC-Bench evaluation — converting 8 long-form generation tasks
 ## Related Papers
 
 - [\[NeurIPS 2025\] AVerImaTeC: A Dataset for Automatic Verification of Image-Text Claims with Evidence from the Web](averimatec_a_dataset_for_automatic_verification_of_image-text_claims_with_eviden.md)
-- [\[ACL 2026\] Content Fuzzing for Escaping Information Cocoons on Social Media](../../ACL2026/social_computing/content_fuzzing_for_escaping_information_cocoons_on_digital_social_media.md)
-- [\[ICLR 2026\] When Agents Persuade: Propaganda Generation and Mitigation in LLMs](../../ICLR2026/social_computing/when_agents_persuade_propaganda_generation_and_mitigation_in_llms.md)
-- [\[ACL 2026\] Synthia: Scalable Grounded Persona Generation from Social Media Data](../../ACL2026/social_computing/synthia_scalable_grounded_persona_generation_from_social_media_data.md)
-- [\[ACL 2026\] Who Gets Which Message? Auditing Demographic Bias in LLM-Generated Targeted Text](../../ACL2026/social_computing/who_gets_which_message_auditing_demographic_bias_in_llm-generated_targeted_text.md)
+- [\[CVPR 2025\] Learning from Neighbors: Category Extrapolation for Long-Tail Learning](../../CVPR2025/social_computing/learning_from_neighbors_category_extrapolation_for_long-tail_learning.md)
+- [\[ICLR 2026\] Steering the Herd: A Framework for LLM-Based Control of Social Learning](../../ICLR2026/social_computing/steering_the_herd_a_framework_for_llm-based_control_of_social_learning.md)
+- [\[ICLR 2026\] The Value of Information in Human-AI Decision-Making](../../ICLR2026/social_computing/the_value_of_information_in_human-ai_decision-making.md)
+- [\[ACL 2025\] Evaluation of LLM Vulnerabilities to Being Misused for Personalized Disinformation Generation](../../ACL2025/social_computing/llm_personalized_disinformation.md)
 
 </div>
 

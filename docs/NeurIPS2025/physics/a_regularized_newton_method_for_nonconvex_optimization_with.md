@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Regularized Newton method] This paper proposes a novel class of regularizers constructed from current and historical gradients…
+  [NeurIPS 2025][Physics & Scientific Computing][Regularized Newton method] This paper proposes a novel class of regularizers constructed from current and historical gradients, combined with a conjugate gradient method equipped with negative-curvature detection to solve the regularized Newton equation. Within an adaptive framework that requires no prior knowledge of the Hessian Lipschitz constant, the method simultaneously achieves, for the first time…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "quadratic local convergence"
   - "adaptive algorithm"
 date: 2026-05-08
-content_hash: c206217cc7191801
+content_hash: ee0b39a6a26901fb
 ---
 
 # A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees
@@ -150,11 +150,11 @@ The idea of exploiting historical information (via $g_{k-1}$) within the regular
 
 ## Related Papers
 
+- [\[ICLR 2026\] ARROW: An Adaptive Rollout and Routing Method for Global Weather Forecasting](../../ICLR2026/physics/arrow_an_adaptive_rollout_and_routing_method_for_global_weather_forecasting.md)
 - [\[NeurIPS 2025\] 3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization](3did_direct_3d_inverse_design_for_aerodynamics_with_physics-aware_optimization.md)
-- [\[ICLR 2026\] Supervised Metric Regularization Through Alternating Optimization for Multi-Regime PINNs](../../ICLR2026/physics/supervised_metric_regularization_through_alternating_optimization_for_multi-regi.md)
-- [\[ICML 2026\] Unveiling Multi-Regime Patterns in SciML: Diverse Failure Modes and Domain-Specific Optimization](../../ICML2026/physics/unveiling_multi-regime_patterns_in_sciml_distinct_failure_modes_and_regime-speci.md)
+- [\[ICML 2026\] Spectrally Regularized Latent Flow Matching for Turbulence Generation](../../ICML2026/physics/spectrally_regularized_latent_flow_matching_for_turbulence_generation.md)
+- [\[ICLR 2026\] Towards a Transferable Acceleration Method for Density Functional Theory](../../ICLR2026/physics/towards_a_transferable_acceleration_method_for_density_functional_theory.md)
 - [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
-- [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](feat_free_energy_estimators_with_adaptive_transport.md)
 
 </div>
 

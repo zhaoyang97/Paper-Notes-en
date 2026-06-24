@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Adversarial Attacks on High-dimensional Offline Bandits
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Reveals a security vulnerability in the offline Multi-Arm Bandit (MAB) evaluation framework: an attacker can completely hijack the bandit’s decision-making behavior by applying minimal, imperceptible perturbations to publicly available reward model weights. The required perturbation norm decreases as input dimensionali
+  [ICLR 2026][LLM Safety][Offline Multi-Arm Bandits] Reveals a security vulnerability in the offline Multi-Arm Bandit (MAB) evaluation framework: an attacker can completely hijack the bandit’s decision-making behavior by applying minimal, imperceptible perturbations to publicly available reward model weights. The required perturbation norm decreases as input dimensionality increases ($\widetilde{\mathcal{O}}(d^{-1/2})$), making image-based generative model evaluation particular…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Offline Multi-Arm Bandits"
+  - "Adversarial Attacks"
+  - "Reward Models"
+  - "High-dimensional Data"
+  - "Generative Model Evaluation"
 date: 2026-05-08
-content_hash: f8fea7735df47aea
+content_hash: f052e82bfb90bafb
 ---
+
 # Efficient Adversarial Attacks on High-dimensional Offline Bandits
 
 **Conference**: ICLR 2026  
@@ -155,9 +161,9 @@ Attack effectiveness verified on synthetic and real data:
 
 - [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
 - [\[ICLR 2026\] Learning to Lie: Adversarial Attacks on Human-AI Teams and LLMs](learning_to_lie_adversarial_attacks_on_human-ai_teams_and_llms.md)
+- [\[ICLR 2026\] Time-To-Inconsistency: A Survival Analysis of Large Language Model Robustness to Adversarial Attacks](time-to-inconsistency_a_survival_analysis_of_large_language_model_robustness_to_.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 - [\[ICLR 2026\] Adversarial Déjà Vu: Jailbreak Dictionary Learning for Stronger Generalization to Unseen Attacks](adversarial_déjà_vu_jailbreak_dictionary_learning_for_stronger_generalization_to.md)
-- [\[ACL 2026\] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](../../ACL2026/llm_safety/making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)
-- [\[NeurIPS 2025\] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks](../../NeurIPS2025/llm_safety/on_the_robustness_of_verbal_confidence_of_llms_in_adversarial_attacks.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Live Interactive Training for Video Segmentation
 description: >-
-  [CVPR 2026][Segmentation][SAM2] LIT (Live Interactive Training) proposes a framework that enables interactive vision systems (e.g., SAM2) to learn online from user corrections during inference. Its lightweight implementation, LIT-LoRA, generalizes user feedback to subsequent frames by updating LoRA modules in real-time. It reduces user corrections by
+  [CVPR 2026][Segmentation][Interactive Video Segmentation] LIT (Live Interactive Training) proposes a framework that enables interactive vision systems (e.g., SAM2) to learn online from user corrections during inference. Its lightweight implementation, LIT-LoRA, generalizes user feedback to subsequent frames by updating LoRA modules in real-time. It reduces user corrections by 18-34% on challenging VOS benchmarks with a training overhead of only approximately 0.5 seconds.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM2
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Interactive Video Segmentation"
+  - "Online Learning"
+  - "LoRA Adaptation"
+  - "SAM2"
+  - "User-Feedback Driven"
 date: 2026-05-08
-content_hash: d9378b5025c70448
+content_hash: 90c757288a21d876
 ---
+
 # Live Interactive Training for Video Segmentation
 
 **Conference**: CVPR 2026  
@@ -172,11 +177,11 @@ LoRA Configuration: rank=4, $\alpha=4$, dropout=0.1, learning rate $1 \times 10^
 
 ## Related Papers
 
-- [\[CVPR 2026\] SAM2Text: Towards Prompt-Free and Multi-Resolution Video Scene Text Segmentation](sam2text_towards_prompt-free_and_multi-resolution_video_scene_text_segmentation.md)
-- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
-- [\[CVPR 2026\] RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video](robotseg_a_model_and_dataset_for_segmenting_robots_in_image_and_video.md)
-- [\[CVPR 2026\] Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision](conversational_image_segmentation_grounding_abstract_concepts_with_scalable_supe.md)
-- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](videomama_mask-guided_video_matting_via_generative_prior.md)
+- [\[ICLR 2026\] Decomposed Attention Fusion in MLLMs for Training-free Video Reasoning Segmentation](../../ICLR2026/segmentation/decomposed_attention_fusion_in_mllms_for_training-free_video_reasoning_segmentat.md)
+- [\[CVPR 2026\] Learning and Aligning Click-Aware Shape Prior for Interactive Amodal Instance Segmentation](learning_and_aligning_click-aware_shape_prior_for_interactive_amodal_instance_se.md)
+- [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](insid3_training-free_in-context_segmentation_with_dinov3.md)
+- [\[ICLR 2026\] VIRTUE: Visual-Interactive Text-Image Universal Embedder](../../ICLR2026/segmentation/virtue_visual-interactive_text-image_universal_embedder.md)
+- [\[CVPR 2026\] Exploring the Underwater World Segmentation without Extra Training](exploring_the_underwater_world_segmentation_without_extra_training.md)
 
 </div>
 

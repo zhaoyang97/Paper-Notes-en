@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Continuous Space-Time Video Super-Resolution with 3D Fourier Fields
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] This paper proposes V3, which utilizes a unified 3D Video Fourier Field (VFF) to represent video directly as a sum of sinusoids in $(x,y,t)$ space. By discarding the fragmented and fragile "Spatial INR + Optical Flow Warp" paradigm, it transforms super-resolution at arbitrary spatial and temporal scales into a single c
+  [ICLR2026][Image Restoration][Video Super-Resolution] This paper proposes V3, which utilizes a unified 3D Video Fourier Field (VFF) to represent video directly as a sum of sinusoids in $(x,y,t)$ space. By discarding the fragmented and fragile "Spatial INR + Optical Flow Warp" paradigm, it transforms super-resolution at arbitrary spatial and temporal scales into a single continuous sampling process. Furthermore, it enables the closed-form incorporation of a Gaussian Point Spre…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Video Super-Resolution"
+  - "Continuous Representation"
+  - "Fourier Fields"
+  - "Anti-aliasing"
+  - "Space-time Modeling"
 date: 2026-05-08
-content_hash: e02c27fca5a8da0a
+content_hash: 7405314f0966cf52
 ---
+
 # Continuous Space-Time Video Super-Resolution with 3D Fourier Fields
 
 **Conference**: ICLR2026  

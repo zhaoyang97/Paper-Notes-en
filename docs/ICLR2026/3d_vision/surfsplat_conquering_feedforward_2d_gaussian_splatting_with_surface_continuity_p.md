@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] SurfSplat proposes a feedforward 3D reconstruction framework based on 2DGS. It binds Gaussian rotation and scale to neighborhood positions via surface continuity priors, addresses color bias through a forced alpha blending strategy, and introduces the High-Resolution Rendering Consistency (HRRC) metric to reveal recons
+  [ICLR 2026][3D Vision][2D Gaussian Splatting] SurfSplat proposes a feedforward 3D reconstruction framework based on 2DGS. It binds Gaussian rotation and scale to neighborhood positions via surface continuity priors, addresses color bias through a forced alpha blending strategy, and introduces the High-Resolution Rendering Consistency (HRRC) metric to reveal reconstruction quality differences at high resolutions.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "2D Gaussian Splatting"
+  - "Feedforward 3D Reconstruction"
+  - "Surface Continuity"
+  - "High-Resolution Rendering Consistency"
+  - "Sparse View"
 date: 2026-05-08
-content_hash: 16853c0afb915e2b
+content_hash: 0a9b47ecc57dcffa
 ---
+
 # SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors
 
 **Conference**: ICLR 2026  
@@ -144,7 +150,7 @@ where $\lambda = 0.05$. Training is conducted at 256×256 resolution. The Depth 
 - [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](../../CVPR2026/3d_vision/3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
 - [\[ICLR 2026\] Mesh Splatting for End-to-end Multiview Surface Reconstruction](mesh_splatting_for_end-to-end_multiview_surface_reconstruction.md)
 - [\[AAAI 2026\] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting](../../AAAI2026/3d_vision/meshsplat_generalizable_sparse-view_surface_reconstruction_via_gaussian_splattin.md)
-- [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](../../AAAI2026/3d_vision/sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
 
 </div>
 

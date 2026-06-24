@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?
 description: >-
-  [AAAI2026][LLM Pretraining][Visual Floorplan Localization] This paper proposes leveraging room style knowledge — obtained via unsupervised clustering pretraining in the form of a room discriminator — to resolve ambiguiti…
+  [AAAI2026][LLM Pretraining][Visual Floorplan Localization] This paper proposes leveraging room style knowledge — obtained via unsupervised clustering pretraining in the form of a room discriminator — to resolve ambiguities caused by repetitive structures in visual floorplan localization (FLoc), achieving state-of-the-art performance on two standard benchmarks: Gibson and Structured3D.
 tags:
   - "AAAI2026"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Clustering Constraints"
   - "Bayesian Filtering"
 date: 2026-05-08
-content_hash: 56b82e1177e97477
+content_hash: f90f0d86b8631a8c
 ---
 
 # Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?
@@ -171,11 +171,11 @@ The key distinction of this work lies in its focus on **scene-level** contextual
 
 ## Related Papers
 
+- [\[ACL 2025\] How Do LLMs Acquire New Knowledge? A Knowledge Circuits Perspective on Continual Pre-Training](../../ACL2025/llm_pretraining/how_do_llms_acquire_new_knowledge_a_knowledge_circuits_perspective_on_continual_.md)
 - [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
-- [\[NeurIPS 2025\] Differentiable Hierarchical Visual Tokenization](../../NeurIPS2025/llm_pretraining/differentiable_hierarchical_visual_tokenization.md)
-- [\[ICLR 2026\] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition](../../ICLR2026/llm_pretraining/fictionalqa_a_dataset_for_studying_memorization_and_knowledge_acquisition.md)
-- [\[NeurIPS 2025\] The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation](../../NeurIPS2025/llm_pretraining/the_atlas_of_in-context_learning_how_attention_heads_shape_in-context_retrieval_.md)
-- [\[ACL 2026\] Is a Document Educational or Just Wikipedia-Style? -- Pitfalls of Classifier-Based Quality Filtering](../../ACL2026/llm_pretraining/is_a_document_educational_or_just_wikipedia-style_--_pitfalls_of_classifier-base.md)
+- [\[ICML 2025\] When Can In-Context Learning Generalize Out of Task Distribution?](../../ICML2025/llm_pretraining/when_can_in-context_learning_generalize_out_of_task_distribution.md)
+- [\[ICLR 2026\] Unveiling Downstream Performance Scaling of LLMs: A Clustering-Based Perspective](../../ICLR2026/llm_pretraining/unveiling_downstream_performance_scaling_of_llms_a_clustering-based_perspective.md)
+- [\[CVPR 2026\] Exploring Visual Pretraining for Learning Language Intelligence](../../CVPR2026/llm_pretraining/exploring_visual_pretraining_for_learning_language_intelligence.md)
 
 </div>
 

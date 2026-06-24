@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HSI-GPT2: A Dual-Granularity Large Motion Reasoning Model with Diffusion Refinement for Human-Scene Interaction
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] HSI-GPT2 is a Large Motion Model (LMM) for "unified understanding + generation" of Human-Scene Interaction (HSI). It employs a **dual-granularity motion tokenizer** to decouple actions into semantic and detail codebooks. By utilizing an **LLM as a semantic planner and a diffusion decoder as a de-tokenizer**, the model
+  [CVPR 2026][Human Understanding][Human-Scene Interaction] HSI-GPT2 is a Large Motion Model (LMM) for "unified understanding + generation" of Human-Scene Interaction (HSI). It employs a **dual-granularity motion tokenizer** to decouple actions into semantic and detail codebooks. By utilizing an **LLM as a semantic planner and a diffusion decoder as a de-tokenizer**, the model achieves high physical fidelity. Integrated with a **Motion Chain-of-Thought (MoCoT) data engine and G…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human-Scene Interaction"
+  - "Motion Generation and Understanding"
+  - "Dual-Granularity Motion Tokenizer"
+  - "LLM + Diffusion"
+  - "GRPO Reasoning"
 date: 2026-05-08
-content_hash: 3216a8ce2470c9f3
+content_hash: e416a5401fac5fbd
 ---
+
 # HSI-GPT2: A Dual-Granularity Large Motion Reasoning Model with Diffusion Refinement for Human-Scene Interaction
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ Hybrid LLM + Diffusion architecture across different base LLMs (shading denotes 
 ## Related Papers
 
 - [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
+- [\[ICLR 2026\] InfBaGel: Human-Object-Scene Interaction Generation with Dynamic Perception and Iterative Refinement](../../ICLR2026/human_understanding/infbagel_human-object-scene_interaction_generation_with_dynamic_perception_and_i.md)
 - [\[CVPR 2026\] SceMoS: Scene-Aware 3D Human Motion Synthesis by Planning with Geometry-Grounded Tokens](scemos_scene-aware_3d_human_motion_synthesis_by_planning_with_geometry-grounded_.md)
-- [\[CVPR 2026\] Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation](bi-directional_autoregressive_diffusion_for_large_complex_motion_interpolation.md)
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
-- [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
+- [\[CVPR 2026\] InterPhys: Physics-aware Human Motion Synthesis in a Dynamic Scene](interphys_physics-aware_human_motion_synthesis_in_a_dynamic_scene.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
 
 </div>
 

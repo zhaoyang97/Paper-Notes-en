@@ -2,16 +2,22 @@
 title: >-
   [Paper Note] Fantastic Pretraining Optimizers and Where to Find Them
 description: >-
-  [ICLR 2026][Optimization & Theory][AdamW] Based on a unified and fair hyperparameter tuning and end-to-end evaluation protocol, this study systematically compares 11 deep learning optimizers. It reveals that the 1.4–2× speedups claimed by new optimizers largely originate from "weak baselines." True speedups do not exceed 1.4× and decay to 1.1× as model scale i
+  [ICLR 2026][Optimization][Pretraining optimizers] Based on a unified and fair hyperparameter tuning and end-to-end evaluation protocol, this study systematically compares 11 deep learning optimizers. It reveals that the 1.4–2× speedups claimed by new optimizers largely originate from "weak baselines." True speedups do not exceed 1.4× and decay to 1.1× as model scale increases; furthermore, it confirms that matrix-based optimizers (Muon/Soap/Kron) indeed outperform scalar-base…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - AdamW
-  - Muon
-  - Soap
+  - "ICLR 2026"
+  - "Optimization"
+  - "Pretraining optimizers"
+  - "Hyperparameter tuning"
+  - "AdamW"
+  - "Muon"
+  - "Soap"
+  - "Matrix Preconditioning"
+  - "Speedup"
+  - "Scaling Laws"
 date: 2026-05-08
-content_hash: 928fb934e1a95d6f
+content_hash: e179b6c229c62ac3
 ---
+
 # Fantastic Pretraining Optimizers and Where to Find Them
 
 **Conference**: ICLR 2026  
@@ -111,9 +117,9 @@ flowchart TD
 ## Related Papers
 
 - [\[NeurIPS 2025\] Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models](../../NeurIPS2025/optimization/fantastic_features_and_where_to_find_them_a_probing_method_to_combine_features_f.md)
+- [\[ICLR 2026\] Cautious Optimizers: Improving Training with One Line of Code](cautious_optimizers_improving_training_with_one_line_of_code.md)
 - [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
 - [\[ICLR 2026\] Towards Dynamic Interleaving Optimizers](towards_dynamic_interleaving_optimizers.md)
-- [\[ICLR 2026\] Cautious Optimizers: Improving Training with One Line of Code](cautious_optimizers_improving_training_with_one_line_of_code.md)
 - [\[ICLR 2026\] $\mu$LO: Compute-Efficient Meta-Generalization of Learned Optimizers](mulo_compute-efficient_meta-generalization_of_learned_optimizers.md)
 
 </div>

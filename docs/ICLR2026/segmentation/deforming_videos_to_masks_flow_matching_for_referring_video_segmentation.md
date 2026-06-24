@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Deforming Videos to Masks: Flow Matching for Referring Video Segmentation
 description: >-
-  [ICLR 2026][Segmentation][RVOS] This work formalizes Referring Video Object Segmentation (RVOS) as an ODE flow problem that continuously deforms video latent representations into masks under language guidance. By fine-tuning the pre-trained text-to-video (T2V) model Wan2.1 and employing three strategies focused on the trajectory starting point, the m
+  [ICLR 2026][Segmentation][RVOS] This work formalizes Referring Video Object Segmentation (RVOS) as an ODE flow problem that continuously deforms video latent representations into masks under language guidance. By fine-tuning the pre-trained text-to-video (T2V) model Wan2.1 and employing three strategies focused on the trajectory starting point, the method achieves SOTA performance on MeViS, Ref-YouTube-VOS, and Ref-DAVIS17.
 tags:
-  - ICLR 2026
-  - Segmentation
-  - RVOS
-  - Flow Matching
+  - "ICLR 2026"
+  - "Segmentation"
+  - "RVOS"
+  - "Flow Matching"
+  - "Text-to-Video Models"
+  - "End-to-End Segmentation"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: e3187d22be45dca1
+content_hash: f811921ab0ae5a93
 ---
+
 # Deforming Videos to Masks: Flow Matching for Referring Video Segmentation
 
 **Conference**: ICLR 2026  
@@ -127,9 +131,9 @@ Ablation on the MeViS validation set (J&F):
 
 - [\[CVPR 2026\] FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching](../../CVPR2026/segmentation/flowdis_language-guided_dichotomous_image_segmentation_with_flow_matching.md)
 - [\[ICLR 2026\] AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation](amlris_alignment-aware_masked_learning_for_referring_image_segmentation.md)
+- [\[ICLR 2026\] Matting Anything 2: Towards Video Matting for Anything](matting_anything_2_towards_video_matting_for_anything.md)
 - [\[CVPR 2025\] LiVOS: Light Video Object Segmentation with Gated Linear Matching](../../CVPR2025/segmentation/livos_light_video_object_segmentation_with_gated_linear_matching.md)
 - [\[ICLR 2026\] VINCIE: Unlocking In-context Image Editing from Video](vincie_unlocking_in-context_image_editing_from_video.md)
-- [\[ICLR 2026\] Matting Anything 2: Towards Video Matting for Anything](matting_anything_2_towards_video_matting_for_anything.md)
 
 </div>
 

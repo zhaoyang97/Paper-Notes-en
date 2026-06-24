@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper provides the first systematic survey of Streaming Large Language Models (Streaming LLMs). It proposes a unified definition based on data flow and interaction concurrency, categorizing existing methods into a three-level progressive taxonomy: Output-streaming, Sequential-streaming, and Concurrent-streaming, c
+  [ACL 2026 Findings][LLM (Other)][Streaming LLMs] This paper provides the first systematic survey of Streaming Large Language Models (Streaming LLMs). It proposes a unified definition based on data flow and interaction concurrency, categorizing existing methods into a three-level progressive taxonomy: Output-streaming, Sequential-streaming, and Concurrent-streaming, covering methodologies and applications across text, audio, and video modalities.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Streaming LLMs"
+  - "Real-time Interaction"
+  - "Incremental Encoding"
+  - "Full-duplex"
+  - "Speculative Decoding"
 date: 2026-05-08
-content_hash: ef2d11de73e310a6
+content_hash: 180eca42ee05a5be
 ---
+
 # From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -143,11 +149,11 @@ The paper compares existing paradigms and techniques through systematic categori
 
 ## Related Papers
 
+- [\[ICLR 2026\] Massive Editing for Large Language Models Based on Dynamic Weight Generation](../../ICLR2026/llm_nlp/massive_editing_for_large_language_models_based_on_dynamic_weight_generation.md)
 - [\[ACL 2026\] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models](personaarena_dynamic_simulation_for_evaluating_and_enhancing_persona-level_role-.md)
 - [\[ACL 2025\] Large Language Models in Bioinformatics: A Survey](../../ACL2025/llm_nlp/large_language_models_in_bioinformatics_a_survey.md)
 - [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](../../AAAI2026/llm_nlp/quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
 - [\[ACL 2025\] Knowledge Boundary of Large Language Models: A Survey](../../ACL2025/llm_nlp/knowledge_boundary_survey.md)
-- [\[ACL 2025\] Turning Trash into Treasure: Accelerating Inference of Large Language Models with Token Recycling](../../ACL2025/llm_nlp/token_recycling.md)
 
 </div>
 

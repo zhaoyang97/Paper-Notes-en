@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] TiMem organizes long-range conversational memory into a five-layer Temporal Memory Tree with explicit temporal containment. By employing complexity-aware retrieval to dynamically balance fine-grained facts and high-level personas, it improves accuracy on LoCoMo and LongMemEval-S while significantly reducing recalled co
+  [ACL2026 Findings][LLM Agent][Temporal-Hierarchical Memory] TiMem organizes long-range conversational memory into a five-layer Temporal Memory Tree with explicit temporal containment. By employing complexity-aware retrieval to dynamically balance fine-grained facts and high-level personas, it improves accuracy on LoCoMo and LongMemEval-S while significantly reducing recalled context length.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL2026 Findings"
+  - "LLM Agent"
+  - "Temporal-Hierarchical Memory"
+  - "Long-horizon Conversational Agents"
+  - "Memory Compression"
+  - "Adaptive Retrieval"
+  - "Personalization"
 date: 2026-05-08
-content_hash: 0d36ee27c9d52dcd
+content_hash: 1021c3608b119e88
 ---
+
 # TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents
 
 **Conference**: ACL2026 Findings  

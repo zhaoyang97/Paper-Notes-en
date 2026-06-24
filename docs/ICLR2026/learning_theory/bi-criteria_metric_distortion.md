@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Bi-Criteria Metric Distortion
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper generalizes the "metric distortion" framework from "selecting a single winner" to "committees of $k$ candidates compared against the optimal single candidate." It proves that on a 1D line, only 2 candidates (for the sum objective) or 4 candidates (for the maximum objective) are sufficient to eliminate distor
+  [ICLR2026][Learning Theory][Metric Distortion] This paper generalizes the "metric distortion" framework from "selecting a single winner" to "committees of $k$ candidates compared against the optimal single candidate." It proves that on a 1D line, only 2 candidates (for the sum objective) or 4 candidates (for the maximum objective) are sufficient to eliminate distortion (1-distortion = 1). In contrast, this is unachievable in 2D Euclidean or tree metrics even with $m-1$ candid…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Computational Social Choice"
+  - "Metric Distortion"
+  - "Social Choice Theory"
+  - "Voting Mechanisms"
+  - "Committee Selection"
+  - "Approximation Bounds"
 date: 2026-05-08
-content_hash: 1a69b8eb903d4655
+content_hash: e0d693091a5db330
 ---
+
 # Bi-Criteria Metric Distortion
 
 **Conference**: ICLR2026  
@@ -135,8 +142,8 @@ N/A. This is a purely theoretical paper. There is no training or loss function. 
 - [\[ICLR 2026\] Bi-Lipschitz Autoencoder With Injectivity Guarantee](bi-lipschitz_autoencoder_with_injectivity_guarantee.md)
 - [\[ICLR 2026\] Persistence Spheres: Bi-Continuous Representations of Persistence Diagrams](persistence_spheres_bi-continuous_representations_of_persistence_diagrams.md)
 - [\[ICLR 2026\] An Optimal Diffusion Approach to Quadratic Rate-Distortion Problems: New Solution and Approximation Methods](an_optimal_diffusion_approach_to_quadratic_rate-distortion_problems_new_solution.md)
-- [\[ICLR 2026\] SEINT: An Efficient SE(p)-Invariant Transport Metric Driven by Polar Transport Discrepancy-based Representation](an_efficient_sep-invariant_transport_metric_driven_by_polar_transport_discrepanc.md)
-- [\[ICLR 2026\] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion](better_learning-augmented_spanning_tree_algorithms_via_metric_forest_completion.md)
+- [\[ICLR 2026\] Metric $k$-Clustering using only Weak Comparison Oracles](metric_k-clustering_using_only_weak_comparison_oracles.md)
+- [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](../../ICML2026/learning_theory/realizable_bayes-consistency_for_general_metric_losses.md)
 
 </div>
 

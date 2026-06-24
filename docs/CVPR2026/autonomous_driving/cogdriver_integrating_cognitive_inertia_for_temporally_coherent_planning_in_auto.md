@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CogDriver: Integrating Cognitive Inertia for Temporally Coherent Planning in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Knowledge Distillation] CogDriver explicitly injects "cognitive inertia"—the natural persistence of human intent—into end-to-end driving systems. It utilizes a multi-view spatiotemporal MLLM to automatically label VLA datasets with continuous narratives while integrating a Sparse Temporal Consistency Module (TCM) within the agent to maintain
+  [CVPR 2026][Autonomous Driving][End-to-end Planning] CogDriver explicitly injects "cognitive inertia"—the natural persistence of human intent—into end-to-end driving systems. It utilizes a multi-view spatiotemporal MLLM to automatically label VLA datasets with continuous narratives while integrating a Sparse Temporal Consistency Module (TCM) within the agent to maintain stable internal states. This prevents decision jitter; it achieves a 22% increase in Driving Score on Bench…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-end Planning"
+  - "Cognitive Inertia"
+  - "Temporal Coherence"
+  - "Vision-Language-Action"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: e6332dad56eadecf
+content_hash: f19b95ab1d2b39f8
 ---
+
 # CogDriver: Integrating Cognitive Inertia for Temporally Coherent Planning in Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -139,15 +144,16 @@ Significant advantages in narrative generation quality over the strongest open-s
 - Value: ⭐⭐⭐⭐ Provides a complete solution (dataset + architecture) with strong reference value for E2E VLA driving.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving](colavla_leveraging_cognitive_latent_reasoning_for_hierarchical_parallel_trajecto.md)
-- [\[CVPR 2026\] Diffusion Forcing Planner: History-Annealed Planning with Time-Dependent Guidance for Autonomous Driving](diffusion_forcing_planner_history-annealed_planning_with_time-dependent_guidance.md)
 - [\[CVPR 2026\] Perceiving the Near, Reasoning the Distant: Coherent Long-Horizon Trajectory Prediction for Autonomous Driving](perceiving_the_near_reasoning_the_distant_coherent_long-horizon_trajectory_predi.md)
-- [\[CVPR 2026\] ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes](rescene4d_temporally_consistent_semantic_instance_segmentation_of_evolving_indoo.md)
+- [\[CVPR 2026\] Neuro-Cognitive Reward Modeling for Human-Centered Autonomous Vehicle Control](neuro-cognitive_reward_modeling_for_human-centered_autonomous_vehicle_control.md)
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving](guideflow_constraint-guided_flow_matching_for_planning_in_end-to-end_autonomous_.md)
 
 </div>
 

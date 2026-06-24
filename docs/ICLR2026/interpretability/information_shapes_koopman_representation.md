@@ -1,19 +1,20 @@
 ---
 title: >-
-  [Paper Note] Untitled
+  [Paper Note] Information Shapes Koopman Representation
 description: >-
-  [ICLR 2026][Interpretability][koopman operator] This paper re-examines the finite-dimensional representation learning problem of the Koopman operator from the perspective of the Information Bottleneck (IB). The Koopman operator lifts nonlinear dynamical systems into infinite-dimensional linear evolutions, but practical applications require approximation in finite-di
+  [ICLR 2026][Interpretability][koopman operator] This paper re-examines the finite-dimensional representation learning problem of the Koopman operator from the perspective of the Information Bottleneck (IB). The Koopman operator lifts nonlinear dynamical systems into infinite-dimensional linear evolutions, but practical applications require approximation in finite-dimensional subspaces, leading to a fundamental contradiction between "simplicity and expressivity." The authors p…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - koopman operator
-  - information bottleneck
-  - dynamical systems
-  - representation learning
-  - von neumann entropy
+  - "ICLR 2026"
+  - "Interpretability"
+  - "koopman operator"
+  - "information bottleneck"
+  - "dynamical systems"
+  - "representation learning"
+  - "von neumann entropy"
 date: 2026-05-08
-content_hash: 9dd0fe0d6ee14fb7
+content_hash: 136617d9c1d5e94f
 ---
+
 # Information Shapes Koopman Representation
 
 **Conference**: ICLR 2026  
@@ -132,11 +133,11 @@ Where the $\alpha$ term rewards temporal coherence to preserve long-term predict
 
 ## Related Papers
 
+- [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
 - [\[ICLR 2026\] The Deleuzian Representation Hypothesis](the_deleuzian_representation_hypothesis.md)
 - [\[ICLR 2026\] Gauge-invariant Representation Holonomy](gauge-invariant_representation_holonomy.md)
-- [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
-- [\[ICLR 2026\] MICLIP: Learning to Interpret Representation in Vision Models](miclip_learning_to_interpret_representation_in_vision_models.md)
 - [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
+- [\[ICLR 2026\] On the Predictive Power of Representation Dispersion in Language Models](on_the_predictive_power_of_representation_dispersion_in_language_models.md)
 
 </div>
 

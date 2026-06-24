@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bayesian Evaluation of Large Language Model Behavior
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Bayesian inference] This paper proposes a Beta-Binomial Bayesian framework for evaluating LLM behavior. By modeling the posterior distribution of $\theta_m$ over stochastic generations for…
+  [NeurIPS 2025][LLM Evaluation][Bayesian inference] This paper proposes a Beta-Binomial Bayesian framework for evaluating LLM behavior. By modeling the posterior distribution of $\theta_m$ over stochastic generations for each prompt, the framework quantifies statistical uncertainty in evaluation metrics and introduces sequential sampling strategies such as Thompson sampling to achieve narrower credible intervals with fewer API calls.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Thompson sampling"
   - "binary metrics"
 date: 2026-05-08
-content_hash: 9f008378a24cffca
+content_hash: cddc8937505455d7
 ---
 
 # Bayesian Evaluation of Large Language Model Behavior
@@ -129,11 +129,11 @@ This paper involves no model training and constitutes a pure inference framework
 
 ## Related Papers
 
+- [\[ICLR 2026\] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](../../ICLR2026/llm_evaluation/dont_passk_a_bayesian_framework_for_large_language_model_evaluation.md)
 - [\[NeurIPS 2025\] Exploiting Vocabulary Frequency Imbalance in Language Model Pre-training](exploiting_vocabulary_frequency_imbalance_in_language_model_pre-training.md)
 - [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](hyperbolic_fine-tuning_for_large_language_models.md)
-- [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](can_large_language_models_master_complex_card_games.md)
 - [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
-- [\[AAAI 2026\] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory](../../AAAI2026/llm_evaluation/lost_in_benchmarks_rethinking_large_language_model_benchmarking_with_item_respon.md)
+- [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](can_large_language_models_master_complex_card_games.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling
 description: >-
-  [ACL 2026][LLM Efficiency][Paper Note] CoMeT introduces a "global memory + FIFO temporary memory" dual-memory plug-in for existing LLMs. By processing inputs in chunks, it achieves constant memory and linear time complexity. Fine-tuned only on 32k context, it enables precise retrieval at any position within 1M tokens and proposes hierarchical pipeline paral
+  [ACL 2026][LLM Efficiency][Long Context] CoMeT introduces a "global memory + FIFO temporary memory" dual-memory plug-in for existing LLMs. By processing inputs in chunks, it achieves constant memory and linear time complexity. Fine-tuned only on 32k context, it enables precise retrieval at any position within 1M tokens and proposes hierarchical pipeline parallelism to allow fine-tuning 128k context on 16×80GB GPUs.
 tags:
-  - ACL 2026
-  - LLM Efficiency
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Long Context"
+  - "Recurrent Transformer"
+  - "Dual Memory System"
+  - "Gated Update"
+  - "Pipeline Parallelism"
 date: 2026-05-08
-content_hash: a70eb5f7a980c5ec
+content_hash: 76ef8eb30d567341
 ---
+
 # CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling
 
 **Conference**: ACL 2026  
@@ -119,15 +125,16 @@ CoMeT performs on par with or slightly better than Full Attention on short seque
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2025\] Curse of High Dimensionality Issue in Transformer for Long-context Modeling](../../ICML2025/llm_efficiency/curse_of_high_dimensionality_issue_in_transformer_for_long-context_modeling.md)
+- [\[ICLR 2026\] RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers](../../ICLR2026/llm_efficiency/rmaat_astrocyte-inspired_memory_compression_and_replay_for_efficient_long-contex.md)
 - [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](native_hybrid_attention_for_efficient_sequence_modeling.md)
-- [\[ICML 2025\] Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling](../../ICML2025/llm_efficiency/efficient_length-generalizable_attention_via_causal_retrieval_for_long-context_l.md)
-- [\[ACL 2025\] Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference](../../ACL2025/llm_efficiency/smarter_better_faster_longer_a_modern_bidirectional_encoder_for_fast_memory_effi.md)
-- [\[CVPR 2025\] Associative Transformer](../../CVPR2025/llm_efficiency/associative_transformer.md)
+- [\[ACL 2026\] Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention](threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l.md)
+- [\[ICLR 2026\] Revisiting Long-context Modeling from Context Denoising Perspective](../../ICLR2026/llm_efficiency/revisiting_long-context_modeling_from_context_denoising_perspective.md)
 
 </div>
 

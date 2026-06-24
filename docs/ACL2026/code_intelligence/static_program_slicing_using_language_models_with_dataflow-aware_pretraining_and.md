@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Static Program Slicing Using Language Models With Dataflow-Aware Pretraining and Constrained Decoding
 description: >-
-  [ACL 2026][Code Intelligence][CodeT5+] Sliceformer reformulates static program slicing as a seq2seq task for small code language models. It learns dependencies through dataflow-aware pretraining and utilizes lexical and syntactic constrained decoding to prevent hallucinations, significantly improving ExactMatch on Java and Python slicing benchmarks.
+  [ACL2026][Code Intelligence][Program Slicing] Sliceformer reformulates static program slicing as a seq2seq task for small code language models. It learns dependencies through dataflow-aware pretraining and utilizes lexical and syntactic constrained decoding to prevent hallucinations, significantly improving ExactMatch on Java and Python slicing benchmarks.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - CodeT5+
+  - "ACL2026"
+  - "Code Intelligence"
+  - "Program Slicing"
+  - "Dataflow Pretraining"
+  - "Constrained Decoding"
+  - "CodeT5+"
+  - "Static Analysis"
 date: 2026-05-08
-content_hash: 9d8f625801e5c482
+content_hash: 018c8119ec841f85
 ---
+
 # Static Program Slicing Using Language Models With Dataflow-Aware Pretraining and Constrained Decoding
 
 **Conference**: ACL2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing
 description: >-
-  [CVPR 2026][Video Generation][3DMM] PerformRecast proposes a GAN-based portrait video editing method utilizing an improved 3DMM keypoint transformation formula. By applying expression deformation before head rotation (consistent with the FLAME model), precise disentanglement of expression and head pose is achieved. A Boundary Alignment Module is introduc
+  [CVPR 2026][Video Generation][Portrait Video Editing] PerformRecast proposes a GAN-based portrait video editing method utilizing an improved 3DMM keypoint transformation formula. By applying expression deformation before head rotation (consistent with the FLAME model), precise disentanglement of expression and head pose is achieved. A Boundary Alignment Module is introduced to resolve stitching misalignments between facial and non-facial regions. The method significantly outp…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - 3DMM
-  - GAN
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Portrait Video Editing"
+  - "Expression Disentanglement"
+  - "3DMM"
+  - "Keypoint Transformation"
+  - "GAN"
 date: 2026-05-08
-content_hash: 4b3600d9289a0281
+content_hash: 28e2a28cd6bdd59e
 ---
+
 # PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing
 
 **Conference**: CVPR 2026  
@@ -145,11 +149,11 @@ In Enhancement mode, PerformRecast remains superior (PSNR 30.27, FVD 90.2).
 
 ## Related Papers
 
-- [\[CVPR 2026\] THEval: Evaluation Framework for Talking Head Video Generation](theval_evaluation_framework_for_talking_head_video_generation.md)
 - [\[CVPR 2026\] HarmoVid: Relightful Video Portrait Harmonization](harmovid_relightful_video_portrait_harmonization.md)
-- [\[CVPR 2026\] EmoDiffTalk: Emotion-aware Diffusion for Editable 3D Gaussian Talking Head](emodifftalk_emotion-aware_diffusion_for_editable_3d_gaussian_talking_head.md)
+- [\[ICLR 2026\] Controllable Video Generation with Provable Disentanglement](../../ICLR2026/video_generation/controllable_video_generation_with_provable_disentanglement.md)
 - [\[CVPR 2026\] PersonaLive! Expressive Portrait Image Animation for Live Streaming](personalive_expressive_portrait_image_animation_for_live_streaming.md)
-- [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
+- [\[CVPR 2026\] ExPose: Reinforcing Video Generation Models for Extreme Pose Estimation](expose_reinforcing_video_generation_models_for_extreme_pose_estimation.md)
+- [\[CVPR 2026\] MultiAnimate: Pose-Guided Image Animation Made Extensible](multianimate_pose-guided_image_animation_made_extensible.md)
 
 </div>
 

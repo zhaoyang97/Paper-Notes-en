@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining
 description: >-
-  [ICML 2026][LLM Agent][GUI agent] Video2GUI utilizes a four-stage pipeline—"Metadata Coarse Filtering → Video Quality Fine Filtering → Gemini-3-Pro Task/Action Extraction → High-Resolution Three-Frame Precise Spatial Grounding"—to refine 500 million YouTube video metadata entries into WildGUI (12.7M trajectories, 124.5M screenshots, 1500+ applications)
+  [ICML 2026][LLM Agent][GUI agent] Video2GUI utilizes a four-stage pipeline—"Metadata Coarse Filtering → Video Quality Fine Filtering → Gemini-3-Pro Task/Action Extraction → High-Resolution Three-Frame Precise Spatial Grounding"—to refine 500 million YouTube video metadata entries into WildGUI (12.7M trajectories, 124.5M screenshots, 1500+ applications). This dataset improves Qwen2.5-VL/Mimo-VL performance by 5–20% across multiple GUI grounding and agent benchmarks.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - GUI agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "GUI agent"
+  - "Video-to-Trajectory"
+  - "Coarse-to-fine Filtering"
+  - "Spatial Grounding"
+  - "WildGUI Dataset"
 date: 2026-05-08
-content_hash: 650b3c63ab7587e9
+content_hash: b8c0a55a33cd9183
 ---
+
 # Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining
 
 **Conference**: ICML 2026  
@@ -152,7 +157,7 @@ WildGUI comparison with existing GUI datasets:
 - [\[CVPR 2026\] WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces](../../CVPR2026/llm_agent/webchain_a_large-scale_human-annotated_dataset_of_real-world_web_interaction_tra.md)
 - [\[ICML 2026\] SE-GA: Memory-Augmented Self-Evolution for GUI Agents](se-ga_memory-augmented_self-evolution_for_gui_agents.md)
 - [\[ACL 2026\] LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization](../../ACL2026/llm_agent/lpo_towards_accurate_gui_agent_interaction_via_location_preference_optimization.md)
-- [\[ACL 2026\] YIELD: A Large-Scale Dataset and Evaluation Framework for Information Elicitation Agents](../../ACL2026/llm_agent/yield_a_large-scale_dataset_and_evaluation_framework_for_information_elicitation.md)
+- [\[ICML 2026\] Towards Diverse Scientific Hypothesis Search with Large Language Models](towards_diverse_scientific_hypothesis_search_with_large_language_models.md)
 
 </div>
 

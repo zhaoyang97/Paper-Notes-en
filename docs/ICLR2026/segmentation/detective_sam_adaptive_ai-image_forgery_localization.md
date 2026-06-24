@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Detective SAM: Adaptive AI-Image Forgery Localization
 description: >-
-  [ICLR 2026][Segmentation][Image Forgery Localization] A set of lightweight adapters is attached to SAM2 to automatically convert "post-perturbation feature distribution shift" forensics cues into heatmap prompts for segmenting tampered areas in diffusion edits. Combined with an AutoEditForge pipeline for automatic data generation, the locator can continually adapt to evol
+  [ICLR 2026][Segmentation][Image Forgery Localization] A set of lightweight adapters is attached to SAM2 to automatically convert "post-perturbation feature distribution shift" forensics cues into heatmap prompts for segmenting tampered areas in diffusion edits. Combined with an AutoEditForge pipeline for automatic data generation, the locator can continually adapt to evolving image editing models.
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Image Forgery Localization
-  - SAM2
-  - Diffusion Edit
-  - Adapter
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Image Forgery Localization"
+  - "SAM2"
+  - "Diffusion Edit"
+  - "Adapter"
+  - "Continual Fine-tuning"
+  - "Data Generation"
 date: 2026-05-08
-content_hash: bce80a08887a890d
+content_hash: f06a93058f40c968
 ---
+
 # Detective SAM: Adaptive AI-Image Forgery Localization
 
 **Conference**: ICLR 2026  
@@ -139,8 +142,8 @@ Average OOD IoU shows a relative improvement of **38.94%** over the strongest ba
 - [\[ICLR 2026\] SAM-Veteran: An MLLM-based Human-like SAM Agent for Reasoning Segmentation](sam-veteran_an_mllm-based_human-like_sam_agent_for_reasoning_segmentation.md)
 - [\[ICLR 2026\] Enhancing Image-Conditional Coverage in Segmentation: Adaptive Thresholding via Differentiable Miscoverage Loss](enhancing_image-conditional_coverage_in_segmentation_adaptive_thresholding_via_d.md)
 - [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](sam_3_segment_anything_with_concepts.md)
-- [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](../../AAAI2026/segmentation/sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
 - [\[CVPR 2026\] Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification](../../CVPR2026/segmentation/detecting_ai-generated_forgeries_via_iterative_manifold_deviation_amplification.md)
+- [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](../../AAAI2026/segmentation/sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
 
 </div>
 

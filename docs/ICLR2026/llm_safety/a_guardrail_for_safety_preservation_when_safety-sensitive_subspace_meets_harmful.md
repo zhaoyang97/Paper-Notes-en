@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Guardrail for Safety Preservation: When Safety-Sensitive Subspace Meets Harmful-Resistant Null-Space
 description: >-
-  [ICLR 2026][LLM Safety][LoRA] GuardSpace utilizes a two-stage guardrail—"covariance-preconditioned SVD to isolate and freeze safety-related weights + null-space projection to constrain adapter updates"—ensuring that LLMs lose almost no safety alignment during downstream fine-tuning while slightly improving downstream accuracy.
+  [ICLR 2026][LLM Safety][Safety Alignment] GuardSpace utilizes a two-stage guardrail—"covariance-preconditioned SVD to isolate and freeze safety-related weights + null-space projection to constrain adapter updates"—ensuring that LLMs lose almost no safety alignment during downstream fine-tuning while slightly improving downstream accuracy.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Safety Alignment"
+  - "Fine-tuning Safety"
+  - "LoRA"
+  - "Subspace Decomposition"
+  - "Null-space Projection"
 date: 2026-05-08
-content_hash: ff6ff486861b7f32
+content_hash: cb36e90c6299e398
 ---
+
 # A Guardrail for Safety Preservation: When Safety-Sensitive Subspace Meets Harmful-Resistant Null-Space
 
 **Conference**: ICLR 2026  
@@ -127,8 +132,8 @@ Across Qwen-2-7B / Gemma-2-9B / Mistral-7B / Llama-3.1-8B, HS is consistently th
 - [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
 - [\[ICLR 2026\] The Alignment Waltz: Jointly Training Agents to Collaborate for Safety](the_alignment_waltz_jointly_training_agents_to_collaborate_for_safety.md)
 - [\[ICLR 2026\] SOSBench: Benchmarking Safety Alignment on Six Scientific Domains](sosbench_benchmarking_safety_alignment_on_six_scientific_domains.md)
+- [\[ACL 2026\] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](../../ACL2026/llm_safety/compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)
 - [\[ICLR 2026\] Teach to Reason Safely: Policy-Guided Safety Tuning for MLRMs](teach_to_reason_safely_policy-guided_safety_tuning_for_mlrms.md)
-- [\[ICLR 2026\] ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs](managerbench_evaluating_the_safety-pragmatism_trade-off_in_autonomous_llms.md)
 
 </div>
 

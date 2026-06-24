@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HybridDriveVLA: Vision-Language-Action Model with Visual CoT reasoning and ToT Evaluation for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][nuScenes] HybridDriveVLA replaces the traditional "image-to-text then CoT reasoning" in driving VLAs with direct prediction of future scenes in the visual domain (V-CoT). It employs a Tree-of-Thought multi-trajectory evaluation (ToT-Evaluation) to score candidates point-by-point across safety, progress, and comfort dimensions to
+  [CVPR 2026][Autonomous Driving][Visual Chain-of-Thought] HybridDriveVLA replaces the traditional "image-to-text then CoT reasoning" in driving VLAs with direct prediction of future scenes in the visual domain (V-CoT). It employs a Tree-of-Thought multi-trajectory evaluation (ToT-Evaluation) to score candidates point-by-point across safety, progress, and comfort dimensions to select the optimal waypoint sequence, reducing the average collision rate of autoregressive VLAs to 0.…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - nuScenes
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Visual Chain-of-Thought"
+  - "Tree-of-Thought Evaluation"
+  - "End-to-end Driving"
+  - "Trajectory Planning"
+  - "nuScenes"
 date: 2026-05-08
-content_hash: 2551423d90cc82c2
+content_hash: d97b4518f1c9d82c
 ---
+
 # HybridDriveVLA: Vision-Language-Action Model with Visual CoT reasoning and ToT Evaluation for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -154,15 +159,16 @@ Ours achieves an average collision rate of **0.17% (ST-P3) / 0.19% (UniAD)**. Wi
 - Value: ⭐⭐⭐⭐ Interpretable multi-axis deliberation and adjustable driving styles offer significant utility for production-level safety.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
 - [\[CVPR 2026\] NoRD: A Data-Efficient Vision-Language-Action Model that Drives without Reasoning](nord_a_data-efficient_vision-language-action_model_that_drives_without_reasoning.md)
 - [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
+- [\[CVPR 2026\] E3AD: An Emotion-Aware Vision-Language-Action Model for Human-Centric End-to-End Autonomous Driving](e3ad_an_emotion-aware_vision-language-action_model_for_human-centric_end-to-end_.md)
 - [\[CVPR 2026\] Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving](drive_my_way_preference_alignment_of_vision-language-action_model_for_personaliz.md)
-- [\[CVPR 2026\] Unifying Language-Action Understanding and Generation for Autonomous Driving](unifying_language-action_understanding_and_generation_for_autonomous_driving.md)
 
 </div>
 

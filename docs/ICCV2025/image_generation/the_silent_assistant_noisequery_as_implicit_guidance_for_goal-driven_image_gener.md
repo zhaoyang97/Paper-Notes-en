@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Silent Assistant: NoiseQuery as Implicit Guidance for Goal-Driven Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Initial noise optimization] This paper proposes NoiseQuery, a training-free T2I generation enhancement method that pre-constructs a large-scale noise library and retrieves the initial noise…
+  [ICCV 2025][Image Generation][Initial noise optimization] This paper proposes NoiseQuery, a training-free T2I generation enhancement method that pre-constructs a large-scale noise library and retrieves the initial noise best matching the user's goal at inference time, enabling fine-grained control over both high-level semantics and low-level visual attributes, with only 0.002s/prompt additional overhead, improving performance across multiple T2I models and enhancement techniq…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "low-level visual attribute control"
   - "T2I enhancement"
 date: 2026-05-08
-content_hash: be77ef274c9ad068
+content_hash: 27d42ac2ff4b9612
 ---
 
 # The Silent Assistant: NoiseQuery as Implicit Guidance for Goal-Driven Image Generation
@@ -145,11 +145,11 @@ Evaluated on DrawBench and MSCOCO, covering 6 models and 4 enhancement technique
 
 ## Related Papers
 
+- [\[CVPR 2025\] FilmComposer: LLM-Driven Music Production for Silent Film Clips](../../CVPR2025/image_generation/filmcomposer_llm-driven_music_production_for_silent_film_clips.md)
+- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](../../CVPR2026/image_generation/goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
 - [\[ICCV 2025\] FICGen: Frequency-Inspired Contextual Disentanglement for Layout-driven Degraded Image Generation](ficgen_frequency-inspired_contextual_disentanglement_for_layout-driven_degraded_.md)
 - [\[ICCV 2025\] Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing](anchor_token_matching_implicit_structure_locking_for_training-free_ar_image_edit.md)
 - [\[ICCV 2025\] LIFT: Latent Implicit Functions for Task- and Data-Agnostic Encoding](lift_latent_implicit_functions_for_task-_and_data-agnostic_encoding.md)
-- [\[ICCV 2025\] AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts](autoprompt_automated_red-teaming_of_text-to-image_models_via_llm-driven_adversar.md)
-- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
 
 </div>
 

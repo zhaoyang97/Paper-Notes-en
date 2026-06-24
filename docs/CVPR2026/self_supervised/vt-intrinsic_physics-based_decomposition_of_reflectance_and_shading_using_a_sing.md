@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VT-Intrinsic: Physics-Based Decomposition of Reflectance and Shading using a Single Visible-Thermal Image Pair
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] VT-Intrinsic utilizes the physical complementarity between visible and thermal infrared images (unreflected light is absorbed as heat) to derive visible-thermal intensity ordinality that directly maps to reflectance and shading ordinality. This serves as a self-supervised signal for neural network optimization, enablin
+  [CVPR 2026][Self-Supervised Learning][Intrinsic Image Decomposition] VT-Intrinsic utilizes the physical complementarity between visible and thermal infrared images (unreflected light is absorbed as heat) to derive visible-thermal intensity ordinality that directly maps to reflectance and shading ordinality. This serves as a self-supervised signal for neural network optimization, enabling high-quality intrinsic image decomposition without pre-training data.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Intrinsic Image Decomposition"
+  - "Visible-Thermal Imaging"
+  - "Reflectance Estimation"
+  - "Shading Decomposition"
+  - "Ordinal Constraints"
 date: 2026-05-08
-content_hash: 2dfc87716727eb9e
+content_hash: 77d0e2908f7107c1
 ---
+
 # VT-Intrinsic: Physics-Based Decomposition of Reflectance and Shading using a Single Visible-Thermal Image Pair
 
 **Conference**: CVPR 2026  
@@ -127,16 +133,16 @@ The total loss is $\mathcal{L} = \|\hat{\rho} \cdot \hat{\eta} - I_v\|_2 + \lamb
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses](reconstructing_spiking_neural_networks_using_a_single_neuron_with_autapses.md)
 - [\[CVPR 2026\] Unique Lives, Shared World: Learning from Single-Life Videos](unique_lives_shared_world_learning_from_single-life_videos.md)
-- [\[CVPR 2026\] MuM: Multi-View Masked Image Modeling for 3D Vision](mum_multi-view_masked_image_modeling_for_3d_vision.md)
 - [\[CVPR 2026\] Suppressing Non-Semantic Noise in Masked Image Modeling Representations](suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)
-- [\[ICML 2025\] PDE-Transformer: Efficient and Versatile Transformers for Physics Simulations](../../ICML2025/self_supervised/pde-transformer_efficient_and_versatile_transformers_for_physics_simulations.md)
 - [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
+- [\[ICML 2025\] PDE-Transformer: Efficient and Versatile Transformers for Physics Simulations](../../ICML2025/self_supervised/pde-transformer_efficient_and_versatile_transformers_for_physics_simulations.md)
 
 </div>
 

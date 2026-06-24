@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Inferring the Invisible: Neuro-Symbolic Rule Discovery for Missing Value Imputation
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Treat "missing table entries" as latent predicates to be inferred. A differentiable forward chaining reasoning engine allows **rule induction** and **missing value imputation** to serve as mutual evidence and reinforce each other, completing the data while learning human-readable logic rules.
+  [ICLR 2026][Interpretability][Missing value imputation] Treat "missing table entries" as latent predicates to be inferred. A differentiable forward chaining reasoning engine allows **rule induction** and **missing value imputation** to serve as mutual evidence and reinforce each other, completing the data while learning human-readable logic rules.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Missing value imputation"
+  - "neuro-symbolic reasoning"
+  - "logic rule induction"
+  - "forward chaining"
+  - "block coordinate descent"
 date: 2026-05-08
-content_hash: 2dca8e70200eedc6
+content_hash: e263b877b4e75605
 ---
+
 # Inferring the Invisible: Neuro-Symbolic Rule Discovery for Missing Value Imputation
 
 **Conference**: ICLR 2026  

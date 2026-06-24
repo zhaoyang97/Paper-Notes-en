@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Implicit Modeling for Transferability Estimation of Vision Foundation Models
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Transferability Estimation] This paper proposes Implicit Transferability Modeling (ITM), a framework that encodes the transferability of model–task pairs via a latent variable $z$…
+  [NeurIPS 2025][Self-Supervised Learning][Transferability Estimation] This paper proposes Implicit Transferability Modeling (ITM), a framework that encodes the transferability of model–task pairs via a latent variable $z$, and employs Divide-and-conquer Variational Approximation (DVA) to efficiently simulate embedding space evolution. On 10 downstream tasks with 10 diverse pre-trained models, the weighted Kendall $\tau_w$ improves from the previous state-of-the-art of 0.45 to…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Variational Approximation"
   - "Vision Foundation Models"
 date: 2026-05-08
-content_hash: 3d131390e2107367
+content_hash: 341d5a9cf568738c
 ---
 
 # Implicit Modeling for Transferability Estimation of Vision Foundation Models
@@ -156,7 +156,7 @@ MSE loss performs best within the deparametric approximation framework; its smoo
 
 - [\[ICCV 2025\] LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models](../../ICCV2025/self_supervised/loftup_learning_a_coordinatebased_feature_upsampler_for_visi.md)
 - [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](../../CVPR2026/self_supervised/com_pt_chain_of_models_pretraining.md)
-- [\[CVPR 2026\] Robustness of Vision Foundation Models to Common Perturbations](../../CVPR2026/self_supervised/robustness_of_vision_foundation_models_to_common_perturbations.md)
+- [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](../../CVPR2026/self_supervised/scaling_parallel_sequence_models_to_vision_foundation_models.md)
 - [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
 - [\[NeurIPS 2025\] Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition](foundation_models_for_scientific_discovery_from_paradigm_enhancement_to_paradigm.md)
 

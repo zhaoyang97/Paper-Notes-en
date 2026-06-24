@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation
 description: >-
-  [CVPR 2026][Human Understanding][VQ-VAE] Superman unifies "3D pose perception from video" and "skeleton-based motion generation" into a conditional sequence generation problem: it first employs a **vision-guided motion tokenizer** (VQ-VAE + dual vision/geometry streams + hybrid codebook) to quantize continuous motion into cross-modal discrete tokens, then uti
+  [CVPR 2026][Human Understanding][Human motion] Superman unifies "3D pose perception from video" and "skeleton-based motion generation" into a conditional sequence generation problem: it first employs a **vision-guided motion tokenizer** (VQ-VAE + dual vision/geometry streams + hybrid codebook) to quantize continuous motion into cross-modal discrete tokens, then utilizes a single MLLM (Qwen2.5-VL-7B) to autoregressively predict these tokens. This framework performs 3D pose est…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - VQ-VAE
-  - MLLM
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human motion"
+  - "3D pose estimation"
+  - "motion prediction"
+  - "motion in-betweening"
+  - "VQ-VAE"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 1663b5c733748bcb
+content_hash: 481a887018db049b
 ---
+
 # Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation
 
 **Conference**: CVPR 2026  
@@ -159,9 +164,9 @@ Superman leads significantly in zero-shot cross-dataset scenarios (reducing MP e
 
 ## Related Papers
 
-- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
 - [\[CVPR 2026\] Seeing without Pixels: Perception from Camera Trajectories](seeing_without_pixels_perception_from_camera_trajectories.md)
+- [\[ICLR 2026\] InfBaGel: Human-Object-Scene Interaction Generation with Dynamic Perception and Iterative Refinement](../../ICLR2026/human_understanding/infbagel_human-object-scene_interaction_generation_with_dynamic_perception_and_i.md)
 - [\[CVPR 2026\] Real-Time Multimodal Fingertip Contact Detection via Depth and Motion Fusion for Vision-Based Human-Computer Interaction](real-time_multimodal_fingertip_contact_detection_via_depth_and_motion_fusion_for.md)
 - [\[CVPR 2026\] FrankenMotion: Part-level Human Motion Generation and Composition](frankenmotion_part-level_human_motion_generation_and_composition.md)
 

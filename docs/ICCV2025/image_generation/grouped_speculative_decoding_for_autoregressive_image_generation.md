@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Grouped Speculative Decoding for Autoregressive Image Generation
 description: >-
-  [ICCV 2025][Image Generation][autoregressive image generation] This paper proposes Grouped Speculative Decoding (GSD), a training-free acceleration method for autoregressive image generation that performs speculative ver…
+  [ICCV 2025][Image Generation][autoregressive image generation] This paper proposes Grouped Speculative Decoding (GSD), a training-free acceleration method for autoregressive image generation that performs speculative verification at the level of semantically valid token clusters rather than the single most probable token, achieving an average speedup of 3.7× without degrading image quality.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "visual token redundancy"
 date: 2026-05-08
-content_hash: 5c8b5f368ca45c8c
+content_hash: 0772d681c7f69a8a
 ---
 
 # Grouped Speculative Decoding for Autoregressive Image Generation
@@ -176,10 +176,10 @@ Value ★★★★★: Training-free, plug-and-play, with publicly available cod
 ## Related Papers
 
 - [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
+- [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](../../CVPR2026/image_generation/multi-scale_local_speculative_decoding_for_image_generation.md)
 - [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](../../ICML2026/image_generation/speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
 - [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](../../CVPR2026/image_generation/sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
 - [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
-- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](../../ICLR2026/image_generation/autoregressive_image_generation_with_randomized_parallel_decoding.md)
 
 </div>
 

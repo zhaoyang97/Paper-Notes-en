@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] Your Language Model Secretly Contains Personality Subnetworks
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][persona subnetwork] This paper proposes extracting personality-specific subnetworks from pre-trained LLMs through activation-guided pruning, enabling efficient personality switching without any training, and introduces a contrastive pruning strategy to enhance parameter separation between opposing personalities.
+  [Information Retrieval & RAG] This paper proposes extracting personality-specific subnetworks from pre-trained LLMs through activation-guided pruning, enabling efficient personality switching without any training, and introduces a contrastive pruning strategy to enhance parameter separation between opposing personalities.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - persona subnetwork
-  - network pruning
-  - contrastive pruning
-  - MBTI
-  - activation-guided masking
+  - "Information Retrieval & RAG"
 date: 2026-05-08
-content_hash: c707cf2d11de219b
+content_hash: f554099571bac365
 ---
+
 # Your Language Model Secretly Contains Personality Subnetworks
 
 ## Basic Information

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MixANT: Observation-dependent Memory Propagation for Stochastic Dense Action Anticipation
 description: >-
-  [ICCV 2025][LLM Efficiency][Action Anticipation] This paper proposes MixANT, which introduces input-dependence into the forgetting gate (A matrix) of Mamba via a Mixture-of-Experts approach. A lightweight router dynamica…
+  [ICCV 2025][LLM Efficiency][Action Anticipation] This paper proposes MixANT, which introduces input-dependence into the forgetting gate (A matrix) of Mamba via a Mixture-of-Experts approach. A lightweight router dynamically selects context-aware A matrices to control temporal memory propagation, achieving state-of-the-art performance across all three dense action anticipation benchmarks: 50Salads, Breakfast, and Assembly101.
 tags:
   - "ICCV 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "State Space Models"
   - "Dense Prediction"
 date: 2026-05-08
-content_hash: 583ff146cb37c7cc
+content_hash: de0c6663ec18ec63
 ---
 
 # MixANT: Observation-dependent Memory Propagation for Stochastic Dense Action Anticipation
@@ -187,10 +187,10 @@ MixANT outperforms all prior methods across all three datasets, all observation 
 ## Related Papers
 
 - [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](../../ICML2026/llm_efficiency/stochastic_sparse_attention_for_memory-bound_inference.md)
+- [\[ICLR 2026\] Not All Bits Are Equal: Scale-Dependent Memory Optimization Strategies for Reasoning Models](../../ICLR2026/llm_efficiency/not_all_bits_are_equal_scale-dependent_memory_optimization_strategies_for_reason.md)
 - [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](../../NeurIPS2025/llm_efficiency/hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
-- [\[ICML 2026\] DOT-MoE: Converting Dense LLMs to MoE with Differentiable Optimal Transport](../../ICML2026/llm_efficiency/dot-moe_differentiable_optimal_transport_for_moefication.md)
-- [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](../../ACL2026/llm_efficiency/comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
-- [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection](../../ICLR2026/llm_efficiency/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_selection.md)
+- [\[ACL 2025\] DIVE into MoE: Diversity-Enhanced Reconstruction of Large Language Models from Dense into Mixture-of-Experts](../../ACL2025/llm_efficiency/dive_moe_reconstruction.md)
+- [\[CVPR 2026\] Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference](../../CVPR2026/llm_efficiency/rejection_mixing_fast_semantic_propagation_of_mask_tokens_for_efficient_dllm_inf.md)
 
 </div>
 

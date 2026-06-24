@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Structure-to-Intensity Diffusion for Adverse-Weather LiDAR Generation
 description: >-
-  [CVPR 2026][Autonomous Driving][Diffusion Model] SiD explicitly decomposes the denoising process of adverse-weather LiDAR generation into two branches at each step: "reconstruct geometric structure first, then denoise reflectance intensity conditioned on the structure." Combined with the RPWS module that synthesizes degraded data using real sensor statistics, SiD sig
+  [CVPR 2026][Autonomous Driving][Adverse Weather] SiD explicitly decomposes the denoising process of adverse-weather LiDAR generation into two branches at each step: "reconstruct geometric structure first, then denoise reflectance intensity conditioned on the structure." Combined with the RPWS module that synthesizes degraded data using real sensor statistics, SiD significantly reduces multiple distribution metrics for fog, rain, and snow point cloud generation compared to pre…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Adverse Weather"
+  - "LiDAR Point Cloud Generation"
+  - "Diffusion Models"
+  - "Causal Decomposition"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: ebde52237ef7af09
+content_hash: 884a0f31343ed117
 ---
+
 # Structure-to-Intensity Diffusion for Adverse-Weather LiDAR Generation
 
 **Conference**: CVPR 2026  
@@ -146,7 +151,7 @@ Causal Direction Ablation:
 - [\[CVPR 2026\] HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation](hg-lane_high-fidelity_generation_of_lane_scenes_under_adverse_weather_and_lighti.md)
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 - [\[CVPR 2026\] Points-to-3D: Structure-Aware 3D Generation with Point Cloud Priors](points-to-3d_structure-aware_3d_generation_with_point_cloud_priors.md)
-- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
+- [\[CVPR 2026\] L3DR: 3D-aware LiDAR Diffusion and Rectification](l3dr_3d-aware_lidar_diffusion_and_rectification.md)
 - [\[ECCV 2024\] Rethinking Data Augmentation for Robust LiDAR Semantic Segmentation in Adverse Weather](../../ECCV2024/autonomous_driving/rethinking_data_augmentation_for_robust_lidar_semantic_segmentation_in_adverse_w.md)
 
 </div>

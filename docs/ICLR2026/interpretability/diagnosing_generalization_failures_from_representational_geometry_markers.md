@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Diagnosing Generalization Failures from Representational Geometry Markers
 description: >-
-  [ICLR 2026][Interpretability][GLUE] Drawing from the top-down perspective of medical "biomarkers," this paper uses **geometric quantities of object manifolds measured only on In-Distribution (ID) data** (effective dimension $D_\text{eff}$ and utilization $\Psi_\text{eff}$) as prognostic markers. It predicts model failure Out-of-Distribution (OOD) without
+  [ICLR 2026][Interpretability][Representational geometry] Drawing from the top-down perspective of medical "biomarkers," this paper uses **geometric quantities of object manifolds measured only on In-Distribution (ID) data** (effective dimension $D_\text{eff}$ and utilization $\Psi_\text{eff}$) as prognostic markers. It predicts model failure Out-of-Distribution (OOD) without any OOD information and selects pre-trained weights with superior transferability.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - GLUE
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Representational geometry"
+  - "OOD generalization"
+  - "object manifolds"
+  - "GLUE"
+  - "effective dimension"
+  - "model selection"
+  - "transfer learning"
 date: 2026-05-08
-content_hash: 6b3c775897159f8d
+content_hash: 7df26e3a3667e91f
 ---
+
 # Diagnosing Generalization Failures from Representational Geometry Markers
 
 **Conference**: ICLR 2026  

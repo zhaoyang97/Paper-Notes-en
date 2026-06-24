@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unveiling Downstream Performance Scaling of LLMs: A Clustering-Based Perspective
 description: >-
-  [ICLR 2026][Pretraining][scaling law] This paper proposes the Clustering-On-Difficulty (COD) framework: it first clusters evaluation samples based on "difficulty scaling features," filters out non-extrapolatable clusters, applies a newly derived downstream performance scaling law to perform compute-performance extrapolation for each cluster, and finally us
+  [ICLR 2026][LLM Pretraining][Downstream Performance Prediction] This paper proposes the Clustering-On-Difficulty (COD) framework: it first clusters evaluation samples based on "difficulty scaling features," filters out non-extrapolatable clusters, applies a newly derived downstream performance scaling law to perform compute-performance extrapolation for each cluster, and finally uses a smooth mapping function to restore the accuracy of the "predictable subset" to the full eva…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - scaling law
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Downstream Performance Prediction"
+  - "Scaling Law"
+  - "Difficulty Clustering"
+  - "Emergent Phenomena"
+  - "Training Monitoring"
 date: 2026-05-08
-content_hash: c9525d222ba99abe
+content_hash: 9616dd5178a9acf1
 ---
+
 # Unveiling Downstream Performance Scaling of LLMs: A Clustering-Based Perspective
 
 **Conference**: ICLR 2026  
@@ -141,11 +146,11 @@ In cross-architecture tests, using clusters derived from dense small models to p
 
 ## Related Papers
 
+- [\[ICLR 2026\] Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training](revisiting_the_scaling_properties_of_downstream_metrics_in_large_language_model_.md)
+- [\[ICLR 2026\] How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study](how_text_quality_interventions_reshape_neural_scaling_laws_for_llms_empirical_st.md)
 - [\[ICLR 2026\] Rewriting Pre-training Data Boosts LLM Performance in Math and Code](rewriting_pre-training_data_boosts_llm_performance_in_math_and_code.md)
-- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
 - [\[ICLR 2026\] How to Train Data-Efficient LLMs](how_to_train_data-efficient_llms.md)
-- [\[ACL 2025\] How Do LLMs Acquire New Knowledge? A Knowledge Circuits Perspective on Continual Pre-Training](../../ACL2025/llm_pretraining/how_do_llms_acquire_new_knowledge_a_knowledge_circuits_perspective_on_continual_.md)
-- [\[ICLR 2026\] StochasTok: Improving Fine-Grained Subword Understanding in LLMs](stochastok_improving_fine-grained_subword_understanding_in_llms.md)
+- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
 
 </div>
 

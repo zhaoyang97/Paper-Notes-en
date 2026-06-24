@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VoxTell: Free-Text Promptable Universal 3D Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][UNet] VoxTell is a 3D vision-language segmentation model that generates volumetric masks directly from a single sentence (ranging from single words to full clinical reports). By repeatedly injecting text guidance at every level of the UNet decoder (multi-stage fusion) combined with deep supervision, it achieves a zero-shot a
+  [CVPR 2026][Medical Imaging][3D Medical Image Segmentation] VoxTell is a 3D vision-language segmentation model that generates volumetric masks directly from a single sentence (ranging from single words to full clinical reports). By repeatedly injecting text guidance at every level of the UNet decoder (multi-stage fusion) combined with deep supervision, it achieves a zero-shot average Dice of 70.85 across 11 unseen datasets, significantly outperforming the previous state-of-th…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - UNet
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "3D Medical Image Segmentation"
+  - "Text-Prompted Segmentation"
+  - "Vision-Language Fusion"
+  - "Open-set Generalization"
+  - "UNet"
 date: 2026-05-08
-content_hash: 19243f414909da36
+content_hash: 907e6bfcbd26ab31
 ---
+
 # VoxTell: Free-Text Promptable Universal 3D Medical Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -153,15 +158,15 @@ VoxTell leads in almost all 11 categories, with a mean Dice of 70.85, nearly 20 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Simple-ViLMedSAM: Simple Text Prompts Meet Vision-Language Models for Medical Image Segmentation](simple-vilmedsam_simple_text_prompts_meet_vision-language_models_for_medical_ima.md)
 - [\[ICCV 2025\] SegAnyPET: Universal Promptable Segmentation from Positron Emission Tomography Images](../../ICCV2025/medical_imaging/seganypet_universal_promptable_segmentation_from_positron_emission_tomography_im.md)
+- [\[ICLR 2026\] Towards Text–Mask Consistency in Medical Image Segmentation](../../ICLR2026/medical_imaging/towards_text-mask_consistency_in_medical_image_segmentation.md)
 - [\[CVPR 2026\] R2-Seg: Training-Free OOD Medical Tumor Segmentation via Anatomical Reasoning and Statistical Rejection](r2-seg_training-free_ood_medical_tumor_segmentation_via_anatomical_reasoning_and.md)
-- [\[CVPR 2026\] Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification](revisiting_2d_foundation_models_for_scalable_3d_medical_image_classification.md)
-- [\[CVPR 2026\] CG-Reasoner: Centroid-Guided Positional Reasoning Segmentation for Medical Imaging with a Robust Visual-Text Consistency Metric](cg-reasoner_centroid-guided_positional_reasoning_segmentation_for_medical_imagin.md)
-- [\[CVPR 2026\] From Infusion to Assimilation Distillation for Medical Image Segmentation](from_infusion_to_assimilation_distillation_for_medical_image_segmentation.md)
+- [\[ICML 2026\] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](../../ICML2026/medical_imaging/are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)
 
 </div>
 

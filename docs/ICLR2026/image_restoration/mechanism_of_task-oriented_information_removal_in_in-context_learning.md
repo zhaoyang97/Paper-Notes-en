@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Mechanism of Task-oriented Information Removal in In-context Learning
 description: >-
-  [ICLR 2026][Image Restoration][in-context learning] This work explains the internal mechanism of In-context Learning (ICL) from a new perspective of "Information Removal." It finds that Language Models (LMs) encode queries into "non-selective representations" containing information of all possible tasks during zero-shot (leading to random outputs). The core role of few-
+  [ICLR 2026][Image Restoration][in-context learning] This work explains the internal mechanism of In-context Learning (ICL) from a new perspective of "Information Removal." It finds that Language Models (LMs) encode queries into "non-selective representations" containing information of all possible tasks during zero-shot (leading to random outputs). The core role of few-shot ICL is to simulate a "task-oriented information removal" process—identifying "Denoising Heads" that sel…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - in-context learning
-  - information removal
-  - denoising heads
-  - mechanistic interpretability
-  - low-rank filter
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "in-context learning"
+  - "information removal"
+  - "denoising heads"
+  - "mechanistic interpretability"
+  - "low-rank filter"
 date: 2026-05-08
-content_hash: 88cd247fa77b68a9
+content_hash: 31f95ae8dbc4c865
 ---
+
 # Mechanism of Task-oriented Information Removal in In-context Learning
 
 **Conference**: ICLR 2026  

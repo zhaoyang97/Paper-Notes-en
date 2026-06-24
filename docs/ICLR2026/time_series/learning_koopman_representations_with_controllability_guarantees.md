@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning Koopman Representations with Controllability Guarantees
 description: >-
-  [ICLR 2026][Time Series][Neural ODE] This work encodes "controllability" as a **structural prior** directly into Koopman representation learning. By parameterizing latent linear operators with a new controllable canonical form, the learned Neural ODE model is **controllable by construction**, enabling accurate fitting and direct MPC application even under
+  [ICLR 2026][Time Series][Koopman Operator] This work encodes "controllability" as a **structural prior** directly into Koopman representation learning. By parameterizing latent linear operators with a new controllable canonical form, the learned Neural ODE model is **controllable by construction**, enabling accurate fitting and direct MPC application even under data scarcity.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Neural ODE
+  - "ICLR 2026"
+  - "Time Series"
+  - "Koopman Operator"
+  - "Controllability"
+  - "Neural ODE"
+  - "System Identification"
+  - "Model Predictive Control (MPC)"
+  - "Data Efficiency"
 date: 2026-05-08
-content_hash: 8c64411531c1d7ae
+content_hash: f46dd2c12b5130e8
 ---
+
 # Learning Koopman Representations with Controllability Guarantees
 
 **Conference**: ICLR 2026  
@@ -124,10 +130,10 @@ Under data scarcity, DKO often results in infeasible MPC (Fail) due to inaccurat
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
+- [\[ICLR 2026\] A Spectral-Grassmann Wasserstein metric for operator representations of dynamical systems](a_spectral-grassmann_wasserstein_metric_for_operator_representations_of_dynamica.md)
 - [\[ICLR 2026\] TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series](tspulse_tiny_pre-trained_models_with_disentangled_representations_for_rapid_time.md)
 - [\[NeurIPS 2025\] Learning Time-Scale Invariant Population-Level Neural Representations](../../NeurIPS2025/time_series/learning_time-scale_invariant_population-level_neural_representations.md)
-- [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](../../ICML2026/time_series/learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
-- [\[ICLR 2026\] Can we generate portable representations for clinical time series data using LLMs?](can_we_generate_portable_representations_for_clinical_time_series_data_using_llm.md)
+- [\[NeurIPS 2025\] Statistical Guarantees for High-Dimensional Stochastic Gradient Descent](../../NeurIPS2025/time_series/statistical_guarantees_for_high-dimensional_stochastic_gradient_descent.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation
 description: >-
-  [NeurIPS 2025][Recommender Systems][Sequential Recommendation] This paper proposes SRA-CL, a framework that leverages the semantic understanding capabilities of LLMs to construct high-quality contrastive sample pairs. By…
+  [NeurIPS 2025][Recommender Systems][Sequential Recommendation] This paper proposes SRA-CL, a framework that leverages the semantic understanding capabilities of LLMs to construct high-quality contrastive sample pairs. By combining semantic retrieval with a learnable sample synthesizer, SRA-CL enhances contrastive learning for sequential recommendation and achieves state-of-the-art performance across four datasets in a plug-and-play manner.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Semantic Retrieval"
   - "Data Augmentation"
 date: 2026-05-08
-content_hash: b793652278f28894
+content_hash: 5d58ccd59603460b
 ---
 
 # Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation
@@ -125,7 +125,7 @@ SRA-CL is a model-agnostic plugin framework comprising three modules: (1) cross-
 
 - [\[NeurIPS 2025\] TV-Rec: Time-Variant Convolutional Filter for Sequential Recommendation](tv-rec_time-variant_convolutional_filter_for_sequential_recommendation.md)
 - [\[ACL 2026\] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders](../../ACL2026/recommender/bridging_language_and_items_for_retrieval_and_recommendation_benchmarking_llms_a.md)
-- [\[ICLR 2026\] C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](../../ICLR2026/recommender/c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)
+- [\[ACL 2025\] Laser: Bi-Tuning with Collaborative Information for Controllable LLM-Based Sequential Recommendation](../../ACL2025/recommender/bi-tuning_with_collaborative_information_for_controllable_llm-based_sequential_r.md)
 - [\[ICML 2026\] Rethinking Contrastive Learning for Graph Collaborative Filtering: Limitations and a Simple Remedy](../../ICML2026/recommender/rethinking_contrastive_learning_for_graph_collaborative_filtering_limitations_an.md)
 - [\[ACL 2026\] ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation](../../ACL2026/recommender/clusterrag_cluster-based_collaborative_filtering_for_personalized_retrieval-augm.md)
 

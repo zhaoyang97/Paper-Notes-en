@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Deleuzian Representation Hypothesis
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes using "clustering of pairwise differences in activation values" to extract interpretable concepts from neural networks in an unsupervised manner, serving as a simple alternative to Sparse Autoencoders (SAEs). It models concepts as "differences" (echoing the Deleuzian philosophical view of "concepts
+  [ICLR 2026][Interpretability][Concept Extraction] This paper proposes using "clustering of pairwise differences in activation values" to extract interpretable concepts from neural networks in an unsupervised manner, serving as a simple alternative to Sparse Autoencoders (SAEs). It models concepts as "differences" (echoing the Deleuzian philosophical view of "concepts as difference"), provides a theoretical basis through discriminant analysis…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Concept Extraction"
+  - "Sparse Autoencoder Alternative"
+  - "Discriminant Analysis"
+  - "Skewness-Weighted Clustering"
+  - "Concept Steering"
 date: 2026-05-08
-content_hash: 71cc94f9ee47f8a7
+content_hash: cfb6d43cebb1d1ea
 ---
+
 # The Deleuzian Representation Hypothesis
 
 **Conference**: ICLR 2026  
@@ -147,11 +153,11 @@ Elements are decomposed on CLIP/WikiArt and DeBERTa/CoNLL-NER: Input space (Raw 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Information Shapes Koopman Representation](information_shapes_koopman_representation.md)
 - [\[ICLR 2026\] Gauge-invariant Representation Holonomy](gauge-invariant_representation_holonomy.md)
 - [\[ICLR 2026\] f-INE: A Hypothesis Testing Framework for Estimating Influence under Training Randomness](f-ine_a_hypothesis_testing_framework_for_estimating_influence_under_training_ran.md)
 - [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
 - [\[ICLR 2026\] On the Predictive Power of Representation Dispersion in Language Models](on_the_predictive_power_of_representation_dispersion_in_language_models.md)
-- [\[ICLR 2026\] MICLIP: Learning to Interpret Representation in Vision Models](miclip_learning_to_interpret_representation_in_vision_models.md)
 
 </div>
 

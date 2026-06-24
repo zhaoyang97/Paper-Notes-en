@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Convergence Analysis of Tsetlin Machines under Noise-Free and Noisy Training Conditions: From 2 Bits to k Bits
 description: >-
-  [ICLR 2026][learning_theory][Tsetlin Machine] This paper advances the convergence theory of Tsetlin Machines (TM) from existing 1-bit and 2-bit XOR cases to 2-bit AND/OR, noisy training, and general $k$-bit scenarios. It proves that TM almost surely converges to the correct logical operators under noise-free conditions/irrelevant variables. While it does not conve
+  [ICLR 2026][Learning Theory][Tsetlin Machine] This paper advances the convergence theory of Tsetlin Machines (TM) from existing 1-bit and 2-bit XOR cases to 2-bit AND/OR, noisy training, and general $k$-bit scenarios. It proves that TM almost surely converges to the correct logical operators under noise-free conditions/irrelevant variables. While it does not converge under mislabeling noise, it remains efficiently learnable. The work also reveals the unique mechanism where th…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Tsetlin Machine
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Interpretable Machine Learning"
+  - "Tsetlin Machine Convergence"
+  - "Tsetlin Machine"
+  - "Learning Automata"
+  - "Convergence Proof"
+  - "Propositional Logic"
+  - "Label Noise"
+  - "Absorbing State"
 date: 2026-05-08
-content_hash: 80c1900332667324
+content_hash: 7ac85db2c04ada24
 ---
+
 # Convergence Analysis of Tsetlin Machines under Noise-Free and Noisy Training Conditions: From 2 Bits to k Bits
 
 **Conference**: ICLR 2026  
@@ -111,6 +119,7 @@ This is primarily a theoretical work; major theorems are rigorous proofs of almo
 - **Value**: ⭐⭐⭐⭐ Provides foundational theory for the TM community; conclusions on $T$ configuration directly guide real-world deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -119,7 +128,7 @@ This is primarily a theoretical work; major theorems are rigorous proofs of almo
 - [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](training-free_determination_of_network_width_via_neural_tangent_kernel.md)
 - [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
 - [\[ICLR 2026\] On the Convergence of Two-Layer Kolmogorov-Arnold Networks with First-Layer Training](on_the_convergence_of_two-layer_kolmogorov-arnold_networks_with_first-layer_trai.md)
-- [\[ICLR 2026\] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants](finite-time_convergence_analysis_of_ode-based_generative_models_for_stochastic_i.md)
+- [\[ICLR 2026\] Smooth Calibration Error: Uniform Convergence and Functional Gradient Analysis](smooth_calibration_error_uniform_convergence_and_functional_gradient_analysis.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables
 description: >-
-  [AAAI 2026][symmetry breaking] By introducing auxiliary variables to encode lexicographic order in place of large-integer encodings, this work fundamentally redesigns the VeriPB proof system…
+  [AAAI 2026][symmetry breaking] By introducing auxiliary variables to encode lexicographic order in place of large-integer encodings, this work fundamentally redesigns the VeriPB proof system, achieving order-of-magnitude speedups in both proof generation and verification for certified SAT symmetry breaking, both theoretically and empirically.
 tags:
   - "AAAI 2026"
   - "symmetry breaking"
@@ -12,7 +12,7 @@ tags:
   - "VeriPB"
   - "certified solving"
 date: 2026-05-08
-content_hash: 5678f81758369716
+content_hash: 165721c4f493309a
 ---
 
 # Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables
@@ -126,9 +126,9 @@ The proposed method is never worse than the prior method by more than a constant
 
 - [\[AAAI 2026\] Certified but Fooled! Breaking Certified Defences with Ghost Certificates](certified_but_fooled_breaking_certified_defences_with_ghost_certificates.md)
 - [\[AAAI 2026\] Certified Branch-and-Bound MaxSAT Solving (Extended Version)](certified_branch-and-bound_maxsat_solving_extended_version.md)
+- [\[ICLR 2026\] Any-Subgroup Equivariant Networks via Symmetry Breaking](../../ICLR2026/others/any-subgroup_equivariant_networks_via_symmetry_breaking.md)
+- [\[ICLR 2026\] Using maximal information auxiliary variables to improve synthetic data generation based on TabPFN foundation models](../../ICLR2026/others/using_maximal_information_auxiliary_variables_to_improve_synthetic_data_generati.md)
 - [\[AAAI 2026\] SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer](synweather_weather_observation_data_synthesis_across_multiple_regions_and_variab.md)
-- [\[ICLR 2026\] ANO: Faster is Better in Noisy Landscapes](../../ICLR2026/others/ano_faster_is_better_in_noisy_landscape.md)
-- [\[ICML 2026\] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach](../../ICML2026/others/markov_chain_monte_carlo_without_evaluating_the_target_an_auxiliary_variable_app.md)
 
 </div>
 

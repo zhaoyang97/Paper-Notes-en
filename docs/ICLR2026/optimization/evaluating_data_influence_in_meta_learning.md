@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Evaluating Data Influence in Meta Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][MAML] This work generalizes influence functions from single-layer M-estimators to the bi-level optimization (BLO) structure of meta-learning. It proposes two closed-form formulas, task-IF and instance-IF, which accurately characterize the direct and indirect contributions of a task or an instance to meta-parameters using the
+  [ICLR 2026][Optimization][Influence Function] This work generalizes influence functions from single-layer M-estimators to the bi-level optimization (BLO) structure of meta-learning. It proposes two closed-form formulas, task-IF and instance-IF, which accurately characterize the direct and indirect contributions of a task or an instance to meta-parameters using the "total gradient / total Hessian." Accelerated by EK-FAC and Neumann series, the method enables retraining-free id…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - MAML
+  - "ICLR 2026"
+  - "Optimization"
+  - "Influence Function"
+  - "Data Attribution"
+  - "Meta Learning"
+  - "Bi-level Optimization"
+  - "MAML"
+  - "Data Valuation"
+  - "Model Editing"
 date: 2026-05-08
-content_hash: bf7e9ffe44f984ee
+content_hash: f00773c72e218583
 ---
+
 # Evaluating Data Influence in Meta Learning
 
 **Conference**: ICLR 2026  
@@ -130,8 +137,8 @@ Task setup: Accuracy after identifying and removing 40% deleterious data using a
 - [\[ICLR 2026\] Binomial Gradient-Based Meta-Learning for Enhanced Meta-Gradient Estimation](binomial_gradient-based_meta-learning_for_enhanced_meta-gradient_estimation.md)
 - [\[ICLR 2026\] Generalizable Heuristic Generation Through LLMs with Meta-Optimization](generalizable_heuristic_generation_through_llms_with_meta-optimization.md)
 - [\[ICLR 2026\] $\mu$LO: Compute-Efficient Meta-Generalization of Learned Optimizers](mulo_compute-efficient_meta-generalization_of_learned_optimizers.md)
-- [\[ICLR 2026\] Fast Data Mixture Optimization via Gradient Descent](fast_data_mixture_optimization_via_gradient_descent.md)
 - [\[ICLR 2026\] Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity](unified_analyses_for_hierarchical_federated_learning_topology_selection_under_da.md)
+- [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
 
 </div>
 

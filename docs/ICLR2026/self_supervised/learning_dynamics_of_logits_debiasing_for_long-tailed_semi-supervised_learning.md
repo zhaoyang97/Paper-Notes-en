@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Learning Dynamics of Logits Debiasing for Long-Tailed Semi-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][baseline image] This paper provides a unified explanation of various debiasing methods in Long-Tailed Semi-Supervised Learning (LTSSL) from the perspective of "learning dynamics"—demonstrating that they all essentially reshape gradient flows. Based on this, it proposes DyTrim, a training-efficient dynamic pruning framework that perfor
+  [ICLR 2026][Self-Supervised Learning][Long-tailed semi-supervised learning] This paper provides a unified explanation of various debiasing methods in Long-Tailed Semi-Supervised Learning (LTSSL) from the perspective of "learning dynamics"—demonstrating that they all essentially reshape gradient flows. Based on this, it proposes DyTrim, a training-efficient dynamic pruning framework that performs class-aware hard pruning for labeled data and confidence-based soft pruning for u…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - baseline image
-  - eNTK
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Long-tailed semi-supervised learning"
+  - "learning dynamics"
+  - "logits debiasing"
+  - "dynamic pruning"
+  - "baseline image"
+  - "eNTK"
 date: 2026-05-08
-content_hash: acf65d6064de2587
+content_hash: 7d513c48c605a605
 ---
+
 # Learning Dynamics of Logits Debiasing for Long-Tailed Semi-Supervised Learning
 
 **Conference**: ICLR 2026  
@@ -125,11 +130,11 @@ Compared to CDMAD, DyTrim improves bACC by 1.2% and GM by 1.4% on average with n
 
 ## Related Papers
 
+- [\[ICLR 2026\] SCAD: Super-Class-Aware Debiasing for Long-Tailed Semi-Supervised Learning](scad_super-class-aware_debiasing_for_long-tailed_semi-supervised_learning.md)
 - [\[ICLR 2026\] CoLA: Co-Calibrated Logit Adjustment for Long-Tailed Semi-Supervised Learning](cola_co-calibrated_logit_adjustment_for_long-tailed_semi-supervised_learning.md)
 - [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](mini-cluster_guided_long-tailed_deep_clustering.md)
 - [\[ICLR 2026\] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments](fedopenmatch_towards_semi-supervised_federated_learning_in_open-set_environments.md)
-- [\[ICLR 2026\] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition](guide_gated_uncertainty-informed_disentangled_experts_for_long-tailed_recognitio.md)
-- [\[ICLR 2026\] Midway Network: Learning Representations for Recognition and Motion from Latent Dynamics](midway_network_learning_representations_for_recognition_and_motion_from_latent_d.md)
+- [\[ICLR 2026\] In Context Semi-Supervised Learning](in_context_semi-supervised_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AnimateAnyMesh: A Feed-Forward 4D Foundation Model for Text-Driven Universal Mesh Animation
 description: >-
-  [ICCV 2025][3D Vision][4D Generation] This paper proposes AnimateAnyMesh, the first feed-forward text-driven universal mesh animation framework. It introduces DyMeshVAE to decompose dynamic meshes into initial positions…
+  [ICCV 2025][3D Vision][4D Generation] This paper proposes AnimateAnyMesh, the first feed-forward text-driven universal mesh animation framework. It introduces DyMeshVAE to decompose dynamic meshes into initial positions and relative trajectories, compressing them into a latent space. A Rectified Flow-based MMDiT model then learns the trajectory distribution conditioned on text. Trained on the 4M+ DyMesh dataset, the framework generates high-quality animations for meshes of ar…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "VAE"
   - "Rectified Flow"
 date: 2026-05-08
-content_hash: 4ca6eaaa8cabad1a
+content_hash: d98e605ba44661b6
 ---
 
 # AnimateAnyMesh: A Feed-Forward 4D Foundation Model for Text-Driven Universal Mesh Animation
@@ -139,11 +139,11 @@ The proposed method achieves comprehensive improvements on VBench metrics and us
 
 ## Related Papers
 
+- [\[CVPR 2026\] Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation](../../CVPR2026/3d_vision/tracking-guided_4d_generation_foundation-tracker_motion_priors_for_3d_model_anim.md)
 - [\[ICCV 2025\] MemoryTalker: Personalized Speech-Driven 3D Facial Animation via Audio-Guided Stylization](memorytalker_personalized_speech-driven_3d_facial_animation_via_audio-guided_sty.md)
 - [\[CVPR 2026\] PhysGM: Large Physical Gaussian Model for Feed-Forward 4D Synthesis](../../CVPR2026/3d_vision/physgm_large_physical_gaussian_4d_synthesis.md)
 - [\[ICCV 2025\] FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation](fiffdepth_feed-forward_transformation_of_diffusion-based_generators_for_detailed.md)
-- [\[CVPR 2026\] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](../../CVPR2026/3d_vision/feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
-- [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](../../CVPR2026/3d_vision/any4d_unified_feed-forward_metric_4d_reconstruction.md)
 
 </div>
 

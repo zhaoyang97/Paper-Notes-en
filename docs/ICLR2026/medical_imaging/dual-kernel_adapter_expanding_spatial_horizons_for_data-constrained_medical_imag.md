@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Dual-Kernel Adapter: Expanding Spatial Horizons for Data-Constrained Medical Image Analysis
 description: >-
-  [ICLR 2026][Medical Imaging][Adapter] The authors first systematically demonstrate that in data-scarce medical imaging scenarios, standard Adapters are not only ineffective but can even perform worse than pure linear probing. The root cause is identified as the sharp contraction of the Effective Receptive Field (ERF) of the Adapter when training data is li
+  [ICLR2026][Medical Imaging][Adapter] The authors first systematically demonstrate that in data-scarce medical imaging scenarios, standard Adapters are not only ineffective but can even perform worse than pure linear probing. The root cause is identified as the sharp contraction of the Effective Receptive Field (ERF) of the Adapter when training data is limited. Based on this, the Dual-Kernel Adapter (DKA) is proposed, which utilizes a parallel fusion of a large-kernel ($51 \t…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Adapter
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Adapter"
+  - "Effective Receptive Field"
+  - "Large Kernel Convolution"
+  - "Low-data"
 date: 2026-05-08
-content_hash: 955bf77d6b16a4b3
+content_hash: 3373756781c29428
 ---
+
 # Dual-Kernel Adapter: Expanding Spatial Horizons for Data-Constrained Medical Image Analysis
 
 **Conference**: ICLR2026  
@@ -132,6 +136,7 @@ Segmentation (mIoU %) using Segmenter-B backbone shows similar leads; e.g., on B
 - Value: ⭐⭐⭐⭐ Highly applicable to real-world medical imaging where data is scarce; lightweight and open-source.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

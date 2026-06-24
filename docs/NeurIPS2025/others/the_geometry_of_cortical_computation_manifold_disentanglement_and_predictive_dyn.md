@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Geometry of Cortical Computation: Manifold Disentanglement and Predictive Dynamics in VCNet
 description: >-
-  [NeurIPS 2025 (Workshop: NeurReps & CogInterp)][visual cortex network] This paper proposes VCNet—a neural network architecture that simulates the macroscopic organization of the primate visual cortex—reinterpreting dual-…
+  [NeurIPS 2025 (Workshop: NeurReps & CogInterp)][visual cortex network] This paper proposes VCNet—a neural network architecture that simulates the macroscopic organization of the primate visual cortex—reinterpreting dual-stream separation (manifold disentanglement) and predictive coding (geodesic refinement) through the language of geometry and dynamical systems. At an extremely compact size of 0.04 MB, VCNet achieves 92.1% accuracy on Spots-10 (10% above a distilled DenseNet)…
 tags:
   - "NeurIPS 2025 (Workshop: NeurReps & CogInterp)"
   - "visual cortex network"
@@ -11,7 +11,7 @@ tags:
   - "dual-stream processing"
   - "biologically inspired architecture"
 date: 2026-05-08
-content_hash: b30b2e5fc09af844
+content_hash: 4057b0fa0c1ba3b5
 ---
 
 # The Geometry of Cortical Computation: Manifold Disentanglement and Predictive Dynamics in VCNet
@@ -147,11 +147,11 @@ The paper provides no systematic ablation experiments to quantify the independen
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Sheaf Cohomology of Linear Predictive Coding Networks](sheaf_cohomology_of_linear_predictive_coding_networks.md)
 - [\[NeurIPS 2025\] On a Geometry of Interbrain Networks](on_a_geometry_of_interbrain_networks.md)
+- [\[NeurIPS 2025\] Sheaf Cohomology of Linear Predictive Coding Networks](sheaf_cohomology_of_linear_predictive_coding_networks.md)
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](normalization_in_attention_dynamics.md)
-- [\[NeurIPS 2025\] Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination](information-computation_tradeoffs_for_noiseless_linear_regression_with_oblivious.md)
 - [\[NeurIPS 2025\] Johnson-Lindenstrauss Lemma Beyond Euclidean Geometry](johnson-lindenstrauss_lemma_beyond_euclidean_geometry.md)
+- [\[NeurIPS 2025\] Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination](information-computation_tradeoffs_for_noiseless_linear_regression_with_oblivious.md)
 
 </div>
 

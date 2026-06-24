@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Progressive Online Video Understanding with Evidence-Aligned Timing and Transparent Decisions
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] Addressing the issue of "when exactly to answer in an online streaming video"—a question often neglected by offline evaluations—this paper proposes the Thinking-QwenVL framework. It utilizes an Active Thought Decision Maker (ATDM) that externalizes progress $\rho$ and confidence $c$ to align the response timing with th
+  [ICLR 2026][Video Understanding][Online Video Understanding] Addressing the issue of "when exactly to answer in an online streaming video"—a question often neglected by offline evaluations—this paper proposes the Thinking-QwenVL framework. It utilizes an Active Thought Decision Maker (ATDM) that externalizes progress $\rho$ and confidence $c$ to align the response timing with the "first sufficient evidence" moment $t^\star$. Additionally, it maintains global causal states wit…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Online Video Understanding"
+  - "Streaming Inference"
+  - "Evidence-Aligned Timing"
+  - "Transparent Decisions"
+  - "Hierarchical Memory"
 date: 2026-05-08
-content_hash: 1553ed1a6acf5ff5
+content_hash: ce7007fca6d3fa26
 ---
+
 # Progressive Online Video Understanding with Evidence-Aligned Timing and Transparent Decisions
 
 **Conference**: ICLR 2026  
@@ -129,16 +135,16 @@ On StreamingBench, it significantly outperforms open-source offline long video m
 - Value: ⭐⭐⭐⭐⭐ Online video agents are a high-demand direction; the transparent decision paradigm is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation](../../CVPR2026/video_understanding/pyratok_language-aligned_pyramidal_tokenizer_for_video_understanding_and_generat.md)
 - [\[AAAI 2026\] FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding](../../AAAI2026/video_understanding/finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan.md)
 - [\[ICML 2026\] VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority](../../ICML2026/video_understanding/videoseal_mitigating_evidence_misalignment_in_agentic_long_video_understanding_b.md)
-- [\[CVPR 2025\] ViTED: Video Temporal Evidence Distillation](../../CVPR2025/video_understanding/vited_video_temporal_evidence_distillation.md)
-- [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](../../CVPR2026/video_understanding/herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
+- [\[ICLR 2026\] ARFlow: Auto-regressive Optical Flow Estimation for Arbitrary-Length Videos via Progressive Next-Frame Forecasting](arflow_auto-regressive_optical_flow_estimation_for_arbitrary-length_videos_via_p.md)
+- [\[NeurIPS 2025\] LiveStar: Live Streaming Assistant for Real-World Online Video Understanding](../../NeurIPS2025/video_understanding/livestar_live_streaming_assistant_for_real-world_online_video_understanding.md)
 
 </div>
 

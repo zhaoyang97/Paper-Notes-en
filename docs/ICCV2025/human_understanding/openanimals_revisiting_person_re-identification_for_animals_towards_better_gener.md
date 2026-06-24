@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization
 description: >-
-  [Human Understanding] > This paper develops the OpenAnimals open-source framework, systematically revisiting the transferability of person re-identification methods to animal re-identification. It proposes ARBase…
+  [Human Understanding] > This paper develops the OpenAnimals open-source framework, systematically revisiting the transferability of person re-identification methods to animal re-identification. It proposes ARBase, an animal-oriented strong baseline that substantially outperforms existing person ReID methods across multiple benchmarks.
 tags:
   - "Human Understanding"
 date: 2026-05-08
-content_hash: b2ee774468a6a8bd
+content_hash: 05558872b7ff4125
 ---
 
 # OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization
@@ -166,10 +166,10 @@ BNNeck has a dramatic impact on WhaleSharkID (Rank-1 drops from 62.44% to 44.42%
 ## Related Papers
 
 - [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
+- [\[ICCV 2025\] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis](semtalk_holistic_co-speech_motion_generation_with_frame-level_semantic_emphasis.md)
 - [\[ICCV 2025\] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning](semges_semantics-aware_co-speech_gesture_generation_using_semantic_coherence_and.md)
 - [\[ICCV 2025\] What's Making That Sound Right Now? Video-centric Audio-Visual Localization](whats_making_that_sound_right_now_video-centric_audio-visual_localization.md)
 - [\[ICCV 2025\] Sequential Keypoint Density Estimator: An Overlooked Baseline of Skeleton-Based Video Anomaly Detection](sequential_keypoint_density_estimator_an_overlooked_baseline_of_skeleton-based_v.md)
-- [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
 
 </div>
 

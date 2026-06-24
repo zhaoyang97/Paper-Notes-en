@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Format Matters: The Robustness of Multimodal LLMs in Reviewing Evidence from Tables and Charts
 description: >-
-  [AAAI 2026][Multimodal VLM][Scientific claim verification] This paper systematically investigates the robustness of multimodal LLMs in verifying scientific claims using tables and charts as evidence. By extending SciTabA…
+  [AAAI 2026][Multimodal VLM][Scientific claim verification] This paper systematically investigates the robustness of multimodal LLMs in verifying scientific claims using tables and charts as evidence. By extending SciTabAlign and ChartMimic into a table–chart aligned evaluation benchmark, the authors find that all 12 evaluated multimodal LLMs consistently perform better on table-based evidence than chart-based evidence, while human annotators perform consistently across both f…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "format sensitivity"
   - "evidence format"
 date: 2026-05-08
-content_hash: 849806f01148e819
+content_hash: b559a9acbf933ace
 ---
 
 # Format Matters: The Robustness of Multimodal LLMs in Reviewing Evidence from Tables and Charts
@@ -161,10 +161,10 @@ The methodological core of this paper is **dataset construction + systematic eva
 
 ## Related Papers
 
-- [\[ACL 2026\] Tree-of-Evidence: Efficient "System 2" Search for Faithful Multimodal Grounding](../../ACL2026/multimodal_vlm/tree-of-evidence_efficient_34system_234_search_for_faithful_multimodal_grounding.md)
-- [\[ACL 2026\] ChartDiff: A Large-Scale Benchmark for Comprehending Pairs of Charts](../../ACL2026/multimodal_vlm/chartdiff_a_large-scale_benchmark_for_comprehending_pairs_of_charts.md)
+- [\[ACL 2025\] WikiMixQA: A Multimodal Benchmark for Question Answering over Tables and Charts](../../ACL2025/multimodal_vlm/wikimixqa_a_multimodal_benchmark_for_question_answering_over_tables_and_charts.md)
+- [\[ACL 2025\] Table Understanding and (Multimodal) LLMs: A Cross-Domain Case Study on Scientific Tables](../../ACL2025/multimodal_vlm/table_understanding_and_multimodal_llms_a_cross-domain_case_study_on_scientific_.md)
 - [\[AAAI 2026\] VILTA: A VLM-in-the-Loop Adversary for Enhancing Driving Policy Robustness](vilta_a_vlm-in-the-loop_adversary_for_enhancing_driving_poli.md)
-- [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
+- [\[ACL 2026\] From Charts to Code: A Hierarchical Benchmark for Multimodal Models](../../ACL2026/multimodal_vlm/from_charts_to_code_a_hierarchical_benchmark_for_multimodal_models.md)
 - [\[AAAI 2026\] Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks](phantom_menace_exploring_and_enhancing_the_robustness_of_vla_models_against_phys.md)
 
 </div>

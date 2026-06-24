@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Point-MoE: Large-Scale Multi-Dataset Training with Mixture-of-Experts for 3D Semantic Segmentation
 description: >-
-  [ICLR 2026][3D Vision][Point Transformer] This work integrates a sparsely activated Mixture-of-Experts (MoE) module into the attention output projection layer of Point Transformer V3 (PTv3). This allows a unified model to jointly train on heterogeneous indoor and outdoor point cloud datasets without relying on "dataset labels." By allowing routers to spontaneo
+  [ICLR 2026][3D Vision][Point Cloud Semantic Segmentation] This work integrates a sparsely activated Mixture-of-Experts (MoE) module into the attention output projection layer of Point Transformer V3 (PTv3). This allows a unified model to jointly train on heterogeneous indoor and outdoor point cloud datasets without relying on "dataset labels." By allowing routers to spontaneously select experts for tokens, the model achieves a semantic segmentation mIoU across 7 datasets (inc…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Point Transformer
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Point Cloud Semantic Segmentation"
+  - "Mixture-of-Experts"
+  - "Multi-dataset Joint Training"
+  - "Zero-shot Generalization"
+  - "Point Transformer"
 date: 2026-05-08
-content_hash: ff5e146fdf98b22b
+content_hash: b7c45293c4b6848c
 ---
+
 # Point-MoE: Large-Scale Multi-Dataset Training with Mixture-of-Experts for 3D Semantic Segmentation
 
 **Conference**: ICLR 2026  
@@ -149,9 +154,9 @@ Sparse activation makes Point-MoE more efficient than dense PPT while achieving 
 
 - [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
 - [\[ICLR 2026\] SkyEvents: A Large-Scale Event-Enhanced UAV Dataset for Robust 3D Scene Reconstruction](skyevents_a_large-scale_event-enhanced_uav_dataset_for_robust_3d_scene_reconstru.md)
+- [\[ICLR 2026\] ULTRA-360: Unconstrained Dataset for Large-scale Temporal 3D Reconstruction across Altitudes and Omnidirectional Views](ultra-360_unconstrained_dataset_for_large-scale_temporal_3d_reconstruction_acros.md)
 - [\[ICLR 2026\] GOOD: Geometry-guided Out-of-Distribution Modeling for Open-set Test-time Adaptation in Point Cloud Semantic Segmentation](good_geometry-guided_out-of-distribution_modeling_for_open-set_test-time_adaptat.md)
 - [\[CVPR 2026\] SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations](../../CVPR2026/3d_vision/scenescribe-1m_a_large-scale_video_dataset_with_comprehensive_geometric_and_sema.md)
-- [\[ICLR 2026\] OmniWorld: A Multi-Domain and Multi-Modal Dataset for 4D World Modeling](omniworld_a_multi-domain_and_multi-modal_dataset_for_4d_world_modeling.md)
 
 </div>
 

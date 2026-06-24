@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] DeepEyesV2: Toward Agentic Multimodal Model
 description: >-
-  [ICLR 2026][Multimodal VLM][Reinforcement Learning] DeepEyesV2 aims to truly weave "external tool calling" into the inference process of multimodal models. It allows models to autonomously decide when to write Python code or initiate a web search within a single inference trajectory, backfilling tool outputs for further reasoning. The authors found that pure RL fails to
+  [ICLR2026][Multimodal VLM][agentic multimodal] DeepEyesV2 aims to truly weave "external tool calling" into the inference process of multimodal models. It allows models to autonomously decide when to write Python code or initiate a web search within a single inference trajectory, backfilling tool outputs for further reasoning. The authors found that pure RL fails to learn stable tool calling; thus, they proposed a "cold-start SFT + reinforcement learning" two-stage training ap…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "agentic multimodal"
+  - "tool-use"
+  - "cold-start SFT"
+  - "reinforcement learning"
+  - "code execution"
+  - "web search"
 date: 2026-05-08
-content_hash: eb01f25d6640f9d4
+content_hash: 52b03e096e25dde4
 ---
+
 # DeepEyesV2: Toward Agentic Multimodal Model
 
 **Conference**: ICLR2026  
@@ -134,16 +140,16 @@ In real-world understanding, DeepEyesV2-7B outperformed Qwen2.5-VL-32B on severa
 - Value: ⭐⭐⭐⭐⭐ Provides an actionable guide for building agentic multimodal models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] ContextNav: Towards Agentic Multimodal In-Context Learning](contextnav_towards_agentic_multimodal_in-context_learning.md)
 - [\[ICLR 2026\] BaseReward: A Strong Baseline for Multimodal Reward Model](basereward_a_strong_baseline_for_multimodal_reward_model.md)
 - [\[CVPR 2026\] EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval](../../CVPR2026/multimodal_vlm/evograph-r1_self-evolving_multimodal_knowledge_hypergraphs_for_agentic_retrieval.md)
+- [\[AAAI 2026\] Multimodal DeepResearcher: Generating Text-Chart Interleaved Reports From Scratch with Agentic Framework](../../AAAI2026/multimodal_vlm/multimodal_deepresearcher_generating_text-chart_interleaved_.md)
 - [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](../../CVPR2026/multimodal_vlm/sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
-- [\[ICLR 2026\] OptMerge: Unifying Multimodal LLM Capabilities and Modalities via Model Merging](optmerge_unifying_multimodal_llm_capabilities_and_modalities_via_model_merging.md)
 
 </div>
 

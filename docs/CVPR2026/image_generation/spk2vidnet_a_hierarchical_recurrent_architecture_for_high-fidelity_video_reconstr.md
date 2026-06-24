@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spk2VidNet: A Hierarchical Recurrent Architecture for High-Fidelity Video Reconstruction from Long Spike-Camera Streams
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the limitations of Spike Camera Super-Resolution (SCSR) in handling fixed short sequences and spike signal fluctuations, Spk2VidNet employs "dual-layer recurrent propagation with expanding temporal receptive fields + multi-frame consistency alignment + content-aware modulation fusion + segmented training sta
+  [CVPR 2026][Image Generation][Spike camera] Addressing the limitations of Spike Camera Super-Resolution (SCSR) in handling fixed short sequences and spike signal fluctuations, Spk2VidNet employs "dual-layer recurrent propagation with expanding temporal receptive fields + multi-frame consistency alignment + content-aware modulation fusion + segmented training state transfer" to reconstruct high-resolution image sequences from arbitrary long spike streams. It sets a new SOTA on…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Spike camera"
+  - "super-resolution"
+  - "hierarchical recurrent network"
+  - "temporal alignment"
+  - "long sequence modeling"
 date: 2026-05-08
-content_hash: fc50c0a2fe032736
+content_hash: 19f5b7d6c2bbbffa
 ---
+
 # Spk2VidNet: A Hierarchical Recurrent Architecture for High-Fidelity Video Reconstruction from Long Spike-Camera Streams
 
 **Conference**: CVPR 2026  
@@ -141,15 +147,16 @@ Evaluated on REDS-LSSR ×4 (b-5 is final model):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
-- [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
-- [\[CVPR 2026\] Reconstruction-Guided Slot Curriculum: Addressing Object Over-Fragmentation in Video Object-Centric Learning](reconstruction-guided_slot_curriculum_addressing_object_over-fragmentation_in_vi.md)
-- [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
-- [\[ICCV 2025\] VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges](../../ICCV2025/video_understanding/videollamb_long_streaming_video_understanding_with_recurrent_memory_bridges.md)
+- [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
+- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
+- [\[ICLR 2026\] WeTok: Powerful Discrete Tokenization for High-Fidelity Visual Reconstruction](../../ICLR2026/image_generation/wetok_powerful_discrete_tokenization_for_high-fidelity_visual_reconstruction.md)
+- [\[CVPR 2026\] Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control](taming_video_models_for_3d_and_4d_generation_via_zero-shot_camera_control.md)
+- [\[CVPR 2025\] Efficient Long Video Tokenization via Coordinate-based Patch Reconstruction](../../CVPR2025/image_generation/efficient_long_video_tokenization_via_coordinate-based_patch_reconstruction.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Is Code Better Than Language for Algorithmic Reasoning?
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] The authors utilize a "three-route" framework to disentangle two confounded factors in tool-augmented LLMs: reasoning representation (code vs. natural language) and execution mechanism (LLM simulation vs. real interpreter). Across 40 verifiable algorithmic tasks, results show that code representation itself provides ne
+  [ICML2026][Reasoning][Algorithmic Reasoning] The authors utilize a "three-route" framework to disentangle two confounded factors in tool-augmented LLMs: reasoning representation (code vs. natural language) and execution mechanism (LLM simulation vs. real interpreter). Across 40 verifiable algorithmic tasks, results show that code representation itself provides negligible gains (+0.15pp), while "reliable external execution" significantly elevates accuracy from 17% to 49% (+31.…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Algorithmic Reasoning"
+  - "Tool Use"
+  - "Code Generation"
+  - "Decision Theory"
+  - "Representation vs. Execution"
 date: 2026-05-08
-content_hash: c27598816228c861
+content_hash: 5468bb5f95a1fc7b
 ---
+
 # Is Code Better Than Language for Algorithmic Reasoning?
 
 **Conference**: ICML2026  
@@ -137,15 +143,15 @@ McNemar's $p=0.39$ for Route 1 vs. Route 2 is non-significant—changing represe
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2025\] Self-Correction is More than Refinement: A Learning Framework for Visual and Language Reasoning Tasks](../../ACL2025/llm_reasoning/self-correction_is_more_than_refinement_a_learning_framework_for_visual_and_lang.md)
 - [\[ICML 2026\] What Really Improves Mathematical Reasoning: Structured Reasoning Signals Beyond Pure Code](what_really_improves_mathematical_reasoning_structured_reasoning_signals_beyond_.md)
-- [\[ICML 2026\] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models](when_the_chain_of_thought_knows_better_failure_modes_in_multi-turn_reasoning_mod.md)
-- [\[NeurIPS 2025\] Many LLMs Are More Utilitarian Than One](../../NeurIPS2025/llm_reasoning/many_llms_are_more_utilitarian_than_one.md)
-- [\[ICML 2025\] DyCodeEval: Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models Under Data Contamination](../../ICML2025/llm_reasoning/dynamic_benchmarking_of_reasoning_capabilities_in_code_large_language_models_und.md)
+- [\[ICLR 2026\] On Code-Induced Reasoning in LLMs](../../ICLR2026/llm_reasoning/on_code-induced_reasoning_in_llms.md)
+- [\[ICLR 2026\] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research](../../ICLR2026/llm_reasoning/or-prm_a_process_reward_model_for_algorithmic_problem_in_operations_research.md)
+- [\[ACL 2025\] Self-Correction is More than Refinement: A Learning Framework for Visual and Language Reasoning Tasks](../../ACL2025/llm_reasoning/self-correction_is_more_than_refinement_a_learning_framework_for_visual_and_lang.md)
+- [\[ICLR 2026\] Reasoning with Sampling: Your Base Model is Smarter Than You Think](../../ICLR2026/llm_reasoning/reasoning_with_sampling_your_base_model_is_smarter_than_you_think.md)
 
 </div>
 

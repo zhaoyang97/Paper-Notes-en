@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PCLR: Progressively Compressed LoRA for Multimodal Continual Instruction Tuning
 description: >-
-  [ICLR 2026][Multimodal VLM][LoRA] Decomposes a LoRA adapter into "rank-level atomic experts" to form an extremely fine-grained MoE (LRP). Drawing inspiration from human memory consolidation during sleep, it designs a "Compression–Integration–Learning" (CIL) pipeline: compression prunes redundant rank experts to free up capacity, integration uses distil
+  [ICLR 2026][Multimodal VLM][Multimodal Continual Instruction Tuning] Decomposes a LoRA adapter into "rank-level atomic experts" to form an extremely fine-grained MoE (LRP). Drawing inspiration from human memory consolidation during sleep, it designs a "Compression–Integration–Learning" (CIL) pipeline: compression prunes redundant rank experts to free up capacity, integration uses distillation to recover knowledge from pruned ranks, and learning uses the freed capacity to acco…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - LoRA
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Continual Instruction Tuning"
+  - "LoRA"
+  - "Rank-level Experts"
+  - "Compress-Integrate-Learn"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 6bb9ed50630b722f
+content_hash: 501f9a09f3850d0b
 ---
+
 # PCLR: Progressively Compressed LoRA for Multimodal Continual Instruction Tuning
 
 **Conference**: ICLR 2026  

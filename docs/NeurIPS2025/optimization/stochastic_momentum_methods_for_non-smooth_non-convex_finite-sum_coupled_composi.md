@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization
 description: >-
-  [NeurIPS2025][Optimization][FCCO] For non-smooth non-convex finite-sum coupled compositional optimization (FCCO), this paper proposes two stochastic momentum methods — SONEX (single-loop) and ALEXR2 (double-loop) — that…
+  [NeurIPS2025][Optimization][FCCO] For non-smooth non-convex finite-sum coupled compositional optimization (FCCO), this paper proposes two stochastic momentum methods — SONEX (single-loop) and ALEXR2 (double-loop) — that improve the iteration complexity from $O(1/\epsilon^6)$ to $O(1/\epsilon^5)$ via outer Moreau envelope smoothing and nested smoothing techniques, and achieve the same optimal complexity for non-convex inequality-constrained optimization.
 tags:
   - "NeurIPS2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "constrained optimization"
   - "compositional optimization"
 date: 2026-05-08
-content_hash: 0b4a6664b1247afe
+content_hash: 9db673a61b4d4f11
 ---
 
 # Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization
@@ -152,11 +152,11 @@ Fine-tuning CLIP on BDD100K (target tasks: foggy/cloudy classification; constrai
 
 ## Related Papers
 
+- [\[ICML 2025\] A Near-Optimal Single-Loop Stochastic Algorithm for Convex Finite-Sum Coupled Compositional Optimization](../../ICML2025/optimization/a_near-optimal_single-loop_stochastic_algorithm_for_convex_finite-sum_coupled_co.md)
 - [\[NeurIPS 2025\] Non-Stationary Bandit Convex Optimization: A Comprehensive Study](non-stationary_bandit_convex_optimization_a_comprehensive_study.md)
+- [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](../../ICLR2026/optimization/high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
 - [\[NeurIPS 2025\] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis](nonlinearly_preconditioned_gradient_methods_momentum_and_stochastic_analysis.md)
-- [\[ICML 2026\] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization](../../ICML2026/optimization/safeguarded_stochastic_polyak_step_sizes_for_non-smooth_optimization_robust_perf.md)
 - [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
-- [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](../../ICLR2026/optimization/faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
 
 </div>
 

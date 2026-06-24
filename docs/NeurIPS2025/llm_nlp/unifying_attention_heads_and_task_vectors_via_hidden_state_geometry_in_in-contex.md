@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Unifying Attention Heads and Task Vectors via Hidden State Geometry in In-Context Learning
 description: >-
-  [NeurIPS 2025][LLM/NLP][in-context learning] This paper proposes a unified framework based on hidden state geometry (separability + alignment) that bridges the two major explanatory lines of ICL — attention heads (PTH/IH…
+  [NeurIPS 2025][LLM (Other)][in-context learning] This paper proposes a unified framework based on hidden state geometry (separability + alignment) that bridges the two major explanatory lines of ICL — attention heads (PTH/IH) and task vectors — revealing a two-phase mechanism in classification tasks: early layers establish separability via PTH, while later layers improve alignment with label unembedding directions via IH.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "in-context learning"
   - "attention heads"
   - "task vectors"
@@ -13,7 +13,7 @@ tags:
   - "separability"
   - "alignment"
 date: 2026-05-08
-content_hash: e97da4b7782dae21
+content_hash: 1ec2035d5f073c13
 ---
 
 # Unifying Attention Heads and Task Vectors via Hidden State Geometry in In-Context Learning
@@ -128,11 +128,11 @@ Define two geometric properties — Separability and Alignment — for LLM class
 
 ## Related Papers
 
+- [\[ICML 2025\] Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence](../../ICML2025/llm_nlp/beyond_induction_heads_in-context_meta_learning_induces_multi-phase_circuit_emer.md)
+- [\[ACL 2025\] Beyond In-Context Learning: Aligning Long-form Generation of LLMs via Task-Inherent Attribute Guidelines](../../ACL2025/llm_nlp/beyond_in-context_learning_aligning_long-form_generation_of_large_language_model.md)
 - [\[NeurIPS 2025\] In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation](in-context_learning_of_linear_dynamical_systems_with_transformers_approximation_.md)
 - [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](../../ACL2026/llm_nlp/decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
-- [\[NeurIPS 2025\] What One Cannot, Two Can: Two-Layer Transformers Provably Represent Induction Heads on Any-Order Markov Chains](what_one_cannot_two_can_two-layer_transformers_provably_represent_induction_head.md)
 - [\[NeurIPS 2025\] On the Role of Hidden States of Modern Hopfield Network in Transformer](on_the_role_of_hidden_states_of_modern_hopfield_network_in_transformer.md)
-- [\[NeurIPS 2025\] GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models](geocad_local_geometry-controllable_cad_generation_with_large_language_models.md)
 
 </div>
 

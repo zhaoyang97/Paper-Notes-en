@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Be Careful When Fine-tuning On Open-Source LLMs: Your Fine-tuning Data Could Be Secretly Stolen!
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper reveals a new risk in the "open-source LLM + private data fine-tuning" paradigm: open-source model providers can plant a backdoor before release. After a downstream developer fine-tunes the model on private data and deploys it, the attacker can "extract verbatim" private fine-tuning queries via **black-box a
+  [ICLR2026][LLM Safety][Backdoor attacks] This paper reveals a new risk in the "open-source LLM + private data fine-tuning" paradigm: open-source model providers can plant a backdoor before release. After a downstream developer fine-tunes the model on private data and deploys it, the attacker can "extract verbatim" private fine-tuning queries via **black-box access** using a single backdoor instruction. Controlled experiments show it can perfectly restore 76.3% of queries from…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Backdoor attacks"
+  - "fine-tuning data theft"
+  - "black-box extraction"
+  - "open-source LLMs"
+  - "privacy leakage"
 date: 2026-05-08
-content_hash: 564a7fdf2b244631
+content_hash: e6a82b28e89e116b
 ---
+
 # Be Careful When Fine-tuning On Open-Source LLMs: Your Fine-tuning Data Could Be Secretly Stolen!
 
 **Conference**: ICLR2026  
@@ -139,11 +145,11 @@ Defense evaluation (Dolly + Qwen2.5-7B, Table 3) tested "probing backdoors with 
 
 ## Related Papers
 
+- [\[ICLR 2026\] SafeMoE: Safe Fine-Tuning for MoE LLMs by Aligning Harmful Input Routing](safemoe_safe_fine-tuning_for_moe_llms_by_aligning_harmful_input_routing.md)
 - [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
 - [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
 - [\[ICML 2025\] TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs](../../ICML2025/llm_safety/tuco_measuring_the_contribution_of_fine-tuning_to_individual_responses_of_llms.md)
 - [\[ACL 2025\] Towards Context-Robust LLMs: A Gated Representation Fine-tuning Approach](../../ACL2025/llm_safety/towards_context-robust_llms_a_gated_representation_fine-tuning_approach.md)
-- [\[ICLR 2026\] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning](safety_mirage_how_spurious_correlations_undermine_vlm_safety_fine-tuning_and_can.md)
 
 </div>
 

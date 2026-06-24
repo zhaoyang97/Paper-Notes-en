@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection
 description: >-
-  [ICLR 2026][Object Detection][Paper Note] Ours proposes PaAno, a lightweight time-series anomaly detection method based on patch-level representation learning. It utilizes a 1D-CNN encoder with triplet loss and pretext loss to learn a patch embedding space. Anomaly scores are calculated via the distance to normal patches stored in a memory bank. It achieves co
+  [ICLR 2026][Object Detection][Time-Series Anomaly Detection] Ours proposes PaAno, a lightweight time-series anomaly detection method based on patch-level representation learning. It utilizes a 1D-CNN encoder with triplet loss and pretext loss to learn a patch embedding space. Anomaly scores are calculated via the distance to normal patches stored in a memory bank. It achieves comprehensive SOTA results on the TSB-AD benchmark with only 0.3M parameters and inference times in s…
 tags:
-  - ICLR 2026
-  - Object Detection
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Time-Series Anomaly Detection"
+  - "Patch Representation Learning"
+  - "Lightweight CNN"
+  - "Memory Bank"
+  - "Metric Learning"
 date: 2026-05-08
-content_hash: ffcc8c7f96006860
+content_hash: 375d2b7683f29e18
 ---
+
 # PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection
 
 **Conference**: ICLR 2026  
@@ -171,10 +177,10 @@ Evaluated on the TSB-AD benchmark, including 530 univariate sequences (TSB-AD-U)
 ## Related Papers
 
 - [\[ICLR 2026\] Contextual and Seasonal LSTMs for Time Series Anomaly Detection](contextual_and_seasonal_lstms_for_time_series_anomaly_detection.md)
+- [\[ICLR 2026\] PGRF-Net: A Prototype-Guided Relational Fusion Network for Diagnostic Multivariate Time-Series Anomaly Detection](pgrf-net_a_prototype-guided_relational_fusion_network_for_diagnostic_multivariat.md)
 - [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
 - [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
 - [\[ICML 2025\] Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection](../../ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly.md)
-- [\[ICML 2025\] KAN-AD: Time Series Anomaly Detection with Kolmogorov-Arnold Networks](../../ICML2025/object_detection/kan-ad_time_series_anomaly_detection_with_kolmogorov-arnold_networks.md)
 
 </div>
 

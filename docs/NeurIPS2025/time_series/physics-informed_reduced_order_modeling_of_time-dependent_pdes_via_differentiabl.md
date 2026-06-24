@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Physics-informed Reduced Order Modeling of Time-dependent PDEs via Differentiable Solvers
 description: >-
-  [NeurIPS 2025][Time Series][Reduced Order Modeling] This paper proposes Φ-ROM, a framework that embeds differentiable PDE solvers into the training loop of nonlinear reduced order models. By leveraging solver feedback to…
+  [NeurIPS 2025][Time Series][Reduced Order Modeling] This paper proposes Φ-ROM, a framework that embeds differentiable PDE solvers into the training loop of nonlinear reduced order models. By leveraging solver feedback to directly constrain latent space dynamics, Φ-ROM significantly outperforms purely data-driven ROMs and other physics-informed methods in generalization to unseen parameters/initial conditions, long-horizon extrapolation, and solution recovery from sparse obser…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Implicit Neural Representations"
   - "Partial Differential Equations"
 date: 2026-05-08
-content_hash: d2f2ed4c91d4bb95
+content_hash: f44b7098a2fd7614
 ---
 
 # Physics-informed Reduced Order Modeling of Time-dependent PDEs via Differentiable Solvers
@@ -145,11 +145,11 @@ In N-S extrapolation, Φ-ROM outperforms DINo by more than 4× (0.373 vs. 1.543)
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](../../ICLR2026/time_series/towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
+- [\[ICML 2026\] Spatiotemporal Imputation with Graph-Informed Flow Matching](../../ICML2026/time_series/spatiotemporal_imputation_with_graph-informed_flow_matching.md)
 - [\[NeurIPS 2025\] Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling](parallelization_of_non-linear_state-space_models_scaling_up_liquid-resistance_li.md)
+- [\[ICLR 2026\] Improving Extreme Wind Prediction with Frequency-Informed Learning](../../ICLR2026/time_series/improving_extreme_wind_prediction_with_frequency-informed_learning.md)
+- [\[ICLR 2026\] SONATA: Synergistic Coreset Informed Adaptive Temporal Tensor Factorization](../../ICLR2026/time_series/sonata_synergistic_coreset_informed_adaptive_temporal_tensor_factorization.md)
 - [\[ICML 2026\] Generalizing Multi-scale Time-Series Modeling with a Single Operator](../../ICML2026/time_series/generalizing_multi-scale_time-series_modeling_with_a_single_operator.md)
-- [\[ICML 2026\] IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection](../../ICML2026/time_series/impact_influence_modeling_for_open-set_time_series_anomaly_detection.md)
-- [\[ACL 2026\] A Unified Framework for Modeling Heterogeneous Financial Data via Dual-Granularity Prompting](../../ACL2026/time_series/a_unified_framework_for_modeling_heterogeneous_financial_data_via_dual-granulari.md)
 
 </div>
 

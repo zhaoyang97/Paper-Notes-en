@@ -19,7 +19,7 @@ item_total: 1
 
 **📹 ICCV2025** · **1** paper notes
 
-📌 **Same area in other venues:** [🔬 ICLR2026 (2)](../../ICLR2026/nlp_understanding/index.md) · [💬 ACL2026 (34)](../../ACL2026/nlp_understanding/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_understanding/index.md) · [🤖 AAAI2026 (1)](../../AAAI2026/nlp_understanding/index.md) · [🧠 NeurIPS2025 (3)](../../NeurIPS2025/nlp_understanding/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (2)](../../ICLR2026/nlp_understanding/index.md) · [💬 ACL2026 (34)](../../ACL2026/nlp_understanding/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_understanding/index.md) · [🤖 AAAI2026 (1)](../../AAAI2026/nlp_understanding/index.md) · [🧠 NeurIPS2025 (3)](../../NeurIPS2025/nlp_understanding/index.md) · [🧪 ICML2025 (1)](../../ICML2025/nlp_understanding/index.md)
 
 **[Balancing Task-Invariant Interaction and Task-Specific Adaptation for Unified Image Fusion](balancing_task-invariant_interaction_and_task-specific_adaptation_for_unified_im.md)**
 

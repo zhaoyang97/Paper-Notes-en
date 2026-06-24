@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting the Uniform Information Density Hypothesis in LLM Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Chain-of-Thought] This paper introduces the Uniform Information Density (UID) hypothesis from psycholinguistics into LLM reasoning analysis. It proposes an entropy-based step-level information density framework and discovers that high-quality reasoning trajectories exhibit a counter-intuitive pattern of "local uniformity + global non-un
+  [ACL 2026 Findings][Reasoning][Uniform Information Density] This paper introduces the Uniform Information Density (UID) hypothesis from psycholinguistics into LLM reasoning analysis. It proposes an entropy-based step-level information density framework and discovers that high-quality reasoning trajectories exhibit a counter-intuitive pattern of "local uniformity + global non-uniformity." This pattern significantly outperforms traditional confidence/entropy baselines in Best-o…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Uniform Information Density"
+  - "Reasoning Quality Assessment"
+  - "Entropy Analysis"
+  - "Best-of-N Selection"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 57ed60292f258767
+content_hash: 7549405d113894fb
 ---
+
 # Revisiting the Uniform Information Density Hypothesis in LLM Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -146,15 +151,13 @@ This is an analytical work and does not involve model training. DeepSeek-R1-Dist
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
+- [\[ICLR 2026\] Learning Global Hypothesis Space for Enhancing Synergistic Reasoning Chain](../../ICLR2026/llm_reasoning/learning_global_hypothesis_space_for_enhancing_synergistic_reasoning_chain.md)
+- [\[ACL 2026\] How Chain-of-Thought Works? Tracing Information Flow from Decoding, Projection, and Activation](how_chain-of-thought_works_tracing_information_flow_from_decoding_projection_and.md)
 - [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](efficient_process_reward_modeling_via_contrastive_mutual_information.md)
 - [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
-- [\[ICML 2026\] An Information-Theoretic Criterion for Efficient Data Synthesis](../../ICML2026/llm_reasoning/an_information-theoretic_criterion_for_efficient_data_synthesis.md)
-- [\[ACL 2026\] How Chain-of-Thought Works? Tracing Information Flow from Decoding, Projection, and Activation](how_chain-of-thought_works_tracing_information_flow_from_decoding_projection_and.md)
 
 </div>
 

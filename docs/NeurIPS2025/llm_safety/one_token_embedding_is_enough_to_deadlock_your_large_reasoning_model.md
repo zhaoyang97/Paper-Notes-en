@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One Token Embedding Is Enough to Deadlock Your Large Reasoning Model
 description: >-
-  [NeurIPS 2025][LLM Safety][adversarial attack] This paper proposes the Deadlock Attack, which optimizes a single adversarial token embedding and implants it into a Large Reasoning Model (LRM) via a backdoor mechanism…
+  [NeurIPS 2025][LLM Safety][adversarial attack] This paper proposes the Deadlock Attack, which optimizes a single adversarial token embedding and implants it into a Large Reasoning Model (LRM) via a backdoor mechanism, causing the model to enter a permanent reasoning loop during inference (endlessly generating transition words such as "Wait" and "But"). The attack achieves a 100% attack success rate across 4 LRMs and 3 mathematical reasoning benchmarks…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "backdoor attack"
   - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 32d994e5e258b532
+content_hash: 71a8545f6ddedfd5
 ---
 
 # One Token Embedding Is Enough to Deadlock Your Large Reasoning Model
@@ -116,11 +116,11 @@ The Deadlock Attack proceeds in two phases. **Phase 1**: An adversarial prefix $
 
 ## Related Papers
 
+- [\[ACL 2025\] SEUF: Is Unlearning One Expert Enough for Mixture-of-Experts LLMs?](../../ACL2025/llm_safety/seuf_is_unlearning_one_expert_enough_for_mixture-of-experts_llms.md)
 - [\[NeurIPS 2025\] Attention! Your Vision Language Model Could Be Maliciously Manipulated](attention_your_vision_language_model_could_be_maliciously_manipulated.md)
-- [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
+- [\[NeurIPS 2025\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
+- [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
 - [\[NeurIPS 2025\] PULSE: Practical Evaluation Scenarios for Large Multimodal Model Unlearning](pulse_practical_evaluation_scenarios_for_large_multimodal_model_unlearning.md)
-- [\[NeurIPS 2025\] AgentStealth: Reinforcing Large Language Model for Anonymizing User-generated Text](agentstealth_reinforcing_large_language_model_for_anonymizing_user-generated_tex.md)
-- [\[NeurIPS 2025\] HoloLLM: Multisensory Foundation Model for Language-Grounded Human Sensing and Reasoning](holollm_multisensory_foundation_model_for_language-grounded_human_sensing_and_re.md)
 
 </div>
 

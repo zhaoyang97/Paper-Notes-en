@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Differentiable Hierarchies in 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Level-of-Detail] The authors append a learnable "level scalar" to each Gaussian and utilize a differentiable decreasing step function (DDSF) to simultaneously optimize full-model rendering and hierarchy ordering in a single-stage training. This allows 3DGS to perform LoD rendering and pruning for any number of Gaussians without multi-s
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] The authors append a learnable "level scalar" to each Gaussian and utilize a differentiable decreasing step function (DDSF) to simultaneously optimize full-model rendering and hierarchy ordering in a single-stage training. This allows 3DGS to perform LoD rendering and pruning for any number of Gaussians without multi-stage training, with a training overhead of only ~10% compared to standard 3DGS.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Level-of-Detail
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Level-of-Detail"
+  - "Differentiable Hierarchy"
+  - "Model Pruning"
+  - "Continuous Hierarchy Learning"
 date: 2026-05-08
-content_hash: 83bd6074ced6ea53
+content_hash: 55a27d651b605506
 ---
+
 # Learning Differentiable Hierarchies in 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ Quality is maintained with roughly half the Gaussian count; the MCMC pruning mod
 
 ## Related Papers
 
-- [\[CVPR 2026\] FilterGS: Traversal-Free Parallel Filtering and Adaptive Shrinking for Large-Scale LoD 3D Gaussian Splatting](filtergs_traversal-free_parallel_filtering_and_adaptive_shrinking_for_large-scal.md)
+- [\[CVPR 2026\] Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives](prune_wisely_reconstruct_sharply_compact_3d_gaussian_splatting_via_adaptive_prun.md)
+- [\[CVPR 2026\] GaussianZoom: Progressive Zoom-in Generative 3D Gaussian Splatting with Geometric and Semantic Guidance](gaussianzoom_progressive_zoom-in_generative_3d_gaussian_splatting_with_geometric.md)
+- [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](../../ICLR2026/3d_vision/learning_unified_representation_of_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] iSplat: Iterative Learning for Fine-Grained Gaussian Splatting](isplat_iterative_learning_for_fine-grained_gaussian_splatting.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] Hermite Radial Basis Function for Surface Reconstruction via Differentiable Rendering](hermite_radial_basis_function_for_surface_reconstruction_via_differentiable_rend.md)
+- [\[CVPR 2026\] Spherical Voronoi: Directional Appearance as a Differentiable Partition of the Sphere](spherical_voronoi_directional_appearance_as_a_differentiable_partition_of_the_sp.md)
 
 </div>
 

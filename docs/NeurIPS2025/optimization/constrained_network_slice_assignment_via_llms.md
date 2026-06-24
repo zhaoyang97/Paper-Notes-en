@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Constrained Network Slice Assignment via Large Language Models
 description: >-
-  [NeurIPS 2025][Optimization][Network slicing] This paper investigates the use of LLMs (Claude series) for solving constrained optimization problems in 5G network slice resource allocation. Two approaches are proposed: ze…
+  [NeurIPS 2025][Optimization][Network slicing] This paper investigates the use of LLMs (Claude series) for solving constrained optimization problems in 5G network slice resource allocation. Two approaches are proposed: zero-shot LLM direct assignment and LLM-guided integer programming. Empirical findings show that LLMs alone can produce reasonable initial allocations but may violate hard constraints, whereas combining LLMs with an ILP solver achieves 100% completeness and bala…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "integer programming"
   - "constrained optimization"
 date: 2026-05-08
-content_hash: 196479b6aa855ade
+content_hash: 0405893bbc6606d3
 ---
 
 # Constrained Network Slice Assignment via Large Language Models

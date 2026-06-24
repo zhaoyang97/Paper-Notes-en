@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Kuramoto Orientation Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Kuramoto model] This work introduces Kuramoto synchronization dynamics from biological systems into score-based generative models…
+  [NeurIPS 2025][Image Generation][Kuramoto model] This work introduces Kuramoto synchronization dynamics from biological systems into score-based generative models, constructing a forward synchronization / reverse desynchronization diffusion framework over the periodic domain. The proposed approach achieves substantially superior generation quality over standard diffusion models on orientation-dense data such as fingerprints and textures, while remaining competitive on CIFAR-1…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "periodic domain"
   - "score-based generative models"
 date: 2026-05-08
-content_hash: 98d763f55ead1323
+content_hash: a0cffce1823da109
 ---
 
 # Kuramoto Orientation Diffusion Models
@@ -142,10 +142,10 @@ At each step, the forward Markov chain is simulated to obtain $\theta_{t-1}$, an
 ## Related Papers
 
 - [\[NeurIPS 2025\] Orient Anything V2: Unifying Orientation and Rotation Understanding](orient_anything_v2_unifying_orientation_and_rotation_understanding.md)
+- [\[CVPR 2025\] Compass Control: Multi Object Orientation Control for Text-to-Image Generation](../../CVPR2025/image_generation/compass_control_multi_object_orientation_control_for_text-to-image_generation.md)
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
 - [\[NeurIPS 2025\] System-Embedded Diffusion Bridge Models](system-embedded_diffusion_bridge_models.md)
 - [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
-- [\[NeurIPS 2025\] Diffusion Models Meet Contextual Bandits](diffusion_models_meet_contextual_bandits.md)
 
 </div>
 

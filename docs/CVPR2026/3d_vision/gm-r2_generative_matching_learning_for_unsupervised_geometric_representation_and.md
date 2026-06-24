@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration
 description: >-
-  [CVPR 2026][Self-Supervised Learning][ControlNet] Ours reformulates "learning geometric descriptors" as a proxy task of "generating cross-view images conditioned on geometry"—only when the geometric features of two point clouds are consistent can the generator conditioned on them synthesize consistent cross-view images. GM-R² uses this generative consistency as implic
+  [CVPR 2026][3D Vision][Point cloud registration] Ours reformulates "learning geometric descriptors" as a proxy task of "generating cross-view images conditioned on geometry"—only when the geometric features of two point clouds are consistent can the generator conditioned on them synthesize consistent cross-view images. GM-R² uses this generative consistency as implicit supervision to train a ControlNet encoder, achieving unsupervised registration SOTA on 3DMatch / ScanNet…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - ControlNet
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud registration"
+  - "Unsupervised geometric descriptor"
+  - "Generative supervision"
+  - "ControlNet"
+  - "Cross-view generation"
 date: 2026-05-08
-content_hash: 6622e663b4bcc621
+content_hash: e5a636b18f5592d0
 ---
+
 # GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ Ablations on 3DMatch (Default configuration marked with *):
 
 ## Related Papers
 
-- [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
-- [\[CVPR 2026\] Residual Connections Harm Generative Representation Learning](residual_connections_harm_generative_representation_learning.md)
-- [\[CVPR 2026\] OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](openvision_2_a_family_of_generative_pretrained_visual_encoders_for_multimodal_le.md)
-- [\[CVPR 2026\] From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)
-- [\[ACL 2025\] Magnet: Augmenting Generative Decoders with Representation Learning and Infilling Capabilities](../../ACL2025/self_supervised/magnet_augmenting_generative_decoders_with_representation_learning_and_infilling.md)
+- [\[ICLR 2026\] Unsupervised Representation Learning for 3D Mesh Parameterization with Semantic and Visibility Objectives](../../ICLR2026/3d_vision/unsupervised_representation_learning_for_3d_mesh_parameterization_with_semantic_.md)
+- [\[ICLR 2026\] CLAP: Unsupervised 3D Representation Learning for Fusion 3D Perception via Curvature Sampling and Prototype Learning](../../ICLR2026/3d_vision/clap_unsupervised_3d_representation_learning_for_fusion_3d_perception_via_curvat.md)
+- [\[CVPR 2026\] GaussianZoom: Progressive Zoom-in Generative 3D Gaussian Splatting with Geometric and Semantic Guidance](gaussianzoom_progressive_zoom-in_generative_3d_gaussian_splatting_with_geometric.md)
+- [\[CVPR 2026\] RigMo: Unifying Rig and Motion Learning for Generative Animation](rigmo_unifying_rig_and_motion_learning_for_generative_animation.md)
+- [\[CVPR 2026\] UniPixie: Unified and Probabilistic 3D Physics Learning via Flow Matching](unipixie_unified_and_probabilistic_3d_physics_learning_via_flow_matching.md)
 
 </div>
 

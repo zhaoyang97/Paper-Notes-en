@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] TravelBench is proposed as the first travel planning benchmark integrating real user queries, implicit user preferences, multi-turn interactions, unsolvable task identification, and 10 real-world tools. It implements reproducible evaluation through a sandbox environment, revealing unbalanced performance of cutting-edge
+  [ACL 2026][LLM Evaluation][Travel planning benchmark] TravelBench is proposed as the first travel planning benchmark integrating real user queries, implicit user preferences, multi-turn interactions, unsolvable task identification, and 10 real-world tools. It implements reproducible evaluation through a sandbox environment, revealing unbalanced performance of cutting-edge models across different capability dimensions.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Travel planning benchmark"
+  - "tool usage"
+  - "multi-turn dialogue"
+  - "implicit preferences"
+  - "unsolvable tasks"
 date: 2026-05-08
-content_hash: a79e3771d07a78b0
+content_hash: 096b98f058566922
 ---
+
 # Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks
 
 **Conference**: ACL 2026  
@@ -127,10 +133,17 @@ Final scores are aggregated through three layers: the unsolvable subset uses rul
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2025\] TripTailor: A Real-World Benchmark for Personalized Travel Planning](../../ACL2025/llm_evaluation/triptailor_a_real-world_benchmark_for_personalized_travel_planning.md)
+- [\[ACL 2026\] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](recoqa_a_benchmark_for_tool-augmented_and_multi-step_reasoning_in_real_estate_qu.md)
+- [\[ACL 2026\] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](taxpraben_a_scalable_benchmark_for_structured_evaluation_of_llms_in_chinese_real.md)
+- [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](evaluating_temporal_consistency_in_multi-turn_language_models.md)
+- [\[ACL 2026\] Beyond Case Law: Evaluating Structure-Aware Retrieval and Safety in Statute-Centric Legal QA](beyond_case_law_evaluating_structure-aware_retrieval_and_safety_in_statute-centr.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2025\] TripTailor: A Real-World Benchmark for Personalized Travel Planning](../../ACL2025/llm_evaluation/triptailor_a_real-world_benchmark_for_personalized_travel_planning.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] Ours proposes the LLEMA framework, which integrates the scientific knowledge of LLMs with chemical rule-guided evolutionary search and memory-driven iterative optimization. It achieves higher hit rates, stability, and Pareto front quality across 14 multi-objective materials discovery tasks.
+  [ICLR 2026][LLM (Other)][Materials discovery] Ours proposes the LLEMA framework, which integrates the scientific knowledge of LLMs with chemical rule-guided evolutionary search and memory-driven iterative optimization. It achieves higher hit rates, stability, and Pareto front quality across 14 multi-objective materials discovery tasks.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Materials discovery"
+  - "LLM evolutionary search"
+  - "multi-objective optimization"
+  - "crystal structure generation"
+  - "surrogate models"
 date: 2026-05-08
-content_hash: f842056d05b91eb3
+content_hash: a76727f761f988ad
 ---
+
 # LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery
 
 **Conference**: ICLR 2026  
@@ -149,10 +155,10 @@ LLEMA outperforms baselines in almost all tasks, particularly in stability—bas
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits](efficient_multi-objective_prompt_optimization_via_pure-exploration_bandits.md)
+- [\[ACL 2026\] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges](../../ACL2026/llm_nlp/when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
 - [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
 - [\[ACL 2025\] Gradient-Adaptive Policy Optimization: Towards Multi-Objective Alignment of Large Language Models](../../ACL2025/llm_nlp/gapo_multi_objective_alignment.md)
 - [\[ACL 2026\] AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment](../../ACL2026/llm_nlp/alphacontext_an_evolutionary_tree-based_psychometric_context_generator_for_creat.md)
-- [\[ICLR 2026\] VERIFY: A Novel Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic](verify_a_novel_multi-domain_dataset_grounding_ltl_in_contextual_natural_language.md)
 
 </div>
 

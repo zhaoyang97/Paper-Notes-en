@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][diffusion sampling] By theoretically analyzing the complementary weaknesses of ODE and SDE solvers (ODE solvers accumulate irreducible gradient errors…
+  [NeurIPS 2025][Physics & Scientific Computing][diffusion sampling] By theoretically analyzing the complementary weaknesses of ODE and SDE solvers (ODE solvers accumulate irreducible gradient errors; SDE solvers amplify discretization errors at large step sizes), this paper proposes AdaSDE—a method that introduces a learnable stochastic coefficient $\gamma_i$ at each denoising step to control noise injection intensity. Optimized via lightweight distillation…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "adaptive noise injection"
   - "few-step generation"
 date: 2026-05-08
-content_hash: e2f99c8d5ba5eca7
+content_hash: 71fec875cb9dd10a
 ---
 
 # Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling
@@ -135,8 +135,8 @@ AdaSDE, as a plug-and-play module, improves all tested base solvers.
 
 - [\[NeurIPS 2025\] Guided Diffusion Sampling on Function Spaces with Applications to PDEs](guided_diffusion_sampling_on_function_spaces_with_applications_to_pdes.md)
 - [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](quantum_doubly_stochastic_transformers.md)
-- [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](feat_free_energy_estimators_with_adaptive_transport.md)
 - [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
+- [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](feat_free_energy_estimators_with_adaptive_transport.md)
 - [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DND: Boosting Large Language Models with Dynamic Nested Depth
 description: >-
-  [ICLR 2026][LLM Efficiency][MoE] DND selects key tokens via a router at the end of Transformer layers and sends them back to the same layer for additional processing (nested depth). Combined with routing control loss and threshold schemes for precise token selection, it achieves average performance gains of 1.88% on Qwen3-1.7B and 0.87% on Qwen3-30B-A
+  [ICLR 2026][LLM Efficiency][Dynamic Depth] DND selects key tokens via a router at the end of Transformer layers and sends them back to the same layer for additional processing (nested depth). Combined with routing control loss and threshold schemes for precise token selection, it achieves average performance gains of 1.88% on Qwen3-1.7B and 0.87% on Qwen3-30B-A3B with minimal parameter increase (<0.1M).
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - MoE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Dynamic Depth"
+  - "Adaptive Token Selection"
+  - "Large Language Models"
+  - "Post-training Enhancement"
+  - "MoE"
 date: 2026-05-08
-content_hash: d27b09503a9a4ac9
+content_hash: 04ddb50711c712eb
 ---
+
 # DND: Boosting Large Language Models with Dynamic Nested Depth
 
 **Conference**: ICLR 2026  
@@ -141,9 +146,9 @@ On the Qwen3-30B-A3B MoE model across 17 benchmarks:
 
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
 - [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
+- [\[ICLR 2026\] SinkTrack: Attention Sink based Context Anchoring for Large Language Models](sinktrack_attention_sink_based_context_anchoring_for_large_language_models.md)
 - [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
 - [\[ICLR 2026\] Neuron-Aware Data Selection in Instruction Tuning for Large Language Models](neuron-aware_data_selection_in_instruction_tuning_for_large_language_models.md)
-- [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
 
 </div>
 

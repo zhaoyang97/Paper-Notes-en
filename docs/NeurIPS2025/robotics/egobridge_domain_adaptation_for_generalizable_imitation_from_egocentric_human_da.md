@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data
 description: >-
-  [NeurIPS 2025][Robotics][cross-embodiment] This paper proposes EgoBridge, a framework that uses Optimal Transport (OT) to align the joint distribution (features + actions) of human and robot data in a shared policy laten…
+  [NeurIPS 2025 Oral][Robotics][cross-embodiment] This paper proposes EgoBridge, a framework that uses Optimal Transport (OT) to align the joint distribution (features + actions) of human and robot data in a shared policy latent space, combined with Dynamic Time Warping (DTW) to construct pseudo-pairs, enabling cross-embodiment knowledge transfer from egocentric human data to robots, achieving up to 44% absolute improvement in success rate on real-world tasks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Robotics"
   - "cross-embodiment"
   - "domain adaptation"
@@ -12,7 +12,7 @@ tags:
   - "egocentric"
   - "imitation learning"
 date: 2026-05-08
-content_hash: d7a1f24496c93f0b
+content_hash: c25e434ccde98539
 ---
 
 # EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data
@@ -137,8 +137,8 @@ $\mathcal{L}_{\text{Total}} = \mathcal{L}_{\text{BC-cotrain}}(\phi,\theta) + \al
 - [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
 - [\[NeurIPS 2025\] Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination](inner_speech_as_behavior_guides_steerable_imitation_of_diverse_behaviors_for_hum.md)
 - [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
-- [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
-- [\[NeurIPS 2025\] EgoThinker: Unveiling Egocentric Reasoning with Spatio-Temporal CoT](egothinker_unveiling_egocentric_reasoning_with_spatiotempora.md)
+- [\[CVPR 2026\] NIL: No-data Imitation Learning](../../CVPR2026/robotics/nil_no-data_imitation_learning.md)
+- [\[ICLR 2026\] DataMIL: Selecting Data for Robot Imitation Learning with Datamodels](../../ICLR2026/robotics/datamil_selecting_data_for_robot_imitation_learning_with_datamodels.md)
 
 </div>
 

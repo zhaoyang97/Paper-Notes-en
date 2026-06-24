@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement
 description: >-
-  [ACL 2026][Pretraining][World Models] This paper theoretically analyzes how Multi-Token Prediction (MTP) induces representation contractivity through a gradient coupling mechanism, facilitating the emergence of belief states. However, it also reveals the "structural hallucination" problem of MTP (illegal shortcuts in latent space). The proposed LSE-MTP fra
+  [ACL 2026][LLM Pretraining][Multi-token prediction] This paper theoretically analyzes how Multi-Token Prediction (MTP) induces representation contractivity through a gradient coupling mechanism, facilitating the emergence of belief states. However, it also reveals the "structural hallucination" problem of MTP (illegal shortcuts in latent space). The proposed LSE-MTP framework anchors predictions to true latent state trajectories through latent consistency and semantic anchori…
 tags:
-  - ACL 2026
-  - Pretraining
-  - World Models
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Multi-token prediction"
+  - "World models"
+  - "Belief states"
+  - "Structural hallucinations"
+  - "Latent semantic enhancement"
 date: 2026-05-08
-content_hash: 642477b619251554
+content_hash: 6c25d1d9efaa83cd
 ---
+
 # Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement
 
 **Conference**: ACL 2026  
@@ -143,8 +148,8 @@ Belief Compression (Cosine similarity of latent states with same target and posi
 - [\[ACL 2025\] Pre-Training Curriculum for Multi-Token Prediction in Language Models](../../ACL2025/llm_pretraining/pre-training_curriculum_for_multi-token_prediction_in_language_models.md)
 - [\[ICLR 2026\] Beyond Multi-Token Prediction: Pretraining LLMs with Future Summaries](../../ICLR2026/llm_pretraining/beyond_multi-token_prediction_pretraining_llms_with_future_summaries.md)
 - [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](../../NeurIPS2025/llm_pretraining/next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
+- [\[ICLR 2026\] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning](../../ICLR2026/llm_pretraining/sstoken_self-modulated_and_semantic-aware_token_selection_for_llm_fine-tuning.md)
 - [\[CVPR 2025\] Improving Autoregressive Visual Generation with Cluster-Oriented Token Prediction](../../CVPR2025/llm_pretraining/improving_autoregressive_visual_generation_with_cluster-oriented_token_predictio.md)
-- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
 
 </div>
 

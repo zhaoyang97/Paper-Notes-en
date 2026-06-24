@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Chain-of-Frames: Advancing Video Understanding in Multimodal LLMs via Frame-Aware Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Chain-of-Frames] This paper proposes Chain-of-Frames (CoF), enabling video LLMs to directly reference keyframes using identifiers like "Frame-k" within single-stage reasoning, effectively embedding temporal grounding into the CoT text itself. Using a low-cost data pipeline to generate 164,000 training samples with frame citations to fi
+  [CVPR 2026][VLM Reasoning][Chain-of-Frames] This paper proposes Chain-of-Frames (CoF), enabling video LLMs to directly reference keyframes using identifiers like "Frame-k" within single-stage reasoning, effectively embedding temporal grounding into the CoT text itself. Using a low-cost data pipeline to generate 164,000 training samples with frame citations to finetune InternVL, the method achieves an average performance gain of 3.8%–5.1% across five video understanding benchm…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Chain-of-Frames
-  - InternVL
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Chain-of-Frames"
+  - "Video Reasoning"
+  - "Temporal Grounding"
+  - "Synthetic Data"
+  - "InternVL"
 date: 2026-05-08
-content_hash: 684d4263578488be
+content_hash: 4d487ebfac1a78a6
 ---
+
 # Chain-of-Frames: Advancing Video Understanding in Multimodal LLMs via Frame-Aware Reasoning
 
 **Conference**: CVPR 2026  
@@ -146,15 +150,15 @@ Replacing "In Frame 1..." with generalized "In the video..." phrases (SFT with C
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] EmoThinker: Advancing Visual-Acoustic Emotion Analysis via Structural Token Selection and Chain-of-Thought Reasoning](emothinker_advancing_visual-acoustic_emotion_analysis_via_structural_token_selec.md)
-- [\[CVPR 2026\] World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models](world_in_a_frame_understanding_culture_mixing_as_a_new_challenge_for_vision-lang.md)
-- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
-- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
 - [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
+- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)
+- [\[CVPR 2026\] EmoThinker: Advancing Visual-Acoustic Emotion Analysis via Structural Token Selection and Chain-of-Thought Reasoning](emothinker_advancing_visual-acoustic_emotion_analysis_via_structural_token_selec.md)
+- [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
 
 </div>
 

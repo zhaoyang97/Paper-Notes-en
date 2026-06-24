@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Interfaces for Language Models
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes **Generative Interfaces (GenUI)**, which enables LLMs to move beyond single-box chat responses by generating interactive Web interfaces tailored to specific queries. Using a structured intermediate representation of "interaction flow graphs + finite state machines" and "adaptive reward-driven iterat
+  [ACL 2026 Findings][LLM (Other)][Generative UI] This paper proposes **Generative Interfaces (GenUI)**, which enables LLMs to move beyond single-box chat responses by generating interactive Web interfaces tailored to specific queries. Using a structured intermediate representation of "interaction flow graphs + finite state machines" and "adaptive reward-driven iterative refinement," GenUI achieves an **84%** overall preference win rate against Claude 3.7's chat UI across 100 U…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Generative UI"
+  - "Adaptive UI"
+  - "Finite State Machine"
+  - "Iterative Refinement"
+  - "Adaptive Reward"
 date: 2026-05-08
-content_hash: 9c5dab03d76d51d2
+content_hash: 94b85d677f55e078
 ---
+
 # Generative Interfaces for Language Models
 
 **Conference**: ACL 2026 Findings  

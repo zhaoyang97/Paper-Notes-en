@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Laws of SignSGD in Linear Regression: When Does It Outperform SGD?
 description: >-
-  [ICLR 2026][Optimization & Theory][SignSGD] This work systematically analyzes the scaling laws of SignSGD under the Power-Law Random Features (PLRF) model, revealing two unique effects—drift-normalization and noise-reshaping—and proving that SignSGD's compute-optimal slope can exceed that of SGD in noise-dominated scenarios.
+  [ICLR 2026][Optimization][SignSGD] This work systematically analyzes the scaling laws of SignSGD under the Power-Law Random Features (PLRF) model, revealing two unique effects—drift-normalization and noise-reshaping—and proving that SignSGD's compute-optimal slope can exceed that of SGD in noise-dominated scenarios.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - SignSGD
+  - "ICLR 2026"
+  - "Optimization"
+  - "SignSGD"
+  - "Scaling Laws"
+  - "Linear Regression"
+  - "Random Features"
+  - "Learning Rate Scheduling"
 date: 2026-05-08
-content_hash: 02c07f5e528df89a
+content_hash: 0cccc6c3c1166344
 ---
+
 # Scaling Laws of SignSGD in Linear Regression: When Does It Outperform SGD?
 
 **Conference**: ICLR 2026  
@@ -131,11 +136,11 @@ WSD (warmup-stable-decay) is a standard LLM training schedule currently lacking 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
-- [\[NeurIPS 2025\] Functional Scaling Laws in Kernel Regression: Loss Dynamics and Learning Rate Schedules](../../NeurIPS2025/optimization/functional_scaling_laws_in_kernel_regression_loss_dynamics_and_learning_rate_sch.md)
-- [\[ICLR 2026\] Distributionally Robust Linear Regression with Block Lewis Weights](distributionally_robust_linear_regression_with_block_lewis_weights.md)
 - [\[NeurIPS 2025\] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks](../../NeurIPS2025/optimization/emergence_and_scaling_laws_in_sgd_learning_of_shallow_neural_networks.md)
+- [\[ICLR 2026\] Distributionally Robust Linear Regression with Block Lewis Weights](distributionally_robust_linear_regression_with_block_lewis_weights.md)
 - [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](../../NeurIPS2025/optimization/learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
+- [\[ICML 2026\] Muon in Associative Memory Learning: Training Dynamics and Scaling Laws](../../ICML2026/optimization/muon_in_associative_memory_learning_training_dynamics_and_scaling_laws.md)
+- [\[NeurIPS 2025\] Functional Scaling Laws in Kernel Regression: Loss Dynamics and Learning Rate Schedules](../../NeurIPS2025/optimization/functional_scaling_laws_in_kernel_regression_loss_dynamics_and_learning_rate_sch.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Conformal Prediction for Causal Effects of Continuous Treatments
 description: >-
-  [NeurIPS 2025][Optimization][conformal prediction] This work is the first to construct conformal prediction intervals for causal effects of continuous treatments (e.g.…
+  [NeurIPS 2025][Optimization][conformal prediction] This work is the first to construct conformal prediction intervals for causal effects of continuous treatments (e.g., drug dosage) by parameterizing intervention-induced propensity shifts via a tilting function family and employing quantile regression, providing finite-sample $1-\alpha$ coverage guarantees under both known and unknown propensity score settings.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "Uncertainty Quantification"
   - "Potential Outcomes"
 date: 2026-05-08
-content_hash: 90d558307a832cbe
+content_hash: c9d8a5dab7e0e6c3
 ---
 
 # Conformal Prediction for Causal Effects of Continuous Treatments
@@ -164,11 +164,11 @@ Evaluation on real-world intensive care data (14,719 patients, 8 clinical confou
 
 ## Related Papers
 
+- [\[ICML 2025\] Conformal Prediction as Bayesian Quadrature](../../ICML2025/optimization/conformal_prediction_as_bayesian_quadrature.md)
 - [\[NeurIPS 2025\] One Sample is Enough to Make Conformal Prediction Robust](one_sample_is_enough_to_make_conformal_prediction_robust.md)
-- [\[ICLR 2026\] Conformal Prediction Adaptive to Unknown Subpopulation Shifts](../../ICLR2026/optimization/conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)
-- [\[CVPR 2026\] Semi-Supervised Conformal Prediction With Unlabeled Nonconformity Score](../../CVPR2026/optimization/semi-supervised_conformal_prediction_with_unlabeled_nonconformity_score.md)
-- [\[ICML 2026\] Colorful Pinball: Density-Weighted Quantile Regression for Conditional Guarantee of Conformal Prediction](../../ICML2026/optimization/colorful_pinball_density-weighted_quantile_regression_for_conditional_guarantee_.md)
-- [\[ICML 2026\] Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation](../../ICML2026/optimization/distribution-free_uncertainty_quantification_for_continuous_ai_agent_evaluation.md)
+- [\[NeurIPS 2025\] Conformal Prediction in The Loop: A Feedback-Based Uncertainty Model for Trajectory Optimization](conformal_prediction_in_the_loop_a_feedback-based_uncertainty_model_for_trajecto.md)
+- [\[ICML 2025\] On Temperature Scaling and Conformal Prediction of Deep Classifiers](../../ICML2025/optimization/on_temperature_scaling_and_conformal_prediction_of_deep_classifiers.md)
+- [\[CVPR 2025\] Conformal Prediction for Zero-Shot Models](../../CVPR2025/optimization/conformal_prediction_for_zero-shot_models.md)
 
 </div>
 

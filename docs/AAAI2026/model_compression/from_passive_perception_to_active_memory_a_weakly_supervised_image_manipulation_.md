@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations
 description: >-
-  [AAAI 2026][Model Compression][Image Manipulation Localization] This paper proposes BoxPromptIML, a weakly supervised image manipulation localization (IML) framework based on coarse-grained bounding box annotations. It l…
+  [AAAI 2026][Model Compression][Image Manipulation Localization] This paper proposes BoxPromptIML, a weakly supervised image manipulation localization (IML) framework based on coarse-grained bounding box annotations. It leverages a frozen SAM teacher model to convert rough bounding boxes into high-quality pseudo-masks, and trains a lightweight student model via a memory-guided gated fusion module (MGFM), achieving performance comparable to or surpassing fully supervised method…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Memory Guidance"
   - "SAM"
 date: 2026-05-08
-content_hash: 3d219aade2a9f16a
+content_hash: 19ce48658d5c010a
 ---
 
 # From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations
@@ -159,11 +159,11 @@ $$\mathcal{L}_{loss} = BCE(A_{refined}, \hat{M}_{teacher})$$
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Unified Human Perception and Machine Understanding: Token Flow Guided Compression Framework](../../CVPR2026/model_compression/towards_unified_human_perception_and_machine_understanding_token_flow_guided_com.md)
 - [\[AAAI 2026\] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)
 - [\[AAAI 2026\] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression](infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf.md)
-- [\[ICML 2026\] A Queueing-Theoretic Framework for Stability Analysis of LLM Inference with KV Cache Memory Constraints](../../ICML2026/model_compression/a_queueing-theoretic_framework_for_stability_analysis_of_llm_inference_with_kv_c.md)
-- [\[AAAI 2026\] DOS: Distilling Observable Softmaps of Zipfian Prototypes for Self-Supervised Point Representation](dos_distilling_observable_softmaps_of_zipfian_prototypes_for_self-supervised_poi.md)
-- [\[CVPR 2026\] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation](../../CVPR2026/model_compression/dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation.md)
+- [\[ACL 2025\] Prompt Candidates, then Distill: A Teacher-Student Framework for LLM-driven Data Annotation](../../ACL2025/model_compression/prompt_distill_teacher_student.md)
+- [\[ACL 2025\] CFSP: An Efficient Structured Pruning Framework for LLMs with Coarse-to-Fine Activation Information](../../ACL2025/model_compression/cfsp_an_efficient_structured_pruning_framework_for_llms_with_coarse-to-fine_acti.md)
 
 </div>
 

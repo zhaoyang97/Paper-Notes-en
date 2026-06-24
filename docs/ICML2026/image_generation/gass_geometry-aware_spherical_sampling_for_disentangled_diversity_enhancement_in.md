@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GASS: Geometry-Aware Spherical Sampling for Disentangled Diversity Enhancement in Text-to-Image Generation
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The authors project sample diversity under the same prompt onto the CLIP unit hypersphere, expanding the projection spread along the "text direction $\mathbf{e}_t$" and the "orthogonal principal residual direction $\mathbf{u}_{\text{ind}}$". This geometric expansion is transferred back to the diffusion/flow sampling tr
+  [ICML 2026][Image Generation][T2I Diversity] The authors project sample diversity under the same prompt onto the CLIP unit hypersphere, expanding the projection spread along the "text direction $\mathbf{e}_t$" and the "orthogonal principal residual direction $\mathbf{u}_{\text{ind}}$". This geometric expansion is transferred back to the diffusion/flow sampling trajectory via gradient optimization on the predicted clean image $\hat{x}_{0|t}$, enhancing both prompt-dependent (p…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "T2I Diversity"
+  - "CLIP Spherical Geometry"
+  - "Orthogonal Decomposition"
+  - "Test-time Guidance"
+  - "Prompt-independent Variation"
 date: 2026-05-08
-content_hash: 1c2b4bf31972e184
+content_hash: b504f36ce38cb657
 ---
+
 # GASS: Geometry-Aware Spherical Sampling for Disentangled Diversity Enhancement in Text-to-Image Generation
 
 **Conference**: ICML 2026  
@@ -130,15 +136,13 @@ DrawBench (SD3-M, 200 prompts × 10 images): VS 8.115 $\rightarrow$ **8.212**, I
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICML 2026\] Geometry-Aware Tabular Diffusion](geometry-aware_tabular_diffusion.md)
 - [\[CVPR 2026\] DiverseGRPO: Mitigating Mode Collapse in Image Generation via Diversity-Aware GRPO](../../CVPR2026/image_generation/diversegrpo_mitigating_mode_collapse_in_image_generation_via_diversity-aware_grp.md)
+- [\[ICML 2026\] Geometry-Aware Dataset Condensation for Diffusion Model Training](geometry-aware_dataset_condensation_for_diffusion_model_training.md)
 - [\[ICML 2026\] Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation](envisioning_beyond_the_few_disentangled_semantics_and_primitives_for_few-shot_at.md)
-- [\[CVPR 2026\] Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation](../../CVPR2026/image_generation/denoising_fast_and_slow_difficulty-aware_adaptive_sampling_for_image_generation.md)
-- [\[CVPR 2026\] Spherical Leech Quantization for Visual Tokenization and Generation](../../CVPR2026/image_generation/spherical_leech_quantization_for_visual_tokenization_and_generation.md)
+- [\[ICLR 2026\] Arbitrary-Shaped Image Generation via Spherical Neural Field Diffusion](../../ICLR2026/image_generation/arbitrary-shaped_image_generation_via_spherical_neural_field_diffusion.md)
 
 </div>
 

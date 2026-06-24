@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STABLE: Simulation-Ready Tabletop Layout Generation via a Semantics–Physics Dual System
 description: >-
-  [ICML 2026][3D Vision][Flow Matching] STABLE decomposes the process of "task instructions → simulation-ready tabletop scenes" into an LLM-based Semantic Reasoner (generating coarse layouts) and a flow-matching-based Physics Corrector with SDF losses (refining poses). By iterating through three stages—task-critical, important background, and secondary backg
+  [ICML 2026][3D Vision][Tabletop scene generation] STABLE decomposes the process of "task instructions → simulation-ready tabletop scenes" into an LLM-based Semantic Reasoner (generating coarse layouts) and a flow-matching-based Physics Corrector with SDF losses (refining poses). By iterating through three stages—task-critical, important background, and secondary background—the system reduces object collisions to zero while achieving 99.0% scene alignment (AwS) on the MesaTask…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - Flow Matching
+  - "ICML 2026"
+  - "3D Vision"
+  - "Tabletop scene generation"
+  - "semantics-physics dual system"
+  - "Flow Matching"
+  - "SDF collision loss"
+  - "progressive inference"
 date: 2026-05-08
-content_hash: 87c476dbe452ed75
+content_hash: 8662c19977d1a81f
 ---
+
 # STABLE: Simulation-Ready Tabletop Layout Generation via a Semantics–Physics Dual System
 
 **Conference**: ICML 2026  
@@ -142,7 +147,7 @@ Key Observation: Steerable achieves OC=0 by aggressively moving objects, which d
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

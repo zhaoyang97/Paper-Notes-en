@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IAFMNet: Information-Aware Feature Modulation for Efficient Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] IAFMNet quantifies the "uneven information distribution across image regions" into an **Information Density Map (IDM)** using information theory. This IDM drives a dual-branch network featuring sparse convolution and affine modulation, concentrating computational power on "difficult-to-reconstruct, information-dense" a
+  [CVPR 2026][Image Restoration][SISR] IAFMNet quantifies the "uneven information distribution across image regions" into an **Information Density Map (IDM)** using information theory. This IDM drives a dual-branch network featuring sparse convolution and affine modulation, concentrating computational power on "difficult-to-reconstruct, information-dense" areas like textures and edges, achieving superior reconstruction quality with lower FLOPs compared to other efficient SR met…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "SISR"
+  - "Information Density"
+  - "Sparse Convolution"
+  - "Adaptive Computation"
+  - "Affine Modulation"
 date: 2026-05-08
-content_hash: 2480a3e555cbef1d
+content_hash: b0e522b48cb8f741
 ---
+
 # IAFMNet: Information-Aware Feature Modulation for Efficient Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ IAFMNet-L uses ~519K parameters and 28G FLOPs (less than half of SRFormer-light)
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient INT8 Single-Image Super-Resolution via Deployment-Aware Quantization and Teacher-Guided Training](efficient_int8_single-image_super-resolution_via_deployment-aware_quantization_a.md)
 - [\[CVPR 2026\] DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution](dnf-sr_dual-input_and_negative-aware_feature_fine-tuning_for_real-world_image_su.md)
-- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
 - [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
+- [\[ICLR 2026\] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution](../../ICLR2026/image_restoration/texture_vector-quantization_and_reconstruction_aware_prediction_for_generative_s.md)
+- [\[CVPR 2026\] TUDSR: Twice Upsampling-Diffusion for Higher Super-Resolution](tudsr_twice_upsampling-diffusion_for_higher_super-resolution.md)
 
 </div>
 

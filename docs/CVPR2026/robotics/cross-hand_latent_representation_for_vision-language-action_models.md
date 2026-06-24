@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Hand Latent Representation for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] XL-VLA trains a shared, embodiment-independent latent action space for four structurally diverse dexterous hands. By plugging this space into a VLA framework like $\pi_0$ to replace original joint state tokens, a single hand-agnostic policy can simultaneously control multiple dexterous hands, improving the average cros
+  [CVPR 2026][Robotics][Vision-Language-Action Models] XL-VLA trains a shared, embodiment-independent latent action space for four structurally diverse dexterous hands. By plugging this space into a VLA framework like $\pi_0$ to replace original joint state tokens, a single hand-agnostic policy can simultaneously control multiple dexterous hands, improving the average cross-embodiment manipulation success rate from 0.55 to 0.90 on real hardware.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language-Action Models"
+  - "Dexterous Hands"
+  - "Cross-Embodiment"
+  - "Latent Action Space"
+  - "Retargeting"
 date: 2026-05-08
-content_hash: be97acaa9ca3df89
+content_hash: 3f8a2922b0f63124
 ---
+
 # Cross-Hand Latent Representation for Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -153,10 +159,10 @@ XL-VLA significantly outperforms the supervised LAD despite being entirely unsup
 
 ## Related Papers
 
+- [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](../../ICML2026/robotics/contrastive_representation_regularization_for_vision-language-action_models.md)
 - [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 - [\[CVPR 2026\] Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models](test-time_perturbation_tuning_with_delayed_feedback_for_vision-language-action_m.md)
-- [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](../../ICML2026/robotics/contrastive_representation_regularization_for_vision-language-action_models.md)
 - [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
 
 </div>

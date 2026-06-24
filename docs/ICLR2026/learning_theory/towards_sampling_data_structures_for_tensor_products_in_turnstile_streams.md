@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Towards Sampling Data Structures for Tensor Products in Turnstile Streams
 description: >-
-  [ICLR 2026][learning_theory][turnstile stream] This paper formalizes the identification of "important coordinates" in attention matrices as a streaming sampling problem. It proves that softmax/exponential sampling inevitably encounters a quadratic space barrier in general turnstile streams, while providing $\ell_2$ samplers for polynomial attention and specialized
+  [ICLR2026][Learning Theory][Attention Sampling] This paper formalizes the identification of "important coordinates" in attention matrices as a streaming sampling problem. It proves that softmax/exponential sampling inevitably encounters a quadratic space barrier in general turnstile streams, while providing $\ell_2$ samplers for polynomial attention and specialized data structures for tensor products.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - turnstile stream
-  - $\ell_2$ sampler
-  - sketching
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Streaming Algorithms"
+  - "Randomized Data Structures"
+  - "Attention Sampling"
+  - "turnstile stream"
+  - "tensor product"
+  - "$\\ell_2$ sampler"
+  - "sketching"
 date: 2026-05-08
-content_hash: 17f6edc8e9c25eca
+content_hash: 93123466c120447c
 ---
+
 # Towards Sampling Data Structures for Tensor Products in Turnstile Streams
 
 **Conference**: ICLR2026  
@@ -149,6 +154,7 @@ Complexity variations across different functions and models:
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

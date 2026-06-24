@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers
 description: >-
-  [ACL 2026][Medical NLP][GRPO] Ryze automatically converts biomedical paper PDFs into evidence-enriched QA data that preserves figures, captions, structured extractions, and cited paragraphs. Using a progress-gated SFT+GRPO strategy to train BioVLM-8B, it achieves 48.0% weighted accuracy on LAB-Bench, outperforming the Qwen3-VL-8B base by 12.6 perce
+  [ACL2026][Medical LLM][Biomedical VLM] Ryze automatically converts biomedical paper PDFs into evidence-enriched QA data that preserves figures, captions, structured extractions, and cited paragraphs. Using a progress-gated SFT+GRPO strategy to train BioVLM-8B, it achieves 48.0% weighted accuracy on LAB-Bench, outperforming the Qwen3-VL-8B base by 12.6 percentage points and GPT-5.2 by 3.8 percentage points.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - GRPO
+  - "ACL2026"
+  - "Medical LLM"
+  - "Biomedical VLM"
+  - "Evidence-enriched Data Synthesis"
+  - "Scientific PDF Understanding"
+  - "Chart-aware OCR"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 3391d1dcb2fbbd1f
+content_hash: fcfab21dd7dd49d7
 ---
+
 # Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers
 
 **Conference**: ACL2026  
@@ -152,8 +157,8 @@ Ryze validated data sources, the OCR pipeline, and cross-model generalization.
 
 - [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
 - [\[ACL 2025\] Query-driven Document-level Scientific Evidence Extraction from Biomedical Studies](../../ACL2025/medical_nlp/urca_biomedical_evidence_extraction.md)
-- [\[ACL 2026\] Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence](faithfulness_vs_safety_evaluating_llm_behavior_under_counterfactual_medical_evid.md)
 - [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_nlp/medagentgym_agentic_training_biomedical.md)
+- [\[ACL 2026\] Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence](faithfulness_vs_safety_evaluating_llm_behavior_under_counterfactual_medical_evid.md)
 - [\[ACL 2026\] Language Reconstruction with Brain Predictive Coding from fMRI Data](language_reconstruction_with_brain_predictive_coding_from_fmri_data.md)
 
 </div>

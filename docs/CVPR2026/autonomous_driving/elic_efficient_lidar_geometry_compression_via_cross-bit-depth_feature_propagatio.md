@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ELiC: Efficient LiDAR Geometry Compression via Cross-Bit-depth Feature Propagation and Bag-of-Encoders
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Based on the lightweight real-time LiDAR geometry compressor RENO, ELiC introduces a "triad" of Cross-Bit-depth Feature Propagation, Bag-of-Encoders selection, and Morton order-preserving hierarchy. By allowing sparse high bit-depth layers to reuse contextual features from dense low bit-depth layers, ELiC achieves stat
+  [CVPR 2026][Autonomous Driving][LiDAR Geometry Compression] Based on the lightweight real-time LiDAR geometry compressor RENO, ELiC introduces a "triad" of Cross-Bit-depth Feature Propagation, Bag-of-Encoders selection, and Morton order-preserving hierarchy. By allowing sparse high bit-depth layers to reuse contextual features from dense low bit-depth layers, ELiC achieves state-of-the-art compression rates with a real-time throughput of 10 FPS on Ford and SemanticKITTI datas…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Geometry Compression"
+  - "Octree"
+  - "Sparse Convolution"
+  - "Cross-Bit-depth Feature Propagation"
+  - "Real-time Encoding/Decoding"
 date: 2026-05-08
-content_hash: 37eb69d5a459c661
+content_hash: ddbbed58f8f825db
 ---
+
 # ELiC: Efficient LiDAR Geometry Compression via Cross-Bit-depth Feature Propagation and Bag-of-Encoders
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ ELiC is the fastest model. At 12-bit input, only RENO, ELiC, and ELiC-Large achi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Loc²: Interpretable Cross-View Localization via Depth-Lifted Local Feature Matching](../../ICLR2026/autonomous_driving/loc2_interpretable_cross-view_localization_via_depth-lifted_local_feature_matchi.md)
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
-- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
 - [\[CVPR 2026\] PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency](ptc-depth_pose-refined_monocular_depth_estimation_with_temporal_consistency.md)
-- [\[ICLR 2026\] MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding](../../ICLR2026/autonomous_driving/marc_memory-augmented_rl_token_compression_for_efficient_video_un.md)
 - [\[CVPR 2026\] LiDAR-to-4DRadar Diffusion Bridge via Cross-Modal Alignment and Translation in Latent Space](lidar-to-4dradar_diffusion_bridge_via_cross-modal_alignment_and_translation_in_l.md)
+- [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
 
 </div>
 

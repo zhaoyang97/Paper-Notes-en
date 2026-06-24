@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Reinforcement Learning] SpecTemp offloads the time-consuming frame magnification process in the "thinking-with-frames" paradigm to a lightweight 3B draft MLLM. This draft model performs dense sampling and selects sparse keyframes, allowing the 7B target MLLM to focus solely on temporal reasoning and verification. Through an iterative speculat
+  [CVPR 2026][VLM Reasoning][Long Video Understanding] SpecTemp offloads the time-consuming frame magnification process in the "thinking-with-frames" paradigm to a lightweight 3B draft MLLM. This draft model performs dense sampling and selects sparse keyframes, allowing the 7B target MLLM to focus solely on temporal reasoning and verification. Through an iterative speculative-verification loop, it maintains or improves accuracy across 8 video benchmarks while reducing inference…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Long Video Understanding"
+  - "Speculative Decoding"
+  - "Dual-model Collaboration"
+  - "Frame Selection"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 3594372c6803161e
+content_hash: 71a368de32a8ba1c
 ---
+
 # Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ Frame Selection Strategy (LongVideoBench as example):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[CVPR 2026\] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)
-- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[ICLR 2026\] TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning](../../ICLR2026/vlm_reasoning/timesearch-r_adaptive_temporal_search_for_long-form_video_understanding_via_self.md)
+- [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/vlm_reasoning/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
 - [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)
-- [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](../../ICML2026/video_understanding/video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
+- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
 
 </div>
 

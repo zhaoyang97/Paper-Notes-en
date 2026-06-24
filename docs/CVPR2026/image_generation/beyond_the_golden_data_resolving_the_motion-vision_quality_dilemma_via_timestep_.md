@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] This paper identifies the "Motion-Vision Quality Dilemma," where motion quality (MQ) and visual quality (VQ) in video data are negatively correlated. Through gradient analysis, it reveals that imbalanced data can produce equivalent learning signals at appropriate timesteps. It proposes the TQD framework, enabling model
+  [CVPR 2026][Image Generation][Video Diffusion Models] This paper identifies the "Motion-Vision Quality Dilemma," where motion quality (MQ) and visual quality (VQ) in video data are negatively correlated. Through gradient analysis, it reveals that imbalanced data can produce equivalent learning signals at appropriate timesteps. It proposes the TQD framework, enabling models trained solely on imbalanced data to outperform those trained on "golden data."
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Diffusion Models"
+  - "Data Quality Dilemma"
+  - "Timestep Selective Training"
+  - "Motion-Vision Quality Balance"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: be09a47cd15f4abc
+content_hash: 840f9b8fb94450e6
 ---
+
 # Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training
 
 **Conference**: CVPR 2026  
@@ -127,15 +132,15 @@ This routes High MQ/Low VQ (HMLV) videos to large timesteps for motion, and Low 
 - Value: ⭐⭐⭐⭐⭐ Potential to fundamentally change video generation training paradigms.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data](dynavid_learning_to_generate_highly_dynamic_videos_using_synthetic_motion_data.md)
 - [\[CVPR 2026\] Beyond Objects: Contextual Synthetic Data Generation for Fine-Grained Classification](beyond_objects_contextual_synthetic_data_generation_for_fine-grained_classificat.md)
 - [\[CVPR 2026\] Beyond Fixed Formulas: Data-Driven Linear Predictor for Efficient Diffusion Models](beyond_fixed_formulas_data-driven_linear_predictor_for_efficient_diffusion_model.md)
-- [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
+- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
 - [\[CVPR 2026\] High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning](high-fidelity_virtual_try-on_beyond_paired_data_scarcity_via_diffusion-based_cyc.md)
 
 </div>

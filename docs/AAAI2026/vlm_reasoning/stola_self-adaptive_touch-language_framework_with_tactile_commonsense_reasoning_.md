@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios
 description: >-
-  [AAAI 2026][Multimodal VLM][Tactile perception] SToLa proposes the first Mixture-of-Experts (MoE)-based touch-language framework, which employs a dynamic routing mechanism to manage the modality gap between tactile and l…
+  [AAAI 2026][VLM Reasoning][Tactile perception] SToLa proposes the first Mixture-of-Experts (MoE)-based touch-language framework, which employs a dynamic routing mechanism to manage the modality gap between tactile and linguistic inputs. The work also introduces TactileBench, an open-ended tactile commonsense reasoning dataset covering 8 physical properties and 4 interaction characteristics. With only 7B parameters, SToLa achieves state-of-the-art performance on the PhysiCLeAR…
 tags:
   - "AAAI 2026"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Tactile perception"
   - "multimodal reasoning"
   - "mixture of experts"
   - "touch-language model"
   - "commonsense reasoning"
 date: 2026-05-08
-content_hash: cdb22f0509421551
+content_hash: d25f334971ce36b0
 ---
 
 # SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios
@@ -164,11 +164,11 @@ SToLa consists of three core components: a **tactile encoder** (processing raw t
 
 ## Related Papers
 
-- [\[CVPR 2026\] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions](../../CVPR2026/multimodal_vlm/seeing_through_touch_tactile_localization.md)
-- [\[AAAI 2026\] O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model](o3slm_open_weight_open_data_and_open_vocabulary_sketch-language_model.md)
-- [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
-- [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](../../NeurIPS2025/multimodal_vlm/mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
-- [\[CVPR 2026\] GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks](../../CVPR2026/multimodal_vlm/guide_a_benchmark_for_understanding_and_assisting_users_in_open-ended_gui_tasks.md)
+- [\[ICLR 2026\] PuzzleWorld: A Benchmark for Multimodal, Open-Ended Reasoning in Puzzlehunts](../../ICLR2026/vlm_reasoning/puzzleworld_a_benchmark_for_multimodal_open-ended_reasoning_in_puzzlehunts.md)
+- [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](../../CVPR2026/vlm_reasoning/self-critical_distillation_network_for_video-based_commonsense_captioning.md)
+- [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](../../NeurIPS2025/vlm_reasoning/mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
+- [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](../../CVPR2026/vlm_reasoning/scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
+- [\[ACL 2025\] Answering Complex Geographic Questions by Adaptive Reasoning with Visual Context and External Commonsense Knowledge](../../ACL2025/vlm_reasoning/answering_complex_geographic_questions_by_adaptive_reasoning_with_visual_context.md)
 
 </div>
 

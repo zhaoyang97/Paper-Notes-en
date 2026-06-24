@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Conditional Diffusion Sampling
 description: >-
-  [ICML 2026][Multimodal VLM][Parallel Tempering] This paper proposes Conditional Diffusion Sampling (CDS): by deriving a class of conditional interpolants, an **exact closed-form SDE** for unnormalized target distributions is obtained (without needing neural network approximation). Parallel Tempering (PT) is then used to efficiently sample the initial distribution of
+  [ICML 2026][Multimodal VLM][Parallel Tempering] This paper proposes Conditional Diffusion Sampling (CDS): by deriving a class of conditional interpolants, an **exact closed-form SDE** for unnormalized target distributions is obtained (without needing neural network approximation). Parallel Tempering (PT) is then used to efficiently sample the initial distribution of this SDE—combining PT's global exploration capability with the diffusion process's local refinement ability. Ac…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Parallel Tempering
-  - Conditional Interpolants
-  - closed-form SDE
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Parallel Tempering"
+  - "Conditional Interpolants"
+  - "closed-form SDE"
+  - "multimodal sampling"
+  - "training-free"
 date: 2026-05-08
-content_hash: 7723c15423b60744
+content_hash: 4436073f8b46f63d
 ---
+
 # Conditional Diffusion Sampling
 
 **Conference**: ICML 2026  
@@ -149,7 +152,7 @@ Tasks cover Gaussian Mixture (2D and 16D, including non-uniform), Lennard-Jones 
 
 - [\[ICML 2026\] Text-Conditional JEPA for Learning Semantically Rich Visual Representations](text-conditional_jepa_for_learning_semantically_rich_visual_representations.md)
 - [\[ICML 2026\] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics](dimension-free_multimodal_sampling_via_preconditioned_annealed_langevin_dynamics.md)
-- [\[ICML 2025\] Importance Corrected Neural JKO Sampling](../../ICML2025/multimodal_vlm/importance_corrected_neural_jko_sampling.md)
+- [\[ICLR 2026\] Asynchronous Matching with Dynamic Sampling for Multimodal Dataset Distillation](../../ICLR2026/multimodal_vlm/asynchronous_matching_with_dynamic_sampling_for_multimodal_dataset_distillation.md)
 - [\[CVPR 2026\] BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models](../../CVPR2026/multimodal_vlm/biomedccpl_causal_conditional_prompt_learning_for_biomedical_vision-language_mod.md)
 - [\[ICML 2026\] Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling](beyond_vlm-based_rewards_diffusion-native_latent_reward_modeling.md)
 

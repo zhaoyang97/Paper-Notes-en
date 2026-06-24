@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning
 description: >-
-  [ACL 2026][LLM Reasoning][agentic RL] HISR utilizes GPT-4o to partition agent trajectories into segments aligned with sub-goals. Subsequently, a hindsight model and a policy model calculate importance scores via likelihood ratios to modulate segmental process rewards. This approach improves credit assignment on Alfworld, Virtualhome, and Webshop, achieving
+  [ACL 2026][Reasoning][agentic RL] HISR utilizes GPT-4o to partition agent trajectories into segments aligned with sub-goals. Subsequently, a hindsight model and a policy model calculate importance scores via likelihood ratios to modulate segmental process rewards. This approach improves credit assignment on Alfworld, Virtualhome, and Webshop, achieving an average score increase of 5+ over SPA.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - agentic RL
-  - segmental process reward
-  - hindsight model
-  - credit assignment
-  - PPO
+  - "ACL 2026"
+  - "Reasoning"
+  - "agentic RL"
+  - "segmental process reward"
+  - "hindsight model"
+  - "credit assignment"
+  - "PPO"
 date: 2026-05-08
-content_hash: 16eeddc568cf1cb4
+content_hash: 52b82378cd7f7adb
 ---
+
 # HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning
 
 **Conference**: ACL 2026  
@@ -157,11 +158,11 @@ HISR sets a new SOTA on all three benchmarks: +4.5 on Alfworld, +5.7 on Virtualh
 
 ## Related Papers
 
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](../../ICLR2026/llm_reasoning/agentic_reinforcement_learning_with_implicit_step_rewards.md)
 - [\[ACL 2026\] MTR-Bench: A Comprehensive Benchmark for Multi-Turn Reasoning Evaluation](mtr-bench_a_comprehensive_benchmark_for_multi-turn_reasoning_evaluation.md)
-- [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](efficient_process_reward_modeling_via_contrastive_mutual_information.md)
-- [\[ACL 2026\] CSRP: Chain-of-Thought Reasoning for Chinese Text Correction via Reinforcement Learning with Efficiency-Aware Rewards](csrp_chain-of-thought_reasoning_for_chinese_text_correction_via_reinforcement_le.md)
+- [\[ICLR 2026\] SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning](../../ICLR2026/llm_reasoning/simpletir_end-to-end_reinforcement_learning_for_multi-turn_tool-integrated_reaso.md)
+- [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](../../ICLR2026/llm_reasoning/process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
 - [\[ACL 2026\] Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards](process_reward_models_meet_planning_generating_precise_and_scalable_datasets_for.md)
-- [\[ACL 2026\] Stratagem: Learning Transferable Reasoning via Trajectory-Modulated Game Self-Play](stratagem_learning_transferable_reasoning_via_trajectory-modulated_game_self-pla.md)
 
 </div>
 

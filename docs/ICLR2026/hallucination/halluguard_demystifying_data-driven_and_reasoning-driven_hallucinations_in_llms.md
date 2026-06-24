@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs
 description: >-
-  [ICLR 2026][Hallucination Detection][Neural Tangent Kernel] This paper proposes a unified theoretical framework called the "Hallucination Risk Bound," which decomposes the hallucination risk of LLMs into a **data-driven term** (representational bias during training) and a **reasoning-driven term** (instability during decoding) using the triangle inequality. Based on this, the a
+  [ICLR 2026][Hallucination Detection][Neural Tangent Kernel] This paper proposes a unified theoretical framework called the "Hallucination Risk Bound," which decomposes the hallucination risk of LLMs into a **data-driven term** (representational bias during training) and a **reasoning-driven term** (instability during decoding) using the triangle inequality. Based on this, the authors design HalluGuard, an NTK-based spectral proxy score that requires no external references or…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - Neural Tangent Kernel
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Neural Tangent Kernel"
+  - "Hallucination Risk Bound"
+  - "Data-Driven Hallucination"
+  - "Reasoning-Driven Hallucination"
 date: 2026-05-08
-content_hash: bcbd7e1f97a30a7f
+content_hash: e871f384c9a57d0d
 ---
+
 # HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs
 
 **Conference**: ICLR 2026  
@@ -116,11 +120,11 @@ This work lies at the intersection of three lines: (1) Uncertainty-based detecti
 
 ## Related Papers
 
+- [\[ACL 2026\] Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process](../../ACL2026/hallucination/why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
+- [\[ICLR 2026\] Semantic Uncertainty Quantification of Hallucinations in LLMs: A Quantum Tensor Network Based Method](semantic_uncertainty_quantification_of_hallucinations_in_llms_a_quantum_tensor_n.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
 - [\[ICLR 2026\] ChainMPQ: Interleaved Text-Image Reasoning Chains for Mitigating Relation Hallucinations](chainmpq_interleaved_text-image_reasoning_chains_for_mitigating_relation_halluci.md)
 - [\[ICLR 2026\] BARREL: Boundary-Aware Reasoning for Factual and Reliable LRMs](barrel_boundary-aware_reasoning_for_factual_and_reliable_lrms.md)
-- [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
-- [\[ACL 2026\] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination](../../ACL2026/hallucination/the_reasoning_trap_how_enhancing_llm_reasoning_amplifies_tool_hallucination.md)
-- [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](../../ACL2026/hallucination/meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
 
 </div>
 

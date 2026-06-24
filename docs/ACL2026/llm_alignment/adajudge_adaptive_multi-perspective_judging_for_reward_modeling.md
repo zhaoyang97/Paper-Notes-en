@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdaJudge: Adaptive Multi-Perspective Judging for Reward Modeling
 description: >-
-  [ACL 2026][Alignment & RLHF][Mixture-of-Pooling] To address two structural defects in reward models—the fixed spatial inductive bias and the misalignment between generative backbone representations and discriminative tasks caused by "compressing the entire sequence into a scalar via fixed pooling (e.g., last-token)"—AdaJudge proposes a gated refinement block to resha
+  [ACL 2026][LLM Alignment][Reward Model] To address two structural defects in reward models—the fixed spatial inductive bias and the misalignment between generative backbone representations and discriminative tasks caused by "compressing the entire sequence into a scalar via fixed pooling (e.g., last-token)"—AdaJudge proposes a gated refinement block to reshape representations into a discriminative space. It then utilizes "domain-aware gated multi-perspective pooling" to dynam…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - Mixture-of-Pooling
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Adaptive Pooling"
+  - "Mixture-of-Pooling"
+  - "Representation Refinement"
+  - "Preference Learning"
 date: 2026-05-08
-content_hash: 2e1022be6565af1b
+content_hash: c048df53dbaa7da8
 ---
+
 # AdaJudge: Adaptive Multi-Perspective Judging for Reward Modeling
 
 **Conference**: ACL 2026  
@@ -141,8 +146,8 @@ Ablations on Qwen3-4B compared four aggregation strategies (Table 2) and validat
 ## Related Papers
 
 - [\[ACL 2026\] AgentV-RL: Scaling Reward Modeling with Agentic Verifier](agentv-rl_scaling_reward_modeling_with_agentic_verifier.md)
+- [\[ICLR 2026\] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary](../../ICLR2026/llm_alignment/bradley-terry_and_multi-objective_reward_modeling_are_complementary.md)
 - [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)
-- [\[ACL 2025\] AMoPO: Adaptive Multi-objective Preference Optimization without Reward Models and Reference Models](../../ACL2025/llm_alignment/amopo_adaptive_multi-objective_preference_optimization_without_reward_models_and.md)
 - [\[ACL 2026\] ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System](ares_adaptive_red-teaming_and_end-to-end_repair_of_policy-reward_system.md)
 - [\[ACL 2026\] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization](maestro_meta-learning_adaptive_estimation_of_scalarization_trade-offs_for_reward.md)
 

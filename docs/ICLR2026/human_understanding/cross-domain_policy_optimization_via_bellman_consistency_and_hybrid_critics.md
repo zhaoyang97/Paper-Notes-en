@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] The Q Avatar framework is proposed to quantify source model transferability via cross-domain Bellman consistency. By utilizing an adaptive, hyperparameter-free weighting function to hybridize source and target domain Q-functions, reliable knowledge transfer is achieved in cross-domain RL with different state-action spa
+  [ICLR 2026][Human Understanding][Cross-domain RL] The Q Avatar framework is proposed to quantify source model transferability via cross-domain Bellman consistency. By utilizing an adaptive, hyperparameter-free weighting function to hybridize source and target domain Q-functions, reliable knowledge transfer is achieved in cross-domain RL with different state-action spaces, guaranteeing no negative transfer regardless of source model quality or domain similarity.
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Cross-domain RL"
+  - "Bellman consistency"
+  - "Hybrid Critic"
+  - "Q-function transfer"
+  - "Negative transfer protection"
 date: 2026-05-08
-content_hash: 0f1099d628f54208
+content_hash: 1119c7b15c7b6139
 ---
+
 # Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics
 
 **Conference**: ICLR 2026  
@@ -139,8 +145,8 @@ In the best case, it requires only 44% of the environment steps compared to SAC 
 - [\[CVPR 2026\] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](../../CVPR2026/human_understanding/hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)
 - [\[ICLR 2026\] Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy](human-object_interaction_via_automatically_designed_vlm-guided_motion_policy.md)
 - [\[CVPR 2026\] Through the Frequency Lens: Cross-Domain Generalisable Gaze Estimation with Adaptive Modulation](../../CVPR2026/human_understanding/through_the_frequency_lens_cross-domain_generalisable_gaze_estimation_with_adapt.md)
-- [\[NeurIPS 2025\] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation](../../NeurIPS2025/human_understanding/a_generalized_label_shift_perspective_for_crossdomain_gaze_e.md)
 - [\[CVPR 2026\] Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification](../../CVPR2026/human_understanding/towards_cross-modal_preservation_consistency_and_alignment_for_privacy-preservin.md)
+- [\[NeurIPS 2025\] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation](../../NeurIPS2025/human_understanding/a_generalized_label_shift_perspective_for_crossdomain_gaze_e.md)
 
 </div>
 

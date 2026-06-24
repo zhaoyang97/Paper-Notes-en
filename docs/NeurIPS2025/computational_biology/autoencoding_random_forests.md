@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Autoencoding Random Forests
 description: >-
-  [NeurIPS 2025][Computational Biology][Random Forests] RFAE is the first principled encode-decode framework for random forests. It exploits the positive-definiteness and universality of the RF kernel to derive low-dimensi…
+  [NeurIPS 2025][Computational Biology][Random Forests] RFAE is the first principled encode-decode framework for random forests. It exploits the positive-definiteness and universality of the RF kernel to derive low-dimensional encodings via diffusion-map spectral decomposition, and decodes back to the original feature space through k-NN regression in leaf-node space. Across 20 tabular datasets, RFAE achieves an average reconstruction rank of 1.80…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Spectral Decomposition"
   - "Tabular Data"
 date: 2026-05-08
-content_hash: 6d3baf8807518713
+content_hash: 4ab59fbc40fe0f5c
 ---
 
 # Autoencoding Random Forests

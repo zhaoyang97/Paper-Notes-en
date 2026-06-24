@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper proposes the Mistake Attribution (MATT) task, which attributes execution errors in egocentric videos to three dimensions: semantic (which instruction component was violated), temporal (which frame contains the Point of No Return, PNR), and spatial (where the error region is in the PNR frame). Through the Mis
+  [CVPR 2026][Video Understanding][Mistake Attribution] This paper proposes the Mistake Attribution (MATT) task, which attributes execution errors in egocentric videos to three dimensions: semantic (which instruction component was violated), temporal (which frame contains the Point of No Return, PNR), and spatial (where the error region is in the PNR frame). Through the MisEngine data engine, large-scale mistake samples are automatically constructed from existing action dataset…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Mistake Attribution"
+  - "Egocentric Video"
+  - "Semantic Role Labeling"
+  - "Spatio-Temporal Localization"
+  - "Instruction Alignment"
 date: 2026-05-08
-content_hash: 4cf8bd44cfe2911c
+content_hash: 30435286c7d0a238
 ---
+
 # Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos
 
 **Conference**: CVPR 2026  
@@ -134,15 +140,16 @@ The total loss is $\mathcal{L} = \mathcal{L}_S + \mathcal{L}_T + \mathcal{L}_{sp
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](../../ICCV2025/video_understanding/fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
+- [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
+- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
 - [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
 - [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)
-- [\[CVPR 2026\] Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding](minerva-ego_spatiotemporal_hints_for_egocentric_video_understanding.md)
-- [\[CVPR 2026\] Text-guided Fine-Grained Video Anomaly Understanding](text-guided_fine-grained_video_anomaly_understanding.md)
 
 </div>
 

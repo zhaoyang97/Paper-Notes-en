@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semi-Supervised Conformal Prediction With Unlabeled Nonconformity Score
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] The SemiCP framework is proposed to integrate unlabeled data into the conformal prediction calibration process via Nearest Neighbor Matching (NNM) scores. This reduces the average coverage gap by up to 77% when labeled data is extremely scarce, while simultaneously shrinking the size of prediction sets.
+  [CVPR 2026][Optimization][Conformal prediction] The SemiCP framework is proposed to integrate unlabeled data into the conformal prediction calibration process via Nearest Neighbor Matching (NNM) scores. This reduces the average coverage gap by up to 77% when labeled data is extremely scarce, while simultaneously shrinking the size of prediction sets.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Optimization"
+  - "Conformal prediction"
+  - "semi-supervised learning"
+  - "uncertainty quantification"
+  - "prediction sets"
+  - "nearest neighbor matching"
 date: 2026-05-08
-content_hash: f93d8d271adbf278
+content_hash: 2bf0199c42ab982c
 ---
+
 # Semi-Supervised Conformal Prediction With Unlabeled Nonconformity Score
 
 **Conference**: CVPR 2026  
@@ -148,14 +154,13 @@ The theoretical guarantees (coverage lower bounds and convergence rates) ensure 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Conformal Prediction Adaptive to Unknown Subpopulation Shifts](../../ICLR2026/optimization/conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)
 - [\[ICML 2025\] Conformal Prediction as Bayesian Quadrature](../../ICML2025/optimization/conformal_prediction_as_bayesian_quadrature.md)
 - [\[ICML 2025\] On Temperature Scaling and Conformal Prediction of Deep Classifiers](../../ICML2025/optimization/on_temperature_scaling_and_conformal_prediction_of_deep_classifiers.md)
-- [\[NeurIPS 2025\] Conformal Prediction in The Loop: A Feedback-Based Uncertainty Model for Trajectory Optimization](../../NeurIPS2025/optimization/conformal_prediction_in_the_loop_a_feedback-based_uncertainty_model_for_trajecto.md)
+- [\[NeurIPS 2025\] Conformal Prediction for Causal Effects of Continuous Treatments](../../NeurIPS2025/optimization/conformal_prediction_for_causal_effects_of_continuous_treatments.md)
+- [\[NeurIPS 2025\] One Sample is Enough to Make Conformal Prediction Robust](../../NeurIPS2025/optimization/one_sample_is_enough_to_make_conformal_prediction_robust.md)
 - [\[CVPR 2025\] Conformal Prediction for Zero-Shot Models](../../CVPR2025/optimization/conformal_prediction_for_zero-shot_models.md)
 
 </div>

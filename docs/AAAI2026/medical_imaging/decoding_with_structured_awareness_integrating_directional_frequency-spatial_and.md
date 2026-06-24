@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Medical image segmentation] This paper proposes a novel decoder framework for medical image segmentation comprising three modules: Adaptive Cross-Fusion Attention (ACFA) for directional aware…
+  [AAAI 2026][Medical Imaging][Medical image segmentation] This paper proposes a novel decoder framework for medical image segmentation comprising three modules: Adaptive Cross-Fusion Attention (ACFA) for directional awareness, Triple Feature Fusion Attention (TFFA) for spatial-frequency-wavelet fusion, and Structural-aware Multi-scale Masking Module (SMMM), achieving state-of-the-art performance across multiple benchmark datasets.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "directional-aware attention"
   - "multi-scale feature fusion"
 date: 2026-05-08
-content_hash: c5d854d9355637e3
+content_hash: b72df9d2619a2268
 ---
 
 # Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation
@@ -217,11 +217,11 @@ Optimizes skip connections between encoder and decoder:
 
 ## Related Papers
 
+- [\[CVPR 2025\] SACB-Net: Spatial-Awareness Convolutions for Medical Image Registration](../../CVPR2025/medical_imaging/sacb-net_spatial-awareness_convolutions_for_medical_image_registration.md)
 - [\[AAAI 2026\] FIA-Edit: Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing](fia-edit_frequency-interactive_attention_for_efficient_and_high-fidelity_inversi.md)
 - [\[AAAI 2026\] FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation](funkan_functional_kolmogorov-arnold_network_for_medical_image_enhancement_and_se.md)
 - [\[AAAI 2026\] MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging](mirnet_integrating_constrained_graph-based_reasoning_with_pre-training_for_diagn.md)
-- [\[AAAI 2026\] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach](rethinking_bias_in_generative_data_augmentation_for_medical_ai_a_frequency_recal.md)
-- [\[AAAI 2026\] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](q-fsru_quantum-augmented_frequency-spectral_fusion_for_medical_visual_question_a.md)
+- [\[ICLR 2026\] HFSTI-Net: Hierarchical Frequency-spatial-temporal Interactions for Video Polyp Segmentation](../../ICLR2026/medical_imaging/hfsti-net_hierarchical_frequency-spatial-temporal_interactions_for_video_polyp_s.md)
 
 </div>
 

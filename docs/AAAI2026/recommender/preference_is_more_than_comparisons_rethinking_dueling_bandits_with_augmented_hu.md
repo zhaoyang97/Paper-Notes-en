@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback
 description: >-
-  [AAAI 2026][Recommender Systems][Dueling Bandits] This paper proposes IPEA-HF, a model-free Dueling Bandit framework based on augmented human feedback. It integrates contextual similarity and dependency relations through…
+  [AAAI 2026][Recommender Systems][Dueling Bandits] This paper proposes IPEA-HF, a model-free Dueling Bandit framework based on augmented human feedback. It integrates contextual similarity and dependency relations through Augmented Confidence Bounds to calibrate uncertainty, achieving superior performance across multiple benchmarks including recommendation, multi-objective optimization, and LLM response optimization.
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Confidence Bounds"
   - "Multi-Objective Optimization"
 date: 2026-05-08
-content_hash: 936a2745abc52332
+content_hash: e57799911bf81e5c
 ---
 
 # Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback
@@ -202,9 +202,9 @@ DTS and IPEA-DTS achieve the best performance (stochastic strategies are more su
 
 - [\[AAAI 2026\] Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback](moral_change_or_noise_on_problems_of_aligning_ai_with_temporally_unstable_human_.md)
 - [\[ICML 2026\] T-POP: Test-Time Personalization with Online Preference Feedback](../../ICML2026/recommender/t-pop_test-time_personalization_with_online_preference_feedback.md)
+- [\[ICLR 2026\] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](../../ICLR2026/recommender/more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)
 - [\[ACL 2026\] SenseJudge: Human-Centric Preference-Driven Judgment Framework](../../ACL2026/recommender/sensejudge_human-centric_preference-driven_judgment_framework.md)
 - [\[ACL 2026\] Personalizing LLMs with Binary Feedback: A Preference-Corrected Optimization Framework](../../ACL2026/recommender/personalizing_llms_with_binary_feedback_a_preference-corrected_optimization_fram.md)
-- [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](../../ACL2026/recommender/mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HypDAE: Hyperbolic Diffusion Autoencoders for Hierarchical Few-shot Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Hyperbolic Space] This work combines the hierarchical representation learning capacity of hyperbolic space with the high-quality generative capability of diffusion autoencoders. By manipulat…
+  [ICCV 2025][Image Generation][Hyperbolic Space] This work combines the hierarchical representation learning capacity of hyperbolic space with the high-quality generative capability of diffusion autoencoders. By manipulating the radius and direction of latent codes within the Poincaré disk, it achieves controllable, diverse, and class-consistent few-shot image generation.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Few-shot Generation"
   - "Poincaré Disk"
 date: 2026-05-08
-content_hash: d737d978e9951567
+content_hash: fce96522100bae0b
 ---
 
 # HypDAE: Hyperbolic Diffusion Autoencoders for Hierarchical Few-shot Image Generation
@@ -164,11 +164,11 @@ Hyperbolic space representation reduces FID by 30.9%.
 
 ## Related Papers
 
-- [\[ICCV 2025\] Latent Diffusion Models with Masked AutoEncoders](latent_diffusion_models_with_masked_autoencoders.md)
+- [\[CVPR 2025\] DualAnoDiff: Dual-Interrelated Diffusion Model for Few-Shot Anomaly Image Generation](../../CVPR2025/image_generation/dualanodiff_few_shot_anomaly_image_generation.md)
 - [\[AAAI 2026\] Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval](../../AAAI2026/image_generation/hyperbolic_hierarchical_alignment_reasoning_network_for_text-3d_retrieval.md)
-- [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](../../CVPR2026/image_generation/uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
-- [\[ICML 2026\] Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation](../../ICML2026/image_generation/envisioning_beyond_the_few_disentangled_semantics_and_primitives_for_few-shot_at.md)
+- [\[ICCV 2025\] Latent Diffusion Models with Masked AutoEncoders](latent_diffusion_models_with_masked_autoencoders.md)
 - [\[ICLR 2026\] HierLoc: Hyperbolic Entity Embeddings for Hierarchical Visual Geolocation](../../ICLR2026/image_generation/hierloc_hyperbolic_entity_embeddings_for_hierarchical_visual_geolocation.md)
+- [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](../../CVPR2026/image_generation/uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
 
 </div>
 

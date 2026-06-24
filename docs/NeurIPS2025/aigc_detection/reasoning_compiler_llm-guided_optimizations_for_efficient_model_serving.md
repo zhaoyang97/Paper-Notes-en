@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reasoning Compiler: LLM-Guided Optimizations for Efficient Model Serving
 description: >-
-  [NeurIPS 2025][AIGC Detection][LLM-guided compilation] This paper proposes Reasoning Compiler, which models compiler optimization as a sequential decision-making process…
+  [NeurIPS 2025][AIGC Detection][LLM-guided compilation] This paper proposes Reasoning Compiler, which models compiler optimization as a sequential decision-making process, employing an LLM as a context-aware proposal engine combined with MCTS to balance exploration and exploitation. The approach achieves an average 5.0× speedup across 5 representative benchmarks and 5 hardware platforms, with 10.8× better sampling efficiency than TVM's evolutionary search.
 tags:
   - "NeurIPS 2025"
   - "AIGC Detection"
@@ -12,7 +12,7 @@ tags:
   - "neural compiler"
   - "sampling efficiency"
 date: 2026-05-08
-content_hash: 0b44a763e148d107
+content_hash: 5b2cd52b15a36923
 ---
 
 # Reasoning Compiler: LLM-Guided Optimizations for Efficient Model Serving
@@ -123,9 +123,9 @@ Program optimization is modeled as a finite-horizon MDP: $\mathcal{M} = \langle 
 
 - [\[NeurIPS 2025\] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text](asciibench_evaluating_language-model-based_understanding_of_visually-oriented_te.md)
 - [\[ICML 2026\] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection](../../ICML2026/aigc_detection/core_conflict-oriented_reasoning_for_general_multimodal_manipulation_detection.md)
+- [\[ICLR 2026\] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images](../../ICLR2026/aigc_detection/semantic_visual_anomaly_detection_and_reasoning_in_ai-generated_images.md)
 - [\[NeurIPS 2025\] CLAWS: Creativity Detection for LLM-Generated Solutions Using Attention Window of Sections](clawscreativity_detection_for_llm-generated_solutions_using_attention_window_of_.md)
-- [\[NeurIPS 2025\] Classical Planning with LLM-Generated Heuristics: Challenging the State of the Art with Python Code](classical_planning_with_llm-generated_heuristics_challenging_the_state_of_the_ar.md)
-- [\[NeurIPS 2025\] Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content](can_llms_write_faithfully_an_agent-based_evaluation_of_llm-generated_islamic_con.md)
+- [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](../../ICLR2026/aigc_detection/fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
 
 </div>
 

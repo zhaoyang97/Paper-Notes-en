@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] FlashVID is proposed as a training-free inference acceleration framework for Video Large Language Models (VLLMs). By jointly modeling spatial and temporal redundancy through Tree-based Spatiotemporal Token Merging (TSTM), it maintains 99.1% of LLaVA-OneVision's performance while retaining only 10% of visual tokens. Fur
+  [ICLR 2026 Oral][Video Understanding][Visual Token Compression] FlashVID is proposed as a training-free inference acceleration framework for Video Large Language Models (VLLMs). By jointly modeling spatial and temporal redundancy through Tree-based Spatiotemporal Token Merging (TSTM), it maintains 99.1% of LLaVA-OneVision's performance while retaining only 10% of visual tokens. Furthermore, it enables a 10x increase in input frame capacity for Qwen2.5-VL.
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026 Oral"
+  - "Video Understanding"
+  - "Visual Token Compression"
+  - "Spatiotemporal Redundancy"
+  - "Token Merging"
+  - "Video Large Language Models"
+  - "Training-free Acceleration"
 date: 2026-05-08
-content_hash: d6777b2544b178f8
+content_hash: fb5ac1fb29eb34ab
 ---
+
 # FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging
 
 **Conference**: ICLR 2026 Oral  
@@ -138,8 +144,8 @@ Average performance across 5 video understanding benchmarks using LLaVA-OneVisio
 
 - [\[CVPR 2026\] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models](../../CVPR2026/video_understanding/token_reduction_via_local_and_global_contexts_optimization_for_efficient_video_l.md)
 - [\[ICML 2026\] OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models](../../ICML2026/video_understanding/omnisift_modality-asymmetric_token_compression_for_efficient_omni-modal_large_la.md)
-- [\[ICLR 2026\] LLaVAction: Evaluating and Training Multi-modal Large Language Models for Action Understanding](llavaction_evaluating_and_training_multi-modal_large_language_models_for_action_.md)
 - [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](../../CVPR2026/video_understanding/unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
+- [\[ICLR 2026\] LLaVAction: Evaluating and Training Multi-modal Large Language Models for Action Understanding](llavaction_evaluating_and_training_multi-modal_large_language_models_for_action_.md)
 - [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
 
 </div>

@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Composition-Grounded Data Synthesis for Visual Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][MLLM] COGS decomposes a small set of seed questions into atomic "perception + reasoning" factors, then recombines these factors with new images to generate large-scale synthetic QA pairs containing sub-questions/intermediate answers. Using factor-level process rewards for reinforcement learning, it enables MLLMs to acquire t
+  [ICLR 2026][VLM Reasoning][MLLM] COGS decomposes a small set of seed questions into atomic "perception + reasoning" factors, then recombines these factors with new images to generate large-scale synthetic QA pairs containing sub-questions/intermediate answers. Using factor-level process rewards for reinforcement learning, it enables MLLMs to acquire transferable complex reasoning capabilities in "image-rich but annotation-scarce" artificial image domains like charts and webpa…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - MLLM
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "MLLM"
+  - "Visual Reasoning"
+  - "Data Synthesis"
+  - "Compositionality"
+  - "Chart QA"
+  - "GRPO"
+  - "Process Reward"
 date: 2026-05-08
-content_hash: c6547aaaa24a0301
+content_hash: 1467b6e17f32b1dd
 ---
+
 # Composition-Grounded Data Synthesis for Visual Reasoning
 
 **Conference**: ICLR 2026  
@@ -138,10 +144,10 @@ ProcessRM-sum slightly decreased performance, while ProcessRM-max provided a sta
 ## Related Papers
 
 - [\[ICLR 2026\] ReWatch-R1: Boosting Complex Video Reasoning in Large Vision-Language Models through Agentic Data Synthesis](rewatch-r1_boosting_complex_video_reasoning_in_large_vision-language_models_thro.md)
-- [\[ICLR 2026\] VGR: Visual Grounded Reasoning](vgr_visual_grounded_reasoning.md)
 - [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](../../CVPR2026/vlm_reasoning/crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
+- [\[ICLR 2026\] VGR: Visual Grounded Reasoning](vgr_visual_grounded_reasoning.md)
 - [\[ICLR 2026\] Latent Visual Reasoning](latent_visual_reasoning.md)
-- [\[ICLR 2026\] Mixture-of-Visual-Thoughts: Exploring Context-Adaptive Reasoning Mode Selection for General Visual Reasoning](mixture-of-visual-thoughts_exploring_context-adaptive_reasoning_mode_selection_f.md)
+- [\[ICLR 2026\] Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning](rex-thinker_grounded_object_referring_via_chain-of-thought_reasoning.md)
 
 </div>
 

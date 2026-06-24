@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Variation-Aware Vision Token Dropping for Faster Large Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Token Compression] V2Drop is proposed, which for the first time adopts a perspective of token variation. By progressively dropping "lazy" vision tokens with minimal variation within the LLM, it achieves training-free, position-bias-free LVLM inference acceleration compatible with efficient operators. It retains 94.0% and 98.6% of origina
+  [CVPR2026][Multimodal Efficiency][token compression] V2Drop is proposed, which for the first time adopts a perspective of token variation. By progressively dropping "lazy" vision tokens with minimal variation within the LLM, it achieves training-free, position-bias-free LVLM inference acceleration compatible with efficient operators. It retains 94.0% and 98.6% of original performance in image and video understanding tasks respectively, while reducing LLM generation latency by…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Token Compression
+  - "CVPR2026"
+  - "Multimodal Efficiency"
+  - "token compression"
+  - "vision token pruning"
+  - "LVLM acceleration"
+  - "variation-aware"
+  - "training-free inference acceleration"
+  - "FlashAttention compatibility"
 date: 2026-05-08
-content_hash: af4a1730d768c790
+content_hash: 0fa7226e2b9dd159
 ---
+
 # Variation-Aware Vision Token Dropping for Faster Large Vision-Language Models
 
 **Conference**: CVPR2026  
@@ -128,11 +134,11 @@ V2Drop is the only method that reduces both latency and VRAM. While SparseVLM pr
 
 ## Related Papers
 
-- [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
-- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
-- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](dynamic_token_reweighting_for_robust_vision-language_models.md)
-- [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
-- [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
+- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
+- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
 
 </div>
 

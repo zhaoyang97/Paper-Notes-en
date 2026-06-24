@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper reveals that the "safety" in current VLM safety fine-tuning (SFT) is actually a **safety mirage**—models learn a spurious correlation between "specific start words $\leftrightarrow$ refusal labels" rather than true suppression of harmful knowledge. Consequently, replacing a single word in a query (e.g., "Sha
+  [ICLR 2026][LLM Safety][VLM Safety] This paper reveals that the "safety" in current VLM safety fine-tuning (SFT) is actually a **safety mirage**—models learn a spurious correlation between "specific start words $\leftrightarrow$ refusal labels" rather than true suppression of harmful knowledge. Consequently, replacing a single word in a query (e.g., "Share" $\to$ "What") can trigger a jailbreak or cause over-refusal. The authors propose using **Machine Unlearning (RMU / NPO)*…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "VLM Safety"
+  - "Safety Fine-Tuning"
+  - "Spurious Correlation"
+  - "Machine Unlearning"
+  - "Jailbreak Attack"
 date: 2026-05-08
-content_hash: 94b28b8830cb116f
+content_hash: b14235f5e14bb162
 ---
+
 # Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning
 
 **Conference**: ICLR 2026  
@@ -149,9 +155,9 @@ This confirms the mechanism: SFT relies on "learning to refuse" (high RR), which
 
 - [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
 - [\[ICLR 2026\] Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs](strategic_dishonesty_can_undermine_ai_safety_evaluations_of_frontier_llms.md)
+- [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
 - [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](ofmu_optimization-driven_framework_for_machine_unlearning.md)
-- [\[ICLR 2026\] DiffuGuard: How Intrinsic Safety is Lost and Found in Diffusion Large Language Models](diffuguard_how_intrinsic_safety_is_lost_and_found_in_diffusion_large_language_mo.md)
-- [\[ICLR 2026\] Teach to Reason Safely: Policy-Guided Safety Tuning for MLRMs](teach_to_reason_safely_policy-guided_safety_tuning_for_mlrms.md)
+- [\[ICLR 2026\] SafeDialBench: A Fine-grained Safety Evaluation Benchmark for LLMs in Multi-turn Dialogues and Diverse Jailbreak Attacks](safedialbench_a_fine-grained_safety_evaluation_benchmark_for_large_language_mode.md)
 
 </div>
 

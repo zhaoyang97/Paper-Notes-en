@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bi-Level Contextual Bandits for Individualized Resource Allocation under Delayed Feedback
 description: >-
-  [AAAI 2026][Reinforcement Learning][Contextual Bandits] This paper proposes MetaCUB — a bi-level contextual bandit framework for individualized resource allocation under delayed feedback, dynamic cohorts…
+  [AAAI 2026][Reinforcement Learning][Contextual Bandits] This paper proposes MetaCUB — a bi-level contextual bandit framework for individualized resource allocation under delayed feedback, dynamic cohorts, cooldown constraints, and fairness requirements. The meta-level optimizes subgroup budget allocation to ensure fairness, while the base-level applies a UCB strategy to select the most promising individuals within each subgroup.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Fairness"
   - "Bi-Level Optimization"
 date: 2026-05-08
-content_hash: 3d100075f3a0dc12
+content_hash: 85844b0c3802c4cd
 ---
 
 # Bi-Level Contextual Bandits for Individualized Resource Allocation under Delayed Feedback
@@ -173,9 +173,9 @@ A fairness ratio close to 1.0 indicates balanced allocation. MetaCUB achieves ra
 
 - [\[ICLR 2026\] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV](../../ICLR2026/reinforcement_learning/virne_a_comprehensive_benchmark_for_rl-based_network_resource_allocation_in_nfv.md)
 - [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](../../NeurIPS2025/reinforcement_learning/bandit_and_delayed_feedback_in_online_structured_prediction.md)
+- [\[NeurIPS 2025\] Exploration via Feature Perturbation in Contextual Bandits](../../NeurIPS2025/reinforcement_learning/exploration_via_feature_perturbation_in_contextual_bandits.md)
 - [\[ICML 2026\] Parameter-free Dynamic Regret: Time-varying Movement Costs, Delayed Feedback, and Memory](../../ICML2026/reinforcement_learning/parameter-free_dynamic_regret_time-varying_movement_costs_delayed_feedback_and_m.md)
 - [\[ICLR 2026\] Single Index Bandits: Generalized Linear Contextual Bandits with Unknown Reward Functions](../../ICLR2026/reinforcement_learning/single_index_bandits_generalized_linear_contextual_bandits_with_unknown_reward_f.md)
-- [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](../../NeurIPS2025/reinforcement_learning/variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IDER: IDempotent Experience Replay for Reliable Continual Learning
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper introduces idempotence into continual learning through two components: a standard idempotent module and an idempotent distillation module. By forcing the model to maintain output self-consistency when learning new tasks, it enhances prediction reliability (reducing calibration error) while significantly miti
+  [ICLR 2026][Model Compression][Continual Learning] This paper introduces idempotence into continual learning through two components: a standard idempotent module and an idempotent distillation module. By forcing the model to maintain output self-consistency when learning new tasks, it enhances prediction reliability (reducing calibration error) while significantly mitigating catastrophic forgetting.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Idempotence"
+  - "Experience Replay"
+  - "Calibration Error"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 2eddf7f4b84622c5
+content_hash: cfe1b0f7a44e3de7
 ---
+
 # IDER: IDempotent Experience Replay for Reliable Continual Learning
 
 **Conference**: ICLR 2026  
@@ -132,11 +138,11 @@ The total loss is a weighted sum: $\mathcal{L}_{IDER} = \mathcal{L}_{ice} + \alp
 
 ## Related Papers
 
-- [\[ICLR 2026\] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity](null-space_filtering_for_data-free_continual_model_merging_preserving_stability_.md)
-- [\[ICLR 2026\] Biologically Plausible Learning via Bidirectional Spike-Based Distillation](biologically_plausible_learning_via_bidirectional_spike-based_distillation.md)
-- [\[ICLR 2026\] LeSTD: LLM Compression via Learning-based Sparse Tensor Decomposition](lestd_llm_compression_via_learning-based_sparse_tensor_decomposition.md)
-- [\[ICLR 2026\] Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size](topology_and_geometry_of_the_learning_space_of_relu_networks_connectivity_and_si.md)
-- [\[ICLR 2026\] Learning Semi-Structured Sparsity for LLMs via Shared and Context-Aware Hypernetwork](learning_semi-structured_sparsity_for_llms_via_shared_and_context-aware_hypernet.md)
+- [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
+- [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](quantized_gradient_projection_for_memory-efficient_continual_learning.md)
+- [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](rethinking_continual_learning_with_progressive_neural_collapse.md)
+- [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](../../AAAI2026/model_compression/beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
+- [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](revisiting_weight_regularization_for_low-rank_continual_learning.md)
 
 </div>
 

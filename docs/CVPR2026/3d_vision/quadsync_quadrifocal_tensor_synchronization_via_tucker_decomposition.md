@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] QuadSync: Quadrifocal Tensor Synchronization via Tucker Decomposition
 description: >-
-  [CVPR 2026][3D Vision][Structure from Motion] Ours proposes QuadSync, the first global synchronization algorithm for quadrifocal tensors. By constructing a block quadrifocal tensor and proving it admits a Tucker decomposition with multilinear rank $(4,4,4,4)$, the method utilizes an ADMM-IRLS optimization framework to recover camera poses from four-view measuremen
+  [CVPR 2026][3D Vision][Quadrifocal Tensor] Ours proposes QuadSync, the first global synchronization algorithm for quadrifocal tensors. By constructing a block quadrifocal tensor and proving it admits a Tucker decomposition with multilinear rank $(4,4,4,4)$, the method utilizes an ADMM-IRLS optimization framework to recover camera poses from four-view measurements. It achieves superior synchronization accuracy compared to two-view and three-view methods in dense-view scenarios…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Structure from Motion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Quadrifocal Tensor"
+  - "Tucker Decomposition"
+  - "Structure from Motion"
+  - "Global Synchronization"
+  - "Multi-view Geometry"
 date: 2026-05-08
-content_hash: e30edbd78c6248ec
+content_hash: 34b9f0f28806fb0a
 ---
+
 # QuadSync: Quadrifocal Tensor Synchronization via Tucker Decomposition
 
 **Conference**: CVPR 2026  
@@ -176,11 +181,11 @@ Quadrifocal tensors lack a direct robust estimator like RANSAC. To prevent bad q
 
 ## Related Papers
 
+- [\[CVPR 2026\] Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery](reparameterized_tensor_ring_functional_decomposition_for_multi-dimensional_data_.md)
+- [\[CVPR 2026\] Learning Convex Decomposition via Feature Fields](learning_convex_decomposition_via_feature_fields.md)
 - [\[CVPR 2026\] LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes](luxremix_lighting_decomposition_and_remixing_for_indoor_scenes.md)
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
-- [\[CVPR 2026\] Semantic Foam: Unifying Spatial and Semantic Scene Decomposition](semantic_foam_unifying_spatial_and_semantic_scene_decomposition.md)
-- [\[ICCV 2025\] Proactive Scene Decomposition and Reconstruction](../../ICCV2025/3d_vision/proactive_scene_decomposition_and_reconstruction.md)
-- [\[NeurIPS 2025\] VisualSync: Multi-Camera Synchronization via Cross-View Object Motion](../../NeurIPS2025/3d_vision/visual_sync_multi-camera_synchronization_via_cross-view_object_motion.md)
+- [\[CVPR 2026\] Multi-modal Frequency Decomposition Network for Semantic Scene Completion](multi-modal_frequency_decomposition_network_for_semantic_scene_completion.md)
+- [\[CVPR 2026\] X-Part: High Fidelity And Structure Coherent Shape Decomposition And Completion](x-part_high_fidelity_and_structure_coherent_shape_decomposition_and_completion.md)
 
 </div>
 

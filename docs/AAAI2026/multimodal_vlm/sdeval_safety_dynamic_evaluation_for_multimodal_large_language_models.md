@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][MLLM safety] This paper proposes SDEval, the first safety dynamic evaluation framework for MLLMs. By applying text dynamics (6 strategies), image dynamics (2 categories)…
+  [AAAI 2026][Multimodal VLM][MLLM safety] This paper proposes SDEval, the first safety dynamic evaluation framework for MLLMs. By applying text dynamics (6 strategies), image dynamics (2 categories), and cross-modal dynamics (4 strategies), SDEval generates variant samples of controllable complexity from existing safety benchmarks. On MLLMGuard and VLSBench, it reduces the safety rate of InternVL-3-78B by nearly 10%, effectively mitigating data leakage and exposing model safet…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "jailbreak attacks"
   - "safety benchmark"
 date: 2026-05-08
-content_hash: 84fdc8592e3b8220
+content_hash: a57afd240addba15
 ---
 
 # SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models
@@ -150,11 +150,11 @@ On MLLMGuard, two metrics are used: ASD (Attack Success Degree, ↓) and PAR (Pe
 
 ## Related Papers
 
-- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](../../CVPR2026/multimodal_vlm/evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
 - [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](../../ICCV2025/multimodal_vlm/simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping](../../CVPR2026/multimodal_vlm/modes_accelerating_mixture-of-experts_multimodal_large_language_models_via_dynam.md)
-- [\[NeurIPS 2025\] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](../../NeurIPS2025/multimodal_vlm/video-safetybench_a_benchmark_for_safety_evaluation_of_video_lvlms.md)
+- [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
+- [\[ICLR 2026\] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/mme-emotion_a_holistic_evaluation_benchmark_for_emotional_intelligence_in_multim.md)
 - [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
+- [\[AAAI 2026\] SpeakerLM: End-to-End Versatile Speaker Diarization and Recognition with Multimodal Large Language Models](speakerlm_end-to-end_versatile_speaker_diarization_and_recognition_with_multimod.md)
 
 </div>
 

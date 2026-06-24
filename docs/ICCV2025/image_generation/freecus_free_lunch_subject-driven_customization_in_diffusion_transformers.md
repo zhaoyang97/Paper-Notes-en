@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers
 description: >-
-  [ICCV 2025][Image Generation][Subject-driven customization] This paper proposes FreeCus, a completely training-free subject-driven customization framework that activates the intrinsic zero-shot subject customization capa…
+  [ICCV 2025][Image Generation][Subject-driven customization] This paper proposes FreeCus, a completely training-free subject-driven customization framework that activates the intrinsic zero-shot subject customization capability of Diffusion Transformers (DiT) through three innovations: pivotal attention sharing, an upgraded dynamic shifting mechanism for fine-grained feature extraction, and multimodal large language model (MLLM) semantic enhancement. FreeCus achieves results c…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Attention sharing"
   - "Zero-shot generation"
 date: 2026-05-08
-content_hash: 2d9c81b29c718c42
+content_hash: f1d50fd1706b72b5
 ---
 
 # FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers
@@ -135,7 +135,7 @@ FreeCus is completely training-free and requires no loss function design. All op
 - [\[NeurIPS 2025\] OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions](../../NeurIPS2025/image_generation/omnivcus_feedforward_subject-driven_video_customization_with_multimodal_control_.md)
 - [\[ICCV 2025\] DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers](ditfastattnv2_head-wise_attention_compression_for_multi-modality_diffusion_trans.md)
 - [\[ICCV 2025\] FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion](freescale_unleashing_the_resolution_of_diffusion_models_via_tuning-free_scale_fu.md)
-- [\[ICCV 2025\] Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification](towards_robust_defense_against_customization_via_protective_perturbation_resista.md)
+- [\[NeurIPS 2025\] Shortcutting Pre-trained Flow Matching Diffusion Models is Almost Free Lunch](../../NeurIPS2025/image_generation/shortcutting_pre-trained_flow_matching_diffusion_models_is_almost_free_lunch.md)
 - [\[ICCV 2025\] IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features](introstyle_training-free_introspective_style_attribution_using_diffusion_feature.md)
 
 </div>

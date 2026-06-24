@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients
 description: >-
-  [AAAI2026][Reinforcement Learning][optimization-based control] This paper proposes DiffOP, a framework that treats optimization-based control policies (e.g., MPC) as differentiable modules…
+  [AAAI2026][Reinforcement Learning][optimization-based control] This paper proposes DiffOP, a framework that treats optimization-based control policies (e.g., MPC) as differentiable modules, derives analytic policy gradients via implicit differentiation to enable end-to-end reinforcement learning training, and provides the first non-asymptotic convergence guarantee for this setting.
 tags:
   - "AAAI2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "model predictive control"
   - "bilevel optimization"
 date: 2026-05-08
-content_hash: 55d0af649272c84b
+content_hash: 776b0f35e1125763
 ---
 
 # DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients
@@ -174,11 +174,11 @@ DiffOP achieves the best transient cost among all methods, with steady-state cos
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flow Matching Policy Gradients](../../ICLR2026/reinforcement_learning/flow_matching_policy_gradients.md)
 - [\[AAAI 2026\] Behaviour Policy Optimization: Provably Lower Variance Return Estimates for Off-Policy Reinforcement Learning](behaviour_policy_optimization_provably_lower_variance_return_estimates_for_off-p.md)
+- [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](../../ICLR2026/reinforcement_learning/does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
+- [\[ICLR 2026\] Efficient Morphology-Control Co-Design via Stackelberg Proximal Policy Optimization](../../ICLR2026/reinforcement_learning/efficient_morphology-control_co-design_via_stackelberg_proximal_policy_optimizat.md)
 - [\[AAAI 2026\] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning](hcpo_hierarchical_conductor-based_policy_optimization_in_multi-agent_reinforceme.md)
-- [\[ICML 2026\] Chebyshev Policies and the Mountain Car Problem: Reinforcement Learning for Low-Dimensional Control Tasks](../../ICML2026/reinforcement_learning/chebyshev_policies_and_the_mountain_car_problem_reinforcement_learning_for_low-d.md)
-- [\[ICML 2026\] Randomized Advantage Transformation (RAT): Computing Natural Policy Gradients via Direct Backpropagation](../../ICML2026/reinforcement_learning/randomized_advantage_transformation_rat_computing_natural_policy_gradients_via_d.md)
-- [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
 
 </div>
 

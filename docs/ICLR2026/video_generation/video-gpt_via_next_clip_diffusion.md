@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Video-GPT via Next Clip Diffusion
 description: >-
-  [ICLR 2026][Video Generation][next clip diffusion] By analogizing a "clip in a video" to a "word in language," this paper proposes the "next clip diffusion" pre-training paradigm—using parallel diffusion denoising within clips and autoregressive conditioning between clips. This allows a naive Transformer to perform self-supervised pre-training on 70 million unlabeled v
+  [ICLR 2026][Video Generation][Generative Video Pre-training] By analogizing a "clip in a video" to a "word in language," this paper proposes the "next clip diffusion" pre-training paradigm—using parallel diffusion denoising within clips and autoregressive conditioning between clips. This allows a naive Transformer to perform self-supervised pre-training on 70 million unlabeled videos, significantly outperforming Kling (23.64) and Wan (20.89) with a score of 34.97 on the Physi…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - next clip diffusion
-  - World Models
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Generative Video Pre-training"
+  - "next clip diffusion"
+  - "autoregressive-diffusion hybrid"
+  - "world models"
+  - "video prediction"
 date: 2026-05-08
-content_hash: 6f6e6adafeaf5946
+content_hash: e0bf47a91ffedbeb
 ---
+
 # Video-GPT via Next Clip Diffusion
 
 **Conference**: ICLR 2026  
@@ -153,8 +157,8 @@ Video-GPT leads in both "deterministic physics" (Physics-IQ) and "high-uncertain
 - [\[CVPR 2026\] Video-as-Answer: Predict and Generate Next Video Event with Joint-GRPO](../../CVPR2026/video_generation/video-as-answer_predict_and_generate_next_video_event_with_joint-grpo.md)
 - [\[CVPR 2026\] TempoMaster: Efficient Long Video Generation via Next-Frame-Rate Prediction](../../CVPR2026/video_generation/tempomaster_efficient_long_video_generation_via_next-frame-rate_prediction.md)
 - [\[CVPR 2025\] Motion Modes: What Could Happen Next?](../../CVPR2025/video_generation/motion_modes_what_could_happen_next.md)
+- [\[ICLR 2026\] Animating the Uncaptured: Humanoid Mesh Animation with Video Diffusion Models](animating_the_uncaptured_humanoid_mesh_animation_with_video_diffusion_models.md)
 - [\[ICLR 2026\] Vid2World: Crafting Video Diffusion Models to Interactive World Models](vid2world_crafting_video_diffusion_models_to_interactive_world_models.md)
-- [\[ICLR 2026\] Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling](geometry_forcing_marrying_video_diffusion_and_3d_representation_for_consistent_w.md)
 
 </div>
 

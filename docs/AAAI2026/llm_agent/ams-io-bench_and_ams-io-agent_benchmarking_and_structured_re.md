@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AMS-IO-Bench and AMS-IO-Agent: Benchmarking and Structured Reasoning for Analog and Mixed-Signal Integrated Circuit Input/Output Design
 description: >-
-  [AAAI 2026][LLM Agent][AMS IC] This paper proposes AMS-IO-Agent, a domain-specific LLM-based agent that transforms natural language design intent into production-ready analog and mixed-signal IC I/O ring designs via a st…
+  [AAAI 2026][LLM Agent][AMS IC] This paper proposes AMS-IO-Agent, a domain-specific LLM-based agent that transforms natural language design intent into production-ready analog and mixed-signal IC I/O ring designs via a structured Intent Graph and a domain knowledge base. It also introduces AMS-IO-Bench, the first benchmark for AMS I/O ring automation. The agent-generated I/O ring is validated in a 28nm CMOS tape-out and demonstrated to be directly applicable to real chip fabri…
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "EDA Automation"
   - "Structured Reasoning"
 date: 2026-05-08
-content_hash: 46ab77c34a3b3a56
+content_hash: af09bf807fb44313
 ---
 
 # AMS-IO-Bench and AMS-IO-Agent: Benchmarking and Structured Reasoning for Analog and Mixed-Signal Integrated Circuit Input/Output Design
@@ -116,10 +116,10 @@ Intent Graph accuracy → Shape Score (VLM visual evaluation) → DRC pass rate 
 ## Related Papers
 
 - [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
-- [\[AAAI 2026\] Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design](physics-informed_autonomous_llm_agents_for_explainable_power_electronics_modulat.md)
 - [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](../../ICLR2026/llm_agent/mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
-- [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
 - [\[AAAI 2026\] Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents](structured_personalization_modeling_constraints_as_matroids_for_data-minimal_llm.md)
+- [\[AAAI 2026\] Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design](physics-informed_autonomous_llm_agents_for_explainable_power_electronics_modulat.md)
+- [\[ICLR 2026\] Terminal-Bench: Benchmarking Agents on Difficult, Real-World Tasks in the Command Line Interface](../../ICLR2026/llm_agent/terminal-bench_benchmarking_agents_on_hard_realistic_tasks_in_command_line_inter.md)
 
 </div>
 

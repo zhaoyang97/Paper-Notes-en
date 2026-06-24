@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Your One-Stop Solution for AI-Generated Video Detection
 description: >-
-  [CVPR 2026][Video Understanding][Benchmark] The authors construct AIBD-Bench—a large-scale benchmark for AI-generated video detection covering 31 latest video generation models and 440k+ videos. They provide a standardized data construction pipeline features "attribute balancing + comprehensive selection + de-biased preprocessing." By conducting over 1,500 evalu
+  [CVPR 2026][Video Understanding][AIGC Detection] The authors construct AIBD-Bench—a large-scale benchmark for AI-generated video detection covering 31 latest video generation models and 440k+ videos. They provide a standardized data construction pipeline features "attribute balancing + comprehensive selection + de-biased preprocessing." By conducting over 1,500 evaluations on 33 detectors, they extract 8 analyses and 4 new findings (crucially: "higher generation quality $\neq…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Benchmark
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "AIGC Detection"
+  - "Video Forensics"
+  - "Benchmark"
+  - "Attribute Balancing"
+  - "Cross-Generator Generalization"
 date: 2026-05-08
-content_hash: 12df53f527d002ca
+content_hash: c869d1f13ce23e5e
 ---
+
 # Your One-Stop Solution for AI-Generated Video Detection
 
 **Conference**: CVPR 2026  
@@ -122,7 +127,7 @@ VLM Accuracy (ACC, 50 represents random guessing): Most VLMs (LLaVA-1.5, DeepSee
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

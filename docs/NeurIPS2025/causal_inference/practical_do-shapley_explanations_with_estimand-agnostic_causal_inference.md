@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference
 description: >-
-  [NeurIPS 2025][Causal Inference][Shapley values] This paper proposes the Estimand-Agnostic (EA) approach and the Frontier-Reducibility Algorithm (FRA) for efficient computation of causal Shapley values (do-SV). By traini…
+  [NeurIPS 2025][Causal Inference][Shapley values] This paper proposes the Estimand-Agnostic (EA) approach and the Frontier-Reducibility Algorithm (FRA) for efficient computation of causal Shapley values (do-SV). By training a single SCM to learn the observational distribution, the framework answers arbitrary identifiable causal queries and reduces the number of coalitions requiring evaluation by approximately 90% via coalition reduction.
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -11,7 +11,7 @@ tags:
   - "structural causal models"
   - "identifiability"
 date: 2026-05-08
-content_hash: 1d709790c06357f8
+content_hash: 5b47ce66e278cf0f
 ---
 
 # Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference
@@ -133,8 +133,8 @@ This paper proposes the Estimand-Agnostic (EA) approach and the Frontier-Reducib
 - [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](do-pfn_in-context_learning_for_causal_effect_estimation.md)
 - [\[NeurIPS 2025\] It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation](its_hard_to_be_normal_the_impact_of_noise_on_structure-agnostic_estimation.md)
 - [\[ICML 2026\] An Odd Estimator for Shapley Values](../../ICML2026/causal_inference/an_odd_estimator_for_shapley_values.md)
-- [\[NeurIPS 2025\] GST-UNet: A Neural Framework for Spatiotemporal Causal Inference with Time-Varying Confounding](gst-unet_a_neural_framework_for_spatiotemporal_causal_inference_with_time-varyin.md)
 - [\[NeurIPS 2025\] Performative Validity of Recourse Explanations](performative_validity_of_recourse_explanations.md)
+- [\[ICML 2025\] Causal Abstraction Inference under Lossy Representations](../../ICML2025/causal_inference/causal_abstraction_inference_under_lossy_representations.md)
 
 </div>
 

@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Fine-Grained Iterative Adversarial Attacks with Limited Computation Budget
 description: >-
-  [ICLR 2026][AI Safety][PGD] This paper models the maximization of iterative adversarial attack strength under a fixed computation budget as a layer-wise and step-wise combinatorial optimization problem. It proposes an event-driven **Spiking-PGD**: when the relative change of activations between adjacent iterations in a layer is below a threshold,
+  [ICLR 2026][AI Safety][Adversarial Attacks] This paper models the maximization of iterative adversarial attack strength under a fixed computation budget as a layer-wise and step-wise combinatorial optimization problem. It proposes an event-driven **Spiking-PGD**: when the relative change of activations between adjacent iterations in a layer is below a threshold, the previous output is reused and recalculation is skipped. Virtual surrogate gradients are used to recover backpro…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - PGD
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Adversarial Attacks"
+  - "PGD"
+  - "Computation Budget"
+  - "Spiking Mechanism"
+  - "Activation Reuse"
+  - "Surrogate Gradient"
+  - "Adversarial Training"
 date: 2026-05-08
 content_hash: 399fe7974729d574
 ---
+
 # Fine-Grained Iterative Adversarial Attacks with Limited Computation Budget
 
 **Conference**: ICLR 2026  
@@ -122,10 +129,10 @@ Embedding Spiking-PGD into adversarial training, comparing constant thresholds w
 ## Related Papers
 
 - [\[ICLR 2026\] Fine-Grained Class-Conditional Distribution Balancing for Debiased Learning](fine-grained_class-conditional_distribution_balancing_for_debiased_learning.md)
-- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
-- [\[ICLR 2026\] Robust Adversarial Attacks Against Unknown Disturbances via Inverse Gradient Sample](robust_adversarial_attacks_against_unknown_disturbance_via_inverse_gradient_samp.md)
-- [\[ICLR 2026\] Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling](robust_fine-tuning_from_non-robust_pretrained_models_mitigating_suboptimal_trans.md)
-- [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
+- [\[ICML 2026\] VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection](../../ICML2026/ai_safety/vpd-100k_towards_generalizable_and_fine-grained_visual_privacy_protection.md)
+- [\[CVPR 2026\] RemedyGS: Defend 3D Gaussian Splatting Against Computation Cost Attacks](../../CVPR2026/ai_safety/remedygs_defend_3d_gaussian_splatting_against_computation_cost_attacks.md)
+- [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
+- [\[CVPR 2026\] DiffusionFF: A Diffusion-based Framework for Joint Face Forgery Detection and Fine-Grained Artifact Localization](../../CVPR2026/ai_safety/diffusionff_a_diffusion-based_framework_for_joint_face_forgery_detection_and_fin.md)
 
 </div>
 

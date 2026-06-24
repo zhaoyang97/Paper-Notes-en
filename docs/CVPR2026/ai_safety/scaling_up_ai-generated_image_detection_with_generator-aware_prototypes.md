@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes
 description: >-
-  [CVPR 2026][AI Safety][LoRA] The authors identify a paradox where training AIGI detectors with an increasing number of generators leads to performance improvement followed by a decline ("Benefit then Conflict"). This is attributed to excessive heterogeneity in generated image features and the capacity bottleneck of frozen encoders. They propose GA
+  [CVPR 2026][AI Safety][AIGI detection] The authors identify a paradox where training AIGI detectors with an increasing number of generators leads to performance improvement followed by a decline ("Benefit then Conflict"). This is attributed to excessive heterogeneity in generated image features and the capacity bottleneck of frozen encoders. They propose GAPL, which distills thousands of generators into a small set of "generator-aware prototypes" using PCA…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - LoRA
+  - "CVPR 2026"
+  - "AI Safety"
+  - "AIGI detection"
+  - "prototype learning"
+  - "data heterogeneity"
+  - "LoRA"
+  - "scalability"
 date: 2026-05-08
-content_hash: 78b34b4cb0d0acc3
+content_hash: 169c04b30a23a339
 ---
+
 # Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes
 
 **Conference**: CVPR 2026  
@@ -135,15 +140,16 @@ Ablation of PCA, PM, and LoRA (mean across 4 benchmarks):
 - Value: ⭐⭐⭐⭐⭐ Proves "structured compression of diversity" is superior for open-world detection.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
+- [\[CVPR 2026\] SAIDO: Scene-Aware and Importance-Guided Dynamic Optimization for Generalizable AI-Generated Image Detection](saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
 - [\[CVPR 2026\] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning](skyra_ai-generated_video_detection_via_grounded_artifact_reasoning.md)
 - [\[CVPR 2026\] Cross-modal Representation Learning for Diffusion-generated Image Detection](cross-modal_representation_learning_for_diffusion-generated_image_detection.md)
 - [\[CVPR 2026\] LaSM: Layer-wise Scaling Mechanism for Defending Pop-up Attack on GUI Agents](lasm_layer-wise_scaling_mechanism_for_defending_pop-up_attack_on_gui_agents.md)
-- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
+- [\[CVPR 2026\] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness](detecting_compressed_ai-generated_images_via_phase_spectrum_robustness.md)
 
 </div>
 

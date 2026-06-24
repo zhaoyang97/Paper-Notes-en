@@ -2,17 +2,21 @@
 title: >-
   [Paper Note] Evolution of Concepts in Language Model Pre-Training
 description: >-
-  [ICLR 2026][Interpretability][crosscoders] This work applies crosscoders (cross-snapshot sparse dictionary learning) for the first time to track the emergence and evolution of features during language model pre-training. It discovers a "statistical learning → feature learning" phase transition and causally links micro-feature evolution with macro downstream tas
+  [ICLR 2026][Interpretability][Mechanistic Interpretability] This work applies crosscoders (cross-snapshot sparse dictionary learning) for the first time to track the emergence and evolution of features during language model pre-training. It discovers a "statistical learning → feature learning" phase transition and causally links micro-feature evolution with macro downstream task metrics through attribution analysis.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - crosscoders
-  - sparse autoencoders
-  - feature evolution
-  - Pretraining
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "crosscoders"
+  - "sparse autoencoders"
+  - "training dynamics"
+  - "feature evolution"
+  - "pre-training"
+  - "Pythia"
 date: 2026-05-08
-content_hash: cb679fc3defcc838
+content_hash: 1e6fd1f0687f6c46
 ---
+
 # Evolution of Concepts in Language Model Pre-Training
 
 **Conference**: ICLR 2026  
@@ -170,8 +174,8 @@ Early training is almost entirely dedicated to learning unigram and bigram distr
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)
 - [\[ICLR 2026\] Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training](learning_to_see_before_seeing_demystifying_llm_visual_priors_from_language_pre-t.md)
 - [\[ICLR 2026\] Fresh in Memory: Training-order Recency is Linearly Encoded in Language Model Activations](fresh_in_memory_training-order_recency_is_linearly_encoded_in_language_model_act.md)
+- [\[ICLR 2026\] Priors in Time: Missing Inductive Biases for Language Model Interpretability](priors_in_time_missing_inductive_biases_for_language_model_interpretability.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
-- [\[ICLR 2026\] Negative Pre-activations Differentiate Syntax](negative_pre-activations_differentiate_syntax.md)
 
 </div>
 

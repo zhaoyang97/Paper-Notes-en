@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Phased DMD: Few-step Distribution Matching Distillation via Score Matching within Subintervals
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the dilemma where 1-step DMD distillation suffers from insufficient capacity and poor diversity, while direct multi-step expansion leads to VRAM explosion or performance degradation back to 1-step levels when using Stochastic Gradient Truncation (SGTS), this paper proposes Phased DMD. By partitioning the SNR
+  [CVPR 2026][Model Compression][Diffusion Model Distillation] Addressing the dilemma where 1-step DMD distillation suffers from insufficient capacity and poor diversity, while direct multi-step expansion leads to VRAM explosion or performance degradation back to 1-step levels when using Stochastic Gradient Truncation (SGTS), this paper proposes Phased DMD. By partitioning the SNR range into subintervals and distilling one expert per phase moving progressively towards higher SN…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Diffusion Model Distillation"
+  - "Few-step Generation"
+  - "Distribution Matching Distillation"
+  - "SNR Subintervals"
+  - "Mixture-of-Experts (MoE)"
 date: 2026-05-08
-content_hash: 1b2bc935c418b325
+content_hash: 8db41a3f12c5e45e
 ---
+
 # Phased DMD: Few-step Distribution Matching Distillation via Score Matching within Subintervals
 
 **Conference**: CVPR 2026  
@@ -135,8 +141,8 @@ Key Point: The base model has the highest diversity. Phased DMD outperforms vani
 - [\[CVPR 2026\] Adaptive Video Distillation: Mitigating Oversaturation and Temporal Collapse in Few-Step Generation](adaptive_video_distillation_mitigating_oversaturation_and_temporal_collapse_in_f.md)
 - [\[CVPR 2026\] Dataset Distillation by Influence Matching](dataset_distillation_by_influence_matching.md)
 - [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
+- [\[CVPR 2026\] FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection](fast_topology-aware_frequency-domain_distribution_matching_for_coreset_selection.md)
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](../../ICLR2026/model_compression/distillation_of_large_language_models_via_concrete_score_matching.md)
-- [\[CVPR 2026\] Beyond Soft Label: Dataset Distillation via Orthogonal Gradient Matching](beyond_soft_label_dataset_distillation_via_orthogonal_gradient_matching.md)
 
 </div>
 

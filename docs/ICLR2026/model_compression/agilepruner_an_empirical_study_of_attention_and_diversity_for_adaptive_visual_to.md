@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs
 description: >-
-  [ICLR 2026][Model Compression][visual token pruning] Through a systematic empirical analysis using erank (effective rank) and attention entropy, this study reveals the complementary characteristics of attention-based and diversity-based methods in visual token pruning—attention methods suppress hallucinations but have limited coverage, while diversity methods offer compr
+  [ICLR 2026][Model Compression][visual token pruning] Through a systematic empirical analysis using erank (effective rank) and attention entropy, this study reveals the complementary characteristics of attention-based and diversity-based methods in visual token pruning—attention methods suppress hallucinations but have limited coverage, while diversity methods offer comprehensive coverage but are prone to introducing hallucinations. Based on these findings…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - visual token pruning
-  - attention
-  - diversity
-  - hallucination
-  - adaptive pruning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "visual token pruning"
+  - "attention"
+  - "diversity"
+  - "hallucination"
+  - "adaptive pruning"
 date: 2026-05-08
-content_hash: 22ae146d09272099
+content_hash: 3c042358d507492a
 ---
+
 # AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs
 
 **Conference**: ICLR 2026  
@@ -132,11 +133,11 @@ Ours is training-free; the method prunes visual tokens during the inference stag
 
 ## Related Papers
 
+- [\[AAAI 2026\] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning](../../AAAI2026/model_compression/sharp_eyes_and_memory_for_videollms_information-aware_visual_token_pruning_for_e.md)
 - [\[ICLR 2026\] Entropy-Monitored Kernelized Token Distillation for Audio-Visual Compression](entropy-monitored_kernelized_token_distillation_for_audio-visual_compression.md)
-- [\[ACL 2025\] A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression](../../ACL2025/model_compression/gist_token_context_compression.md)
-- [\[ICCV 2025\] FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning](../../ICCV2025/model_compression/fastvar_linear_visual_autoregressive_modeling_via_cached_token_pruning.md)
 - [\[ICLR 2026\] InfoScan: Information-Efficient Visual Scanning via Resource-Adaptive Walks](infoscan_information-efficient_visual_scanning_via_resource-adaptive_walks.md)
-- [\[ICLR 2026\] Why Attention Patterns Exist: A Unifying Temporal Perspective Analysis](why_attention_patterns_exist_a_unifying_temporal_perspective_analysis.md)
+- [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
+- [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
 
 </div>
 

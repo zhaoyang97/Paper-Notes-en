@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Minimax-Optimal Aggregation for Density Ratio Estimation
 description: >-
-  [ICLR 2026][learning_theory][density ratio estimation] Addressing the extreme sensitivity of Density Ratio Estimation (DRE) to hyperparameters, this paper proposes an algorithm that **linearly aggregates** models trained with various hyperparameters. By minimizing an analytical upper bound of the Bregman divergence, the method achieves minimax-optimal convergence rates **w
+  [ICLR 2026][Learning Theory][model aggregation] Addressing the extreme sensitivity of Density Ratio Estimation (DRE) to hyperparameters, this paper proposes an algorithm that **linearly aggregates** models trained with various hyperparameters. By minimizing an analytical upper bound of the Bregman divergence, the method achieves minimax-optimal convergence rates **without prior knowledge of the density ratio smoothness**, outperforming cross-validation and model averaging in…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - density ratio estimation
-  - model aggregation
-  - minimax-optimal rates
-  - hyperparameter selection
-  - RKHS
-  - self-concordant loss
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Density Ratio Estimation"
+  - "model aggregation"
+  - "minimax-optimal rates"
+  - "hyperparameter selection"
+  - "RKHS"
+  - "self-concordant loss"
+  - "domain adaptation"
 date: 2026-05-08
-content_hash: 12fd8be2b070982b
+content_hash: 542b8cd68297d2ff
 ---
+
 # Minimax-Optimal Aggregation for Density Ratio Estimation
 
 **Conference**: ICLR 2026  

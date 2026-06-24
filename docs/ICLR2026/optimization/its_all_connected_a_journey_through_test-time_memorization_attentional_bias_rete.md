@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] It's All Connected: A Journey Through Test-Time Memorization, Attentional Bias, Retention, and Online Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes MIRAS, a framework that unifies sequence modules like Transformers, linear RNNs, TTT, and Titans as "associative memory via online optimization at test-time." By extending the design axes of attentional bias and retention, it introduces three attention-free models—MONETA, YAAD, and MEMORA—which outp
+  [ICLR2026][Optimization][Online Optimization] This paper proposes MIRAS, a framework that unifies sequence modules like Transformers, linear RNNs, TTT, and Titans as "associative memory via online optimization at test-time." By extending the design axes of attentional bias and retention, it introduces three attention-free models—MONETA, YAAD, and MEMORA—which outperform various modern recurrent baselines in language modeling, commonsense reasoning…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Online Optimization"
+  - "Associative Memory"
+  - "Attentional Bias"
+  - "Memory Retention"
+  - "Linear RNN"
 date: 2026-05-08
-content_hash: c9061ccb50fdc3bb
+content_hash: 90983c752edc1d95
 ---
+
 # It's All Connected: A Journey Through Test-Time Memorization, Attentional Bias, Retention, and Online Optimization
 
 **Conference**: ICLR2026  
@@ -165,6 +171,7 @@ The MIRAS variants are trained as sequence model backbones. Experiments use Fine
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

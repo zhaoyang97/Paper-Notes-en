@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatial-SAM: Spatially Consistent 3D Electron Microscopy Segmentation with SDF Memory and Semi-Supervised Learning
 description: >-
-  [CVPR 2026][Segmentation][SAM2] Spatial-SAM replaces the "frame-by-frame 2D logit memory" of SAM2 with a Signed Distance Field (SDF) memory pre-computed by a lightweight 3D U-Net. It adopts a dual-track semi-supervised pipeline—bootstrapping pseudo-labels with SAM2 few-shot capabilities followed by alternating training of SDF and masks. With only 1/6
+  [CVPR 2026][3D Vision][EM Segmentation] Spatial-SAM replaces the "frame-by-frame 2D logit memory" of SAM2 with a Signed Distance Field (SDF) memory pre-computed by a lightweight 3D U-Net. It adopts a dual-track semi-supervised pipeline—bootstrapping pseudo-labels with SAM2 few-shot capabilities followed by alternating training of SDF and masks. With only 1/64 of the slices annotated, it approaches fully supervised SOTA performance across multiple 3D EM datasets while signific…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM2
+  - "CVPR 2026"
+  - "3D Vision"
+  - "EM Segmentation"
+  - "SDF Memory"
+  - "SAM2"
+  - "Semi-Supervised Learning"
+  - "Spatial Consistency"
 date: 2026-05-08
-content_hash: 7317c48d332de240
+content_hash: bf7c93b33e7e7642
 ---
+
 # Spatial-SAM: Spatially Consistent 3D Electron Microscopy Segmentation with SDF Memory and Semi-Supervised Learning
 
 **Conference**: CVPR 2026  
@@ -128,15 +133,16 @@ Compared to **SAM4EM**, Spatial-SAM avoids online error propagation by using pre
 - Value: ⭐⭐⭐⭐ High practical value for large-scale 3D EM segmentation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Softmax to Dirichlet: Evidential Learning for Semi-supervised Semantic Segmentation](from_softmax_to_dirichlet_evidential_learning_for_semi-supervised_semantic_segme.md)
-- [\[CVPR 2026\] M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](m4-sam_multi-modal_mixture-of-experts_with_memory-augmented_sam_for_rgb-d_video_.md)
+- [\[CVPR 2026\] EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy](emgauss_continuous_slice-to-3d_reconstruction_via_dynamic_gaussian_modeling_in_v.md)
+- [\[CVPR 2026\] Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy](neural_field-based_3d_surface_reconstruction_of_microstructures_from_multi-detec.md)
+- [\[CVPR 2026\] SAM 3D: 3Dfy Anything in Images](sam_3d_3dfy_anything_in_images.md)
+- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
 - [\[CVPR 2026\] Spatial Matters: Position-Guided 3D Referring Expression Segmentation](spatial_matters_position-guided_3d_referring_expression_segmentation.md)
-- [\[CVPR 2026\] Boxes2Pixels: Learning Defect Segmentation from Noisy SAM Masks](boxes2pixels_learning_defect_segmentation_from_noisy_sam_masks.md)
-- [\[AAAI 2026\] S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing](../../AAAI2026/segmentation/s5_scalable_semi-supervised_semantic_segmentation_in_remote_sensing.md)
 
 </div>
 

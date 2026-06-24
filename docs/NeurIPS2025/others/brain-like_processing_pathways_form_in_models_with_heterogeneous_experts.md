@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Brain-Like Processing Pathways Form in Models With Heterogeneous Experts
 description: >-
-  [NeurIPS 2025][Mixture-of-Experts] Heterogeneous experts in Mixture-of-Experts models do not spontaneously form processing pathways. This paper proposes three brain-inspired inductive biases — routing cost…
+  [NeurIPS 2025][Mixture-of-Experts] Heterogeneous experts in Mixture-of-Experts models do not spontaneously form processing pathways. This paper proposes three brain-inspired inductive biases — routing cost, task-performance scaling, and expert dropout — that enable the model to develop a Mixture-of-Pathways architecture analogous to the brain's dynamic cortical–subcortical pathways.
 tags:
   - "NeurIPS 2025"
   - "Mixture-of-Experts"
@@ -12,7 +12,7 @@ tags:
   - "brain-inspired computation"
   - "cognitive tasks"
 date: 2026-05-08
-content_hash: d5cdc774af3e4a50
+content_hash: ac171a7668657dae
 ---
 
 # Brain-Like Processing Pathways Form in Models With Heterogeneous Experts
@@ -145,9 +145,9 @@ $$L = L_{fix} + \sum_{i}^{\mathcal{T}} \left( L_{response,i} + \frac{\alpha \cdo
 
 - [\[NeurIPS 2025\] Contextual Dynamic Pricing with Heterogeneous Buyers](contextual_dynamic_pricing_with_heterogeneous_buyers.md)
 - [\[NeurIPS 2025\] Out-of-distribution Generalisation is Hard: Evidence from ARC-like Tasks](out-of-distribution_generalisation_is_hard_evidence_from_arc-like_tasks.md)
-- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](radar_benchmarking_language_models_on_imperfect_tabular_data.md)
-- [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](deep_continuous-time_state-space_models_for_marked_event_sequences.md)
-- [\[NeurIPS 2025\] Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment](evolutionary_learning_in_spatial_agent-based_models_for_physical_climate_risk_as.md)
+- [\[ICML 2025\] Online Sparsification of Bipartite-Like Clusters in Graphs](../../ICML2025/others/online_sparsification_of_bipartite-like_clusters_in_graphs.md)
+- [\[ICLR 2026\] Identity-Free Deferral For Unseen Experts](../../ICLR2026/others/identity-free_deferral_for_unseen_experts.md)
+- [\[ACL 2025\] Beyond Position: the emergence of wavelet-like properties in Transformers](../../ACL2025/others/beyond_position_the_emergence_of_wavelet-like_properties_in_transformers.md)
 
 </div>
 

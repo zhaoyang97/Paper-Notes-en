@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Premier: Personalized Preference Modulation with Learnable User Embedding in Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][MM-DiT] Premier represents each user's preference as a **learnable embedding**. A preference adapter fuses this embedding with text prompts to output per-token modulation directions injected into the MM-DiT modulation mechanism. A dispersion loss is employed to separate preference directions among different users. To address t
+  [CVPR 2026][Image Generation][Personalized Text-to-Image] Premier represents each user's preference as a **learnable embedding**. A preference adapter fuses this embedding with text prompts to output per-token modulation directions injected into the MM-DiT modulation mechanism. A dispersion loss is employed to separate preference directions among different users. To address the cold-start problem for new users with scarce data, the model uses a "linear combination of existing…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MM-DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Personalized Text-to-Image"
+  - "Learnable User Embedding"
+  - "Preference Modulation"
+  - "MM-DiT"
+  - "Dispersion Loss"
 date: 2026-05-08
-content_hash: 7cf52d9f0be71ffa
+content_hash: 93861599d47acfc9
 ---
+
 # Premier: Personalized Preference Modulation with Learnable User Embedding in Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,16 @@ With 8 historical images, Premier achieves the best ViPer Score, ViPer Rate, CLI
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Directional Textual Inversion for Personalized Text-to-Image Generation](../../ICLR2026/image_generation/directional_textual_inversion_for_personalized_text-to-image_generation.md)
 - [\[CVPR 2026\] Design Your Ad: Personalized Advertising Image and Text Generation with Unified Autoregressive Models](design_your_ad_personalized_advertising_image_and_text_generation_with_unified_a.md)
+- [\[CVPR 2026\] DCoAR: Deep Concept Injection into Unified Autoregressive Models for Personalized Text-to-Image Generation](dcoar_deep_concept_injection_into_unified_autoregressive_models_for_personalized.md)
 - [\[CVPR 2026\] Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation](test-time_alignment_of_text-to-image_diffusion_models_via_null-text_embedding_op.md)
 - [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
-- [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
-- [\[ICLR 2026\] Directional Textual Inversion for Personalized Text-to-Image Generation](../../ICLR2026/image_generation/directional_textual_inversion_for_personalized_text-to-image_generation.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] TT-Occ: Test-Time 3D Occupancy Prediction
 description: >-
-  [CVPR 2026][Autonomous Driving][3D occupancy prediction] Proposes TT-Occ, a pre-training-free test-time 3D occupancy prediction framework that incrementally constructs, optimizes, and voxelizes time-aware 3D Gaussians by integrating Vision Foundation Models (VFMs) at inference time, outperforming all self-supervised methods requiring extensive training on Occ3D-nuScenes and
+  [CVPR2026][Autonomous Driving][3D occupancy prediction] Proposes TT-Occ, a pre-training-free test-time 3D occupancy prediction framework that incrementally constructs, optimizes, and voxelizes time-aware 3D Gaussians by integrating Vision Foundation Models (VFMs) at inference time, outperforming all self-supervised methods requiring extensive training on Occ3D-nuScenes and nuCraft.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 3D occupancy prediction
-  - test-time
-  - 3D Gaussian Splatting
-  - vision foundation models
-  - self-supervised
-  - open-vocabulary
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "3D occupancy prediction"
+  - "test-time"
+  - "3D Gaussian Splatting"
+  - "vision foundation models"
+  - "self-supervised"
+  - "open-vocabulary"
 date: 2026-05-08
-content_hash: e6dd59e8bb4ef33b
+content_hash: c3ae30e99ece786b
 ---
+
 # TT-Occ: Test-Time 3D Occupancy Prediction
 
 **Conference**: CVPR2026  
@@ -178,11 +179,11 @@ The only optimization signal in the pipeline is the color consistency loss durin
 
 ## Related Papers
 
-- [\[CVPR 2026\] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs](m2-occ_resilient_3d_semantic_occupancy_prediction_for_autonomous_driving_with_in.md)
+- [\[CVPR 2026\] Gau-Occ: Geometry-Completed Gaussians for Multi-Modal 3D Occupancy Prediction](gau-occ_geometry-completed_gaussians_for_multi-modal_3d_occupancy_prediction.md)
 - [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](../../ICCV2025/autonomous_driving/sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
+- [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
 - [\[CVPR 2026\] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving](drocc_depth_region_guided_3d_occupancy.md)
 - [\[CVPR 2026\] Test-Time Training for LiDAR Semantic Segmentation under Corruption via Geometric Inlier Discrimination](test-time_training_for_lidar_semantic_segmentation_under_corruption_via_geometri.md)
-- [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
 
 </div>
 

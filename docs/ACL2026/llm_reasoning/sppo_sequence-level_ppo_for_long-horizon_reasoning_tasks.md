@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks
 description: >-
-  [ACL 2026][LLM Reasoning][Sequence-Level PPO] SPPO reformulates RLVR in long-chain CoT reasoning from a token-level MDP into a sequence-level contextual bandit. By utilizing a scalar critic that only observes the prompt to estimate problem solvability, SPPO achieves stability and performance comparable to or exceeding GRPO using single-sample PPO. This approach yi
+  [ACL 2026][Reasoning][Sequence-Level PPO] SPPO reformulates RLVR in long-chain CoT reasoning from a token-level MDP into a sequence-level contextual bandit. By utilizing a scalar critic that only observes the prompt to estimate problem solvability, SPPO achieves stability and performance comparable to or exceeding GRPO using single-sample PPO. This approach yields approximately 5.9x training acceleration and lower GPU memory consumption.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Sequence-Level PPO
-  - RLVR
+  - "ACL 2026"
+  - "Reasoning"
+  - "Sequence-Level PPO"
+  - "Long-Horizon Reasoning"
+  - "RLVR"
+  - "Scalar Value Function"
+  - "Contextual Bandit"
 date: 2026-05-08
-content_hash: 9a3a287c23afe202
+content_hash: d555b91050500614
 ---
+
 # SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks
 
 **Conference**: ACL 2026  
@@ -139,9 +143,9 @@ Experiments used DeepSeek-R1-Distill-Qwen-1.5B and 7B, fine-tuned on DeepScaleR 
 
 - [\[ACL 2026\] FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents](fs-researcher_test-time_scaling_for_long-horizon_research_tasks_with_file-system.md)
 - [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
-- [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](../../ICML2026/llm_reasoning/toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
-- [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
+- [\[ICLR 2026\] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs](../../ICLR2026/llm_reasoning/the_illusion_of_diminishing_returns_measuring_long_horizon_execution_in_llms.md)
 - [\[ICLR 2026\] Segment-Level Attribution for Selective Learning of Long Reasoning Traces](../../ICLR2026/llm_reasoning/segment-level_attribution_for_selective_learning_of_long_reasoning_traces.md)
+- [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](../../ICML2026/llm_reasoning/toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
 
 </div>
 

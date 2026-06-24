@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] W-Edit: A Wavelet-based Frequency-aware Framework for Text-driven Image Editing
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] W-Edit decomposes diffusion features into multi-scale frequency bands using wavelet transforms, injecting the "low-frequency for structure, high-frequency for detail" prior into the attention K/V of pre-trained DiTs. This achieves a training-free balance between structure preservation and local modification, reducing F
+  [ICLR 2026][Image Generation][Text-driven Image Editing] W-Edit decomposes diffusion features into multi-scale frequency bands using wavelet transforms, injecting the "low-frequency for structure, high-frequency for detail" prior into the attention K/V of pre-trained DiTs. This achieves a training-free balance between structure preservation and local modification, reducing FID to 65.44 and increasing CLIP score to 31.84 on PIE-Bench, outperforming previous training-free editi…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Text-driven Image Editing"
+  - "Wavelet Transform"
+  - "Frequency-aware Modulation"
+  - "Diffusion Transformer"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 5d911d66e7b3f325
+content_hash: 53b9824180fe73ed
 ---
+
 # W-Edit: A Wavelet-based Frequency-aware Framework for Text-driven Image Editing
 
 **Conference**: ICLR 2026  
@@ -133,9 +138,9 @@ Compared to Flow-Edit, W-Edit reduces FID by 18.6% and increases CLIP by 4.5%. P
 
 - [\[CVPR 2026\] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](../../CVPR2026/image_generation/care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)
 - [\[CVPR 2026\] HP-Edit: A Human-Preference Post-Training Framework for Image Editing](../../CVPR2026/image_generation/hp-edit_a_human-preference_post-training_framework_for_image_editing.md)
+- [\[CVPR 2026\] FreqEdit: Preserving High-Frequency Features for Robust Multi-Turn Image Editing](../../CVPR2026/image_generation/freqedit_preserving_high-frequency_features_for_robust_multi-turn_image_editing.md)
 - [\[ICLR 2026\] LogiStory: A Logic-Aware Framework for Multi-Image Story Visualization](logistory_a_logic-aware_framework_for_multi-image_story_visualization.md)
-- [\[ICLR 2026\] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis](latent_wavelet_diffusion_for_ultra_high-resolution_image_synthesis.md)
-- [\[ICLR 2026\] GeoDiv: Framework for Measuring Geographical Diversity in Text-to-Image Models](geodiv_framework_for_measuring_geographical_diversity_in_text-to-image_models.md)
+- [\[ICLR 2026\] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control](follow-your-shape_shape-aware_image_editing_via_trajectory-guided_region_control.md)
 
 </div>
 

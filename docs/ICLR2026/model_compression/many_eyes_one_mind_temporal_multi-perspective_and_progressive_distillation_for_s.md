@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Many Eyes, One Mind: Temporal Multi-Perspective and Progressive Distillation for Spiking Neural Networks
 description: >-
-  [ICLR 2026][Model Compression][Spiking Neural Network] To address two major pain points in Spiking Neural Network (SNN) distillation—"using a fixed ANN output to supervise all timesteps" and "information loss during truncated inference"—this paper proposes **masked re-weighting to generate diverse temporal teacher signals (Many Eyes)** and **cumulative average predictions
+  [ICLR 2026][Model Compression][Spiking Neural Network] To address two major pain points in Spiking Neural Network (SNN) distillation—"using a fixed ANN output to supervise all timesteps" and "information loss during truncated inference"—this paper proposes **masked re-weighting to generate diverse temporal teacher signals (Many Eyes)** and **cumulative average predictions to progressively align with full-length predictions (One Mind)**. It achieves SOTA on CIFAR/ImageNet and…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Spiking Neural Network
-  - Knowledge Distillation
-  - Temporal Dynamics
-  - Truncated Inference
-  - Multi-Teacher
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Spiking Neural Network"
+  - "Knowledge Distillation"
+  - "Temporal Dynamics"
+  - "Truncated Inference"
+  - "Multi-Teacher"
 date: 2026-05-08
-content_hash: bc314889c6b49632
+content_hash: 0931d174918774a0
 ---
+
 # Many Eyes, One Mind: Temporal Multi-Perspective and Progressive Distillation for Spiking Neural Networks
 
 **Conference**: ICLR 2026  
@@ -121,11 +122,11 @@ The method outperforms all SNN baselines across both convolutional and Spiking T
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Selective Activation with Randomized Temporal K-Winner-Take-All in Spiking Neural Networks for Continual Learning](robust_selective_activation_with_randomized_temporal_k-winner-take-all_in_spikin.md)
 - [\[NeurIPS 2025\] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing](../../NeurIPS2025/model_compression/synergy_between_the_strong_and_the_weak_spiking_neural_networks_are_inherently_s.md)
 - [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
 - [\[ICLR 2026\] Why Attention Patterns Exist: A Unifying Temporal Perspective Analysis](why_attention_patterns_exist_a_unifying_temporal_perspective_analysis.md)
 - [\[ICLR 2026\] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks](cannistraci-hebb_training_on_ultra-sparse_spiking_neural_networks.md)
-- [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](rethinking_continual_learning_with_progressive_neural_collapse.md)
 
 </div>
 

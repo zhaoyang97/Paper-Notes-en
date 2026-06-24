@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Constraint-guided Hardware-aware NAS through Gradient Modification
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] CONNAS replaces hardware constraints from "regularization terms in the loss" to "direct gradient direction modification of architecture weights." This allows the gradient search process to automatically avoid infeasible architectures, eliminating the need for differentiable hardware metrics and regularization weight tu
+  [ICLR 2026][Model Compression][Hardware-aware NAS] CONNAS replaces hardware constraints from "regularization terms in the loss" to "direct gradient direction modification of architecture weights." This allows the gradient search process to automatically avoid infeasible architectures, eliminating the need for differentiable hardware metrics and regularization weight tuning. On NATS-Bench, the gap between the discovered architectures and the optimal feasible solutions is as sm…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Hardware-aware NAS"
+  - "Gradient Modification"
+  - "Constrained Optimization"
+  - "Feasible Region"
+  - "Edge ML"
 date: 2026-05-08
-content_hash: 3dd3111f6d1f09c0
+content_hash: b563eeee410f8377
 ---
+
 # Constraint-guided Hardware-aware NAS through Gradient Modification
 
 **Conference**: ICLR 2026  
@@ -145,8 +151,8 @@ In an edge monitoring task for induction motor eccentricity (based on 1D CNN, 8 
 
 - [\[ICLR 2026\] GAPrune: Gradient-Alignment Pruning for Domain-Aware Embeddings](gaprune_gradient-alignment_pruning_for_domain-aware_embeddings.md)
 - [\[ICLR 2026\] GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs](gradpruner_gradient-guided_layer_pruning_enabling_efficient_fine-tuning_and_infe.md)
-- [\[CVPR 2026\] Gradient Knows Best: Mixed-Precision Quantization via Gradient-Guided Bit Allocation for Super-Resolution](../../CVPR2026/model_compression/gradient_knows_best_mixed-precision_quantization_via_gradient-guided_bit_allocat.md)
 - [\[ICLR 2026\] Towards Efficient Constraint Handling in Neural Solvers for Routing Problems](towards_efficient_constraint_handling_in_neural_solvers_for_routing_problems.md)
+- [\[CVPR 2026\] Gradient Knows Best: Mixed-Precision Quantization via Gradient-Guided Bit Allocation for Super-Resolution](../../CVPR2026/model_compression/gradient_knows_best_mixed-precision_quantization_via_gradient-guided_bit_allocat.md)
 - [\[ICLR 2026\] AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs](anybcq_hardware_efficient_flexible_binary-coded_quantization_for_multi-precision.md)
 
 </div>

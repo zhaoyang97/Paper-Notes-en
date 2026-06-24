@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Towards Calibrating Prompt Tuning of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][prompt tuning] Addressing the "dual miscalibration" issue (base class under-confidence + novel class over-confidence) in prompt-tuned CLIP, this work proposes mean-variance margin regularization and text moment matching loss. These complementary regularization terms serve as plug-and-play modules that significantly reduce ECE across
+  [CVPR 2026][Multimodal VLM][prompt tuning] Addressing the "dual miscalibration" issue (base class under-confidence + novel class over-confidence) in prompt-tuned CLIP, this work proposes mean-variance margin regularization and text moment matching loss. These complementary regularization terms serve as plug-and-play modules that significantly reduce ECE across 7 prompt tuning methods and 11 datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - prompt tuning
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "prompt tuning"
+  - "calibration"
+  - "CLIP"
+  - "confidence estimation"
+  - "pretrained semantic preservation"
 date: 2026-05-08
-content_hash: fb12f95b10faac4c
+content_hash: c2a7e20a29f8e0c8
 ---
+
 # Towards Calibrating Prompt Tuning of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -118,11 +122,11 @@ These terms complement each other. The margin term enhances inter-class discrimi
 
 ## Related Papers
 
+- [\[ICML 2025\] Understanding and Mitigating Miscalibration in Prompt Tuning for Vision-Language Models](../../ICML2025/multimodal_vlm/understanding_and_mitigating_miscalibration_in_prompt_tuning_for_vision-language.md)
 - [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
-- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
+- [\[CVPR 2026\] Cluster-Aware Neural Collapse Prompt Tuning for Long-Tailed Generalization of Vision-Language Models](cluster-aware_neural_collapse_prompt_tuning_for_long-tailed_generalization_of_vi.md)
 - [\[CVPR 2026\] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment](capt_confusion-aware_prompt_tuning_for_reducing_vision-language_misalignment.md)
-- [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
-- [\[CVPR 2026\] EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models](evolving_prompt_adaptation_for_vision-language_models.md)
+- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
 
 </div>
 

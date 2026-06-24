@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][vision token selection] Ours proposes MMTok—a multimodal vision token selection framework based on the Maximum Coverage Problem. It leverages both Text-to-Visual and Visual-to-Visual coverage information to select the most informative subset of vision tokens. In a training-free setting, it significantly outperforms single-modal baselines and
+  [ICLR 2026][Multimodal VLM][vision token selection] Ours proposes MMTok—a multimodal vision token selection framework based on the Maximum Coverage Problem. It leverages both Text-to-Visual and Visual-to-Visual coverage information to select the most informative subset of vision tokens. In a training-free setting, it significantly outperforms single-modal baselines and even surpasses methods requiring fine-tuning.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - vision token selection
-  - coverage maximization
-  - submodular optimization
-  - VLM efficiency
-  - token pruning
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "vision token selection"
+  - "coverage maximization"
+  - "submodular optimization"
+  - "VLM efficiency"
+  - "token pruning"
 date: 2026-05-08
-content_hash: 3516f865e0d99b14
+content_hash: f4963249fc3b0069
 ---
+
 # MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs
 
 **Conference**: ICLR 2026  
@@ -181,9 +182,9 @@ This work introduces **submodular function optimization** (classic combinatorial
 
 - [\[ICLR 2026\] Multimodal Classification via Total Correlation Maximization](multimodal_classification_via_total_correlation_maximization.md)
 - [\[ACL 2026\] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects](../../ACL2026/multimodal_vlm/efficient_inference_for_large_vision-language_models_bottlenecks_techniques_and_.md)
-- [\[ECCV 2024\] Efficient Inference of Vision Instruction-Following Models with Elastic Cache](../../ECCV2024/multimodal_vlm/efficient_inference_of_vision_instruction-following_models_with_elastic_cache.md)
 - [\[ICLR 2026\] EventFlash: Towards Efficient MLLMs for Event-Based Vision](eventflash_towards_efficient_mllms_for_event-based_vision.md)
-- [\[ICLR 2026\] IndicVisionBench: Benchmarking Cultural and Multilingual Understanding in VLMs](indicvisionbench_benchmarking_cultural_and_multilingual_understanding_in_vlms.md)
+- [\[ICLR 2026\] Revisiting Confidence Calibration for Misclassification Detection in VLMs](revisiting_confidence_calibration_for_misclassification_detection_in_vlms.md)
+- [\[ECCV 2024\] Efficient Inference of Vision Instruction-Following Models with Elastic Cache](../../ECCV2024/multimodal_vlm/efficient_inference_of_vision_instruction-following_models_with_elastic_cache.md)
 
 </div>
 

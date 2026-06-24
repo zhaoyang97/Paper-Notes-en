@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ARMOR: High-Performance Semi-Structured Pruning via Adaptive Matrix Factorization
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] ARMOR reformulates 2:4 semi-structured pruning as a "factorization" problem. Instead of directly deleting weights, it decomposes each weight matrix into a 2:4 sparse kernel plus two lightweight block-diagonal "wrapper matrices" acting as error correctors. These components are jointly optimized using block coordinate de
+  [ICLR2026][Model Compression][Semi-structured pruning] ARMOR reformulates 2:4 semi-structured pruning as a "factorization" problem. Instead of directly deleting weights, it decomposes each weight matrix into a 2:4 sparse kernel plus two lightweight block-diagonal "wrapper matrices" acting as error correctors. These components are jointly optimized using block coordinate descent, theoretically guaranteeing a proxy loss no worse than SOTA. Locally…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR2026"
+  - "Model Compression"
+  - "Semi-structured pruning"
+  - "2:4 sparsity"
+  - "matrix factorization"
+  - "block coordinate descent"
+  - "one-shot post-training compression"
 date: 2026-05-08
-content_hash: 74da541b410520eb
+content_hash: 6cf1754ccd953122
 ---
+
 # ARMOR: High-Performance Semi-Structured Pruning via Adaptive Matrix Factorization
 
 **Conference**: ICLR2026  
@@ -143,6 +149,7 @@ NoWag-P represents the version of ARMOR without factorization and optimization. 
 - Value: ⭐⭐⭐⭐⭐ Effectively addresses the precision-efficiency trade-off for 2:4 pruning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Derandomization Framework for Structure Discovery: Applications in Neural Networks and Beyond
 description: >-
-  [ICLR 2026][learning_theory][Johnson-Lindenstrauss] This paper proposes a general derandomization lemma based on $\rho$-SOSP, proving that under Gaussian inputs, smooth targets, and minimal weight regularization, second-order stationary points automatically suppress random linear components. This mechanism explains the low-rank structure discovery of first-layer weights
+  [ICLR2026][learning theory][structure discovery] This paper proposes a general derandomization lemma based on $\rho$-SOSP, proving that under Gaussian inputs, smooth targets, and minimal weight regularization, second-order stationary points automatically suppress random linear components. This mechanism explains the low-rank structure discovery of first-layer weights in neural networks and extends to deterministic constructions for MAXCUT rounding and Johnson-Lindenstrauss em…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Johnson-Lindenstrauss
+  - "ICLR2026"
+  - "learning theory"
+  - "structure discovery"
+  - "derandomization"
+  - "second-order stationary point"
+  - "implicit regularization"
+  - "Johnson-Lindenstrauss"
 date: 2026-05-08
-content_hash: 66f89a0141a3f61b
+content_hash: ca7642ba64e05ca0
 ---
+
 # A Derandomization Framework for Structure Discovery: Applications in Neural Networks and Beyond
 
 **Conference**: ICLR2026  
@@ -164,9 +169,9 @@ Rather than modular ablations, the paper uses toy examples to demonstrate the ne
 ## Related Papers
 
 - [\[ICLR 2026\] Some Neural Networks Inherently Preserve Subspace Clustering Structure](some_neural_networks_inherently_preserve_subspace_clustering_structure.md)
-- [\[ICLR 2026\] Proper Velocity Neural Networks](proper_velocity_neural_networks.md)
-- [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
+- [\[ICLR 2026\] Why High-Rank Neural Networks Also Generalize?: An Algebraic Framework Based on RKHS](why_high-rank_neural_networks_generalize_an_algebraic_framework_with_rkhss.md)
 - [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
+- [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
 - [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data and Training Recipes
 description: >-
-  [CVPR 2026][Multimodal VLM][3D-Resampler] MiniCPM-V 4.5 utilizes a "Unified 3D-Resampler for visual token compression + Unified Document/OCR learning via dynamic corruption + Short-long dual-mode hybrid RL" approach to build a highly efficient and powerful 8B MLLM. It outperforms GPT-4o-latest and Qwen2.5-VL 72B with a score of 77.0 on OpenCompass, while requi
+  [CVPR 2026][Multimodal Efficiency][Efficient MLLM] MiniCPM-V 4.5 utilizes a "Unified 3D-Resampler for visual token compression + Unified Document/OCR learning via dynamic corruption + Short-long dual-mode hybrid RL" approach to build a highly efficient and powerful 8B MLLM. It outperforms GPT-4o-latest and Qwen2.5-VL 72B with a score of 77.0 on OpenCompass, while requiring only ~10% of the inference time on VideoMME.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - 3D-Resampler
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Efficient MLLM"
+  - "3D-Resampler"
+  - "Unified Document/OCR Learning"
+  - "Hybrid Reinforcement Learning"
+  - "Long Video Understanding"
 date: 2026-05-08
-content_hash: bf75e846875f9a40
+content_hash: 9f19014787cf68be
 ---
+
 # MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data and Training Recipes
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ MiniCPM-V 4.5 outperforms GLM-4.1V while using only **42.9%** of the time. On Vi
 
 ## Related Papers
 
-- [\[CVPR 2026\] HoneyBee: Data Recipes for Vision-Language Reasoners](honeybee_data_recipes_for_vision-language_reasoners.md)
-- [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
-- [\[CVPR 2026\] TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective](tablemix_enhancing_multimodal_table_reasoning_in_mllms_from_a_data-centric_persp.md)
-- [\[CVPR 2026\] Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training](why_does_rl_generalize_better_than_sft_a_data-centric_perspective_on_vlm_post-tr.md)
-- [\[CVPR 2026\] POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs](points-long_adaptive_dual-mode_visual_reasoning_in_mllms.md)
+- [\[CVPR 2026\] OmniZip: Learning a Unified and Lightweight Lossless Compressor for Multi-Modal Data](omnizip_learning_a_unified_and_lightweight_lossless_compressor_for_multi-modal_d.md)
+- [\[CVPR 2026\] Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation](vision-oriented_lightweight_neural_architecture_search_with_budget-adaptive_eval.md)
+- [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
+- [\[ICLR 2026\] ST-SimDiff: Balancing Spatiotemporal Similarity and Difference for Efficient Video Understanding with MLLMs](../../ICLR2026/vlm_efficiency/st-simdiff_balancing_spatiotemporal_similarity_and_difference_for_efficient_vide.md)
+- [\[ACL 2026\] ReGATE: Learning Faster and Better with Fewer Tokens in MLLMs](../../ACL2026/vlm_efficiency/regate_learning_faster_and_better_with_fewer_tokens_in_mllms.md)
 
 </div>
 

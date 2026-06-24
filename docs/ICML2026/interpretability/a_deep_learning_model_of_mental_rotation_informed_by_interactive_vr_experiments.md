@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Deep Learning Model of Mental Rotation Informed by Interactive VR Experiments
 description: >-
-  [ICML 2026][Interpretability][mental rotation] This paper constrains model design using VR interactive experiments and proposes a mental rotation model composed of a 3D equivariant spatial encoder, a neuro-symbolic object encoder, and an MLP for action decision-making. The model replicates human mental rotation behavior in terms of accuracy, number of actions, and
+  [ICML 2026][Interpretability][mental rotation] This paper constrains model design using VR interactive experiments and proposes a mental rotation model composed of a 3D equivariant spatial encoder, a neuro-symbolic object encoder, and an MLP for action decision-making. The model replicates human mental rotation behavior in terms of accuracy, number of actions, and partial response time trends.
 tags:
-  - ICML 2026
-  - Interpretability
-  - mental rotation
+  - "ICML 2026"
+  - "Interpretability"
+  - "mental rotation"
+  - "VR interaction"
+  - "equivariant representations"
+  - "neuro-symbolic models"
+  - "spatial reasoning"
 date: 2026-05-08
-content_hash: 5bd501261eea5f6a
+content_hash: 4a946bb45949e340
 ---
+
 # A Deep Learning Model of Mental Rotation Informed by Interactive VR Experiments
 
 **Conference**: ICML 2026  
@@ -131,10 +136,10 @@ The three modules are trained independently. Module I is trained for equivariant
 ## Related Papers
 
 - [\[ICML 2026\] Position: Zeroth-Order Optimization in Deep Learning Is Underexplored, Not Underpowered](position_zeroth-order_optimization_in_deep_learning_is_underexplored_not_underpo.md)
-- [\[ICLR 2026\] PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression](../../ICLR2026/interpretability/polyshap_extending_kernelshap_with_interaction-informed_polynomial_regression.md)
-- [\[CVPR 2025\] Learning on Model Weights using Tree Experts](../../CVPR2025/interpretability/learning_on_model_weights_using_tree_experts.md)
 - [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](../../ACL2026/interpretability/experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
+- [\[ICLR 2026\] PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression](../../ICLR2026/interpretability/polyshap_extending_kernelshap_with_interaction-informed_polynomial_regression.md)
 - [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](../../NeurIPS2025/interpretability/llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)
+- [\[ICLR 2026\] Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations](../../ICLR2026/interpretability/joint_distributioninformed_shapley_values_for_sparse_counterfactual_explanations.md)
 
 </div>
 

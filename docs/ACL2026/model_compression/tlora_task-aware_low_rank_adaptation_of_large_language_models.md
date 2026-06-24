@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TLoRA: Task-aware Low Rank Adaptation of Large Language Models
 description: >-
-  [ACL 2026][Model Compression][LoRA] TLoRA uses training sample activation covariance to initialize and freeze the LoRA $A$ matrix, then adaptively allocates rank and scaling factors based on module importance. This allows LLMs to achieve or exceed mainstream LoRA variants on NLU, common sense reasoning, math, code generation, and chat tasks using approxi
+  [ACL2026][Model Compression][LoRA] TLoRA uses training sample activation covariance to initialize and freeze the LoRA $A$ matrix, then adaptively allocates rank and scaling factors based on module importance. This allows LLMs to achieve or exceed mainstream LoRA variants on NLU, common sense reasoning, math, code generation, and chat tasks using approximately half the trainable parameters.
 tags:
-  - ACL 2026
-  - Model Compression
-  - LoRA
-  - PEFT
+  - "ACL2026"
+  - "Model Compression"
+  - "LoRA"
+  - "PEFT"
+  - "Task-aware Initialization"
+  - "Adaptive Rank Allocation"
+  - "Low-Rank Adaptation"
 date: 2026-05-08
-content_hash: 23273b2758a9b58b
+content_hash: acf6f67305360a05
 ---
+
 # TLoRA: Task-aware Low Rank Adaptation of Large Language Models
 
 **Conference**: ACL2026  
@@ -150,9 +154,9 @@ The design of freezing $A$ was also independently verified.
 
 - [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
 - [\[ACL 2026\] Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation](not_all_directions_matter_towards_structured_and_task-aware_low-rank_model_adapt.md)
+- [\[ACL 2026\] Polynomial Expansion Rank Adaptation: Enhancing Low-Rank Fine-Tuning with High-Order Interactions](polynomial_expansion_rank_adaptation_enhancing_low-rank_fine-tuning_with_high-or.md)
 - [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](../../NeurIPS2025/model_compression/beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
 - [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/model_compression/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
-- [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](../../NeurIPS2025/model_compression/gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
 
 </div>
 

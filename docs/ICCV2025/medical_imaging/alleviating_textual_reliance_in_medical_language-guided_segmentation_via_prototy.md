@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Alleviating Textual Reliance in Medical Language-guided Segmentation via Prototype-driven Semantic Approximation
 description: >-
-  [ICCV 2025][Medical Imaging][Medical image segmentation] This paper proposes ProLearn, a framework that introduces a Prototype-driven Semantic Approximation (PSA) module to fundamentally alleviate textual reliance in med…
+  [ICCV 2025][Medical Imaging][Medical image segmentation] This paper proposes ProLearn, a framework that introduces a Prototype-driven Semantic Approximation (PSA) module to fundamentally alleviate textual reliance in medical language-guided segmentation. The prototype space is initialized from a small number of image-text pairs; thereafter, both training and inference require no text input. ProLearn maintains strong performance under 1% text availability (QaTa-COV19 Dice = 0.…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "textual reliance"
   - "semantic approximation"
 date: 2026-05-08
-content_hash: c35d85c4f126d54c
+content_hash: 89ccedae42f61af5
 ---
 
 # Alleviating Textual Reliance in Medical Language-guided Segmentation via Prototype-driven Semantic Approximation
@@ -131,10 +131,10 @@ ProLearn = PSA module + Language-guided U-Net. The PSA module initializes a prot
 ## Related Papers
 
 - [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
-- [\[ICCV 2025\] Progressive Test Time Energy Adaptation for Medical Image Segmentation](progressive_test_time_energy_adaptation_for_medical_image_segmentation.md)
-- [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](../../CVPR2026/medical_imaging/medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
-- [\[AAAI 2026\] Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation](../../AAAI2026/medical_imaging/divide_conquer_and_unite_hierarchical_style-recalibrated_prototype_alignment_for.md)
+- [\[CVPR 2025\] Evidential learning driven Breast Tumor Segmentation with Stage-divided Vision-Language Interaction](../../CVPR2025/medical_imaging/evidential_learning_driven_breast_tumor_segmentation_with_stage-divided_vision-l.md)
+- [\[CVPR 2025\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/semantic_class_distribution_learning_for_debiasing_semi-supervised_medical_image.md)
 - [\[NeurIPS 2025\] Magical: Medical Lay Language Generation via Semantic Invariance and Layperson-tailored Adaptation](../../NeurIPS2025/medical_imaging/magical_medical_lay_language_generation_via_semantic_invariance_and_layperson-ta.md)
+- [\[AAAI 2026\] Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation](../../AAAI2026/medical_imaging/divide_conquer_and_unite_hierarchical_style-recalibrated_prototype_alignment_for.md)
 
 </div>
 

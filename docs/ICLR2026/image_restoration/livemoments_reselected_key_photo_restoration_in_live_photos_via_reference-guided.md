@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LiveMoments: Reselected Key Photo Restoration in Live Photos via Reference-guided Diffusion
 description: >-
-  [ICLR 2026][Image Restoration][Live Photo] Addressing the real-world pain point of significant quality degradation when "reselecting a key frame" in Live Photos, LiveMoments utilizes an SD3-based dual-branch diffusion network. It treats the original high-quality key frame as a same-sequence reference and employs a two-layer motion alignment strategy—"latent-spa
+  [ICLR 2026][Image Restoration][Live Photo] Addressing the real-world pain point of significant quality degradation when "reselecting a key frame" in Live Photos, LiveMoments utilizes an SD3-based dual-branch diffusion network. It treats the original high-quality key frame as a same-sequence reference and employs a two-layer motion alignment strategy—"latent-space motion-guided attention + image-level patch correspondence retrieval"—to restore blurry and misaligned reselected…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Live Photo
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Live Photo"
+  - "Reference-guided restoration"
+  - "Diffusion model"
+  - "Dual-branch network"
+  - "Motion alignment"
+  - "Optical flow"
 date: 2026-05-08
-content_hash: 185e91197b6772ce
+content_hash: 84c8d3097e8540ac
 ---
+
 # LiveMoments: Reselected Key Photo Restoration in Live Photos via Reference-guided Diffusion
 
 **Conference**: ICLR 2026  
@@ -137,14 +142,17 @@ LPIPS/DISTS/FID leads significantly (FID 4.00 vs. 13.92 runner-up). PSNR is slig
 
 <div class="related-papers" markdown="1">
 
-- **CoSeR**: [https://arxiv.org/abs/2311.16514](https://arxiv.org/abs/2311.16514)
-- **SUPIR**: [https://arxiv.org/abs/2401.13627](https://arxiv.org/abs/2401.13627)
-- **AnimateAnyone**: [https://arxiv.org/abs/2311.17117](https://arxiv.org/abs/2311.17117)
+## Related Papers
+
+- [\[ICLR 2026\] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution](trust_but_verify_adaptive_conditioning_for_reference-based_diffusion_super-resol.md)
+- [\[ICLR 2026\] LucidFlux: Caption-Free Photo-Realistic Image Restoration via a Large-Scale Diffusion Transformer](lucidflux_caption-free_photo-realistic_image_restoration_via_a_large-scale_diffu.md)
+- [\[CVPR 2026\] ZeroIDIR: Zero-Reference Illumination Degradation Image Restoration with Perturbed Consistency Diffusion Models](../../CVPR2026/image_restoration/zeroidir_zero-reference_illumination_degradation_image_restoration_with_perturbe.md)
+- [\[ICLR 2026\] PlantRSR: A New Plant Dataset and Method for Reference-based Super-Resolution](plantrsr_a_new_plant_dataset_and_method_for_reference-based_super-resolution.md)
+- [\[ICLR 2026\] Energy-oriented Diffusion Bridge for Image Restoration with Foundational Diffusion Models](energy-oriented_diffusion_bridge_for_image_restoration_with_foundational_diffusi.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution](trust_but_verify_adaptive_conditioning_for_reference-based_diffusion_super-resol.md)

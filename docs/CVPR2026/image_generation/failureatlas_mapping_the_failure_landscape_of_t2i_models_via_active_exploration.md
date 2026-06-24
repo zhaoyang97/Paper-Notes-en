@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FailureAtlas: Mapping the Failure Landscape of T2I Models via Active Exploration
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Instead of passively scoring T2I models with fixed prompt sets, this work formalizes "error finding" as a structured tree search over an entity × attribute combinatorial space. By utilizing rule-based pruning and learned prioritization, the astronomical search space is reduced to a feasible scale. The framework automat
+  [CVPR 2026][Image Generation][T2I Evaluation] Instead of passively scoring T2I models with fixed prompt sets, this work formalizes "error finding" as a structured tree search over an entity × attribute combinatorial space. By utilizing rule-based pruning and learned prioritization, the astronomical search space is reduced to a feasible scale. The framework automatically uncovers 247,000 previously unknown "minimal failure slices" on SD1.5 and provides large-scale evidence cor…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "T2I Evaluation"
+  - "Error Slice Discovery"
+  - "Active Exploration"
+  - "Tree Search"
+  - "Data Scarcity Attribution"
 date: 2026-05-08
-content_hash: d9ea284803e75adc
+content_hash: 1cabb86c9e2a5ea2
 ---
+
 # FailureAtlas: Mapping the Failure Landscape of T2I Models via Active Exploration
 
 **Conference**: CVPR 2026  
@@ -129,16 +135,16 @@ Quantitative gains from acceleration strategies:
 - Value: ⭐⭐⭐⭐⭐ Provides a scalable diagnostic engine for T2I auditing and a path toward data-driven improvement.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bias at the End of the Score: Demographic Biases in Reward Models for T2I](bias_reward_models_t2i.md)
-- [\[ICML 2026\] MIRO: 多奖励条件预训练同时提升 T2I 质量与效率](../../ICML2026/image_generation/miro_multi-reward_conditioned_pretraining_improves_t2i_quality_and_efficiency.md)
-- [\[CVPR 2026\] Breaking Semantic Boundaries: Distribution-Guided Semantic Exploration for Creative Generation](breaking_semantic_boundaries_distribution-guided_semantic_exploration_for_creati.md)
+- [\[CVPR 2026\] SounDiT: Geo-Contextual Soundscape-to-Landscape Generation](soundit_geo-contextual_soundscape-to-landscape_generation.md)
 - [\[AAAI 2026\] Exposing DeepFakes via Hyperspectral Domain Mapping](../../AAAI2026/image_generation/exposing_deepfakes_via_hyperspectral_domain_mapping.md)
-- [\[CVPR 2026\] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](editing_away_the_evidence_diffusion-based_image_manipulation_and_the_failure_mod.md)
+- [\[CVPR 2026\] Breaking Semantic Boundaries: Distribution-Guided Semantic Exploration for Creative Generation](breaking_semantic_boundaries_distribution-guided_semantic_exploration_for_creati.md)
+- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](../../ICML2026/image_generation/embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
+- [\[ICML 2025\] Reimagining Parameter Space Exploration with Diffusion Models](../../ICML2025/image_generation/reimagining_parameter_space_exploration_with_diffusion_models.md)
 
 </div>
 

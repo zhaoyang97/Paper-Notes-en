@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] RoleConflictBench constructs 13,914 role conflict scenarios and utilizes situational urgency as an objective constraint to evaluate the contextual sensitivity of LLMs. The study reveals a significant issue where model decisions are dominated by static role preferences rather than responding to dynamic situational cues.
+  [ACL 2026 Findings][LLM Evaluation][Role Conflict] RoleConflictBench constructs 13,914 role conflict scenarios and utilizes situational urgency as an objective constraint to evaluate the contextual sensitivity of LLMs. The study reveals a significant issue where model decisions are dominated by static role preferences rather than responding to dynamic situational cues.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Role Conflict"
+  - "Contextual Sensitivity"
+  - "Social Bias"
+  - "Situational Urgency"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: 97ce207b6f14a681
+content_hash: 89fc4acaad8810a6
 ---
+
 # RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity
 
 **Conference**: ACL 2026 Findings  
@@ -145,7 +151,7 @@ The sensitivity score identifies "if the model listens to the context," but expl
 - [\[AAAI 2026\] ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions](../../AAAI2026/llm_evaluation/coninstruct_evaluating_large_language_models_on_conflict_detection_and_resolutio.md)
 - [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
 - [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
-- [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](../../NeurIPS2025/llm_evaluation/parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
+- [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
 
 </div>
 

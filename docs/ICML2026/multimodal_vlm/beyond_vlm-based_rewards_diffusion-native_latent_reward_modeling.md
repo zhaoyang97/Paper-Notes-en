@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] DiNa-LRM is proposed to establish preference learning directly on the noisy latent space of diffusion models. Through noise-calibrated Thurstone likelihood and inference-time multi-noise ensembles, it achieves preference prediction accuracy close to SOTA with significantly lower computational overhead than VLM-based re
+  [ICML2026][Multimodal VLM][Diffusion Reward Modeling] DiNa-LRM is proposed to establish preference learning directly on the noisy latent space of diffusion models. Through noise-calibrated Thurstone likelihood and inference-time multi-noise ensembles, it achieves preference prediction accuracy close to SOTA with significantly lower computational overhead than VLM-based reward models.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Diffusion Reward Modeling"
+  - "Preference Alignment"
+  - "Noise-Calibrated Thurstone"
+  - "Latent Reward"
+  - "Test-Time Noise Ensemble"
 date: 2026-05-08
-content_hash: f799c520c36a0f2e
+content_hash: f1552b9743dc2625
 ---
+
 # Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling
 
 **Conference**: ICML2026  
@@ -139,10 +145,10 @@ DiNa-LRM improves the average accuracy by **+9.76%** over the previous diffusion
 ## Related Papers
 
 - [\[ICML 2026\] Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling](mitigating_perceptual_judgment_bias_in_multimodal_llm-as-a-judge_via_perceptual_.md)
-- [\[ICLR 2026\] GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-Guided Latent Diffusion Model?](../../ICLR2026/multimodal_vlm/glyph-sr_can_we_achieve_both_high-quality_image_super-resolution_and_high-fideli.md)
-- [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](../../CVPR2026/multimodal_vlm/beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
 - [\[CVPR 2026\] VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery](../../CVPR2026/multimodal_vlm/vlm-guided_group_preference_alignment_for_diffusion-based_human_mesh_recovery.md)
+- [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](../../CVPR2026/multimodal_vlm/beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
 - [\[ICML 2026\] Conditional Diffusion Sampling](conditional_diffusion_sampling.md)
+- [\[CVPR 2026\] Beyond Graph Model: Reliable VLM Fine-Tuning via Random Graph Adapter](../../CVPR2026/multimodal_vlm/beyond_graph_model_reliable_vlm_fine-tuning_via_random_graph_adapter.md)
 
 </div>
 

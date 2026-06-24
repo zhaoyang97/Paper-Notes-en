@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fast Markov Random Field Optimisation for Topologically Noisy 3D Shape Matching
 description: >-
-  [CVPR 2026][3D Vision][α-expansion] This paper reformulates non-rigid 3D shape matching as a triangle-based multi-label MRF problem. It ensures neighborhood smoothness using a pairwise pseudometric that measures geodesic distances exclusively on the target shape. By employing a variant of $\alpha$-expansion tailored for the specific label space, the prob
+  [CVPR 2026][3D Vision][Non-rigid shape matching] This paper reformulates non-rigid 3D shape matching as a triangle-based multi-label MRF problem. It ensures neighborhood smoothness using a pairwise pseudometric that measures geodesic distances exclusively on the target shape. By employing a variant of $\alpha$-expansion tailored for the specific label space, the problem is solved in linear time, achieving high accuracy, stability, and speed in scenarios with topological noise…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - α-expansion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Non-rigid shape matching"
+  - "Markov Random Fields"
+  - "$\\alpha$-expansion"
+  - "Topological noise"
+  - "Combinatorial optimization"
 date: 2026-05-08
-content_hash: 625605ff8a01b1a1
+content_hash: 0f18b8de866023d5
 ---
+
 # Fast Markov Random Field Optimisation for Topologically Noisy 3D Shape Matching
 
 **Conference**: CVPR 2026  
@@ -139,10 +144,10 @@ The paper uses a capabilities table (Tab. 1) and qualitative results to justify 
 ## Related Papers
 
 - [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
-- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
-- [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
+- [\[CVPR 2026\] From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)
+- [\[CVPR 2026\] Random Wins All: Rethinking Grouping Strategies for Vision Tokens](random_wins_all_rethinking_grouping_strategies_for_vision_tokens.md)
+- [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
+- [\[CVPR 2025\] PrEditor3D: Fast and Precise 3D Shape Editing](../../CVPR2025/3d_vision/preditor3d_fast_and_precise_3d_shape_editing.md)
 
 </div>
 

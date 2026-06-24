@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Matching without Group Barrier for Heterogeneous Treatment Effect Estimation
 description: >-
-  [ICLR 2026][Causal Inference][matching] MOGA breaks the matching barrier of "searching for neighbors only within the target treatment group" by including all samples in the candidate pool. It employs a self-optimal transport model to learn matching weights, utilizes random walks on manifolds to propagate factual outcomes for counterfactual prediction, and fi
+  [ICLR 2026][Causal Inference][matching] MOGA breaks the matching barrier of "searching for neighbors only within the target treatment group" by including all samples in the candidate pool. It employs a self-optimal transport model to learn matching weights, utilizes random walks on manifolds to propagate factual outcomes for counterfactual prediction, and finds sufficiently close neighbors even under sample sparsity or distribution shifts, significantly improving the precisio…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - matching
-  - heterogeneous treatment effect
-  - optimal transport
-  - counterfactual prediction
-  - distance learning
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "matching"
+  - "heterogeneous treatment effect"
+  - "optimal transport"
+  - "counterfactual prediction"
+  - "distance learning"
 date: 2026-05-08
-content_hash: dcb02b6bdc64952e
+content_hash: 33fec8d9b6cb349f
 ---
+
 # Matching without Group Barrier for Heterogeneous Treatment Effect Estimation
 
 **Conference**: ICLR 2026  

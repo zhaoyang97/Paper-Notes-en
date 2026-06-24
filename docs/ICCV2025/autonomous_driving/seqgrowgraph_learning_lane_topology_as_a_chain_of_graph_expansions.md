@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] SeqGrowGraph: Learning Lane Topology as a Chain of Graph Expansions
 description: >-
-  [Autonomous Driving] Inspired by the human sketching process, this work models lane topology as a chain of sequential graph expansions, incrementally constructing directed lane graphs via an autoregressive transformer…
+  [Autonomous Driving] Inspired by the human sketching process, this work models lane topology as a chain of sequential graph expansions, incrementally constructing directed lane graphs via an autoregressive transformer, thereby overcoming the inability of DAG-based methods to represent cycles and bidirectional lanes.
 tags:
   - "Autonomous Driving"
 date: 2026-05-08
-content_hash: e06ae67cb67744c7
+content_hash: 75272afb040b9ff2
 ---
 
 # SeqGrowGraph: Learning Lane Topology as a Chain of Graph Expansions
@@ -124,9 +124,9 @@ $$\mathcal{L} = -\frac{1}{T}\sum_{t=1}^T \log p(\hat{x}_t | x_1, x_2, \ldots, x_
 
 - [\[ICCV 2025\] RESCUE: Crowd Evacuation Simulation via Controlling SDM-United Characters](rescue_crowd_evacuation_simulation_via_controlling_sdm-united_characters.md)
 - [\[ICCV 2025\] World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model](world4drive_end-to-end_autonomous_driving_via_intention-aware_physical_latent_wo.md)
+- [\[CVPR 2025\] T²SG: Traffic Topology Scene Graph for Topology Reasoning in Autonomous Driving](../../CVPR2025/autonomous_driving/t2sg_traffic_topology_scene_graph_for_topology_reasoning_in_autonomous_driving.md)
 - [\[AAAI 2026\] Fine-Grained Representation for Lane Topology Reasoning](../../AAAI2026/autonomous_driving/fine-grained_representation_for_lane_topology_reasoning.md)
 - [\[NeurIPS 2025\] Self-Supervised Learning of Graph Representations for Network Intrusion Detection](../../NeurIPS2025/autonomous_driving/self-supervised_learning_of_graph_representations_for_network_intrusion_detectio.md)
-- [\[NeurIPS 2025\] BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning](../../NeurIPS2025/autonomous_driving/bayesian_ego-graph_inference_for_networked_multi-agent_reinforcement_learning.md)
 
 </div>
 

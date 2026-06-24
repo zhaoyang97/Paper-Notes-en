@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control
 description: >-
-  [ICML 2026][Reinforcement Learning][InfoNCE] DR.Q builds upon the MR.Q framework ("model-based representation + actor-critic") by introducing two key components: explicitly maximizing the mutual information between $z_{sa}$ and the next-state representation $z_{s'}$ via InfoNCE, and mitigating early-experience overfitting with "faded prioritized replay" that fuse
+  [ICML 2026][Reinforcement Learning][Model-based representation] DR.Q builds upon the MR.Q framework ("model-based representation + actor-critic") by introducing two key components: explicitly maximizing the mutual information between $z_{sa}$ and the next-state representation $z_{s'}$ via InfoNCE, and mitigating early-experience overfitting with "faded prioritized replay" that fuses "PER × forget." It outperforms strong baselines like SimBaV2, MR.Q…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - InfoNCE
-  - faded PER
-  - primacy bias
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Model-based representation"
+  - "mutual information"
+  - "InfoNCE"
+  - "faded PER"
+  - "primacy bias"
 date: 2026-05-08
-content_hash: caa34c00e6a6f86d
+content_hash: b178270a1b212db2
 ---
+
 # DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control
 
 **Conference**: ICML 2026  
@@ -152,7 +155,7 @@ DR.Q is the first algorithm to achieve an average return exceeding 700 on the do
 - [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](../../ICLR2026/reinforcement_learning/sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 - [\[ICML 2026\] Dr. Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research](dr_tulu_reinforcement_learning_with_evolving_rubrics_for_deep_research.md)
 - [\[ICML 2026\] Laplacian Representations for Decision-Time Planning](laplacian_representations_for_decision-time_planning.md)
-- [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
+- [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](../../ICLR2026/reinforcement_learning/learning_massively_multitask_world_models_for_continuous_control.md)
 
 </div>
 

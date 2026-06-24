@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Surprising Effectiveness of a Single Global Merging in Decentralized Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] In decentralized training with extreme communication constraints and high data heterogeneity, the authors find that a "global merging" (averaging all node models) at the end of training brings global test performance close to Federated Learning levels. They theoretically prove for the first time that the global merging
+  [ICLR 2026][Optimization][Decentralized SGD] In decentralized training with extreme communication constraints and high data heterogeneity, the authors find that a "global merging" (averaging all node models) at the end of training brings global test performance close to Federated Learning levels. They theoretically prove for the first time that the global merging model of decentralized SGD can achieve the convergence rate of parallel SGD—the key lies in reinterpreting the int…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Decentralized SGD"
+  - "Global Merging"
+  - "Communication Scheduling"
+  - "Data Heterogeneity"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: 7e9200c0763aecc7
+content_hash: f5f875c3d22af9c8
 ---
+
 # On the Surprising Effectiveness of a Single Global Merging in Decentralized Learning
 
 **Conference**: ICLR 2026  
@@ -146,11 +152,11 @@ Convergence rate comparison (non-IID, $m$ nodes):
 
 ## Related Papers
 
-- [\[ICML 2026\] SyMerge: From Non-Interference to Synergistic Merging via Single-Layer Adaptation](../../ICML2026/optimization/symerge_from_non-interference_to_synergistic_merging_via_single-layer_adaptation.md)
 - [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
+- [\[ICML 2026\] SyMerge: From Non-Interference to Synergistic Merging via Single-Layer Adaptation](../../ICML2026/optimization/symerge_from_non-interference_to_synergistic_merging_via_single-layer_adaptation.md)
 - [\[AAAI 2026\] A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication](../../AAAI2026/optimization/a_unified_convergence_analysis_for_semi-decentralized_learni.md)
 - [\[ICLR 2026\] WSM: Decay-free Learning Rate Schedule via Checkpoint Merging for LLM Pre-training](wsm_decay-free_learning_rate_schedule_via_checkpoint_merging_for_llm_pre-trainin.md)
-- [\[ICLR 2026\] Improving LLM-based Global Optimization with Search Space Partitioning](improving_llm-based_global_optimization_with_search_space_partitioning.md)
+- [\[ICLR 2026\] Single-Loop Byzantine-Resilient Federated Bilevel Optimization](single-loop_byzantine-resilient_federated_bilevel_optimization.md)
 
 </div>
 

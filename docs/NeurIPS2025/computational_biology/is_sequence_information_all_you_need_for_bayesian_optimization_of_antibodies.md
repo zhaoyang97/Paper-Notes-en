@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?
 description: >-
-  [NeurIPS 2025 (AI for Science Workshop)][Computational Biology][Bayesian Optimization] This paper systematically compares the roles of sequence and structural information in antibody Bayesian optimization…
+  [NeurIPS 2025 (AI for Science Workshop)][Computational Biology][Bayesian Optimization] This paper systematically compares the roles of sequence and structural information in antibody Bayesian optimization, finding that sequence-only methods augmented with protein language model (pLM) soft constraints can match the performance of structure-based methods, thereby questioning the necessity of structural information in antibody Bayesian optimization.
 tags:
   - "NeurIPS 2025 (AI for Science Workshop)"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Structural Information"
   - "Gaussian Processes"
 date: 2026-05-08
-content_hash: 970521e238546923
+content_hash: 9ba8bc4eee2ec5b6
 ---
 
 # Is Sequence Information All You Need for Bayesian Optimization of Antibodies?
@@ -147,11 +147,11 @@ Experiments are conducted using an internal oracle trained on real optimization 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction](../../ICLR2026/computational_biology/extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda.md)
+- [\[ICLR 2026\] One Protein Is All You Need](../../ICLR2026/computational_biology/one_protein_is_all_you_need.md)
+- [\[ICLR 2026\] Triangle Multiplication is All You Need for Biomolecular Structure Representations](../../ICLR2026/computational_biology/triangle_multiplication_is_all_you_need_for_biomolecular_structure_representatio.md)
 - [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
+- [\[ICLR 2026\] Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction](../../ICLR2026/computational_biology/extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda.md)
 - [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](g-dpo_scalable_preference_optimization_for_protein_language_models.md)
-- [\[NeurIPS 2025\] PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation](prescribe_predicting_single-cell_responses_with_bayesian_estimation.md)
-- [\[NeurIPS 2025\] Unified All-Atom Molecule Generation with Neural Fields](unified_all-atom_molecule_generation_with_neural_fields.md)
 
 </div>
 

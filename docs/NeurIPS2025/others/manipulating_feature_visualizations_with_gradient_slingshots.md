@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Manipulating Feature Visualizations with Gradient Slingshots
 description: >-
-  [NeurIPS 2025][Feature Visualization] This paper proposes Gradient Slingshots (GS), a method that "carves" a quadratic activation landscape in the out-of-distribution (OOD) input region of a model…
+  [NeurIPS 2025][Feature Visualization] This paper proposes Gradient Slingshots (GS), a method that "carves" a quadratic activation landscape in the out-of-distribution (OOD) input region of a model, directing the gradient-based optimization of Feature Visualization (FV) toward an arbitrary target image. The approach causes FV to converge to a predefined spurious image while leaving the model's architecture, classification accuracy, and internal feature representations largely…
 tags:
   - "NeurIPS 2025"
   - "Feature Visualization"
@@ -11,7 +11,7 @@ tags:
   - "XAI Security"
   - "Adversarial Fine-tuning"
 date: 2026-05-08
-content_hash: 679f3dddbd3df0d7
+content_hash: 72ea310a0c8a4a9b
 ---
 
 # Manipulating Feature Visualizations with Gradient Slingshots
@@ -131,11 +131,11 @@ Total loss: $\mathcal{L}(\theta) = \alpha\mathcal{L_P}(\theta) + (1-\alpha)\math
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Distributionally Robust Feature Selection](distributionally_robust_feature_selection.md)
 - [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
-- [\[NeurIPS 2025\] Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model](neural_collapse_in_cumulative_link_models_for_ordinal_regression_an_analysis_wit.md)
-- [\[NeurIPS 2025\] Hessian-guided Perturbed Wasserstein Gradient Flows for Escaping Saddle Points](hessian-guided_perturbed_wasserstein_gradient_flows_for_escaping_saddle_points.md)
+- [\[NeurIPS 2025\] Distributionally Robust Feature Selection](distributionally_robust_feature_selection.md)
 - [\[NeurIPS 2025\] Sharpness-Aware Minimization with Z-Score Gradient Filtering](sharpness-aware_minimization_with_z-score_gradient_filtering.md)
+- [\[NeurIPS 2025\] Hessian-guided Perturbed Wasserstein Gradient Flows for Escaping Saddle Points](hessian-guided_perturbed_wasserstein_gradient_flows_for_escaping_saddle_points.md)
+- [\[ICML 2025\] Synthesizing Images on Perceptual Boundaries of ANNs for Uncovering and Manipulating Human Perceptual Variability](../../ICML2025/others/synthesizing_images_on_perceptual_boundaries_of_anns_for_uncovering_and_manipula.md)
 
 </div>
 

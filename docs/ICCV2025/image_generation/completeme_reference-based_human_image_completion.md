@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CompleteMe: Reference-based Human Image Completion
 description: >-
-  [ICCV 2025][Image Generation][Image Completion] This paper proposes the CompleteMe framework, which leverages a dual U-Net architecture and Region-focused Attention (RFA) Block to achieve high-fidelity reference-guided h…
+  [ICCV 2025][Image Generation][Image Completion] This paper proposes the CompleteMe framework, which leverages a dual U-Net architecture and Region-focused Attention (RFA) Block to achieve high-fidelity reference-guided human image completion by exploiting fine-grained person-specific details (clothing textures, tattoos, etc.) from reference images.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Attention Mechanism"
   - "Human Body"
 date: 2026-05-08
-content_hash: 583af969aa7182e1
+content_hash: ecd27b9250a5591b
 ---
 
 # CompleteMe: Reference-based Human Image Completion
@@ -176,11 +176,11 @@ CompleteMe achieves state-of-the-art performance on all identity-consistency met
 
 ## Related Papers
 
+- [\[CVPR 2025\] Free-viewpoint Human Animation with Pose-correlated Reference Selection](../../CVPR2025/image_generation/free-viewpoint_human_animation_with_pose-correlated_reference_selection.md)
 - [\[CVPR 2026\] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images](../../CVPR2026/image_generation/hifi-inpaint_towards_high-fidelity_reference-based_inpainting_for_generating_det.md)
 - [\[ICCV 2025\] Cycle Consistency as Reward: Learning Image-Text Alignment without Human Preferences](cycle_consistency_as_reward_learning_imagetext_alignment_wit.md)
 - [\[ICCV 2025\] HPSv3: Towards Wide-Spectrum Human Preference Score](hpsv3_towards_wide-spectrum_human_preference_score.md)
 - [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
-- [\[NeurIPS 2025\] GeneMAN: Generalizable Single-Image 3D Human Reconstruction from Multi-Source Human Data](../../NeurIPS2025/image_generation/geneman_generalizable_single-image_3d_human_reconstruction_from_multi-source_hum.md)
 
 </div>
 

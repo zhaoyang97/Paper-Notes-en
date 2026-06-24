@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reevaluating the Intra-Modal Misalignment Hypothesis in CLIP
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] This paper systematically refutes the popular "intra-modal misalignment in CLIP image embeddings" hypothesis. Theoretically, it proves that image-image similarity is fully determined by image-text similarity without additional degrees of freedom. Empirically, it reproduces the so-called "misalignment metrics" in non-CL
+  [CVPR 2026][Multimodal VLM][CLIP] This paper systematically refutes the popular "intra-modal misalignment in CLIP image embeddings" hypothesis. Theoretically, it proves that image-image similarity is fully determined by image-text similarity without additional degrees of freedom. Empirically, it reproduces the so-called "misalignment metrics" in non-CLIP models like DINO and SigLIP2, demonstrating that these metrics are artifacts of the measurement process rather than defects…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Intra-modal alignment"
+  - "image retrieval"
+  - "few-shot classification"
+  - "representation geometry"
 date: 2026-05-08
-content_hash: 443ae6b22b7efa96
+content_hash: 2f0e0f491bdd76c8
 ---
+
 # Reevaluating the Intra-Modal Misalignment Hypothesis in CLIP
 
 **Conference**: CVPR 2026  
@@ -157,10 +162,10 @@ Key point: SigLIP (cross-modal) **outperforms** DINOv2 on image-image tasks, pro
 ## Related Papers
 
 - [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
-- [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](reconstructing_clip_for_open-vocabulary_dense_perception.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/multimodal_vlm/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[CVPR 2026\] Intra-class Distribution-guided Generative Hashing with Neighbor Refinement for Cross-modal Retrieval](intra-class_distribution-guided_generative_hashing_with_neighbor_refinement_for_.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
 - [\[CVPR 2026\] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment](capt_confusion-aware_prompt_tuning_for_reducing_vision-language_misalignment.md)
-- [\[CVPR 2026\] CLIP-like Model as a Foundational Density Ratio Estimator](clip-like_model_as_a_foundational_density_ratio_estimator.md)
+- [\[CVPR 2026\] Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery](multi-modal_representation_learning_via_semi-supervised_rate_reduction_for_gener.md)
 
 </div>
 

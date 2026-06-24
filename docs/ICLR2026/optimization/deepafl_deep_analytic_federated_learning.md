@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeepAFL: Deep Analytic Federated Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Ours proposes DeepAFL, which achieves the first deep analytic federated learning model with representation learning capabilities by designing gradient-free analytic residual blocks and introducing a layer-wise federated training protocol. It maintains ideal invariance to data heterogeneity while breaking the limitation
+  [ICLR 2026][Optimization][Federated Learning] Ours proposes DeepAFL, which achieves the first deep analytic federated learning model with representation learning capabilities by designing gradient-free analytic residual blocks and introducing a layer-wise federated training protocol. It maintains ideal invariance to data heterogeneity while breaking the limitations of existing analytic methods restricted to single-layer linear models, outperforming SOTA by 5.68%-8.42% on thre…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Analytic Learning"
+  - "Gradient-free Training"
+  - "Residual Blocks"
+  - "Data Heterogeneity"
 date: 2026-05-08
-content_hash: 7e4d78084e0e7a2b
+content_hash: 8db2c8d0f2982916
 ---
+
 # DeepAFL: Deep Analytic Federated Learning
 
 **Conference**: ICLR 2026  

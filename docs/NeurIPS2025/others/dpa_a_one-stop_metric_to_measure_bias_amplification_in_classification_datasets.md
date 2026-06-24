@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DPA: A One-Stop Metric to Measure Bias Amplification in Classification Datasets
 description: >-
-  [NeurIPS 2025][bias amplification] This paper proposes Directional Predictability Amplification (DPA), a predictability-based metric for measuring bias amplification. It is the only one-stop metric that simultaneously sa…
+  [NeurIPS 2025][bias amplification] This paper proposes Directional Predictability Amplification (DPA), a predictability-based metric for measuring bias amplification. It is the only one-stop metric that simultaneously satisfies directionality, applicability to both balanced and imbalanced datasets, and correct identification of positive and negative bias amplification, by measuring the relative change between model bias and dataset bias.
 tags:
   - "NeurIPS 2025"
   - "bias amplification"
@@ -11,7 +11,7 @@ tags:
   - "directional bias"
   - "classification fairness"
 date: 2026-05-08
-content_hash: 88581f61af1fe33b
+content_hash: f10f42d1ee0ba341
 ---
 
 # DPA: A One-Stop Metric to Measure Bias Amplification in Classification Datasets
@@ -134,11 +134,11 @@ The attacker function can be any ML model (SVM, decision tree, MLP), evaluated u
 
 ## Related Papers
 
+- [\[CVPR 2026\] Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach](../../CVPR2026/others/revisiting_f-measure_optimization_in_multi-label_classification_a_sampling-based.md)
 - [\[NeurIPS 2025\] The Persistence of Neural Collapse Despite Low-Rank Bias](the_persistence_of_neural_collapse_despite_low-rank_bias.md)
 - [\[NeurIPS 2025\] Training the Untrainable: Introducing Inductive Bias via Representational Alignment](training_the_untrainable_introducing_inductive_bias_via_representational_alignme.md)
-- [\[ICLR 2026\] Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds](../../ICLR2026/others/deterministic_bounds_and_random_estimates_of_metric_tensors_on_neuromanifolds.md)
-- [\[ICML 2026\] Networked Information Aggregation for Binary Classification](../../ICML2026/others/networked_information_aggregation_for_binary_classification.md)
-- [\[AAAI 2026\] Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets](../../AAAI2026/others/intermediate_n-gramming_deterministic_and_fast_n-grams_for_large_n_and_large_dat.md)
+- [\[CVPR 2025\] Potential Field Based Deep Metric Learning](../../CVPR2025/others/potential_field_based_deep_metric_learning.md)
+- [\[CVPR 2025\] Order-One Rolling Shutter Cameras](../../CVPR2025/others/order-one_rolling_shutter_cameras.md)
 
 </div>
 

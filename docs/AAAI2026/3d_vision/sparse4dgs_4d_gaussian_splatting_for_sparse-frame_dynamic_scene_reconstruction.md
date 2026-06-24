@@ -2,97 +2,97 @@
 title: >-
   [Paper Note] Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction
 description: >-
-  [AAAI 2026][3D Vision][dynamic scene reconstruction] Sparse4DGS is proposed as the first method for sparse-frame dynamic scene reconstruction…
+  [AAAI 2026][3D Vision][Dynamic Scene Reconstruction] This paper proposes Sparse4DGS, the first 4D dynamic scene reconstruction method designed for sparse-frame inputs. Through two core modules, Texture-Aware Deformation Regularization (TADR) and Texture-Aware Canonical Optimization (TACO), it guides the Gaussian distribution to focus on texture-rich areas, achieving high-quality dynamic novel view synthesis with only 5–30 sparse input frames.
 tags:
   - "AAAI 2026"
   - "3D Vision"
-  - "dynamic scene reconstruction"
-  - "4D Gaussian splatting"
-  - "sparse frames"
-  - "texture-awareness"
-  - "stochastic gradient Langevin dynamics"
+  - "Dynamic Scene Reconstruction"
+  - "4D Gaussian Splatting"
+  - "Sparse Frames"
+  - "Texture-Aware"
+  - "Stochastic Gradient Langevin Dynamics"
 date: 2026-05-08
-content_hash: 612add3f6060e8f4
+content_hash: 12b8e19813e75b1b
 ---
 
 # Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.07122](https://arxiv.org/abs/2511.07122)  
 **Code**: [Project Page](https://ChangyueShi.github.io/Sparse4DGS)  
-**Area**: 3D Vision
-**Keywords**: dynamic scene reconstruction, 4D Gaussian splatting, sparse frames, texture-awareness, stochastic gradient Langevin dynamics
+**Area**: 3D Vision  
+**Keywords**: Dynamic Scene Reconstruction, 4D Gaussian Splatting, Sparse Frames, Texture-Aware, Stochastic Gradient Langevin Dynamics  
 
 ## TL;DR
 
-Sparse4DGS is proposed as the first method for sparse-frame dynamic scene reconstruction, achieving high-fidelity 4D scene reconstruction from sparse video frames via two core modules: Texture-Aware Deformation Regularization (TADR) and Texture-Aware Canonical Optimization (TACO).
+This paper proposes Sparse4DGS, the first 4D dynamic scene reconstruction method designed for sparse-frame inputs. Through two core modules, Texture-Aware Deformation Regularization (TADR) and Texture-Aware Canonical Optimization (TACO), it guides the Gaussian distribution to focus on texture-rich areas, achieving high-quality dynamic novel view synthesis with only 5–30 sparse input frames.
 
 ## Background & Motivation
 
-Existing dynamic Gaussian splatting methods such as Deformable3DGS and 4DGaussians have demonstrated significant progress in 4D scene reconstruction, but they rely heavily on dense-frame video sequences (typically hundreds of frames). In practice, only sparse frames are often available due to hardware constraints such as low-frame-rate cameras.
+Dynamic Gaussian Splatting methods have made significant progress in 4D scene reconstruction. However, existing methods such as Deformable3DGS and 4DGaussians heavily rely on dense-frame video sequences (typically requiring hundreds of frames). In the real world, due to device limitations (e.g., low-frame-rate cameras), only sparse frames are often available.
 
-The authors find that when the number of input frames is reduced from dense to sparse, existing methods suffer severe degradation in **texture-rich regions**, due to two factors:
-1. **Deformation space degradation**: Insufficient temporal constraints from sparse inputs prevent the deformation network from accurately modeling geometric changes in high-frequency texture regions.
-2. **Canonical space degradation**: The canonical Gaussian field lacks adequate supervision signals, leading to geometric collapse in regions with complex texture.
+The authors discover that when the input frames are reduced from dense to sparse, existing methods suffer from severe degradation in **texture-rich regions**. This is because:
+1. **Deformation Space Degradation**: Sparse inputs provide insufficient temporal constraints, making it impossible for the deformation network to accurately model geometric changes in high-frequency texture regions.
+2. **Canonical Space Degradation**: The canonical Gaussian field lacks adequate supervision signals, leading to geometric collapse in complex texture regions.
 
-The core intuition is that sparse-frame inputs inherently provide limited information, making high-frequency texture signals the primary source of rich detail and dynamic cues. Accordingly, Gaussians should be guided to focus on texture-rich regions to better model the underlying structure.
+The core insight is that since sparse frame inputs naturally provide limited information, high-frequency texture signals become the main source of rich details and dynamic cues. Therefore, guiding Gaussians to focus on texture-rich regions can help model the underlying structure more effectively.
 
 ## Method
 
 ### Overall Architecture
 
-Sparse4DGS follows the canonical Gaussian field plus deformation network paradigm for dynamic reconstruction. Given a sparse frame sequence, the pipeline proceeds as follows:
-1. Apply the Sobel operator to extract 2D texture intensity (TI) maps for each frame.
-2. Obtain depth maps using a monocular depth estimator (DPT).
-3. Embed texture intensity into 3D Gaussian attributes.
-4. Regularize the deformation network via TADR.
-5. Optimize the canonical Gaussian field via TACO.
+Sparse4DGS is based on the dynamic reconstruction paradigm of a canonical Gaussian field combined with a deformation network. Given a sparse sequence of input frames:
+1. A Sobel operator is used to extract the 2D Texture Intensity (TI) map for each frame.
+2. A monocular depth estimator (DPT) is used to obtain depth maps.
+3. Texture intensity is embedded into the 3D Gaussian attributes.
+4. The deformation network is regularized via TADR.
+5. The canonical Gaussian field is optimized via TACO.
 
 ### Key Designs
 
-#### 1. **Texture Intensity Gaussian Field**: Embedding texture richness into 3D Gaussians
+#### 1. **TI Gaussian Field (Texture Intensity Gaussian Field)**: Embedding Texture Richness into 3D Gaussians
 
-Horizontal and vertical gradient maps $TI_x$ and $TI_y$ are computed for each input RGB image using the Sobel operator, yielding per-pixel gradient magnitudes as an explicit measure of texture intensity:
+First, the horizontal and vertical gradient maps $TI_x$ and $TI_y$ of each input RGB image are computed using a Sobel operator. Then, the pixel-wise gradient magnitude is obtained as an explicit measure of texture intensity:
 
 $$TI_{gt}(i,j) = \sqrt{TI_x(i,j)^2 + TI_y(i,j)^2}$$
 
-To represent texture richness in 3D space, each Gaussian is assigned a new attribute $TI$, which is rendered into a texture map $TI_{render}$ via a differentiable rasterizer.
+To represent texture richness in 3D space, a new attribute $TI$ is introduced for each Gaussian, which is rendered into a texture map $TI_{render}$ using a differentiable rasterizer.
 
-**Key innovation**: Pearson Correlation Coefficient (PCC) is used instead of the conventional L1 loss to align the rendered texture map with the ground-truth texture map. Since the Sobel operator is applied independently to each image, spatial inconsistencies arise; PCC, which measures relative variation rather than absolute differences, effectively mitigates this issue:
+**Key Innovation**: The Pearson Correlation Coefficient (PCC) is utilized instead of the conventional L1 loss to align the rendered texture map with the ground-truth texture map. This choice stems from the fact that applying the Sobel operator independently to each image leads to spatial inconsistencies, whereas PCC focuses on relative rates of change, effectively mitigating this issue:
 
 $$L_{tex} = 1 - \text{PCC}(TI_{gt}, TI_{render})$$
 
-#### 2. **Texture-Aware Deformation Regularization (TADR)**: Constraining geometric structure in the deformation network
+#### 2. **Texture-Aware Deformation Regularization (TADR)**: Constraining the Geometry of the Deformation Network
 
-TADR leverages the textural consistency of depth maps to constrain the deformation field. Conventional methods compute image-level PCC between rendered depth and monocular depth, which fails to capture local depth variations. TADR instead:
-- Applies the Sobel operator to both the rendered depth $D_{render}$ and the DPT depth $D_{dpt}$ to extract their respective texture intensity maps.
-- Computes the PCC loss between these two depth texture maps:
+The core idea of TADR is to constrain the deformation field using the texture consistency of depth maps. Traditional methods directly compare the image-level PCC between rendered depth and monocular depth, but they fail to capture local depth variations.
+
+TADR addresses this by:
+- First extracting texture intensity maps from the rendered depth $D_{render}$ and DPT depth $D_{dpt}$ using a Sobel operator.
+- Then computing the PCC loss between these two depth-texture maps.
 
 $$L_{tadr} = 1 - \text{PCC}(TI_{gt}^{depth}, TI_{render}^{depth})$$
 
-This texture-based depth alignment focuses on the consistency of local depth variations rather than the global depth distribution.
+This "textured" depth alignment method focuses more on the consistency of local depth changes rather than the global depth distribution.
 
-#### 3. **Texture-Aware Canonical Optimization (TACO)**: Restructuring gradient descent for canonical Gaussians
+#### 3. **Texture-Aware Canonical Optimization (TACO)**: Reconstructing the Gradient Descent of Canonical Gaussians
 
-TACO is based on Stochastic Gradient Langevin Dynamics (SGLD) and introduces texture-intensity-guided noise at each iteration to drive Gaussians toward texture-rich regions:
+TACO is based on Stochastic Gradient Langevin Dynamics (SGLD). It introduces a texture-intensity-based noise term in each iteration to drive the Gaussians to converge towards texture-rich regions:
 
 $$g = g - \alpha_g \cdot \nabla_g \mathbb{E}[L(g;I)] + \alpha_{noise} \cdot (\epsilon_{tex} + \epsilon_o)$$
 
-The texture noise term is defined as:
-
+where the texture noise term is defined as:
 $$\epsilon_{tex} = \sigma(-k(TI - t)) \cdot \sum \eta$$
 
-When a Gaussian reaches a texture-rich region, its $TI$ value approaches 1 and $\epsilon_{tex}$ approaches 0, causing the noise to vanish naturally. This means the noise continuously perturbs the optimization until Gaussians converge to texture-rich regions. The opacity noise term $\epsilon_o$ serves to reduce low-opacity floaters.
+When a Gaussian enters a texture-rich region, its $TI$ value approaches 1, $\epsilon_{tex}$ approaches 0, and the noise naturally ceases. This means the noise continuously perturbs the optimization process until the Gaussians converge to texture-rich regions. $\epsilon_o$ is used to reduce blur-inducing low-opacity Gaussians (floaters).
 
 ### Loss & Training
 
-The total training loss is:
-
+The total training loss is defined as:
 $$L = L_{rgb} + \lambda_1 \cdot L_{tex} + \lambda_2 \cdot L_{tadr}$$
 
 where $L_{rgb}$ is the standard MSE + SSIM loss. The optimal hyperparameters are $\lambda_1 = \lambda_2 = 0.01$.
 
-TACO replaces the standard SGD update for canonical Gaussian parameters during training. The method generalizes across different frame rates ranging from 5 FPS to 30 FPS.
+The training process uses TACO instead of standard SGD to update the canonical Gaussian parameters. This method is applicable to videos of various frame rates from 5 FPS to 30 FPS.
 
 ## Key Experimental Results
 
@@ -103,62 +103,62 @@ TACO replaces the standard SGD update for canonical Gaussian parameters during t
 | NeRF-Synthetic (20 frames) | PSNR↑ | **25.31** | 22.65 | 22.47 | 20.15 | +2.66 |
 | NeRF-Synthetic (20 frames) | SSIM↑ | **0.944** | 0.927 | 0.931 | 0.920 | +0.013 |
 | NeRF-DS (20 frames) | PSNR↑ | **22.34** | 20.81 | 19.70 | 19.86 | +1.53 |
-| NeRF-DS (20 frames) | LPIPS↓ | **0.233** | 0.301 | 0.350 | 0.319 | −0.068 |
+| NeRF-DS (20 frames) | LPIPS↓ | **0.233** | 0.301 | 0.350 | 0.319 | -0.068 |
 | HyperNeRF (30 frames) | PSNR↑ | **23.91** | 22.41 | 20.64 | 20.50 | +1.50 |
-| iPhone-4D (30 FPS) | PSNR↑ | **29.81** | 27.01 | 28.79 | 21.58 | +1.02 |
-| iPhone-4D (5 FPS) | PSNR↑ | **27.51** | 21.12 | 16.37 | 16.81 | +6.39 |
+| iPhone-4D (30FPS) | PSNR↑ | **29.81** | 27.01 | 28.79 | 21.58 | +1.02 |
+| iPhone-4D (5FPS) | PSNR↑ | **27.51** | 21.12 | 16.37 | 16.81 | +6.39 |
 
-Sparse4DGS achieves substantial improvements across all datasets, with the most prominent gain of over 6 dB PSNR in the extremely sparse 5 FPS setting.
+It significantly outperforms prior methods across all datasets, particularly in the extremely sparse 5 FPS scenarios, where the PSNR gains exceed 6dB.
 
 ### Ablation Study
 
-| Configuration | PSNR↑ | SSIM↑ | LPIPS↓ | Note |
+| Configuration | PSNR↑ | SSIM↑ | LPIPS↓ | Description |
 |------|-------|-------|--------|------|
-| Baseline (w/o TADR & TACO) | 20.81 | 0.753 | 0.301 | Base method |
-| w/o TADR | 21.89 | 0.792 | 0.245 | Remove deformation regularization, −0.45 PSNR |
-| w/o TACO | 21.33 | 0.773 | 0.271 | Remove canonical optimization, −1.01 PSNR |
-| **Full model** | **22.34** | **0.801** | **0.233** | TACO contributes more |
+| Baseline (w/o TADR+TACO) | 20.81 | 0.753 | 0.301 | Baseline method |
+| w/o TADR | 21.89 | 0.792 | 0.245 | Remove deformation regularization, PSNR drops by 0.45 |
+| w/o TACO | 21.33 | 0.773 | 0.271 | Remove canonical optimization, PSNR drops by 1.01 |
+| **Full Method** | **22.34** | **0.801** | **0.233** | TACO contributes more |
 | TACO w/o $\epsilon_o$ | 21.81 | 0.792 | 0.246 | Remove opacity noise term |
 | TACO w/o $\epsilon_{tex}$ | 21.57 | 0.783 | 0.260 | Remove texture noise term |
-| $L_{tex}$ w/o PCC | 21.71 | 0.789 | 0.245 | Replace PCC with L1, −0.6 PSNR |
+| $L_{tex}$ w/o PCC | 21.71 | 0.789 | 0.245 | Replace PCC with L1, drops by 0.6 |
 | w/o texture-aware depth | 21.46 | 0.775 | 0.277 | Standard depth regularization |
 
 ### Key Findings
 
-1. TACO contributes more than TADR (1.01 vs. 0.45 PSNR gain), indicating that canonical space optimization is the primary bottleneck for sparse-frame reconstruction.
-2. PCC loss yields significant advantages over L1 loss for both texture embedding and depth alignment.
-3. Texture-aware depth regularization improves PSNR by 0.88 over direct depth PCC alignment.
-4. The advantage is most pronounced in the extreme 5 FPS sparse setting (+6.39 PSNR).
+1. The contribution of TACO is greater than that of TADR (1.01 vs 0.45 PSNR gain), indicating that canonical space optimization is the primary bottleneck in sparse-frame reconstruction.
+2. The PCC loss shows a significant advantage over the L1 loss in both texture embedding and depth alignment.
+3. The texture-aware depth loss improves PSNR by 0.88 compared to direct depth PCC alignment.
+4. The performance gain is most pronounced in extremely sparse 5 FPS scenarios (+6.39 PSNR).
 
 ## Highlights & Insights
 
-1. **Novel problem formulation**: The paper is the first to formally define and systematically study sparse-frame 4D dynamic scene reconstruction.
-2. **Texture-driven optimization strategy**: The observation that sparse-frame degradation concentrates in texture-rich regions motivates a complete and principled solution.
-3. **Creative application of SGLD**: Stochastic Gradient Langevin Dynamics is introduced into dynamic Gaussian optimization, with an elegant texture-guided noise term design.
-4. **PCC as a substitute for L1**: PCC proves more robust than L1 as a correlation measure in the presence of spatial inconsistencies.
-5. **Real-world validation**: The proposed iPhone-4D dataset demonstrates practical applicability to smartphone-captured videos.
+1. **Novel Problem Formulation**: This work is the first to define and systematically investigate the problem of 4D dynamic scene reconstruction from sparse frames.
+2. **Texture-Driven Optimization Strategy**: Based on the observation that degradation under sparse frames is concentrated in texture-rich regions, a complete solution is designed to tackle this issue.
+3. **Innovative Application of SGLD**: Stochastic Gradient Langevin Dynamics is introduced into dynamic Gaussian optimization, with an elegant and effective texture-guided noise design.
+4. **Replacing L1 with PCC**: In scenes featuring spatial inconsistencies, PCC serves as a more robust correlation metric than L1 loss.
+5. **Real-World Validation**: The introduction of the iPhone-4D dataset demonstrates the potential for practical applications on videos captured by mobile phones.
 
 ## Limitations & Future Work
 
-1. The method may be limited in scenes with extremely sparse texture (e.g., uniformly colored surfaces).
-2. The approach depends on the accuracy of the DPT monocular depth estimator; errors from pre-trained depth models may propagate.
-3. The iPhone-4D dataset is small in scale (only 4 scenes), limiting the breadth of validation.
-4. Extremely short sequences (e.g., 2–3 frames) are not explored.
-5. The noise hyperparameters in TACO may require tuning for different scenes.
+1. When texture information in the scene is extremely scarce (e.g., solid-colored walls), the method's effectiveness may be limited.
+2. The performance relies on the accuracy of the DPT monocular depth estimator, meaning errors from the pre-trained depth model may propagate.
+3. The scale of the iPhone-4D dataset is relatively small (only 4 scenes), limiting the scope of validation.
+4. Very short sequences (e.g., 2–3 frames) have not yet been explored.
+5. The noise hyperparameters of TACO may require scene-specific tuning.
 
 ## Related Work & Insights
 
-- **Dynamic Gaussian splatting**: Deformable3DGS and 4DGaussians establish the standard canonical field plus deformation network framework.
-- **Few-shot Gaussian splatting**: DNGaussian introduces depth regularization, CoRGS improves the training process, and FSGS addresses sparse initialization.
-- **SGLD in 3DGS**: Kheradmand et al. first introduce SGLD into Gaussian splatting optimization.
-- **Inspiration**: The texture-guided optimization strategy is potentially transferable to other 3D reconstruction tasks with sparse inputs.
+- **Dynamic Gaussian Splatting**: Deformable3DGS and 4DGaussians establish the standard paradigm of a canonical field combined with a deformation network.
+- **Few-Shot Gaussian Splatting**: DNGaussian introduces depth regularization, CoRGS refines the training process, and FSGS addresses sparse initialization.
+- **Application of SGLD in 3DGS**: Kheradmand et al. first introduced SGLD into Gaussian Splatting optimization.
+- **Insights**: Credit to the texture-guided optimization scheme, which can potentially be extended to other 3D reconstruction tasks with sparse inputs.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — First sparse-frame dynamic reconstruction method; texture-aware strategy is novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Four datasets with comprehensive ablation studies.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation and rigorous method derivation.
-- **Value**: ⭐⭐⭐⭐ — Direct practical value for dynamic reconstruction from low-frame-rate video.
+- **Novelty**: ⭐⭐⭐⭐ — First to study sparse-frame dynamic reconstruction, introducing a novel texture-aware strategy.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Extensive validation on four datasets, accompanied by detailed ablation studies.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation and mathematically rigorous formulations.
+- **Value**: ⭐⭐⭐⭐ — Directly links to practical value for the dynamic reconstruction of low-frame-rate videos.
 
 <!-- RELATED:START -->
 
@@ -167,10 +167,10 @@ Sparse4DGS achieves substantial improvements across all datasets, with the most 
 ## Related Papers
 
 - [\[AAAI 2026\] Dynamic Gaussian Scene Reconstruction from Unsynchronized Videos](dynamic_gaussian_scene_reconstruction_from_unsynchronized_videos.md)
-- [\[CVPR 2026\] 4D Reconstruction from Sparse Dynamic Cameras](../../CVPR2026/3d_vision/4d_reconstruction_from_sparse_dynamic_cameras.md)
-- [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
-- [\[AAAI 2026\] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting](meshsplat_generalizable_sparse-view_surface_reconstruction_via_gaussian_splattin.md)
+- [\[ICLR 2026\] Implicit 4D Gaussian Splatting for Fast Motion with Large Inter-Frame Displacements](../../ICLR2026/3d_vision/implicit_4d_gaussian_splatting_for_fast_motion_with_large_inter-frame_displaceme.md)
+- [\[ICLR 2026\] Mango-GS: Enhancing Spatio-Temporal Consistency in Dynamic Scenes Reconstruction using Multi-Frame Node-Guided 4D Gaussian Splatting](../../ICLR2026/3d_vision/mango-gs_enhancing_spatio-temporal_consistency_in_dynamic_scenes_reconstruction_.md)
 - [\[CVPR 2026\] RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting](../../CVPR2026/3d_vision/retimegs_continuous-time_reconstruction_of_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](../../CVPR2026/3d_vision/layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
 
 </div>
 

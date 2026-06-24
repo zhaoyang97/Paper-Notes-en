@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables
 description: >-
-  [AAAI 2026][Causal Inference][causal discovery] This paper proposes I-CAM-UV, a method that enumerates consistent DAGs satisfying structural constraints derived from multiple CAM-UV outputs over non-identical variable se…
+  [AAAI 2026][Causal Inference][causal discovery] This paper proposes I-CAM-UV, a method that enumerates consistent DAGs satisfying structural constraints derived from multiple CAM-UV outputs over non-identical variable sets, recovering causal relations lost due to unobserved variables, and introduces an optimal-first search algorithm exploiting cost monotonicity for efficient combinatorial search.
 tags:
   - "AAAI 2026"
   - "Causal Inference"
@@ -13,7 +13,7 @@ tags:
   - "graph integration"
   - "combinatorial search"
 date: 2026-05-08
-content_hash: 8723b93859323027
+content_hash: ddfc452d2940574e
 ---
 
 # I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables
@@ -135,9 +135,9 @@ The number of enumerated DAGs varies widely (from 1 to thousands), but the preci
 
 - [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](../../ICLR2026/causal_inference/distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
 - [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
-- [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
-- [\[AAAI 2026\] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)
-- [\[AAAI 2026\] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](causal_inference_under_threshold_manipulation_bayesian_mixtu.md)
+- [\[ACL 2025\] CausalRAG: Integrating Causal Graphs into Retrieval-Augmented Generation](../../ACL2025/causal_inference/causalrag_integrating_causal_graphs_into_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](../../ICLR2026/causal_inference/conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
+- [\[ICLR 2026\] On the Identifiability of Causal Graphs with the Invariance Principle](../../ICLR2026/causal_inference/on_the_identifiability_of_causal_graphs_with_the_invariance_principle.md)
 
 </div>
 

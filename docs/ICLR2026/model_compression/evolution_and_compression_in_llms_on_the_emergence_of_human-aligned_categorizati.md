@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Evolution and compression in LLMs: On the emergence of human-aligned categorization
 description: >-
-  [ICLR 2026][Model Compression][information bottleneck] Through the Information Bottleneck (IB) framework and the Iterated In-Context Language Learning (IICLL) paradigm, this work demonstrates that LLMs, even without being trained on IB objectives, can spontaneously emerge category structures that are highly aligned with human semantic systems and exhibit near-optimal compr
+  [ICLR 2026][Model Compression][information bottleneck] Through the Information Bottleneck (IB) framework and the Iterated In-Context Language Learning (IICLL) paradigm, this work demonstrates that LLMs, even without being trained on IB objectives, can spontaneously emerge category structures that are highly aligned with human semantic systems and exhibit near-optimal compression efficiency.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - information bottleneck
-  - color naming
-  - iterated learning
-  - semantic categories
-  - LLM alignment
+  - "ICLR 2026"
+  - "Model Compression"
+  - "information bottleneck"
+  - "color naming"
+  - "iterated learning"
+  - "semantic categories"
+  - "LLM alignment"
 date: 2026-05-08
-content_hash: 9e7ae1c7f1b07bf3
+content_hash: 9c52bcb706b28cd6
 ---
+
 # Evolution and compression in LLMs: On the emergence of human-aligned categorization
 
 **Conference**: ICLR 2026  
@@ -138,15 +139,15 @@ To ensure IICLL reflects internal bias rather than data mimicry, labels are non-
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] LLM DNA: Tracing Model Evolution via Functional Representations](llm_dna_tracing_model_evolution_via_functional_representations.md)
 - [\[ICLR 2026\] Paper Copilot: Tracking the Evolution of Peer Review in AI Conferences](paper_copilot_tracking_the_evolution_of_peer_review_in_ai_conferences.md)
+- [\[ICLR 2026\] LLM DNA: Tracing Model Evolution via Functional Representations](llm_dna_tracing_model_evolution_via_functional_representations.md)
+- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
 - [\[CVPR 2026\] Towards Unified Human Perception and Machine Understanding: Token Flow Guided Compression Framework](../../CVPR2026/model_compression/towards_unified_human_perception_and_machine_understanding_token_flow_guided_com.md)
 - [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](../../ICML2026/model_compression/xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
-- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
 
 </div>
 

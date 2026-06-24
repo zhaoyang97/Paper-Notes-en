@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Quality Over Clicks: Intrinsic Quality-Driven Iterative RL for Cold-Start E-Commerce Query Suggestion
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] Ours propose Cold-EQS, a query suggestion framework for cold-start e-commerce scenarios. It utilizes answerability, factual accuracy, and information gain as intrinsic quality rewards to continuously optimize query suggestion quality through iterative reinforcement learning, achieving a 6.81% Gain in online chatUV.
+  [ACL 2026][Recommender Systems][Cold-start] Ours propose Cold-EQS, a query suggestion framework for cold-start e-commerce scenarios. It utilizes answerability, factual accuracy, and information gain as intrinsic quality rewards to continuously optimize query suggestion quality through iterative reinforcement learning, achieving a 6.81% Gain in online chatUV.
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Cold-start"
+  - "Query Suggestion"
+  - "Quality-driven reward"
+  - "Uncertainty sampling"
+  - "E-commerce dialogue"
 date: 2026-05-08
-content_hash: c719c6aeb43ee715
+content_hash: 1ed9236a742523d4
 ---
+
 # Quality Over Clicks: Intrinsic Quality-Driven Iterative RL for Cold-Start E-Commerce Query Suggestion
 
 **Conference**: ACL 2026  
@@ -124,14 +130,14 @@ RL training is conducted using the GRPO algorithm. Rewards are combined via thre
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2025\] FineVQ: Fine-Grained User Generated Content Video Quality Assessment](../../CVPR2025/recommender/finevq_fine-grained_user_generated_content_video_quality_assessment.md)
 - [\[ACL 2025\] LOTUS: A Leaderboard for Detailed Image Captioning from Quality to Societal Bias and User Preferences](../../ACL2025/recommender/lotus_a_leaderboard_for_detailed_image_captioning_from_quality_to_societal_bias_.md)
-- [\[ACL 2026\] Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation](intent-driven_semantic_id_generation_for_grounded_conversational_news_recommenda.md)
 - [\[ACL 2026\] SenseJudge: Human-Centric Preference-Driven Judgment Framework](sensejudge_human-centric_preference-driven_judgment_framework.md)
+- [\[ACL 2026\] Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation](intent-driven_semantic_id_generation_for_grounded_conversational_news_recommenda.md)
 - [\[ICML 2026\] Position: Stop Preaching and Start Practising Data Frugality for Responsible Development of AI](../../ICML2026/recommender/position_stop_preaching_and_start_practising_data_frugality_for_responsible_deve.md)
 
 </div>

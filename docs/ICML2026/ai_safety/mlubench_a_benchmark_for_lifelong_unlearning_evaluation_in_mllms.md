@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs
 description: >-
-  [ICML 2026][AI Safety][MoE] Addressing the real-world scenario where Multimodal Large Language Models (MLLMs) need to continuously delete specific data chronologically, this paper constructs a large-scale lifelong unlearning benchmark, MLUBench (127 real entities, 5,105 images, 15,414 VQA pairs). The study systematically reveals that existing unl
+  [ICML2026][AI Safety][Machine Unlearning] Addressing the real-world scenario where Multimodal Large Language Models (MLLMs) need to continuously delete specific data chronologically, this paper constructs a large-scale lifelong unlearning benchmark, MLUBench (127 real entities, 5,105 images, 15,414 VQA pairs). The study systematically reveals that existing unlearning methods collapse as tasks accumulate, with the root cause being the destruction of multimodal alignment. To mi…
 tags:
-  - ICML 2026
-  - AI Safety
-  - MoE
-  - LoRA
+  - "ICML2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Lifelong Unlearning"
+  - "Multimodal Alignment"
+  - "MoE"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 48c681ccea0f4718
+content_hash: 811f23facad4210c
 ---
+
 # MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs
 
 **Conference**: ICML2026  
@@ -150,9 +154,9 @@ Modifying either modality alone leads to rapid performance collapse. This proves
 
 - [\[AAAI 2026\] An Information Theoretic Evaluation Metric for Strong Unlearning](../../AAAI2026/ai_safety/an_information_theoretic_evaluation_metric_for_strong_unlearning.md)
 - [\[ICML 2026\] Semantic Router: On the Feasibility of Hijacking MLLMs via a Single Adversarial Perturbation](semantic_router_on_the_feasibility_of_hijacking_mllms_via_a_single_adversarial_p.md)
-- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
-- [\[ICML 2026\] ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity](abc-bench_an_agentic_bio-capabilities_benchmark_for_biosecurity.md)
-- [\[ICML 2026\] Multilingual Unlearning in LLMs: 转移、动力学与可逆性](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
+- [\[ICML 2026\] Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Re-learning Attacks](unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
+- [\[ICML 2026\] Red-Teaming Agent Execution Contexts: Open-World Security Evaluation on OpenClaw](red-teaming_agent_execution_contexts_open-world_security_evaluation_on_openclaw.md)
+- [\[ICML 2026\] Position: Retire the "Positive Backdoor" Label -- Secret Alignment Requires Strict and Systematic Evaluation](position_retire_the_positive_backdoor_label_--_secret_alignment_requires_strict_.md)
 
 </div>
 

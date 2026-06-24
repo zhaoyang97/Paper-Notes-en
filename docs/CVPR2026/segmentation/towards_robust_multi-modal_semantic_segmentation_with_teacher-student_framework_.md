@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] RobustSeg is proposed—a teacher-student self-distillation framework with a feedback loop. Using a "cross-modal prototype distillation + primary modality IFV distillation" hybrid strategy (HPD), the model maintains robustness during sensor loss or degradation while incurring almost no loss in full-modality accuracy (+2.
+  [CVPR 2026][Segmentation][Multi-modal semantic segmentation] RobustSeg is proposed—a teacher-student self-distillation framework with a feedback loop. Using a "cross-modal prototype distillation + primary modality IFV distillation" hybrid strategy (HPD), the model maintains robustness during sensor loss or degradation while incurring almost no loss in full-modality accuracy (+2.40% mIoU on DeLiVER for missing modalities, and only -0.1% for full modalities).
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Multi-modal semantic segmentation"
+  - "missing modality robustness"
+  - "self-distillation"
+  - "prototype distillation"
+  - "teacher-student feedback"
 date: 2026-05-08
-content_hash: b62697e9f2cfb42b
+content_hash: 1fb6d90ad081abf5
 ---
+
 # Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation
 
 **Conference**: CVPR 2026  
@@ -152,15 +158,13 @@ Ablation of HPD components (MiT-B0, Baseline is full-modality pre-training):
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation](brewing_stronger_features_dual-teacher_distillation_for_multispectral_earth_obse.md)
 - [\[NeurIPS 2025\] OmniSegmentor: A Flexible Multi-Modal Learning Framework for Semantic Segmentation](../../NeurIPS2025/segmentation/omnisegmentor_a_flexible_multi-modal_learning_framework_for_semantic_segmentatio.md)
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
-- [\[CVPR 2026\] Denoise and Align: Towards Source-Free UDA for Robust Panoramic Semantic Segmentation](denoise_and_align_towards_source-free_uda_for_robust_panoramic_semantic_segmenta.md)
 - [\[CVPR 2026\] 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion](3m-ti_high-quality_mobile_thermal_imaging_via_calibration-free_multi-camera_cros.md)
+- [\[CVPR 2026\] Denoise and Align: Towards Source-Free UDA for Robust Panoramic Semantic Segmentation](denoise_and_align_towards_source-free_uda_for_robust_panoramic_semantic_segmenta.md)
 
 </div>
 

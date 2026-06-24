@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mind the Gap: Transferring Labels to Align Object Detection Datasets
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper proposes the Label-Aligned Transfer (LAT) framework, which projects annotations from multiple detection datasets with diverse labeling protocols into a fixed target dataset's label space in a **multi-to-one** manner. By utilizing a Privileged Proposal Generator (PPG) (replacing RPN with ground truth and cros
+  [CVPR 2026][Object Detection][Multi-dataset object detection] This paper proposes the Label-Aligned Transfer (LAT) framework, which projects annotations from multiple detection datasets with diverse labeling protocols into a fixed target dataset's label space in a **multi-to-one** manner. By utilizing a Privileged Proposal Generator (PPG) (replacing RPN with ground truth and cross-dataset pseudo-labels) and Semantic Feature Fusion (SFF) (denoising via class-aware attention)…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Multi-dataset object detection"
+  - "label alignment"
+  - "pseudo-labeling"
+  - "privileged information"
+  - "class-aware attention"
 date: 2026-05-08
-content_hash: 049bd66ee98f3049
+content_hash: a2bc5e08681428ef
 ---
+
 # Mind the Gap: Transferring Labels to Align Object Detection Datasets
 
 **Conference**: CVPR 2026  
@@ -131,6 +137,7 @@ On the Label Divergence benchmark, LAT (FRCNN) improved Cityscapes from 55.2 to 
 - Value: ⭐⭐⭐⭐ Directly addresses the pain point of merging detection datasets; high practical value for multi-source labeling scenarios like autonomous driving.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

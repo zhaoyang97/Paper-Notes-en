@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] eRetinexGS integrates "event streams + low-light frames + multi-view consistency" into a unified 3DGS framework. Each Gaussian explicitly stores two attributes—reflectance and illumination. Event signals are utilized to guide Retinex decomposition, and the two modalities are adaptively fused based on confidence. The me
+  [CVPR 2026][3D Vision][Low-light enhancement] eRetinexGS integrates "event streams + low-light frames + multi-view consistency" into a unified 3DGS framework. Each Gaussian explicitly stores two attributes—reflectance and illumination. Event signals are utilized to guide Retinex decomposition, and the two modalities are adaptively fused based on confidence. The method reconstructs a normal-light radiance field with sharp details and accurate colors in extremely dark scenes…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Low-light enhancement"
+  - "event camera"
+  - "Retinex decomposition"
+  - "3D Gaussian Splatting"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 2d9fa265eb52404f
+content_hash: c2ff5c35395095ec
 ---
+
 # eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Ours significantly outperforms all baselines. The enhancement PSNR is 5.27 dB hi
 
 ## Related Papers
 
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
 - [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
-- [\[CVPR 2026\] Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams](3d_gaussian_splatting_from_unposed_spike_stream.md)
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport](glint_modeling_scene-scale_transparency_via_gaussian_radiance_transport.md)
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
+- [\[CVPR 2026\] Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams](3d_gaussian_splatting_from_unposed_spike_stream.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
 
 </div>
 

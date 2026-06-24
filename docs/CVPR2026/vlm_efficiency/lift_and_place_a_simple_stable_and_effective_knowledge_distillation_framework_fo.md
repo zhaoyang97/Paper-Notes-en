@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the instability of training small diffusion students distilled from large teachers, this paper decomposes distillation error into "coarse-easy" (low-order moment mismatch) and "fine-hard" (non-linear residual) components using linear regression. It proposes LIFT for coarse-to-fine refinement and PLACE for sp
+  [CVPR 2026][Multimodal Efficiency][Diffusion Model Distillation] Addressing the instability of training small diffusion students distilled from large teachers, this paper decomposes distillation error into "coarse-easy" (low-order moment mismatch) and "fine-hard" (non-linear residual) components using linear regression. It proposes LIFT for coarse-to-fine refinement and PLACE for spatial local adaptivity via group ranking. Under extreme 90% pruning (where the student has only…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Diffusion Model Distillation"
+  - "Capacity Gap"
+  - "Coarse-to-Fine"
+  - "Linear Regression Alignment"
+  - "Local Adaptivity"
 date: 2026-05-08
-content_hash: d2e00290056e8825
+content_hash: 5f0c57283997e8aa
 ---
+
 # LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ For SD 2.1 (MS-COCO zero-shot), the FID of the BK-Tiny-v2 student dropped from 1
 
 ## Related Papers
 
-- [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
-- [\[CVPR 2026\] Streamlined Knowledge Distillation](streamlined_knowledge_distillation.md)
-- [\[CVPR 2026\] Sampling-Aware Quantization for Diffusion Models](sampling-aware_quantization_for_diffusion_models.md)
-- [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
-- [\[ECCV 2024\] Simple Unsupervised Knowledge Distillation With Space Similarity](../../ECCV2024/model_compression/simple_unsupervised_knowledge_distillation_with_space_similarity.md)
+- [\[CVPR 2026\] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving](prune2drive_a_plug-and-play_framework_for_accelerating_vision-language_models_in.md)
+- [\[ICLR 2026\] Lightweight Spatio-Temporal Modeling via Temporally Shifted Distillation for Real-Time Accident Anticipation](../../ICLR2026/vlm_efficiency/lightweight_spatio-temporal_modeling_via_temporally_shifted_distillation_for_rea.md)
+- [\[CVPR 2026\] Adapting Lightweight Image-based Counting Models for Video Crowd Counting](adapting_lightweight_image-based_counting_models_for_video_crowd_counting.md)
+- [\[CVPR 2026\] PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](ps-sr_pseudo-single-step_video_super-resolution_via_speculative_diffusion.md)
+- [\[CVPR 2026\] SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer](soda_sensitivity-oriented_dynamic_acceleration_for_diffusion_transformer.md)
 
 </div>
 

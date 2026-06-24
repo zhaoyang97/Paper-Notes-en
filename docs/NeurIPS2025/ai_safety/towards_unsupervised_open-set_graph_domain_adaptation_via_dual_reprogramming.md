@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming
 description: >-
-  [NeurIPS 2025][AI Safety][Graph Domain Adaptation] This paper proposes GraphRTA, a framework that addresses the challenges of known-class classification and unknown-class detection in unsupervised open-set graph domain a…
+  [NeurIPS 2025][AI Safety][Graph Domain Adaptation] This paper proposes GraphRTA, a framework that addresses the challenges of known-class classification and unknown-class detection in unsupervised open-set graph domain adaptation through two complementary mechanisms: model reprogramming (gradient-guided weight pruning) and graph reprogramming (target graph structure and feature optimization), without requiring manually specified thresholds.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Graph Reprogramming"
   - "Adversarial Learning"
 date: 2026-05-08
-content_hash: a61dce322d8efeb7
+content_hash: ea71629cc2eaaa23
 ---
 
 # Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming
@@ -135,10 +135,10 @@ As described in the paper, Appendix B provides an ablation comparing different t
 ## Related Papers
 
 - [\[NeurIPS 2025\] Open-Insect: Benchmarking Open-Set Recognition of Novel Species in Biodiversity Monitoring](open-insect_benchmarking_open-set_recognition_of_novel_species_in_biodiversity_m.md)
+- [\[ECCV 2024\] Operational Open-Set Recognition and PostMax Refinement](../../ECCV2024/ai_safety/operational_open-set_recognition_and_postmax_refinement.md)
 - [\[ICML 2026\] Scaling Unsupervised Multi-Source Federated Domain Adaptation through Group-Wise Discrepancy Minimization](../../ICML2026/ai_safety/scaling_unsupervised_multi-source_federated_domain_adaptation_through_group-wise.md)
-- [\[NeurIPS 2025\] Robust Graph Condensation via Classification Complexity Mitigation](robust_graph_condensation_via_classification_complexity_mitigation.md)
 - [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](enhancing_graph_classification_robustness_with_singular_pooling.md)
-- [\[NeurIPS 2025\] A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers](a_set_of_generalized_components_to_achieve_effective_poison-only_clean-label_bac.md)
+- [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Ego-Exo Correspondence with Long-Term Memory
 description: >-
-  [NeurIPS 2025][Segmentation][ego-exo correspondence] This paper proposes LM-EEC, a SAM 2-based cross-view video object segmentation framework for ego-exo correspondence. It introduces a Memory-View MoE (MV-MoE) module to…
+  [NeurIPS 2025][Segmentation][ego-exo correspondence] This paper proposes LM-EEC, a SAM 2-based cross-view video object segmentation framework for ego-exo correspondence. It introduces a Memory-View MoE (MV-MoE) module to adaptively fuse memory features with cross-view features, coupled with a dual memory bank compression strategy for retaining long-term information. LM-EEC substantially outperforms existing methods on the EgoExo4D benchmark (Ego2Exo IoU: 54.98 vs. 38.26).
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "video object segmentation"
   - "long-term memory"
 date: 2026-05-08
-content_hash: 97407353261775d6
+content_hash: 18b264a8dced3a45
 ---
 
 # Robust Ego-Exo Correspondence with Long-Term Memory
@@ -110,8 +110,8 @@ The MoE-based feature fusion paradigm is transferable to other multi-view and mu
 - [\[ICCV 2025\] SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree](../../ICCV2025/segmentation/sam2long_enhancing_sam_2_for_long_video_segmentation_with_a.md)
 - [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](../../ICCV2025/segmentation/correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
 - [\[NeurIPS 2025\] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective](towards_robust_pseudo-label_learning_in_semantic_segmentation_an_encoding_perspe.md)
+- [\[CVPR 2025\] A Distractor-Aware Memory for Visual Object Tracking with SAM2](../../CVPR2025/segmentation/a_distractor-aware_memory_for_visual_object_tracking_with_sam2.md)
 - [\[NeurIPS 2025\] STEAD: Robust Provably Secure Linguistic Steganography with Diffusion Language Model](stead_robust_provably_secure_linguistic_steganography_with_diffusion_language_mo.md)
-- [\[NeurIPS 2025\] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention](robust_egocentric_referring_video_object_segmentation_via_dual-modal_causal_inte.md)
 
 </div>
 

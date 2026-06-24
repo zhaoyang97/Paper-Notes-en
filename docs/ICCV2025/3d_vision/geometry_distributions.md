@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Geometry Distributions
 description: >-
-  [ICCV 2025][3D Vision][Geometry representation] This paper proposes Geometry Distributions (GeomDist), which models 3D geometry as a probability distribution over surface points and learns it via a diffusion model. Witho…
+  [ICCV 2025][3D Vision][Geometry representation] This paper proposes Geometry Distributions (GeomDist), which models 3D geometry as a probability distribution over surface points and learns it via a diffusion model. Without assuming genus, connectivity, or boundary conditions, the method samples arbitrarily many surface points from Gaussian noise to represent geometry of arbitrary topology.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "neural compression"
   - "non-watertight meshes"
 date: 2026-05-08
-content_hash: 789727c8c800aefd
+content_hash: a4ab1e120e2af39c
 ---
 
 # Geometry Distributions
@@ -130,10 +130,10 @@ Sampling at varying resolutions from $n=2^{15}$ to $n=2^{19}$ on the Wukong mesh
 ## Related Papers
 
 - [\[ICCV 2025\] Neural Compression for 3D Geometry Sets](neural_compression_for_3d_geometry_sets.md)
-- [\[NeurIPS 2025\] GOATex: Geometry & Occlusion-Aware Texturing](../../NeurIPS2025/3d_vision/goatex_geometry_occlusion-aware_texturing.md)
+- [\[CVPR 2026\] Scenes as Tokens: Multi-Scale Normal Distributions Transform Tokenizer for General 3D Vision-Language Understanding](../../CVPR2026/3d_vision/scenes_as_tokens_multi-scale_normal_distributions_transform_tokenizer_for_genera.md)
 - [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
 - [\[ICCV 2025\] G2SF: Geometry-Guided Score Fusion for Multimodal Industrial Anomaly Detection](g2sf_geometry-guided_score_fusion_for_multimodal_industrial_anomaly_detection.md)
-- [\[ICCV 2025\] SHeaP: Self-Supervised Head Geometry Predictor Learned via 2D Gaussians](sheap_self-supervised_head_geometry_predictor_learned_via_2d_gaussians.md)
+- [\[NeurIPS 2025\] GOATex: Geometry & Occlusion-Aware Texturing](../../NeurIPS2025/3d_vision/goatex_geometry_occlusion-aware_texturing.md)
 
 </div>
 

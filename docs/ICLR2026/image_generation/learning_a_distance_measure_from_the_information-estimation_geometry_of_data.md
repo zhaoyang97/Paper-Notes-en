@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning a Distance Measure from the Information-Estimation Geometry of Data
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] The paper proposes the Information-Estimation Metric (IEM), a novel distance function induced by the geometry of data probability density. By comparing score vector fields across various noise levels to measure signal distance, the unsupervised IEM achieves performance comparable to supervised methods in predicting hum
+  [ICLR 2026][Image Generation][Information estimation metric] The paper proposes the Information-Estimation Metric (IEM), a novel distance function induced by the geometry of data probability density. By comparing score vector fields across various noise levels to measure signal distance, the unsupervised IEM achieves performance comparable to supervised methods in predicting human perceptual judgments.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Information estimation metric"
+  - "denoising error"
+  - "probability density geometry"
+  - "perceptual distance"
+  - "diffusion models"
 date: 2026-05-08
-content_hash: 5256ee2b32145ebe
+content_hash: 4ce49adb0bb42976
 ---
+
 # Learning a Distance Measure from the Information-Estimation Geometry of Data
 
 **Conference**: ICLR 2026  

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SERL: Self-Examining Reinforcement Learning on Open-Domain
 description: >-
-  [AAAI 2026][LLM Reasoning][Self-improvement] This paper proposes SERL, a self-improvement framework in which an LLM simultaneously acts as an Actor (generator) and a Judge (evaluator). It derives reward signals from the…
+  [AAAI 2026][Reasoning][Self-improvement] This paper proposes SERL, a self-improvement framework in which an LLM simultaneously acts as an Actor (generator) and a Judge (evaluator). It derives reward signals from the model's own judgments via the Copeland pairwise comparison method, requiring neither external reward models nor human annotations. SERL improves Qwen3-8B from 52.37% to 59.90% (+7.53%) on AlpacaEval 2.0, approaching the performance of Qwen3-32B.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Self-improvement"
   - "Reinforcement Learning"
   - "Pairwise Comparison"
   - "Copeland Method"
   - "External-Reward-Free"
 date: 2026-05-08
-content_hash: eb4f622211d1d916
+content_hash: c6b69917c6e1ad3c
 ---
 
 # SERL: Self-Examining Reinforcement Learning on Open-Domain
@@ -138,9 +138,9 @@ Training pipeline: For each input, the Actor samples $N$ candidate responses →
 
 - [\[NeurIPS 2025\] SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](../../NeurIPS2025/llm_reasoning/swe-rl_advancing_llm_reasoning_via_reinforcement_learning_on_open_software_evolu.md)
 - [\[AAAI 2026\] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement](incorporating_self-rewriting_into_large_language_model_reasoning_reinforcement.md)
-- [\[AAAI 2026\] Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning](well_begun_half_done_reinforcement_learning_with_prefix_optimization_for_llm_rea.md)
-- [\[AAAI 2026\] Relation-R1: Progressively Cognitive Chain-of-Thought Guided Reinforcement Learning for Unified Relation Comprehension](relation-r1_progressively_cognitive_chain-of-thought_guided_reinforcement_learni.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
+- [\[ICLR 2026\] Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks](../../ICLR2026/llm_reasoning/semantic_voting_a_self-evaluation-free_approach_for_efficient_llm_self-improveme.md)
+- [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](../../ICLR2026/llm_reasoning/learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
+- [\[ICLR 2026\] Incentivizing LLM Reasoning via Reinforcement Learning with Functional Monte Carlo Tree Search](../../ICLR2026/llm_reasoning/incentivizing_llm_reasoning_via_reinforcement_learning_with_functional_monte_car.md)
 
 </div>
 

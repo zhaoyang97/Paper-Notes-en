@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Latent Proxies for Controllable Single-Image Relighting
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] LightCtrl is a diffusion-based framework for single-image relighting. It utilizes a few-shot latent proxy encoder to provide lightweight material-geometry priors, a lighting-aware mask to guide spatially selective denoising, and DPO post-training to enhance physical consistency. This enables precise, continuous control
+  [CVPR 2026][Image Generation][Single-image Relighting] LightCtrl is a diffusion-based framework for single-image relighting. It utilizes a few-shot latent proxy encoder to provide lightweight material-geometry priors, a lighting-aware mask to guide spatially selective denoising, and DPO post-training to enhance physical consistency. This enables precise, continuous control over lighting direction, intensity, and color temperature, outperforming existing methods on both synthe…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Single-image Relighting"
+  - "PBR Priors"
+  - "Latent Proxy Encoder"
+  - "DPO Post-training"
+  - "Lighting-aware Mask"
 date: 2026-05-08
-content_hash: c79c8065f370c257
+content_hash: a8ef990e05079ddd
 ---
+
 # Learning Latent Proxies for Controllable Single-Image Relighting
 
 **Conference**: CVPR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Time-Specialized Event-Image Alignment for Blur-to-Video Decomposition
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] TSANet leverages event cameras to "unfold" a single motion-blurred image into a high-frame-rate sharp video. The core mechanism involves "time-specializing" both event and image features to align them with an arbitrary query timestamp $t$ before lightweight fusion, consistently outperforming previous SOTA methods on Go
+  [CVPR 2026][Image Restoration][Blur Decomposition] TSANet leverages event cameras to "unfold" a single motion-blurred image into a high-frame-rate sharp video. The core mechanism involves "time-specializing" both event and image features to align them with an arbitrary query timestamp $t$ before lightweight fusion, consistently outperforming previous SOTA methods on GoPro, HighREV, and EBD datasets.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Blur Decomposition"
+  - "Event Camera"
+  - "Temporal Alignment"
+  - "Video Reconstruction"
+  - "Attention"
 date: 2026-05-08
-content_hash: 947869c623b4a0a5
+content_hash: 0f85e5f656821038
 ---
+
 # Time-Specialized Event-Image Alignment for Blur-to-Video Decomposition
 
 **Conference**: CVPR 2026  
@@ -133,15 +139,16 @@ TSANet leads pure image-based methods by at least 1.14 / 4.6 / 3.4 dB across dat
 - Value: ⭐⭐⭐⭐ Includes a SOTA model, open-source code, and a new real-world dataset (EBD).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
-- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
-- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
-- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
+- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_with_unpaired_data.md)
+- [\[ECCV 2024\] Towards Real-world Event-guided Low-light Video Enhancement and Deblurring](../../ECCV2024/image_restoration/towards_real-world_event-guided_low-light_video_enhancement_and_deblurring.md)
 - [\[CVPR 2026\] Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution](time_without_time_pseudo-temporal_representation_for_space-time_super-resolution.md)
+- [\[CVPR 2026\] ReasonX: MLLM-Guided Intrinsic Image Decomposition](reasonx_mllm-guided_intrinsic_image_decomposition.md)
+- [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
 
 </div>
 

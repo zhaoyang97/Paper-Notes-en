@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] PU-Bench：面向严谨可复现 PU 学习的统一基准
+  [Paper Note] PU-Bench: A Unified Benchmark for Rigorously Reproducible PU Learning
 description: >-
-  [ICLR 2026][Others][Paper Note] PU-Bench is the first unified open-source PU (Positive-Unlabeled) learning benchmark. Utilizing a configurable data generator, a unified training pipeline, and a standardized evaluation suite, it re-evaluates 18 representative methods across 8 datasets with 2,880 controlled experiments. It reveals conclusions previousl
+  [ICLR 2026][PU learning] PU-Bench is the first unified open-source PU (Positive-Unlabeled) learning benchmark. Utilizing a configurable data generator, a unified training pipeline, and a standardized evaluation suite, it re-evaluates 18 representative methods across 8 datasets with 2,880 controlled experiments. It reveals conclusions previously obscured by inconsistent experimental settings, such as "no universal winner," the continued competitiveness of the simple nnPU basel…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "PU learning"
+  - "Positive-Unlabeled"
+  - "Benchmark"
+  - "Reproducibility"
+  - "Selection Bias"
 date: 2026-05-08
-content_hash: af35cfbc2ec27a43
+content_hash: a1916a08cb4c09be
 ---
+
 # PU-Bench: A Unified Benchmark for Rigorously Reproducible PU Learning
 
 **Conference**: ICLR 2026  
@@ -122,11 +127,11 @@ Rather than traditional module ablation, this work performs a robustness scan ac
 
 ## Related Papers
 
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark For Physical AI](../../CVPR2026/others/pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
-- [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](../../CVPR2026/others/witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
 - [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
+- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark For Physical AI](../../CVPR2026/others/pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
 - [\[NeurIPS 2025\] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases](../../NeurIPS2025/others/rdb2g-bench_a_comprehensive_benchmark_for_automatic_graph_modeling_of_relational.md)
-- [\[ICLR 2026\] Measuring Uncertainty Calibration](measuring_uncertainty_calibration.md)
+- [\[ICLR 2026\] GoR: A Unified and Extensible Generative Framework for Ordinal Regression](gor_a_unified_and_extensible_generative_framework_for_ordinal_regression.md)
+- [\[AAAI 2026\] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation](../../AAAI2026/others/forest_vs_tree_the_n_k_trade-off_in_reproducible_ml_evaluation.md)
 
 </div>
 

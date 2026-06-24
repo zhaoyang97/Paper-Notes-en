@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Taming Hierarchical Image Coding Optimization: A Spectral Regularization Perspective
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] Addressing the contrast where hierarchical learned image compression is "theoretically superior but practically outperformed by single-scale models," this paper analyzes spectral training dynamics. The root causes are identified as cross-scale energy dispersion and spectral aliasing. Two spectral regularizations—intra-
+  [ICLR 2026][Image Restoration][Learned Image Compression] Addressing the contrast where hierarchical learned image compression is "theoretically superior but practically outperformed by single-scale models," this paper analyzes spectral training dynamics. The root causes are identified as cross-scale energy dispersion and spectral aliasing. Two spectral regularizations—intra-scale frequency truncation (gradual specialization from low to high frequencies) and inter-scale laten…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Learned Image Compression"
+  - "Hierarchical VAE"
+  - "Frequency Principle"
+  - "Spectral Regularization"
+  - "Training Dynamics"
 date: 2026-05-08
-content_hash: b0c100e470411061
+content_hash: bffc43204f94edf4
 ---
+
 # Taming Hierarchical Image Coding Optimization: A Spectral Regularization Perspective
 
 **Conference**: ICLR 2026  
@@ -125,6 +131,7 @@ Effect of individual regularizations (Baseline: naive optimization):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Preserve-Then-Quantize: Balancing Rank Budgets for Quantization Error Reconstruction in LLMs
 description: >-
-  [ICML 2026][Model Compression][PTQ] The authors propose SRR (Structured Residual Reconstruction), which explicitly splits the fixed low-rank budget $r$ in Quantization Error Reconstruction (QER) into two parts: "preserving $k$ principal singular directions before quantization" and "fitting the residual with the remaining $r-k$ rank". Using a closed-form
+  [ICML 2026][Model Compression][PTQ] The authors propose SRR (Structured Residual Reconstruction), which explicitly splits the fixed low-rank budget $r$ in Quantization Error Reconstruction (QER) into two parts: "preserving $k$ principal singular directions before quantization" and "fitting the residual with the remaining $r-k$ rank". Using a closed-form criterion based on a one-shot random probe to select $k^\star$ per layer, SRR consistently outperforms LQER/QERA in 2/3-bit…
 tags:
-  - ICML 2026
-  - Model Compression
-  - PTQ
-  - QPEFT
+  - "ICML 2026"
+  - "Model Compression"
+  - "PTQ"
+  - "Quantization Error Reconstruction"
+  - "Low-rank Compensation"
+  - "QPEFT"
+  - "Rank Budget Allocation"
 date: 2026-05-08
-content_hash: 887097b993849a52
+content_hash: da0f8586a29bf968
 ---
+
 # Preserve-Then-Quantize: Balancing Rank Budgets for Quantization Error Reconstruction in LLMs
 
 **Conference**: ICML 2026  
@@ -135,11 +139,11 @@ SRR consistently reduces perplexity across all combinations; gains are most sign
 
 ## Related Papers
 
+- [\[ICLR 2026\] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization](../../ICLR2026/model_compression/serq_saliency-aware_low-rank_error_reconstruction_for_llm_quantization.md)
+- [\[ICLR 2026\] Prune-then-Quantize or Quantize-then-Prune? Understanding the Impact of Compression Order in Joint Model Compression](../../ICLR2026/model_compression/prune-then-quantize_or_quantize-then-prune_understanding_the_impact_of_compressi.md)
 - [\[ICML 2026\] Compress then Merge: From Multiple LoRAs into One Low-Rank Adapter](compress_then_merge_from_multiple_loras_into_one_low-rank_adapter.md)
 - [\[ICML 2026\] ProjQ: Project-and-Quantize for Adapter-Aware LLM Compression](projq_project-and-quantize_for_adapter-aware_llm_compression.md)
-- [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
-- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](../../NeurIPS2025/model_compression/quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
-- [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
+- [\[ICML 2026\] Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing](post-hoc_merging_is_not_enough_many-shot_model_merging_with_loss-gap_balancing.md)
 
 </div>
 

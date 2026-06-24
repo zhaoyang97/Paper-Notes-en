@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] FedVTC proposes that in model-heterogeneous federated learning, each client uses a Variational Transposed Convolutional (VTC) network to generate synthetic data from aggregated feature distribution statistics to fine-tune local models. This significantly improves generalization without requiring public datasets while r
+  [ICLR 2026][Image Generation][Model Heterogeneous Federated Learning] FedVTC proposes that in model-heterogeneous federated learning, each client uses a Variational Transposed Convolutional (VTC) network to generate synthetic data from aggregated feature distribution statistics to fine-tune local models. This significantly improves generalization without requiring public datasets while reducing communication and memory overhead.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Model Heterogeneous Federated Learning"
+  - "Variational Transposed Convolution"
+  - "Synthetic Data Fine-tuning"
+  - "Feature Distribution Alignment"
+  - "Communication Efficiency"
 date: 2026-05-08
-content_hash: 37632980f244ca7a
+content_hash: fd132edc5b163ab9
 ---
+
 # Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models
 
 **Conference**: ICLR 2026  
@@ -135,8 +141,8 @@ Proxy model methods transmit over-parameterized generators, and parameter-sharin
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
 - [\[ICLR 2026\] Bridging the Distribution Gap to Harness Pretrained Diffusion Priors for Super-Resolution](bridging_the_distribution_gap_to_harness_pretrained_diffusion_priors_for_super-r.md)
 - [\[ICCV 2025\] FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in Heterogeneous Federated Learning](../../ICCV2025/image_generation/feddifrc_unlocking_the_potential_of_text-to-image_diffusion_models_in_heterogene.md)
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](../../CVPR2026/image_generation/generative_modeling_of_weights_generalization_or_memorization.md)
 - [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](../../CVPR2026/image_generation/temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
-- [\[CVPR 2026\] Heterogeneous Decentralized Diffusion Models](../../CVPR2026/image_generation/heterogeneous_decentralized_diffusion_models.md)
 
 </div>
 

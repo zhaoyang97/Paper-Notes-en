@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Memory RL] The authors propose the MIKASA memory benchmark suite—unifying fragmented memory RL evaluations with a four-category memory task classification framework. They construct 32 tabletop robotic manipulation memory tasks (MIKASA-Robo) for the first time, systematically exposing memory deficiencies of mainstream RL/VLA agent
+  [ICLR 2026][Robotics][Memory RL] The authors propose the MIKASA memory benchmark suite—unifying fragmented memory RL evaluations with a four-category memory task classification framework. They construct 32 tabletop robotic manipulation memory tasks (MIKASA-Robo) for the first time, systematically exposing memory deficiencies of mainstream RL/VLA agents in partially observable manipulation tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Memory RL
-  - POMDP
-  - Tabletop Manipulation
-  - Benchmark
-  - Partial Observability
+  - "ICLR 2026"
+  - "Robotics"
+  - "Memory RL"
+  - "POMDP"
+  - "Tabletop Manipulation"
+  - "Benchmark"
+  - "Partial Observability"
 date: 2026-05-08
-content_hash: 52ec2b441348e9be
+content_hash: fe7e6d989e421406
 ---
+
 # Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning
 
 **Conference**: ICLR 2026  

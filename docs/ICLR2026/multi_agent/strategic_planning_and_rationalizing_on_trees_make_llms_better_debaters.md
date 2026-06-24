@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Strategic Planning and Rationalizing on Trees Make LLMs Better Debaters
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] This paper proposes TreeDebater, which utilizes a "Rehearsal Tree" to pre-simulate opponent moves and a "Debate Flow Tree" to track the status of the debate. Combined with simulated audience feedback and a speech duration controller, it enables LLMs to allocate precious speaking time to the most impactful actions in st
+  [ICLR 2026][Multi-Agent][Competitive Debate] This paper proposes TreeDebater, which utilizes a "Rehearsal Tree" to pre-simulate opponent moves and a "Debate Flow Tree" to track the status of the debate. Combined with simulated audience feedback and a speech duration controller, it enables LLMs to allocate precious speaking time to the most impactful actions in strictly timed competitive debates. In human evaluations, it achieved a +15.6% gain in per-stage persuasiveness and a…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Competitive Debate"
+  - "Tree-structured Planning"
+  - "Time Budget"
+  - "Persuasiveness"
 date: 2026-05-08
-content_hash: 4bc841cdd06c47ef
+content_hash: d425837a63dec2a2
 ---
+
 # Strategic Planning and Rationalizing on Trees Make LLMs Better Debaters
 
 **Conference**: ICLR 2026  
@@ -142,7 +147,7 @@ The improvement on DeepSeek-V3 is particularly significant (+15.6% persuasivenes
 - [\[ICLR 2026\] MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](marshal_incentivizing_multi-agent_reasoning_via_self-play_with_strategic_llms.md)
 - [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
 - [\[ICML 2026\] Does Persona Make LLMs K-pop Fans? A Pilot Study of LLM-Based Online Concert Audience Agents](../../ICML2026/multi_agent/does_persona_make_llms_k-pop_fans_a_pilot_study_of_llm-based_online_concert_audi.md)
-- [\[ICLR 2026\] GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs](graphplanner_graph_memory-augmented_agentic_routing_for_multi-agent_llms.md)
+- [\[ICLR 2026\] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](stronger-mas_multi-agent_reinforcement_learning_for_collaborative_llms.md)
 - [\[ICLR 2026\] ATLAS: Constraints-Aware Multi-Agent Collaboration for Real-World Travel Planning](atlas_constraints-aware_multi-agent_collaboration_for_real-world_travel_planning.md)
 
 </div>

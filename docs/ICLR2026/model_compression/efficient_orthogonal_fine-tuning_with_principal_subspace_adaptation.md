@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Efficient Orthogonal Fine-Tuning with Principal Subspace Adaptation
 description: >-
-  [ICLR 2026][Model Compression][PEFT] PSOFT migrates orthogonal fine-tuning from the "full parameter space" to the "low-rank principal subspace of pre-trained weights." By utilizing SVD to construct dimension-compatible projections and providing a theoretical condition that strictly preserves subspace geometry (angles and norms), while adding two tunable v
+  [ICLR 2026][Model Compression][PEFT] PSOFT migrates orthogonal fine-tuning from the "full parameter space" to the "low-rank principal subspace of pre-trained weights." By utilizing SVD to construct dimension-compatible projections and providing a theoretical condition that strictly preserves subspace geometry (angles and norms), while adding two tunable vectors to relax orthogonality, PSOFT—for the first time—matches or exceeds LoRA across three dimensions: parameter count…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - PEFT
+  - "ICLR 2026"
+  - "Model Compression"
+  - "PEFT"
+  - "Orthogonal Fine-Tuning (OFT)"
+  - "Principal Subspace"
+  - "Low-rank"
+  - "Semantic Preservation"
+  - "Cayley Parameterization"
 date: 2026-05-08
-content_hash: 96c5b66d6d768651
+content_hash: c0263168c2be2512
 ---
+
 # Efficient Orthogonal Fine-Tuning with Principal Subspace Adaptation
 
 **Conference**: ICLR 2026  
@@ -132,8 +138,8 @@ BOFT/GOFTv2/qGOFTv2 all OOM on 3B; PSOFT outperforms LoRA by +2.28% (GSM-8K) and
 - [\[ICLR 2026\] SumRA: Parameter Efficient Fine-Tuning with Singular Value Decomposition and Summed Orthogonal Basis](sumra_parameter_efficient_fine-tuning_with_singular_value_decomposition_and_summ.md)
 - [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
 - [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
-- [\[ICLR 2026\] QWHA: Quantization-Aware Walsh-Hadamard Adaptation for Parameter-Efficient Fine-Tuning on Large Language Models](qwha_quantization-aware_walsh-hadamard_adaptation_for_parameter-efficient_fine-t.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] When AVSR Meets Video Conferencing: Dataset, Degradation, and the Hidden Mechanism Behind Performance Collapse
 description: >-
-  [CVPR 2026][Audio & Speech][AVSR] The authors perform the first systematic evaluation of mainstream Audio-Visual Speech Recognition (AVSR) models in real video conferencing (VC) scenarios, finding that error rates skyrocket from 0.93%/0.56% to the 33% range. Consequently, they construct the first VC-oriented multimodal dataset, MLD-VC (31 speakers, 22.
+  [CVPR 2026][AVSR] The authors perform the first systematic evaluation of mainstream Audio-Visual Speech Recognition (AVSR) models in real video conferencing (VC) scenarios, finding that error rates skyrocket from 0.93%/0.56% to the 33% range. Consequently, they construct the first VC-oriented multimodal dataset, MLD-VC (31 speakers, 22.79 hours, 4 platforms, with explicit Lombard effect injection). By deconstructing the transmission pipeline…
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - AVSR
+  - "CVPR 2026"
+  - "AVSR"
+  - "Video Conferencing"
+  - "Lombard Effect"
+  - "Formant Shift"
+  - "Speech Enhancement"
 date: 2026-05-08
-content_hash: a3bfd6b4aeb383a8
+content_hash: 4af5bc37d24b128c
 ---
+
 # When AVSR Meets Video Conferencing: Dataset, Degradation, and the Hidden Mechanism Behind Performance Collapse
 
 **Conference**: CVPR 2026  
@@ -130,16 +134,16 @@ Collapse is consistent across languages, platforms, and modalities. The visual-o
 - Value: ⭐⭐⭐⭐ Provides a practical dataset and diagnostic methodology for real-world deployment of meeting transcription.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] The Devil behind the Mask: An Emergent Safety Vulnerability of Diffusion LLMs](../../ICLR2026/audio_speech/the_devil_behind_the_mask_an_emergent_safety_vulnerability_of_diffusion_llms.md)
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
-- [\[ACL 2026\] TellWhisper: Tell Whisper Who Speaks When](../../ACL2026/audio_speech/tellwhisper_tell_whisper_who_speaks_when.md)
-- [\[ACL 2025\] ChildMandarin: A Comprehensive Mandarin Speech Dataset for Young Children Aged 3-5](../../ACL2025/audio_speech/childmandarin_a_comprehensive_mandarin_speech_dataset_for_young_children_aged_3-.md)
-- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](pavas_physics-aware_video-to-audio_synthesis.md)
+- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
+- [\[ICML 2025\] Faster and Stronger: When ANN-SNN Conversion Meets Parallel Spiking Calculation](../../ICML2025/others/faster_and_stronger_when_ann-snn_conversion_meets_parallel_spiking_calculation.md)
+- [\[CVPR 2026\] Bridging Domain Expertise and Generalization for Performance Estimation](bridging_domain_expertise_and_generalization_for_performance_estimation.md)
+- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](videomama_mask-guided_video_matting_via_generative_prior.md)
+- [\[CVPR 2026\] FlashVSR: Towards Real-time Diffusion-Based Streaming Video Super Resolution](flashvsr_towards_real-time_diffusion-based_streaming_video_super_resolution.md)
 
 </div>
 

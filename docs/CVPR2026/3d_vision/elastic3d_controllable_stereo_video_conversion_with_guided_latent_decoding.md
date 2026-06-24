@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Elastic3D: Controllable Stereo Video Conversion with Guided Latent Decoding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Elastic3D utilizes a 1-step conditional latent diffusion model to **directly** synthesize the right-eye video from a monocular input (without depth estimation or warping). It allows users to continuously adjust 3D intensity via a scalar "parallax factor" and employs a "guided VAE decoder" with epipolar attention to inj
+  [CVPR 2026][3D Vision][Monocular-to-stereo] Elastic3D utilizes a 1-step conditional latent diffusion model to **directly** synthesize the right-eye video from a monocular input (without depth estimation or warping). It allows users to continuously adjust 3D intensity via a scalar "parallax factor" and employs a "guided VAE decoder" with epipolar attention to inject high-frequency details from the left view into the right view, eliminating binocular rivalry artifacts. It outpe…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular-to-stereo"
+  - "stereo video conversion"
+  - "guided latent decoding"
+  - "parallax controllable"
+  - "epipolar attention"
 date: 2026-05-08
-content_hash: 1c698636900fac25
+content_hash: d4b54291f8d94b8c
 ---
+
 # Elastic3D: Controllable Stereo Video Conversion with Guided Latent Decoding
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ Guided decoder standalone evaluation (decoding GT right-view latents, Stereo4D):
 
 ## Related Papers
 
-- [\[CVPR 2026\] DepthFocus: Controllable Depth Estimation for See-Through Scenes](depthfocus_controllable_depth_estimation_for_see-through_scenes.md)
-- [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
-- [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](240fps_stereo_vision_from_monocular_mixed_spikes.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts](majutsucity_language-driven_aesthetic-adaptive_city_generation_with_controllable.md)
+- [\[CVPR 2025\] Mono2Stereo: A Benchmark and Empirical Study for Stereo Conversion](../../CVPR2025/3d_vision/mono2stereo_a_benchmark_and_empirical_study_for_stereo_conversion.md)
+- [\[CVPR 2026\] Geometry-Guided 3D Visual Token Pruning for Video-Language Models](geometry-guided_3d_visual_token_pruning_for_video-language_models.md)
+- [\[CVPR 2026\] XPaintNet: An eXtreme Lightweight Framework for Stereoscopic Conversion without Inpainting Network](xpaintnet_an_extreme_lightweight_framework_for_stereoscopic_conversion_without_i.md)
+- [\[CVPR 2026\] WorldStereo: Bridging Camera-Guided Video Generation and Scene Reconstruction via 3D Geometric Memories](worldstereo_bridging_camera-guided_video_generation_and_scene_reconstruction_via.md)
+- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
 
 </div>
 

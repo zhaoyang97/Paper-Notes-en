@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] (HB-ARFM) History-Bootstrapped Flow Matching for Inverse Boiling Reconstruction
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] HB-ARFM solves the inverse problem of reconstructing multiphase boiling flow fields using "history-observation-guided" conditional flow matching. It bootstraps an initial latent state from a historical observation window and then advances the reconstruction autoregressively using the same conditional velocity field. Ob
+  [ICML2026][Image Generation][Flow Matching] HB-ARFM solves the inverse problem of reconstructing multiphase boiling flow fields using "history-observation-guided" conditional flow matching. It bootstraps an initial latent state from a historical observation window and then advances the reconstruction autoregressively using the same conditional velocity field. Observing only interface geometry and velocity, it achieves the first spatiotemporally consistent reconstruction of co…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
-  - Autoregressive
+  - "ICML2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Autoregressive"
+  - "Boiling Flow Field"
+  - "Partial Observation"
+  - "Spatiotemporal Inverse Problem"
 date: 2026-05-08
-content_hash: bb591b4e672bbc9b
+content_hash: 5dfba19d27e8d969
 ---
+
 # (HB-ARFM) History-Bootstrapped Flow Matching for Inverse Boiling Reconstruction
 
 **Conference**: ICML2026  
@@ -120,12 +124,18 @@ The dataset used is BubbleML, covering subcooled pool boiling and flow boiling. 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-- [HistoryFM: Integrating History into Flow Matching](https://arxiv.org/abs/example1)
-- [BubbleML: A Benchmark for Multiphase Boiling Flow](https://arxiv.org/abs/example2)
+
+## Related Papers
+
+- [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](saving_foundation_flow-matching_priors_for_inverse_problems.md)
+- [\[ICML 2026\] LithoGRPO: Fast Inverse Lithography via GRPO Reinforced Flow Matching](lithogrpo_fast_inverse_lithography_via_grpo_reinforced_flow_matching.md)
+- [\[ICML 2026\] Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching](bootstrap_your_generator_unpaired_visual_editing_with_flow_matching.md)
+- [\[ICML 2026\] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing](shifting_the_breaking_point_of_flow_matching_for_multi-instance_editing.md)
+- [\[ICML 2026\] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization](principled_rl_for_flow_matching_emerges_from_the_chunk-level_policy_optimization.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](saving_foundation_flow-matching_priors_for_inverse_problems.md)

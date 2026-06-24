@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions
 description: >-
-  [ICLR 2026][Medical NLP][Paper Note] This paper constructs Cancer-Myth—an adversarial dataset verified by hemato-oncologists containing 585 oncology patient questions with false presuppositions. The study finds that leading LLMs, including GPT-5, Gemini-2.5-Pro, and Claude-4-Sonnet, achieve a success rate of no more than 43% in correcting these false pres
+  [ICLR2026][Medical LLM][Oncology Patient Q&A] This paper constructs Cancer-Myth—an adversarial dataset verified by hemato-oncologists containing 585 oncology patient questions with false presuppositions. The study finds that leading LLMs, including GPT-5, Gemini-2.5-Pro, and Claude-4-Sonnet, achieve a success rate of no more than 43% in correcting these false presuppositions. Furthermore, mitigation techniques such as defensive prompting trigger significant over-corrections o…
 tags:
-  - ICLR 2026
-  - Medical NLP
+  - "ICLR2026"
+  - "Medical LLM"
+  - "Oncology Patient Q&A"
+  - "False Presuppositions"
+  - "LLM Safety"
+  - "Adversarial Dataset"
+  - "Medical Benchmark"
 date: 2026-05-08
-content_hash: 9f74729aeb0dae7e
+content_hash: 84e7a3b4627c422d
 ---
+
 # Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions
 
 **Conference**: ICLR2026  
@@ -138,10 +144,10 @@ GEPA optimization increases Gemini-2.5-Pro's PCR to 88%, **but Cancer-Myth-NFP a
 ## Related Papers
 
 - [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
-- [\[ICLR 2026\] Can Large Language Models Match the Conclusions of Systematic Reviews?](can_large_language_models_match_the_conclusions_of_systematic_reviews.md)
 - [\[AAAI 2026\] CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records](../../AAAI2026/medical_nlp/clicare_grounding_large_language_models_in_clinical_guidelines_for_decision_supp.md)
 - [\[ACL 2026\] Query Pipeline Optimization for Cancer Patient Question Answering Systems](../../ACL2026/medical_nlp/query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)
 - [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](../../ACL2026/medical_nlp/beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
+- [\[ICLR 2026\] Can Large Language Models Match the Conclusions of Systematic Reviews?](can_large_language_models_match_the_conclusions_of_systematic_reviews.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TESO: Online Tracking of Essential Matrix by Stochastic Optimization
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] TESO models the online extrinsic calibration of stereo cameras as "adaptive stochastic optimization of a robust kernelized epipolar error on the essential matrix manifold." Without any training data and with only two hyperparameters, it tracks camera calibration drifts in real-time with 0.12°-level accuracy, achieving
+  [CVPR 2026][3D Vision][Essential Matrix] TESO models the online extrinsic calibration of stereo cameras as "adaptive stochastic optimization of a robust kernelized epipolar error on the essential matrix manifold." Without any training data and with only two hyperparameters, it tracks camera calibration drifts in real-time with 0.12°-level accuracy, achieving single-frame optimization precision comparable to neural-network-based methods.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Essential Matrix"
+  - "Online Stereo Calibration"
+  - "Kernel Correlation"
+  - "Stochastic Optimization"
+  - "Epipolar Geometry"
 date: 2026-05-08
-content_hash: e25c8ece61de1225
+content_hash: 91d09c4d472212c3
 ---
+
 # TESO: Online Tracking of Essential Matrix by Stochastic Optimization
 
 **Conference**: CVPR 2026  
@@ -164,10 +170,10 @@ The paper does not provide a standard "component-wise" ablation table but verifi
 ## Related Papers
 
 - [\[CVPR 2026\] Linear Fundamental Matrix Estimation from 7 or 5 Points](linear_fundamental_matrix_estimation_from_7_or_5_points.md)
+- [\[CVPR 2026\] Stochastic Ray Tracing for the Reconstruction of 3D Gaussian Splatting](stochastic_ray_tracing_for_the_reconstruction_of_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Solving Minimal Problems Without Matrix Inversion Using FFT-Based Interpolation](solving_minimal_problems_without_matrix_inversion_using_fft-based_interpolation.md)
 - [\[CVPR 2026\] Tracking by Predicting 3-D Gaussians Over Time](tracking_by_predicting_3-d_gaussians_over_time.md)
 - [\[NeurIPS 2025\] Online Segment Any 3D Thing as Instance Tracking](../../NeurIPS2025/3d_vision/online_segment_any_3d_thing_as_instance_tracking.md)
-- [\[CVPR 2026\] Coverage Optimization for Camera View Selection](coverage_optimization_for_camera_view_selection.md)
 
 </div>
 

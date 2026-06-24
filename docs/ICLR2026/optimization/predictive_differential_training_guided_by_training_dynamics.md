@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Predictive Differential Training Guided by Training Dynamics
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Training a DNN is treated as a nonlinear dynamical system in a high-dimensional weight space. Using Koopman/DMD, weights several epochs ahead are predicted to skip SGD iterations. A "dynamic consistency analysis" mask is employed to accept only high-fidelity predicted weights whose local dynamics align with global dyna
+  [ICLR 2026][Optimization][Koopman Operator] Training a DNN is treated as a nonlinear dynamical system in a high-dimensional weight space. Using Koopman/DMD, weights several epochs ahead are predicted to skip SGD iterations. A "dynamic consistency analysis" mask is employed to accept only high-fidelity predicted weights whose local dynamics align with global dynamics. This works as a plug-and-play plugin to accelerate various optimizers (SGD/Adam/LAMB…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Koopman Operator"
+  - "Dynamic Mode Decomposition"
+  - "Weight Prediction"
+  - "Differential Training"
+  - "Training Acceleration"
 date: 2026-05-08
-content_hash: 9a9fad3c8aa6abf9
+content_hash: c4dc2c58093053d8
 ---
+
 # Predictive Differential Training Guided by Training Dynamics
 
 **Conference**: ICLR 2026  
@@ -127,9 +133,20 @@ Evaluated across architectures (FCN 3.9M to ViT-Huge 632M) and datasets (CIFAR-1
 - Value: ⭐⭐⭐⭐ A zero-dependency, plug-and-play tool providing 10–40% speedup without loss of accuracy.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Difference Predictive Coding for Training Spiking Neural Networks](difference_predictive_coding_for_training_spiking_neural_networks.md)
+- [\[ICLR 2026\] Seesaw: Accelerating Training by Balancing Learning Rate and Batch Size Scheduling](seesaw_accelerating_training_by_balancing_batch_size_and_learning_rate_schedulin.md)
+- [\[ICLR 2026\] Cautious Optimizers: Improving Training with One Line of Code](cautious_optimizers_improving_training_with_one_line_of_code.md)
+- [\[ICLR 2026\] Rapid Training of Hamiltonian Graph Networks using Random Features](rapid_training_of_hamiltonian_graph_networks_using_random_features.md)
+- [\[ICML 2026\] Muon in Associative Memory Learning: Training Dynamics and Scaling Laws](../../ICML2026/optimization/muon_in_associative_memory_learning_training_dynamics_and_scaling_laws.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Difference Predictive Coding for Training Spiking Neural Networks](difference_predictive_coding_for_training_spiking_neural_networks.md)

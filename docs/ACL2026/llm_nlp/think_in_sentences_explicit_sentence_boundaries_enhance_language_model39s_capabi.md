@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes inserting delimiter tokens at sentence boundaries within LLM inputs to implement a "sentence-by-sentence" reasoning paradigm via ICL and SFT. Constant improvements were achieved across models from 7B to 600B (GSM8k +7.7%, DROP +12.5%) with almost no additional computational overhead.
+  [ACL 2026][LLM (Other)][Sentence Boundaries] This paper proposes inserting delimiter tokens at sentence boundaries within LLM inputs to implement a "sentence-by-sentence" reasoning paradigm via ICL and SFT. Constant improvements were achieved across models from 7B to 600B (GSM8k +7.7%, DROP +12.5%) with almost no additional computational overhead.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Sentence Boundaries"
+  - "Delimiters"
+  - "In-context Learning"
+  - "SFT"
+  - "Free Lunch"
 date: 2026-05-08
-content_hash: 6c39af05203eaf72
+content_hash: 8d5a15fd48cd9cf5
 ---
+
 # Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities
 
 **Conference**: ACL 2026  
@@ -126,11 +132,11 @@ SFT utilizes the standard causal language modeling loss: $\mathcal{L}_{SFT}(\the
 
 ## Related Papers
 
+- [\[ICML 2026\] Position: Hippocampal Explicit Memory Is the Cornerstone for AGI](../../ICML2026/llm_nlp/position_hippocampal_explicit_memory_is_the_cornerstone_for_agi.md)
 - [\[ACL 2025\] ExpliCa: Evaluating Explicit Causal Reasoning in Large Language Models](../../ACL2025/llm_nlp/explica_evaluating_explicit_causal_reasoning_in_large_language_models.md)
 - [\[ACL 2025\] Explicit and Implicit Data Augmentation for Social Event Detection](../../ACL2025/llm_nlp/explicit_and_implicit_data_augmentation_for_social_event_detection.md)
-- [\[ICML 2026\] Position: Hippocampal Explicit Memory Is the Cornerstone for AGI](../../ICML2026/llm_nlp/position_hippocampal_explicit_memory_is_the_cornerstone_for_agi.md)
 - [\[ACL 2025\] PlanGenLLMs: A Modern Survey of LLM Planning Capabilities](../../ACL2025/llm_nlp/plangenllms_planning_survey.md)
-- [\[ACL 2026\] Clozing the Gap: Exploring Why Language Model Surprisal Outperforms Cloze Surprisal](clozing_the_gap_exploring_why_language_model_surprisal_outperforms_cloze_surpris.md)
+- [\[ACL 2026\] SEF-CLGC at SemEval-2026 Task 11: Logical Notation Impact on Language Model Performance](sef-clgc_at_semeval-2026_task_11_logical_notation_impact_on_language_model_perfo.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection
 description: >-
-  [CVPR 2026][AIGC Detection][CLIP] PPM-CLIP replaces the "discriminative static boundary" paradigm with "generative probabilistic inference." It utilizes normalizing flows to generate a family of adaptive prompts (multiple hypotheses) for each image and determines the results by averaging cosine similarities to marginalize noise. Combined with frequency
+  [CVPR 2026][AIGC Detection][AI-Generated Image Detection] PPM-CLIP replaces the "discriminative static boundary" paradigm with "generative probabilistic inference." It utilizes normalizing flows to generate a family of adaptive prompts (multiple hypotheses) for each image and determines the results by averaging cosine similarities to marginalize noise. Combined with frequency-guided patch-wise contrastive learning, it forces the CLIP encoder to capture high-frequency forgery…
 tags:
-  - CVPR 2026
-  - AIGC Detection
-  - CLIP
+  - "CVPR 2026"
+  - "AIGC Detection"
+  - "AI-Generated Image Detection"
+  - "CLIP"
+  - "Probabilistic Prompt"
+  - "Normalizing Flow"
+  - "Frequency-Domain Contrastive Learning"
 date: 2026-05-08
-content_hash: d93bc375266c2958
+content_hash: 6d98fb4c041444f5
 ---
+
 # PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection
 
 **Conference**: CVPR 2026  
@@ -120,15 +125,16 @@ Module removal on GenImage (mAcc %):
 - Value: ⭐⭐⭐⭐ High practical value for cross-generator generalization; ensemble overhead is the main deployment trade-off.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation](realign_generalizable_image_forgery_detection_via_reasoning-aligned_representati.md)
-- [\[CVPR 2026\] Quality-Aware Calibration for AI-Generated Image Detection in the Wild](quality-aware_calibration_for_ai-generated_image_detection_in_the_wild.md)
+- [\[ICML 2026\] Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection](../../ICML2026/aigc_detection/dissect_and_prune_enhancing_robustness_in_ai-generated_image_detection.md)
+- [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](../../ICLR2026/aigc_detection/fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
+- [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](../../ICLR2026/aigc_detection/unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
 - [\[CVPR 2026\] Locate-Then-Examine: Grounded Region Reasoning Improves Detection of AI-Generated Images](locate-then-examine_grounded_region_reasoning_improves_detection_of_ai-generated.md)
-- [\[CVPR 2026\] FRAME: Forensic Routing and Adaptive Multi-path Evidence Fusion for Image Manipulation Detection](frame_forensic_routing_and_adaptive_multi-path_evidence_fusion_for_image_manipul.md)
-- [\[CVPR 2026\] Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks](fine-grained_image_aesthetic_assessment_learning_discriminative_scores_from_rela.md)
+- [\[ICLR 2026\] Exploring Specular Reflection Inconsistency for Generalizable Face Forgery Detection](../../ICLR2026/aigc_detection/exploring_specular_reflection_inconsistency_for_generalizable_face_forgery_detec.md)
 
 </div>
 

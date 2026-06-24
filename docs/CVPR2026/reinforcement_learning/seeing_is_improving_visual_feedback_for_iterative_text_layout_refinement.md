@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement
 description: >-
-  [CVPR 2026][Reinforcement Learning][Paper Note] VFLM proposes a layout generation framework that utilizes visual feedback for iterative optimization. By combining a visual reward model based on OCR accuracy with reinforcement learning, the framework enables Multimodal Large Language Models (MLLMs) to "see" rendering results and repeatedly correct them, significantly
+  [CVPR 2026][Reinforcement Learning][Visual feedback] VFLM proposes a layout generation framework that utilizes visual feedback for iterative optimization. By combining a visual reward model based on OCR accuracy with reinforcement learning, the framework enables Multimodal Large Language Models (MLLMs) to "see" rendering results and repeatedly correct them, significantly outperforming code-only generation methods in text layout quality.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Visual feedback"
+  - "text layout"
+  - "layout generation"
+  - "iterative optimization"
 date: 2026-05-08
-content_hash: 5f09ee448676c1f6
+content_hash: 0351e6e15cb314f4
 ---
+
 # Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement
 
 **Conference**: CVPR 2026  
@@ -149,7 +154,7 @@ Consider generating an event poster with a centered title, a subtitle below, and
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -157,7 +162,7 @@ Consider generating an event poster with a centered title, a subtitle below, and
 - [\[CVPR 2026\] Talk2Move: Reinforcement Learning for Text-Instructed Object-Level Geometric Transformation in Scenes](talk2move_reinforcement_learning_for_text-instructed_object-level_geometric_tran.md)
 - [\[CVPR 2026\] ReAG: Reasoning-Augmented Generation for Knowledge-based Visual Question Answering](reag_reasoning-augmented_generation_for_knowledge-based_visual_question_answerin.md)
 - [\[CVPR 2026\] See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs](see_it_say_it_sorted_an_iterative_training-free_framework_for_visually-grounded_.md)
-- [\[CVPR 2026\] TSTM: Temporal Segmentation for Task-relevant Mask in Visual Reinforcement Learning Generalization](tstm_temporal_segmentation_for_task-relevant_mask_in_visual_reinforcement_learni.md)
+- [\[CVPR 2026\] Saliency-Guided Representation with Consistency Policy Learning for Visual Unsupervised Reinforcement Learning](saliency-guided_representation_with_consistency_policy_learning_for_visual_unsup.md)
 
 </div>
 

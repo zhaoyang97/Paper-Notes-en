@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] LWD extracts spatial saliency from latent signals via wavelet energy maps and concentrates training loss on high-frequency regions using time-dependent binary masks. Combined with scale-consistent VAE fine-tuning, it enhances 2K–4K ultra-high-definition generation quality without architectural changes or additional inf
+  [ICLR 2026][Image Generation][Ultra-High-Resolution Synthesis] LWD extracts spatial saliency from latent signals via wavelet energy maps and concentrates training loss on high-frequency regions using time-dependent binary masks. Combined with scale-consistent VAE fine-tuning, it enhances 2K–4K ultra-high-definition generation quality without architectural changes or additional inference overhead.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Ultra-High-Resolution Synthesis"
+  - "Latent Diffusion"
+  - "Wavelet Energy Map"
+  - "Frequency-Aware Supervision"
+  - "Flow Matching"
+  - "VAE Fine-tuning"
 date: 2026-05-08
-content_hash: bcbe9217f9daac70
+content_hash: e69438063d1c52b0
 ---
+
 # Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis
 
 **Conference**: ICLR 2026  
@@ -131,13 +137,16 @@ VAE scale-consistency alone significantly improves LPIPS (e.g., from 0.30 to 0.1
 <div class="related-papers" markdown="1">
 
 ## Related Papers
-- Zhang et al., "Diffusion-4K: Ultra-High Resolution Image Synthesis with Wavelet Diffusion," 2025.
-- Chen et al., "FouriScale: A Frequency Perspective on Training-Free High-Resolution Image Synthesis," 2024.
+
+- [\[CVPR 2025\] Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models](../../CVPR2025/image_generation/diffusion-4k_ultra-high-resolution_image_synthesis_with_latent_diffusion_models.md)
+- [\[ICLR 2026\] PQGAN: Product-Quantised Image Representation for High-Quality Image Synthesis](pqgan_product-quantised_image_representation_for_high-quality_image_synthesis.md)
+- [\[ICLR 2026\] W-Edit: A Wavelet-based Frequency-aware Framework for Text-driven Image Editing](w-edit_a_wavelet-based_frequency-aware_framework_for_text-driven_image_editing.md)
+- [\[ICLR 2026\] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration](eliminating_vae_for_fast_and_high-resolution_generative_detail_restoration.md)
+- [\[CVPR 2026\] VINS-120K: Ultra High-Resolution Image Editing with A Large-Scale Dataset](../../CVPR2026/image_generation/vins-120k_ultra_high-resolution_image_editing_with_a_large-scale_dataset.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models](../../CVPR2025/image_generation/diffusion-4k_ultra-high-resolution_image_synthesis_with_latent_diffusion_models.md)

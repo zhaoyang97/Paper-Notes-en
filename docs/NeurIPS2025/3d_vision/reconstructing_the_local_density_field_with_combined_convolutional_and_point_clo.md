@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reconstructing the Local Density Field with Combined Convolutional and Point Cloud Architecture
 description: >-
-  [NeurIPS 2025 (ML4PS Workshop)][3D Vision][Dark matter density field reconstruction] This paper proposes a hybrid neural network architecture combining convolutional networks (U-Net) and point cloud networks (DeepSets) t…
+  [NeurIPS 2025 (ML4PS Workshop)][3D Vision][Dark matter density field reconstruction] This paper proposes a hybrid neural network architecture combining convolutional networks (U-Net) and point cloud networks (DeepSets) to reconstruct the local dark matter density field from line-of-sight peculiar velocities of dark matter halos, achieving significant improvements over purely convolutional and linear reconstruction methods at small scales.
 tags:
   - "NeurIPS 2025 (ML4PS Workshop)"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "point cloud"
   - "peculiar velocity"
 date: 2026-05-08
-content_hash: 4d984fc586649b9d
+content_hash: fc69e2495185e715
 ---
 
 # Reconstructing the Local Density Field with Combined Convolutional and Point Cloud Architecture

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SkyDiffusion: Leveraging BEV Paradigm for Ground-to-Aerial Image Synthesis
 description: >-
-  [ICCV 2025][Autonomous Driving][Cross-view image synthesis] This paper proposes SkyDiffusion, which combines a Curved-BEV transformation with a BEV-guided diffusion model to achieve high-quality cross-view synthesis from…
+  [ICCV 2025][Autonomous Driving][Cross-view image synthesis] This paper proposes SkyDiffusion, which combines a Curved-BEV transformation with a BEV-guided diffusion model to achieve high-quality cross-view synthesis from ground-level street view images to aerial/satellite imagery, and introduces the Ground2Aerial-3 multi-scene dataset.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Ground-to-aerial generation"
   - "Street view to satellite imagery"
 date: 2026-05-08
-content_hash: 080e7bdfd185f2e3
+content_hash: 314c7e3709139a69
 ---
 
 # SkyDiffusion: Leveraging BEV Paradigm for Ground-to-Aerial Image Synthesis
@@ -145,10 +145,10 @@ Incrementally adding each component yields consistent improvements in consistenc
 ## Related Papers
 
 - [\[NeurIPS 2025\] GSAlign: Geometric and Semantic Alignment Network for Aerial-Ground Person Re-Identification](../../NeurIPS2025/autonomous_driving/gsalign_geometric_and_semantic_alignment_network_for_aerial-ground_person_re-ide.md)
-- [\[ICCV 2025\] Extrapolated Urban View Synthesis Benchmark](extrapolated_urban_view_synthesis_benchmark.md)
-- [\[ICCV 2025\] IGL-Nav: Incremental 3D Gaussian Localization for Image-goal Navigation](igl-nav_incremental_3d_gaussian_localization_for_image-goal_navigation.md)
+- [\[ICML 2025\] Geometry-to-Image Synthesis-Driven Generative Point Cloud Registration](../../ICML2025/autonomous_driving/geometry-to-image_synthesis-driven_generative_point_cloud_registration.md)
 - [\[ICCV 2025\] Leveraging 2D Priors and SDF Guidance for Dynamic Urban Scene Rendering](leveraging_2d_priors_and_sdf_guidance_for_urban_scene_rendering.md)
 - [\[ICCV 2025\] SparseLaneSTP: Leveraging Spatio-Temporal Priors with Sparse Transformers for 3D Lane Detection](sparselanestp_leveraging_spatio-temporal_priors_with_sparse_transformers_for_3d_.md)
+- [\[ICCV 2025\] IGL-Nav: Incremental 3D Gaussian Localization for Image-goal Navigation](igl-nav_incremental_3d_gaussian_localization_for_image-goal_navigation.md)
 
 </div>
 

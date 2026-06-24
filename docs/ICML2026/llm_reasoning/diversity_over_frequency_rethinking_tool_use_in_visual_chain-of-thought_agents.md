@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents
 description: >-
-  [ICML 2026][LLM Reasoning][RFT] In "tool-optional" visual agent tasks such as 3D spatial reasoning, authors found that vanilla RFT causes tool calling rates to collapse to near zero, while explicitly encouraging tool use yields only marginal gains. The true driver of performance is the exploration diversity of rollouts. By employing adaptive entropy
+  [ICML 2026][Reasoning][Visual Chain-of-Thought] In "tool-optional" visual agent tasks such as 3D spatial reasoning, authors found that vanilla RFT causes tool calling rates to collapse to near zero, while explicitly encouraging tool use yields only marginal gains. The true driver of performance is the exploration diversity of rollouts. By employing adaptive entropy regularization, 3DSRBench accuracy is improved from 59.2% to 62.9%, repositioning tools as "training-time scaffo…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - RFT
+  - "ICML 2026"
+  - "Reasoning"
+  - "Visual Chain-of-Thought"
+  - "Tool Use Collapse"
+  - "Entropy Regularization"
+  - "RFT"
+  - "Exploration Diversity"
 date: 2026-05-08
-content_hash: a7f0727ca6ddcdfd
+content_hash: 146c92d7d5655ba5
 ---
+
 # Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents
 
 **Conference**: ICML 2026  
@@ -122,9 +127,9 @@ On VQA-RAD (Medical VQA): Vanilla 46.34 → Tool-Encourage 47.23 → Entropy 48.
 
 - [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
 - [\[ICLR 2026\] Generalizable End-to-End Tool-Use RL with Synthetic CodeGym](../../ICLR2026/llm_reasoning/generalizable_end-to-end_tool-use_rl_with_synthetic_codegym.md)
+- [\[ICLR 2026\] TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture](../../ICLR2026/llm_reasoning/tumix_multi-agent_test-time_scaling_with_tool-use_mixture.md)
 - [\[ACL 2026\] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents](../../ACL2026/llm_reasoning/jtpro_a_joint_tool-prompt_reflective_optimization_framework_for_language_agents.md)
-- [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
-- [\[ACL 2026\] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning](../../ACL2026/llm_reasoning/render-of-thought_rendering_textual_chain-of-thought_as_images_for_visual_latent.md)
+- [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](../../NeurIPS2025/llm_reasoning/latent_chain-of-thought_for_visual_reasoning.md)
 
 </div>
 

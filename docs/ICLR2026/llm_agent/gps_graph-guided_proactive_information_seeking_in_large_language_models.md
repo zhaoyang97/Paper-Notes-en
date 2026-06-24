@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] GPS: Graph-guided Proactive Information Seeking in Large Language Models
 description: >-
-  [ICLR 2026][LLM Agent][RAG] GPS explicitly models the implicit "if-then rules" in retrieved documents as a logically complete Directed Acyclic Graph (DAG), utilizes dynamic traversal and pruning for on-demand questioning, and optimizes a Reasoner LLM via Group Relative Policy Optimization (GRPO) with hybrid rewards to generate high-quality DAGs,
+  [ICLR 2026][LLM Agent][Proactive Information Seeking] GPS explicitly models the implicit "if-then rules" in retrieved documents as a logically complete Directed Acyclic Graph (DAG), utilizes dynamic traversal and pruning for on-demand questioning, and optimizes a Reasoner LLM via Group Relative Policy Optimization (GRPO) with hybrid rewards to generate high-quality DAGs, enabling LLMs to ask accurate questions efficiently when faced with underspecified user queries.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - RAG
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Proactive Information Seeking"
+  - "Clarification Questions"
+  - "Conditional Reasoning DAG"
+  - "RAG"
+  - "Reinforcement Learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 1f40b38e933a71af
+content_hash: 129497a74a64ec67
 ---
+
 # GPS: Graph-guided Proactive Information Seeking in Large Language Models
 
 **Conference**: ICLR 2026  

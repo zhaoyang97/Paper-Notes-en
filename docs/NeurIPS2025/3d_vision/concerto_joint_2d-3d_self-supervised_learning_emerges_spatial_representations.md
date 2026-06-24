@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations
 description: >-
-  [NeurIPS 2025][3D Vision][Self-supervised learning] Concerto combines intra-modal 3D point cloud self-distillation with cross-modal 2D-3D joint embedding prediction. Through a minimalist design…
+  [NeurIPS 2025][3D Vision][Self-supervised learning] Concerto combines intra-modal 3D point cloud self-distillation with cross-modal 2D-3D joint embedding prediction. Through a minimalist design, a single point cloud encoder (PTv3) emerges spatial representations that surpass both 2D/3D unimodal methods and their naive concatenation, achieving state-of-the-art performance on multiple 3D scene understanding benchmarks (ScanNet semantic segmentation: 80.7% mIoU).
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "joint embedding prediction"
   - "scene understanding"
 date: 2026-05-08
-content_hash: c3ca634dc27af266
+content_hash: ab0a1b39d47ee419
 ---
 
 # Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations
@@ -192,11 +192,11 @@ The Large model further improves upon incorporating video-reconstructed point cl
 
 ## Related Papers
 
+- [\[CVPR 2025\] Sonata: Self-Supervised Learning of Reliable Point Representations](../../CVPR2025/3d_vision/sonata_self-supervised_learning_of_reliable_point_representations.md)
 - [\[NeurIPS 2025\] Jasmine: Harnessing Diffusion Prior for Self-Supervised Depth Estimation](jasmine_harnessing_diffusion_prior_for_self-supervised_depth_estimation.md)
 - [\[ICCV 2025\] StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning](../../ICCV2025/3d_vision/strumamba3d_exploring_structural_mamba_for_self-supervised_point_cloud_represent.md)
-- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](../../CVPR2026/3d_vision/e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[ICCV 2025\] SHeaP: Self-Supervised Head Geometry Predictor Learned via 2D Gaussians](../../ICCV2025/3d_vision/sheap_self-supervised_head_geometry_predictor_learned_via_2d_gaussians.md)
-- [\[CVPR 2026\] UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](../../CVPR2026/3d_vision/unisplat_3d_representations_unposed.md)
+- [\[CVPR 2026\] Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](../../CVPR2026/3d_vision/learning_3d_representations_for_spatial_intelligence_from_unposed_multi-view_ima.md)
+- [\[NeurIPS 2025\] Novel Class Discovery for Point Cloud Segmentation via Joint Learning of Causal Representation and Reasoning](novel_class_discovery_for_point_cloud_segmentation_via_joint_learning_of_causal_.md)
 
 </div>
 

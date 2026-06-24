@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Disentangling Latent Shifts of In-Context Learning with Weak Supervision
 description: >-
-  [NeurIPS 2025][Model Compression][In-Context Learning] WILDA treats ICL as a weak supervision signal and encodes demonstration-induced latent shifts into lightweight LoRA adapters via a teacher-student framework…
+  [NeurIPS 2025][Model Compression][In-Context Learning] WILDA treats ICL as a weak supervision signal and encodes demonstration-induced latent shifts into lightweight LoRA adapters via a teacher-student framework, enabling efficient inference without repeated prompting. The student surpasses the teacher through pseudo-label correction and coverage extension, demonstrating weak-to-strong generalization.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Latent Shift Disentanglement"
   - "LoRA"
 date: 2026-05-08
-content_hash: 16bbaab823e309fb
+content_hash: 7d20a4b0e946255c
 ---
 
 # Disentangling Latent Shifts of In-Context Learning with Weak Supervision
@@ -139,11 +139,11 @@ Performance of wilda-s continues to improve as the number of subsets increases, 
 
 ## Related Papers
 
-- [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](../../ACL2026/model_compression/latent-condensed_transformer_for_efficient_long_context_modeling.md)
+- [\[CVPR 2025\] Masking Meets Supervision: A Strong Learning Alliance](../../CVPR2025/model_compression/masking_meets_supervision_a_strong_learning_alliance.md)
 - [\[NeurIPS 2025\] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing](synergy_between_the_strong_and_the_weak_spiking_neural_networks_are_inherently_s.md)
 - [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
 - [\[NeurIPS 2025\] Order-Level Attention Similarity Across Language Models: A Latent Commonality](order-level_attention_similarity_across_language_models_a_latent_commonality.md)
-- [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
+- [\[ICML 2025\] Context Tuning for In-Context Optimization](../../ICML2025/model_compression/context_tuning_for_in-context_optimization.md)
 
 </div>
 

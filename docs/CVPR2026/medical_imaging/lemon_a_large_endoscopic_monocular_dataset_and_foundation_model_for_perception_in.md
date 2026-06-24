@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings
 description: >-
-  [CVPR 2026][Medical Imaging][Self-Supervised Learning] Ours constructs LEMON, a large-scale endoscopic dataset containing 4194 surgical videos (938 hours), and proposes LemonFM, a self-supervised foundation model based on enhanced knowledge distillation. LemonFM outperforms existing surgical foundation models across four downstream tasks: surgical phase recognition, tool d
+  [CVPR 2026][Medical Imaging][Surgical Foundation Model] Ours constructs LEMON, a large-scale endoscopic dataset containing 4194 surgical videos (938 hours), and proposes LemonFM, a self-supervised foundation model based on enhanced knowledge distillation. LemonFM outperforms existing surgical foundation models across four downstream tasks: surgical phase recognition, tool detection, action recognition, and semantic segmentation.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Self-Supervised Learning
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Surgical Foundation Model"
+  - "Endoscopic Dataset"
+  - "Self-Supervised Learning"
+  - "Knowledge Distillation"
+  - "Surgical Scene Understanding"
 date: 2026-05-08
-content_hash: 4fb44eca9fbac3e0
+content_hash: 27b88619036eb8c3
 ---
+
 # LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings
 
 **Conference**: CVPR 2026  
@@ -154,10 +158,10 @@ The training loss is the cross-entropy between teacher and student networks: $\m
 ## Related Papers
 
 - [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
+- [\[ICLR 2026\] MindMix: A Multimodal Foundation Model for Auditory Perception Decoding via Deep Neural-Acoustic Alignment](../../ICLR2026/medical_imaging/mindmix_a_multimodal_foundation_model_for_auditory_perception_decoding_via_deep_.md)
 - [\[CVPR 2026\] OralGPT-Omni: A Versatile Dental Multimodal Large Language Model](oralgpt-omni_a_versatile_dental_multimodal_large_language_model.md)
-- [\[CVPR 2026\] MedMO: Grounding and Understanding Multimodal Large Language Model for Medical Images](medmo_grounding_and_understanding_multimodal_large_language_model_for_medical_im.md)
 - [\[CVPR 2026\] Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset](instruction-guided_lesion_segmentation_for_chest_x-rays_with_automatically_gener.md)
-- [\[CVPR 2025\] Surg-R1: A Hierarchical Reasoning Foundation Model for Scalable and Interpretable Surgical Decision Support](../../CVPR2025/medical_imaging/surg-r1_a_hierarchical_reasoning_foundation_model_for_scalable_and_interpretable.md)
+- [\[CVPR 2026\] Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis](focus-to-perceive_representation_learning_a_cognition-inspired_hierarchical_fram.md)
 
 </div>
 

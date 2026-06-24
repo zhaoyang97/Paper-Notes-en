@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Quantitative Bounds for Length Generalization in Transformers
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the **first quantitative upper bound on the minimum training sequence length** required for "length generalization" (LG)—where a Transformer trained on short sequences maintains performance on arbitrarily long ones. The core argument is a simulation: as long as the internal behavior of a Transformer
+  [ICLR 2026][Learning Theory][Limit Transformers] This paper provides the **first quantitative upper bound on the minimum training sequence length** required for "length generalization" (LG)—where a Transformer trained on short sequences maintains performance on arbitrarily long ones. The core argument is a simulation: as long as the internal behavior of a Transformer on a long sequence can be "simulated" by a short sequence of bounded length…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Theory"
+  - "Length Generalization"
+  - "Limit Transformers"
+  - "Simulation Argument"
+  - "Finite-Precision Attention"
+  - "Training Length Lower Bound"
 date: 2026-05-08
-content_hash: ac3c6a24623e78e3
+content_hash: d9750af10cc672bf
 ---
+
 # Quantitative Bounds for Length Generalization in Transformers
 
 **Conference**: ICLR 2026  
@@ -131,11 +138,11 @@ Training a two-layer Transformer on an in-context $k$-gram task: the test loss s
 
 ## Related Papers
 
+- [\[ICLR 2026\] To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models](to_infinity_and_beyond_tool-use_unlocks_length_generalization_in_state_space_mod.md)
 - [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
 - [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)
-- [\[ICLR 2026\] Efficient Turing Machine Simulation with Transformers](efficient_turing_machine_simulation_with_transformers.md)
-- [\[ICLR 2026\] Probability Distributions Computed by Autoregressive Transformers](probability_distributions_computed_by_autoregressive_transformers.md)
-- [\[ICLR 2026\] Understanding and Relaxing the Limitations of Transformers for Linear Algebra](understanding_and_relaxing_the_limitations_of_transformers_for_linear_algebra.md)
+- [\[ICLR 2026\] Intrinsic Entropy of Context Length Scaling in LLMs](intrinsic_entropy_of_context_length_scaling_in_llms.md)
+- [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
 
 </div>
 

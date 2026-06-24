@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Modelling the Effects of Hearing Loss on Neural Coding in the Auditory Midbrain with Variational Conditioning
 description: >-
-  [AAAI 2026][Interpretability][Auditory midbrain modelling] This paper proposes ψ-ICNet, a variationally conditioned deep neural network that encodes the effects of hearing loss via only 6 learnable conditioning parameter…
+  [AAAI 2026][Interpretability][Auditory midbrain modelling] This paper proposes ψ-ICNet, a variationally conditioned deep neural network that encodes the effects of hearing loss via only 6 learnable conditioning parameters ψ. The model directly learns a low-dimensional representation space of hearing loss from real neural recordings, achieving accuracy comparable to animal-specific models in predicting auditory midbrain responses in both normal-hearing and hearing-impaired ani…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "neural coding"
   - "Bayesian optimization"
 date: 2026-05-08
-content_hash: a081486393697b6c
+content_hash: 74c6b40f5d39eb11
 ---
 
 # Modelling the Effects of Hearing Loss on Neural Coding in the Auditory Midbrain with Variational Conditioning
@@ -162,11 +162,11 @@ Bayesian optimization is used to search for ψ parameters to fit new animals; re
 
 ## Related Papers
 
-- [\[ACL 2026\] How Language Models Conflate Logical Validity with Plausibility: A Representational Analysis of Content Effects](../../ACL2026/interpretability/how_language_models_conflate_logical_validity_with_plausibility_a_representation.md)
+- [\[ACL 2025\] The Anatomy of Evidence: An Investigation Into Explainable ICD Coding](../../ACL2025/interpretability/the_anatomy_of_evidence_an_investigation_into_explainable_icd_coding.md)
+- [\[ICML 2026\] Query Lens: Interpreting Sparse Key-Value Features with Indirect Effects](../../ICML2026/interpretability/query_lens_interpreting_sparse_key-value_features_with_indirect_effects.md)
 - [\[AAAI 2026\] ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games](elementarynet_a_non-strategic_neural_network_for_predicting_human_behavior_in_no.md)
+- [\[ACL 2026\] How Language Models Conflate Logical Validity with Plausibility: A Representational Analysis of Content Effects](../../ACL2026/interpretability/how_language_models_conflate_logical_validity_with_plausibility_a_representation.md)
 - [\[NeurIPS 2025\] What Happens During the Loss Plateau? Understanding Abrupt Learning in Transformers](../../NeurIPS2025/interpretability/what_happens_during_the_loss_plateau_understanding_abrupt_learning_in_transforme.md)
-- [\[ICLR 2026\] Provably Explaining Neural Additive Models](../../ICLR2026/interpretability/provably_explaining_neural_additive_models.md)
-- [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](../../ICLR2026/interpretability/modal_logical_neural_networks_for_financial_ai.md)
 
 </div>
 

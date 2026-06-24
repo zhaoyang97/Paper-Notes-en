@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper researches the formal verification problem of "whether a decision tree ensemble is sensitive to certain (e.g., protected) features," proving the problem is NP-hard even for tree ensembles of depth $1$, and proposes a set of MILP/SMT encoding ENSENSE with new optimizations, which not only improves verificatio
+  [ICLR 2026][Formal Verification][Decision Tree Ensembles] This paper researches the formal verification problem of "whether a decision tree ensemble is sensitive to certain (e.g., protected) features," proving the problem is NP-hard even for tree ensembles of depth $1$, and proposes a set of MILP/SMT encoding ENSENSE with new optimizations, which not only improves verification speed by approximately $5\times$ (binary classification) / $15\times$ (multi-class) over the previou…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Formal Verification"
+  - "Learning Theory"
+  - "Trustworthy Machine Learning"
+  - "Decision Tree Ensembles"
+  - "Sensitivity Verification"
+  - "MILP Encoding"
+  - "SMT Solving"
+  - "Data-Awareness"
 date: 2026-05-08
-content_hash: a19f615640fd76ce
+content_hash: 96168cc0477c3d2d
 ---
+
 # Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles
 
 **Conference**: ICLR 2026  
@@ -121,10 +129,18 @@ Metric is $\ell_2$ distance from counterexample region to data (on non-sensitive
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](high-dimensional_analysis_of_synthetic_data_selection.md)
+- [\[ICLR 2026\] On Coreset for LASSO Regression Problem with Sensitivity Sampling](on_coreset_for_lasso_regression_problem_with_sensitivity_sampling.md)
+- [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
+- [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
+- [\[ICLR 2026\] Tree-sliced Sobolev IPM](tree-sliced_sobolev_ipm.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](high-dimensional_analysis_of_synthetic_data_selection.md)

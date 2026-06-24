@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] MotionGPT3: Human Motion as a Second Modality
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] By treating human motion as a "second modality," this work replaces discrete VQ tokens with a continuous VAE latent space and utilizes a symmetric motion branch with shared attention instead of a single-stream backbone. Combined with a lightweight diffusion head attached to the autoregressive backbone, a unified model
+  [ICLR 2026][Human Understanding][Human motion generation] By treating human motion as a "second modality," this work replaces discrete VQ tokens with a continuous VAE latent space and utilizes a symmetric motion branch with shared attention instead of a single-stream backbone. Combined with a lightweight diffusion head attached to the autoregressive backbone, a unified model performs both text-to-motion generation and motion-to-text understanding…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Human motion generation"
+  - "Motion-text understanding"
+  - "Continuous VAE latent space"
+  - "Bimodal Transformer"
+  - "Latent space diffusion"
+  - "Multimodal LLM"
 date: 2026-05-08
-content_hash: 3681aea6d75d01e2
+content_hash: 6ffde360aec266d1
 ---
+
 # MotionGPT3: Human Motion as a Second Modality
 
 **Conference**: ICLR 2026  
@@ -145,8 +152,8 @@ Training Stage Ablation (HumanML3D):
 - [\[ICLR 2026\] HUMOF: Human Motion Forecasting in Interactive Social Scenes](humof_human_motion_forecasting_in_interactive_social_scenes.md)
 - [\[ICLR 2026\] KinemaDiff: Towards Diffusion for Coherent and Physically Plausible Human Motion Prediction](kinemadiff_towards_diffusion_for_coherent_and_physically_plausible_human_motion_.md)
 - [\[ICLR 2026\] PulpMotion: Framing-Aware Multimodal Camera and Human Motion Generation](pulp_motion_framing-aware_multimodal_camera_and_human_motion_generation.md)
+- [\[ICLR 2026\] Sparkle: A Robust and Versatile Representation for Point Cloud-based Human Motion Capture](sparkle_a_robust_and_versatile_representation_for_point_cloud-based_human_motion.md)
 - [\[ICLR 2026\] Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy](human-object_interaction_via_automatically_designed_vlm-guided_motion_policy.md)
-- [\[ECCV 2024\] Towards Unified Representation of Invariant-Specific Features in Missing Modality Face Anti-Spoofing](../../ECCV2024/human_understanding/towards_unified_representation_of_invariant-specific_features_in_missing_modalit.md)
 
 </div>
 

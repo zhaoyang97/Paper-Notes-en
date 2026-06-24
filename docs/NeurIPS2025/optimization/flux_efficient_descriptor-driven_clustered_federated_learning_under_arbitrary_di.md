@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts
 description: >-
-  [NEURIPS2025][Optimization][Clustered Federated Learning] Flux extracts compact distribution descriptors on the client side (marginal $P(X)$ mean/covariance + class-conditional $P(Y|X)$ mean/covariance)…
+  [NEURIPS2025][Optimization][Clustered Federated Learning] Flux extracts compact distribution descriptors on the client side (marginal $P(X)$ mean/covariance + class-conditional $P(Y|X)$ mean/covariance), performs unsupervised clustering on the server via adaptive DBSCAN to automatically determine the number of clusters and group assignments, trains cluster-specific models, and at test time matches unlabeled new clients to the optimal model using only feature descriptors — the…
 tags:
   - "NEURIPS2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "DBSCAN"
   - "Wasserstein Distance"
 date: 2026-05-08
-content_hash: 9d3d9dea69fbbd1c
+content_hash: ce134e36fb39d286
 ---
 
 # FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts
@@ -158,11 +158,11 @@ Test-phase performance — model assignment for new unlabeled clients:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Federated Learning with Profile Mapping under Distribution Shifts and Drifts](../../ICLR2026/optimization/federated_learning_with_profile_mapping_under_distribution_shifts_and_drifts.md)
 - [\[NeurIPS 2025\] Exact and Linear Convergence for Federated Learning under Arbitrary Client Participation is Attainable](exact_and_linear_convergence_for_federated_learning_under_arbitrary_client_parti.md)
-- [\[CVPR 2026\] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift](../../CVPR2026/optimization/fed-ade_adaptive_learning_rate_for_federated_post-adaptation_under_distribution_.md)
 - [\[NeurIPS 2025\] DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization](dartquant_efficient_rotational_distribution_calibration_for_llm_quantization.md)
+- [\[CVPR 2026\] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift](../../CVPR2026/optimization/fed-ade_adaptive_learning_rate_for_federated_post-adaptation_under_distribution_.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
-- [\[NeurIPS 2025\] MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System](mar-fl_a_communication_efficient_peer-to-peer_federated_learning_system.md)
 
 </div>
 

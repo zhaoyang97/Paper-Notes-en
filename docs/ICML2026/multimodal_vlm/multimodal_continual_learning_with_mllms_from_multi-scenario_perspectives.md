@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal Continual Learning with MLLMs from Multi-scenario Perspectives
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] To address visual forgetting in MLLMs across scenarios, this paper constructs the MSVQA benchmark (covering high-altitude, underwater, low-altitude, and indoor scenarios) and proposes the Unifier framework. By integrating a CSR multi-branch structure with a shared projector (VRE) in vision blocks for parameter isolatio
+  [ICML 2026][Multimodal VLM][Multimodal Continual Learning] To address visual forgetting in MLLMs across scenarios, this paper constructs the MSVQA benchmark (covering high-altitude, underwater, low-altitude, and indoor scenarios) and proposes the Unifier framework. By integrating a CSR multi-branch structure with a shared projector (VRE) in vision blocks for parameter isolation, and applying dual-channel KL soft constraints (VCC) to align representations…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Multimodal Continual Learning"
+  - "Catastrophic Forgetting"
+  - "Multi-branch LoRA"
+  - "Visual Consistency"
+  - "Multi-scenario VQA"
 date: 2026-05-08
-content_hash: be72ce25c6441565
+content_hash: 7fc82429fd0bb397
 ---
+
 # Multimodal Continual Learning with MLLMs from Multi-scenario Perspectives
 
 **Conference**: ICML 2026  
@@ -145,7 +151,7 @@ In the 20-step setting: Compared to QUAD, last-step VQA increases by +2.70 ~ +10
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -153,7 +159,7 @@ In the 20-step setting: Compared to QUAD, last-step VQA increases by +2.70 ~ +10
 - [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](../../NeurIPS2025/multimodal_vlm/continual_multimodal_contrastive_learning.md)
 - [\[CVPR 2026\] Re-evaluating Continual VQA: Toward Fair and Robust Evaluation for Multimodal Continual Learning](../../CVPR2026/multimodal_vlm/re-evaluating_continual_vqa_toward_fair_and_robust_evaluation_for_multimodal_con.md)
 - [\[ICML 2026\] Injecting Distributional Awareness into MLLMs via Reinforcement Learning for Deep Imbalanced Regression](injecting_distributional_awareness_into_mllms_via_reinforcement_learning_for_dee.md)
-- [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](../../CVPR2026/multimodal_vlm/harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
+- [\[ICML 2026\] ACTIVE-o3: Empowering MLLMs with Active Perception via Pure Reinforcement Learning](active-o3_empowering_mllms_with_active_perception_via_pure_reinforcement_learnin.md)
 
 </div>
 

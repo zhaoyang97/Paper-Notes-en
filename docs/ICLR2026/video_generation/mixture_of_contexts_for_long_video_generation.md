@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Mixture of Contexts for Long Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Diffusion Transformer] The authors reframe long video generation as an "internal information retrieval" problem and propose Mixture of Contexts (MoC) — a parameter-free yet trainable sparse attention routing module. It allows each query to dynamically select a few relevant chunks plus mandatory anchors (text + local window) while using causa
+  [ICLR 2026][Video Generation][Long Video Generation] The authors reframe long video generation as an "internal information retrieval" problem and propose Mixture of Contexts (MoC) — a parameter-free yet trainable sparse attention routing module. It allows each query to dynamically select a few relevant chunks plus mandatory anchors (text + local window) while using causal masking to avoid feedback loops. This maintains or even improves identity/motion/scene consistency in min…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Diffusion Transformer
-  - MoC
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Long Video Generation"
+  - "Diffusion Transformer"
+  - "Sparse Attention"
+  - "Learnable Routing"
+  - "Long-range Memory"
+  - "MoC"
 date: 2026-05-08
-content_hash: ce8f39b27ded6175
+content_hash: 5007c315954be143
 ---
+
 # Mixture of Contexts for Long Video Generation
 
 **Conference**: ICLR 2026  
@@ -114,7 +119,7 @@ At 85% sparsity, FLOPs are reduced by >7× with a 2.2× end-to-end speedup, whil
 - [\[ICLR 2026\] VMoBA: Mixture-of-Block Attention for Video Diffusion Models](vmoba_mixture-of-block_attention_for_video_diffusion_models.md)
 - [\[ICLR 2026\] NarrLV: Towards a Comprehensive Narrative-Centric Evaluation for Long Video Generation](narrlv_towards_a_comprehensive_narrative-centric_evaluation_for_long_video_gener.md)
 - [\[ICLR 2026\] LongLive: Real-time Interactive Long Video Generation](longlive_real-time_interactive_long_video_generation.md)
-- [\[CVPR 2026\] Free-Lunch Long Video Generation via Layer-Adaptive O.O.D Correction](../../CVPR2026/video_generation/free-lunch_long_video_generation_via_layer-adaptive_ood_correction.md)
+- [\[ICLR 2026\] SteinsGate: Injecting Causality into Diffusion Models with Path Integral for Long Video Generation](steinsgate_adding_causality_to_diffusions_for_long_video_generation_via_path_int.md)
 
 </div>
 

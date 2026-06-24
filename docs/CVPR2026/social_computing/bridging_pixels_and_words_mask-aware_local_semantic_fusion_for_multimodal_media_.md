@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification
 description: >-
-  [CVPR 2026][Social Computing][Paper Note] The MaLSF framework is proposed, utilizing mask-label pairs as semantic anchors to achieve active local semantic conflict detection through Bidirectional Cross-modal Verification (BCV) and Hierarchical Semantic Aggregation (HSA) modules, achieving SOTA on DGM4 and fake news detection tasks.
+  [CVPR 2026][Social Computing][Multimodal misinformation] The MaLSF framework is proposed, utilizing mask-label pairs as semantic anchors to achieve active local semantic conflict detection through Bidirectional Cross-modal Verification (BCV) and Hierarchical Semantic Aggregation (HSA) modules, achieving SOTA on DGM4 and fake news detection tasks.
 tags:
-  - CVPR 2026
-  - Social Computing
+  - "CVPR 2026"
+  - "Social Computing"
+  - "Multimodal misinformation"
+  - "bidirectional cross-modal verification"
+  - "mask-label pairs"
+  - "hierarchical semantic aggregation"
+  - "deepfake detection"
 date: 2026-05-08
-content_hash: 273274ee6c6e86e7
+content_hash: 5b7ba1116a28a3fe
 ---
+
 # Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification
 
 **Conference**: CVPR 2026  
@@ -132,15 +138,15 @@ $$\mathcal{L} = \mathcal{L}_{bcls} + \alpha \mathcal{L}_{mcls} + \beta \mathcal{
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection](../../ICML2026/social_computing/ido_incongruity-aware_distribution_optimization_for_multimodal_fake_news_detecti.md)
-- [\[CVPR 2026\] Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection](probabilistic_concept_graph_reasoning_for_multimodal_misinformation_detection.md)
-- [\[ACL 2026\] Content Fuzzing for Escaping Information Cocoons on Social Media](../../ACL2026/social_computing/content_fuzzing_for_escaping_information_cocoons_on_digital_social_media.md)
+- [\[CVPR 2026\] Instance-level Visual Active Tracking with Occlusion-Aware Planning](instance-level_visual_active_tracking_with_occlusion-aware_planning.md)
 - [\[ACL 2026\] ClaimDB: A Fact Verification Benchmark over Large Structured Data](../../ACL2026/social_computing/claimdb_a_fact_verification_benchmark_over_large_structured_data.md)
-- [\[ACL 2026\] Synthia: Scalable Grounded Persona Generation from Social Media Data](../../ACL2026/social_computing/synthia_scalable_grounded_persona_generation_from_social_media_data.md)
+- [\[ACL 2026\] Content Fuzzing for Escaping Information Cocoons on Social Media](../../ACL2026/social_computing/content_fuzzing_for_escaping_information_cocoons_on_digital_social_media.md)
+- [\[ACL 2026\] The Proxy Presumption: From Semantic Embeddings to Valid Social Measures](../../ACL2026/social_computing/the_proxy_presumption_from_semantic_embeddings_to_valid_social_measures.md)
 
 </div>
 

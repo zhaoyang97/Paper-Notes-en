@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Should an AI Scientist Stop? Verifiable Experiment Steering and Refusal for Autonomous Discovery
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper introduces **Cartograph**, a verification layer integrated into the autonomous "AI Scientist" loop. It utilizes a unified "unresolved subspace" object to simultaneously address three tasks: selecting the most disambiguating experiment (select), determining when a problem is solved (resolve), and—crucially—**
+  [ICML 2026][AI Safety][Autonomous Scientific Discovery] This paper introduces **Cartograph**, a verification layer integrated into the autonomous "AI Scientist" loop. It utilizes a unified "unresolved subspace" object to simultaneously address three tasks: selecting the most disambiguating experiment (select), determining when a problem is solved (resolve), and—crucially—**refusing** to provide conclusions when the model library itself is structurally incorrect (refuse)…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Autonomous Scientific Discovery"
+  - "Bayesian Optimal Experimental Design (BOED)"
+  - "Model Discrimination"
+  - "Refusal"
+  - "Governance"
 date: 2026-05-08
-content_hash: f1310604796d876a
+content_hash: ebfb239dc9859f9f
 ---
+
 # When Should an AI Scientist Stop? Verifiable Experiment Steering and Refusal for Autonomous Discovery
 
 **Conference**: ICML 2026  
@@ -139,11 +145,11 @@ At $d=8$, A-optimal selection reached the oracle hidden optimal experiment in 65
 
 ## Related Papers
 
+- [\[ICML 2026\] Position: Stop Chasing the C-index when Evaluating Survival Analysis Models](position_stop_chasing_the_c-index_when_evaluating_survival_analysis_models.md)
+- [\[ICML 2026\] Regret-Based Federated Causal Discovery with Unknown Interventions](regret-based_federated_causal_discovery_with_unknown_interventions.md)
+- [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
+- [\[ICML 2026\] Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives](position_machine_learning_for_heart_transplant_allocation_policy_optimization_sh.md)
 - [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
-- [\[ICML 2026\] Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks](ai_researchers_must_help_lead_arms_control_to_mitigate_military_ai_risks.md)
-- [\[ICML 2026\] When Benign Inputs Lead to Severe Harms: Eliciting Unsafe Unintended Behaviors of Computer-Use Agents](when_benign_inputs_lead_to_severe_harms_eliciting_unsafe_unintended_behaviors_of.md)
-- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
-- [\[ICML 2026\] Position: 'AI Alignment' Encompasses Competing Technical Priorities](ai_alignment_encompasses_competing_technical_priorities.md)
 
 </div>
 

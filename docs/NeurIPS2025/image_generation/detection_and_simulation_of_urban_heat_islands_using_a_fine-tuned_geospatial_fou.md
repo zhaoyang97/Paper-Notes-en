@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Detection and Simulation of Urban Heat Islands Using a Fine-Tuned Geospatial Foundation Model
 description: >-
-  [NeurIPS 2025][Image Generation][Urban Heat Island] This paper proposes a unified three-stage workflow based on a fine-tuned geospatial foundation model (Granite-GFM): first establishing an empirical baseline via green s…
+  [NeurIPS 2025][Image Generation][Urban Heat Island] This paper proposes a unified three-stage workflow based on a fine-tuned geospatial foundation model (Granite-GFM): first establishing an empirical baseline via green space cooling effects to verify physical plausibility; then extrapolating urban temperatures under future climate scenarios; and finally simulating the cooling impact of greening interventions via inpainting. This elevates the foundation model from an evaluatio…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Climate Extrapolation"
   - "Inpainting Simulation"
 date: 2026-05-08
-content_hash: 2fd5777c8346880b
+content_hash: 1e2693bc945d0fdc
 ---
 
 # Detection and Simulation of Urban Heat Islands Using a Fine-Tuned Geospatial Foundation Model
@@ -136,11 +136,11 @@ V2 reduces MAE for spillover cooling by 34%—this more complex spatial interact
 
 ## Related Papers
 
-- [\[CVPR 2026\] CoD: A Diffusion Foundation Model for Image Compression](../../CVPR2026/image_generation/cod_a_diffusion_foundation_model_for_image_compression.md)
-- [\[ICCV 2025\] ShortFT: Diffusion Model Alignment via Shortcut-based Fine-Tuning](../../ICCV2025/image_generation/shortft_diffusion_model_alignment_via_shortcut-based_fine-tuning.md)
+- [\[CVPR 2025\] Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models](../../CVPR2025/image_generation/fine-grained_erasure_in_text-to-image_diffusion-based_foundation_models.md)
+- [\[ECCV 2024\] Beta-Tuned Timestep Diffusion Model](../../ECCV2024/image_generation/beta-tuned_timestep_diffusion_model.md)
+- [\[CVPR 2025\] FADE: Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models](../../CVPR2025/image_generation/fade_fine_grained_erasure_diffusion.md)
 - [\[NeurIPS 2025\] Epistemic Uncertainty for Generated Image Detection](epistemic_uncertainty_for_generated_image_detection.md)
-- [\[NeurIPS 2025\] DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models](deft_decompositional_efficient_finetuning_for_texttoimage_mo.md)
-- [\[NeurIPS 2025\] Is Artificial Intelligence Generated Image Detection a Solved Problem?](is_artificial_intelligence_generated_image_detection_a_solved_problem.md)
+- [\[ICML 2025\] GRAM: A Generative Foundation Reward Model for Reward Generalization](../../ICML2025/image_generation/gram_a_generative_foundation_reward_model_for_reward_generalization.md)
 
 </div>
 

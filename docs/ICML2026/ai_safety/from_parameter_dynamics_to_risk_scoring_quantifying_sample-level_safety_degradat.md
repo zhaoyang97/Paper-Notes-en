@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Parameter Dynamics to Risk Scoring: Quantifying Sample-Level Safety Degradation in LLM Fine-tuning
 description: >-
-  [ICML 2026][AI Safety][Paper Note] The authors track the cumulative drift of parameters along "danger/safety directions" during LoRA fine-tuning. They discover that the underlying mechanism for alignment collapse caused by benign data is the monotonic parameter drift toward dangerous directions. Consequently, they propose SQSD, which assigns continuous
+  [ICML 2026][AI Safety][Safety Alignment] The authors track the cumulative drift of parameters along "danger/safety directions" during LoRA fine-tuning. They discover that the underlying mechanism for alignment collapse caused by benign data is the monotonic parameter drift toward dangerous directions. Consequently, they propose SQSD, which assigns continuous risk scores to individual samples based on the projection difference of a single-step gradient along these two directio…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Safety Alignment"
+  - "Fine-tuning Risk"
+  - "Parameter Dynamics"
+  - "Task Vectors"
+  - "Sample Scoring"
 date: 2026-05-08
-content_hash: 07ec04bd2705fb6b
+content_hash: 7a792830a1914ca7
 ---
+
 # From Parameter Dynamics to Risk Scoring: Quantifying Sample-Level Safety Degradation in LLM Fine-tuning
 
 **Conference**: ICML 2026  
@@ -148,11 +154,11 @@ SQSD maintains **strict monotonicity in 10/12 configurations** (compared to at m
 
 ## Related Papers
 
+- [\[ICML 2026\] The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection](the_injection_paradox_brand-level_suppression_in_safety-trained_llm_recommendati.md)
+- [\[CVPR 2025\] Gradient Inversion Attacks on Parameter-Efficient Fine-Tuning](../../CVPR2025/ai_safety/gradient_inversion_attacks_on_parameter-efficient_fine-tuning.md)
 - [\[ICML 2026\] PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials](pft_phonon_fine-tuning_for_machine_learned_interatomic_potentials.md)
 - [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
-- [\[ICML 2026\] The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection](the_injection_paradox_brand-level_suppression_in_safety-trained_llm_recommendati.md)
-- [\[ICML 2026\] TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning](tcap_tri-component_attention_profiling_for_unsupervised_backdoor_detection_in_ml.md)
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
+- [\[CVPR 2026\] Immunizing Models Against Harmful Long-Horizon Fine-Tuning via Contractive Optimization Dynamics](../../CVPR2026/ai_safety/immunizing_models_against_harmful_long-horizon_fine-tuning_via_contractive_optim.md)
 
 </div>
 

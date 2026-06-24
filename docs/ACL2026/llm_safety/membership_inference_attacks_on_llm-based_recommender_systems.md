@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Membership Inference Attacks on In-Context Learning Recommendation
 description: >-
-  [ACL 2026][LLM Safety][ICL-RecSys] This paper presents the first systematic study of Membership Inference Attacks (MIA) on LLM-based ICL recommendation systems. It designs four attacks: Similarity, Memorization, Inquiry, and Poisoning. The study finds that the Memorization attack, based on LLM's inherent **memory**, achieves an attack advantage $\geq 82
+  [ACL 2026][LLM Safety][Membership Inference Attack] This paper presents the first systematic study of Membership Inference Attacks (MIA) on LLM-based ICL recommendation systems. It designs four attacks: Similarity, Memorization, Inquiry, and Poisoning. The study finds that the Memorization attack, based on LLM's inherent **memory**, achieves an attack advantage $\geq 82\%$ on MovieLens-1M, and existing prompt-based defenses (including those against poisoning) are largely inef…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - ICL-RecSys
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Membership Inference Attack"
+  - "ICL-RecSys"
+  - "LLM Privacy"
+  - "Prompt Injection"
+  - "Memorization"
 date: 2026-05-08
-content_hash: 1570ecbf57e8df4f
+content_hash: 47c5f1c83bcde7b5
 ---
+
 # Membership Inference Attacks on In-Context Learning Recommendation
 
 **Conference**: ACL 2026  
@@ -124,15 +129,16 @@ The Memorization attack is almost perfect on the Movie dataset.
 - Value: ⭐⭐⭐⭐⭐ Timely exposure of privacy vulnerabilities as LLM-RecSys enters industrial deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](../../ICLR2026/llm_safety/tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
+- [\[NeurIPS 2025\] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models](../../NeurIPS2025/llm_safety/exploring_the_limits_of_strong_membership_inference_attacks_on_large_language_mo.md)
 - [\[ACL 2026\] Fast-MIA: Efficient and Scalable Membership Inference for LLMs](fast-mia_efficient_and_scalable_membership_inference_for_llms.md)
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](../../ICLR2026/llm_safety/membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models](../../NeurIPS2025/llm_safety/exploring_the_limits_of_strong_membership_inference_attacks_on_large_language_mo.md)
 - [\[ACL 2026\] Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](do_multimodal_rag_systems_leak_data_a_comprehensive_evaluation_of_membership_inf.md)
-- [\[ACL 2026\] XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants](xoxo_stealthy_cross-origin_context_poisoning_attacks_against_ai_coding_assistant.md)
 
 </div>
 

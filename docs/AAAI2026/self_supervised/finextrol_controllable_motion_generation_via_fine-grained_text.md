@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FineXtrol: Controllable Motion Generation via Fine-Grained Text
 description: >-
-  [AAAI 2026][Self-Supervised Learning][motion generation] This paper proposes FineXtrol, a framework that leverages temporally annotated, fine-grained body-part text descriptions as control signals. By combining a dual-br…
+  [AAAI 2026][Self-Supervised Learning][motion generation] This paper proposes FineXtrol, a framework that leverages temporally annotated, fine-grained body-part text descriptions as control signals. By combining a dual-branch ControlNet architecture with hierarchical contrastive learning to enhance the discriminability of the text encoder, FineXtrol achieves efficient, user-friendly, and precise controllable human motion generation, significantly outperforming existing methods…
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "diffusion model"
 date: 2026-05-08
-content_hash: a32881dae5c40876
+content_hash: f4b86f0d6d5b7ede
 ---
 
 # FineXtrol: Controllable Motion Generation via Fine-Grained Text
@@ -152,11 +152,11 @@ Inference efficiency comparison:
 
 ## Related Papers
 
-- [\[ICCV 2025\] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery](../../ICCV2025/self_supervised/generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f.md)
-- [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](../../CVPR2026/self_supervised/free-grained_hierarchical_visual_recognition.md)
-- [\[ICML 2026\] TRACER: Robust Multimodal Fine-Tuning Proven by WMA Teacher + Geometric Decomposition](../../ICML2026/self_supervised/tracer_persistent_regularization_for_robust_multimodal_finetuning.md)
-- [\[ICCV 2025\] MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning](../../ICCV2025/self_supervised/mosic_optimal-transport_motion_trajectory_for_dense_self-supervised_learning.md)
-- [\[CVPR 2026\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](../../CVPR2026/self_supervised/text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
+- [\[ICLR 2026\] Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification](../../ICLR2026/self_supervised/part-level_semantic-guided_contrastive_learning_for_fine-grained_visual_classifi.md)
+- [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](../../CVPR2026/self_supervised/tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
+- [\[CVPR 2026\] Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model](../../CVPR2026/self_supervised/nonparametric_deep_fine-grained_clustering_with_low-rank_guided_vision-language_.md)
+- [\[CVPR 2026\] From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification](../../CVPR2026/self_supervised/from_few-way_to_many-way_rethinking_few-shot_fine-grained_image_classification.md)
+- [\[NeurIPS 2025\] CleverBirds: A Multiple-Choice Benchmark for Fine-grained Human Knowledge Tracing](../../NeurIPS2025/self_supervised/cleverbirds_a_multiple-choice_benchmark_for_fine-grained_human_knowledge_tracing.md)
 
 </div>
 

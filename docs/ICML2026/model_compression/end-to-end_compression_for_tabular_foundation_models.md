@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] End-to-End Compression for Tabular Foundation Models
 description: >-
-  [ICML 2026][Model Compression][TabPFN] TACO attaches a learnable transformer compressor in front of TabPFN-like tabular foundation models. It compresses $N$ rows of training context into $K\ll N$ rows of latent representations before feeding them to the predictor. Through end-to-end joint meta-learning, it achieves a 94x inference speedup and 97% memory sav
+  [ICML 2026 Spotlight][Model Compression][Tabular Foundation Models] TACO attaches a learnable transformer compressor in front of TabPFN-like tabular foundation models. It compresses $N$ rows of training context into $K\ll N$ rows of latent representations before feeding them to the predictor. Through end-to-end joint meta-learning, it achieves a 94x inference speedup and 97% memory saving at a 1% compression rate with almost no loss in ROC-AUC.
 tags:
-  - ICML 2026
-  - Model Compression
-  - TabPFN
-  - Inference Acceleration
+  - "ICML 2026 Spotlight"
+  - "Model Compression"
+  - "Tabular Foundation Models"
+  - "Context Compression"
+  - "TabPFN"
+  - "End-to-End Meta-Learning"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 82fc20253d674d55
+content_hash: 625349a6ecb9d4a9
 ---
+
 # End-to-End Compression for Tabular Foundation Models
 
 **Conference**: ICML 2026 Spotlight  
@@ -150,11 +154,11 @@ CD diagrams show **no statistically significant difference** between 1% compress
 
 ## Related Papers
 
-- [\[ICML 2026\] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines](towards_resource-efficient_llms_end-to-end_energy_accounting_of_distillation_pip.md)
 - [\[ICML 2026\] LEAP: Learnable End-to-End Adaptive Pruning of Large Language Models](leap_learnable_end-to-end_adaptive_pruning_of_large_language_models.md)
+- [\[ICML 2026\] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines](towards_resource-efficient_llms_end-to-end_energy_accounting_of_distillation_pip.md)
 - [\[ICML 2026\] Auditing and Fixing Economic Validity in Tabular Foundation Models for Discrete Choice](auditing_and_fixing_economic_validity_in_tabular_foundation_models_for_discrete_.md)
+- [\[ICLR 2026\] Adaptive Nonlinear Compression for Large Foundation Models](../../ICLR2026/model_compression/adaptive_nonlinear_compression_for_large_foundation_models.md)
 - [\[ICML 2026\] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles](quantifying_the_uncertainty_of_foundation_models_with_singular_value_ensembles.md)
-- [\[ICML 2026\] BioArc: Discovering Optimal Neural Architectures for Biological Foundation Models](bioarc_discovering_optimal_neural_architectures_for_biological_foundation_models.md)
 
 </div>
 

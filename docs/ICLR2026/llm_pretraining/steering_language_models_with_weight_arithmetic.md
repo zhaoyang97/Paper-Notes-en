@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Steering Language Models with Weight Arithmetic
 description: >-
-  [ICLR 2026][Pretraining][weight steering] Proposes Contrastive Weight Steering, which extracts behavioral direction vectors by calculating the weight difference between models fine-tuned on positive/negative behaviors. By directly modifying model weights to achieve behavioral control, it demonstrates superior generalization and consistency compared to Activati
+  [ICLR 2026][LLM Pretraining][weight steering] Proposes Contrastive Weight Steering, which extracts behavioral direction vectors by calculating the weight difference between models fine-tuned on positive/negative behaviors. By directly modifying model weights to achieve behavioral control, it demonstrates superior generalization and consistency compared to Activation Steering in experiments involving sycophancy, malevolence, and refusal.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - weight steering
-  - activation steering
-  - sycophancy
-  - alignment
-  - task vector
-  - model safety
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "weight steering"
+  - "activation steering"
+  - "sycophancy"
+  - "alignment"
+  - "task vector"
+  - "model safety"
 date: 2026-05-08
-content_hash: 0831c6ed478a7a46
+content_hash: c0684fb767ab081c
 ---
+
 # Steering Language Models with Weight Arithmetic
 
 **Conference**: ICLR 2026  
@@ -185,10 +186,10 @@ Three key difference points: (1) Single vs. All layer; (2) Activation collection
 ## Related Papers
 
 - [\[ICLR 2026\] Soft-Masked Diffusion Language Models](soft-masked_diffusion_language_models.md)
+- [\[ICLR 2026\] Scaling Behavior of Discrete Diffusion Language Models](scaling_behavior_of_discrete_diffusion_language_models.md)
 - [\[ICLR 2026\] Lossless Vocabulary Reduction for Auto-Regressive Language Models](lossless_vocabulary_reduction_for_auto-regressive_language_models.md)
 - [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
 - [\[ICLR 2026\] Time is a Feature: Exploiting Temporal Dynamics in Diffusion Language Models](time_is_a_feature_exploiting_temporal_dynamics_in_diffusion_language_models.md)
-- [\[ICLR 2026\] Pre-training Limited Memory Language Models with Internal and External Knowledge](pre-training_limited_memory_language_models_with_internal_and_external_knowledge.md)
 
 </div>
 

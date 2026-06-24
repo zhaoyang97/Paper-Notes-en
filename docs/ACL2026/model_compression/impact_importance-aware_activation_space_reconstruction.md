@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IMPACT: Importance-Aware Activation Space Reconstruction
 description: >-
-  [ACL 2026][Model Compression][Paper Note] The IMPACT framework is proposed to shift LLM low-rank compression from minimizing weight reconstruction error to minimizing importance-weighted activation reconstruction error. By incorporating gradient information into the activation covariance matrix, a closed-form optimal solution is derived, achieving up to 55.4%
+  [ACL 2026][Model Compression][Low-rank compression] The IMPACT framework is proposed to shift LLM low-rank compression from minimizing weight reconstruction error to minimizing importance-weighted activation reconstruction error. By incorporating gradient information into the activation covariance matrix, a closed-form optimal solution is derived, achieving up to 55.4% model size reduction while maintaining accuracy.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "Low-rank compression"
+  - "activation space reconstruction"
+  - "importance-aware"
+  - "gradient weighting"
+  - "Large Language Models"
 date: 2026-05-08
-content_hash: 638021badfd01402
+content_hash: cacad4df6b58a378
 ---
+
 # IMPACT: Importance-Aware Activation Space Reconstruction
 
 **Conference**: ACL 2026  
@@ -125,10 +131,10 @@ The weighted objective is mathematically equivalent to finding the principal sub
 ## Related Papers
 
 - [\[AAAI 2026\] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache](../../AAAI2026/model_compression/kvmix_gradient-based_layer_importance-aware_mixed-precision_.md)
+- [\[ICLR 2026\] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization](../../ICLR2026/model_compression/serq_saliency-aware_low-rank_error_reconstruction_for_llm_quantization.md)
 - [\[ACL 2026\] Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis](analytical_ffn-to-moe_restructuring_via_activation_pattern_analysis.md)
 - [\[ACL 2026\] Enabling Agents to Communicate Entirely in Latent Space](enabling_agents_to_communicate_entirely_in_latent_space.md)
-- [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](../../NeurIPS2025/model_compression/duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
-- [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
+- [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](../../ICLR2026/model_compression/training_dynamics_impact_post-training_quantization_robustness.md)
 
 </div>
 

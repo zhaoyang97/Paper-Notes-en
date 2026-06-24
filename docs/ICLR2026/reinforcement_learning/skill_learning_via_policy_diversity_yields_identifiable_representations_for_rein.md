@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Skill Learning via Policy Diversity Yields Identifiable Representations for Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper employs the identifiability theory of nonlinear ICA to explain why "Mutual Information Skill Learning (MISL)" is effective. Taking Contrastive Successor Features (CSF) as a representative, it proves that as long as skills are sufficiently diverse and the critic is parameterized by an inner product, the learn
+  [ICLR 2026][Reinforcement Learning][Mutual Information Skill Learning] This paper employs the identifiability theory of nonlinear ICA to explain why "Mutual Information Skill Learning (MISL)" is effective. Taking Contrastive Successor Features (CSF) as a representative, it proves that as long as skills are sufficiently diverse and the critic is parameterized by an inner product, the learned features can recover the true environment state "up to a linear transformation." This…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Mutual Information Skill Learning"
+  - "Identifiability"
+  - "Nonlinear ICA"
+  - "Contrastive Successor Features"
+  - "Self-supervised RL"
 date: 2026-05-08
-content_hash: 4bea39bb73c614b1
+content_hash: e3f8d0eb70fcf61c
 ---
+
 # Skill Learning via Policy Diversity Yields Identifiable Representations for Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -124,16 +130,16 @@ Experiments aim to **verify theoretical predictions**: whether CSF recovers stat
 - Value: ⭐⭐⭐⭐⭐ Grounding engineering heuristics in theory provides direct guidance for algorithm design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
 - [\[ICLR 2026\] Master Skill Learning with Policy-Grounded Synergy of LLM-based Reward Shaping and Exploring](master_skill_learning_with_policy-grounded_synergy_of_llm-based_reward_shaping_a.md)
+- [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
 - [\[ICLR 2026\] Wavelet Predictive Representations for Non-Stationary Reinforcement Learning](wavelet_predictive_representations_for_non-stationary_reinforcement_learning.md)
 - [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
-- [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
 
 </div>
 

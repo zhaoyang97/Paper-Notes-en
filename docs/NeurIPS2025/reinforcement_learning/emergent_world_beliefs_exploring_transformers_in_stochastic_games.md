@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Emergent World Beliefs: Exploring Transformers in Stochastic Games
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Emergent World Models] This work extends the study of emergent world models in LLMs from perfect-information games (Othello…
+  [NeurIPS 2025][Reinforcement Learning][Emergent World Models] This work extends the study of emergent world models in LLMs from perfect-information games (Othello, Chess) to the partial-information setting (Texas Hold'em Poker). By pre-training GPT-2 on PHH-format poker data and probing its internal activations, the paper demonstrates that the model not only learns deterministic features (hand rank recognition at ~98% accuracy) but also spontaneously develops internal represe…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -14,7 +14,7 @@ tags:
   - "Activation Probing"
   - "GPT-2"
 date: 2026-05-08
-content_hash: 5f508e3767165b4e
+content_hash: c746af9969bcf3d6
 ---
 
 # Emergent World Beliefs: Exploring Transformers in Stochastic Games
@@ -156,8 +156,8 @@ After masking action tokens (fold, check/call, etc.) and probing:
 
 - [\[NeurIPS 2025\] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling](robust_adversarial_reinforcement_learning_in_stochastic_games_via_sequence_model.md)
 - [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
-- [\[NeurIPS 2025\] The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis](the_world_is_bigger_a_computationally-embedded_perspective_on_the_big_world_hypo.md)
 - [\[NeurIPS 2025\] Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers](blending_complementary_memory_systems_in_hybrid_quadratic-linear_transformers.md)
+- [\[NeurIPS 2025\] The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis](the_world_is_bigger_a_computationally-embedded_perspective_on_the_big_world_hypo.md)
 - [\[NeurIPS 2025\] Meta-World+: An Improved, Standardized, RL Benchmark](meta-world_an_improved_standardized_rl_benchmark.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Raw Detection Scores: Markov-Informed Calibration for Boosting Machine-Generated Text Detection
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] This paper argues that token-level scores of mainstream "metric-based" machine-generated text (MGT) detectors are contaminated by the randomness of LLM sampling. It utilizes Markov Random Fields (MRF) to characterize two patterns: "neighbor similarity" and "initial instability." Through mean-field approximation, this i
+  [ICLR2026][AIGC Detection][MGT Detection] This paper argues that token-level scores of mainstream "metric-based" machine-generated text (MGT) detectors are contaminated by the randomness of LLM sampling. It utilizes Markov Random Fields (MRF) to characterize two patterns: "neighbor similarity" and "initial instability." Through mean-field approximation, this is implemented as a lightweight iterative component with only 2x2 parameters that can be layered onto any existing dete…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR2026"
+  - "AIGC Detection"
+  - "MGT Detection"
+  - "Score Calibration"
+  - "Markov Random Field"
+  - "Mean-Field Approximation"
+  - "Metric-based Detectors"
 date: 2026-05-08
-content_hash: f042d04196e72704
+content_hash: 97b787d12fd372fc
 ---
+
 # Beyond Raw Detection Scores: Markov-Informed Calibration for Boosting Machine-Generated Text Detection
 
 **Conference**: ICLR2026  
@@ -136,10 +142,10 @@ The method consists of two components: the MRF layer (neighbor similarity) and t
 ## Related Papers
 
 - [\[ACL 2026\] ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability](../../ACL2026/aigc_detection/exagpt_example-based_machine-generated_text_detection_for_human_interpretability.md)
+- [\[ICLR 2026\] Learning From Dictionary: Enhancing Robustness of Machine-Generated Text Detection in Zero-Shot Language via Adversarial Training](learning_from_dictionary_enhancing_robustness_of_machine-generated_text_detectio.md)
 - [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](../../ACL2026/aigc_detection/beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
 - [\[ACL 2026\] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](../../ACL2026/aigc_detection/when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)
 - [\[ICLR 2026\] D&R: Recovery-based AI-Generated Text Detection via a Single Black-box LLM Call](dr_recovery-based_ai-generated_text_detection_via_a_single_black-box_llm_call.md)
-- [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
 
 </div>
 

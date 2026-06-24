@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers
 description: >-
-  [CVPR 2026][Model Compression][Inference Acceleration] Co-Me equips visual geometric Transformers like VGGT and π3 with a lightweight "confidence predictor." It merges patch tokens that the network deems unimportant (low confidence) into a single token before passing them into the latter half of the network. This accelerates both attention and MLP without retraining or alt
+  [CVPR 2026][Multimodal Efficiency][token merging] Co-Me equips visual geometric Transformers like VGGT and π3 with a lightweight "confidence predictor." It merges patch tokens that the network deems unimportant (low confidence) into a single token before passing them into the latter half of the network. This accelerates both attention and MLP without retraining or altering the backbone structure, achieving up to 21.5× speedup on VGGT with negligible accuracy loss.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "token merging"
+  - "visual geometric Transformer"
+  - "inference acceleration"
+  - "confidence distillation"
+  - "3D reconstruction"
 date: 2026-05-08
-content_hash: 534b28bb9d37c337
+content_hash: 2f001a4a1aa1430f
 ---
+
 # Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers
 
 **Conference**: CVPR 2026  
@@ -154,9 +159,9 @@ In single-frame scenarios, where baselines often fail to provide gains, Co-Me st
 
 - [\[CVPR 2026\] Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)
 - [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)
+- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
+- [\[CVPR 2026\] LiteVGGT: Boosting Vanilla VGGT via Geometry-aware Cached Token Merging](litevggt_boosting_vanilla_vggt_via_geometry-aware_cached_token_merging.md)
 - [\[CVPR 2026\] Merge3D: Efficient 3D Multimodal LLMs via Joint 2D-3D Token Merging](merge3d_efficient_3d_multimodal_llms_via_joint_2d-3d_token_merging.md)
-- [\[CVPR 2026\] CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs](core_compact_object-centric_representations_as_a_new_paradigm_for_token_merging_.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
 
 </div>
 

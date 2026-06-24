@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity
 description: >-
-  [NeurIPS 2025][Audio & Speech][Tri-modal alignment] TRIANGLE proposes using the area of the triangle formed by three modal embedding vectors in high-dimensional space as a similarity measure…
+  [NeurIPS 2025][Audio & Speech][Tri-modal alignment] TRIANGLE proposes using the area of the triangle formed by three modal embedding vectors in high-dimensional space as a similarity measure, replacing traditional pairwise cosine similarity to achieve joint alignment of video, audio, and text modalities. The method surpasses state-of-the-art by up to 9 Recall@1 points on video-text retrieval and related tasks.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "video-text retrieval"
 date: 2026-05-08
-content_hash: 05829216014d047a
+content_hash: 954e222d1c1b37a5
 ---
 
 # A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity
@@ -131,11 +131,11 @@ Starting from VAST's pretrained encoders, additional pretraining is performed on
 
 ## Related Papers
 
+- [\[ICLR 2026\] From Natural Alignment to Conditional Controllability in Multimodal Dialogue](../../ICLR2026/audio_speech/from_natural_alignment_to_conditional_controllability_in_multimodal_dialogue.md)
+- [\[ICLR 2026\] Beyond Instance-Level Alignment: Dual-Level Optimal Transport for Audio-Text Retrieval](../../ICLR2026/audio_speech/beyond_instance-level_alignment_dual-level_optimal_transport_for_audio-text_retr.md)
+- [\[ACL 2026\] RespiraMFM: A Multimodal Foundation Model for Respiratory Disease Recognition via Contrastive Audio-Language Alignment](../../ACL2026/audio_speech/respiramfm_a_multimodal_foundation_model_with_contrastive_audio-language_alignme.md)
 - [\[NeurIPS 2025\] LeVo: High-Quality Song Generation with Multi-Preference Alignment](levo_high-quality_song_generation_with_multi-preference_alignment.md)
-- [\[ACL 2026\] Beyond Transcripts: A Renewed Perspective on Audio Chaptering](../../ACL2026/audio_speech/beyond_transcripts_a_renewed_perspective_on_audio_chaptering.md)
-- [\[ACL 2026\] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment](../../ACL2026/audio_speech/immersivetts_environment-aware_text-to-speech_with_multimodal_diffusion_transfor.md)
 - [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
-- [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
 
 </div>
 

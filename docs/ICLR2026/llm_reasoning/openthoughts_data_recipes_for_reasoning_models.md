@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OpenThoughts: Data Recipes for Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The authors decompose the creation of "Reasoning Model SFT Data" into six pipeline stages and conduct over 1,000 controlled ablation experiments. They derive a simple yet counter-intuitive data recipe (high-quality sources + LLM difficulty/length filtering + 16x answer sampling per question + skipping answer verificati
+  [ICLR 2026][Reasoning][Reasoning Distillation] The authors decompose the creation of "Reasoning Model SFT Data" into six pipeline stages and conduct over 1,000 controlled ablation experiments. They derive a simple yet counter-intuitive data recipe (high-quality sources + LLM difficulty/length filtering + 16x answer sampling per question + skipping answer verification + using the weaker QwQ-32B as the teacher). Using this, they produced the OpenThoughts3-1.2M dataset and train…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning Distillation"
+  - "SFT Data Recipe"
+  - "Data Filtering"
+  - "Multi-answer Sampling"
+  - "Teacher Model Selection"
 date: 2026-05-08
-content_hash: 691f5a088cef0e9c
+content_hash: f40c42f12b78b726
 ---
+
 # OpenThoughts: Data Recipes for Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -134,15 +140,15 @@ Ours outperforms R1-Distill-7B by an average of 12.4 points across 12 tasks, and
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Native Reasoning Models: Training Language Models to Reason on Unverifiable Data](native_reasoning_models_training_language_models_to_reason_on_unverifiable_data.md)
+- [\[ICLR 2026\] The Quest for Efficient Reasoning: A Data-Centric Benchmark to CoT Distillation](the_quest_for_efficient_reasoning_a_data-centric_benchmark_to_cot_distillation.md)
 - [\[ICLR 2026\] Scaling Generalist Data-Analytic Agents](scaling_generalist_data-analytic_agents.md)
 - [\[ICLR 2026\] Front-Loading Reasoning: The Synergy between Pretraining and Post-Training Data](front-loading_reasoning_the_synergy_between_pretraining_and_post-training_data.md)
 - [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
-- [\[ICLR 2026\] OpenEstimate: Evaluating LLMs on Reasoning Under Uncertainty with Real-World Data](openestimate_evaluating_llms_on_reasoning_under_uncertainty_with_real-world_data.md)
 
 </div>
 

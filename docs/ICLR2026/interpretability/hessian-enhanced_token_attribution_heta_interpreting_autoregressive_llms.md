@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive LLMs
 description: >-
-  [ICLR 2026][Interpretability][token attribution] HETA integrates "causal semantic flow gating + Hessian second-order curvature sensitivity + KL information loss" into a unified token attribution score. Specially designed for decoder-only autoregressive LLMs, it significantly outperforms existing methods in faithfulness and robustness to decoding hyperparameters and s
+  [ICLR 2026][Interpretability][token attribution] HETA integrates "causal semantic flow gating + Hessian second-order curvature sensitivity + KL information loss" into a unified token attribution score. Specially designed for decoder-only autoregressive LLMs, it significantly outperforms existing methods in faithfulness and robustness to decoding hyperparameters and syntactic paraphrasing.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - token attribution
-  - decoder-only LLM
-  - Hessian
-  - second-order sensitivity
-  - KL divergence
-  - faithfulness
+  - "ICLR 2026"
+  - "Interpretability"
+  - "token attribution"
+  - "decoder-only LLM"
+  - "Hessian"
+  - "second-order sensitivity"
+  - "KL divergence"
+  - "faithfulness"
 date: 2026-05-08
-content_hash: a94631446aa5fd04
+content_hash: 2271cca4ff52b0e1
 ---
+
 # Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive LLMs
 
 **Conference**: ICLR 2026  
@@ -127,9 +128,9 @@ ReAgent consistently ranks second; SEA-CoT and Progressive Inference show modera
 
 - [\[ICML 2026\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](../../ICML2026/interpretability/towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
 - [\[ICML 2025\] On the Power of Context-Enhanced Learning in LLMs](../../ICML2025/interpretability/on_the_power_of_context-enhanced_learning_in_llms.md)
+- [\[ACL 2026\] Jacobian Scopes: Token-Level Causal Attributions in LLMs](../../ACL2026/interpretability/jacobian_scopes_token-level_causal_attributions_in_llms.md)
 - [\[ICLR 2026\] Multiple Token Divergence: Measuring and Steering In-Context Computation Density](multiple_token_divergence_measuring_and_steering_in-context_computation_density.md)
 - [\[ICLR 2026\] Thought Branches: Interpreting LLM Reasoning Requires Resampling](thought_branches_interpreting_llm_reasoning_requires_resampling.md)
-- [\[ACL 2026\] Jacobian Scopes: Token-Level Causal Attributions in LLMs](../../ACL2026/interpretability/jacobian_scopes_token-level_causal_attributions_in_llms.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OptimalThinkingBench: Evaluating Over and Underthinking in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][thinking-adjusted accuracy] This paper proposes OptimalThinkingBench, a unified benchmark that simultaneously measures "overthinking" in LLMs on simple tasks (generating hundreds of thinking tokens without improving accuracy) and "underthinking" on difficult tasks. By combining a thinking-adjusted accuracy metric with F1 scores, the benchmark pro
+  [ICLR 2026][Reasoning][Overthinking] This paper proposes OptimalThinkingBench, a unified benchmark that simultaneously measures "overthinking" in LLMs on simple tasks (generating hundreds of thinking tokens without improving accuracy) and "underthinking" on difficult tasks. By combining a thinking-adjusted accuracy metric with F1 scores, the benchmark provides a single representative value. Evaluations of 33 models reveal that no current model excels at both ends…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - thinking-adjusted accuracy
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Overthinking"
+  - "Underthinking"
+  - "Reasoning Efficiency Evaluation"
+  - "Unified Benchmark"
+  - "thinking-adjusted accuracy"
 date: 2026-05-08
-content_hash: 49eeca397e45a673
+content_hash: ff39218999d57a9a
 ---
+
 # OptimalThinkingBench: Evaluating Over and Underthinking in LLMs
 
 **Conference**: ICLR 2026  
@@ -141,7 +146,6 @@ Evaluation of 33 models (with hybrid models tested in both modes). Representativ
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

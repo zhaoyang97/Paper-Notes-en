@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Verified Machine Unlearning for Distillation
 description: >-
-  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes PURGE, a framework that extends verified unlearning under SISA to the knowledge distillation (KD) setting via teacher–student constituent mapping and an i…
+  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes PURGE, a framework that extends verified unlearning under SISA to the knowledge distillation (KD) setting via teacher–student constituent mapping and an incremental multi-teacher distillation strategy. When a teacher-side unlearning request is issued, only a subset of student constituents requires retraining, achieving at least $N\times$ speedup.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "data privacy"
   - "ensemble learning"
 date: 2026-05-08
-content_hash: 2abaa4f23e9e5b66
+content_hash: 7458ca6d109bf9c5
 ---
 
 # Efficient Verified Machine Unlearning for Distillation
@@ -138,11 +138,11 @@ The second factor exceeds 1 for all positive integers $r$ and $c$, guaranteeing 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
+- [\[CVPR 2025\] Towards Source-Free Machine Unlearning](../../CVPR2025/ai_safety/towards_source-free_machine_unlearning.md)
 - [\[NeurIPS 2025\] Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions](rewind-to-delete_certified_machine_unlearning_for_nonconvex_functions.md)
+- [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
 - [\[NeurIPS 2025\] The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples](the_unseen_threat_residual_knowledge_in_machine_unlearning_under_perturbed_sampl.md)
-- [\[NeurIPS 2025\] Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy and Research](machine_unlearning_doesnt_do_what_you_think_lessons_for_generative_ai_policy_and.md)
-- [\[ICML 2026\] Two Blind Spots of Machine Unlearning: Over-unlearning and Prototype Relearning Attacks](../../ICML2026/ai_safety/unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
+- [\[NeurIPS 2025\] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack](taught_well_learned_ill_towards_distillation-conditional_backdoor_attack.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ACCORD: Alleviating Concept Coupling through Dependence Regularization for Text-to-Image Diffusion Personalization
 description: >-
-  [ICLR 2026][Image Generation][DreamBooth] ACCORD formalizes "concept coupling" (entanglement between subjects and contexts) in text-to-image personalization as a statistical dependence problem for the first time. It decomposes the total dependence discrepancy into two computable sources: "denoising dependence discrepancy" and "prior dependence discrepancy," el
+  [ICLR 2026][Image Generation][Concept Coupling] ACCORD formalizes "concept coupling" (entanglement between subjects and contexts) in text-to-image personalization as a statistical dependence problem for the first time. It decomposes the total dependence discrepancy into two computable sources: "denoising dependence discrepancy" and "prior dependence discrepancy," eliminating them via two plug-and-play regularization losses (DDLoss + PDLoss). This improves both text controllab…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - DreamBooth
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Concept Coupling"
+  - "Text-to-Image Personalization"
+  - "Dependence Regularization"
+  - "DreamBooth"
+  - "Plug-and-Play Loss"
 date: 2026-05-08
-content_hash: 59550ea189e50368
+content_hash: 4b82caae2e306e14
 ---
+
 # ACCORD: Alleviating Concept Coupling through Dependence Regularization for Text-to-Image Diffusion Personalization
 
 **Conference**: ICLR 2026  
@@ -120,8 +125,8 @@ Both losses are individually effective, with their combination yielding the best
 ## Related Papers
 
 - [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
-- [\[ICLR 2026\] Mod-Adapter: Tuning-Free and Versatile Multi-concept Personalization via Modulation Adapter](mod-adapter_tuning-free_and_versatile_multi-concept_personalization_via_modulati.md)
 - [\[CVPR 2026\] Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration](../../CVPR2026/image_generation/beyond_text_prompts_precise_concept_erasure_through_text-image_collaboration.md)
+- [\[ICLR 2026\] Mod-Adapter: Tuning-Free and Versatile Multi-concept Personalization via Modulation Adapter](mod-adapter_tuning-free_and_versatile_multi-concept_personalization_via_modulati.md)
 - [\[ICLR 2026\] Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection](localized_concept_erasure_in_text-to-image_diffusion_models_via_high-level_repre.md)
 - [\[NeurIPS 2025\] Enhancing Diffusion Model Guidance through Calibration and Regularization](../../NeurIPS2025/image_generation/enhancing_diffusion_model_guidance_through_calibration_and_regularization.md)
 

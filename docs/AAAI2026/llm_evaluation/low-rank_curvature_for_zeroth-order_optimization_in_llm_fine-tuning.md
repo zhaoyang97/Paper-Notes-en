@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Low-Rank Curvature for Zeroth-Order Optimization in LLM Fine-Tuning
 description: >-
-  [AAAI 2026][LLM Evaluation][zeroth-order optimization] This paper proposes LOREN, a curvature-aware zeroth-order optimization method that captures the anisotropic curvature of the loss landscape via a low-rank block-diag…
+  [AAAI 2026][LLM Evaluation][zeroth-order optimization] This paper proposes LOREN, a curvature-aware zeroth-order optimization method that captures the anisotropic curvature of the loss landscape via a low-rank block-diagonal preconditioner, combined with REINFORCE Leave-One-Out (RLOO) variance reduction. LOREN achieves higher accuracy and faster convergence in LLM fine-tuning while reducing peak memory by up to 27.3% compared to MeZO-Adam.
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "variance reduction"
   - "memory-efficient"
 date: 2026-05-08
-content_hash: 0ac705272e554406
+content_hash: 225a795120c01692
 ---
 
 # Low-Rank Curvature for Zeroth-Order Optimization in LLM Fine-Tuning
@@ -132,9 +132,9 @@ LOREN's additional memory overhead is only $O(n)$, far lower than MeZO-Adam's $O
 
 - [\[ICML 2026\] AGZO: Activation-Guided Zeroth-Order Optimization for LLM Fine-Tuning](../../ICML2026/llm_evaluation/agzo_activation-guided_zeroth-order_optimization_for_llm_fine-tuning.md)
 - [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
-- [\[AAAI 2026\] MindVote: When AI Meets the Wild West of Social Media Opinion](mindvote_when_ai_meets_the_wild_west_of_social_media_opinion.md)
 - [\[AAAI 2026\] Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment](gaming_the_answer_matcher_examining_the_impact_of_text_manipulation_on_automated.md)
-- [\[AAAI 2026\] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory](lost_in_benchmarks_rethinking_large_language_model_benchmarking_with_item_respon.md)
+- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](../../ICLR2026/llm_evaluation/sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
+- [\[ICCV 2025\] On the Robustness Tradeoff in Fine-Tuning](../../ICCV2025/llm_evaluation/on_the_robustness_tradeoff_in_fine-tuning.md)
 
 </div>
 

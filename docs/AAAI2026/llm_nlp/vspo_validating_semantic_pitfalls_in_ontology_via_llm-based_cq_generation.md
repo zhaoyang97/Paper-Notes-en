@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation
 description: >-
-  [AAAI 2026][LLM/NLP][Competency Question Generation] This paper proposes the VSPO framework, which constructs a definition–axiom misalignment dataset and fine-tunes LLaMA-3.1-8B-Instruct to generate competency questions…
+  [AAAI 2026 Oral][LLM (Other)][Competency Question Generation] This paper proposes the VSPO framework, which constructs a definition–axiom misalignment dataset and fine-tunes LLaMA-3.1-8B-Instruct to generate competency questions (CQs) capable of validating semantic pitfalls in ontologies (e.g., misuse of `allValuesFrom`). The approach surpasses GPT-4.1 by 26% in precision and 28.2% in recall.
 tags:
-  - "AAAI 2026"
-  - "LLM/NLP"
+  - "AAAI 2026 Oral"
+  - "LLM (Other)"
   - "Competency Question Generation"
   - "Semantic Pitfall Detection"
   - "Ontology Validation"
   - "LLM Fine-tuning"
   - "Misalignment Injection"
 date: 2026-05-08
-content_hash: 49a21b43fbe189ce
+content_hash: 90cf12f3dab62bc6
 ---
 
 # VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation
@@ -143,11 +143,11 @@ Under the Type 4 aligned setting, VSPO achieves 96.7 precision and 80.4 F1, indi
 
 ## Related Papers
 
-- [\[AAAI 2026\] LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation](loopllm_transferable_energy-latency_attacks_in_llms_via_repetitive_generation.md)
-- [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
 - [\[ICML 2026\] Differential Syntactic and Semantic Encoding in LLMs](../../ICML2026/llm_nlp/differential_syntactic_and_semantic_encoding_in_llms.md)
-- [\[ICML 2026\] SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling](../../ICML2026/llm_nlp/sac-opt_semantic_anchors_for_iterative_correction_in_optimization_modeling.md)
-- [\[AAAI 2026\] PERSIST: Persistent Instability in LLM's Personality Measurements](persistent_instability_in_llms_personality_measurements_effects_of_scale_reasoni.md)
+- [\[CVPR 2025\] The Change You Want To Detect: Semantic Change Detection In Earth Observation With Hybrid Data Generation](../../CVPR2025/llm_nlp/the_change_you_want_to_detect_semantic_change_detection_in_earth_observation_wit.md)
+- [\[CVPR 2026\] OmniDocLayout: Towards Diverse Document Layout Generation via Coarse-to-Fine LLM Learning](../../CVPR2026/llm_nlp/omnidoclayout_towards_diverse_document_layout_generation_via_coarse-to-fine_llm_.md)
+- [\[ACL 2025\] From Selection to Generation: A Survey of LLM-based Active Learning](../../ACL2025/llm_nlp/from_selection_to_generation_a_survey.md)
+- [\[ACL 2025\] Pitfalls of Scale: Investigating the Inverse Task of Redefinition in Large Language Models](../../ACL2025/llm_nlp/pitfalls_of_scale_investigating_the_inverse_task_of_redefinition_in_large_langua.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Position: Bridge the Gaps between Machine Unlearning and AI Regulation
 description: >-
-  [NeurIPS 2025][AI Safety][Machine Unlearning] This paper systematically analyzes six potential application scenarios of Machine Unlearning (MU) in compliance with the EU AI Act (AIA)…
+  [NeurIPS 2025 Oral][AI Safety][Machine Unlearning] This paper systematically analyzes six potential application scenarios of Machine Unlearning (MU) in compliance with the EU AI Act (AIA), identifies the technical gaps between the state of the art and actual regulatory requirements in each scenario, and calls on the research community to bridge these gaps in order to realize the potential of MU in AI governance.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "AI Safety"
   - "Machine Unlearning"
   - "AI Regulation"
@@ -12,7 +12,7 @@ tags:
   - "Data Privacy"
   - "Compliance"
 date: 2026-05-08
-content_hash: 65a64dc4752be33e
+content_hash: 5a3837b63b999343
 ---
 
 # Position: Bridge the Gaps between Machine Unlearning and AI Regulation
@@ -158,11 +158,11 @@ Formal framework: Given model $M = A(D)$, an unlearning algorithm $U(M; D_f, D_r
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
 - [\[NeurIPS 2025\] Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy and Research](machine_unlearning_doesnt_do_what_you_think_lessons_for_generative_ai_policy_and.md)
+- [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
+- [\[CVPR 2025\] Towards Source-Free Machine Unlearning](../../CVPR2025/ai_safety/towards_source-free_machine_unlearning.md)
 - [\[NeurIPS 2025\] Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions](rewind-to-delete_certified_machine_unlearning_for_nonconvex_functions.md)
 - [\[NeurIPS 2025\] The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples](the_unseen_threat_residual_knowledge_in_machine_unlearning_under_perturbed_sampl.md)
-- [\[ICML 2026\] Two Blind Spots of Machine Unlearning: Over-unlearning and Prototype Relearning Attacks](../../ICML2026/ai_safety/unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
 
 </div>
 

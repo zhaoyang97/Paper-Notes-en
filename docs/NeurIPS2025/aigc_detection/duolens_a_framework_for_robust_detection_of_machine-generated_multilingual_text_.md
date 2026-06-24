@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code
 description: >-
-  [NeurIPS 2025][AIGC Detection][AI-generated text detection] DuoLens is proposed — an AI-generated content detection framework based on dual-encoder fusion of CodeBERT and CodeBERTa — achieving AUROC of 0.97–0.99 on multi…
+  [NeurIPS 2025][AIGC Detection][AI-generated text detection] DuoLens is proposed — an AI-generated content detection framework based on dual-encoder fusion of CodeBERT and CodeBERTa — achieving AUROC of 0.97–0.99 on multilingual text (8 languages) and source code (7 programming languages) at significantly reduced computational cost (8–12× lower latency, 3–5× lower VRAM), substantially outperforming large models such as GPT-4o.
 tags:
   - "NeurIPS 2025"
   - "AIGC Detection"
@@ -12,7 +12,7 @@ tags:
   - "SLM"
   - "BERT"
 date: 2026-05-08
-content_hash: d99d2f274efb6e31
+content_hash: a5eb17c181ba477f
 ---
 
 # DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code
@@ -117,10 +117,10 @@ A dual-encoder architecture in which CodeBERT (pre-trained on NL + code) and Cod
 
 ## Related Papers
 
-- [\[ACL 2026\] ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability](../../ACL2026/aigc_detection/exagpt_example-based_machine-generated_text_detection_for_human_interpretability.md)
-- [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](../../ACL2026/aigc_detection/detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
+- [\[ACL 2025\] MultiSocial: Multilingual Benchmark of Machine-Generated Text Detection of Social-Media Texts](../../ACL2025/aigc_detection/multisocial_mgt_detection.md)
+- [\[ACL 2026\] Authorship Attribution in Multilingual Machine-Generated Texts](../../ACL2026/aigc_detection/authorship_attribution_in_multilingual_machine-generated_texts.md)
+- [\[ACL 2025\] Reliably Bounding False Positives: A Zero-Shot Machine-Generated Text Detection Framework via Multiscaled Conformal Prediction](../../ACL2025/aigc_detection/reliably_bounding_false_positives_a_zero-shot_machine-generated_text_detection_f.md)
 - [\[ICLR 2026\] CLARC: C/C++ Benchmark for Robust Code Search](../../ICLR2026/aigc_detection/clarc_cc_benchmark_for_robust_code_search.md)
-- [\[ACL 2026\] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](../../ACL2026/aigc_detection/when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)
 - [\[NeurIPS 2025\] Classical Planning with LLM-Generated Heuristics: Challenging the State of the Art with Python Code](classical_planning_with_llm-generated_heuristics_challenging_the_state_of_the_ar.md)
 
 </div>

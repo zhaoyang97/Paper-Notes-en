@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][VAE tokenizer] This paper reveals that the $\beta$-VAE tokenizer in Latent Diffusion Models (LDMs) suffers from an overly compact latent space due to variance collapse, making it highly sensitive to diffusion sampling perturbations. It proposes Variance Expansion (VE) Loss to adaptively learn a robust latent space variance through an
+  [CVPR 2026][Image Generation][Latent Diffusion Models] This paper reveals that the $\beta$-VAE tokenizer in Latent Diffusion Models (LDMs) suffers from an overly compact latent space due to variance collapse, making it highly sensitive to diffusion sampling perturbations. It proposes Variance Expansion (VE) Loss to adaptively learn a robust latent space variance through an adversarial balance between reconstruction and variance expansion, consistently improving generation qua…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - VAE tokenizer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Latent Diffusion Models"
+  - "Variance Expansion Loss"
+  - "Sampling Robustness"
+  - "Variance Collapse"
+  - "VAE tokenizer"
 date: 2026-05-08
-content_hash: b0f2a4e89e6f80c1
+content_hash: 9a2fd98af1cfbf4e
 ---
+
 # Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -128,8 +133,8 @@ Expanding the variance has a side effect: the absolute value of $z$ might also e
 ## Related Papers
 
 - [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](dip_taming_diffusion_models_in_pixel_space.md)
-- [\[CVPR 2026\] Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_models.md)
 - [\[CVPR 2026\] VFM-VAE: Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vfm-vae_vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_mod.md)
+- [\[CVPR 2026\] IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations](idperturb_enhancing_variation_in_synthetic_face_generation_via_angular_perturbat.md)
 - [\[CVPR 2026\] Your Latent Mask is Wrong: Pixel-Equivalent Latent Compositing for Diffusion Models](your_latent_mask_is_wrong_pixel-equivalent_latent_compositing_for_diffusion_mode.md)
 - [\[CVPR 2026\] Taming Generative Diffusion Model for Task-Oriented Infrared Imaging](taming_generative_diffusion_model_for_task-oriented_infrared_imaging.md)
 

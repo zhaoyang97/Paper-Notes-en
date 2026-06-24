@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WeatherCity: Urban Scene Reconstruction with Controllable Multi-Weather Transformation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] WeatherCity integrates "2D image weather editing + a multi-weather Gaussian representation with shared features + physics-driven particle simulation" into a unified framework. This allows 4D autonomous driving scenes to undergo controllable switching and intensity adjustment for sunny, rainy, snowy, and foggy condition
+  [CVPR 2026][3D Vision][4D Reconstruction] WeatherCity integrates "2D image weather editing + a multi-weather Gaussian representation with shared features + physics-driven particle simulation" into a unified framework. This allows 4D autonomous driving scenes to undergo controllable switching and intensity adjustment for sunny, rainy, snowy, and foggy conditions after reconstruction. It leads in metrics such as CLIP-S and Sem-CS on Waymo/nuScenes datasets and achieves a render…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Reconstruction"
+  - "Gaussian Splatting"
+  - "Multi-weather Editing"
+  - "Autonomous Driving Simulation"
+  - "Physical Particle Simulation"
 date: 2026-05-08
-content_hash: 104d1255216a33eb
+content_hash: 6d14f21f2cd5a4be
 ---
+
 # WeatherCity: Urban Scene Reconstruction with Controllable Multi-Weather Transformation
 
 **Conference**: CVPR 2026  
@@ -155,7 +161,7 @@ The rendering speed shows a massive gap over baselines:
 - [\[CVPR 2026\] PrITTI: Primitive-based Generation of Controllable and Editable 3D Semantic Urban Scenes](pritti_primitive-based_generation_of_controllable_and_editable_3d_semantic_urban.md)
 - [\[CVPR 2026\] NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather](nimbusgs_unified_3d_scene_reconstruction_under_hybrid_weather.md)
 - [\[CVPR 2026\] P2GS: Physical Prior-guided Gaussian Splatting for Photometrically Consistent Urban Reconstruction](p2gs_physical_prior-guided_gaussian_splatting_for_photometrically_consistent_urb.md)
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
+- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
 - [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
 
 </div>

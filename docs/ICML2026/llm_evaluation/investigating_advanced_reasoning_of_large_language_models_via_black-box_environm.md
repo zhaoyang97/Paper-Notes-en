@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] This paper proposes "Black-Box Environment Interaction" as a new paradigm for evaluating integrated reasoning (deduction + induction + abduction). By constructing the ORACLE benchmark with 96 environments across 6 task categories and evaluating 19 LLMs, it is discovered that even the strongest model, o3, only achieves
+  [ICML 2026][LLM Evaluation][Reasoning Evaluation] This paper proposes "Black-Box Environment Interaction" as a new paradigm for evaluating integrated reasoning (deduction + induction + abduction). By constructing the ORACLE benchmark with 96 environments across 6 task categories and evaluating 19 LLMs, it is discovered that even the strongest model, o3, only achieves ~70% accuracy in simple environments and drops to ~40% in difficult ones. Furthermore…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Reasoning Evaluation"
+  - "Black-Box Interaction"
+  - "Exploration Strategies"
+  - "Deduction-Induction-Abduction"
+  - "ORACLE Benchmark"
 date: 2026-05-08
-content_hash: c5b9875043b75873
+content_hash: 5b753237233f7306
 ---
+
 # Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction
 
 **Conference**: ICML 2026  
@@ -141,15 +147,16 @@ Performance was nearly identical across settings, providing direct evidence that
 - **Value**: ⭐⭐⭐⭐⭐ (Contamination-resistant, scalable, and reveals a fundamental bottleneck in LLM reasoning)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Enabling Fine-Grained Operating Points for Black-Box LLMs](../../ICLR2026/llm_evaluation/enabling_fine-grained_operating_points_for_black-box_llms.md)
 - [\[ICML 2025\] Hyperband-based Bayesian Optimization for Black-box Prompt Selection](../../ICML2025/llm_evaluation/hyperband-based_bayesian_optimization_for_black-box_prompt_selection.md)
-- [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
 - [\[NeurIPS 2025\] Predicting the Performance of Black-Box LLMs through Follow-Up Queries](../../NeurIPS2025/llm_evaluation/predicting_the_performance_of_black-box_llms_through_follow-up_queries.md)
+- [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
 - [\[ACL 2026\] Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models](../../ACL2026/llm_evaluation/challenging_the_boundaries_of_reasoning_an_olympiad-level_math_benchmark_for_lar.md)
+- [\[ICML 2026\] Spherical Steering: Geometry-Aware Activation Rotation for Language Models](spherical_steering_geometry-aware_activation_rotation_for_language_models.md)
 
 </div>
 

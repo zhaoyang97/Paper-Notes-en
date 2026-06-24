@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LoFA: Learning to Predict Personalized Prior for Fast Adaptation of Visual Generative Models
 description: >-
-  [CVPR 2026][Image Generation][Video Generation] LoFA uses a hypernetwork to directly predict "full, uncompressed" personalized LoRA weights within seconds. It first identifies structured "response map" patterns in the changes of LoRA relative to base model weights. Then, it utilizes a two-stage hypernetwork to predict these response maps first, followed by utilizing
+  [CVPR 2026][Image Generation][Hypernetwork] LoFA uses a hypernetwork to directly predict "full, uncompressed" personalized LoRA weights within seconds. It first identifies structured "response map" patterns in the changes of LoRA relative to base model weights. Then, it utilizes a two-stage hypernetwork to predict these response maps first, followed by utilizing them to guide the prediction of final LoRA weights. This allows it to meet or even exceed the performance of tradit…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Hypernetwork"
+  - "LoRA Prediction"
+  - "Fast Adaptation"
+  - "Personalized Generation"
+  - "Video Generation"
 date: 2026-05-08
-content_hash: f1ccddbab20c6ebc
+content_hash: 974832d70934b421
 ---
+
 # LoFA: Learning to Predict Personalized Prior for Fast Adaptation of Visual Generative Models
 
 **Conference**: CVPR 2026  
@@ -144,9 +149,9 @@ Tab. 4 ablates key components across three tasks (Video: FVD/D.D., Stylization: 
 
 - [\[CVPR 2026\] Learning What to Trust: Bayesian Prior-Guided Optimization for Visual Generation](learning_what_to_trust_bayesian_prior-guided_optimization_for_visual_generation.md)
 - [\[CVPR 2026\] Transition Models: Rethinking the Generative Learning Objective](transition_models_rethinking_the_generative_learning_objective.md)
+- [\[CVPR 2026\] DCoAR: Deep Concept Injection into Unified Autoregressive Models for Personalized Text-to-Image Generation](dcoar_deep_concept_injection_into_unified_autoregressive_models_for_personalized.md)
 - [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](../../ICML2026/image_generation/compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
 - [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
-- [\[CVPR 2026\] PhyCo: Learning Controllable Physical Priors for Generative Motion](phyco_learning_controllable_physical_priors_for_generative_motion.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GGBall: Graph Generative Model on Poincaré Ball
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] The authors propose GGBall, the first graph generative framework entirely based on the Poincaré ball model. By utilizing a Hyperbolic Vector Quantized Autoencoder (HVQVAE) and a Riemannian Flow Matching prior, it achieves SOTA performance in hierarchical and molecular graph generation, reducing the average generation e
+  [ICLR 2026][Image Generation][Hyperbolic space] The authors propose GGBall, the first graph generative framework entirely based on the Poincaré ball model. By utilizing a Hyperbolic Vector Quantized Autoencoder (HVQVAE) and a Riemannian Flow Matching prior, it achieves SOTA performance in hierarchical and molecular graph generation, reducing the average generation error on hierarchical datasets by 18%.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Hyperbolic space"
+  - "graph generation"
+  - "Poincaré ball model"
+  - "vector quantization"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: d9541165a4076ded
+content_hash: 951ccdd4741add1c
 ---
+
 # GGBall: Graph Generative Model on Poincaré Ball
 
 **Conference**: ICLR 2026  
@@ -115,16 +120,17 @@ The first stage jointly trains the autoencoder and the codebook. The total loss 
 
 <div class="related-papers" markdown="1">
 
-**Conference**: ICLR 2026  
-**Related Papers**:
-- [2506.07198] GGBall: Graph Generative Model on Poincaré Ball (Ours)
-- [2302.00761] DiGress: Discrete Denoising diffusion for graph generation
-- [2402.14321] Hyperbolic Graph Diffusion Models (HGDM)
+## Related Papers
+
+- [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)
+- [\[ICLR 2026\] Verification of the Implicit World Model in a Generative Model via Adversarial Sequences](verification_of_the_implicit_world_model_in_a_generative_model_via_adversarial_s.md)
+- [\[ICLR 2026\] HOG-Diff: Higher-Order Guided Diffusion for Graph Generation](hog-diff_higher-order_guided_diffusion_for_graph_generation.md)
+- [\[ICLR 2026\] Enhanced Generative Model Evaluation with Clipped Density and Coverage](enhanced_generative_model_evaluation_with_clipped_density_and_coverage.md)
+- [\[ICLR 2026\] Continuously Augmented Discrete Diffusion model for Categorical Generative Modeling](continuously_augmented_discrete_diffusion_model_for_categorical_generative_model.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)

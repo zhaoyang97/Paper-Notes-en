@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TS-DDAE: A Novel Temporal-Spectral Denoising Diffusion AutoEncoder for Wireless Signal Recognition Model Pre-training
 description: >-
-  [ICLR 2026][Signal & Communications][Paper Note] To address Wireless Signal Recognition (WSR) pre-training, this work introduces the "noising-denoising" paradigm of diffusion models into signal self-supervision and proposes TS-DDAE. Gaussian noise is injected into IQ signals in both temporal and spectral domains simultaneously, followed by a joint restoration using a
+  [ICLR 2026][Signal & Communication][Wireless Signal Recognition] To address Wireless Signal Recognition (WSR) pre-training, this work introduces the "noising-denoising" paradigm of diffusion models into signal self-supervision and proposes TS-DDAE. Gaussian noise is injected into IQ signals in both temporal and spectral domains simultaneously, followed by a joint restoration using a specialized dual-encoder TS-Net (temporal self-attention + spectral channel attention). The le…
 tags:
-  - ICLR 2026
-  - Signal & Communications
+  - "ICLR 2026"
+  - "Signal & Communication"
+  - "Wireless Signal Recognition"
+  - "Diffusion AutoEncoder"
+  - "Temporal-Spectral Dual-Domain"
+  - "Self-Supervised Pre-training"
+  - "Modulation Recognition"
 date: 2026-05-08
-content_hash: a5b03c658093c866
+content_hash: 0101d7e0777e9559
 ---
+
 # TS-DDAE: A Novel Temporal-Spectral Denoising Diffusion AutoEncoder for Wireless Signal Recognition Model Pre-training
 
 **Conference**: ICLR 2026  

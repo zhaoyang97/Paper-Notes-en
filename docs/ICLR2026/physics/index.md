@@ -80,7 +80,7 @@ item_total: 69
 
 **🔬 ICLR2026** · **69** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/physics/index.md) · [🧪 ICML2026 (33)](../../ICML2026/physics/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/physics/index.md) · [🧠 NeurIPS2025 (57)](../../NeurIPS2025/physics/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/physics/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/physics/index.md) · [🧪 ICML2026 (33)](../../ICML2026/physics/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/physics/index.md) · [🧠 NeurIPS2025 (57)](../../NeurIPS2025/physics/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/physics/index.md) · [🧪 ICML2025 (20)](../../ICML2025/physics/index.md)
 
 🔥 **Top topics:** Diffusion Models ×4 · Time-Series Forecasting ×2 · Layout & Composition ×2
 

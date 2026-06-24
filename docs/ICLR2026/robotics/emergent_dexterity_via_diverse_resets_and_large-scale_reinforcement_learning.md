@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Emergent Dexterity via Diverse Resets and Large-Scale Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][sim-to-real] OmniReset enables the emergence of complex multi-stage dexterous manipulation strategies by automatically generating four types of diverse initial state distributions. Using Large-scale PPO in massively parallel simulations, it requires no human demonstrations, curricula, or task-specific rewards, and achieves zero-sho
+  [ICLR 2026][Robotics][Dexterous manipulation] OmniReset enables the emergence of complex multi-stage dexterous manipulation strategies by automatically generating four types of diverse initial state distributions. Using Large-scale PPO in massively parallel simulations, it requires no human demonstrations, curricula, or task-specific rewards, and achieves zero-shot transfer to real robots.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - sim-to-real
+  - "ICLR 2026"
+  - "Robotics"
+  - "Dexterous manipulation"
+  - "diverse resets"
+  - "large-scale RL"
+  - "sim-to-real"
+  - "emergent behavior"
 date: 2026-05-08
-content_hash: 6ce6364161faf55f
+content_hash: dea1a5ec8227478b
 ---
+
 # Emergent Dexterity via Diverse Resets and Large-Scale Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -141,10 +146,10 @@ OmniReset significantly outperforms three baselines (all provided with optimal d
 ## Related Papers
 
 - [\[ICLR 2026\] Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning](rethinking_policy_diversity_in_ensemble_policy_gradient_in_large-scale_reinforce.md)
-- [\[ICLR 2026\] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots](robocasa365_a_large-scale_simulation_framework_for_training_and_benchmarking_gen.md)
 - [\[ICLR 2026\] Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control](towards_bridging_the_gap_between_large-scale_pretraining_and_efficient_finetunin.md)
+- [\[ICLR 2026\] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots](robocasa365_a_large-scale_simulation_framework_for_training_and_benchmarking_gen.md)
 - [\[ICLR 2026\] RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation](rfs_reinforcement_learning_with_residual_flow_steering_for_dexterous_manipulatio.md)
-- [\[ICLR 2026\] Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments](partially_equivariant_reinforcement_learning_in_symmetry-breaking_environments.md)
+- [\[ECCV 2024\] GraspXL: Generating Grasping Motions for Diverse Objects at Scale](../../ECCV2024/robotics/graspxl_generating_grasping_motions_for_diverse_objects_at_scale.md)
 
 </div>
 

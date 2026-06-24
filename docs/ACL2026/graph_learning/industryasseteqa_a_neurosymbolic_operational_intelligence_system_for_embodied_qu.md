@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] IndustryAssetEQA: A Neurosymbolic Operational Intelligence System for Embodied Question Answering in Industrial Asset Maintenance
 description: >-
-  [ACL 2026][Graph Learning][Embodied QA] This paper remodels industrial asset maintenance QA as an "embodied decision-making" task. It proposes IndustryAssetEQA, a neurosymbolic system composed of episodic telemetry, FMEA knowledge graphs, parameterized counterfactual risk simulators, provenance verification, and safety gates. On four industrial datasets, it
+  [ACL 2026][Graph Learning][FMEA Knowledge Graph] This paper remodels industrial asset maintenance QA as an "embodied decision-making" task. It proposes IndustryAssetEQA, a neurosymbolic system composed of episodic telemetry, FMEA knowledge graphs, parameterized counterfactual risk simulators, provenance verification, and safety gates. On four industrial datasets, it improves structural validity, counterfactual direction accuracy, and explanation entailment by up to 0.51 / 0.4…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - Embodied QA
-  - Provenance
+  - "ACL 2026"
+  - "Graph Learning"
+  - "FMEA Knowledge Graph"
+  - "Embodied QA"
+  - "Counterfactual Risk"
+  - "Provenance"
+  - "Industrial Maintenance"
 date: 2026-05-08
-content_hash: 26401b404b81d084
+content_hash: 76e8279dd7a2dd7d
 ---
+
 # IndustryAssetEQA: A Neurosymbolic Operational Intelligence System for Embodied Question Answering in Industrial Asset Maintenance
 
 **Conference**: ACL 2026  
@@ -142,8 +146,8 @@ Incremental improvements from LLM-only to Full IndustryAssetEQA on GPT-4o-mini:
 - [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](../../AAAI2026/graph_learning/self-correction_distillation_for_structured_data_question_answering.md)
 - [\[ACL 2025\] Agent Steerable Search for Knowledge Graph Question Answering](../../ACL2025/graph_learning/agent_steerable_search_for_knowledge_graph_question_answering.md)
 - [\[ICML 2026\] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering](../../ICML2026/graph_learning/kbqa-r1_reinforcing_large_language_models_for_knowledge_base_question_answering.md)
+- [\[ICLR 2026\] DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS](../../ICLR2026/graph_learning/damr_efficient_and_adaptive_context-aware_knowledge_graph_question_answering_wit.md)
 - [\[ACL 2025\] The Role of Exploration Modules in Small Language Models for Knowledge Graph Question Answering](../../ACL2025/graph_learning/the_role_of_exploration_modules_in_small_language_models_for_knowledge_graph_que.md)
-- [\[ACL 2025\] FiDeLiS: Faithful Reasoning in Large Language Model for Knowledge Graph Question Answering](../../ACL2025/graph_learning/fidelis_faithful_reasoning_in_large_language_model_for_knowledge_graph_question_.md)
 
 </div>
 

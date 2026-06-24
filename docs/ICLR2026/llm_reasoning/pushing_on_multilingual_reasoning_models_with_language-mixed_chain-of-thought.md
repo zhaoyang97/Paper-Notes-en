@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pushing on Multilingual Reasoning Models with Language-Mixed Chain-of-Thought
 description: >-
-  [ICLR 2026][LLM Reasoning][Data Distillation] To address the lack of long-reasoning models for mid-resource languages (Korean), this paper proposes **Language-Mixed CoT**—using English as a "logic anchor" for reasoning while retaining key Korean terminology. Combined with 5.79M self-collected native Korean prompts and high-yield subset distillation, the authors tr
+  [ICLR 2026][Reasoning][Language-Mixed CoT] To address the lack of long-reasoning models for mid-resource languages (Korean), this paper proposes **Language-Mixed CoT**—using English as a "logic anchor" for reasoning while retaining key Korean terminology. Combined with 5.79M self-collected native Korean prompts and high-yield subset distillation, the authors trained KO-REAson-35B using only SFT, achieving a top average score of 64.0 across nine Korean benchmarks…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Data Distillation
-  - SFT
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Language-Mixed CoT"
+  - "Mid-resource Languages"
+  - "Korean Reasoning"
+  - "Data Distillation"
+  - "SFT"
 date: 2026-05-08
-content_hash: 13268ab4d8077f2f
+content_hash: 998ac8ac02514371
 ---
+
 # Pushing on Multilingual Reasoning Models with Language-Mixed Chain-of-Thought
 
 **Conference**: ICLR 2026  
@@ -134,9 +138,9 @@ Category contributions (Gemma-3-4B): OpenThought yielded the largest gain for ma
 
 - [\[ICLR 2026\] mR3: Multilingual Rubric-Agnostic Reward Reasoning Models](mr3_multilingual_rubric-agnostic_reward_reasoning_models.md)
 - [\[ICLR 2026\] Variational Reasoning for Language Models](variational_reasoning_for_language_models.md)
+- [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](../../ACL2026/llm_reasoning/large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
 - [\[ICLR 2026\] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization](pruning_long_chain-of-thought_of_large_reasoning_models_via_small-scale_preferen.md)
-- [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
-- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
+- [\[AAAI 2026\] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models](../../AAAI2026/llm_reasoning/chain-of-thought_driven_adversarial_scenario_extrapolation_for_robust_language_m.md)
 
 </div>
 

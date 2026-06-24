@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] From Pixels to Semantics: Unified Facial Action Representation Learning for Micro-Expression Analysis
 description: >-
-  [ICLR 2026][Human Understanding][VQ-VAE] This paper proposes D-FACE, which utilizes a conditional VQ-VAE pre-trained on large-scale face videos to discretize facial muscle movements between two frames into "identity- and domain-invariant" semantic-level action tokens. By employing a Transformer with sparse attention pooling and emotion-description guided CLIP
+  [ICLR 2026][Human Understanding][Micro-Expression Recognition (MER)] This paper proposes D-FACE, which utilizes a conditional VQ-VAE pre-trained on large-scale face videos to discretize facial muscle movements between two frames into "identity- and domain-invariant" semantic-level action tokens. By employing a Transformer with sparse attention pooling and emotion-description guided CLIP alignment for micro-expression recognition, it marks the first shift in MER from relying o…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - VQ-VAE
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Micro-Expression Recognition (MER)"
+  - "Discrete Facial Action Encoding"
+  - "VQ-VAE"
+  - "Action Tokens"
+  - "CLIP Alignment"
+  - "Sparse Attention"
 date: 2026-05-08
-content_hash: 45133cc83516baea
+content_hash: 6c23ad1ce5fb007a
 ---
+
 # From Pixels to Semantics: Unified Facial Action Representation Learning for Micro-Expression Analysis
 
 **Conference**: ICLR 2026  

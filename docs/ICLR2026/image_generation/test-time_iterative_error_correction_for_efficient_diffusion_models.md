@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Iterative Error Correction for Efficient Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Ours proposes IEC (Iterative Error Correction), a test-time plug-and-play method that corrects the inference errors of efficient diffusion models through iterative refinement, reducing error accumulation from exponential growth to linear growth.
+  [ICLR 2026][Image Generation][Iterative Error Correction] Ours proposes IEC (Iterative Error Correction), a test-time plug-and-play method that corrects the inference errors of efficient diffusion models through iterative refinement, reducing error accumulation from exponential growth to linear growth.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Iterative Error Correction"
+  - "Test-Time Augmentation"
+  - "Quantized Diffusion"
+  - "Feature Caching"
+  - "Error Propagation"
 date: 2026-05-08
-content_hash: 56e5f926c6281dcb
+content_hash: 21bd0a1932604772
 ---
+
 # Test-Time Iterative Error Correction for Efficient Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -154,11 +160,11 @@ IEC reduces FID across all quantization settings, with significant improvements 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Projected Coupled Diffusion for Test-Time Constrained Joint Generation](projected_coupled_diffusion_for_test-time_constrained_joint_generation.md)
 - [\[ICLR 2026\] VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model](vfscale_intrinsic_reasoning_through_verifier-free_test-time_scalable_diffusion_m.md)
 - [\[ICLR 2026\] MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning](milr_improving_multimodal_image_generation_via_test-time_latent_reasoning.md)
 - [\[ICLR 2026\] Mitigating Semantic Collapse in Generative Personalization with Test-Time Embedding Adjustment](mitigating_semantic_collapse_in_generative_personalization_with_test-time_embedd.md)
 - [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
-- [\[ICML 2026\] Linearizing Vision Transformer with Test-Time Training](../../ICML2026/image_generation/linearizing_vision_transformer_with_test-time_training.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DirMoE: Dirichlet-Routed Mixture of Experts
 description: >-
-  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] DirMoE decouples MoE routing into two separate decisions: "which experts to select (Bernoulli/Gumbel-Sigmoid)" and "how to distribute weights among selected experts (Dirichlet)." Using a Dirichlet Variational Autoencoder framework, it achieves end-to-end differentiability and introduces a mathematically guaranteed "spa
+  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] DirMoE decouples MoE routing into two separate decisions: "which experts to select (Bernoulli/Gumbel-Sigmoid)" and "how to distribute weights among selected experts (Dirichlet)." Using a Dirichlet Variational Autoencoder framework, it achieves end-to-end differentiability and introduces a mathematically guaranteed "sparsity knob" $\lambda$ for direct calibration, enhancing expert specialization without the need for auxiliary loa…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Mixture-of-Experts
-  - Gumbel-Sigmoid
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Differentiable Routing"
+  - "Dirichlet Variational"
+  - "Gumbel-Sigmoid"
+  - "Sparsity Control"
+  - "Expert Specialization"
 date: 2026-05-08
-content_hash: 11b8dcf3b507a63b
+content_hash: 6e9e8c60668816ff
 ---
+
 # DirMoE: Dirichlet-Routed Mixture of Experts
 
 **Conference**: ICLR 2026  
@@ -122,15 +127,15 @@ Computational overhead is less than 1%, remaining largely consistent with vanill
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel](understanding_the_mixture-of-experts_with_nadaraya-watson_kernel.md)
 - [\[ICLR 2026\] Mixture-of-Experts Can Surpass Dense LLMs Under Strictly Equal Resource](mixture-of-experts_can_surpass_dense_llms_under_strictly_equal_resource.md)
 - [\[ICLR 2026\] Expert Merging in Sparse Mixture of Experts with Nash Bargaining](expert_merging_in_sparse_mixture_of_experts_with_nash_bargaining.md)
-- [\[ICLR 2026\] Routing Manifold Alignment Improves Generalization of Mixture-of-Experts LLMs](routing_manifold_alignment_improves_generalization_of_mixture-of-experts_llms.md)
-- [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
+- [\[ICML 2026\] SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs](../../ICML2026/llm_efficiency/softmoe_soft_differentiable_routing_for_mixture-of-experts_in_llms.md)
+- [\[ACL 2026\] The Illusion of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models](../../ACL2026/llm_efficiency/the_illusion_of_specialization_unveiling_the_domain-invariant_34standing_committ.md)
 
 </div>
 

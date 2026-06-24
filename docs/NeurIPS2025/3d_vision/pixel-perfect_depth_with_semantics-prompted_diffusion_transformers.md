@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pixel-Perfect Depth with Semantics-Prompted Diffusion Transformers
 description: >-
-  [NeurIPS 2025][3D Vision][Monocular Depth Estimation] This paper proposes Pixel-Perfect Depth, a monocular depth estimation model that performs diffusion generation directly in pixel space (rather than latent space). Thr…
+  [NeurIPS 2025][3D Vision][Monocular Depth Estimation] This paper proposes Pixel-Perfect Depth, a monocular depth estimation model that performs diffusion generation directly in pixel space (rather than latent space). Through a Semantics-Prompted DiT (SP-DiT) that incorporates high-level semantic representations from visual foundation models and a cascaded DiT design, the model generates flying-pixel-free depth maps, surpassing all published generative models on five benchmark…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Semantics Prompting"
   - "Flying Pixel Removal"
 date: 2026-05-08
-content_hash: 9d6d6158f4878046
+content_hash: 47d648bf9491a0af
 ---
 
 # Pixel-Perfect Depth with Semantics-Prompted Diffusion Transformers
@@ -52,7 +52,7 @@ Input image concatenated with noise → fed into a cascaded DiT (first half uses
    Core problem: A vanilla DiT in pixel space cannot simultaneously capture global semantics and local detail (ablation shows NYUv2 AbsRel of 22.5%, nearly unusable).
 
    Solution: Extract high-level semantic representations $\mathbf{e} = f(\mathbf{c}) \in \mathbb{R}^{T' \times D'}$ from a pretrained visual foundation model $f$, and inject them into DiT tokens:
-   $$\mathbf{z'} = h_\phi(\mathbf{z} \oplus \mathcal{B}(\hat{\mathbf{e}}))$$
+    $\mathbf{z'} = h_\phi(\mathbf{z} \oplus \mathcal{B}(\hat{\mathbf{e}}))$
    where $\mathcal{B}$ denotes bilinear interpolation for spatial resolution alignment, and $h_\phi$ is an MLP fusion layer.
 
    Key detail — **L2 normalization**: The authors find that the magnitude of semantic representations $\mathbf{e}$ differs greatly from that of DiT tokens, causing training instability when directly concatenated. Simple L2 normalization $\hat{\mathbf{e}} = \mathbf{e}/\|\mathbf{e}\|_2$ resolves this, yielding a dramatic improvement (NYUv2 AbsRel from 22.5% to 4.3%, a 78% gain).
@@ -64,15 +64,15 @@ Input image concatenated with noise → fed into a cascaded DiT (first half uses
    Observation: In DiT, **early blocks handle global/low-frequency structure; later blocks handle high-frequency detail**.
 
    Based on this, a progressive patch strategy is designed:
-   - First $N/2$ blocks (standard DiT): patch size = 16, token count $(H/16)\times(W/16)$ — low computational cost, focused on global structure.
-   - Last $N/2$ blocks (SP-DiT): MLP expands to $(H/8)\times(W/8)$ tokens — equivalent to a smaller effective patch size, focused on fine-grained detail.
+    - First $N/2$ blocks (standard DiT): patch size = 16, token count $(H/16)\times(W/16)$ — low computational cost, focused on global structure.
+    - Last $N/2$ blocks (SP-DiT): MLP expands to $(H/8)\times(W/8)$ tokens — equivalent to a smaller effective patch size, focused on fine-grained detail.
 
    Effect: 30% reduction in inference time (on RTX 4090) with further accuracy improvement.
 
 3. **Flow Matching Generative Paradigm**
 
    Flow Matching is adopted as the generative backbone (rather than DDPM), learning a continuous transformation from noise to depth samples:
-   $$\mathbf{x}_t = t \cdot \mathbf{x}_1 + (1-t) \cdot \mathbf{x}_0, \quad \mathbf{v}_t = \mathbf{x}_1 - \mathbf{x}_0$$
+    $\mathbf{x}_t = t \cdot \mathbf{x}_1 + (1-t) \cdot \mathbf{x}_0, \quad \mathbf{v}_t = \mathbf{x}_1 - \mathbf{x}_0$
    The training objective is an MSE velocity field loss $\|\mathbf{v}_\theta - \mathbf{v}_t\|^2$.
 
 ### Loss & Training
@@ -156,9 +156,9 @@ GT (VAE)—i.e., the ground-truth depth encoded and decoded through a VAE—stil
 ## Related Papers
 
 - [\[ICCV 2025\] JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers](../../ICCV2025/3d_vision/jointdit_enhancing_rgb-depth_joint_modeling_with_diffusion_transformers.md)
+- [\[CVPR 2025\] Novel View Synthesis with Pixel-Space Diffusion Models](../../CVPR2025/3d_vision/novel_view_synthesis_with_pixel-space_diffusion_models.md)
 - [\[NeurIPS 2025\] Jasmine: Harnessing Diffusion Prior for Self-Supervised Depth Estimation](jasmine_harnessing_diffusion_prior_for_self-supervised_depth_estimation.md)
 - [\[ICCV 2025\] Simulating Dual-Pixel Images From Ray Tracing For Depth Estimation](../../ICCV2025/3d_vision/simulating_dual-pixel_images_from_ray_tracing_for_depth_estimation.md)
-- [\[CVPR 2026\] Fusion of Depth and Semantics for Probabilistic Floorplan Localization](../../CVPR2026/3d_vision/fusion_of_depth_and_semantics_for_probabilistic_floorplan_localization.md)
 - [\[NeurIPS 2025\] Motion4D: Learning 3D-Consistent Motion and Semantics for 4D Scene Understanding](motion4d_learning_3d-consistent_motion_and_semantics_for_4d_scene_understanding.md)
 
 </div>

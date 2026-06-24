@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Conditional Factuality Controlled LLMs with Generalization Certificates via Conformal Sampling
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] Ours proposes CFC (Conditional Factuality Control), a post-hoc conformal framework that learns feature-conditioned acceptance thresholds via augmented quantile regression. It provides conditional coverage guarantees for LLM/VLM sampled outputs, significantly improving reliability for difficult subgroups while maintaini
+  [CVPR 2026][Optimization][Conformal Prediction] Ours proposes CFC (Conditional Factuality Control), a post-hoc conformal framework that learns feature-conditioned acceptance thresholds via augmented quantile regression. It provides conditional coverage guarantees for LLM/VLM sampled outputs, significantly improving reliability for difficult subgroups while maintaining compact prediction sets.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Optimization"
+  - "Conformal Prediction"
+  - "Conditional Coverage"
+  - "LLM Hallucination Control"
+  - "Set-valued Prediction"
+  - "PAC Guarantees"
 date: 2026-05-08
-content_hash: b12f208a088ef334
+content_hash: b7ef7e782ba4803d
 ---
+
 # Conditional Factuality Controlled LLMs with Generalization Certificates via Conformal Sampling
 
 **Conference**: CVPR 2026  
@@ -164,9 +170,9 @@ Intuitively, "relaxing thresholds for hard problems" might seem to increase the 
 
 - [\[ICML 2026\] Colorful Pinball: Density-Weighted Quantile Regression for Conditional Guarantee of Conformal Prediction](../../ICML2026/optimization/colorful_pinball_density-weighted_quantile_regression_for_conditional_guarantee_.md)
 - [\[CVPR 2026\] Semi-Supervised Conformal Prediction With Unlabeled Nonconformity Score](semi-supervised_conformal_prediction_with_unlabeled_nonconformity_score.md)
-- [\[CVPR 2026\] FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization](fedadamom_adaptive_momentum_for_improved_generalization_in_federated_optimizatio.md)
 - [\[ICML 2025\] FedSWA: Improving Generalization in Federated Learning with Highly Heterogeneous Data via Momentum-Based Stochastic Controlled Weight Averaging](../../ICML2025/optimization/fedswa_improving_generalization_in_federated_learning_with_highly_heterogeneous_.md)
 - [\[CVPR 2026\] HFedATM: Hierarchical Federated Domain Generalization via Optimal Transport and Regularized Mean Aggregation](hfedatm_hierarchical_federated_domain_generalization_via_optimal_transport_and_r.md)
+- [\[ICLR 2026\] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport](../../ICLR2026/optimization/hyperparameter_trajectory_inference_with_conditional_lagrangian_optimal_transpor.md)
 
 </div>
 

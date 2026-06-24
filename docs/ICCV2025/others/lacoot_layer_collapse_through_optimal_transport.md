@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LaCoOT: Layer Collapse through Optimal Transport
 description: >-
-  [ICCV2025][optimal transport] This paper proposes LaCoOT, an optimal transport-based regularization strategy that minimizes the Max-Sliced Wasserstein distance between intermediate feature distributions within a network…
+  [ICCV2025][optimal transport] This paper proposes LaCoOT, an optimal transport-based regularization strategy that minimizes the Max-Sliced Wasserstein distance between intermediate feature distributions within a network during training, enabling the removal of entire layers post-training while maintaining performance and significantly reducing model depth and inference time.
 tags:
   - "ICCV2025"
   - "optimal transport"
@@ -11,7 +11,7 @@ tags:
   - "Max-Sliced Wasserstein distance"
   - "model compression"
 date: 2026-05-08
-content_hash: d30b02da3cdec1a3
+content_hash: 5e8b693c38b63cb4
 ---
 
 # LaCoOT: Layer Collapse through Optimal Transport
@@ -158,11 +158,11 @@ Fine-tuning DiT-XL/2 on ImageNet for only 5k steps:
 
 ## Related Papers
 
+- [\[ICML 2025\] Hierarchical Refinement: Optimal Transport to Infinity and Beyond](../../ICML2025/others/hierarchical_refinement_optimal_transport_to_infinity_and_beyond.md)
 - [\[NeurIPS 2025\] Estimation of Stochastic Optimal Transport Maps](../../NeurIPS2025/others/estimation_of_stochastic_optimal_transport_maps.md)
 - [\[NeurIPS 2025\] Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport](../../NeurIPS2025/others/bispectral_ot_dataset_comparison_using_symmetry-aware_optimal_transport.md)
-- [\[ICCV 2025\] C4D: 4D Made from 3D through Dual Correspondences](c4d_4d_made_from_3d_through_dual_correspondences.md)
-- [\[NeurIPS 2025\] Rethinking PCA Through Duality](../../NeurIPS2025/others/rethinking_pca_through_duality.md)
-- [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](../../NeurIPS2025/others/impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
+- [\[ICML 2025\] Lightspeed Geometric Dataset Distance via Sliced Optimal Transport](../../ICML2025/others/lightspeed_geometric_dataset_distance_via_sliced_optimal_transport.md)
+- [\[ACL 2025\] Quantifying Lexical Semantic Shift via Unbalanced Optimal Transport](../../ACL2025/others/quantifying_lexical_semantic_shift_via_unbalanced_optimal_transport.md)
 
 </div>
 

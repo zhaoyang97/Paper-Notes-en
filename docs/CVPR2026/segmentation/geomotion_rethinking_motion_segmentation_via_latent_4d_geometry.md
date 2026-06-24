@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoMotion: Rethinking Motion Segmentation via Latent 4D Geometry
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] GeoMotion reformulates motion segmentation from "explicit estimation of camera pose and point correspondence + iterative optimization" to "direct feed-forward decoding of motion masks from latent geometric features of a pre-trained 4D reconstruction model (π3)". Utilizing a feature aggregation module and a 5-layer self
+  [CVPR 2026][Segmentation][Motion segmentation] GeoMotion reformulates motion segmentation from "explicit estimation of camera pose and point correspondence + iterative optimization" to "direct feed-forward decoding of motion masks from latent geometric features of a pre-trained 4D reconstruction model (π3)". Utilizing a feature aggregation module and a 5-layer self-attention decoder, it decouples object motion from camera motion in a single forward pass. It achieves SOTA on m…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Motion segmentation"
+  - "4D geometric priors"
+  - "feed-forward model"
+  - "optical flow"
+  - "π3 reconstruction"
 date: 2026-05-08
-content_hash: 3e4b12800aea507e
+content_hash: b388659efd00f803
 ---
+
 # GeoMotion: Rethinking Motion Segmentation via Latent 4D Geometry
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ Ours leads significantly, highlighting the advantages of a "motion-aware learnin
 
 ## Related Papers
 
-- [\[CVPR 2026\] Moving Border Ownership for Event-based Motion Segmentation](moving_border_ownership_for_event-based_motion_segmentation.md)
 - [\[CVPR 2026\] VGGT-Segmentor: Geometry-Enhanced Cross-View Segmentation](vggt-segmentor_geometry-enhanced_cross-view_segmentation.md)
 - [\[CVPR 2026\] Rethinking Box Supervision: Bias-Free Weakly Supervised Medical Segmentation](rethinking_box_supervision_bias-free_weakly_supervised_medical_segmentation.md)
-- [\[CVPR 2026\] GeCo: Geometry-Consistent Regularization for Domain Generalized Semantic Segmentation](geco_geometry-consistent_regularization_for_domain_generalized_semantic_segmenta.md)
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
+- [\[ECCV 2024\] Un-EVIMO: Unsupervised Event-based Independent Motion Segmentation](../../ECCV2024/segmentation/un-evimo_unsupervised_event-based_independent_motion_segmentation.md)
+- [\[CVPR 2025\] Rethinking Query-Based Transformer for Continual Image Segmentation](../../CVPR2025/segmentation/rethinking_query-based_transformer_for_continual_image_segmentation.md)
 
 </div>
 

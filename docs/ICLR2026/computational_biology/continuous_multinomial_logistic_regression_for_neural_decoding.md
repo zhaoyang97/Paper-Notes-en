@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Continuous Multinomial Logistic Regression for Neural Decoding
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper extends the classical multinomial logistic regression (MLR) from "finite discrete categories" to a "continuous output space," proposing CMLR: replacing discrete category weights with a set of smooth weight functions $w_d(y)$ under Gaussian process priors. This maps neural population activity into a complete
+  [ICLR2026][Computational Biology][Neural decoding] This paper extends the classical multinomial logistic regression (MLR) from "finite discrete categories" to a "continuous output space," proposing CMLR: replacing discrete category weights with a set of smooth weight functions $w_d(y)$ under Gaussian process priors. This maps neural population activity into a complete conditional probability density over continuous variables (orientation, position, velocity…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Neural decoding"
+  - "multinomial logistic regression"
+  - "Gaussian processes"
+  - "conditional density estimation"
+  - "variational inference"
 date: 2026-05-08
-content_hash: b92dd61adc9caab9
+content_hash: 9a782aafde231a74
 ---
+
 # Continuous Multinomial Logistic Regression for Neural Decoding
 
 **Conference**: ICLR2026  
@@ -144,10 +150,10 @@ The training target is the ELBO described above, consisting of "expected log-lik
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond Grid-Locked Voxels: Neural Response Functions for Continuous Brain Encoding](beyond_grid-locked_voxels_neural_response_functions_for_continuous_brain_encodin.md)
+- [\[ICLR 2026\] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding](a_cross-species_neural_foundation_model_for_end-to-end_speech_decoding.md)
 - [\[ICLR 2026\] Decoding Dynamic Visual Experience from Calcium Imaging via Cell-Pattern-Aware Pretraining](decoding_dynamic_visual_experience_from_calcium_imaging_via_cell-pattern-aware_p.md)
 - [\[ICLR 2026\] Pretraining with Re-parametrized Self-Attention: Unlocking Generalization in SNN-Based Neural Decoding Across Time, Brains, and Tasks](pretraining_with_re-parametrized_self-attention_unlocking_generalizationin_snn-b.md)
 - [\[NeurIPS 2025\] MEIcoder: Decoding Visual Stimuli from Neural Activity by Leveraging Most Exciting Inputs](../../NeurIPS2025/computational_biology/meicoder_decoding_visual_stimuli_from_neural_activity_by_leveraging_most_excitin.md)
-- [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
 
 </div>
 

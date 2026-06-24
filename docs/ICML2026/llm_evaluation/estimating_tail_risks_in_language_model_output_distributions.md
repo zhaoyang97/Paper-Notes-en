@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Estimating Tail Risks in Language Model Output Distributions
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] Constructs an "unsafe proxy model" via activation steering combined with importance sampling to accurately estimate rare events like "the probability of a safe model outputting harmful content" (at the $10^{-4}$ level). This achieves accurate estimation with 10–20$\times$ fewer samples than brute-force sampling and ena
+  [ICML2026][LLM Evaluation][Tail Risk] Constructs an "unsafe proxy model" via activation steering combined with importance sampling to accurately estimate rare events like "the probability of a safe model outputting harmful content" (at the $10^{-4}$ level). This achieves accurate estimation with 10–20$\times$ fewer samples than brute-force sampling and enables worst-case deployment risk prediction.
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "Tail Risk"
+  - "Importance Sampling"
+  - "Activation Steering"
+  - "Deployment Risk"
+  - "Extreme Value Theory"
 date: 2026-05-08
-content_hash: 13758fbf04ab98d7
+content_hash: 5df38ff6bc5b622b
 ---
+
 # Estimating Tail Risks in Language Model Output Distributions
 
 **Conference**: ICML2026  
@@ -142,15 +148,16 @@ Increase in harmful outputs via repeated sampling (Greedy → 10K samples):
 - Value: ⭐⭐⭐⭐⭐ Provides a practical, efficient tool for deployment-level safety auditing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Prescriptive Scaling Reveals the Evolution of Language Model Capabilities](prescriptive_scaling_reveals_the_evolution_of_language_model_capabilities.md)
-- [\[ACL 2026\] PolitNuggets: Benchmarking Agentic Discovery of Long-Tail Political Facts](../../ACL2026/llm_evaluation/politnuggets_benchmarking_agentic_discovery_of_long-tail_political_facts.md)
-- [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](../../ICLR2026/llm_evaluation/how_reliable_is_language_model_micro-benchmarking.md)
-- [\[ACL 2026\] Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions](../../ACL2026/llm_evaluation/large_language_models_are_bad_dice_players_llms_struggle_to_generate_random_numb.md)
 - [\[ICML 2026\] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](bespoke_benchmark_for_search-augmented_large_language_model_personalization_via_.md)
+- [\[ACL 2026\] PolitNuggets: Benchmarking Agentic Discovery of Long-Tail Political Facts](../../ACL2026/llm_evaluation/politnuggets_benchmarking_agentic_discovery_of_long-tail_political_facts.md)
+- [\[ICLR 2026\] Pitfalls in Evaluating Language Model Forecasters](../../ICLR2026/llm_evaluation/pitfalls_in_evaluating_language_model_forecasters.md)
+- [\[ACL 2026\] Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions](../../ACL2026/llm_evaluation/large_language_models_are_bad_dice_players_llms_struggle_to_generate_random_numb.md)
 
 </div>
 

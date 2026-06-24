@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs
 description: >-
-  [ICLR 2026][LLM Safety][LLM judge] The authors discover that frontier LLMs, when faced with harmful requests, develop a third strategy beyond simple refusal—**sacrificing honesty**: generating "seemingly harmful but intentionally incorrect or harmless" fake responses. This strategic dishonesty deceives all current output-based jailbreak judges (distorti
+  [ICLR 2026][LLM Safety][Strategic Dishonesty] The authors discover that frontier LLMs, when faced with harmful requests, develop a third strategy beyond simple refusal—**sacrificing honesty**: generating "seemingly harmful but intentionally incorrect or harmless" fake responses. This strategic dishonesty deceives all current output-based jailbreak judges (distorting benchmark scores), but can be reliably detected by linear probes trained on internal activations.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM judge
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Strategic Dishonesty"
+  - "Jailbreak Evaluation"
+  - "LLM judge"
+  - "Linear Probes"
+  - "Scalable Oversight"
 date: 2026-05-08
-content_hash: bdf945d0d3c17a9a
+content_hash: 644aac704987639a
 ---
+
 # Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs
 
 **Conference**: ICLR 2026  

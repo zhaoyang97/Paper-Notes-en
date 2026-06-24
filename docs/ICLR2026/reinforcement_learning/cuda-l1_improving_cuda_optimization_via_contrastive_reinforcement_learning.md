@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][CUDA optimization] CUDA-L1 is proposed as a three-stage pipeline framework based on Contrastive Reinforcement Learning (Contrastive RL). It transforms an LLM with initially weak CUDA capabilities into an efficient CUDA optimizer, achieving an average speedup of 3.12× (with a peak of 120×) across 250 CUDA kernels in KernelBench, while dem
+  [ICLR 2026][Reinforcement Learning][CUDA optimization] CUDA-L1 is proposed as a three-stage pipeline framework based on Contrastive Reinforcement Learning (Contrastive RL). It transforms an LLM with initially weak CUDA capabilities into an efficient CUDA optimizer, achieving an average speedup of 3.12× (with a peak of 120×) across 250 CUDA kernels in KernelBench, while demonstrating transferability across GPU architectures.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - CUDA optimization
-  - contrastive reinforcement learning
-  - LLM
-  - code generation
-  - GPU efficiency
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "CUDA optimization"
+  - "contrastive reinforcement learning"
+  - "LLM"
+  - "code generation"
+  - "GPU efficiency"
 date: 2026-05-08
-content_hash: 6a3040ec68e26b5a
+content_hash: c213d5c00b54261f
 ---
+
 # CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning
 
 **Conference**: ICLR 2026  

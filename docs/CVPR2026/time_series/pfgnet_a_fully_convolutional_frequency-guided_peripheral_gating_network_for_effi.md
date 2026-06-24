@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning
 description: >-
-  [CVPR 2026][Time Series][Paper Note] PFGNet is a pure convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses via Pixel-level Frequency-guided Gating (PFG) and applies learnable center suppression. Mimicking the center-surround band-pass filtering mechanism of biological vision, it achieve
+  [CVPR 2026][Time Series][Spatiotemporal predictive learning] PFGNet is a pure convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses via Pixel-level Frequency-guided Gating (PFG) and applies learnable center suppression. Mimicking the center-surround band-pass filtering mechanism of biological vision, it achieves SOTA or near-SOTA performance on Moving MNIST, TaxiBJ, KTH, and Human3.6M benchmarks with minimal…
 tags:
-  - CVPR 2026
-  - Time Series
+  - "CVPR 2026"
+  - "Time Series"
+  - "Spatiotemporal predictive learning"
+  - "Large kernel convolution"
+  - "Frequency-guided gating"
+  - "center-surround suppression"
+  - "Pure convolutional architecture"
 date: 2026-05-08
-content_hash: 1e99ce274aa96c4f
+content_hash: b5c2435405c780e6
 ---
+
 # PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning
 
 **Conference**: CVPR 2026  
@@ -154,15 +160,16 @@ On Moving MNIST, PFGNet achieves the best MSE of 15.2. On Human3.6M, it reaches 
 - **Value**: ⭐⭐⭐⭐ — High practicality due to pure convolution and extreme efficiency; the PFG module is a potential plug-and-play component.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](../../NeurIPS2025/time_series/simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
+- [\[ICLR 2026\] Improving Extreme Wind Prediction with Frequency-Informed Learning](../../ICLR2026/time_series/improving_extreme_wind_prediction_with_frequency-informed_learning.md)
 - [\[ICML 2025\] TQNet: Temporal Query Network for Efficient Multivariate Time Series Forecasting](../../ICML2025/time_series/temporal_query_network_for_efficient_multivariate_time_series_forecasting.md)
 - [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](../../ICLR2026/time_series/towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
-- [\[ECCV 2024\] Semantically Guided Representation Learning For Action Anticipation](../../ECCV2024/time_series/semantically_guided_representation_learning_for_action_anticipation.md)
-- [\[AAAI 2026\] iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning](../../AAAI2026/time_series/beyond_observations_reconstruction_error-guided_irregularly_sampled_time_series_.md)
+- [\[ICML 2026\] Spatiotemporal Imputation with Graph-Informed Flow Matching](../../ICML2026/time_series/spatiotemporal_imputation_with_graph-informed_flow_matching.md)
 
 </div>
 

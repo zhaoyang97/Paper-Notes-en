@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] To address the problem where end-to-end RL, which "only rewards final success," reinforces redundant and deviated reasoning paths, RLVMR enables agents to explicitly label cognitive steps using four tags—`<planning>/<explore>/<reflection>/<monitor>`. It issues verifiable dense rewards for these meta-reasoning behaviors
+  [ICLR 2026][Reinforcement Learning][Long-horizon Agents] To address the problem where end-to-end RL, which "only rewards final success," reinforces redundant and deviated reasoning paths, RLVMR enables agents to explicitly label cognitive steps using four tags—`<planning>/<explore>/<reflection>/<monitor>`. It issues verifiable dense rewards for these meta-reasoning behaviors via programmatic rules, optimized with GRPO-MR using dual-level advantages. A 7B model achieved an 83.…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Long-horizon Agents"
+  - "Process Rewards"
+  - "Metacognition"
+  - "GRPO"
+  - "Verifiable Rewards"
 date: 2026-05-08
-content_hash: 1f88a9b50565d115
+content_hash: 492725ded204f56d
 ---
+
 # RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents
 
 **Conference**: ICLR 2026  
@@ -116,8 +121,20 @@ On the most difficult ALFWorld L2 split, the 7B model reached 83.6%, a **16.4 pe
 - Value: ⭐⭐⭐⭐ Provides a robust, anti-hacking paradigm for process-level supervision in long-horizon agents.
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
+- [\[ICLR 2026\] RLVER: Reinforcement Learning with Verifiable Emotion Rewards for Empathetic Agents](rlver_reinforcement_learning_with_verifiable_emotion_rewards_for_empathetic_agen.md)
+- [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
+- [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
+- [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)

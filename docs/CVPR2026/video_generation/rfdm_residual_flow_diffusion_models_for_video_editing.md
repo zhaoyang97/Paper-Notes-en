@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RFDM: Residual Flow Diffusion Models for Video Editing
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] RFDM transforms a 2D image-to-image (I2I) diffusion model into a frame-by-frame autoregressive video editor. By "shifting" the noise mean of the current frame relative to the previous frame's prediction, the model learns inter-frame residuals rather than full frames. This achieves temporal consistency and editing fidel
+  [CVPR 2026][Video Generation][Instructive Video Editing] RFDM transforms a 2D image-to-image (I2I) diffusion model into a frame-by-frame autoregressive video editor. By "shifting" the noise mean of the current frame relative to the previous frame's prediction, the model learns inter-frame residuals rather than full frames. This achieves temporal consistency and editing fidelity comparable to 3D spatio-temporal models with **zero additional computational cost** and support for…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Instructive Video Editing"
+  - "Autoregressive Diffusion"
+  - "Residual Flow"
+  - "Exposure Bias"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: 44a145e9507bd8cb
+content_hash: 83f6466da850b854
 ---
+
 # RFDM: Residual Flow Diffusion Models for Video Editing
 
 **Conference**: CVPR 2026  
@@ -139,15 +145,15 @@ DAVIS tracking experiments showed that switching from "Full Frame" to "Residual 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement](flowportal_residual-corrected_flow_for_training-free_video_relighting_and_backgr.md)
 - [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
 - [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
-- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](p-flow_prompting_visual_effects_generation.md)
-- [\[CVPR 2026\] Latent-Compressed Variational Autoencoder for Video Diffusion Models](latent-compressed_variational_autoencoder_for_video_diffusion_models.md)
+- [\[CVPR 2026\] BAgger: Backwards Aggregation for Mitigating Drift in Autoregressive Video Diffusion Models](bagger_backwards_aggregation_for_mitigating_drift_in_autoregressive_video_diffus.md)
+- [\[CVPR 2026\] Flowception: Temporally Expansive Flow Matching for Video Generation](flowception_temporally_expansive_flow_matching_for_video_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty
 description: >-
-  [ACL 2026][Model Compression][Paper Note] The E-GRM framework is proposed to estimate uncertainty using the convergence behavior of model-internal parallel decoding. CoT reasoning is triggered only when necessary, and a discriminative scorer trained with hybrid loss evaluates reasoning path quality. This achieves SOTA performance on multiple reward model bench
+  [ACL 2026 Findings][Model Compression][Generative Reward Model] The E-GRM framework is proposed to estimate uncertainty using the convergence behavior of model-internal parallel decoding. CoT reasoning is triggered only when necessary, and a discriminative scorer trained with hybrid loss evaluates reasoning path quality. This achieves SOTA performance on multiple reward model benchmarks while reducing inference latency by 62%.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Generative Reward Model"
+  - "Dynamic CoT Triggering"
+  - "Model-Internal Uncertainty"
+  - "Discriminative Scoring"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: eac9fc55f4b31555
+content_hash: 0aa81f3b3fb00f8b
 ---
+
 # Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty
 
 **Conference**: ACL 2026 Findings  
@@ -143,10 +149,10 @@ Training involves: (1) An SFT stage mixing short reasoning samples (direct answe
 ## Related Papers
 
 - [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](latent-condensed_transformer_for_efficient_long_context_modeling.md)
+- [\[ICLR 2026\] Q&C: When Quantization Meets Cache in Efficient Generation](../../ICLR2026/model_compression/qc_when_quantization_meets_cache_in_efficient_generation.md)
 - [\[ICML 2026\] When Shared Knowledge Hurts: Spectral Over-Accumulation in Model Merging](../../ICML2026/model_compression/when_shared_knowledge_hurts_spectral_over-accumulation_in_model_merging.md)
 - [\[ACL 2026\] Cognitive-Uncertainty Guided Knowledge Distillation for Accurate Classification of Student Misconceptions](cognitive-uncertainty_guided_knowledge_distillation_for_accurate_classification_.md)
 - [\[ICML 2025\] Bring Reason to Vision: Understanding Perception and Reasoning through Model Merging](../../ICML2025/model_compression/bring_reason_to_vision_understanding_perception_and_reasoning_through_model_merg.md)
-- [\[CVPR 2026\] Progressive Supernet Training for Efficient Visual Autoregressive Modeling](../../CVPR2026/model_compression/progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)
 
 </div>
 

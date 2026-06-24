@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Log Likelihood: Probability-Based Objectives for Supervised Fine-Tuning across the Model Capability Continuum
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] This paper systematically investigates the behavior of probability-based objective functions in SFT, discovering that the standard NLL is not universally optimal: on tasks where the model has a strong prior, prior-leaning objectives like $-p$ significantly outperform NLL (with gains up to 16%). Conversely, NLL remains
+  [ICML 2026][LLM Evaluation][Supervised Fine-Tuning] This paper systematically investigates the behavior of probability-based objective functions in SFT, discovering that the standard NLL is not universally optimal: on tasks where the model has a strong prior, prior-leaning objectives like $-p$ significantly outperform NLL (with gains up to 16%). Conversely, NLL remains superior on tasks with weak priors, revealing an objective selection principle governed by the model-capabil…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Supervised Fine-Tuning"
+  - "Loss Functions"
+  - "Model Capability Continuum"
+  - "Probability Objectives"
+  - "Prior Leaning"
 date: 2026-05-08
-content_hash: 73f5f70fa6d2ea0c
+content_hash: ad547bf7468718b9
 ---
+
 # Beyond Log Likelihood: Probability-Based Objectives for Supervised Fine-Tuning across the Model Capability Continuum
 
 **Conference**: ICML 2026  
@@ -112,9 +118,9 @@ Proposition 3.2 proves that the peak of $W_f$ for convex functions falls in $[0,
 
 - [\[ICLR 2026\] Log Probability Tracking of LLM APIs](../../ICLR2026/llm_evaluation/log_probability_tracking_of_llm_apis.md)
 - [\[ICML 2026\] AGZO: Activation-Guided Zeroth-Order Optimization for LLM Fine-Tuning](agzo_activation-guided_zeroth-order_optimization_for_llm_fine-tuning.md)
+- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](../../ICLR2026/llm_evaluation/sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
 - [\[ICCV 2025\] On the Robustness Tradeoff in Fine-Tuning](../../ICCV2025/llm_evaluation/on_the_robustness_tradeoff_in_fine-tuning.md)
 - [\[AAAI 2026\] Low-Rank Curvature for Zeroth-Order Optimization in LLM Fine-Tuning](../../AAAI2026/llm_evaluation/low-rank_curvature_for_zeroth-order_optimization_in_llm_fine-tuning.md)
-- [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](../../NeurIPS2025/llm_evaluation/hyperbolic_fine-tuning_for_large_language_models.md)
 
 </div>
 

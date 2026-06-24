@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] S2AM3D: Scale-controllable Part Segmentation of 3D Point Clouds
 description: >-
-  [CVPR 2026][3D Vision][SAM] Ours proposes S2AM3D, a point cloud part segmentation framework that merges 2D pre-trained priors with 3D contrastive supervision. It employs a point-consistent encoder to obtain globally consistent point features and a scale-aware prompt decoder to achieve continuous and controllable segmentation granularity adjustmen
+  [CVPR2026][3D Vision][Point cloud part segmentation] Ours proposes S2AM3D, a point cloud part segmentation framework that merges 2D pre-trained priors with 3D contrastive supervision. It employs a point-consistent encoder to obtain globally consistent point features and a scale-aware prompt decoder to achieve continuous and controllable segmentation granularity adjustment, significantly outperforming existing methods across multiple benchmarks.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SAM
+  - "CVPR2026"
+  - "3D Vision"
+  - "Point cloud part segmentation"
+  - "multi-granularity control"
+  - "contrastive learning"
+  - "joint 2D-3D supervision"
+  - "SAM"
 date: 2026-05-08
-content_hash: 21e75106b0d20615
+content_hash: bf12b6ac5ba8e4e4
 ---
+
 # S2AM3D: Scale-controllable Part Segmentation of 3D Point Clouds
 
 **Conference**: CVPR2026  
@@ -166,11 +171,11 @@ The dynamic weight $\beta = (1-\pi)/(\pi + \varepsilon)$ alleviates class imbala
 
 ## Related Papers
 
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] GeoSAM2: Unleashing the Power of SAM2 for 3D Part Segmentation](geosam2_unleashing_the_power_of_sam2_for_3d_part_segmentation.md)
+- [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](../../ICLR2026/3d_vision/holopart_generative_3d_part_amodal_segmentation.md)
+- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](vista4d_video_reshooting_with_4d_point_clouds.md)
 - [\[ICLR 2026\] PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data](../../ICLR2026/3d_vision/partsam_a_scalable_promptable_part_segmentation_model_trained_on_native_3d_data.md)
 - [\[ECCV 2024\] 3×2: 3D Object Part Segmentation by 2D Semantic Correspondences](../../ECCV2024/3d_vision/3x2_3d_object_part_segmentation_by_2d_semantic_correspondenc.md)
-- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](vista4d_video_reshooting_with_4d_point_clouds.md)
 
 </div>
 

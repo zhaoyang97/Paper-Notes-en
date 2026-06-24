@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stereo Any Video: Temporally Consistent Stereo Matching
 description: >-
-  [ICCV2025][3D Vision][Video stereo matching] This paper proposes Stereo Any Video, a framework that achieves spatially accurate and temporally consistent video stereo matching without relying on camera poses or optical f…
+  [ICCV2025][3D Vision][Video stereo matching] This paper proposes Stereo Any Video, a framework that achieves spatially accurate and temporally consistent video stereo matching without relying on camera poses or optical flow. It integrates three core modules — monocular video depth foundation model priors (Video Depth Anything), all-to-all-pair correlation, and temporal convex upsampling — attaining state-of-the-art performance under zero-shot settings across multiple benchmar…
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "cost volume"
   - "disparity estimation"
 date: 2026-05-08
-content_hash: b90e47c9e5da3863
+content_hash: 8a8ff680dd7abb4c
 ---
 
 # Stereo Any Video: Temporally Consistent Stereo Matching
@@ -160,11 +160,11 @@ The proposed method has the fewest trainable parameters (9.4M) but the highest c
 
 ## Related Papers
 
+- [\[ECCV 2024\] TC-Stereo: Temporally Consistent Stereo Matching](../../ECCV2024/3d_vision/temporally_consistent_stereo_matching.md)
 - [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](zerostereo_zero-shot_stereo_matching_from_single_images.md)
-- [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](../../CVPR2026/3d_vision/lite_any_stereo_efficient_zero-shot_stereo_matching.md)
 - [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
-- [\[ICCV 2025\] BANet: Bilateral Aggregation Network for Mobile Stereo Matching](banet_bilateral_aggregation_network_for_mobile_stereo_matching.md)
-- [\[ICCV 2025\] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts](learning_robust_stereo_matching_in_the_wild_with_selective_mixture-of-experts.md)
+- [\[CVPR 2025\] FoundationStereo: Zero-Shot Stereo Matching](../../CVPR2025/3d_vision/foundationstereo_zero-shot_stereo_matching.md)
+- [\[ICCV 2025\] Thermal Polarimetric Multi-view Stereo](thermal_polarimetric_multi-view_stereo.md)
 
 </div>
 

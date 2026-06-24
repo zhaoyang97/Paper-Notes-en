@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Content Fuzzing for Escaping Information Cocoons on Social Media
 description: >-
-  [ACL 2026][Social Computing][Paper Note] Proposes ContentFuzz, a confidence-guided fuzzing framework from the content creator's perspective. It uses LLMs to rewrite posts to flip machine-inferred stance labels while keeping human-interpreted meaning unchanged, thereby breaking social media information cocoons.
+  [ACL 2026 Findings][Social Computing][Information Cocoon] Proposes ContentFuzz, a confidence-guided fuzzing framework from the content creator's perspective. It uses LLMs to rewrite posts to flip machine-inferred stance labels while keeping human-interpreted meaning unchanged, thereby breaking social media information cocoons.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026 Findings"
+  - "Social Computing"
+  - "Information Cocoon"
+  - "Stance Detection"
+  - "Fuzzing"
+  - "Content Rewriting"
+  - "Recommender Systems"
 date: 2026-05-08
-content_hash: 1a3c2a708ff9c144
+content_hash: b3ccd1a46bde32a6
 ---
+
 # Content Fuzzing for Escaping Information Cocoons on Social Media
 
 **Conference**: ACL 2026 Findings  
@@ -127,8 +133,8 @@ ContentFuzz is an inference-time framework and requires no training. The optimiz
 - [\[ACL 2026\] Synthia: Scalable Grounded Persona Generation from Social Media Data](synthia_scalable_grounded_persona_generation_from_social_media_data.md)
 - [\[ICML 2026\] Three Years of r/ChatGPT: Societal Impact Evaluations from Social Media Data](../../ICML2026/social_computing/three_years_of_rchatgpt_societal_impact_evaluations_from_social_media_data.md)
 - [\[ACL 2026\] DIA-HARM: Dialectal Disparities in Harmful Content Detection Across 50 English Dialects](dia-harm_dialectal_disparities_in_harmful_content_detection_across_50_english_di.md)
+- [\[ICLR 2026\] The Value of Information in Human-AI Decision-Making](../../ICLR2026/social_computing/the_value_of_information_in_human-ai_decision-making.md)
 - [\[ACL 2026\] Bayesian Social Deduction with Graph-Informed Language Models](bayesian_social_deduction_with_graph-informed_language_models.md)
-- [\[ACL 2026\] The Proxy Presumption: From Semantic Embeddings to Valid Social Measures](the_proxy_presumption_from_semantic_embeddings_to_valid_social_measures.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM Safety Alignment is Divergence Estimation in Disguise
 description: >-
-  [NeurIPS 2025][LLM Alignment][safety alignment] This paper establishes a unified theoretical framework demonstrating that alignment methods such as RLHF, DPO, KTO…
+  [NeurIPS 2025][LLM Alignment][safety alignment] This paper establishes a unified theoretical framework demonstrating that alignment methods such as RLHF, DPO, KTO, and BCO are essentially estimating the divergence between a safe distribution $\mathcal{D}^+$ and an unsafe distribution $\mathcal{D}^-$. This perspective explains the latent-space separation phenomenon observed after alignment. Building on this insight, the paper proposes KLDO, a KL divergence-based alignment meth…
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -13,7 +13,7 @@ tags:
   - "KLDO"
   - "representation separation"
 date: 2026-05-08
-content_hash: e58f2295873bb378
+content_hash: 2336cd887f883c84
 ---
 
 # LLM Safety Alignment is Divergence Estimation in Disguise
@@ -131,8 +131,8 @@ KLDO achieves the best average rank across all 5 models (1.4), followed by BCO (
 - [\[NeurIPS 2025\] Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons](towards_understanding_safety_alignment_a_mechanistic_perspective_from_safety_neu.md)
 - [\[AAAI 2026\] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment](../../AAAI2026/llm_alignment/differentiated_directional_intervention_a_framework_for_evading_llm_safety_align.md)
 - [\[ICML 2026\] Curriculum Learning for Safety Alignment](../../ICML2026/llm_alignment/curriculum_learning_for_safety_alignment.md)
+- [\[ACL 2025\] LSSF: Safety Alignment via Low-Rank Safety Subspace Fusion](../../ACL2025/llm_alignment/lssf_safety_subspace.md)
 - [\[ICLR 2026\] Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment](../../ICLR2026/llm_alignment/align_once_benefit_multilingually_enforcing_multilingual_consistency_for_llm_saf.md)
-- [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](../../ICLR2026/llm_alignment/superficial_safety_alignment_hypothesis.md)
 
 </div>
 

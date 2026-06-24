@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Kevin: Multi-Turn RL for Generating CUDA Kernels
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] This work models the inherently iterative engineering task of "writing GPU kernels" as a multi-turn RL problem. It enables credit assignment within each generation-execution-refinement cycle. Kevin, the first model optimized for CUDA kernels via multi-turn RL, improves accuracy from 56% to 82% and average speedup from
+  [ICLR 2026][Reinforcement Learning][Multi-turn RL] This work models the inherently iterative engineering task of "writing GPU kernels" as a multi-turn RL problem. It enables credit assignment within each generation-execution-refinement cycle. Kevin, the first model optimized for CUDA kernels via multi-turn RL, improves accuracy from 56% to 82% and average speedup from 0.53x to 1.10x, surpassing frontier models such as o4-mini.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-turn RL"
+  - "CUDA Kernel Generation"
+  - "GRPO"
+  - "Verifiable Rewards"
+  - "Test-time Scaling"
+  - "Reward Hacking"
 date: 2026-05-08
-content_hash: a87300eb6e462542
+content_hash: ac56ce6b9e2b0f76
 ---
+
 # Kevin: Multi-Turn RL for Generating CUDA Kernels
 
 **Conference**: ICLR 2026  

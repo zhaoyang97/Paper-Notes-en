@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QuietPrune: Query-Guided Early Token Pruning for Vision-Language Models
 description: >-
-  [CVPR 2026][LLM Efficiency][Paper Note] QuietPrune proposes **query-guided early pruning**: visual tokens unrelated to the text query are pruned during the ViT forward process rather than after it. By utilizing a lightweight adapter initialized through an **inverse transformation** of the VLM projector, the text query is converted into a visual-domain `[Q-CL
+  [CVPR 2026][LLM Efficiency][Visual token pruning] QuietPrune proposes **query-guided early pruning**: visual tokens unrelated to the text query are pruned during the ViT forward process rather than after it. By utilizing a lightweight adapter initialized through an **inverse transformation** of the VLM projector, the text query is converted into a visual-domain `[Q-CLS]` token to provide guidance. Pruning is performed in a 2×2 semi-structured manner with redundant token aggre…
 tags:
-  - CVPR 2026
-  - LLM Efficiency
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "Visual token pruning"
+  - "VLM acceleration"
+  - "early pruning"
+  - "query-guided"
+  - "projector inverse transformation"
 date: 2026-05-08
-content_hash: 3aa6953df33cdb27
+content_hash: 078e511cb265af30
 ---
+
 # QuietPrune: Query-Guided Early Token Pruning for Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -113,15 +119,16 @@ QuietPrune consistently outperforms PACT, SAINT, DivPrune, AIM, FastV, and VisPr
 - Value: ⭐⭐⭐⭐⭐ Shifts acceleration focus to the neglected ViT internal process; highly practical for VLM deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](../../ICLR2026/llm_efficiency/knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
 - [\[ACL 2025\] Boosting Long-Context Information Seeking via Query-Guided Activation Refilling](../../ACL2025/llm_efficiency/boosting_long-context_information_seeking_via_query-guided_activation_refilling.md)
+- [\[ICLR 2026\] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing](../../ICLR2026/llm_efficiency/scaling_large_vision-language_model_rl_training_via_efficient_load_balancing.md)
+- [\[ICLR 2026\] Distilling to Hybrid Attention Models via KL-Guided Layer Selection](../../ICLR2026/llm_efficiency/distilling_to_hybrid_attention_models_via_kl-guided_layer_selection.md)
 - [\[NeurIPS 2025\] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models](../../NeurIPS2025/llm_efficiency/l-mtp_leap_multi-token_prediction_beyond_adjacent_context_for_large_language_mod.md)
-- [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](../../ICML2026/llm_efficiency/team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
-- [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](../../ICLR2026/llm_efficiency/expert_divergence_learning_for_moe-based_language_models.md)
-- [\[ICML 2026\] Sparser Block-Sparse Attention via Token Permutation](../../ICML2026/llm_efficiency/sparser_block-sparse_attention_via_token_permutation.md)
 
 </div>
 

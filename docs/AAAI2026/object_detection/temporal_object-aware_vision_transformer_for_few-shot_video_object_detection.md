@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Few-Shot Detection] This paper proposes an object-aware temporal modeling framework that achieves cross-frame temporal consistency through selective propagation of high-confidence detection…
+  [AAAI 2026][Object Detection][Few-Shot Detection] This paper proposes an object-aware temporal modeling framework that achieves cross-frame temporal consistency through selective propagation of high-confidence detection features. Combined with a pretrained vision-language encoder (OWL-ViT) and a few-shot detection head, the method achieves an average improvement of 3.7%–5.3% AP across four video few-shot detection benchmarks.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "OWL-ViT"
   - "Object-Awareness"
 date: 2026-05-08
-content_hash: 36ba08fffade3844
+content_hash: b8c8fbb4e1cea274
 ---
 
 # Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection
@@ -227,11 +227,11 @@ The proposed method maintains consistent advantages across all shot settings.
 
 ## Related Papers
 
+- [\[CVPR 2026\] When Transformers Meet Mamba: A Hybrid Transformer-Mamba Network for Video Object Detection](../../CVPR2026/object_detection/when_transformers_meet_mamba_a_hybrid_transformer-mamba_network_for_video_object.md)
 - [\[ICLR 2026\] FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion](../../ICLR2026/object_detection/fsod-vfm_few-shot_object_detection_with_vision_foundation_models_and_graph_diffu.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](../../CVPR2026/object_detection/visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 - [\[AAAI 2026\] TubeRMC: Tube-conditioned Reconstruction with Mutual Constraints for Weakly-supervised Spatio-Temporal Video Grounding](tubermc_tube-conditioned_reconstruction_with_mutual_constraints_for_weakly-super.md)
 - [\[AAAI 2026\] Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory](commonality_in_few_few-shot_multimodal_anomaly_detection_via_hypergraph-enhanced.md)
-- [\[AAAI 2026\] Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection](beyond_boundaries_leveraging_vision_foundation_models_for_so.md)
 
 </div>
 

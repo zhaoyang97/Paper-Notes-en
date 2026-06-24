@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] OneThinker: All-in-one Reasoning Model for Image and Video
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] OneThinker utilizes an 8B model to unify 10 basic visual tasks across image and video (QA, captioning, spatio-temporal grounding, tracking, and segmentation) into a "think-then-structured-output" reasoning paradigm. It introduces EMA-GRPO to resolve optimization imbalances caused by significant differences in reward ma
+  [CVPR 2026][VLM Reasoning][Multimodal Reasoning Generalist] OneThinker utilizes an 8B model to unify 10 basic visual tasks across image and video (QA, captioning, spatio-temporal grounding, tracking, and segmentation) into a "think-then-structured-output" reasoning paradigm. It introduces EMA-GRPO to resolve optimization imbalances caused by significant differences in reward magnitudes and densities across multiple tasks, outperforming specialized models of comparable size ac…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning Generalist"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Multi-task Reward Normalization"
+  - "Image-Video Unification"
 date: 2026-05-08
-content_hash: 62b7d3c859974518
+content_hash: 993452826cf4457f
 ---
+
 # OneThinker: All-in-one Reasoning Model for Image and Video
 
 **Conference**: CVPR 2026  
@@ -156,11 +160,11 @@ Removing/replacing key components (averages across task-related benchmarks):
 
 ## Related Papers
 
-- [\[CVPR 2026\] One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework](one_patch_to_caption_them_all_a_unified_zero-shot_captioning_framework.md)
-- [\[CVPR 2026\] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models](mupo_all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vlms.md)
-- [\[AAAI 2026\] ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration](../../AAAI2026/multimodal_vlm/clearair_a_human-visual-perception-inspired_all-in-one_image_restoration.md)
+- [\[CVPR 2026\] All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models](all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vision-language_model.md)
 - [\[CVPR 2026\] PhysInOne: Visual Physics Learning and Reasoning in One Suite](physisinone_visual_physics_learning_and_reasoning_in_one_suite.md)
-- [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2026\] ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation](realign_generalizable_image_forgery_detection_via_reasoning-aligned_representati.md)
+- [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
 
 </div>
 

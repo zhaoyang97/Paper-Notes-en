@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HEDP: A Hybrid Energy-Distance Prompt-based Framework for Domain Incremental Learning
 description: >-
-  [ICML 2026][AI Safety][CLIP] Drawing physical intuition from Helmholtz free energy, this work trains prompt parameters for each domain to follow an energy curve that is "compressed to boundary $\Theta$ and aligned to midline $\Delta$." During inference, a hybrid weight composed of energy and distance factors is used to combine domain-specific prom
+  [ICML 2026][AI Safety][Domain Incremental Learning] Drawing physical intuition from Helmholtz free energy, this work trains prompt parameters for each domain to follow an energy curve that is "compressed to boundary $\Theta$ and aligned to midline $\Delta$." During inference, a hybrid weight composed of energy and distance factors is used to combine domain-specific prompts, achieving improvements of 1.76 / 3.12 / 2.57 percentage points on unseen domains across CDDB / DomainNe…
 tags:
-  - ICML 2026
-  - AI Safety
-  - CLIP
+  - "ICML 2026"
+  - "AI Safety"
+  - "Domain Incremental Learning"
+  - "Prompt Learning"
+  - "Energy-Based Models"
+  - "Helmholtz Free Energy"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 24534bb9cee38664
+content_hash: c5d4a11a3b0e4707
 ---
+
 # HEDP: A Hybrid Energy-Distance Prompt-based Framework for Domain Incremental Learning
 
 **Conference**: ICML 2026  
@@ -133,15 +138,14 @@ HEDP achieves the best performance on both known and unknown domains simultaneou
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](../../CVPR2026/ai_safety/feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
-- [\[ECCV 2024\] One-stage Prompt-based Continual Learning](../../ECCV2024/ai_safety/one-stage_prompt-based_continual_learning.md)
+- [\[ICLR 2026\] Discrete Latent Features Ablate Adversarial Attack: A Robust Prompt Tuning Framework for VLMs](../../ICLR2026/ai_safety/discrete_latent_features_ablate_adversarial_attack_a_robust_prompt_tuning_framew.md)
 - [\[ECCV 2024\] Noise-Assisted Prompt Learning for Image Forgery Detection and Localization](../../ECCV2024/ai_safety/noise-assisted_prompt_learning_for_image_forgery_detection_and_localization.md)
 - [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](../../CVPR2026/ai_safety/a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
+- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 
 </div>
 

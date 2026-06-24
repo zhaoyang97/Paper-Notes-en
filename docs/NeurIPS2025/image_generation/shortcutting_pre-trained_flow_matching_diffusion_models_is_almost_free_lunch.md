@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Shortcutting Pre-trained Flow Matching Diffusion Models is Almost Free Lunch
 description: >-
-  [NeurIPS 2025][Image Generation][flow matching] This paper proposes SCFM (ShortCutting Flow Matching), an highly efficient post-training distillation method that compresses pre-trained flow matching models (e.g.…
+  [NeurIPS 2025][Image Generation][flow matching] This paper proposes SCFM (ShortCutting Flow Matching), an highly efficient post-training distillation method that compresses pre-trained flow matching models (e.g., Flux with 12B parameters) into 3-step samplers via velocity field self-distillation, requiring less than 1 A100-Day, without step-size embeddings or adversarial distillation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "velocity field consistency"
   - "LoRA"
 date: 2026-05-08
-content_hash: f03b131d0f048f00
+content_hash: 1b72dd39643af054
 ---
 
 # Shortcutting Pre-trained Flow Matching Diffusion Models is Almost Free Lunch
@@ -146,8 +146,8 @@ The LAION-POP dataset (600K samples, with convergence achieved using less than 5
 - [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](../../ICCV2025/image_generation/flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
+- [\[ICML 2025\] Gaussian Mixture Flow Matching Models](../../ICML2025/image_generation/gaussian_mixture_flow_matching_models.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
-- [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
 
 </div>
 

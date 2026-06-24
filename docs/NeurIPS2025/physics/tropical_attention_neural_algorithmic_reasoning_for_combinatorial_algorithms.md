@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tropical Attention: Neural Algorithmic Reasoning for Combinatorial Algorithms
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Tropical geometry] Tropical Attention replaces softmax dot-product attention with tropical algebraic geometry…
+  [NeurIPS 2025][Physics & Scientific Computing][Tropical geometry] Tropical Attention replaces softmax dot-product attention with tropical algebraic geometry, performing piecewise-linear reasoning in tropical projective space to align with the polyhedral decision structures of combinatorial algorithms. It is the first approach to extend neural algorithmic reasoning to NP-hard problems, comprehensively outperforming softmax baselines across three OOD generalization axes: length…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "out-of-distribution generalization"
   - "neural algorithmic reasoning"
 date: 2026-05-08
-content_hash: f200d1a379605736
+content_hash: 9eb03fd73a0633a6
 ---
 
 # Tropical Attention: Neural Algorithmic Reasoning for Combinatorial Algorithms
@@ -126,9 +126,9 @@ The Tropical Transformer pipeline proceeds as follows: (1) map inputs from Eucli
 
 - [\[NeurIPS 2025\] Why Is Attention Sparse in Particle Transformer?](why_is_attention_sparse_in_particle_transformer.md)
 - [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
-- [\[NeurIPS 2025\] Neural Green's Functions](neural_greens_functions.md)
-- [\[NeurIPS 2025\] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon](stable_minima_of_relu_neural_networks_suffer_from_the_curse_of_dimensionality_th.md)
+- [\[ICML 2025\] Causal-PIK: Causality-based Physical Reasoning with a Physics-Informed Kernel](../../ICML2025/physics/causal-pik_causality-based_physical_reasoning_with_a_physics-informed_kernel.md)
 - [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
+- [\[NeurIPS 2025\] Neural Green's Functions](neural_greens_functions.md)
 
 </div>
 

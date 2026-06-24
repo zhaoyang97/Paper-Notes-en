@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Visual Proxy for Compositional Zero-Shot Learning
 description: >-
-  [ICCV 2025][Social Computing][Compositional Zero-Shot Learning] This paper proposes the concept of Visual Proxy — text-guided visual class centers introduced into CZSL for the first time — and jointly optimizes textual p…
+  [ICCV 2025][Social Computing][Compositional Zero-Shot Learning] This paper proposes the concept of Visual Proxy — text-guided visual class centers introduced into CZSL for the first time — and jointly optimizes textual prototypes and visual proxies via Cross-Modal Joint Learning (CMJL), achieving closed-world SOTA on four CZSL benchmarks.
 tags:
   - "ICCV 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "VLM"
 date: 2026-05-08
-content_hash: a693bf53bf79d652
+content_hash: bfe1d3fa84b43c80
 ---
 
 # Learning Visual Proxy for Compositional Zero-Shot Learning
@@ -171,8 +171,8 @@ Cross-attention is better suited for cross-modal alignment (textual prototypes),
 - [\[NeurIPS 2025\] VDRP: Visual Diversity and Region-aware Prompt Learning for Zero-shot HOI Detection](../../NeurIPS2025/social_computing/visual_diversity_and_region-aware_prompt_learning_for_zero-shot_hoi_detection.md)
 - [\[ICCV 2025\] Gradient Extrapolation for Debiased Representation Learning](gradient_extrapolation_for_debiased_representation_learning.md)
 - [\[AAAI 2026\] Multi-modal Dynamic Proxy Learning for Personalized Multiple Clustering](../../AAAI2026/social_computing/multi-modal_dynamic_proxy_learning_for_personalized_multiple_clustering.md)
+- [\[CVPR 2025\] Learning from Neighbors: Category Extrapolation for Long-Tail Learning](../../CVPR2025/social_computing/learning_from_neighbors_category_extrapolation_for_long-tail_learning.md)
 - [\[ICCV 2025\] PropVG: End-to-End Proposal-Driven Visual Grounding with Multi-Granularity Discrimination](propvg_end-to-end_proposal-driven_visual_grounding_with_multi-granularity_discri.md)
-- [\[NeurIPS 2025\] Worse than Zero-shot? A Fact-Checking Dataset for Evaluating the Robustness of RAG Against Misleading Retrievals](../../NeurIPS2025/social_computing/worse_than_zero-shot_a_fact-checking_dataset_for_evaluating_the_robustness_of_ra.md)
 
 </div>
 

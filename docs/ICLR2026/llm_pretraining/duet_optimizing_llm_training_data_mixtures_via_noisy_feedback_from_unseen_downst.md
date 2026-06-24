@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DUET: Optimizing LLM Training Data Mixtures via Noisy Feedback from Unseen, Downstream Evaluation Tasks
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] DUET addresses realistic scenarios where "evaluation task data is unseen and only multiple rounds of coarse noisy feedback are available" by iteratively optimizing LLM training data mixtures through "global Bayesian Optimization for domain ratios + local influence functions for high-quality sample selection." It provid
+  [ICLR2026][LLM Pretraining][Data mixing] DUET addresses realistic scenarios where "evaluation task data is unseen and only multiple rounds of coarse noisy feedback are available" by iteratively optimizing LLM training data mixtures through "global Bayesian Optimization for domain ratios + local influence functions for high-quality sample selection." It provides convergence proofs and significantly outperforms methods requiring fine-grained data information…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Data mixing"
+  - "Data selection"
+  - "Bayesian Optimization"
+  - "Influence Function"
+  - "Unseen evaluation tasks"
 date: 2026-05-08
-content_hash: 5d61b8b2fe2b9576
+content_hash: 41fc31e761d542ca
 ---
+
 # DUET: Optimizing LLM Training Data Mixtures via Noisy Feedback from Unseen, Downstream Evaluation Tasks
 
 **Conference**: ICLR2026  
@@ -133,14 +139,14 @@ Settings: PEFT fine-tuning on Llama-3-8B-Instruct (replicated on Qwen2.5-7B) acr
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] Optimizing Pre-Training Data Mixtures with Mixtures of Data Expert Models](../../ACL2025/llm_pretraining/optimizing_pre-training_data_mixtures_with_mixtures_of_data_expert_models.md)
-- [\[ICLR 2026\] Predicting Training Re-evaluation Curves Enables Effective Data Curriculums](predicting_training_re-evaluation_curves_enables_effective_data_curriculums_for_.md)
-- [\[ICLR 2026\] Train on Validation (ToV): Fast Data Selection with Applications to Fine-Tuning](train_on_validation_tov_fast_data_selection_with_applications_to_fine-tuning.md)
 - [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
+- [\[ICLR 2026\] Predicting Training Re-evaluation Curves Enables Effective Data Curriculums](predicting_training_re-evaluation_curves_enables_effective_data_curriculums_for_.md)
+- [\[ICLR 2026\] Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training](revisiting_the_scaling_properties_of_downstream_metrics_in_large_language_model_.md)
 - [\[ICLR 2026\] Rewriting Pre-training Data Boosts LLM Performance in Math and Code](rewriting_pre-training_data_boosts_llm_performance_in_math_and_code.md)
 
 </div>

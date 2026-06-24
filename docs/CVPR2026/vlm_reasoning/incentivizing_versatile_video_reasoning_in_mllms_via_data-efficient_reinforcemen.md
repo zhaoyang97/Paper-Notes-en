@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning
 description: >-
-  [CVPR 2026][Video Understanding][Reinforcement Learning] This paper proposes VideoReasoner: by using only 3K cold-start data and 5K reinforcement learning data (8K in total) directly on a Base MLLM (Qwen2-VL-7B-Base), it trains three video reasoning capabilities—"event reasoning / keyframe reasoning / direct answering." During the inference phase, these are combined into a p
+  [CVPR 2026][VLM Reasoning][Video Reasoning] This paper proposes VideoReasoner: by using only 3K cold-start data and 5K reinforcement learning data (8K in total) directly on a Base MLLM (Qwen2-VL-7B-Base), it trains three video reasoning capabilities—"event reasoning / keyframe reasoning / direct answering." During the inference phase, these are combined into a pipeline that "first locates key events and keyframes, then performs dense sampling for back-filling to generate answ…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Reasoning"
+  - "Multimodal Large Language Models (MLLMs)"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Data-Efficient"
+  - "Multi-task"
 date: 2026-05-08
-content_hash: be1e344954c4d96b
+content_hash: 4087c3a251257596
 ---
+
 # Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -135,11 +140,11 @@ In temporal grounding (Charades-STA), the cold-started Base model already exceed
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
 - [\[CVPR 2026\] VAST: Video Ability-Stratified Taxonomy for Data-Efficient Video Reasoning](vast_video_ability-stratified_taxonomy_for_data-efficient_video_reasoning.md)
-- [\[CVPR 2026\] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)
-- [\[CVPR 2026\] Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning](learning_to_assist_physics-grounded_human-human_control_via_multi-agent_reinforc.md)
-- [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
+- [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
+- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
+- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](../../ICLR2026/vlm_reasoning/deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
 
 </div>
 

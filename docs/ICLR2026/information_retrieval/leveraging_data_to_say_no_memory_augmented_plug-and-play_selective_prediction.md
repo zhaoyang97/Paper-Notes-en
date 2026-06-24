@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Leveraging Data to Say No: Memory Augmented Plug-and-Play Selective Prediction
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][CLIP] The MA-PaPSP framework is proposed to construct proxy embeddings (using k-NN weighted averaging to reduce representation variance) and contrastive normalized scores (to improve calibration) via an external retrieval dataset. This provides reliable "refusal" capabilities for any VLM without training, outperforming PaPSP
+  [ICLR 2026][Information Retrieval & RAG][Selective Prediction] The MA-PaPSP framework is proposed to construct proxy embeddings (using k-NN weighted averaging to reduce representation variance) and contrastive normalized scores (to improve calibration) via an external retrieval dataset. This provides reliable "refusal" capabilities for any VLM without training, outperforming PaPSP and LLM-as-judge baselines across selective prediction for image captioning, image-text matching…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - CLIP
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Selective Prediction"
+  - "VLM Reliability"
+  - "Retrieval Augmentation"
+  - "Contrastive Scoring"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 67748fc6d1aa59e6
+content_hash: 6c6be5b610e41d87
 ---
+
 # Leveraging Data to Say No: Memory Augmented Plug-and-Play Selective Prediction
 
 **Conference**: ICLR 2026  

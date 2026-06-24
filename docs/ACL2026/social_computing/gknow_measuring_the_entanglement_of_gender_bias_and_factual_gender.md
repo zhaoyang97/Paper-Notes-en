@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GKnow: Measuring the Entanglement of Gender Bias and Factual Gender
 description: >-
-  [ACL 2026][Social Computing][EAP-IG] This paper introduces the **GKnow** benchmark and a suite of circuit-neuron dual-level mechanistic analyses. It demonstrates that "stereotypical gender" and "factual gender" in LLMs exhibit significantly overlapping IoU and high cross-task faithfulness at the circuit level, while sharing the same high-IG neurons at the
+  [ACL 2026][Social Computing][Gender Bias] This paper introduces the **GKnow** benchmark and a suite of circuit-neuron dual-level mechanistic analyses. It demonstrates that "stereotypical gender" and "factual gender" in LLMs exhibit significantly overlapping IoU and high cross-task faithfulness at the circuit level, while sharing the same high-IG neurons at the neuron level. Consequently, simple "ablation of bias neurons" simultaneously weakens factual gender capabilities. Whi…
 tags:
-  - ACL 2026
-  - Social Computing
-  - EAP-IG
+  - "ACL 2026"
+  - "Social Computing"
+  - "Gender Bias"
+  - "Factual Gender"
+  - "Circuit Analysis"
+  - "Neuron Ablation"
+  - "EAP-IG"
 date: 2026-05-08
-content_hash: daa36e26947cd368
+content_hash: 491861881a000bbe
 ---
+
 # GKnow: Measuring the Entanglement of Gender Bias and Factual Gender
 
 **Conference**: ACL 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ASCIIEval: Benchmarking Models' Visual Perception in Text Strings via ASCII Art
 description: >-
-  [ICLR 2026][Multimodal VLM][ASCII art] Using human-artist-drawn ASCII art as a carrier, this paper constructs ASCIIEval, a recognition benchmark where content is strictly equivalent in both text and image modalities. It systematically reveals multiple diagnostic findings: LLMs can "see" visual semantics from pure strings, open-source MLLMs face a trade-off
+  [ICLR 2026][Multimodal VLM][ASCII art] Using human-artist-drawn ASCII art as a carrier, this paper constructs ASCIIEval, a recognition benchmark where content is strictly equivalent in both text and image modalities. It systematically reveals multiple diagnostic findings: LLMs can "see" visual semantics from pure strings, open-source MLLMs face a trade-off between OCR and global visual perception, and current models fail to benefit from "text + image" dual-modality inputs.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - ASCII art
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "ASCII art"
+  - "visual perception"
+  - "LLM/MLLM evaluation"
+  - "cross-modal alignment"
+  - "OCR trade-off"
 date: 2026-05-08
-content_hash: 4d5ccbb96846afc9
+content_hash: a4bfa2e34671545a
 ---
+
 # ASCIIEval: Benchmarking Models' Visual Perception in Text Strings via ASCII Art
 
 **Conference**: ICLR 2026  
@@ -125,7 +130,7 @@ This work extends the use of unconventional structures as visual/spatial probes 
 ## Related Papers
 
 - [\[ICLR 2026\] ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Models](viper_empowering_the_self-evolution_of_visual_perception_abilities_in_vision-lan.md)
-- [\[ICLR 2026\] IndicVisionBench: Benchmarking Cultural and Multilingual Understanding in VLMs](indicvisionbench_benchmarking_cultural_and_multilingual_understanding_in_vlms.md)
+- [\[ACL 2025\] MTVQA: Benchmarking Multilingual Text-Centric Visual Question Answering](../../ACL2025/multimodal_vlm/mtvqa_benchmarking_multilingual_text-centric_visual_question_answering.md)
 - [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](../../CVPR2026/multimodal_vlm/deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
 - [\[ICLR 2026\] Omni-Captioner: Data Pipeline, Models, and Benchmark for Omni Detailed Perception](omni-captioner_data_pipeline_models_and_benchmark_for_omni_detailed_perception.md)
 - [\[ICLR 2026\] Multimodal Aligned Semantic Knowledge for Unpaired Image-text Matching](multimodal_aligned_semantic_knowledge_for_unpaired_image-text_matching.md)

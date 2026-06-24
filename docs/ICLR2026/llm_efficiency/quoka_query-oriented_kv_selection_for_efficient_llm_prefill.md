@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QuoKA: Query-Oriented KV Selection for Efficient LLM Prefill
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] QuoKA proposes a training-free sparse attention method that does not depend on custom kernels. During the chunked prefill phase, it utilizes the geometric observation that "queries farther from the mean are more important" to select a few representative queries. Key KVs are then chosen for these queries using cosine si
+  [ICLR 2026][LLM Efficiency][Sparse Attention] QuoKA proposes a training-free sparse attention method that does not depend on custom kernels. During the chunked prefill phase, it utilizes the geometric observation that "queries farther from the mean are more important" to select a few representative queries. Key KVs are then chosen for these queries using cosine similarity. This reduces attention computation to sub-quadratic complexity, achieving a 3× reduction in TTFT latency…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sparse Attention"
+  - "Chunked Prefill"
+  - "KV Selection"
+  - "Query Selection"
+  - "Long Context Inference"
 date: 2026-05-08
-content_hash: 320ee106ef7b0039
+content_hash: 431f7f578c2a237d
 ---
+
 # QuoKA: Query-Oriented KV Selection for Efficient LLM Prefill
 
 **Conference**: ICLR 2026  
@@ -124,11 +130,11 @@ QuoKA consistently leads across all models and lengths, outperforming the strong
 
 ## Related Papers
 
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective](randomization_boosts_kv_caching_learning_balances_query_load_a_joint_perspective.md)
-- [\[ICLR 2026\] IceCache: Memory-Efficient KV-cache Management for Long-Sequence LLMs](icecache_memory-efficient_kv-cache_management_for_long-sequence_llms.md)
-- [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
+- [\[ICLR 2026\] ProtoKV: Knowledge in Long Context is Already Organized Before You Query](protokv_long-context_knowledges_are_already_well-organized_before_your_query.md)
 - [\[ICLR 2026\] Influence-Preserving Proxies for Gradient-Based Data Selection in LLM Fine-Tuning](influence-preserving_proxies_for_gradient-based_data_selection_in_llm_finetuning.md)
-- [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](../../ICML2026/llm_efficiency/obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
+- [\[ICLR 2026\] ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models](thinkv_thought-adaptive_kv_cache_compression_for_efficient_reasoning_models.md)
 
 </div>
 

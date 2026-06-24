@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] IGU-LoRA: Adaptive Rank Allocation via Integrated Gradients and Uncertainty-Aware Scoring
 description: >-
-  [ICLR 2026][Model Compression][LoRA] To address the instability of rank allocation in AdaLoRA caused by scoring with instantaneous gradients, IGU-LoRA introduces "Integrated Gradients" into the parameter space to measure the importance of each singular value direction. It then calculates a signal-to-noise ratio (SNR) style uncertainty-aware score using EM
+  [ICLR 2026][Model Compression][LoRA] To address the instability of rank allocation in AdaLoRA caused by scoring with instantaneous gradients, IGU-LoRA introduces "Integrated Gradients" into the parameter space to measure the importance of each singular value direction. It then calculates a signal-to-noise ratio (SNR) style uncertainty-aware score using EMA smoothing and deviation tracking to guide pruning, consistently exceeding LoRA / AdaLoRA / DoRA under the same parameter…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
-  - PEFT
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Adaptive Rank Allocation"
+  - "Integrated Gradients"
+  - "Uncertainty-Aware"
+  - "PEFT"
 date: 2026-05-08
-content_hash: d3b3ea51ed1c8c62
+content_hash: 8fa247bca0e1f605
 ---
+
 # IGU-LoRA: Adaptive Rank Allocation via Integrated Gradients and Uncertainty-Aware Scoring
 
 **Conference**: ICLR 2026  

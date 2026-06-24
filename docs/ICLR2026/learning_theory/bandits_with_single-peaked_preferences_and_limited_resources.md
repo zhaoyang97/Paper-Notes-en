@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Bandits with Single-Peaked Preferences and Limited Resources
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] The paper introduces the "single-peaked preference" structure from social choice theory into online matching bandits with budget constraints. By bypassing the NP-hardness of the general case, it provides polynomial-time efficient algorithms with regrets of $\tilde{O}(UK T^{2/3})$ (unknown structure) or $\tilde{O}(U\sqr
+  [ICLR 2026][Combinatorial Multi-Armed Bandits][Single-peaked preferences] The paper introduces the "single-peaked preference" structure from social choice theory into online matching bandits with budget constraints. By bypassing the NP-hardness of the general case, it provides polynomial-time efficient algorithms with regrets of $\tilde{O}(UK T^{2/3})$ (unknown structure) or $\tilde{O}(U\sqrt{TK})$ (known structure).
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Combinatorial Multi-Armed Bandits"
+  - "Online Learning Theory"
+  - "Single-peaked preferences"
+  - "Budget-constrained matching"
+  - "Combinatorial bandit"
+  - "PQ tree"
+  - "Regret bounds"
+  - "NP-hard"
 date: 2026-05-08
-content_hash: bc60b298e7e7d6bb
+content_hash: 973cecc615ebf28f
 ---
+
 # Bandits with Single-Peaked Preferences and Limited Resources
 
 **Conference**: ICLR 2026  
@@ -112,10 +120,10 @@ Experiments were conducted on synthetic data (standard Python + NumPy/Pandas + S
 
 ## Related Papers
 
-- [\[ICLR 2026\] Interactive Learning of Single-Index Models via Stochastic Gradient Descent](interactive_learning_of_single-index_models_via_stochastic_gradient_descent.md)
 - [\[ICLR 2026\] Convergence Dynamics of Over-Parameterized Score Matching for a Single Gaussian](convergence_dynamics_of_over-parameterized_score_matching_for_a_single_gaussian.md)
+- [\[ICLR 2026\] Combinatorial Rising Bandits](combinatorial_rising_bandits.md)
+- [\[ICLR 2026\] Interactive Learning of Single-Index Models via Stochastic Gradient Descent](interactive_learning_of_single-index_models_via_stochastic_gradient_descent.md)
 - [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
-- [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
 - [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](lipschitz_bandits_with_stochastic_delayed_feedback.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing
 description: >-
-  [CVPR 2026][Information Retrieval & RAG][Paper Note] Ours proposes the PinPoint benchmark, comprising 7,635 queries and 329K human-verified relevance judgments. By incorporating four dimensions—explicit negatives, multi-image queries, paraphrase variants, and demographic metadata—it reveals critical deficiencies in existing CIR methods regarding false-positive suppressio
+  [CVPR 2026][AI Safety][Composed Image Retrieval (CIR)] Ours proposes the PinPoint benchmark, comprising 7,635 queries and 329K human-verified relevance judgments. By incorporating four dimensions—explicit negatives, multi-image queries, paraphrase variants, and demographic metadata—it reveals critical deficiencies in existing CIR methods regarding false-positive suppression, linguistic robustness, and multi-image reasoning. A training-free MLLM-based reranking method is intro…
 tags:
-  - CVPR 2026
-  - Information Retrieval & RAG
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Composed Image Retrieval (CIR)"
+  - "Evaluation Benchmarks"
+  - "Explicit Negatives"
+  - "Multi-Image Queries"
+  - "Linguistic Robustness"
 date: 2026-05-08
-content_hash: 615c104fc10a028d
+content_hash: 7b7e261762c2f2b8
 ---
+
 # PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ The baseline uses Qwen2.5-VL-7B to score candidates from the first-stage retriev
 
 ## Related Papers
 
-- [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](../../ACL2026/information_retrieval/visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
-- [\[ICCV 2025\] LangBridge: Interpreting Image as a Combination of Language Embeddings](../../ICCV2025/information_retrieval/langbridge_interpreting_image_as_a_combination_of_language_embeddings.md)
-- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](../../AAAI2026/information_retrieval/knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
-- [\[NeurIPS 2025\] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models](../../NeurIPS2025/information_retrieval/the_narrow_gate_localized_imagetext_communication_in_native.md)
-- [\[CVPR 2025\] Advancing Myopia To Holism: Fully Contrastive Language-Image Pre-training](../../CVPR2025/information_retrieval/advancing_myopia_to_holism_fully_contrastive_language-image_pre-training.md)
+- [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](image-based_outlier_synthesis_with_training_data.md)
+- [\[CVPR 2026\] GVIS: Generative Vector Image Steganography](gvis_generative_vector_image_steganography.md)
+- [\[CVPR 2026\] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility](unsafe2safe_controllable_image_anonymization_for_downstream_utility.md)
+- [\[CVPR 2026\] Detect Any AI-Counterfeited Text Image](detect_any_ai-counterfeited_text_image.md)
+- [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](runawayevil_jailbreaking_the_image-to-video_generative_models.md)
 
 </div>
 

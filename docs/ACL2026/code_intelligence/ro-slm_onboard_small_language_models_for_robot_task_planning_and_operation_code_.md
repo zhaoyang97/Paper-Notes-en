@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Ro-SLM: Onboard Small Language Models for Robot Task Planning and Operation Code Generation
 description: >-
-  [ACL 2026][Code Intelligence][Knowledge Distillation] Ro-SLM utilizes LLMs to synthesize and verify robot task-code data, followed by SFT and GRPO optimization of Llama-3.1-8B using LLM rewards. This allows the small model to approach the planning and operation code generation capabilities of cloud-based LLMs for UAV and ground vehicle tasks.
+  [ACL2026][Code Intelligence][Small Language Models] Ro-SLM utilizes LLMs to synthesize and verify robot task-code data, followed by SFT and GRPO optimization of Llama-3.1-8B using LLM rewards. This allows the small model to approach the planning and operation code generation capabilities of cloud-based LLMs for UAV and ground vehicle tasks.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Knowledge Distillation
+  - "ACL2026"
+  - "Code Intelligence"
+  - "Small Language Models"
+  - "Robot Planning"
+  - "Code Generation"
+  - "Knowledge Distillation"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: ef3f11a8e22340ac
+content_hash: 2f585eb7d5e391c0
 ---
+
 # Ro-SLM: Onboard Small Language Models for Robot Task Planning and Operation Code Generation
 
 **Conference**: ACL2026  
@@ -150,10 +155,10 @@ The authors analyzed the contribution of each component through comments, augmen
 ## Related Papers
 
 - [\[ACL 2026\] PaT: Planning-after-Trial for Efficient Test-Time Code Generation](pat_planning-after-trial_for_efficient_test-time_code_generation.md)
+- [\[ICLR 2026\] LearNAT: Learning NL2SQL with AST-guided Task Decomposition for Large Language Models](../../ICLR2026/code_intelligence/learnat_learning_nl2sql_with_ast-guided_task_decomposition_for_large_language_mo.md)
 - [\[ACL 2025\] Personality-Guided Code Generation Using Large Language Models](../../ACL2025/code_intelligence/personality_guided_code_gen.md)
-- [\[ACL 2025\] CodeIF: Benchmarking the Instruction-Following Capabilities of Large Language Models for Code Generation](../../ACL2025/code_intelligence/codeif_benchmarking_the_instruction-following_capabilities_of_large_language_mod.md)
+- [\[ICLR 2026\] CrossPL: Systematic Evaluation of Large Language Models for Cross Programming Language Interoperating Code Generation](../../ICLR2026/code_intelligence/crosspl_systematic_evaluation_of_large_language_models_for_cross_programming_lan.md)
 - [\[ACL 2026\] Static Program Slicing Using Language Models With Dataflow-Aware Pretraining and Constrained Decoding](static_program_slicing_using_language_models_with_dataflow-aware_pretraining_and.md)
-- [\[ICML 2026\] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale](../../ICML2026/code_intelligence/swe-rebench_v2_language-agnostic_swe_task_collection_at_scale.md)
 
 </div>
 

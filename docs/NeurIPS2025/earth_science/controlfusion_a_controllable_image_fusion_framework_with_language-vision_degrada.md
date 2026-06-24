@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ControlFusion: A Controllable Image Fusion Framework with Language-Vision Degradation Prompts
 description: >-
-  [NeurIPS 2025][Earth Science][Infrared-visible fusion] This paper proposes ControlFusion, a controllable infrared-visible image fusion framework based on language-vision degradation prompts. It employs a physics-driven d…
+  [NeurIPS 2025][Earth Science][Infrared-visible fusion] This paper proposes ControlFusion, a controllable infrared-visible image fusion framework based on language-vision degradation prompts. It employs a physics-driven degradation imaging model to simulate compound degradations, and uses a prompt-modulated network to perform dynamic restoration and fusion, achieving comprehensive state-of-the-art performance under both real-world and compound degradation scenarios.
 tags:
   - "NeurIPS 2025"
   - "Earth Science"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "controllable fusion"
 date: 2026-05-08
-content_hash: 33cb39d472aa291e
+content_hash: f8a949a077593000
 ---
 
 # ControlFusion: A Controllable Image Fusion Framework with Language-Vision Degradation Prompts

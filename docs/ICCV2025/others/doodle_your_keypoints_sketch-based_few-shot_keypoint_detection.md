@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection
 description: >-
-  [ICCV 2025][keypoint detection] This paper proposes the first sketch-based cross-modal few-shot keypoint detection framework. By leveraging a prototype network, grid-based locator, prototype domain adaptation…
+  [ICCV 2025][keypoint detection] This paper proposes the first sketch-based cross-modal few-shot keypoint detection framework. By leveraging a prototype network, grid-based locator, prototype domain adaptation, and a de-stylization network, the framework detects novel keypoints on unseen categories in real photographs using only a handful of annotated sketches.
 tags:
   - "ICCV 2025"
   - "keypoint detection"
@@ -11,7 +11,7 @@ tags:
   - "cross-modal"
   - "domain adaptation"
 date: 2026-05-08
-content_hash: dcb8e19bdcf389a1
+content_hash: ba29ea56e21569a6
 ---
 
 # Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection
@@ -174,11 +174,11 @@ Generalization to real hand-drawn sketches (Sketchy database, 30 real sketches):
 
 ## Related Papers
 
+- [\[ICML 2025\] Feedforward Few-shot Species Range Estimation](../../ICML2025/others/feedforward_few-shot_species_range_estimation.md)
 - [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
-- [\[ICLR 2026\] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning](../../ICLR2026/others/neural_force_field_few-shot_learning_of_generalized_physical_reasoning.md)
+- [\[ICML 2025\] Provably Improving Generalization of Few-Shot Models with Synthetic Data](../../ICML2025/others/provably_improving_generalization_of_few-shot_models_with_synthetic_data.md)
+- [\[ACL 2025\] Zero-Shot Conversational Stance Detection: Dataset and Approaches](../../ACL2025/others/zero-shot_conversational_stance_detection_dataset_and_approaches.md)
 - [\[ICCV 2025\] Stroke2Sketch: Harnessing Stroke Attributes for Training-Free Sketch Generation](stroke2sketch_harnessing_stroke_attributes_for_training-free_sketch_generation.md)
-- [\[ICCV 2025\] Recovering Parametric Scenes from Very Few Time-of-Flight Pixels](recovering_parametric_scenes_from_very_few_time-of-flight_pixels.md)
-- [\[NeurIPS 2025\] Optimized Learned Count-Min Sketch](../../NeurIPS2025/others/optimized_learned_count-min_sketch.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] sleep2vec: Unified Cross-Modal Alignment for Heterogeneous Nocturnal Biosignals
 description: >-
-  [ICLR 2026][Medical Imaging][scaling law] sleep2vec performs cross-modal contrastive pre-training on 42,249 nights across nine sleep physiological signals. It utilizes a DASH-InfoNCE objective that dynamically weights negative samples based on demographic and acquisition metadata to align heterogeneous signals into a unified representation space. This enables
+  [ICLR 2026][Medical Imaging][Sleep Monitoring] sleep2vec performs cross-modal contrastive pre-training on 42,249 nights across nine sleep physiological signals. It utilizes a DASH-InfoNCE objective that dynamically weights negative samples based on demographic and acquisition metadata to align heterogeneous signals into a unified representation space. This enables inference with arbitrary modality subsets, provides robustness to sensor loss, and characterizes the scaling laws…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - scaling law
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Sleep Monitoring"
+  - "PSG Foundation Model"
+  - "Cross-Modal Contrastive Alignment"
+  - "Metadata-Aware"
+  - "Scaling Law"
 date: 2026-05-08
-content_hash: 8d3dfd28ac2191b0
+content_hash: 7cdea53474a0c992
 ---
+
 # sleep2vec: Unified Cross-Modal Alignment for Heterogeneous Nocturnal Biosignals
 
 **Conference**: ICLR 2026  
@@ -147,15 +152,16 @@ The robust performance under distribution shift is significant, with a 7% lead o
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] BioX-Bridge: Model Bridging for Unsupervised Cross-Modal Knowledge Transfer across Biosignals](biox-bridge_model_bridging_for_unsupervised_cross-modal_knowledge_transfer_acros.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
 - [\[ICLR 2026\] Unified Brain Surface and Volume Registration](unified_brain_surface_and_volume_registration.md)
 - [\[ICLR 2026\] Joint Adaptation of Uni-modal Foundation Models for Multi-modal Alzheimer's Disease Diagnosis](joint_adaptation_of_uni-modal_foundation_models_for_multi-modal_alzheimers_disea.md)
 - [\[ICLR 2026\] OmniCT: Towards a Unified Slice-Volume LVLM for Comprehensive CT Analysis](omnict_towards_a_unified_slice-volume_lvlm_for_comprehensive_ct_analysis.md)
-- [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](../../AAAI2026/medical_imaging/fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
 
 </div>
 

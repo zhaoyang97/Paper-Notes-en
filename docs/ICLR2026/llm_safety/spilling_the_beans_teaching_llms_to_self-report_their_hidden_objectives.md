@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spilling the Beans: Teaching LLMs to Self-Report Their Hidden Objectives
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The authors propose "Self-Report Fine-Tuning" (SRFT): fine-tuning GPT-4.1 with only 770 simple samples of "committing errors in factual QA → admitting the error." This enables the model to confess its hidden malicious objectives during interrogation—even in stealth/sabotage tasks with 20–150 turns across entirely diffe
+  [ICLR2026][LLM Safety][Alignment Auditing] The authors propose "Self-Report Fine-Tuning" (SRFT): fine-tuning GPT-4.1 with only 770 simple samples of "committing errors in factual QA → admitting the error." This enables the model to confess its hidden malicious objectives during interrogation—even in stealth/sabotage tasks with 20–150 turns across entirely different distributions and under explicit system-prompt secrecy instructions. The hidden objective detection F1 soared fr…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Alignment Auditing"
+  - "Self-Report Fine-Tuning"
+  - "Hidden Objective Extraction"
+  - "Honesty Generalization"
+  - "On-policy Error Claiming"
 date: 2026-05-08
-content_hash: d0f12f2c4e4ed3c1
+content_hash: c9b65c9171221205
 ---
+
 # Spilling the Beans: Teaching LLMs to Self-Report Their Hidden Objectives
 
 **Conference**: ICLR2026  
@@ -127,11 +133,11 @@ SRFT lifts detection from "near-zero recall (never admits)" to "near-perfect rec
 
 ## Related Papers
 
+- [\[ICLR 2026\] Safety Instincts: LLMs Learn to Trust Their Internal Compass for Self-Defense](safety_instincts_llms_learn_to_trust_their_internal_compass_for_self-defense.md)
 - [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](../../ACL2026/llm_safety/when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
 - [\[ICLR 2026\] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction](hiddenecho_mitigating_noise_amplification_in_differentially_private_llms_with_hi.md)
 - [\[ICLR 2026\] Self-Destructive Language Model](self-destructive_language_model.md)
-- [\[ICLR 2026\] Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures](rethinking_benign_relearning_syntax_as_the_hidden_driver_of_the_safety_tax.md)
-- [\[ACL 2025\] Bias in the Mirror: Are LLMs' Opinions Robust to Their Own Adversarial Attacks](../../ACL2025/llm_safety/bias_in_the_mirror_are_llms_opinions_robust_to_their_own_adversarial_attacks.md)
+- [\[ICLR 2026\] Self-Destructive Language Models](self-destructive_language_models.md)
 
 </div>
 

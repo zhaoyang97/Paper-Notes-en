@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models
 description: >-
-  [NeurIPS 2025][Computational Biology][molecular language model] This paper proposes Mol-LLaMA, a large molecular language model for general molecular understanding. By designing three types of instruction data and a 2D-3…
+  [NeurIPS 2025][Computational Biology][molecular language model] This paper proposes Mol-LLaMA, a large molecular language model for general molecular understanding. By designing three types of instruction data and a 2D-3D molecular representation fusion module, Mol-LLaMA surpasses GPT-4o in molecular feature understanding while exhibiting interpretability and reasoning capabilities.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "drug discovery"
   - "molecular reasoning"
 date: 2026-05-08
-content_hash: 7546e639666d270c
+content_hash: 0c748f793a0fe7d2
 ---
 
 # Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models
@@ -55,9 +55,9 @@ Training proceeds in two stages: molecular representation learning (aligning mol
 
    Core insight: Molecular features exhibit a hierarchical relationship — structure determines chemical properties, and chemical + structural properties jointly determine biological features. Based on this, three data types are designed:
 
-   - **Detailed structural descriptions (S)**: GPT-4o is prompted with IUPAC names to generate detailed descriptions of functional groups and connectivity, building the foundation for structural understanding.
-   - **Structure-to-feature relationship explanations (S2F)**: Directly links structural information to chemical/biological features, enabling the model to learn causal relationships (e.g., "why does this structure lead to a specific activity"), naturally endowing the model with reasoning and interpretability.
-   - **Comprehensive conversations (Conv.)**: Progressively deepens from structure → chemistry → biology in a hierarchical manner, cultivating the ability to handle diverse user queries and step-by-step reasoning.
+    - **Detailed structural descriptions (S)**: GPT-4o is prompted with IUPAC names to generate detailed descriptions of functional groups and connectivity, building the foundation for structural understanding.
+    - **Structure-to-feature relationship explanations (S2F)**: Directly links structural information to chemical/biological features, enabling the model to learn causal relationships (e.g., "why does this structure lead to a specific activity"), naturally endowing the model with reasoning and interpretability.
+    - **Comprehensive conversations (Conv.)**: Progressively deepens from structure → chemistry → biology in a hierarchical manner, cultivating the ability to handle diverse user queries and step-by-step reasoning.
 
    Data generation pipeline: GPT-4o is used with IUPAC names and PubChem descriptions to generate data, followed by GPT-4o-as-judge filtering to remove factual errors, yielding approximately 284K instruction samples.
 
@@ -66,9 +66,9 @@ Training proceeds in two stages: molecular representation learning (aligning mol
    Core mechanism: The 2D encoder (MoleculeSTM) excels at modeling bond information and connectivity, while the 3D encoder (UniMol) excels at capturing atomic spatial arrangement. The two encoders provide complementary information but encode independently, requiring effective fusion.
 
    Specific design:
-   - Graph embeddings and node embeddings from each encoder are concatenated.
-   - Self-attention is applied first, followed by cross-attention to integrate complementary information.
-   - The fused 2D and 3D embeddings are concatenated and fed into the Q-Former projector.
+    - Graph embeddings and node embeddings from each encoder are concatenated.
+    - Self-attention is applied first, followed by cross-attention to integrate complementary information.
+    - The fused 2D and 3D embeddings are concatenated and fed into the Q-Former projector.
 
    Ablation experiments confirm that simple concatenation (Concat), while able to detect the presence of atoms and functional groups, fails to correctly predict connectivity, whereas the Blending Module accurately predicts molecular structure.
 
@@ -169,9 +169,9 @@ Training proceeds in two stages: molecular representation learning (aligning mol
 
 - [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
 - [\[NeurIPS 2025\] EDBench: Large-Scale Electron Density Data for Molecular Modeling](edbench_large-scale_electron_density_data_for_molecular_modeling.md)
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/computational_biology/tracing_pharmacological_knowledge_in_large_language_models.md)
 - [\[NeurIPS 2025\] Omni-Mol: Multitask Molecular Model for Any-to-Any Modalities](omni-mol_multitask_molecular_model_for_any-to-any_modalities.md)
 - [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
+- [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](../../ICLR2026/computational_biology/towards_understanding_the_shape_of_representations_in_protein_language_models.md)
 
 </div>
 

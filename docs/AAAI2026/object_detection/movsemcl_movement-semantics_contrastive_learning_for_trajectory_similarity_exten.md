@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MovSemCL: Movement-Semantics Contrastive Learning for Trajectory Similarity (Extension)
 description: >-
-  [AAAI 2026][Object Detection][trajectory similarity] This paper proposes MovSemCL, a framework that transforms GPS trajectories into movement-semantic features (displacement vectors + heading angles + Node2Vec spatial gr…
+  [AAAI 2026 Oral][Object Detection][trajectory similarity] This paper proposes MovSemCL, a framework that transforms GPS trajectories into movement-semantic features (displacement vectors + heading angles + Node2Vec spatial graph embeddings), achieves hierarchical encoding via patch-level two-stage attention (reducing complexity from $O(L^2)$ to near-linear), and designs Curvature-Guided Augmentation (CGA) to preserve behaviorally critical segments such as turns and intersecti…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Object Detection"
   - "trajectory similarity"
   - "contrastive learning"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical encoding"
   - "curvature-guided augmentation"
 date: 2026-05-08
-content_hash: bfe31c657a60ad18
+content_hash: 0b7d172b6279e965
 ---
 
 # MovSemCL: Movement-Semantics Contrastive Learning for Trajectory Similarity (Extension)
@@ -149,11 +149,11 @@ On Porto 100K: removing Movement-Semantics Encoding (MSE) degrades mean rank fro
 
 ## Related Papers
 
+- [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](../../CVPR2026/object_detection/falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
+- [\[ICML 2025\] Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection](../../ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly.md)
+- [\[CVPR 2026\] Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images](../../CVPR2026/object_detection/balanced_hierarchical_contrastive_learning_with_decoupled_queries_for_fine-grain.md)
 - [\[NeurIPS 2025\] AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](../../NeurIPS2025/object_detection/autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp.md)
 - [\[CVPR 2026\] UniSpector: Towards Universal Open-set Defect Recognition via Spectral-Contrastive Visual Prompting](../../CVPR2026/object_detection/unispector_towards_universal_open-set_defect_recognition_via_spectral-contrastiv.md)
-- [\[AAAI 2026\] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection](vk-det_visual_knowledge_guided_prototype_learning_for_open-vocabulary_aerial_obj.md)
-- [\[AAAI 2026\] CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection](casl_curvature-augmented_self-supervised_learning_for_3d_anomaly_detection.md)
-- [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/object_detection/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
 
 </div>
 

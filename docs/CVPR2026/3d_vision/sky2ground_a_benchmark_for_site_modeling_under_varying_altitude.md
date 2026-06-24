@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sky2Ground: A Benchmark for Site Modeling under Varying Altitude
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper introduces the Sky2Ground dataset (51 scenes, 80k images, unified coverage of synthetic and real images across satellite, aerial, and ground views) and the SkyNet model (dual-stream encoder + masked satellite attention + progressive view sampling). It represents the first systematic study of joint camera loc
+  [CVPR 2026][3D Vision][Cross-view Localization] This paper introduces the Sky2Ground dataset (51 scenes, 80k images, unified coverage of synthetic and real images across satellite, aerial, and ground views) and the SkyNet model (dual-stream encoder + masked satellite attention + progressive view sampling). It represents the first systematic study of joint camera localization across ground, aerial, and satellite perspectives, achieving gains of 9.6% in RRA@5 and 18.1% in RTA@5…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Cross-view Localization"
+  - "Satellite-Aerial-Ground"
+  - "Multi-altitude 3D Reconstruction"
+  - "Gaussian Splatting"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 0e72dc65eedae3e9
+content_hash: ea115fa93a0883ad
 ---
+
 # Sky2Ground: A Benchmark for Site Modeling under Varying Altitude
 
 **Conference**: CVPR 2026  
@@ -116,13 +122,14 @@ The multi-task loss is defined as $\mathcal{L} = \mathcal{L}_{\text{cam, sat}} +
 - Value: ⭐⭐⭐⭐ Dataset and benchmark are highly valuable for the cross-view localization field.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
+- [\[CVPR 2026\] Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction](revisiting_pose_sensitivity_in_splat-based_computed_tomography_under_sparse-view.md)
 - [\[CVPR 2026\] Solvability of the Viewing Graph Under the Affine Camera Model](solvability_of_the_viewing_graph_under_the_affine_camera_model.md)
-- [\[CVPR 2026\] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport](glint_modeling_scene-scale_transparency_via_gaussian_radiance_transport.md)
 - [\[CVPR 2026\] NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather](nimbusgs_unified_3d_scene_reconstruction_under_hybrid_weather.md)
 - [\[CVPR 2026\] Revisiting Optimal Coding for I-ToF under Practical Sensor Constraints](revisiting_optimal_coding_for_i-tof_under_practical_sensor_constraints.md)
 

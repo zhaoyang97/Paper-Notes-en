@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction
 description: >-
-  [ICLR 2026][Social Computing][Paper Note] The authors conduct the first Speech Turing Test on nine SOTA speech-to-speech (S2S) systems (2,968 human judgments). The study finds that all systems fail the test (success rates 7%–31%), identifying that the bottleneck lies not in semantic understanding but in paralinguistic features, emotional expression, and dialog
+  [ICLR 2026][Social Computing][Turing Test] The authors conduct the first Speech Turing Test on nine SOTA speech-to-speech (S2S) systems (2,968 human judgments). The study finds that all systems fail the test (success rates 7%–31%), identifying that the bottleneck lies not in semantic understanding but in paralinguistic features, emotional expression, and dialogue persona. The research also establishes an 18-dimensional fine-grained evaluation framework and an explainable AI j…
 tags:
-  - ICLR 2026
-  - Social Computing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Turing Test"
+  - "Spoken Dialogue"
+  - "Human-likeness"
+  - "S2S Systems"
+  - "Fine-grained Evaluation"
 date: 2026-05-08
-content_hash: a96f04e11ee18d1c
+content_hash: fd0511ea5909c178
 ---
+
 # Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction
 
 **Conference**: ICLR 2026  
@@ -130,7 +136,7 @@ Existing AI judges show overall accuracy significantly lower than humans (~0.73)
 - [\[ACL 2025\] Detection of Human and Machine-Authored Fake News in Urdu](../../ACL2025/social_computing/detection_of_human_and_machine-authored_fake_news_in_urdu.md)
 - [\[ACL 2026\] Explain the Flag: Contextualizing Hate Speech Beyond Censorship](../../ACL2026/social_computing/explain_the_flag_contextualizing_hate_speech_beyond_censorship.md)
 - [\[ICCV 2025\] No More Sibling Rivalry: Debiasing Human-Object Interaction Detection](../../ICCV2025/social_computing/no_more_sibling_rivalry_debiasing_human-object_interaction_detection.md)
-- [\[ICLR 2026\] The Value of Information in Human-AI Decision-Making](the_value_of_information_in_human-ai_decision-making.md)
+- [\[ACL 2025\] ImpliHateVid: Implicit Hate Speech Detection in Videos](../../ACL2025/social_computing/implihatevid_video_hate.md)
 
 </div>
 

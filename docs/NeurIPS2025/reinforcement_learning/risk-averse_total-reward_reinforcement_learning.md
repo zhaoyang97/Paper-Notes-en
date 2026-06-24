@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Risk-Averse Total-Reward Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Risk-averse RL] This paper proposes risk-averse Q-learning algorithms (ERM-TRC and EVaR-TRC) for the undiscounted total-reward criterion (TRC). By exploiting the elicitability of ER…
+  [NeurIPS 2025][Reinforcement Learning][Risk-averse RL] This paper proposes risk-averse Q-learning algorithms (ERM-TRC and EVaR-TRC) for the undiscounted total-reward criterion (TRC). By exploiting the elicitability of ERM, the Bellman operator is reformulated as a stochastic gradient descent objective, and convergence guarantees are established.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "entropic risk measure (ERM)"
   - "entropic value-at-risk (EVaR)"
 date: 2026-05-08
-content_hash: 8e25c613862038a7
+content_hash: 9d41839ebaca614f
 ---
 
 # Risk-Averse Total-Reward Reinforcement Learning
@@ -151,7 +151,7 @@ At α=0.2 (more risk-averse), the agent completely avoids falling off the cliff 
 - [\[NeurIPS 2025\] Reward-Aware Proto-Representations in Reinforcement Learning](reward-aware_proto-representations_in_reinforcement_learning.md)
 - [\[NeurIPS 2025\] DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning](discover_automated_curricula_for_sparse-reward_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning](finite-sample_analysis_of_policy_evaluation_for_robust_average_reward_reinforcem.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
+- [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
 
 </div>
 

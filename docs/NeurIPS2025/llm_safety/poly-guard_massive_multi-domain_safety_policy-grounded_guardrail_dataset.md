@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Poly-Guard: Massive Multi-Domain Safety Policy-Grounded Guardrail Dataset
 description: >-
-  [NeurIPS 2025 (Dataset & Benchmark)][LLM Safety][guardrail benchmark] This paper introduces Poly-Guard, the first **large-scale, multi-domain, policy-grounded** safety guardrail benchmark. It extracts 400+ risk categorie…
+  [NeurIPS 2025 (Dataset & Benchmark)][LLM Safety][guardrail benchmark] This paper introduces Poly-Guard, the first **large-scale, multi-domain, policy-grounded** safety guardrail benchmark. It extracts 400+ risk categories and 1,000+ safety rules from 150+ real-world industry safety policies, generates 100K+ instances spanning 8 safety-critical domains, and systematically evaluates 19 guardrail models, revealing 8 key findings including domain specialization…
 tags:
   - "NeurIPS 2025 (Dataset & Benchmark)"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "adversarial attack"
   - "over-refusal"
 date: 2026-05-08
-content_hash: 63a83bc77d197854
+content_hash: c45883f36a8b3ad2
 ---
 
 # Poly-Guard: Massive Multi-Domain Safety Policy-Grounded Guardrail Dataset
@@ -189,11 +189,11 @@ F1/Recall evaluation of 19 guardrail models across 8 domains (Table 1, F1 values
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
-- [\[ACL 2026\] Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](../../ACL2026/llm_safety/into_the_gray_zone_domain_contexts_can_blur_llm_safety_boundaries.md)
+- [\[ACL 2025\] AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection](../../ACL2025/llm_safety/agrail_a_lifelong_agent_guardrail_with_effective_and_adaptive_safety_detection.md)
 - [\[NeurIPS 2025\] Approximate Domain Unlearning for Vision-Language Models](approximate_domain_unlearning_for_visionlanguage_models.md)
 - [\[NeurIPS 2025\] HoloLLM: Multisensory Foundation Model for Language-Grounded Human Sensing and Reasoning](holollm_multisensory_foundation_model_for_language-grounded_human_sensing_and_re.md)
-- [\[NeurIPS 2025\] CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming](cpret_a_dataset_benchmark_and_model_for_retrieval_in_competitive_programming.md)
+- [\[ICLR 2026\] A Guardrail for Safety Preservation: When Safety-Sensitive Subspace Meets Harmful-Resistant Null-Space](../../ICLR2026/llm_safety/a_guardrail_for_safety_preservation_when_safety-sensitive_subspace_meets_harmful.md)
+- [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](on_the_sample_complexity_of_differentially_private_policy_optimization.md)
 
 </div>
 

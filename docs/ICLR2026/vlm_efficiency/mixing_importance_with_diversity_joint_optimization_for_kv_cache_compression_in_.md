@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models
 description: >-
-  [ICLR 2026][vlm_efficiency][Vision-Language Model] It is observed that KV Cache in LVLMs exhibits modal-specific and head-specific semantic redundancy. Since selection based solely on importance leads to a loss of semantic coverage, MixKV is proposed to adaptively mix importance and diversity scores per head for KV Cache compression, achieving an average improvement of
+  [ICLR 2026][Multimodal Efficiency][KV Cache Compression] It is observed that KV Cache in LVLMs exhibits modal-specific and head-specific semantic redundancy. Since selection based solely on importance leads to a loss of semantic coverage, MixKV is proposed to adaptively mix importance and diversity scores per head for KV Cache compression, achieving an average improvement of 5.1% under extreme compression.
 tags:
-  - ICLR 2026
-  - vlm_efficiency
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "KV Cache Compression"
+  - "Semantic Redundancy"
+  - "Diversity"
+  - "Attention Head"
+  - "Vision-Language Model"
 date: 2026-05-08
-content_hash: 2698e6a13c5e625d
+content_hash: bd9da38635584c23
 ---
+
 # Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -105,15 +110,15 @@ Multimodal understanding under extreme compression (budget=64):
 - Value: ⭐⭐⭐⭐ Direct practical value for LVLM deployment optimization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Prune Redundancy, Preserve Essence: Vision Token Compression in VLMs via Synergistic Importance-Diversity](prune_redundancy_preserve_essence_vision_token_compression_in_vlms_via_synergist.md)
+- [\[ICCV 2025\] AirCache: Activating Inter-modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference](../../ICCV2025/vlm_efficiency/aircache_activating_inter_modal_relevancy_kv_cache_compression_for_efficient_large_vision_language_model.md)
 - [\[CVPR 2026\] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression](../../CVPR2026/vlm_efficiency/flashcache_frequency_kv_cache_compression.md)
 - [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
-- [\[ICCV 2025\] AirCache: Activating Inter-Modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference](../../ICCV2025/vlm_efficiency/aircache_activating_inter-modal_relevancy_kv_cache_compression_for_efficient_lar.md)
 - [\[ICLR 2026\] LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models](learnpruner_rethinking_attention-based_token_pruning_in_vision_language_models.md)
 
 </div>

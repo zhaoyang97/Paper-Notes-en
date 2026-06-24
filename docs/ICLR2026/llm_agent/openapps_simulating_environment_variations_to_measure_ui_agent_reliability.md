@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OpenApps: Simulating Environment Variations to Measure UI Agent Reliability
 description: >-
-  [ICLR 2026][LLM Agent][UI Agent] This paper proposes OpenApps—a lightweight UI Agent simulation ecosystem (comprising six configurable apps including Calendar, Maps, and Shop) that is pure Python and runnable on a single CPU. By procedurally morphing the appearance and content of the same app into thousands of versions, it introduces the dimension of
+  [ICLR 2026][LLM Agent][UI Agent] This paper proposes OpenApps—a lightweight UI Agent simulation ecosystem (comprising six configurable apps including Calendar, Maps, and Shop) that is pure Python and runnable on a single CPU. By procedurally morphing the appearance and content of the same app into thousands of versions, it introduces the dimension of "reliability across app variants," which is ignored by existing fixed cloned environments. Across over 10…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - UI Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "UI Agent"
+  - "Reliability Evaluation"
+  - "Environment Variations"
+  - "Multimodal Evaluation"
+  - "Lightweight Simulation"
 date: 2026-05-08
-content_hash: eacbb2a7bf3a1c14
+content_hash: fae67d76796e110e
 ---
+
 # OpenApps: Simulating Environment Variations to Measure UI Agent Reliability
 
 **Conference**: ICLR 2026  
@@ -144,8 +149,8 @@ Standard deviation within a fixed app **systematically underestimates** the fluc
 ## Related Papers
 
 - [\[ICML 2026\] Towards a Science of AI Agent Reliability](../../ICML2026/llm_agent/towards_a_science_of_ai_agent_reliability.md)
-- [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
 - [\[ICLR 2026\] UI-Ins: Enhancing GUI Grounding with Multi-Perspective Instruction-as-Reasoning](ui-ins_enhancing_gui_grounding_with_multi-perspective_instruction_as_reasoning.md)
+- [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
 - [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
 - [\[ICML 2026\] Agentic Monte Carlo: Simulating Reinforcement Learning for Black-Box Agents](../../ICML2026/llm_agent/agentic_monte_carlo_simulating_reinforcement_learning_for_black-box_agents.md)
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Culinary Crossroads: A RAG Framework for Enhancing Diversity in Cross-Cultural Recipe Adaptation
 description: >-
-  [ACL 2026][Recommender Systems][RAG] Authors observe that standard RAG "produces non-diverse outputs even when given diverse contexts" in creative tasks. They design CARRIAGE, a plug-and-play framework featuring query rewriting, diversity-aware MMR re-ranking, sliding-window dynamic context, and contrastive context injection. This framework effectively tr
+  [ACL 2026][Recommender Systems][Cross-cultural recipe adaptation] Authors observe that standard RAG "produces non-diverse outputs even when given diverse contexts" in creative tasks. They design CARRIAGE, a plug-and-play framework featuring query rewriting, diversity-aware MMR re-ranking, sliding-window dynamic context, and contrastive context injection. This framework effectively transfers "contextual diversity" to "output diversity," improving lexical/semantic/ingredient di…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - RAG
-  - MMR
-  - CultureScore
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Cross-cultural recipe adaptation"
+  - "RAG"
+  - "diversity"
+  - "MMR"
+  - "contrastive context"
+  - "CultureScore"
 date: 2026-05-08
-content_hash: d83c0c0b16bb122b
+content_hash: 0afef65bf1791ceb
 ---
+
 # Culinary Crossroads: A RAG Framework for Enhancing Diversity in Cross-Cultural Recipe Adaptation
 
 **Conference**: ACL 2026  

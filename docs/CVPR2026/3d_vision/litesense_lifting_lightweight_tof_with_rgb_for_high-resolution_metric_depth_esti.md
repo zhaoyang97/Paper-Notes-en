@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] LiteSense fuses Compact Normalized Histograms (CNH) from multi-zone ToF sensors with RGB images using patch-wise cross-attention within a U-Net. With only 5.5M parameters, it approaches the performance of SOTA large models in indoor metric depth estimation and significantly outperforms the comparable RGB-ToF method DEL
+  [CVPR 2026][3D Vision][Metric Depth Estimation] LiteSense fuses Compact Normalized Histograms (CNH) from multi-zone ToF sensors with RGB images using patch-wise cross-attention within a U-Net. With only 5.5M parameters, it approaches the performance of SOTA large models in indoor metric depth estimation and significantly outperforms the comparable RGB-ToF method DELTAR.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Metric Depth Estimation"
+  - "RGB-ToF Fusion"
+  - "Compact Normalized Histograms"
+  - "Lightweight Network"
+  - "Cross-modal Attention"
 date: 2026-05-08
-content_hash: 04963b62f0d85978
+content_hash: d5982b2a0599eaae
 ---
+
 # LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ Component ablation on NYUv2 (baseline is RGB-only):
 
 ## Related Papers
 
+- [\[ICLR 2026\] PatchRefiner V2: Fast and Lightweight Real-Domain High-Resolution Metric Depth Estimation](../../ICLR2026/3d_vision/patchrefiner_v2_fast_and_lightweight_real-domain_high-resolution_metric_depth_es.md)
 - [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
-- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
+- [\[CVPR 2026\] Radar-Guided Polynomial Fitting for Metric Depth Estimation](radar-guided_polynomial_fitting_for_metric_depth_estimation.md)
+- [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](unidac_universal_metric_depth_estimation_for_any_camera.md)
+- [\[CVPR 2026\] The Midas Touch for Metric Depth](the_midas_touch_for_metric_depth.md)
 
 </div>
 

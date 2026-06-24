@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training
 description: >-
-  [ICCV 2025][LLM Pretraining][scene coordinate regression] ACE-G decomposes a scene coordinate regressor into a scene-agnostic Transformer and a scene-specific map code…
+  [ICCV 2025][LLM Pretraining][scene coordinate regression] ACE-G decomposes a scene coordinate regressor into a scene-agnostic Transformer and a scene-specific map code, and achieves significant generalization gains under illumination and viewpoint variation by conducting alternating mapping/query pre-training across tens of thousands of scenes, while maintaining lightweight computational overhead.
 tags:
   - "ICCV 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "generalization"
   - "map code"
 date: 2026-05-08
-content_hash: 222dc75f2ec6387f
+content_hash: e149a3dce335086f
 ---
 
 # ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training
@@ -137,11 +137,11 @@ The paper demonstrates substantial generalization improvements of ACE-G over ACE
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training](../../NeurIPS2025/llm_pretraining/through_the_river_understanding_the_benefit_of_schedule-free_methods_for_languag.md)
+- [\[ACL 2025\] Improving Continual Pre-training Through Seamless Data Packing](../../ACL2025/llm_pretraining/improving_continual_pre-training_through_seamless_data_packing.md)
 - [\[ICCV 2025\] ConstStyle: Robust Domain Generalization with Unified Style Transformation](conststyle_robust_domain_generalization_with_unified_style_transformation.md)
-- [\[ICLR 2026\] Understanding and Improving Shampoo and SOAP via Kullback-Leibler Minimization](../../ICLR2026/llm_pretraining/understanding_and_improving_shampoo_and_soap_via_kullback-leibler_minimization.md)
-- [\[NeurIPS 2025\] An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems](../../NeurIPS2025/llm_pretraining/an_empirical_investigation_of_neural_odes_and_symbolic_regression_for_dynamical_.md)
 - [\[ICCV 2025\] Dataset Ownership Verification for Pre-trained Masked Models](dataset_ownership_verification_for_pre-trained_masked_models.md)
+- [\[ICCV 2025\] SynCity: Training-Free Generation of 3D Worlds](syncity_training-free_generation_of_3d_worlds.md)
+- [\[ACL 2025\] Synthesizing Post-Training Data for LLMs through Multi-Agent Simulation](../../ACL2025/llm_pretraining/synthesizing_post-training_data_for_llms_through_multi-agent_simulation.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] NFT (Negative-aware Fine-Tuning) demonstrates that supervised learning can achieve "verification-driven" self-improvement. By constructing a negative policy implicitly parameterized by the target positive policy for negative samples, it unifies all self-generated answers (correct and incorrect) into maximum likelihood
+  [ICLR 2026][Reasoning][Mathematical Reasoning] NFT (Negative-aware Fine-Tuning) demonstrates that supervised learning can achieve "verification-driven" self-improvement. By constructing a negative policy implicitly parameterized by the target positive policy for negative samples, it unifies all self-generated answers (correct and incorrect) into maximum likelihood training. Its performance matches or exceeds GRPO/DAPO, and it is theoretically equivalent to the GRPO gradient u…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Mathematical Reasoning"
+  - "Negative Sample Utilization"
+  - "Supervised Learning"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Implicit Policy"
 date: 2026-05-08
-content_hash: eb2c4f9c7833ce1f
+content_hash: d6bd249f1e83bcc1
 ---
+
 # NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning
 
 **Conference**: ICLR 2026  
@@ -124,10 +129,10 @@ On 7B, NFT averages 51.7, surpassing DAPO (51.2) and all RL algorithms. On 32B, 
 ## Related Papers
 
 - [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
+- [\[ICLR 2026\] TRAPO: Enhancing LLM Reasoning with Semi-supervised Reinforcement Learning](trapo_a_semi-supervised_reinforcement_learning_framework_for_boosting_llm_reason.md)
 - [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
 - [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
-- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
-- [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
+- [\[ICLR 2026\] CORE: Concept-Oriented Reinforcement for Bridging the Definition–Application Gap in Mathematical Reasoning](core_concept-oriented_reinforcement_for_bridging_the_definitionapplication_gap_i.md)
 
 </div>
 

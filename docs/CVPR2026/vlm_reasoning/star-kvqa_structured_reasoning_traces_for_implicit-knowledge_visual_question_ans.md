@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] StaR-KVQA utilizes a single open-source MLLM to autonomously generate "dual-path symbolic relational paths + path-anchored natural language explanations" as structured reasoning traces. It replaces answer-only supervised fine-tuning (SFT) with structure-aware self-distillation (supervising "reasoning trace + answer").
+  [CVPR 2026][VLM Reasoning][Knowledge-based Visual Question Answering] StaR-KVQA utilizes a single open-source MLLM to autonomously generate "dual-path symbolic relational paths + path-anchored natural language explanations" as structured reasoning traces. It replaces answer-only supervised fine-tuning (SFT) with structure-aware self-distillation (supervising "reasoning trace + answer"). Without any external retrieval, it improves OK-VQA accuracy by +11.3% over the strongest b…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Knowledge-based Visual Question Answering"
+  - "Implicit Knowledge"
+  - "Structured Reasoning Traces"
+  - "Relational Paths"
+  - "Self-distillation"
 date: 2026-05-08
-content_hash: 56510a8863c4615c
+content_hash: 866734eed532cb6a
 ---
+
 # StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering
 
 **Conference**: CVPR 2026  
@@ -125,15 +131,16 @@ The target sequence concatenates $P_t, P_v, C,$ and answer $a$. Unlike standard 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](vq-va_world_towards_high-quality_visual_question-visual_answering.md)
 - [\[CVPR 2026\] ChartR: Evaluating Reasoning Accuracy and Robustness in Chart Question Answering](chartr_evaluating_reasoning_accuracy_and_robustness_in_chart_question_answering.md)
-- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
-- [\[CVPR 2026\] SEA: Evaluating Sketch Abstraction Efficiency via Element-level Commonsense Visual Question Answering](sea_evaluating_sketch_abstraction_efficiency_via_element-level_commonsense_visua.md)
-- [\[CVPR 2026\] VKG-QA: Visual Knowledge Graph-based Question Answer for Large Multimodal Models](vkg-qa_visual_knowledge_graph-based_question_answer_for_large_multimodal_models.md)
+- [\[CVPR 2026\] Latent Implicit Visual Reasoning](latent_implicit_visual_reasoning.md)
+- [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](../../ICCV2025/vlm_reasoning/reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
+- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
+- [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
 
 </div>
 

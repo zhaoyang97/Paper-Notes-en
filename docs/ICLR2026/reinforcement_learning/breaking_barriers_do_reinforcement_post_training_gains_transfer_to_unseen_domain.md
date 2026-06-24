@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] Through observational studies (18 open-source RPT models) and interventional studies (single-domain GRPO training), this work systematically reveals the generalization limitations of Reinforcement Post Training (RPT/RLVR). While RPT significantly improves performance within the training domain, cross-domain generalizat
+  [ICLR 2026][Reinforcement Learning][Reinforcement Post Training (RPT)] Through observational studies (18 open-source RPT models) and interventional studies (single-domain GRPO training), this work systematically reveals the generalization limitations of Reinforcement Post Training (RPT/RLVR). While RPT significantly improves performance within the training domain, cross-domain generalization is inconsistent: gains transfer between structured domains (Math ↔ Code) but fail to…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - LLM
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reinforcement Post Training (RPT)"
+  - "RLVR"
+  - "Cross-Domain Generalization"
+  - "Structured Reasoning"
+  - "Unstructured Reasoning"
+  - "LLM"
 date: 2026-05-08
-content_hash: 7df4d3bc439448ef
+content_hash: 100329914601b0d6
 ---
+
 # Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?
 
 **Conference**: ICLR 2026  
@@ -144,9 +149,9 @@ Generalization is quantified using **Aggregate Accuracy Improvement** $\Delta_{i
 
 - [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](prompt_curriculum_learning_for_efficient_llm_post-training.md)
 - [\[ICLR 2026\] Masked Skill Token Training for Hierarchical Off-Dynamics Transfer](masked_skill_token_training_for_hierarchical_off-dynamics_transfer.md)
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
 - [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
-- [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
 
 </div>
 

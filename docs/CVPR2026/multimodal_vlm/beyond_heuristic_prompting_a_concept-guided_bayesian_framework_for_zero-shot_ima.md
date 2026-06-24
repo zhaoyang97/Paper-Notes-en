@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] Reformulates VLM zero-shot image recognition as a Bayesian framework. It constructs a concept proposal distribution through an LLM-driven multi-stage concept synthesis pipeline and utilizes an adaptive soft-trim likelihood function to suppress the influence of outlier concepts, outperforming SOTA methods across 11 clas
+  [CVPR2026][Multimodal VLM][Zero-shot classification] Reformulates VLM zero-shot image recognition as a Bayesian framework. It constructs a concept proposal distribution through an LLM-driven multi-stage concept synthesis pipeline and utilizes an adaptive soft-trim likelihood function to suppress the influence of outlier concepts, outperforming SOTA methods across 11 classification benchmarks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Zero-shot classification"
+  - "CLIP"
+  - "Bayesian inference"
+  - "Concept guidance"
+  - "Prompt engineering"
+  - "Robust estimation"
 date: 2026-05-08
-content_hash: 5fc6d42115940eb1
+content_hash: f497ebfe15b21f44
 ---
+
 # Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition
 
 **Conference**: CVPR2026  
@@ -136,11 +142,11 @@ This method is training-free and requires no training: concepts are generated of
 
 ## Related Papers
 
-- [\[ECCV 2024\] Meta-Prompting for Automating Zero-Shot Visual Recognition with LLMs](../../ECCV2024/multimodal_vlm/meta-prompting_for_automating_zero-shot_visual_recognition_with_llms.md)
 - [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
+- [\[ECCV 2024\] Meta-Prompting for Automating Zero-Shot Visual Recognition with LLMs](../../ECCV2024/multimodal_vlm/meta-prompting_for_automating_zero-shot_visual_recognition_with_llms.md)
 - [\[CVPR 2026\] SOTA: Self-adaptive Optimal Transport for Zero-Shot Classification with Multiple Foundation Models](sota_self-adaptive_optimal_transport_for_zero-shot_classification_with_multiple_.md)
-- [\[CVPR 2026\] One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework](one_patch_to_caption_them_all_a_unified_zero-shot_captioning_framework.md)
-- [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
+- [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
 
 </div>
 

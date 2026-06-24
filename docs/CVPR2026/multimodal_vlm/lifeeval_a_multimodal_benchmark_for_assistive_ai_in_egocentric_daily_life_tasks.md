@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LifeEval: A Multimodal Benchmark for Assistive AI in Egocentric Daily Life Tasks
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] LifeEval constructs the first multimodal assistant evaluation benchmark oriented toward "egocentric, real-time, and task-oriented" scenarios. Using 591 Ego4D video slices and 4,075 QA pairs with reasoning chains, it examines whether 26 mainstream MLLMs can assist humans in daily tasks in real-time like a personal assis
+  [CVPR 2026][Multimodal VLM][Egocentric Video] LifeEval constructs the first multimodal assistant evaluation benchmark oriented toward "egocentric, real-time, and task-oriented" scenarios. Using 591 Ego4D video slices and 4,075 QA pairs with reasoning chains, it examines whether 26 mainstream MLLMs can assist humans in daily tasks in real-time like a personal assistant across six capability dimensions (Perception/Reasoning/Retrieval/Planning/Safety/Multi-turn Collaboration). T…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Egocentric Video"
+  - "Real-time Assistant"
+  - "Multimodal Evaluation"
+  - "Human-AI Collaboration"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 1006cdfd719fe295
+content_hash: 471e231ca92a35da
 ---
+
 # LifeEval: A Multimodal Benchmark for Assistive AI in Egocentric Daily Life Tasks
 
 **Conference**: CVPR 2026  
@@ -117,9 +122,9 @@ All scores are linearly normalized to 0–100. Closed-source models lead overall
 
 ## Related Papers
 
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
-- [\[CVPR 2026\] GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks](guide_a_benchmark_for_understanding_and_assisting_users_in_open-ended_gui_tasks.md)
+- [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](egoavu_egocentric_audio-visual_understanding.md)
 - [\[ECCV 2024\] Nymeria: A Massive Collection of Multimodal Egocentric Daily Motion in the Wild](../../ECCV2024/multimodal_vlm/nymeria_a_massive_collection_of_multimodal_egocentric_daily_motion_in_the_wild.md)
+- [\[CVPR 2026\] GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks](guide_a_benchmark_for_understanding_and_assisting_users_in_open-ended_gui_tasks.md)
 - [\[CVPR 2026\] PhyCritic: Multimodal Critic Models for Physical AI](phycritic_multimodal_critic_models_for_physical_ai.md)
 - [\[CVPR 2026\] Twin-T & TwintVQA: A Reliable Structure-Detail Separating VLM and a Comprehensive Benchmark for Chart and Table Tasks](twin-t_twintvqa_a_reliable_structure-detail_separating_vlm_and_a_comprehensive_b.md)
 

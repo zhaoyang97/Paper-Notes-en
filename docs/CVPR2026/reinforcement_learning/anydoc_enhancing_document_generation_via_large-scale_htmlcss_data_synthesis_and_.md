@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] AnyDoc: Enhancing Document Generation via Large-Scale HTML/CSS Data Synthesis and Height-Aware Reinforcement Optimization
 description: >-
-  [CVPR 2026][Reinforcement Learning][HTML/CSS] AnyDoc proposes a general document generation framework based on a unified HTML/CSS representation. Through an automated data synthesis pipeline, it constructs the DocHTML dataset containing 265K documents. By combining SFT and Height-Aware Reinforcement Learning (HARL) to fine-tune MLLMs, it outperforms baselines such
+  [CVPR 2026][Reinforcement Learning][Document Generation] AnyDoc proposes a general document generation framework based on a unified HTML/CSS representation. Through an automated data synthesis pipeline, it constructs the DocHTML dataset containing 265K documents. By combining SFT and Height-Aware Reinforcement Learning (HARL) to fine-tune MLLMs, it outperforms baselines such as GPT-4o on intention-to-document, document derendering, and element-to-document tasks.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - HTML/CSS
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Document Generation"
+  - "HTML/CSS"
+  - "Data Synthesis"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
-content_hash: 2696eb911b75578a
+content_hash: 006b47773c67e4fe
 ---
+
 # AnyDoc: Enhancing Document Generation via Large-Scale HTML/CSS Data Synthesis and Height-Aware Reinforcement Optimization
 
 **Conference**: CVPR 2026  
@@ -146,11 +150,11 @@ The reward function is straightforward: full marks for heights in the compliant 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
+- [\[ICLR 2026\] MAGE: Multi-scale Autoregressive Generation for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/mage_multi-scale_autoregressive_generation_for_offline_reinforcement_learning.md)
 - [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
+- [\[ICLR 2026\] Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction](../../ICLR2026/reinforcement_learning/goedel-prover-v2_scaling_formal_theorem_proving_with_scaffolded_data_synthesis_a.md)
 - [\[AAAI 2026\] Enhancing Robustness of Offline RL Under Data Corruption via SAM](../../AAAI2026/reinforcement_learning/enhancing_robustness_of_offline_reinforcement_learning_under_data_corruption_via.md)
-- [\[ICML 2026\] Plug-and-Play Benchmarking of Reinforcement Learning Algorithms for Large-Scale Flow Control](../../ICML2026/reinforcement_learning/plug-and-play_benchmarking_of_reinforcement_learning_algorithms_for_large-scale_.md)
-- [\[ICML 2026\] EAPO: Enhancing Policy Optimization with On-Demand Expert Assistance](../../ICML2026/reinforcement_learning/eapo_enhancing_policy_optimization_with_on-demand_expert_assistance.md)
+- [\[ICLR 2026\] SCRIBES: Web-scale Scripted Semi-structured Data Extraction with Reinforcement Learning](../../ICLR2026/reinforcement_learning/scribes_web-scale_script-based_semi-structured_data_extraction_with_reinforcemen.md)
 
 </div>
 

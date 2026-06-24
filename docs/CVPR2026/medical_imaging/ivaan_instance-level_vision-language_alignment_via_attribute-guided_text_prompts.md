@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IVAAN: Instance-level Vision-Language Alignment via Attribute-Guided Text Prompts Generation for Nuclei Analysis
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] To address class imbalance and organ/stain variations in nuclei "instance-level segmentation + classification" within pathological images, this paper proposes automatically generating attribute-guided pseudo-text prompts from ground truth masks. It performs instance-level vision-language contrastive alignment and model
+  [CVPR 2026][Medical Imaging][Nuclei segmentation] To address class imbalance and organ/stain variations in nuclei "instance-level segmentation + classification" within pathological images, this paper proposes automatically generating attribute-guided pseudo-text prompts from ground truth masks. It performs instance-level vision-language contrastive alignment and models intra-class multi-modality using multiple learnable "category tokens" per class and a semantic interaction m…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Nuclei segmentation"
+  - "pathological images"
+  - "instance-level vision-language alignment"
+  - "attribute-guided text"
+  - "category prototypes"
 date: 2026-05-08
-content_hash: baa440437de7ba72
+content_hash: 76a08fe5b6dedb3d
 ---
+
 # IVAAN: Instance-level Vision-Language Alignment via Attribute-Guided Text Prompts Generation for Nuclei Analysis
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Note: Row 3 used equal-count quantile binning instead of entropy-optimized binni
 
 ## Related Papers
 
+- [\[CVPR 2026\] Simple-ViLMedSAM: Simple Text Prompts Meet Vision-Language Models for Medical Image Segmentation](simple-vilmedsam_simple_text_prompts_meet_vision-language_models_for_medical_ima.md)
 - [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
 - [\[CVPR 2026\] PETAR: Localized Findings Generation with Mask-Aware Vision-Language Modeling for PET Automated Reporting](petar_localized_findings_generation_with_mask-aware_vision-language_modeling_for.md)
 - [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
-- [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](../../AAAI2026/medical_imaging/guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
-- [\[CVPR 2026\] Hyperbolic Relational Prompts for Intersectional Fairness in Medical VLMs](hyperbolic_relational_prompts_for_intersectional_fairness_in_medical_vlms.md)
+- [\[CVPR 2026\] Bridging RGB and Hematoxylin Components: An Interleaved Guidance and Fusion Framework for Point Supervised Nuclei Segmentation](bridging_rgb_and_hematoxylin_components_an_interleaved_guidance_and_fusion_frame.md)
 
 </div>
 

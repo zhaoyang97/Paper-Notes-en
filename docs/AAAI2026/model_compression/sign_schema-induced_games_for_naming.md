@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SIGN: Schema-Induced Games for Naming
 description: >-
-  [AAAI 2026][Model Compression][Naming Game] SIGN introduces lightweight message Schemas (e.g., `@say {name: Ck}`) into LLM multi-agent naming games…
+  [AAAI 2026 Oral][Model Compression][Naming Game] SIGN introduces lightweight message Schemas (e.g., `@say {name: Ck}`) into LLM multi-agent naming games, demonstrating that structured priors can improve group convention agreement by up to 5.8×, reduce convergence token cost by an order of magnitude, and provide a simple, controllable "tuning knob" for efficient multi-agent coordination.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Model Compression"
   - "Naming Game"
   - "LLM Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Schema Guidance"
   - "Multi-Agent Coordination"
 date: 2026-05-08
-content_hash: b766dfae9c1afba3
+content_hash: 1517782625dd5994
 ---
 
 # SIGN: Schema-Induced Games for Naming
@@ -142,10 +142,10 @@ The naming game is defined over $N$ agents and a fixed lexicon $\mathcal{L} = \{
 ## Related Papers
 
 - [\[ICCV 2025\] SSVQ: Unleashing the Potential of Vector Quantization with Sign-Splitting](../../ICCV2025/model_compression/ssvq_unleashing_the_potential_of_vector_quantization_with_sign-splitting.md)
-- [\[AAAI 2026\] BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?](bd-net_has_depth-wise_convolution_ever_been_applied_in_binary_neural_networks.md)
-- [\[AAAI 2026\] From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations](from_passive_perception_to_active_memory_a_weakly_supervised_image_manipulation_.md)
-- [\[AAAI 2026\] Satisficing and Optimal Generalised Planning via Goal Regression (Extended Version)](satisficing_and_optimal_generalised_planning_via_goal_regression_extended_versio.md)
-- [\[AAAI 2026\] Renormalization Group Guided Tensor Network Structure Search](renormalization_group_guided_tensor_network_structure_search.md)
+- [\[AAAI 2026\] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)
+- [\[AAAI 2026\] Lightweight Optimal-Transport Harmonization on Edge Devices](lightweight_optimal-transport_harmonization_on_edge_devices.md)
+- [\[AAAI 2026\] Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs](dont_start_over_a_cost-effective_framework_for_migrating_personalized_prompts_be.md)
+- [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](post_training_quantization_for_efficient_dataset_condensation.md)
 
 </div>
 

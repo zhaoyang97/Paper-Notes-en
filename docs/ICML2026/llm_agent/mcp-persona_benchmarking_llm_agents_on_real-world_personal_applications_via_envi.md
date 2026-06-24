@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] MCP-Persona: 用环境模拟评估 LLM agent 在真实个人化应用上的能力
+  [Paper Note] MCP-Persona: Evaluating LLM Agent Capabilities in Real-World Personal Applications via Environment Simulation
 description: >-
-  [ICML 2026][LLM Agent][MCP] MCP-Persona is the first LLM agent benchmark targeting real-world personalized MCP tools (12 servers including Slack/Rednote/Instagram/Lark, etc.). It proposes three methods—Tool-Traverse, Context-Tree, and Persona-Gen—to automatically synthesize Python simulator code using LLMs, avoiding real-account issues. Testing 1
+  [ICML 2026][LLM Agent][MCP] MCP-Persona is the first LLM agent benchmark targeting real-world personalized MCP tools (12 servers including Slack/Rednote/Instagram/Lark, etc.). It proposes three methods—Tool-Traverse, Context-Tree, and Persona-Gen—to automatically synthesize Python simulator code using LLMs, avoiding real-account issues. Testing 10+ SOTA agents reveals that even Claude-Sonnet-4.5 achieves only 38.66% Acc, proving that personalized tool use is a severely undere…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - MCP
-  - agent benchmark
+  - "ICML 2026"
+  - "LLM Agent"
+  - "MCP"
+  - "Personalization"
+  - "agent benchmark"
+  - "environment simulation"
+  - "tool calling"
 date: 2026-05-08
-content_hash: 4dfd92d1f2a6486d
+content_hash: 40d5dca1a6f2a00e
 ---
+
 # MCP-Persona: Evaluating LLM Agent Capabilities in Real-World Personal Applications via Environment Simulation
 
 **Conference**: ICML 2026  
@@ -156,11 +160,11 @@ MCP-Persona is the only benchmark covering all five dimensions, particularly Soc
 
 ## Related Papers
 
+- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](../../ICLR2026/llm_agent/vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
+- [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](../../ICLR2026/llm_agent/mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
 - [\[ACL 2026\] MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools](../../ACL2026/llm_agent/mcp-flow_facilitating_llm_agents_to_master_real-world_diverse_and_scaling_mcp_to.md)
-- [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
-- [\[ICML 2026\] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](safeharbor_hierarchical_memory-augmented_guardrail_for_llm_agent_safety.md)
+- [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](../../ICLR2026/llm_agent/openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
 - [\[ACL 2026\] OPeRA: A Dataset of Observation, Persona, Rationale, and Action for Evaluating LLMs on Human Online Shopping Behavior Simulation](../../ACL2026/llm_agent/opera_a_dataset_of_observation_persona_rationale_and_action_for_evaluating_llms_.md)
-- [\[ICML 2026\] Weasel: 通过重要性-多样性数据选择实现 Web Agent 的域外泛化](weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
 
 </div>
 

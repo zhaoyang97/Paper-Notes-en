@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] VGGT-$\Omega$
 description: >-
-  [CVPR 2026][3D Vision][scene tokens] This work systematically "scales up" feed-forward 3D reconstruction models like VGGT. By utilizing register attention, lightweight dense heads, and single-head multi-task supervision, the training memory is reduced to approximately 30% of the original. Combined with a large-scale data pipeline capable of labeling dynam
+  [CVPR 2026 (Oral)][3D Vision][Feed-forward Reconstruction] This work systematically "scales up" feed-forward 3D reconstruction models like VGGT. By utilizing register attention, lightweight dense heads, and single-head multi-task supervision, the training memory is reduced to approximately 30% of the original. Combined with a large-scale data pipeline capable of labeling dynamic videos and DINO-style self-supervised distillation, the model is scaled from 0.2B to 10B parameter…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - scene tokens
+  - "CVPR 2026 (Oral)"
+  - "3D Vision"
+  - "Feed-forward Reconstruction"
+  - "Register Attention"
+  - "scene tokens"
+  - "Dynamic Scenes"
+  - "Data Scaling"
+  - "Self-supervised Distillation"
 date: 2026-05-08
-content_hash: d79f690d8c96ebd4
+content_hash: 34a8ef115c5769c0
 ---
+
 # VGGT-$\Omega$
 
 **Conference**: CVPR 2026 (Oral)  
@@ -145,11 +151,11 @@ Metrics use "point error" (average $\ell_2$ distance of back-projected points).
 
 ## Related Papers
 
+- [\[CVPR 2026\] AVGGT: Rethinking Global Attention for Accelerating VGGT](avggt_rethinking_global_attention_for_accelerating_vggt.md)
 - [\[CVPR 2026\] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection](vggt-det_mining_vggt_internal_priors_for_sensor-geometry-free_multi-view_indoor_.md)
 - [\[CVPR 2026\] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation](vggt-360_geometry-consistent_zero-shot_panoramic_depth_estimation.md)
 - [\[CVPR 2025\] VGGT: Visual Geometry Grounded Transformer](../../CVPR2025/3d_vision/vggt_visual_geometry_grounded_transformer.md)
 - [\[AAAI 2026\] VGGT-DP: Generalizable Robot Control via Vision Foundation Models](../../AAAI2026/3d_vision/vggt-dp_generalizable_robot_control_via_vision_foundation_models.md)
-- [\[CVPR 2025\] FrameVGGT: Frame Evidence Rolling Memory for streaming VGGT](../../CVPR2025/3d_vision/framevggt_frame_evidence_rolling_memory_for_streaming_vggt.md)
 
 </div>
 

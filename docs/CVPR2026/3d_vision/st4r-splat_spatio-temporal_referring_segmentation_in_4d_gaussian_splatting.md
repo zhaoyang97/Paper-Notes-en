@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper introduces the new task of "Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting (STRS-4DGS)" and designs the ST4R-Splat framework: it utilizes **time-invariant instance referring embeddings** to solve "where" and **instance-level temporal state mapping in feature space** to solve "when." Combined
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] This paper introduces the new task of "Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting (STRS-4DGS)" and designs the ST4R-Splat framework: it utilizes **time-invariant instance referring embeddings** to solve "where" and **instance-level temporal state mapping in feature space** to solve "when." Combined with an MLLM-based pipeline for automatic spatio-temporal supervision generation…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Referring Segmentation"
+  - "Spatio-Temporal Localization"
+  - "Language Fields"
+  - "MLLM Supervision"
 date: 2026-05-08
-content_hash: 9e01b23f43eba228
+content_hash: 4a1f1af15e13c366
 ---
+
 # ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -133,10 +139,10 @@ Removing components for time-agnostic queries (mIoU %):
 ## Related Papers
 
 - [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
-- [\[CVPR 2026\] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding](sts_mixer_4d_point_cloud.md)
+- [\[CVPR 2026\] SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras](sparsecam4d_spatio-temporally_consistent_4d_reconstruction_from_sparse_cameras.md)
 - [\[CVPR 2026\] MORE-STEM: Long-Short MemOry REcall and Spatio-TEmporal Consistency Model for Query-Driven 3D/4D Point Cloud Segmentation](more-stem_long-short_memory_recall_and_spatio-temporal_consistency_model_for_que.md)
 - [\[CVPR 2026\] LangField4D: Learning Identity-Adaptive and Spatio-Temporal Continuous 4D Language Fields for Dynamic Scenes](langfield4d_learning_identity-adaptive_and_spatio-temporal_continuous_4d_languag.md)
-- [\[CVPR 2026\] Revisiting Monocular SLAM with Spatio-Temporal Scene Modeling](revisiting_monocular_slam_with_spatio-temporal_scene_modeling.md)
+- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
 
 </div>
 

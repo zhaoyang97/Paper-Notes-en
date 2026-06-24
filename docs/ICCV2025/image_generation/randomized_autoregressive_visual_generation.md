@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Randomized Autoregressive Visual Generation
 description: >-
-  [ICCV2025][Image Generation][Autoregressive image generation] This paper proposes Randomized AutoRegressive modeling (RAR): during standard autoregressive training…
+  [ICCV2025][Image Generation][Autoregressive image generation] This paper proposes Randomized AutoRegressive modeling (RAR): during standard autoregressive training, the input sequence is randomly permuted and gradually annealed back to raster-scan order, enabling the model to learn bidirectional context. RAR achieves a state-of-the-art FID of 1.48 on ImageNet-256 for autoregressive image generation while remaining fully compatible with the language model framework.
 tags:
   - "ICCV2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "annealing strategy"
   - "ImageNet"
 date: 2026-05-08
-content_hash: b9506f1606dcb16e
+content_hash: 2ce348f7fec7422a
 ---
 
 # Randomized Autoregressive Visual Generation
@@ -173,8 +173,8 @@ Optimal setting: 400 training epochs in total, $start=200$, $end=300$ (first 200
 - [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](../../ICLR2026/image_generation/autoregressive_image_generation_with_randomized_parallel_decoding.md)
 - [\[NeurIPS 2025\] InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation](../../NeurIPS2025/image_generation/infinitystar_unified_spacetime_autoregressive_modeling_for_v.md)
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](grouped_speculative_decoding_for_autoregressive_image_generation.md)
-- [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
-- [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
+- [\[ICML 2025\] Continuous Visual Autoregressive Generation via Score Maximization](../../ICML2025/image_generation/continuous_visual_autoregressive_generation_via_score_maximization.md)
+- [\[ICLR 2026\] BAR: Refactor the Basis of Autoregressive Visual Generation](../../ICLR2026/image_generation/bar_refactor_the_basis_of_autoregressive_visual_generation.md)
 
 </div>
 

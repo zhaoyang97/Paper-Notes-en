@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Statistical Inference Under Performativity
 description: >-
-  [NeurIPS 2025][performative prediction] This paper establishes the first complete end-to-end statistical inference framework for performative prediction…
+  [NeurIPS 2025][performative prediction] This paper establishes the first complete end-to-end statistical inference framework for performative prediction, deriving a central limit theorem and data-driven covariance estimation for repeated risk minimization (RRM) algorithms, and extending prediction-powered inference (PPI) to the dynamic performative setting to obtain tighter confidence intervals.
 tags:
   - "NeurIPS 2025"
   - "performative prediction"
@@ -11,7 +11,7 @@ tags:
   - "prediction-powered inference"
   - "confidence intervals"
 date: 2026-05-08
-content_hash: 4dc07e8cd4cccf14
+content_hash: 80e628b979776a23
 ---
 
 # Statistical Inference Under Performativity

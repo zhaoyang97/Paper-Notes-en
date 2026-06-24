@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improved Masked Image Generation with Knowledge-Augmented Token Representations
 description: >-
-  [AAAI 2026][Image Generation][Masked image generation] This paper proposes KA-MIG, a framework that mines three types of token-level semantic prior knowledge graphs from training data (co-occurrence graph…
+  [AAAI 2026][Image Generation][Masked image generation] This paper proposes KA-MIG, a framework that mines three types of token-level semantic prior knowledge graphs from training data (co-occurrence graph, semantic similarity graph, and position-token incompatibility graph), learns augmented token representations via a graph-aware encoder, and injects them into existing MIG models through a lightweight addition-subtraction fusion mechanism, consistently improving generation q…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "prior knowledge augmentation"
   - "graph convolutional network"
 date: 2026-05-08
-content_hash: 65bdb7b13e7ff29d
+content_hash: cf401e6772245942
 ---
 
 # Improved Masked Image Generation with Knowledge-Augmented Token Representations
@@ -207,7 +207,7 @@ Optimal strategy: precompute $\mathcal{G}_{co}$ and $\mathcal{G}_s$ (lightweight
 - [\[AAAI 2026\] SAGA: Learning Signal-Aligned Distributions for Improved Text-to-Image Generation](saga_learning_signal-aligned_distributions_for_improved_text-to-image_generation.md)
 - [\[NeurIPS 2025\] Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?](../../NeurIPS2025/image_generation/can_knowledge-graph-based_retrieval_augmented_generation_really_retrieve_what_yo.md)
 - [\[AAAI 2026\] Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers](laytrol_preserving_pretrained_knowledge_in_layout_control_fo.md)
-- [\[ICML 2026\] WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation](../../ICML2026/image_generation/wise_a_world_knowledge-informed_semantic_evaluation_for_text-to-image_generation.md)
+- [\[ICLR 2026\] RePrompt: Reasoning-Augmented Reprompting for Text-to-Image Generation via Reinforcement Learning](../../ICLR2026/image_generation/reprompt_reasoning-augmented_reprompting_for_text-to-image_generation_via_reinfo.md)
 
 </div>
 

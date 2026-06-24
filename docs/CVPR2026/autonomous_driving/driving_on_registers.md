@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Driving on Registers (DrivoR)
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] DrivoR utilizes a pure transformer end-to-end driving architecture. It adds a set of learnable register tokens to each camera to compress thousands of ViT visual tokens into dozens of "scene tokens." Two decoupled decoders are then used for generating and scoring candidate trajectories. With only approximately 40M para
+  [CVPR 2026][Autonomous Driving][End-to-End Driving] DrivoR utilizes a pure transformer end-to-end driving architecture. It adds a set of learnable register tokens to each camera to compress thousands of ViT visual tokens into dozens of "scene tokens." Two decoupled decoders are then used for generating and scoring candidate trajectories. With only approximately 40M parameters, DrivoR matches or exceeds heavier baselines on NAVSIM-v1/v2 and closed-loop HUGSIM.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-End Driving"
+  - "Register Token Compression"
+  - "Trajectory Scoring"
+  - "ViT Backbone"
+  - "Tunable Behavior"
 date: 2026-05-08
-content_hash: 4520143a715a1a02
+content_hash: 0687fe6c0cb61ef3
 ---
+
 # Driving on Registers (DrivoR)
 
 **Conference**: CVPR 2026  
@@ -143,16 +149,16 @@ Regarding efficiency, compared to the ViT-L based GTRS, single-sample forward la
 - Value: ⭐⭐⭐⭐⭐ (Strong reference for real-time E2E driving deployments)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] SGDrive: Scene-to-Goal Hierarchical World Cognition for Autonomous Driving](sgdrive_scene-to-goal_hierarchical_world_cognition_for_autonomous_driving.md)
-- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
+- [\[CVPR 2026\] LEAD: Minimizing Learner-Expert Asymmetry in End-to-End Driving](lead_minimizing_learner-expert_asymmetry_in_end-to-end_driving.md)
+- [\[CVPR 2026\] Spatial Retrieval Augmented Autonomous Driving](spatial_retrieval_augmented_autonomous_driving.md)
+- [\[CVPR 2026\] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System](knowval_a_knowledge-augmented_and_value-guided_autonomous_driving_system.md)
 - [\[CVPR 2026\] Efficient Equivariant Transformer for Self-Driving Agent Modeling](efficient_equivariant_transformer_for_self-driving_agent_modeling.md)
-- [\[CVPR 2026\] Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning](reliable_policy_transfer_for_safety-aware_end-to-end_driving_with_deep_reinforce.md)
-- [\[CVPR 2026\] MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving](minddriver_introducing_progressive_multimodal_reasoning_for_autonomous_driving.md)
 
 </div>
 

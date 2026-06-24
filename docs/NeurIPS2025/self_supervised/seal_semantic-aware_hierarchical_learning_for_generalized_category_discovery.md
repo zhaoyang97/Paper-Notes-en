@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Generalized Category Discovery] This paper proposes SEAL, a framework that leverages naturally occurring semantic hierarchies (rather than manually constructed abstract hierarchie…
+  [NeurIPS 2025][Self-Supervised Learning][Generalized Category Discovery] This paper proposes SEAL, a framework that leverages naturally occurring semantic hierarchies (rather than manually constructed abstract hierarchies) to guide generalized category discovery. Through hierarchically semantic-guided soft contrastive learning and a cross-granularity consistency module, SEAL achieves state-of-the-art performance on fine-grained benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Semantic Hierarchy"
   - "Cross-Granularity Consistency"
 date: 2026-05-08
-content_hash: c69c65a5ef9843e7
+content_hash: ecba6d57f36b4729
 ---
 
 # SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery
@@ -147,11 +147,11 @@ Total loss: $\mathcal{L}_{all} = \sum_h^H (\mathcal{L}_{\text{soft}_{rep}}^h + \
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Consistent Supervised-Unsupervised Alignment for Generalized Category Discovery](consistent_supervised-unsupervised_alignment_for_generalized_category_discovery.md)
+- [\[CVPR 2025\] MOS: Modeling Object-Scene Associations in Generalized Category Discovery](../../CVPR2025/self_supervised/mos_modeling_object-scene_associations_in_generalized_category_discovery.md)
 - [\[ICCV 2025\] A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention](../../ICCV2025/self_supervised/a_hidden_stumbling_block_in_generalized_category_discovery_d.md)
-- [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](../../CVPR2026/self_supervised/learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
-- [\[CVPR 2026\] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](../../CVPR2026/self_supervised/omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)
-- [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/self_supervised/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
-- [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
+- [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](../../CVPR2026/self_supervised/tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
+- [\[ICLR 2026\] Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery](../../ICLR2026/self_supervised/bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery.md)
 
 </div>
 

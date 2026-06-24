@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Can We Predict Before Executing Machine Learning Agents?
 description: >-
-  [ACL 2026][LLM Evaluation][ML Agent] This paper demonstrates that LLMs can serve as implicit "world models" to predict the quality of ML solutions based solely on task descriptions, verified data reports, and code snippets (DeepSeek-V3.2-Thinking achieves 61.5% accuracy). Based on this, the authors develop ForeAgent, which transforms the traditional "Gene
+  [ACL 2026][LLM Evaluation][ML Agent] This paper demonstrates that LLMs can serve as implicit "world models" to predict the quality of ML solutions based solely on task descriptions, verified data reports, and code snippets (DeepSeek-V3.2-Thinking achieves 61.5% accuracy). Based on this, the authors develop ForeAgent, which transforms the traditional "Generate-Execute-Feedback" loop of AIDE into a "Predict-then-Verify" loop, achieving a 6× speedup, 3.2× expanded search space…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - ML Agent
-  - World Model
-  - Predict-then-Verify
-  - AutoML
-  - MLE-Bench
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "ML Agent"
+  - "World Model"
+  - "Predict-then-Verify"
+  - "AutoML"
+  - "MLE-Bench"
 date: 2026-05-08
-content_hash: 68aafd1d014574b7
+content_hash: 280517c1777a37b2
 ---
+
 # Can We Predict Before Executing Machine Learning Agents?
 
 **Conference**: ACL 2026  
@@ -163,11 +164,11 @@ Comparison: GPT-5.1 achieved 58.8% average; Random was 50.0%; Complexity Heurist
 
 ## Related Papers
 
+- [\[ICLR 2026\] FormalML: A Benchmark for Evaluating Formal Subgoal Completion in Machine Learning Theory](../../ICLR2026/llm_evaluation/formalml_a_benchmark_for_evaluating_formal_subgoal_completion_in_machine_learnin.md)
+- [\[ICLR 2026\] Train-before-Test Harmonizes Language Model Rankings](../../ICLR2026/llm_evaluation/train-before-test_harmonizes_language_model_rankings.md)
 - [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](../../ICML2026/llm_evaluation/hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
-- [\[ICML 2025\] DataDecide: How to Predict Best Pretraining Data with Small Experiments](../../ICML2025/llm_evaluation/datadecide_how_to_predict_best_pretraining_data_with_small_experiments.md)
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
 - [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
-- [\[ACL 2026\] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks](enhancing_linguistic_competence_of_language_models_through_pre-training_with_lan.md)
 
 </div>
 

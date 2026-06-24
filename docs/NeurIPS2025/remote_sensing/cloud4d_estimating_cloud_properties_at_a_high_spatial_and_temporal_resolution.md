@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution
 description: >-
-  [NeurIPS 2025][Remote Sensing][cloud physical property estimation] The first learning framework based on ground-level multi-view cameras that reconstructs four-dimensional (3D spatial + temporal) cloud liquid water conte…
+  [NeurIPS 2025 Spotlight][Remote Sensing][cloud physical property estimation] The first learning framework based on ground-level multi-view cameras that reconstructs four-dimensional (3D spatial + temporal) cloud liquid water content distributions via a homography-guided 2D-to-3D Transformer. The method achieves less than 10% error relative to radar at 25 m spatial and 5 s temporal resolution, improving spatiotemporal resolution by an order of magnitude over satellite observat…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Remote Sensing"
   - "cloud physical property estimation"
   - "multi-view 3D reconstruction"
@@ -12,7 +12,7 @@ tags:
   - "liquid water content"
   - "meteorological observation"
 date: 2026-05-08
-content_hash: a859d5eeeeec186e
+content_hash: 50c16d6eced08e91
 ---
 
 # Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution
@@ -131,10 +131,10 @@ Cloud4D substantially outperforms the satellite-based method VIP-CT on all metri
 ## Related Papers
 
 - [\[ICML 2026\] Localized, High-resolution Geographic Representations with Slepian Functions](../../ICML2026/remote_sensing/localized_high-resolution_geographic_representations_with_slepian_functions.md)
-- [\[NeurIPS 2025\] EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting](ecocast_a_spatio-temporal_model_for_continual_biodiversity_and_climate_risk_fore.md)
-- [\[AAAI 2026\] TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD](../../AAAI2026/remote_sensing/spatio-temporal_context_learning_with_temporal_difference_convolution_for_moving.md)
-- [\[NeurIPS 2025\] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)
-- [\[ICLR 2026\] Spectral Gaps and Spatial Priors: Studying Hyperspectral Downstream Adaptation Using TerraMind](../../ICLR2026/remote_sensing/spectral_gaps_and_spatial_priors_studying_hyperspectral_downstream_adaptation_us.md)
+- [\[ICLR 2026\] SelvaBox: A high-resolution dataset for tropical tree crown detection](../../ICLR2026/remote_sensing/selvabox_a_highresolution_dataset_for_tropical_tree_crown_detection.md)
+- [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](../../CVPR2026/remote_sensing/yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
+- [\[ICML 2025\] High-Resolution Live Fuel Moisture Content (LFMC) Maps for Wildfire Risk from Multimodal Earth Observation Data](../../ICML2025/remote_sensing/high-resolution_live_fuel_moisture_content_lfmc_maps_for_wildfire_risk_from_mult.md)
+- [\[CVPR 2026\] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks](../../CVPR2026/remote_sensing/zoomearth_active_perception_for_ultra-high-resolution_geospatial_vision-language.md)
 
 </div>
 

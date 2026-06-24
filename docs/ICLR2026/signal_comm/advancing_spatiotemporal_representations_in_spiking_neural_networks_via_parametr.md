@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Advancing Spatiotemporal Representations in Spiking Neural Networks via Parametric Invertible Transformation
+  [Paper Note] Advancing Spatiotemporal Representations in Spiking Neural Networks via Parametic Invertible Transformation
 description: >-
-  [ICLR 2026][Signal & Communications][Paper Note] Addressing the limited representation of binary spikes and surrogate gradient mismatch in Spiking Neural Networks (SNNs), this paper proposes Parametric Invertible Transformation (PIT). PIT applies conjugate invertible linear transformations before and after neuron firing: "rearranging" the membrane potential distribut
+  [ICLR 2026][Signal & Communication][Spiking Neural Networks] Addressing the limited representation of binary spikes and surrogate gradient mismatch in Spiking Neural Networks (SNNs), this paper proposes Parametric Invertible Transformation (PIT). PIT applies conjugate invertible linear transformations before and after neuron firing: "rearranging" the membrane potential distribution into a quantization-friendly form before firing and "augmenting" integer spikes into spatiotemp…
 tags:
-  - ICLR 2026
-  - Signal & Communications
+  - "ICLR 2026"
+  - "Signal & Communication"
+  - "Spiking Neural Networks"
+  - "Parametric Invertible Transformation"
+  - "Multi-bit Spikes"
+  - "Surrogate Gradient"
+  - "Neuromorphic Computing"
 date: 2026-05-08
-content_hash: 85a09e43ab44d2ec
+content_hash: f56e56b9bd1c8e9e
 ---
+
 # Advancing Spatiotemporal Representations in Spiking Neural Networks via Parametic Invertible Transformation
 
 **Conference**: ICLR 2026  

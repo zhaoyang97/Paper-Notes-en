@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] The authors propose M3Att—the first **query-agnostic** knowledge poisoning framework for medical multi-modal RAG. It utilizes "distribution-guided visual PGD triggers" for retrieval hijacking and "clinical ambiguity-guided text rewriting" to bypass LVLM self-correction. With a poisoning rate of <1% (without querying kn
+  [ACL 2026][LLM Safety][Knowledge Poisoning] The authors propose M3Att—the first **query-agnostic** knowledge poisoning framework for medical multi-modal RAG. It utilizes "distribution-guided visual PGD triggers" for retrieval hijacking and "clinical ambiguity-guided text rewriting" to bypass LVLM self-correction. With a poisoning rate of <1% (without querying knowledge, visual perturbation $\epsilon=16/255$), it reduces downstream utility by an average of 8.78% across 5 LVLMs…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Knowledge Poisoning"
+  - "Medical RAG"
+  - "PGD Perturbation"
+  - "Clinical Ambiguity"
+  - "Query-agnostic Attack"
 date: 2026-05-08
-content_hash: 1cf061e5ed06d6b4
+content_hash: fd3dfaec3bdc7f50
 ---
+
 # Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation
 
 **Conference**: ACL 2026  
@@ -157,10 +163,10 @@ M3Att outperforms the baseline LIAR in **most LVLM × Retriever × Task combinat
 ## Related Papers
 
 - [\[ACL 2026\] Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation](beyond_explicit_refusals_soft-failure_attacks_on_retrieval-augmented_generation.md)
+- [\[ACL 2026\] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 - [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](../../AAAI2026/llm_safety/privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
-- [\[ACL 2026\] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)
-- [\[ACL 2026\] Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models](retrievals_can_be_detrimental_unveiling_the_backdoor_vulnerability_of_retrieval-.md)
+- [\[ICLR 2026\] Fine-Grained Privacy Extraction from Retrieval-Augmented Generation Systems by Exploiting Knowledge Asymmetry](../../ICLR2026/llm_safety/fine-grained_privacy_extraction_from_retrieval-augmented_generation_systems_by_e.md)
 
 </div>
 

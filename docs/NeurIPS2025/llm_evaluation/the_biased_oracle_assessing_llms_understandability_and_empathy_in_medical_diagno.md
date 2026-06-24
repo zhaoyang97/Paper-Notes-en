@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Biased Oracle: Assessing LLMs' Understandability and Empathy in Medical Diagnoses
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Medical Communication] This work systematically evaluates GPT-4o and Claude-3.7 on readability and empathy in medical diagnostic communication. Both models produce reading levels well above…
+  [NeurIPS 2025][LLM Evaluation][Medical Communication] This work systematically evaluates GPT-4o and Claude-3.7 on readability and empathy in medical diagnostic communication. Both models produce reading levels well above recommended standards (grades 9–13 vs. the recommended grades 6–8). Affective empathy varies significantly with diagnosis type and patient education level, and LLM-as-Judge exhibits severe self-serving bias (GPT inflates its own empathy scores by ~0.3 points)…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Demographic Bias"
   - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: 5cf6504fcf9e7eda
+content_hash: 84697cc686cfea96
 ---
 
 # The Biased Oracle: Assessing LLMs' Understandability and Empathy in Medical Diagnoses
@@ -122,11 +122,11 @@ This work systematically evaluates GPT-4o and Claude-3.7 on readability and empa
 
 ## Related Papers
 
+- [\[ACL 2025\] Are Bias Evaluation Methods Biased?](../../ACL2025/llm_evaluation/are_bias_evaluation_methods_biased.md)
+- [\[ICML 2025\] AAAR-1.0: Assessing AI's Potential to Assist Research](../../ICML2025/llm_evaluation/aaar-10_assessing_ais_potential_to_assist_research.md)
 - [\[NeurIPS 2025\] On Evaluating LLM Alignment by Evaluating LLMs as Judges](on_evaluating_llm_alignment_by_evaluating_llms_as_judges.md)
-- [\[ACL 2026\] Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation](../../ACL2026/llm_evaluation/beyond_reproduction_a_paired-task_framework_for_assessing_llm_comprehension_and_.md)
-- [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
 - [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
-- [\[NeurIPS 2025\] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving](evalearn_quantifying_the_learning_capability_and_efficiency_of_llms_via_sequenti.md)
+- [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
 
 </div>
 

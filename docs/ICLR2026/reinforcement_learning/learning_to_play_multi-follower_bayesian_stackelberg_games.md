@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Play Multi-Follower Bayesian Stackelberg Games
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This work provides the first systematic study of the online learning problem in Multi-Follower Bayesian Stackelberg Games (BSG). By employing a geometric partition of the leader's strategy space into "Best Response Regions," the authors achieve a regret bound of $\tilde{O}(\sqrt{\min\{L, nK\} \cdot T})$ under type feed
+  [ICLR 2026][Reinforcement Learning][Stackelberg Games] This work provides the first systematic study of the online learning problem in Multi-Follower Bayesian Stackelberg Games (BSG). By employing a geometric partition of the leader's strategy space into "Best Response Regions," the authors achieve a regret bound of $\tilde{O}(\sqrt{\min\{L, nK\} \cdot T})$ under type feedback. Importantly, this bound does not grow polynomially with the number of followers $n$. An almost matc…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Stackelberg Games"
+  - "Bayesian Games"
+  - "Online Learning"
+  - "Best Response Regions"
+  - "Regret Bounds"
 date: 2026-05-08
-content_hash: f5e9f0f0e7469b67
+content_hash: bfc42076b48ac182
 ---
+
 # Learning to Play Multi-Follower Bayesian Stackelberg Games
 
 **Conference**: ICLR 2026  
@@ -146,9 +152,9 @@ This is a theoretical work in online learning; there is no training loss functio
 ## Related Papers
 
 - [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
-- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
 - [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)
-- [\[ACL 2026\] The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games](../../ACL2026/reinforcement_learning/the_stackelberg_speaker_optimizing_persuasive_communication_in_social_deduction_.md)
+- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
+- [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
 - [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
 
 </div>

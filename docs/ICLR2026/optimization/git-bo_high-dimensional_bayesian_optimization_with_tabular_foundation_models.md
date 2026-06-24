@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GIT-BO: High-Dimensional Bayesian Optimization with Tabular Foundation Models
 description: >-
-  [ICLR 2026][Optimization & Theory][TabPFN] GIT-BO utilizes a frozen TabPFN v2 as a zero-training Bayesian optimization surrogate model, estimates a low-dimensional active subspace from the gradients of its predictive mean, and performs point selection using UCB within this subspace. It achieves a superior performance-time trade-off compared to various GP-based
+  [ICLR2026][Optimization][High-Dimensional Bayesian Optimization] GIT-BO utilizes a frozen TabPFN v2 as a zero-training Bayesian optimization surrogate model, estimates a low-dimensional active subspace from the gradients of its predictive mean, and performs point selection using UCB within this subspace. It achieves a superior performance-time trade-off compared to various GP-based high-dimensional BO methods on synthetic and engineering optimization tasks up to 500 dimension…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - TabPFN
-  - UCB
+  - "ICLR2026"
+  - "Optimization"
+  - "High-Dimensional Bayesian Optimization"
+  - "TabPFN"
+  - "Tabular Foundation Models"
+  - "Active Subspace"
+  - "UCB"
 date: 2026-05-08
-content_hash: 4aa7ca35743da723
+content_hash: cedc1510469ee9e3
 ---
+
 # GIT-BO: High-Dimensional Bayesian Optimization with Tabular Foundation Models
 
 **Conference**: ICLR2026  

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Optimal Regularization for Performative Learning
 description: >-
-  [ICML 2026][Others][Paper Note] This paper systematically characterizes the scaling laws of optimal regularization strength within a high-dimensional ridge regression framework under "performativity," where model deployment drives data distribution shifts. The optimal $\lambda$ is found to be proportional to the performative strength $\bar b$, and in
+  [ICML2026][Performative learning] This paper systematically characterizes the scaling laws of optimal regularization strength within a high-dimensional ridge regression framework under "performativity," where model deployment drives data distribution shifts. The optimal $\lambda$ is found to be proportional to the performative strength $\bar b$, and in overparameterized regimes, appropriate regularization can even leverage performative effects to reduce risk.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Performative learning"
+  - "Ridge regularization"
+  - "High-dimensional statistics"
+  - "Repeated Risk Minimization"
+  - "Spurious features"
 date: 2026-05-08
-content_hash: c5022ae73838f809
+content_hash: 449fe4c4ea344231
 ---
+
 # Optimal Regularization for Performative Learning
 
 **Conference**: ICML2026  
@@ -126,11 +131,11 @@ The study utilizes square loss $\ell(x,y;\theta) = (y - x^\top\theta)^2$ with ri
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Tight Lower Bounds and Improved Convergence in Performative Prediction](../../NeurIPS2025/others/tight_lower_bounds_and_improved_convergence_in_performative_prediction.md)
 - [\[ICML 2025\] Revisiting the Predictability of Performative, Social Events](../../ICML2025/others/revisiting_the_predictability_of_performative_social_events.md)
+- [\[ICLR 2026\] Spurious Correlation-Aware Embedding Regularization for Worst-Group Robustness](../../ICLR2026/others/spurious_correlation-aware_embedding_regularization_for_worst-group_robustness.md)
 - [\[ICML 2026\] Guaranteed Optimal Compositional Explanations for Neurons](guaranteed_optimal_compositional_explanations_for_neurons.md)
 - [\[ICML 2025\] Cross-regularization: Adaptive Model Complexity through Validation Gradients](../../ICML2025/others/cross-regularization_adaptive_model_complexity_through_validation_gradients.md)
-- [\[NeurIPS 2025\] Tight Lower Bounds and Improved Convergence in Performative Prediction](../../NeurIPS2025/others/tight_lower_bounds_and_improved_convergence_in_performative_prediction.md)
-- [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](learning_permutation-invariant_macroscopic_dynamics.md)
 
 </div>
 

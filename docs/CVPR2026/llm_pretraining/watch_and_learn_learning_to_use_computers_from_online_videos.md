@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Watch and Learn: Learning to Use Computers from Online Videos
 description: >-
-  [CVPR 2026][Pretraining][computer-using agent] The Watch & Learn (W&L) framework is proposed, which automatically transforms human computer-operation videos from the internet into executable UI trajectory data using an Inverse Dynamics Model (IDM). It generates 53K+ high-quality trajectories, significantly improving the performance of various Computer-Using Agents
+  [CVPR2026][LLM Pretraining][computer-using agent] The Watch & Learn (W&L) framework is proposed, which automatically transforms human computer-operation videos from the internet into executable UI trajectory data using an Inverse Dynamics Model (IDM). It generates 53K+ high-quality trajectories, significantly improving the performance of various Computer-Using Agents (CUAs) when used as In-Context Learning (ICL) examples or Supervised Fine-Tuning (SFT) data.
 tags:
-  - CVPR 2026
-  - Pretraining
-  - computer-using agent
-  - inverse dynamics model
-  - video-to-trajectory
-  - in-context learning
-  - supervised fine-tuning
-  - UI grounding
+  - "CVPR2026"
+  - "LLM Pretraining"
+  - "computer-using agent"
+  - "inverse dynamics model"
+  - "video-to-trajectory"
+  - "in-context learning"
+  - "supervised fine-tuning"
+  - "UI grounding"
 date: 2026-05-08
-content_hash: 2606280b20f366b6
+content_hash: 6ed13c38874a5a52
 ---
+
 # Watch and Learn: Learning to Use Computers from Online Videos
 
 **Conference**: CVPR2026  
@@ -186,9 +187,9 @@ The training objective for the IDM is multi-task cross-entropy: activating loss 
 
 - [\[ICCV 2025\] Synchronization of Multiple Videos](../../ICCV2025/llm_pretraining/synchronization_of_multiple_videos.md)
 - [\[ICML 2026\] Constrained Bayesian Experimental Design via Online Planning](../../ICML2026/llm_pretraining/constrained_bayesian_experimental_design_via_online_planning.md)
+- [\[ICLR 2026\] Late-to-Early Training: Enabling LLMs to Learn Late-Stage Knowledge Earlier for Faster and Better Training](../../ICLR2026/llm_pretraining/late-to-early_training_let_llms_learn_earlier_so_faster_and_better.md)
+- [\[ICML 2026\] AC-ODM: Actor–Critic Online Data Mixing for Sample-Efficient LLM Pretraining](../../ICML2026/llm_pretraining/ac-odm_actor--critic_online_data_mixing_for_sample-efficient_llm_pretraining.md)
 - [\[NeurIPS 2025\] Optimal Online Change Detection via Random Fourier Features](../../NeurIPS2025/llm_pretraining/optimal_online_change_detection_via_random_fourier_features.md)
-- [\[CVPR 2025\] Precise Event Spotting in Sports Videos: Solving Long-Range Dependency and Class Imbalance](../../CVPR2025/llm_pretraining/precise_event_spotting_in_sports_videos_solving_long-range_dependency_and_class_.md)
-- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
 
 </div>
 

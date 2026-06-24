@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation
 description: >-
-  [ICCV 2025][Autonomous Driving][Driving world model] This paper proposes Hermes, the first unified driving world model that simultaneously performs 3D scene understanding (VQA/captioning) and future scene generation (poi…
+  [ICCV 2025][Autonomous Driving][Driving world model] This paper proposes Hermes, the first unified driving world model that simultaneously performs 3D scene understanding (VQA/captioning) and future scene generation (point cloud prediction). By leveraging BEV representations and world queries to inject LLM world knowledge into future scene generation, Hermes reduces 3s point cloud generation error by 32.4% and improves scene understanding CIDEr by 8.0%.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "BEV"
   - "large language model"
 date: 2026-05-08
-content_hash: e7d41742a639a394
+content_hash: 5bc7956709402eb0
 ---
 
 # Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation
@@ -136,11 +136,11 @@ Hermes achieves a 3s point cloud generation Chamfer Distance of 1.17, a 32.4% re
 
 ## Related Papers
 
+- [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](../../CVPR2026/autonomous_driving/gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
 - [\[ICCV 2025\] Controllable 3D Outdoor Scene Generation via Scene Graphs](controllable_3d_outdoor_scene_generation_via_scene_graphs.md)
-- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
 - [\[ICCV 2025\] EmbodiedOcc: Embodied 3D Occupancy Prediction for Vision-based Online Scene Understanding](embodiedocc_embodied_3d_occupancy_prediction_for_vision-based_online_scene_under.md)
+- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
 - [\[ICCV 2025\] MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding](mcam_multimodal_causal_analysis_model_for_ego-vehicle-level_driving_video_unders.md)
-- [\[NeurIPS 2025\] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding](../../NeurIPS2025/autonomous_driving/spiral_semantic-aware_progressive_lidar_scene_generation_and_understanding.md)
 
 </div>
 

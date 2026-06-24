@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VideoCoF: Unified Video Editing with Temporal Reasoner
 description: >-
-  [CVPR 2026][Video Generation][Video Editing] VideoCoF is proposed as a Chain-of-Thought inspired "see → reason → edit" video editing framework. By requiring the video diffusion model to first predict reasoning tokens (grayscale highlighted latents of the editing region) before generating target video tokens, it achieves precise instruction-region alignment withou
+  [CVPR 2026][Image Generation][Video editing] VideoCoF is proposed as a Chain-of-Thought inspired "see → reason → edit" video editing framework. By requiring the video diffusion model to first predict reasoning tokens (grayscale highlighted latents of the editing region) before generating target video tokens, it achieves precise instruction-region alignment without user-provided masks. It reaches SOTA performance with only 50K video pair training and supports video length extr…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video Editing
-  - Chain-of-Frames
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video editing"
+  - "Chain-of-Frames"
+  - "Video diffusion models"
+  - "Reasoning frames"
+  - "Length extrapolation"
 date: 2026-05-08
-content_hash: e672a2d30420967b
+content_hash: 332d3b97f021a6da
 ---
+
 # VideoCoF: Unified Video Editing with Temporal Reasoner
 
 **Conference**: CVPR 2026  
@@ -151,11 +155,11 @@ Reasoning frame format ablation:
 
 ## Related Papers
 
-- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
-- [\[CVPR 2026\] TempoControl: Temporal Attention Guidance for Text-to-Video Models](tempocontrol_temporal_attention_guidance_for_text-to-video_models.md)
-- [\[CVPR 2026\] DreamStyle: A Unified Framework for Video Stylization](dreamstyle_a_unified_framework_for_video_stylization.md)
-- [\[CVPR 2026\] FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing](ffp-300k_scaling_first-frame_propagation_for_generalizable_video_editing.md)
-- [\[CVPR 2026\] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models](tear_temporal-aware_automated_red-teaming_for_text-to-video_models.md)
+- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2026\] UniEdit-I: Training-free Image Editing for Unified VLM via Iterative Understanding, Editing and Verifying](uniedit-i_training-free_image_editing_for_unified_vlm_via_iterative_understandin.md)
+- [\[CVPR 2026\] Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video](cross-modal_emotion_transfer_for_emotion_editing_in_talking_face_video.md)
+- [\[CVPR 2026\] NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing](nova_sparse_control_dense_synthesis_for_pair-free_video_editing.md)
+- [\[ICLR 2026\] ChronoEdit: Towards Temporal Reasoning for In-Context Image Editing and World Simulation](../../ICLR2026/image_generation/chronoedit_towards_temporal_reasoning_for_in-context_image_editing_and_world_sim.md)
 
 </div>
 

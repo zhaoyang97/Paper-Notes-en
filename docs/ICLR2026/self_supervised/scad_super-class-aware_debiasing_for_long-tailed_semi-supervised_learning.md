@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SCAD: Super-Class-Aware Debiasing for Long-Tailed Semi-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][logit adjustment] SCAD identifies the issue of "local bias within semantically similar categories" in long-tailed semi-supervised learning. It utilizes automatically discovered super-class contexts to perform instance-level dynamic corrections for logit adjustment. SCAD consistently improves existing LTSSL methods on benchmarks such as
+  [ICLR 2026][Self-Supervised Learning][Long-Tailed Semi-Supervised Learning] SCAD identifies the issue of "local bias within semantically similar categories" in long-tailed semi-supervised learning. It utilizes automatically discovered super-class contexts to perform instance-level dynamic corrections for logit adjustment. SCAD consistently improves existing LTSSL methods on benchmarks such as CIFAR, STL, ImageNet-127, and Food101-LT.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - logit adjustment
-  - super-class
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Long-Tailed Semi-Supervised Learning"
+  - "Pseudo-label Debiasing"
+  - "logit adjustment"
+  - "super-class"
+  - "Local Class Imbalance"
 date: 2026-05-08
-content_hash: 6ee369c630481854
+content_hash: b8d8c641157a946c
 ---
+
 # SCAD: Super-Class-Aware Debiasing for Long-Tailed Semi-Supervised Learning
 
 **Conference**: ICLR 2026  
@@ -134,8 +138,8 @@ Ablations show that gains come from the combination of coarse learning and local
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

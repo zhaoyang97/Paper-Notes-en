@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DVD-Quant: Data-free Video Diffusion Transformers Quantization
 description: >-
-  [ICLR 2026][Model Compression][Video DiT] DVD-Quant proposes a **completely data-free** post-training quantization framework for Video Diffusion Transformers. By integrating three modules—Bounded-init Grid Refinement (BGR), Auto-scaling Rotated Quantization (ARQ), and $\delta$-Guided Bit Switching ($\delta$-GBS)—it marks the first time a Video DiT achieves W4A
+  [ICLR 2026][Model Compression][Video DiT] DVD-Quant proposes a **completely data-free** post-training quantization framework for Video Diffusion Transformers. By integrating three modules—Bounded-init Grid Refinement (BGR), Auto-scaling Rotated Quantization (ARQ), and $\delta$-Guided Bit Switching ($\delta$-GBS)—it marks the first time a Video DiT achieves W4A4 quantization without quality degradation, while delivering approximately $2\times$ acceleration on HunyuanVideo.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Video DiT
-  - W4A4
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Video DiT"
+  - "Post-Training Quantization (PTQ)"
+  - "Data-free quantization"
+  - "W4A4"
+  - "Mixed-precision"
+  - "Hadamard Rotation"
 date: 2026-05-08
-content_hash: 64bbfb0426ff4887
+content_hash: 5e70ba93bdf94bd0
 ---
+
 # DVD-Quant: Data-free Video Diffusion Transformers Quantization
 
 **Conference**: ICLR 2026  
@@ -143,11 +148,11 @@ BGR and ARQ are both essential; their synergy achieves optimal results. Particul
 
 ## Related Papers
 
+- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](../../ICML2026/model_compression/selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
+- [\[ICCV 2025\] OuroMamba: A Data-Free Quantization Framework for Vision Mamba](../../ICCV2025/model_compression/ouromamba_a_data-free_quantization_framework_for_vision_mamba.md)
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 - [\[ICLR 2026\] DiffVax: Optimization-Free Image Immunization Against Diffusion-Based Editing](diffvax_optimization-free_image_immunization_against_diffusion-based_editing.md)
-- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
-- [\[ICLR 2026\] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization](serq_saliency-aware_low-rank_error_reconstruction_for_llm_quantization.md)
-- [\[ICLR 2026\] Tequila: Trapping-free Ternary Quantization for Large Language Models](tequila_trapping-free_ternary_quantization_for_large_language_models.md)
 
 </div>
 

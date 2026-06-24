@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DreamOmni2: Multimodal Instruction-based Generation and Editing
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] DreamOmni2 upgrades "instruction-based editing" and "subject-driven generation" into **multimodal instruction tasks with reference images**, capable of referencing both specific objects and abstract attributes (e.g., texture, pose, hairstyle, style). It generates training pairs via a three-stage synthetic data pipeline
+  [CVPR 2026][Image Generation][Multimodal Instruction Editing] DreamOmni2 upgrades "instruction-based editing" and "subject-driven generation" into **multimodal instruction tasks with reference images**, capable of referencing both specific objects and abstract attributes (e.g., texture, pose, hairstyle, style). It generates training pairs via a three-stage synthetic data pipeline and equips the unified editing model Flux Kontext with index encoding…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multimodal Instruction Editing"
+  - "Subject-driven Generation"
+  - "Abstract Attributes"
+  - "Feature Mixing Data Synthesis"
+  - "Unified Generation and Editing Model"
 date: 2026-05-08
-content_hash: 754905df29a12d15
+content_hash: acefeafaf33d89db
 ---
+
 # DreamOmni2: Multimodal Instruction-based Generation and Editing
 
 **Conference**: CVPR 2026  
@@ -144,8 +150,8 @@ Open-source models almost entirely failed on abstract attributes (Human scores n
 - [\[CVPR 2026\] OmniGen2: Towards Instruction-Aligned Multimodal Generation](omnigen2_towards_instruction-aligned_multimodal_generation.md)
 - [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](compbench_benchmarking_complex_instruction-guided_image_editing.md)
 - [\[CVPR 2026\] SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control](slideredit_continuous_image_editing_with_fine-grained_instruction_control.md)
+- [\[CVPR 2026\] Inter-Edit: First Benchmark for Interactive Instruction-Based Image Editing](inter-edit_first_benchmark_for_interactive_instruction-based_image_editing.md)
 - [\[CVPR 2026\] Kontinuous Kontext: Continuous Strength Control for Instruction-based Image Editing](kontinuous_kontext_continuous_strength_control_for_instruction-based_image_editi.md)
-- [\[CVPR 2026\] Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation](proxy-tuning_tailoring_multimodal_autoregressive_models_for_subject-driven_image.md)
 
 </div>
 

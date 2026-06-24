@@ -1,16 +1,21 @@
 ---
 title: >-
-  [Paper Note] From f(x) and g(x) to f(g(x)): LLMs Learn New Skills in RL by Composing Old Ones
+  [Paper Note] From $f(x)$ and $g(x)$ to $f(g(x))$: LLMs Learn New Skills in RL by Composing Old Ones
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] The paper uses a decontaminated synthetic string transformation task to demonstrate that when LLMs have mastered "atomic skills" through pre-training, **as long as RL training explicitly incentivizes "composition"**, they can truly learn entirely new compositional skills that cannot be explained by atomic skills alone.
+  [ICLR 2026][Reinforcement Learning][RLVR] The paper uses a decontaminated synthetic string transformation task to demonstrate that when LLMs have mastered "atomic skills" through pre-training, **as long as RL training explicitly incentivizes "composition"**, they can truly learn entirely new compositional skills that cannot be explained by atomic skills alone. These models generalize to deeper nesting levels and even completely different tasks—directly contradicting the pessi…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Skill Acquisition"
+  - "Compositional Generalization"
+  - "GRPO"
+  - "easy-to-hard generalization"
+  - "cross-task transfer"
 date: 2026-05-08
-content_hash: 582a76e9ef794d70
+content_hash: c2050c115bb580fa
 ---
+
 # From $f(x)$ and $g(x)$ to $f(g(x))$: LLMs Learn New Skills in RL by Composing Old Ones
 
 **Conference**: ICLR 2026  
@@ -127,10 +132,10 @@ Failure modes for RFT Base, RFT Level 2, and RL Level 1 are highly similar: >50%
 ## Related Papers
 
 - [\[ICLR 2026\] RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?](rl_grokking_recipe_how_does_rl_unlock_and_transfer_new_algorithms_in_llms.md)
+- [\[ICLR 2026\] Do Not Let Low-Probability Tokens Over-Dominate in RL for LLMs](do_not_let_low-probability_tokens_over-dominate_in_rl_for_llms.md)
 - [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
 - [\[ICLR 2026\] Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective](principled_rl_for_diffusion_llms_emerges_from_a_sequence-level_perspective.md)
 - [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
-- [\[ICLR 2026\] Getting Your LLMs Ready for Reinforcement Learning with Lightweight SFT](getting_your_llms_ready_for_reinforcement_learning_with_lightweight_sft.md)
 
 </div>
 

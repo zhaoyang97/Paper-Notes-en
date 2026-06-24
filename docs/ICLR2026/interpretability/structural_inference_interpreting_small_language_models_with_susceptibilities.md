@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Structural Inference: Interpreting Small Language Models with Susceptibilities
 description: >-
-  [ICLR 2026][Interpretability][susceptibility] This paper treats small language models as Bayesian statistical physics systems. By inducing model component responses through small perturbations in data distributions, the authors define susceptibility to characterize how attention heads express or suppress different data patterns. Using PCA on a 3M-parameter, two-la
+  [ICLR2026][Interpretability][susceptibility] This paper treats small language models as Bayesian statistical physics systems. By inducing model component responses through small perturbations in data distributions, the authors define susceptibility to characterize how attention heads express or suppress different data patterns. Using PCA on a 3M-parameter, two-layer attention-only Transformer, the method automatically isolates known structures such as word boundaries…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - susceptibility
-  - SGLD
+  - "ICLR2026"
+  - "Interpretability"
+  - "susceptibility"
+  - "structural inference"
+  - "small language models"
+  - "attention heads"
+  - "SGLD"
 date: 2026-05-08
-content_hash: e57251493212bf2f
+content_hash: a28af81865bd725a
 ---
+
 # Structural Inference: Interpreting Small Language Models with Susceptibilities
 
 **Conference**: ICLR2026  
@@ -135,6 +139,7 @@ The authors perform sanity checks and comparisons with zero ablation to confirm 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

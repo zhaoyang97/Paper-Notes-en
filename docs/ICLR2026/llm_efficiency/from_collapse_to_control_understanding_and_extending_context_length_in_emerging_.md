@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Collapse to Control: Understanding and Extending Context Length in Emerging Hybrid Models via Universal Position Interpolation
 description: >-
-  [ICLR 2026][LLM Efficiency][State Space Model] This paper systematically explains why hybrid Mamba-Transformer models suffer from context collapse beyond their training window and proposes Universal Position Interpolation (UPI). By simultaneously scaling Transformer RoPE frequencies and the step size $\Delta_t$ of a few unstable Mamba heads, UPI extends the usable
+  [ICLR2026][LLM Efficiency][Long Context Extension] This paper systematically explains why hybrid Mamba-Transformer models suffer from context collapse beyond their training window and proposes Universal Position Interpolation (UPI). By simultaneously scaling Transformer RoPE frequencies and the step size $\Delta_t$ of a few unstable Mamba heads, UPI extends the usable context of Bamba, Nemotron-H, and Mamba2 from 4K/8K up to 64K without retraining.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - State Space Model
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Long Context Extension"
+  - "Hybrid Mamba-Transformer"
+  - "State Space Models"
+  - "Position Interpolation"
+  - "Training-Free Inference"
 date: 2026-05-08
-content_hash: 6636c4eb664273dd
+content_hash: 3a3183ad295175e8
 ---
+
 # From Collapse to Control: Understanding and Extending Context Length in Emerging Hybrid Models via Universal Position Interpolation
 
 **Conference**: ICLR2026  
@@ -165,10 +170,17 @@ Removing selective scaling or one side of the interpolation significantly degrad
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
+- [\[ACL 2025\] Giraffe: Design Choices for Extending the Context Length of Visual Language Models](../../ACL2025/llm_efficiency/design_choices_for_extending_the_context_length_of_visual_language_models.md)
+- [\[ICLR 2026\] Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs](beyond_real_imaginary_extension_of_rotary_position_embeddings_for_long-context_l.md)
+- [\[ICLR 2026\] Distilling to Hybrid Attention Models via KL-Guided Layer Selection](distilling_to_hybrid_attention_models_via_kl-guided_layer_selection.md)
+- [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)

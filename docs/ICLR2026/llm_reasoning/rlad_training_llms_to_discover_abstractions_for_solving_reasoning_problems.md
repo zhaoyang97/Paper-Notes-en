@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper introduces "reasoning abstractions"—reusable segments of procedural or factual knowledge written in natural language—and designs RLAD, a two-player RL paradigm. By jointly training an "abstraction generator" and an "abstraction-conditional solution generator," the model learns to propose abstractions before
+  [ICLR 2026][Reasoning][Reasoning abstraction] This paper introduces "reasoning abstractions"—reusable segments of procedural or factual knowledge written in natural language—and designs RLAD, a two-player RL paradigm. By jointly training an "abstraction generator" and an "abstraction-conditional solution generator," the model learns to propose abstractions before solving problems. This approach achieves a 44% average improvement over pure long-chain-of-thought RL (DAPO) on AI…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning abstraction"
+  - "Two-player RL"
+  - "Test-time compute allocation"
+  - "Exploration breadth"
+  - "Mathematical reasoning"
 date: 2026-05-08
-content_hash: d1e345454d5102e3
+content_hash: be6746666ff88c4d
 ---
+
 # RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems
 
 **Conference**: ICLR 2026  
@@ -132,10 +138,20 @@ Notably, RLAD-trained models perform better even when no abstraction is provided
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Hilbert-Geo: Solving Solid Geometric Problems by Neural-Symbolic Reasoning](../../CVPR2026/llm_reasoning/hilbert-geo_solving_solid_geometric_problems_by_neural-symbolic_reasoning.md)
+- [\[ICLR 2026\] STAT: Skill-Targeted Adaptive Training](stat_skill-targeted_adaptive_training.md)
+- [\[ICLR 2026\] Exposing Weaknesses of Large Reasoning Models through Graph Algorithm Problems](exposing_weaknesses_of_large_reasoning_models_through_graph_algorithm_problems.md)
+- [\[ICLR 2026\] $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving](textbfre2_unlocking_llm_reasoning_via_reinforcement_learning_with_re-solving.md)
+- [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Hilbert-Geo: Solving Solid Geometric Problems by Neural-Symbolic Reasoning](../../CVPR2026/llm_reasoning/hilbert-geo_solving_solid_geometric_problems_by_neural-symbolic_reasoning.md)

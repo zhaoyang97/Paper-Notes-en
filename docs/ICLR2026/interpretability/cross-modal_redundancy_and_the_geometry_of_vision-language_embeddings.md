@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The authors propose the Iso-Energy hypothesis (stating that truly cross-modal shared concepts should have the same average activation energy across different modalities) and design Aligned SAE as an analytical tool. Their work reveals a geometric structure in VLM embedding space where bimodal atoms carry cross-modal al
+  [ICLR 2026][Interpretability][Modality Gap] The authors propose the Iso-Energy hypothesis (stating that truly cross-modal shared concepts should have the same average activation energy across different modalities) and design Aligned SAE as an analytical tool. Their work reveals a geometric structure in VLM embedding space where bimodal atoms carry cross-modal alignment signals, while unimodal atoms fully account for the modality gap.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Modality Gap"
+  - "Sparse Autoencoders"
+  - "Cross-modal Redundancy"
+  - "Iso-Energy Hypothesis"
+  - "VLM Interpretability"
 date: 2026-05-08
-content_hash: a0c2bd5dac9b0588
+content_hash: 056f307198a739b0
 ---
+
 # Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings
 
 **Conference**: ICLR 2026  
@@ -149,8 +155,8 @@ SAE and SAE-A were trained on 6 VLMs (CLIP, CLIP-L, OpenCLIP, OpenCLIP-L, SigLIP
 
 - [\[ICLR 2026\] Inducing Dyslexia in Vision Language Models](inducing_dyslexia_in_vision_language_models.md)
 - [\[ICLR 2026\] Bridging Explainability and Embeddings: BEE Aware of Spuriousness](bridging_explainability_and_embeddings_bee_aware_of_spuriousness.md)
-- [\[CVPR 2026\] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared](../../CVPR2026/interpretability/missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare.md)
 - [\[ICLR 2026\] Probing Rotary Position Embeddings through Frequency Entropy](probing_rotary_position_embeddings_through_frequency_entropy.md)
+- [\[CVPR 2026\] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared](../../CVPR2026/interpretability/missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare.md)
 - [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
 
 </div>

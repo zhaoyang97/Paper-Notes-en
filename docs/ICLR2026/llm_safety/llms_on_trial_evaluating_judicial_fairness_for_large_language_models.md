@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] LLMs on Trial: Evaluating Judicial Fairness for Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][judicial fairness] Starting from judicial fairness theory, this paper constructs a judicial fairness evaluation framework for LLMs with 65 labels and 161 values, alongside a counterfactual dataset JudiFair containing 177,100 case facts. By applying a triple-metric system (Inconsistency / Bias / Imbalanced Error) combined with fixed-effec
+  [ICLR 2026][LLM Safety][judicial fairness] Starting from judicial fairness theory, this paper constructs a judicial fairness evaluation framework for LLMs with 65 labels and 161 values, alongside a counterfactual dataset JudiFair containing 177,100 case facts. By applying a triple-metric system (Inconsistency / Bias / Imbalanced Error) combined with fixed-effect regression and Bernoulli tests to audit 16 LLMs, the study reveals widespread and systematic judicial unfairness ac…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - judicial fairness
-  - LLM-as-a-judge
-  - counterfactual prompting
-  - bias
-  - fixed-effect regression
-  - legal NLP
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "judicial fairness"
+  - "LLM-as-a-judge"
+  - "counterfactual prompting"
+  - "bias"
+  - "fixed-effect regression"
+  - "legal NLP"
 date: 2026-05-08
-content_hash: fbe6797b1ef9a3f1
+content_hash: e09878bffdd4fd98
 ---
+
 # LLMs on Trial: Evaluating Judicial Fairness for Large Language Models
 
 **Conference**: ICLR 2026  

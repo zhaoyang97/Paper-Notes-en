@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation
 description: >-
-  [CVPR 2026][3D Vision][2D Gaussian Splatting] SGI proposes a seed-based structured 2D Gaussian representation framework. By organizing unstructured Gaussian primitives into seed-driven neural Gaussians, combined with context-guided entropy coding and multi-scale optimization strategies, it achieves up to a 7.5× compression ratio and 6.5× optimization acceleration
+  [CVPR 2026][3D Vision][2D Gaussian Splatting] SGI proposes a seed-based structured 2D Gaussian representation framework. By organizing unstructured Gaussian primitives into seed-driven neural Gaussians, combined with context-guided entropy coding and multi-scale optimization strategies, it achieves up to a 7.5× compression ratio and 6.5× optimization acceleration for high-resolution image representation while maintaining or even improving reconstruction fidelity.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 2D Gaussian Splatting
-  - image representation
-  - neural compression
-  - entropy coding
-  - multi-scale optimization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "2D Gaussian Splatting"
+  - "image representation"
+  - "neural compression"
+  - "entropy coding"
+  - "multi-scale optimization"
 date: 2026-05-08
-content_hash: b90918bc3e550f33
+content_hash: a5a9b404c8882897
 ---
+
 # SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation
 
 **Conference**: CVPR 2026  
@@ -167,11 +168,11 @@ A solid and systematic work that organically combines seed structures, entropy c
 
 ## Related Papers
 
+- [\[CVPR 2026\] Native and Compact Structured Latents for 3D Generation](native_and_compact_structured_latents_for_3d_generation.md)
 - [\[AAAI 2026\] GaussianImage++: Boosted Image Representation and Compression with 2D Gaussian Splatting](../../AAAI2026/3d_vision/gaussianimage_boosted_image_representation_and_compression_with_2d_gaussian_spla.md)
-- [\[CVPR 2026\] SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation](swifttailor_efficient_3d_garment_generation_with_geometry_image_representation.md)
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
-- [\[CVPR 2026\] TokenHand: Discrete Token Representation for Efficient Hand Mesh Reconstruction](tokenhand_discrete_token_representation_for_efficient_hand_mesh_reconstruction.md)
 - [\[ECCV 2024\] GaussianImage: 1000 FPS Image Representation and Compression by 2D Gaussian Splatting](../../ECCV2024/3d_vision/gaussianimage_1000_fps_image_representation_and_compression_by_2d_gaussian_splat.md)
+- [\[CVPR 2026\] SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation](swifttailor_efficient_3d_garment_generation_with_geometry_image_representation.md)
+- [\[CVPR 2026\] MetroGS: Efficient and Stable Reconstruction of Geometrically Accurate High-Fidelity Large-Scale Scenes](metrogs_efficient_and_stable_reconstruction_of_geometrically_accurate_high-fidel.md)
 
 </div>
 

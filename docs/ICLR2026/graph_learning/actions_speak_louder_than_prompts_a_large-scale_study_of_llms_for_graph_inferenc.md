@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Actions Speak Louder than Prompts: A Large-Scale Study of LLMs for Graph Inference
 description: >-
-  [ICLR 2026][Graph Learning][Graph-as-Code] This paper presents a large-scale, controlled empirical study systematically comparing three "interaction modes" for LLMs to process textual graphs: direct prompting, ReAct-style tool calling, and Graph-as-Code (where the LLM writes code to query the graph). The study finds that **allowing the LLM to write code for gra
+  [ICLR2026][Graph Learning][LLM-Graph Interaction] This paper presents a large-scale, controlled empirical study systematically comparing three "interaction modes" for LLMs to process textual graphs: direct prompting, ReAct-style tool calling, and Graph-as-Code (where the LLM writes code to query the graph). The study finds that **allowing the LLM to write code for graph operations** (rather than stuffing the graph into the prompt) is overall superior for node classification…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Graph-as-Code
+  - "ICLR2026"
+  - "Graph Learning"
+  - "LLM-Graph Interaction"
+  - "Node Classification"
+  - "Graph-as-Code"
+  - "ReAct Tool-use"
+  - "Dependency Analysis"
 date: 2026-05-08
-content_hash: 0f717f220930d515
+content_hash: 1cb9f7123aced59b
 ---
+
 # Actions Speak Louder than Prompts: A Large-Scale Study of LLMs for Graph Inference
 
 **Conference**: ICLR2026  
@@ -138,8 +143,8 @@ Despite homophily as low as 6–17%, LLM interaction modes far outperform baseli
 - [\[ACL 2026\] Evaluating LLMs on Large-Scale Graph Property Estimation via Random Walks](../../ACL2026/graph_learning/evaluating_llms_on_large-scale_graph_property_estimation_via_random_walks.md)
 - [\[ICLR 2026\] AtlasKV: Augmenting LLMs with Billion-Scale Knowledge Graphs in 20GB VRAM](atlaskv_augmenting_llms_with_billion-scale_knowledge_graphs_in_20gb_vram.md)
 - [\[ICLR 2026\] Discrete Bayesian Sample Inference for Graph Generation](discrete_bayesian_sample_inference_for_graph_generation.md)
-- [\[ICLR 2026\] Training-Free Counterfactual Explanation for Temporal Graph Model Inference](training-free_counterfactual_explanation_for_temporal_graph_model_inference.md)
 - [\[AAAI 2026\] GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization](../../AAAI2026/graph_learning/gt-snt_a_linear-time_transformer_for_large-scale_graphs_via_spiking_node_tokeniz.md)
+- [\[ICLR 2026\] Training-Free Counterfactual Explanation for Temporal Graph Model Inference](training-free_counterfactual_explanation_for_temporal_graph_model_inference.md)
 
 </div>
 

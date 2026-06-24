@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech
 description: >-
-  [AAAI 2026][Dialogue Systems][multimodal interaction] This paper proposes TalkSketch, a system that integrates hand-drawn sketches with real-time speech input into a multimodal AI chatbot…
+  [AAAI 2026][Dialogue Systems][multimodal interaction] This paper proposes TalkSketch, a system that integrates hand-drawn sketches with real-time speech input into a multimodal AI chatbot, enabling designers to simultaneously draw and verbalize ideas during early-stage ideation. The system addresses the problem that text-based prompting in existing GenAI tools disrupts the creative workflow.
 tags:
   - "AAAI 2026"
   - "Dialogue Systems"
@@ -12,7 +12,7 @@ tags:
   - "generative AI"
   - "creativity support tools"
 date: 2026-05-08
-content_hash: 83a376c10bd46ae0
+content_hash: eed19c94ab789755
 ---
 
 # TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech
@@ -187,11 +187,11 @@ As a system paper, no formal user study evaluation has been conducted. The autho
 
 ## Related Papers
 
-- [\[CVPR 2026\] Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](../../CVPR2026/dialogue/evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)
+- [\[ICLR 2026\] DRIFT: Learning from Abundant User Dissatisfaction in Real-World Preference Learning](../../ICLR2026/dialogue/drift_learning_from_abundant_user_dissatisfaction_in_real-world_preference_learn.md)
+- [\[ACL 2025\] Enabling Chatbots with Eyes and Ears: An Immersive Multimodal Conversation System](../../ACL2025/dialogue/enabling_chatbots_with_eyes_and_ears_an_immersive_multimodal_conversation_system.md)
+- [\[ACL 2025\] PersonaLens: A Benchmark for Personalization Evaluation in Conversational AI Assistants](../../ACL2025/dialogue/personalens_a_benchmark_for_personalization_evaluation_in_conversational_ai_assi.md)
+- [\[ECCV 2024\] BI-MDRG: Bridging Image History in Multimodal Dialogue Response Generation](../../ECCV2024/dialogue/bi-mdrg_bridging_image_history_in_multimodal_dialogue_response_generation.md)
 - [\[ACL 2026\] APEX-MEM: Agentic Semi-Structured Memory with Temporal Reasoning for Long-Term Conversational AI](../../ACL2026/dialogue/apex-mem_agentic_semi-structured_memory_with_temporal_reasoning_for_long-term_co.md)
-- [\[AAAI 2026\] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL](teaching_large_language_models_to_maintain_contextual_faithfulness_via_synthetic.md)
-- [\[AAAI 2026\] Auto-PRE: An Automatic and Cost-Efficient Peer-Review Framework for Language Generation Evaluation](auto-pre_an_automatic_and_cost-efficient_peer-review_framework_for_language_gene.md)
-- [\[AAAI 2026\] Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs](chatsparent_an_interactive_system_for_detecting_and_mitigating_cognitive_fatigue.md)
 
 </div>
 

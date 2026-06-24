@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D
 description: >-
-  [NeurIPS 2025][AI Safety][AI safety evaluation] This work extends MLE-Bench to construct 20 code-sabotage tasks and sandbagging evaluations. It finds that frontier AI agents can successfully plant backdoors and other sab…
+  [NeurIPS 2025 Spotlight][AI Safety][AI safety evaluation] This work extends MLE-Bench to construct 20 code-sabotage tasks and sandbagging evaluations. It finds that frontier AI agents can successfully plant backdoors and other sabotage while completing normal ML engineering tasks, and in some cases evade detection by LM monitors.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "AI Safety"
   - "AI safety evaluation"
   - "model sabotage"
@@ -12,7 +12,7 @@ tags:
   - "automated AI R&D"
   - "monitor evasion"
 date: 2026-05-08
-content_hash: 86b25cb2c8c0611b
+content_hash: 51259b919ea2ab5d
 ---
 
 # CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D
@@ -139,8 +139,8 @@ The pipeline operates at three levels: (1) An agent autonomously executes ML eng
 - [\[NeurIPS 2025\] Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI](understanding_challenges_to_the_interpretation_of_disaggregated_evaluations_of_a.md)
 - [\[NeurIPS 2025\] Matchings Under Biased and Correlated Evaluations](matchings_under_biased_and_correlated_evaluations.md)
 - [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
+- [\[ICML 2026\] Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search](../../ICML2026/ai_safety/exposing_hidden_biases_in_text-to-image_models_via_automated_prompt_search.md)
 - [\[NeurIPS 2025\] Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy and Research](machine_unlearning_doesnt_do_what_you_think_lessons_for_generative_ai_policy_and.md)
-- [\[NeurIPS 2025\] It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act](its_complicated_the_relationship_of_algorithmic_fairness_and_non-discrimination_.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] JAPAN: Joint Adaptive Prediction Areas with Normalising-Flows
 description: >-
-  [ICLR 2026][Time Series][Conformal Prediction] JAPAN uses Normalising Flows (NF) to estimate (conditional) density and employs log-density as the conformal score. By thresholding the density, it constructs prediction areas that are **geometry-independent, potentially disconnected, and context-adaptive**. While maintaining finite-sample coverage guarantees, it compr
+  [ICLR 2026][Time Series][Conformal Prediction] JAPAN uses Normalising Flows (NF) to estimate (conditional) density and employs log-density as the conformal score. By thresholding the density, it constructs prediction areas that are **geometry-independent, potentially disconnected, and context-adaptive**. While maintaining finite-sample coverage guarantees, it compresses the prediction area volume significantly more than various residual-based baselines.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Conformal Prediction
-  - Normalising Flows
+  - "ICLR 2026"
+  - "Time Series"
+  - "Conformal Prediction"
+  - "Normalising Flows"
+  - "Density Thresholding"
+  - "Multivariate Regression"
+  - "Time Series Forecasting"
+  - "Prediction Areas"
 date: 2026-05-08
-content_hash: da89ebbdeb8798ac
+content_hash: 0b228bb0f36529c9
 ---
+
 # JAPAN: Joint Adaptive Prediction Areas with Normalising-Flows
 
 **Conference**: ICLR 2026  
@@ -124,11 +129,11 @@ JAPAN's regions are generally the tightest. **On COVID-19, it is nearly an order
 
 ## Related Papers
 
-- [\[ICLR 2026\] DistDF: Time-series Forecasting Needs Joint-distribution Wasserstein Alignment](distdf_time-series_forecasting_needs_joint-distribution_wasserstein_alignment.md)
-- [\[ICLR 2026\] ResCP: Reservoir Conformal Prediction for Time Series Forecasting](rescp_reservoir_conformal_prediction_for_time_series_forecasting.md)
+- [\[ICLR 2026\] Reliable Probabilistic Forecasting of Irregular Time Series via Marginal Consistent Flows](reliable_probabilistic_forecasting_of_irregular_time_series_through_marginalizat.md)
 - [\[ICLR 2026\] Online Time Series Prediction Using Feature Adjustment](online_time_series_prediction_using_feature_adjustment.md)
-- [\[ICLR 2026\] Extreme Weather Nowcasting via Local Precipitation Pattern Prediction](extreme_weather_nowcasting_via_local_precipitation_pattern_prediction.md)
-- [\[ICLR 2026\] SONATA: Synergistic Coreset Informed Adaptive Temporal Tensor Factorization](sonata_synergistic_coreset_informed_adaptive_temporal_tensor_factorization.md)
+- [\[ICLR 2026\] DistDF: Time-series Forecasting Needs Joint-distribution Wasserstein Alignment](distdf_time-series_forecasting_needs_joint-distribution_wasserstein_alignment.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
+- [\[ICLR 2026\] ResCP: Reservoir Conformal Prediction for Time Series Forecasting](rescp_reservoir_conformal_prediction_for_time_series_forecasting.md)
 
 </div>
 

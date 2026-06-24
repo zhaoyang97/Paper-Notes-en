@@ -2,60 +2,60 @@
 title: >-
   [Paper Note] 3DTeethSAM: Taming SAM2 for 3D Teeth Segmentation
 description: >-
-  [AAAI 2026][3D Vision][3D teeth segmentation] This work adapts the SAM2 foundation model for 3D teeth segmentation by converting 3D meshes into 2D images via multi-view rendering and designing three lightweight adapters—…
+  [AAAI 2026][3D Vision][3D Teeth Segmentation] Adapts the SAM2 foundation model to the 3D teeth segmentation task by rendering 3D meshes into 2D images from multiple views. It designs three lightweight adapters (Prompt Embedding Generator, Mask Refiner, and Mask Classifier) and a Deformable Global Attention Plugin (DGAP) to address automatic prompting, boundary refinement, and semantic classification challenges, achieving a new state-of-the-art with 91.90% T-mIoU on the Teeth3…
 tags:
   - "AAAI 2026"
   - "3D Vision"
-  - "3D teeth segmentation"
-  - "SAM2 adaptation"
-  - "multi-view rendering"
-  - "deformable attention"
-  - "foundation model transfer"
+  - "3D Teeth Segmentation"
+  - "SAM2 Adaptation"
+  - "Multi-view Rendering"
+  - "Deformable Attention"
+  - "Foundation Model Transfer"
 date: 2026-05-08
-content_hash: 4100f16abae870e4
+content_hash: bdd1301407ac4719
 ---
 
 # 3DTeethSAM: Taming SAM2 for 3D Teeth Segmentation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2512.11557](https://arxiv.org/abs/2512.11557)  
 **Code**: [https://github.com/Crisitofy/3DTeethSAM](https://github.com/Crisitofy/3DTeethSAM)  
-**Area**: 3D Vision / Medical Image Segmentation
-**Keywords**: 3D teeth segmentation, SAM2 adaptation, multi-view rendering, deformable attention, foundation model transfer
+**Area**: 3D Vision / Medical Image Segmentation  
+**Keywords**: 3D Teeth Segmentation, SAM2 Adaptation, Multi-view Rendering, Deformable Attention, Foundation Model Transfer  
 
 ## TL;DR
-This work adapts the SAM2 foundation model for 3D teeth segmentation by converting 3D meshes into 2D images via multi-view rendering and designing three lightweight adapters—a Prompt Embedding Generator, a Mask Refiner, and a Mask Classifier—along with a Deformable Global Attention Plugin (DGAP) to address automatic prompting, boundary refinement, and semantic classification. The proposed method achieves a new state-of-the-art T-mIoU of 91.90% on Teeth3DS.
+Adapts the SAM2 foundation model to the 3D teeth segmentation task by rendering 3D meshes into 2D images from multiple views. It designs three lightweight adapters (Prompt Embedding Generator, Mask Refiner, and Mask Classifier) and a Deformable Global Attention Plugin (DGAP) to address automatic prompting, boundary refinement, and semantic classification challenges, achieving a new state-of-the-art with 91.90% T-mIoU on the Teeth3DS dataset.
 
 ## Background & Motivation
-3D teeth segmentation is a fundamental task in digital dentistry, requiring the localization and classification of individual tooth instances within a 3D dental model. Existing methods primarily rely on specialized networks that directly process 3D point clouds or meshes (e.g., PointNet++, MeshSegNet, TSGCNet), and suffer from two critical bottlenecks: (1) these networks trained from scratch are difficult to scale to high-resolution 3D models; and (2) they cannot leverage knowledge from large-scale pretrained models. Meanwhile, SAM2, as a 2D visual foundation model, has demonstrated strong zero-shot capability across various downstream tasks. However, transferring it to 3D teeth segmentation faces three major challenges: dimensionality mismatch, dependence on manual prompts, and category-agnostic outputs.
+3D teeth segmentation is a foundational task in digital dentistry, requiring the localization and classification of each tooth instance in 3D teeth models. Existing methods primarily rely on specialized networks that directly process 3D point clouds/meshes (e.g., PointNet++, MeshSegNet, TSGCNet), which face two core bottlenecks: (1) these networks trained from scratch are hard to scale to high-resolution 3D models; (2) they cannot leverage the knowledge from large-scale pre-trained foundation models. Meanwhile, SAM2, as a 2D vision foundation model, has demonstrated strong zero-shot capabilities in various downstream tasks. However, transferring it to 3D teeth segmentation faces three major challenges: dimension mismatch, the requirement of manual prompts, and category agnosticism.
 
 ## Core Problem
-How can SAM2, a 2D foundation model, be effectively adapted for 3D teeth segmentation? Specifically, three issues must be resolved: (1) SAM2 relies on manual point/box prompts and cannot operate automatically; (2) SAM2's raw segmentation results exhibit coarse boundaries; and (3) SAM2 is category-agnostic and cannot distinguish different tooth IDs. These three problems collectively prevent direct application of SAM2 to high-accuracy, fully automated 3D teeth segmentation.
+How to effectively adapt the 2D foundation model, SAM2, to the 3D teeth segmentation task? Specifically, the following must be resolved: (1) SAM2 relies on manual point/box prompts, hindering automation; (2) the original segmentation boundaries generated by SAM2 are coarse; (3) SAM2 is category-agnostic and cannot differentiate distinct tooth IDs. These three problems collectively impede the direct employment of SAM2 for high-precision, fully automatic 3D teeth segmentation.
 
 ## Method
 
 ### Overall Architecture
-The full pipeline consists of three stages: (1) **Multi-view rendering**: the 3D tooth mesh is normalized and rendered from fixed viewpoints (front, back, and multiple lateral views) into 512×512 RGB images; (2) **SAM2-adapted segmentation**: SAM2's pretrained weights are frozen, and three lightweight adapters along with DGAP are applied to segment the 2D images, producing 16-channel masks (each channel corresponding to one tooth); (3) **2D-to-3D lifting**: back-projection maps the 2D segmentation results onto 3D mesh vertices, multi-view results are aggregated via voting, and Graph Cut post-processing is applied to refine boundaries.
+The entire pipeline consists of three steps: (1) **Multi-view Rendering**: Normalized 3D tooth meshes are rendered into 512×512 2D RGB images from fixed viewpoints including front, back, and multiple side views. (2) **SAM2 Adaptation Segmentation**: The pre-trained weights of SAM2 are frozen, and the 2D images are segmented using three lightweight adapters and DGAP to generate a 16-channel mask (where each channel corresponds to a single tooth). (3) **2D-to-3D Lifting**: Back-projection maps the 2D segmentation results back to the 3D mesh vertices, followed by a voting aggregation of the multi-view results. Finally, Graph Cut post-processing is applied to refine the boundaries.
 
 ### Key Designs
-1. **Prompt Embedding Generator (PEG)**: Inspired by DETR, a Transformer Decoder transforms 16 randomly initialized query vectors into prompt embeddings. Self-attention models spatial relationships among teeth, while cross-attention aligns with image features. A confidence score is additionally learned to handle missing teeth (higher values indicate greater probability of a tooth instance being present), fully replacing SAM2's dependence on manual prompts.
+1. **Prompt Embedding Generator (PEG)**: Drawing inspiration from DETR, a Transformer Decoder converts 16 randomly initialized query vectors into prompt embeddings. Self-attention models the spatial relationships among teeth, while cross-attention aligns the queries with image features. Additionally, a confidence score is learned to handle cases of missing teeth (higher values indicate a higher probability of the tooth instance's existence). This completely bypasses SAM2's dependency on manual prompts.
 
-2. **Mask Refiner**: A UNet-based convolutional network that takes three inputs: the original tooth image (providing low-level texture/shape details), the coarse mask from SAM2 (providing spatial priors), and SAM2's image embeddings (providing high-level semantics). In the contracting path of the UNet, each layer contains three parallel streams processing the three inputs respectively, which are then concatenated and forwarded. This design specifically addresses the imprecise boundaries caused by SAM2's general-purpose pretraining.
+2. **Mask Refiner**: A convolutional network based on the UNet architecture that receives three streams of inputs: the original tooth image (providing low-level texture/shape details), the coarse mask generated by SAM2 (providing spatial priors), and the SAM2 image embedding (providing high-level semantics). Within the contracting path of UNet, three parallel streams process these three inputs at each layer before concatenating and propagating them. This design is specifically tailored to address the imprecise boundaries caused by SAM2's general pre-training.
 
-3. **Mask Classifier**: Also adopts a Transformer Decoder architecture (sharing the design but not parameters with PEG), transforming 16 query vectors into class probability vectors. An MLP followed by Softmax outputs 17-class probabilities (16 teeth + background). This is more robust than a simple channel-to-tooth-ID binding strategy and avoids channel–ID misalignment in missing-tooth scenarios.
+3. **Mask Classifier**: Also adopting a Transformer Decoder architecture (sharing the design with PEG but with independent parameters), it converts 16 query vectors into class probability vectors. Finally, an MLP with Softmax outputs the probabilities for 17 classes (16 teeth + background). This is more robust than a simple 'channel-binding tooth ID' strategy, preventing channel-ID mismatch in missing-tooth scenarios.
 
-4. **Deformable Global Attention Plugin (DGAP)**: Integrated into the global attention blocks in stage 3 of SAM2's Hiera image encoder. An offset network predicts offsets to deform the sampling grid, directing attention toward tooth regions. Unlike standard deformable attention, query/key/value are all predicted from deformed feature maps, and deformed and non-deformed features are fused via a skip connection. DGAP is a plug-and-play module that requires no modification to SAM2's internal implementation.
+4. **Deformable Global Attention Plugin (DGAP)**: Integrated into the global attention blocks of Stage 3 of the SAM2 image encoder (Hiera trunk). It utilizes an offset network to predict offsets for deforming the sampling grid, focusing the attention on the tooth regions. Unlike standard deformable attention, the query, key, and value are all predicted from the deformed feature map, and a skip connection is used to fuse the deformed and non-deformed features. DGAP is a plug-and-play module that does not modify the internal implementation of SAM2.
 
 ### Loss & Training
-- **Training strategy**: SAM2 pretrained weights are frozen; only the three adapters and DGAP are trained. The Hungarian algorithm is used for one-to-one matching between predicted queries and ground truth. AdamW optimizer, learning rate 2e-4, cosine annealing with 5-epoch warmup, 100 epochs, batch size 4, mixed precision.
-- **Total loss**: $L_{\text{total}} = \lambda_{MC} L_{MC} + \lambda_{PEG} L_{PEG} + \lambda_{MR} L_{MR}$, with weights 1.0, 1.0, and 2.0 respectively.
+- **Training Strategy**: Frozen SAM2 pre-trained weights, training only the three adapters and DGAP. The Hungarian algorithm is used for one-to-one matching between predicted queries and ground truths. It uses the AdamW optimizer with a learning rate of 2e-4, employing cosine annealing and a 5-epoch warmup. It is trained for 100 epochs with a batch size of 4 and mixed precision.
+- **Total Loss**: $L_{\text{total}} = \lambda_{MC} L_{\text{MC}} + \lambda_{PEG} L_{\text{PEG}} + \lambda_{MR} L_{\text{MR}}$, with weights of 1.0, 1.0, and 2.0, respectively.
     - $L_{MC}$: 17-class cross-entropy loss (Mask Classifier)
     - $L_{PEG}$: BCE + Dice + confidence loss (Prompt Embedding Generator)
-    - $L_{MR}$: multi-class CE + Dice + boundary loss (Mask Refiner; boundary loss computes L1 distance of gradients via Sobel filtering)
+    - $L_{MR}$: Multi-class CE + Dice + boundary loss (Mask Refiner; the boundary loss is the L1 distance of gradients calculated using a Sobel filter)
 
 ## Key Experimental Results
 
-Dataset: **Teeth3DS** (1,800 high-resolution intraoral 3D scans from 900 patients, official 1200/600 split)
+Dataset: **Teeth3DS** (1,800 high-resolution intraoral 3D scans from 900 patients, with an official 1200/600 split)
 
 | Dataset | Metric | Ours | Prev. SOTA (ToothGroupNet) | Gain |
 |--------|------|------|----------|------|
@@ -63,41 +63,43 @@ Dataset: **Teeth3DS** (1,800 high-resolution intraoral 3D scans from 900 patient
 | Teeth3DS | T-mIoU | 91.90% | 90.16% | +1.74% |
 | Teeth3DS | B-IoU | 70.05% | 69.30% | +0.75% |
 | Teeth3DS | Dice | 94.33% | — | — |
-| Teeth3DS | Wisdom Teeth T-mIoU (T8/16) | 83.29% | 68.20% | +15.09% |
+| Teeth3DS | Wisdom tooth T-mIoU (T8/16) | 83.29% | 68.20% | +15.09% |
 
 ### Ablation Study
-- **PEG is the most critical module**: Removing it causes T-mIoU to drop by 39.44% (91.90%→52.46%). Even using ground-truth center points as manual prompts falls far short of the learned prompt embeddings, indicating that PEG captures complex spatial relationships and contextual information.
-- **DGAP**: Removing it reduces T-mIoU by 1.29% and B-IoU by 3.41%, and significantly slows training convergence.
-- **Mask Refiner**: Removing it reduces T-mIoU by 0.80% and B-IoU by 1.62%, primarily affecting boundary quality.
-- **Mask Classifier**: Removing it reduces T-mIoU by 0.59% and B-IoU by 2.49%, mainly addressing category confusion between adjacent teeth.
+- **PEG is the most critical module**: Without it, the T-mIoU drops drastically by 39.44% (91.90% $\rightarrow$ 52.46%). Even when using ground-truth center points as manual prompts, the performance is far inferior to the learned prompt embeddings, showing that PEG captures complex spatial relationships and contextual information.
+- **DGAP**: Removing it leads to a 1.29% drop in T-mIoU and a 3.41% drop in B-IoU, and significantly slows down the training convergence speed.
+- **Mask Refiner**: Removing it decreases T-mIoU by 0.80% and B-IoU by 1.62%, primarily affecting boundary quality.
+- **Mask Classifier**: Removing it decreases T-mIoU by 0.59% and B-IoU by 2.49%, mostly addressing category confusion between adjacent teeth.
 
 ## Highlights & Insights
-- **"Render → 2D Segmentation → Back-projection" paradigm**: This approach elegantly reduces 3D segmentation to a 2D problem, enabling direct exploitation of powerful 2D foundation models and offering a general and reusable framework.
-- **DETR-style design of PEG**: Using a Transformer Decoder to automatically generate prompt embeddings completely bypasses SAM2's reliance on manual prompts while modeling spatial relationships among teeth.
-- **Plug-and-play DGAP**: Without modifying SAM2's internals, DGAP fuses deformed and non-deformed features via skip connections, improving both accuracy and training efficiency, and is generalizable to other foundation model adaptation scenarios.
-- **Substantial improvement on wisdom tooth segmentation**: A 15%+ gain on this rare category demonstrates the advantage of foundation models in data-scarce settings.
+- **'Rendering $\rightarrow$ 2D Segmentation $\rightarrow$ Back-projection' paradigm**: Elegantly converts 3D segmentation into a 2D problem, thereby enabling direct exploitation of powerful 2D foundation models. This represents a general and reusable methodology.
+- **DETR-style design of PEG**: Employs a Transformer Decoder to automatically generate prompt embeddings, completely bypassing SAM2's reliance on manual prompts, while modeling spatial relationships among teeth.
+- **Plug-and-play DGAP**: Integrates without altering the internal implementation of SAM2, fusing deformed and non-deformed features via skip connections to simultaneously boost accuracy and training efficiency, which can be generalized to other foundation model adaptation scenarios.
+- **Significant improvement in wisdom tooth segmentation**: Achieves a 15%+ gain in rare categories (wisdom teeth), showcasing the advantages of foundation models in data-scarce scenarios.
 
 ## Limitations & Future Work
-- Multi-view rendering introduces additional computational overhead; inference efficiency may lag behind methods that directly process 3D data.
-- Validation is performed on only one dataset (Teeth3DS), leaving generalization to different scanners and diverse dental morphologies unknown.
-- Fixed-viewpoint rendering may miss details from certain angles (e.g., severely crowded teeth); adaptive view selection could be more effective.
-- The 2D-to-3D voting strategy is relatively simple; more sophisticated multi-view fusion schemes (e.g., learnable fusion weights) may yield further improvements.
-- The paper does not discuss real-time inference or clinical deployment feasibility.
+- Multi-view rendering introduces additional computational overhead, making the inference efficiency potentially inferior to methods that directly process 3D data.
+- The validation is conducted on only a single dataset (Teeth3DS); thus, generalization capability remains unverified (e.g., across different scanners or distinct dental morphologies of various ethnicities).
+- Rendering from fixed viewpoints may miss detailed information from certain angles (e.g., for severely crowded teeth), suggesting that adaptive viewpoint selection might yield better results.
+- The 2D-to-3D voting strategy is relatively straightforward; more sophisticated multi-view fusion schemes (such as learnable fusion weights) might provide further improvements.
+- The paper does not discuss the real-time performance or feasibility in clinical deployment scenarios.
 
 ## Related Work & Insights
-- **vs. ToothGroupNet**: The previous state-of-the-art operates directly on 3D meshes. 3DTeethSAM surpasses it via 2D foundation model transfer, with particularly large advantages on rare categories (wisdom teeth +15%), at the cost of additional overhead from multi-view rendering.
-- **vs. MedSAM**: MedSAM adapts SAM to 2D medical images but does not handle 3D data. 3DTeethSAM resolves the 2D–3D dimensionality mismatch through its render–segment–back-project pipeline.
-- **vs. traditional 3D networks (PointNet++, DGCNN, etc.)**: These methods train from scratch, cannot leverage pretrained knowledge, and scale poorly to high-resolution meshes. 3DTeethSAM freezes SAM2 weights and trains only lightweight adapters, achieving higher parameter efficiency.
-- **Generalizable 3D segmentation paradigm**: The render → 2D foundation model → back-projection approach can be extended to other 3D medical segmentation tasks (e.g., bones, organs) and non-medical 3D segmentation (e.g., indoor scenes, autonomous driving point clouds).
-- **Adaptive view selection**: Current fixed viewpoints could be replaced by a learnable view selection module that dynamically determines rendering angles based on mesh complexity.
-- **Multi-foundation-model fusion**: SAM2 handles segmentation; additional foundation models (e.g., DINOv2) could be introduced to provide richer semantic features.
-- **End-to-end 3D foundation models**: The current approach relies on a 2D intermediary; future work may explore training SAM-like foundation models directly in 3D space.
+- **vs ToothGroupNet**: ToothGroupNet is the previous SOTA and directly operates on 3D meshes. 3DTeethSAM outperforms it via 2D foundation model transfer, particularly showing tremendous advantages on rare categories (wisdom teeth +15%), though introducing the additional overhead of multi-view rendering.
+- **vs MedSAM**: MedSAM adapts SAM to medical 2D images but does not handle 3D data. 3DTeethSAM resolves the 2D-3D dimension mismatch through the rendering $\rightarrow$ segmentation $\rightarrow$ back-projection pipeline.
+- **vs Traditional 3D Networks (PointNet++, DGCNN, etc.)**: These methods are trained from scratch, have difficulty exploiting pre-trained knowledge, and scale poorly on high-resolution meshes. In contrast, 3DTeethSAM freezes SAM2 weights and only trains lightweight adapters, achieving much higher parameter efficiency.
+
+## Related Work & Insights
+- **Generic 3D Segmentation Paradigm**: The pipeline of rendering $\rightarrow$ 2D foundation model $\rightarrow$ back-projection can be generalized to other 3D medical segmentation tasks (e.g., bones, organs) and even non-medical 3D segmentation (e.g., indoor scenes, autonomous driving point clouds).
+- **Adaptive Viewpoint Selection**: The current work uses fixed viewpoints; a learnable viewpoint selection module could be designed to dynamically determine rendering viewpoints based on mesh complexity.
+- **Multi-Foundation Model Fusion**: While SAM2 performs segmentation, other foundation models (such as DINOv2) could be introduced to provide richer semantic features.
+- **End-to-end 3D Foundation Models**: While the current scheme leverages 2D transition, could SAM-like foundation models be trained directly in 3D space in the future?
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The render + SAM2 adaptation approach is innovative, though individual components (DETR-style queries, UNet refiner, deformable attention) all have precedents.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Ablation studies are comprehensive with 11-method comparisons, but evaluation is limited to a single dataset.
-- Writing Quality: ⭐⭐⭐⭐ Structure is clear, method descriptions are precise, and figures are intuitive.
-- Value: ⭐⭐⭐⭐ Demonstrates a viable pathway from 2D foundation models to 3D segmentation, with practical significance for digital dentistry and a generalizable paradigm.
+- Novelty: ⭐⭐⭐⭐ The idea of combining rendering and SAM2 adaptation is innovative, although each individual module (DETR-like query, UNet refiner, deformable attention) has prior precedents.
+- Experimental Thoroughness: ⭐⭐⭐⭐ The ablation study is comprehensive with comparisons to 11 methods, but evaluations are limited to a single dataset.
+- Writing Quality: ⭐⭐⭐⭐ The structure is clear, the methodology is well-described, and the illustrations are intuitive.
+- Value: ⭐⭐⭐⭐ Demonstrates a viable path from 2D foundation models to 3D segmentation, holding practical significance for dental digitization with a highly generalizable paradigm.
 
 <!-- RELATED:START -->
 

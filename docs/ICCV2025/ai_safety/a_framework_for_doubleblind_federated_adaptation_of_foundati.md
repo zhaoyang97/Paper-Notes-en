@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Framework for Double-Blind Federated Adaptation of Foundation Models
 description: >-
-  [ICCV 2025][AI Safety][double-blind federated learning] BlindFed proposes a double-blind federated foundation model adaptation framework combining FHE-friendly architectural redesign (polynomial approximation of nonlinea…
+  [ICCV 2025][AI Safety][double-blind federated learning] BlindFed proposes a double-blind federated foundation model adaptation framework combining FHE-friendly architectural redesign (polynomial approximation of nonlinear operations), a two-stage split learning protocol (offline knowledge distillation + online encrypted inference), and privacy enhancements (sample permutation + random block sampling), achieving adaptation accuracy close to LoRA under the constraint that the d…
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "foundation model adaptation"
   - "privacy preservation"
 date: 2026-05-08
-content_hash: 96e33a68dd527505
+content_hash: 13f3c786c1230c9c
 ---
 
 # A Framework for Double-Blind Federated Adaptation of Foundation Models
@@ -175,10 +175,10 @@ The following directions are suggested for future investigation:
 ## Related Papers
 
 - [\[ICCV 2025\] FRET: Feature Redundancy Elimination for Test Time Adaptation](fret_feature_redundancy_elimination_for_test_time_adaptation.md)
+- [\[CVPR 2025\] Split Adaptation for Pre-trained Vision Transformers](../../CVPR2025/ai_safety/split_adaptation_for_pre-trained_vision_transformers.md)
+- [\[ICML 2025\] Generalization in Federated Learning: A Conditional Mutual Information Framework](../../ICML2025/ai_safety/generalization_in_federated_learning_a_conditional_mutual_information_framework.md)
 - [\[AAAI 2026\] Towards Effective, Stealthy, and Persistent Backdoor Attacks Targeting Graph Foundation Models](../../AAAI2026/ai_safety/towards_effective_stealthy_and_persistent_backdoor_attacks_targeting_graph_found.md)
-- [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](../../CVPR2026/ai_safety/fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
 - [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
-- [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
 
 </div>
 

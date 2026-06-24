@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][SpMV] SparseRL treats pretrained code LLMs as stochastic policies and the compiler+executor as the environment. It utilizes PPO with hierarchical rewards (compilation/correctness/execution efficiency) to end-to-end learn high-performance SpMV/SpMM CUDA code for dynamic sparse matrix inputs, achieving a ~20% increase in compi
+  [ICLR 2026][Reinforcement Learning][Sparse CUDA Code Generation] SparseRL treats pretrained code LLMs as stochastic policies and the compiler+executor as the environment. It utilizes PPO with hierarchical rewards (compilation/correctness/execution efficiency) to end-to-end learn high-performance SpMV/SpMM CUDA code for dynamic sparse matrix inputs, achieving a ~20% increase in compilation rate and an average 30% speedup in generated code.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - SpMV
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Sparse CUDA Code Generation"
+  - "SpMV"
+  - "Deep Reinforcement Learning"
+  - "PPO"
+  - "Hierarchical Reward"
+  - "Sparse Matrix Embedding"
 date: 2026-05-08
-content_hash: e1df33d54a2b5086
+content_hash: b9db6d54ba68847f
 ---
+
 # Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning
 
 **Conference**: ICLR 2026  

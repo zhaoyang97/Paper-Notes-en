@@ -2,13 +2,17 @@
 title: >-
   [Paper Note] Stability vs. Manipulability: Evaluating Robustness Under Post-Decision Interaction in LLM Judges
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper reveals a critical vulnerability of LLM evaluators: while highly stable under repeated evaluation, they undergo significant reversals (49% flip rate, 74% under authoritative framing) when subjected to subsequent conversational challenges. This indicates that stability does not equate to robustness and that c
+  [ACL2026][LLM Evaluation][Post-Decision Manipulability] This paper reveals a critical vulnerability of LLM evaluators: while highly stable under repeated evaluation, they undergo significant reversals (49% flip rate, 74% under authoritative framing) when subjected to subsequent conversational challenges. This indicates that stability does not equate to robustness and that confidence levels fail to predict actual reliability.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Post-Decision Manipulability"
+  - "Robustness"
+  - "Conversational Influence"
 date: 2026-05-08
-content_hash: 0ff83864e5f9da59
+content_hash: a5138c5c357edc74
 ---
+
 # Stability vs. Manipulability: Evaluating Robustness Under Post-Decision Interaction in LLM Judges
 
 **Conference**: ACL2026  
@@ -154,7 +158,7 @@ This work is diagnostic; it does not design training targets. All evaluations us
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

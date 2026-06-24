@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision Transformer] This work reveals the limitations of VPT from a Mixture-of-Experts (MoE) perspective—prompt experts are input-independent constant functions with limited expressiveness. VAPT is proposed to make prompt experts input-adaptive through token-wise projectors and shared feature projectors, achieving superior performance wit
+  [ICLR 2026][Multimodal VLM][Visual Prompt Tuning] This work reveals the limitations of VPT from a Mixture-of-Experts (MoE) perspective—prompt experts are input-independent constant functions with limited expressiveness. VAPT is proposed to make prompt experts input-adaptive through token-wise projectors and shared feature projectors, achieving superior performance with fewer parameters and providing theoretical guarantees for optimal sample efficiency.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision Transformer
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Visual Prompt Tuning"
+  - "Mixture-of-Experts"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Vision Transformer"
+  - "Adaptive Prompting"
 date: 2026-05-08
-content_hash: 321df943fc564b7a
+content_hash: 964a77d74c4c659e
 ---
+
 # Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts
 
 **Conference**: ICLR 2026  
@@ -146,10 +151,10 @@ Ours outperforms full fine-tuning by 7.34% on VTAB-1K and by 1.04% on FGVC.
 ## Related Papers
 
 - [\[ICLR 2026\] Visual Prompt-Agnostic Evolution](visual_prompt-agnostic_evolution.md)
+- [\[ICCV 2025\] CVPT: Cross Visual Prompt Tuning](../../ICCV2025/multimodal_vlm/cvpt_cross_visual_prompt_tuning.md)
+- [\[ICCV 2025\] Attention to the Burstiness in Visual Prompt Tuning!](../../ICCV2025/multimodal_vlm/attention_to_the_burstiness_in_visual_prompt_tuning.md)
 - [\[ICCV 2025\] PRO-VPT: Distribution-Adaptive Visual Prompt Tuning via Prompt Relocation](../../ICCV2025/multimodal_vlm/pro-vpt_distribution-adaptive_visual_prompt_tuning_via_prompt_relocation.md)
-- [\[ICLR 2026\] PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning](psp_prompt-guided_self-training_sampling_policy_for_active_prompt_learning.md)
-- [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
-- [\[ICLR 2026\] A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models](a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi.md)
+- [\[NeurIPS 2025\] VIPAMIN: Visual Prompt Initialization via Embedding Selection and Subspace Expansion](../../NeurIPS2025/multimodal_vlm/vipamin_visual_prompt_initialization_via_embedding_selection_and_subspace_expans.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Enhancing Trustworthiness of Fine-Tuned LLMs via Regularized Subset Selection
 description: >-
-  [ICLR 2026][Alignment & RLHF][Proximal Bregman Response Function] Addressing the decline in LLM trustworthiness caused by Supervised Fine-Tuning (SFT), this paper proposes a two-stage repair framework: first identifying "harmful training samples" using DPP-regularized subset selection, and then repairing the model via Proximal Bregman Response Function (PBRF) gradient ascent. This ap
+  [ICLR 2026][LLM Alignment][LLM Trustworthiness] Addressing the decline in LLM trustworthiness caused by Supervised Fine-Tuning (SFT), this paper proposes a two-stage repair framework: first identifying "harmful training samples" using DPP-regularized subset selection, and then repairing the model via Proximal Bregman Response Function (PBRF) gradient ascent. This approach achieves up to a 21% improvement in trustworthiness at a cost of $\le 1\%$ perplexity.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Proximal Bregman Response Function
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "LLM Trustworthiness"
+  - "SFT Repair"
+  - "Data Attribution"
+  - "DPP Subset Selection"
+  - "Proximal Bregman Response Function"
 date: 2026-05-08
-content_hash: 903c63fe88084c5c
+content_hash: 2383087eab96b10c
 ---
+
 # Enhancing Trustworthiness of Fine-Tuned LLMs via Regularized Subset Selection
 
 **Conference**: ICLR 2026  
@@ -138,9 +143,9 @@ Maximum truthfulness improvement: Qwen2.5-7B +9.6%; maximum machine ethics impro
 
 - [\[ICLR 2026\] On the Shelf Life of Fine-Tuned LLM-Judges: Future-Proofing, Backward-Compatibility, and Question Generalization](on_the_shelf_life_of_fine-tuned_llm-judges_future-proofing_backward-compatibilit.md)
 - [\[ICLR 2026\] Data Selection for LLM Alignment Using Fine-Grained Preferences](data_selection_for_llm_alignment_using_fine-grained_preferences.md)
-- [\[AAAI 2026\] Enhancing Uncertainty Estimation in LLMs with Expectation of Aggregated Internal States](../../AAAI2026/llm_alignment/enhancing_uncertainty_estimation_in_llms_with_expectation_of_aggregated_internal.md)
+- [\[AAAI 2026\] Enhancing Uncertainty Estimation in LLMs with Expectation of Aggregated Internal Belief](../../AAAI2026/llm_alignment/enhancing_uncertainty_estimation_in_llms_with_expectation_of_aggregated_internal.md)
 - [\[ICLR 2026\] Anchored Supervised Fine-Tuning](anchored_supervised_fine-tuning.md)
-- [\[ICML 2026\] SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection](../../ICML2026/llm_alignment/spard_defending_harmful_fine-tuning_attack_via_safety_projection_with_relevance-.md)
+- [\[ACL 2026\] Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs](../../ACL2026/llm_alignment/team-based_self-play_with_dual_adaptive_weighting_for_fine-tuning_llms.md)
 
 </div>
 

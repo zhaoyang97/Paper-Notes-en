@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hidden Dangers of Compositional Generation: Diagnosing Semantic Safety Failures in Text-to-Image Models
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper proposes **CoRA (Composable Reassembly Attack)**: a black-box text-to-image (T2I) attack framework operating entirely in text space. It decomposes harmful intentions into a set of fine-grained visual elements that appear "harmless" in isolation, then induces the model to reassemble these elements into the or
+  [CVPR 2026][AI Safety][Text-to-image safety] This paper proposes **CoRA (Composable Reassembly Attack)**: a black-box text-to-image (T2I) attack framework operating entirely in text space. It decomposes harmful intentions into a set of fine-grained visual elements that appear "harmless" in isolation, then induces the model to reassemble these elements into the original malicious semantics through iterative selection and reorganization, significantly improving attack success r…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Text-to-image safety"
+  - "compositional generation"
+  - "black-box attack"
+  - "semantic deconstruction and reassembly"
+  - "safety filter bypass"
 date: 2026-05-08
-content_hash: b2761b10aa1fefaa
+content_hash: 5c38ae03665957ed
 ---
+
 # Hidden Dangers of Compositional Generation: Diagnosing Semantic Safety Failures in Text-to-Image Models
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,16 @@ CoRA’s prompt PPL is two to three orders of magnitude lower than MMA (37 vs 90
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
+- [\[CVPR 2026\] When Understanding Becomes a Risk: Authenticity and Safety Risks in the Emerging Image Generation Paradigm](when_understanding_becomes_a_risk_authenticity_and_safety_risks_in_the_emerging_.md)
+- [\[ICML 2026\] Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search](../../ICML2026/ai_safety/exposing_hidden_biases_in_text-to-image_models_via_automated_prompt_search.md)
 - [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] JANUS: A Lightweight Framework for Jailbreaking Text-to-Image Models via Distribution Optimization](janus_a_lightweight_framework_for_jailbreaking_text-to-image_models_via_distribu.md)
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
-- [\[CVPR 2026\] Models as Lego Builders: Assembling Malice from Benign Blocks via Semantic Blueprints](models_as_lego_builders_assembling_malice_from_benign_blocks_via_semantic_bluepr.md)
 
 </div>
 

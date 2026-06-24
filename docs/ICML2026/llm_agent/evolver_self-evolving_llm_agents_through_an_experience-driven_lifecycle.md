@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle
 description: >-
-  [ICML 2026][LLM Agent][GRPO] EvolveR provides LLM agents with a closed-loop lifecycle: "Online interaction $\rightarrow$ Offline self-distillation into principle libraries $\rightarrow$ GRPO policy evolution." Instead of discarding past trajectories, the agent abstracts successes and failures into a retrievable "principle library" and uses RL to l
+  [ICML 2026][LLM Agent][Experience Lifecycle] EvolveR provides LLM agents with a closed-loop lifecycle: "Online interaction $\rightarrow$ Offline self-distillation into principle libraries $\rightarrow$ GRPO policy evolution." Instead of discarding past trajectories, the agent abstracts successes and failures into a retrievable "principle library" and uses RL to learn **how to utilize its own principles** to solve new tasks. It significantly outperforms RL agent baselines like…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - GRPO
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Experience Lifecycle"
+  - "Self-Distillation Principle Library"
+  - "Dynamic Scoring"
+  - "GRPO"
+  - "Multi-hop QA"
 date: 2026-05-08
-content_hash: cd7918cc1e3b3cba
+content_hash: df4e8c58a7b57614
 ---
+
 # EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle
 
 **Conference**: ICML 2026  
@@ -139,8 +144,8 @@ Evaluation across 7 QA benchmarks, categorized into In-domain (NQ, HotpotQA) and
 
 ## Related Papers
 
-- [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
 - [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](self-evolving_llm_agents_with_in-distribution_optimization.md)
+- [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
 - [\[ICML 2026\] Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents](talk_judge_cooperate_gossip-driven_indirect_reciprocity_in_self-interested_llm_a.md)
 - [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](../../ACL2026/llm_agent/mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
 - [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)

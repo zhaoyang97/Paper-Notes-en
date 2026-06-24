@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Certifying Concavity and Monotonicity in Games via Sum-of-Squares Hierarchies
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Concave games] This paper proves that verifying concavity and monotonicity in games with polynomial utilities and semi-algebraic strategy sets is NP-hard…
+  [NeurIPS 2025][Reinforcement Learning][Concave games] This paper proves that verifying concavity and monotonicity in games with polynomial utilities and semi-algebraic strategy sets is NP-hard, and proposes two hierarchical certification schemes based on sum-of-squares (SOS) programming, each solvable in polynomial time at every level of the hierarchy.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Nash equilibrium"
   - "imperfect-recall games"
 date: 2026-05-08
-content_hash: 759d117bfcc8053a
+content_hash: 1c07d71e270ef0c0
 ---
 
 # Certifying Concavity and Monotonicity in Games via Sum-of-Squares Hierarchies
@@ -162,11 +162,11 @@ This is a theoretical work and does not involve loss functions or training in th
 
 ## Related Papers
 
+- [\[ICML 2025\] Solving Zero-Sum Convex Markov Games](../../ICML2025/reinforcement_learning/solving_zero-sum_convex_markov_games.md)
 - [\[NeurIPS 2025\] Near-Optimal Quantum Algorithms for Computing (Coarse) Correlated Equilibria of General-Sum Games](near-optimal_quantum_algorithms_for_computing_coarse_correlated_equilibria_of_ge.md)
 - [\[AAAI 2026\] Perturbing Best Responses in Zero-Sum Games](../../AAAI2026/reinforcement_learning/perturbing_best_responses_in_zero-sum_games.md)
 - [\[NeurIPS 2025\] Last Iterate Convergence in Monotone Mean Field Games](last_iterate_convergence_in_monotone_mean_field_games.md)
 - [\[ICML 2026\] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](../../ICML2026/reinforcement_learning/global_policy-space_response_oracles_for_two-player_zero-sum_games.md)
-- [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
 
 </div>
 

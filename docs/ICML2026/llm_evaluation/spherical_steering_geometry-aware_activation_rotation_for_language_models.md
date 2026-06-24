@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spherical Steering: Geometry-Aware Activation Rotation for Language Models
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] This paper proposes Spherical Steering: rotating activation vectors along geodesics on the unit hypersphere of LLM hidden states toward a "truthfulness direction" estimated from contrastive samples. Unlike traditional additive activation steering, this approach maintains activation magnitudes (norms) while significantl
+  [ICML 2026][LLM Evaluation][Activation Steering] This paper proposes Spherical Steering: rotating activation vectors along geodesics on the unit hypersphere of LLM hidden states toward a "truthfulness direction" estimated from contrastive samples. Unlike traditional additive activation steering, this approach maintains activation magnitudes (norms) while significantly improving multiple-choice accuracy on benchmarks such as TruthfulQA, COPA, and StoryCloze (+10% range) withou…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Activation Steering"
+  - "Hyperspherical Geometry"
+  - "Slerp Geodesics"
+  - "vMF Confidence Gating"
+  - "Norm Preservation"
 date: 2026-05-08
-content_hash: c7f50f7be552da34
+content_hash: 3ed3ab9785998a6f
 ---
+
 # Spherical Steering: Geometry-Aware Activation Rotation for Language Models
 
 **Conference**: ICML 2026  
@@ -156,10 +162,18 @@ Average absolute gain of +6.28%, with +10% or more on COPA and StoryCloze.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](../../AAAI2026/llm_evaluation/test-time_diverse_reasoning_by_riemannian_activation_steering.md)
+- [\[ICML 2026\] Top-W: Geometry-Aware Decoding with Wasserstein-Regularized Truncation and Mass Penalties for LLMs](geometry-aware_decoding_with_wasserstein-regularized_truncation_and_mass_penalti.md)
+- [\[ICML 2026\] AGZO: Activation-Guided Zeroth-Order Optimization for LLM Fine-Tuning](agzo_activation-guided_zeroth-order_optimization_for_llm_fine-tuning.md)
+- [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
+- [\[ICML 2026\] Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction](investigating_advanced_reasoning_of_large_language_models_via_black-box_environm.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Top-W: Geometry-Aware Decoding with Wasserstein-Regularized Truncation and Mass Penalties for LLMs](geometry-aware_decoding_with_wasserstein-regularized_truncation_and_mass_penalti.md)

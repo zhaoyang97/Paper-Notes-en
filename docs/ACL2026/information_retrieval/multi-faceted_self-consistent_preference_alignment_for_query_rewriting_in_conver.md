@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-Faceted Self-Consistent Preference Alignment for Query Rewriting in Conversational Search
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper proposes MSPA-CQR, which constructs self-consistent preference data from three dimensions—rewriting, retrieval, and response—and trains the query rewriting model using prefix-guided multi-dimensional DPO. It significantly outperforms existing methods in both in-distribution and out-of-distribution scenarios.
+  [ACL 2026 Findings][Information Retrieval & RAG][Conversational Query Rewriting] This paper proposes MSPA-CQR, which constructs self-consistent preference data from three dimensions—rewriting, retrieval, and response—and trains the query rewriting model using prefix-guided multi-dimensional DPO. It significantly outperforms existing methods in both in-distribution and out-of-distribution scenarios.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Conversational Query Rewriting"
+  - "Preference Alignment"
+  - "Self-Consistency Scoring"
+  - "Multi-Dimensional DPO"
+  - "Conversational Search"
 date: 2026-05-08
-content_hash: fe91ba571300e547
+content_hash: cec6a93018455d9b
 ---
+
 # Multi-Faceted Self-Consistent Preference Alignment for Query Rewriting in Conversational Search
 
 **Conference**: ACL 2026 Findings  

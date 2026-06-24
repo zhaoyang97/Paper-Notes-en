@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimizing the Unknown: Black Box Bayesian Optimization with Energy-Based Model and Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Bayesian Optimization] This paper proposes REBMBO, a framework that unifies Gaussian Processes (local modeling), Energy-Based Models (EBM, global exploration)…
+  [NeurIPS 2025][Reinforcement Learning][Bayesian Optimization] This paper proposes REBMBO, a framework that unifies Gaussian Processes (local modeling), Energy-Based Models (EBM, global exploration), and PPO-based reinforcement learning (multi-step look-ahead) into a closed-loop Bayesian optimization system, achieving significant improvements over conventional BO methods on high-dimensional and multi-modal black-box optimization tasks.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Black-Box Optimization"
   - "Multi-Step Look-Ahead"
 date: 2026-05-08
-content_hash: 9b347ba94a7a7dd2
+content_hash: 370ecea0557956c5
 ---
 
 # Optimizing the Unknown: Black Box Bayesian Optimization with Energy-Based Model and Reinforcement Learning
@@ -154,9 +154,9 @@ The method is strongly innovative in design—the three-module synergy of GP, EB
 
 - [\[NeurIPS 2025\] MetaBox-v2: A Unified Benchmark Platform for Meta-Black-Box Optimization](metabox-v2_a_unified_benchmark_platform_for_meta-black-box_optimization.md)
 - [\[NeurIPS 2025\] Improved Regret Bounds for GP-UCB in Bayesian Optimization](improved_regret_bounds_for_gaussian_process_upper_confidence_bound_in_bayesian_o.md)
-- [\[NeurIPS 2025\] When Can Model-Free Reinforcement Learning be Enough for Thinking?](when_can_model-free_reinforcement_learning_be_enough_for_thinking.md)
-- [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](online_optimization_for_offline_safe_reinforcement_learning.md)
+- [\[ICML 2025\] Meta-Black-Box-Optimization through Offline Q-function Learning (Q-Mamba)](../../ICML2025/reinforcement_learning/meta-black-box-optimization_through_offline_q-function_learning.md)
 - [\[NeurIPS 2025\] Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality](improved_regret_and_contextual_linear_extension_for_pandoras_box_and_prophet_ine.md)
+- [\[NeurIPS 2025\] When Can Model-Free Reinforcement Learning be Enough for Thinking?](when_can_model-free_reinforcement_learning_be_enough_for_thinking.md)
 
 </div>
 

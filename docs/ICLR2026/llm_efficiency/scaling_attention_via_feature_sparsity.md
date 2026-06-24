@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scaling Attention via Feature Sparsity
 description: >-
-  [ICLR 2026][LLM Efficiency][FlashAttention] This paper accelerates attention by exploring a neglected axis—instead of pruning tokens, it applies Top-$k$ feature sparsification to each $d$-dimensional query/key vector. This allows attention scores to be precisely calculated only on a few coordinates co-activated by queries and keys. Combined with an IO-aware Flas
+  [ICLR 2026][LLM Efficiency][Efficient Attention] This paper accelerates attention by exploring a neglected axis—instead of pruning tokens, it applies Top-$k$ feature sparsification to each $d$-dimensional query/key vector. This allows attention scores to be precisely calculated only on a few coordinates co-activated by queries and keys. Combined with an IO-aware FlashSFA kernel to avoid materializing the $n\times n$ score matrix, the computational complexity of $QK^\top$ is r…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - FlashAttention
-  - KV-cache
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Efficient Attention"
+  - "Feature Sparsity"
+  - "Long Context"
+  - "FlashAttention"
+  - "KV-cache"
 date: 2026-05-08
-content_hash: 93d2b4b3172a2577
+content_hash: d62f27efeb92bc66
 ---
+
 # Scaling Attention via Feature Sparsity
 
 **Conference**: ICLR 2026  
@@ -140,11 +144,11 @@ Synthetic NIAH (Needle In A Haystack) stress tests show that SFA not only preser
 
 ## Related Papers
 
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
+- [\[ICLR 2026\] Scaling Linear Attention Capacity with Sparse State Expansion](scaling_linear_attention_capacity_with_sparse_state_expansion.md)
 - [\[ICLR 2026\] Mitigating Non-IID Drift in Zeroth-Order Federated LLM Fine-Tuning with Transferable Sparsity](mitigating_non-iid_drift_in_zeroth-order_federated_llm_fine-tuning_with_transfer.md)
 - [\[ICLR 2026\] Scaling Up, Speeding Up: A Benchmark of Speculative Decoding for Efficient LLM Test-Time Scaling](scaling_up_speeding_up_a_benchmark_of_speculative_decoding_for_efficient_llm_tes.md)
-- [\[ICLR 2026\] FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel](fsa_an_alternative_efficient_implementation_of_native_sparse_attention_kernel.md)
 - [\[ICLR 2026\] STEM: Scaling Transformers with Embedding Modules](stem_scaling_transformers_with_embedding_modules.md)
+- [\[ICLR 2026\] Log-Linear Attention](log-linear_attention.md)
 
 </div>
 

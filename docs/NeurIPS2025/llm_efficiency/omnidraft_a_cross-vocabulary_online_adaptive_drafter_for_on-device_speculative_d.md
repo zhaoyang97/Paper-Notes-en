@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Speculative decoding] This paper proposes the OmniDraft framework, which achieves cross-vocabulary speculative decoding via an online n-gram cache…
+  [NeurIPS 2025][LLM Efficiency][Speculative decoding] This paper proposes the OmniDraft framework, which achieves cross-vocabulary speculative decoding via an online n-gram cache, aligns the draft model with the target model through a hybrid distillation loss, and dynamically adjusts the proposal length with an adaptive drafting head. A single lightweight Llama-68M model thereby provides speculative decoding acceleration (1.5–2×) for diverse target models such as Vicuna-7B…
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "adaptive drafting"
   - "on-device inference"
 date: 2026-05-08
-content_hash: e4c55d97bad6832a
+content_hash: f34a13346d1cf524
 ---
 
 # OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding
@@ -134,9 +134,9 @@ OmniDraft consists of three core components: (1) a cross-vocabulary n-gram cache
 
 - [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)
 - [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)
-- [\[NeurIPS 2025\] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE](moesd_unveil_speculative_decodings_potential_for_accelerating_sparse_moe.md)
-- [\[NeurIPS 2025\] Efficient Training-Free Online Routing for High-Volume Multi-LLM Serving](efficient_training-free_online_routing_for_high-volume_multi-llm_serving.md)
-- [\[NeurIPS 2025\] Yggdrasil: Bridging Dynamic Speculation and Static Runtime for Latency-Optimal Tree-Based LLM Decoding](yggdrasil_bridging_dynamic_speculation_and_static_runtime_for_latency-optimal_tr.md)
+- [\[ICML 2025\] DSSD: Efficient Edge-Device LLM Deployment and Collaborative Inference via Distributed Split Speculative Decoding](../../ICML2025/llm_efficiency/dssd_efficient_edge-device_llm_deployment_and_collaborative_inference_via_distri.md)
+- [\[ICLR 2026\] Not-a-Bandit: Provably No-Regret Drafter Selection in Speculative Decoding for LLMs](../../ICLR2026/llm_efficiency/not-a-bandit_provably_no-regret_drafter_selection_in_speculative_decoding_for_ll.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](../../ICLR2026/llm_efficiency/learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] The BiPreManip framework is proposed to achieve bimanual preparatory manipulation based on visual affordance representations. It first imagines the target interaction region for the lead hand and then guides the helper hand to perform preparatory actions (e.g., flipping a bottle so the cap faces the lead hand), signifi
+  [CVPR 2026][Robotics][Bimanual Collaborative Manipulation] The BiPreManip framework is proposed to achieve bimanual preparatory manipulation based on visual affordance representations. It first imagines the target interaction region for the lead hand and then guides the helper hand to perform preparatory actions (e.g., flipping a bottle so the cap faces the lead hand), significantly outperforming baselines in both simulation and real-world environments.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Bimanual Collaborative Manipulation"
+  - "Visual Affordance"
+  - "Preparatory Manipulation"
+  - "Anticipatory Reasoning"
+  - "Point Clouds"
 date: 2026-05-08
-content_hash: 1521971805248ce2
+content_hash: ee5478f623f98de6
 ---
+
 # BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration
 
 **Conference**: CVPR 2026  
@@ -128,10 +134,10 @@ The essence of many preparatory tasks is rotating the object to a suitable orien
 ## Related Papers
 
 - [\[CVPR 2026\] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning](agile_learning_robust_long-horizon_manipulation_via_affordance-grounded_bidirect.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
 - [\[ICML 2025\] BiAssemble: Learning Collaborative Affordance for Bimanual Geometric Assembly](../../ICML2025/robotics/biassemble_learning_collaborative_affordance_for_bimanual_geometric_assembly.md)
 - [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
 - [\[CVPR 2026\] DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation](dynbridge_bridging_imagination_and_control_through_interaction_dynamics_for_robo.md)
+- [\[CVPR 2026\] Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation](affordance_field_intervention_enabling_vlas_to_escape_memory_traps_in_robotic_ma.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs
 description: >-
-  [ICLR 2026][Hallucination Detection][DPO] Addressing the hallucination issue in MLLMs, this paper proposes Cat-PO: using only the model's internal cross-modal attention and similarity, it calculates a three-tier visual relevance (global, local, and semantic) for each generated token. These are fused into a smooth token reward to reweight the DPO loss along wit
+  [ICLR2026][Hallucination Detection][Multimodal Hallucination] Addressing the hallucination issue in MLLMs, this paper proposes Cat-PO: using only the model's internal cross-modal attention and similarity, it calculates a three-tier visual relevance (global, local, and semantic) for each generated token. These are fused into a smooth token reward to reweight the DPO loss along with a token-level KL regularization for fine-grained hallucination correction…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - DPO
+  - "ICLR2026"
+  - "Hallucination Detection"
+  - "Multimodal Hallucination"
+  - "DPO"
+  - "Token-level Reward"
+  - "Cross-modal Attention"
+  - "Truthfulness Alignment"
 date: 2026-05-08
-content_hash: d58fde8eda79b3e2
+content_hash: 6631e802ff909b8f
 ---
+
 # Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs
 
 **Conference**: ICLR2026  

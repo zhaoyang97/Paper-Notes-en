@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Quartet of Diffusions: Structure-Aware Point Cloud Generation through Part and Symmetry Guidance
 description: >-
-  [ICLR 2026][3D Vision][Diffusion Model] This paper decomposes point cloud generation into four diffusion processes: shape latent variables, symmetry groups, semantic parts, and part assembly. By using explicit part and symmetry priors, it generates more consistent and controllable 3D point clouds that closely follow the ground truth distribution on ShapeNetP
+  [ICLR 2026][3D Vision][Point cloud generation] This paper decomposes point cloud generation into four diffusion processes: shape latent variables, symmetry groups, semantic parts, and part assembly. By using explicit part and symmetry priors, it generates more consistent and controllable 3D point clouds that closely follow the ground truth distribution on ShapeNetPart.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Point cloud generation"
+  - "part composition"
+  - "symmetry constraints"
+  - "diffusion models"
+  - "structure-aware generation"
 date: 2026-05-08
-content_hash: 072a53857bc9ee01
+content_hash: a195880c9ca59247
 ---
+
 # Quartet of Diffusions: Structure-Aware Point Cloud Generation through Part and Symmetry Guidance
 
 **Conference**: ICLR 2026  
@@ -137,13 +142,20 @@ Evaluation is performed on ShapeNetPart (Airplane, Car, Chair). Quality is measu
 - **Value**: ⭐⭐⭐⭐⭐ (A benchmark for structured 3D generation).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- SPAGHETTI: Editing and Assembly of 3D Shapes (NeurIPS 2022)
-- SALAD: Part-Level Diffusion for 3D Gen (CVPR 2023)
-- Point-Voxel Diffusion (PVD) for Shape Generation (WACV 2021)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](test-time_optimization_of_3d_point_cloud_llm_via_manifold-aware_in-context_guida.md)
+- [\[ICLR 2026\] MoGen: Detailed Neuronal Morphology Generation via Point Cloud Flow Matching](mogen_detailed_neuronal_morphology_generation_via_point_cloud_flow_matching.md)
+- [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
+- [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](../../CVPR2026/3d_vision/mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
+- [\[CVPR 2026\] Photo3D: Advancing Photorealistic 3D Generation through Structure-Aligned Detail Enhancement](../../CVPR2026/3d_vision/photo3d_advancing_photorealistic_3d_generation_through_structure-aligned_detail_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](test-time_optimization_of_3d_point_cloud_llm_via_manifold-aware_in-context_guida.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Model Counting for Dependency Quantified Boolean Formulas
 description: >-
-  [AAAI 2026][DQBF] This paper presents the first study of the model counting problem for Dependency Quantified Boolean Formulas (DQBF). It proves that #2-DQBF — restricted to only two existential variables — is already #E…
+  [AAAI 2026][DQBF] This paper presents the first study of the model counting problem for Dependency Quantified Boolean Formulas (DQBF). It proves that #2-DQBF — restricted to only two existential variables — is already #EXP-complete, and implements a practical 2-DQBF model counter, sharp2DQR, based on BDD symbolic reachability. The proposed approach significantly outperforms unfolding-based baselines on instances with large dependency sets.
 tags:
   - "AAAI 2026"
   - "DQBF"
@@ -11,7 +11,7 @@ tags:
   - "BDD"
   - "symbolic reachability"
 date: 2026-05-08
-content_hash: aa645ce718e3d72e
+content_hash: 5d9672eb25464469
 ---
 
 # Model Counting for Dependency Quantified Boolean Formulas

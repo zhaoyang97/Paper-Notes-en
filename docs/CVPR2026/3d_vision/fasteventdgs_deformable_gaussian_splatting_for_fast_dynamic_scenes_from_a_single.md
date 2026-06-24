@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] FastEventDGS represents the first work to train Deformable 3D Gaussian Splatting (Deformable 3DGS) for dynamic scenes using only a **single monocular event camera**. By utilizing continuous trajectory parameterization, a dual event generation model, local patch motion loss, and expert depth refinement, it improves PSNR
+  [CVPR 2026][3D Vision][Deformable Gaussian Splatting] FastEventDGS represents the first work to train Deformable 3D Gaussian Splatting (Deformable 3DGS) for dynamic scenes using only a **single monocular event camera**. By utilizing continuous trajectory parameterization, a dual event generation model, local patch motion loss, and expert depth refinement, it improves PSNR from ~16 dB to 22–24 dB on both synthetic and real-world fast-motion datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Deformable Gaussian Splatting"
+  - "Event Camera"
+  - "Dynamic Scene Reconstruction"
+  - "4D Reconstruction"
+  - "Monocular"
 date: 2026-05-08
-content_hash: 1a434c6c1b273589
+content_hash: ea93867327bd72db
 ---
+
 # FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Object speed ablation (Ball scene):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
 - [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
-- [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
-- [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
+- [\[CVPR 2026\] MAPo: Motion-Aware Partitioning of Deformable 3D Gaussian Splatting for High-Fidelity Dynamic Scene Reconstruction](mapo_motion-aware_partitioning_of_deformable_3d_gaussian_splatting_for_high-fide.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
 
 </div>
 

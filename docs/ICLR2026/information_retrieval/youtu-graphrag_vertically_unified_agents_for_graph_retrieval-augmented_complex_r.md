@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][GraphRAG] Youtu-GraphRAG utilizes a "graph schema" to vertically integrate traditionally isolated graph construction and retrieval. The construction end uses the schema to constrain extraction and perform automatic expansion; the indexing end builds a four-layer knowledge tree via "topology + semantic" dual-perception community
+  [ICLR 2026][Information Retrieval & RAG][GraphRAG] Youtu-GraphRAG utilizes a "graph schema" to vertically integrate traditionally isolated graph construction and retrieval. The construction end uses the schema to constrain extraction and perform automatic expansion; the indexing end builds a four-layer knowledge tree via "topology + semantic" dual-perception community detection; the retrieval end uses the same schema to decompose complex questions into atomic sub-queries with…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - GraphRAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "GraphRAG"
+  - "Graph Construction"
+  - "Community Detection"
+  - "Agent-based Retrieval"
+  - "Knowledge Leaking"
 date: 2026-05-08
-content_hash: 6df3868dba4b38c5
+content_hash: 049c432b173e2f51
 ---
+
 # Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning
 
 **Conference**: ICLR 2026  
@@ -130,15 +135,15 @@ DeepSeek results for Reject mode (Top-20):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge](g-reasoner_foundation_models_for_unified_reasoning_over_graph-structured_knowled.md)
-- [\[ICML 2026\] Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning](../../ICML2026/information_retrieval/graph-r1_towards_agentic_graphrag_framework_via_end-to-end_reinforcement_learnin.md)
 - [\[ICLR 2026\] LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora](linearrag_linear_graph_retrieval_augmented_generation_on_large-scale_corpora.md)
-- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
-- [\[ICLR 2026\] Graph-based Nearest Neighbors with Dynamic Updates via Random Walks](graph-based_nearest_neighbors_with_dynamic_updates_via_random_walks.md)
+- [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
+- [\[ICML 2026\] Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning](../../ICML2026/information_retrieval/graph-r1_towards_agentic_graphrag_framework_via_end-to-end_reinforcement_learnin.md)
+- [\[ICLR 2026\] The Topology of Reasoning: Augmenting Generation with Retrieved Cell Complexes for Text-Graph QA](topology_of_reasoning_retrieved_cell_complex-augmented_generation_for_textual_gr.md)
 
 </div>
 

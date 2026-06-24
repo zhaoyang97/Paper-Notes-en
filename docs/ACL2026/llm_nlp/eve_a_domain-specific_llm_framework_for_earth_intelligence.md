@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] EVE: A Domain-Specific LLM Framework for Earth Intelligence
 description: >-
-  [ACL 2026][LLM (Other)][RAG] This paper introduces EVE—the first open-source end-to-end LLM framework for Earth Observation / Earth Sciences led by the ESA $\Phi$-lab. It includes EVE-Instruct, a 24B domain-adapted model (based on Mistral Small 3.2 + 10.7B synthetic tokens via interleaved IFT/CPT fine-tuning + 10-checkpoint fusion), the first huma
+  [ACL 2026][LLM (Other)][Earth Observation] This paper introduces EVE—the first open-source end-to-end LLM framework for Earth Observation / Earth Sciences led by the ESA $\Phi$-lab. It includes EVE-Instruct, a 24B domain-adapted model (based on Mistral Small 3.2 + 10.7B synthetic tokens via interleaved IFT/CPT fine-tuning + 10-checkpoint fusion), the first human-annotated EO evaluation benchmark with 5693 samples, and a RAG + hallucination detection pipeline…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - RAG
-  - Mistral Small 3.2
-  - ESA
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Earth Observation"
+  - "Domain LLM"
+  - "RAG"
+  - "Hallucination Detection"
+  - "Mistral Small 3.2"
+  - "ESA"
 date: 2026-05-08
-content_hash: f1d2526def2b48de
+content_hash: f06a3e02d1f36729
 ---
+
 # EVE: A Domain-Specific LLM Framework for Earth Intelligence
 
 **Conference**: ACL 2026  
@@ -148,8 +152,8 @@ All general capability sub-items showed improvements, proving that the training 
 ## Related Papers
 
 - [\[ACL 2025\] TrimLLM: Progressive Layer Dropping for Domain-Specific LLMs](../../ACL2025/llm_nlp/trimllm_layer_dropping.md)
+- [\[ACL 2026\] When TableQA Meets Noise: A Dual Denoising Framework for Complex Questions and Large Tables](when_tableqa_meets_noise_a_dual_denoising_framework_for_complex_questions_and_la.md)
 - [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
-- [\[ACL 2026\] 当梯度相撞：多目标提示优化对 LLM 评判员的失效模式](when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
 - [\[ICLR 2026\] BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning](../../ICLR2026/llm_nlp/bots_a_unified_framework_for_bayesian_online_task_selection_in_llm_reinforcement.md)
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
 

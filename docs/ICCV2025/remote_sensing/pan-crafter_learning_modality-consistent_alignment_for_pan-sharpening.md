@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pan-Crafter: Learning Modality-Consistent Alignment for Pan-Sharpening
 description: >-
-  [ICCV 2025][Remote Sensing][Pan-sharpening] PAN-Crafter proposes a modality-consistent alignment framework that explicitly addresses cross-modal misregistration between PAN and MS images via Modality-Adaptive Reconstruct…
+  [ICCV 2025][Remote Sensing][Pan-sharpening] PAN-Crafter proposes a modality-consistent alignment framework that explicitly addresses cross-modal misregistration between PAN and MS images via Modality-Adaptive Reconstruction (MARs) and Cross-Modal Misalignment-aware Multi-scale Attention (CM3A), achieving state-of-the-art performance on multiple remote sensing benchmarks while running **1110×** faster than diffusion-based methods.
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "attention mechanism"
   - "remote sensing image fusion"
 date: 2026-05-08
-content_hash: dacd677a7c285694
+content_hash: 96cc9d2f0119284c
 ---
 
 # Pan-Crafter: Learning Modality-Consistent Alignment for Pan-Sharpening
@@ -169,10 +169,10 @@ Key findings:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](../../NeurIPS2025/remote_sensing/c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)
+- [\[CVPR 2026\] Multigrain-aware Semantic Prototype Scanning and Tri-Token Prompt Learning Embraced High-Order RWKV for Pan-Sharpening](../../CVPR2026/remote_sensing/multigrain-aware_semantic_prototype_scanning_and_tri-token_prompt_learning_embra.md)
 - [\[ICCV 2025\] WildSAT: Learning Satellite Image Representations from Wildlife Observations](wildsat_learning_satellite_image_representations_from_wildlife_observations.md)
-- [\[ICML 2026\] Any2Any: Unified Arbitrary Modality Translation for Remote Sensing](../../ICML2026/remote_sensing/any2any_unified_arbitrary_modality_translation_for_remote_sensing.md)
-- [\[ICML 2026\] The Perception-Physics Paradox: Probing Scientific Alignment with TC-Bench](../../ICML2026/remote_sensing/the_perception-physics_paradox_probing_scientific_alignment_with_tc-bench.md)
+- [\[NeurIPS 2025\] C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](../../NeurIPS2025/remote_sensing/c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)
+- [\[CVPR 2025\] Hierarchical Dual-Change Collaborative Learning for UAV Scene Change Captioning](../../CVPR2025/remote_sensing/hierarchical_dual-change_collaborative_learning_for_uav_scene_change_captioning.md)
 - [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](../../CVPR2026/remote_sensing/cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
 
 </div>

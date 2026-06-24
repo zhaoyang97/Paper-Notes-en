@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TTSDS2: Resources and Benchmark for Evaluating Human-Quality Text to Speech Systems
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] Addressing the issue where modern TTS systems approach human quality and traditional MOS/objective metrics fail, this paper proposes TTSDS2—an unsupervised objective metric that factorizes speech into four perceptual factors and uses 2-Wasserstein distance to measure "how close the synthetic distribution is to the real
+  [ICLR 2026][Audio & Speech][TTS Evaluation] Addressing the issue where modern TTS systems approach human quality and traditional MOS/objective metrics fail, this paper proposes TTSDS2—an unsupervised objective metric that factorizes speech into four perceptual factors and uses 2-Wasserstein distance to measure "how close the synthetic distribution is to the real one and how far it is from noise." It is the only metric among 16 candidates to achieve a Spearman correlation >0.5…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "TTS Evaluation"
+  - "Distribution Similarity"
+  - "Wasserstein Distance"
+  - "Multilingual Benchmark"
+  - "Subjective-Objective Correlation"
 date: 2026-05-08
-content_hash: fc64109653c4637f
+content_hash: 8e7ce70eebcc2be9
 ---
+
 # TTSDS2: Resources and Benchmark for Evaluating Human-Quality Text to Speech Systems
 
 **Conference**: ICLR 2026  
@@ -138,10 +144,10 @@ Simple average wins in 3 out of 4 unseen domains. Learned weights (Table 5) prov
 ## Related Papers
 
 - [\[ICLR 2026\] EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models](echomind_an_interrelated_multi-level_benchmark_for_evaluating_empathetic_speech_.md)
+- [\[ICLR 2026\] SpeechJudge: Towards Human-Level Judgment for Speech Naturalness](speechjudge_towards_human-level_judgment_for_speech_naturalness.md)
 - [\[AAAI 2026\] HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding](../../AAAI2026/audio_speech/hpsu_a_benchmark_for_human-level_perception_in_real-world_spoken_speech_understa.md)
+- [\[AAAI 2026\] CCFQA: A Benchmark for Cross-Lingual and Cross-Modal Speech and Text Factuality Evaluation](../../AAAI2026/audio_speech/ccfqa_a_benchmark_for_cross-lingual_and_cross-modal_speech_and_text_factuality_e.md)
 - [\[ICML 2026\] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety](../../ICML2026/audio_speech/multibreak_a_scalable_and_diverse_multi-turn_jailbreak_benchmark_for_evaluating_.md)
-- [\[ICLR 2026\] Towards True Speech-to-Speech Models Without Text Guidance](towards_true_speech-to-speech_models_without_text_guidance.md)
-- [\[ACL 2025\] It's Not a Walk in the Park! Challenges of Idiom Translation in Speech-to-text Systems](../../ACL2025/audio_speech/its_not_a_walk_in_the_park_challenges_of_idiom_translation_in_speech-to-text_sys.md)
 
 </div>
 

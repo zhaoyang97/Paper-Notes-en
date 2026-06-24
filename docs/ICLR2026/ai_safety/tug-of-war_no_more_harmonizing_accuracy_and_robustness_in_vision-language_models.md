@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tug-of-War No More: Harmonizing Accuracy and Robustness in Vision-Language Models via Stability-Aware Task Vector Merging
 description: >-
-  [ICLR 2026][AI Safety][CLIP] Addressing the persistent trade-off where "improving VLM robustness inevitably degrades clean accuracy," this paper proposes PISTOLE. Instead of retraining, it selectively merges off-the-shelf "naturally fine-tuned" and "adversarially fine-tuned" CLIP task vectors based on **prediction stability**. By using complementa
+  [ICLR 2026][AI Safety][Task Vector Merging] Addressing the persistent trade-off where "improving VLM robustness inevitably degrades clean accuracy," this paper proposes PISTOLE. Instead of retraining, it selectively merges off-the-shelf "naturally fine-tuned" and "adversarially fine-tuned" CLIP task vectors based on **prediction stability**. By using complementary gradient stability masks to suppress conflicting coordinates and weighting adversarial parameter trajectories wit…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - CLIP
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Task Vector Merging"
+  - "Adversarial Robustness"
+  - "CLIP"
+  - "Clean-Robust Trade-off"
+  - "Gradient Stability"
 date: 2026-05-08
-content_hash: 73e2ccacc062de5e
+content_hash: 575e10801e68da47
 ---
+
 # Tug-of-War No More: Harmonizing Accuracy and Robustness in Vision-Language Models via Stability-Aware Task Vector Merging
 
 **Conference**: ICLR 2026  
@@ -153,10 +158,10 @@ Step-by-step addition of the three core modules (Average of 14 datasets):
 ## Related Papers
 
 - [\[ICLR 2026\] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models](identifying_robust_neural_pathways_few-shot_adversarial_mask_tuning_for_vision-l.md)
-- [\[ICLR 2026\] MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes](morebench_evaluating_procedural_and_pluralistic_moral_reasoning_in_language_mode.md)
+- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/ai_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 - [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](../../CVPR2026/ai_safety/a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
+- [\[ICLR 2026\] MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes](morebench_evaluating_procedural_and_pluralistic_moral_reasoning_in_language_mode.md)
 - [\[ICLR 2026\] Towards a Certificate of Trust: Task-Aware OOD Detection for Scientific AI](towards_a_certificate_of_trust_task-aware_ood_detection_for_scientific_ai.md)
-- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](../../CVPR2026/ai_safety/flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
 
 </div>
 

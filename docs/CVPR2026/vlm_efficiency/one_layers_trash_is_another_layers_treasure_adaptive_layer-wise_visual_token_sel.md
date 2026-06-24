@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the inference slowdown caused by excessive visual tokens in Large Vision-Language Models (LVLMs), ALVTS avoids the one-time permanent pruning used by methods like FastV. Instead, it **re-selects tokens at every decoding layer**. Using a lightweight selector with low-rank approximation to score all visual tok
+  [CVPR 2026][Multimodal Efficiency][Visual token compression] Addressing the inference slowdown caused by excessive visual tokens in Large Vision-Language Models (LVLMs), ALVTS avoids the one-time permanent pruning used by methods like FastV. Instead, it **re-selects tokens at every decoding layer**. Using a lightweight selector with low-rank approximation to score all visual tokens, important tokens participate in layer computation while unimportant ones skip the current laye…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token compression"
+  - "LVLM inference acceleration"
+  - "Layer-wise dynamic selection"
+  - "Low-rank attention approximation"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 1ef983f53cb3bc1c
+content_hash: 2ada1571ca34afd6
 ---
+
 # One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,16 @@ Efficiency (LLaVA-1.5-7B, single 4090, POPE):
 - Value: ⭐⭐⭐⭐ High practical value for deployment due to being training-free and providing 1.6× prefill acceleration.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
+- [\[CVPR 2026\] FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection](focusui_efficient_ui_grounding_via_position-preserving_visual_token_selection.md)
 - [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
-- [\[CVPR 2026\] PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers](ppcl_pluggable_pruning_dit_distillation.md)
+- [\[CVPR 2026\] LazyVAR: Accelerating Visual Autoregressive Models via Scale-wise Token Pruning and Parallel Group Decoding](lazyvar_accelerating_visual_autoregressive_models_via_scale-wise_token_pruning_a.md)
+- [\[CVPR 2026\] CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs](core_compact_object-centric_representations_as_a_new_paradigm_for_token_merging_.md)
 - [\[CVPR 2026\] Hi-Lo Prune: Look at What You'll Lose before Pruning with Hierarchical Token Selection](hi-lo_prune_look_at_what_youll_lose_before_pruning_with_hierarchical_token_selec.md)
-- [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](../../ACL2026/model_compression/a_layer-wise_analysis_of_supervised_fine-tuning.md)
 
 </div>
 

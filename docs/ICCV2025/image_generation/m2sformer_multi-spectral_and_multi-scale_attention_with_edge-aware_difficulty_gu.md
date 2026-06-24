@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization
 description: >-
-  [ICCV 2025][Image Generation][Image Forgery Localization] This paper proposes M2SFormer, which unifies multi-spectral (2D DCT frequency-domain) and multi-scale (SIFT-style spatial pyramid) attention mechanisms within enc…
+  [ICCV 2025][Image Generation][Image Forgery Localization] This paper proposes M2SFormer, which unifies multi-spectral (2D DCT frequency-domain) and multi-scale (SIFT-style spatial pyramid) attention mechanisms within encoder-decoder skip connections, and introduces an edge-aware curvature-based difficulty-guided attention decoder. The method achieves state-of-the-art cross-domain generalization in image forgery localization (average unseen-domain DSC 43.0% and mIoU 34.3% unde…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Difficulty Guidance"
   - "Transformer"
 date: 2026-05-08
-content_hash: 18500a5cdee2d187
+content_hash: 770bf6feef1323ff
 ---
 
 # M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization
@@ -164,9 +164,9 @@ M2SFormer adopts a Transformer encoder-decoder architecture (PVT-v2 backbone) wi
 
 - [\[ICCV 2025\] MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance](mmaif_multi-task_and_multi-degradation_all-in-one_for_image_fusion_with_language.md)
 - [\[ICCV 2025\] Semantic Discrepancy-aware Detector for Image Forgery Identification](semantic_discrepancy-aware_detector_for_image_forgery_identification.md)
+- [\[CVPR 2025\] Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/multi-party_collaborative_attention_control_for_image_customization.md)
 - [\[ICCV 2025\] DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers](ditfastattnv2_head-wise_attention_compression_for_multi-modality_diffusion_trans.md)
-- [\[ICCV 2025\] MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence](mamtiff-cad_multi-scale_latent_diffusion_with_mamba_for_complex_parametric_seque.md)
-- [\[ICCV 2025\] Spectral Image Tokenizer](spectral_image_tokenizer.md)
+- [\[ICCV 2025\] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection](forgelens_data-efficient_forgery_focus_for_generalizable_forgery_image_detection.md)
 
 </div>
 

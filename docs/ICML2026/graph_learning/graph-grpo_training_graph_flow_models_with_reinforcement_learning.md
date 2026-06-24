@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Graph-GRPO: Training Graph Flow Models with Reinforcement Learning
 description: >-
-  [ICML 2026][Graph Learning][GRPO] To address the challenge that "Graph Flow Models (GFMs) are difficult to align with complex objectives using reinforcement learning," this paper proposes Graph-GRPO. First, it derives the non-differentiable Monte Carlo rate matrix in GFM sampling into an **analytical expression**, making the entire denoising trajectory
+  [ICML 2026][Graph Learning][Graph Flow Models] To address the challenge that "Graph Flow Models (GFMs) are difficult to align with complex objectives using reinforcement learning," this paper proposes Graph-GRPO. First, it derives the non-differentiable Monte Carlo rate matrix in GFM sampling into an **analytical expression**, making the entire denoising trajectory differentiable and trainable via GRPO. Second, it introduces a **refinement strategy** that performs "local nois…
 tags:
-  - ICML 2026
-  - Graph Learning
-  - GRPO
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Graph Flow Models"
+  - "Discrete Flow Matching"
+  - "GRPO"
+  - "Molecular Optimization"
+  - "Differentiable Sampling"
 date: 2026-05-08
-content_hash: c4487b59c7a2a218
+content_hash: 5d4c6f4fbe6223dd
 ---
+
 # Graph-GRPO: Training Graph Flow Models with Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -136,10 +141,10 @@ The refinement strategy's effect varies by task difficulty. On simple Scaffold H
 ## Related Papers
 
 - [\[ACL 2026\] AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning](../../ACL2026/graph_learning/agentgl_towards_agentic_graph_learning_with_llms_via_reinforcement_learning.md)
-- [\[ICLR 2026\] Bures-Wasserstein Flow Matching for Graph Generation](../../ICLR2026/graph_learning/bures-wasserstein_flow_matching_for_graph_generation.md)
-- [\[ICLR 2026\] Learning Concept Bottleneck Models from Mechanistic Explanations](../../ICLR2026/graph_learning/learning_concept_bottleneck_models_from_mechanistic_explanations.md)
-- [\[ICML 2026\] Aitchison Embeddings for Learning Compositional Graph Representations](aitchison_embeddings_for_learning_compositional_graph_representations.md)
+- [\[ICML 2026\] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering](kbqa-r1_reinforcing_large_language_models_for_knowledge_base_question_answering.md)
 - [\[ICML 2026\] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning](t-ginee_a_tensor-based_multilayer_graph_representation_learning.md)
+- [\[ICLR 2026\] Bures-Wasserstein Flow Matching for Graph Generation](../../ICLR2026/graph_learning/bures-wasserstein_flow_matching_for_graph_generation.md)
+- [\[ICML 2026\] What Makes a Desired Graph for Relational Deep Learning?](what_makes_a_desired_graph_for_relational_deep_learning.md)
 
 </div>
 

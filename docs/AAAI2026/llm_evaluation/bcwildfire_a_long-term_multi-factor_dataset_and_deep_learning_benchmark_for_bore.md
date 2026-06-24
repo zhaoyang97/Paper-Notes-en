@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction
 description: >-
-  [AAAI 2026][LLM Evaluation][Wildfire Risk Prediction] This paper introduces BCWildfire, a multimodal wildfire risk prediction dataset covering 240 million hectares of British Columbia, Canada over a 25-year span…
+  [AAAI 2026][LLM Evaluation][Wildfire Risk Prediction] This paper introduces BCWildfire, a multimodal wildfire risk prediction dataset covering 240 million hectares of British Columbia, Canada over a 25-year span, encompassing 38 driving factors. It conducts a systematic benchmark evaluation of time series forecasting models across four paradigms—CNN, Linear, Transformer, and Mamba—revealing the performance ceiling of current models and the key influential factors in wildfire…
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Deep Learning Benchmark"
   - "Boreal Forest"
 date: 2026-05-08
-content_hash: 20a1909e758984a9
+content_hash: 55efb0d421a3cca4
 ---
 
 # BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction
@@ -132,10 +132,10 @@ Binary Cross-Entropy (BCE) loss is used to train all models. Adam optimizer, two
 ## Related Papers
 
 - [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](../../ACL2026/llm_evaluation/sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
+- [\[ICLR 2026\] Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs](../../ICLR2026/llm_evaluation/beyond_a_million_tokens_benchmarking_and_enhancing_long-term_memory_in_llms.md)
 - [\[NeurIPS 2025\] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments](../../NeurIPS2025/llm_evaluation/memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami.md)
 - [\[AAAI 2026\] DiCaP: Distribution-Calibrated Pseudo-labeling for Semi-Supervised Multi-Label Learning](dicap_distribution-calibrated_pseudo-labeling_for_semi-supervised_multi-label_le.md)
-- [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](../../ICLR2026/llm_evaluation/anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
-- [\[NeurIPS 2025\] Risk Management for Mitigating Benchmark Failure Modes: BenchRisk](../../NeurIPS2025/llm_evaluation/risk_management_for_mitigating_benchmark_failure_modes_benchrisk.md)
+- [\[ICLR 2026\] Characterizing Deep Research: A Benchmark and Formal Definition](../../ICLR2026/llm_evaluation/characterizing_deep_research_a_benchmark_and_formal_definition.md)
 
 </div>
 

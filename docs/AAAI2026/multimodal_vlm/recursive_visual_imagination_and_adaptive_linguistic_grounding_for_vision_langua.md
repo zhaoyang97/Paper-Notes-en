@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation
 description: >-
-  [AAAI 2026][Multimodal VLM][VLN] This paper proposes a VLN policy based on Implicit Scene Representation (ISR), which compresses historical trajectories into a fixed-size compact neural grid via Recursive Visual Imaginat…
+  [AAAI 2026][Multimodal VLM][VLN] This paper proposes a VLN policy based on Implicit Scene Representation (ISR), which compresses historical trajectories into a fixed-size compact neural grid via Recursive Visual Imagination (RVI) to learn high-level scene priors, and employs Adaptive Linguistic Grounding (ALG) to finely align different semantic components of navigation instructions with different grid cells. The approach achieves state-of-the-art performance on two continuous…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "neural grid"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: e0c13e2efef8251e
+content_hash: ce0e3f7d84233fba
 ---
 
 # Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation
@@ -141,11 +141,11 @@ The paradigm of compressing sequential information into fixed-size implicit repr
 
 ## Related Papers
 
-- [\[CVPR 2026\] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition](../../CVPR2026/multimodal_vlm/adaptvision_efficient_vision-language_models_via_adaptive_visual_acquisition.md)
-- [\[ICML 2026\] Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](../../ICML2026/multimodal_vlm/decomposed_on-policy_distillation_for_vision-language_reasoning_steering_gradien.md)
+- [\[CVPR 2026\] Linguistic Priors for Visual Decoupling: Towards Symmetric Vision-Brain Alignment](../../CVPR2026/multimodal_vlm/linguistic_priors_for_visual_decoupling_towards_symmetric_vision-brain_alignment.md)
+- [\[CVPR 2025\] ReVisionLLM: Recursive Vision-Language Model for Temporal Grounding in Hour-Long Videos](../../CVPR2025/multimodal_vlm/revisionllm_recursive_vision-language_model_for_temporal_grounding_in_hour-long_.md)
 - [\[AAAI 2026\] MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering](macvqa_adaptive_memory_allocation_and_global_noise_filtering_for_continual_visua.md)
-- [\[CVPR 2026\] LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models](../../CVPR2026/multimodal_vlm/llmind_bio-inspired_training-free_adaptive_visual_representations_for_vision-lan.md)
-- [\[ICLR 2026\] Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment](../../ICLR2026/multimodal_vlm/grounding-iqa_grounding_multimodal_language_model_for_image_quality_assessment.md)
+- [\[CVPR 2026\] CapNav: Benchmarking Vision Language Models on Capability-conditioned Indoor Navigation](../../CVPR2026/multimodal_vlm/capnav_benchmarking_vision_language_models_on_capability-conditioned_indoor_navi.md)
+- [\[ACL 2025\] Adaptive Linguistic Prompting (ALP) Enhances Phishing Webpage Detection in Multimodal Large Language Models](../../ACL2025/multimodal_vlm/adaptive_linguistic_prompting_alp_enhances_phishing_webpage_detection_in_multimo.md)
 
 </div>
 

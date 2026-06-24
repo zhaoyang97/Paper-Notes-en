@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] N2N-GQA: Noise-to-Narrative for Graph-Based Table-Text Question Answering Using LLMs
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Multi-hop QA] N2N-GQA is proposed as the first zero-shot framework for open-domain hybrid table-text question answering. Its core mechanism transforms noisy retrieved documents in…
+  [AAAI 2026][Information Retrieval & RAG][Multi-hop QA] N2N-GQA is proposed as the first zero-shot framework for open-domain hybrid table-text question answering. Its core mechanism transforms noisy retrieved documents into a dynamic evidence graph (documents as nodes, TF-IDF shared-term weights as edges), and employs graph centrality-based pruning to identify "bridging documents" that connect multi-hop reasoning chains. On OTT-QA, it achieves +39.6 EM over Vanilla RAG (8.0 →…
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Zero-shot"
   - "GraphRank"
 date: 2026-05-08
-content_hash: 335e9149b648d3a2
+content_hash: 1a15d8f71612bd47
 ---
 
 # N2N-GQA: Noise-to-Narrative for Graph-Based Table-Text Question Answering Using LLMs
@@ -139,11 +139,11 @@ Fine-tuned systems (non-zero-shot) for reference: CORE 49.0 EM, COS 56.9 EM.
 
 ## Related Papers
 
-- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
 - [\[AAAI 2026\] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering](reap_enhancing_rag_with_recursive_evaluation_and_adaptive_planning_for_multi-hop.md)
+- [\[ICLR 2026\] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering](../../ICLR2026/information_retrieval/frugalrag_less_is_more_in_rl_finetuning_for_multi-hop_question_answering.md)
 - [\[ACL 2026\] DQA: Diagnostic Question Answering for IT Support](../../ACL2026/information_retrieval/dqa_diagnostic_question_answering_for_it_support.md)
-- [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](../../ACL2026/information_retrieval/chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
-- [\[ACL 2026\] FinRAG-12B: A Production-Validated Recipe for Grounded Question Answering in Banking](../../ACL2026/information_retrieval/finrag-12b_a_production-validated_recipe_for_grounded_question_answering_in_bank.md)
+- [\[ACL 2025\] GRAF: Graph Retrieval Augmented by Facts for Romanian Legal Multi-Choice Question Answering](../../ACL2025/information_retrieval/graf_graph_retrieval_augmented_by_facts_for_romanian_legal_multi-choice_question.md)
+- [\[ICLR 2026\] Beyond Text-Only: Towards Multimodal Table Retrieval in Open-World](../../ICLR2026/information_retrieval/beyond_text-only_towards_multimodal_table_retrieval_in_open-world.md)
 
 </div>
 

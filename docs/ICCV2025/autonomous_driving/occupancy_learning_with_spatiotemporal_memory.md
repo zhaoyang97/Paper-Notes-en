@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Occupancy Learning with Spatiotemporal Memory
 description: >-
-  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes ST-Occ, a scene-level spatiotemporal occupancy representation learning framework. Through a Unified Temporal Modeling paradigm…
+  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes ST-Occ, a scene-level spatiotemporal occupancy representation learning framework. Through a Unified Temporal Modeling paradigm, it employs a spatiotemporal memory bank defined in scene coordinates along with an uncertainty- and dynamics-aware memory attention mechanism. ST-Occ outperforms the prior state of the art by 3 mIoU on the Occ3D benchmark while reducing temporal inconsistency by 29%.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "spatiotemporal memory"
   - "uncertainty awareness"
 date: 2026-05-08
-content_hash: 7101dd5569e2ef4f
+content_hash: eacf9e274a05b5a7
 ---
 
 # Occupancy Learning with Spatiotemporal Memory
@@ -162,10 +162,10 @@ Sub-component ablation (contribution of temporal attributes):
 ## Related Papers
 
 - [\[ICCV 2025\] GaussRender: Learning 3D Occupancy with Gaussian Rendering](gaussrender_learning_3d_occupancy_with_gaussian_rendering.md)
+- [\[CVPR 2025\] Spatiotemporal Decoupling for Efficient Vision-Based Occupancy Forecasting](../../CVPR2025/autonomous_driving/spatiotemporal_decoupling_for_efficient_vision-based_occupancy_forecasting.md)
 - [\[ICCV 2025\] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation](dist-4d_disentangled_spatiotemporal_diffusion_with_metric_depth_for_4d_driving_s.md)
 - [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
 - [\[ICCV 2025\] AGO: Adaptive Grounding for Open World 3D Occupancy Prediction](ago_adaptive_grounding_for_open_world_3d_occupancy_predictio.md)
-- [\[ICCV 2025\] Semantic Causality-Aware Vision-Based 3D Occupancy Prediction](semantic_causality-aware_vision-based_3d_occupancy_prediction.md)
 
 </div>
 

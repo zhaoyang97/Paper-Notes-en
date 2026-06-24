@@ -2,14 +2,17 @@
 title: >-
   [Paper Note] iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance
 description: >-
-  [ICML 2026][Video Generation][Diffusion Model] iTryOn defines the "Interactive Video Virtual Try-On" task for the first time—enabling individuals in videos to **actively manipulate garments** (zipping, lifting corners, stretching) rather than just passive display. By resolving spatial ambiguity through **3D hand priors**, strictly aligning timestamped action titles
+  [ICML 2026][Video Generation][Interactive Video Virtual Try-On] iTryOn defines the "Interactive Video Virtual Try-On" task for the first time—enabling individuals in videos to **actively manipulate garments** (zipping, lifting corners, stretching) rather than just passive display. By resolving spatial ambiguity through **3D hand priors**, strictly aligning timestamped action titles with corresponding frames using **Action-aware RoPE (A-RoPE)**…
 tags:
-  - ICML 2026
-  - Video Generation
-  - Diffusion Model
+  - "ICML 2026"
+  - "Video Generation"
+  - "Interactive Video Virtual Try-On"
+  - "Diffusion Models"
+  - "Multimodal Conditions"
 date: 2026-05-08
-content_hash: f14917c78127c0ef
+content_hash: 157bfa23968d457a
 ---
+
 # iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance
 
 **Conference**: ICML 2026  

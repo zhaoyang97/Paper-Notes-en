@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Model Inversion with Layer-Specific Modeling and Alignment for Data-Free Continual Learning
 description: >-
-  [NeurIPS 2025][AI Safety][Model inversion] This paper proposes Per-layer Model Inversion (PMI) for data-free continual learning to accelerate synthetic image generation…
+  [NeurIPS 2025][AI Safety][Model inversion] This paper proposes Per-layer Model Inversion (PMI) for data-free continual learning to accelerate synthetic image generation, and mitigates the feature drift between synthetic and real data via class-level Gaussian feature modeling and contrastive learning, achieving efficient and high-quality data-free knowledge replay.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "feature alignment"
   - "privacy preservation"
 date: 2026-05-08
-content_hash: b24bbfe76624e27e
+content_hash: d626e8a9a05f98fa
 ---
 
 # Model Inversion with Layer-Specific Modeling and Alignment for Data-Free Continual Learning
@@ -200,10 +200,10 @@ Training procedure:
 ## Related Papers
 
 - [\[ICCV 2025\] Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers](../../ICCV2025/ai_safety/semantic_alignment_and_reinforcement_for_data-free_quantization_of_vision_transf.md)
+- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](../../ICML2026/ai_safety/differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 - [\[NeurIPS 2025\] Private Continual Counting of Unbounded Streams](private_continual_counting_of_unbounded_streams.md)
-- [\[NeurIPS 2025\] Provable Watermarking for Data Poisoning Attacks](provable_watermarking_for_data_poisoning_attacks.md)
-- [\[NeurIPS 2025\] Incentivizing Time-Aware Fairness in Data Sharing](incentivizing_time-aware_fairness_in_data_sharing.md)
-- [\[ICML 2026\] Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference](../../ICML2026/ai_safety/partitioning_for_intrinsic_model_inversion_resistance_in_collaborative_inference.md)
+- [\[CVPR 2025\] Dynamic Integration of Task-Specific Adapters for Class Incremental Learning](../../CVPR2025/ai_safety/dynamic_integration_of_task-specific_adapters_for_class_incremental_learning.md)
+- [\[CVPR 2025\] Data-free Universal Adversarial Perturbation with Pseudo-Semantic Prior](../../CVPR2025/ai_safety/data-free_universal_adversarial_perturbation_with_pseudo-semantic_prior.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Long-Context Attention Benchmark: From Kernel Efficiency to Distributed Context Parallelism
 description: >-
-  [ICLR 2026][LLM Efficiency][Benchmark] This paper introduces **LongCA-bench**, a long-context attention benchmark that unifies 7 dense operators, 5 sparse operators, and 5 context parallelism mechanisms under a single data interface. Using up to 96 H100 GPUs and 768K sequence lengths, the study systematically evaluates the speed/memory trade-offs of various
+  [ICLR 2026][LLM Efficiency][Long-context attention] This paper introduces **LongCA-bench**, a long-context attention benchmark that unifies 7 dense operators, 5 sparse operators, and 5 context parallelism mechanisms under a single data interface. Using up to 96 H100 GPUs and 768K sequence lengths, the study systematically evaluates the speed/memory trade-offs of various methods across a three-dimensional space of "mask patterns × sequence length × distributed scale."
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Benchmark
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long-context attention"
+  - "attention operators"
+  - "context parallelism"
+  - "sparse attention"
+  - "distributed training"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 7a4d60e303f7d54c
+content_hash: 4e9e111db1ff27a6
 ---
+
 # Long-Context Attention Benchmark: From Kernel Efficiency to Distributed Context Parallelism
 
 **Conference**: ICLR 2026  
@@ -111,8 +117,8 @@ Experiments were conducted on up to **96 H100 (80GB HBM3) GPUs across 12 servers
 - [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
 - [\[ICLR 2026\] AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism](autosp_unlocking_long-context_llm_training_via_compiler-based_sequence_paralleli.md)
 - [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
+- [\[ICLR 2026\] Revisiting Long-context Modeling from Context Denoising Perspective](revisiting_long-context_modeling_from_context_denoising_perspective.md)
 - [\[ICLR 2026\] FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel](fsa_an_alternative_efficient_implementation_of_native_sparse_attention_kernel.md)
-- [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
 
 </div>
 

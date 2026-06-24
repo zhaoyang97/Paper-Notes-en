@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PANDA: Patch and Distribution-Aware Augmentation for Long-Tailed Exemplar-Free Continual Learning
 description: >-
-  [AAAI 2026][LLM Safety][Exemplar-Free Continual Learning] This paper proposes PANDA, a framework that achieves intra-task class balancing via CLIP-guided semantic patch grafting and alleviates inter-task distribution shi…
+  [AAAI 2026][LLM Safety][Exemplar-Free Continual Learning] This paper proposes PANDA, a framework that achieves intra-task class balancing via CLIP-guided semantic patch grafting and alleviates inter-task distribution shift through a learnable distribution smoothening mechanism. PANDA operates as a plug-and-play module to improve pretrained model-based exemplar-free continual learning under long-tailed scenarios.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Dual-Level Imbalance"
   - "Distribution Smoothening"
 date: 2026-05-08
-content_hash: 22121dfb4a35892b
+content_hash: 29cb9d4dc890e730
 ---
 
 # PANDA: Patch and Distribution-Aware Augmentation for Long-Tailed Exemplar-Free Continual Learning
@@ -179,10 +179,10 @@ PANDA substantially outperforms all conventional augmentation methods. CutMix an
 ## Related Papers
 
 - [\[AAAI 2026\] Attention Retention for Continual Learning with Vision Transformers](attention_retention_for_continual_learning_with_vision_transformers.md)
-- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](../../ICML2026/llm_safety/understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
 - [\[NeurIPS 2025\] Finding Structure in Continual Learning](../../NeurIPS2025/llm_safety/finding_structure_in_continual_learning.md)
+- [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](../../CVPR2026/llm_safety/elastic_weight_consolidation_done_right_for_continual_learning.md)
 - [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
-- [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
+- [\[ICML 2025\] Improving Continual Learning Performance and Efficiency with Auxiliary Classifiers](../../ICML2025/llm_safety/improving_continual_learning_performance_and_efficiency_with_auxiliary_classifie.md)
 
 </div>
 

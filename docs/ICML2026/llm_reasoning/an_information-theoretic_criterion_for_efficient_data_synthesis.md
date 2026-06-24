@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Information-Theoretic Criterion for Efficient Data Synthesis
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper employs the Data Processing Inequality (DPI) to explain why synthetic data can be effective or cause model collapse: a synthetic data pipeline is only information-open if the training closed-loop continuously introduces stable external signals. Furthermore, high meta-level verification signals are more effic
+  [ICML2026][Reasoning][Synthetic data] This paper employs the Data Processing Inequality (DPI) to explain why synthetic data can be effective or cause model collapse: a synthetic data pipeline is only information-open if the training closed-loop continuously introduces stable external signals. Furthermore, high meta-level verification signals are more efficient and generalizable than instance-level imitation.
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Synthetic data"
+  - "information theory"
+  - "data processing inequality"
+  - "external verifier"
+  - "reward hacking"
 date: 2026-05-08
-content_hash: 600c2999e9601fff
+content_hash: c2c25836711e6c18
 ---
+
 # An Information-Theoretic Criterion for Efficient Data Synthesis
 
 **Conference**: ICML2026  
@@ -122,9 +128,9 @@ Analytical ablations focus on "externality," "signal granularity," and "spurious
 
 - [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](../../ACL2026/llm_reasoning/efficient_prm_training_data_synthesis_via_formal_verification.md)
 - [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](../../ACL2026/llm_reasoning/efficient_process_reward_modeling_via_contrastive_mutual_information.md)
+- [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](../../ICLR2026/llm_reasoning/designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
 - [\[ACL 2026\] Self-Reinforcing Controllable Synthesis of Rare Relational Data via Bayesian Calibration](../../ACL2026/llm_reasoning/self-reinforcing_controllable_synthesis_of_rare_relational_data_via_bayesian_cal.md)
 - [\[ACL 2026\] MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis](../../ACL2026/llm_reasoning/mathagent_adversarial_evolution_of_constraint_graphs_for_mathematical_reasoning_.md)
-- [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](../../ICLR2026/llm_reasoning/designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
 
 </div>
 

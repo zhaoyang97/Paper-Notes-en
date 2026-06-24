@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LARE: Low-Attention Region Encoding for Text–Image Retrieval
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Paper Note] LARE is a **training-free** text–image retrieval framework: it extracts "low-attention" regions from a frozen vision encoder, re-encodes them, and integrates them into global similarity scores via confidence gating. This significantly improves recall for CLIP/SigLIP-style dual-encoders in crowded scenes with small or r
+  [ICML2026][Information Retrieval & RAG][Text–Image Retrieval] LARE is a **training-free** text–image retrieval framework: it extracts "low-attention" regions from a frozen vision encoder, re-encodes them, and integrates them into global similarity scores via confidence gating. This significantly improves recall for CLIP/SigLIP-style dual-encoders in crowded scenes with small or rare objects while maintaining performance on standard datasets.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
+  - "ICML2026"
+  - "Information Retrieval & RAG"
+  - "Text–Image Retrieval"
+  - "Low-Attention Regions"
+  - "Training-free"
+  - "Attention Inversion"
+  - "Dense Scenes"
 date: 2026-05-08
-content_hash: 750128ab9b4ddb19
+content_hash: d377ccfd0e7f0376
 ---
+
 # LARE: Low-Attention Region Encoding for Text–Image Retrieval
 
 **Conference**: ICML2026  
@@ -122,6 +128,7 @@ CLIP achieves a ~29% relative improvement on COCO-Dense. On Flickr30K-Dense, the
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

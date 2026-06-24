@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Progressive Guessing to Fixed Point: Rethinking Human Motion Prediction with Deep Equilibrium Models
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] MotionDEQ reformulates the cascaded framework of "multi-stage progressive guessing" in human motion prediction into a **fixed-point solving problem** within an implicit layer. This is equivalent to infinite refinement stages but requires only $O(1)$ training memory. By injecting Euclidean equivariance into this equilib
+  [CVPR 2026][Human Understanding][Motion prediction] MotionDEQ reformulates the cascaded framework of "multi-stage progressive guessing" in human motion prediction into a **fixed-point solving problem** within an implicit layer. This is equivalent to infinite refinement stages but requires only $O(1)$ training memory. By injecting Euclidean equivariance into this equilibrium process and utilizing the temporal coherence of adjacent predictions to reuse the previous fixed point…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Motion prediction"
+  - "Deep Equilibrium Models"
+  - "Fixed point"
+  - "Equivariant modeling"
+  - "Streaming prediction"
 date: 2026-05-08
-content_hash: cbb5966c715829b6
+content_hash: 85c13803bd9eb238
 ---
+
 # Progressive Guessing to Fixed Point: Rethinking Human Motion Prediction with Deep Equilibrium Models
 
 **Conference**: CVPR 2026  
@@ -127,8 +133,21 @@ Ablation on network structure (Human3.6M, Avg MPJPE) validates the fixed-point r
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
+- [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
+- [\[AAAI 2026\] mmPred: Radar-based Human Motion Prediction in the Dark](../../AAAI2026/human_understanding/mmpred_radar-based_human_motion_prediction_in_the_dark.md)
+- [\[ICLR 2026\] Sparkle: A Robust and Versatile Representation for Point Cloud-based Human Motion Capture](../../ICLR2026/human_understanding/sparkle_a_robust_and_versatile_representation_for_point_cloud-based_human_motion.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

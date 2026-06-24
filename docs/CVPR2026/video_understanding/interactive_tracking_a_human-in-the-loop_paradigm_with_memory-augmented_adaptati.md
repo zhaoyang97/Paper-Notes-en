@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Interactive Tracking: A Human-in-the-Loop Paradigm with Memory-Augmented Adaptation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper proposes a new paradigm of "Interactive Tracking," where users can guide or correct the tracker using natural language instructions at any time. The authors release InteractTrack, the first large-scale interactive tracking benchmark (150 videos, 140,000 frames, 4D evaluation protocol), showing that 25 SOTA t
+  [CVPR 2026][Video Understanding][Interactive Tracking] This paper proposes a new paradigm of "Interactive Tracking," where users can guide or correct the tracker using natural language instructions at any time. The authors release InteractTrack, the first large-scale interactive tracking benchmark (150 videos, 140,000 frames, 4D evaluation protocol), showing that 25 SOTA trackers fail in this setting. Finally, a strong baseline IMAT is introduced…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Interactive Tracking"
+  - "Human-in-the-Loop"
+  - "Natural Language Instructions"
+  - "Memory Augmentation"
+  - "InteractTrack Benchmark"
 date: 2026-05-08
-content_hash: 8a619429008c0c88
+content_hash: d8f3a2768a0b327c
 ---
+
 # Interactive Tracking: A Human-in-the-Loop Paradigm with Memory-Augmented Adaptation
 
 **Conference**: CVPR 2026  
@@ -122,15 +128,16 @@ Ours (IMAT) leads in Interactiveness (45.25) and Responsiveness (41.20), demonst
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](m4-sam_multi-modal_mixture-of-experts_with_memory-augmented_sam_for_rgb-d_video_.md)
+- [\[CVPR 2026\] Active Intelligence in Video Avatars via Closed-loop World Modeling](active_intelligence_in_video_avatars_via_closed-loop_world_modeling.md)
 - [\[CVPR 2026\] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition](tcei_test_time_calibration_experience_intuition_mot.md)
 - [\[CVPR 2026\] RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation](ragtrack_language-aware_rgbt_tracking_with_retrieval-augmented_generation.md)
 - [\[CVPR 2026\] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](omnivtg_a_large-scale_dataset_and_training_paradigm_for_open-world_video_tempora.md)
-- [\[CVPR 2026\] Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning](learning_to_assist_physics-grounded_human-human_control_via_multi-agent_reinforc.md)
-- [\[ECCV 2024\] Online Temporal Action Localization with Memory-Augmented Transformer](../../ECCV2024/video_understanding/online_temporal_action_localization_with_memory-augmented_transformer.md)
 
 </div>
 

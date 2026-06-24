@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Finding the Minimal Parameter Budget for Implicit Reasoning: A Data Complexity Driven Scaling Law for Language Models
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] Starting from the Knowledge Graph Completion (KGC) task, this paper proves and measures that the "minimal parameter budget required for implicit reasoning" follows a linear scaling law based on **Graph Search Entropy** as the complexity metric. Each parameter supports approximately $0.008$ bits of reasoning information
+  [ICML 2026][Graph Learning][Implicit Reasoning] Starting from the Knowledge Graph Completion (KGC) task, this paper proves and measures that the "minimal parameter budget required for implicit reasoning" follows a linear scaling law based on **Graph Search Entropy** as the complexity metric. Each parameter supports approximately $0.008$ bits of reasoning information, challenging the naive intuition that "larger models always yield stronger reasoning."
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Implicit Reasoning"
+  - "Minimal Parameter Budget"
+  - "Graph Search Entropy"
+  - "U-shaped scaling"
+  - "Knowledge Graph Completion"
 date: 2026-05-08
-content_hash: 54daec7affad0bb3
+content_hash: 91c6bc34ec6b3f5c
 ---
+
 # Finding the Minimal Parameter Budget for Implicit Reasoning: A Data Complexity Driven Scaling Law for Language Models
 
 **Conference**: ICML 2026  
@@ -115,6 +121,7 @@ The objective is standard next-token prediction Cross-Entropy loss. Experiments 
 - Value: ⭐⭐⭐⭐⭐ Provides a principled framework for selecting model sizes for reasoning-heavy tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -122,8 +129,8 @@ The objective is standard next-token prediction Cross-Entropy loss. Experiments 
 - [\[ACL 2026\] CRAFTQA: A Code-Driven Adaptive Framework for Complex Structured Data Reasoning](../../ACL2026/graph_learning/craftqa_a_code-driven_adaptive_framework_for_complex_structured_data_reasoning.md)
 - [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](../../CVPR2026/graph_learning/mario_multimodal_graph_reasoning_with_large_language_models.md)
 - [\[ACL 2026\] Comparing Human and Large Language Model Interpretation of Implicit Information](../../ACL2026/graph_learning/comparing_human_and_large_language_model_interpretation_of_implicit_information.md)
+- [\[ICLR 2026\] Scaling Knowledge Graph Construction through Synthetic Data Generation and Distillation](../../ICLR2026/graph_learning/scaling_knowledge_graph_construction_through_synthetic_data_generation_and_disti.md)
 - [\[ICML 2026\] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering](kbqa-r1_reinforcing_large_language_models_for_knowledge_base_question_answering.md)
-- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
 
 </div>
 

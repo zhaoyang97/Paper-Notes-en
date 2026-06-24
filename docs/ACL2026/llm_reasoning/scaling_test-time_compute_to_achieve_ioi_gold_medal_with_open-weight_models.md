@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models
 description: >-
-  [ACL 2026][LLM Reasoning][Test-Time Compute] Ours proposes GenCluster, a scalable test-time compute framework. Through large-scale parallel generation → behavioral clustering → tournament ranking → round-robin submission strategies, it enables the open-weight model gpt-oss-120b to achieve gold medal level (446.75/600 points) on IOI 2025 for the first time.
+  [ACL 2026][Reasoning][test-time compute] Ours proposes GenCluster, a scalable test-time compute framework. Through large-scale parallel generation → behavioral clustering → tournament ranking → round-robin submission strategies, it enables the open-weight model gpt-oss-120b to achieve gold medal level (446.75/600 points) on IOI 2025 for the first time.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Test-Time Compute
-  - IOI
+  - "ACL 2026"
+  - "Reasoning"
+  - "test-time compute"
+  - "competitive programming"
+  - "IOI"
+  - "behavioral clustering"
+  - "open-weight models"
 date: 2026-05-08
-content_hash: bcc283435b5e106d
+content_hash: b69b1f35e00a9768
 ---
+
 # Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models
 
 **Conference**: ACL 2026  
@@ -142,10 +146,10 @@ IOI 2025 Gold Medal Line: ~400 points, total 600. GenCluster + gpt-oss-120b ($K=
 
 ## Related Papers
 
+- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](../../ICLR2026/llm_reasoning/strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
 - [\[ACL 2026\] Scaling Evaluation-Time Compute with Reasoning Models as Evaluators](scaling_evaluation-time_compute_with_reasoning_models_as_evaluators.md)
 - [\[NeurIPS 2025\] Provable Scaling Laws for the Test-Time Compute of Large Language Models](../../NeurIPS2025/llm_reasoning/provable_scaling_laws_for_the_testtime_compute_of_large_lang.md)
 - [\[ICML 2026\] Diversity Matters: Revisiting Test-Time Compute in Vision-Language Models](../../ICML2026/llm_reasoning/diversity_matters_revisiting_test-time_compute_in_vision-language_models.md)
-- [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](../../NeurIPS2025/llm_reasoning/towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
 - [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
 
 </div>

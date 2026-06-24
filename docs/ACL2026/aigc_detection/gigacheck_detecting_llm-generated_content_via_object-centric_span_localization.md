@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GigaCheck: Detecting LLM-generated Content via Object-Centric Span Localization
 description: >-
-  [ACL 2026][AIGC Detection][DETR] GigaCheck is proposed as a dual-strategy framework: it utilizes a fine-tuned LLM for document-level classification and innovatively treats AI-generated text spans as "objects," employing a DETR-like architecture to achieve end-to-end, character-level localization.
+  [ACL 2026 Findings][AIGC Detection][LLM-generated text detection] GigaCheck is proposed as a dual-strategy framework: it utilizes a fine-tuned LLM for document-level classification and innovatively treats AI-generated text spans as "objects," employing a DETR-like architecture to achieve end-to-end, character-level localization.
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - DETR
+  - "ACL 2026 Findings"
+  - "AIGC Detection"
+  - "LLM-generated text detection"
+  - "Object detection paradigm"
+  - "DETR"
+  - "Text span localization"
+  - "Human-AI collaborative text"
 date: 2026-05-08
-content_hash: 8b1cc62ceca644c4
+content_hash: 3b45eb50987a040e
 ---
+
 # GigaCheck: Detecting LLM-generated Content via Object-Centric Span Localization
 
 **Conference**: ACL 2026 Findings  
@@ -124,15 +129,15 @@ The detection head loss is a weighted sum of L1, gIoU, and Focal Loss, calculate
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learn-to-Distance: Distance Learning for Detecting LLM-Generated Text](../../ICLR2026/aigc_detection/learn-to-distance_distance_learning_for_detecting_llm-generated_text.md)
 - [\[ACL 2026\] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)
-- [\[ACL 2025\] KatFishNet: Detecting LLM-Generated Korean Text through Linguistic Feature Analysis](../../ACL2025/aigc_detection/katfishnet_detecting_llm-generated_korean_text_through_linguistic_feature_analys.md)
 - [\[NeurIPS 2025\] Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content](../../NeurIPS2025/aigc_detection/can_llms_write_faithfully_an_agent-based_evaluation_of_llm-generated_islamic_con.md)
-- [\[CVPR 2026\] Inconsistency-aware Multimodal Schrodinger Bridge for Deepfake Localization](../../CVPR2026/aigc_detection/inconsistency-aware_multimodal_schrodinger_bridge_for_deepfake_localization.md)
-- [\[ACL 2025\] Cognitive Framework for Detecting AI-Generated Fiction](../../ACL2025/aigc_detection/cognitive_framework_for_detecting_ai-generated_fiction.md)
+- [\[ACL 2025\] KatFishNet: Detecting LLM-Generated Korean Text through Linguistic Feature Analysis](../../ACL2025/aigc_detection/katfishnet_detecting_llm-generated_korean_text_through_linguistic_feature_analys.md)
+- [\[ICLR 2026\] TSM-Bench: Detecting LLM-Generated Text in Real-World Wikipedia Editing Practices](../../ICLR2026/aigc_detection/tsm-bench_detecting_llm-generated_text_in_real-world_wikipedia_editing_practices.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Learning Brain Representation with Hierarchical Visual Embeddings
 description: >-
-  [ICLR 2026][Computational Biology][EEG/MEG] This work constructs a "hierarchical visual representation" as an alignment target by combining multiple pre-trained visual encoders with different inductive biases (CLIP semantics + VAE pixels). A Fusion Prior, pre-trained on large-scale images, is employed to stably map fused features to diffusion conditions. This al
+  [ICLR 2026][Computational Biology][Brain signal decoding] This work constructs a "hierarchical visual representation" as an alignment target by combining multiple pre-trained visual encoders with different inductive biases (CLIP semantics + VAE pixels). A Fusion Prior, pre-trained on large-scale images, is employed to stably map fused features to diffusion conditions. This allows EEG/MEG brain signals to align with both high-level semantics and low-level pixels…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - EEG/MEG
-  - Fusion Prior
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Brain signal decoding"
+  - "EEG/MEG"
+  - "Hierarchical visual representation"
+  - "Contrastive learning"
+  - "Fusion Prior"
+  - "Diffusion reconstruction"
 date: 2026-05-08
-content_hash: 5d762e6e999954e9
+content_hash: 5c5655e01f3487a6
 ---
+
 # Learning Brain Representation with Hierarchical Visual Embeddings
 
 **Conference**: ICLR 2026  

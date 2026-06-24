@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TimeRewarder: Learning Dense Reward from Passive Videos via Frame-wise Temporal Distance
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Meta-World] TimeRewarder formalizes "task progress" as the normalized temporal distance between video frame pairs. It trains a self-supervised ViT distance regressor using only action-free expert videos and provides the predicted distance between adjacent frames as a dense reward to DrQ-v2. On 10 Meta-World tasks, it approaches a
+  [ICML 2026 Spotlight][Robotics][Dense Reward Learning] TimeRewarder formalizes "task progress" as the normalized temporal distance between video frame pairs. It trains a self-supervised ViT distance regressor using only action-free expert videos and provides the predicted distance between adjacent frames as a dense reward to DrQ-v2. On 10 Meta-World tasks, it approaches a 9/10 success rate within 200K interactions, even outperforming manually designed environmental dense rewa…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Meta-World
-  - DrQ-v2
+  - "ICML 2026 Spotlight"
+  - "Robotics"
+  - "Dense Reward Learning"
+  - "Temporal Distance"
+  - "Passive Videos"
+  - "Meta-World"
+  - "DrQ-v2"
 date: 2026-05-08
-content_hash: c65f8781ecd62871
+content_hash: cb42ca813c08ab9d
 ---
+
 # TimeRewarder: Learning Dense Reward from Passive Videos via Frame-wise Temporal Distance
 
 **Conference**: ICML 2026 Spotlight  
@@ -138,10 +142,20 @@ Ablation of three core modules (8 seeds, Meta-World):
 - **Value**: ⭐⭐⭐⭐⭐ Makes "learning dense rewards from videos" truly practical at the Meta-World scale and allows the inclusion of heterogeneous human videos, providing a plug-and-play boost for robotics RL.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICCV 2025\] Weakly-Supervised Learning of Dense Functional Correspondences](../../ICCV2025/robotics/weakly-supervised_learning_of_dense_functional_correspondences.md)
+- [\[ICML 2026\] Position: Good Embodied Reward Models Need Bad Behavior Data](position_good_embodied_reward_models_need_bad_behavior_data.md)
+- [\[CVPR 2026\] General Process Reward Modeling for Robotic Reinforcement Learning](../../CVPR2026/robotics/general_process_reward_modeling_for_robotic_reinforcement_learning.md)
+- [\[ICLR 2026\] MVR: Multi-view Video Reward Shaping for Reinforcement Learning](../../ICLR2026/robotics/mvr_multi-view_video_reward_shaping_for_reinforcement_learning.md)
+- [\[CVPR 2026\] Expanding Spatial and Temporal Context for Robotic Imitation Learning With Scene Graphs](../../CVPR2026/robotics/expanding_spatial_and_temporal_context_for_robotic_imitation_learning_with_scene.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICCV 2025\] Weakly-Supervised Learning of Dense Functional Correspondences](../../ICCV2025/robotics/weakly-supervised_learning_of_dense_functional_correspondences.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlowSeg: Dynamic Semantic Guidance for LLM-Conditioned Segmentation
 description: >-
-  [ICML 2026][Segmentation][LLM-conditioned segmentation] This paper points out that current query-based LLM-conditioned segmentation follows a "propose-then-select" paradigm—candidate masks are often accurate enough, but errors occur due to incorrect selection. To address this, FlowSeg is proposed, where LLM conditional embeddings participate in query refinement at every dec
+  [ICML 2026][Segmentation][LLM-conditioned segmentation] This paper points out that current query-based LLM-conditioned segmentation follows a "propose-then-select" paradigm—candidate masks are often accurate enough, but errors occur due to incorrect selection. To address this, FlowSeg is proposed, where LLM conditional embeddings participate in query refinement at every decoder layer and are continuously updated by new visual evidence. Combined with a lightweight boundary ref…
 tags:
-  - ICML 2026
-  - Segmentation
-  - LLM-conditioned segmentation
+  - "ICML 2026"
+  - "Segmentation"
+  - "LLM-conditioned segmentation"
+  - "bidirectional semantic flow"
+  - "referring expression segmentation"
+  - "reasoning segmentation"
+  - "boundary refinement"
 date: 2026-05-08
-content_hash: fabc9a41520d914e
+content_hash: 0ee6d8b01efb12cd
 ---
+
 # FlowSeg: Dynamic Semantic Guidance for LLM-Conditioned Segmentation
 
 **Conference**: ICML 2026  

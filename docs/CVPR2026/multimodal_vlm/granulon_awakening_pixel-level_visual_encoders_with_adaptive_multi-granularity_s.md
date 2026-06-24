@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Granulon: Awakening Pixel-Level Visual Encoders with Adaptive Multi-Granularity Semantics for MLLM
 description: >-
-  [CVPR 2026][Multimodal VLM][DINOv3] Granulon enhances pixel-level visual encoders (represented by DINOv3)—which excel at details but lack coarse-grained semantic abstraction—with a "text-conditioned granularity controller + adaptive token aggregation" module. This allows a single encoder to dynamically perform "pixel $\rightarrow$ fine $\rightarrow$ coar
+  [CVPR 2026][Multimodal VLM][Pixel-level visual encoder] Granulon enhances pixel-level visual encoders (represented by DINOv3)—which excel at details but lack coarse-grained semantic abstraction—with a "text-conditioned granularity controller + adaptive token aggregation" module. This allows a single encoder to dynamically perform "pixel $\rightarrow$ fine $\rightarrow$ coarse" multi-granularity reasoning based on the question's semantics in a single forward pass. Under identi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - DINOv3
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Pixel-level visual encoder"
+  - "DINOv3"
+  - "text-conditioned granularity control"
+  - "token aggregation"
+  - "multi-granularity reasoning"
 date: 2026-05-08
-content_hash: 0e5703946a4a9438
+content_hash: 43c25a0edd2aee48
 ---
+
 # Granulon: Awakening Pixel-Level Visual Encoders with Adaptive Multi-Granularity Semantics for MLLM
 
 **Conference**: CVPR 2026  
@@ -148,10 +153,10 @@ In surgical video phase and instrument identification, Recall increased by +30.7
 ## Related Papers
 
 - [\[CVPR 2026\] Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment](boosting_visual_reprogramming_for_clip_with_dual_granularity_alignment.md)
-- [\[CVPR 2026\] TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation](terrascope_pixel-grounded_visual_reasoning_for_earth_observation.md)
+- [\[CVPR 2026\] TRANSPORTER: Transferring Visual Semantics from VLM Manifolds](transporter_transferring_visual_semantics_from_vlm_manifolds.md)
 - [\[ACL 2025\] AVG-LLaVA: An Efficient Large Multimodal Model with Adaptive Visual Granularity](../../ACL2025/multimodal_vlm/avg-llava_an_efficient_large_multimodal_model_with_adaptive_visual_granularity.md)
-- [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
 - [\[CVPR 2026\] Multi-modal Test-time Adaptation via Adaptive Probabilistic Gaussian Calibration](multi-modal_test-time_adaptation_via_adaptive_probabilistic_gaussian_calibration.md)
+- [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
 
 </div>
 

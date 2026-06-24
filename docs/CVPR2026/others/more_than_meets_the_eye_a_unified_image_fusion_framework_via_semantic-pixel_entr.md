@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Image fusion is reformulated as a free energy minimization problem—where the perception path suppresses "semantic entropy" and the reconstruction path elevates "pixel entropy." By training on only infrared-visible data, the model generalizes zero-shot to unseen fusion tasks such as medical, multi-focus, and multi-expos
+  [CVPR 2026][Image Fusion] Image fusion is reformulated as a free energy minimization problem—where the perception path suppresses "semantic entropy" and the reconstruction path elevates "pixel entropy." By training on only infrared-visible data, the model generalizes zero-shot to unseen fusion tasks such as medical, multi-focus, and multi-exposure imaging, while significantly improving downstream detection/segmentation performance.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Fusion"
+  - "Free Energy Principle"
+  - "Semantic-Pixel Entropy Trade-off"
+  - "Zero-Shot Generalization"
+  - "Frequency Domain Feature Decoupling"
 date: 2026-05-08
-content_hash: 60a5a85327e02ed8
+content_hash: 0cb473e0f0571177
 ---
+
 # More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization
 
 **Conference**: CVPR 2026  
@@ -158,11 +163,11 @@ Ablations on M3FD (Table 4; Full model focuses on "balance" rather than single-m
 
 ## Related Papers
 
-- [\[CVPR 2026\] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration](self-supervised_dynamic_heterogeneous_degradation_modeling_for_unified_zero-shot.md)
-- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
-- [\[CVPR 2026\] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation](zero-shot_image_denoising_via_hybrid_prior-guided_pseudo_sample_generation.md)
-- [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
-- [\[CVPR 2026\] Towards Generalized Representations for Low-Light Understanding: When Signal Constancy Meets Semantic Enrichment](towards_generalized_representations_for_low-light_understanding_when_signal_cons.md)
+- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
+- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
+- [\[CVPR 2026\] NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering](naf_zero-shot_feature_upsampling_via_neighborhood_attention_filtering.md)
+- [\[CVPR 2026\] Data-Centric Meta-Learning for Robust Few-Shot Generalization](data-centric_meta-learning_for_robust_few-shot_generalization.md)
+- [\[AAAI 2026\] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation](../../AAAI2026/others/forest_vs_tree_the_n_k_trade-off_in_reproducible_ml_evaluation.md)
 
 </div>
 

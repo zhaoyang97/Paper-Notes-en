@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] The A-TPT framework is proposed to promote angular diversity by maximizing the minimum pairwise angular distance of normalized text features on the unit hypersphere. This addresses the miscalibration issue caused by overconfident VLM predictions in Test-time Prompt Tuning (TPT), outperforming existing TPT calibration m
+  [ICLR 2026][Multimodal VLM][Test-time prompt tuning] The A-TPT framework is proposed to promote angular diversity by maximizing the minimum pairwise angular distance of normalized text features on the unit hypersphere. This addresses the miscalibration issue caused by overconfident VLM predictions in Test-time Prompt Tuning (TPT), outperforming existing TPT calibration methods on both natural distribution shifts and medical datasets.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Test-time prompt tuning"
+  - "CLIP"
+  - "calibration"
+  - "angular diversity"
+  - "hyperspherical uniform distribution"
 date: 2026-05-08
-content_hash: f34c64909275166f
+content_hash: 7635a4d6df231e92
 ---
+
 # A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models
 
 **Conference**: ICLR 2026  

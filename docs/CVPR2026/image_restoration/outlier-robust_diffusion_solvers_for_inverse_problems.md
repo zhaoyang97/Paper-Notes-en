@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Outlier-Robust Diffusion Solvers for Inverse Problems
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Aiming at outliers commonly found in real-world measurements, this paper introduces two safeguards to inverse problem solvers based on pre-trained diffusion models—first refining measurements with explicit noise estimation, then replacing the squared $\ell_2$ data fidelity term with Iteratively Reweighted Least Squares
+  [CVPR 2026][Image Restoration][Diffusion Inverse Problems] Aiming at outliers commonly found in real-world measurements, this paper introduces two safeguards to inverse problem solvers based on pre-trained diffusion models—first refining measurements with explicit noise estimation, then replacing the squared $\ell_2$ data fidelity term with Iteratively Reweighted Least Squares using Huber loss, solved via gradient descent (Robust-GD) and conjugate gradient (Robust-CG) respect…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Diffusion Inverse Problems"
+  - "Outlier-robust"
+  - "Huber Loss"
+  - "Conjugate Gradient"
+  - "Noise Estimation"
 date: 2026-05-08
-content_hash: 86bf09a492a23234
+content_hash: cd853db9fee3b6db
 ---
+
 # Outlier-Robust Diffusion Solvers for Inverse Problems
 
 **Conference**: CVPR 2026  
@@ -184,11 +190,11 @@ Finite difference parameter $\eta\in\{10^{-3},5\times10^{-4},10^{-4}\}$:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Variational Garrote for Sparse Inverse Problems](variational_garrote_for_sparse_inverse_problems.md)
+- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](dual_ascent_diffusion_for_inverse_problems.md)
 - [\[CVPR 2026\] GSNR: Graph Smooth Null-Space Representation for Inverse Problems](gsnr_graph_smooth_null_space_representation_for_inverse_problems.md)
+- [\[ICML 2026\] Measurement-Consistent Langevin Corrector for Stabilizing Latent Diffusion Inverse Problem Solvers](../../ICML2026/image_restoration/measurement-consistent_langevin_corrector_for_stabilizing_latent_diffusion_inver.md)
+- [\[ICLR 2026\] Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning](../../ICLR2026/image_restoration/noise-adaptive_diffusion_sampling_for_inverse_problems_without_task-specific_tun.md)
 - [\[CVPR 2026\] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems](pnp-cm_consistency_models_as_plug-and-play_priors_for_inverse_problems.md)
-- [\[ICML 2026\] Learning Normalized Energy Models for Linear Inverse Problems](../../ICML2026/image_restoration/learning_normalized_energy_models_for_linear_inverse_problems.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
 
 </div>
 

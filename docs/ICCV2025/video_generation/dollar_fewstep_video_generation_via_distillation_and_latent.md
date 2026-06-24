@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization
 description: >-
-  [ICCV 2025][Video Generation][distillation] DOLLAR combines variational score distillation (VSD) and consistency distillation to achieve few-step video generation…
+  [ICCV 2025][Video Generation][distillation] DOLLAR combines variational score distillation (VSD) and consistency distillation to achieve few-step video generation, and introduces a latent-space reward model fine-tuning method to further optimize generation quality. The 4-step model generates 10-second videos (128 frames @ 12 FPS) achieving a VBench score of 82.57, surpassing both the teacher model and commercial baselines such as Gen-3 and Kling…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "few-step"
   - "VBench"
 date: 2026-05-08
-content_hash: f8c2b03812b799cc
+content_hash: 65c2d028667fa453
 ---
 
 # DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization
@@ -99,10 +99,10 @@ Stage 1: Hybrid VSD loss + consistency loss. Stage 2: Latent reward fine-tuning.
 ## Related Papers
 
 - [\[ICML 2026\] SGMD: Score Gradient Matching Distillation for Few-Step Video Diffusion](../../ICML2026/video_generation/sgmd_score_gradient_matching_distillation_for_few-step_video_diffusion_distillat.md)
-- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](../../CVPR2026/video_generation/flashmotion_fewstep_controllable_video_generation.md)
-- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](../../CVPR2026/video_generation/identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
+- [\[CVPR 2025\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](../../CVPR2025/video_generation/flashmotion_few-step_controllable_video_generation_with_trajectory_guidance.md)
+- [\[ICLR 2026\] Towards One-Step Causal Video Generation via Adversarial Self-Distillation](../../ICLR2026/video_generation/towards_one-step_causal_video_generation_via_adversarial_self-distillation.md)
+- [\[CVPR 2026\] Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation](../../CVPR2026/video_generation/reward_forcing_efficient_streaming_video_generation_with_rewarded_distribution_m.md)
 - [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
-- [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_i.md)
 
 </div>
 

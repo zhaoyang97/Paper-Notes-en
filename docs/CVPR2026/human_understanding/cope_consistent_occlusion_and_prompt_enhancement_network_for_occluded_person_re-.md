@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] COPE: Consistent Occlusion and Prompt Enhancement Network for Occluded Person Re-identification
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] COPE addresses the deep-seated issues of "feature interference" and "information loss" in occluded ReID using three lightweight modules: Cross-Identity Consistent Occlusion (CICO) imposes the **same occlusion** across different identities and constrains feature consistency in occluded areas; Prompt-Based Background Fil
+  [CVPR 2026][Human Understanding][Occluded Person Re-identification] COPE addresses the deep-seated issues of "feature interference" and "information loss" in occluded ReID using three lightweight modules: Cross-Identity Consistent Occlusion (CICO) imposes the **same occlusion** across different identities and constrains feature consistency in occluded areas; Prompt-Based Background Filling (PBF) uses CLIP text prompts to locate the foreground and randomly fill the background…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Occluded Person Re-identification"
+  - "Consistent Occlusion"
+  - "Prompt Enhancement"
+  - "Vision-Language Alignment"
+  - "Retrieval Re-ranking"
 date: 2026-05-08
-content_hash: 7c10b0bbd741ded8
+content_hash: e3ebdab783eafd0b
 ---
+
 # COPE: Consistent Occlusion and Prompt Enhancement Network for Occluded Person Re-identification
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,20 @@ Component Ablation (Occluded-Duke):
 - Value: ⭐⭐⭐⭐ High Rank-1/mAP gains with near-zero inference cost.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification](prompt-anchored_vision-text_distillation_for_lifelong_person_re-identification.md)
+- [\[CVPR 2026\] Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification](spatial-frequency_collaborative_learning_for_occluded_visible-infrared_person_re.md)
+- [\[CVPR 2026\] BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification](bit_matching-based_bi-directional_interaction_transformation_network_for_visible.md)
+- [\[CVPR 2026\] MFEN: Multi-Frequency Expert Network for Visible-Infrared Person Re-ID](mfen_multi-frequency_expert_network_for_visible-infrared_person_re-id.md)
+- [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification](prompt-anchored_vision-text_distillation_for_lifelong_person_re-identification.md)

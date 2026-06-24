@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MM-Snowball: Evaluating and Mitigating Hallucination Snowballing in Multimodal Multi-Turn Dialogue
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] Ours proposes the MM-Snowball benchmark (4992 trajectories of 6-turn adversarial dialogues) to systematically characterize the "hallucination snowballing" phenomenon in Multimodal Large Language Models (MLLMs) during long dialogues. Based on this, ours designs a training-free Conflict-Aware Visual Rectification (CAVR)
+  [ICML 2026][Hallucination Detection][Multi-turn Dialogue] Ours proposes the MM-Snowball benchmark (4992 trajectories of 6-turn adversarial dialogues) to systematically characterize the "hallucination snowballing" phenomenon in Multimodal Large Language Models (MLLMs) during long dialogues. Based on this, ours designs a training-free Conflict-Aware Visual Rectification (CAVR) method that refreshes visual signals at the representation layer and adjudicates text-visual conflicts…
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Multi-turn Dialogue"
+  - "Hallucination Snowballing"
+  - "Visual Fading"
+  - "Training-free Correction"
+  - "Diagnostic Benchmark"
 date: 2026-05-08
-content_hash: c64d13f54c177c0b
+content_hash: f09e7cc7a2c645f5
 ---
+
 # MM-Snowball: Evaluating and Mitigating Hallucination Snowballing in Multimodal Multi-Turn Dialogue
 
 **Conference**: ICML 2026  
@@ -145,11 +151,11 @@ CAVR vs. existing strategies (Qualitative summary):
 
 ## Related Papers
 
-- [\[AAAI 2026\] MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning](../../AAAI2026/hallucination/multi-agent_undercover_gaming_hallucination_removal_via_coun.md)
+- [\[ICLR 2026\] Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow](../../ICLR2026/hallucination/visual_multi-agent_system_mitigating_hallucination_snowballing_via_visual_flow.md)
 - [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
-- [\[CVPR 2026\] KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing](../../CVPR2026/hallucination/kvsmooth_mitigating_hallucination_in_multi-modal_large_language_models_through_k.md)
-- [\[ACL 2026\] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate](../../ACL2026/hallucination/dialectic-med_mitigating_diagnostic_hallucinations_via_counterfactual_adversaria.md)
-- [\[ACL 2025\] Monitoring Decoding: Mitigating Hallucination via Evaluating the Factuality of Partial Response during Generation](../../ACL2025/hallucination/monitoring_decoding_mitigating_hallucination_via_evaluating_the_factuality_of_pa.md)
+- [\[ICLR 2026\] EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models](../../ICLR2026/hallucination/emotionhallucer_evaluating_emotion_hallucinations_in_multimodal_large_language_m.md)
+- [\[AAAI 2026\] MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning](../../AAAI2026/hallucination/multi-agent_undercover_gaming_hallucination_removal_via_coun.md)
+- [\[ICML 2026\] Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models](instruction_lens_score_your_instruction_contributes_a_powerful_object_hallucinat.md)
 
 </div>
 

@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][Model Context Protocol] MSB is the first end-to-end security evaluation benchmark for the Model Context Protocol (MCP), covering 12 categories of attacks across the "Task Planning → Tool Invocation → Response Handling" workflow. By testing 10 LLM agents with real executable malicious tools (rather than simulated outputs), the study finds that
+  [ICLR 2026][LLM Agent][Model Context Protocol] MSB is the first end-to-end security evaluation benchmark for the Model Context Protocol (MCP), covering 12 categories of attacks across the "Task Planning → Tool Invocation → Response Handling" workflow. By testing 10 LLM agents with real executable malicious tools (rather than simulated outputs), the study finds that MCP-specific attacks are widely effective (peak ASR 75.83%), and more capable models are often more vulnerable.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Model Context Protocol
-  - Prompt Injection
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Model Context Protocol"
+  - "Tool-use Security"
+  - "Prompt Injection"
+  - "Attack Benchmark"
 date: 2026-05-08
-content_hash: 26e55c2794028523
+content_hash: 148069adde466c54
 ---
+
 # MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents
 
 **Conference**: ICLR 2026  
@@ -139,9 +142,9 @@ MSB includes 10 real-world scenarios, 65 user tasks, 25 MCP servers, 304 benign 
 
 - [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
 - [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
+- [\[ICLR 2026\] Terminal-Bench: Benchmarking Agents on Difficult, Real-World Tasks in the Command Line Interface](terminal-bench_benchmarking_agents_on_hard_realistic_tasks_in_command_line_inter.md)
 - [\[ICLR 2026\] MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use](mcpmark_a_benchmark_for_stress-testing_realistic_and_comprehensive_mcp_use.md)
 - [\[ICLR 2026\] Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents](agent_data_protocol_unifying_datasets_for_diverse_effective_fine-tuning_of_llm_a.md)
-- [\[ACL 2026\] MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools](../../ACL2026/llm_agent/mcp-flow_facilitating_llm_agents_to_master_real-world_diverse_and_scaling_mcp_to.md)
 
 </div>
 

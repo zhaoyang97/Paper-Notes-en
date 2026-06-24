@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Fair Bayesian Inference through Matched Gibbs Posterior
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Targeting the limitation that "fair models only provide point estimates and fail to quantify predictive uncertainty," this paper integrates group fairness constraints into a Bayesian framework. It proposes the **matched Gibbs posterior** with **matched deviation** as a penalty term and treats the matching function $T$
+  [ICLR2026][AI Safety][Group Fairness] Targeting the limitation that "fair models only provide point estimates and fail to quantify predictive uncertainty," this paper integrates group fairness constraints into a Bayesian framework. It proposes the **matched Gibbs posterior** with **matched deviation** as a penalty term and treats the matching function $T$ as a learnable parameter to avoid adversarial training. This allows an $O(n)$ Gibbs sampler to simultaneously produce "cal…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Group Fairness"
+  - "Bayesian Inference"
+  - "Gibbs Posterior"
+  - "Uncertainty Quantification"
+  - "Matched Deviation"
 date: 2026-05-08
-content_hash: 11fced321d5e5ce5
+content_hash: 6eff107476a5f35b
 ---
+
 # A Fair Bayesian Inference through Matched Gibbs Posterior
 
 **Conference**: ICLR2026  
@@ -136,10 +142,20 @@ Experiments were conducted on 5 group fairness benchmarks: tabular data (**ADULT
 - Value: ⭐⭐⭐⭐⭐ Simultaneously achieves fairness and calibrated uncertainty for high-risk decisions with an $O(n)$ scalable approach.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] A Bayesian Nonparametric Framework for Private, Fair, and Balanced Tabular Data Synthesis](a_bayesian_nonparametric_framework_for_private_fair_and_balanced_tabular_data_sy.md)
+- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](../../ICML2026/ai_safety/how_does_bayesian_sampling_help_membership_inference_attacks.md)
+- [\[ICLR 2026\] EigenScore: OOD Detection using Posterior Covariance in Diffusion Models](eigenscore_ood_detection_using_posterior_covariance_in_diffusion_models.md)
+- [\[CVPR 2026\] All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference](../../CVPR2026/ai_safety/all_vehicles_can_lie_efficient_adversarial_defense_in_fully_untrusted-vehicle_co.md)
+- [\[ICLR 2026\] Fair Conformal Classification via Learning Representation-Based Groups](fair_conformal_classification_via_learning_representation-based_groups.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] A Bayesian Nonparametric Framework for Private, Fair, and Balanced Tabular Data Synthesis](a_bayesian_nonparametric_framework_for_private_fair_and_balanced_tabular_data_sy.md)

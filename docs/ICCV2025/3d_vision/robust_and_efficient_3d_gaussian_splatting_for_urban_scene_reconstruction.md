@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3DGS] This paper proposes a robust and efficient 3DGS reconstruction framework for city-scale scenes. Through a visibility-based partitioning strategy, controllable LOD generation…
+  [ICCV 2025][3D Vision][3DGS] This paper proposes a robust and efficient 3DGS reconstruction framework for city-scale scenes. Through a visibility-based partitioning strategy, controllable LOD generation, a fine-grained appearance transformation module, and multiple regularization techniques, the framework achieves high-quality reconstruction and real-time rendering on urban data with large appearance variations and transient objects.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "partitioned training"
   - "real-time rendering"
 date: 2026-05-08
-content_hash: d6f68787c60c57c2
+content_hash: bb3d461dd04a5b83
 ---
 
 # Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction
@@ -172,10 +172,10 @@ The appearance module yields the most significant improvement on the JNU-ZH data
 ## Related Papers
 
 - [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
+- [\[CVPR 2025\] GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting](../../CVPR2025/3d_vision/guardsplat_efficient_and_robust_watermarking_for_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction](curve-aware_gaussian_splatting_for_3d_parametric_curve_reconstruction.md)
 - [\[ICCV 2025\] StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions](stealthattack_robust_3d_gaussian_splatting_poisoning_via_density-guided_illusion.md)
-- [\[ICCV 2025\] TurboReg: TurboClique for Robust and Efficient Point Cloud Registration](turboreg_turboclique_for_robust_and_efficient_point_cloud_registration.md)
-- [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
+- [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
 
 </div>
 

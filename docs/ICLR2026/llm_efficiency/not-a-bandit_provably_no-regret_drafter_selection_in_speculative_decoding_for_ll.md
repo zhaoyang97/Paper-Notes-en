@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Not-a-Bandit: Provably No-Regret Drafter Selection in Speculative Decoding for LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Addressing the problem of "how to dynamically select the optimal drafter from multiple domain experts for each query," this paper points out that **exploration is redundant** in speculative decoding. A single trajectory verified by the target can counterfactually evaluate all drafters. Thus, the original multi-armed ba
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] Addressing the problem of "how to dynamically select the optimal drafter from multiple domain experts for each query," this paper points out that **exploration is redundant** in speculative decoding. A single trajectory verified by the target can counterfactually evaluate all drafters. Thus, the original multi-armed bandit problem is transformed into a full-information online learning problem. The proposed HedgeSpec achieves n…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Drafter Selection"
+  - "Full-information Online Learning"
+  - "No-regret Algorithm"
+  - "Acceptance Length"
 date: 2026-05-08
-content_hash: 47a7032cc99e8def
+content_hash: 65afd130ff49bf7d
 ---
+
 # Not-a-Bandit: Provably No-Regret Drafter Selection in Speculative Decoding for LLMs
 
 **Conference**: ICLR 2026  
@@ -132,13 +138,20 @@ Targets: Llama-3.1-8B-IT / Qwen-3-8B / Qwen-3-32B. Drafters: EAGLE-3. Metrics: M
 - Value: ⭐⭐⭐⭐⭐ Practical for multi-expert serving systems.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- MetaSD: Speculative Decoding with Multi-Armed Bandits (2023)
-- BanditSpec: Online Drafter Selection (2024)
-- EAGLE-3: High-performance Speculative Decoding (2024)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
+- [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
+- [\[ICLR 2026\] Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding](overcoming_joint_intractability_with_lossless_hierarchical_speculative_decoding.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][think-act-verify] ARM-Thinker transforms the multimodal reward model from a "one-pass scoring" system into an agent that actively invokes tools (crop-and-zoom, document retrieval, instruction verification) to seek evidence. Using a two-stage GRPO training strategy—encouraging tool usage followed by refining accuracy—the 7B model achieve
+  [CVPR 2026][VLM Reasoning][Multimodal Reward Model] ARM-Thinker transforms the multimodal reward model from a "one-pass scoring" system into an agent that actively invokes tools (crop-and-zoom, document retrieval, instruction verification) to seek evidence. Using a two-stage GRPO training strategy—encouraging tool usage followed by refining accuracy—the 7B model achieves average gains of +16.2%, +9.6%, and +4.2% across reward modeling, think-with-images…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - think-act-verify
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reward Model"
+  - "Agentic Tool Use"
+  - "think-act-verify"
+  - "GRPO"
+  - "Evidence-grounded Judgment"
 date: 2026-05-08
-content_hash: d27b3b95f57316d6
+content_hash: 42c0c8da86352c43
 ---
+
 # ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning
 
 **Conference**: CVPR 2026  
@@ -153,11 +157,11 @@ Tool invocation ablation (Tab. 5) — Baseline performance drops with tools, whi
 
 ## Related Papers
 
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
-- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](../../ICML2026/multimodal_vlm/active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
-- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
-- [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)
 - [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
+- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/vlm_reasoning/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[CVPR 2026\] Hierarchical Process Reward Models are Symbolic Vision Learners](hierarchical_process_reward_models_are_symbolic_vision_learners.md)
+- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](../../ICML2026/vlm_reasoning/active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
 
 </div>
 

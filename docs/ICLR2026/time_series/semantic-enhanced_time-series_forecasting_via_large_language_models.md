@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic-Enhanced Time-Series Forecasting via Large Language Models
 description: >-
-  [ICLR 2026][Time Series][Paper Note] SE-LLM enhances token representations by injecting the periodicity and anomaly characteristics of time series into the semantic space of a pre-trained LLM (via the TSCC module). It further utilizes an LSTM-embedded adapter (Time-Adapter) to complement the LLM's capacity for modeling long- and short-term temporal depend
+  [ICLR 2026][Time Series][Time-Series Forecasting] SE-LLM enhances token representations by injecting the periodicity and anomaly characteristics of time series into the semantic space of a pre-trained LLM (via the TSCC module). It further utilizes an LSTM-embedded adapter (Time-Adapter) to complement the LLM's capacity for modeling long- and short-term temporal dependencies, achieving state-of-the-art (SOTA) performance across long-term, short-term…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time-Series Forecasting"
+  - "Large Language Models"
+  - "Semantic Enhancement"
+  - "Anomaly Modeling"
+  - "Adapter Tuning"
 date: 2026-05-08
-content_hash: 48f960d749a0c472
+content_hash: b8a817574433a2a9
 ---
+
 # Semantic-Enhanced Time-Series Forecasting via Large Language Models
 
 **Conference**: ICLR 2026  
@@ -130,8 +136,8 @@ Step-wise ablation (Qwen2.5-0.5B, ECL/Traffic): Baseline → +TSCC → +Time-Ada
 - [\[ICLR 2026\] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models](timeomni-1_incentivizing_complex_reasoning_with_time_series_in_large_language_mo.md)
 - [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
 - [\[ICML 2026\] Building Social World Models with Large Language Models](../../ICML2026/time_series/building_social_world_models_with_large_language_models.md)
-- [\[ICML 2026\] Semantics-Enhanced Retrieval-Augmented Time Series Forecasting](../../ICML2026/time_series/semantics-enhanced_retrieval-augmented_time_series_forecasting.md)
 - [\[ICLR 2026\] Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction](towards_multimodal_time_series_anomaly_detection_with_semantic_alignment_and_con.md)
+- [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning](gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-series.md)
 
 </div>
 

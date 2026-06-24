@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On the Convergence Behavior of Preconditioned Gradient Descent Toward the Rich Learning Regime
 description: >-
-  [ICLR 2026][Optimization & Theory][Grokking] Starting from the eigenvalue dynamics of the Neural Tangent Kernel (NTK), this paper demonstrates theoretically and experimentally that preconditioned gradient descent (PGD), such as Gauss-Newton/Levenberg-Marquardt, can flatten the "disparity in convergence rates across frequency modes" caused by spectral bias into un
+  [ICLR 2026][Optimization][Preconditioned Gradient Descent] Starting from the eigenvalue dynamics of the Neural Tangent Kernel (NTK), this paper demonstrates theoretically and experimentally that preconditioned gradient descent (PGD), such as Gauss-Newton/Levenberg-Marquardt, can flatten the "disparity in convergence rates across frequency modes" caused by spectral bias into uniform convergence. This significantly compresses the delayed generalization window of grokking. Howev…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Grokking
-  - Gauss-Newton
+  - "ICLR 2026"
+  - "Optimization"
+  - "Preconditioned Gradient Descent"
+  - "Spectral Bias"
+  - "Grokking"
+  - "Neural Tangent Kernel"
+  - "Gauss-Newton"
 date: 2026-05-08
-content_hash: a8bf4492364dcda9
+content_hash: c70aee112ec85df4
 ---
+
 # On the Convergence Behavior of Preconditioned Gradient Descent Toward the Rich Learning Regime
 
 **Conference**: ICLR 2026  
@@ -128,10 +132,10 @@ Regression tasks use MSE (where the Fisher Information Matrix coincides with Gau
 ## Related Papers
 
 - [\[ICLR 2026\] On the Convergence Direction of Gradient Descent](on_the_convergence_direction_of_gradient_descent.md)
+- [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](../../NeurIPS2025/optimization/learning_provably_improves_the_convergence_of_gradient_descent.md)
 - [\[ICLR 2026\] Gradient Descent with Large Step Sizes: Chaos and Fractal Convergence Region](gradient_descent_with_large_step_sizes_chaos_and_fractal_convergence_region.md)
 - [\[ICLR 2026\] Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking](egalitarian_gradient_descent_a_simple_approach_to_accelerated_grokking.md)
 - [\[ICLR 2026\] Fast Convergence of Natural Gradient Descent for Over-parameterized Physics-Informed Neural Networks](fast_convergence_of_natural_gradient_descent_for_over-parameterized_physics-info.md)
-- [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](../../ICML2026/optimization/on_the_convergence_rate_of_lora_gradient_descent.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] SiPeR addresses the challenges of dynamic user preferences and implicit expressions in situated conversational recommendation through Scene Transition Estimation ("Where") and Bayesian Inverse Inference ("What"), achieving performance gains of 10.9% and 10.6% on SIMMC 2.1 and SCREEN, respectively.
+  [ACL 2026][Recommender Systems][Situated Conversational Recommendation] SiPeR addresses the challenges of dynamic user preferences and implicit expressions in situated conversational recommendation through Scene Transition Estimation ("Where") and Bayesian Inverse Inference ("What"), achieving performance gains of 10.9% and 10.6% on SIMMC 2.1 and SCREEN, respectively.
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Situated Conversational Recommendation"
+  - "Scene Transition"
+  - "Bayesian Inverse Reasoning"
+  - "Implicit Preferences"
+  - "Multimodal"
 date: 2026-05-08
-content_hash: 6e011a1da99cbc98
+content_hash: 5faabd9e1046a95a
 ---
+
 # Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation
 
 **Conference**: ACL 2026  
@@ -127,15 +133,15 @@ The Reranker is optimized using Negative Log-Likelihood (NLL). MLLM fine-tuning 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
+- [\[ICLR 2026\] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](../../ICLR2026/recommender/more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)
 - [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
 - [\[ACL 2026\] What Makes an Ideal Quote? Recommending "Unexpected yet Rational" Quotations via Novelty](what_makes_an_ideal_quote_recommending_34unexpected_yet_rational34_quotations_vi.md)
 - [\[ACL 2026\] Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation](intent-driven_semantic_id_generation_for_grounded_conversational_news_recommenda.md)
-- [\[ACL 2026\] What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context](what_makes_llms_effective_sequential_recommenders_a_study_on_preference_intensit.md)
 
 </div>
 

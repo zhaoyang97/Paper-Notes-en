@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] A Single Architecture for Representing Invariance Under Any Space Group
 description: >-
-  [ICLR 2026][Others][Paper Note] Designed a single architecture (Crystal Fourier Transformer) adaptable to any space group invariance. It constructs symmetry-adapted Fourier bases by analytically deriving constraints on Fourier coefficients from group operations, achieving parameter sharing and zero-shot generalization across 230 space groups via a du
+  [ICLR 2026][Space groups] Designed a single architecture (Crystal Fourier Transformer) adaptable to any space group invariance. It constructs symmetry-adapted Fourier bases by analytically deriving constraints on Fourier coefficients from group operations, achieving parameter sharing and zero-shot generalization across 230 space groups via a dual graph representation of constraints.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Space groups"
+  - "symmetry invariance"
+  - "Fourier basis"
+  - "crystal structure"
+  - "zero-shot generalization"
 date: 2026-05-08
-content_hash: eb4fd7bc0976298c
+content_hash: e7c0d4a39615be61
 ---
+
 # A Single Architecture for Representing Invariance Under Any Space Group
 
 **Conference**: ICLR 2026  
@@ -126,14 +131,17 @@ Standard material property regression/classification losses are used. During tra
 
 <div class="related-papers" markdown="1">
 
-### Related Papers
-- Adams & Orbanz, "Invariant Fourier Features for General Group Actions", 2023.
-- Xie & Grossman, "Crystal Graph Convolutional Neural Networks for an Accurate Prediction of Material Properties", 2018.
+## Related Papers
+
+- [\[ICLR 2026\] Any-Subgroup Equivariant Networks via Symmetry Breaking](any-subgroup_equivariant_networks_via_symmetry_breaking.md)
+- [\[AAAI 2026\] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details](../../AAAI2026/others/learning_compact_latent_space_for_representing_neural_signed_distance_functions_.md)
+- [\[ICLR 2026\] Spurious Correlation-Aware Embedding Regularization for Worst-Group Robustness](spurious_correlation-aware_embedding_regularization_for_worst-group_robustness.md)
+- [\[ICLR 2026\] Adaptive Conformal Guidance for Learning under Uncertainty](adaptive_conformal_guidance_for_learning_under_uncertainty.md)
+- [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] From atom to space：面向材料空间性质的区域化读出函数 SpatialRead](from_atom_to_space_a_region-based_readout_function_for_spatial_properties_of_mat.md)

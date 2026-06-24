@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image
 description: >-
-  [ICCV 2025][3D Vision][motion blur] This paper reframes motion blur from an "unwanted artifact" into a "valuable motion cue." By predicting a dense optical flow field and a monocular depth map from a single blurred image…
+  [ICCV 2025][3D Vision][motion blur] This paper reframes motion blur from an "unwanted artifact" into a "valuable motion cue." By predicting a dense optical flow field and a monocular depth map from a single blurred image, and subsequently recovering the camera's 6DoF instantaneous velocity via a differentiable least-squares solver, the method achieves motion estimation accuracy comparable to or surpassing that of an IMU, with real-time performance at 30 FPS.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "single-image motion estimation"
   - "IMU alternative"
 date: 2026-05-08
-content_hash: 35af3db7c115b480
+content_hash: 66f6c8e9c687ab01
 ---
 
 # Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image
@@ -153,8 +153,8 @@ The synthetic dataset is generated from 150 ScanNet++v2 sequences, yielding appr
 
 - [\[ICCV 2025\] Estimating 2D Camera Motion with Hybrid Motion Basis](estimating_2d_camera_motion_with_hybrid_motion_basis.md)
 - [\[ICCV 2025\] CoMoGaussian: Continuous Motion-Aware Gaussian Splatting from Motion-Blurred Images](comogaussian_continuous_motionaware_gaussian_splatting_from.md)
-- [\[ICCV 2025\] AnyI2V: Animating Any Conditional Image with Motion Control](anyi2v_animating_any_conditional_image_with_motion_control.md)
 - [\[ICCV 2025\] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training](easi3r_estimating_disentangled_motion_from_dust3r_without_training.md)
+- [\[ICCV 2025\] AnyI2V: Animating Any Conditional Image with Motion Control](anyi2v_animating_any_conditional_image_with_motion_control.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
 
 </div>

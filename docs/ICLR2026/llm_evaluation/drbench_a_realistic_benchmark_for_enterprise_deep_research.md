@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DRBench: A Realistic Benchmark for Enterprise Deep Research
 description: >-
-  [ICLR 2026][LLM Evaluation][Insight Recall] DRBench constructs the first deep research benchmark oriented toward enterprise scenarios. It requires Agents to simultaneously mine and synthesize key insights from public web pages and private enterprise data (emails, chats, PPTs, tables, PDFs). Evaluated across four dimensions—Insight Recall, Factuality, Distractor
+  [ICLR 2026][LLM Evaluation][Deep Research] DRBench constructs the first deep research benchmark oriented toward enterprise scenarios. It requires Agents to simultaneously mine and synthesize key insights from public web pages and private enterprise data (emails, chats, PPTs, tables, PDFs). Evaluated across four dimensions—Insight Recall, Factuality, Distractor Avoidance, and Report Quality—it reveals significant deficiencies in current Agents regarding enterprise insight reca…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Insight Recall
-  - LLM-as-a-judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Deep Research"
+  - "Enterprise Agent"
+  - "Benchmark"
+  - "Insight Recall"
+  - "Multi-source Retrieval"
+  - "LLM-as-a-judge"
 date: 2026-05-08
-content_hash: 143262c5ae1f6a45
+content_hash: 5dc85b619aaf2f8c
 ---
+
 # DRBench: A Realistic Benchmark for Enterprise Deep Research
 
 **Conference**: ICLR 2026  
@@ -119,8 +124,8 @@ Performance of DRBA under different planning module combinations (higher is bett
 
 ## Related Papers
 
-- [\[ICLR 2026\] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents](deepresearch_bench_a_comprehensive_benchmark_for_deep_research_agents.md)
 - [\[ICLR 2026\] LiveResearchBench: A Live Benchmark for User-Centric Deep Research in the Wild](liveresearchbench_a_live_benchmark_for_user-centric_deep_research_in_the_wild.md)
+- [\[ICLR 2026\] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents](deepresearch_bench_a_comprehensive_benchmark_for_deep_research_agents.md)
 - [\[ICLR 2026\] Characterizing Deep Research: A Benchmark and Formal Definition](characterizing_deep_research_a_benchmark_and_formal_definition.md)
 - [\[ICLR 2026\] ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents](researchrubrics_a_benchmark_of_prompts_and_rubrics_for_evaluating_deep_research_.md)
 - [\[ICLR 2026\] Towards Personalized Deep Research: Benchmarks and Evaluations](towards_personalized_deep_research_benchmarks_and_evaluations.md)

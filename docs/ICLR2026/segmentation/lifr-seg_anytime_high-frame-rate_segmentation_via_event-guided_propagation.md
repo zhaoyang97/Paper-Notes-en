@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LiFR-Seg: Anytime High-Frame-Rate Segmentation via Event-Guided Propagation
 description: >-
-  [ICLR 2026][Segmentation][Paper Note] LiFR-Seg propagates semantic features from low-frame-rate RGB images to arbitrary intermediate time points using high-frequency motion fields estimated from event streams. By employing uncertainty weighting and temporal memory to mitigate event sparsity and long-interval degradation, it allows low-frame-rate hardware t
+  [ICLR2026][Segmentation][Event Cameras] LiFR-Seg propagates semantic features from low-frame-rate RGB images to arbitrary intermediate time points using high-frequency motion fields estimated from event streams. By employing uncertainty weighting and temporal memory to mitigate event sparsity and long-interval degradation, it allows low-frame-rate hardware to approach or even exceed the performance of high-frame-rate RGB segmentation at night.
 tags:
-  - ICLR 2026
-  - Segmentation
+  - "ICLR2026"
+  - "Segmentation"
+  - "Event Cameras"
+  - "Anytime Segmentation"
+  - "High-Frame-Rate Perception"
+  - "Feature Propagation"
+  - "Uncertainty Modeling"
 date: 2026-05-08
-content_hash: 7b34354d3538e68c
+content_hash: c66c02bf7fce0ee4
 ---
+
 # LiFR-Seg: Anytime High-Frame-Rate Segmentation via Event-Guided Propagation
 
 **Conference**: ICLR2026  
@@ -138,6 +144,7 @@ Key findings: On DSEC, LiFR-Seg nearly matches the HFR ideal without seeing targ
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

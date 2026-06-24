@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models
 description: >-
-  [ICML 2026][Computational Biology][Flow Matching] scLDM utilizes a unified Multi-head Cross-Attention Block (MCAB) to encode exchangeable gene expression data into sets of fixed-length, permutation-invariant latent variables. By replacing Gaussian priors with DiT + Flow Matching + joint multi-attribute classifier-free guidance, it significantly outperforms scVI, scDif
+  [ICML 2026][Computational Biology][Single-cell RNA-seq] scLDM utilizes a unified Multi-head Cross-Attention Block (MCAB) to encode exchangeable gene expression data into sets of fixed-length, permutation-invariant latent variables. By replacing Gaussian priors with DiT + Flow Matching + joint multi-attribute classifier-free guidance, it significantly outperforms scVI, scDiffusion, and CFGen in reconstruction, (un/conditional) generation, and perturbation response prediction t…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Single-cell RNA-seq"
+  - "exchangeability"
+  - "multi-head cross-attention"
+  - "latent diffusion"
+  - "flow matching"
+  - "multi-conditional CFG"
 date: 2026-05-08
-content_hash: 17dc4436c45f9f25
+content_hash: bcb264498f567570
 ---
+
 # Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models
 
 **Conference**: ICML 2026  
@@ -175,9 +181,9 @@ W2 on Tabula Muris is nearly halved (7.27 vs 11.66), and 1-NN classifier accurac
 
 - [\[ICML 2026\] Towards Universal Gene Regulatory Network Inference: Unlocking Generalizable Regulatory Knowledge in Single-cell Foundation Models](towards_universal_gene_regulatory_network_inference_unlocking_generalizable_regu.md)
 - [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
+- [\[ICML 2026\] scCBGM: Interpretable Single-Cell Counterfactual Editing](sccbgm_interpretable_single-cell_counterfactual_editing.md)
+- [\[ICLR 2026\] SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention](../../ICLR2026/computational_biology/save_a_generalizable_framework_for_multi-condition_single-cell_generation_with_g.md)
 - [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](../../AAAI2026/computational_biology/gene_incremental_learning_for_single-cell_transcriptomics.md)
-- [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](../../CVPR2026/computational_biology/cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
-- [\[ICML 2026\] What Makes a Representation Good for Single-Cell Perturbation Prediction?](what_makes_a_representation_good_for_single-cell_perturbation_prediction.md)
 
 </div>
 

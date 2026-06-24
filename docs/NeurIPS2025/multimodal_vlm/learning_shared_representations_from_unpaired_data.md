@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Shared Representations from Unpaired Data
 description: >-
-  [NeurIPS 2025][Multimodal VLM][spectral embedding] This paper proposes SUE (Spectral Universal Embedding), which is the first to demonstrate that cross-modal shared representations can be learned with almost entirely unp…
+  [NeurIPS 2025][Multimodal VLM][spectral embedding] This paper proposes SUE (Spectral Universal Embedding), which is the first to demonstrate that cross-modal shared representations can be learned with almost entirely unpaired data. Independent spectral embeddings extract modality-invariant "universal" structure from random walks within each modality; a minimal number of paired samples (~100 pairs) then enables CCA-based linear alignment followed by MMD-based nonlinear fine-tu…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "MMD"
   - "CCA"
 date: 2026-05-08
-content_hash: a0b45b851c098408
+content_hash: 46ce996e4a19db35
 ---
 
 # Learning Shared Representations from Unpaired Data
@@ -137,10 +137,10 @@ $f_\mathcal{X} = Q_\mathcal{X} \circ S_\mathcal{X}$, $\quad f_\mathcal{Y} = F_\t
 ## Related Papers
 
 - [\[NeurIPS 2025\] MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning](midas_misalignment-based_data_augmentation_strategy_for_imbalanced_multimodal_le.md)
+- [\[ICML 2025\] Learning Optimal Multimodal Information Bottleneck Representations](../../ICML2025/multimodal_vlm/learning_optimal_multimodal_information_bottleneck_representations.md)
 - [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
 - [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
-- [\[ICML 2026\] Text-Conditional JEPA for Learning Semantically Rich Visual Representations](../../ICML2026/multimodal_vlm/text-conditional_jepa_for_learning_semantically_rich_visual_representations.md)
-- [\[ICCV 2025\] BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning](../../ICCV2025/multimodal_vlm/babyvlm_data-efficient_pretraining_of_vlms_inspired_by_infant_learning.md)
+- [\[ECCV 2024\] Decoupling Common and Unique Representations for Multimodal Self-supervised Learning](../../ECCV2024/multimodal_vlm/decoupling_common_and_unique_representations_for_multimodal_self-supervised_lear.md)
 
 </div>
 

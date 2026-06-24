@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Choreographing a World of Dynamic Objects
 description: >-
-  [CVPR 2026][3D Vision][Score Distillation] CHORD treats static 3D objects as "actors" and a video generation model as a "choreographer." Through a distillation objective customized for rectified-flow video models and a spatio-temporal hierarchical 4D motion representation, it generates physically plausible 4D animations of multi-object interactions using only 3
+  [CVPR 2026][3D Vision][4D scene generation] CHORD treats static 3D objects as "actors" and a video generation model as a "choreographer." Through a distillation objective customized for rectified-flow video models and a spatio-temporal hierarchical 4D motion representation, it generates physically plausible 4D animations of multi-object interactions using only 3D shapes and a text prompt. It further enables zero-shot robot manipulation.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Score Distillation
-  - Rectified Flow
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D scene generation"
+  - "Score Distillation"
+  - "Rectified Flow"
+  - "3D Gaussian Splatting"
+  - "Fenwick Tree"
 date: 2026-05-08
-content_hash: fea649cd569facb8
+content_hash: 0cd6e7652f0d7c1f
 ---
+
 # Choreographing a World of Dynamic Objects
 
 **Conference**: CVPR 2026  
@@ -152,10 +155,10 @@ Evaluated across 6 scenarios (e.g., "man petting a dog," "robot grasping a cube"
 ## Related Papers
 
 - [\[CVPR 2026\] ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects](ictpolarreal_a_polarized_reflection_and_material_dataset_of_real_world_objects.md)
-- [\[CVPR 2026\] AssemblyBench: Physics-Aware Assembly of Complex Industrial Objects](assemblybench_physics-aware_assembly_of_complex_industrial_objects.md)
-- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
-- [\[CVPR 2026\] GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials](gaussianfluent_gaussian_simulation_for_dynamic_scenes_with_mixed_materials.md)
+- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
+- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI](wanderland_geometrically_grounded_simulation_for_open-world_embodied_ai.md)
 
 </div>
 

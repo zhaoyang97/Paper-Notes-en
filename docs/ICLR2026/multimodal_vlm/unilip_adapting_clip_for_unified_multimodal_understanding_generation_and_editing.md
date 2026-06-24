@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] UniLIP：改造 CLIP 以统一多模态理解、生成与编辑
+  [Paper Note] UniLIP: Revamping CLIP to Unify Multimodal Understanding, Generation, and Editing
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] UniLIP utilizes "two-stage + self-distillation" training to transform CLIP, originally proficient only in understanding, into a unified visual encoder capable of high-fidelity pixel reconstruction while preserving semantic integrity. Coupled with a "multimodal hidden states + query embeddings" dual-condition architectu
+  [ICLR 2026][Multimodal VLM][Unified Multimodal Models] UniLIP utilizes "two-stage + self-distillation" training to transform CLIP, originally proficient only in understanding, into a unified visual encoder capable of high-fidelity pixel reconstruction while preserving semantic integrity. Coupled with a "multimodal hidden states + query embeddings" dual-condition architecture bridging MLLMs and Diffusion models, the 1B/3B small models outperform larger unified models such as B…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
-  - Image Editing
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Unified Multimodal Models"
+  - "CLIP"
+  - "Image Reconstruction"
+  - "Self-distillation"
+  - "Image Editing"
 date: 2026-05-08
-content_hash: 67122adb3d546c4d
+content_hash: afd2cf251b60929c
 ---
+
 # UniLIP: Revamping CLIP to Unify Multimodal Understanding, Generation, and Editing
 
 **Conference**: ICLR 2026  
@@ -148,11 +152,11 @@ The 3B model achieves SOTA across all three benchmarks, with an ImgEdit score of
 
 ## Related Papers
 
-- [\[ICML 2026\] ATHA: 通过打破尾部对齐改进 CLIP 在源数据无关跨域小样本上的适配](../../ICML2026/multimodal_vlm/improving_clip_adaptation_by_breaking_tail_alignment_for_source-free_cross-domai.md)
-- [\[CVPR 2026\] Reevaluating the Intra-Modal Misalignment Hypothesis in CLIP](../../CVPR2026/multimodal_vlm/reevaluating_the_intra-modal_misalignment_hypothesis_in_clip.md)
-- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](../../CVPR2026/multimodal_vlm/explaining_clip_zero-shot_predictions_through_concepts.md)
-- [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](../../CVPR2026/multimodal_vlm/isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
-- [\[ICCV 2025\] CLIPSym: Delving into Symmetry Detection with CLIP](../../ICCV2025/multimodal_vlm/clipsym_delving_into_symmetry_detection_with_clip.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
+- [\[ICLR 2026\] Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation](lavida-o_elastic_large_masked_diffusion_models_for_unified_multimodal_understand.md)
+- [\[ICLR 2026\] CLIP-FMoE: Scalable CLIP via Fused Mixture-of-Experts with Enforced Specialization](clip-fmoe_scalable_clip_via_fused_mixture-of-experts_with_enforced_specializatio.md)
+- [\[ICLR 2026\] Understanding vs. Generation: Navigating Optimization Dilemma in Multimodal Models](understanding_vs_generation_navigating_optimization_dilemma_in_multimodal_models.md)
+- [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
 
 </div>
 

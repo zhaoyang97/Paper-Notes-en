@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models
 description: >-
-  [ICML 2026][LLM Reasoning][Diffusion Model] LiDAR rewrites the Expected Future Reward (EFR) using a few pre-generated lookahead samples and forward perturbation kernels, transforming reward guidance into closed-form softmax weights without neural backpropagation. It matches DATE's performance on SDXL/GenEval while being 9.5× faster.
+  [ICML 2026 Spotlight][Reasoning][Diffusion Models] LiDAR rewrites the Expected Future Reward (EFR) using a few pre-generated lookahead samples and forward perturbation kernels, transforming reward guidance into closed-form softmax weights without neural backpropagation. It matches DATE's performance on SDXL/GenEval while being 9.5× faster.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Diffusion Model
-  - test-time scaling
-  - reward guidance
-  - lookahead sampling
-  - closed-form Stein score
+  - "ICML 2026 Spotlight"
+  - "Reasoning"
+  - "Diffusion Models"
+  - "test-time scaling"
+  - "reward guidance"
+  - "lookahead sampling"
+  - "closed-form Stein score"
 date: 2026-05-08
-content_hash: d83ddf4279ec8248
+content_hash: 989d895683025902
 ---
+
 # Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models
 
 **Conference**: ICML 2026 Spotlight  
@@ -153,15 +154,15 @@ LiDAR achieves GenEval scores comparable to DATE on SDXL (0.585 vs 0.570) in ~30
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
+- [\[ICLR 2026\] Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts](../../ICLR2026/llm_reasoning/test-time_scaling_in_diffusion_llms_via_hidden_semi-autoregressive_experts.md)
 - [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](../../ACL2026/llm_reasoning/parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[ACL 2025\] Revisiting the Test-Time Scaling of o1-like Models: Do they Truly Possess Test-Time Scaling Capabilities?](../../ACL2025/llm_reasoning/revisiting_the_test-time_scaling_of_o1-like_models_do_they_truly_possess_test-ti.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[ICML 2026\] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models](stabilizing_recurrent_dynamics_for_test-time_scalable_latent_reasoning_in_looped.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](../../ICLR2026/llm_reasoning/test-time_scaling_with_reflective_generative_model.md)
 
 </div>
 

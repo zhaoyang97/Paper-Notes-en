@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Proposes the LAPS (Latent Action-based Primitive Segmentation) pipeline, which uses a defined "Latent Action Energy" metric within a latent action space to discover and segment semantic action primitives from unlabeled industrial video streams without supervision, providing structured data for VLA model pre-training.
+  [CVPR 2026][Multimodal VLM][VLA Pre-training] Proposes the LAPS (Latent Action-based Primitive Segmentation) pipeline, which uses a defined "Latent Action Energy" metric within a latent action space to discover and segment semantic action primitives from unlabeled industrial video streams without supervision, providing structured data for VLA model pre-training.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLA Pre-training"
+  - "Action Segmentation"
+  - "Latent Action Energy"
+  - "Unsupervised Learning"
+  - "Industrial Manufacturing"
 date: 2026-05-08
-content_hash: d2dbf9289973aca0
+content_hash: c7b475224ae11e28
 ---
+
 # From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings
 
 **Conference**: CVPR 2026  
@@ -144,15 +150,14 @@ LAPS leads by a significant margin on industrial datasets (approx. 2x improvemen
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](joint-aligned_latent_action_towards_scalable_vla_pretraining_in_the_wild.md)
 - [\[CVPR 2026\] Condensed Test-Time Adaptation of VLMs for Action Recognition](condensed_test-time_adaptation_of_vlms_for_action_recognition.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
 - [\[CVPR 2026\] SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](simpact_simulation-enabled_action_planning_using_vision-language_models.md)
 - [\[CVPR 2026\] PowerCLIP: Powerset Alignment for Contrastive Pre-Training](powerclip_powerset_alignment_for_contrastive_pre-training.md)
+- [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](sapave_active_perception_manipulation_vla_roboti.md)
 
 </div>
 

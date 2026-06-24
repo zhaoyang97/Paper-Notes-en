@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Guidance Matters: Rethinking the Evaluation Pitfall for Text-to-Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Classifier-Free Guidance] This paper exposes a neglected evaluation pitfall: human preference metrics such as HPSv2 and ImageReward exhibit a strong preference for large guidance scales, allowing scores to be inflated by simply increasing CFG. The authors propose the GA-Eval framework with "effective guidance scale calibration" for fair compari
+  [ICLR 2026][Image Generation][Classifier-Free Guidance] This paper exposes a neglected evaluation pitfall: human preference metrics such as HPSv2 and ImageReward exhibit a strong preference for large guidance scales, allowing scores to be inflated by simply increasing CFG. The authors propose the GA-Eval framework with "effective guidance scale calibration" for fair comparisons, revealing that the "improvements" claimed by eight recent diffusion guidance methods are largely d…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Classifier-Free Guidance
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "human preference models"
+  - "evaluation bias"
+  - "effective guidance scale"
+  - "diffusion sampling"
 date: 2026-05-08
-content_hash: 00cb1087100dbdbe
+content_hash: f02d7c9758ecd999
 ---
+
 # Guidance Matters: Rethinking the Evaluation Pitfall for Text-to-Image Generation
 
 **Conference**: ICLR 2026  
@@ -120,8 +125,8 @@ Models evaluated include SD-XL, SD-2.1, SD-3.5, and DiT-XL/2. Datasets include P
 - [\[ICLR 2026\] Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance](routing_matters_in_moe_scaling_diffusion_transformers_with_explicit_routing_guid.md)
 - [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](rethinking_global_text_conditioning_in_diffusion_transformers.md)
 - [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](../../CVPR2026/image_generation/gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
-- [\[ICLR 2026\] ImageDoctor: Diagnosing Text-to-Image Generation via Grounded Image Reasoning](imagedoctor_diagnosing_text-to-image_generation_via_grounded_image_reasoning.md)
 - [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](../../CVPR2026/image_generation/self-evaluation_unlocks_any-step_text-to-image_generation.md)
+- [\[ICLR 2026\] Factuality Matters: When Image Generation and Editing Meet Structured Visuals](factuality_matters_when_image_generation_and_editing_meet_structured_visuals.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Gaussian-Head OFL Family: One-Shot Federated Learning from Client Global Statistics
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] GH-OFL allows clients to upload "class-conditional sufficient statistics" (counts, first/second moments) only once. The server then directly constructs closed-form Gaussian discriminant heads (NB/LDA/QDA) and synthesizes data-free samples in a Fisher subspace to train two lightweight heads (FisherMix, Proto-Hyper). It
+  [ICLR 2026][AI Safety][One-Shot Federated Learning] GH-OFL allows clients to upload "class-conditional sufficient statistics" (counts, first/second moments) only once. The server then directly constructs closed-form Gaussian discriminant heads (NB/LDA/QDA) and synthesizes data-free samples in a Fisher subspace to train two lightweight heads (FisherMix, Proto-Hyper). It achieves OFL SOTA accuracy under strong non-IID conditions with a single communication round…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "One-Shot Federated Learning"
+  - "Gaussian Discriminant Head"
+  - "Sufficient Statistics"
+  - "Fisher Subspace"
+  - "Data-Free Synthesis"
 date: 2026-05-08
-content_hash: c37d8b6a6424ab15
+content_hash: 10615ba6dcc44fe0
 ---
+
 # The Gaussian-Head OFL Family: One-Shot Federated Learning from Client Global Statistics
 
 **Conference**: ICLR 2026  
@@ -164,7 +170,7 @@ Robustness on CIFAR-100-C (average of 19 corruptions, severity 5) vs. required u
 - [\[CVPR 2026\] Federated Active Learning Under Extreme Non-IID and Global Class Imbalance](../../CVPR2026/ai_safety/federated_active_learning_extreme_noniid.md)
 - [\[CVPR 2025\] FedAWA: Adaptive Optimization of Aggregation Weights in Federated Learning Using Client Vectors](../../CVPR2025/ai_safety/fedawa_adaptive_optimization_of_aggregation_weights_in_federated_learning_using_.md)
 - [\[ICCV 2025\] Client2Vec: Improving Federated Learning by Distribution Shifts Aware Client Indexing](../../ICCV2025/ai_safety/client2vec_improving_federated_learning_by_distribution_shifts_aware_client_inde.md)
-- [\[CVPR 2025\] Geometric Knowledge-Guided Localized Global Distribution Alignment for Federated Learning](../../CVPR2025/ai_safety/geometric_knowledge-guided_localized_global_distribution_alignment_for_federated.md)
+- [\[ICLR 2026\] Dual Randomized Smoothing: Beyond Global Noise Variance](dual_randomized_smoothing_beyond_global_noise_variance.md)
 
 </div>
 

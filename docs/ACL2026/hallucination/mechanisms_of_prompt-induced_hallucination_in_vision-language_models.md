@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models
 description: >-
-  [ACL 2026][Hallucination Detection][prompt-induced hallucination] In controlled object counting tasks, prompt-induced hallucination (PIH)—where the model follows the prompt rather than the image—is localized to 3–10 attention heads in the **early layers** ($L0-1$) of LLaVA-OneVision, Qwen-VL, and Janus-Pro. Mean ablation of these heads, requiring no retraining, reduces prompt-followi
+  [ACL 2026][Hallucination Detection][prompt-induced hallucination] In controlled object counting tasks, prompt-induced hallucination (PIH)—where the model follows the prompt rather than the image—is localized to 3–10 attention heads in the **early layers** ($L0-1$) of LLaVA-OneVision, Qwen-VL, and Janus-Pro. Mean ablation of these heads, requiring no retraining, reduces prompt-following from 42–64% to <11% and restores true counting rates to 70–78%…
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - prompt-induced hallucination
-  - attention head knockout
-  - mean ablation
-  - object counting
-  - modality conflict
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "prompt-induced hallucination"
+  - "attention head knockout"
+  - "mean ablation"
+  - "object counting"
+  - "modality conflict"
 date: 2026-05-08
-content_hash: c3d9cea3ba42fc9b
+content_hash: e865b7f16e218851
 ---
+
 # Mechanisms of Prompt-Induced Hallucination in Vision–Language Models
 
 **Conference**: ACL 2026  
@@ -129,14 +130,15 @@ PIH suppression on the color task: LLaVA-OV **94.25%**, Qwen-VL **59.45%**, Janu
 - Value: ⭐⭐⭐⭐☆ Significant for mechanistic interpretability; provides a lightweight suppression solution for practitioners.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
-- [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
 - [\[ACL 2026\] Stable-RAG: Mitigating Retrieval-Permutation-Induced Hallucinations in Retrieval-Augmented Generation](stable-rag_mitigating_retrieval-permutation-induced_hallucinations_in_retrieval-.md)
 - [\[ACL 2026\] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation](mitigating_hallucinations_in_large_vision-language_models_without_performance_de.md)
+- [\[ICLR 2026\] Hallucination-aware Intermediate Representation Edit in Large Vision-Language Models](../../ICLR2026/hallucination/hallucination-aware_intermediate_representation_edit_in_large_vision-language_mo.md)
 - [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](../../CVPR2026/hallucination/prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
 
 </div>

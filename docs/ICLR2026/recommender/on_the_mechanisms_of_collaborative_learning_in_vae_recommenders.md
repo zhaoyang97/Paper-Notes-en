@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Mechanisms of Collaborative Learning in VAE Recommenders
 description: >-
-  [ICLR 2026][Recommender Systems][Paper Note] This paper theoretically reveals that whether users can "help each other" in VAE Collaborative Filtering (CF) is determined by their distance in the latent space (a derivable "sharing radius"). It points out that clean inputs only utilize local collaboration, while $\beta$-KL and input masking promote global collaborat
+  [ICLR 2026][Recommender Systems][VAE Recommendation] This paper theoretically reveals that whether users can "help each other" in VAE Collaborative Filtering (CF) is determined by their distance in the latent space (a derivable "sharing radius"). It points out that clean inputs only utilize local collaboration, while $\beta$-KL and input masking promote global collaboration at certain costs. Accordingly, the authors propose Personalized Item Alignment (PIA)…
 tags:
-  - ICLR 2026
-  - Recommender Systems
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "VAE Recommendation"
+  - "Collaborative Filtering"
+  - "Latent Sharing Radius"
+  - "Input Masking"
+  - "Anchor Regularization"
 date: 2026-05-08
-content_hash: 760f74360fd4c42a
+content_hash: 87d882a0602b6e3a
 ---
+
 # On the Mechanisms of Collaborative Learning in VAE Recommenders
 
 **Conference**: ICLR 2026  
@@ -143,11 +149,11 @@ Users were grouped by interaction count (ML-20M) to observe the effect of global
 
 ## Related Papers
 
-- [\[ICLR 2026\] CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation](collectivekv_decoupling_and_sharing_collaborative_information_in_sequential_reco.md)
+- [\[ICML 2026\] Rethinking Contrastive Learning for Graph Collaborative Filtering: Limitations and a Simple Remedy](../../ICML2026/recommender/rethinking_contrastive_learning_for_graph_collaborative_filtering_limitations_an.md)
 - [\[ICLR 2026\] Massive Memorization with Hundreds of Trillions of Parameters for Sequential Transducer Generative Recommenders](massive_memorization_with_hundreds_of_trillions_of_parameters_for_sequential_tra.md)
-- [\[ICLR 2026\] RPM: Reasoning-Level Personalization for Black-Box Large Language Models](rpm_reasoning-level_personalization_for_black-box_large_language_models.md)
-- [\[ICLR 2026\] Discrete Diffusion for Bundle Construction](discrete_diffusion_for_bundle_construction.md)
-- [\[ICLR 2026\] Low-pass Personalized Subgraph Federated Recommendation](low-pass_personalized_subgraph_federated_recommendation.md)
+- [\[ICLR 2026\] CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation](collectivekv_decoupling_and_sharing_collaborative_information_in_sequential_reco.md)
+- [\[ACL 2026\] ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation](../../ACL2026/recommender/clusterrag_cluster-based_collaborative_filtering_for_personalized_retrieval-augm.md)
+- [\[ICLR 2026\] Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning](rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme.md)
 
 </div>
 

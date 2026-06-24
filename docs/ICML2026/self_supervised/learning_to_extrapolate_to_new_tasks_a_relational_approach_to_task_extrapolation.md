@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning to Extrapolate to New Tasks: A Relational Approach to Task Extrapolation
 description: >-
-  [ICML 2026][Self-Supervised Learning][Task2Vec] This paper proposes the Relational Task Extrapolator (RTE), which reinterprets "new tasks outside the training support" as a compositional problem of "known anchor tasks + seen inter-task transformations." It trains a relational operator $\Psi$ to assemble these anchor-transform pairs at test time to predict the output
+  [ICML 2026][Self-Supervised Learning][Task Extrapolation] This paper proposes the Relational Task Extrapolator (RTE), which reinterprets "new tasks outside the training support" as a compositional problem of "known anchor tasks + seen inter-task transformations." It trains a relational operator $\Psi$ to assemble these anchor-transform pairs at test time to predict the outputs of unseen tasks.
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - Task2Vec
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Task Extrapolation"
+  - "Transductive Learning"
+  - "Anchor-Transform Decomposition"
+  - "Task2Vec"
+  - "Relational Operator"
 date: 2026-05-08
-content_hash: 2d381aeebfc6b74b
+content_hash: 82c090fa5abd7e9d
 ---
+
 # Learning to Extrapolate to New Tasks: A Relational Approach to Task Extrapolation
 
 **Conference**: ICML 2026  
@@ -149,8 +154,8 @@ Inductive baselines saturate at boundaries across all regimes—failing to fit c
 - [\[CVPR 2026\] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach](../../CVPR2026/self_supervised/cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati.md)
 - [\[ICML 2026\] Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts](scaling_continual_learning_to_300_tasks_with_bi-level_routing_mixture-of-experts.md)
 - [\[CVPR 2026\] Stabilizing Feature Geometry in Noisy Pretrained Models for Robust Downstream Tasks](../../CVPR2026/self_supervised/stabilizing_feature_geometry_in_noisy_pretrained_models_for_robust_downstream_ta.md)
+- [\[ICML 2025\] Griffin: Towards a Graph-Centric Relational Database Foundation Model](../../ICML2025/self_supervised/griffin_towards_a_graph-centric_relational_database_foundation_model.md)
 - [\[CVPR 2026\] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](../../CVPR2026/self_supervised/an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)
-- [\[NeurIPS 2025\] A Joint Learning Approach to Hardware Caching and Prefetching](../../NeurIPS2025/self_supervised/a_joint_learning_approach_to_hardware_caching_and_prefetching.md)
 
 </div>
 

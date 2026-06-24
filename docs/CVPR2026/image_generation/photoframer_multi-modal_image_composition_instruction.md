@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhotoFramer: Multi-modal Image Composition Instruction
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] PhotoFramer formulates "how to take better-composed photos" as a unified understanding-generation model: given a poorly composed image, it first clearly explains how to improve using natural language (e.g., "remove the fence, center the subject"), and then generates an example image of the same scene with good composit
+  [CVPR 2026][Image Generation][Composition Guidance] PhotoFramer formulates "how to take better-composed photos" as a unified understanding-generation model: given a poorly composed image, it first clearly explains how to improve using natural language (e.g., "remove the fence, center the subject"), and then generates an example image of the same scene with good composition, allowing amateur photographers to re-shoot by following both the text and the example.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Composition Guidance"
+  - "Photography Assistance"
+  - "Unified Multi-modal Model"
+  - "Joint Text-Image Generation"
+  - "Data Synthesis"
 date: 2026-05-08
-content_hash: 612414c00a96d654
+content_hash: 9d973b27ed1d8bc9
 ---
+
 # PhotoFramer: Multi-modal Image Composition Instruction
 
 **Conference**: CVPR 2026  
@@ -147,7 +153,7 @@ Textual guidance consistency (GPT-5 rating "whether text accurately describes th
 - [\[CVPR 2025\] UNIC-Adapter: Unified Image-Instruction Adapter with Multi-modal Transformer for Image Generation](../../CVPR2025/image_generation/unic-adapter_unified_image-instruction_adapter_with_multi-modal_transformer_for_.md)
 - [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](consistcompose_multimodal_layout_control.md)
 - [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](compbench_benchmarking_complex_instruction-guided_image_editing.md)
-- [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
+- [\[CVPR 2026\] SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control](slideredit_continuous_image_editing_with_fine-grained_instruction_control.md)
 
 </div>
 

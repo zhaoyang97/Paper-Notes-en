@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MLLM-HWSI: A Multimodal Large Language Model for Hierarchical Whole Slide Image Understanding
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] To address the issue where existing computational pathology MLLMs compress entire Whole Slide Images (WSI) into a single vector—losing fine-grained spatial semantics—this paper proposes MLLM-HWSI. It decomposes the WSI into visual tokens across four scales: "cell = word, patch = phrase, region = sentence, WSI = paragra
+  [CVPR 2026][Medical Imaging][Whole Slide Images] To address the issue where existing computational pathology MLLMs compress entire Whole Slide Images (WSI) into a single vector—losing fine-grained spatial semantics—this paper proposes MLLM-HWSI. It decomposes the WSI into visual tokens across four scales: "cell = word, patch = phrase, region = sentence, WSI = paragraph." Using hierarchical contrastive alignment loss and cross-scale consistency loss…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Images"
+  - "Computational Pathology"
+  - "Hierarchical Multi-scale Alignment"
+  - "Cross-scale Consistency"
+  - "Pathology MLLM"
 date: 2026-05-08
-content_hash: cbd8f98009e3f1f4
+content_hash: ae61ea4f2c3dae01
 ---
+
 # MLLM-HWSI: A Multimodal Large Language Model for Hierarchical Whole Slide Image Understanding
 
 **Conference**: CVPR 2026  

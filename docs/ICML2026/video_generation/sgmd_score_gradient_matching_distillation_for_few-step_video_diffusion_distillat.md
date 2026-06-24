@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] SGMD: Score Gradient Matching Distillation for Few-Step Video Diffusion
 description: >-
-  [ICML 2026][Video Generation][Paper Note] SGMD introduces a **stable teacher stop-gradient Fisher objective** and a **dual potential (NR/RC) mechanism** to solve the high cost of fake score tracking (5 updates per round in DMD2) and motion suppression issues in few-step video diffusion distillation. It achieves ~3× training acceleration and improves motion qua
+  [ICML 2026][Video Generation][Diffusion Model Distillation] SGMD introduces a **stable teacher stop-gradient Fisher objective** and a **dual potential (NR/RC) mechanism** to solve the high cost of fake score tracking (5 updates per round in DMD2) and motion suppression issues in few-step video diffusion distillation. It achieves ~3× training acceleration and improves motion quality from 0.65 to 0.78 (VideoAlign) under 4-step distillation.
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Diffusion Model Distillation"
+  - "Score Matching"
+  - "Few-step Generation"
+  - "Motion Preservation"
 date: 2026-05-08
-content_hash: 5d781e6b4e135019
+content_hash: 09ac9c06946a451e
 ---
+
 # SGMD: Score Gradient Matching Distillation for Few-Step Video Diffusion
 
 **Conference**: ICML 2026  
@@ -136,11 +141,11 @@ SGMD achieves motion intensity close to the base model with only 1 fake score up
 
 ## Related Papers
 
-- [\[ICML 2026\] AAD-1: Asymmetric Adversarial Distillation for One-Step Autoregressive Video Generation](aad-1_asymmetric_adversarial_distillation_for_one-step_autoregressive_video_gene.md)
-- [\[ICCV 2025\] DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization](../../ICCV2025/video_generation/dollar_fewstep_video_generation_via_distillation_and_latent.md)
 - [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](../../ICCV2025/video_generation/adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_i.md)
 - [\[CVPR 2026\] Transition Matching Distillation for Fast Video Generation](../../CVPR2026/video_generation/transition_matching_distillation_for_fast_video_generation.md)
-- [\[CVPR 2026\] Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation](../../CVPR2026/video_generation/reward_forcing_efficient_streaming_video_generation_with_rewarded_distribution_m.md)
+- [\[ICML 2026\] AAD-1: Asymmetric Adversarial Distillation for One-Step Autoregressive Video Generation](aad-1_asymmetric_adversarial_distillation_for_one-step_autoregressive_video_gene.md)
+- [\[ICCV 2025\] DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization](../../ICCV2025/video_generation/dollar_fewstep_video_generation_via_distillation_and_latent.md)
+- [\[ICLR 2026\] Towards One-Step Causal Video Generation via Adversarial Self-Distillation](../../ICLR2026/video_generation/towards_one-step_causal_video_generation_via_adversarial_self-distillation.md)
 
 </div>
 

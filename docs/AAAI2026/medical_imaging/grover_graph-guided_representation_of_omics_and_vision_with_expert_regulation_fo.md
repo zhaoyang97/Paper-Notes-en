@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction
 description: >-
-  [AAAI 2026][Medical Imaging][Spatial omics] This paper proposes GROVER, a spatial multi-omics framework that captures nonlinear spatial-feature dependencies via a KAN-GCN encoder…
+  [AAAI 2026][Medical Imaging][Spatial omics] This paper proposes GROVER, a spatial multi-omics framework that captures nonlinear spatial-feature dependencies via a KAN-GCN encoder, aligns heterogeneous modalities through spot-feature-pair contrastive learning, and dynamically routes and filters low-quality signals via a self-adaptive Mixture of Experts (MoE). GROVER achieves superior clustering performance over existing methods on four real-world spatial omics datasets.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "mixture of experts"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: a2272b5215eaa055
+content_hash: 70c83287a9c81912
 ---
 
 # GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction
@@ -135,10 +135,10 @@ The overall training objective is a weighted sum of per-modality reconstruction 
 ## Related Papers
 
 - [\[CVPR 2026\] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality](../../CVPR2026/medical_imaging/must_modality-specific_representation-aware_transformer_for_diffusion-enhanced_s.md)
+- [\[CVPR 2026\] MDCS-MoAME: Multi-directional Composite Scanning with Mixture of Attention and Mamba Experts for Cancer Survival Prediction](../../CVPR2026/medical_imaging/mdcs-moame_multi-directional_composite_scanning_with_mixture_of_attention_and_ma.md)
+- [\[CVPR 2026\] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction](../../CVPR2026/medical_imaging/h2-surv_hierarchical_hyperbolic_multimodal_representation_learning_for_survival_.md)
+- [\[CVPR 2026\] Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction](../../CVPR2026/medical_imaging/turning_pre-trained_vision_transformers_into_end-to-end_histopathology_whole_sli.md)
 - [\[AAAI 2026\] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis](dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_.md)
-- [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
-- [\[AAAI 2026\] Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection](personality-guided_public-private_domain_disentangled_hypergraph-former_network_.md)
-- [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
 
 </div>
 

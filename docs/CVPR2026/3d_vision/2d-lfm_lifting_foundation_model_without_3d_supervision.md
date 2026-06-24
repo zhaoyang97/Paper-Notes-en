@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] 2D-LFM: Lifting Foundation Model without 3D Supervision
 description: >-
-  [CVPR 2026][3D Vision][2D-to-3D lifting] By injecting "correspondence positional encodings" into **every layer** of a Transformer, this work trains the first cross-category 2D→3D lifting foundation model using only 2D keypoints (without any 3D ground truth). It outperforms large models like VGGT that rely on RGB depth in object-level geometry (Pascal3D+ 8.1mm
+  [CVPR 2026][3D Vision][2D-to-3D lifting] By injecting "correspondence positional encodings" into **every layer** of a Transformer, this work trains the first cross-category 2D→3D lifting foundation model using only 2D keypoints (without any 3D ground truth). It outperforms large models like VGGT that rely on RGB depth in object-level geometry (Pascal3D+ 8.1mm vs. VGGT 89.4mm).
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 2D-to-3D lifting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "2D-to-3D lifting"
+  - "non-rigid structure recovery"
+  - "positional encoding"
+  - "foundation model"
+  - "3D-unsupervised"
 date: 2026-05-08
-content_hash: 25c681d4fe0b3da2
+content_hash: 3ef5569eaa7318dd
 ---
+
 # 2D-LFM: Lifting Foundation Model without 3D Supervision
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ Highlights: Ours outperforms the 3D-supervised 3D-LFM on Human3.6M (30.9mm vs. 4
 
 ## Related Papers
 
-- [\[CVPR 2026\] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision](evobj_learning_evolving_object-centric_representations_for_3d_instance_segmentat.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] iLRM: An Iterative Large 3D Reconstruction Model](ilrm_an_iterative_large_3d_reconstruction_model.md)
-- [\[CVPR 2026\] Inferring Compositional 4D Scenes without Ever Seeing One](inferring_compositional_4d_scenes_without_ever_seeing_one.md)
+- [\[CVPR 2026\] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision](evobj_learning_evolving_object-centric_representations_for_3d_instance_segmentat.md)
+- [\[ICLR 2026\] Stroke3D: Lifting 2D Strokes into Rigged 3D Model via Latent Diffusion Models](../../ICLR2026/3d_vision/stroke3d_lifting_2d_strokes_into_rigged_3d_model_via_latent_diffusion_models.md)
+- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
+- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
 
 </div>
 

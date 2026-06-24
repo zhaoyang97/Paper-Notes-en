@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Theory for Kernel Bilevel Optimization
 description: >-
-  [NeurIPS 2025][Optimization][Bilevel Optimization] This work establishes the first finite-sample generalization bounds for kernel bilevel optimization (KBO)…
+  [NeurIPS 2025][Optimization][Bilevel Optimization] This work establishes the first finite-sample generalization bounds for kernel bilevel optimization (KBO), proving that plug-in estimation errors for both the objective value and its gradient converge uniformly at the parametric rate $\mathcal{O}(1/\sqrt{m}+1/\sqrt{n})$, and applies this theory to analyze the statistical accuracy of bilevel gradient descent.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -14,7 +14,7 @@ tags:
   - "U-processes"
   - "Implicit Differentiation"
 date: 2026-05-08
-content_hash: ab1a9e37f586520e
+content_hash: 8fca62e9bc9db7c1
 ---
 
 # Learning Theory for Kernel Bilevel Optimization
@@ -154,10 +154,10 @@ Results are averaged over 50 independent runs. Both Student-t distributions ($\n
 ## Related Papers
 
 - [\[NeurIPS 2025\] Kernel Learning with Adversarial Features: Numerical Efficiency and Adaptive Regularization](kernel_learning_with_adversarial_features_numerical_efficiency_and_adaptive_regu.md)
+- [\[ICLR 2026\] Bilevel Optimization with Lower-Level Uniform Convexity: Theory and Algorithm](../../ICLR2026/optimization/bilevel_optimization_with_lower-level_uniform_convexity_theory_and_algorithm.md)
 - [\[NeurIPS 2025\] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds](an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds.md)
 - [\[NeurIPS 2025\] Problem-Parameter-Free Decentralized Bilevel Optimization](problem-parameter-free_decentralized_bilevel_optimization.md)
 - [\[NeurIPS 2025\] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization](set_smoothness_unlocks_clarke_hyper-stationarity_in_bilevel_optimization.md)
-- [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
 
 </div>
 

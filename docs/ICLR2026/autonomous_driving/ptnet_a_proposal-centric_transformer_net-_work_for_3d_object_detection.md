@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] PTN：面向 3D 目标检测的提案中心化 Transformer 网络
+  [Paper Note] PTN: Proposal-centric Transformer Network for 3D Object Detection
 description: >-
-  [ICLR 2026][Autonomous Driving][Transformer] PTN attributes the bottleneck of two-stage LiDAR detectors to "poor proposal quality"—geometric details are lost during pooling, and proposal refinements are isolated. The authors propose Hierarchical Attention Feature Alignment (HAFA) to recover fine-grained geometry and a Collaborative Proposal Refinement Module (CPR
+  [ICLR 2026][Autonomous Driving][LiDAR 3D Detection] PTN attributes the bottleneck of two-stage LiDAR detectors to "poor proposal quality"—geometric details are lost during pooling, and proposal refinements are isolated. The authors propose Hierarchical Attention Feature Alignment (HAFA) to recover fine-grained geometry and a Collaborative Proposal Refinement Module (CPRM) that enables context exchange between proposals via deformable attention. PTN achieves SOTA on Waymo and…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Transformer
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "LiDAR 3D Detection"
+  - "Two-stage Detector"
+  - "Proposal Refinement"
+  - "Deformable Attention"
+  - "Transformer"
 date: 2026-05-08
-content_hash: cce5f51bace67775
+content_hash: 34964a09360dd486
 ---
+
 # PTN: Proposal-centric Transformer Network for 3D Object Detection
 
 **Conference**: ICLR 2026  
@@ -128,11 +133,11 @@ Gains are primarily concentrated in **Pedestrian and Cyclist** classes, which ar
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient Equivariant Transformer for Self-Driving Agent Modeling](../../CVPR2026/autonomous_driving/efficient_equivariant_transformer_for_self-driving_agent_modeling.md)
-- [\[AAAI 2026\] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](../../AAAI2026/autonomous_driving/catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)
-- [\[ECCV 2024\] PanoVOS: Bridging Non-panoramic and Panoramic Views with Transformer for Video Segmentation](../../ECCV2024/autonomous_driving/panovos_bridging_non-panoramic_and_panoramic_views_with_transformer_for_video_se.md)
 - [\[ICLR 2026\] AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection](asyncbev_cross-modal_flow_alignment_in_asynchronous_3d_object_detection.md)
-- [\[ICLR 2026\] GaussianFusion: Unified 3D Gaussian Representation for Multi-Modal Fusion Perception](gaussianfusion_unified_3d_gaussian_representation_for_multi-modal_fusion_percept.md)
+- [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](../../AAAI2026/autonomous_driving/towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
+- [\[CVPR 2026\] ReManNet: A Riemannian Manifold Network for Monocular 3D Lane Detection](../../CVPR2026/autonomous_driving/remannet_a_riemannian_manifold_network_for_monocular_3d_lane_detection.md)
+- [\[CVPR 2025\] Cubify Anything: Scaling Indoor 3D Object Detection](../../CVPR2025/autonomous_driving/cubify_anything_scaling_indoor_3d_object_detection.md)
+- [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](../../AAAI2026/autonomous_driving/exploring_surround-view_fisheye_camera_3d_object_detection.md)
 
 </div>
 

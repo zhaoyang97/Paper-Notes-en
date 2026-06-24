@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Too Vivid to Be Real? Benchmarking and Calibrating Generative Color Fidelity
 description: >-
-  [CVPR 2026][Image Generation][color fidelity] Addressing the issue where T2I generated images are "too vivid to look like real photos," this paper proposes the Color Fidelity Dataset (CFD, 1.3M images), the Color Fidelity Metric (CFM, based on Qwen2-VL + softrank loss), and Color Fidelity Refinement (CFR, a training-free spatio-temporal adaptive guidance modulatio
+  [CVPR 2026][Image Generation][color fidelity] Addressing the issue where T2I generated images are "too vivid to look like real photos," this paper proposes the Color Fidelity Dataset (CFD, 1.3M images), the Color Fidelity Metric (CFM, based on Qwen2-VL + softrank loss), and Color Fidelity Refinement (CFR, a training-free spatio-temporal adaptive guidance modulation), forming an integrated evaluation-improvement framework.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - color fidelity
-  - text-to-image evaluation
-  - guidance scale
-  - realistic generation
-  - evaluation bias
+  - "CVPR 2026"
+  - "Image Generation"
+  - "color fidelity"
+  - "text-to-image evaluation"
+  - "guidance scale"
+  - "realistic generation"
+  - "evaluation bias"
 date: 2026-05-08
-content_hash: 63f58dafe447ceb6
+content_hash: 2e0a03a531e3c9d6
 ---
+
 # Too Vivid to Be Real? Benchmarking and Calibrating Generative Color Fidelity
 
 **Conference**: CVPR 2026  
@@ -188,15 +189,16 @@ The training objective for CFM is the Differentiable Softrank Loss described abo
 - Value: ⭐⭐⭐⭐ Fills a gap in T2I evaluation; training-free refinement is highly practical.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MatPedia: A Universal Generative Foundation for High-Fidelity Material Synthesis](matpedia_a_universal_generative_foundation_for_high-fidelity_material_synthesis.md)
 - [\[CVPR 2025\] GCC: Generative Color Constancy via Diffusing a Color Checker](../../CVPR2025/image_generation/gcc_generative_color_constancy_via_diffusing_a_color_checker.md)
-- [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
-- [\[CVPR 2026\] Leveraging Multispectral Sensors for Color Correction in Mobile Cameras](leveraging_multispectral_sensors_for_color_correction_in_mobile_cameras.md)
+- [\[CVPR 2026\] Nonlinear Color Transfer via Learnable Bezier Flows](nonlinear_color_transfer_via_learnable_bezier_flows.md)
 - [\[CVPR 2026\] It's Never Too Late: Noise Optimization for Collapse Recovery in Trained Diffusion Models](its_never_too_late_noise_optimization_for_collapse_recovery_in_trained_diffusion.md)
+- [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
 
 </div>
 

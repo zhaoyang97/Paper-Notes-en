@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][general utility reinforcement learning] This paper establishes global optimality guarantees for policy gradient methods in reinforcement learning with general utilities (RLGU): in t…
+  [NeurIPS 2025][Reinforcement Learning][general utility reinforcement learning] This paper establishes global optimality guarantees for policy gradient methods in reinforcement learning with general utilities (RLGU): in the tabular setting, global convergence is proved via a novel gradient dominance inequality; in large-scale state-action spaces, an occupancy measure approximation algorithm PG-OMA based on maximum likelihood estimation (MLE) is proposed…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "occupancy measure estimation"
   - "maximum likelihood estimation"
 date: 2026-05-08
-content_hash: 48a6894a1f562158
+content_hash: cd1437b3e7aa90db
 ---
 
 # On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning
@@ -135,10 +135,10 @@ This is a purely theoretical paper. The following presents a theoretical compari
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient](robust_and_diverse_multi-agent_learning_via_rational_policy_gradient.md)
-- [\[ICML 2026\] ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation](../../ICML2026/reinforcement_learning/prorl_effective_reinforcement_learning_for_proactive_recommendation_via_rectifie.md)
-- [\[ICML 2026\] Reinforcement Learning for Reachability: Guaranteeing Asymptotic Optimality](../../ICML2026/reinforcement_learning/reinforcement_learning_for_reachability_guaranteeing_asymptotic_optimality.md)
-- [\[NeurIPS 2025\] Near-Optimal Quantum Algorithms for Computing (Coarse) Correlated Equilibria of General-Sum Games](near-optimal_quantum_algorithms_for_computing_coarse_correlated_equilibria_of_ge.md)
+- [\[ICLR 2026\] Reevaluating Policy Gradient Methods for Imperfect-Information Games](../../ICLR2026/reinforcement_learning/reevaluating_policy_gradient_methods_for_imperfect-information_games.md)
+- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](../../ICLR2026/reinforcement_learning/solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
 - [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
+- [\[ICLR 2026\] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization](../../ICLR2026/reinforcement_learning/on_the_tension_between_optimality_and_adversarial_robustness_in_policy_optimizat.md)
 
 </div>
 

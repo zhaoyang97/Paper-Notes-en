@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] To address the issue of fractured small object trajectories in event camera point clouds, this paper proposes SpTopoNet. It employs a "Topological Learning Module + Spatial Consistency Module" to implicitly encode trajectory connectivity within the network, and an EvTopoLoss based on persistent homology to explicitly c
+  [CVPR 2026][Object Detection][Event camera] To address the issue of fractured small object trajectories in event camera point clouds, this paper proposes SpTopoNet. It employs a "Topological Learning Module + Spatial Consistency Module" to implicitly encode trajectory connectivity within the network, and an EvTopoLoss based on persistent homology to explicitly constrain the trajectory topology. This approach improves the IoU from 55.18% to 66.62% on the EV-UAV benchmark.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Event camera"
+  - "small object detection"
+  - "persistent homology"
+  - "topological constraints"
+  - "sparse convolution"
 date: 2026-05-08
-content_hash: e69920eda439749b
+content_hash: 6befe98ab02fd664
 ---
+
 # Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection
 
 **Conference**: CVPR 2026  

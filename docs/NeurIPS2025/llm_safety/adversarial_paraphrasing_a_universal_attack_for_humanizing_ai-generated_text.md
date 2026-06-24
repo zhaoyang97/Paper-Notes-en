@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text
 description: >-
-  [NeurIPS 2025][LLM Safety][AI text detection] This paper proposes Adversarial Paraphrasing — a training-free universal attack framework that selects the most "human-like" token at each decoding step by leveraging feedbac…
+  [NeurIPS 2025][LLM Safety][AI text detection] This paper proposes Adversarial Paraphrasing — a training-free universal attack framework that selects the most "human-like" token at each decoding step by leveraging feedback signals from AI text detectors during token-by-token paraphrasing. The approach achieves an average T@1%F reduction of 87.88% across 8 detectors and exhibits strong cross-detector transferability.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "watermark evasion"
   - "controllable text generation"
 date: 2026-05-08
-content_hash: 5ebcc4559c54dd36
+content_hash: ecdb2c8d8e735c08
 ---
 
 # Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text
@@ -130,8 +130,8 @@ where $\mathcal{D}$ is the AI score output of the guidance detector, $y_{:m}$ is
 - [\[NeurIPS 2025\] DNA-DetectLLM: Unveiling AI-Generated Text via a DNA-Inspired Mutation-Repair Paradigm](dna-detectllm_unveiling_ai-generated_text_via_a_dna-inspired_mutation-repair_par.md)
 - [\[NeurIPS 2025\] Stop DDoS Attacking the Research Community with AI-Generated Survey Papers](stop_ddos_attacking_the_research_community_with_ai-generated_survey_papers.md)
 - [\[NeurIPS 2025\] AgentStealth: Reinforcing Large Language Model for Anonymizing User-generated Text](agentstealth_reinforcing_large_language_model_for_anonymizing_user-generated_tex.md)
-- [\[NeurIPS 2025\] Position: The Complexity of Perfect AI Alignment -- Formalizing the RLHF Trilemma](position_the_complexity_of_perfect_ai_alignment_--_formalizing_the_rlhf_trilemma.md)
-- [\[ICML 2026\] AliMark: Enhancing Robustness of Sentence-Level Watermarking Against Text Paraphrasing](../../ICML2026/llm_safety/alimark_enhancing_robustness_of_sentence-level_watermarking_against_text_paraphr.md)
+- [\[ICML 2025\] The Canary's Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text](../../ICML2025/llm_safety/the_canarys_echo_auditing_privacy_risks_of_llm-generated_synthetic_text.md)
+- [\[NeurIPS 2025\] Music Arena: Live Evaluation for Text-to-Music](music_arena_live_evaluation_for_text-to-music.md)
 
 </div>
 

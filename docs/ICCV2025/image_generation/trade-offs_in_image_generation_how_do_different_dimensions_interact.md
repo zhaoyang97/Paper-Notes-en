@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Trade-offs in Image Generation: How Do Different Dimensions Interact?
 description: >-
-  [ICCV 2025][Image Generation][Image generation evaluation] This paper proposes TRIG-Bench, a benchmark comprising 40,200 samples across 10 evaluation dimensions and 132 pairwise dimension subsets…
+  [ICCV 2025][Image Generation][Image generation evaluation] This paper proposes TRIG-Bench, a benchmark comprising 40,200 samples across 10 evaluation dimensions and 132 pairwise dimension subsets, along with a VLM-as-Judge metric termed TRIGScore. It is the first work to systematically reveal and analyze trade-offs among evaluation dimensions (e.g., realism, relation alignment, style) in image generation models, and leverages a Dimension Trade-off Map (DTM) to guide fine-tuni…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "VLM-as-Judge"
   - "text-to-image"
 date: 2026-05-08
-content_hash: 1f20c06f6c1d7fcd
+content_hash: 6f067d04f809ad4e
 ---
 
 # Trade-offs in Image Generation: How Do Different Dimensions Interact?
@@ -147,11 +147,11 @@ The TRIG framework consists of three core components:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Conditional Balance: Improving Multi-Conditioning Trade-Offs in Image Generation](../../CVPR2025/image_generation/conditional_balance_improving_multi-conditioning_trade-offs_in_image_generation.md)
+- [\[CVPR 2025\] Enhancing Privacy-Utility Trade-offs to Mitigate Memorization in Diffusion Models](../../CVPR2025/image_generation/enhancing_privacy-utility_trade-offs_to_mitigate_memorization_in_diffusion_model.md)
 - [\[ICCV 2025\] Erasing More Than Intended? How Concept Erasure Degrades the Generation of Non-Target Concepts](erasing_more_than_intended_how_concept_erasure_degrades_the_generation_of_non-ta.md)
 - [\[ICCV 2025\] Text Embedding Knows How to Quantize Text-Guided Diffusion Models](text_embedding_knows_how_to_quantize_text-guided_diffusion_models.md)
-- [\[ICCV 2025\] Holistic Tokenizer for Autoregressive Image Generation](holistic_tokenizer_for_autoregressive_image_generation.md)
 - [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
-- [\[ICCV 2025\] CAP: Evaluation of Persuasive and Creative Image Generation](cap_evaluation_of_persuasive_and_creative_image_generation.md)
 
 </div>
 

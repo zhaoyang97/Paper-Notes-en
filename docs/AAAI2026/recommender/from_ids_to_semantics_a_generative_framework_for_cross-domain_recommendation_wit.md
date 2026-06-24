@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization
 description: >-
-  [AAAI 2026][Recommender Systems][Cross-domain recommendation] This paper proposes GenCDR, a framework that introduces the generative semantic ID paradigm into LLM-driven cross-domain recommendation for the first time…
+  [AAAI 2026][Recommender Systems][Cross-domain recommendation] This paper proposes GenCDR, a framework that introduces the generative semantic ID paradigm into LLM-driven cross-domain recommendation for the first time, via two core modules: domain-adaptive semantic tokenization and cross-domain autoregressive recommendation. GenCDR effectively addresses the non-transferability of item IDs and insufficient domain-personalized modeling in conventional approaches.
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "large language models"
   - "domain adaptation"
 date: 2026-05-08
-content_hash: a71ef695f64ee7c4
+content_hash: 940e7660e4b45d0a
 ---
 
 # From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization
@@ -161,9 +161,9 @@ GenCDR significantly outperforms existing state-of-the-art methods across all sc
 
 - [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
 - [\[AAAI 2026\] Inductive Generative Recommendation via Retrieval-based Speculation](inductive_generative_recommendation_via_retrieval-based_speculation.md)
-- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
+- [\[ACL 2025\] GRAM: Generative Recommendation via Semantic-aware Multi-granular Late Fusion](../../ACL2025/recommender/gram_generative_recommendation.md)
 - [\[ACL 2026\] Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation](../../ACL2026/recommender/intent-driven_semantic_id_generation_for_grounded_conversational_news_recommenda.md)
-- [\[AAAI 2026\] Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation](wavelet_enhanced_adaptive_frequency_filter_for_sequential_re.md)
+- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
 
 </div>
 

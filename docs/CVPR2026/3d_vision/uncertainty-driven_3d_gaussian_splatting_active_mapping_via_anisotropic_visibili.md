@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GAVIS is proposed—a method modeling the "visibility" of each Gaussian particle relative to training viewpoints as a direction-dependent **anisotropic visibility field** in 3DGS. This field is analytically constructed and queried (training-free, within 1 second) using Spherical Harmonics (SH). Integration into Bayesian-
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] GAVIS is proposed—a method modeling the "visibility" of each Gaussian particle relative to training viewpoints as a direction-dependent **anisotropic visibility field** in 3DGS. This field is analytically constructed and queried (training-free, within 1 second) using Spherical Harmonics (SH). Integration into Bayesian-style uncertainty-aware rasterization provides reliable, 200 FPS real-time uncertainty estimation for robotic acti…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Uncertainty Quantification"
+  - "Anisotropic Visibility Field"
+  - "Active Mapping"
+  - "Spherical Harmonics"
 date: 2026-05-08
-content_hash: 3a3ceff72447e135
+content_hash: 38b36dc6a14360df
 ---
+
 # Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field
 
 **Conference**: CVPR 2026  
@@ -158,11 +164,11 @@ UQ Quality (Tab. 4): GAVIS scores **AUSE-D = 0.24, AUSE-V = 0.176**, significant
 
 ## Related Papers
 
+- [\[CVPR 2026\] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping](magician_efficient_long-term_planning_with_imagined_gaussians_for_active_mapping.md)
 - [\[CVPR 2026\] Paparazzo: Active Mapping of Moving 3D Objects](paparazzo_active_mapping_of_moving_3d_objects.md)
 - [\[CVPR 2026\] NVGS: Neural Visibility for Occlusion Culling in 3D Gaussian Splatting](nvgs_neural_visibility_for_occlusion_culling_in_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping](magician_efficient_long-term_planning_with_imagined_gaussians_for_active_mapping.md)
+- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
-- [\[AAAI 2026\] Surface-Based Visibility-Guided Uncertainty for Continuous Active 3D Neural Reconstruction](../../AAAI2026/3d_vision/surface-based_visibility-guided_uncertainty_for_continuous_active_3d_neural_reco.md)
 
 </div>
 

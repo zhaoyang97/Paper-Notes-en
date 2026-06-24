@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WhisperNet: A Scalable Solution for Bandwidth-Efficient Collaboration
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] WhisperNet flips the collaborative perception communication strategy from "senders choosing spatial regions" to "receiver-centric global scheduling." Based on lightweight metadata reported by all parties, the receiver simultaneously determines "where (spatial)" and "what (channels)" to transmit, improving AP@0.7 by 2.4
+  [CVPR 2026][Autonomous Driving][Collaborative Perception] WhisperNet flips the collaborative perception communication strategy from "senders choosing spatial regions" to "receiver-centric global scheduling." Based on lightweight metadata reported by all parties, the receiver simultaneously determines "where (spatial)" and "what (channels)" to transmit, improving AP@0.7 by 2.4% while using only 0.5% bandwidth on OPV2V.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Collaborative Perception"
+  - "V2X Communication"
+  - "Bandwidth Efficiency"
+  - "Channel Redundancy"
+  - "Receiver-Side Coordination"
 date: 2026-05-08
-content_hash: 2ba0f65b91aba333
+content_hash: 9ef3d32dde5276a9
 ---
+
 # WhisperNet: A Scalable Solution for Bandwidth-Efficient Collaboration
 
 **Conference**: CVPR 2026  
@@ -133,15 +139,15 @@ Incremental contribution of modules (OPV2V, transmission limit <50%):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] DriveMamba: Task-Centric Scalable State Space Model for Efficient End-to-End Autonomous Driving](../../ICLR2026/autonomous_driving/drivemamba_task-centric_scalable_state_space_model_for_efficient_end-to-end_auto.md)
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
 - [\[CVPR 2026\] Efficient Equivariant Transformer for Self-Driving Agent Modeling](efficient_equivariant_transformer_for_self-driving_agent_modeling.md)
 - [\[CVPR 2026\] MAD: Motion Appearance Decoupling for Efficient Driving World Models](mad_motion_appearance_decoupling_for_efficient_driving_world_models.md)
-- [\[ECCV 2024\] Monocular Occupancy Prediction for Scalable Indoor Scenes](../../ECCV2024/autonomous_driving/monocular_occupancy_prediction_for_scalable_indoor_scenes.md)
-- [\[CVPR 2025\] Towards Autonomous Micromobility through Scalable Urban Simulation](../../CVPR2025/autonomous_driving/towards_autonomous_micromobility_through_scalable_urban_simulation.md)
+- [\[CVPR 2026\] NoRD: A Data-Efficient Vision-Language-Action Model that Drives without Reasoning](nord_a_data-efficient_vision-language-action_model_that_drives_without_reasoning.md)
 
 </div>
 

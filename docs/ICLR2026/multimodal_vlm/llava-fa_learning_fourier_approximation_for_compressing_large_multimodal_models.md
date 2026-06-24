@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LLaVA-FA: Learning Fourier Approximation for Compressing Large Multimodal Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Model Compression] LLaVA-FA is proposed as an efficient multimodal large model compression method that performs joint low-rank and quantized weight approximation in the frequency domain. By utilizing the decorrelation and conjugate symmetry properties of the Fourier transform, it achieves a more compact and accurate weight representation
+  [ICLR 2026][Multimodal VLM][Model Compression] LLaVA-FA is proposed as an efficient multimodal large model compression method that performs joint low-rank and quantized weight approximation in the frequency domain. By utilizing the decorrelation and conjugate symmetry properties of the Fourier transform, it achieves a more compact and accurate weight representation. Combined with PolarQuant (polar coordinate quantization) and ODC (Optional Diagonal Calibration)…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Model Compression
-  - Quantization
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Model Compression"
+  - "Fourier Transform"
+  - "Low-rank Decomposition"
+  - "Quantization"
+  - "Multimodal Language Models"
 date: 2026-05-08
-content_hash: 960fc2bcac7e7b6e
+content_hash: 9a0def70e092536c
 ---
+
 # LLaVA-FA: Learning Fourier Approximation for Compressing Large Multimodal Models
 
 **Conference**: ICLR 2026  
@@ -139,7 +143,7 @@ The core insight of this work is the introduction of mature frequency domain ana
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer
 description: >-
-  [CVPR 2026][Object Detection][LoRA] This paper proposes the Evolving World Object Detection (EWOD) paradigm and the EW-DETR framework. By synergizing three modules—Incremental LoRA Adapters, Query Norm Objectness Adapter, and Entropy-aware Unknown Mixing—the framework simultaneously addresses class-incremental learning, domain adaptation, and unknown obj
+  [CVPR2026][Object Detection][Open World Object Detection] This paper proposes the Evolving World Object Detection (EWOD) paradigm and the EW-DETR framework. By synergizing three modules—Incremental LoRA Adapters, Query Norm Objectness Adapter, and Entropy-aware Unknown Mixing—the framework simultaneously addresses class-incremental learning, domain adaptation, and unknown object detection under no-replay constraints, achieving a 57.24% improvement in the FOGS metric.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - LoRA
-  - DETR
+  - "CVPR2026"
+  - "Object Detection"
+  - "Open World Object Detection"
+  - "Incremental Learning"
+  - "Domain Adaptation"
+  - "Unknown Object Detection"
+  - "LoRA"
+  - "DETR"
 date: 2026-05-08
-content_hash: a1ce7e9f1a4b0d25
+content_hash: 652edc5b037c78eb
 ---
+
 # EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer
 
 **Conference**: CVPR2026  
@@ -156,9 +161,9 @@ EW-DETR (RF-DETR) achieves the highest FOGS across all domain shift scenarios, w
 
 - [\[CVPR 2026\] Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection](detecting_unknown_objects_via_energy-based_separation.md)
 - [\[CVPR 2026\] FSLoRA: Harmonizing Detection and Re-Identification via Freq-Spatial Low-Rank Adapter for One-Stage Person Search](fslora_harmonizing_detection_and_re-identification_via_freq-spatial_low-rank_ada.md)
+- [\[ICLR 2026\] DETR-ViP: Detection Transformer with Robust Discriminative Visual Prompts](../../ICLR2026/object_detection/detr-vip_detection_transformer_with_robust_discriminative_visual_prompts.md)
 - [\[CVPR 2026\] Parameterized Prompt for Incremental Object Detection](parameterized_prompt_for_incremental_object_detection.md)
 - [\[CVPR 2026\] RARE: Learn to RAnk and REtrieve for Monocular 3D Object Detection](rare_learn_to_rank_and_retrieve_for_monocular_3d_object_detection.md)
-- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
 
 </div>
 

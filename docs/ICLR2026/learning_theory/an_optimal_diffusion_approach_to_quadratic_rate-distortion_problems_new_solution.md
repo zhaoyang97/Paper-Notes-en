@@ -2,13 +2,23 @@
 title: >-
   [Paper Note] An Optimal Diffusion Approach to Quadratic Rate-Distortion Problems: New Solution and Approximation Methods
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper reformulates the calculation of the Rate-Distortion (RD) function for continuous sources under MSE distortion as a "Terminal-Entropy Regulated Stochastic Control" problem. It proves that the rate-distortion tradeoff is equivalent to the control energy-terminal entropy tradeoff and identifies that under regul
+  [ICLR2026][Learning Theory][Rate-distortion function] This paper reformulates the calculation of the Rate-Distortion (RD) function for continuous sources under MSE distortion as a "Terminal-Entropy Regulated Stochastic Control" problem. It proves that the rate-distortion tradeoff is equivalent to the control energy-terminal entropy tradeoff and identifies that under regularity conditions, the optimal control is precisely the Stein score of the solution to the backward heat eq…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Information Theory"
+  - "Rate-Distortion"
+  - "Stochastic Control"
+  - "Diffusion Processes"
+  - "Rate-distortion function"
+  - "Entropy-regularized optimal transport"
+  - "Schrödinger bridge"
+  - "Backward heat equation"
+  - "Diffusion estimation"
 date: 2026-05-08
-content_hash: 57d231740eaefeef
+content_hash: fde2e7fd0cabc902
 ---
+
 # An Optimal Diffusion Approach to Quadratic Rate-Distortion Problems: New Solution and Approximation Methods
 
 **Conference**: ICLR2026  
@@ -118,16 +128,16 @@ On the 33-dimensional speech feature set, NERD and WGD were constrained by $R < 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] A New Approach to Controlling Linear Dynamical Systems](a_new_approach_to_controlling_linear_dynamical_systems.md)
 - [\[ICLR 2026\] Bi-Criteria Metric Distortion](bi-criteria_metric_distortion.md)
 - [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
-- [\[ICLR 2026\] Sharp Asymptotic Theory for Q-Learning with LD2Z Learning Rate and Its Generalization](sharp_asymptotic_theory_for_q-learning_with_textttld2z_learning_rate_and_its_gen.md)
-- [\[ICLR 2026\] Diffusion and Flow-based Copulas: Forgetting and Remembering Dependencies](diffusion_and_flow-based_copulas_forgetting_and_remembering_dependencies.md)
+- [\[ICLR 2026\] The Effect of Attention Head Count on Transformer Approximation](the_effect_of_attention_head_count_on_transformer_approximation.md)
+- [\[ICLR 2026\] A New Initialization to Control Gradients in Sinusoidal Neural Networks](a_new_initialization_to_control_gradients_in_sinusoidal_neural_networks.md)
 
 </div>
 

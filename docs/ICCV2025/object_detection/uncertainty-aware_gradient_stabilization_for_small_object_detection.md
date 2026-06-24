@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncertainty-Aware Gradient Stabilization for Small Object Detection
 description: >-
-  [ICCV 2025][Object Detection][Small object detection] This paper identifies gradient instability caused by steep loss curvature in traditional localization methods when applied to small objects…
+  [ICCV 2025][Object Detection][Small object detection] This paper identifies gradient instability caused by steep loss curvature in traditional localization methods when applied to small objects, and proposes UGS (Uncertainty-aware Gradient Stabilization), a framework comprising three components — classification-based localization, uncertainty minimization, and uncertainty-guided refinement — to stabilize gradients and significantly improve small object detection performance.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "classification-based localization"
   - "adversarial perturbation"
 date: 2026-05-08
-content_hash: b4e63b1995616fd0
+content_hash: f0bb83e51ed4be9e
 ---
 
 # Uncertainty-Aware Gradient Stabilization for Small Object Detection
@@ -154,11 +154,11 @@ Each component contributes consistent gains; the full UGS improves over the $\ma
 
 ## Related Papers
 
+- [\[CVPR 2026\] Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection](../../CVPR2026/object_detection/target-aware_invertible_encoder_with_reconstruction_guidance_for_infrared_small_.md)
 - [\[NeurIPS 2025\] CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection](../../NeurIPS2025/object_detection/cq-dino_mitigating_gradient_dilution_via_category_queries_for_vast_vocabulary_ob.md)
-- [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/object_detection/rethinking_evaluation_of_infrared_small_target_detection.md)
+- [\[CVPR 2026\] Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection](../../CVPR2026/object_detection/towards_persistence_learning_topological_constraints_for_event-based_small_objec.md)
 - [\[ICCV 2025\] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision](from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe.md)
-- [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](../../AAAI2026/object_detection/temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
-- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](../../CVPR2026/object_detection/paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
+- [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](../../CVPR2026/object_detection/chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
 
 </div>
 

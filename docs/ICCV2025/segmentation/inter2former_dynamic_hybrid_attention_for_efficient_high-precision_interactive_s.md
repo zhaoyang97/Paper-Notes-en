@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation
 description: >-
-  [ICCV 2025][Segmentation][interactive segmentation] This paper proposes Inter2Former, which employs Dynamic Hybrid Attention (DHA) to route boundary tokens to full attention and non-boundary tokens to linear-complexity B…
+  [ICCV 2025][Segmentation][interactive segmentation] This paper proposes Inter2Former, which employs Dynamic Hybrid Attention (DHA) to route boundary tokens to full attention and non-boundary tokens to linear-complexity BSQ attention. Combined with Dynamic Prompt Embedding (DPE), Hybrid Mixture of Experts (HMoE), and Dynamic Local Upsampling (DLU), the method achieves state-of-the-art performance and efficient inference for high-precision interactive segmentation on CPU device…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "BSQ attention"
   - "dynamic computation allocation"
 date: 2026-05-08
-content_hash: c4a63157c3d11a96
+content_hash: 052b43918cfc1427
 ---
 
 # Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation
@@ -190,11 +190,11 @@ Inter2Former achieves state-of-the-art across all metrics, with inference speed 
 
 ## Related Papers
 
+- [\[CVPR 2025\] ROS-SAM: High-Quality Interactive Segmentation for Remote Sensing Moving Object](../../CVPR2025/segmentation/ros-sam_high-quality_interactive_segmentation_for_remote_sensing_moving_object.md)
 - [\[ICCV 2025\] Hybrid-TTA: Continual Test-time Adaptation via Dynamic Domain Shift Detection](hybrid-tta_continual_test-time_adaptation_via_dynamic_domain_shift_detection.md)
+- [\[CVPR 2026\] High-Precision Dichotomous Image Segmentation via Depth Integrity-Prior and Fine-Grained Patch Strategy](../../CVPR2026/segmentation/high-precision_dichotomous_image_segmentation_via_depth_integrity-prior_and_fine.md)
 - [\[ICCV 2025\] TinyViM: Frequency Decoupling for Tiny Hybrid Vision Mamba](tinyvim_frequency_decoupling_for_tiny_hybrid_vision_mamba.md)
 - [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
-- [\[CVPR 2026\] MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention](../../CVPR2026/segmentation/mixercseg_an_efficient_mixer_architecture_for_crack_segmentation_via_decoupled_m.md)
-- [\[ICCV 2025\] A Plug-and-Play Physical Motion Restoration Approach for In-the-Wild High-Difficulty Motions](a_plugandplay_physical_motion_restoration_approach_for_inthe.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search
 description: >-
-  [NeurIPS 2025][LLM Efficiency][hybrid attention] NVIDIA proposes the PostNAS pipeline — starting from a pretrained full-attention model, freezing MLP weights…
+  [NeurIPS 2025][LLM Efficiency][hybrid attention] NVIDIA proposes the PostNAS pipeline — starting from a pretrained full-attention model, freezing MLP weights, and applying a four-step search (full-attention layer placement → linear attention block selection → novel JetBlock design → hardware-aware hyperparameter search) to yield the hybrid Jet-Nemotron architecture. The 2B model surpasses Qwen3-1.7B on MMLU-Pro while achieving 47× higher generation throughput.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "efficient LLM"
   - "KV cache"
 date: 2026-05-08
-content_hash: 3136ad1c4df4271c
+content_hash: 3711ce1203ebb415
 ---
 
 # Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search
@@ -142,11 +142,11 @@ PostNAS begins from a pretrained full-attention model (e.g., Qwen2.5-1.5B), free
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Critical Batch Size Revisited: A Simple Empirical Approach to Large-Batch Language Model Training](critical_batch_size_revisited_a_simple_empirical_approach_to_large-batch_languag.md)
-- [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)
+- [\[ICLR 2026\] Composer: A Search Framework for Hybrid Neural Architecture Design](../../ICLR2026/llm_efficiency/composer_a_search_framework_for_hybrid_neural_architecture_design.md)
 - [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
-- [\[AAAI 2026\] Scaling and Transferability of Annealing Strategies in Large Language Model Training](../../AAAI2026/llm_efficiency/scaling_and_transferability_of_annealing_strategies_in_large_language_model_trai.md)
-- [\[ICML 2026\] SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm](../../ICML2026/llm_efficiency/siamesenorm_breaking_the_barrier_to_reconciling_prepost-norm.md)
+- [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)
+- [\[NeurIPS 2025\] Critical Batch Size Revisited: A Simple Empirical Approach to Large-Batch Language Model Training](critical_batch_size_revisited_a_simple_empirical_approach_to_large-batch_languag.md)
+- [\[ICLR 2026\] Demystifying and Enhancing the Efficiency of Large Language Model Based Search Agents](../../ICLR2026/llm_efficiency/demystifying_and_enhancing_the_efficiency_of_large_language_model_based_search_a.md)
 
 </div>
 

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MaxSup: Overcoming Representation Collapse in Label Smoothing
 description: >-
-  [NeurIPS 2025][Label Smoothing] By decomposing the loss function of Label Smoothing (LS), this paper identifies an "error amplification term" that exacerbates misclassification…
+  [NeurIPS 2025 Oral][Label Smoothing] By decomposing the loss function of Label Smoothing (LS), this paper identifies an "error amplification term" that exacerbates misclassification, leading to intra-class feature collapse. The proposed Max Suppression (MaxSup) method redirects the penalty target from the ground-truth logit to the top-1 logit, eliminating the error amplification effect while preserving beneficial regularization.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Label Smoothing"
   - "Regularization"
   - "Representation Collapse"
   - "Logit Penalty"
   - "Overconfidence"
 date: 2026-05-08
-content_hash: 661e41ae725826e8
+content_hash: 68ee4535ff9ec1bd
 ---
 
 # MaxSup: Overcoming Representation Collapse in Label Smoothing
@@ -134,11 +134,11 @@ MaxSup consistently outperforms LS and other variants (OLS, Zipf-LS) across all 
 
 ## Related Papers
 
+- [\[ICML 2025\] Provably Cost-Sensitive Adversarial Defense via Randomized Smoothing](../../ICML2025/others/provably_cost-sensitive_adversarial_defense_via_randomized_smoothing.md)
 - [\[NeurIPS 2025\] The Persistence of Neural Collapse Despite Low-Rank Bias](the_persistence_of_neural_collapse_despite_low-rank_bias.md)
 - [\[NeurIPS 2025\] Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model](neural_collapse_in_cumulative_link_models_for_ordinal_regression_an_analysis_wit.md)
 - [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
 - [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](../../ICCV2025/others/lacoot_layer_collapse_through_optimal_transport.md)
-- [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](../../ICLR2026/others/noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
 
 </div>
 

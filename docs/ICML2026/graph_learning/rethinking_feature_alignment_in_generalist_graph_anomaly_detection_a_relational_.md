@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Feature Alignment in Generalist Graph Anomaly Detection: A Relational Fingerprint-based Approach
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] Addressing the negative transfer problem in generalist graph anomaly detection where "PCA alignment only unifies dimensions but not semantics," this paper proposes a 5-dimensional "Relational Fingerprint" (neighborhood position/direction/global direction consistency + degree + clustering coefficient) to explicitly extr
+  [ICML 2026][Graph Learning][Generalist Graph Anomaly Detection] Addressing the negative transfer problem in generalist graph anomaly detection where "PCA alignment only unifies dimensions but not semantics," this paper proposes a 5-dimensional "Relational Fingerprint" (neighborhood position/direction/global direction consistency + degree + clustering coefficient) to explicitly extract anomaly-indicative clues as cross-domain universal features. Combined with a domain-shared T…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Generalist Graph Anomaly Detection"
+  - "Relational Fingerprint"
+  - "Cross-domain Alignment"
+  - "SNR Recalibration"
+  - "Few-shot"
 date: 2026-05-08
-content_hash: 46bd4b959cf7ee1c
+content_hash: d6a5e72b526dfb09
 ---
+
 # Rethinking Feature Alignment in Generalist Graph Anomaly Detection: A Relational Fingerprint-based Approach
 
 **Conference**: ICML 2026  
@@ -123,15 +129,14 @@ ReFi-GAD ranks first among all generalist baselines (ARC / UNPrompt / AnomalyGFM
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] ProMoS: Generalist Graph Anomaly Detection via Prototype-Based Distillation](generalist_graph_anomaly_detection_via_prototype-based_distillation.md)
+- [\[ICLR 2026\] DR-GGAD: Dual Residual Centering for Mitigating Anomaly Non‑Discriminativity in Generalist Graph Anomaly Detection](../../ICLR2026/graph_learning/dr-ggad_dual_residual_centering_for_mitigating_anomaly_nondiscriminativity_in_ge.md)
 - [\[ICML 2026\] Learnable Kernel Density Estimation for Graphs and Its Application to Graph-Level Anomaly Detection](learnable_kernel_density_estimation_for_graphs_and_its_application_to_graph-leve.md)
+- [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](../../ICLR2026/graph_learning/topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)
 - [\[ICML 2026\] Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves](polynomial_neural_sheaf_diffusion_a_spectral_filtering_approach_on_cellular_shea.md)
-- [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
-- [\[ICLR 2026\] Relational Graph Transformer](../../ICLR2026/graph_learning/relational_graph_transformer.md)
 
 </div>
 

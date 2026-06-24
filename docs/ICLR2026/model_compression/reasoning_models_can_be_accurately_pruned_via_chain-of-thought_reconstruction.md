@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reasoning Models Can be Accurately Pruned Via Chain-of-Thought Reconstruction
 description: >-
-  [ICLR 2026][Model Compression][Chain-of-Thought] The authors observe that applying standard LLM pruning methods (e.g., SparseGPT) directly to long Chain-of-Thought (CoT) reasoning models like DeepSeek-R1 leads to significant performance degradation and even slower inference. The root cause is that these methods only use "input prompts" for calibration, whereas reason
+  [ICLR 2026][Model Compression][Model Pruning] The authors observe that applying standard LLM pruning methods (e.g., SparseGPT) directly to long Chain-of-Thought (CoT) reasoning models like DeepSeek-R1 leads to significant performance degradation and even slower inference. The root cause is that these methods only use "input prompts" for calibration, whereas reasoning is a "decode-dominated" task. They propose RAC (Reasoning-Aware Compression)…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model Pruning"
+  - "Reasoning Models"
+  - "Chain-of-Thought"
+  - "Calibration Data"
+  - "One-shot Pruning"
 date: 2026-05-08
-content_hash: 14638e488b7cc2c7
+content_hash: 8f60b0db372d64e9
 ---
+
 # Reasoning Models Can be Accurately Pruned Via Chain-of-Thought Reconstruction
 
 **Conference**: ICLR 2026  
@@ -135,10 +140,10 @@ RAC consistently outperforms C4 and generally beats Prompt-Only at high sparsity
 ## Related Papers
 
 - [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](../../ACL2026/model_compression/lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
-- [\[ICLR 2026\] BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models](beyondbench_contamination-resistant_evaluation_of_reasoning_in_language_models.md)
+- [\[ICLR 2026\] Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models](scaling_reasoning_hop_exposes_weaknesses_demystifying_and_improving_hop_generali.md)
 - [\[ICLR 2026\] TP-Spikformer: Token Pruned Spiking Transformer](tp-spikformer_token_pruned_spiking_transformer.md)
+- [\[ICLR 2026\] BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models](beyondbench_contamination-resistant_evaluation_of_reasoning_in_language_models.md)
 - [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
-- [\[NeurIPS 2025\] A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings](../../NeurIPS2025/model_compression/a-thought_efficient_reasoning_via_bidirectional_compression_for_low-resource_set.md)
 
 </div>
 

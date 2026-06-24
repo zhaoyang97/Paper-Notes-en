@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation
 description: >-
-  [CVPR 2026][3D Vision][Hourglass Transformer] FlashMesh adapts "speculative decoding" from large language models to autoregressive mesh generation. By designing a predict–correct–verify framework tailored for the hierarchical structure of the Hourglass Transformer, the model predicts multiple tokens in parallel per step with geometric error correction. It achieves
+  [CVPR 2026][3D Vision][Autoregressive mesh synthesis] FlashMesh adapts "speculative decoding" from large language models to autoregressive mesh generation. By designing a predict–correct–verify framework tailored for the hierarchical structure of the Hourglass Transformer, the model predicts multiple tokens in parallel per step with geometric error correction. It achieves approximately 2× inference speedup on Meshtron-2B while reducing the Chamfer Distance from 0.092 to 0.089…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Hourglass Transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Autoregressive mesh synthesis"
+  - "speculative decoding"
+  - "Hourglass Transformer"
+  - "parallel decoding"
+  - "geometric consistency"
 date: 2026-05-08
-content_hash: faa83ef388366f33
+content_hash: fd5c1a53774350fc
 ---
+
 # FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation
 
 **Conference**: CVPR 2026  
@@ -174,16 +179,15 @@ Trade-offs in draft token quantity (n–m denotes n face tokens and m point toke
 
 ## Related Papers
 
+- [\[CVPR 2026\] MeshRipple: Structured Autoregressive Generation of Artist-Meshes](meshripple_structured_autoregressive_generation_of_artist-meshes.md)
 - [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[CVPR 2026\] ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation](exmesh_explicit_mesh_reconstruction_with_topology_adaptation.md)
-- [\[CVPR 2026\] Anny-Fit: All-Age Human Mesh Recovery](anny-fit_all-age_human_mesh_recovery.md)
+- [\[CVPR 2026\] PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction](pixarmesh_autoregressive_mesh-native_single-view_scene_reconstruction.md)
+- [\[ICLR 2026\] Efficient-LVSM: Faster, Cheaper, and Better Large View Synthesis Model via Decoupled Co-Refinement Attention](../../ICLR2026/3d_vision/efficient-lvsm_faster_cheaper_and_better_large_view_synthesis_model_via_decouple.md)
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)

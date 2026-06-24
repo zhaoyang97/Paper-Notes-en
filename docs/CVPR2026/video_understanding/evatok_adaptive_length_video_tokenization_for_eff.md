@@ -1,19 +1,20 @@
 ---
 title: >-
-  [Paper Note] EVATok: 自适应长度视频Tokenization用于高效视觉自回归生成
+  [Paper Note] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation
 description: >-
-  [CVPR 2026][Image Generation][video tokenizer] The EVATok framework is proposed, featuring a three-step pipeline—optimal token allocation estimation, a lightweight router, and adaptive tokenizer training. This allows the video tokenizer to adaptively allocate token lengths based on clip complexity, saving over 24.4% of tokens while achieving SOTA generation quality
+  [CVPR 2026][Video Understanding][video tokenizer] The EVATok framework is proposed, featuring a three-step pipeline—optimal token allocation estimation, a lightweight router, and adaptive tokenizer training. This allows the video tokenizer to adaptively allocate token lengths based on clip complexity, saving over 24.4% of tokens while achieving SOTA generation quality on UCF-101.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - video tokenizer
-  - adaptive token
-  - autoregressive generation
-  - efficiency
-  - VQ-VAE
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "video tokenizer"
+  - "adaptive token"
+  - "autoregressive generation"
+  - "efficiency"
+  - "VQ-VAE"
 date: 2026-05-08
-content_hash: 7f356394d6a7c3ea
+content_hash: 952023f7fe0a7d74
 ---
+
 # EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation
 
 **Conference**: CVPR 2026  
@@ -118,11 +119,11 @@ This reinforcement recipe ensures that tokens carry robust semantic meaning, pre
 
 ## Related Papers
 
-- [\[CVPR 2026\] Spherical Leech Quantization for Visual Tokenization and Generation](spherical_leech_quantization_for_visual_tokenization_and_generation.md)
-- [\[CVPR 2026\] CaTok: Taming Mean Flows for One-Dimensional Causal Image Tokenization](catok_taming_mean_flows_for_one-dimensional_causal_image_tokenization.md)
-- [\[CVPR 2025\] Language-Guided Image Tokenization for Generation](../../CVPR2025/image_generation/language-guided_image_tokenization_for_generation.md)
-- [\[ICCV 2025\] Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization](../../ICCV2025/image_generation/efficient_autoregressive_shape_generation_via_octree-based_adaptive_tokenization.md)
-- [\[CVPR 2025\] Efficient Long Video Tokenization via Coordinate-based Patch Reconstruction](../../CVPR2025/image_generation/efficient_long_video_tokenization_via_coordinate-based_patch_reconstruction.md)
+- [\[CVPR 2026\] Adaptive Capacity Autoregressive Visual Tracking](adaptive_capacity_autoregressive_visual_tracking.md)
+- [\[CVPR 2026\] Learnable Motion-Focused Tokenization for Effective and Efficient Video Unsupervised Domain Adaptation](learnable_motion-focused_tokenization_for_effective_and_efficient_video_unsuperv.md)
+- [\[CVPR 2026\] Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing](autogaze_attend_before_attention_efficient_video.md)
+- [\[CVPR 2026\] PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation](pyratok_language-aligned_pyramidal_tokenizer_for_video_understanding_and_generat.md)
+- [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
 
 </div>
 

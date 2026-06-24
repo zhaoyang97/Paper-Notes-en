@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation
 description: >-
-  [ACL 2026][Causal Inference][Paper Note] This paper systematically investigates the multilingual counterfactual generation capabilities of LLMs across six languages. By comparing direct generation and translation-based paths, it finds that the translation path yields higher label flip rates but requires more edits. It identifies four common error patterns and
+  [ACL 2026][Causal Inference][Multilingual counterfactual generation] This paper systematically investigates the multilingual counterfactual generation capabilities of LLMs across six languages. By comparing direct generation and translation-based paths, it finds that the translation path yields higher label flip rates but requires more edits. It identifies four common error patterns and validates that multilingual counterfactual data augmentation outperforms cross-lingual aug…
 tags:
-  - ACL 2026
-  - Causal Inference
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Multilingual counterfactual generation"
+  - "counterfactual explanation"
+  - "data augmentation"
+  - "cross-lingual consistency"
+  - "LLM multilingual capability"
 date: 2026-05-08
-content_hash: d14a4a6db167f353
+content_hash: 152d2a5fa5c8d157
 ---
+
 # Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation
 
 **Conference**: ACL 2026  
@@ -142,8 +148,8 @@ Counterfactual generation is performed zero-shot/few-shot. Training occurs only 
 - [\[ACL 2025\] FitCF: A Framework for Automatic Feature Importance-guided Counterfactual Example Generation](../../ACL2025/causal_inference/fitcf_a_framework_for_automatic_feature_importance-guided_counterfactual_example.md)
 - [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](../../ICLR2026/causal_inference/on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
 - [\[ICML 2025\] E-LDA: Toward Interpretable LDA Topic Models with Strong Guarantees in Logarithmic Parallel Time](../../ICML2025/causal_inference/e-lda_toward_interpretable_lda_topic_models_with_strong_guarantees_in_logarithmi.md)
+- [\[ICLR 2026\] Counterfactual LLM-based Framework for Measuring Rhetorical Style](../../ICLR2026/causal_inference/counterfactual_llm-based_framework_for_measuring_rhetorical_style.md)
 - [\[ACL 2026\] iTAG: Inverse Design for Natural Text Generation with Accurate Causal Graph Annotations](itag_inverse_design_for_natural_text_generation_with_accurate_causal_graph_annot.md)
-- [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](../../ICLR2026/causal_inference/function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
 
 </div>
 

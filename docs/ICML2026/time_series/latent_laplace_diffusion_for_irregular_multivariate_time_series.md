@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Latent Laplace Diffusion for Irregular Multivariate Time Series
 description: >-
-  [ICML 2026][Time Series][Diffusion Model] LLapDiff is a generative framework that performs **diffusion in latent space**. By parameterizing **stable modal evolution** with learnable complex-conjugate poles in the Laplace domain, it achieves long-term forecasting and missing value imputation for irregular time series **without step-by-step physical time integra
+  [ICML 2026 Spotlight][Time Series][Irregular Time Series] LLapDiff is a generative framework that performs **diffusion in latent space**. By parameterizing **stable modal evolution** with learnable complex-conjugate poles in the Laplace domain, it achieves long-term forecasting and missing value imputation for irregular time series **without step-by-step physical time integration**, achieving an average rank of 2.1±1.7 across 7 datasets.
 tags:
-  - ICML 2026
-  - Time Series
-  - Diffusion Model
+  - "ICML 2026 Spotlight"
+  - "Time Series"
+  - "Irregular Time Series"
+  - "Diffusion Models"
+  - "Latent Space Generation"
+  - "Laplace Domain"
+  - "Port-Hamiltonian Systems"
 date: 2026-05-08
-content_hash: bbb0b3b4c7a4192d
+content_hash: 6327b98d87fc54a1
 ---
+
 # Latent Laplace Diffusion for Irregular Multivariate Time Series
 
 **Conference**: ICML 2026 Spotlight  
@@ -130,11 +135,11 @@ Average rank: 2.1 ± 1.7 (significantly better than 3.0-6.6 for other diffusion 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
+- [\[ICLR 2026\] A Study of Posterior Stability in Time-Series Latent Diffusion](../../ICLR2026/time_series/a_study_of_posterior_stability_in_time-series_latent_diffusion.md)
 - [\[ICML 2026\] QuITE: Query-based Irregular Time Series Embedding](quite_query-based_irregular_time_series_embedding.md)
+- [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
+- [\[ICLR 2026\] Latent-to-Data Cascaded Diffusion Models for Unconditional Time Series Generation](../../ICLR2026/time_series/latent-to-data_cascaded_diffusion_models_for_unconditional_time_series_generatio.md)
 - [\[AAAI 2026\] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting](../../AAAI2026/time_series/revitalizing_canonical_pre-alignment_for_irregular_multivariate_time_series_fore.md)
-- [\[ICML 2026\] From Observations to States: Latent Time Series Forecasting](from_observations_to_states_latent_time_series_forecasting.md)
-- [\[NeurIPS 2025\] OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales](../../NeurIPS2025/time_series/omnicast_a_masked_latent_diffusion_model_for_weather_forecasting_across_time_sca.md)
 
 </div>
 

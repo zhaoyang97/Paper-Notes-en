@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Relation-R1: Progressively Cognitive Chain-of-Thought Guided Reinforcement Learning for Unified Relation Comprehension
 description: >-
-  [AAAI 2026][LLM Reasoning][Visual Relation Understanding] This paper proposes Relation-R1, the first unified framework for binary and N-ary relation comprehension…
+  [AAAI 2026][Reasoning][Visual Relation Understanding] This paper proposes Relation-R1, the first unified framework for binary and N-ary relation comprehension, combining progressively cognitive CoT-guided SFT with GRPO multi-reward optimization. With only 3B parameters, it surpasses 13B models, achieving 21.20% Mean (+6.87%) on PSG and state-of-the-art performance across all metrics on SWiG (Grnd-all 30.18%, +14.48%).
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Visual Relation Understanding"
   - "Cognitive Chain-of-Thought"
   - "GRPO Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "N-ary Relation Detection"
   - "Multimodal Large Language Models"
 date: 2026-05-08
-content_hash: 9b6ec098d443b000
+content_hash: 7a0c31bef722f1ec
 ---
 
 # Relation-R1: Progressively Cognitive Chain-of-Thought Guided Reinforcement Learning for Unified Relation Comprehension
@@ -158,9 +158,9 @@ The progressive CoT strategy achieves consistent improvements across all metrics
 
 - [\[AAAI 2026\] CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation](cmmcot_enhancing_complex_multi-image_comprehension_via_multi.md)
 - [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](serl_self-examining_reinforcement_learning_on_open-domain.md)
+- [\[ICLR 2026\] SkillFactory: Self-Distillation for Learning Cognitive Behaviors](../../ICLR2026/llm_reasoning/skillfactory_self-distillation_for_learning_cognitive_behaviors.md)
 - [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](../../ICLR2026/llm_reasoning/uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
-- [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
+- [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](serl_self-examining_reinforcement_learning_on_open-domain.md)
 
 </div>
 

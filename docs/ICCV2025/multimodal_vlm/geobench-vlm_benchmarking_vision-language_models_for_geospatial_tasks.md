@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GEOBench-VLM: Benchmarking Vision-Language Models for Geospatial Tasks
 description: >-
-  [ICCV 2025][Multimodal VLM][Vision-Language Models] This paper introduces GEOBench-VLM, a comprehensive benchmark designed to evaluate VLMs on geospatial tasks…
+  [ICCV 2025][Multimodal VLM][Vision-Language Models] This paper introduces GEOBench-VLM, a comprehensive benchmark designed to evaluate VLMs on geospatial tasks, encompassing 31 sub-tasks across 8 major categories and over 10,000 manually verified instructions. The benchmark reveals that current state-of-the-art VLMs, including GPT-4o, still perform poorly on geospatial tasks, with the highest accuracy reaching only 41.7%.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Evaluation"
   - "Temporal Analysis"
 date: 2026-05-08
-content_hash: cee42d7d8b271035
+content_hash: cebb0931397acd09
 ---
 
 # GEOBench-VLM: Benchmarking Vision-Language Models for Geospatial Tasks
@@ -150,10 +150,10 @@ As a benchmark paper, no training is involved. All VLMs are evaluated in a zero-
 ## Related Papers
 
 - [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
+- [\[ACL 2025\] MMSciBench: Benchmarking Language Models on Chinese Multimodal Scientific Problems](../../ACL2025/multimodal_vlm/mmscibench_benchmarking_language_models_on_chinese_multimodal_scientific_problem.md)
+- [\[ICLR 2026\] Benchmarking Large Vision-Language Models on Fine-Grained Image Tasks: A Comprehensive Evaluation](../../ICLR2026/multimodal_vlm/benchmarking_large_vision-language_models_on_fine-grained_image_tasks_a_comprehe.md)
+- [\[ICCV 2025\] Instruction-Grounded Visual Projectors for Continual Learning of Generative Vision-Language Models](instruction-grounded_visual_projectors_for_continual_learning_of_generative_visi.md)
 - [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
-- [\[NeurIPS 2025\] Evaluating Multimodal Large Language Models on Core Music Perception Tasks](../../NeurIPS2025/multimodal_vlm/evaluating_multimodal_large_language_models_on_core_music_perception_tasks.md)
-- [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
-- [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](llava-cot_let_vision_language_models_reason_step-by-step.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] What Does It Take to Build a Performant Selective Classifier?
 description: >-
-  [NeurIPS 2025][selective classification] This paper presents the first finite-sample decomposition of the selective classification gap, attributing it to five sources—Bayes noise, approximation error, ranking error…
+  [NeurIPS 2025][selective classification] This paper presents the first finite-sample decomposition of the selective classification gap, attributing it to five sources—Bayes noise, approximation error, ranking error, statistical noise, and implementation bias—and demonstrates that monotone calibration methods have limited effect on closing this gap.
 tags:
   - "NeurIPS 2025"
   - "selective classification"
@@ -11,7 +11,7 @@ tags:
   - "error decomposition"
   - "uncertainty estimation"
 date: 2026-05-08
-content_hash: 49f9895c218c141f
+content_hash: 89b0017119fbc107
 ---
 
 # What Does It Take to Build a Performant Selective Classifier?
@@ -57,11 +57,11 @@ where $\overline{\mathrm{acc}}$ is the accuracy upper bound of the perfect-ranki
 $$\hat{\Delta}(c) \leq \underbrace{\varepsilon_{\text{Bayes}}(c)}_{\text{irreducible}} + \underbrace{\varepsilon_{\text{approx}}(c)}_{\text{capacity}} + \underbrace{\varepsilon_{\text{rank}}(c)}_{\text{ranking}} + \underbrace{\varepsilon_{\text{stat}}(c)}_{\text{statistical}} + \underbrace{\varepsilon_{\text{misc}}(c)}_{\text{optimization \& shift}}$$
 
    Definitions of each term:
-   - $\varepsilon_{\text{Bayes}}(c) = \mathbb{E}[1-\max\{\eta(X), 1-\eta(X)\} \mid X \in A_c]$: inherent label uncertainty of data in the acceptance region.
-   - $\varepsilon_{\text{approx}}(c) = \mathbb{E}[|\eta_h(X) - \eta(X)| \mid X \in A_c]$: the degree to which the model's hypothesis class fails to approximate the Bayes optimum.
-   - $\varepsilon_{\text{rank}}(c) = \mathbb{E}[\eta_h \mid A_c^*] - \mathbb{E}[\eta_h \mid A_c]$: discrepancy between the confidence score ranking and the true correctness ranking.
-   - $\varepsilon_{\text{stat}}(c) = C\sqrt{\log(1/\delta)/n}$: sampling fluctuations due to finite validation set size.
-   - $\varepsilon_{\text{misc}}(c)$: optimization error and distribution shift.
+    - $\varepsilon_{\text{Bayes}}(c) = \mathbb{E}[1-\max\{\eta(X), 1-\eta(X)\} \mid X \in A_c]$: inherent label uncertainty of data in the acceptance region.
+    - $\varepsilon_{\text{approx}}(c) = \mathbb{E}[|\eta_h(X) - \eta(X)| \mid X \in A_c]$: the degree to which the model's hypothesis class fails to approximate the Bayes optimum.
+    - $\varepsilon_{\text{rank}}(c) = \mathbb{E}[\eta_h \mid A_c^*] - \mathbb{E}[\eta_h \mid A_c]$: discrepancy between the confidence score ranking and the true correctness ranking.
+    - $\varepsilon_{\text{stat}}(c) = C\sqrt{\log(1/\delta)/n}$: sampling fluctuations due to finite validation set size.
+    - $\varepsilon_{\text{misc}}(c)$: optimization error and distribution shift.
 
 2. **Limited Effectiveness of Monotone Calibration (Section 3.4)**: A key insight—monotone post-hoc calibration methods (e.g., isotonic regression, the monotone component of temperature scaling) preserve score rankings and thus leave $A_c$ unchanged, leaving $\Delta(c)$ unchanged. Although temperature scaling may produce **weak** non-monotone re-ranking effects through the nonlinearity of softmax, this effect is fundamentally limited. Truly reducing the gap requires methods that alter rankings:
 
@@ -153,11 +153,11 @@ $$D_{\text{rank}}(c) = \Pr(X \in A_c^* \setminus A_c) + \Pr(X \in A_c \setminus 
 
 ## Related Papers
 
-- [\[CVPR 2026\] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely F₁](../../CVPR2026/others/what_is_the_optimal_ranking_score_between_precision_and_recall_we_can_always_fin.md)
 - [\[ICCV 2025\] Processing and Acquisition Traces in Visual Encoders: What Does CLIP Know About Your Camera?](../../ICCV2025/others/processing_and_acquisition_traces_in_visual_encoders_what_does_clip_know_about_y.md)
-- [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
-- [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
-- [\[AAAI 2026\] How Hard is it to Explain Preferences Using Few Boolean Attributes?](../../AAAI2026/others/how_hard_is_it_to_explain_preferences_using_few_boolean_attributes.md)
+- [\[CVPR 2026\] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely $F_1$](../../CVPR2026/others/what_is_the_optimal_ranking_score_between_precision_and_recall_we_can_always_fin.md)
+- [\[ACL 2025\] Interlocking-free Selective Rationalization Through Genetic-based Learning](../../ACL2025/others/interlocking-free_selective_rationalization_through_genetic-based_learning.md)
+- [\[ICML 2025\] Suitability Filter: A Statistical Framework for Classifier Evaluation in Real-World Settings](../../ICML2025/others/suitability_filter_a_statistical_framework_for_classifier_evaluation_in_real-wor.md)
+- [\[ACL 2025\] Is Linguistically-Motivated Data Augmentation Worth It?](../../ACL2025/others/is_linguistically-motivated_data_augmentation_worth_it.md)
 
 </div>
 

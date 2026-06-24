@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Influence-Preserving Proxies for Gradient-Based Data Selection in LLM Fine-Tuning
 description: >-
-  [ICLR 2026][LLM Efficiency][Influence Function] IPROX abandons off-the-shelf small models as proxies for gradient-based influence data selection. Instead, it "distills" a low-rank proxy that preserves influence information directly from the target LLM—combining influence-weighted SVD compression with gradient-alignment fine-tuning. This allows a smaller proxy to out
+  [ICLR 2026][LLM Efficiency][Gradient Data Selection] IPROX abandons off-the-shelf small models as proxies for gradient-based influence data selection. Instead, it "distills" a low-rank proxy that preserves influence information directly from the target LLM—combining influence-weighted SVD compression with gradient-alignment fine-tuning. This allows a smaller proxy to outperform larger off-the-shelf models in data selection tasks.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Influence Function
-  - TracIn
-  - SVD
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Gradient Data Selection"
+  - "Influence Function"
+  - "TracIn"
+  - "Proxy Models"
+  - "Low-Rank Compression"
+  - "SVD"
+  - "Supervised Fine-Tuning"
 date: 2026-05-08
-content_hash: 0a2abfae7d344d32
+content_hash: 536ea993a2873a11
 ---
+
 # Influence-Preserving Proxies for Gradient-Based Data Selection in LLM Fine-Tuning
 
 **Conference**: ICLR 2026  

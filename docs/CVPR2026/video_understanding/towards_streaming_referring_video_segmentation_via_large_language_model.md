@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Streaming Referring Video Segmentation via Large Language Model
 description: >-
-  [CVPR 2026][Segmentation][MLLM] StreamingRVOS transforms MLLM-based referring image segmentation into a "frame-by-frame streaming" referring video segmentation paradigm. It utilizes **Semantic Embedding Reuse (SER)** to feed the previous frame's `[SEG]` token back into the MLLM as temporal context, and employs **Online Mask Consistency Perception (OM
+  [CVPR 2026][Video Understanding][Referring Video Segmentation] StreamingRVOS transforms MLLM-based referring image segmentation into a "frame-by-frame streaming" referring video segmentation paradigm. It utilizes **Semantic Embedding Reuse (SER)** to feed the previous frame's `[SEG]` token back into the MLLM as temporal context, and employs **Online Mask Consistency Perception (OMCP)** to determine whether to re-invoke the MLLM for the current frame. Without adding any parame…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - MLLM
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Referring Video Segmentation"
+  - "Streaming Inference"
+  - "MLLM"
+  - "Semantic Embedding Reuse"
+  - "Adaptive Invocation"
 date: 2026-05-08
-content_hash: c45f4eb4dc65181a
+content_hash: d18e69ade19db353
 ---
+
 # Towards Streaming Referring Video Segmentation via Large Language Model
 
 **Conference**: CVPR 2026  
@@ -145,15 +150,16 @@ Breakdown of SER and OMCP (compared to Sa2VA retrained on the same data):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] InterRVOS: Interaction-Aware Referring Video Object Segmentation](interrvos_interaction-aware_referring_video_object_segmentation.md)
-- [\[CVPR 2025\] GLUS: Global-Local Reasoning Unified into A Single Large Language Model for Video Segmentation](../../CVPR2025/segmentation/glus_global-local_reasoning_unified_into_a_single_large_language_model_for_video.md)
 - [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
-- [\[CVPR 2026\] RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video](robotseg_a_model_and_dataset_for_segmenting_robots_in_image_and_video.md)
 - [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation](bootstrapping_video_semantic_segmentation_model_via_distillation-assisted_test-t.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
 
 </div>
 

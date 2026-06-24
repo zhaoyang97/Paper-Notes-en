@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Graph Neural Networks] This paper proposes HiLoMix, a robust graph learning framework for the mixing address association task. It addresses three core challenges—graph sparsity…
+  [AAAI 2026][Self-Supervised Learning][Graph Neural Networks] This paper proposes HiLoMix, a robust graph learning framework for the mixing address association task. It addresses three core challenges—graph sparsity, label scarcity, and label noise—through a Heterogeneous Attribute Mixing Interaction Graph (HAMIG), frequency-aware graph contrastive learning, and confidence-based label weighting supervision, respectively. HiLoMix surpasses the second-best baseline by 5.69%…
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Label Noise"
   - "Tornado Cash"
 date: 2026-05-08
-content_hash: 0d665ed65f643a60
+content_hash: 9b48704d2d55d3f5
 ---
 
 # HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association
@@ -201,11 +201,11 @@ HiLoMix achieves consistent superiority across all metrics. The most substantial
 
 ## Related Papers
 
-- [\[AAAI 2026\] Robust Tabular Foundation Models](robust_tabular_foundation_models.md)
 - [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
 - [\[ICML 2026\] Learning Graph Foundation Models on Riemannian Graph-of-Graphs](../../ICML2026/self_supervised/learning_graph_foundation_models_on_riemannian_graph-of-graphs.md)
-- [\[AAAI 2026\] Let the Void Be Void: Robust Open-Set Semi-Supervised Learning via Selective Non-Alignment](let_the_void_be_void_robust_open-set_semi-supervised_learning_via_selective_non-.md)
-- [\[ICLR 2026\] Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning](../../ICLR2026/self_supervised/fly-cl_a_fly-inspired_framework_for_enhancing_efficient_decorrelation_and_reduce.md)
+- [\[AAAI 2026\] Robust Tabular Foundation Models](robust_tabular_foundation_models.md)
+- [\[CVPR 2025\] Order-Robust Class Incremental Learning: Graph-Driven Dynamic Similarity Grouping](../../CVPR2025/self_supervised/order-robust_class_incremental_learning_graph-driven_dynamic_similarity_grouping.md)
+- [\[CVPR 2026\] Learning by Analogy: A Causal Framework for Compositional Generalization](../../CVPR2026/self_supervised/learning_by_analogy_a_causal_framework_for_compositional_generalization.md)
 
 </div>
 

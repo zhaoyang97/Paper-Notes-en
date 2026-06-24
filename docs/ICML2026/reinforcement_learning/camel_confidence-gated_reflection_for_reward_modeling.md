@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CAMEL: Confidence-Gated Reflection for Reward Modeling
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] This paper observes that the log-probability margin of the verdict token is highly correlated with judgment accuracy. Based on this, it proposes CAMEL—a method that first provides a rapid preference judgment via a single token and triggers reflection generation only when confidence is low. Using counterfactual prefix a
+  [ICML 2026][Reinforcement Learning][Reward Model] This paper observes that the log-probability margin of the verdict token is highly correlated with judgment accuracy. Based on this, it proposes CAMEL—a method that first provides a rapid preference judgment via a single token and triggers reflection generation only when confidence is low. Using counterfactual prefix augmentation in GRPO training to enhance self-correction capabilities, it achieves an average accuracy of 82.9%…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Reward Model"
+  - "Confidence Gating"
+  - "Reflection Mechanism"
+  - "GRPO"
+  - "Counterfactual Prefix Augmentation"
 date: 2026-05-08
-content_hash: a7765954feb806f2
+content_hash: 7f2333ea5bade95c
 ---
+
 # CAMEL: Confidence-Gated Reflection for Reward Modeling
 
 **Conference**: ICML 2026  
@@ -131,10 +136,10 @@ CAMEL-Reflection averages 3.2% higher than the previous SOTA. CAMEL-Fast, using 
 ## Related Papers
 
 - [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](../../ICLR2026/reinforcement_learning/rm-r1_reward_modeling_as_reasoning.md)
-- [\[ICML 2026\] One Bias After Another: Mechanistic Reward Shaping and Persistent Biases in Language Reward Models](one_bias_after_another_mechanistic_reward_shaping_and_persistent_biases_in_langu.md)
-- [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](../../CVPR2026/reinforcement_learning/msrl_scaling_generative_multimodal_reward_modeling.md)
-- [\[ACL 2026\] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations](../../ACL2026/reinforcement_learning/lovec_reinforcement_learning_for_better_verbalized_confidence_in_long-form_gener.md)
+- [\[ICLR 2026\] R4: Nested Reasoning-Retrieval for Reward Modeling in Role-Playing Agents](../../ICLR2026/reinforcement_learning/r4_nested_reasoning-retrieval_for_reward_modeling_in_role-playing_agents.md)
 - [\[ICLR 2026\] Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty](../../ICLR2026/reinforcement_learning/stop_unnecessary_reflection_training_lrms_for_efficient_reasoning_with_adaptive_.md)
+- [\[ACL 2026\] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations](../../ACL2026/reinforcement_learning/lovec_reinforcement_learning_for_better_verbalized_confidence_in_long-form_gener.md)
+- [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](../../CVPR2026/reinforcement_learning/msrl_scaling_generative_multimodal_reward_modeling.md)
 
 </div>
 

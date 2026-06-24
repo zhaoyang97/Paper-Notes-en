@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] VisionToM is a lightweight vision-based intervention framework that enhances Theory of Mind (ToM) reasoning in MLLMs by probing and intervening in attention heads sensitive to visual input and ToM logic. Without fine-tuning, the method significantly improves performance on the EgoToM benchmark by guiding the model to f
+  [CVPR 2026][Multimodal VLM][Theory of Mind] VisionToM is a lightweight vision-based intervention framework that enhances Theory of Mind (ToM) reasoning in MLLMs by probing and intervening in attention heads sensitive to visual input and ToM logic. Without fine-tuning, the method significantly improves performance on the EgoToM benchmark by guiding the model to focus on visual evidence.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Theory of Mind"
+  - "Multimodal Large Language Models"
+  - "Attention Intervention"
+  - "Visual Reasoning"
+  - "Hallucination Mitigation"
 date: 2026-05-08
-content_hash: a52041286c3c8d99
+content_hash: 304c7d1db3ab1320
 ---
+
 # Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,16 @@ $$L_{total} = \sum_h \sum_{c=1}^{k_h^*} \frac{1}{|C_{h,c}|} \sum_{i \in C_{h,c}}
 - Value: ⭐⭐⭐⭐ Provides an interpretable path to improving cognitive reasoning in VLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2025\] From Black Boxes to Transparent Minds: Evaluating and Enhancing the Theory of Mind in Multimodal Large Language Models](../../ICML2025/multimodal_vlm/from_black_boxes_to_transparent_minds_evaluating_and_enhancing_the_theory_of_min.md)
-- [\[CVPR 2026\] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents](mindpower_enabling_theoryofmind_reasoning_in_vlmba.md)
-- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
-- [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
+- [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
+- [\[CVPR 2026\] LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning](llada-v_large_language_diffusion_models_with_visual_instruction_tuning.md)
 
 </div>
 

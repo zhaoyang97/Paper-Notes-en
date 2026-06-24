@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][LLM Agent] This paper systematically evaluates the memory utilization capabilities of LLM-driven embodied agents through the Memento framework. The study reveals that existing agents can recall simple object semantics but fail to process sequential information regarding user behavior patterns. To address this, a user profile memo
+  [ICLR 2026][Robotics][Personalized Embodied Intelligence] This paper systematically evaluates the memory utilization capabilities of LLM-driven embodied agents through the Memento framework. The study reveals that existing agents can recall simple object semantics but fail to process sequential information regarding user behavior patterns. To address this, a user profile memory module based on a hierarchical knowledge graph is proposed to effectively enhance performance in pe…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - LLM Agent
+  - "ICLR 2026"
+  - "Robotics"
+  - "Personalized Embodied Intelligence"
+  - "Memory Utilization"
+  - "Episodic Memory"
+  - "Knowledge Graph"
+  - "LLM Agent"
 date: 2026-05-08
-content_hash: 4642b6e8e65ed301
+content_hash: 66f327b2aeb77093
 ---
+
 # Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization
 
 **Conference**: ICLR 2026  

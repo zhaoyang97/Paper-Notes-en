@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAMosaic3D: Modular Scene Assembly for Real-Time 3D Segment Anything
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Ours treats over-segmented 2D masks from SAM as "mosaic fragments" and employs an end-to-end differentiable framework to first assemble fragments of the same object within a frame and then merge instances into scene memory across frames. Achieving 11.2 FPS, it reaches SOTA among online methods on ScanNet/ScanNet200/Sce
+  [CVPR 2026][3D Vision][Online 3D Instance Segmentation] Ours treats over-segmented 2D masks from SAM as "mosaic fragments" and employs an end-to-end differentiable framework to first assemble fragments of the same object within a frame and then merge instances into scene memory across frames. Achieving 11.2 FPS, it reaches SOTA among online methods on ScanNet/ScanNet200/SceneNN/3RScan with zero-shot cross-dataset generalization.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Online 3D Instance Segmentation"
+  - "SAM Lifting"
+  - "Differentiable Grouping"
+  - "Temporal Association"
+  - "Embodied Perception"
 date: 2026-05-08
-content_hash: be3bc3c8f7ee3747
+content_hash: 4baae33565aefec9
 ---
+
 # SAMosaic3D: Modular Scene Assembly for Real-Time 3D Segment Anything
 
 **Conference**: CVPR 2026  
@@ -169,11 +175,11 @@ Differentiable F2I yields +4.3 AP. Dual-level memory + Cascaded merging (I2S) ad
 
 ## Related Papers
 
-- [\[AAAI 2026\] Segment Anything Across Shots: A Method and Benchmark](../../AAAI2026/segmentation/segment_anything_across_shots_a_method_and_benchmark.md)
-- [\[ICML 2026\] Segment Anything with Robust Uncertainty-Accuracy Correlation](../../ICML2026/segmentation/segment_anything_with_robust_uncertainty-accuracy_correlation.md)
-- [\[AAAI 2026\] Segment and Matte Anything in a Unified Model (SAMA)](../../AAAI2026/segmentation/segment_and_matte_anything_in_a_unified_model.md)
-- [\[CVPR 2026\] MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models](marss_radar_semantic_segmentation_via_modular_attention_and_state_space_models.md)
-- [\[CVPR 2025\] Golden Cudgel Network for Real-Time Semantic Segmentation](../../CVPR2025/segmentation/golden_cudgel_network_for_real-time_semantic_segmentation.md)
+- [\[CVPR 2026\] RoSAMDepth: Robust Self-supervised Depth Estimation Leveraging Segment Anything Model](rosamdepth_robust_self-supervised_depth_estimation_leveraging_segment_anything_m.md)
+- [\[CVPR 2026\] Real-Time Dynamic Scene Rendering with Controlled Compressibility and Contact Awareness](real-time_dynamic_scene_rendering_with_controlled_compressibility_and_contact_aw.md)
+- [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
+- [\[CVPR 2026\] KV-Tracker: Real-Time Pose Tracking with Transformers](kv-tracker_real-time_pose_tracking_with_transformers.md)
+- [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
 
 </div>
 

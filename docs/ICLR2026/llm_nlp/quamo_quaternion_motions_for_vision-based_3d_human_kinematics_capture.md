@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ConflictScope: Generative Value Conflicts Reveal LLM Priorities
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] The authors propose ConflictScope—an automated pipeline for generating and evaluating value conflict scenarios. Given an arbitrary set of values, it automatically generates conflict scenarios between value pairs and evaluates the value priority ranking of LLMs through simulated open-ended user interactions (rather than
+  [ICLR 2026][LLM (Other)][Value Conflicts] The authors propose ConflictScope—an automated pipeline for generating and evaluating value conflict scenarios. Given an arbitrary set of values, it automatically generates conflict scenarios between value pairs and evaluates the value priority ranking of LLMs through simulated open-ended user interactions (rather than multiple-choice questions). The study finds that models significantly shift from "protective values" (e.g.…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Value Conflicts"
+  - "Value Ranking"
+  - "Open-ended Evaluation"
+  - "Bradley-Terry Model"
+  - "System Prompt Steering"
 date: 2026-05-08
-content_hash: bfb72d0a8f88714c
+content_hash: ac0cfef06b2bc48e
 ---
+
 # ConflictScope: Generative Value Conflicts Reveal LLM Priorities
 
 **Conference**: ICLR 2026  
@@ -167,7 +173,7 @@ The three variants of ConflictScope are **Pareto optimal** across "inter-observe
 - [\[ACL 2026\] Generative Interfaces for Language Models](../../ACL2026/llm_nlp/generative_interfaces_for_language_models.md)
 - [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](../../ACL2026/llm_nlp/repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
 - [\[ACL 2026\] Generative Floor Plan Design with LLMs via Reinforcement Learning with Verifiable Rewards](../../ACL2026/llm_nlp/generative_floor_plan_design_with_llms_via_reinforcement_learning_with_verifiabl.md)
-- [\[ICML 2025\] Generative Social Choice: The Next Generation](../../ICML2025/llm_nlp/generative_social_choice_the_next_generation.md)
+- [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)
 
 </div>
 

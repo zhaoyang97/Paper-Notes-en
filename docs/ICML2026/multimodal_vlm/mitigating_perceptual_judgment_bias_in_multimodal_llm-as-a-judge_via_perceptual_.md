@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling
 description: >-
-  [ICML 2026][Multimodal VLM][GRPO] This paper reveals and formalizes the "Perceptual Judgment Bias" in MLLM-as-a-Judge, where judgment models tend to reward linguistically fluent responses even when visual evidence conflicts with the textual narrative. By constructing the Perceptually Perturbed Judgment Dataset (PPJD) and employing GRPO-based batch rank
+  [ICML 2026][Multimodal VLM][MLLM-as-a-Judge] This paper reveals and formalizes the "Perceptual Judgment Bias" in MLLM-as-a-Judge, where judgment models tend to reward linguistically fluent responses even when visual evidence conflicts with the textual narrative. By constructing the Perceptually Perturbed Judgment Dataset (PPJD) and employing GRPO-based batch ranking reward training, the authors enable a 7B judge to significantly outperform baselines of the same size across co…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - GRPO
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "MLLM-as-a-Judge"
+  - "Perceptual Judgment Bias"
+  - "Visual Perturbation"
+  - "GRPO"
+  - "Batch Ranking Reward"
 date: 2026-05-08
-content_hash: 448d7a280218148c
+content_hash: 675cd089a8ddc1c6
 ---
+
 # Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling
 
 **Conference**: ICML 2026  
@@ -157,7 +162,7 @@ Key findings: Compared to Qwen3-VL-Thinking-4B, the proposed method improves bat
 - [\[ICML 2026\] Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling](beyond_vlm-based_rewards_diffusion-native_latent_reward_modeling.md)
 - [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](../../CVPR2026/multimodal_vlm/vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
 - [\[AAAI 2026\] SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias](../../AAAI2026/multimodal_vlm/sage_spuriousness-aware_guided_prompt_exploration_for_mitigating_multimodal_bias.md)
-- [\[CVPR 2026\] Active Perceptual Inference: A Corticothalamic-Inspired Dynamic Nested Recurrent Network for Multimodal Sentiment Analysis with Incomplete Data](../../CVPR2026/multimodal_vlm/active_perceptual_inference_a_corticothalamic-inspired_dynamic_nested_recurrent_.md)
+- [\[ICLR 2026\] UrbanFeel: A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective](../../ICLR2026/multimodal_vlm/urbanfeela_comprehensive_benchmark_for_temporal_and_perceptual_understanding_of_.md)
 
 </div>
 

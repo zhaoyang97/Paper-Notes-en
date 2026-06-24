@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpatialDiff: 3D-Aware Object Movement via Implicit Spatial Modeling
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] SpatialDiff injects implicit spatial priors from a single image into a Diffusion Transformer via a 3D geometric encoder, supplemented by latent space depth supervision, without performing explicit 3D reconstruction. This allows instruction-driven image editing to "properly relocate" objects in complex scenes involving
+  [CVPR 2026][Image Generation][Instruct-based Image Editing] SpatialDiff injects implicit spatial priors from a single image into a Diffusion Transformer via a 3D geometric encoder, supplemented by latent space depth supervision, without performing explicit 3D reconstruction. This allows instruction-driven image editing to "properly relocate" objects in complex scenes involving occlusions and multiple depth layers.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Instruct-based Image Editing"
+  - "Object Movement"
+  - "Implicit 3D Prior"
+  - "Diffusion Transformer"
+  - "Latent Space Depth Supervision"
 date: 2026-05-08
-content_hash: d8b7d77b00d2d5af
+content_hash: 34229b6aaab822cd
 ---
+
 # SpatialDiff: 3D-Aware Object Movement via Implicit Spatial Modeling
 
 **Conference**: CVPR 2026  
@@ -127,11 +133,11 @@ Components added sequentially: FT (LoRA Fine-tuning), ISM (Implicit Spatial Mode
 
 ## Related Papers
 
-- [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
 - [\[CVPR 2025\] ObjectMover: Generative Object Movement with Video Prior](../../CVPR2025/image_generation/objectmover_generative_object_movement_with_video_prior.md)
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 - [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
-- [\[ICML 2026\] Visual Implicit Autoregressive Modeling](../../ICML2026/image_generation/visual_implicit_autoregressive_modeling.md)
+- [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
+- [\[ICML 2026\] Direct 3D-Aware Object Insertion via Decomposed Visual Proxies](../../ICML2026/image_generation/direct_3d-aware_object_insertion_via_decomposed_visual_proxies.md)
 
 </div>
 

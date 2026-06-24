@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking
 description: >-
-  [NeurIPS 2025][Multimodal VLM][data annotation] This paper proposes ACT (Annotation with Critical Thinking), a data pipeline in which an MLLM annotates all samples in bulk…
+  [NeurIPS 2025][VLM Reasoning][data annotation] This paper proposes ACT (Annotation with Critical Thinking), a data pipeline in which an MLLM annotates all samples in bulk, a second MLLM acting as a critic estimates the error probability of each annotation, and only high-suspicion samples are routed to human reviewers. Combined with a theoretically derived ACT loss function, the approach achieves 70–90% reduction in human annotation cost across six cross-modal datasets while m…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "data annotation"
   - "critical thinking"
   - "MLLM"
   - "error estimation"
   - "human-in-the-loop"
 date: 2026-05-08
-content_hash: b91e6a3c3c380f6d
+content_hash: 5b99fb964ad4c15f
 ---
 
 # ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking
@@ -118,11 +118,11 @@ The ACT loss is an improvement over active M-estimation. Its core mechanism uses
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model](seetrek_training-free_spatial_prompting_for_multimodal_large_language_model.md)
-- [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
-- [\[NeurIPS 2025\] NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints](navil_rethinking_scaling_properties_of_native_multimodal_large_language_models_u.md)
-- [\[ICML 2026\] Model-Dowser: Data-Free Importance Probing to Mitigate Catastrophic Forgetting in Multimodal Large Language Models](../../ICML2026/multimodal_vlm/model-dowser_data-free_importance_probing_to_mitigate_catastrophic_forgetting_in.md)
-- [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
+- [\[ACL 2025\] We-Math: Does Your Large Multimodal Model Achieve Human-like Mathematical Reasoning?](../../ACL2025/vlm_reasoning/wemath_knowledge_reasoning.md)
+- [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](../../CVPR2026/vlm_reasoning/pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
+- [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
+- [\[CVPR 2025\] SeqAfford: Sequential 3D Affordance Reasoning via Multimodal Large Language Model](../../CVPR2025/vlm_reasoning/seqafford_sequential_3d_affordance_reasoning_via_multimodal_large_language_model.md)
+- [\[NeurIPS 2025\] FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models](flexac_towards_flexible_control_of_associative_reasoning_in_multimodal_large_lan.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] An Exterior Method for Nonnegative Matrix Factorization
 description: >-
-  [ICML 2026][Audio & Speech][ADMM] This paper proposes eNMF, which transforms NMF from "always staying inside the nonnegative orthogonal cone" to "approximating the nonnegative cone from the exterior of the rotation equivalence class of the unconstrained SVD optimal solution, followed by feasibility attainment and descent." It reaches lower reconstructi
+  [ICML2026][Audio & Speech][Nonnegative Matrix Factorization] This paper proposes eNMF, which transforms NMF from "always staying inside the nonnegative orthogonal cone" to "approximating the nonnegative cone from the exterior of the rotation equivalence class of the unconstrained SVD optimal solution, followed by feasibility attainment and descent." It reaches lower reconstruction errors faster than 9 classes of NMF baselines on synthetic, text, audio, image…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - ADMM
-  - HALS
+  - "ICML2026"
+  - "Audio & Speech"
+  - "Nonnegative Matrix Factorization"
+  - "Exterior Point Method"
+  - "ADMM"
+  - "Orthogonal Rotation"
+  - "HALS"
 date: 2026-05-08
-content_hash: d469d2baa51c9388
+content_hash: 7e2c1fbd1915c743
 ---
+
 # An Exterior Method for Nonnegative Matrix Factorization
 
 **Conference**: ICML2026  
@@ -130,9 +134,9 @@ Key analyses focus on algorithm stages, geometric intersections, and post-proces
 
 - [\[NeurIPS 2025\] Latent Space Factorization in LoRA](../../NeurIPS2025/audio_speech/latent_space_factorization_in_lora.md)
 - [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](../../ACL2026/audio_speech/temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
+- [\[ICML 2026\] Probing Token Spaces under Generator Shift in AI-Generated Music Detection](probing_token_spaces_under_generator_shift_in_ai-generated_music_detection.md)
 - [\[ICML 2026\] Attend to Anything: Foundation Model for Unified Human Attention Modeling](attend_to_anything_foundation_model_for_unified_human_attention_modeling.md)
-- [\[ICML 2026\] NAACA: Training-Free NeuroAuditory Attentive Cognitive Architecture with Oscillatory Working Memory for Salience-Driven Attention Gating](naaca_training-free_neuroauditory_attentive_cognitive_architecture_with_oscillat.md)
-- [\[ICML 2026\] MusicDET: Zero-Shot AI-Generated Music Detection](musicdet_zero-shot_ai-generated_music_detection.md)
+- [\[ICML 2026\] Few-Shot Synthetic Accented Speech for ASR Fine-Tuning: What Helps and When?](few-shot_synthetic_accented_speech_for_asr_fine-tuning_what_helps_and_when.md)
 
 </div>
 

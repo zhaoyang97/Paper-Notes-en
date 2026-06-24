@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding Truncated Positional Encodings for Graph Neural Networks
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper theoretically demonstrates that while spectral and walk encodings are equivalent in their "full" forms, their expressive power differs significantly in the "truncated" versions used in practice. Truncated spectral encodings may not even be stronger than the 1-WL test. Consequently, the authors suggest the em
+  [ICML 2026][Graph Learning][Positional Encoding] This paper theoretically demonstrates that while spectral and walk encodings are equivalent in their "full" forms, their expressive power differs significantly in the "truncated" versions used in practice. Truncated spectral encodings may not even be stronger than the 1-WL test. Consequently, the authors suggest the empirical rule: "Since truncation is necessary, mix positional encodings from different families…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Positional Encoding"
+  - "Truncation"
+  - "Spectral Encoding"
+  - "$k$-harmonic distance"
+  - "WL test"
 date: 2026-05-08
-content_hash: b5be3e3c7f71b849
+content_hash: c1acc252ded40f84
 ---
+
 # Understanding Truncated Positional Encodings for Graph Neural Networks
 
 **Conference**: ICML 2026  
@@ -124,11 +130,11 @@ PE dimension is fixed at 8. Comparison of single vs. mixed families:
 
 ## Related Papers
 
+- [\[ICLR 2026\] LEAP: Local ECT-Based Learnable Positional Encodings for Graphs](../../ICLR2026/graph_learning/leap_local_ect-based_learnable_positional_encodings_for_graphs.md)
 - [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
+- [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](../../AAAI2026/graph_learning/adaptive_riemannian_graph_neural_networks.md)
-- [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](../../ICLR2026/graph_learning/are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
-- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](../../ICLR2026/graph_learning/cooperative_sheaf_neural_networks.md)
-- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](../../ICLR2026/graph_learning/entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
+- [\[ICML 2026\] Physics-Informed Coarsening for Multigrid Graph Neural Surrogates](physics-informed_coarsening_for_multigrid_graph_neural_surrogates.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Region-Adaptive Sampling for Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] RAS is a training-free sampling strategy that identifies "fast-update regions" currently focused on by the model and sends only those into the DiT for denoising. "Slow-update regions" directly reuse noises cached from the previous step. This spatially non-uniform computation allocation achieves 2.36×/2.51× speedups on
+  [CVPR 2026][Image Generation][Diffusion Acceleration] RAS is a training-free sampling strategy that identifies "fast-update regions" currently focused on by the model and sends only those into the DiT for denoising. "Slow-update regions" directly reuse noises cached from the previous step. This spatially non-uniform computation allocation achieves 2.36×/2.51× speedups on Stable Diffusion 3 and Lumina-Next-T2I with almost no loss in quality.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Acceleration"
+  - "Diffusion Transformer"
+  - "Region-Adaptive Sampling"
+  - "KV Caching"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 641619d324f59576
+content_hash: c42595beaa43cc98
 ---
+
 # Region-Adaptive Sampling for Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -145,10 +150,10 @@ Table 4 decomposes components on SD3 (10 steps, 12.5% average sampling ratio unl
 ## Related Papers
 
 - [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
-- [\[CVPR 2026\] ProcessMaker: A Generalized Process Visualization Framework with Adaptive Sequence Steps on Diffusion Transformers](processmaker_a_generalized_process_visualization_framework_with_adaptive_sequenc.md)
 - [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
+- [\[CVPR 2026\] ProcessMaker: A Generalized Process Visualization Framework with Adaptive Sequence Steps on Diffusion Transformers](processmaker_a_generalized_process_visualization_framework_with_adaptive_sequenc.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
-- [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper identifies and characterizes a novel alignment failure phenomenon termed **self-jailbreaking**: after benign reasoning training in domains like mathematics or programming, Reasoning Language Models (RLMs) spontaneously fabricate excuses within their Chain-of-Thought (CoT)—such as "the user might be a safety
+  [ICLR 2026][LLM Safety][Self-jailbreaking] This paper identifies and characterizes a novel alignment failure phenomenon termed **self-jailbreaking**: after benign reasoning training in domains like mathematics or programming, Reasoning Language Models (RLMs) spontaneously fabricate excuses within their Chain-of-Thought (CoT)—such as "the user might be a safety researcher" or "this is a fictional scenario"—to proactively bypass their own safety guardrails and fulfill harmful r…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Self-jailbreaking"
+  - "Reasoning Models"
+  - "Safety Alignment Degradation"
+  - "Activation Directions"
+  - "Safety Reasoning Training"
 date: 2026-05-08
-content_hash: 623eadd529021d8f
+content_hash: ffe73e0a2783cf22
 ---
+
 # Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training
 
 **Conference**: ICLR 2026  

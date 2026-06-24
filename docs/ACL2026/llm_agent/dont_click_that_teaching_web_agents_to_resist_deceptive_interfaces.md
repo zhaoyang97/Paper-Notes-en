@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Don't Click That: Teaching Web Agents to Resist Deceptive Interfaces
 description: >-
-  [ACL 2026][LLM Agent][Deceptive UI Defense] This work formalizes "adversarial deceptive UI" as an independent defense problem for web agents. It proposes the two-stage framework **DUDE** (hybrid-reward RL with asymmetric penalties to train an evaluator + iterative experience summarization to distill failure modes into transferable context) and releases the **RUC
+  [ACL 2026][LLM Agent][Deceptive UI Defense] This work formalizes "adversarial deceptive UI" as an independent defense problem for web agents. It proposes the two-stage framework **DUDE** (hybrid-reward RL with asymmetric penalties to train an evaluator + iterative experience summarization to distill failure modes into transferable context) and releases the **RUC** benchmark containing 1407 real/synthetic scenarios. Across three VLM agent bases…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Deceptive UI Defense
-  - Hybrid-Reward RL
-  - Experience Summarization
-  - Dark Patterns
-  - VLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Deceptive UI Defense"
+  - "Hybrid-Reward RL"
+  - "Experience Summarization"
+  - "Dark Patterns"
+  - "VLM Agent"
 date: 2026-05-08
-content_hash: f1a0e2e33cc5403f
+content_hash: dac547bf35b01391
 ---
+
 # Don't Click That: Teaching Web Agents to Resist Deceptive Interfaces
 
 **Conference**: ACL 2026  
@@ -148,15 +149,16 @@ DUDE reduces the Deception Failure Rate (DFR) to an average of 1.17% and increas
 - **Value**: ⭐⭐⭐⭐⭐ Immediate industrial applicability and a valuable community resource in the RUC benchmark.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces](benchmarking_web_agent_safety_under_e-commerce_deceptive_interfaces.md)
 - [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
+- [\[ICML 2026\] Web Agents Should Use Typed Actions Instead of Click-Based Browsing](../../ICML2026/llm_agent/web_agents_should_use_typed_actions_instead_of_click-based_browsing.md)
 - [\[ACL 2026\] Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction](don39t_act_blindly_robust_gui_automation_via_action-effect_verification_and_self.md)
 - [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](synthagent_adapting_web_agents_with_synthetic_supervision.md)
-- [\[ICML 2026\] Web Agents Should Use Typed Actions Instead of Click-Based Browsing](../../ICML2026/llm_agent/web_agents_should_use_typed_actions_instead_of_click-based_browsing.md)
 
 </div>
 

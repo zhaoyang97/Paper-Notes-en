@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] RAPID$^3$: Tri-Level Reinforced Acceleration Policies for Diffusion Transformer
 description: >-
-  [ICLR 2026][Model Compression][Diffusion Transformer] Three lightweight policy heads (Step-Skip / Cache-Reuse / Sparse-Attention) are attached to a frozen Diffusion Transformer. These heads are trained online via GRPO to decide acceleration strategies per-timestep and per-image. An adversarial discriminator is employed to prevent reward hacking, achieving approximately 3×
+  [ICLR 2026][Model Compression][Diffusion Transformer] Three lightweight policy heads (Step-Skip / Cache-Reuse / Sparse-Attention) are attached to a frozen Diffusion Transformer. These heads are trained online via GRPO to decide acceleration strategies per-timestep and per-image. An adversarial discriminator is employed to prevent reward hacking, achieving approximately 3× speedup on SD3 and FLUX with almost no loss in image quality.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Diffusion Transformer
-  - Inference Acceleration
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Diffusion Transformer"
+  - "Inference Acceleration"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Adversarial Reward"
 date: 2026-05-08
-content_hash: 0358ce3bff12b913
+content_hash: e429fc4a4588c8fd
 ---
+
 # RAPID$^3$: Tri-Level Reinforced Acceleration Policies for Diffusion Transformer
 
 **Conference**: ICLR 2026  
@@ -150,10 +152,10 @@ Ablation of reward sources (IR denotes ImageReward scores during training):
 ## Related Papers
 
 - [\[ICLR 2026\] Plug-and-Play Fidelity Optimization for Diffusion Transformer Acceleration via Cumulative Error Minimization](plug-and-play_fidelity_optimization_for_diffusion_transformer_acceleration_via_c.md)
-- [\[ICLR 2026\] Vulcan: 为边缘智能裁剪紧凑的类特定视觉 Transformer](vulcan_crafting_compact_class-specific_vision_transformers_for_edge_intelligence.md)
 - [\[ICLR 2026\] ScalingCache: Extreme Acceleration of DiTs through Difference Scaling and Dynamic Interval Caching](scalingcache_extreme_acceleration_of_dits_through_difference_scaling_and_dynamic.md)
-- [\[ICLR 2026\] TP-Spikformer: Token Pruned Spiking Transformer](tp-spikformer_token_pruned_spiking_transformer.md)
-- [\[ICLR 2026\] Otters: An Energy-Efficient Spiking Transformer via Optical Time-to-First-Spike Encoding](otters_an_energy-efficient_spiking_transformer_via_optical_time-to-first-spike_e.md)
+- [\[ICLR 2026\] ERTACache: Error Rectification and Timesteps Adjustment for Efficient Diffusion](ertacache_error_rectification_and_timesteps_adjustment_for_efficient_diffusion.md)
+- [\[ICLR 2026\] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention](sla_beyond_sparsity_in_diffusion_transformers_via_fine-tunable_sparselinear_atte.md)
+- [\[ICLR 2026\] TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA](titok_transfer_token-level_knowledge_via_contrastive_excess_to_transplant_lora.md)
 
 </div>
 

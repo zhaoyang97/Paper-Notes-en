@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UltraMemV2: Memory Networks Scaling to 120B Parameters with Superior Long-Context Learning
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] UltraMemV2 redesigns the memory-layer sparse architecture by integrating memory layers into every Transformer block and utilizing more efficient retrieval, value processing, initialization, and computational proportions. This allows the memory network to approach the performance of an 8-expert MoE under the same active
+  [ICLR2026][LLM Efficiency][Sparse models] UltraMemV2 redesigns the memory-layer sparse architecture by integrating memory layers into every Transformer block and utilizing more efficient retrieval, value processing, initialization, and computational proportions. This allows the memory network to approach the performance of an 8-expert MoE under the same active computation while demonstrating stronger long-context memory and in-context learning with lower inference memory acce…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Sparse models"
+  - "memory layers"
+  - "long-context learning"
+  - "MoE alternative architecture"
+  - "inference efficiency"
 date: 2026-05-08
-content_hash: a077faa156a54714
+content_hash: 4bb67f7a36c5a5e2
 ---
+
 # UltraMemV2: Memory Networks Scaling to 120B Parameters with Superior Long-Context Learning
 
 **Conference**: ICLR2026  
@@ -131,8 +137,8 @@ Ablations confirmed that per-layer integration, PEER values, and simplified proj
 
 ## Related Papers
 
-- [\[ACL 2025\] Scaling Context, Not Parameters: Training a Compact 7B Language Model for Efficient Long-Context Processing](../../ACL2025/llm_efficiency/scaling_context_not_parameters_training_a_compact_7b_language_model_for_efficien.md)
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
+- [\[ACL 2025\] Scaling Context, Not Parameters: Training a Compact 7B Language Model for Efficient Long-Context Processing](../../ACL2025/llm_efficiency/scaling_context_not_parameters_training_a_compact_7b_language_model_for_efficien.md)
 - [\[ICLR 2026\] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity](xlstm_scaling_laws_competitive_performance_with_linear_time-complexity.md)
 - [\[ICLR 2026\] RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers](rmaat_astrocyte-inspired_memory_compression_and_replay_for_efficient_long-contex.md)
 - [\[ICLR 2026\] MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent](memagent_reshaping_long-context_llm_with_multi-conv_rl-based_memory_agent.md)

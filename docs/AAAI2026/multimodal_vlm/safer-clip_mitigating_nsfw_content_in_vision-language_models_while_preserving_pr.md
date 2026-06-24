@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge
 description: >-
-  [AAAI 2026][Multimodal VLM][CLIP safety fine-tuning] This paper proposes SafeR-CLIP, a framework that improves upon Safe-CLIP by introducing proximity-based alignment (redirecting unsafe embeddings to their semantically…
+  [AAAI 2026][Multimodal VLM][CLIP safety fine-tuning] This paper proposes SafeR-CLIP, a framework that improves upon Safe-CLIP by introducing proximity-based alignment (redirecting unsafe embeddings to their semantically nearest safe targets rather than fixed pairs) and a relative cross-modal redirection loss (using only unsafe representations as negatives rather than random in-batch negatives), recovering zero-shot classification accuracy by 8.0% over Safe-CLIP while maintain…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "representation space preservation"
   - "progressive training"
 date: 2026-05-08
-content_hash: c8fd7f6fd9ab2e87
+content_hash: 0e918a3df349d193
 ---
 
 # SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge
@@ -140,11 +140,11 @@ SafeR-CLIP is a CLIP safety fine-tuning framework trained on ViSU quadruple data
 
 ## Related Papers
 
-- [\[ICML 2026\] Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data](../../ICML2026/multimodal_vlm/left-right_symmetry_breaking_in_clip-style_vision-language_models_trained_on_syn.md)
+- [\[ICLR 2026\] AttTok: Marrying Attribute Tokens with Generative Pre-trained Vision-Language Models towards Medical Image Understanding](../../ICLR2026/multimodal_vlm/atttok_marrying_attribute_tokens_with_generative_pre-trained_vision-language_mod.md)
 - [\[AAAI 2026\] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)
+- [\[CVPR 2025\] Skip Tuning: Pre-trained Vision-Language Models are Effective and Efficient Adapters Themselves](../../CVPR2025/multimodal_vlm/skip_tuning_pre-trained_vision-language_models_are_effective_and_efficient_adapt.md)
+- [\[ICML 2026\] Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data](../../ICML2026/multimodal_vlm/left-right_symmetry_breaking_in_clip-style_vision-language_models_trained_on_syn.md)
 - [\[AAAI 2026\] PatientVLM Meets DocVLM: Pre-Consultation Dialogue Between Vision-Language Models for Efficient Diagnosis](patientvlm_meets_docvlm_pre-consultation_dialogue_between_vision_language_models.md)
-- [\[AAAI 2026\] Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?](bridging_the_copyright_gap_do_large_vision-language_models_r.md)
-- [\[AAAI 2026\] SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias](sage_spuriousness-aware_guided_prompt_exploration_for_mitigating_multimodal_bias.md)
 
 </div>
 

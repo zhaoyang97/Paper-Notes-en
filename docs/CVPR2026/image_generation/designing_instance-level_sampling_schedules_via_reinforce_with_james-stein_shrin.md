@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Designing Instance-Level Sampling Schedules via REINFORCE with James-Stein Shrinkage
 description: >-
-  [CVPR 2026][Image Generation][REINFORCE] The authors propose learning a "per-prompt and per-noise customized sampling schedule" for frozen text-to-image samplers without modifying model weights. By using a one-shot Dirichlet policy to output the entire schedule in a single forward pass and employing James-Stein shrinkage as a REINFORCE reward baseline to redu
+  [CVPR2026][Image Generation][Sampling Schedule] The authors propose learning a "per-prompt and per-noise customized sampling schedule" for frozen text-to-image samplers without modifying model weights. By using a one-shot Dirichlet policy to output the entire schedule in a single forward pass and employing James-Stein shrinkage as a REINFORCE reward baseline to reduce gradient variance, the method improves text-image alignment for SD/Flux at the same step counts. Specifically…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - REINFORCE
+  - "CVPR2026"
+  - "Image Generation"
+  - "Sampling Schedule"
+  - "REINFORCE"
+  - "James-Stein Shrinkage"
+  - "Dirichlet Policy"
+  - "T2I Post-training"
 date: 2026-05-08
-content_hash: 0bcf2e2699cce9a8
+content_hash: 514dcf8078c50fe1
 ---
+
 # Designing Instance-Level Sampling Schedules via REINFORCE with James-Stein Shrinkage
 
 **Conference**: CVPR2026  
@@ -144,6 +149,7 @@ Comparing reward baselines while keeping other settings identical:
 - Value: ⭐⭐⭐⭐⭐ (Model-agnostic, zero extra inference cost, and generalizable baseline).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Sequential Kernel-based Conditional Independence Testing via Adaptive Betting
 description: >-
-  [ICML 2026][learning_theory][testing-by-betting] SKCI proposes a sequential (anytime-valid) conditional independence test: it applies "testing-by-betting" to a **self-normalized kernel conditional independence (KCI) statistic**, coupled with a "truncation + shifting" Gaussian approximation calibration. This ensures that even when the conditional distribution $P_{A\mi
+  [ICML 2026][Learning Theory][Conditional Independence Testing] SKCI proposes a sequential (anytime-valid) conditional independence test: it applies "testing-by-betting" to a **self-normalized kernel conditional independence (KCI) statistic**, coupled with a "truncation + shifting" Gaussian approximation calibration. This ensures that even when the conditional distribution $P_{A\mid C}$ in the Model-X assumption must be estimated online (rather than being exactly known)…
 tags:
-  - ICML 2026
-  - learning_theory
-  - testing-by-betting
-  - anytime-valid
-  - Model-X
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Sequential Hypothesis Testing"
+  - "Conditional Independence Testing"
+  - "testing-by-betting"
+  - "anytime-valid"
+  - "kernel methods"
+  - "Model-X"
 date: 2026-05-08
-content_hash: d50231b8ca2f23c5
+content_hash: 708cd46eda4b94d1
 ---
+
 # Sequential Kernel-based Conditional Independence Testing via Adaptive Betting
 
 **Conference**: ICML 2026  
@@ -136,6 +140,7 @@ Evaluations were conducted on synthetic and real benchmarks with $b=20$ and 100 
 - Value: ⭐⭐⭐⭐⭐ Provides a robust, theoretically grounded solution for anytime-valid CI testing in the estimated-distribution regime.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -143,8 +148,8 @@ Evaluations were conducted on synthetic and real benchmarks with $b=20$ and 100 
 - [\[ICML 2026\] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding](conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat.md)
 - [\[NeurIPS 2025\] Kernel Conditional Tests from Learning-Theoretic Bounds](../../NeurIPS2025/learning_theory/kernel_conditional_tests_from_learning-theoretic_bounds.md)
 - [\[ICML 2026\] Matroid Algorithms Under Size-Sensitive Independence Oracles](matroid_algorithms_under_size-sensitive_independence_oracles.md)
-- [\[NeurIPS 2025\] Adaptive Data Analysis for Growing Data](../../NeurIPS2025/learning_theory/adaptive_data_analysis_for_growing_data.md)
-- [\[ICLR 2026\] Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees](../../ICLR2026/learning_theory/scalable_random_wavelet_features_efficient_non-stationary_kernel_approximation_w.md)
+- [\[ICLR 2026\] Testing Fourier Sparsity via Implicit Sensing](../../ICLR2026/learning_theory/testing_fourier_sparsity_via_implicit_sensing.md)
+- [\[ICLR 2026\] Revisiting Active Sequential Prediction-Powered Mean Estimation](../../ICLR2026/learning_theory/revisiting_active_sequential_prediction-powered_mean_estimation.md)
 
 </div>
 

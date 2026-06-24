@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Quantized Gradient Projection for Memory-Efficient Continual Learning
 description: >-
-  [ICLR 2026][Model Compression][Quantization] Ours proposes QGPM, which compresses the basis vectors in "Gradient Projection Memory" (GPM) used for anti-forgetting in continual learning via quantization. By utilizing a trio of designs—Outlier-robust Quantization (CINF), Error-Aware Gradient Projection (QEA), and Sparse Sketching Acceleration—the memory overhead is
+  [ICLR 2026][Model Compression][Continual Learning] Ours proposes QGPM, which compresses the basis vectors in "Gradient Projection Memory" (GPM) used for anti-forgetting in continual learning via quantization. By utilizing a trio of designs—Outlier-robust Quantization (CINF), Error-Aware Gradient Projection (QEA), and Sparse Sketching Acceleration—the memory overhead is reduced to 1/4–1/6 of the original while maintaining nearly full precision (8-bit drops <0.5% ACC compared t…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Quantization
-  - NormalFloat
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Gradient Projection"
+  - "Quantization"
+  - "Memory-Efficient"
+  - "NormalFloat"
 date: 2026-05-08
-content_hash: bd10f116970da2d8
+content_hash: 2bb21b5573cb5907
 ---
+
 # Quantized Gradient Projection for Memory-Efficient Continual Learning
 
 **Conference**: ICLR 2026  
@@ -140,7 +144,7 @@ Analyzed on 10-split CIFAR-100 (variables isolated by setting $\alpha=0, p=0$ un
 - [\[ICLR 2026\] IDER: IDempotent Experience Replay for Reliable Continual Learning](ider_idempotent_experience_replay_for_reliable_continual_learning.md)
 - [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
 - [\[ICML 2025\] TreeLoRA: Efficient Continual Learning via Layer-Wise LoRAs Guided by a Hierarchical Gradient-Similarity Tree](../../ICML2025/model_compression/treelora_efficient_continual_learning_via_layer-wise_loras_guided_by_a_hierarchi.md)
-- [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](rethinking_continual_learning_with_progressive_neural_collapse.md)
+- [\[ICLR 2026\] FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning](flyprompt_brain-inspired_random-expanded_routing.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Plenoptic Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Autoregressive] PlenopticDreamer formulates "re-rendering input videos along arbitrary camera trajectories" as an **autoregressive, multi-in-single-out** diffusion model. During the generation of each new viewpoint, the model retrieves the most relevant historical video segments from a memory bank based on 3D frustum visibility to ser
+  [CVPR 2026][Video Generation][Camera-controllable video generation] PlenopticDreamer formulates "re-rendering input videos along arbitrary camera trajectories" as an **autoregressive, multi-in-single-out** diffusion model. During the generation of each new viewpoint, the model retrieves the most relevant historical video segments from a memory bank based on 3D frustum visibility to serve as conditions. Combined with progressive context expansion and self-conditioning training…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Autoregressive
-  - Plücker raymap
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Camera-controllable video generation"
+  - "Video re-rendering"
+  - "Autoregressive"
+  - "Spatiotemporal memory"
+  - "Plücker raymap"
 date: 2026-05-08
-content_hash: 35f2fa0a4c45aedb
+content_hash: ddd9b1f871663f0b
 ---
+
 # Plenoptic Video Generation
 
 **Conference**: CVPR 2026  
@@ -152,10 +156,10 @@ Training strategy and retrieval ablation on the Basic set:
 ## Related Papers
 
 - [\[CVPR 2026\] Physical Simulator In-the-Loop Video Generation](physical_simulator_in-the-loop_video_generation.md)
+- [\[CVPR 2026\] TiViBench: Benchmarking Think-in-Video Reasoning for Video Generation](tivibench_benchmarking_think-in-video_reasoning_for_video_generation.md)
 - [\[CVPR 2026\] EgoX: Egocentric Video Generation from a Single Exocentric Video](egox_egocentric_video_generation_from_a_single_exocentric_video.md)
-- [\[CVPR 2026\] SURF: Signature-Retained Fast Video Generation](surf_signature-retained_fast_video_generation.md)
-- [\[CVPR 2026\] Dual-Granularity Memory for Efficient Video Generation](dual-granularity_memory_for_efficient_video_generation.md)
-- [\[CVPR 2026\] Spatia: Video Generation with Updatable Spatial Memory](spatia_video_generation_with_updatable_spatial_memory.md)
+- [\[CVPR 2026\] Scaling Zero-Shot Reference-to-Video Generation](scaling_zero-shot_reference-to-video_generation.md)
+- [\[CVPR 2026\] Transition Matching Distillation for Fast Video Generation](transition_matching_distillation_for_fast_video_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] TripleSumm is proposed to achieve dynamic frame-level modality importance adjustment using Multi-Scale Temporal blocks (hierarchical sliding window attention) and Cross-Modal Fusion blocks (adaptive weighting of vision/text/audio via a fusion token). The authors also release MoSu, the first large-scale triple-modality
+  [ICLR 2026][Audio & Speech][Video Summarization] TripleSumm is proposed to achieve dynamic frame-level modality importance adjustment using Multi-Scale Temporal blocks (hierarchical sliding window attention) and Cross-Modal Fusion blocks (adaptive weighting of vision/text/audio via a fusion token). The authors also release MoSu, the first large-scale triple-modality video summarization dataset (52,678 videos), achieving SOTA results across 4 benchmarks.
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Video Summarization"
+  - "Triple-Modality Fusion"
+  - "Adaptive Weights"
+  - "Multi-scale Temporal"
+  - "Large-scale Dataset"
 date: 2026-05-08
-content_hash: f8dffed49fa73a13
+content_hash: 71593c2eb273be8a
 ---
+
 # TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization
 
 **Conference**: ICLR 2026  

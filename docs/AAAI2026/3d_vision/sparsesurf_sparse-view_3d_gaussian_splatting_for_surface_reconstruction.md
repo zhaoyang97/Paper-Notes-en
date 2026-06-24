@@ -2,202 +2,179 @@
 title: >-
   [Paper Note] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction
 description: >-
-  [AAAI 2026][3D Vision][sparse-view] SparseSurf is proposed to achieve simultaneous high-accuracy surface reconstruction and high-quality novel view synthesis under sparse-view settings…
+  [AAAI 2026][3D Vision][Sparse-view] Proposes SparseSurf, which enhances geometric consistency under sparse views through Stereo Geometry-Texture Alignment and Pseudo-Feature Enhanced Geometry Consistency, simultaneously achieving high-precision surface reconstruction and high-quality novel view synthesis, achieving SOTA on DTU, BlendedMVS, and Mip-NeRF360 datasets.
 tags:
   - "AAAI 2026"
   - "3D Vision"
-  - "sparse-view"
-  - "surface reconstruction"
-  - "3D Gaussian splatting"
-  - "stereo matching prior"
-  - "pseudo-view consistency"
+  - "Sparse-view"
+  - "Surface reconstruction"
+  - "Gaussian Splatting"
+  - "Stereo matching"
+  - "Multi-view consistency"
 date: 2026-05-08
-content_hash: f0384705df27d2ce
+content_hash: 37a63ad50e032701
 ---
 
 # SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.14633](https://arxiv.org/abs/2511.14633)  
 **Code**: [Project Page](https://miya-oi.github.io/SparseSurf-project)  
-**Area**: 3D Vision
-**Keywords**: sparse-view, surface reconstruction, 3D Gaussian splatting, stereo matching prior, pseudo-view consistency
+**Area**: 3D Vision  
+**Keywords**: Sparse-view, Surface reconstruction, Gaussian Splatting, Stereo matching, Multi-view consistency
 
 ## TL;DR
 
-SparseSurf is proposed to achieve simultaneous high-accuracy surface reconstruction and high-quality novel view synthesis under sparse-view settings, via Stereo Geometry-Texture Alignment (SGTA) and Pseudo-Feature Enhanced Geometry Consistency (PFEGC).
+Proposes SparseSurf, which enhances geometric consistency under sparse views through Stereo Geometry-Texture Alignment and Pseudo-Feature Enhanced Geometry Consistency, simultaneously achieving high-precision surface reconstruction and high-quality novel view synthesis, achieving SOTA on DTU, BlendedMVS, and Mip-NeRF360 datasets.
 
 ## Background & Motivation
 
-Reconstructing accurate 3D surface geometry from sparse-view images is a long-standing challenge. While 3D Gaussian Splatting has achieved strong results in dense-view surface reconstruction, **the optimization process tends to overfit when input views are sparse**, leading to severe quality degradation.
+3D Gaussian Splatting (3DGS) efficiently reconstructs high-quality surfaces under dense views, but easily overfits under sparse views, leading to a severe degradation in reconstruction quality. Existing methods face two key challenges:
 
-### Core Motivation
+**Challenge 1: Flattened Gaussians exacerbate overfitting**
+- To better fit surface geometry, recent methods (FatesGS, Sparse2DGS) employ flattened 2D Gaussian primitives.
+- However, flattening increases anisotropy, which instead exacerbates the risk of overfitting under sparse views.
+- While no issues are apparent from the training views, the rendering quality under novel views significantly degenerates.
 
-Existing sparse-view methods face the following key contradictions:
+**Challenge 2: Limitations of monocular depth priors**
+- Existing methods utilize monocular depth estimation as geometric constraints.
+- However, monocular depth suffers from scale ambiguity and lacks confidence estimation.
+- Under sparse views, the multi-view inconsistency introduced by noise becomes more severe.
 
-**Contradiction between flattened Gaussians and overfitting**: To better conform to surface geometry, methods such as FatesGS flatten Gaussians into 2D planar primitives. However, the resulting **high anisotropy** under sparse views **exacerbates overfitting** risk — the reconstruction may appear normal from training views but degrades severely from novel viewpoints.
-
-**Scale ambiguity in monocular depth priors**: Existing methods commonly employ monocular depth estimators for geometric constraints, but monocular depth suffers from **scale ambiguity** and lacks confidence estimation, which introduces noise under sparse views and leads to multi-view inconsistency.
-
-**Disconnect between rendering quality and geometric accuracy**: Existing NVS methods prioritize rendering quality with loose geometric constraints, while surface reconstruction-focused methods often sacrifice rendering quality.
-
-### Core Insights
-
-- **Stereo geometry priors** can provide metric-level supervision signals that are more reliable than monocular depth priors.
-- As rendering quality improves during training, stereo rendering quality improves as well, yielding more accurate priors and forming a **virtuous cycle**.
-- Combining feature consistency across training views and pseudo-views can effectively mitigate the overfitting caused by flattened Gaussians.
+The authors' core insight is to leverage stereo matching to provide metric-level supervision, and alleviate overfitting through multi-view feature consistency, thereby enabling mutual reinforcement between surface reconstruction and novel view synthesis.
 
 ## Method
 
 ### Overall Architecture
 
-SparseSurf consists of two core modules:
-1. **Stereo Geometry-Texture Alignment (SGTA)**: Generates metric-level depth and normal priors via stereo matching.
-2. **Pseudo-Feature Enhanced Geometry Consistency (PFEGC)**: Mitigates overfitting through multi-view feature consistency across training views and pseudo-views.
+SparseSurf is based on flattened 3DGS (similar to PGSR/GaussianSurfels) and contains two core modules:
+1. **Stereo Geometry-Texture Alignment**: Renders stereo view pairs to obtain metric-level depth priors via a pre-trained stereo matching network.
+2. **Pseudo-Feature Enhanced Geometry Consistency**: Combines multi-view feature consistency across both training views and pseudo-unseen views.
 
 ### Key Designs
 
-#### 1. Stereo Geometry-Texture Alignment (SGTA)
+#### 1. **Stereo Geometry-Texture Alignment**: Connecting rendering quality and geometric estimation
 
-**Function**: Obtains metric-level depth and normal priors from rendered stereo image pairs to supervise the geometric structure of Gaussians.
+The core idea is to leverage the excellent interpolation rendering capability of 3DGS to render stereo view pairs and obtain accurate metric-level geometric priors via a pre-trained stereo matching network.
 
-**Mechanism**:
-- For each training viewpoint $\mathbf{P}_i$, a stereo viewpoint with horizontal baseline $b$ is generated.
-- The stereo viewpoint image is rendered and paired with the original view image as input to a pretrained stereo matching network (Foundation Stereo).
-- Depth $\mathcal{D}^*$ is converted from the disparity map, and normals $\mathcal{N}^*$ are computed accordingly.
+**Stereo Prior Estimation**:
+- For each training camera pose $\mathbf{P}_i$, generate a stereo view at a horizontal baseline $b$.
+- Render stereo view images to form a stereo pair, and input them into a pre-trained stereo matching network to obtain a disparity map.
+- Convert the disparity to depth $\mathcal{D}^*$ using the known baseline and focal length.
+- Calculate normals $\mathcal{N}^*$ from the depth map.
+- Generate a reliability mask $\mathcal{M}^*$ through stereo view consistency checks to filter out unreliable pixels.
+- Periodically (every 300 iterations) re-render and update the priors during training.
 
-**Key Formulas**:
+**Stereo Geometry Supervision**:
+$$\mathcal{L}_{depth} = \mathcal{L}_1(D, \mathcal{D}^*)$$
+$$\mathcal{L}_{normal} = 1 - \mathcal{C}osine(N, \mathcal{N}^*)$$
+$$\mathcal{L}_{nd} = 1 - \mathcal{C}osine(N_d, \mathcal{N}^*)$$
 
-The stereo geometry supervision loss consists of four components:
+Additionally, introduce an edge-aware Laplacian smoothing loss:
+$$\mathcal{L}_{smooth} = \mathcal{S}mooth(N, \mathcal{N}^*) + \mathcal{S}mooth(N_d, \mathcal{N}^*)$$
 
-$$\mathcal{L}_{stereo} = (\lambda_d \mathcal{L}_{depth} + \lambda_n \mathcal{L}_{normal} + \lambda_{nd} \mathcal{L}_{nd}) \mathcal{M}^* + \lambda_s \mathcal{L}_{smooth}$$
+Total stereo loss:
+$$\mathcal{L}_{stereo} = (\lambda_d \mathcal{L}_{depth} + \lambda_n \mathcal{L}_{normal} + \lambda_{nd} \mathcal{L}_{nd})\mathcal{M}^* + \lambda_s \mathcal{L}_{smooth}$$
 
-- $\mathcal{L}_{depth} = \mathcal{L}_1(D, \mathcal{D}^*)$: depth L1 loss
-- $\mathcal{L}_{normal} = 1 - \text{Cosine}(N, \mathcal{N}^*)$: cosine alignment between rendered and stereo normals
-- $\mathcal{L}_{nd} = 1 - \text{Cosine}(N_d, \mathcal{N}^*)$: alignment between depth-derived normals and stereo normals
-- $\mathcal{L}_{smooth}$: edge-aware Laplacian smoothness loss
-- $\mathcal{M}^*$: reliability mask generated via stereo view consistency checking
+**Design Motivation**: As training progresses, rendering quality improves $\rightarrow$ more accurate stereo depth priors $\rightarrow$ better geometric supervision $\rightarrow$ further improves rendering quality, forming a positive feedback loop.
 
-**Design Motivation**:
-- Stereo matching produces **metric-level depth**, avoiding the scale ambiguity of monocular depth.
-- The consistency mask filters unreliable pixels to prevent erroneous supervision from rendering noise.
-- Stereo priors are updated periodically (every 300 iterations) during training, establishing a rendering→prior virtuous cycle.
+#### 2. **Pseudo-Feature Enhanced Geometry Consistency**: Mitigating Overfitting
 
-#### 2. Pseudo-Feature Enhanced Geometry Consistency (PFEGC)
-
-**Function**: Alleviates overfitting of flattened Gaussians under sparse views through multi-view feature consistency constraints from pseudo-views.
-
-**Mechanism**: Comprises two sub-modules — pseudo-view feature consistency and training-view feature alignment.
+Includes two sub-modules:
 
 **Pseudo-view Feature Consistency**:
-1. A frozen feature extractor (Vis-MVSNet) extracts features $\mathcal{F}^*$ from GT images.
-2. Each Gaussian is augmented with 8-dimensional feature attributes, learned via feature distillation loss: $\mathcal{L}_f = 1 - \text{Cosine}(F, \mathcal{F}^*)$
-3. Feature maps are rendered at random pseudo-viewpoints $\mathcal{V}_p$, and feature consistency is verified via bidirectional warping.
-4. **Patch-level** cosine similarity (rather than pixel-level) is adopted to prevent low-fidelity pseudo-view regions from contaminating training-view features:
+- Appends feature attributes to each Gaussian primitive, learning multi-view feature representations from a frozen feature extraction model via feature distillation.
+- Feature distillation loss: $\mathcal{L}_f = 1 - \mathcal{C}osine(F, \mathcal{F}^*)$
+- Render feature maps at random pseudo-views, compute feature differences through bidirectional warping, and generate confidence masks.
+- Adopt patch-level cosine similarity to avoid pixel-level noise contamination:
 
-$$\mathcal{L}_{pseudo} = \sum_{i,j} \mathcal{M}_{feat}^{(i,j)} [1 - \text{Cosine}(\bar{\mathcal{F}}_{p2t}^{(i,j)}, \bar{\mathcal{F}}_r^{(i,j)})]$$
+$$\mathcal{L}_{pseudo} = \sum_{i,j} \mathcal{M}_{feat}^{(i,j)} [1 - \mathcal{C}osine(\bar{\mathcal{F}}_{p2t}^{(i,j)}, \bar{\mathcal{F}}_r^{(i,j)})]$$
 
-**Training-view Feature Alignment**:
-- Pixel-level feature consistency is enforced between ground-truth training views: $\mathcal{L}_{train} = 1 - \text{Cosine}(\mathcal{F}_{s2t}, \mathcal{F}_s)$
+**Train-view Feature Alignment**:
+- Utilize high-confidence features from training views to enforce multi-view consistency at the pixel level.
+- $\mathcal{L}_{train} = 1 - \mathcal{C}osine(\mathcal{F}_{s2t}, \mathcal{F}_s)$
 
-**Design Motivation**:
-- Pseudo-views supplement the insufficient coverage of sparse training views, though their rendering quality may be lower.
-- Patch-level rather than pixel-level consistency provides robustness against rendering noise in pseudo-views.
-- Binary confidence mask $\mathcal{M}_{feat}$ further filters unreliable regions.
-- Pixel-level constraints between training views provide stronger geometric consistency guarantees.
+This joint constraint of "sparse training views + pseudo-unseen views" effectively mitigates the overfitting problem of flattened Gaussians under sparse views.
+
+#### 3. **Multi-View Feature Representation**: Efficient Feature Distillation
+
+Uses Vis-MVSNet to extract 8-dimensional multi-view features. The key design is to encode features into Gaussian attributes to avoid the computational overhead of re-extracting pseudo-view features at each iteration, keeping the entire pipeline efficient.
 
 ### Loss & Training
 
-Overall loss function (7,000 iterations, single RTX 3090):
-
-$$\mathcal{L} = \mathcal{L}_c + \mathcal{L}_{stereo} + \lambda_1 \mathcal{L}_f + \lambda_2 \mathcal{L}_{pseudo} + \lambda_3 \mathcal{L}_{train} + \lambda_4 \mathcal{L}_s + \lambda_5 \mathcal{L}_{dn}$$
-
-Different losses are activated at different stages:
-- $\mathcal{L}_c, \mathcal{L}_s, \mathcal{L}_f$: activated from iteration 0
-- $\mathcal{L}_{stereo}$: activated from iteration 500 (after rendering quality improves)
-- $\mathcal{L}_{pseudo}, \mathcal{L}_{dn}$: activated from iteration 3,000
+The total training loss includes the rendering loss, stereo loss, and feature consistency loss. The stereo prior is introduced from the 500th iteration and updated every 300 iterations to achieve progressive geometric guidance.
 
 ## Key Experimental Results
 
-### Main Results
+### Main Results (DTU Surface Reconstruction — Chamfer Distance↓)
 
-**DTU Surface Reconstruction (Chamfer Distance↓, little-overlap setting, 3 views)**:
+| Method | Little-overlap Setup | Large-overlap Setup | Category |
+|------|-------------------|-------------------|------|
+| COLMAP | 2.61 | 1.52 | MVS |
+| NeuSurf | 1.35 | 0.99 | Neural Implicit |
+| FatesGS | 1.37 | 0.92 | GS Surface Reconstruction |
+| 2DGS | 2.52 | 1.69 | GS Surface Reconstruction |
+| Sparse2DGS | — | 1.13 | GS Surface Reconstruction |
+| **SparseSurf** | **1.05** | **0.89** | GS Surface Reconstruction |
 
-| Method | Type | Mean CD↓ |
-|---|---|---|
-| COLMAP | Traditional MVS | 2.61 |
-| NeuSurf | Neural Implicit | 1.35 |
-| FatesGS | GS Surface Recon. | 1.37 |
-| UFORecon | Generalizable Implicit | 1.40 |
-| **SparseSurf** | **Ours** | **1.05** |
+Achieves the optimal Chamfer Distance under both sparse-view settings on DTU.
 
-**DTU Surface Reconstruction (large-overlap setting, 3 views)**:
-
-| Method | Mean CD↓ |
-|---|---|
-| FatesGS | 0.92 |
-| NeuSurf | 0.99 |
-| UFORecon | 0.99 |
-| **SparseSurf** | **0.89** |
-
-**DTU Sparse-View Novel View Synthesis (NVS)**:
+### DTU Novel View Synthesis
 
 | Method | PSNR↑ | SSIM↑ | LPIPS↓ | AVGE↓ |
-|---|---|---|---|---|
+|------|-------|-------|--------|-------|
 | CoR-GS | 19.21 | 0.853 | 0.119 | 0.082 |
 | Binocular3DGS | 20.71 | 0.862 | 0.111 | — |
 | NexusGS | 20.21 | 0.869 | 0.102 | 0.071 |
 | **SparseSurf** | **21.31** | **0.886** | **0.089** | **0.067** |
 
+Also achieves comprehensive superiority on novel view synthesis, demonstrating that surface reconstruction and rendering quality can be mutually enhanced.
+
 ### Ablation Study
 
-Ablation on DTU (large-overlap setting):
-
-| Configuration | Accuracy↓ | Completion↓ | Average↓ | Note |
-|---|---|---|---|---|
-| Baseline (no extra losses) | 1.318 | 2.302 | 1.810 | RGB supervision only |
-| + $\mathcal{L}_{stereo}$ | 0.822 | 1.612 | 1.217 | Stereo depth yields large improvement |
-| + $\mathcal{L}_{pseudo}$ | 0.610 | 1.327 | 0.969 | Pseudo-views further reduce overfitting |
-| + $\mathcal{L}_{train}$ (full) | **0.533** | **1.239** | **0.886** | Training-view alignment enhances robustness |
+| Configuration | Accuracy↓ | Completion↓ | Average CD↓ | Description |
+|------|-----------|-------------|-------------|------|
+| Baseline (without modules) | 1.318 | 2.302 | 1.810 | Baseline |
+| + $L_{stereo}$ | 0.822 | 1.612 | 1.217 | Stereo constraint significantly improves performance |
+| + $L_{stereo}$ + $L_{pseudo}$ | 0.610 | 1.327 | 0.969 | Pseudo-views further improve performance |
+| + All ($L_{train}$) | **0.533** | **1.239** | **0.886** | Training view alignment provides additional gains |
 
 ### Key Findings
 
-1. **Stereo depth contributes the most**: Mean CD decreases from 1.810 to 1.217 (33% improvement).
-2. **Progressive module stacking yields consistent gains**: Each module demonstrates clear independent contribution.
-3. **Robustness to different stereo matching networks**: Both Foundation Stereo and Stereo Anywhere are effective.
-4. **Insensitivity to baseline selection**: Baselines of 3%, 7%, and 10% of scene radius all perform well.
-5. **Simultaneous SOTA on reconstruction and rendering**: Unlike prior methods that trade off between the two objectives.
+1. The stereo prior is the largest contributor to performance (CD decreases from 1.810 to 1.217, a 33% reduction).
+2. Pseudo-view feature consistency effectively mitigates overfitting (CD drops from 1.217 to 0.969).
+3. Train-view feature alignment provides additional robustness gains (0.969 $\rightarrow$ 0.886).
+4. Patch-level feature consistency is more robust than pixel-level, preventing noise propagation.
 
 ## Highlights & Insights
 
-1. The idea of **replacing monocular depth with stereo depth** is insightful — leveraging the rendering capability of 3DGS to generate stereo pairs for metric-level priors.
-2. **Virtuous cycle design**: improved rendering quality → more accurate stereo priors → better geometric optimization → further improved rendering quality.
-3. The choice of **patch-level vs. pixel-level feature consistency** reflects a deep understanding of noise in pseudo-view rendering.
-4. **Both reconstruction and rendering objectives are addressed simultaneously**, unlike prior methods that focus on only one.
+1. **Synergy between Surface Reconstruction and Rendering**: Breaks the traditional trade-off of "better surface fitting $\rightarrow$ worse rendering".
+2. **Positive Loop Design of Stereo Prior**: Improved rendering quality $\rightarrow$ better stereo prior $\rightarrow$ better geometry $\rightarrow$ further improved rendering, achieving self-reinforcement.
+3. **Feature-level Supervision for Pseudo-views**: Compared to previous works that only use RGB or monocular depth to supervise pseudo-views, multi-view feature consistency constraints are more effective.
+4. **Computational Efficiency Considerations**: Encoding features into Gaussian attributes avoids the overhead of re-extracting features for pseudo-views each time.
+5. **Moderate Use of Flattened Gaussians**: Recognizes the overfitting risk brought by flattening and mitigates it using consistency constraints.
 
 ## Limitations & Future Work
 
-1. Reliance on pretrained stereo matching networks and feature extractors introduces additional computational overhead at inference time.
-2. Performance under extreme sparsity (e.g., 2 views) remains to be validated.
-3. The pseudo-view generation strategy (interpolated from training camera positions) may lack flexibility.
-4. TSDF fusion for mesh extraction introduces an additional post-processing step.
+1. Relies on the quality of the pre-trained stereo matching network, which may provide noisy priors in the early stages of training when rendering quality is poor.
+2. The pseudo-view generation strategy is relatively simple (based on the vicinity of training cameras); more intelligent view selection can be explored.
+3. Computational overhead: Requires additional stereo matching inference and feature extraction.
+4. Not specifically optimized for large-scale scenes (such as Mip-NeRF360 outdoor scenes).
+5. The sparse setting of 3 views is fixed, without exploring performance under different levels of sparsity.
 
 ## Related Work & Insights
 
-- **FatesGS** (AAAI25): Sparse-view surface reconstruction using flattened Gaussians and monocular depth; the most direct baseline for comparison.
-- **GS2Mesh**: The most closely related prior work, which also uses stereo matching for mesh extraction but fails under sparse views due to rendering quality degradation.
-- **CoR-GS** (ECCV24): A representative method that alleviates sparse-view issues through training process optimization.
-- **2DGS**: Foundational method for flat Gaussian surface reconstruction.
-- **NeuSurf**: State-of-the-art neural implicit surface reconstruction under sparse views.
+- **GS2Mesh**: Most related work, uses stereo matching to extract meshes from 3DGS, but performs poorly under sparse views.
+- **FatesGS/Sparse2DGS**: Surface reconstruction methods with flattened Gaussians, where SparseSurf points out their overfitting issues.
+- **DNGaussian**: A depth-regularization method, but its geometric constraints are too loose to reconstruct accurate surfaces.
+- **Insight**: Stereo matching is a promising direction as geometric supervision for 3DGS.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The bootstrapped stereo prior update mechanism and hierarchical feature consistency design represent clear innovations.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Three datasets, two sparsity settings, comprehensive ablation and supplementary experiments.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation analysis is thorough and method exposition is clear.
-- **Value**: ⭐⭐⭐⭐⭐ — Achieving simultaneous SOTA on both reconstruction and rendering under sparse views demonstrates strong practical applicability.
-
----
+- **Novelty**: ⭐⭐⭐⭐ — Novel design of self-reinforcing stereo priors and feature-level pseudo-view consistency.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Three datasets, two sparse settings, detailed ablation, and comparisons.
+- **Writing Quality**: ⭐⭐⭐⭐ — Thorough motivation analysis, clear methodology derivation.
+- **Value**: ⭐⭐⭐⭐ — High demand for sparse-view surface reconstruction applications.
 
 <!-- RELATED:START -->
 
@@ -206,10 +183,10 @@ Ablation on DTU (large-overlap setting):
 ## Related Papers
 
 - [\[AAAI 2026\] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting](meshsplat_generalizable_sparse-view_surface_reconstruction_via_gaussian_splattin.md)
-- [\[AAAI 2026\] OceanSplat: Object-aware Gaussian Splatting with Trinocular View Consistency for Underwater Scene Reconstruction](oceansplat_object-aware_gaussian_splatting_with_trinocular_view_consistency_for_.md)
-- [\[AAAI 2026\] TG-Field: Geometry-Aware Radiative Gaussian Fields for Tomographic Reconstruction](tg-field_geometry-aware_radiative_gaussian_fields_for_tomographic_reconstruction.md)
 - [\[ICCV 2025\] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting](../../ICCV2025/3d_vision/surfacesplat_connecting_surface_reconstruction_and_gaussian_splatting.md)
 - [\[AAAI 2026\] Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction](sparse4dgs_4d_gaussian_splatting_for_sparse-frame_dynamic_scene_reconstruction.md)
+- [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](../../CVPR2026/3d_vision/sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
+- [\[CVPR 2026\] SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting](../../CVPR2026/3d_vision/sv-gs_sparse_view_4d_reconstruction_with_skeleton-driven_gaussian_splatting.md)
 
 </div>
 

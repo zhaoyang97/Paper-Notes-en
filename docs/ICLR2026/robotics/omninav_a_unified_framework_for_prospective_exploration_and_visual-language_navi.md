@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniNav: A Unified Framework for Prospective Exploration and Visual-Language Navigation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] OmniNav utilizes a dual-system architecture comprising a VLM backbone and a flow-matching policy head to unify four navigation tasks—instruct-goal, object-goal, point-goal, and frontier exploration—into a single model. The fast system predicts high-precision continuous waypoints from short-term visual contexts to suppo
+  [ICLR 2026][Robotics][Embodied Navigation] OmniNav utilizes a dual-system architecture comprising a VLM backbone and a flow-matching policy head to unify four navigation tasks—instruct-goal, object-goal, point-goal, and frontier exploration—into a single model. The fast system predicts high-precision continuous waypoints from short-term visual contexts to support 5 Hz real-time control, while the slow system performs sub-goal planning with Chain-of-Thought (CoT) using long-te…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Embodied Navigation"
+  - "Visual-Language Navigation"
+  - "dual-system"
+  - "flow-matching"
+  - "frontier exploration"
 date: 2026-05-08
-content_hash: 1dd8a145c40c0b88
+content_hash: 62ac3bf234b122c6
 ---
+
 # OmniNav: A Unified Framework for Prospective Exploration and Visual-Language Navigation
 
 **Conference**: ICLR 2026  
@@ -147,11 +153,11 @@ Evaluation on HM3D-OVON Val-Unseen with components enabled incrementally:
 
 ## Related Papers
 
-- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](../../CVPR2026/robotics/fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
-- [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
 - [\[CVPR 2026\] HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation](../../CVPR2026/robotics/htnav_a_hybrid_navigation_framework_with_tiered_structure_for_urban_aerial_visio.md)
 - [\[CVPR 2026\] CUBic: Coordinated Unified Bimanual Perception and Control Framework](../../CVPR2026/robotics/cubic_coordinated_unified_bimanual_perception_and_control_framework.md)
+- [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
+- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](../../CVPR2026/robotics/fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
 
 </div>
 

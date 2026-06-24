@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion
 description: >-
-  [CVPR 2026][Image Generation][rectified flow] The paper proposes CaReFlow, the first to use rectified flow for multimodal distribution mapping to bridge the modality gap. Through one-to-many mapping, source modality data points observe the global distribution of the target modality; adaptive relaxed alignment applies varying alignment strengths to modality pairs w
+  [CVPR 2026][Image Generation][rectified flow] The paper proposes CaReFlow, the first to use rectified flow for multimodal distribution mapping to bridge the modality gap. Through one-to-many mapping, source modality data points observe the global distribution of the target modality; adaptive relaxed alignment applies varying alignment strengths to modality pairs with different correlations; and cyclic rectified flow ensures no information is lost after mapping. It achieves SO…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - rectified flow
-  - modality gap
-  - multimodal fusion
-  - affective computing
-  - distribution mapping
+  - "CVPR 2026"
+  - "Image Generation"
+  - "rectified flow"
+  - "modality gap"
+  - "multimodal fusion"
+  - "affective computing"
+  - "distribution mapping"
 date: 2026-05-08
-content_hash: 4168fe9874bf4e5f
+content_hash: f3e96ce35e1116c9
 ---
+
 # CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion
 
 **Conference**: CVPR 2026  
@@ -154,10 +155,10 @@ On CH-SIMS-v2, Acc5 reached 57.9 (Prev. SOTA KuDA was 53.1, Gain +4.8), and Acc2
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](../../NeurIPS2025/image_generation/efficient_rectified_flow_for_image_fusion.md)
-- [\[CVPR 2026\] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)
+- [\[CVPR 2026\] Delta Rectified Flow Sampling for Text-to-Image Editing](delta_rectified_flow_sampling_for_text-to-image_editing.md)
+- [\[CVPR 2026\] NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers](nami_efficient_image_generation_via_bridged_progressive_rectified_flow_transform.md)
+- [\[CVPR 2026\] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation](vde_training-free_accelerating_rectified_flow_model_via_velocity_decomposition_a.md)
 - [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](rectok_reconstruction_distillation_along_rectified_flow.md)
-- [\[CVPR 2025\] JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation](../../CVPR2025/image_generation/janusflow_harmonizing_autoregression_and_rectified_flow_for_unified_multimodal_u.md)
-- [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Automated Interpretability Metrics Do Not Distinguish Trained and Random Transformers
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper conducts a "sanity check" on the currently popular Sparse Autoencoders (SAEs). By applying SAEs to both trained Transformers and **randomly initialized** Transformers, the authors find that commonly used automated interpretability scores (auto-interp AUROC) and reconstruction metrics are almost indistinguish
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This paper conducts a "sanity check" on the currently popular Sparse Autoencoders (SAEs). By applying SAEs to both trained Transformers and **randomly initialized** Transformers, the authors find that commonly used automated interpretability scores (auto-interp AUROC) and reconstruction metrics are almost indistinguishable between the two. This suggests that high interpretability scores alone **cannot** prove that an SAE has…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Automated Interpretability"
+  - "Random Baselines"
+  - "Superposition"
+  - "Evaluation Metrics"
 date: 2026-05-08
-content_hash: 2b2de444640578aa
+content_hash: 820337b454acf21f
 ---
+
 # Automated Interpretability Metrics Do Not Distinguish Trained and Random Transformers
 
 **Conference**: ICLR 2026  
@@ -139,7 +145,7 @@ Across the 70M–6.9B spectrum, all variants except Control show highly consiste
 - [\[ICLR 2026\] Sparse Autoencoders Trained on the Same Data Learn Different Features](sparse_autoencoders_trained_on_the_same_data_learn_different_features.md)
 - [\[ICLR 2026\] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding](how_do_transformers_learn_to_associate_tokens_gradient_leading_terms_bring_mecha.md)
 - [\[ICLR 2026\] Learning Pseudorandom Numbers with Transformers: Permuted Congruential Generators, Curricula, and Interpretability](learning_pseudorandom_numbers_with_transformers_permuted_congruential_generators.md)
-- [\[ACL 2025\] Enhancing Automated Interpretability with Output-Centric Feature Descriptions](../../ACL2025/interpretability/output_centric_interpretability.md)
+- [\[ICLR 2026\] EnsembleSHAP: Faithful and Certifiably Robust Attribution for Random Subspace Method](ensembleshap_faithful_and_certifiably_robust_attribution_for_random_subspace_met.md)
 
 </div>
 

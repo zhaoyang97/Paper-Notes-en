@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MoRI: Learning Motivation-Grounded Reasoning for Scientific Ideation in Large Language Models
 description: >-
-  [ACL 2026][LLM (Other)][Motivation-grounded Reasoning] Scientific ideation is explicitly modeled as a two-stage conditional reasoning task: "context → motivation → reasoning → method." Based on SFT cold-starting, a 14B model is trained using GRPO and a pair of novel verifiable rewards (**Entropy-Aware Information Gain, EAIG** and **Contrastive Semantic Gain, CSG**). The mo
+  [ACL 2026][LLM (Other)][Scientific Ideation] Scientific ideation is explicitly modeled as a two-stage conditional reasoning task: "context → motivation → reasoning → method." Based on SFT cold-starting, a 14B model is trained using GRPO and a pair of novel verifiable rewards (**Entropy-Aware Information Gain, EAIG** and **Contrastive Semantic Gain, CSG**). The model outperforms agentic frameworks such as GPT-4o, Claude-3.5-Sonnet, and AI-Scientist-V2 on held-out test sets fro…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - Motivation-grounded Reasoning
-  - GRPO
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Scientific Ideation"
+  - "Motivation-grounded Reasoning"
+  - "GRPO"
+  - "Entropy-Aware Information Gain"
+  - "Contrastive Semantic Gain"
 date: 2026-05-08
-content_hash: e35bc1e7fde8bfbb
+content_hash: 6fc9f1b754deaaed
 ---
+
 # MoRI: Learning Motivation-Grounded Reasoning for Scientific Ideation in Large Language Models
 
 **Conference**: ACL 2026  
@@ -159,11 +163,11 @@ On ICLR, MoRI's Feasibility (3.11) is 10.3% higher than Claude-3.5-Sonnet (2.82)
 
 ## Related Papers
 
+- [\[ACL 2026\] LinkNav: Surfacing Interconnected Information in Scientific Articles](linknav_surfacing_interconnected_information_in_scientific_articles.md)
 - [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
 - [\[ACL 2025\] The Role of Deductive and Inductive Reasoning in Large Language Models](../../ACL2025/llm_nlp/the_role_of_deductive_and_inductive_reasoning_in_large_language_models.md)
 - [\[ACL 2025\] Disentangling Memory and Reasoning Ability in Large Language Models](../../ACL2025/llm_nlp/disentangle_memory_reasoning.md)
-- [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
-- [\[ACL 2026\] Adam's Law: Textual Frequency Law on Large Language Models](adam39s_law_textual_frequency_law_on_large_language_models.md)
+- [\[ICLR 2026\] Differential Fine-Tuning Large Language Models Towards Better Diverse Reasoning Abilities](../../ICLR2026/llm_nlp/differential_fine-tuning_large_language_models_towards_better_diverse_reasoning_.md)
 
 </div>
 

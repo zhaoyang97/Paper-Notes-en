@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PoinnCARE: Hyperbolic Multi-Modal Learning for Enzyme Classification
 description: >-
-  [ICLR 2026][Computational Biology][EC number] PoinnCARE projects enzyme sequences, structures, and active site modalities into hyperbolic (Poincaré ball) space for joint encoding and alignment. It utilizes graph diffusion to complete sparse active site annotations and leverages hyperbolic geometry to faithfully preserve the tree-like hierarchy of the EC numbering
+  [ICLR2026][Computational Biology][Enzyme Classification] PoinnCARE projects enzyme sequences, structures, and active site modalities into hyperbolic (Poincaré ball) space for joint encoding and alignment. It utilizes graph diffusion to complete sparse active site annotations and leverages hyperbolic geometry to faithfully preserve the tree-like hierarchy of the EC numbering system. It outperforms 12 SOTA methods across four test sets of the CARE benchmark…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - EC number
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Enzyme Classification"
+  - "EC number"
+  - "Hyperbolic Space"
+  - "Multi-modal Learning"
+  - "Graph Diffusion"
 date: 2026-05-08
-content_hash: c1143a750790cab5
+content_hash: 7f9b1fa4f350ffb2
 ---
+
 # PoinnCARE: Hyperbolic Multi-Modal Learning for Enzyme Classification
 
 **Conference**: ICLR2026  
@@ -135,6 +140,7 @@ Evaluation on the <30% identity test set for level-4 accuracy:
 - **Value**: ⭐⭐⭐⭐ Provides a plug-and-play, low-dimensional, and efficient framework for enzyme function prediction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

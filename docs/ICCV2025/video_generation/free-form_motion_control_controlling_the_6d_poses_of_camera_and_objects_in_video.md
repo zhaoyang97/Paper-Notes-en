@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation
 description: >-
-  [ICCV 2025][Video Generation][6D pose control] This paper proposes SynFMC, a synthetic dataset (the first video dataset with complete 6D pose annotations for both camera and objects) and the FMC method…
+  [ICCV 2025][Video Generation][6D pose control] This paper proposes SynFMC, a synthetic dataset (the first video dataset with complete 6D pose annotations for both camera and objects) and the FMC method, enabling independent or simultaneous 6D pose control of camera and objects in text-to-video generation. The approach produces high-fidelity videos across diverse scenarios and is compatible with multiple personalized T2I models.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "synthetic dataset"
   - "text-to-video"
 date: 2026-05-08
-content_hash: 988939e967de703b
+content_hash: 22b42446ab296c8a
 ---
 
 # Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation
@@ -158,10 +158,10 @@ The margin in object motion scores is substantial (0.98 vs. 0.53), validating th
 ## Related Papers
 
 - [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
+- [\[CVPR 2025\] Motion Prompting: Controlling Video Generation with Motion Trajectories](../../CVPR2025/video_generation/motion_prompting_controlling_video_generation_with_motion_trajectories.md)
+- [\[CVPR 2025\] Dynamic Camera Poses and Where to Find Them](../../CVPR2025/video_generation/dynamic_camera_poses_and_where_to_find_them.md)
 - [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
 - [\[ICCV 2025\] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering](steerx_creating_any_camera-free_3d_and_4d_scenes_with_geometric_steering.md)
-- [\[ICCV 2025\] VMBench: A Benchmark for Perception-Aligned Video Motion Generation](vmbench_a_benchmark_for_perception-aligned_video_motion_generation.md)
-- [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](../../CVPR2026/video_generation/symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Counterfactual LLM-based Framework for Measuring Rhetorical Style
 description: >-
-  [ICLR 2026][Causal Inference][LLM Judge] This paper proposes a counterfactual LLM measurement framework: while fixing the substantive content $X$ (methods, experiments, results), different rhetorical personas generate counterfactual abstracts for the same paper. These abstracts are then calibrated into continuous "rhetorical strength" $Z$ scores using LLM Jud
+  [ICLR 2026][Causal Inference][Counterfactual measurement] This paper proposes a counterfactual LLM measurement framework: while fixing the substantive content $X$ (methods, experiments, results), different rhetorical personas generate counterfactual abstracts for the same paper. These abstracts are then calibrated into continuous "rhetorical strength" $Z$ scores using LLM Judge pairwise comparisons and the Bradley-Terry model. Empirical analysis of 8…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - LLM Judge
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Counterfactual measurement"
+  - "rhetorical style"
+  - "Bradley-Terry model"
+  - "LLM Judge"
+  - "scientific writing"
 date: 2026-05-08
-content_hash: e7737e2d6a6090a2
+content_hash: ca003aa3834189b0
 ---
+
 # Counterfactual LLM-based Framework for Measuring Rhetorical Style
 
 **Conference**: ICLR 2026  
@@ -136,8 +141,20 @@ Ours rhetorical score and review scores are nearly uncorrelated (Spearman $\rho=
 - **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] On Measuring Influence in Avoiding Undesired Future](on_measuring_influence_in_avoiding_undesired_future.md)
+- [\[ICLR 2026\] NextQuill: Causal Preference Modeling for Enhancing LLM Personalization](nextquill_causal_preference_modeling_for_enhancing_llm_personalization.md)
+- [\[ICLR 2026\] Meta-Router: Bridging Gold-standard and Preference-based Evaluations in LLM Routing](meta-router_bridging_gold-standard_and_preference-based_evaluations_in_llm_routi.md)
+- [\[ACL 2026\] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation](../../ACL2026/causal_inference/parallel_universes_parallel_languages_a_comprehensive_study_on_llm-based_multili.md)
+- [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] On Measuring Influence in Avoiding Undesired Future](on_measuring_influence_in_avoiding_undesired_future.md)

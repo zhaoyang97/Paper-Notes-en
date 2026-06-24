@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Few-Step Diffusion Models by Trajectory Distribution Matching
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Distillation] This paper proposes Trajectory Distribution Matching (TDM), a novel paradigm that unifies trajectory distillation and distribution matching by aligning the marginal d…
+  [ICCV 2025][Image Generation][Diffusion Distillation] This paper proposes Trajectory Distribution Matching (TDM), a novel paradigm that unifies trajectory distillation and distribution matching by aligning the marginal distributions of student and teacher ODE trajectories at the distributional level. TDM enables efficient few-step diffusion model distillation, requiring only 2 A800 GPU-hours to distill PixArt-α into a 4-step generator that surpasses the teacher model.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Score Distillation"
   - "Text-to-Image Acceleration"
 date: 2026-05-08
-content_hash: 5639579ddea6bb6d
+content_hash: ccf55d6aa7429669
 ---
 
 # Learning Few-Step Diffusion Models by Trajectory Distribution Matching
@@ -170,10 +170,10 @@ LoRA adaptation to unseen custom models (Realistic, SD-v1.5, 4 steps):
 ## Related Papers
 
 - [\[ICCV 2025\] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching](unsupervised_imaging_inverse_problems_with_diffusion_distribution_matching.md)
+- [\[ICLR 2026\] Decoupled DMD: CFG Augmentation as the Spear, Distribution Matching as the Shield](../../ICLR2026/image_generation/decoupled_dmd_cfg_augmentation_as_the_spear_distribution_matching_as_the_shield.md)
 - [\[CVPR 2026\] Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning](../../CVPR2026/image_generation/refining_few-step_text-to-multiview_diffusion_via_reinforcement_learning.md)
 - [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](golden_noise_for_diffusion_models_a_learning_framework.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](joint_diffusion_models_in_continual_learning.md)
-- [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](inference-time_diffusion_model_distillation.md)
 
 </div>
 

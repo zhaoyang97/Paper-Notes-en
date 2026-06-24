@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data
 description: >-
-  [AAAI 2026][Image Generation][Scene Text Editing] This paper proposes STELLAR, a framework for scene text editing (STE) in low-resource languages such as Korean, Arabic…
+  [AAAI 2026][Image Generation][Scene Text Editing] This paper proposes STELLAR, a framework for scene text editing (STE) in low-resource languages such as Korean, Arabic, and Japanese. STELLAR introduces a language-adaptive glyph encoder and a two-stage training strategy (synthetic pretraining followed by real-data fine-tuning). A reference-free TAS metric is proposed to evaluate font, color, and background style preservation without requiring ground-truth images. Korean recog…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Domain Adaptation"
   - "Text Appearance Similarity"
 date: 2026-05-08
-content_hash: 3eed7f5ef28863f2
+content_hash: f332c0a593d7b869
 ---
 
 # STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data
@@ -179,10 +179,10 @@ Key advantage: unaffected by text content changes; applicable without ground-tru
 
 ## Related Papers
 
-- [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
+- [\[CVPR 2026\] Dynamic-eDiTor: Training-Free Text-Driven 4D Scene Editing with Multimodal Diffusion Transformer](../../CVPR2026/image_generation/dynamic-editor_training-free_text-driven_4d_scene_editing_with_multimodal_diffus.md)
 - [\[AAAI 2026\] Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution](continuous_degradation_modeling_via_latent_flow_matching_for_real-world_super-re.md)
-- [\[AAAI 2026\] MDiff4STR: Mask Diffusion Model for Scene Text Recognition](mdiff4str_mask_diffusion_model_for_scene_text_recognition.md)
 - [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
+- [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
 - [\[ICLR 2026\] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training](../../ICLR2026/image_generation/generate_any_scene_scene_graph_driven_data_synthesis_for_visual_generation_train.md)
 
 </div>

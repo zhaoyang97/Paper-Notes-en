@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Compositional amortized inference for large-scale hierarchical Bayesian models
 description: >-
-  [ICLR 2026][Image Generation][amortized Bayesian inference] Extends Compositional Score Matching (CSM) to hierarchical Bayesian models by introducing a new error-damping estimator and mini-batch strategy to solve numerical instability under massive data groups. This work achieves the first amortized inference for large-scale hierarchical models exceeding 750,000 parameters (250
+  [ICLR2026][Image Generation][amortized Bayesian inference] Extends Compositional Score Matching (CSM) to hierarchical Bayesian models by introducing a new error-damping estimator and mini-batch strategy to solve numerical instability under massive data groups. This work achieves the first amortized inference for large-scale hierarchical models exceeding 750,000 parameters (250,000+ data groups) and validates its effectiveness in real-world fluorescence lifetime imaging (FLIM)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - amortized Bayesian inference
-  - hierarchical model
-  - compositional score matching
-  - diffusion model
-  - scalability
+  - "ICLR2026"
+  - "Image Generation"
+  - "amortized Bayesian inference"
+  - "hierarchical model"
+  - "compositional score matching"
+  - "diffusion model"
+  - "scalability"
 date: 2026-05-08
-content_hash: dbcbad331cfa49c5
+content_hash: 0ef7fab893ffbdb3
 ---
+
 # Compositional amortized inference for large-scale hierarchical Bayesian models
 
 **Conference**: ICLR2026  
@@ -146,7 +147,7 @@ Global and local score models are jointly trained (Eq. 11) using Denoising Score
 - [\[AAAI 2026\] HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models](../../AAAI2026/image_generation/hierarchicalprune_position-aware_compression_for_large-scale_diffusion_models.md)
 - [\[CVPR 2026\] HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning](../../CVPR2026/image_generation/hicogen_hierarchical_compositional_text-to-image_generation_in_diffusion_models_.md)
 - [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
-- [\[NeurIPS 2025\] Large-Scale Training Data Attribution for Music Generative Models via Unlearning](../../NeurIPS2025/image_generation/large-scale_training_data_attribution_for_music_generative_models_via_unlearning.md)
+- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
 
 </div>
 

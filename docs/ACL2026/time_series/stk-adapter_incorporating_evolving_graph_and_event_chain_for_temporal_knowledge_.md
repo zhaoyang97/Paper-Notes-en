@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] STK-Adapter: Incorporating Evolving Graph and Event Chain for Temporal Knowledge Graph Extrapolation
 description: >-
-  [ACL 2026][Time Series][Paper Note] This paper proposes STK-Adapter, which embeds three MoE modules in each layer of a Large Language Model (LLM)—ST-MoE for capturing spatio-temporal structures, EA-MoE for modeling event chain semantics, and CMA-MoE for deep cross-modal alignment. It addresses the issues of spatio-temporal information loss and layer-wise
+  [ACL 2026][Time Series][Temporal Knowledge Graph Extrapolation] This paper proposes STK-Adapter, which embeds three MoE modules in each layer of a Large Language Model (LLM)—ST-MoE for capturing spatio-temporal structures, EA-MoE for modeling event chain semantics, and CMA-MoE for deep cross-modal alignment. It addresses the issues of spatio-temporal information loss and layer-wise dilution caused by shallow alignment between TKG embeddings and LLMs…
 tags:
-  - ACL 2026
-  - Time Series
+  - "ACL 2026"
+  - "Time Series"
+  - "Temporal Knowledge Graph Extrapolation"
+  - "MoE Adapter"
+  - "Cross-modal Alignment"
+  - "Event Chain Modeling"
+  - "Graph Structure Evolution"
 date: 2026-05-08
-content_hash: 7ce412f4eb9dc8e8
+content_hash: e6ccd0ec0640caa7
 ---
+
 # STK-Adapter: Incorporating Evolving Graph and Event Chain for Temporal Knowledge Graph Extrapolation
 
 **Conference**: ACL 2026  
@@ -139,8 +145,8 @@ The total loss combines cross-entropy and load balancing loss: $\mathcal{L} = -\
 - [\[ACL 2025\] ANRE: Analogical Replay for Temporal Knowledge Graph Forecasting](../../ACL2025/time_series/anre_analogical_replay_for_temporal_knowledge_graph_forecasting.md)
 - [\[ACL 2025\] G2S: A General-to-Specific Learning Framework for Temporal Knowledge Graph Forecasting with Large Language Models](../../ACL2025/time_series/g2s_a_general-to-specific_learning_framework_for_temporal_knowledge_graph_foreca.md)
 - [\[ICML 2026\] Beyond Extrapolation: Knowledge Utilization Paradigm with Bidirectional Inspiration for Time Series Forecasting](../../ICML2026/time_series/beyond_extrapolation_knowledge_utilization_paradigm_with_bidirectional_inspirati.md)
-- [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](../../NeurIPS2025/time_series/simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
 - [\[ICLR 2026\] ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/astgi_adaptive_spatio-temporal_graph_interactions_for_irregular_multivariate_tim.md)
+- [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](../../NeurIPS2025/time_series/simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
 
 </div>
 

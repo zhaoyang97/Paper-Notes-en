@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer
 description: >-
-  [CVPR 2026][Model Compression][K-FAC] Addressing the overlooked "data redundancy" bottleneck in on-device LoRA fine-tuning, LoPrune proposes projecting sample influence functions onto the LoRA trainable subspace to calculate the TSA Score. By utilizing K-FAC curvature approximation for efficient single-epoch scoring, it reduces fine-tuning overhead by up t
+  [CVPR 2026][Model Compression][Data Pruning] Addressing the overlooked "data redundancy" bottleneck in on-device LoRA fine-tuning, LoPrune proposes projecting sample influence functions onto the LoRA trainable subspace to calculate the TSA Score. By utilizing K-FAC curvature approximation for efficient single-epoch scoring, it reduces fine-tuning overhead by up to 72.9% and accelerates training by up to 3.69× on models like ViT/DeiT/Swin/DETR…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - K-FAC
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Data Pruning"
+  - "LoRA Fine-Tuning"
+  - "Influence Function"
+  - "Trainable Subspace"
+  - "K-FAC"
 date: 2026-05-08
-content_hash: 74bff599dd58e390
+content_hash: 596642355c1ba32e
 ---
+
 # LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer
 
 **Conference**: CVPR 2026  
@@ -120,9 +125,9 @@ Ablation of TSAS (L) and K-FAC (K) components, where F is the traditional Hessia
 
 - [\[CVPR 2026\] TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer](taskit_memory-efficient_fine-tuning_of_multi-lora_llms_via_cross-task_importance.md)
 - [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
-- [\[CVPR 2026\] Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models](mining_attribute_subspaces_for_efficient_fine-tuning_of_3d_foundation_models.md)
+- [\[CVPR 2026\] Edge-RecViT: Efficient Vision Transformer via Semantic-Refined Dynamic Recursion](edge-recvit_efficient_vision_transformer_via_semantic-refined_dynamic_recursion.md)
 - [\[CVPR 2026\] ThinkingViT: Matryoshka Thinking Vision Transformer for Elastic Inference](thinkingvit_matryoshka_thinking_vision_transformer_for_elastic_inference.md)
-- [\[CVPR 2026\] ReFTA: Breaking the Weight Reconstruction Bottleneck in Tensorized Parameter-Efficient Fine-Tuning](refta_breaking_the_weight_reconstruction_bottleneck_in_tensorized_parameter-effi.md)
+- [\[ICLR 2026\] GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs](../../ICLR2026/model_compression/gradpruner_gradient-guided_layer_pruning_enabling_efficient_fine-tuning_and_infe.md)
 
 </div>
 

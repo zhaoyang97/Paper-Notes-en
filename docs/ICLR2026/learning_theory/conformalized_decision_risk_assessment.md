@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Conformalized Decision Risk Assessment
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] CREDO transforms the question "how likely is a candidate decision to be sub-optimal" into "the probability that the true outcome falls outside the inverse feasible set of that decision." By using generative conformal prediction to construct an inner approximation set of the inverse feasible set, it provides a **distrib
+  [ICLR 2026][Learning Theory][Inverse Optimization] CREDO transforms the question "how likely is a candidate decision to be sub-optimal" into "the probability that the true outcome falls outside the inverse feasible set of that decision." By using generative conformal prediction to construct an inner approximation set of the inverse feasible set, it provides a **distribution-free, statistically guaranteed** risk upper bound, allowing human experts to perform auditable risk ass…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Conformal Prediction"
+  - "Uncertainty Quantification"
+  - "Decision Optimization"
+  - "Inverse Optimization"
+  - "Decision Risk"
+  - "Distribution-Free Guarantees"
+  - "Generative Models"
 date: 2026-05-08
-content_hash: f7d5d349598cfd4e
+content_hash: 84276c52066517c0
 ---
+
 # Conformalized Decision Risk Assessment
 
 **Conference**: ICLR 2026  
@@ -153,15 +161,16 @@ CREDO achieves the lowest rank across most datasets, typically identifying the "
 - Value: ⭐⭐⭐⭐ Provides an auditable, distribution-free risk certificate for high-stakes decision-making.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
+- [\[ICLR 2026\] CLEAR: Calibrated Learning for Epistemic and Aleatoric Risk](clear_calibrated_learning_for_epistemic_and_aleatoric_risk.md)
 - [\[ICLR 2026\] Robust Decision Making with Partially Calibrated Forecasts](robust_decision-making_with_partially_calibrated_forecasters.md)
 - [\[ICLR 2026\] Decision Aggregation under Quantal Response](decision_aggregation_under_quantal_response.md)
 - [\[ICLR 2026\] Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles](data-aware_and_scalable_sensitivity_analysis_for_decision_tree_ensembles.md)
-- [\[ICLR 2026\] Online Decision Making with Generative Action Sets](online_decision_making_with_generative_action_sets.md)
 
 </div>
 

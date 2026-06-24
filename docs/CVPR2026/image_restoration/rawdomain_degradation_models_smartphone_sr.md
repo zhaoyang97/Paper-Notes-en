@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][super-resolution] It is demonstrated that carefully designed device-specific degradation modeling (obtaining real blur and noise parameters via calibration) significantly improves the real-world performance of smartphone super-resolution. By unprocessing public rendered images into the RAW domain of different smartphones to generate hig
+  [CVPR 2026][Image Restoration][super-resolution] It is demonstrated that carefully designed device-specific degradation modeling (obtaining real blur and noise parameters via calibration) significantly improves the real-world performance of smartphone super-resolution. By unprocessing public rendered images into the RAW domain of different smartphones to generate high-low resolution training pairs, the trained SR models significantly outperform baselines trained with massive…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - super-resolution
-  - RAW domain
-  - degradation modeling
-  - unprocessing
-  - smartphone camera
-  - device-specific calibration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "super-resolution"
+  - "RAW domain"
+  - "degradation modeling"
+  - "unprocessing"
+  - "smartphone camera"
+  - "device-specific calibration"
 date: 2026-05-08
-content_hash: 954386a967ce4638
+content_hash: def3f1680743db38
 ---
+
 # RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -147,10 +148,10 @@ Note: The paper reports significant PSNR/SSIM improvements on real held-out devi
 ## Related Papers
 
 - [\[CVPR 2026\] VoDaSuRe: A Large-Scale Dataset Revealing Domain Shift in Volumetric Super-Resolution](vodasure_a_large-scale_dataset_revealing_domain_shift_in_volumetric_super-resolu.md)
+- [\[ICLR 2026\] Test-Time Domain Generalization for Image Super-Resolution](../../ICLR2026/image_restoration/test-time_domain_generalization_for_image_super-resolution.md)
 - [\[CVPR 2026\] ZeroIDIR: Zero-Reference Illumination Degradation Image Restoration with Perturbed Consistency Diffusion Models](zeroidir_zero-reference_illumination_degradation_image_restoration_with_perturbe.md)
-- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
-- [\[CVPR 2026\] SAT: Selective Aggregation Transformer for Image Super-Resolution](sat_selective_aggregation_transformer_for_image_super_resolution.md)
+- [\[CVPR 2026\] Edit-aware RAW Reconstruction](edit-aware_raw_reconstruction.md)
+- [\[CVPR 2026\] TextOVSR: Text-Guided Real-World Opera Video Super-Resolution](textovsr_text-guided_real-world_opera_video_super-resolution.md)
 
 </div>
 

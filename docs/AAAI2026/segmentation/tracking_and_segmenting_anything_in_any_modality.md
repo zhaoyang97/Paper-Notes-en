@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tracking and Segmenting Anything in Any Modality
 description: >-
-  [AAAI 2026][Segmentation][Unified tracking and segmentation] SATA proposes a unified tracking and segmentation framework that models cross-modal shared and modality-specific knowledge via a Decoupled Mixture-of-Experts (…
+  [AAAI 2026][Segmentation][Unified tracking and segmentation] SATA proposes a unified tracking and segmentation framework that models cross-modal shared and modality-specific knowledge via a Decoupled Mixture-of-Experts (DeMoE) mechanism, and introduces a Task-aware Multi-Object Tracking (TaMOT) pipeline to unify the output format across all tasks, demonstrating superior performance across 18 tracking and segmentation benchmarks.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "multi-task learning"
   - "generalist model"
 date: 2026-05-08
-content_hash: c6182d99a1db172e
+content_hash: 265073ceda7e2884
 ---
 
 # Tracking and Segmenting Anything in Any Modality
@@ -122,11 +122,11 @@ Joint training employs a segmentation loss (Dice + BCE), a detection loss (L1 + 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Matting Anything 2: Towards Video Matting for Anything](../../ICLR2026/segmentation/matting_anything_2_towards_video_matting_for_anything.md)
 - [\[AAAI 2026\] Segment Anything Across Shots: A Method and Benchmark](segment_anything_across_shots_a_method_and_benchmark.md)
 - [\[AAAI 2026\] Segment and Matte Anything in a Unified Model (SAMA)](segment_and_matte_anything_in_a_unified_model.md)
-- [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
-- [\[ICML 2026\] Beyond Detection: A Structure-Aware Framework for Scene Text Tracking](../../ICML2026/segmentation/beyond_detection_a_structure-aware_framework_for_scene_text_tracking.md)
 - [\[CVPR 2026\] RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video](../../CVPR2026/segmentation/robotseg_a_model_and_dataset_for_segmenting_robots_in_image_and_video.md)
+- [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
 
 </div>
 

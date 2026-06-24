@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Context Tokens are Anchors: Understanding the Repeat Curse in dMLLMs from an Information Flow Perspective
 description: >-
-  [ICLR 2026][Multimodal VLM][dMLLM] This paper discovers that diffusion-based Multimodal Large Language Models (dMLLMs) suffer from severe text repetition (Repeat Curse) when using cache acceleration. From an information flow perspective, the root cause is identified as the disruption of "context anchor token" information flow and the failure of deep-lay
+  [ICLR 2026][Multimodal VLM][dMLLM] This paper discovers that diffusion-based Multimodal Large Language Models (dMLLMs) suffer from severe text repetition (Repeat Curse) when using cache acceleration. From an information flow perspective, the root cause is identified as the disruption of "context anchor token" information flow and the failure of deep-layer information entropy to converge. Based on this, the training-free CoTA (Contextual Attention Enhancement + Entropy-guided…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - dMLLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "dMLLM"
+  - "Repeat Curse"
+  - "Cache Acceleration"
+  - "Information Flow"
+  - "Attention Anchors"
+  - "Information Entropy"
+  - "Training-free"
 date: 2026-05-08
-content_hash: ef0add53d628dea7
+content_hash: 5cc1ab8bf6e904d6
 ---
+
 # Context Tokens are Anchors: Understanding the Repeat Curse in dMLLMs from an Information Flow Perspective
 
 **Conference**: ICLR 2026  
@@ -134,9 +141,9 @@ Hyperparameter Ablation (MathVerse, optimal with 3 context tokens): $\alpha=0.75
 
 - [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](../../CVPR2026/multimodal_vlm/aif_adaptive_information_flow_vlm.md)
 - [\[ICLR 2026\] AttTok: Marrying Attribute Tokens with Generative Pre-trained Vision-Language Models towards Medical Image Understanding](atttok_marrying_attribute_tokens_with_generative_pre-trained_vision-language_mod.md)
-- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](../../CVPR2026/multimodal_vlm/posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
 - [\[CVPR 2025\] Cross-modal Information Flow in Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/cross-modal_information_flow_in_multimodal_large_language_models.md)
-- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](../../CVPR2026/multimodal_vlm/p-flow_prompting_visual_effects_generation.md)
+- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](../../CVPR2026/multimodal_vlm/posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
+- [\[ICLR 2026\] UrbanFeel: A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective](urbanfeela_comprehensive_benchmark_for_temporal_and_perceptual_understanding_of_.md)
 
 </div>
 

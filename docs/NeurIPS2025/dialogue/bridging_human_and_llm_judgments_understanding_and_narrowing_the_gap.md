@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging Human and LLM Judgments: Understanding and Narrowing the Gap
 description: >-
-  [NEURIPS2025][Dialogue Systems][LLM-as-Judge] This paper proposes Bridge, a statistical framework that models the latent relationship between human and LLM judgments via ordinal logistic regression. With a small number o…
+  [NEURIPS2025][Dialogue Systems][LLM-as-Judge] This paper proposes Bridge, a statistical framework that models the latent relationship between human and LLM judgments via ordinal logistic regression. With a small number of human labels, Bridge improves the calibration and alignment of LLM judgments while supporting formal statistical hypothesis testing for systematic biases.
 tags:
   - "NEURIPS2025"
   - "Dialogue Systems"
@@ -12,7 +12,7 @@ tags:
   - "Calibration"
   - "Bias Testing"
 date: 2026-05-08
-content_hash: 51e167f8b2f24e27
+content_hash: 5059ddb31eff9541
 ---
 
 # Bridging Human and LLM Judgments: Understanding and Narrowing the Gap
@@ -129,10 +129,10 @@ Maximum likelihood estimation for ordinal logistic regression; no LLM fine-tunin
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding Language Prior of LVLMs by Contrasting Chain-of-Embedding](../../ICLR2026/dialogue/understanding_language_prior_of_lvlms_by_contrasting_chain-of-embedding.md)
+- [\[ICML 2025\] Investigating Non-Transitivity in LLM-as-a-Judge](../../ICML2025/dialogue/investigating_non-transitivity_in_llm-as-a-judge.md)
+- [\[ECCV 2024\] BI-MDRG: Bridging Image History in Multimodal Dialogue Response Generation](../../ECCV2024/dialogue/bi-mdrg_bridging_image_history_in_multimodal_dialogue_response_generation.md)
+- [\[ACL 2025\] Single- vs. Dual-Prompt Dialogue Generation with LLMs for Job Interviews in Human Resources](../../ACL2025/dialogue/single-_vs_dual-prompt_dialogue_generation_with_llms_for_job_interviews_in_human.md)
 - [\[NeurIPS 2025\] HyGen: Efficient LLM Serving via Elastic Online-Offline Request Co-location](hygen_efficient_llm_serving_via_elastic_online-offline_request_co-location.md)
-- [\[ICML 2026\] Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives](../../ICML2026/dialogue/is_your_llm_overcharging_you_tokenization_transparency_and_incentives.md)
-- [\[ICML 2026\] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving](../../ICML2026/dialogue/not_all_prefills_are_equal_ppd_disaggregation_for_multi-turn_llm_serving.md)
-- [\[ACL 2026\] Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation](../../ACL2026/dialogue/cognitive_policy-driven_llm_for_diagnosis_and_intervention_of_cognitive_distorti.md)
 
 </div>
 

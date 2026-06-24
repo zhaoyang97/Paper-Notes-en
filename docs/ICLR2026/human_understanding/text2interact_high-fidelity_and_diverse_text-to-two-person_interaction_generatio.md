@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Text2Interact: High-Fidelity and Diverse Text-to-Two-Person Interaction Generation
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] Text2Interact addresses text-driven two-person 3D interaction generation. It first utilizes InterCompose to synthesize high-quality interaction data from LLMs and single-person motion priors, then employs InterActor with word-level text conditioning, dual-person motion interaction attention, and adaptive interaction lo
+  [ICLR2026][Human Understanding][Text-to-Motion Generation] Text2Interact addresses text-driven two-person 3D interaction generation. It first utilizes InterCompose to synthesize high-quality interaction data from LLMs and single-person motion priors, then employs InterActor with word-level text conditioning, dual-person motion interaction attention, and adaptive interaction loss to enhance motion realism, text alignment, and cross-distribution generalization.
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR2026"
+  - "Human Understanding"
+  - "Text-to-Motion Generation"
+  - "Two-Person Interaction"
+  - "Human Motion Synthesis"
+  - "Fine-grained Text Conditioning"
+  - "Synthetic Data Expansion"
 date: 2026-05-08
-content_hash: 5d500d04a49b6251
+content_hash: 2da8023b1c2b2cf8
 ---
+
 # Text2Interact: High-Fidelity and Diverse Text-to-Two-Person Interaction Generation
 
 **Conference**: ICLR2026  
@@ -138,6 +144,7 @@ Ablations specifically target Word-Level Conditioning (WLC), Adaptive Interactio
 - **Value**: ⭐⭐⭐⭐⭐ (Practical framework for expanding interaction datasets).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Graphon Cross-Validation: Assessing Models on Network Data
 description: >-
-  [ICLR 2026][Graph Learning][graphon] To address the challenge where traditional cross-validation (CV) fails due to the non-independence of edges in network data, this paper proposes **CV-imputation**. By treating edges in the validation set as missing values and filling them with Bernoulli random variables at a fixed probability to construct the training
+  [ICLR 2026][Graph Learning][graphon] To address the challenge where traditional cross-validation (CV) fails due to the non-independence of edges in network data, this paper proposes **CV-imputation**. By treating edges in the validation set as missing values and filling them with Bernoulli random variables at a fixed probability to construct the training graph, the method uses an affine transformation to recover the probability matrix. This allows for hyperparameter tuning an…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - graphon
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "graphon"
+  - "cross-validation"
+  - "model selection"
+  - "network data"
+  - "link prediction"
+  - "hyperparameter tuning"
 date: 2026-05-08
-content_hash: 040c92dc803eb825
+content_hash: 2e9eb6d323a5dcfa
 ---
+
 # Graphon Cross-Validation: Assessing Models on Network Data
 
 **Conference**: ICLR 2026  
@@ -124,15 +130,17 @@ In nearly all method-graphon combinations, CV-imputation selects models with the
 
 <div class="related-papers" markdown="1">
 
-**Related Papers**
-- **Li et al. (2020a)** - *Network cross-validation by edge sampling*: The primary baseline ECV.
-- **Zhang et al. (2017)** - *Estimating graphon with neighborhood smoothing*: Proposes NS method.
-- **Qin et al. (2021)** - *Iterative collaborative estimation for graphons*: Proposes ICE method.
+## Related Papers
+
+- [\[AAAI 2026\] On Stealing Graph Neural Network Models](../../AAAI2026/graph_learning/on_stealing_graph_neural_network_models.md)
+- [\[ICLR 2026\] Latent Geometry-Driven Network Automata for Complex Network Dismantling](latent_geometry-driven_network_automata_for_complex_network_dismantling.md)
+- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](../../ICML2026/graph_learning/when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
+- [\[ICLR 2026\] A Graph Meta-Network for Learning on Kolmogorov–Arnold Networks](a_graph_meta-network_for_learning_on_kolmogorovarnold_networks.md)
+- [\[ICLR 2026\] Federated Graph-Level Clustering Network with Dual Knowledge Separation](federated_graph-level_clustering_network_with_dual_knowledge_separation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] On Stealing Graph Neural Network Models](../../AAAI2026/graph_learning/on_stealing_graph_neural_network_models.md)

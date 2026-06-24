@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis
 description: >-
-  [ACL 2026][Code Intelligence][Multi-Agent] ChatHLS proposes a multi-agent HLS design framework. Through two core components—HLSTuner (QoR-aware reasoning for optimization pragma selection) and HLSFixer (a debugging framework enhanced by hierarchical feedback)—combined with a self-evolving error case expansion mechanism (VODA), it significantly outperforms basel
+  [ACL 2026][Code Intelligence][High-Level Synthesis] ChatHLS proposes a multi-agent HLS design framework. Through two core components—HLSTuner (QoR-aware reasoning for optimization pragma selection) and HLSFixer (a debugging framework enhanced by hierarchical feedback)—combined with a self-evolving error case expansion mechanism (VODA), it significantly outperforms baselines in both HLS-C generation success rates and hardware performance optimization.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Multi-Agent
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "High-Level Synthesis"
+  - "LLM-aided Design"
+  - "Multi-agent"
+  - "Pragma Optimization"
+  - "Automatic Debugging"
 date: 2026-05-08
-content_hash: 4bd1d7de78ce59c6
+content_hash: 24f14fcac22e4fbc
 ---
+
 # ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis
 
 **Conference**: ACL 2026  
@@ -118,14 +123,13 @@ HLSTuner utilizes NSGA-II to generate diverse designs and a teacher model to pro
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] SOCIA-EVO: Automated Simulator Construction via Dual-Anchored Bi-Level Optimization](socia-evo_automated_simulator_construction_via_dual-anchored_bi-level_optimizati.md)
+- [\[ICLR 2026\] LLM-Guided Evolutionary Program Synthesis for Quasi-Monte Carlo Design](../../ICLR2026/code_intelligence/llm-guided_evolutionary_program_synthesis_for_quasi-monte_carlo_design.md)
 - [\[ACL 2026\] CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels](cubridge_an_llm-based_framework_for_understanding_and_reconstructing_high-perfor.md)
 - [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
-- [\[ACL 2026\] QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions](qaq_bidirectional_semantic_coherence_for_selecting_high-quality_synthetic_code_i.md)
 - [\[ACL 2026\] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization](qimeng-prepair_precise_code_repair_via_edit-aware_reward_optimization.md)
 
 </div>

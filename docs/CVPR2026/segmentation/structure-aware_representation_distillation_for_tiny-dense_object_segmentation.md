@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] SARD shifts segmentation knowledge distillation from "mask imitation" to "aligning feature space geometry." It utilizes a "structure importance map" $W(i)$, synthesized from boundaries, curvature, and spatial crowding, to weight the feature distillation loss. This directs the lightweight student model to concentrate it
+  [CVPR 2026][Segmentation][Tiny-dense objects] SARD shifts segmentation knowledge distillation from "mask imitation" to "aligning feature space geometry." It utilizes a "structure importance map" $W(i)$, synthesized from boundaries, curvature, and spatial crowding, to weight the feature distillation loss. This directs the lightweight student model to concentrate its capacity on boundaries and dense contact zones, consistently improving mIoU and boundary IoU (bIoU) across Citys…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Tiny-dense objects"
+  - "representation distillation"
+  - "structure tensor"
+  - "boundary IoU"
+  - "feature space alignment"
 date: 2026-05-08
-content_hash: caf4ab326ade6d0c
+content_hash: 296443834fef6eb0
 ---
+
 # Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation
 
 **Conference**: CVPR 2026  
@@ -200,9 +206,9 @@ Efficiency comparison (RockFrag, 1024×1024, RTX 4090):
 
 ## Related Papers
 
+- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
 - [\[CVPR 2026\] Beyond Appearance: Camouflaged Object Detection via Geometric Structure](beyond_appearance_camouflaged_object_detection_via_geometric_structure.md)
 - [\[CVPR 2026\] AFRO: Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning](bootstrap_dynamic-aware_3d_visual_representation_for_scalable_robot_learning.md)
-- [\[CVPR 2026\] InterRVOS: Interaction-Aware Referring Video Object Segmentation](interrvos_interaction-aware_referring_video_object_segmentation.md)
 - [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](mrm_masked_representation_modeling_domain_adaptive.md)
 - [\[ICML 2026\] Beyond Detection: A Structure-Aware Framework for Scene Text Tracking](../../ICML2026/segmentation/beyond_detection_a_structure-aware_framework_for_scene_text_tracking.md)
 

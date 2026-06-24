@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Provable and Practical In-Context Policy Optimization for Self-Improvement
 description: >-
-  [ICLR 2026][Optimization & Theory][policy optimization] This paper proposes the In-Context Policy Optimization (ICPO) framework, theoretically proving that a single-layer Linear Self-Attention Transformer, after sufficient pre-training, can simulate policy optimization algorithms in-context. It designs a practical ME-ICPO algorithm that achieves multi-round self-reflection
+  [ICLR 2026][Optimization][In-Context Learning] This paper proposes the In-Context Policy Optimization (ICPO) framework, theoretically proving that a single-layer Linear Self-Attention Transformer, after sufficient pre-training, can simulate policy optimization algorithms in-context. It designs a practical ME-ICPO algorithm that achieves multi-round self-reflection at test-time through minimum-entropy selection and self-evaluated rewards, yielding significant improvements in m…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - policy optimization
-  - mathematical reasoning
+  - "ICLR 2026"
+  - "Optimization"
+  - "In-Context Learning"
+  - "policy optimization"
+  - "test-time scaling"
+  - "self-reflection"
+  - "mathematical reasoning"
 date: 2026-05-08
-content_hash: de427c86a6d3064f
+content_hash: d57ecc146e0068f0
 ---
+
 # Provable and Practical In-Context Policy Optimization for Self-Improvement
 
 **Conference**: ICLR 2026  
@@ -151,10 +155,10 @@ The most significant improvement was observed on AIME 2024. The Mean@16 of ME-IC
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](multi-action_self-improvement_for_neural_combinatorial_optimization.md)
-- [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](in-context_multi-objective_optimization.md)
 - [\[ICML 2025\] Provable In-Context Vector Arithmetic via Retrieving Task Concepts](../../ICML2025/optimization/provable_in-context_vector_arithmetic_via_retrieving_task_concepts.md)
+- [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
 - [\[ICLR 2026\] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)
-- [\[ICML 2026\] On the Provable Suboptimality of Momentum SGD in Nonstationary Stochastic Optimization](../../ICML2026/optimization/on_the_provable_suboptimality_of_momentum_sgd_in_nonstationary_stochastic_optimi.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Code Intelligence][Co-evolution] This paper proposes CURE, a framework in which a single LLM simultaneously assumes the roles of code generator and unit test generator. Cross-execution between generated co…
+  [NeurIPS 2025 Spotlight][Code Intelligence][Co-evolution] This paper proposes CURE, a framework in which a single LLM simultaneously assumes the roles of code generator and unit test generator. Cross-execution between generated code and generated tests constructs a pairwise reward matrix; theoretically derived reward signals then drive reinforcement learning. Without any ground-truth code annotations, CURE achieves co-evolution of both code generation and unit test generation…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Code Intelligence"
   - "Co-evolution"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "Self-play"
   - "Reward Precision"
 date: 2026-05-08
-content_hash: f14e9723d90f4cdd
+content_hash: 757ba7ffd53517bf
 ---
 
 # Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning
@@ -164,11 +164,11 @@ With the simple reward, $p_{01}$ and $p_{00}$ reach 42.2% and 14.7% respectively
 
 ## Related Papers
 
+- [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](../../ICLR2026/code_intelligence/critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
 - [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](../../AAAI2026/code_intelligence/recode_updating_code_api_knowledge_with_reinforcement_learning.md)
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](../../ICLR2026/code_intelligence/tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
 - [\[NeurIPS 2025\] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions](a_stochastic_differential_equation_framework_for_multi-objective_llm_interaction.md)
-- [\[CVPR 2026\] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](../../CVPR2026/code_intelligence/mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)
-- [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/code_intelligence/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
 
 </div>
 

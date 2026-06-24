@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][AVLLM] FAVE is a three-layer benchmark specifically designed to evaluate whether Audio-Visual Large Language Models (AVLLMs) can align audio and video streams within the same time window and perform fine-grained temporal reasoning. Using a scalable pipeline involving shot segmentation, dual-modal captioning, GPT synthesis, an
+  [CVPR 2026][Multimodal VLM][Audio-visual large models] FAVE is a three-layer benchmark specifically designed to evaluate whether Audio-Visual Large Language Models (AVLLMs) can align audio and video streams within the same time window and perform fine-grained temporal reasoning. Using a scalable pipeline involving shot segmentation, dual-modal captioning, GPT synthesis, and human verification, it constructs nearly 10,000 timestamped QA pairs based on QVHighlights. Evaluations…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - AVLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Audio-visual large models"
+  - "fine-grained temporal reasoning"
+  - "cross-modal alignment"
+  - "multimodal benchmark"
+  - "AVLLM"
 date: 2026-05-08
-content_hash: f0980f1f2a7c6c12
+content_hash: 67a3929ac9a80bd0
 ---
+
 # FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs
 
 **Conference**: CVPR 2026  
@@ -129,15 +134,16 @@ Compared to **AVQA/Music-AVQA**, FAVE uses longer videos (~150s) and multi-level
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
 - [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
-- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
 - [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
+- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
 - [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
-- [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Weight-Space Linear Recurrent Neural Networks
 description: >-
-  [ICLR 2026][Time Series][Paper Note] Ours proposes WARP (Weight-space Adaptive Recurrent Prediction), which explicitly parameterizes the hidden state of a linear RNN as the weights and biases of an auxiliary MLP. It utilizes input differences to drive linear recurrence for weight updates, combined with non-linear decoding to achieve efficient sequence mod
+  [ICLR 2026][Time Series][Weight-space learning] Ours proposes WARP (Weight-space Adaptive Recurrent Prediction), which explicitly parameterizes the hidden state of a linear RNN as the weights and biases of an auxiliary MLP. It utilizes input differences to drive linear recurrence for weight updates, combined with non-linear decoding to achieve efficient sequence modeling, reaching SOTA on tasks including classification, prediction, and dynamical system reconstruction.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Weight-space learning"
+  - "Linear RNN"
+  - "Adaptive prediction"
+  - "Dynamical system reconstruction"
+  - "Gradient-free adaptation"
 date: 2026-05-08
-content_hash: 5772396f20181cde
+content_hash: c282b7292ba82c6c
 ---
+
 # Weight-Space Linear Recurrent Neural Networks
 
 **Conference**: ICLR 2026  
@@ -138,6 +144,7 @@ WARP ranked in the top three for 4 out of 6 datasets, achieving SOTA on SCP2 and
 A highly innovative paradigm-level work. It elegantly combines weight-space learning with linear recurrence, achieving strong expressivity and adaptability within a concise framework. The 50% MAE reduction on PEMS08 and the 10x improvement of WARP-Phys are impressive results. The primary concern remains the scaling of the state transition matrix.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -145,8 +152,8 @@ A highly innovative paradigm-level work. It elegantly combines weight-space lear
 - [\[ICLR 2026\] Tuning the burn-in phase in training recurrent neural networks improves their performance](tuning_the_burn-in_phase_in_training_recurrent_neural_networks_improves_their_pe.md)
 - [\[ICLR 2026\] Learning Linear State-Space Models with Sparse System Matrices](learning_linear_state-space_models_with_sparse_system_matrices.md)
 - [\[ICLR 2026\] TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification](timesliver_symbolic-linear_decomposition_for_explainable_time_series_classificat.md)
+- [\[ICLR 2026\] Characteristic Root Analysis and Regularization for Linear Time Series Forecasting](characteristic_root_analysis_and_regularization_for_linear_time_series_forecasti.md)
 - [\[ICLR 2026\] Learning Mixtures of Linear Dynamical Systems via Hybrid Tensor-EM Method](learning_mixtures_of_linear_dynamical_systems_via_hybrid_tensor-em_method.md)
-- [\[ICML 2026\] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences](../../ICML2026/time_series/fractal_ssm_with_fractional_recurrent_architecture_for_computational_temporal_an.md)
 
 </div>
 

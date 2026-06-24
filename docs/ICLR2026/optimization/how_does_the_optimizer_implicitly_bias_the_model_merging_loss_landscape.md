@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] How does the optimizer implicitly bias the model merging loss landscape?
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes using a single physical quantity, "effective noise scale," to uniformly characterize the impact of optimization hyperparameters—such as learning rate, weight decay, batch size, momentum, and data augmentation—on **model merging**. It proves that merging benefits are a **non-monotonic** function of t
+  [ICLR 2026][Optimization][model merging] This paper proposes using a single physical quantity, "effective noise scale," to uniformly characterize the impact of optimization hyperparameters—such as learning rate, weight decay, batch size, momentum, and data augmentation—on **model merging**. It proves that merging benefits are a **non-monotonic** function of this noise (with an optimal critical point), thereby extending the implicit bias of the optimizer from "flatness of a si…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "model merging"
+  - "loss landscape"
+  - "implicit optimizer bias"
+  - "effective noise scale"
+  - "linear mode connectivity"
+  - "task arithmetic"
 date: 2026-05-08
-content_hash: 2392b28c9837a243
+content_hash: 30ceee77c02e1952
 ---
+
 # How does the optimizer implicitly bias the model merging loss landscape?
 
 **Conference**: ICLR 2026  
@@ -117,15 +124,17 @@ flowchart TD
 
 <div class="related-papers" markdown="1">
 
-- **Frankle et al.** - Linear Mode Connectivity and the Lottery Ticket Hypothesis (ICML 2020)
-- **Wortsman et al.** - Model Soups: Averaging Weights of Multiple Fine-Tuned Models (ICML 2022)
-- **Ainsworth et al.** - Git Re-Basin: Merging Models modulo Permutation Symmetries (ICLR 2023)
-- **Mandt et al.** - Stochastic Gradient Descent as Approximate Bayesian Inference (JMLR 2017)
+## Related Papers
+
+- [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](../../CVPR2026/optimization/bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
+- [\[CVPR 2026\] Globscope: Toward a Global View of the Loss Landscape](../../CVPR2026/optimization/globscope_toward_a_global_view_of_the_loss_landscape.md)
+- [\[CVPR 2026\] Model Merging in the Essential Subspace](../../CVPR2026/optimization/model_merging_in_the_essential_subspace.md)
+- [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](../../CVPR2026/optimization/ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
+- [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](../../CVPR2026/optimization/dc-merge_improving_model_merging_with_directional_consistency.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Globscope: Toward a Global View of the Loss Landscape](../../CVPR2026/optimization/globscope_toward_a_global_view_of_the_loss_landscape.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CMPhysBench: A Benchmark for Evaluating Large Language Models in Condensed Matter Physics
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] The authors propose CMPhysBench—a benchmark of 520 graduate-level open-ended calculation problems in condensed matter physics. Accompanied by the tree-edit-distance-driven SEED metric for fine-grained partial scoring, it reveals that even the strongest Grok-4 achieves only 36 SEED / 29% accuracy, exposing a significant
+  [ICLR 2026][LLM Evaluation][Condensed matter physics] The authors propose CMPhysBench—a benchmark of 520 graduate-level open-ended calculation problems in condensed matter physics. Accompanied by the tree-edit-distance-driven SEED metric for fine-grained partial scoring, it reveals that even the strongest Grok-4 achieves only 36 SEED / 29% accuracy, exposing a significant capability gap for LLMs in frontier physics.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Condensed matter physics"
+  - "calculation benchmark"
+  - "SEED metric"
+  - "expression edit distance"
+  - "physical reasoning evaluation"
 date: 2026-05-08
-content_hash: 481e93aeddf94cd8
+content_hash: e567a82d71b59dba
 ---
+
 # CMPhysBench: A Benchmark for Evaluating Large Language Models in Condensed Matter Physics
 
 **Conference**: ICLR 2026  

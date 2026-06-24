@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Frustratingly Simple Yet Highly Effective Attack Baseline: Over 90% Success Rate Against the Strong Black-box Models of GPT-4.5/4o/o1
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Black-box transfer attack] This paper proposes M-Attack, which performs random cropping on source images and aligns them with target images via local-global or local-local matching in the e…
+  [NeurIPS 2025][Multimodal VLM][Black-box transfer attack] This paper proposes M-Attack, which performs random cropping on source images and aligns them with target images via local-global or local-local matching in the embedding space, combined with a multi-CLIP model ensemble. This causes adversarial perturbations to naturally concentrate on semantically critical regions, forming clear semantic details. M-Attack achieves >90% targeted attack success rate against commercial b…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "LVLM safety"
   - "model ensemble"
 date: 2026-05-08
-content_hash: a3f992988203f6b3
+content_hash: 4c1e8877d3305ab9
 ---
 
 # A Frustratingly Simple Yet Highly Effective Attack Baseline: Over 90% Success Rate Against the Strong Black-box Models of GPT-4.5/4o/o1
@@ -129,11 +129,11 @@ I-FGSM optimization is used with step size $\alpha=1$ (0.75 for Claude), perturb
 
 ## Related Papers
 
+- [\[ACL 2025\] InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model](../../ACL2025/multimodal_vlm/internlm-xcomposer25-reward_a_simple_yet_effective_multi-modal_reward_model.md)
 - [\[NeurIPS 2025\] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions](mint_a_simple_testtime_adaptation_of_visionlanguage_models_a.md)
-- [\[CVPR 2026\] Prime Once, then Reprogram Locally: An Efficient Alternative to Black-Box Service Model Adaptation](../../CVPR2026/multimodal_vlm/prime_once_then_reprogram_locally_an_efficient_alternative_to_black-box_service_.md)
-- [\[ICML 2026\] LBR/LBP: Language Bias in LVLMs — From In-Depth Analysis to Simple and Effective Mitigation](../../ICML2026/multimodal_vlm/language_bias_in_lvlms_from_in-depth_analysis_to_simple_and_effective_mitigation.md)
+- [\[ICCV 2025\] Visual Interestingness Decoded: How GPT-4o Mirrors Human Interests](../../ICCV2025/multimodal_vlm/visual_interestingness_decoded_how_gpt-4o_mirrors_human_interests.md)
+- [\[ICLR 2026\] BaseReward: A Strong Baseline for Multimodal Reward Model](../../ICLR2026/multimodal_vlm/basereward_a_strong_baseline_for_multimodal_reward_model.md)
 - [\[NeurIPS 2025\] AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining](adalrs_lossguided_adaptive_learning_rate_search_for_efficien.md)
-- [\[NeurIPS 2025\] MIP against Agent: Malicious Image Patches Hijacking Multimodal OS Agents](mip_against_agent_malicious_image_patches_hijacking_multimod.md)
 
 </div>
 

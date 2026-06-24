@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ViRC: Enhancing Visual Interleaved Mathematical CoT with Reason Chunking
 description: >-
-  [CVPR 2026][Multimodal VLM][Reason Chunking] ViRC introduces the Reason Chunking mechanism, structuring multimodal mathematical CoT into a sequence of "Critical Reasoning Units (CRUs)." This simulates the process of human experts repeatedly examining images to prove intermediate propositions step-by-step. Supported by the CRUX dataset and a progressive training s
+  [CVPR 2026 (Main Track)][VLM Reasoning][Visual Mathematical Reasoning] ViRC introduces the Reason Chunking mechanism, structuring multimodal mathematical CoT into a sequence of "Critical Reasoning Units (CRUs)." This simulates the process of human experts repeatedly examining images to prove intermediate propositions step-by-step. Supported by the CRUX dataset and a progressive training strategy (Instructional SFT → Practice SFT → Strategic RL)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reason Chunking
-  - Critical Reasoning Unit
+  - "CVPR 2026 (Main Track)"
+  - "VLM Reasoning"
+  - "Visual Mathematical Reasoning"
+  - "Reason Chunking"
+  - "Critical Reasoning Unit"
+  - "Multimodal CoT"
+  - "Progressive Training"
 date: 2026-05-08
-content_hash: 67947e32faa1fa44
+content_hash: f0b4c5711fcbe3c6
 ---
+
 # ViRC: Enhancing Visual Interleaved Mathematical CoT with Reason Chunking
 
 **Conference**: CVPR 2026 (Main Track)  
@@ -132,15 +136,16 @@ Average improvement of **+18.8%** over the baseline.
 - Value: ⭐⭐⭐⭐⭐ Provides a new paradigm; open-sources both dataset and code.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] MathFlow: Enhancing the Perceptual Flow of MLLMs for Visual Mathematical Problems](../../ACL2026/multimodal_vlm/mathflow_enhancing_the_perceptual_flow_of_mllms_for_visual_mathematical_problems.md)
+- [\[ICLR 2026\] Zebra-CoT: A Dataset for Interleaved Vision-Language Reasoning](../../ICLR2026/vlm_reasoning/zebra-cot_a_dataset_for_interleaved_vision-language_reasoning.md)
 - [\[CVPR 2026\] Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models](visual-aware_cot_achieving_high-fidelity_visual_consistency_in_unified_models.md)
-- [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](../../ICCV2025/multimodal_vlm/llava-cot_let_vision_language_models_reason_step-by-step.md)
+- [\[ICLR 2026\] We-Math 2.0: A Versatile MathBook System for Incentivizing Visual Mathematical Reasoning](../../ICLR2026/vlm_reasoning/we-math_20_a_versatile_mathbook_system_for_incentivizing_visual_mathematical_rea.md)
 - [\[CVPR 2026\] Conan: Progressive Learning to Reason Like a Detective over Multi-Scale Visual Evidence](conan_progressive_learning_to_reason_like_a_detective_over_multi-scale_visual_ev.md)
-- [\[CVPR 2026\] DuoGen: Towards Autonomous Interleaved Multimodal Generation](duogen_towards_autonomous_interleaved_multimodal_generation.md)
+- [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](../../ICCV2025/vlm_reasoning/llava-cot_let_vision_language_models_reason_step-by-step.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Offline reinforcement learning] This paper proposes RoiRL, a lightweight self-supervised reasoning framework based on offline iterative reinforcement learning. By replacing online R…
+  [NeurIPS 2025][Reinforcement Learning][Offline reinforcement learning] This paper proposes RoiRL, a lightweight self-supervised reasoning framework based on offline iterative reinforcement learning. By replacing online RL (e.g., TTRL) with a weighted log-likelihood objective, RoiRL enables self-improvement of LLM reasoning capabilities without requiring a reference model or ground-truth labels, achieving 2.5× faster training with superior performance.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "majority voting"
   - "weighted likelihood"
 date: 2026-05-08
-content_hash: 5b76fb1ca4ace8d4
+content_hash: 1fe2256d61fae339
 ---
 
 # RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning
@@ -133,8 +133,8 @@ Models are trained on MATH500 Train (without labels) and evaluated on reasoning 
 - [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
 - [\[NeurIPS 2025\] Structural Information-based Hierarchical Diffusion for Offline Reinforcement Learning](structural_information-based_hierarchical_diffusion_for_offline_reinforcement_le.md)
 - [\[ICCV 2025\] Progressor: A Perceptually Guided Reward Estimator with Self-Supervised Online Refinement](../../ICCV2025/reinforcement_learning/progressor_a_perceptually_guided_reward_estimator_with_self-supervised_online_re.md)
-- [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
-- [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](online_optimization_for_offline_safe_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation](decoderhybriddecoder_architecture_for_efficient_reasoning_wi.md)
+- [\[ICLR 2026\] Efficient Offline Reinforcement Learning via Peer-Influenced Constraint](../../ICLR2026/reinforcement_learning/efficient_offline_reinforcement_learning_via_peer-influenced_constraint.md)
 
 </div>
 

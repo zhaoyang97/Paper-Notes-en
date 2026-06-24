@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This work redefines catastrophic forgetting in Multimodal Continual Instruction Tuning (MCIT) as the "absence of gradients from old tasks during new task training." DGG approximates the old task gradients using a "direction vector from current parameters to the optimal parameters of previous tasks," adds this to the re
+  [CVPR 2026][Multimodal VLM][Multimodal Continual Instruction Tuning] This work redefines catastrophic forgetting in Multimodal Continual Instruction Tuning (MCIT) as the "absence of gradients from old tasks during new task training." DGG approximates the old task gradients using a "direction vector from current parameters to the optimal parameters of previous tasks," adds this to the real gradients from a limited replay buffer, and dynamically regulates the update frequency u…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Continual Instruction Tuning"
+  - "Catastrophic Forgetting"
+  - "Gradient Approximation"
+  - "Replay"
+  - "Bernoulli Sampling"
 date: 2026-05-08
-content_hash: 8c052325f5beac8c
+content_hash: 6e269da8d7120117
 ---
+
 # Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance
 
 **Conference**: CVPR 2026  
@@ -115,15 +121,15 @@ Gradient approximation ablation (original paper Figure 3): On VQAv2, $\hat g$-on
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
+- [\[ICLR 2026\] PCLR: Progressively Compressed LoRA for Multimodal Continual Instruction Tuning](../../ICLR2026/multimodal_vlm/pclr_progressively_compressed_lora_for_multimodal_continual_instruction_tuning.md)
 - [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
 - [\[ACL 2025\] Enhancing Multimodal Continual Instruction Tuning with BranchLoRA](../../ACL2025/multimodal_vlm/branchlora_continual_instruction.md)
 - [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
-- [\[ICML 2025\] Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](../../ICML2025/multimodal_vlm/dynamic_mixture_of_curriculum_lora_experts_for_continual_multimodal_instruction_.md)
 
 </div>
 

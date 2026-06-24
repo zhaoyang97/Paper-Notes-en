@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pragma-VL: Towards a Pragmatic Arbitration of Safety and Helpfulness in MLLMs
 description: >-
-  [ICLR 2026][LLM Safety][GRPO] Pragma-VL addresses the dual failure in MLLMs—failing to refuse when necessary and over-refusing when helpfulness is required. It achieves fine-grained dynamic arbitration between safety, helpfulness, and general capabilities by first enhancing visual risk identification through risk-aware cold-start, followed by polic
+  [ICLR2026][LLM Safety][Multimodal Safety Alignment] Pragma-VL addresses the dual failure in MLLMs—failing to refuse when necessary and over-refusing when helpfulness is required. It achieves fine-grained dynamic arbitration between safety, helpfulness, and general capabilities by first enhancing visual risk identification through risk-aware cold-start, followed by policy alignment using context-regulated parallel reward models and GRPO.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - GRPO
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Multimodal Safety Alignment"
+  - "Safety-Helpfulness Trade-off"
+  - "Reward Model"
+  - "Visual Risk Perception"
+  - "GRPO"
 date: 2026-05-08
-content_hash: b155750cbe6bcc99
+content_hash: c47aeb87b000283c
 ---
+
 # Pragma-VL: Towards a Pragmatic Arbitration of Safety and Helpfulness in MLLMs
 
 **Conference**: ICLR2026  
@@ -169,9 +174,9 @@ EC (Contrastive) + SFT improves SIUO Safety from 40.12 to 48.79, validating visu
 ## Related Papers
 
 - [\[ACL 2026\] SHAPE: Unifying Safety, Helpfulness and Pedagogy for Educational LLMs](../../ACL2026/llm_safety/shape_unifying_safety_helpfulness_and_pedagogy_for_educational_llms.md)
-- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
 - [\[ACL 2026\] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](../../ACL2026/llm_safety/making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)
-- [\[ICLR 2026\] DualEdit: Mitigating Safety Fallback in LLM Backdoor Editing via Affirmation-Refusal Regulation](dualedit_mitigating_safety_fallback_in_llm_backdoor_editing_via_affirmation-refu.md)
+- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
+- [\[ACL 2026\] CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks](../../ACL2026/llm_safety/crossguard_safeguarding_mllms_against_joint-modal_implicit_malicious_attacks.md)
 - [\[ICLR 2026\] DiffuGuard: How Intrinsic Safety is Lost and Found in Diffusion Large Language Models](diffuguard_how_intrinsic_safety_is_lost_and_found_in_diffusion_large_language_mo.md)
 
 </div>

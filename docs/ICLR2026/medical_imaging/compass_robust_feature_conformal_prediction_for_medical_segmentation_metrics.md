@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics
 description: >-
-  [ICLR 2026][Medical Imaging][conformal prediction] COMPASS constructs conformal prediction intervals by applying linear perturbations in the intermediate feature space of segmentation networks along **low-dimensional subspaces most sensitive to the target metric**. It achieves significantly narrower prediction intervals than traditional CP methods across four medical s
+  [Medical Imaging] COMPASS constructs conformal prediction intervals by applying linear perturbations in the intermediate feature space of segmentation networks along **low-dimensional subspaces most sensitive to the target metric**. It achieves significantly narrower prediction intervals than traditional CP methods across four medical segmentation tasks while maintaining valid coverage.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - conformal prediction
-  - medical segmentation
-  - uncertainty quantification
-  - feature perturbation
-  - covariate shift
+  - "Medical Imaging"
 date: 2026-05-08
-content_hash: bbba5168fb1efa97
+content_hash: 4faa38e1f2d378c2
 ---
+
 # COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics
 
 - **Conference**: ICLR2026

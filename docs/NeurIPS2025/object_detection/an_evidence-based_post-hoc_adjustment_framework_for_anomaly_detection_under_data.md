@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination
 description: >-
-  [NeurIPS 2025][Object Detection][anomaly detection] EPHAD proposes a test-time post-processing framework that corrects the output of anomaly detection models trained on contaminated data via Bayesian-style fusion with ex…
+  [NeurIPS 2025][Object Detection][anomaly detection] EPHAD proposes a test-time post-processing framework that corrects the output of anomaly detection models trained on contaminated data via Bayesian-style fusion with external evidence (e.g., CLIP, LOF) through exponential tilting. The framework requires no access to the training pipeline and consistently improves detection performance of contaminated models across 8 visual and 26 tabular AD datasets.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "post-hoc adjustment"
 date: 2026-05-08
-content_hash: a1cf0323c5032549
+content_hash: ddd5a35faa304161
 ---
 
 # EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination
@@ -125,10 +125,10 @@ EPHAD requires no training and is a purely post-processing method. The core oper
 ## Related Papers
 
 - [\[NeurIPS 2025\] DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection](dcad-2000_a_multilingual_dataset_across_2000_languages_with_data_cleaning_as_ano.md)
-- [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
 - [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](../../AAAI2026/object_detection/rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
 - [\[NeurIPS 2025\] DitHub: A Modular Framework for Incremental Open-Vocabulary Object Detection](dithub_a_modular_framework_for_incremental_openvocabulary_ob.md)
-- [\[NeurIPS 2025\] Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching](scalable_explainable_and_provably_robust_anomaly_detection_with_one-step_flow_ma.md)
+- [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
+- [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](../../ICLR2026/object_detection/owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Polar Express: Optimal Matrix Sign Methods and their Application to the Muon Algorithm
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Polar Express transforms the polar decomposition approximation in Muon from heuristic Newton-Schulz coefficient searches into solving for the worst-case error-optimal combination of odd polynomials each round. While remaining purely matrix-multiplication-based and bfloat16-friendly, it allows Muon updates in GPT-2 trai
+  [ICLR 2026][Optimization][Matrix sign function] Polar Express transforms the polar decomposition approximation in Muon from heuristic Newton-Schulz coefficient searches into solving for the worst-case error-optimal combination of odd polynomials each round. While remaining purely matrix-multiplication-based and bfloat16-friendly, it allows Muon updates in GPT-2 training to converge faster and more stably toward valid polar factors.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Matrix sign function"
+  - "Polar decomposition"
+  - "Muon optimizer"
+  - "Minimax polynomial"
+  - "Low-precision training"
 date: 2026-05-08
-content_hash: fa07a5f369e03f9e
+content_hash: b8835920987d0e62
 ---
+
 # The Polar Express: Optimal Matrix Sign Methods and their Application to the Muon Algorithm
 
 **Conference**: ICLR 2026  
@@ -181,10 +187,20 @@ An insightful experiment involved modifying the treatment of small singular valu
 - Value: ⭐⭐⭐⭐⭐ Highly practical for the LLM training community adopting Muon; serves as a paradigm for "training-kernel-oriented numerical linear algebra."
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation](elastic_optimal_transport_theory_application_and_empirical_evaluation.md)
+- [\[ICLR 2026\] Convergence of Muon with Newton-Schulz](convergence_of_muon_with_newton-schulz.md)
+- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
+- [\[ICLR 2026\] A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport](a_scalable_constant-factor_approximation_algorithm_for_w_p_optimal_transport.md)
+- [\[ICLR 2026\] Riemannian Optimization on Relaxed Indicator Matrix Manifold](riemannian_optimization_on_relaxed_indicator_matrix_manifold.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation](elastic_optimal_transport_theory_application_and_empirical_evaluation.md)

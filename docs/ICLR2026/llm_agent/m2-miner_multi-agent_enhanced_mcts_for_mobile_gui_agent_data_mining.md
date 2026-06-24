@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] Ours proposes M²-Miner, the first MCTS-based automatic data mining framework for mobile GUI agents. By employing a three-agent collaboration (InferAgent/OrchestraAgent/JudgeAgent), it improves mining efficiency by 64x. Combined with an intent recycling strategy to enrich intent diversity, the trained GUI agent achieves
+  [ICLR 2026][LLM Agent][GUI Agent] Ours proposes M²-Miner, the first MCTS-based automatic data mining framework for mobile GUI agents. By employing a three-agent collaboration (InferAgent/OrchestraAgent/JudgeAgent), it improves mining efficiency by 64x. Combined with an intent recycling strategy to enrich intent diversity, the trained GUI agent achieves SOTA performance on multiple benchmarks.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
-  - MCTS
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "MCTS"
+  - "Data Mining"
+  - "Multi-agent Collaboration"
+  - "Mobile Interaction"
 date: 2026-05-08
-content_hash: 355b04748010f273
+content_hash: 207a017e0c70963c
 ---
+
 # M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining
 
 **Conference**: ICLR 2026  
@@ -158,10 +162,10 @@ Since InferAgent and JudgeAgent capabilities determine mining quality, training 
 ## Related Papers
 
 - [\[ICLR 2026\] FaSTA*: Fast-Slow Toolpath Agent with Subroutine Mining for Efficient Multi-turn Image Editing](fasta_fast-slow_toolpath_agent_with_subroutine_mining_for_efficient_multi-turn_i.md)
+- [\[AAAI 2026\] Agent-SAMA: State-Aware Mobile Assistant](../../AAAI2026/llm_agent/agent-sama_state-aware_mobile_assistant.md)
 - [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
+- [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](../../CVPR2026/llm_agent/gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
 - [\[ACL 2025\] GUI-explorer: Autonomous Exploration and Mining of Transition-aware Knowledge for GUI Agent](../../ACL2025/llm_agent/gui_explorer_autonomous.md)
-- [\[ICLR 2026\] GTA1: GUI Test-time Scaling Agent](gta1_gui_test-time_scaling_agent.md)
-- [\[ICLR 2026\] OmniActor: A Generalist GUI and Embodied Agent for 2D&3D Worlds](omniactor_a_generalist_gui_and_embodied_agent_for_2d3d_worlds.md)
 
 </div>
 

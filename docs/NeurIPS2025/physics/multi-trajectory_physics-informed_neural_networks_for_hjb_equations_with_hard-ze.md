@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data
 description: >-
-  [NeurIPS 2025 (Workshop on Generative AI in Finance)][Physics & Scientific Computing][Physics-Informed Neural Networks] To address the hard-zero terminal inventory constraint ($X_T=0$) in HJB equations arising from optim…
+  [NeurIPS 2025 (Workshop on Generative AI in Finance)][Physics & Scientific Computing][Physics-Informed Neural Networks] To address the hard-zero terminal inventory constraint ($X_T=0$) in HJB equations arising from optimal trade execution, this paper proposes Multi-Trajectory PINN (MT-PINN). Through a rollout-based terminal loss and a $\lambda$-curriculum training strategy, MT-PINN significantly outperforms vanilla PINN on both synthetic benchmarks and live SPY backtesting…
 tags:
   - "NeurIPS 2025 (Workshop on Generative AI in Finance)"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Terminal Inventory Constraint"
   - "Quantitative Finance"
 date: 2026-05-08
-content_hash: 9079ea77019484b3
+content_hash: 65cfe70c68e82b09
 ---
 
 # Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data
@@ -130,10 +130,10 @@ Setup: 7 days of SPY intraday data (2025.2.10–2.19), three 2-hour windows per 
 
 ## Related Papers
 
+- [\[ICML 2025\] Differentiable Stellar Atmospheres with Physics-Informed Neural Networks](../../ICML2025/physics/differentiable_stellar_atmospheres_with_physics-informed_neural_networks.md)
 - [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
 - [\[NeurIPS 2025\] Neuro-Spectral Architectures for Causal Physics-Informed Networks](neuro-spectral_architectures_for_causal_physics-informed_networks.md)
-- [\[ICLR 2026\] Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery](../../ICLR2026/physics/empirical_stability_analysis_of_kolmogorov-arnold_networks_in_hard-constrained_r.md)
-- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
+- [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
 - [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
 
 </div>

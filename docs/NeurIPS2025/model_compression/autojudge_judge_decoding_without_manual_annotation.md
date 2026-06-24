@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoJudge: Judge Decoding Without Manual Annotation
 description: >-
-  [NeurIPS 2025][Model Compression][Speculative Decoding] AutoJudge automates the annotation of "critical tokens" in Judge Decoding — by using a semi-greedy search to replace mismatched tokens and checking whether the fina…
+  [NeurIPS 2025][Model Compression][Speculative Decoding] AutoJudge automates the annotation of "critical tokens" in Judge Decoding — by using a semi-greedy search to replace mismatched tokens and checking whether the final answer changes, it labels token importance, trains a logistic regression classifier to predict importance at inference time, enabling speculative decoding to accept 40+ tokens per round (vs. ~20 in standard methods), achieving 1.5× speedup on GSM8K with less…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Automatic Annotation"
   - "Inference Acceleration"
 date: 2026-05-08
-content_hash: dc90f7bfc78ad9a8
+content_hash: 70ec8dbc52328554
 ---
 
 # AutoJudge: Judge Decoding Without Manual Annotation
@@ -134,9 +134,9 @@ AutoJudge automates the annotation of "critical tokens" in Judge Decoding — by
 
 - [\[NeurIPS 2025\] Traversal Verification for Speculative Tree Decoding](traversal_verification_for_speculative_tree_decoding.md)
 - [\[NeurIPS 2025\] SCAN: Self-Denoising Monte Carlo Annotation for Robust Process Reward Learning](scan_self-denoising_monte_carlo_annotation_for_robust_process_reward_learning.md)
-- [\[NeurIPS 2025\] Elastic ViTs from Pretrained Models without Retraining](elastic_vits_from_pretrained_models_without_retraining.md)
 - [\[NeurIPS 2025\] Reject Only Critical Tokens: Pivot-Aware Speculative Decoding](reject_only_critical_tokens_pivot-aware_speculative_decoding.md)
-- [\[NeurIPS 2025\] Robustifying Learning-Augmented Caching Efficiently without Compromising 1-Consistency](robustifying_learning-augmented_caching_efficiently_without_compromising_1-consi.md)
+- [\[NeurIPS 2025\] Elastic ViTs from Pretrained Models without Retraining](elastic_vits_from_pretrained_models_without_retraining.md)
+- [\[ICML 2025\] VocabTrim: Vocabulary Pruning for Efficient Speculative Decoding in LLMs](../../ICML2025/model_compression/vocabtrim_vocabulary_pruning_for_efficient_speculative_decoding_in_llms.md)
 
 </div>
 

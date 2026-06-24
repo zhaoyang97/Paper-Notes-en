@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper formally defines the "soft-failure" threat in RAG systems—generating fluent yet uninformative responses—and proposes the DEJA black-box evolutionary attack framework. By utilizing adversarial documents to induce model safety alignment mechanisms into producing hedging responses, DEJA achieves a SASR exceedin
+  [ACL 2026][LLM Safety][RAG Attack] This paper formally defines the "soft-failure" threat in RAG systems—generating fluent yet uninformative responses—and proposes the DEJA black-box evolutionary attack framework. By utilizing adversarial documents to induce model safety alignment mechanisms into producing hedging responses, DEJA achieves a SASR exceeding 79% while remaining highly stealthy.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "RAG Attack"
+  - "Soft-Failure"
+  - "Adversarial Document"
+  - "Evolutionary Optimization"
+  - "Availability Attack"
 date: 2026-05-08
-content_hash: effcb1c4152bd13a
+content_hash: 5c8f076d2804862a
 ---
+
 # Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation
 
 **Conference**: ACL 2026  
@@ -140,9 +146,9 @@ No model training is required. Optimization occurs in the natural language space
 
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
+- [\[ICLR 2026\] Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval](../../ICLR2026/llm_safety/pisces_cryptography-based_private_retrieval-augmented_generation_with_dual-path_.md)
 - [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](../../AAAI2026/llm_safety/privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
 - [\[ACL 2026\] Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models](retrievals_can_be_detrimental_unveiling_the_backdoor_vulnerability_of_retrieval-.md)
-- [\[NeurIPS 2025\] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation](../../NeurIPS2025/llm_safety/imagesentinel_protecting_visual_datasets_from_unauthorized_retrieval-augmented_i.md)
 
 </div>
 

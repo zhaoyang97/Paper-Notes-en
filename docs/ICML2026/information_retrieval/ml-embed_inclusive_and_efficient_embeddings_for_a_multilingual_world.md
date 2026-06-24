@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World
 description: >-
-  [ICML 2026][Information Retrieval & RAG][MTEB] ML-Embed extends the Matryoshka concept from one dimension (representation dimension) to **three dimensions**—implementing full-stack nested training across embedding parameters (MEL), model depth (MLL), and representation dimension (MRL). Simultaneously, it constructs a multilingual training set of 50 million samples
+  [ICML 2026][Information Retrieval & RAG][Matryoshka Representation Learning] ML-Embed extends the Matryoshka concept from one dimension (representation dimension) to **three dimensions**—implementing full-stack nested training across embedding parameters (MEL), model depth (MLL), and representation dimension (MRL). Simultaneously, it constructs a multilingual training set of 50 million samples covering 282 natural languages and 40 programming languages. A family of open-sourc…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - MTEB
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Matryoshka Representation Learning"
+  - "Multidimensional Nesting"
+  - "MTEB"
+  - "Low-resource Languages"
+  - "Decoder-based Embeddings"
 date: 2026-05-08
-content_hash: 31d3fc6a478d7545
+content_hash: d55952ca735a3304
 ---
+
 # ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World
 
 **Conference**: ICML 2026  
@@ -157,11 +162,11 @@ The 8B model takes first place in 9 out of 17 benchmarks, with massive gains in 
 
 ## Related Papers
 
-- [\[ICML 2026\] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding](lazyattention_efficient_retrieval-augmented_generation_with_deferred_positional_.md)
 - [\[ICLR 2026\] Beyond Text-Only: Towards Multimodal Table Retrieval in Open-World](../../ICLR2026/information_retrieval/beyond_text-only_towards_multimodal_table_retrieval_in_open-world.md)
+- [\[ICLR 2026\] Think Then Embed: Generative Context Improves Multimodal Embedding](../../ICLR2026/information_retrieval/think_then_embed_generative_context_improves_multimodal_embedding.md)
+- [\[ICML 2026\] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding](lazyattention_efficient_retrieval-augmented_generation_with_deferred_positional_.md)
+- [\[ICML 2026\] Linguistic Nepotism: Trading-off Quality for Language Preference in Multilingual RAG](linguistic_nepotism_trading-off_quality_for_language_preference_in_multilingual_.md)
 - [\[ACL 2026\] CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG](../../ACL2026/information_retrieval/coral_adaptive_retrieval_loop_for_culturally-aligned_multilingual_rag.md)
-- [\[ICCV 2025\] LangBridge: Interpreting Image as a Combination of Language Embeddings](../../ICCV2025/information_retrieval/langbridge_interpreting_image_as_a_combination_of_language_embeddings.md)
-- [\[ACL 2025\] Redundancy, Isotropy and Intrinsic Dimensionality of Prompt-Based Text Embeddings](../../ACL2025/information_retrieval/redundancy_isotropy_and_intrinsic_dimensionality_of_prompt-based_text_embeddings.md)
 
 </div>
 

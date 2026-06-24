@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dataset Distillation by Influence Matching
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Instead of forcing synthetic data to mimic the training process of real data (gradients/trajectories), this work directly aligns the "training outcome." By utilizing a linear-time, inverse-Hessian-free differentiable influence estimator, the authors reformulate dataset distillation as "influence of the synthetic set on
+  [CVPR 2026][Model Compression][Dataset Distillation] Instead of forcing synthetic data to mimic the training process of real data (gradients/trajectories), this work directly aligns the "training outcome." By utilizing a linear-time, inverse-Hessian-free differentiable influence estimator, the authors reformulate dataset distillation as "influence of the synthetic set on parameters $\approx$ influence of the real set on parameters." This approach consistently outperforms proc…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Influence Function"
+  - "Outcome Alignment"
+  - "Differentiable Influence Estimation"
+  - "Soft Labels"
 date: 2026-05-08
-content_hash: 8c9ea6e5242961a0
+content_hash: 3277c22b9af93c52
 ---
+
 # Dataset Distillation by Influence Matching
 
 **Conference**: CVPR 2026  
@@ -141,6 +147,7 @@ Notably, the **core influence matching objective with real initialization (53.7)
 - Value: ⭐⭐⭐⭐⭐ Provides a transferable influence estimator and a new paradigm for the distillation community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

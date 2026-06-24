@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning Exposure Mapping Functions for Inferring Heterogeneous Peer Effects
 description: >-
-  [ICLR 2026][Causal Inference][GNN] This paper proposes **EGONETGNN**, which uses Graph Neural Networks to **automatically learn** the "exposure mapping function" in network peer effects. It eliminates the need to manually specify counts of treated neighbors, enabling robust estimation of heterogeneous peer effects even when influence mechanisms are unkn
+  [ICLR 2026][Causal Inference][Peer effects] This paper proposes **EGONETGNN**, which uses Graph Neural Networks to **automatically learn** the "exposure mapping function" in network peer effects. It eliminates the need to manually specify counts of treated neighbors, enabling robust estimation of heterogeneous peer effects even when influence mechanisms are unknown or depend on local structures (triangles, clustering coefficients, attribute similarity).
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - GNN
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Peer effects"
+  - "exposure mapping function"
+  - "network interference"
+  - "heterogeneous causal effects"
+  - "causal network motifs"
+  - "GNN"
 date: 2026-05-08
-content_hash: 1283ada438f29742
+content_hash: bfd9d08008ef86e5
 ---
+
 # Learning Exposure Mapping Functions for Inferring Heterogeneous Peer Effects
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MDS-VQA: Model-Informed Data Selection for Video Quality Assessment
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] MDS-VQA enables a VQA model to "identify which videos it cannot assess accurately" by using a ranking-based failure predictor to estimate difficulty combined with content diversity for greedy selection. By annotating only a 5% "difficult and diverse" subset for active fine-tuning, the average multi-domain SRCC improved
+  [CVPR 2026][Video Understanding][Video Quality Assessment] MDS-VQA enables a VQA model to "identify which videos it cannot assess accurately" by using a ranking-based failure predictor to estimate difficulty combined with content diversity for greedy selection. By annotating only a 5% "difficult and diverse" subset for active fine-tuning, the average multi-domain SRCC improved from 0.651 to 0.722, and the method achieved first place in the gMAD competition.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Quality Assessment"
+  - "Model-Informed Data Selection"
+  - "Failure Prediction"
+  - "Active Fine-tuning"
+  - "Learning to Rank"
 date: 2026-05-08
-content_hash: 2e5ec0f8678b27a3
+content_hash: 834d5a898ccd745d
 ---
+
 # MDS-VQA: Model-Informed Data Selection for Video Quality Assessment
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ MDS-VQA ranked first in both SRCC and gMAD, whereas some competitors showed sign
 
 ## Related Papers
 
+- [\[CVPR 2026\] Seeing Beyond 8bits: Subjective and Objective Quality Assessment of HDR-UGC Videos](seeing_beyond_8bits_subjective_and_objective_quality_assessment_of_hdr-ugc_video.md)
 - [\[CVPR 2026\] CoCoVideo: The High-Quality Commercial-Model-Based Contrastive Benchmark for AI-Generated Video Detection](cocovideo_the_high-quality_commercial-model-based_contrastive_benchmark_for_ai-g.md)
 - [\[CVPR 2026\] SkillSight: Efficient First-Person Skill Assessment with Gaze](skillsight_efficient_first-person_skill_assessment_with_gaze.md)
-- [\[CVPR 2026\] VAST: Video Ability-Stratified Taxonomy for Data-Efficient Video Reasoning](vast_video_ability-stratified_taxonomy_for_data-efficient_video_reasoning.md)
-- [\[CVPR 2026\] Towards Data-Efficient Video Pre-training with Frozen Image Foundation Models](towards_data-efficient_video_pre-training_with_frozen_image_foundation_models.md)
+- [\[CVPR 2026\] Learning from Synthetic Data via Provenance-Based Input Gradient Guidance](learning_from_synthetic_data_via_provenance-based_input_gradient_guidance.md)
 - [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
 
 </div>

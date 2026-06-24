@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Unified Interpretation of Training-Time Out-of-Distribution Detection
 description: >-
-  [ICCV 2025][3D Vision][OOD detection] This paper proposes a novel perspective based on inter-variable "interactions" to provide a unified explanation for why different training-time OOD detection methods are effective —…
+  [ICCV 2025][3D Vision][OOD detection] This paper proposes a novel perspective based on inter-variable "interactions" to provide a unified explanation for why different training-time OOD detection methods are effective — they all encourage the model to encode more high-order interactions. The paper further validates the dominant role of high-order interactions in OOD detection and explains, through interaction distribution analysis, why near-OOD samples are harder to detect.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "high-order interactions"
   - "interpretability"
 date: 2026-05-08
-content_hash: de3b6d414526b6cc
+content_hash: ba2c70832c9488f3
 ---
 
 # A Unified Interpretation of Training-Time Out-of-Distribution Detection
@@ -162,11 +162,11 @@ This paper follows a line of interaction-analysis work (Li and Zhang 2023, Ren e
 
 ## Related Papers
 
+- [\[ICLR 2026\] GOOD: Geometry-guided Out-of-Distribution Modeling for Open-set Test-time Adaptation in Point Cloud Semantic Segmentation](../../ICLR2026/3d_vision/good_geometry-guided_out-of-distribution_modeling_for_open-set_test-time_adaptat.md)
 - [\[NeurIPS 2025\] MetaGS: A Meta-Learned Gaussian-Phong Model for Out-of-Distribution 3D Scene Relighting](../../NeurIPS2025/3d_vision/metags_a_meta-learned_gaussian-phong_model_for_out-of-distribution_3d_scene_reli.md)
 - [\[ICCV 2025\] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes](unified_category-level_object_detection_and_pose_estimation_from_rgb_images_usin.md)
 - [\[ICCV 2025\] Faster and Better 3D Splatting via Group Training](faster_and_better_3d_splatting_via_group_training.md)
 - [\[ICCV 2025\] 4D Visual Pre-training for Robot Learning](4d_visual_pretraining_for_robot_learning.md)
-- [\[ICCV 2025\] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training](easi3r_estimating_disentangled_motion_from_dust3r_without_training.md)
 
 </div>
 

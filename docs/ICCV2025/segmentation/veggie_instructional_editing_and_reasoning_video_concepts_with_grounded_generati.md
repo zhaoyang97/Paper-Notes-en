@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation
 description: >-
-  [ICCV 2025][Segmentation][Video Editing] VEGGIE proposes an end-to-end unified framework that bridges an MLLM with a video diffusion model…
+  [ICCV 2025][Segmentation][Video Editing] VEGGIE proposes an end-to-end unified framework that bridges an MLLM with a video diffusion model, enabling a single model to simultaneously accomplish 8 tasks—including instructional video editing, concept grounding, and reasoning segmentation—using only the diffusion loss.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Reasoning Segmentation"
   - "Unified Multi-Task Model"
 date: 2026-05-08
-content_hash: 2a2bab26b0c82e5c
+content_hash: 12c69b19043a1ef8
 ---
 
 # VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation
@@ -160,10 +160,10 @@ VEGGIE is the only method capable of accomplishing all 8 tasks simultaneously. A
 ## Related Papers
 
 - [\[ICCV 2025\] Online Reasoning Video Segmentation with Just-in-Time Digital Twins](online_reasoning_video_segmentation_with_just-in-time_digital_twins.md)
-- [\[ACL 2026\] AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation](../../ACL2026/segmentation/anchorseg_language_grounded_query_banks_for_reasoning_segmentation.md)
 - [\[ICLR 2026\] VINCIE: Unlocking In-context Image Editing from Video](../../ICLR2026/segmentation/vincie_unlocking_in-context_image_editing_from_video.md)
 - [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
 - [\[ICLR 2026\] RegionReasoner: Region-Grounded Multi-Round Visual Reasoning](../../ICLR2026/segmentation/regionreasoner_region-grounded_multi-round_visual_reasoning.md)
+- [\[ICCV 2025\] Latent Expression Generation for Referring Image Segmentation and Grounding](latent_expression_generation_for_referring_image_segmentation_and_grounding.md)
 
 </div>
 

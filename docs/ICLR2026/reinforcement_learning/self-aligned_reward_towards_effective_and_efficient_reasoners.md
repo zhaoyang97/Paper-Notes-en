@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Self-Aligned Reward: Towards Effective and Efficient Reasoners
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Addressing the coarse-grained limitations of verifiable rewards—which "only check answer correctness and tolerate excessive verbosity"—this paper proposes **Self-Aligned Reward (SAR)**. SAR utilizes the "relative perplexity difference of an answer under conditioned versus unconditioned query scenarios" as a model self-
+  [ICLR 2026][Reinforcement Learning][Verifiable Rewards] Addressing the coarse-grained limitations of verifiable rewards—which "only check answer correctness and tolerate excessive verbosity"—this paper proposes **Self-Aligned Reward (SAR)**. SAR utilizes the "relative perplexity difference of an answer under conditioned versus unconditioned query scenarios" as a model self-critique signal. When added to the verifiable rewards of PPO/GRPO, it improves accuracy by approximately…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Verifiable Rewards"
+  - "Perplexity"
+  - "Reasoning Efficiency"
+  - "Self-critique"
 date: 2026-05-08
-content_hash: 512305184fe187e6
+content_hash: 88f8f7ad7d8771e7
 ---
+
 # Self-Aligned Reward: Towards Effective and Efficient Reasoners
 
 **Conference**: ICLR 2026  

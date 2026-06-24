@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm
 description: >-
-  [CVPR 2026][Multimodal VLM][Inference Acceleration] VLM-Pruner is proposed as a training-free centrifugal token pruning method that balances redundancy elimination and local detail integrity through the Buffered Spatial Sparsity (BSS) criterion. It consistently outperforms existing methods across five VLMs at an 88.9% pruning rate while achieving end-to-end inference ac
+  [CVPR 2026][Multimodal Efficiency][Vision token pruning] VLM-Pruner is proposed as a training-free centrifugal token pruning method that balances redundancy elimination and local detail integrity through the Buffered Spatial Sparsity (BSS) criterion. It consistently outperforms existing methods across five VLMs at an 88.9% pruning rate while achieving end-to-end inference acceleration.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Vision token pruning"
+  - "Inference acceleration"
+  - "Spatial sparsity"
+  - "Training-free"
+  - "VLM efficiency"
 date: 2026-05-08
-content_hash: b7f323afbcfccce4
+content_hash: c2e0c246dab17242
 ---
+
 # VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm
 
 **Conference**: CVPR 2026  
@@ -113,16 +118,16 @@ The similarity matrix $M \in \mathbb{R}^{N \times N}$ is the primary overhead. V
 - Value: ⭐⭐⭐⭐ High practical utility as a training-free method with transferable design insights.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Nüwa: Mending the Spatial Integrity Torn by VLM Token Pruning](../../ICLR2026/vlm_efficiency/nüwa_mending_the_spatial_integrity_torn_by_vlm_token_pruning.md)
+- [\[CVPR 2026\] SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference](segmo_co-designing_content-aware_sparsity_and_locally-cohesive_segment_paralleli.md)
 - [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
-- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
 - [\[CVPR 2026\] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference](duet-vlm_dual_stage_unified_efficient_token_reduction_for_vlm_training_and_infer.md)
-- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/multimodal_vlm/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
-- [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
 
 </div>
 

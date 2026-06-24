@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs
 description: >-
-  [ICLR 2026][Multilingual & Translation][Code-Switching] Utilizing Sparse Autoencoders (SAEs), it is discovered that unexpected code-switching in LLMs is correlated with abnormally high pre-activation values of target language features. This paper proposes SASFT, a method that constrains target language feature pre-activations during SFT training, reducing unexpected code-sw
+  [Multilingual & Machine Translation] Utilizing Sparse Autoencoders (SAEs), it is discovered that unexpected code-switching in LLMs is correlated with abnormally high pre-activation values of target language features. This paper proposes SASFT, a method that constrains target language feature pre-activations during SFT training, reducing unexpected code-switching by more than 50%.
 tags:
-  - ICLR 2026
-  - Multilingual & Translation
-  - Code-Switching
-  - Sparse Autoencoder
-  - Multilingual LLMs
-  - SFT
-  - Language Features
+  - "Multilingual & Machine Translation"
 date: 2026-05-08
-content_hash: 7630d8ff2007373c
+content_hash: 719de775ebb28d76
 ---
+
 # SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs
 
 ## Basic Information

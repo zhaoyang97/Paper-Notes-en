@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GenIR: Generative Visual Feedback for Mental Image Retrieval
 description: >-
-  [NeurIPS 2025][Image Generation][Interactive Retrieval] This paper proposes GenIR, a multi-round interactive image retrieval framework that leverages text-to-image diffusion models to generate "synthetic visual feedback…
+  [NeurIPS 2025][Image Generation][Interactive Retrieval] This paper proposes GenIR, a multi-round interactive image retrieval framework that leverages text-to-image diffusion models to generate "synthetic visual feedback," explicitly visualizing the system's interpretation of the user's query. This enables users to intuitively identify discrepancies and iteratively refine their queries, achieving substantial improvements over text-only feedback methods on the Mental Image Retr…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Mental Image Retrieval"
   - "Multi-round Query Refinement"
 date: 2026-05-08
-content_hash: 2549a433f969ccae
+content_hash: 9283e6400cba5f1f
 ---
 
 # GenIR: Generative Visual Feedback for Mental Image Retrieval
@@ -216,10 +216,10 @@ GenIR's innovation lies in being the **first to integrate text-to-image generati
 ## Related Papers
 
 - [\[NeurIPS 2025\] Instance-Level Composed Image Retrieval](instance-level_composed_image_retrieval.md)
-- [\[NeurIPS 2025\] UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback](unilumos_fast_and_unified_image_and_video_relighting_with_physics-plausible_feed.md)
 - [\[CVPR 2026\] Diffusion Mental Averages](../../CVPR2026/image_generation/diffusion_mental_averages.md)
-- [\[NeurIPS 2025\] Highlighting What Matters: Promptable Embeddings for Attribute-Focused Image Retrieval](highlighting_what_matters_promptable_embeddings_for_attribute-focused_image_retr.md)
-- [\[NeurIPS 2025\] V-CECE: Visual Counterfactual Explanations via Conceptual Edits](v-cece_visual_counterfactual_explanations_via_conceptual_edits.md)
+- [\[NeurIPS 2025\] UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback](unilumos_fast_and_unified_image_and_video_relighting_with_physics-plausible_feed.md)
+- [\[CVPR 2025\] Generative Image Layer Decomposition with Visual Effects](../../CVPR2025/image_generation/generative_image_layer_decomposition_with_visual_effects.md)
+- [\[ECCV 2024\] IRGen: Generative Modeling for Image Retrieval](../../ECCV2024/image_generation/irgen_generative_modeling_for_image_retrieval.md)
 
 </div>
 

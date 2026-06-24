@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents
 description: >-
-  [AAAI 2026][LLM/NLP][Multi-Agent Systems] This paper proposes a zero-shot multi-agent pipeline comprising five role-based GPT-4o agents that assess learner reflection texts using a rubric-based scoring scheme and generat…
+  [AAAI 2026][LLM (Other)][Multi-Agent Systems] This paper proposes a zero-shot multi-agent pipeline comprising five role-based GPT-4o agents that assess learner reflection texts using a rubric-based scoring scheme and generate bias-aware conversational feedback. Evaluated on 336 reflections, the system achieves MAE=0.467, QWK=0.459 in scoring agreement, and a feedback quality score of Q(g)=3.967.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Multi-Agent Systems"
   - "Formative Feedback"
   - "Automated Scoring"
   - "Fairness"
   - "Metacognition"
 date: 2026-05-08
-content_hash: 58f9ba8b8fc66edc
+content_hash: 8b45dcc9725c350a
 ---
 
 # Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents
@@ -138,11 +138,11 @@ No training or fine-tuning is performed; all reasoning is accomplished through s
 
 ## Related Papers
 
+- [\[ACL 2025\] Meta-Reflection: A Feedback-Free Reflection Learning Framework](../../ACL2025/llm_nlp/meta-reflection_a_feedback-free_reflection_learning_framework.md)
 - [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
-- [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](../../NeurIPS2025/llm_nlp/scaling_up_active_testing_to_large_language_models.md)
-- [\[ACL 2026\] Clustered Self-Assessment: A Simple yet Effective Method for Uncertainty Quantification in Large Language Models](../../ACL2026/llm_nlp/clustered_self-assessment_a_simple_yet_effective_method_for_uncertainty_quantifi.md)
-- [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
+- [\[AAAI 2026\] Blue Teaming Function-Calling Agents](blue_teaming_function-calling_agents.md)
+- [\[AAAI 2026\] Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback](position_on_llm-assisted_peer_review_addressing_reviewer_gap_through_mentoring_a.md)
 
 </div>
 

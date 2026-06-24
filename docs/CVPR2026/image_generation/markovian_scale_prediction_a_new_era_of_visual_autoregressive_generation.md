@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Refactors the Visual Autoregressive (VAR) model from full-context dependency next-scale prediction to Markovian scale prediction based on a Markov process. Through a sliding window history compensation mechanism, it achieves non-full-context modeling, reducing FID by 10.5% and peak memory by 83.8% on ImageNet.
+  [CVPR 2026][Image Generation][Visual autoregressive generation] Refactors the Visual Autoregressive (VAR) model from full-context dependency next-scale prediction to Markovian scale prediction based on a Markov process. Through a sliding window history compensation mechanism, it achieves non-full-context modeling, reducing FID by 10.5% and peak memory by 83.8% on ImageNet.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual autoregressive generation"
+  - "Markov process"
+  - "multi-scale prediction"
+  - "memory efficiency"
 date: 2026-05-08
-content_hash: b9a4d3d0912b10dd
+content_hash: 5823aaae61028851
 ---
+
 # Markovian Scale Prediction: A New Era of Visual Autoregressive Generation
 
 **Conference**: CVPR 2026  
@@ -171,7 +176,7 @@ Sliding window size:
 - [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
 - [\[CVPR 2026\] Mirai: Autoregressive Visual Generation Needs Foresight](mirai_autoregressive_visual_generation_needs_foresight.md)
 - [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
-- [\[ICLR 2026\] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation](../../ICLR2026/image_generation/ssg_scaled_spatial_guidance_for_multi-scale_visual_autoregressive_generation.md)
+- [\[CVPR 2026\] VAR RL Done Right: Tackling Asynchronous Policy Conflicts in Visual Autoregressive Generation](var_rl_done_right_tackling_asynchronous_policy_conflicts_in_visual_autoregressiv.md)
 
 </div>
 

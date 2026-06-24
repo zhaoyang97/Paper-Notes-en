@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SPARC: OOD Generalization for Controlling 100 Unseen Vehicles with a Single Policy
 description: >-
-  [AAAI 2026][Autonomous Driving][OOD Generalization] This paper proposes SPARC (Single-Phase Adaptation for Robust Control), which unifies the two-phase context encoding and history-based adaptation of RMA into a single-p…
+  [AAAI 2026 Oral][Autonomous Driving][OOD Generalization] This paper proposes SPARC (Single-Phase Adaptation for Robust Control), which unifies the two-phase context encoding and history-based adaptation of RMA into a single-phase training procedure. Using a single policy in the high-fidelity Gran Turismo 7 racing simulator, SPARC achieves state-of-the-art OOD generalization performance across 100+ unseen vehicles.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Autonomous Driving"
   - "OOD Generalization"
   - "Contextual Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Gran Turismo"
   - "SPARC"
 date: 2026-05-08
-content_hash: 5bcab6f3c0b3c8af
+content_hash: c8b7d9a4aa5b443d
 ---
 
 # SPARC: OOD Generalization for Controlling 100 Unseen Vehicles with a Single Policy
@@ -129,11 +129,11 @@ The method is elegant and effective, demonstrating impressive OOD generalization
 
 ## Related Papers
 
-- [\[CVPR 2026\] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation](../../CVPR2026/autonomous_driving/open-vocabulary_domain_generalization_in_urban-scene_segmentation.md)
-- [\[ICCV 2025\] RESCUE: Crowd Evacuation Simulation via Controlling SDM-United Characters](../../ICCV2025/autonomous_driving/rescue_crowd_evacuation_simulation_via_controlling_sdm-united_characters.md)
+- [\[ECCV 2024\] Rethinking LiDAR Domain Generalization: Single Source as Multiple Density Domains](../../ECCV2024/autonomous_driving/rethinking_lidar_domain_generalization_single_source_as_multiple_density_domains.md)
 - [\[AAAI 2026\] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions](tsbow_traffic_surveillance_benchmark_for_occluded_vehicles_under_various_weather.md)
+- [\[ICCV 2025\] RESCUE: Crowd Evacuation Simulation via Controlling SDM-United Characters](../../ICCV2025/autonomous_driving/rescue_crowd_evacuation_simulation_via_controlling_sdm-united_characters.md)
+- [\[CVPR 2026\] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation](../../CVPR2026/autonomous_driving/open-vocabulary_domain_generalization_in_urban-scene_segmentation.md)
 - [\[ICCV 2025\] Wavelet Policy: Lifting Scheme for Policy Learning in Long-Horizon Tasks](../../ICCV2025/autonomous_driving/wavelet_policy_lifting_scheme_for_policy_learning_in_long-horizon_tasks.md)
-- [\[CVPR 2026\] HorizonForge: Driving Scene Editing with Any Trajectories and Any Vehicles](../../CVPR2026/autonomous_driving/horizonforge_driving_scene_editing_with_any_trajectories_and_any_vehicles.md)
 
 </div>
 

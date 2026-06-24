@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SMVRT: Implicit Human 3D Modeling Using Sparse Multi-View Volumetric Reconstruction with Transformer Fusion
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SMVRT utilizes an end-to-end, template-free implicit occupancy field network to reconstruct clothed humans from sparse multi-view inputs (2–8 images). The core innovation lies in placing Transformer fusion modules across three stages: 2D encoding, 2D-to-3D voxel construction, and query point decoding. This allows the n
+  [CVPR 2026][3D Vision][Sparse Multi-View] SMVRT utilizes an end-to-end, template-free implicit occupancy field network to reconstruct clothed humans from sparse multi-view inputs (2–8 images). The core innovation lies in placing Transformer fusion modules across three stages: 2D encoding, 2D-to-3D voxel construction, and query point decoding. This allows the network to "select the most reliable views and features," effectively halving the Chamfer distance of prior SOTA method…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Sparse Multi-View"
+  - "Implicit Occupancy Field"
+  - "3D Human Reconstruction"
+  - "Transformer Feature Fusion"
+  - "Voxel Grid"
 date: 2026-05-08
-content_hash: 7bf4a8e95a1beea6
+content_hash: 9d5413fb2a0e2738
 ---
+
 # SMVRT: Implicit Human 3D Modeling Using Sparse Multi-View Volumetric Reconstruction with Transformer Fusion
 
 **Conference**: CVPR 2026  
@@ -164,10 +170,10 @@ Additional Ablations:
 ## Related Papers
 
 - [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
-- [\[CVPR 2026\] Multi-view Pyramid Transformer: Look Coarser to See Broader](multi-view_pyramid_transformer_look_coarser_to_see_broader.md)
-- [\[CVPR 2026\] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations](rng_a_unified_transformer_for_complete_3d_modeling_from_partial_observations.md)
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
-- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
+- [\[CVPR 2026\] EfficientMonoHair: Fast Strand-Level Reconstruction from Monocular Video via Multi-View Direction Fusion](efficientmonohair_fast_strand-level_reconstruction_from_monocular_video_via_mult.md)
+- [\[CVPR 2026\] MuM: Multi-View Masked Image Modeling for 3D Vision](mum_multi-view_masked_image_modeling_for_3d_vision.md)
+- [\[CVPR 2026\] FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing](fishuman_fine-grained_single-image_3d_human_reconstruction_via_multi-view_4d_rem.md)
+- [\[CVPR 2026\] Generalizable Sparse-View 3D Reconstruction from Unconstrained Images](generalizable_sparse-view_3d_reconstruction_from_unconstrained_images.md)
 
 </div>
 

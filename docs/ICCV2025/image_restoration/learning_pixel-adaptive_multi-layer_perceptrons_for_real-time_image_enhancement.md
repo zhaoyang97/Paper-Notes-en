@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement
 description: >-
-  [ICCV 2025][Image Restoration][Image Enhancement] This paper proposes the BPAM framework, which combines the spatial modeling capability of bilateral grids with the nonlinear mapping power of MLPs by dynamically generati…
+  [ICCV 2025][Image Restoration][Image Enhancement] This paper proposes the BPAM framework, which combines the spatial modeling capability of bilateral grids with the nonlinear mapping power of MLPs by dynamically generating unique micro-MLP parameters for each pixel, enabling high-quality, real-time image enhancement.
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Real-time Processing"
   - "Color Mapping"
 date: 2026-05-08
-content_hash: cad1e81b4ba85160
+content_hash: 2a515230b378a8ac
 ---
 
 # Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement
@@ -169,9 +169,9 @@ The BPAM pipeline proceeds as follows: (1) a three-level U-Net-style NAFNet back
 
 - [\[ICCV 2025\] Lightweight and Fast Real-time Image Enhancement via Decomposition of the Spatial-aware Lookup Tables](lightweight_and_fast_real-time_image_enhancement_via_decomposition_of_the_spatia.md)
 - [\[ICCV 2025\] MobileIE: An Extremely Lightweight and Effective ConvNet for Real-Time Image Enhancement on Mobile Devices](mobileie_an_extremely_lightweight_and_effective_convnet_for_real-time_image_enha.md)
+- [\[CVPR 2026\] RegionFuse: Region-Adaptive Pixel Distribution Learning for Infrared and Visible Image Fusion](../../CVPR2026/image_restoration/regionfuse_region-adaptive_pixel_distribution_learning_for_infrared_and_visible_.md)
 - [\[ICCV 2025\] Enhancing Image Restoration Transformer via Adaptive Translation Equivariance](enhancing_image_restoration_transformer_via_adaptive_translation_equivariance.md)
 - [\[ICCV 2025\] Metric Convolutions: A Unifying Theory to Adaptive Image Convolutions](metric_convolutions_a_unifying_theory_to_adaptive_image_convolutions.md)
-- [\[ICCV 2025\] CWNet: Causal Wavelet Network for Low-Light Image Enhancement](cwnet_causal_wavelet_network_for_low-light_image_enhancement.md)
 
 </div>
 

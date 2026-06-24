@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SportR: A Benchmark for Multimodal Large Language Model Reasoning in Sports
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] SportR is the first large-scale multimodal benchmark for "sports rule reasoning" across multiple sports. It comprises 4,789 images and 2,052 videos covering 50 types of fouls and 12 types of tactics across 5 ball games. The dataset includes 6,841 **purely human-written** Chain-of-Thought (CoT) trajectories and precise
+  [ICLR 2026][VLM Reasoning][Sports Understanding] SportR is the first large-scale multimodal benchmark for "sports rule reasoning" across multiple sports. It comprises 4,789 images and 2,052 videos covering 50 types of fouls and 12 types of tactics across 5 ball games. The dataset includes 6,841 **purely human-written** Chain-of-Thought (CoT) trajectories and precise bounding box annotations. MLLMs are evaluated through a progressive QA hierarchy—ranging from foul identificati…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Sports Understanding"
+  - "Rule Reasoning"
+  - "Visual Grounding"
+  - "Chain-of-Thought Annotation"
+  - "Cross-modal Generalization"
 date: 2026-05-08
-content_hash: 7f424b2bde60c6e2
+content_hash: 472dfdaf31cc66fd
 ---
+
 # SportR: A Benchmark for Multimodal Large Language Model Reasoning in Sports
 
 **Conference**: ICLR 2026  
@@ -134,11 +140,11 @@ Errors were categorized into: Visual Hallucination, Domain Knowledge Gap, Reason
 
 ## Related Papers
 
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
 - [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](../../CVPR2026/vlm_reasoning/pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
 - [\[ICLR 2026\] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](lens_multi-level_evaluation_of_multimodal_reasoning_with_large_language_models.md)
-- [\[ICLR 2026\] PuzzleWorld: A Benchmark for Multimodal, Open-Ended Reasoning in Puzzlehunts](puzzleworld_a_benchmark_for_multimodal_open-ended_reasoning_in_puzzlehunts.md)
-- [\[ICLR 2026\] MathNet: A Global Multimodal Benchmark for Mathematical Reasoning and Retrieval](mathnet_a_global_multimodal_benchmark_for_mathematical_reasoning_and_retrieval.md)
-- [\[ICLR 2026\] Vision-SR1: Self-Rewarding Vision-Language Model via Reasoning Decomposition and Multi-Reward Policy Optimization](vision-sr1_self-rewarding_vision-language_model_via_reasoning_decomposition_and_.md)
+- [\[CVPR 2025\] SeqAfford: Sequential 3D Affordance Reasoning via Multimodal Large Language Model](../../CVPR2025/vlm_reasoning/seqafford_sequential_3d_affordance_reasoning_via_multimodal_large_language_model.md)
+- [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](../../ICML2026/vlm_reasoning/vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 
 </div>
 

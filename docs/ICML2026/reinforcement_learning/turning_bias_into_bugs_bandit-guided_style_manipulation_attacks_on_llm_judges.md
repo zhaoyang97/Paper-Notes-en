@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Turning Bias into Bugs: Bandit-Guided Style Manipulation Attacks on LLM Judges
 description: >-
-  [ICML 2026][Reinforcement Learning][LLM-as-a-Judge] Treating known style preferences of LLM judges (verbosity, lists, emojis, etc.) as an attack surface that can be systematically exploited, the authors model the attack as a contextual bandit. Using LinUCB, they adaptively select from 8 semantic-preserving style rewriting actions within a 25-query budget, achieving an a
+  [ICML 2026][Reinforcement Learning][LLM-as-a-Judge] Treating known style preferences of LLM judges (verbosity, lists, emojis, etc.) as an attack surface that can be systematically exploited, the authors model the attack as a contextual bandit. Using LinUCB, they adaptively select from 8 semantic-preserving style rewriting actions within a 25-query budget, achieving an attack success rate of $>65\%$ and score inflation of $+1 \sim 2$ points (on a 9-point scale) across 5 mainst…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - LLM-as-a-Judge
-  - LinUCB
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "LLM-as-a-Judge"
+  - "Style Bias"
+  - "Contextual Bandit"
+  - "LinUCB"
+  - "Black-box Attack"
 date: 2026-05-08
-content_hash: ed3f3a96981e7512
+content_hash: 8744b685d525184a
 ---
+
 # Turning Bias into Bugs: Bandit-Guided Style Manipulation Attacks on LLM Judges
 
 **Conference**: ICML 2026  
@@ -137,11 +141,11 @@ BITE significantly outperforms prompt injection baselines (Naive/Fake Completion
 
 ## Related Papers
 
-- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
+- [\[ICLR 2026\] When Greedy Wins: Emergent Exploitation Bias in Meta-Bandit LLM Training](../../ICLR2026/reinforcement_learning/when_greedy_wins_emergent_exploitation_bias_in_meta-bandit_llm_training.md)
 - [\[ICML 2026\] Adaptive Bandit Algorithms for Contextual Matching Markets](adaptive_bandit_algorithms_for_contextual_matching_markets.md)
-- [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](../../AAAI2026/reinforcement_learning/a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
+- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[ICML 2026\] One Bias After Another: Mechanistic Reward Shaping and Persistent Biases in Language Reward Models](one_bias_after_another_mechanistic_reward_shaping_and_persistent_biases_in_langu.md)
-- [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](../../ICLR2026/reinforcement_learning/reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
+- [\[ICML 2026\] Noise-Guided Transport: Imitation Learning from Random Priors](noise-guided_transport_for_imitation_learning.md)
 
 </div>
 

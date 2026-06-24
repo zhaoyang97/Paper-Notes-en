@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning
 description: >-
-  [ICLR 2026][Time Series][Paper Note] SwiftTS is introduced as the first model selection framework for time series pre-trained models. It employs a dual-encoder architecture to independently embed dataset patch-level temporal features and model meta-information (architecture, topology, and functionality). Compatibility scores are computed via patch-level c
+  [ICLR 2026][Time Series][Pre-trained Model Selection] SwiftTS is introduced as the first model selection framework for time series pre-trained models. It employs a dual-encoder architecture to independently embed dataset patch-level temporal features and model meta-information (architecture, topology, and functionality). Compatibility scores are computed via patch-level cross-attention, combined with a horizon-adaptive Mixture-of-Experts (MoE) and cross-domain/cross-horizon m…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Pre-trained Model Selection"
+  - "Dual-encoder"
+  - "Meta-learning"
+  - "Time Series Forecasting"
+  - "Horizon-adaptive"
 date: 2026-05-08
-content_hash: f9b08344a9208560
+content_hash: 40429892cec55186
 ---
+
 # SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning
 
 **Conference**: ICLR 2026  
@@ -162,9 +168,9 @@ Overall Evaluation: This is the first comprehensive model selection framework fo
 
 - [\[ICLR 2026\] TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series](tspulse_tiny_pre-trained_models_with_disentangled_representations_for_rapid_time.md)
 - [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
+- [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
 - [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
-- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
-- [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
+- [\[ICLR 2026\] MMPD: Diverse Time Series Forecasting via Multi-Mode Patch Diffusion Loss](mmpd_diverse_time_series_forecasting_via_multi-mode_patch_diffusion_loss.md)
 
 </div>
 

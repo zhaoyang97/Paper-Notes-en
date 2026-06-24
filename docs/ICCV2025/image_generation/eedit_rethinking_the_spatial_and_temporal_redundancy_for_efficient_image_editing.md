@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] EEdit: Rethinking the Spatial and Temporal Redundancy for Efficient Image Editing
 description: >-
-  [Image Generation] This paper proposes EEdit, an efficient image editing framework that achieves an average 2.46× speedup without quality degradation across diverse editing tasks—including prompt-guided, drag-based…
+  [Image Generation] This paper proposes EEdit, an efficient image editing framework that achieves an average 2.46× speedup without quality degradation across diverse editing tasks—including prompt-guided, drag-based, and image composition editing—via three components: Spatial Locality Caching (SLoC) to skip computation in unedited regions, Token Index Preprocessing (TIP) for lossless acceleration of caching operations, and Inversion Step Skipping (ISS) to reduce inversion redu…
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 17e7584577ed051d
+content_hash: ca256e76539c0df0
 ---
 
 # EEdit: Rethinking the Spatial and Temporal Redundancy for Efficient Image Editing
@@ -157,8 +157,8 @@ The framework is elegantly designed, with three modules that each address a well
 - [\[ICCV 2025\] Rethinking Layered Graphic Design Generation with a Top-Down Approach](rethinking_layered_graphic_design_generation_with_a_top-down_approach.md)
 - [\[ICCV 2025\] Rethinking the Embodied Gap in Vision-and-Language Navigation: A Holistic Study of Physical and Visual Disparities](rethinking_the_embodied_gap_in_vision-and-language_navigation_a_holistic_study_o.md)
 - [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
-- [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
-- [\[ICCV 2025\] FlowTok: Flowing Seamlessly Across Text and Image Tokens](flowtok_flowing_seamlessly_across_text_and_image_tokens.md)
+- [\[CVPR 2025\] EasyCraft: A Robust and Efficient Framework for Automatic Avatar Crafting](../../CVPR2025/image_generation/easycraft_a_robust_and_efficient_framework_for_automatic_avatar_crafting.md)
+- [\[CVPR 2025\] Dynamic Motion Blending for Versatile Motion Editing (MotionReFit)](../../CVPR2025/image_generation/dynamic_motion_blending_for_versatile_motion_editing.md)
 
 </div>
 

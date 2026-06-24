@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hiding in Plain Floats: Steganographic Carriers for Indirect Prompt and Content Injection
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper hides malicious instructions within floating-point parameter arrays used for "procedural generation" (encoding bytes into trajectory coordinates using Iterated Function Systems, IFS). This approach ensures that plaintext prompt injection detectors find no suspicious text at either the raw configuration layer
+  [ICML2026][AI Safety][Indirect Prompt Injection] This paper hides malicious instructions within floating-point parameter arrays used for "procedural generation" (encoding bytes into trajectory coordinates using Iterated Function Systems, IFS). This approach ensures that plaintext prompt injection detectors find no suspicious text at either the raw configuration layer or the reconstructed report layer. In 14,400 real-world attack experiments across three commercial LLMs…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Indirect Prompt Injection"
+  - "Steganography"
+  - "Structured Data"
+  - "Floating-point Carriers"
+  - "Defense Boundaries"
 date: 2026-05-08
-content_hash: 69f04de16c6d5a48
+content_hash: 110f5382408f595e
 ---
+
 # Hiding in Plain Floats: Steganographic Carriers for Indirect Prompt and Content Injection
 
 **Conference**: ICML2026  
@@ -128,8 +134,8 @@ Crucially, with the same payload text, plaintext T0 has 0% ASR under classifier 
 - [\[ICLR 2026\] VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents](../../ICLR2026/ai_safety/vpi-bench_visual_prompt_injection_attacks_for_computer-use_agents.md)
 - [\[ICML 2026\] The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection](the_injection_paradox_brand-level_suppression_in_safety-trained_llm_recommendati.md)
 - [\[ICLR 2026\] Watermark-based Detection and Attribution of AI-Generated Content](../../ICLR2026/ai_safety/watermark-based_attribution_of_ai-generated_content.md)
+- [\[ICML 2026\] REFLECTOR: Internalizing "Self-Reflection during Generation" into Trajectories to Resist Indirect Jailbreaking](reflector_internalizing_step-wise_reflection_against_indirect_jailbreak.md)
 - [\[ICML 2026\] Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio](hidden_in_plain_tokens_simply_robust_gradient-free_watermark_for_synthetic_audio.md)
-- [\[ICML 2026\] Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search](exposing_hidden_biases_in_text-to-image_models_via_automated_prompt_search.md)
 
 </div>
 

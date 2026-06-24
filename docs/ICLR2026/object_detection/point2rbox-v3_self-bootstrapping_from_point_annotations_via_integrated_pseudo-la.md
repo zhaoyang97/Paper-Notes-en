@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Point2RBox-v3: Self-Bootstrapping from Point Annotations via Integrated Pseudo-Label Refinement and Utilization
 description: >-
-  [ICLR 2026][Object Detection][SAM] Aiming at the weakly supervised task of "training rotated object detectors with only a single point annotation," this paper proposes Point2RBox-v3. It utilizes Progressive Label Assignment (PLA) to feed scale information from pseudo-labels into multi-level FPN label assignment and adopts Prior-Guided Dynamic Mask Loss
+  [ICLR 2026][Object Detection][Point-supervised] Aiming at the weakly supervised task of "training rotated object detectors with only a single point annotation," this paper proposes Point2RBox-v3. It utilizes Progressive Label Assignment (PLA) to feed scale information from pseudo-labels into multi-level FPN label assignment and adopts Prior-Guided Dynamic Mask Loss (PGDM-Loss) to use SAM for sparse scenes and Watershed for dense scenes. It achieves a new SOTA on six remote se…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - SAM
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Point-supervised"
+  - "Rotated Object Detection"
+  - "Pseudo-label"
+  - "Label Assignment"
+  - "SAM"
+  - "Watershed"
 date: 2026-05-08
-content_hash: a38e9c15b626a8c7
+content_hash: c06d9835619aaccc
 ---
+
 # Point2RBox-v3: Self-Bootstrapping from Point Annotations via Integrated Pseudo-Label Refinement and Utilization
 
 **Conference**: ICLR 2026  
@@ -131,10 +137,10 @@ Category-level analysis shows that gains mainly come from **large-scale, low-den
 ## Related Papers
 
 - [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting](bootstrapping_mllm_for_weaklysupervised_classagnostic_object_counting.md)
+- [\[ICLR 2026\] Self-Guided Low Light Object Detection Framework](self-guided_low_light_object_detection_framework.md)
 - [\[ICLR 2026\] Towards Reliable Detection of Empty Space: Conditional Marked Point Processes for Object Detection](towards_reliable_detection_of_empty_space_conditional_marked_point_processes_for.md)
 - [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](../../CVPR2026/object_detection/back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
 - [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](../../CVPR2026/object_detection/fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)
-- [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](../../CVPR2026/object_detection/vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
 
 </div>
 

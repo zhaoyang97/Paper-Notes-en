@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit
 description: >-
-  [AAAI 2026][Multimodal VLM][Vision-language models] This paper presents LLMC+, a comprehensive benchmark and plug-and-play toolkit for vision-language model (VLM) compression…
+  [AAAI 2026][Multimodal VLM][Vision-language models] This paper presents LLMC+, a comprehensive benchmark and plug-and-play toolkit for vision-language model (VLM) compression, supporting 20+ compression algorithms across 5 representative VLM families. It systematically investigates the independent and joint effects of token-level and model-level compression, revealing three key findings.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "quantization"
   - "benchmarking"
 date: 2026-05-08
-content_hash: e58d82f6fe8efbc8
+content_hash: 5c3d10a43a28a0b8
 ---
 
 # LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit
@@ -127,11 +127,11 @@ Covering 5 VLM families and 20+ compression algorithms.
 
 ## Related Papers
 
-- [\[AAAI 2026\] Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models](global_compression_commander_plug-and-play_inference_acceler.md)
-- [\[CVPR 2026\] Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness](../../CVPR2026/multimodal_vlm/seeing_clearly_reasoning_confidently_plug-and-play_remedies_for_vision_language_.md)
 - [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[CVPR 2026\] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving](../../CVPR2026/multimodal_vlm/prune2drive_a_plug-and-play_framework_for_accelerating_vision-language_models_in.md)
+- [\[ICLR 2026\] Plug, Play, and Fortify: A Low-Cost Module for Robust Multimodal Image Understanding](../../ICLR2026/multimodal_vlm/plug_play_and_fortify_a_low-cost_module_for_robust_multimodal_image_understandin.md)
 - [\[AAAI 2026\] Towards Long-window Anchoring in Vision-Language Model Distillation](towards_long-window_anchoring_in_vision-language_model_distillation.md)
+- [\[AAAI 2026\] PET2Rep: Towards Vision-Language Model-Driven Automated Radiology Report Generation for Positron Emission Tomography](pet2rep_towards_vision-language_model-drived_automated_radiology_report_generati.md)
+- [\[NeurIPS 2025\] Breaking the Compression Ceiling: Data-Free Pipeline for Ultra-Efficient Delta Compression](../../NeurIPS2025/multimodal_vlm/breaking_the_compression_ceiling_data-free_pipeline_for_ultra-efficient_delta_co.md)
 
 </div>
 

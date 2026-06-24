@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision
 description: >-
-  [CVPR 2026][Object Detection][Reinforcement Learning] The authors propose two modules, ReAL and CGRO, which generate pixel-level anomaly maps by extracting anomaly-related tokens from the MLLM autoregressive reasoning process and aggregating their visual attention. Combined with consistency-guided reinforcement learning to align reasoning with visual evidence, the system
+  [CVPR 2026][Object Detection][Anomaly Detection and Localization] The authors propose two modules, ReAL and CGRO, which generate pixel-level anomaly maps by extracting anomaly-related tokens from the MLLM autoregressive reasoning process and aggregating their visual attention. Combined with consistency-guided reinforcement learning to align reasoning with visual evidence, the system achieves end-to-end anomaly detection, localization, and explainable reasoning using only imag…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Anomaly Detection and Localization"
+  - "Reasoning-Driven"
+  - "Image-level Supervision"
+  - "MLLM Attention"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: fac55c18a897de45
+content_hash: 3d49a4f394e54935
 ---
+
 # Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ Token selection strategy ablation (Pixel-level):
 
 ## Related Papers
 
-- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
-- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
 - [\[ICCV 2025\] VisRL: Intention-Driven Visual Perception via Reinforced Reasoning](../../ICCV2025/object_detection/visrl_intention-driven_visual_perception_via_reinforced_reasoning.md)
-- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
 - [\[CVPR 2026\] Online Data Curation for Object Detection via Marginal Contributions to Dataset-level Average Precision](online_data_curation_for_object_detection_via_marginal_contributions_to_dataset-.md)
+- [\[CVPR 2026\] Spike-driven Discrete Aggregation for Event-based Object Detection](spike-driven_discrete_aggregation_for_event-based_object_detection.md)
+- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
+- [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Vision Transformers with Self-Distilled Registers
 description: >-
-  [NeurIPS 2025][Segmentation][Vision Transformer] This paper proposes PH-Reg (Post Hoc Registers), an efficient self-distillation approach that retrofits register tokens into existing pretrained ViTs without labeled data…
+  [NeurIPS 2025 Spotlight][Segmentation][Vision Transformer] This paper proposes PH-Reg (Post Hoc Registers), an efficient self-distillation approach that retrofits register tokens into existing pretrained ViTs without labeled data or full retraining. By combining test-time augmentation-based teacher feature denoising with student self-distillation, PH-Reg effectively eliminates artifact tokens in ViT dense features, improving performance on segmentation and depth estimation.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Segmentation"
   - "Vision Transformer"
   - "Register Token"
@@ -12,7 +12,7 @@ tags:
   - "Feature Denoising"
   - "Open-Vocabulary Segmentation"
 date: 2026-05-08
-content_hash: a4a2e5f1bec2793e
+content_hash: eb4a32fe2df5a4d9
 ---
 
 # Vision Transformers with Self-Distilled Registers
@@ -138,10 +138,10 @@ Roughly half of the total improvement is attributable to register tokens and the
 ## Related Papers
 
 - [\[ICCV 2025\] LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity](../../ICCV2025/segmentation/legrad_an_explainability_method_for_vision_transformers_via_feature_formation_se.md)
-- [\[CVPR 2026\] MPM: Mutual Pair Merging for Efficient Vision Transformers](../../CVPR2026/segmentation/mpm_mutual_pair_merging_for_efficient_vision_transformers.md)
+- [\[CVPR 2025\] DA-VPT: Semantic-Guided Visual Prompt Tuning for Vision Transformers](../../CVPR2025/segmentation/da-vpt_semantic-guided_visual_prompt_tuning_for_vision_transformers.md)
 - [\[ICLR 2026\] Revisiting \[CLS\] and Patch Token Interaction in Vision Transformers](../../ICLR2026/segmentation/revisiting_cls_and_patch_token_interaction_in_vision_transformers.md)
-- [\[ICLR 2026\] Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers](../../ICLR2026/segmentation/thicker_and_quicker_a_jumbo_token_for_fast_plain_vision_transformers.md)
-- [\[NeurIPS 2025\] Exploring Structural Degradation in Dense Representations for Self-supervised Learning](exploring_structural_degradation_in_dense_representations_for_self-supervised_le.md)
+- [\[CVPR 2025\] COSMOS: Cross-Modality Self-Distillation for Vision Language Pre-training](../../CVPR2025/segmentation/cosmos_cross-modality_self-distillation_for_vision_language_pre-training.md)
+- [\[ECCV 2024\] SiLC: Improving Vision Language Pretraining with Self-Distillation](../../ECCV2024/segmentation/silc_improving_vision_language_pretraining_with_self-distillation.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis
 description: >-
-  [AAAI 2026][LLM Alignment][AI alignment] This paper formalizes AI alignment as an $\langle M,N,\varepsilon,\delta\rangle$-agreement multi-objective optimization problem…
+  [AAAI 2026 Oral][LLM Alignment][AI alignment] This paper formalizes AI alignment as an $\langle M,N,\varepsilon,\delta\rangle$-agreement multi-objective optimization problem, proves information-theoretic lower bounds on alignment (encoding "all human values" is fundamentally intractable) from a communication complexity perspective, and derives explicit achievable algorithms and tight upper bounds for unbounded/bounded rational agents, revealing the theoretical basis for the g…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Alignment"
   - "AI alignment"
   - "communication complexity"
@@ -12,7 +12,7 @@ tags:
   - "No-Free-Lunch"
   - "reward hacking"
 date: 2026-05-08
-content_hash: 7b59fba969cfaeef
+content_hash: c169bb4de1772f28
 ---
 
 # Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis
@@ -160,11 +160,11 @@ This is a purely theoretical work with no traditional experiments, but it includ
 
 ## Related Papers
 
+- [\[ICML 2026\] Operationalising the Superficial Alignment Hypothesis via Task Complexity](../../ICML2026/llm_alignment/operationalising_the_superficial_alignment_hypothesis_via_task_complexity.md)
 - [\[AAAI 2026\] EASE: Practical and Efficient Safety Alignment for Small Language Models](ease_practical_and_efficient_safety_alignment_for_small_language_models.md)
 - [\[ICLR 2026\] Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy](../../ICLR2026/llm_alignment/skywork-reward-v2_scaling_preference_data_curation_via_human-ai_synergy.md)
-- [\[ICML 2026\] Implicit Preference Alignment for Human Image Animation](../../ICML2026/llm_alignment/implicit_preference_alignment_for_human_image_animation.md)
-- [\[AAAI 2026\] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](when_human_preferences_flip_an_instance-dependent_robust_loss_for_rlhf.md)
-- [\[AAAI 2026\] AMaPO: Adaptive Margin-attached Preference Optimization for Language Model Alignment](amapo_adaptive_margin-attached_preference_optimization_for_l.md)
+- [\[ICLR 2026\] Enforcing Axioms for AI Alignment under Loss-Based Rules](../../ICLR2026/llm_alignment/enforcing_axioms_for_ai_alignment_under_loss-based_rules.md)
+- [\[ICLR 2026\] Aligner, Diagnose Thyself: A Meta-Learning Paradigm for Fusing Intrinsic Feedback in Preference Alignment](../../ICLR2026/llm_alignment/aligner_diagnose_thyself_a_meta-learning_paradigm_for_fusing_intrinsic_feedback_.md)
 
 </div>
 

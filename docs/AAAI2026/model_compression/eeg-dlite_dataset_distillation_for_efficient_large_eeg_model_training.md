@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training
 description: >-
-  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes EEG-DLite, a dataset distillation framework that combines self-supervised encoding, outlier filtering, and diversity sampling to compress a 2…
+  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes EEG-DLite, a dataset distillation framework that combines self-supervised encoding, outlier filtering, and diversity sampling to compress a 2,500-hour EEG dataset to just 5% of its original size, achieving performance comparable to or exceeding full-data pretraining while reducing GPU pretraining time from 30 hours to 2 hours.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Coreset Selection"
   - "Pretraining Efficiency"
 date: 2026-05-08
-content_hash: 2ab1c868c3eff5da
+content_hash: 84a721dab290d91d
 ---
 
 # EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training
@@ -165,10 +165,10 @@ Experiments are conducted based on the LaBraM-base architecture, evaluated on 4 
 ## Related Papers
 
 - [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](post_training_quantization_for_efficient_dataset_condensation.md)
+- [\[ICML 2026\] Unifying Dataset Pruning and Distillation for Efficient Large-scale Compression](../../ICML2026/model_compression/unifying_dataset_pruning_and_distillation_for_efficient_large-scale_compression.md)
 - [\[AAAI 2026\] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution](tgdd_trajectory_guided_dataset_distillation_with_balanced_distribution.md)
-- [\[AAAI 2026\] Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling](rethinking_long-tailed_dataset_distillation_a_uni-level_framework_with_unbiased_.md)
 - [\[NeurIPS 2025\] BaRISTA: Brain-Scale Informed Spatiotemporal Representation of Human Intracranial EEG](../../NeurIPS2025/model_compression/barista_brain_scale_informed_spatiotemporal_representation_of_human_intracranial.md)
-- [\[ICLR 2026\] PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery](../../ICLR2026/model_compression/paser_post-training_data_selection_for_efficient_pruned_large_language_model_rec.md)
+- [\[CVPR 2026\] ManifoldGD: Training-Free Hierarchical Manifold Guidance for Diffusion-Based Dataset Distillation](../../CVPR2026/model_compression/manifoldgd_training-free_hierarchical_manifold_guidance_for_diffusion-based_data.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] Ours proposes TINA (Text-free INversion Attack), which identifies precise initial noise by optimizing DDIM inversion under the null-text condition. This bypasses all text-based concept erasure defenses and demonstrates that current erasure methods only sever text-to-image mappings without truly deleting internal visual
+  [CVPR 2026][Image Generation][Concept Erasure] Ours proposes TINA (Text-free INversion Attack), which identifies precise initial noise by optimizing DDIM inversion under the null-text condition. This bypasses all text-based concept erasure defenses and demonstrates that current erasure methods only sever text-to-image mappings without truly deleting internal visual knowledge from the model.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
-  - Machine Unlearning
-  - DDIM Inversion
-  - Text-to-Image Diffusion
-  - Adversarial Attack
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Machine Unlearning"
+  - "DDIM Inversion"
+  - "Text-to-Image Diffusion"
+  - "Adversarial Attack"
 date: 2026-05-08
-content_hash: 41766195cea0fa24
+content_hash: b4038826c056be34
 ---
+
 # TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models
 
 ## Basic Information
@@ -159,11 +160,11 @@ General DDIM reconstruction methods significantly underperform compared to TINA'
 
 ## Related Papers
 
+- [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
+- [\[CVPR 2026\] Toward Early Quality Assessment of Text-to-Image Diffusion Models](toward_early_quality_assessment_of_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)
 - [\[CVPR 2026\] Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration](beyond_text_prompts_precise_concept_erasure_through_text-image_collaboration.md)
 - [\[CVPR 2026\] Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation](test-time_alignment_of_text-to-image_diffusion_models_via_null-text_embedding_op.md)
-- [\[AAAI 2026\] Copyright Infringement Detection in Text-to-Image Diffusion Models via Differential Privacy](../../AAAI2026/image_generation/copyright_infringement_detection_in_text-to-image_diffusion_models_via_different.md)
 
 </div>
 

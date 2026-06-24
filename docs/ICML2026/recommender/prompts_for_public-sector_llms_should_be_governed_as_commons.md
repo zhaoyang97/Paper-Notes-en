@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prompts for Public-Sector LLMs Should Be Governed as Commons
 description: >-
-  [ICML 2026][Recommender Systems][commons] This is a position paper: the authors argue that LLM prompts used by the public sector should be versioned, provenanced, auditable, and vetoable like open-source commons. Based on a pilot benchmark using 443 neighborhood prompts from a North American city (augmented to 3,317) across five governance states, it provides
+  [ICML 2026][Recommender Systems][Prompt governance] This is a position paper: the authors argue that LLM prompts used by the public sector should be versioned, provenanced, auditable, and vetoable like open-source commons. Based on a pilot benchmark using 443 neighborhood prompts from a North American city (augmented to 3,317) across five governance states, it provides three falsifiable predictions—governed prompts change output distributions, improve auditability…
 tags:
-  - ICML 2026
-  - Recommender Systems
-  - commons
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Prompt governance"
+  - "Public sector"
+  - "commons"
+  - "Urban AI"
+  - "Pluralistic value aggregation"
 date: 2026-05-08
-content_hash: 6ad7622e40f40825
+content_hash: 112a87be659c1ca2
 ---
+
 # Prompts for Public-Sector LLMs Should Be Governed as Commons
 
 **Conference**: ICML 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning
 description: >-
-  [AAAI 2026][LLM Agent][Moral Alignment] This work employs Group Relative Policy Optimization (GRPO) to train LLMs at the reasoning level for ethical framework alignment…
+  [AAAI 2026][LLM Agent][Moral Alignment] This work employs Group Relative Policy Optimization (GRPO) to train LLMs at the reasoning level for ethical framework alignment, achieving out-of-distribution generalization on the Moral-Reason-QA dataset (680 high-ambiguity scenarios) with utilitarian alignment scores improving from 0.207 to 0.964.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Out-of-Distribution Generalization"
   - "Ethical Frameworks"
 date: 2026-05-08
-content_hash: b107336a94b297f6
+content_hash: 307f4ccd9411246e
 ---
 
 # MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning
@@ -136,10 +136,10 @@ GRPO group-relative optimization; composite reward = alignment reward + min(keyw
 ## Related Papers
 
 - [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](../../ACL2026/llm_agent/hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
+- [\[ICLR 2026\] Language Agents for Hypothesis-driven Clinical Decision Making with Reinforcement Learning](../../ICLR2026/llm_agent/language_agents_for_hypothesis-driven_clinical_decision_making_with_reinforcemen.md)
+- [\[ICLR 2026\] Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents](../../ICLR2026/llm_agent/memory-t1_reinforcement_learning_for_temporal_reasoning_in_multi-session_agents.md)
 - [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICML2026/llm_agent/on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
 - [\[ICLR 2026\] Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICLR2026/llm_agent/reducing_belief_deviation_in_reinforcement_learning_for_active_reasoning.md)
-- [\[ICML 2026\] OTora: A Unified Red Teaming Framework for Reasoning-Level Denial-of-Service in LLM Agents](../../ICML2026/llm_agent/otora_a_unified_red_teaming_framework_for_reasoning-level_denial-of-service_in_l.md)
-- [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](history-aware_reasoning_for_gui_agents.md)
 
 </div>
 

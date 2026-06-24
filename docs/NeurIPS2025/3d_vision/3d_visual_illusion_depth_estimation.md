@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D Visual Illusion Depth Estimation
 description: >-
-  [NeurIPS 2025][3D Vision][3D visual illusion] This paper reveals that 3D visual illusions (e.g., wall paintings, screen replays, mirror reflections) severely mislead existing state-of-the-art monocular and stereo depth e…
+  [NeurIPS 2025][3D Vision][3D visual illusion] This paper reveals that 3D visual illusions (e.g., wall paintings, screen replays, mirror reflections) severely mislead existing state-of-the-art monocular and stereo depth estimation methods. The authors construct a large-scale dataset comprising approximately 3k scenes and 200k images, and propose a VLM-driven monocular-stereo adaptive fusion framework that achieves state-of-the-art performance across diverse illusion scenarios.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "vision-language model"
   - "Flow Matching"
 date: 2026-05-08
-content_hash: 22c5b21c71ce92e6
+content_hash: 0b77dda6d9cb80c5
 ---
 
 # 3D Visual Illusion Depth Estimation
@@ -150,9 +150,9 @@ The core insight—complementary monocular-stereo fusion driven by VLM commonsen
 ## Related Papers
 
 - [\[NeurIPS 2025\] Jasmine: Harnessing Diffusion Prior for Self-Supervised Depth Estimation](jasmine_harnessing_diffusion_prior_for_self-supervised_depth_estimation.md)
-- [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](../../ICCV2025/3d_vision/amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
-- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](../../ICCV2025/3d_vision/depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
 - [\[CVPR 2026\] Mirror Illusion Art](../../CVPR2026/3d_vision/mirror_illusion_art.md)
+- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](../../ICCV2025/3d_vision/depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
+- [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](../../ICCV2025/3d_vision/amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
 - [\[ICCV 2025\] Simulating Dual-Pixel Images From Ray Tracing For Depth Estimation](../../ICCV2025/3d_vision/simulating_dual-pixel_images_from_ray_tracing_for_depth_estimation.md)
 
 </div>

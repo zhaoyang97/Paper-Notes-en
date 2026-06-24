@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Multimodal VLM][Embodied AI] The BiBo framework utilizes a two-level structure consisting of an "Instruction Compiler + Motion Diffusion Executor," allowing off-the-shelf VLMs like GPT-4 to control humanoid agents for complex physical scene interactions without any fine-tuning, achieving a single-task success rate of 90.2%.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Embodied AI
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Embodied AI"
+  - "Humanoid Agent"
+  - "Vision-Language Model"
+  - "Motion Diffusion"
+  - "Human-Scene Interaction"
 date: 2026-05-08
-content_hash: 188eb4cad4ab9474
+content_hash: efb319ba731f090c
 ---
+
 # Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf VLMs and the Physical World
 
 **Conference**: ICLR 2026  
@@ -166,11 +170,11 @@ Average joint acceleration (continuity metric): BiBo 0.0379 m²/s², CLoSD 0.061
 
 ## Related Papers
 
-- [\[ICLR 2026\] Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning](enhancing_geometric_perception_in_vlms_via_translator-guided_reinforcement_learn.md)
-- [\[ICLR 2026\] Teaching VLMs to Admit Uncertainty in OCR from Lossy Visual Inputs](teaching_vlms_to_admit_uncertainty_in_ocr_from_lossy_visual_inputs.md)
+- [\[ICML 2026\] VLANeXt: A Recipe for Building Robust VLA Models](../../ICML2026/multimodal_vlm/vlanext_recipes_for_building_strong_vla_models.md)
 - [\[CVPR 2026\] PhyCritic: Multimodal Critic Models for Physical AI](../../CVPR2026/multimodal_vlm/phycritic_multimodal_critic_models_for_physical_ai.md)
 - [\[CVPR 2026\] VCU-Bridge: Hierarchical Visual Connotation Understanding via Semantic Bridging](../../CVPR2026/multimodal_vlm/vcu-bridge_hierarchical_visual_connotation_understanding_via_semantic_bridging.md)
 - [\[CVPR 2026\] Benchmarking Single-Factor Physical Video-to-Audio Generation](../../CVPR2026/multimodal_vlm/benchmarking_single-factor_physical_video-to-audio_generation.md)
+- [\[CVPR 2026\] EMMA: Extracting Multiple physical parameters from Multimodal Data](../../CVPR2026/multimodal_vlm/emma_extracting_multiple_physical_parameters_from_multimodal_data.md)
 
 </div>
 

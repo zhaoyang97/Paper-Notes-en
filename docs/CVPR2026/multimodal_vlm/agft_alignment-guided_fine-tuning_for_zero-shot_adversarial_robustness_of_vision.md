@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] AGFT proposes an alignment-guided fine-tuning framework that enhances zero-shot adversarial robustness of VLMs through text-guided adversarial training and distribution consistency calibration. By preserving the pre-trained cross-modal semantic structure, it achieves an average robust accuracy of 46.57% across 15 zero-
+  [CVPR 2026][Multimodal VLM][Adversarial Robustness] AGFT proposes an alignment-guided fine-tuning framework that enhances zero-shot adversarial robustness of VLMs through text-guided adversarial training and distribution consistency calibration. By preserving the pre-trained cross-modal semantic structure, it achieves an average robust accuracy of 46.57% across 15 zero-shot benchmarks, surpassing SOTA by 3.1 percentage points.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Adversarial Robustness"
+  - "Vision-Language Models"
+  - "Zero-Shot Generalization"
+  - "Alignment Guidance"
+  - "Distribution Consistency Calibration"
 date: 2026-05-08
-content_hash: 713ba30fafb402b3
+content_hash: 21173e61a4ba4039
 ---
+
 # AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -133,10 +138,10 @@ Increasing the effective temperature suppresses over-confident peaks, effectivel
 ## Related Papers
 
 - [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
-- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] The Geometry of Robustness: Optimizing Loss Landscape Curvature and Feature Manifold Alignment for Robust Finetuning of Vision-Language Models](the_geometry_of_robustness_optimizing_loss_landscape_curvature_and_feature_manif.md)
+- [\[ICML 2026\] Contrastive Spectral Rectification: Test-Time Defense towards Zero-shot Adversarial Robustness of CLIP](../../ICML2026/multimodal_vlm/contrastive_spectral_rectification_test-time_defense_towards_zero-shot_adversari.md)
 - [\[CVPR 2026\] TANGO: Text-Anchored Guided Optimization for Robust Fine-tuning Vision-Language Models under Label Noise](tango_text-anchored_guided_optimization_for_robust_fine-tuning_vision-language_m.md)
-- [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
-- [\[ICML 2026\] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](../../ICML2026/multimodal_vlm/on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
 
 </div>
 

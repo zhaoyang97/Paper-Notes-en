@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Is One Layer Enough? Understanding Inference Dynamics in Tabular Foundation Models
 description: >-
-  [ICML 2026][Interpretability][TabPFN] The authors perform the first large-scale layered mechanistic analysis of six mainstream Tabular Foundation Models (TFMs). They find that middle and late layers primarily perform "iterative refinement" with significant redundancy. Based on this, they design a single-layer recurrent TFM using only 20% of parameters that
+  [ICML 2026][Interpretability][TabPFN] The authors perform the first large-scale layered mechanistic analysis of six mainstream Tabular Foundation Models (TFMs). They find that middle and late layers primarily perform "iterative refinement" with significant redundancy. Based on this, they design a single-layer recurrent TFM using only 20% of parameters that nearly matches the performance of the original six-layer version.
 tags:
-  - ICML 2026
-  - Interpretability
-  - TabPFN
+  - "ICML 2026"
+  - "Interpretability"
+  - "TabPFN"
+  - "Tabular Foundation Models"
+  - "Mechanistic Interpretability"
+  - "Recurrent Transformer"
+  - "Inter-layer Dynamics"
 date: 2026-05-08
-content_hash: 72be4043c0848ab7
+content_hash: f91558da2df17dac
 ---
+
 # Is One Layer Enough? Understanding Inference Dynamics in Tabular Foundation Models
 
 **Conference**: ICML 2026  
@@ -130,10 +135,10 @@ Six mechanistic experiments characterize layered behavior:
 ## Related Papers
 
 - [\[ICML 2025\] On the Effect of Uncertainty on Layer-wise Inference Dynamics](../../ICML2025/interpretability/on_the_effect_of_uncertainty_on_layer-wise_inference_dynamics.md)
+- [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](../../ICLR2026/interpretability/understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
 - [\[ICLR 2026\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](../../ICLR2026/interpretability/specialization_after_generalization_towards_understanding_test-time_training_in_.md)
 - [\[ICML 2026\] Memorization Dynamics of Fill-in-the-Middle Pretraining](memorization_dynamics_of_fill-in-the-middle_pretraining.md)
 - [\[ICML 2026\] OmniSapiens: A Foundation Model for Social Behavior Processing via Heterogeneity-Aware Relative Policy Optimization](omnisapiens_a_foundation_model_for_social_behavior_processing_via_heterogeneity-.md)
-- [\[ICML 2026\] Tracing the Dynamics of Refusal: Exploiting Latent Refusal Trajectories for Robust Jailbreak Detection](tracing_the_dynamics_of_refusal_exploiting_latent_refusal_trajectories_for_robus.md)
 
 </div>
 

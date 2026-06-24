@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On the Convergence Rate of LoRA Gradient Descent
 description: >-
-  [ICML 2026][Optimization & Theory][LoRA] This paper proves for the first time that the minimum gradient norm of original LoRA gradient descent converges at a rate of $O(1/\log T)$ without assuming bounded adapter matrices or requiring Lipschitz smoothness of the re-parameterized loss (recovering the classic $O(1/T)$ if parameter norms are bounded). Based on t
+  [ICML 2026][Optimization][LoRA] This paper proves for the first time that the minimum gradient norm of original LoRA gradient descent converges at a rate of $O(1/\log T)$ without assuming bounded adapter matrices or requiring Lipschitz smoothness of the re-parameterized loss (recovering the classic $O(1/T)$ if parameter norms are bounded). Based on this, adaptive/normalized learning rates strictly corresponding to the theory are designed, with training acceleration and stabil…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - LoRA
-  - Burer-Monteiro
+  - "ICML 2026"
+  - "Optimization"
+  - "LoRA"
+  - "Convergence Analysis"
+  - "Non-Lipschitz Smoothness"
+  - "Burer-Monteiro"
+  - "Adaptive Learning Rate"
 date: 2026-05-08
-content_hash: 4f7416db4929eb0d
+content_hash: d2d524dcc4cb9766
 ---
+
 # On the Convergence Rate of LoRA Gradient Descent
 
 **Conference**: ICML 2026  
@@ -133,10 +137,17 @@ Observation of long-term behavior in Logistic regression over 1000 epochs:
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICML 2026\] Limits of Convergence-Rate Control for Open-Weight Safety](limits_of_convergence-rate_control_for_open-weight_safety.md)
+- [\[ICLR 2026\] On the Convergence Direction of Gradient Descent](../../ICLR2026/optimization/on_the_convergence_direction_of_gradient_descent.md)
+- [\[ICML 2026\] Balanced LoRA: Removing Parameter Invariance to Accelerate Convergence](balanced_lora_removing_parameter_invariance_to_accelerate_convergence.md)
+- [\[ICLR 2026\] Fast Convergence of Natural Gradient Descent for Over-parameterized Physics-Informed Neural Networks](../../ICLR2026/optimization/fast_convergence_of_natural_gradient_descent_for_over-parameterized_physics-info.md)
+- [\[ICML 2026\] Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent](pseudospectral_bounds_for_transient_amplification_in_coupled_gradient_descent.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Limits of Convergence-Rate Control for Open-Weight Safety](limits_of_convergence-rate_control_for_open-weight_safety.md)

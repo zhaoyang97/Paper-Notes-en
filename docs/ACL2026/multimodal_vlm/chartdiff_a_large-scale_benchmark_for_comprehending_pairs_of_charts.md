@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ChartDiff: A Large-Scale Benchmark for Comprehending Pairs of Charts
 description: >-
-  [ACL 2026][Multimodal VLM][Benchmark] The authors constructed ChartDiff, the first large-scale benchmark for "comparative summarization of chart pairs" (8,541 pairs, covering 6 chart types, 3 visualization libraries, ~60 visual styles, with LLM-generated + human-verified comparative summaries). Systematic evaluation of 14 VLMs/pipelines reveals that state-
+  [ACL 2026][Multimodal VLM][Chart Comparison] The authors constructed ChartDiff, the first large-scale benchmark for "comparative summarization of chart pairs" (8,541 pairs, covering 6 chart types, 3 visualization libraries, ~60 visual styles, with LLM-generated + human-verified comparative summaries). Systematic evaluation of 14 VLMs/pipelines reveals that state-of-the-art closed-source models lead in GPT Score but yield low ROUGE scores, while specialized chart models show t…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Benchmark
-  - ROUGE vs GPT Score
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Chart Comparison"
+  - "Benchmark"
+  - "VLM Evaluation"
+  - "Cross-chart Reasoning"
+  - "ROUGE vs GPT Score"
 date: 2026-05-08
-content_hash: 7628c92b82e26ae5
+content_hash: 5c8d5eeb8ac80acc
 ---
+
 # ChartDiff: A Large-Scale Benchmark for Comprehending Pairs of Charts
 
 **Conference**: ACL 2026  
@@ -143,7 +147,7 @@ Comparative summaries prioritize semantic and factual correctness. ROUGE, measur
 - [\[ACL 2026\] MedLayBench-V: A Large-Scale Benchmark for Expert-Lay Semantic Alignment in Medical Vision Language Models](medlaybench-v_a_large-scale_benchmark_for_expert-lay_semantic_alignment_in_medic.md)
 - [\[ACL 2025\] WikiMixQA: A Multimodal Benchmark for Question Answering over Tables and Charts](../../ACL2025/multimodal_vlm/wikimixqa_a_multimodal_benchmark_for_question_answering_over_tables_and_charts.md)
 - [\[ICML 2025\] LAION-C: An Out-of-Distribution Benchmark for Web-Scale Vision Models](../../ICML2025/multimodal_vlm/laion-c_an_out-of-distribution_benchmark_for_web-scale_vision_models.md)
-- [\[ACL 2026\] "I See What You Did There": Can Large Vision-Language Models Understand Multimodal Puns?](i_see_what_you_did_there_can_large_vision-language_models_understand_multimodal_.md)
+- [\[ICLR 2026\] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](../../ICLR2026/multimodal_vlm/tablet_a_large-scale_dataset_for_robust_visual_table_understanding.md)
 
 </div>
 

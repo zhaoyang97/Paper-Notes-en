@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AnthroTAP: Learning Point Tracking with Real-World Motion
 description: >-
-  [CVPR 2026][3D Vision][SMPL] AnthroTAP proposes an automated pipeline to generate large-scale pseudo-labeled point tracking data from real-world human motion videos via SMPL fitting and optical flow filtering. Using only 1.4K videos and 4 GPUs for one day of training, it achieves SOTA performance on the TAP-Vid benchmark, surpassing BootsTAPIR whi
+  [CVPR 2026][3D Vision][Point Tracking] AnthroTAP proposes an automated pipeline to generate large-scale pseudo-labeled point tracking data from real-world human motion videos via SMPL fitting and optical flow filtering. Using only 1.4K videos and 4 GPUs for one day of training, it achieves SOTA performance on the TAP-Vid benchmark, surpassing BootsTAPIR which utilizes 15M videos.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SMPL
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Tracking"
+  - "Human Motion"
+  - "Pseudo-labeling"
+  - "SMPL"
+  - "Optical Flow Consistency"
 date: 2026-05-08
-content_hash: 71611fc678a205e7
+content_hash: 1945868b6867c395
 ---
+
 # AnthroTAP: Learning Point Tracking with Real-World Motion
 
 **Conference**: CVPR 2026  
@@ -130,11 +135,11 @@ SMPL only models humans, not the scene. When a person walks behind a table, SMPL
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
 - [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
-- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
 - [\[CVPR 2026\] KV-Tracker: Real-Time Pose Tracking with Transformers](kv-tracker_real-time_pose_tracking_with_transformers.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
+- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] Tracking by Predicting 3-D Gaussians Over Time](tracking_by_predicting_3-d_gaussians_over_time.md)
+- [\[CVPR 2026\] ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects](ictpolarreal_a_polarized_reflection_and_material_dataset_of_real_world_objects.md)
 
 </div>
 

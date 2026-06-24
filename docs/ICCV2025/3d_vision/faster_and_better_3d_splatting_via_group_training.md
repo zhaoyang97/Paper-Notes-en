@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Faster and Better 3D Splatting via Group Training
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a **Group Training** strategy that accelerates 3DGS training by periodically partitioning Gaussian primitives into an "under-training group" and a "cached…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a **Group Training** strategy that accelerates 3DGS training by periodically partitioning Gaussian primitives into an "under-training group" and a "cached group," combined with **Opacity-based Priority Sampling** (OPS). Across four standard benchmarks, the method achieves approximately **30% training speedup** while simultaneously **improving rendering quality** and **reducing model size**…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Opacity-based Sampling"
   - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 51193f0f97a34503
+content_hash: 8ad46c06e537ac1b
 ---
 
 # Faster and Better 3D Splatting via Group Training
@@ -182,10 +182,10 @@ Caching low-opacity Gaussians (retaining high-opacity ones in the under-training
 ## Related Papers
 
 - [\[ICCV 2025\] 3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt](3dgs_lm_faster_gaussian_splatting_optimization_with_levenberg_marquardt.md)
+- [\[CVPR 2025\] SfM-Free 3D Gaussian Splatting via Hierarchical Training](../../CVPR2025/3d_vision/sfm-free_3d_gaussian_splatting_via_hierarchical_training.md)
+- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](../../CVPR2026/3d_vision/faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
 - [\[CVPR 2026\] FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation](../../CVPR2026/3d_vision/flashmesh_faster_and_better_autoregressive_mesh_synthesis_via_structured_specula.md)
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](../../CVPR2026/3d_vision/fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
 - [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
-- [\[ICCV 2025\] PCR-GS: COLMAP-Free 3D Gaussian Splatting via Pose Co-Regularizations](pcr-gs_colmap-free_3d_gaussian_splatting_via_pose_co-regularizations.md)
 
 </div>
 

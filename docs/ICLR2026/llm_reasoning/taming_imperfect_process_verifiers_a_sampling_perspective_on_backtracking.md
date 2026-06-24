@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Taming Imperfect Process Verifiers: A Sampling Perspective on Backtracking
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This work reinterprets "guiding language models with process verifiers" as a "random walk on a generation tree" and introduces probabilistic **backtracking** (occasionally erasing generated tokens). This approach provably avoids the amplification of estimation errors over the generation length, even when the verifier (
+  [ICLR 2026][Reasoning][Process Verifiers] This work reinterprets "guiding language models with process verifiers" as a "random walk on a generation tree" and introduces probabilistic **backtracking** (occasionally erasing generated tokens). This approach provably avoids the amplification of estimation errors over the generation length, even when the verifier (value function) is imperfect, consistently outperforming action-level sampling without backtracking across various dis…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Process Verifiers"
+  - "Test-time Alignment"
+  - "Stochastic Backtracking"
+  - "Markov Chain Sampling"
+  - "Error Amplification"
 date: 2026-05-08
-content_hash: 89b4ca8f038f62cd
+content_hash: 473319f629c32405
 ---
+
 # Taming Imperfect Process Verifiers: A Sampling Perspective on Backtracking
 
 **Conference**: ICLR 2026  

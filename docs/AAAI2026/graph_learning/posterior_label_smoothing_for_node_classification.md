@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Posterior Label Smoothing for Node Classification
 description: >-
-  [AAAI 2026][Graph Learning][Label Smoothing] This paper proposes PosteL (Posterior Label Smoothing), which derives soft labels from neighborhood label distributions via Bayesian posterior inference for node classificatio…
+  [AAAI 2026][Graph Learning][Label Smoothing] This paper proposes PosteL (Posterior Label Smoothing), which derives soft labels from neighborhood label distributions via Bayesian posterior inference for node classification. The method naturally adapts to both homophilic and heterophilic graphs, achieving accuracy improvements in 76 out of 80 combinations across 8 backbone architectures and 10 datasets.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Homophilic/Heterophilic Graphs"
   - "Iterative Pseudo-labeling"
 date: 2026-05-08
-content_hash: d933ac1367482d81
+content_hash: 16cc3025c04589b2
 ---
 
 # Posterior Label Smoothing for Node Classification
@@ -115,11 +115,11 @@ Across 8 backbone architectures × 10 datasets (80 combinations), PosteL yields 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning Posterior Predictive Distributions for Node Classification from Synthetic Graph Priors](../../ICLR2026/graph_learning/learning_posterior_predictive_distributions_for_node_classification_from_synthet.md)
 - [\[AAAI 2026\] NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification](ntsformer_a_self-teaching_graph_transformer_for_multimodal_isolated_cold-start_n.md)
 - [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
-- [\[NeurIPS 2025\] Geometric Imbalance in Semi-Supervised Node Classification](../../NeurIPS2025/graph_learning/geometric_imbalance_in_semi-supervised_node_classification.md)
-- [\[AAAI 2026\] EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning](echoless_label-based_pre-computation_for_memory-efficient_heterogeneous_graph_le.md)
-- [\[AAAI 2026\] Feature-Centric Unsupervised Node Representation Learning Without Homophily Assumption](feature-centric_unsupervised_node_representation_learning_without_homophily_assu.md)
+- [\[ICLR 2026\] Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion](../../ICLR2026/graph_learning/low-rank_few-shot_node_classification_by_node-level_graph_diffusion.md)
+- [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](../../ICLR2026/graph_learning/forest-based_graph_learning_for_semi-supervised_node_classification.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the pain point that "dynamic lighting requires multiple sets of lightmaps, resulting in massive data volumes," NDGI compresses the entire temporal sequence of lightmaps into a compact model using mixed-dimension feature maps and a lightweight MLP. Combined with Block Compression (BC) simulation during traini
+  [CVPR 2026][3D Vision][Global Illumination] Addressing the pain point that "dynamic lighting requires multiple sets of lightmaps, resulting in massive data volumes," NDGI compresses the entire temporal sequence of lightmaps into a compact model using mixed-dimension feature maps and a lightweight MLP. Combined with Block Compression (BC) simulation during training and Virtual Texturing (VT) for on-demand runtime decoding, it achieves a high reconstruction quality of 46.7 dB P…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Global Illumination"
+  - "Lightmap Compression"
+  - "Neural Texture Compression"
+  - "Tri-plane Features"
+  - "Block Compression"
 date: 2026-05-08
-content_hash: 2dc63047d6e3ae22
+content_hash: 175d3b282d0d55b5
 ---
+
 # Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments
 
 **Conference**: CVPR 2026  
@@ -167,11 +173,11 @@ Trade-offs between configuration and quality:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields](dynamic_black-hole_emission_tomography_with_physics-informed_neural_fields.md)
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
-- [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](dynamic_visual_slam_using_a_general_3d_prior.md)
-- [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
+- [\[CVPR 2026\] WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments](wildrayzer_self-supervised_large_view_synthesis_in_dynamic_environments.md)
+- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
+- [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
+- [\[CVPR 2026\] MOSAIC-GS: Monocular Scene Reconstruction via Advanced Initialization for Complex Dynamic Environments](mosaic-gs_monocular_scene_reconstruction_via_advanced_initialization_for_complex.md)
 
 </div>
 

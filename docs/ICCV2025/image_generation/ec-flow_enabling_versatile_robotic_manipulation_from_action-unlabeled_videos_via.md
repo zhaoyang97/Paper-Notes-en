@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Equivariant Flow Matching
 description: >-
-  [ICCV 2025][Image Generation][robotic manipulation] EC-Flow introduces an "embodiment-centric flow" paradigm that predicts pixel-level motion trajectories of the robot body from action-unlabeled RGB videos…
+  [ICCV 2025][Image Generation][robotic manipulation] EC-Flow introduces an "embodiment-centric flow" paradigm that predicts pixel-level motion trajectories of the robot body from action-unlabeled RGB videos, and converts visual predictions into executable actions via URDF kinematic constraints. It substantially outperforms object-centric methods in scenarios involving deformable objects, occlusion, and non-displacement manipulation.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "URDF kinematics"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 7e7f6e470abfd51a
+content_hash: d063860ae2ed7977
 ---
 
 # EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Equivariant Flow Matching
@@ -150,10 +150,10 @@ Target image prediction (#3 vs. #1: +13.8%) and full-body point modeling (#4 vs.
 ## Related Papers
 
 - [\[ICCV 2025\] A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](a0_affordance_aware_hierarchical_model_robotic_manipulation.md)
-- [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](contrastive_flow_matching.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](../../NeurIPS2025/image_generation/equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
-- [\[CVPR 2026\] Image Generation as a Visual Planner for Robotic Manipulation](../../CVPR2026/image_generation/image_generation_as_a_visual_planner_for_robotic_manipulation.md)
-- [\[NeurIPS 2025\] Real-Time Execution of Action Chunking Flow Policies](../../NeurIPS2025/image_generation/real-time_execution_of_action_chunking_flow_policies.md)
+- [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](contrastive_flow_matching.md)
+- [\[CVPR 2025\] VideoWorld: Exploring Knowledge Learning from Unlabeled Videos](../../CVPR2025/image_generation/videoworld_exploring_knowledge_learning_from_unlabeled_videos.md)
+- [\[CVPR 2026\] PoseD-Flow: Versatile and Guided Flow Matching Model of Human Pose](../../CVPR2026/image_generation/posed-flow_versatile_and_guided_flow_matching_model_of_human_pose.md)
 
 </div>
 

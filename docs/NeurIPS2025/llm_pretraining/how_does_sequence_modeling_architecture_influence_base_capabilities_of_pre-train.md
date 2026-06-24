@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?
 description: >-
-  [NeurIPS 2025][LLM Pretraining][sequence modeling] By introducing a "domain-restricted pre-training + OOD testing" evaluation framework…
+  [NeurIPS 2025][LLM Pretraining][sequence modeling] By introducing a "domain-restricted pre-training + OOD testing" evaluation framework, this paper reveals that stateful architectures such as Mamba and RWKV suffer from degraded base capabilities. It identifies the key design principle of "arbitrary selection over the full sequence" (full-sequence visibility + real relation calculation + non-uniform distribution), and validates this principle using a minimalist Top-1 Element/C…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -14,7 +14,7 @@ tags:
   - "attention"
   - "Top-1 selection"
 date: 2026-05-08
-content_hash: 23329f75f12e948d
+content_hash: ba19c5263141f63a
 ---
 
 # How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?
@@ -136,11 +136,11 @@ The paper proceeds in three stages: (1) propose the domain-restricted pre-traini
 
 ## Related Papers
 
+- [\[ACL 2025\] LEANCODE: Understanding Models Better for Code Simplification of Pre-trained Large Language Models](../../ACL2025/llm_pretraining/leancode_understanding_models_better_for_code_simplification_of_pre-trained_larg.md)
 - [\[ICCV 2025\] Dataset Ownership Verification for Pre-trained Masked Models](../../ICCV2025/llm_pretraining/dataset_ownership_verification_for_pre-trained_masked_models.md)
-- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
 - [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)
-- [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](../../ICLR2026/llm_pretraining/imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)
-- [\[ACL 2026\] SCRIPT: A Subcharacter Compositional Representation Injection Module for Korean Pre-Trained Language Models](../../ACL2026/llm_pretraining/script_a_subcharacter_compositional_representation_injection_module_for_korean_p.md)
+- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
+- [\[ICLR 2026\] Dynamic Chunking for End-to-End Hierarchical Sequence Modeling](../../ICLR2026/llm_pretraining/dynamic_chunking_for_end-to-end_hierarchical_sequence_modeling.md)
 
 </div>
 

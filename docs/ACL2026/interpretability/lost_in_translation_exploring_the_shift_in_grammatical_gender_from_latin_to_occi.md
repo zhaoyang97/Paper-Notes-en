@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Lost in Translation? Exploring the Shift in Grammatical Gender from Latin to Occitan
 description: >-
-  [ACL 2026][Interpretability][Paper Note] For Medieval Occitan, a low-resource historical language, the authors established an explainable framework using mBERT + Hybrid Tokenization + Domain-adapted MLM. By decomposing the problem of "whether original Latin neuter nouns became masculine or feminine in Occitan" into morphological cues versus syntactic context,
+  [ACL 2026][Interpretability][Medieval Occitan] For Medieval Occitan, a low-resource historical language, the authors established an explainable framework using mBERT + Hybrid Tokenization + Domain-adapted MLM. By decomposing the problem of "whether original Latin neuter nouns became masculine or feminine in Occitan" into morphological cues versus syntactic context, they quantified the evidence and found that suffix morphology serves as the largest single signal…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Medieval Occitan"
+  - "Grammatical Gender"
+  - "Latin Neuter"
+  - "Explainable NLP"
+  - "Hybrid Tokenization"
 date: 2026-05-08
-content_hash: 249da260941e062c
+content_hash: 0c5dd5e14ab32dd0
 ---
+
 # Lost in Translation? Exploring the Shift in Grammatical Gender from Latin to Occitan
 
 **Conference**: ACL 2026  
@@ -130,10 +136,10 @@ Additional PoS-conditioned occlusion experiments: NOUN mean $\Delta=+0.0026$, DE
 ## Related Papers
 
 - [\[ICLR 2026\] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts](../../ICLR2026/interpretability/exploring_interpretability_for_visual_prompt_tuning_with_cross-layer_concepts.md)
+- [\[ICLR 2026\] Token Alignment Heads: Unveiling Attention's Role in LLM Multilingual Translation](../../ICLR2026/interpretability/token_alignment_heads_unveiling_attentions_role_in_llm_multilingual_translation.md)
 - [\[AAAI 2026\] Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs](../../AAAI2026/interpretability/finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe.md)
+- [\[ICLR 2026\] Paradigm Shift of GNN Explainer from Label Space to Prototypical Representation Space](../../ICLR2026/interpretability/paradigm_shift_of_gnn_explainer_from_label_space_to_prototypical_representation_.md)
 - [\[ACL 2025\] CLEME2.0: Towards Interpretable Evaluation by Disentangling Edits for Grammatical Error Correction](../../ACL2025/interpretability/cleme2_gec_evaluation.md)
-- [\[ICML 2026\] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions](../../ICML2026/interpretability/optimal_attention_temperature_improves_the_robustness_of_in-context_learning_und.md)
-- [\[ACL 2026\] Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling](learning_what_matters_dynamic_dimension_selection_and_aggregation_for_interpreta.md)
 
 </div>
 

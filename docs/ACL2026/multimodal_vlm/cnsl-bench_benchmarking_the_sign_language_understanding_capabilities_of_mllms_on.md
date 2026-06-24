@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language
 description: >-
-  [ACL 2026][Multimodal VLM][manual articulation] CNSL-bench is the first authoritative benchmark for evaluating Chinese sign language in MLLMs based on the *National Common Sign Language Dictionary*. It covers 6,707 unique sign entries across text, image, and video modalities, featuring three types of hand articulation (air-writing, finger-spelling, and manual-alphab
+  [ACL 2026][Multimodal VLM][Chinese National Sign Language] CNSL-bench is the first authoritative benchmark for evaluating Chinese sign language in MLLMs based on the *National Common Sign Language Dictionary*. It covers 6,707 unique sign entries across text, image, and video modalities, featuring three types of hand articulation (air-writing, finger-spelling, and manual-alphabet), totaling 20,121 four-way multiple-choice questions. Evaluations across 21 SOTA MLLMs reveal that…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - manual articulation
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Chinese National Sign Language"
+  - "Sign Language Benchmark"
+  - "MLLM Evaluation"
+  - "Modality Imbalance"
+  - "manual articulation"
 date: 2026-05-08
-content_hash: 0f7887dd67f05d04
+content_hash: 4a3aa4001bfa7e0d
 ---
+
 # CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language
 
 **Conference**: ACL 2026  
@@ -115,6 +120,7 @@ This work is a benchmark; no training was performed. Evaluation settings: temper
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -123,7 +129,7 @@ This work is a benchmark; no training was performed. Evaluation settings: temper
 - [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
 - [\[ACL 2026\] GroupToM-Bench: Benchmarking Group Theory of Mind and Nonlinear Social Emergence in MLLMs](grouptom-bench_benchmarking_group_theory_of_mind_and_nonlinear_social_emergence_.md)
 - [\[ACL 2026\] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding](vulca-bench_a_multicultural_vision-language_benchmark_for_evaluating_cultural_un.md)
-- [\[ACL 2026\] AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis](aica-bench_holistically_examining_the_capabilities_of_vlms_in_affective_image_co.md)
+- [\[AAAI 2026\] VIR-Bench: Evaluating Geospatial and Temporal Understanding of MLLMs via Travel Video Itinerary Reconstruction](../../AAAI2026/multimodal_vlm/vir-bench_evaluating_geospatial_and_temporal_understanding_of_mllms_via_travel_v.md)
 
 </div>
 

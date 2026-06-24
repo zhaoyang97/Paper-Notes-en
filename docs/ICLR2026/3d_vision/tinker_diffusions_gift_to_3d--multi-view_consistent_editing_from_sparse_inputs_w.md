@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TINKER: Diffusion's Gift to 3D--Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization
 description: >-
-  [ICLR 2026][3D Vision][Diffusion Model] TINKER transforms large-scale 2D image editing models and video diffusion models into a 3D-oriented multi-view consistent editing pipeline. It generates dense consistent views from one or a few edited reference images and completes high-quality 3DGS editing without requiring per-scene optimization of the editing model.
+  [ICLR 2026][3D Vision][Multi-view consistent editing] TINKER transforms large-scale 2D image editing models and video diffusion models into a 3D-oriented multi-view consistent editing pipeline. It generates dense consistent views from one or a few edited reference images and completes high-quality 3DGS editing without requiring per-scene optimization of the editing model.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Multi-view consistent editing"
+  - "3DGS editing"
+  - "diffusion models"
+  - "sparse views"
+  - "scene completion"
 date: 2026-05-08
-content_hash: bdd4a594c427344f
+content_hash: 4f5eafffa83c7591
 ---
+
 # TINKER: Diffusion's Gift to 3D--Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization
 
 **Conference**: ICLR 2026  
@@ -139,8 +144,8 @@ Comparison of conditions for scene completion:
 - **Value**: ⭐⭐⭐⭐⭐ High potential as a foundation for sparse-input 3D/4D editing workflows.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

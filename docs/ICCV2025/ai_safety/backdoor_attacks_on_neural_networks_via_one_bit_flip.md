@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Backdoor Attacks on Neural Networks via One-Bit Flip
 description: >-
-  [ICCV 2025][AI Safety][backdoor attack] This paper proposes SOLEFLIP, the first inference-time backdoor attack on quantized models that requires flipping only a single bit. Through an efficient algorithm for identifying…
+  [ICCV 2025][AI Safety][backdoor attack] This paper proposes SOLEFLIP, the first inference-time backdoor attack on quantized models that requires flipping only a single bit. Through an efficient algorithm for identifying exploitable weights and bit positions, along with a corresponding trigger generation procedure, SOLEFLIP achieves an average attack success rate of 98.9% with zero degradation in clean accuracy across CIFAR-10, SVHN, and ImageNet.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "quantized model"
   - "one-bit flip"
 date: 2026-05-08
-content_hash: cea926ca1b33e5b7
+content_hash: 5d66779099978709
 ---
 
 # Backdoor Attacks on Neural Networks via One-Bit Flip
@@ -111,10 +111,10 @@ For reference, TBT requires ~100 bit flips and ProFlip requires ~10.
 ## Related Papers
 
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
-- [\[ICCV 2025\] Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack](mind_the_cost_of_scaffold_benign_clients_may_even_become_accomplices_of_backdoor.md)
+- [\[ICML 2025\] Adversarial Inception Backdoor Attacks against Reinforcement Learning](../../ICML2025/ai_safety/adversarial_inception_backdoor_attacks_against_reinforcement_learning.md)
 - [\[ICML 2026\] Singular Bayesian Neural Networks](../../ICML2026/ai_safety/singular_bayesian_neural_networks.md)
-- [\[ICCV 2025\] Backdoor Mitigation by Distance-Driven Detoxification](backdoor_mitigation_by_distance-driven_detoxification.md)
-- [\[NeurIPS 2025\] Influence Functions for Edge Edits in Non-Convex Graph Neural Networks](../../NeurIPS2025/ai_safety/influence_functions_for_edge_edits_in_non-convex_graph_neural_networks.md)
+- [\[ICCV 2025\] Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack](mind_the_cost_of_scaffold_benign_clients_may_even_become_accomplices_of_backdoor.md)
+- [\[CVPR 2025\] Detecting Backdoor Attacks in Federated Learning via Direction Alignment Inspection](../../CVPR2025/ai_safety/detecting_backdoor_attacks_in_federated_learning_via_direction_alignment_inspect.md)
 
 </div>
 

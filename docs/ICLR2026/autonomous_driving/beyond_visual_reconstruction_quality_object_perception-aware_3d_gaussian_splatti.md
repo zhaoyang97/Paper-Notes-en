@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Visual Reconstruction Quality: Object Perception-aware 3D Gaussian Splatting for Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] This paper points out that the assumption "higher reconstruction fidelity leads to better reproduction of autonomous driving system (ADS) behavior" is a strong, unverified hypothesis. It proposes replacing pure visual similarity with **perception stability** (consistency of perception model outputs between reconstructe
+  [ICLR2026][Autonomous Driving][3D Gaussian Splatting] This paper points out that the assumption "higher reconstruction fidelity leads to better reproduction of autonomous driving system (ADS) behavior" is a strong, unverified hypothesis. It proposes replacing pure visual similarity with **perception stability** (consistency of perception model outputs between reconstructed and ground truth images) as the optimization objective. Two plug-and-play losses—Perception Alignment Lo…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR2026"
+  - "Autonomous Driving"
+  - "3D Gaussian Splatting"
+  - "Autonomous Driving Simulation"
+  - "Perception Stability"
+  - "Object Region Reconstruction"
+  - "Scene Generation"
 date: 2026-05-08
-content_hash: 123fda162ee53ca3
+content_hash: 7202da15cee7ca72
 ---
+
 # Beyond Visual Reconstruction Quality: Object Perception-aware 3D Gaussian Splatting for Autonomous Driving
 
 **Conference**: ICLR2026  
@@ -145,11 +151,11 @@ Method 1 (+Lperc) increases training time by ~13.6% due to online inference. Met
 
 ## Related Papers
 
-- [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](../../ICCV2025/autonomous_driving/ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
 - [\[CVPR 2026\] ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking](../../CVPR2026/autonomous_driving/parkgaussian_surround-view_3d_gaussian_splatting_for_autonomous_parking.md)
+- [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](../../ICCV2025/autonomous_driving/ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
 - [\[ICCV 2025\] EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting](../../ICCV2025/autonomous_driving/emd_explicit_motion_modeling_for_high-quality_street_gaussian_splatting.md)
 - [\[ICLR 2026\] GaussianFusion: Unified 3D Gaussian Representation for Multi-Modal Fusion Perception](gaussianfusion_unified_3d_gaussian_representation_for_multi-modal_fusion_percept.md)
-- [\[AAAI 2026\] LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors](../../AAAI2026/autonomous_driving/lidar-gsimproving_lidar_gaussian_reconstruction_via_diffusion_priors.md)
+- [\[ICLR 2026\] UniSplat: Unified Spatio-Temporal Fusion via 3D Latent Scaffolds for Dynamic Driving Scene Reconstruction](unisplat_unified_spatio-temporal_fusion_via_3d_latent_scaffolds_for_dynamic_driv.md)
 
 </div>
 

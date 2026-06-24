@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction
 description: >-
-  [CVPR 2026][Audio & Speech][Omni-MLLM] HAVE-Bench constructs a 2451-item audio-visual evaluation benchmark using a "Perception-Reasoning-Interaction" three-level cognitive hierarchy paired with "Audio-as-Instruction (AaI)/Audio-as-Context (AaC)" dual roles. It is the first to model multi-turn, memory-dependent interaction tasks as task graphs to evaluate Om
+  [CVPR 2026][Multimodal VLM][Audio-visual benchmark] HAVE-Bench constructs a 2451-item audio-visual evaluation benchmark using a "Perception-Reasoning-Interaction" three-level cognitive hierarchy paired with "Audio-as-Instruction (AaI)/Audio-as-Context (AaC)" dual roles. It is the first to model multi-turn, memory-dependent interaction tasks as task graphs to evaluate Omni-MLLMs. Results indicate a performance cliff for both open-source and closed-source models at the reasonin…
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - Omni-MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Audio-visual benchmark"
+  - "cognitive hierarchy"
+  - "speech instruction"
+  - "multi-turn interaction"
+  - "Omni-MLLM"
 date: 2026-05-08
-content_hash: 97fcee7a6952f4a7
+content_hash: 9e2b0e21b9cab213
 ---
+
 # HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction
 
 **Conference**: CVPR 2026  
@@ -122,16 +127,16 @@ Comparing Speech Instruction (SI) with equivalent Text Instruction (TI) and an A
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](../../ACL2026/audio_speech/full-duplex-bench-v2_a_multi-turn_evaluation_framework_for_duplex_dialogue_syste.md)
+- [\[CVPR 2026\] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs](fave_a_structured_benchmark_for_fine-grained_audio-visual_temporal_evaluation_in.md)
+- [\[ICML 2026\] AVI-Bench: Toward Human-like Audio-Visual Intelligence of Omni-MLLMs](../../ICML2026/multimodal_vlm/avi-bench_toward_human-like_audio-visual_intelligence_of_omni-mllms.md)
+- [\[CVPR 2026\] SO-Bench: A Structural Output Evaluation of Multimodal LLM](so-bench_a_structural_output_evaluation_of_multimodal_llm.md)
 - [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](egoavu_egocentric_audio-visual_understanding.md)
-- [\[ICLR 2026\] Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](../../ICLR2026/audio_speech/query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)
-- [\[CVPR 2026\] Pushing the Frontier of Audiovisual Perception with Large-Scale Multimodal Correspondence Learning](pushing_the_frontier_of_audiovisual_perception_with_large-scale_multimodal_corre.md)
-- [\[CVPR 2026\] EchoFoley: Event-Centric Hierarchical Control for Video Grounded Creative Sound Generation](echofoley_event-centric_hierarchical_control_for_video_grounded_creative_sound_g.md)
+- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](../../ICLR2026/multimodal_vlm/omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
 
 </div>
 

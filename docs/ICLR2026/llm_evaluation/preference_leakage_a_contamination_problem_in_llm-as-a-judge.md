@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Preference Leakage: A Contamination Problem in LLM-as-a-judge
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-a-Judge] This paper defines and systematically investigates **Preference Leakage (PL)** in LLM-as-a-Judge—a phenomenon where judge $M_J$ systematically favors "related student models" when the synthetic data generator $M_G$ is associated with $M_J$ (same model, inheritance, or same family). In same-model scenarios, the PLS reac
+  [ICLR2026][LLM Evaluation][LLM-as-a-Judge] This paper defines and systematically investigates **Preference Leakage (PL)** in LLM-as-a-Judge—a phenomenon where judge $M_J$ systematically favors "related student models" when the synthetic data generator $M_G$ is associated with $M_J$ (same model, inheritance, or same family). In same-model scenarios, the PLS reaches 28.7% (Arena-Hard), and this bias is more insidious and harder to detect than egocentric bias.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "Preference Leakage"
+  - "Data Contamination"
+  - "Evaluation Bias"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 46a8c4c40b229d76
+content_hash: f5c1319730d56c12
 ---
+
 # Preference Leakage: A Contamination Problem in LLM-as-a-judge
 
 **Conference**: ICLR2026  
@@ -208,8 +213,8 @@ For the metric to be accurate, the detected bias must originate solely from the 
 ## Related Papers
 
 - [\[ICLR 2026\] Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas](doubly-robust_llm-as-a-judge_externally_valid_estimation_with_imperfect_personas.md)
-- [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](detecting_data_contamination_in_llms_via_in-context_learning.md)
 - [\[ICLR 2026\] LiveClin: A Live Clinical Benchmark without Leakage](liveclin_a_live_clinical_benchmark_without_leakage.md)
+- [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](detecting_data_contamination_in_llms_via_in-context_learning.md)
 - [\[ICML 2026\] Nonparametric LLM Evaluation from Preference Data](../../ICML2026/llm_evaluation/nonparametric_llm_evaluation_from_preference_data.md)
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Contextual Causal Bayesian Optimisation
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes CoCa-BO, which unifies the selection of "which variables to intervene on" (causal scope selection) and "what values to intervene with" (contextual Bayesian optimization) into a single search process. It uses a multi-armed bandit to select scopes among all "possibly-optimal mixed policy scopes" (POMP
+  [ICLR2026][Optimization][Bayesian optimization] This paper proposes CoCa-BO, which unifies the selection of "which variables to intervene on" (causal scope selection) and "what values to intervene with" (contextual Bayesian optimization) into a single search process. It uses a multi-armed bandit to select scopes among all "possibly-optimal mixed policy scopes" (POMPS) and Gaussian processes to select intervention values within each scope, providing the first sublinear regret…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Bayesian optimization"
+  - "causal inference"
+  - "contextual optimization"
+  - "mixed policy scope"
+  - "multi-armed bandits"
+  - "regret bounds"
 date: 2026-05-08
-content_hash: 44b69f31946f03ea
+content_hash: 01557f75932b5543
 ---
+
 # Contextual Causal Bayesian Optimisation
 
 **Conference**: ICLR2026  
@@ -136,14 +143,17 @@ In the PSA example with 6 variables, although only Aspirin and Statin are interv
 
 <div class="related-papers" markdown="1">
 
-- **Causal Bayesian Optimization** (Aglietti et al., AISTATS 2020)
-- **Characterizing and Learning Strategies for Optimal Policy Space Search** (Lee & Bareinboim, ICML 2020)
-- **Contextual Bayesian Optimization** (Krause & Ong, NIPS 2011)
+## Related Papers
+
+- [\[ICLR 2026\] Combinatorial Bandit Bayesian Optimization for Tensor Outputs](combinatorial_bandit_bayesian_optimization_for_tensor_outputs.md)
+- [\[ICLR 2026\] Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation](reducing_contextual_stochastic_bilevel_optimization_via_structured_function_appr.md)
+- [\[ICLR 2026\] BoGrape: Bayesian optimization over graphs with shortest-path encoded](bogrape_bayesian_optimization_over_graphs_with_shortest-path_encoded.md)
+- [\[ICML 2026\] Efficient Stochastic Optimisation via Sequential Monte Carlo](../../ICML2026/optimization/efficient_stochastic_optimisation_via_sequential_monte_carlo.md)
+- [\[ICLR 2026\] Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models](adaptive_acquisition_selection_for_bayesian_optimization_with_large_language_mod.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation](reducing_contextual_stochastic_bilevel_optimization_via_structured_function_appr.md)

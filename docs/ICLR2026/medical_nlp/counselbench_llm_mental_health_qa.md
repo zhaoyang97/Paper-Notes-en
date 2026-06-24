@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA
 description: >-
-  [ICLR 2026][Medical NLP][mental health QA] In collaboration with 100 licensed mental health experts, CounselBench was constructed as a dual-component benchmark—CounselBench-EVAL (2,000 expert evaluations across six dimensions) and CounselBench-Adv (120 adversarial questions with 1,080 response annotations). The study systematically reveals that while LLMs achie
+  [ICLR 2026 Oral][Medical LLM][mental health QA] In collaboration with 100 licensed mental health experts, CounselBench was constructed as a dual-component benchmark—CounselBench-EVAL (2,000 expert evaluations across six dimensions) and CounselBench-Adv (120 adversarial questions with 1,080 response annotations). The study systematically reveals that while LLMs achieve high superficial scores in open-ended mental health QA, they harbor safety hazards such as overgeneralization…
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - mental health QA
-  - expert annotation
-  - adversarial benchmark
-  - LLM-as-Judge
-  - safety evaluation
+  - "ICLR 2026 Oral"
+  - "Medical LLM"
+  - "mental health QA"
+  - "expert annotation"
+  - "adversarial benchmark"
+  - "LLM-as-Judge"
+  - "safety evaluation"
 date: 2026-05-08
-content_hash: c0823fab2657e6c6
+content_hash: b5b597dfc08b4fa5
 ---
+
 # CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA
 
 **Conference**: ICLR 2026 Oral  
@@ -148,10 +149,10 @@ flowchart TD
 ## Related Papers
 
 - [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
-- [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
 - [\[ACL 2026\] Responsible Evaluation of AI for Mental Health](../../ACL2026/medical_nlp/responsible_evaluation_of_ai_for_mental_health.md)
-- [\[ICLR 2026\] mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules](mclm_a_modular_chemical_language_model_that_generates_functional_and_makeable_mo.md)
-- [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](medagentgym_agentic_training_biomedical.md)
+- [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](../../ACL2026/medical_nlp/mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
+- [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
+- [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](../../ACL2026/medical_nlp/mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
 
 </div>
 

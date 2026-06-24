@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] This paper replaces the "intra-group mean" baseline used in value-free RL (GRPO/DAPO) with a "group-wise K-quantile" baseline (QAE). By using a hyperparameter $K$ to reward rare correct answers on hard problems and punish residual errors on easy ones, it is proven that this approach simultaneously prevents entropy coll
+  [ICLR 2026][Reasoning][RLVR] This paper replaces the "intra-group mean" baseline used in value-free RL (GRPO/DAPO) with a "group-wise K-quantile" baseline (QAE). By using a hyperparameter $K$ to reward rare correct answers on hard problems and punish residual errors on easy ones, it is proven that this approach simultaneously prevents entropy collapse and entropy explosion, consistently improving pass@1 on AIME/AMC mathematical reasoning tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO/DAPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "Advantage Estimation"
+  - "Quantile Baseline"
+  - "Policy Entropy"
+  - "GRPO/DAPO"
 date: 2026-05-08
-content_hash: 9c0e65139442f464
+content_hash: 96ce819ead241264
 ---
+
 # Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -132,15 +136,15 @@ The authors verified that "baseline design, not token tuning" is key and decompo
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models](conditional_advantage_estimation_for_reinforcement_learning_in_large_reasoning_m.md)
 - [\[ICLR 2026\] Beyond Magnitude: Leveraging Direction of RLVR Updates for LLM Reasoning](beyond_magnitude_leveraging_direction_of_rlvr_updates_for_llm_reasoning.md)
-- [\[ICLR 2026\] HiPO: Self-Hint Policy Optimization for RLVR](hipo_self-hint_policy_optimization_for_rlvr.md)
-- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
 - [\[ACL 2026\] SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning](../../ACL2026/llm_reasoning/shape_stage-aware_hierarchical_advantage_via_potential_estimation_for_llm_reason.md)
+- [\[ACL 2026\] Stabilizing Efficient Reasoning with Step-Level Advantage Selection](../../ACL2026/llm_reasoning/stabilizing_efficient_reasoning_with_step-level_advantage_selection.md)
+- [\[ICLR 2026\] HiPO: Self-Hint Policy Optimization for RLVR](hipo_self-hint_policy_optimization_for_rlvr.md)
 
 </div>
 

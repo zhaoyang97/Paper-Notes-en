@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Communication-Efficient Decentralized Optimization via Double-Communication Symmetric ADMM
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Addressing decentralized composite optimization without a central node, this paper proposes DS-ADMM: embedding two rounds of communication per iteration into the ADMM structure via a pair of symmetric consensus constraints and accelerating it with symmetric ADMM. Although communication per iteration doubles, the total
+  [ICLR2026][Optimization][decentralized optimization] Addressing decentralized composite optimization without a central node, this paper proposes DS-ADMM: embedding two rounds of communication per iteration into the ADMM structure via a pair of symmetric consensus constraints and accelerating it with symmetric ADMM. Although communication per iteration doubles, the total number of iterations decreases significantly, reducing overall communication costs while proving linear con…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "decentralized optimization"
+  - "symmetric ADMM"
+  - "multi-round communication"
+  - "communication-efficient"
+  - "linear convergence"
 date: 2026-05-08
-content_hash: 7be08a9e693d4f54
+content_hash: 6c0a8852acba9e35
 ---
+
 # Communication-Efficient Decentralized Optimization via Double-Communication Symmetric ADMM
 
 **Conference**: ICLR2026  
@@ -132,13 +138,14 @@ Settings: $n=30$ agents, random graph ($p=0.5$), Metropolis–Hastings matrix.
 - Value: ⭐⭐⭐⭐ Provides a significant new trade-off perspective and theoretical basis for decentralized algorithm design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] DES-LOC: Desynced Low Communication Adaptive Optimizers for Foundation Models](des-loc_desynced_low_communication_adaptive_optimizers_for_foundation_models.md)
-- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
 - [\[AAAI 2026\] A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication](../../AAAI2026/optimization/a_unified_convergence_analysis_for_semi-decentralized_learni.md)
+- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
 - [\[ICLR 2026\] Enhancing Communication Compression via Discrepancy-aware Calibration for Federated Learning](enhancing_communication_compression_via_discrepancy-aware_calibration_for_federa.md)
 - [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](../../ICML2026/optimization/delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper reveals a severe "informativeness bias" in VLM-as-a-Judge systems—where judges tend to favor more detailed and rich responses even when they contradict visual content. It proposes the BIRCH paradigm, which reduces bias by up to 17% and improves performance by up to 9.8% by calibrating candidate answers befor
+  [ACL 2026][LLM Evaluation][VLM-as-a-Judge] This paper reveals a severe "informativeness bias" in VLM-as-a-Judge systems—where judges tend to favor more detailed and rich responses even when they contradict visual content. It proposes the BIRCH paradigm, which reduces bias by up to 17% and improves performance by up to 9.8% by calibrating candidate answers before comparison.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "VLM-as-a-Judge"
+  - "Informativeness Bias"
+  - "Image Anchoring"
+  - "Evaluation Reliability"
+  - "Multimodal Evaluation"
 date: 2026-05-08
-content_hash: 532b6010d4b2de48
+content_hash: 13a1411e5d192379
 ---
+
 # When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias
 
 **Conference**: ACL 2026  
@@ -126,10 +132,20 @@ With a faithful and detailed anchor, the judgment no longer directly compares th
 - Value: ⭐⭐⭐⭐⭐ Significant impact on the VLM automated evaluation field; both the identified problem and the proposed solution are broadly meaningful.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
+- [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
+- [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
+- [\[ICLR 2026\] Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective](../../ICLR2026/llm_evaluation/can_vision_language_models_assess_graphic_design_aesthetics_a_benchmark_evaluati.md)
+- [\[ICLR 2026\] Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry](../../ICLR2026/llm_evaluation/rethinking_llm-as-a-judge_representation-as-a-judge_with_small_language_models_v.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)

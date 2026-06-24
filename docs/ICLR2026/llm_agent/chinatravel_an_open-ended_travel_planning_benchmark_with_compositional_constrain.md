@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ChinaTravel: An Open-Ended Travel Planning Benchmark with Compositional Constraint Validation for Language Agents
 description: >-
-  [ICLR 2026][LLM Agent][Language Agent] ChinaTravel utilizes a compositional Domain-Specific Language (DSL) to automatically translate "open-ended natural language travel requirements" into verifiable logical constraints and preference objectives. Combined with 1154 real-world Chinese user queries, it constructs the first truly open multi-day multi-POI trave
+  [ICLR 2026][LLM Agent][Language Agent] ChinaTravel utilizes a compositional Domain-Specific Language (DSL) to automatically translate "open-ended natural language travel requirements" into verifiable logical constraints and preference objectives. Combined with 1154 real-world Chinese user queries, it constructs the first truly open multi-day multi-POI travel planning benchmark that requires contextual grounding and generalization to unseen constraint combinations. Empirical r…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Language Agent
-  - Travel Planning
-  - Compositional Constraint
-  - Domain-Specific Language
-  - Neuro-Symbolic
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Language Agent"
+  - "Travel Planning"
+  - "Compositional Constraint"
+  - "Domain-Specific Language"
+  - "Neuro-Symbolic"
 date: 2026-05-08
-content_hash: dd3bdb1dba5dd66f
+content_hash: 0e1d87399698972e
 ---
+
 # ChinaTravel: An Open-Ended Travel Planning Benchmark with Compositional Constraint Validation for Language Agents
 
 **Conference**: ICLR 2026  
@@ -111,15 +112,16 @@ flowchart TD
 - **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents](darwin_gödel_machine_open-ended_evolution_of_self-improving_agents.md)
 - [\[ICLR 2026\] WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research](webweaver_structuring_web-scale_evidence_with_dynamic_outlines_for_open-ended_de.md)
 - [\[ICLR 2026\] Natural Language PDDL (NL-PDDL): Open-world Goal-oriented Commonsense Regression Planning in Embodied AI](natural_language_pddl_nl-pddl_for_open-world_goal-oriented_commonsense_regressio.md)
 - [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
 - [\[ICML 2025\] Open Source Planning & Control System with Language Agents for Autonomous Scientific Discovery](../../ICML2025/llm_agent/open_source_planning_control_system_with_language_agents_for_autonomous_scientif.md)
-- [\[ICLR 2026\] DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents](dreamphase_offline_imagination_and_uncertainty-guided_planning_for_large-languag.md)
 
 </div>
 

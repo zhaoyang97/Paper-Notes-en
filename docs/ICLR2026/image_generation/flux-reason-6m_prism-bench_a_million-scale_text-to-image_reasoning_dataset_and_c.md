@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FLUX-Reason-6M & PRISM-Bench: A Million-Scale Text-to-Image Reasoning Dataset and Comprehensive Benchmark
 description: >-
-  [ICLR 2026][Image Generation][VLM-as-Judge] This work constructs FLUX-Reason-6M, a reasoning-oriented text-to-image dataset containing 6 million FLUX-generated images and 20 million bilingual descriptions (core feature: "Generating Chain-of-Thought, GCoT" annotations). It also introduces PRISM-Bench, a fine-grained evaluation benchmark with seven tracks using ad
+  [ICLR 2026][Image Generation][Text-to-image] This work constructs FLUX-Reason-6M, a reasoning-oriented text-to-image dataset containing 6 million FLUX-generated images and 20 million bilingual descriptions (core feature: "Generating Chain-of-Thought, GCoT" annotations). It also introduces PRISM-Bench, a fine-grained evaluation benchmark with seven tracks using advanced VLMs as judges, revealing the actual performance gap between open-source and closed-source text-to-image mod…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VLM-as-Judge
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Text-to-image"
+  - "reasoning dataset"
+  - "Generating Chain-of-Thought (GCoT)"
+  - "evaluation benchmark"
+  - "bilingual"
+  - "VLM-as-Judge"
 date: 2026-05-08
-content_hash: 34a4110a6835e03a
+content_hash: 0135e1c641985a18
 ---
+
 # FLUX-Reason-6M & PRISM-Bench: A Million-Scale Text-to-Image Reasoning Dataset and Comprehensive Benchmark
 
 **Conference**: ICLR 2026  
@@ -116,11 +122,11 @@ flowchart TB
 
 ## Related Papers
 
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](../../CVPR2026/image_generation/i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 - [\[CVPR 2026\] UnicEdit-10M: A Dataset and Benchmark Breaking the Scale-Quality Barrier via Unified Verification for Reasoning-Enriched Edits](../../CVPR2026/image_generation/unicedit-10m_a_dataset_and_benchmark_breaking_the_scale-quality_barrier_via_unif.md)
-- [\[ICLR 2026\] ImageDoctor: Diagnosing Text-to-Image Generation via Grounded Image Reasoning](imagedoctor_diagnosing_text-to-image_generation_via_grounded_image_reasoning.md)
 - [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
-- [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](../../CVPR2026/image_generation/vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
-- [\[CVPR 2026\] MICo-150K: A Comprehensive Dataset Advancing Multi-Image Composition](../../CVPR2026/image_generation/mico-150k_a_comprehensive_dataset_advancing_multi-image_composition.md)
+- [\[ICLR 2026\] ImageDoctor: Diagnosing Text-to-Image Generation via Grounded Image Reasoning](imagedoctor_diagnosing_text-to-image_generation_via_grounded_image_reasoning.md)
+- [\[ICLR 2026\] RePrompt: Reasoning-Augmented Reprompting for Text-to-Image Generation via Reinforcement Learning](reprompt_reasoning-augmented_reprompting_for_text-to-image_generation_via_reinfo.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] LoCar proposes 13 deployment-level KPIs for Korean in-vehicle assistants and evaluates 11 models using human-calibrated LLM-as-a-Judge with honorific morphological verification. Findings show that while general understanding is near saturation, fine-grained honorific control and multi-turn strategic guidance remain sig
+  [ACL2026][LLM Evaluation][Localization Evaluation] LoCar proposes 13 deployment-level KPIs for Korean in-vehicle assistants and evaluates 11 models using human-calibrated LLM-as-a-Judge with honorific morphological verification. Findings show that while general understanding is near saturation, fine-grained honorific control and multi-turn strategic guidance remain significantly unstable.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Localization Evaluation"
+  - "Korean Honorifics"
+  - "In-Vehicle Assistants"
+  - "LLM-as-a-Judge"
+  - "Multi-turn Dialogue"
 date: 2026-05-08
-content_hash: 26852f6b31081f5f
+content_hash: a467c1168134681e
 ---
+
 # LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control
 
 **Conference**: ACL2026  
@@ -136,15 +141,13 @@ Ours does not train the evaluated models. The choice of evaluators is based on 8
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
+- [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](../../ICLR2026/llm_evaluation/reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
 - [\[ACL 2026\] K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology](k-metbench_a_multi-dimensional_benchmark_for_fine-grained_evaluation_of_expert_r.md)
 - [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
-- [\[ICLR 2026\] Enabling Fine-Grained Operating Points for Black-Box LLMs](../../ICLR2026/llm_evaluation/enabling_fine-grained_operating_points_for_black-box_llms.md)
-- [\[ACL 2026\] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](aj-bench_benchmarking_agent-as-a-judge_for_environment-aware_evaluation.md)
+- [\[ICLR 2026\] FRABench and UFEval: Unified Fine-grained Evaluation with Task and Aspect Generalization](../../ICLR2026/llm_evaluation/frabench_and_ufeval_unified_fine-grained_evaluation_with_task_and_aspect_general.md)
 
 </div>
 

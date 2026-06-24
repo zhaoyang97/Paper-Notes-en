@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] For unified generative-understanding diffusion multi-modal large language models (dMLLMs), this work utilizes the model's own image-text understanding capabilities as a "judge" (Self-Verified Feedback) to score candidate images. Combined with a coarse-to-fine Hierarchical Trajectory Search, it reduces the complexity of
+  [CVPR 2026][VLM Reasoning][Test-time scaling] For unified generative-understanding diffusion multi-modal large language models (dMLLMs), this work utilizes the model's own image-text understanding capabilities as a "judge" (Self-Verified Feedback) to score candidate images. Combined with a coarse-to-fine Hierarchical Trajectory Search, it reduces the complexity of traditional linear search from $O(NT)$ to near-linear $O(N+T)$. This significantly improves the generation qualit…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Test-time scaling"
+  - "Diffusion multi-modal large language models"
+  - "Self-verification"
+  - "Text-to-image"
+  - "Trajectory search"
 date: 2026-05-08
-content_hash: 77f851651515d2a2
+content_hash: 4d0e1b619fe1a97f
 ---
+
 # dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -148,15 +154,15 @@ Verifier Comparison (GenEval Overall, Table 2):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
-- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
-- [\[CVPR 2026\] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation](decoupling_stability_and_plasticity_for_multi-modal_test-time_adaptation.md)
-- [\[CVPR 2026\] Multi-modal Test-time Adaptation via Adaptive Probabilistic Gaussian Calibration](multi-modal_test-time_adaptation_via_adaptive_probabilistic_gaussian_calibration.md)
 - [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
+- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
+- [\[CVPR 2026\] Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models](thinking_diffusion_penalize_and_guide_visual-grounded_reasoning_in_diffusion_mul.md)
 
 </div>
 

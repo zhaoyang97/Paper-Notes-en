@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent
 description: >-
-  [ICCV 2025][Video Generation][Image-to-video generation] This paper proposes MotionAgent, which leverages a Motion Field Agent to parse motion descriptions from text into object trajectories and camera extrinsics…
+  [ICCV 2025][Video Generation][Image-to-video generation] This paper proposes MotionAgent, which leverages a Motion Field Agent to parse motion descriptions from text into object trajectories and camera extrinsics, then unifies them into optical flow maps via an analytical flow synthesis module, enabling fine-grained and precise control over both object motion and camera motion in I2V generation using only text input.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "fine-grained motion control"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 7eadf0a06d7a10d2
+content_hash: 8d8ed002c6d327c9
 ---
 
 # MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent
@@ -183,9 +183,9 @@ Performance variation across different LLM backends is minimal, demonstrating th
 
 - [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](../../AAAI2026/video_generation/motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
 - [\[ICCV 2025\] ETVA: Evaluation of Text-to-Video Alignment via Fine-Grained Question Generation and Answering](etva_evaluation_of_text-to-video_alignment_via_fine-grained_question_generation_.md)
+- [\[NeurIPS 2025\] DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models](../../NeurIPS2025/video_generation/densedpo_finegrained_temporal_preference_optimization_for_vi.md)
+- [\[CVPR 2025\] MotionPro: A Precise Motion Controller for Image-to-Video Generation](../../CVPR2025/video_generation/motionpro_a_precise_motion_controller_for_image-to-video_generation.md)
 - [\[ICCV 2025\] DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation](dh-facevid-1k_a_large-scale_high-quality_dataset_for_face_video_generation.md)
-- [\[ICCV 2025\] VMBench: A Benchmark for Perception-Aligned Video Motion Generation](vmbench_a_benchmark_for_perception-aligned_video_motion_generation.md)
-- [\[ICCV 2025\] X-Dancer: Expressive Music to Human Dance Video Generation](x-dancer_expressive_music_to_human_dance_video_generation.md)
 
 </div>
 

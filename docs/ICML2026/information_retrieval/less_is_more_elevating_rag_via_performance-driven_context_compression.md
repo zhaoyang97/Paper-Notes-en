@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Less Is More: Elevating RAG via Performance-Driven Context Compression
 description: >-
-  [ICML 2026][Information Retrieval & RAG][RAG] CORE-RAG trains a 1.5B small compressor using GRPO reinforcement learning with "performance-as-reward," compressing retrieved top-k documents into summaries of ~3% original length. It not only avoids performance degradation but also achieves an average improvement of 3.3 EM over full-context RAG across four QA benchmar
+  [ICML 2026][Information Retrieval & RAG][RAG] CORE-RAG trains a 1.5B small compressor using GRPO reinforcement learning with "performance-as-reward," compressing retrieved top-k documents into summaries of ~3% original length. It not only avoids performance degradation but also achieves an average improvement of 3.3 EM over full-context RAG across four QA benchmarks.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - RAG
-  - GRPO
-  - Knowledge Distillation
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Context Compression"
+  - "GRPO"
+  - "Knowledge Distillation"
+  - "Performance-driven"
 date: 2026-05-08
-content_hash: f2614c0f5460cab1
+content_hash: 8b83b09b18cf2889
 ---
+
 # Less Is More: Elevating RAG via Performance-Driven Context Compression
 
 **Conference**: ICML 2026  
@@ -131,15 +134,15 @@ CORE (1.5B) outperforms all compression baselines (RECOMP, NoiseFilter-IB, etc.,
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering](../../ICLR2026/information_retrieval/frugalrag_less_is_more_in_rl_finetuning_for_multi-hop_question_answering.md)
+- [\[ICLR 2026\] OSCAR: Online Soft Compression for RAG](../../ICLR2026/information_retrieval/oscar_online_soft_compression_for_rag.md)
 - [\[ACL 2025\] EXIT: Context-Aware Extractive Compression for Enhancing Retrieval-Augmented Generation](../../ACL2025/information_retrieval/exit_context-aware_extractive_compression_for_enhancing_retrieval-augmented_gene.md)
 - [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](../../ACL2026/information_retrieval/more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
 - [\[ICLR 2026\] Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
-- [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](../../ACL2026/information_retrieval/brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
 
 </div>
 

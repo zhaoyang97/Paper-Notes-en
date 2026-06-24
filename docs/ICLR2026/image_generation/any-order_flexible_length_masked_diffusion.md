@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Any-Order Flexible Length Masked Diffusion
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper proposes FlexMDM, a masked diffusion model capable of **inserting new tokens to model variable-length sequences** during generation. It theoretically preserves the "any-order parallel decoding" capability of masked diffusion. While maintaining perplexity parity with fixed-length masked diffusion, FlexMDM ach
+  [ICLR 2026][Image Generation][Masked Diffusion] This paper proposes FlexMDM, a masked diffusion model capable of **inserting new tokens to model variable-length sequences** during generation. It theoretically preserves the "any-order parallel decoding" capability of masked diffusion. While maintaining perplexity parity with fixed-length masked diffusion, FlexMDM achieves significantly better length distribution fitting. Furthermore, it requires only 16 H100 GPUs for three day…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Masked Diffusion"
+  - "Variable-length Generation"
+  - "Any-order"
+  - "Stochastic Interpolant"
+  - "Continuous-time Markov Chain"
 date: 2026-05-08
-content_hash: cc34a85a97b43724
+content_hash: 140f13766ee7a0e7
 ---
+
 # Any-Order Flexible Length Masked Diffusion
 
 **Conference**: ICLR 2026  
@@ -144,7 +150,7 @@ FlexMDM continues to improve with more sampling steps, whereas LLaDA plateaus, i
 - [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](../../ICML2026/image_generation/esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
 - [\[ICML 2025\] FlexTok: Resampling Images into 1D Token Sequences of Flexible Length](../../ICML2025/image_generation/flextok_resampling_images_into_1d_token_sequences_of_flexible_length.md)
 - [\[ICLR 2026\] Partition Generative Modeling: Masked Modeling Without Masks](partition_generative_modeling_masked_modeling_without_masks.md)
-- [\[ICLR 2026\] HOG-Diff: Higher-Order Guided Diffusion for Graph Generation](hog-diff_higher-order_guided_diffusion_for_graph_generation.md)
+- [\[ICLR 2026\] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact](improving_classifier-free_guidance_in_masked_diffusion_low-dim_theoretical_insig.md)
 
 </div>
 

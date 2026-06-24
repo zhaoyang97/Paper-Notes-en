@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][RTL code optimization] This paper proposes SymRTLO, the first neurosymbolic framework integrating LLMs with symbolic reasoning for RTL code optimization. By combining retrieval…
+  [NeurIPS 2025][Information Retrieval & RAG][RTL code optimization] This paper proposes SymRTLO, the first neurosymbolic framework integrating LLMs with symbolic reasoning for RTL code optimization. By combining retrieval-augmented optimization rules, AST template-guided code generation, and an FSM symbolic system, SymRTLO achieves improvements of up to 43.9%, 62.5%, and 51.1% in power, performance, and area (PPA), respectively.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "finite state machine"
   - "hardware design automation"
 date: 2026-05-08
-content_hash: e4527b514c68942d
+content_hash: 26c8895c20274da2
 ---
 
 # SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning
@@ -62,17 +62,17 @@ SymRTLO takes a Verilog RTL module and a user-specified optimization objective (
 2. **AST Template Construction and Application**
 
    For rules with detailed template instructions, the LLM generates AST-based templates that formalize optimization operations as AST node matching and transformation:
-   - A matching condition $\Phi: \mathcal{A} \rightarrow \{\text{true}, \text{false}\}$ determines whether a node requires optimization.
-   - A transformation rule $\tau: \{a \in \mathcal{A} | \Phi(a) = \text{true}\} \rightarrow \mathcal{A}$ replaces the node with an optimized AST subtree.
+    - A matching condition $\Phi: \mathcal{A} \rightarrow \{\text{true}, \text{false}\}$ determines whether a node requires optimization.
+    - A transformation rule $\tau: \{a \in \mathcal{A} | \Phi(a) = \text{true}\} \rightarrow \mathcal{A}$ replaces the node with an optimized AST subtree.
 
    Advantages of AST templates: (1) precise structural representation; (2) each template targets a single objective, making it concise and easy to generate; (3) modular selection to balance conflicting objectives. The LLM selects the application order of templates based on design requirements (not a fixed sequence), and a feedback loop allows re-selection upon failure.
 
 3. **FSM Control Flow Optimization (Symbolic System)**
 
    Minimizing a finite state machine $M = (Q, \Sigma, \delta, q_0, F)$ under partial specification is NP-complete ($O(2^{|Q|})$), making general-purpose AST scripts insufficient. Therefore:
-   - The LLM converts the circuit into a symbolic representation focused solely on FSM components (isolating states, transitions, and outputs).
-   - The LLM dynamically generates minimization scripts customized for the specific FSM structure and constraints, rather than applying a one-size-fits-all approach.
-   - Data-path constraints $\phi: Q \times D \rightarrow B$ are handled to prevent pure FSM optimization from ignoring data-path side effects.
+    - The LLM converts the circuit into a symbolic representation focused solely on FSM components (isolating states, transitions, and outputs).
+    - The LLM dynamically generates minimization scripts customized for the specific FSM structure and constraints, rather than applying a one-size-fits-all approach.
+    - Data-path constraints $\phi: Q \times D \rightarrow B$ are handled to prevent pure FSM optimization from ignoring data-path side effects.
 
 ### Loss & Training
 
@@ -168,8 +168,8 @@ Component ablation:
 
 - [\[NeurIPS 2025\] Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization](retrieval_is_not_enough_enhancing_rag_reasoning_through_test-time_critique_and_o.md)
 - [\[ACL 2026\] An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs](../../ACL2026/information_retrieval/an_iterative_utility_judgment_framework_inspired_by_philosophical_relevance_via_.md)
-- [\[NeurIPS 2025\] Is PRM Necessary? Problem-Solving RL Implicitly Induces PRM Capability in LLMs](is_prm_necessary_problem-solving_rl_implicitly_induces_prm_capability_in_llms.md)
 - [\[ACL 2026\] Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization](../../ACL2026/information_retrieval/enhancing_llm-based_search_agents_via_contribution_weighted_group_relative_polic.md)
+- [\[NeurIPS 2025\] Is PRM Necessary? Problem-Solving RL Implicitly Induces PRM Capability in LLMs](is_prm_necessary_problem-solving_rl_implicitly_induces_prm_capability_in_llms.md)
 - [\[AAAI 2026\] ComoRAG: A Cognitive-Inspired Memory-Organized RAG for Stateful Long Narrative Reasoning](../../AAAI2026/information_retrieval/comorag_a_cognitive-inspired_memory-organized_rag_for_stateful_long_narrative_re.md)
 
 </div>

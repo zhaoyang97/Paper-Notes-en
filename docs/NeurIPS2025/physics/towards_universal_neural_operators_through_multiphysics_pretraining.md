@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Universal Neural Operators through Multiphysics Pretraining
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][neural operator] This paper proposes an adapter-based multiphysics pretraining framework for neural operators. By treating lifting/projection layers as problem-specific adap…
+  [NeurIPS 2025][Physics & Scientific Computing][neural operator] This paper proposes an adapter-based multiphysics pretraining framework for neural operators. By treating lifting/projection layers as problem-specific adapters and freezing shared kernel integration operator layers, the framework enables transfer learning across PDE problems, substantially reducing fine-tuning cost while improving generalization.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "multiphysics"
   - "foundation model"
 date: 2026-05-08
-content_hash: b37a121c2551c025
+content_hash: f3c3e3b69d14c0f3
 ---
 
 # Towards Universal Neural Operators through Multiphysics Pretraining
@@ -164,10 +164,10 @@ Transfer from advection/Burgers equations to reaction-diffusion (PDEBench datase
 ## Related Papers
 
 - [\[ICML 2026\] Generative Neural Operators Through Diffusion Last Layer](../../ICML2026/physics/generative_neural_operators_through_diffusion_last_layer.md)
+- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](../../ICLR2026/physics/from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)
-- [\[NeurIPS 2025\] FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics](flashmd_long-stride_universal_prediction_of_molecular_dynamics.md)
+- [\[ICML 2025\] Universal Neural Optimal Transport](../../ICML2025/physics/universal_neural_optimal_transport.md)
 - [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
-- [\[NeurIPS 2025\] Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery](score-informed_neural_operator_for_enhancing_ordering-based_causal_discovery.md)
 
 </div>
 

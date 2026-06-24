@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning
 description: >-
-  [CVPR 2026][LLM Agent][Paper Note] This paper proposes WorldMM, a video reasoning agent based on multimodal memory. It constructs three complementary types of memory: episodic memory (multi-time-scale textual knowledge graph), semantic memory (continuously updated relational knowledge graph), and visual memory (frame-level retrieval library). Through an
+  [CVPR 2026][Video Understanding][Multimodal Memory] This paper proposes WorldMM, a video reasoning agent based on multimodal memory. It constructs three complementary types of memory: episodic memory (multi-time-scale textual knowledge graph), semantic memory (continuously updated relational knowledge graph), and visual memory (frame-level retrieval library). Through an adaptive multi-round retrieval agent, it dynamically selects the most relevant memory sources and temporal…
 tags:
-  - CVPR 2026
-  - LLM Agent
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multimodal Memory"
+  - "Long Video Understanding"
+  - "Adaptive Retrieval"
+  - "Knowledge Graph"
+  - "Multi-time-scale"
 date: 2026-05-08
-content_hash: bab07f964e492b0b
+content_hash: 3d65d767907f536f
 ---
+
 # WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ Effects of different memory combinations:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
-- [\[ECCV 2024\] VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding](../../ECCV2024/llm_agent/videoagent_a_memory-augmented_multimodal_agent_for_video_understanding.md)
-- [\[CVPR 2026\] ViLoMem: Agentic Learner with Grow-and-Refine Multimodal Semantic Memory](vilomem_agentic_learner_with_grow-and-refine_multimodal_semantic_memory.md)
-- [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
-- [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
+- [\[CVPR 2026\] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking](videoseek_long-horizon_video_agent_with_tool-guided_seeking.md)
+- [\[CVPR 2026\] SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration](svagent_storyline_guided_long_video_understanding_via_cross_modal_multi_agent_collaboration.md)
+- [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](../../ICML2026/video_understanding/video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
+- [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
+- [\[CVPR 2026\] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding](question-guided_visual_compression_with_memory_feedback_for_long-term_video_unde.md)
 
 </div>
 

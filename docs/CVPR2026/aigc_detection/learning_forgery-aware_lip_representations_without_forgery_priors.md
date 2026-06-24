@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Forgery-Aware Lip Representations Without Forgery Priors
 description: >-
-  [CVPR 2026][AIGC Detection][Paper Note] To address the vulnerability of speaker authentication systems to personalized Talking Face Generation (TFG) forgeries, this paper proposes a detector **trained solely on real videos without relying on any forgery samples**. By combining mixed-fake lip generation, asymmetric contrastive learning, and Gaussian regulariz
+  [CVPR 2026][AIGC Detection][Visual Speaker Authentication] To address the vulnerability of speaker authentication systems to personalized Talking Face Generation (TFG) forgeries, this paper proposes a detector **trained solely on real videos without relying on any forgery samples**. By combining mixed-fake lip generation, asymmetric contrastive learning, and Gaussian regularization, the real lip motion features are compressed into a compact hypersphere. Anything outside the s…
 tags:
-  - CVPR 2026
-  - AIGC Detection
+  - "CVPR 2026"
+  - "AIGC Detection"
+  - "Visual Speaker Authentication"
+  - "TFG Forgery"
+  - "No Forgery Priors"
+  - "Asymmetric Contrastive Learning"
+  - "Gaussian Distribution Matching"
 date: 2026-05-08
-content_hash: 6f6599a65123ab3f
+content_hash: 5d8f3455148a8175
 ---
+
 # Learning Forgery-Aware Lip Representations Without Forgery Priors
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ The default V variant uses zero human impostor data; V+HM injects a fixed ratio 
 
 ## Related Papers
 
-- [\[CVPR 2026\] ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation](realign_generalizable_image_forgery_detection_via_reasoning-aligned_representati.md)
+- [\[ICLR 2026\] Exploring Specular Reflection Inconsistency for Generalizable Face Forgery Detection](../../ICLR2026/aigc_detection/exploring_specular_reflection_inconsistency_for_generalizable_face_forgery_detec.md)
+- [\[CVPR 2026\] Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency](learning_where_to_look_and_how_to_judge_resolution-agnostic_image_quality_assess.md)
+- [\[ICLR 2026\] Preserving Forgery Artifacts: AI-Generated Video Detection at Native Scale](../../ICLR2026/aigc_detection/preserving_forgery_artifacts_ai-generated_video_detection_at_native_scale.md)
+- [\[CVPR 2026\] Investigating Self-Supervised Representations for Audio-Visual Deepfake Detection](investigating_self-supervised_representations_for_audio-visual_deepfake_detectio.md)
 - [\[CVPR 2026\] Inconsistency-aware Multimodal Schrodinger Bridge for Deepfake Localization](inconsistency-aware_multimodal_schrodinger_bridge_for_deepfake_localization.md)
-- [\[CVPR 2026\] Quality-Aware Calibration for AI-Generated Image Detection in the Wild](quality-aware_calibration_for_ai-generated_image_detection_in_the_wild.md)
-- [\[CVPR 2026\] Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks](fine-grained_image_aesthetic_assessment_learning_discriminative_scores_from_rela.md)
-- [\[ACL 2025\] Learning to Rewrite: Generalized LLM-Generated Text Detection](../../ACL2025/aigc_detection/learning_to_rewrite_generalized_llm-generated_text_detection.md)
 
 </div>
 

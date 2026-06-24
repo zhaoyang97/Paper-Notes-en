@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TaskCraft: Automated Generation of Agentic Tasks
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] TaskCraft proposes the first workflow for fully automated generation of scalable, multi-tool, and verifiable agentic tasks. It starts by creating single-tool "atomic tasks," then incrementally increases difficulty through depth expansion (recursively finding supersets) and breadth expansion (merging subtasks), compleme
+  [ICLR 2026][LLM Agent][agentic task generation] TaskCraft proposes the first workflow for fully automated generation of scalable, multi-tool, and verifiable agentic tasks. It starts by creating single-tool "atomic tasks," then incrementally increases difficulty through depth expansion (recursively finding supersets) and breadth expansion (merging subtasks), complemented by an efficient incremental verification process that only checks changes. This yields 41k tool-intensive t…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "agentic task generation"
+  - "tool calling"
+  - "multi-hop reasoning"
+  - "rejection sampling"
+  - "controllable difficulty"
 date: 2026-05-08
-content_hash: a6399ec813ded57c
+content_hash: caf21d65c98a9576
 ---
+
 # TaskCraft: Automated Generation of Agentic Tasks
 
 **Conference**: ICLR 2026  
@@ -144,10 +150,10 @@ Prompt learning improved the atomic task pass rate from 54.9% to 68.1%.
 
 ## Related Papers
 
+- [\[ICLR 2026\] ROGA: Scaling Generalist Agents for Office Productivity Tasks via Tool Generation](roga_scaling_generalist_agents_for_office_productivity_tasks_via_tool_generation.md)
 - [\[ICLR 2026\] ToolACE-MT: Non-Autoregressive Generation for Agentic Multi-Turn Interaction](toolace-mt_non-autoregressive_generation_for_agentic_multi-turn_interaction.md)
 - [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
 - [\[ICLR 2026\] MATHMO: Automated Mathematical Modeling Through Adaptive Search](mathmo_automated_mathematical_modeling_through_adaptive_search.md)
-- [\[ACL 2026\] Supplement Generation Training for Enhancing Agentic Task Performance](../../ACL2026/llm_agent/supplement_generation_training_for_enhancing_agentic_task_performance.md)
 - [\[ICLR 2026\] WebFactory: Automated Compression of Foundational Language Intelligence into Grounded Web Agents](webfactory_automated_compression_of_foundational_language_intelligence_into_grou.md)
 
 </div>

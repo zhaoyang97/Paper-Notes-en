@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Safety][dynamic benchmark] This paper proposes ATAD (Agent-Centric Text Anomaly Detection), which replaces static benchmarks with a Teacher-Orchestrator-Student three-agent competition and verification loop. Using text anomaly detection as the task format, it achieves difficulty self-calibration and dynamically evolving LLM reasoning evaluation—
+  [ICLR 2026][LLM Safety][dynamic benchmark] This paper proposes ATAD (Agent-Centric Text Anomaly Detection), which replaces static benchmarks with a Teacher-Orchestrator-Student three-agent competition and verification loop. Using text anomaly detection as the task format, it achieves difficulty self-calibration and dynamically evolving LLM reasoning evaluation—the average accuracy of all tested LLMs is only 54-59% (significantly lower than the 90%+ on static benchmarks)…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - dynamic benchmark
-  - text anomaly detection
-  - agent-centric evaluation
-  - LLM reasoning
-  - teacher-student
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "dynamic benchmark"
+  - "text anomaly detection"
+  - "agent-centric evaluation"
+  - "LLM reasoning"
+  - "teacher-student"
 date: 2026-05-08
-content_hash: 68a36bd27ed249b3
+content_hash: 53ef1b76d136867d
 ---
+
 # From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -154,9 +155,9 @@ All three roles can be swapped for different models, allowing the same protocol 
 
 - [\[ICLR 2026\] A2ASecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems](a2asecbench_a_protocol-aware_security_benchmark_for_agent-to-agent_multi-agent_s.md)
 - [\[ICLR 2026\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
+- [\[ICLR 2026\] TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness](trustgen_a_platform_of_dynamic_benchmarking_on_the_trustworthiness_of_generative.md)
+- [\[ICLR 2026\] WaterDrum: Watermark-based Data-centric Unlearning Metric](waterdrum_watermark-based_data-centric_unlearning_metric.md)
 - [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
-- [\[ICLR 2026\] Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning](veritas_generalizable_deepfake_detection_via_pattern-aware_reasoning.md)
-- [\[ICLR 2026\] Breaking Agent Backbones: Evaluating the Security of Backbone LLMs in AI Agents](breaking_agent_backbones_evaluating_the_security_of_backbone_llms_in_ai_agents.md)
 
 </div>
 

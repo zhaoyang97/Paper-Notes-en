@@ -4,13 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][Video Generation][Lottie] OmniLottie proposes a Lottie Tokenizer that converts Lottie JSON files into structured command-parameter sequences. This enables pre-trained VLMs to generate high-quality vector animations based on multi-modal cross-instructions. The work also constructs the MMLottie-2M large-scale dataset to support training.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Lottie
-  - tokenization
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Lottie"
+  - "Vector Animation"
+  - "tokenization"
+  - "Multi-modal instruction"
+  - "VLM generation"
 date: 2026-05-08
-content_hash: 822c6fae32c9bee0
+content_hash: 7b2ba7cf3a59d11a
 ---
+
 # OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens
 
 **Conference**: CVPR 2026  
@@ -130,9 +134,9 @@ Data: The authors crawled Lottie animations from platforms like LottieFiles, Ico
 
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](lottiegpt_vector_animation_generation.md)
 - [\[CVPR 2026\] Vector Prism: Animating Vector Graphics by Stratifying Semantic Structure](vector_prism_animating_vector_graphics_by_stratifying_semantic_structure.md)
-- [\[CVPR 2026\] Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos](ego-inbetween_generating_object_state_transitions_in_ego-centric_videos.md)
+- [\[CVPR 2026\] Generating Humanless Environment Walkthroughs from Egocentric Walking Tour Videos](generating_humanless_environment_walkthroughs_from_egocentric_walking_tour_video.md)
 - [\[CVPR 2026\] A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)
-- [\[CVPR 2026\] YOSE: You Only Select Essential Tokens for Efficient DiT-based Video Object Removal](yose_you_only_select_essential_tokens_for_efficient_dit-based_video_object_remov.md)
+- [\[CVPR 2026\] Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos](ego-inbetween_generating_object_state_transitions_in_ego-centric_videos.md)
 
 </div>
 

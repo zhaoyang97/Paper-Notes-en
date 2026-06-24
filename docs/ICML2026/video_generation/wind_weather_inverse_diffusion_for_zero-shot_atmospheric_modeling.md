@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] WIND: Weather Inverse Diffusion for Zero-Shot Atmospheric Modeling
 description: >-
-  [ICML 2026][Video Generation][diffusion forcing] WIND models the global atmospheric sequence as an unconditional video diffusion prior. During inference, it formulates forecasting, downscaling, sparse reconstruction, mass conservation, and warming scenarios as differentiable inverse problems, solving multiple classes of weather and climate tasks zero-shot using a sin
+  [ICML2026][Video Generation][Meteorological foundation models] WIND models the global atmospheric sequence as an unconditional video diffusion prior. During inference, it formulates forecasting, downscaling, sparse reconstruction, mass conservation, and warming scenarios as differentiable inverse problems, solving multiple classes of weather and climate tasks zero-shot using a single frozen model.
 tags:
-  - ICML 2026
-  - Video Generation
-  - diffusion forcing
-  - posterior sampling
+  - "ICML2026"
+  - "Video Generation"
+  - "Meteorological foundation models"
+  - "inverse problems"
+  - "diffusion forcing"
+  - "posterior sampling"
+  - "physical constraints"
 date: 2026-05-08
-content_hash: dac4250e3001a8e2
+content_hash: fdb7eda7949101e5
 ---
+
 # WIND: Weather Inverse Diffusion for Zero-Shot Atmospheric Modeling
 
 **Conference**: ICML2026  
@@ -130,11 +134,11 @@ The main results demonstrate the model's cross-task capability rather than a sin
 
 ## Related Papers
 
-- [\[CVPR 2025\] Zero-1-to-A: Zero-Shot One Image to Animatable Head Avatars Using Video Diffusion](../../CVPR2025/video_generation/zero-1-to-a_zero-shot_one_image_to_animatable_head_avatars_using_video_diffusion.md)
 - [\[CVPR 2026\] Scaling Zero-Shot Reference-to-Video Generation](../../CVPR2026/video_generation/scaling_zero-shot_reference-to-video_generation.md)
-- [\[CVPR 2026\] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives](../../CVPR2026/video_generation/storytailora_zero-shot_pipeline_for_action-rich_multi-subject_visual_narratives.md)
+- [\[CVPR 2025\] Zero-1-to-A: Zero-Shot One Image to Animatable Head Avatars Using Video Diffusion](../../CVPR2025/video_generation/zero-1-to-a_zero-shot_one_image_to_animatable_head_avatars_using_video_diffusion.md)
 - [\[CVPR 2026\] Are Image-to-Video Models Good Zero-Shot Image Editors?](../../CVPR2026/video_generation/are_image-to-video_models_good_zero-shot_image_editors.md)
-- [\[ECCV 2024\] DreamMotion: Space-Time Self-Similar Score Distillation for Zero-Shot Video Editing](../../ECCV2024/video_generation/dreammotion_space-time_self-similar_score_distillation_for_zero-shot_video_editi.md)
+- [\[CVPR 2026\] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives](../../CVPR2026/video_generation/storytailora_zero-shot_pipeline_for_action-rich_multi-subject_visual_narratives.md)
+- [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](../../CVPR2026/video_generation/towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
 
 </div>
 

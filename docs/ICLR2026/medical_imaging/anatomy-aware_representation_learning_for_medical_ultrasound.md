@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anatomy-aware Representation Learning for Medical Ultrasound
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] Addressing the three main characteristics of medical ultrasound (US)—heavy speckle texture, singular grayscale color, and organ-specific features—this paper constructs a large-scale ultrasound dataset of 5.2 million images. It proposes an anatomy-aware A-ViT (centered on "Anatomy-Conditional Deformable Transformer", AC
+  [ICLR2026][Medical Imaging][Medical Ultrasound] Addressing the three main characteristics of medical ultrasound (US)—heavy speckle texture, singular grayscale color, and organ-specific features—this paper constructs a large-scale ultrasound dataset of 5.2 million images. It proposes an anatomy-aware A-ViT (centered on "Anatomy-Conditional Deformable Transformer", ACDT) coupled with a triple self-supervised objective of "masked reconstruction + adversarial + self-distillation.…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Medical Ultrasound"
+  - "Self-Supervised Representation Learning"
+  - "Anatomy-aware"
+  - "Deformable Transformer"
+  - "Speckle Preservation"
 date: 2026-05-08
-content_hash: 39712155a85dee18
+content_hash: 7f5255afeee4e21e
 ---
+
 # Anatomy-aware Representation Learning for Medical Ultrasound
 
 **Conference**: ICLR2026  
@@ -149,10 +155,10 @@ Ablations on breast cancer classification (Table 3) clarify the contribution of 
 ## Related Papers
 
 - [\[ICLR 2026\] MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning](medgmae_gaussian_masked_autoencoders_for_medical_volumetric_representation_learn.md)
+- [\[ICLR 2026\] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning](stochastic_optimal_control_for_continuous-time_fmri_representation_learning.md)
 - [\[ICLR 2026\] CortiLife: A Unified Framework for Cortical Representation Learning across the Lifespan](cortilife_a_unified_framework_for_cortical_representation_learning_across_the_li.md)
-- [\[CVPR 2026\] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](../../CVPR2026/medical_imaging/ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)
 - [\[ICML 2026\] Which Anatomy Matters Under Limited Labels? A Data-Efficient Anatomy-Aware Benchmark for Cardiac Pathology Prediction](../../ICML2026/medical_imaging/which_anatomy_matters_under_limited_labels_a_data-efficient_anatomy-aware_benchm.md)
-- [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](../../AAAI2026/medical_imaging/multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
+- [\[CVPR 2026\] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](../../CVPR2026/medical_imaging/ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)
 
 </div>
 

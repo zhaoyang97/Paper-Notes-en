@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] By introducing four view alignment strategies — edge-aware image supervision, visibility-aware multi-view photometric alignment, normal consistency constraints…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] By introducing four view alignment strategies — edge-aware image supervision, visibility-aware multi-view photometric alignment, normal consistency constraints, and depth image feature alignment — VA-GS significantly improves the geometric representation accuracy of 3D Gaussian Splatting, achieving state-of-the-art performance in surface reconstruction and novel view synthesis.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "normal consistency"
   - "geometric representation"
 date: 2026-05-08
-content_hash: dcebf2de4ddeeee0
+content_hash: eedfc72abcba88f6
 ---
 
 # VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment
@@ -139,11 +139,11 @@ Training proceeds in stages:
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] SceneForge: Enhancing 3D-text alignment with Structured Scene Compositions](sceneforge_enhancing_3d-text_alignment_with_structured_scene_compositions.md)
 - [\[ICCV 2025\] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting](../../ICCV2025/3d_vision/clip-gs_unifying_vision-language_representation_with_3d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene](haif-gs_hierarchical_and_induced_flow-guided_gaussian_splatting_for_dynamic_scen.md)
-- [\[NeurIPS 2025\] SceneForge: Enhancing 3D-text alignment with Structured Scene Compositions](sceneforge_enhancing_3d-text_alignment_with_structured_scene_compositions.md)
 - [\[NeurIPS 2025\] Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting](quantifying_and_alleviating_co-adaptation_in_sparse-view_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](../../CVPR2026/3d_vision/dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
+- [\[CVPR 2025\] POp-GS: Next Best View in 3D-Gaussian Splatting with P-Optimality](../../CVPR2025/3d_vision/pop-gs_next_best_view_in_3d-gaussian_splatting_with_p-optimality.md)
 
 </div>
 

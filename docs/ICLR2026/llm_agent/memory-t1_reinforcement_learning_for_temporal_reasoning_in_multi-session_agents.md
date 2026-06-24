@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents
 description: >-
-  [ICLR 2026][LLM Agent][GRPO] Memory-T1 models the problem of "which memory to retrieve" in multi-session dialogues as a time-aware evidence selection task. It employs a coarse-to-fine filtering process using temporal windows and relevance retrieval, followed by a policy model trained with GRPO to select evidence from candidate sessions and generat
+  [ICLR2026][LLM Agent][Multi-session Agent] Memory-T1 models the problem of "which memory to retrieve" in multi-session dialogues as a time-aware evidence selection task. It employs a coarse-to-fine filtering process using temporal windows and relevance retrieval, followed by a policy model trained with GRPO to select evidence from candidate sessions and generate answers. This allows 3B/7B open-source models to achieve an overall score of approximately 67% on the Time-Dialog t…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GRPO
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Multi-session Agent"
+  - "Temporal Reasoning"
+  - "Memory Retrieval"
+  - "GRPO"
+  - "Reward Design"
 date: 2026-05-08
-content_hash: aff2783a27bbdbbe
+content_hash: f7eea557e91cdf57
 ---
+
 # Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents
 
 **Conference**: ICLR2026  
@@ -170,7 +175,7 @@ Ablation of rewards shows that the performance gain of Memory-T1 stems from mult
 - [\[ACL 2026\] Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning](../../ACL2026/llm_agent/temp-r1_a_unified_autonomous_agent_for_complex_temporal_kgqa_via_reverse_curricu.md)
 - [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
 - [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](../../AAAI2026/llm_agent/moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
-- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
+- [\[ICLR 2026\] REMem: Reasoning with Episodic Memory in Language Agents](remem_reasoning_with_episodic_memory_in_language_agent.md)
 
 </div>
 

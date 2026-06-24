@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Private and Stable Test-Time Adaptation with Differential Privacy
 description: >-
-  [ICML 2026][Others][Test-Time Adaptation] This paper is the first to point out that Test-Time Adaptation (TTA) leads to leakage of test data privacy. It systematically transforms five mainstream TTA methods (Tent, EATA, SAR, DeYO, and COME) into differentially private (DP) versions using per-sample gradient clipping and Gaussian noise. On ImageNet-C, it provid
+  [ICML 2026][Test-Time Adaptation] This paper is the first to point out that Test-Time Adaptation (TTA) leads to leakage of test data privacy. It systematically transforms five mainstream TTA methods (Tent, EATA, SAR, DeYO, and COME) into differentially private (DP) versions using per-sample gradient clipping and Gaussian noise. On ImageNet-C, it provides provable $(\epsilon, \delta)$-DP guarantees and unexpectedly finds that "clipping itself" improves TTA accuracy by $0.1\%$–…
 tags:
-  - ICML 2026
-  - Others
-  - Test-Time Adaptation
-  - Differential Privacy
-  - DP-SGD
-  - Per-Sample Clipping
-  - ImageNet-C
+  - "ICML 2026"
+  - "Test-Time Adaptation"
+  - "Differential Privacy"
+  - "DP-SGD"
+  - "Per-Sample Clipping"
+  - "ImageNet-C"
 date: 2026-05-08
-content_hash: 9b9e71515790b6e6
+content_hash: 4ecdb9ff9b76ae3e
 ---
+
 # Private and Stable Test-Time Adaptation with Differential Privacy
 
 **Conference**: ICML 2026  
@@ -140,9 +140,9 @@ Comparison with and without per-sample clipping (zero DP noise) on ImageNet-C co
 
 - [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
+- [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](../../ICLR2026/others/prior-free_tabular_test-time_adaptation.md)
 - [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](../../NeurIPS2025/others/test-time_adaptation_by_causal_trimming.md)
 - [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](../../CVPR2026/others/witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
-- [\[ICML 2026\] Test-Time Training with KV Binding Is Secretly Linear Attention](test-time_training_with_kv_binding_is_secretly_linear_attention.md)
 
 </div>
 

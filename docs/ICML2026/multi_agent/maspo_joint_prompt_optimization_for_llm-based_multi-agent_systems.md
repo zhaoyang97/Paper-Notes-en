@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] MASPO end-to-end jointly optimizes role prompts for multi-agent chains without relying on labels through multi-granularity joint evaluation (Local Validity + Lookahead Potential + Global Alignment) and misalignment-driven evolutionary beam search, achieving an average improvement of approximately 2.9 points across 6 ta
+  [ICML 2026][Multi-Agent][Multi-Agent Systems] MASPO end-to-end jointly optimizes role prompts for multi-agent chains without relying on labels through multi-granularity joint evaluation (Local Validity + Lookahead Potential + Global Alignment) and misalignment-driven evolutionary beam search, achieving an average improvement of approximately 2.9 points across 6 tasks.
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "Multi-Agent Systems"
+  - "Joint Prompt Optimization"
+  - "Credit Assignment"
+  - "Evolutionary Beam Search"
+  - "Misalignment Sampling"
 date: 2026-05-08
-content_hash: b73cadd7533021f1
+content_hash: 8657eb96a3ecb507
 ---
+
 # MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems
 
 **Conference**: ICML 2026  
@@ -129,11 +135,11 @@ The most significant gain occurs in GPQA: MASPO outperforms SPO by 8.56 points o
 
 ## Related Papers
 
+- [\[ICML 2026\] MASPOB: Multi-Agent Prompt Optimization via GNN Surrogate + LinUCB + Coordinate Ascent](maspob_bandit-based_prompt_optimization_for_multi-agent_systems_with_graph_neura.md)
 - [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](../../ACL2026/multi_agent/conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 - [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](../../ACL2026/multi_agent/atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
 - [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
 - [\[NeurIPS 2025\] R&D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization](../../NeurIPS2025/multi_agent/rd-agent-quant_a_multi-agent_framework_for_data-centric_factors_and_model_joint_.md)
-- [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](../../ICLR2026/multi_agent/adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
 
 </div>
 

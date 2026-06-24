@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models
 description: >-
-  [CVPR 2026][Model Compression][Diffusion Model] DMGD decouples "diffusion-based dataset distillation" into two independent objectives: semantic matching and distribution matching. It injects train-free guidance exclusively during the **sampling stage**. By utilizing dynamic soft labels to enhance diversity and Optimal Transport (OT) loss to align distribution struct
+  [CVPR 2026][Model Compression][Dataset Distillation] DMGD decouples "diffusion-based dataset distillation" into two independent objectives: semantic matching and distribution matching. It injects train-free guidance exclusively during the **sampling stage**. By utilizing dynamic soft labels to enhance diversity and Optimal Transport (OT) loss to align distribution structures, it outperforms fine-tuning-based SOTA methods on ImageNet-Woof/Nette/1K by an average of 2.1%/5.4%/2.…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Diffusion Models"
+  - "Train-Free Guidance"
+  - "Optimal Transport"
+  - "Dynamic Soft Labels"
 date: 2026-05-08
-content_hash: ef9eff5914f7182f
+content_hash: e34c089cd6a30951
 ---
+
 # DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -148,15 +153,16 @@ Component ablation (ResNet10-AP Top-1; SM=Semantic Matching, DM=OT Distribution 
 - Value: ⭐⭐⭐⭐⭐ (Highly practical for resource-constrained distillation).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
+- [\[CVPR 2026\] ManifoldGD: Training-Free Hierarchical Manifold Guidance for Diffusion-Based Dataset Distillation](manifoldgd_training-free_hierarchical_manifold_guidance_for_diffusion-based_data.md)
 - [\[CVPR 2026\] Dataset Distillation by Influence Matching](dataset_distillation_by_influence_matching.md)
 - [\[CVPR 2026\] IMS3: Breaking Distributional Aggregation in Diffusion-Based Dataset Distillation](ims3_breaking_distributional_aggregation_in_diffusion-based_dataset_distillation.md)
 - [\[CVPR 2026\] Beyond Soft Label: Dataset Distillation via Orthogonal Gradient Matching](beyond_soft_label_dataset_distillation_via_orthogonal_gradient_matching.md)
-- [\[CVPR 2026\] Balanced Dataset Distillation via Modeling Multiple Visual Pattern Distribution](balanced_dataset_distillation_via_modeling_multiple_visual_pattern_distribution.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Scaling Up Active Testing to Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][active testing] By introducing three key simplifications—constructing a fixed surrogate model via in-context learning, using a small surrogate model to evaluate a large target model…
+  [NeurIPS 2025][LLM (Other)][active testing] By introducing three key simplifications—constructing a fixed surrogate model via in-context learning, using a small surrogate model to evaluate a large target model, and eliminating the need for target model predictions during data acquisition—this work scales active testing to LLMs, reducing risk estimation error by 25%–80% relative to random sampling.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "active testing"
   - "LLM evaluation"
   - "risk estimation"
   - "surrogate model"
   - "label efficiency"
 date: 2026-05-08
-content_hash: 45136d23ec8130bf
+content_hash: 8b66e3db1c99aeec
 ---
 
 # Scaling Up Active Testing to Large Language Models
@@ -146,11 +146,11 @@ The 95% confidence interval achieves a true error coverage rate of **88%** (reac
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](solving_inequality_proofs_with_large_language_models.md)
-- [\[ICML 2026\] Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models](../../ICML2026/llm_nlp/resting_neurons_active_insights_robustify_activation_sparsity_for_large_language.md)
-- [\[NeurIPS 2025\] The Rise of Parameter Specialization for Knowledge Storage in Large Language Models](the_rise_of_parameter_specialization_for_knowledge_storage_in_large_language_mod.md)
-- [\[NeurIPS 2025\] GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models](geocad_local_geometry-controllable_cad_generation_with_large_language_models.md)
+- [\[ACL 2025\] Genetic Instruct: Scaling up Synthetic Generation of Coding Instructions for Large Language Models](../../ACL2025/llm_nlp/genetic_instruct_scaling_up_synthetic_generation_of_coding_instructions_for_larg.md)
+- [\[ACL 2025\] LESA: Learnable LLM Layer Scaling-Up](../../ACL2025/llm_nlp/lesa_learnable_llm_layer_scaling-up.md)
 - [\[NeurIPS 2025\] PluralisticBehaviorSuite: Stress-Testing Multi-Turn Adherence to Custom Behavioral Policies](pluralistic_behavior_suite_stress-testing_multi-turn_adherence_to_custom_behavio.md)
+- [\[ACL 2025\] Reversal of Thought: Enhancing Large Language Models with Preference-Guided Reverse Reasoning Warm-up](../../ACL2025/llm_nlp/reversal_of_thought_enhancing_large_language.md)
+- [\[NeurIPS 2025\] The Rise of Parameter Specialization for Knowledge Storage in Large Language Models](the_rise_of_parameter_specialization_for_knowledge_storage_in_large_language_mod.md)
 
 </div>
 

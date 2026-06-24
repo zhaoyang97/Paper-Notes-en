@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AdapTok: Learning Adaptive and Temporally Causal Video Tokenization in a 1D Latent Space
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] AdapTok encodes video into a **temporally causal 1D discrete token sequence**. During training, it learns "variable-length" representations by randomly dropping tail tokens in blocks. During inference, a scorer predicts "reconstruction quality for $N$ tokens," and Integer Linear Programming (ILP) dynamically allocates
+  [CVPR 2026][Video Generation][Video tokenization] AdapTok encodes video into a **temporally causal 1D discrete token sequence**. During training, it learns "variable-length" representations by randomly dropping tail tokens in blocks. During inference, a scorer predicts "reconstruction quality for $N$ tokens," and Integer Linear Programming (ILP) dynamically allocates tokens to different frames or samples under a fixed total budget. This achieves rFVD=28 reconstruction on UCF-…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video tokenization"
+  - "1D latent space"
+  - "temporal causality"
+  - "adaptive token allocation"
+  - "integer programming"
 date: 2026-05-08
-content_hash: 4d8504c3e4cf777b
+content_hash: 8bca65be1587e36e
 ---
+
 # AdapTok: Learning Adaptive and Temporally Causal Video Tokenization in a 1D Latent Space
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,16 @@ Comparison of allocation strategies (Avg. 1024 tokens):
 - Value: ⭐⭐⭐⭐⭐ High practical value for world models and long-video generation where token efficiency is paramount.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FlashPortrait: 6× Faster Infinite Portrait Animation with Adaptive Latent Prediction](flashportrait_6x_faster_infinite_portrait_animation_with_adaptive_latent_predict.md)
+- [\[CVPR 2026\] SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time](spacetimepilot_generative_rendering_of_dynamic_scenes_across_space_and_time.md)
+- [\[CVPR 2026\] Flowception: Temporally Expansive Flow Matching for Video Generation](flowception_temporally_expansive_flow_matching_for_video_generation.md)
 - [\[CVPR 2026\] Chain of Event-Centric Causal Thought for Physically Plausible Video Generation](chain_of_event-centric_causal_thought_for_physically_plausible_video_generation.md)
 - [\[CVPR 2025\] Learning Temporally Consistent Video Depth from Video Diffusion Priors](../../CVPR2025/video_generation/learning_temporally_consistent_video_depth_from_video_diffusion_priors.md)
-- [\[ICCV 2025\] NormalCrafter: Learning Temporally Consistent Normals from Video Diffusion Priors](../../ICCV2025/video_generation/normalcrafter_learning_temporally_consistent_normals_from_video_diffusion_priors.md)
-- [\[CVPR 2026\] OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory](onestory_coherent_multi-shot_video_generation_with_adaptive_memory.md)
 
 </div>
 

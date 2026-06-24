@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LayerSync: Self-aligning Intermediate Layers
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] LayerSync discovers that deep intermediate representations of diffusion Transformers can inherently serve as semantic teachers. Through parameter-free inter-layer cosine alignment, it encourages shallower layers to align with stronger representative layers, enhancing generation quality and accelerating training without
+  [ICLR 2026][Image Generation][Diffusion Models] LayerSync discovers that deep intermediate representations of diffusion Transformers can inherently serve as semantic teachers. Through parameter-free inter-layer cosine alignment, it encourages shallower layers to align with stronger representative layers, enhancing generation quality and accelerating training without relying on external models or extra data, and generalizes to image, audio, video, and human motion generation.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Mid-layer Alignment"
+  - "Self-supervised Regularization"
+  - "Training Acceleration"
+  - "Representation Learning"
 date: 2026-05-08
-content_hash: 25d2f765ac3d4d71
+content_hash: 1d4682fd5501e2d1
 ---
+
 # LayerSync: Self-aligning Intermediate Layers
 
 **Conference**: ICLR 2026  

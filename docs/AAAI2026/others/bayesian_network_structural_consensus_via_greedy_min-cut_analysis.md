@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis
 description: >-
-  [AAAI 2026][Bayesian network] This paper proposes the MCBNC algorithm, which quantifies the structural support of each edge via min-cut analysis and embeds this scoring into the backward phase of Greedy Equivalence Searc…
+  [AAAI 2026][Bayesian network] This paper proposes the MCBNC algorithm, which quantifies the structural support of each edge via min-cut analysis and embeds this scoring into the backward phase of Greedy Equivalence Search (GES) to iteratively prune redundant edges from a fused Bayesian network. The method produces sparser and more accurate consensus structures without accessing any data, making it well-suited for federated learning scenarios.
 tags:
   - "AAAI 2026"
   - "Bayesian network"
@@ -14,7 +14,7 @@ tags:
   - "federated learning"
   - "treewidth"
 date: 2026-05-08
-content_hash: 395b2d317cda2439
+content_hash: 586374f06349878c
 ---
 
 # Bayesian Network Structural Consensus via Greedy Min-Cut Analysis
@@ -146,9 +146,9 @@ MCBNC is several orders of magnitude faster than genetic-algorithm-based methods
 ## Related Papers
 
 - [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
-- [\[ICLR 2026\] Federated ADMM from Bayesian Duality](../../ICLR2026/others/federated_admm_from_bayesian_duality.md)
-- [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](hybridla_hybrid_generation_for_document_layout_analysis.md)
+- [\[ICML 2025\] Continuous-Time Analysis of Heavy Ball Momentum in Min-Max Games](../../ICML2025/others/continuous-time_analysis_of_heavy_ball_momentum_in_min-max_games.md)
 - [\[AAAI 2026\] Learning Network Dismantling Without Handcrafted Inputs](learning_network_dismantling_without_handcrafted_inputs.md)
+- [\[ICLR 2026\] Federated ADMM from Bayesian Duality](../../ICLR2026/others/federated_admm_from_bayesian_duality.md)
 - [\[AAAI 2026\] Optimal Welfare in Noncooperative Network Formation under Attack](optimal_welfare_in_noncooperative_network_formation_under_attack.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Immunizing Models Against Harmful Long-Horizon Fine-Tuning via Contractive Optimization Dynamics
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper proposes CLAMP, a model immunization method against "long-horizon harmful fine-tuning." Instead of merely shaping the geometry of initial weights, it "contracts" the attacker's entire optimization trajectory—ensuring each update step is smaller than the last. This provides a closed-form upper bound on the at
+  [CVPR 2026][AI Safety][Model Immunization] This paper proposes CLAMP, a model immunization method against "long-horizon harmful fine-tuning." Instead of merely shaping the geometry of initial weights, it "contracts" the attacker's entire optimization trajectory—ensuring each update step is smaller than the last. This provides a closed-form upper bound on the attainable gain from step 0 to infinity. It maintains defenses across classification, generation…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Model Immunization"
+  - "Harmful Fine-tuning"
+  - "Contractive Dynamics"
+  - "Bilevel Optimization"
+  - "Hessian-Free"
 date: 2026-05-08
-content_hash: ee9e4345f47bb713
+content_hash: 18dc9b197672bc87
 ---
+
 # Immunizing Models Against Harmful Long-Horizon Fine-Tuning via Contractive Optimization Dynamics
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ The core differentiator is whether immunization strength decays over training ti
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fine-Tuning Impairs the Balancedness of Foundation Models in Long-tailed Personalized Federated Learning](fine-tuning_impairs_the_balancedness_of_foundation_models_in_long-tailed_persona.md)
-- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
+- [\[ICLR 2026\] Eliciting Harmful Capabilities by Fine-Tuning on Safeguarded Outputs](../../ICLR2026/ai_safety/eliciting_harmful_capabilities_by_fine-tuning_on_safeguarded_outputs.md)
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
+- [\[ICML 2026\] From Parameter Dynamics to Risk Scoring: Quantifying Sample-Level Safety Degradation in LLM Fine-tuning](../../ICML2026/ai_safety/from_parameter_dynamics_to_risk_scoring_quantifying_sample-level_safety_degradat.md)
+- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
 - [\[CVPR 2026\] JANUS: A Lightweight Framework for Jailbreaking Text-to-Image Models via Distribution Optimization](janus_a_lightweight_framework_for_jailbreaking_text-to-image_models_via_distribu.md)
-- [\[CVPR 2026\] Taming Noise-Induced Prototype Degradation for Privacy-Preserving Personalized Federated Fine-Tuning](taming_noise-induced_prototype_degradation_for_privacy-preserving_personalized_f.md)
 
 </div>
 

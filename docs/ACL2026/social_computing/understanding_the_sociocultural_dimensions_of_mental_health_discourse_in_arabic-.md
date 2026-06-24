@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding the Sociocultural Dimensions of Mental Health Discourse in Arabic-Language X Communities
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This paper employs a GPT-4.1 self-disclosure identification pipeline to filter 8,147 tweets from "lived-experience" authors across three Arabic X (formerly Twitter) mental health communities. Utilizing weighted log-odds, NMF topic modeling, and a six-domain cultural keyword framework, the study characterizes discursive
+  [ACL2026][Social Computing][Arabic Mental Health] This paper employs a GPT-4.1 self-disclosure identification pipeline to filter 8,147 tweets from "lived-experience" authors across three Arabic X (formerly Twitter) mental health communities. Utilizing weighted log-odds, NMF topic modeling, and a six-domain cultural keyword framework, the study characterizes discursive differences in Borderline Personality Disorder (BPD), Bipolar Disorder, and ADHD communities across dimension…
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL2026"
+  - "Social Computing"
+  - "Arabic Mental Health"
+  - "Self-Disclosure Identification"
+  - "Cultural Keywords"
+  - "Weighted Log-Odds"
+  - "LLM Annotation"
 date: 2026-05-08
-content_hash: 921fcea5b3ebafdf
+content_hash: a21c41b59dec1592
 ---
+
 # Understanding the Sociocultural Dimensions of Mental Health Discourse in Arabic-Language X Communities
 
 **Conference**: ACL2026  
@@ -121,8 +127,8 @@ Note: This paper does not focus on leaderboards; the core output is the comparat
 
 - [\[ACL 2026\] Splits! Flexible Sociocultural Linguistic Investigation at Scale](splits_flexible_sociocultural_linguistic_investigation_at_scale.md)
 - [\[ICLR 2026\] From Five Dimensions to Many: Large Language Models as Precise and Interpretable Psychological Profilers](../../ICLR2026/social_computing/from_five_dimensions_to_many_large_language_models_as_precise_and_interpretable_.md)
-- [\[ACL 2026\] Beyond the Crowd: LLM-Augmented Community Notes for Governing Health Misinformation](beyond_the_crowd_llm-augmented_community_notes_for_governing_health_misinformati.md)
 - [\[ACL 2026\] Building Arabic NLP from the Ground Up: Twenty Years of Lessons, Failures, and Open Problems](building_arabic_nlp_from_the_ground_up_twenty_years_of_lessons_failures_and_open.md)
+- [\[ACL 2026\] Beyond the Crowd: LLM-Augmented Community Notes for Governing Health Misinformation](beyond_the_crowd_llm-augmented_community_notes_for_governing_health_misinformati.md)
 - [\[NeurIPS 2025\] DeepTraverse: A Depth-First Search Inspired Network for Algorithmic Visual Understanding](../../NeurIPS2025/social_computing/deeptraverse_a_depth-first_search_inspired_network_for_algorithmic_visual_unders.md)
 
 </div>

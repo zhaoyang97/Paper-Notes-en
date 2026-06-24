@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Predict and Resist: Long-Term Accident Anticipation under Sensor Noise
 description: >-
-  [AAAI 2026][accident anticipation] A unified framework is proposed that integrates a diffusion-based dual-level denoising module with a temporally-aware Actor-Critic reinforcement learning model to enable robust long-ter…
+  [AAAI 2026][accident anticipation] A unified framework is proposed that integrates a diffusion-based dual-level denoising module with a temporally-aware Actor-Critic reinforcement learning model to enable robust long-term traffic accident anticipation under sensor noise, achieving state-of-the-art performance on three benchmark datasets in terms of both average precision (AP) and mean time-to-accident (mTTA).
 tags:
   - "AAAI 2026"
   - "accident anticipation"
@@ -11,7 +11,7 @@ tags:
   - "sensor noise"
   - "long-term temporal reasoning"
 date: 2026-05-08
-content_hash: 9f7be8debddf618f
+content_hash: 79742c08f6bc4a76
 ---
 
 # Predict and Resist: Long-Term Accident Anticipation under Sensor Noise
@@ -214,11 +214,11 @@ Consistent with the trend of applying diffusion models to perception tasks (e.g.
 
 ## Related Papers
 
+- [\[ECCV 2024\] Non-parametric Sensor Noise Modeling and Synthesis](../../ECCV2024/others/non-parametric_sensor_noise_modeling_and_synthesis.md)
+- [\[CVPR 2026\] Learning Long-term Motion Embeddings for Efficient Kinematics Generation](../../CVPR2026/others/learning_long-term_motion_embeddings_for_efficient_kinematics_generation.md)
 - [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](../../NeurIPS2025/others/coresets_for_clustering_under_stochastic_noise.md)
-- [\[AAAI 2026\] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer](enhancing_noise_resilience_in_face_clustering_via_sparse_differential_transforme.md)
-- [\[AAAI 2026\] Optimal Welfare in Noncooperative Network Formation under Attack](optimal_welfare_in_noncooperative_network_formation_under_attack.md)
-- [\[AAAI 2026\] Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast](radar-aplanc_unsupervised_radar-based_heartbeat_sensing_via_augmented_pseudo-lab.md)
-- [\[AAAI 2026\] Data Complexity of Querying Description Logic Knowledge Bases under Cost-Based Semantics](data_complexity_of_querying_description_logic_knowledge_bases_under_cost-based_s.md)
+- [\[CVPR 2026\] CHIRP dataset: towards long-term, individual-level, behavioral monitoring of bird populations in the wild](../../CVPR2026/others/chirp_dataset_towards_long-term_individual-level_behavioral_monitoring_of_bird_p.md)
+- [\[CVPR 2025\] Effortless Active Labeling for Long-Term Test-Time Adaptation](../../CVPR2025/others/effortless_active_labeling_for_long-term_test-time_adaptation.md)
 
 </div>
 

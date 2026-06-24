@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EthoCLIP: Ontology-Enhanced Video-Language Pretraining for Animal Behavior Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the "extreme data scarcity" in animal behavior videos, this paper injects the expert-constructed Neuro Behavior Ontology (NBO) as an inductive bias into CLIP-style video-language contrastive learning. The authors first construct the AnimalBand dataset (74,000 videos) using a unified ontological labeling sche
+  [CVPR 2026][Video Understanding][Animal behavior understanding] Addressing the "extreme data scarcity" in animal behavior videos, this paper injects the expert-constructed Neuro Behavior Ontology (NBO) as an inductive bias into CLIP-style video-language contrastive learning. The authors first construct the AnimalBand dataset (74,000 videos) using a unified ontological labeling scheme. They then explicitly encode "parent-child/synonym" relationships between behavioral labels u…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Animal behavior understanding"
+  - "video-language contrastive learning"
+  - "ontological knowledge"
+  - "hierarchical graph attention"
+  - "data scarcity"
 date: 2026-05-08
-content_hash: d25e9705173fa5c5
+content_hash: 969571fbdfb42b5a
 ---
+
 # EthoCLIP: Ontology-Enhanced Video-Language Pretraining for Animal Behavior Understanding
 
 **Conference**: CVPR 2026  
@@ -135,16 +141,16 @@ OSE and OAGM provide significant gains, particularly for the **Tail category** (
 - Value: ⭐⭐⭐⭐ Both the AnimalBand dataset and the EthoCLIP methodology provide substantive advancements for the field of animal behavior understanding.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining](cluster-wise_spatio-temporal_masking_for_efficient_video-language_pretraining.md)
+- [\[CVPR 2026\] MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models](motionenhancer_leveraging_video_diffusion_for_motion-enhanced_vision-language_mo.md)
+- [\[CVPR 2026\] PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation](pyratok_language-aligned_pyramidal_tokenizer_for_video_understanding_and_generat.md)
 - [\[CVPR 2026\] Affordance-First Decomposition for Continual Learning in Video–Language Understanding](affordance-first_decomposition_for_continual_learning_in_video-language_understa.md)
 - [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
-- [\[CVPR 2026\] Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection](alert-clip_abnormality-aware_latent-enhanced_representation_tuning_of_clip_for_v.md)
-- [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Counterfactual Structural Causal Bandits
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper elevates Structural Causal Bandits (SCB) from the L1/L2 (observational/interventional) layers of the Pearl Causal Hierarchy to the L3 (counterfactual) layer. It proposes the CTF-SCB framework, incorporating implementable counterfactual actions—such as "what if a downstream variable had received $x'$ instead
+  [ICLR2026][Causal Inference][Structural Causal Models] This paper elevates Structural Causal Bandits (SCB) from the L1/L2 (observational/interventional) layers of the Pearl Causal Hierarchy to the L3 (counterfactual) layer. It proposes the CTF-SCB framework, incorporating implementable counterfactual actions—such as "what if a downstream variable had received $x'$ instead of $x$"—into the arm space. Using a set of graph-theoretic characterizations (CTF-MIS / CTF-POMIS / count…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Structural Causal Models"
+  - "Counterfactuals"
+  - "Pearl Causal Hierarchy"
+  - "Multi-Armed Bandits"
+  - "Action Space Pruning"
 date: 2026-05-08
-content_hash: 2e909185987a63b2
+content_hash: 84beaf7d2a1972c3
 ---
+
 # Counterfactual Structural Causal Bandits
 
 **Conference**: ICLR2026  
@@ -119,7 +125,7 @@ The experiments compare cumulative regret (CR) across three action space strateg
 - [\[NeurIPS 2025\] Root Cause Analysis of Outliers with Missing Structural Knowledge](../../NeurIPS2025/causal_inference/root_cause_analysis_of_outliers_with_missing_structural_knowledge.md)
 - [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
 - [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](counterfactual_explanations_on_robust_perceptual_geodesics.md)
-- [\[ICLR 2026\] Multiverse Mechanica: A Testbed for Learning Game Mechanics via Counterfactual Worlds](multiverse_mechanica_a_testbed_for_learning_game_mechanics_via_counterfactual_wo.md)
+- [\[ICLR 2026\] Counterfactual LLM-based Framework for Measuring Rhetorical Style](counterfactual_llm-based_framework_for_measuring_rhetorical_style.md)
 
 </div>
 

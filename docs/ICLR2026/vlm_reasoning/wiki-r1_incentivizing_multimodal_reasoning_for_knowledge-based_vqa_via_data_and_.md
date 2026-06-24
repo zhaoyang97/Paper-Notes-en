@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Wiki-R1: Incentivizing Multimodal Reasoning for Knowledge-based VQA via Data and Sampling Curriculum
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] Wiki-R1 addresses the issues of "high retrieval noise, sparse rewards, and RL failing to learn reasoning" in knowledge-based VQA. It generates a data curriculum from easy to difficult via controllable retrieval difficulty and utilizes observation propagation to select samples with the strongest training signals. This a
+  [ICLR2026][VLM Reasoning][Knowledge-based VQA] Wiki-R1 addresses the issues of "high retrieval noise, sparse rewards, and RL failing to learn reasoning" in knowledge-based VQA. It generates a data curriculum from easy to difficult via controllable retrieval difficulty and utilizes observation propagation to select samples with the strongest training signals. This allows Qwen2.5-VL to achieve new SOTA results for retrieval-augmented KB-VQA on Encyclopedic VQA and InfoSeek.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Knowledge-based VQA"
+  - "Multimodal Reasoning"
+  - "Curriculum Reinforcement Learning"
+  - "Retrieval-Augmented Generation"
+  - "Observation Propagation"
 date: 2026-05-08
-content_hash: d5d31e1bb7469596
+content_hash: b191451d16405113
 ---
+
 # Wiki-R1: Incentivizing Multimodal Reasoning for Knowledge-based VQA via Data and Sampling Curriculum
 
 **Conference**: ICLR2026  

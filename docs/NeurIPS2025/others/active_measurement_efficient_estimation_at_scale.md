@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Active Measurement: Efficient Estimation at Scale
 description: >-
-  [NeurIPS 2025][Active Measurement] This paper proposes the Active Measurement framework, which uses AI model predictions as an importance sampling proposal distribution and achieves unbiased estimation of scientific aggr…
+  [NeurIPS 2025][Active Measurement] This paper proposes the Active Measurement framework, which uses AI model predictions as an importance sampling proposal distribution and achieves unbiased estimation of scientific aggregate quantities through iterative human annotation and model updates, complemented by a novel combination weighting scheme and a conditional variance estimator for constructing reliable confidence intervals.
 tags:
   - "NeurIPS 2025"
   - "Active Measurement"
@@ -11,7 +11,7 @@ tags:
   - "Confidence Intervals"
   - "Human-AI Collaboration"
 date: 2026-05-08
-content_hash: df15c9d15fd7a762
+content_hash: 9abba5ba0ae7c3a1
 ---
 
 # Active Measurement: Efficient Estimation at Scale
@@ -120,10 +120,10 @@ The detector uses Faster R-CNN with a ResNet backbone, fine-tuned for 3,000 step
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
+- [\[CVPR 2026\] MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention](../../CVPR2026/others/mspt_efficient_large-scale_physical_modeling_via_parallelized_multi-scale_attent.md)
 - [\[NeurIPS 2025\] Estimation of Stochastic Optimal Transport Maps](estimation_of_stochastic_optimal_transport_maps.md)
 - [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](uncertainty_estimation_by_flexible_evidential_deep_learning.md)
 - [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](frequency-aware_token_reduction_for_efficient_vision_transformer.md)
-- [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
 
 </div>
 

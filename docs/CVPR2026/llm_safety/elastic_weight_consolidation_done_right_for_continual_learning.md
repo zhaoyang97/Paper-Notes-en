@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Elastic Weight Consolidation Done Right for Continual Learning
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper systematically analyzes the fundamental flaws of EWC and its variants in weight importance estimation from a gradient perspective (gradient vanishing in EWC and redundant protection in MAS). It proposes an extremely simple Logits Reversal operation to correct the Fisher Information Matrix (FIM) calculation,
+  [CVPR 2026][LLM Safety][Continual Learning] This paper systematically analyzes the fundamental flaws of EWC and its variants in weight importance estimation from a gradient perspective (gradient vanishing in EWC and redundant protection in MAS). It proposes an extremely simple Logits Reversal operation to correct the Fisher Information Matrix (FIM) calculation, significantly outperforming the original EWC and its variants in exemplar-free class-incremental learning and multim…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "Elastic Weight Consolidation"
+  - "Fisher Information Matrix"
+  - "Weight Regularization"
 date: 2026-05-08
-content_hash: 8968738d9f6bbebe
+content_hash: 6d5ec271338e54f3
 ---
+
 # Elastic Weight Consolidation Done Right for Continual Learning
 
 **Conference**: CVPR 2026  
@@ -108,11 +114,11 @@ The training loss maintains the standard EWC form: $\mathcal{L}_{total} = \mathc
 
 ## Related Papers
 
-- [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
-- [\[CVPR 2026\] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)
-- [\[ICLR 2026\] IDER: IDempotent Experience Replay for Reliable Continual Learning](../../ICLR2026/model_compression/ider_idempotent_experience_replay_for_reliable_continual_learning.md)
-- [\[ICML 2026\] Causal Forcing: Autoregressive Diffusion Distillation Done Right for High-Quality Real-Time Interactive Video](../../ICML2026/model_compression/causal_forcing_autoregressive_diffusion_distillation_done_right_for_high-quality.md)
-- [\[CVPR 2026\] ThinkingViT: Matryoshka Thinking Vision Transformer for Elastic Inference](thinkingvit_matryoshka_thinking_vision_transformer_for_elastic_inference.md)
+- [\[AAAI 2026\] Attention Retention for Continual Learning with Vision Transformers](../../AAAI2026/llm_safety/attention_retention_for_continual_learning_with_vision_transformers.md)
+- [\[ICLR 2026\] Lifelong Learning with Behavior Consolidation for Vehicle Routing](../../ICLR2026/llm_safety/lifelong_learning_with_behavior_consolidation_for_vehicle_routing.md)
+- [\[ICLR 2026\] Randomized Antipodal Search Done Right for Data Pareto Improvement of LLM Unlearning](../../ICLR2026/llm_safety/randomized_antipodal_search_done_right_for_data_pareto_improvement_of_llm_unlear.md)
+- [\[NeurIPS 2025\] Finding Structure in Continual Learning](../../NeurIPS2025/llm_safety/finding_structure_in_continual_learning.md)
+- [\[ICML 2025\] Improving Continual Learning Performance and Efficiency with Auxiliary Classifiers](../../ICML2025/llm_safety/improving_continual_learning_performance_and_efficiency_with_auxiliary_classifie.md)
 
 </div>
 

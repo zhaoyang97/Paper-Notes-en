@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] The authors propose IAG, the first multi-target backdoor attack method targeting VLM-based visual grounding. By dynamically generating input-aware triggers via a text-conditioned U-Net, it embeds semantic information of any specified target object into visual inputs, achieving the highest attack success rate in 11 out
+  [CVPR 2026][Multimodal VLM][Backdoor attack] The authors propose IAG, the first multi-target backdoor attack method targeting VLM-based visual grounding. By dynamically generating input-aware triggers via a text-conditioned U-Net, it embeds semantic information of any specified target object into visual inputs, achieving the highest attack success rate in 11 out of 12 experimental settings.
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Backdoor attack"
+  - "visual grounding"
+  - "multi-target attack"
+  - "input-aware trigger"
+  - "VLM security"
 date: 2026-05-08
-content_hash: 217d934131045102
+content_hash: efa0b2cd462995ee
 ---
+
 # IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ Clean Accuracy Drop: BA vs. CA difference < 3% (e.g., LLaVA-RefCOCO: BA 80.7% vs
 
 ## Related Papers
 
-- [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](../../ICLR2026/llm_safety/beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
-- [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
-- [\[CVPR 2026\] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)
-- [\[CVPR 2026\] Omni-Attack: Adversarial Attacks on Open-Ended VQA in Black-Box Multimodal LLMs](omni-attack_adversarial_attacks_on_open-ended_vqa_in_black-box_multimodal_llms.md)
-- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
+- [\[CVPR 2026\] Visual Grounding for Object Questions](visual_grounding_for_object_questions.md)
+- [\[CVPR 2025\] BadVision: Stealthy Backdoor Attack in Self-Supervised Learning Vision Encoders for Large Vision Language Models](../../CVPR2025/multimodal_vlm/stealthy_backdoor_attack_in_self-supervised_learning_vision_encoders_for_large_v.md)
+- [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
+- [\[CVPR 2026\] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](groundingme_exposing_the_visual_grounding_gap_in_mllms_through_multi-dimensional.md)
+- [\[CVPR 2026\] TRANSPORTER: Transferring Visual Semantics from VLM Manifolds](transporter_transferring_visual_semantics_from_vlm_manifolds.md)
 
 </div>
 

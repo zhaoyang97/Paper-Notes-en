@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] On the Expressive Power of Permutation-Equivariant Weight-Space Networks
 description: >-
-  [ICML 2026][Pretraining][weight-space learning] This paper establishes the first systematic theory of expressive power for permutation-equivariant weight-space networks (e.g., DWS, NFN, GMN, NG-GNN) operating on MLP weights. It proves these architectures are nearly equivalent in expressivity and characterizes their universality across four approximation scenarios (f
+  [ICML 2026 Spotlight][LLM Pretraining][weight-space learning] This paper establishes the first systematic theory of expressive power for permutation-equivariant weight-space networks (e.g., DWS, NFN, GMN, NG-GNN) operating on MLP weights. It proves these architectures are nearly equivalent in expressivity and characterizes their universality across four approximation scenarios (function-space functionals/operators, permutation-invariant functionals…
 tags:
-  - ICML 2026
-  - Pretraining
-  - weight-space learning
-  - permutation equivariance
-  - universality
-  - INR editing
-  - OCE
+  - "ICML 2026 Spotlight"
+  - "LLM Pretraining"
+  - "weight-space learning"
+  - "permutation equivariance"
+  - "universality"
+  - "INR editing"
+  - "OCE"
 date: 2026-05-08
-content_hash: a6f5d1809fc8dd90
+content_hash: 278345fd2a187f3a
 ---
+
 # On the Expressive Power of Permutation-Equivariant Weight-Space Networks
 
 **Conference**: ICML 2026 Spotlight  
@@ -128,7 +129,7 @@ Trends from Appendix Table 2:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

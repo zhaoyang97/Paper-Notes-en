@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Temporal Reasoning] This paper introduces TimE, a multi-level temporal reasoning benchmark comprising 38,522 QA pairs across three real-world scenarios — knowledge-intensive (Wiki)…
+  [NeurIPS 2025 Spotlight][Reasoning][Temporal Reasoning] This paper introduces TimE, a multi-level temporal reasoning benchmark comprising 38,522 QA pairs across three real-world scenarios — knowledge-intensive (Wiki), dynamic news (News), and long dialogue (Dial) — and three progressively difficult levels with 11 sub-tasks. A comprehensive evaluation of 24 LLMs reveals that even the strongest reasoning models exhibit significant deficiencies on complex tasks such as timeline…
 tags:
-  - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "NeurIPS 2025 Spotlight"
+  - "Reasoning"
   - "Temporal Reasoning"
   - "Multi-level Benchmark"
   - "Real-World Scenarios"
   - "Knowledge-Intensive"
   - "Long Dialogue"
 date: 2026-05-08
-content_hash: f63ee66c6aa2fb85
+content_hash: 2b1d45c28c001427
 ---
 
 # TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios
@@ -128,11 +128,11 @@ TimE consists of three sub-datasets: (1) TimE-Wiki (13,848 QA) — constructed f
 
 ## Related Papers
 
+- [\[ICLR 2026\] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](../../ICLR2026/llm_reasoning/neural_theorem_proving_for_verification_conditions_a_real-world_benchmark.md)
+- [\[ICLR 2026\] OpenEstimate: Evaluating LLMs on Reasoning Under Uncertainty with Real-World Data](../../ICLR2026/llm_reasoning/openestimate_evaluating_llms_on_reasoning_under_uncertainty_with_real-world_data.md)
 - [\[NeurIPS 2025\] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks](value-guided_search_for_efficient_chain-of-thought_reasoning.md)
 - [\[NeurIPS 2025\] RealMath: A Continuous Benchmark for Evaluating Language Models on Research-Level Mathematics](realmath_a_continuous_benchmark_for_evaluating_language_models_on_research-level.md)
-- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](../../ACL2026/llm_reasoning/efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
-- [\[ACL 2026\] MTR-Bench: A Comprehensive Benchmark for Multi-Turn Reasoning Evaluation](../../ACL2026/llm_reasoning/mtr-bench_a_comprehensive_benchmark_for_multi-turn_reasoning_evaluation.md)
-- [\[ICML 2026\] FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations](../../ICML2026/llm_reasoning/floorplanqa_a_benchmark_for_spatial_reasoning_in_llms_using_structured_represent.md)
+- [\[ICML 2025\] No Soundness in the Real World: On the Challenges of the Verification of Deployed Neural Networks](../../ICML2025/llm_reasoning/no_soundness_in_the_real_world_on_the_challenges_of_the_verification_of_deployed.md)
 
 </div>
 

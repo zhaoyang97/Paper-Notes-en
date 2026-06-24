@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper constructs MCGA, the first large-scale (119 hours, 22,000 samples) fully copyrighted audio corpus for classical Chinese literature. It covers five major genres (Fu, Poetry, Prose, Ci, and Qu) and six speech tasks (ASR/S2TT/SEC/SQA/SU/SR). Evaluation of 10 multimodal large language models reveals significant
+  [ACL 2026 Findings][Audio & Speech][Classical literary audio corpus] This paper constructs MCGA, the first large-scale (119 hours, 22,000 samples) fully copyrighted audio corpus for classical Chinese literature. It covers five major genres (Fu, Poetry, Prose, Ci, and Qu) and six speech tasks (ASR/S2TT/SEC/SQA/SU/SR). Evaluation of 10 multimodal large language models reveals significant deficiencies in current models regarding the understanding of classical Chinese literary au…
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Classical literary audio corpus"
+  - "multimodal large language models"
+  - "speech emotion analysis"
+  - "cross-modal consistency"
+  - "classical Chinese literature research"
 date: 2026-05-08
-content_hash: 99ea2c2b1149352e
+content_hash: 95ec6c9381924039
 ---
+
 # MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus
 
 **Conference**: ACL 2026 Findings  
@@ -144,15 +150,15 @@ The fine-tuned Qwen-Omni-MCGA outperformed the 30B Qwen3-Omni in ASR for Poetry 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 - [\[ACL 2025\] AI4Reading: Chinese Audiobook Interpretation System Based on Multi-Agent Collaboration](../../ACL2025/audio_speech/ai4reading_chinese_audiobook_interpretation_system_based_on_multi-agent_collabor.md)
 - [\[ICLR 2026\] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark](../../ICLR2026/audio_speech/mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark.md)
 - [\[ACL 2026\] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition](pseudo2real_task_arithmetic_for_pseudo-label_correction_in_automatic_speech_reco.md)
 - [\[ACL 2025\] GigaSpeech 2: An Evolving, Large-Scale and Multi-domain ASR Corpus for Low-Resource Languages](../../ACL2025/audio_speech/gigaspeech2_low_resource_asr.md)
-- [\[NeurIPS 2025\] EuroSpeech: A Multilingual Speech Corpus](../../NeurIPS2025/audio_speech/eurospeech_a_multilingual_speech_corpus.md)
 
 </div>
 

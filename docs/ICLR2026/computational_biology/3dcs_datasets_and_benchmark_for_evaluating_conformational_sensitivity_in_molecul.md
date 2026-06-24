@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3DCS: Datasets and Benchmark for Evaluating Conformational Sensitivity in Molecular Representations
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] The authors construct 3DCS, the first benchmark specifically designed to evaluate the representation sensitivity to "different conformations of the same molecule." Using >1M molecules and ~10M conformations covering geometry, chirality, and energy dimensions, paired with a Geometry–Chirality–Energy (GCE) evaluation fra
+  [ICLR 2026][Computational Biology][Molecular Representation] The authors construct 3DCS, the first benchmark specifically designed to evaluate the representation sensitivity to "different conformations of the same molecule." Using >1M molecules and ~10M conformations covering geometry, chirality, and energy dimensions, paired with a Geometry–Chirality–Energy (GCE) evaluation framework, they reveal that modern 3D molecular representations are geometrically sensitive…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Representation"
+  - "Conformational Sensitivity"
+  - "Chirality"
+  - "Potential Energy Surface"
+  - "Zero-shot Evaluation"
 date: 2026-05-08
-content_hash: 926de82fee37c09f
+content_hash: d9c31376870e2881
 ---
+
 # 3DCS: Datasets and Benchmark for Evaluating Conformational Sensitivity in Molecular Representations
 
 **Conference**: ICLR 2026  
@@ -137,11 +143,11 @@ For most models, the correlation between representation distance and energy diff
 
 ## Related Papers
 
-- [\[ICLR 2026\] CAPSUL: A Comprehensive Human Protein Benchmark for Subcellular Localization](capsul_a_comprehensive_human_protein_benchmark_for_subcellular_localization.md)
-- [\[NeurIPS 2025\] JAMUN: Bridging Smoothed Molecular Dynamics and Score-Based Learning for Conformational Ensembles](../../NeurIPS2025/computational_biology/jamun_bridging_smoothed_molecular_dynamics_and_score-based_learning_for_conforma.md)
 - [\[ICLR 2026\] GeomMotif: A Benchmark for Arbitrary Geometric Preservation in Protein Generation](geommotif_a_benchmark_for_arbitrary_geometric_preservation_in_protein_generation.md)
 - [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](towards_understanding_the_shape_of_representations_in_protein_language_models.md)
-- [\[ICLR 2026\] Learning Molecular Chirality via Chiral Determinant Kernels](learning_molecular_chirality_via_chiral_determinant_kernels.md)
+- [\[NeurIPS 2025\] JAMUN: Bridging Smoothed Molecular Dynamics and Score-Based Learning for Conformational Ensembles](../../NeurIPS2025/computational_biology/jamun_bridging_smoothed_molecular_dynamics_and_score-based_learning_for_conforma.md)
+- [\[ICLR 2026\] Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions](enhancing_molecular_property_predictions_by_learning_from_bond_modelling_and_int.md)
+- [\[ICLR 2026\] Learning Explicit Single-Cell Dynamics Using ODE Representations](learning_explicit_single-cell_dynamics_using_ode_representations.md)
 
 </div>
 

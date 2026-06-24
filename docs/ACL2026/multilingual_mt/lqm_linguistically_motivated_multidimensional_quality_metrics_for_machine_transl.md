@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LQM: Linguistically Motivated Multidimensional Quality Metrics for Machine Translation
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] Ours proposes LQM (Linguistically Motivated Multidimensional Quality Metrics), a six-level linguistically motivated MT error typology (sociolinguistics → pragmatics → semantics → morphosyntax → orthography → graphetics), and constructs a bidirectional parallel corpus of 3,850 sentences across 7 Arabic dialects. Through
+  [ACL 2026][Multilingual & Machine Translation][Machine Translation Evaluation] Ours proposes LQM (Linguistically Motivated Multidimensional Quality Metrics), a six-level linguistically motivated MT error typology (sociolinguistics → pragmatics → semantics → morphosyntax → orthography → graphetics), and constructs a bidirectional parallel corpus of 3,850 sentences across 7 Arabic dialects. Through expert annotation of 6,113 error spans, the study reveals systematic deficiencie…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Machine Translation Evaluation"
+  - "Error Typology"
+  - "Arabic Dialects"
+  - "Multidimensional Quality Metrics"
+  - "Linguistically Motivated"
 date: 2026-05-08
-content_hash: 039a7c0c48a6bb9b
+content_hash: 3aee07dd181b0490
 ---
+
 # LQM: Linguistically Motivated Multidimensional Quality Metrics for Machine Translation
 
 **Conference**: ACL 2026  

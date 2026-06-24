@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment
 description: >-
-  [AAAI 2026][Image Restoration][Video Quality Assessment] This paper proposes TIG-SVQA, a framework that, for the first time, incorporates temporal inconsistency as an explicit guidance signal for super-resolution video q…
+  [AAAI 2026][Image Restoration][Video Quality Assessment] This paper proposes TIG-SVQA, a framework that, for the first time, incorporates temporal inconsistency as an explicit guidance signal for super-resolution video quality assessment. The framework introduces an Inconsistency-Highlighted Spatial Module (IHSM) and an Inconsistency-Guided Temporal Module (IGTM), achieving SRCC scores of 0.950, 0.942, and 0.939 on the SFD, MFD, and Combined-VSR datasets, respectively…
 tags:
   - "AAAI 2026"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Transformer"
   - "Visual Working Memory"
 date: 2026-05-08
-content_hash: 12385ab107555c5f
+content_hash: 87daecce211c8520
 ---
 
 # Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment
@@ -178,10 +178,10 @@ The concept of temporal inconsistency as a guidance signal is extensible to vide
 ## Related Papers
 
 - [\[AAAI 2026\] SpatioTemporal Difference Network for Video Depth Super-Resolution](spatiotemporal_difference_network_for_video_depth_super-resolution.md)
-- [\[CVPR 2026\] SAT: Selective Aggregation Transformer for Image Super-Resolution](../../CVPR2026/image_restoration/sat_selective_aggregation_transformer_for_image_super_resolution.md)
-- [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](../../CVPR2026/image_restoration/selfhvd_self-supervised_handheld_video_deblurring.md)
-- [\[AAAI 2026\] MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model](mfmamba_a_multi-function_network_for_panchromatic_image_resolution_restoration_b.md)
-- [\[CVPR 2026\] RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution](../../CVPR2026/image_restoration/rawdomain_degradation_models_smartphone_sr.md)
+- [\[CVPR 2026\] Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features](../../CVPR2026/image_restoration/rethinking_diffusion_model-based_video_super-resolution_leveraging_dense_guidanc.md)
+- [\[CVPR 2025\] Augmenting Perceptual Super-Resolution via Image Quality Predictors](../../CVPR2025/image_restoration/augmenting_perceptual_super-resolution_via_image_quality_predictors.md)
+- [\[CVPR 2026\] RL-ScanIQA: Reinforcement-Learned Scanpaths for Blind 360deg Image Quality Assessment](../../CVPR2026/image_restoration/rl-scaniqa_reinforcement-learned_scanpaths_for_blind_360deg_image_quality_assess.md)
+- [\[CVPR 2026\] Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution](../../CVPR2026/image_restoration/time_without_time_pseudo-temporal_representation_for_space-time_super-resolution.md)
 
 </div>
 

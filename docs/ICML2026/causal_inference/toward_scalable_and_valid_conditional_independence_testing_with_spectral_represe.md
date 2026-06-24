@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Scalable and Valid Conditional Independence Testing with Spectral Representations
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] SpectralCIT approximates the "partial covariance operator"—a core concept in kernel methods for characterizing conditional independence—using low-dimensional spectral features learned by neural networks. It then constructs a simple HSIC-like statistic for testing. By employing a bi-level contrastive algorithm to learn
+  [ICML2026][Causal Inference][Conditional Independence Testing] SpectralCIT approximates the "partial covariance operator"—a core concept in kernel methods for characterizing conditional independence—using low-dimensional spectral features learned by neural networks. It then constructs a simple HSIC-like statistic for testing. By employing a bi-level contrastive algorithm to learn the leading singular features of the operator, the authors prove that the statistic asymptoticall…
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML2026"
+  - "Causal Inference"
+  - "Conditional Independence Testing"
+  - "Partial Covariance Operator"
+  - "Spectral Representation Learning"
+  - "Contrastive Learning"
+  - "Chi-squared Null Distribution"
 date: 2026-05-08
-content_hash: c64ce7ba79bd0126
+content_hash: 911e75fd3c61011d
 ---
+
 # Toward Scalable and Valid Conditional Independence Testing with Spectral Representations
 
 **Conference**: ICML2026  
@@ -136,10 +142,10 @@ Linear partial correlations were near zero ($-0.006, -0.088, 0.07$). Logistic re
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](../../ICLR2026/causal_inference/efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
-- [\[ICML 2026\] Outcome-Aware Spectral Feature Learning for Instrumental Variable Regression](outcome-aware_spectral_feature_learning_for_instrumental_variable_regression.md)
 - [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](../../ICLR2026/causal_inference/learning_robust_intervention_representations_with_delta_embeddings.md)
-- [\[ICLR 2026\] Journey to the Centre of Cluster: Harnessing Interior Nodes for A/B Testing under Network Interference](../../ICLR2026/causal_inference/journey_to_the_centre_of_cluster_harnessing_interior_nodes_for_ab_testing_under_.md)
-- [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](../../ICLR2026/causal_inference/direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
+- [\[ICML 2026\] Outcome-Aware Spectral Feature Learning for Instrumental Variable Regression](outcome-aware_spectral_feature_learning_for_instrumental_variable_regression.md)
+- [\[NeurIPS 2025\] Demystifying Spectral Feature Learning for Instrumental Variable Regression](../../NeurIPS2025/causal_inference/demystifying_spectral_feature_learning_for_instrumental_variable_regression.md)
+- [\[ICLR 2026\] Designing Time Series Experiments in A/B Testing with Transformer Reinforcement Learning](../../ICLR2026/causal_inference/designing_time_series_experiments_in_ab_testing_with_transformer_reinforcement_l.md)
 
 </div>
 

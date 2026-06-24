@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Design Skills as Memory Policies for Agentic Photonic Inverse Design
 description: >-
-  [ICML 2026][Recommender Systems][PPO] SkillPCF reformulates the inverse design of Photonic Crystal Fibers (PCF) as a "memory policy learning" problem. A PPO-trained controller selects Top-K memory operations from an evolvable skill library for each trajectory span. An executor implements these in trajectory memory, while MEEP electromagnetic simulation rew
+  [ICML 2026][Recommender Systems][Memory Policy] SkillPCF reformulates the inverse design of Photonic Crystal Fibers (PCF) as a "memory policy learning" problem. A PPO-trained controller selects Top-K memory operations from an evolvable skill library for each trajectory span. An executor implements these in trajectory memory, while MEEP electromagnetic simulation rewards simultaneously optimize both the controller and the skill library. This approach achieves a superior trade-…
 tags:
-  - ICML 2026
-  - Recommender Systems
-  - PPO
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Memory Policy"
+  - "Skill Library"
+  - "PPO"
+  - "Photonic Crystal Fiber (PCF)"
+  - "Simulator-in-the-Loop"
 date: 2026-05-08
-content_hash: 78a20f0539780bfb
+content_hash: 5487b8b1607ac071
 ---
+
 # Learning Design Skills as Memory Policies for Agentic Photonic Inverse Design
 
 **Conference**: ICML 2026  
@@ -142,9 +147,9 @@ Memory operation distribution: INSERT 36% / UPDATE 56% / DELETE 5% / SKIP <1%, p
 
 - [\[ICML 2026\] Incentivized Exploration with Stochastic Covariates: A Two-Stage Mechanism Design for Recommender System](incentivized_exploration_with_stochastic_covariates_a_two-stage_mechanism_design.md)
 - [\[ACL 2026\] MemRec: Collaborative Memory-Augmented Agentic Recommender System](../../ACL2026/recommender/memrec_collaborative_memory-augmented_agentic_recommender_system.md)
+- [\[ICLR 2026\] Off-Policy Evaluation for Ranking Policies under Deterministic Logging Policies](../../ICLR2026/recommender/off-policy_evaluation_for_ranking_policies_under_deterministic_logging_policies.md)
 - [\[ICML 2026\] RGMem: Renormalization Group-Inspired Memory Evolution for Language Agents](rgmem_renormalization_group-inspired_memory_evolution_for_language_agents.md)
 - [\[ICML 2026\] Rethinking Contrastive Learning for Graph Collaborative Filtering: Limitations and a Simple Remedy](rethinking_contrastive_learning_for_graph_collaborative_filtering_limitations_an.md)
-- [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](../../ACL2026/recommender/harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
 
 </div>
 

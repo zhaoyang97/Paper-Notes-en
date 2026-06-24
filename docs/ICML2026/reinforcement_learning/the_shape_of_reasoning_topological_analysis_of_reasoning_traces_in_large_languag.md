@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Shape of Reasoning: Topological Analysis of Reasoning Traces in Large Language Models
 description: >-
-  [ICML 2026][Reinforcement Learning][AIME] This paper treats LLM chain-of-thought as a "point cloud" in embedding space. It uses Topological Data Analysis (TDA) to extract persistent homology features as an objective measure of reasoning quality. Experiments on the AIME dataset demonstrate that TDA features significantly outperform traditional graph statistics
+  [ICML 2026][Reinforcement Learning][Reasoning Trace Evaluation] This paper treats LLM chain-of-thought as a "point cloud" in embedding space. It uses Topological Data Analysis (TDA) to extract persistent homology features as an objective measure of reasoning quality. Experiments on the AIME dataset demonstrate that TDA features significantly outperform traditional graph statistics in predicting Smith-Waterman alignment scores (average $R^2=0.236$ vs. average $R^2=0.064$).
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - AIME
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Reasoning Trace Evaluation"
+  - "Topological Data Analysis"
+  - "Persistent Homology"
+  - "Smith-Waterman Alignment"
+  - "AIME"
 date: 2026-05-08
-content_hash: 5a1616e2d006f0ff
+content_hash: 75d3b08647d5b022
 ---
+
 # The Shape of Reasoning: Topological Analysis of Reasoning Traces in Large Language Models
 
 **Conference**: ICML 2026  
@@ -139,9 +144,9 @@ TDA alone yields an $R^2$ approximately 3-4 times that of graph statistics. In 7
 
 - [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)
 - [\[ICML 2026\] d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation](d2_improving_reasoning_in_diffusion_language_models_via_trajectory_likelihood_es.md)
-- [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
-- [\[NeurIPS 2025\] GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining](../../NeurIPS2025/reinforcement_learning/graphchain_large_language_models_for_large-scale_graph_analysis_via_tool_chainin.md)
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](../../NeurIPS2025/reinforcement_learning/incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
+- [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
+- [\[ICML 2026\] Coupled Variational Reinforcement Learning for Language Model General Reasoning](coupled_variational_reinforcement_learning_for_language_model_general_reasoning.md)
 
 </div>
 

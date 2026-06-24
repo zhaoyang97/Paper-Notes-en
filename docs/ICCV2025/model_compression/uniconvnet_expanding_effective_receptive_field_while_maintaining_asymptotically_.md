@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniConvNet: Expanding Effective Receptive Field while Maintaining Asymptotically Gaussian Distribution for ConvNets of Any Scale
 description: >-
-  [ICCV 2025][Model Compression][Convolutional Neural Networks] This paper proposes UniConvNet, which employs a three-layer Receptive Field Aggregator (RFA) composed of moderately sized convolution kernels (7×7, 9×9…
+  [ICCV 2025][Model Compression][Convolutional Neural Networks] This paper proposes UniConvNet, which employs a three-layer Receptive Field Aggregator (RFA) composed of moderately sized convolution kernels (7×7, 9×9, 11×11) to expand the Effective Receptive Field (ERF) while preserving its Asymptotically Gaussian Distribution (AGD), achieving consistent improvements over existing CNNs and ViTs across lightweight to large-scale model regimes.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Lightweight Networks"
   - "Large-Kernel Convolution"
 date: 2026-05-08
-content_hash: 156f5808df386e75
+content_hash: 9ee20be574902c52
 ---
 
 # UniConvNet: Expanding Effective Receptive Field while Maintaining Asymptotically Gaussian Distribution for ConvNets of Any Scale
@@ -142,11 +142,11 @@ UniConvNet adopts a four-stage pyramid structure (stem + 4 stages), where each s
 
 ## Related Papers
 
+- [\[CVPR 2025\] MobileMamba: Lightweight Multi-Receptive Visual Mamba Network](../../CVPR2025/model_compression/mobilemamba_lightweight_multi-receptive_visual_mamba_network.md)
 - [\[ICCV 2025\] Gradient Short-Circuit: Efficient Out-of-Distribution Detection via Feature Intervention](gradient_short-circuit_efficient_out-of-distribution_detection_via_feature_inter.md)
+- [\[CVPR 2025\] DKDM: Data-Free Knowledge Distillation for Diffusion Models with Any Architecture](../../CVPR2025/model_compression/dkdm_data-free_knowledge_distillation_for_diffusion_models_with_any_architecture.md)
+- [\[ICML 2025\] FGFP: A Fractional Gaussian Filter and Pruning for Deep Neural Networks Compression](../../ICML2025/model_compression/fgfp_a_fractional_gaussian_filter_and_pruning_for_deep_neural_networks_compressi.md)
 - [\[NeurIPS 2025\] 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming](../../NeurIPS2025/model_compression/4dgcpro_efficient_hierarchical_4d_gaussian_compression_for_p.md)
-- [\[ICCV 2025\] Beyond Low-Rank Tuning: Model Prior-Guided Rank Allocation for Effective Transfer in Low-Data and Large-Gap Regimes](beyond_low-rank_tuning_model_prior-guided_rank_allocation_for_effective_transfer.md)
-- [\[NeurIPS 2025\] Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement](../../NeurIPS2025/model_compression/towards_effective_federated_graph_foundation_model_via_mitigating_knowledge_enta.md)
-- [\[ICLR 2026\] S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion](../../ICLR2026/model_compression/s2r-hdr_a_large-scale_rendered_dataset_for_hdr_fusion.md)
 
 </div>
 

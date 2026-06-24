@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CharTide: Data-Centric Chart-to-Code Generation via Tri-Perspective Tuning and Inquiry-Driven Evolution
 description: >-
-  [ACL 2026][Multimodal VLM][GRPO] CharTide attributes the bottleneck of "chart-to-plotting code" to the **data itself**. It utilizes Tri-Perspective Decomposed SFT (orthogonal data streams for visual perception, text-only code logic, and modality fusion) to break the scaling wall of homogeneous data. Furthermore, it employs a frozen Inspector for objec
+  [ACL2026][Multimodal VLM][Chart-to-Code] CharTide attributes the bottleneck of "chart-to-plotting code" to the **data itself**. It utilizes Tri-Perspective Decomposed SFT (orthogonal data streams for visual perception, text-only code logic, and modality fusion) to break the scaling wall of homogeneous data. Furthermore, it employs a frozen Inspector for objective verification via atomic QA to provide verifiable rewards for RL, allowing 7B/8B open-source models to outperform G…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - GRPO
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Chart-to-Code"
+  - "Data-Centric"
+  - "Tri-Perspective Decomposed SFT"
+  - "Verifiable Reward"
+  - "GRPO"
 date: 2026-05-08
-content_hash: d63cd9293d39a90c
+content_hash: ff218b5621ac50a2
 ---
+
 # CharTide: Data-Centric Chart-to-Code Generation via Tri-Perspective Tuning and Inquiry-Driven Evolution
 
 **Conference**: ACL2026  
@@ -139,15 +144,16 @@ Synergy of SFT and RL (ChartMimic): RL directly on the base Qwen2.5-VL only impr
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Aligned Multi-View Scripts for Universal Chart-to-Code Generation](aligned_multi-view_scripts_for_universal_chart-to-code_generation.md)
-- [\[ACL 2026\] Enhancing Multimodal Large Language Models for Ancient Chinese Character Evolution Analysis via Glyph-Driven Fine-Tuning](enhancing_multimodal_large_language_models_for_ancient_chinese_character_evoluti.md)
 - [\[CVPR 2026\] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](../../CVPR2026/multimodal_vlm/mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)
 - [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/multimodal_vlm/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
 - [\[CVPR 2026\] Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training](../../CVPR2026/multimodal_vlm/why_does_rl_generalize_better_than_sft_a_data-centric_perspective_on_vlm_post-tr.md)
+- [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](../../ICLR2026/multimodal_vlm/why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
 
 </div>
 

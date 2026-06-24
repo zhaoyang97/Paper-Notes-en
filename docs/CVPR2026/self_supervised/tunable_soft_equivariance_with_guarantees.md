@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tunable Soft Equivariance with Guarantees
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper proposes an architecture-agnostic "soft equivariant" framework: projecting the weights of any pre-trained model into a subspace determined by the Lie algebra representation of a group. Using a truncation threshold $b$, the model can be continuously tuned from "fully equivariant" to "fully non-equivariant," w
+  [CVPR 2026][Self-Supervised Learning][Soft Equivariance] This paper proposes an architecture-agnostic "soft equivariant" framework: projecting the weights of any pre-trained model into a subspace determined by the Lie algebra representation of a group. Using a truncation threshold $b$, the model can be continuously tuned from "fully equivariant" to "fully non-equivariant," while providing a provable upper bound on the equivariant error. It simultaneously improves accuracy and…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Soft Equivariance"
+  - "Equivariant Error Bounds"
+  - "Lie Algebra Projection"
+  - "Schur Decomposition"
+  - "Pre-trained Model Adaptation"
 date: 2026-05-08
-content_hash: 516316e31cc9632f
+content_hash: ebbd29718295c423
 ---
+
 # Tunable Soft Equivariance with Guarantees
 
 **Conference**: CVPR 2026  
@@ -122,15 +128,16 @@ Semantic segmentation (PASCAL VOC) and human trajectory prediction (ETH/UCY) sho
 - Value: ⭐⭐⭐⭐⭐ 5/5
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Soft Quality-Diversity Optimization](../../ICLR2026/others/soft_quality-diversity_optimization.md)
-- [\[ICML 2026\] A Hypertoroidal Covering for Perfect Color Equivariance](../../ICML2026/others/a_hypertoroidal_covering_for_perfect_color_equivariance.md)
-- [\[CVPR 2026\] Spectral Conformal Risk Control: Distribution-Free Tail Guarantees via Bayesian Quadrature](spectral_conformal_risk_control_distribution-free_tail_guarantees_via_bayesian_q.md)
-- [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](../../ICLR2026/others/active_learning_for_decision_trees_with_provable_guarantees.md)
-- [\[AAAI 2026\] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](../../AAAI2026/others/improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)
+- [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](../../ICLR2026/self_supervised/soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
+- [\[CVPR 2025\] Few-Shot Implicit Function Generation via Equivariance](../../CVPR2025/self_supervised/few-shot_implicit_function_generation_via_equivariance.md)
+- [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](../../NeurIPS2025/self_supervised/soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
+- [\[NeurIPS 2025\] Asymptotic and Finite-Time Guarantees for Langevin-Based Temperature Annealing in InfoNCE](../../NeurIPS2025/self_supervised/asymptotic_and_finite-time_guarantees_for_langevin-based_temperature_annealing_i.md)
+- [\[CVPR 2026\] Learning from Semantic Dictionaries: Discriminative Codebook Contrastive Learning for Unified Visual Representation and Generation](learning_from_semantic_dictionaries_discriminative_codebook_contrastive_learning.md)
 
 </div>
 

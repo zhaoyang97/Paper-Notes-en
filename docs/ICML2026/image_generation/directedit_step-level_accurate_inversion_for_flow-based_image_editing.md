@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DirectEdit: Step-Level Accurate Inversion for Flow-Based Image Editing
 description: >-
-  [ICML 2026][Image Generation][Paper Note] DirectEdit achieves "step-level accurate reconstruction" without increasing NFE by recording the latent residual $\Delta\mathbf{Z}_t$ for each step during Rectified Flow inversion and injecting it ahead of time in the forward path. This strictly aligns the reconstruction path with the inversion trajectory. Combined wit
+  [ICML 2026][Image Generation][Flow-model inversion] DirectEdit achieves "step-level accurate reconstruction" without increasing NFE by recording the latent residual $\Delta\mathbf{Z}_t$ for each step during Rectified Flow inversion and injecting it ahead of time in the forward path. This strictly aligns the reconstruction path with the inversion trajectory. Combined with MLLM+SAM multi-branch mask noise blending and attention Value injection…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Flow-model inversion"
+  - "training-free image editing"
+  - "step-level accurate reconstruction"
+  - "feature injection"
+  - "mask-guided blending"
 date: 2026-05-08
-content_hash: 96b7fa4d473f9812
+content_hash: c89aab8c1f20e765
 ---
+
 # DirectEdit: Step-Level Accurate Inversion for Flow-Based Image Editing
 
 **Conference**: ICML 2026  
@@ -153,14 +159,17 @@ Ours uses half the NFE while reducing average/max step-level MSE by **2–4 orde
 
 <div class="related-papers" markdown="1">
 
-- **RF-Inversion**: Rectified Flow Inversion via Linear Quadratic Regulator, arXiv 2024.
-- **FTEdit**: FreeTraj: Tuning-Free Trajectory Optimization for Rectified Flow Editing, arXiv 2024.
-- **DNAEdit**: Dynamic Noise Alignment for Inversion-Free Image Editing, CVPR 2025.
+## Related Papers
+
+- [\[CVPR 2026\] FlashIn: Fast and Accurate Image Inversion for Real-time Image Editing](../../CVPR2026/image_generation/flashin_fast_and_accurate_image_inversion_for_real-time_image_editing.md)
+- [\[ICML 2026\] Budget-Constrained Step-Level Diffusion Caching](budget-constrained_step-level_diffusion_caching.md)
+- [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](../../ICLR2026/image_generation/uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
+- [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](../../ICLR2026/image_generation/flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)
+- [\[ICML 2025\] Taming Rectified Flow for Inversion and Editing](../../ICML2025/image_generation/taming_rectified_flow_for_inversion_and_editing.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] FlashIn: Fast and Accurate Image Inversion for Real-time Image Editing](../../CVPR2026/image_generation/flashin_fast_and_accurate_image_inversion_for_real-time_image_editing.md)

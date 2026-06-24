@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ToonComposer: Streamlining Cartoon Production with Generative Post-Keyframing
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] ToonComposer merges the traditionally fragmented "inbetweening" and "colorization" stages of cartoon production into a unified generative "post-keyframing" stage. With only one colored reference frame and a minimal set of keyframe sketches, it leverages a DiT video foundation model to directly generate high-quality car
+  [ICLR 2026][Video Generation][Cartoon Generation] ToonComposer merges the traditionally fragmented "inbetweening" and "colorization" stages of cartoon production into a unified generative "post-keyframing" stage. With only one colored reference frame and a minimal set of keyframe sketches, it leverages a DiT video foundation model to directly generate high-quality cartoon videos, surpassing prior two-stage methods in quality, motion consistency, and efficiency.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Cartoon Generation"
+  - "Post-keyframing"
+  - "Sparse Sketch Injection"
+  - "DiT Adaptation"
+  - "Low-rank Adapter"
 date: 2026-05-08
-content_hash: 0fc8b0a72de50efd
+content_hash: d1f700ee7756ecc3
 ---
+
 # ToonComposer: Streamlining Cartoon Production with Generative Post-Keyframing
 
 **Conference**: ICLR 2026  
@@ -142,6 +148,7 @@ Comparison of adaptation strategies:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

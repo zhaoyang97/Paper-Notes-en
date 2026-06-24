@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RefAny3D: 3D Asset-Referenced Diffusion Models for Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] RefAny3D is proposed as a 3D asset-referenced image generation framework. By employing a dual-branch generation strategy that jointly models RGB images and point maps, it achieves precise geometric and textural consistency between the generated images and the 3D reference assets.
+  [ICLR 2026][Image Generation][3D asset reference] RefAny3D is proposed as a 3D asset-referenced image generation framework. By employing a dual-branch generation strategy that jointly models RGB images and point maps, it achieves precise geometric and textural consistency between the generated images and the 3D reference assets.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "3D asset reference"
+  - "dual-branch generation"
+  - "point map"
+  - "domain decoupling"
+  - "subject-driven generation"
 date: 2026-05-08
-content_hash: 7e8e03cf9e61a44e
+content_hash: 50a35ed4f8da3c12
 ---
+
 # RefAny3D: 3D Asset-Referenced Diffusion Models for Image Generation
 
 **Conference**: ICLR 2026  
@@ -119,15 +125,14 @@ RefAny3D outperforms all baselines in fidelity (4.655), ID preservation (4.737),
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2025\] 3DTopia-XL: Scaling High-Quality 3D Asset Generation via Primitive Diffusion](../../CVPR2025/image_generation/3dtopia-xl_scaling_high-quality_3d_asset_generation_via_primitive_diffusion.md)
 - [\[ICLR 2026\] Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation](asynchronous_denoising_diffusion_models_for_aligning_text-to-image_generation.md)
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 - [\[ICLR 2026\] RIDER: 3D RNA Inverse Design with Reinforcement Learning-Guided Diffusion](rider_3d_rna_inverse_design_with_reinforcement_learning-guided_diffusion.md)
-- [\[ICLR 2026\] Reconciling Visual Perception and Generation in Diffusion Models](reconciling_visual_perception_and_generation_in_diffusion_models.md)
 
 </div>
 

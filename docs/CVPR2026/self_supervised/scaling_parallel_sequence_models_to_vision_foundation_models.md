@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Parallel Sequence Models to Vision Foundation Models
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] This paper transforms the linear-complexity 2D Spatial Propagation Network (GSPN) into a compressed latent space version (C-GSPN) and uses two-stage cross-operator distillation to transfer knowledge from an attention-based teacher. It marks the first successful push of sub-quadratic operators to CLIP-level vision found
+  [CVPR 2026][Self-Supervised Learning][Sub-quadratic operators] This paper transforms the linear-complexity 2D Spatial Propagation Network (GSPN) into a compressed latent space version (C-GSPN) and uses two-stage cross-operator distillation to transfer knowledge from an attention-based teacher. It marks the first successful push of sub-quadratic operators to CLIP-level vision foundation model pre-training—achieving 2× faster block-level latency than FlashAttention at 1K resolu…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Sub-quadratic operators"
+  - "Spatial Propagation Network"
+  - "Cross-operator distillation"
+  - "High-resolution encoder"
+  - "CLIP pre-training"
 date: 2026-05-08
-content_hash: fbd026cd1484419b
+content_hash: 76df7b99501a9446
 ---
+
 # Scaling Parallel Sequence Models to Vision Foundation Models
 
 **Conference**: CVPR 2026  
@@ -161,10 +167,17 @@ C-GSPN matches the ViT→ViT baseline (63.3 vs 63.5) with 15% fewer parameters, 
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Scaling Dense Event-Stream Pretraining from Visual Foundation Models](scaling_dense_event-stream_pretraining_from_visual_foundation_models.md)
+- [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](com_pt_chain_of_models_pretraining.md)
+- [\[CVPR 2026\] TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction](talo_pushing_3d_vision_foundation_models_towards_globally_consistent_online_reco.md)
+- [\[CVPR 2026\] Harnessing the Power of Foundation Models for Accurate Material Classification](harnessing_the_power_of_foundation_models_for_accurate_material_classification.md)
+- [\[CVPR 2026\] How Much 3D Do Video Foundation Models Encode?](how_much_3d_do_video_foundation_models_encode.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Scaling Dense Event-Stream Pretraining from Visual Foundation Models](scaling_dense_event-stream_pretraining_from_visual_foundation_models.md)

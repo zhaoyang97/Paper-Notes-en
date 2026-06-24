@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks
 description: >-
-  [AAAI 2026][Video Understanding][Grassmannian] This paper proposes GMSF-Net, a topology-driven multi-subspace fusion network on the Grassmann manifold. By introducing adaptive multi-subspace construction and a Fréchet me…
+  [AAAI 2026][Video Understanding][Grassmannian] This paper proposes GMSF-Net, a topology-driven multi-subspace fusion network on the Grassmann manifold. By introducing adaptive multi-subspace construction and a Fréchet mean-based subspace interaction mechanism, it successfully transfers the multi-channel interaction paradigm from Euclidean space to non-Euclidean geometry, achieving state-of-the-art performance on 3D action recognition, EEG classification, and graph tasks.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "3D action recognition"
   - "Riemannian neural networks"
 date: 2026-05-08
-content_hash: 43872567c34e00d7
+content_hash: a46e18604758eb61
 ---
 
 # Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks
@@ -168,10 +168,10 @@ The ablation results clearly demonstrate: (1) the adaptive mechanism substantial
 ## Related Papers
 
 - [\[AAAI 2026\] PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking](plugtrack_multi-perceptive_motion_analysis_for_adaptive_fusion_in_multi-object_t.md)
-- [\[AAAI 2026\] Learning Time in Static Classifiers](learning_time_in_static_classifiers.md)
-- [\[CVPR 2026\] Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning](../../CVPR2026/video_understanding/learning_to_assist_physics-grounded_human-human_control_via_multi-agent_reinforc.md)
+- [\[CVPR 2026\] Gamba: Mamba-based Graph Convolutional Network with Dynamic Graph Topology Learning for Action Recognition](../../CVPR2026/video_understanding/gamba_mamba-based_graph_convolutional_network_with_dynamic_graph_topology_learni.md)
+- [\[ECCV 2024\] Bayesian Evidential Deep Learning for Online Action Detection](../../ECCV2024/video_understanding/bayesian_evidential_deep_learning_for_online_action_detection.md)
+- [\[CVPR 2026\] SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks](../../CVPR2026/video_understanding/sdtrack_a_baseline_for_event-based_tracking_via_spiking_neural_networks.md)
 - [\[ICML 2026\] Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection](../../ICML2026/video_understanding/privacy-aware_video_anomaly_detection_through_orthogonal_subspace_projection.md)
-- [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](../../CVPR2026/video_understanding/spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
 
 </div>
 

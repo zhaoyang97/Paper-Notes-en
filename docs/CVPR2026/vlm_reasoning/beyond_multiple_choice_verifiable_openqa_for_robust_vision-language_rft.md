@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Multiple Choice: Verifiable OpenQA for Robust Vision-Language RFT
 description: >-
-  [CVPR 2026][Multimodal VLM][OpenQA] This paper demonstrates that the Multiple-Choice Question Answering (MCQA) format leaks option signals that models can exploit, leading to inflated evaluations and RFT learning "option-guessing" shortcuts. It proposes the ReVeL framework to automatically rewrite MCQA into "OpenQA that remains rule-verifiable" based on
+  [CVPR 2026][VLM Reasoning][Reinforcement Fine-Tuning (RFT)] This paper demonstrates that the Multiple-Choice Question Answering (MCQA) format leaks option signals that models can exploit, leading to inflated evaluations and RFT learning "option-guessing" shortcuts. It proposes the ReVeL framework to automatically rewrite MCQA into "OpenQA that remains rule-verifiable" based on answer types. After fine-tuning with GRPO on 20k rewritten samples…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - OpenQA
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Reinforcement Fine-Tuning (RFT)"
+  - "Verifiable Reward"
+  - "OpenQA"
+  - "MCQA Bias"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 69d351b9b5d0ccb7
+content_hash: 15fbbf22c08cd05d
 ---
+
 # Beyond Multiple Choice: Verifiable OpenQA for Robust Vision-Language RFT
 
 **Conference**: CVPR 2026  
@@ -140,10 +144,10 @@ Key comparison: MCQA training caused the OpenQA score of the 7B model to drop fr
 ## Related Papers
 
 - [\[CVPR 2026\] CARE What Fails: Contrastive Anchored-REflection for Verifiable Multimodal Reasoning](care_what_fails_contrastive_anchored-reflection_for_verifiable_multimodal_reason.md)
-- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](dynamic_token_reweighting_for_robust_vision-language_models.md)
-- [\[CVPR 2026\] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding](beyond_single_images_a_comprehensive_benchmark_for_album-level_vision-language_u.md)
-- [\[CVPR 2026\] Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection](ramen_robust_test-time_adaptation_of_vision-language_models_with_active_sample_s.md)
-- [\[CVPR 2026\] EMMA: Extracting Multiple physical parameters from Multimodal Data](emma_extracting_multiple_physical_parameters_from_multimodal_data.md)
+- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
+- [\[ICML 2026\] 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding](../../ICML2026/vlm_reasoning/3d-rft_reinforcement_fine-tuning_for_video-based_3d_scene_understanding.md)
+- [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
+- [\[ICLR 2026\] Medical Thinking with Multiple Images](../../ICLR2026/vlm_reasoning/medical_thinking_with_multiple_images.md)
 
 </div>
 

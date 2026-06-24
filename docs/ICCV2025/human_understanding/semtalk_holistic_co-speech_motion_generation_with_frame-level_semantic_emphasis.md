@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis
 description: >-
-  > SemTalk decomposes co-speech motion into rhythm-aligned base motions and semantics-aware sparse motions, and adaptively fuses them via learned semantic scores to achieve high-quality holistic co-speech motion generati…
+  [Human Understanding] > SemTalk decomposes co-speech motion into rhythm-aligned base motions and semantics-aware sparse motions, and adaptively fuses them via learned semantic scores to achieve high-quality holistic co-speech motion generation with frame-level semantic emphasis.
 tags:
-
+  - "Human Understanding"
 date: 2026-05-08
-content_hash: d98c6dec506ee774
+content_hash: 2f5dec394909e81c
 ---
 
 # SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis
@@ -151,10 +151,10 @@ SemTalk achieves state-of-the-art performance on FGD (−22.4%), MSE (−19.9%),
 ## Related Papers
 
 - [\[ICCV 2025\] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning](semges_semantics-aware_co-speech_gesture_generation_using_semantic_coherence_and.md)
-- [\[ICCV 2025\] GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation](gesturehydra_semantic_co-speech_gesture_synthesis_via_hybrid_modality_diffusion_.md)
-- [\[AAAI 2026\] Streaming Generation of Co-Speech Gestures via Accelerated Rolling Diffusion](../../AAAI2026/human_understanding/streaming_generation_of_co-speech_gestures_via_accelerated_rolling_diffusion.md)
-- [\[ACL 2026\] CO-EVO: Co-evolving Semantic Anchoring and Style Diversification for Federated DG-ReID](../../ACL2026/human_understanding/co-evo_co-evolving_semantic_anchoring_and_style_diversification_for_federated_dg.md)
-- [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
+- [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
+- [\[ICCV 2025\] What's Making That Sound Right Now? Video-centric Audio-Visual Localization](whats_making_that_sound_right_now_video-centric_audio-visual_localization.md)
+- [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
+- [\[ICCV 2025\] Sequential Keypoint Density Estimator: An Overlooked Baseline of Skeleton-Based Video Anomaly Detection](sequential_keypoint_density_estimator_an_overlooked_baseline_of_skeleton-based_v.md)
 
 </div>
 

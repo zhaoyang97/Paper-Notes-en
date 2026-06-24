@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes HAWK, a head importance-aware visual token pruning method. It dynamically evaluates visual token importance by combining offline-calculated head contribution weights with text-guided attention scores. On Qwen2.5-VL, it retains 96.0% of original performance after pruning 80.2% of visual tokens, while reduc
+  [CVPR 2026][Multimodal Efficiency][visual token pruning] Ours proposes HAWK, a head importance-aware visual token pruning method. It dynamically evaluates visual token importance by combining offline-calculated head contribution weights with text-guided attention scores. On Qwen2.5-VL, it retains 96.0% of original performance after pruning 80.2% of visual tokens, while reducing inference latency by 26%.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "visual token pruning"
+  - "attention head importance"
+  - "multimodal inference acceleration"
+  - "training-free"
+  - "text-guided attention"
 date: 2026-05-08
-content_hash: 175ace4903247a82
+content_hash: 971978518694059a
 ---
+
 # HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,15 @@ HAWK is entirely training-free. Static weights are calculated using HallBench, M
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs](when_token_pruning_is_worse_than_random_understanding_visual_token_information_i.md)
-- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
-- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
 - [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
-- [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
+- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
 
 </div>
 

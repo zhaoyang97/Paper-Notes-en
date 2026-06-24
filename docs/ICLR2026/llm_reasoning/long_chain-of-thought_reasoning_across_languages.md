@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Long Chain-of-Thought Reasoning Across Languages
 description: >-
-  [ICLR 2026][LLM Reasoning][Long CoT] This paper systematically decomposes the cross-lingual transfer of long Chain-of-Thought (long CoT) reasoning capabilities into four development stages: scaling, pre-training, post-training, and inference. It finds that scaling only bridges the gap in "understanding" but not in "reasoning in the target language," and o
+  [ICLR 2026][Reasoning][Long CoT] This paper systematically decomposes the cross-lingual transfer of long Chain-of-Thought (long CoT) reasoning capabilities into four development stages: scaling, pre-training, post-training, and inference. It finds that scaling only bridges the gap in "understanding" but not in "reasoning in the target language," and offers a counter-intuitive practical conclusion: translating English reasoning trajectories into the target language for fine-tu…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Long CoT
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Long CoT"
+  - "Multilingual"
+  - "Cross-lingual Transfer"
+  - "Synthetic Data"
+  - "Post-training"
 date: 2026-05-08
-content_hash: b5495fd55e34fe04
+content_hash: a71045ddaaa27549
 ---
+
 # Long Chain-of-Thought Reasoning Across Languages
 
 **Conference**: ICLR 2026  
@@ -121,8 +126,8 @@ flowchart LR
 - [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
 - [\[ICLR 2026\] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization](pruning_long_chain-of-thought_of_large_reasoning_models_via_small-scale_preferen.md)
 - [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)
-- [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
-- [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
+- [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](../../ACL2026/llm_reasoning/long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
 
 </div>
 

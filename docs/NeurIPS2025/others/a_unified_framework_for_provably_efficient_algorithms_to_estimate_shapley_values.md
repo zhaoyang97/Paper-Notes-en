@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values
 description: >-
-  [NEURIPS2025][Shapley Values] This paper proposes a unified framework that subsumes KernelSHAP, LeverageSHAP, and related Shapley value estimators under a randomized sketching perspective…
+  [NEURIPS2025][Shapley Values] This paper proposes a unified framework that subsumes KernelSHAP, LeverageSHAP, and related Shapley value estimators under a randomized sketching perspective, provides the first non-asymptotic theoretical guarantees for KernelSHAP, and extends these methods to high-dimensional datasets such as CIFAR-10 via algorithmic improvements including Poisson approximation.
 tags:
   - "NEURIPS2025"
   - "Shapley Values"
@@ -11,7 +11,7 @@ tags:
   - "Explainable AI"
   - "Randomized Numerical Linear Algebra"
 date: 2026-05-08
-content_hash: 6bb03bc5d20cefd5
+content_hash: fc17cd54b03df4ea
 ---
 
 # A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values
@@ -154,10 +154,10 @@ Here $\eta$ and $\gamma$ depend on the choice of sampling distribution. The boun
 ## Related Papers
 
 - [\[AAAI 2026\] HyperSHAP: Shapley Values and Interactions for Explaining Hyperparameter Optimization](../../AAAI2026/others/hypershap_shapley_values_and_interactions_for_explaining_hyperparameter_optimiza.md)
-- [\[NeurIPS 2025\] UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing](uniformer_unified_and_efficient_transformer_for_reasoning_across_general_and_cus.md)
 - [\[NeurIPS 2025\] Faithful Group Shapley Value](faithful_group_shapley_value.md)
-- [\[NeurIPS 2025\] A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation](a_theoretical_framework_for_grokking_interpolation_followed_by_riemannian_norm_m.md)
-- [\[NeurIPS 2025\] Active Measurement: Efficient Estimation at Scale](active_measurement_efficient_estimation_at_scale.md)
+- [\[NeurIPS 2025\] UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing](uniformer_unified_and_efficient_transformer_for_reasoning_across_general_and_cus.md)
+- [\[ICML 2025\] Prediction via Shapley Value Regression (ViaSHAP)](../../ICML2025/others/prediction_via_shapley_value_regression.md)
+- [\[ECCV 2024\] An Incremental Unified Framework for Small Defect Inspection](../../ECCV2024/others/an_incremental_unified_framework_for_small_defect_inspection.md)
 
 </div>
 

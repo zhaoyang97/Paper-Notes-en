@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] How Reinforcement Learning after Next-Token Prediction Facilitates Learning
 description: >-
-  [ICLR 2026][learning_theory][Chain-of-Thought] This paper uses a provable toy model of "parity + a mixed distribution of long/short Chain-of-Thought" to rigorously characterize, for the first time from an optimization theory perspective, why "next-token pre-training followed by RL post-training" enables learning difficult tasks that pure pre-training cannot, while
+  [ICLR 2026][learning theory][Reinforcement learning theory] This paper uses a provable toy model of "parity + a mixed distribution of long/short Chain-of-Thought" to rigorously characterize, for the first time from an optimization theory perspective, why "next-token pre-training followed by RL post-training" enables learning difficult tasks that pure pre-training cannot, while explaining the mechanism behind increasing response lengths during RL.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Chain-of-Thought
-  - next-token prediction
-  - GRPO/STaR
+  - "ICLR 2026"
+  - "learning theory"
+  - "Reinforcement learning theory"
+  - "Chain-of-Thought"
+  - "Parity"
+  - "next-token prediction"
+  - "GRPO/STaR"
+  - "sample complexity separation"
+  - "test-time compute"
 date: 2026-05-08
-content_hash: d048e3119e49a508
+content_hash: 8b61c01c32206b25
 ---
+
 # How Reinforcement Learning after Next-Token Prediction Facilitates Learning
 
 **Conference**: ICLR 2026  

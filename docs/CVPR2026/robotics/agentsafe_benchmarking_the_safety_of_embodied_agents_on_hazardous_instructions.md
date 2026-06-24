@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] AGENTSAFE is the first benchmark to systematically evaluate the safety of "embodied VLM agents executing hazardous instructions." It utilizes an adversarial simulation sandbox (SAFE-THOR) that interfaces with arbitrary agents, a collection of 9,900 hazardous instructions categorized by the "Three Laws of Robotics" (SAF
+  [CVPR 2026][Robotics][Embodied Agents] AGENTSAFE is the first benchmark to systematically evaluate the safety of "embodied VLM agents executing hazardous instructions." It utilizes an adversarial simulation sandbox (SAFE-THOR) that interfaces with arbitrary agents, a collection of 9,900 hazardous instructions categorized by the "Three Laws of Robotics" (SAFE-VERSE), and a fine-grained diagnostic protocol (SAFE-DIAGNOSE) spanning the "perception-planning-execution" stages. The…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Embodied Agents"
+  - "VLM Safety"
+  - "Hazardous Instructions"
+  - "Jailbreak Attacks"
+  - "Full-process Diagnosis"
 date: 2026-05-08
-content_hash: 19997eccbf083b32
+content_hash: 5803a029ff38dcba
 ---
+
 # AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions
 
 **Conference**: CVPR 2026  
@@ -155,10 +161,10 @@ For environmental harm instructions, SAFE-AUDIT boosts PRR significantly (e.g., 
 ## Related Papers
 
 - [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](../../ICLR2026/robotics/rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
+- [\[CVPR 2026\] When Robots Should Say "I Don't Know": Benchmarking Abstention in Embodied Question Answering](when_robots_should_say_i_dont_know_benchmarking_abstention_in_embodied_question_.md)
 - [\[CVPR 2026\] Align While Search: Belief-Guided Exploratory Inference for World-Grounded Embodied Agents](align_while_search_belief-guided_exploratory_inference_for_world-grounded_embodi.md)
 - [\[CVPR 2026\] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning](towards_open_environments_and_instructions_general_vision-language_navigation_vi.md)
 - [\[NeurIPS 2025\] Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents](../../NeurIPS2025/robotics/benchmarking_egocentric_multimodal_goal_inference_for_assist.md)
-- [\[NeurIPS 2025\] MineAnyBuild: Benchmarking Spatial Planning for Open-world AI Agents](../../NeurIPS2025/robotics/mineanybuild_benchmarking_spatial_planning_for_openworld_ai.md)
 
 </div>
 

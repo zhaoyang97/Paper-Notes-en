@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TokenHand: Discrete Token Representation for Efficient Hand Mesh Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] TokenHand encodes a 3D hand into $M$ discrete tokens within a shared codebook and reframes "single-image hand mesh reconstruction" from a regression problem to a token classification problem. The classifier predicts the category of each token, while a pre-trained lightweight decoder restores the 778-vertex mesh without
+  [CVPR 2026][3D Vision][Hand mesh reconstruction] TokenHand encodes a 3D hand into $M$ discrete tokens within a shared codebook and reframes "single-image hand mesh reconstruction" from a regression problem to a token classification problem. The classifier predicts the category of each token, while a pre-trained lightweight decoder restores the 778-vertex mesh without post-processing. It achieves a PA-MPJPE of 5.7mm at 65 FPS with only 3.0M parameters on FreiHAND.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Hand mesh reconstruction"
+  - "discrete tokens"
+  - "vector quantization"
+  - "classification-based reconstruction"
+  - "real-time inference"
 date: 2026-05-08
-content_hash: 8494e9d3fd90be40
+content_hash: 9d8eae445fa37de3
 ---
+
 # TokenHand: Discrete Token Representation for Efficient Hand Mesh Reconstruction
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ Regarding parameter efficiency (excluding the backbone), the TokenHand decoder u
 
 ## Related Papers
 
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
 - [\[CVPR 2026\] PartDiffuser: Part-wise 3D Mesh Generation via Discrete Diffusion](partdiffuser_part-wise_3d_mesh_generation_via_discrete_diffusion.md)
+- [\[CVPR 2026\] AutoRegressive Generation with B-rep Holistic Token Sequence Representation](autoregressive_generation_with_b-rep_holistic_token_sequence_representation.md)
 - [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
-- [\[CVPR 2026\] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)
-- [\[CVPR 2026\] PE3R: Perception-Efficient 3D Reconstruction](pe3r_perception-efficient_3d_reconstruction.md)
-- [\[CVPR 2026\] ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation](exmesh_explicit_mesh_reconstruction_with_topology_adaptation.md)
+- [\[CVPR 2026\] SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation](sgi_structured_2d_gaussians_for_efficient_and_compact_large_image_representation.md)
 
 </div>
 

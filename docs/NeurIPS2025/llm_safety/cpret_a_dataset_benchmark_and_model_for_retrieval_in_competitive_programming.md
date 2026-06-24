@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming
 description: >-
-  [NeurIPS 2025][LLM Safety][competitive programming retrieval] To address the prevalence of duplicate and near-duplicate problems in competitive programming—which compromises contest fairness and inflates LLM evaluation s…
+  [NeurIPS 2025][LLM Safety][competitive programming retrieval] To address the prevalence of duplicate and near-duplicate problems in competitive programming—which compromises contest fairness and inflates LLM evaluation scores—this work constructs CPRet, a large-scale benchmark spanning four retrieval tasks, and proposes CPRetriever, a domain-specific retrieval model trained with Group-InfoNCE loss. CPRetriever surpasses 20+ existing embedding models across all tasks and revea…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -13,7 +13,7 @@ tags:
   - "data contamination"
   - "benchmark"
 date: 2026-05-08
-content_hash: 212e3e56a41c02b6
+content_hash: a568ce307bba5055
 ---
 
 # CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming
@@ -167,11 +167,11 @@ Analysis of 388 LiveCodeBench problems published after September 2024:
 
 ## Related Papers
 
+- [\[ICML 2025\] SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability](../../ICML2025/llm_safety/saebench_a_comprehensive_benchmark_for_sparse_autoencoders_in_language_model_int.md)
 - [\[NeurIPS 2025\] ORBIT -- Open Recommendation Benchmark for Reproducible Research with Hidden Tests](orbit_--_open_recommendation_benchmark_for_reproducible_research_with_hidden_tes.md)
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](../../ICLR2026/llm_safety/tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
 - [\[NeurIPS 2025\] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation](imagesentinel_protecting_visual_datasets_from_unauthorized_retrieval-augmented_i.md)
-- [\[ACL 2026\] Detoxification for LLM from Dataset Itself](../../ACL2026/llm_safety/detoxification_for_llm_from_dataset_itself.md)
 - [\[NeurIPS 2025\] Poly-Guard: Massive Multi-Domain Safety Policy-Grounded Guardrail Dataset](poly-guard_massive_multi-domain_safety_policy-grounded_guardrail_dataset.md)
-- [\[NeurIPS 2025\] Unlearning as Ablation: Toward a Falsifiable Benchmark for Generative Scientific Discovery](unlearning_as_ablation_toward_a_falsifiable_benchmark_for_generative_scientific_.md)
 
 </div>
 

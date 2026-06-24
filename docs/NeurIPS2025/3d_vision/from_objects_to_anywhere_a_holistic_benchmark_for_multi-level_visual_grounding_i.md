@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes
 description: >-
-  [NeurIPS 2025][3D Vision][3D visual grounding] This paper proposes Anywhere3D-Bench, the first 3D visual grounding benchmark spanning four levels—area, space, object…
+  [NeurIPS 2025][3D Vision][3D visual grounding] This paper proposes Anywhere3D-Bench, the first 3D visual grounding benchmark spanning four levels—area, space, object, and part—revealing that even the strongest models (Gemini-2.5-Pro and o3) achieve only ~30% accuracy on space-level tasks and ~40% on part-level tasks, far below the human performance of 95%.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "spatial reasoning"
   - "MLLM"
 date: 2026-05-08
-content_hash: 6468d611be6ebf29
+content_hash: d7fbce961d2fe133
 ---
 
 # From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes
@@ -140,11 +140,11 @@ Three categories of models are evaluated: (1) **LLMs** (scene graph as text inpu
 
 ## Related Papers
 
+- [\[CVPR 2026\] S$^2$-MLLM: Boosting Spatial Reasoning Capability of MLLMs for 3D Visual Grounding with Structural Guidance](../../CVPR2026/3d_vision/s2-mllm_boosting_spatial_reasoning_capability_of_mllms_for_3d_visual_grounding_w.md)
+- [\[ECCV 2024\] ScanReason: Empowering 3D Visual Grounding with Reasoning Capabilities](../../ECCV2024/3d_vision/scanreason_empowering_3d_visual_grounding_with_reasoning_capabilities.md)
 - [\[ICCV 2025\] Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description](../../ICCV2025/3d_vision/articulate3d_holistic_understanding_of_3d_scenes_as_universal_scene_description.md)
 - [\[NeurIPS 2025\] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations](openlex3d_a_tiered_evaluation_benchmark_for_open-vocabulary_3d_scene_representat.md)
-- [\[ICCV 2025\] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models](../../ICCV2025/3d_vision/mvgbench_a_comprehensive_benchmark_for_multi-view_generation_models.md)
-- [\[NeurIPS 2025\] ROGR: Relightable 3D Objects using Generative Relighting](rogr_relightable_3d_objects_using_generative_relighting.md)
-- [\[CVPR 2026\] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models](../../CVPR2026/3d_vision/monovlm_monocular_3d_visual_grounding_with_vision_language_models.md)
+- [\[NeurIPS 2025\] HouseLayout3D: A Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild](houselayout3d_a_benchmark_and_training-free_baseline_for_3d_layout_estimation_in.md)
 
 </div>
 

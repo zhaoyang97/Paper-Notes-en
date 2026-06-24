@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GraphTextack: A Realistic Black-Box Node Injection Attack on LLM-Enhanced GNNs
 description: >-
-  [AAAI 2026][LLM Safety][Text-attributed graphs] This paper proposes GraphTextack — the first black-box multimodal node injection poisoning attack targeting LLM-enhanced GNNs. It jointly optimizes the graph structural con…
+  [AAAI 2026][LLM Safety][Text-attributed graphs] This paper proposes GraphTextack — the first black-box multimodal node injection poisoning attack targeting LLM-enhanced GNNs. It jointly optimizes the graph structural connections and semantic features of injected nodes via an evolutionary optimization framework, requiring neither internal model information nor surrogate models. GraphTextack significantly outperforms 12 baseline methods across 5 datasets and 2 types of LLM-GNN…
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -14,7 +14,7 @@ tags:
   - "black-box attack"
   - "multimodal attack"
 date: 2026-05-08
-content_hash: be971426f2007ae0
+content_hash: 286ebe736e3cb8d6
 ---
 
 # GraphTextack: A Realistic Black-Box Node Injection Attack on LLM-Enhanced GNNs
@@ -138,10 +138,10 @@ The search space is $O(|V|^{r \cdot d_{\max}} \times |\mathcal{F}|^r)$, which is
 ## Related Papers
 
 - [\[AAAI 2026\] PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization](psm_prompt_sensitivity_minimization_via_llm-guided_black-box_optimization.md)
+- [\[ICLR 2026\] Auditing Black-Box LLM APIs with a Rank-Based Uniformity Test](../../ICLR2026/llm_safety/auditing_black-box_llm_apis_with_a_rank-based_uniformity_test.md)
+- [\[CVPR 2026\] Omni-Attack: Adversarial Attacks on Open-Ended VQA in Black-Box Multimodal LLMs](../../CVPR2026/llm_safety/omni-attack_adversarial_attacks_on_open-ended_vqa_in_black-box_multimodal_llms.md)
 - [\[ACL 2026\] Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework](../../ACL2026/llm_safety/rethinking_llm_watermark_detection_in_black-box_settings_a_non-intrusive_third-p.md)
-- [\[ACL 2026\] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](../../ACL2026/llm_safety/slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)
-- [\[ACL 2026\] Route to Rome Attack: Directing LLM Routers to Expensive Models via Adversarial Suffixes](../../ACL2026/llm_safety/route_to_rome_attack_directing_llm_routers_to_expensive_models_via_adversarial_s.md)
-- [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](../../ACL2026/llm_safety/subject-level_inference_for_realistic_text_anonymization_evaluation.md)
+- [\[ICLR 2026\] Bias Similarity Measurement: A Black-Box Audit of Fairness Across LLMs](../../ICLR2026/llm_safety/bias_similarity_measurement_a_black-box_audit_of_fairness_across_llms.md)
 
 </div>
 

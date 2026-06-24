@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] GraspLDP is proposed to inject grasp pose priors and graspness map visual cues from a pre-trained grasp detector into a latent diffusion policy framework. Through guidance in an action latent space encoded by a VAE and a self-supervised reconstruction objective, it significantly improves grasping precision and generali
+  [CVPR 2026][Robotics][Robotic Grasping] GraspLDP is proposed to inject grasp pose priors and graspness map visual cues from a pre-trained grasp detector into a latent diffusion policy framework. Through guidance in an action latent space encoded by a VAE and a self-supervised reconstruction objective, it significantly improves grasping precision and generalization.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robotic Grasping"
+  - "Latent Diffusion Policy"
+  - "Grasp Prior"
+  - "Imitation Learning"
+  - "Generalization"
 date: 2026-05-08
-content_hash: e30f27addb94c7dc
+content_hash: 4c97b2e04f291eaa
 ---
+
 # GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,14 @@ The training is performed in two separate stages: Stage 1 trains the VAE with $\
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] GraspGen-X: Cross-Embodiment 6-DOF Diffusion-based Grasping](graspgen-x_cross-embodiment_6-dof_diffusion-based_grasping.md)
-- [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
 - [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
-- [\[CVPR 2026\] Rethinking Visual Rearrangement from A Diffusion Perspective](rethinking_visual_rearrangement_from_a_diffusion_perspective.md)
 - [\[CVPR 2026\] Obstruction Reasoning for Robotic Grasping](obstruction_reasoning_for_robotic_grasping.md)
+- [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
+- [\[ICLR 2026\] H$^3$DP: Triply-Hierarchical Diffusion Policy for Visuomotor Learning](../../ICLR2026/robotics/h3dp_triplyhierarchical_diffusion_policy_for_visuomotor_learning.md)
 
 </div>
 

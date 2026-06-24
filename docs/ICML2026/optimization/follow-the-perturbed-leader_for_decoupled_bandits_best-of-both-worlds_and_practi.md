@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Follow-the-Perturbed-Leader for Decoupled Bandits: Best-of-Both-Worlds and Practicality
 description: >-
-  [ICML 2026][Optimization & Theory][Follow-the-Perturbed-Leader] This paper designs the first Best-of-Both-Worlds (BOBW) FTPL algorithm for the decoupled multi-armed bandit problem (where each round selects one arm to "exploit" and another to "explore"). By employing Pareto perturbations for exploitation and a proxy $q_{t,i}$—dependent only on the ranking of cumulative estimated los
+  [ICML 2026][Optimization][Follow-the-Perturbed-Leader] This paper designs the first Best-of-Both-Worlds (BOBW) FTPL algorithm for the decoupled multi-armed bandit problem (where each round selects one arm to "exploit" and another to "explore"). By employing Pareto perturbations for exploitation and a proxy $q_{t,i}$—dependent only on the ranking of cumulative estimated losses—to define the exploration distribution, the algorithm eliminates the need for per-step convex optimiz…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Follow-the-Perturbed-Leader
-  - Best-of-Both-Worlds
+  - "ICML 2026"
+  - "Optimization"
+  - "Follow-the-Perturbed-Leader"
+  - "Decoupled bandits"
+  - "Best-of-Both-Worlds"
+  - "Pareto perturbation"
+  - "Convex-optimization-free"
 date: 2026-05-08
-content_hash: 237a26427af54176
+content_hash: ea421a5ec4761fae
 ---
+
 # Follow-the-Perturbed-Leader for Decoupled Bandits: Best-of-Both-Worlds and Practicality
 
 **Conference**: ICML 2026  
@@ -126,11 +130,11 @@ On the implementation side, IW estimation only updates the selected arm $j_t$, m
 
 ## Related Papers
 
+- [\[ICLR 2026\] DeMo: Decoupled Momentum Optimization](../../ICLR2026/optimization/demo_decoupled_momentum_optimization.md)
 - [\[NeurIPS 2025\] Oracle-Efficient Combinatorial Semi-Bandits](../../NeurIPS2025/optimization/oracle-efficient_combinatorial_semi-bandits.md)
 - [\[ICML 2025\] BOPO: Neural Combinatorial Optimization via Best-anchored and Objective-guided Preference Optimization](../../ICML2025/optimization/bopo_neural_combinatorial_optimization_via_best-anchored_and_objective-guided_pr.md)
-- [\[ICML 2026\] URS：统一的神经路由求解器](urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
+- [\[ICML 2026\] URS: Unified Neural Routing Solver](urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
 - [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
-- [\[ICML 2026\] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization](safeguarded_stochastic_polyak_step_sizes_for_non-smooth_optimization_robust_perf.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Saliency-Aware Quantized Imitation Learning for Efficient Robotic Control
 description: >-
-  [ICCV 2025][Autonomous Driving][Model Quantization] This paper proposes SQIL (Saliency-Aware Quantized Imitation Learning), which identifies task-critical states via saliency scoring and applies weighted distillation dur…
+  [ICCV 2025][Autonomous Driving][Model Quantization] This paper proposes SQIL (Saliency-Aware Quantized Imitation Learning), which identifies task-critical states via saliency scoring and applies weighted distillation during quantization-aware training. SQIL recovers full-precision performance for 4-bit quantized VLA policy models in robotic manipulation and autonomous driving, while achieving 2.5–3.7× inference speedup.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Vision-Language-Action Models"
   - "Edge Deployment"
 date: 2026-05-08
-content_hash: c0d2cebb3a307620
+content_hash: 5ce0a88206fc70ec
 ---
 
 # Saliency-Aware Quantized Imitation Learning for Efficient Robotic Control
@@ -150,11 +150,11 @@ where $\alpha_t = \beta$ (when $SIS > T$, i.e., top 20%) or $\alpha_t = 1$ (othe
 
 ## Related Papers
 
+- [\[ECCV 2024\] Risk-Aware Self-Consistent Imitation Learning for Trajectory Planning in Autonomous Driving](../../ECCV2024/autonomous_driving/risk-aware_self-consistent_imitation_learning_for_trajectory_planning_in_autonom.md)
 - [\[ICCV 2025\] CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception](cooptrack_exploring_end-to-end_learning_for_efficient_cooperative_sequential_per.md)
 - [\[ICCV 2025\] Resonance: Learning to Predict Social-Aware Pedestrian Trajectories as Co-Vibrations](resonance_learning_to_predict_social-aware_pedestrian_trajectories_as_co-vibrati.md)
-- [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](future-aware_interaction_network_for_motion_forecasting.md)
-- [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
 - [\[ICCV 2025\] Wavelet Policy: Lifting Scheme for Policy Learning in Long-Horizon Tasks](wavelet_policy_lifting_scheme_for_policy_learning_in_long-horizon_tasks.md)
+- [\[ICML 2026\] CoIRL-AD: Collaborative-Competitive Imitation-Reinforcement Learning in Latent World Models for Autonomous Driving](../../ICML2026/autonomous_driving/coirl-ad_collaborative-competitive_imitation-reinforcement_learning_in_latent_wo.md)
 
 </div>
 

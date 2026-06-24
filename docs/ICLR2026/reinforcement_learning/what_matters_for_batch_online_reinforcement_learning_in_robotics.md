@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Matters for Batch Online Reinforcement Learning in Robotics?
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper provides a systematic empirical study. The authors decompose the paradigm where robots iteratively self-improve using large batches of self-collected data (batch online RL) into three axes: algorithm category, policy extraction method, and policy expressivity. They derive a robust "recipe": Value-based guida
+  [ICLR 2026][Reinforcement Learning][Batch Online RL] This paper provides a systematic empirical study. The authors decompose the paradigm where robots iteratively self-improve using large batches of self-collected data (batch online RL) into three axes: algorithm category, policy extraction method, and policy expressivity. They derive a robust "recipe": Value-based guidance (IQL) + Implicit Policy Extraction (sampling multiple actions and selecting the one with the highest Q-…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Batch Online RL"
+  - "Robot Self-Improvement"
+  - "Value Guidance"
+  - "Implicit Policy Extraction"
+  - "Diffusion Policy"
 date: 2026-05-08
-content_hash: 2ee125686d189a79
+content_hash: 9705dd4fba02ff04
 ---
+
 # What Matters for Batch Online Reinforcement Learning in Robotics?
 
 **Conference**: ICLR 2026  

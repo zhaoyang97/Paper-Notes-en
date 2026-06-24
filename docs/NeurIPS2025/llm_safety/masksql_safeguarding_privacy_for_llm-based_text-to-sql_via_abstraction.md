@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via Abstraction
 description: >-
-  [NeurIPS 2025][LLM Safety][Text-to-SQL] This paper proposes MaskSQL, a framework that protects privacy by replacing sensitive table names, column names…
+  [NeurIPS 2025][LLM Safety][Text-to-SQL] This paper proposes MaskSQL, a framework that protects privacy by replacing sensitive table names, column names, and data values with abstract symbols before sending prompts to a remote LLM. Combined with a local SLM for schema linking and SQL reconstruction, MaskSQL preserves privacy while surpassing SLM-only approaches in SQL generation accuracy.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "LLM-SLM Hybrid"
   - "Database Security"
 date: 2026-05-08
-content_hash: f99afdeba45b397a
+content_hash: 5ae1155160c4ed09
 ---
 
 # MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via Abstraction
@@ -134,9 +134,9 @@ No training is required. A local SLM (Qwen-2.5-7B-Instruct) handles trusted-side
 
 - [\[NeurIPS 2025\] SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications](swe-sql_illuminating_llm_pathways_to_solve_user_sql_issues_in_real-world_applica.md)
 - [\[NeurIPS 2025\] InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy](invisibleink_high-utility_and_low-cost_text_generation_with_differential_privacy.md)
+- [\[ICML 2025\] The Canary's Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text](../../ICML2025/llm_safety/the_canarys_echo_auditing_privacy_risks_of_llm-generated_synthetic_text.md)
 - [\[NeurIPS 2025\] AgentStealth: Reinforcing Large Language Model for Anonymizing User-generated Text](agentstealth_reinforcing_large_language_model_for_anonymizing_user-generated_tex.md)
 - [\[NeurIPS 2025\] CoreGuard: Safeguarding Foundational Capabilities of LLMs Against Model Stealing in Edge Deployment](coreguard_safeguarding_foundational_capabilities_of_llms_against_model_stealing_.md)
-- [\[NeurIPS 2025\] Music Arena: Live Evaluation for Text-to-Music](music_arena_live_evaluation_for_text-to-music.md)
 
 </div>
 

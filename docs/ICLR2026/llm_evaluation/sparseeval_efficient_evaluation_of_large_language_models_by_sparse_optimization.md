@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SparseEval: Efficient Evaluation of Large Language Models by Sparse Optimization
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper formalizes "estimating LLM performance on an entire benchmark using a small number of samples" as a sparse optimization problem. It is the first to directly learn anchor weights using an MLP via gradient descent and iteratively replace anchors through AIS/CIS importance scores. Using only approximately 100 s
+  [ICLR 2026][LLM Evaluation][Efficient Evaluation] This paper formalizes "estimating LLM performance on an entire benchmark using a small number of samples" as a sparse optimization problem. It is the first to directly learn anchor weights using an MLP via gradient descent and iteratively replace anchors through AIS/CIS importance scores. Using only approximately 100 samples, it reduces estimation error to 1–2% while maintaining high ranking consistency (Kendall's τ).
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Efficient Evaluation"
+  - "Anchor Selection"
+  - "Sparse Optimization"
+  - "Benchmark Subsets"
+  - "Performance Prediction"
 date: 2026-05-08
-content_hash: 65da79afc26abed0
+content_hash: 19e72b021d39248f
 ---
+
 # SparseEval: Efficient Evaluation of Large Language Models by Sparse Optimization
 
 **Conference**: ICLR 2026  
@@ -151,8 +157,8 @@ AIS/CIS refinement further reduces error beyond initialization, confirming that 
 - [\[ICLR 2026\] DISCO: Diversifying Sample Condensation for Efficient Model Evaluation](disco_diversifying_sample_condensation_for_efficient_model_evaluation.md)
 - [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Models](prompt_and_parameter_co-optimization_for_large_language_models.md)
 - [\[ICLR 2026\] Multi-turn Evaluation of Anthropomorphic Behaviours in Large Language Models](multi-turn_evaluation_of_anthropomorphic_behaviours_in_large_language_models.md)
+- [\[ICLR 2026\] ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models](chemeval_a_multi-level_and_fine-grained_chemical_capability_evaluation_for_large.md)
 - [\[ICLR 2026\] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](dont_passk_a_bayesian_framework_for_large_language_model_evaluation.md)
-- [\[ICLR 2026\] Fewer Battles, More Gain: An Information-Efficient Framework for Arena-based LLM Evaluation](fewer_battles_more_gain_an_information-efficient_framework_for_arena-based_llm_e.md)
 
 </div>
 

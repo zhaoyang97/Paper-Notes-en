@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] The CooperTrim adaptive feature selection framework is proposed, which assesses feature relevance via conformal temporal uncertainty metrics and utilizes a data-driven mechanism to dynamically determine sharing quantities. It achieves an 80.28% bandwidth reduction with comparable performance in cooperative semantic seg
+  [ICLR 2026][3D Vision][Cooperative Perception] The CooperTrim adaptive feature selection framework is proposed, which assesses feature relevance via conformal temporal uncertainty metrics and utilizes a data-driven mechanism to dynamically determine sharing quantities. It achieves an 80.28% bandwidth reduction with comparable performance in cooperative semantic segmentation, marking the first application of selective sharing to segmentation tasks.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Cooperative Perception"
+  - "Bandwidth Optimization"
+  - "Temporal Uncertainty"
+  - "Feature Selection"
+  - "Conformal Prediction"
 date: 2026-05-08
-content_hash: 5515f8dcc3addbe0
+content_hash: 58d70fea2253d01e
 ---
+
 # COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,7 @@ vs. other selection strategies:
 - [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](../../CVPR2026/3d_vision/long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
 - [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
 - [\[CVPR 2026\] GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception](../../CVPR2026/3d_vision/gsv2x_geometry-aware_uncertainty_modeling_and_orthogonal_fusion_for_robust_roads.md)
-- [\[AAAI 2026\] Domain Generalized Stereo Matching with Uncertainty-guided Data Augmentation](../../AAAI2026/3d_vision/domain_generalized_stereo_matching_with_uncertainty-guided_data_augmentation.md)
+- [\[NeurIPS 2025\] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection](../../NeurIPS2025/3d_vision/enhancing_multilingual_llm_pretraining_with_model-based_data_selection.md)
 
 </div>
 

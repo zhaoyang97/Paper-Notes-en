@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression
 description: >-
-  [CVPR 2026][Image Restoration][Diffusion DPO] The authors discovered that off-the-shelf VLMs (Gemini 2.5-Flash) can zero-shot reproduce human pairwise preference judgments. By treating the VLM as a "perceptual judge" and utilizing Diffusion DPO to post-train a FlowMo-based diffusion autoencoder, they developed VLIC—an image compression system highly aligned with h
+  [CVPR 2026][Multimodal VLM][Perceptual Compression] The authors discovered that off-the-shelf VLMs (Gemini 2.5-Flash) can zero-shot reproduce human pairwise preference judgments. By treating the VLM as a "perceptual judge" and utilizing Diffusion DPO to post-train a FlowMo-based diffusion autoencoder, they developed VLIC—an image compression system highly aligned with human perception that achieves SOTA performance across most perceptual metrics.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Diffusion DPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Perceptual Compression"
+  - "VLM Discrimination"
+  - "Diffusion DPO"
+  - "Diffusion Autoencoder"
+  - "Human Alignment"
 date: 2026-05-08
-content_hash: 54c534f2de098923
+content_hash: 7b79b0f817ac33d2
 ---
+
 # VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ In Table 1, at 0.21bpp, adding VLM (VLM+LPIPS) versus LPIPS-only post-training i
 
 ## Related Papers
 
-- [\[CVPR 2026\] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation](evlf_early_vision-language_fusion_for_generative_dataset_distillation.md)
-- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
-- [\[ICML 2026\] Consistent Diffusion Language Models](../../ICML2026/image_restoration/consistent_diffusion_language_models.md)
-- [\[CVPR 2026\] White-Balance First, Adjust Later: Cross-Camera Color Constancy via Vision-Language Evaluation](white-balance_first_adjust_later_cross-camera_color_constancy_via_vision-languag.md)
-- [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
+- [\[AAAI 2026\] CreBench: Human-Aligned Creativity Evaluation from Idea to Process to Product](../../AAAI2026/multimodal_vlm/crebench_human-aligned_creativity_evaluation_from_idea_to_process_to_product.md)
+- [\[CVPR 2026\] VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction](vlm-3r_vision-language_models_augmented_with_instruction-aligned_3d_reconstructi.md)
+- [\[CVPR 2026\] Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following](multi-crit_benchmarking_multimodal_judges_on_pluralistic_criteria-following.md)
+- [\[ICLR 2026\] UrbanFeel: A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective](../../ICLR2026/multimodal_vlm/urbanfeela_comprehensive_benchmark_for_temporal_and_perceptual_understanding_of_.md)
+- [\[CVPR 2026\] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion](omnifood8k_nutrition_estimation.md)
 
 </div>
 

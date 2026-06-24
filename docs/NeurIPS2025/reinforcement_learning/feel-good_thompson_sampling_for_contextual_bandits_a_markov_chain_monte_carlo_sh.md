@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Feel-Good Thompson Sampling for Contextual Bandits: a Markov Chain Monte Carlo Showdown
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Thompson Sampling] This paper presents the first systematic empirical evaluation of Feel-Good Thompson Sampling (FG-TS) and its smoothed variant SFG-TS under approximate posteriors…
+  [NeurIPS 2025][Reinforcement Learning][Thompson Sampling] This paper presents the first systematic empirical evaluation of Feel-Good Thompson Sampling (FG-TS) and its smoothed variant SFG-TS under approximate posteriors, spanning linear, logistic, and neural contextual bandit settings across fourteen benchmarks. The study finds that FG-TS outperforms standard TS when exact posteriors are available (linear/logistic), but degrades in neural bandits…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Exploration-Exploitation"
   - "Posterior Sampling"
 date: 2026-05-08
-content_hash: 0ed68177d13e8b68
+content_hash: 5999628066f953fd
 ---
 
 # Feel-Good Thompson Sampling for Contextual Bandits: a Markov Chain Monte Carlo Showdown

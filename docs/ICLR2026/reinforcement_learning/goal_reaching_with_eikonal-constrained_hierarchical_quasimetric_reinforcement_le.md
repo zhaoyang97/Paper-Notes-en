@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Goal Reaching with Eikonal-Constrained Hierarchical Quasimetric Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Goal-Conditioned RL] The discrete per-transition local constraints of Quasimetric RL are reformulated into continuous-time Eikonal Partial Differential Equation (PDE) constraints (where the gradient norm is 1). This makes value learning "trajectory-free," requiring only sampled states and goals. A hierarchical structure is integrated to al
+  [ICLR 2026][Reinforcement Learning][Goal-Conditioned RL] The discrete per-transition local constraints of Quasimetric RL are reformulated into continuous-time Eikonal Partial Differential Equation (PDE) constraints (where the gradient norm is 1). This makes value learning "trajectory-free," requiring only sampled states and goals. A hierarchical structure is integrated to alleviate failures under complex dynamics, achieving SOTA on OGbench navigation tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Goal-Conditioned RL
-  - Quasimetric RL
-  - Eikonal PDE
-  - PINN
-  - Hierarchical RL
-  - Offline RL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Goal-Conditioned RL"
+  - "Quasimetric RL"
+  - "Eikonal PDE"
+  - "PINN"
+  - "Hierarchical RL"
+  - "Offline RL"
 date: 2026-05-08
-content_hash: 1b8ddb336454674a
+content_hash: d91f8cecb64d91f7
 ---
+
 # Goal Reaching with Eikonal-Constrained Hierarchical Quasimetric Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -133,9 +134,9 @@ Learning curves for humanoidmaze (Fig. 4) show that Eik-HiQRL has a statisticall
 
 - [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
 - [\[ICLR 2026\] Dual Goal Representations](dual_goal_representations.md)
-- [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
 - [\[ICLR 2026\] Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning](strict_subgoal_execution_reliable_long-horizon_planning_in_hierarchical_reinforc.md)
-- [\[ICLR 2026\] Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning](occupancy_reward_shaping_improving_credit_assignment_for_offline_goal-conditione.md)
+- [\[ICLR 2026\] SafeMPO: Constrained Reinforcement Learning via Probabilistic Incremental Improvement](safempo_constrained_reinforcement_learning_with_probabilistic_incremental_improv.md)
+- [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CortiLife: A Unified Framework for Cortical Representation Learning across the Lifespan
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] CortiLife introduces CLIP-style vision-language pre-training to non-Euclidean cortical surfaces for the first time. By combining "icosahedral patching + tri-stream multi-level encoding + attention-guided masked self-distillation + metadata language prompting," it constructs a unified cortical representation spanning fr
+  [ICLR2026][Medical Imaging][Cortical Surface] CortiLife introduces CLIP-style vision-language pre-training to non-Euclidean cortical surfaces for the first time. By combining "icosahedral patching + tri-stream multi-level encoding + attention-guided masked self-distillation + metadata language prompting," it constructs a unified cortical representation spanning from infancy to old age, outperforming SOTA models like CLIP, ACLIP, and DetailCLIP in age prediction…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Cortical Surface"
+  - "Lifespan"
+  - "Icosahedral Patching"
+  - "Masked Self-distillation"
+  - "Metadata Prompting"
 date: 2026-05-08
-content_hash: 5ba6b578a0c3adce
+content_hash: 1e8531deecbf11d9
 ---
+
 # CortiLife: A Unified Framework for Cortical Representation Learning across the Lifespan
 
 **Conference**: ICLR2026  
@@ -151,10 +157,10 @@ Tri-stream encoding is essential (Disease diagnosis, ✓/✗ indicates retention
 ## Related Papers
 
 - [\[ICLR 2026\] Anatomy-aware Representation Learning for Medical Ultrasound](anatomy-aware_representation_learning_for_medical_ultrasound.md)
+- [\[ICLR 2026\] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning](stochastic_optimal_control_for_continuous-time_fmri_representation_learning.md)
 - [\[CVPR 2026\] Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis](../../CVPR2026/medical_imaging/focus-to-perceive_representation_learning_a_cognition-inspired_hierarchical_fram.md)
 - [\[CVPR 2025\] CycleULM: A Unified Label-Free Deep Learning Framework for Ultrasound Localisation Microscopy](../../CVPR2025/medical_imaging/cycleulm_a_unified_label-free_deep_learning_framework_for_ultrasound_localisatio.md)
 - [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](../../CVPR2026/medical_imaging/gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
-- [\[CVPR 2026\] MuViT: Multi-Resolution Vision Transformers for Learning Across Scales in Microscopy](../../CVPR2026/medical_imaging/muvit_multi-resolution_vision_transformers_for_learning_across_scales_in_microsc.md)
 
 </div>
 

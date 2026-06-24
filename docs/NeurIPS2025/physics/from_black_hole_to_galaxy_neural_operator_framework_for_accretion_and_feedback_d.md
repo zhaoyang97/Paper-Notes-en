@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Neural Operator] A Neural Operator-based "sub-grid black hole" model is proposed to learn the small-scale (GR)MHD time-evolution operator $u_t \to u_{t+\Delta T}$…
+  [NeurIPS 2025][Physics & Scientific Computing][Neural Operator] A Neural Operator-based "sub-grid black hole" model is proposed to learn the small-scale (GR)MHD time-evolution operator $u_t \to u_{t+\Delta T}$, replacing hand-crafted closure rules embedded in a multi-level direct numerical simulation framework. This work achieves, for the first time, the capture of intrinsic variability in accretion-driven feedback, with a speedup of $\sim 10^5\times$.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Sub-grid Model"
   - "GRMHD"
 date: 2026-05-08
-content_hash: 037ae18c39dd1ba7
+content_hash: 84e92ac01e51d457
 ---
 
 # From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics
@@ -138,11 +138,11 @@ Training configuration: 1200 epochs, batch size 4 (effective 16), Adam lr=$10^{-
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery](score-informed_neural_operator_for_enhancing_ordering-based_causal_discovery.md)
 - [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
-- [\[ICCV 2025\] JPEG Processing Neural Operator for Backward-Compatible Coding](../../ICCV2025/physics/jpeg_processing_neural_operator_for_backward-compatible_coding.md)
+- [\[NeurIPS 2025\] Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery](score-informed_neural_operator_for_enhancing_ordering-based_causal_discovery.md)
+- [\[ICLR 2026\] ATOM: A Pretrained Neural Operator for Multitask Molecular Dynamics](../../ICLR2026/physics/atom_a_pretrained_neural_operator_for_multitask_molecular_dynamics.md)
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
-- [\[ICLR 2026\] One Operator to Rule Them All? On Boundary-Indexed Operator Families in Neural PDE Solvers](../../ICLR2026/physics/one_operator_to_rule_them_all_on_boundary-indexed_operator_families_in_neural_pd.md)
+- [\[ICCV 2025\] JPEG Processing Neural Operator for Backward-Compatible Coding](../../ICCV2025/physics/jpeg_processing_neural_operator_for_backward-compatible_coding.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Unlearnability Phenomenon in RLVR for Language Models
 description: >-
-  [ICML 2026][AI Safety][RLVR] The authors identify a class of "unlearnable samples" in RLVR (GRPO) training: even when correct rollouts are sampled and reward signals are non-zero, the model fails to learn them throughout the entire training process. The root cause is not a scarcity of positive samples, clipping, or KL regularization on the optimiz
+  [ICML 2026][AI Safety][RLVR] The authors identify a class of "unlearnable samples" in RLVR (GRPO) training: even when correct rollouts are sampled and reward signals are non-zero, the model fails to learn them throughout the entire training process. The root cause is not a scarcity of positive samples, clipping, or KL regularization on the optimization side, but rather that these samples are "gradient outliers" under the initial policy, stemming from representational deficien…
 tags:
-  - ICML 2026
-  - AI Safety
-  - RLVR
-  - GRPO
+  - "ICML 2026"
+  - "AI Safety"
+  - "RLVR"
+  - "GRPO"
+  - "Unlearnable Samples"
+  - "Gradient Similarity"
+  - "Representational Deficiencies"
 date: 2026-05-08
-content_hash: f497227a71009425
+content_hash: b2102dfb7fa67895
 ---
+
 # The Unlearnability Phenomenon in RLVR for Language Models
 
 **Conference**: ICML 2026  
@@ -137,15 +141,15 @@ Unlearnable samples are not marginal cases in any setup, standing as a major por
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] In-Training Defenses Against Emergent Misalignment in Language Models](in-training_defenses_against_emergent_misalignment_in_language_models.md)
 - [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
 - [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
 - [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
 - [\[ICML 2026\] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models](dualoptim_bridging_shared_and_decoupled_optimizer_states_for_better_machine_unle.md)
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 
 </div>
 

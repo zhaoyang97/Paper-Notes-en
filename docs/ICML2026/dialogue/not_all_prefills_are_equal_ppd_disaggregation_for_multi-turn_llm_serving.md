@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving
 description: >-
-  [ICML 2026][Dialogue Systems][SLO] This paper points out that traditional Prefill-Decode (PD) disaggregated architectures are significantly inefficient in multi-turn dialogue scenarios due to the repeated P→D recomputation and transmission of KV caches for each turn. It proposes PPD (Prefill-capable Decode), a dynamic routing system that allows decode n
+  [ICML 2026][Dialogue Systems][PD Disaggregation] This paper points out that traditional Prefill-Decode (PD) disaggregated architectures are significantly inefficient in multi-turn dialogue scenarios due to the repeated P→D recomputation and transmission of KV caches for each turn. It proposes PPD (Prefill-capable Decode), a dynamic routing system that allows decode nodes to decide whether to process Turn 2+ append-prefills locally based on SLO weights…
 tags:
-  - ICML 2026
-  - Dialogue Systems
-  - SLO
+  - "ICML 2026"
+  - "Dialogue Systems"
+  - "PD Disaggregation"
+  - "Multi-turn Dialogue"
+  - "KV cache reuse"
+  - "Dynamic Routing"
+  - "SLO"
 date: 2026-05-08
-content_hash: 11aa8a94b4478151
+content_hash: cbd82732e77639ee
 ---
+
 # Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving
 
 **Conference**: ICML 2026  
@@ -128,9 +133,9 @@ Hardware: 4× H100 80GB + NVLink. Models: Primarily Llama-3.1-8B (validated with
 
 ## Related Papers
 
+- [\[ICML 2026\] Context-Driven Incremental Compression for Multi-Turn Dialogue Generation](context-driven_incremental_compression_for_multi-turn_dialogue_generation.md)
 - [\[ICML 2026\] From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents](from_self-evolving_synthetic_data_to_verifiable-reward_rl_post-training_multi-tu.md)
 - [\[ACL 2026\] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](../../ACL2026/dialogue/ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)
-- [\[ICML 2026\] Context-Driven Incremental Compression for Multi-Turn Dialogue Generation](context-driven_incremental_compression_for_multi-turn_dialogue_generation.md)
 - [\[NeurIPS 2025\] HyGen: Efficient LLM Serving via Elastic Online-Offline Request Co-location](../../NeurIPS2025/dialogue/hygen_efficient_llm_serving_via_elastic_online-offline_request_co-location.md)
 - [\[ACL 2026\] SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation](../../ACL2026/dialogue/spasm_stable_persona-driven_agent_simulation_for_multi-turn_dialogue_generation.md)
 

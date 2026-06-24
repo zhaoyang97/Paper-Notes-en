@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge
 description: >-
-  [ICLR 2026][Computational Biology][Pretraining] PVB (Pretrained Variational Bridge) unifies the training objectives of single-structure pretraining and paired-trajectory finetuning via an encoder-decoder architecture combined with Enhanced Bridge Matching. It achieves cross-domain biomolecular trajectory generation and accelerates protein-ligand holo-state explorati
+  [ICLR 2026][Computational Biology][Molecular Dynamics] PVB (Pretrained Variational Bridge) unifies the training objectives of single-structure pretraining and paired-trajectory finetuning via an encoder-decoder architecture combined with Enhanced Bridge Matching. It achieves cross-domain biomolecular trajectory generation and accelerates protein-ligand holo-state exploration through RL finetuning.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Pretraining
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Dynamics"
+  - "Trajectory Generation"
+  - "Variational Bridge Matching"
+  - "Pretraining"
+  - "RL Finetuning"
 date: 2026-05-08
-content_hash: 1ccca6130a525efa
+content_hash: 0490337aa881dc16
 ---
+
 # Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge
 
 **Conference**: ICLR 2026  
@@ -152,11 +157,11 @@ Using Girsanov's theorem and adjoint matching, this stochastic optimal control (
 
 ## Related Papers
 
-- [\[ICLR 2026\] Riemannian Variational Flow Matching for Material and Protein Design](riemannian_variational_flow_matching_for_material_and_protein_design.md)
-- [\[ICLR 2026\] CDBridge: A Cross-omics Post-training Bridge Strategy for Context-aware Biological Modeling](cdbridge_a_cross-omics_post-training_bridge_strategy_for_context-aware_biologica.md)
+- [\[ICLR 2026\] Diffusion Alignment as Variational Expectation-Maximization](diffusion_alignment_as_variational_expectation-maximization.md)
 - [\[ICLR 2026\] Physically Valid Biomolecular Interaction Modeling with Gauss-Seidel Projection](physically_valid_biomolecular_interaction_modeling_with_gauss-seidel_projection.md)
-- [\[ICLR 2026\] PETRI: Learning Unified Cell Embeddings from Unpaired Modalities via Early-Fusion Joint Reconstruction](petri_learning_unified_cell_embeddings_from_unpaired_modalities_via_early-fusion.md)
-- [\[ICLR 2026\] KGOT: Unified Knowledge Graph and Optimal Transport Pseudo-Labeling for Molecule-Protein Interaction Prediction](kgot_unified_knowledge_graph_and_optimal_transport_pseudo-labeling_for_molecule-.md)
+- [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
+- [\[ICLR 2026\] Riemannian Variational Flow Matching for Material and Protein Design](riemannian_variational_flow_matching_for_material_and_protein_design.md)
+- [\[ICML 2026\] Advancing Ligand-based Virtual Screening and Molecular Generation with Pretrained Molecular Embedding Distance](../../ICML2026/computational_biology/advancing_ligand-based_virtual_screening_and_molecular_generation_with_pretraine.md)
 
 </div>
 

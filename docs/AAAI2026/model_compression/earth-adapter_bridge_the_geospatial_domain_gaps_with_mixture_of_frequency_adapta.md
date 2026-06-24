@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Earth-Adapter: Bridge Geospatial Domain Gaps with Mixture of Frequency Adaptation
 description: >-
-  [AAAI 2026][Model Compression][Remote sensing semantic segmentation] This paper proposes Earth-Adapter, the first parameter-efficient fine-tuning (PEFT) method specifically designed to address **artifact problems** in re…
+  [AAAI 2026][Model Compression][Remote sensing semantic segmentation] This paper proposes Earth-Adapter, the first parameter-efficient fine-tuning (PEFT) method specifically designed to address **artifact problems** in remote sensing imagery. Through a frequency-guided Mixture of Adapters (MoA), features are decomposed into high- and low-frequency subspaces, independently optimized, and then dynamically aggregated. The method outperforms the baseline Rein across three settings…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "mixture of adapters"
   - "artifact mitigation"
 date: 2026-05-08
-content_hash: a3a911f16ce6fbba
+content_hash: e24cd1c14f8b35eb
 ---
 
 # Earth-Adapter: Bridge Geospatial Domain Gaps with Mixture of Frequency Adaptation
@@ -179,11 +179,11 @@ Backbone ablation: consistent improvements are observed across DINOv2-S/B/L; the
 
 ## Related Papers
 
+- [\[CVPR 2026\] FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection](../../CVPR2026/model_compression/fast_topology-aware_frequency-domain_distribution_matching_for_coreset_selection.md)
 - [\[ICLR 2026\] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension](../../ICLR2026/model_compression/freqkv_key-value_compression_in_frequency_domain_for_context_window_extension.md)
 - [\[AAAI 2026\] Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation](consensus-aligned_neuron_efficient_fine-tuning_large_language_models_for_multi-d.md)
-- [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
 - [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](../../ACL2026/model_compression/talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
-- [\[AAAI 2026\] AdaFuse: Accelerating Dynamic Adapter Inference via Token-Level Pre-Gating and Fused Kernel Optimization](adafuse_accelerating_dynamic_adapter_inference_via_token-lev.md)
+- [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
 
 </div>
 

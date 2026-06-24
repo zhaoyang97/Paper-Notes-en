@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Mean Flow Policy with Instantaneous Velocity Constraint for One-step Action Generation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Flow Matching] This paper introduces the "mean velocity field" into RL policies, enabling multi-modal optimal action generation from Gaussian noise via one-step sampling. A proposed Instantaneous Velocity Constraint (IVC) addresses the missing boundary conditions to ensure learning accuracy, maximizing training and inference speed wh
+  [ICLR 2026][Reinforcement Learning][Generative Policy] This paper introduces the "mean velocity field" into RL policies, enabling multi-modal optimal action generation from Gaussian noise via one-step sampling. A proposed Instantaneous Velocity Constraint (IVC) addresses the missing boundary conditions to ensure learning accuracy, maximizing training and inference speed while preserving the expressiveness of flow-based policies.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Flow Matching
-  - Mean Flow
-  - Offline-to-Online RL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Generative Policy"
+  - "Flow Matching"
+  - "Mean Flow"
+  - "One-step Action Generation"
+  - "Offline-to-Online RL"
+  - "Robot Manipulation"
 date: 2026-05-08
-content_hash: 1402a40274aabe2d
+content_hash: 58056a6dbb37ab9e
 ---
+
 # Mean Flow Policy with Instantaneous Velocity Constraint for One-step Action Generation
 
 **Conference**: ICLR 2026  
@@ -124,14 +128,17 @@ MVP achieves or exceeds Prev. SOTA in 8 out of 9 tasks. The advantage is most pr
 
 <div class="related-papers" markdown="1">
 
-- **Diffusion Policy**: Visuomotor Policy Learning via Action Diffusion (CHI 2023)
-- **FQL**: Flow-based Q-learning for Offline-to-Online Reinforcement Learning (ICLR 2024)
-- **MeanFlow**: Training Flow Matching with Mean Velocity (ArXiv 2025)
+## Related Papers
+
+- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
+- [\[ICLR 2026\] SAC Flow: Sample-Efficient Reinforcement Learning of Flow-Based Policies via Velocity-Reparameterized Sequential Modeling](sac_flow_sample-efficient_reinforcement_learning_of_flow-based_policies_via_velo.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
+- [\[ICLR 2026\] Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions](local_reinforcement_learning_with_action-conditioned_root_mean_squared_q-functio.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)

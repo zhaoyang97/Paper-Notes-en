@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sparse Autoencoders are Topic Models
 description: >-
-  [ICML 2026][Interpretability][LDA] This paper proves that the $L_1$ objective of Sparse Autoencoders (SAE) is exactly the MAP estimation of an LDA-style "Continuous Topic Model" (CTM) under the limit of high activity and small contribution. Based on this, the SAE-TM framework is proposed: pre-training SAEs to obtain reusable topic atoms, learning word d
+  [ICML 2026][Interpretability][Sparse Autoencoders] This paper proves that the $L_1$ objective of Sparse Autoencoders (SAE) is exactly the MAP estimation of an LDA-style "Continuous Topic Model" (CTM) under the limit of high activity and small contribution. Based on this, the SAE-TM framework is proposed: pre-training SAEs to obtain reusable topic atoms, learning word distributions post-hoc, and merging them into an arbitrary number of topics via clustering. Topic coherence on…
 tags:
-  - ICML 2026
-  - Interpretability
-  - LDA
+  - "ICML 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Topic Models"
+  - "LDA"
+  - "Continuous Topic Models"
+  - "Embedding Interpretation"
 date: 2026-05-08
-content_hash: ed57b6a43009a9ba
+content_hash: fdcee03f58f789ba
 ---
+
 # Sparse Autoencoders are Topic Models
 
 **Conference**: ICML 2026  
@@ -140,11 +145,11 @@ On images, $C_R$ remains stable at 84+, making SAE-TM the only method that does 
 
 ## Related Papers
 
+- [\[ICML 2026\] Ensembling Sparse Autoencoders](ensembling_sparse_autoencoders.md)
 - [\[ICML 2026\] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders](on_the_relationship_between_activation_outliers_and_feature_death_in_sparse_auto.md)
 - [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
-- [\[ICML 2026\] Ensembling Sparse Autoencoders](ensembling_sparse_autoencoders.md)
-- [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
-- [\[ICLR 2026\] Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability](../../ICLR2026/interpretability/temporal_sparse_autoencoders_leveraging_the_sequential_nature_of_language_for_in.md)
+- [\[ICLR 2026\] Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders](../../ICLR2026/interpretability/uncovering_conceptual_blindspots_in_generative_image_models_using_sparse_autoenc.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](../../ICLR2026/interpretability/the_price_of_amortized_inference_in_sparse_autoencoders.md)
 
 </div>
 

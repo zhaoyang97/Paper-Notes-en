@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Asking like Socrates: Socrates helps VLMs understand remote sensing images
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This work reveals the "pseudo-reasoning" phenomenon in remote sensing VLMs (where explicit reasoning chains lead to performance degradation), attributed to the "glance effect" (insufficient single coarse-grained perception). It proposes the RS-EoT (Evidence-of-Thought) iterative evidence search paradigm. The method use
+  [CVPR 2026][Remote Sensing][Remote Sensing Image Understanding] This work reveals the "pseudo-reasoning" phenomenon in remote sensing VLMs (where explicit reasoning chains lead to performance degradation), attributed to the "glance effect" (insufficient single coarse-grained perception). It proposes the RS-EoT (Evidence-of-Thought) iterative evidence search paradigm. The method uses SocraticAgent self-play to synthesize reasoning trajectories for SFT cold startup…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Remote Sensing Image Understanding"
+  - "Chain-of-Evidence Reasoning"
+  - "Pseudo-reasoning"
+  - "Socratic Method"
+  - "Two-stage Reinforcement Learning"
 date: 2026-05-08
-content_hash: 05cb2347b6e29c44
+content_hash: f35cdb36254053a3
 ---
+
 # Asking like Socrates: Socrates helps VLMs understand remote sensing images
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ RS-EoT-7B achieves **SOTA across all VQA and Grounding tasks**, notably improvin
 
 ## Related Papers
 
-- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
-- [\[CVPR 2026\] CLIP-like Model as a Foundational Density Ratio Estimator](clip-like_model_as_a_foundational_density_ratio_estimator.md)
-- [\[CVPR 2026\] TIGeR: A Unified Framework for Time, Images and Geo-location Retrieval](tiger_a_unified_framework_for_time_images_and_geo-location_retrieval.md)
-- [\[CVPR 2026\] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding](beyond_single_images_a_comprehensive_benchmark_for_album-level_vision-language_u.md)
-- [\[CVPR 2026\] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](if-bench_benchmarking_and_enhancing_mllms_for_infrared_images_with_generative_vi.md)
+- [\[CVPR 2026\] SegEarth-R2: Towards Comprehensive Language-guided Segmentation for Remote Sensing Images](segearth-r2_towards_comprehensive_language-guided_segmentation_for_remote_sensin.md)
+- [\[ECCV 2024\] Masked Angle-Aware Autoencoder for Remote Sensing Images](../../ECCV2024/remote_sensing/masked_angle-aware_autoencoder_for_remote_sensing_images.md)
+- [\[CVPR 2026\] GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective](geocot_towards_reliable_remote_sensing_reasoning_with_manifold_perspective.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
+- [\[CVPR 2026\] RECS4R: Bridging Semantics and Geometry for Referring Remote Sensing Interpretation](recs4r_bridging_semantics_and_geometry_for_referring_remote_sensing_interpretati.md)
 
 </div>
 

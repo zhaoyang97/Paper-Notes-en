@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling
 description: >-
-  [AAAI2026][Robotics][fine-grained alignment] This paper proposes GRM, a framework that achieves robust fine-grained image-text alignment through intra-modal saliency/granularity-aware adapters and Gaussian mixture-based…
+  [AAAI2026][Robotics][fine-grained alignment] This paper proposes GRM, a framework that achieves robust fine-grained image-text alignment through intra-modal saliency/granularity-aware adapters and Gaussian mixture-based region-level uncertainty modeling, attaining state-of-the-art performance on Flickr30K and MS-COCO.
 tags:
   - "AAAI2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Gaussian mixture"
   - "region prompting"
 date: 2026-05-08
-content_hash: a1aff1379dbbab63
+content_hash: ff67e4c5231621e9
 ---
 
 # Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling
@@ -140,11 +140,11 @@ The Gumbel-Softmax token selection approach is extensible to other scenarios req
 
 ## Related Papers
 
-- [\[CVPR 2026\] FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation](../../CVPR2026/robotics/finecog_nav_fine_grained_cognitive_modules_for_zero_shot_uav_navigation.md)
+- [\[ACL 2025\] CHEER-Ekman: Fine-grained Embodied Emotion Classification](../../ACL2025/robotics/cheer-ekman_fine-grained_embodied_emotion_classification.md)
+- [\[CVPR 2026\] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](../../CVPR2026/robotics/clad_planning_with_grounded_foresight_via_cross-modal_latent_dynamics.md)
 - [\[AAAI 2026\] Dexterous Manipulation Transfer via Progressive Kinematic-Dynamic Alignment](dexterous_manipulation_transfer_via_progressive_kinematic-dynamic_alignment.md)
-- [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer](../../CVPR2026/robotics/gecosrt_geometryaware_continual_adaptation_for_rob.md)
-- [\[AAAI 2026\] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](continuous_vision-language-action_co-learning_with_semantic-.md)
-- [\[AAAI 2026\] Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation](affordance-guided_coarse-to-fine_exploration_for_base_placem.md)
+- [\[CVPR 2025\] Phoenix: A Motion-based Self-Reflection Framework for Fine-grained Robotic Action Correction](../../CVPR2025/robotics/phoenix_a_motion-based_self-reflection_framework_for_fine-grained_robotic_action.md)
+- [\[ICLR 2026\] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation](../../ICLR2026/robotics/sarm_stage-aware_reward_modeling_for_long_horizon_robot_manipulation.md)
 
 </div>
 

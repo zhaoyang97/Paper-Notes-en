@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding
 description: >-
-  [ACL 2026][Multimodal VLM][Video-LLM] Response-G1 utilizes query-guided online scene graphs, historical scene graph retrieval, and timestamped trigger prompts to explicitly align visual evidence with the response conditions of user queries. This approach significantly enhances the "when to answer" decision-making capability of Video-LLMs in streaming video
+  [ACL2026][Multimodal VLM][Streaming video understanding] Response-G1 utilizes query-guided online scene graphs, historical scene graph retrieval, and timestamped trigger prompts to explicitly align visual evidence with the response conditions of user queries. This approach significantly enhances the "when to answer" decision-making capability of Video-LLMs in streaming videos without requiring fine-tuning.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Video-LLM
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Streaming video understanding"
+  - "proactive response"
+  - "scene graph"
+  - "retrieval augmentation"
+  - "Video-LLM"
 date: 2026-05-08
-content_hash: 6922c1995d5219bd
+content_hash: b94ea947bdf097ad
 ---
+
 # Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding
 
 **Conference**: ACL2026  
@@ -147,9 +152,9 @@ Query guidance is also critical. Placing parsed object relations directly into p
 
 - [\[CVPR 2026\] Streaming Video Instruction Tuning (Streamo)](../../CVPR2026/multimodal_vlm/streaming_video_instruction_tuning.md)
 - [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](../../CVPR2026/multimodal_vlm/scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
-- [\[ACL 2026\] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding](dualfact_a_multimodal_fact_verification_framework_for_procedural_video_understan.md)
+- [\[ICLR 2026\] MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning](../../ICLR2026/multimodal_vlm/mmduet2_enhancing_proactive_interaction_of_video_mllms_with_multi-turn_reinforce.md)
 - [\[CVPR 2026\] Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching](../../CVPR2026/multimodal_vlm/can_we_build_scene_graphs_not_classify_them_flowsg_progressive_image-conditioned.md)
-- [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
+- [\[ICLR 2026\] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](../../ICLR2026/multimodal_vlm/videochat-flash_hierarchical_compression_for_long-context_video_modeling.md)
 
 </div>
 

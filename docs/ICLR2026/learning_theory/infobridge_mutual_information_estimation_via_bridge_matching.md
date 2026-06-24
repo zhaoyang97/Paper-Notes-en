@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] InfoBridge: Mutual Information Estimation via Bridge Matching
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] The paper **reformulates Mutual Information (MI) estimation** between two random variables as a "domain translation" problem: expressing MI as the difference between the drift terms of a pair of diffusion bridges (one connecting the joint distribution and one connecting the product of marginals), resulting in InfoBridg
+  [ICLR 2026][Learning Theory][Mutual Information Estimation] The paper **reformulates Mutual Information (MI) estimation** between two random variables as a "domain translation" problem: expressing MI as the difference between the drift terms of a pair of diffusion bridges (one connecting the joint distribution and one connecting the product of marginals), resulting in InfoBridge—an estimator that is theoretically unbiased and significantly outperforms existing methods in high…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Information Theory"
+  - "Generative Models"
+  - "Mutual Information Estimation"
+  - "Diffusion Bridge Matching"
+  - "Reciprocal Process"
+  - "Girsanov Theorem"
+  - "Unbiased Estimator"
 date: 2026-05-08
-content_hash: 695ede821a0e1394
+content_hash: 1cb97cd20255437a
 ---
+
 # InfoBridge: Mutual Information Estimation via Bridge Matching
 
 **Conference**: ICLR 2026  
@@ -113,9 +121,9 @@ where $v_{\mathrm{joint}}=\mathbb{E}_{q_\pi(x_1|x_t,x_0)}\big[\tfrac{x_1-x_t}{1-
 
 - [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
 - [\[ICLR 2026\] Curse of Slicing: Why Sliced Mutual Information is a Deceptive Measure of Statistical Dependence](curse_of_slicing_why_sliced_mutual_information_is_a_deceptive_measure_of_statist.md)
-- [\[ICLR 2026\] Characterizing Pattern Matching and Its Limits on Compositional Task Structures](characterizing_pattern_matching_and_its_limits_on_compositional_task_structures.md)
+- [\[ICLR 2026\] Diffusion Bridge Variational Inference for Deep Gaussian Processes](diffusion_bridge_variational_inference_for_deep_gaussian_processes.md)
+- [\[ICLR 2026\] Convergence Dynamics of Over-Parameterized Score Matching for a Single Gaussian](convergence_dynamics_of_over-parameterized_score_matching_for_a_single_gaussian.md)
 - [\[ICLR 2026\] FlowNIB: An Information Bottleneck Analysis of Bidirectional vs. Unidirectional Language Models](flownib_an_information_bottleneck_analysis_of_bidirectional_vs_unidirectional_la.md)
-- [\[ICLR 2026\] Score-Based Density Estimation from Pairwise Comparisons](score-based_density_estimation_from_pairwise_comparisons.md)
 
 </div>
 

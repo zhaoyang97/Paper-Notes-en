@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes the Quantile Token Regression method. By inserting specialized quantile tokens into the input sequence and combining retrieved neighbor instances with their empirical distributions, the LLM can predict a complete conditional distribution rather than a single point estimate. This approach reduces the
+  [ACL 2026][LLM (Other)][Quantile Regression] This paper proposes the Quantile Token Regression method. By inserting specialized quantile tokens into the input sequence and combining retrieved neighbor instances with their empirical distributions, the LLM can predict a complete conditional distribution rather than a single point estimate. This approach reduces the avg MAPE by approximately 4 points and narrows prediction intervals by more than 2x compared to baselines on Airbn…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Quantile Regression"
+  - "Distribution Prediction"
+  - "Retrieval-Augmented Generation"
+  - "LLM Fine-tuning"
+  - "Uncertainty Estimation"
 date: 2026-05-08
-content_hash: ad78b62de14c4ca0
+content_hash: 8a67d10beceb9c0a
 ---
+
 # Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context
 
 **Conference**: ACL 2026  
@@ -143,10 +149,10 @@ The model is trained using an $\ell_1$ Wasserstein loss on empirical quantile ta
 ## Related Papers
 
 - [\[ACL 2025\] Prediction Hubs are Context-Informed Frequent Tokens in LLMs](../../ACL2025/llm_nlp/prediction_hubs_are_context-informed_frequent_tokens_in_llms.md)
+- [\[ACL 2026\] Wait, There’s a Way Out: A Decision Mechanism for Dialogue Derailment Prediction](wait_theres_a_way_out_a_decision_mechanism_for_forecasting_conversational_derail.md)
 - [\[ACL 2026\] Hot-Start from Pixels: Low-Resolution Visual Tokens for Chinese Language Modeling](hot-start_from_pixels_low-resolution_visual_tokens_for_chinese_language_modeling.md)
 - [\[ACL 2026\] Leveraging Pretrained Language Models as Energy Functions for Glauber Dynamics Text Diffusion](leveraging_pretrained_language_models_as_energy_functions_for_glauber_dynamics_t.md)
-- [\[ACL 2026\] AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment](alphacontext_an_evolutionary_tree-based_psychometric_context_generator_for_creat.md)
-- [\[ACL 2026\] Overcoming Copyright Barriers in Corpus Distribution Through Non-Reversible Hashing](overcoming_copyright_barriers_in_corpus_distribution_through_non-reversible_hash.md)
+- [\[ACL 2026\] OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning](toward_robust_in-context_learning_leveraging_out-of-distribution_proxies_for_tar.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][GUI grounding] DRS-GUI inserts a training-free "search-then-predict" phase before MLLM coordinate prediction: it uses a UI Perceptor to parse screenshots into UI elements with semantic relevance, then employs MCTS to schedule three human-like perceptual actions (Focus/Shift/Scatter) guided by region quality rewards to iteratively sea
+  [CVPR 2026][Multimodal VLM][GUI grounding] DRS-GUI inserts a training-free "search-then-predict" phase before MLLM coordinate prediction: it uses a UI Perceptor to parse screenshots into UI elements with semantic relevance, then employs MCTS to schedule three human-like perceptual actions (Focus/Shift/Scatter) guided by region quality rewards to iteratively search for the most relevant compact region. This approach improves the grounding accuracy of Qwen2.5-VL-7B and UGround-…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GUI grounding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "GUI grounding"
+  - "training-free"
+  - "dynamic region search"
+  - "Monte Carlo Tree Search"
+  - "visual search"
 date: 2026-05-08
-content_hash: 30da3e89ff44bad8
+content_hash: d3a6bc3d79b6e3a0
 ---
+
 # DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding
 
 **Conference**: CVPR 2026  
@@ -133,16 +138,16 @@ Ablation of action space and reward terms on ScreenSpot-V2 with UGround-V1-7B (A
 - Value: ⭐⭐⭐⭐ Strong practical utility with significant gains (+14%) on difficult benchmarks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] MVP: Multiple View Prediction Improves GUI Grounding](mvp_multiple_view_prediction_improves_gui_grounding.md)
 - [\[CVPR 2026\] GUI-SAGE: Enhancing GUI Automation with Self-Explanatory Learning](gui-sage_enhancing_gui_automation_with_self-explanatory_learning.md)
-- [\[ACL 2025\] R-VLM: Region-Aware Vision Language Model for Precise GUI Grounding](../../ACL2025/multimodal_vlm/r-vlm_region-aware_vision_language_model_for_precise_gui_grounding.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/multimodal_vlm/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
 - [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
+- [\[ACL 2025\] R-VLM: Region-Aware Vision Language Model for Precise GUI Grounding](../../ACL2025/multimodal_vlm/r-vlm_region-aware_vision_language_model_for_precise_gui_grounding.md)
+- [\[CVPR 2026\] PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs](pas_a_training-free_stabilizer_for_temporal_encoding_in_video_llms.md)
 
 </div>
 

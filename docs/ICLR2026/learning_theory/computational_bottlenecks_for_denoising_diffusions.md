@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Computational Bottlenecks for Denoising Diffusions
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proves that if the denoising problem corresponding to a distribution $\mu$ exhibits an "information-computation gap," denoising diffusion sampling will inevitably fail even if direct sampling from $\mu$ is easy. Specifically, there exist drifts that are nearly optimal for score matching yet lead to completel
+  [ICLR 2026][Learning Theory][Diffusion sampling] This paper proves that if the denoising problem corresponding to a distribution $\mu$ exhibits an "information-computation gap," denoising diffusion sampling will inevitably fail even if direct sampling from $\mu$ is easy. Specifically, there exist drifts that are nearly optimal for score matching yet lead to completely erroneous sampling trajectories, and all Lipschitz polynomial-time drifts with near-optimal score matching al…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Diffusion Models"
+  - "Diffusion sampling"
+  - "information-computation gap"
+  - "score matching"
+  - "computational lower bounds"
+  - "sparse low-rank matrices"
 date: 2026-05-08
-content_hash: 63b842d0d39a8921
+content_hash: 1229ad0dcb4d5d67
 ---
+
 # Computational Bottlenecks for Denoising Diffusions
 
 **Conference**: ICLR 2026  
@@ -113,15 +120,16 @@ All three hit the wall at $t_{\mathrm{alg}}=n/2$: while performance is decent ab
 - Value: ⭐⭐⭐⭐⭐ Provides a principled criterion for when not to use diffusion sampling, offering significant guidance for generative model theory and practice.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Language Identification in the Limit with Computational Trace](language_identification_in_the_limit_with_computational_trace.md)
-- [\[ICLR 2026\] On the Computational Limits of AI4S-RL：A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
 - [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
+- [\[ICLR 2026\] On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 - [\[ICLR 2026\] Score-Based Density Estimation from Pairwise Comparisons](score-based_density_estimation_from_pairwise_comparisons.md)
-- [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
 
 </div>
 

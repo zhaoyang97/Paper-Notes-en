@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AutoMonitor-Bench: Evaluating the Reliability of LLM-Based Misbehavior Monitor
 description: >-
-  [ACL 2026][Code Intelligence][Sycophancy] This paper constructs AutoMonitor-Bench, the first systematic benchmark for evaluating whether LLM-based monitors can reliably identify model misbehavior (3,010 paired samples covering safety violations, sycophancy/bias, and specification gaming). Evaluation across 22 open-source and closed-source monitoring models rev
+  [ACL 2026 Findings][Code Intelligence][Misbehavior Monitoring] This paper constructs AutoMonitor-Bench, the first systematic benchmark for evaluating whether LLM-based monitors can reliably identify model misbehavior (3,010 paired samples covering safety violations, sycophancy/bias, and specification gaming). Evaluation across 22 open-source and closed-source monitoring models reveals a systematic trade-off between Miss Rate (MR) and False Alarm Rate (FAR). Furthermore…
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Sycophancy
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Misbehavior Monitoring"
+  - "Miss Rate"
+  - "False Alarm Rate"
+  - "Specification Gaming"
+  - "Sycophancy"
 date: 2026-05-08
-content_hash: 3524ba669ec55301
+content_hash: 215409b5cbe75c4d
 ---
+
 # AutoMonitor-Bench: Evaluating the Reliability of LLM-Based Misbehavior Monitor
 
 **Conference**: ACL 2026 Findings  
@@ -131,15 +136,14 @@ Identical failure modes were replicated on Qwen3-8B, proving the issue lies in t
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] EDIT-Bench: Evaluating LLM Abilities to Perform Real-World Instructed Code Edits](../../ICLR2026/code_intelligence/edit-bench_evaluating_llm_abilities_to_perform_real-world_instructed_code_edits.md)
+- [\[ACL 2026\] Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility](can_llms_compress_and_decompress_evaluating_code_understanding_and_execution_via.md)
 - [\[ACL 2025\] FEA-Bench: A Benchmark for Evaluating Repository-Level Code Generation for Feature Implementation](../../ACL2025/code_intelligence/feabench_repo_code_gen.md)
 - [\[NeurIPS 2025\] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research](../../NeurIPS2025/code_intelligence/mlr-bench_evaluating_ai_agents_on_open-ended_machine_learning_research.md)
-- [\[ACL 2026\] Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility](can_llms_compress_and_decompress_evaluating_code_understanding_and_execution_via.md)
 - [\[ACL 2026\] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution](solidcoder_bridging_the_mental-reality_gap_in_llm_code_generation_through_concre.md)
-- [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
 
 </div>
 

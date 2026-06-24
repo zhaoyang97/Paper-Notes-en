@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Center-Outward q-Dominance: A Sample-Computable Proxy for Strong Stochastic Dominance in Multi-Objective Optimisation
 description: >-
-  [AAAI 2026][Stochastic multi-objective optimisation] Building on the center-outward distribution function from optimal transport theory, this paper proposes the q-dominance relation as a computable approximation of stron…
+  [AAAI 2026][Stochastic multi-objective optimisation] Building on the center-outward distribution function from optimal transport theory, this paper proposes the q-dominance relation as a computable approximation of strong first-order stochastic dominance (strong FSD). It proves that q-dominance over the full quantile range implies strong FSD, derives explicit sample-size thresholds for Type I error control, and validates practical utility in hyperparameter tuning ranking and…
 tags:
   - "AAAI 2026"
   - "Stochastic multi-objective optimisation"
@@ -11,7 +11,7 @@ tags:
   - "hyperparameter tuning"
   - "center-outward quantiles"
 date: 2026-05-08
-content_hash: 3d13da56d91fe894
+content_hash: 576e9f897ccc8ea3
 ---
 
 # Center-Outward q-Dominance: A Sample-Computable Proxy for Strong Stochastic Dominance in Multi-Objective Optimisation
@@ -165,9 +165,9 @@ Experimental setup: $\sigma=0.1$, population size 20, 200 generations, 64 sample
 ## Related Papers
 
 - [\[AAAI 2026\] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)
-- [\[ICML 2026\] Adaptive Multi-Round Allocation with Stochastic Arrivals](../../ICML2026/others/adaptive_multi-round_allocation_with_stochastic_arrivals.md)
 - [\[AAAI 2026\] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach](approximation_algorithm_for_constrained_k-center_clustering_.md)
-- [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
+- [\[ICML 2026\] Adaptive Multi-Round Allocation with Stochastic Arrivals](../../ICML2026/others/adaptive_multi-round_allocation_with_stochastic_arrivals.md)
+- [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](../../CVPR2026/others/adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
 - [\[AAAI 2026\] Online Linear Regression with Paid Stochastic Features](online_linear_regression_with_paid_stochastic_features.md)
 
 </div>

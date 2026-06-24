@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Lyapunov Probes for Hallucination Detection in Large Foundation Models
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] (M)LLMs are viewed as high-dimensional dynamical systems evolving in representation space, and "hallucinations" are redefined as cases where inputs fall into unstable knowledge boundary regions rather than stable equilibrium points. A lightweight probe network with a Lyapunov monotonic decay constraint (taking multi-la
+  [CVPR 2026][Hallucination Detection][Lyapunov stability] (M)LLMs are viewed as high-dimensional dynamical systems evolving in representation space, and "hallucinations" are redefined as cases where inputs fall into unstable knowledge boundary regions rather than stable equilibrium points. A lightweight probe network with a Lyapunov monotonic decay constraint (taking multi-layer hidden states and perturbation information as input) is used for discrimination…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Lyapunov stability"
+  - "Dynamical systems"
+  - "Probe networks"
+  - "Knowledge boundaries"
 date: 2026-05-08
-content_hash: 65374fbd3608e25e
+content_hash: c38b4123844e7bd4
 ---
+
 # Lyapunov Probes for Hallucination Detection in Large Foundation Models
 
 **Conference**: CVPR 2026  
@@ -154,9 +159,9 @@ Average 2.1% higher than basic probes; POPE is near saturation (+0.8%), but the 
 
 - [\[NeurIPS 2025\] Beyond Token Probes: Hallucination Detection via Activation Tensors with ACT-ViT](../../NeurIPS2025/hallucination/beyond_token_probes_hallucination_detection_via_activation_tensors_with_act-vit.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
+- [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](../../ICLR2026/hallucination/mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
 - [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
 - [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
-- [\[ACL 2026\] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models](../../ACL2026/hallucination/halluaudio_a_comprehensive_benchmark_for_hallucination_detection_in_large_audio-.md)
 
 </div>
 

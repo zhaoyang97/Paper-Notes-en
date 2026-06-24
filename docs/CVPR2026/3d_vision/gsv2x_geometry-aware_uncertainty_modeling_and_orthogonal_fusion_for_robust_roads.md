@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] To address two persistent issues in roadside multi-view camera-LiDAR fusion—"feature misalignment caused by calibration errors" and "dominant camera features suppressing LiDAR"—GSV2X replaces deterministic projections with 3D Gaussian distributions to "softly" lift pixel features to BEV and employs orthogonal constrain
+  [CVPR 2026][3D Vision][Roadside Perception] To address two persistent issues in roadside multi-view camera-LiDAR fusion—"feature misalignment caused by calibration errors" and "dominant camera features suppressing LiDAR"—GSV2X replaces deterministic projections with 3D Gaussian distributions to "softly" lift pixel features to BEV and employs orthogonal constraints to force the two modalities to learn complementary features. On RCooper, it improves AP@0.5 from 43.7% (BEVFusion…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Roadside Perception"
+  - "Camera-LiDAR Fusion"
+  - "3D Gaussian"
+  - "Uncertainty Modeling"
+  - "Orthogonal Fusion"
 date: 2026-05-08
-content_hash: 1239f26eaa8010ee
+content_hash: 8a101def0b260a80
 ---
+
 # GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,11 @@ The calibration robustness experiment (Table 4, Intersection scenario, AC=Accura
 
 ## Related Papers
 
-- [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
-- [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
-- [\[CVPR 2026\] Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift](query2uncertainty_robust_uncertainty_quantification_and_calibration_for_3d_objec.md)
-- [\[CVPR 2026\] FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration](foss_modeling_long_range_dependencies_and_multimodal_uncertainty_in_trajectory_p.md)
-- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
+- [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
+- [\[ICLR 2026\] COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception](../../ICLR2026/3d_vision/coopertrim_adaptive_data_selection_for_uncertainty-aware_cooperative_perception.md)
+- [\[CVPR 2026\] PoseGAM: Robust Unseen Object Pose Estimation via Geometry-Aware Multi-View Reasoning](posegam_robust_unseen_object_pose_estimation_via_geometry-aware_multi-view_reaso.md)
+- [\[CVPR 2026\] MU-GeNeRF: Multi-view Uncertainty-guided Generalizable Neural Radiance Fields for Distractor-aware Scene](mu-generf_multi-view_uncertainty-guided_generalizable_neural_radiance_fields_for.md)
+- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
 
 </div>
 

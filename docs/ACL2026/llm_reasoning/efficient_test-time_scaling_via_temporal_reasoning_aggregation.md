@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Test-Time Scaling via Temporal Reasoning Aggregation
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] The TRACE framework is proposed to judge inference convergence by aggregating two complementary signals—multi-step answer consistency and confidence trajectory—within a sliding window. This enables training-free dynamic early exit, reducing token usage by 25-30% while maintaining accuracy within a 1-2% margin.
+  [ACL 2026 Findings][Reasoning][Test-time scaling] The TRACE framework is proposed to judge inference convergence by aggregating two complementary signals—multi-step answer consistency and confidence trajectory—within a sliding window. This enables training-free dynamic early exit, reducing token usage by 25-30% while maintaining accuracy within a 1-2% margin.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "early exit strategy"
+  - "inference convergence"
+  - "multi-step aggregation"
+  - "overthinking"
 date: 2026-05-08
-content_hash: 10a42debe5850bcb
+content_hash: 1ebc0f2708502444
 ---
+
 # Efficient Test-Time Scaling via Temporal Reasoning Aggregation
 
 **Conference**: ACL 2026 Findings  
@@ -127,11 +133,11 @@ TRACE is a training-free inference-time method. Evaluated on Qwen3-8B and DeepSe
 
 ## Related Papers
 
-- [\[ACL 2026\] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models](reprobe_efficient_test-time_scaling_of_multi-step_reasoning_by_probing_internal_.md)
+- [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](../../ICLR2026/llm_reasoning/optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
 - [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](../../ICLR2026/llm_reasoning/plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
 - [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[ACL 2026\] FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents](fs-researcher_test-time_scaling_for_long-horizon_research_tasks_with_file-system.md)
-- [\[NeurIPS 2025\] LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling](../../NeurIPS2025/llm_reasoning/limopro_reasoning_refinement_for_efficient_and_effective_test-time_scaling.md)
+- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](../../ICLR2026/llm_reasoning/cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
 
 </div>
 

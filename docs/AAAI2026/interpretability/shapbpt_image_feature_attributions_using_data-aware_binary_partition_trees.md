@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees
 description: >-
-  [AAAI 2026][Interpretability][Shapley values] This paper proposes ShapBPT, which combines **data-aware Binary Partition Trees (BPT)** as hierarchical coalition structures with Owen-approximated Shapley values to achieve…
+  [AAAI 2026][Interpretability][Shapley values] This paper proposes ShapBPT, which combines **data-aware Binary Partition Trees (BPT)** as hierarchical coalition structures with Owen-approximated Shapley values to achieve feature attributions aligned with image morphology. ShapBPT converges faster and yields more accurate shape recognition than existing Shapley-based methods, with a 20-participant user study confirming that its explanations are preferred by human evaluators.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Feature Attribution"
   - "Image Classification"
 date: 2026-05-08
-content_hash: d80b5c156c711ae1
+content_hash: 682ebbb87d5de410
 ---
 
 # ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees
@@ -129,11 +129,11 @@ Seven experiments cover diverse CV tasks and models (ResNet50, SwinViT, ViT, YOL
 
 ## Related Papers
 
+- [\[ICLR 2026\] TreeGrad-Ranker: Feature Ranking via O(L)-Time Gradients for Decision Trees](../../ICLR2026/interpretability/treegrad-ranker_feature_ranking_via_ol-time_gradients_for_decision_trees.md)
 - [\[AAAI 2026\] DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment](drexperts_differential_refinement_of_distortion-aware_experts_for_blind_image_qu.md)
 - [\[AAAI 2026\] Enhancing Binary Encoded Crime Linkage Analysis Using Siamese Network](enhancing_binary_encoded_crime_linkage_analysis_using_siamese_network.md)
-- [\[AAAI 2026\] Quiet Feature Learning in Algorithmic Tasks](quiet_feature_learning_in_algorithmic_tasks.md)
-- [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](../../CVPR2026/interpretability/on_the_possible_detectability_of_image-in-image_steganography.md)
-- [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](data_whitening_improves_sparse_autoencoder_learning.md)
+- [\[ICLR 2026\] From Data Statistics to Feature Geometry: How Correlations Shape Superposition](../../ICLR2026/interpretability/from_data_statistics_to_feature_geometry_how_correlations_shape_superposition.md)
+- [\[ICLR 2026\] xRFM: Accurate, scalable, and interpretable feature learning models for tabular data](../../ICLR2026/interpretability/xrfm_accurate_scalable_and_interpretable_feature_learning_models_for_tabular_dat.md)
 
 </div>
 

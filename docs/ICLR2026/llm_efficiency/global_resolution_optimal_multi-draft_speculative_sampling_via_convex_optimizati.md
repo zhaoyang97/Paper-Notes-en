@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Global Resolution: Optimal Multi-Draft Speculative Sampling via Convex Optimization
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper provides the first efficient algorithm for the **exact solution of the Optimal Transport (OT) verification criterion** in multi-draft speculative sampling. It simplifies the exponential-scale Optimal Transport Linear Programming (OTLP) into a convex minimization problem with at most $V$ variables, achieving
+  [ICLR 2026][LLM Efficiency][Speculative sampling] This paper provides the first efficient algorithm for the **exact solution of the Optimal Transport (OT) verification criterion** in multi-draft speculative sampling. It simplifies the exponential-scale Optimal Transport Linear Programming (OTLP) into a convex minimization problem with at most $V$ variables, achieving a 90% acceptance rate with a per-token overhead under 100 ms under the i.i.d. draft setting.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative sampling"
+  - "multi-draft"
+  - "optimal transport"
+  - "convex optimization"
+  - "polymatroid"
+  - "max-flow"
 date: 2026-05-08
-content_hash: 88938e31ab7339ba
+content_hash: 40d17f56a4a5ab68
 ---
+
 # Global Resolution: Optimal Multi-Draft Speculative Sampling via Convex Optimization
 
 **Conference**: ICLR 2026  
@@ -125,9 +132,9 @@ Under a 100 ms/token budget, G.R. achieves an acceptance rate ~1.0% higher than 
 
 - [\[ICLR 2026\] NI Sampling: Accelerating Discrete Diffusion Sampling by Token Order Optimization](ni_sampling_accelerating_discrete_diffusion_sampling_by_token_order_optimization.md)
 - [\[ICLR 2026\] Cactus: Accelerating Auto-Regressive Decoding with Constrained Acceptance Speculative Sampling](cactus_accelerating_auto-regressive_decoding_with_constrained_acceptance_specula.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
 - [\[ICLR 2026\] Flatter Tokens are More Valuable for Speculative Draft Model Training](flatter_tokens_are_more_valuable_for_speculative_draft_model_training.md)
 - [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
-- [\[ACL 2025\] Tetris: Optimal Draft Token Selection for Batch Speculative Decoding](../../ACL2025/llm_efficiency/tetris_optimal_draft_token_selection_for_batch_speculative_decoding.md)
 
 </div>
 

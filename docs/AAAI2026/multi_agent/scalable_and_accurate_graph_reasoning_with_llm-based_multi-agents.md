@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents
 description: >-
-  [AAAI 2026][Multi-Agent][Graph Reasoning] This paper proposes GraphAgent-Reasoner (GAR), inspired by distributed graph computation theory. It decomposes graph problems into node-centric subtasks assigned to multiple agen…
+  [AAAI 2026][Multi-Agent][Graph Reasoning] This paper proposes GraphAgent-Reasoner (GAR), inspired by distributed graph computation theory. It decomposes graph problems into node-centric subtasks assigned to multiple agents, which collaborate through neighbor message passing. GAR extends the graph scale tractable by LLMs from 100 nodes to 1,000 nodes, and significantly outperforms existing state-of-the-art methods on polynomial-time graph reasoning tasks.
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -11,7 +11,7 @@ tags:
   - "LLM Reasoning"
   - "Scalability"
 date: 2026-05-08
-content_hash: 3a46f6296a0f06a5
+content_hash: 872cbb1e3437e1e5
 ---
 
 # Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents
@@ -132,10 +132,10 @@ The input consists of a graph description $\mathcal{G}$ and a task description $
 
 ## Related Papers
 
-- [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
-- [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](../../ICLR2026/multi_agent/completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
+- [\[ICLR 2026\] Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration](../../ICLR2026/multi_agent/graph-of-agents_a_graph-based_framework_for_multi-agent_llm_collaboration.md)
 - [\[AAAI 2026\] Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems](parallelism_meets_adaptiveness_scalable_documents_understanding_in_multi-agent_l.md)
-- [\[ACL 2026\] HACHIMI: Scalable and Controllable Student Persona Generation via Orchestrated Agents](../../ACL2026/multi_agent/hachimi_scalable_and_controllable_student_persona_generation_via_orchestrated_ag.md)
+- [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](../../ICLR2026/multi_agent/completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
+- [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
 - [\[AAAI 2026\] A Graph-Theoretical Perspective on Law Design for Multiagent Systems](a_graph-theoretical_perspective_on_law_design_for_multiagent_systems.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How to Cure Newton for Unlearning Neural Networks? An Empirical Study from the Hessian Perspective
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper discovers that Newton unlearning fails on real-world neural networks and LLMs due to Hessian degeneracy (a large number of zero/negative eigenvalues). It proposes CuReNU, based on cubic regularization, and its stochastic Hessian-free variant CuReNUS. These methods automatically determine the damping factor $
+  [ICLR 2026][AI Safety][Machine Unlearning] This paper discovers that Newton unlearning fails on real-world neural networks and LLMs due to Hessian degeneracy (a large number of zero/negative eigenvalues). It proposes CuReNU, based on cubic regularization, and its stochastic Hessian-free variant CuReNUS. These methods automatically determine the damping factor $\gamma$, guarantee convergence to second-order stationary points, and achieve unlearning performance comparable to SO…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Second-order Unlearning"
+  - "Newton's Method"
+  - "Hessian Degeneracy"
+  - "Cubic Regularization"
 date: 2026-05-08
-content_hash: 3b38610f19f80ac3
+content_hash: 4d3bbdb19419c3fa
 ---
+
 # How to Cure Newton for Unlearning Neural Networks? An Empirical Study from the Hessian Perspective
 
 **Conference**: ICLR 2026  
@@ -149,11 +155,11 @@ Efficiency (Table 4): On Llama-2×TOFU, retraining takes 900s, SCRUB 178s, and C
 
 ## Related Papers
 
+- [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](../../ICML2026/ai_safety/how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
 - [\[ICLR 2026\] Designing Affine-Invariant Neural Networks for Photometric Corruption Robustness and Generalization](designing_affine-invariant_neural_networks_for_photometric_corruption_robustness.md)
 - [\[ICLR 2026\] ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks](atex-cf_attack-informed_counterfactual_explanations_for_graph_neural_networks.md)
 - [\[ICLR 2026\] Fisher-Rao Sensitivity for Out-of-Distribution Detection in Deep Neural Networks](fisher-rao_sensitivity_for_out-of-distribution_detection_in_deep_neural_networks.md)
 - [\[ICML 2026\] Singular Bayesian Neural Networks](../../ICML2026/ai_safety/singular_bayesian_neural_networks.md)
-- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
 
 </div>
 

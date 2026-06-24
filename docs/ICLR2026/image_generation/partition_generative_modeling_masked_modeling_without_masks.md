@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Partition Generative Modeling: Masked Modeling Without Masks
 description: >-
-  [ICLR 2026][Image Generation][Inference Acceleration] Ours proposes "Partition Generative Modeling" (PGM), which replaces the `[MASK]` mechanism of Masked Generative Models (MGM) by "partitioning a sequence into two mutually invisible groups that predict each other." This allows the model to process only "clean tokens" during sampling (saving computation like an autoregre
+  [ICLR 2026][Image Generation][Partition Generative Modeling] Ours proposes "Partition Generative Modeling" (PGM), which replaces the `[MASK]` mechanism of Masked Generative Models (MGM) by "partitioning a sequence into two mutually invisible groups that predict each other." This allows the model to process only "clean tokens" during sampling (saving computation like an autoregressive model) while retaining parallel, any-order generation (flexible like MGM). PGM is 5–5.5× fast…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Inference Acceleration
-  - Partition Transformer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Partition Generative Modeling"
+  - "Masked Diffusion"
+  - "Parallel Decoding"
+  - "Inference Acceleration"
+  - "Partition Transformer"
 date: 2026-05-08
-content_hash: 820477b236573361
+content_hash: 92521b7d1bb93958
 ---
+
 # Partition Generative Modeling: Masked Modeling Without Masks
 
 **Conference**: ICLR 2026  
@@ -143,11 +147,11 @@ On LM1B, PGM with the same layers reduces PPL by 1.95 compared to MDLM. On OWT, 
 
 ## Related Papers
 
-- [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 - [\[ICLR 2026\] Flow Along the $K$-Amplitude for Generative Modeling](flow_along_the_k-amplitude_for_generative_modeling.md)
 - [\[ICLR 2026\] GenCP: Towards Generative Modeling Paradigm of Coupled Physics](gencp_towards_generative_modeling_paradigm_of_coupled_physics.md)
+- [\[ICLR 2026\] Strictly Constrained Generative Modeling via Split Augmented Langevin Sampling](strictly_constrained_generative_modeling_via_split_augmented_langevin_sampling.md)
 - [\[ICLR 2026\] Continuously Augmented Discrete Diffusion model for Categorical Generative Modeling](continuously_augmented_discrete_diffusion_model_for_categorical_generative_model.md)
-- [\[ICLR 2026\] Mirror Flow Matching with Heavy-Tailed Priors for Generative Modeling on Convex Domains](mirror_flow_matching_with_heavy-tailed_priors_for_generative_modeling_on_convex_.md)
+- [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 
 </div>
 

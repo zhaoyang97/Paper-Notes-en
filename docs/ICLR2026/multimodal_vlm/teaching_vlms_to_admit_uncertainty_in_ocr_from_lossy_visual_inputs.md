@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Teaching VLMs to Admit Uncertainty in OCR from Lossy Visual Inputs
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] Addressing the hallucination issue where VLMs "fluently fabricate typos without warning" on blurry/degraded documents, this paper teaches models to frame uncertain segments with `<C>...</C>` tags during transcription. By employing a "pseudo-label cold start + multi-objective reward GRPO" training strategy, the model ac
+  [ICLR 2026][Multimodal VLM][Uncertainty-aware OCR] Addressing the hallucination issue where VLMs "fluently fabricate typos without warning" on blurry/degraded documents, this paper teaches models to frame uncertain segments with `<C>...</C>` tags during transcription. By employing a "pseudo-label cold start + multi-objective reward GRPO" training strategy, the model achieves a word-level F1 of 0.685 for uncertainty labels on the self-built Blur-OCR benchmark without sacrifici…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - GRPO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Uncertainty-aware OCR"
+  - "Visual Language Model"
+  - "Hallucination"
+  - "GRPO"
+  - "Degraded Documents"
 date: 2026-05-08
-content_hash: d5beef8032366d21
+content_hash: 56a241dbf9403b17
 ---
+
 # Teaching VLMs to Admit Uncertainty in OCR from Lossy Visual Inputs
 
 **Conference**: ICLR 2026  
@@ -167,9 +171,9 @@ Impact of grains and reward parameters:
 
 - [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
 - [\[CVPR 2025\] Ground-V: Teaching VLMs to Ground Complex Instructions in Pixels](../../CVPR2025/multimodal_vlm/ground-v_teaching_vlms_to_ground_complex_instructions_in_pixels.md)
-- [\[ICLR 2026\] IndicVisionBench: Benchmarking Cultural and Multilingual Understanding in VLMs](indicvisionbench_benchmarking_cultural_and_multilingual_understanding_in_vlms.md)
-- [\[ICLR 2026\] Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning](enhancing_geometric_perception_in_vlms_via_translator-guided_reinforcement_learn.md)
-- [\[AAAI 2026\] Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models](../../AAAI2026/multimodal_vlm/seeing_justice_clearly_handwritten_legal_document_translation_with_ocr_and_visio.md)
+- [\[ICLR 2026\] Detecting Misbehaviors of Large Vision-Language Models by Evidential Uncertainty Quantification](detecting_misbehaviors_of_large_vision-language_models_by_evidential_uncertainty.md)
+- [\[ACL 2025\] Teaching Vision-Language Models to Ask: Resolving Ambiguity in Visual Questions](../../ACL2025/multimodal_vlm/teaching_vlm_ask_ambiguity.md)
+- [\[ICLR 2026\] Revisiting Confidence Calibration for Misclassification Detection in VLMs](revisiting_confidence_calibration_for_misclassification_detection_in_vlms.md)
 
 </div>
 

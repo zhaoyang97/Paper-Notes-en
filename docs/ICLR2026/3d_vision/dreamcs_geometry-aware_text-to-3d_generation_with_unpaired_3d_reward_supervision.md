@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DreamCS: Geometry-Aware Text-to-3D Generation with Unpaired 3D Reward Supervision
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] DreamCS proposes the first preference alignment framework that **directly provides supervision on 3D geometry**. It first constructs 3D-MeshPref, an unpaired 3D mesh preference dataset with 30,000 samples via LLMs and human annotation. It then trains RewardCS, a geometry-aware reward model that does not require paired
+  [ICLR2026][3D Vision][Text-to-3D] DreamCS proposes the first preference alignment framework that **directly provides supervision on 3D geometry**. It first constructs 3D-MeshPref, an unpaired 3D mesh preference dataset with 30,000 samples via LLMs and human annotation. It then trains RewardCS, a geometry-aware reward model that does not require paired samples, using Cauchy-Schwarz divergence. Finally, it integrates this into the SDS text-to-3D pipeline via differentiable mesh…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Text-to-3D"
+  - "Preference Alignment"
+  - "3D Reward Model"
+  - "Unpaired Learning"
+  - "Cauchy-Schwarz Divergence"
 date: 2026-05-08
-content_hash: 4222609075d5620e
+content_hash: 20d990173a34dccb
 ---
+
 # DreamCS: Geometry-Aware Text-to-3D Generation with Unpaired 3D Reward Supervision
 
 **Conference**: ICLR2026  
@@ -160,11 +166,11 @@ User study (60 prompts) tracking the ratio of assets with Janus faces (lower is 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning Hierarchical and Geometry-Aware Graph Representations for Text-to-CAD](learning_hierarchical_and_geometry-aware_graph_representations_for_text-to-cad.md)
+- [\[ECCV 2024\] JointDreamer: Ensuring Geometry Consistency and Text Congruence in Text-to-3D Generation via Joint Score Distillation](../../ECCV2024/3d_vision/jointdreamer_ensuring_geometry_consistency_and_text_congruence_in_text-to-3d_gen.md)
 - [\[CVPR 2026\] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](../../CVPR2026/3d_vision/gaussiangrow_geometry-aware_gaussian_growing_from_3d_point_clouds_with_text_guid.md)
 - [\[ICLR 2026\] PAT3D: Physics-Augmented Text-to-3D Scene Generation](pat3d_physics-augmented_text-to-3d_scene_generation.md)
 - [\[CVPR 2026\] Text–Image Conditioned 3D Generation](../../CVPR2026/3d_vision/text-image_conditioned_3d_generation.md)
-- [\[ICLR 2026\] TIGaussian: Disentangle Gaussians for Spatial-Aware Text-Image-3D Alignment](tigaussian_disentangle_gaussians_for_spatial-awared_text-image-3d_alignment.md)
-- [\[ECCV 2024\] JointDreamer: Ensuring Geometry Consistency and Text Congruence in Text-to-3D Generation via Joint Score Distillation](../../ECCV2024/3d_vision/jointdreamer_ensuring_geometry_consistency_and_text_congruence_in_text-to-3d_gen.md)
 
 </div>
 

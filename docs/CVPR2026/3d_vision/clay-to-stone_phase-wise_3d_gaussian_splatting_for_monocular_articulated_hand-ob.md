@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the unstable optimization caused by the strong coupling of "geometry" and "articulated motion" in monocular video, this paper proposes the Clay-to-Stone dual-phase 3DGS framework. It first utilizes a "soft clay" phase (CLAY) for fine-grained, semantic-aware free deformation to explore structure and motion, f
+  [CVPR 2026][3D Vision][Hand-Object Interaction] To address the unstable optimization caused by the strong coupling of "geometry" and "articulated motion" in monocular video, this paper proposes the Clay-to-Stone dual-phase 3DGS framework. It first utilizes a "soft clay" phase (CLAY) for fine-grained, semantic-aware free deformation to explore structure and motion, followed by a "stone" phase (STONE) that imposes rigid constraints and explicitly estimates axes, pivots…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Hand-Object Interaction"
+  - "Articulated Object Modeling"
+  - "3D Gaussian Splatting"
+  - "Monocular Reconstruction"
+  - "Phase-wise Optimization"
 date: 2026-05-08
-content_hash: af1bd99a265a22cd
+content_hash: 927c4b93efabe326
 ---
+
 # Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ Module-level ablation (average rendering metrics for box, notebook, and waffle i
 
 ## Related Papers
 
-- [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
-- [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
-- [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
-- [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
+- [\[CVPR 2026\] ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions](arthoi_taming_foundation_models_for_monocular_4d_reconstruction_of_hand-articula.md)
+- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
+- [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
+- [\[CVPR 2026\] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves](glove2hand_synthesizing_natural_hand-object_interaction_from_multi-modal_sensing.md)
 
 </div>
 

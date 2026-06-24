@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ViLL-E: Video LLM Embeddings for Retrieval
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] Proposes ViLL-E, the first unified Video LLM architecture supporting both text generation and embedding generation. Through a three-stage generation-contrastive joint training and an adaptive KV-Former embedding head, it approaches expert models in video retrieval and temporal grounding while maintaining competitivenes
+  [ACL 2026][Multimodal VLM][Video Retrieval] Proposes ViLL-E, the first unified Video LLM architecture supporting both text generation and embedding generation. Through a three-stage generation-contrastive joint training and an adaptive KV-Former embedding head, it approaches expert models in video retrieval and temporal grounding while maintaining competitiveness in VideoQA.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Video Retrieval"
+  - "Video LLM"
+  - "Embedding Generation"
+  - "Contrastive Learning"
+  - "Temporal Grounding"
 date: 2026-05-08
-content_hash: ac085a6fa66eff9b
+content_hash: edd60fed2baf8082
 ---
+
 # ViLL-E: Video LLM Embeddings for Retrieval
 
 **Conference**: ACL 2026  
@@ -131,11 +137,11 @@ Four tasks correspond to four losses: (1) CLIP-style in-batch contrastive loss f
 
 ## Related Papers
 
+- [\[ICLR 2026\] WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM](../../ICLR2026/multimodal_vlm/wave_learning_unified_versatile_audio-visual_embeddings_with_multimodal_llm.md)
 - [\[CVPR 2026\] Breaking Multimodal LLM Safety via Video-Driven Prompting](../../CVPR2026/multimodal_vlm/breaking_multimodal_llm_safety_via_video-driven_prompting.md)
-- [\[ACL 2025\] TheoremExplainAgent: Towards Video-based Multimodal Explanations for LLM Theorem Understanding](../../ACL2025/multimodal_vlm/theorem_explain_agent.md)
 - [\[CVPR 2026\] Illuminating Visual Identity in Universal Multimodal Embeddings](../../CVPR2026/multimodal_vlm/illuminating_visual_identity_in_universal_multimodal_embeddings.md)
 - [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](../../CVPR2026/multimodal_vlm/gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
-- [\[CVPR 2026\] Evo-Retriever: LLM-Guided Curriculum Evolution with Viewpoint-Pathway Collaboration for Multimodal Document Retrieval](../../CVPR2026/multimodal_vlm/evo-retriever_llm-guided_curriculum_evolution_with_viewpoint-pathway_collaborati.md)
+- [\[ACL 2025\] TheoremExplainAgent: Towards Video-based Multimodal Explanations for LLM Theorem Understanding](../../ACL2025/multimodal_vlm/theorem_explain_agent.md)
 
 </div>
 

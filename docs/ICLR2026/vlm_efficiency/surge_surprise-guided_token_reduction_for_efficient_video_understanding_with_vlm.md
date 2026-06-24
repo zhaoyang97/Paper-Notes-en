@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] SURGE measures surprise based on the "temporal predictability of tokens." Predictable redundant tokens are pruned while unpredictable informative tokens are retained. This training-free, backbone-agnostic method reduces tokens to 1/7 of the original and cuts prefill costs by 86–98% across five video understanding bench
+  [ICLR 2026][Multimodal Efficiency][token pruning] SURGE measures surprise based on the "temporal predictability of tokens." Predictable redundant tokens are pruned while unpredictable informative tokens are retained. This training-free, backbone-agnostic method reduces tokens to 1/7 of the original and cuts prefill costs by 86–98% across five video understanding benchmarks, with accuracy staying within ±1 point of the full-token baseline.
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "token pruning"
+  - "video VLM"
+  - "temporal prediction"
+  - "surprise"
+  - "training-free"
 date: 2026-05-08
-content_hash: f45245db7872fb2b
+content_hash: 85c62aacaa9ae649
 ---
+
 # SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs
 
 **Conference**: ICLR 2026  
@@ -137,10 +143,10 @@ Scanning the retention ratio $\rho$ on Qwen2.5-VL, SURGE shows a maximum relativ
 
 ## Related Papers
 
-- [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](../../CVPR2026/vlm_efficiency/apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
 - [\[ICLR 2026\] ST-SimDiff: Balancing Spatiotemporal Similarity and Difference for Efficient Video Understanding with MLLMs](st-simdiff_balancing_spatiotemporal_similarity_and_difference_for_efficient_vide.md)
 - [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](../../CVPR2026/vlm_efficiency/metom_metadata-guided_token_merging_for_efficient_video_llms.md)
-- [\[CVPR 2026\] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](../../CVPR2026/vlm_efficiency/coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)
+- [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](../../CVPR2026/vlm_efficiency/apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
+- [\[ICLR 2026\] Prune Redundancy, Preserve Essence: Vision Token Compression in VLMs via Synergistic Importance-Diversity](prune_redundancy_preserve_essence_vision_token_compression_in_vlms_via_synergist.md)
 - [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](../../ACL2026/vlm_efficiency/hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
 
 </div>

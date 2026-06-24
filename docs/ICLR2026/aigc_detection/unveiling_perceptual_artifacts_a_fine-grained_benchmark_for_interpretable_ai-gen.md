@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection
 description: >-
-  [ICLR 2026][AIGC Detection][Interpretability] Aiming at the issue that existing AI-generated image (AIGI) detectors only output binary "real/fake" labels without providing a basis, this paper constructs X-AIGD, a benchmark of paired real-fake images with pixel-level annotations across three levels and seven categories of artifacts. It systematically diagnoses that
+  [ICLR 2026][AIGC Detection][AI-generated image detection] Aiming at the issue that existing AI-generated image (AIGI) detectors only output binary "real/fake" labels without providing a basis, this paper constructs X-AIGD, a benchmark of paired real-fake images with pixel-level annotations across three levels and seven categories of artifacts. It systematically diagnoses that current detectors "hardly look at perceptual artifacts" and proposes a training method to explicitly…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - Interpretability
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "AI-generated image detection"
+  - "perceptual artifacts"
+  - "pixel-level annotation"
+  - "attention alignment"
+  - "interpretability"
 date: 2026-05-08
-content_hash: 190998082cd34119
+content_hash: b6d7e9154a5db171
 ---
+
 # Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection
 
 **Conference**: ICLR 2026  
@@ -148,9 +153,9 @@ PAD by artifact category (Table 3): Models achieve up to 50%+ PixR on low-level 
 
 - [\[ICLR 2026\] Preserving Forgery Artifacts: AI-Generated Video Detection at Native Scale](preserving_forgery_artifacts_ai-generated_video_detection_at_native_scale.md)
 - [\[ICLR 2026\] Omni-IML: Towards Unified Interpretable Image Manipulation Localization](omni-iml_towards_unified_interpretable_image_manipulation_localization.md)
-- [\[CVPR 2026\] Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks](../../CVPR2026/aigc_detection/fine-grained_image_aesthetic_assessment_learning_discriminative_scores_from_rela.md)
 - [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
-- [\[ACL 2025\] HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring](../../ACL2025/aigc_detection/haco-det_a_study_towards_fine-grained_machine-generated_text_detection_under_hum.md)
+- [\[CVPR 2026\] Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks](../../CVPR2026/aigc_detection/fine-grained_image_aesthetic_assessment_learning_discriminative_scores_from_rela.md)
+- [\[ICLR 2026\] No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection](no_pixel_left_behind_a_detail-preserving_architecture_for_robust_high-resolution.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Quagmires in SFT-RL Post-Training: When High SFT Scores Mislead and What to Use Instead
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLVR] This paper demonstrates, through experiments involving over 100 models and 1 million GPU hours, that the common assumption in reasoning LLM post-training—"higher SFT scores lead to better RL performance"—is a widespread fallacy. It proposes **Validation Set Generalization Loss** and **Pass@large k** as reliable indicat
+  [ICLR 2026][LLM Alignment][SFT-RL Post-training] This paper demonstrates, through experiments involving over 100 models and 1 million GPU hours, that the common assumption in reasoning LLM post-training—"higher SFT scores lead to better RL performance"—is a widespread fallacy. It proposes **Validation Set Generalization Loss** and **Pass@large k** as reliable indicators to predict final RL performance, improving prediction accuracy ($R^2$, Spearman rank correlation) by up to…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLVR
-  - GRPO
-  - Pass@k
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "SFT-RL Post-training"
+  - "RLVR"
+  - "GRPO"
+  - "Generalization Loss"
+  - "Pass@k"
 date: 2026-05-08
-content_hash: adc678c01bb51a26
+content_hash: c64746c67ab76f2f
 ---
+
 # Quagmires in SFT-RL Post-Training: When High SFT Scores Mislead and What to Use Instead
 
 **Conference**: ICLR 2026  

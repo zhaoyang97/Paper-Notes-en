@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper introduces Finch (FinWorkBench), a benchmark for financial and accounting (F&A) workflows constructed from authentic enterprise environments (e.g., the Enron dataset). It comprises 172 composite workflows and 1,710 spreadsheets (27 million cells). Even the most advanced Agent, GPT 5.1 Pro, achieves only a 38
+  [ACL 2026 Findings][LLM Evaluation][Finance & Accounting] This paper introduces Finch (FinWorkBench), a benchmark for financial and accounting (F&A) workflows constructed from authentic enterprise environments (e.g., the Enron dataset). It comprises 172 composite workflows and 1,710 spreadsheets (27 million cells). Even the most advanced Agent, GPT 5.1 Pro, achieves only a 38.4% success rate despite an average execution time of 16.8 minutes, highlighting significant deficienc…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Finance & Accounting"
+  - "Spreadsheets"
+  - "Enterprise Workflows"
+  - "Agent Evaluation"
+  - "Long-horizon Tasks"
 date: 2026-05-08
-content_hash: 23da4ae936384543
+content_hash: 7819c26a929470e2
 ---
+
 # Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows
 
 **Conference**: ACL 2026 Findings  
@@ -135,11 +141,11 @@ Spreadsheets cannot be evaluated by simple cell-by-cell comparison—equivalent 
 
 ## Related Papers
 
-- [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
 - [\[ACL 2026\] AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking](agenteval_dag-structured_step-level_evaluation_for_agentic_workflows_with_error_.md)
-- [\[ICCV 2025\] ForCenNet: Foreground-Centric Network for Document Image Rectification](../../ICCV2025/llm_evaluation/forcennet_foreground-centric_network_for_document_image_rectification.md)
+- [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
+- [\[ICLR 2026\] DRBench: A Realistic Benchmark for Enterprise Deep Research](../../ICLR2026/llm_evaluation/drbench_a_realistic_benchmark_for_enterprise_deep_research.md)
+- [\[ICLR 2026\] DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle](../../ICLR2026/llm_evaluation/dacomp_benchmarking_data_agents_across_the_full_data_intelligence_lifecycle.md)
 - [\[ACL 2026\] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](aj-bench_benchmarking_agent-as-a-judge_for_environment-aware_evaluation.md)
-- [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
 
 </div>
 

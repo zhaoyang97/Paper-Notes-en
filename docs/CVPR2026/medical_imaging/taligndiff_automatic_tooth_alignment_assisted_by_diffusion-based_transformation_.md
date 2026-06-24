@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Diffusion Model] TAlignDiff utilizes a Point Cloud Regression Network (PRN) to directly predict a $4\times4$ transformation matrix for each tooth from preoperative point clouds. Simultaneously, a lightweight Diffusion Transformation Model Denoising (DTMD) module learns the latent distribution of "clinically valid transformation matrice
+  [CVPR 2026][Medical Imaging][Automatic tooth alignment] TAlignDiff utilizes a Point Cloud Regression Network (PRN) to directly predict a $4\times4$ transformation matrix for each tooth from preoperative point clouds. Simultaneously, a lightweight Diffusion Transformation Model Denoising (DTMD) module learns the latent distribution of "clinically valid transformation matrices." By employing a contrastive denoising loss to pull the regression output toward this distribution…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Automatic tooth alignment"
+  - "orthodontics"
+  - "point cloud regression"
+  - "diffusion models"
+  - "transformation matrix"
 date: 2026-05-08
-content_hash: 087df3ec75171849
+content_hash: 43d3df134a18b686
 ---
+
 # TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning
 
 **Conference**: CVPR 2026  
@@ -137,15 +142,16 @@ The proposed method achieves the lowest TRE/AAE across all sets, with significan
 - Value: ⭐⭐⭐⭐ Clear clinical utility for orthodontic planning; the "diffusion-critic" paradigm is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation](sd_fsmis_adapting_stable_diffusion_for_few_shot_medical_image_segmentation.md)
-- [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
 - [\[CVPR 2026\] Diffusion with a Linguistic Compass: Steering the Generation of Clinically Plausible Future sMRI Representations for Early MCI Conversion Prediction](diffusion_with_a_linguistic_compass_steering_the_generation_of_clinically_plausi.md)
 - [\[CVPR 2026\] Breaking the Continuum: Discrete Distribution Learning for Structural MRI Reconstruction](breaking_the_continuum_discrete_distribution_learning_for_structural_mri_reconst.md)
 - [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
+- [\[CVPR 2026\] Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis](clinically-grounded_counterfactual_reasoning_for_medical_video_diagnosis.md)
+- [\[CVPR 2026\] GenTract: Generative Global Tractography](gentract_generative_global_tractography.md)
 
 </div>
 

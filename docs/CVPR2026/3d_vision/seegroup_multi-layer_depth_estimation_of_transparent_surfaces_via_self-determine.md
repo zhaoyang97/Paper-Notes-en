@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SeeGroup: Multi-Layer Depth Estimation of Transparent Surfaces via Self-Determined Grouping
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SeeGroup models multi-layer depths of transparent objects as an "intensity function" along the depth axis. By utilizing a recursive decomposition module, the model adaptively decides how to group depth layers, combined with a permutation-invariant likelihood loss. It improves quaternary relative depth accuracy from 61.
+  [CVPR 2026][3D Vision][Multi-layer depth estimation] SeeGroup models multi-layer depths of transparent objects as an "intensity function" along the depth axis. By utilizing a recursive decomposition module, the model adaptively decides how to group depth layers, combined with a permutation-invariant likelihood loss. It improves quaternary relative depth accuracy from 61.34% to 70.09% on the LayeredDepth real-world benchmark.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-layer depth estimation"
+  - "transparent objects"
+  - "self-determined grouping"
+  - "intensity function"
+  - "permutation-invariant loss"
 date: 2026-05-08
-content_hash: 89b207ad8bade5c3
+content_hash: 0adcb9d58d4187b3
 ---
+
 # SeeGroup: Multi-Layer Depth Estimation of Transparent Surfaces via Self-Determined Grouping
 
 **Conference**: CVPR 2026  

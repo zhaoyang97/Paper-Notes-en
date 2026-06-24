@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data via Just-in-Time Intervention
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] Addressing the problem where Vision-Language-Action (VLA) policies learn "successful but non-elegant" behaviors from mixed-quality human demonstrations, this work avoids retraining the base policy. Instead, it trains an Elegance Critic offline (using Cal-QL to estimate the "elegance value" of actions) and triggers mult
+  [CVPR 2026][Robotics][VLA] Addressing the problem where Vision-Language-Action (VLA) policies learn "successful but non-elegant" behaviors from mixed-quality human demonstrations, this work avoids retraining the base policy. Instead, it trains an Elegance Critic offline (using Cal-QL to estimate the "elegance value" of actions) and triggers multi-candidate re-selection only during critical decision moments by monitoring Q-value fluctuations. This improves the Elegant Success…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Robot Manipulation"
+  - "Offline Reinforcement Learning"
+  - "Mixed-Quality Data"
+  - "Inference-time Guidance"
 date: 2026-05-08
-content_hash: 46f30712f55cf223
+content_hash: 3a724a8037661998
 ---
+
 # Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data via Just-in-Time Intervention
 
 **Conference**: CVPR 2026  
@@ -163,9 +168,9 @@ Sparse binary feedback is insufficient to learn the fine-grained preferences def
 
 - [\[CVPR 2026\] SPEAR-1: Scaling Beyond Robot Demonstrations via 3D Understanding](spear-1_scaling_beyond_robot_demonstrations_via_3d_understanding.md)
 - [\[CVPR 2026\] Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation](affordance_field_intervention_enabling_vlas_to_escape_memory_traps_in_robotic_ma.md)
-- [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
+- [\[ICLR 2026\] Time Optimal Execution of Action Chunk Policies Beyond Demonstration Speed](../../ICLR2026/robotics/time_optimal_execution_of_action_chunk_policies_beyond_demonstration_speed.md)
+- [\[ICLR 2026\] Image Quality Assessment for Embodied AI](../../ICLR2026/robotics/image_quality_assessment_for_embodied_ai.md)
 - [\[CVPR 2026\] DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation](dynbridge_bridging_imagination_and_control_through_interaction_dynamics_for_robo.md)
-- [\[ICLR 2026\] Real-Time Robot Execution with Masked Action Chunking](../../ICLR2026/robotics/real-time_robot_execution_with_masked_action_chunking.md)
 
 </div>
 

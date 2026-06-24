@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing
 description: >-
-  [CVPR 2026][Video Understanding][AutoGaze] AutoGaze is proposed as a lightweight module with only 3M parameters that autoregressively selects a minimal set of multi-scale patches to reconstruct video before the ViT. It removes $4\times-100\times$ spatio-temporal redundancy, achieving up to $19\times$ acceleration for ViT and $10\times$ for MLLMs. It enables MLL
+  [CVPR 2026][Video Understanding][AutoGaze] AutoGaze is proposed as a lightweight module with only 3M parameters that autoregressively selects a minimal set of multi-scale patches to reconstruct video before the ViT. It removes $4\times-100\times$ spatio-temporal redundancy, achieving up to $19\times$ acceleration for ViT and $10\times$ for MLLMs. It enables MLLMs to scale to 1K-frame 4K-resolution videos for the first time, reaching 67.0% on VideoMME.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - AutoGaze
-  - Token Compression
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "AutoGaze"
+  - "Autoregressive Gazing"
+  - "Multi-scale patch selection"
+  - "token compression"
+  - "long video high resolution"
 date: 2026-05-08
-content_hash: 5aa40abd4872ba20
+content_hash: 01256869def71424
 ---
+
 # Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing
 
 **Conference**: CVPR 2026  
@@ -168,16 +172,16 @@ This allows the model to explore on-policy and find gaze strategies that are mor
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
 - [\[CVPR 2026\] Adaptive Capacity Autoregressive Visual Tracking](adaptive_capacity_autoregressive_visual_tracking.md)
 - [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
 - [\[CVPR 2026\] GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](gift_global_irreplaceability_frame_targeting_for_efficient_video_understanding.md)
-- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[ICLR 2026\] VideoNSA: Native Sparse Attention Scales Video Understanding](../../ICLR2026/video_understanding/videonsa_native_sparse_attention_scales_video_understanding.md)
 
 </div>
 

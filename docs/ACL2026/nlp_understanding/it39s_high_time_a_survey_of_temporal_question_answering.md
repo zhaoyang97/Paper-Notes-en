@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] It's High Time: A Survey of Temporal Question Answering
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] This paper provides a comprehensive survey of Temporal Question Answering (TQA), proposing a unified analytical framework based on three dimensions: corpus temporality, question temporality, and model temporal capability. It systematically reviews the evolution of TQA methods from rule-based pipelines to the Transforme
+  [ACL 2026][NLP Understanding][Temporal Question Answering] This paper provides a comprehensive survey of Temporal Question Answering (TQA), proposing a unified analytical framework based on three dimensions: corpus temporality, question temporality, and model temporal capability. It systematically reviews the evolution of TQA methods from rule-based pipelines to the Transformer/LLM era, organizes benchmark datasets and evaluation strategies, and identifies future challenges.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Temporal Question Answering"
+  - "Temporal Reasoning"
+  - "Retrieval-Augmented Generation"
+  - "Large Language Models"
+  - "Survey"
 date: 2026-05-08
-content_hash: 13538de42a5aca6f
+content_hash: 809dc4c9bfdaafaa
 ---
+
 # It's High Time: A Survey of Temporal Question Answering
 
 **Conference**: ACL 2026  
@@ -131,9 +137,9 @@ While not proposing a specific training method, the survey summarizes three para
 ## Related Papers
 
 - [\[ACL 2026\] Table Question Answering in the Era of Large Language Models: A Comprehensive Survey](table_question_answering_in_the_era_of_large_language_models_a_comprehensive_sur.md)
-- [\[ACL 2026\] AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models](adaptime_enabling_adaptive_temporal_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation](knowledge-driven_augmentation_and_retrieval_for_integrative_temporal_adaptation.md)
 - [\[ACL 2026\] Semantic Reranking at Inference Time for Hard Examples in Rhetorical Role Labeling](semantic_reranking_at_inference_time_for_hard_examples_in_rhetorical_role_labeli.md)
+- [\[ACL 2026\] AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models](adaptime_enabling_adaptive_temporal_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 
 </div>

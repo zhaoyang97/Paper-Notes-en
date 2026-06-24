@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bottlenecked Transformers: Periodic KV Cache Consolidation for Generalised Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The authors attach a small external Cache Processor to a frozen backbone LLM. At the end of each reasoning step (triggered by a newline), it **rewrites the KV cache in-place**—"consolidating" recently written entries while "reconsolidating" a few historical entries recalled via attention. Explained through Information
+  [ICLR2026][Reasoning][KV Cache Rewriting] The authors attach a small external Cache Processor to a frozen backbone LLM. At the end of each reasoning step (triggered by a newline), it **rewrites the KV cache in-place**—"consolidating" recently written entries while "reconsolidating" a few historical entries recalled via attention. Explained through Information Bottleneck theory, this mechanism improves generalization, yielding up to a +6.6pp improvement across seven mathematic…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "KV Cache Rewriting"
+  - "Information Bottleneck"
+  - "Memory Consolidation"
+  - "Latent Space Computation"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 3a7292fd36e30da7
+content_hash: 7eb3af39bc8ce3e1
 ---
+
 # Bottlenecked Transformers: Periodic KV Cache Consolidation for Generalised Reasoning
 
 **Conference**: ICLR2026  
@@ -144,7 +150,7 @@ Evaluated on seven reasoning benchmarks (GSM8K, MATH, SVAMP, TheoremQA, LogiQA, 
 - [\[ICLR 2026\] Beyond Speedup - Utilizing KV Cache for Sampling and Reasoning](beyond_speedup_-_utilizing_kv_cache_for_sampling_and_reasoning.md)
 - [\[ICML 2026\] ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution](../../ICML2026/llm_reasoning/foresightkv_optimizing_kv_cache_eviction_for_reasoning_models_by_learning_long-t.md)
 - [\[ICLR 2026\] MoDr: Mixture-of-Depth-Recurrent Transformers for Test-Time Reasoning](modr_mixture-of-depth-recurrent_transformers_for_test-time_reasoning.md)
-- [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
+- [\[ICLR 2026\] HATSolver: Learning Gröbner Bases with Hierarchical Attention Transformers](hatsolver_learning_gröbner_bases_with_hierarchical_attention_transformers.md)
 
 </div>
 

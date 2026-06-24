@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos
 description: >-
-  [ICCV 2025][View selection] This paper proposes Switch-a-view, a model that learns view-switching patterns (ego/exo) from large-scale unlabeled in-the-wild instructional videos to enable automatic view selection in multi…
+  [ICCV 2025][View selection] This paper proposes Switch-a-view, a model that learns view-switching patterns (ego/exo) from large-scale unlabeled in-the-wild instructional videos to enable automatic view selection in multi-view instructional videos, without requiring explicit best-view annotations.
 tags:
   - "ICCV 2025"
   - "View selection"
@@ -11,7 +11,7 @@ tags:
   - "weakly supervised learning"
   - "automatic cinematography"
 date: 2026-05-08
-content_hash: 21096fb256e80cc1
+content_hash: 8ad37f87e312c91b
 ---
 
 # Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos
@@ -144,11 +144,11 @@ Switch-a-view consists of two stages:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Which Viewpoint Shows it Best? Language for Weakly Supervising View Selection in Multi-view Instructional Videos](../../CVPR2025/others/which_viewpoint_shows_it_best_language_for_weakly_supervising_view_selection_in_.md)
 - [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images (MV-AR)](autoregressively_generating_multiview_consistent_images.md)
 - [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
-- [\[ICCV 2025\] Toward Material-Agnostic System Identification from Videos](toward_material-agnostic_system_identification_from_videos.md)
-- [\[NeurIPS 2025\] Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion](../../NeurIPS2025/others/incomplete_multi-view_clustering_via_hierarchical_semantic_alignment_and_coopera.md)
+- [\[ECCV 2024\] FisherRF: Active View Selection and Mapping with Radiance Fields Using Fisher Information](../../ECCV2024/others/fisherrf_active_view_selection_and_mapping_with_radiance_fields_using_fisher_inf.md)
 
 </div>
 

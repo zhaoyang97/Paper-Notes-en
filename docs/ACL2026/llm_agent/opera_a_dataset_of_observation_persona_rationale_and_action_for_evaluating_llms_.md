@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] OPeRA: A Dataset of Observation, Persona, Rationale, and Action for Evaluating LLMs on Human Online Shopping Behavior Simulation
 description: >-
-  [ACL 2026][LLM Agent][Persona] OPeRA is a user behavior dataset collected from real Amazon shopping processes. It aligns personas, web observations, fine-grained actions, and real-time rationales on the same timeline to evaluate whether LLMs can truly simulate a specific user's next shopping behavior.
+  [ACL 2026][LLM Agent][User behavior simulation] OPeRA is a user behavior dataset collected from real Amazon shopping processes. It aligns personas, web observations, fine-grained actions, and real-time rationales on the same timeline to evaluate whether LLMs can truly simulate a specific user's next shopping behavior.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Persona
-  - Rationale
+  - "ACL 2026"
+  - "LLM Agent"
+  - "User behavior simulation"
+  - "Online shopping"
+  - "Persona"
+  - "Rationale"
+  - "Web Agent evaluation"
 date: 2026-05-08
-content_hash: b6c5c53aa53f9b03
+content_hash: 9a528b7409950d9a
 ---
+
 # OPeRA: A Dataset of Observation, Persona, Rationale, and Action for Evaluating LLMs on Human Online Shopping Behavior Simulation
 
 **Conference**: ACL 2026  
@@ -161,10 +165,10 @@ The persona acts as a prior for "how this user usually shops," helping with acti
 ## Related Papers
 
 - [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
-- [\[ACL 2026\] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](hag_hierarchical_demographic_tree-based_agent_generation_for_topic-adaptive_simu.md)
+- [\[ICML 2026\] MCP-Persona: Evaluating LLM Agent Capabilities in Real-World Personal Applications via Environment Simulation](../../ICML2026/llm_agent/mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
 - [\[ACL 2026\] CodeStruct: Code Agents over Structured Action Spaces](codestruct_code_agents_over_structured_action_spaces.md)
-- [\[CVPR 2026\] WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces](../../CVPR2026/llm_agent/webchain_a_large-scale_human-annotated_dataset_of_real-world_web_interaction_tra.md)
-- [\[ICML 2026\] MCP-Persona: 用环境模拟评估 LLM agent 在真实个人化应用上的能力](../../ICML2026/llm_agent/mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
+- [\[ACL 2026\] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](hag_hierarchical_demographic_tree-based_agent_generation_for_topic-adaptive_simu.md)
+- [\[ACL 2026\] YIELD: A Large-Scale Dataset and Evaluation Framework for Information Elicitation Agents](yield_a_large-scale_dataset_and_evaluation_framework_for_information_elicitation.md)
 
 </div>
 

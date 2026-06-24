@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems
 description: >-
-  [AAAI 2026][Recommender Systems][Theory of Mind] This paper introduces RecToM, the first human-annotated benchmark for evaluating Theory of Mind (ToM) reasoning capabilities of LLMs in conversational recommender systems…
+  [AAAI 2026][Recommender Systems][Theory of Mind] This paper introduces RecToM, the first human-annotated benchmark for evaluating Theory of Mind (ToM) reasoning capabilities of LLMs in conversational recommender systems (CRS). It covers two dimensions—cognitive inference (desire/intention/belief) and behavioral prediction (strategy prediction/strategy judgment)—comprising 10 question types and 20,524 QA pairs, and exposes systematic deficiencies of current LLMs in fine-graine…
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Cognitive Reasoning"
   - "Behavioral Prediction"
 date: 2026-05-08
-content_hash: 0dbaaac908d19b65
+content_hash: e0c86b3c48579dea
 ---
 
 # RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems
@@ -162,11 +162,11 @@ RecToM is an evaluation benchmark (not a model). Its core design revolves around
 
 ## Related Papers
 
-- [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](../../ICLR2026/recommender/token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
+- [\[ICLR 2026\] Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning](../../ICLR2026/recommender/rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme.md)
 - [\[AAAI 2026\] Evaluating LLMs for Police Decision-Making: A Framework Based on Police Action Scenarios](evaluating_llms_for_police_decision-making_a_framework_based_on_police_action_sc.md)
-- [\[AAAI 2026\] Hard vs. Noise: Resolving Hard-Noisy Sample Confusion in Recommender Systems via Large Language Models](hard_vs_noise_resolving_hard-noisy_sample_confusion_in_recommender_systems_via_l.md)
+- [\[ICLR 2026\] Continual Low-Rank Adapters for LLM-based Generative Recommender Systems](../../ICLR2026/recommender/continual_low-rank_adapters_for_llm-based_generative_recommender_systems.md)
+- [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](../../ICLR2026/recommender/token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
 - [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
-- [\[ICML 2026\] Can Recommender Systems Teach Themselves? A Recursive Self-Improving Framework with Fidelity Control](../../ICML2026/recommender/can_recommender_systems_teach_themselves_a_recursive_self-improving_framework_wi.md)
 
 </div>
 

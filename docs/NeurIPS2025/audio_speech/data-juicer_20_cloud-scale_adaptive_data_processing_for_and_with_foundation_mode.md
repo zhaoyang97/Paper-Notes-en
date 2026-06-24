@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Data-Juicer 2.0: Cloud-Scale Adaptive Data Processing for and with Foundation Models
 description: >-
-  [NeurIPS 2025][Audio & Speech][Data processing systems] Data-Juicer 2.0 is a cloud-scale multimodal data processing system for foundation models, featuring 150+ operators spanning text, image, video…
+  [NeurIPS 2025 Spotlight][Audio & Speech][Data processing systems] Data-Juicer 2.0 is a cloud-scale multimodal data processing system for foundation models, featuring 150+ operators spanning text, image, video, and audio. It supports adaptive distributed execution (Ray/MaxCompute), efficiently processes TB-scale data on 10,000+ CPU cores, and has been widely adopted in products such as Alibaba Cloud PAI.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Audio & Speech"
   - "Data processing systems"
   - "multimodal data"
@@ -12,7 +12,7 @@ tags:
   - "data quality"
   - "foundation models"
 date: 2026-05-08
-content_hash: f03c82faa305d39f
+content_hash: cac0ffe846a445b9
 ---
 
 # Data-Juicer 2.0: Cloud-Scale Adaptive Data Processing for and with Foundation Models
@@ -129,10 +129,10 @@ A three-layer architecture: (1) **Capability Layer** — 150+ multimodal operato
 ## Related Papers
 
 - [\[NeurIPS 2025\] Sensorium Arc: AI Agent System for Oceanic Data Exploration and Interactive Eco-Art](sensorium_arc_ai_agent_system_for_oceanic_data_exploration_and_interactive_eco-a.md)
-- [\[NeurIPS 2025\] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models](e-bats_efficient_backpropagation-free_test-time_adaptation_for_speech_foundation.md)
+- [\[ACL 2025\] SpeechWeave: Diverse Multilingual Synthetic Text & Audio Data Generation Pipeline for Training Text to Speech Models](../../ACL2025/audio_speech/speechweave_diverse_multilingual_synthetic_text_audio_data_generation_pipeline_f.md)
 - [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](../../ICML2026/audio_speech/algorithmic_recourse_of_in-context_learning_for_tabular_data.md)
+- [\[ACL 2025\] Distilling an End-to-End Voice Assistant Without Instruction Training Data](../../ACL2025/audio_speech/distilling_an_end-to-end_voice_assistant_without_instruction_training_data.md)
 - [\[ICCV 2025\] VGGSounder: Audio-Visual Evaluations for Foundation Models](../../ICCV2025/audio_speech/vggsounder_audio-visual_evaluations_for_foundation_models.md)
-- [\[NeurIPS 2025\] Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping](enabling_differentially_private_federated_learning_for_speech_recognition_benchm.md)
 
 </div>
 

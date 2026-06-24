@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching
 description: >-
-  [ACL 2026][Audio & Speech][Flow Matching] This paper proposes ZipVoice-Dialog, the first flow-matching-based non-autoregressive (NAR) zero-shot dialogue speech generation model. Through two simple designs—a curriculum learning strategy and speaker turn embeddings—the model resolves issues of speech unintelligibility and turn confusion when flow matching is dir
+  [ACL 2026 Findings][Audio & Speech][Dialogue speech generation] This paper proposes ZipVoice-Dialog, the first flow-matching-based non-autoregressive (NAR) zero-shot dialogue speech generation model. Through two simple designs—a curriculum learning strategy and speaker turn embeddings—the model resolves issues of speech unintelligibility and turn confusion when flow matching is directly applied to dialogue scenarios. Additionally, the first large-scale open-source dialogue sp…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Flow Matching
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Dialogue speech generation"
+  - "non-autoregressive"
+  - "flow matching"
+  - "speaker turns"
+  - "curriculum learning"
 date: 2026-05-08
-content_hash: c0ad85bff6c1551b
+content_hash: dc2378191e28de68
 ---
+
 # ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching
 
 **Conference**: ACL 2026 Findings  
@@ -148,11 +153,11 @@ ZipVoice-Dialog achieves total dominance with only 123M parameters: it is over 1
 
 ## Related Papers
 
-- [\[ACL 2026\] VoxMind: An End-to-End Agentic Spoken Dialogue System](voxmind_an_end-to-end_agentic_spoken_dialogue_system.md)
-- [\[ACL 2026\] SDiaReward: Modeling and Benchmarking Spoken Dialogue Rewards with Modality and Colloquialness](sdiareward_modeling_and_benchmarking_spoken_dialogue_rewards_with_modality_and_c.md)
-- [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](../../ICLR2026/audio_speech/flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
-- [\[NeurIPS 2025\] Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis](../../NeurIPS2025/audio_speech/shallow_flow_matching_for_coarse-to-fine_text-to-speech_synthesis.md)
 - [\[ICLR 2026\] AlignSep: Temporally-Aligned Video-Queried Sound Separation with Flow Matching](../../ICLR2026/audio_speech/alignsep_temporally-aligned_video-queried_sound_separation_with_flow_matching.md)
+- [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](../../ICLR2026/audio_speech/flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
+- [\[ICLR 2026\] From Text to Talk: Audio-Language Model Needs Non-Autoregressive Joint Training](../../ICLR2026/audio_speech/from_text_to_talk_audio-language_model_needs_non-autoregressive_joint_training.md)
+- [\[ACL 2026\] VoxMind: An End-to-End Agentic Spoken Dialogue System](voxmind_an_end-to-end_agentic_spoken_dialogue_system.md)
+- [\[NeurIPS 2025\] Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis](../../NeurIPS2025/audio_speech/shallow_flow_matching_for_coarse-to-fine_text-to-speech_synthesis.md)
 
 </div>
 

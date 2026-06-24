@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Adaptive Multi-Round Allocation with Stochastic Arrivals
 description: >-
-  [ICML 2026][Others][Paper Note] This paper formalizes network recruitment as a budget-constrained sequential control problem and proves that single-round optimal allocation is greedy. By introducing a population-level surrogate value function, the complexity of multi-round planning is reduced to $O(b^5\log b)$. Furthermore, a robustness guarantee is
+  [ICML 2026][Adaptive recruitment] This paper formalizes network recruitment as a budget-constrained sequential control problem and proves that single-round optimal allocation is greedy. By introducing a population-level surrogate value function, the complexity of multi-round planning is reduced to $O(b^5\log b)$. Furthermore, a robustness guarantee is provided, decomposing model errors into frontier-level, population-level, and approximation errors.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Adaptive recruitment"
+  - "multi-round allocation"
+  - "stochastic arrivals"
+  - "dynamic programming"
+  - "population-level surrogate value function"
 date: 2026-05-08
-content_hash: adb08e3cd0efa095
+content_hash: 918cac80cb53ec2d
 ---
+
 # Adaptive Multi-Round Allocation with Stochastic Arrivals
 
 **Conference**: ICML 2026  
@@ -150,9 +155,9 @@ Simulated and real results are close, validating the effectiveness of learning $
 
 - [\[ICML 2026\] Envy-Free Allocation of Indivisible Goods via Noisy Queries](envy-free_allocation_of_indivisible_goods_via_noisy_queries.md)
 - [\[AAAI 2026\] Center-Outward q-Dominance: A Sample-Computable Proxy for Strong Stochastic Dominance in Multi-Objective Optimisation](../../AAAI2026/others/center-outward_q-dominance_a_sample-computable_proxy_for_strong_stochastic_domin.md)
+- [\[AAAI 2026\] Online Linear Regression with Paid Stochastic Features](../../AAAI2026/others/online_linear_regression_with_paid_stochastic_features.md)
 - [\[ICML 2026\] Theoretical Analysis of Sparse Optimization with Reparameterization, Weight Decay, and Adaptive Learning Rate](theoretical_analysis_of_sparse_optimization_with_reparameterization_weight_decay.md)
 - [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](../../CVPR2026/others/adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
-- [\[AAAI 2026\] Online Linear Regression with Paid Stochastic Features](../../AAAI2026/others/online_linear_regression_with_paid_stochastic_features.md)
 
 </div>
 

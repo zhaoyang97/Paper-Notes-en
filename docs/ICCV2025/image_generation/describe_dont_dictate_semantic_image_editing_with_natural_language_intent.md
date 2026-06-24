@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent
 description: >-
-  [ICCV 2025][Image Generation][semantic image editing] This paper proposes DescriptiveEdit, which reframes "instruction-based image editing" as "text-to-image generation conditioned on a reference image." A Cross-Attentiv…
+  [ICCV 2025][Image Generation][semantic image editing] This paper proposes DescriptiveEdit, which reframes "instruction-based image editing" as "text-to-image generation conditioned on a reference image." A Cross-Attentive UNet introduces attention bridge layers to inject reference image features into the generation process. With only 75M trainable parameters, the method achieves high-fidelity descriptive editing and is seamlessly compatible with community tools such as Contro…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "diffusion models"
 date: 2026-05-08
-content_hash: da30ff6ea31e5dc4
+content_hash: dc78718f5a1c6fad
 ---
 
 # Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent
@@ -140,10 +140,10 @@ The zero-initialized learnable linear mapping significantly outperforms both dir
 ## Related Papers
 
 - [\[NeurIPS 2025\] SAO-Instruct: Free-form Audio Editing using Natural Language Instructions](../../NeurIPS2025/image_generation/sao-instruct_free-form_audio_editing_using_natural_language_instructions.md)
-- [\[CVPR 2026\] Organizing Unstructured Image Collections using Natural Language](../../CVPR2026/image_generation/organizing_unstructured_image_collections_using_natural_language.md)
 - [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
 - [\[ICCV 2025\] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing](early_timestep_zero-shot_candidate_selection_for_instruction-guided_image_editin.md)
-- [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](ale_attribute_leakage_free_editing.md)
+- [\[ICCV 2025\] Semantic Discrepancy-aware Detector for Image Forgery Identification](semantic_discrepancy-aware_detector_for_image_forgery_identification.md)
+- [\[CVPR 2026\] Say Cheese! Detail-Preserving Portrait Collection Generation via Natural Language Edits](../../CVPR2026/image_generation/say_cheese_detail-preserving_portrait_collection_generation_via_natural_language.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mirai: Autoregressive Visual Generation Needs Foresight
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Autoregressive (AR) image generators model sequences token-by-token causally, looking only at the "next token," which leads to disordered global structures and slow convergence. This paper proposes Mirai, which introduces an additional "foresight" signal during training. It aligns the intermediate layer representations
+  [CVPR 2026][Image Generation][Autoregressive Visual Generation] Autoregressive (AR) image generators model sequences token-by-token causally, looking only at the "next token," which leads to disordered global structures and slow convergence. This paper proposes Mirai, which introduces an additional "foresight" signal during training. It aligns the intermediate layer representations of the AR model on a **2D grid** with the representations of future tokens (either explicit for…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Autoregressive Visual Generation"
+  - "Foresight Signals"
+  - "Representation Alignment"
+  - "2D Grid"
+  - "Training Acceleration"
 date: 2026-05-08
-content_hash: e029caf7b5caf51d
+content_hash: 4278f28884787615
 ---
+
 # Mirai: Autoregressive Visual Generation Needs Foresight
 
 **Conference**: CVPR 2026  
@@ -139,9 +145,9 @@ Mirai-I achieves an FID of 2.59 on XL, outperforming all AR-based methods (VQGAN
 
 - [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
 - [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
+- [\[CVPR 2026\] VAR RL Done Right: Tackling Asynchronous Policy Conflicts in Visual Autoregressive Generation](var_rl_done_right_tackling_asynchronous_policy_conflicts_in_visual_autoregressiv.md)
 - [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
 - [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
-- [\[ICCV 2025\] Randomized Autoregressive Visual Generation](../../ICCV2025/image_generation/randomized_autoregressive_visual_generation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Unified Framework for Motion Reasoning and Generation in Human Interaction
 description: >-
-  [ICCV 2025][Image Generation][human interaction motion] This paper proposes MoLaM, a unified interactive motion-language model that, through a three-stage training strategy and a newly constructed Inter-MT² dataset (82.7…
+  [ICCV 2025][Image Generation][human interaction motion] This paper proposes MoLaM, a unified interactive motion-language model that, through a three-stage training strategy and a newly constructed Inter-MT² dataset (82.7K multi-turn instructions), is the first to simultaneously achieve understanding, generation, editing, and reasoning of dyadic interaction motion within a single framework.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "instruction tuning"
   - "motion reasoning"
 date: 2026-05-08
-content_hash: ce728437f4f875c4
+content_hash: f08de1222285078a
 ---
 
 # A Unified Framework for Motion Reasoning and Generation in Human Interaction
@@ -164,8 +164,8 @@ Compared with MotionChain (multi-turn single-person motion dialogue), MoLaM exte
 - [\[ICCV 2025\] InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation](infinidreamer_arbitrarily_long_human_motion_generation_via_segment_score_distill.md)
 - [\[ICCV 2025\] PINO: Person-Interaction Noise Optimization for Long-Duration and Customizable Motion Generation of Arbitrary-Sized Groups](pino_person-interaction_noise_optimization_for_long-duration_and_customizable_mo.md)
 - [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
-- [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](../../NeurIPS2025/image_generation/toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
-- [\[ICCV 2025\] VisualCloze: A Universal Image Generation Framework via Visual In-Context Learning](visualcloze_a_universal_image_generation_framework_via_visual_in-context_learnin.md)
+- [\[CVPR 2025\] Move-in-2D: 2D-Conditioned Human Motion Generation](../../CVPR2025/image_generation/move-in-2d_2d-conditioned_human_motion_generation.md)
+- [\[ACL 2025\] A Unified Agentic Framework for Evaluating Conditional Image Generation](../../ACL2025/image_generation/a_unified_agentic_framework_for_evaluating_conditional_image_generation.md)
 
 </div>
 

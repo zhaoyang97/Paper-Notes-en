@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ChartGalaxy: A Dataset for Infographic Chart Understanding and Generation
 description: >-
-  [ICLR 2026][Multimodal VLM][LVLM] ChartGalaxy constructs a million-scale infographic dataset by inducing chart types, visual variants, and layout templates from real-world designs, then programmatically synthesizing high-quality infographics with table supervision. It significantly enhances LVLM capabilities in infographic Q&A, code generation, and exa
+  [ICLR2026][Multimodal VLM][Infographic chart understanding] ChartGalaxy constructs a million-scale infographic dataset by inducing chart types, visual variants, and layout templates from real-world designs, then programmatically synthesizing high-quality infographics with table supervision. It significantly enhances LVLM capabilities in infographic Q&A, code generation, and example-driven chart generation.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - LVLM
-  - D3.js
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Infographic chart understanding"
+  - "chart generation"
+  - "multimodal dataset"
+  - "LVLM"
+  - "D3.js"
 date: 2026-05-08
-content_hash: a218a38e9cf4b4f1
+content_hash: 2961efc0f50321ad
 ---
+
 # ChartGalaxy: A Dataset for Infographic Chart Understanding and Generation
 
 **Conference**: ICLR2026  

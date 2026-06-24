@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Asymmetric Quantization: Hidden Symmetry in Vision Model Weights
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] The authors discover that vision model weights are approximately symmetric after removing a few outliers. Based on this, they propose DASQ—decomposing weights into a "dense symmetric kernel + sparse outliers," both represented by symmetric quantization (SymQ). This eliminates the expensive zero-point of asymmetric quan
+  [CVPR 2026][Multimodal Efficiency][Post-training quantization] The authors discover that vision model weights are approximately symmetric after removing a few outliers. Based on this, they propose DASQ—decomposing weights into a "dense symmetric kernel + sparse outliers," both represented by symmetric quantization (SymQ). This eliminates the expensive zero-point of asymmetric quantization (AsymQ). DASQ outperforms existing PTQ methods on ImageNet/COCO with lower BOPs and achi…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Post-training quantization"
+  - "asymmetric quantization"
+  - "sparse decomposition"
+  - "zero-point overhead"
+  - "vision models"
 date: 2026-05-08
-content_hash: 0b86d4b917fa5dec
+content_hash: e5571ba335a72cad
 ---
+
 # Rethinking Asymmetric Quantization: Hidden Symmetry in Vision Model Weights
 
 **Conference**: CVPR 2026  
@@ -130,10 +136,10 @@ FPGA measurements (Table 4) verify hardware feasibility: dense MAC throughput is
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
+- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
 - [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
-- [\[CVPR 2026\] CAR-SAM: Cross-Attention Reconstruction for Post-Training Quantization of the Segment Anything Model](car-sam_cross-attention_reconstruction_for_post-training_quantization_of_the_seg.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
 - [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
-- [\[CVPR 2026\] Dual-branch Distilled Transformer for Efficient Asymmetric UAV Tracking](dual-branch_distilled_transformer_for_efficient_asymmetric_uav_tracking.md)
 
 </div>
 

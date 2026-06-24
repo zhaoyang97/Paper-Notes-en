@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] Reducing Class-Wise Performance Disparity via Margin Regularization
 description: >-
-  [ICLR 2026][3D Vision][class-wise disparity] The paper proposes MR2 (Margin Regularization for performance disparity Reduction), which dynamically adjusts class-dependent margins in logit and representation spaces. Based on a theoretically derived generalization bound, it reduces inter-class performance disparity while simultaneously improving overall accuracy.
+  [3D Vision] The paper proposes MR2 (Margin Regularization for performance disparity Reduction), which dynamically adjusts class-dependent margins in logit and representation spaces. Based on a theoretically derived generalization bound, it reduces inter-class performance disparity while simultaneously improving overall accuracy.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - class-wise disparity
-  - margin regularization
-  - generalization bound
-  - Rademacher complexity
-  - representation learning
+  - "3D Vision"
 date: 2026-05-08
-content_hash: 10709f5c6b8cae8e
+content_hash: a667c476f0a5725c
 ---
+
 # Reducing Class-Wise Performance Disparity via Margin Regularization
 
 ## Meta Information

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications
 description: >-
-  [NeurIPS 2025][LLM Safety][SQL debugging] This paper proposes BIRD-CRITIC (the first SQL debugging benchmark) and the Six-Gym training environment, and develops the Bird-Fixer agent. Through the f-Plan Boosting strategy…
+  [NeurIPS 2025][LLM Safety][SQL debugging] This paper proposes BIRD-CRITIC (the first SQL debugging benchmark) and the Six-Gym training environment, and develops the Bird-Fixer agent. Through the f-Plan Boosting strategy, it elevates the SQL debugging capability of a 14B open-source model to surpass Claude-3.7-Sonnet and GPT-4.1, achieving efficient SQL issue resolution while preserving data privacy.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "code repair"
   - "open-source models"
 date: 2026-05-08
-content_hash: 2ace9b9a321cc67d
+content_hash: 9c7eacca19c98def
 ---
 
 # SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications
@@ -164,9 +164,9 @@ Bird-Fixer, based on a 14B parameter model, achieves performance comparable to O
 
 - [\[NeurIPS 2025\] MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via Abstraction](masksql_safeguarding_privacy_for_llm-based_text-to-sql_via_abstraction.md)
 - [\[NeurIPS 2025\] AgentStealth: Reinforcing Large Language Model for Anonymizing User-generated Text](agentstealth_reinforcing_large_language_model_for_anonymizing_user-generated_tex.md)
+- [\[ICLR 2026\] MCP-SafetyBench: A Benchmark for Safety Evaluation of Large Language Models with Real-World MCP Servers](../../ICLR2026/llm_safety/mcp-safetybench_a_benchmark_for_safety_evaluation_of_large_language_models_with_.md)
 - [\[ACL 2026\] AgentCoMa: A Compositional Benchmark Mixing Commonsense and Mathematical Reasoning in Real-World Scenarios](../../ACL2026/llm_safety/agentcoma_a_compositional_benchmark_mixing_commonsense_and_mathematical_reasonin.md)
 - [\[NeurIPS 2025\] SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders](saemark_steering_personalized_multilingual_llm_watermarks_with_sparse_autoencode.md)
-- [\[NeurIPS 2025\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
 
 </div>
 

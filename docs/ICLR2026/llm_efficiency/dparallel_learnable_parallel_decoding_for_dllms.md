@@ -4,17 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][LLM Efficiency][diffusion LLM] By reshaping the "serial certainty convergence" (predicting token-by-token) of diffusion language models (dLLMs) into "parallel simultaneous convergence" through "Certainty-Forcing Distillation," LLaDA-8B achieves an 8.5× acceleration on GSM8K, reducing decoding steps from 256 to 30 without accuracy loss.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - diffusion LLM
-  - parallel decoding
-  - certainty-forcing distillation
-  - self-distillation
-  - LLaDA
-  - Dream
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "diffusion LLM"
+  - "parallel decoding"
+  - "certainty-forcing distillation"
+  - "self-distillation"
+  - "LLaDA"
+  - "Dream"
 date: 2026-05-08
-content_hash: 16069efacf85ffcd
+content_hash: 22bc2ebdd11efe97
 ---
+
 # dParallel: Learnable Parallel Decoding for dLLMs
 
 **Conference**: ICLR 2026  
@@ -133,8 +134,8 @@ Results are also valid for Dream-7B-Instruct: 39 steps for 6.9× speedup on GSM8
 - [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
 - [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
 - [\[ICLR 2026\] Wide-In, Narrow-Out: Revokable Decoding for Efficient and Effective DLLMs](wide-in_narrow-out_revokable_decoding_for_efficient_and_effective_dllms.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
 - [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
-- [\[ICLR 2026\] Gumbel Distillation for Parallel Text Generation](gumbel_distillation_for_parallel_text_generation.md)
 
 </div>
 

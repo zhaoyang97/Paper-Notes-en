@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Graph-Based Alternatives to LLMs for Human Simulation
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] This paper proposes GEMS (Graph-basEd Models for Human Simulation), which models closed-form human behavior simulation tasks as link prediction problems on heterogeneous graphs. It matches or exceeds strong LLM baselines across three datasets and three evaluation settings while reducing the number of parameters by thre
+  [ACL 2026][Graph Learning][Graph Neural Networks] This paper proposes GEMS (Graph-basEd Models for Human Simulation), which models closed-form human behavior simulation tasks as link prediction problems on heterogeneous graphs. It matches or exceeds strong LLM baselines across three datasets and three evaluation settings while reducing the number of parameters by three orders of magnitude.
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Human Simulation"
+  - "Link Prediction"
+  - "Heterogeneous Graphs"
+  - "Questionnaire Prediction"
 date: 2026-05-08
-content_hash: 6a20b59ebfa0a281
+content_hash: aca084de62297dd1
 ---
+
 # Graph-Based Alternatives to LLMs for Human Simulation
 
 **Conference**: ACL 2026  
@@ -137,11 +143,11 @@ Link prediction utilizes cross-entropy loss, where masked response edges serve a
 
 ## Related Papers
 
-- [\[ACL 2026\] From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context](from_nodes_to_narratives_explaining_graph_neural_networks_with_llms_and_graph_co.md)
 - [\[ACL 2026\] AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning](agentgl_towards_agentic_graph_learning_with_llms_via_reinforcement_learning.md)
 - [\[ICML 2025\] EvoMesh: Adaptive Physical Simulation with Hierarchical Graph Evolutions](../../ICML2025/graph_learning/evomesh_adaptive_physical_simulation_with_hierarchical_graph_evolutions.md)
+- [\[ACL 2026\] From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context](from_nodes_to_narratives_explaining_graph_neural_networks_with_llms_and_graph_co.md)
+- [\[ACL 2026\] Comparing Human and Large Language Model Interpretation of Implicit Information](comparing_human_and_large_language_model_interpretation_of_implicit_information.md)
 - [\[ACL 2026\] Evaluating LLMs on Large-Scale Graph Property Estimation via Random Walks](evaluating_llms_on_large-scale_graph_property_estimation_via_random_walks.md)
-- [\[ACL 2026\] LLMs Underperform Graph-Based Parsers on Supervised Relation Extraction for Complex Graphs](llms_underperform_graph-based_parsers_on_supervised_relation_extraction_for_comp.md)
 
 </div>
 

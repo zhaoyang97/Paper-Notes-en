@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ARINBEV: Bird's-Eye View Layout Estimation with Conditional Autoregressive Model
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] ARINBEV treats the BEV semantic map in autonomous driving as a discretized sequence of structured tokens, replaces VQ-VAE tokenization with class encoding, and utilizes entropy-guided masked autoregressive decoding to achieve higher mIoU, fewer parameters, and faster training on nuScenes and Argoverse2.
+  [ICLR2026][Autonomous Driving][BEV Layout Estimation] ARINBEV treats the BEV semantic map in autonomous driving as a discretized sequence of structured tokens, replaces VQ-VAE tokenization with class encoding, and utilizes entropy-guided masked autoregressive decoding to achieve higher mIoU, fewer parameters, and faster training on nuScenes and Argoverse2.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR2026"
+  - "Autonomous Driving"
+  - "BEV Layout Estimation"
+  - "Autoregressive Model"
+  - "Semantic Map"
+  - "Mask Scheduling"
+  - "Multi-view Perception"
 date: 2026-05-08
-content_hash: 490056d288c9e1b3
+content_hash: f04411f9e2c8639e
 ---
+
 # ARINBEV: Bird's-Eye View Layout Estimation with Conditional Autoregressive Model
 
 **Conference**: ICLR2026  

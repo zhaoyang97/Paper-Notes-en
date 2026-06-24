@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Mitigating Non-IID Drift in Zeroth-Order Federated LLM Fine-Tuning with Transferable Sparsity
 description: >-
-  [ICLR 2026][LLM Efficiency][Federated Learning] The paper proposes MEERKAT—a sparse zeroth-order federated fine-tuning method that updates only 0.1% of pre-trained sensitive parameters. It suppresses Non-IID drift through "extreme sparsity + high-frequency synchronization." Based on traceable virtual paths, the GradIP phenomenon is discovered, enabling MEERKAT-VP to
+  [ICLR 2026][LLM Efficiency][Federated Learning] The paper proposes MEERKAT—a sparse zeroth-order federated fine-tuning method that updates only 0.1% of pre-trained sensitive parameters. It suppresses Non-IID drift through "extreme sparsity + high-frequency synchronization." Based on traceable virtual paths, the GradIP phenomenon is discovered, enabling MEERKAT-VP to identify and early-stop extreme Non-IID clients to improve global model quality.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Federated Learning
-  - Zeroth-Order Optimization
-  - Sparse Fine-Tuning
-  - Non-IID
-  - LLM
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Federated Learning"
+  - "Zeroth-Order Optimization"
+  - "Sparse Fine-Tuning"
+  - "Non-IID"
+  - "LLM"
 date: 2026-05-08
-content_hash: 9cf12db9e0249316
+content_hash: 85f77867e6d2b84b
 ---
+
 # Mitigating Non-IID Drift in Zeroth-Order Federated LLM Fine-Tuning with Transferable Sparsity
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions
 description: >-
-  [NeurIPS 2025][Interpretability][concept explanation] This paper proposes FaCT, an inherently interpretable model combining B-cos transformations and sparse autoencoders (SAE) that **faithfully** decomposes model predict…
+  [NeurIPS 2025][Interpretability][concept explanation] This paper proposes FaCT, an inherently interpretable model combining B-cos transformations and sparse autoencoders (SAE) that **faithfully** decomposes model predictions into concept contributions (Logit = $\sum$ concept contributions) and faithfully visualizes each concept down to the input pixel level (concept activation = $\sum$ pixel contributions). A DINOv2-based C²-score is also introduced to evaluate concept consis…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "sparse autoencoders"
   - "interpretable models"
 date: 2026-05-08
-content_hash: fa22e8ac809d7927
+content_hash: b9f7ddb91ce1b10a
 ---
 
 # FaCT: Faithful Concept Traces for Explaining Neural Network Decisions
@@ -193,10 +193,10 @@ FaCT achieves substantially higher concept consistency than all baseline methods
 
 ## Related Papers
 
+- [\[ICML 2025\] FastCAV: Efficient Computation of Concept Activation Vectors for Explaining Deep Neural Networks](../../ICML2025/interpretability/fastcav_efficient_computation_of_concept_activation_vectors_for_explaining_deep_.md)
 - [\[ICLR 2026\] Provably Explaining Neural Additive Models](../../ICLR2026/interpretability/provably_explaining_neural_additive_models.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](../../CVPR2026/interpretability/towards_faithful_multimodal_concept_bottleneck_models.md)
-- [\[NeurIPS 2025\] Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions](explaining_similarity_in_vision-language_encoders_with_weighted_banzhaf_interact.md)
 - [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](../../ICLR2026/interpretability/causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
+- [\[NeurIPS 2025\] Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions](explaining_similarity_in_vision-language_encoders_with_weighted_banzhaf_interact.md)
 - [\[NeurIPS 2025\] Towards Interpretability Without Sacrifice: Faithful Dense Layer Decomposition with Mixture of Decoders](towards_interpretability_without_sacrifice_faithful_dense_layer_decomposition_wi.md)
 
 </div>

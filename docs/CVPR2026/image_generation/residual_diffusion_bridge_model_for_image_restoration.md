@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Residual Diffusion Bridge Model for Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] This paper re-derives diffusion bridges as stochastic interpolations unified by a "mean-reverting OU process + Doob h-transform." It uses the **residual $\boldsymbol{\pi}=\mathbf{x}_0-\boldsymbol{\mu}$ of paired images to modulate noise injection and removal**, ensuring that the model only applies perturbations to degr
+  [CVPR 2026][Image Generation][Diffusion Bridge] This paper re-derives diffusion bridges as stochastic interpolations unified by a "mean-reverting OU process + Doob h-transform." It uses the **residual $\boldsymbol{\pi}=\mathbf{x}_0-\boldsymbol{\mu}$ of paired images to modulate noise injection and removal**, ensuring that the model only applies perturbations to degraded regions while protecting clean areas from iterative reconstruction. This approach achieves an average gain…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Bridge"
+  - "Residual Modulation"
+  - "Universal Image Restoration"
+  - "Doob h-transform"
+  - "Adaptive Noise Perturbation"
 date: 2026-05-08
-content_hash: f9f1725dc5734543
+content_hash: a475208c155e7248
 ---
+
 # Residual Diffusion Bridge Model for Image Restoration
 
 **Conference**: CVPR 2026  
@@ -128,11 +134,11 @@ RDBM-L significantly outperforms previous SOTA (MaIR) by **1.55 dB PSNR / 0.013 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
 - [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
 - [\[CVPR 2026\] Low-Rank Residual Diffusion Models](low-rank_residual_diffusion_models.md)
-- [\[CVPR 2026\] FoundIR-v2: Optimizing Pre-Training Data Mixtures for Image Restoration Foundation Model](foundir-v2_optimizing_pre-training_data_mixtures_for_image_restoration_foundatio.md)
-- [\[CVPR 2026\] Language-Guided One-Step Diffusion Model for Nighttime Flare Removal](language-guided_one-step_diffusion_model_for_nighttime_flare_removal.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
+- [\[CVPR 2026\] Decoupled Residual Denoising Diffusion Models for Unified and Data Efficient Image-to-Image Translation](decoupled_residual_denoising_diffusion_models_for_unified_and_data_efficient_ima.md)
+- [\[CVPR 2026\] CARD: Correlation Aware Restoration with Diffusion](card_correlation_aware_restoration_with_diffusion.md)
 
 </div>
 

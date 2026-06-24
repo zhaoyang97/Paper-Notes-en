@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Flow Actor-Critic for Offline Reinforcement Learning (FAC)
 description: >-
-  [ICLR 2026][Reinforcement Learning][Flow Matching] FAC is the first to jointly utilize continuous normalizing flows to simultaneously construct expressive actor policies and a density-estimation-based critic penalty mechanism. by identifying OOD regions for selective conservative Q-value estimation, it significantly outperforms the previous best (43.6) with an average
+  [ICLR 2026][Reinforcement Learning][Offline RL] FAC is the first to jointly utilize continuous normalizing flows to simultaneously construct expressive actor policies and a density-estimation-based critic penalty mechanism. by identifying OOD regions for selective conservative Q-value estimation, it significantly outperforms the previous best (43.6) with an average score of 60.3 across 55 OGBench tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Flow Matching
-  - Actor-Critic
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Flow Matching"
+  - "Actor-Critic"
+  - "OOD Detection"
+  - "Continuous Normalizing Flow"
 date: 2026-05-08
-content_hash: ccc3e5b159b16008
+content_hash: 6f1d7e9b596e45be
 ---
+
 # Flow Actor-Critic for Offline Reinforcement Learning (FAC)
 
 **Conference**: ICLR 2026  
@@ -143,8 +147,8 @@ D4RL Antmaze (6 tasks): Average **90.5** (New SOTA, previous best FQL 83.5).
 - [\[ICLR 2026\] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning](neuralsymbolic_approaches_for_interpretable_actor-critic_reinforcement_learning.md)
 - [\[ICLR 2026\] Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces](convergence_of_an_actor-critic_gradient_flow_for_entropy_regularised_mdps_in_gen.md)
 - [\[ICLR 2026\] Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns](chunking_the_critic_a_transformer-based_soft_actor-critic_with_n-step_returns.md)
-- [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
 - [\[ICLR 2026\] Finite-Time Analysis of Actor-Critic Methods with Deep Neural Network Approximation](finite-time_analysis_of_actor-critic_methods_with_deep_neural_network_approximat.md)
+- [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
 
 </div>
 

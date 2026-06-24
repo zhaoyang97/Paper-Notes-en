@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IA2: Alignment with ICL Activations improves Supervised Fine-Tuning
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] This paper observes that while Supervised Fine-Tuning (SFT) and In-Context Learning (ICL) produce similar outputs, their internal activations differ significantly. Consequently, the authors propose IA2—a self-distillation priming step that uses MSE to align model activations with "ICL-present" activations before perfor
+  [ICLR 2026][LLM (Other)][Supervised Fine-Tuning] This paper observes that while Supervised Fine-Tuning (SFT) and In-Context Learning (ICL) produce similar outputs, their internal activations differ significantly. Consequently, the authors propose IA2—a self-distillation priming step that uses MSE to align model activations with "ICL-present" activations before performing SFT. This approach significantly improves both few-shot adaptation accuracy and calibration across 12 benc…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Supervised Fine-Tuning"
+  - "In-Context Learning"
+  - "Activation Alignment"
+  - "Self-distillation"
+  - "Calibration"
 date: 2026-05-08
-content_hash: 9284784cbfd47afc
+content_hash: 2c74c5eb237223e3
 ---
+
 # IA2: Alignment with ICL Activations improves Supervised Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -137,8 +143,8 @@ IA2→SFT outperforms pure SFT on all multi-token datasets. On single-token task
 ## Related Papers
 
 - [\[ICLR 2026\] Differential Fine-Tuning Large Language Models Towards Better Diverse Reasoning Abilities](differential_fine-tuning_large_language_models_towards_better_diverse_reasoning_.md)
+- [\[ICLR 2026\] FACT: Fine-grained Across-variable Convolution for Multivariate Time Series Forecasting](fact_fine-grained_across-variable_convolution_for_multivariate_time_series_forec.md)
 - [\[ACL 2025\] HFT: Half Fine-Tuning for Large Language Models](../../ACL2025/llm_nlp/hft_half_fine-tuning_for_large_language_models.md)
-- [\[ICML 2026\] In-Context Routing (ICR): 一次训练、处处可用的 attention-level 隐式 ICL](../../ICML2026/llm_nlp/train_once_reuse_everywhere_generalizable_implicit_in-context_learning_by_routin.md)
 - [\[ACL 2026\] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](../../ACL2026/llm_nlp/synthetic_eggs_in_many_baskets_the_impact_of_synthetic_data_diversity_on_llm_fin.md)
 - [\[ACL 2025\] SDD: Self-Degraded Defense against Malicious Fine-tuning](../../ACL2025/llm_nlp/sdd_self-degraded_defense_against_malicious_fine-tuning.md)
 

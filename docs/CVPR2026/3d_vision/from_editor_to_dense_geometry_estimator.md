@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FE2E: From Editor to Dense Geometry Estimator
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] This paper systematically analyzes the differences in fine-tuning behavior between image editing models and generative models for dense geometry estimation tasks. It discovers that editing models possess a natural structural prior advantage. Based on this, the FE2E framework is proposed, which for the first time adapts
+  [CVPR 2026][3D Vision][Depth estimation] This paper systematically analyzes the differences in fine-tuning behavior between image editing models and generative models for dense geometry estimation tasks. It discovers that editing models possess a natural structural prior advantage. Based on this, the FE2E framework is proposed, which for the first time adapts a DiT-based image editing model into a joint depth and normal estimator, significantly outperforming existing SOTA in…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
-  - DiT
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Depth estimation"
+  - "normal estimation"
+  - "image editing models"
+  - "diffusion models"
+  - "DiT"
 date: 2026-05-08
-content_hash: 99cba994d30c6e77
+content_hash: 8d25e07a2c9aba80
 ---
+
 # FE2E: From Editor to Dense Geometry Estimator
 
 **Conference**: CVPR 2026  
@@ -157,11 +161,11 @@ Training data used only 71K images, significantly less than the 62.6M used by De
 
 ## Related Papers
 
+- [\[CVPR 2026\] MotionCrafter: Dense Geometry and Motion Reconstruction with a 4D VAE](motioncrafter_dense_geometry_and_motion_reconstruction_with_a_4d_vae.md)
+- [\[CVPR 2026\] Unblur-SLAM: Dense Neural SLAM for Blurry Inputs](unblur-slam_dense_neural_slam_for_blurry_inputs.md)
 - [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
-- [\[CVPR 2026\] Edit2Perceive: Image Editing Diffusion Models Are Strong Dense Perceivers](edit2perceive_image_editing_diffusion_models_are_strong_dense_perceivers.md)
-- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
+- [\[AAAI 2026\] Free-Form Scene Editor: Enabling Multi-Round Object Manipulation like in a 3D Engine](../../AAAI2026/3d_vision/free-form_scene_editor_enabling_multi-round_object_manipulation_like_in_a_3d_eng.md)
+- [\[CVPR 2026\] TextFM: Robust Semi-dense Feature Matching with Language Guidance](textfm_robust_semi-dense_feature_matching_with_language_guidance.md)
 
 </div>
 

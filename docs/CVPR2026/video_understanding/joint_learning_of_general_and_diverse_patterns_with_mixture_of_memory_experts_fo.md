@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection
 description: >-
-  [CVPR 2026][Video Understanding][CLIP] MoME introduces a sparse Mixture of Experts framework with "Internal Memory + Shared External Memory," allowing normal/abnormal experts to learn commonalities in external memory and disparities in internal memory. Guided by LLM-generated semantic prototypes for expert routing, it balances generalization and discriminat
+  [CVPR 2026][Video Understanding][Weakly-Supervised Video Anomaly Detection] MoME introduces a sparse Mixture of Experts framework with "Internal Memory + Shared External Memory," allowing normal/abnormal experts to learn commonalities in external memory and disparities in internal memory. Guided by LLM-generated semantic prototypes for expert routing, it balances generalization and discrimination, achieving SOTA results on UCF-Crime and XD-Violence (88.32% AUC / 86.15% AP).
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - CLIP
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Weakly-Supervised Video Anomaly Detection"
+  - "Memory Experts"
+  - "Mixture of Experts (MoE)"
+  - "CLIP"
+  - "LLM Semantic Prototypes"
 date: 2026-05-08
-content_hash: 9522a2abfabe0c6d
+content_hash: b362f778a1224fae
 ---
+
 # Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -135,6 +140,7 @@ Module and loss ablations (Table 3 & 4):
 - Value: ⭐⭐⭐⭐ SOTA on XD-Violence; the Anomaly Filter and dual-memory designs have high transfer value.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -143,7 +149,7 @@ Module and loss ablations (Table 3 & 4):
 - [\[CVPR 2026\] Learning from Noisy Supervision: A Denoising-Debiasing Framework for Weakly Supervised Video Anomaly Detection](learning_from_noisy_supervision_a_denoising-debiasing_framework_for_weakly_super.md)
 - [\[CVPR 2026\] The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection](the_road_less_seen_segment_exploration_for_weakly_supervised_video_anomaly_detec.md)
 - [\[AAAI 2026\] Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment](../../AAAI2026/video_understanding/learning_to_tell_apart_weakly_supervised_video_anomaly_detection_via_disentangle.md)
-- [\[CVPR 2026\] TLMA: Mitigating the Impact of Weakly Labeled Information for Video Anomaly Detection](tlma_mitigating_the_impact_of_weakly_labeled_information_for_video_anomaly_detec.md)
+- [\[CVPR 2026\] M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](m4-sam_multi-modal_mixture-of-experts_with_memory-augmented_sam_for_rgb-d_video_.md)
 
 </div>
 

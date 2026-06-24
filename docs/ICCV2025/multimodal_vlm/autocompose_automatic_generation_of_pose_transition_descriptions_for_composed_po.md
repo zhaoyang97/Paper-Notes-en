@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Composed Pose Retrieval] This paper proposes AutoComPose, the first framework leveraging multimodal large language models (MLLMs) to automatically generate human pose transition descriptions.…
+  [ICCV 2025][Multimodal VLM][Composed Pose Retrieval] This paper proposes AutoComPose, the first framework leveraging multimodal large language models (MLLMs) to automatically generate human pose transition descriptions. Through body-part-level description generation, diversification augmentation, and a cyclic consistency loss, AutoComPose achieves superior composed pose retrieval performance while eliminating the need for costly manual annotation.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Cyclic Consistency"
   - "Data Annotation"
 date: 2026-05-08
-content_hash: 5221a9c2d8859b6a
+content_hash: d2e7dd7b834edd0c
 ---
 
 # AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs
@@ -133,10 +133,10 @@ Four CLIP-based backbones are employed (RN50, RN101, ViT-B/32, ViT-B/16), with a
 ## Related Papers
 
 - [\[ICCV 2025\] CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models](capellm_support-free_category-agnostic_pose_estimation_with_multimodal_large_lan.md)
-- [\[ICCV 2025\] Multimodal LLMs as Customized Reward Models for Text-to-Image Generation](multimodal_llms_as_customized_reward_models_for_text-to-image_generation.md)
-- [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
-- [\[ICCV 2025\] Taming the Untamed: Graph-Based Knowledge Retrieval and Reasoning for MLLMs to Conquer the Unknown](taming_the_untamed_graph-based_knowledge_retrieval_and_reasoning_for_mllms_to_co.md)
-- [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
+- [\[CVPR 2026\] CLEP: Contrastive Language-Pose Pretraining](../../CVPR2026/multimodal_vlm/clep_contrastive_language-pose_pretraining.md)
+- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
+- [\[CVPR 2026\] From 3D Pose to Prose: Biomechanics-Grounded Vision-Language Coaching](../../CVPR2026/multimodal_vlm/from_3d_pose_to_prose_biomechanics-grounded_vision-language_coaching.md)
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](../../CVPR2026/multimodal_vlm/adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
 
 </div>
 

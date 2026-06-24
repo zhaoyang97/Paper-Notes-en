@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] V2XPnP: Vehicle-to-Everything Spatio-Temporal Fusion for Multi-Agent Perception and Prediction
 description: >-
-  [ICCV 2025][Time Series][Vehicle-to-Everything Collaboration] This paper proposes V2XPnP, a V2X spatio-temporal fusion framework built upon a unified Transformer architecture…
+  [ICCV 2025][Time Series][Vehicle-to-Everything Collaboration] This paper proposes V2XPnP, a V2X spatio-temporal fusion framework built upon a unified Transformer architecture, which achieves multi-agent end-to-end perception and prediction under a one-step communication strategy. The work also introduces the first large-scale real-world sequential dataset supporting all V2X collaboration modes, achieving state-of-the-art performance on both perception and prediction tasks.
 tags:
   - "ICCV 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "V2X Dataset"
   - "Transformer"
 date: 2026-05-08
-content_hash: d10d051a6ba138c3
+content_hash: 1eaaad92510c5c28
 ---
 
 # V2XPnP: Vehicle-to-Everything Spatio-Temporal Fusion for Multi-Agent Perception and Prediction
@@ -173,11 +173,11 @@ Communication strategy comparison:
 
 ## Related Papers
 
+- [\[ICLR 2026\] ST-HHOL: Spatio-Temporal Hierarchical Hypergraph Online Learning for Crime Prediction](../../ICLR2026/time_series/st-hhol_spatio-temporal_hierarchical_hypergraph_online_learning_for_crime_predic.md)
+- [\[ICLR 2026\] TEN-DM: Topology-Enhanced Diffusion Model for Spatio-Temporal Event Prediction](../../ICLR2026/time_series/ten-dm_topology-enhanced_diffusion_model_for_spatio-temporal_event_prediction.md)
 - [\[AAAI 2026\] Coherent Multi-Agent Trajectory Forecasting in Team Sports with CausalTraj](../../AAAI2026/time_series/coherent_multi-agent_trajectory_forecasting_in_team_sports_with_causaltraj.md)
 - [\[NeurIPS 2025\] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization](../../NeurIPS2025/time_series/strap_spatio-temporal_pattern_retrieval_for_out-of-distribution_generalization.md)
 - [\[NeurIPS 2025\] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting](../../NeurIPS2025/time_series/learning_with_calibration_exploring_test-time_computing_of_spatio-temporal_forec.md)
-- [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](../../ICML2026/time_series/nested_spatio-temporal_time_series_forecasting.md)
-- [\[ACL 2026\] STReasoner: Empowering LLMs for Spatio-Temporal Reasoning in Time Series via Spatial-Aware Reinforcement Learning](../../ACL2026/time_series/streasoner_empowering_llms_for_spatio-temporal_reasoning_in_time_series_via_spat.md)
 
 </div>
 

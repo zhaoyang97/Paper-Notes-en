@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] ManagerBench uses 2440 human-verified "manager's dilemma" scenarios to force LLMs into binary choices between "harming humans to achieve operational goals" or "protecting humans but sacrificing goals," revealing that frontier models either cause harm or exhibit over-safety, and that failures stem from **priority-rankin
+  [ICLR 2026][LLM Safety][Safety Alignment] ManagerBench uses 2440 human-verified "manager's dilemma" scenarios to force LLMs into binary choices between "harming humans to achieve operational goals" or "protecting humans but sacrificing goals," revealing that frontier models either cause harm or exhibit over-safety, and that failures stem from **priority-ranking errors** rather than an inability to perceive harm.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Safety Alignment"
+  - "Agent Decision-making"
+  - "Safety-Pragmatism Trade-off"
+  - "Over-safety"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: e08aca65a71d22b4
+content_hash: a1a2310fc63fa2f7
 ---
+
 # ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs
 
 **Conference**: ICLR 2026  
@@ -115,10 +121,17 @@ The harmonic mean ensures that a low score in either dimension severely penalize
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models](improving_the_trade-off_between_watermark_strength_and_speculative_sampling_effi.md)
+- [\[ACL 2026\] LLM-VA: Resolving the Jailbreak-Overrefusal Trade-off via Vector Alignment](../../ACL2026/llm_safety/llm-va_resolving_the_jailbreak-overrefusal_trade-off_via_vector_alignment.md)
+- [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
+- [\[ICLR 2026\] PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach](propensitybench_evaluating_latent_safety_risks_in_large_language_models_via_an_a.md)
+- [\[ICLR 2026\] LLMs on Trial: Evaluating Judicial Fairness for Large Language Models](llms_on_trial_evaluating_judicial_fairness_for_large_language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models](improving_the_trade-off_between_watermark_strength_and_speculative_sampling_effi.md)

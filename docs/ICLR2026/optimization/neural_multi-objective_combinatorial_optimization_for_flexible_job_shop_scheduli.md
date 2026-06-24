@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems
 description: >-
-  [ICLR 2026][Optimization & Theory][PPO] Using a **single** preference-conditioned attention network combined with decomposition-based PPO, this work generates an entire Pareto front covering various trade-offs for Multi-Objective Flexible Job Shop Scheduling (MOFJSP) in a single training session, significantly outperforming evolutionary algorithms in both ef
+  [ICLR 2026][Optimization][Neural Combinatorial Optimization] Using a **single** preference-conditioned attention network combined with decomposition-based PPO, this work generates an entire Pareto front covering various trade-offs for Multi-Objective Flexible Job Shop Scheduling (MOFJSP) in a single training session, significantly outperforming evolutionary algorithms in both effectiveness and speed.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - PPO
+  - "ICLR 2026"
+  - "Optimization"
+  - "Neural Combinatorial Optimization"
+  - "Flexible Job Shop Scheduling"
+  - "Multi-Objective Optimization"
+  - "Decomposition Strategy"
+  - "Preference-Conditioned Attention"
+  - "PPO"
 date: 2026-05-08
-content_hash: 5e7389eb5a872a55
+content_hash: 818d11161f77242b
 ---
+
 # Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems
 
 **Conference**: ICLR 2026  
@@ -113,10 +119,10 @@ Comparing DCAN vs. WI-DAN vs. Hypernetwork (Hyper, style of Lin et al. 2022 / Su
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](multi-action_self-improvement_for_neural_combinatorial_optimization.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](in-context_multi-objective_optimization.md)
 - [\[ICLR 2026\] Gradient-Based Diversity Optimization with Differentiable Top-$k$ Objective](gradient-based_diversity_optimization_with_differentiable_top-k_objective.md)
 - [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
-- [\[ICML 2026\] Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization](../../ICML2026/optimization/accelerated_multiple_wasserstein_gradient_flows_for_multi-objective_distribution.md)
-- [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](../../NeurIPS2025/optimization/rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
+- [\[ICML 2025\] BOPO: Neural Combinatorial Optimization via Best-anchored and Objective-guided Preference Optimization](../../ICML2025/optimization/bopo_neural_combinatorial_optimization_via_best-anchored_and_objective-guided_pr.md)
 
 </div>
 

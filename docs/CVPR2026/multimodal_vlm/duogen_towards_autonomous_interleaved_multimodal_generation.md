@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DuoGen: Towards Autonomous Interleaved Multimodal Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] DuoGen combines a pre-trained MLLM with a video-pre-trained DiT. Using a special `<BOV>` token, the MLLM autonomously decides when to generate images, while all preceding images in the sequence serve as conditioning frames for the DiT to continue generation. Combined with a two-stage decoupled training strategy and a h
+  [CVPR 2026][Multimodal VLM][Interleaved multimodal generation] DuoGen combines a pre-trained MLLM with a video-pre-trained DiT. Using a special `<BOV>` token, the MLLM autonomously decides when to generate images, while all preceding images in the sequence serve as conditioning frames for the DiT to continue generation. Combined with a two-stage decoupled training strategy and a high-quality dataset of 298k interleaved instructions synthesized from cleaned web data…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Interleaved multimodal generation"
+  - "unified multimodal model"
+  - "decoupled training"
+  - "video DiT"
+  - "instruction tuning data"
 date: 2026-05-08
-content_hash: 3d985dd702675819
+content_hash: deead33364f71017
 ---
+
 # DuoGen: Towards Autonomous Interleaved Multimodal Generation
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,20 @@ Data strategy ablation (CoMM benchmark, Table 6):
 - **Value**: ⭐⭐⭐⭐⭐ Open-sourcing 298k data, the model, and a new benchmark provides a solid push for general interleaved generation.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] WEAVE: Unleashing and Benchmarking the In-context Interleaved Comprehension and Generation](weave_unleashing_and_benchmarking_the_in-context_interleaved_comprehension_and_g.md)
+- [\[CVPR 2026\] Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training](wan-weaver_interleaved_multi-modal_generation_via_decoupled_training.md)
+- [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
+- [\[CVPR 2026\] Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image](multimodal_rewardbench_2_evaluating_omni_reward_models_for_interleaved_text_and_.md)
+- [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] WEAVE: Unleashing and Benchmarking the In-context Interleaved Comprehension and Generation](weave_unleashing_and_benchmarking_the_in-context_interleaved_comprehension_and_g.md)

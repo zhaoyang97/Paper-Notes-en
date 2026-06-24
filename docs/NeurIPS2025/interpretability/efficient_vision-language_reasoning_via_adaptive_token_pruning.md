@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Vision-Language Reasoning via Adaptive Token Pruning
 description: >-
-  [NeurIPS 2025 (Workshop on VLM4RWD)][Interpretability][visual token pruning] This paper proposes Adaptive Token Pruning (ATP), a training-free plug-and-play module that selects the most informative visual tokens by fusin…
+  [NeurIPS 2025 (Workshop on VLM4RWD)][Interpretability][visual token pruning] This paper proposes Adaptive Token Pruning (ATP), a training-free plug-and-play module that selects the most informative visual tokens by fusing ViT CLS attention (intra-modal saliency) and CLIP text-image similarity (inter-modal relevance). ATP achieves less than 1% accuracy degradation on VQA/GQA/COCO Captioning in exchange for approximately 40% FLOPs reduction and 1.5× speedup.
 tags:
   - "NeurIPS 2025 (Workshop on VLM4RWD)"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "training-free compression"
   - "edge deployment"
 date: 2026-05-08
-content_hash: e422a8a24d3ac377
+content_hash: bb7bd7d283a54fc0
 ---
 
 # Efficient Vision-Language Reasoning via Adaptive Token Pruning
@@ -153,11 +153,11 @@ The paper currently provides only preliminary observations:
 
 ## Related Papers
 
+- [\[ICML 2025\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](../../ICML2025/interpretability/towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
 - [\[NeurIPS 2025\] Learning to Focus: Causal Attention Distillation via Gradient-Guided Token Pruning](learning_to_focus_causal_attention_distillation_via_gradient-guided_token_prunin.md)
-- [\[ICML 2026\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](../../ICML2026/interpretability/towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
 - [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](probabilistic_token_alignment_for_large_language_model_fusion.md)
-- [\[NeurIPS 2025\] Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions](explaining_similarity_in_vision-language_encoders_with_weighted_banzhaf_interact.md)
-- [\[NeurIPS 2025\] VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set](vlsae_interpreting_and_enhancing_visionlanguage_alignment_wi.md)
+- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](../../ICLR2026/interpretability/linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
+- [\[NeurIPS 2025\] AdaptGrad: Adaptive Sampling to Reduce Noise](adaptgrad_adaptive_sampling_to_reduce_noise.md)
 
 </div>
 

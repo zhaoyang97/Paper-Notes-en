@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Models] Through systematic analysis of the joint attention mechanism in Multimodal Diffusion Transformers (MM-DiT)…
+  [NeurIPS 2025][Image Generation][Diffusion Models] Through systematic analysis of the joint attention mechanism in Multimodal Diffusion Transformers (MM-DiT), this paper identifies specific layers ("semantic localization expert layers") that inherently possess high-quality semantic segmentation capability, and proposes a lightweight fine-tuning method, MAGNET, that simultaneously improves both segmentation and generation performance.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Attention Analysis"
   - "Semantic Alignment"
 date: 2026-05-08
-content_hash: 16db4acfce7580be
+content_hash: 3173a3f6f88dfb50
 ---
 
 # Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers
@@ -133,8 +133,8 @@ T2I-CompBench++ evaluation further confirms that MAGNET outperforms the baseline
 - [\[ICML 2026\] Self-Prompting Diffusion Transformer for Open-Vocabulary Scene Text Editing via In-Context Learning](../../ICML2026/image_generation/self-prompting_diffusion_transformer_for_open-vocabulary_scene_text_editing_via_.md)
 - [\[NeurIPS 2025\] ARGenSeg: Image Segmentation with Autoregressive Image Generation Model](argenseg_image_segmentation_with_autoregressive_image_generation_model.md)
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] SHOE: Semantic HOI Open-Vocabulary Evaluation Metric](../../CVPR2026/image_generation/shoe_semantic_hoi_open-vocabulary_evaluation_metric.md)
 - [\[NeurIPS 2025\] One Stone with Two Birds: A Null-Text-Null Frequency-Aware Diffusion Models for Text-Guided Image Inpainting](one_stone_with_two_birds_a_null-text-null_frequency-aware_diffusion_models_for_t.md)
+- [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](scaling_diffusion_transformers_efficiently_via_μp.md)
 
 </div>
 

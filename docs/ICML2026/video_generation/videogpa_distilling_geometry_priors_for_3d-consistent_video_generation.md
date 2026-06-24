@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation
 description: >-
-  [ICML 2026][Video Generation][Paper Note] VideoGPA utilizes a Geometric Foundation Model (GFM) to reconstruct generated videos into 3D point clouds and project them back into the original frames. It uses "reprojection error" as a self-supervised geometric consistency reward to automatically construct preference pairs. By applying DPO (fine-tuning ~1% parameter
+  [ICML 2026][Video Generation][Video Diffusion Models] VideoGPA utilizes a Geometric Foundation Model (GFM) to reconstruct generated videos into 3D point clouds and project them back into the original frames. It uses "reprojection error" as a self-supervised geometric consistency reward to automatically construct preference pairs. By applying DPO (fine-tuning ~1% parameters via LoRA with only ~2500 preference samples), it aligns pre-trained video diffusion models to a 3D-consi…
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "3D Consistency"
+  - "Geometric Foundation Models"
+  - "DPO Preference Alignment"
+  - "Self-supervised Reward"
 date: 2026-05-08
-content_hash: f7ea1fb5a9c38cbf
+content_hash: 000272687d12257f
 ---
+
 # VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation
 
 **Conference**: ICML 2026  
@@ -134,9 +140,9 @@ Compared to GeoVideo (based on CogVideoX1.5-5B), which uses explicit geometric s
 
 - [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](../../CVPR2026/video_generation/geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
 - [\[ICML 2026\] CamGeo: Sparse Camera-Conditioned Image-to-Video Generation with 3D Geometry Prior](camgeo_sparse_camera-conditioned_image-to-video_generation_with_3d_geometry_prio.md)
+- [\[ICLR 2026\] Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling](../../ICLR2026/video_generation/geometry_forcing_marrying_video_diffusion_and_3d_representation_for_consistent_w.md)
+- [\[ICML 2026\] World-R1: Reinforcing 3D Constraints for Text-to-Video Generation](world-r1_reinforcing_3d_constraints_for_text-to-video_generation.md)
 - [\[CVPR 2026\] WorldReel: 4D Video Generation with Consistent Geometry and Motion Modeling](../../CVPR2026/video_generation/worldreel_4d_video_generation_with_consistent_geometry_and_motion_modeling.md)
-- [\[CVPR 2025\] Learning Temporally Consistent Video Depth from Video Diffusion Priors](../../CVPR2025/video_generation/learning_temporally_consistent_video_depth_from_video_diffusion_priors.md)
-- [\[ICCV 2025\] NormalCrafter: Learning Temporally Consistent Normals from Video Diffusion Priors](../../ICCV2025/video_generation/normalcrafter_learning_temporally_consistent_normals_from_video_diffusion_priors.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Yggdrasil: Bridging Dynamic Speculation and Static Runtime for Latency-Optimal Tree-Based LLM Decoding
 description: >-
-  [NeurIPS 2025][LLM Efficiency][speculative decoding] This paper proposes Yggdrasil, a latency-optimal speculative decoding system that achieves compiler-friendly dynamic drafting via the Equal-Growth Tree (EGT) structure…
+  [NeurIPS 2025][LLM Efficiency][speculative decoding] This paper proposes Yggdrasil, a latency-optimal speculative decoding system that achieves compiler-friendly dynamic drafting via the Equal-Growth Tree (EGT) structure, replaces the conventional AAL metric with a latency-aware optimization objective, and reduces CPU-GPU coordination overhead through a stage-based scheduling runtime, achieving up to 3.98× end-to-end speedup on A100/A40 GPUs.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "latency optimization"
   - "LLM inference acceleration"
 date: 2026-05-08
-content_hash: bdffc089f2b90eac
+content_hash: 2f0bf884ea094b97
 ---
 
 # Yggdrasil: Bridging Dynamic Speculation and Static Runtime for Latency-Optimal Tree-Based LLM Decoding
@@ -130,11 +130,11 @@ Yggdrasil is built on PyTorch 2.0 and TorchInductor. The core abstraction is a `
 
 ## Related Papers
 
+- [\[ACL 2025\] Tetris: Optimal Draft Token Selection for Batch Speculative Decoding](../../ACL2025/llm_efficiency/tetris_optimal_draft_token_selection_for_batch_speculative_decoding.md)
 - [\[NeurIPS 2025\] DISC: Dynamic Decomposition Improves LLM Inference Scaling](disc_dynamic_decomposition_improves_llm_inference_scaling.md)
+- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](../../ICLR2026/llm_efficiency/inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
 - [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)
-- [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](../../ACL2026/llm_efficiency/tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
-- [\[NeurIPS 2025\] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE](moesd_unveil_speculative_decodings_potential_for_accelerating_sparse_moe.md)
-- [\[NeurIPS 2025\] Approximately Aligned Decoding](approximately_aligned_decoding.md)
+- [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](../../ICLR2026/llm_efficiency/dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
 
 </div>
 

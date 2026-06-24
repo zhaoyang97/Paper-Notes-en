@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RealAppliance: Let High-fidelity Appliance Assets Controllable and Workable as Aligned Real Manuals
 description: >-
-  [CVPR 2026][Others][Paper Note] The authors manually modeled 100 high-fidelity appliance digital assets strictly aligned with real-world manuals (dimensions, textures, physical mechanisms, electronic mechanisms, and program logic are all reproduced according to real manuals). Based on these, they established RealAppliance-Bench to evaluate mainstream
+  [CVPR 2026][Robotics][Appliance operation planning] The authors manually modeled 100 high-fidelity appliance digital assets strictly aligned with real-world manuals (dimensions, textures, physical mechanisms, electronic mechanisms, and program logic are all reproduced according to real manuals). Based on these, they established RealAppliance-Bench to evaluate mainstream MLLMs and embodied planning models through four tasks: "manual retrieval, component grounding…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Robotics"
+  - "Appliance operation planning"
+  - "high-fidelity articulated assets"
+  - "manual alignment"
+  - "simulation mechanism"
+  - "multimodal large model evaluation"
 date: 2026-05-08
-content_hash: df92bdf727a0113a
+content_hash: fba6191d2f5ed82c
 ---
+
 # RealAppliance: Let High-fidelity Appliance Assets Controllable and Workable as Aligned Real Manuals
 
 **Conference**: CVPR 2026  
@@ -126,11 +132,11 @@ General trend: Proprietary MLLMs > Open-source MLLMs > End-to-end embodied plann
 
 ## Related Papers
 
-- [\[CVPR 2026\] Differentiable Stroke Planning with Dual Parameterization for Efficient and High-Fidelity Painting Creation](differentiable_stroke_planning_with_dual_parameterization_for_efficient_and_high.md)
-- [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](../../AAAI2026/others/i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
-- [\[AAAI 2026\] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details](../../AAAI2026/others/learning_compact_latent_space_for_representing_neural_signed_distance_functions_.md)
-- [\[ECCV 2024\] High-Fidelity 3D Textured Shapes Generation by Sparse Encoding and Adversarial Decoding](../../ECCV2024/others/high-fidelity_3d_textured_shapes_generation_by_sparse_encoding_and_adversarial_d.md)
-- [\[CVPR 2026\] Crowdsourcing of Real-world Image Annotation via Visual Properties](crowdsourcing_of_real_world_image_annotation_via_visual_properties.md)
+- [\[CVPR 2026\] InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](interndata-a1_pioneering_high-fidelity_synthetic_data_for_pre-training_generalis.md)
+- [\[ICML 2026\] Fourier Features Let Agents Learn High Precision Policies with Imitation Learning](../../ICML2026/robotics/fourier_features_let_agents_learn_high_precision_policies_with_imitation_learnin.md)
+- [\[ICLR 2026\] ArtVIP: Articulated Digital Assets of Visual Realism, Modular Interaction, and Physical Fidelity for Robot Learning](../../ICLR2026/robotics/artvip_articulated_digital_assets_of_visual_realism_modular_interaction_and_phys.md)
+- [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](../../NeurIPS2025/robotics/labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
+- [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
 
 </div>
 

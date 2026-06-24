@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Keep It on a Leash: Controllable Pseudo-label Generation Towards Realistic Long-Tailed Semi-Supervised Learning
 description: >-
-  [NeurIPS 2025][Semi-Supervised Learning / Long-Tailed Learning][Long-tailed distribution] This paper proposes Controllable Pseudo-label Generation (CPG), a framework that progressively incorporates reliable pseudo-labels…
+  [NeurIPS 2025][Semi-Supervised Learning][Long-tailed distribution] This paper proposes Controllable Pseudo-label Generation (CPG), a framework that progressively incorporates reliable pseudo-labels into the labeled set via a controllable self-reinforcing optimization cycle. By training a Bayes-optimal classifier on a distribution of known composition, CPG achieves accuracy gains of up to 15.97% in the Realistic LTSSL setting where the unlabeled data distribution is entirely u…
 tags:
   - "NeurIPS 2025"
-  - "Semi-Supervised Learning / Long-Tailed Learning"
+  - "Semi-Supervised Learning"
+  - "Long-Tailed Learning"
   - "Long-tailed distribution"
-  - "semi-supervised learning"
   - "pseudo-labels"
   - "distribution mismatch"
   - "Logit Adjustment"
 date: 2026-05-08
-content_hash: 9970d4178a182f38
+content_hash: d4b415c1d25f365a
 ---
 
 # Keep It on a Leash: Controllable Pseudo-label Generation Towards Realistic Long-Tailed Semi-Supervised Learning
@@ -177,10 +177,10 @@ CSOC alone contributes an average of 6.97 pp, CAA alone contributes 2.35 pp, and
 ## Related Papers
 
 - [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
+- [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](../../ICLR2026/learning_theory/conformal_prediction_for_long-tailed_classification.md)
 - [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](../../ICML2026/learning_theory/semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
+- [\[ICLR 2026\] Learning from Label Proportions via Proportional Value Classification](../../ICLR2026/learning_theory/learning_from_label_proportions_via_proportional_value_classification.md)
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
-- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
-- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
 
 </div>
 

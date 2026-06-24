@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VoDaSuRe: A Large-Scale Dataset Revealing Domain Shift in Volumetric Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][micro-CT] The authors construct VoDaSuRe—the largest **paired multi-resolution real CT dataset** to date ($\sim 194$ gigavoxels, 16 samples, 32 scans). It reveals a fact obscured by existing volumetric SR research: the "impressive performance" of current SOTA models stems primarily from training on **synthetic downsampled data**
+  [CVPR 2026][Image Restoration][Volumetric Super-Resolution] The authors construct VoDaSuRe—the largest **paired multi-resolution real CT dataset** to date ($\sim 194$ gigavoxels, 16 samples, 32 scans). It reveals a fact obscured by existing volumetric SR research: the "impressive performance" of current SOTA models stems primarily from training on **synthetic downsampled data**. Faced with **physically acquired real low-resolution scans**, these models output only spatially a…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - micro-CT
-  - OME-Zarr
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Volumetric Super-Resolution"
+  - "Paired Multi-Resolution Dataset"
+  - "Domain Shift"
+  - "micro-CT"
+  - "OME-Zarr"
 date: 2026-05-08
-content_hash: 5711ec5f63986b52
+content_hash: 1a35b74449d5f90a
 ---
+
 # VoDaSuRe: A Large-Scale Dataset Revealing Domain Shift in Volumetric Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -131,8 +135,8 @@ Models trained on downsampled data fail to generalize to real LR data, proving t
 - [\[CVPR 2026\] CASR: A Robust Cyclic Framework for Arbitrary Large-Scale Super-Resolution with Distribution Alignment and Self-Similarity Awareness](casr_a_robust_cyclic_framework_for_arbitrary_large-scale_super-resolution_with_d.md)
 - [\[CVPR 2026\] RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution](rawdomain_degradation_models_smartphone_sr.md)
 - [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
-- [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
-- [\[CVPR 2026\] ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration](shiftlut_spatial_shift_enhanced_look-up_tables_for_efficient_image_restoration.md)
+- [\[ICLR 2026\] Test-Time Domain Generalization for Image Super-Resolution](../../ICLR2026/image_restoration/test-time_domain_generalization_for_image_super-resolution.md)
+- [\[ICLR 2026\] LucidFlux: Caption-Free Photo-Realistic Image Restoration via a Large-Scale Diffusion Transformer](../../ICLR2026/image_restoration/lucidflux_caption-free_photo-realistic_image_restoration_via_a_large-scale_diffu.md)
 
 </div>
 

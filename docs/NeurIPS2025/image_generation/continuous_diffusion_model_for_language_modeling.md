@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Continuous Diffusion Model for Language Modeling
 description: >-
-  [NeurIPS 2025][Image Generation][Riemannian diffusion] This paper proposes RDLM (Riemannian Diffusion Language Model), which constructs a continuous diffusion process on a statistical manifold (hypersphere) to model disc…
+  [NeurIPS 2025][Image Generation][Riemannian diffusion] This paper proposes RDLM (Riemannian Diffusion Language Model), which constructs a continuous diffusion process on a statistical manifold (hypersphere) to model discrete distributions. It establishes a theoretical connection between discrete diffusion and continuous flows, and leverages radial symmetry to enable simulation-free training and a dimension-splitting technique for handling large vocabularies. RDLM achieves 1.3…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "sphere"
   - "language model"
 date: 2026-05-08
-content_hash: e3506cde1ad72ebc
+content_hash: 186b616995839cef
 ---
 
 # Continuous Diffusion Model for Language Modeling
@@ -156,11 +156,11 @@ CIFAR-10 (pixel-level image modeling, BPD↓):
 
 ## Related Papers
 
+- [\[ICML 2025\] Generative Audio Language Modeling with Continuous-Valued Tokens and Masked Next-Token Prediction](../../ICML2025/image_generation/generative_audio_language_modeling_with_continuous-valued_tokens_and_masked_next.md)
 - [\[NeurIPS 2025\] Continuous Uniqueness and Novelty Metrics for Generative Modeling of Inorganic Crystals](continuous_uniqueness_and_novelty_metrics_for_generative_modeling_of_inorganic_c.md)
+- [\[ECCV 2024\] NL2Contact: Natural Language Guided 3D Hand-Object Contact Modeling with Diffusion Model](../../ECCV2024/image_generation/nl2contact_natural_language_guided_3d_hand-object_contact_modeling_with_diffusio.md)
+- [\[NeurIPS 2025\] FineGRAIN: Evaluating Failure Modes of Text-to-Image Models with Vision Language Model Judges](finegrain_evaluating_failure_modes_of_text-to-image_models_with_vision_language_.md)
 - [\[NeurIPS 2025\] Non-Markovian Discrete Diffusion with Causal Language Models](non-markovian_discrete_diffusion_with_causal_language_models.md)
-- [\[NeurIPS 2025\] DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images](diffeye_diffusion-based_continuous_eye-tracking_data_generation_conditioned_on_n.md)
-- [\[NeurIPS 2025\] FALCON: Few-step Accurate Likelihoods for Continuous Flows](falcon_few-step_accurate_likelihoods_for_continuous_flows.md)
-- [\[NeurIPS 2025\] GSPN-2: Efficient Parallel Sequence Modeling](gspn-2_efficient_parallel_sequence_modeling.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms
 description: >-
-  [NeurIPS 2025][Image Generation][Discrete Diffusion] This work introduces high-order numerical methods into discrete diffusion model inference for the first time…
+  [NeurIPS 2025][Image Generation][Discrete Diffusion] This work introduces high-order numerical methods into discrete diffusion model inference for the first time, proposing two second-order solvers — θ-RK-2 and θ-Trapezoidal — and theoretically proving that θ-Trapezoidal improves the discretization error from first-order $\mathcal{O}(\kappa T)$ to second-order $\mathcal{O}(\kappa^2 T)$. Experiments spanning 200M–8B models consistently demonstrate improvements across text…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Trapezoidal"
   - "Text Generation"
 date: 2026-05-08
-content_hash: 64a3aa434126e8b8
+content_hash: 052476a96b6cc968
 ---
 
 # Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms

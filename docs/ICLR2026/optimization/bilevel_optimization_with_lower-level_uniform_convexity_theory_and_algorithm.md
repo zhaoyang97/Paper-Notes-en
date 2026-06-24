@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bilevel Optimization with Lower-Level Uniform Convexity: Theory and Algorithm
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper bridges the solvable gap between lower-level strong convexity ($p=2$) and general convexity by introducing "lower-level uniform convexity (LLUC, index $p\ge 2$)". It establishes an implicit differentiation theorem under uniform convexity (providing explicit hypergradient formulas and Hölder smoothness) and d
+  [ICLR2026][Optimization][bilevel optimization] This paper bridges the solvable gap between lower-level strong convexity ($p=2$) and general convexity by introducing "lower-level uniform convexity (LLUC, index $p\ge 2$)". It establishes an implicit differentiation theorem under uniform convexity (providing explicit hypergradient formulas and Hölder smoothness) and designs a stochastic algorithm, UniBiO, proving an oracle complexity of $\widetilde{O}(\epsilon^{-5p+6})$ to find…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "bilevel optimization"
+  - "uniform convexity"
+  - "implicit differentiation"
+  - "hypergradient"
+  - "oracle complexity"
 date: 2026-05-08
-content_hash: c456966bdff7297c
+content_hash: 2f5745dfc5c13bd8
 ---
+
 # Bilevel Optimization with Lower-Level Uniform Convexity: Theory and Algorithm
 
 **Conference**: ICLR2026  
@@ -128,15 +134,20 @@ The paper uses "sweeping $p$" as the core analytical variable:
 - Value: ⭐⭐⭐⭐ Provides a clean and generalizable theoretical framework for relaxing lower-level assumptions.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **Ghadimi & Wang (2018)**: Approximation methods for bilevel optimization.
-- **Chen et al. (2024)**: On the impossibility of finding stationary points in bilevel optimization.
-- **Hao et al. (2024)**: BO-REP: Bilevel optimization with relaxed smoothness.
+## Related Papers
+
+- [\[NeurIPS 2025\] Learning Theory for Kernel Bilevel Optimization](../../NeurIPS2025/optimization/learning_theory_for_kernel_bilevel_optimization.md)
+- [\[NeurIPS 2025\] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds](../../NeurIPS2025/optimization/an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds.md)
+- [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
+- [\[ICML 2026\] Lower Complexity Bounds for Nonconvex-Strongly-Convex Bilevel Optimization with First-Order Oracles](../../ICML2026/optimization/lower_complexity_bounds_for_nonconvex-strongly-convex_bilevel_optimization_with_.md)
+- [\[ICLR 2026\] Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation](reducing_contextual_stochastic_bilevel_optimization_via_structured_function_appr.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Theory for Kernel Bilevel Optimization](../../NeurIPS2025/optimization/learning_theory_for_kernel_bilevel_optimization.md)

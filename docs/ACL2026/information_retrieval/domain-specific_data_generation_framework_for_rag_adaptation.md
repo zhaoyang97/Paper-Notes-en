@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Domain-Specific Data Generation Framework for RAG Adaptation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper proposes RAGen, a scalable modular data generation framework that automatically synthesizes domain-specific QAC (Question-Answer-Context) data through document-level concept extraction, multi-chunk evidence assembly, and Bloom's Taxonomy-guided question generation. It supports contrastive finetuning of embed
+  [ACL 2026][Information Retrieval & RAG][RAG Adaptation] This paper proposes RAGen, a scalable modular data generation framework that automatically synthesizes domain-specific QAC (Question-Answer-Context) data through document-level concept extraction, multi-chunk evidence assembly, and Bloom's Taxonomy-guided question generation. It supports contrastive finetuning of embedding models and supervised finetuning of LLMs, significantly outperforming AutoRAG and LlamaIndex baseli…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "RAG Adaptation"
+  - "Data Generation"
+  - "Domain-Specific"
+  - "Embedding Finetuning"
+  - "Bloom's Taxonomy"
 date: 2026-05-08
-content_hash: 79f2c96a727f1dbc
+content_hash: 6ae239a9b0b4cee5
 ---
+
 # Domain-Specific Data Generation Framework for RAG Adaptation
 
 **Conference**: ACL 2026  

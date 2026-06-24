@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] COOPERA: Continual Open-Ended Human-Robot Assistance
 description: >-
-  [NeurIPS 2025][Robotics][human-robot collaboration] This paper proposes the COOPERA framework, the first to enable continual, open-ended human-robot collaboration research. LLM-driven simulated humans with psychological…
+  [NeurIPS 2025 Spotlight][Robotics][human-robot collaboration] This paper proposes the COOPERA framework, the first to enable continual, open-ended human-robot collaboration research. LLM-driven simulated humans with psychological traits and long-term intentions interact with robots over multiple days in a 3D environment. The robot progressively improves its personalized assistance by learning human characteristics and contextual intentions.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Robotics"
   - "human-robot collaboration"
   - "continual learning"
@@ -12,7 +12,7 @@ tags:
   - "LLM-driven human simulation"
   - "personalized robot assistant"
 date: 2026-05-08
-content_hash: 4fff3661755e81d6
+content_hash: 8df449b9d7079347
 ---
 
 # COOPERA: Continual Open-Ended Human-Robot Assistance
@@ -117,11 +117,11 @@ The VLM is optimized via prompt engineering without training. The classifiers ar
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] C-NAV: Towards Self-Evolving Continual Object Navigation in Open World](c-nav_towards_self-evolving_continual_object_navigation_in_open_world.md)
+- [\[ICML 2025\] Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models](../../ICML2025/robotics/hi_robot_open-ended_instruction_following_with_hierarchical_vision-language-acti.md)
+- [\[ICML 2025\] FOUNDER: Grounding Foundation Models in World Models for Open-Ended Embodied Decision Making](../../ICML2025/robotics/founder_grounding_foundation_models_in_world_models_for_open-ended_embodied_deci.md)
 - [\[NeurIPS 2025\] Human-assisted Robotic Policy Refinement via Action Preference Optimization](human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)
-- [\[AAAI 2026\] Theory of Mind for Explainable Human-Robot Interaction](../../AAAI2026/robotics/theory_of_mind_for_explainable_human-robot_interaction.md)
-- [\[NeurIPS 2025\] Knolling Bot: Teaching Robots the Human Notion of Tidiness](knolling_bot_teaching_robots_the_human_notion_of_tidiness.md)
-- [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
-- [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](../../CVPR2026/robotics/igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
+- [\[NeurIPS 2025\] Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination](inner_speech_as_behavior_guides_steerable_imitation_of_diverse_behaviors_for_hum.md)
 
 </div>
 

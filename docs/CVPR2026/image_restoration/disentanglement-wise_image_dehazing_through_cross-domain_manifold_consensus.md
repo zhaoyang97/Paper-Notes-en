@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Disentanglement-wise Image Dehazing through Cross-Domain Manifold Consensus
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] This paper operationalizes the hypothesis that "hazy image features across different perceptual domains (spatial, frequency, non-local, diffusion, compressive sensing) share the same scattering semantic core" into a **Cross-domain Invariant Manifold (CIM)**. Using contrastive learning driven by consensus density, multi
+  [CVPR 2026][Image Restoration][Image Dehazing] This paper operationalizes the hypothesis that "hazy image features across different perceptual domains (spatial, frequency, non-local, diffusion, compressive sensing) share the same scattering semantic core" into a **Cross-domain Invariant Manifold (CIM)**. Using contrastive learning driven by consensus density, multi-domain features are aligned into a unified latent space. Additionally, a **physically-guided HSV disentanglement…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Image Dehazing"
+  - "Cross-domain Manifold"
+  - "Contrastive Learning"
+  - "HSV Disentanglement"
+  - "Physical Constraints"
 date: 2026-05-08
-content_hash: 85862d0a0be90c83
+content_hash: 7c767803a92cae33
 ---
+
 # Disentanglement-wise Image Dehazing through Cross-Domain Manifold Consensus
 
 **Conference**: CVPR 2026  
@@ -154,9 +160,9 @@ Components were removed or replaced to verify their contributions:
 ## Related Papers
 
 - [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
-- [\[CVPR 2026\] Thermal Diffusion Matters: Infrared Spatial-Temporal Video Super-Resolution through Heat Conduction Priors](thermal_diffusion_matters_infrared_spatial-temporal_video_super-resolution_throu.md)
-- [\[ICLR 2026\] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration](../../ICLR2026/image_restoration/learning_domain-aware_task_prompt_representations_for_multi-domain_all-in-one_im.md)
-- [\[CVPR 2026\] RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution](rawdomain_degradation_models_smartphone_sr.md)
+- [\[ICLR 2026\] Efficient Degradation-agnostic Image Restoration via Channel-Wise Functional Decomposition and Manifold Regularization](../../ICLR2026/image_restoration/efficient_degradation-agnostic_image_restoration_via_channel-wise_functional_dec.md)
+- [\[CVPR 2026\] DiffDecompose: Layer-Wise Decomposition of Alpha-Composited Images via Diffusion Transformers](diffdecompose_layer-wise_decomposition_of_alpha-composited_images_via_diffusion_.md)
+- [\[CVPR 2026\] Life-IQA: Boosting Blind Image Quality Assessment through GCN-enhanced Layer Interaction and MoE-based Feature Decoupling](life-iqa_boosting_blind_image_quality_assessment_through_gcn-enhanced_layer_inte.md)
 - [\[CVPR 2026\] White-Balance First, Adjust Later: Cross-Camera Color Constancy via Vision-Language Evaluation](white-balance_first_adjust_later_cross-camera_color_constancy_via_vision-languag.md)
 
 </div>

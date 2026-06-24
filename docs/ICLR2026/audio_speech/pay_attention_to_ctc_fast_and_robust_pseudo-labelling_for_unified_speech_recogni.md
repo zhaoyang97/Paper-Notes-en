@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition
 description: >-
-  [ICLR 2026][Audio & Speech][CTC] Ours proposes USR 2.0, which replaces autoregressive pseudo-label generation with CTC-driven teacher forcing. Attention pseudo-labels are generated in a single forward pass, increasing training speed by nearly 2×. By synergizing CTC and attention predictions, it enhances out-of-distribution robustness and achieves SOTA
+  [ICLR 2026][Audio & Speech][Unified Speech Recognition] Ours proposes USR 2.0, which replaces autoregressive pseudo-label generation with CTC-driven teacher forcing. Attention pseudo-labels are generated in a single forward pass, increasing training speed by nearly 2×. By synergizing CTC and attention predictions, it enhances out-of-distribution robustness and achieves SOTA results for unified ASR/VSR/AVSR on LRS3, LRS2, and WildVSR.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - CTC
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Unified Speech Recognition"
+  - "CTC"
+  - "Pseudo-labelling"
+  - "AVSR"
+  - "Out-of-Distribution Robustness"
 date: 2026-05-08
-content_hash: 28e3cab865ef5c3b
+content_hash: f2050eedc15c0553
 ---
+
 # Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition
 
 **Conference**: ICLR 2026  
@@ -159,15 +164,16 @@ Thanks to length alignment, the student decoder predicts both the robust CTC tar
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition](../../ACL2026/audio_speech/pseudo2real_task_arithmetic_for_pseudo-label_correction_in_automatic_speech_reco.md)
+- [\[ICLR 2026\] CTC-DRO: Robust Optimization for Reducing Language Disparities in Speech Recognition](ctc-dro_robust_optimization_for_reducing_language_disparities_in_speech_recognit.md)
 - [\[ICLR 2026\] StableToken: A Noise-Robust Semantic Speech Tokenizer for Resilient SpeechLLMs](stabletoken_a_noise-robust_semantic_speech_tokenizer_for_resilient_speechllms.md)
 - [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
-- [\[ICML 2026\] Attend to Anything: Foundation Model for Unified Human Attention Modeling](../../ICML2026/audio_speech/attend_to_anything_foundation_model_for_unified_human_attention_modeling.md)
-- [\[ACL 2025\] MultiMed: Multilingual Medical Speech Recognition via Attention Encoder Decoder](../../ACL2025/audio_speech/multimed_multilingual_medical_speech_recognition_via_attention_encoder_decoder.md)
+- [\[ACL 2026\] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition](../../ACL2026/audio_speech/pseudo2real_task_arithmetic_for_pseudo-label_correction_in_automatic_speech_reco.md)
+- [\[ICLR 2026\] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization](tangoflux_super_fast_and_faithful_text_to_audio_generation_with_flow_matching_an.md)
 
 </div>
 

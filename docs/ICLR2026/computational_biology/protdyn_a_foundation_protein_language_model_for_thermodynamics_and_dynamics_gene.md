@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] ProTDyn discretizes protein conformations into structural tokens and utilizes a 1.4-billion-parameter autoregressive Transformer to simultaneously learn "thermodynamics" (sampling equilibrium conformational ensembles) and "dynamics" (generating multi-time-scale trajectories) within a single framework. By employing inpa
+  [ICLR 2026][Computational Biology][Protein Language Models] ProTDyn discretizes protein conformations into structural tokens and utilizes a 1.4-billion-parameter autoregressive Transformer to simultaneously learn "thermodynamics" (sampling equilibrium conformational ensembles) and "dynamics" (generating multi-time-scale trajectories) within a single framework. By employing inpainting to refine coarse-grained trajectories into fine-grained ones…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Language Models"
+  - "Conformational Ensembles"
+  - "Molecular Dynamics"
+  - "Autoregressive Generation"
+  - "Multi-time scales"
 date: 2026-05-08
-content_hash: 4b511848b5005b2b
+content_hash: 5534ff894adbee99
 ---
+
 # ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation
 
 **Conference**: ICLR 2026  
@@ -140,7 +146,7 @@ A 50 µs "Dynamics (10 ns)" trajectory is roughly equivalent in quality to 25 µ
 - [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](towards_understanding_the_shape_of_representations_in_protein_language_models.md)
 - [\[ICLR 2026\] BioMD: All-atom Generative Model for Biomolecular Dynamics Simulation](biomd_all-atom_generative_model_for_biomolecular_dynamics_simulation.md)
 - [\[CVPR 2026\] MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation](../../CVPR2026/computational_biology/mmcp-gen_a_modality-extensible_diffusion_language_model_for_conditional_protein_.md)
-- [\[ICLR 2026\] HEIST: A Graph Foundation Model for Spatial Transcriptomics and Proteomics Data](heist_a_graph_foundation_model_for_spatial_transcriptomics_and_proteomics_data.md)
+- [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](../../ICML2026/computational_biology/protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
 
 </div>
 

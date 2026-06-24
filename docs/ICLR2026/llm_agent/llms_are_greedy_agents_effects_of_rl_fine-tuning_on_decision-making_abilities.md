@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities
 description: >-
-  [ICLR 2026][LLM Agent][Chain-of-Thought] This paper systematically analyzes three core failure modes—greediness, frequency bias, and the knowing-doing gap—that lead to suboptimal LLM performance in simple decision-making scenarios (Multi-armed Bandits, Contextual Bandits, Tic-Tac-Toe). It demonstrates that RL fine-tuning (RLFT) on self-generated CoT reasoning
+  [ICLR 2026][LLM Agent][decision making] This paper systematically analyzes three core failure modes—greediness, frequency bias, and the knowing-doing gap—that lead to suboptimal LLM performance in simple decision-making scenarios (Multi-armed Bandits, Contextual Bandits, Tic-Tac-Toe). It demonstrates that RL fine-tuning (RLFT) on self-generated CoT reasoning significantly increases exploration and bridges the knowing-doing gap.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "decision making"
+  - "exploration-exploitation"
+  - "RL fine-tuning"
+  - "Chain-of-Thought"
+  - "greediness bias"
+  - "knowing-doing gap"
 date: 2026-05-08
-content_hash: 4eee2ff2f07c7264
+content_hash: 018f84b55614b4e4
 ---
+
 # LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities
 
 **Conference**: ICLR 2026  
@@ -117,7 +123,6 @@ Experiments were conducted on Gemma2 (2B/9B/27B) across Gaussian/Bernoulli MAB (
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

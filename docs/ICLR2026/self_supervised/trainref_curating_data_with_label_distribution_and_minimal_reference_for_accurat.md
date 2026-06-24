@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] TrainRef：用标签分布与极少参考样本策展数据，兼顾准确预测与可靠置信
+  [Paper Note] TrainRef: Curating Data with Label Distributions and Minimal Reference Samples for Accurate Prediction and Reliable Confidence
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] TrainRef utilizes a minimal (one sample per class is sufficient) trusted reference set $D_\text{ref}$ as "extrinsic normality" to select clean samples. It rewrites labels from "one-hot classes" into "label distributions." Through a three-phase process—MIM pre-training, influence function filtering, and curation-trainin
+  [ICLR 2026][Self-Supervised Learning][Noisy Label Learning] TrainRef utilizes a minimal (one sample per class is sufficient) trusted reference set $D_\text{ref}$ as "extrinsic normality" to select clean samples. It rewrites labels from "one-hot classes" into "label distributions." Through a three-phase process—MIM pre-training, influence function filtering, and curation-training co-evolution—it achieves new SOTA performance in both accuracy and Expected Calibration Error (ECE…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Noisy Label Learning"
+  - "Confidence Calibration"
+  - "Data Curation"
+  - "Label Distribution"
+  - "Reference Set"
 date: 2026-05-08
-content_hash: a3f1a90a60837640
+content_hash: 3ffe2c5697eb3051
 ---
+
 # TrainRef: Curating Data with Label Distributions and Minimal Reference Samples for Accurate Prediction and Reliable Confidence
 
 **Conference**: ICLR 2026  
@@ -138,15 +144,16 @@ Regarding calibration (CIFAR-100 ECE, lower is better), TrainRef achieves the be
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](../../NeurIPS2025/self_supervised/hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
+- [\[ICLR 2026\] Regularized Latent Dynamics Prediction is a Strong Baseline for Behavioral Foundation Models](regularized_latent_dynamics_prediction_is_a_strong_baseline_for_behavioral_found.md)
+- [\[ICLR 2026\] Samples Are Not Equal: A Sample Selection Approach for Deep Clustering](samples_are_not_equal_a_sample_selection_approach_for_deep_clustering.md)
+- [\[CVPR 2026\] Harnessing the Power of Foundation Models for Accurate Material Classification](../../CVPR2026/self_supervised/harnessing_the_power_of_foundation_models_for_accurate_material_classification.md)
 - [\[ICLR 2026\] Equivariant Splitting: Self-supervised learning from incomplete data](equivariant_splitting_self-supervised_learning_from_incomplete_data.md)
-- [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
-- [\[ICLR 2026\] Multimodality as Supervision: Self-Supervised Specialization to the Test Environment via Multimodality](multimodality_as_supervision_self-supervised_specialization_to_the_test_environm.md)
-- [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
-- [\[ICLR 2026\] One-Shot Exemplars for Class Grounding in Self-Supervised Learning](one-shot_exemplars_for_class_grounding_in_self-supervised_learning.md)
 
 </div>
 

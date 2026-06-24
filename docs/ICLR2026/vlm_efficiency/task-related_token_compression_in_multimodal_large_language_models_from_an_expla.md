@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Task-Related Token Compression in Multimodal Large Language Models from an Explainability Perspective
 description: >-
-  [ICLR 2026][vlm_efficiency][Interpretability] This paper utilizes Transformer explainability methods to estimate the task-relevance of visual tokens relative to the current instruction. It trains a lightweight convolutional compressor to prune low-relevance tokens at the LLM input stage, significantly reducing FLOPs, prefill time, and KV-cache on Qwen2-VL, LLaVA-O
+  [ICLR2026][Multimodal Efficiency][Visual token compression] This paper utilizes Transformer explainability methods to estimate the task-relevance of visual tokens relative to the current instruction. It trains a lightweight convolutional compressor to prune low-relevance tokens at the LLM input stage, significantly reducing FLOPs, prefill time, and KV-cache on Qwen2-VL, LLaVA-OneVision, and VILA1.5 while maintaining image and video understanding performance.
 tags:
-  - ICLR 2026
-  - vlm_efficiency
-  - Interpretability
+  - "ICLR2026"
+  - "Multimodal Efficiency"
+  - "Visual token compression"
+  - "MLLM inference acceleration"
+  - "Explainability"
+  - "Task-related pruning"
+  - "KV-cache optimization"
 date: 2026-05-08
-content_hash: 983745969f9934e3
+content_hash: 0c5ab08913913444
 ---
+
 # Task-Related Token Compression in Multimodal Large Language Models from an Explainability Perspective
 
 **Conference**: ICLR2026  
@@ -154,15 +159,16 @@ Ablations show that gradient-weighted attention is more stable than simple head 
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical for deployment, especially for high-res/long-video MLLM scenarios.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](../../CVPR2026/vlm_efficiency/evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
 - [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
+- [\[ICML 2026\] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](../../ICML2026/vlm_efficiency/on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)
 - [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](../../CVPR2026/vlm_efficiency/hybrid_token_compression_for_vision-language_models.md)
-- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](../../CVPR2026/vlm_efficiency/accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
-- [\[ICLR 2026\] Photon: Speedup Volume Understanding with Efficient Multimodal Large Language Models](photon_speedup_volume_understanding_with_efficient_multimodal_large_language_mod.md)
+- [\[ICLR 2026\] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding](enhancing_visual_token_representations_for_video_large_language_models_via_train.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes an occlusion-aware scene partitioning strategy and region-based rendering technique. By clustering a camera co-visibility graph…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes an occlusion-aware scene partitioning strategy and region-based rendering technique. By clustering a camera co-visibility graph, it achieves partitions aligned with the scene layout, significantly improving reconstruction quality and rendering speed for large-scale 3DGS.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Scene Partitioning"
   - "Rendering Acceleration"
 date: 2026-05-08
-content_hash: 11ca1a38fe1eb578
+content_hash: 90062ef77fb4512b
 ---
 
 # OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering
@@ -150,9 +150,9 @@ For each region, the 3D Gaussians visible to all training cameras within that re
 ## Related Papers
 
 - [\[ICCV 2025\] Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction](momentum-gs_momentum_gaussian_self-distillation_for_high-quality_large_scene_rec.md)
-- [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
 - [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
-- [\[ICCV 2025\] Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction](curve-aware_gaussian_splatting_for_3d_parametric_curve_reconstruction.md)
+- [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](../../ICLR2026/3d_vision/signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
+- [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
 - [\[ICCV 2025\] Lightweight Gradient-Aware Upscaling of 3D Gaussian Splatting Images](lightweight_gradient-aware_upscaling_of_3d_gaussian_splatting_images.md)
 
 </div>

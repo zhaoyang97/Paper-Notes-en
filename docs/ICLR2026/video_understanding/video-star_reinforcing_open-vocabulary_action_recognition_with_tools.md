@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Video-STAR: Reinforcing Open-Vocabulary Action Recognition with Tools
 description: >-
-  [ICLR 2026][Video Understanding][GRPO] Video-STAR reformulates Open-Vocabulary Action Recognition (OVAR) as a sequential decision process of "selecting tools first, then decomposing sub-actions": during inference, a Multimodal Large Language Model (MLLM) calls domain-specific tools (e.g., pose estimation, human detection, online retrieval) to supplement vis
+  [ICLR 2026][Video Understanding][Open-Vocabulary Action Recognition] Video-STAR reformulates Open-Vocabulary Action Recognition (OVAR) as a sequential decision process of "selecting tools first, then decomposing sub-actions": during inference, a Multimodal Large Language Model (MLLM) calls domain-specific tools (e.g., pose estimation, human detection, online retrieval) to supplement visual evidence and decomposes holistic actions into discriminative sub-action primitives for…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - GRPO
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Open-Vocabulary Action Recognition"
+  - "Sub-action Decomposition"
+  - "Tool Augmentation"
+  - "Agent Reinforcement Learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 634d730b456caac2
+content_hash: c1b873dd7097992a
 ---
+
 # Video-STAR: Reinforcing Open-Vocabulary Action Recognition with Tools
 
 **Conference**: ICLR 2026  
@@ -150,11 +155,11 @@ Accuracy on Cross-dataset splits (UCF-101 / HMDB-51 / K-600):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Video-KTR: Reinforcing Video Reasoning via Key Token Attribution](video-ktr_reinforcing_video_reasoning_via_key_token_attribution.md)
 - [\[ICCV 2025\] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition](../../ICCV2025/video_understanding/learning_to_generalize_without_bias_for_open-vocabulary_action_recognition.md)
+- [\[ICLR 2026\] Video-KTR: Reinforcing Video Reasoning via Key Token Attribution](video-ktr_reinforcing_video_reasoning_via_key_token_attribution.md)
 - [\[ICLR 2026\] Invert4TVG: A Temporal Video Grounding Framework with Inversion Tasks Preserving Action Understanding Ability](invert4tvg_a_temporal_video_grounding_framework_with_inversion_tasks_preserving_.md)
+- [\[CVPR 2025\] Anomize: Better Open Vocabulary Video Anomaly Detection](../../CVPR2025/video_understanding/anomize_better_open_vocabulary_video_anomaly_detection.md)
 - [\[ICLR 2026\] Language-guided Open-world Video Anomaly Detection under Weak Supervision](language-guided_open-world_video_anomaly_detection_under_weak_supervision.md)
-- [\[CVPR 2026\] HERO: Hierarchical Embedding-Refinement for Open-Vocabulary Temporal Sentence Grounding in Videos](../../CVPR2026/video_understanding/hero_hierarchical_embedding-refinement_for_open-vocabulary_temporal_sentence_gro.md)
 
 </div>
 

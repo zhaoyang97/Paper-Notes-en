@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoFrGeNet: Continued Fraction Architectures for Language Generation
 description: >-
-  [ICML 2026][Image Generation][CoFrNet] This paper introduces "continued fractions," a class of functions known for optimal rational approximation, into generative Transformers. The authors design CoFrNet replacement modules (CAttnU/CAttnM/Cffn) for multi-head attention and FFN. By utilizing "continuants" in a closed-form derivation, they reduce $d$ division
+  [ICML 2026][Image Generation][Continued Fractions] This paper introduces "continued fractions," a class of functions known for optimal rational approximation, into generative Transformers. The authors design CoFrNet replacement modules (CAttnU/CAttnM/Cffn) for multi-head attention and FFN. By utilizing "continuants" in a closed-form derivation, they reduce $d$ divisions to 1, achieving comparable or superior downstream performance on GPT2-xl and Llama-3.2B using only $\frac{2…
 tags:
-  - ICML 2026
-  - Image Generation
-  - CoFrNet
+  - "ICML 2026"
+  - "Image Generation"
+  - "Continued Fractions"
+  - "CoFrNet"
+  - "Attention Substitutes"
+  - "FFN Substitutes"
+  - "Parameter-efficient"
 date: 2026-05-08
-content_hash: c5b0b5752735737d
+content_hash: c3ea35c370007380
 ---
+
 # CoFrGeNet: Continued Fraction Architectures for Language Generation
 
 **Conference**: ICML 2026  

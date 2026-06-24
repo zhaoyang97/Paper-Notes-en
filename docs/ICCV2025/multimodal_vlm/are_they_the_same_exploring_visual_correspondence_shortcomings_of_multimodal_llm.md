@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Are They the Same? Exploring Visual Correspondence Shortcomings of Multimodal LLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][visual correspondence] This paper presents the first systematic study of visual correspondence matching deficiencies in multimodal large language models (MLLMs). The authors construct the MMVM…
+  [ICCV 2025][Multimodal VLM][visual correspondence] This paper presents the first systematic study of visual correspondence matching deficiencies in multimodal large language models (MLLMs). The authors construct the MMVM benchmark (1,510 samples) and a 220K matching dataset, and propose CoLVA, which leverages object-level contrastive learning and a fine-grained visual expert to substantially improve cross-image instance matching in MLLMs.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "visual matching"
   - "benchmark"
 date: 2026-05-08
-content_hash: cc9b166aee02d063
+content_hash: 5912c07692eccc5e
 ---
 
 # Are They the Same? Exploring Visual Correspondence Shortcomings of Multimodal LLMs
@@ -137,10 +137,10 @@ With only 4B parameters, CoLVA surpasses GPT-4o by 7.15% and Qwen2-VL-72B by 11.
 ## Related Papers
 
 - [\[ICCV 2025\] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs](mm-spatial_exploring_3d_spatial_understanding_in_multimodal_llms.md)
-- [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
-- [\[ICCV 2025\] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning](smolora_exploring_and_defying_dual_catastrophic_forgetting_in_continual_visual_i.md)
-- [\[ICCV 2025\] Controlling Multimodal LLMs via Reward-guided Decoding](controlling_multimodal_llms_via_rewardguided_decoding.md)
-- [\[ICCV 2025\] Enrich and Detect: Video Temporal Grounding with Multimodal LLMs](enrich_and_detect_video_temporal_grounding_with_multimodal_llms.md)
+- [\[ACL 2025\] Exploring How Generative MLLMs Perceive More Than CLIP with the Same Vision Encoder](../../ACL2025/multimodal_vlm/exploring_how_generative_mllms_perceive_more.md)
+- [\[ACL 2025\] Exploring Compositional Generalization of Multimodal LLMs for Medical Imaging](../../ACL2025/multimodal_vlm/exploring_compositional_generalization_of_multimodal_llms_for_medical_imaging.md)
+- [\[ICCV 2025\] Visual Chronicles: Using Multimodal LLMs to Analyze Massive Collections of Images](visual_chronicles_using_multimodal_llms_to_analyze_massive_collections_of_images.md)
+- [\[ACL 2025\] Insight Over Sight: Exploring the Vision-Knowledge Conflicts in Multimodal LLMs](../../ACL2025/multimodal_vlm/conflictvis_vision_knowledge_conflict.md)
 
 </div>
 

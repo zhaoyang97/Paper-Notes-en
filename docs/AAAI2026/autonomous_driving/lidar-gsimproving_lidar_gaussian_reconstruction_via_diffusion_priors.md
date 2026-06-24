@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors
 description: >-
-  [AAAI 2026][Autonomous Driving][LiDAR reconstruction] This paper proposes LiDAR-GS++, which introduces a **controllable LiDAR diffusion generative model** as a prior to perform **extended reconstruction** of a neural 2DG…
+  [AAAI 2026][Autonomous Driving][LiDAR reconstruction] This paper proposes LiDAR-GS++, which introduces a **controllable LiDAR diffusion generative model** as a prior to perform **extended reconstruction** of a neural 2DGS field. The method addresses the severe degradation in reconstruction quality under extrapolated viewpoints (e.g., lane-change scenarios) encountered in single-pass LiDAR scanning, achieving state-of-the-art performance on both interpolated and extrapolated v…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "novel view synthesis"
   - "autonomous driving simulation"
 date: 2026-05-08
-content_hash: 0a79c51eeca46004
+content_hash: aca6b2e7a2648083
 ---
 
 # LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors
@@ -167,11 +167,11 @@ Generalizability of the diffusion prior is verified by integrating the diffusion
 
 ## Related Papers
 
-- [\[AAAI 2026\] LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures](linext_revisiting_lidar_completion_with_efficient_non-diffusion_architectures.md)
 - [\[ICCV 2025\] GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting](../../ICCV2025/autonomous_driving/gs-occ3d_scaling_vision-only_occupancy_reconstruction_with_gaussian_splatting.md)
+- [\[AAAI 2026\] LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures](linext_revisiting_lidar_completion_with_efficient_non-diffusion_architectures.md)
 - [\[ICCV 2025\] GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting](../../ICCV2025/autonomous_driving/gs-livm_real-time_photo-realistic_lidar-inertial-visual_mapping_with_gaussian_sp.md)
-- [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
-- [\[ICCV 2025\] Splat-LOAM: Gaussian Splatting LiDAR Odometry and Mapping](../../ICCV2025/autonomous_driving/splat-loam_gaussian_splatting_lidar_odometry_and_mapping.md)
+- [\[CVPR 2025\] LR-SGS: Robust LiDAR-Reflectance-Guided Salient Gaussian Splatting for Self-Driving Scene Reconstruction](../../CVPR2025/autonomous_driving/lr-sgs_robust_lidar-reflectance-guided_salient_gaussian_splatting_for_self-drivi.md)
+- [\[CVPR 2025\] LiDAR-RT: Gaussian-based Ray Tracing for Dynamic LiDAR Re-Simulation](../../CVPR2025/autonomous_driving/lidar-rt_gaussian-based_ray_tracing_for_dynamic_lidar_re-simulation.md)
 
 </div>
 

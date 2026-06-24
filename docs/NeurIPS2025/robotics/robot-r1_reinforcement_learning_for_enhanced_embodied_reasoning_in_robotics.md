@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robot-R1: Reinforcement Learning for Enhanced Embodied Reasoning in Robotics
 description: >-
-  [NeurIPS 2025][Robotics][Embodied Reasoning] Robot-R1 proposes training large vision-language models (LVLMs) via reinforcement learning (GRPO) for embodied reasoning. By casting next keystate prediction as multiple-choic…
+  [NeurIPS 2025][Robotics][Embodied Reasoning] Robot-R1 proposes training large vision-language models (LVLMs) via reinforcement learning (GRPO) for embodied reasoning. By casting next keystate prediction as multiple-choice questions and optimizing reasoning paths with RL, a 7B-parameter model surpasses GPT-4o on low-level control reasoning tasks.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "Large Vision-Language Models"
 date: 2026-05-08
-content_hash: 960689c17ed43502
+content_hash: 3c0c51757aaae18f
 ---
 
 # Robot-R1: Reinforcement Learning for Enhanced Embodied Reasoning in Robotics
@@ -149,11 +149,11 @@ GRPO and RLOO perform comparably; REINFORCE++ underperforms due to higher varian
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
-- [\[NeurIPS 2025\] NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning](nesypr_neurosymbolic_proceduralization_for_efficient_embodied_reasoning.md)
-- [\[NeurIPS 2025\] VIKI-R: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning](viki-r_coordinating_embodied_multi-agent_cooperation_via_reinforcement_learning.md)
+- [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](../../ICLR2026/robotics/embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
 - [\[NeurIPS 2025\] ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning](thinkact_vision-language-action_reasoning_via_reinforced_visual_latent_planning.md)
+- [\[NeurIPS 2025\] NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning](nesypr_neurosymbolic_proceduralization_for_efficient_embodied_reasoning.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
+- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 
 </div>
 

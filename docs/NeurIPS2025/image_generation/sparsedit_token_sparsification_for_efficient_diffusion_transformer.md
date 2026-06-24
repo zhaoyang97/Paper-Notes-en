@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SparseDiT: Token Sparsification for Efficient Diffusion Transformer
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper proposes SparseDiT, which achieves 55% FLOPs reduction and 175% inference throughput improvement on DiT-XL 512×512 with only 0.09 FID degradation. The me…
+  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper proposes SparseDiT, which achieves 55% FLOPs reduction and 175% inference throughput improvement on DiT-XL 512×512 with only 0.09 FID degradation. The method employs a three-stage spatial architecture (bottom Poolingformer + middle Sparse-Dense Token Module + top full-density processing) combined with a dynamic pruning-rate schedule along the temporal dimension, and successfully extends to video generation and…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "timestep-adaptive"
   - "architecture design"
 date: 2026-05-08
-content_hash: e998c92bdb98de6e
+content_hash: c2add9c55586af4f
 ---
 
 # SparseDiT: Token Sparsification for Efficient Diffusion Transformer
@@ -140,10 +140,10 @@ At 512×512 resolution, pruning over 90% of tokens results in only 0.09 FID incr
 
 ## Related Papers
 
+- [\[CVPR 2025\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](../../CVPR2025/image_generation/dit-ic_aligned_diffusion_transformer_for_efficient_image_compression.md)
 - [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
 - [\[NeurIPS 2025\] Rare Text Semantics Were Always There in Your Diffusion Transformer](rare_text_semantics_were_always_there_in_your_diffusion_transformer.md)
 - [\[NeurIPS 2025\] ICEdit: Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer](in-context_edit_enabling_instructional_image_editing_with_in-context_generation_.md)
-- [\[CVPR 2026\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](../../CVPR2026/image_generation/ditic_aligned_diffusion_transformer_for_efficient.md)
 - [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](../../ICCV2025/image_generation/dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
 
 </div>

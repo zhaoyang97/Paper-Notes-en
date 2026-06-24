@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLASH: Evaluating Language Models on Judging High-Stakes Dilemmas from Multiple Perspectives
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] CLASH is an evaluation benchmark consisting of 345 human-written high-stakes value dilemmas and 3795 character perspectives. It specifically tests whether language models can judge whether a controversial action should be taken from different perspectives. It systematically examines model understanding of **ambivalence
+  [ICLR2026][LLM Evaluation][Value Dilemmas] CLASH is an evaluation benchmark consisting of 345 human-written high-stakes value dilemmas and 3795 character perspectives. It specifically tests whether language models can judge whether a controversial action should be taken from different perspectives. It systematically examines model understanding of **ambivalence, psychological discomfort, and value shift** over time. Results indicate that even top-tier models like GPT-5 and Cl…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Value Dilemmas"
+  - "Moral Reasoning"
+  - "Ambivalence"
+  - "Value Shift"
+  - "Steerability"
 date: 2026-05-08
-content_hash: e37a9cffd480de83
+content_hash: 8c222b0cc34574c4
 ---
+
 # CLASH: Evaluating Language Models on Judging High-Stakes Dilemmas from Multiple Perspectives
 
 **Conference**: ICLR2026  

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning
 description: >-
-  [ICLR 2026][LLM Safety][backdoor attack] This paper proposes BEAT, the first visual backdoor attack framework for VLM-driven embodied agents. By using environmental objects (e.g., a knife) as triggers and employing a two-stage training process (SFT + Contrastive Trigger Learning), the framework achieves precise backdoor activation with success rates up to 80%
+  [ICLR 2026][LLM Safety][backdoor attack] This paper proposes BEAT, the first visual backdoor attack framework for VLM-driven embodied agents. By using environmental objects (e.g., a knife) as triggers and employing a two-stage training process (SFT + Contrastive Trigger Learning), the framework achieves precise backdoor activation with success rates up to 80% while maintaining normal task performance, revealing a critical security vulnerability in VLM embodied agents.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - backdoor attack
-  - embodied agent
-  - VLM security
-  - contrastive learning
-  - visual trigger
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "backdoor attack"
+  - "embodied agent"
+  - "VLM security"
+  - "contrastive learning"
+  - "visual trigger"
 date: 2026-05-08
-content_hash: 411cd389dd35e3ac
+content_hash: 475e2c65574a1094
 ---
+
 # BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning
 
 **Conference**: ICLR 2026  
@@ -131,16 +132,16 @@ Where $\beta$ controls preference sharpness, $\alpha$ weights the NLL anchor ter
 - Value: ⭐⭐⭐⭐⭐ Reveals significant security risks with direct warnings for embodied AI deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2025\] ICLShield: Exploring and Mitigating In-Context Learning Backdoor Attacks](../../ICML2025/llm_safety/iclshield_exploring_and_mitigating_in-context_learning_backdoor_attacks.md)
-- [\[ICLR 2026\] SABRE-FL: Selective and Accurate Backdoor Rejection for Federated Prompt Learning](sabre-fl_selective_and_accurate_backdoor_rejection_for_federated_prompt_learning.md)
 - [\[AAAI 2026\] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling](../../AAAI2026/llm_safety/an_llm-based_simulation_framework_for_embodied_conversationa.md)
+- [\[ICLR 2026\] SABRE-FL: Selective and Accurate Backdoor Rejection for Federated Prompt Learning](sabre-fl_selective_and_accurate_backdoor_rejection_for_federated_prompt_learning.md)
 - [\[ACL 2025\] ELBA-Bench: An Efficient Learning Backdoor Attacks Benchmark for Large Language Models](../../ACL2025/llm_safety/elba-bench_an_efficient_learning_backdoor_attacks_benchmark_for_large_language_m.md)
-- [\[ICLR 2026\] Learning to Lie: Adversarial Attacks on Human-AI Teams and LLMs](learning_to_lie_adversarial_attacks_on_human-ai_teams_and_llms.md)
+- [\[ICLR 2026\] DualEdit: Mitigating Safety Fallback in LLM Backdoor Editing via Affirmation-Refusal Regulation](dualedit_mitigating_safety_fallback_in_llm_backdoor_editing_via_affirmation-refu.md)
 
 </div>
 

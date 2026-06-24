@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] R-HORIZON: How Far Can Your Large Reasoning Model Really Go in Breadth and Depth?
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] This paper introduces R-HORIZON: by chaining independent problems through "answer dependency" into a strictly sequential long-range chain, the authors create a benchmark that stresses current state-of-the-art reasoning models. Furthermore, feeding these composed data into RLVR training significantly improves multi-prob
+  [ICLR 2026][Reasoning][Long-range reasoning] This paper introduces R-HORIZON: by chaining independent problems through "answer dependency" into a strictly sequential long-range chain, the authors create a benchmark that stresses current state-of-the-art reasoning models. Furthermore, feeding these composed data into RLVR training significantly improves multi-problem solving capabilities and even boosts single-problem performance (AIME2024 +7.5).
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Long-range reasoning"
+  - "query composition"
+  - "reasoning benchmark"
+  - "RLVR"
+  - "effective reasoning length"
 date: 2026-05-08
-content_hash: 02b64a1da6df97a8
+content_hash: 65f7853f92380a42
 ---
+
 # R-HORIZON: How Far Can Your Large Reasoning Model Really Go in Breadth and Depth?
 
 **Conference**: ICLR 2026  
@@ -130,11 +135,11 @@ Comparison of RLVR training (R1-Qwen-7B) with different composition counts and r
 
 ## Related Papers
 
+- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](../../ICML2026/llm_reasoning/how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
 - [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](why_is_your_language_model_a_poor_implicit_reward_model.md)
 - [\[ICLR 2026\] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models](a_simple_motivation_can_enhance_reinforcement_finetuning_of_large_reasoning_mode.md)
 - [\[ICLR 2026\] Reasoning with Sampling: Your Base Model is Smarter Than You Think](reasoning_with_sampling_your_base_model_is_smarter_than_you_think.md)
 - [\[ICLR 2026\] ChainGPT: Dual-Reasoning Model with Recurrent Depth and Multi-Rank State Updates](chaingpt_dual-reasoning_model_with_recurrent_depth_and_multi-rank_state_updates.md)
-- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](../../ICML2026/llm_reasoning/how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
 
 </div>
 

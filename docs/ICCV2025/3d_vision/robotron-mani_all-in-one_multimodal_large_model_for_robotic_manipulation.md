@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation
 description: >-
-  [ICCV 2025][3D Vision][robotic manipulation] This paper proposes RoboTron-Mani, a multimodal large model for robotic manipulation, together with the comprehensive dataset RoboData. By enhancing 3D perception via camera p…
+  [ICCV 2025][3D Vision][robotic manipulation] This paper proposes RoboTron-Mani, a multimodal large model for robotic manipulation, together with the comprehensive dataset RoboData. By enhancing 3D perception via camera parameters and occupancy supervision, and enabling flexible multimodal fusion through a Modality-Isolation-Mask (MIM), RoboTron-Mani is the first generalist policy to simultaneously surpass specialist models across multiple datasets.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "cross-embodiment generalization"
   - "data alignment"
 date: 2026-05-08
-content_hash: c33a74a20f2a2121
+content_hash: c1616cbd620135cb
 ---
 
 # RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation
@@ -140,11 +140,11 @@ Note: RoboTron-Mani is the only generalist policy evaluated simultaneously acros
 
 ## Related Papers
 
-- [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](rayzer_a_self-supervised_large_view_synthesis_model.md)
+- [\[CVPR 2025\] Matrix3D: Large Photogrammetry Model All-in-One](../../CVPR2025/3d_vision/matrix3d_large_photogrammetry_model_all-in-one.md)
 - [\[NeurIPS 2025\] DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation](../../NeurIPS2025/3d_vision/dynarend_learning_3d_dynamics_via_masked_future_rendering_for_robotic_manipulati.md)
-- [\[CVPR 2026\] HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation](../../CVPR2026/3d_vision/hyperbolic_multiview_pretraining_for_robotic_manipulation.md)
-- [\[NeurIPS 2025\] SceneWeaver: All-in-One 3D Scene Synthesis with an Extensible and Self-Reflective Agent](../../NeurIPS2025/3d_vision/sceneweaver_all-in-one_3d_scene_synthesis_with_an_extensible_and_self-reflective.md)
-- [\[ICCV 2025\] BokehDiff: Neural Lens Blur with One-Step Diffusion](bokehdiff_neural_lens_blur_with_one-step_diffusion.md)
+- [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](rayzer_a_self-supervised_large_view_synthesis_model.md)
+- [\[CVPR 2025\] Mani-GS: Gaussian Splatting Manipulation with Triangular Mesh](../../CVPR2025/3d_vision/mani-gs_gaussian_splatting_manipulation_with_triangular_mesh.md)
+- [\[CVPR 2026\] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](../../CVPR2026/3d_vision/consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)
 
 </div>
 

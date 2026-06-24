@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Bigger Isn't Better: A Comprehensive Fairness Evaluation of Political Bias in Multi-News Summarisation
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This study constructs FairNews, the first multi-document news summarization dataset with political leaning labels, and evaluates 13 LLMs using a five-dimensional fairness framework. It finds that medium-scale models outperform larger models in both fairness and efficiency, and that entity sentiment similarity is the di
+  [ACL 2026][Social Computing][Political Bias] This study constructs FairNews, the first multi-document news summarization dataset with political leaning labels, and evaluates 13 LLMs using a five-dimensional fairness framework. It finds that medium-scale models outperform larger models in both fairness and efficiency, and that entity sentiment similarity is the dimension most resistant to prompting-based debiasing.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Political Bias"
+  - "Multi-document Summarization"
+  - "Fairness Evaluation"
+  - "加 Debiasing Methods"
+  - "Model Scaling"
 date: 2026-05-08
-content_hash: 1f8e2bd689aeab40
+content_hash: f3c4f8eab0534030
 ---
+
 # When Bigger Isn't Better: A Comprehensive Fairness Evaluation of Political Bias in Multi-News Summarisation
 
 **Conference**: ACL 2026  
@@ -149,7 +155,7 @@ This is an evaluation study and does not involve model training. All experiments
 - [\[ICML 2026\] MIND: Multi-Rationale Integrated Discriminative Reasoning Framework for Multi-Modal Fake News](../../ICML2026/social_computing/mind_multi-rationale_integrated_discriminative_reasoning_framework_for_multi-mod.md)
 - [\[ACL 2026\] MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection](mm-stancedet_retrieval-augmented_multi-modal_multi-agent_stance_detection.md)
 - [\[ACL 2026\] LiveFact: A Dynamic, Time-Aware Benchmark for LLM-Driven Fake News Detection](livefact_a_dynamic_time-aware_benchmark_for_llm-driven_fake_news_detection.md)
-- [\[ICLR 2026\] When Agents Persuade: Propaganda Generation and Mitigation in LLMs](../../ICLR2026/social_computing/when_agents_persuade_propaganda_generation_and_mitigation_in_llms.md)
+- [\[ACL 2026\] GKnow: Measuring the Entanglement of Gender Bias and Factual Gender](gknow_measuring_the_entanglement_of_gender_bias_and_factual_gender.md)
 
 </div>
 

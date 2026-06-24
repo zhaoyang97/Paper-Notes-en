@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Explainable Forensics of Manipulated Segments in Untrimmed Long Videos
 description: >-
-  [ICML 2026][Video Generation][Interpretability] This paper proposes the task of **temporal localization and explainable analysis of AI-generated segments in long videos**, introducing the **large-scale TASLE dataset** and the **two-stage MSLoc baseline method**—achieving precise localization and explainable reasoning of manipulated segments in mixed real-fake videos
+  [ICML 2026][Video Generation][AI-generated video detection] This paper proposes the task of **temporal localization and explainable analysis of AI-generated segments in long videos**, introducing the **large-scale TASLE dataset** and the **two-stage MSLoc baseline method**—achieving precise localization and explainable reasoning of manipulated segments in mixed real-fake videos through boundary-aware proposal generation and MLLM refinement.
 tags:
-  - ICML 2026
-  - Video Generation
-  - Interpretability
+  - "ICML 2026"
+  - "Video Generation"
+  - "AI-generated video detection"
+  - "temporal localization"
+  - "explainability"
+  - "long video forensics"
+  - "boundary-aware"
 date: 2026-05-08
-content_hash: cedf063892435645
+content_hash: 710727ebfbc79314
 ---
+
 # Explainable Forensics of Manipulated Segments in Untrimmed Long Videos
 
 **Conference**: ICML 2026  

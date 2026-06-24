@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Introduces text descriptions to RGBT tracking for the first time, proposing the RAGTrack framework based on Retrieval-Augmented Generation (RAG). By utilizing a multimodal Transformer encoder, adaptive token fusion, and a context-aware reasoning module, it achieves SOTA performance on four RGBT benchmarks.
+  [CVPR2026][Video Understanding][RGBT Tracking] Introduces text descriptions to RGBT tracking for the first time, proposing the RAGTrack framework based on Retrieval-Augmented Generation (RAG). By utilizing a multimodal Transformer encoder, adaptive token fusion, and a context-aware reasoning module, it achieves SOTA performance on four RGBT benchmarks.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR2026"
+  - "Video Understanding"
+  - "RGBT Tracking"
+  - "Retrieval-Augmented Generation"
+  - "Multimodal Fusion"
+  - "Language-guided Tracking"
+  - "Adaptive Token Fusion"
 date: 2026-05-08
-content_hash: 1f7ccae0ae0e4acf
+content_hash: 52aef7308e9a7cc1
 ---
+
 # RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation
 
 **Conference**: CVPR2026  
@@ -133,15 +139,15 @@ LasHeR attribute-level analysis shows: Total Occlusion (TO) +10.7% PR, Out-of-Vi
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](../../NeurIPS2025/video_understanding/vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 - [\[CVPR 2026\] Progressive Multi-cue Alignment for Unaligned RGBT Tracking](progressive_multi-cue_alignment_for_unaligned_rgbt_tracking.md)
 - [\[CVPR 2026\] Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking](spatio-temporal_conditional_denoising_transformer_for_modality-missing_rgbt_trac.md)
+- [\[CVPR 2026\] PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation](pyratok_language-aligned_pyramidal_tokenizer_for_video_understanding_and_generat.md)
 - [\[CVPR 2026\] Interactive Tracking: A Human-in-the-Loop Paradigm with Memory-Augmented Adaptation](interactive_tracking_a_human-in-the-loop_paradigm_with_memory-augmented_adaptati.md)
-- [\[CVPR 2026\] StreamRAG: Enhancing Real-Time Video Understanding with Retrieval Augmentation](streamrag_enhancing_real-time_video_understanding_with_retrieval_augmentation.md)
 
 </div>
 

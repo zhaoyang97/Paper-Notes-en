@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving the Straight-Through Estimator with Zeroth-Order Information
 description: >-
-  [NeurIPS 2025][Optimization][quantization-aware training] This paper proposes FOGZO (First-Order-Guided Zeroth-Order Gradient Descent), which injects STE gradients as a bias source into zeroth-order gradient estimation.…
+  [NeurIPS 2025][Optimization][quantization-aware training] This paper proposes FOGZO (First-Order-Guided Zeroth-Order Gradient Descent), which injects STE gradients as a bias source into zeroth-order gradient estimation. By retaining the computational efficiency of STE while leveraging zeroth-order information to correct occasional erroneous gradient directions, FOGZO achieves 1–22 point improvements in accuracy/perplexity on DeiT, ResNet, and LLaMA with only 2 additional forw…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "FOGZO"
   - "gradient estimation"
 date: 2026-05-08
-content_hash: 37a3ce0ad8390809
+content_hash: 8f865119d1e5eed1
 ---
 
 # Improving the Straight-Through Estimator with Zeroth-Order Information
@@ -159,7 +159,7 @@ In practice, $\epsilon = \alpha \bar{\epsilon}$ where $\alpha$ is the quantizati
 - [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](../../ICML2026/optimization/learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
 - [\[ICML 2026\] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective](../../ICML2026/optimization/learning_dynamics_of_zeroth-order_optimization_a_kernel_perspective.md)
-- [\[NeurIPS 2025\] DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products](deltaproduct_improving_state-tracking_in_linear_rnns_via_householder_products.md)
+- [\[NeurIPS 2025\] From Information to Generative Exponent: Learning Rate Induces Phase Transitions in SGD](from_information_to_generative_exponent_learning_rate_induces_phase_transitions_.md)
 
 </div>
 

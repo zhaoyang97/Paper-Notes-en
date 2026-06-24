@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLMscape
 description: >-
-  [NeurIPS 2025][Robotics][Interactive Installation] LLMscape is a projection-mapped sandscape interactive installation in which multiple independent LLM agents receive multimodal input, converse with one another…
+  [NeurIPS 2025][Robotics][Interactive Installation] LLMscape is a projection-mapped sandscape interactive installation in which multiple independent LLM agents receive multimodal input, converse with one another, and engage in speculation within a shared, mutable physical environment, exploring the process of collaborative sensemaking between humans and AI under cognitive uncertainty.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Perception"
   - "Collaborative Sensemaking"
 date: 2026-05-08
-content_hash: f0caa4cc3bc59359
+content_hash: 384b5688a82aa847
 ---
 
 # LLMscape

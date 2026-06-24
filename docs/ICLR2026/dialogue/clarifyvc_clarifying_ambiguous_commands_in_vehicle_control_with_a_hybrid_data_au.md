@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ClarifyVC: Clarifying Ambiguous Commands in Vehicle Control with a Hybrid Data Augmentation Pipeline
 description: >-
-  [ICLR 2026][Dialogue Systems][Paper Note] ClarifyVC employs an agent-orchestrated four-stage data augmentation pipeline to "grow" a large volume of ambiguity-rich and protocol-compliant single/multi-turn dialogues from 20,000 real in-vehicle commands. Accompanied by a three-tier evaluation protocol and a Data Quality Score (DQS), fine-tuning on this data impro
+  [ICLR2026][Dialogue Systems][Ambiguity Clarification] ClarifyVC employs an agent-orchestrated four-stage data augmentation pipeline to "grow" a large volume of ambiguity-rich and protocol-compliant single/multi-turn dialogues from 20,000 real in-vehicle commands. Accompanied by a three-tier evaluation protocol and a Data Quality Score (DQS), fine-tuning on this data improves parsing accuracy by ~15%, ambiguity resolution by ~20%, and achieves 98% protocol compliance for in-ve…
 tags:
-  - ICLR 2026
-  - Dialogue Systems
+  - "ICLR2026"
+  - "Dialogue Systems"
+  - "Ambiguity Clarification"
+  - "Vehicle Control"
+  - "Function Calling"
+  - "Multi-turn Dialogue"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: a23b034918343d27
+content_hash: 6befb47dea9896f0
 ---
+
 # ClarifyVC: Clarifying Ambiguous Commands in Vehicle Control with a Hybrid Data Augmentation Pipeline
 
 **Conference**: ICLR2026  
@@ -131,6 +137,7 @@ Model Performance (RQ3): Evaluating 12 open-source LLMs under ZS/FS/SFT settings
 - Value: ⭐⭐⭐⭐ Provides a reusable data-eval-model paradigm for safety-critical in-vehicle/instructional interfaces.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

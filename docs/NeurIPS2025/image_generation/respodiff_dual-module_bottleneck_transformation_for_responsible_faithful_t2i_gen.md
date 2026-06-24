@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RespoDiff: Dual-Module Bottleneck Transformation for Responsible & Faithful T2I Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Responsible Generation] This paper proposes RespoDiff, a framework that introduces two learnable transformation modules at the bottleneck layer of a diffusion model UNet — a Responsibilit…
+  [NeurIPS 2025][Image Generation][Responsible Generation] This paper proposes RespoDiff, a framework that introduces two learnable transformation modules at the bottleneck layer of a diffusion model UNet — a Responsibility Alignment Module (RAM) and a Semantic Alignment Module (SAM) — trained via score matching objectives to achieve fair and safe text-to-image generation while preserving image quality and semantic fidelity.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Bottleneck Transformation"
   - "Score Matching"
 date: 2026-05-08
-content_hash: 35eb8a877b44e22e
+content_hash: 7d4a611d6411d128
 ---
 
 # RespoDiff: Dual-Module Bottleneck Transformation for Responsible & Faithful T2I Generation
@@ -175,11 +175,11 @@ $$\hat{f}(y_{neu}) = g(\mathcal{T}_\theta^{resp,s}(\boldsymbol{h}_{neu}) + \math
 
 ## Related Papers
 
+- [\[CVPR 2025\] Dual Diffusion for Unified Image Generation and Understanding](../../CVPR2025/image_generation/dual_diffusion_for_unified_image_generation_and_understanding.md)
+- [\[CVPR 2025\] DualAnoDiff: Dual-Interrelated Diffusion Model for Few-Shot Anomaly Image Generation](../../CVPR2025/image_generation/dual-interrelated_diffusion_model_for_few-shot_anomaly_image_generation.md)
 - [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
 - [\[CVPR 2026\] Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation](../../CVPR2026/image_generation/adaptive_auxiliary_prompt_blending_for_target-faithful_diffusion_generation.md)
-- [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
-- [\[ICCV 2025\] Dual Recursive Feedback on Generation and Appearance Latents for Pose-Robust Text-to-Image Diffusion](../../ICCV2025/image_generation/dual_recursive_feedback_on_generation_and_appearance_latents_for_pose-robust_tex.md)
-- [\[ICLR 2026\] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction](../../ICLR2026/image_generation/dual-solver_a_generalized_ode_solver_for_diffusion_models_with_dual_prediction.md)
+- [\[CVPR 2025\] Trust Your Critic: Robust Reward Modeling and Reinforcement Learning for Faithful Image Editing and Generation](../../CVPR2025/image_generation/trust_your_critic_robust_reward_modeling_and_reinforcement_learning_for_faithful.md)
 
 </div>
 

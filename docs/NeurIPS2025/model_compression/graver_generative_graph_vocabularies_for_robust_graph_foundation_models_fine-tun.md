@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Graver: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning
 description: >-
-  [NeurIPS 2025][Model Compression][graph foundation model] This paper proposes Graver, a framework that decouples ego-graphs to extract transferable subgraph vocabularies, models their distributions via graphon experts…
+  [NeurIPS 2025][Model Compression][graph foundation model] This paper proposes Graver, a framework that decouples ego-graphs to extract transferable subgraph vocabularies, models their distributions via graphon experts, and routes relevant vocabularies to augment support samples through MoE-CoE, addressing the instability caused by structural mismatch in few-shot fine-tuning of graph foundation models (GFMs).
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "vocabulary generation"
   - "MoE"
 date: 2026-05-08
-content_hash: f33931c70b7bb0f3
+content_hash: 8591cf68677d2477
 ---
 
 # Graver: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning
@@ -148,7 +148,7 @@ The method is elegantly designed with solid theoretical support (two Proposition
 - [\[NeurIPS 2025\] Graph Your Own Prompt](graph_your_own_prompt.md)
 - [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
-- [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](../../ICLR2026/model_compression/abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
+- [\[NeurIPS 2025\] Revisiting Semi-Supervised Learning in the Era of Foundation Models](revisiting_semi-supervised_learning_in_the_era_of_foundation_models.md)
 
 </div>
 

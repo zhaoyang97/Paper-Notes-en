@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Distribution-informed Online Conformal Prediction
 description: >-
-  [ICLR 2026][learning_theory][Time Series] This paper proposes COP (Conformal Optimistic Prediction), which adds an "optimistic correction" step beyond the traditional reactive updates in online conformal prediction. By using the estimated CDF of non-conformity scores as a "hint" for the next step, the method produces narrower prediction intervals when predicta
+  [ICLR2026][Learning Theory][Online Conformal Prediction] This paper proposes COP (Conformal Optimistic Prediction), which adds an "optimistic correction" step beyond the traditional reactive updates in online conformal prediction. By using the estimated CDF of non-conformity scores as a "hint" for the next step, the method produces narrower prediction intervals when predictable patterns exist in the data. Meanwhile, it maintains distribution-free finite-sample coverage guaran…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Time Series
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Conformal Prediction"
+  - "Online Learning"
+  - "Uncertainty Quantification"
+  - "Online Conformal Prediction"
+  - "Optimistic Gradient Descent"
+  - "Coverage Guarantee"
+  - "Regret Bound"
+  - "Time Series"
 date: 2026-05-08
-content_hash: d9eb172d5c299392
+content_hash: 5d4f76a9278d5072
 ---
+
 # Distribution-informed Online Conformal Prediction
 
 **Conference**: ICLR2026  
@@ -138,14 +146,17 @@ COP maintains ~90% coverage while achieving the tightest or near-tightest width,
 
 <div class="related-papers" markdown="1">
 
-- **ACI**: Gibbs & Candès, "Adaptive Conformal Prediction for Time Series," 2021.
-- **OOGD**: Rakhlin & Sridharan, "Online Learning via Oracle Oracle Dynamics," 2013.
-- **Conformal PID**: Angelopoulos et al., "Control in Conformal Prediction," 2024.
+## Related Papers
+
+- [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
+- [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
+- [\[ICML 2026\] Enhancing Conformal Prediction via Class Similarity](../../ICML2026/learning_theory/enhancing_conformal_prediction_via_class_similarity.md)
+- [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
+- [\[ICLR 2026\] Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity](adaptive_conformal_prediction_via_mixture-of-experts_gating_similarity.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting
 description: >-
-  [ICCV 2025][Model Compression][Spatiotemporal Forecasting] This paper proposes SDKD (Spectral Decoupled Knowledge Distillation), a framework that leverages a frequency-aware teacher model and a frequency-aligned distilla…
+  [ICCV 2025][Model Compression][Spatiotemporal Forecasting] This paper proposes SDKD (Spectral Decoupled Knowledge Distillation), a framework that leverages a frequency-aware teacher model and a frequency-aligned distillation strategy to transfer multi-scale spectral knowledge from complex spatiotemporal forecasting models to lightweight student networks, achieving up to 81.3% MSE reduction on the Navier-Stokes dataset.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Lightweight Models"
   - "CNN-Transformer Hybrid Architecture"
 date: 2026-05-08
-content_hash: 1fd1fd4fd9049b4f
+content_hash: 9e2860be0ba7bbe0
 ---
 
 # SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting
@@ -142,10 +142,10 @@ On the RBC dataset, CAMKD achieves the best results with MSE=0.0261, MAE=0.112, 
 ## Related Papers
 
 - [\[ICCV 2025\] Knowledge Distillation with Refined Logits](knowledge_distillation_with_refined_logits.md)
+- [\[CVPR 2025\] Multi-modal Knowledge Distillation-based Human Trajectory Forecasting](../../CVPR2025/model_compression/multi-modal_knowledge_distillation-based_human_trajectory_forecasting.md)
 - [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](a_good_teacher_adapts_their_knowledge_for_distillation.md)
 - [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
-- [\[ICCV 2025\] Local Dense Logit Relations for Enhanced Knowledge Distillation](local_dense_logit_relations_for_enhanced_knowledge_distillation.md)
-- [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
+- [\[ICML 2025\] LightGTS: A Lightweight General Time Series Forecasting Model](../../ICML2025/model_compression/lightgts_a_lightweight_general_time_series_forecasting_model.md)
 
 </div>
 

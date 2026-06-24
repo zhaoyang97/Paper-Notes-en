@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Mixture of Disentangled Experts for Dynamic Graph Out-of-Distribution Generalization
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] Addressing the phenomenon where "distribution shift itself evolves over time" on dynamic graphs, this paper proposes AdaMix: it utilizes a spatio-temporal distribution detector to perceive shifts at each time step in real-time, employs prototype-guided disentangled mixture of experts (using various GNN architectures as
+  [ICLR 2026][Graph Learning][Dynamic Graphs] Addressing the phenomenon where "distribution shift itself evolves over time" on dynamic graphs, this paper proposes AdaMix: it utilizes a spatio-temporal distribution detector to perceive shifts at each time step in real-time, employs prototype-guided disentangled mixture of experts (using various GNN architectures as experts) for adaptive routing based on shifts, and finally applies a distribution-aware intervention mechanism to m…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Dynamic Graphs"
+  - "Distribution Shift"
+  - "Adaptive Architecture"
+  - "Mixture of Experts (MoE)"
+  - "Disentangled Prototypes"
 date: 2026-05-08
-content_hash: 1aca784c930dab57
+content_hash: 73135129ac2c6dc8
 ---
+
 # Adaptive Mixture of Disentangled Experts for Dynamic Graph Out-of-Distribution Generalization
 
 **Conference**: ICLR 2026  
@@ -142,8 +148,8 @@ The authors compared eight ablation versions on Collab/Yelp/Aminer and Link-syn 
 
 - [\[ICLR 2026\] Diverse and Sparse Mixture-of-Experts for Causal Subgraph–Based Out-of-Distribution Graph Learning](diverse_and_sparse_mixture-of-experts_for_causal_subgraphbased_out-of-distributi.md)
 - [\[ICLR 2026\] Out-of-Distribution Graph Models Merging](out-of-distribution_graph_models_merging.md)
-- [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
-- [\[ICLR 2026\] Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models](global-recent_semantic_reasoning_on_dynamic_text-attributed_graphs_with_large_la.md)
+- [\[ICLR 2026\] MobileKGQA: On-Device KGQA System on Dynamic Mobile Environments](mobilekgqa_on-device_kgqa_system_on_dynamic_mobile_environments.md)
+- [\[ICLR 2026\] GraphUniverse: Synthetic Graph Generation for Evaluating Inductive Generalization](graphuniverse_synthetic_graph_generation_for_evaluating_inductive_generalization.md)
 - [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](../../AAAI2026/graph_learning/self-adaptive_graph_mixture_of_models.md)
 
 </div>

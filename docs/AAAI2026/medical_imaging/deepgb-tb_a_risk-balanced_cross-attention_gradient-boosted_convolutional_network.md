@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening
 description: >-
-  [AAAI 2026][Medical Imaging][tuberculosis screening] This paper proposes DeepGB-TB, a multimodal TB screening system combining a lightweight 1D-CNN (for cough audio) and gradient-boosted decision trees (for demographic f…
+  [AAAI 2026 Oral][Medical Imaging][tuberculosis screening] This paper proposes DeepGB-TB, a multimodal TB screening system combining a lightweight 1D-CNN (for cough audio) and gradient-boosted decision trees (for demographic features). A bidirectional cross-attention module (CM-BCA) fuses heterogeneous data by mimicking clinical reasoning, while a tuberculosis risk-balanced loss (TRBL) minimizes missed diagnoses. The system achieves AUROC 0.903 on a 7-country dataset and suppo…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Medical Imaging"
   - "tuberculosis screening"
   - "cough audio"
@@ -12,7 +12,7 @@ tags:
   - "cross-attention"
   - "imbalanced loss"
 date: 2026-05-08
-content_hash: 6cf5770a88638f70
+content_hash: a431093b6af27e95
 ---
 
 # DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening
@@ -129,11 +129,11 @@ DeepGB-TB surpasses Qwen-Omni (3B parameters) while being 100× faster at infere
 
 ## Related Papers
 
-- [\[AAAI 2026\] NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening](nutriscreener_retrieval-augmented_multi-pose_graph_attention_network_for_malnour.md)
 - [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
+- [\[AAAI 2026\] NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening](nutriscreener_retrieval-augmented_multi-pose_graph_attention_network_for_malnour.md)
 - [\[AAAI 2026\] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis](dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_.md)
-- [\[AAAI 2026\] CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution](cd-dpe_dual-prompt_expert_network_based_on_convolutional_dictionary_feature_deco.md)
 - [\[ICML 2026\] Evidential Reasoning Advances Interpretable Real-World Disease Screening](../../ICML2026/medical_imaging/evidential_reasoning_advances_interpretable_real-world_disease_screening.md)
+- [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](../../ICLR2026/medical_imaging/towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
 
 </div>
 

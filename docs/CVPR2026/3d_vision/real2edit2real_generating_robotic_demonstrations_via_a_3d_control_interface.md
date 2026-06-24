@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface
 description: >-
-  [CVPR 2026][3D Vision][Video Generation] Ours proposes the Real2Edit2Real framework, a three-stage pipeline comprising "3D reconstruction → point cloud editing for new trajectories → depth-guided video generation for synthetic demonstrations." It generates massive diverse manipulation demos from only 1-5 real demonstrations, achieving or exceeding the perform
+  [CVPR 2026][3D Vision][Robotic Demonstration Generation] Ours proposes the Real2Edit2Real framework, a three-stage pipeline comprising "3D reconstruction → point cloud editing for new trajectories → depth-guided video generation for synthetic demonstrations." It generates massive diverse manipulation demos from only 1-5 real demonstrations, achieving or exceeding the performance of policies trained on 50 real demonstrations, representing a 10-50x improvement in data efficienc…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Video Generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Robotic Demonstration Generation"
+  - "3D Editing"
+  - "Video Generation"
+  - "Data Augmentation"
+  - "Spatial Generalization"
 date: 2026-05-08
-content_hash: 2223aec435383834
+content_hash: 855078aa1ad18780
 ---
+
 # Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface
 
 **Conference**: CVPR 2026  
@@ -144,15 +149,16 @@ Where the condition $c$ includes depth, action, edge, and ray map signals. The m
 - **Value**: ⭐⭐⭐⭐⭐ (Directly addresses the data bottleneck in robotics)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
 - [\[CVPR 2026\] ArtLLM: Generating Articulated Assets via 3D LLM](artllm_generating_articulated_assets_via_3d_llm.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[CVPR 2026\] PaNDaS: Learnable Shape Interpolation Modeling with Localized Control](pandas_learnable_shape_interpolation_modeling_with_localized_control.md)
-- [\[CVPR 2026\] HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation](hyperbolic_multiview_pretraining_for_robotic_manipulation.md)
 - [\[CVPR 2026\] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)
+- [\[CVPR 2026\] PaNDaS: Learnable Shape Interpolation Modeling with Localized Control](pandas_learnable_shape_interpolation_modeling_with_localized_control.md)
 
 </div>
 

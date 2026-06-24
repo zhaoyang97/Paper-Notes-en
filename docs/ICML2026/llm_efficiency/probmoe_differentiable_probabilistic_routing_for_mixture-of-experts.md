@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts
 description: >-
-  [ICML 2026][LLM Efficiency][Mixture-of-Experts] ProbMoE reformulates MoE top-$k$ routing as "probabilistic inference over a cardinality-constrained subset distribution." The forward pass uses the SIMPLE estimator to sample from an exact-$k$ subset distribution, while the backward pass uses analytically computed conditional marginal expert probabilities $m_j=\partial
+  [ICML 2026][LLM Efficiency][Mixture-of-Experts] ProbMoE reformulates MoE top-$k$ routing as "probabilistic inference over a cardinality-constrained subset distribution." The forward pass uses the SIMPLE estimator to sample from an exact-$k$ subset distribution, while the backward pass uses analytically computed conditional marginal expert probabilities $m_j=\partial \log Z_k/\partial \log p_j$ as a differentiable proxy for discrete selection. It significantly improves GSM/Law…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - Mixture-of-Experts
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Probabilistic Routing"
+  - "Subset Sampling"
+  - "SIMPLE Gradient Estimator"
+  - "Dynamic Expert Allocation"
 date: 2026-05-08
-content_hash: ca0dad4df59273e8
+content_hash: 7a7efb2fca42066b
 ---
+
 # ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts
 
 **Conference**: ICML 2026  
@@ -150,8 +155,8 @@ ProbMoE ranked first in 4/6 tasks on OLMoE (GSM/Law/Translation/Summary gains of
 - [\[ICML 2026\] SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs](softmoe_soft_differentiable_routing_for_mixture-of-experts_in_llms.md)
 - [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](hyperparameter_transfer_with_mixture-of-expert_layers.md)
 - [\[ICML 2026\] Skill-Based Mixture-of-Experts: Adaptive Routing for Heterogeneous Reasoning via Inferred Skills](skill-based_mixture-of-experts_adaptive_routing_for_heterogeneous_reasoning_via_.md)
-- [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
-- [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
+- [\[ICML 2026\] STAR: Rethinking MoE Routing as Structure-Aware Subspace Learning](star_rethinking_moe_routing_as_structure-aware_subspace_learning.md)
+- [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
 
 </div>
 

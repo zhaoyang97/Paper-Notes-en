@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GTA-CLIP: Generate, Transduct, Adapt — Iterative Transduction with VLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Transductive Learning] This paper proposes GTA-CLIP, which iteratively executes three steps — LLM-based attribute generation, attribute-enhanced transductive inference…
+  [ICCV 2025][Multimodal VLM][Transductive Learning] This paper proposes GTA-CLIP, which iteratively executes three steps — LLM-based attribute generation, attribute-enhanced transductive inference, and encoder fine-tuning — achieving an average zero-shot improvement of 9.5% and few-shot improvement of 3–4% across 12 datasets, and for the first time unifying attribute discovery, transductive inference, and model adaptation in a zero-label setting.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Attribute Generation"
   - "VLM"
 date: 2026-05-08
-content_hash: 38534cdfd29afdad
+content_hash: d59588897aeb0bad
 ---
 
 # GTA-CLIP: Generate, Transduct, Adapt — Iterative Transduction with VLMs
@@ -146,10 +146,10 @@ Key finding: The combination of dynamic attributes and Adapt performs best; gene
 ## Related Papers
 
 - [\[ICCV 2025\] CLIPSym: Delving into Symmetry Detection with CLIP](clipsym_delving_into_symmetry_detection_with_clip.md)
-- [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
+- [\[ICCV 2025\] Training-free Generation of Temporally Consistent Rewards from VLMs](training-free_generation_of_temporally_consistent_rewards_from_vlms.md)
+- [\[ICLR 2026\] CLIP-FMoE: Scalable CLIP via Fused Mixture-of-Experts with Enforced Specialization](../../ICLR2026/multimodal_vlm/clip-fmoe_scalable_clip_via_fused_mixture-of-experts_with_enforced_specializatio.md)
+- [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](../../CVPR2026/multimodal_vlm/cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
 - [\[ICCV 2025\] BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning](babyvlm_data-efficient_pretraining_of_vlms_inspired_by_infant_learning.md)
-- [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](../../NeurIPS2025/multimodal_vlm/enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
-- [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
 
 </div>
 

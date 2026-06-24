@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Video-As-Prompt: Unified Semantic Control for Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Mixture-of-Transformers] This paper reformulates "semantically controllable video generation" as **in-context generation**: directly utilizing a reference video containing target semantics as a "video prompt." This is achieved through a plug-and-play Mixture-of-Transformers (MoT) expert running in parallel with a frozen backbone, combined with
+  [ICLR 2026][Video Generation][Semantically Controllable Video Generation] This paper reformulates "semantically controllable video generation" as **in-context generation**: directly utilizing a reference video containing target semantics as a "video prompt." This is achieved through a plug-and-play Mixture-of-Transformers (MoT) expert running in parallel with a frozen backbone, combined with a time-biased RoPE to eliminate spurious pixel alignment priors. This enables a **uni…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Mixture-of-Transformers
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Semantically Controllable Video Generation"
+  - "In-Context Generation"
+  - "Mixture-of-Transformers"
+  - "Reference Video Prompt"
+  - "Zero-Shot Generalization"
 date: 2026-05-08
-content_hash: 9ad523ea21cf6094
+content_hash: ccbee5730fd04b4d
 ---
+
 # Video-As-Prompt: Unified Semantic Control for Video Generation
 
 **Conference**: ICLR 2026  
@@ -136,7 +141,7 @@ VACE performed poorly as the pixel alignment assumption collapsed in semantic co
 
 ## Related Papers
 
-- [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
+- [\[ICLR 2026\] UniVideo: Unified Understanding, Generation, and Editing for Videos](univideo_unified_understanding_generation_and_editing_for_videos.md)
 - [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
 - [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
 - [\[ICLR 2026\] Learning Video Generation for Robotic Manipulation with Collaborative Trajectory Control](learning_video_generation_for_robotic_manipulation_with_collaborative_trajectory.md)

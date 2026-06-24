@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling
 description: >-
-  [ICLR 2026][Video Generation][VGGT] By aligning the intermediate features of a video diffusion model to the geometric representations of the 3D foundation model VGGT (using decoupled angular and scale alignment objectives), the diffusion model trained on pure video data "internalizes" 3D structures. This significantly improves geometric and temporal cons
+  [ICLR 2026][Video Generation][Video Diffusion] By aligning the intermediate features of a video diffusion model to the geometric representations of the 3D foundation model VGGT (using decoupled angular and scale alignment objectives), the diffusion model trained on pure video data "internalizes" 3D structures. This significantly improves geometric and temporal consistency in long-term video generation and enables the extraction of explicit 3D geometry during inference.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - VGGT
-  - World Models
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Representation Alignment"
+  - "3D Foundation Models"
+  - "VGGT"
+  - "World Models"
+  - "Geometric Consistency"
 date: 2026-05-08
-content_hash: 2463507ab835b32e
+content_hash: 0d11e5f557347b27
 ---
+
 # Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling
 
 **Conference**: ICLR 2026  
@@ -144,7 +149,7 @@ In a 16-frame short-term setting, GF reduced FVD from 252 (DFoT) to 193, and GF+
 - [\[CVPR 2026\] WorldReel: 4D Video Generation with Consistent Geometry and Motion Modeling](../../CVPR2026/video_generation/worldreel_4d_video_generation_with_consistent_geometry_and_motion_modeling.md)
 - [\[CVPR 2025\] World-Consistent Video Diffusion with Explicit 3D Modeling](../../CVPR2025/video_generation/world-consistent_video_diffusion_with_explicit_3d_modeling.md)
 - [\[ICLR 2026\] NeRV-Diffusion: Diffuse Implicit Neural Representation for Video Synthesis](nerv-diffusion_diffuse_implicit_neural_representation_for_video_synthesis.md)
-- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](../../CVPR2026/video_generation/geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
+- [\[ICLR 2026\] MoAlign: Motion-Centric Representation Alignment for Video Diffusion Models](moalign_motion-centric_representation_alignment_for_video_diffusion_models.md)
 
 </div>
 

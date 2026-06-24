@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation
 description: >-
-  [NeurIPS 2025][Image Restoration][Mass spectrometry] This paper proposes MS-BART, which maps molecular fingerprints and molecular structures (SELFIES) into a shared token space via a unified vocabulary…
+  [NeurIPS 2025][Image Restoration][Mass spectrometry] This paper proposes MS-BART, which maps molecular fingerprints and molecular structures (SELFIES) into a shared token space via a unified vocabulary, performs multi-task pretraining on 4 million fingerprint–molecule pairs, and subsequently applies experimental spectra fine-tuning and chemical feedback alignment to enable efficient generation of molecular structures from mass spectra.
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "BART"
   - "structure elucidation"
 date: 2026-05-08
-content_hash: cdfc64d3e39f506c
+content_hash: 5291f3e858628e3b
 ---
 
 # MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation
@@ -55,9 +55,9 @@ MS-BART follows the **pretrain → fine-tune → align** paradigm from NLP:
    **Function**: Maps mass spectra (represented as fingerprints) and molecular structures into a shared token space.
 
    **Mechanism**:
-   - **Fingerprint tokens**: Each activated bit $FP_i = 1$ in a 4096-bit Morgan fingerprint is converted to a token `<fp{i:04d}>` (e.g., `<fp0123>`)
-   - **Molecular tokens**: Molecular structures are encoded using 185 SELFIES tokens, guaranteeing chemical validity
-   - A special separator token `<fps_sep>` connects the two modalities
+    - **Fingerprint tokens**: Each activated bit $FP_i = 1$ in a 4096-bit Morgan fingerprint is converted to a token `<fp{i:04d}>` (e.g., `<fp0123>`)
+    - **Molecular tokens**: Molecular structures are encoded using 185 SELFIES tokens, guaranteeing chemical validity
+    - A special separator token `<fps_sep>` connects the two modalities
 
    **Design Motivation**: A unified vocabulary enables the model to jointly learn spectral and molecular representations within the same sequence space, facilitating genuine cross-modal learning.
 
@@ -66,9 +66,9 @@ MS-BART follows the **pretrain → fine-tune → align** paradigm from NLP:
    **Function**: Learns representations of fingerprints and molecules through four self-supervised / cross-modal tasks.
 
    **Mechanism**:
-   - **SELFIES denoising**: Randomly masks 30% of SELFIES tokens and recovers them
-   - **Fingerprint-to-molecule translation**: Generates complete SELFIES from fingerprint tokens
-   - **Hybrid denoising**: Concatenates fingerprints and masked SELFIES in varying orders to predict complete SELFIES
+    - **SELFIES denoising**: Randomly masks 30% of SELFIES tokens and recovers them
+    - **Fingerprint-to-molecule translation**: Generates complete SELFIES from fingerprint tokens
+    - **Hybrid denoising**: Concatenates fingerprints and masked SELFIES in varying orders to predict complete SELFIES
 
    All tasks employ a unified cross-entropy loss: $\mathcal{L}_{ce} = -\sum_i \log P(y_i | y_{<i}, X; \theta)$
 
@@ -161,11 +161,11 @@ MS-BART achieves comprehensive improvements on similarity metrics on NPLIB1: MCE
 
 ## Related Papers
 
-- [\[ICLR 2026\] SoFlow: Solution Flow Models for One-Step Generative Modeling](../../ICLR2026/image_restoration/soflow_solution_flow_models_for_one-step_generative_modeling.md)
+- [\[CVPR 2026\] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration](../../CVPR2026/image_restoration/self-supervised_dynamic_heterogeneous_degradation_modeling_for_unified_zero-shot.md)
 - [\[NeurIPS 2025\] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement](latent_harmony_synergistic_unified_uhd_image_restoration_via_latent_space_regula.md)
+- [\[CVPR 2026\] ColorFLUX: A Structure-Color Decoupling Framework for Old Photo Colorization](../../CVPR2026/image_restoration/colorflux_a_structure-color_decoupling_framework_for_old_photo_colorization.md)
 - [\[ICCV 2025\] UniPhys: Unified Planner and Controller with Diffusion for Flexible Physics-Based Character Control](../../ICCV2025/image_restoration/uniphys_unified_planner_and_controller_with_diffusion_for_flexible_physics-based.md)
-- [\[ICLR 2026\] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs](../../ICLR2026/image_restoration/skip_to_the_good_part_representation_structure_inference-time_layer_skipping_in_.md)
-- [\[CVPR 2026\] RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration](../../CVPR2026/image_restoration/rar_restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)
+- [\[ICLR 2026\] SoFlow: Solution Flow Models for One-Step Generative Modeling](../../ICLR2026/image_restoration/soflow_solution_flow_models_for_one-step_generative_modeling.md)
 
 </div>
 

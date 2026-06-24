@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CurES: From Gradient Analysis to Efficient Curriculum Learning for Reasoning LLMs
 description: >-
-  [ICLR 2026][Optimization & Theory][RLVR] Starting from gradient analysis in reinforcement learning, CurES proves that "the prompt sampling distribution determines convergence speed, while rollout quotas determine the stability of gradient updates." Based on this, it employs a Bayesian (Beta-Binomial) difficulty estimation to dynamically bias sampling probabil
+  [ICLR2026][Optimization][RLVR] Starting from gradient analysis in reinforcement learning, CurES proves that "the prompt sampling distribution determines convergence speed, while rollout quotas determine the stability of gradient updates." Based on this, it employs a Bayesian (Beta-Binomial) difficulty estimation to dynamically bias sampling probabilities and rollout budgets toward medium-difficulty tasks. It outperforms GRPO by an average of 3.3 (1.5B) / 4.82 (7B) points acro…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - RLVR
+  - "ICLR2026"
+  - "Optimization"
+  - "RLVR"
+  - "Curriculum Learning"
+  - "Gradient Variance"
+  - "Bayesian Posterior"
+  - "Sample Efficiency"
 date: 2026-05-08
-content_hash: 050ef86d052b5792
+content_hash: 1ae9c4272d697f48
 ---
+
 # CurES: From Gradient Analysis to Efficient Curriculum Learning for Reasoning LLMs
 
 **Conference**: ICLR2026  
@@ -145,15 +150,16 @@ CurES-GRPO achieves the best average scores at both scales, outperforming the st
 - Value: ⭐⭐⭐⭐⭐ Provides a theoretically grounded and practical resource allocation framework for RLVR, significantly accelerating convergence.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] New Hybrid Fine-Tuning Paradigm for LLMs: Algorithm Design and Convergence Analysis Framework](new_hybrid_fine-tuning_paradigm_for_llms_algorithm_design_and_convergence_analys.md)
+- [\[ICLR 2026\] Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis](sobolev_gradient_ascent_for_optimal_transport_barycenter_optimization_and_conver.md)
 - [\[ICLR 2026\] Binomial Gradient-Based Meta-Learning for Enhanced Meta-Gradient Estimation](binomial_gradient-based_meta-learning_for_enhanced_meta-gradient_estimation.md)
 - [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](../../ICML2026/optimization/learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
-- [\[NeurIPS 2025\] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis](../../NeurIPS2025/optimization/nonlinearly_preconditioned_gradient_methods_momentum_and_stochastic_analysis.md)
 
 </div>
 

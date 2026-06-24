@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] LLM Agents Are the Antidote to Walled Gardens
 description: >-
-  [ICML 2026][LLM Agent][universal interoperability] This ICML 2026 position paper argues that LLM agents can "bypass" the closed API strategies of dominant platforms through automatic format conversion and human-like UI interaction, achieving "universal interoperability." This dissolves the "walled gardens" created by traditional network effects. However, the ML communi
+  [ICML 2026][LLM Agent][universal interoperability] This ICML 2026 position paper argues that LLM agents can "bypass" the closed API strategies of dominant platforms through automatic format conversion and human-like UI interaction, achieving "universal interoperability." This dissolves the "walled gardens" created by traditional network effects. However, the ML community must proactively establish agent-friendly interfaces, security mechanisms…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - universal interoperability
-  - walled gardens
-  - data portability
-  - agent security
+  - "ICML 2026"
+  - "LLM Agent"
+  - "universal interoperability"
+  - "walled gardens"
+  - "data portability"
+  - "agent security"
 date: 2026-05-08
-content_hash: d999f2b54745c1b1
+content_hash: ebdaeee2562ae031
 ---
+
 # LLM Agents Are the Antidote to Walled Gardens
 
 **Conference**: ICML 2026  

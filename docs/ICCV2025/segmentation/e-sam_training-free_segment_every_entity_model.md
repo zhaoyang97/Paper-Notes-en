@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] E-SAM: Training-Free Segment Every Entity Model
 description: >-
-  [ICCV 2025][Segmentation][Entity Segmentation] E-SAM is a training-free framework that systematically addresses over-segmentation and under-segmentation in SAM's Automatic Mask Generation (AMG) via three cascaded modules…
+  [ICCV 2025][Segmentation][Entity Segmentation] E-SAM is a training-free framework that systematically addresses over-segmentation and under-segmentation in SAM's Automatic Mask Generation (AMG) via three cascaded modules—Multi-level Mask Generation (MMG), Entity-level Mask Refinement (EMR), and Under-Segmentation Refinement (USR)—surpassing existing entity segmentation methods by **+30.1 points** on benchmark metrics.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -14,7 +14,7 @@ tags:
   - "Under-segmentation"
   - "NMS"
 date: 2026-05-08
-content_hash: c2b92219600a986c
+content_hash: 940e16408d80134f
 ---
 
 # E-SAM: Training-Free Segment Every Entity Model
@@ -163,10 +163,10 @@ On the EntitySeg benchmark:
 ## Related Papers
 
 - [\[ICCV 2025\] SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree](sam2long_enhancing_sam_2_for_long_video_segmentation_with_a.md)
-- [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](../../AAAI2026/segmentation/saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
+- [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](../../AAAI2026/segmentation/saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
 - [\[ICCV 2025\] OmniSAM: Omnidirectional Segment Anything Model for UDA in Panoramic Semantic Segmentation](omnisam_omnidirectional_segment_anything_model_for_uda_in_panoramic_semantic_seg.md)
-- [\[ICCV 2025\] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation](floss_free_lunch_in_openvocabulary_semantic_segmentation.md)
+- [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](../../ICLR2026/segmentation/sam_3_segment_anything_with_concepts.md)
 
 </div>
 

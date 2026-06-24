@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Decomposition of Small Transformer Models
 description: >-
-  [NeurIPS 2025 (Workshop: Mechanistic Interpretability)][Time Series][Parameter space decomposition] This paper extends Stochastic Parameter Decomposition (SPD) to Transformers by designing a sequence-aware causal importa…
+  [NeurIPS 2025 (Workshop: Mechanistic Interpretability)][Time Series][Parameter space decomposition] This paper extends Stochastic Parameter Decomposition (SPD) to Transformers by designing a sequence-aware causal importance function and a novel partial reconstruction loss. On a toy induction head task, the method recovers the expected two-step circuit; on GPT-2-small, it localizes rank-1 parameter subspaces corresponding to interpretable concepts such as "golf" and "basketbal…
 tags:
   - "NeurIPS 2025 (Workshop: Mechanistic Interpretability)"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "GPT-2"
   - "Causal importance"
 date: 2026-05-08
-content_hash: 9e9afecf5cb35faf
+content_hash: 05724d08427aab3b
 ---
 
 # Decomposition of Small Transformer Models
@@ -125,11 +125,11 @@ $\mathcal{L}_{faithful} = 3 \times 10^{-9}$, $\mathcal{L}_{recon} = 1 \times 10^
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](../../ICLR2026/time_series/efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 - [\[NeurIPS 2025\] Transformer Embeddings for Fast Microlensing Inference](transformer_embeddings_for_fast_microlensing_inference.md)
+- [\[ACL 2025\] Revisiting LLMs as Zero-Shot Time-Series Forecasters: Small Noise Can Break Large Models](../../ACL2025/time_series/revisiting_llms_as_zero-shot_time_series_forecasters_small_noise_can_break_large.md)
 - [\[ICLR 2026\] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data](../../ICLR2026/time_series/relational_transformer_toward_zero-shot_foundation_models_for_relational_data.md)
-- [\[AAAI 2026\] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition](../../AAAI2026/time_series/probfm_probabilistic_time_series_foundation_model_with_uncertainty_decomposition.md)
-- [\[ICLR 2026\] TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification](../../ICLR2026/time_series/timesliver_symbolic-linear_decomposition_for_explainable_time_series_classificat.md)
-- [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
+- [\[ICML 2026\] Incremental Transformer Neural Processes](../../ICML2026/time_series/incremental_transformer_neural_processes.md)
 
 </div>
 

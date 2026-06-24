@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] The authors created ImmerIris, a large-scale dataset for "off-axis and unconstrained" iris recognition in XR/VR HMD scenarios, containing 499,800 eye images from 546 subjects. They established 8 evaluation protocols of increasing difficulty and demonstrated that traditional two-stage methods are bottlenecked by "normal
+  [CVPR 2026][Iris recognition] The authors created ImmerIris, a large-scale dataset for "off-axis and unconstrained" iris recognition in XR/VR HMD scenarios, containing 499,800 eye images from 546 subjects. They established 8 evaluation protocols of increasing difficulty and demonstrated that traditional two-stage methods are bottlenecked by "normalization." They propose a NormFree paradigm that directly processes cropped eye images using face recognition backbones…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Iris recognition"
+  - "immersive applications"
+  - "off-axis imaging"
+  - "normalization-free"
+  - "face recognition paradigm"
 date: 2026-05-08
-content_hash: 784ebf6d1ceff08a
+content_hash: 072a9abf10d9ab25
 ---
+
 # ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications
 
 **Conference**: CVPR 2026  
@@ -124,15 +129,16 @@ Isolated factors reveal that Gaze is the biggest challenge (average **36.99%** d
 - Value: ⭐⭐⭐⭐⭐ (Provides the largest public iris dataset and a solid benchmark for the community)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] M4Human: A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction](m4human_a_large-scale_multimodal_mmwave_radar_benchmark_for_human_mesh_reconstru.md)
-- [\[CVPR 2026\] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation](romo_a_large-scale_richly_organized_dataset_and_semantic_taxonomy_for_human_moti.md)
-- [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
-- [\[CVPR 2026\] RGB-Event based Pedestrian Attribute Recognition: A Benchmark Dataset and An Asymmetric RWKV Fusion Framework](rgb-event_based_pedestrian_attribute_recognition_a_benchmark_dataset_and_an_asym.md)
-- [\[CVPR 2026\] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data](opendance_multimodal_controllable_3d_dance_generation_with_large-scale_internet_.md)
+- [\[ICLR 2026\] SmellNet: A Large-scale Dataset for Real-world Smell Recognition](../../ICLR2026/others/smellnet_a_large-scale_dataset_for_real-world_smell_recognition.md)
+- [\[CVPR 2026\] MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention](mspt_efficient_large-scale_physical_modeling_via_parallelized_multi-scale_attent.md)
+- [\[CVPR 2026\] Large-scale Robust Enhanced Ensemble Clustering via Outlier Decoupling](large-scale_robust_enhanced_ensemble_clustering_via_outlier_decoupling.md)
+- [\[CVPR 2026\] The SA-FARI Dataset: Segment Anything in Footage of Animals for Recognition and Identification](the_sa-fari_dataset_segment_anything_in_footage_of_animals_for_recognition_and_i.md)
+- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark For Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
 
 </div>
 

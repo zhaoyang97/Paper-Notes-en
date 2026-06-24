@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Registration-Free Learnable Multi-View Capture of Faces in Dense Semantic Correspondence
 description: >-
-  [CVPR 2026][3D Vision][FLAME] MOCHI is the first multi-view dense correspondence face reconstruction framework that does not require **pre-registered data** for training. By employing a "pseudo-linear inverse kinematics solver + differentiable pointmap/normal loss + dense landmarks trained on synthetic data" trio, it directly learns topology-consis
+  [CVPR 2026][3D Vision][Multi-view face reconstruction] MOCHI is the first multi-view dense correspondence face reconstruction framework that does not require **pre-registered data** for training. By employing a "pseudo-linear inverse kinematics solver + differentiable pointmap/normal loss + dense landmarks trained on synthetic data" trio, it directly learns topology-consistent FLAME meshes from raw scans. Coupled with a lightweight test-time optimization (TTO)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - FLAME
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view face reconstruction"
+  - "Dense semantic correspondence"
+  - "FLAME"
+  - "Registration-free training"
+  - "Test-time optimization"
 date: 2026-05-08
-content_hash: bdeba66b0c3d73b5
+content_hash: 762094c7fc02d50e
 ---
+
 # Registration-Free Learnable Multi-View Capture of Faces in Dense Semantic Correspondence
 
 **Conference**: CVPR 2026  

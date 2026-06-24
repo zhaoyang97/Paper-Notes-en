@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Instance-Level Alignment: Dual-Level Optimal Transport for Audio-Text Retrieval
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] DART introduces a "feature-level" alignment layer beyond traditional "instance-level" audio-text alignment—treating each embedding channel as a distribution and employing Unbalanced Wasserstein distance to pair audio and text channels. Guided by a "Reliability-Aware Margin" based on variance, kurtosis, and cross-modal
+  [ICLR2026][Audio & Speech][Audio-Text Retrieval] DART introduces a "feature-level" alignment layer beyond traditional "instance-level" audio-text alignment—treating each embedding channel as a distribution and employing Unbalanced Wasserstein distance to pair audio and text channels. Guided by a "Reliability-Aware Margin" based on variance, kurtosis, and cross-modal correlation to favor stable semantic channels, DART achieves SOTA retrieval performance under mini-batch…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Audio-Text Retrieval"
+  - "Optimal Transport"
+  - "Unbalanced Wasserstein"
+  - "Channel Reliability"
+  - "Mini-batch Robustness"
 date: 2026-05-08
-content_hash: 4e4bfab88545f312
+content_hash: 04ce7f85d1ad24b5
 ---
+
 # Beyond Instance-Level Alignment: Dual-Level Optimal Transport for Audio-Text Retrieval
 
 **Conference**: ICLR2026  
@@ -158,10 +164,10 @@ DART's lead is more pronounced in extreme conditions (40% unlabeled/noise), vali
 ## Related Papers
 
 - [\[ICLR 2026\] VowelPrompt: Hearing Speech Emotions from Text via Vowel-level Prosodic Augmentation](vowelprompt_hearing_speech_emotions_from_text_via_vowel-level_prosodic_augmentat.md)
+- [\[ICLR 2026\] SpeechJudge: Towards Human-Level Judgment for Speech Naturalness](speechjudge_towards_human-level_judgment_for_speech_naturalness.md)
 - [\[ICLR 2026\] EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models](echomind_an_interrelated_multi-level_benchmark_for_evaluating_empathetic_speech_.md)
 - [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](../../ACL2026/audio_speech/data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
-- [\[ICML 2026\] Multimodal Fact-Level Attribution for Verifiable Reasoning](../../ICML2026/audio_speech/multimodal_fact-level_attribution_for_verifiable_reasoning.md)
-- [\[ICLR 2026\] DrVoice: Parallel Speech-Text Voice Conversation Model via Dual-Resolution Speech Representations](drvoice_parallel_speech-text_voice_conversation_model_via_dual-resolution_speech.md)
+- [\[ACL 2026\] Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval](../../ACL2026/audio_speech/omni-embed-audio_leveraging_multimodal_llms_for_robust_audio-text_retrieval.md)
 
 </div>
 

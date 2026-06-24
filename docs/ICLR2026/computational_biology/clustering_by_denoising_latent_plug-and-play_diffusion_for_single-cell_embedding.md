@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Clustering by Denoising: Latent Plug-and-Play Diffusion for Single-Cell Embeddings
 description: >-
-  [ICLR 2026][Computational Biology][Denoising] Adapting "Plug-and-Play (PnP) diffusion denoising" to the single-cell context, DICE is proposed: it performs diffusion priors in a low-dimensional latent space for denoising while re-injecting noise into the original high-dimensional observation space to "steer" the sampling trajectory. This avoids the collapse issue w
+  [ICLR 2026][Computational Biology][Single-cell sequencing] Adapting "Plug-and-Play (PnP) diffusion denoising" to the single-cell context, DICE is proposed: it performs diffusion priors in a low-dimensional latent space for denoising while re-injecting noise into the original high-dimensional observation space to "steer" the sampling trajectory. This avoids the collapse issue where different cell types are crowded together in PCA latent space, allowing high-quality reference d…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Denoising
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Single-cell sequencing"
+  - "denoising"
+  - "plug-and-play diffusion"
+  - "posterior sampling"
+  - "Gibbs sampling"
+  - "uncertainty quantification"
+  - "cell clustering"
 date: 2026-05-08
-content_hash: 8915ccea48363f3c
+content_hash: ced4e3b516127e1a
 ---
+
 # Clustering by Denoising: Latent Plug-and-Play Diffusion for Single-Cell Embeddings
 
 **Conference**: ICLR 2026  

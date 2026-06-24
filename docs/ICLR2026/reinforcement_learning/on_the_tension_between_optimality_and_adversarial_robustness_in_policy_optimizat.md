@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper reveals from an optimization perspective that although "optimal policies" and "robust optimal policies" can theoretically align, standard policy optimization (SPO) and adversarial robust policy optimization (ARPO) converge to different first-order stationary policies (FOSPs) in practice, creating a tension b
+  [ICLR 2026][Reinforcement Learning][Adversarial Robust RL] This paper reveals from an optimization perspective that although "optimal policies" and "robust optimal policies" can theoretically align, standard policy optimization (SPO) and adversarial robust policy optimization (ARPO) converge to different first-order stationary policies (FOSPs) in practice, creating a tension between "robustness vs. natural return." The root cause is that the strongest adversary reshapes the o…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Adversarial Robust RL"
+  - "Policy Gradient"
+  - "First-Order Stationary Policy"
+  - "Bilevel Optimization"
+  - "Optimal-Robust Tension"
 date: 2026-05-08
-content_hash: 3c5f2060a794b35c
+content_hash: 3d765f334144c13b
 ---
+
 # On the Tension Between Optimality and Adversarial Robustness in Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -151,9 +157,9 @@ Additionally, comparing pure bilevel framework BARPO(w/o guidance) vs. ARPO: nat
 
 - [\[ICLR 2026\] Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses](primal-dual_policy_optimization_for_linear_cmdps_with_adversarial_losses.md)
 - [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
+- [\[ICLR 2026\] Robustness in the Face of Partial Identifiability in Reward Learning](robustness_in_the_face_of_partial_identifiability_in_reward_learning.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 - [\[ICLR 2026\] Dichotomous Diffusion Policy Optimization](dichotomous_diffusion_policy_optimization.md)
-- [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
-- [\[ICLR 2026\] Relative Entropy Pathwise Policy Optimization](relative_entropy_pathwise_policy_optimization.md)
 
 </div>
 

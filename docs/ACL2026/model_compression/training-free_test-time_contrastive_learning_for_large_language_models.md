@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Training-Free Test-Time Contrastive Learning for Large Language Models
 description: >-
-  [ACL 2026][Model Compression][Multi-Agent] This paper proposes TF-TTCL, a training-free test-time contrastive learning framework that enables frozen LLMs to self-improve online through an "explore-reflect-guide" loop. The framework utilizes multi-agent role-playing to generate diverse reasoning trajectories, distills textual rules from contrastive positive and
+  [ACL 2026 Findings][Model Compression][Test-time Adaptation] This paper proposes TF-TTCL, a training-free test-time contrastive learning framework that enables frozen LLMs to self-improve online through an "explore-reflect-guide" loop. The framework utilizes multi-agent role-playing to generate diverse reasoning trajectories, distills textual rules from contrastive positive and negative samples into a memory bank, and retrieves relevant rules during inference to guide generat…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Test-time Adaptation"
+  - "Contrastive Learning"
+  - "Training-free Adaptation"
+  - "Empirical Rules"
+  - "Multi-agent"
 date: 2026-05-08
-content_hash: 18769766800ebb86
+content_hash: c91c4aab208a7b42
 ---
+
 # Training-Free Test-Time Contrastive Learning for Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -150,9 +155,9 @@ TF-TTCL consistently outperforms zero-shot baselines and existing TTA methods ac
 
 - [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](../../CVPR2026/model_compression/talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
 - [\[ACL 2026\] IntroLM: Introspective Language Models via Prefilling-Time Self-Evaluation](introlm_introspective_language_models_via_prefilling-time_self-evaluation.md)
-- [\[ACL 2026\] JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew](judgemenot_personalizing_large_language_models_to_emulate_judicial_reasoning_in_.md)
-- [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
-- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](../../CVPR2026/model_compression/test-time_sparsity_for_extreme_fast_action_diffusion.md)
+- [\[ICLR 2026\] Tequila: Trapping-free Ternary Quantization for Large Language Models](../../ICLR2026/model_compression/tequila_trapping-free_ternary_quantization_for_large_language_models.md)
+- [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](../../CVPR2026/model_compression/fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
+- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](../../CVPR2026/model_compression/back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
 
 </div>
 

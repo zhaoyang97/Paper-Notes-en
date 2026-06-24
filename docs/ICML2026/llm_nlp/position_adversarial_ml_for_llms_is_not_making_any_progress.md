@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: Adversarial ML for LLMs Is Not Making Any Progress
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] This position paper argues that adversarial machine learning (ML) research in the LLM era focuses on problems that are "harder to define, harder to solve, and harder to evaluate" compared to traditional classifier scenarios. Having made slow progress on "toy problems" like $\ell_p$ robustness over the past decade, the
+  [ICML 2026][LLM (Other)][Adversarial ML] This position paper argues that adversarial machine learning (ML) research in the LLM era focuses on problems that are "harder to define, harder to solve, and harder to evaluate" compared to traditional classifier scenarios. Having made slow progress on "toy problems" like $\ell_p$ robustness over the past decade, the full shift to LLMs risks another decade of research without producing measurable or reproducible security guarantees.
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Adversarial ML"
+  - "LLM Safety"
+  - "Jailbreaking"
+  - "Prompt Injection"
+  - "Evaluation Reproducibility"
 date: 2026-05-08
-content_hash: cc89535e32e0df2d
+content_hash: ecc65536f2e74028
 ---
+
 # Position: Adversarial ML for LLMs Is Not Making Any Progress
 
 **Conference**: ICML 2026  
@@ -122,10 +128,10 @@ This position paper does not contain quantitative experiments. Instead, it uses 
 ## Related Papers
 
 - [\[ICML 2026\] Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem](position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem.md)
+- [\[ICML 2026\] Position: Hippocampal Explicit Memory Is the Cornerstone for AGI](position_hippocampal_explicit_memory_is_the_cornerstone_for_agi.md)
 - [\[ACL 2025\] Biased LLMs Can Influence Political Decision-Making](../../ACL2025/llm_nlp/biased_llms_can_influence_political_decision-making.md)
 - [\[ICML 2026\] Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management](position_the_turing-completeness_of_autoregressive_transformers_relies_heavily_o.md)
-- [\[ICLR 2026\] When Stability Fails: Hidden Failure Modes of LLMs in Data-Constrained Scientific Decision-Making](../../ICLR2026/llm_nlp/when_stability_fails_hidden_failure_modes_of_llms_in_data-constrained_scientific.md)
-- [\[ICML 2026\] Position: Hippocampal Explicit Memory Is the Cornerstone for AGI](position_hippocampal_explicit_memory_is_the_cornerstone_for_agi.md)
+- [\[ICML 2026\] Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs](express_your_doubts_--_probabilistic_world_modeling_should_not_be_based_on_token.md)
 
 </div>
 

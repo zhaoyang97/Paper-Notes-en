@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] What Makes a Reward Model a Good Teacher? An Optimization Perspective
 description: >-
-  [NeurIPS 2025][LLM Alignment][Reward Model] From an optimization-theoretic perspective, this paper proves that reward model accuracy alone is insufficient to measure its quality as an RLHF "teacher." Even a perfectly acc…
+  [NeurIPS 2025][LLM Alignment][Reward Model] From an optimization-theoretic perspective, this paper proves that reward model accuracy alone is insufficient to measure its quality as an RLHF "teacher." Even a perfectly accurate reward model can lead to a flat RLHF objective landscape and extremely slow policy gradient optimization if the induced reward variance is too low. Moreover, different language models require different reward models.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "Optimization Landscape"
   - "Policy Gradient"
 date: 2026-05-08
-content_hash: dd755fd103fbfb17
+content_hash: 88f39d347ea9d20e
 ---
 
 # What Makes a Reward Model a Good Teacher? An Optimization Perspective
@@ -131,8 +131,8 @@ $$\phi_{\mathrm{RLHF}}(\theta) = \mathbb{E}_x\left[\mathbb{E}_{y \sim \pi_\theta
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Ask a Strong LLM Judge when Your Reward Model is Uncertain](ask_a_strong_llm_judge_when_your_reward_model_is_uncertain.md)
 - [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](../../ACL2026/llm_alignment/what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
+- [\[NeurIPS 2025\] Ask a Strong LLM Judge when Your Reward Model is Uncertain](ask_a_strong_llm_judge_when_your_reward_model_is_uncertain.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
 - [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
 - [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](inference-time_alignment_in_continuous_space.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On Effectiveness and Efficiency of Agentic Tool-calling and RL Training
 description: >-
-  [ICML 2026][LLM Evaluation][BFCL] The authors systematically examine LLM tool-calling through two dimensions: "evaluation effectiveness" and "training efficiency." Using BFCL as a case study, they demonstrate that "small details" such as random seeds, multi-turn templates, thought history, and system prompts can cause significant drift in leaderboard s
+  [ICML 2026][LLM Evaluation][Tool-calling] The authors systematically examine LLM tool-calling through two dimensions: "evaluation effectiveness" and "training efficiency." Using BFCL as a case study, they demonstrate that "small details" such as random seeds, multi-turn templates, thought history, and system prompts can cause significant drift in leaderboard scores, making cross-paper comparisons unreliable. On the efficiency side, they identify waste in the rollout and polic…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - BFCL
-  - GRPO
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Tool-calling"
+  - "BFCL"
+  - "GRPO"
+  - "Evaluation Reproducibility"
+  - "RL Efficiency"
 date: 2026-05-08
-content_hash: d2089e1ae092d687
+content_hash: 993aeffc35f17974
 ---
+
 # On Effectiveness and Efficiency of Agentic Tool-calling and RL Training
 
 **Conference**: ICML 2026  
@@ -145,10 +149,10 @@ On ACEBench, Ours RL training improves Qwen3-4B from 65.4 to 77.5 (+12.1), surpa
 ## Related Papers
 
 - [\[ICML 2026\] Toward Training Superintelligent Software Agents through Self-Play SWE-RL](toward_training_superintelligent_software_agents_through_self-play_swe-rl.md)
-- [\[ICML 2026\] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
-- [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
 - [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](../../ACL2026/llm_evaluation/rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
 - [\[ICML 2026\] Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning](beyond_trajectory-level_attribution_graph-based_credit_assignment_for_agentic_re.md)
+- [\[ICML 2026\] REAL: Integrating Regression-Aware Rewards into RL, Teaching LLM-as-a-Judge that "Even a One-Point Difference Matters"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
+- [\[ICLR 2026\] Agentic Reinforced Policy Optimization](../../ICLR2026/llm_evaluation/agentic_reinforced_policy_optimization.md)
 
 </div>
 

@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ACL 2026][Reinforcement Learning][RLVR] The HEAL framework is proposed to address severe entropy collapse in few-shot RLVR by mixing general-domain data and employing an Entropy Dynamics Alignment (EDA) reward mechanism. It achieves performance matching or exceeding full-set RLVR (1K samples) using only 32 target-domain samples.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Entropy Collapse"
+  - "Few-Shot Reinforcement Learning"
+  - "Cross-Domain Alignment"
+  - "Exploration Diversity"
 date: 2026-05-08
-content_hash: 5d932c2afc289a99
+content_hash: 93fbf515de37b019
 ---
+
 # HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment
 
 **Conference**: ACL 2026  

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Credit-Budgeted ICPC-Style Coding: When Agents Must Pay for Every Decision
 description: >-
-  [ICLR 2026][LLM Evaluation][ACM-ICPC] This paper proposes **USACOArena**, an ACM-ICPC style online arena driven by a unified "credit" economy. Coding agents must pay for every generated token, local test, and second of wall-clock time, shifting evaluation from "isolated code accuracy" to "budget-constrained cost-aware decision making."
+  [ICLR 2026][LLM Evaluation][Coding Agents] This paper proposes **USACOArena**, an ACM-ICPC style online arena driven by a unified "credit" economy. Coding agents must pay for every generated token, local test, and second of wall-clock time, shifting evaluation from "isolated code accuracy" to "budget-constrained cost-aware decision making."
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - ACM-ICPC
-  - POMDP
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Coding Agents"
+  - "Cost-Aware Evaluation"
+  - "ACM-ICPC"
+  - "Credit Budget"
+  - "Agent Swarms"
+  - "POMDP"
 date: 2026-05-08
-content_hash: 3f2d3799312b0614
+content_hash: d6573623254b1624
 ---
+
 # Credit-Budgeted ICPC-Style Coding: When Agents Must Pay for Every Decision
 
 **Conference**: ICLR 2026  

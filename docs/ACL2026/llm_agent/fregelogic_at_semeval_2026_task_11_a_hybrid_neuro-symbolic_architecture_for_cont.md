@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FregeLogic at SemEval 2026 Task 11: A Hybrid Neuro-Symbolic Architecture for Content-Robust Syllogistic Validity Prediction
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] The authors propose FregeLogic, a hybrid neuro-symbolic system that combines a five-member LLM ensemble with a Z3 SMT solver as a tie-breaking judge, reducing the content effect by 16% while improving accuracy by 0.9% in syllogistic validity judgment.
+  [ACL 2026][LLM Agent][Syllogistic Reasoning] The authors propose FregeLogic, a hybrid neuro-symbolic system that combines a five-member LLM ensemble with a Z3 SMT solver as a tie-breaking judge, reducing the content effect by 16% while improving accuracy by 0.9% in syllogistic validity judgment.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Syllogistic Reasoning"
+  - "Content Effect"
+  - "Neuro-Symbolic"
+  - "LLM Ensemble"
+  - "Z3 Solver"
 date: 2026-05-08
-content_hash: 6ccef7f2cf4b9aeb
+content_hash: ca3763b2b02a5c27
 ---
+
 # FregeLogic at SemEval 2026 Task 11: A Hybrid Neuro-Symbolic Architecture for Content-Robust Syllogistic Validity Prediction
 
 **Conference**: ACL 2026  
@@ -137,10 +143,10 @@ The system is training-free (non-parametric). Model and prompt selection, and fu
 ## Related Papers
 
 - [\[ICML 2026\] Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks](../../ICML2026/llm_agent/lifting_traces_to_logic_programmatic_skill_induction_with_neuro-symbolic_learnin.md)
+- [\[ICLR 2026\] LongHorizonUI: A Unified Framework for Robust Long-Horizon Task Automation of GUI Agent](../../ICLR2026/llm_agent/longhorizonui_a_unified_framework_for_robust_long-horizon_task_automation_of_gui.md)
 - [\[ACL 2026\] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents](magma_a_multi-graph_based_agentic_memory_architecture_for_ai_agents.md)
 - [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
 - [\[ACL 2026\] IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](intragent_an_llm_agent_for_content-grounded_information_retrieval_through_litera.md)
-- [\[ACL 2026\] Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction](don39t_act_blindly_robust_gui_automation_via_action-effect_verification_and_self.md)
 
 </div>
 

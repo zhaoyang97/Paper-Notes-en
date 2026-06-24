@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ineq-Comp: Benchmarking Human-Intuitive Compositional Reasoning in Automated Theorem Proving on Inequalities
 description: >-
-  [NeurIPS 2025][LLM Evaluation][automated theorem proving] This paper introduces the Ineq-Comp benchmark, which applies compositionally transformed variants of simple inequality seed problems—variants that humans can reso…
+  [NeurIPS 2025][LLM Evaluation][automated theorem proving] This paper introduces the Ineq-Comp benchmark, which applies compositionally transformed variants of simple inequality seed problems—variants that humans can resolve with minimal additional effort—to expose fundamental deficiencies in the compositional reasoning of current LLM-based formal theorem provers. Even DeepSeek-Prover-V2-7B suffers a performance drop exceeding 20%.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "mathematical inequalities"
   - "benchmark"
 date: 2026-05-08
-content_hash: 8808a6030a0303ab
+content_hash: 1158516c13f254cf
 ---
 
 # Ineq-Comp: Benchmarking Human-Intuitive Compositional Reasoning in Automated Theorem Proving on Inequalities
@@ -176,11 +176,11 @@ Synthetic data (~8k compilable samples) generated from AM-GM seed problems was u
 
 ## Related Papers
 
-- [\[ICCV 2025\] HiERO: Understanding the Hierarchy of Human Behavior Enhances Reasoning on Egocentric Videos](../../ICCV2025/llm_evaluation/hiero_understanding_the_hierarchy_of_human_behavior_enhances_reasoning_on_egocen.md)
+- [\[ICML 2025\] Are LLM Belief Updates Consistent with Bayes' Theorem?](../../ICML2025/llm_evaluation/are_llm_belief_updates_consistent_with_bayes_theorem.md)
+- [\[ACL 2025\] PATCH: Psychometrics-Assisted Benchmarking of LLMs Against Human Populations](../../ACL2025/llm_evaluation/patch_psychometrics-assisted_benchmarking_of_large_language_models_against_human.md)
 - [\[ICCV 2025\] A Conditional Probability Framework for Compositional Zero-shot Learning](../../ICCV2025/llm_evaluation/a_conditional_probability_framework_for_compositional_zerosh.md)
-- [\[ACL 2026\] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns](../../ACL2026/llm_evaluation/humanllm_benchmarking_and_improving_llm_anthropomorphism_via_human_cognitive_pat.md)
-- [\[NeurIPS 2025\] Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations](beyond_the_surface_enhancing_llm-as-a-judge_alignment_with_human_via_internal_re.md)
-- [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](../../ACL2026/llm_evaluation/do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
+- [\[ICCV 2025\] HiERO: Understanding the Hierarchy of Human Behavior Enhances Reasoning on Egocentric Videos](../../ICCV2025/llm_evaluation/hiero_understanding_the_hierarchy_of_human_behavior_enhances_reasoning_on_egocen.md)
+- [\[ACL 2025\] FinanceReasoning: Benchmarking Financial Numerical Reasoning More Credible, Comprehensive and Challenging](../../ACL2025/llm_evaluation/financereasoning_benchmarking_financial_numerical_reasoning_more.md)
 
 </div>
 

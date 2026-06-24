@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HOLO: Homography-Guided Pose Estimator Network for Fine-Grained Visual Localization on SD Maps
 description: >-
-  [CVPR 2026][Autonomous Driving][BEV] HOLO reformulates "fine-grained localization of surround-view images on standard-definition (SD) maps" as a **homography estimation problem between BEV features and map tiles**: first, semantic alignment is used to pull the two modalities into feature pairs satisfying homography constraints; then, the homography relati
+  [CVPR 2026][Autonomous Driving][Visual Localization] HOLO reformulates "fine-grained localization of surround-view images on standard-definition (SD) maps" as a **homography estimation problem between BEV features and map tiles**: first, semantic alignment is used to pull the two modalities into feature pairs satisfying homography constraints; then, the homography relationship guides feature fusion and constrains the pose output within a feasible solution space. This approach…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - BEV
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Visual Localization"
+  - "SD Map"
+  - "Homography Estimation"
+  - "BEV"
+  - "3-DoF Pose"
 date: 2026-05-08
-content_hash: aa28fb8fb2d6bd1b
+content_hash: 21210fbb6764b299
 ---
+
 # HOLO: Homography-Guided Pose Estimator Network for Fine-Grained Visual Localization on SD Maps
 
 **Conference**: CVPR 2026  

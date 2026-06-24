@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unbiased Gradient Estimation for Event Binning via Functional Backpropagation
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Addressing the issue of biased gradients when learning directly from raw events due to the discontinuity of binning functions used for aggregating events into frames, this paper proposes **Functional Backpropagation (FBP)**. By lifting the binning function into functional space and utilizing integration by parts, the c
+  [ICLR 2026][Optimization][Event Camera] Addressing the issue of biased gradients when learning directly from raw events due to the discontinuity of binning functions used for aggregating events into frames, this paper proposes **Functional Backpropagation (FBP)**. By lifting the binning function into functional space and utilizing integration by parts, the cotangent function emerges naturally. It is then reconstructed from sampled cotangent vectors to synthesize **provably un…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Event Camera"
+  - "Binning Function"
+  - "Unbiased Gradient"
+  - "Weak Derivative"
+  - "Integration by Parts"
 date: 2026-05-08
-content_hash: 0f7ee65e0de938ab
+content_hash: 7cee9ea28ad9e599
 ---
+
 # Unbiased Gradient Estimation for Event Binning via Functional Backpropagation
 
 **Conference**: ICLR 2026  

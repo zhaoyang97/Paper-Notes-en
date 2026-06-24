@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pref-CTRL: Preference Driven LLM Alignment using Representation Editing
 description: >-
-  [ACL 2026][Alignment & RLHF][RLHF] Pref-CTRL introduces margin loss and regularizer loss oriented toward paired preference data to train a lightweight value function within the RE-Control framework—a test-time alignment framework that does not update LLM parameters. This makes representation editing more consistent with human preferences and achieves st
+  [ACL2026][LLM Alignment][Representation Editing] Pref-CTRL introduces margin loss and regularizer loss oriented toward paired preference data to train a lightweight value function within the RE-Control framework—a test-time alignment framework that does not update LLM parameters. This makes representation editing more consistent with human preferences and achieves stable performance gains over RE-Control on SHP, HH-RLHF, and cross-domain data.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ACL2026"
+  - "LLM Alignment"
+  - "Representation Editing"
+  - "Preference Learning"
+  - "Test-time Alignment"
+  - "Value Function"
+  - "RLHF"
 date: 2026-05-08
-content_hash: 1800e4dfa8378863
+content_hash: 57e293de925f09bb
 ---
+
 # Pref-CTRL: Preference Driven LLM Alignment using Representation Editing
 
 **Conference**: ACL2026  
@@ -163,8 +168,21 @@ Cross-domain evaluations further support the argument: a value function that lea
 - Value: ⭐⭐⭐⭐☆ Highly relevant for reducing alignment costs and studying test-time control and preference modeling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ACL 2025\] RISE: Subtle Errors in Reasoning: Preference Learning via Error-injected Self-editing](../../ACL2025/llm_alignment/rise_error_inject_preference.md)
+- [\[ICLR 2026\] Verification and Co-Alignment via Heterogeneous Consistency for Preference-Aligned LLM Annotations](../../ICLR2026/llm_alignment/verification_and_co-alignment_via_heterogeneous_consistency_for_preference-align.md)
+- [\[ICLR 2026\] BIRD: Behavior Induction via Representation-structure Distillation](../../ICLR2026/llm_alignment/bird_behavior_induction_via_representation-structure_distillation.md)
+- [\[ACL 2026\] Teaching LLM to be Persuasive: Reward-Enhanced Policy Optimization for Alignment from Heterogeneous Rewards](teaching_llm_to_be_persuasive_reward-enhanced_policy_optimization_for_alignment_.md)
+- [\[ACL 2025\] Curiosity-Driven Reinforcement Learning from Human Feedback](../../ACL2025/llm_alignment/curiosity_driven_rlhf.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

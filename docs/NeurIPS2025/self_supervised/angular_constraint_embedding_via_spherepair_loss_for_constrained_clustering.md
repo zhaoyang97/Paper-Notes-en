@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Angular Constraint Embedding via SpherePair Loss for Constrained Clustering
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Constrained clustering] This paper proposes the SpherePair loss function, which performs pairwise constraint embedding learning in angular space (rather than Euclidean space)…
+  [NeurIPS 2025][Self-Supervised Learning][Constrained clustering] This paper proposes the SpherePair loss function, which performs pairwise constraint embedding learning in angular space (rather than Euclidean space), enabling a deep constrained clustering method that requires neither anchors nor prior knowledge of the number of clusters, while providing rigorous theoretical guarantees for determining optimal hyperparameters.
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "deep constrained clustering"
   - "spherical representation"
 date: 2026-05-08
-content_hash: 76d2bbd372403d51
+content_hash: fd2233e5f8f89726
 ---
 
 # Angular Constraint Embedding via SpherePair Loss for Constrained Clustering
@@ -133,10 +133,10 @@ SpherePair is compared against 7 DCC baselines on 8 benchmarks using ACC/NMI/ARI
 ## Related Papers
 
 - [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](../../CVPR2026/self_supervised/reframing_long-tailed_learning_via_loss_landscape_geometry.md)
+- [\[ICML 2025\] ReSA: Clustering Properties of Self-Supervised Learning](../../ICML2025/self_supervised/clustering_properties_of_self-supervised_learning.md)
 - [\[ICML 2026\] Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch](../../ICML2026/self_supervised/provable_accuracy_collapse_in_embedding-based_representations_under_dimensionali.md)
-- [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
-- [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
+- [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](../../ICLR2026/self_supervised/architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
+- [\[ICLR 2026\] Rethinking Unsupervised Cross-Modal Flow Estimation: Learning from Decoupled Optimization and Consistency Constraint](../../ICLR2026/self_supervised/rethinking_unsupervised_cross-modal_flow_estimation_learning_from_decoupled_opti.md)
 
 </div>
 

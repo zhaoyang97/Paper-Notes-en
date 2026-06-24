@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] Addressing the pain point where "Byzantine clients temporarily form a majority in sampled clients" collapses existing robust aggregators under partial participation, this paper proposes the Delayed Momentum Aggregation principle. The server feeds the current round's new momentum along with the most recent cached moment
+  [ICML 2026][Optimization][Federated Learning] Addressing the pain point where "Byzantine clients temporarily form a majority in sampled clients" collapses existing robust aggregators under partial participation, this paper proposes the Delayed Momentum Aggregation principle. The server feeds the current round's new momentum along with the most recent cached momentum from unsampled clients into the robust aggregator, effectively maintaining the global Byzantine ratio $\delta <…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Byzantine Robustness"
+  - "Partial Participation"
+  - "Delayed Momentum"
+  - "Robust Aggregation"
 date: 2026-05-08
-content_hash: 0fe2d61053b20276
+content_hash: 33dc3aff6a879d97
 ---
+
 # Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation
 
 **Conference**: ICML 2026  
@@ -125,11 +131,11 @@ DeMoA achieved the highest final accuracy and lowest variance across nearly all 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](../../ICLR2026/optimization/byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
 - [\[NeurIPS 2025\] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning](../../NeurIPS2025/optimization/layer-wise_update_aggregation_with_recycling_for_communication-efficient_federat.md)
-- [\[ICML 2026\] Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels](learning_locally_revising_globally_global_reviser_for_federated_learning_with_no.md)
-- [\[ICML 2026\] HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation](ho-sfl_hybrid-order_split_federated_learning_with_backprop-free_clients_and_dime.md)
+- [\[ICLR 2026\] Single-Loop Byzantine-Resilient Federated Bilevel Optimization](../../ICLR2026/optimization/single-loop_byzantine-resilient_federated_bilevel_optimization.md)
 - [\[NeurIPS 2025\] Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients](../../NeurIPS2025/optimization/efficient_federated_learning_against_byzantine_attacks_and_data_heterogeneity_vi.md)
-- [\[ICML 2025\] The Panaceas for Improving Low-Rank Decomposition in Communication-Efficient Federated Learning](../../ICML2025/optimization/the_panaceas_for_improving_low-rank_decomposition_in_communication-efficient_fed.md)
+- [\[ICML 2026\] Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels](learning_locally_revising_globally_global_reviser_for_federated_learning_with_no.md)
 
 </div>
 

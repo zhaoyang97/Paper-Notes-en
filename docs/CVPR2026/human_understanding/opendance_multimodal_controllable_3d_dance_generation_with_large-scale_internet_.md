@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] OpenDance introduces OpenDanceSet, a 100-hour large-scale 3D dance dataset across 14 genres with multimodal annotations (music, text, 2D keypoints, trajectories) derived from internet videos. Simultaneously, it proposes OpenDanceNet, a unified framework utilizing "decoupled tokenization + multimodal masked joint predic
+  [CVPR 2026][Human Understanding][3D Dance Generation] OpenDance introduces OpenDanceSet, a 100-hour large-scale 3D dance dataset across 14 genres with multimodal annotations (music, text, 2D keypoints, trajectories) derived from internet videos. Simultaneously, it proposes OpenDanceNet, a unified framework utilizing "decoupled tokenization + multimodal masked joint prediction + inference-time re-masking refinement" to achieve high-fidelity and finely controllable 3D dance gen…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "3D Dance Generation"
+  - "Multimodal Controllable"
+  - "Masked Modeling"
+  - "Motion Dataset"
+  - "Physical Plausibility"
 date: 2026-05-08
-content_hash: 79c694d59873a4cf
+content_hash: d13e19b762796fd6
 ---
+
 # OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data
 
 **Conference**: CVPR 2026  
@@ -143,7 +149,7 @@ Takeaways: On AIST++, Ours achieves the lowest PFC, best FIDk (24.82), and highe
 - [\[CVPR 2026\] M4Human: A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction](m4human_a_large-scale_multimodal_mmwave_radar_benchmark_for_human_mesh_reconstru.md)
 - [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
 - [\[CVPR 2026\] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation](romo_a_large-scale_richly_organized_dataset_and_semantic_taxonomy_for_human_moti.md)
-- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
+- [\[CVPR 2026\] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation](mimictalker_a_multimodal_interactive_and_memory-enhanced_framework_for_real-time.md)
 
 </div>
 

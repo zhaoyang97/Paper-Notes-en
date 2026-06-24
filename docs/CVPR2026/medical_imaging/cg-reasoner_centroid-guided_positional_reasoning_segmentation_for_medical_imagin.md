@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CG-Reasoner: Centroid-Guided Positional Reasoning Segmentation for Medical Imaging with a Robust Visual-Text Consistency Metric
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] CG-Reasoner integrates a lightweight encoder-decoder with LLaVA-Med and introduces a Text2Centroid module that regresses reasoning text into lesion centroid coordinates. This enables the model to produce spatially grounded, interpretable reasoning text alongside segmentation masks. Additionally, the proposed PRScore me
+  [CVPR 2026][Medical Imaging][Medical Image Segmentation] CG-Reasoner integrates a lightweight encoder-decoder with LLaVA-Med and introduces a Text2Centroid module that regresses reasoning text into lesion centroid coordinates. This enables the model to produce spatially grounded, interpretable reasoning text alongside segmentation masks. Additionally, the proposed PRScore measures semantic, spatial, and visual consistency, achieving performance close to or exceeding SOTA acro…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical Image Segmentation"
+  - "Positional Reasoning"
+  - "Multimodal LLM"
+  - "Centroid Guidance"
+  - "Cross-modal Evaluation"
 date: 2026-05-08
-content_hash: 339479306982cd4f
+content_hash: 03bcc67af9b25ce0
 ---
+
 # CG-Reasoner: Centroid-Guided Positional Reasoning Segmentation for Medical Imaging with a Robust Visual-Text Consistency Metric
 
 **Conference**: CVPR 2026  
@@ -155,11 +161,11 @@ The final score is $\text{PRScore} = \alpha S_{\text{sem}} + \beta S_{\text{spat
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Text–Mask Consistency in Medical Image Segmentation](../../ICLR2026/medical_imaging/towards_text-mask_consistency_in_medical_image_segmentation.md)
 - [\[CVPR 2026\] OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging](omnifm_toward_modality-robust_and_task-agnostic_federated_learning_for_heterogen.md)
+- [\[CVPR 2026\] Simple-ViLMedSAM: Simple Text Prompts Meet Vision-Language Models for Medical Image Segmentation](simple-vilmedsam_simple_text_prompts_meet_vision-language_models_for_medical_ima.md)
 - [\[CVPR 2026\] VoxTell: Free-Text Promptable Universal 3D Medical Image Segmentation](voxtell_free-text_promptable_universal_3d_medical_image_segmentation.md)
 - [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
-- [\[CVPR 2026\] IBISAgent: Reinforcing Pixel-Level Visual Reasoning in MLLMs for Universal Biomedical Object Referring and Segmentation](ibisagent_reinforcing_pixel-level_visual_reasoning_in_mllms_for_universal_biomed.md)
-- [\[CVPR 2026\] Attention Consistent Longitudinal Medical Visual Question Answering Guided by Vision Foundation Models](attention_consistent_longitudinal_medical_visual_question_answering_guided_by_vi.md)
 
 </div>
 

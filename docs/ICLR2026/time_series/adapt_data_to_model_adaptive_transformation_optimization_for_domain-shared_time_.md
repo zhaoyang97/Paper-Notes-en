@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models
 description: >-
-  [ICLR 2026][Time Series][Paper Note] The TATO framework is proposed to adapt frozen Large Time-series Models (LTMs) to diverse downstream domains without fine-tuning by automatically optimizing data preprocessing pipelines (including context trimming, scale normalization, and outlier correction), achieving an average MSE reduction of 13.6% and up to 65.4%
+  [ICLR 2026][Time Series][Time series foundation models] The TATO framework is proposed to adapt frozen Large Time-series Models (LTMs) to diverse downstream domains without fine-tuning by automatically optimizing data preprocessing pipelines (including context trimming, scale normalization, and outlier correction), achieving an average MSE reduction of 13.6% and up to 65.4%.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time series foundation models"
+  - "data transformation optimization"
+  - "zero-shot forecasting"
+  - "frozen model inference"
+  - "Bayesian optimization"
 date: 2026-05-08
-content_hash: fe3c799bddf6f2c6
+content_hash: f844f0d8997795ca
 ---
+
 # Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models
 
 **Conference**: ICLR 2026  
@@ -139,10 +145,10 @@ The largest improvement occurred on the Exchange dataset with the Timer-LOTSA mo
 
 ## Related Papers
 
+- [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
 - [\[ICLR 2026\] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data](relational_transformer_toward_zero-shot_foundation_models_for_relational_data.md)
 - [\[ICLR 2026\] Understanding the Implicit Biases of Design Choices for Time Series Foundation Models](understanding_the_implicit_biases_of_design_choices_for_time_series_foundation_m.md)
 - [\[ICLR 2026\] Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated?](beyond_accuracy_are_time_series_foundation_models_well-calibrated.md)
-- [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
 - [\[ICLR 2026\] Repurposing Foundation Model for Generalizable Medical Time Series Classification](repurposing_foundation_model_for_generalizable_medical_time_series_classificatio.md)
 
 </div>

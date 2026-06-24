@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] This paper proposes CLDyN, a closed-loop dynamic network that enables a frozen fusion network to adapt to downstream tasks (detection/segmentation/saliency) without retraining. By utilizing a "Request-driven Semantic Compensation (RSC)" module with only 0.46M parameters, the system receives semantic feedback and dynami
+  [CVPR 2026][Image Fusion] This paper proposes CLDyN, a closed-loop dynamic network that enables a frozen fusion network to adapt to downstream tasks (detection/segmentation/saliency) without retraining. By utilizing a "Request-driven Semantic Compensation (RSC)" module with only 0.46M parameters, the system receives semantic feedback and dynamically customizes convolutional structures for task-specific compensation. It maintains high fusion quality while achieving superior mu…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Fusion"
+  - "Closed-Loop Optimization"
+  - "Task-Adaptive"
+  - "Dynamic Convolution"
+  - "Semantic Compensation"
 date: 2026-05-08
-content_hash: 8ee0984323936d6b
+content_hash: a2f9cdb94ee999bc
 ---
+
 # Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion
 
 **Conference**: CVPR 2026  
@@ -124,13 +129,20 @@ Ours achieves state-of-the-art or near-SOTA performance across multiple tasks us
 - **Value**: ⭐⭐⭐⭐⭐ The extremely lightweight nature (0.46M parameters) makes it highly practical for real-world deployment.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **SeAFusion**: CVPR 2022, Semantic-aware image fusion.
-- **MetaFusion**: CVPR 2023, Meta-learning for multi-task fusion.
-- **SAGE**: IJCV 2024, Task-semantic guided fusion.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] MMVIP: A Visible-infrared Paired Dataset for Multi-weather Marine Vision](mmvip_a_visible-infrared_paired_dataset_for_multi-weather_marine_vision.md)
+- [\[CVPR 2026\] More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization](more_than_meets_the_eye_a_unified_image_fusion_framework_via_semantic-pixel_entr.md)
+- [\[ICCV 2025\] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction](../../ICCV2025/others/revisiting_image_fusion_for_multi-illuminant_white-balance_correction.md)
+- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[NeurIPS 2025\] Depth-Supervised Fusion Network for Seamless-Free Image Stitching](../../NeurIPS2025/others/depth-supervised_fusion_network_for_seamless-free_image_stitching.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] RegionFuse: Region-Adaptive Pixel Distribution Learning for Infrared and Visible Image Fusion](regionfuse_region-adaptive_pixel_distribution_learning_for_infrared_and_visible_.md)

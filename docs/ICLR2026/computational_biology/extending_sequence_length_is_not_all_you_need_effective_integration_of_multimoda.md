@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] The study challenges the "longer is better" paradigm in long-sequence modeling for gene expression prediction, discovering that current SSM models essentially utilize only proximal information. It further identifies background chromatin signals (DNase-seq/Hi-C) as confounding variables that introduce spurious correlati
+  [ICLR 2026][Computational Biology][Gene expression prediction] The study challenges the "longer is better" paradigm in long-sequence modeling for gene expression prediction, discovering that current SSM models essentially utilize only proximal information. It further identifies background chromatin signals (DNase-seq/Hi-C) as confounding variables that introduce spurious correlations and proposes the Prism framework to perform deconfounding via backdoor adjustment…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Gene expression prediction"
+  - "epigenomic signals"
+  - "causal inference"
+  - "backdoor adjustment"
+  - "confounding variables"
 date: 2026-05-08
-content_hash: 264a0fd6b6244eea
+content_hash: 731d27548b403595
 ---
+
 # Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction
 
 **Conference**: ICLR 2026  
@@ -153,10 +159,10 @@ Prism outperforms all 200k-sequence methods using only 2k sequences.
 ## Related Papers
 
 - [\[ICLR 2026\] One Protein Is All You Need](one_protein_is_all_you_need.md)
+- [\[ICLR 2026\] Triangle Multiplication is All You Need for Biomolecular Structure Representations](triangle_multiplication_is_all_you_need_for_biomolecular_structure_representatio.md)
 - [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](../../NeurIPS2025/computational_biology/is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
 - [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](../../CVPR2026/computational_biology/from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
 - [\[ICLR 2026\] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction](towards_all-atom_foundation_models_for_biomolecular_binding_affinity_prediction.md)
-- [\[ICLR 2026\] Flow Autoencoders are Effective Protein Tokenizers](flow_autoencoders_are_effective_protein_tokenizers.md)
 
 </div>
 

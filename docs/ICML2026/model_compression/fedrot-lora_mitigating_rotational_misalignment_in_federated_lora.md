@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA
 description: >-
-  [ICML 2026][Model Compression][LoRA] This paper identifies that the true "enemy" of naive factor-wise averaging in Federated LoRA is potential subspace misalignment caused by rotational invariance. It proposes solving for a rotation matrix $R_i^t$ via orthogonal Procrustes on the client side to align $A$ and $B$ factors before aggregation. Both theory and
+  [ICML 2026][Model Compression][Federated Learning] This paper identifies that the true "enemy" of naive factor-wise averaging in Federated LoRA is potential subspace misalignment caused by rotational invariance. It proposes solving for a rotation matrix $R_i^t$ via orthogonal Procrustes on the client side to align $A$ and $B$ factors before aggregation. Both theory and experiments demonstrate that this significantly reduces aggregation error without increasing communication o…
 tags:
-  - ICML 2026
-  - Model Compression
-  - LoRA
+  - "ICML 2026"
+  - "Model Compression"
+  - "Federated Learning"
+  - "LoRA"
+  - "Procrustes Alignment"
+  - "Rotational Invariance"
+  - "Subspace Alignment"
 date: 2026-05-08
-content_hash: e59ea2c69d0e1a29
+content_hash: b168fb3969f0c2bb
 ---
+
 # FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA
 
 **Conference**: ICML 2026  
@@ -131,10 +136,10 @@ The reduction in aggregation error is particularly striking: on MNLI, FedIT's er
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA](../../NeurIPS2025/model_compression/robust_federated_finetuning_of_llms_via_alternating_optimization_of_lora.md)
-- [\[ICML 2026\] Geo-Expert: 用 LoRA 把 8B 模型微调成专家级地质推理 LLM](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
 - [\[ACL 2025\] FedEx-LoRA: Exact Aggregation for Federated and Efficient Fine-Tuning of Large Language Models](../../ACL2025/model_compression/fedex_lora_federated_exact_aggregation.md)
 - [\[ICML 2026\] Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning](task-driven_subspace_decomposition_for_knowledge_sharing_and_isolation_in_lora-b.md)
 - [\[ICML 2026\] FedSDR: Federated Self-Distillation with Rectification](fedsdr_federated_self-distillation_with_rectification.md)
+- [\[ICML 2026\] Geo-Expert: Fine-Tuning an 8B Model into an Expert-Level Geological Reasoning LLM via LoRA](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
 
 </div>
 

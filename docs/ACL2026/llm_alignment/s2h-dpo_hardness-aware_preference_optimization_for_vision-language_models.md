@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] Ours proposes the Simple-to-Hard (S2H) DPO framework, which systematically enhances the multi-image reasoning capabilities of VLMs by constructing multi-image preference data across three progressive difficulty levels (fixed-point reasoning $\rightarrow$ cross-image comparison $\rightarrow$ global visual search) while
+  [ACL 2026 Findings][LLM Alignment][Multi-image reasoning] Ours proposes the Simple-to-Hard (S2H) DPO framework, which systematically enhances the multi-image reasoning capabilities of VLMs by constructing multi-image preference data across three progressive difficulty levels (fixed-point reasoning $\rightarrow$ cross-image comparison $\rightarrow$ global visual search) while maintaining single-image performance.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL 2026 Findings"
+  - "LLM Alignment"
+  - "Multi-image reasoning"
+  - "DPO preference optimization"
+  - "visual search"
+  - "hardness grading"
+  - "VLM alignment"
 date: 2026-05-08
-content_hash: 666b7c06e5438846
+content_hash: 7da9976279945f21
 ---
+
 # S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -141,9 +147,9 @@ Standard DPO loss is used with temperature $\beta=0.1$, a learning rate of $5 \t
 
 - [\[ACL 2025\] LPOI: Listwise Preference Optimization for Vision Language Models](../../ACL2025/llm_alignment/lpoi_listwise_preference_optimization_for_vision_language_models.md)
 - [\[CVPR 2026\] Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models](../../CVPR2026/llm_alignment/uncertainty-aware_exploratory_direct_preference_optimization_for_multimodal_larg.md)
+- [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
 - [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
 - [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](../../ICLR2026/llm_alignment/toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
-- [\[ICLR 2026\] Token-Importance Guided Direct Preference Optimization (TI-DPO)](../../ICLR2026/llm_alignment/token-importance_guided_direct_preference_optimization.md)
 
 </div>
 

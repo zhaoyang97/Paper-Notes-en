@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Just Do It!? Computer-Use Agents Exhibit Blind Goal-Directedness
 description: >-
-  [ICLR 2026][LLM Agent][OSWorld] This paper introduces the concept of "Blind Goal-Directedness" (BGD), characterizing the tendency of Computer-Use Agents (CUAs) to pursue goals regardless of feasibility, safety, reliability, and context. The authors construct the BLIND-ACT benchmark with 90 tasks (based on OSWorld and evaluated via an LLM judge), meas
+  [ICLR 2026][LLM Agent][Computer-Use Agents] This paper introduces the concept of "Blind Goal-Directedness" (BGD), characterizing the tendency of Computer-Use Agents (CUAs) to pursue goals regardless of feasibility, safety, reliability, and context. The authors construct the BLIND-ACT benchmark with 90 tasks (based on OSWorld and evaluated via an LLM judge), measuring an average BGD rate of 80.8% across 9 frontier models, highlighting a pervasive systemic risk overlooked by ex…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - OSWorld
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Computer-Use Agents"
+  - "Blind Goal-Directedness"
+  - "Agent Safety"
+  - "Benchmark"
+  - "OSWorld"
 date: 2026-05-08
-content_hash: 2236ae5e503de59e
+content_hash: eb114a76ccf1a052
 ---
+
 # Just Do It!? Computer-Use Agents Exhibit Blind Goal-Directedness
 
 **Conference**: ICLR 2026  
@@ -133,16 +138,16 @@ Effectiveness of prompt interventions (Contextual / Reflective variants):
 - Value: ⭐⭐⭐⭐⭐ Provides a crucial foundation and benchmark for CUA safety alignment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Programming with Pixels: Can Computer-Use Agents do Software Engineering?](programming_with_pixels_can_computer-use_agents_do_software_engineering.md)
+- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
+- [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
 - [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
-- [\[ICLR 2026\] ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data](scalecua_scaling_open-source_computer_use_agents_with_cross-platform_data.md)
 - [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
 
 </div>
 

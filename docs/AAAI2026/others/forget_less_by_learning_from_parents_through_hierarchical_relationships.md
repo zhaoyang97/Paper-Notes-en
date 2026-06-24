@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Forget Less by Learning from Parents Through Hierarchical Relationships
 description: >-
-  [AAAI 2026][Custom diffusion models] This paper proposes FLLP (Forget Less by Learning from Parents), a framework that mitigates catastrophic forgetting in custom diffusion models (CDMs) by establishing parent-child hier…
+  [AAAI 2026][Custom diffusion models] This paper proposes FLLP (Forget Less by Learning from Parents), a framework that mitigates catastrophic forgetting in custom diffusion models (CDMs) by establishing parent-child hierarchical relationships among concepts in hyperbolic space. It leverages the tree-structure modeling capability of the Lorentz manifold to preserve knowledge during new concept learning and enable continual concept integration.
 tags:
   - "AAAI 2026"
   - "Custom diffusion models"
@@ -11,7 +11,7 @@ tags:
   - "hierarchical relationships"
   - "concept learning"
 date: 2026-05-08
-content_hash: 5170455f8822e9f0
+content_hash: e8c337758ebc8c2c
 ---
 
 # Forget Less by Learning from Parents Through Hierarchical Relationships
@@ -132,10 +132,10 @@ Evaluation is conducted on three public datasets and one synthetic benchmark.
 ## Related Papers
 
 - [\[AAAI 2026\] Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering](break_the_tie_learning_cluster-customized_category_relationships_for_categorical.md)
+- [\[ICLR 2026\] Forget Forgetting: Continual Learning in a World of Abundant Memory](../../ICLR2026/others/forget_forgetting_continual_learning_in_a_world_of_abundant_memory.md)
 - [\[NeurIPS 2025\] Exploiting Task Relationships in Continual Learning via Transferability-Aware Task Embeddings](../../NeurIPS2025/others/exploiting_task_relationships_in_continual_learning_via_transferability-aware_ta.md)
 - [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](hierarchical_semantic_alignment_for_image_clustering.md)
 - [\[ICML 2026\] Less Data, Faster Training: Repeating Smaller Datasets Speeds Up Learning via Sampling Biases](../../ICML2026/others/less_data_faster_training_repeating_smaller_datasets_speeds_up_learning_via_samp.md)
-- [\[ICML 2026\] Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning](../../ICML2026/others/polaris_coupled_orbital_polar_embeddings_for_hierarchical_concept_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IndEgo: A Dataset of Industrial Scenarios and Collaborative Work for Egocentric Assistants
 description: >-
-  [NeurIPS 2025][3D Vision][Egocentric Vision] This paper presents IndEgo — the first large-scale multimodal egocentric vision dataset targeting real industrial environments. It comprises 3…
+  [NeurIPS 2025][3D Vision][Egocentric Vision] This paper presents IndEgo — the first large-scale multimodal egocentric vision dataset targeting real industrial environments. It comprises 3,460 egocentric video clips (~197 hours) and 1,092 exocentric recordings (~97 hours), spanning five major task categories including assembly/disassembly, logistics, maintenance, woodworking, and miscellaneous tasks, as well as collaborative work scenarios. Three benchmarks are established: mi…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Mistake Detection"
   - "Video Question Answering"
 date: 2026-05-08
-content_hash: 6053405c1db818eb
+content_hash: 374479cbd59e6eb1
 ---
 
 # IndEgo: A Dataset of Industrial Scenarios and Collaborative Work for Egocentric Assistants
@@ -158,10 +158,10 @@ The benefits of multimodal fusion are highly context-dependent across tasks, whi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Look and Tell: A Dataset for Multimodal Grounding Across Egocentric and Exocentric Views](look_and_tell_a_dataset_for_multimodal_grounding_across_egocentric_and_exocentri.md)
-- [\[NeurIPS 2025\] Gaze Beyond the Frame: Forecasting Egocentric 3D Visual Span](gaze_beyond_the_frame_forecasting_egocentric_3d_visual_span.md)
+- [\[CVPR 2025\] HD-EPIC: A Highly-Detailed Egocentric Video Dataset](../../CVPR2025/3d_vision/hd-epic_a_highly-detailed_egocentric_video_dataset.md)
+- [\[CVPR 2025\] EgoPressure: A Dataset for Hand Pressure and Pose Estimation in Egocentric Vision](../../CVPR2025/3d_vision/egopressure_a_dataset_for_hand_pressure_and_pose_estimation_in_egocentric_vision.md)
 - [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](../../CVPR2026/3d_vision/ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
-- [\[NeurIPS 2025\] FlareX: A Physics-Informed Dataset for Lens Flare Removal via 2D Synthesis and 3D Rendering](flarex_a_physics-informed_dataset_for_lens_flare_removal_via_2d_synthesis_and_3d.md)
-- [\[ICCV 2025\] EgoM2P: Egocentric Multimodal Multitask Pretraining](../../ICCV2025/3d_vision/egom2p_egocentric_multimodal_multitask_pretraining.md)
+- [\[NeurIPS 2025\] Gaze Beyond the Frame: Forecasting Egocentric 3D Visual Span](gaze_beyond_the_frame_forecasting_egocentric_3d_visual_span.md)
 
 </div>
 

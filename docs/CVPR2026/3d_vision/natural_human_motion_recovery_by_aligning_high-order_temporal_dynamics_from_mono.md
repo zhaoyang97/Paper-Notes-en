@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Addressing the issue where monocular human motion recovery results have accurate joint positions but appear either jittery or over-smoothed, this paper proposes HTD-Refine. It uses a lightweight temporal network, PVA-Net, to explicitly predict the 3D velocity and acceleration of each joint from video. These high-order
+  [CVPR 2026][3D Vision][Monocular Motion Recovery] Addressing the issue where monocular human motion recovery results have accurate joint positions but appear either jittery or over-smoothed, this paper proposes HTD-Refine. It uses a lightweight temporal network, PVA-Net, to explicitly predict the 3D velocity and acceleration of each joint from video. These high-order dynamics serve as soft constraints to optimize global trajectories. This plug-and-play approach reduces jitter…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular Motion Recovery"
+  - "High-Order Temporal Dynamics"
+  - "Velocity/Acceleration Fields"
+  - "Global Trajectory Optimization"
+  - "Post-processing Refinement"
 date: 2026-05-08
-content_hash: 0fc698501dad8992
+content_hash: 22b47ed2fe1d799a
 ---
+
 # Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos
 
 **Conference**: CVPR 2026  
@@ -133,15 +139,16 @@ Breakdown on EMDB (Baseline: TRAM):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
-- [\[CVPR 2026\] Mocap-2-to-3: Multi-view Lifting for Monocular Motion Recovery with 2D Pretraining](mocap-2-to-3_multi-view_lifting_for_monocular_motion_recovery_with_2d_pretrainin.md)
-- [\[CVPR 2025\] HumanMM: Global Human Motion Recovery from Multi-shot Videos](../../CVPR2025/human_understanding/humanmm_global_human_motion_recovery_from_multi-shot_videos.md)
-- [\[CVPR 2026\] SAM 3D Body: Robust Full-Body Human Mesh Recovery](sam_3d_body_robust_full-body_human_mesh_recovery.md)
-- [\[CVPR 2026\] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)
+- [\[CVPR 2026\] Recovering Physically Plausible Human-Object Interactions from Monocular Videos](recovering_physically_plausible_human-object_interactions_from_monocular_videos.md)
+- [\[CVPR 2026\] RHINO: Reconstructing Human Interactions with Novel Objects from Monocular Videos](rhino_reconstructing_human_interactions_with_novel_objects_from_monocular_videos.md)
+- [\[CVPR 2026\] ParticleGS: Learning Neural Gaussian Particle Dynamics from Videos for Prior-free Physical Motion Extrapolation](particlegs_learning_neural_gaussian_particle_dynamics_from_videos_for_prior-free.md)
+- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
 
 </div>
 

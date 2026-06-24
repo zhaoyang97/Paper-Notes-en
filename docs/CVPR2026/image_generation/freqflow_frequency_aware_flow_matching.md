@@ -4,12 +4,16 @@ title: >-
 description: >-
   [CVPR 2026][Image Generation][Flow Matching] FreqFlow introduces explicit frequency-aware conditions into the flow matching framework. By employing a dual-branch architecture to separately process low-frequency global structures and high-frequency details, it achieves SOTA performance with a 1.38 FID on ImageNet-256.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Frequency-Aware"
+  - "Dual-Branch Architecture"
+  - "Adaptive Weighting"
 date: 2026-05-08
-content_hash: d7e0bbc975513827
+content_hash: e1fe24a385125aae
 ---
+
 # Frequency-Aware Flow Matching for High-Quality Image Generation
 
 **Conference**: CVPR 2026  
@@ -138,11 +142,11 @@ The total loss is a weighted combination of the spatial-domain flow matching los
 
 ## Related Papers
 
+- [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
 - [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
+- [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
 - [\[CVPR 2026\] Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective](toward_diffusible_high-dimensional_latent_spaces_a_frequency_perspective.md)
-- [\[CVPR 2026\] PosterReward: Unlocking Accurate Evaluation for High-Quality Graphic Design Generation](posterreward_unlocking_accurate_evaluation_for_high-quality_graphic_design_gener.md)
 - [\[CVPR 2026\] FreqEdit: Preserving High-Frequency Features for Robust Multi-Turn Image Editing](freqedit_preserving_high-frequency_features_for_robust_multi-turn_image_editing.md)
-- [\[CVPR 2026\] Spatiotemporal Pyramid Flow Matching for Climate Emulation](spatiotemporal_pyramid_flow_matching_for_climate_emulation.md)
 
 </div>
 

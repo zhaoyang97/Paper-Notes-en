@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning
 description: >-
-  [NeurIPS 2025][non-commutative algebra] This paper proposes an algebraic framework based on directional non-commutative monoid operators…
+  [NeurIPS 2025][non-commutative algebra] This paper proposes an algebraic framework based on directional non-commutative monoid operators, providing a unified mathematical foundation for multi-dimensional compositional embeddings and unifying SSM recurrence, Transformer self-attention, and RoPE positional encoding as special cases.
 tags:
   - "NeurIPS 2025"
   - "non-commutative algebra"
@@ -13,7 +13,7 @@ tags:
   - "SSM"
   - "Transformer"
 date: 2026-05-08
-content_hash: ad92a8bddedef7a1
+content_hash: 96026ab77276dcfc
 ---
 
 # Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning
@@ -121,9 +121,9 @@ The framework provides theoretical guidance for designing new architectures: one
 
 - [\[NeurIPS 2025\] Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning](put_cash_on_bandits_a_max_k-armed_problem_for_automated_machine_learning.md)
 - [\[NeurIPS 2025\] Exploiting Task Relationships in Continual Learning via Transferability-Aware Task Embeddings](exploiting_task_relationships_in_continual_learning_via_transferability-aware_ta.md)
-- [\[NeurIPS 2025\] Learning non-equilibrium diffusions with Schrödinger bridges: from exactly solvable to simulation-free](learning_non-equilibrium_diffusions_with_schrödinger_bridges_from_exactly_solvab.md)
 - [\[NeurIPS 2025\] SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures](sad_neural_networks_divergent_gradient_flows_and_asymptotic_optimality_via_o-min.md)
-- [\[ICML 2026\] Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning](../../ICML2026/others/polaris_coupled_orbital_polar_embeddings_for_hierarchical_concept_learning.md)
+- [\[NeurIPS 2025\] Learning non-equilibrium diffusions with Schrödinger bridges: from exactly solvable to simulation-free](learning_non-equilibrium_diffusions_with_schrödinger_bridges_from_exactly_solvab.md)
+- [\[NeurIPS 2025\] Equivariance by Contrast: Identifiable Equivariant Embeddings from Unlabeled Finite Group Actions](equivariance_by_contrast_identifiable_equivariant_embeddings_from_unlabeled_fini.md)
 
 </div>
 

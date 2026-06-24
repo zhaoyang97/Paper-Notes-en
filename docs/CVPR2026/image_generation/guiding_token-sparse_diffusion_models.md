@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Guiding Token-Sparse Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][capacity gap] Addressing the issue that "diffusion models trained with token sparsity barely respond to CFG," this paper proposes Sparse Guidance (SG). During inference, two conditional predictions are computed using different token sparsity rates—one strong and one weak. The "capacity gap" between them replaces the unconditional br
+  [CVPR 2026][Image Generation][token sparsity] Addressing the issue that "diffusion models trained with token sparsity barely respond to CFG," this paper proposes Sparse Guidance (SG). During inference, two conditional predictions are computed using different token sparsity rates—one strong and one weak. The "capacity gap" between them replaces the unconditional branch in CFG to guide the generation. Without any dense fine-tuning, it achieves a 1.58 FID on ImageNet-256 while s…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - capacity gap
+  - "CVPR 2026"
+  - "Image Generation"
+  - "token sparsity"
+  - "diffusion guidance"
+  - "efficient inference"
+  - "capacity gap"
+  - "text-to-image"
 date: 2026-05-08
-content_hash: 8f8dc0f94b4e8ba4
+content_hash: 59bc3eb590242041
 ---
+
 # Guiding Token-Sparse Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -150,9 +155,9 @@ In horizontal comparisons with various guidance methods (SiT-XL/2 + routing, 400
 
 - [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
 - [\[CVPR 2026\] Guiding a Diffusion Transformer with the Internal Dynamics of Itself](guiding_a_diffusion_transformer_with_the_internal_dynamics_of_itself.md)
+- [\[CVPR 2026\] Interpretable Prompts made Edit-Friendly: Token-to-Token Similarity Reduction in dLLMs for Edit-Friendly Hard Prompt Inversion](interpretable_prompts_made_edit-friendly_token-to-token_similarity_reduction_in_.md)
 - [\[CVPR 2026\] Guiding Diffusion Models with Fine-Grained Conditions and Semantics-Preserving Sampling for One-Shot Federated Learning](guiding_diffusion_models_with_fine-grained_conditions_and_semantics-preserving_s.md)
 - [\[CVPR 2026\] Guiding a Diffusion Model by Swapping Its Tokens](guiding_a_diffusion_model_by_swapping_its_tokens.md)
-- [\[CVPR 2026\] Interpretable and Steerable Concept Bottleneck Sparse Autoencoders](interpretable_and_steerable_concept_bottleneck_sparse_autoencoders.md)
 
 </div>
 

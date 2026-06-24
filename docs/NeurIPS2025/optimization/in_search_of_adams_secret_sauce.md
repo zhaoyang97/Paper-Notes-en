@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] In Search of Adam's Secret Sauce
 description: >-
-  [NeurIPS 2025][Optimization][Adam] Through large-scale experiments training 1500+ language models, this paper establishes: (1) Signum closes 96% of the SGD–Adam gap yet remains 25% slower than Adam…
+  [NeurIPS 2025][Optimization][Adam] Through large-scale experiments training 1500+ language models, this paper establishes: (1) Signum closes 96% of the SGD–Adam gap yet remains 25% slower than Adam; (2) setting $\beta_1 = \beta_2$ is a near-optimal simplification of Adam; (3) under $\beta_1 = \beta_2 = \beta$, Adam can be reinterpreted as a signal-to-noise ratio–adaptive Signum that estimates the gradient mean and variance via online Gaussian variational inference.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "signal-to-noise ratio"
   - "language modeling"
 date: 2026-05-08
-content_hash: cc6f83f9120f8c7c
+content_hash: 43227fd156e4485f
 ---
 
 # In Search of Adam's Secret Sauce
@@ -162,9 +162,9 @@ Key insight: On heterogeneous loss landscapes, the variance term $\sigma_k^2$ ta
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
-- [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
 - [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
 - [\[NeurIPS 2025\] Understanding Adam Requires Better Rotation Dependent Assumptions](understanding_adam_requires_better_rotation_dependent_assumptions.md)
+- [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
 - [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
 
 </div>

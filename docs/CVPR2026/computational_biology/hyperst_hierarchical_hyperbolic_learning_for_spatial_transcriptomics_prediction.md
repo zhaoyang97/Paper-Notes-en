@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] When predicting gene expression in Spatial Transcriptomics (ST) directly from H&E pathology images, existing methods typically perform only spot-level image-to-gene matching and ignore the inherent hierarchical structure of ST data. This paper proposes HyperST, which employs a multi-hierarchical representation extracto
+  [CVPR 2026][Computational Biology][Spatial Transcriptomics] When predicting gene expression in Spatial Transcriptomics (ST) directly from H&E pathology images, existing methods typically perform only spot-level image-to-gene matching and ignore the inherent hierarchical structure of ST data. This paper proposes HyperST, which employs a multi-hierarchical representation extractor to capture both spot-level and niche-level image/gene features. These features are aligned in **hy…
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Spatial Transcriptomics"
+  - "Gene Expression Prediction"
+  - "Hyperbolic Geometry"
+  - "Hierarchical Alignment"
+  - "Multimodal"
 date: 2026-05-08
-content_hash: c7f315f75ec329b2
+content_hash: 2769607ef7eedc93
 ---
+
 # HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ HyperST improved AUROC for MSI-H / MSS to 0.719 / 0.601 in a zero-shot setting, 
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
+- [\[CVPR 2026\] Multi-View Hierarchical Alignment Learning for Spatial Transcriptomics](multi-view_hierarchical_alignment_learning_for_spatial_transcriptomics.md)
 - [\[CVPR 2026\] FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics](feast_fully_connected_expressive_attention_for_spatial_transcriptomics.md)
-- [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](../../AAAI2026/computational_biology/hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
 - [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
-- [\[CVPR 2026\] Hyperbolic Busemann Neural Networks](hyperbolic_busemann_neural_networks.md)
+- [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
+- [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
 
 </div>
 

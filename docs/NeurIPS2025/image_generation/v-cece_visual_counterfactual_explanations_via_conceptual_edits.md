@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] V-CECE: Visual Counterfactual Explanations via Conceptual Edits
 description: >-
-  [NeurIPS 2025][Image Generation][Counterfactual explanation] V-CECE proposes the first black-box visual counterfactual explanation framework that systematically reveals the *explanatory gap* between human and neural netw…
+  [NeurIPS 2025][Image Generation][Counterfactual explanation] V-CECE proposes the first black-box visual counterfactual explanation framework that systematically reveals the *explanatory gap* between human and neural network semantic understanding. It guarantees edit-set optimality via WordNet knowledge graphs and the Hungarian algorithm, and executes concept-level edits using Stable Diffusion. The key finding is that CNN classifiers are severely misaligned with human semantic…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "knowledge graph"
   - "diffusion models"
 date: 2026-05-08
-content_hash: fb76ce0781b35999
+content_hash: cd0e34e911b402a4
 ---
 
 # V-CECE: Visual Counterfactual Explanations via Conceptual Edits
@@ -141,8 +141,8 @@ Human evaluation—edit steps required by the model vs. steps deemed reasonable 
 - [\[NeurIPS 2025\] LeapFactual: Reliable Visual Counterfactual Explanation Using Conditional Flow Matching](leapfactual_reliable_visual_counterfactual_explanation_using_conditional_flow_ma.md)
 - [\[NeurIPS 2025\] Counterfactual Identifiability via Dynamic Optimal Transport](counterfactual_identifiability_via_dynamic_optimal_transport.md)
 - [\[NeurIPS 2025\] DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models](dexter_diffusion-guided_explanations_with_textual_reasoning_for_vision_models.md)
+- [\[CVPR 2025\] Pattern Analogies: Learning to Perform Programmatic Image Edits by Analogy](../../CVPR2025/image_generation/pattern_analogies_learning_to_perform_programmatic_image_edits_by_analogy.md)
 - [\[NeurIPS 2025\] GenIR: Generative Visual Feedback for Mental Image Retrieval](genir_generative_visual_feedback_for_mental_image_retrieval.md)
-- [\[ICCV 2025\] Looking in the Mirror: A Faithful Counterfactual Explanation Method for Interpreting Deep Image Classification Models](../../ICCV2025/image_generation/looking_in_the_mirror_a_faithful_counterfactual_explanation_method_for_interpret.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model
 description: >-
-  [ICML 2026][AI Safety][ByteSampler] This paper proposes Anchored Decoding: an inference-time method that anchors a high-performance but potentially risky LM to a safe LM trained only on permissive data. It provides a formal guarantee on the trade-off between copyright duplication risk and generation quality using a tunable information budget.
+  [ICML2026][AI Safety][Copyright Memorization] This paper proposes Anchored Decoding: an inference-time method that anchors a high-performance but potentially risky LM to a safe LM trained only on permissive data. It provides a formal guarantee on the trade-off between copyright duplication risk and generation quality using a tunable information budget.
 tags:
-  - ICML 2026
-  - AI Safety
-  - ByteSampler
+  - "ICML2026"
+  - "AI Safety"
+  - "Copyright Memorization"
+  - "Inference-time Decoding"
+  - "Safe Reference Model"
+  - "KL Constraint"
+  - "ByteSampler"
 date: 2026-05-08
-content_hash: 078a5dbb76e56738
+content_hash: bc87f3683045b94b
 ---
+
 # Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model
 
 **Conference**: ICML2026  
@@ -128,8 +133,21 @@ Ablations on TinyComma 1.8B + Llama 3.1 70B reveal the impact of design choices:
 - **Value**: ⭐⭐⭐⭐⭐ Highly relevant for organizations balancing the utility of frontier models with copyright compliance.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICML 2026\] One Model to Translate Them All: Universal Any-to-Any Translation for Heterogeneous Collaborative Perception](one_model_to_translate_them_all_universal_any-to-any_translation_for_heterogeneo.md)
+- [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
+- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
+- [\[ICML 2025\] Retraining with Predicted Hard Labels Provably Increases Model Accuracy](../../ICML2025/ai_safety/retraining_with_predicted_hard_labels_provably_increases_model_accuracy.md)
+- [\[ICML 2026\] Right Predictions, Misleading Explanations: On the Vulnerability of Vision-Language Model Explanations](right_predictions_misleading_explanations_on_the_vulnerability_of_vision-languag.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

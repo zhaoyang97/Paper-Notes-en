@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Ours proposes Temporal SAEs (T-SAEs), which introduce a temporal contrastive loss to encourage high-level features to maintain consistent activation across adjacent tokens. This achieves disentanglement of semantic and syntactic features under self-supervised training without explicit semantic signals, restoring smooth
+  [ICLR 2026 Oral][Interpretability][Sparse Autoencoders] Ours proposes Temporal SAEs (T-SAEs), which introduce a temporal contrastive loss to encourage high-level features to maintain consistent activation across adjacent tokens. This achieves disentanglement of semantic and syntactic features under self-supervised training without explicit semantic signals, restoring smoother and more coherent semantic concepts without sacrificing reconstruction quality.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026 Oral"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Temporal Consistency"
+  - "Semantic Disentanglement"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: aa0bd3cd84b07fd4
+content_hash: aa7e5f21d3a0e510
 ---
+
 # Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability
 
 **Conference**: ICLR 2026 Oral  
@@ -126,11 +131,11 @@ T-SAE high-level features **Pareto dominate** all baseline SAEs in steering task
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](the_price_of_amortized_inference_in_sparse_autoencoders.md)
 - [\[ICML 2026\] Ensembling Sparse Autoencoders](../../ICML2026/interpretability/ensembling_sparse_autoencoders.md)
 - [\[ICLR 2026\] Towards Understanding the Nature of Attention with Low-Rank Sparse Decomposition](towards_understanding_the_nature_of_attention_with_low-rank_sparse_decomposition.md)
 - [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
 - [\[ICLR 2026\] AbsTopK: Rethinking Sparse Autoencoders For Bidirectional Features](abstopk_rethinking_sparse_autoencoders_for_bidirectional_features.md)
-- [\[ICML 2026\] Sparse Autoencoders are Topic Models](../../ICML2026/interpretability/sparse_autoencoders_are_topic_models.md)
 
 </div>
 

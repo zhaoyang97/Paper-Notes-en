@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories
 description: >-
-  [ACL 2026][AIGC Detection][Paper Note] BiasedTales-ML constructs a corpus of approximately 350,000 LLM-generated children's stories across 8 languages. Through a factorial prompt design and a distributional analysis framework, it reveals that **the distribution of social attributes in narratives varies significantly across different languages**, and English
+  [ACL 2026 Findings][AIGC Detection][Multilingual Bias] BiasedTales-ML constructs a corpus of approximately 350,000 LLM-generated children's stories across 8 languages. Through a factorial prompt design and a distributional analysis framework, it reveals that **the distribution of social attributes in narratives varies significantly across different languages**, and English-centric evaluations fail to reflect bias patterns in multilingual scenarios.
 tags:
-  - ACL 2026
-  - AIGC Detection
+  - "ACL 2026 Findings"
+  - "AIGC Detection"
+  - "Multilingual Bias"
+  - "Narrative Generation"
+  - "Social Attribute Distribution"
+  - "Cross-lingual Consistency"
+  - "Children's Stories"
 date: 2026-05-08
-content_hash: 32f388e6ed106392
+content_hash: 919d527c256aea00
 ---
+
 # BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories
 
 **Conference**: ACL 2026 Findings  
@@ -117,7 +123,7 @@ This is purely an evaluation/analysis work and does not involve model training. 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper presents the first systematic study on benchmark data contamination during the RL post-training stage of LLMs. It proposes Self-Critique, which utilizes the similarity of token-level entropy trajectories between two generations to capture policy path dependency on contaminated samples. Furthermore, it constr
+  [ICLR2026][LLM Evaluation][Data contamination detection] This paper presents the first systematic study on benchmark data contamination during the RL post-training stage of LLMs. It proposes Self-Critique, which utilizes the similarity of token-level entropy trajectories between two generations to capture policy path dependency on contaminated samples. Furthermore, it constructs the RL-MIA benchmark, demonstrating that traditional likelihood-based detectors perform near rando…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Data contamination detection"
+  - "Membership Inference Attack (MIA)"
+  - "RL post-training"
+  - "entropy collapse"
+  - "LLM evaluation trustworthiness"
 date: 2026-05-08
-content_hash: 7386acadd0e81997
+content_hash: 41fbfeecc84682b7
 ---
+
 # Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models
 
 **Conference**: ICLR2026  

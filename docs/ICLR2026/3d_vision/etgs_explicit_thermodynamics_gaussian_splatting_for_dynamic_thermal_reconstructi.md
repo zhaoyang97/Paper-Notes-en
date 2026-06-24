@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ETGS: Explicit Thermodynamics Gaussian Splatting for Dynamic Thermal Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] ETGS embeds an explicit thermodynamic model, where each Gaussian follows a first-order heat transfer ODE, into 3D Gaussian Splatting. By deriving an analytical closed-form solution for the ODE that can be directly evaluated at any time, ETGS reconstructs rapidly changing dynamic thermal scenes with training and renderi
+  [ICLR 2026][3D Vision][Gaussian Splatting] ETGS embeds an explicit thermodynamic model, where each Gaussian follows a first-order heat transfer ODE, into 3D Gaussian Splatting. By deriving an analytical closed-form solution for the ODE that can be directly evaluated at any time, ETGS reconstructs rapidly changing dynamic thermal scenes with training and rendering efficiency close to static 3DGS, achieving an average PSNR ~5 dB higher than previous state-of-the-art methods on…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Thermal Reconstruction"
+  - "Dynamic Scenes"
+  - "Thermodynamic Modeling"
+  - "Closed-form Solution"
 date: 2026-05-08
-content_hash: a507d8a8dc4b4b09
+content_hash: 3f7dd2d3f8a8364f
 ---
+
 # ETGS: Explicit Thermodynamics Gaussian Splatting for Dynamic Thermal Reconstruction
 
 **Conference**: ICLR 2026  
@@ -147,8 +153,8 @@ Effect of number of frequencies $K$ (Average PSNR): $K=8$ is 40.57, $K=24$ is 40
 
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](../../CVPR2026/3d_vision/learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
 - [\[ICLR 2026\] Fracture-GS: Dynamic Fracture Simulation with Physics-Integrated Gaussian Splatting](fracture-gs_dynamic_fracture_simulation_with_physics-integrated_gaussian_splatti.md)
-- [\[ICLR 2026\] Frequency-Aware Dynamic Gaussian Splatting](frequency-aware_dynamic_gaussian_splatting.md)
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](../../CVPR2026/3d_vision/aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[ICLR 2026\] Frequency-Aware Dynamic Gaussian Splatting](frequency-aware_dynamic_gaussian_splatting.md)
 - [\[ICLR 2026\] Mango-GS: Enhancing Spatio-Temporal Consistency in Dynamic Scenes Reconstruction using Multi-Frame Node-Guided 4D Gaussian Splatting](mango-gs_enhancing_spatio-temporal_consistency_in_dynamic_scenes_reconstruction_.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] mmPred: Radar-based Human Motion Prediction in the Dark
 description: >-
-  [AAAI2026][Human Understanding][millimeter-wave radar] This work is the first to introduce millimeter-wave radar into human motion prediction (HMP)…
+  [AAAI2026][Human Understanding][millimeter-wave radar] This work is the first to introduce millimeter-wave radar into human motion prediction (HMP), proposing mmPred — a diffusion-based framework that employs dual-domain historical motion representations (time-domain pose refinement TPR + frequency-domain dominant motion FDM) and a Global Skeleton Transformer (GST) to effectively suppress radar-specific noise and temporal inconsistency, surpassing SOTA methods by 8.6% and 22%…
 tags:
   - "AAAI2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "frequency-domain representation"
   - "dual-domain fusion"
 date: 2026-05-08
-content_hash: 046d7e2eae21230b
+content_hash: 564646abf69ea050
 ---
 
 # mmPred: Radar-based Human Motion Prediction in the Dark
@@ -155,11 +155,11 @@ FDM yields the most significant gains on mm-Fi (where point clouds are sparser).
 
 ## Related Papers
 
+- [\[ICLR 2026\] KinemaDiff: Towards Diffusion for Coherent and Physically Plausible Human Motion Prediction](../../ICLR2026/human_understanding/kinemadiff_towards_diffusion_for_coherent_and_physically_plausible_human_motion_.md)
+- [\[CVPR 2025\] SimMotionEdit: Text-Based Human Motion Editing with Motion Similarity Prediction](../../CVPR2025/human_understanding/simmotionedit_text-based_human_motion_editing_with_motion_similarity_prediction.md)
+- [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](../../CVPR2026/human_understanding/gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
 - [\[AAAI 2026\] Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction](spatiotemporal-untrammelled_mixture_of_experts_for_multi-person_motion_predictio.md)
-- [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
-- [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](../../CVPR2026/human_understanding/molingo_motion-language_alignment_for_text-to-motion_generation.md)
-- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](../../NeurIPS2025/human_understanding/raptr_radar-based_3d_pose_estimation_using_transformer.md)
-- [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
+- [\[CVPR 2026\] Progressive Guessing to Fixed Point: Rethinking Human Motion Prediction with Deep Equilibrium Models](../../CVPR2026/human_understanding/progressive_guessing_to_fixed_point_rethinking_human_motion_prediction_with_deep.md)
 
 </div>
 

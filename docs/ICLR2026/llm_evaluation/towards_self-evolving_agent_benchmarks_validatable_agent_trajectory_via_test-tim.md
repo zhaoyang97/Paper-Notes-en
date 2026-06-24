@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Self-Evolving Agent Benchmarks: Validatable Agent Trajectory via Test-Time Exploration
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] The TRACE framework is proposed to allow agents to "freely explore and self-evolve" seed tasks from existing benchmarks into more difficult new tasks. Execution trajectories generated during evolution are treated as first-class citizens, recorded, and subjected to multi-level validation. This transforms static, manuall
+  [ICLR 2026][LLM Evaluation][Self-evolving benchmark] The TRACE framework is proposed to allow agents to "freely explore and self-evolve" seed tasks from existing benchmarks into more difficult new tasks. Execution trajectories generated during evolution are treated as first-class citizens, recorded, and subjected to multi-level validation. This transforms static, manually annotated evaluation sets into dynamic evaluation systems capable of sustainable self-upgrading.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Self-evolving benchmark"
+  - "agent evaluation"
+  - "execution trajectory validation"
+  - "test-time exploration"
+  - "task evolution"
 date: 2026-05-08
-content_hash: b4411a7c704521ce
+content_hash: b1e8cd3771cd0ee1
 ---
+
 # Towards Self-Evolving Agent Benchmarks: Validatable Agent Trajectory via Test-Time Exploration
 
 **Conference**: ICLR 2026  
@@ -146,10 +152,10 @@ After four rounds of evolution, Qwen3-235B-A22B's mean accuracy dropped by 22.33
 ## Related Papers
 
 - [\[ICLR 2026\] Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation](holistic_agent_leaderboard_the_missing_infrastructure_for_ai_agent_evaluation.md)
+- [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
 - [\[ICLR 2026\] AutoLibra: Agent Metric Induction from Open-Ended Human Feedback](autolibra_agent_metric_induction_from_open-ended_human_feedback.md)
 - [\[ICLR 2026\] MLE-Smith: Scaling MLE Tasks with Automated Multi-agent Pipeline](mle-smith_scaling_mle_tasks_with_automated_multi-agent_pipeline.md)
-- [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
-- [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
+- [\[ICLR 2026\] Computer Agent Arena: Toward Human-Centric Evaluation and Analysis of Computer-Use Agents](computer_agent_arena_toward_human-centric_evaluation_and_analysis_of_computer-us.md)
 
 </div>
 

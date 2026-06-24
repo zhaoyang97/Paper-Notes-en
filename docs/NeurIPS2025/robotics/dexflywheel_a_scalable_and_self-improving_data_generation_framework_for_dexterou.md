@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation
 description: >-
-  [NeurIPS 2025][Robotics][Dexterous Manipulation] This paper proposes DexFlyWheel, a dexterous manipulation data generation framework that starts from a single human demonstration and progressively scales data diversity t…
+  [NeurIPS 2025 Spotlight][Robotics][Dexterous Manipulation] This paper proposes DexFlyWheel, a dexterous manipulation data generation framework that starts from a single human demonstration and progressively scales data diversity through a self-improving loop composed of IL, residual RL, and data augmentation. The framework generates 2,000+ demonstrations across 4 tasks, achieving an average policy success rate of 81.9% and a real-world transfer success rate of 78.3%.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Robotics"
   - "Dexterous Manipulation"
   - "Data Flywheel"
@@ -12,7 +12,7 @@ tags:
   - "Residual Reinforcement Learning"
   - "Sim-to-Real"
 date: 2026-05-08
-content_hash: 658b18e0c7a2223a
+content_hash: 0ddf06ba4bdbd5a0
 ---
 
 # DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation
@@ -192,10 +192,10 @@ Transferred to a dual-arm Real-Man robot via a Digital Twin:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Self-Improving Embodied Foundation Models](self-improving_embodied_foundation_models.md)
+- [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](../../ICLR2026/robotics/self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
+- [\[CVPR 2026\] Scalable Trajectory Generation for Whole-Body Mobile Manipulation](../../CVPR2026/robotics/scalable_trajectory_generation_for_whole-body_mobile_manipulation.md)
 - [\[NeurIPS 2025\] A Snapshot of Influence: A Local Data Attribution Framework for Online Reinforcement Learning](a_snapshot_of_influence_a_local_data_attribution_framework_f.md)
 - [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](../../CVPR2026/robotics/igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
-- [\[NeurIPS 2025\] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing](suturebot_a_precision_framework_benchmark_for_autonomous_end-to-end_suturing.md)
-- [\[NeurIPS 2025\] HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data](himacon_discovering_hierarchical_manipulation_concepts_from_unlabeled_multi-moda.md)
 
 </div>
 

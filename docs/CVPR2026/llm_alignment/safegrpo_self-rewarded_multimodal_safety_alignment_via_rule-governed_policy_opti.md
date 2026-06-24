@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SafeGRPO: Self-Rewarded Multimodal Safety Alignment via Rule-Governed Policy Optimization
 description: >-
-  [CVPR 2026][Alignment & RLHF][GRPO] SafeGRPO integrates "verifiable rule-governed rewards" into GRPO, allowing Multimodal Large Language Models (MLLMs) to learn self-rewarded safety through a "step-guided reasoning process" (analyzing visual, text, and combined risks) without manual preference annotations. This approach enhances jailbreak defense, safety
+  [CVPR 2026][LLM Alignment][Multimodal Safety Alignment] SafeGRPO integrates "verifiable rule-governed rewards" into GRPO, allowing Multimodal Large Language Models (MLLMs) to learn self-rewarded safety through a "step-guided reasoning process" (analyzing visual, text, and combined risks) without manual preference annotations. This approach enhances jailbreak defense, safety awareness, and stability across multiple safety benchmarks while minimizing degradation of general capa…
 tags:
-  - CVPR 2026
-  - Alignment & RLHF
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Multimodal Safety Alignment"
+  - "GRPO"
+  - "Rule-governed Reward"
+  - "Self-reward"
+  - "Compositional Safety Risk"
 date: 2026-05-08
-content_hash: ee3565e960e5ddfd
+content_hash: 00fea2bd9a31d59e
 ---
+
 # SafeGRPO: Self-Rewarded Multimodal Safety Alignment via Rule-Governed Policy Optimization
 
 **Conference**: CVPR 2026  
@@ -136,8 +141,21 @@ While SFT methods cause catastrophic forgetting or format misalignment, SafeGRPO
 - **Value**: ⭐⭐⭐⭐ Provides a reusable paradigm for "safe but not over-sensitive" alignment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](../../ICLR2026/llm_alignment/mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
+- [\[CVPR 2026\] MorphSeek: Fine-grained Latent Representation-Level Policy Optimization for Deformable Image Registration](morphseek_fine-grained_latent_representation-level_policy_optimization_for_defor.md)
+- [\[CVPR 2026\] Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models](uncertainty-aware_exploratory_direct_preference_optimization_for_multimodal_larg.md)
+- [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](../../ICLR2026/llm_alignment/guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Anchoring the Mind of Multimodal Reasoners: Cognitive Bias as a Vector for Jailbreak Attacks](anchoring_the_mind_of_multimodal_reasoners_cognitive_bias_as_a_vector_for_jailbr.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] LiveClin: A Live Clinical Benchmark without Leakage
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] LiveClin introduces a "live benchmark" updated every six months using the latest peer-reviewed case reports. It upgrades single-question Q&A into multimodal sequential exams simulating complete clinical pathways to fundamentally resist data contamination and knowledge obsolescence—the strongest model achieved a Case Ac
+  [ICLR 2026][LLM Evaluation][Data Contamination] LiveClin introduces a "live benchmark" updated every six months using the latest peer-reviewed case reports. It upgrades single-question Q&A into multimodal sequential exams simulating complete clinical pathways to fundamentally resist data contamination and knowledge obsolescence—the strongest model achieved a Case Accuracy of only 35.7%, still trailing behind chief physicians.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Data Contamination"
+  - "Knowledge Obsolescence"
+  - "Medical LLM"
+  - "Clinical Pathway"
+  - "Multimodal Evaluation"
+  - "AI-Human Collaboration"
 date: 2026-05-08
-content_hash: 697836a282bdf847
+content_hash: ea7db3bad1ac1d0a
 ---
+
 # LiveClin: A Live Clinical Benchmark without Leakage
 
 **Conference**: ICLR 2026  
@@ -115,8 +122,8 @@ flowchart LR
 - [\[ICLR 2026\] LiveResearchBench: A Live Benchmark for User-Centric Deep Research in the Wild](liveresearchbench_a_live_benchmark_for_user-centric_deep_research_in_the_wild.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
 - [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](../../ACL2026/llm_evaluation/when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
+- [\[ACL 2026\] Erosion of Correct Beliefs: A Study of LLM Cognitive Resilience under Clinical Stress](../../ACL2026/llm_evaluation/when_correct_beliefs_collapse_epistemic_resilience_of_llms_under_clinical_pressu.md)
 - [\[ICLR 2026\] CMT-Benchmark: A Benchmark for Condensed Matter Theory Built by Expert Researchers](cmt-benchmark_a_benchmark_for_condensed_matter_theory_built_by_expert_researcher.md)
-- [\[ICLR 2026\] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents](deepresearch_bench_a_comprehensive_benchmark_for_deep_research_agents.md)
 
 </div>
 

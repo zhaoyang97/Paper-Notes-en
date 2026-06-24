@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization
 description: >-
-  [AAAI 2026][Reinforcement Learning][multi-objective bandits] This paper presents the first theoretical study of preference-aware customization in multi-objective multi-armed bandits (MO-MAB) with explicit user preference…
+  [AAAI 2026][Reinforcement Learning][multi-objective bandits] This paper presents the first theoretical study of preference-aware customization in multi-objective multi-armed bandits (MO-MAB) with explicit user preferences. It proposes the PAMO-MAB framework and designs PRUCB-UP and PRUCB-HP algorithms for the "unknown preference" and "hidden preference" settings, respectively. Through a two-component architecture combining preference estimation and preference-aware optimizati…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "regret bound"
   - "preference estimation"
 date: 2026-05-08
-content_hash: 7685130fc6abcb8f
+content_hash: c669880c3e8e0c5b
 ---
 
 # Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization
@@ -194,11 +194,11 @@ The regret attributable to preference estimation error constitutes only a consta
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](../../NeurIPS2025/reinforcement_learning/thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
 - [\[ICML 2026\] Adaptive Bandit Algorithms for Contextual Matching Markets](../../ICML2026/reinforcement_learning/adaptive_bandit_algorithms_for_contextual_matching_markets.md)
+- [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](../../NeurIPS2025/reinforcement_learning/thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
 - [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
 - [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](object-centric_world_models_for_causality-aware_reinforcement_learning.md)
-- [\[AAAI 2026\] DRMD: Deep Reinforcement Learning for Malware Detection under Concept Drift](drmd_deep_reinforcement_learning_for_malware_detection_under_concept_drift.md)
+- [\[ICLR 2026\] Learning What Matters Now: Dynamic Preference Inference under Contextual Shifts](../../ICLR2026/reinforcement_learning/learning_what_matters_now_dynamic_preference_inference_under_contextual_shifts.md)
 
 </div>
 

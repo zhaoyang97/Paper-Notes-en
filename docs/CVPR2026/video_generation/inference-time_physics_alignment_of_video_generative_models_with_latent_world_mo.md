@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Inference-time Physics Alignment of Video Generative Models with Latent World Models
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] This work utilizes the "surprise" score from a pre-trained latent world model (VJEPA-2) as a reward to search and guide the denoising trajectories of video diffusion models during inference. This approach aligns generated videos with physical laws, achieving a first-place score of 62.64% on the PhysicsIQ challenge, sur
+  [CVPR 2026][Video Generation][Physical Plausibility] This work utilizes the "surprise" score from a pre-trained latent world model (VJEPA-2) as a reward to search and guide the denoising trajectories of video diffusion models during inference. This approach aligns generated videos with physical laws, achieving a first-place score of 62.64% on the PhysicsIQ challenge, surpassing the Prev. SOTA by 7.42%.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Physical Plausibility"
+  - "Latent World Models"
+  - "Inference-time Alignment"
+  - "Reward-guided Sampling"
 date: 2026-05-08
-content_hash: 35389eb79d072adf
+content_hash: c18cbafd5828b93a
 ---
+
 # Inference-time Physics Alignment of Video Generative Models with Latent World Models
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ Comparison of reward signals under BoN search (Backbone: vLDM/MAGI-1):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Latent-Compressed Variational Autoencoder for Video Diffusion Models](latent-compressed_variational_autoencoder_for_video_diffusion_models.md)
+- [\[CVPR 2026\] LaVR: Scene Latent Conditioned Generative Video Trajectory Re-Rendering using Large 4D Reconstruction Models](lavr_scene_latent_conditioned_generative_video_trajectory_re-rendering_using_lar.md)
 - [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video](physvid_physics_aware_local_conditioning_for_generative_video_models.md)
 - [\[CVPR 2026\] ProPhy: Progressive Physical Alignment for Dynamic World Simulation](prophy_progressive_physical_alignment_for_dynamic_world_simulation.md)
 - [\[CVPR 2026\] Ref4D-VideoBench: Four-Dimensional Reference-Based Evaluation of Text-to-Video Generative Models](ref4d-videobench_four-dimensional_reference-based_evaluation_of_text-to-video_ge.md)
-- [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](../../ICLR2026/video_generation/drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
+- [\[CVPR 2026\] DriveLaW: Unifying Planning and Video Generation in a Latent Driving World](drivelaw_unifying_planning_and_video_generation_in_a_latent_driving_world.md)
 
 </div>
 

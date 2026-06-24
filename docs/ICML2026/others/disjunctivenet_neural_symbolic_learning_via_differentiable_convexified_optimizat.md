@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] DisjunctiveNet: Neural Symbolic Learning via Differentiable Convexified Optimization Layers
 description: >-
-  [ICML 2026][Others][Paper Note] The authors formulate "input-dependent if-then logical rules" as disjunctive constraints representing the union of polyhedra. By utilizing a sequence of basic steps to convexify Conjunctive Normal Form (CNF) into the convex hull of Disjunctive Normal Form (DNF), they derive a differentiable LP projection layer. Neural
+  [ICML2026][Disjunctive Constraints] The authors formulate "input-dependent if-then logical rules" as disjunctive constraints representing the union of polyhedra. By utilizing a sequence of basic steps to convexify Conjunctive Normal Form (CNF) into the convex hull of Disjunctive Normal Form (DNF), they derive a differentiable LP projection layer. Neural network outputs passing through this layer precisely satisfy the original MILP-level constraints during both training and in…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Disjunctive Constraints"
+  - "Convex Hull Relaxation"
+  - "Differentiable LP Layers"
+  - "Hard Constraint Satisfaction"
+  - "Input-dependent Rules"
 date: 2026-05-08
-content_hash: 1e21e0b05c9b5060
+content_hash: 79efc19f9d3f5e49
 ---
+
 # DisjunctiveNet: Neural Symbolic Learning via Differentiable Convexified Optimization Layers
 
 **Conference**: ICML2026  

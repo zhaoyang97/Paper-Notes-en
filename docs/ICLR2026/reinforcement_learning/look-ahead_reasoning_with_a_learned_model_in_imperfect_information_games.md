@@ -2,15 +2,22 @@
 title: >-
   [Paper Note] Look-ahead Reasoning with a Learned Model in Imperfect Information Games
 description: >-
-  [ICLR 2026][Reinforcement Learning][MuZero] This paper proposes LAMIR, which learns an **imperfect-information game model with abstraction** from interaction trajectories without explicit game rules. This allows the MuZero-style "learn a model then perform look-ahead reasoning" paradigm to operate in large-scale imperfect-information games in a theoretically sou
+  [ICLR 2026][Reinforcement Learning][imperfect-information games] This paper proposes LAMIR, which learns an **imperfect-information game model with abstraction** from interaction trajectories without explicit game rules. This allows the MuZero-style "learn a model then perform look-ahead reasoning" paradigm to operate in large-scale imperfect-information games in a theoretically sound manner for the first time.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - MuZero
-  - continual resolving
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "imperfect-information games"
+  - "test-time reasoning"
+  - "learned environment models"
+  - "MuZero"
+  - "abstraction"
+  - "continual resolving"
+  - "CFR"
+  - "Nash equilibrium"
 date: 2026-05-08
-content_hash: 4ccb90f5020de01b
+content_hash: b7f23fac920d785f
 ---
+
 # Look-ahead Reasoning with a Learned Model in Imperfect Information Games
 
 **Conference**: ICLR 2026  
@@ -115,10 +122,10 @@ In small games where exploitability can be precisely calculated, trained with 10
 ## Related Papers
 
 - [\[ICLR 2026\] Reevaluating Policy Gradient Methods for Imperfect-Information Games](reevaluating_policy_gradient_methods_for_imperfect-information_games.md)
-- [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
+- [\[ICLR 2026\] General search techniques without common knowledge for imperfect-information games, and application to superhuman Fog of War chess](general_search_techniques_without_common_knowledge_for_imperfect-information_gam.md)
 - [\[ICLR 2026\] Solving Football by Exploiting Equilibrium Structure of 2p0s Differential Games with One-Sided Information](solving_football_by_exploiting_equilibrium_structure_of_2p0s_differential_games_.md)
-- [\[ICLR 2026\] Structured In-context Environment Scaling for Large Language Model Reasoning](structured_in-context_environment_scaling_for_large_language_model_reasoning.md)
-- [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
+- [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
+- [\[ICLR 2026\] On the $O(1/T)$ Convergence of Alternating Gradient Descent-Ascent in Bilinear Games](on_the_o1t_convergence_of_alternating_gradient_descent-ascent_in_bilinear_games.md)
 
 </div>
 

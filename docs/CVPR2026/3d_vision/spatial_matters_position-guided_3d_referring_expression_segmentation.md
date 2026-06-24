@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spatial Matters: Position-Guided 3D Referring Expression Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Addressing the limitation where 3D referring expression segmentation (3D-RES) focuses solely on semantics and ignores spatial relationships—leading to failures in distinguishing "multiple similar objects"—Position3D explicitly injects relative spatial positions into two stages: **space-aware query generation** (initial
+  [CVPR 2026][3D Vision][3D Referring Expression Segmentation] Addressing the limitation where 3D referring expression segmentation (3D-RES) focuses solely on semantics and ignores spatial relationships—leading to failures in distinguishing "multiple similar objects"—Position3D explicitly injects relative spatial positions into two stages: **space-aware query generation** (initializing queries with geometric awareness) and a **position-guided deformable attention decoder** (pro…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Referring Expression Segmentation"
+  - "Spatial Relationship Modeling"
+  - "Deformable Attention"
+  - "Point Clouds"
+  - "Query Generation"
 date: 2026-05-08
-content_hash: 34583603e8f370cd
+content_hash: 9bdef93d92717e54
 ---
+
 # Spatial Matters: Position-Guided 3D Referring Expression Segmentation
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,10 @@ Removing spatial relationships $Rel(\cdot)$ from query generation dropped mIoU b
 ## Related Papers
 
 - [\[CVPR 2026\] SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation](saqn_semantic-based_adaptive_query_network_for_3d_referring_expression_segmentat.md)
-- [\[CVPR 2026\] Spatial-SAM: Spatially Consistent 3D Electron Microscopy Segmentation with SDF Memory and Semi-Supervised Learning](spatial-sam_spatially_consistent_3d_electron_microscopy_segmentation_with_sdf_me.md)
-- [\[ICCV 2025\] Latent Expression Generation for Referring Image Segmentation and Grounding](../../ICCV2025/segmentation/latent_expression_generation_for_referring_image_segmentation_and_grounding.md)
-- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
-- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
+- [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
+- [\[CVPR 2026\] CoSMo3D: Open-World Promptable 3D Semantic Segmentation through LLM-Guided Canonical Spatial Modeling](cosmo3d_open-world_promptable_3d_semantic_segmentation_through_llm-guided_canoni.md)
+- [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
+- [\[CVPR 2026\] SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors](spe-mvs_spatial_position_encoding_enhanced_multi-view_stereo_with_monocular_dept.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Laws and Symmetry, Evidence from Neural Force Fields
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper conducts systematic scaling law experiments on geometric tasks for "Neural Network Interatomic Potentials (NNIP)". It finds that power-law exponents are **architecture-dependent**: architectures with stronger rotation/permutation symmetry and higher tensor orders exhibit larger scaling exponents with respect
+  [ICLR 2026][Physics & Scientific Computing][Scaling Laws] This paper conducts systematic scaling law experiments on geometric tasks for "Neural Network Interatomic Potentials (NNIP)". It finds that power-law exponents are **architecture-dependent**: architectures with stronger rotation/permutation symmetry and higher tensor orders exhibit larger scaling exponents with respect to data, parameters, and compute. Consequently, performance gaps **widen** rather than narrow at scal…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Scaling Laws"
+  - "Equivariance"
+  - "Symmetry"
+  - "Interatomic Potentials"
+  - "Compute-optimal"
 date: 2026-05-08
-content_hash: ae67bc2b9b36812e
+content_hash: 52e166f3d382648f
 ---
+
 # Scaling Laws and Symmetry, Evidence from Neural Force Fields
 
 **Conference**: ICLR 2026  

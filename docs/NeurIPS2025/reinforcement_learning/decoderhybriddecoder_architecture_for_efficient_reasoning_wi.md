@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Hybrid Architecture] SambaY proposes the Gated Memory Unit (GMU) for sharing SSM token-mixing representations across layers…
+  [NeurIPS 2025][Reinforcement Learning][Hybrid Architecture] SambaY proposes the Gated Memory Unit (GMU) for sharing SSM token-mixing representations across layers, replacing half of the cross-attention layers in YOCO's cross-decoder with lightweight GMUs. This maintains linear prefill complexity and long-context retrieval capability while substantially improving decoding efficiency. The resulting product, Phi4-mini-Flash-Reasoning (3.8B), outperforms Phi4-mini-Reasoning on re…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Long Sequence Generation"
   - "KV Cache"
 date: 2026-05-08
-content_hash: 2609485741cff204
+content_hash: 1ab18142b59b6689
 ---
 
 # Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation
@@ -137,10 +137,10 @@ Standard language model cross-entropy loss. Phi4-mini-Flash is pretrained on 5T 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
+- [\[ICLR 2026\] The Markovian Thinker: Architecture-Agnostic Linear Scaling of Reasoning](../../ICLR2026/reinforcement_learning/the_markovian_thinker_architecture-agnostic_linear_scaling_of_reasoning.md)
+- [\[NeurIPS 2025\] RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning](roirl_efficient_self-supervised_reasoning_with_offline_iterative_reinforcement_l.md)
 - [\[NeurIPS 2025\] Solving Neural Min-Max Games: The Role of Architecture, Initialization & Dynamics](solving_neural_min-max_games_the_role_of_architecture_initialization_dynamics.md)
 - [\[NeurIPS 2025\] TensorRL-QAS: Reinforcement Learning with Tensor Networks for Improved Quantum Architecture Search](tensorrl-qas_reinforcement_learning_with_tensor_networks_for_improved_quantum_ar.md)
-- [\[NeurIPS 2025\] RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning](roirl_efficient_self-supervised_reasoning_with_offline_iterative_reinforcement_l.md)
-- [\[ICLR 2026\] LongWriter-Zero: Mastering Ultra-Long Text Generation via Reinforcement Learning](../../ICLR2026/reinforcement_learning/longwriter-zero_mastering_ultra-long_text_generation_via_reinforcement_learning.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CrossPL: Systematic Evaluation of Large Language Models for Cross Programming Language Interoperating Code Generation
 description: >-
-  [ICLR 2026][Code Intelligence][IPC] CrossPL is the first benchmark to systematically evaluate the "cross-programming-language (CPL) interoperating code" generation capabilities of LLMs. By using 156 finite state machines (FSM) to mine 1,982 IPC tasks from 19,000 multi-language GitHub repositories and constructing 522 Python–C FFI tasks using the GSL libr
+  [ICLR 2026][Code Intelligence][Cross-language interoperability] CrossPL is the first benchmark to systematically evaluate the "cross-programming-language (CPL) interoperating code" generation capabilities of LLMs. By using 156 finite state machines (FSM) to mine 1,982 IPC tasks from 19,000 multi-language GitHub repositories and constructing 522 Python–C FFI tasks using the GSL library, evaluations of 20 mainstream models reveal a critical weakness: models achieving 90%+ Pass@…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - IPC
-  - FFI
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Cross-language interoperability"
+  - "IPC"
+  - "FFI"
+  - "Finite State Machine"
+  - "Code generation evaluation"
 date: 2026-05-08
-content_hash: b03bdc760a6f8201
+content_hash: 5ad59abd9fef0a70
 ---
+
 # CrossPL: Systematic Evaluation of Large Language Models for Cross Programming Language Interoperating Code Generation
 
 **Conference**: ICLR 2026  
@@ -127,7 +131,6 @@ The authors replaced roles in the pipeline with Qwen3-4B to quantify the contrib
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Penalization: Diffusion-based Out-of-Distribution Detection and Selective Regularization in Offline Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Diffusion Model] DOSER utilizes two diffusion models to characterize the behavior policy and state distribution, respectively, using single-step denoising reconstruction error as a reliable OOD (Out-of-Distribution) metric. By leveraging a dynamics model, OOD actions are further categorized into "beneficial" and "harmful" types; the fo
+  [ICLR2026][Reinforcement Learning][Offline Reinforcement Learning] DOSER utilizes two diffusion models to characterize the behavior policy and state distribution, respectively, using single-step denoising reconstruction error as a reliable OOD (Out-of-Distribution) metric. By leveraging a dynamics model, OOD actions are further categorized into "beneficial" and "harmful" types; the former receives a reward bonus while the latter is penalized. This approach suppresses value ov…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Diffusion Model
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Out-of-Distribution Detection"
+  - "Diffusion Models"
+  - "Selective Regularization"
+  - "Value Overestimation"
 date: 2026-05-08
-content_hash: 3a4af4be984482b5
+content_hash: 1a476c8d74f52a7d
 ---
+
 # Beyond Penalization: Diffusion-based Out-of-Distribution Detection and Selective Regularization in Offline Reinforcement Learning
 
 **Conference**: ICLR2026  
@@ -133,10 +138,10 @@ DOSER's advantage is particularly prominent in "medium" and "medium-replay" sett
 ## Related Papers
 
 - [\[ICLR 2026\] ADM-v2: Pursuing Full-Horizon Roll-out in Dynamics Models for Offline Policy Learning and Evaluation](adm-v2_pursuing_full-horizon_roll-out_in_dynamics_models_for_offline_policy_lear.md)
-- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
 - [\[ICLR 2026\] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL](deas_detached_value_learning_with_action_sequence_for_scalable_offline_rl.md)
-- [\[ICLR 2026\] Accelerating Diffusion Planners in Offline RL via Reward-Aware Consistency Trajectory Distillation](accelerating_diffusion_planners_in_offline_rl_via_reward-aware_consistency_traje.md)
 - [\[NeurIPS 2025\] Structural Information-based Hierarchical Diffusion for Offline Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/structural_information-based_hierarchical_diffusion_for_offline_reinforcement_le.md)
+- [\[ICML 2025\] Learning to Trust Bellman Updates: Selective State-Adaptive Regularization for Offline RL](../../ICML2025/reinforcement_learning/learning_to_trust_bellman_updates_selective_state-adaptive_regularization_for_of.md)
+- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
 
 </div>
 

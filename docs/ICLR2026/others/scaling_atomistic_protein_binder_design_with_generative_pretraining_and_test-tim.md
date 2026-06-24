@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute
 description: >-
-  [ICLR 2026][Others][Flow Matching] This paper proposes **Proteína-Complexa (Complexa)**, unifying the long-separated "generative modeling" and "hallucination sequence optimization" paradigms in protein binder design into a single framework. First, a large-scale synthetic dataset, **Teddymer**, derived from domain interactions in AFDB, is used to pretrai
+  [ICLR 2026][protein binder design] This paper proposes **Proteína-Complexa (Complexa)**, unifying the long-separated "generative modeling" and "hallucination sequence optimization" paradigms in protein binder design into a single framework. First, a large-scale synthetic dataset, **Teddymer**, derived from domain interactions in AFDB, is used to pretrain an all-atom flow-matching generative base model. During inference, test-time scaling algorithms (Best-of-N, beam search…
 tags:
-  - ICLR 2026
-  - Others
-  - Flow Matching
+  - "ICLR 2026"
+  - "protein binder design"
+  - "flow matching"
+  - "test-time scaling"
+  - "all-atom generation"
+  - "synthetic datasets"
 date: 2026-05-08
-content_hash: a7520971422bfca9
+content_hash: 547c90d20a971ae1
 ---
+
 # Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute
 
 **Conference**: ICLR 2026  
@@ -129,6 +133,7 @@ Complexa significantly outperforms baselines even without sequence redesign (Sel
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

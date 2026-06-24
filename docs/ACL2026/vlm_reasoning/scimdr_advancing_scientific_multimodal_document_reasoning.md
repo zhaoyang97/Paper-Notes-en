@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SciMDR: Advancing Scientific Multimodal Document Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] SciMDR proposes a synthesize-and-reground data construction framework that first synthesizes faithful QA and reasoning chains based on atomic claims, then re-embeds them into full scientific papers for model training. This enables a 7B VLM to approach GPT-5 series performance in scientific multimodal document reasoning
+  [ACL2026][VLM Reasoning][Scientific document reasoning] SciMDR proposes a synthesize-and-reground data construction framework that first synthesizes faithful QA and reasoning chains based on atomic claims, then re-embeds them into full scientific papers for model training. This enables a 7B VLM to approach GPT-5 series performance in scientific multimodal document reasoning.
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL2026"
+  - "VLM Reasoning"
+  - "Scientific document reasoning"
+  - "multimodal QA"
+  - "data synthesis"
+  - "long document understanding"
+  - "evidence localization"
 date: 2026-05-08
-content_hash: 068abc3f3e67e8e6
+content_hash: 395f8cd509548aa5
 ---
+
 # SciMDR: Advancing Scientific Multimodal Document Reasoning
 
 **Conference**: ACL2026  
@@ -144,8 +150,8 @@ The key analysis uses LLaVA-1.5-7B as a data quality probe. The authors compare 
 - [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
 - [\[ACL 2026\] ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction](shredbench_evaluating_the_semantic_reasoning_capabilities_of_multimodal_llms_in_.md)
 - [\[ACL 2026\] Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning](decoding_scientific_experimental_images_the_spur_benchmark_for_perception_unders.md)
-- [\[ACL 2025\] LongDocURL: a Comprehensive Multimodal Long Document Benchmark Integrating Understanding, Reasoning, and Locating](../../ACL2025/vlm_reasoning/longdocurl_multimodal_long_doc.md)
-- [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/vlm_reasoning/docseeker_long_document_understanding.md)
+- [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](../../ICLR2026/vlm_reasoning/perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
+- [\[CVPR 2026\] Chain-of-Frames: Advancing Video Understanding in Multimodal LLMs via Frame-Aware Reasoning](../../CVPR2026/vlm_reasoning/chain-of-frames_advancing_video_understanding_in_multimodal_llms_via_frame-aware.md)
 
 </div>
 

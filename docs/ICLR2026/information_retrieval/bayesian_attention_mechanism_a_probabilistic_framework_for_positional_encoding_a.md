@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bayesian Attention Mechanism: A Probabilistic Framework for Positional Encoding and Context Length Extrapolation
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] The paper reformulates positional encoding as a prior distribution within a Bayesian attention mechanism, unifying NoPE (uniform prior) and ALiBi (Laplace prior). It proposes a Generalized Gaussian Prior (GGD-BAM) that achieves perfect passkey retrieval at 500x training length with an addition of only 384 parameters.
+  [ICLR 2026][Information Retrieval & RAG][Bayesian Attention] The paper reformulates positional encoding as a prior distribution within a Bayesian attention mechanism, unifying NoPE (uniform prior) and ALiBi (Laplace prior). It proposes a Generalized Gaussian Prior (GGD-BAM) that achieves perfect passkey retrieval at 500x training length with an addition of only 384 parameters.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Bayesian Attention"
+  - "Positional Encoding"
+  - "Context Extrapolation"
+  - "Generalized Gaussian Distribution"
+  - "Long Context"
 date: 2026-05-08
-content_hash: 9c0e20db3d545697
+content_hash: dd6cbe369e7174e2
 ---
+
 # Bayesian Attention Mechanism: A Probabilistic Framework for Positional Encoding and Context Length Extrapolation
 
 **Conference**: ICLR 2026  
@@ -130,8 +136,8 @@ The model is trained using standard language modeling cross-entropy loss without
 - [\[ICML 2026\] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding](../../ICML2026/information_retrieval/lazyattention_efficient_retrieval-augmented_generation_with_deferred_positional_.md)
 - [\[ICML 2026\] LARE: Low-Attention Region Encoding for Text–Image Retrieval](../../ICML2026/information_retrieval/lare_low-attention_region_encoding_for_text-image_retrieval.md)
 - [\[ICLR 2026\] Hierarchical Encoding Tree with Modality Mixup for Cross-modal Hashing](hierarchical_encoding_tree_with_modality_mixup_for_cross-modal_hashing.md)
-- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 - [\[ICLR 2026\] Embedding-Based Context-Aware Reranker](embedding-based_context-aware_reranker.md)
+- [\[ICLR 2026\] ZeroGR: A Generalizable and Scalable Framework for Zero-Shot Generative Retrieval](zerogr_a_generalizable_and_scalable_framework_for_zero-shot_generative_retrieval.md)
 
 </div>
 

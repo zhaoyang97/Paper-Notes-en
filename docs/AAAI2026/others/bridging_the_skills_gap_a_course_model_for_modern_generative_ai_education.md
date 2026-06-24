@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging the Skills Gap: A Course Model for Modern Generative AI Education
 description: >-
-  [AAAI 2026 (EAAI Symposium)][Generative AI Education] This paper proposes a generative AI application course model for undergraduate and graduate computer science students. A mixed-methods survey demonstrates that the co…
+  [AAAI 2026 (EAAI Symposium)][Generative AI Education] This paper proposes a generative AI application course model for undergraduate and graduate computer science students. A mixed-methods survey demonstrates that the course is effective in bridging the generative AI skills gap between industry and academia, with students broadly rating it as valuable and impactful.
 tags:
   - "AAAI 2026 (EAAI Symposium)"
   - "Generative AI Education"
@@ -11,7 +11,7 @@ tags:
   - "Computer Science Education"
   - "Software Development"
 date: 2026-05-08
-content_hash: 5dd3fe8c80496d18
+content_hash: 461854b9c473716d
 ---
 
 # Bridging the Skills Gap: A Course Model for Modern Generative AI Education
@@ -133,8 +133,8 @@ Not applicable (this is an educational research paper, not a technical methods p
 - [\[AAAI 2026\] STEM Faculty Perspectives on Generative AI in Higher Education](stem_faculty_perspectives_on_generative_ai_in_higher_education.md)
 - [\[AAAI 2026\] Judging by the Rules: Compliance-Aligned Framework for Modern Slavery Statement Monitoring](judging_by_the_rules_compliance-aligned_framework_for_modern_slavery_statement_m.md)
 - [\[ICML 2026\] Comprehensive AI Governance Requires Addressing Non-Model Gains](../../ICML2026/others/comprehensive_ai_governance_requires_addressing_non-model_gains.md)
+- [\[ICLR 2026\] What happens when generative AI models train recursively on each others' outputs?](../../ICLR2026/others/what_happens_when_generative_ai_models_train_recursively_on_each_others_outputs.md)
 - [\[ICML 2026\] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems](../../ICML2026/others/beyond_model_readiness_institutional_readiness_for_ai_deployment_in_public_syste.md)
-- [\[AAAI 2026\] Model Change for Description Logic Concepts](model_change_for_description_logic_concepts.md)
 
 </div>
 

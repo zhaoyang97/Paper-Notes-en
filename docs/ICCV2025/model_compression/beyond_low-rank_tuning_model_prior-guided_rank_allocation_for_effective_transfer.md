@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Low-Rank Tuning: Model Prior-Guided Rank Allocation for Effective Transfer in Low-Data and Large-Gap Regimes
 description: >-
-  [ICCV 2025][Model Compression][LoRA] This paper proposes SR-LoRA (Stable Rank-Guided LoRA), which leverages the stable rank of pretrained weight matrices as a natural prior to assign optimal per-layer ranks for LoRA modu…
+  [ICCV 2025][Model Compression][LoRA] This paper proposes SR-LoRA (Stable Rank-Guided LoRA), which leverages the stable rank of pretrained weight matrices as a natural prior to assign optimal per-layer ranks for LoRA modules. Without any search procedure, SR-LoRA achieves flexible layer-wise rank allocation and significantly outperforms fixed low-rank LoRA and other adaptive-rank methods in large-domain-gap and few-shot transfer scenarios such as medical imaging.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Rank Allocation"
   - "Few-Shot Transfer Learning"
 date: 2026-05-08
-content_hash: 5af90e316ebd1715
+content_hash: ef62dd1c65cc5d70
 ---
 
 # Beyond Low-Rank Tuning: Model Prior-Guided Rank Allocation for Effective Transfer in Low-Data and Large-Gap Regimes
@@ -158,8 +158,8 @@ The SR-LoRA pipeline is straightforward: (1) compute the stable rank of the weig
 - [\[ICCV 2025\] PLAN: Proactive Low-Rank Allocation for Continual Learning](plan_proactive_low-rank_allocation_for_continual_learning.md)
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](../../NeurIPS2025/model_compression/data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
 - [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](../../NeurIPS2025/model_compression/reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
+- [\[ICLR 2026\] E²LoRA: Efficient and Effective Low-Rank Adaptation with Entropy-Guided Adaptive Sharing](../../ICLR2026/model_compression/e²lora_efficient_and_effective_low-rank_adaptation_with_entropy-guided_adaptive_.md)
 - [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](../../NeurIPS2025/model_compression/accurate_and_efficient_low-rank_model_merging_in_core_space.md)
-- [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](../../NeurIPS2025/model_compression/gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
 
 </div>
 

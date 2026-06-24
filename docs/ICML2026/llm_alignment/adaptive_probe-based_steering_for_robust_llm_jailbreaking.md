@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Adaptive Probe-based Steering for Robust LLM Jailbreaking
 description: >-
-  [ICML 2026][Alignment & RLHF][probe steering] This paper transforms probe-based contrastive steering into a more powerful white-box red-teaming tool. By using adaptive retraining to correct biased probes and automatically setting steering intensity via activation statistics, it significantly exposes the jailbreak vulnerabilities of fortified LLMs.
+  [ICML 2026][LLM Alignment][LLM Jailbreaking] This paper transforms probe-based contrastive steering into a more powerful white-box red-teaming tool. By using adaptive retraining to correct biased probes and automatically setting steering intensity via activation statistics, it significantly exposes the jailbreak vulnerabilities of fortified LLMs.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - probe steering
-  - adaptive retraining
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "LLM Jailbreaking"
+  - "representation intervention"
+  - "probe steering"
+  - "adaptive retraining"
+  - "robustness evaluation"
 date: 2026-05-08
-content_hash: c2a0597a90b8ad1f
+content_hash: c5572d219828d0f6
 ---
+
 # Adaptive Probe-based Steering for Robust LLM Jailbreaking
 
 **Conference**: ICML 2026  
@@ -126,10 +130,17 @@ The paper ablates intensity setting, layer selection, token position, and model 
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICML 2026\] Steering Beyond the Support: Adversarial Training on Unsupervised Jailbroken Activation Simulation](steering_beyond_the_support_adversarial_training_on_unsupervised_jailbroken_acti.md)
+- [\[ACL 2025\] Don't Say No: Jailbreaking LLM by Suppressing Refusal](../../ACL2025/llm_alignment/dont_say_no_jailbreaking_llm_by_suppressing_refusal.md)
+- [\[ICLR 2026\] RE-PO: Robust Enhanced Policy Optimization as a General Framework for LLM Alignment](../../ICLR2026/llm_alignment/re-po_robust_enhanced_policy_optimization_as_a_general_framework_for_llm_alignme.md)
+- [\[ICLR 2026\] AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint](../../ICLR2026/llm_alignment/alphasteer_learning_refusal_steering_with_principled_null-space_constraint.md)
+- [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](../../ICLR2026/llm_alignment/robust_reward_modeling_via_causal_rubrics.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Steering Beyond the Support: Adversarial Training on Unsupervised Jailbroken Activation Simulation](steering_beyond_the_support_adversarial_training_on_unsupervised_jailbroken_acti.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes DeCoVec (Decoding Space based Task Vector), a training-free and non-invasive framework that constructs task vectors in the decoding space by calculating the differences in output logit distributions between few-shot and zero-shot prompts. These vectors are injected into the decoding process to guide
+  [ACL 2026 Findings][LLM (Other)][Task Vector] This paper proposes DeCoVec (Decoding Space based Task Vector), a training-free and non-invasive framework that constructs task vectors in the decoding space by calculating the differences in output logit distributions between few-shot and zero-shot prompts. These vectors are injected into the decoding process to guide generation, achieving an average accuracy improvement of up to 5.50 over standard few-shot baselines on TruthfulQ…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Task Vector"
+  - "Decoding Space"
+  - "In-Context Learning"
+  - "Training-free LLM Steering"
+  - "logit manipulation"
 date: 2026-05-08
-content_hash: 2226c517e05db12b
+content_hash: c488ba4e8720eb93
 ---
+
 # DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning
 
 **Conference**: ACL 2026 Findings  
@@ -130,15 +136,15 @@ Consider a math multiple-choice question from AQUA-RAT. At decoding step $t$, th
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
-- [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 - [\[ACL 2025\] Enhancing Input-Label Mapping in In-Context Learning with Contrastive Decoding](../../ACL2025/llm_nlp/enhancing_input-label_mapping_in_in-context_learning_with_contrastive_decoding.md)
 - [\[NeurIPS 2025\] Unifying Attention Heads and Task Vectors via Hidden State Geometry in In-Context Learning](../../NeurIPS2025/llm_nlp/unifying_attention_heads_and_task_vectors_via_hidden_state_geometry_in_in-contex.md)
-- [\[ACL 2026\] MoRI: Learning Motivation-Grounded Reasoning for Scientific Ideation in Large Language Models](mori_learning_motivation-grounded_reasoning_for_scientific_ideation_in_large_lan.md)
+- [\[ACL 2026\] OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning](toward_robust_in-context_learning_leveraging_out-of-distribution_proxies_for_tar.md)
+- [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 
 </div>
 

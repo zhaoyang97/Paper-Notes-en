@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Interp3D: Correspondence-aware Interpolation for Generative Textured 3D Morphing
 description: >-
-  [ICLR 2026][3D Vision][textured 3D morphing] Interp3D proposes a training-free framework that leverages the 3D generative prior of TRELLIS to inject a progressive three-stage correspondence — "Semantic Alignment → Structural Alignment → Texture Alignment" — into the diffusion generation process, thereby generating structurally coherent, visually plausible, and sm
+  [ICLR 2026][3D Vision][textured 3D morphing] Interp3D proposes a training-free framework that leverages the 3D generative prior of TRELLIS to inject a progressive three-stage correspondence — "Semantic Alignment → Structural Alignment → Texture Alignment" — into the diffusion generation process, thereby generating structurally coherent, visually plausible, and smoothly transitioning morphing sequences between two textured 3D assets.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - textured 3D morphing
-  - training-free
-  - correspondence-aware interpolation
-  - TRELLIS
-  - SLAT
-  - generative prior
+  - "ICLR 2026"
+  - "3D Vision"
+  - "textured 3D morphing"
+  - "training-free"
+  - "correspondence-aware interpolation"
+  - "TRELLIS"
+  - "SLAT"
+  - "generative prior"
 date: 2026-05-08
-content_hash: 847e32fa46a643d4
+content_hash: 7aaabd0bceb740e1
 ---
+
 # Interp3D: Correspondence-aware Interpolation for Generative Textured 3D Morphing
 
 **Conference**: ICLR 2026  
@@ -122,15 +123,14 @@ Stepwise addition of three-stage components (Average):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICCV 2025\] Textured 3D Regenerative Morphing with 3D Diffusion Prior](../../ICCV2025/3d_vision/textured_3d_regenerative_morphing_with_3d_diffusion_prior.md)
 - [\[ICLR 2026\] Parameterization-Based Dataset Distillation of 3D Point Clouds through Learnable Shape Morphing](parameterization-based_dataset_distillation_of_3d_point_clouds_through_learnable.md)
+- [\[ICLR 2026\] G4Splat: Geometry-Guided Gaussian Splatting with Generative Prior](g4splat_geometry-guided_gaussian_splatting_with_generative_prior.md)
 - [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
 - [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](holopart_generative_3d_part_amodal_segmentation.md)
-- [\[ICLR 2026\] Generative Human Geometry Distribution](generative_human_geometry_distribution.md)
 
 </div>
 

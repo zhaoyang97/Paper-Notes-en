@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Modality Alignment across Trees on Heterogeneous Hyperbolic Manifolds
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Addressing the asymmetric alignment problem where "text possesses hierarchical features while images have only one," this paper constructs **hierarchical feature trees** for both modalities. These trees are embedded into **hyperbolic manifolds with different curvatures**, and alignment is achieved via an **intermediate
+  [ICLR 2026][Multimodal VLM][Modality Alignment] Addressing the asymmetric alignment problem where "text possesses hierarchical features while images have only one," this paper constructs **hierarchical feature trees** for both modalities. These trees are embedded into **hyperbolic manifolds with different curvatures**, and alignment is achieved via an **intermediate manifold** derived from KL divergence. This approach significantly outperforms strong baselines in taxonomic op…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Modality Alignment"
+  - "Hierarchical Feature Trees"
+  - "Hyperbolic Manifolds"
+  - "Heterogeneous Curvatures"
+  - "Intermediate Manifold"
+  - "Taxonomic Open-set Recognition"
 date: 2026-05-08
-content_hash: f5884d38d7ad6738
+content_hash: 929dc5f24755679c
 ---
+
 # Modality Alignment across Trees on Heterogeneous Hyperbolic Manifolds
 
 **Conference**: ICLR 2026  

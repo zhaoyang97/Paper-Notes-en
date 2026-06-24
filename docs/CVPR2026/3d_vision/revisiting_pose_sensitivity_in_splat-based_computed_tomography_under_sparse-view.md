@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Aiming at the streak/strip artifacts in 3D Gaussian Splatting-based sparse-view CT on real data, this paper proves through controlled experiments that the primary cause is pose error in the acquisition geometry rather than view sparsity. Based on this, it derives a stable and differentiable joint self-calibration frame
+  [CVPR 2026][3D Vision][CT Reconstruction] Aiming at the streak/strip artifacts in 3D Gaussian Splatting-based sparse-view CT on real data, this paper proves through controlled experiments that the primary cause is pose error in the acquisition geometry rather than view sparsity. Based on this, it derives a stable and differentiable joint self-calibration framework that incrementally optimizes camera poses while reconstructing the volume. By removing TV regularization…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "CT Reconstruction"
+  - "Gaussian Splatting"
+  - "Sparse-view"
+  - "Geometric Self-calibration"
+  - "Pose Optimization"
 date: 2026-05-08
-content_hash: a051ba0d0ca22537
+content_hash: 5c1918d879e76079
 ---
+
 # Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ Ours is on par with the baseline when there is no noise (indicating self-calibra
 
 ## Related Papers
 
-- [\[CVPR 2026\] Regularizing INR with Diffusion Prior for Self-Supervised 3D Reconstruction of Neutron Computed Tomography Data](regularizing_inr_with_diffusion_prior_self-supervised_3d_reconstruction_of_neutr.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
 - [\[CVPR 2026\] Revisiting Optimal Coding for I-ToF under Practical Sensor Constraints](revisiting_optimal_coding_for_i-tof_under_practical_sensor_constraints.md)
+- [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
 - [\[CVPR 2026\] Revisiting Token Compression for Accelerating ViT-based Sparse Multi-View 3D Object Detectors](revisiting_token_compression_for_accelerating_vit-based_sparse_multi-view_3d_obj.md)
 - [\[CVPR 2026\] SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting](sv-gs_sparse_view_4d_reconstruction_with_skeleton-driven_gaussian_splatting.md)
-- [\[CVPR 2026\] SEPatch3D: Revisiting Token Compression for Accelerating ViT-based Sparse Multi-View 3D Object Detectors](sepatch3d_revisiting_token_compression_for_accelerating_vit_based_sparse_3d_detectors.md)
 
 </div>
 

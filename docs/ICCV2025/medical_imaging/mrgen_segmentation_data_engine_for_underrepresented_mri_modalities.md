@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MRGen: Segmentation Data Engine for Underrepresented MRI Modalities
 description: >-
-  [ICCV 2025][Medical Imaging][MRI synthesis] To address the lack of segmentation annotations for scarce MRI modalities, this work constructs a large-scale radiological image dataset MRGen-DB (~250K slices…
+  [ICCV 2025][Medical Imaging][MRI synthesis] To address the lack of segmentation annotations for scarce MRI modalities, this work constructs a large-scale radiological image dataset MRGen-DB (~250K slices, 100+ modalities) and trains a controllable diffusion-based data engine MRGen. Using dual-condition control via text prompts and segmentation masks, MRGen generates high-quality MR images in target modalities for training segmentation models. Across 10 cross-modal segmentatio…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "segmentation"
   - "cross-modal generation"
 date: 2026-05-08
-content_hash: 475aeb7ebd64f3fa
+content_hash: a97eb8c782495a53
 ---
 
 # MRGen: Segmentation Data Engine for Underrepresented MRI Modalities
@@ -214,7 +214,7 @@ MRGen consists of three core stages:
 - [\[ICCV 2025\] M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast](m-net_mri_brain_tumor_sequential_segmentation_network_via_mesh-cast.md)
 - [\[ICCV 2025\] Scaling Tumor Segmentation: Best Lessons from Real and Synthetic Data](scaling_tumor_segmentation_best_lessons_from_real_and_synthetic_data.md)
 - [\[ICCV 2025\] UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation](ukbob_one_billion_mri_labeled_masks_for_generalizable_3d_medical_image_segmentat.md)
-- [\[ICCV 2025\] TeethGenerator: A Two-Stage Framework for Paired Pre- and Post-Orthodontic 3D Dental Data Generation](teethgenerator_a_two-stage_framework_for_paired_pre-_and_post-orthodontic_3d_den.md)
+- [\[CVPR 2026\] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities](../../CVPR2026/medical_imaging/virtual_nodes_guided_dynamic_graph_neural_network_for_brain_tumor_segmentation_w.md)
 
 </div>
 

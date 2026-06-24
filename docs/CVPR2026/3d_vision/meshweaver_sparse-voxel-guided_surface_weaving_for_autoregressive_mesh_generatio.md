@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MeshWeaver: Sparse-Voxel-Guided Surface Weaving for Autoregressive Mesh Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The authors transform autoregressive mesh generation from "coordinate-by-coordinate prediction" to "vertex-by-vertex weaving." By utilizing a multi-level sparse-voxel encoder to inject local geometry into the generation process across three levels—representation, prediction, and constraint—the method achieves an 18% to
+  [CVPR 2026][3D Vision][Autoregressive Mesh Generation] The authors transform autoregressive mesh generation from "coordinate-by-coordinate prediction" to "vertex-by-vertex weaving." By utilizing a multi-level sparse-voxel encoder to inject local geometry into the generation process across three levels—representation, prediction, and constraint—the method achieves an 18% tokenization compression rate, enables the generation of meshes with up to 16K faces…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Autoregressive Mesh Generation"
+  - "Vertex-level tokenization"
+  - "Sparse Voxels"
+  - "Surface Weaving"
+  - "Geometric Guidance"
 date: 2026-05-08
-content_hash: c7b606b90743fc4f
+content_hash: d21edef68405965c
 ---
+
 # MeshWeaver: Sparse-Voxel-Guided Surface Weaving for Autoregressive Mesh Generation
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Ablation of the three mechanisms (VF / CA / GS) on Toys4K (Table 3):
 
 ## Related Papers
 
+- [\[CVPR 2026\] PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction](pixarmesh_autoregressive_mesh-native_single-view_scene_reconstruction.md)
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
 - [\[ICLR 2026\] Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk](../../ICLR2026/3d_vision/topology-preserved_auto-regressive_mesh_generation_in_the_manner_of_weaving_silk.md)
 - [\[CVPR 2026\] DynamicTree: Interactive Real Tree Animation via Sparse Voxel Spectrum](dynamictree_interactive_real_tree_animation_via_sparse_voxel_spectrum.md)
-- [\[CVPR 2026\] FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation](flashmesh_faster_and_better_autoregressive_mesh_synthesis_via_structured_specula.md)
-- [\[CVPR 2026\] PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction](pixarmesh_autoregressive_mesh-native_single-view_scene_reconstruction.md)
-- [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
+- [\[CVPR 2026\] Faithful Contouring: Near-Lossless 3D Voxel Representation Free from Iso-surface](faithful_contouring_near-lossless_3d_voxel_representation_free_from_iso-surface.md)
 
 </div>
 

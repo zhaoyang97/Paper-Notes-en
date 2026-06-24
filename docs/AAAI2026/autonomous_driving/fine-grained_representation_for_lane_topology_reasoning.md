@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fine-Grained Representation for Lane Topology Reasoning
 description: >-
-  [AAAI 2026][Autonomous Driving][Lane topology reasoning] This paper proposes TopoFG, a framework that replaces conventional single-query lane modeling with fine-grained queries (each lane represented by multiple spatiall…
+  [AAAI 2026][Autonomous Driving][Lane topology reasoning] This paper proposes TopoFG, a framework that replaces conventional single-query lane modeling with fine-grained queries (each lane represented by multiple spatially-aware queries), combined with hierarchical prior extraction, region-focused decoding, and boundary-point-based robust topology reasoning, achieving new state-of-the-art results of 48.0% OLS (subset\_A) and 45.4% OLS (subset\_B) on OpenLane-V2.
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "boundary point topology"
   - "denoising training"
 date: 2026-05-08
-content_hash: 2bb0f1ce812aac38
+content_hash: f7e31dd763334798
 ---
 
 # Fine-Grained Representation for Lane Topology Reasoning
@@ -165,11 +165,11 @@ All three modules contribute consistent performance gains when stacked increment
 
 ## Related Papers
 
+- [\[CVPR 2026\] TopoHR: Hierarchical Centerline Representation for Cyclic Topology Reasoning in Driving Scenes with Point-to-Instance Relations](../../CVPR2026/autonomous_driving/topohr_hierarchical_centerline_representation_for_cyclic_topology_reasoning_in_d.md)
 - [\[ICCV 2025\] SeqGrowGraph: Learning Lane Topology as a Chain of Graph Expansions](../../ICCV2025/autonomous_driving/seqgrowgraph_learning_lane_topology_as_a_chain_of_graph_expansions.md)
-- [\[CVPR 2026\] Plant Taxonomy Meets Plant Counting: A Fine-Grained, Taxonomic Dataset for Counting Hundreds of Plant Species](../../CVPR2026/autonomous_driving/plant_taxonomy_meets_plant_counting_a_fine-grained_taxonomic_dataset_for_countin.md)
-- [\[AAAI 2026\] TawPipe: Topology-Aware Weight Pipeline Parallelism for Accelerating Long-Context Large Models Training](tawpipe_topology-aware_weight_pipeline_parallelism_for_accelerating_long-context.md)
-- [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
-- [\[AAAI 2026\] STRIDE-QA: Visual Question Answering Dataset for Spatiotemporal Reasoning in Urban Driving Scenes](stride-qa_visual_question_answering_dataset_for_spatiotemporal_reasoning_in_urba.md)
+- [\[CVPR 2025\] T²SG: Traffic Topology Scene Graph for Topology Reasoning in Autonomous Driving](../../CVPR2025/autonomous_driving/t2sg_traffic_topology_scene_graph_for_topology_reasoning_in_autonomous_driving.md)
+- [\[CVPR 2025\] Distilling Monocular Foundation Model for Fine-grained Depth Completion](../../CVPR2025/autonomous_driving/distilling_monocular_foundation_model_for_fine-grained_depth_completion.md)
+- [\[CVPR 2026\] HOLO: Homography-Guided Pose Estimator Network for Fine-Grained Visual Localization on SD Maps](../../CVPR2026/autonomous_driving/holo_homography-guided_pose_estimator_network_for_fine-grained_visual_localizati.md)
 
 </div>
 

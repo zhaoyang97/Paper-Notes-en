@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Video Generation with Stable Transparency via Shiftable RGB-A Distribution Learner
 description: >-
-  [CVPR 2026][Video Generation][VAE] Addressing the issues of poor quality and unstable transparency caused by the entanglement of RGB and alpha distributions in transparent video (RGB-A) generation, this paper proposes the "Shiftable RGB-A Distribution Learner." It uses a transparency-aware bidirectional diffusion loss in the latent space to push the alp
+  [CVPR 2026][Video Generation][RGB-A Video Generation] Addressing the issues of poor quality and unstable transparency caused by the entanglement of RGB and alpha distributions in transparent video (RGB-A) generation, this paper proposes the "Shiftable RGB-A Distribution Learner." It uses a transparency-aware bidirectional diffusion loss in the latent space to push the alpha distribution away while preserving the RGB distribution and employs a Gaussian elliptical mask in the n…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - VAE
-  - Rectified Flow
+  - "CVPR 2026"
+  - "Video Generation"
+  - "RGB-A Video Generation"
+  - "Transparency"
+  - "Distribution Shift"
+  - "VAE"
+  - "Rectified Flow"
 date: 2026-05-08
-content_hash: a7dcf96e4cf4fb1c
+content_hash: b5c092c19403a2f9
 ---
+
 # Video Generation with Stable Transparency via Shiftable RGB-A Distribution Learner
 
 **Conference**: CVPR 2026  
@@ -145,14 +149,17 @@ Ours achieves the highest scores across all objective metrics and leads signific
 
 <div class="related-papers" markdown="1">
 
-1. **LayerDiffuse**: Generating Layered Images from Diffusion Models, CVPR 2024.
-2. **TransPixeler**: Video Matting and Generation with Transformer-based Architectures, 2024.
-3. **Wan2.1**: Edge-of-the-art Open Video Generation Models, 2025.
+## Related Papers
+
+- [\[CVPR 2026\] Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation](reward_forcing_efficient_streaming_video_generation_with_rewarded_distribution_m.md)
+- [\[CVPR 2026\] Reasoning Diffusion for Unpaired Test Time Out-of-distribution Text-Image to Video Generation](reasoning_diffusion_for_unpaired_test_time_out-of-distribution_text-image_to_vid.md)
+- [\[CVPR 2025\] TransPixeler: Advancing Text-to-Video Generation with Transparency](../../CVPR2025/video_generation/transpixeler_advancing_text-to-video_generation_with_transparency.md)
+- [\[ICLR 2026\] Stable Video Infinity: Achieving Infinite-Length Video Generation via "Error Recycling"](../../ICLR2026/video_generation/stable_video_infinity_infinite-length_video_generation_with_error_recycling.md)
+- [\[NeurIPS 2025\] Stable Cinemetrics: Structured Taxonomy and Evaluation for Professional Video Generation](../../NeurIPS2025/video_generation/stable_cinemetrics_structured_taxonomy_and_evaluation_for_professional_video_gen.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation](reward_forcing_efficient_streaming_video_generation_with_rewarded_distribution_m.md)

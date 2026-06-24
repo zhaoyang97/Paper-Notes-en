@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization
 description: >-
-  [NeurIPS 2025][Image Generation][diffusion model] This paper proposes the Latent Reward Model (LRM) and Latent Preference Optimization (LPO)…
+  [NeurIPS 2025][Image Generation][diffusion model] This paper proposes the Latent Reward Model (LRM) and Latent Preference Optimization (LPO), which repurpose the pretrained diffusion model itself as a noise-aware latent-space reward model to perform step-level preference optimization directly in the noisy latent space. Compared to Diffusion-DPO, LPO achieves a 10–28× training speedup; compared to SPO, it achieves a 2.5–3.5× speedup.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -14,7 +14,7 @@ tags:
   - "noise-aware"
   - "DPO"
 date: 2026-05-08
-content_hash: f65870fa03b9e34f
+content_hash: 0b43e1a92e5e9695
 ---
 
 # Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization
@@ -136,11 +136,11 @@ Per-step sampling: LRM 0.039s vs. SPM 0.243s (6.2× speedup), by eliminating $\h
 
 ## Related Papers
 
+- [\[CVPR 2025\] InPO: Inversion Preference Optimization with Reparametrized DDIM for Efficient Diffusion Model Alignment](../../CVPR2025/image_generation/inpo_inversion_preference_optimization_diffusion_alignment.md)
 - [\[NeurIPS 2025\] Rethinking Direct Preference Optimization in Diffusion Models](rethinking_direct_preference_optimization_in_diffusion_models.md)
+- [\[CVPR 2025\] Boost Your Human Image Generation Model via Direct Preference Optimization](../../CVPR2025/image_generation/boost_your_human_image_generation_model_via_direct_preference_optimization.md)
 - [\[NeurIPS 2025\] BADiff: Bandwidth Adaptive Diffusion Model](badiff_bandwidth_adaptive_diffusion_model.md)
-- [\[AAAI 2026\] Structure-based RNA Design by Step-wise Optimization of Latent Diffusion Model](../../AAAI2026/image_generation/structure-based_rna_design_by_step-wise_optimization_of_latent_diffusion_model.md)
-- [\[NeurIPS 2025\] CORAL: Disentangling Latent Representations in Long-Tailed Diffusion](coral_disentangling_latent_representations_in_longtailed_dif.md)
-- [\[NeurIPS 2025\] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](dove_efficient_one-step_diffusion_model_for_real-world_video_super-resolution.md)
+- [\[ICML 2025\] GRAM: A Generative Foundation Reward Model for Reward Generalization](../../ICML2025/image_generation/gram_a_generative_foundation_reward_model_for_reward_generalization.md)
 
 </div>
 

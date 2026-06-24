@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EuroSpeech: A Multilingual Speech Corpus
 description: >-
-  [NeurIPS2025][Audio & Speech][multilingual speech] This paper presents a scalable, open-source pipeline for automatically constructing the EuroSpeech dataset from recordings of 22 European parliaments — yielding 61K hour…
+  [NeurIPS2025][Audio & Speech][multilingual speech] This paper presents a scalable, open-source pipeline for automatically constructing the EuroSpeech dataset from recordings of 22 European parliaments — yielding 61K hours of high-quality speech-text aligned data across 22 languages, with 19 languages exceeding 1K hours. Fine-tuning Whisper on this data reduces average WER by 41.8%.
 tags:
   - "NeurIPS2025"
   - "Audio & Speech"
@@ -13,7 +13,7 @@ tags:
   - "dataset construction"
   - "low-resource languages"
 date: 2026-05-08
-content_hash: e6f6a6ecd1780e34
+content_hash: 0cbaa3bf64d2a410
 ---
 
 # EuroSpeech: A Multilingual Speech Corpus
@@ -193,11 +193,11 @@ Among publicly available datasets, EuroSpeech achieves the highest number of lan
 
 ## Related Papers
 
+- [\[ACL 2025\] MultiMed: Multilingual Medical Speech Recognition via Attention Encoder Decoder](../../ACL2025/audio_speech/multimed_multilingual_medical_speech_recognition_via_attention_encoder_decoder.md)
+- [\[ACL 2025\] GigaSpeech 2: An Evolving, Large-Scale and Multi-domain ASR Corpus for Low-Resource Languages](../../ACL2025/audio_speech/gigaspeech2_low_resource_asr.md)
 - [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](../../ICLR2026/audio_speech/scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
+- [\[ACL 2025\] SpeechWeave: Diverse Multilingual Synthetic Text & Audio Data Generation Pipeline for Training Text to Speech Models](../../ACL2025/audio_speech/speechweave_diverse_multilingual_synthetic_text_audio_data_generation_pipeline_f.md)
 - [\[ACL 2026\] From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation](../../ACL2026/audio_speech/from_flat_language_labels_to_typological_priors_structured_language_conditioning.md)
-- [\[ACL 2026\] Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs](../../ACL2026/audio_speech/mind_the_pause_disfluency-aware_objective_tuning_for_multilingual_speech_correct.md)
-- [\[ACL 2026\] MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus](../../ACL2026/audio_speech/mcga_a_multi-task_classical_chinese_literary_genre_audio_corpus.md)
-- [\[ACL 2026\] Dial HEALTHDIAL for Advice: A Multilingual and Multi-Parallel Spoken Dialogue Dataset for Knowledge-Grounded Information Seeking](../../ACL2026/audio_speech/dial_healthdial_for_advice_a_multilingual_and_multi-parallel_spoken_dialogue_dat.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] The AgentSynth pipeline leverages the principle of information asymmetry—where forward step-by-step generation of simple tasks is easy, while backward holistic solving is difficult—to chain simple subtasks into complex long-horizon computer-use tasks. It automatically generates 6000+ diverse tasks and trajectories at o
+  [ICLR 2026][LLM Agent][Synthetic Data Generation] The AgentSynth pipeline leverages the principle of information asymmetry—where forward step-by-step generation of simple tasks is easy, while backward holistic solving is difficult—to chain simple subtasks into complex long-horizon computer-use tasks. It automatically generates 6000+ diverse tasks and trajectories at only $0.60 per trajectory, while SOTA agents achieve only a 4% success rate at the highest difficulty level.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Synthetic Data Generation"
+  - "Computer-Use Agents"
+  - "Information Asymmetry"
+  - "Task Chaining"
+  - "Long-Horizon Task Benchmark"
 date: 2026-05-08
-content_hash: dc979e7771a8c0ff
+content_hash: 5baca788baedaf86
 ---
+
 # AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents
 
 **Conference**: ICLR 2026  
@@ -131,10 +137,20 @@ Success rates plummet from 18% at Level 1 to 4% at Level 6, demonstrating the be
 - Value: ⭐⭐⭐⭐⭐ (Infrastructure-level contribution for scalable agent data).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
+- [\[ICLR 2026\] Scaling Synthetic Task Generation for Agents via Exploration](scaling_synthetic_task_generation_for_agents_via_exploration.md)
+- [\[ICLR 2026\] Programming with Pixels: Can Computer-Use Agents do Software Engineering?](programming_with_pixels_can_computer-use_agents_do_software_engineering.md)
+- [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
+- [\[ICLR 2026\] ROGA: Scaling Generalist Agents for Office Productivity Tasks via Tool Generation](roga_scaling_generalist_agents_for_office_productivity_tasks_via_tool_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?
 description: >-
-  [CVPR 2026][3D Vision][procedural generation] This paper systematically ablates the design space of synthetic training data for stereo matching (including floating objects, backgrounds, materials, and baselines). It finds that the combination of "realistic indoor scenes + dense floating objects + wide baselines" is optimal. Based on these findings, WMGStereo-150k
+  [CVPR2026][3D Vision][Stereo matching] This paper systematically ablates the design space of synthetic training data for stereo matching (including floating objects, backgrounds, materials, and baselines). It finds that the combination of "realistic indoor scenes + dense floating objects + wide baselines" is optimal. Based on these findings, WMGStereo-150k is constructed, which outperforms hybrid training using four classic datasets while using only a single dataset.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - procedural generation
-  - dataset design
-  - Infinigen
+  - "CVPR2026"
+  - "3D Vision"
+  - "Stereo matching"
+  - "synthetic data"
+  - "procedural generation"
+  - "zero-shot generalization"
+  - "dataset design"
+  - "Infinigen"
 date: 2026-05-08
-content_hash: 1bc16e4f62503c95
+content_hash: 369aa2baf58a850a
 ---
+
 # What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?
 
 **Conference**: CVPR2026  
@@ -184,9 +188,9 @@ Lighting randomization had limited impact on benchmarks but was retained to cove
 
 - [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
 - [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
+- [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](../../ICCV2025/3d_vision/zerostereo_zero-shot_stereo_matching_from_single_images.md)
 - [\[CVPR 2025\] FoundationStereo: Zero-Shot Stereo Matching](../../CVPR2025/3d_vision/foundationstereo_zero-shot_stereo_matching.md)
 - [\[CVPR 2026\] PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts](promptstereo_zero-shot_stereo_matching_via_structure_and_motion_prompts.md)
-- [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](../../ICCV2025/3d_vision/robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
 
 </div>
 

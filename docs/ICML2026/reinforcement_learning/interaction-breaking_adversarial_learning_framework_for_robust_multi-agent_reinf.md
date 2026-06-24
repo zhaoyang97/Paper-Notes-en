@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][MARL] From an information-theoretic perspective, this paper characterizes the "mutual influence" between agents using conditional mutual information. It designs attackers that simultaneously mask observations and perturb actions to minimize cross-group mutual information. Consequently, the IBAL policy is trained to maintain
+  [ICML 2026][Reinforcement Learning][MARL] From an information-theoretic perspective, this paper characterizes the "mutual influence" between agents using conditional mutual information. It designs attackers that simultaneously mask observations and perturb actions to minimize cross-group mutual information. Consequently, the IBAL policy is trained to maintain stable decision-making even during collaborative collapses. It significantly outperforms existing robust MARL methods…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - MARL
-  - CTDE
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "MARL"
+  - "CTDE"
+  - "Mutual Information"
+  - "Adversarial Training"
+  - "Collaborative Robustness"
 date: 2026-05-08
-content_hash: 893fb00829a784b7
+content_hash: 6c934ebbe2155902
 ---
+
 # Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -142,11 +146,11 @@ Baselines include Vanilla QMIX, Rand-Obs/Rand-Act, FGSM, ATLA, ERNIE, ROMANCE, a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](../../ICLR2026/reinforcement_learning/distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
 - [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
 - [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[AAAI 2026\] ChartEditor: A Reinforcement Learning Framework for Robust Chart Editing](../../AAAI2026/reinforcement_learning/charteditor_a_reinforcement_learning_framework_for_robust_chart_editing.md)
-- [\[ICLR 2026\] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation](../../ICLR2026/reinforcement_learning/robust_deep_reinforcement_learning_against_adversarial_behavior_manipulation.md)
-- [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](../../AAAI2026/reinforcement_learning/mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
+- [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](../../ICLR2026/reinforcement_learning/bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
 
 </div>
 

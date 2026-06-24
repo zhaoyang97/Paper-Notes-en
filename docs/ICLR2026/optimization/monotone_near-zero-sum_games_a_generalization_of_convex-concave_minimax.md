@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Monotone Near-Zero-Sum Games: A Generalization of Convex-Concave Minimax
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper defines a new game class between monotone zero-sum and general-sum games—**monotone $\delta$-near-zero-sum games**. It proposes the ICL algorithm to black-box reduce the problem into a sequence of zero-sum subproblems. When the game is "sufficiently close to zero-sum," the gradient complexity of non-zero-sum
+  [ICLR 2026][Optimization][monotone games] This paper defines a new game class between monotone zero-sum and general-sum games—**monotone $\delta$-near-zero-sum games**. It proposes the ICL algorithm to black-box reduce the problem into a sequence of zero-sum subproblems. When the game is "sufficiently close to zero-sum," the gradient complexity of non-zero-sum games is accelerated from $O(L/\min\{\mu,\nu\})$ to $O(L/\sqrt{\mu\nu})$, approaching the zero-sum optimal rate for t…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "monotone games"
+  - "near-zero-sum games"
+  - "convex-concave minimax"
+  - "Nash equilibrium"
+  - "gradient complexity"
+  - "black-box reduction"
 date: 2026-05-08
 content_hash: b59b737337e851cb
 ---
+
 # Monotone Near-Zero-Sum Games: A Generalization of Convex-Concave Minimax
 
 **Conference**: ICLR 2026  
@@ -111,11 +118,11 @@ This work sits at the intersection of two lines of research: **minimax optimizat
 
 ## Related Papers
 
-- [\[ICLR 2026\] Convergence of Regret Matching in Potential Games and Constrained Optimization](convergence_of_regret_matching_in_potential_games_and_constrained_optimization.md)
+- [\[ICML 2025\] A Near-Optimal Single-Loop Stochastic Algorithm for Convex Finite-Sum Coupled Compositional Optimization](../../ICML2025/optimization/a_near-optimal_single-loop_stochastic_algorithm_for_convex_finite-sum_coupled_co.md)
+- [\[ICLR 2026\] Efficient Submodular Maximization for Sums of Concave over Modular Functions](efficient_submodular_maximization_for_sums_of_concave_over_modular_functions.md)
+- [\[ICLR 2026\] Neural Sum-of-Squares: Certifying the Nonnegativity of Polynomials with Transformers](neural_sum-of-squares_certifying_the_nonnegativity_of_polynomials_with_transform.md)
+- [\[ICLR 2026\] High-dimensional Mean-Field Games by Particle-based Flow Matching](high-dimensional_mean-field_games_by_particle-based_flow_matching.md)
 - [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
-- [\[ICLR 2026\] Generalization Below the Edge of Stability: The Role of Data Geometry](generalization_below_the_edge_of_stability_the_role_of_data_geometry.md)
-- [\[ICLR 2026\] $\mu$LO: Compute-Efficient Meta-Generalization of Learned Optimizers](mulo_compute-efficient_meta-generalization_of_learned_optimizers.md)
-- [\[ICLR 2026\] Scalable and Adaptive Trust-Region Learning via Projection Convex Hull](scalable_and_adaptive_trust-region_learning_via_projection_convex_hull.md)
 
 </div>
 

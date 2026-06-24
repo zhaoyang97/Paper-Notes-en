@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mixture of Horizons in Action Chunking
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLA] Addressing the "long-horizon planning vs. short-horizon precision" trade-off caused by "action chunk length (horizon) selection" in VLA models, this paper proposes Mixture of Horizons (MoH). By decomposing a single action chunk into various sub-chunks of different lengths, predicting them in parallel using a shared act
+  [ICML 2026][Robotics][VLA] Addressing the "long-horizon planning vs. short-horizon precision" trade-off caused by "action chunk length (horizon) selection" in VLA models, this paper proposes Mixture of Horizons (MoH). By decomposing a single action chunk into various sub-chunks of different lengths, predicting them in parallel using a shared action transformer, and fusing them with a 2k-parameter linear gate—complemented by a load-balancing loss and dynamic inference via "cro…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA"
+  - "Action Chunking"
+  - "Multi-scale horizon"
+  - "Gated Fusion"
+  - "Dynamic Inference"
 date: 2026-05-08
-content_hash: 9d2a356c2919ca41
+content_hash: 8695fc2d0a054937
 ---
+
 # Mixture of Horizons in Action Chunking
 
 **Conference**: ICML 2026  

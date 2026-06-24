@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment
 description: >-
-  [ACL 2026][Dialogue Systems][Interpretability] Ours proposes CoDial, a framework that converts predefined dialogue flows (task schemas) into structured heterogeneous graphs and automatically generates LLM guardrail code (such as Colang). It achieves interpretable and controllable task-oriented dialogue policies during inference, reaching SOTA on the STAR benchmark
+  [ACL 2026][Dialogue Systems][Task-Oriented Dialogue] Ours proposes CoDial, a framework that converts predefined dialogue flows (task schemas) into structured heterogeneous graphs and automatically generates LLM guardrail code (such as Colang). It achieves interpretable and controllable task-oriented dialogue policies during inference, reaching SOTA on the STAR benchmark without requiring training data.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Interpretability
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Task-Oriented Dialogue"
+  - "LLM Guardrails"
+  - "Interpretability"
+  - "Dialogue Flow Alignment"
+  - "Zero-shot Generalization"
 date: 2026-05-08
-content_hash: 67b8a7cf6f8725eb
+content_hash: 50cc1dc922c103ce
 ---
+
 # CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment
 
 **Conference**: ACL 2026  
@@ -134,8 +139,8 @@ CoDial is a zero-shot, training-free framework. All dialogue policies are execut
 ## Related Papers
 
 - [\[ACL 2026\] Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings](template-assisted_contrastive_learning_of_task-oriented_dialogue_sentence_embedd.md)
-- [\[ACL 2025\] Know Your Mistakes: Towards Preventing Overreliance on Task-Oriented Conversational AI Through Accountability Modeling](../../ACL2025/dialogue/know_your_mistakes_towards_preventing_overreliance_on_task-oriented_conversation.md)
 - [\[ACL 2026\] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)
+- [\[ACL 2025\] Know Your Mistakes: Towards Preventing Overreliance on Task-Oriented Conversational AI Through Accountability Modeling](../../ACL2025/dialogue/know_your_mistakes_towards_preventing_overreliance_on_task-oriented_conversation.md)
 - [\[ACL 2026\] STRIDE-ED: A Strategy-Grounded Stepwise Reasoning Framework for Empathetic Dialogue Systems](stride-ed_a_strategy-grounded_stepwise_reasoning_framework_for_empathetic_dialog.md)
 - [\[ACL 2025\] Enhancing Goal-oriented Proactive Dialogue Systems via Consistency Reflection and Correction](../../ACL2025/dialogue/enhancing_goal-oriented_proactive_dialogue_systems_via_consistency_reflection_an.md)
 

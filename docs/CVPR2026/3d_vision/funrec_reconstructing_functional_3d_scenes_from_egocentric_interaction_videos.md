@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes FunREC, a training-free optimization-based method that reconstructs functional articulated 3D digital twins directly from egocentric RGB-D interaction videos. It automatically discovers articulated parts, estimates kinematic parameters, tracks 3D motion, and reconstructs both static and moving geome
+  [CVPR 2026][3D Vision][Functional 3D Reconstruction] This paper proposes FunREC, a training-free optimization-based method that reconstructs functional articulated 3D digital twins directly from egocentric RGB-D interaction videos. It automatically discovers articulated parts, estimates kinematic parameters, tracks 3D motion, and reconstructs both static and moving geometries. It significantly outperforms prior methods across all benchmarks (part segmentation mIoU increased b…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Functional 3D Reconstruction"
+  - "Egocentric Video"
+  - "Articulated Object Reconstruction"
+  - "Digital Twin"
+  - "Motion Estimation"
 date: 2026-05-08
-content_hash: 714d517dbdaa0c5c
+content_hash: ce636c6b9bd918bd
 ---
+
 # FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos
 
 **Conference**: CVPR 2026  
@@ -143,10 +149,10 @@ ADD-S accuracy more than doubles, and Chamfer Distance (CD) is significantly red
 ## Related Papers
 
 - [\[CVPR 2026\] Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](efficiently_reconstructing_dynamic_scenes_one_d4rt_at_a_time.md)
-- [\[CVPR 2026\] FunFact: Building Probabilistic Functional 3D Scene Graphs via Factor-Graph Reasoning](funfact_building_probabilistic_functional_3d_scene_graphs_via_factor-graph_reaso.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[CVPR 2026\] AffordMatcher: Affordance Learning in 3D Scenes from Visual Signifiers](affordmatcher_affordance_learning_in_3d_scenes_from_visual_signifiers.md)
-- [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
+- [\[CVPR 2026\] RHINO: Reconstructing Human Interactions with Novel Objects from Monocular Videos](rhino_reconstructing_human_interactions_with_novel_objects_from_monocular_videos.md)
+- [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
+- [\[CVPR 2026\] Volumetric Functional Maps](volumetric_functional_maps.md)
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
 
 </div>
 

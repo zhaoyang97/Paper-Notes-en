@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DIsoN: Decentralized Isolation Networks for Out-of-Distribution Detection in Medical Imaging
 description: >-
-  [NeurIPS 2025][Medical Imaging][OOD detection] This paper proposes Decentralized Isolation Networks (DIsoN), which detects OOD samples by training a binary classifier to "isolate" a test sample from training data…
+  [NeurIPS 2025][Medical Imaging][OOD detection] This paper proposes Decentralized Isolation Networks (DIsoN), which detects OOD samples by training a binary classifier to "isolate" a test sample from training data, and leverages training data information without sharing it through decentralized parameter exchange. The method achieves state-of-the-art performance across 12 OOD detection tasks on 4 medical imaging datasets.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "medical imaging safety"
   - "privacy preservation"
 date: 2026-05-08
-content_hash: c3cbdf035ce5f7f6
+content_hash: fc80ede7f5e0e97f
 ---
 
 # DIsoN: Decentralized Isolation Networks for Out-of-Distribution Detection in Medical Imaging
@@ -154,11 +154,11 @@ CC-DIsoN outperforms the second-best method by 8.4% in the Near-OOD setting.
 
 ## Related Papers
 
+- [\[CVPR 2025\] OpenMIBOOD: Open Medical Imaging Benchmarks for Out-Of-Distribution Detection](../../CVPR2025/medical_imaging/openmibood_open_medical_imaging_benchmarks_for_out-of-distribution_detection.md)
 - [\[CVPR 2026\] The Invisible Gorilla Effect in Out-of-distribution Detection](../../CVPR2026/medical_imaging/the_invisible_gorilla_effect_in_out-of-distribution_detection.md)
 - [\[NeurIPS 2025\] EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging](ewc-guided_diffusion_replay_for_exemplar-free_continual_learning_in_medical_imag.md)
 - [\[NeurIPS 2025\] FireGNN: Neuro-Symbolic Graph Neural Networks with Trainable Fuzzy Rules for Interpretable Medical Image Classification](firegnn_neuro-symbolic_graph_neural_networks_with_trainable_fuzzy_rules_for_inte.md)
-- [\[NeurIPS 2025\] The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective](the_boundaries_of_fair_ai_in_medical_image_prognosis_a_causal_perspective.md)
-- [\[NeurIPS 2025\] Ordinal Label-Distribution Learning with Constrained Asymmetric Priors for Imbalanced Retinal Grading](ordinal_label-distribution_learning_with_constrained_asymmetric_priors_for_imbal.md)
+- [\[CVPR 2025\] DFLMoE: Decentralized Federated Learning via Mixture of Experts for Medical Data](../../CVPR2025/medical_imaging/dflmoe_decentralized_federated_learning_via_mixture_of_experts_for_medical_data_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ProGait: A Multi-Purpose Video Dataset and Benchmark for Transfemoral Prosthesis Users
 description: >-
-  [ICCV 2025][Medical Imaging][Gait Analysis] This paper presents ProGait—the first multi-purpose video dataset targeting transfemoral amputee prosthesis users—supporting three tasks: video object segmentation…
+  [ICCV 2025][Medical Imaging][Gait Analysis] This paper presents ProGait—the first multi-purpose video dataset targeting transfemoral amputee prosthesis users—supporting three tasks: video object segmentation, 2D human pose estimation, and gait analysis. Baseline models are provided to demonstrate the dataset's effectiveness in improving prosthesis detection.
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Human Pose Estimation"
   - "Video Object Segmentation"
 date: 2026-05-08
-content_hash: 01a6024d259037d6
+content_hash: 8394d6c2e1b25c47
 ---
 
 # ProGait: A Multi-Purpose Video Dataset and Benchmark for Transfemoral Prosthesis Users
@@ -140,10 +140,10 @@ The sagittal view substantially outperforms the frontal view; however, combining
 ## Related Papers
 
 - [\[NeurIPS 2025\] RAM-W600: A Multi-Task Wrist Dataset and Benchmark for Rheumatoid Arthritis](../../NeurIPS2025/medical_imaging/ram-w600_a_multi-task_wrist_dataset_and_benchmark_for_rheumatoid_arthritis.md)
-- [\[ICCV 2025\] PVChat: Personalized Video Chat with One-Shot Learning](pvchat_personalized_video_chat_with_one-shot_learning.md)
+- [\[CVPR 2025\] Interactive Medical Image Segmentation: A Benchmark Dataset and Baseline](../../CVPR2025/medical_imaging/interactive_medical_image_segmentation_a_benchmark_dataset_and_baseline.md)
 - [\[NeurIPS 2025\] Care-PD: A Multi-Site Anonymized Clinical Dataset for Parkinson's Disease Gait Assessment](../../NeurIPS2025/medical_imaging/care-pd_a_multi-site_anonymized_clinical_dataset_for_parkinsons_disease_gait_ass.md)
-- [\[ICCV 2025\] SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications](scivid_cross-domain_evaluation_of_video_models_in_scientific_applications.md)
-- [\[NeurIPS 2025\] A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking](../../NeurIPS2025/medical_imaging/a_unified_solution_to_video_fusion_from_multi-frame_learning_to_benchmarking.md)
+- [\[ICCV 2025\] PVChat: Personalized Video Chat with One-Shot Learning](pvchat_personalized_video_chat_with_one-shot_learning.md)
+- [\[CVPR 2025\] CholecTrack20: A Multi-Perspective Tracking Dataset for Surgical Tools](../../CVPR2025/medical_imaging/cholectrack20_a_multi-perspective_tracking_dataset_for_surgical_tools.md)
 
 </div>
 

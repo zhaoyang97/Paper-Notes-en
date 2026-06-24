@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Efficient Algorithms for Incremental Metric Bipartite Matching
 description: >-
-  [ICLR 2026][Optimization & Theory][push-relabel] This paper provides the **first constant-factor approximation algorithm for incremental minimum-cost bipartite matching in arbitrary metric spaces**. Under the setting of a fixed server set $S$ and requests arriving online on one side, a "distance scaling hierarchy + push-relabel" framework is used to maintain an $O(1/
+  [ICLR 2026][Optimization][bipartite matching] This paper provides the **first constant-factor approximation algorithm for incremental minimum-cost bipartite matching in arbitrary metric spaces**. Under the setting of a fixed server set $S$ and requests arriving online on one side, a "distance scaling hierarchy + push-relabel" framework is used to maintain an $O(1/\delta^{0.631})$ approximate matching. The amortized update time per insertion is $\tilde{O}(n^{1+\delta})$…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - push-relabel
+  - "ICLR 2026"
+  - "Optimization"
+  - "bipartite matching"
+  - "incremental algorithm"
+  - "metric space"
+  - "push-relabel"
+  - "optimal transport"
+  - "Wasserstein distance"
+  - "approximation algorithm"
 date: 2026-05-08
-content_hash: ab65ab4cfd5311d3
+content_hash: ffbbfd72aafb0e45
 ---
+
 # Efficient Algorithms for Incremental Metric Bipartite Matching
 
 **Conference**: ICLR 2026  

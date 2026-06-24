@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] InfoTok: Adaptive Discrete Video Tokenizer via Information-Theoretic Compression
 description: >-
-  [ICLR 2026][Model Compression][video tokenizer] InfoTok introduces Shannon’s source coding theorem into discrete video tokenization, utilizing ELBO to estimate the information volume of each video for adaptive token allocation. It proves that fixed or data-independent tokenizers are biased and suboptimal in representation length. InfoTok reduces token usage by appro
+  [ICLR 2026 (Oral)][Model Compression][video tokenizer] InfoTok introduces Shannon’s source coding theorem into discrete video tokenization, utilizing ELBO to estimate the information volume of each video for adaptive token allocation. It proves that fixed or data-independent tokenizers are biased and suboptimal in representation length. InfoTok reduces token usage by approximately 20%~50% while maintaining the same reconstruction quality, achieving a 2.3× higher compression r…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - video tokenizer
-  - adaptive compression
-  - information theory
-  - ELBO
-  - discrete tokenization
-  - source coding theorem
+  - "ICLR 2026 (Oral)"
+  - "Model Compression"
+  - "video tokenizer"
+  - "adaptive compression"
+  - "information theory"
+  - "ELBO"
+  - "discrete tokenization"
+  - "source coding theorem"
 date: 2026-05-08
-content_hash: b2e10a1feb861455
+content_hash: 70a748937b3010ab
 ---
+
 # InfoTok: Adaptive Discrete Video Tokenizer via Information-Theoretic Compression
 
 **Conference**: ICLR 2026 (Oral)  
@@ -131,8 +132,8 @@ InfoTok nearly matches the fixed-rate Cosmos-DV (PSNR 30.08 vs 30.01) at BPP16=0
 
 ## Related Papers
 
-- [\[CVPR 2026\] Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model](../../CVPR2026/model_compression/planning_in_8_tokens_a_compact_discrete_tokenizer_for_latent_world_model.md)
 - [\[ICLR 2026\] InfoScan: Information-Efficient Visual Scanning via Resource-Adaptive Walks](infoscan_information-efficient_visual_scanning_via_resource-adaptive_walks.md)
+- [\[CVPR 2026\] Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model](../../CVPR2026/model_compression/planning_in_8_tokens_a_compact_discrete_tokenizer_for_latent_world_model.md)
 - [\[ICLR 2026\] COMI: Coarse-to-fine Context Compression via Marginal Information Gain](comi_coarse-to-fine_context_compression_via_marginal_information_gain.md)
 - [\[ICLR 2026\] UniFlow: A Unified Pixel Flow Tokenizer for Visual Understanding and Generation](uniflow_a_unified_pixel_flow_tokenizer_for_visual_understanding_and_generation.md)
 - [\[ICLR 2026\] Adaptive Nonlinear Compression for Large Foundation Models](adaptive_nonlinear_compression_for_large_foundation_models.md)

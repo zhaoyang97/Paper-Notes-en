@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Spectral Conformal Risk Control: Distribution-Free Tail Guarantees via Bayesian Quadrature
 description: >-
-  [CVPR 2026][Others][CVaR] This paper proposes BQ-SRC, extending conformal risk control from "averaging loss" to "managing high-cost tail errors" using spectral risk (such as CVaR). By constructing a distribution-free risk upper envelope from a Bayesian quadrature perspective and replacing the DKW inflation with an exact binomial confidence lowe
+  [CVPR 2026][Conformal Prediction] This paper proposes BQ-SRC, extending conformal risk control from "averaging loss" to "managing high-cost tail errors" using spectral risk (such as CVaR). By constructing a distribution-free risk upper envelope from a Bayesian quadrature perspective and replacing the DKW inflation with an exact binomial confidence lower bound, the method reduces Monte Carlo conservatism by approximately 3x. It maintains finite-sample tail risk guarantees with…
 tags:
-  - CVPR 2026
-  - Others
-  - CVaR
+  - "CVPR 2026"
+  - "Conformal Prediction"
+  - "Spectral Risk"
+  - "CVaR"
+  - "Binomial Confidence Lower Bound"
+  - "Bayesian Quadrature"
 date: 2026-05-08
-content_hash: b08853fe51b262da
+content_hash: 2a1b70214d04710b
 ---
+
 # Spectral Conformal Risk Control: Distribution-Free Tail Guarantees via Bayesian Quadrature
 
 **Conference**: CVPR 2026  
@@ -156,10 +160,10 @@ Under matched validity, BQ-SRC's prediction set (3.39) is smaller than RCPS (3.5
 ## Related Papers
 
 - [\[ACL 2025\] Theoretical Guarantees for Minimum Bayes Risk Decoding](../../ACL2025/others/theoretical_guarantees_for_minimum_bayes_risk_decoding.md)
-- [\[CVPR 2026\] Tunable Soft Equivariance with Guarantees](tunable_soft_equivariance_with_guarantees.md)
-- [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)
-- [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](../../ICLR2026/others/bayesian_influence_functions_for_hessian-free_data_attribution.md)
 - [\[CVPR 2026\] Confusion-Aware Spectral Regularizer for Long-Tailed Recognition](confusion-aware_spectral_regularizer_for_long-tailed_recognition.md)
+- [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](../../ICLR2026/others/bayesian_influence_functions_for_hessian-free_data_attribution.md)
+- [\[ICLR 2026\] Adaptive Conformal Guidance for Learning under Uncertainty](../../ICLR2026/others/adaptive_conformal_guidance_for_learning_under_uncertainty.md)
+- [\[CVPR 2026\] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision](towards_knowledge-augmented_bayesian_deep_learning_for_computer_vision.md)
 
 </div>
 

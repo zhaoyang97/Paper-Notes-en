@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UZ3DVG: Unaided Zero-Shot 3D Visual Grounding with Generated Language Conditions
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] UZ3DVG completely excludes the VLM from the inference pipeline. It leverages RGB-D scenes during training to automatically generate "3D spatial description pseudo-labels + reasoning chains," then distills this reasoning logic into a lightweight student network. This allows the inference stage to rely **solely on point
+  [CVPR 2026][3D Vision][Zero-Shot 3D Visual Grounding] UZ3DVG completely excludes the VLM from the inference pipeline. It leverages RGB-D scenes during training to automatically generate "3D spatial description pseudo-labels + reasoning chains," then distills this reasoning logic into a lightweight student network. This allows the inference stage to rely **solely on point clouds and text**—without any dependence on 2D images or LLM/VLM interaction. It achieves zero-shot SOTA o…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Zero-Shot 3D Visual Grounding"
+  - "Point Cloud"
+  - "Reasoning Chain Distillation"
+  - "Pseudo-label"
+  - "Geometry-aware"
 date: 2026-05-08
-content_hash: 64b9fdf459afbce7
+content_hash: b25fd2d0f88583b9
 ---
+
 # UZ3DVG: Unaided Zero-Shot 3D Visual Grounding with Generated Language Conditions
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Ablation of the three modules (ScanRefer, with Mask3D refinement):
 ## Related Papers
 
 - [\[CVPR 2026\] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models](monovlm_monocular_3d_visual_grounding_with_vision_language_models.md)
+- [\[CVPR 2026\] EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding](eg-3dvg_expression_and_geometry_aware_grounding_decoder_for_3d_visual_grounding.md)
 - [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
 - [\[CVPR 2026\] ORD: Object-Relation Decoupling for Generalized 3D Visual Grounding](ord_object-relation_decoupling_for_generalized_3d_visual_grounding.md)
-- [\[CVPR 2025\] SeeGround: See and Ground for Zero-Shot Open-Vocabulary 3D Visual Grounding](../../CVPR2025/3d_vision/seeground_see_and_ground_for_zero-shot_open-vocabulary_3d_visual_grounding.md)
-- [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
+- [\[CVPR 2026\] Copy-Transform-Paste: Zero-Shot Object-Object Alignment Guided by Vision-Language and Geometric Constraints](copy-transform-paste_zero-shot_object-object_alignment_guided_by_vision-language.md)
 
 </div>
 

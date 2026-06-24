@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TaylorPODA: A Taylor Expansion-Based Method to Improve Post-Hoc Attributions for Opaque Models
 description: >-
-  [AAAI 2026][local attribution] Under the Taylor expansion framework, three postulates—precision, federation, and zero-discrepancy—are proposed to regulate feature attribution. An adaptation property is further introduced…
+  [AAAI 2026][local attribution] Under the Taylor expansion framework, three postulates—precision, federation, and zero-discrepancy—are proposed to regulate feature attribution. An adaptation property is further introduced to optimize the allocation weights of interaction effects via an AUP objective, making TaylorPODA the only post-hoc, model-agnostic attribution method that simultaneously satisfies all postulates and properties.
 tags:
   - "AAAI 2026"
   - "local attribution"
@@ -11,7 +11,7 @@ tags:
   - "feature interaction"
   - "AUP optimization"
 date: 2026-05-08
-content_hash: 75d69e51fc426a80
+content_hash: 6c4bf322c6300b84
 ---
 
 # TaylorPODA: A Taylor Expansion-Based Method to Improve Post-Hoc Attributions for Opaque Models
@@ -133,11 +133,11 @@ where $H(S) = \sum_{T \subseteq S} (-1)^{|T|-|S|} f_T(\mathbf{x})$ is the Harsan
 
 ## Related Papers
 
+- [\[ICLR 2026\] Bayesian Post Training Enhancement of Regression Models with Calibrated Rankings](../../ICLR2026/others/bayesian_post_training_enhancement_of_regression_models_with_calibrated_rankings.md)
+- [\[ICML 2025\] Regression for the Mean: Auto-Evaluation and Inference with Few Labels through Post-hoc Regression](../../ICML2025/others/regression_for_the_mean_auto-evaluation_and_inference_with_few_labels_through_po.md)
 - [\[AAAI 2026\] Cost-Free Neutrality for the River Method](cost-free_neutrality_for_the_river_method.md)
-- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](beyond_world_models_rethinking_understanding_in_ai_models.md)
+- [\[ICML 2025\] To Each Metric Its Decoding: Post-Hoc Optimal Decision Rules of Probabilistic Hierarchical Classifiers](../../ICML2025/others/to_each_metric_its_decoding_post-hoc_optimal_decision_rules_of_probabilistic_hie.md)
 - [\[AAAI 2026\] Provably Data-Driven Projection Method for Quadratic Programming](provably_data-driven_projection_method_for_quadratic_programming.md)
-- [\[AAAI 2026\] DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion](diffmm_efficient_method_for_accurate_noisy_and_sparse_trajectory_map_matching_vi.md)
-- [\[NeurIPS 2025\] Asymmetric Duos: Sidekicks Improve Uncertainty](../../NeurIPS2025/others/asymmetric_duos_sidekicks_improve_uncertainty.md)
 
 </div>
 

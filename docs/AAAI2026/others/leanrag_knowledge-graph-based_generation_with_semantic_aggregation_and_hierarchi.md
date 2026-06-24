@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval
 description: >-
-  [AAAI 2026][Retrieval-Augmented Generation] This paper proposes LeanRAG, a framework that employs a semantic aggregation algorithm to automatically construct explicit relations among summary nodes in a hierarchical knowl…
+  [AAAI 2026][Retrieval-Augmented Generation] This paper proposes LeanRAG, a framework that employs a semantic aggregation algorithm to automatically construct explicit relations among summary nodes in a hierarchical knowledge graph, thereby breaking "semantic islands." Combined with a bottom-up retrieval strategy based on the Lowest Common Ancestor (LCA), LeanRAG efficiently navigates the hierarchical structure, achieving state-of-the-art performance on four QA benchmarks whil…
 tags:
   - "AAAI 2026"
   - "Retrieval-Augmented Generation"
@@ -11,7 +11,7 @@ tags:
   - "Lowest Common Ancestor"
   - "Semantic Network"
 date: 2026-05-08
-content_hash: ca9a9fc1d3430f89
+content_hash: 3632e0baeabe2489
 ---
 
 # LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval
@@ -160,7 +160,7 @@ LeanRAG's retrieved context is on average 46% fewer tokens than baseline methods
 ## Related Papers
 
 - [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](hierarchical_semantic_alignment_for_image_clustering.md)
-- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](../../ICLR2026/others/exchangeability_gnn_representations.md)
+- [\[ACL 2026\] Automated Knowledge Component Generation and Interpretable Knowledge Tracing in Coding Problems](../../ACL2026/others/automated_knowledge_component_generation_for_interpretable_knowledge_tracing_in_.md)
 - [\[AAAI 2026\] Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation](generating_sketches_in_a_hierarchical_auto-regressive_proces.md)
 - [\[ICLR 2026\] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation](../../ICLR2026/others/learning_structure-semantic_evolution_trajectories_for_graph_domain_adaptation.md)
 - [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](improved_differentially_private_algorithms_for_rank_aggregation.md)

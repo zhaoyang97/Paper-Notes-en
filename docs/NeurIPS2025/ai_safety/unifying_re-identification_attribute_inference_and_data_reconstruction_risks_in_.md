@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] Under the f-DP framework grounded in hypothesis testing, this paper provides a unified characterization of three classes of privacy risks in differential privacy — re-ident…
+  [NeurIPS 2025][AI Safety][Differential Privacy] Under the f-DP framework grounded in hypothesis testing, this paper provides a unified characterization of three classes of privacy risks in differential privacy — re-identification, attribute inference, and data reconstruction — yielding tighter and consistent risk upper bounds that enable a 20% reduction in noise without compromising security guarantees.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Data Reconstruction"
   - "f-DP"
 date: 2026-05-08
-content_hash: 77407ae622b5f4e6
+content_hash: 95d73a05441a81e6
 ---
 
 # Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy
@@ -151,7 +151,7 @@ where $g$ is a unified functional form that is independent of the attack type.
 - [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](sequentially_auditing_differential_privacy.md)
 - [\[NeurIPS 2025\] Multi-Class Support Vector Machine with Differential Privacy](multi-class_support_vector_machine_with_differential_privacy.md)
 - [\[NeurIPS 2025\] Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming](differential_privacy_for_euclidean_jordan_algebra_with_applications_to_private_s.md)
-- [\[NeurIPS 2025\] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy](mitigating_privacy-utility_trade-off_in_decentralized_federated_learning_via_f-d.md)
+- [\[CVPR 2026\] R$^2$TUA: Reconstruction-residual Based Targeted and Untargeted Attack Against Text-Image Person Re-Identification](../../CVPR2026/ai_safety/r2tua_reconstruction-residual_based_targeted_and_untargeted_attack_against_text-.md)
 - [\[NeurIPS 2025\] Unifying Proportional Fairness in Centroid and Non-Centroid Clustering](unifying_proportional_fairness_in_centroid_and_non-centroid_clustering.md)
 
 </div>

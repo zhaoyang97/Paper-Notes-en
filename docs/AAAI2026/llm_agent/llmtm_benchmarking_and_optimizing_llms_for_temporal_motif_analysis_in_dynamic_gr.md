@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs
 description: >-
-  [AAAI 2026][LLM Agent][Temporal graphs] This paper proposes LLMTM — the first comprehensive benchmark for evaluating LLMs on temporal motif analysis in dynamic graphs. It covers 6 task categories across 9 temporal motif…
+  [AAAI 2026][LLM Agent][Temporal graphs] This paper proposes LLMTM — the first comprehensive benchmark for evaluating LLMs on temporal motif analysis in dynamic graphs. It covers 6 task categories across 9 temporal motif types and evaluates 9 models, finding that LLM performance on temporal motif recognition degrades rapidly with increasing motif complexity. A Structure-Aware Dispatcher is further proposed to intelligently route queries to either standard LLM prompting or tool…
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "structure-aware routing"
   - "LLM benchmark"
 date: 2026-05-08
-content_hash: 906eaeabd9a1faa8
+content_hash: bb5369e3e6a47e7e
 ---
 
 # LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs
@@ -133,7 +133,7 @@ LLMTM benchmark construction: define 9 temporal motif types (various temporal va
 - [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
 - [\[ICLR 2026\] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments](../../ICLR2026/llm_agent/gaia2_benchmarking_llm_agents_on_dynamic_and_asynchronous_environments.md)
 - [\[AAAI 2026\] CausalTrace: A Neurosymbolic Causal Analysis Agent for Smart Manufacturing](causaltrace_a_neurosymbolic_causal_analysis_agent_for_smart_manufacturing.md)
-- [\[AAAI 2026\] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors](verification-guided_context_optimization_for_tool_calling_via_hierarchical_llms-.md)
+- [\[ICML 2026\] CollabBench: Benchmarking and Unleashing Collaborative Ability of LLMs with Diverse Players via Proactive Engagement](../../ICML2026/llm_agent/collabbench_benchmarking_and_unleashing_collaborative_ability_of_llms_with_diver.md)
 
 </div>
 

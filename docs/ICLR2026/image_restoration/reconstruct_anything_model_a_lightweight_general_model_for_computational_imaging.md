@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reconstruct Anything Model: A Lightweight General Model for Computational Imaging
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] This paper proposes the Reconstruct Anything Model (RAM), which utilizes a lightweight 36M-parameter non-iterative DRUNet-based reconstruction network to directly inject imaging operators, measurements, and noise parameters into feature layers. It achieves strong zero-shot reconstruction across tasks like deblurring, M
+  [ICLR 2026][Image Restoration][Computational Imaging] This paper proposes the Reconstruct Anything Model (RAM), which utilizes a lightweight 36M-parameter non-iterative DRUNet-based reconstruction network to directly inject imaging operators, measurements, and noise parameters into feature layers. It achieves strong zero-shot reconstruction across tasks like deblurring, MRI, CT, super-resolution, inpainting, and low-photon imaging, while supporting self-supervised fine-tuning…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Computational Imaging"
+  - "Inverse Problem Reconstruction"
+  - "Krylov Subspace"
+  - "Self-Supervised Fine-Tuning"
+  - "Multi-Task Reconstruction"
 date: 2026-05-08
-content_hash: 7c76f01aa54e52c1
+content_hash: 60a81a27aa93652d
 ---
+
 # Reconstruct Anything Model: A Lightweight General Model for Computational Imaging
 
 **Conference**: ICLR 2026  
@@ -190,7 +196,7 @@ Architecture ablations highlight the contribution of specific components: proxim
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

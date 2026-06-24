@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance
 description: >-
-  [ICML 2026][AI Safety][GFlowNet] This paper identifies two major sources of instability in existing GFlowNet red-teaming: the high variance from partition function $Z_\theta$ estimation and the mode collapse triggered by noisy rewards from toxicity classifiers on OOD gibberish text. By introducing three simple components—a pairwise contrastive objecti
+  [ICML 2026 Spotlight][AI Safety][Red-Teaming] This paper identifies two major sources of instability in existing GFlowNet red-teaming: the high variance from partition function $Z_\theta$ estimation and the mode collapse triggered by noisy rewards from toxicity classifiers on OOD gibberish text. By introducing three simple components—a pairwise contrastive objective (CTB) to eliminate $Z$, Noisy Gradient Pruning (NGP) to filter uninformative pairs…
 tags:
-  - ICML 2026
-  - AI Safety
-  - GFlowNet
-  - Trajectory Balance
+  - "ICML 2026 Spotlight"
+  - "AI Safety"
+  - "Red-Teaming"
+  - "GFlowNet"
+  - "Trajectory Balance"
+  - "Contrastive Objective"
+  - "Noisy Gradient Pruning"
 date: 2026-05-08
-content_hash: e38e757fae6573bc
+content_hash: 0ae30797d902338a
 ---
+
 # Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance
 
 **Conference**: ICML 2026 Spotlight  
@@ -152,9 +156,9 @@ Cross-Attack defense transfer (attacking a GFN-defended victim):
 
 ## Related Papers
 
+- [\[ICML 2026\] Culturally-Adapted Red-Teaming Across East and Southeast Asian Contexts: A Methodological and Comparative Analysis](culturally-adapted_red-teaming_across_east_and_southeast_asian_contexts_a_method.md)
 - [\[ICML 2026\] FoeGlass: Simple In-Context Learning Is Enough for Red Teaming Audio Deepfake Detectors](foeglass_simple_in-context_learning_is_enough_for_red_teaming_audio_deepfake_det.md)
 - [\[ICML 2026\] Red-Teaming Agent Execution Contexts: Open-World Security Evaluation on OpenClaw](red-teaming_agent_execution_contexts_open-world_security_evaluation_on_openclaw.md)
-- [\[ICML 2026\] Culturally-Adapted Red-Teaming Across East and Southeast Asian Contexts: A Methodological and Comparative Analysis](culturally-adapted_red-teaming_across_east_and_southeast_asian_contexts_a_method.md)
 - [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](../../CVPR2026/ai_safety/genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
 - [\[CVPR 2026\] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases](../../CVPR2026/ai_safety/red-teaming_retrieval-augmented_diffusion_models_via_poisoning_knowledge_bases.md)
 

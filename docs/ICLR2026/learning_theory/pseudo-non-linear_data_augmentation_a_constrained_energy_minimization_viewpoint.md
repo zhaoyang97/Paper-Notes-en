@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Pseudo-Non-Linear Data Augmentation: A Constrained Energy Minimization Viewpoint
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Starting from information geometry and energy models, this paper embeds data onto a dually flat statistical manifold and mimics an autoencoder via "forward projection encoding + backward projection decoding." It proposes PNL, a **training-free, controllable, and cross-modal** data augmentation method that achieves comp
+  [ICLR 2026][Learning Theory][Energy Models] Starting from information geometry and energy models, this paper embeds data onto a dually flat statistical manifold and mimics an autoencoder via "forward projection encoding + backward projection decoding." It proposes PNL, a **training-free, controllable, and cross-modal** data augmentation method that achieves comparable or superior accuracy to generative/classical augmentation on multiple downstream classification tasks while s…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Information Geometry"
+  - "Data Augmentation"
+  - "Energy Models"
+  - "Poset Log-Linear Models"
+  - "Projection Theory"
+  - "Learning-free Data Augmentation"
 date: 2026-05-08
-content_hash: 0fb5af694b88288f
+content_hash: 47129c425934ddad
 ---
+
 # Pseudo-Non-Linear Data Augmentation: A Constrained Energy Minimization Viewpoint
 
 **Conference**: ICLR 2026  

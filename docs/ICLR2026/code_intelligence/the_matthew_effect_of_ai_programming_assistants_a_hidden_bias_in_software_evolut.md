@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Matthew Effect of AI Programming Assistants: A Hidden Bias in Software Evolution
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] This paper conducts a large-scale empirical study using 130,000+ code generation requests and hundreds of full-stack framework tasks. It quantifies how AI programming assistants yield significantly higher success rates for mainstream languages and frameworks compared to niche technologies. This reveals a feedback loop
+  [ICLR 2026][Code Intelligence][Matthew Effect] This paper conducts a large-scale empirical study using 130,000+ code generation requests and hundreds of full-stack framework tasks. It quantifies how AI programming assistants yield significantly higher success rates for mainstream languages and frameworks compared to niche technologies. This reveals a feedback loop consistent with the "Matthew Effect"—ecosystems with abundant data receive superior AI support…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Matthew Effect"
+  - "AI Programming Assistants"
+  - "Language Popularity"
+  - "Framework Selection"
+  - "Training Data Bias"
 date: 2026-05-08
-content_hash: 86c33165249ac4d6
+content_hash: 8c2c0f1e9fae23d1
 ---
+
 # The Matthew Effect of AI Programming Assistants: A Hidden Bias in Software Evolution
 
 **Conference**: ICLR 2026  
@@ -112,14 +118,15 @@ Mainstream languages (Python/JS/Java/C/C++) generally exceed 60% Pass@1 on top m
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] DevOps-Gym: Benchmarking AI Agents in Software DevOps Cycle](devops-gym_benchmarking_ai_agents_in_software_devops_cycle.md)
 - [\[ICLR 2026\] InnoGym: Benchmarking the Innovation Potential of AI Agents](innogym_benchmarking_the_innovation_potential_of_ai_agents.md)
-- [\[ICML 2026\] Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software](../../ICML2026/code_intelligence/physics_is_all_you_need_a_case_study_in_physicist-supervised_ai_development_of_s.md)
 - [\[ICLR 2026\] Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages](multi-lcb_extending_livecodebench_to_multiple_programming_languages.md)
-- [\[ACL 2025\] Tree-of-Evolution: Tree-Structured Instruction Evolution for Code Generation in Large Language Models](../../ACL2025/code_intelligence/tree_of_evolution_code_gen.md)
+- [\[ICML 2026\] Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software](../../ICML2026/code_intelligence/physics_is_all_you_need_a_case_study_in_physicist-supervised_ai_development_of_s.md)
 - [\[ACL 2026\] From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation](../../ACL2026/code_intelligence/from_if-statements_to_ml_pipelines_revisiting_bias_in_code-generation.md)
 
 </div>

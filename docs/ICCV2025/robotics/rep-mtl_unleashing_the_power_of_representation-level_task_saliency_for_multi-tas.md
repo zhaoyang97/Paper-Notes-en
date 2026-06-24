@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning
 description: >-
-  [ICCV 2025][Robotics][Multi-task learning] This paper proposes Rep-MTL, a multi-task optimization method grounded in representation-level task saliency. It mitigates negative transfer and explicitly promotes cross-task c…
+  [ICCV 2025][Robotics][Multi-task learning] This paper proposes Rep-MTL, a multi-task optimization method grounded in representation-level task saliency. It mitigates negative transfer and explicitly promotes cross-task complementarity via entropy-regularized task-specific saliency regulation (TSR) and sample-level cross-task saliency alignment (CSA), without modifying the optimizer or network architecture.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "negative transfer mitigation"
 date: 2026-05-08
-content_hash: f311d72bd41b6ae3
+content_hash: af89cf66a46b7791
 ---
 
 # Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning
@@ -156,9 +156,9 @@ The total loss is $\mathcal{L}_{Rep} = \sum_{t=1}^T \mathcal{L}_t(\theta_s, \the
 
 - [\[ICCV 2025\] Beyond Losses Reweighting: Empowering Multi-Task Learning via the Generalization Perspective](beyond_losses_reweighting_empowering_multi-task_learning_via_the_generalization_.md)
 - [\[ICCV 2025\] Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning](resolving_token-space_gradient_conflicts_token_space_manipulation_for_transforme.md)
+- [\[ACL 2025\] Task-aware MoILE: Hierarchical-Task-Aware Multi-modal Mixture of Incremental LoRA Experts for Embodied Continual Learning](../../ACL2025/robotics/hierarchical-task-aware_multi-modal_mixture_of_incremental_lora_experts_for_embo.md)
 - [\[ICCV 2025\] Embodied Representation Alignment with Mirror Neurons](embodied_representation_alignment_with_mirror_neurons.md)
-- [\[ICCV 2025\] Weakly-Supervised Learning of Dense Functional Correspondences](weakly-supervised_learning_of_dense_functional_correspondences.md)
-- [\[ICCV 2025\] Selective Contrastive Learning for Weakly Supervised Affordance Grounding](selective_contrastive_learning_for_weakly_supervised_affordance_grounding.md)
+- [\[ICLR 2026\] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation](../../ICLR2026/robotics/equact_an_se3-equivariant_multi-task_transformer_for_3d_robotic_manipulation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GraSS: Scalable Data Attribution with Gradient Sparsification and Sparse Projection
 description: >-
-  [NeurIPS 2025][Model Compression][Data Attribution] GraSS and FactGraSS are proposed as a two-stage gradient compression algorithm that exploits the inherent sparsity of per-sample gradients to achieve **sublinear** time…
+  [NeurIPS 2025][Model Compression][Data Attribution] GraSS and FactGraSS are proposed as a two-stage gradient compression algorithm that exploits the inherent sparsity of per-sample gradients to achieve **sublinear** time and space complexity ($O(k')$), outperforming the SOTA baseline LoGra by **165%** in throughput on billion-parameter models while maintaining data attribution quality.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Influence Functions"
   - "Random Projection"
 date: 2026-05-08
-content_hash: 65425eac3f12e11e
+content_hash: 7046bb91e5e2b983
 ---
 
 # GraSS: Scalable Data Attribution with Gradient Sparsification and Sparse Projection
@@ -153,10 +153,10 @@ On **Llama-2-7B** (7 billion parameters) + C4 dataset:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Ensemble++: Scalable Exploration via Ensemble](scalable_exploration_via_ensemble.md)
+- [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](../../ICLR2026/model_compression/quantized_gradient_projection_for_memory-efficient_continual_learning.md)
 - [\[NeurIPS 2025\] SpecAttn: Speculating Sparse Attention](specattn_speculating_sparse_attention.md)
-- [\[NeurIPS 2025\] Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization](tighter_cmi-based_generalization_bounds_via_stochastic_projection_and_quantizati.md)
+- [\[ICML 2025\] Lego Sketch: A Scalable Memory-augmented Neural Network for Sketching Data Streams](../../ICML2025/model_compression/lego_sketch_a_scalable_memory-augmented_neural_network_for_sketching_data_stream.md)
 - [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](gora_gradient-driven_adaptive_low_rank_adaptation.md)
-- [\[ICCV 2025\] MSQ: Memory-Efficient Bit Sparsification Quantization](../../ICCV2025/model_compression/msq_memory-efficient_bit_sparsification_quantization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] This paper points out that existing VLM-based OOD detection methods use intra-modal distances (text-text or image-image) to select negative texts, which is inconsistent with the cross-modal distance optimized by CLIP. It proposes InterNeg to systematically utilize cross-modal distance from both textual and visual persp
+  [CVPR 2026][Multimodal VLM][OOD Detection] This paper points out that existing VLM-based OOD detection methods use intra-modal distances (text-text or image-image) to select negative texts, which is inconsistent with the cross-modal distance optimized by CLIP. It proposes InterNeg to systematically utilize cross-modal distance from both textual and visual perspectives, achieving a 3.47% reduction in FPR95 on ImageNet.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "OOD Detection"
+  - "CLIP"
+  - "Cross-modal Distance"
+  - "Negative Text Selection"
+  - "Zero-shot"
 date: 2026-05-08
-content_hash: 69d5e7ce0b031ed7
+content_hash: 35a2f2dbc69705b2
 ---
+
 # Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs
 
 **Conference**: CVPR 2026  
@@ -130,10 +135,10 @@ The final score combines ID labels, filtered fixed negative texts, and extra neg
 
 ## Related Papers
 
-- [\[CVPR 2026\] ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning](ants_adaptive_negative_textual_space_shaping_for_ood_detection_via_test-time_mll.md)
 - [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](../../ICCV2025/multimodal_vlm/negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
 - [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
 - [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
+- [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
 - [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](../../AAAI2026/multimodal_vlm/cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
 
 </div>

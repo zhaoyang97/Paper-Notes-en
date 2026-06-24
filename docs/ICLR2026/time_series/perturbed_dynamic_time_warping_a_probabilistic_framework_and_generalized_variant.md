@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants
 description: >-
-  [ICLR 2026][Time Series][soft-DTW] This paper reinterprets soft-DTW from the perspective of perturbed optimization—where random noise is added to alignment costs before taking the expected minimum—proving it to be a special case under Gumbel noise. The noise is generalized to the Generalized Extreme Value (GEV) distribution to derive nested-soft-DTW (ns
+  [ICLR 2026][Time Series][Dynamic Time Warping] This paper reinterprets soft-DTW from the perspective of perturbed optimization—where random noise is added to alignment costs before taking the expected minimum—proving it to be a special case under Gumbel noise. The noise is generalized to the Generalized Extreme Value (GEV) distribution to derive nested-soft-DTW (ns-DTW) with adjustable skewness, which consistently outperforms soft-DTW in time series barycenter computation…
 tags:
-  - ICLR 2026
-  - Time Series
-  - soft-DTW
+  - "ICLR 2026"
+  - "Time Series"
+  - "Dynamic Time Warping"
+  - "soft-DTW"
+  - "perturbed optimization"
+  - "generalized extreme value distribution"
+  - "random utility theory"
 date: 2026-05-08
-content_hash: a0b2345b65b4a0c2
+content_hash: ccf30ab28c8675b7
 ---
+
 # Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants
 
 **Conference**: ICLR 2026  
@@ -124,16 +129,16 @@ Under optimal $\gamma$ settings, ns-DTW outperforms Subgradient on 100%, DBA on 
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
 - [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
 - [\[NeurIPS 2025\] TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting](../../NeurIPS2025/time_series/timeperceiver_an_encoder-decoder_framework_for_generalized_time-series_forecasti.md)
-- [\[ICML 2026\] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting](../../ICML2026/time_series/parametric_prior_mapping_framework_for_non-stationary_probabilistic_time_series_.md)
 - [\[ICLR 2026\] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting](from_samples_to_scenarios_a_new_paradigm_for_probabilistic_forecasting.md)
+- [\[ICLR 2026\] Reliable Probabilistic Forecasting of Irregular Time Series via Marginal Consistent Flows](reliable_probabilistic_forecasting_of_irregular_time_series_through_marginalizat.md)
 
 </div>
 

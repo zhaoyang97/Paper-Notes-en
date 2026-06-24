@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Supervised Learning from Structural Invariance
 description: >-
-  [ICLR 2026][Causal Inference][Self-Supervised Learning] AdaSSL is proposed to model conditional uncertainty between positive pairs by introducing latent variables and deriving a variational lower bound of mutual information. This enables SSL to handle complex (multimodal, heteroscedastic) conditional distributions in naturally paired data, outperforming baselines in causal
+  [ICLR 2026][Causal Inference][Self-Supervised Learning] AdaSSL is proposed to model conditional uncertainty between positive pairs by introducing latent variables and deriving a variational lower bound of mutual information. This enables SSL to handle complex (multimodal, heteroscedastic) conditional distributions in naturally paired data, outperforming baselines in causal representation learning, fine-grained image understanding, and video world models.
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Self-Supervised Learning"
+  - "Latent Variable Models"
+  - "Structural Invariance"
+  - "Heteroscedasticity"
+  - "Causal Representation"
 date: 2026-05-08
-content_hash: f0d3c1d472497028
+content_hash: a2902114b53627a7
 ---
+
 # Self-Supervised Learning from Structural Invariance
 
 **Conference**: ICLR 2026  
@@ -132,11 +137,11 @@ Both variants share the "Main SSL Loss + Information Regularization" structure. 
 
 ## Related Papers
 
+- [\[ICLR 2026\] On the Identifiability of Causal Graphs with the Invariance Principle](on_the_identifiability_of_causal_graphs_with_the_invariance_principle.md)
 - [\[ICLR 2026\] Counterfactual Structural Causal Bandits](counterfactual_structural_causal_bandits.md)
 - [\[NeurIPS 2025\] Root Cause Analysis of Outliers with Missing Structural Knowledge](../../NeurIPS2025/causal_inference/root_cause_analysis_of_outliers_with_missing_structural_knowledge.md)
 - [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](learning_robust_intervention_representations_with_delta_embeddings.md)
 - [\[ICLR 2026\] Efficient and Sharp Off-Policy Learning under Unobserved Confounding](efficient_and_sharp_off-policy_learning_under_unobserved_confounding.md)
-- [\[ICLR 2026\] GDR-learners: Orthogonal Learning of Generative Models for Potential Outcomes](gdr-learners_orthogonal_learning_of_generative_models_for_potential_outcomes.md)
 
 </div>
 

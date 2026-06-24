@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Rethinking the Idiomaticity Decomposability Hypothesis: Evidence from Distributional Learning
 description: >-
-  [ACL 2026][LLM (Other)][idiom decomposability] This paper re-examines the Idiom Decomposability Hypothesis using contextualized language models as "controlled distributional learners." It finds that model-derived decomposability is only weakly correlated with human judgments and exhibits a small but stable negative correlation with syntactic flexibility, suggesting
+  [ACL2026][LLM (Other)][idiom decomposability] This paper re-examines the Idiom Decomposability Hypothesis using contextualized language models as "controlled distributional learners." It finds that model-derived decomposability is only weakly correlated with human judgments and exhibits a small but stable negative correlation with syntactic flexibility, suggesting that idiomatic behavior is better explained by distributional experience, surprisal…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - idiom decomposability
-  - syntactic flexibility
-  - distributional learning
-  - contextual representations
-  - OLMo
+  - "ACL2026"
+  - "LLM (Other)"
+  - "idiom decomposability"
+  - "syntactic flexibility"
+  - "distributional learning"
+  - "contextual representations"
+  - "OLMo"
 date: 2026-05-08
-content_hash: 30b4bfa4debd4b27
+content_hash: 241b8b583847e09d
 ---
+
 # Rethinking the Idiomaticity Decomposability Hypothesis: Evidence from Distributional Learning
 
 **Conference**: ACL2026  

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Optimizing Token Choice for Code Watermarking: An RL Approach
 description: >-
-  [ICML 2026][AI Safety][GRPO] CodeTracer attaches a small watermark policy network alongside a frozen code LLM, utilizing GRPO with dual rewards (execution pass + z-score) and Gumbel-Top-k straight-through estimation to jointly learn where to watermark and which green tokens to select. It improves detection AUROC from ~70% to ~78% while maintaining
+  [ICML 2026][AI Safety][Code Watermarking] CodeTracer attaches a small watermark policy network alongside a frozen code LLM, utilizing GRPO with dual rewards (execution pass + z-score) and Gumbel-Top-k straight-through estimation to jointly learn where to watermark and which green tokens to select. It improves detection AUROC from ~70% to ~78% while maintaining near-baseline Pass@1 performance.
 tags:
-  - ICML 2026
-  - AI Safety
-  - GRPO
-  - Gumbel-Top-k
-  - z-score
+  - "ICML 2026"
+  - "AI Safety"
+  - "Code Watermarking"
+  - "GRPO"
+  - "Gumbel-Top-k"
+  - "Straight-Through Estimator"
+  - "z-score"
 date: 2026-05-08
-content_hash: 298176d9571a025b
+content_hash: 390fcfe6a5bf2fde
 ---
+
 # Optimizing Token Choice for Code Watermarking: An RL Approach
 
 **Conference**: ICML 2026  
@@ -139,15 +142,16 @@ Post-hoc methods largely fail (AUROC ~47–52%). CodeTracer minimizes Pass@1 deg
 - Value: ⭐⭐⭐⭐ High practical utility for serving watermarked code through APIs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](../../CVPR2026/ai_safety/clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
-- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
 - [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
 - [\[ICML 2026\] Memory as a Markov Matrix: Sample Efficient Knowledge Expansion via Token-to-Dictionary Mapping](memory_as_a_markov_matrix_sample_efficient_knowledge_expansion_via_token-to-dict.md)
-- [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
+- [\[ICML 2026\] OmniVL-Guard: Towards Unified Vision-Language Forgery Detection and Grounding via Balanced RL](omnivl-guard_towards_unified_vision-language_forgery_detection_and_grounding_via.md)
+- [\[ICML 2026\] Alignment Risks from Capability-Seeking RL Training](alignment_risks_from_capability-seeking_rl_training.md)
 
 </div>
 

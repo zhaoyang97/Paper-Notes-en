@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Perceived Fragility of Explanations in Audio Models: Manipulation of Attribution with Unchanged Predictions
 description: >-
-  [ICML 2026][Interpretability][Paper Note] The authors transfer "explanation manipulation attacks" from the visual to the audio deepfake detection domain, proposing an **optimization framework constrained by psychoacoustic masking thresholds**. This framework systematically alters Grad-CAM/LRP attribution heatmaps while remaining **completely inaudible and with
+  [ICML2026][Interpretability][Attribution Map Manipulation] The authors transfer "explanation manipulation attacks" from the visual to the audio deepfake detection domain, proposing an **optimization framework constrained by psychoacoustic masking thresholds**. This framework systematically alters Grad-CAM/LRP attribution heatmaps while remaining **completely inaudible and without changing the model's final prediction**, demonstrating that "explanations" in audio models are fr…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Attribution Map Manipulation"
+  - "Psychoacoustic Masking"
+  - "Adversarial Perturbation"
+  - "Audio Deepfake"
+  - "Interpretability Fragility"
 date: 2026-05-08
-content_hash: 535edde10caedc37
+content_hash: 68d28591b2aee6de
 ---
+
 # The Perceived Fragility of Explanations in Audio Models: Manipulation of Attribution with Unchanged Predictions
 
 **Conference**: ICML2026  
@@ -137,10 +143,10 @@ Ranking "Model × Attack" combinations by $AFS^{stable}$ (lower rank = easier to
 ## Related Papers
 
 - [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
-- [\[ICML 2026\] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution](manifold-aligned_guided_integrated_gradients_for_reliable_feature_attribution.md)
+- [\[ICLR 2026\] Missingness Bias Calibration in Feature Attribution Explanations](../../ICLR2026/interpretability/missingness_bias_calibration_in_feature_attribution_explanations.md)
 - [\[ICML 2026\] ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](explaind_unifying_model_data_and_training_attribution_to_study_model_behavior.md)
-- [\[ICML 2026\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
-- [\[CVPR 2026\] Measuring the (Un)Faithfulness of Concept-Based Explanations](../../CVPR2026/interpretability/measuring_the_unfaithfulness_of_concept-based_explanations.md)
+- [\[ICLR 2026\] TimeSeg: An Information-Theoretic Segment-Wise Explainer for Time-Series Predictions](../../ICLR2026/interpretability/timeseg_an_information-theoretic_segment-wise_explainer_for_time-series_predicti.md)
+- [\[ICML 2026\] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution](manifold-aligned_guided_integrated_gradients_for_reliable_feature_attribution.md)
 
 </div>
 

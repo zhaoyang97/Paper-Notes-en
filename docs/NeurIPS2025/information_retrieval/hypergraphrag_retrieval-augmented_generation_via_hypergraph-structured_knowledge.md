@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes HyperGraphRAG, the first RAG method based on hypergraph structure…
+  [NeurIPS 2025][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes HyperGraphRAG, the first RAG method based on hypergraph structure, which models n-ary relations ($n \geq 2$) via hyperedges. It overcomes the binary-relation bottleneck of existing graph-based RAG methods, achieving comprehensive improvements over StandardRAG and the GraphRAG family on question-answering tasks across medical, agricultural, computer science, and legal domains.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "N-ary Relations"
   - "Graph Retrieval"
 date: 2026-05-08
-content_hash: 0731b682865b8a6b
+content_hash: fe89ce3bcc36a30f
 ---
 
 # HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation
@@ -161,11 +161,11 @@ HyperGraphRAG achieves moderate construction efficiency (3.1 s/1k tokens); its g
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
+- [\[ACL 2025\] Toward Structured Knowledge Reasoning: Contrastive Retrieval-Augmented Generation on Experience](../../ACL2025/information_retrieval/toward_structured_knowledge_reasoning_contrastive_retrieval-augmented_generation.md)
 - [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
-- [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](chain-of-retrieval_augmented_generation.md)
-- [\[AAAI 2026\] Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation](../../AAAI2026/information_retrieval/cog-rag_cognitive-inspired_dual-hypergraph_with_theme_alignment_retrieval-augmen.md)
+- [\[ACL 2025\] Accelerating Adaptive Retrieval Augmented Generation via Instruction-Driven Representation Reduction of Retrieval Overlaps](../../ACL2025/information_retrieval/accelerating_adaptive_retrieval_augmented_generation_via_instruction-driven_repr.md)
 - [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](scaling_language-centric_omnimodal_representation_learning.md)
+- [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](chain-of-retrieval_augmented_generation.md)
 
 </div>
 

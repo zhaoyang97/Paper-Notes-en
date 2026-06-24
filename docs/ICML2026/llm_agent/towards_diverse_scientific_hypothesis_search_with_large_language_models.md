@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Diverse Scientific Hypothesis Search with Large Language Models
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] The study reframes "scientific hypothesis search with LLMs" as a **sampling problem aimed at efficiently producing a diverse and high-quality set of hypotheses under a fixed verification budget**. By borrowing Parallel Tempering (PT) from physics, the authors developed EvoDiverse, a dual-temperature population framewor
+  [ICML 2026][LLM Agent][Scientific Hypothesis Search] The study reframes "scientific hypothesis search with LLMs" as a **sampling problem aimed at efficiently producing a diverse and high-quality set of hypotheses under a fixed verification budget**. By borrowing Parallel Tempering (PT) from physics, the authors developed EvoDiverse, a dual-temperature population framework where a high-temperature pool explores and a low-temperature pool refines. Samples are exchanged via Metr…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Scientific Hypothesis Search"
+  - "Parallel Tempering"
+  - "Evolutionary Algorithms"
+  - "Diversity Collapse"
+  - "Sampling"
 date: 2026-05-08
-content_hash: c6840165a7d2cd36
+content_hash: ed060c4f7848c4c6
 ---
+
 # Towards Diverse Scientific Hypothesis Search with Large Language Models
 
 **Conference**: ICML 2026  
@@ -166,10 +172,10 @@ Algorithm Discovery (Circle Packing n=26):
 ## Related Papers
 
 - [\[ICML 2026\] Hunt Instead of Wait: Evaluating Deep Data Research on Large Language Models](hunt_instead_of_wait_evaluating_deep_data_research_on_large_language_models.md)
+- [\[ICLR 2026\] Do Large Language Models Know What They Are Capable Of?](../../ICLR2026/llm_agent/do_large_language_models_know_what_they_are_capable_of.md)
 - [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](../../ACL2026/llm_agent/implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
+- [\[ICLR 2026\] GPS: Graph-guided Proactive Information Seeking in Large Language Models](../../ICLR2026/llm_agent/gps_graph-guided_proactive_information_seeking_in_large_language_models.md)
 - [\[CVPR 2026\] ModularAgent: A Task-Aware Modular Framework for Joint Optimization of Multimodal Large Language Models and World Models](../../CVPR2026/llm_agent/modularagent_a_task-aware_modular_framework_for_joint_optimization_of_multimodal.md)
-- [\[NeurIPS 2025\] Are Large Language Models Sensitive to the Motives Behind Communication?](../../NeurIPS2025/llm_agent/are_large_language_models_sensitive_to_the_motives_behind_communication.md)
-- [\[ACL 2026\] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models](../../ACL2026/llm_agent/agent-gwo_collaborative_agents_for_dynamic_prompt_optimization_in_large_language.md)
 
 </div>
 

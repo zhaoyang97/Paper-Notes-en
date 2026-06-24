@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LaDy: Lagrangian-Dynamic Informed Network for Skeleton-based Action Segmentation via Spatial-Temporal Modulation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] LaDy introduces an overlooked "Physical Dynamics" dimension to Skeleton-based Temporal Action Segmentation (STAS). It utilizes a Lagrangian dynamics branch to explicitly synthesize generalized joint forces (torques) from joint coordinates, ensures these forces adhere to the work-energy theorem via an energy consistency
+  [CVPR 2026][Video Understanding][Skeleton Action Segmentation] LaDy introduces an overlooked "Physical Dynamics" dimension to Skeleton-based Temporal Action Segmentation (STAS). It utilizes a Lagrangian dynamics branch to explicitly synthesize generalized joint forces (torques) from joint coordinates, ensures these forces adhere to the work-energy theorem via an energy consistency loss, and injects force information into spatial features (fusion) and temporal features (hierar…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Skeleton Action Segmentation"
+  - "Lagrangian Dynamics"
+  - "Physics Priors"
+  - "Generalized Forces"
+  - "Temporal Boundary Localization"
 date: 2026-05-08
-content_hash: 38ba0163e2d06019
+content_hash: 831980a1efec0c4b
 ---
+
 # LaDy: Lagrangian-Dynamic Informed Network for Skeleton-based Action Segmentation via Spatial-Temporal Modulation
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ On PKU-MMD v2 (X-sub):
 
 ## Related Papers
 
-- [\[ICCV 2025\] Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation](../../ICCV2025/segmentation/skeleton_motion_words_for_unsupervised_skeleton-based_temporal_action_segmentati.md)
+- [\[CVPR 2026\] Spectral Scalpel: Amplifying Adjacent Action Discrepancy via Frequency-Selective Filtering for Skeleton-Based Action Segmentation](spectral_scalpel_amplifying_adjacent_action_discrepancy_via_frequency-selective_.md)
+- [\[CVPR 2026\] Gamba: Mamba-based Graph Convolutional Network with Dynamic Graph Topology Learning for Action Recognition](gamba_mamba-based_graph_convolutional_network_with_dynamic_graph_topology_learni.md)
+- [\[CVPR 2026\] T2SGrid: Temporal-to-Spatial Gridification for Video Temporal Grounding](t2sgrid_temporal-to-spatial_gridification_for_video_temporal_grounding.md)
 - [\[CVPR 2026\] Hierarchical Action Learning for Weakly-Supervised Action Segmentation](hierarchical_action_learning_for_weakly-supervised_action_segmentation.md)
-- [\[CVPR 2026\] Generalizable Co-Salient Object Detection via Mixed Content-Style Modulation](generalizable_co-salient_object_detection_via_mixed_content-style_modulation.md)
-- [\[CVPR 2026\] Spatial Matters: Position-Guided 3D Referring Expression Segmentation](spatial_matters_position-guided_3d_referring_expression_segmentation.md)
-- [\[CVPR 2026\] CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects](captionformer_unified_segmentation_tracking_and_captioning_for_spatio-temporal_o.md)
+- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
 
 </div>
 

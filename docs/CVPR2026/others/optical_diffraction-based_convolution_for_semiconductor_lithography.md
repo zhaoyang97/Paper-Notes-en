@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Optical Diffraction-based Convolution for Semiconductor Lithography
 description: >-
-  [CVPR 2026][Others][Paper Note] OptiCo derives the Rayleigh-Sommerfeld diffraction integral into a "complex convolution," constructing **Optical Phase (OP) kernels** that encode light wave phase variations. These kernels are directly embedded into a CNN, allowing the network to explicitly adhere to diffraction physics during lithography mask optimiza
+  [CVPR 2026][Semiconductor Lithography] OptiCo derives the Rayleigh-Sommerfeld diffraction integral into a "complex convolution," constructing **Optical Phase (OP) kernels** that encode light wave phase variations. These kernels are directly embedded into a CNN, allowing the network to explicitly adhere to diffraction physics during lithography mask optimization. This approach reduces the Edge Placement Error (EPE) from double-digit levels seen in peer models to near zero on t…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Semiconductor Lithography"
+  - "Mask Optimization"
+  - "Optical Diffraction"
+  - "Complex Convolution"
+  - "Phase Modulation"
 date: 2026-05-08
-content_hash: 2c5d36358b20f488
+content_hash: 81f2bb038f39c9d1
 ---
+
 # Optical Diffraction-based Convolution for Semiconductor Lithography
 
 **Conference**: CVPR 2026  
@@ -154,9 +159,9 @@ Additional ablations on OP kernel formula selection (Table 3, standard $W_{\text
 
 - [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](../../ICCV2025/others/recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
 - [\[CVPR 2025\] SDF-Net: Structure-Aware Disentangled Feature Learning for Optical–SAR Ship Re-Identification](../../CVPR2025/others/sdf-net_structure-aware_disentangled_feature_learning_for_opticall-sar_ship_re-i.md)
-- [\[CVPR 2026\] Neural Differentiation in Deep Networks: A Theoretical Framework for Expressivity and Representational Diversity](neural_differentiation_in_deep_networks_a_theoretical_framework_for_expressivity.md)
-- [\[CVPR 2026\] Electromagnetic Inverse Scattering from a Single Transmitter](electromagnetic_inverse_scattering_from_a_single_transmitter.md)
-- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
+- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](videomama_mask-guided_video_matting_via_generative_prior.md)
+- [\[CVPR 2026\] Inter-Photon-Limited Videography](inter-photon-limited_videography.md)
+- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
 
 </div>
 

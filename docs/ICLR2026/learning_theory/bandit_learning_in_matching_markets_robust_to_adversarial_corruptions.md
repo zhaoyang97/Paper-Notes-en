@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Bandit Learning in Matching Markets Robust to Adversarial Corruptions
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper investigates the decentralized bilateral matching market bandit learning problem under feedback corrupted by an adversary for the first time. It provides robust algorithms for cases where the total corruption $C$ is known and unknown: for known $C$, the confidence intervals of the classic ETGS are widened; f
+  [ICLR2026][Learning Theory][Matching Markets] This paper investigates the decentralized bilateral matching market bandit learning problem under feedback corrupted by an adversary for the first time. It provides robust algorithms for cases where the total corruption $C$ is known and unknown: for known $C$, the confidence intervals of the classic ETGS are widened; for unknown $C$, a "multi-layer ETGS racing + sub-phase level synchronization" approach is used to adaptively resis…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Multi-armed Bandits"
+  - "Matching Markets"
+  - "Adversarial Corruptions"
+  - "Robust Online Learning"
+  - "Regret Bounds"
 date: 2026-05-08
-content_hash: 0c6eeef9341c8b67
+content_hash: 644a47b576c6eed6
 ---
+
 # Bandit Learning in Matching Markets Robust to Adversarial Corruptions
 
 **Conference**: ICLR2026  
@@ -158,10 +165,10 @@ Performance comparison (Table 1):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
+- [\[ICML 2026\] Bandit Social Learning with Exploration Episodes](../../ICML2026/learning_theory/bandit_social_learning_with_exploration_episodes.md)
+- [\[ICLR 2026\] Laplacian Kernelized Bandit](laplacian_kernelized_bandit.md)
 - [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](noise_tolerance_of_distributionally_robust_learning.md)
-- [\[ICLR 2026\] A Statistical Learning Perspective on Semi-dual Adversarial Neural Optimal Transport Solvers](a_statistical_learning_perspective_on_semi-dual_adversarial_neural_optimal_trans.md)
-- [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
-- [\[ICLR 2026\] InfoBridge: Mutual Information Estimation via Bridge Matching](infobridge_mutual_information_estimation_via_bridge_matching.md)
 - [\[ICLR 2026\] A Faster Parameter-Free Regret Matching Algorithm](a_faster_parameter-free_regret_matching_algorithm.md)
 
 </div>

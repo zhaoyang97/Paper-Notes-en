@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] It's LIT! Reliability-Optimized LLMs with Inspectable Tools
 description: >-
-  [NeurIPS 2025 (Workshop on Multi-Turn Interactions in LLMs)][LLM Agent][tool reliability] By defining reliability/inspectability cost functions for each external tool…
+  [NeurIPS 2025 (Workshop on Multi-Turn Interactions in LLMs)][LLM Agent][tool reliability] By defining reliability/inspectability cost functions for each external tool, LIT guides LLMs to select the lowest-cost (most transparent and auditable) tool-calling path among multiple candidates, improving interpretability while maintaining or enhancing task accuracy in 61 out of 65 test scenarios.
 tags:
   - "NeurIPS 2025 (Workshop on Multi-Turn Interactions in LLMs)"
   - "LLM Agent"
@@ -13,7 +13,7 @@ tags:
   - "trustworthy AI"
   - "multi-step tool calling"
 date: 2026-05-08
-content_hash: fc29a7d411c4d308
+content_hash: e91c950250363a48
 ---
 
 # It's LIT! Reliability-Optimized LLMs with Inspectable Tools
@@ -178,11 +178,11 @@ where $S$ is the tool-calling sequence of a candidate solution, and the solution
 
 ## Related Papers
 
-- [\[ICLR 2026\] Judge Reliability Harness: Stress Testing the Reliability of LLM Judges](../../ICLR2026/llm_agent/judge_reliability_harness_stress_testing_the_reliability_of_llm_judges.md)
 - [\[ICML 2026\] Towards a Science of AI Agent Reliability](../../ICML2026/llm_agent/towards_a_science_of_ai_agent_reliability.md)
 - [\[NeurIPS 2025\] Distilling LLM Agent into Small Models with Retrieval and Code Tools](distilling_llm_agent_into_small_models_with_retrieval_and_co.md)
-- [\[ACL 2026\] GOAT: A Training Framework for Goal-Oriented Agent with Tools](../../ACL2026/llm_agent/goat_a_training_framework_for_goal-oriented_agent_with_tools.md)
-- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](../../ACL2026/llm_agent/octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
+- [\[ACL 2025\] LLM Agents Making Agent Tools](../../ACL2025/llm_agent/llm_agents_making_agent_tools.md)
+- [\[CVPR 2026\] Learning to Select Visual Tools from Experience](../../CVPR2026/llm_agent/learning_to_select_visual_tools_from_experience.md)
+- [\[ACL 2025\] Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks](../../ACL2025/llm_agent/agents_under_siege_breaking_pragmatic_multi-agent_llm_systems_with_optimized_pro.md)
 
 </div>
 

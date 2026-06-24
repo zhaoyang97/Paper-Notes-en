@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Formal Comparison Between Chain of Thought and Latent Thought
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] Based on computational complexity theory, this paper formally compares the expressive power of CoT (Chain of Thought) and Latent Thought (Looped Transformer / Coconut). It proves that Latent Thought strictly reaches $\mathsf{TC}^k$ under polylogarithmic depth, while CoT reaches at most $\mathsf{TC}^{k-1}$. Simultaneous
+  [ICML 2026][Reasoning][Chain of Thought] Based on computational complexity theory, this paper formally compares the expressive power of CoT (Chain of Thought) and Latent Thought (Looped Transformer / Coconut). It proves that Latent Thought strictly reaches $\mathsf{TC}^k$ under polylogarithmic depth, while CoT reaches at most $\mathsf{TC}^{k-1}$. Simultaneously, in a probabilistic setting, it reveals for the first time that CoT can support FPRAS counting through stochastic de…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Chain of Thought"
+  - "Latent Thought"
+  - "Computational Complexity"
+  - "Boolean Circuits"
+  - "Parallel Computing"
 date: 2026-05-08
-content_hash: 207a1d0302a9b4e8
+content_hash: 5385fa60d725e958
 ---
+
 # A Formal Comparison Between Chain of Thought and Latent Thought
 
 **Conference**: ICML 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UKP_Psycontrol at SemEval-2026 Task 2: Modeling Valence and Arousal Dynamics from Text
 description: >-
-  [ACL 2026][Model Compression][Paper Note] UKP_Psycontrol achieved first place in both categories of SemEval-2026 Task 2 by combining LLM prompting, a MaxEnt model with Ising interactions, and neural regression models. The study found that LLMs excel at capturing static emotional signals, whereas short-term emotional changes are explained more by recent numeric
+  [ACL 2026][Model Compression][Emotion Assessment] UKP_Psycontrol achieved first place in both categories of SemEval-2026 Task 2 by combining LLM prompting, a MaxEnt model with Ising interactions, and neural regression models. The study found that LLMs excel at capturing static emotional signals, whereas short-term emotional changes are explained more by recent numerical trajectories than by textual semantics.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "Emotion Assessment"
+  - "Longitudinal Analysis"
+  - "Valence-Arousal"
+  - "LLM Prompting"
+  - "MaxEnt Models"
 date: 2026-05-08
-content_hash: 84be84df27320b0f
+content_hash: b59094243f4aa27a
 ---
+
 # UKP_Psycontrol at SemEval-2026 Task 2: Modeling Valence and Arousal Dynamics from Text
 
 **Conference**: ACL 2026  
@@ -130,15 +136,15 @@ The MaxEnt model was trained using maximum likelihood estimation, while the neur
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination](tell-tale_task_efficient_llms_with_task_aware_layer_elimination.md)
 - [\[ACL 2026\] Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics](why_steering_works_toward_a_unified_view_of_language_model_parameter_dynamics.md)
-- [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](../../AAAI2026/model_compression/distillation_dynamics_towards_understanding_feature-based_di.md)
+- [\[ICLR 2026\] KDP: Simplifying Representation Dynamics in Kernel Space](../../ICLR2026/model_compression/kdp_simplifying_representation_dynamics_in_kernel_space.md)
 - [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](latent-condensed_transformer_for_efficient_long_context_modeling.md)
-- [\[ICLR 2026\] NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks](../../ICLR2026/model_compression/nerve_nonlinear_eigenspectrum_dynamics_in_llm_feed-forward_networks.md)
+- [\[ICML 2025\] Text-to-LoRA: Instant Transformer Adaption](../../ICML2025/model_compression/text-to-lora_instant_transformer_adaption.md)
 
 </div>
 

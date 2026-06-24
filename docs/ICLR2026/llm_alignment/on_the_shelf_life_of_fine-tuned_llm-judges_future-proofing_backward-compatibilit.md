@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Shelf Life of Fine-Tuned LLM-Judges: Future-Proofing, Backward-Compatibility, and Question Generalization
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper formalizes the problem of "how long a fine-tuned LLM judge remains effective" as a **dual-distribution (question distribution $\times$ response distribution) shift** problem. Through systematic experiments on two reasoning datasets, three training recipes, and three backbones, it finds that judges struggle w
+  [ICLR 2026][LLM Alignment][LLM Judge] This paper formalizes the problem of "how long a fine-tuned LLM judge remains effective" as a **dual-distribution (question distribution $\times$ response distribution) shift** problem. Through systematic experiments on two reasoning datasets, three training recipes, and three backbones, it finds that judges struggle with "future-proofing" (significant performance drop on responses from stronger new models) but achieve "backward-compatibi…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "LLM Judge"
+  - "Distribution Shift"
+  - "Future-proofing"
+  - "Backward-compatibility"
+  - "Continual Learning"
 date: 2026-05-08
-content_hash: 995058453ddcf6a0
+content_hash: 2bade26b0ac36af7
 ---
+
 # On the Shelf Life of Fine-Tuned LLM-Judges: Future-Proofing, Backward-Compatibility, and Question Generalization
 
 **Conference**: ICLR 2026  
@@ -141,8 +147,8 @@ Judges are trained using three recipes: SFT (positive samples $(x, y^+)$), DPO (
 - [\[ICLR 2026\] Enhancing Trustworthiness of Fine-Tuned LLMs via Regularized Subset Selection](enhancing_trustworthiness_of_fine-tuned_llms_via_regularized_subset_selection.md)
 - [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](../../ACL2026/llm_alignment/compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
 - [\[ICLR 2026\] Weak-to-Strong Generalization with Failure Trajectories](weak-to-strong_generalization_with_failure_trajectories.md)
+- [\[ICLR 2026\] TS²: Sparsemax+ for Training and Softmax for Testing for Accurate and Diverse LLM Fine-tuning](ts2_training_with_sparsemax_testing_with_softmax_for_accurate_and_diverse_llm_fi.md)
 - [\[ICLR 2026\] Fluent Alignment with Disfluent Judges: Post-training for Lower-Resource Languages](fluent_alignment_with_disfluent_judges_post-training_for_lower-resource_language.md)
-- [\[ICLR 2026\] Data Selection for LLM Alignment Using Fine-Grained Preferences](data_selection_for_llm_alignment_using_fine-grained_preferences.md)
 
 </div>
 

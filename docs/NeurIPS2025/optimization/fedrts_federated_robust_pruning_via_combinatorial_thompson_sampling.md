@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedRTS: Federated Robust Pruning via Combinatorial Thompson Sampling
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper reformulates federated dynamic pruning as a Combinatorial Multi-Armed Bandit (CMAB) problem and proposes TSAdj…
+  [NeurIPS 2025][Optimization][Federated Learning] This paper reformulates federated dynamic pruning as a Combinatorial Multi-Armed Bandit (CMAB) problem and proposes TSAdj, a Thompson Sampling-based topology adjustment mechanism. By replacing deterministic decisions with probabilistic ones, the method obtains more robust sparse model topologies while significantly reducing communication overhead.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Combinatorial Multi-Armed Bandit"
   - "Sparse Training"
 date: 2026-05-08
-content_hash: 11a07fd1f96fce83
+content_hash: 5cea2788342052bb
 ---
 
 # FedRTS: Federated Robust Pruning via Combinatorial Thompson Sampling
@@ -139,9 +139,9 @@ Under assumptions of independence, $L$-continuity, and mean-field approximation,
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
-- [\[NeurIPS 2025\] Oracle-Efficient Combinatorial Semi-Bandits](oracle-efficient_combinatorial_semi-bandits.md)
-- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)
 - [\[NeurIPS 2025\] Stable Coresets via Posterior Sampling: Aligning Induced and Full Loss Landscapes](stable_coresets_via_posterior_sampling_aligning_induced_and_full_loss_landscapes.md)
+- [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](../../ICLR2026/optimization/byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
+- [\[NeurIPS 2025\] Oracle-Efficient Combinatorial Semi-Bandits](oracle-efficient_combinatorial_semi-bandits.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
 
 </div>

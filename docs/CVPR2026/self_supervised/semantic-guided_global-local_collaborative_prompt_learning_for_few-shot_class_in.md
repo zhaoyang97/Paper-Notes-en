@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][FSCIL] SGLC utilizes a frozen CLIP as a backbone and adapts to FSCIL using a dual-layer prompt learning approach consisting of "global vision-text prototype alignment + local attribute-multiview optimal transport alignment." LLM-generated semantic descriptions serve as teachers via knowledge distillation for both prompt layer
+  [CVPR 2026][Self-Supervised Learning][FSCIL] SGLC utilizes a frozen CLIP as a backbone and adapts to FSCIL using a dual-layer prompt learning approach consisting of "global vision-text prototype alignment + local attribute-multiview optimal transport alignment." LLM-generated semantic descriptions serve as teachers via knowledge distillation for both prompt layers, leading to comprehensive improvements over previous SOTA on miniImageNet, CIFAR-100, and CUB200 benchmarks.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - FSCIL
-  - CLIP
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "FSCIL"
+  - "Prompt Learning"
+  - "CLIP"
+  - "Optimal Transport"
+  - "LLM Semantic Distillation"
 date: 2026-05-08
-content_hash: 2820a05d362f53f2
+content_hash: 777124c42c851749
 ---
+
 # Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning
 
 **Conference**: CVPR 2026  

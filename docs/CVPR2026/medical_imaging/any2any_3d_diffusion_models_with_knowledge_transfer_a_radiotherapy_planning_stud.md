@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Any2Any 3D Diffusion Models with Knowledge Transfer: A Radiotherapy Planning Study
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This work transfers 3D diffusion models pre-trained on natural videos (Wan 2.1) or public CT datasets (MAISI) to radiotherapy dose prediction. It introduces an "Any2Any" modality conditioning paradigm allowing any modality to serve as a generation target, followed by reinforcement learning post-training aligned with cl
+  [CVPR 2026][Medical Imaging][Radiotherapy Dose Prediction] This work transfers 3D diffusion models pre-trained on natural videos (Wan 2.1) or public CT datasets (MAISI) to radiotherapy dose prediction. It introduces an "Any2Any" modality conditioning paradigm allowing any modality to serve as a generation target, followed by reinforcement learning post-training aligned with clinical Scorecards to match institutional preferences. It achieved a new SOTA on the GDP-HMM challenge…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Radiotherapy Dose Prediction"
+  - "3D Diffusion Prior Transfer"
+  - "Any2Any Conditional Generation"
+  - "Reinforcement Learning Post-training"
+  - "Clinical Scorecard"
 date: 2026-05-08
-content_hash: 2d3572ec4aa10fdd
+content_hash: c4e5332178cb6b17
 ---
+
 # Any2Any 3D Diffusion Models with Knowledge Transfer: A Radiotherapy Planning Study
 
 **Conference**: CVPR 2026  
@@ -125,6 +131,7 @@ Ablation on Validation Set (Table 4):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -132,8 +139,8 @@ Ablation on Validation Set (Table 4):
 - [\[CVPR 2026\] STEPH: Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in WSI Prognosis](sparse_task_vector_mixup_wsi_prognosis.md)
 - [\[NeurIPS 2025\] Demo: Generative AI helps Radiotherapy Planning with User Preference](../../NeurIPS2025/medical_imaging/demo_generative_ai_helps_radiotherapy_planning_with_user_preference.md)
 - [\[CVPR 2026\] D2T2 - Multimodal Automated Planning for Brachytherapy](d2t2_-_multimodal_automated_planning_for_brachytherapy.md)
-- [\[CVPR 2026\] Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study](are_general-purpose_vision_models_all_we_need_for_2d_medical_image_segmentation_.md)
 - [\[CVPR 2026\] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning](masked-diffusion_autoencoders_for_3d_medical_vision_representation_learning.md)
+- [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
 
 </div>
 

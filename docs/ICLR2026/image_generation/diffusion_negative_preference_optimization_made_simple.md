@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Diffusion Negative Preference Optimization Made Simple
 description: >-
-  [ICLR 2026][Image Generation][Classifier-Free Guidance] Addressing the cumbersome practice of "training two models + weight merging" for explicit negative preference modeling in diffusion alignment, this paper proposes Diff-SNPO. It utilizes the inherent conditional/unconditional branches of CFG as outlets for positive/negative preferences within a **single network**. By ad
+  [ICLR2026][Image Generation][Diffusion Model Alignment] Addressing the cumbersome practice of "training two models + weight merging" for explicit negative preference modeling in diffusion alignment, this paper proposes Diff-SNPO. It utilizes the inherent conditional/unconditional branches of CFG as outlets for positive/negative preferences within a **single network**. By adapting a bounded objective from Bounded DPO, it resolves the "progressive blurring" issue of naive appro…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Classifier-Free Guidance
-  - Bounded DPO
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Model Alignment"
+  - "Negative Preference Optimization"
+  - "Classifier-Free Guidance"
+  - "Bounded DPO"
+  - "Single Network"
 date: 2026-05-08
-content_hash: 16539b8b15ba3dd4
+content_hash: e7cdadc0809e64d5
 ---
+
 # Diffusion Negative Preference Optimization Made Simple
 
 **Conference**: ICLR2026  
@@ -155,8 +159,8 @@ Efficiency (Table 4, 8×A6000): Diff-NPO VRAM 44.2GB×2, Relative Speed 1.00×; 
 - [\[ICLR 2026\] Towards Better Optimization for Listwise Preference in Diffusion Models](towards_better_optimization_for_listwise_preference_in_diffusion_models.md)
 - [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 - [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
+- [\[ICLR 2026\] VSF: Simple, Efficient, and Effective Negative Guidance in Few-Step Image Generation Models By Value Sign Flip](vsf_simple_efficient_and_effective_negative_guidance_in_few-step_image_generatio.md)
 - [\[AAAI 2026\] Rethinking Direct Preference Optimization in Diffusion Models](../../AAAI2026/image_generation/rethinking_direct_preference_optimization_in_diffusion_models.md)
-- [\[ICLR 2026\] Consis-GCPO: Consistency-Preserving Group Causal Preference Optimization for Vision Customization](consis-gcpo_consistency-preserving_group_causal_preference_optimization_for_visi.md)
 
 </div>
 

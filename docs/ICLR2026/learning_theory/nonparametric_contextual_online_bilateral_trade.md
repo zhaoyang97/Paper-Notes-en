@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Nonparametric Contextual Online Bilateral Trade
 description: >-
-  [ICLR 2026][learning_theory][Lipschitz] Under the most stringent setting where buyer and seller valuations are arbitrary Lipschitz functions of the context, feedback is restricted to a single bit ("whether the trade occurred"), and strong budget balance is required, this paper proposes a pricing algorithm based on hierarchical tree partitioning. It achieves
+  [ICLR 2026][learning theory][Online learning] Under the most stringent setting where buyer and seller valuations are arbitrary Lipschitz functions of the context, feedback is restricted to a single bit ("whether the trade occurred"), and strong budget balance is required, this paper proposes a pricing algorithm based on hierarchical tree partitioning. It achieves an $\tilde{O}(T^{(d-1)/d})$ regret bound and provides a matching lower bound to prove its optimality.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Lipschitz
+  - "ICLR 2026"
+  - "learning theory"
+  - "Online learning"
+  - "bilateral trade"
+  - "contextual bandits"
+  - "nonparametric"
+  - "Lipschitz"
+  - "regret bounds"
+  - "one-bit feedback"
 date: 2026-05-08
-content_hash: 681a73ba26417e23
+content_hash: 05862b3b09561145
 ---
+
 # Nonparametric Contextual Online Bilateral Trade
 
 **Conference**: ICLR 2026  
@@ -107,10 +114,10 @@ This is a **purely theoretical work without numerical experiments**. The core re
 ## Related Papers
 
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
-- [\[ICLR 2026\] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints](contextual_multi-armed_bandits_with_minimum_aggregated_revenue_constraints.md)
+- [\[ICLR 2026\] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits](efficient_best-of-both-worlds_algorithms_for_contextual_combinatorial_semi-bandi.md)
 - [\[ICLR 2026\] Semi-Parametric Contextual Pricing with General Smoothness](semi-parametric_contextual_pricing_with_general_smoothness.md)
 - [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
-- [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
+- [\[ICLR 2026\] T-Tamer: Provably Taming Trade-offs in ML Serving](t-tamer_provably_taming_trade-offs_in_ml_serving.md)
 
 </div>
 

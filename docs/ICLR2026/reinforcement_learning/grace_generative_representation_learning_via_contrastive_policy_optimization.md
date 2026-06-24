@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] GRACE: Generative Representation Learning via Contrastive Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] GRACE reinterprets contrastive learning signals from "losses to be minimized" as "rewards guiding a generative policy." It requires the LLM to first write readable "understanding rationales" for input text before performing mean-pooling on hidden states to obtain embeddings. Using GRPO-style policy gradients to maximiz
+  [ICLR 2026][Reinforcement Learning][Text embedding] GRACE reinterprets contrastive learning signals from "losses to be minimized" as "rewards guiding a generative policy." It requires the LLM to first write readable "understanding rationales" for input text before performing mean-pooling on hidden states to obtain embeddings. Using GRPO-style policy gradients to maximize query–positive similarity and minimize query–negative similarity, it significantly improves embedding qual…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Text embedding"
+  - "contrastive learning"
+  - "policy optimization"
+  - "GRPO"
+  - "interpretable representation"
+  - "LLM encoder"
 date: 2026-05-08
-content_hash: 94a52a5b7f53b3e4
+content_hash: cc5552d86f786c3d
 ---
+
 # GRACE: Generative Representation Learning via Contrastive Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,10 @@ Average unsupervised Gain over Base is **+6.85%**. Optimal results outperfrom LL
 ## Related Papers
 
 - [\[ICLR 2026\] CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning](cuda-l1_improving_cuda_optimization_via_contrastive_reinforcement_learning.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 - [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
 - [\[ICLR 2026\] GRACE: A Language Model Framework for Explainable Inverse Reinforcement Learning](grace_a_language_model_framework_for_explainable_inverse_reinforcement_learning.md)
 - [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
-- [\[ICLR 2026\] SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration](shapo_sharpness-aware_policy_optimization_for_safe_exploration.md)
 
 </div>
 

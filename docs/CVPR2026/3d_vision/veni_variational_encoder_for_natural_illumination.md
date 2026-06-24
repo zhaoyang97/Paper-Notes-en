@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VENI: Variational Encoder for Natural Illumination
 description: >-
-  [CVPR 2026][3D Vision][Vector Neurons] VENI establishes a prior for outdoor natural illumination using an $SO(2)$ rotation-equivariant Variational Autoencoder. It utilizes a novel Vector Neuron Vision Transformer (VN-ViT) as the encoder and adopts the equivariant neural field from RENI++ as the decoder. By directly encoding spherical environment maps into a
+  [CVPR 2026][3D Vision][Rotation Equivariance] VENI establishes a prior for outdoor natural illumination using an $SO(2)$ rotation-equivariant Variational Autoencoder. It utilizes a novel Vector Neuron Vision Transformer (VN-ViT) as the encoder and adopts the equivariant neural field from RENI++ as the decoder. By directly encoding spherical environment maps into a well-structured, unique latent space, VENI achieves smoother interpolation than the decoder-only RENI++…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Vector Neurons
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Rotation Equivariance"
+  - "Variational Autoencoder"
+  - "Spherical Neural Fields"
+  - "Environment Maps"
+  - "Vector Neurons"
 date: 2026-05-08
-content_hash: 135bb0d0f97e9193
+content_hash: d08224d558f0a135
 ---
+
 # VENI: Variational Encoder for Natural Illumination
 
 **Conference**: CVPR 2026  
@@ -144,16 +149,16 @@ RENI++ performance drops from 20.11 to 17.14 as data increases, while VENI's AE 
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Variational Graph-based Normal Integration](variational_graph-based_normal_integration.md)
-- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
-- [\[CVPR 2026\] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves](glove2hand_synthesizing_natural_hand-object_interaction_from_multi-modal_sensing.md)
-- [\[CVPR 2026\] Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction](color-encoded_illumination_for_high-speed_volumetric_scene_reconstruction.md)
 - [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
+- [\[CVPR 2026\] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves](glove2hand_synthesizing_natural_hand-object_interaction_from_multi-modal_sensing.md)
+- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
+- [\[CVPR 2026\] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels](lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels.md)
 
 </div>
 

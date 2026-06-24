@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hallucinate Less by Thinking More: Aspect-Based Causal Abstention for Large Language Models
 description: >-
-  [AAAI 2026][Hallucination Detection][Selective answering] This paper proposes ABCA (Aspect-Based Causal Abstention), a pre-generation abstention framework that employs dual-agent debate to identify "aspect variables" (e.…
+  [AAAI 2026][Hallucination Detection][Selective answering] This paper proposes ABCA (Aspect-Based Causal Abstention), a pre-generation abstention framework that employs dual-agent debate to identify "aspect variables" (e.g., discipline, legal context, temporal frame) for activating distinct knowledge branches within LLMs. It applies the AIPW doubly robust estimator to compute causal effects and uses Centroid Angular Deviation (CAD) to detect knowledge conflicts (Type-1) or kno…
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "knowledge conflict detection"
   - "AIPW estimation"
 date: 2026-05-08
-content_hash: dc485b6edfaf3bcd
+content_hash: 30cfdd9243d4f45e
 ---
 
 # Hallucinate Less by Thinking More: Aspect-Based Causal Abstention for Large Language Models
@@ -121,11 +121,11 @@ Two stages: (1) dual-agent debate to discover valid aspect variables; (2) AIPW e
 
 ## Related Papers
 
+- [\[ACL 2025\] Aligning Large Language Models to Follow Instructions and Hallucinate Less via Effective Data Filtering](../../ACL2025/hallucination/aligning_large_language_models_to_follow_instructions_and_hallucinate_less_via_e.md)
 - [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 - [\[AAAI 2026\] Does Less Hallucination Mean Less Creativity? An Empirical Investigation in LLMs](does_less_hallucination_mean_less_creativity_an_empirical_investigation_in_llms.md)
 - [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
 - [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](../../NeurIPS2025/hallucination/causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
-- [\[AAAI 2026\] Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models](beyond_hallucinations_a_composite_score_for_measuring_reliability_in_open-source.md)
 
 </div>
 

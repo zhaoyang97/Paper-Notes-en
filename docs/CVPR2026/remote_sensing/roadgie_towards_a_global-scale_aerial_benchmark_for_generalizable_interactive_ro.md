@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoadGIE: Towards A Global-Scale Aerial Benchmark for Generalizable Interactive Road Extraction
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] Ours first constructs WorldRoadSeg-360K—a global aerial road network segmentation benchmark covering 223 cities in 38 countries with 367,000 pixel-level annotations. Based on this, RoadGIE is proposed: a real-time road extraction framework with only 3.7M parameters that supports "connectivity-aware" interaction (clicks
+  [CVPR 2026][Remote Sensing][Road Network Extraction] Ours first constructs WorldRoadSeg-360K—a global aerial road network segmentation benchmark covering 223 cities in 38 countries with 367,000 pixel-level annotations. Based on this, RoadGIE is proposed: a real-time road extraction framework with only 3.7M parameters that supports "connectivity-aware" interaction (clicks/scribbles), achieving Prev. SOTA in segmentation accuracy and topological consistency while reducing manua…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Road Network Extraction"
+  - "Interactive Segmentation"
+  - "Remote Sensing Benchmark"
+  - "Topological Connectivity"
+  - "Scribble Prompt"
 date: 2026-05-08
-content_hash: 86ab6fc7a4a082b7
+content_hash: e36fd62dd73b4ae8
 ---
+
 # RoadGIE: Towards A Global-Scale Aerial Benchmark for Generalizable Interactive Road Extraction
 
 **Conference**: CVPR 2026  
@@ -146,7 +152,7 @@ RoadGIE ranks first on both datasets, significantly outperforming ScribblePrompt
 - [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
 - [\[CVPR 2026\] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark](cross-scale_pansharpening_via_scaleformer_and_the_panscale_benchmark.md)
 - [\[CVPR 2026\] Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments](olbedo_an_albedo_and_shading_aerial_dataset_for_large-scale_outdoor_environments.md)
-- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
+- [\[CVPR 2026\] WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification](whu-mars_a_multispectral_aerial-ground_benchmark_towards_any-scenario_person_re-.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][VLM] Without modifying the VLM architecture or introducing point cloud modalities, this work augments 2D vision-language models with 3D indoor scene understanding capabilities using only a visual prompting paradigm consisting of "videos + reconstructed Bird’s Eye Views (BEV) + cross-frame consistent object ID markers." It a
+  [ICLR 2026][Multimodal VLM][VLM] Without modifying the VLM architecture or introducing point cloud modalities, this work augments 2D vision-language models with 3D indoor scene understanding capabilities using only a visual prompting paradigm consisting of "videos + reconstructed Bird’s Eye Views (BEV) + cross-frame consistent object ID markers." It achieves SOTA performance in both zero-shot and fine-tuning settings.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VLM
-  - ScanNet
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM"
+  - "3D Scene Understanding"
+  - "Visual Prompting"
+  - "Bird's Eye View (BEV)"
+  - "Spatio-Temporal Object Markers"
+  - "ScanNet"
 date: 2026-05-08
-content_hash: 939d2526cb6d68de
+content_hash: 46dcf61f32a98ef7
 ---
+
 # GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models
 
 **Conference**: ICLR 2026  

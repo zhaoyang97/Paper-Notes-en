@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper derives exact closed-form expressions for the test loss after one and two steps of gradient descent in two- and three-layer linear neural networks. It reveals a phase transition phenomenon: asymmetric learning rates are optimal for the first step, while symmetric (balanced) learning rates become locally opti
+  [ICML 2026][Optimization][Layer-wise Learning Rates] This paper derives exact closed-form expressions for the test loss after one and two steps of gradient descent in two- and three-layer linear neural networks. It reveals a phase transition phenomenon: asymmetric learning rates are optimal for the first step, while symmetric (balanced) learning rates become locally optimal after the second step, providing a theoretical foundation for layer-wise learning rate scheduling.
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Layer-wise Learning Rates"
+  - "Linear Networks"
+  - "Gradient Decomposition"
+  - "Training Dynamics"
+  - "Learning Rate Balancing"
 date: 2026-05-08
-content_hash: a92c4ea39227a912
+content_hash: 0d7f0b6e797923d7
 ---
+
 # Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks
 
 **Conference**: ICML 2026  
@@ -118,8 +124,8 @@ Under the constraint $\eta_1+\eta_2=2h^\alpha$, Corollary 5.4 provides a qualita
 - [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
 - [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](../../AAAI2026/optimization/on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
 - [\[ICML 2026\] Muon in Associative Memory Learning: Training Dynamics and Scaling Laws](muon_in_associative_memory_learning_training_dynamics_and_scaling_laws.md)
+- [\[ICML 2026\] Gradient Descent with Large Step Size Restores Symmetry in Deep Linear Networks with Multi-Pathway](gradient_descent_with_large_step_size_restores_symmetry_in_deep_linear_networks_.md)
 - [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](../../NeurIPS2025/optimization/learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
-- [\[ICLR 2026\] Πnet: Optimizing Hard-Constrained Neural Networks with Orthogonal Projection Layers](../../ICLR2026/optimization/pinet_optimizing_hard-constrained_neural_networks_with_orthogonal_projection_lay.md)
 
 </div>
 

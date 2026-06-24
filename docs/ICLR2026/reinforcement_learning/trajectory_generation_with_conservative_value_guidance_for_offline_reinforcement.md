@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] A Transformer policy trained with Conservative Q-Learning (CQL) interacts with a pre-trained dynamics model to autoregressively "sample" synthetic trajectories, which are then merged into the original dataset to train standard offline RL algorithms. Conservative value penalties ensure generated samples do not deviate f
+  [ICLR 2026][Reinforcement Learning][Offline RL] A Transformer policy trained with Conservative Q-Learning (CQL) interacts with a pre-trained dynamics model to autoregressively "sample" synthetic trajectories, which are then merged into the original dataset to train standard offline RL algorithms. Conservative value penalties ensure generated samples do not deviate from the data distribution, resulting in higher quality than diffusion-based data augmentation (GTA) while signif…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Data Augmentation"
+  - "Conservative Q-Learning"
+  - "Transformer Policy"
+  - "Dynamics Model"
 date: 2026-05-08
-content_hash: 37dfc684d21fb739
+content_hash: 64dd1571a1e36a1b
 ---
+
 # Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -155,10 +161,10 @@ On AntMaze with sparse rewards and high-dimensional states, TGCVG still makes mo
 ## Related Papers
 
 - [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
-- [\[ICLR 2026\] Offline Reinforcement Learning with Adaptive Feature Fusion](offline_reinforcement_learning_with_adaptive_feature_fusion.md)
 - [\[ICLR 2026\] Toward Conservative Planning from Human-AI Preferences in Reinforcement Learning](toward_conservative_planning_from_human-ai_preferences_in_reinforcement_learning.md)
 - [\[ICML 2026\] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement](../../ICML2026/reinforcement_learning/counterfactual_transport_flows_for_offline_conservative_trajectory_refinement.md)
 - [\[ICLR 2026\] MAGE: Multi-scale Autoregressive Generation for Offline Reinforcement Learning](mage_multi-scale_autoregressive_generation_for_offline_reinforcement_learning.md)
+- [\[ICML 2026\] Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training](../../ICML2026/reinforcement_learning/beyond_the_proxy_trajectory-distilled_guidance_for_offline_gflownet_training.md)
 
 </div>
 

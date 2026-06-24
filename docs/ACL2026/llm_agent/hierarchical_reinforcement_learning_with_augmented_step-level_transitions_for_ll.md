@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] Ours proposes STEP-HRL, which iteratively condenses interaction histories into compact text summaries through a local progress module. This allows high-level and low-level policies to make decisions based only on step-level transitions rather than full histories, significantly improving performance and generalization o
+  [ACL 2026][LLM Agent][Hierarchical Reinforcement Learning] Ours proposes STEP-HRL, which iteratively condenses interaction histories into compact text summaries through a local progress module. This allows high-level and low-level policies to make decisions based only on step-level transitions rather than full histories, significantly improving performance and generalization on ScienceWorld and ALFWorld while reducing token consumption.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Hierarchical Reinforcement Learning"
+  - "Step-Level Transitions"
+  - "Local Progress"
+  - "Token Efficiency"
+  - "Offline RL"
 date: 2026-05-08
-content_hash: a27a13ebd76c5933
+content_hash: 94113cc9c0e07cee
 ---
+
 # Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents
 
 **Conference**: ACL 2026  
@@ -138,9 +144,9 @@ The BC phase utilizes an autoregressive cross-entropy loss to align with expert 
 
 - [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](../../AAAI2026/llm_agent/moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
 - [\[ACL 2026\] Verified Critical Step Optimization for LLM Agents](verified_critical_step_optimization_for_llm_agents.md)
-- [\[ACL 2026\] Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning](temp-r1_a_unified_autonomous_agent_for_complex_temporal_kgqa_via_reverse_curricu.md)
-- [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
-- [\[ICLR 2026\] Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICLR2026/llm_agent/reducing_belief_deviation_in_reinforcement_learning_for_active_reasoning.md)
+- [\[ACL 2026\] Why LLM Web Agents Fail: A Hierarchical Planning Perspective](why_do_llm-based_web_agents_fail_a_hierarchical_planning_perspective.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](../../ICLR2026/llm_agent/tree_search_for_llm_agent_reinforcement_learning.md)
+- [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](../../ICML2026/llm_agent/from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
 
 </div>
 

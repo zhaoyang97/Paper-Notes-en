@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Position: Towards Responsible Evaluation for Text-to-Speech
 description: >-
-  [ICML 2026][Audio & Speech][Responsible AI] This is a position paper proposing that TTS evaluation should evolve from "technical metrics only" to a three-layer hierarchical **Responsible Evaluation** framework—Fidelity & Accuracy, Comparability & Standardization, and Governance-Fairness-Security. It systematically diagnoses the failure modes of current metrics s
+  [ICML 2026][Audio & Speech][TTS evaluation] This is a position paper proposing that TTS evaluation should evolve from "technical metrics only" to a three-layer hierarchical **Responsible Evaluation** framework—Fidelity & Accuracy, Comparability & Standardization, and Governance-Fairness-Security. It systematically diagnoses the failure modes of current metrics such as WER, SIM, MOS, and RTF, and provides 13 actionable recommendations.
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - Responsible AI
-  - MOS
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "TTS evaluation"
+  - "Responsible AI"
+  - "MOS"
+  - "Fairness"
+  - "Traceability"
 date: 2026-05-08
-content_hash: 11689143a8e0e5ac
+content_hash: 41f7513444bb78fd
 ---
+
 # Position: Towards Responsible Evaluation for Text-to-Speech
 
 **Conference**: ICML 2026  
@@ -106,8 +110,8 @@ Key implication: The same "LibriSpeech test-clean WER" metric represents entirel
 - [\[ICML 2026\] Position: Text Embeddings Should Capture Implicit Semantics, Not Just Surface Meaning](position_text_embeddings_should_capture_implicit_semantics_not_just_surface_mean.md)
 - [\[AAAI 2026\] CCFQA: A Benchmark for Cross-Lingual and Cross-Modal Speech and Text Factuality Evaluation](../../AAAI2026/audio_speech/ccfqa_a_benchmark_for_cross-lingual_and_cross-modal_speech_and_text_factuality_e.md)
 - [\[ICML 2026\] Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech](sparse_autoencoders_for_interpretable_emotion_control_in_text-to-speech.md)
+- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](../../ACL2026/audio_speech/unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
 - [\[ACL 2026\] SpeechLLM-as-Judges: Towards General and Interpretable Speech Quality Evaluation](../../ACL2026/audio_speech/speechllm-as-judges_towards_general_and_interpretable_speech_quality_evaluation.md)
-- [\[ICLR 2026\] Latent Speech-Text Transformer](../../ICLR2026/audio_speech/latent_speech_text_transformer.md)
 
 </div>
 

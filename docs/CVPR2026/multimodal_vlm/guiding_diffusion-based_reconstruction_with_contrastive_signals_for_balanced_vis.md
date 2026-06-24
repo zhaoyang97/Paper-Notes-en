@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Guiding Diffusion-based Reconstruction with Contrastive Signals for Balanced Visual Representation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To enable CLIP vision encoders to simultaneously achieve "category discriminability" and "fine-grained perception," this paper proposes DCR. Instead of having the diffusion model reconstruct the original image (which only adds detail but harms discrimination), it injects contrastive signals into the **predicted noise**
+  [CVPR 2026][Multimodal VLM][CLIP vision encoder] To enable CLIP vision encoders to simultaneously achieve "category discriminability" and "fine-grained perception," this paper proposes DCR. Instead of having the diffusion model reconstruct the original image (which only adds detail but harms discrimination), it injects contrastive signals into the **predicted noise** of the diffusion model to form a unified loss. This single objective optimizes both capabilities simultaneousl…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP vision encoder"
+  - "diffusion reconstruction"
+  - "contrastive learning"
+  - "gradient conflict"
+  - "representation enhancement"
 date: 2026-05-08
-content_hash: da63ae733b8f7f7a
+content_hash: 538b1ee11ec80460
 ---
+
 # Guiding Diffusion-based Reconstruction with Contrastive Signals for Balanced Visual Representation
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,15 @@ Conducted on OpenAI CLIP ViT-L@224.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MOON2.0: Dynamic Modality-balanced Multimodal Representation Learning for E-commerce Product Understanding](moon20_dynamic_modality-balanced_multimodal_representation_learning_for_e-commer.md)
 - [\[CVPR 2026\] Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens](cubic_discrete_diffusion_discrete_visual_generation_on_high-dimensional_represen.md)
-- [\[CVPR 2026\] VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction](vqrae_representation_quantization_autoencoders_for_multimodal_understanding_gene.md)
 - [\[CVPR 2026\] WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition](wikiclip_an_efficient_contrastive_baseline_for_open-domain_visual_entity_recogni.md)
 - [\[ECCV 2024\] X-Former: Unifying Contrastive and Reconstruction Learning for MLLMs](../../ECCV2024/multimodal_vlm/x-former_unifying_contrastive_and_reconstruction_learning_for_mllms.md)
+- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
 
 </div>
 

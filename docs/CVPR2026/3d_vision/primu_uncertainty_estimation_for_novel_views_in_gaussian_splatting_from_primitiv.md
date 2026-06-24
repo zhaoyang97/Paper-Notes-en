@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRIMU: Uncertainty Estimation for Novel Views in Gaussian Splatting from Primitive-Based Representations of Error and Coverage
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PRIMU is a **post-processing** uncertainty estimation (UE) framework for Gaussian Splatting (GS). It back-projects rendering error, coverage, and field-of-view (FoV) statistics from training views onto each Gaussian primitive to construct a set of "uncertainty feature maps" renderable from any novel view. A gradient bo
+  [CVPR 2026][3D Vision][Gaussian Splatting] PRIMU is a **post-processing** uncertainty estimation (UE) framework for Gaussian Splatting (GS). It back-projects rendering error, coverage, and field-of-view (FoV) statistics from training views onto each Gaussian primitive to construct a set of "uncertainty feature maps" renderable from any novel view. A gradient boosting regressor, trained on a single held-out view, then directly predicts pixel-wise error. This approach achieves…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Uncertainty Estimation"
+  - "Novel View Synthesis"
+  - "Active View Selection"
+  - "Post-processing"
 date: 2026-05-08
-content_hash: a10159d2c7c46d53
+content_hash: f8b4f00a1c5dcda7
 ---
+
 # PRIMU: Uncertainty Estimation for Novel Views in Gaussian Splatting from Primitive-Based Representations of Error and Coverage
 
 **Conference**: CVPR 2026  
@@ -147,15 +153,16 @@ Active View Selection (MipNeRF360, after 20 views):
 - Value: ⭐⭐⭐⭐ A plug-and-play UE for GS that doesn't compromise quality—highly practical for safety-critical deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Coverage Optimization for Camera View Selection](coverage_optimization_for_camera_view_selection.md)
 - [\[CVPR 2026\] Guardians of the Hair: Rescuing Soft Boundaries in Depth, Stereo, and Novel Views](guardians_of_the_hair_rescuing_soft_boundaries_in_depth_stereo_and_novel_views.md)
+- [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](../../ICLR2026/3d_vision/uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
 - [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
-- [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
-- [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
 
 </div>
 

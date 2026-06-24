@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] This paper identifies that Source-Free Domain Adaptation (SFDA) methods inadvertently leak knowledge of source-exclusive classes to the target domain (zero-shot transfer). It proposes the SCADA-UL framework, which concurrently performs class unlearning during domain adaptation by adversarially generating forgotten samp
+  [CVPR 2026][LLM Safety][Machine Unlearning] This paper identifies that Source-Free Domain Adaptation (SFDA) methods inadvertently leak knowledge of source-exclusive classes to the target domain (zero-shot transfer). It proposes the SCADA-UL framework, which concurrently performs class unlearning during domain adaptation by adversarially generating forgotten samples and employing a rescaled labeling strategy, achieving unlearning performance comparable to training from scratch…
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Source Privacy Leakage"
+  - "Source-Free Domain Adaptation (SFDA)"
+  - "Adversarial Optimization"
+  - "Zero-Shot Transfer"
 date: 2026-05-08
-content_hash: 97b9ece3aad94779
+content_hash: 9b550f3ddfccc72d
 ---
+
 # ⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ Note: Experiments were conducted across all 12 domain pairs in OfficeHome; SCADA
 
 ## Related Papers
 
-- [\[CVPR 2026\] Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks](vlm_model_inversion_adaptive_token_weight.md)
+- [\[CVPR 2026\] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)
 - [\[ICML 2025\] Visual Language Models as Zero-Shot Deepfake Detectors](../../ICML2025/llm_safety/visual_language_models_as_zero-shot_deepfake_detectors.md)
+- [\[ICLR 2026\] Do LLMs Forget What They Should? Evaluating In-Context Forgetting in Large Language Models](../../ICLR2026/llm_safety/do_llms_forget_what_they_should_evaluating_in-context_forgetting_in_large_langua.md)
 - [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](../../ACL2026/llm_safety/cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
-- [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
-- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
+- [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](../../AAAI2026/llm_safety/tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SECA: Semantically Equivalent and Coherent Attacks for Eliciting LLM Hallucinations
 description: >-
-  [NeurIPS 2025][Hallucination Detection][LLM hallucination] This paper proposes SECA (Semantically Equivalent and Coherent Attacks), a realistic prompt perturbation framework that elicits LLM hallucinations while preservi…
+  [NeurIPS 2025][Hallucination Detection][LLM hallucination] This paper proposes SECA (Semantically Equivalent and Coherent Attacks), a realistic prompt perturbation framework that elicits LLM hallucinations while preserving semantic equivalence and coherence, achieving higher attack success rates on multiple-choice QA tasks with near-zero semantic errors.
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "zeroth-order optimization"
   - "prompt robustness"
 date: 2026-05-08
-content_hash: ab0eeea39e653992
+content_hash: b6d58067ef20a48b
 ---
 
 # SECA: Semantically Equivalent and Coherent Attacks for Eliciting LLM Hallucinations
@@ -135,10 +135,10 @@ SECA formulates hallucination elicitation as constrained optimization: it search
 ## Related Papers
 
 - [\[ICML 2026\] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations](../../ICML2026/hallucination/realista_realistic_latent_adversarial_attacks_that_elicit_llm_hallucinations.md)
+- [\[ACL 2025\] HALoGEN: Fantastic LLM Hallucinations and Where to Find Them](../../ACL2025/hallucination/halogen_hallucinations.md)
 - [\[NeurIPS 2025\] Teaming LLMs to Detect and Mitigate Hallucinations](teaming_llms_to_detect_and_mitigate_hallucinations.md)
 - [\[NeurIPS 2025\] GLSim: Detecting Object Hallucinations in LVLMs via Global-Local Similarity](glsim_detecting_object_hallucinations_in_lvlms_via_globalloc.md)
-- [\[NeurIPS 2025\] Systematic Reward Gap Optimization for Mitigating VLM Hallucinations](systematic_reward_gap_optimization_for_mitigating_vlm_hallucinations.md)
-- [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
+- [\[ACL 2025\] TreeCut: A Synthetic Unanswerable Math Word Problem Dataset for LLM Hallucination Evaluation](../../ACL2025/hallucination/treecut_a_synthetic_unanswerable_math_word_problem_dataset_for_llm_hallucination.md)
 
 </div>
 

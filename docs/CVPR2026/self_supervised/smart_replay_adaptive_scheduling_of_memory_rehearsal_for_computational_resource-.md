@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Smart Replay: Adaptive Scheduling of Memory Rehearsal for Computational Resource-Aware Incremental Learning
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper introduces the "Computational Resource-Aware Incremental Learning (CRIL)" setting and designs Smart Replay. By treating the replay sample ratio $\lambda_r$ in each mini-batch as a tunable control variable, it employs optimal control and a heuristic Q-function to dynamically schedule the replay ratio under a
+  [CVPR 2026][Self-Supervised Learning][Incremental Learning] This paper introduces the "Computational Resource-Aware Incremental Learning (CRIL)" setting and designs Smart Replay. By treating the replay sample ratio $\lambda_r$ in each mini-batch as a tunable control variable, it employs optimal control and a heuristic Q-function to dynamically schedule the replay ratio under a fixed computational budget. This achieves higher accuracy and lower forgetting than fixed-ratio base…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Incremental Learning"
+  - "Memory Replay"
+  - "Computational Budget"
+  - "Optimal Control"
+  - "Adaptive Scheduling"
 date: 2026-05-08
-content_hash: 9a081850daf7d4ac
+content_hash: ba4d5c358f8f1369
 ---
+
 # Smart Replay: Adaptive Scheduling of Memory Rehearsal for Computational Resource-Aware Incremental Learning
 
 **Conference**: CVPR 2026  
@@ -145,10 +151,10 @@ Conclusion: In the limited-memory setting, Smart Replay outperforms the best fix
 
 ## Related Papers
 
-- [\[CVPR 2026\] DREAM: Document Recognition with Explicit Adaptive Memory](dream_document_recognition_with_explicit_adaptive_memory.md)
+- [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
+- [\[CVPR 2026\] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)
 - [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
-- [\[CVPR 2026\] FEAT: Federated Geometry-Aware Correction for Exemplar Replay under Continual Dynamic Heterogeneity](feat_federated_geometry_aware_correction_for_exemplar_replay_under_continual_dynamic_heterogeneity.md)
-- [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
+- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)
 - [\[CVPR 2026\] HAD: Heterogeneity-Aware Distillation for Lifelong Heterogeneous Learning](had_heterogeneity-aware_distillation_for_lifelong_heterogeneous_learning.md)
 
 </div>

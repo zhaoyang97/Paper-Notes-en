@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos
 description: >-
-  [NeurIPS 2025 (Spotlight)][3D Vision][4D Gaussian Splatting] This paper proposes 4DGT — a 4D Gaussian-based Transformer model trained entirely on real-world monocular posed videos that reconstructs dynamic scenes in seco…
+  [NeurIPS 2025 (Spotlight)][3D Vision][4D Gaussian Splatting] This paper proposes 4DGT — a 4D Gaussian-based Transformer model trained entirely on real-world monocular posed videos that reconstructs dynamic scenes in seconds via feed-forward inference, significantly outperforming comparable feed-forward networks while achieving accuracy on par with optimization-based methods.
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Feed-Forward Inference"
   - "Monocular Video"
 date: 2026-05-08
-content_hash: 6b4ed0206d0858c6
+content_hash: cb2050b19fe8f70a
 ---
 
 # 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos
@@ -142,10 +142,10 @@ Note: The HTML version of the paper is unavailable; specific quantitative metric
 ## Related Papers
 
 - [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](../../CVPR2026/3d_vision/neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](../../CVPR2026/3d_vision/learning_a_particle_dynamics_model_with_real-world_videos.md)
 - [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
 - [\[ICLR 2026\] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos](../../ICLR2026/3d_vision/mono4dgs-hdr_high_dynamic_range_4d_gaussian_splatting_from_alternating-exposure_.md)
 - [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
+- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](../../CVPR2026/3d_vision/learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
 
 </div>
 

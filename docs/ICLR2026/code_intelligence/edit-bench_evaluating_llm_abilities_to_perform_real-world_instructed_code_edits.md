@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EDIT-Bench: Evaluating LLM Abilities to Perform Real-World Instructed Code Edits
 description: >-
-  [ICLR 2026][Code Intelligence][LLM Evaluation] EDIT-Bench transforms in-the-wild instructed code editing requests from nearly 500 real developers—captured via an in-house VSCode plugin—into 540 challenging problems with test harnesses. Evaluating 40 LLMs reveals that this is a difficult benchmark, with only one SOTA model exceeding a 60% success rate.
+  [ICLR 2026][Code Intelligence][Instructed Code Editing] EDIT-Bench transforms in-the-wild instructed code editing requests from nearly 500 real developers—captured via an in-house VSCode plugin—into 540 challenging problems with test harnesses. Evaluating 40 LLMs reveals that this is a difficult benchmark, with only one SOTA model exceeding a 60% success rate.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Instructed Code Editing"
+  - "Real-world Data"
+  - "LLM Evaluation"
+  - "Context Dependency"
+  - "Multilingual"
 date: 2026-05-08
-content_hash: a4606d86a9a0daa6
+content_hash: d1cc6b517ca4e5a9
 ---
+
 # EDIT-Bench: Evaluating LLM Abilities to Perform Real-World Instructed Code Edits
 
 **Conference**: ICLR 2026  
@@ -105,8 +110,8 @@ Adding highlighted code improved performance for 5/7 models, but adding cursor p
 - **Value**: ⭐⭐⭐⭐ Addresses a major evaluation gap in AI programming assistants with an extensible leaderboard.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -114,7 +119,7 @@ Adding highlighted code improved performance for 5/7 models, but adding cursor p
 - [\[ACL 2026\] AutoMonitor-Bench: Evaluating the Reliability of LLM-Based Misbehavior Monitor](../../ACL2026/code_intelligence/automonitor-bench_evaluating_the_reliability_of_llm-based_misbehavior_monitor.md)
 - [\[ACL 2026\] ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization](../../ACL2026/code_intelligence/referee_reference-free_and_fine-grained_method_for_evaluating_factual_consistenc.md)
 - [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](../../ACL2026/code_intelligence/logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
-- [\[ACL 2025\] CompileAgent: Automated Real-World Repo-Level Compilation with Tool-Integrated LLM-based Agent System](../../ACL2025/code_intelligence/compileagent_automated_real-world_repo-level_compilation_with_tool-integrated_ll.md)
+- [\[ICLR 2026\] Code World Models for General Game Playing](code_world_models_for_general_game_playing.md)
 
 </div>
 

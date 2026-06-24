@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HumanCrafter: Synergizing Generalizable Human Reconstruction and Semantic 3D Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][3D Gaussian Splatting] HumanCrafter is proposed as the first feed-forward framework that unifies single-image 3D human reconstruction with body-part semantic segmentation. A human geometry pr…
+  [NeurIPS 2025][Segmentation][3D Gaussian Splatting] HumanCrafter is proposed as the first feed-forward framework that unifies single-image 3D human reconstruction with body-part semantic segmentation. A human geometry prior-guided Transformer aggregates multi-view features, while DINOv2 self-supervised semantic priors construct a 3D feature field. The method simultaneously surpasses existing SOTA in both 3D reconstruction and segmentation on 2K2K and THuman2.1.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "Multi-Task Learning"
   - "DINOv2"
 date: 2026-05-08
-content_hash: d8399847beaa33e3
+content_hash: 514ba5075cd922b7
 ---
 
 # HumanCrafter: Synergizing Generalizable Human Reconstruction and Semantic 3D Segmentation
@@ -148,11 +148,11 @@ The SMPL prior contributes the largest gain (+1.29 PSNR); the segmentation loss 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Robust 3D Shape Reconstruction in Zero-Shot from a Single Image in the Wild](../../CVPR2025/segmentation/robust_3d_shape_reconstruction_in_zero-shot_from_a_single_image_in_the_wild.md)
 - [\[NeurIPS 2025\] COS3D: Collaborative Open-Vocabulary 3D Segmentation](cos3d_collaborative_open-vocabulary_3d_segmentation.md)
+- [\[CVPR 2025\] MV-SSM: Multi-View State Space Modeling for 3D Human Pose Estimation](../../CVPR2025/segmentation/mv-ssm_multi-view_state_space_modeling_for_3d_human_pose_estimation.md)
+- [\[CVPR 2026\] Joint Spectral Image Reconstruction and Semantic Segmentation with Cooperative Unfolding](../../CVPR2026/segmentation/joint_spectral_image_reconstruction_and_semantic_segmentation_with_cooperative_u.md)
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/gkd_generalizable_knowledge_distillation_vfm.md)
-- [\[NeurIPS 2025\] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance](haodiff_human-aware_one-step_diffusion_via_dual-prompt_guidance.md)
-- [\[NeurIPS 2025\] HCLFuse: Revisiting Generative Infrared and Visible Image Fusion Based on Human Cognitive Laws](revisiting_generative_infrared_and_visible_image_fusion_based_on_human_cognitive.md)
-- [\[NeurIPS 2025\] HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios](hopadiff_holistic-partial_aware_fourier_conditioned_diffusion_for_referring_huma.md)
 
 </div>
 

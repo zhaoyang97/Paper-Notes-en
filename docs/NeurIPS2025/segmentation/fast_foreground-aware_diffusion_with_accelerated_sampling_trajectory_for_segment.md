@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis
 description: >-
-  [NeurIPS 2025][Segmentation][Industrial anomaly synthesis] FAST introduces explicit mechanisms to preserve anomaly regions throughout the diffusion trajectory: AIAS compresses the multi-step reverse process of discrete d…
+  [NeurIPS 2025][Segmentation][Industrial anomaly synthesis] FAST introduces explicit mechanisms to preserve anomaly regions throughout the diffusion trajectory: AIAS compresses the multi-step reverse process of discrete diffusion into a small number of coarse-to-fine analytical updates, while FARM reconstructs and reinjects anomaly foregrounds at each step, yielding a method that is both fast and better suited for generating training data for downstream anomaly segmentation mo…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "anomaly segmentation"
   - "mask-guided"
 date: 2026-05-08
-content_hash: 68b85f917e154908
+content_hash: 1638bcd38304038f
 ---
 
 # FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis
@@ -252,8 +252,8 @@ A further direction is to combine the analytical aggregation idea of AIAS with s
 ## Related Papers
 
 - [\[CVPR 2026\] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation](../../CVPR2026/segmentation/task-oriented_data_synthesis_and_control-rectify_sampling_for_remote_sensing_sem.md)
-- [\[NeurIPS 2025\] Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning](fast_and_fluent_diffusion_language_models_via_convolutional_decoding_and_rejecti.md)
 - [\[NeurIPS 2025\] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance](haodiff_human-aware_one-step_diffusion_via_dual-prompt_guidance.md)
+- [\[NeurIPS 2025\] Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning](fast_and_fluent_diffusion_language_models_via_convolutional_decoding_and_rejecti.md)
 - [\[NeurIPS 2025\] HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios](hopadiff_holistic-partial_aware_fourier_conditioned_diffusion_for_referring_huma.md)
 - [\[ICCV 2025\] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis](../../ICCV2025/segmentation/uniglyph_unified_segmentation-conditioned_diffusion_for_precise_visual_text_synt.md)
 

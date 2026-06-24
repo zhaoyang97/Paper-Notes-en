@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Routing Manifold Alignment Improves Generalization of Mixture-of-Experts LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper proposes RoMA (Routing Manifold Alignment), which incorporates a "manifold regularization term" into the post-training objective. By performing lightweight fine-tuning only on the final few layer routers of MoE LLMs, it ensures that semantically similar samples share similar expert selections, improving accu
+  [ICLR 2026][LLM Efficiency][MoE Routing] This paper proposes RoMA (Routing Manifold Alignment), which incorporates a "manifold regularization term" into the post-training objective. By performing lightweight fine-tuning only on the final few layer routers of MoE LLMs, it ensures that semantically similar samples share similar expert selections, improving accuracy by 7–15% across three MoE models without increasing inference overhead.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "MoE Routing"
+  - "Manifold Alignment"
+  - "Manifold Regularization"
+  - "Routing Post-training"
+  - "Generalization"
 date: 2026-05-08
-content_hash: c3cdfdbc64c016ee
+content_hash: aa9361dade586791
 ---
+
 # Routing Manifold Alignment Improves Generalization of Mixture-of-Experts LLMs
 
 **Conference**: ICLR 2026  
@@ -138,9 +144,9 @@ On MMLU, RoMA improved DeepSeekMoE by +10.6% and OLMoE by +11.2%. More impressiv
 
 - [\[ICML 2026\] SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs](../../ICML2026/llm_efficiency/softmoe_soft_differentiable_routing_for_mixture-of-experts_in_llms.md)
 - [\[ICLR 2026\] Mixture-of-Experts Can Surpass Dense LLMs Under Strictly Equal Resource](mixture-of-experts_can_surpass_dense_llms_under_strictly_equal_resource.md)
+- [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](../../ICML2026/llm_efficiency/probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
 - [\[ICLR 2026\] DirMoE: Dirichlet-Routed Mixture of Experts](dirmoe_dirichlet-routed_mixture_of_experts.md)
-- [\[ICLR 2026\] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel](understanding_the_mixture-of-experts_with_nadaraya-watson_kernel.md)
 
 </div>
 

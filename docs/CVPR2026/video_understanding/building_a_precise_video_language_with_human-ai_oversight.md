@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Building a Precise Video Language with Human-AI Oversight
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the long-standing issues of video captioning—"lack of specifications, lack of oversight, and model hallucinations"—this work defines "what should be described" via a **structured specification (5 dimensions + 200+ visual primitives)**. It introduces **CHAI (Critique-based Human-AI Oversight)**, where the mod
+  [CVPR 2026 (Highlight)][Video Understanding][Video Captioning] Addressing the long-standing issues of video captioning—"lack of specifications, lack of oversight, and model hallucinations"—this work defines "what should be described" via a **structured specification (5 dimensions + 200+ visual primitives)**. It introduces **CHAI (Critique-based Human-AI Oversight)**, where the model generates a pre-caption, humans provide only "critiques" to pinpoint errors…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026 (Highlight)"
+  - "Video Understanding"
+  - "Video Captioning"
+  - "Scalable Oversight"
+  - "Human-AI Collaborative Annotation"
+  - "Critique Feedback"
+  - "Post-training"
 date: 2026-05-08
-content_hash: 64adc012f7f88694
+content_hash: 5a836982b2b7d790
 ---
+
 # Building a Precise Video Language with Human-AI Oversight
 
 **Conference**: CVPR 2026 (Highlight)  
@@ -139,15 +145,15 @@ Key Findings: (1) Models struggle significantly with *motion/camera* dimensions;
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Your One-Stop Solution for AI-Generated Video Detection](your_one-stop_solution_for_ai-generated_video_detection.md)
-- [\[CVPR 2026\] Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning](learning_to_assist_physics-grounded_human-human_control_via_multi-agent_reinforc.md)
+- [\[CVPR 2026\] AdaSpot: Spend Resolution Where It Matters for Precise Event Spotting](adaspot_spend_resolution_where_it_matters_for_precise_event_spotting.md)
 - [\[CVPR 2026\] CoCoVideo: The High-Quality Commercial-Model-Based Contrastive Benchmark for AI-Generated Video Detection](cocovideo_the_high-quality_commercial-model-based_contrastive_benchmark_for_ai-g.md)
 - [\[CVPR 2026\] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition](tcei_test_time_calibration_experience_intuition_mot.md)
-- [\[ICML 2026\] ProAct-VL: A Proactive VideoLLM for Real-Time AI Companions](../../ICML2026/video_understanding/proact-vl_a_proactive_videollm_for_real-time_ai_companions.md)
+- [\[ICLR 2026\] V2P-Bench: Evaluating Video-Language Understanding with Visual Prompts for Better Human-Model Interaction](../../ICLR2026/video_understanding/v2p-bench_evaluating_video-language_understanding_with_visual_prompts_for_better.md)
 
 </div>
 

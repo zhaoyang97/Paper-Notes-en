@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal Large Language Models for Multi-Subject In-Context Image Generation
 description: >-
-  [ACL 2026][Image Generation][Paper Note] This paper proposes MUSIC, which introduces the visual reasoning capabilities of Multimodal Large Language Models (MLLMs) into multi-subject in-context image generation. Through automated training data synthesis, visual CoT, and semantic-driven spatial layout planning, it significantly mitigates issues of subject omiss
+  [ACL2026][Image Generation][Multi-subject generation] This paper proposes MUSIC, which introduces the visual reasoning capabilities of Multimodal Large Language Models (MLLMs) into multi-subject in-context image generation. Through automated training data synthesis, visual CoT, and semantic-driven spatial layout planning, it significantly mitigates issues of subject omission, identity confusion, and semantic drift when generating multiple reference subjects simultaneously.
 tags:
-  - ACL 2026
-  - Image Generation
+  - "ACL2026"
+  - "Image Generation"
+  - "Multi-subject generation"
+  - "Visual Chain-of-Thought"
+  - "Spatial layout planning"
+  - "Subject consistency"
+  - "Test-time scaling"
 date: 2026-05-08
-content_hash: 4c0414c002f4058c
+content_hash: 4cb0e88208b92b69
 ---
+
 # Multimodal Large Language Models for Multi-Subject In-Context Image Generation
 
 **Conference**: ACL2026  
@@ -144,15 +150,14 @@ The paper focuses on the gains from test-time scaling and the overall benefits c
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](../../CVPR2026/image_generation/micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
+- [\[ICLR 2026\] MMaDA-Parallel: Multimodal Large Diffusion Language Models for Thinking-Aware Editing and Generation](../../ICLR2026/image_generation/mmada-parallel_multimodal_large_diffusion_language_models_for_thinking-aware_edi.md)
 - [\[CVPR 2026\] PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards](../../CVPR2026/image_generation/psr_scaling_multi-subject_personalized_image_generation_with_pairwise_subject-co.md)
 - [\[ACL 2026\] From AR to Diffusion: Efficiently Adapting Large Language Models with Strictly Causal and Elastic Horizons](from_ar_to_diffusion_efficiently_adapting_large_language_models_with_strictly_ca.md)
 - [\[CVPR 2026\] Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation](../../CVPR2026/image_generation/proxy-tuning_tailoring_multimodal_autoregressive_models_for_subject-driven_image.md)
-- [\[CVPR 2026\] SCIEval: Evaluating and Benchmarking the Faithfulness of Scientific Image Generation and Interpretation with Large Multimodal Models](../../CVPR2026/image_generation/scieval_evaluating_and_benchmarking_the_faithfulness_of_scientific_image_generat.md)
 
 </div>
 

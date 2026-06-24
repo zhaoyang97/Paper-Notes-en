@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Flexible Concept Bottleneck Model
 description: >-
-  [AAAI 2026][Interpretability][Concept Bottleneck Model] This paper proposes the Flexible Concept Bottleneck Model (FCBM), which introduces a hypernetwork to dynamically generate concept weights and a sparsemax module wit…
+  [AAAI 2026][Interpretability][Concept Bottleneck Model] This paper proposes the Flexible Concept Bottleneck Model (FCBM), which introduces a hypernetwork to dynamically generate concept weights and a sparsemax module with a learnable temperature parameter, enabling dynamic adaptation of the concept pool—including complete replacement. FCBM achieves accuracy comparable to state-of-the-art baselines with a similar number of effective concepts across five public datasets…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Sparse Activation"
   - "VLM"
 date: 2026-05-08
-content_hash: 5dcf6bf7f871fd9e
+content_hash: 9dda0862ee277e5e
 ---
 
 # Flexible Concept Bottleneck Model
@@ -150,7 +150,7 @@ FCBM comprises four core components:
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](partially_shared_concept_bottleneck_models.md)
 - [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](../../CVPR2026/interpretability/towards_faithful_multimodal_concept_bottleneck_models.md)
+- [\[ECCV 2024\] Improving Intervention Efficacy via Concept Realignment in Concept Bottleneck Models](../../ECCV2024/interpretability/improving_intervention_efficacy_via_concept_realignment_in_concept_bottleneck_mo.md)
 - [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](../../CVPR2026/interpretability/rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
 
 </div>

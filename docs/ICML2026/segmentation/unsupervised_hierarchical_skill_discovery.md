@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] 无监督层级技能发现
+  [Paper Note] Unsupervised Hierarchical Skill Discovery
 description: >-
-  [ICML 2026][Segmentation][Minecraft] HiSD starts from unlabeled observation trajectories—performing skill segmentation via optimal transport and then discovering multi-level skill hierarchies using Sequitur grammar induction, without requiring action labels or reward signals.
+  [ICML 2026][Segmentation][Skill Discovery] HiSD starts from unlabeled observation trajectories—performing skill segmentation via optimal transport and then discovering multi-level skill hierarchies using Sequitur grammar induction, without requiring action labels or reward signals.
 tags:
-  - ICML 2026
-  - Segmentation
-  - Minecraft
+  - "ICML 2026"
+  - "Segmentation"
+  - "Skill Discovery"
+  - "Hierarchical Structure"
+  - "Unsupervised Learning"
+  - "Grammar Induction"
+  - "Minecraft"
 date: 2026-05-08
-content_hash: 15609d6bd0186318
+content_hash: 86566a15d4daf035
 ---
+
 # Unsupervised Hierarchical Skill Discovery
 
 **Conference**: ICML 2026  
@@ -129,11 +134,11 @@ Hierarchical quality metrics on the Minecraft 44-skill dataset:
 
 ## Related Papers
 
-- [\[ICML 2026\] Segment Anything with Robust Uncertainty-Accuracy Correlation](segment_anything_with_robust_uncertainty-accuracy_correlation.md)
-- [\[ICML 2026\] SPROUT: Supervise Less, See More — Training-free Nuclear Instance Segmentation with Prototype-Guided Prompting](supervise_less_see_more_training-free_nuclear_instance_segmentation_with_prototy.md)
-- [\[ICML 2026\] UGround: Towards Unified Visual Grounding with Unrolled Transformers](uground_towards_unified_visual_grounding_with_unrolled_transformers.md)
-- [\[ICML 2026\] LightAVSeg: Lightweight Audio-Visual Segmentation](lightavseg_lightweight_audio-visual_segmentation.md)
-- [\[ICML 2026\] Functional Attention: From Pairwise Affinities to Functional Correspondences](functional_attention_from_pairwise_affinities_to_functional_correspondences.md)
+- [\[ICCV 2025\] Open-World Skill Discovery from Unsegmented Demonstration Videos](../../ICCV2025/segmentation/open-world_skill_discovery_from_unsegmented_demonstration_videos.md)
+- [\[ICCV 2025\] Ensemble Foreground Management for Unsupervised Object Discovery](../../ICCV2025/segmentation/ensemble_foreground_management_for_unsupervised_object_discovery.md)
+- [\[ICML 2026\] Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models](geometry-preserving_unsupervised_alignment_for_heterogeneous_foundation_models.md)
+- [\[ECCV 2024\] Part2Object: Hierarchical Unsupervised 3D Instance Segmentation](../../ECCV2024/segmentation/part2object_hierarchical_unsupervised_3d_instance_segmentation.md)
+- [\[CVPR 2025\] Hierarchical Compact Clustering Attention (COCA) for Unsupervised Object-Centric Learning](../../CVPR2025/segmentation/hierarchical_compact_clustering_attention_coca_for_unsupervised_object-centric_l.md)
 
 </div>
 

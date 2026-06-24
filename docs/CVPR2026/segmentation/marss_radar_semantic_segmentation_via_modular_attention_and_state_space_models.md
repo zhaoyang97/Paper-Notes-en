@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Addressing the three major characteristics of radar frequency maps—"anisotropy, multi-scale, and sparse noise"—MARSS replaces general CNN/Transformer operators with three modules tailored for radar: the denoising encoder RADE, adaptive multi-scale fusion RFAF, and a State Space Decoder RADM combining Mamba and axial at
+  [CVPR 2026][Segmentation][Radar Semantic Segmentation] Addressing the three major characteristics of radar frequency maps—"anisotropy, multi-scale, and sparse noise"—MARSS replaces general CNN/Transformer operators with three modules tailored for radar: the denoising encoder RADE, adaptive multi-scale fusion RFAF, and a State Space Decoder RADM combining Mamba and axial attention. On the CARRADA dataset, it improves RA view mIoU from 44.3% to 46.97% with 9.3M parameters…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Radar Semantic Segmentation"
+  - "Anisotropy"
+  - "State Space Models (Mamba)"
+  - "Axial Attention"
+  - "Multi-view Fusion"
 date: 2026-05-08
-content_hash: 04bcdf2856ae0a6e
+content_hash: 3d4a1a3f25e61d20
 ---
+
 # MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ Table 3 results on CARRADA (Baseline uses none of the modules):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] SAMosaic3D: Modular Scene Assembly for Real-Time 3D Segment Anything](samosaic3d_modular_scene_assembly_for_real-time_3d_segment_anything.md)
-- [\[CVPR 2026\] Hilbert Curve-Based Attention Enabling Topology-Preserving Image Tensor Representation for Semantic Segmentation Network](hilbert_curve-based_attention_enabling_topology-preserving_image_tensor_represen.md)
-- [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
-- [\[CVPR 2026\] MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention](mixercseg_an_efficient_mixer_architecture_for_crack_segmentation_via_decoupled_m.md)
+- [\[CVPR 2026\] RS-SSM: Refining Forgotten Specifics in State Space Model for Video Semantic Segmentation](rs-ssm_refining_forgotten_specifics_in_state_space_model_for_video_semantic_segm.md)
+- [\[ICLR 2026\] Enabling True Global Perception in State Space Models for Visual Tasks](../../ICLR2026/segmentation/enabling_true_global_perception_in_state_space_models_for_visual_tasks.md)
+- [\[CVPR 2025\] Exploiting Temporal State Space Sharing for Video Semantic Segmentation](../../CVPR2025/segmentation/exploiting_temporal_state_space_sharing_for_video_semantic_segmentation.md)
+- [\[CVPR 2026\] RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation](raven_radar_adaptive_vision_encoders_for_efficient_chirp-wise_object_detection_a.md)
+- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
 
 </div>
 

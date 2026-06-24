@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] FastVGGT: Fast Visual Geometry Transformer
 description: >-
-  [ICLR 2026][3D Vision][VGGT] Addressing the global attention bottleneck of the large-scale feed-forward 3D reconstruction model VGGT, this paper observes that its token attention maps are highly homogeneous ("token collapse"). Based on this, it proposes a training-free, 3D multi-view oriented three-partition token merging strategy, achieving a 4×
+  [ICLR 2026][3D Vision][VGGT] Addressing the global attention bottleneck of the large-scale feed-forward 3D reconstruction model VGGT, this paper observes that its token attention maps are highly homogeneous ("token collapse"). Based on this, it proposes a training-free, 3D multi-view oriented three-partition token merging strategy, achieving a 4× speedup with 1000 input images while suppressing error accumulation in long sequences.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - VGGT
-  - Token Merging
-  - Global Attention
+  - "ICLR 2026"
+  - "3D Vision"
+  - "VGGT"
+  - "Feed-forward 3D Reconstruction"
+  - "Token Merging"
+  - "Global Attention"
+  - "Long Sequence Acceleration"
+  - "Training-free"
 date: 2026-05-08
-content_hash: c30d964d0e43dac3
+content_hash: e0f59441c8d20725
 ---
+
 # FastVGGT: Fast Visual Geometry Transformer
 
 **Conference**: ICLR 2026  
@@ -121,10 +125,10 @@ Merging Position and Intensity (Table 8): A higher merging ratio speeds up infer
 ## Related Papers
 
 - [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](quantized_visual_geometry_grounded_transformer.md)
+- [\[ICLR 2026\] Streaming Visual Geometry Transformer](streaming_visual_geometry_transformer.md)
 - [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](../../CVPR2026/3d_vision/fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](../../CVPR2026/3d_vision/dvgt_driving_visual_geometry_transformer.md)
 - [\[ICLR 2026\] $\pi^3$: Permutation-Equivariant Visual Geometry Learning](pi3_permutation-equivariant_visual_geometry_learning.md)
-- [\[ICLR 2026\] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction](nova3r_non-pixel-aligned_visual_transformer_for_amodal_3d_reconstruction.md)
+- [\[CVPR 2026\] Emergent Outlier View Rejection in Visual Geometry Grounded Transformers](../../CVPR2026/3d_vision/emergent_outlier_view_rejection_in_visual_geometry_grounded_transformers.md)
 
 </div>
 

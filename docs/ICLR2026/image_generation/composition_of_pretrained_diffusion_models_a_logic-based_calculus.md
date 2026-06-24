@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Composition of Pretrained Diffusion Models: A Logic-Based Calculus
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper elevates the empirical PoE/MoE composition of pretrained diffusion models to a fuzzy logic-based Dombi score calculus. It demonstrates more stable mode coverage and sampling correction in multi-prompt Stable Diffusion, complex SAT-style compositions, and multi-objective molecular generation.
+  [ICLR2026][Image Generation][Diffusion Composition] This paper elevates the empirical PoE/MoE composition of pretrained diffusion models to a fuzzy logic-based Dombi score calculus. It demonstrates more stable mode coverage and sampling correction in multi-prompt Stable Diffusion, complex SAT-style compositions, and multi-objective molecular generation.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Composition"
+  - "Logic Calculus"
+  - "Dombi Operators"
+  - "Feynman-Kac Correction"
+  - "Concept Negation"
 date: 2026-05-08
-content_hash: b22ac02616f5d1cf
+content_hash: ff0c8859d2d34ad2
 ---
+
 # Composition of Pretrained Diffusion Models: A Logic-Based Calculus
 
 **Conference**: ICLR2026  

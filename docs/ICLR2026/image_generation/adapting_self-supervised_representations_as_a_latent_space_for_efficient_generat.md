@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Adapting Self-Supervised Representations as a Latent Space for Efficient Generation
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] RepTok fine-tunes the `[cls]` token of a pre-trained self-supervised ViT into a "single continuous token" latent space. Combined with a flow matching decoder for high-fidelity reconstruction and a non-attention MLP-Mixer for generation in this 1D space, it achieves competitive FIDs on ImageNet/MS-COCO using less than 1
+  [ICLR2026][Image Generation][Single-token latent space] RepTok fine-tunes the `[cls]` token of a pre-trained self-supervised ViT into a "single continuous token" latent space. Combined with a flow matching decoder for high-fidelity reconstruction and a non-attention MLP-Mixer for generation in this 1D space, it achieves competitive FIDs on ImageNet/MS-COCO using less than 10% of the training compute compared to competitors.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - MLP-Mixer
+  - "ICLR2026"
+  - "Image Generation"
+  - "Single-token latent space"
+  - "Self-supervised representations"
+  - "Flow matching"
+  - "MLP-Mixer"
+  - "Text-to-image"
 date: 2026-05-08
-content_hash: 7e663f9de6878f45
+content_hash: 56c5c61067414a0b
 ---
+
 # Adapting Self-Supervised Representations as a Latent Space for Efficient Generation
 
 **Conference**: ICLR2026  
@@ -140,15 +144,15 @@ Compared with RCG (pure semantic encoding): RepTok achieves FID 1.85 / PSNR 14.9
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Evaluating the Representation Space of Diffusion Models via Self-Supervised Principles](../../ICML2026/image_generation/evaluating_the_representation_space_of_diffusion_models_via_self-supervised_prin.md)
+- [\[ICLR 2026\] There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training](there_is_no_vae_end-to-end_pixel-space_generative_modeling_via_self-supervised_p.md)
 - [\[AAAI 2026\] Stabilizing Self-Consuming Diffusion Models with Latent Space Filtering](../../AAAI2026/image_generation/stabilizing_self-consuming_diffusion_models_with_latent_space_filtering.md)
+- [\[ICLR 2026\] SpikeGen: Decoupling "Rod-Cone" Visual Representations with a Latent Generative Framework](spikegen_decoupled_rods_and_cones_visual_representation_processing_with_latent_g.md)
 - [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](../../CVPR2026/image_generation/self-evaluation_unlocks_any-step_text-to-image_generation.md)
-- [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
-- [\[ICLR 2026\] COSMO-INR: Complex Sinusoidal Modulation for Implicit Neural Representations](cosmo-inr_complex_sinusoidal_modulation_for_implicit_neural_representations.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning
 description: >-
-  [CVPR 2026][Medical Imaging][Whole Slide Image] The HistoSelect framework is proposed to simulate the coarse-to-fine reasoning process of pathologists. Through a three-tier filtering mechanism consisting of tissue segmentation → Group Sampler → Patch Selector, and based on Information Bottleneck (IB) theory, irrelevant visual tokens are compressed. This achieves SOT
+  [CVPR 2026][Medical Imaging][Whole Slide Image] The HistoSelect framework is proposed to simulate the coarse-to-fine reasoning process of pathologists. Through a three-tier filtering mechanism consisting of tissue segmentation → Group Sampler → Patch Selector, and based on Information Bottleneck (IB) theory, irrelevant visual tokens are compressed. This achieves SOTA performance across three datasets while reducing computational overhead by approximately 70%.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Whole Slide Image
-  - Patch Selection
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Image"
+  - "Visual Question Answering"
+  - "Information Bottleneck"
+  - "Patch Selection"
+  - "Tissue-Aware Reasoning"
 date: 2026-05-08
-content_hash: 36eb0eb2b1d033ec
+content_hash: 06665f73bdf0e27f
 ---
+
 # Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning
 
 **Conference**: CVPR 2026  
@@ -155,7 +159,7 @@ Trained on 356K QA pairs, achieving consistent SOTA across three datasets.
 - [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
 - [\[CVPR 2026\] MLLM-HWSI: A Multimodal Large Language Model for Hierarchical Whole Slide Image Understanding](mllm-hwsi_a_multimodal_large_language_model_for_hierarchical_whole_slide_image_u.md)
 - [\[CVPR 2026\] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification](dual-level_hypergraph_generation_for_addressing_feature_scarcity_in_whole-slide_.md)
-- [\[CVPR 2026\] Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction](turning_pre-trained_vision_transformers_into_end-to-end_histopathology_whole_sli.md)
+- [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](../../AAAI2026/medical_imaging/towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
 
 </div>
 

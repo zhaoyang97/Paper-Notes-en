@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Distributionally Robust Optimization via Generative Ambiguity Modeling
 description: >-
-  [ICLR 2026][Optimization & Theory][DRO] This paper defines the "ambiguity set" of DRO directly on the **parameter space** of generative models (Diffusion Models / VAEs). By using reconstruction loss to constrain the consistency between generated and nominal distributions, and solving the inner maximization via dual learning and policy optimization, the autho
+  [ICLR 2026][Optimization][Distributionally Robust Optimization] This paper defines the "ambiguity set" of DRO directly on the **parameter space** of generative models (Diffusion Models / VAEs). By using reconstruction loss to constrain the consistency between generated and nominal distributions, and solving the inner maximization via dual learning and policy optimization, the authors develop GAS-DRO—a tractable DRO algorithm capable of searching for worst-case distributions a…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - DRO
-  - Generative Model
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Optimization"
+  - "Distributionally Robust Optimization"
+  - "DRO"
+  - "Generative Models"
+  - "Diffusion Models"
+  - "Ambiguity Set"
+  - "OOD Generalization"
+  - "Policy Optimization"
 date: 2026-05-08
-content_hash: 315f77cf076cbe97
+content_hash: db5c5ea73a1a730b
 ---
+
 # Distributionally Robust Optimization via Generative Ambiguity Modeling
 
 **Conference**: ICLR 2026  
@@ -117,11 +122,11 @@ GAS-DRO outperforms all baselines, achieving a 63.7% improvement over standard M
 
 ## Related Papers
 
-- [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
 - [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](../../NeurIPS2025/optimization/robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
+- [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
+- [\[ICLR 2026\] Gen-DFL: Decision-Focused Generative Learning for Robust Decision Making](gen-dfl_decision-focused_generative_learning_for_robust_decision_making.md)
 - [\[ICLR 2026\] Distributionally Robust Linear Regression with Block Lewis Weights](distributionally_robust_linear_regression_with_block_lewis_weights.md)
 - [\[ICLR 2026\] Markovian Transformers for Informative Language Modeling](markovian_transformers_for_informative_language_modeling.md)
-- [\[NeurIPS 2025\] Training Robust Graph Neural Networks by Modeling Noise Dependencies](../../NeurIPS2025/optimization/training_robust_graph_neural_networks_by_modeling_noise_dependencies.md)
 
 </div>
 

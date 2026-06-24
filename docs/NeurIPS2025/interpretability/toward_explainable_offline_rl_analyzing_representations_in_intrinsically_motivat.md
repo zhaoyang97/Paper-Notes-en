@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis
 description: >-
-  [NeurIPS 2025][Interpretability][Intrinsic Motivation] This paper proposes a systematic post-hoc interpretability framework to analyze how intrinsic motivation (based on Random Network Distillation) shapes the geometric…
+  [NeurIPS 2025][Interpretability][Intrinsic Motivation] This paper proposes a systematic post-hoc interpretability framework to analyze how intrinsic motivation (based on Random Network Distillation) shapes the geometric structure of the embedding space in Elastic Decision Transformers. The analysis reveals that different intrinsic motivation variants create fundamentally distinct representational structures—EDT-SIL promotes compact representations while EDT-TIL enhances ortho…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Embedding Analysis"
   - "Representation Learning"
 date: 2026-05-08
-content_hash: b3e5b06d90cd203b
+content_hash: fe2f62c95597aab9
 ---
 
 # How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis
@@ -135,11 +135,11 @@ Environment-specific correlation analysis between embedding properties and perfo
 
 ## Related Papers
 
+- [\[ACL 2026\] How Context Shapes Truth: Geometric Transformations of Statement-level Truth Representations in LLMs](../../ACL2026/interpretability/how_context_shapes_truth_geometric_transformations_of_statement-level_truth_repr.md)
+- [\[NeurIPS 2025\] How Do Transformers Learn Implicit Reasoning?](how_do_transformers_learn_implicit_reasoning.md)
+- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
 - [\[NeurIPS 2025\] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers](nnterp_a_standardized_interface_for_mechanistic_interpretability_of_transformers.md)
 - [\[NeurIPS 2025\] Empowering Decision Trees via Shape Function Branching](empowering_decision_trees_via_shape_function_branching.md)
-- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
-- [\[ICML 2026\] Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement](../../ICML2026/interpretability/cognitive_fatigue_in_autoregressive_transformers_formalization_and_measurement.md)
-- [\[NeurIPS 2025\] ValuePilot: A Two-Phase Framework for Value-Driven Decision-Making](valuepilot_a_two-phase_framework_for_value-driven_decision-making.md)
 
 </div>
 

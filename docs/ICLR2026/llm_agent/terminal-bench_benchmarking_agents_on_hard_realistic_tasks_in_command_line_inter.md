@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Terminal-Bench：在命令行界面上对智能体进行困难、真实任务的基准测试
+  [Paper Note] Terminal-Bench: Benchmarking Agents on Difficult, Real-World Tasks in the Command Line Interface
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] Terminal-Bench introduces an agent evaluation framework structured around a "terminal environment + Docker container + test verification + oracle solution" unit. It releases Terminal-Bench 2.0, a dataset of 89 hard tasks audited through hundreds of person-hours. Results demonstrate that even the most powerful frontier
+  [ICLR 2026][LLM Agent][Agent benchmarks] Terminal-Bench introduces an agent evaluation framework structured around a "terminal environment + Docker container + test verification + oracle solution" unit. It releases Terminal-Bench 2.0, a dataset of 89 hard tasks audited through hundreds of person-hours. Results demonstrate that even the most powerful frontier models/agents (GPT-5.2 + Codex CLI) achieve a solve rate of only ~63%, while small models settle around 15%. Based on t…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Agent benchmarks"
+  - "Command Line/Terminal"
+  - "Long-horizon tasks"
+  - "Docker sandboxing"
+  - "Failure mode analysis"
 date: 2026-05-08
-content_hash: 3a643131a1fb6532
+content_hash: 718aa147812f8b9b
 ---
+
 # Terminal-Bench: Benchmarking Agents on Difficult, Real-World Tasks in the Command Line Interface
 
 **Conference**: ICLR 2026  
@@ -133,14 +139,15 @@ Frontier proprietary models occupy the top 13 spots, yet none exceed 65%, indica
 - Value: ⭐⭐⭐⭐⭐ Provides a high-quality, unsaturated (<65%) benchmark and diagnostic tools for next-generation agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] TRAJECT-Bench：一个轨迹感知的智能体工具调用评测基准](traject-bencha_trajectory-aware_benchmark_for_evaluating_agentic_tool_use.md)
-- [\[ICLR 2026\] WARC-Bench: Web Archive based Benchmark for GUI Subtask Executions](warc-bench_web_archive_based_benchmark_for_gui_subtask_executions.md)
-- [\[ICLR 2026\] EXP-Bench: Can AI Conduct AI Research Experiments?](exp-bench_can_ai_conduct_ai_research_experiments.md)
-- [\[ICLR 2026\] InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in Tool-Augmented Agents](infomosaic-bench_evaluating_multi-source_information_seeking_in_tool-augmented_a.md)
+- [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
+- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
+- [\[ACL 2026\] AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts](../../ACL2026/llm_agent/agencybench_benchmarking_the_frontiers_of_autonomous_agents_in_1m-token_real-wor.md)
+- [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
 - [\[ICLR 2026\] MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents](mcp_security_bench_msb_benchmarking_attacks_against_model_context_protocol_in_ll.md)
 
 </div>

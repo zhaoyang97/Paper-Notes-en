@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] WebDevJudge: Evaluating (M)LLMs as Critiques for Web Development Quality
 description: >-
-  [ICLR 2026][LLM (Other)][LLM-as-a-judge] The meta-evaluation benchmark WebDevJudge was constructed to systematically evaluate the capability of (M)LLMs and agentic workflows as judges in web development quality assessment tasks. The study found a ~15% agreement gap between current top-tier models and human experts, revealing two fundamental bottlenecks: failu
+  [ICLR 2026][LLM (Other)][LLM-as-a-judge] The meta-evaluation benchmark WebDevJudge was constructed to systematically evaluate the capability of (M)LLMs and agentic workflows as judges in web development quality assessment tasks. The study found a ~15% agreement gap between current top-tier models and human experts, revealing two fundamental bottlenecks: failures in identifying functional equivalence and weak feasibility verification.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - LLM-as-a-judge
-  - meta-evaluation
-  - web development
-  - pairwise comparison
-  - agentic workflow
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "LLM-as-a-judge"
+  - "meta-evaluation"
+  - "web development"
+  - "pairwise comparison"
+  - "agentic workflow"
 date: 2026-05-08
-content_hash: 5da631f6306e5b97
+content_hash: 7aa4c60377ccfce1
 ---
+
 # WebDevJudge: Evaluating (M)LLMs as Critiques for Web Development Quality
 
 **Conference**: ICLR 2026
@@ -130,8 +131,6 @@ WebDevJudge supports two paths for judge output using the same instances and lab
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

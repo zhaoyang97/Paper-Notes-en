@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OVOD-Agent: A Markov-Bandit Framework for Proactive Visual Reasoning and Self-Evolving Detection
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This work transforms Open-Vocabulary Object Detection (OVOD) from a "one-time static matching of text and regions" into an **LLM-free** proactive visual reasoning process. It employs an eight-state weak Markov Decision Process (w-MDP) to characterize visual state transitions, uses UCB Bandit to sample reasoning traject
+  [CVPR 2026][VLM Reasoning][Open-Vocabulary Detection] This work transforms Open-Vocabulary Object Detection (OVOD) from a "one-time static matching of text and regions" into an **LLM-free** proactive visual reasoning process. It employs an eight-state weak Markov Decision Process (w-MDP) to characterize visual state transitions, uses UCB Bandit to sample reasoning trajectories in uncertain regions, and jointly trains a lightweight Reward-Policy Model (RM) using Markov transit…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Open-Vocabulary Detection"
+  - "Visual Chain-of-Thought"
+  - "Weak Markov Decision Process"
+  - "Bandit Exploration"
+  - "Self-evolving Reward Model"
 date: 2026-05-08
-content_hash: 9fc05f16848679de
+content_hash: a425c084e49c63d7
 ---
+
 # OVOD-Agent: A Markov-Bandit Framework for Proactive Visual Reasoning and Self-Evolving Detection
 
 **Conference**: CVPR 2026  
@@ -133,13 +139,20 @@ Evaluated on COCO and LVIS by plugging OVOD-Agent into four base detectors. APr 
 - **Value**: ⭐⭐⭐⭐ Practical and deployable; serves as an extensible base for self-evolving visual reasoning.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **GroundingDINO**: Marrying DINO with Grounded Pre-training for Open-Vocabulary Object Detection (CVPR 2023)
-- **YOLO-World**: Real-Time Open-Vocabulary Object Detection (CVPR 2024)
-- **Visual Chain-of-Thought**: Proactive reasoning in Vision-Language Models
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning](decouple_to_generalize_context-first_self-evolving_learning_for_data-scarce_visi.md)
+- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
+- [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
+- [\[CVPR 2026\] Seeing What Matters: A Training-Free Self-Guided Framework for Multimodal Detail Perception and Reasoning](seeing_what_matters_a_training-free_self-guided_framework_for_multimodal_detail_.md)
+- [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](../../ICML2026/vlm_reasoning/breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)

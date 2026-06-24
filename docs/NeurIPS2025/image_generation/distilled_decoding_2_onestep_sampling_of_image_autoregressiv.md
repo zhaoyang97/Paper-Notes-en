@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation
 description: >-
-  [NeurIPS 2025][Image Generation][Auto-regressive model acceleration] This paper proposes Distilled Decoding 2 (DD2), which reinterprets auto-regressive image models as conditional score models and designs a Conditional S…
+  [NeurIPS 2025][Image Generation][Auto-regressive model acceleration] This paper proposes Distilled Decoding 2 (DD2), which reinterprets auto-regressive image models as conditional score models and designs a Conditional Score Distillation (CSD) loss to compress multi-step AR sampling into one-step generation. On ImageNet-256, DD2 achieves only a marginal FID degradation from 3.40 to 5.43 while obtaining 8.0× speedup (VAR) and 238× speedup (LlamaGen)…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -11,7 +11,7 @@ tags:
   - "score distillation"
   - "conditional score distillation"
 date: 2026-05-08
-content_hash: 1ecb85ce39d04dad
+content_hash: 97ee6b4211800527
 ---
 
 # Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation
@@ -154,11 +154,11 @@ Training efficiency comparison:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Collaborative Decoding Makes Visual Auto-Regressive Modeling Efficient](../../CVPR2025/image_generation/collaborative_decoding_makes_visual_auto-regressive_modeling_efficient.md)
 - [\[ICCV 2025\] SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency Distillation](../../ICCV2025/image_generation/sana-sprint_one-step_diffusion_with_continuous-time_consistency_distillation.md)
-- [\[CVPR 2026\] WaDi: Weight Direction-aware Distillation for One-step Image Synthesis](../../CVPR2026/image_generation/wadi_weight_direction-aware_distillation_for_one-step_image_synthesis.md)
-- [\[NeurIPS 2025\] Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models](psi-sampler_initial_particle_sampling_for_smc-based_inference-time_reward_alignm.md)
+- [\[CVPR 2025\] HMAR: Efficient Hierarchical Masked Auto-Regressive Image Generation](../../CVPR2025/image_generation/hmar_efficient_hierarchical_masked_auto-regressive_image_generation.md)
+- [\[CVPR 2025\] MMAR: Towards Lossless Multi-Modal Auto-Regressive Probabilistic Modeling](../../CVPR2025/image_generation/mmar_towards_lossless_multi-modal_auto-regressive_probabilistic_modeling.md)
 - [\[ICCV 2025\] LUSD: Localized Update Score Distillation for Text-Guided Image Editing](../../ICCV2025/image_generation/lusd_localized_update_score_distillation_for_text-guided_image_editing.md)
-- [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](../../CVPR2026/image_generation/duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
 
 </div>
 

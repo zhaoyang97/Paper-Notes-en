@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][contextual bandits] This paper proposes the FGTS-VA algorithm, which for the first time achieves a variance-aware contextual bandit algorithm based on Feel-Good Thompson Sampling. T…
+  [NeurIPS 2025][Reinforcement Learning][contextual bandits] This paper proposes the FGTS-VA algorithm, which for the first time achieves a variance-aware contextual bandit algorithm based on Feel-Good Thompson Sampling. The resulting regret bound is optimal in the model dimension $d$, matching the best variance-dependent regret bounds established by UCB-based methods.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "feel-good exploration"
   - "regret bounds"
 date: 2026-05-08
-content_hash: 6915630233762aaf
+content_hash: 0a01f8218203aab6
 ---
 
 # Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits
@@ -135,7 +135,7 @@ The authors show that the generalized decoupling coefficient is $\tilde{\mathcal
 - [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
 - [\[NeurIPS 2025\] Thompson Sampling in Function Spaces via Neural Operators](thompson_sampling_in_function_spaces_via_neural_operators.md)
 - [\[NeurIPS 2025\] Tractable Multinomial Logit Contextual Bandits with Non-Linear Utilities](tractable_multinomial_logit_contextual_bandits_with_non-linear_utilities.md)
-- [\[NeurIPS 2025\] Learning from Demonstrations via Capability-Aware Goal Sampling](learning_from_demonstrations_via_capability-aware_goal_sampling.md)
+- [\[NeurIPS 2025\] Exploration via Feature Perturbation in Contextual Bandits](exploration_via_feature_perturbation_in_contextual_bandits.md)
 
 </div>
 

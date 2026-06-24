@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Authority, Truth, and Citation Bias: A Large-Scale Multi-Domain Benchmark for Studying Epistemic Susceptibility in Large Language Models
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] This paper introduces AuthorityBench—a multi-domain benchmark with 220,000 prompts using a **fully balanced 2×2 factorial design** (independently manipulating "claim veracity × citation veracity") to isolate the influence of the "citation authority signal" itself on LLM cognitive behavior. It finds that **adding a cita
+  [ICML2026][LLM Evaluation][Citation Authority] This paper introduces AuthorityBench—a multi-domain benchmark with 220,000 prompts using a **fully balanced 2×2 factorial design** (independently manipulating "claim veracity × citation veracity") to isolate the influence of the "citation authority signal" itself on LLM cognitive behavior. It finds that **adding a citation (regardless of its veracity) increases hallucination rates**, with the "True Claim + Fabricated Citation" co…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "Citation Authority"
+  - "Epistemic Susceptibility"
+  - "Hallucination Evaluation"
+  - "2×2 Factorial Design"
+  - "Multi-domain Benchmark"
 date: 2026-05-08
-content_hash: b4ed27157e8b79ed
+content_hash: b44f050880130656
 ---
+
 # Authority, Truth, and Citation Bias: A Large-Scale Multi-Domain Benchmark for Studying Epistemic Susceptibility in Large Language Models
 
 **Conference**: ICML2026  
@@ -137,8 +143,8 @@ Seven models were tested: three open-source models (Gemma 3 4B, Llama 3.1 8B, Ph
 - [\[ACL 2025\] McBE: A Multi-task Chinese Bias Evaluation Benchmark for Large Language Models](../../ACL2025/llm_evaluation/mcbe_a_multi-task_chinese_bias_evaluation_benchmark_for_large_language_models.md)
 - [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](../../ACL2026/llm_evaluation/attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
 - [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
-- [\[ECCV 2024\] PetFace: A Large-Scale Dataset and Benchmark for Animal Identification](../../ECCV2024/llm_evaluation/petface_a_large-scale_dataset_and_benchmark_for_animal_identification.md)
 - [\[ICML 2026\] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](bespoke_benchmark_for_search-augmented_large_language_model_personalization_via_.md)
+- [\[ICLR 2026\] Multi-turn Evaluation of Anthropomorphic Behaviours in Large Language Models](../../ICLR2026/llm_evaluation/multi-turn_evaluation_of_anthropomorphic_behaviours_in_large_language_models.md)
 
 </div>
 

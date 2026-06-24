@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] The authors propose TTP-Detect, the first black-box third-party watermark verification framework that decouples detection from injection. By magnifying watermark signals through a proxy model and combining three complementary metrics—local consistency, global geometry, and adaptive rank testing—it achieves high-precisi
+  [ACL 2026 Findings][LLM Safety][LLM watermarking] The authors propose TTP-Detect, the first black-box third-party watermark verification framework that decouples detection from injection. By magnifying watermark signals through a proxy model and combining three complementary metrics—local consistency, global geometry, and adaptive rank testing—it achieves high-precision detection across various watermarking schemes without accessing secret keys or internal model states.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "LLM watermarking"
+  - "black-box detection"
+  - "third-party auditing"
+  - "hypothesis testing"
+  - "proxy models"
 date: 2026-05-08
-content_hash: 0be4810a49cd277c
+content_hash: 2549ba2af367fa8a
 ---
+
 # Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework
 
 **Conference**: ACL 2026 Findings  
@@ -133,11 +139,11 @@ The proxy model is fine-tuned via conditional Negative Log-Likelihood (SFT). Ens
 
 ## Related Papers
 
+- [\[ICLR 2026\] Auditing Black-Box LLM APIs with a Rank-Based Uniformity Test](../../ICLR2026/llm_safety/auditing_black-box_llm_apis_with_a_rank-based_uniformity_test.md)
+- [\[ACL 2026\] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)
 - [\[AAAI 2026\] PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization](../../AAAI2026/llm_safety/psm_prompt_sensitivity_minimization_via_llm-guided_black-box_optimization.md)
 - [\[AAAI 2026\] GraphTextack: A Realistic Black-Box Node Injection Attack on LLM-Enhanced GNNs](../../AAAI2026/llm_safety/graphtextack_a_realistic_black-box_node_injection_attack_on_llm-enhanced_gnns.md)
 - [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
-- [\[ICLR 2026\] Auditing Black-Box LLM APIs with a Rank-Based Uniformity Test](../../ICLR2026/llm_safety/auditing_black-box_llm_apis_with_a_rank-based_uniformity_test.md)
-- [\[ACL 2026\] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)
 
 </div>
 

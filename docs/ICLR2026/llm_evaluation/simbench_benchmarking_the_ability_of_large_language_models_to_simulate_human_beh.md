@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SimBench: Benchmarking the Ability of Large Language Models to Simulate Human Behaviors
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] SimBench unifies 20 cross-disciplinary datasets from ethics, economics, psychology, and politics into a "population response distribution prediction" task, constructing the first large-scale standardized LLM human behavior simulation benchmark. Systematic evaluation across 45 models reveals that even the strongest curr
+  [ICLR 2026][LLM Evaluation][Human Behavior Simulation] SimBench unifies 20 cross-disciplinary datasets from ethics, economics, psychology, and politics into a "population response distribution prediction" task, constructing the first large-scale standardized LLM human behavior simulation benchmark. Systematic evaluation across 45 models reveals that even the strongest current models achieve only a moderate fidelity of 40.80/100. Simulation capability grows log-linearly with s…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Human Behavior Simulation"
+  - "Population Distribution Prediction"
+  - "Alignment-Simulation Tradeoff"
+  - "Total Variation Distance"
+  - "Large-scale Benchmark"
 date: 2026-05-08
-content_hash: 53903b1c571d50c4
+content_hash: 164057f225467192
 ---
+
 # SimBench: Benchmarking the Ability of Large Language Models to Simulate Human Behaviors
 
 **Conference**: ICLR 2026  

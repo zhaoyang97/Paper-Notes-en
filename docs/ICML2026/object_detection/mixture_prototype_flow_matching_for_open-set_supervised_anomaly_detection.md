@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection
 description: >-
-  [ICML 2026][Object Detection][Flow Matching] MPFM replaces the traditional "unimodal Gaussian prototypes" in OSAD with a learnable **Gaussian Mixture Model (GMM) prototype space**. It uses flow matching to directly regress a velocity field in GMM form, augmented by a mutual information maximization regularization to prevent prototype collapse. The method outperfo
+  [ICML 2026][Object Detection][Open-Set Supervised Anomaly Detection] MPFM replaces the traditional "unimodal Gaussian prototypes" in OSAD with a learnable **Gaussian Mixture Model (GMM) prototype space**. It uses flow matching to directly regress a velocity field in GMM form, augmented by a mutual information maximization regularization to prevent prototype collapse. The method outperforms all SOTA methods, including DRA, AHL, and DPDL, across 9 industrial and medical AD data…
 tags:
-  - ICML 2026
-  - Object Detection
-  - Flow Matching
-  - OSAD
+  - "ICML 2026"
+  - "Object Detection"
+  - "Open-Set Supervised Anomaly Detection"
+  - "Flow Matching"
+  - "Gaussian Mixture Prototypes"
+  - "Mutual Information Regularization"
+  - "OSAD"
 date: 2026-05-08
-content_hash: 8b30222962fdbf52
+content_hash: 338bdb22202d2486
 ---
+
 # Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection
 
 **Conference**: ICML 2026  
@@ -142,8 +146,8 @@ MPFM ranks first or tied for first on all reported datasets, gaining 0.5 points 
 ## Related Papers
 
 - [\[CVPR 2025\] Distribution Prototype Diffusion Learning for Open-set Supervised Anomaly Detection](../../CVPR2025/object_detection/distribution_prototype_diffusion_learning_for_open-set_supervised_anomaly_detect.md)
-- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](../../CVPR2026/object_detection/gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
 - [\[NeurIPS 2025\] Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching](../../NeurIPS2025/object_detection/scalable_explainable_and_provably_robust_anomaly_detection_with_one-step_flow_ma.md)
+- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](../../CVPR2026/object_detection/gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
 - [\[CVPR 2026\] UniSpector: Towards Universal Open-set Defect Recognition via Spectral-Contrastive Visual Prompting](../../CVPR2026/object_detection/unispector_towards_universal_open-set_defect_recognition_via_spectral-contrastiv.md)
 - [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](../../CVPR2026/object_detection/complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
 

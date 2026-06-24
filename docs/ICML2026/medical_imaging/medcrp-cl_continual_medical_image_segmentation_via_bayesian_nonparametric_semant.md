@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MedCRP-CL: Continual Medical Image Segmentation via Bayesian Nonparametric Semantic Modality Discovery
 description: >-
-  [ICML 2026][Medical Imaging][LoRA] The authors utilize the Chinese Restaurant Process (CRP) for online Bayesian nonparametric clustering of clinical text prompts to automatically discover "semantic modalities." They assign independent LoRA adapters to each semantic modality and implement intra-modality EWC. This approach pushes the Dice coefficient to 7
+  [ICML 2026][Medical Imaging][Continual Learning] The authors utilize the Chinese Restaurant Process (CRP) for online Bayesian nonparametric clustering of clinical text prompts to automatically discover "semantic modalities." They assign independent LoRA adapters to each semantic modality and implement intra-modality EWC. This approach pushes the Dice coefficient to 73.3% while reducing the forgetting rate to 4.1% across 16 medical segmentation tasks…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - LoRA
-  - EWC
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Continual Learning"
+  - "Medical Image Segmentation"
+  - "Chinese Restaurant Process"
+  - "LoRA"
+  - "EWC"
 date: 2026-05-08
-content_hash: 7584c92c08932bb5
+content_hash: 24a0bc0a798ff8e0
 ---
+
 # MedCRP-CL: Continual Medical Image Segmentation via Bayesian Nonparametric Semantic Modality Discovery
 
 **Conference**: ICML 2026  
@@ -151,8 +155,8 @@ Modality discovery strategy comparison:
 - [\[CVPR 2026\] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation](../../CVPR2026/medical_imaging/spegc_continual_test-time_adaptation_via_semantic-prompt-enhanced_graph_clusteri.md)
 - [\[ICML 2026\] SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation](semir_semantic_minor-induced_representation_learning_on_graphs_for_visual_segmen.md)
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](../../AAAI2026/medical_imaging/bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
+- [\[CVPR 2025\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/semantic_class_distribution_learning_for_debiasing_semi-supervised_medical_image.md)
 - [\[ICML 2026\] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)
-- [\[CVPR 2026\] From Infusion to Assimilation Distillation for Medical Image Segmentation](../../CVPR2026/medical_imaging/from_infusion_to_assimilation_distillation_for_medical_image_segmentation.md)
 
 </div>
 

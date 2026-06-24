@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Replicable Reinforcement Learning with Linear Function Approximation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Ours provides the first **provably replicable** reinforcement learning algorithm beyond tabular settings for **linear MDPs**: by constructing two foundational tools—replicable ridge regression and uncentered covariance estimation—and integrating them into LSVI / LSVI-UCB frameworks, the algorithm outputs **bit-wise ide
+  [ICLR 2026][Reinforcement Learning][Replicability] Ours provides the first **provably replicable** reinforcement learning algorithm beyond tabular settings for **linear MDPs**: by constructing two foundational tools—replicable ridge regression and uncentered covariance estimation—and integrating them into LSVI / LSVI-UCB frameworks, the algorithm outputs **bit-wise identical** policies with high probability when run on two independent datasets. Empirical results on CartPole a…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Replicability"
+  - "Linear MDP"
+  - "Function Approximation"
+  - "Sample Complexity"
+  - "Randomized Rounding"
 date: 2026-05-08
-content_hash: d8ce2fa754a8d8a1
+content_hash: 81e942362d0a53e7
 ---
+
 # Replicable Reinforcement Learning with Linear Function Approximation
 
 **Conference**: ICLR 2026  

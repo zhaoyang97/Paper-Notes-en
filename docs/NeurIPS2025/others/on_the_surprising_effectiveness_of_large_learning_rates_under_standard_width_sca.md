@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] On the Surprising Effectiveness of Large Learning Rates under Standard Width Scaling
 description: >-
-  [NeurIPS 2025][infinite-width limit] This paper reveals that under standard parameterization (SP), the cross-entropy loss causes the previously monolithic "unstable" regime to split into two distinct sub-regimes: catastr…
+  [NeurIPS 2025 Spotlight][infinite-width limit] This paper reveals that under standard parameterization (SP), the cross-entropy loss causes the previously monolithic "unstable" regime to split into two distinct sub-regimes: catastrophic instability and controlled divergence. In the controlled divergence regime ($\eta_n = \Theta(n^{-1/2})$), logits diverge while gradients and activations remain stable, thereby establishing the first practically useful infinite-width limit for S…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "infinite-width limit"
   - "standard parameterization"
   - "learning rate scaling"
@@ -12,7 +12,7 @@ tags:
   - "feature learning"
   - "controlled divergence"
 date: 2026-05-08
-content_hash: 181d34562323e4ed
+content_hash: 22ad6716912f30d6
 ---
 
 # On the Surprising Effectiveness of Large Learning Rates under Standard Width Scaling
@@ -162,11 +162,11 @@ Key findings:
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] SMRS: Advocating a Unified Reporting Standard for Surrogate Models in the Artificial Intelligence Era](smrs_advocating_a_unified_reporting_standard_for_surrogate_models_in_the_artific.md)
+- [\[ICLR 2026\] Scaling Direct Feedback Learning with Jacobian Alignment Guarantees](../../ICLR2026/others/scaling_direct_feedback_learning_with_jacobian_alignment_guarantees.md)
 - [\[NeurIPS 2025\] Statistical Inference Under Performativity](statistical_inference_under_performativity.md)
 - [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
-- [\[AAAI 2026\] Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets](../../AAAI2026/others/intermediate_n-gramming_deterministic_and_fast_n-grams_for_large_n_and_large_dat.md)
-- [\[AAAI 2026\] Structure-Aware Encodings of Argumentation Properties for Clique-width](../../AAAI2026/others/structure-aware_encodings_of_argumentation_properties_for_clique-width.md)
-- [\[NeurIPS 2025\] Adjusted Count Quantification Learning on Graphs](adjusted_count_quantification_learning_on_graphs.md)
+- [\[ICLR 2026\] Adaptive Conformal Guidance for Learning under Uncertainty](../../ICLR2026/others/adaptive_conformal_guidance_for_learning_under_uncertainty.md)
 
 </div>
 

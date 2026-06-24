@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchically Robust Zero-shot Vision-language Models
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Transforms CLIP adversarial fine-tuning from a "flat scheme aligning only leaf/base classes" into a hierarchical scheme aligning across multiple layers of a WordNet category tree. Leveraging hyperbolic (Poincaré ball) geometry, which naturally provides different margins for different hierarchy levels, it generates more
+  [CVPR 2026][AI Safety][Adversarial Fine-tuning] Transforms CLIP adversarial fine-tuning from a "flat scheme aligning only leaf/base classes" into a hierarchical scheme aligning across multiple layers of a WordNet category tree. Leveraging hyperbolic (Poincaré ball) geometry, which naturally provides different margins for different hierarchy levels, it generates more universal adversarial perturbations, improving both clean accuracy ($62.5\%$) and robust accuracy ($45.4\%$) ac…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Fine-tuning"
+  - "CLIP Robustness"
+  - "Hyperbolic Embedding"
+  - "Category Hierarchy"
+  - "Zero-shot Classification"
 date: 2026-05-08
-content_hash: 9cd8a40f97b1bc67
+content_hash: 8162aa8bb8d91c76
 ---
+
 # Hierarchically Robust Zero-shot Vision-language Models
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Compared to FARE, clean accuracy increases by $+2.5\%$ and robust accuracy by $+
 
 ## Related Papers
 
+- [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
+- [\[ICLR 2026\] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models](../../ICLR2026/ai_safety/identifying_robust_neural_pathways_few-shot_adversarial_mask_tuning_for_vision-l.md)
+- [\[ICML 2026\] Calibrating Uncertainty for Zero-Shot Adversarial CLIP](../../ICML2026/ai_safety/calibrating_uncertainty_for_zero-shot_adversarial_clip.md)
 - [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
-- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
-- [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
-- [\[CVPR 2026\] Jailbreaking Vision-Language Models via Dissonance-Guided Suffix Optimization and Image-Phrase Injection](jailbreaking_vision-language_models_via_dissonance-guided_suffix_optimization_an.md)
-- [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
+- [\[AAAI 2026\] OAD-Promoter: Enhancing Zero-shot VQA using Large Language Models with Object Attribute Description](../../AAAI2026/ai_safety/oad-promoter_enhancing_zero-shot_vqa_using_large_language_models_with_object_att.md)
 
 </div>
 

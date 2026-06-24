@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Saying the Unsaid: Revealing the Hidden Language of Multimodal Systems Through Telephone Games
 description: >-
-  [NeurIPS 2025][Interpretability][Hidden language] By running multi-round "telephone games" (image→text→image loops), this paper exploits the preference biases of multimodal systems to quantify the connection strength bet…
+  [NeurIPS 2025][Interpretability][Hidden language] By running multi-round "telephone games" (image→text→image loops), this paper exploits the preference biases of multimodal systems to quantify the connection strength between concepts in the system's implicit space (i.e., the "hidden language"). It contributes the Telescope dataset (10,000+ concept pairs) and establishes a scalable test-time "world map" of multimodal systems.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "multimodal interpretability"
   - "test-time probing"
 date: 2026-05-08
-content_hash: ed42e71551caae9a
+content_hash: ccfae7282a38ab9f
 ---
 
 # Saying the Unsaid: Revealing the Hidden Language of Multimodal Systems Through Telephone Games
@@ -120,8 +120,8 @@ This paper does not involve model training. The entire framework is a purely tes
 - [\[NeurIPS 2025\] Evaluating LLMs in Open-Source Games](evaluating_llms_in_open-source_games.md)
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](../../ICLR2026/interpretability/hidden_breakthroughs_in_language_model_training.md)
 - [\[NeurIPS 2025\] Far from the Shallow: Brain-Predictive Reasoning Embedding through Residual Disentanglement](far_from_the_shallow_brain-predictive_reasoning_embedding_through_residual_disen.md)
-- [\[ICLR 2026\] AnveshanaAI: A Multimodal Platform for Adaptive AI/ML Education through Automated Question Generation and Interactive Assessment](../../ICLR2026/interpretability/anveshanaai_a_multimodal_platform_for_adaptive_aiml_education_through_automated_.md)
-- [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
+- [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](../../ACL2026/interpretability/mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
+- [\[ICML 2026\] LatentLens: Revealing Highly Interpretable Visual Tokens in LLMs](../../ICML2026/interpretability/latentlens_revealing_highly_interpretable_visual_tokens_in_llms.md)
 
 </div>
 

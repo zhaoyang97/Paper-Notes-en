@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CaptionQA: Is Your Caption as Useful as the Image Itself?
 description: >-
-  [CVPR 2026][Multimodal VLM][QA-on-caption] CaptionQA redefines "caption quality" as "whether the caption can substitute for the image in downstream tasks." By using a text-only LLM to answer 33,027 dense multiple-choice questions based solely on captions, it measures exactly how much usable information is lost relative to the original image. Results show even t
+  [CVPR 2026][Multimodal VLM][Image Caption Evaluation] CaptionQA redefines "caption quality" as "whether the caption can substitute for the image in downstream tasks." By using a text-only LLM to answer 33,027 dense multiple-choice questions based solely on captions, it measures exactly how much usable information is lost relative to the original image. Results show even the strongest closed-source models suffer a 9–16% utility drop, while open-source models drop over 40% in E…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - QA-on-caption
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Image Caption Evaluation"
+  - "Downstream Utility"
+  - "QA-on-caption"
+  - "Multimodal Benchmark"
+  - "Domain Taxonomy"
 date: 2026-05-08
-content_hash: 30c387f5fc0d27bf
+content_hash: 287a766dae6b6746
 ---
+
 # CaptionQA: Is Your Caption as Useful as the Image Itself?
 
 **Conference**: CVPR 2026  
@@ -145,9 +150,9 @@ Analysis of whether complex prompts or increased length can close the gap:
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token](rethinking_mllm_itself_as_a_segmenter_with_a_single_segmentation_token.md)
+- [\[CVPR 2026\] Learning from Itself: Mining Internal Knowledge from Vision Language Models for Continual Learning](learning_from_itself_mining_internal_knowledge_from_vision_language_models_for_c.md)
 - [\[CVPR 2026\] ROSE: Rotate Your Large Language Model to See](rose_rotate_your_large_language_model_to_see.md)
 - [\[CVPR 2026\] One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework](one_patch_to_caption_them_all_a_unified_zero-shot_captioning_framework.md)
-- [\[CVPR 2026\] Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation](is_your_vlm_sky-ready_a_comprehensive_spatial_intelligence_benchmark_for_uav_nav.md)
 - [\[NeurIPS 2025\] Unifying Vision-Language Latents for Zero-Label Image Caption Enhancement](../../NeurIPS2025/multimodal_vlm/unifying_vision-language_latents_for_zero-label_image_caption_enhancement.md)
 
 </div>

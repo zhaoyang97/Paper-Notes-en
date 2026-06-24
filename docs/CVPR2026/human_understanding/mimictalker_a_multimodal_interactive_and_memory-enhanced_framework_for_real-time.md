@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] MimicTalker focuses on 3D head motion generation for "real-time dyadic conversations." It employs frame-by-frame causal processing combined with Gated Multi-scale Memory (MICE) to achieve zero-latency perception of the interloutor. Intent and topic semantics extracted by an LLM are used for Semantics-augmented Dynamic
+  [CVPR 2026][Human Understanding][Dyadic interactive head generation] MimicTalker focuses on 3D head motion generation for "real-time dyadic conversations." It employs frame-by-frame causal processing combined with Gated Multi-scale Memory (MICE) to achieve zero-latency perception of the interloutor. Intent and topic semantics extracted by an LLM are used for Semantics-augmented Dynamic Interaction (SDI) to modulate speaker features. Furthermore…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Dyadic interactive head generation"
+  - "Real-time"
+  - "Multimodal"
+  - "Semantic memory"
+  - "Motion style consistency"
 date: 2026-05-08
-content_hash: 23b442d4201cff8e
+content_hash: 58f523cd4a04b149
 ---
+
 # MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation
 
 **Conference**: CVPR 2026  

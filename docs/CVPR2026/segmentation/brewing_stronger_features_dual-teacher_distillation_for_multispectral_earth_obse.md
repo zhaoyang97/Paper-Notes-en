@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation
 description: >-
-  [CVPR 2026][Segmentation][Knowledge Distillation] Proposes **DEO (Distillation for Earth Observation)**, a dual-teacher contrastive distillation framework. It utilizes a multispectral self-distillation teacher to learn spectral representations and an optical VFM teacher (DINOv3) to inject high-level semantic priors. This enables a single student network to excel in bo
+  [CVPR 2026][Segmentation][Remote Sensing Foundation Models] Proposes **DEO (Distillation for Earth Observation)**, a dual-teacher contrastive distillation framework. It utilizes a multispectral self-distillation teacher to learn spectral representations and an optical VFM teacher (DINOv3) to inject high-level semantic priors. This enables a single student network to excel in both optical and multispectral remote sensing tasks, achieving SOTA across semantic segmentation…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Remote Sensing Foundation Models"
+  - "Multispectral"
+  - "Knowledge Distillation"
+  - "Contrastive Learning"
+  - "Dual-Teacher Training"
 date: 2026-05-08
-content_hash: 64bc3722deee8b08
+content_hash: 83d0e8a6d61b84d6
 ---
+
 # Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation
 
 **Conference**: CVPR 2026  
@@ -163,10 +168,20 @@ Weights are set to $\alpha_1=1,\ \alpha_2=0.5,\ \alpha_3=0.5,\ \gamma=1$.
 ⭐⭐⭐⭐⭐ — Strong insights (objective compatibility), excellent efficiency (SOTA with 500k images), and comprehensive evaluation across 11 datasets.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation](towards_robust_multi-modal_semantic_segmentation_with_teacher-student_framework_.md)
+- [\[ICCV 2025\] On the Generalization of Representation Uncertainty in Earth Observation](../../ICCV2025/segmentation/on_the_generalization_of_representation_uncertainty_in_earth_observation.md)
+- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
+- [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
+- [\[CVPR 2026\] Dual-level Adapter Boosting Prompt-free Curvilinear Structure Segmentation](dual-level_adapter_boosting_prompt-free_curvilinear_structure_segmentation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation](towards_robust_multi-modal_semantic_segmentation_with_teacher-student_framework_.md)

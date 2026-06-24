@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Neural Hamilton–Jacobi Characteristic Flows for Optimal Transport
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper reformulates Optimal Transport (OT) maps as gradients of viscosity solutions to Hamilton–Jacobi (HJ) equations. By leveraging the "Method of Characteristics," it collapses dynamic integration into straight lines, enabling a **single-network, pure minimization loss** framework to obtain **closed-form, bidirec
+  [ICLR 2026][Optimization][Optimal Transport] This paper reformulates Optimal Transport (OT) maps as gradients of viscosity solutions to Hamilton–Jacobi (HJ) equations. By leveraging the "Method of Characteristics," it collapses dynamic integration into straight lines, enabling a **single-network, pure minimization loss** framework to obtain **closed-form, bidirectional, and provably optimal** transport maps, completely eliminating adversarial training and numerical ODE integr…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Optimal Transport"
+  - "Hamilton–Jacobi Equations"
+  - "Method of Characteristics"
+  - "Viscosity Solution"
+  - "Neural PDE Solver"
+  - "Bidirectional Transport Map"
 date: 2026-05-08
-content_hash: 0ae719b4702a101f
+content_hash: bb63a5bbfbaab0dd
 ---
+
 # Neural Hamilton–Jacobi Characteristic Flows for Optimal Transport
 
 **Conference**: ICLR 2026  
@@ -134,7 +141,7 @@ NCF achieves the highest class label accuracy (83.42%). The relatively higher FI
 - [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](hota_hamiltonian_framework_for_optimal_transport_advection.md)
 - [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
 - [\[ICLR 2026\] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation](elastic_optimal_transport_theory_application_and_empirical_evaluation.md)
-- [\[ICLR 2026\] A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport](a_scalable_constant-factor_approximation_algorithm_for_w_p_optimal_transport.md)
+- [\[ICLR 2026\] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport](hyperparameter_trajectory_inference_with_conditional_lagrangian_optimal_transpor.md)
 
 </div>
 

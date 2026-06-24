@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models
 description: >-
-  [AAAI 2026][LLM/NLP][Instruction hierarchy] This paper systematically demonstrates that the system/user prompt separation mechanism in current LLMs **fails to establish reliable instruction priority**…
+  [AAAI 2026][LLM (Other)][Instruction hierarchy] This paper systematically demonstrates that the system/user prompt separation mechanism in current LLMs **fails to establish reliable instruction priority**, and finds that social hierarchy priors acquired during pretraining (authority, expertise, consensus) exert stronger control over model behavior than explicit system/user role markers.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Instruction hierarchy"
   - "system/user separation"
   - "conflicting instructions"
   - "constraint preference"
   - "social hierarchy prior"
 date: 2026-05-08
-content_hash: 7707cf86810ad516
+content_hash: a84894085a19869c
 ---
 
 # Control Illusion: The Failure of Instruction Hierarchies in Large Language Models
@@ -133,11 +133,11 @@ Social hierarchy frameworks — especially social consensus — yield priority a
 
 ## Related Papers
 
-- [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
 - [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](../../ACL2026/llm_nlp/muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
+- [\[ICLR 2026\] Parameters vs. Context: Fine-Grained Control of Knowledge Reliance in Language Models](../../ICLR2026/llm_nlp/parameters_vs_context_fine-grained_control_of_knowledge_reliance_in_language_mod.md)
+- [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
+- [\[ACL 2025\] Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability](../../ACL2025/llm_nlp/compositional_generalization_instruction.md)
 - [\[AAAI 2026\] LoKI: Low-damage Knowledge Implanting of Large Language Models](loki_low-damage_knowledge_implanting_of_large_language_models.md)
-- [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
-- [\[AAAI 2026\] CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models](coevo_continual_evolution_of_symbolic_solutions_using_large_language_models.md)
 
 </div>
 

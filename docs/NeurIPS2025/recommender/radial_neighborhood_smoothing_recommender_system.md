@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Radial Neighborhood Smoothing Recommender System
 description: >-
-  [NeurIPS 2025][Recommender Systems][Recommender System] This paper proposes the Radial Neighborhood Estimator (RNE), which approximates latent space distances using the row/column L2 norms of the observed matrix…
+  [NeurIPS 2025][Recommender Systems][Recommender System] This paper proposes the Radial Neighborhood Estimator (RNE), which approximates latent space distances using the row/column L2 norms of the observed matrix, constructs radial neighborhoods encompassing both overlapping and partially overlapping user–item pairs, and applies local kernel regression for smoothed imputation. RNE outperforms conventional collaborative filtering and matrix factorization methods in both theoret…
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Kernel Smoothing"
   - "Cold-start"
 date: 2026-05-08
-content_hash: 900439949fa69d6a
+content_hash: d7fdfc84faa25447
 ---
 
 # Radial Neighborhood Smoothing Recommender System

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference
 description: >-
-  [ACL 2026][LLM Efficiency][Mixture-of-Experts] The "number of activated experts" in MoE inference is abstracted as a global budget $B$. Optimal Top-K allocation is performed across layers via dynamic programming (Alloc-L), followed by token-level redistribution using global Top-$(K \cdot T)$ selection (Alloc-T). This approach halves the activation budget of DeepSee
+  [ACL 2026][LLM Efficiency][Mixture-of-Experts] The "number of activated experts" in MoE inference is abstracted as a global budget $B$. Optimal Top-K allocation is performed across layers via dynamic programming (Alloc-L), followed by token-level redistribution using global Top-$(K \cdot T)$ selection (Alloc-T). This approach halves the activation budget of DeepSeek-V2-Lite while maintaining accuracy, achieving a 1.15× speedup in prefill and a 1.34× speedup in decode.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Mixture-of-Experts
-  - Inference Acceleration
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "expert activation budget"
+  - "dynamic programming"
+  - "token-level redistribution"
+  - "inference acceleration"
 date: 2026-05-08
-content_hash: 4075700069a5fd6a
+content_hash: 0eff314da8a2a3f0
 ---
+
 # Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference
 
 **Conference**: ACL 2026  
@@ -139,10 +143,10 @@ Overall, Alloc-MoE outperformed competitors in 10 out of 12 budget-task configur
 ## Related Papers
 
 - [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](../../ICML2026/llm_efficiency/team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
-- [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
-- [\[ICLR 2026\] Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling](../../ICLR2026/llm_efficiency/semantic_parallelism_redefining_efficient_moe_inference_via_model-data_co-schedu.md)
-- [\[NeurIPS 2025\] Advancing Expert Specialization for Better MoE](../../NeurIPS2025/llm_efficiency/advancing_expert_specialization_for_better_moe.md)
+- [\[ICLR 2026\] Expert Merging in Sparse Mixture of Experts with Nash Bargaining](../../ICLR2026/llm_efficiency/expert_merging_in_sparse_mixture_of_experts_with_nash_bargaining.md)
 - [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](../../ICLR2026/llm_efficiency/expert_divergence_learning_for_moe-based_language_models.md)
+- [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
+- [\[NeurIPS 2025\] Advancing Expert Specialization for Better MoE](../../NeurIPS2025/llm_efficiency/advancing_expert_specialization_for_better_moe.md)
 
 </div>
 

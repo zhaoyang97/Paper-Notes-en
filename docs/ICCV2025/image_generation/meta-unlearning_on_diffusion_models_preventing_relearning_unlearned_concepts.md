@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Meta-Unlearning on Diffusion Models: Preventing Relearning Unlearned Concepts
 description: >-
-  [ICCV 2025][Image Generation][Machine Unlearning] This paper proposes a Meta-Unlearning framework for diffusion models that augments standard unlearning objectives with a meta-objective…
+  [ICCV 2025][Image Generation][Machine Unlearning] This paper proposes a Meta-Unlearning framework for diffusion models that augments standard unlearning objectives with a meta-objective, causing benign knowledge associated with unlearned concepts to self-destruct upon malicious fine-tuning, thereby preventing relearning of erased concepts. The framework is compatible with most existing unlearning methods and requires only the addition of a simple meta-objective.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Meta-Learning"
   - "Concept Erasure"
 date: 2026-05-08
-content_hash: c32970598c9fe92e
+content_hash: 13e03ade21b97779
 ---
 
 # Meta-Unlearning on Diffusion Models: Preventing Relearning Unlearned Concepts
@@ -163,9 +163,9 @@ Meta-Unlearn achieves FID/CLIP scores close to those of the corresponding Unlear
 
 - [\[NeurIPS 2025\] When Are Concepts Erased From Diffusion Models?](../../NeurIPS2025/image_generation/when_are_concepts_erased_from_diffusion_models.md)
 - [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
-- [\[NeurIPS 2025\] Emergence and Evolution of Interpretable Concepts in Diffusion Models](../../NeurIPS2025/image_generation/emergence_and_evolution_of_interpretable_concepts_in_diffusi.md)
+- [\[ICLR 2026\] Co-occurring Associated REtained concepts in Diffusion Unlearning](../../ICLR2026/image_generation/co-occurring_associated_retained_concepts_in_diffusion_unlearning.md)
+- [\[CVPR 2025\] Memories of Forgotten Concepts](../../CVPR2025/image_generation/memories_of_forgotten_concepts.md)
 - [\[NeurIPS 2025\] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning](../../NeurIPS2025/image_generation/towards_resilient_safety-driven_unlearning_for_diffusion_models_against_downstre.md)
-- [\[CVPR 2026\] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models](../../CVPR2026/image_generation/tina_text-free_inversion_attack_for_unlearned_text-to-image_diffusion_models.md)
 
 </div>
 

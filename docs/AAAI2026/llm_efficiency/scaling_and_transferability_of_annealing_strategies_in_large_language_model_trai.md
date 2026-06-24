@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scaling and Transferability of Annealing Strategies in Large Language Model Training
 description: >-
-  [AAAI 2026][LLM Efficiency][Learning Rate Annealing] This paper proposes a model-agnostic predictive framework that decomposes training loss into a forward-effect term (learning rate integral $S$)…
+  [AAAI 2026][LLM Efficiency][Learning Rate Annealing] This paper proposes a model-agnostic predictive framework that decomposes training loss into a forward-effect term (learning rate integral $S$), an annealing momentum term (Adam-style momentum integral $M$), and a model-size term $N$. It demonstrates that annealing strategies can be transferred from small models/small batches to large models/large batches, achieving a prediction MAPE below 2%.
 tags:
   - "AAAI 2026"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Transferability"
   - "MoE"
 date: 2026-05-08
-content_hash: 6423ef1781a5d656
+content_hash: 3f28d624b8c03657
 ---
 
 # Scaling and Transferability of Annealing Strategies in Large Language Model Training
@@ -138,11 +138,11 @@ where $S$ is the learning rate integral (forward effect), $N$ is the number of m
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Critical Batch Size Revisited: A Simple Empirical Approach to Large-Batch Language Model Training](../../NeurIPS2025/llm_efficiency/critical_batch_size_revisited_a_simple_empirical_approach_to_large-batch_languag.md)
-- [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](../../ICLR2026/llm_efficiency/dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
-- [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](../../ICML2026/llm_efficiency/team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
-- [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](../../ACL2026/llm_efficiency/are_large_language_models_economically_viable_for_industry_deployment.md)
-- [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](../../ACL2026/llm_efficiency/lizard_an_efficient_linearization_framework_for_large_language_models.md)
+- [\[ICLR 2026\] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing](../../ICLR2026/llm_efficiency/scaling_large_vision-language_model_rl_training_via_efficient_load_balancing.md)
+- [\[ICLR 2026\] Unlocking Full Efficiency of Token Filtering in Large Language Model Training](../../ICLR2026/llm_efficiency/unlocking_full_efficiency_of_token_filtering_in_large_language_model_training.md)
+- [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](../../ICLR2026/llm_efficiency/ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
+- [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](../../ICLR2026/llm_efficiency/refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
+- [\[ICLR 2026\] Demystifying and Enhancing the Efficiency of Large Language Model Based Search Agents](../../ICLR2026/llm_efficiency/demystifying_and_enhancing_the_efficiency_of_large_language_model_based_search_a.md)
 
 </div>
 

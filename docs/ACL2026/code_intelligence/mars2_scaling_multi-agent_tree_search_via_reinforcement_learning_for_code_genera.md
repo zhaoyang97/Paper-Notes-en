@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation
 description: >-
-  [ACL 2026][Code Intelligence][Multi-Agent] MARS2 proposes a multi-agent reinforcement tree search framework that embeds multiple independently optimized policies within a shared search tree for collaborative exploration. Through Thompson sampling for agent-node selection, tree-coherent reward shaping, and path-level group advantage estimation, it consistently i
+  [ACL 2026][Code Intelligence][Multi-Agent] MARS2 proposes a multi-agent reinforcement tree search framework that embeds multiple independently optimized policies within a shared search tree for collaborative exploration. Through Thompson sampling for agent-node selection, tree-coherent reward shaping, and path-level group advantage estimation, it consistently improves single-model Pass@1 by up to 8.0% and system-level Pass@1(MCTS) by up to 6.5% on code generation benchmarks.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Multi-Agent
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Multi-Agent"
+  - "Tree Search"
+  - "Reinforcement Learning"
+  - "Code Generation"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 4e2d5499a025f6ac
+content_hash: 33b56a903bdfd027
 ---
+
 # MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation
 
 **Conference**: ACL 2026  
@@ -138,11 +141,11 @@ Building on the advantage estimation above, MARS2 extends the GRPO objective to 
 
 ## Related Papers
 
-- [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](../../AAAI2026/code_intelligence/recode_updating_code_api_knowledge_with_reinforcement_learning.md)
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](../../ICLR2026/code_intelligence/tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 - [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
+- [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](../../AAAI2026/code_intelligence/recode_updating_code_api_knowledge_with_reinforcement_learning.md)
+- [\[ICLR 2026\] WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning](../../ICLR2026/code_intelligence/webgen-agent_enhancing_interactive_website_generation_with_multi-level_feedback_.md)
 - [\[ACL 2026\] ChipSeek: Optimizing Verilog Generation via EDA-Integrated Reinforcement Learning](chipseek_optimizing_verilog_generation_via_eda-integrated_reinforcement_learning.md)
-- [\[ACL 2025\] Tree-of-Code: A Tree-Structured Exploring Framework for End-to-End Code Generation](../../ACL2025/code_intelligence/tree-of-code_a_tree-structured_exploring_framework_for_end-to-end_code_generatio.md)
-- [\[ICLR 2026\] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](../../ICLR2026/code_intelligence/reasoningbank_scaling_agent_self-evolving_with_reasoning_memory.md)
 
 </div>
 

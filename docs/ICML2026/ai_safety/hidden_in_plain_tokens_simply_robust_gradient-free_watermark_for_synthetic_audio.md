@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio
 description: >-
-  [ICML 2026][AI Safety][KGW] To address the exponential decay of watermark signals caused by "decoding → re-encoding non-idempotency" in autoregressive audio generation under KGW-style token watermarking, the authors perform Leiden community detection on the codec's confusion matrix to derive a contracted "cluster vocabulary." By defining green/re
+  [ICML 2026][AI Safety][Autoregressive Audio Watermarking] To address the exponential decay of watermark signals caused by "decoding → re-encoding non-idempotency" in autoregressive audio generation under KGW-style token watermarking, the authors perform Leiden community detection on the codec's confusion matrix to derive a contracted "cluster vocabulary." By defining green/red sets on clusters rather than individual tokens, this gradient-free…
 tags:
-  - ICML 2026
-  - AI Safety
-  - KGW
+  - "ICML 2026"
+  - "AI Safety"
+  - "Autoregressive Audio Watermarking"
+  - "KGW"
+  - "Re-encoding Robustness"
+  - "Vocabulary Community Detection"
+  - "Gradient-Free"
 date: 2026-05-08
-content_hash: 48948e81f5984cd2
+content_hash: 116c94f058ebbcd0
 ---
+
 # Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio
 
 **Conference**: ICML 2026  
@@ -138,9 +143,9 @@ The $-\log p$ of the proposed method is approximately 3x higher than WMAR(aug) a
 
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
 - [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](../../CVPR2026/ai_safety/x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
-- [\[ICML 2026\] Flatness-Aware Stochastic Gradient Langevin Dynamics](flatness-aware_stochastic_gradient_langevin_dynamics.md)
-- [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
-- [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](training-free_coverless_multi-image_steganography_with_access_control.md)
+- [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
+- [\[ICLR 2026\] SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks](../../ICLR2026/ai_safety/seri_gradient-free_sensitive_region_identification_in_decision-based_black-box_a.md)
+- [\[ICLR 2026\] Don't Shift the Trigger: Robust Gradient Ascent for Backdoor Unlearning](../../ICLR2026/ai_safety/dont_shift_the_trigger_robust_gradient_ascent_for_backdoor_unlearning.md)
 
 </div>
 

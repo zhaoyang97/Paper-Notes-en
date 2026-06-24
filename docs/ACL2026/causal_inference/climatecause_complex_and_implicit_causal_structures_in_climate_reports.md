@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ClimateCause: Complex and Implicit Causal Structures in Climate Reports
 description: >-
-  [ACL 2026][Causal Inference][Paper Note] ClimateCause constructs the first expert-annotated dataset for complex and implicit causal structures in climate reports (874 causal relations), supporting nested causality, multi-event decomposition, correlation direction, and spatio-temporal context labeling. It proposes a readability metric based on causal graph sem
+  [ACL 2026 Findings][Causal Inference][Causal Discovery] ClimateCause constructs the first expert-annotated dataset for complex and implicit causal structures in climate reports (874 causal relations), supporting nested causality, multi-event decomposition, correlation direction, and spatio-temporal context labeling. It proposes a readability metric based on causal graph semantic complexity, with LLM benchmarking revealing that causal chain reasoning remains a significant chal…
 tags:
-  - ACL 2026
-  - Causal Inference
+  - "ACL 2026 Findings"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Climate Change"
+  - "Implicit Causality"
+  - "Nested Causality"
+  - "IPCC Reports"
 date: 2026-05-08
-content_hash: 8db68e78337013fa
+content_hash: 1cb59706e962c4bf
 ---
+
 # ClimateCause: Complex and Implicit Causal Structures in Climate Reports
 
 **Conference**: ACL 2026 Findings  
@@ -118,11 +124,11 @@ Traditional readability metrics (e.g., Flesch Reading Ease) only consider word a
 
 ## Related Papers
 
-- [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](../../ICML2026/causal_inference/controllable_generative_sandbox_for_causal_inference.md)
-- [\[CVPR 2026\] A Polynomial Chaos Framework for Causal Discovery in Nonlinear Uncertain Systems](../../CVPR2026/causal_inference/a_polynomial_chaos_framework_for_causal_discovery_in_nonlinear_uncertain_systems.md)
-- [\[ICML 2026\] Evaluating Bivariate Causal Statements Based on Mutual Compatibility](../../ICML2026/causal_inference/evaluating_bivariate_causal_statements_based_on_mutual_compatibility.md)
-- [\[AAAI 2026\] I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables](../../AAAI2026/causal_inference/i-cam-uv_integrating_causal_graphs_over_non-identical_variable_sets_using_causal.md)
+- [\[ICLR 2026\] Coarse-to-Fine Learning of Dynamic Causal Structures](../../ICLR2026/causal_inference/coarse-to-fine_learning_of_dynamic_causal_structures.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](../../ICLR2026/causal_inference/causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
 - [\[ICML 2026\] Causal Modeling of Selection in Evolution](../../ICML2026/causal_inference/causal_modeling_of_selection_in_evolution.md)
+- [\[ICLR 2026\] On the Identifiability of Causal Graphs with the Invariance Principle](../../ICLR2026/causal_inference/on_the_identifiability_of_causal_graphs_with_the_invariance_principle.md)
+- [\[ACL 2026\] Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size](better_and_worse_with_scale_how_contextual_entrainment_diverges_with_model_size.md)
 
 </div>
 

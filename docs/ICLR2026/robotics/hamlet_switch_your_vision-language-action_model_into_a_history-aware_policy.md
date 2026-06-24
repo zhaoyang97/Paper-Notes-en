@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] HAMLET: Switch Your Vision-Language-Action Model into a History-Aware Policy
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Vision-Language-Action] HAMLET enables "single-frame" pretrained VLAs to gain history-awareness in a plug-and-play, near-zero overhead manner by appending a few learnable moment tokens (initialized via time-contrastive learning) and a lightweight memory module. It improves success rates from 29.2% to 76.4% on real-world long-horizon tasks.
+  [ICLR 2026][Robotics][Vision-Language-Action] HAMLET enables "single-frame" pretrained VLAs to gain history-awareness in a plug-and-play, near-zero overhead manner by appending a few learnable moment tokens (initialized via time-contrastive learning) and a lightweight memory module. It improves success rates from 29.2% to 76.4% on real-world long-horizon tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Vision-Language-Action
-  - moment token
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language-Action"
+  - "history-aware"
+  - "moment token"
+  - "time-contrastive learning"
+  - "memory module"
+  - "long-horizon manipulation"
 date: 2026-05-08
-content_hash: 0e6da8e29e368216
+content_hash: 0e9020bd4fd1b31b
 ---
+
 # HAMLET: Switch Your Vision-Language-Action Model into a History-Aware Policy
 
 **Conference**: ICLR 2026  
@@ -132,15 +137,16 @@ Efficiency (A100, per-timestep):
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
+- [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
 - [\[ICLR 2026\] HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model](hybridvla_collaborative_diffusion_and_autoregression_in_a_unified_vision-languag.md)
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
 - [\[ICLR 2026\] Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation](action-aware_dynamic_pruning_for_efficient_vision-language-action_manipulation.md)
-- [\[ICLR 2026\] Geometry-Aware Policy Imitation](geometry-aware_policy_imitation.md)
 
 </div>
 

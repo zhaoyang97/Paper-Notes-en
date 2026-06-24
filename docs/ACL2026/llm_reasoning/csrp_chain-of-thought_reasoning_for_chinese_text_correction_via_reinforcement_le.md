@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CSRP: Chain-of-Thought Reasoning for Chinese Text Correction via Reinforcement Learning with Efficiency-Aware Rewards
 description: >-
-  [ACL 2026][LLM Reasoning][Reinforcement Learning] CSRP employs a three-stage training pipeline—CPT, SFT with CoT rationales, and GRPO with Efficiency-Aware Rewards—to train a Chinese text correction model. It achieves 50.99 $F_{0.5}$ on NACGEC and 59.61 F1 on CSCD, significantly mitigating over-correction issues in LLM-based correction through explicit rewards for edi
+  [ACL2026][Reasoning][Chinese Grammar Error Correction] CSRP employs a three-stage training pipeline—CPT, SFT with CoT rationales, and GRPO with Efficiency-Aware Rewards—to train a Chinese text correction model. It achieves 50.99 $F_{0.5}$ on NACGEC and 59.61 F1 on CSCD, significantly mitigating over-correction issues in LLM-based correction through explicit rewards for editing efficiency.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ACL2026"
+  - "Reasoning"
+  - "Chinese Grammar Error Correction"
+  - "Reinforcement Learning"
+  - "CoT Distillation"
+  - "Over-correction Suppression"
+  - "Efficiency-Aware Reward"
 date: 2026-05-08
-content_hash: e61e13057aa5cd7c
+content_hash: 6e1291bfed5359a5
 ---
+
 # CSRP: Chain-of-Thought Reasoning for Chinese Text Correction via Reinforcement Learning with Efficiency-Aware Rewards
 
 **Conference**: ACL2026  
@@ -143,11 +148,11 @@ CSRP outperforms GPT-4 by +5.20 F1 and MDCSpell+ARM by +10.68 F1, demonstrating 
 
 ## Related Papers
 
-- [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](../../ICLR2026/llm_reasoning/agentic_reinforcement_learning_with_implicit_step_rewards.md)
 - [\[NeurIPS 2025\] SQL-of-Thought: Multi-agentic Text-to-SQL with Guided Error Correction](../../NeurIPS2025/llm_reasoning/sql-of-thought_multi-agentic_text-to-sql_with_guided_error_correction.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
+- [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
+- [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](../../NeurIPS2025/llm_reasoning/srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
-- [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 
 </div>
 

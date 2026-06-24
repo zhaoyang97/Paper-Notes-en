@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning
 description: >-
-  [ICML 2026][Others][taxonomy expansion] Polaris decouples concept representations into two signals: "direction (semantics) + orbital potential (hierarchy)," both learned on a unit hypersphere. It utilizes tangent space projection and exponential mapping to ensure manifold closure, anisotropic spherical SVGD to prevent equatorial concentration, and vMF KL div
+  [ICML 2026][Polar embeddings] Polaris decouples concept representations into two signals: "direction (semantics) + orbital potential (hierarchy)," both learned on a unit hypersphere. It utilizes tangent space projection and exponential mapping to ensure manifold closure, anisotropic spherical SVGD to prevent equatorial concentration, and vMF KL divergence to implement asymmetric "parent should have higher entropy than child" constraints. On taxonomy expansion tasks…
 tags:
-  - ICML 2026
-  - Others
-  - taxonomy expansion
+  - "ICML 2026"
+  - "Polar embeddings"
+  - "unit hypersphere"
+  - "vMF distribution"
+  - "Stein Variational Gradient Descent"
+  - "taxonomy expansion"
 date: 2026-05-08
-content_hash: 3b936d85c36b4671
+content_hash: 865c4865ecf9048a
 ---
+
 # Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning
 
 **Conference**: ICML 2026  

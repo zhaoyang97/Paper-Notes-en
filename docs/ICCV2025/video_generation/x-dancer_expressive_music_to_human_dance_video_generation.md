@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] X-Dancer: Expressive Music to Human Dance Video Generation
 description: >-
-  [ICCV 2025][Video Generation][music-driven dance generation] X-Dancer proposes a unified Transformer–diffusion framework that takes a single static image and a music sequence as input…
+  [ICCV 2025][Video Generation][music-driven dance generation] X-Dancer proposes a unified Transformer–diffusion framework that takes a single static image and a music sequence as input, autoregressively generates 2D whole-body dance pose token sequences synchronized with musical beats via a Transformer, and then synthesizes high-fidelity dance videos from these tokens using a diffusion model, surpassing existing methods in diversity, expressiveness, and video quality.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "2D pose modeling"
 date: 2026-05-08
-content_hash: 11564fd9ba8b6242
+content_hash: ebce10a9d0041385
 ---
 
 # X-Dancer: Expressive Music to Human Dance Video Generation
@@ -167,11 +167,11 @@ Three-stage training (8× A100 GPUs):
 
 ## Related Papers
 
+- [\[CVPR 2026\] MusicInfuser: Making Video Diffusion Listen and Dance](../../CVPR2026/video_generation/musicinfuser_making_video_diffusion_listen_and_dance.md)
 - [\[ICCV 2025\] Multi-identity Human Image Animation with Structural Video Diffusion](multi-identity_human_image_animation_with_structural_video_diffusion.md)
+- [\[CVPR 2026\] PersonaLive! Expressive Portrait Image Animation for Live Streaming](../../CVPR2026/video_generation/personalive_expressive_portrait_image_animation_for_live_streaming.md)
 - [\[ICCV 2025\] OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](omnihuman-1_rethinking_the_scaling-up_of_one-stage_conditioned_human_animation_m.md)
-- [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](../../AAAI2026/video_generation/motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
-- [\[ICLR 2026\] MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling](../../ICLR2026/video_generation/mosa_motion-coherent_human_video_generation_via_structure-appearance_decoupling.md)
-- [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](../../CVPR2026/video_generation/vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
+- [\[CVPR 2025\] Video-Bench: Human-Aligned Video Generation Benchmark](../../CVPR2025/video_generation/video-bench_human-aligned_video_generation_benchmark.md)
 
 </div>
 

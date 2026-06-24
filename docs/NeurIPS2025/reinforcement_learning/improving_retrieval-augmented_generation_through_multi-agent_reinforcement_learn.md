@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][RAG] This work models multiple components of a complex RAG pipeline (Query Rewriter, Selector, Generator) as a cooperative multi-agent system and jointly optimizes them via MAPPO…
+  [NeurIPS 2025][Reinforcement Learning][RAG] This work models multiple components of a complex RAG pipeline (Query Rewriter, Selector, Generator) as a cooperative multi-agent system and jointly optimizes them via MAPPO, using the F1 score of the final answer as a shared reward. The proposed method outperforms existing single-module optimization approaches on multiple QA benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "joint optimization"
   - "question answering"
 date: 2026-05-08
-content_hash: fc6cd8d227cdd60f
+content_hash: dab4ccfacbe02132
 ---
 
 # Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning

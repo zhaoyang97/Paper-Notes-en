@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The authors diagnose two root causes of existing VLM safety fine-tuning: "singular input composition" and "uniform refusal labels." They construct the first **multi-image safety dataset MIS** (where harmful intent is hidden within the relationship between two images) and fine-tune MIRage using safety CoT labels involvi
+  [ICLR 2026][LLM Safety][VLM Safety] The authors diagnose two root causes of existing VLM safety fine-tuning: "singular input composition" and "uniform refusal labels." They construct the first **multi-image safety dataset MIS** (where harmful intent is hidden within the relationship between two images) and fine-tune MIRage using safety CoT labels involving visual perception and reasoning. This reduces the attack success rate from ~80% to nearly 0 on multi-image safety tasks w…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "VLM Safety"
+  - "Multi-image Reasoning"
+  - "Safety CoT"
+  - "Over-refusal"
+  - "Dataset Construction"
 date: 2026-05-08
-content_hash: 6f5b12f6e9e4a465
+content_hash: d506f92657c5c997
 ---
+
 # Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models
 
 **Conference**: ICLR 2026  
@@ -138,8 +144,8 @@ General capability improved by +0.83% compared to the base model, verifying that
 
 - [\[ICLR 2026\] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning](safety_mirage_how_spurious_correlations_undermine_vlm_safety_fine-tuning_and_can.md)
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
-- [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
 - [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](../../ACL2026/llm_safety/rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
+- [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
 - [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
 
 </div>

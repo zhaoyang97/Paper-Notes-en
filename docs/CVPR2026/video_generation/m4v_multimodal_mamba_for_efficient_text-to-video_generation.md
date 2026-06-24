@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] M4V: Multimodal Mamba for Efficient Text-to-Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Model] M4V replaces the quadratic complexity attention blocks in text-to-video diffusion models with linear complexity Mamba blocks (MM-DiM). Utilizing a "multimodal token re-composition" scheme, it enables unidirectional scanning SSMs to perform text-conditional fusion and spatio-temporal modeling. It reduces mixed-layer FLO
+  [CVPR 2026][Video Generation][Text-to-Video] M4V replaces the quadratic complexity attention blocks in text-to-video diffusion models with linear complexity Mamba blocks (MM-DiM). Utilizing a "multimodal token re-composition" scheme, it enables unidirectional scanning SSMs to perform text-conditional fusion and spatio-temporal modeling. It reduces mixed-layer FLOPs by approximately 45% on 768×1280 long videos, maintaining quality comparable to the PyramidFlow baseline and eve…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-to-Video"
+  - "Mamba/State Space Models"
+  - "Multimodal Fusion"
+  - "Linear Complexity"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 09e758320edc5645
+content_hash: 628288d35c09ae11
 ---
+
 # M4V: Multimodal Mamba for Efficient Text-to-Video Generation
 
 **Conference**: CVPR 2026  
@@ -167,6 +172,7 @@ Architecture selection and compute (241 frames, A100):
 - Value: ⭐⭐⭐⭐ Viable path for linear complexity T2V; MM-DiM is highly reusable for reducing long-video generation costs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -175,7 +181,7 @@ Architecture selection and compute (241 frames, A100):
 - [\[CVPR 2026\] Thinking with Video: Video Generation as a Promising Multimodal Reasoning Paradigm](thinking_with_video_video_generation_as_a_promising_multimodal_reasoning_paradig.md)
 - [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
 - [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
-- [\[CVPR 2026\] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation](autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio.md)
+- [\[CVPR 2026\] Soul: Breathe Life into Digital Human for High-fidelity Long-term Multimodal Animation](soul_breathe_life_into_digital_human_for_high-fidelity_long-term_multimodal_anim.md)
 
 </div>
 

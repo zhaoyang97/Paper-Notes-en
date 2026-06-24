@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models
 description: >-
-  [ICLR 2026][Remote Sensing][Diffusion Model] The authors propose TAMMs—the first unified framework to jointly execute Temporal Change Description (TCD) and Future Satellite Image Forecasting (FSIF) in a single MLLM-Diffusion architecture. It awakens the temporal reasoning capabilities of a frozen MLLM through a Temporal-Aware Module (TAM) and translates change un
+  [ICLR 2026][Remote Sensing][Satellite Image Time Series] The authors propose TAMMs—the first unified framework to jointly execute Temporal Change Description (TCD) and Future Satellite Image Forecasting (FSIF) in a single MLLM-Diffusion architecture. It awakens the temporal reasoning capabilities of a frozen MLLM through a Temporal-Aware Module (TAM) and translates change understanding into generative control signals via a Semantic Fusion Control Injection (SFCI) mechanism.
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Satellite Image Time Series"
+  - "Change Description"
+  - "Future Forecasting"
+  - "Multimodal Large Language Models (MLLM)"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 4ae4e1fa8a35489a
+content_hash: 467b878375303e4e
 ---
+
 # TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models
 
 **Conference**: ICLR 2026  
@@ -166,11 +171,11 @@ Where SPS (Spatial Proximity Score) measures if the centroid of change aligns, a
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](../../CVPR2026/remote_sensing/unichange_unifying_change_detection_with_multimodal_large_language_model.md)
 - [\[ICML 2025\] Resampling Augmentation for Time Series Contrastive Learning: Application to Remote Sensing](../../ICML2025/remote_sensing/resampling_augmentation_for_time_series_contrastive_learning_application_to_remo.md)
 - [\[CVPR 2026\] Sparsely Timing the Change: A Spiking Temporal Framework for Remote Sensing Interpretation](../../CVPR2026/remote_sensing/sparsely_timing_the_change_a_spiking_temporal_framework_for_remote_sensing_inter.md)
+- [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](../../CVPR2026/remote_sensing/unichange_unifying_change_detection_with_multimodal_large_language_model.md)
 - [\[NeurIPS 2025\] EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting](../../NeurIPS2025/remote_sensing/ecocast_a_spatio-temporal_model_for_continual_biodiversity_and_climate_risk_fore.md)
-- [\[NeurIPS 2025\] Connecting the Dots: A Machine Learning Ready Dataset for Ionospheric Forecasting Models](../../NeurIPS2025/remote_sensing/connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](../../CVPR2026/remote_sensing/changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 
 </div>
 

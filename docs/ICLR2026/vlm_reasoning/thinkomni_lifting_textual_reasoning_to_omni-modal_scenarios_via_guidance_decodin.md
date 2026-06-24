@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding
 description: >-
-  [ICLR 2026][vlm_reasoning][LRM] The ThinkOmni training-free framework is proposed, which utilizes Large Reasoning Models (LRM) to guide Omni-modal LLMs (OLLM) during decoding. By employing Stepwise Contrastive Scaling to adaptively balance perception and reasoning signals, it achieves 70.2% on MathVista and 75.5% on MMAU, matching or surpassing reinf
+  [ICLR 2026][VLM Reasoning][Omni-modal Reasoning] The ThinkOmni training-free framework is proposed, which utilizes Large Reasoning Models (LRM) to guide Omni-modal LLMs (OLLM) during decoding. By employing Stepwise Contrastive Scaling to adaptively balance perception and reasoning signals, it achieves 70.2% on MathVista and 75.5% on MMAU, matching or surpassing reinforcement fine-tuning (RFT) methods.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - LRM
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Omni-modal Reasoning"
+  - "Guidance Decoding"
+  - "LRM"
+  - "Training-free"
+  - "Contrastive Scaling"
 date: 2026-05-08
-content_hash: 0129c8ee5e0a767c
+content_hash: 2ff3a1b9431a3c63
 ---
+
 # ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding
 
 **Conference**: ICLR 2026  
@@ -145,10 +150,10 @@ Completely training-free, requiring no extra data or fine-tuning. The sole const
 
 ## Related Papers
 
-- [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](../../ICML2026/vlm_reasoning/native_active_perception_as_reasoning_for_omni-modal_understanding.md)
 - [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](../../ACL2026/vlm_reasoning/omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
+- [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](../../ICML2026/vlm_reasoning/native_active_perception_as_reasoning_for_omni-modal_understanding.md)
 - [\[ICLR 2026\] ProxyThinker: Test-Time Guidance Through Small Visual Reasoners](proxythinker_test-time_guidance_through_small_visual_reasoners.md)
-- [\[ICLR 2026\] MMReD: A Cross-Modal Benchmark for Dense Context Reasoning](mmred_a_cross-modal_benchmark_for_dense_context_reasoning.md)
+- [\[NeurIPS 2025\] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?](../../NeurIPS2025/vlm_reasoning/can_multi-modal_llms_provide_live_step-by-step_task_guidance.md)
 - [\[ICLR 2026\] Reasoning-Aligned Perception Decoupling for Scalable Multi-modal Reasoning](reasoning-aligned_perception_decoupling_for_scalable_multi-modal_reasoning.md)
 
 </div>

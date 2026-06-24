@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TSLM: Tree-Structured Language Modeling for Divergent Thinking
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] TSLM linearizes a complete search tree (including successful paths and failure dead ends) using several special tokens. This allows a standard autoregressive language model to natively produce multi-branch exploration structures in a **single generation**, thereby internalizing systematic search capabilities via superv
+  [ICLR 2026][Reasoning][Tree-Structured Language Modeling] TSLM linearizes a complete search tree (including successful paths and failure dead ends) using several special tokens. This allows a standard autoregressive language model to natively produce multi-branch exploration structures in a **single generation**, thereby internalizing systematic search capabilities via supervised learning. It achieves a 100% pass@1 on Game of 24 (baseline 17%)…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Tree-Structured Language Modeling"
+  - "Divergent Thinking"
+  - "Search Tree Supervision"
+  - "Test-time Scaling"
+  - "Systematic Exploration"
 date: 2026-05-08
-content_hash: 769c089f05e32b23
+content_hash: 4e434a5e641e0407
 ---
+
 # TSLM: Tree-Structured Language Modeling for Divergent Thinking
 
 **Conference**: ICLR 2026  
@@ -128,15 +134,14 @@ The most striking result is the Gridworld OOD performance: while ToT achieves 95
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
 - [\[ICLR 2026\] Enhancing Language Model Reasoning with Structured Multi-Level Modeling](enhancing_language_model_reasoning_with_structured_multi-level_modeling.md)
+- [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](../../ICML2026/llm_reasoning/modeling_hierarchical_thinking_in_large_reasoning_models.md)
 - [\[ICLR 2026\] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning](tattoo_tool-grounded_thinking_prm_for_test-time_scaling_in_tabular_reasoning.md)
-- [\[ICLR 2026\] Incentivizing LLM Reasoning via Reinforcement Learning with Functional Monte Carlo Tree Search](incentivizing_llm_reasoning_via_reinforcement_learning_with_functional_monte_car.md)
-- [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
 
 </div>
 

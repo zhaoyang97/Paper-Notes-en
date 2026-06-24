@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OpenT2M: No-frill Motion Generation with Open-source, Large-scale, High-quality Data
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] The authors identified train/val set leakage in existing Text-to-Motion (T2M) benchmarks, where models overfit rather than generalize. They constructed OpenT2M, a million-scale, physically plausible, second-level annotated, long-horizon open-source motion dataset. Accompanied by MonoFrill—a "no-frills" autoregressive m
+  [CVPR 2026][Human Understanding][Text-to-Motion] The authors identified train/val set leakage in existing Text-to-Motion (T2M) benchmarks, where models overfit rather than generalize. They constructed OpenT2M, a million-scale, physically plausible, second-level annotated, long-horizon open-source motion dataset. Accompanied by MonoFrill—a "no-frills" autoregressive model using a 2D-PRQ tokenizer that treats motion as a "time × body-part" 2D image—the work improves zero-shot R…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-to-Motion"
+  - "Motion dataset"
+  - "Motion tokenizer"
+  - "Residual quantization"
+  - "Zero-shot generalization"
 date: 2026-05-08
-content_hash: f21bc3162945eccc
+content_hash: 0eca81f96a34e2b9
 ---
+
 # OpenT2M: No-frill Motion Generation with Open-source, Large-scale, High-quality Data
 
 **Conference**: CVPR 2026  
@@ -146,15 +152,16 @@ On small datasets (HumanML3D), 2D-PRQ is comparable to independent PRQ (25.4 vs 
 - **Value**: ⭐⭐⭐⭐⭐ (Public million-scale high-quality dataset and a critical correction of benchmark practices)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Open the Motion Door: Atomic Motion Decomposition and Recomposition for Open-Vocabulary Motion Generation](open_the_motion_door_atomic_motion_decomposition_and_recomposition_for_open-voca.md)
 - [\[CVPR 2026\] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data](opendance_multimodal_controllable_3d_dance_generation_with_large-scale_internet_.md)
+- [\[CVPR 2026\] Open the Motion Door: Atomic Motion Decomposition and Recomposition for Open-Vocabulary Motion Generation](open_the_motion_door_atomic_motion_decomposition_and_recomposition_for_open-voca.md)
+- [\[ICLR 2026\] SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual Dyadic Interactive Human Generation](../../ICLR2026/human_understanding/speakervid-5m_a_large-scale_high-quality_dataset_for_audio-visual_dyadic_interac.md)
 - [\[CVPR 2026\] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation](romo_a_large-scale_richly_organized_dataset_and_semantic_taxonomy_for_human_moti.md)
 - [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
-- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
 
 </div>
 

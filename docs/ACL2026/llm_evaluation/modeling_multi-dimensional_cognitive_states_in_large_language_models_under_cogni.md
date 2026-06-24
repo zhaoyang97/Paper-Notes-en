@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding
 description: >-
-  [ACL 2026][LLM Evaluation][CognitiveBench] This paper identifies a "Cognitive Crowding" effect where LLM accuracy plummets to 5.7% when jointly predicting four cognitive dimensions (Emotion-Thinking Style-Stance-Intent). Through Gromov $\delta$-hyperbolicity analysis, cognitive states are proven to possess a hierarchical structure. The proposed HyCoLLM framewor
+  [ACL 2026][LLM Evaluation][Cognitive state modeling] This paper identifies a "Cognitive Crowding" effect where LLM accuracy plummets to 5.7% when jointly predicting four cognitive dimensions (Emotion-Thinking Style-Stance-Intent). Through Gromov $\delta$-hyperbolicity analysis, cognitive states are proven to possess a hierarchical structure. The proposed HyCoLLM framework models these states in hyperbolic space, enabling an 8B model to outperform GPT-4o.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - CognitiveBench
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Cognitive state modeling"
+  - "cognitive crowding"
+  - "hyperbolic space"
+  - "multi-dimensional joint prediction"
+  - "CognitiveBench"
 date: 2026-05-08
-content_hash: 5923c3cdd9ee9864
+content_hash: 331983c47d49f5ec
 ---
+
 # Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding
 
 **Conference**: ACL 2026  
@@ -129,11 +134,11 @@ Learning cognitive embeddings in hyperbolic space is insufficient if the LLM sti
 
 ## Related Papers
 
+- [\[ACL 2026\] Erosion of Correct Beliefs: A Study of LLM Cognitive Resilience under Clinical Stress](when_correct_beliefs_collapse_epistemic_resilience_of_llms_under_clinical_pressu.md)
 - [\[ACL 2026\] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns](humanllm_benchmarking_and_improving_llm_anthropomorphism_via_human_cognitive_pat.md)
 - [\[ICML 2025\] MultiCogEval: Evaluating LLMs Across Multi-Cognitive Levels](../../ICML2025/llm_evaluation/evaluating_llms_across_multi-cognitive_levels_from_medical_knowledge_mastery_to_.md)
 - [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
 - [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](evaluating_temporal_consistency_in_multi-turn_language_models.md)
-- [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](reward_modeling_for_scientific_writing_evaluation.md)
 
 </div>
 

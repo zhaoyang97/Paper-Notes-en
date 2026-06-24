@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SpEx: A Spectral Approach to Explainable Clustering
 description: >-
-  [NeurIPS 2025][Interpretability][Explainable clustering] This paper proposes SpEx, a general spectral graph partitioning-based framework for explainable clustering that can "round" any reference clustering (without requi…
+  [NeurIPS 2025][Interpretability][Explainable clustering] This paper proposes SpEx, a general spectral graph partitioning-based framework for explainable clustering that can "round" any reference clustering (without requiring centroids) into an explainable clustering via coordinate-cut decision trees, or perform reference-free clustering directly on a kNN graph.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "decision trees"
   - "Cheeger inequality"
 date: 2026-05-08
-content_hash: c46a112cf85f7694
+content_hash: 8a3e1e7dd1ee008c
 ---
 
 # SpEx: A Spectral Approach to Explainable Clustering
@@ -140,9 +140,9 @@ Via Trevisan's non-uniform sparse cut framework, prior methods are unified as fo
 
 - [\[NeurIPS 2025\] Dynamic Algorithm for Explainable k-medians Clustering under lp Norm](dynamic_algorithm_for_explainable_k-medians_clustering_under_lp_norm.md)
 - [\[ACL 2026\] A Structured Clustering Approach for Inducing Media Narratives](../../ACL2026/interpretability/a_structured_clustering_approach_for_inducing_media_narratives.md)
+- [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](../../ICLR2026/interpretability/explainable_k_-means_neural_networks_for_multi-view_clustering.md)
 - [\[NeurIPS 2025\] Additive Models Explained: A Computational Complexity Approach](additive_models_explained_a_computational_complexity_approach.md)
 - [\[NeurIPS 2025\] Dynamic Features Adaptation in Networking: Toward Flexible Training and Explainable Inference](dynamic_features_adaptation_in_networking_toward_flexible_training_and_explainab.md)
-- [\[NeurIPS 2025\] Empowering Decision Trees via Shape Function Branching](empowering_decision_trees_via_shape_function_branching.md)
 
 </div>
 

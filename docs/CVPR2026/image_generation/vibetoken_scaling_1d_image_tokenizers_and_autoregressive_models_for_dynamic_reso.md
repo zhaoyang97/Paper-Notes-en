@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VibeToken: Scaling 1D Image Tokenizers and Autoregressive Models for Dynamic Resolution Generations
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] VibeToken proposes a "resolution-agnostic" 1D Transformer tokenizer that compresses images of arbitrary resolutions/aspect ratios into 32–256 dynamic-length discrete tokens. Paired with a constant-compute autoregressive generator, VibeToken-Gen, it generates 1024×1024 images (3.94 gFID) using only 64 tokens. The infere
+  [CVPR 2026][Image Generation][1D Image Tokenizer] VibeToken proposes a "resolution-agnostic" 1D Transformer tokenizer that compresses images of arbitrary resolutions/aspect ratios into 32–256 dynamic-length discrete tokens. Paired with a constant-compute autoregressive generator, VibeToken-Gen, it generates 1024×1024 images (3.94 gFID) using only 64 tokens. The inference FLOPs are 63× lower than LlamaGen, flattening the AR generation compute curve from "quadratic growth with…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "1D Image Tokenizer"
+  - "Autoregressive Generation"
+  - "Arbitrary Resolution"
+  - "Dynamic Token Length"
+  - "Computational Efficiency"
 date: 2026-05-08
-content_hash: 7309aac05c64ca86
+content_hash: f01bbecbf7c40c64
 ---
+
 # VibeToken: Scaling 1D Image Tokenizers and Autoregressive Models for Dynamic Resolution Generations
 
 **Conference**: CVPR 2026  
@@ -132,7 +138,6 @@ ImageNet 256×256 generation (GPT-B, 100 epochs):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -140,7 +145,7 @@ ImageNet 256×256 generation (GPT-B, 100 epochs):
 - [\[CVPR 2026\] Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation](progress_by_pieces_test-time_scaling_for_autoregressive_image_generation.md)
 - [\[ICML 2026\] Image Restoration via Diffusion Models with Dynamic Resolution](../../ICML2026/image_generation/image_restoration_via_diffusion_models_with_dynamic_resolution.md)
 - [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
-- [\[CVPR 2026\] Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_models.md)
+- [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](../../ICML2026/image_generation/end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
 
 </div>
 

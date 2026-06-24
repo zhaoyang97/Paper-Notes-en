@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PersPose: 3D Human Pose Estimation with Perspective Encoding and Perspective Rotation
 description: >-
-  [ICCV 2025][3D Vision][3D human pose estimation] This paper proposes the PersPose framework, which addresses the inaccurate depth estimation caused by existing methods neglecting field-of-view (FOV) information. It encod…
+  [ICCV 2025][3D Vision][3D human pose estimation] This paper proposes the PersPose framework, which addresses the inaccurate depth estimation caused by existing methods neglecting field-of-view (FOV) information. It encodes cropped camera intrinsics as a 2D map via Perspective Encoding (PE) and centers the subject through Perspective Rotation (PR) to eliminate perspective distortion.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "camera intrinsics"
   - "monocular"
 date: 2026-05-08
-content_hash: 36d0e93657078e7d
+content_hash: 13f9dcb6855c6897
 ---
 
 # PersPose: 3D Human Pose Estimation with Perspective Encoding and Perspective Rotation
@@ -132,10 +132,10 @@ PersPose achieves consistent state-of-the-art or competitive results across mult
 ## Related Papers
 
 - [\[ICCV 2025\] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](bring_your_rear_cameras_for_egocentric_3d_human_pose_estimation.md)
-- [\[CVPR 2026\] Pano360: Perspective to Panoramic Vision with Geometric Consistency](../../CVPR2026/3d_vision/pano360_perspective_to_panoramic_vision_with_geometric_consistency.md)
-- [\[ICCV 2025\] Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras](single-scanline_relative_pose_estimation_for_rolling_shutter_cameras.md)
-- [\[ICCV 2025\] BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation](boxdreamer_dreaming_box_corners_for_generalizable_object_pose_estimation.md)
-- [\[ICCV 2025\] RePoseD: Efficient Relative Pose Estimation with Known Depth Information](reposed_efficient_relative_pose_estimation_with_known_depth_information.md)
+- [\[CVPR 2025\] Pano360: Perspective to Panoramic Vision with Geometric Consistency](../../CVPR2025/3d_vision/pano360_perspective_to_panoramic_vision_with_geometric_consistency.md)
+- [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](../../ICLR2026/3d_vision/spatialhand_generative_object_manipulation_from_3d_prespective.md)
+- [\[CVPR 2026\] Affine Perspective-Three-Point Problem](../../CVPR2026/3d_vision/affine_perspective-three-point_problem.md)
+- [\[CVPR 2025\] Extreme Rotation Estimation in the Wild](../../CVPR2025/3d_vision/extreme_rotation_estimation_in_the_wild.md)
 
 </div>
 

@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Beyond Speedup - Utilizing KV Cache for Sampling and Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][KV Cache] This work reuses the KV cache—which already exists during inference but is traditionally used only to accelerate decoding—as "free lightweight representations." Without needing to store additional hidden states, it enables self-evaluation of reasoning paths (KV-CoE) and difficulty-adaptive fast/slow thinking switching
+  [ICLR 2026][Reasoning][KV Cache] This work reuses the KV cache—which already exists during inference but is traditionally used only to accelerate decoding—as "free lightweight representations." Without needing to store additional hidden states, it enables self-evaluation of reasoning paths (KV-CoE) and difficulty-adaptive fast/slow thinking switching (KVClassifier), reducing reasoning token volume by up to 1/5.7 with almost zero overhead.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - KV Cache
-  - KV-Embedding
-  - Chain-of-Embedding
-  - Fast/Slow Thinking
+  - "ICLR 2026"
+  - "Reasoning"
+  - "KV Cache"
+  - "KV-Embedding"
+  - "Chain-of-Embedding"
+  - "Adaptive Inference"
+  - "Fast/Slow Thinking"
+  - "Self-evaluation"
 date: 2026-05-08
-content_hash: 35c55c09ccb087b2
+content_hash: 077e1b28f054dd3f
 ---
+
 # Beyond Speedup - Utilizing KV Cache for Sampling and Reasoning
 
 **Conference**: ICLR 2026  

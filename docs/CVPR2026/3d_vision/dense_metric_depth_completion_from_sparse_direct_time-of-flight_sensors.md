@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the "extremely sparse + low resolution + noisy" depth maps from direct Time-of-Flight (dToF) sensors, this paper proposes a **depth-guided dual-branch ViT encoder with masked joint attention**. This allows sparse depth to unidirectionally guide RGB features without being contaminated by RGB cues, coupled wit
+  [CVPR 2026][3D Vision][Depth Completion] Addressing the "extremely sparse + low resolution + noisy" depth maps from direct Time-of-Flight (dToF) sensors, this paper proposes a **depth-guided dual-branch ViT encoder with masked joint attention**. This allows sparse depth to unidirectionally guide RGB features without being contaminated by RGB cues, coupled with a lightweight DPT decoder to directly output dense metric depth. Trained entirely on a simulation pipeline covering f…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Depth Completion"
+  - "dToF Sensors"
+  - "Metric Depth"
+  - "Zero-shot Generalization"
+  - "Cross-modal Fusion"
 date: 2026-05-08
-content_hash: 0763800ddcbef9ee
+content_hash: 599fcb618f2101a7
 ---
+
 # Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Architecture components (Avg. Rel / δ):
 
 ## Related Papers
 
+- [\[CVPR 2026\] The Midas Touch for Metric Depth](the_midas_touch_for_metric_depth.md)
+- [\[ICLR 2026\] Large Depth Completion Model from Sparse Observations](../../ICLR2026/3d_vision/large_depth_completion_model_from_sparse_observations.md)
 - [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
-- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
-- [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] DiffSoup: Direct Differentiable Rasterization of Triangle Soup for Extreme Radiance Field Simplification](diffsoup_direct_differentiable_rasterization_of_triangle_soup_for_extreme_radian.md)
+- [\[CVPR 2026\] Radar-Guided Polynomial Fitting for Metric Depth Estimation](radar-guided_polynomial_fitting_for_metric_depth_estimation.md)
+- [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
 
 </div>
 

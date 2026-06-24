@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition
 description: >-
-  [Video Understanding] This paper systematically analyzes background bias in action recognition across three model paradigms — classification models, contrastive pre-trained models (CLIP/SigLIP2)…
+  [Video Understanding] This paper systematically analyzes background bias in action recognition across three model paradigms — classification models, contrastive pre-trained models (CLIP/SigLIP2), and video large language models (VLLMs) — and proposes two mitigation strategies: a dual-branch architecture that fuses segmented human inputs to reduce SBErr by 3.78% for classification models, and automated prompt tuning to reduce SBErr by 9.85% for VLLMs.
 tags:
   - "Video Understanding"
 date: 2026-05-08
-content_hash: 24142ae9c23d0114
+content_hash: 78b1b51f86b55eca
 ---
 
 # Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition
@@ -154,8 +154,8 @@ VLLM prompt strategy comparison (GPT-4o-mini):
 - [\[NeurIPS 2025\] Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders](enhancing_temporal_understanding_in_videollms_through_stacke.md)
 - [\[NeurIPS 2025\] FastVID: Dynamic Density Pruning for Fast Video Large Language Models](fastvid_dynamic_density_pruning_for_fast_video_large_languag.md)
 - [\[ICCV 2025\] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition](../../ICCV2025/video_understanding/learning_to_generalize_without_bias_for_open-vocabulary_action_recognition.md)
+- [\[CVPR 2025\] Unbiasing through Textual Descriptions: Mitigating Representation Bias in Video Benchmarks](../../CVPR2025/video_understanding/unbiasing_through_textual_descriptions_mitigating_representation_bias_in_video_b.md)
 - [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](../../ICCV2025/video_understanding/beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
-- [\[NeurIPS 2025\] Seeing the Arrow of Time in Large Multimodal Models](seeing_the_arrow_of_time_in_large_multimodal_models.md)
 
 </div>
 

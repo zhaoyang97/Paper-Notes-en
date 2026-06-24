@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes STS (SAE-based Transferability Score): it predicts which Sparse Autoencoder (SAE) dimensions will be modified by Supervised Fine-Tuning (SFT) using In-Context Learning (ICL) **without fine-tuning**, and then measures the relevance of these dimensions to various downstream domains to predict performa
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This paper proposes STS (SAE-based Transferability Score): it predicts which Sparse Autoencoder (SAE) dimensions will be modified by Supervised Fine-Tuning (SFT) using In-Context Learning (ICL) **without fine-tuning**, and then measures the relevance of these dimensions to various downstream domains to predict performance changes prior to training, achieving Pearson correlation coefficients generally exceeding 0.7.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Monosemantic Features"
+  - "Post-training Transferability"
+  - "Supervised Fine-tuning"
+  - "In-context Learning"
 date: 2026-05-08
-content_hash: 8330566a36941b1b
+content_hash: a9604667ec9681e5
 ---
+
 # SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,7 @@ Further validation across training domains (Qwen2.5-7B-Instruct, $\text{STS}_{\t
 - [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
 - [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
 - [\[ICLR 2026\] ZeroTuning: Unlocking the Initial Token's Power to Enhance Large Language Models Without Training](zerotuning_unlocking_the_initial_tokens_power_to_enhance_large_language_models_w.md)
-- [\[ICLR 2026\] Persona Features Control Emergent Misalignment](persona_features_control_emergent_misalignment.md)
+- [\[ICLR 2026\] I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?](i_predict_therefore_i_am_is_next_token_prediction_enough_to_learn_human-interpre.md)
 
 </div>
 

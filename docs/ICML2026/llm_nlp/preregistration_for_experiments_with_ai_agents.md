@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Preregistration for Experiments with AI Agents
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] This is a position paper advocating for the extension of preregistration practices—used in social sciences to combat the "reproducibility crisis"—to behavioral experiments where LLMs/AI agents serve as experimental subjects. It systematically catalogs the unique "researcher degrees of freedom" in AI agent experiments a
+  [ICML2026][LLM (Other)][Preregistration] The single author (Michelle Vaccaro) presents a sharp core argument: the combination of "high flexibility + extremely low marginal cost" in AI agent experiments makes specification searches across $\text{prompt}\times\text{model}\times\text{temperature}\times\text{seed}\times\text{parsing}$ easy to perform yet difficult to detect. Consequently, preregistration is more necessary here than in human subject experiments to reintroduce "fri…
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Preregistration"
+  - "AI Agent Experiments"
+  - "Researcher Degrees of Freedom"
+  - "Reproducibility"
+  - "Position Paper"
 date: 2026-05-08
-content_hash: 2d286183646425b5
+content_hash: 553882386424a710
 ---
+
 # Preregistration for Experiments with AI Agents
 
 **Conference**: ICML2026  
@@ -131,8 +137,8 @@ As this is a methodological position paper, it lacks "SOTA-chasing" experiments.
 ## Related Papers
 
 - [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](../../ICLR2026/llm_nlp/speculative_actions_faster_ai_agents.md)
-- [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/llm_nlp/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
 - [\[ICML 2026\] Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem](position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem.md)
+- [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/llm_nlp/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
 - [\[AAAI 2026\] Blue Teaming Function-Calling Agents](../../AAAI2026/llm_nlp/blue_teaming_function-calling_agents.md)
 - [\[ACL 2026\] Big AI is Accelerating the Metacrisis: What Can We Do?](../../ACL2026/llm_nlp/big_ai_is_accelerating_the_metacrisis_what_can_we_do.md)
 

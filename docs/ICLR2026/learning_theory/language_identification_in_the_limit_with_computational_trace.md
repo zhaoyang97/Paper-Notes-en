@@ -2,15 +2,22 @@
 title: >-
   [Paper Note] Language Identification in the Limit with Computational Trace
 description: >-
-  [ICLR 2026][learning_theory][identification in the limit] This paper extends the classic Gold 1967 paradigm of "identification in the limit" to "identification in the limit with computational trace (CoT)". It proves that if the learner is provided with the machine execution trace for each positive example, **all Turing-recognizable languages can be identified in the limit** (
+  [ICLR 2026][Learning Theory][identification in the limit] This paper extends the classic Gold 1967 paradigm of "identification in the limit" to "identification in the limit with computational trace (CoT)". It proves that if the learner is provided with the machine execution trace for each positive example, **all Turing-recognizable languages can be identified in the limit** (contrasting sharply with Gold's famous negative result where even regular languages are unidentifiable…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - identification in the limit
-  - chain-of-thought
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Learnability"
+  - "CoT Theory"
+  - "identification in the limit"
+  - "Gold model"
+  - "chain-of-thought"
+  - "computational trace"
+  - "Chomsky hierarchy"
+  - "robust learnability"
 date: 2026-05-08
-content_hash: e8b417e3ce5532c2
+content_hash: e0037fa5b898a4d2
 ---
+
 # Language Identification in the Limit with Computational Trace
 
 **Conference**: ICLR 2026  
@@ -121,9 +128,9 @@ This paper is purely theoretical and does not contain numerical experiments. The
 
 - [\[ICLR 2026\] Automata Learning and Identification of the Support of Language Models](automata_learning_and_identification_of_the_support_of_language_models.md)
 - [\[ICLR 2026\] Computational Bottlenecks for Denoising Diffusions](computational_bottlenecks_for_denoising_diffusions.md)
-- [\[ICLR 2026\] On the Computational Limits of AI4S-RL：A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
-- [\[ICLR 2026\] The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens](the_softmax_bottleneck_does_not_limit_the_probabilities_of_the_most_likely_token.md)
 - [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
+- [\[ICLR 2026\] On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
+- [\[ICLR 2026\] The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens](the_softmax_bottleneck_does_not_limit_the_probabilities_of_the_most_likely_token.md)
 
 </div>
 

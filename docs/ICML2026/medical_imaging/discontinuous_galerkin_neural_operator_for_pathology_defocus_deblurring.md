@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DGNO: Discontinuous Galerkin Neural Operator for Pathology Defocus Deblurring
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] DGNO reformulates defocus deblurring of pathological microscopy images as an inverse problem of "spatially varying integral operators." Using a Discontinuous Galerkin (DG) style, it decomposes the global kernel into element-local integral operators and interface numerical fluxes. This preserves the physical interpretab
+  [ICML 2026][Medical Imaging][Pathological Image Deblurring] DGNO reformulates defocus deblurring of pathological microscopy images as an inverse problem of "spatially varying integral operators." Using a Discontinuous Galerkin (DG) style, it decomposes the global kernel into element-local integral operators and interface numerical fluxes. This preserves the physical interpretability of neural operators while effectively handling the inherently local discontinuous blur in path…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Pathological Image Deblurring"
+  - "Neural Operator"
+  - "Discontinuous Galerkin"
+  - "Element-wise Local Operator"
+  - "Interface Flux"
 date: 2026-05-08
-content_hash: 54e1c5ddf02d767b
+content_hash: 7fb537c93e222362
 ---
+
 # DGNO: Discontinuous Galerkin Neural Operator for Pathology Defocus Deblurring
 
 **Conference**: ICML 2026  
@@ -146,9 +152,9 @@ P0DG retains most performance with ~22% parameter savings. Purely independent el
 
 - [\[CVPR 2025\] NOIR: Neural Operator Mapping for Implicit Representations](../../CVPR2025/medical_imaging/noir_neural_operator_mapping_for_implicit_representations.md)
 - [\[NeurIPS 2025\] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data](../../NeurIPS2025/medical_imaging/self-supervised_learning_via_flow-guided_neural_operator_on_time-series_data.md)
+- [\[ICML 2026\] PRISM: A 3D Probabilistic Neural Representation for Interpretable Shape Modeling](prism_a_3d_probabilistic_neural_representation_for_interpretable_shape_modeling.md)
 - [\[ICML 2026\] PathCTM: Thinking in Scales — Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning](thinking_in_scales_accelerating_gigapixel_pathology_image_analysis_via_adaptive_.md)
-- [\[CVPR 2025\] Unmasking Biases and Reliability Concerns in Convolutional Neural Networks Analysis of Cancer Pathology Images](../../CVPR2025/medical_imaging/unmasking_biases_and_reliability_concerns_in_convolutional_neural_networks_analy.md)
-- [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](../../CVPR2026/medical_imaging/momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
+- [\[ICML 2026\] Which Anatomy Matters Under Limited Labels? A Data-Efficient Anatomy-Aware Benchmark for Cardiac Pathology Prediction](which_anatomy_matters_under_limited_labels_a_data-efficient_anatomy-aware_benchm.md)
 
 </div>
 

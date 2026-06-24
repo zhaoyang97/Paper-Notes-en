@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Estimation Under Heterogeneous Corruption Rates
 description: >-
-  [NeurIPS 2025][Optimization][robust estimation] This paper studies robust estimation under heterogeneous corruption rates—where each sample is corrupted with a distinct known probability—and establishes tight minimax rat…
+  [NeurIPS 2025][Optimization][robust estimation] This paper studies robust estimation under heterogeneous corruption rates—where each sample is corrupted with a distinct known probability—and establishes tight minimax rates for mean estimation and linear regression under both bounded and Gaussian distributions. A key finding is that the optimal estimator can simply discard samples whose corruption rates exceed a certain threshold.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "mean estimation"
   - "linear regression"
 date: 2026-05-08
-content_hash: 784ea98e16e89abf
+content_hash: 53e00d6df531d390
 ---
 
 # Robust Estimation Under Heterogeneous Corruption Rates
@@ -126,7 +126,7 @@ Figure 1 intuitively illustrates the Tukey depth contours under three weighting 
 - [\[NeurIPS 2025\] Near-Exponential Savings for Mean Estimation with Active Learning](near-exponential_savings_for_mean_estimation_with_active_learning.md)
 - [\[ICML 2026\] Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption](../../ICML2026/optimization/convex_basins_in_single-index_model_loss_landscapes_applications_to_robust_recov.md)
 - [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
-- [\[NeurIPS 2025\] On Minimax Estimation of Parameters in Softmax-Contaminated Mixture of Experts](on_minimax_estimation_of_parameters_in_softmax-contaminated_mixture_of_experts.md)
+- [\[CVPR 2025\] Convex Relaxation for Robust Vanishing Point Estimation in Manhattan World](../../CVPR2025/optimization/convex_relaxation_for_robust_vanishing_point_estimation_in_manhattan_world.md)
 - [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
 
 </div>

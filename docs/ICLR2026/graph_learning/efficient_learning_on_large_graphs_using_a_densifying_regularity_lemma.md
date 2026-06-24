@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Efficient Learning on Large Graphs using a Densifying Regularity Lemma
 description: >-
-  [ICLR 2026][Graph Learning][IBG-NN] This paper proposes "Intersecting Block Graphs" (IBG)—a low-rank decomposition representing large directed sparse graphs as a superposition of $K \ll N$ intersecting bipartite blocks. It proves a "densifying" version of the Weak Regularity Lemma, ensuring that the required number of blocks $K$ depends only on the appro
+  [ICLR 2026][Graph Learning][Weak Regularity Lemma] This paper proposes "Intersecting Block Graphs" (IBG)—a low-rank decomposition representing large directed sparse graphs as a superposition of $K \ll N$ intersecting bipartite blocks. It proves a "densifying" version of the Weak Regularity Lemma, ensuring that the required number of blocks $K$ depends only on the approximation precision and is independent of graph scale or sparsity. Consequently…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - IBG-NN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Weak Regularity Lemma"
+  - "Low-rank Graph Approximation"
+  - "Directed Graphs"
+  - "Sparse Graph Densification"
+  - "Weighted Cut Norm"
+  - "IBG-NN"
 date: 2026-05-08
-content_hash: 49224d3d491bd3ce
+content_hash: 64259c6867d42d68
 ---
+
 # Efficient Learning on Large Graphs using a Densifying Regularity Lemma
 
 **Conference**: ICLR 2026  

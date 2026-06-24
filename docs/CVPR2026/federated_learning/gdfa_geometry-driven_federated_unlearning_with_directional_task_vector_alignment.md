@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GDFA: Geometry-Driven Federated Unlearning with Directional Task Vector Alignment
 description: >-
-  [CVPR 2026][Federated Learning][Non-IID] GDFA reinterprets "Federated Unlearning" as a **loss surface geometry** problem: it first migrates the global model to a flat minima region via perturbations, then has relevant clients generate task vectors on unlearning data, retaining only components with **directional consensus (sign consensus)** for reverse aggrega
+  [CVPR 2026][Federated Learning][Federated Unlearning] GDFA reinterprets "Federated Unlearning" as a **loss surface geometry** problem: it first migrates the global model to a flat minima region via perturbations, then has relevant clients generate task vectors on unlearning data, retaining only components with **directional consensus (sign consensus)** for reverse aggregation. This achieves precise erasure of target client knowledge in Non-IID scenarios with almost no loss in…
 tags:
-  - CVPR 2026
-  - Federated Learning
-  - Non-IID
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Federated Unlearning"
+  - "Flat Minima"
+  - "Task Vector"
+  - "Directional Alignment"
+  - "Non-IID"
 date: 2026-05-08
-content_hash: 49811765992cbef9
+content_hash: e4a98386de6a1940
 ---
+
 # GDFA: Geometry-Driven Federated Unlearning with Directional Task Vector Alignment
 
 **Conference**: CVPR 2026  
@@ -146,9 +151,11 @@ GDFA is two orders of magnitude faster than retraining and superior to all light
 
 ## Related Papers
 
+- [\[CVPR 2026\] FedARA: Resource-adaptive Low-rank Personalized Federated Learning via Anchor-driven Representation Alignment on Heterogeneous Edge Devices](fedara_resource-adaptive_low-rank_personalized_federated_learning_via_anchor-dri.md)
 - [\[CVPR 2026\] Fully Decentralized Certified Unlearning](fully_decentralized_certified_unlearning.md)
-- [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
-- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
+- [\[CVPR 2026\] FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning](fedalign_differentially_private_distribution_alignment_for_non-iid_federated_lea.md)
+- [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
+- [\[CVPR 2026\] From Selection to Scheduling: Federated Geometry-Aware Correction Makes Exemplar Replay Work Better under Continual Dynamic Heterogeneity](from_selection_to_scheduling_federated_geometry-aware_correction_makes_exemplar_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper introduces the "Fact Generation" task, extending Hyper-relational Knowledge Graph (HKG) completion from "filling a single blank" to "generating complete facts from arbitrary mask patterns or even from scratch." It proposes KREPE, the first generative HKG representation learning method: it encodes intra-fact
+  [ICML 2026][Graph Learning][Hyper-relational Knowledge Graphs] This paper introduces the "Fact Generation" task, extending Hyper-relational Knowledge Graph (HKG) completion from "filling a single blank" to "generating complete facts from arbitrary mask patterns or even from scratch." It proposes KREPE, the first generative HKG representation learning method: it encodes intra-fact and inter-fact dependencies via contextual message passing and models the joint conditional distr…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Hyper-relational Knowledge Graphs"
+  - "Fact Generation"
+  - "Masked Discrete Diffusion"
+  - "Contextual Message Passing"
+  - "Link Prediction"
 date: 2026-05-08
-content_hash: 4e5c70ede3683c93
+content_hash: a2c7a4c3fd6a84f3
 ---
+
 # Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion
 
 **Conference**: ICML 2026  
@@ -152,11 +158,11 @@ On WikiPeople- Scratch, the Valid&Novel Rate is 0.351 (vs. LLM 0.242) with an ex
 
 ## Related Papers
 
+- [\[ICML 2026\] View Space: Representation Learning Across Arbitrary Graphs](view_space_learning_representation_across_arbitrary_graphs.md)
 - [\[ICML 2026\] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning](t-ginee_a_tensor-based_multilayer_graph_representation_learning.md)
+- [\[ICML 2026\] What Makes a Desired Graph for Relational Deep Learning?](what_makes_a_desired_graph_for_relational_deep_learning.md)
 - [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](../../ICLR2026/graph_learning/relatron_automating_relational_machine_learning_over_relational_databases.md)
-- [\[ICML 2026\] Unsat Core Prediction through Polarity-Aware Representation Learning over Clause-Literal Hypergraphs](unsat_core_prediction_through_polarity-aware_representation_learning_over_clause.md)
 - [\[AAAI 2026\] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction](../../AAAI2026/graph_learning/unihr_hierarchical_representation_learning_for_unified_knowledge_graph_link_pred.md)
-- [\[ICML 2026\] Deep Neural Sheaf Diffusion](deep_neural_sheaf_diffusion.md)
 
 </div>
 

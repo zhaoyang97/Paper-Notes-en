@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization
 description: >-
-  [ICLR 2026][learning_theory][EXP3.P] This paper reformulates the online conformal prediction problem—where the true label is revealed only if it falls within the prediction set—as an adversarial multi-armed bandit problem by treating threshold candidates as arms. By designing a specialized loss function that explicitly links regret to the miscoverage rate
+  [ICLR 2026][Learning Theory][Online conformal prediction] This paper reformulates the online conformal prediction problem—where the true label is revealed only if it falls within the prediction set—as an adversarial multi-armed bandit problem by treating threshold candidates as arms. By designing a specialized loss function that explicitly links regret to the miscoverage rate and adapting the EXP3.P algorithm into OCP-Unlock+, the authors provide the first long-term coverage…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - EXP3.P
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Conformal Prediction"
+  - "Online conformal prediction"
+  - "adversarial semi-bandit feedback"
+  - "EXP3.P"
+  - "regret minimization"
+  - "long-term coverage guarantee"
 date: 2026-05-08
-content_hash: 0fd5ce8272abe34f
+content_hash: 3aa6bd2765ea87f5
 ---
+
 # Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization
 
 **Conference**: ICLR 2026  
@@ -135,10 +142,20 @@ Key Conclusion: Under non-i.i.d. or covariate shift, **SPS's coverage guarantee 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
+- [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
+- [\[ICLR 2026\] Online Learning and Equilibrium Computation with Ranking Feedback](online_learning_and_equilibrium_computation_with_ranking_feedback.md)
+- [\[ICLR 2026\] Bandit Learning in Matching Markets Robust to Adversarial Corruptions](bandit_learning_in_matching_markets_robust_to_adversarial_corruptions.md)
+- [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Systematic Study of Behavioral Cloning for Scientific Data Annotation
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] This paper establishes a controlled framework consisting of 9 procedurally synthetic annotation tasks and virtual annotators to systematically study whether "behavioral cloning" (allowing a VLM to directly mimic full human operation trajectories—clicking, navigating, and undoing within an annotation interface) can repl
+  [ICML2026][LLM Agent][Behavioral cloning] This paper establishes a controlled framework consisting of 9 procedurally synthetic annotation tasks and virtual annotators to systematically study whether "behavioral cloning" (allowing a VLM to directly mimic full human operation trajectories—clicking, navigating, and undoing within an annotation interface) can replace "direct label prediction." Through four dimensions—training dynamics, scaling laws, transfer capabilities…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML2026"
+  - "LLM Agent"
+  - "Behavioral cloning"
+  - "scientific data annotation"
+  - "GUI agent"
+  - "synthetic benchmark"
+  - "linear probes"
 date: 2026-05-08
-content_hash: 04095ac903710011
+content_hash: 34e148801fc02d9d
 ---
+
 # A Systematic Study of Behavioral Cloning for Scientific Data Annotation
 
 **Conference**: ICML2026  
@@ -122,15 +128,16 @@ The authors trained four model sizes on 9 tasks joint behavioral cloning and tes
 - Value: ⭐⭐⭐⭐⭐ Sets a benchmark and realistic expectations for BC in scientific annotation, addressing the collective action problem in the field.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[AAAI 2026\] Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance](../../AAAI2026/llm_agent/towards_trustworthy_multi-turn_llm_agents_via_behavioral_guidance.md)
-- [\[ICML 2026\] Towards Diverse Scientific Hypothesis Search with Large Language Models](towards_diverse_scientific_hypothesis_search_with_large_language_models.md)
+- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](../../ICLR2026/llm_agent/towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
 - [\[ICML 2026\] Think Twice Before You Act: Enhancing Agent Behavioral Safety with Thought Correction](think_twice_before_you_act_enhancing_agent_behavioral_safety_with_thought_correc.md)
+- [\[AAAI 2026\] Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance](../../AAAI2026/llm_agent/towards_trustworthy_multi-turn_llm_agents_via_behavioral_guidance.md)
 - [\[ACL 2025\] An Empirical Study on LLM-based Agents for Automated Bug Fixing](../../ACL2025/llm_agent/an_empirical_study_on_llm-based_agents_for_automated_bug_fixing.md)
-- [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](../../ACL2026/llm_agent/implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
+- [\[ICML 2026\] CoDA-Bench: Can Code Agents Handle Data-Intensive Tasks?](coda-bench_can_code_agents_handle_data-intensive_tasks.md)
 
 </div>
 

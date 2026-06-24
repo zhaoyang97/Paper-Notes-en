@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Active Perceptual Inference: A Corticothalamic-Inspired Dynamic Nested Recurrent Network for Multimodal Sentiment Analysis with Incomplete Data
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the "random frame-level missingness" problem in Multimodal Sentiment Analysis (MSA), this paper incorporates the human brain's "active perceptual inference" mechanism into the network. It proposes a dual-layer nested recurrent network, DNRNet: a local loop simulates intra-cortical pattern completion for intr
+  [CVPR 2026][Multimodal VLM][Multimodal Sentiment Analysis] To address the "random frame-level missingness" problem in Multimodal Sentiment Analysis (MSA), this paper incorporates the human brain's "active perceptual inference" mechanism into the network. It proposes a dual-layer nested recurrent network, DNRNet: a local loop simulates intra-cortical pattern completion for intra-modality self-correction, while a global loop simulates the corticothalamic circuit to perform cros…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Sentiment Analysis"
+  - "Frame-level Missingness"
+  - "Brain-inspired"
+  - "Recursive Inference"
+  - "Corticothalamic Circuit"
 date: 2026-05-08
-content_hash: 28c8621354ce92ca
+content_hash: fbe680c6f1ecc1de
 ---
+
 # Active Perceptual Inference: A Corticothalamic-Inspired Dynamic Nested Recurrent Network for Multimodal Sentiment Analysis with Incomplete Data
 
 **Conference**: CVPR 2026  
@@ -148,7 +154,7 @@ Component-wise and loss-wise ablation on MOSI/SIMS (excerpt from MOSI):
 - [\[CVPR 2026\] Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis](conflict-aware_adaptive_cross-reconstruction_for_multimodal_sentiment_analysis.md)
 - [\[CVPR 2026\] Prototype-as-Prompt: Multimodal Sentiment Prototypes Endowing Large Language Models the Capability to Perform Multimodal Sentiment Analysis](prototype-as-prompt_multimodal_sentiment_prototypes_endowing_large_language_mode.md)
 - [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
-- [\[CVPR 2026\] EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](ebmc_multimodal_sentiment_analysis.md)
+- [\[CVPR 2026\] Multi-Metric Representation Learning Strategy Based on Clustering for Fine-Grained Multimodal Sentiment Analysis](multi-metric_representation_learning_strategy_based_on_clustering_for_fine-grain.md)
 
 </div>
 

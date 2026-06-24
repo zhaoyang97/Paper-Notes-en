@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-EmoQ: Plutchik-Guided Value-based Planning to Drive Streaming Emotional TTS
 description: >-
-  [ACL 2026][Reinforcement Learning][DQN] Self-EmoQ models "what emotion the system should use to speak" as an utterance-level reinforcement learning decision problem. Before generating text, it utilizes value-based RL (DQN) to plan the emotion for the current turn. This emotion then simultaneously drives both text generation and streaming emotional speech syn
+  [ACL 2026][Reinforcement Learning][Value-based RL] Self-EmoQ models "what emotion the system should use to speak" as an utterance-level reinforcement learning decision problem. Before generating text, it utilizes value-based RL (DQN) to plan the emotion for the current turn. This emotion then simultaneously drives both text generation and streaming emotional speech synthesis (Emo-TTS), with rewards designed based on Plutchik's Wheel of Emotions theory to ensure more human-lik…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - DQN
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Value-based RL"
+  - "Emotional Planning"
+  - "Plutchik’s Wheel of Emotions"
+  - "Streaming TTS"
+  - "DQN"
 date: 2026-05-08
-content_hash: a9e3b8f66a39b76b
+content_hash: 15b2e3f8397365cc
 ---
+
 # Self-EmoQ: Plutchik-Guided Value-based Planning to Drive Streaming Emotional TTS
 
 **Conference**: ACL 2026  
@@ -153,9 +158,9 @@ Self-EmoQ consistently outperformed SFT across all datasets, with the most signi
 ## Related Papers
 
 - [\[ICML 2026\] DRIVE: Distributional and Retrieval-Augmented Bidding with Value Evaluation](../../ICML2026/reinforcement_learning/drive_distributional_and_retrieval-augmented_bidding_with_value_evaluation.md)
-- [\[ICLR 2026\] Value Flows](../../ICLR2026/reinforcement_learning/value_flows.md)
-- [\[ICML 2025\] Scaling Value Iteration Networks to 5000 Layers for Extreme Long-Term Planning](../../ICML2025/reinforcement_learning/scaling_value_iteration_networks_to_5000_layers_for_extreme_long-term_planning.md)
-- [\[CVPR 2025\] ThinkStream: Thinking in Streaming Video](../../CVPR2025/reinforcement_learning/thinking_in_streaming_video.md)
+- [\[ACL 2026\] AttnPO: Attention-Guided Process Supervision for Efficient Reasoning](attnpo_attention-guided_process_supervision_for_efficient_reasoning.md)
+- [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
+- [\[ACL 2026\] Beyond Fully Random Masking: Attention-Guided Denoising and Optimization for Diffusion Language Models](beyond_fully_random_masking_attention-guided_denoising_and_optimization_for_diff.md)
 - [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](visually-guided_policy_optimization_for_multimodal_reasoning.md)
 
 </div>

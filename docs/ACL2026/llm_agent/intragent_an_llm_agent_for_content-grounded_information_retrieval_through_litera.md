@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] IntrAgent decomposes the process of "researchers reading papers to find information" into a two-stage pipeline: "ranking sections by structure, then iteratively reading sections and stopping when sufficient." This allows the LLM to extract fine-grained answers faithfully aligned with queries from a full scientific pape
+  [ACL 2026][LLM Agent][Content-grounded retrieval] IntrAgent decomposes the process of "researchers reading papers to find information" into a two-stage pipeline: "ranking sections by structure, then iteratively reading sections and stopping when sufficient." This allows the LLM to extract fine-grained answers faithfully aligned with queries from a full scientific paper without relying on vector retrieval, outperforming RAG and research agent baselines by an average of 13.2% a…
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Content-grounded retrieval"
+  - "Section ranking"
+  - "Iterative reading"
+  - "Sufficiency check"
+  - "Scientific QA"
 date: 2026-05-08
-content_hash: ed929b9ad4533ab3
+content_hash: 28d7ba61b3d9c874
 ---
+
 # IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review
 
 **Conference**: ACL 2026  
@@ -139,11 +145,11 @@ Confidence Levels (GPT-4o, Physics subset):
 
 ## Related Papers
 
+- [\[ACL 2026\] PRInTS: Process Reward Modeling for Long-range Information Retrieval](prints_reward_modeling_for_long-horizon_information_seeking.md)
 - [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
 - [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
 - [\[ACL 2026\] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents](zara_training-free_motion_time-series_reasoning_via_evidence-grounded_llm_agents.md)
 - [\[ACL 2026\] SafeMCP: Proactive Power Regulation for LLM Agent Defense via Environment-Grounded Look-Ahead Reasoning](safemcp_proactive_power_regulation_for_llm_agent_defense_via_environment-grounde.md)
-- [\[ICLR 2026\] PerfGuard: A Performance-Aware Agent for Visual Content Generation](../../ICLR2026/llm_agent/radiometrically_consistent_gaussian_surfels_for_inverse_rendering.md)
 
 </div>
 

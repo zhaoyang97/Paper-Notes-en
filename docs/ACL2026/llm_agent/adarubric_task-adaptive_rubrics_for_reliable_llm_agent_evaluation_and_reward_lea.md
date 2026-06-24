@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning
 description: >-
-  [ACL 2026][LLM Agent][LLM-as-Judge] This paper identifies that "LLM-as-Judge + Fixed Rubrics" (Helpfulness/Safety/Fluency) are poorly matched for evaluating goal-oriented agent trajectories. It proposes AdaRubric—where an LLM automatically generates task-specific N-dimensional evaluation rubrics based on task descriptions, followed by confidence-weighted
+  [ACL 2026][LLM Agent][LLM-as-Judge] This paper identifies that "LLM-as-Judge + Fixed Rubrics" (Helpfulness/Safety/Fluency) are poorly matched for evaluating goal-oriented agent trajectories. It proposes AdaRubric—where an LLM automatically generates task-specific N-dimensional evaluation rubrics based on task descriptions, followed by confidence-weighted step-by-step evaluations to produce dense reward signals. A DimensionAwareFilter is designed for DPO data construction to p…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - LLM-as-Judge
+  - "ACL 2026"
+  - "LLM Agent"
+  - "LLM-as-Judge"
+  - "Agent Trajectory Evaluation"
+  - "Adaptive Rubric"
+  - "DPO Preference Pairs"
+  - "Process Reward"
 date: 2026-05-08
-content_hash: d2d37c09eccc1128
+content_hash: 87889ca2efb06dd2
 ---
+
 # AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning
 
 **Conference**: ACL 2026  
@@ -148,8 +153,8 @@ DPO Training (Qwen2.5-7B backbone):
 - [\[ACL 2025\] Agentic Reward Modeling: Integrating Human Preferences with Verifiable Correctness Signals for Reliable Reward Systems](../../ACL2025/llm_agent/agentic_reward_modeling_integrating_human_preferences_with_verifiable_correctnes.md)
 - [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
 - [\[ACL 2026\] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](hag_hierarchical_demographic_tree-based_agent_generation_for_topic-adaptive_simu.md)
-- [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
 - [\[ACL 2026\] YIELD: A Large-Scale Dataset and Evaluation Framework for Information Elicitation Agents](yield_a_large-scale_dataset_and_evaluation_framework_for_information_elicitation.md)
+- [\[ACL 2026\] PRInTS: Process Reward Modeling for Long-range Information Retrieval](prints_reward_modeling_for_long-horizon_information_seeking.md)
 
 </div>
 

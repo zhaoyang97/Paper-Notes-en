@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] For offline multi-objective optimization (offline MOO) where "only a fixed offline dataset is available and the true objective function cannot be queried," this paper proposes DOMOO. It utilizes nested Pareto set learning to jointly update preferences and models, embeds an out-of-distribution (OOD) risk suppression fac
+  [ICML 2026][Optimization][Offline Optimization] For offline multi-objective optimization (offline MOO) where "only a fixed offline dataset is available and the true objective function cannot be queried," this paper proposes DOMOO. It utilizes nested Pareto set learning to jointly update preferences and models, embeds an out-of-distribution (OOD) risk suppression factor into the preference gradient, and employs an offline-specific $\text{IGD}_{\text{offline}}$ metric for diver…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Offline Optimization"
+  - "Multi-Objective Optimization"
+  - "Pareto Set Learning"
+  - "Out-of-Distribution Risk"
+  - "Diversity"
 date: 2026-05-08
-content_hash: f127a26927efc5cb
+content_hash: 38944c91eba099c4
 ---
+
 # Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning
 
 **Conference**: ICML 2026  
@@ -133,10 +139,10 @@ DOMOO achieves the first rank in both HV and $\text{IGD}_{\text{offline}}$ overa
 ## Related Papers
 
 - [\[ICLR 2026\] Gradient-Based Diversity Optimization with Differentiable Top-$k$ Objective](../../ICLR2026/optimization/gradient-based_diversity_optimization_with_differentiable_top-k_objective.md)
-- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition](multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
 - [\[ICML 2026\] Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization](accelerated_multiple_wasserstein_gradient_flows_for_multi-objective_distribution.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](../../ICLR2026/optimization/in-context_multi-objective_optimization.md)
+- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition](multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
 - [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](../../AAAI2026/optimization/pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
-- [\[AAAI 2026\] Efficient and Reliable Hitting-Set Computations for the Implicit Hitting Set Approach](../../AAAI2026/optimization/efficient_and_reliable_hitting-set_computations_for_the_implicit_hitting_set_app.md)
 
 </div>
 

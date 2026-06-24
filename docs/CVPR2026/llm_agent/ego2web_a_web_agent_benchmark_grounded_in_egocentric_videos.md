@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos
 description: >-
-  [CVPR 2026][LLM Agent][Web Agent] Ego2Web is proposed as the first benchmark that combines egocentric video perception with web agent execution. Accompanied by a semi-automatic data construction pipeline and the Ego2WebJudge automatic evaluation framework, experiments reveal a significant gap for current top agents in transferring from real-world visua
+  [CVPR 2026][LLM Agent][Web Agent] Ego2Web is proposed as the first benchmark that combines egocentric video perception with web agent execution. Accompanied by a semi-automatic data construction pipeline and the Ego2WebJudge automatic evaluation framework, experiments reveal a significant gap for current top agents in transferring from real-world visual perception to online actions, with a maximum success rate of only 48.2%.
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Web Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Egocentric Video"
+  - "Multimodal Benchmark"
+  - "Cross-modal Transfer"
+  - "Automatic Evaluation"
 date: 2026-05-08
-content_hash: 8750fce7113085b3
+content_hash: f202f2b621e36d5b
 ---
+
 # Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos
 
 **Conference**: CVPR 2026  
@@ -134,11 +139,11 @@ Ego2Web is an evaluation benchmark rather than a training method and thus does n
 
 ## Related Papers
 
-- [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](../../ICLR2026/llm_agent/st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
-- [\[ICML 2026\] Weasel: 通过重要性-多样性数据选择实现 Web Agent 的域外泛化](../../ICML2026/llm_agent/weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
+- [\[ICML 2026\] It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents](../../ICML2026/llm_agent/its_a_trap_task-redirecting_agent_persuasion_benchmark_for_web_agents.md)
+- [\[ICLR 2026\] WebFactory: Automated Compression of Foundational Language Intelligence into Grounded Web Agents](../../ICLR2026/llm_agent/webfactory_automated_compression_of_foundational_language_intelligence_into_grou.md)
 - [\[CVPR 2026\] Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration](learning_to_adapt_self-improving_web_agent_via_cognitive-aware_exploration.md)
-- [\[CVPR 2026\] ProactiveMobile: A Comprehensive Benchmark for Boosting Proactive Intelligence on Mobile Devices](proactivemobile_a_comprehensive_benchmark_for_boosting_proactive_intelligence_on.md)
-- [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](../../ICLR2026/llm_agent/videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
+- [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](../../ICLR2026/llm_agent/st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
+- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](../../ICLR2026/llm_agent/videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
 
 </div>
 

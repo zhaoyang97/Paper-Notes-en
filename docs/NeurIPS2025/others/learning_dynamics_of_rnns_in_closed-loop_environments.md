@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Dynamics of RNNs in Closed-Loop Environments
 description: >-
-  [NeurIPS 2025][RNN learning dynamics] This paper establishes a mathematical theory revealing that RNNs exhibit fundamentally different learning dynamics under closed-loop (agent–environment interaction) versus open-loop…
+  [NeurIPS 2025][RNN learning dynamics] This paper establishes a mathematical theory revealing that RNNs exhibit fundamentally different learning dynamics under closed-loop (agent–environment interaction) versus open-loop (supervised learning) training. Closed-loop learning follows a three-phase process driven by the competition between short-term policy improvement and long-term stability.
 tags:
   - "NeurIPS 2025"
   - "RNN learning dynamics"
@@ -11,7 +11,7 @@ tags:
   - "control theory"
   - "internal representations"
 date: 2026-05-08
-content_hash: 5897ec5310d2b5a8
+content_hash: db89b89a6ee7cdd5
 ---
 
 # Learning Dynamics of RNNs in Closed-Loop Environments
@@ -147,10 +147,10 @@ Key finding: The two modes traverse entirely different trajectories in the effec
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
+- [\[ACL 2025\] Dolphin: Moving Towards Closed-loop Auto-research through Thinking, Practice, and Feedback](../../ACL2025/others/dolphin_moving_towards_closed-loop_auto-research_through_thinking_practice_and_f.md)
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](normalization_in_attention_dynamics.md)
 - [\[NeurIPS 2025\] RNNs Perform Task Computations by Dynamically Warping Neural Representations](rnns_perform_task_computations_by_dynamically_warping_neural_representations.md)
-- [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](../../ICML2026/others/learning_permutation-invariant_macroscopic_dynamics.md)
+- [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
 - [\[NeurIPS 2025\] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)
 
 </div>

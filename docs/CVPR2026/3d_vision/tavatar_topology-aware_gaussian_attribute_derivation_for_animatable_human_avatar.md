@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Tavatar no longer treats the rotation and scale of each 3D Gaussian as freely optimized parameters. Instead, it **analytically derives** them from the triangular geometry of the underlying deformable mesh. This anchors Gaussians naturally to the mesh topology, preventing them from detaching or creating holes under unse
+  [CVPR 2026][3D Vision][Gaussian Splatting] Tavatar no longer treats the rotation and scale of each 3D Gaussian as freely optimized parameters. Instead, it **analytically derives** them from the triangular geometry of the underlying deformable mesh. This anchors Gaussians naturally to the mesh topology, preventing them from detaching or creating holes under unseen complex poses (OOD). Normal error is reduced by 13.8% on X-Avatar and 17.9% on PeopleSnapshot compared to the best…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Animatable Digital Humans"
+  - "Topological Consistency"
+  - "Mesh Binding"
+  - "OOD Pose Generalization"
 date: 2026-05-08
-content_hash: b0b25a9c09a11444
+content_hash: 2cf66b166925253e
 ---
+
 # Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Tavatar achieves SOTA rendering quality on X-Avatar's OOD poses. On PeopleSnapsh
 
 ## Related Papers
 
-- [\[CVPR 2026\] ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars](actavatar_temporally-aware_precise_action_control_for_talking_avatars.md)
-- [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](../../ICCV2025/human_understanding/avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
-- [\[AAAI 2026\] Generating Attribute-Aware Human Motions from Textual Prompt](../../AAAI2026/human_understanding/generating_attribute-aware_human_motions_from_textual_prompt.md)
-- [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
-- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
+- [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
+- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
+- [\[CVPR 2026\] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars](progressiveavatars_progressive_animatable_3d_gaussian_avatars.md)
+- [\[CVPR 2026\] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking](tagsplat_topology-aware_gaussian_splatting_for_dynamic_mesh_modeling_and_trackin.md)
+- [\[CVPR 2026\] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation](flexavatar_flexible_large_reconstruction_model_for_animatable_gaussian_head_avat.md)
 
 </div>
 

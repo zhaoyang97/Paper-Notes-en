@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Transformers Learn Latent Mixture Models In-Context via Mirror Descent
 description: >-
-  [ICLR 2026][learning_theory][in-context learning] This paper proposes an in-context learning task based on the "Mixture of Transition Distributions (MTD)," requiring a transformer to infer the causal importance (mixture weight $\lambda$) of each historical token within the context. The authors provide an explicit construction of a three-layer disentangled transformer
+  [ICLR 2026][Learning Theory][mirror descent] This paper proposes an in-context learning task based on the "Mixture of Transition Distributions (MTD)," requiring a transformer to infer the causal importance (mixture weight $\lambda$) of each historical token within the context. The authors provide an explicit construction of a three-layer disentangled transformer and prove that it **precisely implements one-step Mirror Descent (MD)**, with this one-step estimator being a first…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - in-context learning
-  - mirror descent
-  - mixture of transition distributions
-  - Attention
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "In-Context Learning"
+  - "Mechanistic Interpretability"
+  - "mirror descent"
+  - "mixture of transition distributions"
+  - "attention mechanism"
+  - "latent variable inference"
 date: 2026-05-08
-content_hash: 52caa5ea8e925d20
+content_hash: f4f14e96c6a2e17d
 ---
+
 # Transformers Learn Latent Mixture Models In-Context via Mirror Descent
 
 **Conference**: ICLR 2026  
@@ -157,9 +160,9 @@ The authors emphasize this is a **performance comparison rather than an optimali
 
 - [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 - [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
-- [\[ICLR 2026\] Navigating the Latent Space Dynamics of Neural Models](navigating_the_latent_space_dynamics_of_neural_models.md)
-- [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
-- [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
+- [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
+- [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
+- [\[ICLR 2026\] Adversarially Pretrained Transformers May Be Universally Robust In-Context Learners](adversarially_pretrained_transformers_may_be_universally_robust_in-context_learn.md)
 
 </div>
 

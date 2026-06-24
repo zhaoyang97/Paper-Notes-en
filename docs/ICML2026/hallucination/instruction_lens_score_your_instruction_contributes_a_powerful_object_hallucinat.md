@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models
 description: >-
-  [ICML 2026][Hallucination Detection][Logit Lens] The study identifies that middle-layer embeddings of instruction tokens in MLLMs naturally filter out misleading information from the visual side. Based on this, a training-free InsLen score (Calibrated Local Score + Context Consistency Score) is proposed, which improves the AUROC of object hallucination detection by u
+  [ICML 2026][Hallucination Detection][Object Hallucination] The study identifies that middle-layer embeddings of instruction tokens in MLLMs naturally filter out misleading information from the visual side. Based on this, a training-free InsLen score (Calibrated Local Score + Context Consistency Score) is proposed, which improves the AUROC of object hallucination detection by up to 13.81% across 5 MLLMs and 4 benchmarks.
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - Logit Lens
-  - MLLM
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Object Hallucination"
+  - "Instruction Embedding"
+  - "Logit Lens"
+  - "Training-free Detection"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 33f8a86b9c471d44
+content_hash: 469d0f66f9e73763
 ---
+
 # Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models
 
 **Conference**: ICML 2026  
@@ -139,8 +143,8 @@ Evaluation across 5 MLLMs (LLaVA-1.5-7B, InstructBLIP-7B, mPLUG-Owl3-8B, LLaVA-O
 - [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
 - [\[ICML 2026\] Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models](revis_sparse_latent_steering_to_mitigate_object_hallucination_in_large_vision-la.md)
 - [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](../../CVPR2026/hallucination/same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
-- [\[AAAI 2026\] Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models](../../AAAI2026/hallucination/beyond_hallucinations_a_composite_score_for_measuring_reliability_in_open-source.md)
-- [\[AAAI 2026\] Verb Mirage: Unveiling and Assessing Verb Concept Hallucinations in Multimodal Large Language Models](../../AAAI2026/hallucination/verb_mirage_unveiling_and_assessing_verb_concept_hallucinations_in_multimodal_la.md)
+- [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](../../CVPR2026/hallucination/first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
+- [\[ICLR 2026\] PostAlign: Multimodal Grounding as a Corrective Lens for MLLMs](../../ICLR2026/hallucination/postalign_multimodal_grounding_as_a_corrective_lens_for_mllms.md)
 
 </div>
 

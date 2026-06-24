@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] ScienceBoard constructs an Ubuntu virtual machine environment integrated with real scientific software and 169 cross-disciplinary tasks. By utilizing state-level execution evaluation, it examines the capabilities of multimodal computer-using agents in realistic scientific workflows. The results show that the success ra
+  [ICLR 2026][LLM Agent][Scientific Workflows] ScienceBoard constructs an Ubuntu virtual machine environment integrated with real scientific software and 169 cross-disciplinary tasks. By utilizing state-level execution evaluation, it examines the capabilities of multimodal computer-using agents in realistic scientific workflows. The results show that the success rate of even the strongest models remains significantly lower than that of humans.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Scientific Workflows"
+  - "Computer-using Agents"
+  - "GUI/CLI Interaction"
+  - "Multimodal Evaluation"
+  - "Scientific Discovery"
 date: 2026-05-08
-content_hash: 28defa3cd9d7a6e6
+content_hash: 82bec7622f0eb3ac
 ---
+
 # ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows
 
 **Conference**: ICLR 2026  
@@ -182,7 +188,7 @@ Increasing test-time compute helps, but the Gain is limited. It slightly improve
 - [\[ICML 2025\] Evaluating Retrieval-Augmented Generation Agents for Autonomous Scientific Discovery in Astrophysics](../../ICML2025/llm_agent/evaluating_retrieval-augmented_generation_agents_for_autonomous_scientific_disco.md)
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
 - [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
-- [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](tusoai_agentic_optimization_for_scientific_methods.md)
+- [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
 
 </div>
 

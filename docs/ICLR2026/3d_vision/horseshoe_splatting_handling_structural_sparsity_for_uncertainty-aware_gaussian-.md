@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][3D Vision][3D Gaussian Splatting] Apply a global-local Horseshoe shrinkage prior to the covariance scale of each 3DGS Gaussian. Use variational inference to simultaneously solve "automatic pruning of noise directions + outputting pixel-level uncertainty," matching SOTA rendering quality while providing calibrated uncertainty maps.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Horseshoe Prior"
+  - "Variational Inference"
+  - "Uncertainty Estimation"
+  - "Structural Sparsity"
 date: 2026-05-08
-content_hash: 92376f05c14ee144
+content_hash: 2d5c660720eab242
 ---
+
 # Horseshoe Splatting: Handling Structural Sparsity for Uncertainty-Aware Gaussian-Splatting Radiance Field Rendering
 
 **Conference**: ICLR 2026  
@@ -116,9 +121,9 @@ flowchart LR
 
 - [\[ICLR 2026\] Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting](augmented_radiance_field_a_general_framework_for_enhanced_gaussian_splatting.md)
 - [\[CVPR 2025\] 3D Convex Splatting: Radiance Field Rendering with 3D Smooth Convexes](../../CVPR2025/3d_vision/3d_convex_splatting_radiance_field_rendering_with_3d_smooth_convexes.md)
+- [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](../../CVPR2026/3d_vision/uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
 - [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
-- [\[ICLR 2026\] Gradient-Direction-Aware Density Control for 3D Gaussian Splatting](gradient-direction-aware_density_control_for_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field](station2radar_query_conditioned_gaussian_splatting_for_precipitation_field.md)
+- [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Skip a Layer or Loop It? Learning Program-of-Layers in LLMs
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] This paper treats each layer of a pre-trained LLM as an "atomic function" that can be arbitrarily invoked. It proposes "Program-of-Layers" (PoLar)—customizing an execution program for each input that can **skip or loop** layers. The authors first empirically demonstrate via MCTS that such optimal programs exist trainin
+  [ICML2026][LLM Efficiency][Program-of-Layers] This paper treats each layer of a pre-trained LLM as an "atomic function" that can be arbitrarily invoked. It proposes "Program-of-Layers" (PoLar)—customizing an execution program for each input that can **skip or loop** layers. The authors first empirically demonstrate via MCTS that such optimal programs exist training-free for almost every input. They then train a lightweight predictor to produce the execution program in a singl…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Program-of-Layers"
+  - "Layer Skipping and Looping"
+  - "Dynamic Depth"
+  - "Test-time Scaling"
+  - "Latent Reasoning"
 date: 2026-05-08
-content_hash: 5839e59e6ef9f93b
+content_hash: 282a486f376f3724
 ---
+
 # Skip a Layer or Loop It? Learning Program-of-Layers in LLMs
 
 **Conference**: ICML2026  
@@ -141,8 +147,8 @@ The table below compares the **actual PoLar predictor** against dynamic depth ba
 - [\[ACL 2025\] CLaSp: In-Context Layer Skip for Self-Speculative Decoding](../../ACL2025/llm_efficiency/clasp_self_speculative_decoding.md)
 - [\[ICML 2026\] L$^3$: Large Lookup Layers](l3_large_lookup_layers.md)
 - [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](hyperparameter_transfer_with_mixture-of-expert_layers.md)
-- [\[ICML 2026\] KnapSpec: Self-Speculative Decoding via Adaptive Layer Selection as a Knapsack Problem](knapspec_self-speculative_decoding_via_adaptive_layer_selection_as_a_knapsack_pr.md)
 - [\[ICML 2026\] SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs](softmoe_soft_differentiable_routing_for_mixture-of-experts_in_llms.md)
+- [\[ICML 2026\] KnapSpec: Self-Speculative Decoding via Adaptive Layer Selection as a Knapsack Problem](knapspec_self-speculative_decoding_via_adaptive_layer_selection_as_a_knapsack_pr.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiVeQ: Differentiable Vector Quantization Using the Reparameterization Trick
 description: >-
-  [ICLR 2026][Self-Supervised Learning][VQ-VAE] DiVeQ reformulates the non-differentiable operation of "mapping latent variables to the nearest codeword" as "adding an error vector to the latent variable, where the vector aligns with the direction of the nearest codeword and its length equals the quantization error." This maintains hard quantization in the forward p
+  [ICLR 2026][Self-Supervised Learning][Vector Quantization] DiVeQ reformulates the non-differentiable operation of "mapping latent variables to the nearest codeword" as "adding an error vector to the latent variable, where the vector aligns with the direction of the nearest codeword and its length equals the quantization error." This maintains hard quantization in the forward pass while ensuring smooth gradient flow in the backward pass. Its space-filling variant, SF-DiVeQ…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - VQ-VAE
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Vector Quantization"
+  - "Reparameterization Trick"
+  - "Discrete Representations"
+  - "Codebook Collapse"
+  - "VQ-VAE"
 date: 2026-05-08
-content_hash: 1e40e237f67caa58
+content_hash: 5bf7a981e4068c72
 ---
+
 # DiVeQ: Differentiable Vector Quantization Using the Reparameterization Trick
 
 **Conference**: ICLR 2026  
@@ -143,6 +148,7 @@ DiVeQ/SF-DiVeQ prevents the misalignment-induced collapse seen in STE and ST-GS 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

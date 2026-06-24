@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration
 description: >-
-  [NeurIPS 2025][Interpretability][Perturbation-based Explanations] This paper reveals a fundamental connection between uncertainty calibration (the alignment between model confidence and actual accuracy) and the quality o…
+  [NeurIPS 2025][Interpretability][Perturbation-based Explanations] This paper reveals a fundamental connection between uncertainty calibration (the alignment between model confidence and actual accuracy) and the quality of perturbation-based explanation methods. It demonstrates that miscalibration of models on perturbed inputs directly degrades the quality of both global and local explanations, and proposes ReCalX, which applies perturbation-level-adaptive temperature scaling…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -13,7 +13,7 @@ tags:
   - "LIME"
   - "Temperature Scaling"
 date: 2026-05-08
-content_hash: 08486fb5292b4521
+content_hash: ac147cc290e49e27
 ---
 
 # Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration
@@ -179,10 +179,10 @@ ReCalX consistently improves explanation robustness across all models × all exp
 ## Related Papers
 
 - [\[NeurIPS 2025\] LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS](llm_probing_with_contrastive_eigenproblems_improving_understanding_and_applicabi.md)
+- [\[ICLR 2026\] Missingness Bias Calibration in Feature Attribution Explanations](../../ICLR2026/interpretability/missingness_bias_calibration_in_feature_attribution_explanations.md)
 - [\[NeurIPS 2025\] Minimizing False-Positive Attributions in Explanations of Non-Linear Models](minimizing_false-positive_attributions_in_explanations_of_non-linear_models.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
 - [\[NeurIPS 2025\] An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations](an_analysis_of_concept_bottleneck_models_measuring_understanding_and_mitigating_.md)
-- [\[NeurIPS 2025\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](specialization_after_generalization_towards_understanding_test-time_training_in_.md)
 
 </div>
 

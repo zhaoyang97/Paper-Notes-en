@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GST-UNet: A Neural Framework for Spatiotemporal Causal Inference with Time-Varying Confounding
 description: >-
-  [NeurIPS 2025][Causal Inference][Spatiotemporal causal inference] This paper proposes GST-UNet, which integrates a U-Net spatiotemporal encoder with iterative G-computation to estimate location-specific conditional avera…
+  [NeurIPS 2025][Causal Inference][Spatiotemporal causal inference] This paper proposes GST-UNet, which integrates a U-Net spatiotemporal encoder with iterative G-computation to estimate location-specific conditional average potential outcomes (CAPOs) from a **single spatiotemporal observational trajectory**. The framework simultaneously handles interference, spatial confounding, temporal carry-over effects, and time-varying confounding, and is validated on a real-world causal…
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "time-varying confounding"
   - "potential outcomes"
 date: 2026-05-08
-content_hash: 49a341df3bbed16b
+content_hash: a64fd3e48b576c0d
 ---
 
 # GST-UNet: A Neural Framework for Spatiotemporal Causal Inference with Time-Varying Confounding
@@ -162,11 +162,11 @@ Reference: Letellier et al. report 259 excess cases/day, but over a longer and l
 
 ## Related Papers
 
+- [\[ICLR 2026\] Stochastic Neural Networks for Causal Inference with Missing Confounders](../../ICLR2026/causal_inference/stochastic_neural_networks_for_causal_inference_with_missing_confounders.md)
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
-- [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](../../ICML2026/causal_inference/controllable_generative_sandbox_for_causal_inference.md)
-- [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](../../ICLR2026/causal_inference/efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
-- [\[NeurIPS 2025\] Domain-Adapted Granger Causality for Real-Time Cross-Slice Attack Attribution in 6G Networks](domain-adapted_granger_causality_for_real-time_cross-slice_attack_attribution_in.md)
-- [\[ICML 2026\] The (Marginal) Value of a Search Ad: An Online Causal Framework for Repeated Second-price Auctions](../../ICML2026/causal_inference/the_marginal_value_of_a_search_ad_an_online_causal_framework_for_repeated_second.md)
+- [\[ICLR 2026\] IGC-Net for Conditional Average Potential Outcome Estimation Over Time](../../ICLR2026/causal_inference/igc-net_for_conditional_average_potential_outcome_estimation_over_time.md)
+- [\[ACL 2025\] IRIS: An Iterative and Integrated Framework for Verifiable Causal Discovery](../../ACL2025/causal_inference/iris_an_iterative_and_integrated_framework.md)
+- [\[ICML 2025\] Causal Abstraction Inference under Lossy Representations](../../ICML2025/causal_inference/causal_abstraction_inference_under_lossy_representations.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Memory Matters: Boosting Training-Free Zero-Shot Temporal Action Localization with a Learnable Lookup Table
 description: >-
-  [CVPR 2026][Video Understanding][Vision-Language Model] Addressing the issue where "Training-Free Zero-Shot Temporal Action Localization (TF ZS-TAL) adapts independently per video, discards knowledge after use, and cannot accumulate historical insights," this paper proposes a **Learnable Lookup Table (LLT) maintained by action category and updated online during the test str
+  [CVPR 2026][Video Understanding][Zero-Shot Temporal Action Localization] Addressing the issue where "Training-Free Zero-Shot Temporal Action Localization (TF ZS-TAL) adapts independently per video, discards knowledge after use, and cannot accumulate historical insights," this paper proposes a **Learnable Lookup Table (LLT) maintained by action category and updated online during the test stream**. High-confidence "easy-to-judge frames" are aggregated into category prototypes…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Zero-Shot Temporal Action Localization"
+  - "Training-Free"
+  - "Test-Time Adaptation"
+  - "Learnable Lookup Table"
+  - "Vision-Language Models"
 date: 2026-05-08
-content_hash: 997cb4289335de9d
+content_hash: 5a14c41f1bd3d18a
 ---
+
 # Memory Matters: Boosting Training-Free Zero-Shot Temporal Action Localization with a Learnable Lookup Table
 
 **Conference**: CVPR 2026  
@@ -138,10 +143,10 @@ LC=Lookup Candidate, LT=Lookup Table, LA=Lookup Adjustment, TA=Text Adjustment (
 ## Related Papers
 
 - [\[CVPR 2026\] TF-CADE: Foreground-Concentrated Text-Video Alignment for Zero-Shot Temporal Action Detection](tf-cade_foreground-concentrated_text-video_alignment_for_zero-shot_temporal_acti.md)
-- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
-- [\[CVPR 2026\] MTLLFM: Multimodal-Temporal Laughter Localization](mtllfm_multimodal-temporal_laughter_localization_ur-funny-temporal_and_smile-tem.md)
 - [\[CVPR 2025\] VideoGEM: Training-Free Action Grounding in Videos](../../CVPR2025/video_understanding/videogem_training-free_action_grounding_in_videos.md)
+- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
 - [\[ECCV 2024\] Online Temporal Action Localization with Memory-Augmented Transformer](../../ECCV2024/video_understanding/online_temporal_action_localization_with_memory-augmented_transformer.md)
+- [\[ICLR 2026\] HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding](../../ICLR2026/video_understanding/hitea_hierarchical_temporal_alignment_for_training-free_long-video_temporal_grou.md)
 
 </div>
 

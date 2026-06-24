@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Goldilocks Test Sets for Face Verification
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] While mainstream face verification test sets have reached saturation (LFW 99.8%), this study does not rely on reducing image quality or adding occlusions to create difficulty. Instead, it extracts three types of "natural but difficult" image pairs from high-quality controlled face databases: extreme beard differences (
+  [CVPR 2026][Human Understanding][Face Verification] While mainstream face verification test sets have reached saturation (LFW 99.8%), this study does not rely on reducing image quality or adding occlusions to create difficulty. Instead, it extracts three types of "natural but difficult" image pairs from high-quality controlled face databases: extreme beard differences (Hadrian), strong exposure differences (Eclipse), and identical twins (ND-Twins). A set of "Goldilocks Three…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Face Verification"
+  - "Test Set Benchmark"
+  - "Facial Attributes"
+  - "Twin Identification"
+  - "Demographic Fairness"
 date: 2026-05-08
-content_hash: 7f9c8e4f785fc06e
+content_hash: 89baf33957827e32
 ---
+
 # Goldilocks Test Sets for Face Verification
 
 **Conference**: CVPR 2026  
@@ -127,10 +133,10 @@ Accuracies for all three test sets are lower than CPLFW. Furthermore, Eclipse an
 ## Related Papers
 
 - [\[AAAI 2026\] AHAN: Asymmetric Hierarchical Attention Network for Identical Twin Face Verification](../../AAAI2026/human_understanding/ahan_asymmetric_hierarchical_attention_network_for_identical.md)
-- [\[CVPR 2026\] Anatomical Domain Shifts: Test-time Heterogeneous Adaptation for 3D Human Pose Prediction](anatomical_domain_shifts_test-time_heterogeneous_adaptation_for_3d_human_pose_pr.md)
 - [\[ICLR 2026\] GaitSnippet: Gait Recognition Beyond Unordered Sets and Ordered Sequences](../../ICLR2026/human_understanding/gaitsnippet_gait_recognition_beyond_unordered_sets_and_ordered_sequences.md)
 - [\[CVPR 2026\] FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing](facecot_cot_reasoning_face_anti_spoofing.md)
-- [\[CVPR 2026\] IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations](idperturb_enhancing_variation_in_synthetic_face_generation_via_angular_perturbat.md)
+- [\[CVPR 2026\] From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing](from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md)
+- [\[CVPR 2026\] PC-Talk: Precise Facial Animation Control for Audio-Driven Talking Face Generation](pc-talk_precise_facial_animation_control_for_audio-driven_talking_face_generatio.md)
 
 </div>
 

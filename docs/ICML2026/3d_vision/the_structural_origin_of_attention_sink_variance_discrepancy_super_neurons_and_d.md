@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity
 description: >-
-  [ICML 2026][3D Vision][attention sink] This paper reveals the structural root of "attention sinking to the first token" in LLMs: the lack of value aggregation for the first token under causal masking leads to variance discrepancy, which is selectively amplified by super neurons in the FFN to form extreme dimensional disparity, eventually locking QK projecti
+  [ICML 2026][3D Vision][attention sink] This paper reveals the structural root of "attention sinking to the first token" in LLMs: the lack of value aggregation for the first token under causal masking leads to variance discrepancy, which is selectively amplified by super neurons in the FFN to form extreme dimensional disparity, eventually locking QK projections to force attention sinks. Based on this, head-wise RMSNorm is proposed to suppress sinks from the root during the pre…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - attention sink
-  - super neurons
-  - head-wise RMSNorm
+  - "ICML 2026"
+  - "3D Vision"
+  - "attention sink"
+  - "variance discrepancy"
+  - "super neurons"
+  - "dimension collapse"
+  - "head-wise RMSNorm"
 date: 2026-05-08
-content_hash: b1cd440ef4273aad
+content_hash: 92fc524eaae66e76
 ---
+
 # The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity
 
 **Conference**: ICML 2026  
@@ -125,11 +128,11 @@ The final link closes the chain. When $\mathbf{x}_0$ has an overwhelmingly large
 
 ## Related Papers
 
+- [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](../../ICLR2026/3d_vision/spiking_discrepancy_transformer_for_point_cloud_analysis.md)
 - [\[ICLR 2026\] Reducing Class-Wise Performance Disparity via Margin Regularization](../../ICLR2026/3d_vision/reducing_class-wise_performance_disparity_via_margin_regularization.md)
-- [\[CVPR 2026\] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](../../CVPR2026/3d_vision/beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)
 - [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](../../CVPR2026/3d_vision/dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
+- [\[CVPR 2026\] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](../../CVPR2026/3d_vision/beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)
 - [\[AAAI 2026\] Arbitrary-Scale 3D Gaussian Super-Resolution](../../AAAI2026/3d_vision/arbitrary-scale_3d_gaussian_super-resolution.md)
-- [\[ECCV 2024\] VCD-Texture: Variance Alignment based 3D-2D Co-Denoising for Text-Guided Texturing](../../ECCV2024/3d_vision/vcd-texture_variance_alignment_based_3d-2d_co-denoising_for_text-guided_texturin.md)
 
 </div>
 

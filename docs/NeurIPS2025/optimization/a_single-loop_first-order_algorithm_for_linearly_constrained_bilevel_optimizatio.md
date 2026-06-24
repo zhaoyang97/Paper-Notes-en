@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization
 description: >-
-  [NeurIPS 2025][Optimization][bilevel optimization] For bilevel optimization problems with coupled linear constraints in the lower-level problem, this paper proposes SFLCB…
+  [NeurIPS 2025][Optimization][bilevel optimization] For bilevel optimization problems with coupled linear constraints in the lower-level problem, this paper proposes SFLCB, a single-loop first-order algorithm that eliminates Hessian dependence via a penalty-based reformulation combined with augmented Lagrangian, improving the iteration complexity from $O(\epsilon^{-3}\log(\epsilon^{-1}))$ to $O(\epsilon^{-3})$.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "augmented Lagrangian"
   - "single-loop algorithm"
 date: 2026-05-08
-content_hash: 6c8bd7a4e962280f
+content_hash: 3ad2866e06275c0e
 ---
 
 # A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization
@@ -138,10 +138,10 @@ Complexity comparison (Table 1):
 ## Related Papers
 
 - [\[NeurIPS 2025\] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds](an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds.md)
+- [\[ICLR 2026\] Single-Loop Byzantine-Resilient Federated Bilevel Optimization](../../ICLR2026/optimization/single-loop_byzantine-resilient_federated_bilevel_optimization.md)
 - [\[NeurIPS 2025\] Problem-Parameter-Free Decentralized Bilevel Optimization](problem-parameter-free_decentralized_bilevel_optimization.md)
 - [\[NeurIPS 2025\] Learning Theory for Kernel Bilevel Optimization](learning_theory_for_kernel_bilevel_optimization.md)
 - [\[NeurIPS 2025\] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization](set_smoothness_unlocks_clarke_hyper-stationarity_in_bilevel_optimization.md)
-- [\[NeurIPS 2025\] Constrained Network Slice Assignment via Large Language Models](constrained_network_slice_assignment_via_llms.md)
 
 </div>
 

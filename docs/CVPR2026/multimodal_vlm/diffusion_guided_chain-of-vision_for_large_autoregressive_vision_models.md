@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Chain-of-Vision] This paper transfers the Chain-of-Thought concept from language models to pure visual Large Autoregressive Models (LVM). By using a pre-trained diffusion model to generate a sequence of visually coherent intermediate frames in the image space as a "task-agnostic reasoning process" inserted into the input sequence, it t
+  [CVPR 2026][Multimodal VLM][Chain-of-Vision] This paper transfers the Chain-of-Thought concept from language models to pure visual Large Autoregressive Models (LVM). By using a pre-trained diffusion model to generate a sequence of visually coherent intermediate frames in the image space as a "task-agnostic reasoning process" inserted into the input sequence, it transforms LVM downstream tasks (segmentation, depth, pose, etc.) from "single-step direct output" to "multi-step pr…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Chain-of-Vision
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chain-of-Vision"
+  - "Visual In-context Learning"
+  - "Autoregressive Vision Models"
+  - "Diffusion-guided Interpolation"
+  - "Multi-step Generation"
 date: 2026-05-08
-content_hash: 2dda92b2c0e56341
+content_hash: 3bb3eb290380f198
 ---
+
 # Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ Fixed 7B, single-task fine-tuning, investigating **interpolation length** and **
 
 ## Related Papers
 
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
 - [\[CVPR 2026\] Language-guided Frequency Modulation for Large Vision-Language Models](language-guided_frequency_modulation_for_large_vision-language_models.md)
 - [\[CVPR 2026\] AutoTraces: Autoregressive Trajectory Forecasting via Multimodal Large Language Models](autotraces_autoregressive_trajectory_forecasting_via_multimodal_large_language_m.md)
-- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
-- [\[CVPR 2026\] UVU: Improving Multimodal Understanding via Vision-Language Unified Autoregressive Paradigm](uvu_improving_multimodal_understanding_via_vision-language_unified_autoregressiv.md)
 - [\[CVPR 2026\] LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning](llada-v_large_language_diffusion_models_with_visual_instruction_tuning.md)
+- [\[CVPR 2026\] WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens](wemmu_enhanced_bridging_of_vision-language_models_and_diffusion_models_via_noisy.md)
 
 </div>
 

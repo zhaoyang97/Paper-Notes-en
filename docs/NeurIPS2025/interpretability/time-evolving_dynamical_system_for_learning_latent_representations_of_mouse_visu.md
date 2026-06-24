@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Cortex
 description: >-
-  [NeurIPS 2025][Interpretability][latent variable models] This paper proposes TE-ViDS, a sequential latent variable model that decomposes visual neural activity into an external representation linked to visual stimuli and…
+  [NeurIPS 2025][Interpretability][latent variable models] This paper proposes TE-ViDS, a sequential latent variable model that decomposes visual neural activity into an external representation linked to visual stimuli and an internal representation reflecting internal states. By incorporating a time-evolving structure and contrastive learning, TE-ViDS achieves state-of-the-art decoding performance on natural scenes and videos.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "mouse visual cortex"
 date: 2026-05-08
-content_hash: 6a4264d89e43e3d0
+content_hash: a49e9105e8ff3701
 ---
 
 # Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Cortex
@@ -171,10 +171,10 @@ TE-ViDS achieves the highest decoding accuracy across all five mice, with substa
 ## Related Papers
 
 - [\[ICLR 2026\] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing](../../ICLR2026/interpretability/seed-set_scalable_evolving_experimental_design_for_system-level_ethical_testing.md)
+- [\[CVPR 2025\] Learning Visual Composition through Improved Semantic Guidance](../../CVPR2025/interpretability/learning_visual_composition_through_improved_semantic_guidance.md)
 - [\[ICLR 2026\] Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement](../../ICLR2026/interpretability/decoupling_dynamical_richness_from_representation_learning_towards_practical_mea.md)
-- [\[NeurIPS 2025\] Latent Principle Discovery for Language Model Self-Improvement](latent_principle_discovery_for_language_model_self-improvement.md)
-- [\[NeurIPS 2025\] Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions](partial_information_decomposition_via_normalizing_flows_in_latent_gaussian_distr.md)
 - [\[ICLR 2026\] MATA: A Trainable Hierarchical Automaton System for Multi-Agent Visual Reasoning](../../ICLR2026/interpretability/mata_a_trainable_hierarchical_automaton_system_for_multi-agent_visual_reasoning.md)
+- [\[NeurIPS 2025\] H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition](h-splid_hsic-based_saliency_preserving_latent_information_decomposition.md)
 
 </div>
 

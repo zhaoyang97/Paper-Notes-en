@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection
 description: >-
-  [CVPR 2026][Multimodal VLM][Dataset] The authors observe that existing multimodal sarcasm detection datasets/methods are restricted to "single-image" settings, failing to capture sarcasm triggered by cross-image comparisons. Consequently, they construct MMSD3.0, the first real-world benchmark consisting entirely of multi-image samples (2–4 images each), a
+  [CVPR 2026][Multimodal VLM][Multimodal sarcasm detection] The authors observe that existing multimodal sarcasm detection datasets/methods are restricted to "single-image" settings, failing to capture sarcasm triggered by cross-image comparisons. Consequently, they construct MMSD3.0, the first real-world benchmark consisting entirely of multi-image samples (2–4 images each), and propose a companion Cross-Image Reasoning Model (CIRM) featuring dual-stage bridging and relevance-…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Dataset
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal sarcasm detection"
+  - "multi-image benchmark"
+  - "cross-image reasoning"
+  - "OCR alignment"
+  - "dataset"
 date: 2026-05-08
-content_hash: c6ddf341af83e2bf
+content_hash: 94fed504fdde3944
 ---
+
 # MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection
 
 **Conference**: CVPR 2026  
@@ -145,11 +150,11 @@ On the multi-image benchmark MMSD3.0, single-image methods (via tiling) degrade 
 
 ## Related Papers
 
+- [\[ACL 2025\] REAL-MM-RAG: A Real-World Multi-Modal Retrieval Benchmark](../../ACL2025/multimodal_vlm/real-mm-rag_a_real-world_multi-modal_retrieval_benchmark.md)
 - [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
 - [\[CVPR 2026\] Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training](towards_real-world_document_parsing_via_realistic_scene_synthesis_and_document-a.md)
-- [\[AAAI 2026\] Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection](../../AAAI2026/multimodal_vlm/conditional_information_bottleneck_for_multimodal_fusion_overcoming_shortcut_lea.md)
-- [\[CVPR 2026\] Rethinking VLMs for Image Forgery Detection and Localization](rethinking_vlms_for_image_forgery_detection_and_localization.md)
-- [\[CVPR 2026\] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval](rmir_a_benchmark_dataset_for_reasoning-intensive_multimodal_image_retrieval.md)
+- [\[CVPR 2026\] Will Multimodal Models Be Dazzled by Multi-Image Visual Puzzles?](will_multimodal_models_be_dazzled_by_multi-image_visual_puzzles.md)
+- [\[CVPR 2026\] Towards Policy-Adaptive Image Guardrail: Benchmark and Method](towards_policy-adaptive_image_guardrail_benchmark_and_method.md)
 
 </div>
 

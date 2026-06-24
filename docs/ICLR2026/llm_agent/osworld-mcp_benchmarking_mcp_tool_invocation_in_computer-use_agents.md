@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] OSWorld-MCP injects 158 high-quality MCP tools into the OSWorld real-world computer environment, enabling multimodal agents to autonomously choose between "invoking a tool" and "interacting with the GUI" at each step. This marks the first time tool invocation, GUI operation, and mixed decision-making capabilities are e
+  [ICLR 2026][LLM Agent][Computer-use Agents] OSWorld-MCP injects 158 high-quality MCP tools into the OSWorld real-world computer environment, enabling multimodal agents to autonomously choose between "invoking a tool" and "interacting with the GUI" at each step. This marks the first time tool invocation, GUI operation, and mixed decision-making capabilities are evaluated within a unified framework. Results show that MCP tools generally improve success rates (e.g.…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Computer-use Agents"
+  - "MCP Tool Invocation"
+  - "GUI-Tool Mixed Decision Making"
+  - "Automatic Tool Generation"
+  - "Evaluation Benchmark"
 date: 2026-05-08
-content_hash: 852725ff27251bea
+content_hash: 19738c1babdef76b
 ---
+
 # OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents
 
 **Conference**: ICLR 2026  
@@ -131,9 +137,9 @@ Claude 4 Sonnet achieved the highest LMM accuracy (36.1/45.0) and highest TIR. Q
 
 - [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
 - [\[ICLR 2026\] MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use](mcpmark_a_benchmark_for_stress-testing_realistic_and_comprehensive_mcp_use.md)
-- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
 - [\[ICLR 2026\] MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents](mcp_security_bench_msb_benchmarking_attacks_against_model_context_protocol_in_ll.md)
-- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
+- [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
+- [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
 
 </div>
 

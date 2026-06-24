@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Differentiable Lifting for Topological Neural Networks
 description: >-
-  [ICLR 2026][Graph Learning][cell complex] The authors propose ∂lift (DiffLift), an end-to-end learnable graph "lifting" framework. It uses GNN node embeddings to parameterize the "distribution of candidate high-order cells" and employs Bernoulli sampling combined with a Straight-Through Estimator (STE) to determine which cells enter the topological structure.
+  [ICLR2026][Graph Learning][Topological Neural Networks] The authors propose ∂lift (DiffLift), an end-to-end learnable graph "lifting" framework. It uses GNN node embeddings to parameterize the "distribution of candidate high-order cells" and employs Bernoulli sampling combined with a Straight-Through Estimator (STE) to determine which cells enter the topological structure. This transforms hypergraph, simplicial, or cell complex structures—originally determined by prior heuris…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - cell complex
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Topological Neural Networks"
+  - "Differentiable Lifting"
+  - "High-order Structures"
+  - "Straight-Through Estimator"
+  - "Cell Complex"
 date: 2026-05-08
-content_hash: d6846bb2aabc5426
+content_hash: 2903f4f146a503f7
 ---
+
 # Differentiable Lifting for Topological Neural Networks
 
 **Conference**: ICLR2026  
@@ -126,10 +131,20 @@ Evaluations were conducted across 12 datasets and 4 TNN architectures.
 - Value: ⭐⭐⭐⭐⭐ (Plug-and-play solution for a core TNN bottleneck).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Topological Flow Matching](topological_flow_matching.md)
+- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
+- [\[ICLR 2026\] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding](pairwise_is_not_enough_hypergraph_neural_networks_for_multi-agent_pathfinding.md)
+- [\[ICLR 2026\] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning](canonical_tree_cover_neural_networks_for_expressive_and_invariant_graph_learning.md)
+- [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Topological Flow Matching](topological_flow_matching.md)

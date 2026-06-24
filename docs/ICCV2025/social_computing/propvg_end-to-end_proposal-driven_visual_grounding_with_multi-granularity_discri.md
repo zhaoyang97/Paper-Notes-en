@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PropVG: End-to-End Proposal-Driven Visual Grounding with Multi-Granularity Discrimination
 description: >-
-  [ICCV 2025][Social Computing][visual grounding] This paper proposes PropVG, the first end-to-end proposal-based visual grounding framework that eliminates the need for pretrained detectors. It decomposes visual grounding…
+  [ICCV 2025][Social Computing][visual grounding] This paper proposes PropVG, the first end-to-end proposal-based visual grounding framework that eliminates the need for pretrained detectors. It decomposes visual grounding into two stages — foreground proposal generation and contrastive learning-based referring scoring — and introduces a Multi-granularity Target Discrimination (MTD) module that integrates object-level and semantic-level information to determine target existence…
 tags:
   - "ICCV 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "referring expression"
   - "target existence discrimination"
 date: 2026-05-08
-content_hash: 329141fe762f918a
+content_hash: 99d8b62c58e007de
 ---
 
 # PropVG: End-to-End Proposal-Driven Visual Grounding with Multi-Granularity Discrimination
@@ -184,7 +184,7 @@ PropVG surpasses SimVG by +10.1% F1 on GREC and improves "no-target" discriminat
 
 - [\[ACL 2026\] Decide less, communicate more: On the construct validity of end-to-end fact-checking in medicine](../../ACL2026/social_computing/decide_less_communicate_more_on_the_construct_validity_of_end-to-end_fact-checki.md)
 - [\[ICCV 2025\] Learning Visual Proxy for Compositional Zero-Shot Learning](learning_visual_proxy_for_compositional_zero-shot_learning.md)
-- [\[NeurIPS 2025\] DeepTraverse: A Depth-First Search Inspired Network for Algorithmic Visual Understanding](../../NeurIPS2025/social_computing/deeptraverse_a_depth-first_search_inspired_network_for_algorithmic_visual_unders.md)
+- [\[ACL 2025\] taz2024full: Analysing German Newspapers for Gender Bias and Discrimination across Decades](../../ACL2025/social_computing/taz2024full_analysing_german_newspapers_for_gender_bias_and_discrimination_acros.md)
 - [\[ICCV 2025\] Gradient Extrapolation for Debiased Representation Learning](gradient_extrapolation_for_debiased_representation_learning.md)
 - [\[ICCV 2025\] No More Sibling Rivalry: Debiasing Human-Object Interaction Detection](no_more_sibling_rivalry_debiasing_human-object_interaction_detection.md)
 

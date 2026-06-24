@@ -8,7 +8,7 @@ tags:
   - Video Understanding
   - VideoLLM
 date: 2026-05-08
-content_hash: 706a34b651e58c22
+content_hash: e2989cb98a14b7b5
 ---
 "How to obtain specific attributes with specific path" is already given as template logic: (analysis -> hypothesis -> verification).
 

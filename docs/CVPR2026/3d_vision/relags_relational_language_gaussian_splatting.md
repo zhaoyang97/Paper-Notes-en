@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] ReLaGS: Relational Language Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes ReLaGS, the first training-free framework that unifies multi-level language Gaussian fields and open-vocabulary 3D scene graphs. It improves scene representation through Max-Weight Pruning and robust outlier-aware feature aggregation, combined with GNN-based relation prediction to achieve efficient struct
+  [CVPR2026][3D Vision][3D Gaussian Splatting] Ours proposes ReLaGS, the first training-free framework that unifies multi-level language Gaussian fields and open-vocabulary 3D scene graphs. It improves scene representation through Max-Weight Pruning and robust outlier-aware feature aggregation, combined with GNN-based relation prediction to achieve efficient structured 3D scene understanding.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Open-vocabulary"
+  - "3D Scene Graph"
+  - "Hierarchical Semantics"
+  - "Relational Reasoning"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 22c4a9bef815ba91
+content_hash: cbc63c9e319cbfff
 ---
+
 # ReLaGS: Relational Language Gaussian Splatting
 
 **Conference**: CVPR2026  
@@ -165,11 +172,11 @@ The GNN is pre-trained using a **contrastive learning loss**, aiming to align pr
 
 ## Related Papers
 
-- [\[ICCV 2025\] Online Language Splatting](../../ICCV2025/3d_vision/online_language_splatting.md)
 - [\[CVPR 2026\] LangRef3DGS: Natural Language-Guided 3D Referential Segmentation from Partial Observations via 3D Gaussian Splatting](langref3dgs_natural_language-guided_3d_referential_segmentation_from_partial_obs.md)
+- [\[CVPR 2026\] PARSE: Part-Aware Relational Spatial Modeling](parse_part-aware_relational_spatial_modeling.md)
+- [\[ICCV 2025\] Online Language Splatting](../../ICCV2025/3d_vision/online_language_splatting.md)
 - [\[CVPR 2026\] Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning](multi-scale_gaussian-language_map_for_zero-shot_embodied_navigation_and_reasonin.md)
-- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting](sr3r_rethinking_super-resolution_3d_reconstruction_with_feed-forward_gaussian_sp.md)
+- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
 
 </div>
 

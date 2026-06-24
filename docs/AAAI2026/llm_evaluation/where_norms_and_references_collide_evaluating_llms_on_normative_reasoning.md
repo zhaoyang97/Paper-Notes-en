@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Where Norms and References Collide: Evaluating LLMs on Normative Reasoning
 description: >-
-  [AAAI 2026][LLM Evaluation][Social norm reasoning] This paper proposes SNIC, a diagnostic testbed comprising 9,000 instances across 51 scenarios…
+  [AAAI 2026][LLM Evaluation][Social norm reasoning] This paper proposes SNIC, a diagnostic testbed comprising 9,000 instances across 51 scenarios, designed to evaluate whether LLMs can leverage implicit social norms to resolve ambiguous reference expressions (e.g., "hand me the cup" when multiple cups are present). Results show that LLMs achieve an average accuracy of only 44% given scene descriptions alone; adding Prolog-based formal logic yields negligible improvement (44.2%…
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "diagnostic testbed"
   - "implicit knowledge"
 date: 2026-05-08
-content_hash: 7057a0ba5d4a4b14
+content_hash: 7780a0ef9dbf9787
 ---
 
 # Where Norms and References Collide: Evaluating LLMs on Normative Reasoning
@@ -127,11 +127,11 @@ Evaluation only — zero-shot, no training.
 
 ## Related Papers
 
+- [\[ACL 2025\] Where Are We? Evaluating LLM Performance on African Languages](../../ACL2025/llm_evaluation/where_are_we_evaluating_llm_performance_on_african_languages.md)
 - [\[ACL 2026\] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues](../../ACL2026/llm_evaluation/are_they_lovers_or_friends_evaluating_llms39_social_reasoning_in_english_and_kor.md)
 - [\[ACL 2026\] Evaluating Reasoning Models for Queries with Presuppositions](../../ACL2026/llm_evaluation/evaluating_reasoning_models_for_queries_with_presuppositions.md)
-- [\[NeurIPS 2025\] On Evaluating LLM Alignment by Evaluating LLMs as Judges](../../NeurIPS2025/llm_evaluation/on_evaluating_llm_alignment_by_evaluating_llms_as_judges.md)
-- [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](../../ACL2026/llm_evaluation/personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
-- [\[ACL 2026\] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics](../../ACL2026/llm_evaluation/evaluating_legal_reasoning_traces_with_legal_issue_tree_rubrics.md)
+- [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](test-time_diverse_reasoning_by_riemannian_activation_steering.md)
+- [\[ACL 2026\] Presupposition and Reasoning in Conditionals: A Theory-Based Study of Humans and LLMs](../../ACL2026/llm_evaluation/presupposition_and_reasoning_in_conditionals_a_theory-based_study_of_humans_and_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SSM-Aware Token-Efficient VMamba via Adaptive Patch Pruning and Merging for Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][VMamba] TE-VMamba leverages the SS2D state update intensity (step size $\Delta$) and token similarity to guide token reduction. It prunes redundant tokens that contribute minimally to the state in shallow layers based on $\Delta$ and merges semantically similar tokens in deep layers. On Market-1501, it reduces FLOPs by over 60
+  [CVPR 2026][Human Understanding][Person Re-Identification] TE-VMamba leverages the SS2D state update intensity (step size $\Delta$) and token similarity to guide token reduction. It prunes redundant tokens that contribute minimally to the state in shallow layers based on $\Delta$ and merges semantically similar tokens in deep layers. On Market-1501, it reduces FLOPs by over 60% while Rank-1 accuracy actually increases.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - VMamba
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Person Re-Identification"
+  - "Visual State Space Models"
+  - "VMamba"
+  - "Token Pruning"
+  - "Token Merging"
 date: 2026-05-08
-content_hash: 720c477e2d505288
+content_hash: 1cf38ea7a726ae88
 ---
+
 # SSM-Aware Token-Efficient VMamba via Adaptive Patch Pruning and Merging for Person Re-Identification
 
 **Conference**: CVPR 2026  
@@ -143,9 +148,9 @@ For Base, token reduction on both query and gallery reduces FLOPs from 15.46G to
 ## Related Papers
 
 - [\[CVPR 2026\] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification](view-aware_semantic_alignment_for_aerial-ground_person_re-identification.md)
-- [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
 - [\[CVPR 2026\] Pose-guided Enriched Feature Learning for Federated-by-camera Person Re-identification](pose-guided_enriched_feature_learning_for_federated-by-camera_person_re-identifi.md)
-- [\[CVPR 2026\] WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification](whu-mars_a_multispectral_aerial-ground_benchmark_towards_any-scenario_person_re-.md)
+- [\[CVPR 2026\] VRCLIP: Multimodal Canonical Correlation Alignment for CLIP-Driven Vision-Radio Person Re-Identification](vrclip_multimodal_canonical_correlation_alignment_for_clip-driven_vision-radio_p.md)
+- [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
 - [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
 
 </div>

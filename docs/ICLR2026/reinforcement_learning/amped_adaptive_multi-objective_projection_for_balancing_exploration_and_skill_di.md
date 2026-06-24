@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AMPED: Adaptive Multi-objective Projection for balancing Exploration and skill Diversification
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] The AMPED framework is proposed to balance gradient conflicts between exploration (Entropy + RND) and skill diversity (AnInfoNCE) using gradient surgery (PCGrad) during the skill pre-training phase. In the fine-tuning phase, an SAC-based skill selector adaptively chooses optimal skills. The method outperforms SBRL base
+  [ICLR 2026][Reinforcement Learning][Unsupervised skill learning] The AMPED framework is proposed to balance gradient conflicts between exploration (Entropy + RND) and skill diversity (AnInfoNCE) using gradient surgery (PCGrad) during the skill pre-training phase. In the fine-tuning phase, an SAC-based skill selector adaptively chooses optimal skills. The method outperforms SBRL baselines such as DIAYN, CeSD, and CIC on Maze and URLB benchmarks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Unsupervised skill learning"
+  - "gradient surgery"
+  - "exploration-diversity balance"
+  - "skill selector"
+  - "multi-objective RL"
 date: 2026-05-08
-content_hash: 1c3ca377dab377b9
+content_hash: 35ff31145c97c977
 ---
+
 # AMPED: Adaptive Multi-objective Projection for balancing Exploration and skill Diversification
 
 **Conference**: ICLR 2026  
@@ -134,7 +140,7 @@ AMPED achieves the highest returns across multiple URLB tasks, outperforming bas
 - [\[ICLR 2026\] A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning](a_reward-free_viewpoint_on_multi-objective_reinforcement_learning.md)
 - [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](robust_multi-objective_controlled_decoding_of_large_language_models.md)
 - [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
-- [\[ICLR 2026\] Reference Grounded Skill Discovery](reference_grounded_skill_discovery.md)
+- [\[ICLR 2026\] RAMPS: Robust Adaptive Multi-step Predictive Shield](robust_adaptive_multi-step_predictive_shielding.md)
 
 </div>
 

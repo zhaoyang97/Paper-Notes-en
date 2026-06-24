@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] RAMPS：鲁棒自适应多步预测护盾
+  [Paper Note] RAMPS: Robust Adaptive Multi-step Predictive Shield
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] RAMPS employs a globally learned **linear** dynamics model (linear regression or deep Koopman operator) paired with a **robust multi-step Control Barrier Function (CBF)** shield. It scales formal shielding techniques—previously limited to systems with a dozen dimensions—to a 348-dimensional legged locomotion task, redu
+  [ICLR 2026][Reinforcement Learning][Safe Exploration] RAMPS employs a globally learned **linear** dynamics model (linear regression or deep Koopman operator) paired with a **robust multi-step Control Barrier Function (CBF)** shield. It scales formal shielding techniques—previously limited to systems with a dozen dimensions—to a 348-dimensional legged locomotion task, reducing safety violations by up to 90% during training while maintaining competitive task rewards.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Safe Exploration"
+  - "Model Predictive Shielding"
+  - "Control Barrier Functions"
+  - "Koopman Operator"
+  - "High-dimensional Control"
 date: 2026-05-08
-content_hash: 820ff40523035e71
+content_hash: 1181176edf8dabf1
 ---
+
 # RAMPS: Robust Adaptive Multi-step Predictive Shield
 
 **Conference**: ICLR 2026  
@@ -137,15 +143,13 @@ RAMPS variants show significantly fewer violations in high-dimensional tasks tha
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICLR 2026\] SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration](shapo_sharpness-aware_policy_optimization_for_safe_exploration.md)
-- [\[ICLR 2026\] Safe Exploration via Policy Priors](safe_exploration_via_policy_priors.md)
-- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
-- [\[ICLR 2026\] RLP: Reinforcement as a Pretraining Objective](rlp_reinforcement_as_a_pretraining_objective.md)
-- [\[ICLR 2026\] PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity](poli-rl_a_point-to-list_reinforcement_learning_framework_for_conditional_semanti.md)
+- [\[ICLR 2026\] Predictive CVaR Q-Learning](predictive_cvar_q-learning.md)
+- [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](robust_multi-objective_controlled_decoding_of_large_language_models.md)
+- [\[ICLR 2026\] AMPED: Adaptive Multi-objective Projection for balancing Exploration and skill Diversification](amped_adaptive_multi-objective_projection_for_balancing_exploration_and_skill_di.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
+- [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
 
 </div>
 

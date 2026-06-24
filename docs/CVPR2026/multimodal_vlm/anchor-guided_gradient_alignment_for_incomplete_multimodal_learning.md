@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the learning imbalance problem where "reconstructed samples dominate optimization and suppress the representation of complete samples" under high missing rates, ANGA constructs optimization anchors using complete samples and aligns the gradients of reconstructed samples toward these anchors (three-stage modu
+  [CVPR 2026][Multimodal VLM][Incomplete Multimodal Learning] Addressing the learning imbalance problem where "reconstructed samples dominate optimization and suppress the representation of complete samples" under high missing rates, ANGA constructs optimization anchors using complete samples and aligns the gradients of reconstructed samples toward these anchors (three-stage modulation within a conical region). Coupled with a Semantic Enhancement Adapter that generates dynamic…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Incomplete Multimodal Learning"
+  - "Gradient Alignment"
+  - "Optimization Anchor"
+  - "Modality Reconstruction"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: eee4bd98538ce90a
+content_hash: a577f4ecfceab1b9
 ---
+
 # Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,10 @@ Incremental components (MIR / GA / SEA) under 70% text missing:
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Cross-Modal Anchor Alignment for Mitigating Error Accumulation](rethinking_cross-modal_anchor_alignment_for_mitigating_error_accumulation.md)
-- [\[CVPR 2026\] Dual-Modality Anchor-Guided Filtering for Test-time Prompt Tuning](dual-modality_anchor-guided_filtering_for_test-time_prompt_tuning.md)
+- [\[CVPR 2026\] AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models](ag-vas_anchor-guided_zero-shot_visual_anomaly_segmentation_with_large_multimodal.md)
+- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
 - [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
-- [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
-- [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](../../ICCV2025/multimodal_vlm/g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
+- [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](cluster-aware_anchor_learning_for_multi-view_clustering.md)
 
 </div>
 

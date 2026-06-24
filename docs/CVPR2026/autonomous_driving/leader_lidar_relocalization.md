@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LEADER: Learning Reliable Local-to-Global Correspondences for LiDAR Relocalization
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] LEADER achieves 24.1% and 73.9% relative reductions in positioning error on LiDAR relocalization tasks by utilizing a robust projective geometric encoder (yaw-invariant) and a truncated relative reliability loss (to suppress unreliable points).
+  [CVPR 2026 Highlight][Autonomous Driving][LiDAR relocalization] LEADER achieves 24.1% and 73.9% relative reductions in positioning error on LiDAR relocalization tasks by utilizing a robust projective geometric encoder (yaw-invariant) and a truncated relative reliability loss (to suppress unreliable points).
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026 Highlight"
+  - "Autonomous Driving"
+  - "LiDAR relocalization"
+  - "Scene Coordinate Regression"
+  - "Yaw-invariant"
+  - "Reliability estimation"
+  - "Point cloud"
 date: 2026-05-08
-content_hash: 391f166a75033e2f
+content_hash: 97ccd2b7aa43a4d5
 ---
+
 # LEADER: Learning Reliable Local-to-Global Correspondences for LiDAR Relocalization
 
 **Conference**: CVPR 2026 Highlight  

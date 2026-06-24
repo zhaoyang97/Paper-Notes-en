@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning
 description: >-
-  [ICLR 2026][Reinforcement Learning][multitask RL] ScaleZero is proposed to address gradient conflict and plasticity collapse in multi-task learning by introducing a Mixture-of-Experts (MoE) architecture into a unified world model. Combined with a Dynamic Parameter Scaling (DPS) strategy for adaptive model capacity allocation, a single multi-task model achieves perform
+  [ICLR 2026][Reinforcement Learning][multitask RL] ScaleZero is proposed to address gradient conflict and plasticity collapse in multi-task learning by introducing a Mixture-of-Experts (MoE) architecture into a unified world model. Combined with a Dynamic Parameter Scaling (DPS) strategy for adaptive model capacity allocation, a single multi-task model achieves performance comparable to single-task expert models across Atari, DMC, and Jericho benchmarks while reducing environm…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - multitask RL
-  - world model
-  - MoE
-  - MCTS
-  - plasticity collapse
-  - dynamic parameter scaling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "multitask RL"
+  - "world model"
+  - "MoE"
+  - "MCTS"
+  - "plasticity collapse"
+  - "dynamic parameter scaling"
 date: 2026-05-08
-content_hash: 786b3a732aa2a1f6
+content_hash: 985f7beef7a28850
 ---
+
 # One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning
 
 **Conference**: ICLR 2026  
@@ -161,10 +162,10 @@ The model uses pure online RL training without relying on expert data or offline
 ## Related Papers
 
 - [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
-- [\[ICLR 2026\] One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration](one_life_to_learn_inferring_symbolic_world_models_for_stochastic_environments_fr.md)
 - [\[ICLR 2026\] Efficient Estimation of Kernel Surrogate Models for Task Attribution](efficient_estimation_of_kernel_surrogate_models_for_task_attribution.md)
+- [\[ICLR 2026\] One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration](one_life_to_learn_inferring_symbolic_world_models_for_stochastic_environments_fr.md)
 - [\[ICLR 2026\] Efficient Reinforcement Learning by Guiding World Models with Non-Curated Data](efficient_reinforcement_learning_by_guiding_world_models_with_non-curated_data.md)
-- [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
+- [\[ICLR 2026\] Deep SPI: Safe Policy Improvement via World Models](deep_spi_safe_policy_improvement_via_world_models.md)
 
 </div>
 

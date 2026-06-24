@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] PEA decomposes "domain shift" into three geometric distortions in the embedding space: translation (mean shift), scaling (variance shift), and rotation (covariance shift). It utilizes a **backprop-free and architecture-agnostic** layer-wise covariance alignment process. By performing only two forward passes per batch,
+  [ICLR2026][Self-Supervised Learning][Test-Time Adaptation] PEA decomposes "domain shift" into three geometric distortions in the embedding space: translation (mean shift), scaling (variance shift), and rotation (covariance shift). It utilizes a **backprop-free and architecture-agnostic** layer-wise covariance alignment process. By performing only two forward passes per batch, it pulls shifted intermediate features back to the source domain distribution. It achieves SOTA accur…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Test-Time Adaptation"
+  - "Backprop-Free"
+  - "Covariance Alignment"
+  - "Domain Shift"
+  - "Edge Devices"
 date: 2026-05-08
-content_hash: 8cc8d98b38d0274f
+content_hash: 84eafe119e9b0b8b
 ---
+
 # Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment
 
 **Conference**: ICLR2026  
@@ -155,8 +161,8 @@ ViT-Base, cumulative components:
 - [\[ICLR 2026\] Bayesian Test-Time Adaptation via Dirichlet feature projection and GMM-Driven Inference for Motor Imagery EEG Decoding](bayesian_test-time_adaptation_via_dirichlet_feature_projection_and_gmm-driven_in.md)
 - [\[ICLR 2026\] NEO — No-Optimization Test-Time Adaptation through Latent Re-Centering](neo_no-optimization_test-time_adaptation_through_latent_re-centering.md)
 - [\[CVPR 2026\] Energy Waveify and Redistribution for Test-Time Adaptation: A Control System Perspective](../../CVPR2026/self_supervised/energy_waveify_and_redistribution_for_test-time_adaptation_a_control_system_pers.md)
-- [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
 - [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
+- [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
 
 </div>
 

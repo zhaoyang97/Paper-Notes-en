@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tucker-FNO: Tensor Tucker-Fourier Neural Operator and its Universal Approximation Theory
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper employs Tucker tensor decomposition to decompose high-dimensional Fourier Neural Operators (FNO) into a set of 1D FNOs, replacing $d$-dimensional FFTs with $d$ one-dimensional FFTs. This reduces the FFT complexity for 3D PDEs from $O(d_v n^3 \log n^3)$ to $O(3 d_v n \log n)$. This work provides the first pro
+  [ICLR 2026][Physics & Scientific Computing][Fourier Neural Operator] This paper employs Tucker tensor decomposition to decompose high-dimensional Fourier Neural Operators (FNO) into a set of 1D FNOs, replacing $d$-dimensional FFTs with $d$ one-dimensional FFTs. This reduces the FFT complexity for 3D PDEs from $O(d_v n^3 \log n^3)$ to $O(3 d_v n \log n)$. This work provides the first proof that such tensor-decomposed FNOs still satisfy the Universal Approximation Theorem and a…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Fourier Neural Operator"
+  - "Tucker Decomposition"
+  - "Universal Approximation Theorem"
+  - "High-dimensional PDEs"
+  - "Implicit Neural Representation"
 date: 2026-05-08
-content_hash: 7ef6838be7f75094
+content_hash: ddaac2aca1d8b3b9
 ---
+
 # Tucker-FNO: Tensor Tucker-Fourier Neural Operator and its Universal Approximation Theory
 
 **Conference**: ICLR 2026  
@@ -161,11 +167,11 @@ Investigation of latent dimension $d_v$, frequency cut-off $k$, and Tucker rank 
 
 ## Related Papers
 
-- [\[ICLR 2026\] KANO: Kolmogorov–Arnold Neural Operator](kano_kolmogorov-arnold_neural_operator.md)
 - [\[CVPR 2025\] DiffFNO: Diffusion Fourier Neural Operator](../../CVPR2025/physics/difffno_diffusion_fourier_neural_operator.md)
+- [\[ICLR 2026\] KANO: Kolmogorov–Arnold Neural Operator](kano_kolmogorov-arnold_neural_operator.md)
+- [\[ICLR 2026\] Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs](extending_fourier_neural_operators_for_modeling_parameterized_and_coupled_pdes.md)
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](riesz_neural_operator_for_solving_partial_differential_equations.md)
 - [\[ICLR 2026\] Towards a Transferable Acceleration Method for Density Functional Theory](towards_a_transferable_acceleration_method_for_density_functional_theory.md)
-- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
-- [\[ICLR 2026\] Orbital Transformers for Predicting Wavefunctions in Time-Dependent Density Functional Theory](orbital_transformers_for_predicting_wavefunctions_in_time-dependent_density_func.md)
 
 </div>
 

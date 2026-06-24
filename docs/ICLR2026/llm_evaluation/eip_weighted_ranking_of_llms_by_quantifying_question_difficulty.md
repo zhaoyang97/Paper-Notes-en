@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EIP: Weighted Ranking of LLMs by Quantifying Question Difficulty
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper proposes Empirical Interaction Propagation (EIP), which models the binary interactions of "model correctly/incorrectly answering questions" as a bi-directional graph propagation system. By jointly estimating question difficulty and model ability, EIP achieves a finer-grained LLM ranking that aligns closely (
+  [ICLR 2026][LLM Evaluation][Question Difficulty Modeling] This paper proposes Empirical Interaction Propagation (EIP), which models the binary interactions of "model correctly/incorrectly answering questions" as a bi-directional graph propagation system. By jointly estimating question difficulty and model ability, EIP achieves a finer-grained LLM ranking that aligns closely (90%) with human judgment of difficulty compared to pure accuracy metrics.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Question Difficulty Modeling"
+  - "Bi-directional Propagation"
+  - "Model Ability Ranking"
+  - "Human Consistency"
+  - "Non-parametric Evaluation"
 date: 2026-05-08
-content_hash: e5a3042915c6879a
+content_hash: 5f3e2092a03a4c38
 ---
+
 # EIP: Weighted Ranking of LLMs by Quantifying Question Difficulty
 
 **Conference**: ICLR 2026  
@@ -180,8 +186,8 @@ The authors analyze the impact of model pool composition on difficulty estimatio
 - [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](../../ACL2026/llm_evaluation/question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
 - [\[ICLR 2026\] Textual Bayes: Quantifying Prompt Uncertainty in LLM-based Systems](textual_bayes_quantifying_prompt_uncertainty_in_llm-based_systems.md)
 - [\[ICLR 2026\] Harnessing Temporal Databases for Systematic Evaluation of Factual Time-Sensitive Question-Answering in LLMs](harnessing_temporal_databases_for_systematic_evaluation_of_factual_time-sensitiv.md)
-- [\[ICLR 2026\] CogniLoad: A Synthetic Natural Language Reasoning Benchmark With Tunable Length, Intrinsic Difficulty, and Distractor Density](cogniload_a_synthetic_natural_language_reasoning_benchmark_with_tunable_length_i.md)
 - [\[NeurIPS 2025\] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving](../../NeurIPS2025/llm_evaluation/evalearn_quantifying_the_learning_capability_and_efficiency_of_llms_via_sequenti.md)
+- [\[ICLR 2026\] CogniLoad: A Synthetic Natural Language Reasoning Benchmark With Tunable Length, Intrinsic Difficulty, and Distractor Density](cogniload_a_synthetic_natural_language_reasoning_benchmark_with_tunable_length_i.md)
 
 </div>
 

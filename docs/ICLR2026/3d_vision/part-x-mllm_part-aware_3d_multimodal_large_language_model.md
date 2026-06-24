@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model
 description: >-
-  [ICLR 2026][3D Vision][3D MLLM] Part-X-MLLM is a native 3D, part-aware multimodal large model that unifies heterogeneous 3D tasks—such as generation, editing, and QA—into "writing programs with a part-based grammar." Given an RGB point cloud and natural language, it autoregressively outputs a token sequence encoding part bounding boxes, semantic desc
+  [ICLR 2026][3D Vision][3D MLLM] Part-X-MLLM is a native 3D, part-aware multimodal large model that unifies heterogeneous 3D tasks—such as generation, editing, and QA—into "writing programs with a part-based grammar." Given an RGB point cloud and natural language, it autoregressively outputs a token sequence encoding part bounding boxes, semantic descriptions, and editing instructions. This sequence is then executed by off-the-shelf geometry engines…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D MLLM
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D MLLM"
+  - "Part-level understanding"
+  - "Structured planning language"
+  - "Dual encoder"
+  - "Part generation and editing"
 date: 2026-05-08
-content_hash: 43caf038461f1ee4
+content_hash: 417b4029c9193366
 ---
+
 # Part-X-MLLM: Part-aware 3D Multimodal Large Language Model
 
 **Conference**: ICLR 2026  
@@ -130,7 +135,7 @@ Dual Encoder vs. Single Encoder (Single Encoder fuses XYZ and RGB into one point
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -138,7 +143,7 @@ Dual Encoder vs. Single Encoder (Single Encoder fuses XYZ and RGB into one point
 - [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](holopart_generative_3d_part_amodal_segmentation.md)
 - [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](../../CVPR2026/3d_vision/part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](../../CVPR2026/3d_vision/learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
-- [\[ICLR 2026\] MultiMat: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models](multimat_multimodal_program_synthesis_for_procedural_materials_using_large_multi.md)
+- [\[ICLR 2026\] FullPart: Generating Each 3D Part at Full Resolution](fullpart_generating_each_3d_part_at_full_resolution.md)
 
 </div>
 

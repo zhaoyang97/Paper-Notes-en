@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Publication Choice Problem
 description: >-
-  [AAAI 2026][publication game] This paper proposes the "publication choice problem," a game-theoretic framework that models the bidirectional interaction between researchers' publication strategies and venue influence. It…
+  [AAAI 2026 Oral][publication game] This paper proposes the "publication choice problem," a game-theoretic framework that models the bidirectional interaction between researchers' publication strategies and venue influence. It proves the existence and uniqueness of pure-strategy equilibria and analyzes the effects of Spotlight paper labels on the academic ecosystem.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "publication game"
   - "game-theoretic equilibrium"
   - "academic venue influence"
   - "Spotlight label"
   - "researcher strategy"
 date: 2026-05-08
-content_hash: 1d30ece24f8691bb
+content_hash: 8afc489088173750
 ---
 
 # The Publication Choice Problem
@@ -131,10 +131,10 @@ This is a theoretical game-theoretic paper; the main results are validated prima
 ## Related Papers
 
 - [\[AAAI 2026\] Automated Reproducibility Has a Problem Statement Problem](automated_reproducibility_has_a_problem_statement_problem.md)
+- [\[ACL 2025\] Generating Plausible Distractors for Multiple-Choice Questions via Student Choice Prediction](../../ACL2025/others/distractor_gen_multiple_choice.md)
 - [\[NeurIPS 2025\] Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning](../../NeurIPS2025/others/put_cash_on_bandits_a_max_k-armed_problem_for_automated_machine_learning.md)
-- [\[AAAI 2026\] Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)
-- [\[AAAI 2026\] Model Change for Description Logic Concepts](model_change_for_description_logic_concepts.md)
 - [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](hybridla_hybrid_generation_for_document_layout_analysis.md)
+- [\[AAAI 2026\] Bandit Learning in Housing Markets](bandit_learning_in_housing_markets.md)
 
 </div>
 

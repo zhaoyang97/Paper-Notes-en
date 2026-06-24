@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Democratizing LLM Efficiency: From Hyperscale Optimizations to Universal Deployability
 description: >-
-  [AAAI 2026][LLM Safety][LLM efficiency] This position paper argues that current LLM efficiency research is dominated by hyperscale assumptions. It identifies five open research challenges targeting small- and medium-scal…
+  [AAAI 2026][LLM Safety][LLM efficiency] This position paper argues that current LLM efficiency research is dominated by hyperscale assumptions. It identifies five open research challenges targeting small- and medium-scale deployers, and advocates for redefining efficiency metrics through an Overhead-Aware Efficiency (OAE) framework.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "overhead-aware efficiency"
   - "position paper"
 date: 2026-05-08
-content_hash: 0ac7a8251561e7ff
+content_hash: 680a82060a792ff4
 ---
 
 # Democratizing LLM Efficiency: From Hyperscale Optimizations to Universal Deployability
@@ -163,10 +163,10 @@ As a position paper, this work involves no specific training procedures. The aut
 ## Related Papers
 
 - [\[AAAI 2026\] LAMP: Learning Universal Adversarial Perturbations for Multi-Image Tasks via Pre-trained Models](lamp_learning_universal_adversarial_perturbations_for_multi-image_tasks_via_pre-.md)
-- [\[ICLR 2026\] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models](../../ICLR2026/llm_safety/improving_the_trade-off_between_watermark_strength_and_speculative_sampling_effi.md)
+- [\[ICML 2025\] Improving Continual Learning Performance and Efficiency with Auxiliary Classifiers](../../ICML2025/llm_safety/improving_continual_learning_performance_and_efficiency_with_auxiliary_classifie.md)
+- [\[ICLR 2026\] Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks](../../ICLR2026/llm_safety/constitutional_classifiers_efficient_production-grade_defenses_against_universal.md)
 - [\[ICLR 2026\] Redirection for Erasing Memory (REM): Towards a Universal Unlearning Method for Corrupted Data](../../ICLR2026/llm_safety/redirection_for_erasing_memory_rem_towards_a_universal_unlearning_method_for_cor.md)
-- [\[NeurIPS 2025\] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text](../../NeurIPS2025/llm_safety/adversarial_paraphrasing_a_universal_attack_for_humanizing_ai-generated_text.md)
-- [\[AAAI 2026\] iSeal: Encrypted Fingerprinting for Reliable LLM Ownership Verification](iseal_encrypted_fingerprinting_for_reliable_llm_ownership_verification.md)
+- [\[ICLR 2026\] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models](../../ICLR2026/llm_safety/improving_the_trade-off_between_watermark_strength_and_speculative_sampling_effi.md)
 
 </div>
 

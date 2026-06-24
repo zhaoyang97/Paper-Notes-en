@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] MAVEN: A Mesh-Aware Volumetric Encoding Network for Simulating 3D Flexible Deformation
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] MAVEN treats 2D facets and 3D cells within the mesh as explicit nodes for message passing, utilizing "geometry-aware volumetric encoding" to more accurately simulate flexible deformation and contact of 3D solids on sparse meshes.
+  [ICLR 2026][3D Vision][Mesh Simulation] MAVEN treats 2D facets and 3D cells within the mesh as explicit nodes for message passing, utilizing "geometry-aware volumetric encoding" to more accurately simulate flexible deformation and contact of 3D solids on sparse meshes.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Mesh Simulation"
+  - "Graph Neural Networks"
+  - "3D Flexible Deformation"
+  - "Volumetric Encoding"
+  - "Contact Modeling"
+  - "Sparse Mesh"
 date: 2026-05-08
-content_hash: 38d674b0aa6bb2d4
+content_hash: 323e2e8133a6d1c8
 ---
+
 # MAVEN: A Mesh-Aware Volumetric Encoding Network for Simulating 3D Flexible Deformation
 
 **Conference**: ICLR 2026  

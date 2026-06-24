@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Mitigating Hallucination in Vision-Language Model with Depth and Spatial-aware Key-Value Refinement
 description: >-
-  [ICLR 2026][Hallucination Detection][KV cache] The authors observe that visual hallucinations in VLMs stem from the "loss of coherence and isotropic divergence of Key vectors for adjacent visual tokens." Consequently, they propose DSCR, a training-free method that utilizes monocular depth and 2D spatial proximity to regroup Key/Value vectors of the same object and
+  [ICLR 2026][Hallucination Detection][Visual Hallucination] The authors observe that visual hallucinations in VLMs stem from the "loss of coherence and isotropic divergence of Key vectors for adjacent visual tokens." Consequently, they propose DSCR, a training-free method that utilizes monocular depth and 2D spatial proximity to regroup Key/Value vectors of the same object and push apart those across different surfaces. Without fine-tuning, this redirects cross-modal attention…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - KV cache
-  - VLM
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Visual Hallucination"
+  - "KV cache"
+  - "Depth Prior"
+  - "Spatial Proximity"
+  - "Training-free"
+  - "VLM"
 date: 2026-05-08
-content_hash: 02097f073793c2e2
+content_hash: 839fd33c9a807b53
 ---
+
 # Mitigating Hallucination in Vision-Language Model with Depth and Spatial-aware Key-Value Refinement
 
 **Conference**: ICLR 2026  
@@ -127,10 +132,10 @@ Efficiency and Depth Model Robustness:
 ## Related Papers
 
 - [\[CVPR 2026\] KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing](../../CVPR2026/hallucination/kvsmooth_mitigating_hallucination_in_multi-modal_large_language_models_through_k.md)
-- [\[ICLR 2026\] Hallucination-aware Intermediate Representation Edit in Large Vision-Language Models](hallucination-aware_intermediate_representation_edit_in_large_vision-language_mo.md)
 - [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
+- [\[ICLR 2026\] Hallucination-aware Intermediate Representation Edit in Large Vision-Language Models](hallucination-aware_intermediate_representation_edit_in_large_vision-language_mo.md)
 - [\[ICLR 2026\] Copy-Paste to Mitigate Large Language Model Hallucinations](copy-paste_to_mitigate_large_language_model_hallucinations.md)
-- [\[ICLR 2026\] NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection](ndad_negative-direction_aware_decoding_for_large_language_models_via_controllabl.md)
+- [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](../../CVPR2026/hallucination/tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
 
 </div>
 

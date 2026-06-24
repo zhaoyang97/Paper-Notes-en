@@ -2,16 +2,22 @@
 title: >-
   [Paper Note] InputDSA: Demixing, then comparing recurrent and externally driven dynamics
 description: >-
-  [ICLR 2026][Interpretability][DSA] The authors extend the Dynamical Similarity Analysis (DSA) method from autonomous to non-autonomous systems. By utilizing Subspace Dynamic Mode Decomposition with control (SubspaceDMDc) to simultaneously estimate the intrinsic operator $A$ and the input operator $B$, InputDSA enables the separate comparison of "intrins
+  [ICLR 2026][Interpretability][Dynamical Similarity] The authors extend the Dynamical Similarity Analysis (DSA) method from autonomous to non-autonomous systems. By utilizing Subspace Dynamic Mode Decomposition with control (SubspaceDMDc) to simultaneously estimate the intrinsic operator $A$ and the input operator $B$, InputDSA enables the separate comparison of "intrinsic dynamics" and "input-driven dynamics" under partial observation, noise…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - DSA
-  - Koopman
-  - DMDc
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Dynamical Similarity"
+  - "DSA"
+  - "Koopman"
+  - "DMDc"
+  - "Subspace Identification"
+  - "Input-driven dynamics"
+  - "RNN"
+  - "Neural Data"
 date: 2026-05-08
-content_hash: 8d482607c5d636b7
+content_hash: 87606f39deb67b99
 ---
+
 # InputDSA: Demixing, then comparing recurrent and externally driven dynamics
 
 **Conference**: ICLR 2026  
@@ -107,10 +113,20 @@ On a 20-dimensional random RNN (only 2 dimensions observed, 5000 time points), f
 - **Value**: ⭐⭐⭐⭐⭐ Provides a robust, efficient tool for comparing brain regions, model validation, and training dynamics.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Block Recurrent Dynamics in Vision Transformers](block_recurrent_dynamics_in_vision_transformers.md)
+- [\[ICLR 2026\] Comparing the learning dynamics of in-context learning and fine-tuning in language models](comparing_the_learning_dynamics_of_in-context_learning_and_fine-tuning_in_langua.md)
+- [\[ICLR 2026\] Discovering Alternative Solutions Beyond the Simplicity Bias in Recurrent Neural Networks](discovering_alternative_solutions_beyond_the_simplicity_bias_in_recurrent_neural.md)
+- [\[ICLR 2026\] ExPO-HM: Learning to Explain-then-Detect for Hateful Meme Detection](expo-hm_learning_to_explain-then-detect_for_hateful_meme_detection.md)
+- [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](influence_dynamics_and_stagewise_data_attribution.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Block Recurrent Dynamics in Vision Transformers](block_recurrent_dynamics_in_vision_transformers.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Multi-Stage Recovery Framework for Kronecker Compressed Sensing
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes a "hierarchical observation" perspective for Kronecker Compressed Sensing (KCS), noting that each factor matrix of the Kronecker product measurement matrix actually probes signal sparsity at different levels. Based on this, it designs a Multi-Stage Recovery (MSR) framework that decomposes high-dimen
+  [ICLR 2026][Optimization][Kronecker Compressed Sensing] This paper proposes a "hierarchical observation" perspective for Kronecker Compressed Sensing (KCS), noting that each factor matrix of the Kronecker product measurement matrix actually probes signal sparsity at different levels. Based on this, it designs a Multi-Stage Recovery (MSR) framework that decomposes high-dimensional recovery into layer-wise MMV subproblems. MSR uniformly handles standard, hierarchical…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Kronecker Compressed Sensing"
+  - "Sparse Recovery"
+  - "Hierarchical Sparsity"
+  - "RIP Analysis"
+  - "Tensor Unfolding"
 date: 2026-05-08
-content_hash: 842edba98ca82360
+content_hash: 9e7e0401eb54dde3
 ---
+
 # Hierarchical Multi-Stage Recovery Framework for Kronecker Compressed Sensing
 
 **Conference**: ICLR 2026  

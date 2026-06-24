@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] The Antibody defense framework is proposed: during the alignment stage, flatness regularization forces the model into a flat region of harmful loss (small gradients $\rightarrow$ difficult to attack); during the fine-tuning stage, a sample weighting scheme based on the model's safety knowledge (likelihood ratio of targ
+  [ICLR 2026][Computational Biology][Harmful Fine-tuning Attack] The Antibody defense framework is proposed: during the alignment stage, flatness regularization forces the model into a flat region of harmful loss (small gradients $\rightarrow$ difficult to attack); during the fine-tuning stage, a sample weighting scheme based on the model's safety knowledge (likelihood ratio of target completion vs. refusal) is used to suppress the learning of harmful samples. The average Harmf…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Harmful Fine-tuning Attack"
+  - "Safety Alignment"
+  - "Loss Flatness"
+  - "Sample Weighting"
+  - "FTaaS Safety"
 date: 2026-05-08
-content_hash: 70ba14ff31b75523
+content_hash: 01ce68425f70128e
 ---
+
 # Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence
 
 **Conference**: ICLR 2026  

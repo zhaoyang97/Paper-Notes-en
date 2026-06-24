@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Anchor Frame Bridging for Coherent First-Last Frame Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Diffusion Model] To address semantic decay and visual collapse in the intermediate frames of First-Last Frame Video Generation (FLF2V), this paper proposes a training-free Anchor Frame Bridging (AFB) method. By adaptively inserting an "anchor frame" at the point of most severe temporal rupture to "relay" semantics from start to end, AF
+  [ICLR2026][Video Generation][First-Last Frame Video Generation] To address semantic decay and visual collapse in the intermediate frames of First-Last Frame Video Generation (FLF2V), this paper proposes a training-free Anchor Frame Bridging (AFB) method. By adaptively inserting an "anchor frame" at the point of most severe temporal rupture to "relay" semantics from start to end, AFB achieves a 16.58% improvement in FVD and 10.21% in PSNR on Wan2.1-I2V.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Diffusion Model
+  - "ICLR2026"
+  - "Video Generation"
+  - "First-Last Frame Video Generation"
+  - "Anchor Frame"
+  - "Training-free"
+  - "Temporal Consistency"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 2bf28bc64e1114b1
+content_hash: 2995b02c3531f5fa
 ---
+
 # Anchor Frame Bridging for Coherent First-Last Frame Video Generation
 
 **Conference**: ICLR2026  
@@ -128,8 +133,8 @@ Wan2.1 + AFB achieves SOTA: reducing FVD from 449.68 to 375.12 (Gain: 16.58%) an
 - [\[ICLR 2026\] Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine-tuning.md)
 - [\[CVPR 2026\] FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing](../../CVPR2026/video_generation/ffp-300k_scaling_first-frame_propagation_for_generalizable_video_editing.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
-- [\[ICLR 2026\] Realtime Video Frame Interpolation Using One-Step Diffusion Sampling](realtime_video_frame_interpolation_using_one-step_diffusion_sampling.md)
-- [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](../../CVPR2026/video_generation/towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
+- [\[CVPR 2025\] Generative Inbetweening through Frame-wise Conditions-Driven Video Generation](../../CVPR2025/video_generation/generative_inbetweening_through_frame-wise_conditions-driven_video_generation.md)
+- [\[ICML 2026\] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos](../../ICML2026/video_generation/enhancing_train-free_infinite-frame_generation_for_consistent_long_videos.md)
 
 </div>
 

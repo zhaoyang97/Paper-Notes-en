@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild
 description: >-
-  [ICLR 2026][Image Generation][single-view 3D human reconstruction] The paper proposes DrPose, which enhances 3D human reconstruction quality in challenging/acrobatic poses by maximizing PoseScore (joint consistency between multi-view latent images and GT 3D poses) via direct reward fine-tuning and KL regularization. It utilizes the DrPose15K dataset (synthesized from Motion-X poses an
+  [ICLR 2026][Image Generation][single-view 3D human reconstruction] The paper proposes DrPose, which enhances 3D human reconstruction quality in challenging/acrobatic poses by maximizing PoseScore (joint consistency between multi-view latent images and GT 3D poses) via direct reward fine-tuning and KL regularization. It utilizes the DrPose15K dataset (synthesized from Motion-X poses and the MIMO video generator) to bridge the gap in 3D human data diversity.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - single-view 3D human reconstruction
-  - multi-view diffusion
-  - direct reward fine-tuning
-  - pose alignment
-  - PoseScore
+  - "ICLR 2026"
+  - "Image Generation"
+  - "single-view 3D human reconstruction"
+  - "multi-view diffusion"
+  - "direct reward fine-tuning"
+  - "pose alignment"
+  - "PoseScore"
 date: 2026-05-08
-content_hash: 759a20068a02da16
+content_hash: f85fa4931ac30503
 ---
+
 # Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild
 
 **Conference**: ICLR 2026  
@@ -116,10 +117,20 @@ DrPose extends direct reward tuning concepts to the 3D human generation task by 
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Reward Sharpness-Aware Fine-Tuning for Diffusion Models](../../CVPR2026/image_generation/reward_sharpness-aware_fine-tuning_for_diffusion_models.md)
+- [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
+- [\[ICLR 2026\] Diffusion Fine-Tuning via Reparameterized Policy Gradient of the Soft Q-Function](diffusion_fine-tuning_via_reparameterized_policy_gradient_of_the_soft_q-function.md)
+- [\[NeurIPS 2025\] GeneMAN: Generalizable Single-Image 3D Human Reconstruction from Multi-Source Human Data](../../NeurIPS2025/image_generation/geneman_generalizable_single-image_3d_human_reconstruction_from_multi-source_hum.md)
+- [\[ICLR 2026\] Half-order Fine-Tuning for Diffusion Model: A Recursive Likelihood Ratio Optimizer](half-order_fine-tuning_for_diffusion_model_a_recursive_likelihood_ratio_optimize.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] WILD-Diffusion：一种受 WDRO 启发的有限数据扩散模型训练方法](wild-diffusion_a_wdro_inspired_training_method_for_diffusion_models_under_limite.md)

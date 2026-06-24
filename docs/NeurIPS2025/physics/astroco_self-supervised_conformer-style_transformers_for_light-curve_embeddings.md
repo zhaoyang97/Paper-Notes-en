@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings
 description: >-
-  [NeurIPS 2025 (ML4PS Workshop)][Physics & Scientific Computing][Self-supervised learning] This paper proposes AstroCo, a self-supervised encoder that introduces the Conformer architecture (attention + depthwise separable…
+  [NeurIPS 2025 (ML4PS Workshop)][Physics & Scientific Computing][Self-supervised learning] This paper proposes AstroCo, a self-supervised encoder that introduces the Conformer architecture (attention + depthwise separable convolution + gating) for irregular astronomical light curves. On the MACHO dataset, AstroCo reduces reconstruction error by 61–70% compared to Astromer v1/v2 and improves few-shot classification macro-F1 by approximately 7%.
 tags:
   - "NeurIPS 2025 (ML4PS Workshop)"
   - "Physics & Scientific Computing"
@@ -13,7 +13,7 @@ tags:
   - "masked reconstruction"
   - "few-shot classification"
 date: 2026-05-08
-content_hash: a7a7ec98fae2b3f8
+content_hash: d618ad9e54264299
 ---
 
 # AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings
@@ -177,11 +177,11 @@ Light curve {(t_i, m_i, σ_i)}
 
 ## Related Papers
 
+- [\[ICLR 2026\] Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems](../../ICLR2026/physics/self-supervised_evolution_operator_learning_for_high-dimensional_dynamical_syste.md)
 - [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](quantum_doubly_stochastic_transformers.md)
 - [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
-- [\[ICLR 2026\] Supervised Metric Regularization Through Alternating Optimization for Multi-Regime PINNs](../../ICLR2026/physics/supervised_metric_regularization_through_alternating_optimization_for_multi-regi.md)
-- [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](../../ICML2026/physics/distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
-- [\[NeurIPS 2025\] Toward Complete Merger Identification at Cosmic Noon with Deep Learning](toward_complete_merger_identification_at_cosmic_noon_with_deep_learning.md)
+- [\[ICML 2025\] Sum-of-Parts: Self-Attributing Neural Networks with End-to-End Learning of Feature Groups](../../ICML2025/physics/sum-of-parts_self-attributing_neural_networks_with_end-to-end_learning_of_featur.md)
+- [\[ICLR 2026\] (U)NFV: (Un)supervised Neural Finite Volume Methods for Solving Hyperbolic PDEs](../../ICLR2026/physics/unfv_unsupervised_neural_finite_volume_methods_for_solving_hyperbolic_pdes.md)
 
 </div>
 

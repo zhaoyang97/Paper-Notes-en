@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] SFT Doesn't Always Hurt General Capabilities: Revisiting Domain-Specific Fine-Tuning in LLMs
 description: >-
-  [ICLR 2026][Model Compression][SFT] This paper systematically revisits the impact of domain-specific SFT on the general capabilities of LLMs. It finds that **using a smaller learning rate can significantly mitigate general capability degradation**, and proposes the Token-Adaptive Loss Reweighting (TALR) method to further optimize the trade-off between do
+  [ICLR2026][Model Compression][SFT] This paper systematically revisits the impact of domain-specific SFT on the general capabilities of LLMs. It finds that **using a smaller learning rate can significantly mitigate general capability degradation**, and proposes the Token-Adaptive Loss Reweighting (TALR) method to further optimize the trade-off between domain adaptation and general capabilities by adaptively down-weighting the loss of low-probability tokens.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - SFT
+  - "ICLR2026"
+  - "Model Compression"
+  - "SFT"
+  - "domain fine-tuning"
+  - "general capability degradation"
+  - "learning rate"
+  - "token-adaptive reweighting"
+  - "continual learning"
+  - "LLM"
 date: 2026-05-08
-content_hash: a6edccfa392133bb
+content_hash: 970ad44393496f5f
 ---
+
 # SFT Doesn't Always Hurt General Capabilities: Revisiting Domain-Specific Fine-Tuning in LLMs
 
 **Conference**: ICLR2026  
@@ -129,9 +136,9 @@ TALR achieves the best Pareto trade-off under the data-oblivious setting.
 
 - [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
 - [\[CVPR 2026\] S2FT: Parameter-Efficient Fine-Tuning in Sparse Spectrum Domain](../../CVPR2026/model_compression/s2ft_parameter-efficient_fine-tuning_in_sparse_spectrum_domain.md)
+- [\[ACL 2025\] DoMIX: An Efficient Framework for Exploiting Domain Knowledge in Fine-Tuning](../../ACL2025/model_compression/domix_an_efficient_framework_for_exploiting.md)
 - [\[AAAI 2026\] Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation](../../AAAI2026/model_compression/consensus-aligned_neuron_efficient_fine-tuning_large_language_models_for_multi-d.md)
 - [\[ICLR 2026\] GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs](gradpruner_gradient-guided_layer_pruning_enabling_efficient_fine-tuning_and_infe.md)
-- [\[ACL 2025\] DoMIX: An Efficient Framework for Exploiting Domain Knowledge in Fine-Tuning](../../ACL2025/model_compression/domix_an_efficient_framework_for_exploiting.md)
 
 </div>
 

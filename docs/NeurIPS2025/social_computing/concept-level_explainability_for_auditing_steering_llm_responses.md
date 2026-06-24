@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Concept-Level Explainability for Auditing & Steering LLM Responses
 description: >-
-  [NeurIPS 2025][Social Computing][Explainability] This paper proposes ConceptX, an LLM explainability method based on concept-level (rather than token-level) Shapley attribution. It measures the influence of input concept…
+  [NeurIPS 2025][Social Computing][Explainability] This paper proposes ConceptX, an LLM explainability method based on concept-level (rather than token-level) Shapley attribution. It measures the influence of input concepts on outputs via semantic similarity rather than token overlap, and can be used to audit bias and steer LLM outputs through prompt editing — reducing attack success rate from 0.463 to 0.242 in jailbreak defense.
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "Shapley Values"
   - "Bias Auditing"
 date: 2026-05-08
-content_hash: 2bc27b54faa399ce
+content_hash: bedb11fbc9c5d6f6
 ---
 
 # Concept-Level Explainability for Auditing & Steering LLM Responses
@@ -131,11 +131,11 @@ ConceptX operates in two stages: (1) **Concept Extraction** — identifying sema
 
 ## Related Papers
 
+- [\[ICLR 2026\] Steering the Herd: A Framework for LLM-Based Control of Social Learning](../../ICLR2026/social_computing/steering_the_herd_a_framework_for_llm-based_control_of_social_learning.md)
 - [\[ACL 2026\] Who Gets Which Message? Auditing Demographic Bias in LLM-Generated Targeted Text](../../ACL2026/social_computing/who_gets_which_message_auditing_demographic_bias_in_llm-generated_targeted_text.md)
-- [\[CVPR 2026\] Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection](../../CVPR2026/social_computing/probabilistic_concept_graph_reasoning_for_multimodal_misinformation_detection.md)
-- [\[ICLR 2026\] BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses](../../ICLR2026/social_computing/biasfreebench_a_benchmark_for_mitigating_bias_in_large_language_model_responses.md)
-- [\[ACL 2026\] Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning](../../ACL2026/social_computing/prompt-level_distillation_a_non-parametric_alternative_to_model_fine-tuning_for_.md)
-- [\[ACL 2026\] Persona-E2: A Human-Grounded Dataset for Personality-Shaped Emotional Responses to Textual Events](../../ACL2026/social_computing/persona-e2_a_human-grounded_dataset_for_personality-shaped_emotional_responses_t.md)
+- [\[ACL 2025\] FairSteer: Inference Time Debiasing for LLMs with Dynamic Activation Steering](../../ACL2025/social_computing/fairsteer_inference_time_debiasing_for_llms_with_dynamic_activation_steering.md)
+- [\[ACL 2025\] Silencing Empowerment, Allowing Bigotry: Auditing the Moderation of Hate Speech on Twitch](../../ACL2025/social_computing/silencing_empowerment_allowing_bigotry_auditing_the_moderation_of_hate_speech_on.md)
+- [\[ACL 2025\] Evaluation of LLM Vulnerabilities to Being Misused for Personalized Disinformation Generation](../../ACL2025/social_computing/llm_personalized_disinformation.md)
 
 </div>
 

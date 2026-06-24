@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified Camera Positional Encoding for Controlled Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] This paper proposes UCPE, which unifies the complete camera geometry (6-DoF pose + intrinsics + lens distortion) into Transformer attention. It leverages "Relative Ray Encoding" to lower the positional encoding from the camera level to the ray level to accommodate non-linear lenses like fisheye and wide-angle. Addition
+  [CVPR 2026][Video Generation][Camera Positional Encoding] This paper proposes UCPE, which unifies the complete camera geometry (6-DoF pose + intrinsics + lens distortion) into Transformer attention. It leverages "Relative Ray Encoding" to lower the positional encoding from the camera level to the ray level to accommodate non-linear lenses like fisheye and wide-angle. Additionally, "Absolute Orientation Encoding" is introduced to provide global references for pitch and roll. U…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Camera Positional Encoding"
+  - "Ray Encoding"
+  - "Lens Distortion"
+  - "Absolute Orientation"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: 6480f2dc9fd39e18
+content_hash: d11aef736dbd2398
 ---
+
 # Unified Camera Positional Encoding for Controlled Video Generation
 
 **Conference**: CVPR 2026  
@@ -156,7 +162,7 @@ Generalization on RealEstate10K (100 clips, fixed 100° pinhole, zero-shot): Our
 
 ## Related Papers
 
-- [\[CVPR 2026\] TV2TV: A Unified Framework for Interleaved Language and Video Generation](tv2tv_a_unified_framework_for_interleaved_language_and_video_generation.md)
+- [\[CVPR 2026\] ReDirector: Creating Any-Length Video Retakes with Rotary Camera Encoding](redirector_creating_any-length_video_retakes_with_rotary_camera_encoding.md)
 - [\[CVPR 2026\] Yume1.5: A Text-Controlled Interactive World Generation Model](yume15_a_text-controlled_interactive_world_generation_model.md)
 - [\[CVPR 2026\] TGT: Text-Grounded Trajectories for Locally Controlled Video Generation](tgt_text-grounded_trajectories_for_locally_controlled_video_generation.md)
 - [\[CVPR 2026\] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation](unityvideo_unified_multi-modal_multi-task_learning_for_enhancing_world-aware_vid.md)

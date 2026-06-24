@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation
 description: >-
-  [AAAI 2026][Multi-Agent][Equity research report generation] This paper is the first to systematically define the task of automated Equity Research Report (ERR) generation. It constructs the FinRpt dataset (6…
+  [AAAI 2026][Multi-Agent][Equity research report generation] This paper is the first to systematically define the task of automated Equity Research Report (ERR) generation. It constructs the FinRpt dataset (6,825 high-quality bilingual reports integrating 7 categories of financial data), proposes an 11-metric evaluation framework, and designs the FinRpt-Gen generation framework with 9 collaborative agents featuring a three-stage enhancement pipeline (rating correction / expert…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "evaluation system"
   - "report enhancement"
 date: 2026-05-08
-content_hash: 62fc03adaddc1514
+content_hash: a25a76a5d2824330
 ---
 
 # FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation

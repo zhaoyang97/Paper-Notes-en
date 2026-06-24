@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Escaping Policy Contraction: Contraction-Aware PPO (CaPPO) for Stable Language Model Fine-Tuning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLHF] This paper points out that PPO in RLHF causes the policy "support set" to gradually contract (entropy collapse, increased repetition, and the zeroing out of probabilities for reasonable SFT answers). It proposes the Support Retention Ratio (SRR) to quantify this phenomenon and designs CaPPO—treating reward, entropy, an
+  [ICLR 2026][Reinforcement Learning][RLHF] This paper points out that PPO in RLHF causes the policy "support set" to gradually contract (entropy collapse, increased repetition, and the zeroing out of probabilities for reasonable SFT answers). It proposes the Support Retention Ratio (SRR) to quantify this phenomenon and designs CaPPO—treating reward, entropy, and KL as equal objectives for minimum-norm multi-gradient updates, combined with an entropy scheduling controller. CaPP…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLHF
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLHF"
+  - "PPO"
+  - "Policy Contraction"
+  - "Multi-objective Optimization"
+  - "Entropy Scheduling"
 date: 2026-05-08
-content_hash: b0d7932164dc800c
+content_hash: 348b4ac9dd6a1b20
 ---
+
 # Escaping Policy Contraction: Contraction-Aware PPO (CaPPO) for Stable Language Model Fine-Tuning
 
 **Conference**: ICLR 2026  

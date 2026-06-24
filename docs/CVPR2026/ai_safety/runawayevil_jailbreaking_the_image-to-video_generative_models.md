@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RunawayEvil: Jailbreaking the Image-to-Video Generative Models
 description: >-
-  [CVPR 2026][AI Safety][Reinforcement Learning] This paper proposes RunawayEvil—the first multimodal jailbreak attack framework targeting "Image-to-Video (I2V)" models. It utilizes a "Strategy-Tactic-Action" paradigm to coordinate attacks across text and image modalities, evolving through Reinforcement Learning and LLMs to increase attack success rates on COCO2017 b
+  [CVPR 2026][AI Safety][Jailbreak Attack] This paper proposes RunawayEvil—the first multimodal jailbreak attack framework targeting "Image-to-Video (I2V)" models. It utilizes a "Strategy-Tactic-Action" paradigm to coordinate attacks across text and image modalities, evolving through Reinforcement Learning and LLMs to increase attack success rates on COCO2017 by 58.5%–79% compared to existing methods.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Jailbreak Attack"
+  - "Image-to-Video"
+  - "Multimodal Attack"
+  - "Reinforcement Learning"
+  - "Self-evolving Agent"
 date: 2026-05-08
-content_hash: adb5407195cd5592
+content_hash: 515e1566711124e2
 ---
+
 # RunawayEvil: Jailbreaking the Image-to-Video Generative Models
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ Modality/Step ablation (Wan/QWEN, ASR %): Text-only 58.0, Image-only 49.0, Separ
 
 ## Related Papers
 
+- [\[ICLR 2026\] Jailbreaking on Text-to-Video Models via Scene Splitting Strategy](../../ICLR2026/ai_safety/jailbreaking_on_text-to-video_models_via_scene_splitting_strategy.md)
 - [\[CVPR 2026\] JANUS: A Lightweight Framework for Jailbreaking Text-to-Image Models via Distribution Optimization](janus_a_lightweight_framework_for_jailbreaking_text-to-image_models_via_distribu.md)
-- [\[CVPR 2026\] Jailbreaking Vision-Language Models via Dissonance-Guided Suffix Optimization and Image-Phrase Injection](jailbreaking_vision-language_models_via_dissonance-guided_suffix_optimization_an.md)
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
+- [\[CVPR 2026\] Jailbreaking Vision-Language Models via Dissonance-Guided Suffix Optimization and Image-Phrase Injection](jailbreaking_vision-language_models_via_dissonance-guided_suffix_optimization_an.md)
 - [\[CVPR 2026\] GVIS: Generative Vector Image Steganography](gvis_generative_vector_image_steganography.md)
-- [\[CVPR 2026\] FeatureFool: Zero-Query Fooling of Video Models via Feature Map](featurefool_zero-query_fooling_of_video_models_via_feature_map.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis
 description: >-
-  [Medical Imaging] This paper proposes the first diffusion Transformer for voxel-level whole-brain 4D fMRI conditional generation, combining 3D VQ-GAN latent space compression, a CNN-Transformer hybrid backbone…
+  [Medical Imaging] This paper proposes the first diffusion Transformer for voxel-level whole-brain 4D fMRI conditional generation, combining 3D VQ-GAN latent space compression, a CNN-Transformer hybrid backbone, and strong conditioning via AdaLN-Zero and cross-attention. The model achieves a task activation map correlation of 0.83, RSA of 0.98, and perfect condition specificity across seven cognitive tasks from the HCP dataset.
 tags:
   - "Medical Imaging"
 date: 2026-05-08
-content_hash: 19f4bc9d41c96009
+content_hash: 513e791fcd2eb78f
 ---
 
 # Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis
@@ -140,10 +140,10 @@ Performance improves monotonically with parameter count, exhibiting clear scalin
 ## Related Papers
 
 - [\[ICCV 2025\] ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis](../../ICCV2025/medical_imaging/victr_vital_consistency_transfer_for_pathology_aware_image_synthesis.md)
+- [\[CVPR 2025\] Multi-Resolution Pathology-Language Pre-training Model with Text-Guided Visual Representation](../../CVPR2025/medical_imaging/multi-resolution_pathology-language_pre-training_model_with_text-guided_visual_r.md)
 - [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](../../AAAI2026/medical_imaging/small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 - [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](../../AAAI2026/medical_imaging/fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
-- [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
 
 </div>
 

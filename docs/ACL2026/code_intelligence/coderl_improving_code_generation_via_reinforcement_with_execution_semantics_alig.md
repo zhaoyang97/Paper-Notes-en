@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment
 description: >-
-  [ACL 2026][Code Intelligence][RLVR] This paper proposes CodeRL+, which integrates execution semantics alignment into the RLVR training pipeline. By enabling models to infer variable-level execution trajectories, it bridges the gap between code textual representation and execution semantics. CodeRL+ achieves an average 4.6% improvement in pass@1 for code
+  [ACL 2026][Code Intelligence][Code generation] This paper proposes CodeRL+, which integrates execution semantics alignment into the RLVR training pipeline. By enabling models to infer variable-level execution trajectories, it bridges the gap between code textual representation and execution semantics. CodeRL+ achieves an average 4.6% improvement in pass@1 for code generation and improvements of 15.5% and 4.4% on code reasoning and test output generation benchmarks…
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - RLVR
-  - GRPO
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Code generation"
+  - "execution semantics alignment"
+  - "RLVR"
+  - "GRPO"
+  - "program execution trajectories"
 date: 2026-05-08
-content_hash: 46cd5ba94d118953
+content_hash: 2555fd1563583da7
 ---
+
 # CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment
 
 **Conference**: ACL 2026  
@@ -138,10 +142,10 @@ The joint optimization objective is $\mathcal{J}_{\text{CodeRL+}}(\theta) = \mat
 ## Related Papers
 
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
-- [\[ICLR 2026\] Execution-Grounded Credit Assignment for GRPO in Code Generation](../../ICLR2026/code_intelligence/execution-grounded_credit_assignment_for_grpo_in_code_generation.md)
+- [\[ICLR 2026\] DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation](../../ICLR2026/code_intelligence/diffucoder_understanding_and_improving_masked_diffusion_models_for_code_generati.md)
+- [\[NeurIPS 2025\] Embedding Alignment in Code Generation for Audio](../../NeurIPS2025/code_intelligence/embedding_alignment_in_code_generation_for_audio.md)
 - [\[ACL 2026\] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment](scicoqa_quality_assurance_for_scientific_paper--code_alignment.md)
 - [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
-- [\[ACL 2026\] ChipSeek: Optimizing Verilog Generation via EDA-Integrated Reinforcement Learning](chipseek_optimizing_verilog_generation_via_eda-integrated_reinforcement_learning.md)
 
 </div>
 

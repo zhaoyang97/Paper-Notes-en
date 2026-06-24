@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis
 description: >-
-  [CVPR 2026][Medical Imaging][Diffusion Model] MEDVCR enables medical video diagnosis models to perform counterfactual reasoning similar to physicians (i.e., "how would this tissue look if it were benign?"). It utilizes diffusion models to synthesize tissue evolution under different pathological hypotheses, constrains representation learning with three clinical rul
+  [CVPR 2026][Medical Imaging][Counterfactual Reasoning] MEDVCR enables medical video diagnosis models to perform counterfactual reasoning similar to physicians (i.e., "how would this tissue look if it were benign?"). It utilizes diffusion models to synthesize tissue evolution under different pathological hypotheses, constrains representation learning with three clinical rules, and integrates the comparison of "factual observation vs. counterfactual hypothesis" into predictions…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Counterfactual Reasoning"
+  - "Medical Video Diagnosis"
+  - "Diffusion Models"
+  - "Clinical Priors"
+  - "Spatiotemporal Representation Learning"
 date: 2026-05-08
-content_hash: d9cde4adab0b1494
+content_hash: 07070c3cdef7a2b8
 ---
+
 # Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis
 
 **Conference**: CVPR 2026  
@@ -144,8 +149,8 @@ MEDVCR achieves 93.0% Recall@1, outperforming the strongest prior method SurgFor
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

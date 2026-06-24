@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-agent debate] This paper proposes ED2D, a framework that integrates an evidence retrieval module into a multi-agent debate (MAD) system to enhance misinformation detection accuracy. Through…
+  [AAAI 2026][Multi-Agent][Multi-agent debate] This paper proposes ED2D, a framework that integrates an evidence retrieval module into a multi-agent debate (MAD) system to enhance misinformation detection accuracy. Through controlled human experiments, it provides the first comparative evaluation of AI-generated debate transcripts versus expert human fact-checks in terms of persuasiveness and belief correction, revealing a double-edged-sword effect: the AI debate system achieve…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "persuasion evaluation"
   - "LLM"
 date: 2026-05-08
-content_hash: 4bec7c93d8bf2583
+content_hash: 33e65dc1d99b8102
 ---
 
 # Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion
@@ -130,11 +130,11 @@ ED2D achieves the best performance across all datasets and metrics, outperformin
 
 ## Related Papers
 
-- [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
+- [\[ICML 2025\] Is Your LLM-Based Multi-Agent a Reliable Real-World Planner? Exploring Fraud Detection in Travel Planning](../../ICML2025/multi_agent/is_your_llm-based_multi-agent_a_reliable_real-world_planner_exploring_fraud_dete.md)
 - [\[AAAI 2026\] Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems](shadows_in_the_code_exploring_the_risks_and_defenses_of_llm-.md)
-- [\[ACL 2026\] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection](../../ACL2026/multi_agent/debating_the_unspoken_role-anchored_multi-agent_reasoning_for_half-truth_detecti.md)
-- [\[ACL 2026\] Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate](../../ACL2026/multi_agent/latent_agents_a_post-training_procedure_for_internalized_multi-agent_debate.md)
-- [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](../../ICLR2026/multi_agent/completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
+- [\[ICLR 2026\] From What to Why: A Multi-Agent System for Evidence-based Chemical Reaction Condition Reasoning](../../ICLR2026/multi_agent/from_what_to_why_a_multi-agent_system_for_evidence-based_chemical_reaction_condi.md)
+- [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
+- [\[ICLR 2026\] Goal-Aware Identification and Rectification of Misinformation in Multi-Agent Systems](../../ICLR2026/multi_agent/goal-aware_identification_and_rectification_of_misinformation_in_multi-agent_sys.md)
 
 </div>
 

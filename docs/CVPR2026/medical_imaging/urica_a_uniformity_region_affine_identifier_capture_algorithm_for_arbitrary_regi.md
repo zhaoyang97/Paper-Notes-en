@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] URICA: A Uniformity Region Affine Identifier Capture Algorithm for Arbitrary Region Retrieval in Pathology Images
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] URICA redefines region retrieval in Whole Slide Images (WSI) as a "semantic optimal matching problem under arbitrary spatial transformations." By using semantic tessellation to organize patch features from foundation models into geometrically aware region descriptors and applying rotation/scale-invariant "affine identi
+  [CVPR 2026][Medical Imaging][Whole Slide Image Retrieval] URICA redefines region retrieval in Whole Slide Images (WSI) as a "semantic optimal matching problem under arbitrary spatial transformations." By using semantic tessellation to organize patch features from foundation models into geometrically aware region descriptors and applying rotation/scale-invariant "affine identifiers" for consistency matching, it achieves a 98.38% slide-level retrieval accuracy on 24…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Image Retrieval"
+  - "Pathology Images"
+  - "Arbitrary Region Retrieval"
+  - "Affine Invariance"
+  - "Tessellation Representation"
 date: 2026-05-08
-content_hash: cefbb56179ad55bf
+content_hash: 37137dc04e038ef0
 ---
+
 # URICA: A Uniformity Region Affine Identifier Capture Algorithm for Arbitrary Region Retrieval in Pathology Images
 
 **Conference**: CVPR 2026  
@@ -129,10 +135,10 @@ K-Means anchor selection provides the best precision-efficiency trade-off. BoS r
 ## Related Papers
 
 - [\[CVPR 2026\] Synergistic Bleeding Region and Point Detection in Laparoscopic Surgical Videos](synergistic_bleeding_region_and_point_detection_in_laparoscopic_surgical_videos.md)
+- [\[ICLR 2026\] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation](../../ICLR2026/medical_imaging/learning_self-critiquing_mechanisms_for_region-guided_chest_x-ray_report_generat.md)
 - [\[ECCV 2024\] CheX: Interactive Localization and Region Description in Chest X-rays](../../ECCV2024/medical_imaging/chex_interactive_localization_and_region_description_in_chest_x-rays.md)
 - [\[CVPR 2026\] EchoVDiff: Cardiac-Cycle Echocardiography Video Generation from Arbitrary Single Frame](echovdiff_cardiac-cycle_echocardiography_video_generation_from_arbitrary_single_.md)
-- [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](../../ICCV2025/medical_imaging/aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
-- [\[AAAI 2026\] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks](../../AAAI2026/medical_imaging/sim4seg_boosting_multimodal_multi-disease_medical_diagnosis_segmentation_with_re.md)
+- [\[CVPR 2026\] Adaptive Anisotropic Gaussian Splatting for Multi-contrast MRI Arbitrary-Scale Super-Resolution with Anatomy Guidance](adaptive_anisotropic_gaussian_splatting_for_multi-contrast_mri_arbitrary-scale_s.md)
 
 </div>
 

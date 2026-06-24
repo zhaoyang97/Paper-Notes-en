@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals
 description: >-
-  [CVPR 2026][Signal & Communications][Knowledge Distillation] MERLIN translates the "native MLLM" paradigm to the electromagnetic (IQ) signal domain. The authors first construct a dataset of 134,000 signal-text pairs (EM-134K) and the EM-Bench benchmark covering perception and reasoning. They then propose a two-stage distillation framework ("High-SNR Teacher → Low-SNR Student") f
+  [CVPR 2026][Multimodal VLM][Electromagnetic Signals] MERLIN translates the "native MLLM" paradigm to the electromagnetic (IQ) signal domain. The authors first construct a dataset of 134,000 signal-text pairs (EM-134K) and the EM-Bench benchmark covering perception and reasoning. They then propose a two-stage distillation framework ("High-SNR Teacher → Low-SNR Student") featuring a Denoising Subspace Module (DSM) that projects noisy features back into the signal subspace. This…
 tags:
-  - CVPR 2026
-  - Signal & Communications
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Electromagnetic Signals"
+  - "Multimodal LLM"
+  - "Low-SNR Robustness"
+  - "Knowledge Distillation"
+  - "Subspace Denoising"
 date: 2026-05-08
-content_hash: 4e968b39c1a6180e
+content_hash: fcde575d28ea89e4
 ---
+
 # MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals
 
 **Conference**: CVPR 2026  
@@ -134,15 +139,16 @@ Stepwise addition of distillation components on EM-Bench MCQ (Accuracy %):
 - Value: ⭐⭐⭐⭐⭐ Providing the dataset, benchmark, and framework simultaneously creates a solid foundation for future EM MLLM research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
-- [\[CVPR 2025\] Breaking the Low-Rank Dilemma of Linear Attention](../../CVPR2025/signal_comm/breaking_the_low-rank_dilemma_of_linear_attention.md)
-- [\[ICLR 2026\] Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection](../../ICLR2026/signal_comm/enhancing_instruction_following_of_llms_via_activation_steering_with_dynamic_rej.md)
-- [\[AAAI 2026\] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](../../AAAI2026/signal_comm/balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)
-- [\[ICML 2025\] Deep Electromagnetic Structure Design Under Limited Evaluation Budgets](../../ICML2025/signal_comm/deep_electromagnetic_structure_design_under_limited_evaluation_budgets.md)
+- [\[ICML 2026\] VLANeXt: A Recipe for Building Robust VLA Models](../../ICML2026/multimodal_vlm/vlanext_recipes_for_building_strong_vla_models.md)
+- [\[ECCV 2024\] Merlin: Empowering Multimodal LLMs with Foresight Minds](../../ECCV2024/multimodal_vlm/merlin_empowering_multimodal_llms_with_foresight_minds.md)
+- [\[CVPR 2026\] Re-evaluating Continual VQA: Toward Fair and Robust Evaluation for Multimodal Continual Learning](re-evaluating_continual_vqa_toward_fair_and_robust_evaluation_for_multimodal_con.md)
+- [\[CVPR 2026\] Guiding Diffusion-based Reconstruction with Contrastive Signals for Balanced Visual Representation](guiding_diffusion-based_reconstruction_with_contrastive_signals_for_balanced_vis.md)
+- [\[CVPR 2026\] Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration](multimodal_learning_on_low-quality_data_with_conformal_predictive_self-calibrati.md)
 
 </div>
 

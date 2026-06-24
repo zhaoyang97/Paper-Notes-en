@@ -51,11 +51,11 @@ To be added after further reading.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
+- [\[CVPR 2026\] iMontage: Unified, Versatile, Highly Dynamic Many-to-many Image Generation](../../CVPR2026/image_generation/imontage_unified_versatile_highly_dynamic_many-to-many_image_generation.md)
+- [\[ICLR 2026\] Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models](forget_many_forget_right_scalable_and_precise_concept_unlearning_in_diffusion_mo.md)
+- [\[ICLR 2026\] Cross-ControlNet: Training-Free Fusion of Multiple Conditions for Text-to-Image Generation](cross-controlnet_training-free_fusion_of_multiple_conditions_for_text-to-image_g.md)
 - [\[ICLR 2026\] OmniText: A Training-Free Generalist for Controllable Text-Image Manipulation](omnitext_a_training-free_generalist_for_controllable_text-image_manipulation.md)
-- [\[ICLR 2026\] CoDA: From Text-to-Image Diffusion Models to Training-Free Dataset Distillation](coda_from_text-to-image_diffusion_models_to_training-free_dataset_distillation.md)
-- [\[ICLR 2026\] QVGen: Pushing the Limit of Quantized Video Generative Models](qvgen_pushing_the_limit_of_quantized_video_generative_models.md)
-- [\[ICLR 2026\] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training](generate_any_scene_scene_graph_driven_data_synthesis_for_visual_generation_train.md)
-- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][CoT] VisReason constructs a multimodal benchmark containing 1,505 daily visual reasoning problems to specifically test whether models can reason directly based on visual evidence. Results show that even the strongest model achieves an average accuracy of only 47.5%, significantly lower than the human performance of 71.4%, a
+  [ACL2026 Findings][VLM Reasoning][Vision-centric reasoning] VisReason constructs a multimodal benchmark containing 1,505 daily visual reasoning problems to specifically test whether models can reason directly based on visual evidence. Results show that even the strongest model achieves an average accuracy of only 47.5%, significantly lower than the human performance of 71.4%, and that CoT and larger reasoning budgets provide limited improvements.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - CoT
+  - "ACL2026 Findings"
+  - "VLM Reasoning"
+  - "Vision-centric reasoning"
+  - "multimodal evaluation"
+  - "visual grounding"
+  - "CoT"
+  - "capability diagnosis"
 date: 2026-05-08
-content_hash: ba1beaefd2941cdf
+content_hash: 435a1adf6f832d71
 ---
+
 # Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning
 
 **Conference**: ACL2026 Findings  
@@ -120,11 +125,11 @@ This paper does not train models but focuses on benchmark construction and zero-
 
 ## Related Papers
 
+- [\[ICLR 2026\] VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?](../../ICLR2026/vlm_reasoning/videoreasonbench_can_mllms_perform_vision-centric_complex_video_reasoning.md)
 - [\[CVPR 2026\] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](../../CVPR2026/vlm_reasoning/think_360_evaluating_the_width-centric_reasoning_capability_of_mllms_beyond_dept.md)
 - [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/vlm_reasoning/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
 - [\[ACL 2026\] MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models](mmerror_a_benchmark_for_erroneous_reasoning_in_vision-language_models.md)
-- [\[AAAI 2026\] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models](../../AAAI2026/vlm_reasoning/crossvid_a_comprehensive_benchmark_for_evaluating_cross-vide.md)
-- [\[NeurIPS 2025\] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness](../../NeurIPS2025/vlm_reasoning/mmperspective_do_mllms_understand_perspective_a_comprehensive_benchmark_for_pers.md)
+- [\[ICLR 2026\] InternSpatial: A Comprehensive Dataset for Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/internspatial_a_comprehensive_dataset_for_spatial_reasoning_in_vision-language_m.md)
 
 </div>
 

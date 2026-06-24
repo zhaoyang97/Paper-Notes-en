@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GVPO: Group Variance Policy Optimization for Large Language Model Post-Training
 description: >-
-  [NeurIPS 2025][LLM Alignment][GRPO] GVPO is a more stable LLM post-training method than GRPO, derived by embedding the analytical solution of KL-constrained reward maximization into gradient weights (zero-sum weights eli…
+  [NeurIPS 2025][LLM Alignment][GRPO] GVPO is a more stable LLM post-training method than GRPO, derived by embedding the analytical solution of KL-constrained reward maximization into gradient weights (zero-sum weights eliminate the partition function). It achieves 20.72% on AIME (vs. GRPO's 14.79%) and is proven to possess a unique global optimum.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "Training Stability"
   - "Post-Training"
 date: 2026-05-08
-content_hash: 8e63b26fac0c4c18
+content_hash: b2614c4064c9a18f
 ---
 
 # GVPO: Group Variance Policy Optimization for Large Language Model Post-Training
@@ -120,9 +120,9 @@ The GVPO loss is equivalent to MSE between the centered implicit reward and the 
 
 - [\[ICLR 2026\] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](../../ICLR2026/llm_alignment/chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model.md)
 - [\[NeurIPS 2025\] Trajectory Balance with Asynchrony: Decoupling Exploration and Learning for Fast, Scalable LLM Post-Training](trajectory_balance_with_asynchrony_decoupling_exploration_and_learning_for_fast_.md)
-- [\[NeurIPS 2025\] What Makes a Reward Model a Good Teacher? An Optimization Perspective](what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)
-- [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/llm_alignment/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 - [\[NeurIPS 2025\] Alignment of Large Language Models with Constrained Learning](alignment_of_large_language_models_with_constrained_learning.md)
+- [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/llm_alignment/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
+- [\[NeurIPS 2025\] What Makes a Reward Model a Good Teacher? An Optimization Perspective](what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)
 
 </div>
 

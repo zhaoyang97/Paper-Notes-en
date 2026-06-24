@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FRET: Feature Redundancy Elimination for Test Time Adaptation
 description: >-
-  [ICCV 2025][AI Safety][Test-time adaptation] This paper proposes Feature Redundancy Elimination (FRET) as a novel perspective for test-time adaptation (TTA)…
+  [ICCV 2025][AI Safety][Test-time adaptation] This paper proposes Feature Redundancy Elimination (FRET) as a novel perspective for test-time adaptation (TTA), observing that embedding feature redundancy increases significantly under distribution shift. Two methods are designed: S-FRET (direct minimization of the redundancy score) and G-FRET (GCN-based attention-redundancy decomposition with bi-level optimization). G-FRET achieves state-of-the-art performance across multiple ar…
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "graph convolutional network"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 51a1e495bf21160d
+content_hash: 823436f39633e01a
 ---
 
 # FRET: Feature Redundancy Elimination for Test Time Adaptation
@@ -152,10 +152,10 @@ The FRET framework operates at two levels:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](../../NeurIPS2025/ai_safety/redundancy-aware_test-time_graph_out-of-distribution_detection.md)
+- [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](../../CVPR2026/ai_safety/ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
+- [\[CVPR 2025\] OODD: Test-time Out-of-Distribution Detection with Dynamic Dictionary](../../CVPR2025/ai_safety/oodd_test-time_out-of-distribution_detection_with_dynamic_dictionary.md)
 - [\[ICCV 2025\] A Framework for Double-Blind Federated Adaptation of Foundation Models](a_framework_for_doubleblind_federated_adaptation_of_foundati.md)
 - [\[ICCV 2025\] Controllable Feature Whitening for Hyperparameter-Free Bias Mitigation](controllable_feature_whitening_for_hyperparameter-free_bias_mitigation.md)
-- [\[ICCV 2025\] Active Membership Inference Test (aMINT): Enhancing Model Auditability with Multi-Task Learning](active_membership_inference_test_amint_enhancing_model_auditability_with_multi-t.md)
-- [\[ICCV 2025\] Backdooring Self-Supervised Contrastive Learning by Noisy Alignment](backdooring_self-supervised_contrastive_learning_by_noisy_alignment.md)
 
 </div>
 

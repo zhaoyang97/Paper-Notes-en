@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Task-Agnostic Representations through Multi-Teacher Distillation
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][Knowledge Distillation] This paper proposes a task-agnostic multi-teacher distillation framework based on mutual information maximization. By estimating the conditional distrib…
+  [NeurIPS 2025][Information Retrieval & RAG][Knowledge Distillation] This paper proposes a task-agnostic multi-teacher distillation framework based on mutual information maximization. By estimating the conditional distribution of teacher embeddings via Gaussian kernels, the student model learns high-information-density general-purpose representations without relying on any downstream task labels, achieving state-of-the-art performance among same-scale models across text…
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Representation Learning"
   - "Mutual Information"
 date: 2026-05-08
-content_hash: 1a3c1db392f36236
+content_hash: 84739e1a664bab33
 ---
 
 # Learning Task-Agnostic Representations through Multi-Teacher Distillation
@@ -155,10 +155,10 @@ This paper proposes a task-agnostic multi-teacher distillation framework based o
 ## Related Papers
 
 - [\[ACL 2026\] FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows](../../ACL2026/information_retrieval/flare_task-agnostic_embedding_model_evaluation_through_a_normalization_process.md)
-- [\[NeurIPS 2025\] Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization](retrieval_is_not_enough_enhancing_rag_reasoning_through_test-time_critique_and_o.md)
-- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](generalized_contrastive_learning_for_universal_multimodal_re.md)
 - [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](scaling_language-centric_omnimodal_representation_learning.md)
-- [\[ICLR 2026\] Digging Deeper: Learning Multi-Level Concept Hierarchies](../../ICLR2026/information_retrieval/digging_deeper_learning_multi-level_concept_hierarchies.md)
+- [\[NeurIPS 2025\] Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization](retrieval_is_not_enough_enhancing_rag_reasoning_through_test-time_critique_and_o.md)
+- [\[ACL 2025\] LDIR: Low-Dimensional Dense and Interpretable Text Embeddings with Relative Representations](../../ACL2025/information_retrieval/ldir_low-dimensional_dense_and_interpretable_text_embeddings_with_relative_repre.md)
+- [\[ICCV 2025\] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation](../../ICCV2025/information_retrieval/aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md)
 
 </div>
 

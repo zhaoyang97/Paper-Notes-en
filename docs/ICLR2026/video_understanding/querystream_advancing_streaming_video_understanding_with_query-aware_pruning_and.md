@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QueryStream: Advancing Streaming Video Understanding with Query-Aware Pruning and Proactive Response
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] QueryStream integrates user queries directly into token pruning and response scheduling for streaming video. It utilizes Query-aware Differential Pruning (QDP) to filter irrelevant or redundant visual tokens and employs RTAR to proactively trigger the Video-LLM at "relevant and informative" moments. This approach attai
+  [ICLR2026][Video Understanding][Streaming Video Understanding] QueryStream integrates user queries directly into token pruning and response scheduling for streaming video. It utilizes Query-aware Differential Pruning (QDP) to filter irrelevant or redundant visual tokens and employs RTAR to proactively trigger the Video-LLM at "relevant and informative" moments. This approach attains or exceeds strong online baselines while retaining only 30%-57% of tokens.
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Streaming Video Understanding"
+  - "Query-Aware Pruning"
+  - "Proactive Response"
+  - "Video-LLM"
+  - "Visual Token Compression"
 date: 2026-05-08
-content_hash: dc118318028f0f64
+content_hash: c08eb2ca116613e3
 ---
+
 # QueryStream: Advancing Streaming Video Understanding with Query-Aware Pruning and Proactive Response
 
 **Conference**: ICLR2026  
@@ -182,8 +188,8 @@ The paper evaluates both online streaming and offline long video understanding.
 - [\[ICLR 2026\] Memento: Toward an All-Day Proactive Assistant for Ultra-Long Streaming Video](memento_toward_an_all-day_proactive_assistant_for_ultra-long_streaming_video.md)
 - [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
 - [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](../../CVPR2026/video_understanding/fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
-- [\[ICML 2026\] ProAct-VL: A Proactive VideoLLM for Real-Time AI Companions](../../ICML2026/video_understanding/proact-vl_a_proactive_videollm_for_real-time_ai_companions.md)
 - [\[ICCV 2025\] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](../../ICCV2025/video_understanding/q-frame_query-aware_frame_selection_and_multi-resolution_adaptation_for_video-ll.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](../../CVPR2026/video_understanding/streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
 
 </div>
 

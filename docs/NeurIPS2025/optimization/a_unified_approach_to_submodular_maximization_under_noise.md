@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Unified Approach to Submodular Maximization Under Noise
 description: >-
-  [NeurIPS 2025][Optimization][submodular maximization] This paper proposes a unified meta-algorithm framework that takes any exact submodular maximization algorithm satisfying a "robustness" condition as a black box and a…
+  [NeurIPS 2025][Optimization][submodular maximization] This paper proposes a unified meta-algorithm framework that takes any exact submodular maximization algorithm satisfying a "robustness" condition as a black box and automatically converts it into an algorithm that maintains its approximation ratio (losing only $o(1)$) under a persistent noisy value oracle. This achieves, for the first time, optimal approximation ratios for non-monotone submodular maximization under matroid…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "approximation algorithms"
   - "matroid constraints"
 date: 2026-05-08
-content_hash: 0735ba0fe8a0ed62
+content_hash: 3a3e5b59b9abc9e6
 ---
 
 # A Unified Approach to Submodular Maximization Under Noise
@@ -130,10 +130,10 @@ Parameters are set as $m \geq O(\nu^2 f_{max}^2 / \varepsilon^2 \cdot (n + \log(
 ## Related Papers
 
 - [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](online_two-stage_submodular_maximization.md)
+- [\[ICML 2026\] Differentially Private Submodular Maximization with a Knapsack Constraint](../../ICML2026/optimization/differentially_private_submodular_maximization_with_a_knapsack_constraint.md)
 - [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](../../ICML2026/optimization/a_general_framework_for_dynamic_consistent_submodular_maximization.md)
 - [\[ICML 2026\] On the Interaction of Batch Noise, Adaptivity, and Compression, under $(L_0,L_1)$-Smoothness: An SDE Approach](../../ICML2026/optimization/on_the_interaction_of_batch_noise_adaptivity_and_compression_under_l_0l_1-smooth.md)
 - [\[NeurIPS 2025\] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity](second-order_optimization_under_heavy-tailed_noise_hessian_clipping_and_sample_c.md)
-- [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Learning the Wrong Lessons: Syntactic-Domain Spurious Correlations in Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][spurious correlations] This paper reveals that LLMs learn spurious correlations between syntactic templates (PoS n-grams) and domains…
+  [NeurIPS 2025 Spotlight][LLM Pretraining][spurious correlations] This paper reveals that LLMs learn spurious correlations between syntactic templates (PoS n-grams) and domains, leading to sharp performance drops in cross-domain settings. Furthermore, this correlation can be exploited to bypass safety refusal mechanisms, reducing the refusal rate from 40% to 2.5% on OLMo-2.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Pretraining"
   - "spurious correlations"
   - "syntactic templates"
@@ -13,7 +13,7 @@ tags:
   - "instruction fine-tuning"
   - "domain generalization"
 date: 2026-05-08
-content_hash: 62f6e944e07ce388
+content_hash: 24d2bbef651f1d2a
 ---
 
 # Learning the Wrong Lessons: Syntactic-Domain Spurious Correlations in Language Models
@@ -175,10 +175,10 @@ Using a chain-of-thought template as a prefix reduces the refusal rate of OLMo-2
 ## Related Papers
 
 - [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
-- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](scaling_embedding_layers_in_language_models.md)
 - [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
-- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
+- [\[ICML 2025\] Revisiting Continuity of Image Tokens for Cross-Domain Few-Shot Learning](../../ICML2025/llm_pretraining/revisiting_continuity_of_image_tokens_for_cross-domain_few-shot_learning.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
+- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
 
 </div>
 

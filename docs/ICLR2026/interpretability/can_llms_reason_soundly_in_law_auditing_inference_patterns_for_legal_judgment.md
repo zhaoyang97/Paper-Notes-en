@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can LLMs Reason Soundly in Law? Auditing Inference Patterns for Legal Judgment
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper moves beyond merely evaluating whether the "answers" of legal LLMs are correct. Instead, it **faithfully decomposes the model's score for each judgment into a set of AND/OR interaction patterns between input phrases**. Sixteen legal experts then labeled these phrases as "relevant / irrelevant / forbidden" to
+  [ICLR2026][Interpretability][Interaction interpretability] This paper moves beyond merely evaluating whether the "answers" of legal LLMs are correct. Instead, it **faithfully decomposes the model's score for each judgment into a set of AND/OR interaction patterns between input phrases**. Sixteen legal experts then labeled these phrases as "relevant / irrelevant / forbidden" to quantify "what logic the model actually uses to reach its decision." The results reveal that even wh…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Interaction interpretability"
+  - "AND-OR logic model"
+  - "Legal judgment"
+  - "Reasoning reliability"
+  - "Identity bias"
 date: 2026-05-08
-content_hash: ff1d3ec208a318df
+content_hash: ddd17d47bb337a75
 ---
+
 # Can LLMs Reason Soundly in Law? Auditing Inference Patterns for Legal Judgment
 
 **Conference**: ICLR2026  
@@ -107,15 +113,16 @@ Four models were evaluated: Qwen2.5-14B-Base, Deepseek-R1-Distill-Qwen-14B, Saul
 - **Value**: ⭐⭐⭐⭐⭐ (Highlights critical risks in high-stakes legal LLM applications)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping](reforming_the_mechanism_editing_reasoning_patterns_in_llms_with_circuit_reshapin.md)
 - [\[ICLR 2026\] The Achilles' Heel of LLMs: How Altering a Handful of Neurons Can Cripple Language Abilities](the_achilles_heel_of_llms_how_altering_a_handful_of_neurons_can_cripple_language.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](the_price_of_amortized_inference_in_sparse_autoencoders.md)
+- [\[ICLR 2026\] Structural Inference: Interpreting Small Language Models with Susceptibilities](structural_inference_interpreting_small_language_models_with_susceptibilities.md)
 - [\[ICML 2026\] Interpretability Can Be Actionable](../../ICML2026/interpretability/interpretability_can_be_actionable.md)
-- [\[ACL 2026\] Evian: Towards Explainable Visual Instruction-tuning Data Auditing](../../ACL2026/interpretability/evian_towards_explainable_visual_instruction-tuning_data_auditing.md)
-- [\[ICLR 2026\] GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](gepa_reflective_prompt_evolution_can_outperform_reinforcement_learning.md)
 
 </div>
 

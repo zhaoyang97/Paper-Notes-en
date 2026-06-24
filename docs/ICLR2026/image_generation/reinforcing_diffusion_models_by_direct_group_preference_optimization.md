@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reinforcing Diffusion Models by Direct Group Preference Optimization
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper proposes DGPO (Direct Group Preference Optimization), which decouples the "intra-group relative preference" concept of GRPO from the policy-gradient framework. This allows diffusion models to perform online RL post-training using efficient deterministic ODE samplers, improving SD3.5-M from 0.63 to 0.97 on Ge
+  [ICLR 2026][Image Generation][Diffusion Models] This paper proposes DGPO (Direct Group Preference Optimization), which decouples the "intra-group relative preference" concept of GRPO from the policy-gradient framework. This allows diffusion models to perform online RL post-training using efficient deterministic ODE samplers, improving SD3.5-M from 0.63 to 0.97 on GenEval while training approximately 20× faster than Flow-GRPO (nearly 30× on GenEval).
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Preference Optimization"
+  - "GRPO"
+  - "ODE Sampling"
+  - "Post-training"
 date: 2026-05-08
-content_hash: 8cfd84986eaee66f
+content_hash: 5fdf5c4697ef7fc5
 ---
+
 # Reinforcing Diffusion Models by Direct Group Preference Optimization
 
 **Conference**: ICLR 2026  
@@ -156,9 +160,9 @@ DGPO improves target metrics while maintaining or improving OOD quality metrics,
 
 ## Related Papers
 
-- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
 - [\[NeurIPS 2025\] Rethinking Direct Preference Optimization in Diffusion Models](../../NeurIPS2025/image_generation/rethinking_direct_preference_optimization_in_diffusion_models.md)
 - [\[CVPR 2025\] Curriculum Direct Preference Optimization for Diffusion and Consistency Models](../../CVPR2025/image_generation/curriculum_direct_preference_optimization_for_diffusion_and_consistency_models.md)
+- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
 - [\[ICLR 2026\] Consis-GCPO: Consistency-Preserving Group Causal Preference Optimization for Vision Customization](consis-gcpo_consistency-preserving_group_causal_preference_optimization_for_visi.md)
 - [\[ICLR 2026\] Towards Better Optimization for Listwise Preference in Diffusion Models](towards_better_optimization_for_listwise_preference_in_diffusion_models.md)
 

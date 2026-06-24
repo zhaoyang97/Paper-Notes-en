@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] GAI-GS：用几何代数注意力把光线-物体交互注入 3DGS 的无线信道预测框架
+  [Paper Note] GAI-GS: A Wireless Channel Prediction Framework Injecting Ray-Object Interaction into 3DGS via Geometric Algebra Attention
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] GAI-GS treats 3D Gaussian Splatting (3DGS) as a wireless radiation field. It utilizes a Geometric Algebra (GA)-based attention tokenizer to implicitly model physical ray-object interactions—such as reflection, diffraction, and transmission—within the scene. These interaction features are then injected as residuals into
+  [CVPR 2026][3D Vision][Geometric Algebra] GAI-GS treats 3D Gaussian Splatting (3DGS) as a wireless radiation field. It utilizes a Geometric Algebra (GA)-based attention tokenizer to implicitly model physical ray-object interactions—such as reflection, diffraction, and transmission—within the scene. These interaction features are then injected as residuals into Gaussian attributes via a dual-branch scene mapping network, achieving SOTA performance in MAE and SSIM across severa…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Geometric Algebra"
+  - "3D Gaussian Splatting"
+  - "Wireless Channel Prediction"
+  - "Ray-Object Interaction"
+  - "RSSI/Spatial Spectrum"
 date: 2026-05-08
-content_hash: 6473ec2954316179
+content_hash: 377f6d4249a89b61
 ---
+
 # GAI-GS: A Wireless Channel Prediction Framework Injecting Ray-Object Interaction into 3DGS via Geometric Algebra Attention
 
 **Conference**: CVPR 2026  
@@ -147,11 +152,11 @@ Comparison of training/inference/rendering times on a single A100 for the Spectr
 
 ## Related Papers
 
-- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
 - [\[CVPR 2026\] BEA-GS: BEyond RAdiance Supervision in 3DGS for Precise Object Extraction](bea-gs_beyond_radiance_supervision_in_3dgs_for_precise_object_extraction.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
+- [\[CVPR 2026\] Exact-GS: Mathematically Rigorous and Accurate 3D Gaussian Splatting for 3D X-ray Reconstruction](exact-gs_mathematically_rigorous_and_accurate_3d_gaussian_splatting_for_3d_x-ray.md)
+- [\[CVPR 2026\] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling](cat-gs_efficient_3dgs_rendering_for_large-scale_scenes_with_inter-frame_caching_.md)
+- [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
 
 </div>
 

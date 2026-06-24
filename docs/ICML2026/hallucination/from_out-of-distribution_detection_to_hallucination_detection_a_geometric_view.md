@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] This paper treats LLM next-token prediction as a classification task on a massive vocabulary. By migrating two lightweight OOD detectors—NCI (proximity of features to weight vectors) and fDBD (distance from features to decision boundaries)—with two adaptations ("analytical proxy $\mu_G$ for training feature means" and
+  [ICML 2026][Hallucination Detection][OOD Detection] This paper treats LLM next-token prediction as a classification task on a massive vocabulary. By migrating two lightweight OOD detectors—NCI (proximity of features to weight vectors) and fDBD (distance from features to decision boundaries)—with two adaptations ("analytical proxy $\mu_G$ for training feature means" and "calculating boundary distance only on top-$k$ candidate tokens"), it derives a **training-free…
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "OOD Detection"
+  - "Geometric Uncertainty"
+  - "Decision Boundary"
+  - "Training-free Single-sample"
 date: 2026-05-08
-content_hash: 0313b2c2bc4d24f3
+content_hash: cc1c6f78b89dbaa0
 ---
+
 # From Out-of-Distribution Detection to Hallucination Detection: A Geometric View
 
 **Conference**: ICML 2026  
@@ -143,9 +148,9 @@ Stochastic Decoding Robustness (CSQA, Llama-3.2-3B, mean of 5 seeds): Under temp
 
 - [\[ICML 2026\] Automatic Layer Selection for Hallucination Detection](automatic_layer_selection_for_hallucination_detection.md)
 - [\[ICML 2026\] Harnessing Reasoning Trajectories for Hallucination Detection via Answer-agreement Representation Shaping](harnessing_reasoning_trajectories_for_hallucination_detection_via_answer-agreeme.md)
+- [\[ICLR 2026\] Beyond In-Domain Detection: SpikeScore for Cross-Domain Hallucination Detection](../../ICLR2026/hallucination/beyond_in-domain_detection_spikescore_for_cross-domain_hallucination_detection.md)
 - [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](../../CVPR2026/hallucination/tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
 - [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](../../ACL2026/hallucination/enhancing_hallucination_detection_via_future_context.md)
-- [\[ICLR 2026\] Beyond In-Domain Detection: SpikeScore for Cross-Domain Hallucination Detection](../../ICLR2026/hallucination/beyond_in-domain_detection_spikescore_for_cross-domain_hallucination_detection.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging
 description: >-
-  [ICLR 2026][Model Compression][SVD] Ours proposes AdaRank, which adaptively selects singular components of task vectors using learnable binary masks (replacing heuristic top-k). Combined with test-time entropy minimization optimization, it significantly mitigates inter-task interference in multi-task model merging, achieving 89.4% accuracy on ViT-B/32.
+  [ICLR 2026][Model Compression][Model Merging] Ours proposes AdaRank, which adaptively selects singular components of task vectors using learnable binary masks (replacing heuristic top-k). Combined with test-time entropy minimization optimization, it significantly mitigates inter-task interference in multi-task model merging, achieving 89.4% accuracy on ViT-B/32.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - SVD
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "SVD"
+  - "Task Vectors"
+  - "Test-time Adaptation"
+  - "Multi-task Learning"
 date: 2026-05-08
-content_hash: 37a1eea9ee3d0dfb
+content_hash: 1d0e974f716a2259
 ---
+
 # AdaRank: Adaptive Rank Pruning for Enhanced Model Merging
 
 **Conference**: ICLR 2026  
@@ -139,9 +144,9 @@ Both the mask $B$ and layer-wise coefficients $\lambda^l$ are jointly optimized 
 
 - [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
 - [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
-- [\[ICLR 2026\] CARE: Covariance-Aware and Rank-Enhanced Decomposition for Enabling Multi-Head Latent Attention](care_covariance-aware_and_rank-enhanced_decomposition_for_enabling_multi-head_la.md)
-- [\[CVPR 2025\] Task Singular Vectors: Reducing Task Interference in Model Merging](../../CVPR2025/model_compression/task_singular_vectors_reducing_task_interference_in_model_merging.md)
-- [\[ICLR 2026\] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity](null-space_filtering_for_data-free_continual_model_merging_preserving_stability_.md)
+- [\[ICLR 2026\] MASS: MoErging through Adaptive Subspace Selection](mass_moerging_through_adaptive_subspace_selection.md)
+- [\[ICLR 2026\] Expert Merging: Model Merging with Unsupervised Expert Alignment and Importance-Guided Layer Chunking](expert_merging_model_merging_with_unsupervised_expert_alignment_and_importance-g.md)
+- [\[ICLR 2026\] DisTaC: Conditioning Task Vectors via Distillation for Robust Model Merging](distac_conditioning_task_vectors_via_distillation_for_robust_model_merging.md)
 
 </div>
 

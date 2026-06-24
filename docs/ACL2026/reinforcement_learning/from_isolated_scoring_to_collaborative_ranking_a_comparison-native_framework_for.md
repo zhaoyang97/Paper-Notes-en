@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Isolated Scoring to Collaborative Ranking: A Comparison-Native Framework for LLM-Based Paper Evaluation
 description: >-
-  [ACL 2026][Reinforcement Learning][Bradley-Terry] This paper transforms LLM paper review from "individual absolute scoring" to "pairwise comparison followed by global ranking." By employing semantic graph sampling, comparative SFT, and Reinforcement Learning from Verifiable Rewards (RLVR) to train a 7B model, it significantly outperforms DeepReview-14B in ICLR-2025 pa
+  [ACL2026 Findings][Reinforcement Learning][Comparative Evaluation] This paper transforms LLM paper review from "individual absolute scoring" to "pairwise comparison followed by global ranking." By employing semantic graph sampling, comparative SFT, and Reinforcement Learning from Verifiable Rewards (RLVR) to train a 7B model, it significantly outperforms DeepReview-14B in ICLR-2025 paper ranking and acceptance prediction, while demonstrating strong transferability to unseen c…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Bradley-Terry
-  - RLVR
+  - "ACL2026 Findings"
+  - "Reinforcement Learning"
+  - "Comparative Evaluation"
+  - "Paper Ranking"
+  - "LLM for Paper Review"
+  - "Bradley-Terry"
+  - "RLVR"
 date: 2026-05-08
-content_hash: 03d1f827610f79cc
+content_hash: cb5761ee0af5264e
 ---
+
 # From Isolated Scoring to Collaborative Ranking: A Comparison-Native Framework for LLM-Based Paper Evaluation
 
 **Conference**: ACL2026 Findings  
@@ -132,15 +136,15 @@ The base model is Qwen2.5-7B-Instruct, fine-tuned using LoRA. Training data is f
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](../../AAAI2026/reinforcement_learning/a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
-- [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agent-Based Conversational AI Defense Against LLM Jailbreaking](../../ICLR2026/reinforcement_learning/toward_a_dynamic_stackelberg_game-theoretic_framework_for_agent-based_conversat.md)
 - [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
+- [\[ICML 2026\] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/direction-conditioned_policies_via_compositional_subgoal_scoring_for_online_goal.md)
 - [\[ICLR 2026\] Menlo: From Preferences to Proficiency – Evaluating and Modeling Native-like Quality Across 47 Languages](../../ICLR2026/reinforcement_learning/menlo_from_preferences_to_proficiency_--_evaluating_and_modeling_native-like_qua.md)
-- [\[ACL 2026\] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment](learnalign_data_selection_for_llm_reinforcement_learning_with_improved_gradient_.md)
+- [\[CVPR 2026\] CME-CAD: Heterogeneous Collaborative Multi-Expert Reinforcement Learning for CAD Code Generation](../../CVPR2026/reinforcement_learning/cme-cad_heterogeneous_collaborative_multi-expert_reinforcement_learning_for_cad_code_gen.md)
 
 </div>
 

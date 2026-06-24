@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry
 description: >-
-  [NeurIPS 2025][Medical Imaging][brain connectivity matrices] This paper proposes DiffeoCFM, which leverages pullback metrics induced by global diffeomorphisms to equivalently reformulate conditional flow matching on Riem…
+  [NeurIPS 2025][Medical Imaging][brain connectivity matrices] This paper proposes DiffeoCFM, which leverages pullback metrics induced by global diffeomorphisms to equivalently reformulate conditional flow matching on Riemannian manifolds as standard CFM in Euclidean space. The method enables efficient generation of brain connectivity matrices (SPD/correlation) while strictly preserving manifold constraints, achieving state-of-the-art performance on 3 fMRI and 2 EEG datasets.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -15,7 +15,7 @@ tags:
   - "fMRI"
   - "EEG"
 date: 2026-05-08
-content_hash: 4ec4202e229ecc4c
+content_hash: dcd3569ab272d232
 ---
 
 # Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry
@@ -163,8 +163,8 @@ After projection onto the manifold, TriangCFM's $\beta$-recall drops by up to 0.
 - [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](../../CVPR2026/medical_imaging/forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
 - [\[NeurIPS 2025\] GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds](geodynamics_a_geometric_state-space_neural_network_for_understanding_brain_dynam.md)
 - [\[NeurIPS 2025\] Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface](surf2ct_cascaded_3d_flow_matching_models_for_torso_3d_ct_synthesis_from_skin_sur.md)
-- [\[NeurIPS 2025\] Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens](brain_harmony_a_multimodal_foundation_model_unifying_morphology_and_function_int.md)
 - [\[NeurIPS 2025\] Variational Autoencoder with Normalizing Flow for X-ray Spectral Fitting](variational_autoencoder_with_normalizing_flow_for_x-ray_spectral_fitting.md)
+- [\[NeurIPS 2025\] Modeling X-ray Photon Pile-up with a Normalizing Flow](modeling_x-ray_photon_pile-up_with_a_normalizing_flow.md)
 
 </div>
 

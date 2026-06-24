@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SpeechLLM-as-Judges: Towards General and Interpretable Speech Quality Evaluation
 description: >-
-  [ACL 2026][Audio & Speech][SpeechEval] This paper extends speech quality assessment from "assigning a score" to "interpretable speech judging" by constructing the SpeechEval dataset, which contains 32,207 multi-lingual audios and 128,754 annotations. By utilizing CoT instruction tuning and GRPO training, SQ-LLM was developed, outperforming existing speech L
+  [ACL 2026][Audio & Speech][Speech Quality Evaluation] This paper extends speech quality assessment from "assigning a score" to "interpretable speech judging" by constructing the SpeechEval dataset, which contains 32,207 multi-lingual audios and 128,754 annotations. By utilizing CoT instruction tuning and GRPO training, SQ-LLM was developed, outperforming existing speech LLMs and expert models across four task categories: quality scoring, pair-wise comparison…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - SpeechEval
-  - GRPO
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Speech Quality Evaluation"
+  - "Multi-task Evaluation"
+  - "SpeechEval"
+  - "CoT Reasoning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 8bdde64b1fbdb8ad
+content_hash: 2f00dd6f2adb1a0f
 ---
+
 # SpeechLLM-as-Judges: Towards General and Interpretable Speech Quality Evaluation
 
 **Conference**: ACL 2026  
@@ -123,15 +127,16 @@ SQ-LLM is trained in two stages. The first stage is instruction tuning with dime
 - Value: ⭐⭐⭐⭐⭐ Direct reference value for automated evaluation, quality diagnosis, and safety detection of speech generation systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
 - [\[ICML 2026\] Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech](../../ICML2026/audio_speech/sparse_autoencoders_for_interpretable_emotion_control_in_text-to-speech.md)
 - [\[ICML 2026\] Position: Towards Responsible Evaluation for Text-to-Speech](../../ICML2026/audio_speech/position_towards_responsible_evaluation_for_text-to-speech.md)
+- [\[ICLR 2026\] TTSDS2: Resources and Benchmark for Evaluating Human-Quality Text to Speech Systems](../../ICLR2026/audio_speech/ttsds2_resources_and_benchmark_for_evaluating_human-quality_text_to_speech_syste.md)
 - [\[ACL 2026\] MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models](mtr-duplexbench_towards_a_comprehensive_evaluation_of_multi-round_conversations_.md)
-- [\[ACL 2026\] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](full-duplex-bench-v2_a_multi-turn_evaluation_framework_for_duplex_dialogue_syste.md)
-- [\[ICLR 2026\] Discovering and Steering Interpretable Concepts in Large Generative Music Models](../../ICLR2026/audio_speech/discovering_and_steering_interpretable_concepts_in_large_generative_music_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][CLIP] Addressing the issue where Open-World Semi-Supervised Learning (OWSSL) only performs "clustering" and relies on Hungarian matching for accuracy, SECOS utilizes a frozen CLIP to "ground" visual features of novel class samples to candidate textual labels. It generates reliable pseudo-labels through two stages (Global Com
+  [CVPR 2026][Self-Supervised Learning][Open-world Semi-supervised Learning] Addressing the issue where Open-World Semi-Supervised Learning (OWSSL) only performs "clustering" and relies on Hungarian matching for accuracy, SECOS utilizes a frozen CLIP to "ground" visual features of novel class samples to candidate textual labels. It generates reliable pseudo-labels through two stages (Global Compensation + In-batch Recapture) and aligns visual-semantic spaces using adapters. Thi…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - CLIP
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Open-world Semi-supervised Learning"
+  - "Generalized Category Discovery"
+  - "CLIP"
+  - "Semantic Alignment"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: 521274d82008fd9e
+content_hash: c25be6f49995e329
 ---
+
 # SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning
 
 **Conference**: CVPR 2026  
@@ -142,15 +147,16 @@ The results show that Global Compensation (N) provides the most significant boos
 - Value: ⭐⭐⭐⭐ (Practical, single-GPU reproducible, and shifts the field toward real-world deployment.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning](paf_perturbation-aware_filtering_for_open-set_semi-supervised_learning.md)
+- [\[ICLR 2026\] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments](../../ICLR2026/self_supervised/fedopenmatch_towards_semi-supervised_federated_learning_in_open-set_environments.md)
 - [\[AAAI 2026\] Let the Void Be Void: Robust Open-Set Semi-Supervised Learning via Selective Non-Alignment](../../AAAI2026/self_supervised/let_the_void_be_void_robust_open-set_semi-supervised_learning_via_selective_non-.md)
 - [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
-- [\[CVPR 2026\] GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency](gaussianmatch_semi-supervised_regression_with_pseudo-label_filtering_via_multi-v.md)
-- [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
+- [\[ICLR 2026\] PRISM: Progressive Robust Learning for Open-World Continual Category Discovery](../../ICLR2026/self_supervised/prism_progressive_robust_learning_for_open-world_continual_category_discovery.md)
 
 </div>
 

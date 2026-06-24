@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ShreddingNet: Coarse-to-Fine Restoration for Multi-Source Shredded Manuscripts
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] ShreddingNet utilizes a two-stage pipeline—"coarse matching for source-based clustering followed by fine-grained pair-wise scoring"—to solve the restoration problem where fragments from multiple paintings are mixed. It reduces model complexity from $O(n^2)$ to $O(n)$, achieving a global assembly F1-score of 98.37% on t
+  [CVPR 2026][Image Restoration][Artifact Restoration] ShreddingNet utilizes a two-stage pipeline—"coarse matching for source-based clustering followed by fine-grained pair-wise scoring"—to solve the restoration problem where fragments from multiple paintings are mixed. It reduces model complexity from $O(n^2)$ to $O(n)$, achieving a global assembly F1-score of 98.37% on two datasets, outperforming the previous SOTA by 5.72%.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Artifact Restoration"
+  - "Fragment Assembly"
+  - "Multi-source"
+  - "Coarse-to-fine Matching"
+  - "Linear Complexity"
 date: 2026-05-08
-content_hash: ecbcbb3e06fe9868
+content_hash: 8c06859745c7ff77
 ---
+
 # ShreddingNet: Coarse-to-Fine Restoration for Multi-Source Shredded Manuscripts
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ Ours achieves significantly higher precision than PairingNet. Inference time on 
 
 ## Related Papers
 
+- [\[AAAI 2026\] Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration](../../AAAI2026/image_restoration/clear_nights_ahead_towards_multi-weather_nighttime_image_res.md)
+- [\[CVPR 2026\] FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution](finpercep_rm_a_fine_grained_reward_model_and_co_evolutionary_curriculum_for_rl_ba.md)
 - [\[CVPR 2026\] DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution](dnf-sr_dual-input_and_negative-aware_feature_fine-tuning_for_real-world_image_su.md)
-- [\[CVPR 2026\] HFR and HDR Video from Multi-Attenuated Spikes Using a Rapidly Rotating SpokeND Filter](hfr_and_hdr_video_from_multi-attenuated_spikes_using_a_rapidly_rotating_spokend_.md)
-- [\[CVPR 2026\] UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization](unirain_unified_image_deraining_rag_dataset_distillation.md)
-- [\[CVPR 2026\] Beyond Single Solution: Multi-Hypothesis Collaborative Deep Unfolding Network for Image Compressive Sensing](beyond_single_solution_multi-hypothesis_collaborative_deep_unfolding_network_for.md)
-- [\[CVPR 2026\] Dynamic Exposure Burst Image Restoration](dynamic_exposure_burst_image_restoration.md)
+- [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
+- [\[CVPR 2026\] Gaussian Splatting-based Low-Rank Tensor Representation for Multi-Dimensional Image Recovery](gaussian_splatting-based_low-rank_tensor_representation_for_multi-dimensional_im.md)
 
 </div>
 

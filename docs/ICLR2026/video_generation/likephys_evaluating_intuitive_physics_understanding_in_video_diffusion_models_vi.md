@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LikePhys: Evaluating Intuitive Physics Understanding in Video Diffusion Models via Likelihood Preference
 description: >-
-  [ICLR 2026][Video Generation][World Models] LikePhys utilizes the denoising loss of diffusion models as a proxy for ELBO likelihood to compare "physically plausible vs. implausible" synthetic video pairs. This facilitates a training-free quantification of the intuitive physics understanding in video diffusion models, providing the PPE evaluation metric which ali
+  [ICLR 2026][Video Generation][Video Diffusion Models] LikePhys utilizes the denoising loss of diffusion models as a proxy for ELBO likelihood to compare "physically plausible vs. implausible" synthetic video pairs. This facilitates a training-free quantification of the intuitive physics understanding in video diffusion models, providing the PPE evaluation metric which aligns highly with human preferences.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - World Models
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Intuitive Physics"
+  - "Likelihood Preference"
+  - "Violation-of-Expectation Paradigm"
+  - "World Models"
+  - "Training-free Evaluation"
 date: 2026-05-08
-content_hash: d1ea33b707acbe59
+content_hash: 9fb4dfbf3bb36d46
 ---
+
 # LikePhys: Evaluating Intuitive Physics Understanding in Video Diffusion Models via Likelihood Preference
 
 **Conference**: ICLR 2026  
@@ -132,10 +138,10 @@ flowchart LR
 ## Related Papers
 
 - [\[CVPR 2026\] LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models](../../CVPR2026/video_generation/mind_the_generative_details_direct_localized_detail_preference_optimization_for_.md)
+- [\[ICLR 2026\] Consistent Noisy Latent Rewards for Trajectory Preference Optimization in Diffusion Models](consistent_noisy_latent_rewards_for_trajectory_preference_optimization_in_diffus.md)
 - [\[ICLR 2026\] Vid2World: Crafting Video Diffusion Models to Interactive World Models](vid2world_crafting_video_diffusion_models_to_interactive_world_models.md)
 - [\[ICLR 2026\] Target-Aware Video Diffusion Models](target-aware_video_diffusion_models.md)
 - [\[ICLR 2026\] VMoBA: Mixture-of-Block Attention for Video Diffusion Models](vmoba_mixture-of-block_attention_for_video_diffusion_models.md)
-- [\[AAAI 2026\] OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding](../../AAAI2026/video_generation/omnivdiff_omni_controllable_video_diffusion_for_generation_and_understanding.md)
 
 </div>
 

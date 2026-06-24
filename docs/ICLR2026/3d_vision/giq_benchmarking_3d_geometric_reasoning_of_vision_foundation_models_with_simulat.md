@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra
 description: >-
-  [ICLR 2026][3D Vision][benchmark] The GIQ benchmark dataset is proposed, comprising 224 synthetic and real polyhedra, to systematically evaluate the geometric reasoning capabilities of vision foundation models across four tasks: monocular 3D reconstruction, symmetry detection, mental rotation tests, and zero-shot classification, revealing significant d
+  [ICLR 2026][3D Vision][Geometric reasoning] The GIQ benchmark dataset is proposed, comprising 224 synthetic and real polyhedra, to systematically evaluate the geometric reasoning capabilities of vision foundation models across four tasks: monocular 3D reconstruction, symmetry detection, mental rotation tests, and zero-shot classification, revealing significant deficiencies in current models' basic geometric understanding.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - benchmark
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Geometric reasoning"
+  - "benchmark"
+  - "polyhedra"
+  - "vision foundation models"
+  - "VLM evaluation"
 date: 2026-05-08
-content_hash: c309868e56d36b70
+content_hash: 6f693cc7907d00cb
 ---
+
 # GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra
 
 **Conference**: ICLR 2026  

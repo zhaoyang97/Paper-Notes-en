@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] FOVI：面向深度视觉模型的生物启发式中心凹接口
+  [Paper Note] FOVI: Bio-inspired Foveated Interface for Deep Vision Models
 description: >-
-  [ICML 2026][Others][Paper Note] Inspired by the human retina-V1 pathway, the authors construct FOVI (Foveated Interface), which uses a "cortical magnification function + local isotropic sampling" to create a non-uniform pixel distribution that remains uniformly dense on the sensor manifold. By introducing a novel kNN convolution + kernel mapping tech
+  [ICML 2026][Foveated Sampling] Inspired by the human retina-V1 pathway, the authors construct FOVI (Foveated Interface), which uses a "cortical magnification function + local isotropic sampling" to create a non-uniform pixel distribution that remains uniformly dense on the sensor manifold. By introducing a novel kNN convolution + kernel mapping technique, FOVI is compatible with both CNNs and ViTs, allowing a DINOv3-ViT to approach full-resolution ImageNet accuracy using only…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Foveated Sampling"
+  - "Cortical Magnification Factor"
+  - "kNN Convolution"
+  - "Kernel Mapping"
+  - "LoRA Adaptation"
 date: 2026-05-08
-content_hash: b815573af67298c5
+content_hash: bda9676ba91dae64
 ---
+
 # FOVI: Bio-inspired Foveated Interface for Deep Vision Models
 
 **Conference**: ICML 2026  
@@ -132,15 +137,16 @@ Both CNN and ViT models use standard supervised classification. For each image, 
 - **Value**: ⭐⭐⭐⭐ Provides a practical, weight-compatible entry point for porting foundation models to high-resolution active vision systems for robotics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Complexity as Advantage: A Regret-Based Perspective on Emergent Structure](complexity_as_advantage_a_regret-based_perspective_on_emergent_structure.md)
-- [\[ICML 2026\] Riemannian Networks over Full-Rank Correlation Matrices](riemannian_networks_over_full-rank_correlation_matrices.md)
-- [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
-- [\[ICML 2026\] New Bounds for Kernel Sums via Fast Spherical Embeddings](new_bounds_for_kernel_sums_via_fast_spherical_embeddings.md)
-- [\[ICML 2026\] On Revisiting Entropy for Identifying Mislabeled Images](on_revisiting_entropy_for_identifying_mislabeled_images.md)
+- [\[CVPR 2026\] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision](../../CVPR2026/others/towards_knowledge-augmented_bayesian_deep_learning_for_computer_vision.md)
+- [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](possibilistic_predictive_uncertainty_for_deep_learning.md)
+- [\[ICML 2026\] Sequential Group Composition: A Window into the Mechanics of Deep Learning](sequential_group_composition_a_window_into_the_mechanics_of_deep_learning.md)
+- [\[ICML 2026\] Advantages of Non-Smooth Components in Vision Transformer Fine-Tuning](vision_transformer_finetuning_benefits_from_non-smooth_components.md)
+- [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](../../ICLR2026/others/hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
 
 </div>
 

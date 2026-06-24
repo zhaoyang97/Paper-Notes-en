@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FutureMind: Equipping Small Language Models with Strategic Thinking-Pattern Priors via Adaptive Knowledge Distillation
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Proposes FutureMind, a training-free framework that distills structured reasoning and retrieval strategies from LLMs into reusable thinking-pattern priors. Through a four-stage pipeline (problem analysis → logical reasoning → strategy planning → retrieval guidance) and three retrieval paradigms, it enables SLMs to achi
+  [ICLR 2026][Model Compression][Small Language Models] Proposes FutureMind, a training-free framework that distills structured reasoning and retrieval strategies from LLMs into reusable thinking-pattern priors. Through a four-stage pipeline (problem analysis → logical reasoning → strategy planning → retrieval guidance) and three retrieval paradigms, it enables SLMs to achieve SOTA performance on multi-hop QA.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Small Language Models"
+  - "Thinking Pattern Distillation"
+  - "Retrieval Strategy"
+  - "Multi-hop QA"
+  - "Modular Reasoning"
 date: 2026-05-08
-content_hash: dc6e00f1cef7a9bb
+content_hash: c74e46fba99b3e61
 ---
+
 # FutureMind: Equipping Small Language Models with Strategic Thinking-Pattern Priors via Adaptive Knowledge Distillation
 
 **Conference**: ICLR 2026  
@@ -129,9 +135,9 @@ Four multi-hop QA benchmarks (on 3B SLM):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
 - [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](knowledge_distillation_for_large_language_models_through_residual_learning.md)
 - [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
-- [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](../../ACL2026/model_compression/lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
 - [\[ICLR 2026\] Efficient Reasoning with Balanced Thinking](efficient_reasoning_with_balanced_thinking.md)
 

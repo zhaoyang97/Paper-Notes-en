@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unleashing Semantic and Geometric Priors for 3D Scene Completion
 description: >-
-  [AAAI2026][Autonomous Driving][3D scene completion] This paper proposes FoundationSSC, a framework that unleashes the semantic and geometric priors of Vision Foundation Models through a dual-level decoupling design at bo…
+  [AAAI2026][Autonomous Driving][3D scene completion] This paper proposes FoundationSSC, a framework that unleashes the semantic and geometric priors of Vision Foundation Models through a dual-level decoupling design at both the source level and pathway level. Combined with an Axis-Aware Fusion module for integrating complementary 3D features, the method achieves state-of-the-art performance of 19.32 mIoU / 48.12 IoU on SemanticKITTI.
 tags:
   - "AAAI2026"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "semantic-geometric decoupling"
   - "stereo cost volume"
 date: 2026-05-08
-content_hash: 998170f10d177611
+content_hash: 4884e1b7c0fb3eac
 ---
 
 # Unleashing Semantic and Geometric Priors for 3D Scene Completion

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Provably Efficient Online RLHF with One-Pass Reward Modeling
 description: >-
-  [NeurIPS 2025][LLM Alignment][online RLHF] This paper proposes a one-pass reward modeling method based on online mirror descent (OMD) that eliminates the computational bottleneck in online RLHF — namely…
+  [NeurIPS 2025][LLM Alignment][online RLHF] This paper proposes a one-pass reward modeling method based on online mirror descent (OMD) that eliminates the computational bottleneck in online RLHF — namely, storing all historical data and re-optimizing from scratch at each iteration — achieving $\mathcal{O}(1)$ time and memory complexity per iteration while also improving upon MLE methods in statistical efficiency.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "contextual dueling bandit"
   - "computational efficiency"
 date: 2026-05-08
-content_hash: d608cbd6f5846cd8
+content_hash: ffaa5de46f0e6fc8
 ---
 
 # Provably Efficient Online RLHF with One-Pass Reward Modeling
@@ -176,8 +176,8 @@ The OMD method reduces training time to approximately **one-third** of MLE while
 - [\[NeurIPS 2025\] Greedy Sampling Is Provably Efficient for RLHF](greedy_sampling_is_provably_efficient_for_rlhf.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
 - [\[ICML 2026\] Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling](../../ICML2026/llm_alignment/mitigating_reward_hacking_in_rlhf_via_bayesian_non-negative_reward_modeling.md)
+- [\[ICML 2025\] Can RLHF be More Efficient with Imperfect Reward Models? A Policy Coverage Perspective](../../ICML2025/llm_alignment/can_rlhf_be_more_efficient_with_imperfect_reward_models_a_policy_coverage_perspe.md)
 - [\[NeurIPS 2025\] Capturing Individual Human Preferences with Reward Features](capturing_individual_human_preferences_with_reward_features.md)
-- [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
 
 </div>
 

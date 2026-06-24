@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][MXFP4/6/8] MicroMix implements weight-activation quantization for LLMs based on NVIDIA Blackwell's MXFP4/MXFP6/MXFP8 microscaling formats. It adaptively assigns 4/6/8 bits to activation channels based on a "quantization error threshold" per layer. Supported by a fused CUTLASS GEMM kernel that integrates reordering, quantization,
+  [ICLR 2026][Model Compression][Mixed-precision quantization] MicroMix implements weight-activation quantization for LLMs based on NVIDIA Blackwell's MXFP4/MXFP6/MXFP8 microscaling formats. It adaptively assigns 4/6/8 bits to activation channels based on a "quantization error threshold" per layer. Supported by a fused CUTLASS GEMM kernel that integrates reordering, quantization, and dequantization, it achieves near FP16 accuracy at an average precision of approximately 5 bits…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - MXFP4/6/8
-  - Blackwell FP4 Tensor Core
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Mixed-precision quantization"
+  - "Microscaling (MX) formats"
+  - "MXFP4/6/8"
+  - "Blackwell FP4 Tensor Core"
+  - "Hardware-algorithm co-design"
 date: 2026-05-08
-content_hash: e73e07835eb90c03
+content_hash: cbbec2d92f70c883
 ---
+
 # MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -123,7 +127,7 @@ Ours is the only method to maintain $\ge 98\%$ of FP16 accuracy across both mode
 - [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
 - [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
 - [\[ICLR 2026\] PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs](pm-kvq_progressive_mixed-precision_kv_cache_quantization_for_long-cot_llms.md)
-- [\[ICLR 2026\] QWHA: Quantization-Aware Walsh-Hadamard Adaptation for Parameter-Efficient Fine-Tuning on Large Language Models](qwha_quantization-aware_walsh-hadamard_adaptation_for_parameter-efficient_fine-t.md)
+- [\[ICLR 2026\] Tequila: Trapping-free Ternary Quantization for Large Language Models](tequila_trapping-free_ternary_quantization_for_large_language_models.md)
 
 </div>
 

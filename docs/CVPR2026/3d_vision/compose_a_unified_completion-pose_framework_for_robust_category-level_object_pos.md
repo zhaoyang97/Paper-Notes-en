@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation
 description: >-
-  [CVPR 2026][3D Vision][NOCS] ComPose incorporates "point cloud completion" as a task-driven internal module into a category-level 6D pose estimation network. By utilizing keypoint-based progressive completion, it restores the complete object geometry directly in the observation space. Combined with geometric relation encoding and a geometric relat
+  [CVPR2026][3D Vision][Category-level pose estimation] ComPose incorporates "point cloud completion" as a task-driven internal module into a category-level 6D pose estimation network. By utilizing keypoint-based progressive completion, it restores the complete object geometry directly in the observation space. Combined with geometric relation encoding and a geometric relation consistency loss, it improves the $10°2\text{cm}$ accuracy for REAL275 depth-only from 68.5% to 77.8%…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - NOCS
+  - "CVPR2026"
+  - "3D Vision"
+  - "Category-level pose estimation"
+  - "point cloud completion"
+  - "keypoints"
+  - "NOCS"
+  - "geometric relation consistency"
 date: 2026-05-08
-content_hash: fcc65095e9bbc4eb
+content_hash: 670a0de73454a260
 ---
+
 # ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation
 
 **Conference**: CVPR2026  
@@ -143,11 +148,11 @@ Conducted on REAL275 depth-only (Metrics: $5°2\text{cm}$ / $10°5\text{cm}$).
 
 ## Related Papers
 
+- [\[CVPR 2026\] SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation](se3-equivariance_with_geometric_and_topological_guidance_for_category-level_obje.md)
+- [\[CVPR 2026\] WildPose: A Unified Framework for Robust Pose Estimation in the Wild](wildpose_a_unified_framework_for_robust_pose_estimation_in_the_wild.md)
+- [\[CVPR 2026\] SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation](scapo_self-supervised_category-level_articulated_pose_estimation_from_a_single_3.md)
 - [\[CVPR 2026\] DICArt: Advancing Category-level Articulated Object Pose Estimation in Discrete State-Spaces](dicart_advancing_category-level_articulated_object_pose_estimation_in_discrete_s.md)
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
-- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
+- [\[ICCV 2025\] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes](../../ICCV2025/3d_vision/unified_category-level_object_detection_and_pose_estimation_from_rgb_images_usin.md)
 
 </div>
 

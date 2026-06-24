@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion
 description: >-
-  [CVPR 2026][3D Vision][World Foundation Model] C-GenReg utilizes a pretrained World Foundation Model (Cosmos-Transfer) to render the geometry of input point clouds into "multi-view consistent RGB views." It then extracts correspondences using a Vision Foundation Model (VFM) pretrained for dense matching (MASt3R) and merges the correspondence posteriors from the ima
+  [CVPR 2026][3D Vision][Point Cloud Registration] C-GenReg utilizes a pretrained World Foundation Model (Cosmos-Transfer) to render the geometry of input point clouds into "multi-view consistent RGB views." It then extracts correspondences using a Vision Foundation Model (VFM) pretrained for dense matching (MASt3R) and merges the correspondence posteriors from the image and original geometric branches via a Noisy-AND probabilistic fusion. This zero-training…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - World Foundation Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Registration"
+  - "Training-Free"
+  - "World Foundation Model"
+  - "Vision Foundation Model"
+  - "Probabilistic Fusion"
 date: 2026-05-08
-content_hash: a00b8ee5c6c98cc1
+content_hash: b1f17cfd50b5cae1
 ---
+
 # C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion
 
 **Conference**: CVPR 2026  
@@ -143,9 +148,9 @@ The learning-based baselines degrade on Waymo due to sensor differences, while C
 ## Related Papers
 
 - [\[CVPR 2026\] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
+- [\[CVPR 2026\] SuP: Sub-cloud Driven Point Cloud Registration](sup_sub-cloud_driven_point_cloud_registration.md)
+- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
 - [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
-- [\[CVPR 2026\] Fusion of Depth and Semantics for Probabilistic Floorplan Localization](fusion_of_depth_and_semantics_for_probabilistic_floorplan_localization.md)
 - [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
 
 </div>

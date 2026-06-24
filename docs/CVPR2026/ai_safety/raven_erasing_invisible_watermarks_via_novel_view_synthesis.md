@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RAVEN: Erasing Invisible Watermarks via Novel View Synthesis
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] RAVEN reformulates "erasing invisible watermarks in AI-generated images" as "observing the same scene from a different perspective." By using a frozen image-to-image diffusion model to perform a slight viewpoint shift in the latent space, combined with cross-view correspondence attention to maintain visual consistency,
+  [CVPR 2026][AI Safety][Invisible Watermarks] RAVEN reformulates "erasing invisible watermarks in AI-generated images" as "observing the same scene from a different perspective." By using a frozen image-to-image diffusion model to perform a slight viewpoint shift in the latent space, combined with cross-view correspondence attention to maintain visual consistency, it achieves an average TPR@1%FPR of only 0.026 across 15 watermark methods. This represents a reduction of over 60…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Invisible Watermarks"
+  - "Watermark Removal Attacks"
+  - "Novel View Synthesis"
+  - "Diffusion Models"
+  - "Zero-shot"
 date: 2026-05-08
-content_hash: c54a8fa567e95431
+content_hash: d866c2089505bdc9
 ---
+
 # RAVEN: Erasing Invisible Watermarks via Novel View Synthesis
 
 **Conference**: CVPR 2026  
@@ -135,7 +140,7 @@ Classical pixel attacks (JPEG, blur, noise) are largely ineffective against sema
 - [\[ICML 2026\] Geometrically Constrained Outlier Synthesis](../../ICML2026/ai_safety/geometrically_constrained_outlier_synthesis.md)
 - [\[CVPR 2026\] PoInit-of-View: Poisoning Initialization of Views Transfers Across Multiple 3D Reconstruction Systems](poinit-of-view_poisoning_initialization_of_views_transfers_across_multiple_3d_re.md)
 - [\[ICLR 2026\] Traceable Black-box Watermarks for Federated Learning](../../ICLR2026/ai_safety/traceable_black-box_watermarks_for_federated_learning.md)
-- [\[ICCV 2025\] SpecGuard: Spectral Projection-based Advanced Invisible Watermarking](../../ICCV2025/ai_safety/specguard_spectral_projection-based_advanced_invisible_watermarking.md)
+- [\[AAAI 2026\] DeepTracer: Tracing Stolen Model via Deep Coupled Watermarks](../../AAAI2026/ai_safety/deeptracer_tracing_stolen_model_via_deep_coupled_watermarks.md)
 
 </div>
 

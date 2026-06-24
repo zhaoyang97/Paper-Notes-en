@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Gradient-Normalized Smoothness for Optimization with Approximate Hessians
 description: >-
-  [ICLR 2026][Optimization & Theory][Fisher/Gauss-Newton] This paper proposes "Gradient-Normalized Smoothness," a problem-agnostic local characterization that enables gradient-regularized Newton-type methods using approximate Hessians to automatically adapt to the correct smoothness class, recovering optimal global convergence rates of exact Newton methods on both convex and
+  [ICLR 2026][Optimization][second-order optimization] This paper proposes "Gradient-Normalized Smoothness," a problem-agnostic local characterization that enables gradient-regularized Newton-type methods using approximate Hessians to automatically adapt to the correct smoothness class, recovering optimal global convergence rates of exact Newton methods on both convex and non-convex objectives.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Fisher/Gauss-Newton
+  - "ICLR 2026"
+  - "Optimization"
+  - "second-order optimization"
+  - "approximate Hessian"
+  - "gradient-regularized Newton method"
+  - "global convergence"
+  - "adaptive step size"
+  - "Fisher/Gauss-Newton"
 date: 2026-05-08
-content_hash: 1894e5eee0e94b30
+content_hash: 60448c7609b3c8c9
 ---
+
 # Gradient-Normalized Smoothness for Optimization with Approximate Hessians
 
 **Conference**: ICLR 2026  

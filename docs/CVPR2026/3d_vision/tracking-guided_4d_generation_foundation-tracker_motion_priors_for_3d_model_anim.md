@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Track4DGen injects frame-by-frame point correspondences from a foundation point tracker (CoTracker3) into the intermediate features of multi-view video diffusion models and 4D Gaussian reconstruction. By using explicit feature-level temporal supervision to suppress appearance drift in 4D asset generation, it outperform
+  [CVPR 2026][3D Vision][4D Generation] Track4DGen injects frame-by-frame point correspondences from a foundation point tracker (CoTracker3) into the intermediate features of multi-view video diffusion models and 4D Gaussian reconstruction. By using explicit feature-level temporal supervision to suppress appearance drift in 4D asset generation, it outperforms baselines like Animate3D on both video generation and 4D generation benchmarks.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Generation"
+  - "3D Model Animation"
+  - "Point Tracking Prior"
+  - "Multi-view Video Diffusion"
+  - "4D Gaussian Splatting"
 date: 2026-05-08
-content_hash: 122f468aec522ddd
+content_hash: 922eb5370033372d
 ---
+
 # Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation
 
 **Conference**: CVPR 2026  
@@ -154,10 +160,10 @@ Ablation for 4D Generation (Sketchfab28):
 ## Related Papers
 
 - [\[CVPR 2026\] KV-Tracker: Real-Time Pose Tracking with Transformers](kv-tracker_real-time_pose_tracking_with_transformers.md)
+- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)
 - [\[CVPR 2026\] RigMo: Unifying Rig and Motion Learning for Generative Animation](rigmo_unifying_rig_and_motion_learning_for_generative_animation.md)
+- [\[CVPR 2026\] AniMimic: Imitating 3D Animation from Video Priors](animimic_imitating_3d_animation_from_video_priors.md)
 - [\[ICCV 2025\] AnimateAnyMesh: A Feed-Forward 4D Foundation Model for Text-Driven Universal Mesh Animation](../../ICCV2025/3d_vision/animateanymesh_a_feedforward_4d_foundation_model_for_textdri.md)
-- [\[CVPR 2026\] Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis](motion_3-to-4_3d_motion_reconstruction_for_4d_synthesis.md)
-- [\[CVPR 2026\] Human Geometry Distribution for 3D Animation Generation](human_geometry_distribution_for_3d_animation_generation.md)
 
 </div>
 

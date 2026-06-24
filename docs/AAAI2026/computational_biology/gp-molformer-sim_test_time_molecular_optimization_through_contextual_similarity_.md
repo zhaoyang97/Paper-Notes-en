@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GP-MoLFormer-Sim: Test Time Molecular Optimization through Contextual Similarity Guidance
 description: >-
-  [AAAI 2026][Computational Biology][molecular optimization] This paper proposes GP-MoLFormer-Sim, a training-free test-time molecular generation guidance method that leverages the contextual embeddings of a chemical langu…
+  [AAAI 2026][Computational Biology][molecular optimization] This paper proposes GP-MoLFormer-Sim, a training-free test-time molecular generation guidance method that leverages the contextual embeddings of a chemical language model (GP-MoLFormer) to estimate similarity to target molecules, dynamically adjusting logits during autoregressive decoding. Combined with a genetic algorithm (GP-MoLFormer-Sim+GA), the method achieves an average rank of 2nd across 23 tasks on the PMO ben…
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -13,7 +13,7 @@ tags:
   - "SMILES"
   - "similarity-guided generation"
 date: 2026-05-08
-content_hash: e8d70cc78f752151
+content_hash: 65f4bd8932191a7c
 ---
 
 # GP-MoLFormer-Sim: Test Time Molecular Optimization through Contextual Similarity Guidance
@@ -172,11 +172,11 @@ The method is elegant and theoretically justified; the black-box fairness analys
 
 ## Related Papers
 
+- [\[ICLR 2026\] Test-Time Adaptation without Source Data for Out-of-Domain Bioactivity Prediction](../../ICLR2026/computational_biology/test-time_adaptation_without_source_data_for_out-of-domain_bioactivity_predictio.md)
 - [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](../../ICML2026/computational_biology/constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
-- [\[AAAI 2026\] MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging](mergedna_context-aware_genome_modeling_with_dynamic_tokenization_through_token_m.md)
 - [\[AAAI 2026\] EPO: Diverse and Realistic Protein Ensemble Generation via Energy Preference Optimization](epo_diverse_and_realistic_protein_ensemble_generation_via_energy_preference_opti.md)
-- [\[ICLR 2026\] DriftLite: Lightweight Drift Control for Inference-Time Scaling of Diffusion Models](../../ICLR2026/computational_biology/driftlite_lightweight_drift_control_for_inference-time_scaling_of_diffusion_mode.md)
-- [\[ICML 2026\] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition](../../ICML2026/computational_biology/learning_protein_structure-function_relationships_through_knowledge-guided_repre.md)
+- [\[AAAI 2026\] MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging](mergedna_context-aware_genome_modeling_with_dynamic_tokenization_through_token_m.md)
+- [\[ICLR 2026\] Learning Collective Variables from BioEmu with Time-Lagged Generation](../../ICLR2026/computational_biology/learning_collective_variables_from_bioemu_with_time-lagged_generation.md)
 
 </div>
 

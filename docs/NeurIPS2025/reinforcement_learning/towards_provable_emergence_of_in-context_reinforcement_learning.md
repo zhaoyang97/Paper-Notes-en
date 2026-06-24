@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Provable Emergence of In-Context Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][In-Context RL] This paper theoretically proves that the globally optimal parameters of a Transformer pretrained via standard RL objectives can implement in-context temporal differen…
+  [NeurIPS 2025][Reinforcement Learning][In-Context RL] This paper theoretically proves that the globally optimal parameters of a Transformer pretrained via standard RL objectives can implement in-context temporal difference (TD) learning, providing the first provable theoretical foundation for the in-context RL (ICRL) phenomenon.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Policy Evaluation"
   - "Temporal Difference Learning"
 date: 2026-05-08
-content_hash: 74003e88d0caf1e8
+content_hash: f08c24cf61bfb24f
 ---
 
 # Towards Provable Emergence of In-Context Reinforcement Learning
@@ -123,11 +123,11 @@ where $V_\theta$ is the Transformer-parameterized value function and $V^{\pi}$ i
 
 ## Related Papers
 
+- [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](../../ICLR2026/reinforcement_learning/context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
 - [\[ICML 2026\] Safe In-Context Reinforcement Learning](../../ICML2026/reinforcement_learning/safe_in-context_reinforcement_learning.md)
-- [\[ICLR 2026\] Scalable In-Context Q-Learning](../../ICLR2026/reinforcement_learning/scalable_in-context_q-learning.md)
-- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](../../ICLR2026/reinforcement_learning/longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
 - [\[NeurIPS 2025\] Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning](finite-sample_analysis_of_policy_evaluation_for_robust_average_reward_reinforcem.md)
-- [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](../../ICLR2026/reinforcement_learning/spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
+- [\[ICLR 2026\] Scalable In-Context Q-Learning](../../ICLR2026/reinforcement_learning/scalable_in-context_q-learning.md)
+- [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
 
 </div>
 

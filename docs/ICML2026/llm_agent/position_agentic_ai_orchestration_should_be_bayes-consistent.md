@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Agentic AI Orchestration Should Be Bayes-Consistent
 description: >-
-  [ICML 2026][LLM Agent][value of information] This position paper argues against trying to make LLMs themselves "Bayesian" (a path fraught with engineering and theoretical roadblocks). Instead, it proposes moving the Bayesian structure to the **orchestration control layer** of agentic AI. Here, the controller maintains beliefs over low-dimensional task-level laten
+  [ICML 2026 (Position Paper)][LLM Agent][Bayesian Control Layer] This position paper argues against trying to make LLMs themselves "Bayesian" (a path fraught with engineering and theoretical roadblocks). Instead, it proposes moving the Bayesian structure to the **orchestration control layer** of agentic AI. Here, the controller maintains beliefs over low-dimensional task-level latent variables, updates these beliefs following Bayes' rule based on "message observations" from ag…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - value of information
+  - "ICML 2026 (Position Paper)"
+  - "LLM Agent"
+  - "Bayesian Control Layer"
+  - "Expected Utility"
+  - "Value of Information"
+  - "Agent Orchestration"
+  - "Composite Likelihood"
 date: 2026-05-08
-content_hash: 3b230d9712104044
+content_hash: 2d7ec1b327ce9272
 ---
+
 # Position: Agentic AI Orchestration Should Be Bayes-Consistent
 
 **Conference**: ICML 2026 (Position Paper)  
@@ -131,15 +136,15 @@ Three scenarios and their corresponding latent variable designs:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Position: Assistive Agents Need Accessibility Alignment](position_assistive_agents_need_accessibility_alignment.md)
-- [\[NeurIPS 2025\] Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading](../../NeurIPS2025/llm_agent/orchestration_framework_for_financial_agents_from_algorithmic_trading_to_agentic.md)
-- [\[ACL 2026\] How Adversarial Environments Mislead Agentic AI](../../ACL2026/llm_agent/how_adversarial_environments_mislead_agentic_ai.md)
-- [\[ICML 2026\] NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration](naviagent_graph-driven_bilevel_planning_for_scalable_tool_orchestration.md)
 - [\[ICML 2026\] Web Agents Should Use Typed Actions Instead of Click-Based Browsing](web_agents_should_use_typed_actions_instead_of_click-based_browsing.md)
+- [\[ICML 2026\] Position: Modular Memory is the Key to Continual Learning Agents](position_modular_memory_is_the_key_to_continual_learning_agents.md)
+- [\[NeurIPS 2025\] Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading](../../NeurIPS2025/llm_agent/orchestration_framework_for_financial_agents_from_algorithmic_trading_to_agentic.md)
+- [\[ICML 2026\] NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration](naviagent_graph-driven_bilevel_planning_for_scalable_tool_orchestration.md)
 
 </div>
 

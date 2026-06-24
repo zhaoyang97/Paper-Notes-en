@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars
 description: >-
-  [ICCV 2025][Human Understanding][3D Gaussian] This paper presents Avat3r — the first animatable large reconstruction model (LRM) that regresses high-quality drivable 3D Gaussian head avatars from only 4 input images in a…
+  [ICCV 2025][Human Understanding][3D Gaussian] This paper presents Avat3r — the first animatable large reconstruction model (LRM) that regresses high-quality drivable 3D Gaussian head avatars from only 4 input images in a feed-forward manner. By integrating DUSt3R positional maps and Sapiens semantic features as priors, and modeling expression-driven animation via simple cross-attention, Avat3r substantially outperforms existing methods on the Ava256 and NeRSemble datasets.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "large reconstruction model"
   - "feed-forward inference"
 date: 2026-05-08
-content_hash: 65ac87beabaf0c63
+content_hash: 7f55ab22f03ff368
 ---
 
 # Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars
@@ -135,10 +135,10 @@ CSIM (identity similarity) improves from 0.31 (GPAvatar) to 0.59, demonstrating 
 ## Related Papers
 
 - [\[ICCV 2025\] ImHead: A Large-scale Implicit Morphable Model for Localized Head Modeling](imhead_a_large-scale_implicit_morphable_model_for_localized_head_modeling.md)
+- [\[CVPR 2025\] RGBAvatar: Reduced Gaussian Blendshapes for Online Modeling of Head Avatars](../../CVPR2025/human_understanding/rgbavatar_reduced_gaussian_blendshapes_for_online_modeling_of_head_avatars.md)
 - [\[NeurIPS 2025\] VASA-3D: Lifelike Audio-Driven Gaussian Head Avatars from a Single Image](../../NeurIPS2025/human_understanding/vasa-3d_lifelike_audio-driven_gaussian_head_avatars_from_a_single_image.md)
-- [\[ICCV 2025\] GGTalker: Talking Head Synthesis with Generalizable Gaussian Priors and Identity-Specific Adaptation](ggtalker_talking_head_systhesis_with_generalizable_gaussian_priors_and_identity-.md)
 - [\[CVPR 2026\] 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction](../../CVPR2026/human_understanding/textit4dsurf_high-fidelity_dynamic_scene_surface_reconstruction.md)
-- [\[CVPR 2026\] FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision](../../CVPR2026/human_understanding/flexavatar_learning_complete_3d_head_avatars_with_partial_supervision.md)
+- [\[ICCV 2025\] GGTalker: Talking Head Synthesis with Generalizable Gaussian Priors and Identity-Specific Adaptation](ggtalker_talking_head_systhesis_with_generalizable_gaussian_priors_and_identity-.md)
 
 </div>
 

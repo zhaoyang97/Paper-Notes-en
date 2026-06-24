@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SpatialViz-Bench：一个认知科学驱动、用于诊断 MLLM 空间可视化能力的基准
+  [Paper Note] SpatialViz-Bench: A Cognitive Science-Driven Benchmark for Diagnosing the Spatial Visualization Capabilities of MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] To address the gap in existing multimodal benchmarks that only evaluate "visible information" rather than "internal mental rotation/folding/perspective" of objects, this paper decomposes spatial visualization into 4 sub-capabilities × 12 tasks based on cognitive science. It uses Python+FreeCAD to procedurally generate
+  [ICLR 2026][Multimodal VLM][Spatial Visualization] To address the gap in existing multimodal benchmarks that only evaluate "visible information" rather than "internal mental rotation/folding/perspective" of objects, this paper decomposes spatial visualization into 4 sub-capabilities × 12 tasks based on cognitive science. It uses Python+FreeCAD to procedurally generate 1,180 infinitely expandable and contamination-free questions. Evaluation across 27 MLLMs reveals that the str…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Spatial Visualization"
+  - "MLLM Benchmark"
+  - "Procedural Generation"
+  - "Cognitive Science"
+  - "Error Diagnosis"
 date: 2026-05-08
-content_hash: 851e241834d89cab
+content_hash: f13c737fd298d1c8
 ---
+
 # SpatialViz-Bench: A Cognitive Science-Driven Benchmark for Diagnosing the Spatial Visualization Capabilities of MLLMs
 
 **Conference**: ICLR 2026  
@@ -119,15 +125,16 @@ Key signals: ① Massive gap between top models (44.66%) and humans (82.46%); �
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](visjudge-bench_aesthetics_and_quality_assessment_of_visualizations.md)
 - [\[ICLR 2026\] MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence](mmsi-bench_a_benchmark_for_multi-image_spatial_intelligence.md)
+- [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](webds_an_end-to-end_benchmark_for_web-based_data_science.md)
 - [\[ICLR 2026\] ODI-Bench: Can MLLMs Understand Immersive Omnidirectional Environments?](odi-bench_can_mllms_understand_immersive_omnidirectional_environments.md)
+- [\[ACL 2026\] MSEarth: A Multimodal Benchmark for Earth Science Phenomenon Discovery with MLLMs](../../ACL2026/multimodal_vlm/msearth_a_multimodal_benchmark_for_earth_science_phenomenon_discovery_with_mllms.md)
 - [\[ICLR 2026\] PRISMM-Bench: A Benchmark of Peer-Review Grounded Multimodal Inconsistencies](prismm-bench_a_benchmark_of_peer-review_grounded_multimodal_inconsistencies.md)
-- [\[ICLR 2026\] IWR-Bench: Can LVLMs Reconstruct Interactive Webpage from a User Interaction Video?](iwr-bench_can_lvlms_reconstruct_interactive_webpage_from_a_user_interaction_vide.md)
 
 </div>
 

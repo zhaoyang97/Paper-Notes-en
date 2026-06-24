@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] BayesMM proposes a training-free dynamic Bayesian distribution learning framework that models text and geometric modalities as Gaussian distributions and automatically adjusts modality weights through Bayesian Model Averaging. It achieves robust test-time adaptation across multiple point cloud benchmarks with an averag
+  [CVPR 2026][3D Vision][Test-time adaptation] BayesMM proposes a training-free dynamic Bayesian distribution learning framework that models text and geometric modalities as Gaussian distributions and automatically adjusts modality weights through Bayesian Model Averaging. It achieves robust test-time adaptation across multiple point cloud benchmarks with an average gain of over 4%.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Test-time adaptation"
+  - "Point cloud recognition"
+  - "Bayesian inference"
+  - "Multimodal distribution learning"
+  - "Zero-shot generalization"
 date: 2026-05-08
-content_hash: 1357349d82c6a2c2
+content_hash: 77a54ce546645361
 ---
+
 # Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning
 
 **Conference**: CVPR 2026  
@@ -129,9 +135,9 @@ The weights for the text and geometric modalities are their respective posterior
 
 - [\[CVPR 2026\] ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis](learning_coordinate-based_convolutional_kernels_for_continuous_se3_equivariant_a.md)
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
+- [\[AAAI 2026\] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis](../../AAAI2026/3d_vision/graph_smoothing_for_enhanced_local_geometry_learning_in_point_cloud_analysis.md)
+- [\[CVPR 2026\] Image-to-Point Cloud Feature Back-Projection for Multimodal Training of 3D Semantic Segmentation](image-to-point_cloud_feature_back-projection_for_multimodal_training_of_3d_seman.md)
 - [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
-- [\[CVPR 2026\] Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling](hyper-pcn_hypergraph-based_point_cloud_completion_via_high-order_correlation_mod.md)
 
 </div>
 

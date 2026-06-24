@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Structural Action Transformer for 3D Dexterous Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Flow Matching] SAT flips dexterous action chunks from "temporally ordered action vectors $(T,D_a)$" to "joint-ordered trajectory sequences $(D_a,T)$." This allows the Transformer to naturally handle heterogeneous embodiments by treating the number of joints as a variable sequence length. Coupled with an Embodied Joint Codebook descri
+  [CVPR 2026][Robotics][Dexterous Manipulation] SAT flips dexterous action chunks from "temporally ordered action vectors $(T,D_a)$" to "joint-ordered trajectory sequences $(D_a,T)$." This allows the Transformer to naturally handle heterogeneous embodiments by treating the number of joints as a variable sequence length. Coupled with an Embodied Joint Codebook describing kinematic roles and Flow Matching to generate actions from 3D point clouds…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "Dexterous Manipulation"
+  - "Cross-Embodiment Transfer"
+  - "Action Representation"
+  - "Flow Matching"
+  - "Point Cloud Strategy"
 date: 2026-05-08
-content_hash: 74d09618c49e17f2
+content_hash: 5e4e068b18d9bea6
 ---
+
 # Structural Action Transformer for 3D Dexterous Manipulation
 
 **Conference**: CVPR 2026  
@@ -144,16 +149,16 @@ Further decomposition shows removing the **Functional Category** $f$ is the most
 - Value: ⭐⭐⭐⭐⭐ Provides a scalable, efficient path for universal dexterous policies.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
-- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
-- [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
 - [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
-- [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
+- [\[ICLR 2026\] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation](../../ICLR2026/robotics/equact_an_se3-equivariant_multi-task_transformer_for_3d_robotic_manipulation.md)
+- [\[CVPR 2026\] Dexterous World Models](dexterous_world_models.md)
+- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
 
 </div>
 

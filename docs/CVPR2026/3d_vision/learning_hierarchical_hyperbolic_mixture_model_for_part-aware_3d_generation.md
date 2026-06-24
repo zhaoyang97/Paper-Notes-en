@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper embeds the hierarchical semantics of 3D object parts into hyperbolic space. It proposes the Hierarchical Hyperbolic Mixture Model (H2MM), a geodesic diffusion process that decouples radial and angular noise, and a high-order Riemannian ODE solver that preserves manifold geometry. The method achieves state-of
+  [CVPR 2026][3D Vision][Part-aware 3D generation] This paper embeds the hierarchical semantics of 3D object parts into hyperbolic space. It proposes the Hierarchical Hyperbolic Mixture Model (H2MM), a geodesic diffusion process that decouples radial and angular noise, and a high-order Riemannian ODE solver that preserves manifold geometry. The method achieves state-of-the-art results in quality (FID/KID) and speed for unconditional, category-conditional…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Part-aware 3D generation"
+  - "Hyperbolic space"
+  - "Hierarchical mixture model"
+  - "Geodesic diffusion"
+  - "Riemannian ODE solver"
 date: 2026-05-08
-content_hash: 8bc9ff09e12a4ffd
+content_hash: c6a26f87d6276158
 ---
+
 # Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Text-to-3D (CLIP Score↑ / Inference Time s↓) and Image-to-3D:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] EI-Part: Explode for Completion and Implode for Refinement](ei-partexplode_for_completion_and_implode_for_refinement.md)
-- [\[CVPR 2026\] iLRM: An Iterative Large 3D Reconstruction Model](ilrm_an_iterative_large_3d_reconstruction_model.md)
+- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](../../ICLR2026/3d_vision/part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
+- [\[CVPR 2026\] Realiz3D: 3D Generation Made Photorealistic via Domain-Aware Learning](realiz3d_3d_generation_made_photorealistic_via_domain-aware_learning.md)
+- [\[CVPR 2026\] PARSE: Part-Aware Relational Spatial Modeling](parse_part-aware_relational_spatial_modeling.md)
+- [\[CVPR 2026\] PartDiffuser: Part-wise 3D Mesh Generation via Discrete Diffusion](partdiffuser_part-wise_3d_mesh_generation_via_discrete_diffusion.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Multi-objective Large Language Model Alignment with Hierarchical Experts
 description: >-
-  [ICLR 2026][Alignment & RLHF][LoRA] HoE decomposes multi-objective alignment into a series of "single-preference subproblems" using a three-layer Mixture-of-Experts consisting of training-free extracted LoRA experts, lightweight routing experts, and parameter-free preference routing. It covers the entire Pareto front in a plug-and-play manner without ret
+  [ICLR 2026][LLM Alignment][Multi-objective alignment] HoE decomposes multi-objective alignment into a series of "single-preference subproblems" using a three-layer Mixture-of-Experts consisting of training-free extracted LoRA experts, lightweight routing experts, and parameter-free preference routing. It covers the entire Pareto front in a plug-and-play manner without retraining the backbone, responding to arbitrary user preference weights.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - LoRA
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Multi-objective alignment"
+  - "Pareto front"
+  - "LoRA"
+  - "Mixture-of-Experts"
+  - "Model Merging"
+  - "Preference Controllability"
 date: 2026-05-08
-content_hash: 93bf8695f18cf0c2
+content_hash: 4733a0b8ee890737
 ---
+
 # Multi-objective Large Language Model Alignment with Hierarchical Experts
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ flowchart TD
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 - [\[ICLR 2026\] IDEAL: Data Equilibrium Adaptation for Multi-Capability Language Model Alignment](ideal_data_equilibrium_adaptation_for_multi-capability_language_model_alignment.md)
 - [\[ICLR 2026\] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment](semantic-aware_wasserstein_policy_regularization_for_large_language_model_alignm.md)
-- [\[ICLR 2026\] Test-Time Alignment for Large Language Models via Textual Model Predictive Control](test-time_alignment_for_large_language_models_via_textual_model_predictive_contr.md)
+- [\[ICLR 2026\] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary](bradley-terry_and_multi-objective_reward_modeling_are_complementary.md)
 
 </div>
 

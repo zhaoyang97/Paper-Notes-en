@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Combinatorial Optimization] PARCO is a framework that solves multi-agent combinatorial optimization problems efficiently via Communication Layers for inter-agent coordination…
+  [NeurIPS 2025][Reinforcement Learning][Combinatorial Optimization] PARCO is a framework that solves multi-agent combinatorial optimization problems efficiently via Communication Layers for inter-agent coordination, a Multiple Pointer Mechanism for parallel decoding, and a Priority-based Conflict Handler for conflict resolution.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Parallel Decoding"
   - "Vehicle Routing"
 date: 2026-05-08
-content_hash: 740180e8e37a983a
+content_hash: fa2603a8518d3e82
 ---
 
 # PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization
@@ -132,10 +132,10 @@ where $G_{ij} = R(\boldsymbol{a}_{ij}, \boldsymbol{x}_i) - b^{\text{shared}}(\bo
 ## Related Papers
 
 - [\[NeurIPS 2025\] Complexity Scaling Laws for Neural Models using Combinatorial Optimization](complexity_scaling_laws_for_neural_models_using_combinatorial_optimization.md)
+- [\[ICML 2025\] Preference Optimization for Combinatorial Optimization Problems](../../ICML2025/reinforcement_learning/preference_optimization_for_combinatorial_optimization_problems.md)
 - [\[NeurIPS 2025\] A Theory of Multi-Agent Generative Flow Networks](a_theory_of_multi-agent_generative_flow_networks.md)
 - [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
-- [\[NeurIPS 2025\] Sequential Multi-Agent Dynamic Algorithm Configuration](sequential_multi-agent_dynamic_algorithm_configuration.md)
-- [\[NeurIPS 2025\] Extending NGU to Multi-Agent RL: A Preliminary Study](extending_ngu_to_multi-agent_rl_a_preliminary_study.md)
+- [\[ICML 2025\] Graph-Supported Dynamic Algorithm Configuration for Multi-Objective Combinatorial Optimization](../../ICML2025/reinforcement_learning/graph-supported_dynamic_algorithm_configuration_for_multi-objective_combinatoria.md)
 
 </div>
 

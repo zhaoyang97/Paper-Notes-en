@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Prior-Free Tabular Test-Time Adaptation
 description: >-
-  [ICLR 2026][Others][prior-free] PFT3A addresses test-time adaptation for tabular data under the stringent setting of **no access to source data and no knowledge of any source domain priors**. By employing three modules (Class Prior Estimation, Robust Feature Learning, and Representative Subspace Exploration), it simultaneously mitigates label shift a
+  [ICLR 2026][Tabular Data] PFT3A addresses test-time adaptation for tabular data under the stringent setting of **no access to source data and no knowledge of any source domain priors**. By employing three modules (Class Prior Estimation, Robust Feature Learning, and Representative Subspace Exploration), it simultaneously mitigates label shift and feature shift, consistently outperforming existing SOTA methods across five TableShift datasets and three backbones.
 tags:
-  - ICLR 2026
-  - Others
-  - prior-free
+  - "ICLR 2026"
+  - "Tabular Data"
+  - "Test-Time Adaptation"
+  - "Label Shift"
+  - "Feature Shift"
+  - "prior-free"
 date: 2026-05-08
-content_hash: 2f5b2e53ad488546
+content_hash: a6edde2bbf28a2c3
 ---
+
 # Prior-Free Tabular Test-Time Adaptation
 
 **Conference**: ICLR 2026  
@@ -142,7 +146,7 @@ Removing modules one by one under the TabTransformer backbone (Acc):
 - [\[ICLR 2026\] Articulation in Motion: Prior-Free Part Mobility Analysis for Articulated Objects](articulation_in_motion_prior-free_part_mobility_analysis_for_articulated_objects.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
 - [\[ICLR 2026\] Exposing Mixture and Annotating Confusion for Active Universal Test-Time Adaptation](exposing_mixture_and_annotating_confusion_for_active_universal_test-time_adaptat.md)
-- [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](../../NeurIPS2025/others/test-time_adaptation_by_causal_trimming.md)
+- [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](../../ICML2026/others/private_and_stable_test-time_adaptation_with_differential_privacy.md)
 
 </div>
 

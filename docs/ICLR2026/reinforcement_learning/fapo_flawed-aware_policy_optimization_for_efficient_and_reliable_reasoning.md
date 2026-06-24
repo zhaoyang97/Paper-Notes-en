@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] Addressing the "flawed-positive rollout" problem (correct answer but flawed reasoning) in RLVR training, this paper proposes the FAPO algorithm. It utilizes a GenRM to detect flawed reasoning and implements a "first exploit, then suppress" natural learning trajectory through a parameter-free reward penalty mechanism, s
+  [ICLR2026][Reinforcement Learning][RLVR] Addressing the "flawed-positive rollout" problem (correct answer but flawed reasoning) in RLVR training, this paper proposes the FAPO algorithm. It utilizes a GenRM to detect flawed reasoning and implements a "first exploit, then suppress" natural learning trajectory through a parameter-free reward penalty mechanism, simultaneously improving result accuracy, process reliability, and training stability.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - flawed positives
-  - reward shaping
-  - generative reward model
-  - process reward
-  - GRPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "flawed positives"
+  - "reward shaping"
+  - "generative reward model"
+  - "process reward"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 1d88455713342111
+content_hash: aac77a2cabb03452
 ---
+
 # FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning
 
 **Conference**: ICLR2026  
@@ -137,11 +138,11 @@ The biggest risk of adding an evaluator in online RL is slowing down main traini
 
 ## Related Papers
 
-- [\[ICLR 2026\] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](sample_more_to_think_less_group_filtered_policy_optimization_for_concise_reasoni.md)
-- [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
-- [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
-- [\[ICLR 2026\] DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization](dupo_enabling_reliable_self-verification_via_dual_preference_optimization.md)
+- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
 - [\[ICLR 2026\] Boosting Multi-Domain Reasoning of LLMs via Curvature-Guided Policy Optimization](boosting_multi-domain_reasoning_of_llms_via_curvature-guided_policy_optimization.md)
+- [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
+- [\[ICLR 2026\] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](sample_more_to_think_less_group_filtered_policy_optimization_for_concise_reasoni.md)
+- [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](group_verification-based_policy_optimization_for_interactive_coding_agents.md)
 
 </div>
 

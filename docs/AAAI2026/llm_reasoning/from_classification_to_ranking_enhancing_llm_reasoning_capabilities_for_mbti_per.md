@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection
 description: >-
-  [AAAI 2026][LLM Reasoning][MBTI] This paper reformulates MBTI personality detection from four independent binary classifications into a listwise ranking task over all 16 personality types…
+  [AAAI 2026][Reasoning][MBTI] This paper reformulates MBTI personality detection from four independent binary classifications into a listwise ranking task over all 16 personality types, training a 7B model via SFT cold-start followed by GRPO reinforcement learning with a dual reward (NDCG + dimension similarity), achieving state-of-the-art results on the Kaggle and PANDORA datasets.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "MBTI"
   - "learning to rank"
   - "GRPO"
   - "NDCG"
   - "personality detection"
 date: 2026-05-08
-content_hash: b73ca13d5d252e0f
+content_hash: 4f2c62a0370b68be
 ---
 
 # From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection
@@ -134,10 +134,10 @@ The input is a collection of user social media posts $P=\{p_1, ..., p_n\}$; the 
 ## Related Papers
 
 - [\[ICLR 2026\] On The Fragility of Benchmark Contamination Detection in Reasoning Models](../../ICLR2026/llm_reasoning/on_the_fragility_of_benchmark_contamination_detection_in_reasoning_models.md)
+- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](../../ICLR2026/llm_reasoning/generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
 - [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
 - [\[ICLR 2026\] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](../../ICLR2026/llm_reasoning/scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)
-- [\[AAAI 2026\] Evaluating, Synthesizing, and Enhancing for Customer Support Conversation](evaluating_synthesizing_and_enhancing_for_customer_support_conversation.md)
-- [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](../../NeurIPS2025/llm_reasoning/srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
+- [\[ICLR 2026\] TRAPO: Enhancing LLM Reasoning with Semi-supervised Reinforcement Learning](../../ICLR2026/llm_reasoning/trapo_a_semi-supervised_reinforcement_learning_framework_for_boosting_llm_reason.md)
 
 </div>
 

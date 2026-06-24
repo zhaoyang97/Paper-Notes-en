@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection
 description: >-
-  [NeurIPS 2025][Image Generation][AI-generated video detection] A physics conservation law-based paradigm for AI-generated video detection is proposed. A normalized spatiotemporal gradient (NSG) statistic is defined to ca…
+  [NeurIPS 2025 Spotlight][Image Generation][AI-generated video detection] A physics conservation law-based paradigm for AI-generated video detection is proposed. A normalized spatiotemporal gradient (NSG) statistic is defined to capture the ratio of spatial probability gradients to temporal density changes. Pre-trained diffusion models are used to estimate NSG, and detection is performed via MMD. The method surpasses the state of the art by 16% in Recall and 10.75% in F1.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "AI-generated video detection"
   - "probability flow conservation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "MMD"
 date: 2026-05-08
-content_hash: cf98d39cd8654127
+content_hash: 56db4a861f77ed1e
 ---
 
 # Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection
@@ -164,11 +164,11 @@ The spatial gradient is the primary contributor, but combining it with the tempo
 
 ## Related Papers
 
+- [\[CVPR 2025\] Where's the Liability in the Generative Era? Recovery-Based Black-Box Detection of AI-Generated Content](../../CVPR2025/image_generation/wheres_the_liability_in_the_generative_era_recovery-based_black-box_detection_of.md)
+- [\[ECCV 2024\] Zero-Shot Detection of AI-Generated Images](../../ECCV2024/image_generation/zero-shot_detection_of_ai-generated_images.md)
+- [\[CVPR 2025\] SPAI: Any-Resolution AI-Generated Image Detection by Spectral Learning](../../CVPR2025/image_generation/any-resolution_ai-generated_image_detection_by_spectral_learning.md)
 - [\[NeurIPS 2025\] Epistemic Uncertainty for Generated Image Detection](epistemic_uncertainty_for_generated_image_detection.md)
-- [\[NeurIPS 2025\] Is Artificial Intelligence Generated Image Detection a Solved Problem?](is_artificial_intelligence_generated_image_detection_a_solved_problem.md)
-- [\[NeurIPS 2025\] UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback](unilumos_fast_and_unified_image_and_video_relighting_with_physics-plausible_feed.md)
 - [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
-- [\[NeurIPS 2025\] OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions](omnivcus_feedforward_subject-driven_video_customization_with_multimodal_control_.md)
 
 </div>
 

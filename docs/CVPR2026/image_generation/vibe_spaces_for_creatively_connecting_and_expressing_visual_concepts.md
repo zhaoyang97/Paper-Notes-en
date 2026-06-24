@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vibe Spaces for Creatively Connecting and Expressing Visual Concepts
 description: >-
-  [CVPR 2026][Image Generation][IP-Adapter] Academic paper note for Vibe Spaces for Creatively Connecting and Expressing Visual Concepts.
+  [CVPR 2026][Image Generation][Image blending] This paper proposes the **Vibe Blending** task (fusing two images into a coherent hybrid based on their "most relevant shared attributes"—the so-called "vibe") and the **Vibe Space** method. By using graph diffusion maps to learn a low-dimensional "small-world" manifold in the CLIP/DINO feature space, it transforms原本 curved geodesics into linearly interpolatable paths, generating creative blends that are more human-recognized than…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - IP-Adapter
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image blending"
+  - "Manifold geometry"
+  - "Graph diffusion maps"
+  - "Creativity metrics"
+  - "IP-Adapter"
 date: 2026-05-08
-content_hash: 52edc10ec2a86d70
+content_hash: 0064d33f9117beeb
 ---
+
 # Vibe Spaces for Creatively Connecting and Expressing Visual Concepts
 
 **Conference**: CVPR 2026  
@@ -144,9 +149,9 @@ Ours human preference is approximately 3× that of the runner-up GPT on high-dif
 
 - [\[CVPR 2026\] Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective](toward_diffusible_high-dimensional_latent_spaces_a_frequency_perspective.md)
 - [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
-- [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
 - [\[CVPR 2025\] Memories of Forgotten Concepts](../../CVPR2025/image_generation/memories_of_forgotten_concepts.md)
-- [\[CVPR 2026\] ThinkGen: Generalized Thinking for Visual Generation](thinkgen_generalized_thinking_for_visual_generation.md)
+- [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
+- [\[CVPR 2026\] Visual Personalization Turing Test](visual_personalization_turing_test.md)
 
 </div>
 

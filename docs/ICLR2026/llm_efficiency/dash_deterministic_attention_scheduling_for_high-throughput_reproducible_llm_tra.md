@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DASH: Deterministic Attention Scheduling for High-throughput Reproducible LLM Training
 description: >-
-  [ICLR 2026][LLM Efficiency][FlashAttention] DASH abstracts deterministic attention backward propagation as a DAG scheduling problem with the goal of minimizing critical path length. By employing two complementary strategies—"Descending Q-Tile Iteration" and "Shift Scheduling"—it eliminates pipeline bubbles, achieving up to a $1.28\times$ throughput improvement f
+  [ICLR2026][LLM Efficiency][Deterministic Training] DASH abstracts deterministic attention backward propagation as a DAG scheduling problem with the goal of minimizing critical path length. By employing two complementary strategies—"Descending Q-Tile Iteration" and "Shift Scheduling"—it eliminates pipeline bubbles, achieving up to a $1.28\times$ throughput improvement for deterministic attention backward operators on H800 compared to FlashAttention-3's deterministic mode…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - FlashAttention
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Deterministic Training"
+  - "FlashAttention"
+  - "Backward Scheduling"
+  - "Critical Path"
+  - "Pipeline Bubble"
 date: 2026-05-08
-content_hash: fc02a829146d69dd
+content_hash: 29da0c5e6e2f80e9
 ---
+
 # DASH: Deterministic Attention Scheduling for High-throughput Reproducible LLM Training
 
 **Conference**: ICLR2026  
@@ -125,10 +130,10 @@ Total tokens fixed at 16,384, hidden dimension at 2,048, sequence lengths from 5
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Training-Free Online Routing for High-Volume Multi-LLM Serving](../../NeurIPS2025/llm_efficiency/efficient_training-free_online_routing_for_high-volume_multi-llm_serving.md)
-- [\[ICLR 2026\] Revisiting Parameter Server in LLM Post-Training](revisiting_parameter_server_in_llm_post-training.md)
 - [\[ICLR 2026\] A Two-Phase Deep Learning Framework for Adaptive Time-Stepping in High-Speed Flow Modeling](a_two-phase_deep_learning_framework_for_adaptive_time-stepping_in_high-speed_flo.md)
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts](race_attention_a_strictly_linear-time_attention_layer_for_training_on_outrageous.md)
+- [\[ICLR 2026\] Revisiting Parameter Server in LLM Post-Training](revisiting_parameter_server_in_llm_post-training.md)
 - [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
+- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts](race_attention_a_strictly_linear-time_attention_layer_for_training_on_outrageous.md)
 
 </div>
 

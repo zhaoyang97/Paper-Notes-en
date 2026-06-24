@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ShotDirector: Directorially Controllable Multi-Shot Video Generation with Cinematographic Transitions
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Model] ShotDirector treats "how transitions should be edited" as a controllable signal, injecting parameter-level camera poses (dual-branch Plücker + extrinsic) and hierarchical editing mode-aware prompts (shot-aware mask) into a video diffusion model. This allows for generating professional multi-shot videos with cinematogra
+  [CVPR 2026][Video Generation][Multi-shot video generation] ShotDirector treats "how transitions should be edited" as a controllable signal, injecting parameter-level camera poses (dual-branch Plücker + extrinsic) and hierarchical editing mode-aware prompts (shot-aware mask) into a video diffusion model. This allows for generating professional multi-shot videos with cinematographic transitions such as cut-in, cut-out, shot-reverse-shot, and multi-angle scenes based on director…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-shot video generation"
+  - "Shot transition"
+  - "Camera control"
+  - "Diffusion models"
+  - "Film editing"
 date: 2026-05-08
-content_hash: 5260894ab1fad66f
+content_hash: afca1f7e34bbad3a
 ---
+
 # ShotDirector: Directorially Controllable Multi-Shot Video Generation with Cinematographic Transitions
 
 **Conference**: CVPR 2026  
@@ -132,10 +137,20 @@ ShotDirector significantly leads in transition control (0.8956 vs. 0.7976 for Ci
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](multishotmaster_a_controllable_multi-shot_video_generation_framework.md)
+- [\[CVPR 2026\] OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory](onestory_coherent_multi-shot_video_generation_with_adaptive_memory.md)
+- [\[CVPR 2026\] STAGE: Storyboard-Anchored Generation for Cinematic Multi-shot Narrative](stage_storyboard-anchored_generation_for_cinematic_multi-shot_narrative.md)
+- [\[CVPR 2026\] HoloCine: Holistic Generation of Cinematic Multi-Shot Long Video Narratives](holocine_holistic_generation_of_cinematic_multi-shot_long_video_narratives.md)
+- [\[CVPR 2026\] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives](storytailora_zero-shot_pipeline_for_action-rich_multi-subject_visual_narratives.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](multishotmaster_a_controllable_multi-shot_video_generation_framework.md)

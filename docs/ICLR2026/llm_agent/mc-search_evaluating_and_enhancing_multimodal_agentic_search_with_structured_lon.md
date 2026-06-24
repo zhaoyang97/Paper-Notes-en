@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains
 description: >-
-  [ICLR 2026][LLM Agent][Agentic Search] This paper proposes MC-Search, the first benchmark for agentic multimodal RAG, featuring 3,333 high-quality samples (averaging 3.7 hops) across 5 reasoning topologies. It ensures the necessity of each step through HAVE verification and introduces the Search-Align process-level supervised fine-tuning framework, signific
+  [ICLR 2026][LLM Agent][Multimodal RAG] This paper proposes MC-Search, the first benchmark for agentic multimodal RAG, featuring 3,333 high-quality samples (averaging 3.7 hops) across 5 reasoning topologies. It ensures the necessity of each step through HAVE verification and introduces the Search-Align process-level supervised fine-tuning framework, significantly enhancing the retrieval planning capabilities of open-source models (Qwen2.5-VL-7B F1 increases by +13.7).
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Agentic Search
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multimodal RAG"
+  - "Agentic Search"
+  - "Multi-hop Reasoning"
+  - "Process-level Evaluation"
+  - "Retrieval Augmented Reasoning"
 date: 2026-05-08
-content_hash: 0d873dbe43772b19
+content_hash: 2de6ec29892be87f
 ---
+
 # MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains
 
 **Conference**: ICLR 2026  
@@ -144,8 +149,8 @@ Search-Align employs standard next-token prediction loss for supervised fine-tun
 - [\[ACL 2026\] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems](../../ACL2026/llm_agent/rethinking_reasoning-intensive_retrieval_evaluating_and_advancing_retrievers_in_.md)
 - [\[ICLR 2026\] Unlocking Long-Horizon Agentic Search with Large-Scale End-to-End RL](unlocking_long-horizon_agentic_search_with_large-scale_end-to-end_rl.md)
 - [\[ICLR 2026\] MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents](mmsearch-plus_benchmarking_provenance-aware_search_for_multimodal_browsing_agent.md)
-- [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](../../ACL2026/llm_agent/bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
 - [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](../../CVPR2026/llm_agent/haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
 
 </div>
 

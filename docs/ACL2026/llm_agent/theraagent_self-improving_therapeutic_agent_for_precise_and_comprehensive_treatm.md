@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TheraAgent: Self-Improving Therapeutic Agent for Precise and Comprehensive Treatment Planning
 description: >-
-  [ACL 2026][LLM Agent][TheraJudge] TheraAgent transforms treatment plan generation from a one-shot response into a generate-reflect-refine self-improving agent workflow. By utilizing a clinical multidimensional evaluator, TheraJudge, and score-aware memory to continuously refine plans, it significantly outperforms strong baselines in the HealthBench tre
+  [ACL 2026][LLM Agent][Self-improving agent] TheraAgent transforms treatment plan generation from a one-shot response into a generate-reflect-refine self-improving agent workflow. By utilizing a clinical multidimensional evaluator, TheraJudge, and score-aware memory to continuously refine plans, it significantly outperforms strong baselines in the HealthBench treatment planning subset and blind physician evaluations.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - TheraJudge
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Self-improving agent"
+  - "treatment planning"
+  - "TheraJudge"
+  - "clinical safety"
+  - "test-time iteration"
 date: 2026-05-08
-content_hash: b3c53acc98459eb9
+content_hash: 3f213ee46febbd5f
 ---
+
 # TheraAgent: Self-Improving Therapeutic Agent for Precise and Comprehensive Treatment Planning
 
 **Conference**: ACL 2026  
@@ -138,9 +143,9 @@ The authors verified that the evaluator and memory mechanism are effective throu
 
 - [\[CVPR 2026\] Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration](../../CVPR2026/llm_agent/learning_to_adapt_self-improving_web_agent_via_cognitive-aware_exploration.md)
 - [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](../../ICLR2026/llm_agent/agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
-- [\[ICML 2025\] Improving LLM Agent Planning with In-Context Learning via Atomic Fact Augmentation and Lookahead Search](../../ICML2025/llm_agent/improving_llm_agent_planning_with_in-context_learning_via_atomic_fact_augmentati.md)
-- [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](../../NeurIPS2025/llm_agent/zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
-- [\[ICML 2026\] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](../../ICML2026/llm_agent/safeharbor_hierarchical_memory-augmented_guardrail_for_llm_agent_safety.md)
+- [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](../../ICLR2026/llm_agent/evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
+- [\[ICLR 2026\] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents](../../ICLR2026/llm_agent/darwin_gödel_machine_open-ended_evolution_of_self-improving_agents.md)
+- [\[ICLR 2026\] Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine](../../ICLR2026/llm_agent/huxley-godel_machine_human-level_coding_agent_development_by_an_approximation_of.md)
 
 </div>
 

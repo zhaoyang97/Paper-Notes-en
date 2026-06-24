@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs
 description: >-
-  [ICLR 2026][Medical NLP][Theory of Mind] SimpleToM reveals a critical deficiency in LLM Theory of Mind: while frontier models accurately infer others' mental states (Explicit ToM), their performance drops sharply when applying this knowledge to predict or judge behaviors (Applied ToM), exposing a significant gap between "knowing what" and "how to use what is
+  [ICLR 2026][Medical LLM][Theory of Mind] SimpleToM reveals a critical deficiency in LLM Theory of Mind: while frontier models accurately infer others' mental states (Explicit ToM), their performance drops sharply when applying this knowledge to predict or judge behaviors (Applied ToM), exposing a significant gap between "knowing what" and "how to use what is known."
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - Theory of Mind
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Theory of Mind"
+  - "LLM Social Reasoning"
+  - "Explicit vs. Applied ToM"
+  - "Information Asymmetry"
 date: 2026-05-08
-content_hash: 46edd3d880cfff8f
+content_hash: 5df474eaac5729b4
 ---
+
 # SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs
 
 **Conference**: ICLR 2026  
@@ -127,9 +131,9 @@ Evaluated on 21 models using binary-choice questions (chance level = 50%).
 
 - [\[ACL 2026\] Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?](../../ACL2026/medical_nlp/can_continual_pre-training_bridge_the_performance_gap_between_general-purpose_an.md)
 - [\[ICLR 2026\] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?](can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare.md)
-- [\[ICML 2026\] Exploring Accurate and Transparent Domain Adaptation in Predictive Healthcare via Concept-Grounded Orthogonal Inference](../../ICML2026/medical_nlp/exploring_accurate_and_transparent_domain_adaptation_in_predictive_healthcare_vi.md)
-- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](counselbench_llm_mental_health_qa.md)
+- [\[ICLR 2026\] Critic-Adviser-Reviser Cyclic Refinement: Towards High-Quality EMR Corpus Generation with LLMs](criticadviserreviser_cyclic_refinement_towards_high-quality_emr_corpus_generatio.md)
 - [\[ACL 2026\] ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](../../ACL2026/medical_nlp/promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)
+- [\[ICML 2026\] Exploring Accurate and Transparent Domain Adaptation in Predictive Healthcare via Concept-Grounded Orthogonal Inference](../../ICML2026/medical_nlp/exploring_accurate_and_transparent_domain_adaptation_in_predictive_healthcare_vi.md)
 
 </div>
 

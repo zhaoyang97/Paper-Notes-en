@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TACO: Task-Aware Contrastive Learning for Joint LiDAR Localization and 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] TACO utilizes a single shared backbone to simultaneously perform LiDAR localization and 3D object detection. Through three contrastive learning modules, it explicitly decouples and mutually complements "static geographic features" and "dynamic object features." On the self-constructed OxfoLD dataset, it reduces localiz
+  [CVPR 2026][Autonomous Driving][LiDAR Localization] TACO utilizes a single shared backbone to simultaneously perform LiDAR localization and 3D object detection. Through three contrastive learning modules, it explicitly decouples and mutually complements "static geographic features" and "dynamic object features." On the self-constructed OxfoLD dataset, it reduces localization error from a 0.95m baseline to 0.72m, while achieving detection accuracy superior to single-task model…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Localization"
+  - "3D Object Detection"
+  - "Multi-task Learning"
+  - "Contrastive Learning"
+  - "Feature Decoupling"
 date: 2026-05-08
-content_hash: b614e3d3a306280d
+content_hash: fe8ff540100ce717
 ---
+
 # TACO: Task-Aware Contrastive Learning for Joint LiDAR Localization and 3D Object Detection
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ Compared to the LiSA baseline, translation and rotation errors are reduced by **
 
 ## Related Papers
 
+- [\[CVPR 2026\] STUR3D: Spatio-Temporal Unified Representation Learning for 3D Object Detection](stur3d_spatio-temporal_unified_representation_learning_for_3d_object_detection.md)
 - [\[CVPR 2026\] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images](bev-sld_self-supervised_scene_landmark_detection_for_global_localization_with_li.md)
-- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
 - [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
 - [\[CVPR 2026\] L3DR: 3D-aware LiDAR Diffusion and Rectification](l3dr_3d-aware_lidar_diffusion_and_rectification.md)
-- [\[CVPR 2026\] A Prediction-as-Perception Framework for 3D Object Detection](a_prediction-as-perception_framework_for_3d_object_detection.md)
+- [\[AAAI 2026\] Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection](../../AAAI2026/autonomous_driving/difficulty-aware_label-guided_denoising_for_monocular_3d_object_detection.md)
 
 </div>
 

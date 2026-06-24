@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Better Search with Language Models via Guided Reinforced Self-Training
 description: >-
-  [NeurIPS 2025][Model Compression][search strategy learning] This paper proposes Guided-ReST, which progressively incorporates optimal solutions as subgoals into model-generated search trajectories to produce high-quality…
+  [NeurIPS 2025][Model Compression][search strategy learning] This paper proposes Guided-ReST, which progressively incorporates optimal solutions as subgoals into model-generated search trajectories to produce high-quality training data and distill more efficient search strategies. The approach yields substantial improvements in search efficiency and accuracy on Countdown and code self-repair tasks.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "test-time compute efficiency"
   - "language model reasoning"
 date: 2026-05-08
-content_hash: bab6923d2ae418bf
+content_hash: 25ad9b345f1b2870
 ---
 
 # Learning to Better Search with Language Models via Guided Reinforced Self-Training
@@ -150,11 +150,11 @@ Guided-ReST consists of two stages: (1) generating high-quality search trajector
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Revisiting Semi-Supervised Learning in the Era of Foundation Models](revisiting_semi-supervised_learning_in_the_era_of_foundation_models.md)
-- [\[ICML 2026\] A Language-Guided Bayesian Optimization for Efficient LoRA Hyperparameter Search](../../ICML2026/model_compression/a_language-guided_bayesian_optimization_for_efficient_lora_hyperparameter_search.md)
 - [\[NeurIPS 2025\] How to Build a Consistency Model: Learning Flow Maps via Self-Distillation](how_to_build_a_consistency_model_learning_flow_maps_via_self-distillation.md)
-- [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
+- [\[NeurIPS 2025\] Revisiting Semi-Supervised Learning in the Era of Foundation Models](revisiting_semi-supervised_learning_in_the_era_of_foundation_models.md)
 - [\[NeurIPS 2025\] SCAN: Self-Denoising Monte Carlo Annotation for Robust Process Reward Learning](scan_self-denoising_monte_carlo_annotation_for_robust_process_reward_learning.md)
+- [\[ICML 2026\] A Language-Guided Bayesian Optimization for Efficient LoRA Hyperparameter Search](../../ICML2026/model_compression/a_language-guided_bayesian_optimization_for_efficient_lora_hyperparameter_search.md)
+- [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
 
 </div>
 

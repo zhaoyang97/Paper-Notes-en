@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Faithfulness Under the Distribution: A New Look at Attribution Evaluation
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Existing attribution evaluation metrics (Insertion/Deletion, Infidelity) rely on "zeroing out/masking" to remove features, which pushes samples out of the data distribution and introduces artifactual information. This paper proposes **FUD**, which utilizes score-based diffusion models to reconstruct masked regions back
+  [ICLR 2026][Interpretability][Attribution Methods] Existing attribution evaluation metrics (Insertion/Deletion, Infidelity) rely on "zeroing out/masking" to remove features, which pushes samples out of the data distribution and introduces artifactual information. This paper proposes **FUD**, which utilizes score-based diffusion models to reconstruct masked regions back into "in-distribution" samples on the data manifold, providing a more credible assessment of attribution fai…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Attribution Methods"
+  - "Faithfulness Evaluation"
+  - "Out-of-Distribution (OOD)"
+  - "Score-based Diffusion Models"
+  - "Langevin Dynamics"
 date: 2026-05-08
-content_hash: 5b1376ee1c3cdc5e
+content_hash: abd7c94a119410cc
 ---
+
 # Faithfulness Under the Distribution: A New Look at Attribution Evaluation
 
 **Conference**: ICLR 2026  
@@ -136,8 +142,8 @@ FUD's PSNR is +8.6 dB higher than the runner-up (INFID), SSIM improves by ~0.53,
 - [\[ACL 2025\] Normalized AOPC: Fixing Misleading Faithfulness Metrics for Feature Attribution Explainability](../../ACL2025/interpretability/normalized_aopc_faithfulness_metrics.md)
 - [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
 - [\[ICML 2026\] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions](../../ICML2026/interpretability/optimal_attention_temperature_improves_the_robustness_of_in-context_learning_und.md)
+- [\[ICLR 2026\] The Potential of CoT for Reasoning: A Closer Look at Trace Dynamics](the_potential_of_cot_for_reasoning_a_closer_look_at_trace_dynamics.md)
 - [\[ICLR 2026\] Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations](joint_distributioninformed_shapley_values_for_sparse_counterfactual_explanations.md)
-- [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](influence_dynamics_and_stagewise_data_attribution.md)
 
 </div>
 

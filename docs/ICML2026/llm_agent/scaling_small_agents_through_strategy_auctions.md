@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Small Agents Through Strategy Auctions
 description: >-
-  [ICML 2026][LLM Agent][deep search] The paper proposes sale (Strategy Auctions for Workload Efficiency): letting Qwen3 agents of varying sizes submit "strategy short plans" as bids for each task. Executors are selected based on a cost-minus-value metric, while historical auction memory allows lower-cost agents to continuously refine their bids. In deep s
+  [ICML 2026][LLM Agent][Strategy Auctions] The paper proposes sale (Strategy Auctions for Workload Efficiency): letting Qwen3 agents of varying sizes submit "strategy short plans" as bids for each task. Executors are selected based on a cost-minus-value metric, while historical auction memory allows lower-cost agents to continuously refine their bids. In deep search and coding tasks, this approach exceeds the pass@1 of the largest model while reducing dependence on the largest…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - deep search
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Strategy Auctions"
+  - "Heterogeneous Agent Routing"
+  - "Freelance Marketplace"
+  - "Test-time Self-improvement"
+  - "Deep Search"
 date: 2026-05-08
-content_hash: 650afea8eb0b4403
+content_hash: b7368cad5b7de666
 ---
+
 # Scaling Small Agents Through Strategy Auctions
 
 **Conference**: ICML 2026  
@@ -137,11 +142,11 @@ Overall, sale reduced reliance on the largest agent by 65% in deep search and 40
 
 ## Related Papers
 
-- [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
-- [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
 - [\[ACL 2026\] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair](../../ACL2026/llm_agent/polaris_a_gödel_agent_framework_for_small_language_models_through_experience-abs.md)
+- [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
 - [\[NeurIPS 2025\] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks](../../NeurIPS2025/llm_agent/agenttts_large_language_model_agent_for_testtime_computeopti.md)
-- [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)
+- [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
+- [\[ICLR 2026\] Scaling Agents via Continual Pre-training](../../ICLR2026/llm_agent/scaling_agents_via_continual_pre-training.md)
 
 </div>
 

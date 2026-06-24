@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neu-PiG: Neural Preconditioned Grids for Fast Dynamic Surface Reconstruction on Long Sequences
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Neu-PiG proposes a fast optimization method based on preconditioned multi-resolution latent grids. It encodes the positions and normals of the keyframe reference mesh into a unified latent space, which is then decoded by a lightweight MLP into per-frame 6-DoF deformations. achieving high-fidelity dynamic surface recons
+  [CVPR 2026][3D Vision][Dynamic Surface Reconstruction] Neu-PiG proposes a fast optimization method based on preconditioned multi-resolution latent grids. It encodes the positions and normals of the keyframe reference mesh into a unified latent space, which is then decoded by a lightweight MLP into per-frame 6-DoF deformations. achieving high-fidelity dynamic surface reconstruction more than 60 times faster than existing training-free methods without requiring category priors…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic Surface Reconstruction"
+  - "Preconditioned Latent Grids"
+  - "Sobolev Preconditioning"
+  - "Multi-resolution Voxels"
+  - "Deformation Estimation"
 date: 2026-05-08
-content_hash: 8746990c3a29bd44
+content_hash: 6b0afd55ba897db7
 ---
+
 # Neu-PiG: Neural Preconditioned Grids for Fast Dynamic Surface Reconstruction on Long Sequences
 
 **Conference**: CVPR 2026  
@@ -164,15 +170,14 @@ The method is elegantly designed, and the introduction of Sobolev preconditionin
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
 - [\[CVPR 2026\] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction](manifoldneus_manifold-aware_view_optimizability_for_pose-free_neural_surface_rec.md)
+- [\[CVPR 2026\] Long-Tail Internet Photo Reconstruction](long-tail_internet_photo_reconstruction.md)
 - [\[CVPR 2026\] Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy](neural_field-based_3d_surface_reconstruction_of_microstructures_from_multi-detec.md)
 - [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
-- [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
 
 </div>
 

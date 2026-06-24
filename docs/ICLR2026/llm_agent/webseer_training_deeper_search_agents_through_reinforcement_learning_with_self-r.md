@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection
 description: >-
-  [ICLR 2026][LLM Agent][RL] WebSeer trains a 14B search agent using a two-stage process: "rejection sampling to construct cold-start data with reflection trajectories" and "Self-Reflection Reinforcement Learning (SRRL) allowing multiple answer submissions per turn." This enables the model to actively extend tool chains and backtrack or rewrite qu
+  [ICLR 2026][LLM Agent][Search agent] WebSeer trains a 14B search agent using a two-stage process: "rejection sampling to construct cold-start data with reflection trajectories" and "Self-Reflection Reinforcement Learning (SRRL) allowing multiple answer submissions per turn." This enables the model to actively extend tool chains and backtrack or rewrite queries when uncertain, achieving SOTA results of 72.3% and 90.0% on HotpotQA and SimpleQA, respectively.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - RL
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Search agent"
+  - "self-reflection"
+  - "multi-turn retrieval"
+  - "RL"
+  - "rejection sampling"
 date: 2026-05-08
-content_hash: 229f5b9f2003280f
+content_hash: 7ae85f22108ff6e5
 ---
+
 # WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection
 
 **Conference**: ICLR 2026  
@@ -146,11 +151,11 @@ WebSeer almost matched GPT-4o on FanoutQA (55.4 vs 55.8). Despite using restrict
 
 ## Related Papers
 
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
 - [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 - [\[ICLR 2026\] MATHMO: Automated Mathematical Modeling Through Adaptive Search](mathmo_automated_mathematical_modeling_through_adaptive_search.md)
 - [\[ICLR 2026\] PolySkill: Learning Generalizable Skills through Polymorphic Abstraction for Continual Agents](polyskill_learning_generalizable_skills_through_polymorphic_abstraction_for_cont.md)
-- [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICML2026/llm_agent/on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
-- [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
 
 </div>
 

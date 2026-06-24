@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Mozart: Modularized and Efficient MoE Training on 3.5D Wafer-Scale Chiplet Architectures
 description: >-
-  [NeurIPS 2025][LLM Efficiency][MoE] Mozart is an algorithm-hardware co-design framework that achieves over 1.9× training speedup on three MoE-LLMs via expert clustering and allocation, fine-grained streaming scheduling…
+  [NeurIPS 2025 Spotlight][LLM Efficiency][MoE] Mozart is an algorithm-hardware co-design framework that achieves over 1.9× training speedup on three MoE-LLMs via expert clustering and allocation, fine-grained streaming scheduling, and a 3.5D chiplet architecture (NoP-Tree + hierarchical memory).
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Efficiency"
   - "MoE"
   - "chiplet architecture"
@@ -12,7 +12,7 @@ tags:
   - "wafer-scale"
   - "algorithm-hardware co-design"
 date: 2026-05-08
-content_hash: 499694b29315e687
+content_hash: 63253ef1e3ae4a0d
 ---
 
 # Mozart: Modularized and Efficient MoE Training on 3.5D Wafer-Scale Chiplet Architectures
@@ -104,11 +104,11 @@ Two-level optimization: (1) Algorithm level — analyze routing policies to obta
 
 ## Related Papers
 
+- [\[ICLR 2026\] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference](../../ICLR2026/llm_efficiency/libra_effective_yet_efficient_load_balancing_for_large-scale_moe_inference.md)
 - [\[NeurIPS 2025\] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training](flowmoe_a_scalable_pipeline_scheduling_framework_for_distributed_mixture-of-expe.md)
 - [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
 - [\[NeurIPS 2025\] A Unified Framework for Establishing the Universal Approximation of Transformer-Type Architectures](a_unified_framework_for_establishing_the_universal_approxima.md)
-- [\[NeurIPS 2025\] Efficient Training-Free Online Routing for High-Volume Multi-LLM Serving](efficient_training-free_online_routing_for_high-volume_multi-llm_serving.md)
-- [\[NeurIPS 2025\] Advancing Expert Specialization for Better MoE](advancing_expert_specialization_for_better_moe.md)
+- [\[NeurIPS 2025\] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE](moesd_unveil_speculative_decodings_potential_for_accelerating_sparse_moe.md)
 
 </div>
 

@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation
 description: >-
-  [ICLR 2026][LLM Efficiency][GQA] InfLLM-V2 utilizes a trainable sparse attention with "zero extra parameters and reused dense attention weights," allowing the model to switch seamlessly between dense and sparse modes based on sequence length. This aligns with the "short pre-training → long fine-tuning" paradigm and is implemented via hardware-friendly
+  [ICLR 2026][LLM Efficiency][Trainable Sparse Attention] InfLLM-V2 utilizes a trainable sparse attention with "zero extra parameters and reused dense attention weights," allowing the model to switch seamlessly between dense and sparse modes based on sequence length. This aligns with the "short pre-training → long fine-tuning" paradigm and is implemented via hardware-friendly block selection, achieving 4× speedup over dense attention while retaining 98.1% / 99.7% of performance…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - GQA
-  - FlashAttention
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Trainable Sparse Attention"
+  - "Long Context"
+  - "Short-to-Long Adaptation"
+  - "Block-Sparse Attention"
+  - "GQA"
+  - "FlashAttention"
+  - "MiniCPM4.1"
 date: 2026-05-08
-content_hash: df5178472ab5eede
+content_hash: d94792f90f9a70d3
 ---
+
 # InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation
 
 **Conference**: ICLR 2026  
@@ -136,10 +142,10 @@ After long-context fine-tuning, switching back to Dense mode shows almost no los
 ## Related Papers
 
 - [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
-- [\[ICLR 2026\] FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel](fsa_an_alternative_efficient_implementation_of_native_sparse_attention_kernel.md)
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
 - [\[ICLR 2026\] Short Window Attention Enables Long-Term Memorization](short_window_attention_enables_long-term_memorization.md)
+- [\[ICLR 2026\] FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel](fsa_an_alternative_efficient_implementation_of_native_sparse_attention_kernel.md)
 - [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
 
 </div>
 

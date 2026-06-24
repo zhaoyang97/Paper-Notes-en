@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts
 description: >-
-  [CVPR 2026][Audio & Speech][Video-to-Audio] FoleyDirector attaches a pluggable adapter to a pre-trained DiT-based V2A generator (MMAudio), utilizing "director's script"-style per-second Structured Temporal Scripts (STS) to supplement visual cues and realize precise temporal control over sound occurrence. By employing dual-stream parallel rendering for on-screen/
+  [CVPR 2026][Audio & Speech][Video-to-Audio] FoleyDirector attaches a pluggable adapter to a pre-trained DiT-based V2A generator (MMAudio), utilizing "director's script"-style per-second Structured Temporal Scripts (STS) to supplement visual cues and realize precise temporal control over sound occurrence. By employing dual-stream parallel rendering for on-screen/off-screen sounds, it raises the control F1 score on DirectorBench from 0.2451 to 0.4819 with almost no degradation…
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - Video-to-Audio
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Video-to-Audio"
+  - "Fine-grained temporal control"
+  - "Structured temporal scripts"
+  - "DiT adapter"
+  - "On-screen/Off-screen sound"
 date: 2026-05-08
-content_hash: 5bfc457a4cbd80d3
+content_hash: 13ac6d75689654b9
 ---
+
 # FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts
 
 **Conference**: CVPR 2026  
@@ -151,10 +156,17 @@ STS Segment Length Trade-offs (Inference on 1s trained model):
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] SegTune: Structured and Fine-Grained Control for Song Generation](../../ACL2026/audio_speech/segtune_structured_and_fine-grained_control_for_song_generation.md)
+- [\[CVPR 2026\] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](echoes_over_time_unlocking_length_generalization_in_video-to-audio_generation_mo.md)
+- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](pavas_physics-aware_video-to-audio_synthesis.md)
+- [\[CVPR 2026\] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization](hear_what_you_see_video-to-audio_generation_with_diffusion_transformer_and_seman.md)
+- [\[CVPR 2026\] EchoFoley: Event-Centric Hierarchical Control for Video Grounded Creative Sound Generation](echofoley_event-centric_hierarchical_control_for_video_grounded_creative_sound_g.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] SegTune: Structured and Fine-Grained Control for Song Generation](../../ACL2026/audio_speech/segtune_structured_and_fine-grained_control_for_song_generation.md)

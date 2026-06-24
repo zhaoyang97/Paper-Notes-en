@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning
 description: >-
-  [AAAI 2026][Model Compression][Visual Token Pruning] SharpV proposes a two-stage training-free visual token pruning framework. In the Pre-LLM stage…
+  [AAAI 2026][Model Compression][Visual Token Pruning] SharpV proposes a two-stage training-free visual token pruning framework. In the Pre-LLM stage, it adaptively adjusts the pruning ratio per frame based on spatiotemporal information; in the Intra-LLM stage, it prunes the KV Cache based on a visual information degradation hypothesis. SharpV is the first method to achieve full compatibility with Flash Attention, retaining approximately 12% of tokens while matching or surpassi…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Adaptive Pruning"
   - "Flash Attention"
 date: 2026-05-08
-content_hash: 7c96a4b69fc43783
+content_hash: 3ee4bf1d00030711
 ---
 
 # Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning
@@ -144,9 +144,9 @@ SharpV is a two-stage plug-and-play framework:
 
 - [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](../../ICLR2026/model_compression/agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
 - [\[AAAI 2026\] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression](infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf.md)
+- [\[ICLR 2026\] InfoScan: Information-Efficient Visual Scanning via Resource-Adaptive Walks](../../ICLR2026/model_compression/infoscan_information-efficient_visual_scanning_via_resource-adaptive_walks.md)
 - [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
 - [\[ICCV 2025\] FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning](../../ICCV2025/model_compression/fastvar_linear_visual_autoregressive_modeling_via_cached_token_pruning.md)
-- [\[AAAI 2026\] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing](towards_test-time_efficient_visual_place_recognition_via_asymmetric_query_proces.md)
 
 </div>
 

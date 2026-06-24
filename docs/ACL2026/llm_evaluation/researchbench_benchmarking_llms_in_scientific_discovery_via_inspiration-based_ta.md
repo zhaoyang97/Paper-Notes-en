@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] ResearchBench is proposed as the first large-scale benchmark to evaluate the scientific discovery capabilities of LLMs. Based on the theoretical decomposition of "inspiration-driven hypothesis generation," it covers 1386 papers across 12 disciplines. By decomposing scientific discovery into three sufficient subtasks—in
+  [ACL 2026 Findings][LLM Evaluation][Scientific discovery] ResearchBench is proposed as the first large-scale benchmark to evaluate the scientific discovery capabilities of LLMs. Based on the theoretical decomposition of "inspiration-driven hypothesis generation," it covers 1386 papers across 12 disciplines. By decomposing scientific discovery into three sufficient subtasks—inspiration retrieval, hypothesis composition, and hypothesis ranking—the study finds that LLMs perform…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Scientific discovery"
+  - "inspiration retrieval"
+  - "hypothesis generation"
+  - "LLM benchmark"
+  - "interdisciplinary"
 date: 2026-05-08
-content_hash: d558e1c81069abe6
+content_hash: 079427697285a82b
 ---
+
 # ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition
 
 **Conference**: ACL 2026 Findings  
@@ -125,7 +131,7 @@ Distractors are divided into three levels based on discrimination difficulty: Le
 - [\[ACL 2026\] PolitNuggets: Benchmarking Agentic Discovery of Long-Tail Political Facts](politnuggets_benchmarking_agentic_discovery_of_long-tail_political_facts.md)
 - [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
 - [\[ACL 2026\] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications](bizcompass_benchmarking_the_reasoning_capabilities_of_llms_in_business_knowledge.md)
-- [\[ACL 2026\] E2EDev: Benchmarking Large Language Models in End-to-End Software Development Task](e2edev_benchmarking_large_language_models_in_end-to-end_software_development_tas.md)
+- [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
 
 </div>
 

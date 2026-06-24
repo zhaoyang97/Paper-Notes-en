@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Push-and-Step: From RL-Based Balance Recovery to Physical Simulation of Dense Crowds
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] A two-stage deep reinforcement learning (RL) framework is used to train full-body physical humanoid agents. In the first stage, agents learn "stepping to recover balance" after being pushed through motion imitation and physical balance rewards. In the second stage, the policy is fine-tuned using AdaptNet with a "hand-t
+  [CVPR 2026][Human Understanding][Dense Crowd Simulation] A two-stage deep reinforcement learning (RL) framework is used to train full-body physical humanoid agents. In the first stage, agents learn "stepping to recover balance" after being pushed through motion imitation and physical balance rewards. In the second stage, the policy is fine-tuned using AdaptNet with a "hand-to-shoulder contact" heuristic. This allows agents in dense crowds to socially dissipate impact by pushi…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Dense Crowd Simulation"
+  - "Balance Recovery"
+  - "Physical Humanoid Simulation"
+  - "Two-stage Reinforcement Learning"
+  - "Social-aware Contact"
 date: 2026-05-08
-content_hash: 26db5437dfe1f8cd
+content_hash: f1340f38712fb9b2
 ---
+
 # Push-and-Step: From RL-Based Balance Recovery to Physical Simulation of Dense Crowds
 
 **Conference**: CVPR 2026  
@@ -126,15 +132,16 @@ Adaptation Reward Ablation (90 trials, 9 directions × 2 formations × 5 intensi
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL](assistmimic_physics_grounded_humanoid_assistance.md)
 - [\[CVPR 2026\] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)
-- [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
 - [\[CVPR 2026\] Mocap-2-to-3: Multi-view Lifting for Monocular Motion Recovery with 2D Pretraining](mocap-2-to-3_multi-view_lifting_for_monocular_motion_recovery_with_2d_pretrainin.md)
 - [\[CVPR 2026\] SAM 3D Body: Robust Full-Body Human Mesh Recovery](sam_3d_body_robust_full-body_human_mesh_recovery.md)
+- [\[ICLR 2026\] Instilling an Active Mind in Avatars via Cognitive Simulation](../../ICLR2026/human_understanding/instilling_an_active_mind_in_avatars_via_cognitive_simulation.md)
+- [\[ICLR 2026\] Motion-R1: Enhancing Motion Generation with Decomposed Chain-of-Thought and RL Binding](../../ICLR2026/human_understanding/motion-r1_enhancing_motion_generation_with_decomposed_chain-of-thought_and_rl_bi.md)
 
 </div>
 

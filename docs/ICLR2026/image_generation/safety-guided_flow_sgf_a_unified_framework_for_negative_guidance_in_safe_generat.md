@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Safety-Guided Flow (SGF): A Unified Framework for Negative Guidance in Safe Generation
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] This paper unifies two "negative guidance" safe generation methods (Shielded Diffusion and Safe Denoiser) under an energy framework based on the Maximum Mean Discrepancy (MMD) potential function. Leveraging Control Barrier Function (CBF) theory, it mathematically proves that applying negative guidance only within an ea
+  [ICLR 2026][Image Generation][Negative Guidance] This paper unifies two "negative guidance" safe generation methods (Shielded Diffusion and Safe Denoiser) under an energy framework based on the Maximum Mean Discrepancy (MMD) potential function. Leveraging Control Barrier Function (CBF) theory, it mathematically proves that applying negative guidance only within an early "critical time window" of denoising and decaying it to zero thereafter effectively ensures safety while mai…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Negative Guidance"
+  - "MMD Potential Function"
+  - "Control Barrier Function"
+  - "Critical Time Window"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: a23d3216b20ce501
+content_hash: b883d6253c0550d1
 ---
+
 # Safety-Guided Flow (SGF): A Unified Framework for Negative Guidance in Safe Generation
 
 **Conference**: ICLR 2026  
@@ -131,11 +136,11 @@ Diversity tasks (ImageNet "class-to-image", $\lambda=1.0$): Full-time guidance v
 
 ## Related Papers
 
+- [\[ICLR 2026\] SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions](safeflowmatcher_safe_and_fast_planning_using_flow_matching_with_control_barrier_.md)
 - [\[ICLR 2026\] VSF: Simple, Efficient, and Effective Negative Guidance in Few-Step Image Generation Models By Value Sign Flip](vsf_simple_efficient_and_effective_negative_guidance_in_few-step_image_generatio.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 - [\[ICLR 2026\] VLM-Guided Adaptive Negative Prompting for Creative Generation](vlm-guided_adaptive_negative_prompting_for_creative_generation.md)
 - [\[ICLR 2026\] PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework](postercraft_rethinking_high-quality_aesthetic_poster_generation_in_a_unified_fra.md)
-- [\[ICLR 2026\] SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions](safeflowmatcher_safe_and_fast_planning_using_flow_matching_with_control_barrier_.md)
-- [\[ICLR 2026\] UniCalli: A Unified Diffusion Framework for Column-Level Generation and Recognition of Chinese Calligraphy](unicalli_a_unified_diffusion_framework_for_column-level_generation_and_recogniti.md)
 
 </div>
 

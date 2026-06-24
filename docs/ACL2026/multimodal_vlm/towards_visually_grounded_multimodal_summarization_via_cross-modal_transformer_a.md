@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Visually Grounded Multimodal Summarization via Cross-Modal Transformer and Gated Attention
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper proposes SPeCTrA-Sum, which integrates a layer-aligned Deep Visual Processor, gated cross-modal attention, and a DPP-distilled image selector. This allows multimodal summarization to maintain near-SOTA ROUGE scores while selecting more relevant and diverse supporting images.
+  [ACL2026 Findings][Multimodal VLM][Multimodal Summarization] This paper proposes SPeCTrA-Sum, which integrates a layer-aligned Deep Visual Processor, gated cross-modal attention, and a DPP-distilled image selector. This allows multimodal summarization to maintain near-SOTA ROUGE scores while selecting more relevant and diverse supporting images.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026 Findings"
+  - "Multimodal VLM"
+  - "Multimodal Summarization"
+  - "Visual Grounding"
+  - "Image Selection"
+  - "DPP Distillation"
+  - "Gated Cross-Attention"
 date: 2026-05-08
-content_hash: 2ae12d0a17984915
+content_hash: 662db81cb5a64a97
 ---
+
 # Towards Visually Grounded Multimodal Summarization via Cross-Modal Transformer and Gated Attention
 
 **Conference**: ACL2026 Findings  
@@ -160,10 +166,10 @@ Training uses batch size 1 and Adafactor, controlled by steps (approx. 295k step
 ## Related Papers
 
 - [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](cross-modal_taxonomic_generalization_in_vision-_language_models.md)
+- [\[ACL 2026\] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition](e2e-gmner_end-to-end_generative_grounded_multimodal_named_entity_recognition.md)
 - [\[ICCV 2025\] TAB: Transformer Attention Bottlenecks enable User Intervention and Debugging in Vision-Language Models](../../ICCV2025/multimodal_vlm/tab_transformer_attention_bottlenecks_enable_user_intervention_and_debugging_in_.md)
-- [\[NeurIPS 2025\] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning](../../NeurIPS2025/multimodal_vlm/on_the_value_of_cross-modal_misalignment_in_multimodal_representation_learning.md)
-- [\[CVPR 2026\] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer](../../CVPR2026/multimodal_vlm/decoupled_and_reusable_adaptation_for_efficient_cross-modal_transfer.md)
-- [\[CVPR 2026\] Addressing Exacerbated Attention Sink for Source-Free Cross-Domain Few-Shot Learning](../../CVPR2026/multimodal_vlm/addressing_exacerbated_attention_sink_for_source-free_cross-domain_few-shot_lear.md)
+- [\[ICLR 2026\] DecAlign: Hierarchical Cross-Modal Alignment for Decoupled Multimodal Representation Learning](../../ICLR2026/multimodal_vlm/decalign_hierarchical_cross-modal_alignment_for_decoupled_multimodal_representat.md)
+- [\[ACL 2026\] Cross-Modal Masked Compositional Concept Modeling for Enhancing Visio-Linguistic Compositionality](cross-modal_masked_compositional_concept_modeling_for_enhancing_visio-linguistic.md)
 
 </div>
 

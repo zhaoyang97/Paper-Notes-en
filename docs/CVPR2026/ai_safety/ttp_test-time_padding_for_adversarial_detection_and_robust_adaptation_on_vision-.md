@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models
 description: >-
-  [CVPR 2026][AI Safety][CLIP] TTP introduces a "detect-then-adapt" test-time defense for CLIP. It distinguishes clean from adversarial images based on the **cosine similarity shift of feature embeddings before and after image padding**. Clean samples are output directly, while adversarial samples utilize a single-step trainable padding combined wit
+  [CVPR 2026][AI Safety][Adversarial Defense] TTP introduces a "detect-then-adapt" test-time defense for CLIP. It distinguishes clean from adversarial images based on the **cosine similarity shift of feature embeddings before and after image padding**. Clean samples are output directly, while adversarial samples utilize a single-step trainable padding combined with a similarity-aware weighted ensemble to recover attention disrupted by perturbations. This significantly enhances…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - CLIP
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Defense"
+  - "CLIP"
+  - "Test-Time Adaptation"
+  - "Adversarial Detection"
+  - "Vision-Language Models"
 date: 2026-05-08
-content_hash: e0d20bff82b4e409
+content_hash: d0ade7ea87a17bd3
 ---
+
 # TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -141,11 +145,11 @@ Component ablation (Average robust accuracy on ViT-B/32 and B/16):
 
 ## Related Papers
 
+- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
+- [\[ICLR 2026\] Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models](../../ICLR2026/ai_safety/adversarial_attacks_already_tell_the_answer_directional_bias-guided_test-time_de.md)
 - [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
-- [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
+- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/ai_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 - [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
-- [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
-- [\[CVPR 2026\] When CLIP Sees More, It Fights Back Harder: Multi-View Guided Adaptive Counterattacks for Test-Time Adversarial Robustness](when_clip_sees_more_it_fights_back_harder_multi-view_guided_adaptive_counteratta.md)
 
 </div>
 

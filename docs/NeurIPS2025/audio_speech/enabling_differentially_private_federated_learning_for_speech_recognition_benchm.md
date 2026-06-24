@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping
 description: >-
-  [NeurIPS 2025][Audio & Speech][Differential Privacy] This work establishes the first practical benchmark for FL+DP in end-to-end ASR, achieving only 1.3%–4.6% absolute WER degradation under strong privacy guarantees by c…
+  [NeurIPS 2025][Audio & Speech][Differential Privacy] This work establishes the first practical benchmark for FL+DP in end-to-end ASR, achieving only 1.3%–4.6% absolute WER degradation under strong privacy guarantees by combining **per-layer clipping** with the layer-wise gradient normalization of the **LAMB optimizer**.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Per-Layer Clipping"
   - "Adaptive Optimizer"
 date: 2026-05-08
-content_hash: e8723dbde1f46f91
+content_hash: f25c54b3b72d8e4f
 ---
 
 # Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping
@@ -155,10 +155,10 @@ Extrapolating to large-scale populations:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Confident and Adaptive Generative Speech Recognition via Risk Control](../../ICLR2026/audio_speech/confident_and_adaptive_generative_speech_recognition_via_risk_control.md)
 - [\[NeurIPS 2025\] MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition](mome_mixture_of_matryoshka_experts_for_audio-visual_speech_recognition.md)
-- [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](../../ICCV2025/audio_speech/zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
-- [\[NeurIPS 2025\] Data-Juicer 2.0: Cloud-Scale Adaptive Data Processing for and with Foundation Models](data-juicer_20_cloud-scale_adaptive_data_processing_for_and_with_foundation_mode.md)
 - [\[NeurIPS 2025\] Inductive Transfer Learning for Graph-Based Recommenders](inductive_transfer_learning_for_graph-based_recommenders.md)
+- [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](../../ICCV2025/audio_speech/zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
 - [\[NeurIPS 2025\] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time](textttavrobustbench_benchmarking_the_robustness_of_audio-visual_recognition_mode.md)
 
 </div>

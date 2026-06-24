@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Neural Operator] Utilizing a large amount of "geometry-only, physics-label-free" cheap mesh data, a point cloud VAE is pretrained through the physics-agnostic proxy task of occupancy field reconstruction. The learned latent geometric representations are then fed into Transformer neural operators, significantly improving solution accura
+  [ICLR 2026][Physics & Scientific Computing][Neural Operator] Utilizing a large amount of "geometry-only, physics-label-free" cheap mesh data, a point cloud VAE is pretrained through the physics-agnostic proxy task of occupancy field reconstruction. The learned latent geometric representations are then fed into Transformer neural operators, significantly improving solution accuracy under scarce PDE labels.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Neural Operator
-  - PDE Surrogate
-  - Physics-agnostic Pretraining
-  - Occupancy Field
-  - Point Cloud VAE
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Neural Operator"
+  - "PDE Surrogate"
+  - "Physics-agnostic Pretraining"
+  - "Occupancy Field"
+  - "Point Cloud VAE"
 date: 2026-05-08
-content_hash: 941d6f233f903e38
+content_hash: 77da4cd3faa5063c
 ---
+
 # From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators
 
 **Conference**: ICLR 2026  
@@ -140,9 +141,9 @@ The data cost comparison is extreme: for AirfRans, physical data $D$ requires 76
 
 - [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
 - [\[NeurIPS 2025\] Towards Universal Neural Operators through Multiphysics Pretraining](../../NeurIPS2025/physics/towards_universal_neural_operators_through_multiphysics_pretraining.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](../../ICML2026/physics/eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
-- [\[ICLR 2026\] Adaptive Mamba Neural Operators](adaptive_mamba_neural_operators.md)
 - [\[ICLR 2026\] Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints](physics_vs_distributions_pareto_optimal_flow_matching_with_physics_constraints.md)
+- [\[ICLR 2026\] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](operator_learning_with_domain_decomposition_for_geometry_generalization_in_pde_s.md)
+- [\[ICLR 2026\] Fast training of accurate physics-informed neural networks without gradient descent](fast_training_of_accurate_physics-informed_neural_networks_without_gradient_desc.md)
 
 </div>
 

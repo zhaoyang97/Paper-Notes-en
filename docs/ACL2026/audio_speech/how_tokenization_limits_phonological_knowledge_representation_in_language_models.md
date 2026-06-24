@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] How Tokenization Limits Phonological Knowledge Representation in Language Models and How to Improve Them
 description: >-
-  [ACL 2026][Audio & Speech][subword tokenization] This paper employs three phonology probing tasks (rhyme / G2P / syllable count) to demonstrate that BPE-style subword tokenization is both "too coarse" to capture local phonology and "misaligned" in its boundaries to capture prosodic structures. The authors propose the STAD metric and a lightweight IPA-augmented fine-t
+  [ACL 2026][Audio & Speech][subword tokenization] This paper employs three phonology probing tasks (rhyme / G2P / syllable count) to demonstrate that BPE-style subword tokenization is both "too coarse" to capture local phonology and "misaligned" in its boundaries to capture prosodic structures. The authors propose the STAD metric and a lightweight IPA-augmented fine-tuning method, enabling Llama3.1-8B to achieve comprehensive improvements across all three tasks while experienc…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - subword tokenization
-  - STAD
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "subword tokenization"
+  - "phonological knowledge"
+  - "STAD"
+  - "IPA fine-tuning"
+  - "cognates"
 date: 2026-05-08
-content_hash: 346df1016072dfcf
+content_hash: 8f797f080e616b03
 ---
+
 # How Tokenization Limits Phonological Knowledge Representation in Language Models and How to Improve Them
 
 **Conference**: ACL 2026  
@@ -131,11 +135,11 @@ Probing uses scikit-learn's `LogisticRegression` (C=10, max_iter=1000) and `Ridg
 
 ## Related Papers
 
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 - [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](../../CVPR2026/audio_speech/how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
-- [\[ACL 2026\] \[b\] = \[d\] − \[t\] + \[p\]: Self-supervised Speech Models Discover Phonological Vector Arithmetic](bd-tp_self-supervised_speech_models_discover_phonological_vector_arithmetic.md)
 - [\[ICML 2026\] MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models](../../ICML2026/audio_speech/moshirag_asynchronous_knowledge_retrieval_for_full-duplex_speech_language_models.md)
-- [\[ICCV 2025\] How Would It Sound? Material-Controlled Multimodal Acoustic Profile Generation for Objects](../../ICCV2025/audio_speech/how_would_it_sound_material-controlled_multimodal_acoustic_profile_generation_fo.md)
-- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
+- [\[ACL 2026\] \[b\] = \[d\] − \[t\] + \[p\]: Self-supervised Speech Models Discover Phonological Vector Arithmetic](bd-tp_self-supervised_speech_models_discover_phonological_vector_arithmetic.md)
+- [\[ICLR 2026\] Data-Centric Lessons To Improve Speech-Language Pretraining](../../ICLR2026/audio_speech/data-centric_lessons_to_improve_speech-language_pretraining.md)
 
 </div>
 

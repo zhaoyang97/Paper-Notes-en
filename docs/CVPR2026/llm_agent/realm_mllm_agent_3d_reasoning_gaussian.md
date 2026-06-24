@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting
 description: >-
-  [CVPR 2026][LLM Agent][MLLM-Agent] The REALM framework is proposed, leveraging the reasoning capabilities of MLLMs through a global-to-local spatial positioning strategy to perform open-world 3D reasoning segmentation on 3DGS. It handles implicit instructions without 3D post-training, achieving 92.88% mIoU on LERF (surpassing baselines by over 40 percen
+  [CVPR 2026][LLM Agent][3D Reasoning Segmentation] The REALM framework is proposed, leveraging the reasoning capabilities of MLLMs through a global-to-local spatial positioning strategy to perform open-world 3D reasoning segmentation on 3DGS. It handles implicit instructions without 3D post-training, achieving 92.88% mIoU on LERF (surpassing baselines by over 40 percentage points) while supporting editing tasks such as object removal, replacement, and style transfer.
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - MLLM-Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "3D Reasoning Segmentation"
+  - "MLLM-Agent"
+  - "3D Gaussian Splatting"
+  - "Global-to-Local Spatial Positioning"
+  - "3D Scene Editing"
 date: 2026-05-08
-content_hash: c1b8945a82f11233
+content_hash: 22dbac5374c8fef3
 ---
+
 # REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -131,11 +136,11 @@ Efficiency: Rendering speed is 354.72 FPS; total inference time <10s (Global MLL
 
 ## Related Papers
 
-- [\[CVPR 2026\] Vinedresser3D: Towards Agentic Text-guided 3D Editing](vinedresser3d_towards_agentic_text-guided_3d_editing.md)
-- [\[CVPR 2026\] SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation](sceneassistant_a_visual_feedback_agent_for_openvoc.md)
-- [\[CVPR 2026\] ModularAgent: A Task-Aware Modular Framework for Joint Optimization of Multimodal Large Language Models and World Models](modularagent_a_task-aware_modular_framework_for_joint_optimization_of_multimodal.md)
+- [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
+- [\[CVPR 2026\] JarvisEvo: Towards a Self-Evolving Photo Editing Agent with Synergistic Editor-Evaluator Optimization](jarvisevo_towards_a_self-evolving_photo_editing_agent_with_synergistic_editor-ev.md)
+- [\[CVPR 2025\] SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation](../../CVPR2025/llm_agent/sceneassistant_a_visual_feedback_agent_for_open-vocabulary_3d_scene_generation.md)
 - [\[CVPR 2026\] RetouchIQ: MLLM Agents for Instruction-Based Image Retouching with Generalist Reward](retouchiq_mllm_agents_for_instruction-based_image_retouching_with_generalist_rew.md)
-- [\[CVPR 2026\] Seeing as Experts Do: A Knowledge-Augmented Agent for Open-Set Fine-Grained Visual Understanding](seeing_as_experts_do_a_knowledge-augmented_agent_for_open-set_fine-grained_visua.md)
+- [\[CVPR 2026\] ModularAgent: A Task-Aware Modular Framework for Joint Optimization of Multimodal Large Language Models and World Models](modularagent_a_task-aware_modular_framework_for_joint_optimization_of_multimodal.md)
 
 </div>
 

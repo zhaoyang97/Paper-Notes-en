@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IonCast: A Deep Learning Framework for Forecasting Ionospheric Dynamics
 description: >-
-  [NeurIPS 2025][Time Series][Ionospheric forecasting] This paper proposes IonCast, a framework comprising a GraphCast-based GNN model and a ConvLSTM baseline that integrates multi-source heterogeneous space weather data (…
+  [NeurIPS 2025][Time Series][Ionospheric forecasting] This paper proposes IonCast, a framework comprising a GraphCast-based GNN model and a ConvLSTM baseline that integrates multi-source heterogeneous space weather data (TEC maps, solar wind, geomagnetic indices, orbital mechanics, etc.) for global spatiotemporal forecasting of ionospheric total electron content (TEC). IonCast outperforms persistence baselines and the IRI empirical model under geomagnetic storm conditions.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -13,7 +13,7 @@ tags:
   - "Spatiotemporal prediction"
   - "Space weather"
 date: 2026-05-08
-content_hash: 6391b39e5e7a19f4
+content_hash: 66c98fa9fa57c1f5
 ---
 
 # IonCast: A Deep Learning Framework for Forecasting Ionospheric Dynamics
@@ -152,7 +152,7 @@ Evaluated on G2-level moderate geomagnetic storms:
 
 - [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)
 - [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
-- [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](../../ICLR2026/time_series/towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
+- [\[ICLR 2026\] STDDN: A Deep Learning Framework for Crowd Simulation Guided by the Fluid Continuity Equation](../../ICLR2026/time_series/stddn_a_physics-guided_deep_learning_framework_for_crowd_simulation.md)
 - [\[NeurIPS 2025\] TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting](timeperceiver_an_encoder-decoder_framework_for_generalized_time-series_forecasti.md)
 - [\[NeurIPS 2025\] AERO: A Redirection-Based Optimization Framework Inspired by Judo for Robust Probabilistic Forecasting](aero_a_redirection-based_optimization_framework_inspired_by_judo_for_robust_prob.md)
 

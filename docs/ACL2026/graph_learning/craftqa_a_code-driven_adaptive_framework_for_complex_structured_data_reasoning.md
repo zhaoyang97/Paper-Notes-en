@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CRAFTQA: A Code-Driven Adaptive Framework for Complex Structured Data Reasoning
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] CRAFTQA uses CodeSTEP to generate executable step-by-step Python reasoning code. When predefined operations are insufficient, CRAFT dynamically generates custom functions, significantly enhancing complex structured data QA capabilities across tables, knowledge graphs (KGs), and temporal knowledge graphs (TKGs). The GPT
+  [ACL2026 Findings][Graph Learning][Structured data QA] CRAFTQA uses CodeSTEP to generate executable step-by-step Python reasoning code. When predefined operations are insufficient, CRAFT dynamically generates custom functions, significantly enhancing complex structured data QA capabilities across tables, knowledge graphs (KGs), and temporal knowledge graphs (TKGs). The GPT-4o version achieves 76.6% on the complex reasoning Overall metric.
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL2026 Findings"
+  - "Graph Learning"
+  - "Structured data QA"
+  - "code reasoning"
+  - "dynamic function generation"
+  - "table QA"
+  - "knowledge graph reasoning"
 date: 2026-05-08
-content_hash: 2424c1c7bbbffe12
+content_hash: aa103d618396de75
 ---
+
 # CRAFTQA: A Code-Driven Adaptive Framework for Complex Structured Data Reasoning
 
 **Conference**: ACL2026 Findings  
@@ -138,8 +144,8 @@ Under the same GPT-4o backbone, CRAFTQA's Overall score of 76.6 is significantly
 - [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](../../AAAI2026/graph_learning/self-correction_distillation_for_structured_data_question_answering.md)
 - [\[ACL 2026\] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment](ea-agent_a_structured_multi-step_reasoning_agent_for_entity_alignment.md)
 - [\[ICML 2026\] Finding the Minimal Parameter Budget for Implicit Reasoning: A Data Complexity Driven Scaling Law for Language Models](../../ICML2026/graph_learning/finding_the_minimal_parameter_budget_for_implicit_reasoning_a_data_complexity_dr.md)
+- [\[ICLR 2026\] Latent Geometry-Driven Network Automata for Complex Network Dismantling](../../ICLR2026/graph_learning/latent_geometry-driven_network_automata_for_complex_network_dismantling.md)
 - [\[AAAI 2026\] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models](../../AAAI2026/graph_learning/pathmind_a_retrieve-prioritize-reason_framework_for_knowledge_graph_reasoning_wi.md)
-- [\[AAAI 2026\] RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA](../../AAAI2026/graph_learning/rfkg-cot_relation-driven_adaptive_hop-count_selection_and_few-shot_path_guidance.md)
 
 </div>
 

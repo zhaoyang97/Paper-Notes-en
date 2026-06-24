@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning
 description: >-
-  [AAAI 2026][Multimodal VLM][Image captioning evaluation] This paper proposes DISCODE, a fine-tuning-free test-time adaptive decoder that introduces a Gaussian prior to minimize the ATT loss…
+  [AAAI 2026][Multimodal VLM][Image captioning evaluation] This paper proposes DISCODE, a fine-tuning-free test-time adaptive decoder that introduces a Gaussian prior to minimize the ATT loss, enabling LVLM-generated image captioning scores to more robustly align with human judgments. The paper also constructs the MCEval benchmark covering six visual domains.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "scoring robustness"
   - "distribution prior"
 date: 2026-05-08
-content_hash: 1296bb7f095dc21c
+content_hash: 6811ce074dd5600a
 ---
 
 # DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning
@@ -149,11 +149,11 @@ All three components contribute positively; the divergence term yields the large
 
 ## Related Papers
 
-- [\[AAAI 2026\] Leveraging Textual Compositional Reasoning for Robust Change Captioning](leveraging_textual_compositional_reasoning_for_robust_change_captioning.md)
-- [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](../../ICML2026/multimodal_vlm/self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
-- [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](aligning_the_true_semantics_constrained_decoupling_and_distr.md)
-- [\[CVPR 2026\] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](../../CVPR2026/multimodal_vlm/text-only_training_for_image_captioning_with_retrieval_augmentation_and_modality.md)
-- [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](../../ICCV2025/multimodal_vlm/sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
+- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
+- [\[ICML 2025\] Toward Robust Hyper-Detailed Image Captioning: A Multiagent Approach and Dual Evaluation Metrics for Factuality and Coverage](../../ICML2025/multimodal_vlm/toward_robust_hyper-detailed_image_captioning_a_multiagent_approach_and_dual_eva.md)
+- [\[CVPR 2025\] Teaching Large Language Models to Regress Accurate Image Quality Scores Using Score Distribution](../../CVPR2025/multimodal_vlm/teaching_large_language_models_to_regress_accurate_image_quality_scores_using_sc.md)
+- [\[ICLR 2026\] ScaleCap: Scalable Image Captioning via Dual-Modality Debiasing](../../ICLR2026/multimodal_vlm/scalecap_scalable_image_captioning_via_dual-modality_debiasing.md)
+- [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](../../ICLR2026/multimodal_vlm/human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
 
 </div>
 

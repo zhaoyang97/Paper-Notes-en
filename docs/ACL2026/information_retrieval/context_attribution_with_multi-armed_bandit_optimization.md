@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Context Attribution with Multi-Armed Bandit Optimization
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper proposes CAMAB, which models context attribution in RAG (identifying which context snippets contribute to generated answers) as a Combinatorial Multi-Armed Bandit (CMAB) problem. By using Linear Thompson Sampling to adaptively explore the context subset space, CAMAB reduces the number of model queries by up
+  [ACL 2026 (Findings)][Information Retrieval & RAG][Context Attribution] This paper proposes CAMAB, which models context attribution in RAG (identifying which context snippets contribute to generated answers) as a Combinatorial Multi-Armed Bandit (CMAB) problem. By using Linear Thompson Sampling to adaptively explore the context subset space, CAMAB reduces the number of model queries by up to 30% compared to SHAP and ContextCite on HotpotQA, CNN/DM…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 (Findings)"
+  - "Information Retrieval & RAG"
+  - "Context Attribution"
+  - "Multi-Armed Bandit"
+  - "Thompson Sampling"
+  - "Retrieval-Augmented Generation"
+  - "Query Efficiency"
 date: 2026-05-08
-content_hash: 80055d063dc5399e
+content_hash: 5e9cada4564b3575
 ---
+
 # Context Attribution with Multi-Armed Bandit Optimization
 
 **Conference**: ACL 2026 (Findings)  
@@ -146,8 +152,8 @@ CAMAB is an inference-time method and does not involve model training. The algor
 - [\[ACL 2026\] MAB-DQA: Addressing Query Aspect Importance in Document Question Answering with Multi-Armed Bandits](mab-dqa_addressing_query_aspect_importance_in_document_question_answering_with_m.md)
 - [\[ICLR 2026\] Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
 - [\[ACL 2026\] IF-GEO: Conflict-Aware Instruction Fusion for Multi-Query Generative Engine Optimization](if-geo_conflict-aware_instruction_fusion_for_multi-query_generative_engine_optim.md)
-- [\[ACL 2026\] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning](end-to-end_optimization_of_llm-driven_multi-agent_search_systems_via_heterogeneo.md)
 - [\[ICLR 2026\] Attribution-Guided Decoding](../../ICLR2026/information_retrieval/attribution-guided_decoding.md)
+- [\[ACL 2026\] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning](end-to-end_optimization_of_llm-driven_multi-agent_search_systems_via_heterogeneo.md)
 
 </div>
 

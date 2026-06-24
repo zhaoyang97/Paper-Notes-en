@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prescriptive Scaling Reveals the Evolution of Language Model Capabilities
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] Using ~7,000 model checkpoints spanning 2022–2026 (including 5k historical and 2k self-evaluated), this paper models "attainable downstream accuracy given a pre-training compute budget" as a **monotonic saturating sigmoid capability frontier** via high quantile regression. The study validates the temporal stability of
+  [ICML2026][LLM Evaluation][Prescriptive scaling] Using ~7,000 model checkpoints spanning 2022–2026 (including 5k historical and 2k self-evaluated), this paper models "attainable downstream accuracy given a pre-training compute budget" as a **monotonic saturating sigmoid capability frontier** via high quantile regression. The study validates the temporal stability of this frontier and demonstrates its efficient reconstruction using only ~20% of the evaluation budget.
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "Prescriptive scaling"
+  - "capability frontier"
+  - "quantile regression"
+  - "temporal reliability"
+  - "I-optimal sampling"
 date: 2026-05-08
-content_hash: e23bd78637c05ee0
+content_hash: f1c3bca8a5a6d1e7
 ---
+
 # Prescriptive Scaling Reveals the Evolution of Language Model Capabilities
 
 **Conference**: ICML2026  
@@ -138,10 +144,10 @@ Comparison of function classes and sampling budgets:
 ## Related Papers
 
 - [\[ICML 2026\] Estimating Tail Risks in Language Model Output Distributions](estimating_tail_risks_in_language_model_output_distributions.md)
-- [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](../../AAAI2026/llm_evaluation/optscale_probabilistic_optimality_for_inference-time_scaling.md)
-- [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](../../ICLR2026/llm_evaluation/how_reliable_is_language_model_micro-benchmarking.md)
-- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](../../ACL2026/llm_evaluation/scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
 - [\[ICML 2026\] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](bespoke_benchmark_for_search-augmented_large_language_model_personalization_via_.md)
+- [\[ICLR 2026\] Pitfalls in Evaluating Language Model Forecasters](../../ICLR2026/llm_evaluation/pitfalls_in_evaluating_language_model_forecasters.md)
+- [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](../../AAAI2026/llm_evaluation/optscale_probabilistic_optimality_for_inference-time_scaling.md)
+- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](../../ACL2026/llm_evaluation/scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
 
 </div>
 

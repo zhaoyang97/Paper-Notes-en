@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gain-MLP: Improving HDR Gain Map Encoding via a Lightweight MLP
 description: >-
-  [ICCV 2025][Model Compression][HDR Gain Map] This paper proposes replacing traditional JPEG/HEIC compression with a lightweight 10 KB MLP network for encoding HDR gain maps. The MLP takes SDR image color and spatial coor…
+  [ICCV 2025][Model Compression][HDR Gain Map] This paper proposes replacing traditional JPEG/HEIC compression with a lightweight 10 KB MLP network for encoding HDR gain maps. The MLP takes SDR image color and spatial coordinates $(r,g,b,x,y)$ as input and incorporates exponential residual encoding (gamma map), outperforming existing methods and traditional compression techniques across multiple HDR reconstruction metrics.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Image Compression"
   - "Tone Mapping"
 date: 2026-05-08
-content_hash: a539c08477cb6276
+content_hash: b7de063b8fd9eef1
 ---
 
 # Gain-MLP: Improving HDR Gain Map Encoding via a Lightweight MLP
@@ -140,8 +140,8 @@ Given an SDR image $S$ and an HDR image $H$, traditional methods compute the gai
 - [\[AAAI 2026\] XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs](../../AAAI2026/model_compression/xlinear_a_lightweight_and_accurate_mlp-based_model_for_long-term_time_series_for.md)
 - [\[ICLR 2026\] COMI: Coarse-to-fine Context Compression via Marginal Information Gain](../../ICLR2026/model_compression/comi_coarse-to-fine_context_compression_via_marginal_information_gain.md)
 - [\[ICCV 2025\] Competitive Distillation: A Simple Learning Strategy for Improving Visual Classification](competitive_distillation_a_simple_learning_strategy_for_improving_visual_classif.md)
-- [\[ICCV 2025\] SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting](frequency-aligned_knowledge_distillation_for_lightweight_spatiotemporal_forecast.md)
 - [\[ICLR 2026\] S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion](../../ICLR2026/model_compression/s2r-hdr_a_large-scale_rendered_dataset_for_hdr_fusion.md)
+- [\[ICCV 2025\] SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting](frequency-aligned_knowledge_distillation_for_lightweight_spatiotemporal_forecast.md)
 
 </div>
 

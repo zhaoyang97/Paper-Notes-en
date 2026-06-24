@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Kαlos finds Consensus: A Meta-Algorithm for Evaluating Inter-Annotator Agreement in Complex Vision Tasks
 description: >-
-  [CVPR 2026][Segmentation][Krippendorff's Alpha] Ours proposes the KαLOS meta-algorithm, which converts complex spatial-category annotation consistency problems into standard nominal reliability matrices through "Localization-First" principles and data-driven parameter calibration. It provides a unified framework to evaluate Inter-Annotator Agreement (IAA) across div
+  [CVPR 2026][Segmentation][Inter-Annotator Agreement (IAA)] Ours proposes the KαLOS meta-algorithm, which converts complex spatial-category annotation consistency problems into standard nominal reliability matrices through "Localization-First" principles and data-driven parameter calibration. It provides a unified framework to evaluate Inter-Annotator Agreement (IAA) across diverse vision tasks such as object detection, instance segmentation, and pose estimation.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Krippendorff's Alpha
-  - Object Detection
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Inter-Annotator Agreement (IAA)"
+  - "Data Quality Assessment"
+  - "Krippendorff's Alpha"
+  - "Object Detection"
+  - "Benchmark Evaluation"
 date: 2026-05-08
-content_hash: 3c4c4bf4999886c8
+content_hash: 0c32366fe4a617f0
 ---
+
 # Kαlos finds Consensus: A Meta-Algorithm for Evaluating Inter-Annotator Agreement in Complex Vision Tasks
 
 **Conference**: CVPR 2026  
@@ -136,16 +140,16 @@ The range of $\alpha$ is $[-1, 1]$, where 0 indicates agreement no better than c
 - Value: ⭐⭐⭐⭐ Long-term value for CV benchmark construction and data quality assessment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] How Well Does GPT-4o Understand Vision? Evaluating Multimodal Foundation Models on Standard Computer Vision Tasks](../../ICLR2026/segmentation/how_well_does_gpt-4o_understand_vision_evaluating_multimodal_foundation_models_o.md)
 - [\[NeurIPS 2025\] Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks](../../NeurIPS2025/segmentation/mars-bench_a_benchmark_for_evaluating_foundation_models_for_mars_science_tasks.md)
-- [\[CVPR 2026\] Metric-Guided Feature Fusion of Visual Foundation Models for Segmentation Tasks](metric-guided_feature_fusion_of_visual_foundation_models_for_segmentation_tasks.md)
 - [\[CVPR 2026\] The Missing Point in Vision Transformers for Universal Image Segmentation](the_missing_point_in_vision_transformers_for_universal_image_segmentation.md)
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
-- [\[CVPR 2026\] RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation](raven_radar_adaptive_vision_encoders_for_efficient_chirp-wise_object_detection_a.md)
+- [\[ICLR 2026\] Advancing Complex Video Object Segmentation via Progressive Concept Construction](../../ICLR2026/segmentation/advancing_complex_video_object_segmentation_via_progressive_concept_construction.md)
 
 </div>
 

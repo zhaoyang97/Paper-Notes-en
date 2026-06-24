@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Surgical Smoke: A Smoke-Type-Aware Laparoscopic Video Desmoking Method and Dataset
 description: >-
-  [AAAI 2026][Medical Imaging][Laparoscopic video desmoking] This paper is the first to categorize surgical smoke into two distinct types — Diffusion Smoke and Ambient Smoke — and proposes STANet…
+  [AAAI 2026][Medical Imaging][Laparoscopic video desmoking] This paper is the first to categorize surgical smoke into two distinct types — Diffusion Smoke and Ambient Smoke — and proposes STANet, the first smoke-type-aware laparoscopic video desmoking network comprising three sub-networks: semantic soft segmentation, coarse-to-fine disentanglement, and dual-branch reconstruction. It also introduces STSVD, the first large-scale synthetic video desmoking dataset with smoke-type…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "smoke disentanglement"
   - "surgical video"
 date: 2026-05-08
-content_hash: bcde0a5787d1bb2a
+content_hash: 87f1aaa0da4a3205
 ---
 
 # Rethinking Surgical Smoke: A Smoke-Type-Aware Laparoscopic Video Desmoking Method and Dataset
@@ -173,11 +173,11 @@ Compared to the best prior desmoking method SelfSVD, the proposed method achieve
 
 ## Related Papers
 
-- [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
 - [\[CVPR 2026\] Synergistic Bleeding Region and Point Detection in Laparoscopic Surgical Videos](../../CVPR2026/medical_imaging/synergistic_bleeding_region_and_point_detection_in_laparoscopic_surgical_videos.md)
+- [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
 - [\[AAAI 2026\] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach](rethinking_bias_in_generative_data_augmentation_for_medical_ai_a_frequency_recal.md)
+- [\[CVPR 2026\] TRCoRSurg: Temporal-Relational Co-Reasoning for Surgical Video Triplet Recognition](../../CVPR2026/medical_imaging/trcorsurg_temporal-relational_co-reasoning_for_surgical_video_triplet_recognitio.md)
 - [\[CVPR 2026\] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings](../../CVPR2026/medical_imaging/lemon_a_large_endoscopic_monocular_dataset_and_foundation_model_for_perception_in.md)
-- [\[CVPR 2026\] Event-Level Detection of Surgical Instrument Handovers in Videos](../../CVPR2026/medical_imaging/event_level_detection_of_surgical_instrument_handovers_in_videos.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FASTer: Toward Powerful and Efficient Autoregressive Vision-Language-Action Models with Learnable Action Tokenizer and Block-wise Decoding
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][block-wise decoding] FASTer compresses continuous robot actions into structured discrete action codes and utilizes block-wise autoregressive VLA to generate action tokens in blocks. This approach significantly reduces autoregressive inference latency while maintaining high control precision, outperforming existing VLA baselines across vari
+  [ICLR2026][Robotics][Vision-Language-Action models] FASTer compresses continuous robot actions into structured discrete action codes and utilizes block-wise autoregressive VLA to generate action tokens in blocks. This approach significantly reduces autoregressive inference latency while maintaining high control precision, outperforming existing VLA baselines across various simulated and real-world robot platforms.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - block-wise decoding
+  - "ICLR2026"
+  - "Robotics"
+  - "Vision-Language-Action models"
+  - "action tokenizer"
+  - "Residual Vector Quantization"
+  - "block-wise decoding"
+  - "robot generalization"
 date: 2026-05-08
-content_hash: 4078eca939b54089
+content_hash: 5cddbc5cdf96c006
 ---
+
 # FASTer: Toward Powerful and Efficient Autoregressive Vision-Language-Action Models with Learnable Action Tokenizer and Block-wise Decoding
 
 **Conference**: ICLR2026  

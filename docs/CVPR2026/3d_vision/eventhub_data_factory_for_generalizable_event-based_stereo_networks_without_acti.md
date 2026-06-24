@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes EventHub, a data factory for event-based stereo matching training without LiDAR or other active sensor annotations. By generating proxy events and depth labels via novel view synthesis and transferring knowledge from RGB stereo models through cross-modal distillation, the trained event stereo models
+  [CVPR 2026][3D Vision][Event camera] This paper proposes EventHub, a data factory for event-based stereo matching training without LiDAR or other active sensor annotations. By generating proxy events and depth labels via novel view synthesis and transferring knowledge from RGB stereo models through cross-modal distillation, the trained event stereo models surpass LiDAR-supervised models in cross-domain generalization (reducing error by up to 50% on M3ED and MVSEC).
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event camera"
+  - "Stereo matching"
+  - "Data factory"
+  - "Novel view synthesis"
+  - "Cross-modal distillation"
 date: 2026-05-08
-content_hash: 20bc31a92ed11314
+content_hash: 780ecfc91bb24b1e
 ---
+
 # EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ Event streams are asynchronous polarity pulses, which do not match the dense thr
 
 ## Related Papers
 
-- [\[CVPR 2026\] GS-ASM: 2DGS-Supervised Active Stereo Matching](gs-asm_2dgs-supervised_active_stereo_matching.md)
 - [\[CVPR 2026\] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)
-- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
-- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
-- [\[CVPR 2026\] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping](magician_efficient_long-term_planning_with_imagined_gaussians_for_active_mapping.md)
+- [\[CVPR 2026\] GS-ASM: 2DGS-Supervised Active Stereo Matching](gs-asm_2dgs-supervised_active_stereo_matching.md)
+- [\[ICLR 2026\] EA3D: Event-Augmented 3D Diffusion for Generalizable Novel View Synthesis](../../ICLR2026/3d_vision/ea3d_event-augmented_3d_diffusion_for_generalizable_novel_view_synthesis.md)
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
+- [\[CVPR 2026\] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?](what_makes_good_synthetic_training_data_for_zero-shot_stereo_matching.md)
 
 </div>
 

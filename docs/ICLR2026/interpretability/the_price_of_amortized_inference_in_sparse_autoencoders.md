@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Price of Amortized inference in Sparse Autoencoders
 description: >-
-  [ICLR 2026][Interpretability][LocA-SAE] This paper argues that pathologies in SAEs, such as dead latents, dense latents, feature splitting, and feature absorption, are not isolated engineering issues but the result of the conflict between amortized inference via a shared encoder and instance-wise optimality. It proposes LocA-SAE, which performs local groupin
+  [ICLR2026][Interpretability][Sparse Autoencoders] This paper argues that pathologies in SAEs, such as dead latents, dense latents, feature splitting, and feature absorption, are not isolated engineering issues but the result of the conflict between amortized inference via a shared encoder and instance-wise optimality. It proposes LocA-SAE, which performs local grouping based on angular variance to balance computational cost and monosemanticity.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - LocA-SAE
+  - "ICLR2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Mechanistic Interpretability"
+  - "Amortized Inference"
+  - "Monosemantic Features"
+  - "LocA-SAE"
 date: 2026-05-08
-content_hash: 8a921a27f0b57680
+content_hash: 5e42b79d08a4ad63
 ---
+
 # The Price of Amortized inference in Sparse Autoencoders
 
 **Conference**: ICLR2026  

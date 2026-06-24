@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] RL Makes MLLMs See Better Than SFT
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] This paper systematically compares the different impacts of SFT and RL (represented by DPO) on Multimodal Large Language Models (MLLMs) and their vision encoders. It finds that DPO not only performs better on vision-intensive VQA tasks but also reshapes the vision encoder to be more fine-grained and capable of localiza
+  [ICLR 2026][Multimodal VLM][MLLM] This paper systematically compares the different impacts of SFT and RL (represented by DPO) on Multimodal Large Language Models (MLLMs) and their vision encoders. It finds that DPO not only performs better on vision-intensive VQA tasks but also reshapes the vision encoder to be more fine-grained and capable of localization. Based on this, it proposes PIVOT, an extremely low-cost recipe for vision encoder evolution.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
-  - DPO
-  - SFT
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "DPO"
+  - "SFT"
+  - "Vision Encoder"
+  - "Preference Alignment"
 date: 2026-05-08
-content_hash: b4fc536d3376c127
+content_hash: e6cbc7be631b5102
 ---
+
 # RL Makes MLLMs See Better Than SFT
 
 **Conference**: ICLR 2026  
@@ -146,10 +149,10 @@ Highlights: SigLIP2-So/16+PIVOT (55.6) jumps tiers to surpass SigLIP2-g/16 (53.9
 ## Related Papers
 
 - [\[CVPR 2026\] Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training](../../CVPR2026/multimodal_vlm/why_does_rl_generalize_better_than_sft_a_data-centric_perspective_on_vlm_post-tr.md)
+- [\[ICLR 2026\] EventFlash: Towards Efficient MLLMs for Event-Based Vision](eventflash_towards_efficient_mllms_for_event-based_vision.md)
 - [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](visual_jigsaw_post-training_improves_mllms.md)
 - [\[ICLR 2026\] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping](constructive_distortion_improving_mllms_with_attention-guided_image_warping.md)
 - [\[ICLR 2026\] On Discriminative vs. Generative Classifiers: Rethinking MLLMs for Action Understanding](on_discriminative_vs_generative_classifiers_rethinking_mllms_for_action_understa.md)
-- [\[ICLR 2026\] Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs](patch-as-decodable-token_towards_unified_multi-modal_vision_tasks_in_mllms.md)
 
 </div>
 

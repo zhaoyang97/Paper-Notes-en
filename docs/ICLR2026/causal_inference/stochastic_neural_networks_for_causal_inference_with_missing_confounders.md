@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stochastic Neural Networks for Causal Inference with Missing Confounders
 description: >-
-  [ICLR 2026][Causal Inference][SGHMC] This paper proposes CI-StoNet: a stochastic neural network (StoNet) that directly encodes the Markov decomposition of a causal DAG into the network architecture. It employs adaptive Stochastic Gradient Hamiltonian Monte Carlo (SGHMC) to simultaneously impute missing latent confounders and estimate sparse network parame
+  [ICLR 2026][Causal Inference][Missing Confounders] This paper proposes CI-StoNet: a stochastic neural network (StoNet) that directly encodes the Markov decomposition of a causal DAG into the network architecture. It employs adaptive Stochastic Gradient Hamiltonian Monte Carlo (SGHMC) to simultaneously impute missing latent confounders and estimate sparse network parameters. This provides causal effect estimation with model-level identifiability guarantees and strong nonlinear…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - SGHMC
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Missing Confounders"
+  - "Stochastic Neural Networks"
+  - "Latent Variable Imputation"
+  - "SGHMC"
+  - "Model Identifiability"
 date: 2026-05-08
-content_hash: 1d28f240d5f46ea8
+content_hash: d32e2b8707649134
 ---
+
 # Stochastic Neural Networks for Causal Inference with Missing Confounders
 
 **Conference**: ICLR 2026  
@@ -149,9 +154,9 @@ While the paper does not provide a module-by-module ablation table, it performs 
 
 - [\[ICLR 2026\] Foundation Models for Causal Inference via Prior-Data Fitted Networks](foundation_models_for_causal_inference_via_prior-data_fitted_networks.md)
 - [\[ICLR 2026\] Exploratory Causal Inference in SAEnce](exploratory_causal_inference_in_saence.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
 - [\[NeurIPS 2025\] GST-UNet: A Neural Framework for Spatiotemporal Causal Inference with Time-Varying Confounding](../../NeurIPS2025/causal_inference/gst-unet_a_neural_framework_for_spatiotemporal_causal_inference_with_time-varyin.md)
-- [\[ICLR 2026\] Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks](frequency-domain_better_than_time-domain_for_causal_structure_recovery_in_dynami.md)
-- [\[ICLR 2026\] Characterization and Learning of Causal Graphs with Latent Confounders and Post-treatment Selection from Interventional Data](characterization_and_learning_of_causal_graphs_with_latent_confounders_and_post-.md)
+- [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
 
 </div>
 

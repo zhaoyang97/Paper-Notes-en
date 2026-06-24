@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RLBFF: Binary Flexible Feedback to Bridge Between Human Feedback & Verifiable Rewards
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] This paper proposes RLBFF (Reinforcement Learning with Binary Flexible Feedback), which extracts "binary-answerable principles" from natural language feedback (e.g., "Information accuracy: Yes", "Code readability: No"). It reformulates reward model training as an entailment task—determining whether a response satisfies
+  [ICLR 2026][LLM Alignment][Reward Model] This paper proposes RLBFF (Reinforcement Learning with Binary Flexible Feedback), which extracts "binary-answerable principles" from natural language feedback (e.g., "Information accuracy: Yes", "Code readability: No"). It reformulates reward model training as an entailment task—determining whether a response satisfies a specific principle—thereby achieving the broad coverage of RLHF and the interpretability/reward-hacking resistance o…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "RLHF"
+  - "Verifiable Rewards"
+  - "Binary Principles"
+  - "Entailment Judgment"
 date: 2026-05-08
-content_hash: cc2d2648dd35d9d8
+content_hash: ee567876ea3a8bfb
 ---
+
 # RLBFF: Binary Flexible Feedback to Bridge Between Human Feedback & Verifiable Rewards
 
 **Conference**: ICLR 2026  
@@ -139,8 +144,8 @@ Scalar RM significantly outperforms the Bradley-Terry baseline. GenRM achieves S
 - [\[ICLR 2026\] Beyond Binary Preferences: A Principled Framework for Reward Modeling with Ordinal Feedback](beyond_binary_preferences_a_principled_framework_for_reward_modeling_with_ordina.md)
 - [\[ICLR 2026\] What's In My Human Feedback? Learning Interpretable Descriptions of Preference Data](whats_in_my_human_feedback_learning_interpretable_descriptions_of_preference_dat.md)
 - [\[ICLR 2026\] Stackelberg Learning from Human Feedback: Preference Optimization as a Sequential Game](stackelberg_learning_from_human_feedback_preference_optimization_as_a_sequential.md)
+- [\[ACL 2025\] Understanding Impact of Human Feedback via Influence Functions](../../ACL2025/llm_alignment/influence_functions_rlhf.md)
 - [\[NeurIPS 2025\] Strategyproof Reinforcement Learning from Human Feedback](../../NeurIPS2025/llm_alignment/strategyproof_reinforcement_learning_from_human_feedback.md)
-- [\[ICML 2026\] Simultaneous Multi-objective Alignment Across Verifiable and Non-verifiable Rewards](../../ICML2026/llm_alignment/simultaneous_multi-objective_alignment_across_verifiable_and_non-verifiable_rewa.md)
 
 </div>
 

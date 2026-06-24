@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Skrull: Towards Efficient Long Context Fine-tuning through Dynamic Data Scheduling
 description: >-
-  [NeurIPS 2025][Model Compression][long-context fine-tuning] To address the training inefficiency caused by mixing long and short sequences in Long-context Supervised Fine-Tuning (Long-SFT), this paper proposes Skrull…
+  [NeurIPS 2025][Model Compression][long-context fine-tuning] To address the training inefficiency caused by mixing long and short sequences in Long-context Supervised Fine-Tuning (Long-SFT), this paper proposes Skrull, a dynamic data scheduler consisting of two components — Distribution-Aware Context Parallelism (DACP) and Global Data Scheduling (GDS) — achieving an average 3.76× (up to 7.54×) training speedup in realistic Long-SFT scenarios.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "training efficiency"
   - "large language models"
 date: 2026-05-08
-content_hash: 16b176eb5f727753
+content_hash: 258a9fa20485e76d
 ---
 
 # Skrull: Towards Efficient Long Context Fine-tuning through Dynamic Data Scheduling
@@ -128,9 +128,9 @@ Skrull is related to LongAlign (sorted batching), Chunkflow (fixed-size chunk tr
 
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
 - [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
+- [\[NeurIPS 2025\] EMLoC: Emulator-based Memory-efficient Fine-tuning with LoRA Correction](emloc_emulator-based_memory-efficient_fine-tuning_with_lora_correction.md)
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
 - [\[NeurIPS 2025\] Compress, Gather, and Recompute: REFORMing Long-Context Processing in Transformers](compress_gather_and_recompute_reforming_long-context_processing_in_transformers.md)
-- [\[NeurIPS 2025\] ATLAS: Autoformalizing Theorems through Lifting, Augmentation, and Synthesis of Data](atlas_autoformalizing_theorems_through_lifting_augmentation_and_synthesis_of_dat.md)
 
 </div>
 

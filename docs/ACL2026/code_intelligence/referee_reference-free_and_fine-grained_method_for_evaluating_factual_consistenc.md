@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] Ours proposes ReFEree, a reference-free and fine-grained factual consistency evaluation method for real-world code summarization. It defines four categories of inconsistency criteria, evaluates at the sentence/segment level, and incorporates a dependency information search mechanism. ReFEree achieves a 15-18% improveme
+  [ACL 2026][Code Intelligence][Factual Consistency] Ours proposes ReFEree, a reference-free and fine-grained factual consistency evaluation method for real-world code summarization. It defines four categories of inconsistency criteria, evaluates at the sentence/segment level, and incorporates a dependency information search mechanism. ReFEree achieves a 15-18% improvement in correlation with human judgment on Python and Java compared to the Prev. SOTA.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Factual Consistency"
+  - "Code Summarization"
+  - "Reference-free Evaluation"
+  - "Fine-grained Evaluation"
+  - "Dependency Analysis"
 date: 2026-05-08
-content_hash: 06abc53a6417ea6f
+content_hash: 2ee0263c7a46326f
 ---
+
 # ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization
 
 **Conference**: ACL 2026  
@@ -132,9 +138,9 @@ ReFEree is a training-free evaluation method. The main experiments utilize GPT-4
 
 - [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
 - [\[ACL 2026\] DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency](dpc_training-free_text-to-sql_candidate_selection_via_dual-paradigm_consistency.md)
+- [\[ICLR 2026\] EDIT-Bench: Evaluating LLM Abilities to Perform Real-World Instructed Code Edits](../../ICLR2026/code_intelligence/edit-bench_evaluating_llm_abilities_to_perform_real-world_instructed_code_edits.md)
+- [\[ICLR 2026\] CodeSense: a Real-World Benchmark and Dataset for Code Semantic Reasoning](../../ICLR2026/code_intelligence/codesense_a_real-world_benchmark_and_dataset_for_code_semantic_reasoning.md)
 - [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
-- [\[ACL 2025\] CompileAgent: Automated Real-World Repo-Level Compilation with Tool-Integrated LLM-based Agent System](../../ACL2025/code_intelligence/compileagent_automated_real-world_repo-level_compilation_with_tool-integrated_ll.md)
-- [\[ACL 2026\] CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases](codewiki_evaluating_ai39s_ability_to_generate_holistic_documentation_for_large-s.md)
 
 </div>
 

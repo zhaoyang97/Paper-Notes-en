@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hypothesis Generation via LLM-Automated Language Bias for ILP
 description: >-
-  [AAAI 2026][Interpretability][Inductive Logic Programming] This paper proposes the first end-to-end framework in which a multi-agent LLM system (Actor/Critic) automatically constructs ILP language bias (predicate system…
+  [AAAI 2026][Interpretability][Inductive Logic Programming] This paper proposes the first end-to-end framework in which a multi-agent LLM system (Actor/Critic) automatically constructs ILP language bias (predicate system, type declarations, and mode constraints) from raw text. A Translator agent converts text into Prolog facts, and the MAXSYNTH solver then induces a globally optimal rule set based on the MDL principle. The framework achieves 88.3% and 81.3% accuracy on the SHO…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Multi-Agent"
   - "Prolog"
 date: 2026-05-08
-content_hash: 70c6d852f9c1f1a4
+content_hash: f1b2f251e32863d4
 ---
 
 # Hypothesis Generation via LLM-Automated Language Bias for ILP
@@ -130,10 +130,10 @@ The framework consists of three stages: (1) predicate system construction via a 
 ## Related Papers
 
 - [\[AAAI 2026\] Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation](explainable_melanoma_diagnosis_with_contrastive_learning_and_llm-based_report_ge.md)
-- [\[ICLR 2026\] AnveshanaAI: A Multimodal Platform for Adaptive AI/ML Education through Automated Question Generation and Interactive Assessment](../../ICLR2026/interpretability/anveshanaai_a_multimodal_platform_for_adaptive_aiml_education_through_automated_.md)
+- [\[ICLR 2026\] The Deleuzian Representation Hypothesis](../../ICLR2026/interpretability/the_deleuzian_representation_hypothesis.md)
 - [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
-- [\[AAAI 2026\] LLM Circuit Analyses Are Consistent Across Training and Scale](llm_circuit_analyses_consistent_across_training_and_scale.md)
-- [\[ICLR 2026\] Semantic Regexes: Auto-Interpreting LLM Features with a Structured Language](../../ICLR2026/interpretability/semantic_regexes_auto-interpreting_llm_features_with_a_structured_language_of_re.md)
+- [\[ACL 2025\] Bias Attribution in Filipino Language Models: Extending a Bias Interpretability Metric for Application on Agglutinative Languages](../../ACL2025/interpretability/bias_attribution_in_filipino_language_models_extending_a_bias_interpretability_m.md)
+- [\[ICLR 2026\] Missingness Bias Calibration in Feature Attribution Explanations](../../ICLR2026/interpretability/missingness_bias_calibration_in_feature_attribution_explanations.md)
 
 </div>
 

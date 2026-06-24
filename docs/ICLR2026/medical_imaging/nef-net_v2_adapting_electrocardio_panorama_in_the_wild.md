@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Nef-Net v2: Adapting Electrocardio Panorama in the Wild
 description: >-
-  [ICLR 2026][Medical Imaging][Electrocardio Panorama] This work transfers "arbitrary-view ECG synthesis" from idealized laboratory assumptions to real-world clinical practice. By utilizing a Geometric View Transformer for direct view-to-view mapping, coupled with a three-stage (Pretraining → Device Calibration → On-the-fly Calibration) pipeline, the method addresses three
+  [ICLR 2026][Medical Imaging][Electrocardio Panorama] This work transfers "arbitrary-view ECG synthesis" from idealized laboratory assumptions to real-world clinical practice. By utilizing a Geometric View Transformer for direct view-to-view mapping, coupled with a three-stage (Pretraining → Device Calibration → On-the-fly Calibration) pipeline, the method addresses three major deployment challenges: long-duration signals, cross-device variance…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Electrocardio Panorama
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Electrocardio Panorama"
+  - "ECG View Synthesis"
+  - "Geometric Attention"
+  - "Cross-device Calibration"
+  - "Implicit Electrocardio Field"
 date: 2026-05-08
-content_hash: 8014f9b123f25936
+content_hash: f8b9e73c47d9277a
 ---
+
 # Nef-Net v2: Adapting Electrocardio Panorama in the Wild
 
 **Conference**: ICLR 2026  

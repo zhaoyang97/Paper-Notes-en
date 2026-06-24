@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multimodal Bandits: Regret Lower Bounds and Optimal Algorithms
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal bandits] For the multimodal multi-armed bandit problem where the reward function has at most $m$ modes…
+  [NeurIPS 2025][Multimodal VLM][multimodal bandits] For the multimodal multi-armed bandit problem where the reward function has at most $m$ modes, this paper proposes the first computationally feasible algorithm for solving the Graves-Lai optimization problem, achieves an asymptotically optimal regret bound, and proves that local search strategies are suboptimal.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "asymptotic optimality"
   - "multi-armed bandit"
 date: 2026-05-08
-content_hash: cd968130146a8d2e
+content_hash: ce5b7dce0852cc33
 ---
 
 # Multimodal Bandits: Regret Lower Bounds and Optimal Algorithms
@@ -202,11 +202,11 @@ The theoretical contributions are outstanding: the paper presents the first comp
 
 ## Related Papers
 
+- [\[ICML 2025\] Learning Optimal Multimodal Information Bottleneck Representations](../../ICML2025/multimodal_vlm/learning_optimal_multimodal_information_bottleneck_representations.md)
+- [\[ACL 2025\] Inference Compute-Optimal Video Vision Language Models](../../ACL2025/multimodal_vlm/inference_compute_optimal_video_vlm.md)
 - [\[AAAI 2026\] To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](../../AAAI2026/multimodal_vlm/to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)
 - [\[AAAI 2026\] Information Theoretic Optimal Surveillance for Epidemic Prevalence in Networks](../../AAAI2026/multimodal_vlm/information_theoretic_optimal_surveillance_for_epidemic_prevalence_in_networks.md)
-- [\[NeurIPS 2025\] Multimodal Negative Learning](multimodal_negative_learning.md)
-- [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](continual_multimodal_contrastive_learning.md)
-- [\[NeurIPS 2025\] Vision Function Layer in Multimodal LLMs](vision_function_layer_in_multimodal_llms.md)
+- [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](../../CVPR2026/multimodal_vlm/vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
 
 </div>
 

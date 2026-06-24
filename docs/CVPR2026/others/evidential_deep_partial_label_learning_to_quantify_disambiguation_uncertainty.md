@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Evidential Deep Partial Label Learning to Quantify Disambiguation Uncertainty
 description: >-
-  [CVPR 2026][Others][Paper Note] This work introduces Evidential Deep Learning (EDL) into Partial Label Learning (PLL) by using a Dirichlet distribution to model candidate label sets as "evidence" for disambiguation trustworthiness. Equipped with non-candidate label suppression and intra-class conflict-aware regularization, the proposed approach ident
+  [CVPR 2026][Partial Label Learning] This work introduces Evidential Deep Learning (EDL) into Partial Label Learning (PLL) by using a Dirichlet distribution to model candidate label sets as "evidence" for disambiguation trustworthiness. Equipped with non-candidate label suppression and intra-class conflict-aware regularization, the proposed approach identifies ground-truth labels from ambiguous candidates while providing uncertainty estimates for each prediction. It serves as…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Partial Label Learning"
+  - "Evidential Deep Learning"
+  - "Disambiguation Uncertainty"
+  - "Dirichlet Distribution"
+  - "Conflict-aware Regularization"
 date: 2026-05-08
-content_hash: d4206a064506f451
+content_hash: 12281c6914caff2c
 ---
+
 # Evidential Deep Partial Label Learning to Quantify Disambiguation Uncertainty
 
 **Conference**: CVPR 2026  
@@ -162,10 +167,10 @@ Ablation on MNIST ($q=0.3$) and MSRCv2:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](../../NeurIPS2025/others/uncertainty_estimation_by_flexible_evidential_deep_learning.md)
-- [\[CVPR 2026\] Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning](revisiting_sparsity_constraint_under_high-rank_property_in_partial_multi-label_l.md)
 - [\[CVPR 2026\] Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning](mitigating_instance_entanglement_in_instance-dependent_partial_label_learning.md)
+- [\[CVPR 2026\] Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning](revisiting_sparsity_constraint_under_high-rank_property_in_partial_multi-label_l.md)
 - [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](../../ICML2026/others/possibilistic_predictive_uncertainty_for_deep_learning.md)
-- [\[CVPR 2026\] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision](towards_knowledge-augmented_bayesian_deep_learning_for_computer_vision.md)
+- [\[CVPR 2026\] RaUF: Learning the Spatial Uncertainty Field of Radar](rauf_learning_the_spatial_uncertainty_field_of_radar.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Oryx: a Scalable Sequence Model for Many-Agent Coordination in Offline MARL
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Offline Multi-Agent Reinforcement Learning] This paper proposes Oryx, a scalable sequence model algorithm for offline cooperative MARL that integrates the Retention-based Sable arch…
+  [NeurIPS 2025][Reinforcement Learning][Offline Multi-Agent Reinforcement Learning] This paper proposes Oryx, a scalable sequence model algorithm for offline cooperative MARL that integrates the Retention-based Sable architecture with an autoregressive formulation of ICQ offline regularization. Through a dual-decoder that jointly outputs policies and Q-values, combined with counterfactual advantage estimation, Oryx achieves state-of-the-art performance on more than 80% of 65 d…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Agent Coordination"
   - "Retention Mechanism"
 date: 2026-05-08
-content_hash: cc1a2c52bd2bfa8f
+content_hash: 0f0471f2128b8f3a
 ---
 
 # Oryx: a Scalable Sequence Model for Many-Agent Coordination in Offline MARL
@@ -133,11 +133,11 @@ $$J_Q(\phi) = \mathbb{E}_\mathcal{B}\left[\left(r + \gamma \frac{\exp(Q_{\phi^-}
 
 ## Related Papers
 
-- [\[AAAI 2026\] Partial Action Replacement: Tackling Distribution Shift in Offline MARL](../../AAAI2026/reinforcement_learning/partial_action_replacement_tackling_distribution_shift_in_offline_marl.md)
-- [\[NeurIPS 2025\] Incremental Sequence Classification with Temporal Consistency](incremental_sequence_classification_with_temporal_consistency.md)
-- [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](scalable_policy-based_rl_algorithms_for_pomdps.md)
-- [\[NeurIPS 2025\] Horizon Reduction Makes RL Scalable](horizon_reduction_makes_rl_scalable.md)
+- [\[ICLR 2026\] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL](../../ICLR2026/reinforcement_learning/deas_detached_value_learning_with_action_sequence_for_scalable_offline_rl.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](../../ICLR2026/reinforcement_learning/scalable_offline_model-based_rl_with_action_chunks.md)
+- [\[ICLR 2026\] Who Matters Matters: Agent-Specific Conservative Offline MARL](../../ICLR2026/reinforcement_learning/who_matters_matters_agent-specific_conservative_offline_marl.md)
 - [\[NeurIPS 2025\] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling](robust_adversarial_reinforcement_learning_in_stochastic_games_via_sequence_model.md)
+- [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](scalable_policy-based_rl_algorithms_for_pomdps.md)
 
 </div>
 

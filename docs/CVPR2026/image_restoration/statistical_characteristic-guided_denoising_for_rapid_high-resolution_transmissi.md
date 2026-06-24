@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Ours proposes the Statistical Characteristic-Guided Denoising Network (SCGN), which utilizes spatial window standard deviation weighting and frequency band-guided weighting to adaptively enhance signals and suppress noise in both spatial and frequency domains. Combined with an HRTEM-specific noise calibration method to
+  [CVPR 2026][Image Restoration][HRTEM Denoising] Ours proposes the Statistical Characteristic-Guided Denoising Network (SCGN), which utilizes spatial window standard deviation weighting and frequency band-guided weighting to adaptively enhance signals and suppress noise in both spatial and frequency domains. Combined with an HRTEM-specific noise calibration method to generate realistic datasets of disordered structures, it achieves high-quality denoising of millisecond-scale H…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "HRTEM Denoising"
+  - "Statistical Characteristic Guidance"
+  - "Frequency Domain Denoising"
+  - "Spatial Deviation Weighting"
+  - "Noise Calibration"
 date: 2026-05-08
-content_hash: df8e02bcf1715351
+content_hash: 77f5f95f1adeb672
 ---
+
 # Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging
 
 **Conference**: CVPR 2026  
@@ -141,9 +147,9 @@ On real rapid HRTEM imaging data, SCGN-denoised images allow for clear identific
 
 - [\[CVPR 2026\] DetectSCI: Toward Object-Guided ROI Reconstruction for High-Resolution Video Snapshot Compressive Imaging](detectsci_toward_object-guided_roi_reconstruction_for_high-resolution_video_snap.md)
 - [\[CVPR 2026\] VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba](vemamba_efficient_isotropic_reconstruction_of_volume_electron_microscopy_with_ax.md)
-- [\[CVPR 2026\] InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space](instantretouch_efficient_and_high-fidelity_instruction-guided_image_retouching_w.md)
+- [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
 - [\[CVPR 2026\] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation](zero-shot_image_denoising_via_hybrid_prior-guided_pseudo_sample_generation.md)
-- [\[CVPR 2026\] Self-Diffusion Driven Blind Imaging](self-diffusion_driven_blind_imaging.md)
+- [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
 
 </div>
 

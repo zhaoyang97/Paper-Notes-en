@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward
 description: >-
-  [AAAI 2026][LLM Alignment][Visually impaired navigation] This paper proposes the LaF-GRPO framework, which employs an LLM to simulate the responses of visually impaired users to navigation instructions as a reward signal…
+  [AAAI 2026][LLM Alignment][Visually impaired navigation] This paper proposes the LaF-GRPO framework, which employs an LLM to simulate the responses of visually impaired users to navigation instructions as a reward signal. By applying GRPO-based post-training to a VLM, the framework generates more precise and safer navigation instructions for the visually impaired. The authors also construct the NIG4VI benchmark dataset comprising 27k samples.
 tags:
   - "AAAI 2026"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "LLM-as-Follower"
   - "navigation instruction generation"
 date: 2026-05-08
-content_hash: 1c83bd52ed9bb44d
+content_hash: 5d5b32e02a468382
 ---
 
 # LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward
@@ -162,11 +162,11 @@ Training data size ablation (7B model): scaling from 1k to 2k to 3k samples impr
 
 ## Related Papers
 
-- [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/llm_alignment/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 - [\[ICML 2026\] UDM-GRPO: Stable and Efficient GRPO for Unified Discrete Diffusion Models](../../ICML2026/llm_alignment/udm-grpo_stable_and_efficient_group_relative_policy_optimization_for_uniform_dis.md)
+- [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/llm_alignment/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 - [\[ICML 2026\] F-TIS: Harnessing Diverse Models in Collaborative GRPO](../../ICML2026/llm_alignment/f-tis_harnessing_diverse_models_in_collaborative_grpo.md)
-- [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
 - [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](../../ACL2026/llm_alignment/mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
+- [\[ACL 2026\] Taming Extreme Tokens: Covariance-Aware GRPO with Gaussian-Kernel Advantage Reweighting](../../ACL2026/llm_alignment/taming_extreme_tokens_covariance-aware_grpo_with_gaussian-kernel_advantage_rewei.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Recall proposes the first multi-modal guided attack framework. By optimizing adversarial image prompts in the latent space (requiring only one reference image) and combining them with original text prompts to exploit the image-conditioning channel of diffusion models, it achieves an average ASR of 65%~97% across 10 SOT
+  [ICLR 2026][Image Generation][Machine unlearning attack] Recall proposes the first multi-modal guided attack framework. By optimizing adversarial image prompts in the latent space (requiring only one reference image) and combining them with original text prompts to exploit the image-conditioning channel of diffusion models, it achieves an average ASR of 65%~97% across 10 SOTA unlearning methods. This significantly outperforms text-only attack methods and reveals the vulnerabi…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Machine unlearning attack"
+  - "multi-modal adversarial"
+  - "image prompt"
+  - "diffusion model safety"
+  - "robustness auditing"
 date: 2026-05-08
-content_hash: a5881b97b7834359
+content_hash: 2708775642f99320
 ---
+
 # Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning
 
 **Conference**: ICLR 2026  
@@ -145,9 +151,9 @@ The three cost advantages of this design stem from its structure: since the text
 
 ## Related Papers
 
+- [\[ICLR 2026\] ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer](training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
 - [\[ICLR 2026\] SIGMA-GEN: Structure and Identity Guided Multi-Subject Assembly for Image Generation](sigma-gen_structure_and_identity_guided_multi-subject_assembly_for_image_generat.md)
 - [\[ICLR 2026\] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control](follow-your-shape_shape-aware_image_editing_via_trajectory-guided_region_control.md)
-- [\[ICCV 2025\] PLA: Prompt Learning Attack against Text-to-Image Generative Models](../../ICCV2025/image_generation/pla_prompt_learning_attack_against_text-to-image_generative_models.md)
 - [\[ICLR 2026\] ImageRAG: Dynamic Image Retrieval for Reference-Guided Image Generation](imagerag_dynamic_image_retrieval_for_reference-guided_image_generation.md)
 - [\[ICLR 2026\] There and Back Again: On the Relation between Noise and Image Inversions in Diffusion Models](there_and_back_again_on_the_relation_between_noise_and_image_inversions_in_diffu.md)
 

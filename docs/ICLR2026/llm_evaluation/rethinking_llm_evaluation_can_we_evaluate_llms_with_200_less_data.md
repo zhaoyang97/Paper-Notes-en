@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] To address the bottleneck of expensive LLM benchmarking across numerous models, this paper reframes benchmark compression as a subset optimization problem aimed at "preserving overall leaderboard ranking." The proposed EssenceBench utilizes a three-step pipeline: dual-redundancy filtering (text + rank), genetic algorit
+  [ICLR 2026][LLM Evaluation][Benchmark Compression] To address the bottleneck of expensive LLM benchmarking across numerous models, this paper reframes benchmark compression as a subset optimization problem aimed at "preserving overall leaderboard ranking." The proposed EssenceBench utilizes a three-step pipeline: dual-redundancy filtering (text + rank), genetic algorithm search with a fixed proxy predictor, and attribution-guided refinement. On HellaSwag (10,000 samples)…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Benchmark Compression"
+  - "Subset Selection"
+  - "Rank Preservation"
+  - "Genetic Algorithm"
+  - "Redundancy Analysis"
 date: 2026-05-08
-content_hash: b67286feb17bcda0
+content_hash: 835cc9398037616e
 ---
+
 # Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?
 
 **Conference**: ICLR 2026  

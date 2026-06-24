@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] TRAJECT-Bench：一个轨迹感知的智能体工具调用评测基准
+  [Paper Note] TRAJECT-Bench: A Trajectory-Aware Evaluation Benchmark for Agent Tool Calling
 description: >-
-  [ICLR 2026][LLM Agent][RapidAPI] TRAJECT-Bench constructs 5,670 "parallel/serial" tool calling trajectories and "simple/hard" dual-difficulty queries using 1,228 executable real APIs. It refines evaluation from "whether the final answer is correct" to trajectory-level diagnostics focusing on "whether tools were selected correctly, parameters filled ac
+  [ICLR 2026][LLM Agent][Tool Calling] TRAJECT-Bench constructs 5,670 "parallel/serial" tool calling trajectories and "simple/hard" dual-difficulty queries using 1,228 executable real APIs. It refines evaluation from "whether the final answer is correct" to trajectory-level diagnostics focusing on "whether tools were selected correctly, parameters filled accurately, and sequence/dependencies met," thereby revealing specific failure modes of LLMs in tool calling (similarity conf…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - RapidAPI
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool Calling"
+  - "Agent Evaluation"
+  - "Trajectory Evaluation"
+  - "RapidAPI"
+  - "Tool Retrieval"
 date: 2026-05-08
-content_hash: 8dde79c2ee9f25f9
+content_hash: 2fe1c600ada7cb50
 ---
+
 # TRAJECT-Bench: A Trajectory-Aware Evaluation Benchmark for Agent Tool Calling
 
 **Conference**: ICLR 2026  
@@ -132,11 +137,11 @@ Key Finding: When the retrieval pool is restricted to the domain, retrieval prov
 
 ## Related Papers
 
-- [\[ICLR 2026\] Terminal-Bench：在命令行界面上对智能体进行困难、真实任务的基准测试](terminal-bench_benchmarking_agents_on_hard_realistic_tasks_in_command_line_inter.md)
-- [\[ICLR 2026\] EXP-Bench: Can AI Conduct AI Research Experiments?](exp-bench_can_ai_conduct_ai_research_experiments.md)
+- [\[ICLR 2026\] A$^2$FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning](a2fm_an_adaptive_agent_foundation_model_for_tool-aware_hybrid_reasoning.md)
 - [\[ICLR 2026\] WARC-Bench: Web Archive based Benchmark for GUI Subtask Executions](warc-bench_web_archive_based_benchmark_for_gui_subtask_executions.md)
-- [\[ICLR 2026\] InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in Tool-Augmented Agents](infomosaic-bench_evaluating_multi-source_information_seeking_in_tool-augmented_a.md)
-- [\[ICLR 2026\] MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents](mcp_security_bench_msb_benchmarking_attacks_against_model_context_protocol_in_ll.md)
+- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
+- [\[AAAI 2026\] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors](../../AAAI2026/llm_agent/verification-guided_context_optimization_for_tool_calling_via_hierarchical_llms-.md)
+- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NoisePrints: Distortion-Free Watermarks for Authorship in Private Diffusion Models
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] NoisePrints treats the random seed used during diffusion model generation as a natural authorship fingerprint. By generating initial noise via a hashed seed and performing correlation verification with the VAE latent of the generated content, it achieves lightweight authorship verification for images and videos without
+  [ICLR2026][AI Safety][Diffusion model watermarking] NoisePrints treats the random seed used during diffusion model generation as a natural authorship fingerprint. By generating initial noise via a hashed seed and performing correlation verification with the VAE latent of the generated content, it achieves lightweight authorship verification for images and videos without model modification, sampling changes, or inversion.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Diffusion model watermarking"
+  - "authorship verification"
+  - "random seeds"
+  - "zero-knowledge proofs"
+  - "copyright protection"
 date: 2026-05-08
-content_hash: 6f1f2556063065a4
+content_hash: ff917b909cffe663
 ---
+
 # NoisePrints: Distortion-Free Watermarks for Authorship in Private Diffusion Models
 
 **Conference**: ICLR2026  
@@ -166,9 +172,9 @@ Rather than a traditional component-removal table, the paper compares the effect
 
 - [\[ICLR 2026\] EigenScore: OOD Detection using Posterior Covariance in Diffusion Models](eigenscore_ood_detection_using_posterior_covariance_in_diffusion_models.md)
 - [\[ICLR 2026\] Traceable Black-box Watermarks for Federated Learning](traceable_black-box_watermarks_for_federated_learning.md)
+- [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](../../ICML2026/ai_safety/dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
 - [\[CVPR 2026\] GROW: Watermark Generation with Progressive Guidance for Diffusion Models](../../CVPR2026/ai_safety/grow_watermark_generation_with_progressive_guidance_for_diffusion_models.md)
-- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](../../CVPR2026/ai_safety/towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
-- [\[ACL 2025\] Quantifying Misattribution Unfairness in Authorship Attribution](../../ACL2025/ai_safety/quantifying_misattribution_unfairness_in_authorship_attribution.md)
+- [\[ICLR 2026\] STEDiff: Unveiling Spatio-Temporal Redundancy in Backdoor Attacks on Text-to-Image Diffusion Models](stediff_revealing_the_spatial_and_temporal_redundancy_of_backdoor_attacks_in_tex.md)
 
 </div>
 

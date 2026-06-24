@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the issue where small aerial targets (birds, UAVs) under long-range LiDAR yield extremely sparse and jittery point clouds, A3PRL utilizes a lightweight 5D reinforcement learning policy. Based on unlabeled statistics such as sparsity, acceptance rates, and trajectory continuity, it jointly adjusts voxel resol
+  [CVPR 2026][3D Vision][LiDAR small target perception] Addressing the issue where small aerial targets (birds, UAVs) under long-range LiDAR yield extremely sparse and jittery point clouds, A3PRL utilizes a lightweight 5D reinforcement learning policy. Based on unlabeled statistics such as sparsity, acceptance rates, and trajectory continuity, it jointly adjusts voxel resolution, detection thresholds, and association gates online. This transforms a "fixed-parameter perception p…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "LiDAR small target perception"
+  - "anti-UAV"
+  - "RL adaptation"
+  - "temporal dispersion"
+  - "closed-loop perception control"
 date: 2026-05-08
-content_hash: 0a36059b2d000a9a
+content_hash: 04b72a9798586513
 ---
+
 # Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ Experiments used the MMAUD dataset (providing LiDAR/Radar/Audio/Vision + survey-
 
 ## Related Papers
 
-- [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
-- [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
-- [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
-- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)
+- [\[ICLR 2026\] CLAP: Unsupervised 3D Representation Learning for Fusion 3D Perception via Curvature Sampling and Prototype Learning](../../ICLR2026/3d_vision/clap_unsupervised_3d_representation_learning_for_fusion_3d_perception_via_curvat.md)
+- [\[CVPR 2026\] BuildingGPT: Auto-Regressive Building Wireframe Reconstruction Model with Reinforcement Learning](buildinggpt_auto-regressive_building_wireframe_reconstruction_model_with_reinfor.md)
+- [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
+- [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
 
 </div>
 

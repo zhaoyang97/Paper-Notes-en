@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ZIM: Zero-Shot Image Matting for Anything
 description: >-
-  [ICCV 2025][Segmentation][Image Matting] This paper proposes ZIM, a zero-shot image matting model that constructs the SA1B-Matte dataset by converting SA1B segmentation labels into fine-grained matting labels via a label…
+  [ICCV 2025][Segmentation][Image Matting] This paper proposes ZIM, a zero-shot image matting model that constructs the SA1B-Matte dataset by converting SA1B segmentation labels into fine-grained matting labels via a label converter. A hierarchical pixel decoder and a prompt-aware masked attention mechanism are further introduced to achieve micro-level fine-grained matting while preserving zero-shot generalization capability.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Label Conversion"
   - "Hierarchical Decoder"
 date: 2026-05-08
-content_hash: d38c858eeb7358ae
+content_hash: e827752a30b40f27
 ---
 
 # ZIM: Zero-Shot Image Matting for Anything
@@ -49,8 +49,8 @@ ZIM is built upon the SAM architecture, comprising four components: (1) an image
 1. **Label Converter**: Built upon MGMatting with a Hiera-base-plus backbone. It takes an image and a segmentation label as input and outputs a fine-grained matting label. Training data are sourced from six public matting datasets (20,591 natural images + 118,749 synthetic images). Coarse segmentation labels are derived from matting labels via thresholding, downsampling, Gaussian blurring, and dilation/erosion operations.
 
    Two key strategies address training challenges:
-   - **Spatial Generalization Augmentation (SGA)**: Randomly crops identical regions from segmentation and matting labels, forcing the converter to handle incomplete or irregular input patterns, thereby improving generalization to micro-level segmentation labels.
-   - **Selective Transformation Learning (STL)**: Not all objects require fine-grained matting (e.g., cars, tables). Coarse-grained object masks from ADE20K (187,063 masks) are incorporated, where the ground-truth matte equals the original segmentation label (i.e., no conversion), teaching the model to **selectively** refine only objects that require fine-grained processing.
+    - **Spatial Generalization Augmentation (SGA)**: Randomly crops identical regions from segmentation and matting labels, forcing the converter to handle incomplete or irregular input patterns, thereby improving generalization to micro-level segmentation labels.
+    - **Selective Transformation Learning (STL)**: Not all objects require fine-grained matting (e.g., cars, tables). Coarse-grained object masks from ADE20K (187,063 masks) are incorporated, where the ground-truth matte equals the original segmentation label (i.e., no conversion), teaching the model to **selectively** refine only objects that require fine-grained processing.
 
    Training loss: $L = L_{l1} + \lambda L_{grad}$, where $L_{grad}$ denotes the gradient loss.
 
@@ -132,11 +132,11 @@ ZIM is built upon the SAM architecture, comprising four components: (1) an image
 
 ## Related Papers
 
-- [\[CVPR 2026\] DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation](../../CVPR2026/segmentation/discover_segment_and_select_a_progressive_mechanism_for_zero-shot_camouflaged_ob.md)
+- [\[ICLR 2026\] Matting Anything 2: Towards Video Matting for Anything](../../ICLR2026/segmentation/matting_anything_2_towards_video_matting_for_anything.md)
+- [\[CVPR 2025\] Robust 3D Shape Reconstruction in Zero-Shot from a Single Image in the Wild](../../CVPR2025/segmentation/robust_3d_shape_reconstruction_in_zero-shot_from_a_single_image_in_the_wild.md)
 - [\[ICCV 2025\] Object-level Correlation for Few-Shot Segmentation](object-level_correlation_for_few-shot_segmentation.md)
-- [\[AAAI 2026\] RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images](../../AAAI2026/segmentation/rsvg-zeroov_exploring_a_training-free_framework_for_zero-shot_open-vocabulary_vi.md)
-- [\[ICCV 2025\] MOVE: Motion-Guided Few-Shot Video Object Segmentation](move_motion-guided_few-shot_video_object_segmentation.md)
 - [\[ICCV 2025\] OmniSAM: Omnidirectional Segment Anything Model for UDA in Panoramic Semantic Segmentation](omnisam_omnidirectional_segment_anything_model_for_uda_in_panoramic_semantic_seg.md)
+- [\[CVPR 2026\] DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation](../../CVPR2026/segmentation/discover_segment_and_select_a_progressive_mechanism_for_zero-shot_camouflaged_ob.md)
 
 </div>
 

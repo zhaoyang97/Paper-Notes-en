@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Safety Instincts: LLMs Learn to Trust Their Internal Compass for Self-Defense
 description: >-
-  [ICLR 2026][LLM Safety][Reinforcement Learning] This paper discovers that safety-aligned models naturally exhibit lower entropy and higher confidence when refusing harmful requests. It proposes SIRL, which uses response entropy itself as an internal reward, enabling models to reinforce their safety refusal tendencies without human annotations, reward models, or exte
+  [ICLR 2026][LLM Safety][Self-Alignment] This paper discovers that safety-aligned models naturally exhibit lower entropy and higher confidence when refusing harmful requests. It proposes SIRL, which uses response entropy itself as an internal reward, enabling models to reinforce their safety refusal tendencies without human annotations, reward models, or external safety discriminators, while largely preserving performance in mathematics, coding, and dialogue.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Self-Alignment"
+  - "Response Entropy"
+  - "Jailbreak Defense"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: df6cd08a7fd2749e
+content_hash: 28f9b93107e67c19
 ---
+
 # Safety Instincts: LLMs Learn to Trust Their Internal Compass for Self-Defense
 
 **Conference**: ICLR 2026  
@@ -177,7 +181,7 @@ Over-refusal tests (OR-Bench/XSTest) show that SIRL increases the refusal rate f
 ## Related Papers
 
 - [\[ICLR 2026\] Spilling the Beans: Teaching LLMs to Self-Report Their Hidden Objectives](spilling_the_beans_teaching_llms_to_self-report_their_hidden_objectives.md)
-- [\[ICLR 2026\] Trust The Typical：把 LLM 安全护栏当作分布外检测来做](trust_the_typical.md)
+- [\[ICLR 2026\] Trust The Typical: LLM Safety Guardrails as Out-of-Distribution Detection](trust_the_typical.md)
 - [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](../../ACL2026/llm_safety/when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
 - [\[ICLR 2026\] Stop Tracking Me! Proactive Defense Against Attribute Inference Attack in LLMs](stop_tracking_me_proactive_defense_against_attribute_inference_attack_in_llms.md)
 - [\[ICLR 2026\] Self-Destructive Language Model](self-destructive_language_model.md)

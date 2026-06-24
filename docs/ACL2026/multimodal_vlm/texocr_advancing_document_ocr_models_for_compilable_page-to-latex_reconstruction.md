@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TeXOCR: Advancing Document OCR Models for Compilable Page-to-LaTeX Reconstruction
 description: >-
-  [ACL 2026][Multimodal VLM][Page-to-LaTeX] This paper advances scientific PDF OCR from "converting to text/Markdown" to "reconstructing page-level LaTeX that is compilable without manual intervention." It proposes TEXOCR-Bench, TEXOCR-Train, and a two-stage SFT+RLVR training paradigm, enabling a Qwen3-VL-2B derivative model to significantly outperform open-sour
+  [ACL2026][Multimodal VLM][Page-to-LaTeX] This paper advances scientific PDF OCR from "converting to text/Markdown" to "reconstructing page-level LaTeX that is compilable without manual intervention." It proposes TEXOCR-Bench, TEXOCR-Train, and a two-stage SFT+RLVR training paradigm, enabling a Qwen3-VL-2B derivative model to significantly outperform open-source baselines of the same scale in structural consistency, citation validity, and compilation success rate.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Page-to-LaTeX
-  - RLVR
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Page-to-LaTeX"
+  - "Document OCR"
+  - "Compilable LaTeX"
+  - "RLVR"
+  - "Unit Test Reward"
 date: 2026-05-08
-content_hash: 004e8a1d38ec42be
+content_hash: 112bbf4e389a2c35
 ---
+
 # TeXOCR: Advancing Document OCR Models for Compilable Page-to-LaTeX Reconstruction
 
 **Conference**: ACL2026  
@@ -172,8 +176,8 @@ Error analysis categorizes common failures into five types: truncation of paragr
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
 - [\[AAAI 2026\] Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models](../../AAAI2026/multimodal_vlm/seeing_justice_clearly_handwritten_legal_document_translation_with_ocr_and_visio.md)
 - [\[CVPR 2026\] M3DocDep: Multi-modal, Multi-page, Multi-document Dependency Chunking with Large Vision-Language Models](../../CVPR2026/multimodal_vlm/m3docdep_multi-modal_multi-page_multi-document_dependency_chunking_with_large_vi.md)
+- [\[ICLR 2026\] Reconstruction Alignment Improves Unified Multimodal Models](../../ICLR2026/multimodal_vlm/reconstruction_alignment_improves_unified_multimodal_models.md)
 - [\[ACL 2025\] Improving MLLM's Document Image Machine Translation via Synchronously Self-reviewing Its OCR Proficiency](../../ACL2025/multimodal_vlm/improving_mllms_document_image_machine_translation_via_synchronously_self-review.md)
-- [\[ACL 2026\] A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends](a_survey_on_mllm-based_visually_rich_document_understanding_methods_challenges_a.md)
 
 </div>
 

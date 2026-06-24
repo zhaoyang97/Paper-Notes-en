@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BADiff: Bandwidth Adaptive Diffusion Model
 description: >-
-  [NeurIPS 2025][Image Generation][bandwidth-adaptive] This paper proposes BADiff—the first bandwidth-adaptive diffusion model—which embeds target entropy constraints as explicit conditions into the diffusion reverse proce…
+  [NeurIPS 2025][Image Generation][bandwidth-adaptive] This paper proposes BADiff—the first bandwidth-adaptive diffusion model—which embeds target entropy constraints as explicit conditions into the diffusion reverse process, coupled with a differentiable entropy regularization loss and an adaptive stopping policy. The model dynamically adjusts generation quality according to real-time bandwidth and terminates sampling adaptively, reducing computational overhead while maintaini…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "early stopping"
   - "cloud streaming"
 date: 2026-05-08
-content_hash: 84e873a7d6c7f8ee
+content_hash: dbfdb13da5694d53
 ---
 
 # BADiff: Bandwidth Adaptive Diffusion Model
@@ -161,9 +161,9 @@ BADiff achieves **1.7×** speedup over the cascaded baseline at low bitrate, wit
 
 - [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
 - [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
+- [\[CVPR 2025\] Re-HOLD: Video Hand Object Interaction Reenactment via Adaptive Layout-instructed Diffusion Model](../../CVPR2025/image_generation/re-hold_video_hand_object_interaction_reenactment_via_adaptive_layout-instructed.md)
 - [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
 - [\[NeurIPS 2025\] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors](a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors.md)
-- [\[ICCV 2025\] Adaptive Routing of Text-to-Image Generation Requests Between Large Cloud Model and Light-Weight Edge Model](../../ICCV2025/image_generation/adaptive_routing_of_text_to_image_generation_requests_between_large_cloud_model_and_light_weight_edge_model.md)
 
 </div>
 

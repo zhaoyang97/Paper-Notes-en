@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution
 description: >-
-  [ICCV 2025][Image Generation][3D-consistent super-resolution] 3DSR is proposed — an alternating iterative framework coupling diffusion-based SR with 3DGS to achieve 3D-consistent super-resolution: after each denoising st…
+  [ICCV 2025][Image Generation][3D-consistent super-resolution] 3DSR is proposed — an alternating iterative framework coupling diffusion-based SR with 3DGS to achieve 3D-consistent super-resolution: after each denoising step, SR images are used to train a 3DGS, yielding 3D-consistent renderings that are re-encoded into the latent space to guide the next denoising step. Without fine-tuning any model, it explicitly enforces cross-view consistency…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "multi-view consistency"
   - "denoising guidance"
 date: 2026-05-08
-content_hash: f2d222192ee64741
+content_hash: f2ba5d1d4f81473f
 ---
 
 # 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution
@@ -110,7 +110,7 @@ Low-resolution multi-view images → Pretrained 3DGS (LR) → Iterative denoisin
 - [\[ICCV 2025\] Diffusion-based 3D Hand Motion Recovery with Intuitive Physics](diffusion-based_3d_hand_motion_recovery_with_intuitive_physics.md)
 - [\[ICCV 2025\] FaceCraft4D: Animated 3D Facial Avatar Generation from a Single Image](facecraft4d_animated_3d_facial_avatar_generation_from_a_single_image.md)
 - [\[ICCV 2025\] PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution](patchscaler_an_efficient_patch-independent_diffusion_model_for_image_super-resol.md)
-- [\[CVPR 2026\] Physics-Consistent Diffusion for Efficient Fluid Super-Resolution via Multiscale Residual Correction](../../CVPR2026/image_generation/physics-consistent_diffusion_for_efficient_fluid_super-resolution_via_multiscale.md)
+- [\[CVPR 2025\] DiffLocks: Generating 3D Hair from a Single Image using Diffusion Models](../../CVPR2025/image_generation/difflocks_generating_3d_hair_from_a_single_image_using_diffusion_models.md)
 - [\[NeurIPS 2025\] Image Super-Resolution with Guarantees via Conformalized Generative Models](../../NeurIPS2025/image_generation/image_super-resolution_with_guarantees_via_conformalized_generative_models.md)
 
 </div>

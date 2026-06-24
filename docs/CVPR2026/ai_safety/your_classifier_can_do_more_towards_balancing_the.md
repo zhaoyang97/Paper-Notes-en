@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation
 description: >-
-  [CVPR 2026][AI Safety][adversarial training] Through energy landscape analysis, the complementarity of AT and JEM is revealed (AT aligns clean-adv energy distributions → robustness; JEM aligns clean-generated energy distributions → accuracy + generation). EB-JDAT is proposed to model the joint distribution $p(\mathbf{x}, \tilde{\mathbf{x}}, y)$ and use min-max en
+  [CVPR 2026][AI Safety][adversarial training] Through energy landscape analysis, the complementarity of AT and JEM is revealed (AT aligns clean-adv energy distributions → robustness; JEM aligns clean-generated energy distributions → accuracy + generation). EB-JDAT is proposed to model the joint distribution $p(\mathbf{x}, \tilde{\mathbf{x}}, y)$ and use min-max energy optimization to align the energy distributions of three types of data. It achieves a CIFAR-10 AutoAttack robus…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - adversarial training
-  - energy-based model
-  - JEM
-  - robustness
-  - generation
+  - "CVPR 2026"
+  - "AI Safety"
+  - "adversarial training"
+  - "energy-based model"
+  - "JEM"
+  - "robustness"
+  - "generation"
 date: 2026-05-08
-content_hash: c014b3fe554245cb
+content_hash: 3b99af19a0b84745
 ---
+
 # Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation
 
 **Conference**: CVPR 2026  
@@ -169,10 +170,10 @@ WRN28-10 backbone; lr=0.01; 5-step adversarial sampling; $\ell_\infty$ constrain
 ## Related Papers
 
 - [\[CVPR 2026\] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](one-to-more_high-fidelity_training-free_anomaly_generation_with_attention_control.md)
-- [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](../../ICML2026/ai_safety/demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
 - [\[CVPR 2026\] Good Can Sometimes be Bad: A Unified Attack against 3D Point Cloud Classifier by a Flexible Isotropic Resampling](good_can_sometimes_be_bad_a_unified_attack_against_3d_point_cloud_classifier_by_.md)
-- [\[CVPR 2026\] When CLIP Sees More, It Fights Back Harder: Multi-View Guided Adaptive Counterattacks for Test-Time Adversarial Robustness](when_clip_sees_more_it_fights_back_harder_multi-view_guided_adaptive_counteratta.md)
+- [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](../../ICML2026/ai_safety/demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
 - [\[CVPR 2026\] SafeLogo: Turning Your Logos into Jailbreak Shields via Micro-Regional Adversarial Training](safelogo_turning_your_logos_into_jailbreak_shields_via_micro-regional_adversaria.md)
+- [\[CVPR 2026\] When CLIP Sees More, It Fights Back Harder: Multi-View Guided Adaptive Counterattacks for Test-Time Adversarial Robustness](when_clip_sees_more_it_fights_back_harder_multi-view_guided_adaptive_counteratta.md)
 
 </div>
 

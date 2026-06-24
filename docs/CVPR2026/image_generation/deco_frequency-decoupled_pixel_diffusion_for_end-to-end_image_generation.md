@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] DeCo proposes a frequency-decoupled pixel diffusion framework that utilizes a lightweight pixel decoder to process high-frequency details, allowing the DiT to focus on low-frequency semantic modeling. Combined with a frequency-aware flow matching loss, it achieves FID scores of 1.62 (256) and 2.22 (512) on ImageNet, na
+  [CVPR 2026][Image Generation][Pixel Diffusion] DeCo proposes a frequency-decoupled pixel diffusion framework that utilizes a lightweight pixel decoder to process high-frequency details, allowing the DiT to focus on low-frequency semantic modeling. Combined with a frequency-aware flow matching loss, it achieves FID scores of 1.62 (256) and 2.22 (512) on ImageNet, narrowing the gap between pixel-space and latent-space diffusion.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Pixel Diffusion"
+  - "Frequency Decoupling"
+  - "End-to-End Generation"
+  - "Diffusion Transformer"
+  - "Frequency-Aware Loss"
 date: 2026-05-08
-content_hash: 8a4e1a9433601254
+content_hash: b0fee2a5d6aa11c5
 ---
+
 # DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ The total loss is the sum of three terms: $\mathcal{L} = \mathcal{L}_{\text{FM}}
 
 ## Related Papers
 
-- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
 - [\[CVPR 2026\] SpeeDiff: Scalable Pixel-Anchored End-to-End Latent Diffusion Model](speediff_scalable_pixel-anchored_end-to-end_latent_diffusion_model.md)
-- [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](ddt_decoupled_diffusion_transformer.md)
+- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
 - [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](../../ICML2026/image_generation/end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
 - [\[ICCV 2025\] End-to-End Multi-Modal Diffusion Mamba](../../ICCV2025/image_generation/end-to-end_multi-modal_diffusion_mamba.md)
+- [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](ddt_decoupled_diffusion_transformer.md)
 
 </div>
 

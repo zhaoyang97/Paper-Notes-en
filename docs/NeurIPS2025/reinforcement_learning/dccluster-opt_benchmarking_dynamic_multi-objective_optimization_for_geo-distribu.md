@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DCcluster-Opt: Benchmarking Dynamic Multi-Objective Optimization for Geo-Distributed Data Center Workloads
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Data Center Optimization] This paper proposes DCcluster-Opt, an open-source high-fidelity simulation benchmark platform for geo-distributed data centers. It integrates real-world da…
+  [NeurIPS 2025][Reinforcement Learning][Data Center Optimization] This paper proposes DCcluster-Opt, an open-source high-fidelity simulation benchmark platform for geo-distributed data centers. It integrates real-world datasets (carbon intensity, electricity prices, weather, etc.) and physics-based models to support reinforcement learning research on dynamic multi-objective workload scheduling.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Carbon Emissions"
   - "Workload Scheduling"
 date: 2026-05-08
-content_hash: bcc50df54d329903
+content_hash: 515573a680502c10
 ---
 
 # DCcluster-Opt: Benchmarking Dynamic Multi-Objective Optimization for Geo-Distributed Data Center Workloads
@@ -188,9 +188,9 @@ Carbon intensity forecast information has the greatest impact on RL agent perfor
 ## Related Papers
 
 - [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
+- [\[ICML 2025\] Graph-Supported Dynamic Algorithm Configuration for Multi-Objective Combinatorial Optimization](../../ICML2025/reinforcement_learning/graph-supported_dynamic_algorithm_configuration_for_multi-objective_combinatoria.md)
 - [\[NeurIPS 2025\] Sequential Multi-Agent Dynamic Algorithm Configuration](sequential_multi-agent_dynamic_algorithm_configuration.md)
 - [\[NeurIPS 2025\] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach](multi-objective_reinforcement_learning_with_max-min_criterion_a_game-theoretic_a.md)
-- [\[NeurIPS 2025\] PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization](parco_parallel_autoregressive_models_for_multi-agent_combinatorial_optimization.md)
 - [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
 
 </div>

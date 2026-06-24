@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Auditing and Fixing Economic Validity in Tabular Foundation Models for Discrete Choice
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper discovers that tabular foundation models (TFMs) such as TabPFN and Mitra exhibit high accuracy in discrete choice tasks but violate price-demand monotonicity and produce untrustworthy value-of-time (VOT) estimates. Consequently, it proposes a two-stage behavioral adapter that embeds TFM predictions into a ut
+  [ICML2026][Model Compression][Tabular foundation models] This paper discovers that tabular foundation models (TFMs) such as TabPFN and Mitra exhibit high accuracy in discrete choice tasks but violate price-demand monotonicity and produce untrustworthy value-of-time (VOT) estimates. Consequently, it proposes a two-stage behavioral adapter that embeds TFM predictions into a utility model constrained by economic theory, achieving 100% behavioral validity while recovering most ac…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML2026"
+  - "Model Compression"
+  - "Tabular foundation models"
+  - "discrete choice"
+  - "economic validity"
+  - "behavioral constraints"
+  - "policy evaluation"
 date: 2026-05-08
-content_hash: 3236c1c57930c276
+content_hash: e4a563d98f2797cc
 ---
+
 # Auditing and Fixing Economic Validity in Tabular Foundation Models for Discrete Choice
 
 **Conference**: ICML2026  
@@ -139,8 +145,8 @@ The paper focuses on comparing the roles of structural models, raw TFMs, distill
 
 - [\[ICML 2026\] End-to-End Compression for Tabular Foundation Models](end-to-end_compression_for_tabular_foundation_models.md)
 - [\[ICML 2026\] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles](quantifying_the_uncertainty_of_foundation_models_with_singular_value_ensembles.md)
-- [\[ICML 2026\] BioArc: Discovering Optimal Neural Architectures for Biological Foundation Models](bioarc_discovering_optimal_neural_architectures_for_biological_foundation_models.md)
 - [\[ICML 2026\] Active Tabular Augmentation via Policy-Guided Diffusion Inpainting](active_tabular_augmentation_via_policy-guided_diffusion_inpainting.md)
+- [\[ICML 2026\] BioArc: Discovering Optimal Neural Architectures for Biological Foundation Models](bioarc_discovering_optimal_neural_architectures_for_biological_foundation_models.md)
 - [\[ICML 2026\] PRISM: Synergizing Vision Foundation Models via Self-Organized Expert Specialization](prism_synergizing_vision_foundation_models_via_self-organized_expert_specializat.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAGA: Structural Aggregation Guided Alignment with Dynamic View and Neighborhood Order Selection for Multiview Graph Domain Adaptation
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] SAGA addresses unsupervised graph domain adaptation on multi-relational graphs by proposing Structural Aggregation Distance to dynamically select the most transferable combination of views and neighborhood orders during training. This combination guides cross-view and cross-domain alignment, significantly outperforming
+  [ICLR2026][Graph Learning][Multi-view Graph Learning] SAGA addresses unsupervised graph domain adaptation on multi-relational graphs by proposing Structural Aggregation Distance to dynamically select the most transferable combination of views and neighborhood orders during training. This combination guides cross-view and cross-domain alignment, significantly outperforming existing GDA methods on ACM and MAG multi-view graph node classification tasks.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Multi-view Graph Learning"
+  - "Graph Domain Adaptation"
+  - "Structural Alignment"
+  - "Dynamic Neighborhood Selection"
+  - "Node Classification"
 date: 2026-05-08
-content_hash: 409bdc500c1b51d7
+content_hash: e95d0a1973f62ab8
 ---
+
 # SAGA: Structural Aggregation Guided Alignment with Dynamic View and Neighborhood Order Selection for Multiview Graph Domain Adaptation
 
 **Conference**: ICLR2026  

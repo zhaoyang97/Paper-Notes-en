@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SIMSPINE: A Biomechanics-Aware Simulation Framework for 3D Spine Motion Annotation and Benchmarking
 description: >-
-  [CVPR 2026][Medical Imaging][Dataset] The authors construct a "biomechanics-aware" simulation annotation pipeline by concatenating off-the-shelf 2D spine detectors, multi-view geometric triangulation, and OpenSim musculoskeletal inverse kinematics. This pipeline automatically supplements the Human3.6M dataset with 15 anatomically consistent vertebral-level
+  [CVPR 2026][Medical Imaging][Spine motion] The authors construct a "biomechanics-aware" simulation annotation pipeline by concatenating off-the-shelf 2D spine detectors, multi-view geometric triangulation, and OpenSim musculoskeletal inverse kinematics. This pipeline automatically supplements the Human3.6M dataset with 15 anatomically consistent vertebral-level 3D keypoints and per-vertebra rotations, creating SIMSPINE—the first open 3D spine motion dataset (2.14 million fram…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Dataset
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Spine motion"
+  - "Biomechanics"
+  - "Musculoskeletal modeling"
+  - "3D keypoints"
+  - "Dataset"
 date: 2026-05-08
-content_hash: a984ecf319c8d5cd
+content_hash: b13f5a98ea263660
 ---
+
 # SIMSPINE: A Biomechanics-Aware Simulation Framework for 3D Spine Motion Annotation and Benchmarking
 
 **Conference**: CVPR 2026  
@@ -143,15 +148,15 @@ Triangulation reaches sub-millimeter precision with GT 2D, proving geometric con
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] A Supervised Multi-task Framework for Joint cryo-ET Restoration Enabled by Generative Physical Simulation](a_supervised_multi-task_framework_for_joint_cryo-et_restoration_enabled_by_gener.md)
 - [\[CVPR 2026\] Prospective Dynamic 3D MRI Reconstruction via Latent-Space Motion Tracking from Single Measurement](prospective_dynamic_3d_mri_reconstruction_via_latent-space_motion_tracking_from_.md)
-- [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
 - [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
-- [\[CVPR 2026\] VesMamba: 3D Pulmonary Vessel Segmentation from CT images via Mamba with Structural Perception and Scale-aware Filtering](vesmamba_3d_pulmonary_vessel_segmentation_from_ct_images_via_mamba_with_structur.md)
+- [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
+- [\[CVPR 2026\] CROWn: A Unified 3D Medical Segmentation Framework Integrating Anti-Aliased Downsampling and Phase-Calibrated Fusion](crown_a_unified_framework_for_anti-aliased_downsampling_and_phase-calibrated_fus.md)
 
 </div>
 

@@ -1,19 +1,20 @@
 ---
 title: >-
-  [Paper Note] Untitled
+  [Paper Note] UETrack: A Unified and Efficient Framework for Single Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][single object tracking] This paper proposes UETrack, a unified and efficient single object tracking framework capable of processing five modalities: RGB, Depth, Thermal, Event, and Language. UETrack addresses the gap in efficient multi-modal tracking: existing efficient trackers are limited to RGB, while multi-modal trackers are often too slo
+  [CVPR 2026][Video Understanding][single object tracking] This paper proposes UETrack, a unified and efficient single object tracking framework capable of processing five modalities: RGB, Depth, Thermal, Event, and Language. UETrack addresses the gap in efficient multi-modal tracking: existing efficient trackers are limited to RGB, while multi-modal trackers are often too slow due to complex designs. Core innovations include: (1) Token-Pooling-based Mixture-of-Experts (TP-MoE)…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - single object tracking
-  - multi-modal tracking
-  - mixture of experts
-  - knowledge distillation
-  - efficient inference
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "single object tracking"
+  - "multi-modal tracking"
+  - "mixture of experts"
+  - "knowledge distillation"
+  - "efficient inference"
 date: 2026-05-08
-content_hash: a425bfa88c358a06
+content_hash: f9a6697639262cd8
 ---
+
 # UETrack: A Unified and Efficient Framework for Single Object Tracking
 
 **Conference**: CVPR 2026  
@@ -137,9 +138,9 @@ UETrack-B outperforms most non-real-time methods in the Thermal modality while m
 
 - [\[CVPR 2026\] TGTrack: Temporal Generative Learning for Unified Single Object Tracking](tgtrack_temporal_generative_learning_for_unified_single_object_tracking.md)
 - [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
-- [\[CVPR 2025\] MUST: The First Dataset and Unified Framework for Multispectral UAV Single Object Tracking](../../CVPR2025/video_understanding/must_the_first_dataset_and_unified_framework_for_multispectral_uav_single_object.md)
+- [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](../../ICCV2025/video_understanding/general_compression_framework_for_efficient_transformer_object_tracking.md)
+- [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
 - [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
-- [\[CVPR 2026\] Temporally Consistent Long-Term Memory for 3D Single Object Tracking](chronotrack_temporally_consistent_long_term_memory_for_3d_single_object_tracking.md)
 
 </div>
 

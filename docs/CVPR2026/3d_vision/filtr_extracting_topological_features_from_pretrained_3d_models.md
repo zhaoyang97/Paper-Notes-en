@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FILTR: Extracting Topological Features from Pretrained 3D Models
 description: >-
-  [CVPR 2026][3D Vision][DETR] This paper first probes "how much topology pretrained 3D point cloud encoders actually understand" using DONUT, a synthetic dataset with topological labels. The findings reveal that while encoders have weak understanding of global topology (connected components, genus), they possess implicit perception of multi-scale s
+  [CVPR 2026][3D Vision][Topological Data Analysis] This paper first probes "how much topology pretrained 3D point cloud encoders actually understand" using DONUT, a synthetic dataset with topological labels. The findings reveal that while encoders have weak understanding of global topology (connected components, genus), they possess implicit perception of multi-scale structures. Subsequently, the authors propose FILTR—the first set-prediction model that adapts DETR to predict…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - DETR
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Topological Data Analysis"
+  - "Persistence Diagrams"
+  - "Point Cloud Encoders"
+  - "Set Prediction"
+  - "DETR"
 date: 2026-05-08
-content_hash: a4e858f655adf77e
+content_hash: 7730ad194f4093cf
 ---
+
 # FILTR: Extracting Topological Features from Pretrained 3D Models
 
 **Conference**: CVPR 2026  
@@ -145,11 +150,11 @@ Key Findings: FILTR with frozen encoders **matches or exceeds** end-to-end basel
 
 ## Related Papers
 
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
-- [\[CVPR 2026\] Edit2Perceive: Image Editing Diffusion Models Are Strong Dense Perceivers](edit2perceive_image_editing_diffusion_models_are_strong_dense_perceivers.md)
-- [\[CVPR 2026\] Foundry: Distilling 3D Foundation Models for the Edge](foundry_distilling_3d_foundation_models_for_the_edge.md)
 - [\[CVPR 2026\] TopoMesh: High-Fidelity Mesh Autoencoding via Topological Unification](topomesh_high-fidelity_mesh_autoencoding_via_topological_unification.md)
+- [\[CVPR 2026\] SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation](se3-equivariance_with_geometric_and_topological_guidance_for_category-level_obje.md)
+- [\[CVPR 2026\] SGSoft: Learning Fused Semantic-Geometric Features for 3D Shape Correspondence via Template-Guided Soft Signals](sgsoft_learning_fused_semantic-geometric_features_for_3d_shape_correspondence_vi.md)
+- [\[CVPR 2026\] Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features](content-aware_frequency_encoding_for_implicit_neural_representations_with_fourie.md)
+- [\[ICLR 2026\] A Scene is Worth a Thousand Features: Feed-Forward Camera Localization from a Collection of Image Features](../../ICLR2026/3d_vision/a_scene_is_worth_a_thousand_features_feed-forward_camera_localization_from_a_col.md)
 
 </div>
 

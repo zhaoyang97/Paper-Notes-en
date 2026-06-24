@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-Agent Reinforcement Learning from Delayed Marketplace Feedback for Objective-Weight Adaptation in Three-Sided Dispatch
 description: >-
-  [ICML 2026][Reinforcement Learning][Multi-Agent] DoorDash models the "objective weight" regulation of food delivery dispatching as an offline multi-agent reinforcement learning problem. Instead of replacing the existing combinatorial dispatch optimizer, each store-level agent selects a discrete multiplier based on local market states to fine-tune the optimizer's trad
+  [ICML2026][Reinforcement Learning][Offline Reinforcement Learning] DoorDash models the "objective weight" regulation of food delivery dispatching as an offline multi-agent reinforcement learning problem. Instead of replacing the existing combinatorial dispatch optimizer, each store-level agent selects a discrete multiplier based on local market states to fine-tune the optimizer's trade-off between "delivery speed vs. bundling efficiency." Using Double DQN with Conservative Q-…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Multi-Agent
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Multi-Agent"
+  - "Marketplace Dispatch"
+  - "Delayed Rewards"
+  - "Switchback Experiments"
 date: 2026-05-08
-content_hash: 572847e3e3f87964
+content_hash: 762acd3ca99be0a8
 ---
+
 # Multi-Agent Reinforcement Learning from Delayed Marketplace Feedback for Objective-Weight Adaptation in Three-Sided Dispatch
 
 **Conference**: ICML2026  
@@ -136,15 +141,16 @@ Approximately 4,000 geographic regions served as randomization units. A switchba
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Parameter-free Dynamic Regret: Time-varying Movement Costs, Delayed Feedback, and Memory](parameter-free_dynamic_regret_time-varying_movement_costs_delayed_feedback_and_m.md)
-- [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
+- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[ICML 2025\] Test-Time Adaptation with Binary Feedback](../../ICML2025/reinforcement_learning/test-time_adaptation_with_binary_feedback.md)
+- [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
 - [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](../../NeurIPS2025/reinforcement_learning/bandit_and_delayed_feedback_in_online_structured_prediction.md)
-- [\[ICLR 2026\] A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning](../../ICLR2026/reinforcement_learning/a_reward-free_viewpoint_on_multi-objective_reinforcement_learning.md)
 
 </div>
 

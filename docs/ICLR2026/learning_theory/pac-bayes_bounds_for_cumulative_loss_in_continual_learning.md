@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PAC-Bayes Bounds for Cumulative Loss in Continual Learning
 description: >-
-  [ICLR 2026][learning_theory][PAC-Bayes] This paper generalizes existing online and time-uniform offline PAC-Bayes bounds to the continual learning setting, providing the **first cumulative loss (learning plasticity) bounds applicable to arbitrary task distributions and learning algorithms**, and verifies non-vacuous risk certificates on visual continual lear
+  [ICLR 2026][Learning Theory][Cumulative Loss] This paper generalizes existing online and time-uniform offline PAC-Bayes bounds to the continual learning setting, providing the **first cumulative loss (learning plasticity) bounds applicable to arbitrary task distributions and learning algorithms**, and verifies non-vacuous risk certificates on visual continual learning tasks.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - PAC-Bayes
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Continual Learning"
+  - "PAC-Bayes"
+  - "Cumulative Loss"
+  - "Learning Plasticity"
+  - "Risk Certificate"
 date: 2026-05-08
-content_hash: d5f59134cacf3d61
+content_hash: 7ee7c6c1d06b37ef
 ---
+
 # PAC-Bayes Bounds for Cumulative Loss in Continual Learning
 
 **Conference**: ICLR 2026  

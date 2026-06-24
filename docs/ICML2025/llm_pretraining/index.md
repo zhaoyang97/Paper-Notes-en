@@ -1,0 +1,209 @@
+---
+title: >-
+  ICML2025 Pretraining Papers · 31 Notes
+description: >-
+  31 ICML2025 papers in the Pretraining area, covering LLM, Alignment/RLHF, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+tags:
+  - "ICML2025"
+  - "Pretraining"
+  - "AI paper notes"
+  - "paper summaries"
+  - "LLM"
+  - "Alignment/RLHF"
+  - "Adversarial Robustness"
+item_list:
+  - u: "a_square_peg_in_a_square_hole_meta-expert_for_long-tailed_semi-supervised_learni/"
+    t: "A Square Peg in a Square Hole: Meta-Expert for Long-Tailed Semi-Supervised Learning"
+  - u: "algebra_unveils_deep_learning_--_an_invitation_to_neuroalgebraic_geometry/"
+    t: "Algebra Unveils Deep Learning -- An Invitation to Neuroalgebraic Geometry"
+  - u: "bayesian_neural_scaling_law_extrapolation_with_prior-data_fitted_networks/"
+    t: "Bayesian Neural Scaling Law Extrapolation with Prior-Data Fitted Networks"
+  - u: "benign_overfitting_in_token_selection_of_attention_mechanism/"
+    t: "Benign Overfitting in Token Selection of Attention Mechanism"
+  - u: "chameleon_a_flexible_data-mixing_framework_for_language_model_pretraining_and_fi/"
+    t: "Chameleon: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning"
+  - u: "counting_in_small_transformers_the_delicate_interplay_between_attention_and_feed/"
+    t: "Counting in Small Transformers: The Delicate Interplay between Attention and Feed-Forward Layers"
+  - u: "density_ratio_estimation-based_bayesian_optimization_with_semi-supervised_learni/"
+    t: "Density Ratio Estimation-based Bayesian Optimization with Semi-Supervised Learning"
+  - u: "dipllm_fine-tuning_llm_for_strategic_decision-making_in_diplomacy/"
+    t: "DipLLM: Fine-Tuning LLM for Strategic Decision-Making in Diplomacy"
+  - u: "does_data_scaling_lead_to_visual_compositional_generalization/"
+    t: "Does Data Scaling Lead to Visual Compositional Generalization?"
+  - u: "evaluating_morphological_alignment_of_tokenizers_in_70_languages/"
+    t: "Evaluating Morphological Alignment of Tokenizers in 70 Languages"
+  - u: "how_to_synthesize_text_data_without_model_collapse/"
+    t: "How to Synthesize Text Data without Model Collapse?"
+  - u: "in-context_adaptation_to_concept_drift_for_learned_database_operations/"
+    t: "In-Context Adaptation to Concept Drift for Learned Database Operations"
+  - u: "inductive_gradient_adjustment_for_spectral_bias_in_implicit_neural_representatio/"
+    t: "Inductive Gradient Adjustment for Spectral Bias in Implicit Neural Representations"
+  - u: "language_model_developers_should_report_train-test_overlap/"
+    t: "Language Model Developers Should Report Train-Test Overlap"
+  - u: "language_models_over_canonical_byte-pair_encodings/"
+    t: "Language Models over Canonical Byte-Pair Encodings"
+  - u: "large_language_models_are_demonstration_pre-selectors_for_themselves/"
+    t: "Large Language Models are Demonstration Pre-Selectors for Themselves"
+  - u: "llm_data_selection_and_utilization_via_dynamic_bi-level_optimization/"
+    t: "LLM Data Selection and Utilization via Dynamic Bi-level Optimization"
+  - u: "machine_learning_from_explanations/"
+    t: "Machine Learning from Explanations"
+  - u: "meek_models_shall_inherit_the_earth/"
+    t: "Meek Models Shall Inherit the Earth"
+  - u: "metadata_conditioning_accelerates_language_model_pre-training/"
+    t: "Metadata Conditioning Accelerates Language Model Pre-training"
+  - u: "on_the_clean_generalization_and_robust_overfitting_in_adversarial_training_from_/"
+    t: "On the Clean Generalization and Robust Overfitting in Adversarial Training from Two Theoretical Views: Representation Complexity and Training Dynamics"
+  - u: "on_the_role_of_label_noise_in_the_feature_learning_process/"
+    t: "On the Role of Label Noise in the Feature Learning Process"
+  - u: "position_the_future_of_bayesian_prediction_is_prior-fitted/"
+    t: "Position: The Future of Bayesian Prediction Is Prior-Fitted"
+  - u: "provable_maximum_entropy_manifold_exploration_via_diffusion_models/"
+    t: "Provable Maximum Entropy Manifold Exploration via Diffusion Models"
+  - u: "revisiting_continuity_of_image_tokens_for_cross-domain_few-shot_learning/"
+    t: "Revisiting Continuity of Image Tokens for Cross-Domain Few-Shot Learning"
+  - u: "scaling_inference-efficient_language_models/"
+    t: "Scaling Inference-Efficient Language Models"
+  - u: "the_double-ellipsoid_geometry_of_clip/"
+    t: "The Double-Ellipsoid Geometry of CLIP"
+  - u: "tokenized_bandit_for_llm_decoding_and_alignment/"
+    t: "Tokenized Bandit for LLM Decoding and Alignment"
+  - u: "towards_robust_influence_functions_with_flat_validation_minima/"
+    t: "Towards Robust Influence Functions with Flat Validation Minima"
+  - u: "when_can_in-context_learning_generalize_out_of_task_distribution/"
+    t: "When Can In-Context Learning Generalize Out of Task Distribution?"
+item_total: 31
+---
+
+<!-- Auto-generated by src/gen_blog_index.py --lang en -->
+# 📚 Pretraining
+
+**🧪 ICML2025** · **31** paper notes
+
+📌 **Same area in other venues:** [📷 CVPR2026 (5)](../../CVPR2026/llm_pretraining/index.md) · [🔬 ICLR2026 (79)](../../ICLR2026/llm_pretraining/index.md) · [💬 ACL2026 (12)](../../ACL2026/llm_pretraining/index.md) · [🧪 ICML2026 (27)](../../ICML2026/llm_pretraining/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_pretraining/index.md) · [🧠 NeurIPS2025 (51)](../../NeurIPS2025/llm_pretraining/index.md)
+
+🔥 **Top topics:** LLM ×4 · Alignment/RLHF ×2 · Adversarial Robustness ×2
+
+**[A Square Peg in a Square Hole: Meta-Expert for Long-Tailed Semi-Supervised Learning](a_square_peg_in_a_square_hole_meta-expert_for_long-tailed_semi-supervised_learni.md)**
+
+:   This paper proposes the Meta-Expert algorithm. Through a Dynamic Expert Allocation (DEA) module, it automatically selects the most proficient expert to generate pseudo-labels based on the sample's class assignment (head/medium/tail). It also utilizes a Multi-depth Feature Fusion (MFF) module to alleviate the model's bias towards head classes, achieving "a square peg in a square hole"—letting each expert process the sample interval they excel at most.
+
+**[Algebra Unveils Deep Learning -- An Invitation to Neuroalgebraic Geometry](algebra_unveils_deep_learning_--_an_invitation_to_neuroalgebraic_geometry.md)**
+
+:   This paper proposes **neuroalgebraic geometry** as a new research direction, systematically utilizing tools from algebraic geometry (dimension, degree, singularities, fibers, critical point theory, etc.) to analyze the function spaces parameterized by deep learning models (neuromanifolds). It establishes a dictionary mapping algebraic geometric invariants to core machine learning problems (sample complexity, expressivity, training dynamics, and implicit bias).
+
+**[Bayesian Neural Scaling Law Extrapolation with Prior-Data Fitted Networks](bayesian_neural_scaling_law_extrapolation_with_prior-data_fitted_networks.md)**
+
+:   The first Bayesian extrapolation method for Neural Scaling Laws. By designing customized prior distributions (covering Down, Down-Down, and Down-Up-Down functional families) and leveraging Prior-data Fitted Networks (PFNs) to meta-learn extrapolation capability, this approach outperforms existing methods in both point estimation accuracy and uncertainty quantification quality.
+
+**[Benign Overfitting in Token Selection of Attention Mechanism](benign_overfitting_in_token_selection_of_attention_mechanism.md)**
+
+:   This paper theoretically proves for the first time the phenomenon of benign overfitting in the token selection of the attention mechanism. It demonstrates that a single-layer attention network trained via gradient descent can perfectly fit noisy training labels while still generalizing, provided a balance is maintained between signal learning and noise memorization.
+
+**[Chameleon: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning](chameleon_a_flexible_data-mixing_framework_for_language_model_pretraining_and_fi.md)**
+
+:   Introduces the Chameleon framework, which utilizes kernel ridge leverage scores (KRLS) to quantify the importance of each training domain in the embedding space of a proxy model. It achieves comparable or superior data mixing performance at only 1/10 of DoReMi's computational cost, eliminates the need to retrain the proxy model when introducing new domains, and unifiedly handles both pretraining and finetuning scenarios.
+
+**[Counting in Small Transformers: The Delicate Interplay between Attention and Feed-Forward Layers](counting_in_small_transformers_the_delicate_interplay_between_attention_and_feed.md)**
+
+:   Through a histogram counting task, this paper reveals the delicate division of labor between attention layers and feed-forward networks (FFNs) in small Transformers: attention excels at relation-based counting, whereas FFNs are responsible for inventory-based counting (dictionary memorization). The emergence of these two strategies is determined by the relative relationship among embedding dimension $d$, hidden layer size $p$, and vocabulary size $T$.
+
+**[Density Ratio Estimation-based Bayesian Optimization with Semi-Supervised Learning](density_ratio_estimation-based_bayesian_optimization_with_semi-supervised_learni.md)**
+
+:   This paper proposes DRE-BO-SSL, which incorporates semi-supervised learning (label propagation/label spreading) into density ratio estimation-based Bayesian optimization. By utilizing unlabeled data points, it alleviates the over-exploitation issue of supervised classifiers, achieving a better balance between exploration and exploitation.
+
+**[DipLLM: Fine-Tuning LLM for Strategic Decision-Making in Diplomacy](dipllm_fine-tuning_llm_for_strategic_decision-making_in_diplomacy.md)**
+
+:   This paper proposes DipLLM, which decomposes the exponential combinatorial action space of Board Game Diplomacy into unit-level decision sequences through an autoregressive factorization framework, and fine-tunes an LLM to learn equilibrium strategies, outperforming Cicero using only 1.5% of its training data.
+
+**[Does Data Scaling Lead to Visual Compositional Generalization?](does_data_scaling_lead_to_visual_compositional_generalization.md)**
+
+:   This paper systematically investigates the impact of data scale and data diversity on the compositional generalization of visual models through controlled experiments. The authors find that data diversity, rather than data volume, is the key driver of compositional generalization. They also prove that when representations exhibit a linearly factored structure, only 2 compositional samples per concept value are required for perfect generalization.
+
+**[Evaluating Morphological Alignment of Tokenizers in 70 Languages](evaluating_morphological_alignment_of_tokenizers_in_70_languages.md)**
+
+:   This work extends the MorphScore evaluation framework to 70 languages to systematically investigate the correlation between the morphological boundary alignment of tokenizers and downstream task performance. The results show that morphological alignment explains only a minimal amount of performance variance and exhibits a negative correlation, challenging the mainstream assumption that morphologically aligned tokenization benefits model performance.
+
+**[How to Synthesize Text Data without Model Collapse?](how_to_synthesize_text_data_without_model_collapse.md)**
+
+:   Token-level Editing (ToEdit) is proposed, which performs local resampling at the token level on human data (instead of fully generating synthetic data). This is theoretically proven to guarantee a finite upper bound on the test error, thereby avoiding model collapse. Its effectiveness is empirically validated across three training stages: pre-training, continual pre-training, and fine-tuning.
+
+**[In-Context Adaptation to Concept Drift for Learned Database Operations](in-context_adaptation_to_concept_drift_for_learned_database_operations.md)**
+
+:   Proposes the FLAIR framework, which utilizes database execution results as context to achieve in-context adaptation. This addresses concept drift without runtime parameter updates, achieving a $5.2\times$ speedup and a 22.5% error reduction on tasks such as cardinality estimation.
+
+**[Inductive Gradient Adjustment for Spectral Bias in Implicit Neural Representations](inductive_gradient_adjustment_for_spectral_bias_in_implicit_neural_representatio.md)**
+
+:   Starting from the Neural Tangent Kernel (NTK) linear dynamics model, this paper proposes the Inductive Gradient Adjustment (IGA) method. By inductively generalizing the eNTK gradient transformation matrix, it **purposefully** mitigates the spectral bias of MLPs, enabling INRs to efficiently learn high-frequency details even on million-scale data points.
+
+**[Language Model Developers Should Report Train-Test Overlap](language_model_developers_should_report_train-test_overlap.md)**
+
+:   This paper systematically investigates the reporting practices of 30 language model developers regarding train-test overlap. It finds that only 9 models provide sufficient overlap information and calls on all developers to report train-test overlap statistics or release training data when publishing evaluation results.
+
+**[Language Models over Canonical Byte-Pair Encodings](language_models_over_canonical_byte-pair_encodings.md)**
+
+:   Reveals that autoregressive language models under BPE tokenization allocate unnecessary probability mass to an exponential number of noncanonical token encodings. Two correction schemes, conditioning and construction based on Finite State Automata (FSA), are proposed to consistently improve held-out likelihood across various models and corpora.
+
+**[Large Language Models are Demonstration Pre-Selectors for Themselves](large_language_models_are_demonstration_pre-selectors_for_themselves.md)**
+
+:   FEEDER (FEw yet Essential Demonstration prE-selectoR) is proposed, which is a demonstration pre-selection framework based on "sufficiency" and "necessity" metrics. It leverages the LLM's own capabilities to identify a representative subset from the training data. Across both ICL and fine-tuning scenarios, FEEDER reduces data size by over 20% while maintaining or even improving performance.
+
+**[LLM Data Selection and Utilization via Dynamic Bi-level Optimization](llm_data_selection_and_utilization_via_dynamic_bi-level_optimization.md)**
+
+:   A Dynamic Data Weighting Model (DWM) is proposed to adjust the weight of each batch of data in real time during LLM training via bi-level optimization. This captures the dynamically changing data preferences of the model, bringing consistent performance improvements over static data selection methods while scaling across different model sizes.
+
+**[Machine Learning from Explanations](machine_learning_from_explanations.md)**
+
+:   Proposes a method to guide machine learning using simple explanation signals (important input features). By employing a two-stage training loop that alternately optimizes prediction accuracy and attention alignment, this method significantly improves performance and stability in scenarios with small data, class imbalance, and spurious features.
+
+**[Meek Models Shall Inherit the Earth](meek_models_shall_inherit_the_earth.md)**
+
+:   Based on mathematical modeling of Chinchilla scaling laws, this work demonstrates that under a next-token prediction objective with a fixed distribution, the diminishing returns of compute scaling will eventually cause the capabilities gap of state-of-the-art (SOTA) large models relative to low-compute-budget "meek models" to converge to zero. This argues that the democratization of AI capabilities is an inevitable trend under the current scaling paradigm, and existing compute-based AI governance strategies require a fundamental redesign.
+
+**[Metadata Conditioning Accelerates Language Model Pre-training](metadata_conditioning_accelerates_language_model_pre-training.md)**
+
+:   This work proposes MeCo (Metadata Conditioning then Cooldown), which prepends metadata such as document URLs to the text during pre-training to help the model distinguish heterogeneous data sources, followed by standard data cooldown during the final 10% of training. This allows a 1.6B model to achieve comparable downstream performance using **33% less data**, while unlocking the ability to guide generation through conditional inference.
+
+**[On the Clean Generalization and Robust Overfitting in Adversarial Training from Two Theoretical Views: Representation Complexity and Training Dynamics](on_the_clean_generalization_and_robust_overfitting_in_adversarial_training_from_.md)**
+
+:   This paper theoretically explains the phenomenon of "coexistence of clean generalization and robust overfitting" (CGRO) in adversarial training from two perspectives: **representation complexity** and **training dynamics**. It shows that while a CGRO classifier can be realized via robust memorization with only an additional $\tilde{O}(ND)$ parameters, true robust generalization requires exponential model capacity in the worst case. On structured data, a three-phase transition process during adversarial training causes the network to partially learn true features while completely memorizing noise, thereby provably converging to the CGRO state.
+
+**[On the Role of Label Noise in the Feature Learning Process](on_the_role_of_label_noise_in_the_feature_learning_process.md)**
+
+:   The training dynamics of a two-layer ReLU CNN under label noise are rigorously analyzed from the perspective of feature learning theory. This analysis reveals a clear two-stage behavior: in Stage I, the model learns the signal to fit clean samples (achieving good generalization); in Stage II, after loss convergence, the model memorizes noise to overfit noisy samples (degrading generalization). This provides rigorous theoretical guarantees for early stopping and small-loss sample selection.
+
+**[Position: The Future of Bayesian Prediction Is Prior-Fitted](position_the_future_of_bayesian_prediction_is_prior-fitted.md)**
+
+:   This position paper argues that **Prior-Data Fitted Networks (PFNs)**—which train neural networks on randomly generated synthetic datasets to approximate Bayesian posterior predictive distributions—represent the future of Bayesian inference. PFNs systematically outperform traditional MCMC/VI/GP methods in implementation simplicity, flexibility of prior definitions, and inference speed, and have already proven their capability to outperform XGBoost in tabular learning (TabPFN).
+
+**[Provable Maximum Entropy Manifold Exploration via Diffusion Models](provable_maximum_entropy_manifold_exploration_via_diffusion_models.md)**
+
+:   Proposes the S-MEME algorithm, formulating the exploration problem of diffusion models as entropy maximization on an approximate data manifold. By leveraging the intrinsic relationship between the score function and the first-order variation of entropy, it bypasses density estimation, iteratively fine-tuning the pre-trained diffusion model via mirror descent, and proves convergence to the optimal exploration strategy.
+
+**[Revisiting Continuity of Image Tokens for Cross-Domain Few-Shot Learning](revisiting_continuity_of_image_tokens_for_cross-domain_few-shot_learning.md)**
+
+:   It is discovered that disrupting the continuity of ViT image tokens (preventing smooth transitions between adjacent patch pixels) leads to a significant performance drop in the source domain but only a slight decrease in the target domain. This reveals that the large spatial patterns learned via token continuity are harder to transfer across domains. Based on this, a simple and effective method, ReCIT, is proposed to bridge the domain gap.
+
+**[Scaling Inference-Efficient Language Models](scaling_inference-efficient_language_models.md)**
+
+:   This paper proposes an inference-aware Scaling Law that jointly optimizes parameter count, training token count, and model shape by introducing a model aspect ratio term into the Chinchilla loss function. Sixty-three models are trained to fit this law, which then guides the design of the Morph-1B model, achieving a 1.8× speedup in inference latency while maintaining downstream task accuracy.
+
+**[The Double-Ellipsoid Geometry of CLIP](the_double-ellipsoid_geometry_of_clip.md)**
+
+:   Through data-driven analysis, it is discovered that CLIP's primary embeddings before L2 normalization-exhibit a double-ellipsoidal shell geometry—where image and text embeddings reside on linearly separable ellipsoidal shells shifted away from the origin. The concept of conformity is introduced to explain how this structure helps mitigate false negatives and accounts for the emergence of the modality gap.
+
+**[Tokenized Bandit for LLM Decoding and Alignment](tokenized_bandit_for_llm_decoding_and_alignment.md)**
+
+:   Formulates the LLM decoding and alignment problem as a **tokenized bandit** problem, proposes the DDMC (Diminishing Distance with More Commons) assumption, proves that greedy decoding is near-optimal under this assumption, and designs online learning algorithms EOFUL and GreedyETC with sublinear regret.
+
+**[Towards Robust Influence Functions with Flat Validation Minima](towards_robust_influence_functions_with_flat_validation_minima.md)**
+
+:   This work reveals that the fundamental reason for the failure of influence functions (IF) on noisy training data is not the inaccuracy of the inverse Hessian approximation (the focus of previous research), but rather the **sharpness** of the validation loss leading to distorted loss change estimation. It theoretically derives the connection between the IF error bound and validation risk sharpness, and designs a new IF variant (FVM) specifically tailored for flat validation minima.
+
+**[When Can In-Context Learning Generalize Out of Task Distribution?](when_can_in-context_learning_generalize_out_of_task_distribution.md)**
+
+:   By systematically varying the coverage of the training task distribution (semi-angle $\phi$ of a hyperspherical cap) on linear regression ICL tasks, a sharp phase transition from "specialized solutions" to "general-purpose solutions" in transformers is identified: when task diversity exceeds a critical threshold ($\phi \gtrsim 120°$), the model can generalize to the entire task space, even surpassing the OOD performance of the Bayes optimal estimator.
+
+**[Whitened CLIP as a Likelihood Surrogate of Images and Captions](whitened_clip_as_a_likelihood_surrogate_of_images_and_captions.md)**
+
+:   Proposes Whitened CLIP (W-CLIP), which applies an invertible PCA whitening transformation to CLIP embeddings to approximate an i.i.d. standard normal distribution. This allows for direct estimation of image and caption log-likelihoods using the squared Euclidean norm, demonstrating effectiveness in artifact detection, domain shift analysis, and full-circle SLERP image manipulation.

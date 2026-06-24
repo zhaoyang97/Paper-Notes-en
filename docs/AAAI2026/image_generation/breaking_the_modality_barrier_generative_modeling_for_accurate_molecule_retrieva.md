@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Breaking the Modality Barrier: Generative Modeling for Accurate Molecule Retrieval from Mass Spectra
 description: >-
-  [AAAI 2026][Image Generation][Mass spectrometry] This paper proposes GLMR, a two-stage framework (contrastive pre-retrieval + generative language model re-ranking) that transforms cross-modal retrieval into unimodal retr…
+  [AAAI 2026][Image Generation][Mass spectrometry] This paper proposes GLMR, a two-stage framework (contrastive pre-retrieval + generative language model re-ranking) that transforms cross-modal retrieval into unimodal retrieval by generating molecular structures aligned with input mass spectra, achieving over 40% improvement in Recall@1 on MassSpecGym.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "generative retrieval"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 6d4a0249ad2cc6bc
+content_hash: 0b8a1bd4fcadb5a3
 ---
 
 # Breaking the Modality Barrier: Generative Modeling for Accurate Molecule Retrieval from Mass Spectra
@@ -144,11 +144,11 @@ Generative retrieval alone already outperforms pre-retrieval; combining both sta
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](../../NeurIPS2025/image_generation/denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
-- [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
-- [\[ICLR 2026\] GenCP: Towards Generative Modeling Paradigm of Coupled Physics](../../ICLR2026/image_generation/gencp_towards_generative_modeling_paradigm_of_coupled_physics.md)
+- [\[ECCV 2024\] IRGen: Generative Modeling for Image Retrieval](../../ECCV2024/image_generation/irgen_generative_modeling_for_image_retrieval.md)
+- [\[CVPR 2026\] UnicEdit-10M: A Dataset and Benchmark Breaking the Scale-Quality Barrier via Unified Verification for Reasoning-Enriched Edits](../../CVPR2026/image_generation/unicedit-10m_a_dataset_and_benchmark_breaking_the_scale-quality_barrier_via_unif.md)
+- [\[CVPR 2026\] IncreFA: Breaking the Static Wall of Generative Model Attribution](../../CVPR2026/image_generation/increfa_breaking_the_static_wall_of_generative_model_attribution.md)
+- [\[AAAI 2026\] Enhancing Multimodal Misinformation Detection by Replaying the Whole Story from Image Modality Perspective](enhancing_multimodal_misinformation_detection_by_replaying_the_whole_story_from_.md)
 - [\[AAAI 2026\] Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval](hyperbolic_hierarchical_alignment_reasoning_network_for_text-3d_retrieval.md)
-- [\[NeurIPS 2025\] GenIR: Generative Visual Feedback for Mental Image Retrieval](../../NeurIPS2025/image_generation/genir_generative_visual_feedback_for_mental_image_retrieval.md)
 
 </div>
 

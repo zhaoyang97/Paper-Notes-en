@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection
 description: >-
-  [ACL 2026][Social Computing][Interpretability] ToxiTrace proposes an explainable Chinese toxicity detection method for BERT-like encoders. Through three components—CuSA (LLM-guided weak labeling), GCLoss (Gradient Constraint Loss), and ARCL (Adversarial Reasoning Contrastive Learning)—it achieves dual improvements in sentence-level classification accuracy and conti
+  [ACL 2026 Findings][Social Computing][Chinese Toxicity Detection] ToxiTrace proposes an explainable Chinese toxicity detection method for BERT-like encoders. Through three components—CuSA (LLM-guided weak labeling), GCLoss (Gradient Constraint Loss), and ARCL (Adversarial Reasoning Contrastive Learning)—it achieves dual improvements in sentence-level classification accuracy and continuous toxic span extraction while maintaining efficient encoder inference.
 tags:
-  - ACL 2026
-  - Social Computing
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Social Computing"
+  - "Chinese Toxicity Detection"
+  - "Explainability"
+  - "Gradient Constraint"
+  - "Fine-grained Evidence Extraction"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: e9ae5901b54d065f
+content_hash: adc09c2d797a89da
 ---
+
 # ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection
 
 **Conference**: ACL 2026 Findings  
@@ -146,10 +151,10 @@ Training Strategy: Warm-up for 3 epochs (cross-entropy only) $\rightarrow$ Intro
 ## Related Papers
 
 - [\[ACL 2025\] STATE ToxiCN: A Benchmark for Span-level Target-Aware Toxicity Extraction in Chinese Hate Speech Detection](../../ACL2025/social_computing/state_toxicn_a_benchmark_for_span-level_target-aware_toxicity_extraction_in_chin.md)
+- [\[ACL 2025\] Exploring Multimodal Challenges in Toxic Chinese Detection: Taxonomy, Benchmark, and Findings](../../ACL2025/social_computing/exploring_multimodal_challenges_in_toxic_chinese_detection_taxonomy_benchmark_an.md)
 - [\[ACL 2026\] Probing Multimodal Large Language Models on Cognitive Biases in Chinese Short-Video Misinformation](probing_multimodal_large_language_models_on_cognitive_biases_in_chinese_short-vi.md)
 - [\[ACL 2026\] Estimating the Black-box LLM Uncertainty with Distribution-Aligned Adversarial Distillation](estimating_the_black-box_llm_uncertainty_with_distribution-aligned_adversarial_d.md)
 - [\[ACL 2026\] SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models](smarter_a_data-efficient_framework_to_improve_toxicity_detection_with_explanatio.md)
-- [\[ACL 2026\] PSK@EEUCA 2026: Fine-Tuning Large Language Models with Synthetic Data Augmentation for Multi-Class Toxicity Detection in Gaming Chat](pskeeuca_2026_fine-tuning_large_language_models_with_synthetic_data_augmentation.md)
 
 </div>
 

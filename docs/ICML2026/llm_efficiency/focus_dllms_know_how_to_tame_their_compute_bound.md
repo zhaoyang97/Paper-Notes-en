@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FOCUS: DLLMs Know How to Tame Their Compute Bound
 description: >-
-  [ICML 2026][LLM Efficiency][Diffusion Language Model] FOCUS finds that in Diffusion Large Language Models (DLLMs), only ~10% of tokens in a block are actually decoded per step, leaving 90% of the compute wasted. It reveals that the "incremental attention importance from the first two layers" highly predicts which tokens are decodable. Based on this, it designs a training-
+  [ICML 2026][LLM Efficiency][Diffusion Language Models] FOCUS finds that in Diffusion Large Language Models (DLLMs), only ~10% of tokens in a block are actually decoded per step, leaving 90% of the compute wasted. It reveals that the "incremental attention importance from the first two layers" highly predicts which tokens are decodable. Based on this, it designs a training-free inference system that evicts non-decodable tokens after Layer 1, allowing for larger effective batch…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - Inference Acceleration
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Inference Acceleration"
+  - "Token Eviction"
+  - "Attention Importance"
+  - "Throughput"
 date: 2026-05-08
-content_hash: a9cfe9c1ec8e1e1b
+content_hash: 4b1c65c6e8218f74
 ---
+
 # FOCUS: DLLMs Know How to Tame Their Compute Bound
 
 **Conference**: ICML 2026  
@@ -146,10 +150,10 @@ FOCUS reduces redundancy from ~15 to ~3 (approaching AR's 1:1 ideal). Peak throu
 ## Related Papers
 
 - [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](stochastic_sparse_attention_for_memory-bound_inference.md)
-- [\[ACL 2025\] FastDraft: How to Train Your Draft](../../ACL2025/llm_efficiency/fastdraft_how_to_train_your_draft.md)
-- [\[AAAI 2026\] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](../../AAAI2026/llm_efficiency/how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)
-- [\[ACL 2025\] How to Train Long-Context Language Models (Effectively)](../../ACL2025/llm_efficiency/train_long_context_effectively.md)
-- [\[NeurIPS 2025\] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers](../../NeurIPS2025/llm_efficiency/from_shortcut_to_induction_head_how_data_diversity_shapes_algorithm_selection_in.md)
+- [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](../../ICLR2026/llm_efficiency/diffusion_language_model_knows_the_answer_before_it_decodes.md)
+- [\[ICLR 2026\] dParallel: Learnable Parallel Decoding for dLLMs](../../ICLR2026/llm_efficiency/dparallel_learnable_parallel_decoding_for_dllms.md)
+- [\[ICLR 2026\] Wide-In, Narrow-Out: Revokable Decoding for Efficient and Effective DLLMs](../../ICLR2026/llm_efficiency/wide-in_narrow-out_revokable_decoding_for_efficient_and_effective_dllms.md)
+- [\[ICLR 2026\] Extending the Context of Pretrained LLMs by Dropping Their Positional Embedding](../../ICLR2026/llm_efficiency/extending_the_context_of_pretrained_llms_by_dropping_their_positional_embedding.md)
 
 </div>
 

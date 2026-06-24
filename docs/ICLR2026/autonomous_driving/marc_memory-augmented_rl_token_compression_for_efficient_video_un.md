@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding
 description: >-
-  [ICLR 2026][Autonomous Driving][GRPO] The MARC framework is proposed, utilizing a "retrieve-then-compress" strategy. It employs a Visual Memory Retriever (VMR) to select video segments most relevant to the query, and then utilizes Compression GRPO (C-GRPO) to distill the inference capabilities of a 64-frame teacher model into a student model using only 1 f
+  [ICLR 2026][Autonomous Driving][Video token compression] The MARC framework is proposed, utilizing a "retrieve-then-compress" strategy. It employs a Visual Memory Retriever (VMR) to select video segments most relevant to the query, and then utilizes Compression GRPO (C-GRPO) to distill the inference capabilities of a 64-frame teacher model into a student model using only 1 frame's worth of tokens. This achieves 95% visual token compression, a 72% reduction in GPU memory…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - GRPO
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Video token compression"
+  - "RL distillation"
+  - "visual memory retrieval"
+  - "GRPO"
+  - "efficient inference"
 date: 2026-05-08
-content_hash: d03a17103a0a68db
+content_hash: 1f69f8462a6e9378
 ---
+
 # MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding
 
 **Conference**: ICLR 2026  
@@ -171,10 +176,10 @@ $$\mathcal{L}_{\text{C-GRPO}} = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^{G}\left(\
 ## Related Papers
 
 - [\[NeurIPS 2025\] StreamForest: Efficient Online Video Understanding with Persistent Event Memory](../../NeurIPS2025/autonomous_driving/streamforest_efficient_online_video_understanding_with_persistent_event_memory.md)
+- [\[ICLR 2026\] SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction](scenestreamer_continuous_scenario_generation_as_next_token_group_prediction.md)
+- [\[ICLR 2026\] RAP: 3D Rasterization Augmented End-to-End Planning](rap_3d_rasterization_augmented_end-to-end_planning.md)
 - [\[ICLR 2026\] Low-Latency Neural LiDAR Compression with 2D Context Models](low-latency_neural_lidar_compression_with_2d_context_models.md)
 - [\[ICLR 2026\] EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](egodex_learning_dexterous_manipulation_from_large-scale_egocentric_video.md)
-- [\[ICML 2026\] Mitigating Error Accumulation in Continuous Navigation via Memory-Augmented Kalman Filtering](../../ICML2026/autonomous_driving/mitigating_error_accumulation_in_continuous_navigation_via_memory-augmented_kalm.md)
-- [\[ICLR 2026\] Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling](plan-r1_safe_and_feasible_trajectory_planning_as_language_modeling.md)
 
 </div>
 

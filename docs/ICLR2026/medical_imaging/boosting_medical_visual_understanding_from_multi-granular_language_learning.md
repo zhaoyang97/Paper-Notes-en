@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Boosting Medical Visual Understanding From Multi-Granular Language Learning
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This paper proposes Multi-Granular Language Learning (MGLL), a plug-and-play contrastive learning framework. By jointly optimizing soft CLIP loss, point-wise loss, and smooth KL divergence, MGLL aligns medical images with multi-label, multi-granular textual descriptions. It consistently outperforms SOTA methods on fund
+  [ICLR 2026][Medical Imaging][Medical Image Pre-training] This paper proposes Multi-Granular Language Learning (MGLL), a plug-and-play contrastive learning framework. By jointly optimizing soft CLIP loss, point-wise loss, and smooth KL divergence, MGLL aligns medical images with multi-label, multi-granular textual descriptions. It consistently outperforms SOTA methods on fundus and X-ray datasets and can be embedded into multimodal large language models (MLLMs) as a vision enc…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Medical Image Pre-training"
+  - "Multi-label Contrastive Learning"
+  - "Multi-granular Alignment"
+  - "CLIP Improvement"
+  - "Vision-Language Pre-training"
 date: 2026-05-08
-content_hash: 583d435ab27beae7
+content_hash: f978295dea5a7dc8
 ---
+
 # Boosting Medical Visual Understanding From Multi-Granular Language Learning
 
 **Conference**: ICLR 2026  
@@ -164,10 +170,10 @@ Granularity quantity ablation (MIDRC-XR-Portable): As granularities increase fro
 ## Related Papers
 
 - [\[AAAI 2026\] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks](../../AAAI2026/medical_imaging/sim4seg_boosting_multimodal_multi-disease_medical_diagnosis_segmentation_with_re.md)
-- [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](../../CVPR2026/medical_imaging/medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
 - [\[ICLR 2026\] U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding](u2-bench_benchmarking_large_vision-language_models_on_ultrasound_understanding.md)
+- [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](../../CVPR2026/medical_imaging/medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
+- [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](../../ICCV2025/medical_imaging/boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
 - [\[ICLR 2026\] M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding](m3cotbench_benchmark_chain-of-thought_of_mllms_in_medical_image_understanding.md)
-- [\[CVPR 2026\] MedMO: Grounding and Understanding Multimodal Large Language Model for Medical Images](../../CVPR2026/medical_imaging/medmo_grounding_and_understanding_multimodal_large_language_model_for_medical_im.md)
 
 </div>
 

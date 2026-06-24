@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Image Super-Resolution] This work proposes a fine-grained perceptual reward model, FinPercep-RM, and a Co-evolutionary Curriculum Learning (CCL) strategy to address reward hacking and training instability in RLHF-based real-world super-resolution. It achieves local defect awareness by simultaneously outputting global quality scores and spatia
+  [CVPR 2026][Image Restoration][Image Super-Resolution] This work proposes a fine-grained perceptual reward model, FinPercep-RM, and a Co-evolutionary Curriculum Learning (CCL) strategy to address reward hacking and training instability in RLHF-based real-world super-resolution. It achieves local defect awareness by simultaneously outputting global quality scores and spatial degradation heatmaps.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Image Super-Resolution
-  - RLHF
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Image Super-Resolution"
+  - "Reward Model"
+  - "RLHF"
+  - "Fine-grained Quality Assessment"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 299709b195f24328
+content_hash: f70d982e1dc1d366
 ---
+
 # FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -147,10 +151,10 @@ where $\mathcal{L}_{map}$ is the L1 loss between the predicted degradation map a
 ## Related Papers
 
 - [\[CVPR 2026\] DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution](dnf-sr_dual-input_and_negative-aware_feature_fine-tuning_for_real-world_image_su.md)
+- [\[CVPR 2026\] TextOVSR: Text-Guided Real-World Opera Video Super-Resolution](textovsr_text-guided_real-world_opera_video_super-resolution.md)
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
 - [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
 - [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
 
 </div>
 

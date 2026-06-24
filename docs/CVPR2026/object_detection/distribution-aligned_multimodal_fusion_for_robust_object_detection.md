@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distribution-Aligned Multimodal Fusion for Robust Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] To address the poor generalization of RGB-Infrared multimodal detection in "unseen degradation scenarios," this paper freezes the pretrained detector and trains only a lightweight fusion module. It explicitly pulls fused features back to the "normal feature distribution $P_\text{normal}$" (where the pretrained detector
+  [CVPR 2026][Object Detection][RGB-IR Detection] To address the poor generalization of RGB-Infrared multimodal detection in "unseen degradation scenarios," this paper freezes the pretrained detector and trains only a lightweight fusion module. It explicitly pulls fused features back to the "normal feature distribution $P_\text{normal}$" (where the pretrained detector performs best) using complementary information from infrared data, rather than adapting to the degradation dist…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "RGB-IR Detection"
+  - "Distribution Alignment"
+  - "Cross-Degradation Generalization"
+  - "Parameter-Efficient Fusion"
+  - "Gaussian Mixture Model"
 date: 2026-05-08
-content_hash: 2cc88a9d2dd30148
+content_hash: 86a5ef32900592cc
 ---
+
 # Distribution-Aligned Multimodal Fusion for Robust Object Detection
 
 **Conference**: CVPR 2026  
@@ -163,15 +169,14 @@ Component Ablation (Table 5):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Tri-Modal Fusion Transformers for UAV-based Object Detection](tri-modal_fusion_transformers_for_uav-based_object_detection.md)
-- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
+- [\[CVPR 2026\] RHCNet: Residual-Guided Hierarchical Calibration Network for Robust Underwater Object Detection](rhcnet_residual-guided_hierarchical_calibration_network_for_robust_underwater_ob.md)
 - [\[CVPR 2026\] Towards an Incremental Unified Multimodal Anomaly Detection: Augmenting Multimodal Denoising From an Information Bottleneck Perspective](towards_an_incremental_unified_multimodal_anomaly_detection_augmenting_multimoda.md)
-- [\[CVPR 2026\] DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection](dyfclt_dynamic_frequency-decoupled_cross-modal_learning_transformer_for_multimod.md)
 - [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
+- [\[CVPR 2026\] DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection](dyfclt_dynamic_frequency-decoupled_cross-modal_learning_transformer_for_multimod.md)
 
 </div>
 

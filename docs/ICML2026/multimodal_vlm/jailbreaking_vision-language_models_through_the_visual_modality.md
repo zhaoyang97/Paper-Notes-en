@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Jailbreaking Vision-Language Models Through the Visual Modality
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors propose four types of jailbreak attacks that bypass frontier VLM security solely through visual inputs (Visual Cipher / Object Replacement / Text Replacement / Visual Analogy Riddle). They systematically demonstrate across six frontier VLMs that "safety alignment on the text side does not automatically tran
+  [ICML 2026][Multimodal VLM][VLM Safety] The authors propose four types of jailbreak attacks that bypass frontier VLM security solely through visual inputs (Visual Cipher / Object Replacement / Text Replacement / Visual Analogy Riddle). They systematically demonstrate across six frontier VLMs that "safety alignment on the text side does not automatically transfer to the vision side" and reveal the underlying hierarchical mechanisms through mechanistic analysis.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "VLM Safety"
+  - "Jailbreak Attack"
+  - "Visual Cipher"
+  - "Cross-modal Alignment Gap"
+  - "Red Teaming"
 date: 2026-05-08
-content_hash: bbde06c2adc1c83c
+content_hash: f3637d0c36ba9016
 ---
+
 # Jailbreaking Vision-Language Models Through the Visual Modality
 
 **Conference**: ICML 2026  
@@ -145,11 +151,11 @@ Judge consistency and ASR breakdown:
 
 ## Related Papers
 
+- [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](../../ICCV2025/multimodal_vlm/ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
 - [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](../../CVPR2026/multimodal_vlm/deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
+- [\[ICML 2026\] Unveiling Visual Counting Bottlenecks in Vision-Language Models](unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
+- [\[ICML 2026\] Visual Persuasion: What Influences the Decisions of Vision-Language Models?](visual_persuasion_what_influences_decisions_of_vision-language_models.md)
 - [\[ICML 2026\] AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning](aoept_breaking_the_implicit_modality-reduction_bottleneck_in_modality-missing_pr.md)
-- [\[ICML 2026\] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain](focusing_where_vision_matters_selective_training_for_large_vision_language_model.md)
-- [\[ICML 2026\] Vision Language Models 无法推理物理变换](vision_language_models_cannot_reason_about_physical_transformation.md)
-- [\[ICML 2026\] Contextualized Visual Personalization in Vision-Language Models](contextualized_visual_personalization_in_vision-language_models.md)
 
 </div>
 

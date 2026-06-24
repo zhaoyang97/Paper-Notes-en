@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] This paper formally defines the multimodal error detection task and constructs the ErrorRadar benchmark—comprising 2,500 K-12 multimodal math problems derived from real student responses. It evaluates MLLM capabilities in two subtasks: error step localization (STEP) and error type classification (CATE), finding that th
+  [ACL 2026 Findings][VLM Reasoning][Multimodal Error Detection] This paper formally defines the multimodal error detection task and constructs the ErrorRadar benchmark—comprising 2,500 K-12 multimodal math problems derived from real student responses. It evaluates MLLM capabilities in two subtasks: error step localization (STEP) and error type classification (CATE), finding that the strongest model, GPT-4o, still trails human evaluation by approximately 10-15%.
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026 Findings"
+  - "VLM Reasoning"
+  - "Multimodal Error Detection"
+  - "Mathematical Reasoning Benchmark"
+  - "K-12 Education"
+  - "Error Step Localization"
+  - "Error Classification"
 date: 2026-05-08
-content_hash: dcd458e8f4e16398
+content_hash: 7f21bf6028609dbc
 ---
+
 # ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection
 
 **Conference**: ACL 2026 Findings  
@@ -132,10 +138,10 @@ ErrorRadar is an evaluation benchmark and does not involve training. Evaluation 
 ## Related Papers
 
 - [\[CVPR 2026\] AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models](../../CVPR2026/vlm_reasoning/axg-reasoner_error_detection_and_explanation_in_long_task_videos_with_vision-lan.md)
+- [\[ICLR 2026\] VideoMathQA: Benchmarking Mathematical Reasoning via Multimodal Understanding in Video](../../ICLR2026/vlm_reasoning/videomathqa_benchmarking_mathematical_reasoning_via_multimodal_understanding_in_.md)
 - [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
-- [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
-- [\[ACL 2026\] A Survey of Multimodal Mathematical Reasoning: From Perception, Alignment to Reasoning](a_survey_of_multimodal_mathematical_reasoning_from_perception_alignment_to_reaso.md)
 - [\[CVPR 2026\] EduDiag: A Benchmark for Educational Diagnostic Reasoning with Error Tracing and Correction on Large Multimodal Models](../../CVPR2026/vlm_reasoning/edudiag_a_benchmark_for_educational_diagnostic_reasoning_with_error_tracing_and_.md)
+- [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
 
 </div>
 

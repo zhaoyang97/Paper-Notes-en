@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Chunks and Graphs: Retrieval-Augmented Generation through Triplet-Driven Thinking
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] T2RAG replaces the minimum retrieval unit of RAG from "text chunks/KG nodes" with **atomic triplets**. Off-line, the corpus is extracted into a collection of triplet propositions for indexing. On-line, the LLM decomposes the question into searchable triplets with `?` placeholders, iteratively retrieving evidence from t
+  [ACL2026][Information Retrieval & RAG][Retrieval-Augmented Generation] T2RAG replaces the minimum retrieval unit of RAG from "text chunks/KG nodes" with **atomic triplets**. Off-line, the corpus is extracted into a collection of triplet propositions for indexing. On-line, the LLM decomposes the question into searchable triplets with `?` placeholders, iteratively retrieving evidence from the triplet library to fill in the blanks until all placeholders are resolved to generate…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Atomic Triplets"
+  - "Multi-hop QA"
+  - "Iterative Retrieval"
+  - "Graph-free Knowledge Base"
 date: 2026-05-08
-content_hash: 1678546614309e27
+content_hash: dc7bad199399ed7a
 ---
+
 # Beyond Chunks and Graphs: Retrieval-Augmented Generation through Triplet-Driven Thinking
 
 **Conference**: ACL2026  
@@ -135,11 +141,11 @@ Ablation on PopQA / 2Wiki / MuSiQue (values are EM/F1, parentheses indicate rela
 
 ## Related Papers
 
+- [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
 - [\[ACL 2026\] Beyond Black-Box Interventions: Latent Probing for Faithful Retrieval-Augmented Generation](beyond_black-box_interventions_latent_probing_for_faithful_retrieval-augmented_g.md)
-- [\[ACL 2025\] Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs](../../ACL2025/information_retrieval/gor_rag_long_context_summary.md)
 - [\[ACL 2025\] Accelerating Adaptive Retrieval Augmented Generation via Instruction-Driven Representation Reduction of Retrieval Overlaps](../../ACL2025/information_retrieval/accelerating_adaptive_retrieval_augmented_generation_via_instruction-driven_repr.md)
-- [\[ICLR 2026\] Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
-- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](../../CVPR2026/information_retrieval/language-driven_fine-grained_retrieval.md)
+- [\[ACL 2026\] S2G-RAG: Structured Sufficiency and Gap Judging for Iterative Retrieval-Augmented QA](s2g-rag_structured_sufficiency_and_gap_judging_for_iterative_retrieval-augmented.md)
+- [\[ACL 2025\] Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs](../../ACL2025/information_retrieval/gor_rag_long_context_summary.md)
 
 </div>
 

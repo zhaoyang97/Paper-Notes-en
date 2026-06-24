@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Culture In a Frame: C$^3$B as a Comic-Based Benchmark for Multimodal Culturally Awareness
 description: >-
-  [ICLR 2026][LLM Evaluation][MLLM] C3B (Comics Cross-Cultural Benchmark) utilizes 2,220 comic panels and 18,789 QA pairs to establish a task chain of three progressive difficulty levels: "Identifying Cultural Objects → Judging Cultural Conflicts → Cross-lingual Cultural Content Generation." It specifically evaluates the cultural awareness of Multimodal
+  [ICLR2026][LLM Evaluation][Cultural Awareness] C3B (Comics Cross-Cultural Benchmark) utilizes 2,220 comic panels and 18,789 QA pairs to establish a task chain of three progressive difficulty levels: "Identifying Cultural Objects → Judging Cultural Conflicts → Cross-lingual Cultural Content Generation." It specifically evaluates the cultural awareness of Multimodal Large Language Models (MLLMs). Evaluations across 11 open-source MLLMs demonstrate a significant performance gap…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - MLLM
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Cultural Awareness"
+  - "Comics"
+  - "Multimodal Evaluation"
+  - "Multilingual"
+  - "MLLM"
 date: 2026-05-08
-content_hash: b3fe4ae907eeabda
+content_hash: fe21d196e8a2884b
 ---
+
 # Culture In a Frame: C$^3$B as a Comic-Based Benchmark for Multimodal Culturally Awareness
 
 **Conference**: ICLR2026  
@@ -148,10 +153,17 @@ While Q1/Q2 are moderately correlated with Q4 (0.56 and 0.51), injecting correct
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2025\] Access Denied Inc: The First Benchmark Environment for Sensitivity Awareness](../../ACL2025/llm_evaluation/access_denied_inc_the_first_benchmark_environment_for_sensitivity_awareness.md)
+- [\[ICLR 2026\] Culture in Action: Evaluating Text-to-Image Models through Social Activities](culture_in_action_evaluating_text-to-image_models_through_social_activities.md)
+- [\[ACL 2026\] Minos: A Multimodal Evaluation Model for Bidirectional Generation Between Image and Text](../../ACL2026/llm_evaluation/minos_a_multimodal_evaluation_model_for_bidirectional_generation_between_image_a.md)
+- [\[ACL 2025\] SANSKRITI: A Comprehensive Benchmark for Evaluating Language Models' Knowledge of Indian Culture](../../ACL2025/llm_evaluation/sanskriti_a_comprehensive_benchmark_for_evaluating_language_models_knowledge_of_.md)
+- [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](../../ACL2026/llm_evaluation/multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2025\] Access Denied Inc: The First Benchmark Environment for Sensitivity Awareness](../../ACL2025/llm_evaluation/access_denied_inc_the_first_benchmark_environment_for_sensitivity_awareness.md)

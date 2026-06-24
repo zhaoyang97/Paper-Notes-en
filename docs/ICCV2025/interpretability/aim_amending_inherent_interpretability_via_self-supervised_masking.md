@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AIM: Amending Inherent Interpretability via Self-Supervised Masking
 description: >-
-  [ICCV 2025][Interpretability][self-supervised masking] This paper proposes AIM, a top-down learnable binary masking mechanism for self-supervised spatial feature selection…
+  [ICCV 2025][Interpretability][self-supervised masking] This paper proposes AIM, a top-down learnable binary masking mechanism for self-supervised spatial feature selection, built upon a feature pyramid architecture. Without requiring additional annotations, AIM guides CNNs to focus on genuinely discriminative features and suppress spurious correlations, simultaneously achieving inherent interpretability and improved OOD generalization.
 tags:
   - "ICCV 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "feature pyramid"
   - "Energy Pointing Game"
 date: 2026-05-08
-content_hash: 92ec1b0ae71a1ea9
+content_hash: 1efcc1b36f9d99b1
 ---
 
 # AIM: Amending Inherent Interpretability via Self-Supervised Masking
@@ -158,10 +158,10 @@ Computational overhead: AIM adds only approximately 0.1–1.0 GFLOPs and 1.9–3
 ## Related Papers
 
 - [\[NeurIPS 2025\] Dataset Distillation for Pre-Trained Self-Supervised Vision Models](../../NeurIPS2025/interpretability/dataset_distillation_for_pre-trained_self-supervised_vision_models.md)
+- [\[CVPR 2025\] Probing the Mid-Level Vision Capabilities of Self-Supervised Learning](../../CVPR2025/interpretability/probing_the_mid-level_vision_capabilities_of_self-supervised_learning.md)
 - [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](../../ICML2026/interpretability/interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
 - [\[ICML 2026\] IdEst: Assessing Self-Supervised Learning Representations via Intrinsic Dimension](../../ICML2026/interpretability/idest_assessing_self-supervised_learning_representations_via_intrinsic_dimension.md)
 - [\[CVPR 2026\] RiskProp: Collision-Anchored Self-Supervised Risk Propagation for Early Accident Anticipation](../../CVPR2026/interpretability/riskprop_collision-anchored_self-supervised_risk_propagation_for_early_accident_.md)
-- [\[ICCV 2025\] ArgoTweak: Towards Self-Updating HD Maps through Structured Priors](argotweak_towards_self-updating_hd_maps_through_structured_priors.md)
 
 </div>
 

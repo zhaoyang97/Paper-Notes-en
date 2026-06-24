@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neural Collapse by Design: Learning Class Prototypes on the Hypersphere
 description: >-
-  [ICML 2026][Interpretability][Paper Note] The paper unifies "Classifier Learning (CE)" and "Supervised Contrastive Learning (SCL)" as prototype contrast on the hypersphere. By introducing two new losses, NTCE/NONL (to fix the CE pathway), and a Fixed Prototype classifier (FP) (to fix the SCL pathway), the authors ensure that Neural Collapse (NC) is achieved "b
+  [ICML2026][Interpretability][Neural Collapse] The paper unifies "Classifier Learning (CE)" and "Supervised Contrastive Learning (SCL)" as prototype contrast on the hypersphere. By introducing two new losses, NTCE/NONL (to fix the CE pathway), and a Fixed Prototype classifier (FP) (to fix the SCL pathway), the authors ensure that Neural Collapse (NC) is achieved "by design." This approach shows comprehensive advantages in accuracy, transferability, long-tail classification…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Neural Collapse"
+  - "Hypersphere"
+  - "Prototype Contrast"
+  - "Normalized Softmax"
+  - "Supervised Contrastive Learning"
 date: 2026-05-08
-content_hash: 9bf185643035febd
+content_hash: b31cce0fcd58537a
 ---
+
 # Neural Collapse by Design: Learning Class Prototypes on the Hypersphere
 
 **Conference**: ICML2026  
@@ -124,11 +130,11 @@ NC metrics for NTCE/NONL reach $\geq 95\%$ of theoretical values and match the f
 
 ## Related Papers
 
+- [\[ICLR 2026\] Patronus: Interpretable Diffusion Models with Prototypes](../../ICLR2026/interpretability/patronus_interpretable_diffusion_models_with_prototypes.md)
 - [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
 - [\[ICML 2026\] ShaplEIG: Bayesian Experimental Design for Shapley Value Estimation](shapleig_bayesian_experimental_design_for_shapley_value_estimation.md)
-- [\[ACL 2026\] NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning](../../ACL2026/interpretability/nose_neural_olfactory-semantic_embedding_with_tri-modal_orthogonal_contrastive_l.md)
+- [\[ICLR 2026\] Multi-ReduNet: Interpretable Class-Wise Decomposition of ReduNet](../../ICLR2026/interpretability/multi-redunet_interpretable_class-wise_decomposition_of_redunet.md)
 - [\[ICLR 2026\] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing](../../ICLR2026/interpretability/seed-set_scalable_evolving_experimental_design_for_system-level_ethical_testing.md)
-- [\[ACL 2026\] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](../../ACL2026/interpretability/towards_intrinsic_interpretability_of_large_language_modelsa_survey_of_design_pr.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis
 description: >-
-  [CVPR 2026][Human Understanding][text-to-motion] The ParTY framework is proposed to significantly improve the precision of text-motion semantic alignment for individual body parts while maintaining full-body motion coherence through a Part-Guided Network and Part-aware Text Grounding (PTG). It resolves the fundamental contradiction between "part expressiveness vs. fu
+  [CVPR 2026][Human Understanding][text-to-motion] The ParTY framework is proposed to significantly improve the precision of text-motion semantic alignment for individual body parts while maintaining full-body motion coherence through a Part-Guided Network and Part-aware Text Grounding (PTG). It resolves the fundamental contradiction between "part expressiveness vs. full-body coherence" found in existing holistic and part-based methods.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - text-to-motion
-  - VQ-VAE
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "text-to-motion"
+  - "body part guidance"
+  - "VQ-VAE"
+  - "part-aware text grounding"
+  - "motion coherence"
 date: 2026-05-08
-content_hash: b1e02a59fc72bdc6
+content_hash: df52cf1e175c1df1
 ---
+
 # ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis
 
 **Conference**: CVPR 2026  
@@ -163,16 +167,16 @@ Evaluated on HumanML3D (14,616 motions, 44,970 texts) and KIT-ML (3,911 motions,
 | Value | ⭐⭐⭐⭐ |
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Miburi: Towards Expressive Interactive Gesture Synthesis](miburi_towards_expressive_interactive_gesture_synthesis.md)
+- [\[CVPR 2026\] Pressure2Motion: Hierarchical Human Motion Reconstruction from Ground Pressure with Text Guidance](pressure2motion_hierarchical_human_motion_reconstruction_from_ground_pressure_wi.md)
 - [\[CVPR 2026\] FrankenMotion: Part-level Human Motion Generation and Composition](frankenmotion_part-level_human_motion_generation_and_composition.md)
-- [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
-- [\[ICLR 2026\] Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis](../../ICLR2026/human_understanding/event-t2m_event-level_conditioning_for_complex_text-to-motion_synthesis.md)
-- [\[CVPR 2026\] MotionHiFlow: Text-to-Motion via Hierarchical Flow Matching](motionhiflow_text-to-motion_via_hierarchical_flow_matching.md)
+- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
+- [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
 
 </div>
 

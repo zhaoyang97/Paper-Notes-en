@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MikuDance: Animating Character Art with Mixed Motion Dynamics
 description: >-
-  [ICCV 2025][Video Understanding][Character Animation] This paper proposes MikuDance, a diffusion-based character art animation system that achieves high-dynamic animation of complex character artwork through two core con…
+  [ICCV 2025][Video Understanding][Character Animation] This paper proposes MikuDance, a diffusion-based character art animation system that achieves high-dynamic animation of complex character artwork through two core contributions: Mixed Motion Modeling, which unifies character motion and 3D camera motion into a pixel-space representation, and Mixed-Control Diffusion, which implicitly aligns character shape/scale with motion guidance within the Reference UNet.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Mixed Motion"
   - "Image-to-Video"
 date: 2026-05-08
-content_hash: cf8bfc1caf55e1a8
+content_hash: cc4279166891bfbb
 ---
 
 # MikuDance: Animating Character Art with Mixed Motion Dynamics
@@ -167,11 +167,11 @@ Standard diffusion training loss: $\mathcal{L}_{simple} = \mathbb{E}_{\epsilon, 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Token Bottleneck: One Token to Remember Dynamics](../../NeurIPS2025/video_understanding/token_bottleneck_one_token_to_remember_dynamics.md)
+- [\[CVPR 2026\] Dynamics: Language-Based Representation for Inferring Rigid-Body Dynamics From Videos](../../CVPR2026/video_understanding/dynamics_language-based_representation_for_inferring_rigid-body_dynamics_from_vi.md)
 - [\[ICCV 2025\] Simultaneous Motion And Noise Estimation with Event Cameras](simultaneous_motion_and_noise_estimation_with_event_cameras.md)
+- [\[NeurIPS 2025\] Token Bottleneck: One Token to Remember Dynamics](../../NeurIPS2025/video_understanding/token_bottleneck_one_token_to_remember_dynamics.md)
 - [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
 - [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
-- [\[ICCV 2025\] Flow4Agent: Long-form Video Understanding via Motion Prior from Optical Flow](flow4agent_long-form_video_understanding_via_motion_prior_from_optical_flow.md)
 
 </div>
 

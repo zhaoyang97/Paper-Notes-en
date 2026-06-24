@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RigAnyFace: Scaling Neural Facial Mesh Auto-Rigging with Unlabeled Data
 description: >-
-  [NeurIPS 2025][3D Vision][Facial Rigging] This paper proposes RigAnyFace (RAF), a scalable facial mesh auto-rigging framework that leverages a 2D supervision strategy to exploit unlabeled neutral meshes for training scal…
+  [NeurIPS 2025][3D Vision][Facial Rigging] This paper proposes RigAnyFace (RAF), a scalable facial mesh auto-rigging framework that leverages a 2D supervision strategy to exploit unlabeled neutral meshes for training scale expansion, enabling high-quality FACS blendshape rigging across diverse topologies and disconnected components (e.g., eyeballs).
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Blendshapes"
   - "2D Supervision"
 date: 2026-05-08
-content_hash: 701403ad1b6abc7f
+content_hash: e74be10c7c831be2
 ---
 
 # RigAnyFace: Scaling Neural Facial Mesh Auto-Rigging with Unlabeled Data
@@ -132,11 +132,11 @@ RAF reduces MAE by 63% relative to NFR and 65% relative to Deformation Transfer 
 
 ## Related Papers
 
-- [\[ICCV 2025\] DeepMesh: Auto-Regressive Artist-Mesh Creation with Reinforcement Learning](../../ICCV2025/3d_vision/deepmesh_auto-regressive_artist-mesh_creation_with_reinforcement_learning.md)
+- [\[CVPR 2025\] Category-Agnostic Neural Object Rigging](../../CVPR2025/3d_vision/category-agnostic_neural_object_rigging.md)
+- [\[CVPR 2025\] Scaling Mesh Generation via Compressive Tokenization](../../CVPR2025/3d_vision/scaling_mesh_generation_via_compressive_tokenization.md)
 - [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](../../CVPR2026/3d_vision/lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
-- [\[ICLR 2026\] Scaling Sequence-to-Sequence Generative Neural Rendering](../../ICLR2026/3d_vision/scaling_sequence-to-sequence_generative_neural_rendering.md)
-- [\[ICLR 2026\] Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk](../../ICLR2026/3d_vision/topology-preserved_auto-regressive_mesh_generation_in_the_manner_of_weaving_silk.md)
-- [\[NeurIPS 2025\] Mesh-RFT: Enhancing Mesh Generation via Fine-Grained Reinforcement Fine-Tuning](mesh-rft_enhancing_mesh_generation_via_fine-grained_reinforcement_fine-tuning.md)
+- [\[CVPR 2025\] MegaSynth: Scaling Up 3D Scene Reconstruction with Synthesized Data](../../CVPR2025/3d_vision/megasynth_scaling_up_3d_scene_reconstruction_with_synthesized_data.md)
+- [\[ICCV 2025\] DeepMesh: Auto-Regressive Artist-Mesh Creation with Reinforcement Learning](../../ICCV2025/3d_vision/deepmesh_auto-regressive_artist-mesh_creation_with_reinforcement_learning.md)
 
 </div>
 

@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SpineBench: 一个临床显著、椎体节段感知的脊柱诊疗评测基准与 SpineMed-450k 语料库
+  [Paper Note] SpineBench: A Clinically Significant, Segment-Aware Spinal Diagnosis and Treatment Evaluation Benchmark and SpineMed-450k Corpus
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This paper constructs **SpineMed-450k**, a traceable multimodal spinal diagnosis and treatment instruction corpus with 450,000 entries, and an accompanying benchmark **SpineBench** through a clinician-in-the-loop approach. It reveals systematic weaknesses in current Large Vision-Language Models (LVLMs) regarding fine-g
+  [ICLR 2026][Medical Imaging][Spinal Diagnosis and Treatment] This paper constructs **SpineMed-450k**, a traceable multimodal spinal diagnosis and treatment instruction corpus with 450,000 entries, and an accompanying benchmark **SpineBench** through a clinician-in-the-loop approach. It reveals systematic weaknesses in current Large Vision-Language Models (LVLMs) regarding fine-grained reasoning for "locating specific vertebral segments." Using a fine-tuned 7B model…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Spinal Diagnosis and Treatment"
+  - "Segment-Aware Reasoning"
+  - "Clinical Instruction Data"
+  - "Evaluation Benchmark"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: ef3da00ce89cd3e9
+content_hash: edc1d2514c03c8d0
 ---
+
 # SpineBench: A Clinically Significant, Segment-Aware Spinal Diagnosis and Treatment Evaluation Benchmark and SpineMed-450k Corpus
 
 **Conference**: ICLR 2026  
@@ -145,11 +151,11 @@ Ablation focused on "which training data is decisive" (Closed QA, units %):
 
 ## Related Papers
 
-- [\[ICLR 2026\] You Point, I Learn: Online Adaptation of Interactive Segmentation Models for Handling Distribution Shifts in Medical Imaging](you_point_i_learn_online_adaptation_of_interactive_segmentation_models_for_handl.md)
-- [\[ICLR 2026\] Boosting Medical Visual Understanding From Multi-Granular Language Learning](boosting_medical_visual_understanding_from_multi-granular_language_learning.md)
-- [\[ICLR 2026\] Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings](rethinking_radiology_report_generation_from_narrative_flow_to_topic-guided_findi.md)
-- [\[ICLR 2026\] MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning](medgmae_gaussian_masked_autoencoders_for_medical_volumetric_representation_learn.md)
-- [\[ICLR 2026\] Towards Text–Mask Consistency in Medical Image Segmentation](towards_text-mask_consistency_in_medical_image_segmentation.md)
+- [\[CVPR 2026\] Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis](../../CVPR2026/medical_imaging/clinically-grounded_counterfactual_reasoning_for_medical_video_diagnosis.md)
+- [\[ICLR 2026\] MedLesionVQA: A Multimodal Benchmark Emulating Clinical Visual Diagnosis for Body Surface Health](medlesionvqa_a_multimodal_benchmark_emulating_clinical_visual_diagnosis_for_body.md)
+- [\[ICLR 2026\] Reliable Evaluation of MRI Motion Correction: Dataset and Insights](reliable_evaluation_of_mri_motion_correction_dataset_and_insights.md)
+- [\[ICML 2026\] Seizure-Semiology-Suite (S³): A Clinically Multimodal Dataset, Benchmark, and Models for Seizure Semiology Understanding](../../ICML2026/medical_imaging/seizure-semiology-suite_s3_a_clinically_multimodal_dataset_benchmark_and_models_.md)
+- [\[CVPR 2026\] X-PCR: A Benchmark for Cross-modality Progressive Clinical Reasoning in Ophthalmic Diagnosis](../../CVPR2026/medical_imaging/x-pcr_a_benchmark_for_cross-modality_progressive_clinical_reasoning_in_ophthalmi.md)
 
 </div>
 

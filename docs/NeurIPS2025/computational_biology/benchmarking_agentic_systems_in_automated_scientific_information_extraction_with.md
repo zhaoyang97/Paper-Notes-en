@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX
 description: >-
-  [NeurIPS 2025][Computational Biology][Chemical Information Extraction] This paper constructs ChemX — a suite of 10 multimodal chemical data extraction benchmark datasets manually annotated and validated by domain experts…
+  [NeurIPS 2025][Computational Biology][Chemical Information Extraction] This paper constructs ChemX — a suite of 10 multimodal chemical data extraction benchmark datasets manually annotated and validated by domain experts, spanning nanomaterials and small molecules. It systematically evaluates state-of-the-art agentic systems including ChatGPT Agent, SLM-Matrix, FutureHouse, and nanoMINER, as well as frontier LLMs such as GPT-5 and GPT-5 Thinking. The proposed single-agent met…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Nanomaterials"
   - "Small Molecules"
 date: 2026-05-08
-content_hash: 059569eaf1ec3cac
+content_hash: f58d8d9c0817a993
 ---
 
 # Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX
@@ -137,9 +137,9 @@ ChemX operates at two levels: (1) **Benchmark dataset layer** — 10 manually an
 
 - [\[NeurIPS 2025\] Energy Loss Functions for Physical Systems](energy_loss_functions_for_physical_systems.md)
 - [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
+- [\[ICML 2025\] Protein Structure Tokenization: Benchmarking and New Recipe](../../ICML2025/computational_biology/protein_structure_tokenization_benchmarking_and_new_recipe.md)
 - [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
-- [\[ICLR 2026\] HeurekaBench: A Benchmarking Framework for AI Co-scientist](../../ICLR2026/computational_biology/heurekabench_a_benchmarking_framework_for_ai_co-scientist.md)
-- [\[ICML 2026\] Protein Fold Classification at Scale: Benchmarking and Pretraining](../../ICML2026/computational_biology/protein_fold_classification_at_scale_benchmarking_and_pretraining.md)
+- [\[ICML 2025\] scSSL-Bench: Benchmarking Self-Supervised Learning for Single-Cell Data](../../ICML2025/computational_biology/scssl-bench_benchmarking_self-supervised_learning_for_single-cell_data.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond the Ground Truth: Enhanced Supervision for Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] This paper proposes enhancing the perceptual quality of sub-optimal GT images in existing datasets through super-resolution combined with frequency-adaptive mixing. It introduces a lightweight ORNet refinement module that can be trained to improve the perceptual quality of outputs from pre-trained restoration models wi
+  [CVPR 2026][Image Restoration][Supervision Enhancement] This paper proposes enhancing the perceptual quality of sub-optimal GT images in existing datasets through super-resolution combined with frequency-adaptive mixing. It introduces a lightweight ORNet refinement module that can be trained to improve the perceptual quality of outputs from pre-trained restoration models without architectural modifications.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Supervision Enhancement"
+  - "Frequency Domain Mixing"
+  - "Super-resolution"
+  - "Output Refinement Network"
+  - "Perceptual Quality"
 date: 2026-05-08
-content_hash: f2851292af5a7cd2
+content_hash: 2a7d92368ea7e3f4
 ---
+
 # Beyond the Ground Truth: Enhanced Supervision for Image Restoration
 
 **Conference**: CVPR 2026  
@@ -128,8 +134,8 @@ The Mask Generator is trained using a fidelity-perception weighted loss: $\mathc
 
 - [\[CVPR 2026\] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)
 - [\[CVPR 2026\] ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration](shiftlut_spatial_shift_enhanced_look-up_tables_for_efficient_image_restoration.md)
+- [\[CVPR 2026\] UnReflectAnything: RGB-Only Highlight Removal by Rendering Synthetic Specular Supervision](unreflectanything_rgb-only_highlight_removal_by_rendering_synthetic_specular_sup.md)
 - [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
-- [\[CVPR 2026\] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)
 - [\[CVPR 2026\] Beyond Strict Pairing: Arbitrarily Paired Training for High-Performance Infrared and Visible Image Fusion](beyond_strict_pairing_arbitrarily_paired_training_for_high-performance_infrared_.md)
 
 </div>

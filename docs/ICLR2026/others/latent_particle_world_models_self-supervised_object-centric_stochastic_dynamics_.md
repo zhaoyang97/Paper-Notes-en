@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics
 description: >-
-  [ICLR 2026][Others][World Models] LPWM is the first self-supervised object-centric world model capable of scaling to real-world multi-object datasets. The core innovation is learning independent latent action distributions for each particle (per-particle latent actions). By utilizing a causal spatio-temporal Transformer to encode all frames in parallel
+  [ICLR 2026 Oral][Object-Centric] LPWM is the first self-supervised object-centric world model capable of scaling to real-world multi-object datasets. The core innovation is learning independent latent action distributions for each particle (per-particle latent actions). By utilizing a causal spatio-temporal Transformer to encode all frames in parallel, it supports diverse conditional generation (actions, language, image goals, multi-view). It achieves SOTA in video prediction…
 tags:
-  - ICLR 2026
-  - Others
-  - World Models
+  - "ICLR 2026 Oral"
+  - "Object-Centric"
+  - "Latent Particles"
+  - "Self-Supervised"
+  - "World Model"
+  - "Stochastic Dynamics"
+  - "Latent Actions"
 date: 2026-05-08
-content_hash: d363ee5f7aac510d
+content_hash: f47490102d9cc6b8
 ---
+
 # LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics
 
 **Conference**: ICLR 2026 Oral  
@@ -141,11 +146,11 @@ LPWM significantly outperforms baselines on PandaPush and OGBench tasks. On OGBe
 
 ## Related Papers
 
+- [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[ICLR 2026\] Latent Fourier Transform](latent_fourier_transform.md)
-- [\[ICML 2025\] General Agents Contain World Models](../../ICML2025/others/general_agents_contain_world_models.md)
-- [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
 - [\[CVPR 2026\] MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics](../../CVPR2026/others/moocap_a_multi-view_benchmark_for_cow-object-human_interaction_and_behavior_dyna.md)
+- [\[NeurIPS 2025\] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](../../NeurIPS2025/others/trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models
 description: >-
-  [Image Generation] This paper proposes DEXTER, a data-free framework that optimizes textual prompts to drive a diffusion model to generate images maximizing target classifier activations…
+  [Image Generation] This paper proposes DEXTER, a data-free framework that optimizes textual prompts to drive a diffusion model to generate images maximizing target classifier activations, then employs an LLM to reason over the synthesized samples and produce globally coherent, human-readable textual explanations, enabling bias discovery and global interpretation of model behavior.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 299dd4a7a542b8ca
+content_hash: 03cda4b9065dfb9e
 ---
 
 # DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models
@@ -151,7 +151,7 @@ DEXTER represents a new paradigm of **active probing** of classifiers rather tha
 - [\[NeurIPS 2025\] Emergence and Evolution of Interpretable Concepts in Diffusion Models](emergence_and_evolution_of_interpretable_concepts_in_diffusi.md)
 - [\[ICCV 2025\] Rethinking the Embodied Gap in Vision-and-Language Navigation: A Holistic Study of Physical and Visual Disparities](../../ICCV2025/image_generation/rethinking_the_embodied_gap_in_vision-and-language_navigation_a_holistic_study_o.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
-- [\[ICCV 2025\] Less is More: Improving Motion Diffusion Models with Sparse Keyframes](../../ICCV2025/image_generation/less_is_more_improving_motion_diffusion_models_with_sparse_keyframes.md)
+- [\[CVPR 2025\] FlipSketch: Flipping Static Drawings to Text-Guided Sketch Animations](../../CVPR2025/image_generation/flipsketch_flipping_static_drawings_to_text-guided_sketch_animations.md)
 
 </div>
 

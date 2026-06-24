@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors
 description: >-
-  [AAAI 2026][LLM Agent][Tool Calling] This paper proposes the VGCO framework, which employs LLMs as hierarchical editors to iteratively optimize tool documentation and knowledge base context through verification-guided si…
+  [AAAI 2026][LLM Agent][Tool Calling] This paper proposes the VGCO framework, which employs LLMs as hierarchical editors to iteratively optimize tool documentation and knowledge base context through verification-guided signals, achieving significant improvements in retrieval recall, tool selection, and parameter filling accuracy in large-scale tool calling scenarios.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Base Retrieval"
   - "Document Optimization"
 date: 2026-05-08
-content_hash: 450791fa7616791c
+content_hash: 74c65c049f372f19
 ---
 
 # Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors
@@ -140,10 +140,10 @@ Results on the BFCL dataset (Claude Sonnet 4 editor + Claude Sonnet 3.7 inferenc
 ## Related Papers
 
 - [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
+- [\[ICLR 2026\] TRAJECT-Bench: A Trajectory-Aware Evaluation Benchmark for Agent Tool Calling](../../ICLR2026/llm_agent/traject-bencha_trajectory-aware_benchmark_for_evaluating_agentic_tool_use.md)
+- [\[ICLR 2026\] Sculptor: Empowering LLMs with Cognitive Agency via Active Context Management](../../ICLR2026/llm_agent/sculptor_empowering_llms_with_cognitive_agency_via_active_context_management.md)
 - [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](../../ACL2026/llm_agent/higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
-- [\[AAAI 2026\] Loss-Guided Auxiliary Agents for Overcoming Mode Collapse in GFlowNets](loss-guided_auxiliary_agents_for_overcoming_mode_collapse_in_gflownets.md)
-- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
-- [\[AAAI 2026\] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs](llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr.md)
+- [\[ICLR 2026\] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](../../ICLR2026/llm_agent/in-the-flow_agentic_system_optimization_for_effective_planning_and_tool_use.md)
 
 </div>
 

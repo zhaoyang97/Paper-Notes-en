@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] MAAT: 基于知识引导核回归的异构部分观测状态重建
+  [Paper Note] MAAT: Heterogeneous Partial Observation State Reconstruction Based on Knowledge-Guided Kernel Regression
 description: >-
-  [ICML 2026][Interpretability][RKHS] MAAT reformulates the problem of "recovering a physically consistent latent state trajectory from sparse, heterogeneous, and noisy observations" as a constrained kernel ridge regression problem in Reproducing Kernel Hilbert Space (RKHS). It integrates observation operators, smoothness, and physical priors (e.g., non-ne
+  [ICML 2026][Interpretability][Kernel State Reconstruction] MAAT reformulates the problem of "recovering a physically consistent latent state trajectory from sparse, heterogeneous, and noisy observations" as a constrained kernel ridge regression problem in Reproducing Kernel Hilbert Space (RKHS). It integrates observation operators, smoothness, and physical priors (e.g., non-negativity, conservation, monotonicity) into a unified objective function. This provides high-quality t…
 tags:
-  - ICML 2026
-  - Interpretability
-  - RKHS
+  - "ICML 2026"
+  - "Interpretability"
+  - "Kernel State Reconstruction"
+  - "RKHS"
+  - "Heterogeneous Observation Operators"
+  - "Symbolic Regression"
+  - "Physical Priors"
 date: 2026-05-08
-content_hash: 79d9e926f4b16352
+content_hash: c105652fed1094f6
 ---
+
 # MAAT: Heterogeneous Partial Observation State Reconstruction Based on Knowledge-Guided Kernel Regression
 
 **Conference**: ICML 2026  
@@ -147,15 +152,14 @@ Physical prior ablation (Table 2, SEIR / SEIRH across 3 noise types):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression](breaking_the_simplification_bottleneck_in_amortized_neural_symbolic_regression.md)
-- [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](block-em_preventing_emergent_misalignment_via_latent_blocking.md)
-- [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
-- [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
-- [\[ICML 2026\] Verified SHAP: 神经网络精确 Shapley 值的可证明界](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
+- [\[ICLR 2026\] Partial Soft-Matching Distance for Neural Representational Comparison with Partial Unit Correspondence](../../ICLR2026/interpretability/partial_soft-matching_distance_for_neural_representational_comparison_with_parti.md)
+- [\[ICML 2026\] CLARITree: Cholesky and Lookahead Accelerations for Regression with Interpretable Piecewise Linear Trees](claritree_cholesky_and_lookahead_accelerations_for_regression_with_interpretable.md)
+- [\[ICML 2026\] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution](manifold-aligned_guided_integrated_gradients_for_reliable_feature_attribution.md)
+- [\[NeurIPS 2025\] Conditional Distribution Compression via the Kernel Conditional Mean Embedding](../../NeurIPS2025/interpretability/conditional_distribution_compression_via_the_kernel_conditional_mean_embedding.md)
 
 </div>
 

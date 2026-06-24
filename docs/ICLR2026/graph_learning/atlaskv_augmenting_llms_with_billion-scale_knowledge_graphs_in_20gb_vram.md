@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AtlasKV: Augmenting LLMs with Billion-Scale Knowledge Graphs in 20GB VRAM
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] AtlasKV directly converts each triple in a knowledge graph (KG) into Q-K-V data for injection into LLMs via attention. By employing hierarchical key-value pruning, it reduces complexity from linear to sub-linear, enabling LLMs to access billion-scale (1B triples) knowledge graphs within 20GB of VRAM without external re
+  [ICLR2026][Graph Learning][Knowledge Graph Augmentation] AtlasKV directly converts each triple in a knowledge graph (KG) into Q-K-V data for injection into LLMs via attention. By employing hierarchical key-value pruning, it reduces complexity from linear to sub-linear, enabling LLMs to access billion-scale (1B triples) knowledge graphs within 20GB of VRAM without external retrievers, long context windows, or retraining for new knowledge.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Knowledge Graph Augmentation"
+  - "Parametric Knowledge Injection"
+  - "Rectangular Attention"
+  - "Hierarchical Pruning"
+  - "Scalability"
 date: 2026-05-08
-content_hash: ca8e5033cf9c53b3
+content_hash: 9eb0df2f412c16c9
 ---
+
 # AtlasKV: Augmenting LLMs with Billion-Scale Knowledge Graphs in 20GB VRAM
 
 **Conference**: ICLR2026  
@@ -124,7 +130,7 @@ KBLaM essentially fails on the more difficult datasets due to lack of query dive
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

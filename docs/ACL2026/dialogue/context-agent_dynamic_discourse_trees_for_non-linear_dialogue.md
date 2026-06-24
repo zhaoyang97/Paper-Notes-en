@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Context-Agent: Dynamic Discourse Trees for Non-Linear Dialogue
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] The authors propose Context-Agent, which models multi-turn dialogue history as a "forest of discourse trees" (where each tree represents an independent topic and each branch represent an instruction refinement/fork). Nodes are organized by navigational intent rather than semantic similarity. Accompanying the model is t
+  [ACL 2026][Dialogue Systems][Multi-turn dialogue] The authors propose Context-Agent, which models multi-turn dialogue history as a "forest of discourse trees" (where each tree represents an independent topic and each branch represent an instruction refinement/fork). Nodes are organized by navigational intent rather than semantic similarity. Accompanying the model is the NTM benchmark for evaluating non-linear long-range dialogues, demonstrating improved task completion rates…
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Multi-turn dialogue"
+  - "dynamic trees"
+  - "topic switching"
+  - "context compression"
+  - "long-range dialogue"
 date: 2026-05-08
-content_hash: da0055c413b0b3b3
+content_hash: 0ba8c92676798c20
 ---
+
 # Context-Agent: Dynamic Discourse Trees for Non-Linear Dialogue
 
 **Conference**: ACL 2026  
@@ -143,10 +149,10 @@ This work is an inference-time framework and does not require training the LLM; 
 ## Related Papers
 
 - [\[ACL 2026\] Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation](discourse_coherence_and_response-guided_context_rewriting_for_multi-party_dialog.md)
+- [\[ICML 2026\] Context-Driven Incremental Compression for Multi-Turn Dialogue Generation](../../ICML2026/dialogue/context-driven_incremental_compression_for_multi-turn_dialogue_generation.md)
 - [\[ACL 2026\] Metro: Towards Strategy Induction from Expert Dialogue Transcripts for Non-collaborative Dialogues](metro_towards_strategy_induction_from_expert_dialogue_transcripts_for_non-collab.md)
 - [\[ACL 2026\] SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation](spasm_stable_persona-driven_agent_simulation_for_multi-turn_dialogue_generation.md)
 - [\[ACL 2026\] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)
-- [\[ACL 2026\] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling](genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-.md)
 
 </div>
 

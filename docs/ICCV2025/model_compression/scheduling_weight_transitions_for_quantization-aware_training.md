@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scheduling Weight Transitions for Quantization-Aware Training
 description: >-
-  [ICCV 2025][Model Compression][Quantization-aware training] This paper identifies that conventional learning rate scheduling fails to control the effective step size of quantized weights in quantization-aware training (Q…
+  [ICCV 2025][Model Compression][Quantization-aware training] This paper identifies that conventional learning rate scheduling fails to control the effective step size of quantized weights in quantization-aware training (QAT), and proposes a Transition Rate (TR) scheduling technique that explicitly governs the number of discrete weight transitions via a Transition-Adaptive Learning Rate (TALR), substantially improving low-bit quantized model performance.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "network quantization"
   - "low-bit precision"
 date: 2026-05-08
-content_hash: e88a2adf177fe016
+content_hash: 6d592c0c30829eaa
 ---
 
 # Scheduling Weight Transitions for Quantization-Aware Training
@@ -51,17 +51,17 @@ The core idea is to schedule a **target transition rate** (TR) for quantized wei
 
 1. **Transition Rate (TR)**
    Defined as the fraction of quantized weights that undergo a discrete flip in a single update step:
-   $$k^t = \frac{\sum_{i=1}^{N} \mathbb{I}[w_d^t(i) \neq w_d^{t-1}(i)]}{N}$$
+    $k^t = \frac{\sum_{i=1}^{N} \mathbb{I}[w_d^t(i) \neq w_d^{t-1}(i)]}{N}$
    where $w_d$ denotes the discrete weights (integer values output by the round/signum function). The authors show that the effective step size of each quantized weight is approximately $|\Delta w_q^t| \approx \delta^t \cdot \mathbb{I}[w_d^t \neq w_d^{t-1}]$, i.e., the step size is either zero or a fixed value $\delta^t$, so **the mean effective step size is primarily determined by the number of transitions**.
 
 2. **Running TR Estimation**
    The current TR is smoothed via exponential moving average:
-   $$K^t = m \cdot K^{t-1} + (1-m) \cdot k^t$$
+    $K^t = m \cdot K^{t-1} + (1-m) \cdot k^t$
    with momentum $m = 0.99$ to reduce the influence of outliers.
 
 3. **Transition-Adaptive Learning Rate (TALR)**
    The learning rate is adaptively adjusted based on the discrepancy between the running TR and the target TR:
-   $$U^t = \max(0, U^{t-1} + \eta(R^t - K^t))$$
+    $U^t = \max(0, U^{t-1} + \eta(R^t - K^t))$
    When $K^t < R^t$, TALR increases to push more latent weights across transition points; otherwise it decreases. The latent weights are then updated as $\mathbf{w}^{t+1} = \mathbf{w}^t - U^t \mathbf{g}^t$.
 
 4. **Target TR Scheduling**
@@ -141,10 +141,10 @@ The optimal TR factor lies in the range of 4e-3 to 6e-3. Sensitivity to this hyp
 ## Related Papers
 
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](../../ICLR2026/model_compression/compute-optimal_quantization-aware_training.md)
-- [\[ICCV 2025\] MSQ: Memory-Efficient Bit Sparsification Quantization](msq_memory-efficient_bit_sparsification_quantization.md)
-- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](../../NeurIPS2025/model_compression/quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
+- [\[ACL 2025\] EfficientQAT: Efficient Quantization-Aware Training for Large Language Models](../../ACL2025/model_compression/efficientqat.md)
+- [\[ICML 2025\] BoA: Attention-aware Post-training Quantization without Backpropagation](../../ICML2025/model_compression/boa_attention-aware_post-training_quantization_without_backpropagation.md)
+- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](../../ICLR2026/model_compression/towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
 - [\[ICML 2026\] WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points](../../ICML2026/model_compression/winq_accelerating_quantization-aware_training_of_language_models_around_saddle_p.md)
-- [\[ACL 2026\] ProActor: Timing-Aware Reinforcement Learning for Proactive Task Scheduling Agents](../../ACL2026/model_compression/proactor_timing-aware_reinforcement_learning_for_proactive_task_scheduling_agent.md)
 
 </div>
 

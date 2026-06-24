@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling
 description: >-
-  [NeurIPS 2025][LLM Reasoning][recurrent Transformer] This paper proposes AbbIE, an architecture that recursively iterates the intermediate layers (Body) of a decoder-only Transformer. Trained with only 2 iterations…
+  [NeurIPS 2025][Reasoning][recurrent Transformer] This paper proposes AbbIE, an architecture that recursively iterates the intermediate layers (Body) of a decoder-only Transformer. Trained with only 2 iterations, AbbIE achieves upward generalization at inference time by increasing the number of iterations, surpassing standard Transformers on both language modeling perplexity and zero-shot ICL benchmarks, while serving as a drop-in replacement for standard Transformers.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "recurrent Transformer"
   - "iterative encoder"
   - "test-time scaling"
   - "fixed point"
   - "upward generalization"
 date: 2026-05-08
-content_hash: 297702ed39a48185
+content_hash: f551414b02006e19
 ---
 
 # AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling
@@ -127,7 +127,7 @@ Note: On CommonsenseQA, both the standard Transformer and 0pt remain at the rand
 - [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](../../ACL2026/llm_reasoning/efficient_process_reward_modeling_via_contrastive_mutual_information.md)
 - [\[NeurIPS 2025\] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling](rethinking_optimal_verification_granularity_for_compute-efficient_test-time_scal.md)
 - [\[NeurIPS 2025\] LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling](limopro_reasoning_refinement_for_efficient_and_effective_test-time_scaling.md)
-- [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
+- [\[ICLR 2026\] Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts](../../ICLR2026/llm_reasoning/test-time_scaling_in_diffusion_llms_via_hidden_semi-autoregressive_experts.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FAITH: Factuality Alignment through Integrating Trustworthiness and Honestness
 description: >-
-  [ACL 2026][LLM Safety][PPO] This paper proposes the FAITH framework, which maps LLM uncertainty signals (consistency + semantic entropy) to natural language descriptions of knowledge state quadrants (trustworthiness $\times$ honestness). It designs a fine-grained reward function considering uncertainty for PPO training and utilizes a RAG module t
+  [ACL 2026 Findings][LLM Safety][Factuality Alignment] This paper proposes the FAITH framework, which maps LLM uncertainty signals (consistency + semantic entropy) to natural language descriptions of knowledge state quadrants (trustworthiness $\times$ honestness). It designs a fine-grained reward function considering uncertainty for PPO training and utilizes a RAG module to correct potential errors, systematically improving the factual accuracy of LLMs.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - PPO
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Factuality Alignment"
+  - "Knowledge State Quadrants"
+  - "Uncertainty Estimation"
+  - "PPO"
+  - "Retrieval Augmentation"
 date: 2026-05-08
-content_hash: b0753a50869a1019
+content_hash: 4f7eb9c8ae7e7480
 ---
+
 # FAITH: Factuality Alignment through Integrating Trustworthiness and Honestness
 
 **Conference**: ACL 2026 Findings  
@@ -137,11 +142,11 @@ Four-stage training: (1) SFT for reference model $\pi_\mu$; (2) Reward model tra
 
 ## Related Papers
 
+- [\[ACL 2025\] UAlign: Leveraging Uncertainty Estimations for Factuality Alignment on Large Language Models](../../ACL2025/llm_safety/ualign_leveraging_uncertainty_estimations_for_factuality_alignment_on_large_lang.md)
+- [\[ACL 2025\] ComparisonQA: Evaluating Factuality Robustness of LLMs Through Knowledge Frequency Control and Uncertainty](../../ACL2025/llm_safety/comparisonqa_evaluating_factuality_robustness_of_llms_through_knowledge_frequenc.md)
 - [\[ACL 2026\] Permutation-Consensus Listwise Judging for Robust Factuality Evaluation](permutation-consensus_listwise_judging_for_robust_factuality_evaluation.md)
-- [\[ACL 2026\] SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering](safeconstellations_mitigating_over-refusals_in_llms_through_task-aware_represent.md)
-- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
-- [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
-- [\[ACL 2026\] CAP: Controllable Alignment Prompting for Unlearning in LLMs](cap_controllable_alignment_prompting_for_unlearning_in_llms.md)
+- [\[ICLR 2026\] TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness](../../ICLR2026/llm_safety/trustgen_a_platform_of_dynamic_benchmarking_on_the_trustworthiness_of_generative.md)
+- [\[ICLR 2026\] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models](../../ICLR2026/llm_safety/audiotrust_benchmarking_the_multifaceted_trustworthiness_of_audio_large_language.md)
 
 </div>
 

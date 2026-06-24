@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Distilling Unsigned Distance Function for Surface Reconstruction from 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Knowledge Distillation] This work distills a "local patch UDF teacher" (pre-trained on synthetic algebraic surfaces) into a lightweight student UDF optimized alongside 3DGS. By employing band-limited distillation near the surface and weighting based on visibility/geometric confidence, it stably reconstructs open surfaces with boundaries and t
+  [CVPR 2026][3D Vision][Unsigned Distance Function (UDF)] This work distills a "local patch UDF teacher" (pre-trained on synthetic algebraic surfaces) into a lightweight student UDF optimized alongside 3DGS. By employing band-limited distillation near the surface and weighting based on visibility/geometric confidence, it stably reconstructs open surfaces with boundaries and thin structures from multi-view images, achieving SOTA Chamfer Distance on DF3D and DTU.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Unsigned Distance Function (UDF)"
+  - "3D Gaussian Splatting (3DGS)"
+  - "Knowledge Distillation"
+  - "Open Surface Reconstruction"
+  - "Surface Prior"
 date: 2026-05-08
-content_hash: 61c9c0784268bd7e
+content_hash: 06089124d8b5e833
 ---
+
 # Distilling Unsigned Distance Function for Surface Reconstruction from 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -163,10 +168,10 @@ Incremental components on DTU starting from 2DGS (with $L_{Far}$) baseline:
 ## Related Papers
 
 - [\[CVPR 2026\] Hermite Radial Basis Function for Surface Reconstruction via Differentiable Rendering](hermite_radial_basis_function_for_surface_reconstruction_via_differentiable_rend.md)
-- [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
-- [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
-- [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
+- [\[CVPR 2025\] GaussianUDF: Inferring Unsigned Distance Functions through 3D Gaussian Splatting](../../CVPR2025/3d_vision/gaussianudf_inferring_unsigned_distance_functions_through_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
+- [\[CVPR 2026\] Foundry: Distilling 3D Foundation Models for the Edge](foundry_distilling_3d_foundation_models_for_the_edge.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes the MVIG attack framework, which uniformly models the vulnerabilities of various defensive collaborative perception systems as a Mutual View Information Graph. By combining temporal graph learning with entropy-aware vulnerability searching, it achieves adaptive fabrication attacks that reduce defense succ
+  [CVPR 2026][Autonomous Driving][Collaborative Perception Security] Ours proposes the MVIG attack framework, which uniformly models the vulnerabilities of various defensive collaborative perception systems as a Mutual View Information Graph. By combining temporal graph learning with entropy-aware vulnerability searching, it achieves adaptive fabrication attacks that reduce defense success rates by up to 62%.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Collaborative Perception Security"
+  - "Adversarial Attacks"
+  - "Graph Neural Networks"
+  - "Temporal Modeling"
 date: 2026-05-08
-content_hash: 7529c366ce9723b6
+content_hash: f0af58b16a9dfda1
 ---
+
 # Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception
 
 **Conference**: CVPR 2026  
@@ -174,7 +179,7 @@ Under continuous attack, the DSR for BAC and RC increases sharply (due to tempor
 - [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 - [\[CVPR 2026\] AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception](adaradar_rate_adaptive_spectral_compression_for_radar-based_perception.md)
-- [\[ICLR 2026\] SiMO: Single-Modality-Operable Multimodal Collaborative Perception](../../ICLR2026/autonomous_driving/simo_single-modality-operable_multimodal_collaborative_perceptio.md)
+- [\[ICLR 2026\] Rate-Distortion Optimized Pragmatic Communication for Collaborative Perception](../../ICLR2026/autonomous_driving/rate-distortion_optimized_pragmatic_communication_for_collaborative_perception.md)
 
 </div>
 

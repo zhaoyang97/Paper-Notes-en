@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoWTracker: Tracking by Warping instead of Correlation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] CoWTracker replaces the "cost volume calculation for matching" in dense point tracking with "warping target frame features back to the reference frame based on current trajectory estimates + global reasoning via spatio-temporal Transformer." By removing the cost volume, which grows quadratically with resolution, it ach
+  [CVPR 2026][Video Understanding][Point tracking] CoWTracker replaces the "cost volume calculation for matching" in dense point tracking with "warping target frame features back to the reference frame based on current trajectory estimates + global reasoning via spatio-temporal Transformer." By removing the cost volume, which grows quadratically with resolution, it achieves SOTA results on TAP-Vid / RoboTAP. Furthermore, the same model outperforms specialized optical flow metho…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Point tracking"
+  - "optical flow"
+  - "feature warping"
+  - "spatio-temporal Transformer"
+  - "dense correspondence"
 date: 2026-05-08
-content_hash: ad82bff6c92d687e
+content_hash: 01436eadebe8b4db
 ---
+
 # CoWTracker: Tracking by Warping instead of Correlation
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ Relative to the best specialized optical flow models, the EPE is reduced by 17%/
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient All-Pairs Correlation Volume Sampling for Optical Flow Estimation](efficient_all-pairs_correlation_volume_sampling_for_optical_flow_estimation.md)
 - [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
+- [\[CVPR 2026\] Efficient All-Pairs Correlation Volume Sampling for Optical Flow Estimation](efficient_all-pairs_correlation_volume_sampling_for_optical_flow_estimation.md)
 - [\[AAAI 2026\] BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation](../../AAAI2026/video_understanding/bat_learning_event-based_optical_flow_with_bidirectional_adaptive_temporal_corre.md)
+- [\[CVPR 2026\] Generative Point Tracking and Forecasting](generative_point_tracking_and_forecasting.md)
 - [\[AAAI 2026\] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition](../../AAAI2026/video_understanding/task-specific_distance_correlation_matching_for_few-shot_action_recognition.md)
-- [\[CVPR 2026\] Rethinking Occlusion Modeling for UAV Tracking](rethinking_occlusion_modeling_for_uav_tracking.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Does Object Binding Naturally Emerge in Large Pretrained Vision Transformers?
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Object Binding] By defining the IsSameObject predicate and designing quadratic probes, this work demonstrates that large-scale pretrained ViTs — particularly DINO and CLIP — naturally deve…
+  [NeurIPS 2025 Spotlight][LLM Pretraining][Object Binding] By defining the IsSameObject predicate and designing quadratic probes, this work demonstrates that large-scale pretrained ViTs — particularly DINO and CLIP — naturally develop object binding capabilities. This signal is encoded in a low-dimensional subspace and actively guides the attention mechanism, challenging the cognitive science community's view that ViTs lack binding ability.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Pretraining"
   - "Object Binding"
   - "Vision Transformer"
@@ -12,7 +12,7 @@ tags:
   - "Self-Supervised Learning"
   - "Probing Analysis"
 date: 2026-05-08
-content_hash: 86ce22475e934b6a
+content_hash: 07137b432e443bc4
 ---
 
 # Does Object Binding Naturally Emerge in Large Pretrained Vision Transformers?
@@ -161,10 +161,10 @@ Ablation design:
 ## Related Papers
 
 - [\[NeurIPS 2025\] One Prompt Fits All: Universal Graph Adaptation for Pretrained Models](one_prompt_fits_all_universal_graph_adaptation_for_pretrained_models.md)
-- [\[NeurIPS 2025\] How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?](how_does_sequence_modeling_architecture_influence_base_capabilities_of_pre-train.md)
+- [\[CVPR 2025\] Bridging the Vision-Brain Gap with an Uncertainty-Aware Blur Prior](../../CVPR2025/llm_pretraining/bridging_the_vision-brain_gap_with_an_uncertainty-aware_blur_prior.md)
+- [\[ICML 2025\] Does Data Scaling Lead to Visual Compositional Generalization?](../../ICML2025/llm_pretraining/does_data_scaling_lead_to_visual_compositional_generalization.md)
 - [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
-- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
-- [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
+- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](../../ICLR2026/llm_pretraining/identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
 
 </div>
 

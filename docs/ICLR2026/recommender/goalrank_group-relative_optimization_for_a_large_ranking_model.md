@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] GoalRank: Group-Relative Optimization for a Large Ranking Model
 description: >-
-  [ICLR 2026][Recommender Systems][ranking] It is theoretically proven that any Multi-Generator-Evaluator ranking system can be approximated with smaller error by a larger generator-only model that satisfies the scaling law. Accordingly, GoalRank is proposed—training a large generator-only ranking model by constructing group-relative reference policies with a re
+  [ICLR 2026][Recommender Systems][ranking] It is theoretically proven that any Multi-Generator-Evaluator ranking system can be approximated with smaller error by a larger generator-only model that satisfies the scaling law. Accordingly, GoalRank is proposed—training a large generator-only ranking model by constructing group-relative reference policies with a reward model. It significantly outperforms SOTA in online A/B tests.
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - ranking
-  - generator-only
-  - group-relative optimization
-  - scaling law
-  - recommendation
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "ranking"
+  - "generator-only"
+  - "group-relative optimization"
+  - "scaling law"
+  - "recommendation"
 date: 2026-05-08
-content_hash: 8809d273f24e4223
+content_hash: 8721073c1cfe2402
 ---
+
 # GoalRank: Group-Relative Optimization for a Large Ranking Model
 
 **Conference**: ICLR 2026  

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] NG-GS: NeRF-Guided 3D Gaussian Splatting Segmentation
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] The NG-GS framework is proposed to utilize the continuous modeling capability of NeRF to resolve discretization issues in 3DGS segmentation boundaries. High-quality object segmentation is achieved through continuous feature fields constructed via RBF interpolation combined with multi-resolution hash encoding and joint
+  [CVPR 2026 Highlight][3D Vision][3D Gaussian Splatting] The NG-GS framework is proposed to utilize the continuous modeling capability of NeRF to resolve discretization issues in 3DGS segmentation boundaries. High-quality object segmentation is achieved through continuous feature fields constructed via RBF interpolation combined with multi-resolution hash encoding and joint NeRF-GS optimization.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - segmentation
-  - NeRF
-  - boundary refinement
-  - hash encoding
+  - "CVPR 2026 Highlight"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "segmentation"
+  - "NeRF"
+  - "boundary refinement"
+  - "hash encoding"
 date: 2026-05-08
-content_hash: a6df182d5aff1102
+content_hash: 6a9fccab70252632
 ---
+
 # NG-GS: NeRF-Guided 3D Gaussian Splatting Segmentation
 
 **Conference**: CVPR 2026 Highlight  
@@ -120,9 +121,9 @@ Consistently outperforms all baselines across all metrics on all three benchmark
 
 - [\[CVPR 2026\] LangRef3DGS: Natural Language-Guided 3D Referential Segmentation from Partial Observations via 3D Gaussian Splatting](langref3dgs_natural_language-guided_3d_referential_segmentation_from_partial_obs.md)
 - [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
-- [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](action-guided_generation_of_3d_functionality_segmentation_data.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](../../ICLR2026/3d_vision/pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)
+- [\[ICLR 2026\] D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction](../../ICLR2026/3d_vision/d2gs_depth-and-density_guided_gaussian_splatting_for_stable_and_accurate_sparse-.md)
+- [\[CVPR 2026\] GS²: Graph-based Spatial Distribution Optimization for Compact 3D Gaussian Splatting](gs2_graph-based_spatial_distribution_optimization_for_compact_3d_gaussian_splatt.md)
+- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
 
 </div>
 

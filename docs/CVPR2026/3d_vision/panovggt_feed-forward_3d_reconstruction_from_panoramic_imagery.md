@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The authors propose PanoVGGT, a permutation-equivariant Transformer framework capable of jointly predicting camera poses, depth maps, and globally consistent 3D point clouds from one or more unordered panoramic images in a single feed-forward pass. They also contribute PanoCity, a large-scale dataset containing over 12
+  [CVPR 2026][3D Vision][Panoramic 3D reconstruction] The authors propose PanoVGGT, a permutation-equivariant Transformer framework capable of jointly predicting camera poses, depth maps, and globally consistent 3D point clouds from one or more unordered panoramic images in a single feed-forward pass. They also contribute PanoCity, a large-scale dataset containing over 120,000 outdoor panoramic images.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panoramic 3D reconstruction"
+  - "feed-forward multi-view reconstruction"
+  - "spherical positional encoding"
+  - "$SO(3)$ data augmentation"
+  - "large-scale panoramic datasets"
 date: 2026-05-08
-content_hash: 8c87239580b5c554
+content_hash: 926b1044ba810a96
 ---
+
 # PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery
 
 **Conference**: CVPR 2026  
@@ -132,16 +138,16 @@ Panoramas cover the entire sphere and can be rotated around any axis by any angl
 - Value: ⭐⭐⭐⭐⭐ (PanoCity dataset + the panoramic feed-forward reconstruction paradigm has significant impact)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
 - [\[CVPR 2026\] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale](vgg-t3_offline_feed-forward_3d_reconstruction_at_scale.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](any4d_unified_feed-forward_metric_4d_reconstruction.md)
 - [\[CVPR 2026\] AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend](amb3r_accurate_feed-forward_metric-scale_3d_reconstruction_with_backend.md)
-- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
-- [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)
 
 </div>
 

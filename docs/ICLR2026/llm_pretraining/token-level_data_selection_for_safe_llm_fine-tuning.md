@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Token-level Data Selection for Safe LLM Fine-tuning
 description: >-
-  [ICLR 2026][Pretraining][LLM safety] TOSS (Token-level data Selection for Safe LLM fine-tuning) is proposed as the first token-level data selection framework. By evaluating the safety risk of each token through the loss difference between a safety-degraded model and a utility-oriented model, it achieves a superior safety-utility tradeoff compared to sampl
+  [ICLR 2026][LLM Pretraining][LLM safety] TOSS (Token-level data Selection for Safe LLM fine-tuning) is proposed as the first token-level data selection framework. By evaluating the safety risk of each token through the loss difference between a safety-degraded model and a utility-oriented model, it achieves a superior safety-utility tradeoff compared to sample-level methods.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - LLM safety
-  - fine-tuning safety
-  - token-level selection
-  - data curation
-  - safety-utility tradeoff
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "LLM safety"
+  - "fine-tuning safety"
+  - "token-level selection"
+  - "data curation"
+  - "safety-utility tradeoff"
 date: 2026-05-08
-content_hash: 9ee9d362e9f9de96
+content_hash: bed8812e231b5cec
 ---
+
 # Token-level Data Selection for Safe LLM Fine-tuning
 
 **Conference**: ICLR 2026  

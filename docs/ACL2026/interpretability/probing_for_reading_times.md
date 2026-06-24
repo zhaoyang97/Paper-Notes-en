@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probing for Reading Times
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper probes the ability of various language model layers to predict human reading times. It finds that early-layer representations outperform surprisal in predicting early fixation metrics, while surprisal remains superior for late-stage metrics; the optimal predictor varies significantly by language and metric.
+  [ACL 2026][Interpretability][Reading time prediction] This paper probes the ability of various language model layers to predict human reading times. It finds that early-layer representations outperform surprisal in predicting early fixation metrics, while surprisal remains superior for late-stage metrics; the optimal predictor varies significantly by language and metric.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Reading time prediction"
+  - "language model probing"
+  - "eye-tracking"
+  - "surprisal theory"
+  - "cross-linguistic analysis"
 date: 2026-05-08
-content_hash: bff0ce3c8d7ecb07
+content_hash: 6ecd8ac7ba7ec982
 ---
+
 # Probing for Reading Times
 
 **Conference**: ACL 2026  
@@ -106,9 +112,9 @@ The probes are trained to minimize the squared error loss for each string, incor
 ## Related Papers
 
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
+- [\[ICLR 2026\] REAL: Reading Out Transformer Activations for Precise Localization in Language Model Steering](../../ICLR2026/interpretability/real_reading_out_transformer_activations_for_precise_localization_in_language_mo.md)
 - [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
 - [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
-- [\[ACL 2025\] Probing Subphonemes in Morphology Models](../../ACL2025/interpretability/probing_subphonemes_in_morphology_models.md)
 - [\[ACL 2026\] Probing Semantic Alignment, Lexical Invariance, and Syntactic Influence in LLM Metaphor Processing](probing_semantic_alignment_lexical_invariance_and_syntactic_influence_in_llm_met.md)
 
 </div>

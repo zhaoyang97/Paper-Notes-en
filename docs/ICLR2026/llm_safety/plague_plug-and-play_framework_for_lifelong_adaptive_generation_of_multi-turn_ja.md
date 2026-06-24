@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] PLAGUE: 终身学习驱动的多轮越狱即插即用框架
+  [Paper Note] PLAGUE: A Plug-and-Play Framework for Multi-Turn Jailbreaking Driven by Lifelong Learning
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] PLAGUE decomposes the "lifecycle" of a multi-turn jailbreak attack into three plug-and-play stages: Planner, Primer, and Finisher. Combined with rubric-based reflection scoring, backtracking, and lifelong memory via goal-embedding retrieval, it enables red teaming agents to achieve a 30%+ relative increase in Attack Su
+  [ICLR 2026][LLM Safety][Multi-turn jailbreak] PLAGUE decomposes the "lifecycle" of a multi-turn jailbreak attack into three plug-and-play stages: Planner, Primer, and Finisher. Combined with rubric-based reflection scoring, backtracking, and lifelong memory via goal-embedding retrieval, it enables red teaming agents to achieve a 30%+ relative increase in Attack Success Rate (ASR) under similar or lower query budgets. It achieves 81.4% and 67.3% on OpenAI o3 and Claude Opus 4.…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Multi-turn jailbreak"
+  - "Red Teaming"
+  - "Lifelong Learning"
+  - "Context Construction"
+  - "Reflection Scoring"
 date: 2026-05-08
-content_hash: 0958f0bb56bad795
+content_hash: b63321233f56072b
 ---
+
 # PLAGUE: A Plug-and-Play Framework for Multi-Turn Jailbreaking Driven by Lifelong Learning
 
 **Conference**: ICLR 2026  
@@ -135,10 +141,20 @@ The full framework improved SRE by ~30% on o3 and ~109% on Opus 4.1 compared to 
 - Value: ⭐⭐⭐⭐⭐ Directly contributes to understanding multi-turn mechanisms; high ASR on o3/Opus serves as a significant warning.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Lifelong Learning with Behavior Consolidation for Vehicle Routing](lifelong_learning_with_behavior_consolidation_for_vehicle_routing.md)
+- [\[ICLR 2026\] ARMS: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks](arms_adaptive_red-teaming_agent_against_multimodal_models_with_plug-and-play_att.md)
+- [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](ofmu_optimization-driven_framework_for_machine_unlearning.md)
+- [\[ICLR 2026\] SafeDialBench: A Fine-grained Safety Evaluation Benchmark for LLMs in Multi-turn Dialogues and Diverse Jailbreak Attacks](safedialbench_a_fine-grained_safety_evaluation_benchmark_for_large_language_mode.md)
+- [\[ACL 2026\] TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards](../../ACL2026/llm_safety/trojail_trajectory-level_optimization_for_multi-turn_large_language_model_jailbr.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] How Catastrophic is Your LLM? Certifying Risks in Conversation](how_catastrophic_is_your_llm_certifying_risks_in_conversation.md)

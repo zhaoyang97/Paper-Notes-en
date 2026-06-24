@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Searching for Privacy Risks in LLM Agents via Simulation
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The authors treat "agent privacy attack/defense strategies" as searchable optimization objects. Within a three-agent simulation, an LLM acts as an optimizer to iteratively reflect on trajectories and co-evolve attack and defense instructions. This process automatically uncovers sophisticated attacks not easily anticipa
+  [ICLR 2026][LLM Safety][Agent Privacy] The authors treat "agent privacy attack/defense strategies" as searchable optimization objects. Within a three-agent simulation, an LLM acts as an optimizer to iteratively reflect on trajectories and co-evolve attack and defense instructions. This process automatically uncovers sophisticated attacks not easily anticipated by humans (e.g., "forged consent" and "multi-turn impersonation") and induces robust defenses like "identity verifica…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Agent Privacy"
+  - "Adversarial Co-evolution"
+  - "Search Framework"
+  - "Contextual Integrity"
+  - "Multi-turn Dialogue Attacks"
 date: 2026-05-08
-content_hash: 9d3d0850fa67f7f6
+content_hash: aa9eddd47fd2fe75
 ---
+
 # Searching for Privacy Risks in LLM Agents via Simulation
 
 **Conference**: ICLR 2026  
@@ -132,15 +138,15 @@ Even with enhanced hints for the defender ("maintain highest privacy standards")
 - Value: ⭐⭐⭐⭐⭐ Provides direct tools for developing and stress-testing privacy-aware agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling](../../AAAI2026/llm_safety/an_llm-based_simulation_framework_for_embodied_conversationa.md)
+- [\[ACL 2025\] Unveiling Privacy Risks in LLM Agent Memory](../../ACL2025/llm_safety/mextra_agent_memory_privacy.md)
 - [\[ICLR 2026\] How Catastrophic is Your LLM? Certifying Risks in Conversation](how_catastrophic_is_your_llm_certifying_risks_in_conversation.md)
 - [\[ICLR 2026\] Reliable Weak-to-Strong Monitoring of LLM Agents](reliable_weak-to-strong_monitoring_of_llm_agents.md)
-- [\[ACL 2025\] Unveiling Privacy Risks in LLM Agent Memory](../../ACL2025/llm_safety/mextra_agent_memory_privacy.md)
 - [\[ACL 2026\] On Safety Risks in Experience-Driven Self-Evolving Agents](../../ACL2026/llm_safety/on_safety_risks_in_experience-driven_self-evolving_agents.md)
 
 </div>

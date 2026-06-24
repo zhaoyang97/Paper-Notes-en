@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Causal Marriage between VLM and IRM from Understanding to Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] Starting from token-level causal representations, this paper proves that a "vocabulary-constrained InfoNCE" is formally equivalent to the invariance principle of IRM. Based on this, it proposes CLIP-IRM, a mid-training paradigm that enhances OOD understanding without architectural changes, and transfers the OOD guarant
+  [CVPR 2026][VLM Reasoning][CLIP] Starting from token-level causal representations, this paper proves that a "vocabulary-constrained InfoNCE" is formally equivalent to the invariance principle of IRM. Based on this, it proposes CLIP-IRM, a mid-training paradigm that enhances OOD understanding without architectural changes, and transfers the OOD guarantees of IRM to multimodal reasoning by using its invariant alignment score as a process-level reward for GRPO.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "CLIP"
+  - "Invariant Risk Minimization (IRM)"
+  - "Causal Representation"
+  - "OOD Generalization"
+  - "Process-based Reward Reinforcement Learning"
 date: 2026-05-08
-content_hash: a60d21f7c3f00261
+content_hash: 9ed8c47869105ef6
 ---
+
 # A Causal Marriage between VLM and IRM from Understanding to Reasoning
 
 **Conference**: CVPR 2026  
@@ -133,11 +138,11 @@ Comparison on five domain generalization benchmarks:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
+- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
 - [\[CVPR 2026\] Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs](beyond_perceptual_shortcuts_causal-inspired_debiasing_optimization_for_generaliz.md)
-- [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
-- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](../../ICML2026/multimodal_vlm/seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
+- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)
 - [\[CVPR 2026\] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents](mindpower_enabling_theoryofmind_reasoning_in_vlmba.md)
-- [\[CVPR 2026\] BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models](biomedccpl_causal_conditional_prompt_learning_for_biomedical_vision-language_mod.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Embedding-Based Context-Aware Reranker
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][RAG] This paper proposes EBCAR, a lightweight reranking framework operating in the embedding space. By introducing structural information through document ID embeddings and passage position encodings, combined with a hybrid mechanism of shared full attention and specialized masked attention for cross-paragraph reasoning, EB
+  [ICLR 2026][Information Retrieval & RAG][Reranking] This paper proposes EBCAR, a lightweight reranking framework operating in the embedding space. By introducing structural information through document ID embeddings and passage position encodings, combined with a hybrid mechanism of shared full attention and specialized masked attention for cross-paragraph reasoning, EBCAR achieves the best average nDCG@10 on the ConTEB benchmark with only 126M parameters. Its inference speed…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Reranking"
+  - "RAG"
+  - "Embedding Retrieval"
+  - "Cross-Paragraph Reasoning"
+  - "Hybrid Attention"
 date: 2026-05-08
-content_hash: 0278f954ef35fdd8
+content_hash: 32b5b321d9963598
 ---
+
 # Embedding-Based Context-Aware Reranker
 
 **Conference**: ICLR 2026  
@@ -144,7 +149,7 @@ Training utilizes the InfoNCE contrastive loss, but with a counter-intuitive det
 - [\[ICLR 2026\] Think Then Embed: Generative Context Improves Multimodal Embedding](think_then_embed_generative_context_improves_multimodal_embedding.md)
 - [\[ACL 2025\] EXIT: Context-Aware Extractive Compression for Enhancing Retrieval-Augmented Generation](../../ACL2025/information_retrieval/exit_context-aware_extractive_compression_for_enhancing_retrieval-augmented_gene.md)
 - [\[ICLR 2026\] Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation](attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
-- [\[ICLR 2026\] On the Theoretical Limitations of Embedding-Based Retrieval](on_the_theoretical_limitations_of_embedding-based_retrieval.md)
+- [\[ICLR 2026\] Uncertainty-driven Embedding Convolution](uncertainty-driven_embedding_convolution.md)
 
 </div>
 

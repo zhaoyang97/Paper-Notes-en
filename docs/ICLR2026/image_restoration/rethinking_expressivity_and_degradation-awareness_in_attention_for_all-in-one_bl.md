@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Expressivity and Degradation-Awareness in Attention for All-in-One Blind Image Restoration
 description: >-
-  [ICLR 2026][Image Restoration][Restormer] Addressing two overlooked bottlenecks of Restormer-style channel attention in All-in-One blind image restoration—the purely linear value path and the lack of explicit global slots—this paper proposes two minimalist, backbone-agnostic primitives (non-linear value transformation + global spatial tokens). These upgrade at
+  [ICLR 2026][Image Restoration][All-in-One Image Restoration] Addressing two overlooked bottlenecks of Restormer-style channel attention in All-in-One blind image restoration—the purely linear value path and the lack of explicit global slots—this paper proposes two minimalist, backbone-agnostic primitives (non-linear value transformation + global spatial tokens). These upgrade attention from a "feature selector" to a "selector-transformer" while providing degradation-awareness…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Restormer
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "All-in-One Image Restoration"
+  - "Blind Restoration"
+  - "Restormer"
+  - "Non-linear Value"
+  - "Global Spatial Token"
 date: 2026-05-08
-content_hash: d45d779a6f513b60
+content_hash: e765ff58159aed0e
 ---
+
 # Rethinking Expressivity and Degradation-Awareness in Attention for All-in-One Blind Image Restoration
 
 **Conference**: ICLR 2026  
@@ -150,8 +155,8 @@ Non-linear value design ablation (Tiny model): Residual + Learnable + Full deplo
 
 - [\[ICLR 2026\] RestoreVAR: Visual Autoregressive Generation for All-in-One Image Restoration](restorevar_visual_autoregressive_generation_for_all-in-one_image_restoration.md)
 - [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](../../CVPR2026/image_restoration/degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
-- [\[CVPR 2026\] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](../../CVPR2026/image_restoration/retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)
 - [\[ICLR 2026\] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration](learning_domain-aware_task_prompt_representations_for_multi-domain_all-in-one_im.md)
+- [\[CVPR 2026\] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](../../CVPR2026/image_restoration/retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)
 - [\[CVPR 2025\] Degradation-Aware Feature Perturbation for All-in-One Image Restoration](../../CVPR2025/image_restoration/degradation-aware_feature_perturbation_for_all-in-one_image_restoration.md)
 
 </div>

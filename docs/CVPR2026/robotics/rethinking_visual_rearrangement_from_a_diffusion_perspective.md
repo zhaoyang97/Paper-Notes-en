@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Visual Rearrangement from A Diffusion Perspective
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Embodied AI] This work reinterprets the embodied rearrangement task of "restoring a cluttered room" as a diffusion bridge process—where shuffling is forward diffusion and restoration is reverse denoising. By representing object states as Gaussian Mixture Models (GMM) and using a Denoising Transformer to iteratively infer movements,
+  [CVPR 2026][Robotics][Visual Rearrangement] This work reinterprets the embodied rearrangement task of "restoring a cluttered room" as a diffusion bridge process—where shuffling is forward diffusion and restoration is reverse denoising. By representing object states as Gaussian Mixture Models (GMM) and using a Denoising Transformer to iteratively infer movements, the method improves the success rate on RoomR from 14.2% to 17.8%.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Visual Rearrangement"
+  - "Diffusion Bridge"
+  - "Gaussian Mixture Model"
+  - "Embodied AI"
+  - "Denoising Transformer"
 date: 2026-05-08
-content_hash: f817a5858b30744c
+content_hash: 683d2aebdedee685
 ---
+
 # Rethinking Visual Rearrangement from A Diffusion Perspective
 
 **Conference**: CVPR 2026  
@@ -134,10 +139,10 @@ Sampling steps analysis: optimal performance is reached at 200 steps. Robustness
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Intermediate Representation for VLM-based Robot Manipulation](rethinking_intermediate_representation_for_vlm-based_robot_manipulation.md)
-- [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
-- [\[CVPR 2026\] GraspGen-X: Cross-Embodiment 6-DOF Diffusion-based Grasping](graspgen-x_cross-embodiment_6-dof_diffusion-based_grasping.md)
 - [\[CVPR 2026\] Semantic Audio-Visual Navigation in Continuous Environments](semantic_audio-visual_navigation_in_continuous_environments.md)
 - [\[CVPR 2026\] Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation](rethinking_camera_choice_an_empirical_study_on_fisheye_camera_properties_in_robo.md)
+- [\[CVPR 2026\] Visual-RRT: Finding Paths toward Visual-Goals via Differentiable Rendering](visual-rrt_finding_paths_toward_visual-goals_via_differentiable_rendering.md)
+- [\[CVPR 2026\] EgoRoC: Towards Egocentric Robotic Control via Task-Agnostic Visual Alignment](egoroc_towards_egocentric_robotic_control_via_task-agnostic_visual_alignment.md)
 
 </div>
 

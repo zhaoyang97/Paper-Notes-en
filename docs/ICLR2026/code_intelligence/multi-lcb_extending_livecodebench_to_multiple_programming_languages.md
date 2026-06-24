@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages
 description: >-
-  [ICLR 2026][Code Intelligence][LiveCodeBench] Multi-LCB extends the Python-only LiveCodeBench to 12 programming languages via a transformation pipeline that converts functional LeetCode tasks into a unified STDIN/STDOUT format. It enables cross-language comparisons on identical problems without compromising contamination control, revealing prevalent "Python overfi
+  [ICLR 2026][Code Intelligence][LiveCodeBench] Multi-LCB extends the Python-only LiveCodeBench to 12 programming languages via a transformation pipeline that converts functional LeetCode tasks into a unified STDIN/STDOUT format. It enables cross-language comparisons on identical problems without compromising contamination control, revealing prevalent "Python overfitting" and language-specific data contamination in current LLMs.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - LiveCodeBench
-  - Pass@1
-  - STDIN/STDOUT
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "LiveCodeBench"
+  - "Multi-lingual Code Generation"
+  - "Contamination-aware Evaluation"
+  - "Pass@1"
+  - "STDIN/STDOUT"
+  - "Python Overfitting"
 date: 2026-05-08
-content_hash: af9c5de8d51fb339
+content_hash: 7431c8962af48caf
 ---
+
 # Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages
 
 **Conference**: ICLR 2026  
@@ -106,14 +110,15 @@ The authors evaluated 24 public LLMs (7B–685B) using Dataset v6 (tasks release
 - **Value**: ⭐⭐⭐⭐ (Exposes "Python overfitting" and provides a self-updating target for multi-lingual code model evaluation.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Gradient-Based Program Synthesis with Neurally Interpreted Languages](gradient-based_program_synthesis_with_neurally_interpreted_languages.md)
-- [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](viscoder2_building_multi-language_visualization_coding_agents.md)
 - [\[AAAI 2026\] Extracting Events Like Code: A Multi-Agent Programming Framework for Zero-Shot Event Extraction](../../AAAI2026/code_intelligence/extracting_events_like_code_a_multi-agent_programming_framework_for_zero-shot_ev.md)
 - [\[ICLR 2026\] The Matthew Effect of AI Programming Assistants: A Hidden Bias in Software Evolution](the_matthew_effect_of_ai_programming_assistants_a_hidden_bias_in_software_evolut.md)
+- [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](viscoder2_building_multi-language_visualization_coding_agents.md)
 - [\[ICLR 2026\] CARD: Towards Conditional Design of Multi-agent Topological Structures](card_towards_conditional_design_of_multi-agent_topological_structures.md)
 
 </div>

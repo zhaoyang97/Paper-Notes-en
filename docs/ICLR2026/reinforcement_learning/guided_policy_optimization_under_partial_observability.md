@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Guided Policy Optimization under Partial Observability
 description: >-
-  [ICLR 2026][Reinforcement Learning][POMDP] To address the **imitation gap** often encountered when "distilling a teacher trained with privileged information into a student," the GPO framework is proposed. It enables a guider (using privileged information) and a learner (observing partial information) to perform **simultaneous co-training**. Through "backtrackin
+  [ICLR 2026][Reinforcement Learning][POMDP] To address the **imitation gap** often encountered when "distilling a teacher trained with privileged information into a student," the GPO framework is proposed. It enables a guider (using privileged information) and a learner (observing partial information) to perform **simultaneous co-training**. Through "backtracking" constraints, the guider is consistently pulled back into a range that the learner can imitate…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - POMDP
-  - GPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "POMDP"
+  - "Privileged Information"
+  - "Teacher-Student Learning"
+  - "Imitation Gap"
+  - "Policy Mirror Descent"
+  - "GPO"
 date: 2026-05-08
-content_hash: 12c5eeff1dc62c6a
+content_hash: d26c66d7f630e857
 ---
+
 # Guided Policy Optimization under Partial Observability
 
 **Conference**: ICLR 2026  
@@ -114,8 +119,8 @@ Consistent conclusions were reached on 15 memory-based tasks from POPGym (Autoen
 - [\[ICLR 2026\] R2PS: Worst-Case Robust Real-Time Pursuit Strategies under Partial Observability](r2ps_worst-case_robust_real-time_pursuit_strategies_under_partial_observability.md)
 - [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](multi-agent_guided_policy_optimization.md)
 - [\[ICLR 2026\] Boosting Multi-Domain Reasoning of LLMs via Curvature-Guided Policy Optimization](boosting_multi-domain_reasoning_of_llms_via_curvature-guided_policy_optimization.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 - [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
-- [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](../../ACL2026/reinforcement_learning/visually-guided_policy_optimization_for_multimodal_reasoning.md)
 
 </div>
 

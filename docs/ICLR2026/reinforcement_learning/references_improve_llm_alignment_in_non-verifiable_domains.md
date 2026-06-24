@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] References Improve LLM Alignment in Non-Verifiable Domains
 description: >-
-  [ICLR 2026][Reinforcement Learning][LLM-as-Judge] This paper proposes RefEval, a reference-guided LLM-as-Judge method that uses high-quality reference outputs as "soft verifiers," improving LLM-judge accuracy by 6.8%. It further constructs a two-stage self-improvement pipeline (SFT distillation + reference-guided DPO) that outperforms SFT distillation by +19.2/+16.5 o
+  [ICLR 2026][Reinforcement Learning][Reference-guided evaluation] This paper proposes RefEval, a reference-guided LLM-as-Judge method that uses high-quality reference outputs as "soft verifiers," improving LLM-judge accuracy by 6.8%. It further constructs a two-stage self-improvement pipeline (SFT distillation + reference-guided DPO) that outperforms SFT distillation by +19.2/+16.5 on AlpacaEval/Arena-Hard respectively, matching the performance of the fine-tuned reward model A…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - LLM-as-Judge
-  - DPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reference-guided evaluation"
+  - "non-verifiable domains"
+  - "LLM-as-Judge"
+  - "self-improvement"
+  - "DPO"
 date: 2026-05-08
-content_hash: 81c217fd29cf5360
+content_hash: 0d22d87e347a9b7f
 ---
+
 # References Improve LLM Alignment in Non-Verifiable Domains
 
 **Conference**: ICLR 2026  
@@ -155,10 +159,10 @@ All DPO preference data is generated on-policy by the model being tuned. For eac
 ## Related Papers
 
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
 - [\[ICLR 2026\] Erase to Improve: Erasable Reinforcement Learning for Search-Augmented LLMs](erase_to_improve_erasable_reinforcement_learning_for_search-augmented_llms.md)
-- [\[ICLR 2026\] Leveraging Explanation to Improve Generalization of Meta Reinforcement Learning](leveraging_explanation_to_improve_generalization_of_meta_reinforcement_learning.md)
 - [\[ICLR 2026\] Reasoning Boosts Opinion Alignment in LLMs](reasoning_boosts_opinion_alignment_in_llms.md)
-- [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
+- [\[ICLR 2026\] Leveraging Explanation to Improve Generalization of Meta Reinforcement Learning](leveraging_explanation_to_improve_generalization_of_meta_reinforcement_learning.md)
 
 </div>
 

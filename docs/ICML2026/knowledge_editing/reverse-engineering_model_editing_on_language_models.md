@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reverse-Engineering Model Editing on Language Models
 description: >-
-  [ICML 2026][Knowledge Editing][locate-then-edit] The paper reveals that parameter update matrices of locate-then-edit knowledge editing methods (ROME/MEMIT/AlphaEdit) leak "edited subject" fingerprints through their row spaces. It proposes a two-stage attack, KSTER (recovering subjects via SVD, then prompts via relative entropy drop), and a defense called Subspace Ca
+  [ICML 2026][Knowledge Editing][locate-then-edit] The paper reveals that parameter update matrices of locate-then-edit knowledge editing methods (ROME/MEMIT/AlphaEdit) leak "edited subject" fingerprints through their row spaces. It proposes a two-stage attack, KSTER (recovering subjects via SVD, then prompts via relative entropy drop), and a defense called Subspace Camouflage based on "semantic decoy" injection.
 tags:
-  - ICML 2026
-  - Knowledge Editing
-  - locate-then-edit
+  - "ICML 2026"
+  - "Knowledge Editing"
+  - "locate-then-edit"
+  - "reverse-engineering attack"
+  - "subspace reconstruction"
+  - "entropy drop"
+  - "subspace camouflage defense"
 date: 2026-05-08
-content_hash: 438e5a2fa11ecd69
+content_hash: e050af41f0a23d04
 ---
+
 # Reverse-Engineering Model Editing on Language Models
 
 **Conference**: ICML 2026  
@@ -130,9 +135,9 @@ Prompt Recovery (Llama3-8B-Instruct, $N=100$): top-1 0.51 / top-5 0.81 / top-20 
 
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
 - [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
+- [\[ICLR 2026\] Disentangling Knowledge Representations for Large Language Model Editing](../../ICLR2026/knowledge_editing/disentangling_knowledge_representations_for_large_language_model_editing.md)
 - [\[ACL 2026\] The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models](../../ACL2026/knowledge_editing/the_model_agreed_but_didn39t_learn_diagnosing_surface_compliance_in_large_langua.md)
 - [\[AAAI 2026\] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)](../../AAAI2026/knowledge_editing/multiplicative_orthogonal_sequential_editing_for_language_models.md)
-- [\[ACL 2026\] Aligning Language Models with Real-time Knowledge Editing](../../ACL2026/knowledge_editing/aligning_language_models_with_real-time_knowledge_editing.md)
 
 </div>
 

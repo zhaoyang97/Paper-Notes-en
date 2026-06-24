@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TimeRecipe: A Time-Series Forecasting Recipe via Benchmarking Module Level Effectiveness
 description: >-
-  [ICLR 2026][Time Series][Paper Note] The authors decompose modern time-series forecasting models into a five-component "Canonical Architecture" (pre-processing, embedding, feed-forward modeling, projection, and post-processing). By conducting over 10,000 experiments to systematically evaluate the effectiveness of each design at a modular granularity acros
+  [ICLR 2026][Time Series][Time-series forecasting] The authors decompose modern time-series forecasting models into a five-component "Canonical Architecture" (pre-processing, embedding, feed-forward modeling, projection, and post-processing). By conducting over 10,000 experiments to systematically evaluate the effectiveness of each design at a modular granularity across different data/tasks, they found that combinations obtained through exhaustive design space search outperfor…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time-series forecasting"
+  - "module-level benchmark"
+  - "canonical architecture"
+  - "design space search"
+  - "training-free model selection"
 date: 2026-05-08
-content_hash: b9ba4175056b1f8f
+content_hash: b6ed976674716d76
 ---
+
 # TimeRecipe: A Time-Series Forecasting Recipe via Benchmarking Module Level Effectiveness
 
 **Conference**: ICLR 2026  
@@ -128,8 +134,8 @@ At least one of the Top-3 training-free recommendations consistently outperforms
 - [\[ICLR 2026\] Unlocking the Value of Text: Event-Driven Reasoning and Multi-Level Alignment for Time Series Forecasting](unlocking_the_value_of_text_event-driven_reasoning_and_multi-level_alignment_for.md)
 - [\[ICLR 2026\] Benchmarking ECG FMs: A Reality Check Across Clinical Tasks](benchmarking_ecg_fms_a_reality_check_across_clinical_tasks.md)
 - [\[ICML 2026\] Position: Current Benchmarking Hinders Real Progress in Deep Learning for Time Series](../../ICML2026/time_series/position_current_benchmarking_hinders_real_progress_in_deep_learning_for_time_se.md)
-- [\[ICLR 2026\] Understanding Transformers in Time Series Forecasting: A Case Study on MOIRAI](understanding_transformers_for_time_series_forecasting_a_case_study_on_moirai.md)
-- [\[ICLR 2026\] MMPD: Diverse Time Series Forecasting via Multi-Mode Patch Diffusion Loss](mmpd_diverse_time_series_forecasting_via_multi-mode_patch_diffusion_loss.md)
+- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
+- [\[ICLR 2026\] TEDM: Elucidated Diffusion Models for Time Series Forecasting](tedm_time_series_forecasting_with_elucidated_diffusion_models.md)
 
 </div>
 

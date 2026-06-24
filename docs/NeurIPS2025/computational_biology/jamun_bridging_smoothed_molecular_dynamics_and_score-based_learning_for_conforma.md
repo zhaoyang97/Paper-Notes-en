@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] JAMUN: Bridging Smoothed Molecular Dynamics and Score-Based Learning for Conformational Ensembles
 description: >-
-  [NeurIPS 2025][Computational Biology][Conformational ensembles] This paper proposes JAMUN, a conformational ensemble generation method built on the Walk-Jump Sampling (WJS) framework. By performing Langevin dynamics on a…
+  [NeurIPS 2025][Computational Biology][Conformational ensembles] This paper proposes JAMUN, a conformational ensemble generation method built on the Walk-Jump Sampling (WJS) framework. By performing Langevin dynamics on a noise-smoothed manifold and using an SE(3)-equivariant denoiser to jump back to the original distribution, JAMUN achieves peptide conformational sampling an order of magnitude faster than conventional molecular dynamics while retaining transferability to out-…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "SE(3) equivariance"
   - "protein dynamics"
 date: 2026-05-08
-content_hash: 5599e83a9fcf6d06
+content_hash: 841e534c578778b0
 ---
 
 # JAMUN: Bridging Smoothed Molecular Dynamics and Score-Based Learning for Conformational Ensembles
@@ -191,8 +191,8 @@ JAMUN converges faster than MD but does not fully match the same precision, part
 - [\[NeurIPS 2025\] Learning Conformational Ensembles of Proteins Based on Backbone Geometry](learning_conformational_ensembles_of_proteins_based_on_backbone_geometry.md)
 - [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
 - [\[NeurIPS 2025\] ConfRover: Simultaneous Modeling of Protein Conformation and Dynamics via Autoregression](confrover_simultaneous_modeling_of_protein_conformation_and_dynamics_via_autoreg.md)
+- [\[NeurIPS 2025\] Curly Flow Matching for Learning Non-gradient Field Dynamics](curly_flow_matching_for_learning_non-gradient_field_dynamics.md)
 - [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
-- [\[NeurIPS 2025\] Inferring Stochastic Dynamics with Growth from Cross-Sectional Data](inferring_stochastic_dynamics_with_growth_from_cross-sectional_data.md)
 
 </div>
 

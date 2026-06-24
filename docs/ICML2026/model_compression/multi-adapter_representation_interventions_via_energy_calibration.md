@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-Adapter Representation Interventions via Energy Calibration
 description: >-
-  [ICML 2026][Model Compression][Paper Note] MARI identifies that existing "representation intervention" methods rely on a linear representation hypothesis—adding a single global steering vector to all inputs—which is unreliable because the optimal correction direction varies significantly across samples and can degrade general capabilities on benign inputs. It r
+  [ICML 2026][Model Compression][Representation Intervention] MARI identifies that existing "representation intervention" methods rely on a linear representation hypothesis—adding a single global steering vector to all inputs—which is unreliable because the optimal correction direction varies significantly across samples and can degrade general capabilities on benign inputs. It replaces the single adapter with multiple low-rank adapters and utilizes "competitive training + entr…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Representation Intervention"
+  - "Multi-adapter routing"
+  - "Energy gating"
+  - "Truthfulness alignment"
+  - "Inference-time editing"
 date: 2026-05-08
-content_hash: a5d8bdf27ead8834
+content_hash: 9774b3c6dfd27ed5
 ---
+
 # Multi-Adapter Representation Interventions via Energy Calibration
 
 **Conference**: ICML 2026  
@@ -133,10 +139,10 @@ Evaluated on Llama-2-7B/13B, Llama-3-8B, Qwen2-7B, and Qwen2.5-14B/32B across al
 
 ## Related Papers
 
-- [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
 - [\[ICML 2026\] Towards Steering without Sacrifice: Principled Training of Steering Vectors for Prompt-only Interventions](towards_steering_without_sacrifice_principled_training_of_steering_vectors_for_p.md)
-- [\[ICML 2026\] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines](towards_resource-efficient_llms_end-to-end_energy_accounting_of_distillation_pip.md)
+- [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
 - [\[ICML 2026\] ProjQ: Project-and-Quantize for Adapter-Aware LLM Compression](projq_project-and-quantize_for_adapter-aware_llm_compression.md)
+- [\[CVPR 2026\] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](../../CVPR2026/model_compression/discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)
 - [\[AAAI 2026\] QuEPT: Quantized Elastic Precision Transformers with One-Shot Calibration for Multi-Bit Switching](../../AAAI2026/model_compression/quept_quantized_elastic_precision_transformers_with_one-shot_calibration_for_mul.md)
 
 </div>

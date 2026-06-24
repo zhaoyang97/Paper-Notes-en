@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Latent Diffusion Model without Variational Autoencoder
 description: >-
-  [ICLR 2026][Image Generation][DINOv3] SVG is proposed to replace the VAE latent space with frozen DINOv3 self-supervised features for building diffusion models. By supplementing fine-grained details via a lightweight residual encoder, it achieves faster training, more efficient inference, and cross-task universal visual representations.
+  [ICLR 2026][Image Generation][Self-supervised representation] SVG is proposed to replace the VAE latent space with frozen DINOv3 self-supervised features for building diffusion models. By supplementing fine-grained details via a lightweight residual encoder, it achieves faster training, more efficient inference, and cross-task universal visual representations.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - DINOv3
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Self-supervised representation"
+  - "DINOv3"
+  - "VAE-free Latent Diffusion"
+  - "Unified Feature Space"
+  - "Few-step Generation"
 date: 2026-05-08
-content_hash: 59926b1b8dec018a
+content_hash: 45536dcea6c6e0d7
 ---
+
 # Latent Diffusion Model without Variational Autoencoder
 
 **Conference**: ICLR 2026  
@@ -148,9 +153,9 @@ Training is decoupled into two stages to prevent interference between the featur
 
 - [\[ICLR 2026\] Pareto Variational Autoencoder](pareto_variational_autoencoder.md)
 - [\[CVPR 2026\] SRA 2: Variational Autoencoder Self-Representation Alignment for Efficient Diffusion Training](../../CVPR2026/image_generation/sra_2_variational_autoencoder_self-representation_alignment_for_efficient_diffus.md)
+- [\[ICLR 2026\] Learning an Image Editing Model without Image Editing Pairs](learning_an_image_editing_model_without_image_editing_pairs.md)
 - [\[ICLR 2026\] Variational Autoencoding Discrete Diffusion with Enhanced Dimensional Correlations Modeling](variational_autoencoding_discrete_diffusion_with_enhanced_dimensional_correlatio.md)
 - [\[ICLR 2026\] Discrete Variational Autoencoding via Policy Search](discrete_variational_autoencoding_via_policy_search.md)
-- [\[ICLR 2026\] Purrception: Variational Flow Matching for Vector-Quantized Image Generation](purrception_variational_flow_matching_for_vector-quantized_image_generation.md)
 
 </div>
 

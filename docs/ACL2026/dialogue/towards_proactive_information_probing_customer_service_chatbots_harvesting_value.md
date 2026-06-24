@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Proactive Information Probing: Customer Service Chatbots Harvesting Value from Conversation
 description: >-
-  [ACL 2026][Dialogue Systems][Reinforcement Learning] This paper proposes ProChatIP, a framework that transforms customer service chatbots from passive responding tools into proactive information collection engines. Through a specialized dialogue policy module, it learns "when to probe" users for pre-defined target information while minimizing dialogue turns and user fric
+  [ACL 2026 Findings][Dialogue Systems][Proactive Information Probing] This paper proposes ProChatIP, a framework that transforms customer service chatbots from passive responding tools into proactive information collection engines. Through a specialized dialogue policy module, it learns "when to probe" users for pre-defined target information while minimizing dialogue turns and user friction.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Dialogue Systems"
+  - "Proactive Information Probing"
+  - "Customer Service Chatbots"
+  - "Dialogue Policy"
+  - "Reinforcement Learning"
+  - "Business Intelligence"
 date: 2026-05-08
-content_hash: 244afc01702d4eba
+content_hash: c7d898341cdd4f52
 ---
+
 # Towards Proactive Information Probing: Customer Service Chatbots Harvesting Value from Conversation
 
 **Conference**: ACL 2026 Findings  

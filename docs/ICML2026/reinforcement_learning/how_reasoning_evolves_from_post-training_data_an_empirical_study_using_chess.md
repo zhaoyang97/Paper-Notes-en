@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess
 description: >-
-  [ICML 2026][Reinforcement Learning][SFT-to-RL] The authors utilize "training LLMs to play chess" as a clean experimental testbed for verifiable RL. By systematically comparing the impact of six self-constructed SFT datasets on RL, they find that while "direct prediction of the Best Move" achieves the highest scores, it leads to unfaithful reasoning after RL. Conver
+  [ICML 2026][Reinforcement Learning][SFT-to-RL] The authors utilize "training LLMs to play chess" as a clean experimental testbed for verifiable RL. By systematically comparing the impact of six self-constructed SFT datasets on RL, they find that while "direct prediction of the Best Move" achieves the highest scores, it leads to unfaithful reasoning after RL. Conversely, "predicting the Best Line (multi-step moves)" yields comparable performance but results in more stable RL a…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - SFT-to-RL
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "SFT-to-RL"
+  - "Reasoning Faithfulness"
+  - "Chess Reasoning"
+  - "Information Density"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 1dc6fd018c5c8ce1
+content_hash: 40e1c2f7a374629a
 ---
+
 # How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess
 
 **Conference**: ICML 2026  
@@ -144,8 +148,8 @@ In ablations where the number of training tokens is fixed, "which dataset is sup
 - [\[ACL 2026\] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study](../../ACL2026/reinforcement_learning/scaling_behaviors_of_llm_reinforcement_learning_post-training_an_empirical_study.md)
 - [\[ICML 2026\] Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training](provable_benefit_of_curriculum_in_transformer_tree-reasoning_post-training.md)
 - [\[ICML 2026\] CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning](cpmobius_iterative_coach-player_reasoning_for_data-free_reinforcement_learning.md)
-- [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
 - [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
+- [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
 
 </div>
 

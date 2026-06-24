@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Distributed Asynchronous Generalized Momentum Algorithm Without Delay Bounds
 description: >-
-  [AAAI 2026][Optimization][Distributed Optimization] This paper proposes a totally asynchronous Generalized Momentum (GM) distributed optimization algorithm that guarantees linear convergence without assuming any upper bo…
+  [AAAI 2026][Optimization][Distributed Optimization] This paper proposes a totally asynchronous Generalized Momentum (GM) distributed optimization algorithm that guarantees linear convergence without assuming any upper bound on communication or computation delays. On a Fashion-MNIST classification task, the proposed method requires 71% fewer iterations than gradient descent, 41% fewer than Heavy Ball, and 19% fewer than Nesterov accelerated gradient.
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "No Delay Bound"
   - "Linear Convergence"
 date: 2026-05-08
-content_hash: 44d5c3a5769d41f8
+content_hash: 331db016d9556a56
 ---
 
 # A Distributed Asynchronous Generalized Momentum Algorithm Without Delay Bounds
@@ -133,11 +133,11 @@ The paper's core technical paradigm — "a single step is not a contraction, but
 
 ## Related Papers
 
+- [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](../../ICLR2026/optimization/high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
 - [\[ICML 2026\] Mirror Descent Under Generalized Smoothness](../../ICML2026/optimization/mirror_descent_under_generalized_smoothness.md)
 - [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
+- [\[ICLR 2026\] Birch SGD: A Tree Graph Framework for Local and Asynchronous SGD Methods](../../ICLR2026/optimization/birch_sgd_a_tree_graph_framework_for_local_and_asynchronous_sgd_methods.md)
 - [\[ICML 2026\] Interpretability and Generalization Bounds for Learning Spatial Physics](../../ICML2026/optimization/interpretability_and_generalization_bounds_for_learning_spatial_physics.md)
-- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](../../ICLR2026/optimization/mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
-- [\[ICML 2026\] Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent](../../ICML2026/optimization/pseudospectral_bounds_for_transient_amplification_in_coupled_gradient_descent.md)
 
 </div>
 

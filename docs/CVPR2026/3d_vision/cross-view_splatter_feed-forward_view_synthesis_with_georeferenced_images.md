@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the low coverage and difficulty of large-scale ground image collection in outdoor scenes, this paper proposes Cross-View Splatter: a feed-forward network that fuses GPS-tagged ground photos with orthorectified satellite images from public map services into a unified 3D coordinate system. By predicting pixel-
+  [CVPR 2026][3D Vision][Feed-forward 3D reconstruction] To address the low coverage and difficulty of large-scale ground image collection in outdoor scenes, this paper proposes Cross-View Splatter: a feed-forward network that fuses GPS-tagged ground photos with orthorectified satellite images from public map services into a unified 3D coordinate system. By predicting pixel-aligned Gaussians for both ground (perspective) and satellite (orthographic) views…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward 3D reconstruction"
+  - "Gaussian Splatting"
+  - "Cross-view"
+  - "Satellite imagery"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 8f6ac7ca126b2437
+content_hash: 14dac7fbeacbb86c
 ---
+
 # Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,10 @@ Metropolis Dataset (36 test scenes, 2 input + 2 novel views), PSNR:
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
 - [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
+- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
+- [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
+- [\[CVPR 2026\] Reliev3R: Relieving Feed-forward 3D Reconstruction from Multi-View Geometric Annotations](reliev3r_relieving_feed-forward_3d_reconstruction_from_multi-view_geometric_annot.md)
 - [\[CVPR 2026\] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting](hierarchical_visual_relocalization_with_nearest_view_synthesis_from_feature_gaus.md)
 
 </div>

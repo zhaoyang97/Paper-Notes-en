@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MVP: Multiple View Prediction Improves GUI Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the instability where "minor screenshot perturbations cause drastic coordinate prediction jumps" in GUI grounding models, this paper proposes the training-free MVP framework. It crops multiple sub-views using instruction-vision attention for independent prediction, then performs spatial clustering on these c
+  [CVPR 2026][Multimodal VLM][GUI grounding] To address the instability where "minor screenshot perturbations cause drastic coordinate prediction jumps" in GUI grounding models, this paper proposes the training-free MVP framework. It crops multiple sub-views using instruction-vision attention for independent prediction, then performs spatial clustering on these coordinates, selecting the center of the largest cluster as the final output. It improves Qwen3VL-32B from 55.3 to 74.…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "GUI grounding"
+  - "multi-view reasoning"
+  - "training-free"
+  - "attention cropping"
+  - "coordinate clustering"
 date: 2026-05-08
-content_hash: 2dec8ac0952dfb4c
+content_hash: 644e49f702a0db7a
 ---
+
 # MVP: Multiple View Prediction Improves GUI Grounding
 
 **Conference**: CVPR 2026  
@@ -117,10 +123,20 @@ Conducted on ScreenSpot-Pro with GTA1-7B:
 - Value: ⭐⭐⭐⭐ Practical, training-free improvement for GUI agents.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
+- [\[CVPR 2026\] GUI-SAGE: Enhancing GUI Automation with Self-Explanatory Learning](gui-sage_enhancing_gui_automation_with_self-explanatory_learning.md)
+- [\[ACL 2025\] Aria-UI: Visual Grounding for GUI Instructions](../../ACL2025/multimodal_vlm/aria-ui_visual_grounding_for_gui_instructions.md)
+- [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
+- [\[CVPR 2026\] Concept-Aware Batch Sampling Improves Language-Image Pretraining](concept-aware_batch_sampling_improves_language-image_pretraining.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)

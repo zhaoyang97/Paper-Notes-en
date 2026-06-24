@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge
 description: >-
-  [NeurIPS 2025][Schrödinger Bridge] This paper proposes the Unbalanced Mean Field Schrödinger Bridge (UMFSB) framework and the CytoBridge deep learning algorithm…
+  [NeurIPS 2025][Schrödinger Bridge] This paper proposes the Unbalanced Mean Field Schrödinger Bridge (UMFSB) framework and the CytoBridge deep learning algorithm, which simultaneously model unbalanced stochastic cell dynamics and cell-cell interactions from sparse temporal snapshot data.
 tags:
   - "NeurIPS 2025"
   - "Schrödinger Bridge"
@@ -11,7 +11,7 @@ tags:
   - "single-cell RNA sequencing"
   - "optimal transport"
 date: 2026-05-08
-content_hash: 395692f4611100a8
+content_hash: 48ab6dfbb1521fca
 ---
 
 # Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge
@@ -146,7 +146,7 @@ Training proceeds in two stages: a **pretraining stage** (sequentially initializ
 - [\[NeurIPS 2025\] Learning non-equilibrium diffusions with Schrödinger bridges: from exactly solvable to simulation-free](learning_non-equilibrium_diffusions_with_schrödinger_bridges_from_exactly_solvab.md)
 - [\[NeurIPS 2025\] Rethinking Losses for Diffusion Bridge Samplers](rethinking_losses_for_diffusion_bridge_samplers.md)
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](normalization_in_attention_dynamics.md)
-- [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
+- [\[NeurIPS 2025\] Learning Dynamics of RNNs in Closed-Loop Environments](learning_dynamics_of_rnns_in_closed-loop_environments.md)
 
 </div>
 

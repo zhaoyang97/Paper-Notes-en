@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bias Similarity Measurement: A Black-Box Audit of Fairness Across LLMs
 description: >-
-  [ICLR 2026][LLM Safety][CKA] This work reconstructs isolated scalar evaluations of "how fair a model is" into a **relational measurement** (Bias Similarity Measurement, BSM) that identifies "which models are similar in fairness and why." Using a suite of similarity functions spanning scalars, distributions, behaviors, and representations, a black-
+  [ICLR2026][LLM Safety][Bias Similarity] This work reconstructs isolated scalar evaluations of "how fair a model is" into a **relational measurement** (Bias Similarity Measurement, BSM) that identifies "which models are similar in fairness and why." Using a suite of similarity functions spanning scalars, distributions, behaviors, and representations, a black-box audit was conducted on 30 LLMs with over 1 million prompts. The findings reveal that instruction tuning primarily ac…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - CKA
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Bias Similarity"
+  - "Fairness Auditing"
+  - "Instruction Tuning"
+  - "Abstention"
+  - "CKA"
 date: 2026-05-08
-content_hash: ae84340fcc645c29
+content_hash: c3e1dab57f517a7a
 ---
+
 # Bias Similarity Measurement: A Black-Box Audit of Fairness Across LLMs
 
 **Conference**: ICLR2026  

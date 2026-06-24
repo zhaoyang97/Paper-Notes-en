@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] EmotionHallucer is a hallucination evaluation benchmark for MLLM emotion understanding. It decomposes emotion hallucinations into two primary dimensions: "Emotional Psychology Knowledge" and "Real Multimodal Emotion Perception." Using paired basic/hallucinated binary QA, it detects whether models can both make fundamen
+  [ICLR2026][Hallucination Detection][Emotion Hallucination] EmotionHallucer is a hallucination evaluation benchmark for MLLM emotion understanding. It decomposes emotion hallucinations into two primary dimensions: "Emotional Psychology Knowledge" and "Real Multimodal Emotion Perception." Using paired basic/hallucinated binary QA, it detects whether models can both make fundamental emotional judgments and reject plausible but incorrect emotional descriptions. Furthermore…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR2026"
+  - "Hallucination Detection"
+  - "Emotion Hallucination"
+  - "Multimodal Large Language Models (MLLMs)"
+  - "Evaluation Benchmark"
+  - "Emotional Psychology"
+  - "Adversarial QA"
 date: 2026-05-08
-content_hash: a8e5a2cab563b57e
+content_hash: 88fb874d0a423fd5
 ---
+
 # EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models
 
 **Conference**: ICLR2026  
@@ -117,16 +123,16 @@ Compared to general benchmarks (like POPE or AMBER) that check for object consis
 - **Value**: ⭐⭐⭐⭐⭐ Essential for social intelligence and reliable human-AI interaction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
-- [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](../../CVPR2026/hallucination/exposing_and_evaluating_hallucinations_for_gui_grounding.md)
 - [\[ICLR 2026\] Look Carefully: Adaptive Visual Reinforcements in Multimodal Large Language Models for Hallucination Mitigation](look_carefully_adaptive_visual_reinforcements_in_multimodal_large_language_model.md)
 - [\[ACL 2025\] Beyond Facts: Evaluating Intent Hallucination in Large Language Models](../../ACL2025/hallucination/intent_hallucination_eval.md)
 - [\[AAAI 2026\] Verb Mirage: Unveiling and Assessing Verb Concept Hallucinations in Multimodal Large Language Models](../../AAAI2026/hallucination/verb_mirage_unveiling_and_assessing_verb_concept_hallucinations_in_multimodal_la.md)
+- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
 
 </div>
 

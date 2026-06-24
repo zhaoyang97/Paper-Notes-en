@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] This work introduces the GEOPERCEIVE benchmark (geometric perception evaluation based on unambiguous DSL) and the GEODPO framework (translator-guided reinforcement learning). It enables VLMs to maintain natural language output while utilizing an NL→DSL translator to calculate fine-grained reward signals, significantly
+  [ICLR 2026][Multimodal VLM][Geometric Perception] This work introduces the GEOPERCEIVE benchmark (geometric perception evaluation based on unambiguous DSL) and the GEODPO framework (translator-guided reinforcement learning). It enables VLMs to maintain natural language output while utilizing an NL→DSL translator to calculate fine-grained reward signals, significantly enhancing geometric primitive perception and downstream reasoning capabilities.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - Reinforcement Learning
-  - DPO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Geometric Perception"
+  - "Visual Language Models"
+  - "Domain-Specific Language"
+  - "Reinforcement Learning"
+  - "DPO"
 date: 2026-05-08
-content_hash: 3ba05606b01dc5ac
+content_hash: 8ab6f5504db23279
 ---
+
 # Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning
 
 **Conference**: ICLR 2026  

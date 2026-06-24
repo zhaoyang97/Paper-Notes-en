@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VAST: Video Ability-Stratified Taxonomy for Data-Efficient Video Reasoning
 description: >-
-  [CVPR 2026][Video Understanding][MLLM] VAST advocates for organizing video reasoning training data by "underlying reasoning abilities" rather than "task formats." It proposes a three-tier cognitive taxonomy (Perception/Reasoning/Cognition) with the accompanying VAST-15K/VAST-Bench. Utilizing the Video-VAST reinforcement learning framework, which adds only a
+  [CVPR 2026][VLM Reasoning][Video reasoning] VAST advocates for organizing video reasoning training data by "underlying reasoning abilities" rather than "task formats." It proposes a three-tier cognitive taxonomy (Perception/Reasoning/Cognition) with the accompanying VAST-15K/VAST-Bench. Utilizing the Video-VAST reinforcement learning framework, which adds only a consistency reward without modifying the architecture, it achieves 66.3% on MVBench…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - MLLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video reasoning"
+  - "ability-stratified taxonomy"
+  - "data-efficient RL"
+  - "consistency reward"
+  - "MLLM"
 date: 2026-05-08
-content_hash: d1b133fa3951fd5c
+content_hash: ea4535e062dd9044
 ---
+
 # VAST: Video Ability-Stratified Taxonomy for Data-Efficient Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -109,10 +114,10 @@ Core finding: Higher accuracy achieved with significantly lower compute and data
 ## Related Papers
 
 - [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
-- [\[CVPR 2026\] Towards Data-Efficient Video Pre-training with Frozen Image Foundation Models](towards_data-efficient_video_pre-training_with_frozen_image_foundation_models.md)
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
+- [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
+- [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
 - [\[CVPR 2026\] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)
-- [\[CVPR 2026\] MDS-VQA: Model-Informed Data Selection for Video Quality Assessment](mds-vqa_model-informed_data_selection_for_video_quality_assessment.md)
 
 </div>
 

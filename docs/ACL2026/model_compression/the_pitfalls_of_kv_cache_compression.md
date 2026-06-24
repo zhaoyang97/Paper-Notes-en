@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Pitfalls of KV Cache Compression
 description: >-
-  [ACL 2026][Model Compression][eviction bias] This paper identifies that KV cache compression leads to selective forgetting and system prompt leakage in multi-instruction prompts. The issue stems from uneven eviction across different instructions and the erroneous deletion of critical tokens. The authors propose two simple modifications—whitelist retention and fai
+  [ACL2026][Model Compression][KV cache compression] This paper identifies that KV cache compression leads to selective forgetting and system prompt leakage in multi-instruction prompts. The issue stems from uneven eviction across different instructions and the erroneous deletion of critical tokens. The authors propose two simple modifications—whitelist retention and fair eviction—to significantly reduce leakage and stabilize instruction following.
 tags:
-  - ACL 2026
-  - Model Compression
-  - eviction bias
+  - "ACL2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "instruction following"
+  - "system prompt leakage"
+  - "eviction bias"
+  - "fair eviction"
 date: 2026-05-08
-content_hash: 0709304a570e452a
+content_hash: 14dcdd50896d15e5
 ---
+
 # The Pitfalls of KV Cache Compression
 
 **Conference**: ACL2026  
@@ -146,10 +151,10 @@ The proposed modifications yield stable gains. A composite score (averaging gain
 ## Related Papers
 
 - [\[ACL 2026\] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)
-- [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](../../ICML2026/model_compression/semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
 - [\[ACL 2026\] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference](heterocache_a_dynamic_retrieval_approach_to_heterogeneous_kv_cache_compression_f.md)
-- [\[ACL 2026\] DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing](dash-kv_accelerating_long-context_llm_inference_via_asymmetric_kv_cache_hashing.md)
 - [\[NeurIPS 2025\] Inference-Time Hyper-Scaling with KV Cache Compression](../../NeurIPS2025/model_compression/inference-time_hyper-scaling_with_kv_cache_compression.md)
+- [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](../../ICML2026/model_compression/semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
+- [\[NeurIPS 2025\] KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction](../../NeurIPS2025/model_compression/kvzip_query-agnostic_kv_cache_compression_with_context_reconstruction.md)
 
 </div>
 

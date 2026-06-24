@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mitigating Semantic Collapse in Partially Relevant Video Retrieval
 description: >-
-  [NeurIPS 2025][Model Compression][partially relevant video retrieval] To address semantic collapse in Partially Relevant Video Retrieval (PRVR), this paper proposes Text Correlation Preservation Learning (TCPL) and Cross…
+  [NeurIPS 2025][Model Compression][partially relevant video retrieval] To address semantic collapse in Partially Relevant Video Retrieval (PRVR), this paper proposes Text Correlation Preservation Learning (TCPL) and Cross-Branch Video Alignment (CBVA), which mitigate collapse phenomena in the text and video embedding spaces respectively, achieving substantial improvements in retrieval accuracy.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "token merging"
 date: 2026-05-08
-content_hash: 9d41092b833e5101
+content_hash: 6533b614e0d50ccf
 ---
 
 # Mitigating Semantic Collapse in Partially Relevant Video Retrieval
@@ -182,8 +182,8 @@ $$\mathcal{L} = \mathcal{L}_{\text{retrieval}} + \alpha \mathcal{L}_{\text{TCPL}
 
 ## Related Papers
 
+- [\[CVPR 2026\] Adaptive Video Distillation: Mitigating Oversaturation and Temporal Collapse in Few-Step Generation](../../CVPR2026/model_compression/adaptive_video_distillation_mitigating_oversaturation_and_temporal_collapse_in_f.md)
 - [\[NeurIPS 2025\] Explaining and Mitigating Crosslingual Tokenizer Inequities](explaining_and_mitigating_crosslingual_tokenizer_inequities.md)
-- [\[AAAI 2026\] Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval](../../AAAI2026/model_compression/prototype-based_semantic_consistency_alignment_for_domain_adaptive_retrieval.md)
 - [\[NeurIPS 2025\] Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement](towards_effective_federated_graph_foundation_model_via_mitigating_knowledge_enta.md)
 - [\[NeurIPS 2025\] One-Step Diffusion-Based Image Compression with Semantic Distillation](one-step_diffusion-based_image_compression_with_semantic_distillation.md)
 - [\[NeurIPS 2025\] AdmTree: Compressing Lengthy Context with Adaptive Semantic Trees](admtree_compressing_lengthy_context_with_adaptive_semantic_trees.md)

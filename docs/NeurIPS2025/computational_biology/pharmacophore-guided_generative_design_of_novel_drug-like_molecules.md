@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules
 description: >-
-  [NeurIPS 2025][Computational Biology][Pharmacophore guidance] This paper proposes a pharmacophore-guided molecular generation framework that simultaneously maximizes pharmacophore similarity and minimizes structural simi…
+  [NeurIPS 2025][Computational Biology][Pharmacophore guidance] This paper proposes a pharmacophore-guided molecular generation framework that simultaneously maximizes pharmacophore similarity and minimizes structural similarity within the reward function of a reinforcement learning model (FREED++), generating candidate drug molecules that retain bioactivity features while exhibiting high structural novelty.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "drug design"
   - "structural diversity"
 date: 2026-05-08
-content_hash: 290ebc6292650437
+content_hash: 9d7bdb484b6bf39a
 ---
 
 # Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules
@@ -138,11 +138,11 @@ Case study: targeting the alpha estrogen receptor (PDB ID: 8AWG) for breast canc
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
+- [\[ICML 2025\] UniMoMo: Unified Generative Modeling of 3D Molecules for De Novo Binder Design](../../ICML2025/computational_biology/unimomo_unified_generative_modeling_of_3d_molecules_for_de_novo_binder_design.md)
 - [\[NeurIPS 2025\] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space](manipulating_3d_molecules_in_a_fixed-dimensional_e3-equivariant_latent_space.md)
+- [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
 - [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
 - [\[NeurIPS 2025\] GFlowNets for Learning Better Drug-Drug Interaction Representations](gflownets_for_learning_better_drug-drug_interaction_representations.md)
-- [\[AAAI 2026\] Distributional Priors Guided Diffusion for Generating 3D Molecules in Low Data Regimes](../../AAAI2026/computational_biology/distributional_priors_guided_diffusion_for_generating_3d_molecules_in_low_data_r.md)
 
 </div>
 

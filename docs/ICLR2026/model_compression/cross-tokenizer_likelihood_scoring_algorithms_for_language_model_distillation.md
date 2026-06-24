@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cross-Tokenizer Likelihood Scoring Algorithms for Language Model Distillation
 description: >-
-  [ICLR 2026][Model Compression][BPE] This paper explores the recursive merge structure of BPE tokenization and proposes a "relative alphabet" framework. This allows teacher models to calculate exact sequence likelihoods on student vocabularies that differ from their own, enabling the direct application of classic KL distillation to cross-tokenizer scenari
+  [ICLR2026][Model Compression][Cross-tokenizer distillation] This paper explores the recursive merge structure of BPE tokenization and proposes a "relative alphabet" framework. This allows teacher models to calculate exact sequence likelihoods on student vocabularies that differ from their own, enabling the direct application of classic KL distillation to cross-tokenizer scenarios. It achieves a 2%+ improvement over SOTA on GSM8K distillation and saves 12% VRAM during vocabula…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - BPE
+  - "ICLR2026"
+  - "Model Compression"
+  - "Cross-tokenizer distillation"
+  - "BPE"
+  - "Likelihood scoring"
+  - "Vocabulary pruning"
+  - "Relative alphabet"
 date: 2026-05-08
-content_hash: 42be8fcde8899f47
+content_hash: a0a55d74267f7386
 ---
+
 # Cross-Tokenizer Likelihood Scoring Algorithms for Language Model Distillation
 
 **Conference**: ICLR2026  
@@ -149,7 +154,7 @@ Vocabulary Pruning (Qwen2.5-1.5B-Instruct, original vocab 151,643, truncated to 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

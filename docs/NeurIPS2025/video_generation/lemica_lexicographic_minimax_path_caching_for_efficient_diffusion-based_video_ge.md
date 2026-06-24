@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][diffusion acceleration] This paper proposes LeMiCa, a training-free acceleration framework for diffusion-based video generation that formulates cache scheduling as a lexicographic minimax…
+  [NeurIPS 2025 Spotlight][Video Generation][diffusion acceleration] This paper proposes LeMiCa, a training-free acceleration framework for diffusion-based video generation that formulates cache scheduling as a lexicographic minimax path optimization problem on a directed acyclic graph (DAG), achieving simultaneous gains in speed and quality (2.9× speedup on Latte; LPIPS as low as 0.05 on Open-Sora) via global error control.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Video Generation"
   - "diffusion acceleration"
   - "caching"
   - "DAG optimization"
   - "lexicographic minimax"
 date: 2026-05-08
-content_hash: e1854e1307aa4302
+content_hash: 2e047fa97d6b5b44
 ---
 
 # LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation
@@ -141,11 +141,11 @@ Varying the scale parameter of the sampling schedule (0.5–1.5), LeMiCa consist
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
+- [\[ICLR 2026\] Uniform Discrete Diffusion with Metric Path for Video Generation](../../ICLR2026/video_generation/uniform_discrete_diffusion_with_metric_path_for_video_generation.md)
 - [\[ICLR 2026\] PreciseCache: Precise Feature Caching for Efficient and High-fidelity Video Generation](../../ICLR2026/video_generation/precisecache_precise_feature_caching_for_efficient_and_high-fidelity_video_gener.md)
-- [\[NeurIPS 2025\] Training-Free Efficient Video Generation via Dynamic Token Carving](training-free_efficient_video_generation_via_dynamic_token_carving.md)
+- [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
+- [\[ICLR 2026\] SteinsGate: Injecting Causality into Diffusion Models with Path Integral for Long Video Generation](../../ICLR2026/video_generation/steinsgate_adding_causality_to_diffusions_for_long_video_generation_via_path_int.md)
 - [\[ICCV 2025\] V.I.P.: Iterative Online Preference Distillation for Efficient Video Diffusion Models](../../ICCV2025/video_generation/vip_iterative_online_preference_distillation_for_efficient_video_diffusion_model.md)
-- [\[ICCV 2025\] LeanVAE: An Ultra-Efficient Reconstruction VAE for Video Diffusion Models](../../ICCV2025/video_generation/leanvae_an_ultra-efficient_reconstruction_vae_for_video_diffusion_models.md)
 
 </div>
 

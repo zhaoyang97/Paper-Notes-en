@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Post-Training Quantization for Video Matting
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes PTQ4VM, the first post-training quantization framework specifically designed for video matting models. By utilizing a "Block-wise Initial Quantization + Global Affine Correction + Optical Flow Assistance" triad, it reduces errors by 10%–20% compared to existing PTQ methods under 4-bit settings, appr
+  [ICLR 2026][Model Compression][Post-training quantization] This paper proposes PTQ4VM, the first post-training quantization framework specifically designed for video matting models. By utilizing a "Block-wise Initial Quantization + Global Affine Correction + Optical Flow Assistance" triad, it reduces errors by 10%–20% compared to existing PTQ methods under 4-bit settings, approaching full-precision performance while achieving an 8× reduction in computational cost.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "Video matting"
+  - "Optical flow prior"
+  - "BN statistics correction"
+  - "Low-bit quantization"
 date: 2026-05-08
-content_hash: 3cdfe0f0bca80885
+content_hash: 5ece06f695fd0ca9
 ---
+
 # Post-Training Quantization for Video Matting
 
 **Conference**: ICLR 2026  
@@ -140,8 +146,8 @@ Under W8A8, the proposed method nearly matches or locally exceeds FP32 performan
 - [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 - [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
 - [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[ICLR 2026\] LogART: Pushing the Limit of Efficient Logarithmic Post-Training Quantization](logart_pushing_the_limit_of_efficient_logarithmic_post-training_quantization.md)
+- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
 
 </div>
 

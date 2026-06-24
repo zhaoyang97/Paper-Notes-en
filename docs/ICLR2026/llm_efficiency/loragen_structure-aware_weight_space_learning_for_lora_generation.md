@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LoRAGen: Structure-Aware Weight Space Learning for LoRA Generation
 description: >-
-  [ICLR 2026][LLM Efficiency][MoE] LoRAGen focuses on the "structural characteristics of the LoRA parameter space" by employing **weight space loss on the full adaptation matrix $\Delta W$** and a **module-aware MoE decoder**. This allows a latent diffusion model to generate LoRA parameters directly from natural language task descriptions, achieving per
+  [ICLR 2026][LLM Efficiency][LoRA Generation] LoRAGen focuses on the "structural characteristics of the LoRA parameter space" by employing **weight space loss on the full adaptation matrix $\Delta W$** and a **module-aware MoE decoder**. This allows a latent diffusion model to generate LoRA parameters directly from natural language task descriptions, achieving performance close to task-specific LoRAs in-distribution and exceeding baselines by nearly 5 points on unseen tasks.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - MoE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "LoRA Generation"
+  - "Weight Space Learning"
+  - "Latent Diffusion Model"
+  - "MoE"
+  - "Zero-shot Adaptation"
 date: 2026-05-08
-content_hash: f324d408c1e7a177
+content_hash: a6161f384ea26cf9
 ---
+
 # LoRAGen: Structure-Aware Weight Space Learning for LoRA Generation
 
 **Conference**: ICLR 2026  
@@ -132,6 +137,7 @@ Decomposing components on the FLAN subset ($L_{\text{ang}}$ / $L_{\text{spec}}$ 
 - **Value**: ⭐⭐⭐⭐ Provides methodological insights for parameter generation and efficient adaptation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

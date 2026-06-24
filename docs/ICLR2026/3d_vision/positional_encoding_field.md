@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Positional Encoding Field
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper discovers that image tokens in DiT are highly independent, with spatial coherence almost entirely determined by positional encodings (PE). Based on this, it extends 2D PE into a 3D "Positional Encoding Field" (PE-Field) with depth and hierarchy. By simply modifying the PE, the Diffusion Transformer can rearr
+  [ICLR 2026][3D Vision][Novel View Synthesis] This paper discovers that image tokens in DiT are highly independent, with spatial coherence almost entirely determined by positional encodings (PE). Based on this, it extends 2D PE into a 3D "Positional Encoding Field" (PE-Field) with depth and hierarchy. By simply modifying the PE, the Diffusion Transformer can rearrange image content in 3D space, achieving SOTA results in single-image novel view synthesis (NVS) and naturally gen…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Diffusion Transformer"
+  - "Positional Encoding"
+  - "Rotary Positional Encoding (RoPE)"
+  - "Depth-aware"
 date: 2026-05-08
-content_hash: 5d3c4ef3f117ec41
+content_hash: 6e0ad7bdf12926b0
 ---
+
 # Positional Encoding Field
 
 **Conference**: ICLR 2026  
@@ -122,16 +128,16 @@ Qualitatively, GEN3C often propagates artifacts as white streaks, whereas others
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](uniugg_unified_3d_understanding_and_generation_via_geometric-semantic_encoding.md)
 - [\[ICLR 2026\] LiTo: Surface Light Field Tokenization](lito_surface_light_field_tokenization.md)
+- [\[ICLR 2026\] Fore-Mamba3D: Mamba-based Foreground-Enhanced Encoding for 3D Object Detection](fore-mamba3d_mamba-based_foreground-enhanced_encoding_for_3d_object_detection.md)
 - [\[ICLR 2026\] MAVEN: A Mesh-Aware Volumetric Encoding Network for Simulating 3D Flexible Deformation](maven_a_mesh-aware_volumetric_encoding_network_for_simulating_3d_flexible_deform.md)
 - [\[CVPR 2026\] SoPE: Spherical Coordinate-Based Positional Embedding for Enhancing Spatial Perception of 3D LVLMs](../../CVPR2026/3d_vision/sope_spherical_coordinate-based_positional_embedding_for_enhancing_spatial_perce.md)
-- [\[ICLR 2026\] WAFT: Warping-Alone Field Transforms for Optical Flow](waft_warping-alone_field_transforms_for_optical_flow.md)
 
 </div>
 

@@ -4,15 +4,16 @@ title: >-
 description: >-
   [ICLR 2026][Time Series][probabilistic forecasting] The authors propose the Probabilistic Scenarios paradigm, which replaces sampling by directly outputting a finite set of {scenario, probability} pairs. Using TimePrism—a model consisting of only three parallel linear layers—they achieve 9/10 SOTA results across 5 benchmark datasets.
 tags:
-  - ICLR 2026
-  - Time Series
-  - probabilistic forecasting
-  - scenario generation
-  - discrete probability
-  - linear model
+  - "ICLR 2026"
+  - "Time Series"
+  - "probabilistic forecasting"
+  - "scenario generation"
+  - "discrete probability"
+  - "linear model"
 date: 2026-05-08
-content_hash: b7db04f1ca7ca788
+content_hash: 53d3700009de5c98
 ---
+
 # From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting
 
 **Conference**: ICLR 2026  
@@ -141,11 +142,11 @@ Performance gains tend to saturate at $N=625$.
 
 ## Related Papers
 
+- [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
+- [\[ICLR 2026\] Reliable Probabilistic Forecasting of Irregular Time Series via Marginal Consistent Flows](reliable_probabilistic_forecasting_of_irregular_time_series_through_marginalizat.md)
 - [\[ICML 2026\] Beyond Extrapolation: Knowledge Utilization Paradigm with Bidirectional Inspiration for Time Series Forecasting](../../ICML2026/time_series/beyond_extrapolation_knowledge_utilization_paradigm_with_bidirectional_inspirati.md)
 - [\[AAAI 2026\] Scaling LLM Speculative Decoding: Non-Autoregressive Forecasting in Large-Batch Scenarios](../../AAAI2026/time_series/scaling_llm_speculative_decoding_non-autoregressive_forecasting_in_large-batch_s.md)
 - [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
-- [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
-- [\[ICLR 2026\] Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants](perturbed_dynamic_time_warping_a_probabilistic_framework_and_generalized_variant.md)
 
 </div>
 

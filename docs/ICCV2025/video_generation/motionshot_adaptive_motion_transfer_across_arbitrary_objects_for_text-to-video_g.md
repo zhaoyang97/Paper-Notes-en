@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation
 description: >-
-  [ICCV 2025][Video Generation][motion transfer] This paper proposes MotionShot, a training-free motion transfer framework that achieves high-fidelity motion transfer between arbitrary reference–target object pairs with si…
+  [ICCV 2025][Video Generation][motion transfer] This paper proposes MotionShot, a training-free motion transfer framework that achieves high-fidelity motion transfer between arbitrary reference–target object pairs with significant appearance and structural differences, via a two-level motion alignment strategy combining high-level semantic alignment and low-level morphological alignment.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "TPS warping"
   - "temporal attention guidance"
 date: 2026-05-08
-content_hash: 85cfab2ec4caa1fd
+content_hash: 9d114d9ee6dda90e
 ---
 
 # MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation
@@ -180,7 +180,7 @@ MotionShot is a **fully training-free** framework:
 - [\[ICCV 2025\] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models](efficientmt_efficient_temporal_adaptation_for_motion_transfer_in_text-to-video_d.md)
 - [\[ICCV 2025\] Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer](decouple_and_track_benchmarking_and_improving_video_diffusion_transformers_for_m.md)
 - [\[ICCV 2025\] DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization](dualreal_adaptive_joint_training_for_lossless_identity-motion_fusion_in_video_cu.md)
-- [\[NeurIPS 2025\] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation](../../NeurIPS2025/video_generation/foresight_adaptive_layer_reuse_for_accelerated_and_highquali.md)
+- [\[CVPR 2025\] DiTFlow: Video Motion Transfer with Diffusion Transformers](../../CVPR2025/video_generation/video_motion_transfer_with_diffusion_transformers.md)
 
 </div>
 

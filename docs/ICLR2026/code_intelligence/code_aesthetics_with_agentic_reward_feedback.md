@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Code Aesthetics with Agentic Reward Feedback
 description: >-
-  [ICLR 2026][Code Intelligence][GRPO] This paper defines programming tasks where visual outcomes are critical, such as web design and chart generation, as "code aesthetics" problems. It constructs the AesCode-358K dataset, the OpenDesign evaluation set, and an agentic reward framework consisting of execution, static aesthetic, and interactive aesthetic age
+  [ICLR 2026][Code Intelligence][Code Aesthetics] This paper defines programming tasks where visual outcomes are critical, such as web design and chart generation, as "code aesthetics" problems. It constructs the AesCode-358K dataset, the OpenDesign evaluation set, and an agentic reward framework consisting of execution, static aesthetic, and interactive aesthetic agents. By training small-scale AesCoder models using GRPO-AR, a 4B model outperforms GPT-4o, GPT-4.1…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - GRPO
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Code Aesthetics"
+  - "Web Generation"
+  - "Visual Code"
+  - "Agentic Reward"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 2cdb0c943a14b984
+content_hash: 7a8781c47a5cf6a4
 ---
+
 # Code Aesthetics with Agentic Reward Feedback
 
 **Conference**: ICLR 2026  

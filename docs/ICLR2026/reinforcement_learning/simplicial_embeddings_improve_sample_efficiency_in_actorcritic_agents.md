@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Simplicial Embeddings Improve Sample Efficiency in Actor-Critic Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][actor-critic] This paper introduces Simplicial Embeddings (SEM) as a lightweight geometric constraint for representation layers in actor-critic networks. By mapping hidden features of the actor and critic into a product space of multiple simplices, it mitigates representation collapse caused by non-stationary bootstrapping. The meth
+  [ICLR2026][Reinforcement Learning][Simplicial Embeddings] This paper introduces Simplicial Embeddings (SEM) as a lightweight geometric constraint for representation layers in actor-critic networks. By mapping hidden features of the actor and critic into a product space of multiple simplices, it mitigates representation collapse caused by non-stationary bootstrapping. The method improves sample efficiency across FastTD3, FastSAC, PPO, and various robotic and Atari environments…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - actor-critic
-  - FastTD3
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Simplicial Embeddings"
+  - "Actor-Critic"
+  - "Sample Efficiency"
+  - "Representation Collapse"
+  - "FastTD3"
 date: 2026-05-08
-content_hash: a6e3f116bc02a998
+content_hash: 6d051d39b4eda744
 ---
+
 # Simplicial Embeddings Improve Sample Efficiency in Actor-Critic Agents
 
 **Conference**: ICLR2026  
@@ -130,8 +134,8 @@ The method does not modify basic actor-critic losses. FastTD3 continues to use p
 - Value: ⭐⭐⭐⭐⭐ Highly practical for researchers in actor-critic and robotic control due to its low implementation cost and consistent gains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

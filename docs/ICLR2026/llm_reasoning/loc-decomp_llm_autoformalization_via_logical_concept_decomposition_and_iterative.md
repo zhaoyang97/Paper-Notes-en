@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LoC-Decomp: LLM Autoformalization via Logical Concept Decomposition and Iterative Feedback Correction
 description: >-
-  [ICLR 2026][LLM Reasoning][Autoformalization] LoC-Decomp utilizes a CoT-like "Logical Concept Decomposition" template to decompose natural language mathematical propositions into modular Lean 4 components. It then employs a "divide-and-conquer back-translation" approach for fine-grained semantic consistency self-checking. By integrating semantic errors and compile
+  [ICLR 2026][Reasoning][Autoformalization] LoC-Decomp utilizes a CoT-like "Logical Concept Decomposition" template to decompose natural language mathematical propositions into modular Lean 4 components. It then employs a "divide-and-conquer back-translation" approach for fine-grained semantic consistency self-checking. By integrating semantic errors and compiler syntax errors into an alternating iterative rectification loop, it elevates the formalization success rate on Putnam…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Autoformalization
-  - Lean 4
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Autoformalization"
+  - "Lean 4"
+  - "Semantic Consistency Check"
+  - "Logical Concept Decomposition"
+  - "Iterative Feedback Correction"
 date: 2026-05-08
-content_hash: 9a578671c43aa93e
+content_hash: 8c83fa28e97387f4
 ---
+
 # LoC-Decomp: LLM Autoformalization via Logical Concept Decomposition and Iterative Feedback Correction
 
 **Conference**: ICLR 2026  
@@ -144,9 +148,9 @@ The template + few-shot alone outperforms the baseline by 18%. After three round
 
 - [\[ICLR 2026\] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning](divide_and_abstract_autoformalization_via_decomposition_and_abstraction_learning.md)
 - [\[ICLR 2026\] ProofFlow: A Dependency Graph Approach to Faithful Proof Autoformalization](proofflow_a_dependency_graph_approach_to_faithful_proof_autoformalization.md)
+- [\[ICLR 2026\] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization](reform_reflective_autoformalization_with_prospective_bounded_sequence_optimizati.md)
 - [\[ICLR 2026\] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision](logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision.md)
 - [\[ICLR 2026\] Enhancing LLMs for Knowledge Base Question Answering by Chain-of-Decomposition](enhancing_llms_for_knowledge_base_question_answering_by_chain-of-decomposition.md)
-- [\[ICLR 2026\] ActivationReasoning: Logical Reasoning in Latent Activation Spaces](activationreasoning_logical_reasoning_in_latent_activation_spaces.md)
 
 </div>
 

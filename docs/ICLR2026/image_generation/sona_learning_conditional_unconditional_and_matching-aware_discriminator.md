@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SONA: Learning Conditional, Unconditional, and Matching-Aware Discriminator
 description: >-
-  [ICLR 2026][Image Generation][matching-aware] SONA decomposes the conditional GAN discriminator into two mutually orthogonal projection terms: "naturalness" and "alignment." These are trained respectively using SAN loss and two types of Bradley–Terry losses, balanced by a constrained adaptive weighting mechanism. This achieves higher sample quality and better cond
+  [ICLR 2026][Image Generation][Conditional GAN] SONA decomposes the conditional GAN discriminator into two mutually orthogonal projection terms: "naturalness" and "alignment." These are trained respectively using SAN loss and two types of Bradley–Terry losses, balanced by a constrained adaptive weighting mechanism. This achieves higher sample quality and better conditional alignment in both class-conditional and text-to-image tasks.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - matching-aware
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Conditional GAN"
+  - "Discriminator"
+  - "matching-aware"
+  - "adaptive weighting"
+  - "orthogonal projection"
 date: 2026-05-08
-content_hash: b39858d1adcbbfd8
+content_hash: 1fcd64cc45cb903f
 ---
+
 # SONA: Learning Conditional, Unconditional, and Matching-Aware Discriminator
 
 **Conference**: ICLR 2026  
@@ -148,7 +153,7 @@ Text-to-Image (GALIP with SONA):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

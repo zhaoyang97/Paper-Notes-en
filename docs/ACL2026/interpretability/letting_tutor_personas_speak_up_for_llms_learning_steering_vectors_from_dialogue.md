@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Letting Tutor Personas Speak Up for LLMs: Learning Steering Vectors from Dialogue via Preference Optimization
 description: >-
-  [ACL 2026][Interpretability][steering vector] This paper learns a shared steering direction and tutor-specific scaling factors from real teacher-student dialogues, enabling LLMs to generate tutoring utterances closer to specific human tutor styles without explicit persona prompts.
+  [ACL2026][Interpretability][steering vector] This paper learns a shared steering direction and tutor-specific scaling factors from real teacher-student dialogues, enabling LLMs to generate tutoring utterances closer to specific human tutor styles without explicit persona prompts.
 tags:
-  - ACL 2026
-  - Interpretability
-  - steering vector
-  - tutor persona
-  - preference optimization
-  - activation steering
-  - LLM tutoring
+  - "ACL2026"
+  - "Interpretability"
+  - "steering vector"
+  - "tutor persona"
+  - "preference optimization"
+  - "activation steering"
+  - "LLM tutoring"
 date: 2026-05-08
-content_hash: 74949864c5031836
+content_hash: d9e976d3e28fd7bb
 ---
+
 # Letting Tutor Personas Speak Up for LLMs: Learning Steering Vectors from Dialogue via Preference Optimization
 
 **Conference**: ACL2026  
@@ -149,13 +150,17 @@ The mid stage is most critical: this is the core of math problem-solving. Steeri
 
 <div class="related-papers" markdown="1">
 
-- **BiPO (2024)**: Binary Preference Optimization for controllable LLM generation.
-- **Activation Steering (2023)**: Controlling LLMs by adding vectors to internal representations.
+## Related Papers
+
+- [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](../../ICML2026/interpretability/how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
+- [\[ACL 2026\] Interpretability from the Ground Up](interpretability_from_the_ground_up_stakeholder-centric_design_of_automated_scor.md)
+- [\[ICLR 2026\] The Tutor-Pupil Augmentation: Enhancing Learning and Interpretability via Input Corrections](../../ICLR2026/interpretability/the_tutor-pupil_augmentation_enhancing_learning_and_interpretability_via_input_c.md)
+- [\[ICLR 2026\] Causality ≠ Invariance: Function and Concept Vectors in LLMs](../../ICLR2026/interpretability/causality_invariance_function_and_concept_vectors_in_llms.md)
+- [\[ICLR 2026\] CoT Vectors: Transferring and Probing the Reasoning Mechanisms of LLMs](../../ICLR2026/interpretability/cot_vectors_transferring_and_probing_the_reasoning_mechanisms_of_llms.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](../../ICML2026/interpretability/how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)

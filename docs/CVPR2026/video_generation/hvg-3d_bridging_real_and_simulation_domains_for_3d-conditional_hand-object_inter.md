@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] HVG-3D: Bridging Real and Simulation Domains for 3D-Conditional Hand-Object Interaction Video Synthesis
 description: >-
-  [CVPR 2026][Video Generation][3D ControlNet] HVG-3D connects a ControlNet, which accepts 3D point cloud sequences and 3D tracking signals, to an image-to-video diffusion model (CogVideoX-5B-I2V). Equipped with a hybrid data pipeline that constructs conditions from both real videos and simulators, the model generates geometrically accurate and temporally coherent
+  [CVPR 2026][Video Generation][Hand-Object Interaction Video Generation] HVG-3D connects a ControlNet, which accepts 3D point cloud sequences and 3D tracking signals, to an image-to-video diffusion model (CogVideoX-5B-I2V). Equipped with a hybrid data pipeline that constructs conditions from both real videos and simulators, the model generates geometrically accurate and temporally coherent hand-object interaction (HOI) videos driven by simulation data…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - 3D ControlNet
-  - CogVideoX
-  - Sim-to-Real
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Hand-Object Interaction Video Generation"
+  - "3D ControlNet"
+  - "Point Cloud Conditions"
+  - "CogVideoX"
+  - "Sim-to-Real"
 date: 2026-05-08
-content_hash: 14e8735f4c60d11c
+content_hash: 9a9a3091ac39f87b
 ---
+
 # HVG-3D: Bridging Real and Simulation Domains for 3D-Conditional Hand-Object Interaction Video Synthesis
 
 **Conference**: CVPR 2026  
@@ -143,11 +146,11 @@ Qualitatively, only HVG-3D completed specified operations while maintaining the 
 
 ## Related Papers
 
+- [\[CVPR 2026\] GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection](genhoi_towards_object-consistent_hand-object_interaction_with_temporally_balance.md)
 - [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
 - [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
 - [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
 - [\[CVPR 2026\] Generative Video Motion Editing with 3D Point Tracks](generative_video_motion_editing_with_3d_point_tracks.md)
-- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Dual-Band Thermal Videography: Separating Time-Varying Reflection and Emission Near Ambient Conditions
 description: >-
-  [CVPR 2026][Others][Paper Note] A dual-band Long-Wave Infrared (LWIR) video analysis framework is proposed. By jointly utilizing spectral cues (constant dual-band emissivity ratio) and temporal cues (smooth object radiation vs. abrupt background radiation changes), the method achieves pixel-wise separation of reflection and emission components in dyn
+  [CVPR 2026][Thermal imaging] A dual-band Long-Wave Infrared (LWIR) video analysis framework is proposed. By jointly utilizing spectral cues (constant dual-band emissivity ratio) and temporal cues (smooth object radiation vs. abrupt background radiation changes), the method achieves pixel-wise separation of reflection and emission components in dynamic scenes near ambient temperature for the first time, while recovering object emissivity and temperature fields.
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Thermal imaging"
+  - "Dual-band"
+  - "Reflection-emission separation"
+  - "Thermal radiation"
+  - "Emissivity estimation"
 date: 2026-05-08
-content_hash: 0e1ea8ec0ca88dd2
+content_hash: 1af3b1451ec8221e
 ---
+
 # Dual-Band Thermal Videography: Separating Time-Varying Reflection and Emission Near Ambient Conditions
 
 **Conference**: CVPR 2026  
@@ -183,11 +188,11 @@ Ours significantly outperforms the FLIR-recommended reflector plate method for l
 
 ## Related Papers
 
-- [\[CVPR 2026\] X-band Radar Non-Line-of-Sight Imaging](x-band_radar_non-line-of-sight_imaging.md)
+- [\[CVPR 2026\] Inter-Photon-Limited Videography](inter-photon-limited_videography.md)
 - [\[ACL 2025\] Learning to Reason Over Time: Timeline Self-Reflection for Temporal Reasoning](../../ACL2025/others/tiser_timeline_self_reflection_temporal.md)
-- [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
-- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
 - [\[CVPR 2026\] Differentiable Stroke Planning with Dual Parameterization for Efficient and High-Fidelity Painting Creation](differentiable_stroke_planning_with_dual_parameterization_for_efficient_and_high.md)
+- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
+- [\[CVPR 2026\] Global Underwater Geolocation from Time-Lapse Polarization Imagery](global_underwater_geolocation_from_time-lapse_polarization_imagery.md)
 
 </div>
 

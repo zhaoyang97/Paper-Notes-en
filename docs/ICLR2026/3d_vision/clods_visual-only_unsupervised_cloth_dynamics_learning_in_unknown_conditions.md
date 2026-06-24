@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CloDS: Visual-Only Unsupervised Cloth Dynamics Learning in Unknown Conditions
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] CloDS introduces the first framework for unsupervised learning of cloth dynamics from multi-view videos. By establishing a differentiable mapping from 2D images to 3D meshes via Spatial Mapping Gaussian Splatting and resolving self-occlusion with dual-position opacity modulation, the GNN learns cloth dynamics near the
+  [ICLR 2026][3D Vision][Cloth Dynamics] CloDS introduces the first framework for unsupervised learning of cloth dynamics from multi-view videos. By establishing a differentiable mapping from 2D images to 3D meshes via Spatial Mapping Gaussian Splatting and resolving self-occlusion with dual-position opacity modulation, the GNN learns cloth dynamics near the level of full supervision without physical parameter labels.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Cloth Dynamics"
+  - "Unsupervised Learning"
+  - "Gaussian Splatting"
+  - "Differentiable Rendering"
+  - "Intuitive Physics"
 date: 2026-05-08
-content_hash: 25a76071fd4337ec
+content_hash: 257202a2690c4712
 ---
+
 # CloDS: Visual-Only Unsupervised Cloth Dynamics Learning in Unknown Conditions
 
 **Conference**: ICLR 2026  

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Discovering and Steering Interpretable Concepts in Large Generative Music Models
 description: >-
-  [ICLR 2026][Audio & Speech][Sparse Autoencoder] This work represents the first application of Sparse Autoencoders (SAE) to the audio/music domain, extracting interpretable musical concept features from the residual stream of the autoregressive music generation model MusicGen and leveraging these features for steerable generation.
+  [ICLR2026][Audio & Speech][Sparse Autoencoder] This work represents the first application of Sparse Autoencoders (SAE) to the audio/music domain, extracting interpretable musical concept features from the residual stream of the autoregressive music generation model MusicGen and leveraging these features for steerable generation.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Sparse Autoencoder
-  - Music Generation
-  - interpretability
-  - MusicGen
-  - Feature Steering
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Sparse Autoencoder"
+  - "Music Generation"
+  - "interpretability"
+  - "MusicGen"
+  - "Feature Steering"
 date: 2026-05-08
-content_hash: e322b1948a857c85
+content_hash: fb1ec166fe3fe635
 ---
+
 # Discovering and Steering Interpretable Concepts in Large Generative Music Models
 
 **Conference**: ICLR2026  
@@ -136,15 +137,15 @@ where $\mathbf{W}_{d,j}$ is the learned direction, $\beta$ is the maximum activa
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Steering Autoregressive Music Generation with Recursive Feature Machines](steering_autoregressive_music_generation_with_recursive_feature_machines.md)
-- [\[ICLR 2026\] Music Flamingo: Scaling Music Understanding in Audio Language Models](music_flamingo_scaling_music_understanding_in_audio_language_models.md)
 - [\[AAAI 2026\] Aligning Generative Music AI with Human Preferences: Methods and Challenges](../../AAAI2026/audio_speech/aligning_generative_music_ai_with_human_preferences_methods_and_challenges.md)
+- [\[ICLR 2026\] Music Flamingo: Scaling Music Understanding in Audio Language Models](music_flamingo_scaling_music_understanding_in_audio_language_models.md)
 - [\[ICLR 2026\] Confident and Adaptive Generative Speech Recognition via Risk Control](confident_and_adaptive_generative_speech_recognition_via_risk_control.md)
-- [\[ICLR 2026\] Automatic Stage Lighting Control: Is it a Rule-Driven Process or Generative Task?](automatic_stage_lighting_control_is_it_a_rule-driven_process_or_generative_task.md)
+- [\[ICML 2026\] Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech](../../ICML2026/audio_speech/sparse_autoencoders_for_interpretable_emotion_control_in_text-to-speech.md)
 
 </div>
 

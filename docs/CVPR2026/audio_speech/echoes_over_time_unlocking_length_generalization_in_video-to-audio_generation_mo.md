@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models
 description: >-
-  [CVPR 2026][Audio & Speech][Mamba] Ours proposes MMHNet, a multi-modal hierarchical network based on a hierarchical architecture and non-causal Mamba-2. It achieves length generalization capabilities—training on short segments (8s) while generating high-quality aligned audio for long videos (5+ minutes)—significantly outperforming existing methods on Un
+  [CVPR 2026][Audio & Speech][Video-to-Audio] Ours proposes MMHNet, a multi-modal hierarchical network based on a hierarchical architecture and non-causal Mamba-2. It achieves length generalization capabilities—training on short segments (8s) while generating high-quality aligned audio for long videos (5+ minutes)—significantly outperforming existing methods on UnAV100 and LongVale benchmarks.
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - Mamba
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Video-to-Audio"
+  - "Long-sequence generation"
+  - "Hierarchical networks"
+  - "Mamba"
+  - "Multi-modal alignment"
 date: 2026-05-08
-content_hash: c5ff1d0eeee95f72
+content_hash: f7440e89d53884df
 ---
+
 # Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models
 
 **Conference**: CVPR 2026  
@@ -121,15 +126,16 @@ The model is trained using a conditional flow matching objective on the VGGSound
 - Value: ⭐⭐⭐⭐ Solves practical V2A length generalization bottlenecks; direct application value in film/game sound effects.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
 - [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
 - [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](pavas_physics-aware_video-to-audio_synthesis.md)
 - [\[CVPR 2026\] Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods](unlocking_strong_supervision_a_data-centric_study_of_general-purpose_audio_pre-t.md)
-- [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
+- [\[CVPR 2026\] EchoFoley: Event-Centric Hierarchical Control for Video Grounded Creative Sound Generation](echofoley_event-centric_hierarchical_control_for_video_grounded_creative_sound_g.md)
 
 </div>
 

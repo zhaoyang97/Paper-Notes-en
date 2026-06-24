@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Prediction with Expert Advice under Local Differential Privacy
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper investigates the online learning problem of "Prediction with Expert Advice" under Local Differential Privacy (LDP) constraints. It first notes that the classic random walk algorithm RW-FTPL naturally satisfies LDP. Building on this, it introduces two improvements: RW-AdaBatch, which utilizes the "few switche
+  [ICLR 2026][Online Learning][Prediction with expert advice] This paper investigates the online learning problem of "Prediction with Expert Advice" under Local Differential Privacy (LDP) constraints. It first notes that the classic random walk algorithm RW-FTPL naturally satisfies LDP. Building on this, it introduces two improvements: RW-AdaBatch, which utilizes the "few switches" property for adaptive batching to achieve privacy amplification with minimal utility loss when da…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Online Learning"
+  - "Learning Theory"
+  - "Differential Privacy"
+  - "Prediction with expert advice"
+  - "local differential privacy"
+  - "random walk"
+  - "privacy amplification"
+  - "dynamic environments"
 date: 2026-05-08
-content_hash: 656494cb4de91e5e
+content_hash: 80d5a98f51e53dbd
 ---
+
 # Prediction with Expert Advice under Local Differential Privacy
 
 **Conference**: ICLR 2026  
@@ -124,15 +132,16 @@ RW-Meta outperformed other algorithms in all settings, leading the strongest CDP
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Asymptotic Optimality of the High-Dimensional Gaussian Mechanism and Improved Low-Dimensional Mechanisms for Differential Privacy](../../ICML2026/learning_theory/asymptotic_optimality_of_the_high-dimensional_gaussian_mechanism_and_improved_lo.md)
+- [\[ICLR 2026\] Identifiability Challenges in Sparse Linear Ordinary Differential Equations](identifiability_challenges_in_sparse_linear_ordinary_differential_equations.md)
 - [\[ICLR 2026\] Why We Need New Benchmarks for Local Intrinsic Dimension Estimation](why_we_need_new_benchmarks_for_local_intrinsic_dimension_estimation.md)
 - [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
 - [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
-- [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
 
 </div>
 

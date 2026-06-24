@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering
 description: >-
-  [ACL 2026][Information Retrieval & RAG][PPO] The authors extend "Search + Reasoning" RL frameworks (e.g., Search-R1 / R1-Searcher) from single-turn QA to **multi-turn conversational QA**. They propose ChatR1: a framework that jointly optimizes reasoning, searching, and answering end-to-end via PPO. It introduces an "intent-aware reward" using token-F1 between mod
+  [ACL 2026][Information Retrieval & RAG][Conversational Question Answering] The authors extend "Search + Reasoning" RL frameworks (e.g., Search-R1 / R1-Searcher) from single-turn QA to **multi-turn conversational QA**. They propose ChatR1: a framework that jointly optimizes reasoning, searching, and answering end-to-end via PPO. It introduces an "intent-aware reward" using token-F1 between model-generated search queries and human-authored rewrites as a turn-level dense reward.…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - PPO
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Conversational Question Answering"
+  - "Retrieval-Augmented Generation"
+  - "Intent Reward"
+  - "PPO"
+  - "Multi-turn Reasoning"
 date: 2026-05-08
-content_hash: afbba685d162eacb
+content_hash: 92c50bf8f65170a0
 ---
+
 # ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering
 
 **Conference**: ACL 2026  

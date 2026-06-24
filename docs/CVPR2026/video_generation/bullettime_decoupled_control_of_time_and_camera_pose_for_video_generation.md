@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BulletTime: Decoupled Control of Time and Camera Pose for Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Time-RoPE] To address the issue where video diffusion models couple "scene dynamics" and "camera movement" on the same video-time axis, BulletTime decomposes it into two orthogonal conditional paths: "world time $\tau_{world}$" and "camera pose $c$". It uses Time-RoPE + AdaLN to inject continuous time and 4D-RoPE + Camera-AdaLN t
+  [CVPR 2026][Video Generation][4D Controllable Generation] To address the issue where video diffusion models couple "scene dynamics" and "camera movement" on the same video-time axis, BulletTime decomposes it into two orthogonal conditional paths: "world time $\tau_{world}$" and "camera pose $c$". It uses Time-RoPE + AdaLN to inject continuous time and 4D-RoPE + Camera-AdaLN to inject viewpoints. A synthetic dataset with independent time/camera variations is utilized to superv…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Time-RoPE
-  - AdaLN
+  - "CVPR 2026"
+  - "Video Generation"
+  - "4D Controllable Generation"
+  - "Time-Camera Decoupling"
+  - "Time-RoPE"
+  - "AdaLN"
+  - "Video Diffusion"
 date: 2026-05-08
-content_hash: f9823df5ee703014
+content_hash: 423750a041c19752
 ---
+
 # BulletTime: Decoupled Control of Time and Camera Pose for Video Generation
 
 **Conference**: CVPR 2026  
@@ -165,10 +169,10 @@ World Time Conditioning (Fixed camera; Table 4):
 ## Related Papers
 
 - [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
+- [\[CVPR 2026\] EditCtrl: Disentangled Local and Global Control for Real-Time Generative Video Editing](editctrl_disentangled_local_and_global_control_for_real-time_generative_video_ed.md)
 - [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
-- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
 - [\[CVPR 2026\] ExPose: Reinforcing Video Generation Models for Extreme Pose Estimation](expose_reinforcing_video_generation_models_for_extreme_pose_estimation.md)
-- [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](unified_camera_positional_encoding_for_controlled_video_generation.md)
+- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
 
 </div>
 

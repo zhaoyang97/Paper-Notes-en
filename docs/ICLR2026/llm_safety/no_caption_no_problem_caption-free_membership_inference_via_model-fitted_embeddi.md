@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings
 description: >-
-  [ICLR 2026][LLM Safety][Diffusion Model] The authors propose MoFit, the first caption-free Membership Inference Attack (MIA) framework for diffusion models. By constructing surrogate images and conditional embeddings overfitted to the target model, MoFit leverages the asymmetric sensitivity of member samples to conditional mismatch to achieve effective infere
+  [ICLR 2026][LLM Safety][Membership Inference Attack] The authors propose MoFit, the first caption-free Membership Inference Attack (MIA) framework for diffusion models. By constructing surrogate images and conditional embeddings overfitted to the target model, MoFit leverages the asymmetric sensitivity of member samples to conditional mismatch to achieve effective inference.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Diffusion Model
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Membership Inference Attack"
+  - "Diffusion Models"
+  - "Caption-free setting"
+  - "Model-fitted embeddings"
+  - "Privacy auditing"
 date: 2026-05-08
-content_hash: cdb62f18b3a7a469
+content_hash: 733c6a4320c16776
 ---
+
 # No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings
 
 **Conference**: ICLR 2026  
@@ -145,9 +150,9 @@ Subtracting $\mathcal{L}_{\text{uncond}}$ removes bias stemming from image compl
 
 - [\[ACL 2026\] Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](../../ACL2026/llm_safety/do_multimodal_rag_systems_leak_data_a_comprehensive_evaluation_of_membership_inf.md)
 - [\[ICLR 2026\] Information-Theoretic Membership Inference for Granular Quantification of Memorization](information-theoretic_membership_inference_for_granular_quantification_of_memori.md)
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
 - [\[ICLR 2026\] All Code, No Thought: Language Models Struggle to Reason in Ciphered Language](all_code_no_thought_language_models_struggle_to_reason_in_ciphered_language.md)
-- [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](../../ACL2026/llm_safety/membership_inference_attacks_on_llm-based_recommender_systems.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Once Upon an Input: Reasoning via Per-Instance Program Synthesis
 description: >-
-  [NeurIPS 2025][Code Intelligence][Program Synthesis] This paper proposes PIPS (Per-Instance Program Synthesis), which iteratively refines programs through instance-level program synthesis and structured feedback…
+  [NeurIPS 2025][Code Intelligence][Program Synthesis] This paper proposes PIPS (Per-Instance Program Synthesis), which iteratively refines programs through instance-level program synthesis and structured feedback, while dynamically selecting between direct reasoning and program synthesis via a confidence measure. PIPS achieves an 8.6% improvement in harmonic mean accuracy across 30 benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "Neuro-Symbolic"
   - "Multi-Step Reasoning"
 date: 2026-05-08
-content_hash: e3330fd034857db5
+content_hash: d3e836b60cafc259
 ---
 
 # Once Upon an Input: Reasoning via Per-Instance Program Synthesis
@@ -122,10 +122,10 @@ No training is required; the method is entirely based on inference-time prompt e
 ## Related Papers
 
 - [\[NeurIPS 2025\] Program Synthesis via Test-Time Transduction](program_synthesis_via_test-time_transduction.md)
-- [\[NeurIPS 2025\] Searching Latent Program Spaces](searching_latent_program_spaces.md)
+- [\[ACL 2025\] Program Synthesis Benchmark for Visual Programming in XLogoOnline Environment](../../ACL2025/code_intelligence/program_synthesis_benchmark_for_visual_programming_in_xlogoonline_environment.md)
 - [\[ICCV 2025\] TikZero: Zero-Shot Text-Guided Graphics Program Synthesis](../../ICCV2025/code_intelligence/tikzero_zero-shot_text-guided_graphics_program_synthesis.md)
-- [\[NeurIPS 2025\] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning](codecrash_exposing_llm_fragility_to_misleading_natural_language_in_code_reasonin.md)
-- [\[ACL 2026\] The Path Not Taken: Duality in Reasoning about Program Execution](../../ACL2026/code_intelligence/the_path_not_taken_duality_in_reasoning_about_program_execution.md)
+- [\[ICLR 2026\] RefineStat: Efficient Exploration for Probabilistic Program Synthesis](../../ICLR2026/code_intelligence/refinestat_efficient_exploration_for_probabilistic_program_synthesis.md)
+- [\[ICLR 2026\] Gradient-Based Program Synthesis with Neurally Interpreted Languages](../../ICLR2026/code_intelligence/gradient-based_program_synthesis_with_neurally_interpreted_languages.md)
 
 </div>
 

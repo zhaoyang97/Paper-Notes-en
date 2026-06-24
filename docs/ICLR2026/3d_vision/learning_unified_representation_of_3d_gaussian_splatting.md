@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Unified Representation of 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][VAE] Native 3DGS parameters $\boldsymbol{\theta}=\{\mu,\mathbf{q},\mathbf{s},\mathbf{c},o\}$ suffer from non-uniqueness and numerical heterogeneity, making them unsuitable as a learning space for neural networks. This paper proposes the **Submanifold Field** representation: mapping each Gaussian primitive to a continuous co
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] Native 3DGS parameters $\boldsymbol{\theta}=\{\mu,\mathbf{q},\mathbf{s},\mathbf{c},o\}$ suffer from non-uniqueness and numerical heterogeneity, making them unsuitable as a learning space for neural networks. This paper proposes the **Submanifold Field** representation: mapping each Gaussian primitive to a continuous color field on its isoprobability ellipsoid. This mapping is proven to be injective…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - VAE
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Submanifold Field Representation"
+  - "Representation Uniqueness"
+  - "VAE"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: c1948508b28cce73
+content_hash: 973d3ade9fa45643
 ---
+
 # Learning Unified Representation of 3D Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -152,11 +157,11 @@ Regressing SF embeddings from spatial coordinates using a lightweight MLP is sig
 
 ## Related Papers
 
-- [\[ICLR 2026\] Light of Normals: Unified Feature Representation for Universal Photometric Stereo](light_of_normals_unified_feature_representation_for_universal_photometric_stereo.md)
+- [\[ICLR 2026\] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning](megs2_memory-efficient_gaussian_splatting_via_spherical_gaussians_and_unified_pr.md)
 - [\[ICLR 2026\] Open-Set Semantic Gaussian Splatting SLAM with Expandable Representation](open-set_semantic_gaussian_splatting_slam_with_expandable_representation.md)
+- [\[ICLR 2026\] Light of Normals: Unified Feature Representation for Universal Photometric Stereo](light_of_normals_unified_feature_representation_for_universal_photometric_stereo.md)
 - [\[ICLR 2026\] Weight Space Representation Learning on Diverse NeRF Architectures](weight_space_representation_learning_on_diverse_nerf_architectures.md)
 - [\[CVPR 2026\] UniLight: A Unified Representation for Lighting](../../CVPR2026/3d_vision/unilight_a_unified_representation_for_lighting.md)
-- [\[ICLR 2026\] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning](megs2_memory-efficient_gaussian_splatting_via_spherical_gaussians_and_unified_pr.md)
 
 </div>
 

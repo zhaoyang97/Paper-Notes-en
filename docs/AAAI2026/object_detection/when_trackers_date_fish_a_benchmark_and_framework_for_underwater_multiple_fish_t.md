@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] When Trackers Date Fish: A Benchmark and Framework for Underwater Multiple Fish Tracking
 description: >-
-  [AAAI 2026][Object Detection][Underwater Multiple Fish Tracking] This paper proposes MFT25, a large-scale underwater multiple fish tracking dataset (15 sequences, 408K annotations), and SU-T…
+  [AAAI 2026 Oral][Object Detection][Underwater Multiple Fish Tracking] This paper proposes MFT25, a large-scale underwater multiple fish tracking dataset (15 sequences, 408K annotations), and SU-T, a tracking framework combining UKF with FishIoU, achieving state-of-the-art performance of 34.1 HOTA and 44.6 IDF1. Statistical analyses further reveal fundamental differences between fish tracking and terrestrial object tracking.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Object Detection"
   - "Underwater Multiple Fish Tracking"
   - "MOT Benchmark"
@@ -12,7 +12,7 @@ tags:
   - "FishIoU"
   - "Nonlinear Motion Model"
 date: 2026-05-08
-content_hash: dcb72145e0fa2172
+content_hash: 36e5b4ce2fea5c09
 ---
 
 # When Trackers Date Fish: A Benchmark and Framework for Underwater Multiple Fish Tracking
@@ -211,11 +211,11 @@ UKF consistently outperforms all other motion models, validating that nonlinear 
 
 ## Related Papers
 
-- [\[AAAI 2026\] AerialMind: Towards Referring Multi-Object Tracking in UAV Scenarios](aerialmind_towards_referring_multi-object_tracking_in_uav_sc.md)
+- [\[CVPR 2025\] Multiple Object Tracking as ID Prediction](../../CVPR2025/object_detection/multiple_object_tracking_as_id_prediction.md)
+- [\[CVPR 2026\] GMT: Effective Global Framework for Multi-Camera Multi-Target Tracking](../../CVPR2026/object_detection/gmt_effective_global_framework_for_multi-camera_multi-target_tracking.md)
+- [\[ECCV 2024\] WALKER: Self-supervised Multiple Object Tracking by Walking on Temporal Appearance Graphs](../../ECCV2024/object_detection/walker_self-supervised_multiple_object_tracking_by_walking_on_temporal_appearanc.md)
 - [\[AAAI 2026\] Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection](towards_multiple_missing_values-resistant_unsupervised_graph_anomaly_detection.md)
-- [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
-- [\[AAAI 2026\] LoReTTA: A Low Resource Framework To Poison Continuous Time Dynamic Graphs](loretta_a_low_resource_framework_to_poison_continuous_time_dynamic_graphs.md)
-- [\[CVPR 2026\] CompAgent: An Agentic Framework for Visual Compliance Verification](../../CVPR2026/object_detection/compagent_an_agentic_framework_for_visual_compliance_verification.md)
+- [\[AAAI 2026\] AerialMind: Towards Referring Multi-Object Tracking in UAV Scenarios](aerialmind_towards_referring_multi-object_tracking_in_uav_sc.md)
 
 </div>
 

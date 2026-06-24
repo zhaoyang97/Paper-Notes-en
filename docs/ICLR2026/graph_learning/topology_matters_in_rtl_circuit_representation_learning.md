@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Topology Matters in RTL Circuit Representation Learning
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] Addressing the issue where existing RTL representation learning treats Verilog as ordinary code and ignores hardware topology, TopoRTL decomposes circuits into register cones and constructs a "Graph + Text Summary" dual-modality. By injecting three topology-aware positional encodings into the attention mechanism and em
+  [ICLR 2026][Graph Learning][RTL Representation Learning] Addressing the issue where existing RTL representation learning treats Verilog as ordinary code and ignores hardware topology, TopoRTL decomposes circuits into register cones and constructs a "Graph + Text Summary" dual-modality. By injecting three topology-aware positional encodings into the attention mechanism and employing topology-guided cross-modal alignment, it surpasses 7B-parameter Large Language Models in PPA p…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "RTL Representation Learning"
+  - "Circuit Topology"
+  - "Multi-modal Alignment"
+  - "Positional Encoding"
+  - "PPA Prediction"
 date: 2026-05-08
-content_hash: f2c3e3f562c12a37
+content_hash: a79d2ae75a74f4a4
 ---
+
 # Topology Matters in RTL Circuit Representation Learning
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,10 @@ TopoRTL significantly outperforms 7B text models with far fewer parameters (Area
 ## Related Papers
 
 - [\[CVPR 2026\] R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII](../../CVPR2026/graph_learning/r2g_multi_view_circuit_graph_benchmark_suite_from_rtl_to_gdsii.md)
+- [\[ICLR 2026\] TopoFormer: Topology Meets Attention for Graph Learning](topoformer_topology_meets_attention_for_graph_learning.md)
 - [\[ICLR 2026\] On the Trade-off Between Expressivity and Privacy in Graph Representation Learning](on_the_trade-off_between_expressivity_and_privacy_in_graph_representation_learni.md)
 - [\[ICLR 2026\] Temporal Graph Thumbnail: Robust Representation Learning with Global Evolutionary Skeleton](temporal_graph_thumbnail_robust_representation_learning_with_global_evolutionary.md)
 - [\[ICLR 2026\] Global and Local Topology-Aware Graph Generation via Dual Conditioning Diffusion](global_and_local_topology-aware_graph_generation_via_dual_conditioning_diffusion.md)
-- [\[ICLR 2026\] $\ell_1$ Latent Distance Based Continuous-Time Graph Representation](ell_1_latent_distance_based_continuous-time_graph_representation.md)
 
 </div>
 

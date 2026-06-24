@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Ours proposes C-MET (Cross-Modal Emotion Transfer), which models the mapping of emotion semantic vectors between speech and facial expression spaces. It achieves speech-driven generation of extended emotions (e.g., sarcasm, charm) in talking face videos for the first time, with emotion accuracy exceeding SOTA by 14%.
+  [CVPR 2026][Image Generation][Emotion editing] Ours proposes C-MET (Cross-Modal Emotion Transfer), which models the mapping of emotion semantic vectors between speech and facial expression spaces. It achieves speech-driven generation of extended emotions (e.g., sarcasm, charm) in talking face videos for the first time, with emotion accuracy exceeding SOTA by 14%.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Emotion editing"
+  - "cross-modal transfer"
+  - "talking face generation"
+  - "emotion semantic vector"
+  - "expanded emotions"
 date: 2026-05-08
-content_hash: c07b2148dcedfd4f
+content_hash: d019219efb77fb23
 ---
+
 # Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video
 
 **Conference**: CVPR 2026  
@@ -146,9 +152,9 @@ Plug-and-play verification:
 
 - [\[CVPR 2026\] EmoStyle: Emotion-Driven Image Stylization](emostyle_emotion-driven_image_stylization.md)
 - [\[CVPR 2026\] MOS: Mitigating Optical-SAR Modality Gap for Cross-Modal Ship Re-Identification](mos_mitigating_optical-sar_modality_gap_for_cross-modal_ship_re-identification.md)
+- [\[CVPR 2026\] Harmony: Harmonizing Audio and Video Generation through Cross-Task Synergy](harmony_harmonizing_audio_and_video_generation_through_cross-task_synergy.md)
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
-- [\[CVPR 2026\] Harmonic Canvas: Inversion-Free Editing for Visually-Guided Music Style Transfer](harmonic_canvas_inversion-free_editing_for_visually-guided_music_style_transfer.md)
-- [\[CVPR 2025\] EmoDubber: Towards High Quality and Emotion Controllable Movie Dubbing](../../CVPR2025/image_generation/emodubber_towards_high_quality_and_emotion_controllable_movie_dubbing.md)
+- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
 
 </div>
 

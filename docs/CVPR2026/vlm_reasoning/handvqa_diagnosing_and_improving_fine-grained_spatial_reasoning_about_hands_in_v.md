@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] The authors construct HandVQA, a large-scale diagnostic benchmark containing 1.6M+ multiple-choice questions automatically generated from 3D hand joint annotations regarding joint angles, distances, and relative positions. The benchmark systematically exposes severe deficiencies in current VLMs' fine-grained hand spati
+  [CVPR 2026][VLM Reasoning][Hand spatial reasoning] The authors construct HandVQA, a large-scale diagnostic benchmark containing 1.6M+ multiple-choice questions automatically generated from 3D hand joint annotations regarding joint angles, distances, and relative positions. The benchmark systematically exposes severe deficiencies in current VLMs' fine-grained hand spatial reasoning and demonstrates that models fine-tuned on HandVQA achieve zero-shot transfer to downstream task…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Hand spatial reasoning"
+  - "VQA benchmark"
+  - "Vision-language models"
+  - "Fine-grained understanding"
+  - "Zero-shot transfer"
 date: 2026-05-08
-content_hash: 242569631257cca0
+content_hash: 2402bee78607de8b
 ---
+
 # HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -128,11 +133,11 @@ The improvement phase uses LoRA for parameter-efficient fine-tuning of the VLM. 
 
 ## Related Papers
 
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
-- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
-- [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
 - [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
-- [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
+- [\[CVPR 2026\] Thinking Beyond Labels: Vocabulary-Free Fine-Grained Recognition using Reasoning-Augmented LMMs](thinking_beyond_labels_vocabulary-free_fine-grained_recognition_using_reasoning-.md)
+- [\[CVPR 2026\] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps](reasonmap_towards_fine-grained_visual_reasoning_from_transit_maps.md)
+- [\[CVPR 2026\] BOP-Ask: Object-Interaction Reasoning for Vision-Language Models](bop-ask_object-interaction_reasoning_for_vision-language_models.md)
 
 </div>
 

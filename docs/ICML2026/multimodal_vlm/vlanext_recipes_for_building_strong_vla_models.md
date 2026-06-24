@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] VLANeXt：构建强大 VLA 模型的配方
+  [Paper Note] VLANeXt: A Recipe for Building Robust VLA Models
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper systematically explores the design space of VLA models, distilling 12 key design principles from over 500 controlled experiments to construct the efficient and powerful VLANeXt model. It surpasses SOTA on the LIBERO benchmark and validates these design principles through real-world robot tasks.
+  [ICML 2026][Multimodal VLM][Vision-Language-Action Models] This paper systematically explores the design space of VLA models, distilling 12 key design principles from over 500 controlled experiments to construct the efficient and powerful VLANeXt model. It surpasses SOTA on the LIBERO benchmark and validates these design principles through real-world robot tasks.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Vision-Language-Action Models"
+  - "Robot Learning"
+  - "VLA Design Space"
+  - "Multimodal Fusion"
+  - "Instruction-conditioned Control"
 date: 2026-05-08
-content_hash: 22e302f4473bebba
+content_hash: ecf16fa1c13c41dd
 ---
+
 # VLANeXt: A Recipe for Building Robust VLA Models
 
 **Conference**: ICML 2026  
@@ -141,11 +147,11 @@ VLANeXt surpasses all baselines with a 2.5B model size (approx. 1/3 the size of 
 
 ## Related Papers
 
-- [\[ICML 2026\] VLA-Arena：评估视觉语言动作模型的开源框架](vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
+- [\[ICML 2026\] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models](vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
+- [\[CVPR 2026\] MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals](../../CVPR2026/multimodal_vlm/merlin_building_low-snr_robust_multimodal_llms_for_electromagnetic_signals.md)
 - [\[ICML 2026\] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds](any3d-vla_enhancing_vla_robustness_via_diverse_point_clouds.md)
-- [\[ICML 2026\] TRAP: 用对抗 patch 劫持 VLA 的 CoT 推理实现目标行为攻击](trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
-- [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](../../AAAI2026/multimodal_vlm/ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
-- [\[CVPR 2026\] Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](../../CVPR2026/multimodal_vlm/joint-aligned_latent_action_towards_scalable_vla_pretraining_in_the_wild.md)
+- [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
+- [\[ICML 2026\] TRAP: Hijacking CoT Reasoning of VLA for Targeted Behavior Attacks via Adversarial Patches](trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
 
 </div>
 

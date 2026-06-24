@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MAS²: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][Multi-Agent System] MAS² enables a "Meta-Multi-Agent System" (Generator–Implementer–Rectifier triad) to architect, configure, and dynamically correct another Multi-Agent System (MAS) for specific tasks at runtime. By utilizing Collaborative Tree Optimization (CTO) for offline RL to specialize these three meta-agents, MAS² achieves up to a
+  [ICLR 2026][Multi-Agent][Multi-Agent System] MAS² enables a "Meta-Multi-Agent System" (Generator–Implementer–Rectifier triad) to architect, configure, and dynamically correct another Multi-Agent System (MAS) for specific tasks at runtime. By utilizing Collaborative Tree Optimization (CTO) for offline RL to specialize these three meta-agents, MAS² achieves up to a 19.6% improvement over SOTA MAS across 8 benchmarks while maintaining a superior cost–performance Pareto frontier.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Multi-Agent System
-  - Meta-Agent
-  - Self-Generation
-  - Self-Rectification
-  - Offline RL
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-Agent System"
+  - "Meta-Agent"
+  - "Self-Generation"
+  - "Self-Rectification"
+  - "Offline RL"
 date: 2026-05-08
-content_hash: 14bc728900d8db72
+content_hash: 8f93de770f1e7f51
 ---
+
 # MAS²: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems
 
 **Conference**: ICLR 2026  

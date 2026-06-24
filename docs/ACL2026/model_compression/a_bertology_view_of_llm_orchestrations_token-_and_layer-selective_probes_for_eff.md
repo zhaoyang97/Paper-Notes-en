@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] A BERTology View of LLM Orchestrations: Token- and Layer-Selective Probes for Efficient Single-Pass Classification
 description: >-
-  [ACL 2026][Model Compression][probing] This paper treats the $token \times layer$ hidden state tensor of a production LLM as a minable resource. By utilizing a two-stage aggregation probe that "compresses tokens first, then layers," it performs safety/sentiment classification within the same forward pass. With only 35M trainable parameters, it approaches th
+  [ACL 2026][Model Compression][probing] This paper treats the $token \times layer$ hidden state tensor of a production LLM as a minable resource. By utilizing a two-stage aggregation probe that "compresses tokens first, then layers," it performs safety/sentiment classification within the same forward pass. With only 35M trainable parameters, it approaches the performance of standalone guard models while eliminating an extra LLM call.
 tags:
-  - ACL 2026
-  - Model Compression
-  - probing
-  - BERTology
+  - "ACL 2026"
+  - "Model Compression"
+  - "probing"
+  - "hidden state reuse"
+  - "safety classification"
+  - "single forward pass"
+  - "BERTology"
 date: 2026-05-08
-content_hash: 6336710be73ae33f
+content_hash: 92ed9c0ac6347538
 ---
+
 # A BERTology View of LLM Orchestrations: Token- and Layer-Selective Probes for Efficient Single-Pass Classification
 
 **Conference**: ACL 2026  
@@ -137,8 +141,8 @@ LLM parameters are frozen throughout. Only the probe parameters $\theta$ are tra
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

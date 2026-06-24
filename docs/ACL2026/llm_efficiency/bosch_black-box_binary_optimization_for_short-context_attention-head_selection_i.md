@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs
 description: >-
-  [ACL 2026][LLM Efficiency][KV-Cache] The authors propose BOSCH, a training-free mixture-of-SWA method at the attention-head level. It models the SWA head selection as a Large Neighborhood Search (LNS) problem and decomposes it into a three-stage optimization (Layer Importance Probing → Adaptive Rate Assignment → Grouped Head Selection). It systematically
+  [ACL 2026][LLM Efficiency][Sliding Window Attention] The authors propose BOSCH, a training-free mixture-of-SWA method at the attention-head level. It models the SWA head selection as a Large Neighborhood Search (LNS) problem and decomposes it into a three-stage optimization (Layer Importance Probing → Adaptive Rate Assignment → Grouped Head Selection). It systematically outperforms layer-level heuristics and six static head-level methods across four models and four ratio sett…
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - KV-Cache
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Sliding Window Attention"
+  - "Attention Head Selection"
+  - "Black-Box Optimization"
+  - "Large Neighborhood Search"
+  - "KV-Cache"
 date: 2026-05-08
-content_hash: c843f90a6c4165f2
+content_hash: 98e38bf9553cff31
 ---
+
 # BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs
 
 **Conference**: ACL 2026  
@@ -114,16 +119,16 @@ The search is driven by a normalized loss function: $\mathcal{L} = -\hat{\mathca
 - Value: ⭐⭐⭐⭐ Practical for KV-Cache optimization in long-context LLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] SoLoPO: Unlocking Long-Context Capabilities in LLMs via Short-to-Long Preference Optimization](../../ICLR2026/llm_efficiency/solopo_unlocking_long-context_capabilities_in_llms_via_short-to-long_preference_.md)
+- [\[ICLR 2026\] Short Window Attention Enables Long-Term Memorization](../../ICLR2026/llm_efficiency/short_window_attention_enables_long-term_memorization.md)
 - [\[ICML 2025\] MoH: Multi-Head Attention as Mixture-of-Head Attention](../../ICML2025/llm_efficiency/moh_multi-head_attention_as_mixture-of-head_attention.md)
-- [\[ICML 2025\] Long-Short Alignment for Effective Long-Context Modeling in LLMs](../../ICML2025/llm_efficiency/long-short_alignment_for_effective_long-context_modeling_in_llms.md)
 - [\[ACL 2025\] LADM: Long-context Training Data Selection with Attention-based Dependency Measurement for LLMs](../../ACL2025/llm_efficiency/ladm_long_context_data.md)
-- [\[NeurIPS 2025\] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers](../../NeurIPS2025/llm_efficiency/from_shortcut_to_induction_head_how_data_diversity_shapes_algorithm_selection_in.md)
-- [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](native_hybrid_attention_for_efficient_sequence_modeling.md)
+- [\[ACL 2026\] Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention](threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l.md)
 
 </div>
 

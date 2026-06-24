@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Using an Information Bottleneck/Rate-Distortion framework to measure embeddings from 40+ LLMs and classic human taxonomic cognitive data on a unified "compression ↔ semantics" scale, this work reveals that LLMs achieve more "information-theoretically optimal" aggressive compression than humans, but at the cost of fine-
+  [ICLR 2026][Interpretability][Information Bottleneck] Using an Information Bottleneck/Rate-Distortion framework to measure embeddings from 40+ LLMs and classic human taxonomic cognitive data on a unified "compression ↔ semantics" scale, this work reveals that LLMs achieve more "information-theoretically optimal" aggressive compression than humans, but at the cost of fine-grained semantics (typicality structures). The seemingly "inefficient" human conceptual organization inste…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Information Bottleneck"
+  - "Rate-Distortion Theory"
+  - "Conceptual Representation"
+  - "Cognitive Science Alignment"
+  - "Compression-Semantic Trade-off"
+  - "LLM embedding analysis"
 date: 2026-05-08
-content_hash: 4c1ff4bb0f1a44bb
+content_hash: 1ee7f7657cbcf211
 ---
+
 # From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning
 
 **Conference**: ICLR 2026  
@@ -125,10 +132,10 @@ Low distortion means items like "robin" and "sparrow" are tightly grouped, while
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning is Forgetting: LLM Training As Lossy Compression](learning_is_forgetting_llm_training_as_lossy_compression.md)
 - [\[ICLR 2026\] Attention Sinks and Compression Valleys in LLMs are Two Sides of the Same Coin](attention_sinks_and_compression_valleys_in_llms_are_two_sides_of_the_same_coin.md)
 - [\[ICLR 2026\] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding](how_do_transformers_learn_to_associate_tokens_gradient_leading_terms_bring_mecha.md)
 - [\[ICML 2026\] Discovering Differences in Strategic Behavior Between Humans and LLMs](../../ICML2026/interpretability/discovering_differences_in_strategic_behavior_between_humans_and_llms.md)
-- [\[ICLR 2026\] Learning is Forgetting: LLM Training As Lossy Compression](learning_is_forgetting_llm_training_as_lossy_compression.md)
 - [\[ICLR 2026\] The Achilles' Heel of LLMs: How Altering a Handful of Neurons Can Cripple Language Abilities](the_achilles_heel_of_llms_how_altering_a_handful_of_neurons_can_cripple_language.md)
 
 </div>

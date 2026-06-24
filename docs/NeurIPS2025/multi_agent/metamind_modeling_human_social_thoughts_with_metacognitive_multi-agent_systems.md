@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MetaMind: Modeling Human Social Thoughts with Metacognitive Multi-Agent Systems
 description: >-
-  [NeurIPS 2025][Multi-Agent][Theory of Mind] This paper proposes MetaMind — a multi-agent framework inspired by psychological metacognition theory — that significantly enhances the social reasoning capabilities of LLMs th…
+  [NeurIPS 2025 Spotlight][Multi-Agent][Theory of Mind] This paper proposes MetaMind — a multi-agent framework inspired by psychological metacognition theory — that significantly enhances the social reasoning capabilities of LLMs through three-stage collaboration: a ToM Agent (mental state hypothesis generation), a Moral Agent (social norm-constrained refinement), and a Response Agent (response generation with self-verification). MetaMind achieves state-of-the-art performance o…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Multi-Agent"
   - "Theory of Mind"
   - "Multi-Agent Systems"
@@ -12,7 +12,7 @@ tags:
   - "Social Reasoning"
   - "LLM"
 date: 2026-05-08
-content_hash: f59a96cf8fb95ee4
+content_hash: f093721596d9e4aa
 ---
 
 # MetaMind: Modeling Human Social Thoughts with Metacognitive Multi-Agent Systems
@@ -156,11 +156,11 @@ MetaMind decomposes social understanding into three collaborative stages, each h
 
 ## Related Papers
 
+- [\[ICML 2026\] EduMirror: Modeling Educational Social Dynamics with Value-driven Multi-agent Simulation](../../ICML2026/multi_agent/edumirror_modeling_educational_social_dynamics_with_value-driven_multi-agent_sim.md)
 - [\[ACL 2026\] LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey](../../ACL2026/multi_agent/llm-based_human-agent_collaboration_and_interaction_systems_a_survey.md)
-- [\[ACL 2026\] Preference Estimation via Opponent Modeling in Multi-Agent Negotiation](../../ACL2026/multi_agent/preference_estimation_via_opponent_modeling_in_multi-agent_negotiation.md)
+- [\[ICML 2025\] ResearchTown: Simulator of Human Research Community](../../ICML2025/multi_agent/researchtown_simulator_of_human_research_community.md)
+- [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](../../ICLR2026/multi_agent/adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
 - [\[ACL 2026\] Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives](../../ACL2026/multi_agent/social_dynamics_as_critical_vulnerabilities_that_undermine_objective_decision-ma.md)
-- [\[NeurIPS 2025\] Large Language Models Miss the Multi-Agent Mark](large_language_models_miss_the_multi-agent_mark.md)
-- [\[NeurIPS 2025\] Belief-Calibrated Multi-Agent Consensus Seeking for Complex NLP Tasks](belief-calibrated_multi-agent_consensus_seeking_for_complex_nlp_tasks.md)
 
 </div>
 

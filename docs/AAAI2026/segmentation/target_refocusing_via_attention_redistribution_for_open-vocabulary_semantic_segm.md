@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Target Refocusing via Attention Redistribution for Open-Vocabulary Semantic Segmentation: An Explainability Perspective
 description: >-
-  [AAAI 2026][Segmentation][Open-vocabulary semantic segmentation] This paper systematically investigates CLIP's internal mechanisms from an explainability perspective…
+  [AAAI 2026][Segmentation][Open-vocabulary semantic segmentation] This paper systematically investigates CLIP's internal mechanisms from an explainability perspective, revealing a "distraction" phenomenon in which CLIP allocates substantial attention resources to target-irrelevant tokens in deeper layers. The proposed training-free method RF-CLIP performs attention redistribution to refocus dispersed resources onto target regions, achieving state-of-the-art performance across…
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "distraction phenomenon"
   - "training-free"
 date: 2026-05-08
-content_hash: e914d6e76dc97495
+content_hash: a5e1bc0cea74e913
 ---
 
 # Target Refocusing via Attention Redistribution for Open-Vocabulary Semantic Segmentation: An Explainability Perspective
@@ -202,10 +202,10 @@ RF-CLIP runs at twice the inference speed of ProxyCLIP while achieving 5.7% high
 ## Related Papers
 
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
-- [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
-- [\[AAAI 2026\] InfoCLIP: Bridging Vision-Language Pretraining and Open-Vocabulary Semantic Segmentation via Information-Theoretic Alignment Transfer](infoclip_bridging_vision-language_pretraining_and_open-vocab.md)
-- [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
+- [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](../../CVPR2026/segmentation/s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
+- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](../../CVPR2026/segmentation/the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 
 </div>
 

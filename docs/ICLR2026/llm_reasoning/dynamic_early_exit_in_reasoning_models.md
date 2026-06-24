@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Dynamic Early Exit in Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Test-Time Compute] DEER enables Large Reasoning Models (LRMs) to trial-answer at "reasoning switch points" within the Chain-of-Thought (CoT). It uses the confidence of these trial answers to judge if the reasoning is sufficient, allowing for training-free dynamic early exit. Across 11 models and 10 benchmarks, it reduces CoT length by an
+  [ICLR 2026][Reasoning][Large Reasoning Models] DEER enables Large Reasoning Models (LRMs) to trial-answer at "reasoning switch points" within the Chain-of-Thought (CoT). It uses the confidence of these trial answers to judge if the reasoning is sufficient, allowing for training-free dynamic early exit. Across 11 models and 10 benchmarks, it reduces CoT length by an average of 19.1%~80.1% while improving accuracy by 0.3%~5.0%.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Test-Time Compute
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Large Reasoning Models"
+  - "Chain-of-Thought"
+  - "Overthinking"
+  - "Dynamic Early Exit"
+  - "Training-free"
+  - "Test-time Compute"
 date: 2026-05-08
-content_hash: 708d65b8b51f0d3c
+content_hash: ec601614dedecb97
 ---
+
 # Dynamic Early Exit in Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -125,10 +131,10 @@ DEER falls into the category of **efficient inference and overthinking mitigatio
 ## Related Papers
 
 - [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](../../ACL2026/llm_reasoning/step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
-- [\[ICLR 2026\] Exposing Weaknesses of Large Reasoning Models through Graph Algorithm Problems](exposing_weaknesses_of_large_reasoning_models_through_graph_algorithm_problems.md)
 - [\[ACL 2026\] When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning](../../ACL2026/llm_reasoning/when_is_thinking_enough_early_exit_via_sufficiency_assessment_for_efficient_reas.md)
 - [\[ICLR 2026\] WavefrontDiffusion: Dynamic Decoding Schedule for Improved Reasoning](wavefrontdiffusion_dynamic_decoding_schedule_for_improved_reasoning.md)
-- [\[ICML 2026\] Stop When Further Reasoning Won't Help: Attention-State Adaptive Generation in Reasoning Models](../../ICML2026/llm_reasoning/stop_when_further_reasoning_wont_help_attention-state_adaptive_generation_in_rea.md)
+- [\[ICML 2026\] DyCon: Dynamic Reasoning Control via Evolving Difficulty Modeling](../../ICML2026/llm_reasoning/dycon_dynamic_reasoning_control_via_evolving_difficulty_modeling.md)
+- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
 
 </div>
 

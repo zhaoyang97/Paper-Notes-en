@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Neural Sum-of-Squares: Certifying the Nonnegativity of Polynomials with Transformers
 description: >-
-  [ICLR 2026][Optimization & Theory][Transformer] This work utilizes a Transformer to predict a "compact monomial basis" for polynomials to significantly reduce the scale of Semidefinite Programs (SDP) corresponding to Sum-of-Squares (SOS) certificates. Combined with a repair and expansion fallback mechanism that guarantees correctness, it accelerates non-negativity p
+  [ICLR 2026][Optimization][SOS Certificate] This work utilizes a Transformer to predict a "compact monomial basis" for polynomials to significantly reduce the scale of Semidefinite Programs (SDP) corresponding to Sum-of-Squares (SOS) certificates. Combined with a repair and expansion fallback mechanism that guarantees correctness, it accelerates non-negativity proofs by 100× to 2000× compared to SOTA solvers.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Transformer
-  - Algorithms with Predictions
+  - "ICLR 2026"
+  - "Optimization"
+  - "SOS Certificate"
+  - "Semidefinite Programming (SDP)"
+  - "Monomial Basis"
+  - "Transformer"
+  - "Algorithms with Predictions"
 date: 2026-05-08
-content_hash: aaf829b658835539
+content_hash: 0f0affe6f6705c66
 ---
+
 # Neural Sum-of-Squares: Certifying the Nonnegativity of Polynomials with Transformers
 
 **Conference**: ICLR 2026  
@@ -123,11 +127,11 @@ On 8-variable/degree-20 problems, the speedup over SoS.jl/TSSOS exceeds 2000×. 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Improved ℓp Regression via Iteratively Reweighted Least Squares](improved_ell_p_regression_via_iteratively_reweighted_least_squares.md)
 - [\[ICLR 2026\] Learning to Recall with Transformers Beyond Orthogonal Embeddings](learning_to_recall_with_transformers_beyond_orthogonal_embeddings.md)
 - [\[ICLR 2026\] Markovian Transformers for Informative Language Modeling](markovian_transformers_for_informative_language_modeling.md)
-- [\[ICLR 2026\] Cutting the Skip: Training Residual-Free Transformers](cutting_the_skip_training_residual-free_transformers.md)
+- [\[ICLR 2026\] Monotone Near-Zero-Sum Games: A Generalization of Convex-Concave Minimax](monotone_near-zero-sum_games_a_generalization_of_convex-concave_minimax.md)
 - [\[ICML 2026\] Towards Understanding Adam Convergence on Highly Degenerate Polynomials](../../ICML2026/optimization/towards_understanding_adam_convergence_on_highly_degenerate_polynomials.md)
-- [\[NeurIPS 2025\] Least Squares Variational Inference](../../NeurIPS2025/optimization/least_squares_variational_inference.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AAA-Gaussians: Anti-Aliased and Artifact-Free 3D Gaussian Rendering
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes AAA-Gaussians, which systematically addresses aliasing, projection distortion…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes AAA-Gaussians, which systematically addresses aliasing, projection distortion, and pop-in artifacts in 3DGS within a unified framework via three techniques: an adaptive 3D smoothing filter, a view-space perspective-correct bounding scheme, and frustum-based 3D culling. The method achieves state-of-the-art artifact-free real-time rendering under both in-distribution and out-of-distribution viewpoints.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D evaluation"
   - "real-time rendering"
 date: 2026-05-08
-content_hash: 3af012ddef1e6c72
+content_hash: c0fc0e7e15f5c76b
 ---
 
 # AAA-Gaussians: Anti-Aliased and Artifact-Free 3D Gaussian Rendering
@@ -140,9 +140,9 @@ AAA-Gaussians builds upon a hierarchical rasterizer, retaining the per-ray sorti
 ## Related Papers
 
 - [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
-- [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
 - [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
-- [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
+- [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
+- [\[NeurIPS 2025\] Anti-Aliased 2D Gaussian Splatting](../../NeurIPS2025/3d_vision/anti-aliased_2d_gaussian_splatting.md)
 - [\[ICCV 2025\] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views](no_pose_at_all_self-supervised_pose-free_3d_gaussian_splatting_from_sparse_views.md)
 
 </div>

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Harnessing Reasoning Trajectories for Hallucination Detection via Answer-agreement Representation Shaping
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] This paper proposes ARS for hallucination detection in Large Reasoning Models (LRMs). Instead of perturbing reasoning traces in the text space, ARS applies small perturbations directly to the latent representations at the end of the trace to decode counterfactual answers. Using "answer agreement" as a label, a lightwei
+  [ICML 2026][Hallucination Detection][Large Reasoning Models] This paper proposes ARS for hallucination detection in Large Reasoning Models (LRMs). Instead of perturbing reasoning traces in the text space, ARS applies small perturbations directly to the latent representations at the end of the trace to decode counterfactual answers. Using "answer agreement" as a label, a lightweight contrastive head is trained to shape trace-conditioned answer embeddings…
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Large Reasoning Models"
+  - "Latent Space Perturbation"
+  - "Counterfactual Answers"
+  - "Contrastive Representation Shaping"
 date: 2026-05-08
-content_hash: 9ee83e14efd48b31
+content_hash: 369b6b53b1434f5c
 ---
+
 # Harnessing Reasoning Trajectories for Hallucination Detection via Answer-agreement Representation Shaping
 
 **Conference**: ICML 2026  
@@ -138,11 +143,11 @@ where $\text{sim}$ is cosine similarity and $g_\phi$ is a bias-free linear proje
 
 ## Related Papers
 
+- [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](../../ICLR2026/hallucination/mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](../../ICLR2026/hallucination/harp_hallucination_detection_via_reasoning_subspace_projection.md)
 - [\[ICML 2026\] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View](from_out-of-distribution_detection_to_hallucination_detection_a_geometric_view.md)
-- [\[ACL 2026\] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination](../../ACL2026/hallucination/the_reasoning_trap_how_enhancing_llm_reasoning_amplifies_tool_hallucination.md)
+- [\[ICLR 2026\] Hallucination-aware Intermediate Representation Edit in Large Vision-Language Models](../../ICLR2026/hallucination/hallucination-aware_intermediate_representation_edit_in_large_vision-language_mo.md)
 - [\[ICML 2026\] Automatic Layer Selection for Hallucination Detection](automatic_layer_selection_for_hallucination_detection.md)
-- [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](../../CVPR2026/hallucination/understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
-- [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] X-AVDT feeds a video into a **pre-trained audio-driven diffusion model** and extracts two signals simultaneously via DDIM inversion: inversion reconstruction residuals (appearance cues) + **audio-visual cross-attention maps** inside the diffusion U-Net (lip-speech alignment cues). By fusing these to perform binary clas
+  [CVPR 2026][AI Safety][Audio-Visual Deepfake] X-AVDT feeds a video into a **pre-trained audio-driven diffusion model** and extracts two signals simultaneously via DDIM inversion: inversion reconstruction residuals (appearance cues) + **audio-visual cross-attention maps** inside the diffusion U-Net (lip-speech alignment cues). By fusing these to perform binary classification, it leverages "generator-internal forced audio-visual consistency" as a universal signal for cross-gene…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Audio-Visual Deepfake"
+  - "Cross-Attention"
+  - "DDIM Inversion"
+  - "Internal Generator Signals"
+  - "Cross-Generator Generalization"
 date: 2026-05-08
-content_hash: ecbc56fd20103af4
+content_hash: 2d30360fab997887
 ---
+
 # X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection
 
 **Conference**: CVPR 2026  
@@ -172,8 +178,8 @@ Input Representation / Loss (Table 7, AUROC):
 - [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
 - [\[CVPR 2026\] FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models](fvbench_benchmarking_deepfake_video_detection_capability_of_large_multimodal_mod.md)
 - [\[CVPR 2026\] Cross-modal Representation Learning for Diffusion-generated Image Detection](cross-modal_representation_learning_for_diffusion-generated_image_detection.md)
-- [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
 - [\[CVPR 2026\] AVFakeBench: A Comprehensive Audio-Video Forgery Detection Benchmark for AV-LMMs](avfakebench_a_comprehensive_audio-video_forgery_detection_benchmark_for_av-lmms.md)
+- [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
 
 </div>
 

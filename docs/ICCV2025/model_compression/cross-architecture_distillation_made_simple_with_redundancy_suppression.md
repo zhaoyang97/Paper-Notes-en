@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cross-Architecture Distillation Made Simple with Redundancy Suppression
 description: >-
-  [ICCV 2025][Model Compression][knowledge distillation] This paper proposes RSD (Redundancy Suppression Distillation), which extracts architecture-agnostic knowledge via cross-architecture invariance maximization and feat…
+  [ICCV 2025][Model Compression][knowledge distillation] This paper proposes RSD (Redundancy Suppression Distillation), which extracts architecture-agnostic knowledge via cross-architecture invariance maximization and feature decorrelation. Using a single simple RSD loss and a lightweight MLP decoupling module, RSD substantially outperforms OFA—the pioneering cross-architecture distillation method—on both CIFAR-100 and ImageNet-1k, while incurring only a fraction of OFA's param…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "feature decorrelation"
   - "CNN-ViT-MLP"
 date: 2026-05-08
-content_hash: 10e7a2c67ea52e82
+content_hash: 198d39e0f96d6d54
 ---
 
 # Cross-Architecture Distillation Made Simple with Redundancy Suppression
@@ -147,9 +147,9 @@ RSD as a logit distiller:
 ## Related Papers
 
 - [\[ICCV 2025\] Competitive Distillation: A Simple Learning Strategy for Improving Visual Classification](competitive_distillation_a_simple_learning_strategy_for_improving_visual_classif.md)
+- [\[ICML 2025\] From Logits to Hierarchies: Hierarchical Clustering made Simple](../../ICML2025/model_compression/from_logits_to_hierarchies_hierarchical_clustering_made_simple.md)
 - [\[NeurIPS 2025\] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](../../NeurIPS2025/model_compression/orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)
 - [\[ICCV 2025\] Knowledge Distillation with Refined Logits](knowledge_distillation_with_refined_logits.md)
-- [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](../../AAAI2026/model_compression/ctpd_cross_tokenizer_preference_distillation.md)
 - [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
 
 </div>

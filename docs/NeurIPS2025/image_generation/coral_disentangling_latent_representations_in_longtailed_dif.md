@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CORAL: Disentangling Latent Representations in Long-Tailed Diffusion
 description: >-
-  [NeurIPS 2025][Image Generation][diffusion model] This paper diagnoses the root cause of tail-class generation degradation in diffusion models trained on long-tailed data as *representation entanglement* in the U-Net bot…
+  [NeurIPS 2025][Image Generation][diffusion model] This paper diagnoses the root cause of tail-class generation degradation in diffusion models trained on long-tailed data as *representation entanglement* in the U-Net bottleneck layer, and proposes CORAL, which applies a supervised contrastive loss at the bottleneck to disentangle class representations. CORAL consistently outperforms baselines including DDPM, CBDM, and T2H on CIFAR10/100-LT, CelebA-5, and ImageNet-LT.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "latent space"
   - "representation entanglement"
 date: 2026-05-08
-content_hash: b5cbcaa8272c96cc
+content_hash: 2e53cc2d623690d1
 ---
 
 # CORAL: Disentangling Latent Representations in Long-Tailed Diffusion
@@ -128,8 +128,8 @@ The overall training objective is $\mathcal{L}_{\text{CORAL}} = \mathcal{L}_{\te
 - [\[NeurIPS 2025\] Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge](towards_general_modality_translation_with_contrastive_and_predictive_latent_diff.md)
 - [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
 - [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](../../ICCV2025/image_generation/bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
-- [\[NeurIPS 2025\] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation](vicinity-guided_discriminative_latent_diffusion_for_privacy-preserving_domain_ad.md)
-- [\[NeurIPS 2025\] A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models](a_gradient_flow_approach_to_solving_inverse_problems_with_latent_diffusion_model.md)
+- [\[ICLR 2026\] Adapting Self-Supervised Representations as a Latent Space for Efficient Generation](../../ICLR2026/image_generation/adapting_self-supervised_representations_as_a_latent_space_for_efficient_generat.md)
+- [\[ICLR 2026\] SpikeGen: Decoupling "Rod-Cone" Visual Representations with a Latent Generative Framework](../../ICLR2026/image_generation/spikegen_decoupled_rods_and_cones_visual_representation_processing_with_latent_g.md)
 
 </div>
 

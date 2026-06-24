@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards LLM-Empowered Knowledge Tracing via LLM-Student Hierarchical Behavior Alignment in Hyperbolic Space
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Knowledge Tracing] This paper proposes L-HAKT, a framework that for the first time integrates LLM dual-agent design with hyperbolic geometry for knowledge tracing. A Teacher Agent pa…
+  [AAAI 2026][Self-Supervised Learning][Knowledge Tracing] This paper proposes L-HAKT, a framework that for the first time integrates LLM dual-agent design with hyperbolic geometry for knowledge tracing. A Teacher Agent parses exercise semantics and constructs a hierarchical knowledge graph, while a Student Agent simulates individual learning behaviors to generate synthetic interaction data. Hyperbolic contrastive learning is employed to calibrate the distributional gap between…
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -13,7 +13,7 @@ tags:
   - "Contrastive Alignment"
   - "Learning Behavior Simulation"
 date: 2026-05-08
-content_hash: 00f7f59b775331f6
+content_hash: 2da7e16e39d486fa
 ---
 
 # Towards LLM-Empowered Knowledge Tracing via LLM-Student Hierarchical Behavior Alignment in Hyperbolic Space
@@ -139,10 +139,10 @@ The total loss is $\mathcal{L}_{total} = \mathcal{L}_{KT} + \alpha \mathcal{L}_{
 ## Related Papers
 
 - [\[ICML 2026\] NITP: Next Implicit Token Prediction for LLM Pre-training](../../ICML2026/self_supervised/nitp_next_implicit_token_prediction_for_llm_pre-training.md)
+- [\[NeurIPS 2025\] CleverBirds: A Multiple-Choice Benchmark for Fine-grained Human Knowledge Tracing](../../NeurIPS2025/self_supervised/cleverbirds_a_multiple-choice_benchmark_for_fine-grained_human_knowledge_tracing.md)
+- [\[ACL 2025\] Contrastive Learning on LLM Back Generation Treebank for Cross-domain Constituency Parsing](../../ACL2025/self_supervised/llm_back_gen_treebank.md)
+- [\[CVPR 2025\] Hyperbolic Category Discovery](../../CVPR2025/self_supervised/hyperbolic_category_discovery.md)
 - [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
-- [\[AAAI 2026\] Let the Void Be Void: Robust Open-Set Semi-Supervised Learning via Selective Non-Alignment](let_the_void_be_void_robust_open-set_semi-supervised_learning_via_selective_non-.md)
-- [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](../../CVPR2026/self_supervised/free-grained_hierarchical_visual_recognition.md)
-- [\[ICLR 2026\] PonderLM: Pretraining Language Models to Ponder in Continuous Space](../../ICLR2026/self_supervised/ponderlm_pretraining_language_models_to_ponder_in_continuous_space.md)
 
 </div>
 

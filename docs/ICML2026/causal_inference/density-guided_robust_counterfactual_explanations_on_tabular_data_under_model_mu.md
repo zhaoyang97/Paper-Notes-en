@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity
 description: >-
-  [ICML 2026][Causal Inference][Neural ODE] DensityFlow reformulates "generating Robust Counterfactual Explanations (RCE) under model multiplicity" as an optimal transport problem with density constraints. It uses Noise Contrastive Estimation (NCE) to train a (K+1)-way discriminator that simultaneously learns classification and class-conditional density. It then
+  [ICML 2026][Causal Inference][Counterfactual Explanations] DensityFlow reformulates "generating Robust Counterfactual Explanations (RCE) under model multiplicity" as an optimal transport problem with density constraints. It uses Noise Contrastive Estimation (NCE) to train a (K+1)-way discriminator that simultaneously learns classification and class-conditional density. It then employs a Neural ODE to transport query samples along density gradients to the high-density manifold…
 tags:
-  - ICML 2026
-  - Causal Inference
-  - Neural ODE
+  - "ICML 2026"
+  - "Causal Inference"
+  - "Counterfactual Explanations"
+  - "Model Multiplicity"
+  - "Neural ODE"
+  - "Noise Contrastive Estimation"
+  - "Density Guidance"
 date: 2026-05-08
-content_hash: dd2b2f5d7dfc03c4
+content_hash: 0b43cc40ad88419d
 ---
+
 # Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity
 
 **Conference**: ICML 2026  
@@ -125,13 +130,20 @@ Validity is significantly higher on real datasets with lower cost. Synthetic res
 - Value: ⭐⭐⭐⭐ (Efficient baseline for RCE under MM; open source)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **CeFlow**: Duong et al., 2023.
-- **Argument**: Jiang et al., 2024a.
-- **BetaRCE**: Stępka et al., 2025.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](../../ICLR2026/causal_inference/counterfactual_explanations_on_robust_perceptual_geodesics.md)
+- [\[ACL 2025\] Counterfactual Explanations for Aspect-Based Sentiment Analysis](../../ACL2025/causal_inference/counterfactual_explanations_for_aspect-based_sentiment_analysis.md)
+- [\[ICLR 2026\] Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders](../../ICLR2026/causal_inference/synthesising_counterfactual_explanations_via_label-conditional_gaussian_mixture_.md)
+- [\[AAAI 2026\] KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education](../../AAAI2026/causal_inference/ktcf_actionable_recourse_in_knowledge_tracing_via_counterfactual_explanations_fo.md)
+- [\[ICML 2026\] Investigating Memory in Model-Free RL with POPGym Arcade](investigating_memory_in_model-free_rl_with_popgym_arcade.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](../../ICLR2026/causal_inference/counterfactual_explanations_on_robust_perceptual_geodesics.md)

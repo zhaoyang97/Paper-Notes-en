@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] ShowTable introduces the new task of "Creative Table Visualization" (converting data tables into infographics) and designs a progressive self-correction pipeline coordinating MLLM (reasoning + reflection) with Diffusion models (generation + refinement). Through a specifically trained rewriting module and a refinement m
+  [CVPR 2026][Image Generation][Table Visualization] ShowTable introduces the new task of "Creative Table Visualization" (converting data tables into infographics) and designs a progressive self-correction pipeline coordinating MLLM (reasoning + reflection) with Diffusion models (generation + refinement). Through a specifically trained rewriting module and a refinement module optimized via RL, it significantly enhances the visualization quality of all baseline models on the sel…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Table Visualization"
+  - "Self-correction"
+  - "MLLM Reasoning"
+  - "Diffusion Models"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 021728dcd3d6c862
+content_hash: 50c53023827528f9
 ---
+
 # ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement
 
 **Conference**: CVPR 2026  
@@ -141,11 +145,11 @@ Using a "Quarterly Sales by Brand" table: Rewriting interprets the table into a 
 
 ## Related Papers
 
-- [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
 - [\[CVPR 2026\] PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow](psdesigner_automated_graphic_design_with_a_human-like_creative_workflow.md)
-- [\[CVPR 2026\] ProcessMaker: A Generalized Process Visualization Framework with Adaptive Sequence Steps on Diffusion Transformers](processmaker_a_generalized_process_visualization_framework_with_adaptive_sequenc.md)
-- [\[CVPR 2025\] Redefining <Creative> in Dictionary: Towards an Enhanced Semantic Understanding of Creative Generation](../../CVPR2025/image_generation/redefining_creative_in_dictionary_towards_an_enhanced_semantic_understanding_of_.md)
+- [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
+- [\[ICLR 2026\] Weak-to-Strong Diffusion with Reflection](../../ICLR2026/image_generation/weak-to-strong_diffusion_with_reflection.md)
 - [\[CVPR 2026\] A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space](a_style_is_worth_one_code_unlocking_code-to-style_image_generation_with_discrete.md)
+- [\[CVPR 2026\] DreamingComics: A Story Visualization Pipeline via Subject and Layout Customized Generation using Video Models](dreamingcomics_a_story_visualization_pipeline_via_subject_and_layout_customized_.md)
 
 </div>
 

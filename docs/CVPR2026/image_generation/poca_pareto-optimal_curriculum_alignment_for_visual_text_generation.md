@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] POCA: Pareto-Optimal Curriculum Alignment for Visual Text Generation
 description: >-
-  [CVPR 2026][Image Generation][GRPO] Addressing the conflict between "text accuracy" and "overall image harmony/aesthetics" in visual text generation, POCA reformulates GRPO multi-reward alignment as a multi-objective optimization problem. It utilizes bi-directional Pareto ranking in the joint reward space to select non-dominated (good) and dominated (poo
+  [CVPR 2026][Image Generation][Visual Text Generation] Addressing the conflict between "text accuracy" and "overall image harmony/aesthetics" in visual text generation, POCA reformulates GRPO multi-reward alignment as a multi-objective optimization problem. It utilizes bi-directional Pareto ranking in the joint reward space to select non-dominated (good) and dominated (poor) samples as positive and negative signals. Combined with an adaptive curriculum based on the ECDF of OCR…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual Text Generation"
+  - "GRPO"
+  - "Pareto Optimality"
+  - "Multi-Reward Alignment"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 1d22f19cbb9c3c6a
+content_hash: 6f4f9f17187a6332
 ---
+
 # POCA: Pareto-Optimal Curriculum Alignment for Visual Text Generation
 
 **Conference**: CVPR 2026  
@@ -141,7 +146,6 @@ Ablation of curriculum planning strategies (AnyText-benchmark EN, 300 steps):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

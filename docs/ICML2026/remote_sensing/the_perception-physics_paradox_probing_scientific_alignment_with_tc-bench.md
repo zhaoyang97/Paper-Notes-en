@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Perception-Physics Paradox: Probing Scientific Alignment with TC-Bench
 description: >-
-  [ICML 2026][Remote Sensing][Paper Note] The authors observe that Vision Foundation Models (VFMs) "appear" to predict satellite imagery well but collapse along physical axes in extreme regimes. By formalizing "scientific alignment" as "structural isomorphism," they release TC-Bench—a global tropical cyclone benchmark—and a three-tier linear probing suite (Sta
+  [ICML 2026][Remote Sensing][Scientific Alignment] The authors observe that Vision Foundation Models (VFMs) "appear" to predict satellite imagery well but collapse along physical axes in extreme regimes. By formalizing "scientific alignment" as "structural isomorphism," they release TC-Bench—a global tropical cyclone benchmark—and a three-tier linear probing suite (Static/Dynamic/Constraint) to reveal representation collapse in frozen backbones like DINO, CLIP, SigLIP…
 tags:
-  - ICML 2026
-  - Remote Sensing
+  - "ICML 2026"
+  - "Remote Sensing"
+  - "Scientific Alignment"
+  - "Structural Isomorphism"
+  - "Vision Foundation Models"
+  - "Tropical Cyclones"
+  - "Probing Evaluation"
 date: 2026-05-08
-content_hash: d92e5e1b85aae596
+content_hash: db30af42742ee41a
 ---
+
 # The Perception-Physics Paradox: Probing Scientific Alignment with TC-Bench
 
 **Conference**: ICML 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] Using a real-world riddle benchmark (VisuRiddles) and a synthesizer with structured perceptual descriptions, this paper systematically proves that the root cause of Multimodal Large Language Models (MLLMs) failing in Abstract Visual Reasoning (AVR) is **lack of fine-grained perception** rather than weak reasoning abili
+  [ICLR 2026][VLM Reasoning][Abstract Visual Reasoning] Using a real-world riddle benchmark (VisuRiddles) and a synthesizer with structured perceptual descriptions, this paper systematically proves that the root cause of Multimodal Large Language Models (MLLMs) failing in Abstract Visual Reasoning (AVR) is **lack of fine-grained perception** rather than weak reasoning ability. Based on this, it proposes the "SFT for perception, then GRPO for reasoning" two-stage training paradi…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Abstract Visual Reasoning"
+  - "Fine-grained Perception"
+  - "Visual Riddle Benchmark"
+  - "Data Synthesis"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 07fdeef949414bad
+content_hash: 737347f42f01f549
 ---
+
 # VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning
 
 **Conference**: ICLR 2026  
@@ -144,11 +149,11 @@ Changing only the input format leads to a 32~43 point jump, the strongest eviden
 
 ## Related Papers
 
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
 - [\[CVPR 2026\] Breaking the Regional Perception Bottleneck of Multimodal Large Language Models via External Reasoning Framework](../../CVPR2026/vlm_reasoning/breaking_the_regional_perception_bottleneck_of_multimodal_large_language_models_.md)
+- [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](../../NeurIPS2025/vlm_reasoning/affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
 - [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](../../CVPR2026/vlm_reasoning/chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
-- [\[ICLR 2026\] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning](visionreasoner_unified_reasoning-integrated_visual_perception_via_reinforcement_.md)
-- [\[CVPR 2026\] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps](../../CVPR2026/vlm_reasoning/reasonmap_towards_fine-grained_visual_reasoning_from_transit_maps.md)
-- [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
+- [\[ICLR 2026\] SketchThinker-R1: Towards Efficient Sketch-Style Reasoning in Large Multimodal Models](sketchthinker-r1_towards_efficient_sketch-style_reasoning_in_large_multimodal_mo.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeNOTS: Stable Deep Neural ODEs for Time Series
 description: >-
-  [ICLR 2026][Time Series][Paper Note] DeNOTS shifts the "depth" of Neural CDE from decreasing solver tolerance to explicitly lengthening integration time, and stabilizes long-duration integration with anti-phase negative feedback, achieving stronger expressivity, more stable trajectories, and lower discretization error accumulation across irregular time se
+  [ICLR 2026][Time Series][Neural Controlled Differential Equations] DeNOTS shifts the "depth" of Neural CDE from decreasing solver tolerance to explicitly lengthening integration time, and stabilizes long-duration integration with anti-phase negative feedback, achieving stronger expressivity, more stable trajectories, and lower discretization error accumulation across irregular time series classification, regression, and forecasting tasks.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Neural Controlled Differential Equations"
+  - "Time Scaling"
+  - "Negative Feedback"
+  - "Irregular Time Series"
+  - "Stability"
 date: 2026-05-08
-content_hash: bdac765176967f05
+content_hash: f617a840c09f73f4
 ---
+
 # DeNOTS: Stable Deep Neural ODEs for Time Series
 
 **Conference**: ICLR 2026  
@@ -138,6 +144,7 @@ For NFE-metric correlation, Anti-NF + Time Scaling shows Pearson correlations of
 - **Value**: ⭐⭐⭐⭐☆ Provides a clear path for making Neural CDEs deep without sacrificing numerical stability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -145,8 +152,8 @@ For NFE-metric correlation, Anti-NF + Time Scaling shows Pearson correlations of
 - [\[CVPR 2026\] Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks](../../CVPR2026/time_series/stable_spike_dual_consistency_optimization_via_bitwise_and_operations_for_spikin.md)
 - [\[ICLR 2026\] STABLE: Shift-Tolerant Allocation via Black–Litterman Using Conditional Diffusion Estimates](stable_shift-tolerant_allocation_via_black-litterman_using_conditional_diffusion.md)
 - [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](weight-space_linear_recurrent_neural_networks.md)
+- [\[ICLR 2026\] STDDN: A Deep Learning Framework for Crowd Simulation Guided by the Fluid Continuity Equation](stddn_a_physics-guided_deep_learning_framework_for_crowd_simulation.md)
 - [\[ICML 2026\] Interpretability in Deep Time Series Models Demands Semantic Alignment](../../ICML2026/time_series/interpretability_in_deep_time_series_models_demands_semantic_alignment.md)
-- [\[ICLR 2026\] Tuning the burn-in phase in training recurrent neural networks improves their performance](tuning_the_burn-in_phase_in_training_recurrent_neural_networks_improves_their_pe.md)
 
 </div>
 

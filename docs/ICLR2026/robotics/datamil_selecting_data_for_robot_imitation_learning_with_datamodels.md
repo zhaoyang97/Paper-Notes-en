@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DataMIL: Selecting Data for Robot Imitation Learning with Datamodels
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][datamodels] DataMIL transfers the datamodels (data attribution) framework from NLP/CV to robot imitation learning. It uses the policy itself to end-to-end assign an "influence score for task success" to each piece of prior data, then selects high-scoring data for co-training with target data. By replacing expensive real-robot eval
+  [ICLR2026][Robotics][Imitation Learning] DataMIL transfers the datamodels (data attribution) framework from NLP/CV to robot imitation learning. It uses the policy itself to end-to-end assign an "influence score for task success" to each piece of prior data, then selects high-scoring data for co-training with target data. By replacing expensive real-robot evaluations with a rollout-free proxy loss, it outperforms similarity-retrieval baselines by approximately 10% across 60+ s…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - datamodels
+  - "ICLR2026"
+  - "Robotics"
+  - "Imitation Learning"
+  - "Data Selection"
+  - "Datamodels"
+  - "Data Attribution"
+  - "Co-training"
 date: 2026-05-08
-content_hash: 999c30221bf11ae6
+content_hash: 6c3c9589ec00cb02
 ---
+
 # DataMIL: Selecting Data for Robot Imitation Learning with Datamodels
 
 **Conference**: ICLR2026  

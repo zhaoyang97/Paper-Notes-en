@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OpenVision: A Fully-Open, Cost-Effective Family of Advanced Vision Encoders for Multimodal Learning
 description: >-
-  [ICCV 2025][Multimodal VLM][CLIP] This paper introduces OpenVision — a fully open-source (data, training code, and weights) family of vision encoders (5.9M–632.1M parameters) trained on the CLIPS framework with the Recap…
+  [ICCV 2025][Multimodal VLM][CLIP] This paper introduces OpenVision — a fully open-source (data, training code, and weights) family of vision encoders (5.9M–632.1M parameters) trained on the CLIPS framework with the Recap-DataComp-1B dataset. When integrated into multimodal frameworks such as LLaVA, OpenVision matches or surpasses OpenAI CLIP and Google SigLIP, providing the community with a transparent and flexible alternative visual backbone.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Learning"
   - "LLaVA"
 date: 2026-05-08
-content_hash: 60fba58a24f7a158
+content_hash: 6ac38e4cccb93767
 ---
 
 # OpenVision: A Fully-Open, Cost-Effective Family of Advanced Vision Encoders for Multimodal Learning
@@ -151,11 +151,11 @@ OpenVision follows the standard dual-tower CLIP architecture: a vision encoder a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Bee: A High-Quality Corpus and Full-Stack Suite to Unlock Advanced Fully Open MLLMs](../../ICLR2026/multimodal_vlm/bee_a_high-quality_corpus_and_full-stack_suite_to_unlock_advanced_fully_open_mll.md)
 - [\[ICCV 2025\] Dynamic Multimodal Prototype Learning in Vision-Language Models](dynamic_multimodal_prototype_learning_in_vision-language_models.md)
 - [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](on_large_multimodal_models_as_open-world_image_classifiers.md)
+- [\[ICCV 2025\] Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models](multi-cache_enhanced_prototype_learning_for_test-time_generalization_of_vision-l.md)
 - [\[ICCV 2025\] Effective Training Data Synthesis for Improving MLLM Chart Understanding](effective_training_data_synthesis_for_improving_mllm_chart_understanding.md)
-- [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
-- [\[ICCV 2025\] Interpretable Zero-Shot Learning with Locally-Aligned Vision-Language Model](interpretable_zero-shot_learning_with_locally-aligned_vision-language_model.md)
 
 </div>
 

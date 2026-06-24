@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] WebSailor-V2 utilizes a complete post-training pipeline consisting of "dense cyclic knowledge graph data synthesis + sim/real dual-environment RL." This pipeline trains a 30B (3B active) MoE web agent to achieve 35.3 on BrowseComp-EN and 30.6 on HLE, surpassing the 671B DeepSeek-V3.1 and bringing open-source deep resea
+  [ICLR 2026][LLM Agent][Web Agent] WebSailor-V2 utilizes a complete post-training pipeline consisting of "dense cyclic knowledge graph data synthesis + sim/real dual-environment RL." This pipeline trains a 30B (3B active) MoE web agent to achieve 35.3 on BrowseComp-EN and 30.6 on HLE, surpassing the 671B DeepSeek-V3.1 and bringing open-source deep research agents close to the level of closed-source systems.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
-  - Deep Research
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Deep Research"
+  - "Knowledge Graph Synthetic Data"
+  - "Dual-environment RL"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 006c38a3a0f4cb75
+content_hash: f13912cbe9cd922b
 ---
+
 # WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -140,10 +143,10 @@ The 30B (3B active) MoE agent leads all open-source agents on BrowseComp-EN / xb
 ## Related Papers
 
 - [\[ICLR 2026\] Repurposing Synthetic Data for Fine-grained Search Agent Supervision](repurposing_synthetic_data_for_fine-grained_search_agent_supervision.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
 - [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
 - [\[ICLR 2026\] Language Agents for Hypothesis-driven Clinical Decision Making with Reinforcement Learning](language_agents_for_hypothesis-driven_clinical_decision_making_with_reinforcemen.md)
-- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
-- [\[ICLR 2026\] WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](webseer_training_deeper_search_agents_through_reinforcement_learning_with_self-r.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Vision-Language Model] Using "pointing" (2D coordinate points/trajectory sequences) as a unified embodiment-agnostic intermediate representation, a 3B parameter VLM is trained via two-stage reinforced fine-tuning (RFT). It achieves SOTA performance on 11 spatial reasoning benchmarks and 8 real-robot tasks, with a zero-shot success rate of 87
+  [ICLR 2026][Robotics][Embodied Reasoning] Using "pointing" (2D coordinate points/trajectory sequences) as a unified embodiment-agnostic intermediate representation, a 3B parameter VLM is trained via two-stage reinforced fine-tuning (RFT). It achieves SOTA performance on 11 spatial reasoning benchmarks and 8 real-robot tasks, with a zero-shot success rate of 87.5%.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Robotics"
+  - "Embodied Reasoning"
+  - "pointing representation"
+  - "reinforced fine-tuning"
+  - "Vision-Language Models"
+  - "zero-shot generalization"
 date: 2026-05-08
-content_hash: a16f75f4b0381518
+content_hash: 4399dbe5df9aedf4
 ---
+
 # Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation
 
 **Conference**: ICLR 2026  
@@ -189,7 +194,7 @@ All RFT stages utilize the **GRPO** algorithm: the behavior policy samples multi
 - [\[NeurIPS 2025\] Robot-R1: Reinforcement Learning for Enhanced Embodied Reasoning in Robotics](../../NeurIPS2025/robotics/robot-r1_reinforcement_learning_for_enhanced_embodied_reasoning_in_robotics.md)
 - [\[ICLR 2026\] EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning](evlp_learning_unified_embodied_vision-language_planner_with_reinforced_supervise.md)
 - [\[ICLR 2026\] From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation](from_seeing_to_doing_bridging_reasoning_and_decision_for_robotic_manipulation.md)
-- [\[CVPR 2026\] Obstruction Reasoning for Robotic Grasping](../../CVPR2026/robotics/obstruction_reasoning_for_robotic_grasping.md)
+- [\[ICLR 2026\] OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning](omnieva_embodied_versatile_planner_via_task-adaptive_3d-grounded_and_embodiment-.md)
 
 </div>
 

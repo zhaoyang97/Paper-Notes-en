@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A²LC: Active and Automated Label Correction for Semantic Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Active label correction] This paper proposes the A²LC framework, which augments conventional active label correction (ALC) — where annotators manually fix errors one by one — with an automated c…
+  [AAAI 2026][Segmentation][Active label correction] This paper proposes the A²LC framework, which augments conventional active label correction (ALC) — where annotators manually fix errors one by one — with an automated correction stage via a Label Correction Module (LCM). The LCM leverages annotator feedback to automatically rectify similar erroneous masks, while an Adaptively Balanced acquisition function (ABC) is designed to mitigate class imbalance. On Cityscapes…
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "class imbalance"
   - "foundation models"
 date: 2026-05-08
-content_hash: 95b42835dee0a0ca
+content_hash: 9a9b61162a30f2b9
 ---
 
 # A²LC: Active and Automated Label Correction for Semantic Segmentation
@@ -117,11 +117,11 @@ How can the utility of human annotation feedback be maximized? Specifically: aft
 
 ## Related Papers
 
+- [\[CVPR 2026\] MatchMask: Mask-Centric Generative Data Augmentation for Label-Scarce Semantic Segmentation](../../CVPR2026/segmentation/matchmask_mask-centric_generative_data_augmentation_for_label-scarce_semantic_se.md)
+- [\[ICML 2026\] Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background](../../ICML2026/segmentation/towards_effective_waste_segmentation_for_automated_waste_recycling_in_cluttered_.md)
 - [\[NeurIPS 2025\] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective](../../NeurIPS2025/segmentation/towards_robust_pseudo-label_learning_in_semantic_segmentation_an_encoding_perspe.md)
 - [\[NeurIPS 2025\] Diffusion-Driven Two-Stage Active Learning for Low-Budget Semantic Segmentation](../../NeurIPS2025/segmentation/diffusion-driven_two-stage_active_learning_for_low-budget_semantic_segmentation.md)
 - [\[CVPR 2026\] DeDelayed: Deleting Remote Inference Delay via On-Device Correction](../../CVPR2026/segmentation/dedelayed_deleting_remote_inference_delay_via_on-device_correction.md)
-- [\[AAAI 2026\] SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation](ssr_semantic_and_spatial_rectification_for_clip-based_weakly_supervised_segmenta.md)
-- [\[AAAI 2026\] S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing](s5_scalable_semi-supervised_semantic_segmentation_in_remote_sensing.md)
 
 </div>
 

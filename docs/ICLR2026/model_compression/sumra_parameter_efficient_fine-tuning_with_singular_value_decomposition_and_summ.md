@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SumRA: Parameter Efficient Fine-Tuning with Singular Value Decomposition and Summed Orthogonal Basis
 description: >-
-  [ICLR 2026][Model Compression][PEFT] SumRA compresses **all** singular vectors obtained from SVD of pre-trained weights into the LoRA down-projection matrix $A$ in a "disjoint and load-balanced" manner. By freezing $A$ and training only the up-projection matrix $B$, it halves the trainable parameters and enables cross-task sharing of $A$, reducing the WER
+  [ICLR 2026][Model Compression][PEFT] SumRA compresses **all** singular vectors obtained from SVD of pre-trained weights into the LoRA down-projection matrix $A$ in a "disjoint and load-balanced" manner. By freezing $A$ and training only the up-projection matrix $B$, it halves the trainable parameters and enables cross-task sharing of $A$, reducing the WER of Whisper adapted to five new languages from 14.42% (LoRA) to 12.41%.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - PEFT
-  - LoRA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "PEFT"
+  - "LoRA"
+  - "Singular Value Decomposition"
+  - "Initialization Strategy"
+  - "Multilingual ASR"
 date: 2026-05-08
-content_hash: 471074e01ca8cc8a
+content_hash: c2cc10dc3d25f578
 ---
+
 # SumRA: Parameter Efficient Fine-Tuning with Singular Value Decomposition and Summed Orthogonal Basis
 
 **Conference**: ICLR 2026  
@@ -145,14 +149,17 @@ Data scale ablation (adapting to Esperanto, whisper-small):
 
 <div class="related-papers" markdown="1">
 
-[1] **PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models**, arXiv 2024.
-[2] **LoRA-FA: Memory-Efficient Low-Rank Adaptation via Frozen A**, arXiv 2023.
-[3] **CorDA: Context-Oriented Decomposition Adaptation for Efficient Fine-tuning**, arXiv 2024.
+## Related Papers
+
+- [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
+- [\[ICLR 2026\] Efficient Orthogonal Fine-Tuning with Principal Subspace Adaptation](efficient_orthogonal_fine-tuning_with_principal_subspace_adaptation.md)
+- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
+- [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
+- [\[ACL 2025\] C3A: Parameter-Efficient Fine-Tuning via Circular Convolution](../../ACL2025/model_compression/parameter-efficient_fine-tuning_via_circular_convolution.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](pica_parameter-efficient_fine-tuning_with_column_space_projection.md)

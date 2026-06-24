@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] On Powerful Ways to Generate: Autoregression, Diffusion, and Beyond
 description: >-
-  [ICLR 2026][learning_theory][Autoregressive] This paper rigorously characterizes the capability boundaries of "Autoregressive Models (ARM) vs. Masked Diffusion Models (MDM)" using computability theory. It proves that while MDM's parallelism offers exponential speedups, its "any-order" flexibility does not allow it to solve more problems than ARM. Thus, the author
+  [ICLR 2026][Learning Theory][Masked Diffusion Models] This paper rigorously characterizes the capability boundaries of "Autoregressive Models (ARM) vs. Masked Diffusion Models (MDM)" using computability theory. It proves that while MDM's parallelism offers exponential speedups, its "any-order" flexibility does not allow it to solve more problems than ARM. Thus, the authors propose **any-process generation** (adding remask, insert, and delete operations beyond unmasking)…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Autoregressive
-  - PRAM
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Expressivity of Generative Models"
+  - "Masked Diffusion Models"
+  - "Autoregression"
+  - "Computability"
+  - "PRAM"
+  - "any-process generation"
 date: 2026-05-08
-content_hash: 7bc79dd267ba0459
+content_hash: 4fb7f7ec1d34a24f
 ---
+
 # On Powerful Ways to Generate: Autoregression, Diffusion, and Beyond
 
 **Conference**: ICLR 2026  
@@ -153,9 +158,9 @@ The graph generation task requires the model to iteratively edit the graph struc
 
 - [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
 - [\[ICLR 2026\] Polynomial Convergence of Riemannian Diffusion Models](polynomial_convergence_of_riemannian_diffusion_models.md)
+- [\[ICLR 2026\] Beyond Spectra: Eigenvector Overlaps in Loss Geometry](beyond_spectra_eigenvector_overlaps_in_loss_geometry.md)
 - [\[ICLR 2026\] Computing Equilibrium beyond Unilateral Deviation](computing_equilibrium_beyond_unilateral_deviation.md)
 - [\[ICLR 2026\] Quantum Machine Learning Advantages Beyond Hardness of Evaluation](quantum_machine_learning_advantages_beyond_hardness_of_evaluation.md)
-- [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
 
 </div>
 

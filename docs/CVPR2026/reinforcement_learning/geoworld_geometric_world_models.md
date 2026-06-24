@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] GeoWorld: Geometric World Models
 description: >-
-  [CVPR 2026][Reinforcement Learning][JEPA] GeoWorld maps the latent representations of predictive world models from Euclidean space onto hyperbolic manifolds. By maintaining geometric structures and hierarchical relationships through Hyperbolic JEPA and employing Geometric Reinforcement Learning to optimize multi-step planning, it achieves improvements of appro
+  [CVPR 2026][Reinforcement Learning][Geometric World Models] GeoWorld maps the latent representations of predictive world models from Euclidean space onto hyperbolic manifolds. By maintaining geometric structures and hierarchical relationships through Hyperbolic JEPA and employing Geometric Reinforcement Learning to optimize multi-step planning, it achieves improvements of approximately 3% SR (3 steps) and 2% SR (4 steps) on CrossTask and COIN.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - JEPA
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Geometric World Models"
+  - "Hyperbolic Space"
+  - "JEPA"
+  - "Long-term Planning"
 date: 2026-05-08
-content_hash: 73a8fe2e9eb42e0c
+content_hash: 25297498e7a547df
 ---
+
 # GeoWorld: Geometric World Models
 
 **Conference**: CVPR 2026  
@@ -144,10 +148,10 @@ Two-stage training: (1) Supervised Fine-Tuning (SFT) phase: $\mathcal{L}_{\text{
 ## Related Papers
 
 - [\[CVPR 2026\] DreamSAC: Learning Hamiltonian World Models via Symmetry Exploration](dreamsac_learning_hamiltonian_world_models_via_symmetry_exploration.md)
+- [\[CVPR 2026\] Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models](cloning_deterministic_worlds_the_critical_role_of_latent_geometry_in_long-horizo.md)
 - [\[CVPR 2026\] Talk2Move: Reinforcement Learning for Text-Instructed Object-Level Geometric Transformation in Scenes](talk2move_reinforcement_learning_for_text-instructed_object-level_geometric_tran.md)
-- [\[ICLR 2026\] Deep SPI: Safe Policy Improvement via World Models](../../ICLR2026/reinforcement_learning/deep_spi_safe_policy_improvement_via_world_models.md)
-- [\[NeurIPS 2025\] Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds](../../NeurIPS2025/reinforcement_learning/foundation_models_as_world_models_a_foundational_study_in_text-based_gridworlds.md)
-- [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](../../AAAI2026/reinforcement_learning/object-centric_world_models_for_causality-aware_reinforcement_learning.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](../../ICLR2026/reinforcement_learning/geometric-mean_policy_optimization.md)
+- [\[ICLR 2026\] Composition of Memory Experts for Diffusion World Models](../../ICLR2026/reinforcement_learning/composition_of_memory_experts_for_diffusion_world_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] $\ell_1$ Latent Distance Based Continuous-Time Graph Representation
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This work replaces the squared $\ell_2$ distance in existing continuous-time graph representations—which violates the triangle inequality—with the $\ell_1$ distance. It derives closed-form piecewise exponential integrals and addresses non-differentiability via subgradient methods, outperforming eight baselines includin
+  [ICLR 2026][Graph Learning][Continuous-time graph representation] This work replaces the squared $\ell_2$ distance in existing continuous-time graph representations—which violates the triangle inequality—with the $\ell_1$ distance. It derives closed-form piecewise exponential integrals and addresses non-differentiability via subgradient methods, outperforming eight baselines including GRASSP across 11 datasets and three evaluation tasks.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Continuous-time graph representation"
+  - "sequential survival process"
+  - "$\\ell_1$ distance"
+  - "latent metric space"
+  - "dynamic networks"
 date: 2026-05-08
-content_hash: ac11aae13a2266c0
+content_hash: ac7730f061354a48
 ---
+
 # $\ell_1$ Latent Distance Based Continuous-Time Graph Representation
 
 **Conference**: ICLR 2026  
@@ -134,15 +140,15 @@ Theorem 3 proves that $-\partial\lambda_{ij}$ is a **descent direction** for $\l
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] CORDS - Continuous Representations of Discrete Structures](cords_-_continuous_representations_of_discrete_structures.md)
+- [\[ICLR 2026\] Gelato: Graph Edit Distance via Autoregressive Neural Combinatorial Optimization](gelato_graph_edit_distance_via_autoregressive_neural_combinatorial_optimization.md)
 - [\[ICLR 2026\] Latent Geometry-Driven Network Automata for Complex Network Dismantling](latent_geometry-driven_network_automata_for_complex_network_dismantling.md)
 - [\[ICLR 2026\] CheckMate! Watermarking Graph Diffusion Models in Polynomial Time](checkmate_watermarking_graph_diffusion_models_in_polynomial_time.md)
 - [\[ICLR 2026\] ReLaSH: Reconstructing Joint Latent Spaces for Efficient Generation of Synthetic Hypergraphs with Hyperlink Attributes](relash_reconstructing_joint_latent_spaces_for_efficient_generation_of_synthetic_.md)
-- [\[ICLR 2026\] On the Trade-off Between Expressivity and Privacy in Graph Representation Learning](on_the_trade-off_between_expressivity_and_privacy_in_graph_representation_learni.md)
 
 </div>
 

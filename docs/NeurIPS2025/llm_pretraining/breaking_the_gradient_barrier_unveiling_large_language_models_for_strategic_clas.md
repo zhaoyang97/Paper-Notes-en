@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Breaking the Gradient Barrier: Unveiling Large Language Models for Strategic Classification
 description: >-
-  [NEURIPS2025][LLM Pretraining][Strategic Classification] This paper proposes GLIM (Gradient-free Learning In-context Method), which for the first time leverages the In-Context Learning (ICL) mechanism of LLMs to implicit…
+  [NEURIPS2025][LLM Pretraining][Strategic Classification] This paper proposes GLIM (Gradient-free Learning In-context Method), which for the first time leverages the In-Context Learning (ICL) mechanism of LLMs to implicitly simulate the bi-level optimization in strategic classification (feature manipulation + decision rule optimization), enabling efficient strategic classification on large-scale data without any fine-tuning.
 tags:
   - "NEURIPS2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Bi-level Optimization"
   - "Gradient-free"
 date: 2026-05-08
-content_hash: 2f8a5a6a0c8e9f45
+content_hash: b6966c83ae5de041
 ---
 
 # Breaking the Gradient Barrier: Unveiling Large Language Models for Strategic Classification
@@ -143,11 +143,11 @@ Relationship to Performative Prediction: SC is a special case of performative pr
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Gradient-Weight Alignment as a Train-Time Proxy for Generalization in Classification Tasks](gradient-weight_alignment_as_a_train-time_proxy_for_generalization_in_classifica.md)
 - [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
 - [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
 - [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
-- [\[NeurIPS 2025\] Gradient-Weight Alignment as a Train-Time Proxy for Generalization in Classification Tasks](gradient-weight_alignment_as_a_train-time_proxy_for_generalization_in_classifica.md)
-- [\[NeurIPS 2025\] Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models](leveraging_importance_sampling_to_detach_alignment_modules_from_large_language_m.md)
+- [\[ICML 2025\] Large Language Models are Demonstration Pre-Selectors for Themselves](../../ICML2025/llm_pretraining/large_language_models_are_demonstration_pre-selectors_for_themselves.md)
 
 </div>
 

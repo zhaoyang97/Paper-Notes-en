@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mitigating Manifold Departure: Uncertainty-Aware Subspace Rectification for Trustworthy MLLM Decoding
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] To address the issue where training-free decoding methods "indiscriminately suppress language priors," pushing hidden states away from the normal decoding manifold (manifold departure) and harming generation, MGAP uses SVD to estimate a low-rank "language prior subspace" from blind text hidden states. During decoding,
+  [ICML2026][Multimodal VLM][Hallucination suppression] To address the issue where training-free decoding methods "indiscriminately suppress language priors," pushing hidden states away from the normal decoding manifold (manifold departure) and harming generation, MGAP uses SVD to estimate a low-rank "language prior subspace" from blind text hidden states. During decoding, it adaptively attenuates only the projection components of the hidden states on this subspace based on "vi…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Hallucination suppression"
+  - "training-free decoding"
+  - "language prior subspace"
+  - "representation geometry"
+  - "manifold departure"
 date: 2026-05-08
-content_hash: 70d3c36c766f6ea3
+content_hash: bf702268139bda9b
 ---
+
 # Mitigating Manifold Departure: Uncertainty-Aware Subspace Rectification for Trustworthy MLLM Decoding
 
 **Conference**: ICML2026  
@@ -144,8 +150,8 @@ CHAIRs dropped from 47.4 to 26.2 and CHAIRi from 23.5 to 7.6, while Precision in
 
 - [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
 - [\[NeurIPS 2025\] Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding](../../NeurIPS2025/multimodal_vlm/enhancing_visionlanguage_model_reliability_with_uncertaintyg.md)
+- [\[ICML 2026\] Contrastive Spectral Rectification: Test-Time Defense towards Zero-shot Adversarial Robustness of CLIP](contrastive_spectral_rectification_test-time_defense_towards_zero-shot_adversari.md)
 - [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
-- [\[ACL 2026\] VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation](../../ACL2026/multimodal_vlm/vauq_vision-aware_uncertainty_quantification_for_lvlm_self-evaluation.md)
 - [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](../../ICLR2026/multimodal_vlm/capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
 
 </div>

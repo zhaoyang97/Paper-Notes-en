@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts
 description: >-
-  [NeurIPS 2025][Model Compression][Inference attacks] This paper proposes a Mixture-of-Experts (MoE)-based shadow model sharing framework that reduces the overall training cost of shadow models by sharing feature extracti…
+  [NeurIPS 2025][Model Compression][Inference attacks] This paper proposes a Mixture-of-Experts (MoE)-based shadow model sharing framework that reduces the overall training cost of shadow models by sharing feature extraction layers across multiple inference attack tasks while training only lightweight task-specific expert modules, maintaining or improving attack performance.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "membership inference attack"
   - "privacy and security"
 date: 2026-05-08
-content_hash: 551b3cf0db9d0032
+content_hash: 13757a593702c7fb
 ---
 
 # Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts
@@ -123,10 +123,10 @@ This paper proposes a Mixture-of-Experts (MoE)-based shadow model sharing framew
 ## Related Papers
 
 - [\[NeurIPS 2025\] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts](dense_backpropagation_improves_training_for_sparse_mixture-of-experts.md)
+- [\[CVPR 2025\] DeRS: Towards Extremely Efficient Upcycled Mixture-of-Experts Models](../../CVPR2025/model_compression/ders_towards_extremely_efficient_upcycled_mixture-of-experts_models.md)
 - [\[NeurIPS 2025\] Mingle: Mixture of Null-Space Gated Low-Rank Experts for Test-Time Continual Model Merging](mingle_mixture_of_null-space_gated_low-rank_experts_for_test-time_continual_mode.md)
-- [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](../../ICLR2026/model_compression/coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
+- [\[ICLR 2026\] Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees](../../ICLR2026/model_compression/efficient_quantization_of_mixture-of-experts_with_theoretical_generalization_gua.md)
 - [\[NeurIPS 2025\] Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making](online_mixture_of_experts_no-regret_learning_for_optimal_collective_decision-mak.md)
-- [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](../../ICLR2026/model_compression/unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
 
 </div>
 

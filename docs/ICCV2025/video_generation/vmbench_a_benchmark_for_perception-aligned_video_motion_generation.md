@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VMBench: A Benchmark for Perception-Aligned Video Motion Generation
 description: >-
-  [ICCV 2025][Video Generation][Video Motion Evaluation] This paper proposes VMBench — the first comprehensive benchmark for video motion quality evaluation…
+  [ICCV 2025][Video Generation][Video Motion Evaluation] This paper proposes VMBench — the first comprehensive benchmark for video motion quality evaluation, featuring five-dimensional perception-aligned motion metrics (PMM) and a meta-information-guided motion prompt generation framework (MMPG). VMBench covers 969 motion categories and achieves an average improvement of 35.3% in Spearman correlation over existing methods.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "Motion Quality"
 date: 2026-05-08
-content_hash: 0142ae4832915d1d
+content_hash: d9eb542e535f1ef4
 ---
 
 # VMBench: A Benchmark for Perception-Aligned Video Motion Generation
@@ -153,11 +153,11 @@ Six open-source T2V models are evaluated (OpenSora, CogVideoX, OpenSora-Plan, Mo
 
 ## Related Papers
 
+- [\[CVPR 2025\] Video-Bench: Human-Aligned Video Generation Benchmark](../../CVPR2025/video_generation/video-bench_human-aligned_video_generation_benchmark.md)
 - [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
-- [\[ICCV 2025\] Prompt-A-Video: Prompt Your Video Diffusion Model via Preference-Aligned LLM](prompt-a-video_prompt_your_video_diffusion_model_via_preference-aligned_llm.md)
+- [\[ACL 2025\] VidCapBench: A Comprehensive Benchmark of Video Captioning for Controllable Text-to-Video Generation](../../ACL2025/video_generation/vidcapbench_a_comprehensive_benchmark_of_video_captioning_for_controllable_text-.md)
 - [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
 - [\[ICCV 2025\] Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation](free-form_motion_control_controlling_the_6d_poses_of_camera_and_objects_in_video.md)
-- [\[ICCV 2025\] Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer](decouple_and_track_benchmarking_and_improving_video_diffusion_transformers_for_m.md)
 
 </div>
 

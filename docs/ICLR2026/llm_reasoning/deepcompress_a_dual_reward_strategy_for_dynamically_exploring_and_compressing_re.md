@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DeepCompress: A Dual Reward Strategy for Dynamically Exploring and Compressing Reasoning Chains
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] DeepCompress modifies the RL training of large reasoning models with a dual-length reward strategy of "compressing simple problems and exploring difficult problems," improving accuracy in mathematical and scientific reasoning while significantly reducing the average number of reasoning tokens.
+  [ICLR2026][Reasoning][Reasoning Chain Compression] DeepCompress modifies the RL training of large reasoning models with a dual-length reward strategy of "compressing simple problems and exploring difficult problems," improving accuracy in mathematical and scientific reasoning while significantly reducing the average number of reasoning tokens.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Reasoning Chain Compression"
+  - "Large Reasoning Models"
+  - "Reinforcement Learning"
+  - "Length Reward"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 411d31c5dc1ef97b
+content_hash: e628c56d5c9fa6f3
 ---
+
 # DeepCompress: A Dual Reward Strategy for Dynamically Exploring and Compressing Reasoning Chains
 
 **Conference**: ICLR2026  
@@ -131,11 +136,11 @@ The 3B model's average accuracy improved by 2.0; the 7B model improved by 2.7. S
 
 ## Related Papers
 
-- [\[ICLR 2026\] Expanding Reasoning Potential in Foundation Model by Learning Diverse Chains of Thought Patterns](expanding_reasoning_potential_in_foundation_model_by_learning_diverse_chains_of_.md)
 - [\[ACL 2026\] Strategy-Induct: Task-Level Strategy Induction for Instruction Generation](../../ACL2026/llm_reasoning/strategy-induct_task-level_strategy_induction_for_instruction_generation.md)
+- [\[ICLR 2026\] Expanding Reasoning Potential in Foundation Model by Learning Diverse Chains of Thought Patterns](expanding_reasoning_potential_in_foundation_model_by_learning_diverse_chains_of_.md)
+- [\[ACL 2026\] TInR: Exploring Tool-Internalized Reasoning in Large Language Models](../../ACL2026/llm_reasoning/tinr_exploring_tool-internalized_reasoning_in_large_language_models.md)
 - [\[ICLR 2026\] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping](smarter_not_harder_generative_process_evaluation_with_intrinsic-signal_driving_a.md)
 - [\[ICLR 2026\] Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy](making_slow_thinking_faster_compressing_llm_chain-of-thought_via_step_entropy.md)
-- [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
 
 </div>
 

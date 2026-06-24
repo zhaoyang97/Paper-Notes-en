@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] MARS - A Foundational Map Auto-Regressor
 description: >-
-  [ICLR 2026][Remote Sensing][Autoregressive] This work treats vector maps (points, polylines, polygons) as a "language," using a unified vision encoder and auto-regressive decoder for end-to-end generation of road networks and building outlines without any segmentation post-processing. It releases MAP-3M, the largest multi-class map dataset to date (approximately
+  [ICLR 2026][Remote Sensing][Map Generation] This work treats vector maps (points, polylines, polygons) as a "language," using a unified vision encoder and auto-regressive decoder for end-to-end generation of road networks and building outlines without any segmentation post-processing. It releases MAP-3M, the largest multi-class map dataset to date (approximately 3M images).
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - Autoregressive
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Map Generation"
+  - "Auto-regressive"
+  - "Vectorization"
+  - "Road Extraction"
+  - "Building Extraction"
+  - "Foundation Model"
+  - "Human-in-the-loop"
 date: 2026-05-08
-content_hash: 2f4d61483435c6a5
+content_hash: cec0d84ac32dce86
 ---
+
 # MARS - A Foundational Map Auto-Regressor
 
 **Conference**: ICLR 2026  

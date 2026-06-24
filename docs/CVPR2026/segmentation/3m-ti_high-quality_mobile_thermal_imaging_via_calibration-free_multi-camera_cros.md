@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Ours proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffusion framework. It automatically aligns and fuses uncalibrated RGB-thermal image pairs in the VAE latent space via Cross-modal Self-Attention (CSM). Combined with a misalignment augmentation strategy, it achieves SOTA on mobile thermal super-reso
+  [CVPR 2026][Segmentation][Thermal image super-resolution] Ours proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffusion framework. It automatically aligns and fuses uncalibrated RGB-thermal image pairs in the VAE latent space via Cross-modal Self-Attention (CSM). Combined with a misalignment augmentation strategy, it achieves SOTA on mobile thermal super-resolution tasks and significantly improves downstream object detection and semantic segmentation performa…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Thermal image super-resolution"
+  - "cross-modal diffusion"
+  - "calibration-free fusion"
+  - "RGB guidance"
+  - "mobile thermal imaging"
 date: 2026-05-08
-content_hash: 910dc19664c749a7
+content_hash: 3b3f6c53fa82be62
 ---
+
 # 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ The detection performance of 3M-TI slightly exceeds the RGB reference and approa
 
 ## Related Papers
 
-- [\[CVPR 2026\] B³-Seg: Camera-Free, Training-Free 3DGS Segmentation via Analytic EIG and Beta-Bernoulli Bayesian Updates](b3-seg_camera-free_training-free_3dgs_segmentation_via_analytic_eig_and_beta-ber.md)
 - [\[CVPR 2026\] Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation](towards_robust_multi-modal_semantic_segmentation_with_teacher-student_framework_.md)
+- [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
 - [\[CVPR 2026\] Towards High-Quality Image Segmentation: Improving Topology Accuracy by Penalizing Neighbor Pixels](towards_high-quality_image_segmentation_improving_topology_accuracy_by_penalizin.md)
 - [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
-- [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
+- [\[CVPR 2026\] V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence](v2-sam_marrying_sam2_with_multi-prompt_experts_for_cross-view_object_corresponde.md)
 
 </div>
 

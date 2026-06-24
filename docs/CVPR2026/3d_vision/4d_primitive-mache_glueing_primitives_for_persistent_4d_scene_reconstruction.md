@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] 4DPM decomposes casual monocular RGB videos into a set of rigidly moving 3D primitives. By "glueing" each primitive over time using dense 2D correspondences, it only requires estimating an $SE(3)$ pose per primitive to remap all historical observations to any moment. This enables a **complete and persistent** scene geo
+  [CVPR 2026][3D Vision][4D reconstruction] 4DPM decomposes casual monocular RGB videos into a set of rigidly moving 3D primitives. By "glueing" each primitive over time using dense 2D correspondences, it only requires estimating an $SE(3)$ pose per primitive to remap all historical observations to any moment. This enables a **complete and persistent** scene geometry at every frame, even maintaining the positions of occluded objects (object permanence).
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "dynamic scenes"
+  - "rigid primitives"
+  - "monocular video"
+  - "object permanence"
 date: 2026-05-08
-content_hash: 667e0b21a4bb6aeb
+content_hash: 5343f4643ffed8df
 ---
+
 # 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction
 
 **Conference**: CVPR 2026  
@@ -162,11 +168,11 @@ Rather than a traditional "module-removal" ablation table, the paper uses two na
 
 ## Related Papers
 
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
-- [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
-- [\[CVPR 2026\] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)
-- [\[CVPR 2026\] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction](laser_layer-wise_scale_alignment_for_training-free_streaming_4d_reconstruction.md)
+- [\[CVPR 2026\] Complet4R: Geometric Complete 4D Reconstruction](complet4r_geometric_complete_4d_reconstruction.md)
+- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
+- [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
+- [\[ICLR 2026\] Joint Optimization for 4D Human-Scene Reconstruction in the Wild](../../ICLR2026/3d_vision/joint_optimization_for_4d_human-scene_reconstruction_in_the_wild.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] SEMIR treats the voxel grid as a parent graph $G$ and compresses it into a "boundary-aligned" graph minor $H$ via parameterized edge contraction, node deletion, and edge deletion (reducing nodes from $\sim10^7$ to $\sim10^3$). It utilizes 5–20 few-shot samples to maximize boundary Dice via black-box optimization of $\T
+  [ICML 2026][Medical Imaging][Graph minor] SEMIR treats the voxel grid as a parent graph $G$ and compresses it into a "boundary-aligned" graph minor $H$ via parameterized edge contraction, node deletion, and edge deletion (reducing nodes from $\sim10^7$ to $\sim10^3$). It utilizes 5–20 few-shot samples to maximize boundary Dice via black-box optimization of $\Theta$, uses a GNN for supernode classification on the minor, and finally returns to the original grid through a biject…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Graph minor"
+  - "few-shot boundary alignment"
+  - "superpixel"
+  - "tumor segmentation"
+  - "exact lifting"
 date: 2026-05-08
-content_hash: eb8293c0d21c9919
+content_hash: e3d28d804eee6e4c
 ---
+
 # SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation
 
 **Conference**: ICML 2026  
@@ -136,7 +142,7 @@ BraTS ET / NWPU VHR-10 IoU:
 - [\[NeurIPS 2025\] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning](../../NeurIPS2025/medical_imaging/synbrain_enhancing_visual-to-fmri_synthesis_via_probabilistic_representation_lea.md)
 - [\[ICML 2026\] MedCRP-CL: Continual Medical Image Segmentation via Bayesian Nonparametric Semantic Modality Discovery](medcrp-cl_continual_medical_image_segmentation_via_bayesian_nonparametric_semant.md)
 - [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](../../CVPR2026/medical_imaging/multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
-- [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](../../AAAI2026/medical_imaging/multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
+- [\[ICLR 2026\] A Structured, Tagged, and Localized Visual Question Answering Dataset with Full Sentence Answers and Scene Graphs for Chest X-ray Images](../../ICLR2026/medical_imaging/a_structured_tagged_and_localized_visual_question_answering_dataset_with_full_se.md)
 
 </div>
 

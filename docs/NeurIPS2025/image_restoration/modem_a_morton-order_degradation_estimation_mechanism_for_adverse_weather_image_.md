@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration
 description: >-
-  [NeurIPS 2025][Image Restoration][Adverse Weather Restoration] This paper proposes the MODEM framework, which combines Morton-encoded spatial scanning with selective state space models (SSMs) to capture spatially heterog…
+  [NeurIPS 2025][Image Restoration][Adverse Weather Restoration] This paper proposes the MODEM framework, which combines Morton-encoded spatial scanning with selective state space models (SSMs) to capture spatially heterogeneous weather degradation patterns. Equipped with a dual degradation estimation module that provides both global and local priors, MODEM achieves state-of-the-art unified adaptive restoration across multiple adverse weather degradation types.
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Degradation Estimation"
   - "Mamba"
 date: 2026-05-08
-content_hash: ceaae38830129533
+content_hash: b2acde7db03d3b77
 ---
 
 # MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration
@@ -135,10 +135,10 @@ The backbone network consists of $N$ stacked MDSL (MOS2D Degradation-Aware Layer
 ## Related Papers
 
 - [\[NeurIPS 2025\] Real-World Adverse Weather Image Restoration via Dual-Level Reinforcement Learning with High-Quality Cold Start](real-world_adverse_weather_image_restoration_via_dual-level_reinforcement_learni.md)
+- [\[ECCV 2024\] Teaching Tailored to Talent: Adverse Weather Restoration via Prompt Pool and Depth-Anything Constraint](../../ECCV2024/image_restoration/teaching_tailored_to_talent_adverse_weather_restoration_via_prompt_pool_and_dept.md)
 - [\[ICCV 2025\] Robust Adverse Weather Removal via Spectral-based Spatial Grouping (SSGformer)](../../ICCV2025/image_restoration/robust_adverse_weather_removal_via_spectral-based_spatial_grouping.md)
-- [\[ICCV 2025\] Towards a Universal Image Degradation Model via Content-Degradation Disentanglement](../../ICCV2025/image_restoration/towards_a_universal_image_degradation_model_via_content-degradation_disentanglem.md)
+- [\[ECCV 2024\] Restoring Images in Adverse Weather Conditions via Histogram Transformer](../../ECCV2024/image_restoration/restoring_images_in_adverse_weather_conditions_via_histogram_transformer.md)
 - [\[NeurIPS 2025\] MAP Estimation with Denoisers: Convergence Rates and Guarantees](map_estimation_with_denoisers_convergence_rates_and_guarantees.md)
-- [\[NeurIPS 2025\] RGB-to-Polarization Estimation: A New Task and Benchmark Study](rgb-to-polarization_estimation_a_new_task_and_benchmark_study.md)
 
 </div>
 

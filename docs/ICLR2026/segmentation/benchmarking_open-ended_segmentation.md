@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Benchmarking Open-ended Segmentation
 description: >-
-  [ICLR 2026][Segmentation][Paper Note] Focusing on the evaluation loophole in "open-ended segmentation" where model-generated free-form text is forcibly mapped back to a fixed vocabulary via embedding similarity, this paper introduces a mapping function based on lexical relationships (exact/synonym/hyponym/meronym) and a Lexical Alignment Curve (LAC) protoc
+  [ICLR2026][Segmentation][Open-ended Segmentation] Focusing on the evaluation loophole in "open-ended segmentation" where model-generated free-form text is forcibly mapped back to a fixed vocabulary via embedding similarity, this paper introduces a mapping function based on lexical relationships (exact/synonym/hyponym/meronym) and a Lexical Alignment Curve (LAC) protocol. This shifts evaluation accuracy from a 37.7% deviation from human judgement to over 90% alignment. Further…
 tags:
-  - ICLR 2026
-  - Segmentation
+  - "ICLR2026"
+  - "Segmentation"
+  - "Open-ended Segmentation"
+  - "Evaluation Protocols"
+  - "Lexical Alignment"
+  - "Panoptic Segmentation"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: be49fbd35d4a646f
+content_hash: c95d2729c292f37f
 ---
+
 # Benchmarking Open-ended Segmentation
 
 **Conference**: ICLR2026  

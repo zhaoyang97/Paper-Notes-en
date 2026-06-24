@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation
 description: >-
-  [ACL 2026][Hallucination Detection][Paper Note] Ours proposes DaID (Dual-Anchor Introspective Decoding), which mines visual perception differences across MLLM internal layers—amplifying visual signals via the "Spotlight" layer and suppressing linguistic inertia via the "Shadow" layer—to achieve hallucination mitigation within a single forward pass.
+  [ACL 2026 Findings][Hallucination Detection][Multimodal Hallucination] Ours proposes DaID (Dual-Anchor Introspective Decoding), which mines visual perception differences across MLLM internal layers—amplifying visual signals via the "Spotlight" layer and suppressing linguistic inertia via the "Shadow" layer—to achieve hallucination mitigation within a single forward pass.
 tags:
-  - ACL 2026
-  - Hallucination Detection
+  - "ACL 2026 Findings"
+  - "Hallucination Detection"
+  - "Multimodal Hallucination"
+  - "Contrastive Decoding"
+  - "Layer-wise Analysis"
+  - "Visual Attention"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 08f274e88e750aa9
+content_hash: fe09946adf38a6ba
 ---
+
 # Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation
 
 **Conference**: ACL 2026 Findings  
@@ -145,15 +151,14 @@ DaID is a training-free inference-time method. Key hyperparameters: $\alpha=0.8$
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] Causally-Grounded Dual-Path Attention Intervention for Object Hallucination Mitigation in LVLMs](../../AAAI2026/hallucination/causally-grounded_dual-path_attention_intervention_for_objec.md)
 - [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](../../CVPR2026/hallucination/tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
 - [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](../../CVPR2026/hallucination/cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
-- [\[CVPR 2026\] Locate-then-Sparsify: Attribution Guided Sparse Strategy for Visual Hallucination Mitigation](../../CVPR2026/hallucination/locate-then-sparsify_attribution_guided_sparse_strategy_for_visual_hallucination.md)
-- [\[ACL 2025\] Mixture of Decoding: An Attention-Inspired Adaptive Decoding Strategy to Mitigate Hallucination in Multimodal LLMs](../../ACL2025/hallucination/mixture_of_decoding_an_attention-inspired_adaptive_decoding_strategy_to_mitigate.md)
+- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
+- [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimal Online Change Detection via Random Fourier Features
 description: >-
-  [NeurIPS 2025][LLM Pretraining][online change detection] This paper proposes the Online RFF-MMD algorithm, which approximates the MMD statistic via random Fourier features and embeds it into a sequential testing framewor…
+  [NeurIPS 2025][LLM Pretraining][online change detection] This paper proposes the Online RFF-MMD algorithm, which approximates the MMD statistic via random Fourier features and embeds it into a sequential testing framework over a binary grid. The method achieves online nonparametric change detection without requiring training data or window size parameters, with $\mathcal{O}(r \log n)$ time and space complexity, and establishes minimax optimality of the detection delay.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "minimax optimality"
   - "nonparametric detection"
 date: 2026-05-08
-content_hash: 850ffc183369507c
+content_hash: 982ba651644c8388
 ---
 
 # Optimal Online Change Detection via Random Fourier Features
@@ -154,9 +154,9 @@ The theoretical $\mathcal{O}(r\log n)$ runtime is confirmed empirically.
 ## Related Papers
 
 - [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](../../ICLR2026/llm_pretraining/a_law_of_data_reconstruction_for_random_features_and_beyond.md)
-- [\[NeurIPS 2025\] Mouse-Guided Gaze: Semi-Supervised Learning of Intention-Aware Representations for Reading Detection](mouse-guided_gaze_semi-supervised_learning_of_intention-aware_representations_fo.md)
+- [\[ICLR 2026\] FoNE: Precise Single-Token Number Embeddings via Fourier Features](../../ICLR2026/llm_pretraining/fone_precise_single-token_number_embeddings_via_fourier_features.md)
 - [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](../../ICLR2026/llm_pretraining/imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)
-- [\[ICML 2026\] Constrained Bayesian Experimental Design via Online Planning](../../ICML2026/llm_pretraining/constrained_bayesian_experimental_design_via_online_planning.md)
+- [\[NeurIPS 2025\] Mouse-Guided Gaze: Semi-Supervised Learning of Intention-Aware Representations for Reading Detection](mouse-guided_gaze_semi-supervised_learning_of_intention-aware_representations_fo.md)
 - [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](../../ICML2026/llm_pretraining/dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
 
 </div>

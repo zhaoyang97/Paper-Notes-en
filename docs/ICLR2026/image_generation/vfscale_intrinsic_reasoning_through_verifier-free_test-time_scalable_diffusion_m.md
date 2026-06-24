@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] VFScale proposes a verifier-free test-time scalable diffusion model. By employing MRNCL loss and KL regularization to improve the energy landscape, the intrinsic energy function serves as a verifier. Combined with hybrid MCTS denoising for efficient searching, a model trained on $6 \times 6$ mazes can solve 88% of $15
+  [ICLR 2026][Image Generation][Test-time Scaling] VFScale proposes a verifier-free test-time scalable diffusion model. By employing MRNCL loss and KL regularization to improve the energy landscape, the intrinsic energy function serves as a verifier. Combined with hybrid MCTS denoising for efficient searching, a model trained on $6 \times 6$ mazes can solve 88% of $15 \times 15$ mazes, whereas standard diffusion models fail completely.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Test-time Scaling"
+  - "Verifier-Free"
+  - "Energy Function"
+  - "Monte Carlo Tree Search"
+  - "Diffusion Model Reasoning"
 date: 2026-05-08
-content_hash: 015fd9e1b146fc1e
+content_hash: 9392d48f71739093
 ---
+
 # VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model
 
 **Conference**: ICLR 2026  
@@ -143,15 +149,14 @@ $$\mathcal{L} = \mathcal{L}_{\text{MSE}} + \mathcal{L}_{\text{Contrast}} + \math
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning](milr_improving_multimodal_image_generation_via_test-time_latent_reasoning.md)
 - [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](test-time_iterative_error_correction_for_efficient_diffusion_models.md)
 - [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
+- [\[ICLR 2026\] Projected Coupled Diffusion for Test-Time Constrained Joint Generation](projected_coupled_diffusion_for_test-time_constrained_joint_generation.md)
 - [\[ICLR 2026\] Mitigating Semantic Collapse in Generative Personalization with Test-Time Embedding Adjustment](mitigating_semantic_collapse_in_generative_personalization_with_test-time_embedd.md)
-- [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
 
 </div>
 

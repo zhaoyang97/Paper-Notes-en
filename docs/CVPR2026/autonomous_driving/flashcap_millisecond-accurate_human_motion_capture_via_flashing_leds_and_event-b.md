@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] FlashCap is proposed as the first motion capture system based on flashing LEDs and event cameras. By assigning different flashing frequencies to each LED for identity recognition, the authors constructed FlashMotion, the first human motion dataset with 1000Hz annotation accuracy (7.15 million frames). Furthermore, the
+  [CVPR 2026][Autonomous Driving][Event camera] FlashCap is proposed as the first motion capture system based on flashing LEDs and event cameras. By assigning different flashing frequencies to each LED for identity recognition, the authors constructed FlashMotion, the first human motion dataset with 1000Hz annotation accuracy (7.15 million frames). Furthermore, the ResPose baseline method was introduced, reducing motion timing error from ~50ms to ~5ms and improving MPJPE in pos…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Event camera"
+  - "Human motion capture"
+  - "LED markers"
+  - "High temporal resolution"
+  - "Spiking neural networks"
 date: 2026-05-08
-content_hash: da3b68eba8c86b7b
+content_hash: 74a5ebd82d69c171
 ---
+
 # FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision
 
 **Conference**: CVPR 2026  
@@ -174,11 +180,11 @@ Ablation of the annotation pipeline (Precision / Recall):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Bezier Degradation Modeling for LiDAR-based Human Motion Capture](bezier_degradation_modeling_for_lidar-based_human_motion_capture.md)
 - [\[CVPR 2026\] SHARP: Short-Window Streaming for Accurate and Robust Prediction in Motion Forecasting](sharp_short-window_streaming_for_accurate_and_robust_prediction_in_motion_foreca.md)
 - [\[CVPR 2026\] EventDrive: Event Cameras for Vision-Language Driving Intelligence](eventdrive_event_cameras_for_vision-language_driving_intelligence.md)
-- [\[CVPR 2026\] DriveVLN: Towards Mapless Vision-and-Language Navigation in Autonomous Driving](drivevln_towards_mapless_vision-and-language_navigation_in_autonomous_driving.md)
+- [\[AAAI 2026\] MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation](../../AAAI2026/autonomous_driving/mambaseg_harnessing_mamba_for_accurate_and_efficient_image-e.md)
 - [\[CVPR 2026\] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration](lirec-net_a_target-free_and_learning-based_network_for_lidar_rgb_and_event_calib.md)
-- [\[CVPR 2026\] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets](expanding_mmwave_datasets_for_human_pose_estimation_with_unlabeled_data_and_lida.md)
 
 </div>
 

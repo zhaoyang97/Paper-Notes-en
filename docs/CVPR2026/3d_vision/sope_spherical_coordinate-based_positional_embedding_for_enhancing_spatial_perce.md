@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] SoPE: Spherical Coordinate-Based Positional Embedding for Enhancing Spatial Perception of 3D LVLMs
 description: >-
-  [CVPR 2026][3D Vision][positional embedding] Proposes Spherical Coordinate-Based Positional Embedding (SoPE), which remaps point cloud tokens from 1D sequence indices to a spherical coordinate space $(t,r,\theta,\phi)$. Combined with multi-dimensional frequency allocation and multi-scale frequency mixing strategies, it significantly enhances the spatial perceptio
+  [CVPR2026][3D Vision][positional embedding] Proposes Spherical Coordinate-Based Positional Embedding (SoPE), which remaps point cloud tokens from 1D sequence indices to a spherical coordinate space $(t,r,\theta,\phi)$. Combined with multi-dimensional frequency allocation and multi-scale frequency mixing strategies, it significantly enhances the spatial perception capabilities of 3D Large Vision-Language Models.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - positional embedding
-  - 3D LVLM
-  - spherical coordinates
-  - RoPE
-  - point cloud
-  - spatial perception
+  - "CVPR2026"
+  - "3D Vision"
+  - "positional embedding"
+  - "3D LVLM"
+  - "spherical coordinates"
+  - "RoPE"
+  - "point cloud"
+  - "spatial perception"
 date: 2026-05-08
-content_hash: bd74c549368435c5
+content_hash: 4f7e437fcf719e67
 ---
+
 # SoPE: Spherical Coordinate-Based Positional Embedding for Enhancing Spatial Perception of 3D LVLMs
 
 **Conference**: CVPR2026  
@@ -172,10 +173,10 @@ Based on the SpatialLM framework, joint training is performed using the Sonata p
 ## Related Papers
 
 - [\[CVPR 2025\] SphereUFormer: A U-Shaped Transformer for Spherical 360 Perception](../../CVPR2025/3d_vision/sphereuformer_a_u-shaped_transformer_for_spherical_360_perception.md)
+- [\[ICLR 2026\] Positional Encoding Field](../../ICLR2026/3d_vision/positional_encoding_field.md)
+- [\[CVPR 2026\] 3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)
 - [\[CVPR 2026\] PE3R: Perception-Efficient 3D Reconstruction](pe3r_perception-efficient_3d_reconstruction.md)
-- [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis](dmaligner_enhancing_image_alignment_via_diffusion_model_based_view_synthesis.md)
-- [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
 
 </div>
 

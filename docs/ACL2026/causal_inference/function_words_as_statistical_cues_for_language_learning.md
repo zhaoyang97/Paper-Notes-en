@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Function Words as Statistical Cues for Language Learning
 description: >-
-  [ACL 2026][Causal Inference][BLiMP] The authors use Universal Dependencies corpora across 186 languages to demonstrate that three distributional properties—"high frequency + syntactic predictability + phrase boundary alignment"—are cross-linguistically universal. Simultaneously, they construct seven counterfactual variants of English to train GPT-2 small
+  [ACL 2026][Causal Inference][Function words] The authors use Universal Dependencies corpora across 186 languages to demonstrate that three distributional properties—"high frequency + syntactic predictability + phrase boundary alignment"—are cross-linguistically universal. Simultaneously, they construct seven counterfactual variants of English to train GPT-2 small, proving that transformer learners perform best only when all three properties are satisfied. They identify a Gold…
 tags:
-  - ACL 2026
-  - Causal Inference
-  - BLiMP
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Function words"
+  - "statistical learning"
+  - "counterfactual language"
+  - "BLiMP"
+  - "Goldilocks effect"
 date: 2026-05-08
-content_hash: e8a70a16650ac702
+content_hash: 122f768c757665db
 ---
+
 # Function Words as Statistical Cues for Language Learning
 
 **Conference**: ACL 2026  
@@ -147,10 +152,10 @@ In the Natural condition, function-head attention is highly concentrated in a fe
 ## Related Papers
 
 - [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](../../ICLR2026/causal_inference/function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
+- [\[ICLR 2026\] Ice Cream Doesn't Cause Drowning: Benchmarking LLMs Against Statistical Pitfalls in Causal Inference](../../ICLR2026/causal_inference/ice_cream_doesnt_cause_drowning_benchmarking_llms_against_statistical_pitfalls_i.md)
+- [\[ACL 2026\] Evaluating Counterfactual Strategic Reasoning in Large Language Models](evaluating_counterfactual_strategic_reasoning_in_large_language_models.md)
 - [\[ECCV 2024\] Learning Chain of Counterfactual Thought for Bias-Robust Vision-Language Reasoning](../../ECCV2024/causal_inference/learning_chain_of_counterfactual_thought_for_bias-robust_vision-language_reasoni.md)
 - [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
-- [\[ACL 2026\] Evaluating Counterfactual Strategic Reasoning in Large Language Models](evaluating_counterfactual_strategic_reasoning_in_large_language_models.md)
-- [\[ICML 2025\] Isolated Causal Effects of Natural Language](../../ICML2025/causal_inference/isolated_causal_effects_of_natural_language.md)
 
 </div>
 

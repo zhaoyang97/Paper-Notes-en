@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] The study packages malicious backdoors into benign-looking LoRA adapters (freezing the base model, training only low-rank weights). By performing "semantic surgery" with contrastive loss, trigger word embeddings are aligned to attack targets without disrupting normal functions, enabling stable generation of specified c
+  [CVPR 2026][AI Safety][LoRA Backdoor] The study packages malicious backdoors into benign-looking LoRA adapters (freezing the base model, training only low-rank weights). By performing "semantic surgery" with contrastive loss, trigger word embeddings are aligned to attack targets without disrupting normal functions, enabling stable generation of specified content from semantically similar triggers like "cool car" with up to 99.8% ASR.
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "LoRA Backdoor"
+  - "Supply Chain Attack"
+  - "T2I Diffusion"
+  - "Contrastive Learning"
+  - "Semantic Conflict"
 date: 2026-05-08
-content_hash: 23cc5e89de58bc52
+content_hash: c3dc708802254602
 ---
+
 # When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters
 
 **Conference**: CVPR 2026  

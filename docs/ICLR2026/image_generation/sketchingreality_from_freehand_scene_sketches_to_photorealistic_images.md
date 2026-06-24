@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SketchingReality: 从手绘场景草图到照片级真实图像
+  [Paper Note] SketchingReality: From Hand-Drawn Scene Sketches to Photo-Realistic Images
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper proposes SketchingReality, a "semantic modulation + attention supervision" scheme that transforms abstract and distorted **hand-drawn** scene sketches (rather than neat edge maps) into images that are both faithful to sketch semantics and photo-realistic. It also introduces a training loss that does not requ
+  [ICLR 2026][Image Generation][Hand-drawn sketches] This paper proposes SketchingReality, a "semantic modulation + attention supervision" scheme that transforms abstract and distorted **hand-drawn** scene sketches (rather than neat edge maps) into images that are both faithful to sketch semantics and photo-realistic. It also introduces a training loss that does not require pixel-aligned ground truth images.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Hand-drawn sketches"
+  - "Sketch-to-image"
+  - "Noise modulation"
+  - "Attention supervision"
+  - "Latent space diffusion"
 date: 2026-05-08
-content_hash: c047e9b24ccee55f
+content_hash: 857cd5c6cf067f3c
 ---
+
 # SketchingReality: From Hand-Drawn Scene Sketches to Photo-Realistic Images
 
 **Conference**: ICLR 2026  
@@ -115,15 +121,15 @@ The core contribution of SketchingReality lies in shifting the research focus fr
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
-- [\[ICLR 2026\] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis](latent_wavelet_diffusion_for_ultra_high-resolution_image_synthesis.md)
-- [\[ICLR 2026\] Purrception: Variational Flow Matching for Vector-Quantized Image Generation](purrception_variational_flow_matching_for_vector-quantized_image_generation.md)
-- [\[ICLR 2026\] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact](improving_classifier-free_guidance_in_masked_diffusion_low-dim_theoretical_insig.md)
-- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
+- [\[CVPR 2026\] Refracting Reality: Generating Images with Realistic Transparent Objects](../../CVPR2026/image_generation/refracting_reality_generating_images_with_realistic_transparent_objects.md)
+- [\[ICLR 2026\] PICABench: How Far are We from Physically Realistic Image Editing?](picabench_how_far_are_we_from_physical_realistic_image_editing.md)
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](../../CVPR2026/image_generation/a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
+- [\[ICLR 2026\] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training](generate_any_scene_scene_graph_driven_data_synthesis_for_visual_generation_train.md)
+- [\[ICLR 2026\] Generating Metamers of Human Scene Understanding](generating_metamers_of_human_scene_understanding.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Franca is the first fully open-source (data + code + weights + intermediate checkpoints) visual foundation model. Built on the DINOv2 framework, it introduces "nested Matryoshka multi-head clustering" to refine semantics layer-by-layer along feature dimensions, utilizes CyclicMask to balance mask spatial distribution,
+  [CVPR 2026][Self-Supervised Learning][Visual Foundation Models] Franca is the first fully open-source (data + code + weights + intermediate checkpoints) visual foundation model. Built on the DINOv2 framework, it introduces "nested Matryoshka multi-head clustering" to refine semantics layer-by-layer along feature dimensions, utilizes CyclicMask to balance mask spatial distribution, and employs RASA post-training to decouple absolute position information from dense features. Us…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Visual Foundation Models"
+  - "Matryoshka Representation"
+  - "Clustering SSL"
+  - "Fully Open Source"
 date: 2026-05-08
-content_hash: cd77c540156cab41
+content_hash: eee2d14f1bb5327d
 ---
+
 # Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning
 
 **Conference**: CVPR 2026  
@@ -131,6 +136,7 @@ Incremental component gains (Figure 2, DINOv2-B / IN-21K baseline):
 - Value: ⭐⭐⭐⭐⭐ High impact due to performance and complete transparency (checkpoints).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -138,8 +144,8 @@ Incremental component gains (Figure 2, DINOv2-B / IN-21K baseline):
 - [\[CVPR 2026\] Learning from Semantic Dictionaries: Discriminative Codebook Contrastive Learning for Unified Visual Representation and Generation](learning_from_semantic_dictionaries_discriminative_codebook_contrastive_learning.md)
 - [\[CVPR 2026\] Scaling Dense Event-Stream Pretraining from Visual Foundation Models](scaling_dense_event-stream_pretraining_from_visual_foundation_models.md)
 - [\[CVPR 2026\] Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines](learning_to_see_through_a_babys_eyes_early_visual_diets_enable_robust_visual_int.md)
-- [\[CVPR 2026\] Exploring Visual Pretraining for Learning Language Intelligence](exploring_visual_pretraining_for_learning_language_intelligence.md)
-- [\[CVPR 2026\] OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](openvision_2_a_family_of_generative_pretrained_visual_encoders_for_multimodal_le.md)
+- [\[ICLR 2026\] Spatially Informed Autoencoders for Interpretable Visual Representation Learning](../../ICLR2026/self_supervised/spatially_informed_autoencoders_for_interpretable_visual_representation_learning.md)
+- [\[ICLR 2026\] Debiased and Denoised Representation Learning for Incomplete Multi-view Clustering](../../ICLR2026/self_supervised/debiased_and_denoised_representation_learning_for_incomplete_multi-view_clusteri.md)
 
 </div>
 

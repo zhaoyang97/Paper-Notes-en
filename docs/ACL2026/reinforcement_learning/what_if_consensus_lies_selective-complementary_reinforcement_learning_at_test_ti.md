@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SCRL: What If Consensus Lies? Selective-Complementary Reinforcement Learning at Test Time
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] This paper proposes SCRL (Selective-Complementary Reinforcement Learning), a robust test-time reinforcement learning framework. It mitigates label noise amplification by using selective positive pseudo-labels (filtering unreliable majorities with strict consensus criteria) and entropy-gated negative pseudo-labels (intr
+  [ACL 2026][Reinforcement Learning][Test-Time Reinforcement Learning] This paper proposes SCRL (Selective-Complementary Reinforcement Learning), a robust test-time reinforcement learning framework. It mitigates label noise amplification by using selective positive pseudo-labels (filtering unreliable majorities with strict consensus criteria) and entropy-gated negative pseudo-labels (introducing negative supervision signals in TTRL for the first time to prune incorrect trajecto…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Test-Time Reinforcement Learning"
+  - "Pseudo-label Noise"
+  - "Negative Labels"
+  - "Consensus Reliability"
+  - "Unsupervised Reasoning"
 date: 2026-05-08
-content_hash: 96c5c707e56f378b
+content_hash: 6f97412a66a2caff
 ---
+
 # SCRL: What If Consensus Lies? Selective-Complementary Reinforcement Learning at Test Time
 
 **Conference**: ACL 2026  
@@ -150,7 +156,7 @@ GRPO is used as the base RL algorithm. It utilizes the AdamW optimizer with a co
 - [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_teachers_of_test_time_scaling.md)
 - [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](../../ICLR2026/reinforcement_learning/self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
 - [\[ICML 2025\] Test-Time Adaptation with Binary Feedback](../../ICML2025/reinforcement_learning/test-time_adaptation_with_binary_feedback.md)
-- [\[AAAI 2026\] Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping](../../AAAI2026/reinforcement_learning/aligning_machiavellian_agents_behavior_steering_via_test-tim.md)
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](../../ICLR2026/reinforcement_learning/representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 
 </div>
 

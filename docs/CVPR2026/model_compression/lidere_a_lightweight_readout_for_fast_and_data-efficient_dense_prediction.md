@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LiDeRe: A Lightweight Readout for Fast and Data-Efficient Dense Prediction
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] LiDeRe argues that for dense prediction tasks with limited data, rather than using Parameter-Efficient Fine-Tuning (PEFT) such as LoRA—which requires backpropagation through the entire backbone—it is superior to attach a carefully designed lightweight readout on top of a **frozen backbone**. By integrating a "learnable
+  [CVPR 2026][Model Compression][Lightweight readout] LiDeRe argues that for dense prediction tasks with limited data, rather than using Parameter-Efficient Fine-Tuning (PEFT) such as LoRA—which requires backpropagation through the entire backbone—it is superior to attach a carefully designed lightweight readout on top of a **frozen backbone**. By integrating a "learnable interpolation prior" and "content-guided attention" into a feature interpolation module…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Lightweight readout"
+  - "Parameter-efficient fine-tuning"
+  - "Frozen backbone"
+  - "Learnable interpolation"
+  - "Dense prediction"
 date: 2026-05-08
-content_hash: 209b643db572b9d8
+content_hash: 34c18e639cabbb56
 ---
+
 # LiDeRe: A Lightweight Readout for Fast and Data-Efficient Dense Prediction
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Removing core components of the feature interpolation module (Table 6) shows deg
 
 ## Related Papers
 
-- [\[CVPR 2026\] Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference](rejection_mixing_fast_semantic_propagation_of_mask_tokens_for_efficient_dllm_inf.md)
 - [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
+- [\[CVPR 2026\] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction](memo_human-like_crisp_edge_detection_using_masked_edge_prediction.md)
 - [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
 - [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
-- [\[CVPR 2026\] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction](memo_human-like_crisp_edge_detection_using_masked_edge_prediction.md)
+- [\[ECCV 2024\] SpaceJAM: a Lightweight and Regularization-free Method for Fast Joint Alignment of Images](../../ECCV2024/model_compression/spacejam_a_lightweight_and_regularization-free_method_for_fast_joint_alignment_o.md)
 
 </div>
 

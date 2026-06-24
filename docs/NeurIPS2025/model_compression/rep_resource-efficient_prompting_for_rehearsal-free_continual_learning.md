@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] REP: Resource-Efficient Prompting for Rehearsal-Free Continual Learning
 description: >-
-  [NeurIPS 2025][Model Compression][Continual Learning] REP reduces training time by up to 51% and memory consumption by up to 41% for prompt-based rehearsal-free continual learning methods, with negligible accuracy loss…
+  [NeurIPS 2025][Model Compression][Continual Learning] REP reduces training time by up to 51% and memory consumption by up to 41% for prompt-based rehearsal-free continual learning methods, with negligible accuracy loss, via three complementary techniques: fast prompt selection using a lightweight surrogate model, Adaptive Token Merging (AToM), and Adaptive Layer Dropping (ALD).
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Token Merging"
   - "Layer Dropping"
 date: 2026-05-08
-content_hash: fd3429b3fc459c94
+content_hash: e22e9dcaa91128f2
 ---
 
 # REP: Resource-Efficient Prompting for Rehearsal-Free Continual Learning
@@ -157,11 +157,11 @@ REP addresses a gap in resource efficiency for prompt-based CL methods. Unlike r
 
 ## Related Papers
 
+- [\[CVPR 2025\] CL-LoRA: Continual Low-Rank Adaptation for Rehearsal-Free Class-Incremental Learning](../../CVPR2025/model_compression/cl-lora_continual_low-rank_adaptation_for_rehearsal-free_class-incremental_learn.md)
 - [\[ICCV 2025\] Achieving More with Less: Additive Prompt Tuning for Rehearsal-Free Class-Incremental Learning](../../ICCV2025/model_compression/achieving_more_with_less_additive_prompt_tuning_for_rehearsal-free_class-increme.md)
-- [\[CVPR 2026\] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](../../CVPR2026/model_compression/critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
-- [\[NeurIPS 2025\] A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings](a-thought_efficient_reasoning_via_bidirectional_compression_for_low-resource_set.md)
-- [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](../../AAAI2026/model_compression/beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
+- [\[CVPR 2025\] LoRA Subtraction for Drift-Resistant Space in Exemplar-Free Continual Learning](../../CVPR2025/model_compression/lora_subtraction_for_drift-resistant_space_in_exemplar-free_continual_learning.md)
+- [\[CVPR 2026\] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](../../CVPR2026/model_compression/critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)
 
 </div>
 

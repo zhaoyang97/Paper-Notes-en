@@ -1,17 +1,20 @@
 ---
 title: >-
-  [Paper Note] SSVPO：面向语言模型 RL 训练的有效步级信用分配
+  [Paper Note] SSVPO: Toward Effective Step-level Credit Assignment for Language Model RL Training
 description: >-
-  [ICLR 2026][Reinforcement Learning][Sequential Shapley Value] SSVPO draws inspiration from Shapley Values in multi-agent RL (MARL), treating each step in a reasoning chain as an "agent." Through an Insertion MDP, it rearranges steps into various new chains to measure the marginal contribution of each step (Sequential Shapley Value). This value serves as the advantage baseline for
+  [ICLR 2026][Reinforcement Learning][Step-level Credit Assignment] SSVPO draws inspiration from Shapley Values in multi-agent RL (MARL), treating each step in a reasoning chain as an "agent." Through an Insertion MDP, it rearranges steps into various new chains to measure the marginal contribution of each step (Sequential Shapley Value). This value serves as the advantage baseline for PPO-based policy optimization. It provides fair credit assignment for partially correct chain…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Sequential Shapley Value
-  - Insertion MDP
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Step-level Credit Assignment"
+  - "Sequential Shapley Value"
+  - "Insertion MDP"
+  - "RLVR"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: d65ea3b07c7dd034
+content_hash: c2fda24152055edb
 ---
+
 # SSVPO: Toward Effective Step-level Credit Assignment for Language Model RL Training
 
 **Conference**: ICLR 2026  
@@ -157,11 +160,11 @@ Impact of the rearrangement step count (reorder num) hyperparameter (Qwen3-1.7B,
 
 ## Related Papers
 
-- [\[ICLR 2026\] RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?](rl_grokking_recipe_how_does_rl_unlock_and_transfer_new_algorithms_in_llms.md)
-- [\[ICLR 2026\] Webscale-RL: Automated Data Pipeline for Scaling RL Data to Pretraining Levels](webscale-rl_automated_data_pipeline_for_scaling_rl_data_to_pretraining_levels.md)
-- [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
-- [\[ICLR 2026\] RL for Reasoning by Adaptively Revealing Rationales](rl_for_reasoning_by_adaptively_revealing_rationales.md)
-- [\[ICLR 2026\] From f(x) and g(x) to f(g(x)): LLMs Learn New Skills in RL by Composing Old Ones](from_fx_and_gx_to_fgx_llms_learn_new_skills_in_rl_by_composing_old_ones.md)
+- [\[ICML 2025\] VinePPO: Refining Credit Assignment in RL Training of LLMs](../../ICML2025/reinforcement_learning/vineppo_refining_credit_assignment_in_rl_training_of_llms.md)
+- [\[ICLR 2026\] Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning](occupancy_reward_shaping_improving_credit_assignment_for_offline_goal-conditione.md)
+- [\[ICLR 2026\] Learning to Reason as Action Abstractions with Scalable Mid-Training RL](learning_to_reason_as_action_abstractions_with_scalable_mid-training_rl.md)
+- [\[ICLR 2026\] Selective Expert Guidance for Effective and Diverse Exploration in Reinforcement Learning of LLMs](selective_expert_guidance_for_effective_and_diverse_exploration_in_reinforcement.md)
+- [\[ICLR 2026\] DVLA-RL: Dual-Level Vision-Language Alignment with Reinforcement Learning Gating for Few-Shot Learning](dvla-rl_dual-level_vision-language_alignment_with_reinforcement_learning_gating_.md)
 
 </div>
 

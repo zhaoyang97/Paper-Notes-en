@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PADiff: Predictive and Adaptive Diffusion Policies for Ad Hoc Teamwork
 description: >-
-  [AAAI 2026][Image Generation][Ad Hoc Teamwork] This work is the first to apply diffusion models to the Ad Hoc Teamwork (AHT) problem. The proposed PADiff framework achieves real-time adaptation to dynamic teammates via a…
+  [AAAI 2026][Image Generation][Ad Hoc Teamwork] This work is the first to apply diffusion models to the Ad Hoc Teamwork (AHT) problem. The proposed PADiff framework achieves real-time adaptation to dynamic teammates via an Adaptive Feature Modulation Net (AFM-Net), and injects teammate intent prediction into the denoising process through a Predictive Guidance Block (PGB), achieving an average improvement of 35.25% over existing methods in multimodal cooperative scenarios.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Predictive Guidance"
   - "Adaptive Feature Modulation"
 date: 2026-05-08
-content_hash: 274ed7ca192d6f8a
+content_hash: 6cfec53774825a90
 ---
 
 # PADiff: Predictive and Adaptive Diffusion Policies for Ad Hoc Teamwork
@@ -210,8 +210,8 @@ Ablation on PGB modules:
 - [\[ICLR 2026\] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)](../../ICLR2026/image_generation/improving_discrete_diffusion_unmasking_policies_beyond_explicit_reference_polici.md)
 - [\[ICML 2026\] Recovering Hidden Reward in Diffusion-Based Policies](../../ICML2026/image_generation/recovering_hidden_reward_in_diffusion-based_policies.md)
 - [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](../../ICLR2026/image_generation/compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
-- [\[NeurIPS 2025\] Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge](../../NeurIPS2025/image_generation/towards_general_modality_translation_with_contrastive_and_predictive_latent_diff.md)
-- [\[CVPR 2026\] Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation](../../CVPR2026/image_generation/adaptive_auxiliary_prompt_blending_for_target-faithful_diffusion_generation.md)
+- [\[ICLR 2026\] Foresight Diffusion: Improving Sampling Consistency in Predictive Diffusion Models](../../ICLR2026/image_generation/foresight_diffusion_improving_sampling_consistency_in_predictive_diffusion_model.md)
+- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](../../CVPR2026/image_generation/region-adaptive_sampling_for_diffusion_transformers.md)
 
 </div>
 

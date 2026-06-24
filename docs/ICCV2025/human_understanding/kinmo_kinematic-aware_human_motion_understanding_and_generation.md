@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KinMo: Kinematic-Aware Human Motion Understanding and Generation
 description: >-
-  [ICCV 2025][Human Understanding][Human motion generation] This paper proposes the KinMo framework, which decomposes human motion into six kinematic groups and their interactions as a hierarchically describable representa…
+  [ICCV 2025][Human Understanding][Human motion generation] This paper proposes the KinMo framework, which decomposes human motion into six kinematic groups and their interactions as a hierarchically describable representation. An automatic annotation pipeline generates fine-grained textual descriptions at multiple granularities. Combined with hierarchical text-motion alignment (HTMA) and a coarse-to-fine motion generation strategy, KinMo significantly improves motion understan…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical representation"
   - "fine-grained control"
 date: 2026-05-08
-content_hash: 7ddf23e6fee7e544
+content_hash: 105222444441fb5b
 ---
 
 # KinMo: Kinematic-Aware Human Motion Understanding and Generation
@@ -165,10 +165,10 @@ The KinMo framework consists of four components: (1) a describable motion repres
 ## Related Papers
 
 - [\[ICCV 2025\] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation](genm3_generative_pretrained_multi-path_motion_model_for_text_conditional_human_m.md)
+- [\[CVPR 2025\] Ego4o: Egocentric Human Motion Capture and Understanding from Multi-Modal Input](../../CVPR2025/human_understanding/ego4o_egocentric_human_motion_capture_and_understanding_from_multi-modal_input.md)
+- [\[ICLR 2026\] PulpMotion: Framing-Aware Multimodal Camera and Human Motion Generation](../../ICLR2026/human_understanding/pulp_motion_framing-aware_multimodal_camera_and_human_motion_generation.md)
+- [\[ECCV 2024\] Bridging the Gap Between Human Motion and Action Semantics via Kinematic Phrases](../../ECCV2024/human_understanding/bridging_the_gap_between_human_motion_and_action_semantics_via_kinematic_phrases.md)
 - [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](../../AAAI2026/human_understanding/soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
-- [\[AAAI 2026\] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment](../../AAAI2026/human_understanding/realign_text-to-motion_generation_via_step-aware_reward-guided_alignment.md)
-- [\[ICCV 2025\] GENMO: A GENeralist Model for Human MOtion](genmo_a_generalist_model_for_human_motion.md)
-- [\[NeurIPS 2025\] MOSPA: Human Motion Generation Driven by Spatial Audio](../../NeurIPS2025/human_understanding/mospa_human_motion_generation_driven_by_spatial_audio.md)
 
 </div>
 

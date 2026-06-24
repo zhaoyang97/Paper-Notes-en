@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] GeoSURGE proposes hierarchical geographic embeddings and a semantic fusion module, modeling the global image geo-localization problem as a matching task between visual representations and learned geographic representations. It achieves SOTA on 22 out of 25 metrics across 5 benchmarks.
+  [CVPR 2026][Segmentation][Visual Geo-localization] GeoSURGE proposes hierarchical geographic embeddings and a semantic fusion module, modeling the global image geo-localization problem as a matching task between visual representations and learned geographic representations. It achieves SOTA on 22 out of 25 metrics across 5 benchmarks.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Visual Geo-localization"
+  - "Semantic Fusion"
+  - "Hierarchical Geographic Embeddings"
+  - "Contrastive Learning"
+  - "Cross-attention"
 date: 2026-05-08
-content_hash: 6133121523adc5fc
+content_hash: d2a0953fdc19dd2d
 ---
+
 # GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings
 
 **Conference**: CVPR 2026  
@@ -155,7 +161,7 @@ Ours achieves SOTA in 22 out of 25 metrics across 5 datasets. Excluding LVLM-bas
 - [\[CVPR 2026\] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion](rel-sf4pass_panoramic_semantic_segmentation_with_rel_depth_representation_and_sp.md)
 - [\[CVPR 2026\] LoD-Loc v3: Generalized Aerial Localization in Dense Cities using Instance Silhouette Alignment](lod-loc_v3_generalized_aerial_localization_in_dense_cities_using_instance_silhou.md)
 - [\[CVPR 2026\] Uncertainty-Aware Modality Fusion for Unaligned RGB-T Salient Object Detection](uncertainty-aware_modality_fusion_for_unaligned_rgb-t_salient_object_detection.md)
-- [\[CVPR 2026\] Metric-Guided Feature Fusion of Visual Foundation Models for Segmentation Tasks](metric-guided_feature_fusion_of_visual_foundation_models_for_segmentation_tasks.md)
+- [\[CVPR 2026\] Revisiting Geometric Obfuscation with Dual Convergent Lines for Privacy-Preserving Image Queries in Visual Localization](revisiting_geometric_obfuscation_with_dual_convergent_lines_for_privacy-preservi.md)
 
 </div>
 

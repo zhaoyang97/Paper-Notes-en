@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?
 description: >-
-  [NeurIPS 2025][LLM Agent][Research Agent] This paper proposes MLRC-Bench, a dynamic benchmark grounded in ML conference competition tasks…
+  [NeurIPS 2025][LLM Agent][Research Agent] This paper proposes MLRC-Bench, a dynamic benchmark grounded in ML conference competition tasks, designed to objectively evaluate the ability of LLM agents to propose and implement novel research methods. The study finds that even the strongest agent (gemini-exp-1206) closes only 9.3% of the gap between the baseline and top human solutions, and that LLM subjective scores for "novelty" exhibit virtually no correlation with actual perfo…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Methodological Innovation"
   - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: 154f96df33dfe6ea
+content_hash: 3e4d88a92c0cce6a
 ---
 
 # MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?
@@ -142,11 +142,11 @@ Relative Improvement to Human (%) for different LLMs under the MLAB framework:
 
 ## Related Papers
 
+- [\[ICLR 2026\] EXP-Bench: Can AI Conduct AI Research Experiments?](../../ICLR2026/llm_agent/exp-bench_can_ai_conduct_ai_research_experiments.md)
+- [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science Research?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_research_claims.md)
 - [\[NeurIPS 2025\] EU-Agent-Bench: Measuring Illegal Behavior of LLM Agents Under EU Law](eu-agent-bench_measuring_illegal_behavior_of_llm_agents_under_eu_law.md)
-- [\[ICLR 2026\] CoMind: Towards Community-Driven Agents for Machine Learning Engineering](../../ICLR2026/llm_agent/comind_towards_community-driven_agents_for_machine_learning_engineering.md)
 - [\[NeurIPS 2025\] DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments](defenderbench_a_toolkit_for_evaluating_language_agents_in_cybersecurity_environm.md)
-- [\[NeurIPS 2025\] The Lighthouse of Language: Enhancing LLM Agents via Critique-Guided Improvement](the_lighthouse_of_language_enhancing_llm_agents_via_critique-guided_improvement.md)
-- [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
+- [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_social_science_.md)
 
 </div>
 

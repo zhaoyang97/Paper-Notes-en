@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Controllable Sequence Editing for Biological and Clinical Trajectories
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] Clef is proposed, a controllable sequence editing model based on "temporal concepts" capable of immediate and delayed editing of biological/clinical multivariate trajectories under given conditions (e.g., drugs, surgery). On cellular reprogramming and patient lab data, it improves immediate editing MAE by 16.28%, delay
+  [ICLR 2026][Computational Biology][Counterfactual Generation] Clef is proposed, a controllable sequence editing model based on "temporal concepts" capable of immediate and delayed editing of biological/clinical multivariate trajectories under given conditions (e.g., drugs, surgery). On cellular reprogramming and patient lab data, it improves immediate editing MAE by 16.28%, delayed editing by 26.73%, and zero-shot counterfactual generation by up to 62.84%.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Counterfactual Generation"
+  - "Sequence Editing"
+  - "Temporal Concepts"
+  - "Patient Trajectories"
+  - "Cellular Reprogramming"
 date: 2026-05-08
-content_hash: 6209ad632e422496
+content_hash: 5899800c60951f6a
 ---
+
 # Controllable Sequence Editing for Biological and Clinical Trajectories
 
 **Conference**: ICLR 2026  
@@ -167,15 +173,16 @@ Evaluated on WOT-CF paired trajectories:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Controllable Diffusion-based Generation for Multi-channel Biological Data](controllable_diffusion-based_generation_for_multi-channel_biological_data.md)
+- [\[ICLR 2026\] MolEditRL: Structure-Preserving Molecular Editing via Discrete Diffusion and Reinforcement Learning](moleditrl_structure-preserving_molecular_editing_via_discrete_diffusion_and_rein.md)
 - [\[ICLR 2026\] Learning Flexible Forward Trajectories for Masked Molecular Diffusion](learning_flexible_forward_trajectories_for_masked_molecular_diffusion.md)
+- [\[ICLR 2026\] Align Your Structures: Generating Trajectories with Structure Pretraining for Molecular Dynamics](align_your_structures_generating_trajectories_with_structure_pretraining_for_mol.md)
 - [\[ICLR 2026\] Multi-state Protein Sequence Design with DynamicMPNN](multi-state_protein_sequence_design_with_dynamicmpnn.md)
-- [\[ICML 2026\] scCBGM: Interpretable Single-Cell Counterfactual Editing](../../ICML2026/computational_biology/sccbgm_interpretable_single-cell_counterfactual_editing.md)
-- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
 
 </div>
 

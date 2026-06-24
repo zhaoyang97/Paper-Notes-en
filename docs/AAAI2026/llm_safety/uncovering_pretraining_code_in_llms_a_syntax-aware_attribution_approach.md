@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach
 description: >-
-  [AAAI 2026][LLM Safety][Membership Inference Attack] This paper proposes SynPrune — the first syntax-aware membership inference attack (MIA) method for code. By identifying 47 Python syntactic conventions and pruning syn…
+  [AAAI 2026][LLM Safety][Membership Inference Attack] This paper proposes SynPrune — the first syntax-aware membership inference attack (MIA) method for code. By identifying 47 Python syntactic conventions and pruning syntactically determined tokens (retaining only tokens that reflect authorial style) when computing MIA scores, SynPrune achieves an average AUROC improvement of 15.4%, enabling effective detection of pretraining data attribution in code LLMs.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Pretraining Data Detection"
   - "Python"
 date: 2026-05-08
-content_hash: bf611405c5af38c1
+content_hash: 5a46d1b9c5046dac
 ---
 
 # Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach
@@ -133,11 +133,11 @@ The input is a Python function to be examined; the output is a binary member/non
 
 ## Related Papers
 
-- [\[ICML 2026\] Optimizing Token Choice for Code Watermarking: An RL Approach](../../ICML2026/llm_safety/optimizing_token_choice_for_code_watermarking_an_rl_approach.md)
 - [\[AAAI 2026\] Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach](uncovering_bias_paths_with_llm-guided_causal_discovery_an_active_learning_and_dy.md)
 - [\[ACL 2026\] Gap-K%: Measuring Top-1 Prediction Gap for Detecting Pretraining Data](../../ACL2026/llm_safety/gap-k_measuring_top-1_prediction_gap_for_detecting_pretraining_data.md)
-- [\[AAAI 2026\] PANDA: Patch and Distribution-Aware Augmentation for Long-Tailed Exemplar-Free Continual Learning](panda_--_patch_and_distribution-aware_augmentation_for_long-tailed_exemplar-free.md)
-- [\[AAAI 2026\] PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration](prism_privacy-aware_routing_for_adaptive_cloud-edge_llm_inference_via_semantic_s.md)
+- [\[ICLR 2026\] Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures](../../ICLR2026/llm_safety/rethinking_benign_relearning_syntax_as_the_hidden_driver_of_the_safety_tax.md)
+- [\[ICLR 2026\] CodeGenGuard: A Watermark for Code Generation Models](../../ICLR2026/llm_safety/codegenguard_a_watermark_for_code_generation_models.md)
+- [\[ACL 2026\] De-Anonymization at Scale via Tournament-Style Attribution](../../ACL2026/llm_safety/de-anonymization_at_scale_via_tournament-style_attribution.md)
 
 </div>
 

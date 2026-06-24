@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VideoMiner: Iteratively Grounding Key Frames of Hour-Long Videos via Tree-based Group Relative Policy Optimization
 description: >-
-  [ICCV 2025][Video Understanding][Long-form video understanding] This paper proposes VideoMiner, a tree-structured reinforcement learning framework for long-form video understanding. It iteratively applies segmentation–ca…
+  [ICCV 2025][Video Understanding][Long-form video understanding] This paper proposes VideoMiner, a tree-structured reinforcement learning framework for long-form video understanding. It iteratively applies segmentation–captioning–clustering to construct a hierarchical video tree, and introduces T-GRPO (Tree-based Group Relative Policy Optimization) to guide a policy model in adaptively exploring key frames. VideoMiner achieves state-of-the-art performance on four long-video be…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -13,7 +13,7 @@ tags:
   - "tree structure"
   - "hierarchical video representation"
 date: 2026-05-08
-content_hash: fcbb8eb725a390cd
+content_hash: eef05a4d7056de07
 ---
 
 # VideoMiner: Iteratively Grounding Key Frames of Hour-Long Videos via Tree-based Group Relative Policy Optimization
@@ -215,7 +215,7 @@ The tree-level reward enables the policy model to account for the downstream imp
 - [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](../../AAAI2026/video_understanding/tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
 - [\[ICCV 2025\] DynImg: Key Frames with Visual Prompts are Good Representation for Multi-Modal Video Understanding](dynimg_key_frames_with_visual_prompts_are_good_representation_for_multi-modal_vi.md)
 - [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
-- [\[ICCV 2025\] Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos](beyond_the_frame_generating_360deg_panoramic_videos_from_perspective_videos.md)
+- [\[CVPR 2025\] DeCafNet: Delegate and Conquer for Efficient Temporal Grounding in Long Videos](../../CVPR2025/video_understanding/decafnet_delegate_and_conquer_for_efficient_temporal_grounding_in_long_videos.md)
 
 </div>
 

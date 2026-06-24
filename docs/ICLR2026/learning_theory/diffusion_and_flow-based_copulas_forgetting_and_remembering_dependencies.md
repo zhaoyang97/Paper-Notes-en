@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Diffusion and Flow-based Copulas: Forgetting and Remembering Dependencies
 description: >-
-  [ICLR 2026][learning_theory][Copula] This paper applies diffusion and flow concepts to copula modeling by designing two forward stochastic processes that "forget dependencies between variables while preserving univariate marginal distributions." By training models to "remember" these forgotten dependencies, the authors enable copulas to scale to high-dime
+  [ICLR2026][Probabilistic Generative Models][Diffusion Process] This paper applies diffusion and flow concepts to copula modeling by designing two forward stochastic processes that "forget dependencies between variables while preserving univariate marginal distributions." By training models to "remember" these forgotten dependencies, the authors enable copulas to scale to high-dimensional ($d > 1000$) and multimodal structures (e.g., images) for the first time…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Copula
+  - "ICLR2026"
+  - "Probabilistic Generative Models"
+  - "Copula"
+  - "Diffusion & Flow"
+  - "Diffusion Process"
+  - "Flow Models"
+  - "Dependence Structure Modeling"
+  - "Density Estimation"
 date: 2026-05-08
-content_hash: e6f881367b47041a
+content_hash: 3593ddaa4c2046ac
 ---
+
 # Diffusion and Flow-based Copulas: Forgetting and Remembering Dependencies
 
 **Conference**: ICLR2026  
@@ -159,9 +165,20 @@ cdc achieves the highest LL across all datasets. In terms of FID, reflection gen
 - Value: ⭐⭐⭐⭐⭐ (Scales copulas to $d > 1000$, highly relevant for scientific fields requiring marginal calibration).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] DeepWeightFlow: Re-Basined Flow Matching for Generating Neural Network Weights](deepweightflow_re-basined_flow_matching_for_generating_neural_network_weights.md)
+- [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
+- [\[ICLR 2026\] A Unification of Discrete, Gaussian, and Simplicial Diffusion](a_unification_of_discrete_gaussian_and_simplicial_diffusion.md)
+- [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
+- [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] DeepWeightFlow: Re-Basined Flow Matching for Generating Neural Network Weights](deepweightflow_re-basined_flow_matching_for_generating_neural_network_weights.md)

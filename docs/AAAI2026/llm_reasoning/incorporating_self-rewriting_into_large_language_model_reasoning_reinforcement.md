@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement
 description: >-
-  [AAAI 2026][LLM Reasoning][Reasoning quality improvement] This paper proposes a Self-Rewriting framework that enables large reasoning models (LRMs) to rewrite their own reasoning traces for "easy" samples (queries where…
+  [AAAI 2026][Reasoning][Reasoning quality improvement] This paper proposes a Self-Rewriting framework that enables large reasoning models (LRMs) to rewrite their own reasoning traces for "easy" samples (queries where all responses are correct) during RL training and learn from the rewritten versions. With only ~10% additional training overhead, the approach reduces reasoning length by 46% while maintaining accuracy, improves internal reasoning quality (LLM-as-Judge) by 7.2 poi…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Reasoning quality improvement"
   - "self-rewriting"
   - "GRPO"
   - "reasoning length control"
   - "over-thinking"
 date: 2026-05-08
-content_hash: e5dde0b43cbec291
+content_hash: 05609482aed2f594
 ---
 
 # Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement
@@ -138,7 +138,7 @@ A similar trend is observed for Qwen3-1.7B: Self-Rewrite achieves Acc −0.7, Le
 - [\[NeurIPS 2025\] The Impact of Quantization on Large Reasoning Model Reinforcement Learning](../../NeurIPS2025/llm_reasoning/the_impact_of_quantization_on_large_reasoning_model_reinforcement_learning.md)
 - [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](serl_self-examining_reinforcement_learning_on_open-domain.md)
 - [\[ACL 2026\] Dissecting Failure Dynamics in Large Language Model Reasoning](../../ACL2026/llm_reasoning/dissecting_failure_dynamics_in_large_language_model_reasoning.md)
-- [\[ICML 2026\] SmartThinker: Progressive Chain-of-Thought Length Calibration for Efficient Large Language Model Reasoning](../../ICML2026/llm_reasoning/smartthinker_progressive_chain-of-thought_length_calibration_for_efficient_large.md)
+- [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](../../ICLR2026/llm_reasoning/plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
 
 </div>
 

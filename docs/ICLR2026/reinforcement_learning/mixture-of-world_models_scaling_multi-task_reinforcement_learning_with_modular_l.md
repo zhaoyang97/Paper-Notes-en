@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] By integrating task-specific VAEs, a mixture of Transformer experts, and a shared backbone into a "Mixture-of-World models" (MoW) architecture—augmented with gradient clustering and harmony loss—the authors train a single agent to simultaneously master 26 Atari games and 50 Meta-World tasks. The performance approaches
+  [ICLR 2026][Reinforcement Learning][Multi-task reinforcement learning] By integrating task-specific VAEs, a mixture of Transformer experts, and a shared backbone into a "Mixture-of-World models" (MoW) architecture—augmented with gradient clustering and harmony loss—the authors train a single agent to simultaneously master 26 Atari games and 50 Meta-World tasks. The performance approaches that of an ensemble of 26 single-task models while reducing parameters by half.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-task reinforcement learning"
+  - "world models"
+  - "Mixture-of-Experts"
+  - "modular latent dynamics"
+  - "sample efficiency"
 date: 2026-05-08
-content_hash: 7432f987b412c20e
+content_hash: b1cace2e860ecc6f
 ---
+
 # Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics
 
 **Conference**: ICLR 2026  
@@ -112,15 +116,13 @@ The single MoW model nearly matches the performance of the 26-task STORM ensembl
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
 - [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](learning_massively_multitask_world_models_for_continuous_control.md)
 - [\[ICML 2025\] Mastering Massive Multi-Task Reinforcement Learning via Mixture-of-Expert Decision Transformer](../../ICML2025/reinforcement_learning/mastering_massive_multi-task_reinforcement_learning_via_mixture-of-expert_decisi.md)
 - [\[ICLR 2026\] One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning](one_model_for_all_tasks_leveraging_efficient_world_models_in_multi-task_planning.md)
-- [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
+- [\[ICLR 2026\] Efficient Reinforcement Learning by Guiding World Models with Non-Curated Data](efficient_reinforcement_learning_by_guiding_world_models_with_non-curated_data.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MobileKGQA: On-Device KGQA System on Dynamic Mobile Environments
 description: >-
-  [ICLR 2026][Graph Learning][KGQA] MobileKGQA compresses high-dimensional LLM embeddings into binary hash codes for a GNN reasoning module and pairs it with a step-by-step automatic label generation method. This allows a Knowledge Graph Question Answering (KGQA) system to **train directly on mobile/edge devices and adapt to accumulating user data** for
+  [ICLR 2026][Graph Learning][KGQA] MobileKGQA compresses high-dimensional LLM embeddings into binary hash codes for a GNN reasoning module and pairs it with a step-by-step automatic label generation method. This allows a Knowledge Graph Question Answering (KGQA) system to **train directly on mobile/edge devices and adapt to accumulating user data** for the first time, achieving a 20.3% performance improvement with only 30.4% energy consumption on Jetson Orin Nano.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - KGQA
-  - embedding hashing
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "KGQA"
+  - "On-device Training"
+  - "Embedding Hashing"
+  - "Distribution Shift"
+  - "Automatic Label Generation"
 date: 2026-05-08
-content_hash: 721c1f650bdd9730
+content_hash: aaee22c5213bc5b0
 ---
+
 # MobileKGQA: On-Device KGQA System on Dynamic Mobile Environments
 
 **Conference**: ICLR 2026  
@@ -122,8 +126,8 @@ Using only 30.6% of training time and 30.4% of energy, performance actually incr
 
 ## Related Papers
 
-- [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
 - [\[ICLR 2026\] Adaptive Mixture of Disentangled Experts for Dynamic Graph Out-of-Distribution Generalization](adaptive_mixture_of_disentangled_experts_for_dynamic_graph_out-of-distribution_g.md)
+- [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
 - [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
 - [\[ICLR 2026\] One for Two: A Unified Framework for Imbalanced Graph Classification via Dynamic Balanced Prototype](one_for_two_a_unified_framework_for_imbalanced_graph_classification_via_dynamic_.md)
 - [\[ACL 2026\] IndustryAssetEQA: A Neurosymbolic Operational Intelligence System for Embodied Question Answering in Industrial Asset Maintenance](../../ACL2026/graph_learning/industryasseteqa_a_neurosymbolic_operational_intelligence_system_for_embodied_qu.md)

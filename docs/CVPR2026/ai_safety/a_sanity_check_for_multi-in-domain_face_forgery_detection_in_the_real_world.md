@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Sanity Check for Multi-In-Domain Face Forgery Detection in the Real World
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper performs a "sanity check": it reveals that existing deepfake detectors achieve seemingly high AUC on multi-domain mixed data but suffer from low frame-level real/fake Accuracy (ACC) because "inter-domain discrepancies" overshadow "real/fake differences" in the feature space. Subsequently, it proposes a model
+  [CVPR 2026][AI Safety][Face Forgery Detection] This paper performs a "sanity check": it reveals that existing deepfake detectors achieve seemingly high AUC on multi-domain mixed data but suffer from low frame-level real/fake Accuracy (ACC) because "inter-domain discrepancies" overshadow "real/fake differences" in the feature space. Subsequently, it proposes a model-agnostic two-stage framework, DevDet (FFDev to expose forgery traces + DAFT for dose-adaptive fine-tuning)…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Face Forgery Detection"
+  - "Multi-Domain Training"
+  - "Frame-level Discrimination"
+  - "Dictionary Learning"
+  - "Model-Agnostic Post-processing"
 date: 2026-05-08
-content_hash: aea2b68f6adf7a2a
+content_hash: f80910a58a9dbff8
 ---
+
 # A Sanity Check for Multi-In-Domain Face Forgery Detection in the Real World
 
 **Conference**: CVPR 2026  
@@ -132,8 +138,8 @@ Based on Effnb4, verifying each component (M-ACC is 4-domain mean ACC, Cross is 
 
 ## Related Papers
 
-- [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
 - [\[CVPR 2026\] DiffusionFF: A Diffusion-based Framework for Joint Face Forgery Detection and Fine-Grained Artifact Localization](diffusionff_a_diffusion-based_framework_for_joint_face_forgery_detection_and_fin.md)
+- [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
 - [\[ACL 2026\] OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset](../../ACL2026/ai_safety/omnicompliance-100k_a_multi-domain_rule-grounded_real-world_safety_compliance_da.md)
 - [\[CVPR 2026\] Frequency-domain Manipulation for Face Obfuscation](frequency-domain_manipulation_for_face_obfuscation.md)
 - [\[CVPR 2025\] Forensics Adapter: Adapting CLIP for Generalizable Face Forgery Detection](../../CVPR2025/ai_safety/forensics_adapter_adapting_clip_for_generalizable_face_forgery_detection.md)

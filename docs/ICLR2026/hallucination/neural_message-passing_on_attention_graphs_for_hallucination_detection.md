@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Neural Message-Passing on Attention Graphs for Hallucination Detection
 description: >-
-  [ICLR 2026][Hallucination Detection][attention graph] The authors treat internal attention matrices and activations of LLMs as an "attributed directed graph" (tokens as nodes, attention flow as edges). A GNN is used for message passing to detect hallucinations. It is theoretically proven that this framework encompasses previous attention-based heuristics while empirically
+  [ICLR 2026][Hallucination Detection][attention graph] The authors treat internal attention matrices and activations of LLMs as an "attributed directed graph" (tokens as nodes, attention flow as edges). A GNN is used for message passing to detect hallucinations. It is theoretically proven that this framework encompasses previous attention-based heuristics while empirically surpassing them.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - attention graph
-  - GNN
-  - message passing
-  - computational traces
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "attention graph"
+  - "GNN"
+  - "message passing"
+  - "computational traces"
 date: 2026-05-08
-content_hash: c69239a062f2f550
+content_hash: 0fd656bd05e028a1
 ---
+
 # Neural Message-Passing on Attention Graphs for Hallucination Detection
 
 **Conference**: ICLR 2026  
@@ -131,14 +132,17 @@ Where $\bigoplus$ is a permutation-invariant aggregator (sum/avg/max), $\text{up
 
 <div class="related-papers" markdown="1">
 
-1. **Lookback Lens**: [https://arxiv.org/abs/2312.11505](https://arxiv.org/abs/2312.11505)
-2. **LLM-Check**: [https://arxiv.org/abs/2402.13204](https://arxiv.org/abs/2402.13204)
-3. **Graph Analysis of LLMs**: [https://arxiv.org/abs/2306.00254](https://arxiv.org/abs/2306.00254)
+## Related Papers
+
+- [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](../../ACL2026/hallucination/hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
+- [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](enhancing_hallucination_detection_through_noise_injection.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
+- [\[ACL 2025\] HD-NDEs: Neural Differential Equations for Hallucination Detection in LLMs](../../ACL2025/hallucination/hd-ndes_neural_differential_equations_for_hallucination_detection_in_llms.md)
+- [\[ICLR 2026\] Learning to Reason for Hallucination Span Detection](learning_to_reason_for_hallucination_span_detection.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](../../ACL2026/hallucination/hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)

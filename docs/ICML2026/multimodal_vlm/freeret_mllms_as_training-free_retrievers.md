@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FreeRet: MLLMs as Training-Free Retrievers
 description: >-
-  [ICML 2026][Multimodal VLM][MLLM embedding] FreeRet proposes a fully training-free two-stage multimodal retrieval framework: the first stage bypasses the last MLP layer of the MLLM and utilizes controlled generation prompts to extract semantically faithful embeddings for candidate retrieval; the second stage transforms reranking into a multiple-choice question (
+  [ICML 2026][Multimodal VLM][Training-free retrieval] FreeRet proposes a fully training-free two-stage multimodal retrieval framework: the first stage bypasses the last MLP layer of the MLLM and utilizes controlled generation prompts to extract semantically faithful embeddings for candidate retrieval; the second stage transforms reranking into a multiple-choice question (MCQ) format to circumvent the LLM framing bias. It outperforms retrieval models trained on tens of millions…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - MLLM embedding
-  - LLM framing effect
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Training-free retrieval"
+  - "MLLM embedding"
+  - "Lexicalization pressure"
+  - "LLM framing effect"
+  - "Two-stage retrieval"
 date: 2026-05-08
-content_hash: f28e29f4c1118b00
+content_hash: 24a07ce386eb6b5a
 ---
+
 # FreeRet: MLLMs as Training-Free Retrievers
 
 **Conference**: ICML 2026  
@@ -142,11 +146,20 @@ Fully training-free. Improvements involve only: (i) extraction position, (ii) pr
 - Value: ⭐⭐⭐⭐ Directly applicable to RAG and multimodal retrieval communities with methodological implications for LLM-as-judge research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICML 2026\] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training](med-scout_curing_mllms_geometric_blindness_in_medical_perception_via_geometry-aw.md)
+- [\[CVPR 2026\] PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs](../../CVPR2026/multimodal_vlm/pas_a_training-free_stabilizer_for_temporal_encoding_in_video_llms.md)
+- [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](../../ICLR2026/multimodal_vlm/visual_jigsaw_post-training_improves_mllms.md)
+- [\[NeurIPS 2025\] Training-free Online Video Step Grounding](../../NeurIPS2025/multimodal_vlm/training-free_online_video_step_grounding.md)
+- [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](../../CVPR2026/multimodal_vlm/pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training](med-scout_curing_mllms_geometric_blindness_in_medical_perception_via_geometry-aw.md)

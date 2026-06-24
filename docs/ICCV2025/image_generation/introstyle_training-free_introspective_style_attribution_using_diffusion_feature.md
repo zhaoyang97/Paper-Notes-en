@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features
 description: >-
-  [ICCV 2025][Image Generation][Style attribution] This paper proposes IntroStyle, a training-free style attribution method that leverages only channel-wise mean and variance statistics from intermediate layers of a diffus…
+  [ICCV 2025][Image Generation][Style attribution] This paper proposes IntroStyle, a training-free style attribution method that leverages only channel-wise mean and variance statistics from intermediate layers of a diffusion model's own denoising network, measuring inter-image style similarity via the 2-Wasserstein distance. IntroStyle substantially outperforms supervised state-of-the-art methods on WikiArt and DomainNet without any task-specific training.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "copyright protection"
   - "style retrieval"
 date: 2026-05-08
-content_hash: bca500529993f1c4
+content_hash: bde369b0cb5fce8f
 ---
 
 # IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features
@@ -145,10 +145,10 @@ The core contribution lies in the discovery that channel-wise statistics of diff
 
 ## Related Papers
 
+- [\[CVPR 2025\] K-LoRA: Unlocking Training-Free Fusion of Any Subject and Style LoRAs](../../CVPR2025/image_generation/k-lora_unlocking_training-free_fusion_of_any_subject_and_style_loras.md)
+- [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](../../CVPR2026/image_generation/a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
 - [\[ICCV 2025\] LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering](larender_training-free_occlusion_control_in_image_generation_via_latent_renderin.md)
-- [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](../../CVPR2026/image_generation/ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
 - [\[AAAI 2026\] AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction](../../AAAI2026/image_generation/aedr_training-free_ai-generated_image_attribution_via_autoen.md)
-- [\[ICCV 2025\] OmniVTON: Training-Free Universal Virtual Try-On](omnivton_training-free_universal_virtual_try-on.md)
 - [\[ICCV 2025\] Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing](anchor_token_matching_implicit_structure_locking_for_training-free_ar_image_edit.md)
 
 </div>

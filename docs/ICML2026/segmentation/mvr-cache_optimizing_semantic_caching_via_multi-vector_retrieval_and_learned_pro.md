@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] MVR-cache: Optimizing Semantic Caching via Multi-Vector Retrieval and Learned Prompt Segmentation
 description: >-
-  [ICML 2026][Segmentation][Multi-Vector Retrieval] MVR-cache upgrades the similarity metric for LLM semantic caching from "single-vector cosine" to "multi-vector MaxSim after learned segmentation." By training a lightweight segmentation model via REINFORCE, it boosts cache hit rates by up to 37% while maintaining the same error rate upper bound $\delta$.
+  [ICML 2026][Segmentation][Semantic Caching] MVR-cache upgrades the similarity metric for LLM semantic caching from "single-vector cosine" to "multi-vector MaxSim after learned segmentation." By training a lightweight segmentation model via REINFORCE, it boosts cache hit rates by up to 37% while maintaining the same error rate upper bound $\delta$.
 tags:
-  - ICML 2026
-  - Segmentation
-  - Multi-Vector Retrieval
-  - MaxSim
-  - Reinforcement Learning
-  - vCache
+  - "ICML 2026"
+  - "Segmentation"
+  - "Semantic Caching"
+  - "Multi-Vector Retrieval"
+  - "MaxSim"
+  - "Prompt Segmentation"
+  - "Reinforcement Learning"
+  - "vCache"
 date: 2026-05-08
-content_hash: f76379d3c3297ec8
+content_hash: 0b56ace5e5e757f1
 ---
+
 # MVR-cache: Optimizing Semantic Caching via Multi-Vector Retrieval and Learned Prompt Segmentation
 
 **Conference**: ICML 2026  

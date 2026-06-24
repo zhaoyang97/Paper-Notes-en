@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models
 description: >-
-  [ICLR 2026][Audio & Speech][Chain-of-Thought] This paper proposes SAGE, a geometry-aware binaural audio encoder, and OWL, a spatial audio large language model. By aligning acoustic features with 3D geometry using Room Impulse Response (RIR) and panoramic depth maps during training—and utilizing only audio during inference—combined with "spatial-anchored Chain-of-T
+  [ICLR 2026][Audio & Speech][Binaural Audio] This paper proposes SAGE, a geometry-aware binaural audio encoder, and OWL, a spatial audio large language model. By aligning acoustic features with 3D geometry using Room Impulse Response (RIR) and panoramic depth maps during training—and utilizing only audio during inference—combined with "spatial-anchored Chain-of-Thought (CoT) + curriculum learning," the model achieves clock-face-level azimuth estimation and interpretable multi-…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Binaural Audio"
+  - "Spatial Reasoning"
+  - "Geometry-Aware Encoder"
+  - "Chain-of-Thought"
+  - "Sound Event Localization"
 date: 2026-05-08
-content_hash: 5157765e32ed9b48
+content_hash: 300b51fb33d3f1f9
 ---
+
 # OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models
 
 **Conference**: ICLR 2026  
@@ -147,14 +152,17 @@ SAGE loss component ablation (BiDepth):
 
 <div class="related-papers" markdown="1">
 
-1. **BAT**: Bassel et al., "Binaural Audio Transformer for Spatial Question Answering", 2024.
-2. **Spatial-AST**: "Spatial Audio Spectrogram Transformer for Sound Event Localization", 2023.
-3. **Audio Flamingo**: "A Multimodal LLM for Audio-Language Tasks", 2024.
+## Related Papers
+
+- [\[ICLR 2026\] Measuring Audio's Impact on Correctness: Audio-Contribution-Aware Post-Training of Large Audio Language Models](measuring_audios_impact_on_correctness_audio-contribution-aware_post-training_of.md)
+- [\[ICLR 2026\] Stitch: Simultaneous Thinking and Talking with Chunked Reasoning for Spoken Language Models](stitch_simultaneous_thinking_and_talking_with_chunked_reasoning_for_spoken_langu.md)
+- [\[ICML 2026\] Two-Dimensional Quantization for Geometry-Aware Audio Coding](../../ICML2026/audio_speech/two-dimensional_quantization_for_geometry-aware_audio_coding.md)
+- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](../../ACL2026/audio_speech/closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
+- [\[NeurIPS 2025\] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](../../NeurIPS2025/audio_speech/thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Measuring Audio's Impact on Correctness: Audio-Contribution-Aware Post-Training of Large Audio Language Models](measuring_audios_impact_on_correctness_audio-contribution-aware_post-training_of.md)

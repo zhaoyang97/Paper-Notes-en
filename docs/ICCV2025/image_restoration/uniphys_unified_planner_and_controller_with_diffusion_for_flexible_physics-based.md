@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniPhys: Unified Planner and Controller with Diffusion for Flexible Physics-Based Character Control
 description: >-
-  [ICCV 2025][Image Restoration][Physics-based character control] This paper proposes UniPhys, a behavior cloning framework based on diffusion models that unifies motion planning and physics-based control within a single m…
+  [ICCV 2025][Image Restoration][Physics-based character control] This paper proposes UniPhys, a behavior cloning framework based on diffusion models that unifies motion planning and physics-based control within a single model. By adopting the Diffusion Forcing training paradigm to address compounding prediction errors, UniPhys enables flexible multi-task physics-based character motion generation, including text-driven control, velocity control, goal reaching…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Forcing"
   - "text-driven control"
 date: 2026-05-08
-content_hash: e1f53ff2950b05ab
+content_hash: 82b8920771af4360
 ---
 
 # UniPhys: Unified Planner and Controller with Diffusion for Flexible Physics-Based Character Control
@@ -154,11 +154,11 @@ Note: The figures above summarize the qualitative trends reported in the paper. 
 
 ## Related Papers
 
-- [\[ICML 2026\] Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging](../../ICML2026/image_restoration/phy-cosf_physics-guided_continuous_spectral_fields_reconstruction_and_super-reso.md)
-- [\[NeurIPS 2025\] MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation](../../NeurIPS2025/image_restoration/ms-bart_unified_modeling_of_mass_spectra_and_molecules_for_structure_elucidation.md)
-- [\[NeurIPS 2025\] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement](../../NeurIPS2025/image_restoration/latent_harmony_synergistic_unified_uhd_image_restoration_with_pre-trained_diffus.md)
-- [\[ICCV 2025\] Exploiting Diffusion Prior for Task-driven Image Restoration](exploiting_diffusion_prior_for_task-driven_image_restoration.md)
-- [\[ICCV 2025\] Generic Event Boundary Detection via Denoising Diffusion (DiffGEBD)](generic_event_boundary_detection_via_denoising_diffusion.md)
+- [\[ICLR 2026\] Turbo-DDCM: Fast and Flexible Zero-Shot Diffusion-Based Image Compression](../../ICLR2026/image_restoration/turbo-ddcm_fast_and_flexible_zero-shot_diffusion-based_image_compression.md)
+- [\[CVPR 2025\] A Physics-Informed Blur Learning Framework for Imaging Systems](../../CVPR2025/image_restoration/a_physics-informed_blur_learning_framework_for_imaging_systems.md)
+- [\[CVPR 2026\] SDUIE: Semi-Supervised Diffusion for Underwater Image Enhancement with Quant-Text Dual Control](../../CVPR2026/image_restoration/sduie_semi-supervised_diffusion_for_underwater_image_enhancement_with_quant-text.md)
+- [\[CVPR 2025\] Proximal Algorithm Unrolling: Flexible and Efficient Reconstruction Networks for Single-Pixel Imaging](../../CVPR2025/image_restoration/proximal_algorithm_unrolling_flexible_and_efficient_reconstruction_networks_for_.md)
+- [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](../../CVPR2026/image_restoration/ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
 
 </div>
 

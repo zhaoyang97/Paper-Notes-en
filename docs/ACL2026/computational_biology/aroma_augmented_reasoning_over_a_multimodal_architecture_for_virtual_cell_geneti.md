@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling
 description: >-
-  [ACL 2026][Computational Biology][Paper Note] The AROMA framework is proposed, which integrates text evidence, knowledge graph topology, and protein sequence features in a multimodal architecture. Combined with a two-stage training strategy (SFT + GRPO), it achieves interpretable and precise genetic perturbation effect prediction.
+  [ACL 2026 Findings][Computational Biology][Virtual cell modeling] The AROMA framework is proposed, which integrates text evidence, knowledge graph topology, and protein sequence features in a multimodal architecture. Combined with a two-stage training strategy (SFT + GRPO), it achieves interpretable and precise genetic perturbation effect prediction.
 tags:
-  - ACL 2026
-  - Computational Biology
+  - "ACL 2026 Findings"
+  - "Computational Biology"
+  - "Virtual cell modeling"
+  - "genetic perturbation prediction"
+  - "multimodal fusion"
+  - "knowledge graph"
+  - "reinforcement learning reasoning"
 date: 2026-05-08
-content_hash: 7b301e04aa6c946d
+content_hash: 0dd4c3f54d3a9322
 ---
+
 # AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling
 
 **Conference**: ACL 2026 Findings  
@@ -138,11 +144,11 @@ The SFT stage uses standard autoregressive language modeling loss. During the GR
 
 ## Related Papers
 
-- [\[ICLR 2026\] Retrieval-Augmented Generation for Predicting Cellular Responses to Gene Perturbation](../../ICLR2026/computational_biology/retrieval-augmented_generation_for_predicting_cellular_responses_to_gene_perturb.md)
 - [\[ICLR 2026\] Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction](../../ICLR2026/computational_biology/adaptive_data-knowledge_alignment_in_genetic_perturbation_prediction.md)
 - [\[ICLR 2026\] VCWorld: A Biological World Model for Virtual Cell Simulation](../../ICLR2026/computational_biology/vcworld_a_biological_world_model_for_virtual_cell_simulation.md)
 - [\[ICML 2026\] What Makes a Representation Good for Single-Cell Perturbation Prediction?](../../ICML2026/computational_biology/what_makes_a_representation_good_for_single-cell_perturbation_prediction.md)
 - [\[ICLR 2026\] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction](../../ICLR2026/computational_biology/scdfm_distributional_flow_matching_model_for_robust_single-cell_perturbation_pre.md)
+- [\[ICML 2026\] SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes](../../ICML2026/computational_biology/spatia_multimodal_generation_and_prediction_of_spatial_cell_phenotypes.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] DyKo replaces the "static universal text descriptions" used in pathological Vision-Language Models (VLMs) with "dynamically instantiated knowledge for each slide." By first clustering slide-specific visual prototypes and then using these prototypes to retrieve and synthesize knowledge features for each patch from a con
+  [CVPR 2026][Medical Imaging][Whole Slide Image Classification] DyKo replaces the "static universal text descriptions" used in pathological Vision-Language Models (VLMs) with "dynamically instantiated knowledge for each slide." By first clustering slide-specific visual prototypes and then using these prototypes to retrieve and synthesize knowledge features for each patch from a concept bank, DyKo anchors the synthesized knowledge back to visual evidence using a structural cons…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Image Classification"
+  - "Multiple Instance Learning"
+  - "Few-Shot Learning"
+  - "Pathological Vision-Language Model"
+  - "Dynamic Knowledge Injection"
 date: 2026-05-08
-content_hash: 79d29761e8983324
+content_hash: 6771d4c515e775a0
 ---
+
 # Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification
 
 **Conference**: CVPR 2026  
@@ -133,6 +139,7 @@ DyKo achieves SOTA across all datasets and shots. The advantage is most pronounc
 - Value: ⭐⭐⭐⭐ High potential for clinical diagnostic scenarios where data is scarce and interpretability is crucial.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -140,8 +147,8 @@ DyKo achieves SOTA across all datasets and shots. The advantage is most pronounc
 - [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
 - [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
 - [\[ECCV 2024\] Pathology-knowledge Enhanced Multi-instance Prompt Learning for Few-shot Whole Slide Image Classification](../../ECCV2024/medical_imaging/pathology-knowledge_enhanced_multi-instance_prompt_learning_for_few-shot_whole_s.md)
+- [\[ICLR 2026\] ASMIL: Attention-Stabilized Multiple Instance Learning for Whole-Slide Imaging](../../ICLR2026/medical_imaging/asmil_attention-stabilized_multiple_instance_learning_for_whole-slide_imaging.md)
 - [\[CVPR 2026\] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification](dual-level_hypergraph_generation_for_addressing_feature_scarcity_in_whole-slide_.md)
-- [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
 
 </div>
 

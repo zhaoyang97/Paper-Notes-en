@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] The PoliCon benchmark was constructed based on 2,225 high-quality deliberation records from the European Parliament (2009-2022) to evaluate the ability of LLMs to draft consensus resolutions under diverse voting mechanisms, power structures, and political objectives. Results indicate that frontier models perform reason
+  [ICLR 2026][AIGC Detection][Political consensus] The PoliCon benchmark was constructed based on 2,225 high-quality deliberation records from the European Parliament (2009-2022) to evaluate the ability of LLMs to draft consensus resolutions under diverse voting mechanisms, power structures, and political objectives. Results indicate that frontier models perform reasonably well on simple majority tasks but fall significantly short on 2/3 majority and security-related issues.
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Political consensus"
+  - "LLM evaluation"
+  - "European Parliament"
+  - "Social choice theory"
+  - "Voting simulation"
 date: 2026-05-08
-content_hash: 1b7ea26ec67dc914
+content_hash: c73285507445de68
 ---
+
 # PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives
 
 **Conference**: ICLR 2026  
@@ -150,8 +156,8 @@ PoliCon is an evaluation-only framework and does not involve model training. All
 ## Related Papers
 
 - [\[ACL 2026\] mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection](../../ACL2026/aigc_detection/mdok-style_at_semeval-2026_task_10_finetuning_llms_for_conspiracy_detection.md)
-- [\[NeurIPS 2025\] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text](../../NeurIPS2025/aigc_detection/asciibench_evaluating_language-model-based_understanding_of_visually-oriented_te.md)
 - [\[NeurIPS 2025\] Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content](../../NeurIPS2025/aigc_detection/can_llms_write_faithfully_an_agent-based_evaluation_of_llm-generated_islamic_con.md)
+- [\[NeurIPS 2025\] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text](../../NeurIPS2025/aigc_detection/asciibench_evaluating_language-model-based_understanding_of_visually-oriented_te.md)
 - [\[ACL 2026\] From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment](../../ACL2026/aigc_detection/from_scoring_to_explanations_evaluating_shap_and_llm_rationales_for_rubric-based.md)
 - [\[ACL 2026\] Who Wrote This Line? Evaluating the Detection of LLM-Generated Classical Chinese Poetry](../../ACL2026/aigc_detection/who_wrote_this_line_evaluating_the_detection_of_llm-generated_classical_chinese_.md)
 

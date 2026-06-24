@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Group Editing: Edit Multiple Images in One Go
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Ours proposes GroupEditing, which reconstructs a set of related images as pseudo-video frames. By combining explicit geometric correspondences provided by VGGT with implicit temporal priors from video models through enhanced positional encodings (Ge-RoPE and Identity-RoPE), it achieves cross-view consistent group image
+  [CVPR 2026][Image Generation][Multi-image consistent editing] Ours proposes GroupEditing, which reconstructs a set of related images as pseudo-video frames. By combining explicit geometric correspondences provided by VGGT with implicit temporal priors from video models through enhanced positional encodings (Ge-RoPE and Identity-RoPE), it achieves cross-view consistent group image editing, significantly outperforming existing methods in visual quality, editing consistency…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-image consistent editing"
+  - "video diffusion prior"
+  - "geometric correspondence"
+  - "RoPE"
+  - "pseudo-video"
 date: 2026-05-08
-content_hash: 9d7b38b1f6b53080
+content_hash: 4ed30c72aab43a1f
 ---
+
 # Group Editing: Edit Multiple Images in One Go
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ User Study (Rank 1=Best, 4=Worst): GroupEditing ranks first across Identity Cons
 
 ## Related Papers
 
+- [\[CVPR 2026\] Inter-Edit: First Benchmark for Interactive Instruction-Based Image Editing](inter-edit_first_benchmark_for_interactive_instruction-based_image_editing.md)
 - [\[CVPR 2026\] HP-Edit: A Human-Preference Post-Training Framework for Image Editing](hp-edit_a_human-preference_post-training_framework_for_image_editing.md)
 - [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
-- [\[CVPR 2026\] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)
 - [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
-- [\[CVPR 2026\] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images](simlbr_learning_to_detect_fake_images_by_learning_to_detect_real_images.md)
+- [\[CVPR 2026\] OrionEdit: Bridging Reference and Source Images for Generalized Cross-Image Editing](orionedit_bridging_reference_and_source_images_for_generalized_cross-image_editi.md)
 
 </div>
 

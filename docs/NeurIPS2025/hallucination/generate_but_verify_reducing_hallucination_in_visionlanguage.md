@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generate, but Verify: Reducing Hallucination in Vision-Language Models with Retrospective Resampling
 description: >-
-  [NeurIPS 2025][Hallucination Detection][VLM] This paper proposes REVERSE, the first framework to unify generation adjustment and post-hoc verification within a single VLM. Through hallucination-aware training on 1.3M sem…
+  [NeurIPS 2025][Hallucination Detection][VLM] This paper proposes REVERSE, the first framework to unify generation adjustment and post-hoc verification within a single VLM. Through hallucination-aware training on 1.3M semi-synthetic samples combined with inference-time retrospective resampling, REVERSE enables a VLM to automatically detect and correct hallucinations during generation, achieving a 12% reduction on CHAIR-MSCOCO and a 34% improvement on HaloQuest.
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "Retrospective Resampling"
   - "Confidence Token"
 date: 2026-05-08
-content_hash: 3db07b13fc5317c4
+content_hash: b4e38e7c9fc9cb7f
 ---
 
 # Generate, but Verify: Reducing Hallucination in Vision-Language Models with Retrospective Resampling
@@ -146,11 +146,11 @@ Temperature is gradually increased during rejection sampling (step $\Delta T=0.1
 
 ## Related Papers
 
-- [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](../../ACL2026/hallucination/benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
-- [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](../../ACL2026/hallucination/mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
+- [\[ICLR 2026\] Micro-Macro Retrieval: Reducing Long-Form Hallucination in Large Language Models](../../ICLR2026/hallucination/micro-macro_retrieval_reducing_long-form_hallucination_in_large_language_models.md)
 - [\[NeurIPS 2025\] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations](when_semantics_mislead_vision_mitigating_large_multimodal_models_hallucinations_.md)
 - [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
 - [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
+- [\[CVPR 2025\] HalLoc: Token-Level Localization of Hallucinations for Vision Language Models](../../CVPR2025/hallucination/halloc_token-level_localization_of_hallucinations_for_vision_language_models.md)
 
 </div>
 

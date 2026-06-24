@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Track, Inpaint, Resplat: Subject-driven 3D and 4D Generation with Progressive Texture Infilling
 description: >-
-  [NeurIPS 2025][Image Generation][Subject-driven generation] This paper proposes TIRE (Track, Inpaint, REsplat), a three-stage pipeline that locates unobserved regions via video tracking…
+  [NeurIPS 2025][Image Generation][Subject-driven generation] This paper proposes TIRE (Track, Inpaint, REsplat), a three-stage pipeline that locates unobserved regions via video tracking, progressively infills textures using a subject-driven inpainting model, and back-projects multi-view consistent results into 3D, enabling identity-preserving 3D/4D generation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Texture infilling"
   - "Video tracking"
 date: 2026-05-08
-content_hash: 8a3af282a4db64a0
+content_hash: 2988b7c6d75a4975
 ---
 
 # Track, Inpaint, Resplat: Subject-driven 3D and 4D Generation with Progressive Texture Infilling
@@ -158,9 +158,9 @@ TIRE takes the output of existing 3D/4D generation models (e.g., LGM, L4GM) as i
 
 - [\[NeurIPS 2025\] Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation](mind-the-glitch_visual_correspondence_for_detecting_inconsistencies_in_subject-d.md)
 - [\[NeurIPS 2025\] Diffusion-Driven Progressive Target Manipulation for Source-Free Domain Adaptation](diffusion-driven_progressive_target_manipulation_for_source-free_domain_adaptati.md)
+- [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](../../CVPR2026/image_generation/flowfixer_towards_detail-preserving_subject-driven_generation.md)
 - [\[NeurIPS 2025\] OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions](omnivcus_feedforward_subject-driven_video_customization_with_multimodal_control_.md)
-- [\[ICCV 2025\] FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers](../../ICCV2025/image_generation/freecus_free_lunch_subject-driven_customization_in_diffusion_transformers.md)
-- [\[CVPR 2026\] Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control](../../CVPR2026/image_generation/taming_video_models_for_3d_and_4d_generation_via_zero-shot_camera_control.md)
+- [\[ECCV 2024\] HybridBooth: Hybrid Prompt Inversion for Efficient Subject-Driven Generation](../../ECCV2024/image_generation/hybridbooth_hybrid_prompt_inversion_for_efficient_subject-driven_generation.md)
 
 </div>
 

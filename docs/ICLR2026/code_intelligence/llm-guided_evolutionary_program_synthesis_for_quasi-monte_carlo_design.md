@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LLM-Guided Evolutionary Program Synthesis for Quasi-Monte Carlo Design
 description: >-
-  [ICLR 2026][Code Intelligence][AlphaEvolve] Two long-standing Quasi-Monte Carlo (QMC) design problems—constructing finite point sets with low star discrepancy and selecting Sobol' direction numbers—are reformulated as "program synthesis" tasks. An LLM acts as an intelligent mutation operator within an evolutionary loop to search for generating code. Without any
+  [ICLR 2026][Code Intelligence][Program Synthesis] Two long-standing Quasi-Monte Carlo (QMC) design problems—constructing finite point sets with low star discrepancy and selecting Sobol' direction numbers—are reformulated as "program synthesis" tasks. An LLM acts as an intelligent mutation operator within an evolutionary loop to search for generating code. Without any task-specific training, this approach reproduces known optimal solutions and sets new benchmarks for several f…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - AlphaEvolve
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Program Synthesis"
+  - "Evolutionary Search"
+  - "Low-Discrepancy Point Sets"
+  - "Star Discrepancy"
+  - "Sobol' Sequences"
+  - "AlphaEvolve"
 date: 2026-05-08
-content_hash: 45728836a3054cac
+content_hash: 98c2dc1235a1661c
 ---
+
 # LLM-Guided Evolutionary Program Synthesis for Quasi-Monte Carlo Design
 
 **Conference**: ICLR 2026  
@@ -130,7 +136,7 @@ Ours only modified parameters for dimensions 4, 5, and 6 (keeping Joe–Kuo for 
 - [\[ICLR 2026\] RefineStat: Efficient Exploration for Probabilistic Program Synthesis](refinestat_efficient_exploration_for_probabilistic_program_synthesis.md)
 - [\[ICLR 2026\] Gradient-Based Program Synthesis with Neurally Interpreted Languages](gradient-based_program_synthesis_with_neurally_interpreted_languages.md)
 - [\[ICCV 2025\] TikZero: Zero-Shot Text-Guided Graphics Program Synthesis](../../ICCV2025/code_intelligence/tikzero_zero-shot_text-guided_graphics_program_synthesis.md)
-- [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](../../ACL2026/code_intelligence/chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
+- [\[NeurIPS 2025\] Program Synthesis via Test-Time Transduction](../../NeurIPS2025/code_intelligence/program_synthesis_via_test-time_transduction.md)
 
 </div>
 

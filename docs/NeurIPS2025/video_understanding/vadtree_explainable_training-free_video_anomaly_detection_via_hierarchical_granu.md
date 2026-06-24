@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity
 description: >-
-  [NeurIPS 2025][Video Understanding][Video Anomaly Detection] This paper proposes VADTree, a training-free video anomaly detection framework that leverages a pretrained Generic Event Boundary Detection (GEBD) model to con…
+  [NeurIPS 2025][Video Understanding][Video Anomaly Detection] This paper proposes VADTree, a training-free video anomaly detection framework that leverages a pretrained Generic Event Boundary Detection (GEBD) model to construct a Hierarchical Granularity-aware Tree (HGTree), enabling adaptive sampling and multi-granularity reasoning for anomalous events of varying temporal spans. VADTree achieves state-of-the-art performance among training-free methods on three benchmarks—UCF-…
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Generic Event Boundary Detection"
   - "Multi-Granularity Reasoning"
 date: 2026-05-08
-content_hash: c1e2c2e51ee6c3a4
+content_hash: f51fe937379ea392
 ---
 
 # VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity
@@ -138,10 +138,10 @@ The proposed method is entirely training-free and involves no parameter updates.
 ## Related Papers
 
 - [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
-- [\[AAAI 2026\] HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](../../AAAI2026/video_understanding/headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_.md)
+- [\[ICLR 2026\] HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding](../../ICLR2026/video_understanding/hitea_hierarchical_temporal_alignment_for_training-free_long-video_temporal_grou.md)
 - [\[NeurIPS 2025\] PANDA: Towards Generalist Video Anomaly Detection via Agentic AI Engineer](panda_towards_generalist_video_anomaly_detection_via_agentic_ai_engineer.md)
-- [\[NeurIPS 2025\] A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis](a_unified_reasoning_framework_for_holistic_zeroshot_video_an.md)
-- [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
+- [\[CVPR 2025\] VideoGEM: Training-Free Action Grounding in Videos](../../CVPR2025/video_understanding/videogem_training-free_action_grounding_in_videos.md)
+- [\[AAAI 2026\] HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](../../AAAI2026/video_understanding/headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_.md)
 
 </div>
 

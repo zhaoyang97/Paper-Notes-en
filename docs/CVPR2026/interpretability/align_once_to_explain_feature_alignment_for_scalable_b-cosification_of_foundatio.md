@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Align Once to Explain: Feature Alignment for Scalable B-cosification of Foundational Vision Transformers
 description: >-
-  [CVPR 2026][Others][Paper Note] ALOE utilizes a one-time, label-free "teacher-student feature alignment" to convert frozen ViT foundation models (Supervised / DINOv3 / SigLIP2) into inherently interpretable B-cos versions. Once aligned, the backbone can be used as a drop-in replacement for tasks like classification, zero-shot, and dense prediction, i
+  [CVPR 2026][Interpretability][B-cos Networks] ALOE utilizes a one-time, label-free "teacher-student feature alignment" to convert frozen ViT foundation models (Supervised / DINOv3 / SigLIP2) into inherently interpretable B-cos versions. Once aligned, the backbone can be used as a drop-in replacement for tasks like classification, zero-shot, and dense prediction, improving accuracy by $>4.9$ percentage points over original B-cosification on ViTs while providing faithful and lo…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Interpretability"
+  - "B-cos Networks"
+  - "Feature Alignment"
+  - "Inherently Interpretable"
+  - "Vision Foundation Models"
+  - "Label-free Distillation"
 date: 2026-05-08
-content_hash: 3e1989f1c1b98118
+content_hash: 80ed9b10beec5496
 ---
+
 # Align Once to Explain: Feature Alignment for Scalable B-cosification of Foundational Vision Transformers
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Data Efficiency: Reducing YFCC15M data from 100% to 1% (~150k images) kept SigLI
 
 ## Related Papers
 
-- [\[CVPR 2025\] TraF-Align: Trajectory-aware Feature Alignment for Asynchronous Multi-agent Perception](../../CVPR2025/others/traf-align_trajectory-aware_feature_alignment_for_asynchronous_multi-agent_perce.md)
-- [\[CVPR 2026\] Keep It Frozen: Domain-Routed Conditional Residual Modulation for Multi-Domain Vision Transformers](keep_it_frozen_domain-routed_conditional_residual_modulation_for_multi-domain_vi.md)
-- [\[AAAI 2026\] Scalable Vision-Guided Crop Yield Estimation](../../AAAI2026/others/scalable_vision-guided_crop_yield_estimation.md)
-- [\[CVPR 2026\] NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering](naf_zero-shot_feature_upsampling_via_neighborhood_attention_filtering.md)
-- [\[CVPR 2026\] Upsample Anything: A Simple and Hard to Beat Baseline for Feature Upsampling](upsample_anything_a_simple_and_hard_to_beat_baseline_for_feature_upsampling.md)
+- [\[CVPR 2026\] CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers](cigma_causal_information-gain_mechanistic_attribution_of_attention_heads_in_visi.md)
+- [\[ICLR 2026\] Block Recurrent Dynamics in Vision Transformers](../../ICLR2026/interpretability/block_recurrent_dynamics_in_vision_transformers.md)
+- [\[CVPR 2026\] Language Models Can Explain Visual Features via Steering](language_models_can_explain_visual_features_via_steering.md)
+- [\[ICLR 2026\] xRFM: Accurate, scalable, and interpretable feature learning models for tabular data](../../ICLR2026/interpretability/xrfm_accurate_scalable_and_interpretable_feature_learning_models_for_tabular_dat.md)
+- [\[CVPR 2026\] Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings](inside-out_measuring_generalization_in_vision_transformers_through_inner_working.md)
 
 </div>
 

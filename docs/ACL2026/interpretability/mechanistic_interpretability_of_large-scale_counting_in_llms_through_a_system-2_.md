@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mechanistic Interpretability of Large-Scale Counting in LLMs through a System-2 Strategy
 description: >-
-  [ACL 2026][Interpretability][System-2] Addressing the failure of LLMs in large-scale counting (where a single forward pass is limited to ~$10–30$ due to layer depth), this study employs a simple test-time strategy: "slicing the list with `|` + prompting the model to count segments before summing." This approach increases accuracy for Qwen2.5/Llama3/Gemma3/G
+  [ACL 2026][Interpretability][System-2] Addressing the failure of LLMs in large-scale counting (where a single forward pass is limited to ~$10–30$ due to layer depth), this study employs a simple test-time strategy: "slicing the list with `|` + prompting the model to count segments before summing." This approach increases accuracy for Qwen2.5/Llama3/Gemma3/GPT-4o/Gemini-2.5-Pro from 0–20% to 50–95% in scenarios with 50–100 objects. Through attention analysis and four types of…
 tags:
-  - ACL 2026
-  - Interpretability
-  - System-2
-  - activation patching
+  - "ACL 2026"
+  - "Interpretability"
+  - "System-2"
+  - "Counting"
+  - "activation patching"
+  - "causal mediation"
+  - "attention knockout"
 date: 2026-05-08
-content_hash: 95c018be08a1bd4e
+content_hash: 9f768990ac1854ef
 ---
+
 # Mechanistic Interpretability of Large-Scale Counting in LLMs through a System-2 Strategy
 
 **Conference**: ACL 2026  
@@ -143,15 +147,16 @@ The high Final-step Acc confirms that the bottleneck is entirely in the intermed
 - **Value**: ⭐⭐⭐⭐⭐ Offers direct guidance for prompt engineering in capacity-saturated tasks and provides a framework for staged interpretability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] Revitalizing Black-Box Interpretability: Actionable Interpretability for LLMs via Proxy Models](revitalizing_black-box_interpretability_actionable_interpretability_for_llms_via.md)
 - [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
+- [\[ACL 2026\] Revitalizing Black-Box Interpretability: Actionable Interpretability for LLMs via Proxy Models](revitalizing_black-box_interpretability_actionable_interpretability_for_llms_via.md)
 - [\[ACL 2026\] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](towards_intrinsic_interpretability_of_large_language_modelsa_survey_of_design_pr.md)
 - [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
-- [\[ICML 2026\] Beyond Additive Decompositions: Interpretability Through Separability](../../ICML2026/interpretability/beyond_additive_decompositions_interpretability_through_separability.md)
+- [\[ICLR 2026\] Medical Interpretability and Knowledge Maps of Large Language Models](../../ICLR2026/interpretability/medical_interpretability_and_knowledge_maps_of_large_language_models.md)
 
 </div>
 

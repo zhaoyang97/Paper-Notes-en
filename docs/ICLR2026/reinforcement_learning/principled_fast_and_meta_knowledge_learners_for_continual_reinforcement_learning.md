@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][continual RL] Inspired by the hippocampal-cortical interaction mechanism in the human brain, this paper proposes the FAME dual-learner framework. It achieves efficient continual reinforcement learning by employing a fast learner for knowledge transfer and a meta learner for knowledge integration, while principledly minimizing catast
+  [ICLR 2026][Reinforcement Learning][continual RL] Inspired by the hippocampal-cortical interaction mechanism in the human brain, this paper proposes the FAME dual-learner framework. It achieves efficient continual reinforcement learning by employing a fast learner for knowledge transfer and a meta learner for knowledge integration, while principledly minimizing catastrophic forgetting.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - continual RL
-  - catastrophic forgetting
-  - knowledge transfer
-  - dual-learner
-  - meta learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "continual RL"
+  - "catastrophic forgetting"
+  - "knowledge transfer"
+  - "dual-learner"
+  - "meta learning"
 date: 2026-05-08
-content_hash: 26df313c37552552
+content_hash: e3317793e73f7974
 ---
+
 # Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -175,8 +176,8 @@ During the knowledge integration phase, minimizing the policy-level catastrophic
 
 - [\[NeurIPS 2025\] Continual Knowledge Adaptation for Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/continual_knowledge_adaptation_for_reinforcement_learning.md)
 - [\[ICLR 2026\] Reward is Enough: LLMs are In-Context Reinforcement Learners](reward_is_enough_llms_are_in-context_reinforcement_learners.md)
-- [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
 - [\[ICLR 2026\] Use the Online Network If You Can: Towards Fast and Stable Reinforcement Learning](use_the_online_network_if_you_can_towards_fast_and_stable_reinforcement_learning.md)
+- [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
 - [\[ICLR 2026\] Leveraging Explanation to Improve Generalization of Meta Reinforcement Learning](leveraging_explanation_to_improve_generalization_of_meta_reinforcement_learning.md)
 
 </div>

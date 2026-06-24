@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SmartThinker: Progressive Chain-of-Thought Length Calibration for Efficient Large Language Model Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][GRPO] This paper proposes SmartThinker, an efficient reasoning post-training method based on GRPO. By Gaussian modeling of the "total trajectory length distribution" and "correct trajectory length distribution" for each prompt, the authors analytically derive the "optimal length $l^{\text{opt}}$ that maximizes accuracy." Com
+  [ICML 2026][Reasoning][GRPO] This paper proposes SmartThinker, an efficient reasoning post-training method based on GRPO. By Gaussian modeling of the "total trajectory length distribution" and "correct trajectory length distribution" for each prompt, the authors analytically derive the "optimal length $l^{\text{opt}}$ that maximizes accuracy." Combined with a dynamic length reward coefficient $\Lambda$ that ensures non-negative normalized advantage for correct trajectories…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICML 2026"
+  - "Reasoning"
+  - "GRPO"
+  - "CoT Length Calibration"
+  - "Dynamic Rewards"
+  - "Overthinking"
+  - "Optimal Reasoning Length"
 date: 2026-05-08
-content_hash: fc537f5779e108bf
+content_hash: 28ec23384713985c
 ---
+
 # SmartThinker: Progressive Chain-of-Thought Length Calibration for Efficient Large Language Model Reasoning
 
 **Conference**: ICML 2026  
@@ -134,10 +139,17 @@ On OOD tasks (MMLU, MathQA, LiveCodeBench, HumanEval), the 1.5B model's average 
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Training Large Reasoning Models Efficiently via Progressive Thought Encoding](../../ICLR2026/llm_reasoning/training_large_reasoning_models_efficiently_via_progressive_thought_encoding.md)
+- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](../../ICLR2026/llm_reasoning/when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
+- [\[ICML 2026\] Calibration of Structured Ignorance Certificates for Diagnosing Unknown Unknowns in Reasoning Models](calibration_of_structured_ignorance_certificates_for_diagnosing_unknown_unknowns.md)
+- [\[ICML 2026\] DecepChain: Inducing Deceptive Reasoning in Large Language Models](decepchain_inducing_deceptive_reasoning_in_large_language_models.md)
+- [\[AAAI 2026\] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement](../../AAAI2026/llm_reasoning/incorporating_self-rewriting_into_large_language_model_reasoning_reinforcement.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement](../../AAAI2026/llm_reasoning/incorporating_self-rewriting_into_large_language_model_reasoning_reinforcement.md)

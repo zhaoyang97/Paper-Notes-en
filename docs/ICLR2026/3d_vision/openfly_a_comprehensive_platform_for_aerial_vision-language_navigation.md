@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Constructs OpenFly, a comprehensive platform for Aerial Vision-Language Navigation (VLN): integrates 4 rendering engines (UE/GTA V/Google Earth/3DGS); develops a fully automatic data generation toolchain (point cloud acquisition → semantic segmentation → trajectory generation → GPT-4o instructions); builds a large-scal
+  [ICLR 2026][3D Vision][Aerial VLN] Constructs OpenFly, a comprehensive platform for Aerial Vision-Language Navigation (VLN): integrates 4 rendering engines (UE/GTA V/Google Earth/3DGS); develops a fully automatic data generation toolchain (point cloud acquisition → semantic segmentation → trajectory generation → GPT-4o instructions); builds a large-scale dataset of 100,000 trajectories across 18 scenes; proposes a keyframe-aware VLN model, OpenFly-Agent (Keyframe Selection +…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Aerial VLN"
+  - "UAV Navigation"
+  - "Multi-Engine Rendering"
+  - "Automatic Data Generation"
+  - "Keyframe-Aware"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: 8b349b00a0a9772f
+content_hash: 180dd23f938adaf0
 ---
+
 # OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation
 
 **Conference**: ICLR 2026  
@@ -155,8 +162,8 @@ CityNav relies on pre-existing 2D maps for landmark localization. OpenFly requir
 
 - [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](../../ICCV2025/3d_vision/3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
 - [\[ICLR 2026\] Towards Physically Executable 3D Gaussian for Embodied Navigation](towards_physically_executable_3d_gaussian_for_embodied_navigation.md)
-- [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
-- [\[ICLR 2026\] Sat3DGen: Comprehensive Street-level 3D Scene Generation from Single Satellite Image](sat3dgen_comprehensive_street-level_3d_scene_generation_from_single_satellite_im.md)
+- [\[ICLR 2026\] Scenethesis: A Language and Vision Agentic Framework for 3D Scene Generation](scenethesis_a_language_and_vision_agentic_framework_for_3d_scene_generation.md)
+- [\[ICLR 2026\] DepthLM: Metric Depth from Vision Language Models](depthlm_metric_depth_from_vision_language_models.md)
 - [\[CVPR 2026\] Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning](../../CVPR2026/3d_vision/multi-scale_gaussian-language_map_for_zero-shot_embodied_navigation_and_reasonin.md)
 
 </div>

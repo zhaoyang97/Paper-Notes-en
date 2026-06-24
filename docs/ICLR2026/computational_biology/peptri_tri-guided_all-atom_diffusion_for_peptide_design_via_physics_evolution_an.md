@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] PepTri: 物理、进化与互信息三重引导的全原子扩散肽设计
+  [Paper Note] PepTri: Physical, Evolutionary, and Mutual Information Tri-guided All-atom Diffusion Peptide Design
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] PepTri performs joint diffusion generation of peptide sequences and 3D structures within an SE(3)-equivariant latent space. By injecting physical, evolutionary, and mutual information tri-guidance during the denoising process, it ensures the generated peptides are physically stable, evolutionarily plausible, and sequen
+  [ICLR 2026][Computational Biology][Peptide Design] PepTri performs joint diffusion generation of peptide sequences and 3D structures within an SE(3)-equivariant latent space. By injecting physical, evolutionary, and mutual information tri-guidance during the denoising process, it ensures the generated peptides are physically stable, evolutionarily plausible, and sequence-structure consistent, achieving SOTA performance across multiple peptide-protein design benchmarks.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Peptide Design"
+  - "All-atom Diffusion"
+  - "SE(3) Equivariance"
+  - "Physics-guided"
+  - "Mutual Information"
 date: 2026-05-08
-content_hash: 9faf9964dc1efb43
+content_hash: b365df4f11426f64
 ---
+
 # PepTri: Physical, Evolutionary, and Mutual Information Tri-guided All-atom Diffusion Peptide Design
 
 **Conference**: ICLR 2026  
@@ -131,15 +137,16 @@ Removing the four components (Physics / Evolution / Mutual Info / All-atom model
 - Value: ⭐⭐⭐⭐⭐ Peptide drug design is a high-value area; the paradigm of "physically and evolutionarily plausible by design" is highly significant for practical applications.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Uncovering Semantic Selectivity of Latent Groups in Higher Visual Cortex with Mutual Information-Guided Diffusion](uncovering_semantic_selectivity_of_latent_groups_in_higher_visual_cortex_with_mu.md)
 - [\[ICLR 2026\] Pallatom-Ligand: an All-Atom Diffusion Model for Designing Ligand-Binding Proteins](pallatom-ligand_an_all-atom_diffusion_model_for_designing_ligand-binding_protein.md)
-- [\[ICLR 2026\] Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology](fusing_pixels_and_genes_spatially-aware_learning_in_computational_pathology.md)
-- [\[ICLR 2026\] SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion](sigmadock_untwisting_molecular_docking_with_fragment-based_se3_diffusion.md)
-- [\[ICLR 2026\] Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions](enhancing_molecular_property_predictions_by_learning_from_bond_modelling_and_int.md)
 - [\[ICLR 2026\] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction](towards_all-atom_foundation_models_for_biomolecular_binding_affinity_prediction.md)
+- [\[ICML 2026\] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models](../../ICML2026/computational_biology/neural_estimation_of_pairwise_mutual_information_in_masked_discrete_sequence_mod.md)
+- [\[ICLR 2026\] Iterative Distillation for Reward-Guided Fine-Tuning of Diffusion Models in Biomolecular Design](iterative_distillation_for_reward-guided_fine-tuning_of_diffusion_models_in_biom.md)
 
 </div>
 

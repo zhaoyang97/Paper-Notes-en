@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Q-Palette: Fractional-Bit Quantizers Toward Optimal Bit Allocation for Efficient LLM Deployment
 description: >-
-  [NeurIPS 2025][Model Compression][Model Quantization] This paper derives optimal bit allocation for Gaussianized weights from an information-theoretic perspective…
+  [NeurIPS 2025][Model Compression][Model Quantization] This paper derives optimal bit allocation for Gaussianized weights from an information-theoretic perspective, proposes the Q-Palette collection of fractional-bit quantizers and a mixed-scheme quantization framework, and achieves near-optimal quantization performance with inference acceleration in LLM deployment.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Rate-Distortion"
   - "CUDA Optimization"
 date: 2026-05-08
-content_hash: d526a19e6f6736c5
+content_hash: 48e521a30d5e56a4
 ---
 
 # Q-Palette: Fractional-Bit Quantizers Toward Optimal Bit Allocation for Efficient LLM Deployment
@@ -152,8 +152,8 @@ Distortion–speed trade-off across quantizer types (LLaMA-2-7B, 3-bit):
 
 - [\[NeurIPS 2025\] Learning Grouped Lattice Vector Quantizers for Low-Bit LLM Compression](learning_grouped_lattice_vector_quantizers_for_low-bit_llm_compression.md)
 - [\[NeurIPS 2025\] ParetoQ: Improving Scaling Laws in Extremely Low-bit LLM Quantization](paretoq_improving_scaling_laws_in_extremely_low-bit_llm_quantization.md)
-- [\[NeurIPS 2025\] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](ada-kv_optimizing_kv_cache_eviction_by_adaptive_budget_allocation_for_efficient_.md)
 - [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
+- [\[NeurIPS 2025\] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](ada-kv_optimizing_kv_cache_eviction_by_adaptive_budget_allocation_for_efficient_.md)
 - [\[NeurIPS 2025\] FALQON: Accelerating LoRA Fine-tuning with Low-Bit Floating-Point Arithmetic](falqon_accelerating_lora_fine-tuning_with_low-bit_floating-point_arithmetic.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PolitNuggets: Benchmarking Agentic Discovery of Long-Tail Political Facts
 description: >-
-  [ACL 2026][LLM Evaluation][agentic retrieval] PolitNuggets proposes a multilingual agentic discovery benchmark featuring 400 global political figures and over 10,000 career facts. Using the FactNet dynamic evidence verification protocol, it finds that current agents exhibit high precision but low recall, with the primary bottlenecks being long-tail fact discovery,
+  [ACL2026][LLM Evaluation][agentic retrieval] PolitNuggets proposes a multilingual agentic discovery benchmark featuring 400 global political figures and over 10,000 career facts. Using the FactNet dynamic evidence verification protocol, it finds that current agents exhibit high precision but low recall, with the primary bottlenecks being long-tail fact discovery, non-English evidence, and efficient tool utility.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - agentic retrieval
-  - FactNet
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "agentic retrieval"
+  - "political biographies"
+  - "long-tail facts"
+  - "multilingual retrieval"
+  - "FactNet"
 date: 2026-05-08
-content_hash: 8754d7956b4e03d7
+content_hash: 4809d5ef37899135
 ---
+
 # PolitNuggets: Benchmarking Agentic Discovery of Long-Tail Political Facts
 
 **Conference**: ACL2026  
@@ -145,15 +149,14 @@ The key ablation involves Archive memory versus static LRM baselines. Removing t
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition](researchbench_benchmarking_llms_in_scientific_discovery_via_inspiration-based_ta.md)
 - [\[AAAI 2026\] Benchmarking LLMs for Political Science: A United Nations Perspective](../../AAAI2026/llm_evaluation/benchmarking_llms_for_political_science_a_united_nations_perspective.md)
 - [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](../../ICML2026/llm_evaluation/politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
-- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
-- [\[ACL 2026\] AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking](agenteval_dag-structured_step-level_evaluation_for_agentic_workflows_with_error_.md)
+- [\[ICLR 2026\] LFQA-E: Carefully Benchmarking Long-form QA Evaluation](../../ICLR2026/llm_evaluation/lfqa-e_carefully_benchmarking_long-form_qa_evaluation.md)
+- [\[ICML 2026\] Estimating Tail Risks in Language Model Output Distributions](../../ICML2026/llm_evaluation/estimating_tail_risks_in_language_model_output_distributions.md)
 
 </div>
 

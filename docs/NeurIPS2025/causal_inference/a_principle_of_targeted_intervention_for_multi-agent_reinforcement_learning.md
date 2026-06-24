@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Causal Inference][Multi-Agent Reinforcement Learning] This paper proposes a **Targeted Intervention paradigm** grounded in Multi-Agent Influence Diagrams (MAIDs)…
+  [NeurIPS 2025][Causal Inference][Multi-Agent Reinforcement Learning] This paper proposes a **Targeted Intervention paradigm** grounded in Multi-Agent Influence Diagrams (MAIDs), which applies **Pre-Strategy Intervention (PSI)** exclusively to a single target agent to guide the entire multi-agent system toward a preferred Nash equilibrium satisfying additional desired outcomes, without requiring global intervention over all agents.
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -11,7 +11,7 @@ tags:
   - "Targeted Intervention"
   - "Nash Equilibrium Selection"
 date: 2026-05-08
-content_hash: cfd1b099057cec18
+content_hash: d34843d2954bd97c
 ---
 
 # A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning
@@ -155,10 +155,10 @@ All three paradigms are modeled via MAIDs, and their relevance graphs are analyz
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](../../ICLR2026/causal_inference/learning_robust_intervention_representations_with_delta_embeddings.md)
+- [\[CVPR 2025\] Joint Scheduling of Causal Prompts and Tasks for Multi-Task Learning](../../CVPR2025/causal_inference/joint_scheduling_of_causal_prompts_and_tasks_for_multi-task_learning.md)
+- [\[ICLR 2026\] Designing Time Series Experiments in A/B Testing with Transformer Reinforcement Learning](../../ICLR2026/causal_inference/designing_time_series_experiments_in_ab_testing_with_transformer_reinforcement_l.md)
+- [\[ICLR 2026\] On the Identifiability of Causal Graphs with the Invariance Principle](../../ICLR2026/causal_inference/on_the_identifiability_of_causal_graphs_with_the_invariance_principle.md)
 - [\[ICCV 2025\] Social Debiasing for Fair Multi-modal LLMs](../../ICCV2025/causal_inference/social_debiasing_for_fair_multi-modal_llms.md)
-- [\[NeurIPS 2025\] Demystifying Spectral Feature Learning for Instrumental Variable Regression](demystifying_spectral_feature_learning_for_instrumental_variable_regression.md)
-- [\[NeurIPS 2025\] Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization](bi-level_decision-focused_causal_learning_for_large-scale_marketing_optimization.md)
-- [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](do-pfn_in-context_learning_for_causal_effect_estimation.md)
 
 </div>
 

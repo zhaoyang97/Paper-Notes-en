@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals
 description: >-
-  [ICLR 2026][Human Understanding][Dual-DiT] Ours proposes TEMU-VTOFF—a Dual-DiT architecture for the virtual try-off (VTOFF) task. It employs a collaborative division between a feature extractor and a garment generator, utilizing Multi-modal Hybrid Attention (MHA) to fuse image, text, and mask information to resolve visual ambiguity. Additionally, a DINOv2-drive
+  [ICLR 2026][Human Understanding][Virtual Try-Off] Ours proposes TEMU-VTOFF—a Dual-DiT architecture for the virtual try-off (VTOFF) task. It employs a collaborative division between a feature extractor and a garment generator, utilizing Multi-modal Hybrid Attention (MHA) to fuse image, text, and mask information to resolve visual ambiguity. Additionally, a DINOv2-driven garment aligner is designed to preserve high-frequency details. Ours achieves SOTA performance in multi-cate…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Dual-DiT
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Virtual Try-Off"
+  - "garment extraction"
+  - "Dual-DiT"
+  - "multi-modal attention"
+  - "garment alignment"
 date: 2026-05-08
-content_hash: bfc0c5ef49731184
+content_hash: fa96f94972c17898
 ---
+
 # Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals
 
 **Conference**: ICLR 2026  

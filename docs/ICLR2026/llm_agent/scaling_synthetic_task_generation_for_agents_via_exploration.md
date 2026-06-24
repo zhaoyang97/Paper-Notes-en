@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scaling Synthetic Task Generation for Agents via Exploration
 description: >-
-  [ICLR 2026][LLM Agent][UI Agent] AUTOPLAY automatically constructs large-scale training data for UI agents by having Multimodal Large Language Models (MLLMs) first proactively explore Android and Ubuntu UI environments, then generating executable tasks based on exploration trajectories and task guidelines. It significantly improves task success rates
+  [ICLR 2026][LLM Agent][Synthetic Task Generation] AUTOPLAY automatically constructs large-scale training data for UI agents by having Multimodal Large Language Models (MLLMs) first proactively explore Android and Ubuntu UI environments, then generating executable tasks based on exploration trajectories and task guidelines. It significantly improves task success rates for mobile and desktop agents after SFT and RL.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - UI Agent
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Synthetic Task Generation"
+  - "UI Agent"
+  - "Environment Exploration"
+  - "Multimodal LLM"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 4e1be7c615fc216c
+content_hash: ce8f098c9594bbac
 ---
+
 # Scaling Synthetic Task Generation for Agents via Exploration
 
 **Conference**: ICLR 2026  
@@ -146,6 +150,7 @@ An interesting observation is that Iterative Exploration achieved the highest ex
 - **Value**: ⭐⭐⭐⭐⭐ Highly valuable for UI agent training, especially for new environments where human demonstrations are unavailable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -153,8 +158,8 @@ An interesting observation is that Iterative Exploration achieved the highest ex
 - [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
 - [\[ICLR 2026\] ROGA: Scaling Generalist Agents for Office Productivity Tasks via Tool Generation](roga_scaling_generalist_agents_for_office_productivity_tasks_via_tool_generation.md)
 - [\[ICLR 2026\] Meta-RL Induces Exploration in Language Agents](meta-rl_induces_exploration_in_language_agents.md)
-- [\[ICLR 2026\] Go-Browse: Training Web Agents with Structured Exploration](go-browse_training_web_agents_with_structured_exploration.md)
 - [\[ACL 2026\] Supplement Generation Training for Enhancing Agentic Task Performance](../../ACL2026/llm_agent/supplement_generation_training_for_enhancing_agentic_task_performance.md)
+- [\[ICLR 2026\] Go-Browse: Training Web Agents with Structured Exploration](go-browse_training_web_agents_with_structured_exploration.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProofBridge: Auto-Formalization of Natural Language Proofs in Lean via Joint Embeddings
 description: >-
-  [ICLR 2026][LLM Reasoning][Lean 4] ProofBridge unifies the "NL theorem+proof $\rightarrow$ Lean 4 theorem+proof" formalization task. It first trains a joint embedding model that aligns NL and Lean proofs (encoded via DAG structures) into a shared semantic space. This model performs cross-modal retrieval of similar Lean proofs as demonstrations for retri
+  [ICLR 2026][Reasoning][Proof Auto-formalization] ProofBridge unifies the "NL theorem+proof $\rightarrow$ Lean 4 theorem+proof" formalization task. It first trains a joint embedding model that aligns NL and Lean proofs (encoded via DAG structures) into a shared semantic space. This model performs cross-modal retrieval of similar Lean proofs as demonstrations for retrieval-augmented fine-tuning and inference. An iterative repair loop, driven by Lean type-checking and semantic e…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Lean 4
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Proof Auto-formalization"
+  - "Lean 4"
+  - "Joint Embeddings"
+  - "Cross-modal Retrieval"
+  - "Iterative Repair"
 date: 2026-05-08
-content_hash: d8c46f623eaca9e9
+content_hash: a1a818cafdbcdcd8
 ---
+
 # ProofBridge: Auto-Formalization of Natural Language Proofs in Lean via Joint Embeddings
 
 **Conference**: ICLR 2026  
@@ -139,10 +144,20 @@ ProofBridge (1.7B) significantly outperforms the 72B zero-shot model and the two
 - Value: ⭐⭐⭐⭐⭐ Significant step toward fully automated mathematical formalization, crucial for the AI-for-Math community.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2025\] FMC: Formalization of Natural Language Mathematical Competition Problems](../../ICML2025/llm_reasoning/fmc_formalization_of_natural_language_mathematical_competition_problems.md)
+- [\[ICLR 2026\] Hilbert: Recursively Building Formal Proofs with Informal Reasoning](hilbert_recursively_building_formal_proofs_with_informal_reasoning.md)
+- [\[ICLR 2026\] ProofOptimizer: Training Language Models to Simplify Proofs without Human Demonstrations](proofoptimizer_training_language_models_to_simplify_proofs_without_human_demonst.md)
+- [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)
+- [\[ICLR 2026\] Premise Selection for a Lean Hammer](premise_selection_for_a_lean_hammer.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Hilbert: Recursively Building Formal Proofs with Informal Reasoning](hilbert_recursively_building_formal_proofs_with_informal_reasoning.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReCamMaster: Camera-Controlled Generative Rendering from A Single Video
 description: >-
-  [ICCV 2025][Video Generation][Camera Control] This paper proposes ReCamMaster, which achieves camera-trajectory-controlled video re-generation from a single input video via a frame-dimension conditioning mechanism and a…
+  [ICCV 2025][Video Generation][Camera Control] This paper proposes ReCamMaster, which achieves camera-trajectory-controlled video re-generation from a single input video via a frame-dimension conditioning mechanism and a multi-camera synchronized dataset synthesized in UE5, significantly outperforming existing methods.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "Diffusion Models"
   - "Multi-Camera Dataset"
 date: 2026-05-08
-content_hash: bb51b3e839734cbc
+content_hash: 6eb529306d6bae29
 ---
 
 # ReCamMaster: Camera-Controlled Generative Rendering from A Single Video
@@ -135,11 +135,11 @@ Training strategy ablation:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](../../CVPR2026/video_generation/unified_camera_positional_encoding_for_controlled_video_generation.md)
+- [\[ICLR 2026\] Light-X: Generative 4D Video Rendering with Camera and Illumination Control](../../ICLR2026/video_generation/light-x_generative_4d_video_rendering_with_camera_and_illumination_control.md)
 - [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
-- [\[ICCV 2025\] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering](steerx_creating_any_camera-free_3d_and_4d_scenes_with_geometric_steering.md)
-- [\[ICCV 2025\] Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation](free-form_motion_control_controlling_the_6d_poses_of_camera_and_objects_in_video.md)
+- [\[CVPR 2026\] SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time](../../CVPR2026/video_generation/spacetimepilot_generative_rendering_of_dynamic_scenes_across_space_and_time.md)
 - [\[ICCV 2025\] Reangle-A-Video: 4D Video Generation as Video-to-Video Translation](reangle-a-video_4d_video_generation_as_video-to-video_translation.md)
+- [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](../../CVPR2026/video_generation/unified_camera_positional_encoding_for_controlled_video_generation.md)
 
 </div>
 

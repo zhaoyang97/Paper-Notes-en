@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Latent-Condensed Transformer for Efficient Long Context Modeling
 description: >-
-  [ACL 2026][Model Compression][MLA] LCA proposes performing context compression directly within the latent space of MLA—utilizing query-aware weighted pooling to aggregate semantic latent vectors and anchor selection for positional keys to maintain positional accuracy—achieving 2.5× prefill acceleration and 90% KV cache compression in 128K contexts while
+  [ACL2026][Model Compression][Long-context modeling] LCA proposes performing context compression directly within the latent space of MLA—utilizing query-aware weighted pooling to aggregate semantic latent vectors and anchor selection for positional keys to maintain positional accuracy—achieving 2.5× prefill acceleration and 90% KV cache compression in 128K contexts while maintaining competitive performance.
 tags:
-  - ACL 2026
-  - Model Compression
-  - MLA
+  - "ACL2026"
+  - "Model Compression"
+  - "Long-context modeling"
+  - "KV cache compression"
+  - "MLA"
+  - "Latent space compression"
+  - "Efficient attention"
 date: 2026-05-08
-content_hash: 1a6641545a87f0a6
+content_hash: 82cd5f17f843a477
 ---
+
 # Latent-Condensed Transformer for Efficient Long Context Modeling
 
 **Conference**: ACL 2026  
@@ -144,10 +149,10 @@ There are no additional learnable parameters; only 1000 steps of lightweight fin
 ## Related Papers
 
 - [\[ICML 2025\] Core Context Aware Transformers for Long Context Language Modeling](../../ICML2025/model_compression/core_context_aware_transformers_for_long_context_language_modeling.md)
-- [\[ICCV 2025\] Context Guided Transformer Entropy Modeling for Video Compression](../../ICCV2025/model_compression/context_guided_transformer_entropy_modeling_for_video_compression.md)
-- [\[ACL 2026\] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference](heterocache_a_dynamic_retrieval_approach_to_heterogeneous_kv_cache_compression_f.md)
 - [\[ICML 2025\] LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models](../../ICML2025/model_compression/lacache_ladder-shaped_kv_caching_for_efficient_long-context_modeling_of_large_la.md)
-- [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](../../ICML2026/model_compression/token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
+- [\[ICCV 2025\] Context Guided Transformer Entropy Modeling for Video Compression](../../ICCV2025/model_compression/context_guided_transformer_entropy_modeling_for_video_compression.md)
+- [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](../../ICLR2026/model_compression/channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
+- [\[ACL 2026\] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference](heterocache_a_dynamic_retrieval_approach_to_heterogeneous_kv_cache_compression_f.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment
 description: >-
-  [AAAI 2026][Multimodal VLM][Cross-modal alignment] This paper proposes the CDDS algorithm, which decouples embeddings into semantic and modality components via a dual-path UNet…
+  [AAAI 2026][Multimodal VLM][Cross-modal alignment] This paper proposes the CDDS algorithm, which decouples embeddings into semantic and modality components via a dual-path UNet, and employs a distribution sampling method to achieve cross-modal semantic alignment indirectly, avoiding distribution distortion caused by directly adjusting embeddings. CDDS surpasses the state of the art by 6.6%–14.2% on Flickr30K and MS-COCO.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "image-text retrieval"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: f811371dc4db0817
+content_hash: 645296141f6b36ce
 ---
 
 # Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment
@@ -112,11 +112,11 @@ The decoupling paradigm is transferable to other multimodal tasks: decomposing e
 
 ## Related Papers
 
-- [\[AAAI 2026\] Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)](bridging_modalities_via_progressive_re-alignment_for_multimo.md)
-- [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
-- [\[NeurIPS 2025\] Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment](../../NeurIPS2025/multimodal_vlm/aligning_by_misaligning_boundaryaware_curriculum_learning_fo.md)
-- [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](../../CVPR2026/multimodal_vlm/cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
+- [\[ICLR 2026\] DecAlign: Hierarchical Cross-Modal Alignment for Decoupled Multimodal Representation Learning](../../ICLR2026/multimodal_vlm/decalign_hierarchical_cross-modal_alignment_for_decoupled_multimodal_representat.md)
+- [\[CVPR 2026\] Linguistic Priors for Visual Decoupling: Towards Symmetric Vision-Brain Alignment](../../CVPR2026/multimodal_vlm/linguistic_priors_for_visual_decoupling_towards_symmetric_vision-brain_alignment.md)
+- [\[CVPR 2026\] Intra-class Distribution-guided Generative Hashing with Neighbor Refinement for Cross-modal Retrieval](../../CVPR2026/multimodal_vlm/intra-class_distribution-guided_generative_hashing_with_neighbor_refinement_for_.md)
+- [\[AAAI 2026\] Neighbor-aware Instance Refining with Noisy Labels for Cross-Modal Retrieval](neighbor-aware_instance_refining_with_noisy_labels_for_cross-modal_retrieval.md)
 
 </div>
 

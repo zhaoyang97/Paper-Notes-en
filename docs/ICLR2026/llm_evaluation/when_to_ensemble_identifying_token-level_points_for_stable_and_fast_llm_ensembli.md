@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When to Ensemble: Identifying Token-Level Points for Stable and Fast LLM Ensembling
 description: >-
-  [ICLR 2026][LLM Evaluation][OOV-like token] Proposes SAFE (Stable And Fast LLM Ensembling), which selectively ensembles LLMs with heterogeneous tokenizers at the token level via a Generate-Verify-Ensemble loop. It resolves the OOV-like contamination caused by tokenizer mismatches in long-form generation. Ensembling on less than 1% of tokens significantly improve
+  [ICLR 2026][LLM Evaluation][LLM Ensembling] Proposes SAFE (Stable And Fast LLM Ensembling), which selectively ensembles LLMs with heterogeneous tokenizers at the token level via a Generate-Verify-Ensemble loop. It resolves the OOV-like contamination caused by tokenizer mismatches in long-form generation. Ensembling on less than 1% of tokens significantly improves performance, raising UniTE from 59.6% to 77.4% on MATH500.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - OOV-like token
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "LLM Ensembling"
+  - "Tokenizer Mismatch"
+  - "OOV-like token"
+  - "Speculative Ensembling"
+  - "Probability Distribution Alignment"
 date: 2026-05-08
-content_hash: 07e6c12c4ca4707b
+content_hash: ece8aea1a64ddaf9
 ---
+
 # When to Ensemble: Identifying Token-Level Points for Stable and Fast LLM Ensembling
 
 **Conference**: ICLR 2026  
@@ -134,10 +139,20 @@ CoT ensembling using three models (Internlm3-8B + Qwen2.5-7B + EXAONE3.5-7.8B):
 - Value: ⭐⭐⭐⭐ (Makes cross-tokenizer ensembling viable for long-form generation.)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] TokUR: Token-Level Uncertainty Estimation for Large Language Model Reasoning](tokur_token-level_uncertainty_estimation_for_large_language_model_reasoning.md)
+- [\[ICLR 2026\] When LLMs Get Significantly Worse: A Statistical Approach to Detect Model Degradations](when_llms_get_significantly_worse_a_statistical_approach_to_detect_model_degrada.md)
+- [\[ICLR 2026\] FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial Search and Reasoning](finsearchcomp_towards_a_realistic_expert-level_evaluation_of_financial_search_an.md)
+- [\[ICLR 2026\] Credit-Budgeted ICPC-Style Coding: When Agents Must Pay for Every Decision](credit-budgeted_icpc-style_coding_when_agents_must_pay_for_every_decision.md)
+- [\[ICLR 2026\] ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models](chemeval_a_multi-level_and_fine-grained_chemical_capability_evaluation_for_large.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] When LLMs Get Significantly Worse: A Statistical Approach to Detect Model Degradations](when_llms_get_significantly_worse_a_statistical_approach_to_detect_model_degrada.md)

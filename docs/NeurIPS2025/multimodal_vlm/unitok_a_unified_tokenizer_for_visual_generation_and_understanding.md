@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] UniTok: A Unified Tokenizer for Visual Generation and Understanding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][unified tokenizer] This paper proposes UniTok, a unified tokenizer for visual generation and understanding that overcomes the representation capacity bottleneck of discrete tokens via Multi…
+  [NeurIPS 2025 Spotlight][Multimodal VLM][unified tokenizer] This paper proposes UniTok, a unified tokenizer for visual generation and understanding that overcomes the representation capacity bottleneck of discrete tokens via Multi-Codebook Quantization (MCQ). UniTok achieves simultaneous state-of-the-art records of 0.38 rFID and 78.6% zero-shot accuracy on ImageNet, and can be seamlessly integrated into MLLMs to enable both generation and understanding.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Multimodal VLM"
   - "unified tokenizer"
   - "VQVAE"
@@ -12,7 +12,7 @@ tags:
   - "multi-codebook quantization"
   - "visual generation and understanding"
 date: 2026-05-08
-content_hash: 8ad381c958e818e2
+content_hash: a2435500da9f5917
 ---
 
 # UniTok: A Unified Tokenizer for Visual Generation and Understanding
@@ -163,11 +163,11 @@ where the reconstruction loss $\mathcal{L}_{\text{recon}} = \mathcal{L}_R + \lam
 
 ## Related Papers
 
+- [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](../../CVPR2026/multimodal_vlm/rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
 - [\[ICCV 2025\] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation](../../ICCV2025/multimodal_vlm/harmonizing_visual_representations_for_unified_multimodal_un.md)
+- [\[CVPR 2026\] AToken: A Unified Tokenizer for Vision](../../CVPR2026/multimodal_vlm/atoken_a_unified_tokenizer_for_vision.md)
+- [\[ICCV 2025\] Unified Multimodal Understanding via Byte-Pair Visual Encoding](../../ICCV2025/multimodal_vlm/unified_multimodal_understanding_via_byte-pair_visual_encoding.md)
 - [\[NeurIPS 2025\] HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation](hermesflow_seamlessly_closing_the_gap_in_multimodal_understanding_and_generation.md)
-- [\[NeurIPS 2025\] VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions](vitrix-clipin_enhancing_fine-grained_visual_understanding_in_clip_via_instructio.md)
-- [\[NeurIPS 2025\] Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM](watch_and_listen_understanding_audio-visual-speech_moments_with_multimodal_llm.md)
-- [\[NeurIPS 2025\] Unified Reinforcement and Imitation Learning for Vision-Language Models](unified_reinforcement_and_imitation_learning_for_vision-language_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Expert Strikes Back: Interpreting Mixture-of-Experts Language Models at Expert Level
 description: >-
-  [ICML 2026][Interpretability][Mixture-of-Experts] This paper uses $k$-sparse probing to systematically compare the polysemanticity of MoE expert neurons versus dense FFN neurons. It finds that MoE naturally tends toward monosemanticity under sparse routing pressure. Consequently, the analysis unit is elevated from "neurons" to "entire experts." The authors use LLMs to
+  [ICML 2026][Interpretability][Mixture-of-Experts] This paper uses $k$-sparse probing to systematically compare the polysemanticity of MoE expert neurons versus dense FFN neurons. It finds that MoE naturally tends toward monosemanticity under sparse routing pressure. Consequently, the analysis unit is elevated from "neurons" to "entire experts." The authors use LLMs to automatically assign natural language labels to hundreds of experts, validate them through causal trigger exp…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Mixture-of-Experts
+  - "ICML 2026"
+  - "Interpretability"
+  - "Mixture-of-Experts"
+  - "Polysemanticity"
+  - "Sparse Routing"
+  - "Auto-interpretability"
+  - "Expert Specialization"
 date: 2026-05-08
-content_hash: a8a332a8326f663a
+content_hash: df8657914038a429
 ---
+
 # The Expert Strikes Back: Interpreting Mixture-of-Experts Language Models at Expert Level
 
 **Conference**: ICML 2026  
@@ -108,15 +113,16 @@ Comparing best-layer $F_1$ on $k$-sparse probes:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization](../../CVPR2026/interpretability/ermoe_eigen-reparameterized_mixture-of-experts_for_stable_routing.md)
-- [\[ACL 2025\] EXPERT: An Explainable Image Captioning Evaluation Metric with Structured Explanations](../../ACL2025/interpretability/expert_an_explainable_image_captioning_evaluation_metric_with_structured_explana.md)
+- [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](../../ICLR2026/interpretability/understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
 - [\[ICML 2026\] Scalable Circuit Learning for Interpreting Large Language Models](scalable_circuit_learning_for_interpreting_large_language_models.md)
+- [\[ACL 2025\] EXPERT: An Explainable Image Captioning Evaluation Metric with Structured Explanations](../../ACL2025/interpretability/expert_an_explainable_image_captioning_evaluation_metric_with_structured_explana.md)
 - [\[NeurIPS 2025\] AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation](../../NeurIPS2025/interpretability/agentiql_an_agent-inspired_multi-expert_framework_for_text-to-sql_generation.md)
-- [\[ACL 2026\] METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models](../../ACL2026/interpretability/meter_evaluating_multi-level_contextual_causal_reasoning_in_large_language_model.md)
 
 </div>
 

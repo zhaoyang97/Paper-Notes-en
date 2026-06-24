@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis
 description: >-
-  [Medical Imaging] > This paper proposes ViCTr, a two-stage framework that combines Rectified Flow with a Tweedie-corrected diffusion process to achieve high-fidelity pathology-aware medical image synthesis. The method re…
+  [Medical Imaging] > This paper proposes ViCTr, a two-stage framework that combines Rectified Flow with a Tweedie-corrected diffusion process to achieve high-fidelity pathology-aware medical image synthesis. The method reduces inference steps from 50 to 3–4 and, for the first time, enables graded-severity pathology synthesis for abdominal MRI.
 tags:
   - "Medical Imaging"
 date: 2026-05-08
-content_hash: b1454b25ecccbb19
+content_hash: d4fe964a285bcd94
 ---
 
 # ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis
@@ -207,10 +207,10 @@ nnUNet trained with ViCTr synthetic data on CirrMRI600+ achieves a gain of **+7.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](../../NeurIPS2025/medical_imaging/scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
+- [\[CVPR 2025\] Multi-Resolution Pathology-Language Pre-training Model with Text-Guided Visual Representation](../../CVPR2025/medical_imaging/multi-resolution_pathology-language_pre-training_model_with_text-guided_visual_r.md)
 - [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](../../AAAI2026/medical_imaging/fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
 - [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
 - [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](../../AAAI2026/medical_imaging/guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
-- [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 
 </div>
 

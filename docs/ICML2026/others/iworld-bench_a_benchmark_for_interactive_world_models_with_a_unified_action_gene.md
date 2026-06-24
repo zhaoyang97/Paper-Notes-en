@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework
 description: >-
-  [ICML 2026][Others][World Models] iWorld-Bench is the first unified evaluation benchmark specifically designed for "interactive world models." It proposes an Action Generation Framework capable of converting text, one-hot, and camera intrinsic/extrinsic action inputs into a unified instruction space. Based on 330K videos, 4.9K tasks and 9 metrics were
+  [ICML 2026][World Models] iWorld-Bench is the first unified evaluation benchmark specifically designed for "interactive world models." It proposes an Action Generation Framework capable of converting text, one-hot, and camera intrinsic/extrinsic action inputs into a unified instruction space. Based on 330K videos, 4.9K tasks and 9 metrics were refined to perform a comprehensive comparison across 14 mainstream models.
 tags:
-  - ICML 2026
-  - Others
-  - World Models
+  - "ICML 2026"
+  - "World Models"
+  - "Action-controllable Video Generation"
+  - "Camera Control"
+  - "Memory Capacity"
+  - "Cross-modal Evaluation"
 date: 2026-05-08
-content_hash: af1ab1da913334c4
+content_hash: d0a5875c5c146806
 ---
+
 # iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework
 
 **Conference**: ICML 2026  
@@ -133,11 +137,11 @@ Cross-modal comparison table (Execution differences for the same action semantic
 
 ## Related Papers
 
+- [\[ICLR 2026\] PU-Bench: A Unified Benchmark for Rigorously Reproducible PU Learning](../../ICLR2026/others/pu-bench_a_unified_benchmark_for_rigorous_and_reproducible_pu_learning.md)
 - [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark For Physical AI](../../CVPR2026/others/pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
 - [\[ICLR 2026\] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](../../ICLR2026/others/distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[ICML 2026\] CyberGym-E2E: Scalable Real-World Benchmark for AI Agents' End-to-End Cybersecurity Capabilities](cybergym-e2e_scalable_real-world_benchmark_for_ai_agents_end-to-end_cybersecurit.md)
-- [\[ICML 2025\] General Agents Contain World Models](../../ICML2025/others/general_agents_contain_world_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TRACE: A Generalizable Drift Detector for Streaming Data-Driven Optimization
 description: >-
-  [AAAI 2026][LLM Pretraining][Concept Drift Detection] This paper proposes TRACE, a transferable concept drift detector based on attention-based sequence learning. By tokenizing statistical features and employing a dual-a…
+  [AAAI 2026][LLM Pretraining][Concept Drift Detection] This paper proposes TRACE, a transferable concept drift detector based on attention-based sequence learning. By tokenizing statistical features and employing a dual-attention encoder, TRACE learns drift patterns that generalize across tasks, enabling deployment on unseen datasets and integration as a plug-and-play module into streaming data-driven optimization algorithms.
 tags:
   - "AAAI 2026"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Transfer Learning"
   - "Plug-and-Play"
 date: 2026-05-08
-content_hash: c8a9bfad4a95cae9
+content_hash: 72904ea51520d303
 ---
 
 # TRACE: A Generalizable Drift Detector for Streaming Data-Driven Optimization
@@ -234,11 +234,11 @@ TRACE-EA achieves the lowest $E_{DT}$ values (closer to the optimum is better) o
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](../../NeurIPS2025/llm_pretraining/enhancing_training_data_attribution_with_representational_optimization.md)
+- [\[CVPR 2025\] Exploration-Driven Generative Interactive Environments](../../CVPR2025/llm_pretraining/exploration-driven_generative_interactive_environments.md)
+- [\[ICLR 2026\] OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation](../../ICLR2026/llm_pretraining/optimsyn_influence-guided_rubrics_optimization_for_synthetic_data_generation.md)
 - [\[AAAI 2026\] PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer](prefixgpt_prefix_adder_optimization_by_a_generative_pre-trained_transformer.md)
-- [\[AAAI 2026\] ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences](elspr_evaluator_llm_training_data_self-purification_on_non-transitive_preference.md)
-- [\[ACL 2026\] SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](../../ACL2026/llm_pretraining/sage_sign-adaptive_gradient_for_memory-efficient_llm_optimization.md)
-- [\[ACL 2026\] Demystifying Data Organization for Enhanced LLM Training](../../ACL2026/llm_pretraining/demystifying_data_organization_for_enhanced_llm_training.md)
+- [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](../../NeurIPS2025/llm_pretraining/enhancing_training_data_attribution_with_representational_optimization.md)
+- [\[ICML 2025\] In-Context Adaptation to Concept Drift for Learned Database Operations](../../ICML2025/llm_pretraining/in-context_adaptation_to_concept_drift_for_learned_database_operations.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Aligning Multi-Character Narrative Image Generation with Multi-Aspect Human Preferences
 description: >-
-  [CVPR 2026][Image Generation][DPO] To address the "semantic misalignment, identity confusion, and visual degradation" issues in multi-character narrative image generation, this paper constructs a fine-grained preference dataset, NI-RLHF, containing textual critiques. It trains an explainable reward model, NIReward, which "generates critiques before scor
+  [CVPR 2026][Image Generation][Narrative Image Generation] To address the "semantic misalignment, identity confusion, and visual degradation" issues in multi-character narrative image generation, this paper constructs a fine-grained preference dataset, NI-RLHF, containing textual critiques. It trains an explainable reward model, NIReward, which "generates critiques before scoring," and utilizes it to drive the ADPO preference optimization algorithm. This approach aligns the ge…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Narrative Image Generation"
+  - "Human Preference Alignment"
+  - "Critique-based Reward Model"
+  - "DPO"
+  - "Multi-Character Personalization"
 date: 2026-05-08
-content_hash: 42b80051e5dea77a
+content_hash: 021aa039c11d873b
 ---
+
 # Aligning Multi-Character Narrative Image Generation with Multi-Aspect Human Preferences
 
 **Conference**: CVPR 2026  
@@ -152,8 +157,8 @@ ADPO achieves top results across nearly all metrics. Notably, only ADPO improves
 - [\[CVPR 2026\] Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation](ar2can_an_architect_and_an_artist_leveraging_a_canvas_for_multi-human_generation.md)
 - [\[CVPR 2026\] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm](scaling_multi-identity_consistency_for_image_customization_via_multi-to-multi_ma.md)
 - [\[AAAI 2026\] Multi-Aspect Cross-modal Quantization for Generative Recommendation](../../AAAI2026/image_generation/multi-aspect_cross-modal_quantization_for_generative_recommendation.md)
-- [\[CVPR 2026\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](interedit_navigating_textguided_multihuman_3d_moti.md)
 - [\[ICML 2025\] Smoothed Preference Optimization via ReNoise Inversion for Aligning Diffusion Models with Varied Human Preferences](../../ICML2025/image_generation/smoothed_preference_optimization_via_renoise_inversion_for_aligning_diffusion_mo.md)
+- [\[CVPR 2026\] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation](multibanana_a_challenging_benchmark_for_multi_reference_text_to_image_generation.md)
 
 </div>
 

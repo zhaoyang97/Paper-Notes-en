@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning
 description: >-
-  [NeurIPS 2025][LLM Alignment][Instruction Tuning] This paper proposes T-SHIRT, a data selection framework that introduces Selective IFD (considering only informative tokens) and a hierarchical selection strategy (preferr…
+  [NeurIPS 2025][LLM Alignment][Instruction Tuning] This paper proposes T-SHIRT, a data selection framework that introduces Selective IFD (considering only informative tokens) and a hierarchical selection strategy (preferring samples with high neighborhood consistency). Fine-tuning on only 5% of data selected by T-SHIRT surpasses training on the full dataset, while the selection process requires only GPT-2 and 40 minutes on a single GPU.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "Robustness"
   - "IFD Score"
 date: 2026-05-08
-content_hash: cd588d080fb989f1
+content_hash: 69fdcd327fbe85c0
 ---
 
 # T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning
@@ -182,10 +182,10 @@ Each component contributes independently, and their combination yields the best 
 ## Related Papers
 
 - [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
-- [\[ICML 2026\] GIST: Targeted Data Selection for Instruction Tuning via Gradient Subspace Projection](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
+- [\[ACL 2025\] Measuring Data Diversity for Instruction Tuning: A Systematic Analysis and A Reliable Metric](../../ACL2025/llm_alignment/measuring_data_diversity_for_instruction_tuning_a_systematic_analysis_and_a_reli.md)
+- [\[ACL 2025\] Beyond Similarity: A Gradient-based Graph Method for Instruction Tuning Data Selection](../../ACL2025/llm_alignment/beyond_similarity_a_gradient-based_graph_method_for_instruction_tuning_data_sele.md)
+- [\[ICML 2026\] GIST: Targeted Data Selection for Instruction Tuning with Gradient Subspace Projection](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
 - [\[NeurIPS 2025\] Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay](improving_data_efficiency_for_llm_reinforcement_fine-tuning_through_difficulty-t.md)
-- [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](../../ACL2026/llm_alignment/what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
-- [\[NeurIPS 2025\] SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism](safeptr_token-level_jailbreak_defense_in_multimodal_llms_via_prune-then-restore_.md)
 
 </div>
 

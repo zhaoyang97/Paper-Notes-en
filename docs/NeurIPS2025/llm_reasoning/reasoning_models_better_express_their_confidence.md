@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Reasoning Models Better Express Their Confidence
 description: >-
-  [NeurIPS 2025][LLM Reasoning][confidence calibration] This paper systematically demonstrates that reasoning models (with extended CoT) exhibit significantly better confidence calibration than non-reasoning models…
+  [NeurIPS 2025][Reasoning][confidence calibration] This paper systematically demonstrates that reasoning models (with extended CoT) exhibit significantly better confidence calibration than non-reasoning models, and identifies "slow-thinking" behaviors—exploring alternatives, backtracking, and verification—as the fundamental source of this calibration improvement.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "confidence calibration"
   - "reasoning models"
   - "chain-of-thought"
@@ -14,7 +14,7 @@ tags:
   - "ECE"
   - "Brier Score"
 date: 2026-05-08
-content_hash: f999a2305073c461
+content_hash: 9f8bf56e16936699
 ---
 
 # Reasoning Models Better Express Their Confidence
@@ -141,9 +141,9 @@ Ablation experiments remove segments containing these behaviors from the CoT and
 
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](../../ICLR2026/llm_reasoning/are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
 - [\[NeurIPS 2025\] SPRINT: Enabling Interleaved Planning and Parallelized Execution in Reasoning Models](sprint_enabling_interleaved_planning_and_parallelized_execution_in_reasoning_mod.md)
+- [\[ACL 2025\] Towards Better Chain-of-Thought: A Reflection on Effectiveness and Faithfulness](../../ACL2025/llm_reasoning/towards_better_chain-of-thought_a_reflection_on_effectiveness_and_faithfulness.md)
 - [\[NeurIPS 2025\] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks](value-guided_search_for_efficient_chain-of-thought_reasoning.md)
-- [\[NeurIPS 2025\] Mapping Faithful Reasoning in Language Models](mapping_faithful_reasoning_in_language_models.md)
-- [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
+- [\[ICML 2026\] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models](../../ICML2026/llm_reasoning/when_the_chain_of_thought_knows_better_failure_modes_in_multi-turn_reasoning_mod.md)
 
 </div>
 

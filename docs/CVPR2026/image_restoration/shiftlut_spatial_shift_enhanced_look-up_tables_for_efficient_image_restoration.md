@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] ShiftLUT is proposed to achieve the largest receptive field (65×65) among LUT-based methods via a Learnable Spatial Shift (LSS) module. Combined with an asymmetric dual-branch architecture and Error-bounded Adaptive Sampling (EAS), it outperforms all existing LUT methods with 104KB storage and 84ms inference latency.
+  [CVPR 2026][Image Restoration][Look-Up Tables] ShiftLUT is proposed to achieve the largest receptive field (65×65) among LUT-based methods via a Learnable Spatial Shift (LSS) module. Combined with an asymmetric dual-branch architecture and Error-bounded Adaptive Sampling (EAS), it outperforms all existing LUT methods with 104KB storage and 84ms inference latency.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Look-Up Tables"
+  - "Efficient Super-Resolution"
+  - "Spatial Shift"
+  - "Asymmetric Architecture"
+  - "Adaptive Sampling"
 date: 2026-05-08
-content_hash: 7c218800adc60988
+content_hash: e1ff7721e2e22ed7
 ---
+
 # ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration
 
 **Conference**: CVPR 2026  
@@ -153,6 +159,7 @@ Candidate steps are restricted to powers of 2 ($\mathcal{S} = \{2^k\}$) to repla
 - Value: ⭐⭐⭐⭐⭐ (Highly practical for edge deployment, 24KB-104KB scale)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -161,7 +168,7 @@ Candidate steps are restricted to powers of 2 ($\mathcal{S} = \{2^k\}$) to repla
 - [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
 - [\[CVPR 2026\] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)
 - [\[CVPR 2026\] VoDaSuRe: A Large-Scale Dataset Revealing Domain Shift in Volumetric Super-Resolution](vodasure_a_large-scale_dataset_revealing_domain_shift_in_volumetric_super-resolu.md)
-- [\[CVPR 2026\] Scan Clusters, Not Pixels: A Cluster-Centric Paradigm for Efficient Ultra-high-definition Image Restoration](scan_clusters_not_pixels_a_cluster-centric_paradigm_for_efficient_ultra-high-def.md)
+- [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
 
 </div>
 

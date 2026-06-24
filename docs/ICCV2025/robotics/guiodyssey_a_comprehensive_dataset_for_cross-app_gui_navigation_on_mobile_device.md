@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices
 description: >-
-  [ICCV 2025][Robotics][GUI navigation] This paper presents GUIOdyssey, the first comprehensive dataset for cross-app GUI navigation on mobile devices (8,334 episodes, 212 apps, 1,357 app combinations)…
+  [ICCV 2025][Robotics][GUI navigation] This paper presents GUIOdyssey, the first comprehensive dataset for cross-app GUI navigation on mobile devices (8,334 episodes, 212 apps, 1,357 app combinations), along with OdysseyAgent—a multimodal navigation agent equipped with a history resampling module that significantly improves cross-app task performance while balancing accuracy and inference efficiency.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "multimodal large language model"
   - "history information modeling"
 date: 2026-05-08
-content_hash: 16e3ddde71952016
+content_hash: 916c37b022441dd0
 ---
 
 # GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices
@@ -62,9 +62,9 @@ This work comprises two components: (1) **GUIOdyssey dataset**—a cross-app nav
 2. **History Resampling Module in OdysseyAgent**: A core challenge in cross-app navigation is handling large quantities of historical screenshots and action sequences—the agent must recall results from prior apps to make current decisions, yet naively concatenating all historical screenshot tokens severely degrades inference speed.
 
    OdysseyAgent augments Qwen-VL with a **history resampler**—a single-layer cross-attention module:
-   - Query: learnable embeddings
-   - Key/Value: historical screenshot tokens
-   - Output: compressed history tokens concatenated with current screenshot tokens, user instruction, and preceding actions, then fed into the LLM to predict the next action
+    - Query: learnable embeddings
+    - Key/Value: historical screenshot tokens
+    - Output: compressed history tokens concatenated with current screenshot tokens, user instruction, and preceding actions, then fed into the LLM to predict the next action
 
    The training objective is standard next-token prediction:
    $\mathcal{L} = \sum_{i=1}^{N} P_\theta(A_i^t | X^{\{t, t-1, \cdots, t-\delta\}}, I_{user}, A_{<i}^t)$
@@ -161,11 +161,11 @@ Fine-tuned methods substantially outperform zero-shot baselines; OdysseyAgent wi
 
 ## Related Papers
 
-- [\[ICML 2026\] Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation](../../ICML2026/robotics/turning_adaptation_into_assets_cross-domain_bridging_for_online_vision-language_.md)
-- [\[ICLR 2026\] RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification](../../ICLR2026/robotics/rf-matid_dataset_and_benchmark_for_radio_frequency_material_identification.md)
-- [\[ICCV 2025\] COSMO: Combination of Selective Memorization for Low-cost Vision-and-Language Navigation](cosmo_combination_of_selective_memorization_for_low-cost_vision-and-language_nav.md)
-- [\[ICCV 2025\] NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments](navmorph_a_self-evolving_world_model_for_vision-and-language_navigation_in_conti.md)
-- [\[ICLR 2026\] MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation](../../ICLR2026/robotics/mollangbench_a_comprehensive_benchmark_for_language-prompted_molecular_structure.md)
+- [\[CVPR 2026\] Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](../../CVPR2026/robotics/hoi_-_a_multimodal_dataset_for_force-grounded_cross-view_articulated_manipulatio.md)
+- [\[CVPR 2025\] ShowUI: One Vision-Language-Action Model for GUI Visual Agent](../../CVPR2025/robotics/showui_one_vision-language-action_model_for_gui_visual_agent.md)
+- [\[CVPR 2025\] GigaHands: A Massive Annotated Dataset of Bimanual Hand Activities](../../CVPR2025/robotics/gigahands_a_massive_annotated_dataset_of_bimanual_hand_activities.md)
+- [\[CVPR 2025\] SortScrews: A Dataset and Baseline for Real-time Screw Classification](../../CVPR2025/robotics/sortscrews_a_dataset_and_baseline_for_real-time_screw_classification.md)
+- [\[CVPR 2025\] MoManipVLA: Transferring Vision-Language-Action Models for General Mobile Manipulation](../../CVPR2025/robotics/momanipvla_transferring_vision-language-action_models_for_general_mobile_manipul.md)
 
 </div>
 

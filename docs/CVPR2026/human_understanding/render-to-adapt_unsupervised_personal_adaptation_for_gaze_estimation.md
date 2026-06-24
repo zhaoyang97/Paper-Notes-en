@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Render-to-Adapt: Unsupervised Personal Adaptation for Gaze Estimation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper argues that the group-level assumptions of mainstream Unsupervised Domain Adaptation (UDA) are disconnected from real-world scenarios where systems serve only one new user at a time. It proposes a new paradigm, **Unsupervised Personal Adaptation (UPA)**, and constructs a **Render-Cycle consistency** self-sup
+  [CVPR 2026][Human Understanding][Gaze Estimation] This paper argues that the group-level assumptions of mainstream Unsupervised Domain Adaptation (UDA) are disconnected from real-world scenarios where systems serve only one new user at a time. It proposes a new paradigm, **Unsupervised Personal Adaptation (UPA)**, and constructs a **Render-Cycle consistency** self-supervision signal using a fixed-parameter differentiable renderer. By rendering predicted gaze into a new image…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Gaze Estimation"
+  - "Unsupervised Personal Adaptation"
+  - "Differentiable Rendering"
+  - "Self-Supervised Learning"
+  - "Test-Time Adaptation"
 date: 2026-05-08
-content_hash: 1177082a3f3a8681
+content_hash: 8c8529d3bd3c4ea9
 ---
+
 # Render-to-Adapt: Unsupervised Personal Adaptation for Gaze Estimation
 
 **Conference**: CVPR 2026  
@@ -145,7 +151,7 @@ Impact of sample size: for num=1, error is 5.78 / 6.11 / 6.03 / 6.05; for num=10
 
 - [\[CVPR 2026\] GazeShift: Unsupervised Gaze Estimation and Dataset for VR](gazeshift_unsupervised_gaze_estimation_and_dataset_for_vr.md)
 - [\[CVPR 2026\] See Through the Noise: Improving Domain Generalization in Gaze Estimation](see_through_the_noise_improving_domain_generalization_in_gaze_estimation.md)
-- [\[CVPR 2026\] GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion](gazeonce360_fisheye-based_360_multi-person_gaze_estimation_with_global-local_fea.md)
+- [\[CVPR 2026\] Through the Frequency Lens: Cross-Domain Generalisable Gaze Estimation with Adaptive Modulation](through_the_frequency_lens_cross-domain_generalisable_gaze_estimation_with_adapt.md)
 - [\[CVPR 2026\] Gaze Target Estimation Anywhere with Concepts](gaze_target_estimation_anywhere_with_concepts.md)
 - [\[CVPR 2026\] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)
 

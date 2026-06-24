@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CardioComposer: Leveraging Differentiable Geometry for Compositional Control of Anatomical Diffusion Models
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] CardioComposer formulates "size, position, and shape" as differentiable losses based on voxel-based geometric moments. It applies energy guidance (gradient correction) during the sampling process of an unconditional 3D anatomical diffusion model to achieve decoupled and compositional geometric control of various anatom
+  [ICLR2026][Medical Imaging][Anatomical Generation] CardioComposer formulates "size, position, and shape" as differentiable losses based on voxel-based geometric moments. It applies energy guidance (gradient correction) during the sampling process of an unconditional 3D anatomical diffusion model to achieve decoupled and compositional geometric control of various anatomical sub-structures (e.g., in the heart) without retraining.
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Anatomical Generation"
+  - "Geometric Guidance"
+  - "Differentiable Geometric Moments"
+  - "Energy Guidance"
+  - "Compositional Control"
 date: 2026-05-08
-content_hash: 19e16b465185ca11
+content_hash: 75d6330f5835816c
 ---
+
 # CardioComposer: Leveraging Differentiable Geometry for Compositional Control of Anatomical Diffusion Models
 
 **Conference**: ICLR2026  
@@ -142,15 +148,16 @@ Using 100 target moments for myocardium labels:
 - **Value**: ⭐⭐⭐⭐⭐ Provides a plug-and-play, interpretable, retraining-free tool for computational medicine and device simulation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Anatomica: Localized Control over Geometric and Topological Properties for Anatomical Diffusion Models](../../CVPR2026/medical_imaging/anatomica_localized_control_over_geometric_and_topological_properties_for_anatom.md)
+- [\[ICLR 2026\] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning](stochastic_optimal_control_for_continuous-time_fmri_representation_learning.md)
 - [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
+- [\[ICLR 2026\] AbdCTBench: Learning Clinical Biomarker Representations from Abdominal Surface Geometry](abdctbench_learning_clinical_biomarker_representations_from_abdominal_surface_ge.md)
 - [\[ICLR 2026\] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)
-- [\[ICLR 2026\] Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity](improving_2d_diffusion_models_for_3d_medical_imaging_with_inter-slice_consistent.md)
-- [\[ICLR 2026\] Are EEG Foundation Models Worth It? Comparative Evaluation with Traditional Decoders in Diverse BCI Tasks](are_eeg_foundation_models_worth_it_comparative_evaluation_with_traditional_decod.md)
 
 </div>
 

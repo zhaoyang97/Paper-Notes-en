@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] ICaRus: Identical Cache Reuse for Efficient Multi-Model Inference
 description: >-
-  [ICLR 2026][LLM Efficiency][Agentic AI] ICaRus conceptually splits a decoder-only Transformer into a "logical encoder (generating KV cache) + logical decoder (predicting tokens)." By fine-tuning only the logical decoder and freezing the logical encoder, a suite of task-specialized models can share the same bit-wise identical KV cache. This eliminates cache e
+  [ICLR 2026][LLM Efficiency][KV Cache Sharing] ICaRus conceptually splits a decoder-only Transformer into a "logical encoder (generating KV cache) + logical decoder (predicting tokens)." By fine-tuning only the logical decoder and freezing the logical encoder, a suite of task-specialized models can share the same bit-wise identical KV cache. This eliminates cache explosion and redundant prefill in multi-model serving, reducing P95 latency by 11.1× and increasing throughput by…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Agentic AI
-  - Prefix Caching
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV Cache Sharing"
+  - "Multi-model Inference"
+  - "Agentic AI"
+  - "Prefix Caching"
+  - "LoRA"
+  - "Decoder Transformer"
 date: 2026-05-08
 content_hash: 87472e3454ba5bd9
 ---
+
 # ICaRus: Identical Cache Reuse for Efficient Multi-Model Inference
 
 **Conference**: ICLR 2026  
@@ -130,8 +134,8 @@ Advantages become more pronounced as model size increases, with Qwen3-14B outper
 - [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs](scaling_laws_meet_model_architecture_toward_inference-efficient_llms.md)
-- [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
 - [\[ICLR 2026\] Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling](semantic_parallelism_redefining_efficient_moe_inference_via_model-data_co-schedu.md)
+- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
 
 </div>
 

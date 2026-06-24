@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Traj-CoA: Patient Trajectory Modeling via Chain-of-Agents for Lung Cancer Risk Prediction
 description: >-
-  [NeurIPS 2025][LLM Agent][multi-agent system] This paper proposes Traj-CoA, a multi-agent framework that employs a chain-of-agents architecture with an EHRMem long-term memory module to perform temporal reasoning over lo…
+  [NeurIPS 2025][LLM Agent][multi-agent system] This paper proposes Traj-CoA, a multi-agent framework that employs a chain-of-agents architecture with an EHRMem long-term memory module to perform temporal reasoning over long, noisy longitudinal EHRs. The framework surpasses ML/DL/BERT/LLM baselines on zero-shot lung cancer risk prediction tasks (5-year EHR data, up to 160k tokens).
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "temporal reasoning"
   - "lung cancer prediction"
 date: 2026-05-08
-content_hash: e1b65265148f0164
+content_hash: 66d3950b3ef3a310
 ---
 
 # Traj-CoA: Patient Trajectory Modeling via Chain-of-Agents for Lung Cancer Risk Prediction
@@ -136,9 +136,9 @@ Traj-CoA comprises three core components: (1) a data preprocessing pipeline (XML
 
 - [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
 - [\[NeurIPS 2025\] ShapeCraft: LLM Agents for Structured, Textured and Interactive 3D Modeling](shapecraft_llm_agents_for_structured_textured_and_interactive_3d_modeling.md)
-- [\[CVPR 2026\] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents](../../CVPR2026/llm_agent/hats_hardness-aware_trajectory_synthesis_for_gui_agents.md)
+- [\[ICLR 2026\] FutureX: An Advanced Live Benchmark for LLM Agents in Future Prediction](../../ICLR2026/llm_agent/futurex_an_advanced_live_benchmark_for_llm_agents_in_future_prediction.md)
 - [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](../../ICLR2026/llm_agent/videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
-- [\[ACL 2026\] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning](../../ACL2026/llm_agent/webclipper_efficient_evolution_of_web_agents_with_graph-based_trajectory_pruning.md)
+- [\[ACL 2025\] Explorer: Scaling Exploration-Driven Web Trajectory Synthesis for Multimodal Web Agents](../../ACL2025/llm_agent/explorer_scaling_exploration-driven_web_trajectory_synthesis_for_multimodal_web_.md)
 
 </div>
 

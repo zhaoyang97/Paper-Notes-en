@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Test-Time Scaling in Multimodal Foundation Models: A Comprehensive Survey of Generation and Reasoning
 description: >-
-  [ACL 2026][Multimodal VLM][Test-Time Scaling] The first survey dedicated to **Test-Time Scaling (TTS) in Multimodal Foundation Models (MFM)**: it unifies various methods of "dynamically allocating compute at the inference stage" into a framework of $\pi^*=\arg\max_\pi \mathbb{E}[U(x,y)]$ s.t. compute budget constraints. It categorizes these into three paradigms: *
+  [ACL 2026][Multimodal VLM][Test-Time Scaling] The first survey dedicated to **Test-Time Scaling (TTS) in Multimodal Foundation Models (MFM)**: it unifies various methods of "dynamically allocating compute at the inference stage" into a framework of $\pi^*=\arg\max_\pi \mathbb{E}[U(x,y)]$ s.t. compute budget constraints. It categorizes these into three paradigms: **Sampling-based, Feedback-based, and Search-based**, covering both multimodal generation and reasoning tasks…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Test-Time Scaling
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Test-Time Scaling"
+  - "Multimodal Foundation Models"
+  - "Sampling"
+  - "Feedback"
+  - "Search"
+  - "Survey"
 date: 2026-05-08
-content_hash: 709df7d3eceb0853
+content_hash: 668f06895bf9a802
 ---
+
 # Test-Time Scaling in Multimodal Foundation Models: A Comprehensive Survey of Generation and Reasoning
 
 **Conference**: ACL 2026  
@@ -124,10 +130,10 @@ The survey cross-cuts the three paradigms across two task categories: **Multimod
 ## Related Papers
 
 - [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](../../CVPR2026/multimodal_vlm/scaling_spatial_intelligence_with_multimodal_foundation_models.md)
+- [\[ACL 2026\] A Survey of Deep Learning for Geometry Problem Solving](a_survey_of_deep_learning_for_geometry_problem_solving.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](../../ICLR2026/multimodal_vlm/mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
+- [\[ICML 2026\] CHARM: Using Multimodal JEPA + Channel Descriptions for Time Series Foundation Embedding](../../ICML2026/multimodal_vlm/giving_sensors_a_voice_multimodal_jepa_for_semantic_time-series_embeddings.md)
 - [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](../../NeurIPS2025/multimodal_vlm/tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
-- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](../../CVPR2026/multimodal_vlm/ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
-- [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](../../CVPR2026/multimodal_vlm/controllable_federated_prompt_learning_at_test_time.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2026/multimodal_vlm/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
 
 </div>
 

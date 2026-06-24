@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vista: Scene-Aware Optimization for Streaming Video Question Answering Under Post-Hoc Queries
 description: >-
-  [AAAI 2026][Segmentation][Streaming video question answering] Vista proposes a scene-aware streaming video question answering framework that dynamically segments streaming video into semantically coherent scene units…
+  [AAAI 2026][Segmentation][Streaming video question answering] Vista proposes a scene-aware streaming video question answering framework that dynamically segments streaming video into semantically coherent scene units, applies spatiotemporal compression to each scene and offloads it to CPU memory, and selectively recalls the most relevant scenes upon user queries, achieving high-accuracy video QA under strict GPU memory and latency constraints.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "video memory retrieval"
   - "real-time inference"
 date: 2026-05-08
-content_hash: 13d76560e5bd4f35
+content_hash: e59b75c1e6b31208
 ---
 
 # Vista: Scene-Aware Optimization for Streaming Video Question Answering Under Post-Hoc Queries
@@ -145,8 +145,8 @@ Offline video QA benchmarks:
 - [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
 - [\[NeurIPS 2025\] TabRAG: Improving Tabular Document Question Answering for Retrieval Augmented Generation via Structured Representations](../../NeurIPS2025/segmentation/tabrag_improving_tabular_document_question_answering_for_retrieval_augmented_gen.md)
 - [\[ICML 2026\] Beyond Detection: A Structure-Aware Framework for Scene Text Tracking](../../ICML2026/segmentation/beyond_detection_a_structure-aware_framework_for_scene_text_tracking.md)
+- [\[ECCV 2024\] EAFormer: Scene Text Segmentation with Edge-Aware Transformers](../../ECCV2024/segmentation/eaformer_scene_text_segmentation_with_edge-aware_transformers.md)
 - [\[CVPR 2026\] DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime](../../CVPR2026/segmentation/dsflash_panoptic_scene_graph_realtime.md)
-- [\[AAAI 2026\] Breaking the Stealth-Potency Trade-off in Clean-Image Backdoors with Generative Trigger Optimization](breaking_the_stealth-potency_trade-off_in_clean-image_backdoors_with_generative_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs
 description: >-
-  [NeurIPS 2025][Graph Learning][Text-Attributed Graphs] DENSE proposes a "text bundling" strategy that packages textually and topologically/semantically similar nodes into bundles, queries LLMs for bundle-level labels…
+  [NeurIPS 2025][Graph Learning][Text-Attributed Graphs] DENSE proposes a "text bundling" strategy that packages textually and topologically/semantically similar nodes into bundles, queries LLMs for bundle-level labels, supervises GNN training via entropy-based and ranking-based losses, and dynamically refines bundles to exclude noisy nodes. It achieves comprehensive zero-shot inference improvements over GPT-4o and graph foundation models across 10 TAG datasets.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Graph Neural Networks"
   - "Bundle Supervision"
 date: 2026-05-08
-content_hash: 678a05157a40058b
+content_hash: f895e73790546b29
 ---
 
 # Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs
@@ -152,10 +152,10 @@ Given a text-attributed graph $\mathcal{G}=\langle\mathcal{V},\mathcal{E},\mathc
 ## Related Papers
 
 - [\[NeurIPS 2025\] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs](unifying_text_semantics_and_graph_structures_for_temporal_text-attributed_graphs.md)
-- [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
 - [\[NeurIPS 2025\] SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs](sstag_structure-aware_self-supervised_learning_method_for_text-attributed_graphs.md)
+- [\[ICLR 2026\] Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models](../../ICLR2026/graph_learning/global-recent_semantic_reasoning_on_dynamic_text-attributed_graphs_with_large_la.md)
+- [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
 - [\[NeurIPS 2025\] Practical Bayes-Optimal Membership Inference Attacks](practical_bayes-optimal_membership_inference_attacks.md)
-- [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](../../CVPR2026/graph_learning/mario_multimodal_graph_reasoning_with_large_language_models.md)
 
 </div>
 

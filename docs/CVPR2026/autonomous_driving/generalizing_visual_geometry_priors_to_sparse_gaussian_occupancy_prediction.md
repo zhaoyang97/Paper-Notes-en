@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] GPOcc proposes utilizing generalizable visual geometry priors (e.g., VGGT, DepthAnything) for monocular 3D occupancy prediction. By extending surface points inward along camera rays to generate volumetric samples, the method performs probabilistic occupancy inference using sparse Gaussian primitives. It introduces a tr
+  [CVPR 2026][Autonomous Driving][Occupancy Prediction] GPOcc proposes utilizing generalizable visual geometry priors (e.g., VGGT, DepthAnything) for monocular 3D occupancy prediction. By extending surface points inward along camera rays to generate volumetric samples, the method performs probabilistic occupancy inference using sparse Gaussian primitives. It introduces a training-free incremental update strategy for streaming inputs, achieving a +9.99 mIoU gain in monocular set…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Occupancy Prediction"
+  - "Visual Geometry Priors"
+  - "Gaussian Representation"
+  - "Ray Sampling"
+  - "Streaming Update"
 date: 2026-05-08
-content_hash: 0c6feca7874d967f
+content_hash: 8e8aeb7657174ff7
 ---
+
 # Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ New Gaussians without neighbors are inserted. Setting $\gamma < 0.5$ prioritizes
 
 ## Related Papers
 
-- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
+- [\[CVPR 2026\] Gau-Occ: Geometry-Completed Gaussians for Multi-Modal 3D Occupancy Prediction](gau-occ_geometry-completed_gaussians_for_multi-modal_3d_occupancy_prediction.md)
+- [\[ICLR 2026\] S2GO: Streaming Sparse Gaussian Occupancy](../../ICLR2026/autonomous_driving/s2go_streaming_sparse_gaussian_occupancy.md)
 - [\[CVPR 2026\] SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model](sparseworld_tc_trajectory_conditioned_sparse_occupancy_world_model.md)
 - [\[ECCV 2024\] Fully Sparse 3D Occupancy Prediction](../../ECCV2024/autonomous_driving/fully_sparse_3d_occupancy_prediction.md)
-- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
 - [\[CVPR 2026\] Deformable Gaussian Occupancy: Decoupling Rigid and Nonrigid Motion with Factorized Distillation](deformable_gaussian_occupancy_decoupling_rigid_and_nonrigid_motion_with_factoriz.md)
 
 </div>

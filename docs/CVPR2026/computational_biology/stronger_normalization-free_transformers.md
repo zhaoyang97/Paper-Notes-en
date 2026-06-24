@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Stronger Normalization-Free Transformers
 description: >-
-  [CVPR 2026][Computational Biology][Derf] Through a systematic analysis of four critical attributes (zero-centeredness, boundedness, center sensitivity, and monotonicity) required for pointwise functions to replace normalization layers, an exhaustive search identifies $\text{Derf}(x) = \text{erf}(\alpha x + s)$ as the optimal replacement. It consistently outpe
+  [CVPR 2026][Computational Biology][Normalization-Free Transformer] Through a systematic analysis of four critical attributes (zero-centeredness, boundedness, center sensitivity, and monotonicity) required for pointwise functions to replace normalization layers, an exhaustive search identifies $\text{Derf}(x) = \text{erf}(\alpha x + s)$ as the optimal replacement. It consistently outperforms LayerNorm and DyT across multiple domains, including visual recognition…
 tags:
-  - CVPR 2026
-  - Computational Biology
-  - Derf
-  - Generalizability
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Normalization-Free Transformer"
+  - "Pointwise Function"
+  - "Derf"
+  - "Normalization Layer Replacement"
+  - "Generalization"
 date: 2026-05-08
-content_hash: f85b72bda04035bd
+content_hash: aed3e935001c67df
 ---
+
 # Stronger Normalization-Free Transformers
 
 **Conference**: CVPR 2026  
@@ -150,11 +154,11 @@ Counter-intuitively, evaluating training loss on trained models shows a stable r
 
 ## Related Papers
 
+- [\[ICLR 2026\] PSDNorm: Temporal Normalization for Deep Learning in Sleep Staging](../../ICLR2026/computational_biology/psdnorm_temporal_normalization_for_deep_learning_in_sleep_staging.md)
+- [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](../../ICLR2026/computational_biology/graph_diffusion_transformers_are_in-context_molecular_designers.md)
 - [\[ICML 2025\] Supercharging Graph Transformers with Advective Diffusion](../../ICML2025/computational_biology/supercharging_graph_transformers_with_advective_diffusion.md)
-- [\[NeurIPS 2025\] Generalizable Insights for Graph Transformers in Theory and Practice](../../NeurIPS2025/computational_biology/generalizable_insights_for_graph_transformers_in_theory_and_practice.md)
-- [\[ICLR 2026\] Contact-Guided 3D Genome Structure Generation of E. coli via Diffusion Transformers](../../ICLR2026/computational_biology/contact-guided_3d_genome_structure_generation_of_e_coli_via_diffusion_transforme.md)
 - [\[ICLR 2026\] ConfHit: Conformal Generative Design with Oracle Free Guarantees](../../ICLR2026/computational_biology/confhit_conformal_generative_design_with_oracle_free_guarantees.md)
-- [\[ICML 2026\] CARD: Coarse-to-fine Autoregressive Modeling with Radix-based Decomposition for Transferable Free Energy Estimation](../../ICML2026/computational_biology/card_coarse-to-fine_autoregressive_modeling_with_radix-based_decomposition_for_t.md)
+- [\[ICLR 2026\] WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport](../../ICLR2026/computational_biology/wfr-fm_simulation-free_dynamic_unbalanced_optimal_transport.md)
 
 </div>
 

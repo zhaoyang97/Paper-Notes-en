@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] OctoTools is a training-free, user-friendly, and extensible multi-agent framework. By utilizing standardized **Tool Cards** to encapsulate heterogeneous tools, a **Planner-Executor** separation paradigm, and a **task-specific toolset optimization** algorithm, it achieves an average accuracy improvement of +9.3% over GP
+  [ACL 2026][LLM Agent][Agent framework] OctoTools is a training-free, user-friendly, and extensible multi-agent framework. By utilizing standardized **Tool Cards** to encapsulate heterogeneous tools, a **Planner-Executor** separation paradigm, and a **task-specific toolset optimization** algorithm, it achieves an average accuracy improvement of +9.3% over GPT-4o and up to +10.6% over frameworks like AutoGen and LangChain across 16 diverse benchmarks.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Agent framework"
+  - "tool-augmented reasoning"
+  - "multi-step planning"
+  - "tool cards"
+  - "extensibility"
 date: 2026-05-08
-content_hash: 74abfe1599951720
+content_hash: aad1420847c44316
 ---
+
 # OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning
 
 **Conference**: ACL 2026  
@@ -149,9 +155,9 @@ Exposing all available tools to the Planner simultaneously can introduce noise a
 
 - [\[ACL 2025\] Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools](../../ACL2025/llm_agent/agentic_reasoning_tools.md)
 - [\[ACL 2026\] GOAT: A Training Framework for Goal-Oriented Agent with Tools](goat_a_training_framework_for_goal-oriented_agent_with_tools.md)
+- [\[ACL 2026\] LiTS: A Modular Framework for LLM Tree Search](lits_a_modular_framework_for_llm_tree_search.md)
+- [\[ACL 2026\] ChartAgent: A Multimodal Agent for Visually Grounded Reasoning in Complex Chart Question Answering](chartagent_a_multimodal_agent_for_visually_grounded_reasoning_in_complex_chart_q.md)
 - [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
-- [\[ACL 2026\] MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools](mcp-flow_facilitating_llm_agents_to_master_real-world_diverse_and_scaling_mcp_to.md)
-- [\[ICLR 2026\] An Agentic Framework with LLMs for Solving Complex Vehicle Routing Problems](../../ICLR2026/llm_agent/an_agentic_framework_with_llms_for_solving_complex_vehicle_routing_problems.md)
 
 </div>
 

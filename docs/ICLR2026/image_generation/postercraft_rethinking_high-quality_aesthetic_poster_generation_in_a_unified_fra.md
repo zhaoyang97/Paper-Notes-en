@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] PosterCraft abandons the modular "VLM layout planning + separate background generation" paradigm. Instead, it employs a standard diffusion backbone (Flux-dev) through a four-stage cascaded training pipeline (text rendering optimization → high-quality poster fine-tuning → aesthetic-text reinforcement learning → visual-l
+  [ICLR 2026][Image Generation][Aesthetic Poster Generation] PosterCraft abandons the modular "VLM layout planning + separate background generation" paradigm. Instead, it employs a standard diffusion backbone (Flux-dev) through a four-stage cascaded training pipeline (text rendering optimization → high-quality poster fine-tuning → aesthetic-text reinforcement learning → visual-language feedback refinement). With specialized, automatically constructed datasets for each stage…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Aesthetic Poster Generation"
+  - "Text Rendering"
+  - "Preference Optimization"
+  - "Visual-Language Feedback"
+  - "Unified Framework"
 date: 2026-05-08
-content_hash: 26c681796f341319
+content_hash: 5e2c540437767562
 ---
+
 # PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework
 
 **Conference**: ICLR 2026  
@@ -149,10 +155,10 @@ Stages were stripped individually while keeping other conditions constant.
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](scaling_group_inference_for_diverse_and_high-quality_generation.md)
+- [\[ICLR 2026\] UniCalli: A Unified Diffusion Framework for Column-Level Generation and Recognition of Chinese Calligraphy](unicalli_a_unified_diffusion_framework_for_column-level_generation_and_recogniti.md)
+- [\[ICLR 2026\] Safety-Guided Flow (SGF): A Unified Framework for Negative Guidance in Safe Generation](safety-guided_flow_sgf_a_unified_framework_for_negative_guidance_in_safe_generat.md)
 - [\[ICLR 2026\] PQGAN: Product-Quantised Image Representation for High-Quality Image Synthesis](pqgan_product-quantised_image_representation_for_high-quality_image_synthesis.md)
 - [\[ECCV 2024\] A High-Quality Robust Diffusion Framework for Corrupted Dataset](../../ECCV2024/image_generation/a_highquality_robust_diffusion_framework_for_corrupted_datas.md)
-- [\[ECCV 2024\] UDiffText: A Unified Framework for High-quality Text Synthesis in Arbitrary Images via Character-aware Diffusion Models](../../ECCV2024/image_generation/udifftext_a_unified_framework_for_high-quality_text_synthesis_in_arbitrary_image.md)
-- [\[ICLR 2026\] Guidance Matters: Rethinking the Evaluation Pitfall for Text-to-Image Generation](guidance_matters_rethinking_the_evaluation_pitfall_for_text-to-image_generation.md)
 
 </div>
 

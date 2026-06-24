@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models
 description: >-
-  [ICML 2026][Image Generation][GRPO] Addressing the collapse of intra-group variance and the disappearance of training signals in group-based RL alignment (e.g., GRPO, DiffusionNFT) for flow models, E²PO injects a set of learned structured perturbations into the text embedding space to maintain discriminative variance. Combined with a noise-aware schedule
+  [ICML 2026][Image Generation][GRPO] Addressing the collapse of intra-group variance and the disappearance of training signals in group-based RL alignment (e.g., GRPO, DiffusionNFT) for flow models, E²PO injects a set of learned structured perturbations into the text embedding space to maintain discriminative variance. Combined with a noise-aware schedule and a reference-anchored batch strategy, it improves GenEval from 0.917 to 0.932 on SD3.5-M while significantly enhancing d…
 tags:
-  - ICML 2026
-  - Image Generation
-  - GRPO
-  - Flow Matching
-  - Reward Hacking
+  - "ICML 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "Flow Matching"
+  - "Text Embedding Perturbation"
+  - "Reward Hacking"
+  - "Intra-group Variance"
 date: 2026-05-08
-content_hash: fe82ca9a40dc6175
+content_hash: 9023a962a482ae76
 ---
+
 # E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models
 
 **Conference**: ICML 2026  
@@ -145,10 +148,10 @@ Generalization to unseen rewards under PickScore (K=3):
 ## Related Papers
 
 - [\[ICML 2026\] Offline Preference Optimization for Rectified Flow with Noise-Tracked Pairs](offline_preference_optimization_for_rectified_flow_with_noise-tracked_pairs.md)
+- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](../../ICLR2026/image_generation/reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 - [\[ICML 2026\] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization](principled_rl_for_flow_matching_emerges_from_the_chunk-level_policy_optimization.md)
 - [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](../../CVPR2026/image_generation/neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
 - [\[ICML 2026\] Adversarial Flow Models](adversarial_flow_models.md)
-- [\[AAAI 2026\] Rethinking Direct Preference Optimization in Diffusion Models](../../AAAI2026/image_generation/rethinking_direct_preference_optimization_in_diffusion_models.md)
 
 </div>
 

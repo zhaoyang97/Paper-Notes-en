@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial Referring] This paper proposes **RoboRefer**, a 3D-aware reasoning VLM trained via a two-stage **SFT + RFT** strategy with a metric-sensitive process reward function. It achieves pr…
+  [NeurIPS 2025][VLM Reasoning][Spatial Referring] This paper proposes **RoboRefer**, a 3D-aware reasoning VLM trained via a two-stage **SFT + RFT** strategy with a metric-sensitive process reward function. It achieves precise single-step spatial understanding and multi-step spatial reasoning on spatial referring tasks, surpassing Gemini-2.5-Pro by 17.4% on RefSpatial-Bench.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Spatial Referring"
   - "Vision-Language Models"
   - "Multi-Step Reasoning"
   - "Reinforcement Fine-Tuning"
   - "Robot Manipulation"
 date: 2026-05-08
-content_hash: 0c8ebcb246f086e9
+content_hash: 4726b4f828d7cdb7
 ---
 
 # RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics
@@ -158,11 +158,11 @@ A comprehensive contribution covering a new task formulation (multi-step spatial
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning](ssr_enhancing_depth_perception_in_vision-language_models_via_rationale-guided_sp.md)
-- [\[NeurIPS 2025\] SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models](sd-vlm_spatial_measuring_and_understanding_with_depth-encoded_vision-language_mo.md)
+- [\[CVPR 2025\] ESPIRE: A Diagnostic Benchmark for Embodied Spatial Reasoning of Vision-Language Models](../../CVPR2025/vlm_reasoning/espire_a_diagnostic_benchmark_for_embodied_spatial_reasoning_of_vision-language_.md)
 - [\[NeurIPS 2025\] Sherlock: Self-Correcting Reasoning in Vision-Language Models](sherlock_selfcorrecting_reasoning_in_visionlanguage_models.md)
-- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/multimodal_vlm/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
-- [\[NeurIPS 2025\] GoalLadder: Incremental Goal Discovery with Vision-Language Models](goalladder_incremental_goal_discovery_with_vision-language_models.md)
+- [\[ICLR 2026\] InternSpatial: A Comprehensive Dataset for Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/internspatial_a_comprehensive_dataset_for_spatial_reasoning_in_vision-language_m.md)
+- [\[ACL 2025\] SpaRE: Enhancing Spatial Reasoning in Vision-Language Models with Synthetic Data](../../ACL2025/vlm_reasoning/spare_enhancing_spatial_reasoning_in_vision-language_models_with_synthetic_data.md)
+- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/vlm_reasoning/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
 
 </div>
 

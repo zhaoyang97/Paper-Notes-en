@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Long-tailed recognition] BCE3S is proposed, a binary cross-entropy (BCE)-based tripartite synergistic learning framework that integrates BCE-based joint learning…
+  [AAAI 2026][Self-Supervised Learning][Long-tailed recognition] BCE3S is proposed, a binary cross-entropy (BCE)-based tripartite synergistic learning framework that integrates BCE-based joint learning, BCE-based contrastive learning, and BCE-based classifier uniformity learning. By decoupling per-class logits via Sigmoid, it suppresses the imbalance effects inherent to long-tailed distributions, achieving state-of-the-art performance on CIFAR10/100-LT, ImageNet-LT…
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "classifier uniformity"
   - "neural collapse"
 date: 2026-05-08
-content_hash: eb2834969d04027e
+content_hash: 23dd78a45fa9e9b2
 ---
 
 # BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition
@@ -221,11 +221,11 @@ $L = \frac{1}{B}\sum L_{\text{bce}}^{(\text{sc})} + \frac{\lambda_{ss}}{B}\sum L
 
 ## Related Papers
 
+- [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](../../CVPR2026/self_supervised/trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
 - [\[NeurIPS 2025\] Long-Tailed Recognition via Information-Preservable Two-Stage Learning](../../NeurIPS2025/self_supervised/long-tailed_recognition_via_information-preservable_two-stage_learning.md)
+- [\[ICLR 2026\] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition](../../ICLR2026/self_supervised/guide_gated_uncertainty-informed_disentangled_experts_for_long-tailed_recognitio.md)
+- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](../../CVPR2026/self_supervised/decision_boundary-aware_generation_for_long-tailed_learning.md)
 - [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](../../CVPR2026/self_supervised/reframing_long-tailed_learning_via_loss_landscape_geometry.md)
-- [\[ICLR 2026\] Maximizing Incremental Information Entropy for Contrastive Learning](../../ICLR2026/self_supervised/maximizing_incremental_information_entropy_for_contrastive_learning.md)
-- [\[AAAI 2026\] Let the Void Be Void: Robust Open-Set Semi-Supervised Learning via Selective Non-Alignment](let_the_void_be_void_robust_open-set_semi-supervised_learning_via_selective_non-.md)
-- [\[AAAI 2026\] Improving Region Representation Learning from Urban Imagery with Noisy Long-Caption Supervision](improving_region_representation_learning_from_urban_imagery_with_noisy_long-capt.md)
 
 </div>
 

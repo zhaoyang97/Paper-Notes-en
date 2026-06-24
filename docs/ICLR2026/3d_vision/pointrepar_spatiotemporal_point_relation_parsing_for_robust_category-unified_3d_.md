@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PointRePar: SpatioTemporal Point Relation Parsing for Robust Category-Unified 3D Tracking
 description: >-
-  [ICLR 2026][3D Vision][Mamba] PointRePar is a "category-unified" 3D single-object tracker. It employs a U-shaped spatial relation parsing backbone built with Mamba and Dynamic Feature Aggregation to learn more discriminative shape features, combined with a dual-layer point-level/box-level temporal parsing mechanism to capture motion. Coupled with s
+  [ICLR 2026][3D Vision][3D Single Object Tracking] PointRePar is a "category-unified" 3D single-object tracker. It employs a U-shaped spatial relation parsing backbone built with Mamba and Dynamic Feature Aggregation to learn more discriminative shape features, combined with a dual-layer point-level/box-level temporal parsing mechanism to capture motion. Coupled with sparse-adaptive Gaussian perturbation training, a single model trained jointly across all categories outperform…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Mamba
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Single Object Tracking"
+  - "Point Cloud"
+  - "Category-Unified"
+  - "Mamba"
+  - "Spatiotemporal Relation Parsing"
 date: 2026-05-08
-content_hash: dc24d3fb87f2975f
+content_hash: ead71c5a80f48251
 ---
+
 # PointRePar: SpatioTemporal Point Relation Parsing for Robust Category-Unified 3D Tracking
 
 **Conference**: ICLR 2026  
@@ -148,8 +153,8 @@ On KITTI, the category-unified PointRePar (72.0/89.1) exceeds MoCUT and most cat
 - [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](../../CVPR2026/3d_vision/generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
 - [\[ICLR 2026\] Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation](point-focused_attention_meets_context-scan_state_space_robust_biological_visual_.md)
 - [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](../../CVPR2026/3d_vision/compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
-- [\[ECCV 2024\] 3D Single-Object Tracking in Point Clouds with High Temporal Variation](../../ECCV2024/3d_vision/3d_single-object_tracking_in_point_clouds_with_high_temporal_variation.md)
-- [\[ICLR 2026\] Point-UQ：面向点云小样本类增量学习的不确定性量化范式](point-uq_an_uncertainty-quantification_paradigm_for_point_cloud_few-shot_class_i.md)
+- [\[ICLR 2026\] Point-UQ: An Uncertainty Quantification Paradigm for Point Cloud Few-Shot Class-Incremental Learning](point-uq_an_uncertainty-quantification_paradigm_for_point_cloud_few-shot_class_i.md)
+- [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](../../ICCV2025/3d_vision/upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
 
 </div>
 

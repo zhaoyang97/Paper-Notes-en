@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This is an ICML position paper: the authors argue that ML fairness research must move beyond focusing solely on "sensitive attributes" like race/sex and must include "social determinants" (contextual variables such as neighborhood, ADI, school funding, and healthcare accessibility) in audits. Using a theoretical model
+  [ICML 2026][AI Safety][Algorithmic Fairness] This is an ICML position paper: the authors argue that ML fairness research must move beyond focusing solely on "sensitive attributes" like race/sex and must include "social determinants" (contextual variables such as neighborhood, ADI, school funding, and healthcare accessibility) in audits. Using a theoretical model of university admissions, US Census data, and semi-synthetic experiments on breast cancer screening…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Algorithmic Fairness"
+  - "Structural Injustice"
+  - "Social Determinants"
+  - "Sensitive Attributes"
+  - "Causal Fairness"
 date: 2026-05-08
-content_hash: 7daede883f1503e8
+content_hash: 480fd0feb593d372
 ---
+
 # Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants
 
 **Conference**: ICML 2026  
@@ -113,8 +119,8 @@ While this position paper does not specify training objectives, it provides thre
 
 ## Related Papers
 
-- [\[ICML 2026\] Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives](position_machine_learning_for_heart_transplant_allocation_policy_optimization_sh.md)
 - [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
+- [\[ICML 2026\] Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives](position_machine_learning_for_heart_transplant_allocation_policy_optimization_sh.md)
 - [\[ICML 2026\] Beyond Procedure: Substantive Fairness in Conformal Prediction](beyond_procedure_substantive_fairness_in_conformal_prediction.md)
 - [\[ICML 2026\] Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods](extending_fair_null-space_projections_for_continuous_attributes_to_kernel_method.md)
 - [\[AAAI 2026\] Revisiting (Un)Fairness in Recourse by Minimizing Worst-Case Social Burden](../../AAAI2026/ai_safety/revisiting_unfairness_in_recourse_by_minimizing_worst-case_social_burden.md)

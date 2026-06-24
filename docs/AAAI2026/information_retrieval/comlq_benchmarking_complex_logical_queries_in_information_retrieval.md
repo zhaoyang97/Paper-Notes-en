@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ComLQ: Benchmarking Complex Logical Queries in Information Retrieval
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Complex logical queries] This paper introduces ComLQ, the first IR benchmark targeting complex logical queries spanning 14 query types (conjunction, disjunction, negation…
+  [AAAI 2026][Information Retrieval & RAG][Complex logical queries] This paper introduces ComLQ, the first IR benchmark targeting complex logical queries spanning 14 query types (conjunction, disjunction, negation, and their combinations). It proposes a subgraph-guided LLM data synthesis pipeline and a negation consistency metric LSNC, revealing that existing retrievers suffer severely in logical reasoning—particularly in negation modeling.
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "IR benchmark"
   - "first-order logic"
 date: 2026-05-08
-content_hash: 5787dc153472d8ee
+content_hash: 6907e7d89e2d0a42
 ---
 
 # ComLQ: Benchmarking Complex Logical Queries in Information Retrieval
@@ -140,11 +140,11 @@ All models achieve low LSNC@100 scores (mostly in the 25–35% range), indicatin
 
 ## Related Papers
 
+- [\[ACL 2025\] Logical Consistency is Vital: Neural-Symbolic Information Retrieval for Negative-Constraint Queries](../../ACL2025/information_retrieval/logical_consistency_is_vital_neural-symbolic_information_retrieval_for_negative-.md)
 - [\[ACL 2026\] Benchmarking and Enabling Efficient Chinese Medical Retrieval via Asymmetric Encoders](../../ACL2026/information_retrieval/benchmarking_and_enabling_efficient_chinese_medical_retrieval_via_asymmetric_enc.md)
-- [\[CVPR 2026\] PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing](../../CVPR2026/information_retrieval/pinpoint_evaluation_of_composed_image_retrieval_with_explicit_negatives_multi-im.md)
 - [\[ACL 2026\] AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation](../../ACL2026/information_retrieval/authoritybench_benchmarking_llm_authority_perception_for_reliable_retrieval-augm.md)
-- [\[ACL 2026\] Code-Switching Information Retrieval: Benchmarks, Analysis, and the Limits of Current Retrievers](../../ACL2026/information_retrieval/code-switching_information_retrieval_benchmarks_analysis_and_the_limits_of_curre.md)
-- [\[ACL 2026\] UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval](../../ACL2026/information_retrieval/unite_uncertainty-based_iterative_document_sampling_for_domain_adaptation_in_inf.md)
+- [\[ICLR 2026\] Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning](../../ICLR2026/information_retrieval/youtu-graphrag_vertically_unified_agents_for_graph_retrieval-augmented_complex_r.md)
+- [\[AAAI 2026\] PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning](prime_planning_and_retrieval-integrated_memory_for_enhanced_reasoning.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer
 description: >-
-  [ICLR 2026][3D Vision][3D generation] AssetFormer is an autoregressive Transformer based on the Llama architecture that models modular 3D assets (composed of primitive sequences) as discrete token sequences. By utilizing DFS/BFS graph traversal reordering and joint vocabulary decoding, it generates modular 3D assets directly compatible with game engines fr
+  [ICLR 2026][3D Vision][3D generation] AssetFormer is an autoregressive Transformer based on the Llama architecture that models modular 3D assets (composed of primitive sequences) as discrete token sequences. By utilizing DFS/BFS graph traversal reordering and joint vocabulary decoding, it generates modular 3D assets directly compatible with game engines from text descriptions.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D generation
-  - autoregressive transformer
-  - modular assets
-  - UGC
-  - Llama
-  - text-to-3D
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D generation"
+  - "autoregressive transformer"
+  - "modular assets"
+  - "UGC"
+  - "Llama"
+  - "text-to-3D"
 date: 2026-05-08
-content_hash: d39a727540502354
+content_hash: b15ed5fbcfdae56f
 ---
+
 # AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer
 
 **Conference**: ICLR 2026  
@@ -116,10 +117,20 @@ where $s=2.0$ balances text alignment and diversity. Additionally, **SlowFast de
 4.  **Evaluation Metrics**: Conventional 2D/3D metrics (FID/CLIP) may not fully capture the quality of modular, structured assets.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
+- [\[CVPR 2026\] Repurposing 3D Generative Model for Autoregressive Layout Generation](../../CVPR2026/3d_vision/repurposing_3d_generative_model_for_autoregressive_layout_generation.md)
+- [\[CVPR 2026\] MeshRipple: Structured Autoregressive Generation of Artist-Meshes](../../CVPR2026/3d_vision/meshripple_structured_autoregressive_generation_of_artist-meshes.md)
+- [\[CVPR 2026\] ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation](../../CVPR2026/3d_vision/armflow_autoregressive_meanflow_for_online_3d_human_reaction_generation.md)
+- [\[CVPR 2026\] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts](../../CVPR2026/3d_vision/majutsucity_language-driven_aesthetic-adaptive_city_generation_with_controllable.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)

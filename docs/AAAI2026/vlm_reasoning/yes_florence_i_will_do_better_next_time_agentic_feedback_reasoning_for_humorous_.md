@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Yes FLoReNce, I Will Do Better Next Time! Agentic Feedback Reasoning for Humorous Meme Detection
 description: >-
-  [AAAI 2026][Multimodal VLM][humorous meme detection] This paper proposes FLoReNce, a framework that models humorous meme understanding as a closed-loop control system. Through a feedback loop consisting of a Judge agent…
+  [AAAI 2026 Oral][VLM Reasoning][humorous meme detection] This paper proposes FLoReNce, a framework that models humorous meme understanding as a closed-loop control system. Through a feedback loop consisting of a Judge agent, a PID controller, and a non-parametric knowledge base, the system retrieves similar past experiences at inference time to modulate prompts, enabling a frozen VLM to perform adaptive reasoning without fine-tuning, substantially improving both prediction ac…
 tags:
-  - "AAAI 2026"
-  - "Multimodal VLM"
+  - "AAAI 2026 Oral"
+  - "VLM Reasoning"
   - "humorous meme detection"
   - "feedback-loop reasoning"
   - "non-parametric knowledge base"
   - "PID controller"
   - "vision-language model"
 date: 2026-05-08
-content_hash: 7b05c8614a858e0e
+content_hash: 6cf4e5613cb5940b
 ---
 
 # Yes FLoReNce, I Will Do Better Next Time! Agentic Feedback Reasoning for Humorous Meme Detection
@@ -168,11 +168,11 @@ Key finding: FLoReNce's Macro-F1 gain exceeds its Accuracy gain, indicating that
 
 ## Related Papers
 
-- [\[AAAI 2026\] CAMU: Context Augmentation for Meme Understanding](trace_textual_relevance_augmentation_and_contextual_encoding_for_multimodal_hate.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/multimodal_vlm/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[AAAI 2026\] See, Symbolize, Act: Grounding VLMs with Spatial Representations for Better Gameplay](see_symbolize_act_grounding_vlms_with_spatial_representations_for_better_gamepla.md)
-- [\[ACL 2026\] All Changes May Have Invariant Principles: Improving Ever-Shifting Harmful Meme Detection via Design Concept Reproduction](../../ACL2026/multimodal_vlm/all_changes_may_have_invariant_principles_improving_ever-shifting_harmful_meme_d.md)
-- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](../../ICML2026/multimodal_vlm/active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
+- [\[ICLR 2026\] Fostering Video Reasoning via Next-Event Prediction](../../ICLR2026/vlm_reasoning/fostering_video_reasoning_via_next-event_prediction.md)
+- [\[CVPR 2026\] ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning](../../CVPR2026/vlm_reasoning/ants_adaptive_negative_textual_space_shaping_for_ood_detection_via_test-time_mll.md)
+- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/vlm_reasoning/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
+- [\[ACL 2026\] Do MLLMs Understand Pointing? Benchmarking and Enhancing Referential Reasoning in Egocentric Vision](../../ACL2026/vlm_reasoning/do_mllms_understand_pointing_benchmarking_and_enhancing_referential_reasoning_in.md)
+- [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](../../CVPR2026/vlm_reasoning/agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
 
 </div>
 

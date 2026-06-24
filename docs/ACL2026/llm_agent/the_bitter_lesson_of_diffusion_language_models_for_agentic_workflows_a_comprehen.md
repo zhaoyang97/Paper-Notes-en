@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check
 description: >-
-  [ACL 2026][LLM Agent][Diffusion Language Model] This paper systematically evaluates the performance of diffusion language models (dLLMs) in embodied and tool-use agents. It finds that despite the speed potential offered by parallel decoding, dLLMs significantly lag behind autoregressive (AR) LLMs in long-horizon causal planning and strict format generation. Furtherm
+  [ACL2026][LLM Agent][Diffusion Language Models] This paper systematically evaluates the performance of diffusion language models (dLLMs) in embodied and tool-use agents. It finds that despite the speed potential offered by parallel decoding, dLLMs significantly lag behind autoregressive (AR) LLMs in long-horizon causal planning and strict format generation. Furthermore, the authors utilize DiffuAgent to demonstrate that dLLMs are better suited as non-causal auxiliary modules…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Diffusion Language Model
-  - DiffuAgent
+  - "ACL2026"
+  - "LLM Agent"
+  - "Diffusion Language Models"
+  - "Agents"
+  - "Tool Call"
+  - "Long-horizon Planning"
+  - "DiffuAgent"
 date: 2026-05-08
-content_hash: 7d05c6483511ed30
+content_hash: 33ca01a6618cf88c
 ---
+
 # The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check
 
 **Conference**: ACL2026  
@@ -161,16 +165,16 @@ Tool-use ablations show dLLMs are better selectors than editors. LLaDA-8B as a s
 - Value: ⭐⭐⭐⭐⭐ Highly important caveat for the diffusion LLM and agent communities; clearly delineates the roles dLLMs should play.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](../../CVPR2026/llm_agent/towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
-- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
 - [\[ACL 2026\] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](dynamic_generation_of_multi-llm_agents_communication_topologies_with_graph_diffu.md)
-- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
+- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
+- [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](../../ICLR2026/llm_agent/agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
 
 </div>
 

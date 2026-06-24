@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TEXT2ARCH: A Dataset for Generating Scientific Architecture Diagrams from Natural Language Descriptions
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] This paper proposes TEXT2ARCH—a large-scale dataset containing 75,000 "architecture image + clean text description + DOT code" triplets. It formalizes the under-explored task of "text description → scientific architecture diagram" as "text → intermediate DOT code → compilation into image." A series of 7B–8B small model
+  [ICLR 2026][LLM (Other)][Text-to-Diagram] This paper proposes TEXT2ARCH—a large-scale dataset containing 75,000 "architecture image + clean text description + DOT code" triplets. It formalizes the under-explored task of "text description → scientific architecture diagram" as "text → intermediate DOT code → compilation into image." A series of 7B–8B small models are fine-tuned on this data, significantly outperforming DiagramAgent and matching GPT-4o's in-context learning perf…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Text-to-Diagram"
+  - "Architecture Diagrams"
+  - "DOT Code"
+  - "Dataset Construction"
+  - "Graph-level Evaluation Metrics"
 date: 2026-05-08
-content_hash: 8b039ae598f9499c
+content_hash: ef728ac03181de85
 ---
+
 # TEXT2ARCH: A Dataset for Generating Scientific Architecture Diagrams from Natural Language Descriptions
 
 **Conference**: ICLR 2026  
@@ -125,9 +131,17 @@ Effectiveness of the three-stage DOT generation (measured on the Human Set relat
 
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICLR 2026\] VERIFY: A Novel Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic](verify_a_novel_multi-domain_dataset_grounding_ltl_in_contextual_natural_language.md)
+- [\[ACL 2025\] QualiSpeech: A Speech Quality Assessment Dataset with Natural Language Reasoning](../../ACL2025/llm_nlp/qualispeech_a_speech_quality_assessment_dataset_with_natural_language_reasoning_.md)
+- [\[ICLR 2026\] Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator](evaluating_text_creativity_across_diverse_domains_a_dataset_and_large_language_m.md)
+- [\[ACL 2026\] Identifying the Periodicity of Information in Natural Language](../../ACL2026/llm_nlp/identifying_the_periodicity_of_information_in_natural_language.md)
+- [\[ACL 2026\] LinkNav: Surfacing Interconnected Information in Scientific Articles](../../ACL2026/llm_nlp/linknav_surfacing_interconnected_information_in_scientific_articles.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] VERIFY: A Novel Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic](verify_a_novel_multi-domain_dataset_grounding_ltl_in_contextual_natural_language.md)

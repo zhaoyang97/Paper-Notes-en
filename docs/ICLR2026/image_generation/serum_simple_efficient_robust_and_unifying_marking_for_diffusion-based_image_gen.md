@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SERUM: Simple, Efficient, Robust, and Unifying Marking for Diffusion-based Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The SERUM watermarking method is proposed, adding unique watermark noise to the initial noise of diffusion models and training a lightweight detector to identify watermarks directly from generated images (bypassing expensive DDIM inversion). It achieves the highest detection rates under various attacks with extremely f
+  [ICLR 2026][Image Generation][Diffusion model watermarking] The SERUM watermarking method is proposed, adding unique watermark noise to the initial noise of diffusion models and training a lightweight detector to identify watermarks directly from generated images (bypassing expensive DDIM inversion). It achieves the highest detection rates under various attacks with extremely fast injection and detection, supporting multi-user scenarios.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion model watermarking"
+  - "lightweight detector"
+  - "noise injection"
+  - "robustness"
+  - "multi-user"
 date: 2026-05-08
-content_hash: 7fa35b6e808135fb
+content_hash: 46a0c02cfeb7903b
 ---
+
 # SERUM: Simple, Efficient, Robust, and Unifying Marking for Diffusion-based Image Generation
 
 **Conference**: ICLR 2026  
@@ -117,11 +123,11 @@ Training a separate detector for every user is impractical for large-scale appli
 
 ## Related Papers
 
+- [\[ICLR 2026\] VSF: Simple, Efficient, and Effective Negative Guidance in Few-Step Image Generation Models By Value Sign Flip](vsf_simple_efficient_and_effective_negative_guidance_in_few-step_image_generatio.md)
 - [\[ICLR 2026\] FARI: Robust One-Step Inversion for Watermarking in Diffusion Models](fari_robust_one-step_inversion_for_watermarking_in_diffusion_models.md)
 - [\[ICLR 2026\] Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation](scalable_energy-based_models_via_adversarial_training_unifying_discrimination_an.md)
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](../../ICCV2025/image_generation/lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
 - [\[ICLR 2026\] Diffusion Negative Preference Optimization Made Simple](diffusion_negative_preference_optimization_made_simple.md)
-- [\[CVPR 2026\] SimplePoster: A Simple Baseline for Product Poster Generation](../../CVPR2026/image_generation/simpleposter_a_simple_baseline_for_product_poster_generation.md)
 
 </div>
 

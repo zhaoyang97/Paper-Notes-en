@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Incomplete Multi-View Multi-Label Classification via Shared Codebook and Fused-Teacher Self-Distillation
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] Addressing the "dual-missing" scenario where both views and labels are absent, SCSD utilizes a cross-view shared discrete codebook to quantize and align various views into a consistent representation. It further achieves robust multi-view multi-label classification through weighted fusion based on label correlation and
+  [ICLR 2026][Self-Supervised Learning][Incomplete Multi-View] Addressing the "dual-missing" scenario where both views and labels are absent, SCSD utilizes a cross-view shared discrete codebook to quantize and align various views into a consistent representation. It further achieves robust multi-view multi-label classification through weighted fusion based on label correlation and self-distillation using "fused predictions as teachers."
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Incomplete Multi-View"
+  - "Multi-Label Classification"
+  - "Vector Quantization"
+  - "Shared Codebook"
+  - "Self-Distillation"
+  - "Label Correlation"
 date: 2026-05-08
-content_hash: ed07b758c5f88644
+content_hash: 94d850c6e9262bad
 ---
+
 # Incomplete Multi-View Multi-Label Classification via Shared Codebook and Fused-Teacher Self-Distillation
 
 **Conference**: ICLR 2026  
@@ -118,11 +125,11 @@ SCSD achieves an average rank (Ave.R) of **1.0** across all 5 datasets. On Espga
 
 ## Related Papers
 
+- [\[ICLR 2026\] Debiased and Denoised Representation Learning for Incomplete Multi-view Clustering](debiased_and_denoised_representation_learning_for_incomplete_multi-view_clusteri.md)
 - [\[ICLR 2026\] Relationship Alignment for View-aware Multi-view Clustering](relationship_alignment_for_view-aware_multi-view_clustering.md)
+- [\[ICLR 2026\] Uncover Underlying Correspondence for Robust Multi-view Clustering](uncover_underlying_correspondence_for_robust_multi-view_clustering.md)
+- [\[ICLR 2026\] Unified and Efficient Multi-view Clustering from Probabilistic Perspective](unified_and_efficient_multi-view_clustering_from_probabilistic_perspective.md)
 - [\[CVPR 2026\] GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency](../../CVPR2026/self_supervised/gaussianmatch_semi-supervised_regression_with_pseudo-label_filtering_via_multi-v.md)
-- [\[ICLR 2026\] Equivariant Splitting: Self-supervised learning from incomplete data](equivariant_splitting_self-supervised_learning_from_incomplete_data.md)
-- [\[ICLR 2026\] Adaptive Test-Time Training for Predicting Need for Invasive Mechanical Ventilation in Multi-Center Cohorts](adaptive_test-time_training_for_predicting_need_for_invasive_mechanical_ventilat.md)
-- [\[ICLR 2026\] PromptHub: Enhancing Multi-Prompt Visual In-Context Learning with Locality-Aware Fusion, Concentration and Alignment](prompthub_enhancing_multi-prompt_visual_in-context_learning_with_locality-aware_.md)
 
 </div>
 

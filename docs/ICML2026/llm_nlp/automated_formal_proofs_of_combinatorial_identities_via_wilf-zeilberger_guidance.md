@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Automated Formal Proofs of Combinatorial Identities via Wilf–Zeilberger Guidance and LLMs
 description: >-
-  [ICML 2026][LLM (Other)][Lean 4] WZ-LLM compiles the classic Wilf–Zeilberger symbolic proof pipeline into an executable proof skeleton (recurrence + boundary conditions + side conditions) in Lean 4. These components are discharged by WZ-Prover, a specialized model trained via SFT + expert-iteration + DAPO. On 100 classic combinatorial identities, it i
+  [ICML 2026][LLM (Other)][Lean 4] WZ-LLM compiles the classic Wilf–Zeilberger symbolic proof pipeline into an executable proof skeleton (recurrence + boundary conditions + side conditions) in Lean 4. These components are discharged by WZ-Prover, a specialized model trained via SFT + expert-iteration + DAPO. On 100 classic combinatorial identities, it improves the pass@32 from Goedel-Prover-V2's 9% to 34%.
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Lean 4
-  - Wilf-Zeilberger
-  - DAPO
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Lean 4"
+  - "Combinatorial Identities"
+  - "Wilf-Zeilberger"
+  - "Neuro-symbolic"
+  - "DAPO"
 date: 2026-05-08
-content_hash: 4a5275c809f1d9ca
+content_hash: d5c257dcaa21aa65
 ---
+
 # Automated Formal Proofs of Combinatorial Identities via Wilf–Zeilberger Guidance and LLMs
 
 **Conference**: ICML 2026  
@@ -154,7 +157,6 @@ Lemma-level diagnosis (1178 sub-goals extracted from sketches):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

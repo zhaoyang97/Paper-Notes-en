@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding
 description: >-
-  [ICML 2026][vlm_reasoning][RLVR] This work adapts the LLM-oriented "Reinforcement Learning with Verifiable Rewards (RLVR)" to video-driven 3D scene understanding. By using GRPO to fine-tune a 4B 3D-aware VLM directly with evaluation metrics (such as 3D IoU, F1, and accuracy) as rewards, the training objectives are aligned with evaluation criteria. Con
+  [ICML 2026][VLM Reasoning][RLVR] This work adapts the LLM-oriented "Reinforcement Learning with Verifiable Rewards (RLVR)" to video-driven 3D scene understanding. By using GRPO to fine-tune a 4B 3D-aware VLM directly with evaluation metrics (such as 3D IoU, F1, and accuracy) as rewards, the training objectives are aligned with evaluation criteria. Consequently, the 4B model outperforms an 8B baseline on 3D video detection, 3D visual grounding, and spatial reasoning tasks.
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - RLVR
-  - GRPO
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "RLVR"
+  - "GRPO"
+  - "Verifiable Reward"
+  - "Video 3D Perception"
+  - "Spatial Reasoning"
 date: 2026-05-08
-content_hash: 8919f326bdc81dbe
+content_hash: 51b13c7c547521a8
 ---
+
 # 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding
 
 **Conference**: ICML 2026  
@@ -141,14 +145,17 @@ On VSI-Bench, 3D-RFT-4B achieves an average of 62.8, reaching SOTA by surpassing
 
 <div class="related-papers" markdown="1">
 
-- **VG LLM**: Video-grounded Large Language Model for 3D Scene Understanding.
-- **VST**: Video Spatial Transformer for 3D Video Perception.
-- **DeepSeek-V3/R1**: For advancements in GRPO and RLVR architectures.
+## Related Papers
+
+- [\[ACL 2026\] CAPruner: Conceptual-Adjacent Scene Graph Pruner for Enhancing 3D Spatial Reasoning of Large Language Models](../../ACL2026/vlm_reasoning/capruner_conceptual-adjacent_scene_graph_pruner_for_enhancing_3d_spatial_reasoni.md)
+- [\[ICML 2026\] R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations](r3l_reasoning_3d_layouts_from_relative_spatial_relations.md)
+- [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
+- [\[NeurIPS 2025\] To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning](../../NeurIPS2025/vlm_reasoning/think_or_not_think_a_study_of_explicit_thinking_in_rule-based_visual_reinforceme.md)
+- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](../../CVPR2026/vlm_reasoning/think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] CAPruner: Conceptual-Adjacent Scene Graph Pruner for Enhancing 3D Spatial Reasoning of Large Language Models](../../ACL2026/vlm_reasoning/capruner_conceptual-adjacent_scene_graph_pruner_for_enhancing_3d_spatial_reasoni.md)

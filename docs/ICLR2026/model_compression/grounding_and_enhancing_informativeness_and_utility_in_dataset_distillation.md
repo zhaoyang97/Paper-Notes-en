@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Model Compression][Dataset Distillation] The InfoUtil framework is proposed to maximize sample informativeness (identifying the most critical patches) using game-theoretic Shapley Values and maximize sample utility (selecting the most valuable samples for training) via gradient norms. It achieves a 6.1% improvement over the previous SOTA on ImageNet-1K.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Dataset Distillation
-  - Shapley Value
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Shapley Value"
+  - "Gradient Norm"
+  - "Informativeness"
+  - "Utility"
 date: 2026-05-08
-content_hash: 492cc65bf5703162
+content_hash: 9e8c5de73944d103
 ---
+
 # Grounding and Enhancing Informativeness and Utility in Dataset Distillation
 
 **Conference**: ICLR 2026  
@@ -135,11 +139,11 @@ ResNet-18, IPC=50 (50 images per class):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
 - [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](understanding_dataset_distillation_via_spectral_filtering.md)
-- [\[ICLR 2026\] Asymmetric Synthetic Data Update for Domain Incremental Dataset Distillation](asymmetric_synthetic_data_update_for_domain_incremental_dataset_distillation.md)
 - [\[CVPR 2025\] Enhancing Dataset Distillation via Non-Critical Region Refinement](../../CVPR2025/model_compression/enhancing_dataset_distillation_via_non-critical_region_refinement.md)
+- [\[ICLR 2026\] Asymmetric Synthetic Data Update for Domain Incremental Dataset Distillation](asymmetric_synthetic_data_update_for_domain_incremental_dataset_distillation.md)
 - [\[ICLR 2026\] Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation](rectified_decoupled_dataset_distillation_a_closer_look_for_fair_and_comprehensiv.md)
-- [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](dataset_distillation_as_pushforward_optimal_quantization.md)
 
 </div>
 

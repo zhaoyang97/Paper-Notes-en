@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation
 description: >-
-  [ICCV 2025][Video Understanding][Event Camera] This paper proposes EMoTive, an event camera-based 3D motion estimation framework that encodes fine-grained temporal evolution via Event Kymograph and models spatiotemporal…
+  [ICCV 2025][Video Understanding][Event Camera] This paper proposes EMoTive, an event camera-based 3D motion estimation framework that encodes fine-grained temporal evolution via Event Kymograph and models spatiotemporal trajectories using event-density-guided non-uniform NURBS parametric curves. Optical flow and motion-in-depth fields are derived from these trajectories, achieving state-of-the-art performance on the newly constructed CarlaEvent3D dataset and real-world benchm…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Optical Flow"
   - "Motion in Depth"
 date: 2026-05-08
-content_hash: 351393f457276e05
+content_hash: f2a5cb62db5e07cf
 ---
 
 # EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation
@@ -151,9 +151,9 @@ Evaluation on the CarlaEvent3D dataset (dense labels):
 
 - [\[ICCV 2025\] Simultaneous Motion And Noise Estimation with Event Cameras](simultaneous_motion_and_noise_estimation_with_event_cameras.md)
 - [\[NeurIPS 2025\] EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes](../../NeurIPS2025/video_understanding/eag3r_event-augmented_3d_geometry_estimation_for_dynamic_and_extreme-lighting_sc.md)
+- [\[ECCV 2024\] Motion-prior Contrast Maximization for Dense Continuous-Time Motion Estimation](../../ECCV2024/video_understanding/motion-prior_contrast_maximization_for_dense_continuous-time_motion_estimation.md)
 - [\[ICCV 2025\] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking](attention_to_trajectory_trajectory-aware_open-vocabulary_tracking.md)
-- [\[ICCV 2025\] Flow4Agent: Long-form Video Understanding via Motion Prior from Optical Flow](flow4agent_long-form_video_understanding_via_motion_prior_from_optical_flow.md)
-- [\[ICCV 2025\] Towards Efficient General Feature Prediction in Masked Skeleton Modeling](towards_efficient_general_feature_prediction_in_masked_skeleton_modeling.md)
+- [\[CVPR 2025\] EDCFlow: Exploring Temporally Dense Difference Maps for Event-based Optical Flow Estimation](../../CVPR2025/video_understanding/edcflow_exploring_temporally_dense_difference_maps_for_event-based_optical_flow_.md)
 
 </div>
 

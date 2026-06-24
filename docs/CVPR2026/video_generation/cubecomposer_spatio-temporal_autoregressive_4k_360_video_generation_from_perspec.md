@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Model] Ours proposes CubeComposer, which decomposes 360° video into a cubemap six-face representation and generates it in a spatio-temporal autoregressive manner. It achieves native 4K (3840×1920) 360° panoramic video generation from perspective video for the first time, eliminating the need for post-processing super-resoluti
+  [CVPR 2026][Video Generation][360° Video Generation] Ours proposes CubeComposer, which decomposes 360° video into a cubemap six-face representation and generates it in a spatio-temporal autoregressive manner. It achieves native 4K (3840×1920) 360° panoramic video generation from perspective video for the first time, eliminating the need for post-processing super-resolution.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "360° Video Generation"
+  - "Cube Mapping"
+  - "Spatio-Temporal Autoregressive"
+  - "Diffusion Model"
+  - "4K Native Generation"
 date: 2026-05-08
-content_hash: 6aea48db1b8862f8
+content_hash: afeadd4bfdc31602
 ---
+
 # CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video
 
 **Conference**: CVPR 2026  
@@ -132,10 +137,10 @@ Ours significantly outperforms all baseline methods on both 4K360Vid and ODV360 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion](pantheon360_taming_digital_twin_generation_via_3d-aware_360deg_video_diffusion.md)
 - [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](../../ICLR2026/video_generation/lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
+- [\[CVPR 2026\] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion](pantheon360_taming_digital_twin_generation_via_3d-aware_360_video_diffusion.md)
 - [\[ICLR 2026\] JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization](../../ICLR2026/video_generation/javisdit_joint_audio-video_diffusion_transformer_with_hierarchical_spatio-tempor.md)
-- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
+- [\[CVPR 2026\] I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers](interpretable_motion-attentive_maps_spatio-temporally_localizing_concepts_in_vid.md)
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](lottiegpt_vector_animation_generation.md)
 
 </div>

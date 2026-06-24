@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity
 description: >-
-  [NeurIPS 2025][Video Understanding][point tracking] Inspired by the Lattice Boltzmann Method from fluid dynamics, this work proposes LBM (Lattice Boltzmann Model) for online real-time pixel tracking. It models video pixe…
+  [NeurIPS 2025][Video Understanding][point tracking] Inspired by the Lattice Boltzmann Method from fluid dynamics, this work proposes LBM (Lattice Boltzmann Model) for online real-time pixel tracking. It models video pixels as fluid lattices and solves motion states via collision-streaming processes, achieving SOTA online tracking performance with 18M parameters while enabling real-time inference on edge devices.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "real-time"
   - "object tracking"
 date: 2026-05-08
-content_hash: 3c669cb2a544c2b0
+content_hash: 9ce3889b32d1b6a8
 ---
 
 # Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity
@@ -153,10 +153,10 @@ LBM achieves OWTA 50.3 on BFT and TETA 41.2 on OVT-B, both best among methods wi
 ## Related Papers
 
 - [\[NeurIPS 2025\] LiveStar: Live Streaming Assistant for Real-World Online Video Understanding](livestar_live_streaming_assistant_for_real-world_online_video_understanding.md)
+- [\[ECCV 2024\] PiTe: Pixel-Temporal Alignment for Large Video-Language Model](../../ECCV2024/video_understanding/pite_pixel-temporal_alignment_for_large_video-language_model.md)
 - [\[CVPR 2026\] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling](../../CVPR2026/video_understanding/realworld_point_tracking_with_verifierguided_pseud.md)
-- [\[AAAI 2026\] UVLM: Benchmarking Video Language Model for Underwater World Understanding](../../AAAI2026/video_understanding/uvlm_benchmarking_video_language_model_for_underwater_world_understanding.md)
+- [\[CVPR 2025\] OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?](../../CVPR2025/video_understanding/ovo-bench_how_far_is_your_video-llms_from_real-world_online_video_understanding.md)
 - [\[NeurIPS 2025\] PASS: Path-Selective State Space Model for Event-Based Recognition](pass_path-selective_state_space_model_for_event-based_recognition.md)
-- [\[AAAI 2026\] Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos](../../AAAI2026/video_understanding/uncovering_zero-shot_generalization_gaps_in_time-series_foundation_models_using_.md)
 
 </div>
 

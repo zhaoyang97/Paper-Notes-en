@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DNAChunker: Learnable Tokenization for DNA Language Models
 description: >-
-  [ICML 2026][Computational Biology][BiMamba] DNAChunker embeds an end-to-end learnable "dynamic chunker" into masked DNA language models. It compresses base-pair sequences into variable-length chunks via bidirectional Mamba encoding and cosine similarity boundary prediction. Combined with mask protection and residual gating to prevent information leakage, it outp
+  [ICML2026][Computational Biology][DNA language models] DNAChunker embeds an end-to-end learnable "dynamic chunker" into masked DNA language models. It compresses base-pair sequences into variable-length chunks via bidirectional Mamba encoding and cosine similarity boundary prediction. Combined with mask protection and residual gating to prevent information leakage, it outperforms 2.5B-scale multi-species pre-trained baselines on five genomic benchmarks using only 172M paramet…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - BiMamba
+  - "ICML2026"
+  - "Computational Biology"
+  - "DNA language models"
+  - "learnable tokenization"
+  - "adaptive chunking"
+  - "masked language modeling"
+  - "BiMamba"
 date: 2026-05-08
-content_hash: 210c0d0fca48f91c
+content_hash: a4b3110f6906cc25
 ---
+
 # DNAChunker: Learnable Tokenization for DNA Language Models
 
 **Conference**: ICML2026  
@@ -129,11 +134,11 @@ Tested on the revised NT benchmark using 2B tokens with controlled variables (Li
 
 ## Related Papers
 
+- [\[ICLR 2026\] PatchDNA: A Flexible and Biologically-Informed Alternative to Tokenization for DNA](../../ICLR2026/computational_biology/patchdna_a_flexible_and_biologically-informed_alternative_to_tokenization_for_dn.md)
 - [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](../../ICLR2026/computational_biology/antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/computational_biology/tracing_pharmacological_knowledge_in_large_language_models.md)
 - [\[ICML 2026\] Insertion Based Sequence Generation with Learnable Order Dynamics](insertion_based_sequence_generation_with_learnable_order_dynamics.md)
-- [\[ICLR 2026\] Controlling Repetition in Protein Language Models](../../ICLR2026/computational_biology/controlling_repetition_in_protein_language_models.md)
 - [\[ICML 2026\] Circuit Tracing in Autoregressive Protein Language Models](circuit_tracing_in_autoregressive_protein_language_models.md)
+- [\[ICML 2026\] Viral Proteins Reveal Geometry of Protein Language Models](viral_proteins_reveal_geometry_of_protein_language_models.md)
 
 </div>
 

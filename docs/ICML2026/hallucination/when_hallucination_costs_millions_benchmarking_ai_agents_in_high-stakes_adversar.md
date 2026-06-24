@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets (CAIA)
 description: >-
-  [ICML 2026][Hallucination Detection][tool selection] CAIA establishes the first "adversarial high-stakes" agent benchmark using 17 frontier LLMs across 178 temporally anchored real-world cryptocurrency tasks. Key findings: without tools, all models achieve only 12–28% accuracy (near random guess); with tools, the strongest GPT-5 reaches only 67.4% vs. 80% for junior huma
+  [ICML 2026][Hallucination Detection][Adversarial Evaluation] CAIA establishes the first "adversarial high-stakes" agent benchmark using 17 frontier LLMs across 178 temporally anchored real-world cryptocurrency tasks. Key findings: without tools, all models achieve only 12–28% accuracy (near random guess); with tools, the strongest GPT-5 reaches only 67.4% vs. 80% for junior human analysts. Critically, 55.5% of tool calls are biased toward "unreliable web searches" bypassing a…
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - tool selection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Adversarial Evaluation"
+  - "Cryptocurrency"
+  - "Tool Selection"
+  - "Pass@k Trap"
+  - "Temporally Anchored Benchmark"
 date: 2026-05-08
-content_hash: c37f2c5ed3386adc
+content_hash: 3cebe0693c7e97a5
 ---
+
 # When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets (CAIA)
 
 **Conference**: ICML 2026  

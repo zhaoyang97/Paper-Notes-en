@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Moving Border Ownership for Event-based Motion Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] This paper reformulates event-based motion segmentation as "moving border ownership" prediction—detecting motion boundaries while simultaneously determining which side of the boundary belongs to the foreground moving object. By training a lightweight time-surface + MobileNet + ConvLSTM network with perfect supervision
+  [CVPR 2026][3D Vision][Event Camera] This paper reformulates event-based motion segmentation as "moving border ownership" prediction—detecting motion boundaries while simultaneously determining which side of the boundary belongs to the foreground moving object. By training a lightweight time-surface + MobileNet + ConvLSTM network with perfect supervision from Blender synthetic data, the model achieves zero-shot transfer to four real-world datasets (EED / EVIMO1 / EVIMO2 / EMS…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event Camera"
+  - "Motion Segmentation"
+  - "Border Ownership"
+  - "Synthetic Data"
+  - "Zero-shot Generalization"
 date: 2026-05-08
-content_hash: 0635334c32aa3256
+content_hash: 355df7d810bedf84
 ---
+
 # Moving Border Ownership for Event-based Motion Segmentation
 
 **Conference**: CVPR 2026  
@@ -154,15 +160,16 @@ Zero-shot performance already exceeds learning methods relying on extra cues; fi
 - Value: ⭐⭐⭐⭐⭐ SOTA zero-shot performance and 200 FPS real-time execution provide high practical value for robotics and autonomous driving.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] DIMOS: Disentangling Instance-level Moving Object Segmentation](dimos_disentangling_instance-level_moving_object_segmentation.md)
-- [\[CVPR 2026\] GeoMotion: Rethinking Motion Segmentation via Latent 4D Geometry](geomotion_rethinking_motion_segmentation_via_latent_4d_geometry.md)
-- [\[ECCV 2024\] Un-EVIMO: Unsupervised Event-based Independent Motion Segmentation](../../ECCV2024/segmentation/un-evimo_unsupervised_event-based_independent_motion_segmentation.md)
-- [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
-- [\[ECCV 2024\] Unsupervised Moving Object Segmentation with Atmospheric Turbulence](../../ECCV2024/segmentation/unsupervised_moving_object_segmentation_with_atmospheric_turbulence.md)
+- [\[CVPR 2026\] Unsupervised 3D Motion Estimation Using Event Camera](unsupervised_3d_motion_estimation_using_event_camera.md)
+- [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
+- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
+- [\[CVPR 2026\] Paparazzo: Active Mapping of Moving 3D Objects](paparazzo_active_mapping_of_moving_3d_objects.md)
+- [\[CVPR 2026\] Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)
 
 </div>
 

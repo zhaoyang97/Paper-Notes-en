@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] EnAR is a training-free framework that utilizes a diffusion model to generate a "visual impression" of what an input image "should look like." By comparing the visual attention differences between the original image and this impression, it identifies counterfactual elements (e.g., a five-legged alpaca). These tokens ar
+  [CVPR 2026][Hallucination Detection][Counterfactual hallucination] EnAR is a training-free framework that utilizes a diffusion model to generate a "visual impression" of what an input image "should look like." By comparing the visual attention differences between the original image and this impression, it identifies counterfactual elements (e.g., a five-legged alpaca). These tokens are then masked for contrastive decoding, forcing the LVLM to anchor its response on real pixel…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Counterfactual hallucination"
+  - "Contrastive decoding"
+  - "Diffusion prior"
+  - "Visual impression"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 08e7a55672f98dc4
+content_hash: 8311b3b716490be2
 ---
+
 # Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -141,10 +147,20 @@ Ablation of components (VLMBias Acc / POPE F1):
 - Value: ⭐⭐⭐⭐ High practical value as a plug-and-play solution, limited mainly by compute cost.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
+- [\[CVPR 2026\] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models](causallens_sensitivity-guided_multi-head_causal_intervention_for_hallucination_m.md)
+- [\[CVPR 2026\] Locate-then-Sparsify: Attribution Guided Sparse Strategy for Visual Hallucination Mitigation](locate-then-sparsify_attribution_guided_sparse_strategy_for_visual_hallucination.md)
+- [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
+- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)

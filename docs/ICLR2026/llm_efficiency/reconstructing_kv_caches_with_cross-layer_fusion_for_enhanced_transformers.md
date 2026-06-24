@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reconstructing KV Caches with Cross-Layer Fusion for Enhanced Transformers
 description: >-
-  [ICLR 2026][LLM Efficiency][KV Cache] Aiming at the issue that cross-layer KV cache sharing (e.g., YOCO, CLA) consistently performs worse than intra-layer methods (GQA), this paper discovers the "key-value asymmetry" phenomenon—top-layer values primarily originate from the bottom layers, while keys come from both bottom and middle layers. Based on this, th
+  [ICLR 2026][LLM Efficiency][KV Cache] Aiming at the issue that cross-layer KV cache sharing (e.g., YOCO, CLA) consistently performs worse than intra-layer methods (GQA), this paper discovers the "key-value asymmetry" phenomenon—top-layer values primarily originate from the bottom layers, while keys come from both bottom and middle layers. Based on this, the authors propose FusedKV (learnable channel-wise fusion on post-RoPE keys) and its lightweight version FusedKV-Lite (dire…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV Cache
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV Cache"
+  - "Cross-layer Sharing"
+  - "Key-Value Asymmetry"
+  - "RoPE Compatibility"
+  - "Long-Context Inference"
 date: 2026-05-08
-content_hash: 7802eca85c642168
+content_hash: b13f8f370e0170cc
 ---
+
 # Reconstructing KV Caches with Cross-Layer Fusion for Enhanced Transformers
 
 **Conference**: ICLR 2026  
@@ -154,9 +159,9 @@ Complexity-wise, FusedKV-Lite matches YOCO ($L S H_{kv} D$ memory, $2 L S H_{kv}
 
 - [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
 - [\[ICLR 2026\] CR-Net: Scaling Parameter-Efficient Training with Cross-Layer Low-Rank Structure](cr-net_scaling_parameter-efficient_training_with_cross-layer_low-rank_structure.md)
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] STEM: Scaling Transformers with Embedding Modules](stem_scaling_transformers_with_embedding_modules.md)
-- [\[ICLR 2026\] QuoKA: Query-Oriented KV Selection for Efficient LLM Prefill](quoka_query-oriented_kv_selection_for_efficient_llm_prefill.md)
-- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models
 description: >-
-  [AAAI 2026][Graph Learning][Knowledge Graph Reasoning] This paper proposes PathMind, a framework following the Retrieve-Prioritize-Reason paradigm. It identifies important reasoning paths via a semantics-aware path prior…
+  [AAAI 2026 Oral][Graph Learning][Knowledge Graph Reasoning] This paper proposes PathMind, a framework following the Retrieve-Prioritize-Reason paradigm. It identifies important reasoning paths via a semantics-aware path prioritization function that jointly considers cumulative cost and estimated future cost (inspired by A*), and then enhances faithful and interpretable LLM reasoning through a two-stage training strategy comprising task-specific instruction tuning and path-lev…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Graph Learning"
   - "Knowledge Graph Reasoning"
   - "LLM"
@@ -12,7 +12,7 @@ tags:
   - "Retrieval Augmentation"
   - "Preference Alignment"
 date: 2026-05-08
-content_hash: 0d2df3e7e14840d4
+content_hash: 5cb9ca7ffc112a71
 ---
 
 # PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models
@@ -208,10 +208,10 @@ PathMind requires only 1 LLM call and 216 input tokens, achieving the best trade
 ## Related Papers
 
 - [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](../../CVPR2026/graph_learning/mario_multimodal_graph_reasoning_with_large_language_models.md)
+- [\[ICLR 2026\] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning](../../ICLR2026/graph_learning/knowledge_reasoning_language_model_unifying_knowledge_and_language_for_inductive.md)
+- [\[ICML 2025\] Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models](../../ICML2025/graph_learning/graph-constrained_reasoning_faithful_reasoning_on_knowledge_graphs_with_large_la.md)
 - [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](../../NeurIPS2025/graph_learning/deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
-- [\[ICML 2026\] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering](../../ICML2026/graph_learning/kbqa-r1_reinforcing_large_language_models_for_knowledge_base_question_answering.md)
-- [\[AAAI 2026\] NOTAM-Evolve: A Knowledge-Guided Self-Evolving Optimization Framework with LLMs for NOTAM Interpretation](notam-evolve_a_knowledge-guided_self-evolving_optimization_framework_with_llms_f.md)
-- [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](self-adaptive_graph_mixture_of_models.md)
+- [\[ICLR 2026\] Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models](../../ICLR2026/graph_learning/global-recent_semantic_reasoning_on_dynamic_text-attributed_graphs_with_large_la.md)
 
 </div>
 

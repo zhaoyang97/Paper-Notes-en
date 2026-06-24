@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition
 description: >-
-  [CVPR 2026][Others][Paper Note] ADAMAB trains a lightweight "calibrator" on top of frozen pre-trained embedding models and utilizes a modified Upper Confidence Bound (UCB) algorithm to adaptively determine which data to synthesize for augmentation on a **per-class** basis. This approach improves accuracy by up to approximately 40% on few-shot long-ta
+  [CVPR 2026][Embedding Calibration] ADAMAB trains a lightweight "calibrator" on top of frozen pre-trained embedding models and utilizes a modified Upper Confidence Bound (UCB) algorithm to adaptively determine which data to synthesize for augmentation on a **per-class** basis. This approach improves accuracy by up to approximately 40% on few-shot long-tail recognition tasks with only 2–5 initial samples per class, providing theoretical guarantees for convergence.
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Embedding Calibration"
+  - "Multi-armed Bandit"
+  - "Adaptive Data Augmentation"
+  - "Few-shot"
+  - "Long-tail Recognition"
 date: 2026-05-08
-content_hash: 701f21746369ad58
+content_hash: fa1bd964ed958346
 ---
+
 # Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Under the same augmentation budget, ADAMAB consistently outperforms random augme
 ## Related Papers
 
 - [\[CVPR 2026\] DREAM: Document Recognition with Explicit Adaptive Memory](dream_document_recognition_with_explicit_adaptive_memory.md)
-- [\[CVPR 2026\] OntoAug: Rethinking Generative Data Augmentation via Ontology Guidance](ontoaug_rethinking_generative_data_augmentation_via_ontology_guidance.md)
 - [\[CVPR 2026\] Adaptive Bayesian Early-Exit Networks for Efficient Non-Transferable Learning](adaptive_bayesian_early-exit_networks_for_efficient_non-transferable_learning.md)
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
+- [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](debiased_sample_selection_for_learning_with_noisy_labels.md)
+- [\[CVPR 2026\] Why Not Hyperparameter-Friendly Optimisation? A Monotonic Adaptive Norm Rescaling Approach For Long-Tailed Recognition](why_not_hyperparameter-friendly_optimisation_a_monotonic_adaptive_norm_rescaling.md)
+- [\[ECCV 2024\] Superpixel-Informed Implicit Neural Representation for Multi-Dimensional Data](../../ECCV2024/others/superpixel-informed_implicit_neural_representation_for_multi-dimensional_data.md)
 
 </div>
 

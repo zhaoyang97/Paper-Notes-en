@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Why These Documents? Explainable Generative Retrieval with Hierarchical Category Paths
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] The HyPE framework is proposed to provide query-relevant explainable paths by first generating hierarchical category paths (e.g., "Government >> Government by cities") before decoding document identifiers in generative retrieval, while simultaneously improving retrieval accuracy.
+  [ACL 2026 Findings][Information Retrieval & RAG][Generative Retrieval] The HyPE framework is proposed to provide query-relevant explainable paths by first generating hierarchical category paths (e.g., "Government >> Government by cities") before decoding document identifiers in generative retrieval, while simultaneously improving retrieval accuracy.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Generative Retrieval"
+  - "Explainable Retrieval"
+  - "Hierarchical Category Paths"
+  - "Document Identifiers"
+  - "Path-aware Ranking"
 date: 2026-05-08
-content_hash: 775b4b2b3b0ca2bc
+content_hash: c7f001dadce3ecfa
 ---
+
 # Why These Documents? Explainable Generative Retrieval with Hierarchical Category Paths
 
 **Conference**: ACL 2026 Findings  
@@ -127,15 +133,15 @@ The model uses T5-base as the backbone, employing standard seq2seq cross-entropy
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines](from_relevance_to_authority_authority-aware_generative_retrieval_in_web_search_e.md)
 - [\[ACL 2025\] On Synthetic Data Strategies for Domain-Specific Generative Retrieval](../../ACL2025/information_retrieval/on_synthetic_data_strategies_for_domain-specific_generative_retrieval.md)
 - [\[ACL 2026\] Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy](hybrid-vector_retrieval_for_visually_rich_documents_combining_single-vector_effi.md)
+- [\[ICLR 2026\] ZeroGR: A Generalizable and Scalable Framework for Zero-Shot Generative Retrieval](../../ICLR2026/information_retrieval/zerogr_a_generalizable_and_scalable_framework_for_zero-shot_generative_retrieval.md)
 - [\[ACL 2026\] GLIER: Generative Legal Inference and Evidence Ranking for Legal Case Retrieval](glier_generative_legal_inference_and_evidence_ranking_for_legal_case_retrieval.md)
-- [\[ACL 2026\] Why Mean Pooling Works: Quantifying Second-Order Collapse in Text Embeddings](why_mean_pooling_works_quantifying_second-order_collapse_in_text_embeddings.md)
 
 </div>
 

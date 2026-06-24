@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] GeoDiT shifts text generation for remote sensing images from "autoregressive token-by-token" to "discrete diffusion parallel iterative denoising." Using SigLIP-2 visual conditioning and the LLaDA-8B bidirectional Transformer, it predicts entire sequences at once and refines them through low-confidence remasking, achiev
+  [CVPR 2026][Remote Sensing][Remote Sensing VLM] GeoDiT shifts text generation for remote sensing images from "autoregressive token-by-token" to "discrete diffusion parallel iterative denoising." Using SigLIP-2 visual conditioning and the LLaDA-8B bidirectional Transformer, it predicts entire sequences at once and refines them through low-confidence remasking, achieving new SOTA on tasks requiring structured output such as multi-object detection, visual grounding…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Remote Sensing VLM"
+  - "Discrete Diffusion"
+  - "Parallel Decoding"
+  - "Mask-and-Predict"
+  - "Visual Grounding"
 date: 2026-05-08
-content_hash: cebd18693bf61040
+content_hash: f92e4129b48c4098
 ---
+
 # GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ Inference steps $N$ (performance largely saturates at $N=8$):
 ## Related Papers
 
 - [\[CVPR 2026\] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks](zoomearth_active_perception_for_ultra-high-resolution_geospatial_vision-language.md)
-- [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
-- [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](unichange_unifying_change_detection_with_multimodal_large_language_model.md)
-- [\[CVPR 2026\] CF-IPT: Cross-Modal Fusion Interactive Prompt Tuning of Vision-Language Pre-Trained Model for Multisource Remote Sensing Data Classification](cf-ipt_cross-modal_fusion_interactive_prompt_tuning_of_vision-language_pre-train.md)
 - [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
+- [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](unichange_unifying_change_detection_with_multimodal_large_language_model.md)
+- [\[ICLR 2026\] Towards Faithful Reasoning in Remote Sensing: A Perceptually-Grounded Geospatial Chain-of-Thought for Vision-Language Models](../../ICLR2026/remote_sensing/towards_faithful_reasoning_in_remote_sensing_a_perceptually-grounded_geospatial_.md)
+- [\[CVPR 2026\] LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation](lookasidevln_direction-aware_aerial_vision-and-language_navigation.md)
 
 </div>
 

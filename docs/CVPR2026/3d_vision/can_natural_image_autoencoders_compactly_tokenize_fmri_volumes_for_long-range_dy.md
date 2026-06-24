@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?
 description: >-
-  [CVPR 2026][3D Vision][Transformer] TABLeT is proposed, utilizing a pre-trained 2D natural image autoencoder (DCAE) to compress 3D fMRI volumes into just 27 continuous tokens. Paired with a simple Transformer encoder, it achieves unprecedented long-range temporal modeling (256 frames), surpassing SOTA voxel-based methods on tasks across UKB, HCP, and ADH
+  [CVPR 2026][3D Vision][fMRI analysis] TABLeT is proposed, utilizing a pre-trained 2D natural image autoencoder (DCAE) to compress 3D fMRI volumes into just 27 continuous tokens. Paired with a simple Transformer encoder, it achieves unprecedented long-range temporal modeling (256 frames), surpassing SOTA voxel-based methods on tasks across UKB, HCP, and ADHD-200 with significantly improved computational efficiency.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "fMRI analysis"
+  - "Autoencoder transfer"
+  - "Long-range modeling"
+  - "Transformer"
+  - "Masked token modeling"
 date: 2026-05-08
-content_hash: 3d113294fbb2c83f
+content_hash: cc200fb4afb04e89
 ---
+
 # Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ Inspired by SimMIM, TABLeT performs **masking directly on the tokens output by D
 
 ## Related Papers
 
-- [\[CVPR 2026\] MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification](morel_long-range_flicker-free_4d_motion_modeling_via_anchor_relay-based_bidirect.md)
+- [\[CVPR 2026\] MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification](morel_long-range_flicker-free_4d_motion.md)
 - [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
-- [\[CVPR 2026\] CUBE: Representing 3D Faces with Learnable B-Spline Volumes](cube_bspline_3d_faces.md)
-- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
-- [\[CVPR 2026\] Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis](motion_3-to-4_3d_motion_reconstruction_for_4d_synthesis.md)
+- [\[CVPR 2026\] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)
+- [\[CVPR 2026\] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)
+- [\[CVPR 2026\] VENI: Variational Encoder for Natural Illumination](veni_variational_encoder_for_natural_illumination.md)
 
 </div>
 

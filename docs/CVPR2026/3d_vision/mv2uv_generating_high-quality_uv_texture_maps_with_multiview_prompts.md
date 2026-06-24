@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MV2UV: Generating High-quality UV Texture Maps with Multiview Prompts
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MV2UV treats multi-view generated images as "semantic prompts" to directly generate texture maps in UV space using a fine-tuned SDXL diffusion model. By employing pixel-aligned 3D coordinates (XYZ) as cross-attention positional encodings, it simultaneously resolves multi-view inconsistencies and completes occluded regi
+  [CVPR 2026][3D Vision][UV texture generation] MV2UV treats multi-view generated images as "semantic prompts" to directly generate texture maps in UV space using a fine-tuned SDXL diffusion model. By employing pixel-aligned 3D coordinates (XYZ) as cross-attention positional encodings, it simultaneously resolves multi-view inconsistencies and completes occluded regions, significantly reducing FID on GSO/DTC datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "UV texture generation"
+  - "multi-view diffusion"
+  - "geometric positional encoding"
+  - "reference attention"
+  - "occlusion completion"
 date: 2026-05-08
-content_hash: cdfe5c09775e37aa
+content_hash: 9387f97d67b4cc87
 ---
+
 # MV2UV: Generating High-quality UV Texture Maps with Multiview Prompts
 
 **Conference**: CVPR 2026  
@@ -136,9 +142,9 @@ The paper highlights completion of occlusions and resolution of view inconsisten
 
 - [\[CVPR 2026\] PackUV: Packed Gaussian UV Maps for 4D Volumetric Video](packuv_packed_gaussian_uv_maps_for_4d_volumetric_video.md)
 - [\[CVPR 2025\] HOI3DGen: Generating High-Quality Human-Object-Interactions in 3D](../../CVPR2025/3d_vision/hoi3dgen_generating_high-quality_human-object-interactions_in_3d.md)
-- [\[CVPR 2026\] CaliTex: Geometry-Calibrated Attention for View-Coherent 3D Texture Generation](calitex_geometry-calibrated_attention_for_view-coherent_3d_texture_generation.md)
 - [\[CVPR 2026\] Volumetric Functional Maps](volumetric_functional_maps.md)
-- [\[CVPR 2026\] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment](qd-pcqa_quality-aware_domain_adaptation_for_point_cloud_quality_assessment.md)
+- [\[CVPR 2026\] CaliTex: Geometry-Calibrated Attention for View-Coherent 3D Texture Generation](calitex_geometry-calibrated_attention_for_view-coherent_3d_texture_generation.md)
+- [\[CVPR 2026\] Plug-and-Play PDE Optimization for 3D Gaussian Splatting: Toward High-Quality Rendering and Reconstruction](plug-and-play_pde_optimization_for_3d_gaussian_splatting_toward_high-quality_ren.md)
 
 </div>
 

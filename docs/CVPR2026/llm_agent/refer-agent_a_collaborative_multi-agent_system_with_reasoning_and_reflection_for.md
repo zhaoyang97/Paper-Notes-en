@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation
 description: >-
-  [CVPR 2026][Multi-Agent][Paper Note] Refer-Agent decomposes Referring Video Object Segmentation (RVOS) into a step-by-step reasoning pipeline of "frame selection → intent analysis → object localization → mask generation." It further integrates a dual-stage Chain-of-Reflection (Existence Reflection + Consistency Reflection) composed of a Questioner-Respond
+  [CVPR 2026][LLM Agent][Referring Video Object Segmentation] Refer-Agent decomposes Referring Video Object Segmentation (RVOS) into a step-by-step reasoning pipeline of "frame selection → intent analysis → object localization → mask generation." It further integrates a dual-stage Chain-of-Reflection (Existence Reflection + Consistency Reflection) composed of a Questioner-Responder pair to alternate between reasoning and reflection for self-correction. Without any training and…
 tags:
-  - CVPR 2026
-  - Multi-Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Referring Video Object Segmentation"
+  - "Zero-shot"
+  - "Multi-agent"
+  - "Reasoning-Reflection"
+  - "Frame Selection"
 date: 2026-05-08
-content_hash: 3f341dbbed765931
+content_hash: 3865410bb7c89111
 ---
+
 # Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ Evaluated on 5 benchmarks (ReVOS, Ref-YouTube-VOS, MeViS, ReasonVOS, GroundMoRe)
 
 ## Related Papers
 
+- [\[CVPR 2026\] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper](paper2figure_a_multi-agent_collaborative_system_for_figure_generation_towards_ac.md)
 - [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
 - [\[CVPR 2026\] SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System](scieducator_scientific_video_understanding_and_educating_via_deming-cycle_multi-.md)
-- [\[CVPR 2026\] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper](paper2figure_a_multi-agent_collaborative_system_for_figure_generation_towards_ac.md)
-- [\[AAAI 2026\] COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis](../../AAAI2026/multi_agent/coach_collaborative_agents_for_contextual_highlighting_--_a_multi-agent_framewor.md)
-- [\[CVPR 2026\] AgentDet: A Shared-Blackboard Multi-Agent Framework for Zero-/Few-Shot Object Detection](agentdet_a_shared-blackboard_multi-agent_framework_for_zero-few-shot_object_dete.md)
+- [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
+- [\[CVPR 2026\] VULCAN: Tool-Augmented Multi Agents for Iterative 3D Object Arrangement](vulcan_tool-augmented_multi_agents_for_iterative_3d_object_arrangement.md)
 
 </div>
 

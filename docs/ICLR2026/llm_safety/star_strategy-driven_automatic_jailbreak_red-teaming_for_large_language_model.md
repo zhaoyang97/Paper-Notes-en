@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STAR: Strategy-driven Automatic Jailbreak Red-teaming for Large Language Model
 description: >-
-  [ICLR 2026][LLM Safety][GRPO] STAR shifts the exploration of jailbreak "strategies" from text space to the model's activation space. By representing known strategies as steering vectors, extracting orthogonal "strategy primitives" via PCA, and sampling new, semantically distinct strategies through random linear combinations, it then utilizes GRPO t
+  [ICLR 2026][LLM Safety][Jailbreak Attack] STAR shifts the exploration of jailbreak "strategies" from text space to the model's activation space. By representing known strategies as steering vectors, extracting orthogonal "strategy primitives" via PCA, and sampling new, semantically distinct strategies through random linear combinations, it then utilizes GRPO to train an open-source LLM as a "compiler" to translate abstract strategies into high-success jailbreak prompts. This…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Jailbreak Attack"
+  - "Automated Red-teaming"
+  - "Activation Space"
+  - "Strategy Diversity"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 3fb1dd95c5ecedf1
+content_hash: 4d231177ca04a94a
 ---
+
 # STAR: Strategy-driven Automatic Jailbreak Red-teaming for Large Language Model
 
 **Conference**: ICLR 2026  
@@ -144,8 +149,8 @@ In terms of strategy diversity (500 generated strategies), STAR leads in all 8 m
 - [\[ICLR 2026\] RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents](redcodeagent_automatic_red-teaming_agent_against_diverse_code_agents.md)
 - [\[ICLR 2026\] Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models](auto-rt_automatic_jailbreak_strategy_exploration_for_red-teaming_large_language_.md)
 - [\[ACL 2026\] STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming](../../ACL2026/llm_safety/star-teaming_a_strategy-response_multiplex_network_approach_to_automated_llm_red.md)
-- [\[ICLR 2026\] TAO-Attack: Toward Advanced Optimization-based Jailbreak Attacks for Large Language Models](tao-attack_toward_advanced_optimization-based_jailbreak_attacks_for_large_langua.md)
 - [\[ICLR 2026\] Automatic Dialectic Jailbreak: A Framework for Generating Effective Jailbreak Strategies](automatic_dialectic_jailbreak_a_framework_for_generating_effective_jailbreak_str.md)
+- [\[ICLR 2026\] From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons](from_sure_to_sorry_detecting_jailbreak_in_large_vision_language_model_via_jailne.md)
 
 </div>
 

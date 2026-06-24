@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] The authors port "Sharpness-Aware Minimization (SAM)" from image/weight space to the discrete textual prompt space, proposing TARE/ATARE: a gradient-free evolutionary framework that "finds the worst paraphrase in the inner layer and selects the most stable neighborhood in the outer layer." This ensures optimized prompt
+  [ICLR 2026][LLM (Other)][Prompt Optimization] The authors port "Sharpness-Aware Minimization (SAM)" from image/weight space to the discrete textual prompt space, proposing TARE/ATARE: a gradient-free evolutionary framework that "finds the worst paraphrase in the inner layer and selects the most stable neighborhood in the outer layer." This ensures optimized prompts maintain performance under synonymous rewrites, consistently outperforming TextGrad / Revolve across 4 reasoning…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Prompt Optimization"
+  - "Textual Sharpness"
+  - "Sharpness-Aware Minimization"
+  - "Evolutionary Search"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 81a218c519c16fa1
+content_hash: 654dc128abf19aee
 ---
+
 # Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE
 
 **Conference**: ICLR 2026  
@@ -132,11 +138,11 @@ Removing core components on Llama 3.1 8B (Figure 3):
 
 ## Related Papers
 
-- [\[ACL 2025\] Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering Target Atoms](../../ACL2025/llm_nlp/beyond_prompt_engineering_robust_behavior_control_in_llms_via_steering_target_at.md)
+- [\[ICLR 2026\] Beyond the Known: An Unknown-Aware Large Language Model for Open-Set Text Classification](beyond_the_known_an_unknown-aware_large_language_model_for_open-set_text_classif.md)
 - [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
-- [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](spectral_attention_steering_for_prompt_highlighting.md)
+- [\[ACL 2025\] Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering Target Atoms](../../ACL2025/llm_nlp/beyond_prompt_engineering_robust_behavior_control_in_llms_via_steering_target_at.md)
 - [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
-- [\[ICLR 2026\] The Lattice Representation Hypothesis of Large Language Models](the_lattice_representation_hypothesis_of_large_language_models.md)
+- [\[ICLR 2026\] Prompt-MII: Meta-Learning Instruction Induction for LLMs](prompt-mii_meta-learning_instruction_induction_for_llms.md)
 
 </div>
 

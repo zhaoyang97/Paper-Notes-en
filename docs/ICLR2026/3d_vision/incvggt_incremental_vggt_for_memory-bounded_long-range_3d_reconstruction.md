@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] IncVGGT: Incremental VGGT for Memory-Bounded Long-Range 3D Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][VGGT] Under a **completely training-free** premise, IncVGGT modifies VGGT/StreamVGGT with two orthogonal modules: "Input-side registration & synthesis" and "History-side Top-k cache pruning." This compresses the quadratic growth of attention to near-constant levels, enabling the processing of 10,000 frames on an 80GB GPU wit
+  [ICLR 2026][3D Vision][VGGT] Under a **completely training-free** premise, IncVGGT modifies VGGT/StreamVGGT with two orthogonal modules: "Input-side registration & synthesis" and "History-side Top-k cache pruning." This compresses the quadratic growth of attention to near-constant levels, enabling the processing of 10,000 frames on an 80GB GPU without memory overflow. Compared to StreamVGGT on 500 frames, it reduces operations by 58.5×, memory by 9×, and energy by 25.7×…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - VGGT
+  - "ICLR 2026"
+  - "3D Vision"
+  - "VGGT"
+  - "Streaming 3D Reconstruction"
+  - "KV Cache Pruning"
+  - "Image Registration and Stitching"
+  - "Memory-Bounded"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: 6042a28fe75c5654
+content_hash: 9e1607c287f983d0
 ---
+
 # IncVGGT: Incremental VGGT for Memory-Bounded Long-Range 3D Reconstruction
 
 **Conference**: ICLR 2026  
@@ -127,11 +133,11 @@ Energy Consumption (Joules, 300 frames): Ours 811 J vs. VGGT 8079 J vs. StreamVG
 
 ## Related Papers
 
-- [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](../../CVPR2026/3d_vision/long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
 - [\[CVPR 2025\] FrameVGGT: Frame Evidence Rolling Memory for streaming VGGT](../../CVPR2025/3d_vision/framevggt_frame_evidence_rolling_memory_for_streaming_vggt.md)
+- [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](../../CVPR2026/3d_vision/long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
 - [\[ICLR 2026\] PAGE-4D: VGGT-4D Perception via Disentangled Pose and Geometry Estimation](page-4d_vggt-4d_perception_via_disentangled_pose_and_geometry_estimation.md)
+- [\[ICLR 2026\] Point-UQ: An Uncertainty Quantification Paradigm for Point Cloud Few-Shot Class-Incremental Learning](point-uq_an_uncertainty-quantification_paradigm_for_point_cloud_few-shot_class_i.md)
 - [\[ICLR 2026\] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning](megs2_memory-efficient_gaussian_splatting_via_spherical_gaussians_and_unified_pr.md)
-- [\[CVPR 2026\] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection](../../CVPR2026/3d_vision/vggt-det_mining_vggt_internal_priors_for_sensor-geometry-free_multi-view_indoor_.md)
 
 </div>
 

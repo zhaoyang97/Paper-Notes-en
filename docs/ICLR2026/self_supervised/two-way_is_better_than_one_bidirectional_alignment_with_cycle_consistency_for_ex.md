@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Two-Way is Better Than One: Bidirectional Alignment with Cycle Consistency for Exemplar-Free Class-Incremental Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] Addressing the challenge of "old class prototype drift caused by backbone updates" in Exemplar-Free Class-Incremental Learning, this paper proposes BiCyc: simultaneously learning an "old $\to$ new" adapter $A$ and a "new $\to$ old" distiller $D$ during the training phase. It enforces both as mutual inverse mappings usi
+  [ICLR 2026][Self-Supervised Learning][Exemplar-Free Class-Incremental Learning] Addressing the challenge of "old class prototype drift caused by backbone updates" in Exemplar-Free Class-Incremental Learning, this paper proposes BiCyc: simultaneously learning an "old $\to$ new" adapter $A$ and a "new $\to$ old" distiller $D$ during the training phase. It enforces both as mutual inverse mappings using stop-gradient gating and cycle consistency loss…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Exemplar-Free Class-Incremental Learning"
+  - "Prototype Drift Compensation"
+  - "Bidirectional Alignment"
+  - "Cycle Consistency"
+  - "Gaussian Bayesian Classification"
 date: 2026-05-08
-content_hash: af1cf12710df0113
+content_hash: 06820487f1d40df6
 ---
+
 # Two-Way is Better Than One: Bidirectional Alignment with Cycle Consistency for Exemplar-Free Class-Incremental Learning
 
 **Conference**: ICLR 2026  
@@ -146,14 +152,17 @@ Contribution of $L_{bi}$ and $L_{cyc}$ (CIFAR-100, starting from AdaGauss baseli
 
 <div class="related-papers" markdown="1">
 
-- **AdaGauss**: [Adaptive Gaussian Prototype Drift Compensation](https://arxiv.org/abs/2410.04169)
-- **DPCR**: [Decomposed Prototype Compensation and Refinement](https://openreview.net/forum?id=...)
-- **EFC**: [Exemplar-Free Class-Incremental Learning via Class-Specific Drift Compensation](https://arxiv.org/abs/2207.03904)
+## Related Papers
+
+- [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](../../CVPR2026/self_supervised/exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
+- [\[ICLR 2026\] One-Shot Exemplars for Class Grounding in Self-Supervised Learning](one-shot_exemplars_for_class_grounding_in_self-supervised_learning.md)
+- [\[ACL 2025\] AnalyticKWS: Towards Exemplar-Free Analytic Class Incremental Learning for Small-footprint Keyword Spotting](../../ACL2025/self_supervised/analytickws_towards_exemplar-free_analytic_class_incremental_learning_for_small-.md)
+- [\[ICLR 2026\] Bidirectional Predictive Coding](bidirectional_predictive_coding.md)
+- [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](../../CVPR2026/self_supervised/beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](../../CVPR2026/self_supervised/exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Global Minimizers of Sigmoid Contrastive Loss
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Contrastive Learning] This work provides the first rigorous characterization of the global minimizer geometry of the Sigmoid contrastive loss (SigLIP) with trainable temperature and bias i…
+  [NeurIPS 2025][LLM Pretraining][Contrastive Learning] This work provides the first rigorous characterization of the global minimizer geometry of the Sigmoid contrastive loss (SigLIP) with trainable temperature and bias in the practically relevant regime $N \gg d$. It introduces a novel combinatorial object called the $(m, b_\text{rel})$-Constellation, and uses it to explain retrieval success, the modality gap phenomenon, and to propose an explicit relative bias parameterizati…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Representation Synchronization"
   - "Modality Gap"
 date: 2026-05-08
-content_hash: 5b865cd792e52aa2
+content_hash: fe55182ee714d6c1
 ---
 
 # Global Minimizers of Sigmoid Contrastive Loss
@@ -166,11 +166,11 @@ Synthetic data experiments compare different Sigmoid loss variants:
 
 ## Related Papers
 
+- [\[ACL 2025\] Training Dynamics Underlying Language Model Scaling Laws: Loss Deceleration and Zero-Sum Learning](../../ACL2025/llm_pretraining/training_dynamics_underlying_language_model_scaling_laws_loss_deceleration_and_z.md)
 - [\[ICLR 2026\] Implicit Bias and Loss of Plasticity in Matrix Completion: Depth Promotes Low-Rank](../../ICLR2026/llm_pretraining/implicit_bias_and_loss_of_plasticity_in_matrix_completion_depth_promotes_low-ran.md)
 - [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
 - [\[NeurIPS 2025\] Vocabulary Customization for Efficient Domain-Specific LLM Deployment](vocabulary_customization_for_efficient_domain-specific_llm_deployment.md)
-- [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
 
 </div>
 

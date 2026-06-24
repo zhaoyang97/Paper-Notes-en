@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PortraitDirector: A Hierarchical Disentanglement Framework for Controllable and Real-time Facial Reenactment
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] PortraitDirector reformulates facial reenactment from "driving an entangled holistic motion signal" to a "hierarchical composition task." It disentangles head pose, local expressions (eyes/mouth), and global emotions through spatial, semantic, and composite layers before recombining them. A global emotion filtering mod
+  [CVPR 2026][Image Generation][Facial Reenactment] PortraitDirector reformulates facial reenactment from "driving an entangled holistic motion signal" to a "hierarchical composition task." It disentangles head pose, local expressions (eyes/mouth), and global emotions through spatial, semantic, and composite layers before recombining them. A global emotion filtering module based on the Information Bottleneck principle is introduced to remove residual emotions from local motions…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Facial Reenactment"
+  - "Motion Disentanglement"
+  - "Information Bottleneck"
+  - "Diffusion Distillation"
+  - "Real-time Generation"
 date: 2026-05-08
-content_hash: f17531823ddcd369
+content_hash: 81c8a12601f7a3b1
 ---
+
 # PortraitDirector: A Hierarchical Disentanglement Framework for Controllable and Real-time Facial Reenactment
 
 **Conference**: CVPR 2026  
@@ -144,10 +150,10 @@ Ours achieves the best scores across all four individual control metrics.
 ## Related Papers
 
 - [\[CVPR 2026\] Semantic Scale Space: A Framework for Controllable Image Abstraction](semantic_scale_space_a_framework_for_controllable_image_abstraction.md)
+- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
 - [\[CVPR 2026\] DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos](dreamstereo_towards_real-time_stereo_inpainting_for_hd_videos.md)
 - [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
 - [\[ECCV 2024\] MotionLCM: Real-time Controllable Motion Generation via Latent Consistency Model](../../ECCV2024/image_generation/motionlcm_real-time_controllable_motion_generation_via_latent_consistency_model.md)
-- [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
 
 </div>
 

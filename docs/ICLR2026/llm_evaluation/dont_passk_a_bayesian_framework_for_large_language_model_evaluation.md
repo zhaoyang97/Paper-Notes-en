@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation
 description: >-
-  [ICLR 2026][LLM Evaluation][Pass@k] This paper reformulates "LLM evaluation" as a statistical inference problem. It replaces Pass@k and avg@N with a Bayesian posterior estimate under a Dirichlet prior (Bayes@N). By utilizing closed-form posterior means and credible intervals, it provides stable rankings with fewer samples and introduces transparent decis
+  [ICLR 2026][LLM Evaluation][Pass@k] This paper reformulates "LLM evaluation" as a statistical inference problem. It replaces Pass@k and avg@N with a Bayesian posterior estimate under a Dirichlet prior (Bayes@N). By utilizing closed-form posterior means and credible intervals, it provides stable rankings with fewer samples and introduces transparent decision rules where winners are declared only when intervals do not overlap.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Pass@k
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Pass@k"
+  - "Bayesian evaluation"
+  - "Dirichlet prior"
+  - "credible intervals"
+  - "rank stability"
+  - "computationally efficient evaluation"
 date: 2026-05-08
-content_hash: a6b58bea2398c1dd
+content_hash: 95962fba60cc9f42
 ---
+
 # Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] U-MARVEL: Unveiling Key Factors for Universal Multimodal Retrieval via Embedding Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] The authors systematically ablate the design space of MLLM embedding learning, revealing that bidirectional attention + mean pooling outperforms the mainstream last token approach, and learnable temperature is a significantly undervalued key factor. Based on these findings, the U-MARVEL three-stage framework (progressi
+  [ICLR 2026][Multimodal VLM][Universal Multimodal Retrieval] The authors systematically ablate the design space of MLLM embedding learning, revealing that bidirectional attention + mean pooling outperforms the mainstream last token approach, and learnable temperature is a significantly undervalued key factor. Based on these findings, the U-MARVEL three-stage framework (progressive transition → filtered hard negatives → reranking distillation) is constructed. It achieves a 63.2…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Universal Multimodal Retrieval"
+  - "MLLM Embedding Learning"
+  - "Contrastive Learning"
+  - "Progressive Training"
+  - "Reranking Distillation"
 date: 2026-05-08
-content_hash: e6b8d2d57419b15b
+content_hash: 121c9acc0f4ba97f
 ---
+
 # U-MARVEL: Unveiling Key Factors for Universal Multimodal Retrieval via Embedding Learning
 
 **Conference**: ICLR 2026  
@@ -157,8 +163,8 @@ U-MARVEL's single model (63.2%) is already close to LamRA's dual model (63.7%), 
 
 ## Related Papers
 
-- [\[ICML 2025\] Universal Retrieval for Multimodal Trajectory Modeling](../../ICML2025/multimodal_vlm/universal_retrieval_for_multimodal_trajectory_modeling.md)
 - [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](../../NeurIPS2025/multimodal_vlm/generalized_contrastive_learning_for_universal_multimodal_re.md)
+- [\[ICML 2025\] Universal Retrieval for Multimodal Trajectory Modeling](../../ICML2025/multimodal_vlm/universal_retrieval_for_multimodal_trajectory_modeling.md)
 - [\[ICLR 2026\] PHyCLIP: $\ell_1$-Product of Hyperbolic Factors Unifies Hierarchy and Compositionality in Vision-Language Representation Learning](phyclip_ell_1-product_of_hyperbolic_factors_unifies_hierarchy_and_compositionali.md)
 - [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](../../CVPR2026/multimodal_vlm/muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
 - [\[ACL 2025\] MegaPairs: Massive Data Synthesis For Universal Multimodal Retrieval](../../ACL2025/multimodal_vlm/megapairs_massive_data_synthesis_for_universal_multimodal_retrieval.md)

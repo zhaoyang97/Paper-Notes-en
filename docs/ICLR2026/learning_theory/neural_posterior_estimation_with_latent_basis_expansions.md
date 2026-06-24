@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Neural Posterior Estimation with Latent Basis Expansions
 description: >-
-  [ICLR 2026][learning_theory][Neural Posterior Estimation] The variational family of Neural Posterior Estimation (NPE) is reformulated as "log-density = linear combination of latent basis functions"—an exponential family parameterized by neural networks. This approach maintains high expressivity for low-dimensional posterior projections while ensuring the optimization is (marg
+  [ICLR 2026][Probabilistic Methods][Neural Posterior Estimation] The variational family of Neural Posterior Estimation (NPE) is reformulated as "log-density = linear combination of latent basis functions"—an exponential family parameterized by neural networks. This approach maintains high expressivity for low-dimensional posterior projections while ensuring the optimization is (marginally) convex, stably outperforming Gaussian Mixture Models and Normalizing Flows.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Neural Posterior Estimation
+  - "ICLR 2026"
+  - "Probabilistic Methods"
+  - "Amortized Variational Inference"
+  - "Simulation-Based Inference (SBI)"
+  - "Neural Posterior Estimation"
+  - "Variational Families"
+  - "Exponential Families"
+  - "Basis Function Expansion"
+  - "Convex Optimization"
+  - "Likelihood-Free Inference"
 date: 2026-05-08
-content_hash: de0267a0107e34cf
+content_hash: 2f8ff7970ca9cbb7
 ---
+
 # Neural Posterior Estimation with Latent Basis Expansions
 
 **Conference**: ICLR 2026  
@@ -116,11 +124,11 @@ On the LSST DESC DC2 simulated survey dataset, embedded within the BLISS framewo
 
 ## Related Papers
 
+- [\[ICLR 2026\] Navigating the Latent Space Dynamics of Neural Models](navigating_the_latent_space_dynamics_of_neural_models.md)
 - [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 - [\[ICLR 2026\] Score-Based Density Estimation from Pairwise Comparisons](score-based_density_estimation_from_pairwise_comparisons.md)
 - [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
 - [\[ICLR 2026\] Proper Velocity Neural Networks](proper_velocity_neural_networks.md)
-- [\[ICLR 2026\] Neural Collapse in Multi-Task Learning](neural_collapse_in_multi-task_learning.md)
 
 </div>
 

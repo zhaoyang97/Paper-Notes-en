@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LoRe: Adaptive Interaction-Evaluation Routing with Per-Step Interaction Budgets for Iterative Graph Solvers
 description: >-
-  [ICML 2026][Optimization & Theory][MIS/TSP] LoRe adapts the "Cluster + Bath" decomposition from condensed matter physics into a training-free inference-time wrapper for diffusion-based graph combinatorial optimization solvers. By evaluating only a fixed proportion of high-conflict edges per step and compensating for the discarded components with an $\mathcal{O}(
+  [ICML 2026][Optimization][Per-step interaction budget] LoRe adapts the "Cluster + Bath" decomposition from condensed matter physics into a training-free inference-time wrapper for diffusion-based graph combinatorial optimization solvers. By evaluating only a fixed proportion of high-conflict edges per step and compensating for the discarded components with an $\mathcal{O}(N)$ global recall term, it enables MIS solvers to exceed the baseline OOM limit by $3\times$ (executing $…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - MIS/TSP
+  - "ICML 2026"
+  - "Optimization"
+  - "Per-step interaction budget"
+  - "dynamic routing"
+  - "Cluster-Bath decomposition"
+  - "training-free"
+  - "MIS/TSP"
 date: 2026-05-08
-content_hash: a1d744a6816443ff
+content_hash: da714f37045de7d0
 ---
+
 # LoRe: Adaptive Interaction-Evaluation Routing with Per-Step Interaction Budgets for Iterative Graph Solvers
 
 **Conference**: ICML 2026  
@@ -125,11 +130,20 @@ The baseline hits OOM at $n=20\mathrm{k}$, while LoRe scales to $n=50\mathrm{k}$
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-...
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] On the Interaction of Batch Noise, Adaptivity, and Compression, under $(L_0,L_1)$-Smoothness: An SDE Approach](on_the_interaction_of_batch_noise_adaptivity_and_compression_under_l_0l_1-smooth.md)
+- [\[ICLR 2026\] Beyond the Heatmap: A Rigorous Evaluation of Component Impact in MCTS-Based TSP Solvers](../../ICLR2026/optimization/beyond_the_heatmap_a_rigorous_evaluation_of_component_impact_in_mcts-based_tsp_s.md)
+- [\[ICML 2026\] Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler](adaptive_sharpness-aware_minimization_with_a_polyak-type_step_size_a_theory-grou.md)
+- [\[ICLR 2026\] FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization](../../ICLR2026/optimization/frontierco_real-world_and_large-scale_evaluation_of_machine_learning_solvers_for.md)
+- [\[ICML 2026\] URS: Unified Neural Routing Solver](urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] On the Interaction of Batch Noise, Adaptivity, and Compression, under $(L_0,L_1)$-Smoothness: An SDE Approach](on_the_interaction_of_batch_noise_adaptivity_and_compression_under_l_0l_1-smooth.md)

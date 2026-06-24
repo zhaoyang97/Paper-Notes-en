@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] T-POP: Test-Time Personalization with Online Preference Feedback
 description: >-
-  [ICML 2026][Recommender Systems][Paper Note] T-POP integrates "test-time alignment" with "neural dueling bandits." Without modifying LLM parameters, it learns a personalized reward function online using pairwise preference feedback per round, effectively addressing the cold-start problem in personalization for new users.
+  [ICML 2026][Recommender Systems][Test-time Alignment] T-POP integrates "test-time alignment" with "neural dueling bandits." Without modifying LLM parameters, it learns a personalized reward function online using pairwise preference feedback per round, effectively addressing the cold-start problem in personalization for new users.
 tags:
-  - ICML 2026
-  - Recommender Systems
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Test-time Alignment"
+  - "Dueling Bandits"
+  - "Online Preference Feedback"
+  - "Cold-start Personalization"
+  - "Neural UCB"
 date: 2026-05-08
-content_hash: ffbe71d5301b0e03
+content_hash: 5e0a1556ac47b3b6
 ---
+
 # T-POP: Test-Time Personalization with Online Preference Feedback
 
 **Conference**: ICML 2026  
@@ -136,9 +142,9 @@ Aggregated results show T-POP improving by ~28.0% over AMULET on Qwen2-7B, ~19.9
 
 - [\[ICML 2025\] PARM: Multi-Objective Test-Time Alignment via Preference-Aware Autoregressive Reward Model](../../ICML2025/recommender/parm_multi-objective_test-time_alignment_via_preference-aware_autoregressive_rew.md)
 - [\[NeurIPS 2025\] MMPB: It's Time for Multi-Modal Personalization](../../NeurIPS2025/recommender/mmpb_its_time_for_multi-modal_personalization.md)
+- [\[AAAI 2026\] Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback](../../AAAI2026/recommender/preference_is_more_than_comparisons_rethinking_dueling_bandits_with_augmented_hu.md)
 - [\[ACL 2026\] Personalizing LLMs with Binary Feedback: A Preference-Corrected Optimization Framework](../../ACL2026/recommender/personalizing_llms_with_binary_feedback_a_preference-corrected_optimization_fram.md)
 - [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](../../ACL2026/recommender/mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
-- [\[AAAI 2026\] Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback](../../AAAI2026/recommender/preference_is_more_than_comparisons_rethinking_dueling_bandits_with_augmented_hu.md)
 
 </div>
 

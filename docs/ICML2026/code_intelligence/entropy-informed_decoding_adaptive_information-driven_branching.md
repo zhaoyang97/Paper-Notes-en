@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Entropy-informed Decoding: Adaptive Information-Driven Branching
 description: >-
-  [ICML 2026][Code Intelligence][beam search] EDEN (Entropy-informed DEcodiNg) sets the step-wise beam width $B_t$ to be monotonically proportional to the normalized entropy $\bar H_t$—branching more at high-entropy forks and behaving almost greedily during low-entropy steps. This approximates wider beam search with fewer total expansions. The authors theoreticall
+  [ICML 2026][Code Intelligence][Entropy-adaptive] EDEN (Entropy-informed DEcodiNg) sets the step-wise beam width $B_t$ to be monotonically proportional to the normalized entropy $\bar H_t$—branching more at high-entropy forks and behaving almost greedily during low-entropy steps. This approximates wider beam search with fewer total expansions. The authors theoretically prove that entropy-monotonic branching factors are strictly superior to any fixed beam width in terms of expe…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - beam search
-  - regret bound
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Entropy-adaptive"
+  - "branching factor"
+  - "beam search"
+  - "inference compute allocation"
+  - "regret bound"
 date: 2026-05-08
-content_hash: 73473008526199d0
+content_hash: ffe4eabab42f989b
 ---
+
 # Entropy-informed Decoding: Adaptive Information-Driven Branching
 
 **Conference**: ICML 2026  

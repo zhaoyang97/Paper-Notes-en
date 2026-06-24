@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance
 description: >-
-  [AAAI 2026][adversarial text detection] This paper proposes the Guided Perturbation Sensitivity (GPS) framework, which detects adversarial text samples by masking important words and measuring changes in embedding stabil…
+  [AAAI 2026][adversarial text detection] This paper proposes the Guided Perturbation Sensitivity (GPS) framework, which detects adversarial text samples by masking important words and measuring changes in embedding stability. GPS achieves 85%+ detection accuracy across 3 datasets, 3 attack types, and 2 models, and generalizes across datasets, attacks, and models without retraining.
 tags:
   - "AAAI 2026"
   - "adversarial text detection"
@@ -11,7 +11,7 @@ tags:
   - "BiLSTM"
   - "perturbation sensitivity"
 date: 2026-05-08
-content_hash: 3b84dba12f5d1542
+content_hash: e0eecd758cf2e508
 ---
 
 # Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance
@@ -154,11 +154,11 @@ K=5 achieves 98% of peak performance; performance varies minimally as K increase
 
 ## Related Papers
 
+- [\[ACL 2025\] Map&Make: Schema Guided Text to Table Generation](../../ACL2025/others/mapmake_schema_guided_text_to_table_generation.md)
 - [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](boosting_adversarial_transferability_via_ensemble_non-attention.md)
-- [\[AAAI 2026\] DECOR: Deep Embedding Clustering with Orientation Robustness](decor_deep_embedding_clustering_with_orientation_robustness.md)
+- [\[ICML 2025\] On the Importance of Gaussianizing Representations](../../ICML2025/others/on_the_importance_of_gaussianizing_representations.md)
+- [\[ECCV 2024\] Wavelength-Embedding-guided Filter-Array Transformer for Spectral Demosaicing](../../ECCV2024/others/wavelength-embedding-guided_filter-array_transformer_for_spectral_demosaicing.md)
 - [\[AAAI 2026\] ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance](toward_the_frontiers_of_reliable_diffusion_sampling_via_adversarial_sinkhorn_att.md)
-- [\[AAAI 2026\] Scalable Vision-Guided Crop Yield Estimation](scalable_vision-guided_crop_yield_estimation.md)
-- [\[AAAI 2026\] Controllable Financial Market Generation with Diffusion Guided Meta Agent](controllable_financial_market_generation_with_diffusion_guided_meta_agent.md)
 
 </div>
 

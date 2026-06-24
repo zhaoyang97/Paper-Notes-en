@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes the HumanLLM framework, which models 244 psychological patterns (100 personality traits + 144 social cognitive patterns) as interacting causal forces rather than isolated labels. It constructs 11,359 scenarios featuring interactions of 2-5 patterns and a multi-turn dialogue dataset. Through a dual-l
+  [ACL 2026][LLM Evaluation][Anthropomorphism] This paper proposes the HumanLLM framework, which models 244 psychological patterns (100 personality traits + 144 social cognitive patterns) as interacting causal forces rather than isolated labels. It constructs 11,359 scenarios featuring interactions of 2-5 patterns and a multi-turn dialogue dataset. Through a dual-layer checklist evaluation, it achieves high alignment with human judgment ($r=0.90$). HumanLLM-8B outperforms Qwen3…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Anthropomorphism"
+  - "Cognitive Patterns"
+  - "Multi-modal Dynamics"
+  - "Role-playing Agents"
+  - "Psychological Modeling"
 date: 2026-05-08
-content_hash: 4ef3d9ee8890da02
+content_hash: 009dccdeb569bfa7
 ---
+
 # HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns
 
 **Conference**: ACL 2026  
@@ -154,10 +160,10 @@ Training follows standard Supervised Fine-Tuning (SFT). Each character's dialogu
 ## Related Papers
 
 - [\[ACL 2026\] The Silent Vote: Improving Zero-Shot LLM Reliability by Aggregating Semantic Neighborhoods](the_silent_vote_improving_zero-shot_llm_reliability_by_aggregating_semantic_neig.md)
+- [\[ACL 2026\] Erosion of Correct Beliefs: A Study of LLM Cognitive Resilience under Clinical Stress](when_correct_beliefs_collapse_epistemic_resilience_of_llms_under_clinical_pressu.md)
 - [\[ACL 2026\] Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding](modeling_multi-dimensional_cognitive_states_in_large_language_models_under_cogni.md)
 - [\[ACL 2026\] HoWToBench: Holistic Evaluation for LLM's Capability in Human-level Writing using Tree of Writing](howtobench_holistic_evaluation_for_llms_capability_in_human-level_writing_using_.md)
 - [\[ACL 2026\] arXiv2Table: Toward Realistic Benchmarking and Evaluation for LLM-Based Literature-Review Table Generation](arxiv2table_toward_realistic_benchmarking_and_evaluation_for_llm-based_literatur.md)
-- [\[ICLR 2026\] Human-LLM Collaborative Feature Engineering for Tabular Learning](../../ICLR2026/llm_evaluation/human-llm_collaborative_feature_engineering_for_tabular_data.md)
 
 </div>
 

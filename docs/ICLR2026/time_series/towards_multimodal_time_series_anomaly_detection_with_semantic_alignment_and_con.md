@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction
 description: >-
-  [ICLR 2026][Time Series][Paper Note] MindTS advances time series anomaly detection from unimodal numerical data to "Time Series + Text" multimodality. It aligns endogenous text (statistical descriptions generated from the sequence itself) and exogenous text (external background knowledge) with time series representations via cross-view fusion. A content c
+  [ICLR 2026][Time Series][Time Series Anomaly Detection] MindTS advances time series anomaly detection from unimodal numerical data to "Time Series + Text" multimodality. It aligns endogenous text (statistical descriptions generated from the sequence itself) and exogenous text (external background knowledge) with time series representations via cross-view fusion. A content condenser based on the Information Bottleneck (IB) filters redundant text and utilizes the condensed info…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Anomaly Detection"
+  - "Multimodal Alignment"
+  - "Contrastive Learning"
+  - "Information Bottleneck"
+  - "Endogenous/Exogenous Text"
 date: 2026-05-08
-content_hash: b5d8d36184117a44
+content_hash: 4e7229721f62cd6b
 ---
+
 # Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction
 
 **Conference**: ICLR 2026  
@@ -154,10 +160,20 @@ Performance drops across configurations on MDT and Energy:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] ICDiffAD: Implicit Conditioning Diffusion Model for Time Series Anomaly Detection](icdiffad_implicit_conditioning_diffusion_model_for_time_series_anomaly_detection.md)
+- [\[ICML 2026\] AnomSeer: Reinforcing Multimodal LLMs to Reason for Time-Series Anomaly Detection](../../ICML2026/time_series/anomseer_reinforcing_multimodal_llms_to_reason_for_time-series_anomaly_detection.md)
+- [\[ICLR 2026\] Point-wise Anomaly Detection via Fold-bifurcation ODE](point-wise_anomaly_detection_via_fold-bifurcation_ode.md)
+- [\[ICLR 2026\] Enhancing Sparse Event Detection in Healthcare Time-Series via Adaptive Gate of Context–Detail Interaction](enhancing_sparse_event_detection_in_healthcare_time-series_via_adaptive_gate_of_.md)
+- [\[ICLR 2026\] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection](when_foundation_models_are_one-liners_limitations_and_future_directions_for_time.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] ICDiffAD: Implicit Conditioning Diffusion Model for Time Series Anomaly Detection](icdiffad_implicit_conditioning_diffusion_model_for_time_series_anomaly_detection.md)

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] GardenDesigner: Encoding Aesthetic Principles into Jiangnan Garden Construction via a Chain of Agents
 description: >-
-  [CVPR 2026][Others][Paper Note] The GardenDesigner framework is proposed to encode the aesthetic principles of Jiangnan gardens into computable constraints via a Chain of Agents (Terrain Distribution → Road Generation → Asset Selection → Layout Optimization). Combined with the expert-annotated GardenVerse dataset, it enables non-professional users to
+  [CVPR 2026][Jiangnan Garden] The GardenDesigner framework is proposed to encode the aesthetic principles of Jiangnan gardens into computable constraints via a Chain of Agents (Terrain Distribution → Road Generation → Asset Selection → Layout Optimization). Combined with the expert-annotated GardenVerse dataset, it enables non-professional users to automatically construct Jiangnan gardens that comply with aesthetic standards within one minute via text input.
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Jiangnan Garden"
+  - "Chain of Agents"
+  - "Procedural Modeling"
+  - "Aesthetic Constraints"
+  - "Layout Optimization"
 date: 2026-05-08
-content_hash: d9366f86d08119ef
+content_hash: 9e6b3417b282dc0f
 ---
+
 # GardenDesigner: Encoding Aesthetic Principles into Jiangnan Garden Construction via a Chain of Agents
 
 **Conference**: CVPR 2026  
@@ -148,11 +153,11 @@ The entire pipeline requires no training: the LLM uses GPT-5 for parameter trans
 
 ## Related Papers
 
-- [\[CVPR 2026\] Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features](content-aware_frequency_encoding_for_implicit_neural_representations_with_fourie.md)
 - [\[NeurIPS 2025\] A Differentiable Model of Supply-Chain Shocks](../../NeurIPS2025/others/a_differentiable_model_of_supply-chain_shocks.md)
 - [\[ICML 2025\] Practical Principles for AI Cost and Compute Accounting](../../ICML2025/others/practical_principles_for_ai_cost_and_compute_accounting.md)
 - [\[ICML 2026\] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach](../../ICML2026/others/markov_chain_monte_carlo_without_evaluating_the_target_an_auxiliary_variable_app.md)
 - [\[ECCV 2024\] ADMap: Anti-disturbance Framework for Vectorized HD Map Construction](../../ECCV2024/others/admap_anti-disturbance_framework_for_vectorized_hd_map_construction.md)
+- [\[ICLR 2026\] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification](../../ICLR2026/others/permutation-consistent_variational_encoding_for_incomplete_multi-view_multi-labe.md)
 
 </div>
 

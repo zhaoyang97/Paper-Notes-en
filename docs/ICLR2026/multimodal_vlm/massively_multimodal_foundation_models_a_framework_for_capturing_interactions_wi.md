@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Massively Multimodal Foundation Models: A Framework for Capturing Interactions with Specialized Mixture-of-Experts
 description: >-
-  [ICLR 2026][Multimodal VLM][Partial Information Decomposition] This paper proposes the MERGE framework, which decomposes multimodal interactions into "Redundant/Unique/Synergistic (RUS)" signals across time lags using directed information. These signals then guide Mixture-of-Experts (MoE) routing—directing similar modalities to the same experts, unique modalities to different expe
+  [ICLR 2026][Multimodal VLM][Massively Multimodal] This paper proposes the MERGE framework, which decomposes multimodal interactions into "Redundant/Unique/Synergistic (RUS)" signals across time lags using directed information. These signals then guide Mixture-of-Experts (MoE) routing—directing similar modalities to the same experts, unique modalities to different experts, and synergistic modalities to specialized cross-modal experts—significantly enhancing performance and pro…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Partial Information Decomposition
-  - RUS
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Massively Multimodal"
+  - "Temporal Multimodal Interactions"
+  - "Partial Information Decomposition"
+  - "RUS"
+  - "Mixture-of-Experts"
+  - "Interaction-aware Routing"
 date: 2026-05-08
-content_hash: f0e93c242df010c2
+content_hash: 6d7bb9546aa32bdf
 ---
+
 # Massively Multimodal Foundation Models: A Framework for Capturing Interactions with Specialized Mixture-of-Experts
 
 **Conference**: ICLR 2026  
@@ -120,11 +124,11 @@ MERGE achieves optimal results on most metrics, with significant improvements ov
 
 ## Related Papers
 
+- [\[ICLR 2026\] CLIP-FMoE: Scalable CLIP via Fused Mixture-of-Experts with Enforced Specialization](clip-fmoe_scalable_clip_via_fused_mixture-of-experts_with_enforced_specializatio.md)
 - [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
 - [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](../../ICML2026/multimodal_vlm/toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
 - [\[ICCV 2025\] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition](../../ICCV2025/multimodal_vlm/a_qualityguided_mixture_of_scorefusion_experts_framework_for.md)
 - [\[ICML 2026\] SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning](../../ICML2026/multimodal_vlm/same_stabilized_mixture-of-experts_for_multimodal_continual_instruction_tuning.md)
-- [\[ICLR 2026\] Kaleidoscope: In-language Exams for Massively Multilingual Vision Evaluation](kaleidoscope_in-language_exams_for_massively_multilingual_vision_evaluation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FICGen: Frequency-Inspired Contextual Disentanglement for Layout-driven Degraded Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Layout-to-Image] FICGen is proposed as the first method to address the "contextual illusion dilemma" in Layout-to-Image (L2I) generation for degraded scenes (low-light, underwater…
+  [ICCV 2025][Image Generation][Layout-to-Image] FICGen is proposed as the first method to address the "contextual illusion dilemma" in Layout-to-Image (L2I) generation for degraded scenes (low-light, underwater, remote sensing, adverse weather, etc.). It extracts high- and low-frequency prototypes of degraded scenes via a learnable dual-query mechanism, injects them into the latent diffusion space through visual-frequency enhanced attention, and achieves foreground-background…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Remote Sensing"
   - "Underwater"
 date: 2026-05-08
-content_hash: 4c8eca1cb5ab44d6
+content_hash: 3b7225d995e82935
 ---
 
 # FICGen: Frequency-Inspired Contextual Disentanglement for Layout-driven Degraded Image Generation
@@ -182,11 +182,11 @@ FICGen's advantage is even more pronounced when evaluated with the stronger Defo
 
 ## Related Papers
 
+- [\[ECCV 2024\] Unveiling Advanced Frequency Disentanglement Paradigm for Low-Light Image Enhancement](../../ECCV2024/image_generation/unveiling_advanced_frequency_disentanglement_paradigm_for_low-light_image_enhanc.md)
+- [\[ICLR 2026\] ContextGen: Contextual Layout Anchoring for Identity-Consistent Multi-Instance Generation](../../ICLR2026/image_generation/contextgen_contextual_layout_anchoring_for_identity-consistent_multi-instance_ge.md)
 - [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](../../NeurIPS2025/image_generation/overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
-- [\[NeurIPS 2025\] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](../../NeurIPS2025/image_generation/instanceassemble_layoutaware_image_generation_via_instance_a.md)
 - [\[ICCV 2025\] The Silent Assistant: NoiseQuery as Implicit Guidance for Goal-Driven Image Generation](the_silent_assistant_noisequery_as_implicit_guidance_for_goal-driven_image_gener.md)
-- [\[ICML 2026\] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation](../../ICML2026/image_generation/occlusionformer_arranging_z-order_for_layout-grounded_image_generation.md)
-- [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
+- [\[NeurIPS 2025\] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](../../NeurIPS2025/image_generation/instanceassemble_layoutaware_image_generation_via_instance_a.md)
 
 </div>
 

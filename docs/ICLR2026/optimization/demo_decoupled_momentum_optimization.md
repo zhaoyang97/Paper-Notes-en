@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeMo: Decoupled Momentum Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] DeMo replaces the "sync full-precision gradients every step" approach in distributed data parallelism with "syncing only compressed local momentum." By decoupling momentum updates across workers, compressing momentum via DCT orthogonal transformation + top-k sparsification, and utilizing the momentum buffer itself as e
+  [ICLR2026][Optimization][Distributed Training] DeMo replaces the "sync full-precision gradients every step" approach in distributed data parallelism with "syncing only compressed local momentum." By decoupling momentum updates across workers, compressing momentum via DCT orthogonal transformation + top-k sparsification, and utilizing the momentum buffer itself as error feedback, DeMo achieves up to an 85× reduction in communication volume per step compared to AdamW-DDP…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Distributed Training"
+  - "Communication Compression"
+  - "Momentum Optimization"
+  - "Error Feedback"
+  - "top-k Sparsification"
 date: 2026-05-08
-content_hash: 99790f8934cc2bb1
+content_hash: f56c974f3f7ba268
 ---
+
 # DeMo: Decoupled Momentum Optimization
 
 **Conference**: ICLR2026  

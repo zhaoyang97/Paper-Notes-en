@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models
 description: >-
-  [ICML 2026][AI Safety][Paper Note] dgMARK utilizes the "decoding order degree of freedom" inherent in Diffusion Language Models (dLLMs) as a watermarking channel. By prioritizing the decoding of positions that satisfy parity conditions based on a binary hash, it embeds statistically detectable watermarks in models like LLaDA/Dream without modifying toke
+  [ICML 2026][AI Safety][dLLM Watermarking] dgMARK utilizes the "decoding order degree of freedom" inherent in Diffusion Language Models (dLLMs) as a watermarking channel. By prioritizing the decoding of positions that satisfy parity conditions based on a binary hash, it embeds statistically detectable watermarks in models like LLaDA/Dream without modifying token probability distributions, maintaining robustness against insertion, deletion, substitution, and rewriting.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "dLLM Watermarking"
+  - "Decoding Order"
+  - "Parity Hashing"
+  - "Robust Detection"
+  - "Probability-Free Reweighting"
 date: 2026-05-08
-content_hash: 0f178590575593e9
+content_hash: 8ce530688669d822
 ---
+
 # dgMARK: Decoding-Guided Watermarking for Diffusion Language Models
 
 **Conference**: ICML 2026  
@@ -140,7 +146,7 @@ Sliding window detection significantly compensates for alignment offsets caused 
 - [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 - [\[ICML 2026\] Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model](anchored_decoding_provably_reducing_copyright_risk_for_any_language_model.md)
 - [\[ICML 2026\] The Unlearnability Phenomenon in RLVR for Language Models](the_unlearnability_phenomenon_in_rlvr_for_language_models.md)
-- [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
+- [\[ICML 2026\] In-Training Defenses Against Emergent Misalignment in Language Models](in-training_defenses_against_emergent_misalignment_in_language_models.md)
 
 </div>
 

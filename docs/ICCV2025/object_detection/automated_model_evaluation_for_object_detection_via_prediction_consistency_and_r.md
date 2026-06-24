@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability
 description: >-
-  [ICCV 2025][Object Detection][Automated Model Evaluation] This paper proposes PCR (Prediction Consistency and Reliability), an automated evaluation method that estimates object detection model performance without human a…
+  [ICCV 2025][Object Detection][Automated Model Evaluation] This paper proposes PCR (Prediction Consistency and Reliability), an automated evaluation method that estimates object detection model performance without human annotations. PCR analyzes the spatial consistency and confidence reliability of bounding boxes before and after NMS to estimate mAP, and constructs a corruption-based meta-dataset for more realistic and scalable evaluation.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -11,7 +11,7 @@ tags:
   - "Prediction Consistency"
   - "Reliability"
 date: 2026-05-08
-content_hash: 83c90e226b7b9692
+content_hash: 9faee65d84d5c1f8
 ---
 
 # Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability
@@ -135,10 +135,10 @@ Confidence threshold $c=0.5$, consistency sigmoid scale $k_C=-60$, reliability s
 
 ## Related Papers
 
+- [\[CVPR 2025\] Multiple Object Tracking as ID Prediction](../../CVPR2025/object_detection/multiple_object_tracking_as_id_prediction.md)
 - [\[ICCV 2025\] Revisiting Adversarial Patch Defenses on Object Detectors: Unified Evaluation, Large-Scale Dataset, and New Insights](revisiting_adversarial_patch_defenses_on_object_detectors_unified_evaluation_lar.md)
-- [\[NeurIPS 2025\] Test-Time Adaptive Object Detection with Foundation Model](../../NeurIPS2025/object_detection/test-time_adaptive_object_detection_with_foundation_model.md)
+- [\[CVPR 2026\] Consistency Beyond Contrast: Enhancing Open-Vocabulary Object Detection Robustness via Contextual Consistency Learning](../../CVPR2026/object_detection/consistency_beyond_contrast_enhancing_open-vocabulary_object_detection_robustnes.md)
 - [\[NeurIPS 2025\] Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent](../../NeurIPS2025/object_detection/automated_detection_of_visual_attribute_reliance_with_a_self-reflective_agent.md)
-- [\[ICCV 2025\] Intervening in Black Box: Concept Bottleneck Model for Enhancing Human-Neural Network Mutual Understanding](intervening_in_black_box_concept_bottleneck_model_for_enhancing_human_neural_net.md)
 - [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/object_detection/rethinking_evaluation_of_infrared_small_target_detection.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AR-VRM: Imitating Human Motions for Visual Robot Manipulation with Analogical Reasoning
 description: >-
-  [ICCV 2025][Human Understanding][visual robot manipulation] This paper proposes AR-VRM, the first method to enhance visual robot manipulation (VRM) through explicit imitation of human hand keypoints. It employs a keypoin…
+  [ICCV 2025][Human Understanding][visual robot manipulation] This paper proposes AR-VRM, the first method to enhance visual robot manipulation (VRM) through explicit imitation of human hand keypoints. It employs a keypoint vision-language model pretrained on large-scale human activity videos to acquire motion knowledge, and establishes correspondences between human hand keypoints and robot components via analogical reasoning.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "vision-language pretraining"
   - "human-to-robot motion transfer"
 date: 2026-05-08
-content_hash: 437cee008a0d017c
+content_hash: 49d0e82f8ef23679
 ---
 
 # AR-VRM: Imitating Human Motions for Visual Robot Manipulation with Analogical Reasoning
@@ -156,11 +156,11 @@ Real-robot experiments:
 
 ## Related Papers
 
-- [\[AAAI 2026\] Generating Attribute-Aware Human Motions from Textual Prompt](../../AAAI2026/human_understanding/generating_attribute-aware_human_motions_from_textual_prompt.md)
-- [\[ICLR 2026\] QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture](../../ICLR2026/human_understanding/quamo_quaternion_motion_kinematics.md)
-- [\[CVPR 2026\] EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR](../../CVPR2026/human_understanding/egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr.md)
+- [\[CVPR 2025\] Two by Two: Learning Multi-Task Pairwise Objects Assembly for Generalizable Robot Manipulation](../../CVPR2025/human_understanding/two_by_two_learning_multi-task_pairwise_objects_assembly_for_generalizable_robot.md)
+- [\[ICML 2025\] Scaling Large Motion Models with Million-Level Human Motions](../../ICML2025/human_understanding/scaling_large_motion_models_with_million-level_human_motions.md)
 - [\[ICCV 2025\] What's Making That Sound Right Now? Video-centric Audio-Visual Localization](whats_making_that_sound_right_now_video-centric_audio-visual_localization.md)
-- [\[CVPR 2026\] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](../../CVPR2026/human_understanding/unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)
+- [\[CVPR 2025\] StickMotion: Generating 3D Human Motions by Drawing a Stickman](../../CVPR2025/human_understanding/stickmotion_generating_3d_human_motions_by_drawing_a_stickman.md)
+- [\[CVPR 2025\] Shape My Moves: Text-Driven Shape-Aware Synthesis of Human Motions](../../CVPR2025/human_understanding/shape_my_moves_text-driven_shape-aware_synthesis_of_human_motions.md)
 
 </div>
 

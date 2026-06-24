@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Personalized Federated Training of Diffusion Models with Privacy Guarantees
 description: >-
-  [CVPR 2026][Federated Learning][Diffusion Model] PFDM decomposes the reverse denoising process of diffusion models into two components: a "client-private denoiser + server-shared denoiser." Clients only upload data that has been clipped and subjected to forward noise, providing formal Local Differential Privacy (LDP) guarantees for each data point. The shared model o
+  [CVPR 2026][Federated Learning][Diffusion Models] PFDM decomposes the reverse denoising process of diffusion models into two components: a "client-private denoiser + server-shared denoiser." Clients only upload data that has been clipped and subjected to forward noise, providing formal Local Differential Privacy (LDP) guarantees for each data point. The shared model only observes noised data and cannot reproduce any client samples in isolation…
 tags:
-  - CVPR 2026
-  - Federated Learning
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Diffusion Models"
+  - "Differential Privacy"
+  - "Personalization"
+  - "Privacy Attack Defense"
 date: 2026-05-08
-content_hash: 13df07b8f500dd1d
+content_hash: 38d75b050d4c1119
 ---
+
 # Personalized Federated Training of Diffusion Models with Privacy Guarantees
 
 **Conference**: CVPR 2026  
@@ -123,9 +127,11 @@ In contrast, a standard centralized non-private model trained for 1000 epochs sh
 
 ## Related Papers
 
+- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
+- [\[CVPR 2026\] Fine-Tuning Impairs the Balancedness of Foundation Models in Long-tailed Personalized Federated Learning](fine-tuning_impairs_the_balancedness_of_foundation_models_in_long-tailed_persona.md)
+- [\[CVPR 2026\] Taming Noise-Induced Prototype Degradation for Privacy-Preserving Personalized Federated Fine-Tuning](taming_noise-induced_prototype_degradation_for_privacy-preserving_personalized_f.md)
 - [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
-- [\[CVPR 2026\] GDFA: Geometry-Driven Federated Unlearning with Directional Task Vector Alignment](gdfa_geometry-driven_federated_unlearning_with_directional_task_vector_alignment.md)
-- [\[CVPR 2026\] Fully Decentralized Certified Unlearning](fully_decentralized_certified_unlearning.md)
+- [\[CVPR 2026\] SubFLOT: Efficient Personalized Federated Learning via Optimal Transport-based Submodel Extraction](submodel_extraction_for_efficient_and_personalized_federated_learning_via_optima.md)
 
 </div>
 

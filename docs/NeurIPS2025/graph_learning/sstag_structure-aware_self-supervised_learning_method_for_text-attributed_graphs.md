@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs
 description: >-
-  [NeurIPS 2025][Graph Learning][Text-attributed graphs] This paper proposes SSTAG, which jointly distills complementary knowledge from LLMs and GNNs into a structure-aware MLP via dual knowledge distillation…
+  [NeurIPS 2025][Graph Learning][Text-attributed graphs] This paper proposes SSTAG, which jointly distills complementary knowledge from LLMs and GNNs into a structure-aware MLP via dual knowledge distillation, and incorporates a memory bank mechanism to store prototype representations, enabling efficient and scalable cross-domain self-supervised pre-training on text-attributed graphs.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "cross-domain transfer"
   - "graph foundation models"
 date: 2026-05-08
-content_hash: bfae15b483c1f1c8
+content_hash: b3b4ba28f0f0abd6
 ---
 
 # SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs
@@ -137,7 +137,7 @@ After pre-training on ogbn-Paper100M, the model is evaluated on 12 cross-domain 
 - [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
 - [\[NeurIPS 2025\] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks](self-supervised_discovery_of_neural_circuits_in_spatially_patterned_neural_respo.md)
 - [\[AAAI 2026\] GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs](../../AAAI2026/graph_learning/gcl-ot_graph_contrastive_learning_with_optimal_transport_for_heterophilic_text-a.md)
-- [\[NeurIPS 2025\] Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning](uncertain_knowledge_graph_completion_via_semi-supervised_confidence_distribution.md)
+- [\[ICML 2026\] ERAlign: Energy-based Representation Alignment of GNNs and LLMs on Text-attributed Graphs](../../ICML2026/graph_learning/eralign_energy-based_representation_alignment_of_gnns_and_llms_on_text-attribute.md)
 
 </div>
 

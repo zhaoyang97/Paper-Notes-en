@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Latent Denoising Makes Good Tokenizers
 description: >-
-  [ICLR 2026][Image Generation][visual tokenizer] This paper points out that modern generative models are essentially performing "reconstruction from destruction" (denoising). It proposes l-DeTok: during tokenizer training, interpolative noise and random masks are injected into the latent space, and the decoder is tasked with reconstructing the original image from the
+  [ICLR 2026][Image Generation][visual tokenizer] This paper points out that modern generative models are essentially performing "reconstruction from destruction" (denoising). It proposes l-DeTok: during tokenizer training, interpolative noise and random masks are injected into the latent space, and the decoder is tasked with reconstructing the original image from the heavily corrupted latent. This ensures the produced latents are naturally aligned with downstream denoising obj…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - visual tokenizer
-  - latent denoising
-  - generative modeling
-  - diffusion
-  - autoregressive
+  - "ICLR 2026"
+  - "Image Generation"
+  - "visual tokenizer"
+  - "latent denoising"
+  - "generative modeling"
+  - "diffusion"
+  - "autoregressive"
 date: 2026-05-08
-content_hash: 425fc735b53f895e
+content_hash: 74e14206ecb4f15a
 ---
+
 # Latent Denoising Makes Good Tokenizers
 
 **Conference**: ICLR 2026  
@@ -121,10 +122,10 @@ flowchart LR
 ## Related Papers
 
 - [\[CVPR 2026\] VFM-VAE: Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](../../CVPR2026/image_generation/vfm-vae_vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_mod.md)
+- [\[ICLR 2026\] Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
 - [\[ICLR 2026\] DeRaDiff: Denoising Time Realignment of Diffusion Models](deradiff_denoising_time_realignment_of_diffusion_models.md)
-- [\[ICLR 2026\] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance](mitigating_noise_shift_in_denoising_generative_models_with_noise_awareness_guida.md)
-- [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
 - [\[ICLR 2026\] Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation](asynchronous_denoising_diffusion_models_for_aligning_text-to-image_generation.md)
+- [\[ICLR 2026\] Latent Stochastic Interpolants](latent_stochastic_interpolants.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MinCD-PnP: Learning 2D-3D Correspondences with Approximate Blind PnP
 description: >-
-  [ICCV 2025][3D Vision][Image-to-point cloud registration] This paper proposes MinCD-PnP, which reduces the computationally expensive Blind PnP to a problem of minimizing the Chamfer distance between 2D-3D keypoints via a…
+  [ICCV 2025][3D Vision][Image-to-point cloud registration] This paper proposes MinCD-PnP, which reduces the computationally expensive Blind PnP to a problem of minimizing the Chamfer distance between 2D-3D keypoints via a triple approximation strategy. A lightweight multi-task learning module, MinCD-Net, is designed and integrated into existing I2P registration frameworks, achieving significant improvements in inlier ratio and registration recall under cross-scene and cross-da…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Chamfer distance"
   - "multi-task learning"
 date: 2026-05-08
-content_hash: ccc2303bb4263206
+content_hash: cd834c2da97d8a6b
 ---
 
 # MinCD-PnP: Learning 2D-3D Correspondences with Approximate Blind PnP
@@ -154,10 +154,10 @@ Cross-dataset generalization (trained on Kitchen, tested on RGBD-V2):
 
 ## Related Papers
 
+- [\[ECCV 2024\] 3×2: 3D Object Part Segmentation by 2D Semantic Correspondences](../../ECCV2024/3d_vision/3x2_3d_object_part_segmentation_by_2d_semantic_correspondenc.md)
 - [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
 - [\[ICCV 2025\] Amodal3R: Amodal 3D Reconstruction from Occluded 2D Images](amodal3r_amodal_3d_reconstruction_from_occluded_2d_images.md)
 - [\[ICCV 2025\] Towards Scalable Spatial Intelligence via 2D-to-3D Data Lifting](towards_scalable_spatial_intelligence_via_2d-to-3d_data_lifting.md)
-- [\[NeurIPS 2025\] Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations](../../NeurIPS2025/3d_vision/concerto_joint_2d-3d_self-supervised_learning_emerges_spatial_representations.md)
 - [\[ICCV 2025\] WildSeg3D: Segment Any 3D Objects in the Wild from 2D Images](wildseg3d_segment_any_3d_objects_in_the_wild_from_2d_images.md)
 
 </div>

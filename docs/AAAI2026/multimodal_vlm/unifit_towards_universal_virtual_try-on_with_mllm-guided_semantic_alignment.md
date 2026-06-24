@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment
 description: >-
-  [AAAI 2026][Multimodal VLM][Virtual try-on] This paper proposes UniFit, a universal virtual try-on framework driven by a multimodal large language model (MLLM). An MLLM-Guided Semantic Alignment (MGSA) module bridges the…
+  [AAAI 2026][Multimodal VLM][Virtual try-on] This paper proposes UniFit, a universal virtual try-on framework driven by a multimodal large language model (MLLM). An MLLM-Guided Semantic Alignment (MGSA) module bridges the semantic gap between textual instructions and reference images. A two-stage progressive training strategy combined with a self-synthesis pipeline overcomes data scarcity in complex scenarios. UniFit is the first single framework to support all 6 VTON tasks.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Transformer"
   - "self-synthesis training"
 date: 2026-05-08
-content_hash: 3cd619a215ca03eb
+content_hash: 3fe8d0b720652bc3
 ---
 
 # UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment
@@ -223,9 +223,9 @@ FID is reduced to 8.799 (best), and KID is substantially reduced to 0.702.
 
 - [\[AAAI 2026\] Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding](exo2ego_exocentric_knowledge_guided_mllm_for_egocentric_vide.md)
 - [\[CVPR 2026\] Uncertainty-guided Compositional Alignment with Part-to-Whole Semantic Representativeness in Hyperbolic Vision-Language Models](../../CVPR2026/multimodal_vlm/uncertainty-guided_compositional_alignment_with_part-to-whole_semantic_represent.md)
-- [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](../../NeurIPS2025/multimodal_vlm/guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
-- [\[NeurIPS 2025\] Retrv-R1: A Reasoning-Driven MLLM Framework for Universal and Efficient Multimodal Retrieval](../../NeurIPS2025/multimodal_vlm/retrv-r1_a_reasoning-driven_mllm_framework_for_universal_and_efficient_multimoda.md)
-- [\[CVPR 2026\] VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery](../../CVPR2026/multimodal_vlm/vlm-guided_group_preference_alignment_for_diffusion-based_human_mesh_recovery.md)
+- [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
+- [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](../../CVPR2026/multimodal_vlm/gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
 
 </div>
 

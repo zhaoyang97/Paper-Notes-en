@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAT-Agent: Adaptive Multi-Agent Training Optimization
 description: >-
-  [NeurIPS 2025][LLM Agent][multi-agent systems] This paper proposes MAT-Agent, a multi-agent framework consisting of four autonomous agents responsible for data augmentation, optimizer selection, learning rate scheduling…
+  [NeurIPS 2025][LLM Agent][multi-agent systems] This paper proposes MAT-Agent, a multi-agent framework consisting of four autonomous agents responsible for data augmentation, optimizer selection, learning rate scheduling, and loss function selection, respectively. The framework dynamically adjusts training configurations during the training process, employing DQN to learn policies as a replacement for conventional static hyperparameter configurations…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "reinforcement learning"
   - "dynamic configuration"
 date: 2026-05-08
-content_hash: 1f35c2187923ec94
+content_hash: 7d1c95e5ecb0de7b
 ---
 
 # MAT-Agent: Adaptive Multi-Agent Training Optimization
@@ -144,10 +144,10 @@ Component ablation on Pascal VOC:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](groupingroup_policy_optimization_for_llm_agent_training.md)
+- [\[ACL 2025\] FACT-AUDIT: An Adaptive Multi-Agent Framework for Dynamic Fact-Checking Evaluation of Large Language Models](../../ACL2025/llm_agent/fact_audit_factcheck.md)
 - [\[NeurIPS 2025\] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers](lc-opt_benchmarking_reinforcement_learning_and_agentic_ai_for_end-to-end_liquid_.md)
 - [\[ACL 2026\] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](../../ACL2026/llm_agent/coevolve_training_llm_agents_via_agent-data_mutual_evolution.md)
-- [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
+- [\[ACL 2025\] METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling](../../ACL2025/llm_agent/metal_a_multi-agent_framework_for_chart_generation_with_test-time_scaling.md)
 
 </div>
 

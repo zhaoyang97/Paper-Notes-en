@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes AlignRAG, a framework that reframes RAG as "retrieval-augmented reasoning" and trains a dedicated Critic Language Model (CLM) to iteratively critique a…
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes AlignRAG, a framework that reframes RAG as "retrieval-augmented reasoning" and trains a dedicated Critic Language Model (CLM) to iteratively critique and refine the reasoning process at test time, addressing the misalignment between reasoning chains and retrieved evidence. An 8B CLM surpasses a 72B standard CLM on out-of-distribution tasks.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "test-time refinement"
   - "retrieval-augmented reasoning"
 date: 2026-05-08
-content_hash: ef576a1ae003d5d1
+content_hash: e96bdde4fb174409
 ---
 
 # Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization
@@ -196,9 +196,9 @@ Strong robustness is maintained under both informative and noisy retrieval condi
 
 - [\[NeurIPS 2025\] SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning](symrtlo_enhancing_rtl_code_optimization_with_llms_and_neuron-inspired_symbolic_r.md)
 - [\[ACL 2026\] Test-Time Training for Zero-Resource Dense Retrieval Reranking](../../ACL2026/information_retrieval/test-time_training_for_zero-resource_dense_retrieval_reranking.md)
-- [\[NeurIPS 2025\] SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG](secon-rag_a_two-stage_semantic_filtering_and_conflict-free_framework_for_trustwo.md)
-- [\[NeurIPS 2025\] Learning Task-Agnostic Representations through Multi-Teacher Distillation](learning_task-agnostic_representations_through_multi-teacher_distillation.md)
-- [\[AAAI 2026\] Towards Inference-Time Scaling for Continuous Space Reasoning](../../AAAI2026/information_retrieval/towards_inference-time_scaling_for_continuous_space_reasoning.md)
+- [\[ICLR 2026\] MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction](../../ICLR2026/information_retrieval/metaembed_scaling_multimodal_retrieval_at_test-time_with_flexible_late_interacti.md)
+- [\[ICLR 2026\] Reusing Pre-training Data at Test Time is a Compute Multiplier](../../ICLR2026/information_retrieval/reusing_pre-training_data_at_test_time_is_a_compute_multiplier.md)
+- [\[ICLR 2026\] Robust Test-Time Video-Text Retrieval: Benchmarking and Adapting for Query Shifts](../../ICLR2026/information_retrieval/robust_test-time_video-text_retrieval_benchmarking_and_adapting_for_query_shifts.md)
 
 </div>
 

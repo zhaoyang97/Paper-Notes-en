@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Greater than the Sum of Its Parts: Building Substructure into Protein Encoding Models
 description: >-
-  [ICLR 2026][Computational Biology][ESM] This paper introduces the **Magneton** environment (including a dataset of 530,000 proteins and 1.7 million substructure annotations, a training framework, and 13 benchmark tasks) and **substructure-tuning**, a model-agnostic supervised fine-tuning method. It explicitly injects the biological prior that "proteins are a
+  [ICLR 2026][Computational Biology][Protein representation learning] This paper introduces the **Magneton** environment (including a dataset of 530,000 proteins and 1.7 million substructure annotations, a training framework, and 13 benchmark tasks) and **substructure-tuning**, a model-agnostic supervised fine-tuning method. It explicitly injects the biological prior that "proteins are assembled from evolutionarily conserved recurring substructures (domains, active sites…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - ESM
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein representation learning"
+  - "substructure"
+  - "supervised fine-tuning"
+  - "ESM"
+  - "domains"
+  - "function prediction"
 date: 2026-05-08
-content_hash: c12e237ad41fce63
+content_hash: 687b529272763366
 ---
+
 # Greater than the Sum of Its Parts: Building Substructure into Protein Encoding Models
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Convergence Dynamics of Over-Parameterized Score Matching for a Single Gaussian
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper theoretically analyzes the convergence dynamics of gradient descent on the score matching objective when learning a single Gaussian distribution using an over-parameterized student model ($n \ge 2$ learnable means). It proves global convergence under large noise scales and reveals two distinct phase transiti
+  [ICLR 2026][Learning Theory][Score matching] This paper theoretically analyzes the convergence dynamics of gradient descent on the score matching objective when learning a single Gaussian distribution using an over-parameterized student model ($n \ge 2$ learnable means). It proves global convergence under large noise scales and reveals two distinct phase transitions at small noise scales: "all parameters converge" vs. "one parameter converges while others diverge to infinity…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Diffusion Model Theory"
+  - "Optimization Convergence Analysis"
+  - "Score matching"
+  - "Over-parameterization"
+  - "Gradient descent convergence"
+  - "Gaussian mixture"
+  - "Optimization dynamics"
 date: 2026-05-08
-content_hash: b1abb54d7f778e25
+content_hash: 6c60508dd5488353
 ---
+
 # Convergence Dynamics of Over-Parameterized Score Matching for a Single Gaussian
 
 **Conference**: ICLR 2026  
@@ -134,9 +142,9 @@ The experiments validate the predicted phase transitions. Settings: $n=5, d=3$, 
 
 - [\[ICML 2026\] On the Robustness of Langevin Dynamics to Score Function Error](../../ICML2026/learning_theory/on_the_robustness_of_langevin_dynamics_to_score_function_error.md)
 - [\[ICLR 2026\] Score-Based Density Estimation from Pairwise Comparisons](score-based_density_estimation_from_pairwise_comparisons.md)
-- [\[ICLR 2026\] Transformers as Unsupervised Learning Algorithms: A study on Gaussian Mixtures](transformers_as_unsupervised_learning_algorithms_a_study_on_gaussian_mixtures.md)
-- [\[ICLR 2026\] A Faster Parameter-Free Regret Matching Algorithm](a_faster_parameter-free_regret_matching_algorithm.md)
-- [\[ICLR 2026\] Bandit Learning in Matching Markets Robust to Adversarial Corruptions](bandit_learning_in_matching_markets_robust_to_adversarial_corruptions.md)
+- [\[ICLR 2026\] Fast Escape, Slow Convergence: Learning Dynamics of Phase Retrieval under Power-Law Data](fast_escape_slow_convergence_learning_dynamics_of_phase_retrieval_under_power-la.md)
+- [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
+- [\[ICLR 2026\] Parameterized Hardness of Zonotope Containment and Neural Network Verification](parameterized_hardness_of_zonotope_containment_and_neural_network_verification.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MATRIX: Mask Track Alignment for Interaction-aware Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] MATRIX discovers that the relationships between subjects, objects, and actions in Video DiTs are primarily encoded within a few interaction-dominant attention layers. It employs multi-instance mask tracks to regularize the grounding and propagation attention of these layers, significantly enhancing interaction fidelity
+  [ICLR2026][Video Generation][Interaction-aware Video Generation] MATRIX discovers that the relationships between subjects, objects, and actions in Video DiTs are primarily encoded within a few interaction-dominant attention layers. It employs multi-instance mask tracks to regularize the grounding and propagation attention of these layers, significantly enhancing interaction fidelity and temporal consistency in text-to-video generation.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Interaction-aware Video Generation"
+  - "Video Diffusion Transformer"
+  - "Attention Alignment"
+  - "Instance Mask Track"
+  - "Semantic Propagation"
 date: 2026-05-08
-content_hash: 72e3187b1d585653
+content_hash: 220af1f359223e4b
 ---
+
 # MATRIX: Mask Track Alignment for Interaction-aware Video Generation
 
 **Conference**: ICLR2026  
@@ -154,6 +160,7 @@ MATRIX significantly leads in interaction metrics. Compared to CogVideoX-5B-I2V,
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -161,7 +168,7 @@ MATRIX significantly leads in interaction metrics. Compared to CogVideoX-5B-I2V,
 - [\[ICLR 2026\] MIMIC: Mask-Injected Manipulation Video Generation with Interaction Control](mimic_mask-injected_manipulation_video_generation_with_interaction_control.md)
 - [\[AAAI 2026\] Mask2IV: Interaction-Centric Video Generation via Mask Trajectories](../../AAAI2026/video_generation/mask2iv_interaction-centric_video_generation_via_mask_trajectories.md)
 - [\[ICLR 2026\] Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine-tuning.md)
-- [\[ICLR 2026\] DreamSwapV: Mask-guided Subject Swapping for Any Customized Video Editing](dreamswapv_mask-guided_subject_swapping_for_any_customized_video_editing.md)
+- [\[ICLR 2026\] ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask](consisdrive_identity-preserving_driving_world_models_for_video_generation_by_ins.md)
 - [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](../../CVPR2026/video_generation/open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
 
 </div>

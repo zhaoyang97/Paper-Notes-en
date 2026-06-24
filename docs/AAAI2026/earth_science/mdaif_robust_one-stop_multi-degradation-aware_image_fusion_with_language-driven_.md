@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics
 description: >-
-  [AAAI 2026][Earth Science][Infrared-Visible Fusion] This paper proposes MdaIF, a framework that leverages a vision-language model (VLM) to extract degradation-aware semantic priors for guiding mixture-of-experts (MoE) ro…
+  [AAAI 2026][Earth Science][Infrared-Visible Fusion] This paper proposes MdaIF, a framework that leverages a vision-language model (VLM) to extract degradation-aware semantic priors for guiding mixture-of-experts (MoE) routing and channel attention modulation, enabling one-stop infrared-visible image fusion across multiple degradation scenarios without requiring degradation-type annotations.
 tags:
   - "AAAI 2026"
   - "Earth Science"
@@ -12,7 +12,7 @@ tags:
   - "Vision-Language Model"
   - "Channel Attention"
 date: 2026-05-08
-content_hash: ba49c6a3a7d54fa4
+content_hash: 1e8e7adfb70d62ef
 ---
 
 # MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics
@@ -158,9 +158,9 @@ MdaIF achieves an average PSNR improvement of approximately 0.6–1.0 dB with su
 
 - [\[NeurIPS 2025\] ControlFusion: A Controllable Image Fusion Framework with Language-Vision Degradation Prompts](../../NeurIPS2025/earth_science/controlfusion_a_controllable_image_fusion_framework_with_language-vision_degrada.md)
 - [\[AAAI 2026\] RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways](renew_risk-_and_energy-aware_navigation_in_dynamic_waterways.md)
-- [\[ICML 2026\] (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](../../ICML2026/earth_science/sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)
-- [\[CVPR 2026\] GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration](../../CVPR2026/earth_science/geochemad_benchmarking_unsupervised_geochemical_anomaly_detection_for_mineral_ex.md)
-- [\[NeurIPS 2025\] Power Ensemble Aggregation for Improved Extreme Event AI Prediction](../../NeurIPS2025/earth_science/power_ensemble_aggregation_for_improved_extreme_event_ai_prediction.md)
+- [\[ICLR 2026\] OmniField: Conditioned Neural Fields for Robust Multimodal Spatiotemporal Learning](../../ICLR2026/earth_science/omnifield_conditioned_neural_fields_for_robust_multimodal_spatiotemporal_learnin.md)
+- [\[ECCV 2024\] Semi-supervised Video Desnowing Network via Temporal Decoupling Experts and Distribution-Driven Contrastive Regularization](../../ECCV2024/earth_science/semi-supervised_video_desnowing_network_via_temporal_decoupling_experts_and_dist.md)
+- [\[ICLR 2026\] GeoFAR: Geography-Informed Frequency-Aware Super-Resolution for Climate Data](../../ICLR2026/earth_science/geofar_geography-informed_frequency-aware_super-resolution_for_climate_data.md)
 
 </div>
 

@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Big AI is Accelerating the Metacrisis: What Can We Do?
 description: >-
-  [ACL 2026][LLM (Other)][metacrisis] In this ACL 2026 position paper, Steven Bird argues that "Big AI"—industrialized LLM engineering driven by a few giants—is simultaneously accelerating three interconnected crises: the **ecological crisis**, the **meaning crisis**, and the **language crisis**. Given that ACL is the primary publisher of LLM research, it
+  [ACL 2026][LLM (Other)][metacrisis] In this ACL 2026 position paper, Steven Bird argues that "Big AI"—industrialized LLM engineering driven by a few giants—is simultaneously accelerating three interconnected crises: the **ecological crisis**, the **meaning crisis**, and the **language crisis**. Given that ACL is the primary publisher of LLM research, it must shift from "individual compliance" to "collective action of a professional community." The author proposes seven specif…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - metacrisis
-  - Big AI
-  - ACL Code of Ethics
-  - ethics washing
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "metacrisis"
+  - "Big AI"
+  - "ACL Code of Ethics"
+  - "ecological crisis"
+  - "linguistic diversity"
+  - "ethics washing"
 date: 2026-05-08
-content_hash: c85838d3607adff3
+content_hash: f2e2f669e56cdb0a
 ---
+
 # Big AI is Accelerating the Metacrisis: What Can We Do?
 
 **Conference**: ACL 2026  
@@ -137,7 +140,7 @@ To prevent the critique from being dismissed as just another "anxiety piece," th
 - [\[ACL 2025\] BIG-Bench Extra Hard](../../ACL2025/llm_nlp/big-bench_extra_hard.md)
 - [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](../../ICLR2026/llm_nlp/d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
 - [\[ACL 2026\] From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?](from_fallback_to_frontline_when_can_llms_be_superior_annotators_of_human_perspec.md)
-- [\[ACL 2026\] An Existence Proof for Neural Language Models That Can Explain Garden-Path Effects via Surprisal](an_existence_proof_for_neural_language_models_that_can_explain_garden-path_effec.md)
+- [\[ICML 2026\] Preregistration for Experiments with AI Agents](../../ICML2026/llm_nlp/preregistration_for_experiments_with_ai_agents.md)
 
 </div>
 

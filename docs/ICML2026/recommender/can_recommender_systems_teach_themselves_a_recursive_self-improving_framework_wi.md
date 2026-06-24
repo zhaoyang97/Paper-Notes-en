@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can Recommender Systems Teach Themselves? A Recursive Self-Improving Framework with Fidelity Control
 description: >-
-  [ICML 2026][Recommender Systems][Paper Note] RSIR enables sequential recommendation models to generate new synthetic user interaction sequences using their own predictive capabilities, train a new model, and filter out samples deviating from the user preference manifold using a rank-based "fidelity check" to prevent self-consuming model collapse. It consistently
+  [ICML 2026][Recommender Systems][Sequential Recommendation] RSIR enables sequential recommendation models to generate new synthetic user interaction sequences using their own predictive capabilities, train a new model, and filter out samples deviating from the user preference manifold using a rank-based "fidelity check" to prevent self-consuming model collapse. It consistently improves NDCG/Recall by 4–11% across 4 datasets and 3 mainstream backbones…
 tags:
-  - ICML 2026
-  - Recommender Systems
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Sequential Recommendation"
+  - "Self-training"
+  - "Data Sparsity"
+  - "Fidelity Control"
+  - "Implicit Regularization"
 date: 2026-05-08
-content_hash: 75ddfee44557133e
+content_hash: 0f8965eae32adef7
 ---
+
 # Can Recommender Systems Teach Themselves? A Recursive Self-Improving Framework with Fidelity Control
 
 **Conference**: ICML 2026  
@@ -138,11 +144,11 @@ Key ablations on Amazon-Sport + SASRec:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Continual Low-Rank Adapters for LLM-based Generative Recommender Systems](../../ICLR2026/recommender/continual_low-rank_adapters_for_llm-based_generative_recommender_systems.md)
 - [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](../../ICLR2026/recommender/token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
+- [\[ICLR 2026\] Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning](../../ICLR2026/recommender/rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme.md)
 - [\[ACL 2025\] CoVE: Compressed Vocabulary Expansion Makes Better LLM-based Recommender Systems](../../ACL2025/recommender/cove_compressed_vocabulary_expansion_makes_better_llm-based_recommender_systems.md)
 - [\[AAAI 2026\] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems](../../AAAI2026/recommender/rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati.md)
-- [\[AAAI 2026\] Hard vs. Noise: Resolving Hard-Noisy Sample Confusion in Recommender Systems via Large Language Models](../../AAAI2026/recommender/hard_vs_noise_resolving_hard-noisy_sample_confusion_in_recommender_systems_via_l.md)
-- [\[ICML 2026\] Incentivized Exploration with Stochastic Covariates: A Two-Stage Mechanism Design for Recommender System](incentivized_exploration_with_stochastic_covariates_a_two-stage_mechanism_design.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs
 description: >-
-  [ICLR 2026][LLM Safety][machine unlearning] This work repositions "model collapse," typically viewed as a negative phenomenon, as a tool for machine unlearning. It proposes the PMC method, which achieves targeted information deletion through iterative fine-tuning on retained data and the model’s self-generated data without direct optimization on forget targets,
+  [ICLR 2026][LLM Safety][machine unlearning] This work repositions "model collapse," typically viewed as a negative phenomenon, as a tool for machine unlearning. It proposes the PMC method, which achieves targeted information deletion through iterative fine-tuning on retained data and the model’s self-generated data without direct optimization on forget targets, proving its effectiveness both theoretically and experimentally.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - machine unlearning
-  - model collapse
-  - partial model collapse
-  - LLM privacy
-  - iterative relearning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "model collapse"
+  - "partial model collapse"
+  - "LLM privacy"
+  - "iterative relearning"
 date: 2026-05-08
-content_hash: aacc5243218c1ea3
+content_hash: a21901673c7aa8ff
 ---
+
 # Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs
 
 **Conference**: ICLR 2026  
@@ -147,11 +148,11 @@ Ours cleverly combines two seemingly unrelated fields: **model collapse** resear
 
 ## Related Papers
 
-- [\[ICLR 2026\] Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs](unlearning_isnt_invisible_detecting_unlearning_traces_in_llms_from_model_outputs.md)
 - [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](ofmu_optimization-driven_framework_for_machine_unlearning.md)
-- [\[CVPR 2026\] pH-Strips for Selective Forgetting: A Blunt but Fast Diagnostic Baseline for Machine Unlearning](../../CVPR2026/llm_safety/ph-strips_for_selective_forgetting_a_blunt_but_fast_diagnostic_baseline_for_mach.md)
 - [\[NeurIPS 2025\] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM](../../NeurIPS2025/llm_safety/unlearned_but_not_forgotten_data_extraction_after_exact_unlearning_in_llm.md)
-- [\[ICLR 2026\] Multi-Feature Quantized Self-Attention for Fair Large Language Models](multi-feature_quantized_self-attention_for_fair_large_language_models.md)
+- [\[ICLR 2026\] Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs](unlearning_isnt_invisible_detecting_unlearning_traces_in_llms_from_model_outputs.md)
+- [\[CVPR 2026\] pH-Strips for Selective Forgetting: A Blunt but Fast Diagnostic Baseline for Machine Unlearning](../../CVPR2026/llm_safety/ph-strips_for_selective_forgetting_a_blunt_but_fast_diagnostic_baseline_for_mach.md)
+- [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
 
 </div>
 

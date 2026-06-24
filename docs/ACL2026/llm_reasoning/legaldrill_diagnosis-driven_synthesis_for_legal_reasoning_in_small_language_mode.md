@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models
 description: >-
-  [ACL 2026][LLM Reasoning][Difficulty Score] LegalDrill employs an Audit Agent to diagnose specific error patterns in 0.6B/1.7B small language models (SLMs) during legal reasoning. It prompts a strong teacher (GPT-4o / Qwen3-30B) to "deliberately reproduce and correct" these errors to generate preference pairs based on diagnostic instructions. Samples that the st
+  [ACL 2026][Reasoning][Legal Reasoning] LegalDrill employs an Audit Agent to diagnose specific error patterns in 0.6B/1.7B small language models (SLMs) during legal reasoning. It prompts a strong teacher (GPT-4o / Qwen3-30B) to "deliberately reproduce and correct" these errors to generate preference pairs based on diagnostic instructions. Samples that the student already understands are filtered out using a Difficulty Score derived from the student's own forced-choice probabil…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Difficulty Score
+  - "ACL 2026"
+  - "Reasoning"
+  - "Legal Reasoning"
+  - "SLM Distillation"
+  - "Diagnosis-Driven Synthesis"
+  - "Difficulty Score"
+  - "Iterative DPO"
 date: 2026-05-08
-content_hash: 2f0420b024460854
+content_hash: a8d3c1d538f24ad1
 ---
+
 # LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models
 
 **Conference**: ACL 2026  
@@ -162,9 +167,9 @@ Notable data: LegalDrill-1.7B improved from 0.47 to 0.85 on Priv. Ent. (+0.38), 
 
 - [\[ACL 2026\] Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication](accurate_legal_reasoning_at_scale_neuro-symbolic_offloading_and_structural_audit.md)
 - [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
-- [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](../../ICML2026/llm_reasoning/densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
-- [\[ACL 2026\] RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners](rsat_structured_attribution_makes_small_language_models_faithful_table_reasoners.md)
+- [\[ICLR 2026\] SLM-MUX: Orchestrating Small Language Models for Reasoning](../../ICLR2026/llm_reasoning/slm-mux_orchestrating_small_language_models_for_reasoning.md)
 - [\[AAAI 2026\] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models](../../AAAI2026/llm_reasoning/chain-of-thought_driven_adversarial_scenario_extrapolation_for_robust_language_m.md)
+- [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](../../ICML2026/llm_reasoning/densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
 
 </div>
 

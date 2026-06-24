@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Finding Structure in Continual Learning
 description: >-
-  [NeurIPS 2025][LLM Safety][Continual Learning] This paper proposes a continual learning optimization framework based on Douglas-Rachford Splitting (DRS)…
+  [NeurIPS 2025][LLM Safety][Continual Learning] This paper proposes a continual learning optimization framework based on Douglas-Rachford Splitting (DRS), which decouples stability and plasticity into two independent proximal subproblems, and replaces KL divergence with Rényi divergence for more robust prior alignment, thereby effectively alleviating catastrophic forgetting without replay buffers or additional modules.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -13,7 +13,7 @@ tags:
   - "Bayesian Inference"
   - "Proximal Operator"
 date: 2026-05-08
-content_hash: 57baf19a1e192488
+content_hash: caae68ad705d80d1
 ---
 
 # Finding Structure in Continual Learning
@@ -134,11 +134,11 @@ The following broader insights emerge from this work:
 
 ## Related Papers
 
+- [\[ICML 2025\] Improving Continual Learning Performance and Efficiency with Auxiliary Classifiers](../../ICML2025/llm_safety/improving_continual_learning_performance_and_efficiency_with_auxiliary_classifie.md)
+- [\[ICML 2025\] Unlocking the Power of Rehearsal in Continual Learning: A Theoretical Perspective](../../ICML2025/llm_safety/unlocking_the_power_of_rehearsal_in_continual_learning_a_theoretical_perspective.md)
 - [\[AAAI 2026\] Attention Retention for Continual Learning with Vision Transformers](../../AAAI2026/llm_safety/attention_retention_for_continual_learning_with_vision_transformers.md)
-- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](../../ICML2026/llm_safety/understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
+- [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](../../CVPR2026/llm_safety/elastic_weight_consolidation_done_right_for_continual_learning.md)
 - [\[ICCV 2025\] Adversarial Robust Memory-Based Continual Learner](../../ICCV2025/llm_safety/adversarial_robust_memory-based_continual_learner.md)
-- [\[NeurIPS 2025\] Reinforcement Learning with Backtracking Feedback](reinforcement_learning_with_backtracking_feedback.md)
-- [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
 
 </div>
 

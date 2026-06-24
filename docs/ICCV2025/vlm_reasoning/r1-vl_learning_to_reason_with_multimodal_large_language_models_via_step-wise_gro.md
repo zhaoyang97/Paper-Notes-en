@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization
 description: >-
-  [Multimodal VLM] This paper proposes StepGRPO, an online reinforcement learning framework that introduces two rule-based step-wise reasoning rewards — StepRAR (Step-wise Reasoning Accuracy Reward) and StepRVR (Step-wise…
+  [VLM Reasoning] This paper proposes StepGRPO, an online reinforcement learning framework that introduces two rule-based step-wise reasoning rewards — StepRAR (Step-wise Reasoning Accuracy Reward) and StepRVR (Step-wise Reasoning Validity Reward) — without requiring a process reward model. The framework addresses the sparse reward problem in RL-based MLLM training, enabling models to autonomously explore and improve their reasoning capabilities.
 tags:
-  - "Multimodal VLM"
+  - "VLM Reasoning"
 date: 2026-05-08
-content_hash: 7d1d8e45517379cd
+content_hash: fc8801309b07e6df
 ---
 
 # R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization
@@ -166,11 +166,11 @@ A solid and effective extension of GRPO to MLLMs. The step-wise reward design is
 
 ## Related Papers
 
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/multimodal_vlm/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
-- [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
+- [\[ACL 2025\] MAmmoTH-VL: Eliciting Multimodal Reasoning with Instruction Tuning at Scale](../../ACL2025/vlm_reasoning/mammoth_vl_multimodal_reasoning.md)
+- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/vlm_reasoning/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
 - [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
-- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](mm-ifengine_towards_multimodal_instruction_following.md)
+- [\[ICCV 2025\] Training-Free Personalization via Retrieval and Reasoning on Fingerprints](training-free_personalization_via_retrieval_and_reasoning_on_fingerprints.md)
+- [\[CVPR 2025\] Document Haystacks: Vision-Language Reasoning Over Piles of 1000+ Documents](../../CVPR2025/vlm_reasoning/document_haystacks_vision-language_reasoning_over_piles_of_1000_documents.md)
 
 </div>
 

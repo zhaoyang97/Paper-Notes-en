@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniHand: A Unified Model for Diverse Controlled 4D Hand Motion Modeling
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] UniHand unifies the long-separated tasks of "estimating hand pose from video" and "generating hand motion under structured conditions" into a single **conditional motion synthesis** problem. By using a Joint VAE to align MANO parameters and 2D/3D skeletons into a shared latent space, and a latent diffusion model to fus
+  [ICLR 2026][Human Understanding][4D Hand Motion] UniHand unifies the long-separated tasks of "estimating hand pose from video" and "generating hand motion under structured conditions" into a single **conditional motion synthesis** problem. By using a Joint VAE to align MANO parameters and 2D/3D skeletons into a shared latent space, and a latent diffusion model to fuse multiple conditions (including a "hand perceptron" that selects hand-specific tokens from global image featur…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "4D Hand Motion"
+  - "Hand Pose Estimation"
+  - "Conditional Motion Generation"
+  - "Latent Diffusion"
+  - "Joint VAE"
 date: 2026-05-08
-content_hash: 487a7d4baa5d37c9
+content_hash: bf484c96c9c406c9
 ---
+
 # UniHand: A Unified Model for Diverse Controlled 4D Hand Motion Modeling
 
 **Conference**: ICLR 2026  
@@ -156,7 +162,7 @@ Ablation of components and conditions on DexYCB and HOT3D:
 - [\[ICLR 2026\] CLUTCH: Contextualized Language model for Unlocking Text-Conditioned Hand motion modelling in the wild](clutch_contextualized_language_model_for_unlocking_text-conditioned_hand_motion_.md)
 - [\[CVPR 2025\] UniHOPE: A Unified Approach for Hand-Only and Hand-Object Pose Estimation](../../CVPR2025/human_understanding/unihope_a_unified_approach_for_hand-only_and_hand-object_pose_estimation.md)
 - [\[ECCV 2024\] Large Motion Model for Unified Multi-Modal Motion Generation](../../ECCV2024/human_understanding/large_motion_model_for_unified_multi-modal_motion_generation.md)
-- [\[ICLR 2026\] GenCape: Structure-Inductive Generative Modeling for Category-Agnostic Pose Estimation](gencape_structure-inductive_generative_modeling_for_category-agnostic_pose_estim.md)
+- [\[ICLR 2026\] TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation](tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
 
 </div>
 

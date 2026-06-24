@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents
 description: >-
-  [AAAI 2026][Block Rearrangement] This paper introduces the Block Rearrangement Problem (BRaP) as a formal problem definition and proposes five solving algorithms based on configuration space search…
+  [AAAI 2026][Block Rearrangement] This paper introduces the Block Rearrangement Problem (BRaP) as a formal problem definition and proposes five solving algorithms based on configuration space search, PDDL symbolic planning, and MAPF. Among them, BR-LaCAM achieves a 92% success rate with millisecond-level solving speed on grids up to 80×80 under extreme density conditions.
 tags:
   - "AAAI 2026"
   - "Block Rearrangement"
@@ -13,7 +13,7 @@ tags:
   - "Dense Environments"
   - "Warehouse Robotics"
 date: 2026-05-08
-content_hash: 6fb68475126f5b6e
+content_hash: 5bbc0bcd932565a8
 ---
 
 # Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents
@@ -154,7 +154,7 @@ Goal R1 is the most challenging setting; BR-LaCAM exhibits higher cost variance 
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
 - [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
 - [\[AAAI 2026\] Finding Diverse Solutions Parameterized by Cliquewidth](finding_diverse_solutions_parameterized_by_cliquewidth.md)
-- [\[AAAI 2026\] An Epistemic Perspective on Agent Awareness](an_epistemic_perspective_on_agent_awareness.md)
+- [\[CVPR 2026\] ALLNet: Multi-task Dense Prediction for Degraded Images](../../CVPR2026/others/allnet_multi-task_dense_prediction_for_degraded_images.md)
 - [\[AAAI 2026\] Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning](bilevel_mcts_for_amortized_o1_node_selection_in_classical_planning.md)
 
 </div>

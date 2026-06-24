@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] To address the issue where CLIP's text space highly entangles "normal" and "abnormal" descriptions—causing near-identical similarity scores for both types of prompts—this paper reshapes CLIP's embedding geometry via three-level (Global/Regional/Hard Negative) cross-modal contrastive training using a self-built dataset
+  [CVPR 2026][Video Understanding][Video Anomaly Detection] To address the issue where CLIP's text space highly entangles "normal" and "abnormal" descriptions—causing near-identical similarity scores for both types of prompts—this paper reshapes CLIP's embedding geometry via three-level (Global/Regional/Hard Negative) cross-modal contrastive training using a self-built dataset (VAGTA). This transforms CLIP into a more abnormality-aware backbone…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Anomaly Detection"
+  - "CLIP Fine-tuning"
+  - "Cross-modal Alignment"
+  - "Hard Negative Samples"
+  - "Abnormality-aware"
 date: 2026-05-08
-content_hash: 2fee8d2551a57711
+content_hash: 69910dbf8e83882b
 ---
+
 # Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,16 @@ Zero-shot setting (anomaly scores derived directly from prompt similarity margin
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection](../../ICLR2026/video_understanding/steering_and_rectifying_latent_representation_manifolds_in_frozen_multi-modal_ll.md)
 - [\[CVPR 2026\] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection](no_need_for_real_anomaly_mllm_empowered_zero-shot_video_anomaly_detection.md)
-- [\[CVPR 2026\] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection](decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp.md)
 - [\[AAAI 2026\] HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](../../AAAI2026/video_understanding/headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_.md)
 - [\[ICML 2026\] Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection](../../ICML2026/video_understanding/privacy-aware_video_anomaly_detection_through_orthogonal_subspace_projection.md)
+- [\[CVPR 2026\] Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning](weakly_supervised_video_anomaly_detection_with_anomaly-connected_components_and_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geometrically Constrained Outlier Synthesis
 description: >-
-  [ICML 2026][AI Safety][Paper Note] GCOS synthesizes virtual outliers along geometric off-manifold directions within the "small-variance subspace" of ID feature PCA. It regulates synthesis intensity via a "conformal shell" $[\alpha_\text{inner},\alpha_\text{outer}]$ derived from Mahalanobis quantiles of a calibration set. Combined with a contrastive regu
+  [ICML 2026][AI Safety][Virtual outlier synthesis] GCOS synthesizes virtual outliers along geometric off-manifold directions within the "small-variance subspace" of ID feature PCA. It regulates synthesis intensity via a "conformal shell" $[\alpha_\text{inner},\alpha_\text{outer}]$ derived from Mahalanobis quantiles of a calibration set. Combined with a contrastive regularization loss using an adaptive margin, it improves average AUROC from 86.21 (VOS) to 93.47 across four near…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Virtual outlier synthesis"
+  - "conformal prediction"
+  - "feature manifold"
+  - "contrastive regularization"
+  - "near-OOD"
 date: 2026-05-08
-content_hash: 472527cc8137a2a1
+content_hash: d034d8945b7950b4
 ---
+
 # Geometrically Constrained Outlier Synthesis
 
 **Conference**: ICML 2026  
@@ -124,14 +130,17 @@ Four near-OOD datasets: Colored MNIST (randomized color-digit correlation), Stan
 
 <div class="related-papers" markdown="1">
 
-1. (ICLR 2022) VOS: Learning What You Don't Know by Virtual Outlier Synthesis
-2. (NeurIPS 2024) NCIS: Neural Conformal Outlier Synthesis
-3. (CVPR 2022) ViM: Out-of-Distribution Solutions via Virtual Logit Matching
+## Related Papers
+
+- [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](../../CVPR2026/ai_safety/image-based_outlier_synthesis_with_training_data.md)
+- [\[ICML 2026\] Deep Sequence Models Tend to Memorize Geometrically; It Is Unclear Why](deep_sequence_models_tend_to_memorize_geometrically_it_is_unclear_why.md)
+- [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)
+- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
+- [\[ICLR 2026\] Private Rate-Constrained Optimization with Applications to Fair Learning](../../ICLR2026/ai_safety/private_rate-constrained_optimization_with_applications_to_fair_learning.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](../../CVPR2026/ai_safety/image-based_outlier_synthesis_with_training_data.md)

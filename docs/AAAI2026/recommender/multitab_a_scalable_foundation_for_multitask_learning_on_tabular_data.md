@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MultiTab: A Scalable Foundation for Multitask Learning on Tabular Data
 description: >-
-  [AAAI 2026][Recommender Systems][Multitask Learning] This paper proposes MultiTab-Net — the first multitask Transformer architecture for tabular data — which alleviates task competition via a multitask masked attention m…
+  [AAAI 2026][Recommender Systems][Multitask Learning] This paper proposes MultiTab-Net — the first multitask Transformer architecture for tabular data — which alleviates task competition via a multitask masked attention mechanism, and substantially outperforms existing MLP-based multitask models and single-task Transformer models across datasets from recommendation, census, and physics domains.
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Masked Attention"
   - "Synthetic Data Benchmark"
 date: 2026-05-08
-content_hash: d8d4bad60c794b4b
+content_hash: 46d0dcc804de64e5
 ---
 
 # MultiTab: A Scalable Foundation for Multitask Learning on Tabular Data
@@ -201,11 +201,11 @@ Compared to SAINT, MultiTab-Net achieves approximately 2× and 8× efficiency im
 
 ## Related Papers
 
+- [\[ICML 2025\] SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning](../../ICML2025/recommender/simplemix_frustratingly_simple_mixing_of_off-_and_on-policy_data_in_language_mod.md)
 - [\[AAAI 2026\] Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling](semi-supervised_synthetic_data_generation_with_fine-grained_relevance_control_fo.md)
 - [\[AAAI 2026\] Probabilistic Hash Embeddings for Online Learning of Categorical Features](probabilistic_hash_embeddings_for_online_learning_of_categorical_features.md)
+- [\[ICLR 2026\] On the Mechanisms of Collaborative Learning in VAE Recommenders](../../ICLR2026/recommender/on_the_mechanisms_of_collaborative_learning_in_vae_recommenders.md)
 - [\[ICML 2026\] Position: Stop Preaching and Start Practising Data Frugality for Responsible Development of AI](../../ICML2026/recommender/position_stop_preaching_and_start_practising_data_frugality_for_responsible_deve.md)
-- [\[ICML 2026\] Learning Design Skills as Memory Policies for Agentic Photonic Inverse Design](../../ICML2026/recommender/learning_design_skills_as_memory_policies_for_agentic_photonic_inverse_design.md)
-- [\[ICML 2026\] Rethinking Contrastive Learning for Graph Collaborative Filtering: Limitations and a Simple Remedy](../../ICML2026/recommender/rethinking_contrastive_learning_for_graph_collaborative_filtering_limitations_an.md)
 
 </div>
 

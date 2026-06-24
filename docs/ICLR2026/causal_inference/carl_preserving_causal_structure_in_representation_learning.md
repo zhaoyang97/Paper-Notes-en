@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CARL: Preserving Causal Structure in Representation Learning
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] CARL investigates the issue of causal structural drift in cross-modal representation learning. By employing three types of constraints—conditional independence preservation, Markov boundary retention, and monotonic alignment consistency—it maps multi-modal data into a shared representation space while preserving indepe
+  [ICLR2026][Causal Inference][Causal Representation Learning] CARL investigates the issue of causal structural drift in cross-modal representation learning. By employing three types of constraints—conditional independence preservation, Markov boundary retention, and monotonic alignment consistency—it maps multi-modal data into a shared representation space while preserving independence relations, mediator information, and causal effect identifiability conditions from the origi…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Causal Representation Learning"
+  - "Cross-modal Alignment"
+  - "Conditional Independence"
+  - "Markov Boundary"
+  - "Identifiability"
 date: 2026-05-08
-content_hash: 1bfb8546d2a171e7
+content_hash: 3cee4305a812d248
 ---
+
 # CARL: Preserving Causal Structure in Representation Learning
 
 **Conference**: ICLR2026  
@@ -128,15 +134,16 @@ In the HPP data, CARL recovered cardiovascular paths consistent with medical evi
 - **Value**: ⭐⭐⭐⭐⭐ Essential reference for causal inference on multi-modal representations, warning against conflating "alignment" with "structural reliability."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
 - [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
 - [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
-- [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
-- [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
-- [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
+- [\[ECCV 2024\] Integrating Markov Blanket Discovery into Causal Representation Learning for Domain Generalization](../../ECCV2024/causal_inference/integrating_markov_blanket_discovery_into_causal_representation_learning_for_dom.md)
+- [\[ICML 2025\] Learning Time-Aware Causal Representation for Model Generalization in Evolving Domains](../../ICML2025/causal_inference/learning_time-aware_causal_representation_for_model_generalization_in_evolving_d.md)
 
 </div>
 

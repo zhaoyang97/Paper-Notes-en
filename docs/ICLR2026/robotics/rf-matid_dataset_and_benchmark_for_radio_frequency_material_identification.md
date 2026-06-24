@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][RF sensing] Constructs the first open-source, large-scale, wideband (4-43.5 GHz), and geometrically diverse RF material identification dataset, RF-MatID, containing 16 fine-grained material categories (5 superclasses) and 142K samples. A systematic benchmark is established covering 9 deep learning models, 5 frequency protocols, an
+  [ICLR 2026][Robotics][RF sensing] Constructs the first open-source, large-scale, wideband (4-43.5 GHz), and geometrically diverse RF material identification dataset, RF-MatID, containing 16 fine-grained material categories (5 superclasses) and 142K samples. A systematic benchmark is established covering 9 deep learning models, 5 frequency protocols, and 7 data splits.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - RF sensing
-  - material identification
-  - UWB-mmWave
-  - dataset benchmark
-  - embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "RF sensing"
+  - "material identification"
+  - "UWB-mmWave"
+  - "dataset benchmark"
+  - "embodied AI"
 date: 2026-05-08
-content_hash: ce8ed3791d1ceed7
+content_hash: 2919a612a87ac697
 ---
+
 # RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification
 
 **Conference**: ICLR 2026  

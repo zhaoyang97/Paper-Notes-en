@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The First Impression Problem: Internal Bias Triggers Overthinking in Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Attention] Reasoning models form a "first impression" (internal bias) regarding the answer the moment they see a question. When this intuitive guess conflicts with subsequent systematic reasoning, the model enters a cycle of self-doubt and re-checking, causing reasoning length to expand by 21%–43%. Existing mitigation methods fai
+  [ICLR 2026 (Poster)][Reasoning][Overthinking] Reasoning models form a "first impression" (internal bias) regarding the answer the moment they see a question. When this intuitive guess conflicts with subsequent systematic reasoning, the model enters a cycle of self-doubt and re-checking, causing reasoning length to expand by 21%–43%. Existing mitigation methods fail to fundamentally eliminate this effect.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Attention
+  - "ICLR 2026 (Poster)"
+  - "Reasoning"
+  - "Overthinking"
+  - "Internal Bias"
+  - "Reasoning Models"
+  - "Causal Intervention"
+  - "Attention Mechanism"
 date: 2026-05-08
-content_hash: 83f6bbc68eec0bbd
+content_hash: 107e20fb0de37c6e
 ---
+
 # The First Impression Problem: Internal Bias Triggers Overthinking in Reasoning Models
 
 **Conference**: ICLR 2026 (Poster)  
@@ -136,10 +141,17 @@ Core Conclusion: Methods like FCS, SEAL, and PROBE essentially just "truncate" t
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking](your_models_have_thought_enough_training_large_reasoning_models_to_stop_overthin.md)
+- [\[ICML 2025\] Adversarial Manipulation of Reasoning Models using Internal Representations](../../ICML2025/llm_reasoning/adversarial_manipulation_of_reasoning_models_using_internal_representations.md)
+- [\[ICLR 2026\] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling](overthinking_reduction_with_decoupled_rewards_and_curriculum_data_scheduling.md)
+- [\[NeurIPS 2025\] The Virtues of Brevity: Avoid Overthinking in Parallel Test-Time Reasoning](../../NeurIPS2025/llm_reasoning/the_virtues_of_brevity_avoid_overthinking_in_parallel_test-time_reasoning.md)
+- [\[ICLR 2026\] Sample Smart, Not Hard: Correctness-First Decoding for Better Reasoning in LLMs](sample_smart_not_hard_correctness-first_decoding_for_better_reasoning_in_llms.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking](your_models_have_thought_enough_training_large_reasoning_models_to_stop_overthin.md)

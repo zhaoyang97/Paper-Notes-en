@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution
 description: >-
-  [NeurIPS 2025][Image Restoration][Image Super-Resolution] This paper proposes DP²O-SR, a framework that exploits the inherent stochasticity of diffusion models to generate diverse super-resolution outputs…
+  [NeurIPS 2025][Image Restoration][Image Super-Resolution] This paper proposes DP²O-SR, a framework that exploits the inherent stochasticity of diffusion models to generate diverse super-resolution outputs, constructs preference pairs via a hybrid perceptual reward, and introduces a Hierarchical Preference Optimization (HPO) strategy to adaptively weight training pairs — significantly improving perceptual quality in real-world image super-resolution without any human annotatio…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Perceptual Quality"
   - "DPO"
 date: 2026-05-08
-content_hash: f44dbcd39455129a
+content_hash: 673a0f0a0f4f40ab
 ---
 
 # DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution
@@ -178,11 +178,11 @@ DP²O-SR not only improves perceptual quality but also **substantially reduces o
 
 ## Related Papers
 
+- [\[CVPR 2026\] GDPO-SR: Group Direct Preference Optimization for One-Step Generative Image Super-Resolution](../../CVPR2026/image_restoration/gdpo-sr_group_direct_preference_optimization_for_one-step_generative_image_super.md)
+- [\[CVPR 2025\] Augmenting Perceptual Super-Resolution via Image Quality Predictors](../../CVPR2025/image_restoration/augmenting_perceptual_super-resolution_via_image_quality_predictors.md)
 - [\[NeurIPS 2025\] Real-World Adverse Weather Image Restoration via Dual-Level Reinforcement Learning with High-Quality Cold Start](real-world_adverse_weather_image_restoration_via_dual-level_reinforcement_learni.md)
-- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](../../CVPR2026/image_restoration/real_iisr_infrared_image_super_resolution_autoregressive.md)
-- [\[CVPR 2026\] FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution](../../CVPR2026/image_restoration/finpercep_rm_a_fine_grained_reward_model_and_co_evolutionary_curriculum_for_rl_ba.md)
-- [\[NeurIPS 2025\] FIPER: Factorized Features for Robust Image Super-Resolution and Compression](fiper_factorized_features_for_robust_image_super-resolution_and_compression.md)
 - [\[NeurIPS 2025\] Audio Super-Resolution with Latent Bridge Models](audio_super-resolution_with_latent_bridge_models.md)
+- [\[CVPR 2025\] Pixel-level and Semantic-level Adjustable Super-resolution: A Dual-LoRA Approach](../../CVPR2025/image_restoration/pixel-level_and_semantic-level_adjustable_super-resolution_a_dual-lora_approach.md)
 
 </div>
 

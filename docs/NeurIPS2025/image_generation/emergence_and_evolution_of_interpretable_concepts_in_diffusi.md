@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Emergence and Evolution of Interpretable Concepts in Diffusion Models
 description: >-
-  [Image Generation] This work is the first to systematically apply Sparse Autoencoders (SAEs) to multi-step diffusion models (Stable Diffusion v1.4)…
+  [Image Generation] This work is the first to systematically apply Sparse Autoencoders (SAEs) to multi-step diffusion models (Stable Diffusion v1.4), revealing that image composition emerges as early as the first reverse diffusion step while stylistic concepts form during intermediate stages. Based on these findings, the paper proposes temporally adaptive causal intervention techniques.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: effe0d7302c93aa0
+content_hash: dada9b1068e44885
 ---
 
 # Emergence and Evolution of Interpretable Concepts in Diffusion Models
@@ -130,8 +130,8 @@ Both interventions incorporate adaptive $\beta$ normalization to stabilize effec
 - [\[NeurIPS 2025\] DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models](dexter_diffusion-guided_explanations_with_textual_reasoning_for_vision_models.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
 - [\[ICCV 2025\] Less is More: Improving Motion Diffusion Models with Sparse Keyframes](../../ICCV2025/image_generation/less_is_more_improving_motion_diffusion_models_with_sparse_keyframes.md)
+- [\[CVPR 2025\] Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models](../../CVPR2025/image_generation/fine-grained_erasure_in_text-to-image_diffusion-based_foundation_models.md)
 - [\[ICCV 2025\] LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models](../../ICCV2025/image_generation/loraverse_a_submodular_framework_to_retrieve_diverse_adapters_for_diffusion_mode.md)
-- [\[ICCV 2025\] TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models](../../ICCV2025/image_generation/trce_towards_reliable_malicious_concept_erasure_in_text-to-image_diffusion_model.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following
 description: >-
-  [ACL 2026][Alignment & RLHF][GRPO] MDP-GRPO addresses the instability of GRPO under discrete low-variance rewards in multi-constraint instruction following. By combining multi-temperature sampling, dual-anchor advantage, prospect-theoretic shaping, and asymmetric KL, it achieves more stable soft/hard constraint satisfaction rates for small models on IFE
+  [ACL2026][LLM Alignment][GRPO] MDP-GRPO addresses the instability of GRPO under discrete low-variance rewards in multi-constraint instruction following. By combining multi-temperature sampling, dual-anchor advantage, prospect-theoretic shaping, and asymmetric KL, it achieves more stable soft/hard constraint satisfaction rates for small models on IFEval, FollowBench, and a custom multi-constraint test set.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - GRPO
-  - Prospect Theory
+  - "ACL2026"
+  - "LLM Alignment"
+  - "GRPO"
+  - "Verifiable Rewards"
+  - "Multi-Constraint Instructions"
+  - "Advantage Stabilization"
+  - "Prospect Theory"
 date: 2026-05-08
-content_hash: e1d2dd96bd08e2b4
+content_hash: 59e9b3a881cbb57c
 ---
+
 # MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following
 
 **Conference**: ACL2026  
@@ -139,10 +143,10 @@ The paper also notes that individual components are not always globally optimal.
 ## Related Papers
 
 - [\[ICLR 2026\] Group-Relative REINFORCE Is Secretly an Off-Policy Algorithm: Demystifying Some Myths About GRPO and Its Friends](../../ICLR2026/llm_alignment/group-relative_reinforce_is_secretly_an_off-policy_algorithm_demystifying_some_m.md)
+- [\[ICLR 2026\] RECAST: Expanding the Boundaries of LLMs' Complex Instruction Following with Multi-Constraint Data](../../ICLR2026/llm_alignment/recast_expanding_the_boundaries_of_llms_complex_instruction_following_with_multi.md)
 - [\[ICLR 2026\] ContextIF: Enhancing Instruction-Following through Context Reward](../../ICLR2026/llm_alignment/contextif_enhancing_instruction-following_through_context_reward.md)
 - [\[ACL 2026\] Taming Extreme Tokens: Covariance-Aware GRPO with Gaussian-Kernel Advantage Reweighting](taming_extreme_tokens_covariance-aware_grpo_with_gaussian-kernel_advantage_rewei.md)
 - [\[AAAI 2026\] LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward](../../AAAI2026/llm_alignment/laf-grpo_in-situ_navigation_instruction_generation_for_the_visually_impaired_via.md)
-- [\[NeurIPS 2025\] GVPO: Group Variance Policy Optimization for Large Language Model Post-Training](../../NeurIPS2025/llm_alignment/gvpo_group_variance_policy_optimization_for_large_language_model_post-training.md)
 
 </div>
 

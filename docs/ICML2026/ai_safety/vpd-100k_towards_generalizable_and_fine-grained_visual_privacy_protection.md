@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection
 description: >-
-  [ICML 2026][AI Safety][Dataset] The authors constructed VPD-100K, a large-scale visual privacy dataset containing 100,000 images, 33 fine-grained categories, and over 190,000 instances (covering four domains: faces, on-screen PII, physical documents, and location markers). They proposed a three-part frequency-domain enhancement module (FDAF + Adaptiv
+  [ICML 2026][AI Safety][Privacy Detection] The authors constructed VPD-100K, a large-scale visual privacy dataset containing 100,000 images, 33 fine-grained categories, and over 190,000 instances (covering four domains: faces, on-screen PII, physical documents, and location markers). They proposed a three-part frequency-domain enhancement module (FDAF + Adaptive Spectral Gating + Frequency Consistency Loss) inserted into the Neck of YOLOv10. This achieved an AP increase from 5…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Dataset
-  - YOLO
+  - "ICML 2026"
+  - "AI Safety"
+  - "Privacy Detection"
+  - "Dataset"
+  - "Frequency Domain Attention"
+  - "YOLO"
+  - "Live Streaming"
 date: 2026-05-08
-content_hash: a53f0835d1d162eb
+content_hash: 5755ab350a689154
 ---
+
 # VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection
 
 **Conference**: ICML 2026  
@@ -139,10 +143,10 @@ The contributions of the three components are +2.2, +2.4, and +1.2 respectively,
 ## Related Papers
 
 - [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
+- [\[ICLR 2026\] Fine-Grained Class-Conditional Distribution Balancing for Debiased Learning](../../ICLR2026/ai_safety/fine-grained_class-conditional_distribution_balancing_for_debiased_learning.md)
+- [\[ICLR 2026\] Fine-Grained Iterative Adversarial Attacks with Limited Computation Budget](../../ICLR2026/ai_safety/fine-grained_iterative_adversarial_attacks_with_limited_computation_budget.md)
 - [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
 - [\[CVPR 2026\] DiffusionFF: A Diffusion-based Framework for Joint Face Forgery Detection and Fine-Grained Artifact Localization](../../CVPR2026/ai_safety/diffusionff_a_diffusion-based_framework_for_joint_face_forgery_detection_and_fin.md)
-- [\[ECCV 2024\] SkyMask: Attack-Agnostic Robust Federated Learning with Fine-Grained Learnable Masks](../../ECCV2024/ai_safety/skymask_attack-agnostic_robust_federated_learning_with_fine-grained_learnable_ma.md)
-- [\[ICML 2026\] Persuasive Privacy](persuasive_privacy.md)
 
 </div>
 

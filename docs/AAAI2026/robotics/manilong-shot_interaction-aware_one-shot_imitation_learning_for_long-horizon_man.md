@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation
 description: >-
-  [AAAI 2026][Robotics][One-shot imitation learning] This paper proposes ManiLong-Shot, a framework comprising three modules—interaction-aware task decomposition, invariant region prediction…
+  [AAAI 2026][Robotics][One-shot imitation learning] This paper proposes ManiLong-Shot, a framework comprising three modules—interaction-aware task decomposition, invariant region prediction, and region matching—that generalizes to 20 unseen long-horizon manipulation tasks after training on only 10 short-horizon tasks, achieving a one-shot imitation success rate of 30.2%, a relative improvement of 22.8% over the prior state of the art.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "invariant regions"
   - "task decomposition"
 date: 2026-05-08
-content_hash: 775da845e0f738d2
+content_hash: df0ce00e4a31e38f
 ---
 
 # ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation
@@ -222,11 +222,11 @@ Representative task comparisons:
 
 ## Related Papers
 
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](../../CVPR2026/robotics/palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
-- [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
+- [\[ICLR 2026\] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation](../../ICLR2026/robotics/sarm_stage-aware_reward_modeling_for_long_horizon_robot_manipulation.md)
 - [\[ICLR 2026\] VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](../../ICLR2026/robotics/vlbiman_vision-language_anchored_one-shot_demonstration_enables_generalizable_bi.md)
+- [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
+- [\[CVPR 2026\] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning](../../CVPR2026/robotics/agile_learning_robust_long-horizon_manipulation_via_affordance-grounded_bidirect.md)
 - [\[AAAI 2026\] PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory](panonav_mapless_zero-shot_object_navigation_with_panoramic_scene_parsing_and_dyn.md)
-- [\[NeurIPS 2025\] RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks](../../NeurIPS2025/robotics/rdd_retrieval-based_demonstration_decomposer_for_planner_alignment_in_long-horiz.md)
 
 </div>
 

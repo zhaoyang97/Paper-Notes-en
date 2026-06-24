@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MaskAdapt: Learning Flexible Motion Adaptation via Mask-Invariant Prior for Physics-Based Characters
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper proposes the MaskAdapt framework, which achieves flexible and precise motion adaptation for physics-based humanoid characters through a two-stage residual learning paradigm: first training a mask-invariant robust base policy, and then training a residual policy on a frozen base controller to modify target bo
+  [CVPR 2026][Video Understanding][Physics simulation] This paper proposes the MaskAdapt framework, which achieves flexible and precise motion adaptation for physics-based humanoid characters through a two-stage residual learning paradigm: first training a mask-invariant robust base policy, and then training a residual policy on a frozen base controller to modify target body parts.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Physics simulation"
+  - "motion adaptation"
+  - "residual learning"
+  - "body part masking"
+  - "humanoid control"
 date: 2026-05-08
-content_hash: ec6da5e766f48435
+content_hash: 41b89037270a3a25
 ---
+
 # MaskAdapt: Learning Flexible Motion Adaptation via Mask-Invariant Prior for Physics-Based Characters
 
 **Conference**: CVPR 2026  

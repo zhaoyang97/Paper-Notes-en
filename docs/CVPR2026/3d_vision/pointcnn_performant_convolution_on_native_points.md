@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PointCNN++: Performant Convolution on Native Points
 description: >-
-  [CVPR 2026][3D Vision][Segmentation] PointCNN++ generalizes sparse convolution from "voxels" to "native points"—convolution centers reside directly on high-precision original coordinates, neighborhoods are searched in continuous space, and local adaptive voxelization is applied only as the final step to pair kernels. By abstracting computation as an MVMR
+  [CVPR 2026][3D Vision][Point Cloud Convolution] PointCNN++ generalizes sparse convolution from "voxels" to "native points"—convolution centers reside directly on high-precision original coordinates, neighborhoods are searched in continuous space, and local adaptive voxelization is applied only as the final step to pair kernels. By abstracting computation as an MVMR (Matrix-Vector Multiplication and Reduction) problem with handwritten GPU kernels…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Convolution"
+  - "Sparse Convolution"
+  - "GPU Operator"
+  - "Point Cloud Registration"
+  - "Semantic Segmentation"
 date: 2026-05-08
-content_hash: e91308a594cbf87a
+content_hash: 6157395a73054106
 ---
+
 # PointCNN++: Performant Convolution on Native Points
 
 **Conference**: CVPR 2026  
@@ -144,16 +149,16 @@ Replacing only the core operator: mIoU improves by **3.8%** over MinkowskiEngine
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Linear Fundamental Matrix Estimation from 7 or 5 Points](linear_fundamental_matrix_estimation_from_7_or_5_points.md)
+- [\[CVPR 2026\] Lafite: A Generative Latent Field for 3D Native Texturing](lafite_a_generative_latent_field_for_3d_native_texturing.md)
 - [\[CVPR 2026\] PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation](posemaster_a_unified_3d_native_framework_for_stylized_pose_generation.md)
 - [\[CVPR 2026\] PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction](pixarmesh_autoregressive_mesh-native_single-view_scene_reconstruction.md)
-- [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
-- [\[CVPR 2025\] Seurat: From Moving Points to Depth](../../CVPR2025/3d_vision/seurat_from_moving_points_to_depth.md)
+- [\[CVPR 2026\] TEXTRIX: Latent Attribute Grid for Native Texture Generation and Beyond](textrix_latent_attribute_grid_for_native_texture_generation_and_beyond.md)
 
 </div>
 

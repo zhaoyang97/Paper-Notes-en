@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Trilemma of Truth in Large Language Models
 description: >-
-  [NeurIPS 2025][Optimization][veracity probing] This paper proposes sAwMIL (Sparse-Aware Multiple Instance Learning), a three-class probing framework that combines MIL and conformal prediction to classify LLM internal act…
+  [NeurIPS 2025][Optimization][veracity probing] This paper proposes sAwMIL (Sparse-Aware Multiple Instance Learning), a three-class probing framework that combines MIL and conformal prediction to classify LLM internal activations into true/false/neither, revealing that truth and falsity signals are not encoded as simple bidirectional opposites but as distributed representations spanning a multi-dimensional subspace.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "truth direction"
   - "LLM internals"
 date: 2026-05-08
-content_hash: 186cffdb7285599f
+content_hash: 7ed8f7b0100f56d9
 ---
 
 # The Trilemma of Truth in Large Language Models

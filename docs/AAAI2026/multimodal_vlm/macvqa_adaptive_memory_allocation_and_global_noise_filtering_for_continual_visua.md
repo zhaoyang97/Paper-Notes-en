@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering
 description: >-
-  [AAAI 2026][Multimodal VLM][Continual Learning] This paper proposes MacVQA, a framework that enhances the robustness of visual features via Global Noise Filtering (GonF) and optimizes cross-task knowledge retention and u…
+  [AAAI 2026][Multimodal VLM][Continual Learning] This paper proposes MacVQA, a framework that enhances the robustness of visual features via Global Noise Filtering (GonF) and optimizes cross-task knowledge retention and update via Adaptive Memory Allocation (AMA) based on prototype retrieval and memory decay. MacVQA achieves 43.38% average accuracy (+3.57%) and 2.32% forgetting rate across 10 continual learning tasks on VQA v2.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Memory Allocation"
   - "Prototype Learning"
 date: 2026-05-08
-content_hash: 82cee0af80f5adcd
+content_hash: 9a2427052ef27e32
 ---
 
 # MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering
@@ -221,11 +221,11 @@ Max-Similarity significantly outperforms random selection, validating the import
 
 ## Related Papers
 
+- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
 - [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](../../ICLR2026/multimodal_vlm/meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
-- [\[ACL 2026\] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering](../../ACL2026/multimodal_vlm/wikiseeker_rethinking_the_role_of_vision-language_models_in_knowledge-based_visu.md)
-- [\[AAAI 2026\] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models](branch_or_layer_zeroth-order_optimization_for_continual_lear.md)
-- [\[AAAI 2026\] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)
-- [\[AAAI 2026\] Explore How to Inject Beneficial Noise in MLLMs](explore_how_to_inject_beneficial_noise_in_mllms.md)
+- [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](../../CVPR2026/multimodal_vlm/vq-va_world_towards_high-quality_visual_question-visual_answering.md)
+- [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](../../ICLR2026/multimodal_vlm/human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
+- [\[ACL 2026\] CRAFT: Critic-Refined Adaptive Key-Frame Targeting for Multimodal Video Question Answering](../../ACL2026/multimodal_vlm/craft_critic-refined_adaptive_key-frame_targeting_for_multimodal_video_question_.md)
 
 </div>
 

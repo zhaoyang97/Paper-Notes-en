@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Attention Retention for Continual Learning with Vision Transformers
 description: >-
-  [AAAI 2026][LLM Safety][Continual Learning] This paper proposes ARCL-ViT, a framework that prevents attention drift in Vision Transformers during continual learning via a two-step strategy of attention mask generation an…
+  [AAAI 2026][LLM Safety][Continual Learning] This paper proposes ARCL-ViT, a framework that prevents attention drift in Vision Transformers during continual learning via a two-step strategy of attention mask generation and gradient masking. It achieves state-of-the-art results on ImageNet-R and CIFAR-100, demonstrating that preserving attention patterns is key to mitigating catastrophic forgetting.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Catastrophic Forgetting"
   - "Gradient Masking"
 date: 2026-05-08
-content_hash: 8645a9f99f80083d
+content_hash: 57508e33fc36246d
 ---
 
 # Attention Retention for Continual Learning with Vision Transformers
@@ -130,11 +130,11 @@ Standard cross-entropy loss is used. The gradient mask is applied after backprop
 
 ## Related Papers
 
+- [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](../../CVPR2026/llm_safety/elastic_weight_consolidation_done_right_for_continual_learning.md)
 - [\[NeurIPS 2025\] Finding Structure in Continual Learning](../../NeurIPS2025/llm_safety/finding_structure_in_continual_learning.md)
-- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](../../ICML2026/llm_safety/understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
+- [\[ICML 2025\] Unlocking the Power of Rehearsal in Continual Learning: A Theoretical Perspective](../../ICML2025/llm_safety/unlocking_the_power_of_rehearsal_in_continual_learning_a_theoretical_perspective.md)
+- [\[ICML 2025\] Improving Continual Learning Performance and Efficiency with Auxiliary Classifiers](../../ICML2025/llm_safety/improving_continual_learning_performance_and_efficiency_with_auxiliary_classifie.md)
 - [\[AAAI 2026\] PANDA: Patch and Distribution-Aware Augmentation for Long-Tailed Exemplar-Free Continual Learning](panda_--_patch_and_distribution-aware_augmentation_for_long-tailed_exemplar-free.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2026/llm_safety/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/llm_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 
 </div>
 

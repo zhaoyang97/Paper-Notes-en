@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising
 description: >-
-  [CVPR 2026][Image Restoration][Knowledge Distillation] Ours proposes the Triangular-Masked Blind-Spot Network (TM-BSN), which aligns the blind-spot shape precisely with the diamond-shaped spatial correlation patterns of real sRGB noise. It achieves self-supervised image denoising at the original resolution without downsampling and further enhances performance through knowl
+  [CVPR 2026][Image Restoration][Blind-Spot Network] Ours proposes the Triangular-Masked Blind-Spot Network (TM-BSN), which aligns the blind-spot shape precisely with the diamond-shaped spatial correlation patterns of real sRGB noise. It achieves self-supervised image denoising at the original resolution without downsampling and further enhances performance through knowledge distillation, reaching SOTA on SIDD and DND benchmarks.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Blind-Spot Network"
+  - "Self-Supervised Denoising"
+  - "Triangular-Masked Convolution"
+  - "Spatially Correlated Noise"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: b172d57ed8c5a5b8
+content_hash: 519461670d3ee3bd
 ---
+
 # TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising
 
 **Conference**: CVPR 2026  
@@ -137,7 +142,7 @@ where $f_D$ is the student, $T_{s_i}$ is the teacher's prediction with offset $s
 - [\[CVPR 2026\] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising](next-scale_prediction_a_self-supervised_approach_for_real-world_image_denoising.md)
 - [\[CVPR 2026\] LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising](lf-bvn_blind-view_network_for_self-supervised_light_field_denoising.md)
 - [\[CVPR 2026\] Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising](convexity-aware_noise_calibration_a_self-supervised_framework_for_noise-level-un.md)
-- [\[CVPR 2026\] Self-Diffusion Driven Blind Imaging](self-diffusion_driven_blind_imaging.md)
+- [\[ECCV 2024\] Asymmetric Mask Scheme for Self-supervised Real Image Denoising](../../ECCV2024/image_restoration/asymmetric_mask_scheme_for_self-supervised_real_image_denoising.md)
 - [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
 
 </div>

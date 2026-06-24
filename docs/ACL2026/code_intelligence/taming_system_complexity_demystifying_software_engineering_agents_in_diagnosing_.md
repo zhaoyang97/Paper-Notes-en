@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Taming System Complexity: Demystifying Software Engineering Agents in Diagnosing Linux Kernel Faults
 description: >-
-  [ACL 2026][Code Intelligence][LLM Agent] By establishing LinuxFLBench, a large-scale Linux kernel fault localization benchmark, this study reveals the limitations of existing LLM Agents in complex systems and proposes the LinuxFL+ framework. Through two-dimensional expansion (directory-awareness and potential causes), LinuxFL+ significantly improves fault loc
+  [ACL2026][Code Intelligence][Fault Localization] By establishing LinuxFLBench, a large-scale Linux kernel fault localization benchmark, this study reveals the limitations of existing LLM Agents in complex systems and proposes the LinuxFL+ framework. Through two-dimensional expansion (directory-awareness and potential causes), LinuxFL+ significantly improves fault localization accuracy at a low cost.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - LLM Agent
+  - "ACL2026"
+  - "Code Intelligence"
+  - "Fault Localization"
+  - "Linux Kernel"
+  - "LLM Agent"
+  - "Code Localization"
+  - "System Complexity"
 date: 2026-05-08
-content_hash: 6aeef477ab889a10
+content_hash: 80f39236b7d8b4a3
 ---
+
 # Taming System Complexity: Demystifying Software Engineering Agents in Diagnosing Linux Kernel Faults
 
 **Conference**: ACL2026  
@@ -149,10 +154,10 @@ The authors acknowledge several main limitations:
 ## Related Papers
 
 - [\[ACL 2026\] EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents](eet_experience-driven_early_termination_for_cost-efficient_software_engineering_.md)
-- [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](../../ICLR2026/code_intelligence/ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
-- [\[ICML 2025\] Training Software Engineering Agents and Verifiers with SWE-Gym](../../ICML2025/code_intelligence/training_software_engineering_agents_and_verifiers_with_swe-gym.md)
 - [\[ICLR 2026\] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization](../../ICLR2026/code_intelligence/boad_discovering_hierarchical_software_engineering_agents_via_bandit_optimizatio.md)
-- [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](../../NeurIPS2025/code_intelligence/swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
+- [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](../../ICLR2026/code_intelligence/swe-rm_execution-free_feedback_for_software_engineering_agents.md)
+- [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](../../ICLR2026/code_intelligence/ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
+- [\[ICLR 2026\] Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents](../../ICLR2026/code_intelligence/process-level_trajectory_evaluation_for_environment_configuration_in_software_en.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs
 description: >-
-  [AAAI 2026][Dialogue Systems][cognitive fatigue] This paper presents Chatsparent, an interactive system that monitors three token-level fatigue signals during LLM inference in real time—attention decay, embedding drift…
+  [AAAI 2026][Dialogue Systems][cognitive fatigue] This paper presents Chatsparent, an interactive system that monitors three token-level fatigue signals during LLM inference in real time—attention decay, embedding drift, and entropy collapse—aggregates them into a unified fatigue index, and automatically applies lightweight interventions (prompt re-injection, attention reset, entropy-regularized decoding, self-reflection checkpoints) when fatigue thresholds are triggered…
 tags:
   - "AAAI 2026"
   - "Dialogue Systems"
@@ -12,7 +12,7 @@ tags:
   - "entropy collapse"
   - "interpretability"
 date: 2026-05-08
-content_hash: ed4c901854acc167
+content_hash: 04170a2737f06780
 ---
 
 # Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs
@@ -140,7 +140,7 @@ Evaluated using Falcon-7B-Instruct (4-bit NF4 quantization) on the HotpotQA data
 
 - [\[ACL 2026\] Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation](../../ACL2026/dialogue/cognitive_policy-driven_llm_for_diagnosis_and_intervention_of_cognitive_distorti.md)
 - [\[AAAI 2026\] Emergent Persuasion: Will LLMs Persuade Without Being Prompted?](emergent_persuasion_will_llms_persuade_without_being_prompted.md)
-- [\[AAAI 2026\] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL](teaching_large_language_models_to_maintain_contextual_faithfulness_via_synthetic.md)
+- [\[ACL 2025\] Enabling Chatbots with Eyes and Ears: An Immersive Multimodal Conversation System](../../ACL2025/dialogue/enabling_chatbots_with_eyes_and_ears_an_immersive_multimodal_conversation_system.md)
 - [\[ACL 2026\] MA$^2$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion](../../ACL2026/dialogue/ma2p_a_meta-cognitive_autonomous_intelligent_agents_framework_for_complex_persua.md)
 - [\[ICML 2026\] From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents](../../ICML2026/dialogue/from_self-evolving_synthetic_data_to_verifiable-reward_rl_post-training_multi-tu.md)
 

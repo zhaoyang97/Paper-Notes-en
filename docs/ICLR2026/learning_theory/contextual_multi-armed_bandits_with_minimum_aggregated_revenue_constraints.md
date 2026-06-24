@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper studies a new setting of "Contextual Bandits + Minimum Aggregated Revenue Constraints per arm" (MAB-ARC). It characterizes the optimal allocation using linear programming (LP), proposes two algorithms—Optimistic (OLP) and Optimistic-Pessimistic (OPLP)—and proves via lower bounds that once contexts are introd
+  [ICLR 2026][learning theory][multi-armed bandits] This paper studies a new setting of "Contextual Bandits + Minimum Aggregated Revenue Constraints per arm" (MAB-ARC). It characterizes the optimal allocation using linear programming (LP), proposes two algorithms—Optimistic (OLP) and Optimistic-Pessimistic (OPLP)—and proves via lower bounds that once contexts are introduced, the "free exploration" property relied upon in prior work fails, reactivating the exploration-exploitati…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "learning theory"
+  - "multi-armed bandits"
+  - "contextual bandits"
+  - "constrained bandits"
+  - "revenue guarantee"
+  - "regret bound"
+  - "linear programming"
 date: 2026-05-08
-content_hash: c03c69501d2d5731
+content_hash: 8ba5708b008b71d1
 ---
+
 # Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints
 
 **Conference**: ICLR 2026  
@@ -117,11 +124,11 @@ Experiments also investigate the sensitivity of OPLP to changes in the feasibili
 
 ## Related Papers
 
-- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
 - [\[ICML 2026\] Online Learning with Recency: Algorithms for Sliding-window Streaming Multi-armed Bandits](../../ICML2026/learning_theory/online_learning_with_recency_algorithms_for_sliding-window_streaming_multi-armed.md)
+- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
 - [\[ICLR 2026\] Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits](towards_a_sharp_analysis_of_offline_policy_learning_for_f-divergence-regularized.md)
-- [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
 - [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
+- [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
 
 </div>
 

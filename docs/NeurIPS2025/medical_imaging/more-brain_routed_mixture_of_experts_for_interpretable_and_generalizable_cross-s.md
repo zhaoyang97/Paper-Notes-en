@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding
 description: >-
-  [NeurIPS 2025][Medical Imaging][fMRI visual decoding] This paper proposes MoRE-Brain, a neuroscience-inspired fMRI visual decoding framework that employs a hierarchical Mixture-of-Experts (MoE) architecture to simulate t…
+  [NeurIPS 2025][Medical Imaging][fMRI visual decoding] This paper proposes MoRE-Brain, a neuroscience-inspired fMRI visual decoding framework that employs a hierarchical Mixture-of-Experts (MoE) architecture to simulate the specialized processing of the brain's visual pathway. Combined with a dynamic temporal-spatial dual-routing mechanism that guides image generation via a diffusion model, MoRE-Brain achieves high-fidelity reconstruction while enabling efficient cross-subject…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "cross-subject generalization"
   - "diffusion model"
 date: 2026-05-08
-content_hash: 7f01fbeae4ce0734
+content_hash: acf74a290340e772
 ---
 
 # MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding
@@ -170,10 +170,10 @@ The combination of dual conditioning (text + image) and dual routing (TS) achiev
 ## Related Papers
 
 - [\[NeurIPS 2025\] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding](zebra_towards_zero-shot_cross-subject_generalization_for_universal_brain_visual_.md)
+- [\[ICML 2025\] I2MoE: Interpretable Multimodal Interaction-aware Mixture-of-Experts](../../ICML2025/medical_imaging/i2moe_interpretable_multimodal_interaction-aware_mixture-of-experts.md)
 - [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](../../ICLR2026/medical_imaging/towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
-- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](../../CVPR2026/medical_imaging/meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
-- [\[ICCV 2025\] Beyond Brain Decoding: Visual-Semantic Reconstructions to Mental Creation Extension Based on fMRI](../../ICCV2025/medical_imaging/beyond_brain_decoding_visualsemantic_reconstructions_to_ment.md)
+- [\[CVPR 2026\] Duala: Dual-Level Alignment of Subjects and Stimuli for Cross-Subject fMRI Decoding](../../CVPR2026/medical_imaging/duala_dual-level_alignment_of_subjects_and_stimuli_for_cross-subject_fmri_decodi.md)
 
 </div>
 

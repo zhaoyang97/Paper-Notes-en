@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gaussian Splatting-based Low-Rank Tensor Representation for Multi-Dimensional Image Recovery
 description: >-
-  [CVPR 2026][Image Restoration][t-SVD] This work integrates Gaussian Splatting from 3D reconstruction into the t-SVD framework: 2D Gaussian Splatting is used to generate the latent tensor, while 1D Gaussian Splatting generates the transform matrix. This results in GSLR, a continuous, compact representation capable of capturing local high-frequency details.
+  [CVPR 2026][Image Restoration][Gaussian Splatting] This work integrates Gaussian Splatting from 3D reconstruction into the t-SVD framework: 2D Gaussian Splatting is used to generate the latent tensor, while 1D Gaussian Splatting generates the transform matrix. This results in GSLR, a continuous, compact representation capable of capturing local high-frequency details. Based on this, an unsupervised multi-dimensional image recovery model is established…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - t-SVD
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Gaussian Splatting"
+  - "Low-Rank Tensor"
+  - "t-SVD"
+  - "Multi-dimensional Image Recovery"
+  - "High-frequency Information"
 date: 2026-05-08
-content_hash: 826a4fd59025ad10
+content_hash: f564bbd8ff614206
 ---
+
 # Gaussian Splatting-based Low-Rank Tensor Representation for Multi-Dimensional Image Recovery
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ Additionally, comparing GSLR with **native 2D GS** (Tab.6): GSLR achieves 43.630
 
 ## Related Papers
 
-- [\[CVPR 2026\] Low-Rank Residual Diffusion Models](low-rank_residual_diffusion_models.md)
+- [\[CVPR 2026\] Self-Attention Driven Tensor Representation for High-Order Data Recovery](self-attention_driven_tensor_representation_for_high-order_data_recovery.md)
+- [\[CVPR 2026\] LRDUN: A Low-Rank Deep Unfolding Network for Efficient Spectral Compressive Imaging](lrdun_a_low-rank_deep_unfolding_network_for_efficient_spectral_compressive_imagi.md)
 - [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
 - [\[CVPR 2026\] BiProLoRA: Bilevel Prompt LoRA for Real Scene Recovery](biprolora_bilevel_prompt_lora_for_real_scene_recovery.md)
-- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
-- [\[CVPR 2026\] MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring](motionaware_animatable_gaussian_avatars_deblurring.md)
+- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_with_unpaired_data.md)
 
 </div>
 

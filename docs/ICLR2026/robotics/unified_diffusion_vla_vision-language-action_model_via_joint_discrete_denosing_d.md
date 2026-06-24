@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] UD-VLA integrates "visual instruction understanding → future scene generation → action inference" into a **single joint discrete denoising trajectory** (JD3P). This allows action tokens to iteratively refine themselves by "attending to" increasingly clear future image tokens during each denoising step. It achieves SOTA
+  [ICLR 2026][Robotics][VLA] UD-VLA integrates "visual instruction understanding → future scene generation → action inference" into a **single joint discrete denoising trajectory** (JD3P). This allows action tokens to iteratively refine themselves by "attending to" increasingly clear future image tokens during each denoising step. It achieves SOTA performance on CALVIN, LIBERO, and SimplerEnv while reaching an inference speed 4x faster than autoregressive methods.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Unified Discrete Diffusion"
+  - "Joint Denoising"
+  - "Future Frame Prediction"
+  - "Mixed Attention"
 date: 2026-05-08
-content_hash: ed7027f209646162
+content_hash: ac57a3de0ceaba8f
 ---
+
 # Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process
 
 **Conference**: ICLR 2026  
@@ -163,8 +168,8 @@ SimplerEnv-WidowX Average Success Rate: UD-VLA **76.0%**, significantly outperfo
 - [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](../../ICML2026/robotics/discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
 - [\[ICLR 2026\] HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model](hybridvla_collaborative_diffusion_and_autoregression_in_a_unified_vision-languag.md)
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
+- [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
 - [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
-- [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
 
 </div>
 

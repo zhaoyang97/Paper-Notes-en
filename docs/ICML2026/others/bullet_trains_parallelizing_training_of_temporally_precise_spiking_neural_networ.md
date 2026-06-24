@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks
 description: >-
-  [ICML 2026][Others][Paper Note] A parallel training method for Spiking Neural Networks (SNNs) based on parallel associative scan is proposed, achieving up to 44× acceleration while maintaining exact hard-reset dynamics, using a differentiable numerical root solver to compute spike times with machine precision.
+  [ICML 2026][Spiking Neural Networks] A parallel training method for Spiking Neural Networks (SNNs) based on parallel associative scan is proposed, achieving up to 44× acceleration while maintaining exact hard-reset dynamics, using a differentiable numerical root solver to compute spike times with machine precision.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Spiking Neural Networks"
+  - "Parallel Associative Scan"
+  - "Precise Spike Timing"
+  - "Event-driven"
+  - "Neuromorphic Computing"
 date: 2026-05-08
-content_hash: 22079f734de5cb47
+content_hash: 1577da14020fc9a2
 ---
+
 # Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks
 
 **Conference**: ICML 2026  
@@ -135,11 +140,11 @@ The output layer uses $N_{\text{cls}}$ weighted leaky integrators, converting sp
 
 ## Related Papers
 
+- [\[ICLR 2026\] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks](../../ICLR2026/others/online_pseudo-zeroth-order_training_of_neuromorphic_spiking_neural_networks.md)
+- [\[ICLR 2026\] Beyond Linear Processing: Dendritic Bilinear Integration in Spiking Neural Networks](../../ICLR2026/others/beyond_linear_processing_dendritic_bilinear_integration_in_spiking_neural_networ.md)
 - [\[ICLR 2026\] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition](../../ICLR2026/others/training_deep_normalization-free_spiking_neural_networks_with_lateral_inhibition.md)
+- [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](../../ICLR2026/others/breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
 - [\[AAAI 2026\] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](../../AAAI2026/others/pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)
-- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](../../AAAI2026/others/tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
-- [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
-- [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](../../AAAI2026/others/i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
 
 </div>
 

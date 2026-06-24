@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal Fusion] This paper identifies three types of shortcut learning in multimodal sarcasm detection (character label bias, canned laughter label leakage…
+  [AAAI 2026][Multimodal VLM][Multimodal Fusion] This paper identifies three types of shortcut learning in multimodal sarcasm detection (character label bias, canned laughter label leakage, and sentiment inconsistency shortcuts), reconstructs a shortcut-free benchmark MUStARD++R, and proposes MCIB, a multimodal fusion framework based on the Conditional Information Bottleneck. MCIB achieves effective fusion by compressing redundancy in the primary modality while preserving compl…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Shortcut Learning"
   - "Mutual Information"
 date: 2026-05-08
-content_hash: 98156143097a114d
+content_hash: 2bdfc3d08871003f
 ---
 
 # Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection
@@ -154,11 +154,11 @@ $\mathcal{L}_{total} = \alpha_0 \mathcal{L}_0 + \alpha_1 \mathcal{L}_1 + \alpha_
 
 ## Related Papers
 
+- [\[ICML 2025\] Learning Optimal Multimodal Information Bottleneck Representations](../../ICML2025/multimodal_vlm/learning_optimal_multimodal_information_bottleneck_representations.md)
 - [\[ACL 2026\] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck](../../ACL2026/multimodal_vlm/from_verbatim_to_gist_distilling_pyramidal_multimodal_memory_via_semantic_inform.md)
-- [\[AAAI 2026\] BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning](bofa_bridge-layer_orthogonal_low-rank_fusion_for_clip-based_.md)
-- [\[AAAI 2026\] Information Theoretic Optimal Surveillance for Epidemic Prevalence in Networks](information_theoretic_optimal_surveillance_for_epidemic_prevalence_in_networks.md)
-- [\[ICML 2026\] Text-Conditional JEPA for Learning Semantically Rich Visual Representations](../../ICML2026/multimodal_vlm/text-conditional_jepa_for_learning_semantically_rich_visual_representations.md)
-- [\[ICML 2026\] Conditional Diffusion Sampling](../../ICML2026/multimodal_vlm/conditional_diffusion_sampling.md)
+- [\[ICLR 2026\] Calibrated Information Bottleneck for Trusted Multi-modal Clustering](../../ICLR2026/multimodal_vlm/calibrated_information_bottleneck_for_trusted_multi-modal_clustering.md)
+- [\[CVPR 2026\] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition](../../CVPR2026/multimodal_vlm/sed-ud_an_influence-driven_and_hierarchically-decoupled_information_bottleneck_f.md)
+- [\[CVPR 2026\] MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection](../../CVPR2026/multimodal_vlm/mmsd30_a_multi-image_benchmark_for_real-world_multimodal_sarcasm_detection.md)
 
 </div>
 

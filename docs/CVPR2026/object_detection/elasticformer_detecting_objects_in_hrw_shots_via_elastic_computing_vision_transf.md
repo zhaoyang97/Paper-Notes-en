@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ElasticFormer: Detecting Objects in HRW Shots via Elastic Computing Vision Transformer
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] ElasticFormer equips a sparse ViT backbone with a lightweight module called ElasticSelector, allowing it to dynamically determine the number of windows retained for local attention based on the "foreground ratio" of the image during the forward pass. This reduces backbone FLOPs by 80% on PANDA gigapixel detection while
+  [CVPR 2026][Object Detection][High-resolution wide-field detection] ElasticFormer equips a sparse ViT backbone with a lightweight module called ElasticSelector, allowing it to dynamically determine the number of windows retained for local attention based on the "foreground ratio" of the image during the forward pass. This reduces backbone FLOPs by 80% on PANDA gigapixel detection while simultaneously improving AP50.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "High-resolution wide-field detection"
+  - "Sparse ViT backbone"
+  - "Adaptive sparsity rate"
+  - "Foreground ratio prediction"
+  - "Weakly supervised detection"
 date: 2026-05-08
-content_hash: f356f6cb7f1afb7f
+content_hash: bf63d94b7f363446
 ---
+
 # ElasticFormer: Detecting Objects in HRW Shots via Elastic Computing Vision Transformer
 
 **Conference**: CVPR 2026  
@@ -149,14 +155,13 @@ When paired with DINO, ElasticFormer outperforms SparseFormer by 3.3% AP50 while
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](show_dont_tell_detecting_novel_objects_by_watching.md)
 - [\[CVPR 2026\] Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection](detecting_unknown_objects_via_energy-based_separation.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 - [\[ECCV 2024\] GRA: Detecting Oriented Objects Through Group-Wise Rotating and Attention](../../ECCV2024/object_detection/gra_detecting_oriented_objects_through_group-wise_rotating_and_attention.md)
+- [\[CVPR 2025\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](../../CVPR2025/object_detection/show_dont_tell_detecting_novel_objects_by_watching_human_videos.md)
 - [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](../../AAAI2026/object_detection/temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
 
 </div>

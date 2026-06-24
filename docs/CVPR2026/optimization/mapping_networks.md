@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mapping Networks
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] This paper proposes Mapping Networks—a "meta-parameterization" method that utilizes a low-dimensional trainable latent vector $z$ (coupled with fixed mapping weights modulated by $z$) to generate all parameters of a target network. By shifting the training process from a high-dimensional weight space to a low-dimension
+  [CVPR 2026][Optimization][Hypernetworks] This paper proposes Mapping Networks—a "meta-parameterization" method that utilizes a low-dimensional trainable latent vector $z$ (coupled with fixed mapping weights modulated by $z$) to generate all parameters of a target network. By shifting the training process from a high-dimensional weight space to a low-dimensional latent space, the method achieves or exceeds the accuracy of the original network on tasks such as image classificat…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Optimization"
+  - "Hypernetworks"
+  - "meta-parameterization"
+  - "weight manifold"
+  - "latent vector"
+  - "overfitting suppression"
 date: 2026-05-08
-content_hash: c61a5828271a2ca9
+content_hash: d2b618f4f6264a91
 ---
+
 # Mapping Networks
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ With only 2,048 trainable parameters, the method approaches the accuracy of full
 
 ## Related Papers
 
+- [\[ICLR 2026\] Federated Learning with Profile Mapping under Distribution Shifts and Drifts](../../ICLR2026/optimization/federated_learning_with_profile_mapping_under_distribution_shifts_and_drifts.md)
 - [\[NeurIPS 2025\] Auto-Compressing Networks](../../NeurIPS2025/optimization/auto-compressing_networks.md)
 - [\[ICLR 2026\] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks](../../ICLR2026/optimization/entropic_confinement_and_mode_connectivity_in_overparameterized_neural_networks.md)
 - [\[ICLR 2026\] Rapid Training of Hamiltonian Graph Networks using Random Features](../../ICLR2026/optimization/rapid_training_of_hamiltonian_graph_networks_using_random_features.md)
-- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
-- [\[ICLR 2026\] Πnet: Optimizing Hard-Constrained Neural Networks with Orthogonal Projection Layers](../../ICLR2026/optimization/pinet_optimizing_hard-constrained_neural_networks_with_orthogonal_projection_lay.md)
+- [\[ICLR 2026\] Difference Predictive Coding for Training Spiking Neural Networks](../../ICLR2026/optimization/difference_predictive_coding_for_training_spiking_neural_networks.md)
 
 </div>
 

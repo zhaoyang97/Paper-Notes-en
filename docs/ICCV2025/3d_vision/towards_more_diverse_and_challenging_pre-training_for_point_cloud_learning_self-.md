@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views
 description: >-
-  [ICCV 2025][3D Vision][Point cloud self-supervised learning] This paper proposes Point-PQAE, the first framework to introduce cross-view reconstruction into 3D generative self-supervised learning. By designing a point cl…
+  [ICCV 2025][3D Vision][Point cloud self-supervised learning] This paper proposes Point-PQAE, the first framework to introduce cross-view reconstruction into 3D generative self-supervised learning. By designing a point cloud cropping mechanism to generate decoupled views, a View-Relative Positional Embedding (VRPE), and a Positional Query module, the pre-training task becomes more challenging and informative. Point-PQAE surpasses Point-MAE by an average of 6.7% on ScanObjectNN…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "positional query"
   - "pre-training"
 date: 2026-05-08
-content_hash: 5c8fb9d73ace32cc
+content_hash: f21670fc7dc0bd9b
 ---
 
 # Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views
@@ -58,12 +58,12 @@ Point-PQAE consists of three core modules:
 
    This work is the first to design a cropping mechanism for 3D self-supervised learning. Unlike 2D images, the number of points within a fixed-size 3D cube can vary drastically. The design proceeds as follows:
 
-   - Randomly sample crop ratios $r_1, r_2 \in [r_m, 1]$ (with $r_m = 0.6$).
-   - Randomly select two center points $\mathbf{C_1}, \mathbf{C_2}$.
-   - For each center, select the nearest $r_i \times p$ points to form views $\mathbf{X}_1, \mathbf{X}_2$.
-   - Record the geometric center $\mathbf{L}_1, \mathbf{L}_2$ of each view.
-   - **Independent normalization**: Each view is normalized with its own geometric center as the origin, using min-max normalization.
-   - **Random rotation augmentation**: Each view is independently rotated to further decouple the coordinate systems.
+    - Randomly sample crop ratios $r_1, r_2 \in [r_m, 1]$ (with $r_m = 0.6$).
+    - Randomly select two center points $\mathbf{C_1}, \mathbf{C_2}$.
+    - For each center, select the nearest $r_i \times p$ points to form views $\mathbf{X}_1, \mathbf{X}_2$.
+    - Record the geometric center $\mathbf{L}_1, \mathbf{L}_2$ of each view.
+    - **Independent normalization**: Each view is normalized with its own geometric center as the origin, using min-max normalization.
+    - **Random rotation augmentation**: Each view is independently rotated to further decouple the coordinate systems.
 
    Independent normalization and random rotation completely decouple the coordinate frames of the two views, eliminating any fixed spatial relationship.
 
@@ -71,9 +71,9 @@ Point-PQAE consists of three core modules:
 
    The key to cross-view reconstruction lies in informing the model of the relative spatial relationship between the two views.
 
-   - Define the inter-view relative position: $\mathbf{RL}_{1 \to 2} = \mathbf{L}_1 - \mathbf{L}_2$
-   - Combine with patch-level relative positions: $\mathbf{RP}_{1 \to 2} = \text{Concat}(\mathbf{G}_2, \mathbf{RL}_{1 \to 2}) \in \mathbb{R}^{n \times 6}$
-   - Map the 6-dimensional relative position to $D$ dimensions using **fixed sinusoidal encoding** (rather than learnable encoding):
+    - Define the inter-view relative position: $\mathbf{RL}_{1 \to 2} = \mathbf{L}_1 - \mathbf{L}_2$
+    - Combine with patch-level relative positions: $\mathbf{RP}_{1 \to 2} = \text{Concat}(\mathbf{G}_2, \mathbf{RL}_{1 \to 2}) \in \mathbb{R}^{n \times 6}$
+    - Map the 6-dimensional relative position to $D$ dimensions using **fixed sinusoidal encoding** (rather than learnable encoding):
 
    $\mathbf{VRPE}_{1 \to 2}^i = [\sin(\frac{\mathbf{RP}^i}{e^{2/D_{12}}}), \cos(\frac{\mathbf{RP}^i}{e^{2/D_{12}}}), \ldots]$
 
@@ -178,9 +178,9 @@ Without relying on cross-modal teachers, Point-PQAE matches or surpasses ReCon, 
 
 - [\[ICCV 2025\] StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning](strumamba3d_exploring_structural_mamba_for_self-supervised_point_cloud_represent.md)
 - [\[ICCV 2025\] 4D Visual Pre-training for Robot Learning](4d_visual_pretraining_for_robot_learning.md)
+- [\[CVPR 2025\] Sonata: Self-Supervised Learning of Reliable Point Representations](../../CVPR2025/3d_vision/sonata_self-supervised_learning_of_reliable_point_representations.md)
+- [\[CVPR 2025\] UniPre3D: Unified Pre-training of 3D Point Cloud Models with Cross-Modal Gaussian Splatting](../../CVPR2025/3d_vision/unipre3d_unified_pre-training_of_3d_point_cloud_models_with_cross-modal_gaussian.md)
 - [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](../../CVPR2026/3d_vision/e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[ICCV 2025\] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views](no_pose_at_all_self-supervised_pose-free_3d_gaussian_splatting_from_sparse_views.md)
-- [\[ICCV 2025\] DAP-MAE: Domain-Adaptive Point Cloud Masked Autoencoder for Effective Cross-Domain Learning](dap-mae_domain-adaptive_point_cloud_masked_autoencoder_for_effective_cross-domai.md)
 
 </div>
 

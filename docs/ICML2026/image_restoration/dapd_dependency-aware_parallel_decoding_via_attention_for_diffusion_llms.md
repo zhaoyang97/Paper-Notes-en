@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DAPD: Dependency-Aware Parallel Decoding via Attention for Diffusion LLMs
 description: >-
-  [ICML 2026][Image Restoration][dLLM] DAPD transforms the single-step parallel unmasking problem of dLLMs into a dynamic graph coloring problem of "selecting independent sets on self-attention-induced MRFs." Without any training, it simultaneously unmasks weakly dependent positions, reducing decoding steps to 1/3.87 of the original on LLaDA / Dream for mul
+  [ICML 2026][Image Restoration][dLLM] DAPD transforms the single-step parallel unmasking problem of dLLMs into a dynamic graph coloring problem of "selecting independent sets on self-attention-induced MRFs." Without any training, it simultaneously unmasks weakly dependent positions, reducing decoding steps to 1/3.87 of the original on LLaDA / Dream for multi-question mixed prompts with almost no loss in accuracy.
 tags:
-  - ICML 2026
-  - Image Restoration
-  - dLLM
+  - "ICML 2026"
+  - "Image Restoration"
+  - "dLLM"
+  - "Parallel Decoding"
+  - "Self-Attention"
+  - "Markov Random Field"
+  - "Graph Coloring"
 date: 2026-05-08
-content_hash: 6eaac4e95260719f
+content_hash: 49e35859a8f428d9
 ---
+
 # DAPD: Dependency-Aware Parallel Decoding via Attention for Diffusion LLMs
 
 **Conference**: ICML 2026  
@@ -129,8 +134,8 @@ On tasks like MBPP and IFEval, DAPD significantly outperformed baselines that re
 
 - [\[ICML 2026\] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention](dyllm_efficient_diffusion_llm_inference_via_saliency-based_token_selection_and_p.md)
 - [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
-- [\[ICLR 2026\] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs](../../ICLR2026/image_restoration/skip_to_the_good_part_representation_structure_inference-time_layer_skipping_in_.md)
 - [\[ICML 2025\] ε-VAE: Denoising as Visual Decoding](../../ICML2025/image_restoration/epsilon-vae_denoising_as_visual_decoding.md)
+- [\[ICLR 2026\] Text-Aware Image Restoration with Diffusion Models](../../ICLR2026/image_restoration/text-aware_image_restoration_with_diffusion_models.md)
 - [\[ICML 2026\] Degradation-Aware Metric Prompting for Hyperspectral Image Restoration](degradation-aware_metric_prompting_for_hyperspectral_image_restoration.md)
 
 </div>

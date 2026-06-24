@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bounded Hyperbolic Tangent: A Stable and Efficient Alternative to Pre-Layer Normalization in Large Language Models
 description: >-
-  [ICML 2026][Model Compression][Paper Note] Ours proposes Bounded Hyperbolic Tanh (BHyT), a data-driven input-bounded $\tanh$ transformation, as a plug-and-play alternative to Pre-Layer Normalization. It suppresses depth-wise activation growth while avoiding redundant variance calculations, achieving 1.6% faster training and a 1.77% increase in generation throug
+  [ICML 2026][Model Compression][Normalization alternative] Ours proposes Bounded Hyperbolic Tanh (BHyT), a data-driven input-bounded $\tanh$ transformation, as a plug-and-play alternative to Pre-Layer Normalization. It suppresses depth-wise activation growth while avoiding redundant variance calculations, achieving 1.6% faster training and a 1.77% increase in generation throughput compared to RMSNorm, with downstream performance consistently exceeding existing methods.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Normalization alternative"
+  - "Transformer stability"
+  - "Training efficiency"
+  - "Variance propagation"
+  - "Depth scaling"
 date: 2026-05-08
-content_hash: 51e35f9e57931577
+content_hash: 0451775add2794d4
 ---
+
 # Bounded Hyperbolic Tangent: A Stable and Efficient Alternative to Pre-Layer Normalization in Large Language Models
 
 **Conference**: ICML 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Data Analysis for Growing Data
 description: >-
-  [NeurIPS 2025][Machine Learning Theory][Adaptive data analysis] This paper establishes the first generalization bounds for adaptive analysis over dynamically growing data…
+  [NeurIPS 2025][Machine Learning Theory][Adaptive data analysis] This paper establishes the first generalization bounds for adaptive analysis over dynamically growing data, permitting analysts to schedule queries adaptively based on current dataset size, and achieving increasingly tight guarantees as data accumulates via time-varying empirical accuracy bounds and differential privacy mechanisms.
 tags:
   - "NeurIPS 2025"
   - "Machine Learning Theory"
@@ -12,7 +12,7 @@ tags:
   - "dynamic data"
   - "overfitting"
 date: 2026-05-08
-content_hash: 92396bc3c04c2f87
+content_hash: 65d742fc6f5ce62c
 ---
 
 # Adaptive Data Analysis for Growing Data
@@ -119,11 +119,11 @@ This is a purely theoretical work. The generalization bounds are instantiated co
 
 ## Related Papers
 
-- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](../../ICML2026/learning_theory/provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
-- [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
-- [\[NeurIPS 2025\] Revisiting Agnostic Boosting](revisiting_agnostic_boosting.md)
-- [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](infrequent_exploration_in_linear_bandits.md)
-- [\[NeurIPS 2025\] Reliably Detecting Model Failures in Deployment Without Labels](reliably_detecting_model_failures_in_deployment_without_labels.md)
+- [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](../../ICLR2026/learning_theory/high-dimensional_analysis_of_synthetic_data_selection.md)
+- [\[ICLR 2026\] Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles](../../ICLR2026/learning_theory/data-aware_and_scalable_sensitivity_analysis_for_decision_tree_ensembles.md)
+- [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](../../ICLR2026/learning_theory/robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
+- [\[ICLR 2026\] Data-to-Energy Stochastic Dynamics](../../ICLR2026/learning_theory/data-to-energy_stochastic_dynamics.md)
+- [\[ICML 2026\] The Data Manifold under the Microscope](../../ICML2026/learning_theory/the_data_manifold_under_the_microscope.md)
 
 </div>
 

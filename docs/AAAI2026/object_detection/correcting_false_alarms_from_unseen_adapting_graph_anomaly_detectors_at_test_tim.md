@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time
 description: >-
-  [AAAI 2026][Object Detection][Graph Anomaly Detection] This paper proposes TUNE, a plug-and-play test-time adaptation framework that addresses the "normality shift" problem in graph anomaly detection—caused by the emerge…
+  [AAAI 2026][Object Detection][Graph Anomaly Detection] This paper proposes TUNE, a plug-and-play test-time adaptation framework that addresses the "normality shift" problem in graph anomaly detection—caused by the emergence of new normal node categories—by transforming node features via a graph aligner. It leverages the degree of aggregation contamination as an unsupervised adaptation signal and significantly enhances the generalization of various pretrained GAD models across…
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Aggregation Contamination"
   - "Plug-and-Play"
 date: 2026-05-08
-content_hash: 2fe553f7e44c685e
+content_hash: 9b28a484d613364b
 ---
 
 # Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time
@@ -121,9 +121,9 @@ TUNE achieves substantial improvements across nearly all dataset–model combina
 
 - [\[AAAI 2026\] Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection](towards_multiple_missing_values-resistant_unsupervised_graph_anomaly_detection.md)
 - [\[ICCV 2025\] Visual Modality Prompt for Adapting Vision-Language Object Detectors](../../ICCV2025/object_detection/visual_modality_prompt_for_adapting_vision-language_object_detectors.md)
+- [\[CVPR 2025\] Unseen Visual Anomaly Generation](../../CVPR2025/object_detection/unseen_visual_anomaly_generation.md)
 - [\[NeurIPS 2025\] Test-Time Adaptive Object Detection with Foundation Model](../../NeurIPS2025/object_detection/test-time_adaptive_object_detection_with_foundation_model.md)
 - [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](../../CVPR2026/object_detection/cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
-- [\[ICLR 2026\] Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection](../../ICLR2026/object_detection/towards_anomaly-aware_pre-training_and_fine-tuning_for_graph_anomaly_detection.md)
 
 </div>
 

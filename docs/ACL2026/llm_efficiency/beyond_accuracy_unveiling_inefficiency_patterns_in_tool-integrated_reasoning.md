@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Accuracy: Unveiling Inefficiency Patterns in Tool-Integrated Reasoning
 description: >-
-  [ACL 2026][LLM Efficiency][KV-Cache] This paper proposes PTE (Prefill Token Equivalents), a hardware-aware efficiency metric for tool-integrated reasoning (TIR) that unifies the costs of internal reasoning and external tool usage. Through large-scale experiments, it reveals four inefficiency patterns in TIR: confirmatory tool use, tool mixing, lack of too
+  [ACL 2026][LLM Efficiency][Tool-integrated reasoning] This paper proposes PTE (Prefill Token Equivalents), a hardware-aware efficiency metric for tool-integrated reasoning (TIR) that unifies the costs of internal reasoning and external tool usage. Through large-scale experiments, it reveals four inefficiency patterns in TIR: confirmatory tool use, tool mixing, lack of tool priors, and tool format collapse.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - KV-Cache
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Tool-integrated reasoning"
+  - "efficiency metrics"
+  - "KV-Cache"
+  - "prefill-decode asymmetry"
+  - "reasoning patterns"
 date: 2026-05-08
-content_hash: 669dd55c0e91269a
+content_hash: ee8cd252a1df8464
 ---
+
 # Beyond Accuracy: Unveiling Inefficiency Patterns in Tool-Integrated Reasoning
 
 **Conference**: ACL 2026  
@@ -105,11 +110,11 @@ While PTE is an evaluation metric rather than a training objective, the paper no
 
 ## Related Papers
 
-- [\[ACL 2026\] Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning](tandem_riding_together_with_large_and_small_language_models_for_efficient_reason.md)
-- [\[ICML 2026\] Skill-Based Mixture-of-Experts: Adaptive Routing for Heterogeneous Reasoning via Inferred Skills](../../ICML2026/llm_efficiency/skill-based_mixture-of-experts_adaptive_routing_for_heterogeneous_reasoning_via_.md)
-- [\[ACL 2025\] FUEL: Unveiling Environmental Impacts of Large Language Model Serving: A Functional Unit View](../../ACL2025/llm_efficiency/fuel_unveiling_environmental_impacts_of_llm_serving.md)
+- [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](../../ICLR2026/llm_efficiency/sparse_attention_adaptation_for_long_reasoning.md)
 - [\[ICML 2026\] Q-Delta: Beyond Key–Value Associative State Evolution](../../ICML2026/llm_efficiency/q-delta_beyond_key-value_associative_state_evolution.md)
-- [\[ACL 2025\] LongBench v2: Towards Deeper Understanding and Reasoning on Realistic Long-context Multitasks](../../ACL2025/llm_efficiency/longbench_v2_towards_deeper_understanding_and_reasoning_on_realistic_long-contex.md)
+- [\[ACL 2026\] Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning](tandem_riding_together_with_large_and_small_language_models_for_efficient_reason.md)
+- [\[ACL 2025\] FUEL: Unveiling Environmental Impacts of Large Language Model Serving: A Functional Unit View](../../ACL2025/llm_efficiency/fuel_unveiling_environmental_impacts_of_llm_serving.md)
+- [\[ICLR 2026\] Reasoning Language Model Inference Serving Unveiled: An Empirical Study](../../ICLR2026/llm_efficiency/reasoning_language_model_inference_serving_unveiled_an_empirical_study.md)
 
 </div>
 

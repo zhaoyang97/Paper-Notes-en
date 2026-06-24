@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Geometry-Aware Policy Imitation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] GPI treats expert demonstrations as geometric curves in state space rather than sets of state-action samples. It derives two complementary control primitives—"propulsive flow + attractive flow"—from the distance field induced by these curves. These are combined into a non-parametric, interpretable vector field that dir
+  [ICLR 2026][Robotics][Imitation Learning] GPI treats expert demonstrations as geometric curves in state space rather than sets of state-action samples. It derives two complementary control primitives—"propulsive flow + attractive flow"—from the distance field induced by these curves. These are combined into a non-parametric, interpretable vector field that directly drives the robot. While achieving higher success rates than diffusion policies…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Imitation Learning"
+  - "Distance Fields"
+  - "Stream Control"
+  - "Non-parametric Policy"
+  - "Multimodal"
+  - "Dynamical Systems"
 date: 2026-05-08
-content_hash: 4c8908e710797d64
+content_hash: 92c7490041fc8f61
 ---
+
 # Geometry-Aware Policy Imitation
 
 **Conference**: ICLR 2026  
@@ -123,8 +130,8 @@ Visual Representation Ablation (Push-T Avg. Score): Task-specific head 87% / VAE
 - [\[ICLR 2026\] Translating Flow to Policy via Hindsight Online Imitation](translating_flow_to_policy_via_hindsight_online_imitation.md)
 - [\[ICLR 2026\] Difference-Aware Retrieval Policies for Imitation Learning](difference-aware_retrieval_policies_for_imitation_learning.md)
 - [\[ICLR 2026\] HAMLET: Switch Your Vision-Language-Action Model into a History-Aware Policy](hamlet_switch_your_vision-language-action_model_into_a_history-aware_policy.md)
-- [\[CVPR 2026\] GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation](../../CVPR2026/robotics/ga-vln_geometry-aware_bev_representation_for_efficient_vision-language_navigatio.md)
-- [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](../../CVPR2026/robotics/geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
+- [\[ICLR 2026\] Manipulation as in Simulation: Enabling Accurate Geometry Perception in Robots](manipulation_as_in_simulation_enabling_accurate_geometry_perception_in_robots.md)
+- [\[ICLR 2026\] Primary-Fine Decoupling for Action Generation in Robotic Imitation](primary-fine_decoupling_for_action_generation_in_robotic_imitation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Think in Latent Thoughts: A New Paradigm for Gloss-Free Sign Language Translation
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] Ours proposes SignThought, a reasoning-driven gloss-free sign language translation framework. It introduces learnable latent thought slots as an explicit intermediate semantic layer between video and text. Using a "plan-then-locate" dual-stream decoder, it decouples semantic planning from visual evidence retrieval, out
+  [ACL 2026][Multilingual & Machine Translation][Sign Language Translation] Ours proposes SignThought, a reasoning-driven gloss-free sign language translation framework. It introduces learnable latent thought slots as an explicit intermediate semantic layer between video and text. Using a "plan-then-locate" dual-stream decoder, it decouples semantic planning from visual evidence retrieval, outperforming existing gloss-free methods on multiple benchmarks.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Sign Language Translation"
+  - "Gloss-free Translation"
+  - "Latent Chain-of-Thought"
+  - "Cross-modal Reasoning"
+  - "Dual-stream Decoder"
 date: 2026-05-08
-content_hash: 6f0f83ac446637ed
+content_hash: bae05555ca49711d
 ---
+
 # Think in Latent Thoughts: A New Paradigm for Gloss-Free Sign Language Translation
 
 **Conference**: ACL 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PHyCLIP: $\ell_1$-Product of Hyperbolic Factors Unifies Hierarchy and Compositionality in Vision-Language Representation Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] PHyCLIP replaces the image-text embedding space from a "single hyperbolic space" with an "$k$ hyperbolic factors $\ell_1$-product metric space." This allows "is-a" hierarchies within concept families to emerge spontaneously within individual hyperbolic factors, while cross-family compositions (e.g., "dog + car") are ca
+  [ICLR 2026][Multimodal VLM][Vision-Language Models] PHyCLIP replaces the image-text embedding space from a "single hyperbolic space" with an "$k$ hyperbolic factors $\ell_1$-product metric space." This allows "is-a" hierarchies within concept families to emerge spontaneously within individual hyperbolic factors, while cross-family compositions (e.g., "dog + car") are captured by the additive geometry of $\ell_1$ summation, analogous to Boolean algebra. This approach outperfor…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Hyperbolic Geometry"
+  - "Product Metric Space"
+  - "Compositionality"
+  - "Hierarchical Structure"
 date: 2026-05-08
-content_hash: b4c7df06e858bbfe
+content_hash: b25d1d8aa5c919db
 ---
+
 # PHyCLIP: $\ell_1$-Product of Hyperbolic Factors Unifies Hierarchy and Compositionality in Vision-Language Representation Learning
 
 **Conference**: ICLR 2026  
@@ -147,7 +152,7 @@ Fixing total dimension $kd$, the number of factors $k$, product metric type, and
 - [\[CVPR 2026\] MOON2.0: Dynamic Modality-balanced Multimodal Representation Learning for E-commerce Product Understanding](../../CVPR2026/multimodal_vlm/moon20_dynamic_modality-balanced_multimodal_representation_learning_for_e-commer.md)
 - [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
 - [\[ICLR 2026\] Modality Alignment across Trees on Heterogeneous Hyperbolic Manifolds](modality_alignment_across_trees_on_heterogeneous_hyperbolic_manifolds.md)
-- [\[ICLR 2026\] Fed-Duet: Dual Expert-Orchestrated Framework for Continual Federated Vision-Language Learning](fed-duet_dual_expert-orchestrated_framework_for_continual_federated_vision-langu.md)
+- [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](../../AAAI2026/multimodal_vlm/himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration
 description: >-
-  [ICCV 2025][image registration] This paper proposes EDFFDNet, which replaces conventional B-spline FFD and TPS with an Exponentially Decaying Free-Form Deformation (EDFFD) model for image registration. Combined with an A…
+  [ICCV 2025][image registration] This paper proposes EDFFDNet, which replaces conventional B-spline FFD and TPS with an Exponentially Decaying Free-Form Deformation (EDFFD) model for image registration. Combined with an Adaptive Sparse Motion Aggregator (ASMA) and a progressive correlation strategy, the method achieves a +0.5 dB PSNR improvement on the UDIS-D dataset while reducing parameter count by 70.5% and GPU memory usage by 32.6%.
 tags:
   - "ICCV 2025"
   - "image registration"
@@ -11,7 +11,7 @@ tags:
   - "sparse motion aggregation"
   - "unsupervised learning"
 date: 2026-05-08
-content_hash: c5d6ed8c69893513
+content_hash: d7dbb2317fcf01cd
 ---
 
 # EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration
@@ -196,10 +196,10 @@ Computational cost comparison:
 ## Related Papers
 
 - [\[ICCV 2025\] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction](revisiting_image_fusion_for_multi-illuminant_white-balance_correction.md)
-- [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](../../AAAI2026/others/dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
+- [\[ACL 2025\] ERU-KG: Efficient Reference-aligned Unsupervised Keyphrase Generation](../../ACL2025/others/eru-kg_efficient_reference-aligned_unsupervised_keyphrase_generation.md)
 - [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
+- [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](../../AAAI2026/others/dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
 - [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](../../ICLR2026/others/distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
-- [\[AAAI 2026\] DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion](../../AAAI2026/others/diffmm_efficient_method_for_accurate_noisy_and_sparse_trajectory_map_matching_vi.md)
 
 </div>
 

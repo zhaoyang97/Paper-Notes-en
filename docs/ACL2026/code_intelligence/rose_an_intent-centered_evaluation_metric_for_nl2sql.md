@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ROSE: An Intent-Centered Evaluation Metric for NL2SQL
 description: >-
-  [ACL 2026][Code Intelligence][Text-to-SQL] ROSE shifts NL2SQL evaluation from "predicting whether SQL matches a single reference SQL" to "predicting whether SQL satisfies user intent." Through a two-stage reasoning process involving a SQL Prover and an Adversarial Refuter, it achieves a Cohen's Kappa nearly 24 percentage points higher than existing top metrics
+  [ACL2026][Code Intelligence][Intent-centered execution] ROSE shifts NL2SQL evaluation from "predicting whether SQL matches a single reference SQL" to "predicting whether SQL satisfies user intent." Through a two-stage reasoning process involving a SQL Prover and an Adversarial Refuter, it achieves a Cohen's Kappa nearly 24 percentage points higher than existing top metrics on ROSE-VEC, and exposes evaluation crises caused by reference errors and question ambiguities in benchm…
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Text-to-SQL
-  - Prover-Refuter
+  - "ACL2026"
+  - "Code Intelligence"
+  - "Intent-centered execution"
+  - "Text-to-SQL"
+  - "Prover-Refuter"
+  - "Execution Accuracy"
+  - "Dataset Diagnosis"
 date: 2026-05-08
-content_hash: 31b627da5476b68f
+content_hash: a4d0116a3c94fdde
 ---
+
 # ROSE: An Intent-Centered Evaluation Metric for NL2SQL
 
 **Conference**: ACL2026  
@@ -139,11 +143,11 @@ The core results on ROSE-VEC show that ROSE's consistency with expert labels is 
 
 ## Related Papers
 
+- [\[ICLR 2026\] LearNAT: Learning NL2SQL with AST-guided Task Decomposition for Large Language Models](../../ICLR2026/code_intelligence/learnat_learning_nl2sql_with_ast-guided_task_decomposition_for_large_language_mo.md)
+- [\[ICLR 2026\] SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification](../../ICLR2026/code_intelligence/spotit_evaluating_text-to-sql_evaluation_with_formal_verification.md)
 - [\[ICML 2026\] SWE-IF: Aligning Code Evaluation with Human Preference](../../ICML2026/code_intelligence/swe-if_aligning_code_evaluation_with_human_preference.md)
-- [\[ACL 2025\] UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench](../../ACL2025/code_intelligence/utboost_rigorous_evaluation_of_coding_agents_on_swe-bench.md)
-- [\[ACL 2025\] CoCo-Bench: A Comprehensive Code Benchmark for Multi-task Large Language Model Evaluation](../../ACL2025/code_intelligence/coco-bench_a_comprehensive_code_benchmark_for_multi-task_large_language_model_ev.md)
-- [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](../../NeurIPS2025/code_intelligence/swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
-- [\[ACL 2026\] PExA: Parallel Exploration Agent for Complex Text-to-SQL](pexa_parallel_exploration_agent_for_complex_text-to-sql.md)
+- [\[ICLR 2026\] Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents](../../ICLR2026/code_intelligence/process-level_trajectory_evaluation_for_environment_configuration_in_software_en.md)
+- [\[ICLR 2026\] VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code](../../ICLR2026/code_intelligence/veriequivbench_an_equivalence_score_for_ground-truth-free_evaluation_of_formally.md)
 
 </div>
 

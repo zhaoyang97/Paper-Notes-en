@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gogo: Group-wise Granularity-ordered Codec for Stable and Efficient Speech Generation
 description: >-
-  [ICLR 2026][Audio & Speech][GRPO] This paper proposes Gogo—a speech codec that packs several consecutive frames into "groups" and orders tokens within each group from "coarse to fine." Coarse tokens encode high-level semantics, while fine tokens gradually restore acoustic details. Building on this, the authors develop GogoSpeech, a two-stage speech lan
+  [ICLR 2026][Audio & Speech][Speech codec] This paper proposes Gogo—a speech codec that packs several consecutive frames into "groups" and orders tokens within each group from "coarse to fine." Coarse tokens encode high-level semantics, while fine tokens gradually restore acoustic details. Building on this, the authors develop GogoSpeech, a two-stage speech language model (constructing the skeleton first, then adding details), and a GRPO-trained token allocator (dynamically al…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - GRPO
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech codec"
+  - "granularity-ordered quantization"
+  - "two-stage TTS"
+  - "adaptive token allocation"
+  - "GRPO"
 date: 2026-05-08
-content_hash: a4f14ed225e69d1c
+content_hash: 2c22d90799fc4c10
 ---
+
 # Gogo: Group-wise Granularity-ordered Codec for Stable and Efficient Speech Generation
 
 **Conference**: ICLR 2026  
@@ -129,8 +134,8 @@ Group-wise tokens show significantly lower perplexity, confirming they are more 
 - Value: ⭐⭐⭐⭐⭐ (Directly improves the SLM/TTS pipeline for stable long-form generation).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

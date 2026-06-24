@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rewriting Pre-training Data Boosts LLM Performance in Math and Code
 description: >-
-  [ICLR 2026][Pretraining][transform-and-retain] Instead of "filtering and discarding," this paper uses a 70B model to "rewrite clean and retain" open-source code and math corpora, constructing two datasets: SwallowCode (≈16.1B tokens) and SwallowMath (≈2.3B tokens). In continued pre-training with a fixed budget of 50B tokens, Llama-3.1-8B achieves a +17.0 improvemen
+  [ICLR 2026][LLM Pretraining][Pre-training data] Instead of "filtering and discarding," this paper uses a 70B model to "rewrite clean and retain" open-source code and math corpora, constructing two datasets: SwallowCode (≈16.1B tokens) and SwallowMath (≈2.3B tokens). In continued pre-training with a fixed budget of 50B tokens, Llama-3.1-8B achieves a +17.0 improvement in HumanEval pass@1 and a +12.4 improvement in GSM8K, proving that data quality is the fundamental bottleneck…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - transform-and-retain
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Pre-training data"
+  - "Data rewriting"
+  - "Code generation"
+  - "Mathematical reasoning"
+  - "transform-and-retain"
 date: 2026-05-08
-content_hash: 4b671b28250ef670
+content_hash: df67c2f5c05b8008
 ---
+
 # Rewriting Pre-training Data Boosts LLM Performance in Math and Code
 
 **Conference**: ICLR 2026  
@@ -134,8 +139,8 @@ SwallowCode outperforms all comparable open corpora (CodeParrot-Clean, The-Stack
 - [\[ICLR 2026\] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training](common_corpus_ethical_data_for_llm_pretraining.md)
 - [\[ICLR 2026\] Nemotron-CC-Math: A 133 Billion-Token-Scale High Quality Math Pretraining Dataset](nemotron-cc-math_a_133_billion-token-scale_high_quality_math_pretraining_dataset.md)
 - [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
-- [\[ICLR 2026\] Late-to-Early Training: 让 LLM 更早学到后期知识，从而更快更好](late-to-early_training_let_llms_learn_earlier_so_faster_and_better.md)
 - [\[ICLR 2026\] Unveiling Downstream Performance Scaling of LLMs: A Clustering-Based Perspective](unveiling_downstream_performance_scaling_of_llms_a_clustering-based_perspective.md)
+- [\[ICLR 2026\] Joint Selection for Large-Scale Pre-Training Data via Policy Gradient-based Mask Learning](joint_selection_for_large-scale_pre-training_data_via_policy_gradient-based_mask.md)
 
 </div>
 

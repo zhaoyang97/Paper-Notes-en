@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reliable Evaluation Protocol for Low-Precision Retrieval
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] Reveals that low-precision (e.g., binary/quantized embedding) retrieval systems generate massive "spurious ties" during evaluation due to reduced score granularity, leading to highly unstable results. Proposes two complementary strategies: HPS (High-Precision Scoring) and TRM (Tie-Aware Metrics), making low-precision r
+  [ACL 2026][Information Retrieval & RAG][Low-Precision Retrieval] Reveals that low-precision (e.g., binary/quantized embedding) retrieval systems generate massive "spurious ties" during evaluation due to reduced score granularity, leading to highly unstable results. Proposes two complementary strategies: HPS (High-Precision Scoring) and TRM (Tie-Aware Metrics), making low-precision retrieval evaluation more reliable and consistent.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Low-Precision Retrieval"
+  - "Spurious Ties"
+  - "Evaluation Protocol"
+  - "High-Precision Scoring"
+  - "Tie-Aware Metrics"
 date: 2026-05-08
-content_hash: 370909afc176a5de
+content_hash: 793d2c7060b445ea
 ---
+
 # Reliable Evaluation Protocol for Low-Precision Retrieval
 
 **Conference**: ACL 2026  
@@ -116,15 +122,15 @@ Even with HPS, ties may persist in extreme low-precision scenarios. Reporting a 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2026\] Low-Resource Language Dilemma in Multilingual Retrieval: Evidence from Amharic](the_multilingual_curse_at_the_retrieval_layer_evidence_from_amharic.md)
 - [\[ACL 2026\] AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation](authoritybench_benchmarking_llm_authority_perception_for_reliable_retrieval-augm.md)
 - [\[ACL 2026\] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora](rare_redundancy-aware_retrieval_evaluation_framework_for_high-similarity_corpora.md)
 - [\[ICML 2026\] LARE: Low-Attention Region Encoding for Text–Image Retrieval](../../ICML2026/information_retrieval/lare_low-attention_region_encoding_for_text-image_retrieval.md)
-- [\[ACL 2025\] Unanswerability Evaluation for Retrieval Augmented Generation](../../ACL2025/information_retrieval/unanswerability_evaluation_for_retrieval_augmented_generation.md)
-- [\[ACL 2026\] FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows](flare_task-agnostic_embedding_model_evaluation_through_a_normalization_process.md)
+- [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](../../NeurIPS2025/information_retrieval/retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
 
 </div>
 

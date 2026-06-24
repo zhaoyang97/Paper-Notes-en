@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Online Black-Box Prompt Optimization with Regret Guarantees under Noisy Feedback
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes AOZPT, the first zeroth-order method for black-box prompt optimization in **online learning + noisy feedback** scenarios. It employs an adaptive uncertainty scaling mechanism to suppress two types of uncertainties: "generative model output noise" and "high variance of zeroth-order gradients." Under
+  [ICLR 2026][Optimization][Black-box prompt tuning] This paper proposes AOZPT, the first zeroth-order method for black-box prompt optimization in **online learning + noisy feedback** scenarios. It employs an adaptive uncertainty scaling mechanism to suppress two types of uncertainties: "generative model output noise" and "high variance of zeroth-order gradients." Under non-convex settings, it is proven to achieve **sublinear regret**, demonstrating superior stability and perfo…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Black-box prompt tuning"
+  - "zeroth-order optimization"
+  - "online learning"
+  - "local regret"
+  - "uncertainty scale"
 date: 2026-05-08
-content_hash: daa24d8b657cd0ba
+content_hash: 860ded836d9b65be
 ---
+
 # Online Black-Box Prompt Optimization with Regret Guarantees under Noisy Feedback
 
 **Conference**: ICLR 2026  
@@ -143,10 +149,10 @@ AOZPT achieves the best results across most combinations, consistently outperfor
 ## Related Papers
 
 - [\[AAAI 2026\] Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering](../../AAAI2026/optimization/instance_generation_for_meta-black-box_optimization_through_latent_space_reverse.md)
+- [\[ICLR 2026\] Composite Optimization with Error Feedback: the Dual Averaging Approach](composite_optimization_with_error_feedback_the_dual_averaging_approach.md)
 - [\[ICLR 2026\] Convergence of Regret Matching in Potential Games and Constrained Optimization](convergence_of_regret_matching_in_potential_games_and_constrained_optimization.md)
 - [\[ICLR 2026\] Error Feedback for Muon and Friends](error_feedback_for_muon_and_friends.md)
 - [\[ICLR 2026\] Improving Online-to-Nonconvex Conversion for Smooth Optimization via Double Optimism](improving_online-to-nonconvex_conversion_for_smooth_optimization_via_double_opti.md)
-- [\[ICLR 2026\] Non-Convex Federated Optimization under Cost-Aware Client Selection](non-convex_federated_optimization_under_cost-aware_client_selection.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes MimiCAT, a cascaded Transformer framework that learns flexible many-to-many soft correspondences via semantic keypoint labels. Combined with PokeAnimDB, a million-scale multi-category motion dataset, it achieves high-quality 3D pose transfer across categories (e.g., humanoid to quadruped/bird) for t
+  [CVPR 2026][3D Vision][3D Pose Transfer] This paper proposes MimiCAT, a cascaded Transformer framework that learns flexible many-to-many soft correspondences via semantic keypoint labels. Combined with PokeAnimDB, a million-scale multi-category motion dataset, it achieves high-quality 3D pose transfer across categories (e.g., humanoid to quadruped/bird) for the first time.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Pose Transfer"
+  - "Cross-Category Transfer"
+  - "Soft Correspondence"
+  - "Cascade Transformer"
+  - "Large-scale Motion Dataset"
 date: 2026-05-08
-content_hash: 15bc2c5eab305ce2
+content_hash: 27080443be628f6c
 ---
+
 # MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer
 
 **Conference**: CVPR 2026  
@@ -162,10 +168,10 @@ Initialization only provides a "rough" transfer without considering the target's
 ## Related Papers
 
 - [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
+- [\[CVPR 2026\] UniCorrn: Unified Correspondence Transformer Across 2D and 3D](unicorrn_unified_correspondence_transformer_across_2d_and_3d.md)
+- [\[CVPR 2026\] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction](manifoldneus_manifold-aware_view_optimizability_for_pose-free_neural_surface_rec.md)
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
-- [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
+- [\[CVPR 2026\] SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation](scapo_self-supervised_category-level_articulated_pose_estimation_from_a_single_3.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion
 description: >-
-  [ICLR 2026][Graph Learning][text-attributed graph] For text-attributed graphs, this paper moves away from applying LLMs uniformly across all nodes. Instead, it employs a lightweight router to "glance" at the LLM only for "heterophilous/low-degree" nodes where GNNs typically fail. This non-differentiable routing decision is trained using counterfactual advantage signals
+  [ICLR 2026][Graph Learning][text-attributed graph] For text-attributed graphs, this paper moves away from applying LLMs uniformly across all nodes. Instead, it employs a lightweight router to "glance" at the LLM only for "heterophilous/low-degree" nodes where GNNs typically fail. This non-differentiable routing decision is trained using counterfactual advantage signals, significantly reducing LLM calls while boosting accuracy on heterophilous nodes by up to +13%.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - text-attributed graph
-  - GNN-LLM fusion
-  - LLM routing
-  - local homophily
-  - heterophily
-  - contextual bandit
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "text-attributed graph"
+  - "GNN-LLM fusion"
+  - "LLM routing"
+  - "local homophily"
+  - "heterophily"
+  - "contextual bandit"
 date: 2026-05-08
-content_hash: d14b122494933a81
+content_hash: bad0b36aa8c36df3
 ---
+
 # Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion
 
 **Conference**: ICLR 2026  
@@ -125,8 +126,8 @@ GLANCE shows significant gains over GNN baselines on the most heterophilous node
 - [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
 - [\[ICLR 2026\] DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS](damr_efficient_and_adaptive_context-aware_knowledge_graph_question_answering_wit.md)
 - [\[ICLR 2026\] Graph Representational Learning: When Does More Expressivity Hurt Generalization?](graph_representational_learning_when_does_more_expressivity_hurt_generalization.md)
-- [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
 - [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](../../ICML2026/graph_learning/gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
+- [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](forest-based_graph_learning_for_semi-supervised_node_classification.md)
 
 </div>
 

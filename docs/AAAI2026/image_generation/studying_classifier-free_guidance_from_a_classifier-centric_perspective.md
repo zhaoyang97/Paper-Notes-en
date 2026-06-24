@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective
 description: >-
-  [AAAI 2026][Image Generation][classifier guidance] Through systematic empirical study, this paper reveals the essential mechanism underlying both classifier guidance and classifier-free guidance — both steer denoising tr…
+  [AAAI 2026][Image Generation][classifier guidance] Through systematic empirical study, this paper reveals the essential mechanism underlying both classifier guidance and classifier-free guidance — both steer denoising trajectories away from the classifier's decision boundary to achieve conditional generation — and proposes a flow matching-based post-processing method that validates this "classifier-centric" perspective on high-dimensional data.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "flow matching post-processing"
   - "theoretical analysis of diffusion models"
 date: 2026-05-08
-content_hash: 58d3ce60dbef75c8
+content_hash: e3a4208f545c2385
 ---
 
 # Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective
@@ -156,10 +156,10 @@ This paper is complementary to the above theoretical works — theoretical works
 ## Related Papers
 
 - [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](dice_distilling_classifier-free_guidance_into_text_embedding.md)
+- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](../../ICLR2026/image_generation/overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
 - [\[CVPR 2026\] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](../../CVPR2026/image_generation/cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)
-- [\[NeurIPS 2025\] Towards a Golden Classifier-Free Guidance Path via Foresight Fixed Point Iterations](../../NeurIPS2025/image_generation/towards_a_golden_classifier-free_guidance_path_via_foresight_fixed_point_iterati.md)
-- [\[ICCV 2025\] TeEFusion: Blending Text Embeddings to Distill Classifier-Free Guidance](../../ICCV2025/image_generation/teefusion_blending_text_embeddings_to_distill_classifier-free_guidance.md)
-- [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](../../ICLR2026/image_generation/polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)
+- [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](../../ICLR2026/image_generation/stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
+- [\[CVPR 2026\] C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis](../../CVPR2026/image_generation/c2fg_control_classifier-free_guidance_via_score_discrepancy_analysis.md)
 
 </div>
 

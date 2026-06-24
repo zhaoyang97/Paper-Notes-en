@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Lightning Unified Video Editing via In-Context Sparse Attention
 description: >-
-  [ICML 2026][Video Generation][In-Context Learning] To address the quadratic attention bottleneck in video editing under the In-Context Learning paradigm, the authors designed In-context Sparse Attention (ISA) based on two insights: "context token saliency is lower than source tokens" and "Query sharpness is proportional to Taylor approximation error." They trained LIVE
+  [ICML 2026][Video Generation][In-Context Learning] To address the quadratic attention bottleneck in video editing under the In-Context Learning paradigm, the authors designed In-context Sparse Attention (ISA) based on two insights: "context token saliency is lower than source tokens" and "Query sharpness is proportional to Taylor approximation error." They trained LIVEditor, which achieves a ~60% speedup while surpassing SOTA full-attention models across several benchmarks.
 tags:
-  - ICML 2026
-  - Video Generation
-  - In-Context Learning
-  - Sparse Attention
-  - Video Editing
-  - Query Sharpness
+  - "ICML 2026"
+  - "Video Generation"
+  - "In-Context Learning"
+  - "Sparse Attention"
+  - "Video Editing"
+  - "Taylor Approximation"
+  - "Query Sharpness"
 date: 2026-05-08
-content_hash: 5d909a8f12393d65
+content_hash: 6efd413973e4e911
 ---
+
 # Lightning Unified Video Editing via In-Context Sparse Attention
 
 **Conference**: ICML 2026  
@@ -135,11 +137,11 @@ ISA outperforms the equivalent full-attention model on nearly all metrics, sugge
 
 ## Related Papers
 
+- [\[ICLR 2026\] Unified In-Context Video Editing](../../ICLR2026/video_generation/unified_in-context_video_editing.md)
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
-- [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
+- [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
 - [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
-- [\[CVPR 2026\] AdaCluster: Adaptive Query-Key Clustering for Sparse Attention in Video Generation](../../CVPR2026/video_generation/adacluster_adaptive_query-key_clustering_for_sparse_attention_in_video_generatio.md)
 
 </div>
 

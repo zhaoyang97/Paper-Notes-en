@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Solver-Independent Automated Problem Formulation via LLMs for High-Cost Simulation-Driven Design
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes APF (Automated Problem Formulation), a solver-independent framework that utilizes LLMs to transform natural language design requirements from engineers into executable mathematical optimization models. By employing an innovative data generation and test instance annotation pipeline, it overcomes the
+  [ACL 2026 Findings][LLM (Other)][Automated Problem Formulation] This paper proposes APF (Automated Problem Formulation), a solver-independent framework that utilizes LLMs to transform natural language design requirements from engineers into executable mathematical optimization models. By employing an innovative data generation and test instance annotation pipeline, it overcomes the difficulty of filtering data without solver feedback in high-cost simulation scenarios…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Automated Problem Formulation"
+  - "High-Cost Simulation"
+  - "LLM Fine-tuning"
+  - "Solver-Independent Evaluation"
+  - "Antenna Design"
 date: 2026-05-08
-content_hash: fb591daff199e525
+content_hash: 7cb706d08385e922
 ---
+
 # Solver-Independent Automated Problem Formulation via LLMs for High-Cost Simulation-Driven Design
 
 **Conference**: ACL 2026 Findings  

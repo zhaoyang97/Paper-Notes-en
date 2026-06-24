@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Interaction Field Matching: Overcoming Limitations of Electrostatic Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The authors generalize Electrostatic Field Matching (EFM) into a framework of "arbitrary pairwise interaction fields" (IFM). By designing a specific field inspired by strong interaction between quarks, they ensure field lines are straight, non-leaking, and non-reversing, fundamentally solving EFM's issues of reverse fi
+  [ICLR 2026][Image Generation][Electrostatic Field Matching] The authors generalize Electrostatic Field Matching (EFM) into a framework of "arbitrary pairwise interaction fields" (IFM). By designing a specific field inspired by strong interaction between quarks, they ensure field lines are straight, non-leaking, and non-reversing, fundamentally solving EFM's issues of reverse field lines, out-of-bounds termination, and uncontrollable training volume.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Electrostatic Field Matching"
+  - "Strong Interaction"
+  - "Physics-inspired Generative Models"
+  - "Distribution Shift"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: 83a45907041ab73b
+content_hash: 7c5ae009d72e25c8
 ---
+
 # Interaction Field Matching: Overcoming Limitations of Electrostatic Models
 
 **Conference**: ICLR 2026  
@@ -117,10 +123,17 @@ Since the IFM field guarantees lines neither leak nor reverse, solving the ODE f
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] PixNerd: Pixel Neural Field Diffusion](pixnerd_pixel_neural_field_diffusion.md)
+- [\[ICLR 2026\] Any-step Generation via N-th Order Recursive Consistent Velocity Field Estimation](any-step_generation_via_n-th_order_recursive_consistent_velocity_field_estimatio.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
+- [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
+- [\[ICLR 2026\] Arbitrary-Shaped Image Generation via Spherical Neural Field Diffusion](arbitrary-shaped_image_generation_via_spherical_neural_field_diffusion.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] PixNerd: Pixel Neural Field Diffusion](pixnerd_pixel_neural_field_diffusion.md)

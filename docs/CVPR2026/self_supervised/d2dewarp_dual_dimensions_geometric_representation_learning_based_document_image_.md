@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Document Dewarping] Ours introduces D2Dewarp, the first dewarping method to learn document geometric representations from both horizontal and vertical dimensions. A UNet with dual decoders predicts horizontal lines (top/bottom boundaries of text lines/tables) and vertical lines (left/right boundaries) separately. The HV Fusion Module inte
+  [CVPR 2026][Self-Supervised Learning][Document Dewarping] Ours introduces D2Dewarp, the first dewarping method to learn document geometric representations from both horizontal and vertical dimensions. A UNet with dual decoders predicts horizontal lines (top/bottom boundaries of text lines/tables) and vertical lines (left/right boundaries) separately. The HV Fusion Module integrates features from both directions via mixed attention. Additionally, the DocDewarpHV dataset…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Document Dewarping
-  - Dual Dimension
-  - Geometric Lines
-  - UNet
-  - HV Fusion
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Document Dewarping"
+  - "Dual Dimension"
+  - "Geometric Lines"
+  - "UNet"
+  - "HV Fusion"
 date: 2026-05-08
-content_hash: b39e2c1b75157eb4
+content_hash: fef9f67416b48a00
 ---
+
 # D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping
 
 **Conference**: CVPR 2026  
@@ -176,13 +177,13 @@ Training config: Adam optimizer, learning rate 1e-4, batch size 16, 300 epochs. 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
 - [\[CVPR 2026\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
 - [\[ICCV 2025\] A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)](../../ICCV2025/self_supervised/a_tokenlevel_text_image_foundation_model_for_document_unders.md)
+- [\[ICLR 2026\] CARL: Camera-Agnostic Representation Learning for Spectral Image Analysis](../../ICLR2026/self_supervised/carl_camera-agnostic_representation_learning_for_spectral_image_analysis.md)
 - [\[CVPR 2026\] Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning](dual-estimator_decoupling_global_and_local_semantic_shift_for_drift_compensation.md)
 - [\[CVPR 2026\] DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning](dgs_dual_gradient_and_semantic-shift_guided_low-rank_adaptation_for_class_increm.md)
 

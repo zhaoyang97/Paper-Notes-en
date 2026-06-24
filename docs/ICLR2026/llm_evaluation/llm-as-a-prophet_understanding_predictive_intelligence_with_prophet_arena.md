@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LLM-as-a-Prophet: Understanding Predictive Intelligence with Prophet Arena
 description: >-
-  [ICLR 2026][LLM Evaluation][live benchmark] This paper proposes the "LLM-as-a-Prophet" evaluation paradigm and **Prophet Arena**, a live benchmark. By using continuously updated real-world future events from the Kalshi prediction market to assess the predictive intelligence of LLMs, the framework is naturally immune to data contamination. It systematically decom
+  [ICLR 2026][LLM Evaluation][Prediction Markets] This paper proposes the "LLM-as-a-Prophet" evaluation paradigm and **Prophet Arena**, a live benchmark. By using continuously updated real-world future events from the Kalshi prediction market to assess the predictive intelligence of LLMs, the framework is naturally immune to data contamination. It systematically decomposes bottlenecks in event recall, information source understanding, and information aggregation near settlement…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - live benchmark
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Prediction Markets"
+  - "Open-domain Prediction"
+  - "Calibration Error"
+  - "Brier Score"
+  - "Data Contamination"
+  - "Live Benchmark"
 date: 2026-05-08
-content_hash: a72789955d9c221e
+content_hash: 414414b08ff25c85
 ---
+
 # LLM-as-a-Prophet: Understanding Predictive Intelligence with Prophet Arena
 
 **Conference**: ICLR 2026  
@@ -110,7 +116,7 @@ Evaluation was conducted on **1,367 settled events** (as of 2025-10-11). The cat
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

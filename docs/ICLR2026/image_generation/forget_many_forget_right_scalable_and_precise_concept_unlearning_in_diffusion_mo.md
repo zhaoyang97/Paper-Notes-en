@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][concept unlearning] ScaPre utilizes a training-free and data-free closed-form solution to simultaneously address "update conflicts" and "collateral damage to similar concepts" in large-scale concept unlearning. It stably forgets 50 concepts within 120 seconds, unlearning 5 times more concepts than the strongest baseline without degrading
+  [ICLR 2026][Image Generation][concept unlearning] ScaPre utilizes a training-free and data-free closed-form solution to simultaneously address "update conflicts" and "collateral damage to similar concepts" in large-scale concept unlearning. It stably forgets 50 concepts within 120 seconds, unlearning 5 times more concepts than the strongest baseline without degrading generation quality.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - concept unlearning
-  - diffusion model
-  - closed-form editing
-  - cross-attention
-  - mutual information
+  - "ICLR 2026"
+  - "Image Generation"
+  - "concept unlearning"
+  - "diffusion model"
+  - "closed-form editing"
+  - "cross-attention"
+  - "mutual information"
 date: 2026-05-08
-content_hash: c6e4f94cb6949062
+content_hash: 7af9225e1c34b342
 ---
+
 # Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -121,9 +122,9 @@ On ImageNet-Diversi50 (50 concepts), ScaPre achieved a UQ of 65.30, significantl
 
 - [\[ICLR 2026\] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](speed_scalable_precise_and_efficient_concept_erasure_for_diffusion_models.md)
 - [\[ICML 2026\] Forget-It-All: Multi-Concept Machine Unlearning via Concept-Aware Neuron Masking](../../ICML2026/image_generation/forget-it-all_multi-concept_machine_unlearning_via_concept-aware_neuron_masking.md)
-- [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
-- [\[ICLR 2026\] AEGIS: Adversarial Target-Guided Retention-Data-Free Robust Concept Erasure from Diffusion Models](aegis_adversarial_target-guided_retention-data-free_robust_concept_erasure_from_.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 - [\[ECCV 2024\] Challenging Forgets: Unveiling the Worst-Case Forget Sets in Machine Unlearning](../../ECCV2024/image_generation/challenging_forgets_unveiling_the_worst-case_forget_sets_in_machine_unlearning.md)
+- [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
 
 </div>
 

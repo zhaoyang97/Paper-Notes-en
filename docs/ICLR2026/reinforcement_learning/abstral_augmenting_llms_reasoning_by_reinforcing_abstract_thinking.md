@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking
 description: >-
-  [ICLR 2026][Reinforcement Learning][abstract reasoning] The authors propose AbstRaL, which utilizes Reinforcement Learning (RL) to teach LLMs mathematical abstraction—replacing specific numbers/names with symbolic variables and extracting general formulas. These abstractions are then processed by a symbolic solver to derive answers. AbstRaL almost entirely eliminates perfor
+  [ICLR 2026][Reinforcement Learning][abstract reasoning] The authors propose AbstRaL, which utilizes Reinforcement Learning (RL) to teach LLMs mathematical abstraction—replacing specific numbers/names with symbolic variables and extracting general formulas. These abstractions are then processed by a symbolic solver to derive answers. AbstRaL almost entirely eliminates performance degradation caused by distribution shifts on GSM perturbation benchmarks and shows implicit improv…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - abstract reasoning
-  - reinforcement-learning
-  - GSM robustness
-  - symbolic reasoning
-  - distribution shift
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "abstract reasoning"
+  - "reinforcement-learning"
+  - "GSM robustness"
+  - "symbolic reasoning"
+  - "distribution shift"
 date: 2026-05-08
-content_hash: c186757947f4d545
+content_hash: 248472b994102ba8
 ---
+
 # AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking
 
 **Conference**: ICLR 2026  
@@ -142,8 +143,8 @@ Two-stage training: First, SFT on the GranulAR dataset using the causal language
 - [\[ICLR 2026\] Reasoning Boosts Opinion Alignment in LLMs](reasoning_boosts_opinion_alignment_in_llms.md)
 - [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
 - [\[ICLR 2026\] QuestA: Expanding Reasoning Capacity in LLMs via Question Augmentation](questa_expanding_reasoning_capacity_in_llms_via_question_augmentation.md)
-- [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
 - [\[ICLR 2026\] Parallel-R1: Towards Parallel Thinking via Reinforcement Learning](parallel-r1_towards_parallel_thinking_via_reinforcement_learning.md)
+- [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
 
 </div>
 

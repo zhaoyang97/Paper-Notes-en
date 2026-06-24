@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes
 description: >-
-  [ICCV 2025][Segmentation][Salient Object Detection] This paper constructs USC12K, the first unconstrained dataset for salient and camouflaged object detection covering four scene types, proposes USCNet built upon SAM…
+  [ICCV 2025][Segmentation][Salient Object Detection] This paper constructs USC12K, the first unconstrained dataset for salient and camouflaged object detection covering four scene types, proposes USCNet built upon SAM, introduces an Attribute Relationship Modeling (ARM) module to explicitly model the relationship between salient and camouflaged objects, and designs a new metric CSCS to quantify confusion between the two categories, achieving state-of-the-art performance across…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Attribute Relationship Modeling"
   - "SAM"
 date: 2026-05-08
-content_hash: 9f1579343a9fc884
+content_hash: 415d0c723e6decc6
 ---
 
 # Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes
@@ -158,10 +158,10 @@ False detection rate improvement (after vs. before USC12K training):
 ## Related Papers
 
 - [\[ICCV 2025\] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection](beyond_single_images_retrieval_self-augmented_unsupervised_camouflaged_object_de.md)
+- [\[CVPR 2025\] Rethinking Query-Based Transformer for Continual Image Segmentation](../../CVPR2025/segmentation/rethinking_query-based_transformer_for_continual_image_segmentation.md)
+- [\[CVPR 2025\] SAM2-LOVE: Segment Anything Model 2 in Language-Aided Audio-Visual Scenes](../../CVPR2025/segmentation/sam2-love_segment_anything_model_2_in_language-aided_audio-visual_scenes.md)
+- [\[CVPR 2025\] Paint by Inpaint: Learning to Add Image Objects by Removing Them First](../../CVPR2025/segmentation/paint_by_inpaint_learning_to_add_image_objects_by_removing_them_first.md)
 - [\[NeurIPS 2025\] FineRS: Fine-grained Reasoning and Segmentation of Small Objects with Reinforcement Learning](../../NeurIPS2025/segmentation/finers_fine-grained_reasoning_and_segmentation_of_small_objects_with_reinforceme.md)
-- [\[CVPR 2026\] DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation](../../CVPR2026/segmentation/discover_segment_and_select_a_progressive_mechanism_for_zero-shot_camouflaged_ob.md)
-- [\[CVPR 2026\] FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning](../../CVPR2026/segmentation/fcl-cod_weakly_supervised_camouflaged_object_detection_with_frequency-aware_and_.md)
-- [\[CVPR 2026\] Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification](../../CVPR2026/segmentation/detecting_ai-generated_forgeries_via_iterative_manifold_deviation_amplification.md)
 
 </div>
 

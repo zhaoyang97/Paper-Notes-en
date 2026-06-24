@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][SFT] LiteCoST utilizes strong LLMs to rewrite "long-document QA" into auditable "extract-then-answer" trajectories. These structure-priority behaviors are distilled into 3B/7B small models via a dual-signal SFT→GRPO approach, allowing small models to reach parity with GPT-4o on financial, legal, and scientific long-document
+  [ICLR 2026][Information Retrieval & RAG][Long-Document QA] LiteCoST utilizes strong LLMs to rewrite "long-document QA" into auditable "extract-then-answer" trajectories. These structure-priority behaviors are distilled into 3B/7B small models via a dual-signal SFT→GRPO approach, allowing small models to reach parity with GPT-4o on financial, legal, and scientific long-document QA while reducing latency by 2–4 times.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - SFT
-  - GRPO
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Long-Document QA"
+  - "Chain-of-Structured-Thought (CoST)"
+  - "Small Language Models"
+  - "SFT"
+  - "GRPO"
+  - "Structured Output"
 date: 2026-05-08
-content_hash: 9d145164a9ef11d5
+content_hash: a592b8cf02829af3
 ---
+
 # Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs
 
 **Conference**: ICLR 2026  

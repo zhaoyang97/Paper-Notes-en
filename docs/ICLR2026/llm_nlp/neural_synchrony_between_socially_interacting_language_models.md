@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Neural Synchrony Between Socially Interacting Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] This study presents the first investigation of neural synchrony between LLMs during social interaction. By training affine transformations to predict the future representations of interaction partners, the authors define the $SyncR^2$ metric to quantify synchrony strength. Findings indicate that this synchrony depends
+  [ICLR 2026][LLM (Other)][Neural Synchrony] This study presents the first investigation of neural synchrony between LLMs during social interaction. By training affine transformations to predict the future representations of interaction partners, the authors define the $SyncR^2$ metric to quantify synchrony strength. Findings indicate that this synchrony depends on social engagement and temporal proximity, and correlates highly with the social performance of LLMs (Pearson $r$ =…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Neural Synchrony"
+  - "Social Interaction"
+  - "LLM Representation Analysis"
+  - "Multi-Agent Systems"
+  - "Inter-Brain Synchrony Analogy"
+  - "Predictability"
 date: 2026-05-08
-content_hash: 8ecff5ac52b73f09
+content_hash: f9c52ea4255cac20
 ---
+
 # Neural Synchrony Between Socially Interacting Language Models
 
 **Conference**: ICLR 2026  

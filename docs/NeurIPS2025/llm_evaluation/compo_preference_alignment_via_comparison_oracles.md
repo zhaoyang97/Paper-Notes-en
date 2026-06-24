@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ComPO: Preference Alignment via Comparison Oracles
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Preference Alignment] To address likelihood displacement and verbosity caused by noisy preference pairs (where preferred and dispreferred responses are highly similar) in DPO…
+  [NeurIPS 2025][LLM Evaluation][Preference Alignment] To address likelihood displacement and verbosity caused by noisy preference pairs (where preferred and dispreferred responses are highly similar) in DPO, this paper proposes ComPO, a zeroth-order preference alignment method based on comparison oracles. The approach partitions data into clean and noisy subsets, applying DPO to the clean subset and ComPO to extract alignment signals from the noisy subset…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Likelihood Displacement"
   - "Zeroth-Order Optimization"
 date: 2026-05-08
-content_hash: a2900718ecdf3799
+content_hash: ee5ff119dfa2a5e0
 ---
 
 # ComPO: Preference Alignment via Comparison Oracles
@@ -139,8 +139,8 @@ ComPO consistently improves LC (length-controlled) win rate (+2.03–2.28%), ind
 - [\[NeurIPS 2025\] On Evaluating LLM Alignment by Evaluating LLMs as Judges](on_evaluating_llm_alignment_by_evaluating_llms_as_judges.md)
 - [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
 - [\[NeurIPS 2025\] Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations](beyond_the_surface_enhancing_llm-as-a-judge_alignment_with_human_via_internal_re.md)
-- [\[ICLR 2026\] Subliminal Signals in Preference Labels](../../ICLR2026/llm_evaluation/subliminal_signals_in_preference_labels.md)
-- [\[ICML 2026\] Whose Alignment? Comparing LLM Process Alignment Across Diverse Organizational Decision Contexts](../../ICML2026/llm_evaluation/whose_alignment_comparing_llm_process_alignment_across_diverse_organizational_de.md)
+- [\[ICLR 2026\] RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers](../../ICLR2026/llm_evaluation/routerarena_an_open_platform_for_comprehensive_comparison_of_llm_routers.md)
+- [\[ICML 2026\] Nonparametric LLM Evaluation from Preference Data](../../ICML2026/llm_evaluation/nonparametric_llm_evaluation_from_preference_data.md)
 
 </div>
 

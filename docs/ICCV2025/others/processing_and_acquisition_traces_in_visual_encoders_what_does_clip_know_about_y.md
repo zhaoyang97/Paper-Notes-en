@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Processing and Acquisition Traces in Visual Encoders: What Does CLIP Know About Your Camera?
 description: >-
-  [ICCV 2025 (Highlight)][CLIP] This paper reveals that visual encoders such as CLIP systematically encode image acquisition and processing parameters (e.g., camera model, ISO, JPEG quality…
+  [ICCV 2025 (Highlight)][CLIP] This paper reveals that visual encoders such as CLIP systematically encode image acquisition and processing parameters (e.g., camera model, ISO, JPEG quality, and other perceptually invisible attributes) within their learned representations, and that these latent signals significantly influence semantic prediction accuracy—both positively and negatively—through statistical correlations with semantic labels.
 tags:
   - "ICCV 2025 (Highlight)"
   - "CLIP"
@@ -11,7 +11,7 @@ tags:
   - "distribution shift"
   - "semantic prediction bias"
 date: 2026-05-08
-content_hash: fa84651b26f40e27
+content_hash: 5906f09b9940b7b6
 ---
 
 # Processing and Acquisition Traces in Visual Encoders: What Does CLIP Know About Your Camera?
@@ -138,11 +138,11 @@ Linear probe prediction accuracy for metadata parameters extracted from CLIP fea
 
 ## Related Papers
 
+- [\[ECCV 2024\] Synergy of Sight and Semantics: Visual Intention Understanding with CLIP](../../ECCV2024/others/synergy_of_sight_and_semantics_visual_intention_understanding_with_clip.md)
 - [\[NeurIPS 2025\] What Does It Take to Build a Performant Selective Classifier?](../../NeurIPS2025/others/what_does_it_take_to_build_a_performant_selective_classifier.md)
+- [\[CVPR 2026\] Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement](../../CVPR2026/others/language_does_matter_for_cross-domain_few-shot_visual_feature_enhancement.md)
 - [\[NeurIPS 2025\] Regression Trees Know Calculus](../../NeurIPS2025/others/regression_trees_know_calculus.md)
 - [\[ICCV 2025\] Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection](doodle_your_keypoints_sketch-based_few-shot_keypoint_detection.md)
-- [\[ICCV 2025\] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval](learning_visual_hierarchies_in_hyperbolic_space_for_image_retrieval.md)
-- [\[NeurIPS 2025\] Brain-Like Processing Pathways Form in Models With Heterogeneous Experts](../../NeurIPS2025/others/brain-like_processing_pathways_form_in_models_with_heterogeneous_experts.md)
 
 </div>
 

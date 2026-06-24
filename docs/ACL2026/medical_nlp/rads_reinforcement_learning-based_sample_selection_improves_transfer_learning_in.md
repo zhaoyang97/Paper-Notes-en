@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings
 description: >-
-  [ACL 2026][Medical NLP][Reinforcement Learning] Ours proposes RADS (Reinforcement Adaptive Domain Sampling), an RL-based sample selection strategy that significantly improves cross-domain disease detection in extreme low-resource and imbalanced clinical scenarios by intelligently selecting a few target domain samples for annotation and joint fine-tuning.
+  [ACL 2026 Findings][Medical LLM][Reinforcement Learning] Ours proposes RADS (Reinforcement Adaptive Domain Sampling), an RL-based sample selection strategy that significantly improves cross-domain disease detection in extreme low-resource and imbalanced clinical scenarios by intelligently selecting a few target domain samples for annotation and joint fine-tuning.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Reinforcement Learning"
+  - "Sample Selection"
+  - "Transfer Learning"
+  - "Class Imbalance"
+  - "Clinical NLP"
 date: 2026-05-08
-content_hash: c2218bd5f1b6a498
+content_hash: b3b2b61f1b625fa2
 ---
+
 # RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings
 
 **Conference**: ACL 2026 Findings  
@@ -128,15 +133,15 @@ The active learner is trained on the source domain using standard cross-entropy.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)
+- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](../../ICLR2026/medical_nlp/doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 - [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
 - [\[ACL 2026\] CURE-Med: Curriculum-Informed Reinforcement Learning for Multilingual Medical Reasoning](cure-med_curriculum-informed_reinforcement_learning_for_multilingual_medical_rea.md)
 - [\[ACL 2026\] Learning Dynamic Representations and Policies from Multimodal Clinical Time-Series with Informative Missingness](learning_dynamic_representations_and_policies_from_multimodal_clinical_time-seri.md)
-- [\[ACL 2025\] CSTRL: Context-Driven Sequential Transfer Learning for Abstractive Radiology Report Summarization](../../ACL2025/medical_nlp/cstrl_context-driven_sequential_transfer_learning_for_abstractive_radiology_repo.md)
 
 </div>
 

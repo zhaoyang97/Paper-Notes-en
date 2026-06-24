@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] TabArena: A Living Benchmark for Machine Learning on Tabular Data
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][tabular data benchmark] This paper introduces TabArena, the first continuously maintained "living" benchmark for tabular machine learning. From 1,053 candidate datasets…
+  [NeurIPS 2025 Spotlight][Self-Supervised Learning][tabular data benchmark] This paper introduces TabArena, the first continuously maintained "living" benchmark for tabular machine learning. From 1,053 candidate datasets, 51 are curated and 16 models are evaluated through large-scale experiments (~25 million model training runs). Key findings: under post-hoc ensembling, deep learning models match or surpass GBDTs; tabular foundation models excel on small datasets…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Self-Supervised Learning"
   - "tabular data benchmark"
   - "living benchmark"
@@ -12,7 +12,7 @@ tags:
   - "deep learning"
   - "tabular foundation models"
 date: 2026-05-08
-content_hash: b295e132c2e822eb
+content_hash: 0bd9cbfad6ae57dc
 ---
 
 # TabArena: A Living Benchmark for Machine Learning on Tabular Data
@@ -150,10 +150,10 @@ TabArena is a living benchmark system built around three core protocols:
 ## Related Papers
 
 - [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
+- [\[ICML 2025\] Towards Benchmarking Foundation Models for Tabular Data With Text](../../ICML2025/self_supervised/towards_benchmarking_foundation_models_for_tabular_data_with_text.md)
 - [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
-- [\[NeurIPS 2025\] MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark](mmtu_a_massive_multi-task_table_understanding_and_reasoning_benchmark.md)
+- [\[ICML 2026\] Towards One-for-All Anomaly Detection for Tabular Data](../../ICML2026/self_supervised/towards_one-for-all_anomaly_detection_for_tabular_data.md)
 - [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
-- [\[NeurIPS 2025\] Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping](spend_wisely_maximizing_post-training_gains_in_iterative_synthetic_data_bootstra.md)
 
 </div>
 

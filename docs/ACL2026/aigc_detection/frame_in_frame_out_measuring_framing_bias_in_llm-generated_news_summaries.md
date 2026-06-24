@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Frame In, Frame Out: Measuring Framing Bias in LLM-Generated News Summaries
 description: >-
-  [ACL 2026][AIGC Detection][XSum] This paper proposes FIFO, a method that uses an LLM jury with expert calibration to measure whether LLM news summaries introduce framing bias on XSum at scale. It finds that several high-capacity models exhibit higher proportions of framed expressions compared to human summary baselines.
+  [ACL2026][AIGC Detection][Framing bias] This paper proposes FIFO, a method that uses an LLM jury with expert calibration to measure whether LLM news summaries introduce framing bias on XSum at scale. It finds that several high-capacity models exhibit higher proportions of framed expressions compared to human summary baselines.
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - XSum
+  - "ACL2026"
+  - "AIGC Detection"
+  - "Framing bias"
+  - "News summarization"
+  - "LLM evaluation"
+  - "XSum"
+  - "Expert calibration"
 date: 2026-05-08
-content_hash: 13c415016c21ebbe
+content_hash: 70fd7d6b926d34fc
 ---
+
 # Frame In, Frame Out: Measuring Framing Bias in LLM-Generated News Summaries
 
 **Conference**: ACL2026  

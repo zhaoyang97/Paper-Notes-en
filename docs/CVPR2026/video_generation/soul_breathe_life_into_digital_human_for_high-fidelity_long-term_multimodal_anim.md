@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Soul: Breathe Life into Digital Human for High-fidelity Long-term Multimodal Animation
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Model] Soul employs a single portrait, text, and audio to drive high-fidelity digital human animation. Built upon the Wan2.2-5B diffusion video backbone, it integrates audio attention and a "three-piece suite" (pivotal frames + clip overlap + threshold-aware codebook replacement) to suppress long-term drift. By utilizing step
+  [CVPR 2026][Video Generation][Digital Human Animation] Soul employs a single portrait, text, and audio to drive high-fidelity digital human animation. Built upon the Wan2.2-5B diffusion video backbone, it integrates audio attention and a "three-piece suite" (pivotal frames + clip overlap + threshold-aware codebook replacement) to suppress long-term drift. By utilizing step/CFG distillation and a lightweight eVAE, it achieves an 11.4× speedup. Supported by the self-constructed…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Digital Human Animation"
+  - "Multimodal Driving"
+  - "Long-term Video Generation"
+  - "Lip Synthesis"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: f0a726b156cd20d3
+content_hash: 9a57d7c3ea6992a7
 ---
+
 # Soul: Breathe Life into Digital Human for High-fidelity Long-term Multimodal Animation
 
 **Conference**: CVPR 2026  
@@ -141,15 +146,16 @@ Human evaluation vs. commercial products (Scales 1–5: ① Naturalness ② ID C
 - Value: ⭐⭐⭐⭐⭐ (The full pipeline from data to deployment-ready model is highly valuable for the industry.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](infinityhuman_towards_long-term_audio-driven_human_animation.md)
 - [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
+- [\[CVPR 2026\] Lynx: Towards High-Fidelity Personalized Video Generation](lynx_towards_high-fidelity_personalized_video_generation.md)
+- [\[CVPR 2026\] CamDirector: Towards Long-Term Coherent Video Trajectory Editing](camdirector_towards_long-term_coherent_video_trajectory_editing.md)
 - [\[CVPR 2026\] M4V: Multimodal Mamba for Efficient Text-to-Video Generation](m4v_multimodal_mamba_for_efficient_text-to-video_generation.md)
 - [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
-- [\[CVPR 2026\] Efficient Long-Context Modeling in Diffusion Language Models via Block Approximate Sparse Attention](efficient_long-context_modeling_in_diffusion_language_models_via_block_approxima.md)
 
 </div>
 

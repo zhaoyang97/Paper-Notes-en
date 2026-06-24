@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Author-in-the-Loop Response Generation and Evaluation: Integrating Author Expertise and Intent in Responses to Peer Review
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] This work redefines academic author response (rebuttal) generation as an "Author-in-the-Loop" task, introducing the Re3Align dataset (3.4K papers, 440K sentence-level edit annotations, 15K review-response-revision triplets), the REspGen controllable generation framework, and the REspEval evaluation suite with 20+ metri
+  [ACL 2026][Dialogue Systems][Author Response Generation] This work redefines academic author response (rebuttal) generation as an "Author-in-the-Loop" task, introducing the Re3Align dataset (3.4K papers, 440K sentence-level edit annotations, 15K review-response-revision triplets), the REspGen controllable generation framework, and the REspEval evaluation suite with 20+ metrics. The approach systematically validates the effects of author input, controllability…
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Author Response Generation"
+  - "Peer Review"
+  - "Human-in-the-loop"
+  - "Controllable Text Generation"
+  - "Evaluation Framework"
 date: 2026-05-08
-content_hash: e9a325569dd14c3b
+content_hash: 985acd61e3135966
 ---
+
 # Author-in-the-Loop Response Generation and Evaluation: Integrating Author Expertise and Intent in Responses to Peer Review
 
 **Conference**: ACL 2026  
@@ -159,8 +165,8 @@ REspGen is a prompt-driven LLM framework that does not involve parameter trainin
 - [\[AAAI 2026\] Auto-PRE: An Automatic and Cost-Efficient Peer-Review Framework for Language Generation Evaluation](../../AAAI2026/dialogue/auto-pre_an_automatic_and_cost-efficient_peer-review_framework_for_language_gene.md)
 - [\[ACL 2026\] Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation](discourse_coherence_and_response-guided_context_rewriting_for_multi-party_dialog.md)
 - [\[ACL 2026\] Codebook-Injected Dialogue Segmentation for Multi-Utterance Constructs Annotation: LLM-Assisted and Gold-Label-Free Evaluation](codebook-injected_dialogue_segmentation_for_multi-utterance_constructs_annotatio.md)
-- [\[ICLR 2026\] AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions](../../ICLR2026/dialogue/aqua_toward_strategic_response_generation_for_ambiguous_visual_questions.md)
 - [\[ACL 2025\] ReflectDiffu: Reflect between Emotion-intent Contagion and Mimicry for Empathetic Response Generation via a RL-Diffusion Framework](../../ACL2025/dialogue/reflectdiffu_empathetic_response.md)
+- [\[ICLR 2026\] AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions](../../ICLR2026/dialogue/aqua_toward_strategic_response_generation_for_ambiguous_visual_questions.md)
 
 </div>
 

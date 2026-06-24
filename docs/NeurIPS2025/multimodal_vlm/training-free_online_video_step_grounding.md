@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Training-free Online Video Step Grounding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Video step grounding] This paper proposes BaGLM, a training-free online video step grounding method that integrates LLM-estimated step dependencies and LMM-estimated step progress into zero…
+  [NeurIPS 2025][Multimodal VLM][Video step grounding] This paper proposes BaGLM, a training-free online video step grounding method that integrates LLM-estimated step dependencies and LMM-estimated step progress into zero-shot LMM predictions via Bayesian filtering, outperforming existing trained offline methods on three datasets.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "online inference"
   - "training-free"
 date: 2026-05-08
-content_hash: 7b5dffed42f894fa
+content_hash: 862e68b36cb02227
 ---
 
 # Training-free Online Video Step Grounding
@@ -59,10 +59,10 @@ BaGLM formulates VSG as a Bayesian filtering problem: the state is the step $a$ 
 
    A key innovation is dynamically adjusting the transition matrix based on **step progress**. Two metrics are introduced:
 
-   - **Readiness**: the degree to which prerequisites of step $a_i$ have been completed:
+    - **Readiness**: the degree to which prerequisites of step $a_i$ have been completed:
    $\mathbf{r}_t[i] = \frac{\sum_j \mathbf{D}_{i,j} \cdot \max_{\tau < t} \text{progress}_\tau[j]}{\sum_j \mathbf{D}_{i,j}}$
 
-   - **Validity**: whether the successors of step $a_i$ have not yet been executed (preventing repeated attribution):
+    - **Validity**: whether the successors of step $a_i$ have not yet been executed (preventing repeated attribution):
    $\mathbf{v}_t[i] = \frac{\sum_j \mathbf{D}_{j,i} \cdot (1 - \max_{\tau < t} \text{progress}_\tau[j])}{\sum_j \mathbf{D}_{j,i}}$
 
    The adjusted transition matrix is:
@@ -157,10 +157,10 @@ The oracle setting yields a 38.9% improvement on Ego4D, demonstrating that the B
 ## Related Papers
 
 - [\[NeurIPS 2025\] See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model](seetrek_training-free_spatial_prompting_for_multimodal_large_language_model.md)
-- [\[NeurIPS 2025\] iFinder: Structured Zero-Shot VLM Grounding for Dash-Cam Video Reasoning](ifinder_structured_zero-shot_vision-based_llm_grounding_for_dash-cam_video_reaso.md)
-- [\[NeurIPS 2025\] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?](can_multi-modal_llms_provide_live_step-by-step_task_guidance.md)
-- [\[NeurIPS 2025\] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning](can_llms_reason_over_non-text_modalities_in_a_training-free_manner_a_case_study_.md)
-- [\[ICCV 2025\] Enrich and Detect: Video Temporal Grounding with Multimodal LLMs](../../ICCV2025/multimodal_vlm/enrich_and_detect_video_temporal_grounding_with_multimodal_llms.md)
+- [\[CVPR 2025\] Free on the Fly: Enhancing Flexibility in Test-Time Adaptation with Online EM](../../CVPR2025/multimodal_vlm/free_on_the_fly_enhancing_flexibility_in_test-time_adaptation_with_online_em.md)
+- [\[CVPR 2026\] PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs](../../CVPR2026/multimodal_vlm/pas_a_training-free_stabilizer_for_temporal_encoding_in_video_llms.md)
+- [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](../../CVPR2026/multimodal_vlm/pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
+- [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](../../CVPR2026/multimodal_vlm/drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
 
 </div>
 

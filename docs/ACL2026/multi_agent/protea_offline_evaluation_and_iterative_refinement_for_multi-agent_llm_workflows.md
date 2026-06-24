@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PROTEA: Offline Evaluation and Iterative Refinement for Multi-Agent LLM Workflows
 description: >-
-  [ACL 2026][Multi-Agent][LLM-as-a-judge] PROTEA is an offline debugging platform for multi-agent LLM workflows. It localizes the cause of degraded final answers to specific nodes through node-level evaluation, backward-generated intermediate expectations, and editable prompt revisions, enabling a closed-loop verification of modification effects.
+  [ACL2026][Multi-Agent][Multi-Agent Workflow] PROTEA is an offline debugging platform for multi-agent LLM workflows. It localizes the cause of degraded final answers to specific nodes through node-level evaluation, backward-generated intermediate expectations, and editable prompt revisions, enabling a closed-loop verification of modification effects.
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - LLM-as-a-judge
+  - "ACL2026"
+  - "Multi-Agent"
+  - "Multi-Agent Workflow"
+  - "Offline Evaluation"
+  - "Node Assessment"
+  - "Prompt Iteration"
+  - "LLM-as-a-judge"
 date: 2026-05-08
-content_hash: a3066063438b01a3
+content_hash: 75d9d9bdcfb2461a
 ---
+
 # PROTEA: Offline Evaluation and Iterative Refinement for Multi-Agent LLM Workflows
 
 **Conference**: ACL2026  
@@ -131,8 +136,8 @@ The automated stress test used 11 workflows generated independently by LLMs from
 - [\[AAAI 2026\] FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](../../AAAI2026/multi_agent/finrpt_dataset_evaluation_system_and_llm-based_multi-agent_framework_for_equity_.md)
 - [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
 - [\[ICML 2026\] Smarter Saboteurs, Better Fixers: Scaling & Security in Linear Multi-Agent Workflows](../../ICML2026/multi_agent/smarter_saboteurs_better_fixers_scaling_security_in_linear_multi-agent_workflows.md)
-- [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 - [\[ACL 2026\] Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives](social_dynamics_as_critical_vulnerabilities_that_undermine_objective_decision-ma.md)
+- [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 
 </div>
 

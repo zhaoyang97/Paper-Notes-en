@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPHERE: Mitigating the Loss of Spectral Plasticity in Mixture-of-Experts for Deep Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper formalizes the loss of plasticity in Mixture-of-Experts (MoE) policies during continual reinforcement learning (CRL) as the decline of the spectral entropy effective rank of the empirical NTK matrix. It employs Gauss-Newton and Kronecker factorization to reduce this to a computable proxy based on the "expert
+  [ICML 2026][Reinforcement Learning][Loss of Plasticity] This paper formalizes the loss of plasticity in Mixture-of-Experts (MoE) policies during continual reinforcement learning (CRL) as the decline of the spectral entropy effective rank of the empirical NTK matrix. It employs Gauss-Newton and Kronecker factorization to reduce this to a computable proxy based on the "expert feature Gram matrix." Finally, a one-line Parseval penalty (SPHERE) is used to increase this proxy…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Loss of Plasticity"
+  - "MoE Policy"
+  - "NTK Spectrum"
+  - "Effective Rank"
+  - "Parseval Regularization"
 date: 2026-05-08
-content_hash: 6fdc30b7499470cb
+content_hash: 5c94b7d026b5ce74
 ---
+
 # SPHERE: Mitigating the Loss of Spectral Plasticity in Mixture-of-Experts for Deep Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -155,10 +161,10 @@ $\mathcal{L} = \mathcal{L}_{\mathrm{PPO}} + \lambda^e \cdot \mathcal{L}_{\mathrm
 ## Related Papers
 
 - [\[ICML 2025\] Mitigating Plasticity Loss in Continual Reinforcement Learning by Reducing Churn](../../ICML2025/reinforcement_learning/mitigating_plasticity_loss_in_continual_reinforcement_learning_by_reducing_churn.md)
+- [\[ICLR 2026\] The Rank and Gradient Lost in Non-stationarity: Sample Weight Decay for Mitigating Plasticity Loss in Reinforcement Learning](../../ICLR2026/reinforcement_learning/the_rank_and_gradient_lost_in_non-stationarity_sample_weight_decay_for_mitigatin.md)
 - [\[ICML 2026\] Dr. Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research](dr_tulu_reinforcement_learning_with_evolving_rubrics_for_deep_research.md)
-- [\[ICML 2026\] Safe In-Context Reinforcement Learning](safe_in-context_reinforcement_learning.md)
-- [\[ICML 2026\] EchoRL: Reinforcement Learning via Rollout Echoing](echorl_reinforcement_learning_via_rollout_echoing.md)
-- [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](safe_reinforcement_learning_with_preference-based_constraint_inference.md)
+- [\[ICLR 2026\] Deft Scheduling of Dynamic Cloud Workflows with Varying Deadlines via Mixture-of-Experts](../../ICLR2026/reinforcement_learning/deft_scheduling_of_dynamic_cloud_workflows_with_varying_deadlines_via_mixture-of.md)
+- [\[ICML 2026\] Reinforcement Learning for Reachability: Guaranteeing Asymptotic Optimality](reinforcement_learning_for_reachability_guaranteeing_asymptotic_optimality.md)
 
 </div>
 

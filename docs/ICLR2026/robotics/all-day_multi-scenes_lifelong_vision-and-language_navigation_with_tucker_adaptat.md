@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] The authors propose Tucker Adaptation (TuKA), which represents multi-level navigation knowledge across various scenes and environments as high-order tensors. Using Tucker decomposition, the method decouples navigation knowledge into a shared subspace (core tensor + encoders/decoders) and scene/environment-specific expe
+  [ICLR 2026][Robotics][Lifelong Vision-and-Language Navigation] The authors propose Tucker Adaptation (TuKA), which represents multi-level navigation knowledge across various scenes and environments as high-order tensors. Using Tucker decomposition, the method decouples navigation knowledge into a shared subspace (core tensor + encoders/decoders) and scene/environment-specific expert vectors. Combined with a Decoupled Knowledge Incremental Learning strategy…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Lifelong Vision-and-Language Navigation"
+  - "Tucker Decomposition"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Catastrophic Forgetting"
+  - "Multi-level Knowledge Decoupling"
 date: 2026-05-08
-content_hash: 3de826c9d4e49f37
+content_hash: ed402c4e705abf9d
 ---
+
 # All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation
 
 **Conference**: ICLR 2026  
@@ -134,15 +140,16 @@ TuKA consistently outperforms LoRA-based baselines in SR and SPL across all scen
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Lifelong Embodied Navigation Learning](lifelong_embodied_navigation_learning.md)
+- [\[ICLR 2026\] M³E: Continual Vision-and-Language Navigation via Mixture of Macro and Micro Experts](m3e_continual_vision-and-language_navigation_via_mixture_of_macro_and_micro_expe.md)
 - [\[ICLR 2026\] VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models](vita_zero-shot_value_functions_via_test-time_adaptation_of_visionlanguage_models.md)
 - [\[ICML 2026\] Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation](../../ICML2026/robotics/turning_adaptation_into_assets_cross-domain_bridging_for_online_vision-language_.md)
 - [\[ICLR 2026\] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations](on_robustness_of_vision-language-action_model_against_multi-modal_perturbations.md)
-- [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
-- [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
 
 </div>
 

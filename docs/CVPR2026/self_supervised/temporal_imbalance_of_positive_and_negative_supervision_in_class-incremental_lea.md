@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Class-Incremental Learning] This work identifies Temporal Imbalance as a neglected source of bias in Class-Incremental Learning (CIL) and proposes the Temporal-Adjusted Loss (TAL). By utilizing a time-decay memory kernel to dynamically reduce the weight of negative supervision for old classes, TAL significantly alleviates catastrophic forgetting
+  [CVPR2026][Self-Supervised Learning][Class-Incremental Learning] This work identifies Temporal Imbalance as a neglected source of bias in Class-Incremental Learning (CIL) and proposes the Temporal-Adjusted Loss (TAL). By utilizing a time-decay memory kernel to dynamically reduce the weight of negative supervision for old classes, TAL significantly alleviates catastrophic forgetting in a plug-and-play manner.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Class-Incremental Learning
-  - catastrophic forgetting
-  - Temporal Imbalance
-  - Loss Reweighting
-  - continual learning
+  - "CVPR2026"
+  - "Self-Supervised Learning"
+  - "Class-Incremental Learning"
+  - "catastrophic forgetting"
+  - "Temporal Imbalance"
+  - "Loss Reweighting"
+  - "continual learning"
 date: 2026-05-08
-content_hash: 08870d8fa8df3203
+content_hash: 1d50dbfcbf0fd129
 ---
+
 # Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning
 
 **Conference**: CVPR2026  
@@ -143,9 +144,9 @@ Under 10-task and 20-task settings on CIFAR-100, ImageNet-100, and Food101, TAL 
 
 - [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
 - [\[ECCV 2024\] STSP: Spatial-Temporal Subspace Projection for Video Class-Incremental Learning](../../ECCV2024/self_supervised/stsp_spatial-temporal_subspace_projection_for_video_class-incremental_learning.md)
-- [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
+- [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
 - [\[CVPR 2026\] Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)
-- [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
+- [\[AAAI 2026\] Improving Sustainability of Adversarial Examples in Class-Incremental Learning](../../AAAI2026/self_supervised/improving_sustainability_of_adversarial_examples_in_class-incremental_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Are Large Language Models Economically Viable for Industry Deployment?
 description: >-
-  [ACL 2026][LLM Efficiency][Paper Note] The Edge-Eval framework is proposed to evaluate the full life cycle of LLMs on traditional T4 GPUs through five deployment metrics (Economic Break-even, Intelligence-Power Ratio, System Density, Cold Start Tax, and Quantization Fidelity). It reveals that small models (<2B) are comprehensively superior to 7B models in e
+  [ACL 2026][LLM Efficiency][Deployment Economics] The Edge-Eval framework is proposed to evaluate the full life cycle of LLMs on traditional T4 GPUs through five deployment metrics (Economic Break-even, Intelligence-Power Ratio, System Density, Cold Start Tax, and Quantization Fidelity). It reveals that small models (<2B) are comprehensively superior to 7B models in economic and ecological dimensions and identifies an anomalous phenomenon where QLoRA increases energy consumpti…
 tags:
-  - ACL 2026
-  - LLM Efficiency
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Deployment Economics"
+  - "Life-cycle Benchmark"
+  - "Energy Efficiency Evaluation"
+  - "Quantization Fidelity"
+  - "Edge Inference"
 date: 2026-05-08
-content_hash: b2162876a8ffb366
+content_hash: 67bf7a5448e7e501
 ---
+
 # Are Large Language Models Economically Viable for Industry Deployment?
 
 **Conference**: ACL 2026  
@@ -142,8 +148,8 @@ QLoRA Energy Paradox (LoRA-FP16 vs. QLoRA-INT4):
 - [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](lizard_an_efficient_linearization_framework_for_large_language_models.md)
 - [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
 - [\[ACL 2026\] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)
+- [\[ICML 2026\] IR3DE: A Linear Router for Large Language Models](../../ICML2026/llm_efficiency/ir3de_a_linear_router_for_large_language_models.md)
 - [\[ACL 2026\] Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning](tandem_riding_together_with_large_and_small_language_models_for_efficient_reason.md)
-- [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](../../ICLR2026/llm_efficiency/dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
 
 </div>
 

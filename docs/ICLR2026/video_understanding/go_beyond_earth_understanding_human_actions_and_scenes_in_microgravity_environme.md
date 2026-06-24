@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Go Beyond Earth: Understanding Human Actions and Scenes in Microgravity Environments
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] This paper introduces **MicroG-4M**, the first video benchmark for spatial-temporal and semantic understanding of human activities in microgravity (zero-gravity space) environments. It contains 4,759 real/cinematic clips, 13,261 action annotations, 1,238 captions, and 7,000+ Q&A pairs, covering fine-grained action reco
+  [ICLR 2026][Video Understanding][Microgravity] This paper introduces **MicroG-4M**, the first video benchmark for spatial-temporal and semantic understanding of human activities in microgravity (zero-gravity space) environments. It contains 4,759 real/cinematic clips, 13,261 action annotations, 1,238 captions, and 7,000+ Q&A pairs, covering fine-grained action recognition, video captioning, and visual question answering. The proposed MicroG-Bench systematically quantifies the…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Microgravity"
+  - "Action Recognition"
+  - "Video Captioning"
+  - "Visual Question Answering"
+  - "Domain Shift Benchmark"
 date: 2026-05-08
-content_hash: c6c02ed99bce6cdc
+content_hash: 5e252f1241b1148d
 ---
+
 # Go Beyond Earth: Understanding Human Actions and Scenes in Microgravity Environments
 
 **Conference**: ICLR 2026  
@@ -120,10 +126,10 @@ Under matched AVA fine-tuning settings, AVA $\rightarrow$ MicroG-4M significantl
 ## Related Papers
 
 - [\[ICML 2026\] AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes](../../ICML2026/video_understanding/avtrack_audio-visual_tracking_in_human-centric_complex_scenes.md)
+- [\[ICLR 2026\] EgoBrain: Synergizing Minds and Eyes For Human Action Understanding](egobrain_synergizing_minds_and_eyes_for_human_action_understanding.md)
 - [\[CVPR 2026\] Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation](../../CVPR2026/video_understanding/beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human.md)
 - [\[CVPR 2026\] First Frame Is the Place to Go for Video Content Customization](../../CVPR2026/video_understanding/first_frame_is_the_place_to_go_for_video_content_customization.md)
 - [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](../../CVPR2026/video_understanding/openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
-- [\[ICLR 2026\] Beyond Static Vision: Scene Dynamic Field Unlocks Intuitive Physics Understanding in Multi-modal Large Language Models](beyond_static_vision_scene_dynamic_field_unlocks_intuitive_physics_understanding.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distributed Image Compression with Multimodal Side Information at Extremely Low Bitrates
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] To address the issues of blurred reconstruction and loss of detail in multi-view distributed image compression at extremely low bitrates (<0.1 bpp), this paper proposes MDIC. It is the first to feed side information into a pre-trained text-to-image diffusion model in a "text + visual" multimodal format, using a text-su
+  [CVPR 2026][Model Compression][Distributed Image Compression] To address the issues of blurred reconstruction and loss of detail in multi-view distributed image compression at extremely low bitrates (<0.1 bpp), this paper proposes MDIC. It is the first to feed side information into a pre-trained text-to-image diffusion model in a "text + visual" multimodal format, using a text-supervised visual mask to gate the restoration of category information and object-level details lost…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Distributed Image Compression"
+  - "Side Information"
+  - "Latent Diffusion Model"
+  - "Multimodal Alignment"
+  - "Extremely Low Bitrate"
 date: 2026-05-08
-content_hash: 08b0ae48587ddd9b
+content_hash: c6ba72b2681f45c5
 ---
+
 # Distributed Image Compression with Multimodal Side Information at Extremely Low Bitrates
 
 **Conference**: CVPR 2026  
@@ -153,7 +159,7 @@ MDIC achieves significantly lower LPIPS (better perception) with a lower bpp, wh
 - [\[CVPR 2026\] Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression](parallax_to_align_them_all_an_omniparallax_attention_mechanism_for_distributed_m.md)
 - [\[CVPR 2026\] Ultra-Low Bitrate Perceptual Image Compression with Shallow Encoder](ultra-low_bitrate_perceptual_image_compression_with_shallow_encoder.md)
 - [\[AAAI 2026\] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](../../AAAI2026/model_compression/hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)
-- [\[CVPR 2026\] On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors](on_the_robustness_of_diffusion-based_image_compression_to_bit-flip_errors.md)
+- [\[CVPR 2026\] What Matters in Practical Learned Image Compression](what_matters_in_practical_learned_image_compression.md)
 - [\[CVPR 2026\] Block-based Learned Image Compression without Blocking Artifacts](block-based_learned_image_compression_without_blocking_artifacts.md)
 
 </div>

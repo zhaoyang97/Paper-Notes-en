@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] DuetSVG transforms SVG generation from "pure text generation" to "joint autoregressive generation of image tokens and SVG tokens." This allows the image tokens generated first by the model to serve as internal visual guidance during SVG decoding. Combined with an image-guided test-time resampling strategy, it outperfor
+  [CVPR 2026][Multimodal VLM][SVG generation] DuetSVG transforms SVG generation from "pure text generation" to "joint autoregressive generation of image tokens and SVG tokens." This allows the image tokens generated first by the model to serve as internal visual guidance during SVG decoding. Combined with an image-guided test-time resampling strategy, it outperforms existing VLM methods in both text-to-SVG and image-to-SVG tasks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "SVG generation"
+  - "unified multimodal model"
+  - "internal visual guidance"
+  - "test-time extension"
+  - "autoregressive generation"
 date: 2026-05-08
-content_hash: a8aaf922fcd37b17
+content_hash: 3abc955791686650
 ---
+
 # DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ Findings are consistent on SArena-Icon: DuetSVG (TTS) reduces T2SVG FID to 11.71
 
 ## Related Papers
 
+- [\[ICLR 2026\] InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/internsvg_towards_unified_svg_tasks_with_multimodal_large_language_models.md)
 - [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
-- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
-- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
-- [\[CVPR 2026\] OneCAT: Decoder-Only Auto-Regressive Model for Unified Understanding and Generation](onecat_decoder-only_auto-regressive_model_for_unified_understanding_and_generati.md)
+- [\[CVPR 2026\] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance](multimodal_continual_instruction_tuning_with_dynamic_gradient_guidance.md)
 - [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
+- [\[CVPR 2026\] HBridge: H-Shape Bridging of Heterogeneous Experts for Unified Multimodal Understanding and Generation](hbridge_h-shape_bridging_of_heterogeneous_experts_for_unified_multimodal_underst.md)
 
 </div>
 

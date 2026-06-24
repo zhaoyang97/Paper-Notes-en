@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] OctoNav: Towards Generalist Embodied Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Think-Before-Action] OctoNav unifies five fragmented navigation tasks—ObjNav, PointNav, ImgNav, Ins-ImgNav, and VLN—into a single "free-form, multi-modal, multi-capability" instruction format. The work releases OctoNav-Bench, containing 45k+ instruction-trajectory pairs, and the TBA-CoT dataset with reasoning chains. It introduces OctoNav-
+  [CVPR 2026][Robotics][Generalist Navigation] OctoNav unifies five fragmented navigation tasks—ObjNav, PointNav, ImgNav, Ins-ImgNav, and VLN—into a single "free-form, multi-modal, multi-capability" instruction format. The work releases OctoNav-Bench, containing 45k+ instruction-trajectory pairs, and the TBA-CoT dataset with reasoning chains. It introduces OctoNav-R1 (based on LLaMA-VID), a VLA model that "thinks before acting" trained via a three-stage Hybrid Training Paradigm…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Think-Before-Action
-  - VLA
-  - GRPO
+  - "CVPR 2026"
+  - "Robotics"
+  - "Generalist Navigation"
+  - "Free-form Instructions"
+  - "Think-Before-Action"
+  - "VLA"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 1ad4fdc824291863
+content_hash: 159efdb1b89197b6
 ---
+
 # OctoNav: Towards Generalist Embodied Navigation
 
 **Conference**: CVPR 2026  
@@ -148,14 +151,15 @@ OctoNav-R1 leads across all categories, e.g., ImgNav SR 23.97 (vs. 11.16次优) 
 - **Value**: ⭐⭐⭐⭐⭐ Establishes a unified benchmark and replicable training paradigm for generalist embodied navigation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FM-Steer: Enhance Generalist Policies with Value-Guided Cascaded Denoising](fm-steer_enhance_generalist_policies_with_value-guided_cascaded_denoising.md)
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
-- [\[CVPR 2026\] D3D-VLP: Dynamic 3D Vision-Language-Planning Model for Embodied Grounding and Navigation](d3d-vlp_dynamic_3d_vision-language-planning_model_for_embodied_grounding_and_nav.md)
-- [\[ICML 2026\] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](../../ICML2026/robotics/robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)
+- [\[ICLR 2026\] Embodied Navigation Foundation Model](../../ICLR2026/robotics/embodied_navigation_foundation_model.md)
+- [\[ICLR 2026\] Lifelong Embodied Navigation Learning](../../ICLR2026/robotics/lifelong_embodied_navigation_learning.md)
+- [\[CVPR 2026\] SocialNav: Training Human-Inspired Foundation Model for Socially-Aware Embodied Navigation](socialnav_training_human-inspired_foundation_model_for_socially-aware_embodied_n.md)
 - [\[CVPR 2026\] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent](mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag.md)
 
 </div>

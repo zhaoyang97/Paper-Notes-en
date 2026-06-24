@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective
 description: >-
-  [NeurIPS 2025][Graph Learning][GNN] This paper theoretically reveals the smoothness-generalization dilemma inherent in GNN message passing…
+  [NeurIPS 2025][Graph Learning][GNN] This paper theoretically reveals the smoothness-generalization dilemma inherent in GNN message passing, and proposes the IGNN framework with three minimal design principles — separative neighborhood transformation, inceptive aggregation, and neighborhood relationship learning — to systematically alleviate this dilemma. IGNN achieves top performance among 30 baselines and demonstrates universality across both homophilic and heterophilic grap…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Smoothness-Generalization Dilemma"
   - "IGNN"
 date: 2026-05-08
-content_hash: 470e24662fb4ae73
+content_hash: 62ecca21691a9a35
 ---
 
 # Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective
@@ -131,10 +131,10 @@ IGNN (Inceptive GNN) is built upon classic GCN using three minimal design princi
 ## Related Papers
 
 - [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
+- [\[ICML 2025\] LLM Enhancers for GNNs: An Analysis from the Perspective of Causal Mechanism Identification](../../ICML2025/graph_learning/llm_enhancers_for_gnns_an_analysis_from_the_perspective_of_causal_mechanism_iden.md)
+- [\[ICLR 2026\] HarmonyGNNs: Harmonizing Heterophily and Homophily in GNNs via Self-Supervised Node Encoding](../../ICLR2026/graph_learning/harmonygnns_harmonizing_heterophily_and_homophily_in_gnns_via_self-supervised_no.md)
 - [\[NeurIPS 2025\] Moscat: Mixture of Scope Experts at Test for Generalizing Deeper GNNs](mixture_of_scope_experts_at_test_generalizing_deeper_graph_neural_networks_with_.md)
-- [\[NeurIPS 2025\] What Expressivity Theory Misses: Message Passing Complexity for GNNs](what_expressivity_theory_misses_message_passing_complexity_for_gnns.md)
-- [\[ICLR 2026\] A Geometric Perspective on the Difficulties of Learning GNN-based SAT Solvers](../../ICLR2026/graph_learning/a_geometric_perspective_on_the_difficulties_of_learning_gnn-based_sat_solvers.md)
-- [\[ICML 2026\] View Space: Representation Learning Across Arbitrary Graphs](../../ICML2026/graph_learning/view_space_learning_representation_across_arbitrary_graphs.md)
+- [\[ICML 2025\] Towards Graph Foundation Models: Learning Generalities Across Graphs via Task-Trees](../../ICML2025/graph_learning/towards_graph_foundation_models_learning_generalities_across_graphs_via_task-tre.md)
 
 </div>
 

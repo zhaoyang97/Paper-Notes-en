@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Why Do Open-Source LLMs Struggle with Data Analysis? A Systematic Empirical Study
 description: >-
-  [AAAI 2026][Code Intelligence][Data Analysis] This paper systematically investigates the capability bottlenecks of open-source LLMs in data analysis tasks. It decomposes data analysis into three dimensions—data comprehen…
+  [AAAI 2026 Oral][Code Intelligence][Data Analysis] This paper systematically investigates the capability bottlenecks of open-source LLMs in data analysis tasks. It decomposes data analysis into three dimensions—data comprehension, code generation, and strategic planning—and identifies **strategic planning as the decisive factor**, rather than coding or data comprehension. A strategy-guided data synthesis approach is proposed, enabling fine-tuned 7B/14B models to achieve perfo…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Code Intelligence"
   - "Data Analysis"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Data Synthesis"
   - "Open-Source Models"
 date: 2026-05-08
-content_hash: 1be31e17d673a33d
+content_hash: a8f62d81e105f5c1
 ---
 
 # Why Do Open-Source LLMs Struggle with Data Analysis? A Systematic Empirical Study
@@ -238,9 +238,9 @@ The 7B model achieves substantial gains: +14.06% on QRData and +7.95% on Discove
 
 - [\[ACL 2026\] Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4](../../ACL2026/code_intelligence/discover_and_prove_an_open-source_agentic_framework_for_hard_mode_automated_theo.md)
 - [\[NeurIPS 2025\] Preserving LLM Capabilities through Calibration Data Curation: From Analysis to Optimization](../../NeurIPS2025/code_intelligence/preserving_llm_capabilities_through_calibration_data_curation_from_analysis_to_o.md)
+- [\[ICLR 2026\] QLCoder: A Query Synthesizer For Static Analysis of Security Vulnerabilities](../../ICLR2026/code_intelligence/qlcoder_a_query_synthesizer_for_static_analysis_of_security_vulnerabilities.md)
+- [\[ICLR 2026\] Code2Bench: Scaling Source and Rigor for Dynamic Benchmark Construction](../../ICLR2026/code_intelligence/code2bench_scaling_source_and_rigor_for_dynamic_benchmark_construction.md)
 - [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](../../ACL2026/code_intelligence/chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
-- [\[ICLR 2026\] Inference-Time Safety for Code LLMs via Retrieval-Augmented Revision](../../ICLR2026/code_intelligence/inference-time_safety_for_code_llms_via_retrieval-augmented_revision.md)
-- [\[AAAI 2026\] DiffBench Meets DiffAgent: End-to-End LLM-Driven Diffusion Acceleration Code Generation](diffbench_meets_diffagent_end-to-end_llm-driven_diffusion_ac.md)
 
 </div>
 

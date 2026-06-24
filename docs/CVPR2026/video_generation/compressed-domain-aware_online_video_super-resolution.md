@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compressed-Domain-Aware Online Video Super-Resolution
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] CDA-VSR proposes leveraging video compressed domain information (motion vectors, residual maps, and frame types) to guide three key stages of online video super-resolution: motion-vector-guided deformable alignment for efficient and precise registration, residual-map-gated fusion to suppress misaligned regions, and fra
+  [CVPR 2026][Video Generation][Online Video Super-Resolution] CDA-VSR proposes leveraging video compressed domain information (motion vectors, residual maps, and frame types) to guide three key stages of online video super-resolution: motion-vector-guided deformable alignment for efficient and precise registration, residual-map-gated fusion to suppress misaligned regions, and frame-type-aware reconstruction for adaptive computational resource allocation. It achieves optimal PS…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Online Video Super-Resolution"
+  - "Compressed Domain Information"
+  - "Motion Vectors"
+  - "Deformable Alignment"
+  - "Frame-Type Awareness"
 date: 2026-05-08
-content_hash: 89b1dc3bf43723bd
+content_hash: 087bba0050780a3b
 ---
+
 # Compressed-Domain-Aware Online Video Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ Inter4K 2K resolution: **Ours** 29.98dB / 25.1 FPS (the only method exceeding 24
 
 ## Related Papers
 
-- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
+- [\[CVPR 2026\] VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment](vsrell_a_simple_baseline_for_video_super-resolution_and_enhancement_in_low-light.md)
+- [\[CVPR 2026\] Thermal Diffusion Matters: Infrared Spatial-Temporal Video Super-Resolution through Heat Conduction Priors](thermal_diffusion_matters_infrared_spatial-temporal_video_super-resolution_throu.md)
 - [\[ICCV 2025\] VSRM: A Robust Mamba-Based Framework for Video Super-Resolution](../../ICCV2025/video_generation/vsrm_a_robust_mamba-based_framework_for_video_super-resolution.md)
-- [\[CVPR 2026\] Latent-Compressed Variational Autoencoder for Video Diffusion Models](latent-compressed_variational_autoencoder_for_video_diffusion_models.md)
 - [\[CVPR 2025\] VideoGigaGAN: Towards Detail-rich Video Super-Resolution](../../CVPR2025/video_generation/videogigagan_towards_detail-rich_video_super-resolution.md)
-- [\[CVPR 2025\] PatchVSR: Breaking Video Diffusion Resolution Limits with Patch-Wise Video Super-Resolution](../../CVPR2025/video_generation/patchvsr_breaking_video_diffusion_resolution_limits_with_patch-wise_video_super-.md)
+- [\[ICLR 2026\] SimpleGVR: A Simple Baseline for Latent-Cascaded Generative Video Super-Resolution](../../ICLR2026/video_generation/simplegvr_a_simple_baseline_for_latent-cascaded_generative_video_super-resolutio.md)
 
 </div>
 

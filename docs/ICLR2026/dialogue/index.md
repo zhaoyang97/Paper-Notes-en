@@ -41,7 +41,7 @@ item_total: 10
 
 **🔬 ICLR2026** · **10** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [💬 ACL2026 (26)](../../ACL2026/dialogue/index.md) · [🧪 ICML2026 (5)](../../ICML2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/dialogue/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (26)](../../ACL2026/dialogue/index.md) · [🧪 ICML2026 (5)](../../ICML2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/dialogue/index.md) · [🧪 ICML2025 (2)](../../ICML2025/dialogue/index.md) · [💬 ACL2025 (18)](../../ACL2025/dialogue/index.md)
 
 🔥 **Top topics:** Dialogue ×2 · Reasoning ×2
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] LLSA extends the "single-level coarse selection" of Top-K sparse attention into a "multi-level coarse-to-fine" hierarchical structure, reducing the complexity of both the block selection and attention phases from $O(N^2)$ to log-linear. Combined with a sparse indexing backpropagation kernel that avoids constructing den
+  [CVPR 2026][Model Compression][Sparse Attention] LLSA extends the "single-level coarse selection" of Top-K sparse attention into a "multi-level coarse-to-fine" hierarchical structure, reducing the complexity of both the block selection and attention phases from $O(N^2)$ to log-linear. Combined with a sparse indexing backpropagation kernel that avoids constructing dense masks, it achieves a 28.27× inference speedup and 6.09× training speedup on 256×256 pixel DiTs without degra…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Sparse Attention"
+  - "Diffusion Transformer"
+  - "Log-linear Complexity"
+  - "Long Sequences"
+  - "GPU Kernels"
 date: 2026-05-08
-content_hash: ee653bbd5e1e361f
+content_hash: d481c6b5ce29a5ac
 ---
+
 # Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -153,15 +159,16 @@ DiT-S + 128×128 FFHQ, default K=8, B=16, 20 epochs.
 - Value: ⭐⭐⭐⭐ The log-linear backprop kernel is a highly practical component for accelerating long-sequence DiT training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention](../../ICLR2026/model_compression/sla_beyond_sparsity_in_diffusion_transformers_via_fine-tunable_sparselinear_atte.md)
 - [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
-- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
-- [\[CVPR 2026\] PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers](ppcl_pluggable_pruning_dit_distillation.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](../../ICLR2026/model_compression/fasa_frequency-aware_sparse_attention.md)
 - [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](../../ICML2026/model_compression/token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
+- [\[CVPR 2026\] Otil: Accelerating Diffusion Model Inference via Communication-Efficient Multi-GPU Parallelism](otil_accelerating_diffusion_model_inference_via_communication-efficient_multi-gp.md)
 
 </div>
 

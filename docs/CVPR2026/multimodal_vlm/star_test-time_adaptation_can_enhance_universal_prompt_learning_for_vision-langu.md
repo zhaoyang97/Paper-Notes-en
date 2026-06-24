@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] STAR enables CLIP models that have undergone few-shot prompt tuning to continue self-adapting during the inference stage using unlabeled test streams (mixing ID and OOD samples). It first uses Fisher scores for adaptive soft gating to separate ID/OOD, then generates reliable pseudo-labels via conjugate optimization for
+  [CVPR 2026][Multimodal VLM][Prompt Learning] STAR enables CLIP models that have undergone few-shot prompt tuning to continue self-adapting during the inference stage using unlabeled test streams (mixing ID and OOD samples). It first uses Fisher scores for adaptive soft gating to separate ID/OOD, then generates reliable pseudo-labels via conjugate optimization for unsupervised fine-tuning, and finally utilizes a dynamic prototype library for class-calibrated OOD detection—sign…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Prompt Learning"
+  - "Test-Time Adaptation"
+  - "OOD Detection"
+  - "Conjugate Optimization"
+  - "CLIP"
 date: 2026-05-08
-content_hash: fc43d77f6e45407e
+content_hash: 956769ed849e3450
 ---
+
 # STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -135,15 +140,15 @@ Components: M1 = Separability-aware soft gating; M2 = Conjugate optimization; M3
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
 - [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
 - [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
-- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
-- [\[CVPR 2026\] Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection](ramen_robust_test-time_adaptation_of_vision-language_models_with_active_sample_s.md)
+- [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
 
 </div>
 

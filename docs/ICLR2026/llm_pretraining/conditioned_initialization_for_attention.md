@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Conditioned Initialization for Attention
 description: >-
-  [ICLR 2026][Pretraining][Jacobian] This paper theoretically attributes the optimization stability of attention layers to the condition number of their Jacobian. It proposes "Conditioned Initialization"—initializing the value matrix as a rectangular identity matrix and the query/key matrices as semi-orthogonal matrices (both having a condition number of
+  [ICLR2026][LLM Pretraining][Attention initialization] This paper theoretically attributes the optimization stability of attention layers to the condition number of their Jacobian. It proposes "Conditioned Initialization"—initializing the value matrix as a rectangular identity matrix and the query/key matrices as semi-orthogonal matrices (both having a condition number of 1). This tightens the upper bound of the Jacobian condition number at the start of training…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Jacobian
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Attention initialization"
+  - "condition number"
+  - "Jacobian"
+  - "semi-orthogonal matrix"
+  - "optimization stability"
 date: 2026-05-08
-content_hash: 7c1da7b1f7e9e086
+content_hash: 988172da6d394756
 ---
+
 # Conditioned Initialization for Attention
 
 **Conference**: ICLR2026  
@@ -121,15 +126,14 @@ Number of epochs required to reach the final accuracy of the default initializat
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Deconstructing Positional Information: From Attention Logits to Training Biases](deconstructing_positional_information_from_attention_logits_to_training_biases.md)
+- [\[ICLR 2026\] Avey-B: Refactoring Attention-Free Architectures into Bidirectional Encoders](avey-b.md)
 - [\[CVPR 2026\] Unlocking Pre-trained Weights: Parameter Inheritance for Zero-Shot Initialization](../../CVPR2026/llm_pretraining/unlocking_pre-trained_weights_parameter_inheritance_for_zero-shot_initialization.md)
+- [\[ICLR 2026\] Deconstructing Positional Information: From Attention Logits to Training Biases](deconstructing_positional_information_from_attention_logits_to_training_biases.md)
 - [\[ICML 2026\] Focus and Dilution: The Multi-stage Learning Process of Attention](../../ICML2026/llm_pretraining/focus_and_dilution_the_multi-stage_learning_process_of_attention.md)
 - [\[CVPR 2025\] Robust Message Embedding via Attention Flow-Based Steganography](../../CVPR2025/llm_pretraining/robust_message_embedding_via_attention_flow-based_steganography.md)
-- [\[ICML 2025\] Benign Overfitting in Token Selection of Attention Mechanism](../../ICML2025/llm_pretraining/benign_overfitting_in_token_selection_of_attention_mechanism.md)
 
 </div>
 

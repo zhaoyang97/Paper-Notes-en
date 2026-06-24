@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Learning Interestingness in Automated Mathematical Theory Formation
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][automated theory formation] This paper proposes Fermat—a reinforcement learning environment that models mathematical theory formation as an MDP—and EvoAbstract…
+  [NeurIPS 2025 Spotlight][Reinforcement Learning][automated theory formation] This paper proposes Fermat—a reinforcement learning environment that models mathematical theory formation as an MDP—and EvoAbstract, an LLM-driven evolutionary algorithm with abstraction learning, for automatically synthesizing interestingness metrics for mathematical objects. The approach substantially outperforms hard-coded baselines in elementary number theory and finite fields.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Reinforcement Learning"
   - "automated theory formation"
   - "interestingness learning"
   - "evolutionary program synthesis"
   - "LLM-driven search"
 date: 2026-05-08
-content_hash: 13cdff3607b49172
+content_hash: c5c95a2e311e1350
 ---
 
 # Learning Interestingness in Automated Mathematical Theory Formation
@@ -145,8 +145,8 @@ EvoAbstract and FunSearch significantly outperform all baselines across all star
 - [\[NeurIPS 2025\] DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning](discover_automated_curricula_for_sparse-reward_reinforcement_learning.md)
 - [\[NeurIPS 2025\] A Theory of Multi-Agent Generative Flow Networks](a_theory_of_multi-agent_generative_flow_networks.md)
 - [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
+- [\[ICML 2025\] Decoding Rewards in Competitive Games: Inverse Game Theory with Entropy Regularization](../../ICML2025/reinforcement_learning/decoding_rewards_in_competitive_games_inverse_game_theory_with_entropy_regulariz.md)
 - [\[ACL 2026\] Adaptive Instruction Composition for Automated LLM Red-Teaming](../../ACL2026/reinforcement_learning/adaptive_instruction_composition_for_automated_llm_red-teaming.md)
-- [\[ICLR 2026\] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning](../../ICLR2026/reinforcement_learning/arm-fm_automated_reward_machines_via_foundation_models_for_compositional_reinfor.md)
 
 </div>
 

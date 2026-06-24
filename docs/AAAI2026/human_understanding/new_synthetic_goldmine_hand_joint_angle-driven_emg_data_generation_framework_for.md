@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] New Synthetic Goldmine: Hand Joint Angle-Driven EMG Data Generation Framework for Micro-Gesture Recognition
 description: >-
-  [AAAI 2026][Human Understanding][EMG signal generation] This paper proposes SeqEMG-GAN, a conditional adversarial generation framework driven by hand joint angle sequences. Through the joint design of an angle encoder…
+  [AAAI 2026][Human Understanding][EMG signal generation] This paper proposes SeqEMG-GAN, a conditional adversarial generation framework driven by hand joint angle sequences. Through the joint design of an angle encoder, a two-level context encoder (featuring the novel Ang2Gist unit), a deep convolutional generator, and a multi-view discriminator, the framework synthesizes high-fidelity EMG signals from joint kinematic trajectories, enabling zero-shot generation for unseen gest…
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "joint angle-driven"
   - "data augmentation"
 date: 2026-05-08
-content_hash: 8803b4063dcaccf9
+content_hash: e6a4f7282f649841
 ---
 
 # New Synthetic Goldmine: Hand Joint Angle-Driven EMG Data Generation Framework for Micro-Gesture Recognition
@@ -205,9 +205,9 @@ Mixed data consistently improves performance across all evaluation protocols, wi
 
 - [\[CVPR 2026\] OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition](../../CVPR2026/human_understanding/omg-bench_a_new_challenging_benchmark_for_skeleton-based_online_micro_hand_gestu.md)
 - [\[AAAI 2026\] VPHO: Joint Visual-Physical Cue Learning and Aggregation for Hand-Object Pose Estimation](vpho_joint_visual-physical_cue_learning_and_aggregation_for_hand-object_pose_est.md)
-- [\[CVPR 2026\] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning](../../CVPR2026/human_understanding/active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_.md)
-- [\[ICCV 2025\] SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data](../../ICCV2025/human_understanding/synfer_towards_boosting_facial_expression_recognition_with_synthetic_data.md)
+- [\[ICLR 2026\] EMBridge: Enhancing Gesture Generalization from EMG Signals Through Cross-modal Representation Learning](../../ICLR2026/human_understanding/embridge_enhancing_gesture_generalization_from_emg_signals_through_cross-modal_r.md)
 - [\[NeurIPS 2025\] CPEP: Contrastive Pose-EMG Pre-training Enhances Gesture Generalization on EMG Signals](../../NeurIPS2025/human_understanding/cpep_contrastive_pose-emg_pre-training_enhances_gesture_generalization_on_emg_si.md)
+- [\[ICCV 2025\] SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data](../../ICCV2025/human_understanding/synfer_towards_boosting_facial_expression_recognition_with_synthetic_data.md)
 
 </div>
 

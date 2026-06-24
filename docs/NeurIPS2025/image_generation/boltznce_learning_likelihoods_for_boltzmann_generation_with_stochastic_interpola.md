@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants
 description: >-
-  [NeurIPS 2025][Image Generation][Boltzmann distribution] BoltzNCE trains an Energy-Based Model (EBM) via a hybrid Score Matching + InfoNCE objective to approximate the likelihood of a Boltzmann Generator…
+  [NeurIPS 2025][Image Generation][Boltzmann distribution] BoltzNCE trains an Energy-Based Model (EBM) via a hybrid Score Matching + InfoNCE objective to approximate the likelihood of a Boltzmann Generator, eliminating expensive Jacobian trace computations. On alanine dipeptide conformation generation, it achieves a 100× inference speedup with a free energy error of only 0.02 $k_BT$.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "molecular conformation"
   - "free energy"
 date: 2026-05-08
-content_hash: cb0e70b6af1381e6
+content_hash: 237276563545444f
 ---
 
 # BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants
@@ -126,11 +126,11 @@ Two-stage training. Stage 1: flow matching with an equivariant vector field. Sta
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
+- [\[ICLR 2026\] Latent Stochastic Interpolants](../../ICLR2026/image_generation/latent_stochastic_interpolants.md)
+- [\[ICLR 2026\] Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants](../../ICLR2026/image_generation/generative_modeling_from_black-box_corruptions_via_self-consistent_stochastic_in.md)
 - [\[NeurIPS 2025\] FALCON: Few-step Accurate Likelihoods for Continuous Flows](falcon_few-step_accurate_likelihoods_for_continuous_flows.md)
-- [\[NeurIPS 2025\] Inference-Time Scaling for Flow Models via Stochastic Generation and Rollover Budget Forcing](inference-time_scaling_for_flow_models_via_stochastic_generation_and_rollover_bu.md)
+- [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
-- [\[ICML 2026\] Coarse-Grained Boltzmann Generators](../../ICML2026/image_generation/coarse-grained_boltzmann_generators.md)
 
 </div>
 

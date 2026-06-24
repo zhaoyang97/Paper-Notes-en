@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Enforcing Axioms for AI Alignment under Loss-Based Rules
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] Under a linear social choice framework, loss-based reward models (including polynomial rewards) fail to guarantee Pareto Optimality (PO), but PO can be recovered in the limit when training data uniformly covers the embedding space—offering a provable data design for constitutional-style alignment.
+  [ICLR 2026][LLM Alignment][RLHF] Under a linear social choice framework, loss-based reward models (including polynomial rewards) fail to guarantee Pareto Optimality (PO), but PO can be recovered in the limit when training data uniformly covers the embedding space—offering a provable data design for constitutional-style alignment.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
-  - Constitutional AI
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "RLHF"
+  - "Pareto Optimality"
+  - "Social Choice"
+  - "Constitutional AI"
+  - "Reward Model Axioms"
+  - "Data Design"
 date: 2026-05-08
-content_hash: 1cb43562f9ee49f9
+content_hash: b99596c89255ec04
 ---
+
 # Enforcing Axioms for AI Alignment under Loss-Based Rules
 
 **Conference**: ICLR 2026  

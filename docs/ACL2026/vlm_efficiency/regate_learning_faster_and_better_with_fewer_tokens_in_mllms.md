@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReGATE: Learning Faster and Better with Fewer Tokens in MLLMs
 description: >-
-  [ACL 2026][vlm_efficiency][Token Elision] ReGATE utilizes a frozen text-only teacher to estimate which output tokens require visual information, combined with the student's historical learning difficulty to dynamically select training tokens. This allows MLLMs to train faster with fewer tokens without changing architecture or adding parameters, achieving or ex
+  [ACL 2026][Multimodal Efficiency][Multimodal Large Language Models] ReGATE utilizes a frozen text-only teacher to estimate which output tokens require visual information, combined with the student's historical learning difficulty to dynamically select training tokens. This allows MLLMs to train faster with fewer tokens without changing architecture or adding parameters, achieving or exceeding standard fine-tuning performance on multiple image and video benchmarks.
 tags:
-  - ACL 2026
-  - vlm_efficiency
-  - Token Elision
+  - "ACL 2026"
+  - "Multimodal Efficiency"
+  - "Multimodal Large Language Models"
+  - "Training Acceleration"
+  - "Token Elision"
+  - "Teacher-Student"
+  - "Sparse Computation"
 date: 2026-05-08
-content_hash: f89c9cf04d4cb37a
+content_hash: aca517c85a0e51a8
 ---
+
 # ReGATE: Learning Faster and Better with Fewer Tokens in MLLMs
 
 **Conference**: ACL 2026  
@@ -175,10 +180,10 @@ Ablations in the appendix show both signals are necessary. Using only student EM
 
 ## Related Papers
 
+- [\[ICLR 2026\] iLLaVA: An Image Is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models](../../ICLR2026/vlm_efficiency/illava_an_image_is_worth_fewer_than_13_input_tokens_in_large_multimodal_models.md)
 - [\[CVPR 2026\] Better, Stronger, Faster: Tackling the Trilemma in MLLM-based Segmentation with Simultaneous Textual Mask Prediction](../../CVPR2026/vlm_efficiency/better_stronger_faster_tackling_the_trilemma_in_mllm-based_segmentation_with_sim.md)
 - [\[ACL 2025\] Sharper and Faster mean Better: Towards More Efficient Vision-Language Model for Hour-scale Long Video Understanding](../../ACL2025/vlm_efficiency/sophia_efficient_long_video.md)
-- [\[AAAI 2026\] EM-KD: Distilling Efficient Multimodal Large Language Model with Unbalanced Vision Tokens](../../AAAI2026/vlm_efficiency/em-kd_distilling_efficient_multimodal_large_language_model_w.md)
-- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](../../ICCV2025/vlm_efficiency/shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
+- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](../../CVPR2026/vlm_efficiency/httm_head-wise_temporal_token_merging_for_faster_vggt.md)
 - [\[CVPR 2026\] MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data and Training Recipes](../../CVPR2026/vlm_efficiency/minicpm-v_45_cooking_efficient_mllms_via_architecture_data_and_training_recipe.md)
 
 </div>

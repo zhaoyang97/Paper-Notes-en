@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ArrowGEV: Grounding Events in Video via Learning the Arrow of Time
 description: >-
-  [ACL 2026][vlm_reasoning][Reinforcement Learning] ArrowGEV is proposed, a reinforcement learning framework inspired by the "Arrow of Time" in physics. It models temporal directionality by distinguishing between time-sensitive and time-insensitive events, enhancing the event grounding accuracy and temporal understanding of VLMs.
+  [ACL 2026 Findings][VLM Reasoning][Video Event Grounding] ArrowGEV is proposed, a reinforcement learning framework inspired by the "Arrow of Time" in physics. It models temporal directionality by distinguishing between time-sensitive and time-insensitive events, enhancing the event grounding accuracy and temporal understanding of VLMs.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - Reinforcement Learning
-  - Vision-Language Model
+  - "ACL 2026 Findings"
+  - "VLM Reasoning"
+  - "Video Event Grounding"
+  - "Temporal Directionality"
+  - "Reinforcement Learning"
+  - "Vision-Language Models"
+  - "Temporal Understanding"
 date: 2026-05-08
-content_hash: 9ac30afcbbe03cbd
+content_hash: 911e7b5eff51b979
 ---
+
 # ArrowGEV: Grounding Events in Video via Learning the Arrow of Time
 
 **Conference**: ACL 2026 Findings  
@@ -131,15 +135,15 @@ The Temporal Directionality Discrepancy (TDD) metric is introduced: $$\text{TDD}
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/vlm_reasoning/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
 - [\[ICML 2026\] Temporal-Aware Reasoning Optimization for Video Temporal Grounding](../../ICML2026/vlm_reasoning/temporal-aware_reasoning_optimization_for_video_temporal_grounding.md)
+- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/vlm_reasoning/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
+- [\[ICLR 2026\] STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning](../../ICLR2026/vlm_reasoning/stvg-r1_incentivizing_instance-level_reasoning_and_grounding_in_videos_via_reinf.md)
 - [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](../../CVPR2026/vlm_reasoning/incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
 - [\[NeurIPS 2025\] iFinder: Structured Zero-Shot VLM Grounding for Dash-Cam Video Reasoning](../../NeurIPS2025/vlm_reasoning/ifinder_structured_zero-shot_vision-based_llm_grounding_for_dash-cam_video_reaso.md)
-- [\[CVPR 2026\] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](../../CVPR2026/vlm_reasoning/learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)
 
 </div>
 

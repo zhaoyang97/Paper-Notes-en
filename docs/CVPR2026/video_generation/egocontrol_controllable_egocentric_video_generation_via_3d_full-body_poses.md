@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] EgoControl utilizes a compact representation of "relative head pose + pelvis-rooted joint poses" on the pretrained video diffusion model Cosmos. By injecting control signals through a twin-pathway of AdaLN modulation and pose token cross-attention, it achieves precise future frame prediction driven by the 3D full-body
+  [CVPR 2026][Video Generation][Egocentric video generation] EgoControl utilizes a compact representation of "relative head pose + pelvis-rooted joint poses" on the pretrained video diffusion model Cosmos. By injecting control signals through a twin-pathway of AdaLN modulation and pose token cross-attention, it achieves precise future frame prediction driven by the 3D full-body pose of an egocentric wearer, aligning both camera perspective and visible limb movements with the co…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Egocentric video generation"
+  - "3D full-body pose control"
+  - "video diffusion"
+  - "relative pose representation"
+  - "AdaLN modulation"
 date: 2026-05-08
-content_hash: 15f01b521e17462f
+content_hash: f10515dcec02e26d
 ---
+
 # EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,16 @@ EgoControl surpasses existing camera-only control methods like CAMI2V and single
 - **Value**: ⭐⭐⭐⭐ (Strong implications for embodied AI and AR/VR simulator development.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] EgoX: Egocentric Video Generation from a Single Exocentric Video](egox_egocentric_video_generation_from_a_single_exocentric_video.md)
-- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)
+- [\[ICLR 2026\] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation](../../ICLR2026/video_generation/3d_scene_prompting_for_scene-consistent_camera-controllable_video_generation.md)
+- [\[CVPR 2026\] Generating Humanless Environment Walkthroughs from Egocentric Walking Tour Videos](generating_humanless_environment_walkthroughs_from_egocentric_walking_tour_video.md)
 - [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
 - [\[CVPR 2026\] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion](pantheon360_taming_digital_twin_generation_via_3d-aware_360_video_diffusion.md)
-- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
 
 </div>
 

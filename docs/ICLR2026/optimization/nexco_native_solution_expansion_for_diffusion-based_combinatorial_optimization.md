@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] NExCO: Native Solution Expansion for Diffusion-based Combinatorial Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Neural Combinatorial Optimization] NExCO transforms "adaptive expansion" from an external wrapper around global predictors into an intrinsic decoding mechanism for CO-specific masked diffusion models. Every intermediate state of diffusion is a valid partial solution; the model constructs full solutions by progressively "unmasking" high-confidence variab
+  [ICLR 2026][Optimization][Neural Combinatorial Optimization] NExCO transforms "adaptive expansion" from an external wrapper around global predictors into an intrinsic decoding mechanism for CO-specific masked diffusion models. Every intermediate state of diffusion is a valid partial solution; the model constructs full solutions by progressively "unmasking" high-confidence variables with feasibility projections, achieving approximately 50% quality improvement and up to 4× infe…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Neural Combinatorial Optimization
-  - Masked Diffusion
-  - Adaptive Expansion
-  - TSP/MIS/CVRP
-  - Time-agnostic Denoiser
+  - "ICLR 2026"
+  - "Optimization"
+  - "Neural Combinatorial Optimization"
+  - "Masked Diffusion"
+  - "Adaptive Expansion"
+  - "TSP/MIS/CVRP"
+  - "Time-agnostic Denoiser"
 date: 2026-05-08
-content_hash: ff6cffe81a31aa4a
+content_hash: acf15b679eba5786
 ---
+
 # NExCO: Native Solution Expansion for Diffusion-based Combinatorial Optimization
 
 **Conference**: ICLR 2026  
@@ -158,9 +159,9 @@ Even with label gaps of 1.65%–3.35%, NExCO converges to 0.25%–0.31%, indicat
 
 - [\[ICLR 2026\] Diffusion-DFL: Decision-focused Diffusion Models for Stochastic Optimization](diffusion-dfl_decision-focused_diffusion_models_for_stochastic_optimization.md)
 - [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](multi-action_self-improvement_for_neural_combinatorial_optimization.md)
+- [\[ICLR 2026\] Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems](neural_multi-objective_combinatorial_optimization_for_flexible_job_shop_scheduli.md)
 - [\[ICLR 2026\] HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization](heurigym_an_agentic_benchmark_for_llm-crafted_heuristics_in_combinatorial_optimi.md)
 - [\[ICLR 2026\] ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types](conrep4co_contrastive_representation_learning_of_combinatorial_optimization_inst.md)
-- [\[ICLR 2026\] Combinatorial Bandit Bayesian Optimization for Tensor Outputs](combinatorial_bandit_bayesian_optimization_for_tensor_outputs.md)
 
 </div>
 

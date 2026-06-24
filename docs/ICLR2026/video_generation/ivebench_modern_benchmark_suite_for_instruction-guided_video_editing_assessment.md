@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IVEBench: Modern Benchmark Suite for Instruction-Guided Video Editing Assessment
 description: >-
-  [ICLR 2026][Video Generation][Benchmark] IVEBench constructs a modern evaluation suite specifically for instruction-guided video editing (IVE), utilizing 600 high-quality source videos, 35 subcategories across 8 major editing instruction types, and a three-dimensional metric system (Video Quality, Instruction Compliance, and Video Fidelity) to systematically
+  [ICLR 2026][Video Generation][Instruction-guided video editing] IVEBench constructs a modern evaluation suite specifically for instruction-guided video editing (IVE), utilizing 600 high-quality source videos, 35 subcategories across 8 major editing instruction types, and a three-dimensional metric system (Video Quality, Instruction Compliance, and Video Fidelity) to systematically expose the weaknesses of existing models in complex instruction following and high-fidelity edit…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Benchmark
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Instruction-guided video editing"
+  - "Video editing evaluation"
+  - "MLLM evaluation"
+  - "Video fidelity"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 0048b52a4038b9c5
+content_hash: 83e523fa3625ffa4
 ---
+
 # IVEBench: Modern Benchmark Suite for Instruction-Guided Video Editing Assessment
 
 **Conference**: ICLR 2026  
@@ -146,7 +151,8 @@ Spearman $\rho$ results confirm that while traditional metrics are useful, MLLM-
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

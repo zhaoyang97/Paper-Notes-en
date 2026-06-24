@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SSG: Logit-Balanced Vocabulary Partitioning for LLM Watermarking
 description: >-
-  [ACL 2026][LLM Safety][logit-balanced partition] This paper analyzes why KGW-style LLM watermarking fails in low-entropy scenarios such as code generation and mathematical reasoning. It proposes a Watermark Strength metric and SSG (logit-balanced vocabulary partitioning) to distribute high-probability tokens more evenly across categories, significantly enhancing dete
+  [ACL 2026][LLM Safety][LLM Watermarking] This paper analyzes why KGW-style LLM watermarking fails in low-entropy scenarios such as code generation and mathematical reasoning. It proposes a Watermark Strength metric and SSG (logit-balanced vocabulary partitioning) to distribute high-probability tokens more evenly across categories, significantly enhancing detectability without further compromising generation quality.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - logit-balanced partition
-  - watermark strength
+  - "ACL 2026"
+  - "LLM Safety"
+  - "LLM Watermarking"
+  - "Low-Entropy Generation"
+  - "logit-balanced partition"
+  - "watermark strength"
+  - "content attribution"
 date: 2026-05-08
-content_hash: a9e2594ff3c4e817
+content_hash: 51ae64640eadd194
 ---
+
 # SSG: Logit-Balanced Vocabulary Partitioning for LLM Watermarking
 
 **Conference**: ACL 2026  
@@ -132,7 +136,7 @@ SSG is a non-training method that does not modify model parameters or require fi
 - [\[ACL 2026\] STELA: A Linguistics-Aware LLM Watermarking via Syntactic Predictability](a_linguistics-aware_llm_watermarking_via_syntactic_predictability.md)
 - [\[ACL 2026\] XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts](xmark_reliable_multi-bit_watermarking_for_llm-generated_texts.md)
 - [\[ACL 2026\] AgentMark: Utility-Preserving Behavioral Watermarking for Agents](agentmark_utility-preserving_behavioral_watermarking_for_agents.md)
-- [\[ACL 2026\] Detoxification for LLM from Dataset Itself](detoxification_for_llm_from_dataset_itself.md)
+- [\[ICLR 2026\] Dual-Space Smoothness for Robust and Balanced LLM Unlearning](../../ICLR2026/llm_safety/dual-space_smoothness_for_robust_and_balanced_llm_unlearning.md)
 
 </div>
 

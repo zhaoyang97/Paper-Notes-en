@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Certified Robustness under Heterogeneous Perturbations via Hybrid Randomized Smoothing
 description: >-
-  [ICML 2026][Multimodal VLM][Randomized Smoothing] This paper extends Randomized Smoothing (RS) from scenarios supporting only single continuous or discrete inputs to hybrid perturbation environments involving "discrete tokens + continuous images." By employing a hybrid Neyman–Pearson analysis, the authors derive a **one-dimensional, continuous, and invertible** likeli
+  [ICML 2026][Multimodal VLM][Randomized Smoothing] This paper extends Randomized Smoothing (RS) from scenarios supporting only single continuous or discrete inputs to hybrid perturbation environments involving "discrete tokens + continuous images." By employing a hybrid Neyman–Pearson analysis, the authors derive a **one-dimensional, continuous, and invertible** likelihood ratio CDF. This transforms the combinatorial knapsack problem into a solvable root-finding problem. It pr…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Randomized Smoothing
-  - Neyman–Pearson
-  - prompt injection
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Randomized Smoothing"
+  - "Neyman–Pearson"
+  - "Multimodal Safety Filtering"
+  - "Hybrid Perturbation Certification"
+  - "prompt injection"
 date: 2026-05-08
-content_hash: c66f9b93535578a1
+content_hash: 682d7cf24af7e680
 ---
+
 # Certified Robustness under Heterogeneous Perturbations via Hybrid Randomized Smoothing
 
 **Conference**: ICML 2026  
@@ -133,10 +136,10 @@ The Hybrid certificate yields an image radius only 5.8% lower than the pure imag
 ## Related Papers
 
 - [\[ICML 2026\] Smoothing Slot Attention Iterations and Recurrences](smoothing_slot_attention_iterations_and_recurrences.md)
-- [\[ICLR 2026\] Directional Embedding Smoothing for Robust Vision Language Models](../../ICLR2026/multimodal_vlm/directional_embedding_smoothing_for_robust_vision_language_models.md)
 - [\[ICML 2026\] Hierarchical Synthetic Tabular Data Generation: A Hybrid Top-Down and Bottom-Up Framework](hierarchical_synthetic_tabular_data_generation_a_hybrid_top-down_and_bottom-up_f.md)
 - [\[ICML 2026\] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds](any3d-vla_enhancing_vla_robustness_via_diverse_point_clouds.md)
 - [\[ICLR 2026\] ICYM2I: The Illusion of Multimodal Informativeness under Missingness](../../ICLR2026/multimodal_vlm/icym2i_the_illusion_of_multimodal_informativeness_under_missingness.md)
+- [\[ICLR 2026\] Modality Alignment across Trees on Heterogeneous Hyperbolic Manifolds](../../ICLR2026/multimodal_vlm/modality_alignment_across_trees_on_heterogeneous_hyperbolic_manifolds.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] STAC: Plug-and-Play Spatio-Temporal Aware Cache Compression for Streaming 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes the STAC framework, which leverages the spatio-temporal sparsity of KV caches in Causal Transformers. Through three modules—working temporal token cache, long-term spatial token cache, and chunked multi-frame optimization—it reduces memory consumption by approximately 10x and increases inference speed by
+  [CVPR 2026][3D Vision][Streaming 3D Reconstruction] Ours proposes the STAC framework, which leverages the spatio-temporal sparsity of KV caches in Causal Transformers. Through three modules—working temporal token cache, long-term spatial token cache, and chunked multi-frame optimization—it reduces memory consumption by approximately 10x and increases inference speed by 4x for streaming 3D reconstruction without additional training, while maintaining reconstruction quality.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Streaming 3D Reconstruction"
+  - "KV Cache Compression"
+  - "Spatio-Temporal Sparsity"
+  - "Causal Transformer"
+  - "Voxelized Storage"
 date: 2026-05-08
-content_hash: e233dc374984d408
+content_hash: ec1f2eb4eb8b0318
 ---
+
 # STAC: Plug-and-Play Spatio-Temporal Aware Cache Compression for Streaming 3D Reconstruction
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Evaluated on NRGBD based on STream3R-W8 (7-Scenes average metrics):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Plug-and-Play PDE Optimization for 3D Gaussian Splatting: Toward High-Quality Rendering and Reconstruction](plug-and-play_pde_optimization_for_3d_gaussian_splatting_toward_high-quality_ren.md)
 - [\[CVPR 2026\] Revisiting Monocular SLAM with Spatio-Temporal Scene Modeling](revisiting_monocular_slam_with_spatio-temporal_scene_modeling.md)
 - [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
 - [\[CVPR 2026\] LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving](lidar_prompted_spatio-temporal_multi-view_stereo_for_autonomous_driving.md)
-- [\[CVPR 2026\] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding](sts_mixer_4d_point_cloud.md)
-- [\[CVPR 2026\] Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting](point4cast_streaming_dynamic_scene_reconstruction_and_forecasting.md)
+- [\[CVPR 2026\] LangField4D: Learning Identity-Adaptive and Spatio-Temporal Continuous 4D Language Fields for Dynamic Scenes](langfield4d_learning_identity-adaptive_and_spatio-temporal_continuous_4d_languag.md)
 
 </div>
 

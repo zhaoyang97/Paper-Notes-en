@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] On Revisiting Entropy for Identifying Mislabeled Images
 description: >-
-  [ICML 2026][Others][CLIP] It is observed that the phenomenon where "mislabeled samples maintain high predictive entropy throughout training" is insufficient to distinguish them from hard clean samples. This work introduces **signed entropy** by multiplying entropy with a sign bit indicating "whether the prediction aligns with the given label."
+  [ICML 2026][Mislabeled Image Detection] It is observed that the phenomenon where "mislabeled samples maintain high predictive entropy throughout training" is insufficient to distinguish them from hard clean samples. This work introduces **signed entropy** by multiplying entropy with a sign bit indicating "whether the prediction aligns with the given label." By accumulating this over training epochs into the **SEI** statistic, the method achieves a new SOTA in mislabeled detec…
 tags:
-  - ICML 2026
-  - Others
-  - CLIP
-  - Medical Imaging
+  - "ICML 2026"
+  - "Mislabeled Image Detection"
+  - "Training Dynamics"
+  - "Signed Entropy"
+  - "CLIP"
+  - "Medical Imaging"
 date: 2026-05-08
-content_hash: f2a79740885ea9b7
+content_hash: f08ffe578e5a5f62
 ---
+
 # On Revisiting Entropy for Identifying Mislabeled Images
 
 **Conference**: ICML 2026  

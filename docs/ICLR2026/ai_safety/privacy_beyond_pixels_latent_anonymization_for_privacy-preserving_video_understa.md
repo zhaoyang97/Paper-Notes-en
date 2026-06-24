@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Privacy Beyond Pixels: Latent Anonymization for Privacy-Preserving Video Understanding
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] By attaching a lightweight "anonymization adapter" to a frozen video foundation model and employing self-supervised adversarial training directly in the latent feature space, private information such as skin tone, gender, and clothing is erased. This allows a single set of anonymized features to be generic across vario
+  [ICLR 2026][AI Safety][Latent Anonymization] By attaching a lightweight "anonymization adapter" to a frozen video foundation model and employing self-supervised adversarial training directly in the latent feature space, private information such as skin tone, gender, and clothing is erased. This allows a single set of anonymized features to be generic across various downstream tasks—including action recognition, temporal localization, and anomaly detection—reducing privacy lea…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Latent Anonymization"
+  - "Privacy Protection"
+  - "Video Foundation Models"
+  - "Self-supervised"
+  - "Gender Bias"
 date: 2026-05-08
-content_hash: 44f22ac6ef0e7c44
+content_hash: 39875adbf886d6db
 ---
+
 # Privacy Beyond Pixels: Latent Anonymization for Privacy-Preserving Video Understanding
 
 **Conference**: ICLR 2026  
@@ -162,7 +168,7 @@ Temporal Private Attributes (Tab. 2): On VP-HMDB51/VP-UCF101, SPLAVU's cMAP (70.
 - [\[ICLR 2026\] Beyond Membership: Limitations of Add/Remove Adjacency in Differential Privacy](beyond_membership_limitations_of_addremove_adjacency_in_differential_privacy.md)
 - [\[CVPR 2026\] PrivateEyes: Gaze-Preserving Anonymization for Data Sharing](../../CVPR2026/ai_safety/privateeyes_gaze-preserving_anonymization_for_data_sharing.md)
 - [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](../../ICML2026/ai_safety/metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
-- [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](../../ICCV2025/ai_safety/fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
+- [\[ACL 2025\] Crafting Privacy-Preserving Adversarial Examples: A Defense Against Membership Inference](../../ACL2025/ai_safety/crafting_privacy-preserving_adversarial_examples_a_defense_against_membership_inf.md)
 
 </div>
 

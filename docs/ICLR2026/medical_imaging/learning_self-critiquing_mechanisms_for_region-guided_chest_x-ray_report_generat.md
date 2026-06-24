@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] RadSCR encodes the "repeated self-questioning" diagnostic process of radiologists into the model architecture. By employing three self-critiquing mechanisms—substituting abnormality classes, swapping patient images, and checking for missed findings—it enables end-to-end learning. This significantly improves clinical ac
+  [ICLR 2026][Medical Imaging][Chest X-ray Report Generation] RadSCR encodes the "repeated self-questioning" diagnostic process of radiologists into the model architecture. By employing three self-critiquing mechanisms—substituting abnormality classes, swapping patient images, and checking for missed findings—it enables end-to-end learning. This significantly improves clinical accuracy and the reliability of abnormality grounding in chest X-ray reports without requiring LLM inf…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Chest X-ray Report Generation"
+  - "Self-Critiquing"
+  - "Abnormality Grounding"
+  - "Retrieval-based Generation"
+  - "Weakly-supervised Localization"
 date: 2026-05-08
-content_hash: 167e8a3b06fb8831
+content_hash: 427316c439dac563
 ---
+
 # Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation
 
 **Conference**: ICLR 2026  
@@ -123,7 +129,7 @@ RadSCR significantly outperforms all VLM/LLM/retrieval baselines across clinical
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

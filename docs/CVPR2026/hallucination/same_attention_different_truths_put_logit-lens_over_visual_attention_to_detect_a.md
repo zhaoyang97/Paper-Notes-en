@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination
 description: >-
-  [CVPR 2026][Hallucination Detection][LVLM] This paper revisits LVLM object hallucination using Logit-Lens and discovers that the "attention intensity" for real and hallucinated objects is nearly identical in mid-to-late layers. The key issue is not "how much" the model looks, but whether the high-attention regions decode into the target token. Based on this, ha
+  [CVPR 2026][Hallucination Detection][Object Hallucination] This paper revisits LVLM object hallucination using Logit-Lens and discovers that the "attention intensity" for real and hallucinated objects is nearly identical in mid-to-late layers. The key issue is not "how much" the model looks, but whether the high-attention regions decode into the target token. Based on this, hallucinations are categorized into "Visual Uncertainty" and "Contextual Prior." A training-free "Detec…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - LVLM
-  - Logit Lens
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Object Hallucination"
+  - "LVLM"
+  - "Logit Lens"
+  - "Attention Analysis"
+  - "Training-free Decoding"
 date: 2026-05-08
-content_hash: 2790e7acbba8b0a1
+content_hash: 2b24ea1a8377d929
 ---
+
 # Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination
 
 **Conference**: CVPR 2026  
@@ -140,7 +144,7 @@ Comparison of LLCC with three recent detection methods on 500 images:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -148,7 +152,7 @@ Comparison of LLCC with three recent detection methods on 500 images:
 - [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
 - [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
 - [\[CVPR 2026\] AdaIAT: Adaptively Increasing Attention to Generated Text to Alleviate Hallucinations in LVLM](adaiat_adaptively_increasing_attention_to_generated_text_to_alleviate_hallucinat.md)
-- [\[CVPR 2026\] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)
+- [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
 
 </div>
 

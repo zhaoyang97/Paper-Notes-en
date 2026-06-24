@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unsupervised Representation Learning - An Invariant Risk Minimization Perspective
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper generalizes Invariant Risk Minimization (IRM), which originally depends on labels, to unlabeled scenarios. It redefines "invariance" as "feature distribution alignment across environments" and proposes two methods: PICA for linear Gaussian cases and VIAE for deep generative models. The approach achieves labe
+  [ICLR 2026][Self-Supervised Learning][Invariant Risk Minimization] This paper generalizes Invariant Risk Minimization (IRM), which originally depends on labels, to unlabeled scenarios. It redefines "invariance" as "feature distribution alignment across environments" and proposes two methods: PICA for linear Gaussian cases and VIAE for deep generative models. The approach achieves label-independent invariant structure extraction and cross-environment generalization on syntheti…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Invariant Risk Minimization"
+  - "Unsupervised Representation Learning"
+  - "Causal Generative Models"
+  - "Variational Autoencoder"
+  - "Environment Transfer"
 date: 2026-05-08
-content_hash: 33b36bdf18a52947
+content_hash: c7bc87a759945b66
 ---
+
 # Unsupervised Representation Learning - An Invariant Risk Minimization Perspective
 
 **Conference**: ICLR 2026  
@@ -146,8 +152,8 @@ Validation of PICA on synthetic data: The generation process is $X^e = \mu^e(e) 
 - [\[ICLR 2026\] Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective](difficult_examples_hurt_unsupervised_contrastive_learning_a_theoretical_perspect.md)
 - [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
 - [\[ICLR 2026\] Disentangled representation learning through unsupervised symmetry group discovery](disentangled_representation_learning_through_unsupervised_symmetry_group_discove.md)
-- [\[ICLR 2026\] Spatially Informed Autoencoders for Interpretable Visual Representation Learning](spatially_informed_autoencoders_for_interpretable_visual_representation_learning.md)
 - [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
+- [\[ICLR 2026\] Rethinking Unsupervised Cross-Modal Flow Estimation: Learning from Decoupled Optimization and Consistency Constraint](rethinking_unsupervised_cross-modal_flow_estimation_learning_from_decoupled_opti.md)
 
 </div>
 

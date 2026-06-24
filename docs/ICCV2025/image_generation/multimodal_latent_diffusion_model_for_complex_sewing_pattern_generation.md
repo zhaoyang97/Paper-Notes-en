@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multimodal Latent Diffusion Model for Complex Sewing Pattern Generation
 description: >-
-  [ICCV 2025][Image Generation][Sewing pattern generation] This paper proposes SewingLDM, a multimodal conditional latent diffusion model that generates complex sewing patterns under text, sketch…
+  [ICCV 2025][Image Generation][Sewing pattern generation] This paper proposes SewingLDM, a multimodal conditional latent diffusion model that generates complex sewing patterns under text, sketch, and body-shape conditions via an extended sewing pattern representation and a two-stage training strategy, with seamless integration into CG simulation pipelines.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "body-shape awareness"
   - "CG pipeline"
 date: 2026-05-08
-content_hash: 427ac831e751145b
+content_hash: f063d04a6371b9a6
 ---
 
 # Multimodal Latent Diffusion Model for Complex Sewing Pattern Generation
@@ -153,10 +153,10 @@ SewingLDM consists of three core components:
 ## Related Papers
 
 - [\[ICCV 2025\] MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence](mamtiff-cad_multi-scale_latent_diffusion_with_mamba_for_complex_parametric_seque.md)
+- [\[ICLR 2026\] GarmentGPT: Compositional Garment Pattern Generation via Discrete Latent Tokenization](../../ICLR2026/image_generation/garmentgpt_compositional_garment_pattern_generation_via_discrete_latent_tokeniza.md)
 - [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
 - [\[ICCV 2025\] What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization](whats_in_a_latent_leveraging_diffusion_latent_space_for_domain_generalization.md)
-- [\[ICCV 2025\] UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing](univg_a_generalist_diffusion_model_for_unified_image_generation_and_editing.md)
-- [\[ICCV 2025\] TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation](taxadiffusion_progressively_trained_diffusion_model_for_fine-grained_species_gen.md)
+- [\[CVPR 2025\] ZoomLDM: Latent Diffusion Model for Multi-Scale Image Generation](../../CVPR2025/image_generation/zoomldm_latent_diffusion_model_for_multi-scale_image_generation.md)
 
 </div>
 

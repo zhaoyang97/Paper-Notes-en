@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Superficial Safety Alignment Hypothesis
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] Proposes the "Superficial Safety Alignment Hypothesis" (SSAH): safety alignment essentially teaches the model to perform an implicit binary classification task (execute vs. refuse). Only ~1.3% of neurons are required to establish safety guardrails; freezing these safety-critical units maintains safety during fine-tunin
+  [ICLR 2026][LLM Alignment][Safety alignment] Proposes the "Superficial Safety Alignment Hypothesis" (SSAH): safety alignment essentially teaches the model to perform an implicit binary classification task (execute vs. refuse). Only ~1.3% of neurons are required to establish safety guardrails; freezing these safety-critical units maintains safety during fine-tuning, and utilizing redundant units as an "alignment budget" can eliminate the alignment tax.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Safety alignment"
+  - "safety vulnerability"
+  - "neuron-level analysis"
+  - "alignment tax"
+  - "model pruning"
 date: 2026-05-08
-content_hash: a09597f5dc411091
+content_hash: 35e450a6bc11d6e5
 ---
+
 # Superficial Safety Alignment Hypothesis
 
 **Conference**: ICLR 2026  
@@ -141,10 +147,10 @@ Pruning consistently uses the activation-variance importance score with structur
 ## Related Papers
 
 - [\[ICML 2026\] Operationalising the Superficial Alignment Hypothesis via Task Complexity](../../ICML2026/llm_alignment/operationalising_the_superficial_alignment_hypothesis_via_task_complexity.md)
+- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
 - [\[ICLR 2026\] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment](alignment-weighted_dpo_a_principled_reasoning_approach_to_improve_safety_alignme.md)
-- [\[ICLR 2026\] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study](safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study.md)
-- [\[ICLR 2026\] AlphaAlign: Incentivizing Safety Alignment with Extremely Simplified Reinforcement Learning](alphaalign_incentivizing_safety_alignment_with_extremely_simplified_reinforcemen.md)
 - [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
+- [\[ICLR 2026\] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study](safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study.md)
 
 </div>
 

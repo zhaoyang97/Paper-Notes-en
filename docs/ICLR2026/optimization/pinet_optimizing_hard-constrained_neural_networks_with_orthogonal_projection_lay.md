@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Πnet: Optimizing Hard-Constrained Neural Networks with Orthogonal Projection Layers
 description: >-
-  [ICLR 2026][Optimization & Theory][Douglas-Rachford] The Πnet architecture is proposed to guarantee strict satisfaction of convex constraints by attaching an orthogonal projection layer based on Douglas-Rachford operator splitting to the output layer of neural networks. Efficient backpropagation is achieved through the Implicit Function Theorem, significantly outperformi
+  [ICLR 2026 (Oral)][Optimization][Hard-constrained neural networks] The Πnet architecture is proposed to guarantee strict satisfaction of convex constraints by attaching an orthogonal projection layer based on Douglas-Rachford operator splitting to the output layer of neural networks. Efficient backpropagation is achieved through the Implicit Function Theorem, significantly outperforming existing methods in training time, solution quality, and hyperparameter robustness.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Douglas-Rachford
+  - "ICLR 2026 (Oral)"
+  - "Optimization"
+  - "Hard-constrained neural networks"
+  - "orthogonal projection"
+  - "operator splitting"
+  - "implicit function theorem"
+  - "Douglas-Rachford"
 date: 2026-05-08
-content_hash: 28c884171e0d68df
+content_hash: 0dc3720f36acec34
 ---
+
 # Πnet: Optimizing Hard-Constrained Neural Networks with Orthogonal Projection Layers
 
 **Conference**: ICLR 2026 (Oral)  
@@ -172,11 +177,11 @@ Comparison on convex and non-convex benchmarks (DC3 benchmark):
 
 ## Related Papers
 
+- [\[ICML 2026\] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks](../../ICML2026/optimization/balancing_learning_rates_across_layers_exact_two-step_dynamics_and_optimal_scali.md)
+- [\[CVPR 2025\] SCOPE: Semantic Coreset with Orthogonal Projection Embeddings for Federated Learning](../../CVPR2025/optimization/scope_semantic_coreset_with_orthogonal_projection_embeddings_for_federated_learn.md)
+- [\[AAAI 2026\] Beyond the Mean: Fisher-Orthogonal Projection for Natural Gradient Descent in Large Batch Training](../../AAAI2026/optimization/beyond_the_mean_fisher-orthogonal_projection_for_natural_gradient_descent_in_lar.md)
 - [\[ICLR 2026\] Difference Predictive Coding for Training Spiking Neural Networks](difference_predictive_coding_for_training_spiking_neural_networks.md)
 - [\[ICLR 2026\] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks](entropic_confinement_and_mode_connectivity_in_overparameterized_neural_networks.md)
-- [\[ICLR 2026\] Scalable and Adaptive Trust-Region Learning via Projection Convex Hull](scalable_and_adaptive_trust-region_learning_via_projection_convex_hull.md)
-- [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
-- [\[ICLR 2026\] Harmonized Cone for Feasible and Non-conflict Directions in Training Physics-Informed Neural Networks](harmonized_cone_for_feasible_and_non-conflict_directions_in_training_physics-inf.md)
 
 </div>
 

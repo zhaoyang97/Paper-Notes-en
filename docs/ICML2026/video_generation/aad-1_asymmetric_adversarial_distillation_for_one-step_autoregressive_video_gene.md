@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] AAD-1: Asymmetric Adversarial Distillation for One-Step Autoregressive Video Generation
 description: >-
-  [ICML 2026][Video Generation][Paper Note] AAD-1 utilizes asymmetric adversarial distillation featuring a "causal generator + bidirectional video-level discriminator" alongside DMD warmup to compress autoregressive image-to-video generation into a single sampling step per chunk, effectively mitigating motion collapse and long-range drift.
+  [ICML 2026][Video Generation][Autoregressive Diffusion] AAD-1 utilizes asymmetric adversarial distillation featuring a "causal generator + bidirectional video-level discriminator" alongside DMD warmup to compress autoregressive image-to-video generation into a single sampling step per chunk, effectively mitigating motion collapse and long-range drift.
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Autoregressive Diffusion"
+  - "One-step Distillation"
+  - "Adversarial Distillation"
+  - "Long Video Consistency"
 date: 2026-05-08
-content_hash: 5566673f55342750
+content_hash: b984e833d83fd541
 ---
+
 # AAD-1: Asymmetric Adversarial Distillation for One-Step Autoregressive Video Generation
 
 **Conference**: ICML 2026  
@@ -127,16 +132,16 @@ The main experiments compare one-step AAD-1 against multi-step autoregressive ba
 - Value: ⭐⭐⭐⭐⭐ Significant reference for real-time video generation and world model streaming inference, particularly the critic design logic.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] Phased One-Step Adversarial Equilibrium for Video Diffusion Models](../../AAAI2026/video_generation/phased_one-step_adversarial_equilibrium_for_video_diffusion_models.md)
+- [\[ICLR 2026\] Towards One-Step Causal Video Generation via Adversarial Self-Distillation](../../ICLR2026/video_generation/towards_one-step_causal_video_generation_via_adversarial_self-distillation.md)
 - [\[ICML 2026\] SGMD: Score Gradient Matching Distillation for Few-Step Video Diffusion](sgmd_score_gradient_matching_distillation_for_few-step_video_diffusion_distillat.md)
+- [\[AAAI 2026\] Phased One-Step Adversarial Equilibrium for Video Diffusion Models](../../AAAI2026/video_generation/phased_one-step_adversarial_equilibrium_for_video_diffusion_models.md)
 - [\[ICML 2025\] Diffusion Adversarial Post-Training for One-Step Video Generation](../../ICML2025/video_generation/diffusion_adversarial_post-training_for_one-step_video_generation.md)
 - [\[ICLR 2026\] Streaming Autoregressive Video Generation via Diagonal Distillation](../../ICLR2026/video_generation/streaming_autoregressive_video_generation_via_diagonal_distillation.md)
-- [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
 
 </div>
 

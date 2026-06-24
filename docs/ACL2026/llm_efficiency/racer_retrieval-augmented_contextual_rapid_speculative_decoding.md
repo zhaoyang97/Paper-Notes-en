@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding
 description: >-
-  [ACL 2026][LLM Efficiency][Inference Acceleration] RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logit-based future prediction. By constructing a Logits Tree via a copy-logit strategy and a Retrieval Tree via an LRU-evicted AC automaton, it achieves over 2x inference acceleration across multiple benc
+  [ACL 2026 Findings][LLM Efficiency][Speculative Decoding] RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logit-based future prediction. By constructing a Logits Tree via a copy-logit strategy and a Retrieval Tree via an LRU-evicted AC automaton, it achieves over 2x inference acceleration across multiple benchmarks.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Inference Acceleration
+  - "ACL 2026 Findings"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Retrieval-Augmentation"
+  - "Training-free"
+  - "Aho-Corasick Automaton"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 487f49d10b8a996b
+content_hash: 77d548983893e545
 ---
+
 # RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding
 
 **Conference**: ACL 2026 Findings  
@@ -149,9 +154,9 @@ RACER is entirely training-free. Default hyperparameters: Logits Tree max breadt
 
 - [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
 - [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](multi-drafter_speculative_decoding_with_alignment_feedback.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](../../ICLR2026/llm_efficiency/speculative_speculative_decoding.md)
 - [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
-- [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](../../NeurIPS2025/llm_efficiency/3model_speculative_decoding.md)
-- [\[ACL 2025\] SAM Decoding: Speculative Decoding via Suffix Automaton](../../ACL2025/llm_efficiency/sam_decoding_speculative_decoding_via_suffix_automaton.md)
+- [\[ICML 2026\] VIA-SD: Verification via Intra-Model Routing for Speculative Decoding](../../ICML2026/llm_efficiency/via-sd_verification_via_intra-model_routing_for_speculative_decoding.md)
 
 </div>
 

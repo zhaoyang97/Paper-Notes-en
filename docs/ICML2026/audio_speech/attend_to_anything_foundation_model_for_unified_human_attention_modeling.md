@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Attend to Anything: Foundation Model for Unified Human Attention Modeling
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] AAM unifies image, video, and audio-visual saliency prediction into a single attention foundation model featuring text conditioning, hyperbolic hierarchical constraints, and Fokker-Planck temporal dynamics. It consistently outperforms specialized models across 16 benchmarks and improves video inference speed to approxi
+  [ICML2026][Audio & Speech][Human Attention] AAM unifies image, video, and audio-visual saliency prediction into a single attention foundation model featuring text conditioning, hyperbolic hierarchical constraints, and Fokker-Planck temporal dynamics. It consistently outperforms specialized models across 16 benchmarks and improves video inference speed to approximately 111 FPS.
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML2026"
+  - "Audio & Speech"
+  - "Human Attention"
+  - "Visual Saliency"
+  - "Hyperbolic Representation"
+  - "Fokker-Planck Dynamics"
+  - "Multimodal Foundation Models"
 date: 2026-05-08
-content_hash: 30840b4b90b904e6
+content_hash: 9e66b50c12b1df07
 ---
+
 # Attend to Anything: Foundation Model for Unified Human Attention Modeling
 
 **Conference**: ICML2026  
@@ -141,16 +147,16 @@ AAM utilizes per-frame prediction via FPD evolution rather than fixed-window mul
 - **Value**: ⭐⭐⭐⭐⭐ Provides a clear unified paradigm for saliency prediction and cognitive-inspired vision models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] AudioX: A Unified Framework for Anything-to-Audio Generation](../../ICLR2026/audio_speech/audiox_a_unified_framework_for_anything-to-audio_generation.md)
 - [\[ICLR 2026\] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding](../../ICLR2026/audio_speech/human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde.md)
-- [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)
+- [\[ICML 2026\] Beyond Classification: A Cough Regression Benchmark for Respiratory Acoustic Foundation Models](beyond_classification_a_cough_regression_benchmark_for_respiratory_acoustic_foun.md)
 - [\[ICLR 2026\] Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition](../../ICLR2026/audio_speech/pay_attention_to_ctc_fast_and_robust_pseudo-labelling_for_unified_speech_recogni.md)
-- [\[AAAI 2026\] DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling](../../AAAI2026/audio_speech/dualspeechlm_towards_unified_speech_understanding_and_generation_via_dual_speech.md)
+- [\[ICLR 2026\] UALM: Unified Audio Language Model for Understanding, Generation and Reasoning](../../ICLR2026/audio_speech/ualm_unified_audio_language_model_for_understanding_generation_and_reasoning.md)
 
 </div>
 

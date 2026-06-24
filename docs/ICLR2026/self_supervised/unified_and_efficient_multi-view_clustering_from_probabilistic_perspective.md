@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified and Efficient Multi-view Clustering from Probabilistic Perspective
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] UEMCP reinterprets anchor-based multi-view clustering as "data point $\rightarrow$ anchor $\rightarrow$ category" probabilistic transition learning. It simultaneously learns consensus anchors, view weights, anchor graphs, and category assignments within a unified objective, achieving superior clustering performance and
+  [ICLR2026][Self-Supervised Learning][Multi-view clustering] UEMCP reinterprets anchor-based multi-view clustering as "data point $\rightarrow$ anchor $\rightarrow$ category" probabilistic transition learning. It simultaneously learns consensus anchors, view weights, anchor graphs, and category assignments within a unified objective, achieving superior clustering performance and near-linear complexity on several large-scale multi-view datasets.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Multi-view clustering"
+  - "anchor graph learning"
+  - "probabilistic transition matrix"
+  - "large-scale clustering"
+  - "unsupervised learning"
 date: 2026-05-08
-content_hash: 57eb21e5af82659c
+content_hash: da6260a09486a3c8
 ---
+
 # Unified and Efficient Multi-view Clustering from Probabilistic Perspective
 
 **Conference**: ICLR2026  
@@ -154,6 +160,7 @@ UEMCP outperforms in ACC across all datasets, though NMI results are more compet
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

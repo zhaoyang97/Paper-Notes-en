@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EXCEEDS: Extracting Complex Events via Nugget-based Grid Modeling in Scientific Domain
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] The authors identify two major pain points in "scientific abstract" EE scenarios that are absent in legacy datasets: **high information density** (5.54 events + 12.82 arguments per 100 tokens) and **complex event structures** (overlapping/discontinuous/reverse-order nuggets + sub-events). Consequently, they (a) annotat
+  [ACL 2026][NLP Understanding][Event Extraction] The authors identify two major pain points in "scientific abstract" EE scenarios that are absent in legacy datasets: **high information density** (5.54 events + 12.82 arguments per 100 tokens) and **complex event structures** (overlapping/discontinuous/reverse-order nuggets + sub-events). Consequently, they (a) annotated the SciEvents dataset with 2,508 documents and 24,381 events, and (b) proposed EXCEEDS—an end-to-end framewor…
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Event Extraction"
+  - "Document-level"
+  - "Word-Word Relation Grid"
+  - "Scientific Literature"
+  - "Hierarchical Events"
 date: 2026-05-08
-content_hash: 25be7dc38b244223
+content_hash: 473159dee5b003f4
 ---
+
 # EXCEEDS: Extracting Complex Events via Nugget-based Grid Modeling in Scientific Domain
 
 **Conference**: ACL 2026  
@@ -140,8 +146,8 @@ Complex Scenario Subsets (F1%):
 - [\[ACL 2026\] ASTRA: Adaptive Semantic Tree Reasoning Architecture for Complex Table Question Answering](astra_adaptive_semantic_tree_reasoning_architecture_for_complex_table_question_a.md)
 - [\[ACL 2025\] Beyond Prompting: An Efficient Embedding Framework for Open-Domain Question Answering](../../ACL2025/nlp_understanding/embqa_embedding_odqa.md)
 - [\[ACL 2025\] Recursive Question Understanding for Complex Question Answering over Heterogeneous Personal Data](../../ACL2025/nlp_understanding/recursive_question_understanding_for_complex_question_answering_over_heterogeneo.md)
+- [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 - [\[ACL 2026\] DimABSA: Building Multilingual and Multidomain Datasets for Dimensional Aspect-Based Sentiment Analysis](dimabsa_building_multilingual_and_multidomain_datasets_for_dimensional_aspect-ba.md)
-- [\[ACL 2026\] It's High Time: A Survey of Temporal Question Answering](it39s_high_time_a_survey_of_temporal_question_answering.md)
 
 </div>
 

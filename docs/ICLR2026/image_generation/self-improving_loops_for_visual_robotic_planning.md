@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Improving Loops for Visual Robotic Planning
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The SILVR framework is proposed, which achieves continuous self-improvement of visual robotic planners on unseen tasks by iteratively fine-tuning an in-domain video generation model on self-collected online trajectories, reaching up to 285% performance gains in MetaWorld and on real robots.
+  [ICLR 2026][Image Generation][Visual Planning] The SILVR framework is proposed, which achieves continuous self-improvement of visual robotic planners on unseen tasks by iteratively fine-tuning an in-domain video generation model on self-collected online trajectories, reaching up to 285% performance gains in MetaWorld and on real robots.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Planning"
+  - "Self-Improvement"
+  - "Video Generation Models"
+  - "Inverse Dynamics Model"
+  - "Online Experience"
 date: 2026-05-08
-content_hash: e68df165725895bb
+content_hash: ea7b987596517ed1
 ---
+
 # Self-Improving Loops for Visual Robotic Planning
 
 **Conference**: ICLR 2026  
@@ -146,8 +152,8 @@ The final SILVR video planner is distilled into a Diffusion Policy, further impr
 - [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](compositional_visual_planning_via_inference-time_diffusion_scaling.md)
 - [\[ICLR 2026\] SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions](safeflowmatcher_safe_and_fast_planning_using_flow_matching_with_control_barrier_.md)
 - [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](../../CVPR2026/image_generation/solace_self_confidence_rewards_t2i.md)
+- [\[ICLR 2026\] LayerSync: Self-aligning Intermediate Layers](layersync_self-aligning_intermediate_layers.md)
 - [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](../../CVPR2026/image_generation/ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
-- [\[ICLR 2026\] Constantly Improving Image Models Need Constantly Improving Benchmarks](constantly_improving_image_models_need_constantly_improving_benchmarks.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Deconstructing Positional Information: From Attention Logits to Training Biases
 description: >-
-  [ICLR 2026][Pretraining][RoPE] Based on a unified Toeplitz matrix framework, the authors categorize positional encoding (PE) into additive (Absolute/T5/ALiBi) and multiplicative (RoPE) types. Through synthetic tasks, they find that RoPE holds significant advantages in position-sensitive tasks but exhibits a "single-head deposit pattern"—where positi
+  [ICLR 2026][LLM Pretraining][Positional Encoding] Based on a unified Toeplitz matrix framework, the authors categorize positional encoding (PE) into additive (Absolute/T5/ALiBi) and multiplicative (RoPE) types. Through synthetic tasks, they find that RoPE holds significant advantages in position-sensitive tasks but exhibits a "single-head deposit pattern"—where positional reasoning in shallow layers is almost entirely concentrated in a single attention head. This pattern is t…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - RoPE
-  - Attention
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Positional Encoding"
+  - "RoPE"
+  - "Toeplitz Matrix"
+  - "Attention Mechanism"
+  - "Single-head Deposit Pattern"
 date: 2026-05-08
-content_hash: a24c4bd53215202e
+content_hash: 84eeb6224876556e
 ---
+
 # Deconstructing Positional Information: From Attention Logits to Training Biases
 
 **Conference**: ICLR 2026  
@@ -121,11 +125,11 @@ Head-wise ablation on Task 1 revealed that removing one specific head in the fir
 
 ## Related Papers
 
+- [\[ICML 2026\] Decoupling the "What" and "Where" With Polar Coordinate Positional Embeddings](../../ICML2026/llm_pretraining/decoupling_the_what_and_where_with_polar_coordinate_positional_embeddings.md)
 - [\[ICLR 2026\] SPICE: Submodular Penalized Information–Conflict Selection for Efficient Large Language Model Training](spice_submodular_penalized_informationconflict_selection_for_efficient_large_lan.md)
 - [\[ICLR 2026\] Conditioned Initialization for Attention](conditioned_initialization_for_attention.md)
+- [\[ICLR 2026\] Explaining Grokking and Information Bottleneck through Neural Collapse Emergence](explaining_grokking_and_information_bottleneck_through_neural_collapse_emergence.md)
 - [\[ICLR 2026\] Avey-B: Refactoring Attention-Free Architectures into Bidirectional Encoders](avey-b.md)
-- [\[ICML 2026\] Decoupling the "What" and "Where" With Polar Coordinate Positional Embeddings](../../ICML2026/llm_pretraining/decoupling_the_what_and_where_with_polar_coordinate_positional_embeddings.md)
-- [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
 
 </div>
 

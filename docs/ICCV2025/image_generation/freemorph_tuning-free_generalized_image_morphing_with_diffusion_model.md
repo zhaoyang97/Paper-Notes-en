@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model
 description: >-
-  [Image Generation] FreeMorph proposes the first tuning-free generalized image morphing method. Through two key designs—guidance-aware spherical interpolation and step-oriented change trend—it generates smooth transition…
+  [Image Generation] FreeMorph proposes the first tuning-free generalized image morphing method. Through two key designs—guidance-aware spherical interpolation and step-oriented change trend—it generates smooth transition sequences between image pairs of arbitrary semantics and layouts within 30 seconds, achieving a speed improvement of 10–50× over existing methods.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 85ac82ac426919c8
+content_hash: 3fa51b762da29dd4
 ---
 
 # FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model
@@ -158,9 +158,9 @@ This increases generative flexibility and prevents over-constrained outputs.
 
 - [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
 - [\[ICCV 2025\] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model](emoticrafter_text-to-emotional-image_generation_based_on_valence-arousal_model.md)
-- [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
 - [\[ICCV 2025\] MatchDiffusion: Training-free Generation of Match-Cuts](matchdiffusion_training-free_generation_of_match-cuts.md)
-- [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
+- [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
+- [\[CVPR 2025\] DualAnoDiff: Dual-Interrelated Diffusion Model for Few-Shot Anomaly Image Generation](../../CVPR2025/image_generation/dual-interrelated_diffusion_model_for_few-shot_anomaly_image_generation.md)
 
 </div>
 

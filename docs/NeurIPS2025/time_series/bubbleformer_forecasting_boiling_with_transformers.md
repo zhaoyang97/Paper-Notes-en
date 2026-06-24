@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BubbleFormer: Forecasting Boiling with Transformers
 description: >-
-  [NeurIPS 2025][Time Series][Boiling prediction] This paper proposes BubbleFormer, a Transformer architecture based on decomposed spatiotemporal attention for forecasting boiling dynamics—including the notoriously difficu…
+  [NeurIPS 2025][Time Series][Boiling prediction] This paper proposes BubbleFormer, a Transformer architecture based on decomposed spatiotemporal attention for forecasting boiling dynamics—including the notoriously difficult spontaneous bubble nucleation events—accompanied by the BubbleML 2.0 dataset (160+ high-fidelity simulations), achieving accurate spatiotemporal boiling predictions across diverse fluids, geometries, and wall conditions.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "spatiotemporal decomposed attention"
   - "spontaneous nucleation"
 date: 2026-05-08
-content_hash: f908173d352f101d
+content_hash: 9946e228ffde4909
 ---
 
 # BubbleFormer: Forecasting Boiling with Transformers
@@ -138,10 +138,10 @@ Prediction errors across BubbleML 2.0 operating conditions:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Diffusion Transformers as Open-World Spatiotemporal Foundation Models](diffusion_transformers_as_open-world_spatiotemporal_foundation_models.md)
+- [\[ICLR 2026\] Understanding Transformers in Time Series Forecasting: A Case Study on MOIRAI](../../ICLR2026/time_series/understanding_transformers_for_time_series_forecasting_a_case_study_on_moirai.md)
+- [\[CVPR 2026\] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](../../CVPR2026/time_series/probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)
 - [\[ICLR 2026\] Relational Feature Caching for Accelerating Diffusion Transformers](../../ICLR2026/time_series/relational_feature_caching_for_accelerating_diffusion_transformers.md)
 - [\[ICLR 2026\] Decentralized Attention Fails Centralized Signals: Rethinking Transformers for Medical Time Series](../../ICLR2026/time_series/decentralized_attention_fails_centralized_signals_rethinking_transformers_for_me.md)
-- [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)
-- [\[NeurIPS 2025\] DemandCast: Global hourly electricity demand forecasting](demandcast_global_hourly_electricity_demand_forecasting.md)
 
 </div>
 

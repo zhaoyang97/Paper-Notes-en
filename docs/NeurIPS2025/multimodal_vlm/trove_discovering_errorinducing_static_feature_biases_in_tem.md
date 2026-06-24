@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TRoVe: Discovering Error-Inducing Static Feature Biases in Temporal Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Temporal VLM] TRoVe proposes an automated method for discovering static feature biases that induce systematic prediction errors in temporal VLMs. Through a dual-scoring mechanism combining…
+  [NeurIPS 2025][Multimodal VLM][Temporal VLM] TRoVe proposes an automated method for discovering static feature biases that induce systematic prediction errors in temporal VLMs. Through a dual-scoring mechanism combining an Error Contribution Score (ECS) and a Static Bias Score (SBS), TRoVe outperforms baselines by 28.6% on 101 synthetic models and successfully identifies novel biases in 7 real-world VLMs.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Bias Discovery"
   - "Video Understanding"
 date: 2026-05-08
-content_hash: 23744a8221c9c8e7
+content_hash: 7ad139a4f76d8a47
 ---
 
 # TRoVe: Discovering Error-Inducing Static Feature Biases in Temporal Vision-Language Models
@@ -126,11 +126,11 @@ The TRoVe score is defined as $ECS_C^y + SBS_C^y$, jointly measuring whether a f
 
 ## Related Papers
 
+- [\[CVPR 2025\] ReVisionLLM: Recursive Vision-Language Model for Temporal Grounding in Hour-Long Videos](../../CVPR2025/multimodal_vlm/revisionllm_recursive_vision-language_model_for_temporal_grounding_in_hour-long_.md)
 - [\[NeurIPS 2025\] HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models](hope_hybrid_of_position_embedding_for_long_context_visionlan.md)
 - [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](../../CVPR2026/multimodal_vlm/pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
 - [\[NeurIPS 2025\] Adapting Vision-Language Models for Evaluating World Models](adapting_visionlanguage_models_for_evaluating_world_models.md)
 - [\[NeurIPS 2025\] DanmakuTPPBench: A Multi-modal Benchmark for Temporal Point Process Modeling and Understanding](danmakutppbench_a_multimodal_benchmark_for_temporal_point_pr.md)
-- [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
 
 </div>
 

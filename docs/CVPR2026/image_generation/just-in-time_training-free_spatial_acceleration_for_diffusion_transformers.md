@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][training-free] Ours proposes the Just-in-Time (JiT) framework, which dynamically selects sparse anchor tokens in the spatial domain to drive the evolution of the generation ODE. By designing a deterministic micro-flow to ensure seamless activation of new tokens, it achieves up to 7× acceleration on FLUX.1-dev with almost no loss in q
+  [CVPR2026][Image Generation][Diffusion Transformer] Ours proposes the Just-in-Time (JiT) framework, which dynamically selects sparse anchor tokens in the spatial domain to drive the evolution of the generation ODE. By designing a deterministic micro-flow to ensure seamless activation of new tokens, it achieves up to 7× acceleration on FLUX.1-dev with almost no loss in quality.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - training-free
-  - Flow Matching
+  - "CVPR2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Spatial Acceleration"
+  - "training-free"
+  - "Flow Matching"
+  - "token sparsity"
+  - "ODE solving"
 date: 2026-05-08
-content_hash: ee37dc996bbd8020
+content_hash: f44a5ee44faef7b4
 ---
+
 # Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers
 
 **Conference**: CVPR2026  
@@ -151,9 +156,9 @@ Removing spatial interpolation leads to a catastrophic decline (inactive regions
 ## Related Papers
 
 - [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](dpcache_denoising_path_planning_diffusion_accel.md)
 - [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
-- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[CVPR 2026\] Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers](circuit_mechanisms_for_spatial_relation_generation_in_diffusion_models.md)
 
 </div>

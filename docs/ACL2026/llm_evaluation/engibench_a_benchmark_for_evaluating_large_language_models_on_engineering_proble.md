@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes EngiBench—the first multi-level LLM evaluation benchmark for real-world engineering problem solving. Tasks are organized into three difficulty levels (Basic Knowledge Retrieval → Contextual Reasoning → Open-ended Modeling) and accompanied by three controlled variants (Perturbation / Knowledge Enhanc
+  [ACL 2026 Findings][LLM Evaluation][Engineering Reasoning] This paper proposes EngiBench—the first multi-level LLM evaluation benchmark for real-world engineering problem solving. Tasks are organized into three difficulty levels (Basic Knowledge Retrieval → Contextual Reasoning → Open-ended Modeling) and accompanied by three controlled variants (Perturbation / Knowledge Enhancement / Math Abstraction). Covering 1,760 problems across three engineering sub-domains…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Engineering Reasoning"
+  - "Hierarchical Evaluation"
+  - "Controlled Variants"
+  - "Open-ended Modeling"
+  - "Perturbation Testing"
 date: 2026-05-08
-content_hash: d36def6223514b1d
+content_hash: bdc9425f03dd4bed
 ---
+
 # EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving
 
 **Conference**: ACL 2026 Findings  
@@ -130,7 +136,7 @@ Level 3 Dimensional Breakdown: All models perform reasonably well in "Informatio
 - [\[NeurIPS 2025\] Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models](../../NeurIPS2025/llm_evaluation/creativity_or_brute_force_using_brainteasers_as_a_window_into_the_problem-solvin.md)
 - [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
 - [\[ACL 2026\] Evaluating Reasoning Models for Queries with Presuppositions](evaluating_reasoning_models_for_queries_with_presuppositions.md)
-- [\[ACL 2026\] Identifying the Achilles' Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models](identifying_the_achilles_heel_an_iterative_method_for_dynamically_uncovering_fac.md)
+- [\[ICLR 2026\] CMPhysBench: A Benchmark for Evaluating Large Language Models in Condensed Matter Physics](../../ICLR2026/llm_evaluation/cmphysbench_a_benchmark_for_evaluating_large_language_models_in_condensed_matter.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] I Am Big, You Are Little; I Am Right, You Are Wrong
 description: >-
-  [ICCV 2025][Minimal Pixel Sets] This work employs the causal-reasoning XAI tool rex to extract Minimal Pixel Sets (MPS) from image classification models…
+  [ICCV 2025][Minimal Pixel Sets] This work employs the causal-reasoning XAI tool rex to extract Minimal Pixel Sets (MPS) from image classification models, systematically comparing the "attentional focus" of 15 models across 5 architectures. Large models (EVA/ConvNext) are found to make classification decisions using as little as 5% of image pixels, and statistically significant differences in MPS size and spatial location are observed across architectures.
 tags:
   - "ICCV 2025"
   - "Minimal Pixel Sets"
@@ -11,7 +11,7 @@ tags:
   - "Explainable AI"
   - "Causal Reasoning"
 date: 2026-05-08
-content_hash: 6d4e97e07628f4fb
+content_hash: 0b90f1d67f86e49a
 ---
 
 # I Am Big, You Are Little; I Am Right, You Are Wrong
@@ -162,9 +162,9 @@ MPS overlap across architectures is generally low (mostly < 0.3), indicating tha
 
 - [\[NeurIPS 2025\] ResNets Are Deeper Than You Think](../../NeurIPS2025/others/resnets_are_deeper_than_you_think.md)
 - [\[ICCV 2025\] You Share Beliefs, I Adapt: Progressive Heterogeneous Collaborative Perception](you_share_beliefs_i_adapt_progressive_heterogeneous_collaborative_perception.md)
+- [\[ACL 2025\] You need to MIMIC to get FAME: Solving Meeting Transcript Scarcity with Multi-Agent Conversations](../../ACL2025/others/you_need_to_mimic_to_get_fame_solving_meeting_transcript_scarcity_with_a_multi-a.md)
+- [\[ACL 2025\] A Little Human Data Goes A Long Way](../../ACL2025/others/a_little_human_data_goes_a_long_way.md)
 - [\[NeurIPS 2025\] Improving Forecasts of Suicide Attempts for Patients with Little Data](../../NeurIPS2025/others/improving_forecasts_of_suicide_attempts_for_patients_with_little_data.md)
-- [\[ICLR 2026\] Key and Value Weights Are Probably All You Need: On the Necessity of the Query, Key, and Value Weight Triplet in Self-Attention](../../ICLR2026/others/key_and_value_weights_are_probably_all_you_need_on_the_necessity_of_the_query_ke.md)
-- [\[ICCV 2025\] A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition](a_hyperdimensional_one_place_signature_to_represent_them_all_stackable_descripto.md)
 
 </div>
 

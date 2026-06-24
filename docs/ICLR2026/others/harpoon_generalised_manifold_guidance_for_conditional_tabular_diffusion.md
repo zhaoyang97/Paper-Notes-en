@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Harpoon: Generalised Manifold Guidance for Conditional Tabular Diffusion
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper extends manifold theory from images to tabular diffusion models, proving that the gradient of any differentiable inference-time loss lies within the tangent space of the data manifold (not limited to squared error). Based on this, it proposes Harpoon, a method that guides unconditional samples along the mani
+  [ICLR 2026][Tabular Data] This paper extends manifold theory from images to tabular diffusion models, proving that the gradient of any differentiable inference-time loss lies within the tangent space of the data manifold (not limited to squared error). Based on this, it proposes Harpoon, a method that guides unconditional samples along the manifold at inference time to satisfy diverse tabular constraints.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Tabular Data"
+  - "Manifold Guidance"
+  - "Conditional Generation"
+  - "Inference-time Guidance"
+  - "Inequality Constraints"
 date: 2026-05-08
-content_hash: d9735b00d0d14df6
+content_hash: 0a2d04f1353a453d
 ---
+
 # Harpoon: Generalised Manifold Guidance for Conditional Tabular Diffusion
 
 **Conference**: ICLR 2026  

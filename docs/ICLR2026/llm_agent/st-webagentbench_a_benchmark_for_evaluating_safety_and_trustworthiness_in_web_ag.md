@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][LLM Agent][Web Agent] This paper proposes ST-WebAgentBench, the first benchmark specifically designed to evaluate the safety and trustworthiness of Web Agents. Through a hierarchical policy framework and the Completion under Policy (CuP) metric, it reveals that current SOTA agents exhibit severe policy violations in enterprise scenarios.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
-  - Safety
-  - Trustworthiness
-  - benchmark
-  - Policy Compliance
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Safety"
+  - "Trustworthiness"
+  - "benchmark"
+  - "Policy Compliance"
 date: 2026-05-08
-content_hash: 452ef2cd399df064
+content_hash: a7174305f8ddb915
 ---
+
 # ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents
 
 **Conference**: ICLR 2026  
@@ -147,15 +148,15 @@ This quantifies how "dangerous" an agent is in specific dimensions, categorized 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
 - [\[ICLR 2026\] Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on Diverse Video Games](orak_a_foundational_benchmark_for_training_and_evaluating_llm_agents_on_diverse_.md)
+- [\[ICML 2026\] It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents](../../ICML2026/llm_agent/its_a_trap_task-redirecting_agent_persuasion_benchmark_for_web_agents.md)
 - [\[ICLR 2026\] WARC-Bench: Web Archive based Benchmark for GUI Subtask Executions](warc-bench_web_archive_based_benchmark_for_gui_subtask_executions.md)
 - [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
-- [\[ICML 2026\] It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents](../../ICML2026/llm_agent/its_a_trap_task-redirecting_agent_persuasion_benchmark_for_web_agents.md)
 
 </div>
 

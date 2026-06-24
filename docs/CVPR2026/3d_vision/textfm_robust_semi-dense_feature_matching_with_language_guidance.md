@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TextFM: Robust Semi-dense Feature Matching with Language Guidance
 description: >-
-  [CVPR 2026][3D Vision][Vision-Language Model] TextFM is the first framework to introduce text semantics from Visual-Language Models (VLM) into semi-dense feature matching. It utilizes text embeddings to generate instance-level queries that inject domain-invariant semantics into coarse matching, employs LoRA for efficient fine-tuning of Visual Foundation Models (VF
+  [CVPR 2026][3D Vision][Feature Matching] TextFM is the first framework to introduce text semantics from Visual-Language Models (VLM) into semi-dense feature matching. It utilizes text embeddings to generate instance-level queries that inject domain-invariant semantics into coarse matching, employs LoRA for efficient fine-tuning of Visual Foundation Models (VFM), and overlays illumination-invariant physical priors, significantly outperforming existing methods like EfficientLoF…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Vision-Language Model
-  - LoRA
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feature Matching"
+  - "Visual Language Models"
+  - "Domain Generalization"
+  - "LoRA"
+  - "Illumination Invariant Priors"
 date: 2026-05-08
-content_hash: a5f4e69275cad146
+content_hash: 728f4d858c5245c2
 ---
+
 # TextFM: Robust Semi-dense Feature Matching with Language Guidance
 
 **Conference**: CVPR 2026  
@@ -144,11 +148,11 @@ Comparison of VFM fine-tuning schemes (DINOv2-L backbone only):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Scalable Feature Matching via State Space Modeling and Sparse Correlation](scalable_feature_matching_via_state_space_modeling_and_sparse_correlation.md)
 - [\[ICCV 2025\] CasP: Improving Semi-Dense Feature Matching Pipeline Leveraging Cascaded Correspondence Priors for Guidance](../../ICCV2025/3d_vision/casp_improving_semi-dense_feature_matching_pipeline_leveraging_cascaded_correspo.md)
+- [\[CVPR 2026\] Scalable Feature Matching via State Space Modeling and Sparse Correlation](scalable_feature_matching_via_state_space_modeling_and_sparse_correlation.md)
+- [\[CVPR 2026\] From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)
 - [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
 - [\[CVPR 2026\] PatchAlign3D: Local Feature Alignment for Dense 3D Shape Understanding](patchalign3d_local_feature_alignment_for_dense_3d_shape_understanding.md)
-- [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From One to More: Contextual Part Latents for 3D Generation
 description: >-
-  [ICCV 2025][3D Vision][Part-level 3D generation] This paper proposes CoPart, a framework that represents 3D objects via contextual part latents and fine-tunes pretrained diffusion models with a mutual guidance strategy…
+  [ICCV 2025][3D Vision][Part-level 3D generation] This paper proposes CoPart, a framework that represents 3D objects via contextual part latents and fine-tunes pretrained diffusion models with a mutual guidance strategy, enabling high-quality part-level 3D generation along with support for part editing, articulated object generation, and small-scale scene generation.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D VAE"
   - "part editing"
 date: 2026-05-08
-content_hash: 4e900e8db6031e3f
+content_hash: 0db02c4153295c7f
 ---
 
 # From One to More: Contextual Part Latents for 3D Generation
@@ -135,11 +135,11 @@ Users strongly prefer CoPart's generated results, with a particularly pronounced
 
 ## Related Papers
 
+- [\[CVPR 2026\] UniPart: Part-Level 3D Generation with Unified 3D Geom-Seg Latents](../../CVPR2026/3d_vision/unipart_part-level_3d_generation_with_unified_3d_geom-seg_latents.md)
 - [\[ICCV 2025\] Learning 3D Scene Analogies with Neural Contextual Scene Maps](learning_3d_scene_analogies_with_neural_contextual_scene_maps.md)
-- [\[ICCV 2025\] Find Any Part in 3D](find_any_part_in_3d.md)
 - [\[ICCV 2025\] BokehDiff: Neural Lens Blur with One-Step Diffusion](bokehdiff_neural_lens_blur_with_one-step_diffusion.md)
-- [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](../../CVPR2026/3d_vision/learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
-- [\[CVPR 2026\] More Natural, More Real: Object-aware Gaussian Splatting for 3D Visual Decoding from Human Brain](../../CVPR2026/3d_vision/more_natural_more_real_object-aware_gaussian_splatting_for_3d_visual_decoding_fr.md)
+- [\[ICCV 2025\] Find Any Part in 3D](find_any_part_in_3d.md)
+- [\[CVPR 2025\] Structured 3D Latents for Scalable and Versatile 3D Generation](../../CVPR2025/3d_vision/structured_3d_latents_for_scalable_and_versatile_3d_generation.md)
 
 </div>
 

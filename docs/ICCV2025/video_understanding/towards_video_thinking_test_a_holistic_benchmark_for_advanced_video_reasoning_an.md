@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding
 description: >-
-  [ICCV 2025][Video Understanding][Video Understanding Benchmark] This paper introduces Video Thinking Test (Video-TT), a benchmark for evaluating both the correctness and robustness of video large language models (Video L…
+  [ICCV 2025][Video Understanding][Video Understanding Benchmark] This paper introduces Video Thinking Test (Video-TT), a benchmark for evaluating both the correctness and robustness of video large language models (Video LLMs). It comprises 1,000 YouTube Shorts videos and 5,000 questions, designed around visual/narrative complexity factors and natural adversarial question variants. The benchmark reveals a substantial gap between the best-performing model (GPT-4o…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Visual Complexity"
   - "Narrative Complexity"
 date: 2026-05-08
-content_hash: e74a6f50d9b290d0
+content_hash: 59f8c3fe5d2c2ebe
 ---
 
 # Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding
@@ -146,8 +146,8 @@ Video-TT consists of 1,000 YouTube Shorts videos, each paired with one primary o
 - [\[ICCV 2025\] VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning](vtimecot_thinking_by_drawing_for_video_temporal_grounding_and_reasoning.md)
 - [\[NeurIPS 2025\] A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis](../../NeurIPS2025/video_understanding/a_unified_reasoning_framework_for_holistic_zeroshot_video_an.md)
 - [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](../../NeurIPS2025/video_understanding/when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
-- [\[CVPR 2026\] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](../../CVPR2026/video_understanding/videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)
-- [\[CVPR 2026\] MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning](../../CVPR2026/video_understanding/minerva-cultural_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
+- [\[CVPR 2025\] T*: Re-thinking Temporal Search for Long-Form Video Understanding](../../CVPR2025/video_understanding/re-thinking_temporal_search_for_long-form_video_understanding.md)
+- [\[CVPR 2025\] Q-Bench-Video: Benchmark the Video Quality Understanding of LMMs](../../CVPR2025/video_understanding/q-bench-video_benchmark_the_video_quality_understanding_of_lmms.md)
 
 </div>
 

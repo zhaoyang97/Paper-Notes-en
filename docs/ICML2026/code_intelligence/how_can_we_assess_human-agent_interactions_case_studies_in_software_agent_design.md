@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How can we assess human-agent interactions? Case studies in software agent design
 description: >-
-  [ICML 2026][Code Intelligence][Paper Note] The authors propose the PULSE framework—which collects user feedback, trains an ML model to predict user satisfaction, and employs Prediction-Powered Inference (PPI) to combine real human labels with model pseudo-labels for efficient estimation of agent design effects. Deployed on the open-source coding agent OpenHands
+  [ICML2026][Code Intelligence][HCI Evaluation] The authors propose the PULSE framework—which collects user feedback, trains an ML model to predict user satisfaction, and employs Prediction-Powered Inference (PPI) to combine real human labels with model pseudo-labels for efficient estimation of agent design effects. Deployed on the open-source coding agent OpenHands across 15,000 users and 36,000 sessions, this work represents the first large-scale real-world evaluation of agen…
 tags:
-  - ICML 2026
-  - Code Intelligence
+  - "ICML2026"
+  - "Code Intelligence"
+  - "HCI Evaluation"
+  - "Software Agents"
+  - "Prediction-powered Inference"
+  - "User Satisfaction"
+  - "A/B Testing"
 date: 2026-05-08
-content_hash: 78947150e6b193e1
+content_hash: 8c252fe8fa57e35f
 ---
+
 # How can we assess human-agent interactions? Case studies in software agent design
 
 **Conference**: ICML2026  
@@ -133,9 +139,9 @@ A striking outlier: **GPT-5 won 6/7 benchmarks against Claude-Sonnet-4, but huma
 ## Related Papers
 
 - [\[ICLR 2026\] CARD: Towards Conditional Design of Multi-agent Topological Structures](../../ICLR2026/code_intelligence/card_towards_conditional_design_of_multi-agent_topological_structures.md)
-- [\[NeurIPS 2025\] Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
-- [\[ICML 2026\] Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software](physics_is_all_you_need_a_case_study_in_physicist-supervised_ai_development_of_s.md)
+- [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
 - [\[ICML 2026\] MARS: Modular Agent with Reflective Search for Automated AI Research](mars_modular_agent_with_reflective_search_for_automated_ai_research.md)
+- [\[ICML 2026\] Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software](physics_is_all_you_need_a_case_study_in_physicist-supervised_ai_development_of_s.md)
 - [\[ICLR 2026\] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](../../ICLR2026/code_intelligence/reasoningbank_scaling_agent_self-evolving_with_reasoning_memory.md)
 
 </div>

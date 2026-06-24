@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Chimera: Improving Generalist Model with Domain-Specific Experts
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal reasoning] This paper proposes Chimera, a scalable and low-cost multimodal pipeline that integrates domain-specific expert knowledge (tables, charts, math…
+  [ICCV 2025][Multimodal VLM][Multimodal reasoning] This paper proposes Chimera, a scalable and low-cost multimodal pipeline that integrates domain-specific expert knowledge (tables, charts, math, documents) into a generalist multimodal large model via a lightweight routing module for dynamic expert selection, a progressive training strategy, and a Generalist-Specialist Collaboration Masking (GSCM) mechanism. Chimera achieves 64.9% on MathVista (SOTA) and matches or surpasses s…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "routing mechanism"
   - "visual content extraction"
 date: 2026-05-08
-content_hash: ea82601ee8ce52c3
+content_hash: 2030371e03cf54ef
 ---
 
 # Chimera: Improving Generalist Model with Domain-Specific Experts
@@ -192,7 +192,7 @@ Routing accuracy: 95.4%. All misclassifications occur between general↔expert c
 - [\[ICCV 2025\] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition](a_qualityguided_mixture_of_scorefusion_experts_framework_for.md)
 - [\[ICCV 2025\] CompCap: Improving Multimodal Large Language Models with Composite Captions](compcap_improving_multimodal_large_language_models_with_composite_captions.md)
 - [\[ICCV 2025\] Effective Training Data Synthesis for Improving MLLM Chart Understanding](effective_training_data_synthesis_for_improving_mllm_chart_understanding.md)
-- [\[ICML 2026\] ATHA: Improving CLIP Adaptation in Source-Free Cross-Domain Few-Shot Learning by Breaking Tail Alignment](../../ICML2026/multimodal_vlm/improving_clip_adaptation_by_breaking_tail_alignment_for_source-free_cross-domai.md)
+- [\[ICML 2026\] ATHA: Improving CLIP Adaptation on Source-Free Cross-Domain Few-Shot Learning by Breaking Tail Alignment](../../ICML2026/multimodal_vlm/improving_clip_adaptation_by_breaking_tail_alignment_for_source-free_cross-domai.md)
 
 </div>
 

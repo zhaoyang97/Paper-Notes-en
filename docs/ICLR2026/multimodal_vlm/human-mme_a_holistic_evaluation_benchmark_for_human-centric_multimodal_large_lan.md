@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Human-MME is the first comprehensive MLLM evaluation benchmark specifically for "human-centric scenarios." Utilizing a five-step auto-annotation pipeline followed by expert manual verification, the authors constructed a dataset covering 43 sub-scenarios and 8 progressive dimensions—from "fine-grained perception" to "hi
+  [ICLR 2026][Multimodal VLM][MLLM Evaluation] Human-MME is the first comprehensive MLLM evaluation benchmark specifically for "human-centric scenarios." Utilizing a five-step auto-annotation pipeline followed by expert manual verification, the authors constructed a dataset covering 43 sub-scenarios and 8 progressive dimensions—from "fine-grained perception" to "high-dimensional causal reasoning." Comprising nearly 20,000 real image-text QA pairs…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "MLLM Evaluation"
+  - "Human-Centric Understanding"
+  - "Fine-Grained Perception"
+  - "Causal Reasoning"
+  - "Visual Grounding"
 date: 2026-05-08
-content_hash: dfb235525bc3eac9
+content_hash: a90ce79486d6c542
 ---
+
 # Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -125,15 +131,15 @@ BBox scores show the largest disparity: GLM-4.5V reaches 66.3, while GPT-4o and 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models](mme-emotion_a_holistic_evaluation_benchmark_for_emotional_intelligence_in_multim.md)
+- [\[ICLR 2026\] HumanPCR: Probing MLLM Capabilities in Diverse Human-Centric Scenes](humanpcr_probing_mllm_capabilities_in_diverse_human-centric_scenes.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 - [\[ICLR 2026\] Shuffle-R1: Efficient RL Framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle](shuffle-r1_efficient_rl_framework_for_multimodal_large_language_models_via_data-.md)
 - [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
-- [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
-- [\[ICLR 2026\] Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment](grounding-iqa_grounding_multimodal_language_model_for_image_quality_assessment.md)
 
 </div>
 

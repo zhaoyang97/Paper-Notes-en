@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][RetNet] PGR-Net proposes an explicit ROI-aware brain tumor MRI segmentation network. By constructing a data-driven spatial prior template set from the training data, a hierarchical Top-K ROI selection mechanism, and a Windowed Gaussian-Spatial decay guidance module (WinGS-ROI), it concentrates computational resources on lesion
+  [CVPR 2026][Medical Imaging][Brain Tumor Segmentation] PGR-Net proposes an explicit ROI-aware brain tumor MRI segmentation network. By constructing a data-driven spatial prior template set from the training data, a hierarchical Top-K ROI selection mechanism, and a Windowed Gaussian-Spatial decay guidance module (WinGS-ROI), it concentrates computational resources on lesion areas. It achieves SOTA performance on BraTS-2019/2023 and MSD Task01 with only 8.64M parameters.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - RetNet
-  - MRI
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Brain Tumor Segmentation"
+  - "ROI Priors"
+  - "Spatial Guidance"
+  - "RetNet"
+  - "MRI"
 date: 2026-05-08
-content_hash: fd0d116c61291e14
+content_hash: e25f80c88d4e92b8
 ---
+
 # PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation
 
 **Conference**: CVPR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] This paper proposes **DIRL (Double Interactive Reinforcement Learning)**. The approach utilizes a mixture of data from a "single-tool expert IRL teacher + frontier model full-tool teacher" for initial SFT, followed by a second round of interactive RL refinement using the full toolset. This process trains a 3B Qwen2.5-V
+  [CVPR 2026][VLM Reasoning][Tool-Augmented Reasoning] This paper proposes **DIRL (Double Interactive Reinforcement Learning)**. The approach utilizes a mixture of data from a "single-tool expert IRL teacher + frontier model full-tool teacher" for initial SFT, followed by a second round of interactive RL refinement using the full toolset. This process trains a 3B Qwen2.5-VL into SpaceTools, a spatial reasoning agent capable of autonomously scheduling over ten vision/robotics to…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Tool-Augmented Reasoning"
+  - "Spatial Reasoning"
+  - "Double Interactive RL"
+  - "GRPO"
+  - "Embodied Manipulation"
 date: 2026-05-08
-content_hash: f35e70f47b8f8f5d
+content_hash: cd5758825b8ae9a5
 ---
+
 # SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,16 @@ Real Robot Manipulation (Closed-loop perception-action):
 - Value: ⭐⭐⭐⭐⭐ Demonstrates that a 3B model can outperform giant models via tool orchestration, providing a roadmap for small embodied agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[CVPR 2026\] IPR-1: Interactive Physical Reasoner](ipr-1_interactive_physical_reasoner.md)
 - [\[CVPR 2026\] Stable and Efficient Single-Rollout RL for Multimodal Reasoning](stable_and_efficient_single-rollout_rl_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
 - [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
-- [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
+- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
 
 </div>
 

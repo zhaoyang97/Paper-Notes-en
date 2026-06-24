@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling
 description: >-
-  [CVPR 2026][Image Generation][GRPO] Addressing the persistent "style leakage + semantic drift" issue in diffusion-based editing models for style transfer, this work constructs a preference dataset, StyleReward-Dataset, containing 300,000 adversarial image pairs. A multimodal reward model, StyleScore, is trained to simultaneously evaluate style consistenc
+  [CVPR 2026][Image Generation][Style Transfer] Addressing the persistent "style leakage + semantic drift" issue in diffusion-based editing models for style transfer, this work constructs a preference dataset, StyleReward-Dataset, containing 300,000 adversarial image pairs. A multimodal reward model, StyleScore, is trained to simultaneously evaluate style consistency and content fidelity. By employing a two-stage "SFT Domain Adaptation + GRPO Preference Optimization" pipeline…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Style Transfer"
+  - "GRPO"
+  - "Reward Modeling"
+  - "Style-Content Decoupling"
+  - "Diffusion Post-training"
 date: 2026-05-08
-content_hash: e226a44c8b4a48a4
+content_hash: 6000bfcee94c72b0
 ---
+
 # Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling
 
 **Conference**: CVPR 2026  
@@ -149,9 +154,9 @@ Contribution of SFT and GRPO phases (ImgEdit + StyleScore):
 
 - [\[CVPR 2026\] StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References](stylegallery_training-free_and_semantic-aware_personalized_style_transfer_from_a.md)
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
+- [\[CVPR 2026\] RegionRoute: Regional Style Transfer with Diffusion Model](regionroute_regional_style_transfer_with_diffusion_model.md)
 - [\[CVPR 2026\] Harmonic Canvas: Inversion-Free Editing for Visually-Guided Music Style Transfer](harmonic_canvas_inversion-free_editing_for_visually-guided_music_style_transfer.md)
-- [\[CVPR 2025\] SaMam: Style-aware State Space Model for Arbitrary Image Style Transfer](../../CVPR2025/image_generation/samam_style-aware_state_space_model_for_arbitrary_image_style_transfer.md)
-- [\[CVPR 2026\] A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space](a_style_is_worth_one_code_unlocking_code-to-style_image_generation_with_discrete.md)
+- [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](mixture_of_style_experts_for_diverse_image_stylization.md)
 
 </div>
 

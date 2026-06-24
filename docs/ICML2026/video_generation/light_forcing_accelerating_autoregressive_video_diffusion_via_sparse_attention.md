@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention
 description: >-
-  [ICML 2026][Video Generation][Paper Note] Light Forcing is the first sparse attention scheme customized for autoregressive (AR) video diffusion models. Chunk-Aware Growth (CAG) quantifies the cumulative error contribution of each generated chunk to dynamically allocate sparsity, while Hierarchical Sparse Attention (HSA) flexibly captures historical dependencie
+  [ICML 2026][Video Generation][Autoregressive Video Generation] Light Forcing is the first sparse attention scheme customized for autoregressive (AR) video diffusion models. Chunk-Aware Growth (CAG) quantifies the cumulative error contribution of each generated chunk to dynamically allocate sparsity, while Hierarchical Sparse Attention (HSA) flexibly captures historical dependencies through frame-level → chunk-level dual-mask selection. It achieves 1.30× end-to-end / 3.79× att…
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Autoregressive Video Generation"
+  - "Sparse Attention"
+  - "Chunk-Aware Growth"
+  - "Hierarchical Sparsity"
 date: 2026-05-08
-content_hash: 1e509d3e035e19dc
+content_hash: 054d413b20d7f4de
 ---
+
 # Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention
 
 **Conference**: ICML 2026  
@@ -132,9 +137,9 @@ Total score of 84.5 exceeds the dense baseline of 84.1, while achieving 1.30× e
 
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
-- [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
 - [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](lightning_unified_video_editing_via_in-context_sparse_attention.md)
-- [\[NeurIPS 2025\] Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion](../../NeurIPS2025/video_generation/self_forcing_bridging_the_train-test_gap_in_autoregressive_video_diffusion.md)
+- [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
+- [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](../../NeurIPS2025/video_generation/vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
 
 </div>
 

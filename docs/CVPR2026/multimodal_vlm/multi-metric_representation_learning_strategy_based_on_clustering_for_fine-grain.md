@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-Metric Representation Learning Strategy Based on Clustering for Fine-Grained Multimodal Sentiment Analysis
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the problem of "overlapping sentiment centers and ambiguous fine-grained boundaries" after fusing different modalities into the same representation space, MMRest first performs k-means sentiment clustering on tri-modal representations. It then employs a multi-metric learning strategy involving a global metri
+  [CVPR 2026][Multimodal VLM][Multimodal sentiment analysis] To address the problem of "overlapping sentiment centers and ambiguous fine-grained boundaries" after fusing different modalities into the same representation space, MMRest first performs k-means sentiment clustering on tri-modal representations. It then employs a multi-metric learning strategy involving a global metric and cluster-specific local metrics to pull similar sentiments closer and push dissimilar ones furth…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal sentiment analysis"
+  - "multi-metric learning"
+  - "sentiment clustering"
+  - "geometric projection"
+  - "lightweight"
 date: 2026-05-08
-content_hash: 3f716887d6cccfca
+content_hash: 20b12e40a4cadcfe
 ---
+
 # Multi-Metric Representation Learning Strategy Based on Clustering for Fine-Grained Multimodal Sentiment Analysis
 
 **Conference**: CVPR 2026  
@@ -132,7 +138,7 @@ Modality Ablation: Text-only maintains reasonable predictive power; audio-only o
 - [\[CVPR 2026\] Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis](conflict-aware_adaptive_cross-reconstruction_for_multimodal_sentiment_analysis.md)
 - [\[CVPR 2026\] Prototype-as-Prompt: Multimodal Sentiment Prototypes Endowing Large Language Models the Capability to Perform Multimodal Sentiment Analysis](prototype-as-prompt_multimodal_sentiment_prototypes_endowing_large_language_mode.md)
 - [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
-- [\[CVPR 2026\] EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](ebmc_multimodal_sentiment_analysis.md)
+- [\[CVPR 2026\] CICA: Coupling Confidence-Aware Pretraining with Confidence-Informed Attention for Robust Multimodal Sentiment Analysis](cica_coupling_confidence-aware_pretraining_with_confidence-informed_attention_fo.md)
 
 </div>
 

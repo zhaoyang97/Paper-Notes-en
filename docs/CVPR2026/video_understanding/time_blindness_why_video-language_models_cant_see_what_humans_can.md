@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Time Blindness: Why Video-Language Models Can't See What Humans Can?
 description: >-
-  [CVPR 2026][Video Understanding][SpookyBench] Authors constructed SpookyBench, a synthetic benchmark where information exists "purely in inter-frame temporal dynamics while single frames are total noise." While humans can read text or identify objects with 98% accuracy using motion grouping, 15 state-of-the-art Video-VLMs (including GPT-4o, Gemini 2.5 Pro, and Qwe
+  [CVPR 2026][Video Understanding][Temporal Reasoning] Authors constructed SpookyBench, a synthetic benchmark where information exists "purely in inter-frame temporal dynamics while single frames are total noise." While humans can read text or identify objects with 98% accuracy using motion grouping, 15 state-of-the-art Video-VLMs (including GPT-4o, Gemini 2.5 Pro, and Qwen2.5-VL-72B) all achieved 0% accuracy. This clearly exposes a "time blindness" in current video models—they…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - SpookyBench
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Temporal Reasoning"
+  - "Video-Language Models"
+  - "Diagnostic Benchmark"
+  - "Motion Perception"
+  - "SpookyBench"
 date: 2026-05-08
-content_hash: c763bb16ceeac18e
+content_hash: c5359463c6ab327a
 ---
+
 # Time Blindness: Why Video-Language Models Can't See What Humans Can?
 
 **Conference**: CVPR 2026  
@@ -138,8 +143,8 @@ Control experiments were used to rule out non-architectural explanations (Abridg
 
 ## Related Papers
 
+- [\[ICLR 2026\] IF-VidCap: Can Video Caption Models Follow Instructions?](../../ICLR2026/video_understanding/if-vidcap_can_video_caption_models_follow_instructions.md)
 - [\[CVPR 2026\] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering](do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri.md)
-- [\[CVPR 2025\] Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously](../../CVPR2025/video_understanding/video_streaming_thinking_videollms_can_watch_and_think_simultaneously.md)
 - [\[CVPR 2026\] StreamReady: Learning What to Answer and When in Long Streaming Videos](streamready_learning_what_to_answer_and_when_in_long_streaming_videos.md)
 - [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
 - [\[CVPR 2026\] LensWalk: Agentic Video Understanding by Planning How You See in Videos](lenswalk_agentic_video_understanding_by_planning_how_you_see_in_videos.md)

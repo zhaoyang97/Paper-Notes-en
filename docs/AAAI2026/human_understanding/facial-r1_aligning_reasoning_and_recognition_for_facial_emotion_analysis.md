@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis
 description: >-
-  [AAAI 2026][Human Understanding][Facial Emotion Analysis] This paper proposes Facial-R1, a three-stage alignment training framework (SFT → RL → Data Synthesis) that aligns the reasoning process of VLMs with emotion recog…
+  [AAAI 2026][Human Understanding][Facial Emotion Analysis] This paper proposes Facial-R1, a three-stage alignment training framework (SFT → RL → Data Synthesis) that aligns the reasoning process of VLMs with emotion recognition outcomes by treating AU and emotion labels as verifiable reward signals. The framework achieves state-of-the-art performance on 8 benchmarks and introduces the FEA-20K dataset.
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Vision-Language Model"
   - "GRPO"
 date: 2026-05-08
-content_hash: a41eda0ae192b286
+content_hash: 61566214773cb0ac
 ---
 
 # Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis
@@ -138,11 +138,11 @@ Facial-R1 adopts a three-stage progressive training pipeline:
 
 ## Related Papers
 
-- [\[ICLR 2026\] NeuroGaze-Distill: Brain-informed Distillation and Depression-Inspired Geometric Priors for Robust Facial Emotion Recognition](../../ICLR2026/human_understanding/neurogaze-distill_brain-informed_distillation_and_depression-inspired_geometric_.md)
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](../../CVPR2026/human_understanding/a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
-- [\[ICCV 2025\] SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data](../../ICCV2025/human_understanding/synfer_towards_boosting_facial_expression_recognition_with_synthetic_data.md)
-- [\[CVPR 2026\] WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering](../../CVPR2026/human_understanding/wildcap_facial_albedo_capture_in_the_wild_via_hybrid_inverse_rendering.md)
-- [\[ICCV 2025\] Monocular Facial Appearance Capture in the Wild](../../ICCV2025/human_understanding/monocular_facial_appearance_capture_in_the_wild.md)
+- [\[ECCV 2024\] Facial Affective Behavior Analysis with Instruction Tuning](../../ECCV2024/human_understanding/facial_affective_behavior_analysis_with_instruction_tuning.md)
+- [\[ECCV 2024\] Generalizable Facial Expression Recognition](../../ECCV2024/human_understanding/generalizable_facial_expression_recognition.md)
+- [\[ICLR 2026\] From Pixels to Semantics: Unified Facial Action Representation Learning for Micro-Expression Analysis](../../ICLR2026/human_understanding/from_pixels_to_semantics_unified_facial_action_representation_learning_for_micro.md)
+- [\[CVPR 2026\] CLEX: Complementary Label Exchange Learning for Noisy Facial Expression Recognition](../../CVPR2026/human_understanding/clex_complementary_label_exchange_learning_for_noisy_facial_expression_recogniti.md)
+- [\[CVPR 2026\] Dynamic Label Noise Suppression with Optimal Teacher Pool for Facial Expression Recognition](../../CVPR2026/human_understanding/dynamic_label_noise_suppression_with_optimal_teacher_pool_for_facial_expression_.md)
 
 </div>
 

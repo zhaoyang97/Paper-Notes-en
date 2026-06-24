@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] REAL: Resolving Knowledge Conflicts in Knowledge-Intensive Visual Question Answering via Reasoning-Pivot Alignment
 description: >-
-  [ICML 2026][Information Retrieval & RAG][KI-VQA] This paper proposes the REAL framework, which redefines knowledge conflicts in KI-VQA using "Reasoning-Pivots" (atomic nodes/edges in a reasoning chain that must rely on external evidence for completion). By training a pivot-aware conflict discriminator via RPA-SFT and a training-free contrastive decoding strategy via
+  [ICML2026][Information Retrieval & RAG][Knowledge Conflict] This paper proposes the REAL framework, which redefines knowledge conflicts in KI-VQA using "Reasoning-Pivots" (atomic nodes/edges in a reasoning chain that must rely on external evidence for completion). By training a pivot-aware conflict discriminator via RPA-SFT and a training-free contrastive decoding strategy via RPGD, it achieves improvements of +3.8%, +1.6%, and +3.6% on E-VQA, InfoSeek, and A-OKVQA…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - KI-VQA
-  - Reasoning-Pivot
+  - "ICML2026"
+  - "Information Retrieval & RAG"
+  - "Knowledge Conflict"
+  - "KI-VQA"
+  - "Reasoning-Pivot"
+  - "Contrastive Decoding"
+  - "Multimodal RAG"
 date: 2026-05-08
-content_hash: 4beeb16aeb2435c4
+content_hash: f7c4113deed390ef
 ---
+
 # REAL: Resolving Knowledge Conflicts in Knowledge-Intensive Visual Question Answering via Reasoning-Pivot Alignment
 
 **Conference**: ICML2026  
@@ -141,9 +145,9 @@ RPGD Component Ablation (Qwen3-VL-8B on E-VQA, Single-Hop / All):
 
 ## Related Papers
 
-- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](../../CVPR2026/information_retrieval/cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
 - [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](../../ICLR2026/information_retrieval/reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
 - [\[ACL 2026\] CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering](../../ACL2026/information_retrieval/counterrefine_answer-conditioned_counterevidence_retrieval_for_inference-time_kn.md)
+- [\[ACL 2025\] Astute RAG: Overcoming Imperfect Retrieval Augmentation and Knowledge Conflicts for Large Language Models](../../ACL2025/information_retrieval/astute_rag_knowledge_conflicts.md)
 - [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](../../ACL2026/information_retrieval/visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
 - [\[AAAI 2026\] SR-KI: Scalable and Real-Time Knowledge Integration into LLMs via Supervised Attention](../../AAAI2026/information_retrieval/sr-ki_scalable_and_real-time_knowledge_integration_into_llms_via_supervised_atte.md)
 

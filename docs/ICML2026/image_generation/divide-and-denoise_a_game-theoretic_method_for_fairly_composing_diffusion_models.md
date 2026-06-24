@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Divide-and-Denoise: A Game-Theoretic Method for Fairly Composing Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The paper models the "collaborative sampling of multiple pre-trained diffusion models" as a **fair division game**. At each step, game theory is utilized to assign specific image regions to each model (allocation), ensuring that the composite denoising respects these assigned zones. This allows combinations such as "si
+  [ICML 2026][Image Generation][Composition of Diffusion Models] The paper models the "collaborative sampling of multiple pre-trained diffusion models" as a **fair division game**. At each step, game theory is utilized to assign specific image regions to each model (allocation), ensuring that the composite denoising respects these assigned zones. This allows combinations such as "single-dog model + single-cat model" to generate images containing both a dog and a cat without com…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Composition of Diffusion Models"
+  - "Fair Division Game"
+  - "Inference-time Guidance"
+  - "Cross-attention Utility"
+  - "Multi-concept Generation"
 date: 2026-05-08
-content_hash: 557dc217167c0d7a
+content_hash: b359a67fe0c68f6b
 ---
+
 # Divide-and-Denoise: A Game-Theoretic Method for Fairly Composing Diffusion Models
 
 **Conference**: ICML 2026  
@@ -135,13 +141,20 @@ Ours significantly outperforms baselines: %images is 30% higher than MultiDiffus
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **MultiDiffusion**: Fusing Diffusion Paths for Controlled Image Generation (ICML 2023)
-- **Composable Diffusion**: Compositional Visual Generation with Composable Diffusion Models (ECCV 2022)
-- **GenEval**: An Object-Oriented Task for Evaluating Text-to-Image Synthesis (NeurIPS 2023)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Divide and Conquer: Reliable Multi-View Evidential Learning for Deepfake Detection](divide_and_conquer_reliable_multi-view_evidential_learning_for_deepfake_detectio.md)
+- [\[CVPR 2026\] Back to Basics: Let Denoising Generative Models Denoise](../../CVPR2026/image_generation/back_to_basics_let_denoising_generative_models_denoise.md)
+- [\[ICLR 2026\] WILD-Diffusion: A WDRO-inspired Training Method for Limited Data Diffusion Models](../../ICLR2026/image_generation/wild-diffusion_a_wdro_inspired_training_method_for_diffusion_models_under_limite.md)
+- [\[NeurIPS 2025\] Information Theoretic Learning for Diffusion Models with Warm Start](../../NeurIPS2025/image_generation/information_theoretic_learning_for_diffusion_models_with_warm_start.md)
+- [\[NeurIPS 2025\] Information-Theoretic Discrete Diffusion](../../NeurIPS2025/image_generation/information-theoretic_discrete_diffusion.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Back to Basics: Let Denoising Generative Models Denoise](../../CVPR2026/image_generation/back_to_basics_let_denoising_generative_models_denoise.md)

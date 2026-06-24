@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] D&R: Recovery-based AI-Generated Text Detection via a Single Black-box LLM Call
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] D&R randomly shuffles the text to be tested within local chunks separated by punctuation (Within-Chunk Shuffling) and calls a black-box LLM only **once** to recover it. It then measures the semantic and structural similarity between the recovered text and the original. AI-generated text is more likely to be "recovered"
+  [ICLR2026][AIGC Detection][AI Text Detection] D&R randomly shuffles the text to be tested within local chunks separated by punctuation (Within-Chunk Shuffling) and calls a black-box LLM only **once** to recover it. It then measures the semantic and structural similarity between the recovered text and the original. AI-generated text is more likely to be "recovered" almost identically, while human-written text remains more dispersed. Feeding this similarity gap into a lightweig…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR2026"
+  - "AIGC Detection"
+  - "AI Text Detection"
+  - "Black-box Detection"
+  - "Posterior Concentration"
+  - "Recovery Similarity"
+  - "Single Call"
 date: 2026-05-08
-content_hash: b9c3c1547190891d
+content_hash: 98591446882018c4
 ---
+
 # D&R: Recovery-based AI-Generated Text Detection via a Single Black-box LLM Call
 
 **Conference**: ICLR2026  

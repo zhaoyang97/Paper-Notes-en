@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LeSTD: LLM Compression via Learning-based Sparse Tensor Decomposition
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] LeSTD packages the Q/K/V/O weight matrices of a Multi-Head Attention (MHA) layer into a 4th-order tensor to perform a "cross-head shared" Tucker decomposition. It then sparsifies the dense core tensor using pruning supported by closed-form importance scores, breaking the "dense core bottleneck" of tensor decomposition
+  [ICLR 2026][Model Compression][Tucker Decomposition] LeSTD packages the Q/K/V/O weight matrices of a Multi-Head Attention (MHA) layer into a 4th-order tensor to perform a "cross-head shared" Tucker decomposition. It then sparsifies the dense core tensor using pruning supported by closed-form importance scores, breaking the "dense core bottleneck" of tensor decomposition methods to maintain accuracy at higher compression rates while enabling direct inference in the compressed…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Tucker Decomposition"
+  - "Sparse Core Tensor"
+  - "Data-free Compression"
+  - "Multi-Head Attention"
+  - "Post-Training Compression"
 date: 2026-05-08
-content_hash: 28f493512c55c881
+content_hash: a4b3d132a6b7508b
 ---
+
 # LeSTD: LLM Compression via Learning-based Sparse Tensor Decomposition
 
 **Conference**: ICLR 2026  
@@ -102,15 +108,14 @@ LeSTD follows the "MHA global Tucker decomposition for shared bases" approach of
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] TD-MoE: Tensor Decomposition for MoE Models](td-moe_tensor_decomposition_for_moe_models.md)
 - [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
 - [\[ICLR 2026\] Alignment-Enhanced Integration of Connectivity and Spectral Sparsity in Dynamic Sparse Training of LLM](alignment-enhanced_integration_of_connectivity_and_spectral_sparsity_in_dynamic_.md)
-- [\[ACL 2025\] Compact and Compressible Representations for LLMs Using Structured Sparse Decomposition](../../ACL2025/model_compression/compact_and_compressible_representations_for_llms_using_structured_sparse_decom.md)
 - [\[ICLR 2026\] Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning](incentivizing_agentic_reasoning_in_llm_judges_via_tool-integrated_reinforcement_.md)
-- [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](../../AAAI2026/model_compression/beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
+- [\[ICLR 2026\] SAFA-SNN: Sparse-aware Fast Adaptive Spiking Neural Network for On-device Few-Shot Class-Incremental Learning](safa-snn_sparsity-aware_on-device_few-shot_class-incremental_learning_with_fast-.md)
 
 </div>
 

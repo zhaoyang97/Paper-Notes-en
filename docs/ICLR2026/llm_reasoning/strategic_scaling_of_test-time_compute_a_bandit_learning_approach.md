@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach
 description: >-
-  [ICLR 2026][LLM Reasoning][Test-Time Compute] The authors model "allocating test-time compute budget across a batch of queries" as a fully adaptive pure exploration bandit problem. They propose an elimination algorithm that "estimates difficulty while sampling and eliminates once correct," prioritizing compute for hard problems under a fixed budget. They theoretic
+  [ICLR 2026][Reasoning][Test-time compute] The authors model "allocating test-time compute budget across a batch of queries" as a fully adaptive pure exploration bandit problem. They propose an elimination algorithm that "estimates difficulty while sampling and eliminates once correct," prioritizing compute for hard problems under a fixed budget. They theoretically prove this is more efficient than uniform allocation, with empirical accuracy gains up to 11% on MATH-500, AIME25…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Test-Time Compute
-  - Best-of-N
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time compute"
+  - "Adaptive allocation"
+  - "Bandit learning"
+  - "Pure exploration"
+  - "Best-of-N"
 date: 2026-05-08
-content_hash: 8397e15923b064d5
+content_hash: 3c45671f10612771
 ---
+
 # Strategic Scaling of Test-Time Compute: A Bandit Learning Approach
 
 **Conference**: ICLR 2026  
@@ -151,6 +155,7 @@ Efficiency Gain $k\times$ indicates that uniform allocation requires $k$ times t
 - Value: ⭐⭐⭐⭐⭐ Zero overhead, plug-and-play, with guaranteed theoretical gains for engineering applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

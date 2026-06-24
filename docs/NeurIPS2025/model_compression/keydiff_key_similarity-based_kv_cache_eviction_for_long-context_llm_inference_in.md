@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments
 description: >-
-  [NeurIPS 2025][Model Compression][KV cache eviction] This paper proposes KeyDiff — an attention-score-free KV cache eviction strategy that maintains the cache by retaining keys with the lowest average cosine similarity t…
+  [NeurIPS 2025][Model Compression][KV cache eviction] This paper proposes KeyDiff — an attention-score-free KV cache eviction strategy that maintains the cache by retaining keys with the lowest average cosine similarity to other keys (i.e., geometrically most unique). Under strict memory constraints in block-wise inference settings, KeyDiff achieves ≤0.04% accuracy loss on LongBench with an 8K cache budget, while reducing end-to-end inference latency by up to 30%.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "attention-free"
   - "block prompt processing"
 date: 2026-05-08
-content_hash: fa3ca1a0af5e26e9
+content_hash: 13fa68bc0877bb04
 ---
 
 # KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments
@@ -146,8 +146,8 @@ By eliminating the need to compute the attention matrix and supporting FlashAtte
 
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
 - [\[NeurIPS 2025\] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](ada-kv_optimizing_kv_cache_eviction_by_adaptive_budget_allocation_for_efficient_.md)
+- [\[ICML 2025\] RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](../../ICML2025/model_compression/rocketkv_accelerating_long-context_llm_inference_via_two-stage_kv_cache_compress.md)
 - [\[ICML 2026\] EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments](../../ICML2026/model_compression/epicache_episodic_kv_cache_management_for_long-term_conversation_on_resource-con.md)
-- [\[ACL 2026\] DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing](../../ACL2026/model_compression/dash-kv_accelerating_long-context_llm_inference_via_asymmetric_kv_cache_hashing.md)
 - [\[NeurIPS 2025\] MUSTAFAR: Promoting Unstructured Sparsity for KV Cache Pruning in LLM Inference](mustafar_promoting_unstructured_sparsity_for_kv_cache_pruning_in_llm_inference.md)
 
 </div>

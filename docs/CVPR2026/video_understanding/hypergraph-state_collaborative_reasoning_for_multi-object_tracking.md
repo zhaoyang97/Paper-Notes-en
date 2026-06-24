@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][State Space Model] Addressing the long-standing issues of independent prediction, jitter, and fragmentation under occlusion in motion estimation for multi-object tracking, this paper proposes HyperSSM. It utilizes hypergraphs to connect targets with similar motion states into hyperedges to achieve "group consensus," and embeds hypergraph
+  [CVPR 2026][Video Understanding][Multi-Object Tracking] Addressing the long-standing issues of independent prediction, jitter, and fragmentation under occlusion in motion estimation for multi-object tracking, this paper proposes HyperSSM. It utilizes hypergraphs to connect targets with similar motion states into hyperedges to achieve "group consensus," and embeds hypergraph convolutions directly into the state transitions of a State Space Model (SSM) to maintain temporal smoo…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - State Space Model
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multi-Object Tracking"
+  - "Motion Estimation"
+  - "Hypergraph"
+  - "State Space Model"
+  - "Collaborative Reasoning"
 date: 2026-05-08
-content_hash: 1e89c6f488c8c000
+content_hash: d3e50e062445beb0
 ---
+
 # Hypergraph-State Collaborative Reasoning for Multi-Object Tracking
 
 **Conference**: CVPR 2026  
@@ -146,8 +151,8 @@ Ablation of hyperparameter $\theta$ (motion similarity threshold for hyperedge c
 
 ## Related Papers
 
-- [\[CVPR 2026\] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)
 - [\[CVPR 2026\] Out of Sight, Out of Track: Adversarial Attacks on Propagation-based Multi-Object Trackers via Query State Manipulation](out_of_sight_out_of_track_adversarial_attacks_on_propagation-based_multi-object_.md)
+- [\[CVPR 2026\] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)
 - [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
 - [\[CVPR 2026\] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition](tcei_test_time_calibration_experience_intuition_mot.md)
 - [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)

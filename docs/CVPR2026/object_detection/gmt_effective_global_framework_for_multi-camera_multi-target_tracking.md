@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GMT: Effective Global Framework for Multi-Camera Multi-Target Tracking
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] GMT reformulates the traditional two-stage pipeline of "Single-Camera Tracking (SCT) + Inter-Camera Association (ICT)" into a unified "Global Tracklet-to-Target" association. It first uses the CFCE module to align appearance and spatial features across different views into a consistent space, then employs a DETR-style
+  [CVPR 2026][Object Detection][Multi-Camera Multi-Target Tracking (MCMT)] GMT reformulates the traditional two-stage pipeline of "Single-Camera Tracking (SCT) + Inter-Camera Association (ICT)" into a unified "Global Tracklet-to-Target" association. It first uses the CFCE module to align appearance and spatial features across different views into a consistent space, then employs a DETR-style GTA module to directly match new detections with global tracklets that encode multi-vie…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Multi-Camera Multi-Target Tracking (MCMT)"
+  - "Global Tracklet Association"
+  - "Cross-view Feature Consistency"
+  - "DETR Tracking"
+  - "MCMT Datasets"
 date: 2026-05-08
-content_hash: 8b9775db198d7deb
+content_hash: 7f8ea296e149bf75
 ---
+
 # GMT: Effective Global Framework for Multi-Camera Multi-Target Tracking
 
 **Conference**: CVPR 2026  
@@ -155,10 +161,10 @@ Ablation of Global Tracklets: Comparing Ours evaluated per view (Local) against 
 ## Related Papers
 
 - [\[CVPR 2026\] From Detection to Association: Learning Discriminative Object Embeddings for Multi-Object Tracking](from_detection_to_association_learning_discriminative_object_embeddings_for_mult.md)
-- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
 - [\[AAAI 2026\] AerialMind: Towards Referring Multi-Object Tracking in UAV Scenarios](../../AAAI2026/object_detection/aerialmind_towards_referring_multi-object_tracking_in_uav_sc.md)
-- [\[CVPR 2026\] Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection](target-aware_invertible_encoder_with_reconstruction_guidance_for_infrared_small_.md)
 - [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
+- [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
+- [\[CVPR 2026\] Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection](target-aware_invertible_encoder_with_reconstruction_guidance_for_infrared_small_.md)
 
 </div>
 

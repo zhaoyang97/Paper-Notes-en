@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OrthoGrad Improves Neural Calibration
 description: >-
-  [NeurIPS 2025][Optimization][gradient orthogonalization] This paper presents the first systematic study of OrthoGrad (⊥Grad)—a geometrically constrained optimization method that projects gradients layer-wise onto directi…
+  [NeurIPS 2025][Optimization][gradient orthogonalization] This paper presents the first systematic study of OrthoGrad (⊥Grad)—a geometrically constrained optimization method that projects gradients layer-wise onto directions orthogonal to the weights—for neural network calibration. Experiments on CIFAR-10 in low-data regimes demonstrate that OrthoGrad significantly improves calibration metrics (entropy, loss, confidence) without degrading accuracy…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "overconfidence"
   - "geometric optimization"
 date: 2026-05-08
-content_hash: fa82bcb14eb4060d
+content_hash: 41b9c18751feb7d3
 ---
 
 # OrthoGrad Improves Neural Calibration
@@ -139,9 +139,9 @@ OrthoGrad does not modify the loss function; standard cross-entropy is used. The
 
 - [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)
 - [\[NeurIPS 2025\] DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization](dartquant_efficient_rotational_distribution_calibration_for_llm_quantization.md)
-- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)
-- [\[NeurIPS 2025\] Learning to Insert for Constructive Neural Vehicle Routing Solver](learning_to_insert_for_constructive_neural_vehicle_routing_solver.md)
-- [\[NeurIPS 2025\] Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations](contribution_of_task-irrelevant_stimuli_to_drift_of_neural_representations.md)
+- [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](../../ICLR2026/optimization/towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
+- [\[ICLR 2026\] FedMC: Federated Manifold Calibration](../../ICLR2026/optimization/fedmc_federated_manifold_calibration.md)
+- [\[CVPR 2025\] Test-Time Augmentation Improves Efficiency in Conformal Prediction](../../CVPR2025/optimization/test-time_augmentation_improves_efficiency_in_conformal_prediction.md)
 
 </div>
 

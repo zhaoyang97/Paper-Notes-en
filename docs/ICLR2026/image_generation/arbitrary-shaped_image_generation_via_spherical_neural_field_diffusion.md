@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Arbitrary-Shaped Image Generation via Spherical Neural Field Diffusion
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] ASIG generates an entire scene at once on a subdivided icosahedral sphere using "Mesh-based Spherical Latent Diffusion," and then employs a "Spherical Neural Field" to perform arbitrary sampling from this sphere based on coordinate conditions. This achieves explicit control over view, FOV, and resolution within a unifi
+  [ICLR2026][Image Generation][Arbitrary-Shaped Image Generation] ASIG generates an entire scene at once on a subdivided icosahedral sphere using "Mesh-based Spherical Latent Diffusion," and then employs a "Spherical Neural Field" to perform arbitrary sampling from this sphere based on coordinate conditions. This achieves explicit control over view, FOV, and resolution within a unified framework for the first time, outputting distortion-free images in perspective, panoramic…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Arbitrary-Shaped Image Generation"
+  - "Spherical Neural Field"
+  - "Mesh-based Spherical Latent Diffusion"
+  - "View Control"
+  - "Panorama/Fisheye Generation"
 date: 2026-05-08
-content_hash: b9745e48afe071e1
+content_hash: eaff71e74a9484bf
 ---
+
 # Arbitrary-Shaped Image Generation via Spherical Neural Field Diffusion
 
 **Conference**: ICLR2026  

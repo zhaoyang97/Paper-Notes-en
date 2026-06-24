@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Linearity to Non-Linearity: How Masked Autoencoders Capture Spatial Correlations
 description: >-
-  [ICCV 2025][Self-Supervised Learning][Masked Autoencoder] This paper theoretically analyzes how MAE learns spatial correlations in images. It derives a closed-form solution for linear MAE…
+  [ICCV 2025][Self-Supervised Learning][Masked Autoencoder] This paper theoretically analyzes how MAE learns spatial correlations in images. It derives a closed-form solution for linear MAE, reveals how masking ratio and patch size select short- or long-range spatial features, and extends the analysis to nonlinear MAE, providing theoretical guidance for hyperparameter selection in practice.
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "hyperparameter selection"
   - "ViT"
 date: 2026-05-08
-content_hash: 873e44dbea4cf221
+content_hash: c66259bba9375d45
 ---
 
 # From Linearity to Non-Linearity: How Masked Autoencoders Capture Spatial Correlations
@@ -50,15 +50,15 @@ The paper begins with an exact analytical solution for linear MAE and progressiv
    Linear MAE minimizes the objective $\ell_m(A,B) = \mathbb{E}_R[\|X - (R \odot X)AB\|^2]$, where $R$ is a random mask.
 
    By computing the expectation in closed form, the objective decomposes into two terms:
-   $$\ell_m(A,B) = \underbrace{\|X - (1-m)XAB\|^2}_{\text{reconstruction term}} + m(1-m) \underbrace{\|GAB\|^2}_{\text{regularization term}}$$
+    $\ell_m(A,B) = \underbrace{\|X - (1-m)XAB\|^2}_{\text{reconstruction term}} + m(1-m) \underbrace{\|GAB\|^2}_{\text{regularization term}}$
 
    where $G^\top G = \text{blkdiag}_p(X^\top X)$ is the block-diagonal version of the data covariance matrix with block size equal to patch size $p$.
 
    **Key insights**:
-   - $m=0$ degenerates to a standard autoencoder (no regularization term).
-   - The masking ratio $m$ controls the regularization strength.
-   - The patch size $p$ controls the block-diagonal structure.
-   - The global optimum is: $B = CU_k$, $A = V^{-1}X^\top X B^\top (BB^\top)^{-1} C^{-1}$, where $V = (1-m)X^\top X + m \cdot \text{blkdiag}_p(X^\top X)$ and $U_k$ are the top-$k$ eigenvectors of $X^\top X V^{-1} X^\top X$.
+    - $m=0$ degenerates to a standard autoencoder (no regularization term).
+    - The masking ratio $m$ controls the regularization strength.
+    - The patch size $p$ controls the block-diagonal structure.
+    - The global optimum is: $B = CU_k$, $A = V^{-1}X^\top X B^\top (BB^\top)^{-1} C^{-1}$, where $V = (1-m)X^\top X + m \cdot \text{blkdiag}_p(X^\top X)$ and $U_k$ are the top-$k$ eigenvectors of $X^\top X V^{-1} X^\top X$.
 
    **Contrast with AE**: AE performs PCA to extract directions of maximum variance; MAE projects onto directions after weighted whitening by $V^{-1}X^\top X$, thereby **selecting features that appear as cross-patch redundancies** rather than high-variance directions. This is the core reason why MAE outperforms AE on downstream perception tasks.
 
@@ -72,9 +72,9 @@ The paper begins with an exact analytical solution for linear MAE and progressiv
 
    The influence of input pixel $i$ on reconstructed output pixel $j$ is measured via the Jacobian $|(AB)_{ij}|$. Exponential fits are applied to models trained on CIFAR-10:
 
-   - **AE**: learns highly localized kernels; influence decays rapidly with distance.
-   - **DAE (denoising autoencoder)**: slightly less localized than AE.
-   - **MAE**: integrates information from farther spatial distances; Jacobian decays more slowly.
+    - **AE**: learns highly localized kernels; influence decays rapidly with distance.
+    - **DAE (denoising autoencoder)**: slightly less localized than AE.
+    - **MAE**: integrates information from farther spatial distances; Jacobian decays more slowly.
 
    **Masking ratio effect**: Higher masking ratio → more diffuse average Jacobian → utilization of longer-range information.
    **Patch size effect**: Larger patch → more integration of information from outside the patch → higher spatial entropy.
@@ -82,13 +82,13 @@ The paper begins with an exact analytical solution for linear MAE and progressiv
 4. **Nonlinear MAE Analysis (Adaptive Basis)**:
 
    Drawing on the diffusion model analysis of Kadkhodaie et al., the nonlinear MAE is approximated via a first-order Taylor expansion:
-   $$h(\tilde{x}) \approx A(\tilde{x}) + b$$
+    $h(\tilde{x}) \approx A(\tilde{x}) + b$
    where $A = \nabla_{\tilde{x}} h(\tilde{x})$ is the Jacobian (adaptive basis matrix).
 
    Key findings:
-   - The basis learned by nonlinear MAE **adapts to the input image** (unlike the fixed basis of linear MAE).
-   - During training, the basis progressively transitions from highly localized to globally diffuse.
-   - ViT exploits higher-order correlations (e.g., the association between a rider's shirt and a horse), surpassing the second-order statistical limitations of linear models.
+    - The basis learned by nonlinear MAE **adapts to the input image** (unlike the fixed basis of linear MAE).
+    - During training, the basis progressively transitions from highly localized to globally diffuse.
+    - ViT exploits higher-order correlations (e.g., the association between a rider's shirt and a horse), surpassing the second-order statistical limitations of linear models.
 
 ### Practical Hyperparameter Guidelines
 
@@ -167,11 +167,11 @@ MAE with high masking ratio shows the greatest advantage on tasks requiring long
 
 ## Related Papers
 
+- [\[CVPR 2026\] Recurrent Video Masked Autoencoders](../../CVPR2026/self_supervised/recurrent_video_masked_autoencoders.md)
+- [\[CVPR 2025\] SMILE: Infusing Spatial and Motion Semantics in Masked Video Learning](../../CVPR2025/self_supervised/smile_infusing_spatial_and_motion_semantics_in_masked_video_learning.md)
+- [\[ECCV 2024\] ViC-MAE: Self-Supervised Representation Learning from Images and Video with Contrastive Masked Autoencoders](../../ECCV2024/self_supervised/vic-mae_self-supervised_representation_learning_from_images_and_video_with_contr.md)
 - [\[CVPR 2026\] Suppressing Non-Semantic Noise in Masked Image Modeling Representations](../../CVPR2026/self_supervised/suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)
-- [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](../../NeurIPS2025/self_supervised/hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
-- [\[NeurIPS 2025\] Manifolds and Modules: How Function Develops in a Neural Foundation Model](../../NeurIPS2025/self_supervised/manifolds_and_modules_how_function_develops_in_a_neural_foundation_model.md)
-- [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](../../ICML2026/self_supervised/how_neural_is_a_neural_foundation_model.md)
-- [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](../../ICML2026/self_supervised/flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
+- [\[ECCV 2024\] Efficient Image Pre-Training with Siamese Cropped Masked Autoencoders](../../ECCV2024/self_supervised/efficient_image_pre-training_with_siamese_cropped_masked_autoencoders.md)
 
 </div>
 

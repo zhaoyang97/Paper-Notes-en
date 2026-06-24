@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Linking Modality Isolation in Heterogeneous Collaborative Perception
 description: >-
-  [CVPR 2026][Pretraining][Paper Note] The CodeAlign framework is proposed to address the "modality isolation" problem in heterogeneous collaborative perception, where different modalities never co-occur in training data. By constructing discrete code spaces via codebooks and performing cross-modal Feature-Code-Feature (FCF) translation, it achieves SOTA pe
+  [CVPR2026][LLM Pretraining][Collaborative Perception] The CodeAlign framework is proposed to address the "modality isolation" problem in heterogeneous collaborative perception, where different modalities never co-occur in training data. By constructing discrete code spaces via codebooks and performing cross-modal Feature-Code-Feature (FCF) translation, it achieves SOTA perception performance with only 8% of HEAL's training parameters and a $1024\times$ reduction in communicat…
 tags:
-  - CVPR 2026
-  - Pretraining
+  - "CVPR2026"
+  - "LLM Pretraining"
+  - "Collaborative Perception"
+  - "Heterogeneous Alignment"
+  - "Modality Isolation"
+  - "Codebook"
+  - "Cross-modality Translation"
 date: 2026-05-08
-content_hash: 5033d2f088dbd148
+content_hash: 968e1dfb62551fd0
 ---
+
 # Linking Modality Isolation in Heterogeneous Collaborative Perception
 
 **Conference**: CVPR2026  
@@ -146,11 +152,11 @@ where $L_{\text{det}}$ is the detection loss, $L_{\text{pyramid}}$ is the pyrami
 
 ## Related Papers
 
+- [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](reconstructing_clip_for_open-vocabulary_dense_perception.md)
 - [\[ICML 2026\] XTransfer: Modality-Agnostic Few-Shot Model Transfer for Human Sensing at the Edge](../../ICML2026/llm_pretraining/xtransfer_modality-agnostic_few-shot_model_transfer_for_human_sensing_at_the_edg.md)
 - [\[NeurIPS 2025\] Heterogeneous Adversarial Play in Interactive Environments](../../NeurIPS2025/llm_pretraining/heterogeneous_adversarial_play_in_interactive_environments.md)
 - [\[CVPR 2025\] A Unified Framework for Heterogeneous Semi-supervised Learning](../../CVPR2025/llm_pretraining/a_unified_framework_for_heterogeneous_semi-supervised_learning.md)
 - [\[ICLR 2026\] CHAMMI-75: Pre-training multi-channel models with heterogeneous microscopy images](../../ICLR2026/llm_pretraining/chammi-75_pre-training_multi-channel_models_with_heterogeneous_microscopy_images.md)
-- [\[ACL 2025\] An Effective Incorporating Heterogeneous Knowledge Curriculum Learning for Sequence Labeling](../../ACL2025/llm_pretraining/dual_stage_curriculum_learning_sequence_labeling.md)
 
 </div>
 

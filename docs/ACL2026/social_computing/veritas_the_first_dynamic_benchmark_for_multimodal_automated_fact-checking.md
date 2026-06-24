@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking
 description: >-
-  [ACL 2026][Social Computing][ClaimReview] VeriTaS utilizes a quarterly updated seven-stage automated pipeline to transform real-world multilingual image-text-video claims from professional fact-checking organizations into a standardized, interpretable, and evaluable multimodal fact-checking benchmark. It demonstrates that the strongest current multimodal model
+  [ACL2026 Oral][Social Computing][Multimodal Fact-Checking] VeriTaS utilizes a quarterly updated seven-stage automated pipeline to transform real-world multilingual image-text-video claims from professional fact-checking organizations into a standardized, interpretable, and evaluable multimodal fact-checking benchmark. It demonstrates that the strongest current multimodal models still fall significantly short of reliable AFC.
 tags:
-  - ACL 2026
-  - Social Computing
-  - ClaimReview
+  - "ACL2026 Oral"
+  - "Social Computing"
+  - "Multimodal Fact-Checking"
+  - "Dynamic Benchmark"
+  - "Data Leakage"
+  - "ClaimReview"
+  - "Fact-Checking Evaluation"
 date: 2026-05-08
-content_hash: 36c79d1165012723
+content_hash: 54adbd6a4bb1d3ae
 ---
+
 # VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking
 
 **Conference**: ACL2026 Oral  
@@ -155,9 +160,9 @@ On the latest Q1 2026 split, strong models still show significant error. Without
 
 - [\[ICML 2025\] DEFAME: Dynamic Evidence-based FAct-checking with Multimodal Experts](../../ICML2025/social_computing/defame_dynamic_evidence-based_fact-checking_with_multimodal_experts.md)
 - [\[ACL 2026\] LiveFact: A Dynamic, Time-Aware Benchmark for LLM-Driven Fake News Detection](livefact_a_dynamic_time-aware_benchmark_for_llm-driven_fake_news_detection.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 - [\[ACL 2026\] ClaimDB: A Fact Verification Benchmark over Large Structured Data](claimdb_a_fact_verification_benchmark_over_large_structured_data.md)
 - [\[ACL 2026\] Decide less, communicate more: On the construct validity of end-to-end fact-checking in medicine](decide_less_communicate_more_on_the_construct_validity_of_end-to-end_fact-checki.md)
-- [\[AAAI 2026\] Fact2Fiction: Targeted Poisoning Attack to Agentic Fact-checking System](../../AAAI2026/social_computing/fact2fiction_targeted_poisoning_attack_to_agentic_fact-check.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] High-dimensional Analysis of Synthetic Data Selection
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] The study characterizes the test error of joint training with "training data + synthetic data" using high-dimensional ridgeless regression theory. It proves that **only covariance shift affects generalization, while mean shift surprisingly does not**, and derives an extremely simple synthetic data selection criterion—c
+  [ICLR 2026][Learning Theory][Synthetic data selection] The study characterizes the test error of joint training with "training data + synthetic data" using high-dimensional ridgeless regression theory. It proves that **only covariance shift affects generalization, while mean shift surprisingly does not**, and derives an extremely simple synthetic data selection criterion—covariance matching—that matches or exceeds all recent CLIP-based screening methods in real-world image/te…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "High-dimensional Regression"
+  - "Synthetic Data Augmentation"
+  - "Synthetic data selection"
+  - "Covariance matching"
+  - "Random matrix theory"
+  - "Data augmentation"
 date: 2026-05-08
-content_hash: 28ed87d1be5c8d68
+content_hash: c2fe3fc3675c00a3
 ---
+
 # High-dimensional Analysis of Synthetic Data Selection
 
 **Conference**: ICLR 2026  
@@ -112,13 +119,13 @@ Text-to-Image (T2I: SANA-1.5 + PixArt-α + SD1.4) mixed generation (Table 2): Co
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
-- [\[ICLR 2026\] Learning under Quantization for High-Dimensional Linear Regression](learning_under_quantization_for_high-dimensional_linear_regression.md)
 - [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](optimizing_data_augmentation_through_bayesian_model_selection.md)
+- [\[ICLR 2026\] Learning under Quantization for High-Dimensional Linear Regression](learning_under_quantization_for_high-dimensional_linear_regression.md)
 - [\[ICLR 2026\] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data](a_generalized_geometric_theoretical_framework_of_centroid_discriminant_analysis_.md)
 - [\[ICLR 2026\] Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging](improved_high-dimensional_estimation_with_langevin_dynamics_and_stochastic_weigh.md)
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Environment POMDPs: Discrete Model Uncertainty Under Partial Observability
 description: >-
-  [NeurIPS 2025][LLM Alignment][POMDP] This paper systematically studies Multi-Environment POMDPs (ME-POMDPs)—a class of POMDP ensembles sharing state, action…
+  [NeurIPS 2025][LLM Alignment][POMDP] This paper systematically studies Multi-Environment POMDPs (ME-POMDPs)—a class of POMDP ensembles sharing state, action, and observation spaces but with arbitrarily different transition, observation, and reward functions—with the goal of finding a robust policy that maximizes reward under the worst-case environment. By introducing the Adversarial Belief POMDP (AB-POMDP) as a unified model and establishing its equivalence to one-sided parti…
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -14,7 +14,7 @@ tags:
   - "value iteration"
   - "linear programming"
 date: 2026-05-08
-content_hash: 1838b1e84a21b5f4
+content_hash: cefe820c4197d89c
 ---
 
 # Multi-Environment POMDPs: Discrete Model Uncertainty Under Partial Observability
@@ -159,10 +159,10 @@ Each iteration effectively restarts HSVI from a new worst-case starting point, p
 ## Related Papers
 
 - [\[ICLR 2026\] JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks](../../ICLR2026/llm_alignment/jailnewsbench_multi-lingual_and_regional_benchmark_for_fake_news_generation_unde.md)
+- [\[ACL 2025\] LoGU: Long-form Generation with Uncertainty Expressions](../../ACL2025/llm_alignment/logu_longform_gen_uncertainty.md)
+- [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](../../ICLR2026/llm_alignment/multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
 - [\[NeurIPS 2025\] LASeR: Learning to Adaptively Select Reward Models with Multi-Armed Bandits](laser_learning_to_adaptively_select_reward_models_with_multi-armed_bandits.md)
 - [\[NeurIPS 2025\] What Makes a Reward Model a Good Teacher? An Optimization Perspective](what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)
-- [\[NeurIPS 2025\] Ask a Strong LLM Judge when Your Reward Model is Uncertain](ask_a_strong_llm_judge_when_your_reward_model_is_uncertain.md)
-- [\[NeurIPS 2025\] GVPO: Group Variance Policy Optimization for Large Language Model Post-Training](gvpo_group_variance_policy_optimization_for_large_language_model_post-training.md)
 
 </div>
 

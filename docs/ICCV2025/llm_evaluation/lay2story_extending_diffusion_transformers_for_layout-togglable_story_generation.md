@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation
 description: >-
-  [ICCV 2025][LLM Evaluation][story generation] Lay2Story introduces the task of layout-togglable story generation, constructs the Lay2Story-1M dataset of over 1 million high-resolution images…
+  [ICCV 2025][LLM Evaluation][story generation] Lay2Story introduces the task of layout-togglable story generation, constructs the Lay2Story-1M dataset of over 1 million high-resolution images, and proposes a global–subject dual-branch framework built on the DiT architecture, achieving comprehensive improvements over existing methods in consistency, semantic relevance, and aesthetic quality.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "subject consistency"
   - "large-scale dataset"
 date: 2026-05-08
-content_hash: 8e8937a2f0f1a3de
+content_hash: ef21229066ac9add
 ---
 
 # Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation
@@ -71,12 +71,12 @@ The output of the subject branch is fed back to the global branch via skip conne
    **Masked 3D Self-Attention**: to maintain cross-frame subject consistency, subject noisy latents are reshaped from $\mathbb{R}^{b \times f \times (hw) \times c}$ to $\mathbb{R}^{b \times (fhw) \times c}$, enabling cross-frame information propagation. An attention mask $\mathcal{M}_t$ constrains the model to attend only within subject-region positions across frames.
 
    All three masked attention variants share a unified formulation:
-   $$\text{MA}(Q, K, V, M) = \text{Softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\right) V$$
+    $\text{MA}(Q, K, V, M) = \text{Softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\right) V$
 
 3. **Information Propagation from Subject Branch to Global Branch**
 
    A ControlNet-style injection scheme is adopted: after every two global branch blocks, the output of a subject branch block (processed through a zero-initialized linear layer) is added to the global branch:
-   $$\mathcal{Z}^n = \mathcal{Z}^n + F_m(\mathcal{Z}^m_{sub})$$
+    $\mathcal{Z}^n = \mathcal{Z}^n + F_m(\mathcal{Z}^m_{sub})$
 
 ### Loss & Training
 
@@ -147,11 +147,11 @@ Removing the subject branch causes a dramatic performance collapse (FID from 26.
 
 ## Related Papers
 
+- [\[CVPR 2025\] PosterO: Structuring Layout Trees to Enable Language Models in Generalized Content-Aware Layout Generation](../../CVPR2025/llm_evaluation/postero_structuring_layout_trees_to_enable_language_models_in_generalized_conten.md)
 - [\[ICCV 2025\] Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography](degradation-modeled_multipath_diffusion_for_tunable_metalens_photography.md)
-- [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](../../ACL2026/llm_evaluation/dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
+- [\[ACL 2025\] Help Me Write a Story: Evaluating LLMs' Ability to Generate Writing Feedback](../../ACL2025/llm_evaluation/help_write_story_feedback.md)
 - [\[ICCV 2025\] Imbalance in Balance: Online Concept Balancing in Generation Models](imbalance_in_balance_online_concept_balancing_in_generation_models.md)
-- [\[NeurIPS 2025\] OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling](../../NeurIPS2025/llm_evaluation/optitree_hierarchical_thoughts_generation_with_tree_search_for_llm_optimization_.md)
-- [\[NeurIPS 2025\] PFΔ: A Benchmark Dataset for Power Flow under Load, Generation, and Topology Variations](../../NeurIPS2025/llm_evaluation/pfδ_a_benchmark_dataset_for_power_flow_under_load_generation_and_topology_variat.md)
+- [\[CVPR 2025\] Erase Diffusion: Empowering Object Removal Through Calibrating Diffusion Pathways (EraDiff)](../../CVPR2025/llm_evaluation/erase_diffusion_empowering_object_removal_through_calibrating_diffusion_pathways.md)
 
 </div>
 

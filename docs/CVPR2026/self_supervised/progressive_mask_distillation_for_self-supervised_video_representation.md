@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Progressive Mask Distillation for Self-supervised Video Representation
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Knowledge Distillation] PMD addresses the issue where "a single masking rate cannot fully capture complex semantics" in masked video self-supervision. It employs four students with progressively increasing masking rates (75%→80%→85%→90%) for progressive distillation. Low-masking-rate students learn low-level semantics first and then serve as
+  [CVPR 2026][Self-Supervised Learning][Self-supervised video representation] PMD addresses the issue where "a single masking rate cannot fully capture complex semantics" in masked video self-supervision. It employs four students with progressively increasing masking rates (75%→80%→85%→90%) for progressive distillation. Low-masking-rate students learn low-level semantics first and then serve as auxiliary teachers to guide high-masking-rate students in learning high-level semant…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Self-supervised video representation"
+  - "masked video modeling"
+  - "progressive distillation"
+  - "dynamic masking rate"
+  - "knowledge distillation"
 date: 2026-05-08
-content_hash: a595253fbd6d9039
+content_hash: 22ea327a32229e14
 ---
+
 # Progressive Mask Distillation for Self-supervised Video Representation
 
 **Conference**: CVPR 2026  
@@ -155,10 +160,10 @@ Ablation of masking rate phases (Total 400 epochs):
 ## Related Papers
 
 - [\[CVPR 2026\] TrackMAE: Video Representation Learning via Track, Mask, and Predict](trackmae_video_representation_learning_via_track_mask_and_predict.md)
-- [\[CVPR 2026\] TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction](timebridge_self-supervised_video_representation_learning_via_start-end_joint_emb.md)
+- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](videossr_video_self-supervised_reinforcement_learning.md)
 - [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
+- [\[CVPR 2026\] HAD: Heterogeneity-Aware Distillation for Lifelong Heterogeneous Learning](had_heterogeneity-aware_distillation_for_lifelong_heterogeneous_learning.md)
 - [\[ECCV 2024\] Self-supervised Video Copy Localization with Regional Token Representation](../../ECCV2024/self_supervised/self-supervised_video_copy_localization_with_regional_token_representation.md)
-- [\[CVPR 2026\] Finding Distributed Object-Centric Properties in Self-Supervised Transformers](finding_distributed_object-centric_properties_in_self-supervised_transformers.md)
 
 </div>
 

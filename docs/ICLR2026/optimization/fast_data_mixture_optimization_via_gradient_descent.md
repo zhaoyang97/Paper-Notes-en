@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Fast Data Mixture Optimization via Gradient Descent
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] FASTMIX reparameterizes "selecting data mixture proportions" into "weighting losses for each data source," making mixture proportions differentiable. By training only **one** proxy model and using gradient descent to simultaneously optimize the model and proportions, it reduces search costs from several hundred GPU-hou
+  [ICLR 2026][Optimization][Data Mixture] FASTMIX reparameterizes "selecting data mixture proportions" into "weighting losses for each data source," making mixture proportions differentiable. By training only **one** proxy model and using gradient descent to simultaneously optimize the model and proportions, it reduces search costs from several hundred GPU-hours to 1–2 GPU-hours while achieving superior performance.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Data Mixture"
+  - "Bilevel Optimization"
+  - "Reparameterization"
+  - "Gradient Optimization"
+  - "Proxy Models"
+  - "Data-centric"
 date: 2026-05-08
-content_hash: 1e98fdb45fe24552
+content_hash: a23afd60cbf5da7a
 ---
+
 # Fast Data Mixture Optimization via Gradient Descent
 
 **Conference**: ICLR 2026  

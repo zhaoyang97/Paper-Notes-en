@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing
 description: >-
-  [CVPR 2026][Interpretability][3D scene editing] This work redefines open-vocabulary 3D indoor scene editing as a goal-regressive planning problem. It introduces the PDDL-style symbolic language EditLang and an LLM-driven Planner-Validator loop to derive minimal editing sequences from target states. The method achieves the best balance across instruction faithfulness
+  [CVPR 2026][Interpretability][3D scene editing] This work redefines open-vocabulary 3D indoor scene editing as a goal-regressive planning problem. It introduces the PDDL-style symbolic language EditLang and an LLM-driven Planner-Validator loop to derive minimal editing sequences from target states. The method achieves the best balance across instruction faithfulness (69.1%), semantic consistency (86.6%), and physical plausibility (91.7%) across 63 editing tasks.
 tags:
-  - CVPR 2026
-  - Interpretability
-  - 3D scene editing
-  - goal regression
-  - PDDL
-  - LLM planning
-  - symbolic reasoning
+  - "CVPR 2026"
+  - "Interpretability"
+  - "3D scene editing"
+  - "goal regression"
+  - "PDDL"
+  - "LLM planning"
+  - "symbolic reasoning"
 date: 2026-05-08
-content_hash: 4610bb91b69c8e88
+content_hash: 5ad7165e2d5ea716
 ---
+
 # Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing
 
 **Conference**: CVPR 2026  
@@ -135,11 +136,11 @@ This division of labor—LLM proposals + formal verification—filters out erron
 
 ## Related Papers
 
-- [\[ICLR 2026\] Internal Planning in Language Models: Characterizing Horizon and Branch Awareness](../../ICLR2026/interpretability/internal_planning_in_language_models_characterizing_horizon_and_branch_awareness.md)
+- [\[ICLR 2026\] Latent Planning Emerges with Scale](../../ICLR2026/interpretability/latent_planning_emerges_with_scale.md)
 - [\[ICML 2026\] A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents](../../ICML2026/interpretability/a_behavioural_and_representational_evaluation_of_goal-directedness_in_language_m.md)
 - [\[ICLR 2026\] PoSh: Using Scene Graphs to Guide LLMs-as-a-Judge for Detailed Image Descriptions](../../ICLR2026/interpretability/posh_using_scene_graphs_to_guide_llms-as-a-judge_for_detailed_image_descriptions.md)
+- [\[ICLR 2026\] Interpretable 3D Neural Object Volumes for Robust Conceptual Reasoning](../../ICLR2026/interpretability/interpretable_3d_neural_object_volumes_for_robust_conceptual_reasoning.md)
 - [\[NeurIPS 2025\] Evaluating LLMs in Open-Source Games](../../NeurIPS2025/interpretability/evaluating_llms_in_open-source_games.md)
-- [\[CVPR 2025\] Sample- and Parameter-Efficient Auto-Regressive Image Models](../../CVPR2025/interpretability/sample-_and_parameter-efficient_auto-regressive_image_models.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition
 description: >-
-  [ICML 2026][Image Generation][Offline MARL] OMSD replaces the traditional "independent marginal regression" behavioral constraint in offline MARL with a "chain conditional decomposition + one conditional diffusion model per agent" approach. By regularizing each agent's policy conditioned on the actions already selected by prefix agents, it avoids Out-of-Distribu
+  [ICML 2026][Image Generation][Offline MARL] OMSD replaces the traditional "independent marginal regression" behavioral constraint in offline MARL with a "chain conditional decomposition + one conditional diffusion model per agent" approach. By regularizing each agent's policy conditioned on the actions already selected by prefix agents, it avoids Out-of-Distribution (OOD) mismatches caused by "aligned marginals but misaligned joints" under multimodal joint behavior distributi…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Offline MARL
-  - CTDE
+  - "ICML 2026"
+  - "Image Generation"
+  - "Offline MARL"
+  - "Multi-modal Behavior Policy"
+  - "Sequential Decomposition"
+  - "Diffusion Score"
+  - "CTDE"
 date: 2026-05-08
-content_hash: c8e22c174e3baea7
+content_hash: fc7d3bbd567e5007
 ---
+
 # Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition
 
 **Conference**: ICML 2026  
@@ -142,7 +146,7 @@ Key Observation: **The more multimodal the dataset (Medium / Medium-Replay / Ran
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PCA-Seg: Revisiting Cost Aggregation for Open-Vocabulary Semantic and Part Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] PCA-Seg proposes a Parallel Cost Aggregation paradigm to replace traditional serial spatial-class aggregation architectures. It efficiently integrates semantic and spatial context flows via an Expert-driven Perception Learning (EPL) module and eliminates redundancy between knowledge streams using a Feature Orthogonal D
+  [CVPR 2026][Segmentation][Open-vocabulary segmentation] PCA-Seg proposes a Parallel Cost Aggregation paradigm to replace traditional serial spatial-class aggregation architectures. It efficiently integrates semantic and spatial context flows via an Expert-driven Perception Learning (EPL) module and eliminates redundancy between knowledge streams using a Feature Orthogonal Decoupling (FOD) strategy. Each parallel block adds only 0.35M parameters while achieving SOTA performanc…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary segmentation"
+  - "Cost Aggregation"
+  - "Parallel Architecture"
+  - "Expert-driven Perception Learning"
+  - "Feature Orthogonal Decoupling"
 date: 2026-05-08
-content_hash: 561765cbf9dc5cbd
+content_hash: 3474e51b26c7cbcb
 ---
+
 # PCA-Seg: Revisiting Cost Aggregation for Open-Vocabulary Semantic and Part Segmentation
 
 **Conference**: CVPR 2026  
@@ -139,8 +145,8 @@ The method achieves SOTA across 8 benchmarks for both semantic and part segmenta
 ## Related Papers
 
 - [\[CVPR 2025\] Fine-Grained Image-Text Correspondence with Cost Aggregation for Open-Vocabulary Part Segmentation](../../CVPR2025/segmentation/fine-grained_image-text_correspondence_with_cost_aggregation_for_open-vocabulary.md)
+- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
 - [\[CVPR 2026\] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation](spar_single-pass_any-resolution_vit_for_open-vocabulary_segmentation.md)
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] HOPS: Hierarchical Open-vocabulary Part Segmentation with Attention-Aware Filtering and Affinity-Guided Enhancement](hops_hierarchical_open-vocabulary_part_segmentation_with_attention-aware_filteri.md)
 - [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
 

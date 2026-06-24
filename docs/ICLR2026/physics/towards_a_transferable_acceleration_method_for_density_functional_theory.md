@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards a Transferable Acceleration Method for Density Functional Theory
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] Addressing the bottleneck of slow Self-Consistent Field (SCF) iterations in Density Functional Theory (DFT), this work departs from the mainstream approach of predicting the Hamiltonian matrix. Instead, it utilizes an E(3) equivariant network to predict the **expansion coefficients of the electron density under a compa
+  [ICLR 2026][Physics & Scientific Computing][DFT Acceleration] Addressing the bottleneck of slow Self-Consistent Field (SCF) iterations in Density Functional Theory (DFT), this work departs from the mainstream approach of predicting the Hamiltonian matrix. Instead, it utilizes an E(3) equivariant network to predict the **expansion coefficients of the electron density under a compact auxiliary basis** and provides a complete pipeline to transform this density into an SCF initia…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "DFT Acceleration"
+  - "SCF Initial Guess"
+  - "Electron Density"
+  - "Auxiliary Basis"
+  - "E(3) Equivariant Network"
 date: 2026-05-08
-content_hash: 6c37d7b79eeb353d
+content_hash: 1354214c5d3fce2b
 ---
+
 # Towards a Transferable Acceleration Method for Density Functional Theory
 
 **Conference**: ICLR 2026  
@@ -146,8 +152,8 @@ The density method maintains a stable RIC of 0.73–0.82 and 100% convergence fo
 - [\[ICLR 2026\] Orbital Transformers for Predicting Wavefunctions in Time-Dependent Density Functional Theory](orbital_transformers_for_predicting_wavefunctions_in_time-dependent_density_func.md)
 - [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](../../NeurIPS2025/physics/high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
 - [\[ICLR 2026\] Tucker-FNO: Tensor Tucker-Fourier Neural Operator and its Universal Approximation Theory](tucker-fno_tensor_tucker-fourier_neural_operator_and_its_universal_approximation.md)
+- [\[ICLR 2026\] ARROW: An Adaptive Rollout and Routing Method for Global Weather Forecasting](arrow_an_adaptive_rollout_and_routing_method_for_global_weather_forecasting.md)
 - [\[ICML 2026\] TriForces: Augmenting Atomistic GNNs for Transferable Representations](../../ICML2026/physics/triforces_augmenting_atomistic_gnns_for_transferable_representations.md)
-- [\[ICML 2026\] Mesh Field Theory: Port–Hamiltonian Formulation of Mesh-Based Physics](../../ICML2026/physics/mesh_field_theory_port-hamiltonian_formulation_of_mesh-based_physics.md)
 
 </div>
 

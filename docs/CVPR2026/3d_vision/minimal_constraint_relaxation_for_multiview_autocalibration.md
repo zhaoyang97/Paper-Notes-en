@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Minimal Constraint Relaxation for Multiview Autocalibration
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the long-standing issue where the three-view Kruppa autocalibration equations are over-constrained (45 equations for 5 unknowns), leading to no solution or ill-conditioned results, this paper proposes a "minimal relaxation" framework. By systematically retaining only a subset of equations and using symbolic
+  [CVPR 2026][3D Vision][Autocalibration] Addressing the long-standing issue where the three-view Kruppa autocalibration equations are over-constrained (45 equations for 5 unknowns), leading to no solution or ill-conditioned results, this paper proposes a "minimal relaxation" framework. By systematically retaining only a subset of equations and using symbolic computation with numerical homotopy continuation to exhaustively search all subsets yielding finite solutions…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Autocalibration"
+  - "Kruppa equations"
+  - "Minimal problems"
+  - "Constraint relaxation"
+  - "Homotopy continuation"
 date: 2026-05-08
-content_hash: 4d6d596ebbcab5f8
+content_hash: d587dd49d8c0e3fa
 ---
+
 # Minimal Constraint Relaxation for Multiview Autocalibration
 
 **Conference**: CVPR 2026  
@@ -131,11 +137,11 @@ Statistics of solution set dimension $\dim V(F)$ and degree $\mathrm{Deg}$ by re
 
 ## Related Papers
 
-- [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
-- [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
-- [\[CVPR 2026\] HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation](hyperbolic_multiview_pretraining_for_robotic_manipulation.md)
-- [\[CVPR 2026\] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields](dynamic_black-hole_emission_tomography_with_physics-informed_neural_fields.md)
-- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
+- [\[CVPR 2026\] Solving Minimal Problems Without Matrix Inversion Using FFT-Based Interpolation](solving_minimal_problems_without_matrix_inversion_using_fft-based_interpolation.md)
+- [\[CVPR 2026\] S2D: Sparse to Dense Lifting for 3D Reconstruction with Minimal Inputs](s2d_sparse_to_dense_lifting_for_3d_reconstruction_with_minimal_inputs.md)
+- [\[CVPR 2026\] REArtGS++: Generalizable Articulation Reconstruction with Temporal Geometry Constraint via Planar Gaussian Splatting](reartgs_generalizable_articulation_reconstruction_with_temporal_geometry_constra.md)
+- [\[CVPR 2026\] MVInverse: Feed-forward Multiview Inverse Rendering in Seconds](mvinverse_feed-forward_multiview_inverse_rendering_in_seconds.md)
+- [\[CVPR 2026\] MV2UV: Generating High-quality UV Texture Maps with Multiview Prompts](mv2uv_generating_high-quality_uv_texture_maps_with_multiview_prompts.md)
 
 </div>
 

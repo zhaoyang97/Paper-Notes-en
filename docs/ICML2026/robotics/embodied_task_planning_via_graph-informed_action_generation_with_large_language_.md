@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Embodied Task Planning via Graph-Informed Action Generation with Large Language Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Bounded Lookahead] GiG equips the LLM planner with "graph-in-graph" dual-layer memory (Scene Graph + State Transition Graph) + GNN encoding + 1-step lookahead, improving Pass@1 by 6–37 percentage points over ReCAP on Robotouille (Sync/Async) and ALFWorld.
+  [ICML 2026][Robotics][Embodied Planning] GiG equips the LLM planner with "graph-in-graph" dual-layer memory (Scene Graph + State Transition Graph) + GNN encoding + 1-step lookahead, improving Pass@1 by 6–37 percentage points over ReCAP on Robotouille (Sync/Async) and ALFWorld.
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Bounded Lookahead
+  - "ICML 2026"
+  - "Robotics"
+  - "Embodied Planning"
+  - "Graph Memory"
+  - "GNN Encoding"
+  - "Bounded Lookahead"
+  - "Experience Retrieval"
 date: 2026-05-08
-content_hash: 5d73604ae98313e4
+content_hash: a7ed3aa7e2972f04
 ---
+
 # Embodied Task Planning via Graph-Informed Action Generation with Large Language Models
 
 **Conference**: ICML 2026  
@@ -153,11 +158,11 @@ Asynchronous tasks showed the largest gains due to concurrency management needs.
 
 ## Related Papers
 
+- [\[ICLR 2026\] MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Models for Embodied Task Planning](../../ICLR2026/robotics/momagraph_state-aware_unified_scene_graphs_with_vision-language_models_for_embod.md)
 - [\[ICML 2026\] Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models](embodied_interpretability_linking_causal_understanding_to_generalization_in_visi.md)
 - [\[CVPR 2026\] RoboAgent: Chaining Basic Capabilities for Embodied Task Planning](../../CVPR2026/robotics/roboagent_chaining_basic_capabilities_for_embodied_task_planning.md)
 - [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](../../NeurIPS2025/robotics/esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
 - [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
-- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
 
 </div>
 

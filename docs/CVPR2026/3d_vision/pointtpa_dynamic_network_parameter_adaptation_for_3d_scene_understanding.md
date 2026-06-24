@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The PointTPA framework is proposed, utilizing two lightweight modules—Serialized Neighborhood Grouping (SNG) and Dynamic Parameter Projector (DPP)—to generate customized network parameters for each input scene during inference. With an increase of <2% in parameter count, it achieves 78.4% mIoU on ScanNet, surpassing cu
+  [CVPR 2026][3D Vision][Point Cloud Semantic Segmentation] The PointTPA framework is proposed, utilizing two lightweight modules—Serialized Neighborhood Grouping (SNG) and Dynamic Parameter Projector (DPP)—to generate customized network parameters for each input scene during inference. With an increase of <2% in parameter count, it achieves 78.4% mIoU on ScanNet, surpassing current Parameter-Efficient Fine-Tuning (PEFT) methods.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Semantic Segmentation"
+  - "Test-time Parameter Adaptation"
+  - "Dynamic Networks"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Scene-level Understanding"
 date: 2026-05-08
-content_hash: 4ac35fa1c447a045
+content_hash: c4cbc1408a7863f4
 ---
+
 # PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding
 
 **Conference**: CVPR 2026  
@@ -154,9 +160,9 @@ A standard semantic segmentation cross-entropy loss is used: $\mathcal{L} = -\fr
 
 - [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
 - [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
+- [\[CVPR 2026\] Multi-modal Frequency Decomposition Network for Semantic Scene Completion](multi-modal_frequency_decomposition_network_for_semantic_scene_completion.md)
 - [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
 - [\[CVPR 2026\] RISE: Single Static Radar-based Indoor Scene Understanding](rise_single_static_radar-based_indoor_scene_understanding.md)
-- [\[CVPR 2025\] PMA: Towards Parameter-Efficient Point Cloud Understanding via Point Mamba Adapter](../../CVPR2025/3d_vision/pma_towards_parameter-efficient_point_cloud_understanding_via_point_mamba_adapte.md)
 
 </div>
 

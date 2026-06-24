@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Factorized Learning for Temporally Grounded Video-Language Models
 description: >-
-  [ICCV 2025][Video Understanding][video-language model] This paper proposes D2VLM, a framework that decomposes video understanding into a "first localize evidence…
+  [ICCV 2025][Video Understanding][video-language model] This paper proposes D2VLM, a framework that decomposes video understanding into a "first localize evidence, then generate answers based on evidence" paradigm. It introduces evidence tokens to capture event-level visual semantics and designs Factorized Preference Optimization (FPO) to simultaneously improve temporal grounding and text response quality.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "evidence token"
   - "factorized learning"
 date: 2026-05-08
-content_hash: fc078e6a4f5b557c
+content_hash: 94ce28fab1def726
 ---
 
 # Factorized Learning for Temporally Grounded Video-Language Models
@@ -160,8 +160,8 @@ FPO stage: Factorized preference optimization is applied on top of the SFT model
 - [\[ICCV 2025\] TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision](toga_temporally_grounded_open-ended_video_qa_with_weak_supervision.md)
 - [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](distime_distribution-based_time_representation_for_video_large_language_models.md)
 - [\[NeurIPS 2025\] SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models](../../NeurIPS2025/video_understanding/sama_towards_multi-turn_referential_grounded_video_chat_with_large_language_mode.md)
-- [\[ICCV 2025\] Aligning Effective Tokens with Video Anomaly in Large Language Models](aligning_effective_tokens_with_video_anomaly_in_large_language_models.md)
 - [\[ICCV 2025\] ResidualViT for Efficient Temporally Dense Video Encoding](residualvit_for_efficient_temporally_dense_video_encoding.md)
+- [\[CVPR 2025\] Efficient Transfer Learning for Video-language Foundation Models](../../CVPR2025/video_understanding/efficient_transfer_learning_for_video-language_foundation_models.md)
 
 </div>
 

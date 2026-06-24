@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning
 description: >-
-  [ICCV 2025][Multimodal VLM][Chart Reasoning] This paper proposes PointCoT, which integrates reflective visual grounding (bounding boxes) into the chain-of-thought for chart reasoning…
+  [ICCV 2025][VLM Reasoning][Chart Reasoning] This paper proposes PointCoT, which integrates reflective visual grounding (bounding boxes) into the chain-of-thought for chart reasoning, enabling MLLMs to interactively verify each reasoning step against the chart's visual content. It also constructs the ChartPoint-SFT-62k dataset containing 19.2K high-quality samples, achieving a +5.04% improvement on ChartBench.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Chart Reasoning"
   - "Multimodal Large Language Models"
   - "Chain-of-Thought"
   - "Visual Grounding"
   - "Numerical Hallucination"
 date: 2026-05-08
-content_hash: d65558a667f9ed4b
+content_hash: 4cee7dd9921b4f61
 ---
 
 # ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning
@@ -166,11 +166,11 @@ Coordinate format ablation:
 
 ## Related Papers
 
-- [\[ICCV 2025\] DOGR: Towards Versatile Visual Document Grounding and Referring](dogr_towards_versatile_visual_document_grounding_and_referring.md)
-- [\[ICCV 2025\] Effective Training Data Synthesis for Improving MLLM Chart Understanding](effective_training_data_synthesis_for_improving_mllm_chart_understanding.md)
-- [\[ICCV 2025\] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](mc-bench_a_benchmark_for_multi-context_visual_grounding_in_the_era_of_mllms.md)
+- [\[ACL 2025\] Chart-based Reasoning: Transferring Capabilities from LLMs to VLMs](../../ACL2025/vlm_reasoning/chart-based_reasoning_transferring_capabilities_from_llms_to_vlms.md)
+- [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](../../CVPR2026/vlm_reasoning/chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
+- [\[ICLR 2026\] Reasoning in Space via Grounding in the World](../../ICLR2026/vlm_reasoning/reasoning_in_space_via_grounding_in_the_world.md)
+- [\[ICML 2026\] Temporal-Aware Reasoning Optimization for Video Temporal Grounding](../../ICML2026/vlm_reasoning/temporal-aware_reasoning_optimization_for_video_temporal_grounding.md)
 - [\[ICCV 2025\] Taming the Untamed: Graph-Based Knowledge Retrieval and Reasoning for MLLMs to Conquer the Unknown](taming_the_untamed_graph-based_knowledge_retrieval_and_reasoning_for_mllms_to_co.md)
-- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](../../CVPR2026/multimodal_vlm/enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
 
 </div>
 

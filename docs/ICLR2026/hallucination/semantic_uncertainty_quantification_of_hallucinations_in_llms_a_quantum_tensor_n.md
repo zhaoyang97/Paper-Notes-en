@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Semantic Uncertainty Quantification of Hallucinations in LLMs: A Quantum Tensor Network Based Method
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] To address the blind spot where semantic entropy ignores the "stochastic fluctuations of token sequence probabilities themselves," this paper embeds the kernel mean embedding (KME) of sequence probabilities as a wave function of a Quantum Tensor Network (QTN). It employs perturbation theory to calculate the local uncer
+  [ICLR 2026][Hallucination Detection][Semantic Entropy] To address the blind spot where semantic entropy ignores the "stochastic fluctuations of token sequence probabilities themselves," this paper embeds the kernel mean embedding (KME) of sequence probabilities as a wave function of a Quantum Tensor Network (QTN). It employs perturbation theory to calculate the local uncertainty of each probability in a one-shot manner. These probabilities are then calibrated via "entropy max…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Semantic Entropy"
+  - "Uncertainty Quantification"
+  - "Quantum Tensor Network"
+  - "Entropy Maximization"
 date: 2026-05-08
-content_hash: a264778652a9edde
+content_hash: dd1f2bb013c779d9
 ---
+
 # Semantic Uncertainty Quantification of Hallucinations in LLMs: A Quantum Tensor Network Based Method
 
 **Conference**: ICLR 2026  
@@ -128,7 +133,7 @@ Experiments cover TriviaQA, NQ-Open, SVAMP, and SQuAD across 8 models (Mistral-7
 
 - [\[ICLR 2026\] Estimating Semantic Alphabet Size for LLM Uncertainty Quantification](estimating_semantic_alphabet_size_for_llm_uncertainty_quantification.md)
 - [\[ICLR 2026\] HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs](halluguard_demystifying_data-driven_and_reasoning-driven_hallucinations_in_llms.md)
-- [\[ICLR 2026\] Critical Confabulation: Can LLMs Hallucinate for Social Good?](critical_confabulation_can_llms_hallucinate_for_social_good.md)
+- [\[ICLR 2026\] Critical Confabulations: Can LLMs Hallucinate for Social Good?](critical_confabulation_can_llms_hallucinate_for_social_good.md)
 - [\[ICLR 2026\] GHOST: Hallucination-Inducing Image Generation for Multimodal LLMs](ghost_hallucination-inducing_image_generation_for_multimodal_llms.md)
 - [\[ICLR 2026\] High Accuracy, Less Talk (HALT): Reliable LLMs through Capability-Aligned Finetuning](high_accuracy_less_talk_halt_reliable_llms_through_capability-aligned_finetuning.md)
 

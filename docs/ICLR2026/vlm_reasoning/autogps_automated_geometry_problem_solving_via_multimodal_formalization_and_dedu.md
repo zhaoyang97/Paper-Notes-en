@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AutoGPS: Automated Geometry Problem Solving via Multimodal Formalization and Deductive Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] AutoGPS utilizes a neuro-symbolic synergistic framework consisting of a "Multimodal Problem Formalizer (MPF) + Deductive Symbolic Reasoner (DSR)." It first translates plane geometry problems into formal language and then performs rigorous deduction via hypergraph expansion. This process yields both a correct answer and
+  [ICLR2026][VLM Reasoning][Geometry Problem Solving] AutoGPS utilizes a neuro-symbolic synergistic framework consisting of a "Multimodal Problem Formalizer (MPF) + Deductive Symbolic Reasoner (DSR)." It first translates plane geometry problems into formal language and then performs rigorous deduction via hypergraph expansion. This process yields both a correct answer and a traceable step-by-step solution, achieving SOTA on Geometry3K / PGPS9K and improving human-evaluated logi…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Geometry Problem Solving"
+  - "Multimodal Formalization"
+  - "Deductive Symbolic Reasoning"
+  - "Hypergraph Expansion"
+  - "Neuro-Symbolic Synergy"
 date: 2026-05-08
-content_hash: 6930aa31107881da
+content_hash: 419c2963a452d73a
 ---
+
 # AutoGPS: Automated Geometry Problem Solving via Multimodal Formalization and Deductive Reasoning
 
 **Conference**: ICLR2026  
@@ -131,9 +137,9 @@ Compared to pure MLLMs, it leads by 18.0% and 26.4% in Completion. While neural 
 
 ## Related Papers
 
+- [\[AAAI 2026\] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking](../../AAAI2026/vlm_reasoning/astar_boosting_multimodal_reasoning_with_automated_structure.md)
 - [\[ICLR 2026\] No Labels, No Problem: Training Visual Reasoners with Multimodal Verifiers](no_labels_no_problem_training_visual_reasoners_with_multimodal_verifiers.md)
 - [\[ICLR 2026\] Evaluating Cross-Modal Reasoning Ability and Problem Characteristics with Multimodal Item Response Theory](evaluating_cross-modal_reasoning_ability_and_problem_characteristics_with_multim.md)
-- [\[AAAI 2026\] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking](../../AAAI2026/vlm_reasoning/astar_boosting_multimodal_reasoning_with_automated_structure.md)
 - [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](../../CVPR2026/vlm_reasoning/spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
 - [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](../../CVPR2026/vlm_reasoning/g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
 

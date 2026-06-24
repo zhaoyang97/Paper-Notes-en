@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] VSCD：无对齐场景的视频场景变化检测
+  [Paper Note] VSCD: Video Scene Change Detection in Unaligned Scenarios
 description: >-
-  [ICML 2026][Video Understanding][Paper Note] This paper introduces the VSCD task—detecting object-level changes pixel-by-pixel between two video sequences of the same environment recorded at different times through a query-centric multi-reference model. It utilizes temporal consistency, patch-level correspondence, and confidence-weighted fusion to handle unconstr
+  [ICML 2026][Video Understanding][Scene Change Detection] This paper introduces the VSCD task—detecting object-level changes pixel-by-pixel between two video sequences of the same environment recorded at different times through a query-centric multi-reference model. It utilizes temporal consistency, patch-level correspondence, and confidence-weighted fusion to handle unconstrained camera motion and severe viewpoint mismatch.
 tags:
-  - ICML 2026
-  - Video Understanding
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Scene Change Detection"
+  - "Video Alignment"
+  - "Multi-reference Matching"
+  - "Multi-view Geometry"
+  - "Long-term Autonomy"
 date: 2026-05-08
-content_hash: d513babf8d76a332
+content_hash: b21711f6e04056ed
 ---
+
 # VSCD: Video Scene Change Detection in Unaligned Scenarios
 
 **Conference**: ICML 2026  
@@ -132,11 +138,11 @@ Since a single query frame corresponds to multiple reference candidates, simple 
 
 ## Related Papers
 
-- [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
-- [\[ICML 2026\] Return of Frustratingly Easy Unsupervised Video Domain Adaptation](return_of_frustratingly_easy_unsupervised_video_domain_adaptation.md)
-- [\[ICML 2026\] AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes](avtrack_audio-visual_tracking_in_human-centric_complex_scenes.md)
-- [\[ICML 2026\] Foresee-to-Ground: From Predictive Temporal Perception to Evidence-Driven Reasoning](foresee-to-ground_from_predictive_temporal_perception_to_evidence-driven_reasoni.md)
-- [\[ICML 2026\] RELO: Reinforcement Learning to Localize for Visual Object Tracking](relo_reinforcement_learning_to_localize_for_visual_object_tracking.md)
+- [\[CVPR 2026\] Progressive Multi-cue Alignment for Unaligned RGBT Tracking](../../CVPR2026/video_understanding/progressive_multi-cue_alignment_for_unaligned_rgbt_tracking.md)
+- [\[CVPR 2026\] Seeing the Scene Matters: Revealing Forgetting in Video Understanding Models with a Scene-Aware Long-Video Benchmark](../../CVPR2026/video_understanding/seeing_the_scene_matters_revealing_forgetting_in_video_understanding_models_with.md)
+- [\[ICLR 2026\] Video Scene Segmentation with Genre and Duration Signals](../../ICLR2026/video_understanding/video_scene_segmentation_with_genre_and_duration_signals.md)
+- [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](../../CVPR2026/video_understanding/scene-centric_unsupervised_video_panoptic_segmentation.md)
+- [\[CVPR 2026\] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion](../../CVPR2026/video_understanding/savax_egotoexo_imitation_error_detection_via_scene.md)
 
 </div>
 

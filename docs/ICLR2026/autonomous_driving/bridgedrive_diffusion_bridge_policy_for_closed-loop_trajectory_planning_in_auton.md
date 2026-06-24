@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][Bench2Drive] BridgeDrive proposes replacing truncated diffusion with a diffusion bridge to achieve anchor-guided trajectory planning in autonomous driving. This ensures theoretical symmetry between forward and backward processes, achieving success rates of 74.99% (PDM-Lite) and 89.25% (LEAD) in Bench2Drive closed-loop evaluations,
+  [ICLR 2026][Autonomous Driving][Diffusion Bridge Model] BridgeDrive proposes replacing truncated diffusion with a diffusion bridge to achieve anchor-guided trajectory planning in autonomous driving. This ensures theoretical symmetry between forward and backward processes, achieving success rates of 74.99% (PDM-Lite) and 89.25% (LEAD) in Bench2Drive closed-loop evaluations, surpassing previous SOTA by 7.72% and 2.45%, respectively.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Bench2Drive
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Diffusion Bridge Model"
+  - "Anchor Trajectory Guidance"
+  - "Closed-Loop Planning"
+  - "Geometric Waypoints"
+  - "Bench2Drive"
 date: 2026-05-08
-content_hash: 27066441e612b9aa
+content_hash: 489f2573facaa722
 ---
+
 # BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving
 
 **Conference**: ICLR 2026  
@@ -132,8 +137,8 @@ Bench2Drive closed-loop evaluation (CARLA Leaderboard 2.0, 220 routes):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/model-based_policy_adaptation_for_closed-loop_end-to-end_autonomous_driving.md)
-- [\[ICLR 2026\] Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling](plan-r1_safe_and_feasible_trajectory_planning_as_language_modeling.md)
 - [\[ICLR 2026\] VADv2: End-to-End Vectorized Autonomous Driving via Probabilistic Planning](vadv2_end-to-end_vectorized_autonomous_driving_via_probabilistic_planning.md)
+- [\[ICLR 2026\] Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling](plan-r1_safe_and_feasible_trajectory_planning_as_language_modeling.md)
 - [\[ECCV 2024\] NeuroNCAP: Photorealistic Closed-Loop Safety Testing for Autonomous Driving](../../ECCV2024/autonomous_driving/neuroncap_photorealistic_closed-loop_safety_testing_for_autonomous_driving.md)
 - [\[ICLR 2026\] Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving](discrete_diffusion_for_reflective_vision-language-action_models_in_autonomous_dr.md)
 

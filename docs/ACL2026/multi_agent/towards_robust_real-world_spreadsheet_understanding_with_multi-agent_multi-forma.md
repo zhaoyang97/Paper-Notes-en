@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Robust Real-World Spreadsheet Understanding with Multi-Agent Multi-Format Collaboration
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] Proposes SpreadsheetAgent, a two-stage multi-agent framework that achieves robust real-world spreadsheet understanding by performing progressive region reading and cross-verification using code execution, vision, and LaTeX formats, without exceeding LLM context limits.
+  [ACL 2026][Multi-Agent][Spreadsheet Understanding] Proposes SpreadsheetAgent, a two-stage multi-agent framework that achieves robust real-world spreadsheet understanding by performing progressive region reading and cross-verification using code execution, vision, and LaTeX formats, without exceeding LLM context limits.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Spreadsheet Understanding"
+  - "Multi-Agent Framework"
+  - "Multi-Format Reasoning"
+  - "Structured Information Extraction"
+  - "Progressive Reading"
 date: 2026-05-08
-content_hash: 4e425e096fefd4e5
+content_hash: 8d4e4575ec95e873
 ---
+
 # Towards Robust Real-World Spreadsheet Understanding with Multi-Agent Multi-Format Collaboration
 
 **Conference**: ACL 2026  
@@ -142,8 +148,8 @@ This is a reasoning framework and does not involve training. GLM-4.5V is used as
 - [\[ICLR 2026\] ATLAS: Constraints-Aware Multi-Agent Collaboration for Real-World Travel Planning](../../ICLR2026/multi_agent/atlas_constraints-aware_multi-agent_collaboration_for_real-world_travel_planning.md)
 - [\[ICLR 2026\] UIS-Digger: Towards Comprehensive Research Agent Systems for Real-world Unindexed Information Seeking](../../ICLR2026/multi_agent/uis-digger_towards_comprehensive_research_agent_systems_for_real-world_unindexed.md)
 - [\[ICML 2025\] Is Your LLM-Based Multi-Agent a Reliable Real-World Planner? Exploring Fraud Detection in Travel Planning](../../ICML2025/multi_agent/is_your_llm-based_multi-agent_a_reliable_real-world_planner_exploring_fraud_dete.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 - [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
-- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
 
 </div>
 

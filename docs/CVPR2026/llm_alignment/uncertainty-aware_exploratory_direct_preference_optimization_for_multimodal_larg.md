@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Alignment & RLHF][DPO] UE-DPO shifts the optimization focus for hallucination suppression in Multimodal Large Language Models (MLLMs) from "visually sensitive tokens that the model already understands" to "critical cognitive blind-spot tokens that the model fails to comprehend." By quantifying these blind spots with token-level **epistemic u
+  [CVPR 2026][LLM Alignment][DPO] UE-DPO shifts the optimization focus for hallucination suppression in Multimodal Large Language Models (MLLMs) from "visually sensitive tokens that the model already understands" to "critical cognitive blind-spot tokens that the model fails to comprehend." By quantifying these blind spots with token-level **epistemic uncertainty**, UE-DPO asymmetrically adjusts DPO gradient intensities for preferred and dispreferred branches. It outperforms sim…
 tags:
-  - CVPR 2026
-  - Alignment & RLHF
-  - DPO
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "DPO"
+  - "Multimodal Large Language Models"
+  - "Hallucination Suppression"
+  - "Epistemic Uncertainty"
+  - "Token-level Credit Assignment"
 date: 2026-05-08
-content_hash: 345d5017c7d9721b
+content_hash: d8a01fca4308b00a
 ---
+
 # Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -139,10 +144,20 @@ Contribution of each branch (LLaVA-v1.5-7B, RLHF-V):
 - Value: ⭐⭐⭐⭐ (Plug-and-play, data-efficient, and directly applicable to MLLM alignment).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization](../../ICLR2026/llm_alignment/sharpness-aware_minimization_in_logit_space_efficiently_enhances_direct_preferen.md)
+- [\[ICML 2026\] Autoregressive Direct Preference Optimization](../../ICML2026/llm_alignment/autoregressive_direct_preference_optimization.md)
+- [\[ACL 2026\] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models](../../ACL2026/llm_alignment/s2h-dpo_hardness-aware_preference_optimization_for_vision-language_models.md)
+- [\[ICCV 2025\] Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models](../../ICCV2025/llm_alignment/heuristic-induced_multimodal_risk_distribution_jailbreak_attack_for_multimodal_l.md)
+- [\[ICML 2026\] Boosting Direct Preference Optimization with Penalization](../../ICML2026/llm_alignment/boosting_direct_preference_optimization_with_penalization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models](../../ACL2026/llm_alignment/s2h-dpo_hardness-aware_preference_optimization_for_vision-language_models.md)

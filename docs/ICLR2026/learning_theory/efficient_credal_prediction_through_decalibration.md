@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Efficient Credal Prediction through Decalibration
 description: >-
-  [ICLR 2026][learning_theory][credal set] This paper proposes **decalibration**: starting from a single pre-trained model, by simply adding a global bias vector to logits and perturbing probabilities inversely within a "relative likelihood budget," it calculates a "plausible probability interval" for each class. This constructs credal sets expressing epistemic
+  [ICLR2026][Uncertainty Quantification][credal set] This paper proposes **decalibration**: starting from a single pre-trained model, by simply adding a global bias vector to logits and perturbing probabilities inversely within a "relative likelihood budget," it calculates a "plausible probability interval" for each class. This constructs credal sets expressing epistemic uncertainty without retraining or ensembles, marking the first application of credal prediction to foundatio…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - credal set
-  - post-hoc
+  - "ICLR2026"
+  - "Uncertainty Quantification"
+  - "Credal Set Prediction"
+  - "Probabilistic Methods"
+  - "credal set"
+  - "epistemic uncertainty"
+  - "relative likelihood"
+  - "decalibration"
+  - "post-hoc"
 date: 2026-05-08
-content_hash: cfade779f9c04c70
+content_hash: 4cd9d297c62eff3b
 ---
+
 # Efficient Credal Prediction through Decalibration
 
 **Conference**: ICLR2026  
@@ -140,9 +146,9 @@ The most prominent conclusion: EffCre **spans the entire interval on the coverag
 
 - [\[ICML 2026\] Learning Credal Ensembles via Distributionally Robust Optimization](../../ICML2026/learning_theory/learning_credal_ensembles_via_distributionally_robust_optimization.md)
 - [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
-- [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
 - [\[ICLR 2026\] Branch and Bound Search for Exact MAP Inference in Credal Networks](branch_and_bound_search_for_exact_map_inference_in_credal_networks.md)
-- [\[ICLR 2026\] Multiple-Prediction-Powered Inference](multiple-prediction-powered_inference.md)
+- [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
+- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](../../ICML2026/learning_theory/mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction
 description: >-
-  [CVPR 2026][3D Vision][Autoregressive] PointNSP transforms autoregressive point cloud generation from "point-by-point prediction" to "next-scale LoD prediction"—first determining the global structure at low resolution then refining geometry scale-by-scale. This is achieved via a multi-scale VQVAE and a causal Transformer with block-wise causal masks, mainta
+  [CVPR 2026][3D Vision][Point Cloud Generation] PointNSP transforms autoregressive point cloud generation from "point-by-point prediction" to "next-scale LoD prediction"—first determining the global structure at low resolution then refining geometry scale-by-scale. This is achieved via a multi-scale VQVAE and a causal Transformer with block-wise causal masks, maintaining the permutation invariance of point sets. It is the first autoregressive paradigm to achieve SOTA generatio…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Autoregressive
-  - Level-of-Detail
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Generation"
+  - "Autoregressive"
+  - "Next-scale Prediction"
+  - "Permutation Invariance"
+  - "Level-of-Detail"
 date: 2026-05-08
-content_hash: 9ace62ef135ef299
+content_hash: ffbad57f76a853f3
 ---
+
 # PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction
 
 **Conference**: CVPR 2026  
@@ -130,10 +134,10 @@ Ablation of architectural components on ShapeNet (Table 4, lower CD/EMD is bette
 ## Related Papers
 
 - [\[NeurIPS 2025\] ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction](../../NeurIPS2025/3d_vision/armesh_autoregressive_mesh_generation_via_next-level-of-detail_prediction.md)
+- [\[CVPR 2026\] AvatarPointillist: AutoRegressive 4D Gaussian Avatarization](avatarpointillist_autoregressive_4d_gaussian_avatarization.md)
 - [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
-- [\[CVPR 2026\] Repurposing 3D Generative Model for Autoregressive Layout Generation](repurposing_3d_generative_model_for_autoregressive_layout_generation.md)
-- [\[CVPR 2026\] Extend3D: Town-Scale 3D Generation](extend3d_town-scale_3d_generation.md)
-- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] MeshRipple: Structured Autoregressive Generation of Artist-Meshes](meshripple_structured_autoregressive_generation_of_artist-meshes.md)
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RankOOD: Class Ranking-based Out-of-Distribution Detection
 description: >-
-  [CVPR 2026][AI Safety][Plackett-Luce] RankOOD leverages the insight that a classifier naturally induces an inter-class ranking pattern for each ID (In-Distribution) class, while OOD samples struggle to adhere to this ranking. It first extracts a **canonical rank** for each class using ILP, then retrains the classifier using **Plackett-Luce ListMLE loss** t
+  [CVPR 2026][AI Safety][OOD Detection] RankOOD leverages the insight that a classifier naturally induces an inter-class ranking pattern for each ID (In-Distribution) class, while OOD samples struggle to adhere to this ranking. It first extracts a **canonical rank** for each class using ILP, then retrains the classifier using **Plackett-Luce ListMLE loss** to reinforce this ranking, and finally scores OOD based on the test sample's deviation from the canonical rank. It reduces…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Plackett-Luce
-  - ListMLE
+  - "CVPR 2026"
+  - "AI Safety"
+  - "OOD Detection"
+  - "Class Ranking"
+  - "Plackett-Luce"
+  - "ListMLE"
+  - "Listwise Learning"
 date: 2026-05-08
-content_hash: 49c3ddb932d592ea
+content_hash: 8c4578bba62e7799
 ---
+
 # RankOOD: Class Ranking-based Out-of-Distribution Detection
 
 **Conference**: CVPR 2026  

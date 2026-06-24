@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This work provides the first complete graphical criterion for distributional equivalence between causal graphs containing both latent variables and cycles under the linear non-Gaussian setting without relying on any structural assumptions. The core tool introduced is **edge rank constraints**. Based on this, algorithms
+  [ICLR 2026 (Oral)][Causal Inference][Causal Discovery] This work provides the first complete graphical criterion for distributional equivalence between causal graphs containing both latent variables and cycles under the linear non-Gaussian setting without relying on any structural assumptions. The core tool introduced is **edge rank constraints**. Based on this, algorithms for traversing equivalence classes and recovering causal models from data are developed—marking the firs…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026 (Oral)"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Latent Variables"
+  - "Cyclic Causal Models"
+  - "Distributional Equivalence"
+  - "Edge Rank Constraints"
+  - "Non-Gaussian Models"
 date: 2026-05-08
-content_hash: 6414f2be0bd21b28
+content_hash: b50deb0f56025b77
 ---
+
 # Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models
 
 **Conference**: ICLR 2026 (Oral)  
@@ -130,11 +137,11 @@ The graphical criterion only determines equivalence; it does not generate classe
 
 ## Related Papers
 
+- [\[ICLR 2026\] Independence Test for Linear Non-Gaussian Data and Applications in Causal Discovery](independence_test_for_linear_non-gaussian_data_and_applications_in_causal_discov.md)
 - [\[AAAI 2026\] I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables](../../AAAI2026/causal_inference/i-cam-uv_integrating_causal_graphs_over_non-identical_variable_sets_using_causal.md)
-- [\[ICML 2025\] Estimating Causal Effects in Gaussian Linear SCMs with Finite Data](../../ICML2025/causal_inference/estimating_causal_effects_in_gaussian_linear_scms_with_finite_data.md)
-- [\[ICML 2025\] Latent Variable Causal Discovery under Selection Bias](../../ICML2025/causal_inference/latent_variable_causal_discovery_under_selection_bias.md)
 - [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
-- [\[ICML 2026\] Causal-JEPA: Learning World Models through Object-Level Latent Masking](../../ICML2026/causal_inference/causal-jepa_learning_world_models_through_object-level_latent_masking.md)
+- [\[ICLR 2026\] Score-based Greedy Search for Structure Identification of Partially Observed Causal Models](score-based_greedy_search_for_structure_identification_of_partially_observed_cau.md)
+- [\[ICML 2025\] Estimating Causal Effects in Gaussian Linear SCMs with Finite Data](../../ICML2025/causal_inference/estimating_causal_effects_in_gaussian_linear_scms_with_finite_data.md)
 
 </div>
 

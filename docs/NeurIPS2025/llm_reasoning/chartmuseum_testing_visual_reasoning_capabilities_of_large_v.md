@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Chart Understanding] This paper introduces ChartMuseum, a chart question-answering benchmark comprising 1…
+  [NeurIPS 2025][Reasoning][Chart Understanding] This paper introduces ChartMuseum, a chart question-answering benchmark comprising 1,162 expert-annotated questions and real-world charts from 184 distinct sources. It is the first benchmark to systematically distinguish visual reasoning from textual reasoning, revealing that the current strongest model, Gemini-2.5-Pro, achieves only 63.0% accuracy compared to 93% for humans, with visual reasoning performance lagging behind textu…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Chart Understanding"
   - "Visual Reasoning"
   - "Benchmark"
   - "VLM Evaluation"
   - "Chart QA"
 date: 2026-05-08
-content_hash: e53bafc733d19592
+content_hash: d782bf3c35cc2eed
 ---
 
 # ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models
@@ -169,11 +169,11 @@ The gap between text-extraction-only and image-based performance on ChartMuseum 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](latent_chain-of-thought_for_visual_reasoning.md)
+- [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
 - [\[NeurIPS 2025\] Scalable Best-of-N Selection for Large Language Models via Self-Certainty](scalable_best-of-n_selection_for_large_language_models_via_self-certainty.md)
 - [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](../../ICLR2026/llm_reasoning/vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[NeurIPS 2025\] I-RAVEN-X: Benchmarking Generalization and Robustness of Analogical and Mathematical Reasoning in Large Language and Reasoning Models](i-raven-x_benchmarking_generalization_and_robustness_of_analogical_and_mathemati.md)
+- [\[NeurIPS 2025\] CoT Red-Handed: Stress Testing Chain-of-Thought Monitoring](cot_redhanded_stress_testing_chainofthought_monitoring.md)
 
 </div>
 

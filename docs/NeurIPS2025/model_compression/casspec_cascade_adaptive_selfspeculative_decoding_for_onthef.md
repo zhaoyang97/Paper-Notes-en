@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][speculative decoding] CAS-Spec constructs a multi-level draft model hierarchy from the target model itself via Dynamically Switchable Inference Acceleration (DSIA) strategies (e.g.…
+  [NeurIPS 2025][Model Compression][speculative decoding] CAS-Spec constructs a multi-level draft model hierarchy from the target model itself via Dynamically Switchable Inference Acceleration (DSIA) strategies (e.g., layer sparsity at varying degrees), and employs the Dynamic Tree Cascade (DyTC) algorithm to adaptively route among draft models and allocate draft lengths based on online acceptance rates and latency predictions. The approach achieves lossless inference accelerat…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -13,7 +13,7 @@ tags:
   - "training-free"
   - "DyTC"
 date: 2026-05-08
-content_hash: e456f2d62852e8d1
+content_hash: 52e177f3fc0014b8
 ---
 
 # CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs
@@ -137,9 +137,9 @@ The adaptive routing of DyTC is the primary source of performance gains.
 
 - [\[NeurIPS 2025\] Traversal Verification for Speculative Tree Decoding](traversal_verification_for_speculative_tree_decoding.md)
 - [\[NeurIPS 2025\] Reject Only Critical Tokens: Pivot-Aware Speculative Decoding](reject_only_critical_tokens_pivot-aware_speculative_decoding.md)
+- [\[ICML 2025\] VocabTrim: Vocabulary Pruning for Efficient Speculative Decoding in LLMs](../../ICML2025/model_compression/vocabtrim_vocabulary_pruning_for_efficient_speculative_decoding_in_llms.md)
 - [\[ACL 2026\] Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference](../../ACL2026/model_compression/calibrated_speculative_decoding_frequency-guided_candidate_selection_for_efficie.md)
-- [\[ACL 2026\] SSSD: Simply-Scalable Speculative Decoding](../../ACL2026/model_compression/sssd_simply-scalable_speculative_decoding.md)
-- [\[NeurIPS 2025\] zip2zip: Inference-Time Adaptive Tokenization via Online Compression](zip2zip_inference-time_adaptive_tokenization_via_online_compression.md)
+- [\[ICML 2025\] Speculative Decoding in Decentralized LLM Inference: Turning Communication Latency into Computation Throughput](../../ICML2025/model_compression/speculative_decoding_in_decentralized_llm_inference_turning_communication_latenc.md)
 
 </div>
 

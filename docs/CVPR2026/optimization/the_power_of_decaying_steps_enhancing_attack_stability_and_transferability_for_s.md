@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers
 description: >-
-  [CVPR 2026][Optimization & Theory][adversarial attack] This work refactors sign-based adversarial attack optimizers into coordinate-wise gradient descent, revealing that non-decaying step sizes are the root cause of non-convergence and instability. It proposes the Monotone Decreasing Coordinate Step (MDCS) strategy and theoretically proves that MDCS-MI achieves an optimal
+  [CVPR 2026][Optimization][adversarial attack] This work refactors sign-based adversarial attack optimizers into coordinate-wise gradient descent, revealing that non-decaying step sizes are the root cause of non-convergence and instability. It proposes the Monotone Decreasing Coordinate Step (MDCS) strategy and theoretically proves that MDCS-MI achieves an optimal $O(1/\sqrt{T})$ convergence rate. MDCS significantly enhances the attack transferability and stability across imag…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - adversarial attack
-  - transferability
-  - sign-based optimizer
-  - step-size scheduling
-  - convergence guarantee
+  - "CVPR 2026"
+  - "Optimization"
+  - "adversarial attack"
+  - "transferability"
+  - "sign-based optimizer"
+  - "step-size scheduling"
+  - "convergence guarantee"
 date: 2026-05-08
-content_hash: 111b38430c1cbe12
+content_hash: b49d728f988b8215
 ---
+
 # The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers
 
 **Conference**: CVPR 2026  
@@ -154,10 +155,10 @@ While the attack success rate of MI-FGSM fluctuates or decreases as the iteratio
 ## Related Papers
 
 - [\[NeurIPS 2025\] Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training](../../NeurIPS2025/optimization/unveiling_the_power_of_multiple_gossip_steps_a_stability-based_generalization_an.md)
-- [\[CVPR 2026\] HyperNAS: Enhancing Architecture Representation for NAS Predictor via Hypernetwork](hypernas_enhancing_architecture_representation_for_nas_predictor_via_hypernetwor.md)
-- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](../../ICML2026/optimization/stability_analysis_of_sharpness-aware_minimization.md)
-- [\[CVPR 2026\] Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning](enhancing_visual_representation_with_textual_semantics_textual_semantics_powered_p.md)
-- [\[AAAI 2026\] Cost-Minimized Label-Flipping Poisoning Attack to LLM Alignment](../../AAAI2026/optimization/cost-minimized_label-flipping_poisoning_attack_to_llm_alignment.md)
+- [\[ICML 2026\] AdaGC: Enhancing LLM Pretraining Stability via Adaptive Gradient Clipping](../../ICML2026/optimization/adagc_enhancing_llm_pretraining_stability_via_adaptive_gradient_clipping.md)
+- [\[ICLR 2026\] Towards Dynamic Interleaving Optimizers](../../ICLR2026/optimization/towards_dynamic_interleaving_optimizers.md)
+- [\[ICLR 2026\] Beyond Short Steps in Frank-Wolfe Algorithms](../../ICLR2026/optimization/beyond_short_steps_in_frank-wolfe_algorithms.md)
+- [\[ICLR 2026\] Sign-SGD via Parameter-Free Optimization](../../ICLR2026/optimization/sign-sgd_via_parameter-free_optimization.md)
 
 </div>
 

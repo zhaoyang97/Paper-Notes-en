@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] I-Scene shifts away from using labeled scene datasets to teach models "where to place objects." Instead, it "reprograms" a pre-trained image-to-3D instance generator (TRELLIS) into a scene-level spatial learner. By utilizing Scene Context Attention and a View-centric Space, the model learns to infer spatial relationshi
+  [CVPR 2026][3D Vision][3D Scene Generation] I-Scene shifts away from using labeled scene datasets to teach models "where to place objects." Instead, it "reprograms" a pre-trained image-to-3D instance generator (TRELLIS) into a scene-level spatial learner. By utilizing Scene Context Attention and a View-centric Space, the model learns to infer spatial relationships such as adjacency, support, and symmetry in a single feed-forward pass. It can generalize to unseen layouts even…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Scene Generation"
+  - "Instance Prior"
+  - "Reprogramming"
+  - "View-centric Space"
+  - "Feed-forward Generation"
 date: 2026-05-08
-content_hash: c701111a2041d92a
+content_hash: b86dee8da72e3c5b
 ---
+
 # I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Training data ablation (using different training sets):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Foundation Models for 3D Scene Understanding: Instance-Aware Self-Supervised Learning for Point Clouds](towards_foundation_models_for_3d_scene_understanding_instance-aware_self-supervi.md)
+- [\[CVPR 2026\] Generalizable Radio-Frequency Radiance Fields for Spatial Spectrum Synthesis](generalizable_radio-frequency_radiance_fields_for_spatial_spectrum_synthesis.md)
 - [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
 - [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
-- [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)
-- [\[CVPR 2026\] 3D-IDE: 3D Implicit Depth Emergent](3d-ide_3d_implicit_depth_emergent.md)
-- [\[CVPR 2026\] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision](evobj_learning_evolving_object-centric_representations_for_3d_instance_segmentat.md)
+- [\[CVPR 2026\] Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation](context-nav_context-driven_exploration_and_viewpoint-aware_3d_spatial_reasoning_.md)
 
 </div>
 

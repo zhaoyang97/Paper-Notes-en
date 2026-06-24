@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Adverse Weather Removal via Spectral-based Spatial Grouping (SSGformer)
 description: >-
-  [ICCV 2025][Image Restoration][All-in-One weather removal] SSGformer proposes an All-in-One adverse weather image restoration method based on spectral decomposition and grouping attention: it extracts high-frequency edge…
+  [ICCV 2025][Image Restoration][All-in-One weather removal] SSGformer proposes an All-in-One adverse weather image restoration method based on spectral decomposition and grouping attention: it extracts high-frequency edge information via the Sobel operator and analyzes low-frequency degradation textures via SVD, fuses both to generate spatial grouping masks, and performs channel and spatial attention within groups to achieve robust removal of multiple weather degradations (rai…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -14,7 +14,7 @@ tags:
   - "SVD"
   - "attention mechanism"
 date: 2026-05-08
-content_hash: d7a94fc94a58ef42
+content_hash: 17a0272b5d187827
 ---
 
 # Robust Adverse Weather Removal via Spectral-based Spatial Grouping (SSGformer)
@@ -144,11 +144,11 @@ Evaluated on standard weather removal benchmarks (covering deraining, desnowing,
 
 ## Related Papers
 
+- [\[ECCV 2024\] Learning Exhaustive Correlation for Spectral Super-Resolution: Where Spatial-Spectral Attention Meets Linear Dependence](../../ECCV2024/image_restoration/learning_exhaustive_correlation_for_spectral_super-resolution_where_spatial-spec.md)
+- [\[ECCV 2024\] Restoring Images in Adverse Weather Conditions via Histogram Transformer](../../ECCV2024/image_restoration/restoring_images_in_adverse_weather_conditions_via_histogram_transformer.md)
 - [\[NeurIPS 2025\] MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration](../../NeurIPS2025/image_restoration/modem_a_morton-order_degradation_estimation_mechanism_for_adverse_weather_image_.md)
 - [\[NeurIPS 2025\] Real-World Adverse Weather Image Restoration via Dual-Level Reinforcement Learning with High-Quality Cold Start](../../NeurIPS2025/image_restoration/real-world_adverse_weather_image_restoration_via_dual-level_reinforcement_learni.md)
 - [\[ICCV 2025\] Lightweight and Fast Real-time Image Enhancement via Decomposition of the Spatial-aware Lookup Tables](lightweight_and_fast_real-time_image_enhancement_via_decomposition_of_the_spatia.md)
-- [\[CVPR 2026\] Flickerformer: A Duet of Periodicity and Directionality for Burst Flicker Removal](../../CVPR2026/image_restoration/it_takes_two_a_duet_of_periodicity_and_directionality_for_burst_flicker_removal.md)
-- [\[NeurIPS 2025\] FIPER: Factorized Features for Robust Image Super-Resolution and Compression](../../NeurIPS2025/image_restoration/fiper_factorized_features_for_robust_image_super-resolution_and_compression.md)
 
 </div>
 

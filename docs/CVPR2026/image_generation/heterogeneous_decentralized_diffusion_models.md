@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Heterogeneous Decentralized Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][DDPM] A heterogeneous decentralized diffusion framework is proposed, allowing different experts to be trained completely independently using distinct diffusion objectives (DDPM $\epsilon$-prediction and Flow Matching velocity-prediction). During inference, these are unified into the velocity space for fusion via a determinis
+  [CVPR2026][Image Generation][Decentralized Diffusion Models] A heterogeneous decentralized diffusion framework is proposed, allowing different experts to be trained completely independently using distinct diffusion objectives (DDPM $\epsilon$-prediction and Flow Matching velocity-prediction). During inference, these are unified into the velocity space for fusion via a deterministic schedule-aware transformation. This approach improves both FID and generation diversity compare…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DDPM
-  - Flow Matching
-  - DiT
+  - "CVPR2026"
+  - "Image Generation"
+  - "Decentralized Diffusion Models"
+  - "Heterogeneous Training Objectives"
+  - "DDPM"
+  - "Flow Matching"
+  - "Mixture of Experts"
+  - "DiT"
+  - "PixArt-α"
 date: 2026-05-08
-content_hash: 01d2614ef9748212
+content_hash: f507baf442892694
 ---
+
 # Heterogeneous Decentralized Diffusion Models
 
 **Conference**: CVPR2026  
@@ -164,10 +169,10 @@ A threshold of 0.2 achieves the optimal FID (38.28), while a threshold of 0.5 re
 ## Related Papers
 
 - [\[CVPR 2025\] Decentralized Diffusion Models](../../CVPR2025/image_generation/decentralized_diffusion_models.md)
-- [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
+- [\[ICML 2026\] Compositional Generative Modeling from Decentralized Data](../../ICML2026/image_generation/compositional_generative_modeling_from_decentralized_data.md)
 - [\[ICLR 2026\] Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models](../../ICLR2026/image_generation/bridging_generalization_gap_of_heterogeneous_federated_clients_using_generative_.md)
 - [\[CVPR 2026\] Fusion in Your Way: Aligning Image Fusion with Heterogeneous Demands via Direct Preference Optimization](fusion_in_your_way_aligning_image_fusion_with_heterogeneous_demands_via_direct_p.md)
-- [\[CVPR 2026\] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)
+- [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
 
 </div>
 

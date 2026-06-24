@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Avey-B：把无注意力架构改造成双向编码器
+  [Paper Note] Avey-B: Refactoring Attention-Free Architectures into Bidirectional Encoders
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] Avey-B transforms the originally autoregressive, attention-free Avey architecture into a BERT-style bidirectional encoder by removing causal masks, decoupling static weights and dynamic similarity into alternating layers, applying row normalization to dynamic layers, and integrating a neural compressor within the ranke
+  [ICLR2026][LLM Pretraining][Bidirectional Encoder] Avey-B transforms the originally autoregressive, attention-free Avey architecture into a BERT-style bidirectional encoder by removing causal masks, decoupling static weights and dynamic similarity into alternating layers, applying row normalization to dynamic layers, and integrating a neural compressor within the ranker. Consequently, it consistently outperforms BERT/RoBERTa/ModernBERT/NeoBERT in token classification and info…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Bidirectional Encoder"
+  - "Attention-Free"
+  - "Retrieval-based Context"
+  - "Dynamic Parameterization"
+  - "Long Context"
 date: 2026-05-08
-content_hash: 03be6045a9a1ee3d
+content_hash: 6b13b67707f25de9
 ---
+
 # Avey-B: Refactoring Attention-Free Architectures into Bidirectional Encoders
 
 **Conference**: ICLR2026  
@@ -137,14 +143,14 @@ Throughput decay follows $T(N) \propto N^{-\alpha}$. Avey-B’s $\alpha \approx 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Conditioned Initialization for Attention](conditioned_initialization_for_attention.md)
-- [\[ICLR 2026\] Block-Sample MAC-Bayes Generalization Bounds](block-sample_mac-bayes_generalization_bounds.md)
-- [\[ICLR 2026\] Can Small Training Runs Reliably Guide Data Curation? Rethinking Proxy-Model Practice](can_small_training_runs_reliably_guide_data_curation_rethinking_proxy-model_prac.md)
-- [\[ICLR 2026\] CHAMMI-75: Pre-training multi-channel models with heterogeneous microscopy images](chammi-75_pre-training_multi-channel_models_with_heterogeneous_microscopy_images.md)
+- [\[ICLR 2026\] Should We Still Pretrain Encoders with Masked Language Modeling?](should_we_still_pretrain_encoders_with_masked_language_modeling.md)
+- [\[ICLR 2026\] Seq vs Seq: An Open Suite of Paired Encoders and Decoders](seq_vs_seq_an_open_suite_of_paired_encoders_and_decoders.md)
+- [\[ICLR 2026\] LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures](llm-jepa_large_language_models_meet_joint_embedding_predictive_architectures.md)
 - [\[ICLR 2026\] Deconstructing Positional Information: From Attention Logits to Training Biases](deconstructing_positional_information_from_attention_logits_to_training_biases.md)
 
 </div>

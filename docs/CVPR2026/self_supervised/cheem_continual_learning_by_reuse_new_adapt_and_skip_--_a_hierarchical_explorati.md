@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Vision Transformer] Ours proposes the CHEEM framework, which automatically learns task-aware dynamic ViT backbones via Hierarchical Exploration-Exploitation (HEE) sampled NAS—selecting from four operations: Reuse, New, Adapt, and Skip at each layer. It significantly outperforms prompt-based methods on the MTIL and VDD benchmarks, approach
+  [CVPR 2026][Self-Supervised Learning][Continual Learning] Ours proposes the CHEEM framework, which automatically learns task-aware dynamic ViT backbones via Hierarchical Exploration-Exploitation (HEE) sampled NAS—selecting from four operations: Reuse, New, Adapt, and Skip at each layer. It significantly outperforms prompt-based methods on the MTIL and VDD benchmarks, approaching the upper bound of full fine-tuning.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Vision Transformer
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Learning"
+  - "Exemplar-free Class Incremental Learning"
+  - "Neural Architecture Search"
+  - "Inter-layer Operations"
+  - "Vision Transformer"
 date: 2026-05-08
-content_hash: 15a7fcac75f5aaae
+content_hash: 3c1c6f7cb7847bb9
 ---
+
 # CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach
 
 **Conference**: CVPR 2026  
@@ -136,15 +141,16 @@ All FoM > 1 values indicate that CHEEM is superior to all baselines in the accur
 - Value: ⭐⭐⭐⭐ Significantly outperforms prompt-based methods on challenging benchmarks, approaching full fine-tuning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Learning to Extrapolate to New Tasks: A Relational Approach to Task Extrapolation](../../ICML2026/self_supervised/learning_to_extrapolate_to_new_tasks_a_relational_approach_to_task_extrapolation.md)
+- [\[CVPR 2026\] A Faster Path to Continual Learning](a_faster_path_to_continual_learning.md)
+- [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)
 - [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](is_parameter_isolation_better_for_prompt-based_continual_learning.md)
-- [\[CVPR 2026\] HCL-FF: Hierarchical and Contrastive Learning for Forward-Forward Algorithm](hcl-ff_hierarchical_and_contrastive_learning_for_forward-forward_algorithm.md)
-- [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](free-grained_hierarchical_visual_recognition.md)
-- [\[CVPR 2026\] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)
+- [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](exemplar-free_continual_learning_for_state_space_models.md)
 
 </div>
 

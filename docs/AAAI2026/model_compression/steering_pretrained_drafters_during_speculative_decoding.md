@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Steering Pretrained Drafters during Speculative Decoding
 description: >-
-  [AAAI 2026][Model Compression][Speculative Decoding] This paper proposes SD², which extracts steering vectors from verifier hidden states and injects them into the MLP layers of a pretrained drafter…
+  [AAAI 2026][Model Compression][Speculative Decoding] This paper proposes SD², which extracts steering vectors from verifier hidden states and injects them into the MLP layers of a pretrained drafter, achieving dynamic drafter–verifier alignment in speculative decoding. Under standard sampling, the number of accepted tokens increases by up to 35% with negligible computational overhead.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LLM Inference Acceleration"
   - "Pretrained Drafter"
 date: 2026-05-08
-content_hash: 3c6edef73f6fc9d7
+content_hash: cfbf8ed50ed6e6ac
 ---
 
 # Steering Pretrained Drafters during Speculative Decoding

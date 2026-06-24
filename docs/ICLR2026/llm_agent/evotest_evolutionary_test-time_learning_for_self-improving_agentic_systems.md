@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems
 description: >-
-  [ICLR 2026][LLM Agent][test-time learning] This paper proposes the J-TTL benchmark to measure an agent's ability to "learn while playing" on the same task, and introduces EvoTest—a fine-tuning-free, gradient-free framework. After each episode, an Evolver Agent reads the full trajectory text to evolutionarily optimize the agent's prompts, memories, hyperparamete
+  [ICLR 2026][LLM Agent][test-time learning] This paper proposes the J-TTL benchmark to measure an agent's ability to "learn while playing" on the same task, and introduces EvoTest—a fine-tuning-free, gradient-free framework. After each episode, an Evolver Agent reads the full trajectory text to evolutionarily optimize the agent's prompts, memories, hyperparameters, and tool usage, enabling continuous performance gains through repeated attempts.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - test-time learning
-  - self-improving agent
-  - evolutionary optimization
-  - gradient-free
-  - Jericho
-  - UCB selection
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "test-time learning"
+  - "self-improving agent"
+  - "evolutionary optimization"
+  - "gradient-free"
+  - "Jericho"
+  - "UCB selection"
 date: 2026-05-08
-content_hash: 81b17564dbf3d1b4
+content_hash: 6d2bd43b43bbfe5b
 ---
+
 # EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems
 
 **Conference**: ICLR 2026  
@@ -144,10 +145,10 @@ Evolver LLM quality ablation (Detective): o3 (0.94) > DeepSeek-V3 (0.90) > Qwen2
 ## Related Papers
 
 - [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
+- [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](../../ICML2026/llm_agent/from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
 - [\[ICLR 2026\] GTA1: GUI Test-time Scaling Agent](gta1_gui_test-time_scaling_agent.md)
 - [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
 - [\[ICLR 2026\] Pushing Test-Time Scaling Limits of Deep Search with Asymmetric Verification](pushing_test-time_scaling_limits_of_deep_search_with_asymmetric_verification.md)
-- [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](../../ICML2026/llm_agent/from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
 
 </div>
 

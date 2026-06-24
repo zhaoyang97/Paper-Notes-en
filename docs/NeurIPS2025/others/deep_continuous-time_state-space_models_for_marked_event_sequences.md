@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Deep Continuous-Time State-Space Models for Marked Event Sequences
 description: >-
-  [NeurIPS 2025][Marked Temporal Point Processes] S2P2 unifies linear Hawkes processes with deep state space models by stacking multiple implicit Linear Hawkes (LLH) layers with nonlinear activations…
+  [NeurIPS 2025 Spotlight][Marked Temporal Point Processes] S2P2 unifies linear Hawkes processes with deep state space models by stacking multiple implicit Linear Hawkes (LLH) layers with nonlinear activations, yielding a highly expressive continuous-time MTPP model. It leverages parallel scanning to achieve linear complexity and sub-linear runtime, improving predictive likelihood by an average of 33% across 8 real-world datasets.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Marked Temporal Point Processes"
   - "State Space Models"
   - "Hawkes Process"
   - "Parallel Scan"
   - "Continuous-Time Modeling"
 date: 2026-05-08
-content_hash: 84e6fcb8d0fe4d75
+content_hash: 8d769e2e2e0b4876
 ---
 
 # Deep Continuous-Time State-Space Models for Marked Event Sequences
@@ -150,10 +150,10 @@ S2P2 demonstrates a particularly pronounced advantage on EHRSHOT (a large-scale 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
+- [\[ICML 2025\] UnHiPPO: Uncertainty-Aware Initialization for State Space Models](../../ICML2025/others/unhippo_uncertainty-aware_initialization_for_state_space_models.md)
 - [\[NeurIPS 2025\] Continuous Thought Machines](continuous_thought_machines.md)
+- [\[ICLR 2026\] Exploring State-Space Models for Data-Specific Neural Representations](../../ICLR2026/others/exploring_state-space_models_for_data-specific_neural_representations.md)
 - [\[NeurIPS 2025\] Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes](addressing_mark_imbalance_in_integrationfree_neural_marked_t.md)
-- [\[NeurIPS 2025\] SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks](space_spike-aware_consistency_enhancement_for_test-time_adaptation_in_spiking_ne.md)
-- [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
 
 </div>
 

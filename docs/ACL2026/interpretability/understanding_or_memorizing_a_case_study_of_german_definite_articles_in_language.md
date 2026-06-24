@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Understanding or Memorizing? A Case Study of German Definite Articles in Language Models
 description: >-
-  [ACL 2026][Interpretability][Gradiend] This study employs the Gradiend gradient interpretability method to investigate whether language models rely on abstract syntactic rules or surface-level memorization when predicting German definite articles (der/die/das/den/dem/des). The findings indicate that models rely at least partially on memorized associations r
+  [ACL 2026][Interpretability][Syntactic encoding] This study employs the Gradiend gradient interpretability method to investigate whether language models rely on abstract syntactic rules or surface-level memorization when predicting German definite articles (der/die/das/den/dem/des). The findings indicate that models rely at least partially on memorized associations rather than strict rule-based encoding.
 tags:
-  - ACL 2026
-  - Interpretability
-  - Gradiend
+  - "ACL 2026"
+  - "Interpretability"
+  - "Syntactic encoding"
+  - "memory vs. generalization"
+  - "German articles"
+  - "gradient interpretability"
+  - "Gradiend"
 date: 2026-05-08
-content_hash: b9af0bbdc8d56b58
+content_hash: 7dca23ef7e3c0877
 ---
+
 # Understanding or Memorizing? A Case Study of German Definite Articles in Language Models
 
 **Conference**: ACL 2026  
@@ -138,6 +143,7 @@ Gradiend is trained with an MSE reconstruction loss $\|\text{dec}(\text{enc}(\na
 - Value: ⭐⭐⭐⭐ Provides significant causal evidence for the memory vs. rule debate in LM syntactic encoding.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -145,8 +151,8 @@ Gradiend is trained with an MSE reconstruction loss $\|\text{dec}(\text{enc}(\na
 - [\[ACL 2026\] Interpretable Semantic Gradients in SSD: A PCA Sweep Approach and a Case Study on AI Discourse](interpretable_semantic_gradients_in_ssd_a_pca_sweep_approach_and_a_case_study_on.md)
 - [\[ICML 2025\] Do Sparse Autoencoders Generalize? A Case Study of Answerability](../../ICML2025/interpretability/do_sparse_autoencoders_generalize_a_case_study_of_answerability.md)
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
+- [\[ICLR 2026\] Neuron-Level Analysis of Cultural Understanding in Large Language Models](../../ICLR2026/interpretability/neuron-level_analysis_of_cultural_understanding_in_large_language_models.md)
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
 
 </div>
 

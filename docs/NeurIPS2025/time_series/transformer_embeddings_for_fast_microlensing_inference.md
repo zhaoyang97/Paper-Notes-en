@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Transformer Embeddings for Fast Microlensing Inference
 description: >-
-  [NeurIPS 2025][Time Series][Microlensing] This paper combines a Transformer encoder with Neural Posterior Estimation (NPE) to perform fast, well-calibrated parameter inference directly from sparse, noisy…
+  [NeurIPS 2025][Time Series][Microlensing] This paper combines a Transformer encoder with Neural Posterior Estimation (NPE) to perform fast, well-calibrated parameter inference directly from sparse, noisy, and irregularly sampled microlensing light curves, achieving speedups exceeding $10^4\times$ over traditional MCMC methods.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Posterior Estimation"
   - "Free-Floating Planets"
 date: 2026-05-08
-content_hash: afdaf4c1df0f0ceb
+content_hash: 1618c5c5a0de777b
 ---
 
 # Transformer Embeddings for Fast Microlensing Inference
@@ -136,11 +136,11 @@ $$\theta \rightarrow \text{Simulated Light Curves} \rightarrow \text{Data Augmen
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Decomposition of Small Transformer Models](decomposition_of_small_transformer_models.md)
+- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](../../ICLR2026/time_series/efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 - [\[NeurIPS 2025\] In-Context Learning of Stochastic Differential Equations with Foundation Inference Models](in-context_learning_of_stochastic_differential_equations_with_foundation_inferen.md)
 - [\[NeurIPS 2025\] Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions](neural_stochastic_flows_solver-free_modelling_and_inference_for_sde_solutions.md)
-- [\[ICLR 2026\] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data](../../ICLR2026/time_series/relational_transformer_toward_zero-shot_foundation_models_for_relational_data.md)
-- [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
+- [\[NeurIPS 2025\] Decomposition of Small Transformer Models](decomposition_of_small_transformer_models.md)
+- [\[NeurIPS 2025\] BubbleFormer: Forecasting Boiling with Transformers](bubbleformer_forecasting_boiling_with_transformers.md)
 
 </div>
 

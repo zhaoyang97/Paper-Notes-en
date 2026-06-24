@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network
 description: >-
-  [CVPR 2026][Object Detection][Deformable DETR] D2FANet introduces **frequency-domain feature aggregation** to video object detection for the first time. It employs a frequency-domain branch (Octave convolution for high/low frequency decomposition + cross-scale neighborhood fusion + frequency temporal attention) and a spatio-temporal branch (adaptive token aggregati
+  [CVPR 2026][Video Understanding][Video Object Detection] D2FANet introduces **frequency-domain feature aggregation** to video object detection for the first time. It employs a frequency-domain branch (Octave convolution for high/low frequency decomposition + cross-scale neighborhood fusion + frequency temporal attention) and a spatio-temporal branch (adaptive token aggregation guided by importance maps) to enhance object queries independently. The concatenated queries are fed…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Deformable DETR
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Object Detection"
+  - "Frequency-Domain Feature Aggregation"
+  - "Importance Guidance"
+  - "Deformable DETR"
+  - "Spatio-temporal Modeling"
 date: 2026-05-08
-content_hash: a5de3848da96e40a
+content_hash: f09d2fa65804f45a
 ---
+
 # D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network
 
 **Conference**: CVPR 2026  
@@ -163,15 +168,15 @@ Channel ratio $\alpha$ and Importance Map Config:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] When Transformers Meet Mamba: A Hybrid Transformer-Mamba Network for Video Object Detection](when_transformers_meet_mamba_a_hybrid_transformer-mamba_network_for_video_object.md)
-- [\[CVPR 2026\] BDNet: Bio-Inspired Dual-Backbone Small Object Detection Network](bdnetbio-inspired_dual-backbone_small_object_detection_network.md)
-- [\[CVPR 2026\] Spike-driven Discrete Aggregation for Event-based Object Detection](spike-driven_discrete_aggregation_for_event-based_object_detection.md)
-- [\[CVPR 2026\] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)
-- [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
+- [\[CVPR 2026\] ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Video Understanding](elv-halluc_benchmarking_semantic_aggregation_hallucinations_in_video_understandi.md)
+- [\[CVPR 2026\] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition](tcei_test_time_calibration_experience_intuition_mot.md)
+- [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] StreamRAG: Enhancing Real-Time Video Understanding with Retrieval Augmentation](streamrag_enhancing_real-time_video_understanding_with_retrieval_augmentation.md)
 
 </div>
 

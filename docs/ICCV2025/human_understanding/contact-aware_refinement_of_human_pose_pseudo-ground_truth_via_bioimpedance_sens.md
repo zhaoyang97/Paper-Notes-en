@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Contact-Aware Refinement of Human Pose Pseudo-Ground Truth via Bioimpedance Sensing
 description: >-
-  [ICCV 2025][Human Understanding][self-contact detection] This paper proposes BioTUCH, a framework that detects self-contact events via wrist-to-wrist bioimpedance sensing and performs contact-aware 3D arm pose refinement…
+  [ICCV 2025][Human Understanding][self-contact detection] This paper proposes BioTUCH, a framework that detects self-contact events via wrist-to-wrist bioimpedance sensing and performs contact-aware 3D arm pose refinement in conjunction with a visual pose estimator, achieving an average improvement of 11.7% in reconstruction accuracy.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "SMPL-X"
   - "multimodal fusion"
 date: 2026-05-08
-content_hash: cc4bd5819c00e2d0
+content_hash: d8f7360e5f899c5e
 ---
 
 # Contact-Aware Refinement of Human Pose Pseudo-Ground Truth via Bioimpedance Sensing
@@ -145,10 +145,10 @@ BioTUCH consists of two stages: (1) detecting the onset and offset of self-conta
 ## Related Papers
 
 - [\[ICCV 2025\] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation](dynamic_reconstruction_of_hand-object_interaction_with_distributed_force-aware_c.md)
+- [\[CVPR 2025\] FreeUV: Ground-Truth-Free Realistic Facial UV Texture Recovery via Cross-Assembly](../../CVPR2025/human_understanding/freeuv_ground-truth-free_realistic_facial_uv_texture_recovery_via_cross-assembly.md)
 - [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
-- [\[CVPR 2026\] Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation](../../CVPR2026/human_understanding/shoe_style-invariant_and_ground-aware_learning_for_dense_foot_contact_estimation.md)
-- [\[ICCV 2025\] High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation](high-resolution_spatiotemporal_modeling_with_global-local_state_space_models_for.md)
-- [\[ICCV 2025\] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation](mixri_mixing_features_of_reference_images_for_novel_object_pose_estimation.md)
+- [\[CVPR 2026\] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification](../../CVPR2026/human_understanding/view-aware_semantic_alignment_for_aerial-ground_person_re-identification.md)
+- [\[ICLR 2026\] InfBaGel: Human-Object-Scene Interaction Generation with Dynamic Perception and Iterative Refinement](../../ICLR2026/human_understanding/infbagel_human-object-scene_interaction_generation_with_dynamic_perception_and_i.md)
 
 </div>
 

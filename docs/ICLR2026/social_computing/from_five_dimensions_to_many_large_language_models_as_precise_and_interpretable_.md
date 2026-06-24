@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Five Dimensions to Many: Large Language Models as Precise and Interpretable Psychological Profilers
 description: >-
-  [ICLR 2026][Social Computing][Paper Note] Provided with only 20 Big Five personality item responses of an individual, LLMs are tasked to role-play and predict that individual's responses to 9 other psychological scales. The results show that the "inter-scale correlation structure" reconstructed by LLMs aligns highly with real human data ($R^2>0.88$). Analysis
+  [ICLR2026][Social Computing][Big Five] Provided with only 20 Big Five personality item responses of an individual, LLMs are tasked to role-play and predict that individual's responses to 9 other psychological scales. The results show that the "inter-scale correlation structure" reconstructed by LLMs aligns highly with real human data ($R^2>0.88$). Analysis of reasoning chains reveals a two-stage abstraction process where LLMs compress raw scores into natural language personal…
 tags:
-  - ICLR 2026
-  - Social Computing
+  - "ICLR2026"
+  - "Social Computing"
+  - "Big Five"
+  - "Psychological Structure Reconstruction"
+  - "Structural Amplification"
+  - "Idealization Hypothesis"
+  - "Reasoning Interpretability"
 date: 2026-05-08
-content_hash: 3ca6363ad3efc60a
+content_hash: bc00cd29991b1938
 ---
+
 # From Five Dimensions to Many: Large Language Models as Precise and Interpretable Psychological Profilers
 
 **Conference**: ICLR2026  

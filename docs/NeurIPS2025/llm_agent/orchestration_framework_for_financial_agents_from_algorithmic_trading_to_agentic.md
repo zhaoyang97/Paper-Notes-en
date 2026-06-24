@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading
 description: >-
-  [NeurIPS 2025][LLM Agent][financial agents] This paper proposes FinAgent, an orchestration framework that maps each component of a traditional algorithmic trading system to a dedicated AI agent (Planner, Orchestrator…
+  [NeurIPS 2025][LLM Agent][financial agents] This paper proposes FinAgent, an orchestration framework that maps each component of a traditional algorithmic trading system to a dedicated AI agent (Planner, Orchestrator, Alpha/Risk/Portfolio/Backtest/Execution/Audit/Memory agents), employs the MCP protocol for control communication and the A2A protocol for inter-agent communication, and validates the framework's feasibility on stock and BTC trading tasks.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "MCP protocol"
   - "quantitative trading"
 date: 2026-05-08
-content_hash: 93d98d84023137b5
+content_hash: 1ae381937519be54
 ---
 
 # Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading
@@ -169,11 +169,11 @@ $$w_{\text{model}}(q_t) = \begin{cases} 0.10, & q_t < 0.05 \\ 0.20, & 0.05 \leq 
 
 ## Related Papers
 
-- [\[ICML 2026\] Position: Agentic AI Orchestration Should Be Bayes-Consistent](../../ICML2026/llm_agent/position_agentic_ai_orchestration_should_be_bayes-consistent.md)
+- [\[ICLR 2026\] Trade in Minutes! Rationality-driven Agentic System for Quantitative Financial Trading](../../ICLR2026/llm_agent/trade_in_minutes_rationality-driven_agentic_system_for_quantitative_financial_tr.md)
 - [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
-- [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
 - [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
-- [\[ACL 2026\] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration](../../ACL2026/llm_agent/towards_scalable_lightweight_gui_agents_via_multi-role_orchestration.md)
+- [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
+- [\[NeurIPS 2025\] Agentic NL2SQL to Reduce Computational Costs](agentic_nl2sql_to_reduce_computational_costs.md)
 
 </div>
 

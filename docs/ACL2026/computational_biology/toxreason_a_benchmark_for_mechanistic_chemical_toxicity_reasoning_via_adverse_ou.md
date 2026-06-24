@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ToxReason: A Benchmark for Mechanistic Chemical Toxicity Reasoning via Adverse Outcome Pathway
 description: >-
-  [ACL 2026][Computational Biology][Reinforcement Learning] This paper introduces ToxReason, a benchmark for mechanistic chemical toxicity reasoning based on the Adverse Outcome Pathway (AOP) framework. It integrates drug-target experimental data with toxicity labels, requiring models to reason from Molecular Initiating Events (MIE) to organ-level Adverse Outcomes (AO). A 4B mo
+  [ACL 2026 Findings][Computational Biology][Toxicity Reasoning] This paper introduces ToxReason, a benchmark for mechanistic chemical toxicity reasoning based on the Adverse Outcome Pathway (AOP) framework. It integrates drug-target experimental data with toxicity labels, requiring models to reason from Molecular Initiating Events (MIE) to organ-level Adverse Outcomes (AO). A 4B model trained with GRPO reinforcement learning outperforms large models like GPT-5 in both toxicity…
 tags:
-  - ACL 2026
-  - Computational Biology
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Computational Biology"
+  - "Toxicity Reasoning"
+  - "Adverse Outcome Pathway"
+  - "Benchmarking"
+  - "Reinforcement Learning"
+  - "LLM Evaluation"
 date: 2026-05-08
-content_hash: 1531751a9f635823
+content_hash: 5199042d49b6170f
 ---
+
 # ToxReason: A Benchmark for Mechanistic Chemical Toxicity Reasoning via Adverse Outcome Pathway
 
 **Conference**: ACL 2026 Findings  
@@ -144,11 +149,11 @@ The GRPO reward synthesizes two signals: the accuracy of the toxicity prediction
 
 ## Related Papers
 
+- [\[ICLR 2026\] Exploring Synthesizable Chemical Space with Iterative Pathway Refinements](../../ICLR2026/computational_biology/exploring_synthesizable_chemical_space_with_iterative_pathway_refinements.md)
 - [\[NeurIPS 2025\] Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations](../../NeurIPS2025/computational_biology/beyond_chemical_qa_evaluating_llms_chemical_reasoning_with_modular_chemical_oper.md)
+- [\[ICLR 2026\] SC-Arena: A Natural Language Benchmark and Knowledge-Enhanced Evaluation for Single-Cell Reasoning](../../ICLR2026/computational_biology/sc-arena_a_natural_language_benchmark_for_single-cell_reasoning_with_knowledge-a.md)
+- [\[ICLR 2026\] CP-Agent: Context-Aware Multimodal Reasoning for Cellular Morphological Profiling under Chemical Perturbations](../../ICLR2026/computational_biology/cp-agent_contextaware_multimodal_reasoning_for_cellular_morphological_profiling_.md)
 - [\[ACL 2026\] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling](aroma_augmented_reasoning_over_a_multimodal_architecture_for_virtual_cell_geneti.md)
-- [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](../../NeurIPS2025/computational_biology/fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
-- [\[ICML 2026\] SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning](../../ICML2026/computational_biology/sigma_structure-invariant_generative_molecular_alignment_for_chemical_language_m.md)
-- [\[ICML 2026\] TadA-Bench: A Million-Variant Benchmark for Future-Round Discovery Toward Agentic Protein Engineering](../../ICML2026/computational_biology/tada-bench_a_million-variant_benchmark_for_future-round_discovery_toward_agentic.md)
 
 </div>
 

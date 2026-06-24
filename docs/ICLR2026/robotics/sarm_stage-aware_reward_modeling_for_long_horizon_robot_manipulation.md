@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] For long-horizon, contact-rich deformable object manipulation (e.g., T-shirt folding), this paper proposes SARM—replacing "frame-index progress labels" with "semantically aligned progress labels" via natural language sub-task annotations. It trains a dual-estimator reward model for "stage estimation + sub-task progress
+  [ICLR 2026][Robotics][Stage-aware reward model] For long-horizon, contact-rich deformable object manipulation (e.g., T-shirt folding), this paper proposes SARM—replacing "frame-index progress labels" with "semantically aligned progress labels" via natural language sub-task annotations. It trains a dual-estimator reward model for "stage estimation + sub-task progress estimation," which drives Reward-Aligned Behavior Cloning (RA-BC) to perform soft filtering and re-weighting of…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Stage-aware reward model"
+  - "long-horizon manipulation"
+  - "deformable objects"
+  - "imitation learning"
+  - "behavior cloning"
 date: 2026-05-08
-content_hash: 977ac10330821997
+content_hash: 64e0bc0dcc960694
 ---
+
 # SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation
 
 **Conference**: ICLR 2026  
@@ -142,15 +148,15 @@ Policy Learning (T-shirt folding success rate, 12 trials per task):
 - Value: ⭐⭐⭐⭐ Provides an actionable reward modeling + soft filtering paradigm for long-horizon deformable manipulation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](compositional_diffusion_with_guided_search_for_long-horizon_planning.md)
 - [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](../../AAAI2026/robotics/manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
-- [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
 - [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](../../AAAI2026/robotics/actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
+- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](compositional_diffusion_with_guided_search_for_long-horizon_planning.md)
+- [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
 - [\[CVPR 2026\] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning](../../CVPR2026/robotics/agile_learning_robust_long-horizon_manipulation_via_affordance-grounded_bidirect.md)
 
 </div>

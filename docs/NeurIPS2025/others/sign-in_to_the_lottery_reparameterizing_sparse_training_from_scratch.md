@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sign-In to the Lottery: Reparameterized Sparse Training from Scratch
 description: >-
-  [NeurIPS 2025][sparse training] This paper identifies the root cause of poor performance in pruning-at-initialization (PaI) sparse training as the inability to learn correct parameter signs as dense-to-sparse methods do.…
+  [NeurIPS 2025][sparse training] This paper identifies the root cause of poor performance in pruning-at-initialization (PaI) sparse training as the inability to learn correct parameter signs as dense-to-sparse methods do. To address this, the authors propose Sign-In reparameterization ($\theta = m \odot w$), which introduces an internal degree of freedom to facilitate sign flipping. The approach is theoretically shown to resolve a class of sign-flipping scenarios complementary…
 tags:
   - "NeurIPS 2025"
   - "sparse training"
@@ -11,7 +11,7 @@ tags:
   - "reparameterization"
   - "pruning at initialization"
 date: 2026-05-08
-content_hash: fdb1ac99f59a85e2
+content_hash: aefff7bb2dd82212
 ---
 
 # Sign-In to the Lottery: Reparameterized Sparse Training from Scratch
@@ -129,11 +129,11 @@ In a simplified two-layer single-neuron setting:
 
 ## Related Papers
 
-- [\[ICML 2026\] HASTE: Hardware-Aware Dynamic Sparse Training for Large Output Spaces](../../ICML2026/others/haste_hardware-aware_dynamic_sparse_training_for_large_output_spaces.md)
+- [\[ICML 2025\] Sparse Training from Random Initialization: Aligning Lottery Ticket Masks using Weight Symmetry](../../ICML2025/others/sparse_training_from_random_initialization_aligning_lottery_ticket_masks_using_w.md)
+- [\[CVPR 2025\] ZO-SAM: Zero-Order Sharpness-Aware Minimization for Efficient Sparse Training](../../CVPR2025/others/zo-sam_zero-order_sharpness-aware_minimization_for_efficient_sparse_training.md)
 - [\[NeurIPS 2025\] Training the Untrainable: Introducing Inductive Bias via Representational Alignment](training_the_untrainable_introducing_inductive_bias_via_representational_alignme.md)
-- [\[NeurIPS 2025\] Meta-learning three-factor plasticity rules for structured credit assignment with sparse feedback](meta-learning_three-factor_plasticity_rules_for_structured_credit_assignment_wit.md)
-- [\[ICLR 2026\] A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction](../../ICLR2026/others/a_scalable_inter-edge_correlation_modeling_in_copulagnn_for_link_sign_prediction.md)
-- [\[ICLR 2026\] Hilbert-Guided Sparse Local Attention](../../ICLR2026/others/hilbert-guided_sparse_local_attention.md)
+- [\[ACL 2025\] Instruction-Tuning Data Synthesis from Scratch via Web Reconstruction](../../ACL2025/others/instruction-tuning_data_synthesis_from_scratch_via_web_reconstruction.md)
+- [\[CVPR 2025\] EVOS: Efficient Implicit Neural Training via EVOlutionary Selector](../../CVPR2025/others/evos_efficient_implicit_neural_training_via_evolutionary_selector.md)
 
 </div>
 

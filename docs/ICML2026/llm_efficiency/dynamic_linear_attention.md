@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Linear Attention
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] Addressing the issue where existing "multi-state linear attention" mechanisms merge memory using fixed rules, causing critical tokens to be compressed into coarse summaries prematurely and accumulating errors, DLA proposes an **information-aware + capacity-constrained** dynamic memory framework. By using a lightweight
+  [ICML2026][LLM Efficiency][Linear Attention] Addressing the issue where existing "multi-state linear attention" mechanisms merge memory using fixed rules, causing critical tokens to be compressed into coarse summaries prematurely and accumulating errors, DLA proposes an **information-aware + capacity-constrained** dynamic memory framework. By using a lightweight "state information score" to adaptively determine when to create or merge memory states based on token-level inform…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "Multi-state Memory"
+  - "Dynamic State Merging"
+  - "Capacity-constrained Cache"
+  - "Long Context"
 date: 2026-05-08
-content_hash: 2b7183638be58cc1
+content_hash: 53ed67c59c353bf8
 ---
+
 # Dynamic Linear Attention
 
 **Conference**: ICML2026  
@@ -139,11 +145,11 @@ The improvement in retrieval tasks is particularly significant—averaging a 44%
 
 ## Related Papers
 
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training](../../ICLR2026/llm_efficiency/race_attention_a_strictly_linear-time_attention_for_long-sequence_training.md)
+- [\[ICLR 2026\] Log-Linear Attention](../../ICLR2026/llm_efficiency/log-linear_attention.md)
+- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts](../../ICLR2026/llm_efficiency/race_attention_a_strictly_linear-time_attention_layer_for_training_on_outrageous.md)
+- [\[ICLR 2026\] Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression](../../ICLR2026/llm_efficiency/local_linear_attention_an_optimal_interpolation_of_linear_and_softmax_attention_.md)
+- [\[ICLR 2026\] Scaling Linear Attention Capacity with Sparse State Expansion](../../ICLR2026/llm_efficiency/scaling_linear_attention_capacity_with_sparse_state_expansion.md)
 - [\[ICML 2026\] Kalman Linear Attention: Parallel Bayesian Filtering For Efficient Language Modelling and State Tracking](kalman_linear_attention_parallel_bayesian_filtering_for_efficient_language_model.md)
-- [\[NeurIPS 2025\] Tiled Flash Linear Attention: More Efficient Linear RNN and xLSTM Kernels](../../NeurIPS2025/llm_efficiency/tiled_flash_linear_attention_more_efficient_linear_rnn_and_xlstm_kernels.md)
-- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](../../NeurIPS2025/llm_efficiency/zeros_zero-sum_linear_attention_for_efficient_transformers.md)
-- [\[ICML 2026\] IR3DE: A Linear Router for Large Language Models](ir3de_a_linear_router_for_large_language_models.md)
 
 </div>
 

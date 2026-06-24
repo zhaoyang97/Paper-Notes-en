@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Meta-CoT: Enhancing Granularity and Generalization in Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Chain-of-Thought] Addressing the dilemma where CoT in unified multimodal models for image editing is either "too vague" or "too specialized," Meta-CoT explicitly decomposes any single-image editing task into a triplet of "(Task, Target, Required Understanding)." It further breaks tasks down into 5 combinable "meta-task" bases and employ
+  [CVPR 2026][Image Generation][Instruct-guided Image Editing] Addressing the dilemma where CoT in unified multimodal models for image editing is either "too vague" or "too specialized," Meta-CoT explicitly decomposes any single-image editing task into a triplet of "(Task, Target, Required Understanding)." It further breaks tasks down into 5 combinable "meta-task" bases and employs a "CoT-Editing Consistency" reward for RL alignment. This achieves a 15.8% overall improvement on…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Chain-of-Thought
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Instruct-guided Image Editing"
+  - "Chain-of-Thought"
+  - "Task Decomposition"
+  - "Meta-task"
+  - "Reinforcement Learning Alignment"
 date: 2026-05-08
-content_hash: d5a6e6c60f349a9b
+content_hash: ac5e5d7c6af40388
 ---
+
 # Meta-CoT: Enhancing Granularity and Generalization in Image Editing
 
 **Conference**: CVPR 2026  
@@ -128,10 +133,10 @@ Compared to the Train-Editing-Only baseline, the overall improvement is **15.8%*
 ## Related Papers
 
 - [\[ICML 2026\] Semantic Granularity Navigation in Image Editing](../../ICML2026/image_generation/semantic_granularity_navigation_in_image_editing.md)
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](generative_modeling_of_weights_generalization_or_memorization.md)
+- [\[CVPR 2026\] UniGen-1.5: Enhancing Image Generation and Editing through Reward Unification in RL](unigen-15_enhancing_image_generation_and_editing_through_reward_unification_in_r.md)
 - [\[AAAI 2026\] UNSEEN: Enhancing Dataset Pruning from a Generalization Perspective](../../AAAI2026/image_generation/unseen_enhancing_dataset_pruning_from_a_generalization_perspective.md)
-- [\[CVPR 2026\] COT-FM: Cluster-wise Optimal Transport Flow Matching](cot-fm_cluster-wise_optimal_transport_flow_matching.md)
-- [\[CVPR 2026\] ReasonEdit: Towards Reasoning-Enhanced Image Editing Models](reasonedit_towards_reasoning-enhanced_image_editing_models.md)
-- [\[CVPR 2026\] EditMGT: Unleashing Potentials of Masked Generative Transformers in Image Editing](editmgt_unleashing_potentials_of_masked_generative_transformers_in_image_editing.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 
 </div>
 

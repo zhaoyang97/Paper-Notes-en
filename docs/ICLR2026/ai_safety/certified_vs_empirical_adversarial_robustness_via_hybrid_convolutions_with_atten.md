@@ -1,14 +1,21 @@
 ---
 title: >-
-  [Paper Note] HyCAS：用混合卷积与注意力随机性，同时打通认证鲁棒与经验鲁棒
+  [Paper Note] HyCAS: Simultaneous Certified and Empirical Robustness via Hybrid Convolutional and Attentional Stochasticity
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] HyCAS couples deterministic 1-Lipschitz spectral-normalized convolutions with two types of internal architectural stochasticity (spectral-normalized random projection + random attentional noise) into a global $\le 2$-Lipschitz randomized network. This achieves both a provable $\ell_2$ certified radius and empirical rob
+  [ICLR 2026][AI Safety][Certified Robustness] HyCAS couples deterministic 1-Lipschitz spectral-normalized convolutions with two types of internal architectural stochasticity (spectral-normalized random projection + random attentional noise) into a global $\le 2$-Lipschitz randomized network. This achieves both a provable $\ell_2$ certified radius and empirical robustness against strong $\ell_\infty$ attacks (APGD/AutoAttack) within the same model.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Certified Robustness"
+  - "Randomized Smoothing"
+  - "Lipschitz Constraint"
+  - "Spectral Normalization"
+  - "Empirical Robustness"
+  - "Medical Imaging"
 date: 2026-05-08
-content_hash: 620510202f0f803c
+content_hash: 7da2df7efd5dc1a1
 ---
+
 # HyCAS: Simultaneous Certified and Empirical Robustness via Hybrid Convolutional and Attentional Stochasticity
 
 **Conference**: ICLR 2026  
@@ -113,11 +120,11 @@ HyCAS outperforms the second-best empirical defense CTRW by approx **+1.5–4.2%
 
 ## Related Papers
 
-- [\[ICLR 2026\] Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature](dataless_weight_disentanglement_in_task_arithmetic_via_kronecker-factored_approx.md)
-- [\[ICLR 2026\] Expressiveness of Multi-Neuron Convex Relaxations in Neural Network Certification](expressiveness_of_multi-neuron_convex_relaxations_in_neural_network_certificatio.md)
-- [\[ICLR 2026\] Optimizing Canaries for Privacy Auditing with Metagradient Descent](optimizing_canaries_for_privacy_auditing_with_metagradient_descent.md)
-- [\[ICLR 2026\] Robust Federated Inference](robust_federated_inference.md)
-- [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
+- [\[ICML 2025\] Enhancing Certified Robustness via Block Reflector Orthogonal Layers and Logit Annealing Loss](../../ICML2025/ai_safety/enhancing_certified_robustness_via_block_reflector_orthogonal_layers_and_logit_a.md)
+- [\[ICLR 2026\] How to Cure Newton for Unlearning Neural Networks? An Empirical Study from the Hessian Perspective](how_to_cure_newton_for_unlearning_neural_networks_an_empirical_study_from_the_he.md)
+- [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
+- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](../../ICML2026/ai_safety/rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
+- [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
 
 </div>
 

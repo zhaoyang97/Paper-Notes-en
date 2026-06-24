@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] TrimR：基于验证器、免训练的思维裁剪，用于高效测试时扩展
+  [Paper Note] TrimR: Validator-based, Training-free Thinking Trimming for Efficient Test-time Scaling
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] TrimR utilizes a finetuning-free 7B small validator to real-time detect three types of redundancies—"overthinking / underthinking / repetition"—during the Chain-of-Thought (CoT) generation of Large Reasoning Models (LRMs). By injecting guide prompts to **mildly or forcibly** conclude the reasoning, TrimR reduces the ru
+  [ICLR 2026][LLM Efficiency][Large Reasoning Models] TrimR utilizes a finetuning-free 7B small validator to real-time detect three types of redundancies—"overthinking / underthinking / repetition"—during the Chain-of-Thought (CoT) generation of Large Reasoning Models (LRMs). By injecting guide prompts to **mildly or forcibly** conclude the reasoning, TrimR reduces the runtime of QwQ-32B, R1-Distill-Qwen-32B, and Pangu-R-38B by up to 70% on MATH500, AIME24/25, and GPQA…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Large Reasoning Models"
+  - "Test-time Scaling"
+  - "Thinking Trimming"
+  - "Overthinking"
+  - "Online Inference Systems"
 date: 2026-05-08
-content_hash: 2d000f9010079c82
+content_hash: 896c24b2881fc9f8
 ---
+
 # TrimR: Validator-based, Training-free Thinking Trimming for Efficient Test-time Scaling
 
 **Conference**: ICLR 2026  
@@ -139,15 +145,16 @@ TrimR achieves the best balance between token savings and accuracy preservation.
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Up, Speeding Up: A Benchmark of Speculative Decoding for Efficient LLM Test-Time Scaling](scaling_up_speeding_up_a_benchmark_of_speculative_decoding_for_efficient_llm_tes.md)
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
-- [\[ICLR 2026\] On-the-Fly Adaptation to Quantization: Configuration-Aware LoRA for Efficient Fine-Tuning of Quantized LLMs](on-the-fly_adaptation_to_quantization_configuration-aware_lora_for_efficient_fin.md)
-- [\[ICLR 2026\] Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling](semantic_parallelism_redefining_efficient_moe_inference_via_model-data_co-schedu.md)
+- [\[ICLR 2026\] In-Place Test-Time Training](in-place_test-time_training.md)
+- [\[ICLR 2026\] Test-Time Training Done Right](test-time_training_done_right.md)
+- [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
+- [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
 
 </div>
 

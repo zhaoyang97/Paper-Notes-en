@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Generative Blocks World: Moving Things Around in Pictures
 description: >-
-  [ICLR 2026][Image Generation][Rectified Flow] The proposed method decomposes an image scene into a set of draggable 3D convex polytopes (blocks world). Users can directly move, scale, or rotate these primitives in 3D or move the camera. Real-time rendering is performed via a FLUX flow model conditioned on depth and texture hints, achieving geometrically consistent
+  [ICLR 2026][Image Generation][Convex Primitive Decomposition] The proposed method decomposes an image scene into a set of draggable 3D convex polytopes (blocks world). Users can directly move, scale, or rotate these primitives in 3D or move the camera. Real-time rendering is performed via a FLUX flow model conditioned on depth and texture hints, achieving geometrically consistent and identity-preserving 3D-aware image editing.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Rectified Flow
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Convex Primitive Decomposition"
+  - "3D Editable Representation"
+  - "Rectified Flow"
+  - "Depth-conditioned Generation"
+  - "Texture Hint"
+  - "Camera Movement"
 date: 2026-05-08
-content_hash: 0a2aeee2144484e0
+content_hash: 77a32604293f80d1
 ---
+
 # Generative Blocks World: Moving Things Around in Pictures
 
 **Conference**: ICLR 2026  
@@ -107,6 +113,7 @@ flowchart LR
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

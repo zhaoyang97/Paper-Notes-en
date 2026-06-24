@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] The TeamHOI framework is proposed, utilizing a Transformer-based decentralized policy network and Masked Adversarial Motion Priors (Masked AMP). This allows a single policy to generalize to cooperative carrying tasks with an arbitrary number of agents, achieving a $97\%+$ success rate for teams of 2-8 humanoid agents c
+  [CVPR 2026][Multi-agent cooperation] The TeamHOI framework is proposed, utilizing a Transformer-based decentralized policy network and Masked Adversarial Motion Priors (Masked AMP). This allows a single policy to generalize to cooperative carrying tasks with an arbitrary number of agents, achieving a $97\%+$ success rate for teams of 2-8 humanoid agents carrying tables.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Multi-agent cooperation"
+  - "Physics-based humanoid control"
+  - "Human-object interaction"
+  - "Transformer policy network"
+  - "Adversarial motion priors"
 date: 2026-05-08
-content_hash: 55d9c37080ae443b
+content_hash: c72e59d0a0a6c8e9
 ---
+
 # TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size
 
 **Conference**: CVPR 2026  
@@ -172,11 +177,11 @@ Evaluated on cooperative table-carrying tasks with square ($1.6\text{m} \times 1
 
 ## Related Papers
 
-- [\[CVPR 2026\] RAM: Recover Any 3D Human Motion in-the-Wild](ram_recover_any_3d_human_motion_in-the-wild.md)
-- [\[ICCV 2025\] HUMOTO: A 4D Dataset of Mocap Human Object Interactions](../../ICCV2025/human_understanding/humoto_a_4d_dataset_of_mocap_human_object_interactions.md)
-- [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
-- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
-- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
+- [\[CVPR 2026\] MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics](moocap_a_multi-view_benchmark_for_cow-object-human_interaction_and_behavior_dyna.md)
+- [\[ICCV 2025\] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](../../ICCV2025/others/syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)
+- [\[CVPR 2026\] Modeling the Visual Ambiguity of Human Sketches](modeling_the_visual_ambiguity_of_human_sketches.md)
+- [\[CVPR 2026\] BrepVGAE: Variational Graph Autoencoder with Unified Latent Representation for B-rep](brepvgae_variational_graph_autoencoder_with_unified_latent_representation_for_b-.md)
+- [\[ICLR 2026\] PU-Bench: A Unified Benchmark for Rigorously Reproducible PU Learning](../../ICLR2026/others/pu-bench_a_unified_benchmark_for_rigorous_and_reproducible_pu_learning.md)
 
 </div>
 

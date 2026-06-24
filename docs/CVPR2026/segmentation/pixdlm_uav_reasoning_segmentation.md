@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] This paper defines the UAV Reasoning Segmentation task, constructs the DRSeg benchmark containing 10K high-resolution UAV images with Chain-of-Thought (CoT) annotations, and proposes a dual-path pixel-level multimodal large language model, PixDLM, as a baseline.
+  [CVPR 2026 Highlight][Segmentation][UAV Reasoning Segmentation] This paper defines the UAV Reasoning Segmentation task, constructs the DRSeg benchmark containing 10K high-resolution UAV images with Chain-of-Thought (CoT) annotations, and proposes a dual-path pixel-level multimodal large language model, PixDLM, as a baseline.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026 Highlight"
+  - "Segmentation"
+  - "UAV Reasoning Segmentation"
+  - "Multimodal Large Language Model"
+  - "Dual-path Visual Encoder"
+  - "Chain-of-Thought"
+  - "Pixel-level Prediction"
 date: 2026-05-08
-content_hash: b93bd1acc504da67
+content_hash: 5451818021397a27
 ---
+
 # PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation
 
 **Conference**: CVPR 2026 Highlight  
@@ -140,11 +146,11 @@ Following the standard LISA training paradigm, a mask token is introduced with a
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
 - [\[CVPR 2025\] GLUS: Global-Local Reasoning Unified into A Single Large Language Model for Video Segmentation](../../CVPR2025/segmentation/glus_global-local_reasoning_unified_into_a_single_large_language_model_for_video.md)
-- [\[ACL 2026\] AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation](../../ACL2026/segmentation/anchorseg_language_grounded_query_banks_for_reasoning_segmentation.md)
-- [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)
+- [\[ICLR 2026\] Urban Socio-Semantic Segmentation with Vision-Language Reasoning](../../ICLR2026/segmentation/urban_socio-semantic_segmentation_with_vision-language_reasoning.md)
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](../../ICCV2025/segmentation/himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
+- [\[CVPR 2026\] Dual-level Adapter Boosting Prompt-free Curvilinear Structure Segmentation](dual-level_adapter_boosting_prompt-free_curvilinear_structure_segmentation.md)
+- [\[ECCV 2024\] VISA: Reasoning Video Object Segmentation via Large Language Models](../../ECCV2024/segmentation/visa_reasoning_video_object_segmentation_via_large_language_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Asymmetric Duos: Sidekicks Improve Uncertainty
 description: >-
-  [NeurIPS 2025][Uncertainty Quantification] Asymmetric Duos (AD) pairs a large model with a small "sidekick"—combining their predictions via temperature-weighted logit averaging—achieving near-5× deep ensemble uncertainty…
+  [NeurIPS 2025][Uncertainty Quantification] Asymmetric Duos (AD) pairs a large model with a small "sidekick"—combining their predictions via temperature-weighted logit averaging—achieving near-5× deep ensemble uncertainty estimation quality at only 10–20% additional FLOPs. RN50 AD (5% FLOPs overhead) approaches an $m=5$ deep ensemble (400% FLOPs overhead) on AUROC/AURC/SAC@98.
 tags:
   - "NeurIPS 2025"
   - "Uncertainty Quantification"
@@ -11,7 +11,7 @@ tags:
   - "Temperature Scaling"
   - "FLOPs Efficiency"
 date: 2026-05-08
-content_hash: fe149c3f902d6ec0
+content_hash: b868b504f199e15a
 ---
 
 # Asymmetric Duos: Sidekicks Improve Uncertainty
@@ -132,8 +132,8 @@ Train a large model $f_{large}$ (e.g., ViT-L) and a small model $f_{small}$ (e.g
 - [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](uncertainty_estimation_by_flexible_evidential_deep_learning.md)
 - [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](position_there_is_no_free_bayesian_uncertainty_quantification.md)
 - [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](../../ICCV2025/others/joint_asymmetric_loss_for_learning_with_noisy_labels.md)
-- [\[ICLR 2026\] Measuring Uncertainty Calibration](../../ICLR2026/others/measuring_uncertainty_calibration.md)
-- [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](../../ICML2026/others/possibilistic_predictive_uncertainty_for_deep_learning.md)
+- [\[ACL 2025\] Partial Colexifications Improve Concept Embeddings](../../ACL2025/others/partial_colexifications_improve_concept_embeddings.md)
+- [\[ACL 2025\] MEXMA: Token-level Objectives Improve Sentence Representations](../../ACL2025/others/mexma_token-level_objectives_improve_sentence_representations.md)
 
 </div>
 

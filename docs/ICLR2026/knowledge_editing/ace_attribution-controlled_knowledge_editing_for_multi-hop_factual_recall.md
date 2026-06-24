@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] ACE: Attribution-Controlled Knowledge Editing for Multi-hop Factual Recall
 description: >-
-  [ICLR 2026][Knowledge Editing][MQuAKE] ACE identifies a neglected mechanism via neuron-level attribution where "implicit subjects act as query neurons in multi-hop reasoning, activating value neurons layer-by-layer." Accordingly, it refines editing from "layer-level heuristics" to "query-value pathways," outperforming the SOTA PMET by 9.44% on GPT-J and 37.
+  [ICLR2026][Knowledge Editing][Multi-hop Reasoning] ACE identifies a neglected mechanism via neuron-level attribution where "implicit subjects act as query neurons in multi-hop reasoning, activating value neurons layer-by-layer." Accordingly, it refines editing from "layer-level heuristics" to "query-value pathways," outperforming the SOTA PMET by 9.44% on GPT-J and 37.46% on Qwen3-8B in multi-hop factual recall.
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - MQuAKE
+  - "ICLR2026"
+  - "Knowledge Editing"
+  - "Multi-hop Reasoning"
+  - "Neuron Attribution"
+  - "Query-Value Neurons"
+  - "MQuAKE"
 date: 2026-05-08
-content_hash: 746e9084776e491d
+content_hash: 7db25803e14dfedf
 ---
+
 # ACE: Attribution-Controlled Knowledge Editing for Multi-hop Factual Recall
 
 **Conference**: ICLR2026  

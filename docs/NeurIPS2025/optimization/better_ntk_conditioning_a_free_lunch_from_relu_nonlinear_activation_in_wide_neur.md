@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Better NTK Conditioning: A Free Lunch from ReLU Nonlinear Activation in Wide Neural Networks
 description: >-
-  [NeurIPS 2025][Optimization][NTK condition number] This paper establishes a previously unnoticed "free" benefit of ReLU activation in wide neural networks: (a) it induces better data separation in the model's gradient fe…
+  [NeurIPS 2025][Optimization][NTK condition number] This paper establishes a previously unnoticed "free" benefit of ReLU activation in wide neural networks: (a) it induces better data separation in the model's gradient feature space (angles between similar inputs are amplified in gradient space), and (b) this strictly reduces the condition number of the NTK matrix compared to linear networks. Depth further amplifies this effect — in the infinite-width-then-infinite-depth limit…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "wide networks"
   - "convergence acceleration"
 date: 2026-05-08
-content_hash: 30ee14f7c1813243
+content_hash: d13d6e04b4a07629
 ---
 
 # Better NTK Conditioning: A Free Lunch from ReLU Nonlinear Activation in Wide Neural Networks
@@ -128,10 +128,10 @@ Numerical validation of Better Separation and Better Conditioning:
 ## Related Papers
 
 - [\[ICLR 2026\] Celo2: Towards Learned Optimization Free Lunch](../../ICLR2026/optimization/celo2_towards_learned_optimization_free_lunch.md)
-- [\[NeurIPS 2025\] Exploring Landscapes for Better Minima along Valleys](exploring_landscapes_for_better_minima_along_valleys.md)
 - [\[NeurIPS 2025\] Training Robust Graph Neural Networks by Modeling Noise Dependencies](training_robust_graph_neural_networks_by_modeling_noise_dependencies.md)
 - [\[NeurIPS 2025\] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks](emergence_and_scaling_laws_in_sgd_learning_of_shallow_neural_networks.md)
 - [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
+- [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
 
 </div>
 

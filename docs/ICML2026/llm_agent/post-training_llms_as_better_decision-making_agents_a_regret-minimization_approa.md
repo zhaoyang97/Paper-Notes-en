@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Post-Training LLMs as Better Decision-Making Agents: A Regret-Minimization Approach
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] The authors propose Iterative RMFT, which ranks decision trajectories rolled out by the LLM itself based on regret from low to high. The top $k$ optimal trajectories are selected for iterative SFT. This approach allows LLMs to automatically emerge with no-regret behavior and a reasonable exploration-exploitation balanc
+  [ICML 2026][LLM Agent][Regret Minimization] The authors propose Iterative RMFT, which ranks decision trajectories rolled out by the LLM itself based on regret from low to high. The top $k$ optimal trajectories are selected for iterative SFT. This approach allows LLMs to automatically emerge with no-regret behavior and a reasonable exploration-exploitation balance across three types of verbalized decision tasks—Multi-Armed Bandits (MAB), online learning…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Regret Minimization"
+  - "Iterative SFT"
+  - "Online Decision Making"
+  - "Multi-Armed Bandits"
+  - "Self-generated Reasoning"
 date: 2026-05-08
-content_hash: 60cf834052cdbebd
+content_hash: f64d03d8da3c6619
 ---
+
 # Post-Training LLMs as Better Decision-Making Agents: A Regret-Minimization Approach
 
 **Conference**: ICML 2026  
@@ -121,11 +127,11 @@ Three model types were covered: (1) Small numerical Transformers for warm-up; (2
 
 ## Related Papers
 
-- [\[ACL 2025\] R2D2: Remembering, Replaying and Dynamic Decision Making with a Reflective Agentic Memory](../../ACL2025/llm_agent/r2d2_reflective_agentic_memory.md)
-- [\[ACL 2026\] MemSearcher: Training LLMs to Reason, Search and Manage Memory via End-to-End RL](../../ACL2026/llm_agent/memsearcher_training_llms_to_reason_search_and_manage_memory_via_end-to-end_rein.md)
+- [\[ICLR 2026\] LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities](../../ICLR2026/llm_agent/llms_are_greedy_agents_effects_of_rl_fine-tuning_on_decision-making_abilities.md)
+- [\[ICLR 2026\] Language Agents for Hypothesis-driven Clinical Decision Making with Reinforcement Learning](../../ICLR2026/llm_agent/language_agents_for_hypothesis-driven_clinical_decision_making_with_reinforcemen.md)
 - [\[ICLR 2026\] AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL](../../ICLR2026/llm_agent/agentgym-rl_an_open-source_framework_to_train_llm_agents_for_long-horizon_decisi.md)
 - [\[ICML 2026\] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](safeharbor_hierarchical_memory-augmented_guardrail_for_llm_agent_safety.md)
-- [\[ACL 2025\] LLM Agents Making Agent Tools](../../ACL2025/llm_agent/llm_agents_making_agent_tools.md)
+- [\[ACL 2025\] R2D2: Remembering, Replaying and Dynamic Decision Making with a Reflective Agentic Memory](../../ACL2025/llm_agent/r2d2_reflective_agentic_memory.md)
 
 </div>
 

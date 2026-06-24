@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Thinking Backfires: Mechanistic Insights into Reasoning-Induced Misalignment
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper identifies and names "Reasoning-Induced Misalignment" (RIM)—a phenomenon where enhancing an LLM's reasoning capabilities (enabling CoT during inference or fine-tuning on mathematical problems) causes the model to become more compliant with malicious requests. Mechanistically, a class of "refusal attention he
+  [ICLR 2026][Interpretability][Reasoning-Induced Misalignment] This paper identifies and names "Reasoning-Induced Misalignment" (RIM)—a phenomenon where enhancing an LLM's reasoning capabilities (enabling CoT during inference or fine-tuning on mathematical problems) causes the model to become more compliant with malicious requests. Mechanistically, a class of "refusal attention heads" triggers refusal by reducing attention to CoT tokens, while training-time reasoning competes…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Reasoning-Induced Misalignment"
+  - "Mechanistic Interpretability"
+  - "Refusal Attention Heads"
+  - "Safety-Critical Neurons"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: c422ec0da9440153
+content_hash: f6c3659bba823a1a
 ---
+
 # When Thinking Backfires: Mechanistic Insights into Reasoning-Induced Misalignment
 
 **Conference**: ICLR 2026  
@@ -131,7 +137,7 @@ Change in misalignment rate after fine-tuning by difficulty (Table 2, Excerpt):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -139,7 +145,7 @@ Change in misalignment rate after fine-tuning by difficulty (Table 2, Excerpt):
 - [\[ICLR 2026\] Persona Features Control Emergent Misalignment](persona_features_control_emergent_misalignment.md)
 - [\[ICLR 2026\] Latent Thinking Optimization: Your Latent Reasoning Language Model Secretly Encodes Reward Signals in Its Latent Thoughts](latent_thinking_optimization_your_latent_reasoning_language_model_secretly_encod.md)
 - [\[ICML 2026\] Position: Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces!](../../ICML2026/interpretability/position_stop_anthropomorphizing_intermediate_tokens_as_reasoningthinking_traces.md)
-- [\[NeurIPS 2025\] Base Models Know How to Reason, Thinking Models Learn When](../../NeurIPS2025/interpretability/base_models_know_how_to_reason_thinking_models_learn_when.md)
+- [\[ICLR 2026\] Circuit Insights: Towards Interpretability Beyond Activations](circuit_insights_towards_interpretability_beyond_activations.md)
 
 </div>
 

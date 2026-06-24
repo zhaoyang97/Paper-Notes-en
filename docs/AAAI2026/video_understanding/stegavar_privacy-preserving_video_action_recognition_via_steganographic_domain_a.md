@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StegaVAR: Privacy-Preserving Video Action Recognition via Steganographic Domain Analysis
 description: >-
-  [AAAI2026][Video Understanding][privacy-preserving] This paper proposes StegaVAR, the first framework to integrate video steganography with action recognition. Privacy-sensitive videos are embedded into natural cover vid…
+  [AAAI2026][Video Understanding][privacy-preserving] This paper proposes StegaVAR, the first framework to integrate video steganography with action recognition. Privacy-sensitive videos are embedded into natural cover videos, and classification is performed directly in the steganographic domain. Through STeP (secret video-guided spatiotemporal feature learning) and CroDA (cross-band difference attention), the framework achieves recognition accuracy approaching that of raw vide…
 tags:
   - "AAAI2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "wavelet transform"
   - "cross-band attention"
 date: 2026-05-08
-content_hash: 60cf1ac73a320e3c
+content_hash: 944ce2518fda46b9
 ---
 
 # StegaVAR: Privacy-Preserving Video Action Recognition via Steganographic Domain Analysis
@@ -117,11 +117,11 @@ Subband grouping strategy: processing four subbands independently achieves the b
 
 ## Related Papers
 
+- [\[CVPR 2026\] VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition](../../CVPR2026/video_understanding/videonet_a_large-scale_dataset_for_domain-specific_action_recognition.md)
 - [\[AAAI 2026\] Lifelong Domain Adaptive 3D Human Pose Estimation](lifelong_domain_adaptive_3d_human_pose_estimation.md)
-- [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
-- [\[AAAI 2026\] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition](task-specific_distance_correlation_matching_for_few-shot_action_recognition.md)
-- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](../../CVPR2026/video_understanding/openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
-- [\[ICML 2026\] Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection](../../ICML2026/video_understanding/privacy-aware_video_anomaly_detection_through_orthogonal_subspace_projection.md)
+- [\[ICLR 2026\] Invert4TVG: A Temporal Video Grounding Framework with Inversion Tasks Preserving Action Understanding Ability](../../ICLR2026/video_understanding/invert4tvg_a_temporal_video_grounding_framework_with_inversion_tasks_preserving_.md)
+- [\[CVPR 2025\] TAMT: Temporal-Aware Model Tuning for Cross-Domain Few-Shot Action Recognition](../../CVPR2025/video_understanding/tamt_temporal-aware_model_tuning_for_cross-domain_few-shot_action_recognition.md)
+- [\[ECCV 2024\] Leveraging Temporal Contextualization for Video Action Recognition](../../ECCV2024/video_understanding/leveraging_temporal_contextualization_for_video_action_recognition.md)
 
 </div>
 

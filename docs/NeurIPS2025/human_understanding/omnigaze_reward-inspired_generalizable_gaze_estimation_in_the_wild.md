@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild
 description: >-
-  [NeurIPS 2025][Human Understanding][Gaze estimation] This paper proposes OmniGaze, a semi-supervised 3D gaze estimation framework that employs a reward model — fusing visual embeddings…
+  [NeurIPS 2025][Human Understanding][Gaze estimation] This paper proposes OmniGaze, a semi-supervised 3D gaze estimation framework that employs a reward model — fusing visual embeddings, MLLM-generated semantic gaze descriptions, and geometric direction vectors — to assess pseudo-label quality. Trained on 1.4 million unlabeled face images, OmniGaze achieves state-of-the-art performance under both within-domain and cross-domain settings across 5 datasets…
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "reward model"
   - "cross-domain generalization"
 date: 2026-05-08
-content_hash: b3f1a4b5eccc6b28
+content_hash: 74297e57aff4a5d5
 ---
 
 # OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild
@@ -152,11 +152,11 @@ OmniGaze follows a standard three-stage semi-supervised training pipeline: (1) t
 
 ## Related Papers
 
+- [\[CVPR 2025\] Enhancing 3D Gaze Estimation in the Wild Using Weak Supervision with Gaze Following Labels](../../CVPR2025/human_understanding/enhancing_3d_gaze_estimation_in_the_wild_using_weak_supervision_with_gaze_follow.md)
+- [\[ECCV 2024\] De-confounded Gaze Estimation](../../ECCV2024/human_understanding/de-confounded_gaze_estimation.md)
 - [\[NeurIPS 2025\] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation](a_generalized_label_shift_perspective_for_crossdomain_gaze_e.md)
 - [\[ICCV 2025\] Multi-view Gaze Target Estimation](../../ICCV2025/human_understanding/multi-view_gaze_target_estimation.md)
-- [\[CVPR 2026\] GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion](../../CVPR2026/human_understanding/gazeonce360_fisheye-based_360_multi-person_gaze_estimation_with_global-local_fea.md)
-- [\[ICCV 2025\] Monocular Facial Appearance Capture in the Wild](../../ICCV2025/human_understanding/monocular_facial_appearance_capture_in_the_wild.md)
-- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](raptr_radar-based_3d_pose_estimation_using_transformer.md)
+- [\[CVPR 2025\] GA3CE: Unconstrained 3D Gaze Estimation with Gaze-Aware 3D Context Encoding](../../CVPR2025/human_understanding/ga3ce_unconstrained_3d_gaze_estimation_with_gaze-aware_3d_context_encoding.md)
 
 </div>
 

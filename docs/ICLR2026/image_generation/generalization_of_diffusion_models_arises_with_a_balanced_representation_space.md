@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] Generalization of Diffusion Models Arises with a Balanced Representation Space
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper represents a significant breakthrough in the generalization theory of diffusion models. By analyzing the optimal solutions of a two-layer nonlinear ReLU DAE, the authors provide a unified characterization of both memorization and generalization behaviors. They creatively propose a representation-centric unde
+  [ICLR 2026][Image Generation] This paper represents a significant breakthrough in the generalization theory of diffusion models. By analyzing the optimal solutions of a two-layer nonlinear ReLU DAE, the authors provide a unified characterization of both memorization and generalization behaviors. They creatively propose a representation-centric understanding from the perspective of representation space. The theoretical conclusions are consistently validated across EDM, DiT…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
 date: 2026-05-08
-content_hash: b12e6c6418ca8476
+content_hash: e0d2b02c24d81fe2
 ---
+
 # Generalization of Diffusion Models Arises with a Balanced Representation Space
 
 **Conference**: ICLR 2026  
@@ -125,11 +126,11 @@ This method is the first to be both prompt-free and representation-based, achiev
 
 ## Related Papers
 
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 - [\[ICLR 2026\] Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models](bridging_generalization_gap_of_heterogeneous_federated_clients_using_generative_.md)
 - [\[ICML 2026\] Evaluating the Representation Space of Diffusion Models via Self-Supervised Principles](../../ICML2026/image_generation/evaluating_the_representation_space_of_diffusion_models_via_self-supervised_prin.md)
 - [\[ICLR 2026\] Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection](localized_concept_erasure_in_text-to-image_diffusion_models_via_high-level_repre.md)
 - [\[ICLR 2026\] Intention-Conditioned Flow Occupancy Models](intention-conditioned_flow_occupancy_models.md)
-- [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](../../ICCV2025/image_generation/motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
 
 </div>
 

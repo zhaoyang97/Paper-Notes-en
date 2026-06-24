@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks Track)][Multi-Agent][multi-agent collaboration] This paper proposes MedAgentBoard, a comprehensive benchmark that systematically evaluates multi-agent collaboration, single-LLM…
+  [NeurIPS 2025 (Datasets & Benchmarks Track)][Multi-Agent][multi-agent collaboration] This paper proposes MedAgentBoard, a comprehensive benchmark that systematically evaluates multi-agent collaboration, single-LLM, and conventional methods across diverse medical tasks, revealing that multi-agent collaboration does not consistently outperform strong single models or specialized conventional approaches.
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks Track)"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "clinical workflow"
   - "EHR prediction"
 date: 2026-05-08
-content_hash: d0a1a043c93147ad
+content_hash: 6256ddf974a9badc
 ---
 
 # MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks
@@ -184,8 +184,8 @@ As a benchmark paper, the focus lies on evaluation protocol design rather than m
 - [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](../../ICLR2026/multi_agent/mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
 - [\[NeurIPS 2025\] Belief-Calibrated Multi-Agent Consensus Seeking for Complex NLP Tasks](belief-calibrated_multi-agent_consensus_seeking_for_complex_nlp_tasks.md)
 - [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](multi-agent_collaboration_via_evolving_orchestration.md)
-- [\[NeurIPS 2025\] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies](gaudp_reinventing_multi-agent_collaboration_through_gaussian-image_synergy_in_di.md)
-- [\[NeurIPS 2025\] 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation](3d-agenttri-modal_multi-agent_collaboration_for_scalable_3d_object_annotation.md)
+- [\[ICLR 2026\] WideSearch: Benchmarking Agentic Broad Info-Seeking](../../ICLR2026/multi_agent/widesearch_benchmarking_agentic_broad_info-seeking.md)
+- [\[CVPR 2025\] ComfyBench: Benchmarking LLM-based Agents in ComfyUI for Autonomously Designing Collaborative AI Systems](../../CVPR2025/multi_agent/comfybench_benchmarking_llm-based_agents_in_comfyui_for_autonomously_designing_c.md)
 
 </div>
 

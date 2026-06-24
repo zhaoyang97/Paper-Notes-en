@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Portable Active Learning for Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] PAL proposes an active learning framework that **only reads detector inference outputs without modifying internal models or training pipelines**. It estimates the probability of each detection being a True Positive (TP) or False Positive (FP) using a lightweight logistic regression classifier based on two features—"pre
+  [CVPR 2026 (Highlight)][Object Detection][Active Learning] PAL proposes an active learning framework that **only reads detector inference outputs without modifying internal models or training pipelines**. It estimates the probability of each detection being a True Positive (TP) or False Positive (FP) using a lightweight logistic regression classifier based on two features—"pre-NMS box count + confidence"—and uses entropy as the Instance Uncertainty Score (LIUS). This is combi…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026 (Highlight)"
+  - "Object Detection"
+  - "Active Learning"
+  - "Instance Uncertainty"
+  - "Class Imbalance"
+  - "Detector-Agnostic"
 date: 2026-05-08
-content_hash: ee378831d5b3f85c
+content_hash: 7e0c4734f82f372d
 ---
+
 # Portable Active Learning for Object Detection
 
 **Conference**: CVPR 2026 (Highlight)  

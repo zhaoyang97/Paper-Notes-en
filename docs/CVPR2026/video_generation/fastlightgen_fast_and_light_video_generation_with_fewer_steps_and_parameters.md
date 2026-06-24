@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] FastLightGen proposes a three-stage distillation algorithm that achieves joint distillation of sampling steps and model size for the first time. By identifying redundant layers, employing dynamic probabilistic pruning, and using well-guided teacher guidance distribution matching, it compresses HunyuanVideo/WanX into a
+  [CVPR 2026][Video Generation][Video generation acceleration] FastLightGen proposes a three-stage distillation algorithm that achieves joint distillation of sampling steps and model size for the first time. By identifying redundant layers, employing dynamic probabilistic pruning, and using well-guided teacher guidance distribution matching, it compresses HunyuanVideo/WanX into a lightweight generator with 4 steps and 30% parameter pruning, achieving approximately 35x speedup w…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video generation acceleration"
+  - "Step distillation"
+  - "Model pruning"
+  - "Distribution matching"
+  - "DiT compression"
 date: 2026-05-08
-content_hash: 194359f06c76027b
+content_hash: 082859e8e4faeb8b
 ---
+
 # FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters
 
 **Conference**: CVPR 2026  
@@ -161,10 +167,10 @@ Final alignment of the few-step pruned student with the teacher utilizes a modif
 ## Related Papers
 
 - [\[CVPR 2026\] SURF: Signature-Retained Fast Video Generation](surf_signature-retained_fast_video_generation.md)
+- [\[CVPR 2026\] Transition Matching Distillation for Fast Video Generation](transition_matching_distillation_for_fast_video_generation.md)
 - [\[CVPR 2026\] LightMover: Generative Light Movement with Color and Intensity Controls](lightmover_generative_light_movement_with_color_and_intensity_controls.md)
-- [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](../../ICML2026/video_generation/light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
-- [\[NeurIPS 2025\] MagCache: Fast Video Generation with Magnitude-Aware Cache](../../NeurIPS2025/video_generation/magcache_fast_video_generation_with_magnitudeaware_cache.md)
-- [\[ICCV 2025\] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks](../../ICCV2025/video_generation/generating_fast_and_slow_scalable_parallel_video_generation_with_video_interface.md)
+- [\[CVPR 2026\] VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment](vsrell_a_simple_baseline_for_video_super-resolution_and_enhancement_in_low-light.md)
+- [\[ICML 2026\] Physics in 2-Steps: Locking Motion Priors Before Visual Refinement Erases Them](../../ICML2026/video_generation/physics_in_2-steps_locking_motion_priors_before_visual_refinement_erases_them.md)
 
 </div>
 

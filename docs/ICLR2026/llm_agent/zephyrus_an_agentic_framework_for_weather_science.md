@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Zephyrus: An Agentic Framework for Weather Science
 description: >-
-  [ICLR 2026][LLM Agent][ReAct] This paper constructs the first agentic framework for weather science: using a unified Python tool environment (ZephyrusWorld), LLMs solve tasks by writing code to call weather data, forecasting models, and climate simulators. It includes two execution strategies (Direct / Reflective) and a benchmark (ZephyrusBench) co
+  [ICLR 2026][LLM Agent][Weather Agent] This paper constructs the first agentic framework for weather science: using a unified Python tool environment (ZephyrusWorld), LLMs solve tasks by writing code to call weather data, forecasting models, and climate simulators. It includes two execution strategies (Direct / Reflective) and a benchmark (ZephyrusBench) containing 2,230 problems across 49 task categories. Results show an accuracy improvement of up to 44 percentage points over…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - ReAct
-  - WeatherBench 2
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Weather Agent"
+  - "Code Generation"
+  - "ReAct"
+  - "Tool Environment"
+  - "WeatherBench 2"
 date: 2026-05-08
-content_hash: 4926c1b220032e83
+content_hash: 1299e973fcacd9b3
 ---
+
 # Zephyrus: An Agentic Framework for Weather Science
 
 **Conference**: ICLR 2026  
@@ -122,15 +126,16 @@ Ours (Zephyrus) significantly outperforms text-only baselines by 27.8–44.2 per
 - **Value**: ⭐⭐⭐⭐⭐ High platform-level value for the intersection of LLMs and weather science.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Towards a Science of AI Agent Reliability](../../ICML2026/llm_agent/towards_a_science_of_ai_agent_reliability.md)
 - [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science Research?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_research_claims.md)
+- [\[ICLR 2026\] SciNav: A General Agent Framework for Scientific Coding Tasks](scinav_a_general_agent_framework_for_scientific_coding_tasks.md)
 - [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_social_science_.md)
-- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](../../ACL2026/llm_agent/octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
-- [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](tusoai_agentic_optimization_for_scientific_methods.md)
+- [\[ICLR 2026\] CoDA: Agentic Systems for Collaborative Data Visualization](coda_agentic_systems_for_collaborative_data_visualization.md)
 
 </div>
 

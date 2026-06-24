@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Online Decision Making with Generative Action Sets
 description: >-
-  [ICLR 2026][learning_theory][create-to-reuse] This paper investigates a class of online decision problems where action sets can be "generated at a cost and reused permanently." It proposes a "Double Optimism" algorithm that uses LCB to select existing actions and UCB to decide whether to generate a new action. It proves that the algorithm achieves an optimal regre
+  [ICLR 2026][Online Learning Theory][Online Decision Making] This paper investigates a class of online decision problems where action sets can be "generated at a cost and reused permanently." It proposes a "Double Optimism" algorithm that uses LCB to select existing actions and UCB to decide whether to generate a new action. It proves that the algorithm achieves an optimal regret of $O(T^{\frac{d}{d+2}}d^{\frac{d}{d+2}} + d\sqrt{T\log T})$, providing the first sublinear regret…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - create-to-reuse
+  - "ICLR 2026"
+  - "Online Learning Theory"
+  - "Sequential Decision Making"
+  - "Bandits"
+  - "Online Decision Making"
+  - "Expandable Action Space"
+  - "Double Optimism"
+  - "Regret Bound"
+  - "create-to-reuse"
 date: 2026-05-08
-content_hash: deb1a4c2d9e1dcc0
+content_hash: 51ce3e1b79169012
 ---
+
 # Online Decision Making with Generative Action Sets
 
 **Conference**: ICLR 2026  
@@ -157,8 +164,8 @@ Two datasets were used: private maternal health data (839 queries, 12 pre-writte
 - [\[ICLR 2026\] Robust Decision Making with Partially Calibrated Forecasts](robust_decision-making_with_partially_calibrated_forecasters.md)
 - [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
 - [\[ICLR 2026\] Testing Most Influential Sets](testing_most_influential_sets.md)
-- [\[ICLR 2026\] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants](finite-time_convergence_analysis_of_ode-based_generative_models_for_stochastic_i.md)
 - [\[ICLR 2026\] Conformalized Decision Risk Assessment](conformalized_decision_risk_assessment.md)
+- [\[ICLR 2026\] DAK-UCB: Diversity-Aware Prompt Routing for LLMs and Generative Models](dak-ucb_diversity-aware_prompt_routing_for_llms_and_generative_models.md)
 
 </div>
 

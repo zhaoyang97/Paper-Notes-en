@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Talking Together: Synthesizing Co-Located 3D Conversations from Audio
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] This paper introduces the first method to generate complete facial animations for two participants **co-located in the same 3D space** from a single mixed audio stream. By utilizing a dual-stream diffusion architecture (shared U-Net + cross-attention), a two-stage hybrid data training strategy, LLM-driven text-to-spati
+  [CVPR 2026][Human Understanding][Dyadic Conversation] This paper introduces the first method to generate complete facial animations for two participants **co-located in the same 3D space** from a single mixed audio stream. By utilizing a dual-stream diffusion architecture (shared U-Net + cross-attention), a two-stage hybrid data training strategy, LLM-driven text-to-spatial layout control, and an auxiliary gaze loss, the system achieves natural mutual gaze, head movements…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Dyadic Conversation"
+  - "3D Facial Animation"
+  - "Diffusion Models"
+  - "Co-located Space"
+  - "Eye Interaction"
 date: 2026-05-08
-content_hash: 546ca20c08d1c309
+content_hash: 6e9518b0754648fd
 ---
+
 # Talking Together: Synthesizing Co-Located 3D Conversations from Audio
 
 **Conference**: CVPR 2026  
@@ -147,15 +152,16 @@ The total loss is a weighted sum: Expression reconstruction ($\lambda_{expr}=1$)
 | **Total Score** | **8.6** | A pioneering work in co-located conversation generation with robust design and results. |
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] AudioAvatar: Personalized Audio-driven Whole-body Talking Avatars](audioavatar_personalized_audio-driven_whole-body_talking_avatars.md)
 - [\[CVPR 2026\] PC-Talk: Precise Facial Animation Control for Audio-Driven Talking Face Generation](pc-talk_precise_facial_animation_control_for_audio-driven_talking_face_generatio.md)
-- [\[ECCV 2024\] ScanTalk: 3D Talking Heads from Unregistered Scans](../../ECCV2024/human_understanding/scantalk_3d_talking_heads_from_unregistered_scans.md)
 - [\[ECCV 2024\] Audio-Driven Talking Face Generation with Stabilized Synchronization Loss](../../ECCV2024/human_understanding/audio-driven_talking_face_generation_with_stabilized_synchronization_loss.md)
 - [\[CVPR 2026\] LiveGesture: Streamable Co-Speech Gesture Generation Model](livegesture_streamable_co-speech_gesture_generation_model.md)
+- [\[ICCV 2025\] PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data](../../ICCV2025/human_understanding/posesyn_synthesizing_diverse_3d_pose_data_from_in-the-wild_2d_data.md)
 
 </div>
 

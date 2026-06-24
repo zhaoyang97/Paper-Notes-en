@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Edit-Based Flow Matching for Temporal Point Processes
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] The paper proposes EDITPP, which models the generation of Temporal Point Processes (TPP) as an edit flow on a Continuous-Time Markov Chain (CTMC). By using three types of atomic edits—insertion, deletion, and substitution—it transports noise sequences to target event sequences. It achieves or approaches SOTA performanc
+  [ICLR 2026][Image Generation][Temporal Point Processes] The paper proposes EDITPP, which models the generation of Temporal Point Processes (TPP) as an edit flow on a Continuous-Time Markov Chain (CTMC). By using three types of atomic edits—insertion, deletion, and substitution—it transports noise sequences to target event sequences. It achieves or approaches SOTA performance in both unconditional generation and conditional forecasting tasks while reducing edit steps and signi…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Temporal Point Processes"
+  - "Flow Matching"
+  - "Edit Operations"
+  - "Conditional Generation"
+  - "Non-autoregressive Sampling"
 date: 2026-05-08
-content_hash: be4e9af2dd57ddde
+content_hash: 6a8be07622d09c53
 ---
+
 # Edit-Based Flow Matching for Temporal Point Processes
 
 **Conference**: ICLR 2026  
@@ -147,15 +152,14 @@ The edit count breakdown for EDITPP: 137.42 inserts, 33.08 deletes, and 29.16 su
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](../../NeurIPS2025/image_generation/flow_matching_neural_processes.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 - [\[ICML 2026\] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing](../../ICML2026/image_generation/shifting_the_breaking_point_of_flow_matching_for_multi-instance_editing.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
 
 </div>
 

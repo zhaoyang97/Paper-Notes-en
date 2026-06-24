@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Plug-and-Play Diffusion Meets ADMM: Dual-Variable Coupling for Robust Medical Image Reconstruction
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] This paper reintroduces ADMM dual variables into the PnP diffusion prior loop, utilizing "duality" to provide integral feedback that eliminates steady-state bias. A frequency-domain Spectral Homogenization module is employed to whiten structured dual residuals into pseudo-AWGN, preventing the triggering of OOD hallucin
+  [ICML 2026][Medical Imaging][PnP Diffusion Prior] This paper reintroduces ADMM dual variables into the PnP diffusion prior loop, utilizing "duality" to provide integral feedback that eliminates steady-state bias. A frequency-domain Spectral Homogenization module is employed to whiten structured dual residuals into pseudo-AWGN, preventing the triggering of OOD hallucinations in the diffusion denoiser. It achieves SOTA fidelity and approximately 3× inference acceleration in spa…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "PnP Diffusion Prior"
+  - "ADMM Dual Variable"
+  - "Spectral Whitening"
+  - "CT/MRI Reconstruction"
+  - "Steady-state Bias"
 date: 2026-05-08
-content_hash: 1e8660a409c2a509
+content_hash: bfc9215bed1a0e2a
 ---
+
 # Plug-and-Play Diffusion Meets ADMM: Dual-Variable Coupling for Robust Medical Image Reconstruction
 
 **Conference**: ICML 2026  
@@ -135,10 +141,10 @@ On LACT-90, toggling DC (Dual Coupling) and SH (Spectral Homogenization). The fi
 ## Related Papers
 
 - [\[CVPR 2026\] D$^2$-FOSA: Dual-Diffusion Guided EEG-to-Image Reconstruction with Frequency-Oriented Semantic Alignment](../../CVPR2026/medical_imaging/d2-fosa_dual-diffusion_guided_eeg-to-image_reconstruction_with_frequency-oriente.md)
+- [\[ICLR 2026\] Moving Beyond Diffusion: Hierarchy-to-Hierarchy Autoregression for fMRI-to-Image Reconstruction](../../ICLR2026/medical_imaging/moving_beyond_diffusion_hierarchy-to-hierarchy_autoregression_for_fmri-to-image_.md)
 - [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](../../ICLR2026/medical_imaging/dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
 - [\[ICML 2026\] Foundation VAEs for 3D CT Reconstruction, Augmentation, and Generation](foundation_vaes_for_3d_ct_reconstruction_augmentation_and_generation.md)
 - [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
-- [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
 
 </div>
 

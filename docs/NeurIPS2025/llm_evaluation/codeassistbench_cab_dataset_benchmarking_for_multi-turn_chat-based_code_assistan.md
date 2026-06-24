@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CodeAssistBench (CAB): Dataset & Benchmarking for Multi-turn Chat-Based Code Assistance
 description: >-
-  [NeurIPS 2025][LLM Evaluation][code assistant] This paper proposes CodeAssistBench (CAB), the first fully automated benchmark for evaluating multi-turn…
+  [NeurIPS 2025][LLM Evaluation][code assistant] This paper proposes CodeAssistBench (CAB), the first fully automated benchmark for evaluating multi-turn, repository-level programming assistance. CAB automatically constructs 3,286 real-world programming help scenarios from GitHub Issues, spanning 7 languages and 214 repositories, and reveals a substantial performance gap: state-of-the-art models achieve 70–83% on StackOverflow-style questions but only 7–16% on post-cutoff repos…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -14,7 +14,7 @@ tags:
   - "repository-level evaluation"
   - "LLM Agent"
 date: 2026-05-08
-content_hash: 93fe9f6719fd74db
+content_hash: 5f76899e9d65e7ce
 ---
 
 # CodeAssistBench (CAB): Dataset & Benchmarking for Multi-turn Chat-Based Code Assistance
@@ -154,11 +154,11 @@ The entire pipeline is end-to-end automated, involving 44,628 Sonnet 3.7 API cal
 
 ## Related Papers
 
-- [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](../../ACL2026/llm_evaluation/evaluating_temporal_consistency_in_multi-turn_language_models.md)
-- [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](../../ACL2026/llm_evaluation/beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
-- [\[NeurIPS 2025\] PFΔ: A Benchmark Dataset for Power Flow under Load, Generation, and Topology Variations](pfδ_a_benchmark_dataset_for_power_flow_under_load_generation_and_topology_variat.md)
-- [\[NeurIPS 2025\] Ineq-Comp: Benchmarking Human-Intuitive Compositional Reasoning in Automated Theorem Proving on Inequalities](ineq-comp_benchmarking_human-intuitive_compositional_reasoning_in_automated_theo.md)
-- [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
+- [\[ACL 2025\] StructFlowBench: A Structured Flow Benchmark for Multi-turn Instruction Following](../../ACL2025/llm_evaluation/structflowbench_a_structured_flow_benchmark_for_multi-turn_instruction_following.md)
+- [\[ACL 2025\] Benchmarking LLMs and LLM-based Agents in Practical Vulnerability Detection for Code Repositories](../../ACL2025/llm_evaluation/benchmarking_llms_and_llm-based_agents_in_practical_vulnerability_detection_for_.md)
+- [\[ACL 2025\] CodeMEnv: Benchmarking Large Language Models on Code Migration](../../ACL2025/llm_evaluation/codemenv_benchmarking_large_language_models_on_code_migration.md)
+- [\[ACL 2025\] MARS: Benchmarking the Metaphysical Reasoning Abilities of Language Models with a Multi-task Evaluation Dataset](../../ACL2025/llm_evaluation/mars_benchmarking_the_metaphysical_reasoning_abilities_of_language_models_with_a.md)
+- [\[ICLR 2026\] LLMs Get Lost In Multi-Turn Conversation](../../ICLR2026/llm_evaluation/llms_get_lost_in_multi-turn_conversation.md)
 
 </div>
 

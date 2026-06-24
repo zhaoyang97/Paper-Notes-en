@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FOCUS: Forcing In-Context Object Localization through Visual Support Constraints and Policy Optimization
 description: >-
-  [ICML 2026][Object Detection][GRPO] FOCUS uses a two-stage training approach—"complete removal of category names + attention mask optimization + GRPO IoU reward"—to force VLMs to perform in-context object localization based on visual support examples rather than semantic priors. The 7B parameter model outperforms 72B models, proving that task-aligned ind
+  [ICML 2026][Object Detection][In-context Object Localization] FOCUS uses a two-stage training approach—"complete removal of category names + attention mask optimization + GRPO IoU reward"—to force VLMs to perform in-context object localization based on visual support examples rather than semantic priors. The 7B parameter model outperforms 72B models, proving that task-aligned inductive bias is more important than pure scaling.
 tags:
-  - ICML 2026
-  - Object Detection
-  - GRPO
+  - "ICML 2026"
+  - "Object Detection"
+  - "In-context Object Localization"
+  - "Visual Support Constraints"
+  - "Attention Optimization"
+  - "GRPO"
+  - "Category-agnostic"
 date: 2026-05-08
-content_hash: 010fe280d71fb902
+content_hash: f029c13aa382f001
 ---
+
 # FOCUS: Forcing In-Context Object Localization through Visual Support Constraints and Policy Optimization
 
 **Conference**: ICML 2026  
@@ -142,11 +147,11 @@ Attention mask loss is the largest single contributor (+4.5); category-free prom
 
 ## Related Papers
 
-- [\[ICLR 2026\] Long-Context Generalization with Sparse Attention](../../ICLR2026/object_detection/long-context_generalization_with_sparse_attention.md)
+- [\[ICLR 2026\] OD3: Optimization-Free Dataset Distillation for Object Detection](../../ICLR2026/object_detection/od3_optimization-free_dataset_distillation_for_object_detection.md)
 - [\[CVPR 2026\] Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection](../../CVPR2026/object_detection/towards_persistence_learning_topological_constraints_for_event-based_small_objec.md)
+- [\[ICLR 2026\] Long-Context Generalization with Sparse Attention](../../ICLR2026/object_detection/long-context_generalization_with_sparse_attention.md)
 - [\[CVPR 2026\] Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection](../../CVPR2026/object_detection/foundation_model_priors_enhance_object_focus_in_feature_space_for_source-free_ob.md)
-- [\[CVPR 2026\] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision](../../CVPR2026/object_detection/reasoning-driven_anomaly_detection_and_localization_with_image-level_supervision.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](../../CVPR2026/object_detection/palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
+- [\[ICLR 2026\] Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing](../../ICLR2026/object_detection/enhancing_vision_transformers_for_object_detection_via_context-aware_token_selec.md)
 
 </div>
 

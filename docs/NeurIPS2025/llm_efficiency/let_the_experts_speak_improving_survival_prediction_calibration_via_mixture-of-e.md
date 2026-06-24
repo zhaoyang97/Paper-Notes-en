@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Survival Analysis] Three discrete-time deep Mixture-of-Experts (MoE) survival analysis architectures are proposed, among which Personalized MoE achieves superior clustering, calibration…
+  [NeurIPS 2025][LLM Efficiency][Survival Analysis] Three discrete-time deep Mixture-of-Experts (MoE) survival analysis architectures are proposed, among which Personalized MoE achieves superior clustering, calibration, and predictive accuracy simultaneously by allowing each expert to generate a patient-specific event distribution.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Clustering"
   - "Discrete-Time Models"
 date: 2026-05-08
-content_hash: bddbb12ebc4ce161
+content_hash: c686b8b3b35d736b
 ---
 
 # Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads
@@ -124,11 +124,11 @@ All three architectures share the same backbone (a feedforward deep network) and
 
 ## Related Papers
 
+- [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
 - [\[NeurIPS 2025\] On the Expressive Power of Mixture-of-Experts for Structured Complex Tasks](on_the_expressive_power_of_mixture-of-experts_for_structured_complex_tasks.md)
-- [\[NeurIPS 2025\] UMoE: Unifying Attention and FFN with Shared Experts](umoe_unifying_attention_and_ffn_with_shared_experts.md)
+- [\[ACL 2025\] GigaChat Family: Efficient Russian Language Modeling Through Mixture of Experts Architecture](../../ACL2025/llm_efficiency/gigachat_family_efficient_russian_language_modeling_through_mixture_of_experts_a.md)
 - [\[AAAI 2026\] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](../../AAAI2026/llm_efficiency/how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)
 - [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](../../ICML2026/llm_efficiency/hyperparameter_transfer_with_mixture-of-expert_layers.md)
-- [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](../../ICML2026/llm_efficiency/probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
 
 </div>
 

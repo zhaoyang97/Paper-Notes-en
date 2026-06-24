@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications
 description: >-
-  [ICCV 2025][Medical Imaging][Video Foundation Models] This paper introduces SciVid, a benchmark comprising five interdisciplinary scientific video tasks—including animal behavior classification, tissue tracking…
+  [ICCV 2025][Medical Imaging][Video Foundation Models] This paper introduces SciVid, a benchmark comprising five interdisciplinary scientific video tasks—including animal behavior classification, tissue tracking, and weather forecasting—that systematically evaluates six categories of Video Foundation Models (ViFMs). The study finds that adapting a frozen ViFM backbone with a simple trainable readout suffices to achieve state-of-the-art performance on multiple scientific tasks…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Benchmark"
   - "Spatiotemporal Modeling"
 date: 2026-05-08
-content_hash: 4add54e08dddbc74
+content_hash: 6c72c5abe6451f1b
 ---
 
 # SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications
@@ -209,7 +209,7 @@ All tasks are trained for a unified 40k steps (some tasks require 400k steps for
 - [\[ICLR 2026\] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](../../ICLR2026/medical_imaging/adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)
 - [\[ICCV 2025\] PVChat: Personalized Video Chat with One-Shot Learning](pvchat_personalized_video_chat_with_one-shot_learning.md)
 - [\[ICCV 2025\] Semi-supervised Deep Transfer for Regression without Domain Alignment](semi-supervised_deep_transfer_for_regression_without_domain_alignment.md)
-- [\[ICCV 2025\] ProGait: A Multi-Purpose Video Dataset and Benchmark for Transfemoral Prosthesis Users](progait_a_multi-purpose_video_dataset_and_benchmark_for_transfemoral_prosthesis_.md)
+- [\[CVPR 2025\] Unleashing Video Language Models for Fine-grained HRCT Report Generation](../../CVPR2025/medical_imaging/unleashing_video_language_models_for_fine-grained_hrct_report_generation.md)
 
 </div>
 

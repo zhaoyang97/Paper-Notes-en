@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SCALE: Selective Resource Allocation for Overcoming Performance Bottlenecks in Mathematical Test-time Scaling
 description: >-
-  [AAAI 2026][LLM Reasoning][Test-time compute] Grounded in the dual-process theory from cognitive science, SCALE decomposes mathematical problems into sub-problems and allocates compute resources according to difficulty (…
+  [AAAI 2026][Reasoning][Test-time compute] Grounded in the dual-process theory from cognitive science, SCALE decomposes mathematical problems into sub-problems and allocates compute resources according to difficulty (System 1 for fast computation vs. System 2 for deep reasoning). On AIME25, it improves Qwen3-32B from 57.50% to 71.25% while reducing token consumption by 33–53% compared to InftyThink.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Test-time compute"
   - "dual-process theory"
   - "mathematical reasoning"
   - "resource allocation"
   - "sub-problem decomposition"
 date: 2026-05-08
-content_hash: 2fb0112d4db6ba1a
+content_hash: 1c724cd727aaeff3
 ---
 
 # SCALE: Selective Resource Allocation for Overcoming Performance Bottlenecks in Mathematical Test-time Scaling
@@ -126,10 +126,10 @@ Fine-tuning non-reasoning models: Llama3.3-70B on AIME24 improves from 24.58% to
 
 ## Related Papers
 
-- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](../../ICLR2026/llm_reasoning/atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
-- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](../../ACL2026/llm_reasoning/parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](../../ACL2026/llm_reasoning/efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
-- [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](../../ICLR2026/llm_reasoning/understanding_the_role_of_training_data_in_test-time_scaling.md)
+- [\[ACL 2025\] Linguistic Generalizability of Test-Time Scaling in Mathematical Reasoning](../../ACL2025/llm_reasoning/mclm_multilingual_test_time_scaling.md)
+- [\[ACL 2025\] Is That Your Final Answer? Test-Time Scaling Improves Selective Question Answering](../../ACL2025/llm_reasoning/test_time_scaling_selective_qa.md)
+- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](../../ICLR2026/llm_reasoning/strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](../../ICLR2026/llm_reasoning/test-time_scaling_with_reflective_generative_model.md)
 - [\[ACL 2026\] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models](../../ACL2026/llm_reasoning/scaling_test-time_compute_to_achieve_ioi_gold_medal_with_open-weight_models.md)
 
 </div>

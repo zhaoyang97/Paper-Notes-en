@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning
 description: >-
-  [ICLR 2026][LLM Safety][Deepfake Detection] Ours proposes Veritas, an MLLM-based deepfake detector that simulates human forensic thinking (fast judgment → reasoning → planning → self-reflection → conclusion) through pattern-aware reasoning. It features a two-stage training pipeline (SFT + MiPO cold-start + P-GRPO reinforcement learning) and the HydraFake dataset
+  [ICLR 2026 Oral][LLM Safety][Deepfake Detection] Ours proposes Veritas, an MLLM-based deepfake detector that simulates human forensic thinking (fast judgment → reasoning → planning → self-reflection → conclusion) through pattern-aware reasoning. It features a two-stage training pipeline (SFT + MiPO cold-start + P-GRPO reinforcement learning) and the HydraFake dataset with four-level OOD evaluation, achieving an average accuracy of 90.7% across forgery types and domains…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Deepfake Detection
-  - MLLM
-  - Pattern-Aware Reasoning
-  - Reinforcement Learning
-  - HydraFake
+  - "ICLR 2026 Oral"
+  - "LLM Safety"
+  - "Deepfake Detection"
+  - "MLLM"
+  - "Pattern-Aware Reasoning"
+  - "Reinforcement Learning"
+  - "HydraFake"
 date: 2026-05-08
-content_hash: 1942a842a74dd6b0
+content_hash: ab1f94a546add2fe
 ---
+
 # Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning
 
 **Conference**: ICLR 2026 Oral  

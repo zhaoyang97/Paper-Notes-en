@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Addressing the issue where the single-prototype hypothesis results in overly loose decision boundaries under high intra-class variance, this paper proposes the PGBL framework. It structures normal features into multiple compact sub-clusters using Multi-Prototype Compactness Constraints (MPCC), synthesizes pseudo-anomal
+  [CVPR 2026][Anomaly Detection][Unsupervised Anomaly Detection] Addressing the issue where the single-prototype hypothesis results in overly loose decision boundaries under high intra-class variance, this paper proposes the PGBL framework. It structures normal features into multiple compact sub-clusters using Multi-Prototype Compactness Constraints (MPCC), synthesizes pseudo-anomalies at the topological boundaries of these sub-clusters (BAAS), and refines the decision surface…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Anomaly Detection"
+  - "Unsupervised Anomaly Detection"
+  - "Multi-prototype"
+  - "Boundary-aware Synthesis"
+  - "Feature-level Pseudo-anomalies"
+  - "Industrial Inspection"
 date: 2026-05-08
-content_hash: bc10fd27418a035d
+content_hash: de253c028960d9b8
 ---
+
 # Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -128,10 +134,10 @@ Stepwise addition on MVTec-AD (Baseline is CFA-like: single prototype + nearest 
 ## Related Papers
 
 - [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
-- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
-- [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
-- [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
-- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
+- [\[CVPR 2026\] RAID: Retrieval-Augmented Anomaly Detection](raid_retrieval-augmented_anomaly_detection.md)
+- [\[CVPR 2026\] LayoutAD: Exploring Semantic-Geometric Misalignment Reasoning for Scene Layout Anomaly Detection](layoutad_exploring_semantic-geometric_misalignment_reasoning_for_scene_layout_an.md)
+- [\[ICLR 2026\] LLM as an Algorithmist: Enhancing Anomaly Detectors via Programmatic Synthesis](../../ICLR2026/anomaly_detection/llm_as_an_algorithmist_enhancing_anomaly_detectors_via_programmatic_synthesis.md)
+- [\[CVPR 2026\] Anomaly-Related Residual Fields for Cross-domain Anomaly Detection](anomaly-related_residual_fields_for_cross-domain_anomaly_detection.md)
 
 </div>
 

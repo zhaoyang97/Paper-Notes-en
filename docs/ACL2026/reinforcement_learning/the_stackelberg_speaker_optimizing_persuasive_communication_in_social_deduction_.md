@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games
 description: >-
-  [ACL 2026][Reinforcement Learning][GRPO] This paper models turn-based dialogues in Social Deduction Games (SDGs) as a Stackelberg game, where the current player acts as a leader optimizing the persuasiveness of an utterance by measuring the response distribution of the next player. A Refiner model trained using GRPO significantly outperforms baselines across
+  [ACL 2026][Reinforcement Learning][Persuasive Communication] This paper models turn-based dialogues in Social Deduction Games (SDGs) as a Stackelberg game, where the current player acts as a leader optimizing the persuasiveness of an utterance by measuring the response distribution of the next player. A Refiner model trained using GRPO significantly outperforms baselines across four game benchmarks, including Werewolf and Avalon.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Persuasive Communication"
+  - "Social Deduction Games"
+  - "Stackelberg Game"
+  - "GRPO"
+  - "LLM Agents"
 date: 2026-05-08
-content_hash: f03e4d35629cc1bf
+content_hash: 0bed9458bd6cda34
 ---
+
 # The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games
 
 **Conference**: ACL 2026  
@@ -134,10 +139,20 @@ The GRPO objective is: $$\mathcal{J}(\theta) = \mathbb{E}_c[\frac{1}{n}\sum_i \m
 - Value: ⭐⭐⭐⭐ Provides a feasible framework for persuasive communication in LLM agents.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)
+- [\[ICLR 2026\] Learning to Play Multi-Follower Bayesian Stackelberg Games](../../ICLR2026/reinforcement_learning/learning_to_play_multi-follower_bayesian_stackelberg_games.md)
+- [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](../../ICLR2026/reinforcement_learning/nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
+- [\[ACL 2026\] Breaking the Impasse: Dual-Scale Evolutionary Policy Training for Social Language Agents](breaking_the_impasse_dual-scale_evolutionary_policy_training_for_social_language.md)
+- [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](../../NeurIPS2025/reinforcement_learning/learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)

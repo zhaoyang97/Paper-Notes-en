@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Analyzing the Training Dynamics of Image Restoration Transformers: A Revisit to Layer Normalization
 description: >-
-  [ICLR 2026][Image Restoration][LayerNorm] The authors track the training process of Image Restoration (IR) Transformers and discover that standard LayerNorm causes feature magnitudes to diverge to the million-level scale and channel entropy to collapse sharply. The root cause is identified as LN's "per-token normalization" and "input-independent scaling," whic
+  [ICLR2026][Image Restoration][LayerNorm] The authors track the training process of Image Restoration (IR) Transformers and discover that standard LayerNorm causes feature magnitudes to diverge to the million-level scale and channel entropy to collapse sharply. The root cause is identified as LN's "per-token normalization" and "input-independent scaling," which conflict with IR tasks. Consequently, they propose i-LN—a plug-and-play replacement for LN that performs normalizatio…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - LayerNorm
-  - Transformer
+  - "ICLR2026"
+  - "Image Restoration"
+  - "LayerNorm"
+  - "Transformer"
+  - "Training Dynamics"
+  - "Feature Divergence"
 date: 2026-05-08
-content_hash: 94ef565ebc8602df
+content_hash: 5690afa57e9f44e8
 ---
+
 # Analyzing the Training Dynamics of Image Restoration Transformers: A Revisit to Layer Normalization
 
 **Conference**: ICLR2026  
@@ -125,10 +128,10 @@ Ablations on HAT2 for ×4 SR shows the effect of removing i-LN components (SH = 
 ## Related Papers
 
 - [\[CVPR 2026\] DiffDecompose: Layer-Wise Decomposition of Alpha-Composited Images via Diffusion Transformers](../../CVPR2026/image_restoration/diffdecompose_layer-wise_decomposition_of_alpha-composited_images_via_diffusion_.md)
+- [\[ICLR 2026\] SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](seedvr2_one-step_video_restoration_via_diffusion_adversarial_post-training.md)
 - [\[CVPR 2025\] DPIR: Dual Prompting Image Restoration with Diffusion Transformers](../../CVPR2025/image_restoration/dpir_dual_prompting_restoration_dit.md)
 - [\[ICLR 2026\] DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation](diffusionblocks_block-wise_neural_network_training_via_diffusion_interpretation.md)
-- [\[CVPR 2026\] FoundIR-v2: Optimizing Pre-Training Data Mixtures for Image Restoration Foundation Model](../../CVPR2026/image_restoration/foundir-v2_optimizing_pre-training_data_mixtures_for_image_restoration_foundatio.md)
-- [\[CVPR 2026\] ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation](../../CVPR2026/image_restoration/reflexsplit_single_image_reflection_separation_via_layer_fusion-separation.md)
+- [\[ICLR 2026\] UniRestorer: Universal Image Restoration via Adaptively Estimating Image Degradation at Proper Granularity](unirestorer_universal_image_restoration_via_adaptively_estimating_image_degradat.md)
 
 </div>
 

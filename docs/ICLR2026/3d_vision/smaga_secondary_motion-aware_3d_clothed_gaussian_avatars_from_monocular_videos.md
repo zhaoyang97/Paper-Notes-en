@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SMAGA: Secondary Motion-Aware 3D Clothed Gaussian Avatars from Monocular Videos
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] Addressing the difficulty of 3DGS human avatars reconstructed from monocular videos to represent the flowing secondary motion of loose clothing (e.g., skirts), this paper proposes a two-stage framework: it first uses template-free personalized Gaussian initialization to align with clothed silhouettes, followed by a GNN
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] Addressing the difficulty of 3DGS human avatars reconstructed from monocular videos to represent the flowing secondary motion of loose clothing (e.g., skirts), this paper proposes a two-stage framework: it first uses template-free personalized Gaussian initialization to align with clothed silhouettes, followed by a GNN deformer that structures Gaussians into a graph and autoregressively predicts second-order dynamics (mass-spring-…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Animatable Human"
+  - "Secondary Motion"
+  - "Loose Clothing"
+  - "Autoregressive Deformation"
 date: 2026-05-08
-content_hash: 6d672881e93eae64
+content_hash: ded1877c69f0c12a
 ---
+
 # SMAGA: Secondary Motion-Aware 3D Clothed Gaussian Avatars from Monocular Videos
 
 **Conference**: ICLR 2026  

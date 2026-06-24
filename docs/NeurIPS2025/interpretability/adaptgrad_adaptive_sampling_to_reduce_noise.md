@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdaptGrad: Adaptive Sampling to Reduce Noise
 description: >-
-  [NeurIPS 2025][Interpretability][Gradient smoothing] AdaptGrad analyzes the theoretical origin of noise in SmoothGrad—out-of-boundary (OOB) sampling behavior—and proposes adaptively adjusting the Gaussian sampling varian…
+  [NeurIPS 2025][Interpretability][Gradient smoothing] AdaptGrad analyzes the theoretical origin of noise in SmoothGrad—out-of-boundary (OOB) sampling behavior—and proposes adaptively adjusting the Gaussian sampling variance for each input dimension to bound the additional noise. The method nearly eliminates gradient noise while revealing richer fine-grained features, requires minimal implementation effort, and is composable with arbitrary gradient-based explanation methods.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "adaptive sampling"
   - "SmoothGrad"
 date: 2026-05-08
-content_hash: 8d388cd1fcd95c1b
+content_hash: 68e4c2d6a8a4bb73
 ---
 
 # AdaptGrad: Adaptive Sampling to Reduce Noise
@@ -124,11 +124,11 @@ AdaptGrad retains the basic framework of SmoothGrad (sampling gradients in the n
 
 ## Related Papers
 
-- [\[ICLR 2026\] Noise Stability of Transformer Models](../../ICLR2026/interpretability/noise_stability_of_transformer_models.md)
 - [\[NeurIPS 2025\] Efficient Vision-Language Reasoning via Adaptive Token Pruning](efficient_vision-language_reasoning_via_adaptive_token_pruning.md)
+- [\[ICLR 2026\] Noise Stability of Transformer Models](../../ICLR2026/interpretability/noise_stability_of_transformer_models.md)
 - [\[ICML 2026\] Adaptive Querying with AI Persona Priors](../../ICML2026/interpretability/adaptive_querying_with_ai_persona_priors.md)
-- [\[AAAI 2026\] Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval](../../AAAI2026/interpretability/adaptive_evidential_learning_for_temporal-semantic_robustnes.md)
-- [\[ICLR 2026\] AnveshanaAI: A Multimodal Platform for Adaptive AI/ML Education through Automated Question Generation and Interactive Assessment](../../ICLR2026/interpretability/anveshanaai_a_multimodal_platform_for_adaptive_aiml_education_through_automated_.md)
+- [\[ICML 2025\] LANTERN: Modeling User Behavior from Adaptive Surveys with Supplemental Context](../../ICML2025/interpretability/modeling_user_behavior_from_adaptive_surveys_with_supplemental_context.md)
+- [\[ICLR 2026\] Signal in the Noise: Polysemantic Interference Transfers and Predicts Cross-Model Influence](../../ICLR2026/interpretability/signal_in_the_noise_polysemantic_interference_transfers_and_predicts_cross-model.md)
 
 </div>
 

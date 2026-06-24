@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] MnemoDyn: Learning Resting State Dynamics from 40K fMRI Sequences
 description: >-
-  [ICLR 2026][Medical Imaging][rs-fMRI] MnemoDyn conceptualizes resting-state fMRI (rs-fMRI) as a trajectory in a latent space driven by a "learnable evolution operator." By replacing Transformer self-attention with wavelet-parameterized pseudo-differential operators, the authors pre-train a lightweight, long-sequence-friendly, and cross-dataset generalizabl
+  [ICLR 2026][Medical Imaging][rs-fMRI] MnemoDyn conceptualizes resting-state fMRI (rs-fMRI) as a trajectory in a latent space driven by a "learnable evolution operator." By replacing Transformer self-attention with wavelet-parameterized pseudo-differential operators, the authors pre-train a lightweight, long-sequence-friendly, and cross-dataset generalizable brain imaging foundation model on approximately 40K rs-fMRI sequences.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - rs-fMRI
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "rs-fMRI"
+  - "brain dynamics"
+  - "operator learning"
+  - "wavelets"
+  - "pseudo-differential operators"
+  - "controlled differential equations"
+  - "foundation models"
 date: 2026-05-08
-content_hash: cf90ed05cffe78a1
+content_hash: b44a36f96f50466b
 ---
+
 # MnemoDyn: Learning Resting State Dynamics from 40K fMRI Sequences
 
 **Conference**: ICLR 2026  
@@ -126,15 +133,17 @@ Models trained on UKB can reconstruct HCP data with high quality and vice versa 
 
 <div class="related-papers" markdown="1">
 
-1. **BrainLM**: A Foundation Model for fMRI Analysis via Generative Pre-training.
-2. **Brain-JEPA**: Joint-Embedding Predictive Architecture for Self-Supervised Learning on rs-fMRI.
-3. **Mamba**: Linear-Time Sequence Modeling with Selective State Spaces.
-4. **Neural Operators**: Fourier Neural Operator for Parametric Partial Differential Equations.
+## Related Papers
+
+- [\[ICLR 2026\] Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation](learning_patient-specific_disease_dynamics_with_latent_flow_matching_for_longitu.md)
+- [\[NeurIPS 2025\] GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds](../../NeurIPS2025/medical_imaging/geodynamics_a_geometric_state-space_neural_network_for_understanding_brain_dynam.md)
+- [\[ICLR 2026\] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning](stochastic_optimal_control_for_continuous-time_fmri_representation_learning.md)
+- [\[ICLR 2026\] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer](brain-it_image_reconstruction_from_fmri_via_brain-interaction_transformer.md)
+- [\[ICLR 2026\] Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI](seeing_through_the_brain_new_insights_from_decoding_visual_stimuli_with_fmri.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation](learning_patient-specific_disease_dynamics_with_latent_flow_matching_for_longitu.md)

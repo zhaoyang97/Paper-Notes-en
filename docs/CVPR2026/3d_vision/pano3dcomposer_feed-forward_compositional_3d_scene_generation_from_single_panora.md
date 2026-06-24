@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image
 description: >-
-  [CVPR 2026][3D Vision][VGGT] Pano3DComposer is proposed as a modular feed-forward framework for compositional 3D scene generation from a single panorama. Through a plug-and-play Object-World Transformation Predictor based on Alignment-VGGT, generated 3D objects are transformed from local to world coordinates, accomplishing high-fidelity 3D scene g
+  [CVPR 2026][3D Vision][Panoramic 3D reconstruction] Pano3DComposer is proposed as a modular feed-forward framework for compositional 3D scene generation from a single panorama. Through a plug-and-play Object-World Transformation Predictor based on Alignment-VGGT, generated 3D objects are transformed from local to world coordinates, accomplishing high-fidelity 3D scene generation in approximately 20 seconds on an RTX 4090.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VGGT
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panoramic 3D reconstruction"
+  - "compositional scene generation"
+  - "feed-forward transformation prediction"
+  - "VGGT"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: ad99cb9254b833d0
+content_hash: c19da34331ad1a1d
 ---
+
 # Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image
 
 **Conference**: CVPR 2026  
@@ -143,10 +148,10 @@ The feed-forward predictor may lose precision on out-of-distribution inputs. A C
 ## Related Papers
 
 - [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
-- [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)
-- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
 - [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
+- [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The DUET-VLM framework introduces a dual-stage visual token compression approach: the first stage selects dominant tokens within the vision encoder via V2V self-attention and aggregates the remaining tokens into contextual tokens using attention-guided local clustering; the second stage performs hierarchical pruning of
+  [CVPR2026][Multimodal Efficiency][VLM token compression] The DUET-VLM framework introduces a dual-stage visual token compression approach: the first stage selects dominant tokens within the vision encoder via V2V self-attention and aggregates the remaining tokens into contextual tokens using attention-guided local clustering; the second stage performs hierarchical pruning of visual tokens within the LLM using T2V cross-attention. On LLaVA-1.5-7B…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "Multimodal Efficiency"
+  - "VLM token compression"
+  - "visual token redundancy"
+  - "dual-stage token pruning"
+  - "attention-guided aggregation"
+  - "hierarchical pruning"
 date: 2026-05-08
-content_hash: 34835f6b49a5482f
+content_hash: 4304b7df0b4b67a0
 ---
+
 # DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference
 
 **Conference**: CVPR2026  
@@ -143,10 +149,10 @@ Unlike methods that only compress during inference (e.g., FastV, PyramidDrop), D
 ## Related Papers
 
 - [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
-- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/multimodal_vlm/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
-- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/multimodal_vlm/filter_correlate_compress_training-free_token_reduction_for_.md)
-- [\[CVPR 2026\] GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training](gtr_turbo_merged_checkpoint_free_teacher.md)
-- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
+- [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
+- [\[CVPR 2026\] SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference](segmo_co-designing_content-aware_sparsity_and_locally-cohesive_segment_paralleli.md)
+- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/vlm_efficiency/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
+- [\[ICLR 2026\] Nüwa: Mending the Spatial Integrity Torn by VLM Token Pruning](../../ICLR2026/vlm_efficiency/nüwa_mending_the_spatial_integrity_torn_by_vlm_token_pruning.md)
 
 </div>
 

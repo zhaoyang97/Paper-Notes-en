@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns
 description: >-
-  [ICLR 2026][Reinforcement Learning][Soft Actor-Critic] The MLP critic in SAC is replaced with a lightweight causal Transformer, allowing the critic to evaluate all prefixes of a "state + short action sequence" simultaneously. By using multi-horizon N-step returns for supervision without requiring importance sampling, the method maintains a strictly single-step policy while
+  [ICLR 2026][Reinforcement Learning][Soft Actor-Critic] The MLP critic in SAC is replaced with a lightweight causal Transformer, allowing the critic to evaluate all prefixes of a "state + short action sequence" simultaneously. By using multi-horizon N-step returns for supervision without requiring importance sampling, the method maintains a strictly single-step policy while significantly outperforming standard SAC and episodic baselines on long-range, sparse-reward tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Soft Actor-Critic
-  - Transformer Critic
-  - N-step Returns
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Soft Actor-Critic"
+  - "Transformer Critic"
+  - "N-step Returns"
+  - "Sequence Modeling"
+  - "Long-range Credit Assignment"
+  - "Target-free Training"
 date: 2026-05-08
-content_hash: a413dd2ba3448e57
+content_hash: b2ef8f7d30dd136e
 ---
+
 # Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns
 
 **Conference**: ICLR 2026  
@@ -133,9 +137,9 @@ Ablations performed on Box-Pushing (dense) and MuJoCo Walker2d:
 
 - [\[ICLR 2026\] DR-SAC: Distributionally Robust Soft Actor-Critic for Reinforcement Learning under Uncertainty](dr-sac_distributionally_robust_soft_actor-critic_for_reinforcement_learning_unde.md)
 - [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] Simplicial Embeddings Improve Sample Efficiency in Actor-Critic Agents](simplicial_embeddings_improve_sample_efficiency_in_actorcritic_agents.md)
+- [\[ICLR 2026\] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning](neuralsymbolic_approaches_for_interpretable_actor-critic_reinforcement_learning.md)
 - [\[ICLR 2026\] Finite-Time Analysis of Actor-Critic Methods with Deep Neural Network Approximation](finite-time_analysis_of_actor-critic_methods_with_deep_neural_network_approximat.md)
-- [\[ICLR 2026\] Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces](convergence_of_an_actor-critic_gradient_flow_for_entropy_regularised_mdps_in_gen.md)
+- [\[AAAI 2026\] Risk-Sensitive Exponential Actor Critic](../../AAAI2026/reinforcement_learning/risk-sensitive_exponential_actor_critic.md)
 
 </div>
 

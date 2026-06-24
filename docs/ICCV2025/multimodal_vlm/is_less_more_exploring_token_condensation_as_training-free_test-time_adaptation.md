@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation
 description: >-
-  [ICCV 2025][Multimodal VLM][Test-time adaptation] This paper proposes Token Condensation as Adaptation (TCA), a training-free test-time adaptation method that leverages a Domain-aware Token Reservoir (DTR) to guide cross…
+  [ICCV 2025][Multimodal VLM][Test-time adaptation] This paper proposes Token Condensation as Adaptation (TCA), a training-free test-time adaptation method that leverages a Domain-aware Token Reservoir (DTR) to guide cross-head token pruning/merging and logits self-correction. Without modifying model parameters, TCA improves cross-dataset performance of CLIP/SigLIP variants by up to 21.4% while reducing GFLOPs by 12.2%–48.9%.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Training-free"
   - "Vision-language models"
 date: 2026-05-08
-content_hash: 03e907eea0ff0df0
+content_hash: aca4b25588bc5fd4
 ---
 
 # Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation
@@ -144,11 +144,11 @@ Compared to the CLIP zero-shot baseline, TCA achieves an average improvement of 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Free on the Fly: Enhancing Flexibility in Test-Time Adaptation with Online EM](../../CVPR2025/multimodal_vlm/free_on_the_fly_enhancing_flexibility_in_test-time_adaptation_with_online_em.md)
 - [\[ICCV 2025\] Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models](multi-cache_enhanced_prototype_learning_for_test-time_generalization_of_vision-l.md)
+- [\[CVPR 2025\] Realistic Test-Time Adaptation of Vision-Language Models](../../CVPR2025/multimodal_vlm/realistic_test-time_adaptation_of_vision-language_models.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
-- [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
-- [\[AAAI 2026\] Panda: Test-Time Adaptation with Negative Data Augmentation](../../AAAI2026/multimodal_vlm/panda_test-time_adaptation_with_negative_data_augmentation.md)
-- [\[NeurIPS 2025\] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions](../../NeurIPS2025/multimodal_vlm/mint_a_simple_testtime_adaptation_of_visionlanguage_models_a.md)
 
 </div>
 

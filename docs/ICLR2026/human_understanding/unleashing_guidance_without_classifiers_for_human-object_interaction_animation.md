@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unleashing Guidance Without Classifiers for Human-Object Interaction Animation
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] LIGHT transforms the "diffusion forcing" mechanism—where each token can have its own noise level—into a **classifier-free guidance approach**. By allowing the body, hands, and objects to follow different denoising paces, clean modalities guide noisy ones via cross-attention. This generates text-driven human-object inte
+  [ICLR 2026][Human Understanding][HOI Animation] LIGHT transforms the "diffusion forcing" mechanism—where each token can have its own noise level—into a **classifier-free guidance approach**. By allowing the body, hands, and objects to follow different denoising paces, clean modalities guide noisy ones via cross-attention. This generates text-driven human-object interaction (HOI) animations with more realistic contact without relying on manual contact priors.
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "HOI Animation"
+  - "Text-to-Motion"
+  - "Diffusion Forcing"
+  - "Implicit Guidance"
+  - "Contact Fidelity"
 date: 2026-05-08
-content_hash: dca676a131d1b49f
+content_hash: e5bfb343c3fe3ffd
 ---
+
 # Unleashing Guidance Without Classifiers for Human-Object Interaction Animation
 
 **Conference**: ICLR 2026  

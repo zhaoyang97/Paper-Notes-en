@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Urban Socio-Semantic Segmentation with Vision-Language Reasoning
 description: >-
-  [ICLR 2026][Segmentation][SAM] This paper defines a new task, "Urban Socio-Semantic Segmentation" (segmenting entities like schools and parks defined by social attributes rather than visual appearance from satellite imagery), constructs the SocioSeg dataset (unifying heterogeneous geospatial data into a single rendered digital map layer), and propos
+  [ICLR 2026][Segmentation][Socio-semantic segmentation] This paper defines a new task, "Urban Socio-Semantic Segmentation" (segmenting entities like schools and parks defined by social attributes rather than visual appearance from satellite imagery), constructs the SocioSeg dataset (unifying heterogeneous geospatial data into a single rendered digital map layer), and proposes the SocioReasoner framework. SocioReasoner mimics the human annotator's two-stage reasoning process of…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - SAM
-  - GRPO
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Socio-semantic segmentation"
+  - "Remote sensing imagery"
+  - "Vision-language reasoning"
+  - "SAM"
+  - "GRPO"
 date: 2026-05-08
-content_hash: add86237b18c863a
+content_hash: c9993c3b66fdaa80
 ---
+
 # Urban Socio-Semantic Segmentation with Vision-Language Reasoning
 
 **Conference**: ICLR 2026  

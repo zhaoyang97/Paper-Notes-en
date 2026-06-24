@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Interaction-Centric Knowledge Infusion and Transfer for Open-Vocabulary Scene Graph Generation
 description: >-
-  [NeurIPS 2025][Graph Learning][Open-vocabulary scene graph generation] This paper proposes ACC, an interaction-centric framework that addresses the critical matching problem in open-vocabulary scene graph generation (OVS…
+  [NeurIPS 2025][Graph Learning][Open-vocabulary scene graph generation] This paper proposes ACC, an interaction-centric framework that addresses the critical matching problem in open-vocabulary scene graph generation (OVSGG) by shifting from the conventional object-centric paradigm to an interaction-driven one. During the knowledge infusion stage, bidirectional interaction prompts are used to generate more accurate pseudo supervision; during the knowledge transfer stage…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "vision-language models"
   - "pseudo supervision"
 date: 2026-05-08
-content_hash: 89b06a7ef12ccecb
+content_hash: ac96b2034d3442b4
 ---
 
 # Interaction-Centric Knowledge Infusion and Transfer for Open-Vocabulary Scene Graph Generation
@@ -133,11 +133,11 @@ The pretraining stage uses image-text pairs from COCO Captions to generate pseud
 
 ## Related Papers
 
-- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](../../ICML2026/graph_learning/when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
-- [\[CVPR 2026\] WSGG: Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](../../CVPR2026/graph_learning/wsgg_spatiotemporal_world_scene_graph.md)
+- [\[CVPR 2026\] Mixture-of-Experts based Feature Decoupling for Open Vocabulary Scene Graph Generation](../../CVPR2026/graph_learning/mixture-of-experts_based_feature_decoupling_for_open_vocabulary_scene_graph_gene.md)
+- [\[CVPR 2025\] Universal Scene Graph Generation](../../CVPR2025/graph_learning/universal_scene_graph_generation.md)
+- [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
 - [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
 - [\[NeurIPS 2025\] MedMKG: Benchmarking Medical Knowledge Exploitation with Multimodal Knowledge Graph](medmkg_benchmarking_medical_knowledge_exploitation_with_multimodal_knowledge_gra.md)
-- [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
 
 </div>
 

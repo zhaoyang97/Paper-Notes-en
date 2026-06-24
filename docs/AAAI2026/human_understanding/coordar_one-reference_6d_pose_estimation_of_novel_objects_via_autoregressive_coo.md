@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] CoordAR: One-Reference 6D Pose Estimation of Novel Objects via Autoregressive Coordinate Map Generation
 description: >-
-  [AAAI 2026][Human Understanding][6D pose estimation] This paper proposes CoordAR, which formulates 3D-3D correspondence estimation in single-reference-view 6D pose estimation as an autoregressive generation problem over…
+  [AAAI 2026 Oral][Human Understanding][6D pose estimation] This paper proposes CoordAR, which formulates 3D-3D correspondence estimation in single-reference-view 6D pose estimation as an autoregressive generation problem over discrete tokens. Through coordinate map tokenization, modality-decoupled encoding, and an autoregressive Transformer decoder, CoordAR substantially outperforms existing single-view methods on multiple benchmarks and demonstrates strong robustness to chall…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Human Understanding"
   - "6D pose estimation"
   - "autoregressive"
@@ -12,7 +12,7 @@ tags:
   - "VQ-VAE"
   - "single reference view"
 date: 2026-05-08
-content_hash: ad5a29ee8ff469f6
+content_hash: dde33633852e0a9e
 ---
 
 # CoordAR: One-Reference 6D Pose Estimation of Novel Objects via Autoregressive Coordinate Map Generation
@@ -184,11 +184,11 @@ Single-step inference incurs only a 0.7% accuracy drop while achieving near-real
 
 ## Related Papers
 
-- [\[ICCV 2025\] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation](../../ICCV2025/human_understanding/mixri_mixing_features_of_reference_images_for_novel_object_pose_estimation.md)
+- [\[CVPR 2025\] Any6D: Model-free 6D Pose Estimation of Novel Objects](../../CVPR2025/human_understanding/any6d_model-free_6d_pose_estimation_of_novel_objects.md)
+- [\[CVPR 2025\] One2Any: One-Reference 6D Pose Estimation for Any Object](../../CVPR2025/human_understanding/one2any_one-reference_6d_pose_estimation_for_any_object.md)
 - [\[CVPR 2026\] COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation](../../CVPR2026/human_understanding/cog_confidence-aware_optimal_geometric_correspondence_for_unsupervised_single-re.md)
-- [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](../../ICCV2025/human_understanding/raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
-- [\[AAAI 2026\] VPHO: Joint Visual-Physical Cue Learning and Aggregation for Hand-Object Pose Estimation](vpho_joint_visual-physical_cue_learning_and_aggregation_for_hand-object_pose_est.md)
-- [\[AAAI 2026\] MVGD-Net: A Novel Motion-aware Video Glass Surface Detection Network](mvgd-net_a_novel_motion-aware_video_glass_surface_detection_network.md)
+- [\[ICCV 2025\] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation](../../ICCV2025/human_understanding/mixri_mixing_features_of_reference_images_for_novel_object_pose_estimation.md)
+- [\[CVPR 2025\] HiPART: Hierarchical Pose AutoRegressive Transformer for Occluded 3D Human Pose Estimation](../../CVPR2025/human_understanding/hipart_hierarchical_pose_autoregressive_transformer_for_occluded_3d_human_pose_e.md)
 
 </div>
 

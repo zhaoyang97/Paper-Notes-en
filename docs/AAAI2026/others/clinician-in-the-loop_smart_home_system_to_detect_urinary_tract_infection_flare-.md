@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Clinician-in-the-Loop Smart Home System to Detect Urinary Tract Infection Flare-Ups via Uncertainty-Aware Decision Support
 description: >-
-  [AAAI 2026][Smart home] This paper proposes a clinician-in-the-loop smart home system that extracts behavioral markers from ambient sensor data and introduces a novel Conformal Calibrated Interval (CCI) method to quantif…
+  [AAAI 2026][Smart home] This paper proposes a clinician-in-the-loop smart home system that extracts behavioral markers from ambient sensor data and introduces a novel Conformal Calibrated Interval (CCI) method to quantify predictive uncertainty, enabling reliable detection of urinary tract infection (UTI) flare-ups in older adults and supporting an "abstain when uncertain" decision paradigm.
 tags:
   - "AAAI 2026"
   - "Smart home"
@@ -11,7 +11,7 @@ tags:
   - "conformal prediction"
   - "clinical decision support"
 date: 2026-05-08
-content_hash: ed5a254f7d93f428
+content_hash: 79f22110cc84e3cb
 ---
 
 # Clinician-in-the-Loop Smart Home System to Detect Urinary Tract Infection Flare-Ups via Uncertainty-Aware Decision Support
@@ -175,11 +175,11 @@ Real-world data from the CASAS smart home project: 117 annotated daily samples f
 
 ## Related Papers
 
+- [\[ACL 2025\] Adaptive Retrieval without Self-Knowledge? Bringing Uncertainty Back Home](../../ACL2025/others/adaptive_retrieval_without_self-knowledge_bringing_uncertainty_back_home.md)
 - [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
 - [\[AAAI 2026\] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback](from_sequential_to_recursive_enhancing_decision-focused_learning_with_bidirectio.md)
-- [\[ICLR 2026\] Measuring Uncertainty Calibration](../../ICLR2026/others/measuring_uncertainty_calibration.md)
-- [\[ICCV 2025\] Toward Material-Agnostic System Identification from Videos](../../ICCV2025/others/toward_material-agnostic_system_identification_from_videos.md)
 - [\[AAAI 2026\] DFDT: Dynamic Fast Decision Tree for IoT Data Stream Mining on Edge Devices](dfdt_dynamic_fast_decision_tree_for_iot_data_stream_mining_on_edge_devices.md)
+- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](../../CVPR2026/others/customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Constitutional Black-Box Monitoring for Scheming in LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] This paper proposes an end-to-end "Constitutional Black-Box Monitoring" framework. It utilizes two synthetic data pipelines (STRIDE and Gloom) to generate 2,000 synthetic trajectories for optimizing prompt classifiers. The framework detects scheming behaviors in LLM agents by observing only externally visible tool call
+  [ICML 2026][LLM Agent][Black-box monitoring] This paper proposes an end-to-end "Constitutional Black-Box Monitoring" framework. It utilizes two synthetic data pipelines (STRIDE and Gloom) to generate 2,000 synthetic trajectories for optimizing prompt classifiers. The framework detects scheming behaviors in LLM agents by observing only externally visible tool calls and outputs (without Chain-of-Thought). The study finds that simple prompt grid search saturates performance…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Black-box monitoring"
+  - "LLM agent safety"
+  - "scheming behavior detection"
+  - "synthetic data"
+  - "prompt optimization"
 date: 2026-05-08
-content_hash: a57acd8a4003edfa
+content_hash: f2fc0150a24a3f30
 ---
+
 # Constitutional Black-Box Monitoring for Scheming in LLM Agents
 
 **Conference**: ICML 2026  
@@ -137,9 +143,9 @@ The monitor is essentially a zero-shot/few-shot prompt classifier; the main work
 
 - [\[ICML 2026\] Agentic Monte Carlo: Simulating Reinforcement Learning for Black-Box Agents](agentic_monte_carlo_simulating_reinforcement_learning_for_black-box_agents.md)
 - [\[ICML 2026\] LLM Agents Are the Antidote to Walled Gardens](llm_agents_are_the_antidote_to_walled_gardens.md)
+- [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
 - [\[ICML 2026\] ExCyTIn-Bench: Evaluating LLM Agents on Cyber Threat Investigation](excytin-bench_evaluating_llm_agents_on_cyber_threat_investigation.md)
 - [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
-- [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
 
 </div>
 

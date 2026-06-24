@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA
 description: >-
-  [ICML 2026][AI Safety][LoRA] PRISM shifts DP-SGD from the LoRA factor space $(A,B)$ to the tangent space of the rank-$r$ manifold to perform clipping, noise addition, and retraction. This yields a DP-LoRA mechanism that is gauge-invariant, lacks bilinear second-order noise, and possesses a closed-form intrinsic noise energy of $\sigma C/b\cdot\sqr
+  [ICML2026 Oral][AI Safety][Differential Privacy] PRISM shifts DP-SGD from the LoRA factor space $(A,B)$ to the tangent space of the rank-$r$ manifold to perform clipping, noise addition, and retraction. This yields a DP-LoRA mechanism that is gauge-invariant, lacks bilinear second-order noise, and possesses a closed-form intrinsic noise energy of $\sigma C/b\cdot\sqrt{r(m+n-r)}$.
 tags:
-  - ICML 2026
-  - AI Safety
-  - LoRA
-  - gauge invariance
-  - tangent space
-  - DP-SGD
+  - "ICML2026 Oral"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "LoRA"
+  - "gauge invariance"
+  - "tangent space"
+  - "DP-SGD"
 date: 2026-05-08
-content_hash: 2c5fe02015f8cfdc
+content_hash: 6ae9d2a8e76a8671
 ---
+
 # PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA
 
 **Conference**: ICML2026 Oral  
@@ -128,11 +130,11 @@ Comparison of scaling for three DP-LoRA designs regarding effective intrinsic no
 
 ## Related Papers
 
+- [\[ICLR 2026\] Missing Mass for Differentially Private Domain Discovery](../../ICLR2026/ai_safety/differentially_private_domain_discovery.md)
 - [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
 - [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
-- [\[NeurIPS 2025\] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping](../../NeurIPS2025/ai_safety/mitigating_disparate_impact_of_differentially_private_learning_through_bounded_a.md)
-- [\[AAAI 2026\] An Improved Privacy and Utility Analysis of Differentially Private SGD with Bounded Domain and Smooth Losses](../../AAAI2026/ai_safety/an_improved_privacy_and_utility_analysis_of_differentially_p.md)
-- [\[NeurIPS 2025\] Differentially Private High-dimensional Variable Selection via Integer Programming](../../NeurIPS2025/ai_safety/differentially_private_high-dimensional_variable_selection_via_integer_programmi.md)
+- [\[ICLR 2026\] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text](../../ICLR2026/ai_safety/pe-sgd_differentially_private_deep_learning_via_evolution_of_gradient_subspace_f.md)
+- [\[ICLR 2026\] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning](../../ICLR2026/ai_safety/on_optimal_hyperparameters_for_differentially_private_deep_transfer_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SHARP: Short-Window Streaming for Accurate and Robust Prediction in Motion Forecasting
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Proposes SHARP, a motion forecasting framework based on short-window streaming inference. It explicitly maintains and updates agent latent representations across time steps via an instance-aware context stream module. Combined with a dual-objective training strategy, it achieves SOTA on the Argoverse 2 multi-agent benc
+  [CVPR 2026][Autonomous Driving][Streaming Motion Forecasting] Proposes SHARP, a motion forecasting framework based on short-window streaming inference. It explicitly maintains and updates agent latent representations across time steps via an instance-aware context stream module. Combined with a dual-objective training strategy, it achieves SOTA on the Argoverse 2 multi-agent benchmark for streaming inference while maintaining extremely low latency.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Streaming Motion Forecasting"
+  - "Heterogeneous Observation Lengths"
+  - "Instance-Aware Context Stream"
+  - "Short-Window Inference"
+  - "Multi-Agent Prediction"
 date: 2026-05-08
-content_hash: 485e4502c20fb937
+content_hash: b7423a58d737d928
 ---
+
 # SHARP: Short-Window Streaming for Accurate and Robust Prediction in Motion Forecasting
 
 **Conference**: CVPR 2026  
@@ -160,10 +166,10 @@ Critical role of Dual Training at short context $T_{cl}=1s$:
 ## Related Papers
 
 - [\[CVPR 2026\] FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision](flashcap_millisecond-accurate_human_motion_capture_via_flashing_leds_and_event-b.md)
-- [\[CVPR 2026\] StreamVLO: Streaming Visual-LiDAR Odometry with Cumulative Drift Compensation](streamvlo_streaming_visual-lidar_odometry_with_cumulative_drift_compensation.md)
 - [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](../../ICCV2025/autonomous_driving/future-aware_interaction_network_for_motion_forecasting.md)
-- [\[AAAI 2026\] Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Forecasting in Autonomous Driving](../../AAAI2026/autonomous_driving/differentiable_semantic_meta-learning_framework_for_long-tail_motion_forecasting.md)
+- [\[CVPR 2026\] StreamVLO: Streaming Visual-LiDAR Odometry with Cumulative Drift Compensation](streamvlo_streaming_visual-lidar_odometry_with_cumulative_drift_compensation.md)
 - [\[CVPR 2026\] ReMoT: Reinforcement Learning with Motion Contrast Triplets](remot_reinforcement_learning_with_motion_contrast_triplets.md)
+- [\[CVPR 2026\] Bezier Degradation Modeling for LiDAR-based Human Motion Capture](bezier_degradation_modeling_for_lidar-based_human_motion_capture.md)
 
 </div>
 

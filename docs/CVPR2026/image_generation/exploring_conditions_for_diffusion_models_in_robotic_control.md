@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Exploring Conditions for Diffusion Models in Robotic Control
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] This paper explores how to use the conditioning mechanism of pre-trained text-to-image diffusion models to generate task-adaptive visual representations for robotic control. It finds that text conditions are ineffective in control environments due to domain gaps. The proposed ORCA framework introduces learnable task pr
+  [CVPR 2026][Image Generation][Diffusion Models] This paper explores how to use the conditioning mechanism of pre-trained text-to-image diffusion models to generate task-adaptive visual representations for robotic control. It finds that text conditions are ineffective in control environments due to domain gaps. The proposed ORCA framework introduces learnable task prompts and per-frame visual prompts as conditioning mechanisms, achieving SOTA on 12 tasks across DMC, MetaWorld…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Robotic Control"
+  - "Visual Representation"
+  - "Task Adaptation"
+  - "Learnable Prompts"
 date: 2026-05-08
-content_hash: 51daeaa9df9cb13e
+content_hash: 7c3740bf7a3ee380
 ---
+
 # Exploring Conditions for Diffusion Models in Robotic Control
 
 **Conference**: CVPR 2026  
@@ -167,10 +172,10 @@ where $p_t, p_v$ are task and visual prompts, and $\tau_\theta$ is the text enco
 ## Related Papers
 
 - [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
-- [\[CVPR 2026\] Visual Diffusion Models are Geometric Solvers](visual_diffusion_models_are_geometric_solvers.md)
-- [\[CVPR 2026\] Elucidating the SNR-t Bias of Diffusion Probabilistic Models](dcw_snr_t_bias_diffusion.md)
-- [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
-- [\[CVPR 2026\] Smoothing the Score Function for Generalization in Diffusion Models: An Optimization-based Explanation Framework](smoothing_the_score_function_for_generalization_in_diffusion_models.md)
+- [\[CVPR 2026\] Guiding Diffusion Models with Fine-Grained Conditions and Semantics-Preserving Sampling for One-Shot Federated Learning](guiding_diffusion_models_with_fine-grained_conditions_and_semantics-preserving_s.md)
+- [\[CVPR 2026\] Exploring Spatial Intelligence from a Generative Perspective](exploring_spatial_intelligence_from_a_generative_perspective.md)
+- [\[CVPR 2026\] Pixel Motion Diffusion Is What We Need for Robot Control](pixel_motion_diffusion_is_what_we_need_for_robot_control.md)
+- [\[NeurIPS 2025\] OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions](../../NeurIPS2025/image_generation/omnivcus_feedforward_subject-driven_video_customization_with_multimodal_control_.md)
 
 </div>
 

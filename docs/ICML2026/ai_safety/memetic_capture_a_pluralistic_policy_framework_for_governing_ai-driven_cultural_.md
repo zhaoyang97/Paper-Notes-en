@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Memetic Capture: A Pluralistic Policy Framework for Governing AI-Driven Cultural Disempowerment
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This AI governance position paper identifies "memetic capture" as the process by which AI incrementally strips humans of cultural agency. It proposes the CPGF (Cultural Policy Governance Framework), a four-tier architecture featuring quantifiable impact indices, democratic assemblies, pluralistic deployment standards,
+  [ICML2026][AI Safety][Cultural Disempowerment] This AI governance position paper identifies "memetic capture" as the process by which AI incrementally strips humans of cultural agency. It proposes the CPGF (Cultural Policy Governance Framework), a four-tier architecture featuring quantifiable impact indices, democratic assemblies, pluralistic deployment standards, and transnational coordination. The core argument is that **pluralism is a structural necessity rather than a mor…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Cultural Disempowerment"
+  - "Memetic Capture"
+  - "Pluralistic Alignment"
+  - "AI Governance Framework"
+  - "Prospective Regulation"
 date: 2026-05-08
-content_hash: 001f3b2914dd5dd9
+content_hash: 8913c4541594903e
 ---
+
 # Memetic Capture: A Pluralistic Policy Framework for Governing AI-Driven Cultural Disempowerment
 
 **Conference**: ICML2026  

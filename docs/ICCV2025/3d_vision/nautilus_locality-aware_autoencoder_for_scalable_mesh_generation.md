@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Nautilus: Locality-aware Autoencoder for Scalable Mesh Generation
 description: >-
-  [ICCV2025][3D Vision][mesh generation] Nautilus proposes a locality-aware autoencoder for scalable artist-like mesh generation. By introducing a nautilus-shell-structured mesh tokenization algorithm that reduces sequence…
+  [ICCV2025][3D Vision][mesh generation] Nautilus proposes a locality-aware autoencoder for scalable artist-like mesh generation. By introducing a nautilus-shell-structured mesh tokenization algorithm that reduces sequence length to 1/4 of the naive baseline, and combining it with a dual-stream point cloud conditioner to improve local structural fidelity, Nautilus achieves for the first time direct high-quality mesh generation with up to 5,000 faces.
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "locality-aware"
   - "point cloud conditioning"
 date: 2026-05-08
-content_hash: 288b3f077e4d242d
+content_hash: 257cf82f433fd3fe
 ---
 
 # Nautilus: Locality-aware Autoencoder for Scalable Mesh Generation
@@ -147,9 +147,9 @@ The paper precisely identifies locality as the key bottleneck, proposes an elega
 
 - [\[ICCV 2025\] MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization](meshanything_v2_artist-created_mesh_generation_with_adjacent_mesh_tokenization.md)
 - [\[ICCV 2025\] VertexRegen: Mesh Generation with Continuous Level of Detail](vertexregen_mesh_generation_with_continuous_level_of_detail.md)
-- [\[NeurIPS 2025\] Mesh-RFT: Enhancing Mesh Generation via Fine-Grained Reinforcement Fine-Tuning](../../NeurIPS2025/3d_vision/mesh-rft_enhancing_mesh_generation_via_fine-grained_reinforcement_fine-tuning.md)
+- [\[CVPR 2025\] MEGA: Masked Generative Autoencoder for Human Mesh Recovery](../../CVPR2025/3d_vision/mega_masked_generative_autoencoder_for_human_mesh_recovery.md)
+- [\[CVPR 2025\] TreeMeshGPT: Artistic Mesh Generation with Autoregressive Tree Sequencing](../../CVPR2025/3d_vision/treemeshgpt_artistic_mesh_generation_with_autoregressive_tree_sequencing.md)
 - [\[ICCV 2025\] MeshMamba: State Space Models for Articulated 3D Mesh Generation and Reconstruction](meshmamba_state_space_models_for_articulated_3d_mesh_generation_and_reconstructi.md)
-- [\[ICCV 2025\] MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing](meshpad_interactive_sketch-conditioned_artist-reminiscent_mesh_generation_and_ed.md)
 
 </div>
 

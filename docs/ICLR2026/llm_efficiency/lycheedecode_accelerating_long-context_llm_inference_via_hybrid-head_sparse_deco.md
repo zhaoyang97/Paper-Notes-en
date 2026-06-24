@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Ours proposes LycheeDecode, which fine-grains attention heads into a few retrieval heads (responsible for full attention to select key tokens) and numerous sparse heads (reusing selected tokens for sparse computation). Using the HardKuma distribution for end-to-end head type learning, it achieves a 2.7× speedup on 128K
+  [ICLR 2026][LLM Efficiency][Long-Context Inference] Ours proposes LycheeDecode, which fine-grains attention heads into a few retrieval heads (responsible for full attention to select key tokens) and numerous sparse heads (reusing selected tokens for sparse computation). Using the HardKuma distribution for end-to-end head type learning, it achieves a 2.7× speedup on 128K contexts without performance degradation.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long-Context Inference"
+  - "Sparse Attention"
+  - "Attention Head Specialization"
+  - "KV Cache Optimization"
+  - "HardKuma Distribution"
 date: 2026-05-08
-content_hash: d9cf980d2d36e9c7
+content_hash: d1fd9041ef4009c3
 ---
+
 # LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding
 
 **Conference**: ICLR 2026  
@@ -135,8 +141,8 @@ In comparison across different sparse strategies (Top-k / Top-p / Threshold / Ra
 
 ## Related Papers
 
-- [\[ACL 2025\] Squeezed Attention: Accelerating Long Context Length LLM Inference](../../ACL2025/llm_efficiency/squeezed_attention_accelerating_long_context_length_llm_inference.md)
 - [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
+- [\[ACL 2025\] Squeezed Attention: Accelerating Long Context Length LLM Inference](../../ACL2025/llm_efficiency/squeezed_attention_accelerating_long_context_length_llm_inference.md)
 - [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
 - [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
 - [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)

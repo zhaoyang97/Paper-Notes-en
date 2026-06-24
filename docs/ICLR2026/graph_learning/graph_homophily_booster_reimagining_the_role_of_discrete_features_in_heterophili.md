@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] GRAPHITE: Graph Homophily Booster — Reimagining the Role of Discrete Features in Heterophilic Graph Learning
 description: >-
-  [ICLR 2026][Graph Learning][heterophilic graph] Ours proposes GRAPHITE, a non-learning graph transformation method that **directly boosts graph homophily** by introducing "feature nodes" as hubs to indirectly connect nodes sharing common features. It addresses the heterophily problem by "modifying graph structure" rather than "modifying GNN architecture" for the fir
+  [ICLR 2026][Graph Learning][heterophilic graph] Ours proposes GRAPHITE, a non-learning graph transformation method that **directly boosts graph homophily** by introducing "feature nodes" as hubs to indirectly connect nodes sharing common features. It addresses the heterophily problem by "modifying graph structure" rather than "modifying GNN architecture" for the first time, significantly outperforming 27 SOTA methods on difficult benchmarks such as Actor.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - heterophilic graph
-  - homophily boosting
-  - graph transformation
-  - feature nodes
-  - GNN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "heterophilic graph"
+  - "homophily boosting"
+  - "graph transformation"
+  - "feature nodes"
+  - "GNN"
 date: 2026-05-08
-content_hash: cba022d57e5f6337
+content_hash: 466e2ccb44cf4873
 ---
+
 # GRAPHITE: Graph Homophily Booster — Reimagining the Role of Discrete Features in Heterophilic Graph Learning
 
 **Conference**: ICLR 2026  
@@ -151,7 +152,7 @@ There is almost no difference in performance between Mean aggregation, learnable
 - [\[ICLR 2026\] Discrete Bayesian Sample Inference for Graph Generation](discrete_bayesian_sample_inference_for_graph_generation.md)
 - [\[ICLR 2026\] CORDS - Continuous Representations of Discrete Structures](cords_-_continuous_representations_of_discrete_structures.md)
 - [\[AAAI 2026\] GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs](../../AAAI2026/graph_learning/gcl-ot_graph_contrastive_learning_with_optimal_transport_for_heterophilic_text-a.md)
-- [\[ICLR 2026\] HarmonyGNNs: Harmonizing Heterophily and Homophily in GNNs via Self-Supervised Node Encoding](harmonygnns_harmonizing_heterophily_and_homophily_in_gnns_via_self-supervised_no.md)
+- [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
 
 </div>
 

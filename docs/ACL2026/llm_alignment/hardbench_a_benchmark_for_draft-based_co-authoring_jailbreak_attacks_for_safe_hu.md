@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HarDBench: A Benchmark for Draft-Based Co-Authoring Jailbreak Attacks for Safe Human–LLM Collaborative Writing
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] The paper identifies "draft-based co-authoring" as a neglected jailbreak surface where malicious users provide incomplete, harmful drafts for LLMs to "polish and complete." The model's "completion instinct" often overrides safety guardrails, leaking executable dangerous details. The authors construct the HarDBench benc
+  [ACL2026][LLM Alignment][Jailbreak attacks] The paper identifies "draft-based co-authoring" as a neglected jailbreak surface where malicious users provide incomplete, harmful drafts for LLMs to "polish and complete." The model's "completion instinct" often overrides safety guardrails, leaking executable dangerous details. The authors construct the HarDBench benchmark to quantify this vulnerability (all eight models achieved ASR >80% under CoJP attacks) and propose SUBA prefer…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL2026"
+  - "LLM Alignment"
+  - "Jailbreak attacks"
+  - "Collaborative writing"
+  - "Preference optimization"
+  - "Safety-utility balance"
+  - "Red-teaming benchmark"
 date: 2026-05-08
-content_hash: 9cd878cf823cb88b
+content_hash: dc57ef23eb760f35
 ---
+
 # HarDBench: A Benchmark for Draft-Based Co-Authoring Jailbreak Attacks for Safe Human–LLM Collaborative Writing
 
 **Conference**: ACL2026  
@@ -131,11 +137,11 @@ All eight models achieved HS >4.29 and ASR >80% under CoJP. Key discovery: switc
 
 ## Related Papers
 
-- [\[AAAI 2026\] AlignTree: Efficient Defense Against LLM Jailbreak Attacks](../../AAAI2026/llm_alignment/aligntree_efficient_defense_against_llm_jailbreak_attacks.md)
 - [\[ICLR 2026\] JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks](../../ICLR2026/llm_alignment/jailnewsbench_multi-lingual_and_regional_benchmark_for_fake_news_generation_unde.md)
-- [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](../../ICLR2026/llm_alignment/toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
-- [\[ICML 2025\] Model Swarms: Collaborative Search to Adapt LLM Experts via Swarm Intelligence](../../ICML2025/llm_alignment/model_swarms_collaborative_search_to_adapt_llm_experts_via_swarm_intelligence.md)
-- [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)
+- [\[AAAI 2026\] AlignTree: Efficient Defense Against LLM Jailbreak Attacks](../../AAAI2026/llm_alignment/aligntree_efficient_defense_against_llm_jailbreak_attacks.md)
+- [\[ICLR 2026\] Verification and Co-Alignment via Heterogeneous Consistency for Preference-Aligned LLM Annotations](../../ICLR2026/llm_alignment/verification_and_co-alignment_via_heterogeneous_consistency_for_preference-align.md)
+- [\[ACL 2025\] JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs](../../ACL2025/llm_alignment/jailbreakradar_comprehensive_assessment_jailbreak_attacks.md)
+- [\[ACL 2026\] Better Literary Translation: A Multi-Aspect Data Generation and LLM Training Approach](better_literary_translation_a_multi-aspect_data_generation_and_llm_training_appr.md)
 
 </div>
 

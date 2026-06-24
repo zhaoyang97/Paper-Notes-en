@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sound Logical Explanations for Mean Aggregation Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][graph neural networks] For GNNs using mean aggregation (MAGNN, i.e., mean-GNNs with non-negative weights), this work precisely characterizes the class of monotone logical rules that can ser…
+  [NeurIPS 2025][Graph Learning][graph neural networks] For GNNs using mean aggregation (MAGNN, i.e., mean-GNNs with non-negative weights), this work precisely characterizes the class of monotone logical rules that can serve as sound explanations, constructs a restricted fragment of first-order logic to explain arbitrary MAGNN predictions, and empirically demonstrates that restricting to non-negative weights does not significantly hurt performance while enabling effective extra…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "mean aggregation"
   - "knowledge graph completion"
 date: 2026-05-08
-content_hash: 80cb45e38c4eb69a
+content_hash: d03e51e062d1ae07
 ---
 
 # Sound Logical Explanations for Mean Aggregation Graph Neural Networks

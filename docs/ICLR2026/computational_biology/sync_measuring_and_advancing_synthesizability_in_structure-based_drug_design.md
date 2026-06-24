@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SYNC: Measuring and Advancing Synthesizability in Structure-Based Drug Design
 description: >-
-  [ICLR 2026][Computational Biology][DPO] This paper benchmarks 8 classic synthesizability metrics across 11 SBDD models, revealing inconsistencies between these metrics. It proposes SYNC, a lightweight SE(3)-invariant synthesizability classifier, and integrates it as a plug-and-play module into the diffusion process (via Guided Diffusion and DPO), significant
+  [ICLR 2026][Computational Biology][Structure-Based Drug Design] This paper benchmarks 8 classic synthesizability metrics across 11 SBDD models, revealing inconsistencies between these metrics. It proposes SYNC, a lightweight SE(3)-invariant synthesizability classifier, and integrates it as a plug-and-play module into the diffusion process (via Guided Diffusion and DPO), significantly improving the synthesizability of generated molecules with minimal loss in binding affinity.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - DPO
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Structure-Based Drug Design"
+  - "Synthesizability"
+  - "SE(3)-Invariance"
+  - "Guided Diffusion"
+  - "DPO"
 date: 2026-05-08
-content_hash: 4382bca26ddc410c
+content_hash: 88fbdd79fe496b51
 ---
+
 # SYNC: Measuring and Advancing Synthesizability in Structure-Based Drug Design
 
 **Conference**: ICLR 2026  
@@ -147,9 +152,9 @@ Binding affinity (Vina Dock) remained stable or improved: TargetDiff -7.42 → G
 
 - [\[ICML 2025\] Piloting Structure-Based Drug Design via Modality-Specific Optimal Schedule](../../ICML2025/computational_biology/piloting_structure-based_drug_design_via_modality-specific_optimal_schedule.md)
 - [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](../../ICML2026/computational_biology/evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
+- [\[ICML 2026\] From Holo Pockets to Electron Density: GPT-style Drug Design with Density](../../ICML2026/computational_biology/from_holo_pockets_to_electron_density_gpt-style_drug_design_with_density.md)
 - [\[ICLR 2026\] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction](i2mole_interaction-aware_invariant_molecular_learning_for_generalizable_property.md)
 - [\[ICLR 2026\] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design](a_joint_diffusion_model_with_pre-trained_priors_for_rna_sequence-structure_co-de.md)
-- [\[ICLR 2026\] ProteinAE: Protein Diffusion Autoencoders for Structure Encoding](proteinae_protein_diffusion_autoencoders_for_structure_encoding.md)
 
 </div>
 

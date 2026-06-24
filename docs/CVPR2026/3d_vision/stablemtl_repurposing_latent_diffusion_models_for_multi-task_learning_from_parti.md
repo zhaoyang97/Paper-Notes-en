@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StableMTL: Repurposing Latent Diffusion Models for Multi-Task Learning from Partially Annotated Synthetic Datasets
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] StableMTL repurposes a pre-trained Latent Diffusion Model (Stable Diffusion) into a "single-step latent regressor." It jointly trains 7 dense prediction tasks (semantics, normals, depth, optical flow, scene flow, colorization, and albedo) on three synthetic datasets, each only partially annotated. By replacing per-task
+  [CVPR 2026][3D Vision][Multi-Task Learning] StableMTL repurposes a pre-trained Latent Diffusion Model (Stable Diffusion) into a "single-step latent regressor." It jointly trains 7 dense prediction tasks (semantics, normals, depth, optical flow, scene flow, colorization, and albedo) on three synthetic datasets, each only partially annotated. By replacing per-task losses with a unified latent space MSE loss and facilitating knowledge sharing through an N-to-one "mainstream-auxi…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-Task Learning"
+  - "Latent Regression"
+  - "Partial Annotation"
+  - "Domain Generalization"
+  - "Task Attention"
 date: 2026-05-08
-content_hash: a0d46145ab5b5a79
+content_hash: 30f043b6a84219ad
 ---
+
 # StableMTL: Repurposing Latent Diffusion Models for Multi-Task Learning from Partially Annotated Synthetic Datasets
 
 **Conference**: CVPR 2026  
@@ -132,6 +138,7 @@ Loss Ablation: Using only latent loss $\mathcal{L}_{\rm low}$ yields $+4.78 \Del
 - Value: ⭐⭐⭐⭐⭐ (Provides a scalable, tuning-free path for MTL under annotation scarcity.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

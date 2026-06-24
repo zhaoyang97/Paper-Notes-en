@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distorted or Fabricated? A Survey on Hallucination in Video LLMs
 description: >-
-  [ACL 2026][Hallucination Detection][Paper Note] This paper provides the first systematic classification of hallucinations in Video Large Language Models (Vid-LLMs), proposing a mechanism-driven taxonomy comprising "Dynamic Distortion" (errors in spatiotemporal relations and reference consistency) and "Content Fabrication" (driven by statistical priors and audio-visu
+  [ACL 2026 Findings][Hallucination Detection][Video LLM Hallucination] This paper provides the first systematic classification of hallucinations in Video Large Language Models (Vid-LLMs), proposing a mechanism-driven taxonomy comprising "Dynamic Distortion" (errors in spatiotemporal relations and reference consistency) and "Content Fabrication" (driven by statistical priors and audio-visual conflicts), while surveying evaluation benchmarks, mitigation strategies…
 tags:
-  - ACL 2026
-  - Hallucination Detection
+  - "ACL 2026 Findings"
+  - "Hallucination Detection"
+  - "Video LLM Hallucination"
+  - "Dynamic Distortion"
+  - "Content Fabrication"
+  - "Spatiotemporal Reasoning"
+  - "Multimodality"
 date: 2026-05-08
-content_hash: ff43f9f195b014da
+content_hash: 7d2f1ebee5e7ec0d
 ---
+
 # Distorted or Fabricated? A Survey on Hallucination in Video LLMs
 
 **Conference**: ACL 2026 Findings  
@@ -110,8 +116,8 @@ As this is a survey, no ablation studies were performed.
 - [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
 - [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
 - [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
+- [\[ICLR 2026\] GHOST: Hallucination-Inducing Image Generation for Multimodal LLMs](../../ICLR2026/hallucination/ghost_hallucination-inducing_image_generation_for_multimodal_llms.md)
 - [\[AAAI 2026\] Does Less Hallucination Mean Less Creativity? An Empirical Investigation in LLMs](../../AAAI2026/hallucination/does_less_hallucination_mean_less_creativity_an_empirical_investigation_in_llms.md)
-- [\[NeurIPS 2025\] Robust Hallucination Detection in LLMs via Adaptive Token Selection](../../NeurIPS2025/hallucination/robust_hallucination_detection_in_llms_via_adaptive_token_selection.md)
 
 </div>
 

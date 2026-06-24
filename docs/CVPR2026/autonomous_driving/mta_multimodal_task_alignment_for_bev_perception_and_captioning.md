@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MTA: Multimodal Task Alignment for BEV Perception and Captioning
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] MTA builds two alignment bridges for the "BEV 3D detection + 3D dense captioning" task pair, which were previously optimized independently. BLA supervises the BEV object queries of the Q-Former using text representations of GT captions, while DCA maps detection and captioning outputs into a shared space via learnable p
+  [CVPR 2026][Autonomous Driving][BEV Perception] MTA builds two alignment bridges for the "BEV 3D detection + 3D dense captioning" task pair, which were previously optimized independently. BLA supervises the BEV object queries of the Q-Former using text representations of GT captions, while DCA maps detection and captioning outputs into a shared space via learnable prompts for contrastive alignment. Both modules are active only during training…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "BEV Perception"
+  - "3D Dense Captioning"
+  - "Multimodal Alignment"
+  - "Cross-modal Prompting"
+  - "Alignment at Training Time"
 date: 2026-05-08
-content_hash: e8f3f7300f57231a
+content_hash: 547d303478bb4cfe
 ---
+
 # MTA: Multimodal Task Alignment for BEV Perception and Captioning
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,10 @@ BLA alignment layer $\omega$ ($L=8$): NDS 38.4 for layer 1; NDS 38.9 / C 111.9 (
 ## Related Papers
 
 - [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
+- [\[ECCV 2024\] H-V2X: A Large Scale Highway Dataset for BEV Perception](../../ECCV2024/autonomous_driving/h-v2x_a_large_scale_highway_dataset_for_bev_perception.md)
 - [\[AAAI 2026\] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception](../../AAAI2026/autonomous_driving/rethinking_the_spatio-temporal_alignment_of_end-to-end_3d_perception.md)
+- [\[CVPR 2026\] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection](look_before_you_fuse_2d-guided_cross-modal_alignment_for_robust_3d_detection.md)
 - [\[ICLR 2026\] SiMO: Single-Modality-Operable Multimodal Collaborative Perception](../../ICLR2026/autonomous_driving/simo_single-modality-operable_multimodal_collaborative_perceptio.md)
-- [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](../../ICCV2025/autonomous_driving/maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
-- [\[ECCV 2024\] Navigation Instruction Generation with BEV Perception and Large Language Models](../../ECCV2024/autonomous_driving/navigation_instruction_generation_with_bev_perception_and_large_language_models.md)
 
 </div>
 

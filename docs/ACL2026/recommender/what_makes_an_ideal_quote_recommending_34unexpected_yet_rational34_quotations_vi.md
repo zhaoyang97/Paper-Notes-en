@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Makes an Ideal Quote? Recommending "Unexpected yet Rational" Quotations via Novelty
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] NOVELQR proposes a novelty-driven quote recommendation framework that constructs a deep semantic knowledge base via generative label proxies for rational retrieval, and utilizes a token-level novelty estimator to mitigate auto-regressive completion bias, significantly enhancing recommendation quality across bilingual b
+  [ACL 2026][Recommender Systems][Quote Recommendation] NOVELQR proposes a novelty-driven quote recommendation framework that constructs a deep semantic knowledge base via generative label proxies for rational retrieval, and utilizes a token-level novelty estimator to mitigate auto-regressive completion bias, significantly enhancing recommendation quality across bilingual benchmarks.
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Quote Recommendation"
+  - "Novelty Estimation"
+  - "Defamiliarization Theory"
+  - "Deep Semantic Retrieval"
+  - "Completion Bias"
 date: 2026-05-08
-content_hash: c6ef57ab3b9b5b82
+content_hash: 4463d233e6645d92
 ---
+
 # What Makes an Ideal Quote? Recommending "Unexpected yet Rational" Quotations via Novelty
 
 **Conference**: ACL 2026  
@@ -142,15 +148,15 @@ The final reranking score is $S_{\text{final}} = \lambda_1 \cdot S_N + \lambda_2
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context](what_makes_llms_effective_sequential_recommenders_a_study_on_preference_intensit.md)
 - [\[ACL 2026\] Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation](where_and_what_reasoning_dynamic_and_implicit_preferences_in_situated_conversati.md)
 - [\[ACL 2025\] CoVE: Compressed Vocabulary Expansion Makes Better LLM-based Recommender Systems](../../ACL2025/recommender/cove_compressed_vocabulary_expansion_makes_better_llm-based_recommender_systems.md)
+- [\[ICLR 2026\] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](../../ICLR2026/recommender/more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)
 - [\[NeurIPS 2025\] Measuring What Matters: Construct Validity in Large Language Model Benchmarks](../../NeurIPS2025/recommender/measuring_what_matters_construct_validity_in_large_language_model_benchmarks.md)
-- [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
 
 </div>
 

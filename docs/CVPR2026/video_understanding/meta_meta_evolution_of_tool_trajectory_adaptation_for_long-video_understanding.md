@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] META: Meta Evolution of Tool Trajectory Adaptation for Long-Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] META enables a training-free video understanding agent to "self-evolve its toolbox" through iterative problem-solving. It condenses recurring multi-step tool combinations from successful trajectories into reusable macro-tools and distills failure trajectories into tool usage constraints. Without updating any parameters
+  [CVPR 2026][Video Understanding][Long-video understanding] META enables a training-free video understanding agent to "self-evolve its toolbox" through iterative problem-solving. It condenses recurring multi-step tool combinations from successful trajectories into reusable macro-tools and distills failure trajectories into tool usage constraints. Without updating any parameters, it improves strong VLMs by 4.6%–7.6% across three long-video benchmarks.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Long-video understanding"
+  - "Tool agent"
+  - "Macro-tool evolution"
+  - "Tool trajectory"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 6804dbe332edcf36
+content_hash: 0446871b63dc7069
 ---
+
 # META: Meta Evolution of Tool Trajectory Adaptation for Long-Video Understanding
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,20 @@ The Orchestrator-Worker framework provides initial gains; both micro and macro-t
 - Value: ⭐⭐⭐⭐⭐ High practical value for long-video agents due to its training-free, model-agnostic, and portable nature.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking](videoseek_long-horizon_video_agent_with_tool-guided_seeking.md)
+- [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
+- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] TrajTok: Learning Trajectory Tokens Enhances Video Understanding](trajtok_learning_trajectory_tokens_enables_better_video_understanding.md)
+- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking](videoseek_long-horizon_video_agent_with_tool-guided_seeking.md)

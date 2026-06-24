@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] Ours proposes a paired-task framework to jointly evaluate the literary text comprehension and translational creativity of LLMs. Based on a large-scale evaluation of 23 models using 11 classic English novels, it is found that strong comprehension ability does not translate into human-level translational creativity.
+  [ACL 2026 Findings][LLM Evaluation][Literary Translation] Ours proposes a paired-task framework to jointly evaluate the literary text comprehension and translational creativity of LLMs. Based on a large-scale evaluation of 23 models using 11 classic English novels, it is found that strong comprehension ability does not translate into human-level translational creativity.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Literary Translation"
+  - "Translational Creativity"
+  - "Source Text Comprehension"
+  - "Paired-Task Framework"
 date: 2026-05-08
-content_hash: bd12cd5e3c07fc28
+content_hash: 5215dd5f0da70fd7
 ---
+
 # Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation
 
 **Conference**: ACL 2026 Findings  
@@ -147,7 +152,6 @@ Ours is an evaluation framework and does not involve model training. Task 1 uses
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Post-hoc Probabilistic Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] A training-free post-hoc uncertainty estimation method is proposed, applying Laplace approximation to the final layers of VLMs such as CLIP/SigLIP. By analytically deriving the uncertainty of cosine similarity, it achieves performance significantly superior to baselines in uncertainty quantification and active learning
+  [ICLR 2026][Multimodal VLM][Vision-Language Models] A training-free post-hoc uncertainty estimation method is proposed, applying Laplace approximation to the final layers of VLMs such as CLIP/SigLIP. By analytically deriving the uncertainty of cosine similarity, it achieves performance significantly superior to baselines in uncertainty quantification and active learning.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Uncertainty Quantification"
+  - "Bayesian Inference"
+  - "Laplace Approximation"
+  - "Active Learning"
 date: 2026-05-08
-content_hash: 5468f7b315e1227e
+content_hash: 3d57d5ee14118db7
 ---
+
 # Post-hoc Probabilistic Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -150,10 +155,10 @@ The effectiveness is verified in two primary application scenarios:
 ## Related Papers
 
 - [\[CVPR 2026\] Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models](../../CVPR2026/multimodal_vlm/bias_is_a_subspace_not_a_coordinate_a_geometric_rethinking_of_post-hoc_debiasing.md)
+- [\[ICLR 2026\] Revisiting Multimodal Positional Encoding in Vision-Language Models](revisiting_multimodal_positional_encoding_in_visionlanguage_models.md)
 - [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](visual_jigsaw_post-training_improves_mllms.md)
-- [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
-- [\[ICLR 2026\] PHyCLIP: $\ell_1$-Product of Hyperbolic Factors Unifies Hierarchy and Compositionality in Vision-Language Representation Learning](phyclip_ell_1-product_of_hyperbolic_factors_unifies_hierarchy_and_compositionali.md)
-- [\[ICLR 2026\] Prompt-Robust Vision-Language Models via Meta-Finetuning](prompt-robust_vision-language_models_via_meta-finetuning.md)
+- [\[ICLR 2026\] Pay Less Attention to Function Words for Free Robustness of Vision-Language Models](pay_less_attention_to_function_words_for_free_robustness_of_vision-language_mode.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](flatness_guided_test-time_adaptation_for_vision-language_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VTinker: Guided Flow Upsampling and Texture Mapping for High-Resolution Video Frame Interpolation
 description: >-
-  [AAAI 2026][Video Understanding][Video Frame Interpolation] VTinker is a pipeline that addresses blurry optical flow boundaries via Guided Flow Upsampling (GFU) and eliminates ghosting and discontinuities by replacing co…
+  [AAAI 2026][Video Understanding][Video Frame Interpolation] VTinker is a pipeline that addresses blurry optical flow boundaries via Guided Flow Upsampling (GFU) and eliminates ghosting and discontinuities by replacing conventional per-pixel blending with texture mapping, achieving state-of-the-art performance in high-resolution video frame interpolation.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "High-Resolution Video"
   - "Motion Estimation"
 date: 2026-05-08
-content_hash: 704f687f21f62bbf
+content_hash: ddc7389c24acc3f9
 ---
 
 # VTinker: Guided Flow Upsampling and Texture Mapping for High-Resolution Video Frame Interpolation
@@ -133,11 +133,11 @@ The Style loss proposed in FILM is adopted: $\mathcal{L}_S = w_l \mathcal{L}_1 +
 
 ## Related Papers
 
+- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](../../CVPR2026/video_understanding/one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
 - [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](../../ICCV2025/video_understanding/memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
-- [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](../../ICCV2025/video_understanding/alltracker_efficient_dense_point_tracking_at_high_resolution.md)
-- [\[ICCV 2025\] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](../../ICCV2025/video_understanding/q-frame_query-aware_frame_selection_and_multi-resolution_adaptation_for_video-ll.md)
-- [\[AAAI 2026\] RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection](refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom.md)
-- [\[AAAI 2026\] BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation](bat_learning_event-based_optical_flow_with_bidirectional_adaptive_temporal_corre.md)
+- [\[CVPR 2025\] BiM-VFI: Bidirectional Motion Field-Guided Frame Interpolation for Video with Non-uniform Motions](../../CVPR2025/video_understanding/bim-vfi_bidirectional_motion_field-guided_frame_interpolation_for_video_with_non.md)
+- [\[CVPR 2025\] VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by Video SpatioTemporal Augmentation](../../CVPR2025/video_understanding/vista_enhancing_long-duration_and_high-resolution_video_understanding_by_video_s.md)
+- [\[CVPR 2026\] FPS-Bench: A Benchmark for High Frame-Rate Video Understanding](../../CVPR2026/video_understanding/fps-bench_a_benchmark_for_high_frame-rate_video_understanding.md)
 
 </div>
 

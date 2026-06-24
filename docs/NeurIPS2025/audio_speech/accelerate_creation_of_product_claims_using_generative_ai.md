@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Accelerate Creation of Product Claims Using Generative AI
 description: >-
-  [NeurIPS 2025][Audio & Speech][product claims] This paper develops the Claim Advisor platform, leveraging LLM in-context learning and LoRA fine-tuning to accelerate the search, generation, refinement…
+  [NeurIPS 2025][Audio & Speech][product claims] This paper develops the Claim Advisor platform, leveraging LLM in-context learning and LoRA fine-tuning to accelerate the search, generation, refinement, and ranking of product claims for consumer goods. By emulating the MaxDiff research methodology, a fine-tuned Phi-3 14B model outperforms GPT-4o on claim ranking using only 1 in-context example versus GPT-4o's 100, and after three iterative rounds…
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "MaxDiff"
   - "consumer simulation"
 date: 2026-05-08
-content_hash: c348da3b5a4b4d25
+content_hash: fadfc76fb2169698
 ---
 
 # Accelerate Creation of Product Claims Using Generative AI
@@ -134,8 +134,8 @@ The fine-tuned Phi-3 14B surpasses GPT-4o with only 1 in-context example, compar
 - [\[AAAI 2026\] Aligning Generative Music AI with Human Preferences: Methods and Challenges](../../AAAI2026/audio_speech/aligning_generative_music_ai_with_human_preferences_methods_and_challenges.md)
 - [\[NeurIPS 2025\] Echoes of Humanity: Exploring the Perceived Humanness of AI Music](echoes_of_humanity_exploring_the_perceived_humanness_of_ai_music.md)
 - [\[NeurIPS 2025\] Sensorium Arc: AI Agent System for Oceanic Data Exploration and Interactive Eco-Art](sensorium_arc_ai_agent_system_for_oceanic_data_exploration_and_interactive_eco-a.md)
-- [\[NeurIPS 2025\] Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization](seeing_sound_hearing_sight_uncovering_modality_bias_and_conflict_of_ai_models_in.md)
 - [\[NeurIPS 2025\] Ethics Statements in AI Music Papers: The Effective and the Ineffective](ethics_statements_in_ai_music_papers_the_effective_and_the_ineffective.md)
+- [\[NeurIPS 2025\] From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era](from_generation_to_attribution_music_ai_agent_architectures_for_the_post-streami.md)
 
 </div>
 

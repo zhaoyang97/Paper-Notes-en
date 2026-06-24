@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Debiasing Reward Models via Causally Motivated Inference-Time Intervention
 description: >-
-  [ACL 2026][Alignment & RLHF][reward model] The authors view the Bradley-Terry reward model as a causal graph for estimating total effect and identify bias-specific neurons (accounting for < 2% of total neurons) highly correlated with activations of five stylistic biases (length / paragraph / word overlap / exclamation mark / bold). During inference, these neuro
+  [ACL 2026][LLM Alignment][reward model] The authors view the Bradley-Terry reward model as a causal graph for estimating total effect and identify bias-specific neurons (accounting for < 2% of total neurons) highly correlated with activations of five stylistic biases (length / paragraph / word overlap / exclamation mark / bold). During inference, these neuron activations are replaced with validation set medians (estimating the controlled direct effect). This approach eliminat…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - reward model
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "reward model"
+  - "causal intervention"
+  - "neuron editing"
+  - "length bias"
+  - "formatting bias"
 date: 2026-05-08
-content_hash: 621e7e969c9cebfe
+content_hash: 377edcde58b4c6f4
 ---
+
 # Debiasing Reward Models via Causally Motivated Inference-Time Intervention
 
 **Conference**: ACL 2026  
@@ -162,9 +167,9 @@ Removing any intervention upsets the balance across LCWR, WR, and MT-Bench, prov
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](../../NeurIPS2025/llm_alignment/inference-time_alignment_in_continuous_space.md)
-- [\[ICML 2026\] Reward Shaping for (Inference-Time) Alignment: A Stackelberg Game Perspective](../../ICML2026/llm_alignment/reward_shaping_for_inference-time_alignment_a_stackelberg_game_perspective.md)
 - [\[ACL 2026\] To Intervene or Not: Guiding Inference-time Alignment with Probabilistic Model Blending](to_intervene_or_not_guiding_inference-time_alignment_with_probabilistic_model_bl.md)
+- [\[ICML 2026\] Reward Shaping for (Inference-Time) Alignment: A Stackelberg Game Perspective](../../ICML2026/llm_alignment/reward_shaping_for_inference-time_alignment_a_stackelberg_game_perspective.md)
+- [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](../../NeurIPS2025/llm_alignment/inference-time_alignment_in_continuous_space.md)
 - [\[AAAI 2026\] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search](../../AAAI2026/llm_alignment/w2s-aligntree_weak-to-strong_inference-time_alignment_for_large_language_models_.md)
 - [\[ACL 2026\] Student Guides Teacher: Weak-to-Strong Inference via Spectral Orthogonal Exploration](student_guides_teacher_weak-to-strong_inference_via_spectral_orthogonal_explorat.md)
 

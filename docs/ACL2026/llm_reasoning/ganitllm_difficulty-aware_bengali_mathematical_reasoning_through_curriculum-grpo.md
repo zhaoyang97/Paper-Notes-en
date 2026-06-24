@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GanitLLM: Difficulty-Aware Bengali Mathematical Reasoning through Curriculum-GRPO
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper introduces GanitLLM, the first model to perform mathematical reasoning genuinely in Bengali (rather than through translation or reasoning in English). Through the construction of Ganit, a difficulty-annotated Bengali mathematics dataset, and the proposal of Curriculum-GRPO to address the cold start problem i
+  [ACL 2026 Findings][Reasoning][Bengali Mathematical Reasoning] This paper introduces GanitLLM, the first model to perform mathematical reasoning genuinely in Bengali (rather than through translation or reasoning in English). Through the construction of Ganit, a difficulty-annotated Bengali mathematics dataset, and the proposal of Curriculum-GRPO to address the cold start problem in low-resource GRPO training, the 4B model achieves an 8-percentage-point accuracy gain on Bn-MGS…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Bengali Mathematical Reasoning"
+  - "Curriculum Learning"
+  - "GRPO Cold Start"
+  - "Difficulty-Awareness"
+  - "Low-Resource Languages"
 date: 2026-05-08
-content_hash: e70b2bf87a0c7542
+content_hash: 831dd597a859a509
 ---
+
 # GanitLLM: Difficulty-Aware Bengali Mathematical Reasoning through Curriculum-GRPO
 
 **Conference**: ACL 2026 Findings  
@@ -143,8 +149,8 @@ The SFT stage uses standard cross-entropy loss. The GRPO stage uses standard GRP
 - [\[ICLR 2026\] Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation](../../ICLR2026/llm_reasoning/harder_is_better_boosting_mathematical_reasoning_via_difficulty-aware_grpo_and_m.md)
 - [\[ACL 2026\] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data](budget-aware_anytime_reasoning_with_llm-synthesized_preference_data.md)
 - [\[ACL 2026\] DELTA: Dynamic Layer-Aware Token Attention for Efficient Long-Context Reasoning](delta_dynamic_layer-aware_token_attention_for_efficient_long-context_reasoning.md)
-- [\[ACL 2026\] Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding (CoRD)](distilling_long-cot_reasoning_through_collaborative_step-wise_multi-teacher_deco.md)
-- [\[NeurIPS 2025\] Curriculum Abductive Learning](../../NeurIPS2025/llm_reasoning/curriculum_abductive_learning.md)
+- [\[ICLR 2026\] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling](../../ICLR2026/llm_reasoning/overthinking_reduction_with_decoupled_rewards_and_curriculum_data_scheduling.md)
+- [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](../../ICLR2026/llm_reasoning/curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
 
 </div>
 

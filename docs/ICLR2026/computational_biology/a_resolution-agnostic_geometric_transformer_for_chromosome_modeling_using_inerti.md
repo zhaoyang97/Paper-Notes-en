@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Resolution-Agnostic Geometric Transformer for Chromosome Modeling Using Inertial Frame
 description: >-
-  [ICLR 2026][Computational Biology][Hi-C] InertialGenome utilizes an inertial frame to normalize initial 3D chromosome coordinates into a stable pose, then refines these coordinates using a Transformer equipped with 3D-RoPE and Nyström structural encoding. It outperforms traditional optimization methods and Graph Neural Network baselines across two single-cell
+  [ICLR2026][Computational Biology][3D Genome Reconstruction] InertialGenome utilizes an inertial frame to normalize initial 3D chromosome coordinates into a stable pose, then refines these coordinates using a Transformer equipped with 3D-RoPE and Nyström structural encoding. It outperforms traditional optimization methods and Graph Neural Network baselines across two single-cell Hi-C datasets, multiple resolutions, and various biological functional validations.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Hi-C
+  - "ICLR2026"
+  - "Computational Biology"
+  - "3D Genome Reconstruction"
+  - "Hi-C"
+  - "Chromosome Modeling"
+  - "Geometric Transformer"
+  - "Cross-resolution Transfer"
 date: 2026-05-08
-content_hash: 4495299b91d2a545
+content_hash: 152d2c13d3b1fe6d
 ---
+
 # A Resolution-Agnostic Geometric Transformer for Chromosome Modeling Using Inertial Frame
 
 **Conference**: ICLR2026  
@@ -151,11 +156,11 @@ Cross-resolution transfer experiments (320kb to 160kb, 80kb, 40kb) showed that I
 
 ## Related Papers
 
-- [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
-- [\[ICLR 2026\] FACET: A Fragment-Aware Conformer Ensemble Transformer](facet_a_fragment-aware_conformer_ensemble_transformer.md)
 - [\[ICLR 2026\] Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles](rigidity-aware_geometric_pretraining_for_protein_design_and_conformational_ensem.md)
 - [\[ICML 2025\] Geometric Generative Modeling with Noise-Conditioned Graph Networks](../../ICML2025/computational_biology/geometric_generative_modeling_with_noise-conditioned_graph_networks.md)
-- [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
+- [\[AAAI 2026\] Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows](../../AAAI2026/computational_biology/efficient_chromosome_parallelization_for_precision_medicine_genomic_workflows.md)
+- [\[ICLR 2026\] FACET: A Fragment-Aware Conformer Ensemble Transformer](facet_a_fragment-aware_conformer_ensemble_transformer.md)
+- [\[ICLR 2026\] Protein Structure Tokenization via Geometric Byte Pair Encoding](protein_structure_tokenization_via_geometric_byte_pair_encoding.md)
 
 </div>
 

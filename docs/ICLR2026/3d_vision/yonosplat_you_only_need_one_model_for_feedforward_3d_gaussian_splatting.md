@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] YoNoSplat: You Only Need One Model for Feedforward 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] YoNoSplat uses a feedforward model to directly predict per-view local 3D Gaussians, camera poses, and intrinsics from an arbitrary number of unposed and uncalibrated multi-view images, which are then aggregated into a global scene. By employing a "mix-forcing" training strategy, pairwise distance normalization, and Int
+  [ICLR 2026][3D Vision][Feedforward 3DGS] YoNoSplat uses a feedforward model to directly predict per-view local 3D Gaussians, camera poses, and intrinsics from an arbitrary number of unposed and uncalibrated multi-view images, which are then aggregated into a global scene. By employing a "mix-forcing" training strategy, pairwise distance normalization, and Intrinsic Condition Embedding (ICE), it resolves pose-geometry entanglement and scale ambiguity. It achieves SOTA performa…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Feedforward 3DGS"
+  - "Unposed Reconstruction"
+  - "Mix-forcing Training"
+  - "Scale Ambiguity"
+  - "Intrinsic Prediction"
 date: 2026-05-08
-content_hash: 21702332229e569a
+content_hash: 9df7d1f56cad5333
 ---
+
 # YoNoSplat: You Only Need One Model for Feedforward 3D Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -147,15 +153,14 @@ Notably, YoNoSplat in the **unposed, uncalibrated** setting outperforms SOTA met
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors](surfsplat_conquering_feedforward_2d_gaussian_splatting_with_surface_continuity_p.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
 - [\[ICLR 2026\] The Less You Depend, the More You Learn: Synthesizing Novel Views from Sparse, Unposed Images with Minimal 3D Knowledge](the_less_you_depend_the_more_you_learn_synthesizing_novel_views_from_sparse_unpo.md)
 - [\[ICLR 2026\] DiMeR: Disentangled Mesh Reconstruction Model with Normal-only Geometry Training](dimer_disentangled_mesh_reconstruction_model_with_normal-only_geometry_training.md)
 - [\[CVPR 2025\] Perceptual Inductive Bias is What You Need Before Contrastive Learning](../../CVPR2025/3d_vision/perceptual_inductive_bias_is_what_you_need_before_contrastive_learning.md)
-- [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
 
 </div>
 

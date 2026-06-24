@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cross-fluctuation Phase Transitions Reveal Sampling Dynamics in Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] Drawing on fluctuation theory from statistical physics, this work proposes a framework for detecting discrete phase transitions in the sampling process of diffusion mode…
+  [NeurIPS 2025][Image Generation][Diffusion models] Drawing on fluctuation theory from statistical physics, this work proposes a framework for detecting discrete phase transitions in the sampling process of diffusion models via **cross-fluctuations**, enabling accelerated sampling, improved conditional generation, zero-shot classification, and style transfer—all without retraining.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "sampling dynamics"
   - "conditional generation"
 date: 2026-05-08
-content_hash: 4102443bc13e6002
+content_hash: fe79ee47b027bc51
 ---
 
 # Cross-fluctuation Phase Transitions Reveal Sampling Dynamics in Diffusion Models
@@ -157,8 +157,8 @@ An excellent work that combines theoretical depth with practical utility. The st
 - [\[NeurIPS 2025\] PID-controlled Langevin Dynamics for Faster Sampling of Generative Models](pid-controlled_langevin_dynamics_for_faster_sampling_of_generative_models.md)
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
 - [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
-- [\[NeurIPS 2025\] Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems](preconditioned_langevin_dynamics_with_score-based_generative_models_for_infinite.md)
 - [\[NeurIPS 2025\] When Are Concepts Erased From Diffusion Models?](when_are_concepts_erased_from_diffusion_models.md)
+- [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
 
 </div>
 

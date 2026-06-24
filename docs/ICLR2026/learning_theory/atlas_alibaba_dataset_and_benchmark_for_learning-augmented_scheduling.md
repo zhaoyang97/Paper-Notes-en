@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] ATLAS: Alibaba Dataset and Benchmark for Learning-Augmented Scheduling
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper cleans and performs feature engineering on the Alibaba PAI-2020 GPU cluster trace to create ATLAS, a "non-clairvoyant scheduling" dataset containing 730,000 jobs with ground-truth job duration labels. It introduces an end-to-end benchmark, LASched, which evaluates both prediction tasks (estimating job durati
+  [ICLR 2026][Datasets and Benchmarks][non-clairvoyant scheduling] This paper cleans and performs feature engineering on the Alibaba PAI-2020 GPU cluster trace to create ATLAS, a "non-clairvoyant scheduling" dataset containing 730,000 jobs with ground-truth job duration labels. It introduces an end-to-end benchmark, LASched, which evaluates both prediction tasks (estimating job duration using features available at submission) and scheduling tasks (using predictions to optimize…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Datasets and Benchmarks"
+  - "Learning-Augmented Scheduling"
+  - "Algorithms and Prediction"
+  - "non-clairvoyant scheduling"
+  - "Alibaba PAI trace"
+  - "job duration prediction"
+  - "competitive ratio"
 date: 2026-05-08
-content_hash: 1f9076b95fb05dfc
+content_hash: 41624d6bc5d5773a
 ---
+
 # ATLAS: Alibaba Dataset and Benchmark for Learning-Augmented Scheduling
 
 **Conference**: ICLR 2026  
@@ -110,15 +117,16 @@ LGBM-Meta (Meta-stacking) performed best overall. The inclusion of task signatur
 *   Value: ⭐⭐⭐⭐⭐ (Provides a long-term reusable benchmark for the community).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] On Smoothness Bounds for Non-Clairvoyant Scheduling with Predictions](on_smoothness_bounds_for_non-clairvoyant_scheduling_with_predictions.md)
 - [\[ICLR 2026\] Online Rounding and Learning Augmented Algorithms for Facility Location](online_rounding_and_learning_augmented_algorithms_for_facility_location.md)
+- [\[ICLR 2026\] Learning-Augmented Moment Estimation on Time-Decay Models](learning-augmented_moment_estimation_on_time-decay_models.md)
+- [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](../../ICML2026/learning_theory/towards_optimal_robustness_in_learning-augmented_paging.md)
 - [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/learning_theory/parsimonious_learning-augmented_online_metric_matching.md)
-- [\[ICLR 2026\] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion](better_learning-augmented_spanning_tree_algorithms_via_metric_forest_completion.md)
-- [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
 
 </div>
 

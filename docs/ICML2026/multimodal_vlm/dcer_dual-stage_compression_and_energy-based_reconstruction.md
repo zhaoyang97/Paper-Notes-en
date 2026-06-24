@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DCER: Robust Multimodal Fusion via Dual-Stage Compression and Energy-Based Reconstruction
 description: >-
-  [ICML 2026][Multimodal VLM][bottleneck token] DCER establishes "intra-modal frequency domain compression + cross-modal bottleneck tokens" as a unified robust fusion pipeline. It utilizes a learned energy function for gradient-descent reconstruction of missing modalities, while treating the final energy value as an intrinsic uncertainty measure, achieving new SOTA
+  [ICML 2026][Multimodal VLM][Dual-stage compression] DCER establishes "intra-modal frequency domain compression + cross-modal bottleneck tokens" as a unified robust fusion pipeline. It utilizes a learned energy function for gradient-descent reconstruction of missing modalities, while treating the final energy value as an intrinsic uncertainty measure, achieving new SOTA results on MOSI/MOSEI/SIMS.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - bottleneck token
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Dual-stage compression"
+  - "Frequency domain transform"
+  - "Bottleneck token"
+  - "Energy-based model"
+  - "Missing modalities"
 date: 2026-05-08
-content_hash: 86bdae2bc5819e85
+content_hash: a0f91358e2c716d2
 ---
+
 # DCER: Robust Multimodal Fusion via Dual-Stage Compression and Energy-Based Reconstruction
 
 **Conference**: ICML 2026  
@@ -135,10 +140,10 @@ Total loss: $\mathcal L = \mathcal L_\mathrm{pred} + \alpha\mathcal L_\mathrm{re
 ## Related Papers
 
 - [\[CVPR 2026\] ReCoFuse: Ultra-Robust Image Fusion via Restorative Multi-Modal Diffusion Reciprocal Coupling](../../CVPR2026/multimodal_vlm/recofuse_ultra-robust_image_fusion_via_restorative_multi-modal_diffusion_recipro.md)
+- [\[ICLR 2026\] Reconstruction Alignment Improves Unified Multimodal Models](../../ICLR2026/multimodal_vlm/reconstruction_alignment_improves_unified_multimodal_models.md)
 - [\[CVPR 2026\] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval](../../CVPR2026/multimodal_vlm/eaglenet_energy-aware_fine-grained_relationship_learning_network_for_text-video_.md)
+- [\[ICML 2026\] VLANeXt: A Recipe for Building Robust VLA Models](vlanext_recipes_for_building_strong_vla_models.md)
 - [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
-- [\[NeurIPS 2025\] Breaking the Compression Ceiling: Data-Free Pipeline for Ultra-Efficient Delta Compression](../../NeurIPS2025/multimodal_vlm/breaking_the_compression_ceiling_data-free_pipeline_for_ultra-efficient_delta_co.md)
-- [\[CVPR 2026\] Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis](../../CVPR2026/multimodal_vlm/conflict-aware_adaptive_cross-reconstruction_for_multimodal_sentiment_analysis.md)
 
 </div>
 

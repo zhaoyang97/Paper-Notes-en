@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] The authors observe that the noise levels encoded in the intermediate states of diffusion/flow models systematically bias toward "larger" values during sampling (termed **noise shift**). They propose **Noise Awareness Guidance (NAG)**—a classifier-free guidance applied along the "noise condition" axis rather than the "
+  [ICLR 2026][Image Generation][Diffusion Models] The authors observe that the noise levels encoded in the intermediate states of diffusion/flow models systematically bias toward "larger" values during sampling (termed **noise shift**). They propose **Noise Awareness Guidance (NAG)**—a classifier-free guidance applied along the "noise condition" axis rather than the "class condition" axis. This pulls deviated trajectories back to the intended noise schedule…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - Flow Matching
-  - noise shift
-  - classifier-free guidance
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Flow Matching"
+  - "noise shift"
+  - "classifier-free guidance"
+  - "sampling trajectory correction"
+  - "ImageNet generation"
 date: 2026-05-08
-content_hash: 4615acd7496374c1
+content_hash: f2011d7f52f32c49
 ---
+
 # Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance
 
 **Conference**: ICLR 2026  
@@ -123,9 +126,9 @@ NAG further reduced FID across vanilla, CFG, and DoG baselines, with means dropp
 
 - [\[ICLR 2026\] A Noise is Worth Diffusion Guidance](a_noise_is_worth_diffusion_guidance.md)
 - [\[ICLR 2026\] ReDDiT: Rehashing Noise for Discrete Visual Generation](reddit_rehashing_noise_for_discrete_visual_generation.md)
+- [\[ICLR 2026\] Carré du champ Flow Matching: Improving the Quality-Generalisation Trade-off in Generative Models via Geometry-Aware Noise](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
 - [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
-- [\[ICLR 2026\] There and Back Again: On the Relation between Noise and Image Inversions in Diffusion Models](there_and_back_again_on_the_relation_between_noise_and_image_inversions_in_diffu.md)
-- [\[ICLR 2026\] DeRaDiff: Denoising Time Realignment of Diffusion Models](deradiff_denoising_time_realignment_of_diffusion_models.md)
+- [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
 
 </div>
 

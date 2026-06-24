@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Root Cause Analysis of Outliers with Missing Structural Knowledge
 description: >-
-  [NeurIPS 2025][Causal Inference][Root Cause Analysis] Two simple and efficient algorithms are proposed for root cause analysis using only **marginal anomaly scores**: SMOOTH TRAVERSAL (known causal graph — finds the node…
+  [NeurIPS 2025][Causal Inference][Root Cause Analysis] Two simple and efficient algorithms are proposed for root cause analysis using only **marginal anomaly scores**: SMOOTH TRAVERSAL (known causal graph — finds the node with the largest score jump along causal paths) and SCORE ORDERING (unknown causal graph — ranks nodes by score and returns the top-$k$). Both algorithms provide nonparametric probabilistic guarantees under polytree structure and operate on a single anomalous…
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -11,7 +11,7 @@ tags:
   - "Information-Theoretic Anomaly Score"
   - "Polytree"
 date: 2026-05-08
-content_hash: 871aabb144b021a5
+content_hash: b6879a93fb9ae0e9
 ---
 
 # Root Cause Analysis of Outliers with Missing Structural Knowledge
@@ -138,10 +138,10 @@ No model training is required. The two algorithms only need:
 ## Related Papers
 
 - [\[NeurIPS 2025\] An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation](an_analysis_of_causal_effect_estimation_using_outcome_invariant_data_augmentatio.md)
+- [\[ICLR 2026\] Counterfactual Structural Causal Bandits](../../ICLR2026/causal_inference/counterfactual_structural_causal_bandits.md)
 - [\[ICLR 2026\] Self-Supervised Learning from Structural Invariance](../../ICLR2026/causal_inference/self-supervised_learning_from_structural_invariance.md)
-- [\[ICLR 2026\] Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement](../../ICLR2026/causal_inference/resisting_contextual_interference_in_rag_via_parametric-knowledge_reinforcement.md)
-- [\[AAAI 2026\] KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education](../../AAAI2026/causal_inference/ktcf_actionable_recourse_in_knowledge_tracing_via_counterfactual_explanations_fo.md)
-- [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
+- [\[ACL 2025\] Counterfactual Explanations for Aspect-Based Sentiment Analysis](../../ACL2025/causal_inference/counterfactual_explanations_for_aspect-based_sentiment_analysis.md)
+- [\[ICLR 2026\] Stochastic Neural Networks for Causal Inference with Missing Confounders](../../ICLR2026/causal_inference/stochastic_neural_networks_for_causal_inference_with_missing_confounders.md)
 
 </div>
 

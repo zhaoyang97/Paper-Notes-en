@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PPA-Plan: Proactive Pitfall Avoidance for Reliable Planning in Long-Context LLM Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Plan-and-Execute] PPA-Plan predicts potential logical pitfalls before generating reasoning plans for long contexts and converts these pitfalls into negative constraints to guide the planner. This allows LLMs to avoid superficial keyword matching and incorrect assumption paths, improving accuracy and NLI scores while significantly reduci
+  [ACL2026][Reasoning][Long-context reasoning] PPA-Plan predicts potential logical pitfalls before generating reasoning plans for long contexts and converts these pitfalls into negative constraints to guide the planner. This allows LLMs to avoid superficial keyword matching and incorrect assumption paths, improving accuracy and NLI scores while significantly reducing plan execution failure rates across multiple long-context QA datasets.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Plan-and-Execute
+  - "ACL2026"
+  - "Reasoning"
+  - "Long-context reasoning"
+  - "plan generation"
+  - "negative constraints"
+  - "proactive pitfall avoidance"
+  - "Plan-and-Execute"
 date: 2026-05-08
-content_hash: e30ad3eb8b15d26c
+content_hash: cdcedf4c37ba7ecc
 ---
+
 # PPA-Plan: Proactive Pitfall Avoidance for Reliable Planning in Long-Context LLM Reasoning
 
 **Conference**: ACL2026  
@@ -161,10 +166,10 @@ Execution failure analysis highlights the value of the Corrector and constrained
 ## Related Papers
 
 - [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
+- [\[ICLR 2026\] PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning](../../ICLR2026/llm_reasoning/perk_long-context_reasoning_as_parameter-efficient_test-time_learning.md)
 - [\[ACL 2026\] DELTA: Dynamic Layer-Aware Token Attention for Efficient Long-Context Reasoning](delta_dynamic_layer-aware_token_attention_for_efficient_long-context_reasoning.md)
 - [\[ICLR 2026\] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models](../../ICLR2026/llm_reasoning/inftythink_breaking_the_length_limits_of_long-context_reasoning_in_large_languag.md)
-- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
-- [\[ICLR 2026\] From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning](../../ICLR2026/llm_reasoning/from_assumptions_to_actions_turning_llm_reasoning_into_uncertainty-aware_plannin.md)
+- [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](../../ICLR2026/llm_reasoning/plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
 
 </div>
 

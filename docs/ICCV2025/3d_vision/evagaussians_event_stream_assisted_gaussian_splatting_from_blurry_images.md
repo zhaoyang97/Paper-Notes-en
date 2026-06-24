@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EvaGaussians: Event Stream Assisted Gaussian Splatting from Blurry Images
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes EvaGaussians, a framework that leverages the high temporal resolution event streams from event cameras to assist 3D Gaussian Splatting in learning from mo…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes EvaGaussians, a framework that leverages the high temporal resolution event streams from event cameras to assist 3D Gaussian Splatting in learning from motion-blurred images. Through event-assisted initialization, joint blur/event reconstruction losses, and event-assisted geometric regularization, the method achieves high-fidelity novel view synthesis while maintaining real-time rendering efficiency.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Novel View Synthesis"
   - "Bundle Adjustment"
 date: 2026-05-08
-content_hash: 7bbf8690f427d8d6
+content_hash: cff4b861add5b6c9
 ---
 
 # EvaGaussians: Event Stream Assisted Gaussian Splatting from Blurry Images
@@ -178,11 +178,11 @@ Total loss: $\mathcal{L}_{total} = \lambda_{blur}\mathcal{L}_{blur} + \lambda_{e
 
 ## Related Papers
 
+- [\[CVPR 2025\] DiET-GS: Diffusion Prior and Event Stream-Assisted Motion Deblurring 3D Gaussian Splatting](../../CVPR2025/3d_vision/diet-gs_diffusion_prior_and_event_stream-assisted_motion_deblurring_3d_gaussian_.md)
+- [\[ECCV 2024\] BeNeRF: Neural Radiance Fields from a Single Blurry Image and Event Stream](../../ECCV2024/3d_vision/benerf_neural_radiance_fields_from_a_single_blurry_image_and_event_stream.md)
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](../../NeurIPS2025/3d_vision/ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] Lightweight Gradient-Aware Upscaling of 3D Gaussian Splatting Images](lightweight_gradient-aware_upscaling_of_3d_gaussian_splatting_images.md)
-- [\[ICCV 2025\] CoMoGaussian: Continuous Motion-Aware Gaussian Splatting from Motion-Blurred Images](comogaussian_continuous_motionaware_gaussian_splatting_from.md)
-- [\[AAAI 2026\] MoBGS: Motion Deblurring Dynamic 3D Gaussian Splatting for Blurry Monocular Video](../../AAAI2026/3d_vision/mobgs_motion_deblurring_dynamic_3d_gaussian_splatting_for_blurry_monocular_video.md)
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
+- [\[ICCV 2025\] Lightweight Gradient-Aware Upscaling of 3D Gaussian Splatting Images](lightweight_gradient-aware_upscaling_of_3d_gaussian_splatting_images.md)
 
 </div>
 

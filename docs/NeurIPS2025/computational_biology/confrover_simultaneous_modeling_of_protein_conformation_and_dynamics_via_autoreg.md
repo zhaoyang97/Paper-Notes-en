@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ConfRover: Simultaneous Modeling of Protein Conformation and Dynamics via Autoregression
 description: >-
-  [NeurIPS 2025][Computational Biology][protein dynamics] ConfRover proposes an autoregressive framework that factorizes protein MD trajectories into frame-wise conditional generation $p(\mathbf{x}^{1:L}) = \prod_l p(\math…
+  [NeurIPS 2025][Computational Biology][protein dynamics] ConfRover proposes an autoregressive framework that factorizes protein MD trajectories into frame-wise conditional generation $p(\mathbf{x}^{1:L}) = \prod_l p(\mathbf{x}^l | \mathbf{x}^{<l})$, and through a modular architecture consisting of an encoder, a causal Transformer, and an SE(3) diffusion decoder, unifies three tasks—trajectory simulation, time-independent conformational sampling…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "conformational sampling"
   - "molecular dynamics"
 date: 2026-05-08
-content_hash: 147c776d46df346b
+content_hash: 08cf9c0e0876ca54
 ---
 
 # ConfRover: Simultaneous Modeling of Protein Conformation and Dynamics via Autoregression
@@ -178,11 +178,11 @@ Removing the single-frame training objective (ConfRover-traj) increases RMWD fro
 
 ## Related Papers
 
+- [\[ICML 2025\] Aligning Protein Conformation Ensemble Generation with Physical Feedback](../../ICML2025/computational_biology/aligning_protein_conformation_ensemble_generation_with_physical_feedback.md)
 - [\[NeurIPS 2025\] JAMUN: Bridging Smoothed Molecular Dynamics and Score-Based Learning for Conformational Ensembles](jamun_bridging_smoothed_molecular_dynamics_and_score-based_learning_for_conforma.md)
+- [\[ICLR 2026\] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation](../../ICLR2026/computational_biology/protdyn_a_foundation_protein_language_model_for_thermodynamics_and_dynamics_gene.md)
 - [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
-- [\[NeurIPS 2025\] Inferring Stochastic Dynamics with Growth from Cross-Sectional Data](inferring_stochastic_dynamics_with_growth_from_cross-sectional_data.md)
-- [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
-- [\[ICLR 2026\] Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics](../../ICLR2026/computational_biology/scalable_spatio-temporal_se3_diffusion_for_long-horizon_protein_dynamics.md)
+- [\[ICML 2025\] PolyConf: Unlocking Polymer Conformation Generation through Hierarchical Generative Models](../../ICML2025/computational_biology/polyconf_unlocking_polymer_conformation_generation_through_hierarchical_generati.md)
 
 </div>
 

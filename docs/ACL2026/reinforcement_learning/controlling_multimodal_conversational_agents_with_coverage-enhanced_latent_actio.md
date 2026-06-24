@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Controlling Multimodal Conversational Agents with Coverage-Enhanced Latent Actions
 description: >-
-  [ACL 2026][Reinforcement Learning][Vision-Language Model] The authors propose constructing a compact latent action space for Multimodal Conversational Agents (MCA) to replace the vast token action space during RL fine-tuning. By utilizing cross-modal projectors and cycle consistency loss, they leverage paired image-text and text-only data to build a codebook. This approach co
+  [ACL 2026][Reinforcement Learning][Latent Actions] The authors propose constructing a compact latent action space for Multimodal Conversational Agents (MCA) to replace the vast token action space during RL fine-tuning. By utilizing cross-modal projectors and cycle consistency loss, they leverage paired image-text and text-only data to build a codebook. This approach compresses the action space from 152K (vocabulary size) to 128 (codebook size)…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Vision-Language Model
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Latent Actions"
+  - "Multimodal Dialogue"
+  - "Vision-Language Models"
+  - "Cross-modal Projection"
 date: 2026-05-08
-content_hash: f083616668f8a07c
+content_hash: 09764abf9fe66cb6
 ---
+
 # Controlling Multimodal Conversational Agents with Coverage-Enhanced Latent Actions
 
 **Conference**: ACL 2026  
@@ -149,11 +153,11 @@ Based on GRPO + Qwen2.5-VL-3B-Instruct:
 
 ## Related Papers
 
-- [\[ACL 2026\] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving](spiralthinker_latent_reasoning_through_an_iterative_process_with_text-latent_int.md)
 - [\[ICLR 2026\] A Unifying View of Coverage in Linear Off-Policy Evaluation](../../ICLR2026/reinforcement_learning/a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)
+- [\[ACL 2026\] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving](spiralthinker_latent_reasoning_through_an_iterative_process_with_text-latent_int.md)
 - [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
 - [\[ACL 2026\] Breaking the Impasse: Dual-Scale Evolutionary Policy Training for Social Language Agents](breaking_the_impasse_dual-scale_evolutionary_policy_training_for_social_language.md)
-- [\[NeurIPS 2025\] Improving Planning and MBRL with Temporally-Extended Actions](../../NeurIPS2025/reinforcement_learning/improving_planning_and_mbrl_with_temporally-extended_actions.md)
+- [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](visually-guided_policy_optimization_for_multimodal_reasoning.md)
 
 </div>
 

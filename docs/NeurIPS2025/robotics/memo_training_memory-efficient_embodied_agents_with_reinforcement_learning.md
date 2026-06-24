@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Robotics][Memory Augmentation] This paper proposes Memo, a Transformer-based memory-augmented framework that periodically generates summary tokens to compress historical context. Memo matches or exceeds th…
+  [NeurIPS 2025 Spotlight][Robotics][Memory Augmentation] This paper proposes Memo, a Transformer-based memory-augmented framework that periodically generates summary tokens to compress historical context. Memo matches or exceeds the performance of full-context Transformers while reducing the KV cache at inference time by 8–10×, and demonstrates superior generalization to long contexts as well as robustness under streaming inference.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Robotics"
   - "Memory Augmentation"
   - "Transformer"
@@ -12,7 +12,7 @@ tags:
   - "Long-Horizon Planning"
   - "Embodied Intelligence"
 date: 2026-05-08
-content_hash: f2ff1c87bab1f25a
+content_hash: 1b71ec873c680e90
 ---
 
 # Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning
@@ -137,8 +137,8 @@ Memo is trained end-to-end via RL objectives, with summary generation incorporat
 - [\[NeurIPS 2025\] NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning](nesypr_neurosymbolic_proceduralization_for_efficient_embodied_reasoning.md)
 - [\[NeurIPS 2025\] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts](zero-shot_context_generalization_in_reinforcement_learning_from_few_training_con.md)
 - [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
-- [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
 - [\[NeurIPS 2025\] Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning](time_reversal_symmetry_for_efficient_robotic_manipulations_in_deep_reinforcement.md)
+- [\[NeurIPS 2025\] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning](sample-efficient_tabular_self-play_for_offline_robust_reinforcement_learning.md)
 
 </div>
 

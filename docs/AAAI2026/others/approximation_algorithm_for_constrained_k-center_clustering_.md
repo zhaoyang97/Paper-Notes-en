@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach
 description: >-
-  [AAAI 2026][k-center clustering] This paper studies the k-center clustering problem with instance-level cannot-link (CL) and must-link (ML) constraints. It proposes a local search framework based on a dominating matching…
+  [AAAI 2026][k-center clustering] This paper studies the k-center clustering problem with instance-level cannot-link (CL) and must-link (ML) constraints. It proposes a local search framework based on a dominating matching set (DMS) reduction, and, under the disjoint CL sets condition, is the first to achieve the optimal approximation ratio of 2 via local search—resolving an open problem in the field.
 tags:
   - "AAAI 2026"
   - "k-center clustering"
@@ -13,7 +13,7 @@ tags:
   - "must-link"
   - "dominating matching set"
 date: 2026-05-08
-content_hash: 2fbade5ee784b784
+content_hash: ec94d98aedf7e6a9
 ---
 
 # Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach
@@ -125,9 +125,9 @@ The algorithm runs in $O(n^2 k^{4.5})$ time: Stage 1(a) in $O(kn)$, Stage 1(b) i
 
 - [\[AAAI 2026\] GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization](gdba_revisited_unleashing_the_power_of_guided_local_search_for_distributed_const.md)
 - [\[AAAI 2026\] A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles](a_fast_heuristic_search_approach_for_energy-optimal_profile_.md)
+- [\[ICML 2025\] Modified K-means Algorithm with Local Optimality Guarantees](../../ICML2025/others/modified_k-means_algorithm_with_local_optimality_guarantees.md)
 - [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](../../NeurIPS2025/others/improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
-- [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
-- [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
+- [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
 
 </div>
 

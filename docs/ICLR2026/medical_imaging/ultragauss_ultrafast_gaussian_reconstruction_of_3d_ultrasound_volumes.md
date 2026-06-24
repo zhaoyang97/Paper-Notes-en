@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UltraGauss: Ultrafast Gaussian Reconstruction of 3D Ultrasound Volumes
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] UltraGauss transforms Gaussian Splatting from "camera projection + depth occlusion" into an ultrasound-specific rendering paradigm of "probe plane intersection + in-plane aggregation." Combined with triangular precision matrix parameterization and two-stage load-balanced CUDA rasterization, it reconstructs 2D ultrasoun
+  [ICLR 2026][Medical Imaging][Ultrasound Imaging] UltraGauss transforms Gaussian Splatting from "camera projection + depth occlusion" into an ultrasound-specific rendering paradigm of "probe plane intersection + in-plane aggregation." Combined with triangular precision matrix parameterization and two-stage load-balanced CUDA rasterization, it reconstructs 2D ultrasound slices into 3D volumes in ~20 minutes on a single GPU, achieving 0.99 SSIM. Clinical experts generally consid…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Ultrasound Imaging"
+  - "Gaussian Splatting"
+  - "2D-to-3D Reconstruction"
+  - "Probe Plane Intersection"
+  - "Fetal Brain"
 date: 2026-05-08
 content_hash: 4e807fa9ccb8a438
 ---
+
 # UltraGauss: Ultrafast Gaussian Reconstruction of 3D Ultrasound Volumes
 
 **Conference**: ICLR 2026  
@@ -144,11 +150,11 @@ UltraGauss led by a large margin on every video, with an average SSIM of 0.914 a
 
 ## Related Papers
 
-- [\[ICLR 2026\] Anatomy-aware Representation Learning for Medical Ultrasound](anatomy-aware_representation_learning_for_medical_ultrasound.md)
+- [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](../../CVPR2026/medical_imaging/gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
 - [\[ICLR 2026\] MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning](medgmae_gaussian_masked_autoencoders_for_medical_volumetric_representation_learn.md)
+- [\[ICML 2026\] Foundation VAEs for 3D CT Reconstruction, Augmentation, and Generation](../../ICML2026/medical_imaging/foundation_vaes_for_3d_ct_reconstruction_augmentation_and_generation.md)
 - [\[ICLR 2026\] U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding](u2-bench_benchmarking_large_vision-language_models_on_ultrasound_understanding.md)
-- [\[ICLR 2026\] OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography](openpros_a_large-scale_dataset_for_limited_view_prostate_ultrasound_computed_tom.md)
-- [\[ICLR 2026\] NAB: Neural Adaptive Binning for Sparse-View CT Reconstruction](nab_neural_adaptive_binning_for_sparse-view_ct_reconstruction.md)
+- [\[ICLR 2026\] Fetal-Gauge: A Benchmark for Assessing Vision-Language Models in Fetal Ultrasound](fetal-gauge_a_benchmark_for_assessing_vision-language_models_in_fetal_ultrasound.md)
 
 </div>
 

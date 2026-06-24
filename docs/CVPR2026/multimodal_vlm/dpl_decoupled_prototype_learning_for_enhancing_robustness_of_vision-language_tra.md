@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DPL: Decoupled Prototype Learning for Enhancing Robustness of Vision-Language Transformers to Missing Modalities
 description: >-
-  [CVPR 2026][Multimodal VLM][ArcFace] To address the performance drop of vision-language models when a modality is missing, this paper proposes DPL: replacing the fixed fully connected classification head with a decoupled prototype prediction head that selects prototypes based on missing patterns and splits them by modality. Combined with a missing-aware A
+  [CVPR 2026][Multimodal VLM][Missing Modality] To address the performance drop of vision-language models when a modality is missing, this paper proposes DPL: replacing the fixed fully connected classification head with a decoupled prototype prediction head that selects prototypes based on missing patterns and splits them by modality. Combined with a missing-aware ArcFace loss and prototype relationship contrastive loss, it can be integrated into any prompt-based method as a pl…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - ArcFace
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Missing Modality"
+  - "Prototype Learning"
+  - "Vision-Language Transformer"
+  - "ArcFace"
+  - "Robustness"
 date: 2026-05-08
-content_hash: ec9e7b78a676005c
+content_hash: 8b46e5d9a94a675f
 ---
+
 # DPL: Decoupled Prototype Learning for Enhancing Robustness of Vision-Language Transformers to Missing Modalities
 
 **Conference**: CVPR 2026  
@@ -141,14 +146,15 @@ Missing-aware mechanism (MA) ablation (Tab. 5) shows that swapping per-pattern p
 - Value: ⭐⭐⭐⭐ High practical utility as a plug-and-play component.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](../../ICML2026/multimodal_vlm/calibrated_multimodal_representation_learning_with_missing_modalities.md)
+- [\[CVPR 2026\] BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates](balm_a_model-agnostic_framework_for_balanced_multimodal_learning_under_imbalance.md)
 - [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
 - [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
 - [\[CVPR 2026\] Is the Modality Gap a Bug or a Feature? A Robustness Perspective](is_the_modality_gap_a_bug_or_a_feature_a_robustness_perspective.md)
 
 </div>

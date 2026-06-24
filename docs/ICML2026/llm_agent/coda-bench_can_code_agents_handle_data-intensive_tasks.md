@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoDA-Bench: Can Code Agents Handle Data-Intensive Tasks?
 description: >-
-  [ICML 2026][LLM Agent][Kaggle] CoDA-Bench is the first benchmark to jointly evaluate "code intelligence" and "data intelligence" within a data-intensive Linux sandbox. Agents are deployed into a Kaggle-based environment containing an average of 980 files, where they must autonomously discover correct data from semantically similar distractors before
+  [ICML2026][LLM Agent][Code Agents] CoDA-Bench is the first benchmark to jointly evaluate "code intelligence" and "data intelligence" within a data-intensive Linux sandbox. Agents are deployed into a Kaggle-based environment containing an average of 980 files, where they must autonomously discover correct data from semantically similar distractors before writing code to compute answers. Results show that even the most powerful Mini-SWE-Agent (GPT-5.5) achieves only 61.1% execu…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Kaggle
+  - "ICML2026"
+  - "LLM Agent"
+  - "Code Agents"
+  - "Data-Intensive Environments"
+  - "Evaluation Benchmark"
+  - "Data Discovery"
+  - "Kaggle"
 date: 2026-05-08
-content_hash: bbfdd3ac95ce0e1e
+content_hash: 2d174942bdb34eca
 ---
+
 # CoDA-Bench: Can Code Agents Handle Data-Intensive Tasks?
 
 **Conference**: ICML2026  
@@ -129,11 +134,11 @@ Evaluation involved native CLI tools (Claude Code, Codex CLI) and framework-base
 
 ## Related Papers
 
+- [\[ICLR 2026\] CoDA: Agentic Systems for Collaborative Data Visualization](../../ICLR2026/llm_agent/coda_agentic_systems_for_collaborative_data_visualization.md)
+- [\[ICLR 2026\] EXP-Bench: Can AI Conduct AI Research Experiments?](../../ICLR2026/llm_agent/exp-bench_can_ai_conduct_ai_research_experiments.md)
 - [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
-- [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](../../NeurIPS2025/llm_agent/mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
-- [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_social_science_.md)
-- [\[ICML 2026\] ExCyTIn-Bench: Evaluating LLM Agents on Cyber Threat Investigation](excytin-bench_evaluating_llm_agents_on_cyber_threat_investigation.md)
-- [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science Research?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_research_claims.md)
+- [\[ICLR 2026\] Terminal-Bench: Benchmarking Agents on Difficult, Real-World Tasks in the Command Line Interface](../../ICLR2026/llm_agent/terminal-bench_benchmarking_agents_on_hard_realistic_tasks_in_command_line_inter.md)
+- [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the $O(1/T)$ Convergence of Alternating Gradient Descent-Ascent in Bilinear Games
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper provides the first proof that Alternating Gradient Descent-Ascent (AltGDA) converges to the Nash Equilibrium (NE) at an $O(1/T)$ rate in constrained bilinear zero-sum games (when an interior NE exists). This is faster than the $O(1/\sqrt{T})$ rate of Simultaneous GDA. The study characterizes the "friction" e
+  [ICLR 2026][Reinforcement Learning][Alternating Gradient Descent-Ascent] This paper provides the first proof that Alternating Gradient Descent-Ascent (AltGDA) converges to the Nash Equilibrium (NE) at an $O(1/T)$ rate in constrained bilinear zero-sum games (when an interior NE exists). This is faster than the $O(1/\sqrt{T})$ rate of Simultaneous GDA. The study characterizes the "friction" effect during boundary collisions using energy function decay and further optimizes step…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Alternating Gradient Descent-Ascent"
+  - "Bilinear Games"
+  - "Nash Equilibrium"
+  - "Convergence Rate"
+  - "Performance Estimation Programming"
 date: 2026-05-08
-content_hash: b011d23df2e5ffc1
+content_hash: 905e1e5f1e6c5d5d
 ---
+
 # On the $O(1/T)$ Convergence of Alternating Gradient Descent-Ascent in Bilinear Games
 
 **Conference**: ICLR 2026  
@@ -141,7 +147,7 @@ This is an optimization algorithm with no training loss. The step size $\eta$ is
 - [\[ICML 2026\] Convergence of Steepest Descent and Adam under Non-Uniform Smoothness](../../ICML2026/reinforcement_learning/convergence_of_steepest_descent_and_adam_under_non-uniform_smoothness.md)
 - [\[ICLR 2026\] Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces](convergence_of_an_actor-critic_gradient_flow_for_entropy_regularised_mdps_in_gen.md)
 - [\[ICLR 2026\] Reinforcement Learning via Value Gradient Flow](reinforcement_learning_via_value_gradient_flow.md)
-- [\[NeurIPS 2025\] Last Iterate Convergence in Monotone Mean Field Games](../../NeurIPS2025/reinforcement_learning/last_iterate_convergence_in_monotone_mean_field_games.md)
+- [\[ICLR 2026\] Solving Football by Exploiting Equilibrium Structure of 2p0s Differential Games with One-Sided Information](solving_football_by_exploiting_equilibrium_structure_of_2p0s_differential_games_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tackling the XAI Disagreement Problem with Adaptive Feature Grouping
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper argues that the core reason for the conflict between post-hoc explainers and faithfulness metrics is the presence of interaction terms between different feature groups. It proposes AGREED, which reduces disagreements between explanation methods by adaptively merging strongly interacting feature groups, leadi
+  [ICLR2026][Interpretability][XAI Disagreement Problem] This paper argues that the core reason for the conflict between post-hoc explainers and faithfulness metrics is the presence of interaction terms between different feature groups. It proposes AGREED, which reduces disagreements between explanation methods by adaptively merging strongly interacting feature groups, leading to more consistent explanations across tabular data and image saliency maps.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "XAI Disagreement Problem"
+  - "Feature Attribution"
+  - "Functional Decomposition"
+  - "Feature Grouping"
+  - "Faithfulness Evaluation"
 date: 2026-05-08
-content_hash: efcad9c7210316ba
+content_hash: 210943f2ad4e33d4
 ---
+
 # Tackling the XAI Disagreement Problem with Adaptive Feature Grouping
 
 **Conference**: ICLR2026  
@@ -127,11 +133,20 @@ The method does not involve training a new model but performs a post-hoc partiti
 - Value: ⭐⭐⭐⭐☆ Highly insightful for XAI practitioners, offering a pragmatic path forward for the disagreement problem.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Formalizing the Binding Problem](../../ICML2026/interpretability/formalizing_the_binding_problem.md)
+- [\[ICLR 2026\] Adaptive Concept Discovery for Interpretable Few-Shot Text Classification](adaptive_concept_discovery_for_interpretable_few-shot_text_classification.md)
+- [\[ICLR 2026\] DIVERSE: Disagreement-Inducing Vector Evolution for Rashomon Set Exploration](diverse_disagreement-inducing_vector_evolution_for_rashomon_set_exploration.md)
+- [\[ICLR 2026\] Missingness Bias Calibration in Feature Attribution Explanations](missingness_bias_calibration_in_feature_attribution_explanations.md)
+- [\[ICML 2026\] Adaptive Querying with AI Persona Priors](../../ICML2026/interpretability/adaptive_querying_with_ai_persona_priors.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Formalizing the Binding Problem](../../ICML2026/interpretability/formalizing_the_binding_problem.md)

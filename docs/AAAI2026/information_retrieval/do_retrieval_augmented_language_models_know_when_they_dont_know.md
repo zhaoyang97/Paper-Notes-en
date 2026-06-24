@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Do Retrieval Augmented Language Models Know When They Don't Know?
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][RAG] This paper systematically analyzes the refusal calibration problem in RAG models, finding that RALMs exhibit an over-refusal rate exceeding 55% when all retrieved documents a…
+  [AAAI 2026][Information Retrieval & RAG][RAG] This paper systematically analyzes the refusal calibration problem in RAG models, finding that RALMs exhibit an over-refusal rate exceeding 55% when all retrieved documents are irrelevant (even when the model's internal knowledge suffices to answer), and proposes a mechanism combining uncertainty estimation with refusal-aware fine-tuning to balance refusal behavior and answer quality.
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Uncertainty Estimation"
   - "Retrieval Augmentation"
 date: 2026-05-08
-content_hash: 6475a647c8d9e54a
+content_hash: 19786d6342635711
 ---
 
 # Do Retrieval Augmented Language Models Know When They Don't Know?
@@ -132,11 +132,11 @@ The study is organized around three progressive research questions: (RQ1) How we
 
 ## Related Papers
 
-- [\[AAAI 2026\] Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?](positional_bias_in_multimodal_embedding_models_do_they_favor_the_beginning_the_m.md)
 - [\[AAAI 2026\] When Small Models Are Right for Wrong Reasons: Process Verification for Trustworthy Agents](when_small_models_are_right_for_wrong_reasons_process_verification_for_trustwort.md)
 - [\[ACL 2026\] Quantifying and Improving the Robustness of Retrieval-Augmented Language Models Against Spurious Features in Grounding Data](../../ACL2026/information_retrieval/quantifying_and_improving_the_robustness_of_retrieval-augmented_language_models_.md)
-- [\[AAAI 2026\] Exposing the Cracks: Vulnerabilities of Retrieval-Augmented LLM-Based Machine Translation](exposing_the_cracks_vulnerabilities_of_retrieval-augmented_llm-based_machine_tra.md)
-- [\[AAAI 2026\] Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation](cog-rag_cognitive-inspired_dual-hypergraph_with_theme_alignment_retrieval-augmen.md)
+- [\[ACL 2025\] Evaluation of Attribution Bias in Generator-Aware Retrieval-Augmented Large Language Models](../../ACL2025/information_retrieval/evaluation_of_attribution_bias_in_generator-aware_retrieval-augmented_large_lang.md)
+- [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](../../ICLR2026/information_retrieval/query-level_uncertainty_in_large_language_models.md)
+- [\[ICML 2026\] Self-Augmenting Retrieval for Diffusion Language Models](../../ICML2026/information_retrieval/self-augmenting_retrieval_for_diffusion_language_models.md)
 
 </div>
 

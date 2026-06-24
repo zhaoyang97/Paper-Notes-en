@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Benchmarking Stochastic Approximation Algorithms for Fairness-Constrained Training of Deep Neural Networks
 description: >-
-  [ICLR 2026][AI Safety][benchmark] This paper formalizes the "training of fair deep networks" as a **stochastic optimization problem with inequality constraints** (specifically, loss differences between subgroups). It points out that no existing algorithm currently provides convergence guarantees across the full spectrum of "stochastic + inequality + no
+  [ICLR2026][AI Safety][Fairness constraints] This paper formalizes the "training of fair deep networks" as a **stochastic optimization problem with inequality constraints** (specifically, loss differences between subgroups). It points out that no existing algorithm currently provides convergence guarantees across the full spectrum of "stochastic + inequality + non-convex + non-smooth" scenarios. Consequently, it selects three types of stochastic approximation algorithms from t…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - benchmark
+  - "ICLR2026"
+  - "AI Safety"
+  - "Fairness constraints"
+  - "constrained ERM"
+  - "stochastic approximation"
+  - "augmented Lagrangian"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 20a7f836e2a8b3f3
+content_hash: 1b0410297086c41d
 ---
+
 # Benchmarking Stochastic Approximation Algorithms for Fairness-Constrained Training of Deep Neural Networks
 
 **Conference**: ICLR2026  
@@ -128,11 +133,11 @@ Key readings: Constrained methods generally suppress fairness metrics better tha
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fingerprinting Deep Neural Networks for Ownership Protection: An Analytical Approach](fingerprinting_deep_neural_networks_for_ownership_protection_an_analytical_appro.md)
+- [\[ICLR 2026\] Fisher-Rao Sensitivity for Out-of-Distribution Detection in Deep Neural Networks](fisher-rao_sensitivity_for_out-of-distribution_detection_in_deep_neural_networks.md)
 - [\[ECCV 2024\] Unveiling Privacy Risks in Stochastic Neural Networks Training: Effective Image Reconstruction from Gradients](../../ECCV2024/ai_safety/unveiling_privacy_risks_in_stochastic_neural_networks_training_effective_image_r.md)
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
 - [\[ICLR 2026\] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability](robustify_spiking_neural_networks_via_dominant_singular_deflation_under_heteroge.md)
-- [\[ICML 2026\] Singular Bayesian Neural Networks](../../ICML2026/ai_safety/singular_bayesian_neural_networks.md)
-- [\[ICLR 2026\] ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks](atex-cf_attack-informed_counterfactual_explanations_for_graph_neural_networks.md)
 
 </div>
 

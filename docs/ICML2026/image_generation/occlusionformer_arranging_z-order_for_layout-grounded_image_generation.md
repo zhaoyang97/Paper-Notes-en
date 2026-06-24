@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation
 description: >-
-  [ICML 2026][Image Generation][DiT] Addressing texture entanglement and hierarchical confusion in overlapping regions of layout-to-image generation, the authors construct a large-scale dataset SA-Z with explicit Z-order and amodal annotations. They propose OcclusionFormer, which explicitly models occlusion priority via instance decoupling and volume rend
+  [ICML2026][Image Generation][Layout-to-Image] Addressing texture entanglement and hierarchical confusion in overlapping regions of layout-to-image generation, the authors construct a large-scale dataset SA-Z with explicit Z-order and amodal annotations. They propose OcclusionFormer, which explicitly models occlusion priority via instance decoupling and volume rendering, and strengthens spatial consistency with a queried alignment loss. Occlusion-aware metrics on the OverLayBe…
 tags:
-  - ICML 2026
-  - Image Generation
-  - DiT
+  - "ICML2026"
+  - "Image Generation"
+  - "Layout-to-Image"
+  - "Z-order Occlusion"
+  - "Volume Rendering"
+  - "Instance Decoupling"
+  - "DiT"
 date: 2026-05-08
-content_hash: 22c17948ec52415d
+content_hash: 6d384f75197644a3
 ---
+
 # OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation
 
 **Conference**: ICML2026  
@@ -139,10 +144,10 @@ Highlights: The relative advantage increases with scene complexity (Simple→Com
 ## Related Papers
 
 - [\[NeurIPS 2025\] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](../../NeurIPS2025/image_generation/instanceassemble_layoutaware_image_generation_via_instance_a.md)
-- [\[ICML 2026\] Position: AI Evaluations Should be Grounded on a Theory of Capability](position_ai_evaluations_should_be_grounded_on_a_theory_of_capability.md)
-- [\[CVPR 2026\] PhysGen: Physically Grounded 3D Shape Generation for Industrial Design](../../CVPR2026/image_generation/physgen_physically_grounded_3d_shape_generation_for_industrial_design.md)
+- [\[ICLR 2026\] ImageDoctor: Diagnosing Text-to-Image Generation via Grounded Image Reasoning](../../ICLR2026/image_generation/imagedoctor_diagnosing_text-to-image_generation_via_grounded_image_reasoning.md)
 - [\[ICML 2026\] Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation](envisioning_beyond_the_few_disentangled_semantics_and_primitives_for_few-shot_at.md)
-- [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](../../AAAI2026/image_generation/echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
+- [\[ICLR 2026\] I-DRUID: Layout to Image Generation via Instance-Disentangled Representation and Unpaired Data](../../ICLR2026/image_generation/i-druid_layout_to_image_generation_via_instance-disentangled_representation_and_.md)
+- [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](../../NeurIPS2025/image_generation/overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
 
 </div>
 

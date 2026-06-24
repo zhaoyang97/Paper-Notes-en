@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Discovering Ordinary Differential Equations with LLM-Based Qualitative and Quantitative Evaluation
 description: >-
-  [ICML 2026][LLM Evaluation][LLM Agent] DoLQ inserts a "Scientist Agent" into the search loop of LLM-based symbolic regression. This agent performs simultaneous qualitative (physical plausibility) and quantitative (ablation-based MSE contribution) evaluations, pushing LLM-SR from "low-error but bloated and physically absurd" candidates toward equations that
+  [ICML 2026][LLM Evaluation][Symbolic Regression] DoLQ inserts a "Scientist Agent" into the search loop of LLM-based symbolic regression. This agent performs simultaneous qualitative (physical plausibility) and quantitative (ablation-based MSE contribution) evaluations, pushing LLM-SR from "low-error but bloated and physically absurd" candidates toward equations that are both numerically accurate and structurally compact.
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Symbolic Regression"
+  - "Ordinary Differential Equations"
+  - "LLM Agent"
+  - "Physical Interpretability"
+  - "Hypothesis Search"
 date: 2026-05-08
-content_hash: 9707eddbc3e92447
+content_hash: f953cffe0a5120fa
 ---
+
 # Discovering Ordinary Differential Equations with LLM-Based Qualitative and Quantitative Evaluation
 
 **Conference**: ICML 2026  

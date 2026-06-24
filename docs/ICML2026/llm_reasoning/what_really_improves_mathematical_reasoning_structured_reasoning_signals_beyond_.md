@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] What Really Improves Mathematical Reasoning: Structured Reasoning Signals Beyond Pure Code
 description: >-
-  [ICML 2026][LLM Reasoning][MoE] Through controlled experiments involving 10T-token corpus and MoE pre-training from scratch, this paper indicates that what truly improves complex mathematical reasoning is not pure executable code itself, but cross-domain structured reasoning signals, particularly the "cognitive scaffolds" in mathematical corpora that
+  [ICML2026][Reasoning][Data Mixture] Through controlled experiments involving 10T-token corpus and MoE pre-training from scratch, this paper indicates that what truly improves complex mathematical reasoning is not pure executable code itself, but cross-domain structured reasoning signals, particularly the "cognitive scaffolds" in mathematical corpora that explicitly expose intermediate steps.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - MoE
+  - "ICML2026"
+  - "Reasoning"
+  - "Data Mixture"
+  - "Mathematical Reasoning"
+  - "Code Pre-training"
+  - "MoE"
+  - "Cognitive Scaffolding"
 date: 2026-05-08
-content_hash: 9db4c958904de844
+content_hash: c986dad611b80556
 ---
+
 # What Really Improves Mathematical Reasoning: Structured Reasoning Signals Beyond Pure Code
 
 **Conference**: ICML2026  
@@ -129,11 +134,11 @@ The model uses a standard autoregressive language modeling objective. The MoE si
 
 ## Related Papers
 
+- [\[ICML 2026\] Is Code Better Than Language for Algorithmic Reasoning?](is_code_better_than_language_for_algorithmic_reasoning.md)
+- [\[ICLR 2026\] Beyond English-Centric Training: How Reinforcement Learning Improves Cross-Lingual Reasoning in LLMs](../../ICLR2026/llm_reasoning/beyond_english-centric_training_how_reinforcement_learning_improves_cross-lingua.md)
 - [\[ICML 2026\] Biases in the Blind Spot: Detecting What LLMs Fail to Mention](biases_in_the_blind_spot_detecting_what_llms_fail_to_mention.md)
 - [\[ACL 2025\] STRICTA: Structured Reasoning in Critical Text Assessment for Peer Review and Beyond](../../ACL2025/llm_reasoning/stricta_structured_reasoning_peer_review.md)
-- [\[ICLR 2026\] Beyond English-Centric Training: How Reinforcement Learning Improves Cross-Lingual Reasoning in LLMs](../../ICLR2026/llm_reasoning/beyond_english-centric_training_how_reinforcement_learning_improves_cross-lingua.md)
-- [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
-- [\[ICML 2026\] FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations](floorplanqa_a_benchmark_for_spatial_reasoning_in_llms_using_structured_represent.md)
+- [\[ICML 2026\] The Quality-Utility Paradox: Why High-Reward Data Impairs Small Model Mathematical Reasoning](the_quality-utility_paradox_why_high-reward_data_impairs_small_model_mathematica.md)
 
 </div>
 

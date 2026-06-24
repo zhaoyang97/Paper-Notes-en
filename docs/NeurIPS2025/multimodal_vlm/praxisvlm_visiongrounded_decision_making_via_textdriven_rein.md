@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM decision-making] This paper discovers that the decision-making reasoning capability of VLMs can be decoupled from visual perception—replacing image inputs with textual descriptions yiel…
+  [NeurIPS 2025][Multimodal VLM][VLM decision-making] This paper discovers that the decision-making reasoning capability of VLMs can be decoupled from visual perception—replacing image inputs with textual descriptions yields equal or higher decision accuracy. Building on this insight, Praxis-VLM trains decision-making reasoning on purely textual scenarios via multi-stage GRPO with adaptive rewards, then transfers zero-shot to visual inputs at inference time…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal transfer"
   - "embodied reasoning"
 date: 2026-05-08
-content_hash: ae698bb995223bdc
+content_hash: f1c71a9beb03383c
 ---
 
 # Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning
@@ -167,9 +167,9 @@ Key finding: SFT and Reason SFT suffer severe degradation on the OOD EgoNormia b
 
 - [\[NeurIPS 2025\] AntiGrounding: Lifting Robotic Actions into VLM Representation Space for Decision Making](antigrounding_lifting_robotic_actions_into_vlm_representatio.md)
 - [\[NeurIPS 2025\] Unified Reinforcement and Imitation Learning for Vision-Language Models](unified_reinforcement_and_imitation_learning_for_vision-language_models.md)
-- [\[ICML 2026\] Visual Persuasion: What Influences the Decision-Making of Vision-Language Models?](../../ICML2026/multimodal_vlm/visual_persuasion_what_influences_decisions_of_vision-language_models.md)
 - [\[NeurIPS 2025\] VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning](vt-fsl_bridging_vision_and_text_with_llms_for_few-shot_learning.md)
-- [\[ICML 2026\] iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning](../../ICML2026/multimodal_vlm/ivgr_internalizing_visually_grounded_reasoning_for_mllms_with_reinforcement_lear.md)
+- [\[ICML 2025\] Towards Efficient Online Tuning of VLM Agents via Counterfactual Soft Reinforcement Learning](../../ICML2025/multimodal_vlm/towards_efficient_online_tuning_of_vlm_agents_via_counterfactual_soft_reinforcem.md)
+- [\[NeurIPS 2025\] SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models](sd-vlm_spatial_measuring_and_understanding_with_depth-encoded_vision-language_mo.md)
 
 </div>
 

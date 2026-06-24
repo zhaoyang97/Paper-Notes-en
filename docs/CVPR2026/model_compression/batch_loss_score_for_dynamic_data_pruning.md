@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Batch Loss Score for Dynamic Data Pruning
 description: >-
-  [CVPR 2026][Model Compression][dynamic data pruning] Batch Loss Score (BLS) is proposed to estimate sample importance using only the mean batch loss instead of hard-to-acquire per-sample losses. Providing theoretical guarantees from a signal processing perspective via EMA low-pass filtering, it can be integrated into existing dynamic pruning frameworks with only 3 lines
+  [CVPR 2026][Model Compression][dynamic data pruning] Batch Loss Score (BLS) is proposed to estimate sample importance using only the mean batch loss instead of hard-to-acquire per-sample losses. Providing theoretical guarantees from a signal processing perspective via EMA low-pass filtering, it can be integrated into existing dynamic pruning frameworks with only 3 lines of code.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - dynamic data pruning
-  - batch loss
-  - EMA
-  - training efficiency
-  - sample importance
+  - "CVPR 2026"
+  - "Model Compression"
+  - "dynamic data pruning"
+  - "batch loss"
+  - "EMA"
+  - "training efficiency"
+  - "sample importance"
 date: 2026-05-08
-content_hash: bdb18c647d71fb8d
+content_hash: 982d90fb09fcb094
 ---
+
 # Batch Loss Score for Dynamic Data Pruning
 
 **Conference**: CVPR 2026  
@@ -119,11 +120,11 @@ BLS serves as a transparent proxy for frameworks like InfoBatch and SeTa with on
 
 ## Related Papers
 
-- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
-- [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
-- [\[CVPR 2026\] Model Merging on Loss Landscape: A Geometry Perspective](model_merging_on_loss_landscape_a_geometry_perspective.md)
+- [\[ICLR 2026\] Inconsistency Biases in Dynamic Data Pruning](../../ICLR2026/model_compression/inconsistency_biases_in_dynamic_data_pruning.md)
+- [\[ICLR 2026\] OrderDP: A Theoretically Guaranteed Lossless Dynamic Data Pruning Framework](../../ICLR2026/model_compression/orderdp_a_theoretically_guaranteed_lossless_dynamic_data_pruning_framework.md)
+- [\[ICLR 2026\] Batch Pruning by Activation Stability](../../ICLR2026/model_compression/batch_pruning_by_activation_stability.md)
 - [\[CVPR 2026\] HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT](hess_head_sensitivity_score_for_sparsity_redistribution_in_vggt.md)
-- [\[CVPR 2026\] Phased DMD: Few-step Distribution Matching Distillation via Score Matching within Subintervals](phased_dmd_few-step_distribution_matching_distillation_via_score_matching_within.md)
+- [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
 
 </div>
 

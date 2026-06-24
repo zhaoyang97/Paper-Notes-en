@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras
 description: >-
-  [AAAI 2026][Particle Image Velocimetry] This paper proposes Spike Imaging Velocimetry (SIV), the first systematic application of **spike cameras** (20…
+  [AAAI 2026][Particle Image Velocimetry] This paper proposes Spike Imaging Velocimetry (SIV), the first systematic application of **spike cameras** (20,000 Hz ultra-high temporal resolution) to fluid velocimetry. Three fluid-aware modules are designed: Detail-Preserving Hierarchical Transform (DPHT), Graph Encoder (GE), and Multi-Scale Velocity Refinement (MSVR). A new PSSD dataset is constructed, and SIV comprehensively outperforms existing baselines on steady-state turbulenc…
 tags:
   - "AAAI 2026"
   - "Particle Image Velocimetry"
@@ -11,7 +11,7 @@ tags:
   - "Graph Neural Network"
   - "Multi-Scale Optimization"
 date: 2026-05-08
-content_hash: 41a2dbe1334a0265
+content_hash: 47cbe8d0c02ad5dd
 ---
 
 # Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras
@@ -129,10 +129,10 @@ Average EPE↓ on PSSD Dataset Problem 1 (Steady-State Turbulence):
 ## Related Papers
 
 - [\[NeurIPS 2025\] SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks](../../NeurIPS2025/others/space_spike-aware_consistency_enhancement_for_test-time_adaptation_in_spiking_ne.md)
+- [\[CVPR 2026\] Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation](../../CVPR2026/others/shoe_style-invariant_and_ground-aware_learning_for_dense_foot_contact_estimation.md)
+- [\[CVPR 2025\] Full-DoF Egomotion Estimation for Event Cameras Using Geometric Solvers](../../CVPR2025/others/full-dof_egomotion_estimation_for_event_cameras_using_geometric_solvers.md)
 - [\[AAAI 2026\] Reward Redistribution via Gaussian Process Likelihood Estimation](reward_redistribution_via_gaussian_process_likelihood_estimation.md)
 - [\[AAAI 2026\] Private Frequency Estimation via Residue Number Systems](private_frequency_estimation_via_residue_number_systems.md)
-- [\[AAAI 2026\] Scalable Vision-Guided Crop Yield Estimation](scalable_vision-guided_crop_yield_estimation.md)
-- [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain
 description: >-
-  [ICML 2026][LLM Reasoning][epiplexity] The authors argue that the current collapse of "LLM self-play" within a few rounds is fundamentally due to self-synthetic data failing to provide learnable information gain; they formalize "learnable information" using bounded MDL/epiplexity and propose three system-level designs—Asymmetric Co-evolution, Capacity Growt
+  [ICML 2026 (Position Paper)][Reasoning][Self-evolving LLMs] The authors argue that the current collapse of "LLM self-play" within a few rounds is fundamentally due to self-synthetic data failing to provide learnable information gain; they formalize "learnable information" using bounded MDL/epiplexity and propose three system-level designs—Asymmetric Co-evolution, Capacity Growth, and Proactive Information Seeking—to collectively ensure the monotonic increase of learnable info…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - epiplexity
+  - "ICML 2026 (Position Paper)"
+  - "Reasoning"
+  - "Self-evolving LLMs"
+  - "Triadic roles (Proposer/Solver/Verifier)"
+  - "Learnable information"
+  - "epiplexity"
+  - "self-synthetic data pipeline"
 date: 2026-05-08
-content_hash: b3050c82858acabb
+content_hash: 921afc7fd60bd711
 ---
+
 # Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain
 
 **Conference**: ICML 2026 (Position Paper)  
@@ -144,9 +149,9 @@ The experiments are **diagnostic**, aimed at validating two things using the epi
 
 - [\[ACL 2026\] Stratagem: Learning Transferable Reasoning via Trajectory-Modulated Game Self-Play](../../ACL2026/llm_reasoning/stratagem_learning_transferable_reasoning_via_trajectory-modulated_game_self-pla.md)
 - [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](../../ACL2026/llm_reasoning/self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
-- [\[ICML 2026\] On the Generalization Gap in Self-Evolving Language Model Reasoning](on_the_generalization_gap_in_self-evolving_language_model_reasoning.md)
 - [\[ICML 2026\] The Role of Feedback Alignment in Self-Distillation](the_role_of_feedback_alignment_in_self-distillation.md)
-- [\[ICML 2026\] An Information-Theoretic Criterion for Efficient Data Synthesis](an_information-theoretic_criterion_for_efficient_data_synthesis.md)
+- [\[ICLR 2026\] RESTRAIN: From Spurious Votes to Signals — Self-Training RL with Self-Penalization](../../ICLR2026/llm_reasoning/restrain_from_spurious_votes_to_signals_self-training_rl_with_self-penalization.md)
+- [\[ICML 2026\] On the Generalization Gap in Self-Evolving Language Model Reasoning](on_the_generalization_gap_in_self-evolving_language_model_reasoning.md)
 
 </div>
 

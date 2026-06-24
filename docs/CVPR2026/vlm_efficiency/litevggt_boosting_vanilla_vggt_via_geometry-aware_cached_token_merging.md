@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LiteVGGT: Boosting Vanilla VGGT via Geometry-aware Cached Token Merging
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] To address the quadratic complexity bottleneck of global attention in the 3D foundation model VGGT on long sequences, LiteVGGT proposes a "geometry-aware + cross-layer cached" token merging strategy. It preserves critical tokens based on geometric importance, merges redundant tokens into anchors, and reuses merging ind
+  [CVPR 2026][Multimodal Efficiency][VGGT acceleration] To address the quadratic complexity bottleneck of global attention in the 3D foundation model VGGT on long sequences, LiteVGGT proposes a "geometry-aware + cross-layer cached" token merging strategy. It preserves critical tokens based on geometric importance, merges redundant tokens into anchors, and reuses merging indices across layers. Coupled with fine-tuning and FP8 quantization, it achieves approximately 10× speedup c…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "VGGT acceleration"
+  - "token merging"
+  - "geometry-aware"
+  - "cache reuse"
+  - "3D reconstruction"
 date: 2026-05-08
-content_hash: 3a535237e5f6ffbd
+content_hash: 23d315af467226b2
 ---
+
 # LiteVGGT: Boosting Vanilla VGGT via Geometry-aware Cached Token Merging
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,10 @@ Incremental module addition on DTU / ScanNet-50 / 7Scenes (Lower Overall/CD is b
 ## Related Papers
 
 - [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
-- [\[CVPR 2026\] Model Merging on Loss Landscape: A Geometry Perspective](model_merging_on_loss_landscape_a_geometry_perspective.md)
+- [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
 - [\[CVPR 2026\] Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)
-- [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](bridging_domains_through_subspace-aware_model_merging.md)
-- [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)
+- [\[CVPR 2026\] CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs](core_compact_object-centric_representations_as_a_new_paradigm_for_token_merging_.md)
+- [\[CVPR 2026\] QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer](qvggt_post-training_quantized_visual_geometry_grounded_transformer.md)
 
 </div>
 

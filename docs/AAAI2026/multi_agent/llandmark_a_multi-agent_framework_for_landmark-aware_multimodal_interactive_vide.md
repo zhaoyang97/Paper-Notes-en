@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-Agent Framework] This paper proposes LLandMark, a modular multi-agent framework that achieves landmark-aware multimodal interactive video retrieval through landmark knowledge augmentation…
+  [AAAI 2026][Multi-Agent][Multi-Agent Framework] This paper proposes LLandMark, a modular multi-agent framework that achieves landmark-aware multimodal interactive video retrieval through landmark knowledge augmentation, LLM-assisted image retrieval, and OCR refinement modules, achieving a total score of 77.40/88 in the Vietnamese large-scale video retrieval challenge (HCMAIC 2025).
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -13,7 +13,7 @@ tags:
   - "CLIP"
   - "OCR"
 date: 2026-05-08
-content_hash: b5f3a735d58c1cf7
+content_hash: f431405428bfc595
 ---
 
 # LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval
@@ -143,9 +143,9 @@ vs. **General CLIP Retrieval Systems**: CLIP exhibits training data bias in cult
 
 - [\[AAAI 2026\] COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis](coach_collaborative_agents_for_contextual_highlighting_--_a_multi-agent_framewor.md)
 - [\[AAAI 2026\] KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval](a_multi-agent_llm_framework_for_multi-domain_low-resource_in-context_ner_via_kno.md)
-- [\[AAAI 2026\] BAMAS: Structuring Budget-Aware Multi-Agent Systems](bamas_structuring_budget-aware_multi-agent_systems.md)
 - [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[ACL 2026\] ConSensus: Multi-Agent Collaboration for Multimodal Sensing](../../ACL2026/multi_agent/consensus_multi-agent_collaboration_for_multimodal_sensing.md)
+- [\[AAAI 2026\] BAMAS: Structuring Budget-Aware Multi-Agent Systems](bamas_structuring_budget-aware_multi-agent_systems.md)
 
 </div>
 

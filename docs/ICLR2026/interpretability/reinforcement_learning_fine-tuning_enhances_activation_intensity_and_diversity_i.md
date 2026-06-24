@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reinforcement Learning Fine-Tuning Enhances Activation Intensity and Diversity in the Internal Circuitry of LLMs
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The authors abstract LLM residual computation into a directed graph and use Edge Attribution Patching (EAP) to score the importance of all internal edges in a single forward-backward pass. By comparing edge weight distributions before and after RL fine-tuning, they find that online RL (PPO/GRPO) systematically **increa
+  [ICLR2026][Interpretability][Edge Attribution Patching (EAP)] The authors abstract LLM residual computation into a directed graph and use Edge Attribution Patching (EAP) to score the importance of all internal edges in a single forward-backward pass. By comparing edge weight distributions before and after RL fine-tuning, they find that online RL (PPO/GRPO) systematically **increases internal activation intensity and enhances activation diversity** (increased entropy…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Edge Attribution Patching (EAP)"
+  - "Internal Circuits"
+  - "Activation Intensity"
+  - "Activation Diversity"
+  - "Online RL vs DPO"
 date: 2026-05-08
-content_hash: 2cd749669170f247
+content_hash: c65f7f5529717347
 ---
+
 # Reinforcement Learning Fine-Tuning Enhances Activation Intensity and Diversity in the Internal Circuitry of LLMs
 
 **Conference**: ICLR2026  

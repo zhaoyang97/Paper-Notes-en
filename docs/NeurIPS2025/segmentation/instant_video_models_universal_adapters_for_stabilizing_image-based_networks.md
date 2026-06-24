@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Instant Video Models: Universal Adapters for Stabilizing Image-Based Networks
 description: >-
-  [NeurIPS 2025][Segmentation][Temporal Stability] This paper proposes a class of universal Stabilization Adapters that can be inserted into nearly any image model architecture. By freezing the base network and training on…
+  [NeurIPS 2025][Segmentation][Temporal Stability] This paper proposes a class of universal Stabilization Adapters that can be inserted into nearly any image model architecture. By freezing the base network and training only the adapter parameters, combined with a unified accuracy–stability–robustness loss function, the method endows frame-level models with video temporal consistency and corruption robustness.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Corruption Robustness"
   - "EMA"
 date: 2026-05-08
-content_hash: 996535bcfe00a9ab
+content_hash: b7db1b0d96d54082
 ---
 
 # Instant Video Models: Universal Adapters for Stabilizing Image-Based Networks
@@ -168,10 +168,10 @@ Prediction collapse is confirmed at $\lambda=8 > \tau-1$ (instability $< 10^{-3}
 ## Related Papers
 
 - [\[NeurIPS 2025\] Unveiling the Spatial-Temporal Effective Receptive Fields of Spiking Neural Networks](unveiling_the_spatial-temporal_effective_receptive_fields_of_spiking_neural_netw.md)
+- [\[CVPR 2025\] SketchFusion: Learning Universal Sketch Features through Fusing Foundation Models](../../CVPR2025/segmentation/sketchfusion_learning_universal_sketch_features_through_fusing_foundation_models.md)
 - [\[NeurIPS 2025\] Vanish into Thin Air: Cross-prompt Universal Adversarial Attacks for SAM2](vanish_into_thin_air_cross-prompt_universal_adversarial_attacks_for_sam2.md)
+- [\[CVPR 2026\] The Missing Point in Vision Transformers for Universal Image Segmentation](../../CVPR2026/segmentation/the_missing_point_in_vision_transformers_for_universal_image_segmentation.md)
 - [\[ICLR 2026\] VIRTUE: Visual-Interactive Text-Image Universal Embedder](../../ICLR2026/segmentation/virtue_visual-interactive_text-image_universal_embedder.md)
-- [\[NeurIPS 2025\] Mechanistic Interpretability of RNNs Emulating Hidden Markov Models](mechanistic_interpretability_of_rnns_emulating_hidden_markov_models.md)
-- [\[NeurIPS 2025\] RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing](roma_scaling_up_mamba-based_foundation_models_for_remote_sensing.md)
 
 </div>
 

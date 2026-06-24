@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Embodied Navigation Foundation Model
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] NavFoM is the first cross-embodiment × cross-task embodied navigation foundation model, jointly trained on 8 million navigation samples covering quadrupeds, drones, wheeled robots, and vehicles. It handles arbitrary camera configurations via Temporal-Viewpoint Indicator (TVI) tokens and manages inference overhead throu
+  [ICLR 2026][Robotics][Navigation Foundation Model] NavFoM is the first cross-embodiment × cross-task embodied navigation foundation model, jointly trained on 8 million navigation samples covering quadrupeds, drones, wheeled robots, and vehicles. It handles arbitrary camera configurations via Temporal-Viewpoint Indicator (TVI) tokens and manages inference overhead through budget-aware history sampling. It achieves SOTA or competitive performance on 7 public benchmarks without…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Navigation Foundation Model"
+  - "Cross-Embodiment Navigation"
+  - "Vision-Language Navigation"
+  - "Token Budget Sampling"
+  - "Multi-task Joint Training"
 date: 2026-05-08
-content_hash: cccc4d2dd98d62c7
+content_hash: 47ebefc6f7e0b961
 ---
+
 # Embodied Navigation Foundation Model
 
 **Conference**: ICLR 2026  
@@ -162,9 +168,9 @@ The model is initialized with Qwen2-7B + DINOv2 + SigLIP pre-trained weights and
 
 ## Related Papers
 
-- [\[ICLR 2026\] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning](from_seeing_to_experiencing_scaling_navigation_foundation_models_with_reinforcem.md)
-- [\[CVPR 2026\] SocialNav: Training Human-Inspired Foundation Model for Socially-Aware Embodied Navigation](../../CVPR2026/robotics/socialnav_training_human-inspired_foundation_model_for_socially-aware_embodied_n.md)
 - [\[ICLR 2026\] Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation](ground_slow_move_fast_a_dual-system_foundation_model_for_generalizable_vision-la.md)
+- [\[CVPR 2026\] SocialNav: Training Human-Inspired Foundation Model for Socially-Aware Embodied Navigation](../../CVPR2026/robotics/socialnav_training_human-inspired_foundation_model_for_socially-aware_embodied_n.md)
+- [\[ICLR 2026\] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning](from_seeing_to_experiencing_scaling_navigation_foundation_models_with_reinforcem.md)
 - [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
 - [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Temporal-Difference Variational Continual Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Continual Learning] This paper proposes the TD-VCL objective, which reformulates the learning target in Variational Continual Learning (VCL) as a weighted combination of multiple pa…
+  [NeurIPS 2025][Reinforcement Learning][Continual Learning] This paper proposes the TD-VCL objective, which reformulates the learning target in Variational Continual Learning (VCL) as a weighted combination of multiple past posterior estimates. This reformulation reveals a deep connection to temporal-difference (TD) methods in reinforcement learning, and effectively mitigates the progressive accumulation of approximation errors by "spreading" regularization pressure across mul…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Catastrophic Forgetting"
   - "Bayesian Learning"
 date: 2026-05-08
-content_hash: 6aa8a625d93e0328
+content_hash: 1618fc58b18fc4ac
 ---
 
 # Temporal-Difference Variational Continual Learning
@@ -131,9 +131,9 @@ A mean-field Gaussian approximate posterior and a Gaussian prior $\mathcal{N}(0,
 
 - [\[NeurIPS 2025\] Continual Knowledge Adaptation for Reinforcement Learning](continual_knowledge_adaptation_for_reinforcement_learning.md)
 - [\[AAAI 2026\] Language Model Distillation: A Temporal Difference Imitation Learning Perspective](../../AAAI2026/reinforcement_learning/language_model_distillation_a_temporal_difference_imitation_learning_perspective.md)
-- [\[NeurIPS 2025\] Incremental Sequence Classification with Temporal Consistency](incremental_sequence_classification_with_temporal_consistency.md)
 - [\[NeurIPS 2025\] Modulation of Temporal Decision-Making in a Deep Reinforcement Learning Agent under the Dual-Task Paradigm](modulation_of_temporal_decision-making_in_a_deep_reinforcement_learning_agent_un.md)
-- [\[ICML 2026\] Shapley Neuron Values for Continual Learning: Which Neurons Matter Most?](../../ICML2026/reinforcement_learning/shapley_neuron_values_for_continual_learning_which_neurons_matter_most.md)
+- [\[ICML 2025\] Continual Reinforcement Learning by Planning with Online World Models](../../ICML2025/reinforcement_learning/continual_reinforcement_learning_by_planning_with_online_world_models.md)
+- [\[NeurIPS 2025\] Incremental Sequence Classification with Temporal Consistency](incremental_sequence_classification_with_temporal_consistency.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Forcing] The authors upgrade "talking head generation" from unidirectional broadcasting to genuine bidirectional conversation. By utilizing causal diffusion forcing in the motion latent space, the model receives user audio/motion while auto-regressively generating avatar head movements. Combined with KV caching, the latency is
+  [CVPR 2026][Human Understanding][Interactive Digital Human] The authors upgrade "talking head generation" from unidirectional broadcasting to genuine bidirectional conversation. By utilizing causal diffusion forcing in the motion latent space, the model receives user audio/motion while auto-regressively generating avatar head movements. Combined with KV caching, the latency is reduced to ~500ms (6.8x faster than baselines). Furthermore, a label-free DPO (Direct Preference Opt…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Forcing
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Interactive Digital Human"
+  - "Diffusion Forcing"
+  - "Causal Generation"
+  - "Preference Optimization"
+  - "Real-time Low Latency"
 date: 2026-05-08
-content_hash: a2e3ddf7bb16b84f
+content_hash: 3eb1bc7a5fce308e
 ---
+
 # Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation
 
 **Conference**: CVPR 2026  
@@ -137,11 +142,11 @@ Table 4 (RealTalk, adding user motion $\mathbf{m}_u$ and DPO step-by-step):
 
 ## Related Papers
 
-- [\[CVPR 2026\] OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)
 - [\[CVPR 2026\] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation](mimictalker_a_multimodal_interactive_and_memory-enhanced_framework_for_real-time.md)
 - [\[CVPR 2026\] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head](syncdreamer_controllable_and_expressive_avatar_generation_beyond_the_talking_hea.md)
 - [\[CVPR 2026\] FloodDiffusion: Tailored Diffusion Forcing for Streaming Motion Generation](flooddiffusion_tailored_diffusion_forcing_for_streaming_motion_generation.md)
 - [\[CVPR 2026\] AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video](avatar_reinforcement_learning_to_see_hear_and_reason_over_video.md)
+- [\[ICML 2026\] DiscoForcing: A Unified Framework for Real-Time Audio-Driven Character Control with Diffusion Forcing](../../ICML2026/human_understanding/discoforcing_a_unified_framework_for_real-time_audio-driven_character_control_wi.md)
 
 </div>
 

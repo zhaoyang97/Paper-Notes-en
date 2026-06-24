@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Repurposing 3D Generative Model for Autoregressive Layout Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] LaviGen "repurposes" a pretrained native 3D generative model into an autoregressive layout generator, placing objects one-by-one directly in native 3D space. This ensures generated scene layouts are both physically plausible (no collisions, no out-of-bounds, no floating) and semantically coherent, achieving 19% higher
+  [CVPR 2026][3D Vision][3D Layout Generation] LaviGen "repurposes" a pretrained native 3D generative model into an autoregressive layout generator, placing objects one-by-one directly in native 3D space. This ensures generated scene layouts are both physically plausible (no collisions, no out-of-bounds, no floating) and semantically coherent, achieving 19% higher physical plausibility and approximately 65% faster inference compared to SOTA.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Layout Generation"
+  - "Autoregressive Generation"
+  - "3D Generative Model Repurposing"
+  - "Physical Plausibility"
+  - "Self-Evolving Distillation"
 date: 2026-05-08
-content_hash: 3e3591538fd4713f
+content_hash: 04ca485f9df4ec4c
 ---
+
 # Repurposing 3D Generative Model for Autoregressive Layout Generation
 
 **Conference**: CVPR 2026  
@@ -125,11 +131,11 @@ Components added sequentially to the base generative model:
 
 ## Related Papers
 
+- [\[CVPR 2026\] ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation](armflow_autoregressive_meanflow_for_online_3d_human_reaction_generation.md)
+- [\[CVPR 2026\] AutoRegressive Generation with B-rep Holistic Token Sequence Representation](autoregressive_generation_with_b-rep_holistic_token_sequence_representation.md)
+- [\[CVPR 2026\] Nestwork: Conditional 3D Furnished House Layout Generation through Latent Heterogeneous Graph Diffusion](nestwork_conditional_3d_furnished_house_layout_generation_through_latent_heterog.md)
+- [\[CVPR 2026\] MeshRipple: Structured Autoregressive Generation of Artist-Meshes](meshripple_structured_autoregressive_generation_of_artist-meshes.md)
 - [\[CVPR 2026\] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)
-- [\[CVPR 2026\] MeshWeaver: Sparse-Voxel-Guided Surface Weaving for Autoregressive Mesh Generation](meshweaver_sparse-voxel-guided_surface_weaving_for_autoregressive_mesh_generatio.md)
-- [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](../../ICCV2025/3d_vision/repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
-- [\[CVPR 2026\] BrickNet: Graph-Backed Generative Brick Assembly](bricknet_graph-backed_generative_brick_assembly.md)
-- [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
 
 </div>
 

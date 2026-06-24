@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Causality in Video Diffusers is Separable from Denoising
 description: >-
-  [CVPR 2026][Video Generation][Inference Acceleration] The authors discover through probing experiments that "temporal causal reasoning" and "step-wise denoising" in autoregressive video diffusion models are separable. Shallow layers exhibit high redundancy across denoising steps, while deep layers primarily perform intra-frame rendering. Based on this, the SCD architectur
+  [CVPR 2026][Video Generation][Autoregressive Video Diffusion] The authors discover through probing experiments that "temporal causal reasoning" and "step-wise denoising" in autoregressive video diffusion models are separable. Shallow layers exhibit high redundancy across denoising steps, while deep layers primarily perform intra-frame rendering. Based on this, the SCD architecture is proposed: a causal Transformer encoder performing temporal reasoning once per frame…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Autoregressive Video Diffusion"
+  - "Causal Attention"
+  - "Temporal Reasoning Decoupling"
+  - "Encoder-Decoder"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 35115618d281b184
+content_hash: b2efef458f293ac1
 ---
+
 # Causality in Video Diffusers is Separable from Denoising
 
 **Conference**: CVPR 2026  
@@ -136,15 +141,16 @@ SCD is ~1.3$\times$ faster than the frame-wise Self Forcing baseline and has ~35
 - Value: ⭐⭐⭐⭐⭐ Directly addresses latency bottlenecks for real-time/streaming video generation, providing significant speedups without quality loss.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] VidTAG: Temporally Aligned Video to GPS Geolocalization with Denoising Sequence Prediction at a Global Scale](vidtag_temporally_aligned_video_to_gps_geolocalization_with_denoising_sequence_p.md)
 - [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
-- [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
-- [\[CVPR 2026\] RAPID: Reusing Attention Sparsity with Inter-step Adaptation for Efficient Video Diffusion](rapid_reusing_attention_sparsity_with_inter-step_adaptation_for_efficient_video_.md)
-- [\[CVPR 2026\] Video-as-Answer: Predict and Generate Next Video Event with Joint-GRPO](video-as-answer_predict_and_generate_next_video_event_with_joint-grpo.md)
-- [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video](physvid_physics_aware_local_conditioning_for_generative_video_models.md)
+- [\[ICLR 2026\] TS-Attn: Temporal-wise Separable Attention for Multi-Event Video Generation](../../ICLR2026/video_generation/ts-attn_temporal-wise_separable_attention_for_multi-event_video_generation.md)
+- [\[ICLR 2026\] SteinsGate: Injecting Causality into Diffusion Models with Path Integral for Long Video Generation](../../ICLR2026/video_generation/steinsgate_adding_causality_to_diffusions_for_long_video_generation_via_path_int.md)
+- [\[ICLR 2026\] Time-to-Move: Training-Free Motion-Controlled Video Generation via Dual-Clock Denoising](../../ICLR2026/video_generation/time-to-move_training-free_motion-controlled_video_generation_via_dual-clock_den.md)
 
 </div>
 

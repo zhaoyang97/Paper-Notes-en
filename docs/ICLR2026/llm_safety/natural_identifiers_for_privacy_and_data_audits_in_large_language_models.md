@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Natural Identifiers for Privacy and Data Audits in Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Natural Identifiers] This paper discovers that naturally occurring structured random strings in training corpora (such as hashes, short links, and cryptocurrency addresses, termed **Natural Identifiers / NIDs**) have known generation functions. This allows for the infinite generation of IID "held-out data," enabling post-hoc differential p
+  [ICLR 2026][LLM Safety][Natural Identifiers] This paper discovers that naturally occurring structured random strings in training corpora (such as hashes, short links, and cryptocurrency addresses, termed **Natural Identifiers / NIDs**) have known generation functions. This allows for the infinite generation of IID "held-out data," enabling post-hoc differential privacy (DP) auditing and dataset inference (DI) on trained LLMs without **retraining models** or requiring **privat…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Natural Identifiers
-  - Post-hoc DP Auditing
-  - Dataset Inference
-  - Membership Inference
-  - Held-out Data
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Natural Identifiers"
+  - "Post-hoc DP Auditing"
+  - "Dataset Inference"
+  - "Membership Inference"
+  - "Held-out Data"
 date: 2026-05-08
-content_hash: 5ca83535a52a66f6
+content_hash: 87ee35be1a75d7e1
 ---
+
 # Natural Identifiers for Privacy and Data Audits in Large Language Models
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mordal: Automated Pretrained Model Selection for Vision Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][VLM] Mordal automates the process of selecting the optimal vision encoder and LLM for a VLM. It employs representation similarity clustering to reduce candidate volume and combines early stopping with scaling law prediction to minimize individual evaluation costs. It identifies optimal combinations with 8.9–11.6× less GPU t
+  [ICLR 2026][Multimodal VLM][VLM] Mordal automates the process of selecting the optimal vision encoder and LLM for a VLM. It employs representation similarity clustering to reduce candidate volume and combines early stopping with scaling law prediction to minimize individual evaluation costs. It identifies optimal combinations with 8.9–11.6× less GPU time than grid search.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM"
+  - "Pretrained Model Selection"
+  - "CKA Representation Similarity"
+  - "Early Stopping"
+  - "Scaling Law Prediction"
 date: 2026-05-08
-content_hash: dd46b1f74edd9b74
+content_hash: 824a376fa7008516
 ---
+
 # Mordal: Automated Pretrained Model Selection for Vision Language Models
 
 **Conference**: ICLR 2026  
@@ -123,10 +128,20 @@ Mordal achieved the highest $\tau$ across all 7 datasets, averaging 69% higher t
 - **Value**: ⭐⭐⭐⭐ — Practical engineering value for multimodal model assembly and AutoML.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2025\] Vision-Language Model Selection and Reuse for Downstream Adaptation](../../ICML2025/multimodal_vlm/vision-language_model_selection_and_reuse_for_downstream_adaptation.md)
+- [\[ICLR 2026\] UniHM: Unified Dexterous Hand Manipulation with Vision Language Model](unihm_unified_dexterous_hand_manipulation_with_vision_language_model.md)
+- [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
+- [\[AAAI 2026\] PET2Rep: Towards Vision-Language Model-Driven Automated Radiology Report Generation for Positron Emission Tomography](../../AAAI2026/multimodal_vlm/pet2rep_towards_vision-language_model-drived_automated_radiology_report_generati.md)
+- [\[ICLR 2026\] P2P: Automated Paper-to-Poster Generation and Fine-Grained Benchmark](p2p_automated_paper-to-poster_generation_and_fine-grained_benchmark.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2025\] Vision-Language Model Selection and Reuse for Downstream Adaptation](../../ICML2025/multimodal_vlm/vision-language_model_selection_and_reuse_for_downstream_adaptation.md)

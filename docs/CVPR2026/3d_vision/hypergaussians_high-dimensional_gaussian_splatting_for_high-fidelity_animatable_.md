@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] HyperGaussians is proposed to extend 3DGS to high-dimensional multivariate Gaussians. It models expression-dependent attribute variations through conditional distributions and utilizes an inverse covariance trick for efficient conditioning. As a plug-and-play module integrated into FlashAvatar and GaussianHeadAvatar, i
+  [CVPR 2026][3D Vision][Gaussian Splatting] HyperGaussians is proposed to extend 3DGS to high-dimensional multivariate Gaussians. It models expression-dependent attribute variations through conditional distributions and utilizes an inverse covariance trick for efficient conditioning. As a plug-and-play module integrated into FlashAvatar and GaussianHeadAvatar, it significantly improves the quality of high-frequency details.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Face Avatar"
+  - "High-Dimensional Gaussians"
+  - "Facial Animation"
+  - "Conditional Distribution"
 date: 2026-05-08
-content_hash: 9938882afb8347aa
+content_hash: e96d2921f6799c62
 ---
+
 # HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ The loss functions and hyperparameters of the original methods (FlashAvatar/Gaus
 
 ## Related Papers
 
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
 - [\[CVPR 2026\] High-Fidelity Mobile Avatars with Pruned Local Blendshapes](high-fidelity_mobile_avatars_with_pruned_local_blendshapes.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
-- [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
-- [\[CVPR 2026\] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars](progressiveavatars_progressive_animatable_3d_gaussian_avatars.md)
 - [\[CVPR 2026\] Depth Peeling for High-Fidelity Gaussian-Enhanced Surfel Rendering](depth_peeling_for_high-fidelity_gaussian-enhanced_surfel_rendering.md)
+- [\[CVPR 2026\] Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars](tavatar_topology-aware_gaussian_attribute_derivation_for_animatable_human_avatar.md)
+- [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
 
 </div>
 

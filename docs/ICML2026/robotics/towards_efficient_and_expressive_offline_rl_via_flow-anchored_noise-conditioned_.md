@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] This paper proposes FAN, which compresses "expensive generative policies + distributional critics" into "single-step flow anchoring + single noise sample critic." By using Flow Anchoring to perform behavior regularization within a single flow evaluation and a noise-conditioned critic to replace multi-quantile samples w
+  [ICML 2026][Robotics][Offline RL] This paper proposes FAN, which compresses "expensive generative policies + distributional critics" into "single-step flow anchoring + single noise sample critic." By using Flow Anchoring to perform behavior regularization within a single flow evaluation and a noise-conditioned critic to replace multi-quantile samples with a single Gaussian noise sample, FAN achieves SOTA performance on D4RL/OGBench while being 5-14× faster to train than simil…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026"
+  - "Robotics"
+  - "Offline RL"
+  - "Flow Matching Policy"
+  - "Distributional Critic"
+  - "Noise-conditioned Q-learning"
+  - "Behavior Regularization"
 date: 2026-05-08
-content_hash: 198e39747d970046
+content_hash: bffe231a2e20fc41
 ---
+
 # Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning
 
 **Conference**: ICML 2026  
@@ -162,10 +168,10 @@ FAN achieves SOTA in 7 out of 9 categories (within a 95% optimal range), particu
 ## Related Papers
 
 - [\[NeurIPS 2025\] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning](../../NeurIPS2025/robotics/sample-efficient_tabular_self-play_for_offline_robust_reinforcement_learning.md)
-- [\[ICLR 2026\] Statistical Guarantees for Offline Domain Randomization](../../ICLR2026/robotics/statistical_guarantees_for_offline_domain_randomization.md)
-- [\[ICLR 2026\] On Entropy Control in LLM-RL Algorithms](../../ICLR2026/robotics/on_entropy_control_in_llm-rl_algorithms.md)
 - [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](../../ICLR2026/robotics/cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
-- [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
+- [\[ICLR 2026\] RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation](../../ICLR2026/robotics/rfs_reinforcement_learning_with_residual_flow_steering_for_dexterous_manipulatio.md)
+- [\[ICML 2026\] SCALE: Self-uncertainty Conditioned Adaptive Looking and Execution for Vision-Language-Action Models](scale_self-uncertainty_conditioned_adaptive_looking_and_execution_for_vision-lan.md)
+- [\[ICLR 2026\] SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning](../../ICLR2026/robotics/simplevla-rl_scaling_vla_training_via_reinforcement_learning.md)
 
 </div>
 

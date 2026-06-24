@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pyramidal Patchification Flow for Visual Generation
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] The Diffusion Transformer is enabled to use larger patches (fewer tokens) at high-noise timesteps and smaller patches (more tokens) at low-noise timesteps. By sharing a single DiT backbone and learning individual linear projections for different patch sizes, denoising inference is accelerated by approximately 1.6× to 2
+  [ICLR 2026][Image Generation][Diffusion Transformer] The Diffusion Transformer is enabled to use larger patches (fewer tokens) at high-noise timesteps and smaller patches (more tokens) at low-noise timesteps. By sharing a single DiT backbone and learning individual linear projections for different patch sizes, denoising inference is accelerated by approximately 1.6× to 2.0× with almost no loss in image quality.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Flow Matching"
+  - "Patchification Acceleration"
+  - "Pyramid"
+  - "Sampling Efficiency"
 date: 2026-05-08
-content_hash: 8887f11fc0188e6d
+content_hash: 5c82f4b0c18779f9
 ---
+
 # Pyramidal Patchification Flow for Visual Generation
 
 **Conference**: ICLR 2026  
@@ -158,10 +162,10 @@ Comparison with FlexiDiT on DiT-XL/2: At ~63% FLOPs, PPFlow (FID 2.15) outperfor
 ## Related Papers
 
 - [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](../../CVPR2026/image_generation/dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
-- [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
+- [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
 - [\[ICLR 2026\] Product of Experts for Visual Generation](product_of_experts_for_visual_generation.md)
 - [\[ICLR 2026\] Next Visual Granularity Generation](next_visual_granularity_generation.md)
-- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
+- [\[ICLR 2026\] Safety-Guided Flow (SGF): A Unified Framework for Negative Guidance in Safe Generation](safety-guided_flow_sgf_a_unified_framework_for_negative_guidance_in_safe_generat.md)
 
 </div>
 

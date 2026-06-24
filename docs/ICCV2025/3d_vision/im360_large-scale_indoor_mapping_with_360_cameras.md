@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IM360: Large-scale Indoor Mapping with 360 Cameras
 description: >-
-  [ICCV 2025][3D Vision][indoor 3D mapping] This paper presents IM360, a 3D mapping pipeline for large-scale indoor environments captured under sparse scanning conditions. By deeply integrating a spherical camera model int…
+  [ICCV 2025][3D Vision][indoor 3D mapping] This paper presents IM360, a 3D mapping pipeline for large-scale indoor environments captured under sparse scanning conditions. By deeply integrating a spherical camera model into every stage of SfM—combined with dense feature matching and differentiable rendering-based texture optimization—IM360 achieves substantially superior camera localization accuracy and rendering quality on Matterport3D and Stanford2D3D compared to existing met…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "texture optimization"
   - "large-scale indoor scenes"
 date: 2026-05-08
-content_hash: 0963ed78ceaad507
+content_hash: 0d6ad0e244b76d2e
 ---
 
 # IM360: Large-scale Indoor Mapping with 360 Cameras
@@ -163,11 +163,11 @@ Registration rate comparison on Stanford2D3D:
 
 ## Related Papers
 
+- [\[CVPR 2025\] 3D-SLNR: A Super Lightweight Neural Representation for Large-scale 3D Mapping](../../CVPR2025/3d_vision/3d-slnr_a_super_lightweight_neural_representation_for_large-scale_3d_mapping.md)
 - [\[ICCV 2025\] S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction](s3r-gs_streamlining_the_pipeline_for_large-scale_street_scene_reconstruction.md)
 - [\[ICCV 2025\] HumanOLAT: A Large-Scale Dataset for Full-Body Human Relighting and Novel-View Synthesis](humanolat_a_large-scale_dataset_for_full-body_human_relighting_and_novel-view_sy.md)
+- [\[ICLR 2026\] ULTRA-360: Unconstrained Dataset for Large-scale Temporal 3D Reconstruction across Altitudes and Omnidirectional Views](../../ICLR2026/3d_vision/ultra-360_unconstrained_dataset_for_large-scale_temporal_3d_reconstruction_acros.md)
 - [\[ICCV 2025\] Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras](single-scanline_relative_pose_estimation_for_rolling_shutter_cameras.md)
-- [\[NeurIPS 2025\] LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering](../../NeurIPS2025/3d_vision/lodge_level-of-detail_large-scale_gaussian_splatting_with_efficient_rendering.md)
-- [\[ICCV 2025\] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](bring_your_rear_cameras_for_egocentric_3d_human_pose_estimation.md)
 
 </div>
 

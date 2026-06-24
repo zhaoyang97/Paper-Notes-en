@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Process Reward Models are Symbolic Vision Learners
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] This work redefines "geometric diagram understanding" as a **symbolic auto-encoding** problem—the encoder parses the diagram into a logical form of points/lines/shapes/relations (latents are symbolic graphs rather than pixel vectors), and an executable rendering engine redraws the logical form back into the original im
+  [CVPR 2026][VLM Reasoning][Symbolic Vision] This work redefines "geometric diagram understanding" as a **symbolic auto-encoding** problem—the encoder parses the diagram into a logical form of points/lines/shapes/relations (latents are symbolic graphs rather than pixel vectors), and an executable rendering engine redraws the logical form back into the original image. A **Hierarchical Process Reward (SymHPR) + Stabilized GRPO** is used to supervise this non-differentiable pipel…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Symbolic Vision"
+  - "Process Reward Models"
+  - "Geometric Diagram Parsing"
+  - "Self-supervised Autoencoder"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 1f52c1f7940aacda
+content_hash: 35dc17534d259546
 ---
+
 # Hierarchical Process Reward Models are Symbolic Vision Learners
 
 **Conference**: CVPR 2026  
@@ -140,16 +145,16 @@ Notably, the version **without a projector** (79.4) matched the projector-based 
 - Value: ⭐⭐⭐⭐ Methodological contributions to interpretable vision and RL stabilization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](do_vision_language_models_need_to_process_image_tokens.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[ICLR 2026\] CircuitSense: A Hierarchical MLLM Benchmark Bridging Visual Comprehension and Symbolic Reasoning in Engineering Design Process](../../ICLR2026/vlm_reasoning/circuitsense_a_hierarchical_mllm_benchmark_bridging_visual_comprehension_and_sym.md)
 - [\[CVPR 2026\] Keep it SymPL: Symbolic Projective Layout for Allocentric Spatial Reasoning in Vision-Language Models](keep_it_sympl_symbolic_projective_layout_for_allocentric_spatial_reasoning_in_vi.md)
-- [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
+- [\[ICLR 2026\] VisualPRM400K: An Effective Dataset for Training Multimodal Process Reward Models](../../ICLR2026/vlm_reasoning/visualprm400k_an_effective_dataset_for_training_multimodal_process_reward_models.md)
 - [\[CVPR 2026\] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](arm-thinker_reinforcing_multimodal_generative_reward_models_with_agentic_tool_us.md)
-- [\[CVPR 2026\] TreeTeaming: Autonomous Red-Teaming of Vision-Language Models via Hierarchical Strategy Exploration](treeteaming_autonomous_red-teaming_of_vision-language_models_via_hierarchical_s.md)
 
 </div>
 

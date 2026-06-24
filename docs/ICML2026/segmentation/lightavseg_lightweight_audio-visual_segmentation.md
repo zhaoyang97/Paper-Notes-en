@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LightAVSeg: Lightweight Audio-Visual Segmentation
 description: >-
-  [ICML 2026][Segmentation][AVS] LightAVSeg decouples "semantic filtering (what)" and "spatial localization (where)" by replacing $\mathcal{O}(N^2)$ cross-modal attention with global channel modulation. This allows the AVS model to achieve 50.4 mIoU (MS3) with only 20.5M parameters and reach an on-device latency of 163.4 ms on Snapdragon 8 Elite, whic
+  [ICML 2026][Segmentation][AVS] LightAVSeg decouples "semantic filtering (what)" and "spatial localization (where)" by replacing $\mathcal{O}(N^2)$ cross-modal attention with global channel modulation. This allows the AVS model to achieve 50.4 mIoU (MS3) with only 20.5M parameters and reach an on-device latency of 163.4 ms on Snapdragon 8 Elite, which is approximately $8\times$ faster than AVSegFormer-R50.
 tags:
-  - ICML 2026
-  - Segmentation
-  - AVS
-  - SeaFormer
+  - "ICML 2026"
+  - "Segmentation"
+  - "AVS"
+  - "Channel Modulation"
+  - "Linear Complexity"
+  - "SeaFormer"
+  - "Mobile CPU"
 date: 2026-05-08
-content_hash: 72e32370767dce29
+content_hash: 4d8805fc57a100d1
 ---
+
 # LightAVSeg: Lightweight Audio-Visual Segmentation
 
 **Conference**: ICML 2026  
@@ -127,11 +131,11 @@ Total loss $\mathcal{L} = \mathcal{L}_{\text{seg}} + 0.5 \mathcal{L}_{\text{msa}
 
 ## Related Papers
 
+- [\[CVPR 2025\] Audio-Visual Instance Segmentation](../../CVPR2025/segmentation/audio-visual_instance_segmentation.md)
 - [\[CVPR 2025\] Robust Audio-Visual Segmentation via Audio-Guided Visual Convergent Alignment](../../CVPR2025/segmentation/robust_audio-visual_segmentation_via_audio-guided_visual_convergent_alignment.md)
 - [\[CVPR 2025\] Dynamic Derivation and Elimination: Audio Visual Segmentation with Enhanced Audio Semantics](../../CVPR2025/segmentation/dynamic_derivation_and_elimination_audio_visual_segmentation_with_enhanced_audio.md)
 - [\[CVPR 2026\] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts](../../CVPR2026/segmentation/souple_enhancing_audio-visual_localization_and_segmentation_with_learnable_promp.md)
 - [\[ICCV 2025\] Implicit Counterfactual Learning for Audio-Visual Segmentation](../../ICCV2025/segmentation/implicit_counterfactual_learning_for_audio-visual_segmentation.md)
-- [\[CVPR 2025\] Audio-Visual Instance Segmentation](../../CVPR2025/segmentation/audio-visual_instance_segmentation.md)
 
 </div>
 

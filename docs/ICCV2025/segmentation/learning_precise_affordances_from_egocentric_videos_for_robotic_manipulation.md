@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Precise Affordances from Egocentric Videos for Robotic Manipulation
 description: >-
-  [ICCV 2025][Segmentation][Affordance Learning] This paper presents a complete affordance learning system comprising: (1) an automatic pipeline for extracting precise graspable and functional affordance segmentation annot…
+  [ICCV 2025][Segmentation][Affordance Learning] This paper presents a complete affordance learning system comprising: (1) an automatic pipeline for extracting precise graspable and functional affordance segmentation annotations from egocentric videos; (2) a Geometry-guided Affordance Transformer (GAT) based on DINOv2 with depth-geometric guidance for cross-domain affordance segmentation (mIoU improved by 13.8%); and (3) the Aff-Grasp framework…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Affordance Segmentation"
   - "Tool Grasping"
 date: 2026-05-08
-content_hash: 63353b625b08a512
+content_hash: cc4fc67b17a80bbc
 ---
 
 # Learning Precise Affordances from Egocentric Videos for Robotic Manipulation

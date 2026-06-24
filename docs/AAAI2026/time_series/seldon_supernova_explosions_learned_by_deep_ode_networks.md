@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SELDON: Supernova Explosions Learned by Deep ODE Networks
 description: >-
-  [AAAI 2026][Time Series][Continuous-time modeling] This paper proposes SELDON, a continuous-time VAE combining a masked GRU-ODE encoder, an implicit Neural ODE propagator…
+  [AAAI 2026][Time Series][Continuous-time modeling] This paper proposes SELDON, a continuous-time VAE combining a masked GRU-ODE encoder, an implicit Neural ODE propagator, and an interpretable Gaussian basis function decoder, designed for sparse and irregularly sampled astronomical light curve prediction. SELDON outperforms baseline methods in accurate multi-band flux prediction using only 20% of observed data.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Supernova light curves"
   - "Irregular time series forecasting"
 date: 2026-05-08
-content_hash: 93c020476ca82dad
+content_hash: f44ec44a73ecd2b2
 ---
 
 # SELDON: Supernova Explosions Learned by Deep ODE Networks
@@ -139,10 +139,10 @@ Out-of-sample prediction performance of three encoder variants at different obse
 ## Related Papers
 
 - [\[AAAI 2026\] Transparent Networks for Multivariate Time Series](transparent_networks_for_multivariate_time_series.md)
+- [\[ICLR 2026\] Point-wise Anomaly Detection via Fold-bifurcation ODE](../../ICLR2026/time_series/point-wise_anomaly_detection_via_fold-bifurcation_ode.md)
 - [\[AAAI 2026\] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports](urban_incident_prediction_with_graph_neural_networks_integrating_government_rati.md)
 - [\[AAAI 2026\] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification](counterfactual_explainable_ai_xai_method_for_deep_learning-based_multivariate_ti.md)
-- [\[ICLR 2026\] WARP: Weight-Space Linear Recurrent Neural Networks](../../ICLR2026/time_series/weight-space_linear_recurrent_neural_networks.md)
-- [\[ICML 2026\] Interpretability in Deep Time Series Models Demands Semantic Alignment](../../ICML2026/time_series/interpretability_in_deep_time_series_models_demands_semantic_alignment.md)
+- [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](../../ICLR2026/time_series/weight-space_linear_recurrent_neural_networks.md)
 
 </div>
 

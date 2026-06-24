@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] GradPruner calculates the importance of each layer (IGIA-Matrix) using gradients accumulated during the **initial 1% of steps** of LoRA fine-tuning for layer pruning. It then performs "same-sign merging" of pruned layers into retained layers, achieving simultaneous training and inference speedups on downstream tasks: 4
+  [ICLR 2026][Model Compression][Layer Pruning] GradPruner calculates the importance of each layer (IGIA-Matrix) using gradients accumulated during the **initial 1% of steps** of LoRA fine-tuning for layer pruning. It then performs "same-sign merging" of pruned layers into retained layers, achieving simultaneous training and inference speedups on downstream tasks: 40% parameter reduction with only 0.99% accuracy loss.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Layer Pruning"
+  - "Structured Pruning"
+  - "LoRA Fine-tuning"
+  - "Gradient Importance"
+  - "Layer Merging"
 date: 2026-05-08
-content_hash: 9fc799ba6b213de2
+content_hash: 99717d53ae75e553
 ---
+
 # GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs
 
 **Conference**: ICLR 2026  
@@ -130,9 +136,9 @@ GradPruner saves approximately 36% in training time/VRAM and 39% in inference ti
 
 - [\[ICLR 2026\] Reassessing Layer Pruning in LLMs: New Insights and Methods](reassessing_layer_pruning_in_llms_new_insights_and_methods.md)
 - [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](../../CVPR2026/model_compression/loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
-- [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
-- [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
 
 </div>
 

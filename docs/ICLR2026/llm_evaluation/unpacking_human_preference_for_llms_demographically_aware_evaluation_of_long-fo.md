@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework
 description: >-
-  [ICLR 2026][LLM Evaluation][human evaluation] The HUMAINE framework is proposed to evaluate human preference across 28 SOTA models via 23,404 demographically stratified participants. Using a multi-dimensional (5-dimensional), multi-turn conversation approach and a hierarchical Bayesian BTD model, the study reveals that age is the strongest driver of preference het
+  [ICLR2026][LLM Evaluation][human evaluation] The HUMAINE framework is proposed to evaluate human preference across 28 SOTA models via 23,404 demographically stratified participants. Using a multi-dimensional (5-dimensional), multi-turn conversation approach and a hierarchical Bayesian BTD model, the study reveals that age is the strongest driver of preference heterogeneity (average rank shift of $\pm 2.8$), proving that single aggregated leaderboards fail to reflect diverse p…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - human evaluation
-  - preference heterogeneity
-  - demographic bias
-  - Bradley-Terry-Davidson
-  - LLM leaderboard
-  - psychometrics
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "human evaluation"
+  - "preference heterogeneity"
+  - "demographic bias"
+  - "Bradley-Terry-Davidson"
+  - "LLM leaderboard"
+  - "psychometrics"
 date: 2026-05-08
-content_hash: ab0a9af5a82f5ab6
+content_hash: cd94ea80712f11e4
 ---
+
 # Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework
 
 **Conference**: ICLR2026  
@@ -160,8 +161,8 @@ Gemini-2.5-pro's advantage lies in **consistency across all dimensions**; other 
 - [\[ICML 2026\] RouteJudge: An Open Platform for Reproducible and Preference-Aware LLM Routing](../../ICML2026/llm_evaluation/routejudge_an_open_platform_for_reproducible_and_preference-aware_llm_routing.md)
 - [\[ICML 2026\] Nonparametric LLM Evaluation from Preference Data](../../ICML2026/llm_evaluation/nonparametric_llm_evaluation_from_preference_data.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
-- [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
 - [\[ICLR 2026\] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](dont_passk_a_bayesian_framework_for_large_language_model_evaluation.md)
+- [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
 
 </div>
 

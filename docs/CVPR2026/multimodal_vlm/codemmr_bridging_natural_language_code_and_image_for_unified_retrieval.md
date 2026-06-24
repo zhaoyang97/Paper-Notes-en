@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CodeMMR: Bridging Natural Language, Code, and Image for Unified Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Code-RAG] Addressing the gap where "code retrieval only considers text and ignores visual rendering," this paper introduces MMCoIR, the first multimodal and multilingual code retrieval benchmark (covering 5 visual domains, 8 languages, and 11 libraries). Based on Qwen2VL, the authors develop CodeMMR using instruction-conditioned
+  [CVPR 2026][Multimodal VLM][Multimodal code retrieval] Addressing the gap where "code retrieval only considers text and ignores visual rendering," this paper introduces MMCoIR, the first multimodal and multilingual code retrieval benchmark (covering 5 visual domains, 8 languages, and 11 libraries). Based on Qwen2VL, the authors develop CodeMMR using instruction-conditioned contrastive learning to project text, code, and images into a unified semantic space. CodeMMR outperform…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Code-RAG
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal code retrieval"
+  - "Unified embedding space"
+  - "Instruction-conditioned contrastive learning"
+  - "Code-RAG"
+  - "MMCoIR benchmark"
 date: 2026-05-08
-content_hash: 7c06bea591ab233c
+content_hash: 3f3653dd1879060d
 ---
+
 # CodeMMR: Bridging Natural Language, Code, and Image for Unified Retrieval
 
 **Conference**: CVPR 2026  
@@ -149,10 +154,10 @@ UML is the easiest (short code, 100% via symbolic matching); SVG is the hardest 
 ## Related Papers
 
 - [\[CVPR 2026\] HBridge: H-Shape Bridging of Heterogeneous Experts for Unified Multimodal Understanding and Generation](hbridge_h-shape_bridging_of_heterogeneous_experts_for_unified_multimodal_underst.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
 - [\[CVPR 2026\] RetFormer: Multimodal Retrieval for Enhancing Image Recognition](retformer_multimodal_retrieval_for_enhancing_image_recognition.md)
-- [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
 - [\[CVPR 2026\] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement](uare_a_unified_vision-language_model_for_image_quality_assessment_restoration_an.md)
-- [\[CVPR 2026\] R4-CGQA: Retrieval-based Vision Language Models for Computer Graphics Image Quality Assessment](r4-cgqa_retrieval-based_vision_language_models_for_computer_graphics_image_quali.md)
+- [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery
 description: >-
-  [ICCV 2025][Novel Class Discovery] This paper proposes IICMVNCD, the first framework extending Novel Class Discovery (NCD) to the multi-view setting. It captures distributional consistency between known and novel classes…
+  [ICCV 2025][Novel Class Discovery] This paper proposes IICMVNCD, the first framework extending Novel Class Discovery (NCD) to the multi-view setting. It captures distributional consistency between known and novel classes via intra-view matrix factorization, and transfers view relationships learned from known classes to novel classes through inter-view weight learning, eliminating the need for pseudo-labels.
 tags:
   - "ICCV 2025"
   - "Novel Class Discovery"
@@ -11,7 +11,7 @@ tags:
   - "View Weighting"
   - "Clustering"
 date: 2026-05-08
-content_hash: 8f915dc1e1452c59
+content_hash: f3c27eef42c5bd85
 ---
 
 # Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery
@@ -158,9 +158,9 @@ IICMVNCD is an end-to-end, single-stage method comprising three core components:
 
 - [\[ICCV 2025\] Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos](switch-a-view_view_selection_learned_from_unlabeled_in-the-wild_videos.md)
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images (MV-AR)](autoregressively_generating_multiview_consistent_images.md)
+- [\[ECCV 2024\] Mahalanobis Distance-Based Multi-View Optimal Transport for Multi-View Crowd Localization](../../ECCV2024/others/mahalanobis_distance-based_multi-view_optimal_transport_for_multi-view_crowd_loc.md)
 - [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
-- [\[NeurIPS 2025\] Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion](../../NeurIPS2025/others/incomplete_multi-view_clustering_via_hierarchical_semantic_alignment_and_coopera.md)
-- [\[AAAI 2026\] Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](../../AAAI2026/others/deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)
+- [\[CVPR 2025\] Which Viewpoint Shows it Best? Language for Weakly Supervising View Selection in Multi-view Instructional Videos](../../CVPR2025/others/which_viewpoint_shows_it_best_language_for_weakly_supervising_view_selection_in_.md)
 
 </div>
 

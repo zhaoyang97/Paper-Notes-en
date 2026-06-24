@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] What Layers When: Learning to Skip Compute in LLMs with Residual Gates
 description: >-
-  [ICLR 2026][Model Compression][GateSkip] GateSkip is proposed—inserting a sigmoid-linear gate at the output of each Attention/MLP branch in a decoder-only Transformer. During fine-tuning, gate sparsity and the language modeling objective are jointly learned. During inference, low-importance tokens are deterministically skipped based on a quantile threshold of
+  [ICLR 2026][Model Compression][Residual Gating] GateSkip is proposed—inserting a sigmoid-linear gate at the output of each Attention/MLP branch in a decoder-only Transformer. During fine-tuning, gate sparsity and the language modeling objective are jointly learned. During inference, low-importance tokens are deterministically skipped based on a quantile threshold of gate values, achieving token-level layer-wise adaptive depth. On Llama 8B, it saves 15% computation while maint…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - GateSkip
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Residual Gating"
+  - "token-level layer skipping"
+  - "adaptive depth"
+  - "GateSkip"
+  - "inference acceleration"
 date: 2026-05-08
-content_hash: b4318211789c1eef
+content_hash: 4b907112d8155e33
 ---
+
 # What Layers When: Learning to Skip Compute in LLMs with Residual Gates
 
 **Conference**: ICLR 2026  
@@ -186,7 +190,7 @@ INT4 quantization maintains 94.4% of generation accuracy with unchanged log-like
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](compute-optimal_quantization-aware_training.md)
 - [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](rethinking_residual_errors_in_compensation-based_llm_quantization.md)
 - [\[ICML 2026\] RaBiT: Residual-Aware Binarization Training for Accurate and Efficient LLMs](../../ICML2026/model_compression/rabit_residual-aware_binarization_training_for_accurate_and_efficient_llms.md)
-- [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
+- [\[ICLR 2026\] Q&C: When Quantization Meets Cache in Efficient Generation](qc_when_quantization_meets_cache_in_efficient_generation.md)
 
 </div>
 

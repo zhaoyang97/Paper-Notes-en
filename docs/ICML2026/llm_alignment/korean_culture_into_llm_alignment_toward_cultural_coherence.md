@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Korean Culture into LLM Alignment: Toward Cultural Coherence
 description: >-
-  [ICML 2026][Alignment & RLHF][DPO] Existing cultural safety research primarily focuses on "subtraction" (regulating outputs); this paper introduces a "positive" counterpart—**positively defining** "culturally coherent responses" within the South Korean context. Based on this, it establishes an alignment data pipeline (Korean harm taxonomy seeds → attack
+  [ICML2026][LLM Alignment][Cultural Coherence] Existing cultural safety research primarily focuses on "subtraction" (regulating outputs); this paper introduces a "positive" counterpart—**positively defining** "culturally coherent responses" within the South Korean context. Based on this, it establishes an alignment data pipeline (Korean harm taxonomy seeds → attack mining → safety responses under cultural policy constraints → triple-judge filtering into DPO triplets). DPO fine…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICML2026"
+  - "LLM Alignment"
+  - "Cultural Coherence"
+  - "DPO"
+  - "Red-teaming Mining"
+  - "Safety Policy"
+  - "Korean Socio-legal Context"
 date: 2026-05-08
-content_hash: 0f9f03f93782ec37
+content_hash: 267872a4e6fb7a8b
 ---
+
 # Korean Culture into LLM Alignment: Toward Cultural Coherence
 
 **Conference**: ICML2026  
@@ -134,11 +139,11 @@ In terms of attack success rate, relative reductions ranged from $3\%$ (Gemma) t
 
 ## Related Papers
 
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](../../ICLR2026/llm_alignment/evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
 - [\[ICML 2026\] Quantifying the Salience of Geo-Cultural Values for Pluralistic Safety Alignment](quantifying_the_salience_of_geo-cultural_values_for_pluralistic_safety_alignment.md)
 - [\[ICML 2026\] Steerable Cultural Preference Optimization of Reward Models](steerable_cultural_preference_optimization_of_reward_models.md)
-- [\[ACL 2026\] CuMA: Aligning LLMs with Sparse Cultural Values via Demographic-Aware Mixture of Adapters](../../ACL2026/llm_alignment/cuma_aligning_llms_with_sparse_cultural_values_via_demographic-aware_mixture_of_.md)
-- [\[AAAI 2026\] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment](../../AAAI2026/llm_alignment/differentiated_directional_intervention_a_framework_for_evading_llm_safety_align.md)
-- [\[ACL 2026\] Pref-CTRL: Preference Driven LLM Alignment using Representation Editing](../../ACL2026/llm_alignment/pref-ctrl_preference_driven_llm_alignment_using_representation_editing.md)
+- [\[ICLR 2026\] Data Selection for LLM Alignment Using Fine-Grained Preferences](../../ICLR2026/llm_alignment/data_selection_for_llm_alignment_using_fine-grained_preferences.md)
+- [\[ICLR 2026\] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](../../ICLR2026/llm_alignment/beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)
 
 </div>
 

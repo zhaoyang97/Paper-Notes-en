@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Ours proposes Sketch2Colab, which generates coordinated multi-human-object interaction 3D motions from storyboard sketches by distilling sketch-driven diffusion priors into a rectified flow student network, combined with energy guidance and Continuous-Time Markov Chain (CTMC) discrete event planning, achieving SOTA con
+  [CVPR 2026][Human Understanding][Multi-person motion generation] Ours proposes Sketch2Colab, which generates coordinated multi-human-object interaction 3D motions from storyboard sketches by distilling sketch-driven diffusion priors into a rectified flow student network, combined with energy guidance and Continuous-Time Markov Chain (CTMC) discrete event planning, achieving SOTA constraint compliance and perceptual quality on CORE4D and InterHuman.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-person motion generation"
+  - "Sketch-guided"
+  - "Rectified flow distillation"
+  - "Human-Object-Human collaboration"
+  - "CTMC discrete events"
 date: 2026-05-08
-content_hash: 5e3183853cdb13df
+content_hash: 4aa9dee0a410e98c
 ---
+
 # Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation
 
 **Conference**: CVPR 2026  
@@ -135,8 +141,8 @@ The total training loss combines $\mathcal{L}_{RF}$ (Rectified Flow), $\mathcal{
 - [\[CVPR 2026\] MGDHand: Multi-Granularity Prior-to-Inertial Distillation Framework for Sequential 3D Hand Pose Estimation from Sparse IMUs](mgdhand_multi-granularity_prior-to-inertial_distillation_framework_for_sequentia.md)
 - [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
 - [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](unified_number-free_text-to-motion_generation_via_flow_matching.md)
-- [\[CVPR 2026\] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head](syncdreamer_controllable_and_expressive_avatar_generation_beyond_the_talking_hea.md)
-- [\[CVPR 2026\] OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis](openfs_multi-hand-capable_fingerspelling_recognition_with_implicit_signing-hand_.md)
+- [\[CVPR 2026\] Bridging Facial Understanding and Animation via Language Models](bridging_facial_understanding_and_animation_via_language_models.md)
+- [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ComplexConstraints and Beyond: Expert Rubrics for RLVR
 description: >-
-  [ACL 2026][Alignment & RLHF][RLVR] This paper systematically demonstrates that "expert-written fine-grained scoring rubrics" serve as both more reliable evaluation tools for frontier LLMs and data-efficient RLVR reward signals. It proposes five design principles for constructing high-quality rubrics and introduces the ComplexConstraints dataset, where e
+  [ACL 2026][LLM Alignment][Expert Rubrics] This paper systematically demonstrates that "expert-written fine-grained scoring rubrics" serve as both more reliable evaluation tools for frontier LLMs and data-efficient RLVR reward signals. It proposes five design principles for constructing high-quality rubrics and introduces the ComplexConstraints dataset, where each prompt contains 10–40 atomic criteria. Empirical results show that performing RLVR with only ~1…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - RLVR
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Expert Rubrics"
+  - "RLVR"
+  - "Instruction Following"
+  - "Verifiable Reward"
+  - "Agent Evaluation"
 date: 2026-05-08
-content_hash: 7bd60494ba326ac0
+content_hash: 536e5960c9b76881
 ---
+
 # ComplexConstraints and Beyond: Expert Rubrics for RLVR
 
 **Conference**: ACL 2026  
@@ -120,13 +125,13 @@ The value of dense rubrics lies in the "multiplicative difficulty": for a 20-cri
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](../../ICLR2026/llm_alignment/robust_reward_modeling_via_causal_rubrics.md)
 - [\[ICML 2026\] SFT Overtraining Predicts Rank Inversion via Entropy Collapse Under RLVR](../../ICML2026/llm_alignment/sft_overtraining_predicts_rank_inversion_via_entropy_collapse_under_rlvr.md)
 - [\[ICLR 2026\] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](../../ICLR2026/llm_alignment/beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)
-- [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](../../ICLR2026/llm_alignment/beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
 - [\[ICLR 2026\] Beyond Binary Preferences: A Principled Framework for Reward Modeling with Ordinal Feedback](../../ICLR2026/llm_alignment/beyond_binary_preferences_a_principled_framework_for_reward_modeling_with_ordina.md)
 - [\[ICML 2026\] Steering Beyond the Support: Adversarial Training on Unsupervised Jailbroken Activation Simulation](../../ICML2026/llm_alignment/steering_beyond_the_support_adversarial_training_on_unsupervised_jailbroken_acti.md)
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Cross-video reasoning] This paper introduces CrossVid, the first comprehensive benchmark for systematically evaluating the Cross-Video Reasoning (CVR) capabilities of multimodal large language…
+  [AAAI 2026][VLM Reasoning][Cross-video reasoning] This paper introduces CrossVid, the first comprehensive benchmark for systematically evaluating the Cross-Video Reasoning (CVR) capabilities of multimodal large language models (MLLMs). CrossVid encompasses 10 tasks across 4 dimensions, 5,331 videos, and 9,015 QA pairs. Experiments reveal that the current best-performing model, Gemini-2.5-Pro, achieves only 50.4% accuracy, far below the human performance of 89.2%.
 tags:
   - "AAAI 2026"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Cross-video reasoning"
   - "video QA benchmark"
   - "multi-video understanding"
   - "multimodal large language model evaluation"
   - "spatiotemporal reasoning"
 date: 2026-05-08
-content_hash: 0680cbe786f6d0e2
+content_hash: a4a53f2d7c094fd5
 ---
 
 # CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models
@@ -167,11 +167,11 @@ The following research directions are suggested:
 
 ## Related Papers
 
-- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
-- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/multimodal_vlm/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
-- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/multimodal_vlm/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
-- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
-- [\[AAAI 2026\] VIR-Bench: Evaluating Geospatial and Temporal Understanding of MLLMs via Travel Video Itinerary Reconstruction](vir-bench_evaluating_geospatial_and_temporal_understanding_of_mllms_via_travel_v.md)
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](../../ICLR2026/vlm_reasoning/visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
+- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/vlm_reasoning/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
+- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/vlm_reasoning/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[CVPR 2026\] QUANTIPHY: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models](../../CVPR2026/vlm_reasoning/quantiphy_a_quantitative_benchmark_evaluating_physical_reasoning_abilities_of_vi.md)
 
 </div>
 

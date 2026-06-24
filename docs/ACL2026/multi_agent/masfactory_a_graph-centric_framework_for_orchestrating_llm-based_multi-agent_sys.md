@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing
 description: >-
-  [ACL 2026][Multi-Agent][Vibe Graphing] MASFactory models LLM Multi-Agent Systems (MAS) as Node/Edge computational graphs and introduces the "Vibe Graphing" three-stage pipeline (Role Assignment → Structure Design → Semantic Completion) to compile natural language intent into executable MAS workflows. It provides Context/Message Adapters, ComposedGraph templ
+  [ACL 2026][Multi-Agent][Multi-agent Orchestration] MASFactory models LLM Multi-Agent Systems (MAS) as Node/Edge computational graphs and introduces the "Vibe Graphing" three-stage pipeline (Role Assignment → Structure Design → Semantic Completion) to compile natural language intent into executable MAS workflows. It provides Context/Message Adapters, ComposedGraph templates for reuse, and VS Code visualization. On 7 benchmarks, it replicates 5 representative MAS with comparabl…
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - Vibe Graphing
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Multi-agent Orchestration"
+  - "Vibe Graphing"
+  - "Computational Graph"
+  - "Human-AI Collaboration"
+  - "Context Adaptation"
 date: 2026-05-08
-content_hash: d1cfd511609daf28
+content_hash: 998ad8eb33f315b5
 ---
+
 # MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing
 
 **Conference**: ACL 2026  
@@ -139,10 +144,20 @@ Replicated versions are broadly consistent or better than originals. Vibe Graphi
 - Value: ⭐⭐⭐⭐ (Drastic reduction in developer effort via 1511 → 45 lines)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration](../../ICLR2026/multi_agent/graph-of-agents_a_graph-based_framework_for_multi-agent_llm_collaboration.md)
+- [\[ACL 2026\] BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration](bookagent_orchestrating_safety-aware_visual_narratives_via_multi-agent_cognitive.md)
+- [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
+- [\[ACL 2026\] CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems](cia_inferring_the_communication_topology_from_llm-based_multi-agent_systems.md)
+- [\[ACL 2026\] To Trust or Not to Trust: Attention-Based Trust Management for LLM Multi-Agent Systems](to_trust_or_not_to_trust_attention-based_trust_management_for_llm_multi-agent_sy.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration](bookagent_orchestrating_safety-aware_visual_narratives_via_multi-agent_cognitive.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Interpretability Can Be Actionable
 description: >-
-  [ICML 2026][Interpretability][actionability] This position paper argues that "interpretability research lacks evaluation criteria rather than new methods." It advocates for actionability—the ability of insights to drive specific decisions or interventions outside the interpretability field—as the core evaluative dimension. The authors define actionability via two
+  [ICML 2026 (Position Paper)][Interpretability][actionability] This position paper argues that "interpretability research lacks evaluation criteria rather than new methods." It advocates for actionability—the ability of insights to drive specific decisions or interventions outside the interpretability field—as the core evaluative dimension. The authors define actionability via two dimensions (concreteness and validation), analyze systemic barriers…
 tags:
-  - ICML 2026
-  - Interpretability
-  - actionability
+  - "ICML 2026 (Position Paper)"
+  - "Interpretability"
+  - "actionability"
+  - "interpretability evaluation"
+  - "position paper"
+  - "deployment standards"
+  - "evaluation framework"
 date: 2026-05-08
-content_hash: 47825484bb102d8f
+content_hash: 2ab8a3a93a19b132
 ---
+
 # Interpretability Can Be Actionable
 
 **Conference**: ICML 2026 (Position Paper)  
@@ -109,8 +114,20 @@ While containing no original experiments, the paper cites numerous "actionable s
 - Value: ⭐⭐⭐⭐⭐ (Potential to significantly shift evaluation standards in major ML conferences).
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Revitalizing Black-Box Interpretability: Actionable Interpretability for LLMs via Proxy Models](../../ACL2026/interpretability/revitalizing_black-box_interpretability_actionable_interpretability_for_llms_via.md)
+- [\[CVPR 2026\] Language Models Can Explain Visual Features via Steering](../../CVPR2026/interpretability/language_models_can_explain_visual_features_via_steering.md)
+- [\[ICLR 2026\] GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](../../ICLR2026/interpretability/gepa_reflective_prompt_evolution_can_outperform_reinforcement_learning.md)
+- [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
+- [\[ICML 2026\] Beyond Additive Decompositions: Interpretability Through Separability](beyond_additive_decompositions_interpretability_through_separability.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Revitalizing Black-Box Interpretability: Actionable Interpretability for LLMs via Proxy Models](../../ACL2026/interpretability/revitalizing_black-box_interpretability_actionable_interpretability_for_llms_via.md)

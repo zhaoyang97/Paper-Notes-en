@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bayesian Tensor Decomposition with Diffusion Model Prior
 description: >-
-  [ICML 2026][Image Generation][Paper Note] DiffBCP injects pre-trained diffusion models as implicit data priors into Bayesian CP tensor decomposition. By employing a split Gibbs sampler to achieve tractable posterior inference, it substantially outperforms traditional and deep tensor decomposition baselines in image inpainting and denoising tasks (with a PSNR g
+  [ICML2026][Image Generation][Tensor Decomposition] DiffBCP injects pre-trained diffusion models as implicit data priors into Bayesian CP tensor decomposition. By employing a split Gibbs sampler to achieve tractable posterior inference, it substantially outperforms traditional and deep tensor decomposition baselines in image inpainting and denoising tasks (with a PSNR gain of up to +2.33 dB on FFHQ).
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML2026"
+  - "Image Generation"
+  - "Tensor Decomposition"
+  - "Diffusion Model Prior"
+  - "Bayesian Inference"
+  - "Image Inpainting"
+  - "Automatic Rank Selection"
 date: 2026-05-08
-content_hash: cf83933a5d9ecfa4
+content_hash: 64512e846164e734
 ---
+
 # Bayesian Tensor Decomposition with Diffusion Model Prior
 
 **Conference**: ICML2026  
@@ -138,7 +144,7 @@ Even under severe distribution shift, DiffBCP outperforms PuTT, as the inductive
 - [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](../../ICCV2025/image_generation/transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
 - [\[AAAI 2026\] Conditional Diffusion Model for Multi-Agent Dynamic Task Decomposition](../../AAAI2026/image_generation/conditional_diffusion_model_for_multi-agent_dynamic_task_dec.md)
 - [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](../../CVPR2026/image_generation/from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
-- [\[ICML 2026\] Balancing Fidelity and Diversity in Diffusion Models via Symmetric Attention Decomposition: Hopfield Perspective](balancing_fidelity_and_diversity_in_diffusion_models_via_symmetric_attention_dec.md)
+- [\[ICCV 2025\] Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model](../../ICCV2025/image_generation/learning_deblurring_texture_prior_from_unpaired_data_with_diffusion_model.md)
 
 </div>
 

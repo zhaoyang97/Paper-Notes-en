@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DualFocus: Depth from Focus with Spatio-Focal Dual Variational Constraints
 description: >-
-  [NeurIPS 2025][3D Vision][Depth from Focus] This paper proposes DualFocus, which achieves robust and accurate depth estimation from focal stacks via two complementary constraints: a spatial variational constraint (exploi…
+  [NeurIPS 2025][3D Vision][Depth from Focus] This paper proposes DualFocus, which achieves robust and accurate depth estimation from focal stacks via two complementary constraints: a spatial variational constraint (exploiting focus-dependent gradient patterns to distinguish depth edges from texture artifacts) and a focal variational constraint (enforcing a unimodal and monotonic focus probability distribution along the focal axis).
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Depth Estimation"
   - "Spatio-Focal Dual Constraints"
 date: 2026-05-08
-content_hash: 2827fd9dc402fa43
+content_hash: 41ae4868da1d0253
 ---
 
 # DualFocus: Depth from Focus with Spatio-Focal Dual Variational Constraints
@@ -155,10 +155,10 @@ The variational constraint paradigm is generalizable to other multi-view or mult
 ## Related Papers
 
 - [\[ICCV 2025\] Simulating Dual-Pixel Images From Ray Tracing For Depth Estimation](../../ICCV2025/3d_vision/simulating_dual-pixel_images_from_ray_tracing_for_depth_estimation.md)
-- [\[NeurIPS 2025\] 3D Visual Illusion Depth Estimation](3d_visual_illusion_depth_estimation.md)
 - [\[ICML 2026\] FSI2P: A Hierarchical Focus–Sweep Registration Network with Dynamically Allocated Depth](../../ICML2026/3d_vision/fs-i2pa_hierarchical_focus-sweep_registration_network_with_dynamically_allocated.md)
-- [\[NeurIPS 2025\] Robust Neural Rendering in the Wild with Asymmetric Dual 3D Gaussian Splatting](robust_neural_rendering_in_the_wild_with_asymmetric_dual_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] TR2M: Transferring Monocular Relative Depth to Metric Depth with Language Descriptions and Dual-Level Scale-Oriented Contrast](../../CVPR2026/3d_vision/tr2m_transferring_monocular_relative_depth_to_metric_depth_with_language_descrip.md)
+- [\[NeurIPS 2025\] 3D Visual Illusion Depth Estimation](3d_visual_illusion_depth_estimation.md)
+- [\[CVPR 2026\] Spectrum from Defocus: Fast Spectral Imaging with Chromatic Focal Stack](../../CVPR2026/3d_vision/spectrum_from_defocus_fast_spectral_imaging_with_chromatic_focal_stack.md)
+- [\[ECCV 2024\] IDOL: Unified Dual-Modal Latent Diffusion for Human-Centric Joint Video-Depth Generation](../../ECCV2024/3d_vision/idol_unified_dual-modal_latent_diffusion_for_human-centric_joint_video-depth_gen.md)
 
 </div>
 

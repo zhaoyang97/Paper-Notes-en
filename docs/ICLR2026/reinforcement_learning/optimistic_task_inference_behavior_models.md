@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Optimistic Task Inference for Behavior Foundation Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][behavior foundation models] This paper proposes OpTI-BFM—a method for Behavior Foundation Models that, during test-time, does not require a complete reward function or labeled datasets. Instead, it infers tasks and recovers Oracle performance within just 5 episodes of environment interaction. The core idea leverages the linear structure of succes
+  [ICLR 2026 Oral][Reinforcement Learning][behavior foundation models] This paper proposes OpTI-BFM—a method for Behavior Foundation Models that, during test-time, does not require a complete reward function or labeled datasets. Instead, it infers tasks and recovers Oracle performance within just 5 episodes of environment interaction. The core idea leverages the linear structure of successor features to reduce task inference to a linear bandit problem…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - behavior foundation models
-  - task inference
-  - zero-shot RL
-  - successor features
-  - UCB
-  - linear bandits
+  - "ICLR 2026 Oral"
+  - "Reinforcement Learning"
+  - "behavior foundation models"
+  - "task inference"
+  - "zero-shot RL"
+  - "successor features"
+  - "UCB"
+  - "linear bandits"
 date: 2026-05-08
-content_hash: 6ebe276df17a27e3
+content_hash: 0f374746bc15d463
 ---
+
 # Optimistic Task Inference for Behavior Foundation Models
 
 **Conference**: ICLR 2026 Oral  
@@ -137,10 +138,10 @@ OpTI-BFM matches the performance of offline inference (which requires 50K labels
 ## Related Papers
 
 - [\[ICLR 2026\] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models](task_tokens_a_flexible_approach_to_adapting_behavior_foundation_models.md)
-- [\[ICLR 2026\] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning](arm-fm_automated_reward_machines_via_foundation_models_for_compositional_reinfor.md)
+- [\[ICLR 2026\] Zero-Shot Adaptation of Behavioral Foundation Models to Unseen Dynamics](zero-shot_adaptation_of_behavioral_foundation_models_to_unseen_dynamics.md)
 - [\[ICLR 2026\] Efficient Estimation of Kernel Surrogate Models for Task Attribution](efficient_estimation_of_kernel_surrogate_models_for_task_attribution.md)
+- [\[ICLR 2026\] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning](arm-fm_automated_reward_machines_via_foundation_models_for_compositional_reinfor.md)
 - [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
-- [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
 
 </div>
 

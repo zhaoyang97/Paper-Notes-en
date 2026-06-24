@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniText: A Training-Free Generalist for Controllable Text-Image Manipulation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] OmniText is a training-free generalist framework that requires no parameter updates. By manipulating the self-attention and cross-attention of the off-the-shelf text diffusion model TextDiff-2, it unifies "text removal + content control + style control." It covers six types of text-image manipulation (TIM) tasks: remov
+  [ICLR 2026][Image Generation][Text-Image Manipulation] OmniText is a training-free generalist framework that requires no parameter updates. By manipulating the self-attention and cross-attention of the off-the-shelf text diffusion model TextDiff-2, it unifies "text removal + content control + style control." It covers six types of text-image manipulation (TIM) tasks: removal, editing, insertion, rescaling, repositioning, and style transfer. OmniText outperforms similar text s…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Text-Image Manipulation"
+  - "Training-Free"
+  - "Attention Manipulation"
+  - "Text Removal"
+  - "Style-Controllable Inpainting"
 date: 2026-05-08
-content_hash: 440538227cc3f5a1
+content_hash: 1656fdba5d812a5e
 ---
+
 # OmniText: A Training-Free Generalist for Controllable Text-Image Manipulation
 
 **Conference**: ICLR 2026  
@@ -165,15 +171,16 @@ OmniText achieves the highest rendering accuracy among generalists and the best 
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical for design automation and as a baseline for future training-free text editing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
+- [\[ICLR 2026\] Cross-ControlNet: Training-Free Fusion of Multiple Conditions for Text-to-Image Generation](cross-controlnet_training-free_fusion_of_multiple_conditions_for_text-to-image_g.md)
 - [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](../../AAAI2026/image_generation/infinite-story_a_training-free_consistent_text-to-image_gene.md)
-- [\[ICLR 2026\] WithAnyone: Toward Controllable and ID Consistent Image Generation](withanyone_toward_controllable_and_id_consistent_image_generation.md)
-- [\[NeurIPS 2025\] SceneDesigner: Controllable Multi-Object Image Generation with 9-DoF Pose Manipulation](../../NeurIPS2025/image_generation/scenedesigner_controllable_multi-object_image_generation_with_9-dof_pose_manipul.md)
+- [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MimeQA: Towards Socially-Intelligent Nonverbal Foundation Models
 description: >-
-  [NeurIPS 2025][Video Understanding][nonverbal social intelligence] This work introduces MimeQA, the first nonverbal social reasoning benchmark built on mime performance videos. It comprises 101 videos and 806 QA pairs or…
+  [NeurIPS 2025][Video Understanding][nonverbal social intelligence] This work introduces MimeQA, the first nonverbal social reasoning benchmark built on mime performance videos. It comprises 101 videos and 806 QA pairs organized across three hierarchical question levels (grounding the imagined → scene-level understanding → global reasoning), and reveals a severe gap between current VideoLLMs and humans on nonverbal social understanding (20–30% vs. 86%).
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "multimodal foundation models"
   - "social cognition"
 date: 2026-05-08
-content_hash: d9f11e14aa449b92
+content_hash: e94ffda2e9f02e13
 ---
 
 # MimeQA: Towards Socially-Intelligent Nonverbal Foundation Models
@@ -167,11 +167,11 @@ MimeQA is an open-ended video QA benchmark. A total of 221 mime videos are colle
 
 ## Related Papers
 
+- [\[CVPR 2025\] Efficient Transfer Learning for Video-language Foundation Models](../../CVPR2025/video_understanding/efficient_transfer_learning_for_video-language_foundation_models.md)
+- [\[CVPR 2026\] UniVBench: Towards Unified Evaluation for Video Foundation Models](../../CVPR2026/video_understanding/univbench_towards_unified_evaluation_for_video_foundation_models.md)
+- [\[ICML 2025\] MoMa: Modulating Mamba for Adapting Image Foundation Models to Video Recognition](../../ICML2025/video_understanding/moma_modulating_mamba_for_adapting_image_foundation_models_to_video_recognition.md)
 - [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](../../ICCV2025/video_understanding/flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
-- [\[AAAI 2026\] Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos](../../AAAI2026/video_understanding/uncovering_zero-shot_generalization_gaps_in_time-series_foundation_models_using_.md)
 - [\[NeurIPS 2025\] Seeing the Arrow of Time in Large Multimodal Models](seeing_the_arrow_of_time_in_large_multimodal_models.md)
-- [\[NeurIPS 2025\] SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models](sama_towards_multi-turn_referential_grounded_video_chat_with_large_language_mode.md)
-- [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
 
 </div>
 

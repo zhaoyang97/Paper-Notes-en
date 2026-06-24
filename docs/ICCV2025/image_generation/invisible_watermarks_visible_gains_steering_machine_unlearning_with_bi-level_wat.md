@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Invisible Watermarks, Visible Gains: Steering Machine Unlearning with Bi-Level Watermarking Design
 description: >-
-  [ICCV 2025][Image Generation][Machine Unlearning] This paper proposes Water4MU, a framework that integrates digital watermarking with machine unlearning (MU) via bi-level optimization (BLO). The upper level optimizes the…
+  [ICCV 2025][Image Generation][Machine Unlearning] This paper proposes Water4MU, a framework that integrates digital watermarking with machine unlearning (MU) via bi-level optimization (BLO). The upper level optimizes the watermark network to facilitate unlearning, while the lower level performs the unlearning optimization, thereby substantially improving unlearning effectiveness without significantly compromising model utility.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Implicit Gradients"
   - "Diffusion Model Concept Erasure"
 date: 2026-05-08
-content_hash: 9ec86f6db0ff0acd
+content_hash: 1de3eb3fe4e33d2f
 ---
 
 # Invisible Watermarks, Visible Gains: Steering Machine Unlearning with Bi-Level Watermarking Design
@@ -150,9 +150,9 @@ Gains are more pronounced in the class forgetting setting: FT's UA improves from
 
 - [\[NeurIPS 2025\] WMCopier: Forging Invisible Image Watermarks on Arbitrary Images](../../NeurIPS2025/image_generation/wmcopier_forging_invisible_image_watermarks_on_arbitrary_images.md)
 - [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](your_text_encoder_can_be_an_object-level_watermarking_controller.md)
+- [\[ECCV 2024\] Challenging Forgets: Unveiling the Worst-Case Forget Sets in Machine Unlearning](../../ECCV2024/image_generation/challenging_forgets_unveiling_the_worst-case_forget_sets_in_machine_unlearning.md)
 - [\[NeurIPS 2025\] Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models](../../NeurIPS2025/image_generation/shallow_diffuse_robust_and_invisible_watermarking_through_low-dimensional_subspa.md)
 - [\[ICCV 2025\] Meta-Unlearning on Diffusion Models: Preventing Relearning Unlearned Concepts](meta-unlearning_on_diffusion_models_preventing_relearning_unlearned_concepts.md)
-- [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
 
 </div>
 

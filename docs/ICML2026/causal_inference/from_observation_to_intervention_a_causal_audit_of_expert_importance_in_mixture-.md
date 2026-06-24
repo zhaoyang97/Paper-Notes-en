@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Observation to Intervention: A Causal Audit of Expert Importance in Mixture-of-Experts Models
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] The authors use an interventional audit of "per-token ablation" to test the implicit assumption in MoE pruning that "observational routing statistics can predict which experts are deletable." On three high-redundancy MoE models, they obtain a clean "three-model null result": none of the 60 metric-layer combinations pre
+  [ICML2026][Causal Inference][MoE pruning] The authors use an interventional audit of "per-token ablation" to test the implicit assumption in MoE pruning that "observational routing statistics can predict which experts are deletable." On three high-redundancy MoE models, they obtain a clean "three-model null result": none of the 60 metric-layer combinations predict the causal importance of experts after multiple-comparison correction. This suggests that existing pruning method…
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML2026"
+  - "Causal Inference"
+  - "MoE pruning"
+  - "Causal audit"
+  - "Interventional evidence"
+  - "Expert importance"
+  - "Routing statistics"
 date: 2026-05-08
-content_hash: ac3a3cf01778d0ff
+content_hash: 32d3efb8038e33c3
 ---
+
 # From Observation to Intervention: A Causal Audit of Expert Importance in Mixture-of-Experts Models
 
 **Conference**: ICML2026  
@@ -119,11 +125,11 @@ Core Conclusion: **Not a single observational metric passed Bonferroni correctio
 
 ## Related Papers
 
-- [\[ACL 2025\] Causal Graph based Event Reasoning using Semantic Relation Experts](../../ACL2025/causal_inference/causal_graph_based_event_reasoning_using_semantic_relation_experts.md)
-- [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](../../ICLR2026/causal_inference/learning_robust_intervention_representations_with_delta_embeddings.md)
-- [\[AAAI 2026\] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](../../AAAI2026/causal_inference/causal_inference_under_threshold_manipulation_bayesian_mixtu.md)
-- [\[ICLR 2026\] Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders](../../ICLR2026/causal_inference/synthesising_counterfactual_explanations_via_label-conditional_gaussian_mixture_.md)
+- [\[ICLR 2026\] Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding](../../ICLR2026/causal_inference/causal_imitation_learning_under_expert-observable_and_expert-unobservable_confou.md)
 - [\[ICML 2026\] Causal-JEPA: Learning World Models through Object-Level Latent Masking](causal-jepa_learning_world_models_through_object-level_latent_masking.md)
+- [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](../../ICLR2026/causal_inference/learning_robust_intervention_representations_with_delta_embeddings.md)
+- [\[ACL 2025\] Causal Graph based Event Reasoning using Semantic Relation Experts](../../ACL2025/causal_inference/causal_graph_based_event_reasoning_using_semantic_relation_experts.md)
+- [\[AAAI 2026\] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](../../AAAI2026/causal_inference/causal_inference_under_threshold_manipulation_bayesian_mixtu.md)
 
 </div>
 

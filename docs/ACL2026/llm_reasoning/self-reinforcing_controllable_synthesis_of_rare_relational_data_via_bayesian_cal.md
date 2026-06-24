@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Reinforcing Controllable Synthesis of Rare Relational Data via Bayesian Calibration
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper proposes RDDG, a tabular data synthesis framework based on progressive Chain-of-Thought (CoT). It guides Large Language Models (LLMs) to generate high-fidelity tabular data through coreset selection, relational mining, and a self-reinforcing feedback mechanism, achieving an average Macro-F1 improvement of ov
+  [ACL 2026 Findings][Reasoning][Tabular Data Synthesis] This paper proposes RDDG, a tabular data synthesis framework based on progressive Chain-of-Thought (CoT). It guides Large Language Models (LLMs) to generate high-fidelity tabular data through coreset selection, relational mining, and a self-reinforcing feedback mechanism, achieving an average Macro-F1 improvement of over 2% in imbalanced classification tasks.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Tabular Data Synthesis"
+  - "Imbalanced Classification"
+  - "Self-Reinforcing Feedback"
+  - "Bayesian Calibration"
+  - "In-Context Learning"
 date: 2026-05-08
-content_hash: bc285d9a1f73ec6a
+content_hash: 2da7fdce667155db
 ---
+
 # Self-Reinforcing Controllable Synthesis of Rare Relational Data via Bayesian Calibration
 
 **Conference**: ACL 2026 Findings  
@@ -127,15 +133,15 @@ Across all datasets, RDDG achieves an average Gain of **>2% weighted Macro-F1** 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](efficient_prm_training_data_synthesis_via_formal_verification.md)
 - [\[ACL 2026\] MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis](mathagent_adversarial_evolution_of_constraint_graphs_for_mathematical_reasoning_.md)
 - [\[ICML 2026\] An Information-Theoretic Criterion for Efficient Data Synthesis](../../ICML2026/llm_reasoning/an_information-theoretic_criterion_for_efficient_data_synthesis.md)
+- [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](../../ICLR2026/llm_reasoning/designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
 - [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](../../ICML2026/llm_reasoning/evaluating_relational_reasoning_in_llms_with_rel.md)
-- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](calibration-aware_policy_optimization_for_reasoning_llms.md)
 
 </div>
 

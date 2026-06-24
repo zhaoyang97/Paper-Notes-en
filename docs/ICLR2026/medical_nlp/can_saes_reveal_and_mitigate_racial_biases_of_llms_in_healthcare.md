@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?
 description: >-
-  [ICLR 2026][Medical NLP][Interpretability] This paper investigates whether Sparse Autoencoders (SAEs) can reveal and mitigate racial biases in LLMs within healthcare contexts. It finds that SAEs can identify harmful racial associations (e.g., Black patients with violence), but the effectiveness of mitigating bias in complex clinical tasks is limited (FLDD < 3%)
+  [ICLR 2026][Medical LLM][Sparse Autoencoders] This paper investigates whether Sparse Autoencoders (SAEs) can reveal and mitigate racial biases in LLMs within healthcare contexts. It finds that SAEs can identify harmful racial associations (e.g., Black patients with violence), but the effectiveness of mitigating bias in complex clinical tasks is limited (FLDD < 3%), significantly underperforming simple prompting strategies (FLDD 8-15%).
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - Interpretability
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Sparse Autoencoders"
+  - "Racial Bias"
+  - "Healthcare AI"
+  - "Interpretability"
+  - "Causal Intervention"
 date: 2026-05-08
-content_hash: 18bb720cc0dbdb19
+content_hash: bdb93395ed85d189
 ---
+
 # Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?
 
 **Conference**: ICLR 2026  
@@ -121,11 +126,11 @@ Here, logitdiff refers to the difference in logits output by the model for the s
 
 ## Related Papers
 
-- [\[ICLR 2026\] Can Large Language Models Match the Conclusions of Systematic Reviews?](can_large_language_models_match_the_conclusions_of_systematic_reviews.md)
 - [\[ACL 2025\] LLMs Can Simulate Standardized Patients via Agent Coevolution](../../ACL2025/medical_nlp/evopatient_standardized_patient.md)
+- [\[ICLR 2026\] Can Large Language Models Match the Conclusions of Systematic Reviews?](can_large_language_models_match_the_conclusions_of_systematic_reviews.md)
 - [\[ICLR 2026\] SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs](simpletom_exposing_the_gap_between_explicit_tom_inference_and_implicit_tom_appli.md)
+- [\[ICLR 2026\] Critic-Adviser-Reviser Cyclic Refinement: Towards High-Quality EMR Corpus Generation with LLMs](criticadviserreviser_cyclic_refinement_towards_high-quality_emr_corpus_generatio.md)
 - [\[ICML 2026\] Exploring Accurate and Transparent Domain Adaptation in Predictive Healthcare via Concept-Grounded Orthogonal Inference](../../ICML2026/medical_nlp/exploring_accurate_and_transparent_domain_adaptation_in_predictive_healthcare_vi.md)
-- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](counselbench_llm_mental_health_qa.md)
 
 </div>
 

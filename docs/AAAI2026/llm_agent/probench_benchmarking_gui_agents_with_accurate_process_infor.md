@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ProBench: Benchmarking GUI Agents with Accurate Process Information
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent evaluation] ProBench is proposed as the first mobile GUI Agent benchmark that evaluates both final state and operational process: 200+ challenging tasks cover 34 mainstream Chinese and En…
+  [AAAI 2026][LLM Agent][GUI Agent evaluation] ProBench is proposed as the first mobile GUI Agent benchmark that evaluates both final state and operational process: 200+ challenging tasks cover 34 mainstream Chinese and English apps. A Process Provider (Structure Description Converter + MLLM Summarizer) automatically captures accurate intermediate process information. Evaluation reveals that even the strongest model, Gemini 2.5 Pro, completes only 40.1% of tasks…
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Process Provider"
   - "bilingual applications"
 date: 2026-05-08
-content_hash: 82b04427f51aa972
+content_hash: 71a4d0cc1e1baab9
 ---
 
 # ProBench: Benchmarking GUI Agents with Accurate Process Information
@@ -131,11 +131,11 @@ ProBench comprises three modules: (1) Task Curation; (2) Dynamic Environment; (3
 
 ## Related Papers
 
+- [\[ACL 2026\] PRInTS: Process Reward Modeling for Long-range Information Retrieval](../../ACL2026/llm_agent/prints_reward_modeling_for_long-horizon_information_seeking.md)
 - [\[ACL 2026\] LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization](../../ACL2026/llm_agent/lpo_towards_accurate_gui_agent_interaction_via_location_preference_optimization.md)
 - [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
 - [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](history-aware_reasoning_for_gui_agents.md)
 - [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](../../ICML2026/llm_agent/scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
-- [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](../../ICML2026/llm_agent/recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
 
 </div>
 

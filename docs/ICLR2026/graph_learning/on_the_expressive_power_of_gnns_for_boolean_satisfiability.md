@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Expressive Power of GNNs for Boolean Satisfiability
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This work strictly proves from the perspective of the Weisfeiler-Leman (WL) test that the complete WL hierarchy cannot distinguish between satisfiable and unsatisfiable 3-SAT instances. It reveals the theoretical limits of GNN expressivity for SAT solving while identifying families of positive instances, such as planar
+  [ICLR 2026][Graph Learning][GNN Expressivity] This work strictly proves from the perspective of the Weisfeiler-Leman (WL) test that the complete WL hierarchy cannot distinguish between satisfiable and unsatisfiable 3-SAT instances. It reveals the theoretical limits of GNN expressivity for SAT solving while identifying families of positive instances, such as planar SAT and random SAT, that GNNs can successfully distinguish.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "GNN Expressivity"
+  - "Boolean Satisfiability"
+  - "Weisfeiler-Leman Test"
+  - "SAT Solving"
+  - "Theoretical Analysis"
 date: 2026-05-08
-content_hash: 97bfd1cf99f969c8
+content_hash: 9b03bb2256499347
 ---
+
 # On the Expressive Power of GNNs for Boolean Satisfiability
 
 **Conference**: ICLR 2026  
@@ -137,10 +143,10 @@ Of 448 competition instances, only 234 were solvable by WL; 38 out of 69 familie
 ## Related Papers
 
 - [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
-- [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
-- [\[ICLR 2026\] Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering](multi-scale_diffusion-guided_graph_learning_with_power-smoothing_random_walk_con.md)
-- [\[ICLR 2026\] Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs](structurally_human_semantically_biased_detecting_llm-generated_references_with_e.md)
 - [\[ICLR 2026\] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning](canonical_tree_cover_neural_networks_for_expressive_and_invariant_graph_learning.md)
+- [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
+- [\[ICLR 2026\] Self-Consistency Improves the Trustworthiness of Self-Interpretable GNNs](self-consistency_improves_the_trustworthiness_of_self-interpretable_gnns.md)
+- [\[ICLR 2026\] Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering](multi-scale_diffusion-guided_graph_learning_with_power-smoothing_random_walk_con.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RouteJudge: An Open Platform for Reproducible and Preference-Aware LLM Routing
 description: >-
-  [ICML 2026][LLM Evaluation][Elo] RouteJudge points out that current LLM router evaluations are confined to the "offline, ground-truth-based, and auto-scoring" paradigm, which ignores the diverse preferences of real users. Consequently, it proposes an **online pairwise preference evaluation platform**: for the same query, multiple routers select one mo
+  [ICML2026][LLM Evaluation][LLM Routing] RouteJudge points out that current LLM router evaluations are confined to the "offline, ground-truth-based, and auto-scoring" paradigm, which ignores the diverse preferences of real users. Consequently, it proposes an **online pairwise preference evaluation platform**: for the same query, multiple routers select one model each from the same model pool and budget for an anonymous pairwise duel. User preferences are then attributed back t…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - Elo
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "LLM Routing"
+  - "Online Preference Evaluation"
+  - "Pairwise Comparison"
+  - "Elo"
+  - "Reproducible Toolbox"
 date: 2026-05-08
-content_hash: 032b667a46927043
+content_hash: 75ec81a92435c750
 ---
+
 # RouteJudge: An Open Platform for Reproducible and Preference-Aware LLM Routing
 
 **Conference**: ICML2026  
@@ -138,11 +143,11 @@ As of 2026-06-08, the platform recorded 261 duels and 109 user votes. The follow
 
 ## Related Papers
 
+- [\[ICLR 2026\] RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers](../../ICLR2026/llm_evaluation/routerarena_an_open_platform_for_comprehensive_comparison_of_llm_routers.md)
 - [\[ICML 2026\] Nonparametric LLM Evaluation from Preference Data](nonparametric_llm_evaluation_from_preference_data.md)
 - [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
 - [\[ICLR 2026\] Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework](../../ICLR2026/llm_evaluation/unpacking_human_preference_for_llms_demographically_aware_evaluation_of_long-fo.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](../../ICLR2026/llm_evaluation/preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
-- [\[ICLR 2026\] Subliminal Signals in Preference Labels](../../ICLR2026/llm_evaluation/subliminal_signals_in_preference_labels.md)
 
 </div>
 

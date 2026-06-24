@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GEM: Geometric Entropy Mixing for Optimal LLM Data Curation
 description: >-
-  [ICML 2026][Interpretability][von Mises-Fisher] GEM reformulates the LLM pre-training data categorization problem as a variational objective involving vMF mixtures on a hypersphere combined with balance regularization. Solved via a provably monotonic Minorize-Maximize (MM) algorithm and distilled into a FastText classifier via a Teacher-Student setup, GEM achieves a
+  [ICML 2026][Interpretability][Data Mixing] GEM reformulates the LLM pre-training data categorization problem as a variational objective involving vMF mixtures on a hypersphere combined with balance regularization. Solved via a provably monotonic Minorize-Maximize (MM) algorithm and distilled into a FastText classifier via a Teacher-Student setup, GEM achieves an average improvement of approximately 1.2% across DoReMi, Perf, and RegMix frameworks on 1.1B models.
 tags:
-  - ICML 2026
-  - Interpretability
-  - von Mises-Fisher
+  - "ICML 2026"
+  - "Interpretability"
+  - "Data Mixing"
+  - "Hyperspherical Clustering"
+  - "von Mises-Fisher"
+  - "MM Algorithm"
+  - "Balance Regularization"
 date: 2026-05-08
-content_hash: 59c7103652a2aa21
+content_hash: 9e9c535e389b8bd6
 ---
+
 # GEM: Geometric Entropy Mixing for Optimal LLM Data Curation
 
 **Conference**: ICML 2026  
@@ -137,10 +142,10 @@ Sensitivity to cluster count $K\in\{12, 16, 24, 32, 36, 48\}$ (Figure 5): Perfor
 ## Related Papers
 
 - [\[ICML 2026\] Position: Let's Develop Data Probes to Fundamentally Understand How Data Affects LLM Performance](position_lets_develop_data_probes_to_fundamentally_understand_how_data_affects_l.md)
+- [\[ICLR 2026\] How Stable is the Next Token? A Geometric View of LLM Prediction Stability](../../ICLR2026/interpretability/how_stable_is_the_next_token_a_geometric_view_of_llm_prediction_stability.md)
 - [\[ICML 2026\] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions](optimal_attention_temperature_improves_the_robustness_of_in-context_learning_und.md)
-- [\[ICML 2026\] MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification](minimax_learning_of_interpretable_factored_stochastic_policies_from_conjoint_dat.md)
-- [\[ICML 2026\] Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory](diagnosing_the_reliability_of_llm-as-a-judge_via_item_response_theory.md)
-- [\[ICML 2026\] Steer Like the LLM: Activation Steering that Mimics Prompting](steer_like_the_llm_activation_steering_that_mimics_prompting.md)
+- [\[ICLR 2026\] Composable Sparse Subnetworks via Maximum-Entropy Principle](../../ICLR2026/interpretability/composable_sparse_subnetworks_via_maximum-entropy_principle.md)
+- [\[ICLR 2026\] Probing Rotary Position Embeddings through Frequency Entropy](../../ICLR2026/interpretability/probing_rotary_position_embeddings_through_frequency_entropy.md)
 
 </div>
 

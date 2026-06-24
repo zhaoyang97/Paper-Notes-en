@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diagnosing and Improving Diffusion Models by Estimating the Optimal Loss Value
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper points out that the optimal loss value of diffusion models is not 0 but an unknown positive constant. Consequently, a "high loss" fails to distinguish between "intrinsically hard-to-fit data" and "insufficient model capacity." The authors derive a closed-form solution for this optimal loss, design a scalable
+  [ICLR 2026][Image Generation][Diffusion models] This paper points out that the optimal loss value of diffusion models is not 0 but an unknown positive constant. Consequently, a "high loss" fails to distinguish between "intrinsically hard-to-fit data" and "insufficient model capacity." The authors derive a closed-form solution for this optimal loss, design a scalable estimator (cDOL) for large datasets, and utilize it to diagnose diffusion training…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "Optimal loss"
+  - "Training schedule"
+  - "Scaling laws"
+  - "Denoising conditional variance"
 date: 2026-05-08
-content_hash: 2245f53e86f9b4ee
+content_hash: 5a9971e253a4490d
 ---
+
 # Diagnosing and Improving Diffusion Models by Estimating the Optimal Loss Value
 
 **Conference**: ICLR 2026  
@@ -147,9 +152,9 @@ On ImageNet-256 (VA-VAE tokenizer + improved LightningDiT):
 
 - [\[ICLR 2026\] Shortcut Diffusion Training with Cumulative Consistency Loss: An Optimal Control View](shortcut_diffusion_training_with_cumulative_consistency_loss_an_optimal_control_.md)
 - [\[ICLR 2026\] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport](alignflow_improving_flow-based_generative_models_with_semi-discrete_optimal_tran.md)
-- [\[ICLR 2026\] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss](condition_errors_refinement_in_autoregressive_image_generation_with_diffusion_lo.md)
 - [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
 - [\[ICLR 2026\] Foresight Diffusion: Improving Sampling Consistency in Predictive Diffusion Models](foresight_diffusion_improving_sampling_consistency_in_predictive_diffusion_model.md)
+- [\[ICLR 2026\] Steer Away From Mode Collisions: Improving Composition In Diffusion Models](steer_away_from_mode_collisions_improving_composition_in_diffusion_models.md)
 
 </div>
 

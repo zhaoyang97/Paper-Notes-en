@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Recover Cell Tensor: Diffusion-Equivalent Tensor Completion for Fluorescence Microscopy Imaging
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] This paper reframes the restoration of 3D fluorescence microscopy (FM) live-cell imaging from an "inverse problem deblurring" perspective to a "tensor completion" perspective. By treating equidistant sparse sampling along the Z-axis as uniform random sampling for low-rank tensor completion, the authors derive a lower b
+  [ICLR 2026][Image Restoration][Fluorescence microscopic imaging] This paper reframes the restoration of 3D fluorescence microscopy (FM) live-cell imaging from an "inverse problem deblurring" perspective to a "tensor completion" perspective. By treating equidistant sparse sampling along the Z-axis as uniform random sampling for low-rank tensor completion, the authors derive a lower bound for the number of observations required for exact recovery. They further prove that the it…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Fluorescence microscopic imaging"
+  - "tensor completion"
+  - "Tucker decomposition"
+  - "conditional diffusion"
+  - "low-rank prior"
 date: 2026-05-08
-content_hash: 9f0aacf733ea24e4
+content_hash: 404b2033d5d2ca36
 ---
+
 # Recover Cell Tensor: Diffusion-Equivalent Tensor Completion for Fluorescence Microscopy Imaging
 
 **Conference**: ICLR 2026  
@@ -149,11 +155,11 @@ Robustness test on C. elegans-1 across noise levels and downsampling factors:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Self-Attention Driven Tensor Representation for High-Order Data Recovery](../../CVPR2026/image_restoration/self-attention_driven_tensor_representation_for_high-order_data_recovery.md)
+- [\[CVPR 2026\] Gaussian Splatting-based Low-Rank Tensor Representation for Multi-Dimensional Image Recovery](../../CVPR2026/image_restoration/gaussian_splatting-based_low-rank_tensor_representation_for_multi-dimensional_im.md)
+- [\[NeurIPS 2025\] scSplit: Bringing Severity Cognizance to Image Decomposition in Fluorescence Microscopy](../../NeurIPS2025/image_restoration/scsplit_bringing_severity_cognizance_to_image_decomposition_in_fluorescence_micr.md)
+- [\[CVPR 2026\] Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](../../CVPR2026/image_restoration/statistical_characteristic-guided_denoising_for_rapid_high-resolution_transmissi.md)
 - [\[ICLR 2026\] Reconstruct Anything Model: A Lightweight General Model for Computational Imaging](reconstruct_anything_model_a_lightweight_general_model_for_computational_imaging.md)
-- [\[ICLR 2026\] A Statistical Benchmark for Diffusion-Posterior-Sampling Algorithms](a_statistical_benchmark_for_diffusion-posterior-sampling_algorithms.md)
-- [\[ICLR 2026\] FreeAdapt: Unleashing Diffusion Priors for Ultra-High-Definition Image Restoration](freeadapt_unleashing_diffusion_priors_for_ultra-high-definition_image_restoratio.md)
-- [\[ICLR 2026\] SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](seedvr2_one-step_video_restoration_via_diffusion_adversarial_post-training.md)
-- [\[ICLR 2026\] CL-DPS: A Contrastive Learning Approach to Blind Nonlinear Inverse Problem Solving via Diffusion Posterior Sampling](cl-dps_a_contrastive_learning_approach_to_blind_nonlinear_inverse_problem_solvin.md)
 
 </div>
 

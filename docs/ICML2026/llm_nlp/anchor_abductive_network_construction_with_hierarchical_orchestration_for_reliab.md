@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ANCHOR: Abductive Network Construction with Hierarchical Orchestration for Reliable Probability Inference in Large Language Models
 description: >-
-  [ICML 2026][LLM (Other)][abductive reasoning] ANCHOR constructs a dense factor space using "bottom-up abduction + hierarchical clustering." For downstream conditions, it performs coarse-to-fine retrieval to obtain a sparse set of relevant factors. It then aggregates posteriors by combining Naïve Bayes with a dynamically constructed Causal Bayesian Network (CBN) fe
+  [ICML 2026][LLM (Other)][abductive reasoning] ANCHOR constructs a dense factor space using "bottom-up abduction + hierarchical clustering." For downstream conditions, it performs coarse-to-fine retrieval to obtain a sparse set of relevant factors. It then aggregates posteriors by combining Naïve Bayes with a dynamically constructed Causal Bayesian Network (CBN) featuring latent variables. In high-risk LLM decision-making scenarios, it significantly reduces "unknown" predictio…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - abductive reasoning
-  - Bayesian inference
-  - LLM uncertainty
-  - causal Bayesian network
-  - hierarchical factor space
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "abductive reasoning"
+  - "Bayesian inference"
+  - "LLM uncertainty"
+  - "causal Bayesian network"
+  - "hierarchical factor space"
 date: 2026-05-08
-content_hash: 4393fe09ad122120
+content_hash: 495e9495c84a31c1
 ---
+
 # ANCHOR: Abductive Network Construction with Hierarchical Orchestration for Reliable Probability Inference in Large Language Models
 
 **Conference**: ICML 2026  

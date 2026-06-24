@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection
 description: >-
-  [ICCV 2025][Segmentation][camouflaged object detection] This paper proposes RISE — a retrieval self-augmented unsupervised camouflaged object detection paradigm that constructs foreground/background prototype libraries f…
+  [ICCV 2025][Segmentation][camouflaged object detection] This paper proposes RISE — a retrieval self-augmented unsupervised camouflaged object detection paradigm that constructs foreground/background prototype libraries from the training set itself and leverages KNN retrieval to generate pseudo-labels, substantially outperforming existing unsupervised and prompt-based methods without any annotations.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "KNN"
   - "prototype library"
 date: 2026-05-08
-content_hash: d9690d714199169e
+content_hash: 76a6ab6037e4b946
 ---
 
 # Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection
@@ -148,11 +148,11 @@ Comparison with prompt-based methods (with SAM integration):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection](../../CVPR2026/segmentation/sddf_specificity-driven_dynamic_focusing_for_open-vocabulary_camouflaged_object.md)
-- [\[CVPR 2026\] FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning](../../CVPR2026/segmentation/fcl-cod_weakly_supervised_camouflaged_object_detection_with_frequency-aware_and_.md)
-- [\[ICCV 2025\] Ensemble Foreground Management for Unsupervised Object Discovery](ensemble_foreground_management_for_unsupervised_object_discovery.md)
+- [\[CVPR 2026\] Beyond Appearance: Camouflaged Object Detection via Geometric Structure](../../CVPR2026/segmentation/beyond_appearance_camouflaged_object_detection_via_geometric_structure.md)
 - [\[ICCV 2025\] Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes](rethinking_detecting_salient_and_camouflaged_objects_in_unconstrained_scenes.md)
-- [\[NeurIPS 2025\] TabRAG: Improving Tabular Document Question Answering for Retrieval Augmented Generation via Structured Representations](../../NeurIPS2025/segmentation/tabrag_improving_tabular_document_question_answering_for_retrieval_augmented_gen.md)
+- [\[ECCV 2024\] Learning Camouflaged Object Detection from Noisy Pseudo Label](../../ECCV2024/segmentation/learning_camouflaged_object_detection_from_noisy_pseudo_label.md)
+- [\[ECCV 2024\] Frequency-Spatial Entanglement Learning for Camouflaged Object Detection](../../ECCV2024/segmentation/frequency-spatial_entanglement_learning_for_camouflaged_object_detection.md)
+- [\[ICCV 2025\] Ensemble Foreground Management for Unsupervised Object Discovery](ensemble_foreground_management_for_unsupervised_object_discovery.md)
 
 </div>
 

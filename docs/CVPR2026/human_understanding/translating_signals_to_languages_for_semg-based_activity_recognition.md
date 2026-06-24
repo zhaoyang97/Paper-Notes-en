@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Translating Signals to Languages for sEMG-Based Activity Recognition
 description: >-
-  [CVPR 2026][Human Understanding][VQ-VAE] This paper proposes LLM-sEMG, which uses an sEMG-specific VQ-VAE to discretize continuous electromyography signals into tokens. Through a combination of "Lewis signaling games + human language inductive bias," these tokens evolve into a natural-language-like "sEMG language." Finally, a frozen pre-trained LLM with LoRA
+  [CVPR 2026][Human Understanding][surface Electromyography (sEMG)] This paper proposes LLM-sEMG, which uses an sEMG-specific VQ-VAE to discretize continuous electromyography signals into tokens. Through a combination of "Lewis signaling games + human language inductive bias," these tokens evolve into a natural-language-like "sEMG language." Finally, a frozen pre-trained LLM with LoRA fine-tuning directly interprets this language for activity recognition…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - VQ-VAE
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "surface Electromyography (sEMG)"
+  - "Activity Recognition"
+  - "Language Emergence"
+  - "VQ-VAE"
+  - "Lewis Signaling Games"
 date: 2026-05-08
-content_hash: 0d9b8b6c2450f8fa
+content_hash: 50ce25cb6467e7b1
 ---
+
 # Translating Signals to Languages for sEMG-Based Activity Recognition
 
 **Conference**: CVPR 2026  
@@ -150,10 +155,10 @@ Evaluated on GRABMyo (17 activities) and NinaPro DB2 (50 movements) using user-s
 
 ## Related Papers
 
-- [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](sign_language_recognition_llms.md)
+- [\[ICLR 2026\] EMBridge: Enhancing Gesture Generalization from EMG Signals Through Cross-modal Representation Learning](../../ICLR2026/human_understanding/embridge_enhancing_gesture_generalization_from_emg_signals_through_cross-modal_r.md)
 - [\[CVPR 2026\] MMGait: Towards Multi-Modal Gait Recognition](mmgait_multi_modal_gait_recognition.md)
-- [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](../../AAAI2026/human_understanding/kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
 - [\[CVPR 2026\] EventGait: Towards Robust Gait Recognition with Event Streams](eventgait_towards_robust_gait_recognition_with_event_streams.md)
+- [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](../../AAAI2026/human_understanding/kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
 - [\[CVPR 2026\] Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)
 
 </div>

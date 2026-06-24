@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection of Generated Images
 description: >-
-  [AAAI 2026][Image Generation][Generated image detection] CausalCLIP is proposed to disentangle CLIP features into causal and non-causal subspaces via Gumbel-Softmax masking and HSIC constraints…
+  [AAAI 2026][Image Generation][Generated image detection] CausalCLIP is proposed to disentangle CLIP features into causal and non-causal subspaces via Gumbel-Softmax masking and HSIC constraints, combined with adversarial masking and counterfactual intervention to preserve stable forensic cues, achieving a 6.83% accuracy improvement in cross-generator generalization.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "feature disentanglement"
   - "adversarial training"
 date: 2026-05-08
-content_hash: adb273bc2cb37cba
+content_hash: 8c1f53cba04cfcd2
 ---
 
 # CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection of Generated Images
@@ -190,9 +190,9 @@ The factorization module alone yields +14.05% ACC; the masking module alone yiel
 
 - [\[CVPR 2026\] Diversity over Uniformity: Rethinking Representation in Generated Image Detection](../../CVPR2026/image_generation/diversity_over_uniformity_rethinking_representation_in_generated_image_detection.md)
 - [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
+- [\[ECCV 2024\] Zero-Shot Detection of AI-Generated Images](../../ECCV2024/image_generation/zero-shot_detection_of_ai-generated_images.md)
 - [\[AAAI 2026\] Beautiful Images, Toxic Words: Understanding and Addressing Offensive Text in Generated Images](beautiful_images_toxic_words_understanding_and_addressing_offensive_text_in_gene.md)
 - [\[AAAI 2026\] Beyond Semantic Features: Pixel-Level Mapping for Generalized AI-Generated Image Detection](beyond_semantic_features_pixel-level_mapping_for_generalized_ai-generated_image_.md)
-- [\[NeurIPS 2025\] Detecting Generated Images by Fitting Natural Image Distributions](../../NeurIPS2025/image_generation/detecting_generated_images_by_fitting_natural_image_distributions.md)
 
 </div>
 

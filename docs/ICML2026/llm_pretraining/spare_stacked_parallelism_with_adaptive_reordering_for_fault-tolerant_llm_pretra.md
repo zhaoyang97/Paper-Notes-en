@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPARe: Stacked Parallelism with Adaptive Reordering for Fault-Tolerant LLM Pretraining Systems with 100k+ GPUs
 description: >-
-  [ICML 2026][Pretraining][checkpointing] SPARe cyclically stacks $r$ layers of data shards across groups in the data parallelism dimension. Upon node failure, it employs Hopcroft-Karp and min-cost max-flow algorithms for adaptive reordering of the "all-reduce stack number." In restart-dominant scenarios with 600k GPUs, it achieves availability comparable to $
+  [ICML2026][LLM Pretraining][Failure Masking] SPARe cyclically stacks $r$ layers of data shards across groups in the data parallelism dimension. Upon node failure, it employs Hopcroft-Karp and min-cost max-flow algorithms for adaptive reordering of the "all-reduce stack number." In restart-dominant scenarios with 600k GPUs, it achieves availability comparable to $r\times$ traditional replication with only $2\sim 3\times$ computational overhead…
 tags:
-  - ICML 2026
-  - Pretraining
-  - checkpointing
+  - "ICML2026"
+  - "LLM Pretraining"
+  - "Failure Masking"
+  - "Data Parallelism"
+  - "Redundant Computation"
+  - "Adaptive Reordering"
+  - "Checkpointing"
 date: 2026-05-08
-content_hash: 188c967ffda15c68
+content_hash: 98e06940c9c931eb
 ---
+
 # SPARe: Stacked Parallelism with Adaptive Reordering for Fault-Tolerant LLM Pretraining Systems with 100k+ GPUs
 
 **Conference**: ICML2026  
@@ -152,10 +157,10 @@ CKPT-only is non-competitive in this restart-dominant setting as it fails to pro
 
 ## Related Papers
 
-- [\[ACL 2026\] SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](../../ACL2026/llm_pretraining/sage_sign-adaptive_gradient_for_memory-efficient_llm_optimization.md)
 - [\[ICLR 2026\] ADEPT: Continual Pretraining via Adaptive Expansion and Dynamic Decoupled Tuning](../../ICLR2026/llm_pretraining/adept_continual_pretraining_via_adaptive_expansion_and_dynamic_decoupled_tuning.md)
+- [\[ACL 2026\] SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](../../ACL2026/llm_pretraining/sage_sign-adaptive_gradient_for_memory-efficient_llm_optimization.md)
+- [\[ICLR 2026\] LLM Pretraining with Continuous Concepts](../../ICLR2026/llm_pretraining/llm_pretraining_with_continuous_concepts.md)
 - [\[ICML 2026\] AC-ODM: Actor–Critic Online Data Mixing for Sample-Efficient LLM Pretraining](ac-odm_actor--critic_online_data_mixing_for_sample-efficient_llm_pretraining.md)
-- [\[ICML 2026\] FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment](flexrank_nested_low-rank_knowledge_decomposition_for_adaptive_model_deployment.md)
 - [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](../../ICLR2026/llm_pretraining/beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
 
 </div>

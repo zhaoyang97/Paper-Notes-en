@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] CODSR performs real-world image super-resolution via one-step diffusion: it first utilizes "local noise injection" based on gradient maps to activate generative priors in textured regions, then employs uncompressed LQ features to modulate U-Net intermediate layers for fidelity restoration, and finally constrains cross-
+  [CVPR 2026][Image Generation][One-step Diffusion] CODSR performs real-world image super-resolution via one-step diffusion: it first utilizes "local noise injection" based on gradient maps to activate generative priors in textured regions, then employs uncompressed LQ features to modulate U-Net intermediate layers for fidelity restoration, and finally constrains cross-attention with noun masks from Grounded-SAM2 for textual alignment. It achieves superior perceptual quality an…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "One-step Diffusion"
+  - "Real-world Image Super-Resolution"
+  - "Generative Prior Activation"
+  - "Feature Modulation"
+  - "Textual Alignment"
 date: 2026-05-08
-content_hash: 4b3606ff914fde9f
+content_hash: 5a53d89a1a7ed04f
 ---
+
 # Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -147,15 +153,15 @@ Comparison of noise strategies (DrealSR, Table 3):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
-- [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
-- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] Language-Guided One-Step Diffusion Model for Nighttime Flare Removal](language-guided_one-step_diffusion_model_for_nighttime_flare_removal.md)
+- [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
+- [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](../../AAAI2026/image_generation/realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
+- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
+- [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](../../AAAI2026/image_generation/mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
+- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultrafast_trainingfree_highresolution_im.md)
 
 </div>
 

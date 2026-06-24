@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Fast Reasoning Segmentation for Images and Videos
 description: >-
-  [CVPR 2026][Segmentation][Knowledge Distillation] FastReasonSeg completely decouples "visual perception" from "reasoning"—first compressing scenes into structured digital twin JSONs using SAM-2, depth estimation, and detection; then enabling a small LLM to perform multi-step reasoning over this JSON to retrieve target masks. By employing a "Teacher-generated reasoning
+  [CVPR 2026][VLM Reasoning][Reasoning Segmentation] FastReasonSeg completely decouples "visual perception" from "reasoning"—first compressing scenes into structured digital twin JSONs using SAM-2, depth estimation, and detection; then enabling a small LLM to perform multi-step reasoning over this JSON to retrieve target masks. By employing a "Teacher-generated reasoning chain → Student SFT + RL two-stage distillation" pipeline, a 0.6B model outperforms competitors 20× its size…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Knowledge Distillation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Reasoning Segmentation"
+  - "Digital Twin Representation"
+  - "Knowledge Distillation"
+  - "Reinforcement Learning"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: 21f83d29cf8a5f2d
+content_hash: 8787e851cd8ca97c
 ---
+
 # Fast Reasoning Segmentation for Images and Videos
 
 **Conference**: CVPR 2026  
@@ -164,10 +168,10 @@ On JiTBench for Ours-1.7B-Distill (Mean J):
 ## Related Papers
 
 - [\[CVPR 2026\] DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation](discriminative_perception_via_anchored_description_for_reasoning_segmentation.md)
-- [\[CVPR 2026\] VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation](virst_video-instructed_reasoning_assistant_for_spatiotemporal_segmentation.md)
 - [\[CVPR 2026\] SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation](segcompass_exploring_interpretable_alignment_with_sparse_autoencoders_for_enhanc.md)
-- [\[CVPR 2026\] ReSAM: Refine, Requery, and Reinforce: Self-Prompting Point-Supervised Segmentation for Remote Sensing Images](resam_refine_requery_and_reinforce_self-prompting_point-supervised_segmentation_.md)
-- [\[CVPR 2026\] Towards Context-Aware Image Anonymization with Multi-Agent Reasoning](towards_context-aware_image_anonymization_with_multi-agent_reasoning.md)
+- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
+- [\[CVPR 2026\] Reinforcing Video Object Segmentation to Think before it Segments](reinforcing_video_object_segmentation_to_think_before_it_segments.md)
+- [\[ICLR 2026\] Thyme: Think Beyond Images](../../ICLR2026/vlm_reasoning/thyme_think_beyond_images.md)
 
 </div>
 

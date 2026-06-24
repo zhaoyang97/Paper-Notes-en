@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CityNav: A Large-Scale Dataset for Real-World Aerial Navigation
 description: >-
-  [ICCV 2025][Remote Sensing][Vision-and-Language Navigation] This paper introduces CityNav, the first large-scale aerial vision-and-language navigation dataset for real-world urban environments, comprising 32…
+  [ICCV 2025][Remote Sensing][Vision-and-Language Navigation] This paper introduces CityNav, the first large-scale aerial vision-and-language navigation dataset for real-world urban environments, comprising 32,637 human demonstration trajectories covering 4.65 km². A Geo-Semantic Map (GSM) auxiliary representation is proposed and shown to significantly improve baseline navigation performance.
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "Geo-Semantic Map"
   - "Large-Scale Dataset"
 date: 2026-05-08
-content_hash: dfe962e05e3430b2
+content_hash: a38ee359d146b74e
 ---
 
 # CityNav: A Large-Scale Dataset for Real-World Aerial Navigation
@@ -162,8 +162,8 @@ GSM reduces navigation error by over 50% and multiplies success rates across all
 - [\[CVPR 2026\] Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments](../../CVPR2026/remote_sensing/olbedo_an_albedo_and_shading_aerial_dataset_for_large-scale_outdoor_environments.md)
 - [\[NeurIPS 2025\] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](../../NeurIPS2025/remote_sensing/rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)
 - [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](../../CVPR2026/remote_sensing/cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
-- [\[NeurIPS 2025\] OrbitZoo: Real Orbital Systems Challenges for Reinforcement Learning](../../NeurIPS2025/remote_sensing/orbitzoo_real_orbital_systems_challenges_for_reinforcement_learning.md)
-- [\[ICCV 2025\] Pan-Crafter: Learning Modality-Consistent Alignment for Pan-Sharpening](pan-crafter_learning_modality-consistent_alignment_for_pan-sharpening.md)
+- [\[CVPR 2026\] APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation](../../CVPR2026/remote_sensing/apex_a_decoupled_memory-based_explorer_for_asynchronous_aerial_object_goal_navig.md)
+- [\[CVPR 2026\] LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation](../../CVPR2026/remote_sensing/lookasidevln_direction-aware_aerial_vision-and-language_navigation.md)
 
 </div>
 

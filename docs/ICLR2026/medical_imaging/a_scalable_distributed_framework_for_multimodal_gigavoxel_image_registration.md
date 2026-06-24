@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Scalable Distributed Framework for Multimodal GigaVoxel Image Registration
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This paper proposes FFDP—a suite of IO-aware non-GEMM fused CUDA kernels combined with a distributed framework supporting convolution-aware tensor sharding. It accelerates traditional/deep image registration pipelines by 6–7×, reduces peak memory by 20–59%, and performs the first native-resolution multimodal registrati
+  [ICLR2026][Medical Imaging][Image Registration] This paper proposes FFDP—a suite of IO-aware non-GEMM fused CUDA kernels combined with a distributed framework supporting convolution-aware tensor sharding. It accelerates traditional/deep image registration pipelines by 6–7×, reduces peak memory by 20–59%, and performs the first native-resolution multimodal registration of 100µm ex-vivo human brain MRI (over 11 billion transformation parameters…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Image Registration"
+  - "GigaVoxel"
+  - "Fused CUDA Kernels"
+  - "Tensor Sharding"
+  - "Multimodal Brain MRI"
 date: 2026-05-08
-content_hash: 0f83d7a96f8ed62b
+content_hash: f5e7f3bde18b7287
 ---
+
 # A Scalable Distributed Framework for Multimodal GigaVoxel Image Registration
 
 **Conference**: ICLR2026  

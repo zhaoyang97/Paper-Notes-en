@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Embodied Navigation with Auxiliary Task of Action Description Prediction
 description: >-
-  [ICCV 2025][Reinforcement Learning][Embodied Navigation] DescRL introduces action description generation as an auxiliary task for reinforcement learning-based navigation. By distilling knowledge from pretrained vision-la…
+  [ICCV 2025][Reinforcement Learning][Embodied Navigation] DescRL introduces action description generation as an auxiliary task for reinforcement learning-based navigation. By distilling knowledge from pretrained vision-language models to train an ADPredictor, the navigation agent simultaneously produces interpretable action descriptions and achieves improved navigation performance, attaining state-of-the-art results on Semantic Audio-Visual Navigation (SAVNav) and several othe…
 tags:
   - "ICCV 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Distillation"
   - "Semantic Audio-Visual Navigation"
 date: 2026-05-08
-content_hash: ac8889a07afc8cdc
+content_hash: 7169afc850492268
 ---
 
 # Embodied Navigation with Auxiliary Task of Action Description Prediction
@@ -174,7 +174,7 @@ P-DescRL outperforms all conventional auxiliary tasks across every metric, with 
 - [\[ICCV 2025\] RoboFactory: Exploring Embodied Agent Collaboration with Compositional Constraints](robofactory_exploring_embodied_agent_collaboration_with_compositional_constraint.md)
 - [\[ICCV 2025\] NavQ: Learning a Q-Model for Foresighted Vision-and-Language Navigation](navq_learning_a_q-model_for_foresighted_vision-and-language_navigation.md)
 - [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](../../NeurIPS2025/reinforcement_learning/bandit_and_delayed_feedback_in_online_structured_prediction.md)
-- [\[NeurIPS 2025\] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization](../../NeurIPS2025/reinforcement_learning/learning_human-like_rl_agents_through_trajectory_optimization_with_action_quanti.md)
+- [\[ECCV 2024\] Octopus: Embodied Vision-Language Programmer from Environmental Feedback](../../ECCV2024/reinforcement_learning/octopus_embodied_vision-language_programmer_from_environmental_feedback.md)
 
 </div>
 

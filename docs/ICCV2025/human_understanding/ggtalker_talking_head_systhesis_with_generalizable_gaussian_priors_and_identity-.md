@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GGTalker: Talking Head Synthesis with Generalizable Gaussian Priors and Identity-Specific Adaptation
 description: >-
-  [ICCV 2025][Human Understanding][Talking head synthesis] GGTalker proposes a prior-adaptation two-stage training strategy that learns generalizable audio-to-expression and expression-to-visual priors from large-scale dat…
+  [ICCV 2025][Human Understanding][Talking head synthesis] GGTalker proposes a prior-adaptation two-stage training strategy that learns generalizable audio-to-expression and expression-to-visual priors from large-scale datasets, then rapidly adapts to a specific identity. The method achieves state-of-the-art performance across rendering quality, 3D consistency, lip synchronization, and training efficiency, requiring only 20 minutes of adaptation to generate photorealistic talki…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "FLAME"
   - "large-scale pretraining"
 date: 2026-05-08
-content_hash: 4cfb921d9ff57bd3
+content_hash: 18d1d5ef59745b08
 ---
 
 # GGTalker: Talking Head Synthesis with Generalizable Gaussian Priors and Identity-Specific Adaptation
@@ -56,11 +56,11 @@ The FLAME parametric model is used as an intermediate representation throughout,
 
    A conditional diffusion Transformer is employed to predict expression sequences from audio:
 
-   - **Audio Condition Encoder**: Wav2Vec 2.0 extracts audio features $\mathbf{a}_t \in \mathbb{R}^{1280}$, linearly projected to $d=512$ dimensions, and encoded for temporal dependencies via a shallow Transformer. An identity embedding $\mathbf{I} \in \mathbb{R}^{64}$ is introduced to retrieve speaking style. Outputs include frame-level conditions $\mathbf{C}' \in \mathbb{R}^{T \times d}$ and a global condition $\bar{\mathbf{c}}$.
+    - **Audio Condition Encoder**: Wav2Vec 2.0 extracts audio features $\mathbf{a}_t \in \mathbb{R}^{1280}$, linearly projected to $d=512$ dimensions, and encoded for temporal dependencies via a shallow Transformer. An identity embedding $\mathbf{I} \in \mathbb{R}^{64}$ is introduced to retrieve speaking style. Outputs include frame-level conditions $\mathbf{C}' \in \mathbb{R}^{T \times d}$ and a global condition $\bar{\mathbf{c}}$.
 
-   - **Diffusion Time Conditioner**: DDPM is used to iteratively refine expression sequences. The diffusion timestep $n$ is converted to a time embedding $\mathbf{t}_n$ via sinusoidal positional encoding and an MLP, and injected into the model via FiLM modulation and tokenization.
+    - **Diffusion Time Conditioner**: DDPM is used to iteratively refine expression sequences. The diffusion timestep $n$ is converted to a time embedding $\mathbf{t}_n$ via sinusoidal positional encoding and an MLP, and injected into the model via FiLM modulation and tokenization.
 
-   - **Transformer Decoder**: $L=8$ layers, each containing self-attention (to capture temporal dependencies) and cross-attention (to align with audio features). Classifier-free guidance is applied (condition dropout probability $p=0.1$). Output predicted expressions: $\hat{\mathbf{e}}_t = f_\theta(\mathbf{z}_t, \mathbf{C}', \bar{\mathbf{c}}, \mathbf{t}_n)$
+    - **Transformer Decoder**: $L=8$ layers, each containing self-attention (to capture temporal dependencies) and cross-attention (to align with audio features). Classifier-free guidance is applied (condition dropout probability $p=0.1$). Output predicted expressions: $\hat{\mathbf{e}}_t = f_\theta(\mathbf{z}_t, \mathbf{C}', \bar{\mathbf{c}}, \mathbf{t}_n)$
 
    Loss function: $\mathcal{L}_{\text{A2E}} = \lambda_{temp}\mathcal{L}_{temp} + \lambda_{exp}\mathcal{L}_{exp}$, where $\mathcal{L}_{temp}$ is the Huber loss between adjacent frames (temporal smoothness) and $\mathcal{L}_{exp}$ is L2 regularization.
 
@@ -166,10 +166,10 @@ GGTalker achieves state-of-the-art performance not only in self-reenactment but 
 ## Related Papers
 
 - [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
-- [\[NeurIPS 2025\] VASA-3D: Lifelike Audio-Driven Gaussian Head Avatars from a Single Image](../../NeurIPS2025/human_understanding/vasa-3d_lifelike_audio-driven_gaussian_head_avatars_from_a_single_image.md)
-- [\[ICCV 2025\] Controllable and Expressive One-Shot Video Head Swapping](controllable_and_expressive_one-shot_video_head_swapping.md)
-- [\[ICCV 2025\] ImHead: A Large-scale Implicit Morphable Model for Localized Head Modeling](imhead_a_large-scale_implicit_morphable_model_for_localized_head_modeling.md)
-- [\[NeurIPS 2025\] Switchable Token-Specific Codebook Quantization for Face Image Compression](../../NeurIPS2025/human_understanding/switchable_token-specific_codebook_quantization_for_face_image_compression.md)
+- [\[ECCV 2024\] EDTalk: Efficient Disentanglement for Emotional Talking Head Synthesis](../../ECCV2024/human_understanding/edtalk_efficient_disentanglement_for_emotional_talking_head_synthesis.md)
+- [\[ECCV 2024\] MIGS: Multi-Identity Gaussian Splatting via Tensor Decomposition](../../ECCV2024/human_understanding/migs_multi-identity_gaussian_splatting_via_tensor_decomposition.md)
+- [\[CVPR 2025\] FATE: Full-head Gaussian Avatar with Textural Editing from Monocular Video](../../CVPR2025/human_understanding/fate_full-head_gaussian_avatar_with_textural_editing_from_monocular_video.md)
+- [\[CVPR 2025\] RGBAvatar: Reduced Gaussian Blendshapes for Online Modeling of Head Avatars](../../CVPR2025/human_understanding/rgbavatar_reduced_gaussian_blendshapes_for_online_modeling_of_head_avatars.md)
 
 </div>
 

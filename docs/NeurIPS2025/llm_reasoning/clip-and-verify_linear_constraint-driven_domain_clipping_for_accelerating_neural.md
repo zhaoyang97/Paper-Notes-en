@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Clip-and-Verify: Linear Constraint-Driven Domain Clipping for Accelerated Neural Network Verification
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Neural network verification] This paper proposes the Clip-and-Verify verification pipeline, which leverages linear constraints generated "for free" during linear bound propagation. Two GPU-e…
+  [NeurIPS 2025][Reasoning][Neural network verification] This paper proposes the Clip-and-Verify verification pipeline, which leverages linear constraints generated "for free" during linear bound propagation. Two GPU-efficient algorithms—complete clipping (coordinate ascent dual solving) and relaxed clipping (closed-form input domain shrinkage)—are used to tighten intermediate-layer bounds across the entire network. The approach reduces the number of BaB subproblems by up to 96…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Neural network verification"
   - "branch-and-bound"
   - "linear constraints"
@@ -13,7 +13,7 @@ tags:
   - "α"
   - "β-CROWN"
 date: 2026-05-08
-content_hash: 2871cb1e06c701e7
+content_hash: 936ffe775e9b33df
 ---
 
 # Clip-and-Verify: Linear Constraint-Driven Domain Clipping for Accelerated Neural Network Verification
@@ -143,10 +143,10 @@ Control system verification (necessity of complete clipping):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Two-Stage Learning of Stabilizing Neural Controllers via Zubov Sampling and Iterative Domain Expansion](two-stage_learning_of_stabilizing_neural_controllers_via_zubov_sampling_and_iter.md)
+- [\[ACL 2025\] MM-Verify: Enhancing Multimodal Reasoning with Chain-of-Thought Verification](../../ACL2025/llm_reasoning/mm-verify_enhancing_multimodal_reasoning_with_chain-of-thought_verification.md)
+- [\[ICML 2025\] No Soundness in the Real World: On the Challenges of the Verification of Deployed Neural Networks](../../ICML2025/llm_reasoning/no_soundness_in_the_real_world_on_the_challenges_of_the_verification_of_deployed.md)
+- [\[ICLR 2026\] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](../../ICLR2026/llm_reasoning/neural_theorem_proving_for_verification_conditions_a_real-world_benchmark.md)
 - [\[NeurIPS 2025\] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](dreamprm_domain-reweighted_process_reward_model_for_multimodal_reasoning.md)
-- [\[NeurIPS 2025\] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling](rethinking_optimal_verification_granularity_for_compute-efficient_test-time_scal.md)
-- [\[ACL 2026\] Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval](../../ACL2026/llm_reasoning/towards_effective_in-context_cross-domain_knowledge_transfer_via_domain-invarian.md)
-- [\[AAAI 2026\] Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs](../../AAAI2026/llm_reasoning/graph_of_verification_structured_verification_of_llm_reasoning_with_directed_acy.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Site4Drug: Predicting Drug-Binding Target Sites with an AI Agent
 description: >-
-  [ICML 2026][Computational Biology][LLM Agent] Site4Drug reformulates the upstream bottleneck of "where to target on a protein" as a constraint-first evidence integration problem. An LLM Agent derives feasibility signals such as topology, PTM, Motif, and cysteine networks from sequences, outputting ranked candidate sites with scores, risk labels, and traceable logs
+  [ICML 2026][Computational Biology][Drug targets] Site4Drug reformulates the upstream bottleneck of "where to target on a protein" as a constraint-first evidence integration problem. An LLM Agent derives feasibility signals such as topology, PTM, Motif, and cysteine networks from sequences, outputting ranked candidate sites with scores, risk labels, and traceable logs, while automatically recommending whether to use antibody/peptide or small molecule modalities.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - LLM Agent
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Drug targets"
+  - "Epitope discovery"
+  - "Pocket discovery"
+  - "LLM Agent"
+  - "Auditability"
 date: 2026-05-08
-content_hash: 0e50510bc54b7828
+content_hash: 86da753bd5dc3a66
 ---
+
 # Site4Drug: Predicting Drug-Binding Target Sites with an AI Agent
 
 **Conference**: ICML 2026  
@@ -130,11 +135,11 @@ Without direct access to structures, Site4Drug matched the performance of "feedi
 
 ## Related Papers
 
+- [\[ICLR 2026\] GRAM-DTI: Adaptive Multimodal Representation Learning for Drug-Target Interaction Prediction](../../ICLR2026/computational_biology/gram-dti_adaptive_multimodal_representation_learning_for_drugtarget_interaction_.md)
 - [\[ACL 2025\] Retrieve to Explain: Evidence-driven Predictions for Explainable Drug Target Identification](../../ACL2025/computational_biology/retrieve_to_explain_drug_target_identification.md)
 - [\[ICLR 2026\] HeurekaBench: A Benchmarking Framework for AI Co-scientist](../../ICLR2026/computational_biology/heurekabench_a_benchmarking_framework_for_ai_co-scientist.md)
 - [\[ICML 2026\] From Holo Pockets to Electron Density: GPT-style Drug Design with Density](from_holo_pockets_to_electron_density_gpt-style_drug_design_with_density.md)
 - [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
-- [\[ICLR 2026\] Retrieval-Augmented Generation for Predicting Cellular Responses to Gene Perturbation](../../ICLR2026/computational_biology/retrieval-augmented_generation_for_predicting_cellular_responses_to_gene_perturb.md)
 
 </div>
 

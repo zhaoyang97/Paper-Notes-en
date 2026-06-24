@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UVU: Improving Multimodal Understanding via Vision-Language Unified Autoregressive Paradigm
 description: >-
-  [CVPR 2026][Multimodal VLM][Pretraining] UVU shifts visual supervision from a "post-training auxiliary constraint" to the "main driver of pre-training." It abandons Vector Quantization (VQ), uses continuous visual encoding for lossless input images, and constructs a 200,000-entry **pixel-level visual codebook** through large-scale iterative hierarchical clust
+  [CVPR 2026][Multimodal VLM][Visual Supervision] UVU shifts visual supervision from a "post-training auxiliary constraint" to the "main driver of pre-training." It abandons Vector Quantization (VQ), uses continuous visual encoding for lossless input images, and constructs a 200,000-entry **pixel-level visual codebook** through large-scale iterative hierarchical clustering. This allows the LLM to generate pixel-level image tokens similarly to text tokens during autoregressive n…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Pretraining
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Supervision"
+  - "Unified Autoregressive"
+  - "Pixel-level Visual Codebook"
+  - "Continuous Visual Encoding"
+  - "Pre-training"
 date: 2026-05-08
-content_hash: 9c2e53d6da96852b
+content_hash: bae0f41708e2c9ca
 ---
+
 # UVU: Improving Multimodal Understanding via Vision-Language Unified Autoregressive Paradigm
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ Ablation of codebook scale & construction:
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
+- [\[ICLR 2026\] ORION: Decoupling and Alignment for Unified Autoregressive Understanding and Generation](../../ICLR2026/multimodal_vlm/orion_decoupling_and_alignment_for_unified_autoregressive_understanding_and_gene.md)
 - [\[CVPR 2026\] AutoTraces: Autoregressive Trajectory Forecasting via Multimodal Large Language Models](autotraces_autoregressive_trajectory_forecasting_via_multimodal_large_language_m.md)
 - [\[CVPR 2026\] Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models](diffusion_guided_chain-of-vision_for_large_autoregressive_vision_models.md)
-- [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](unified_personalized_understanding_generating_and_editing.md)
 - [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
+- [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](unified_personalized_understanding_generating_and_editing.md)
 
 </div>
 

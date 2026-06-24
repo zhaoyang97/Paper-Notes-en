@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Patterns Dictate Learnability in Sequential Data
 description: >-
-  [NeurIPS 2025][Time Series][Predictive Information] This paper proposes an information-theoretic framework based on predictive information $\mathbf{I}(X_{\text{past}}…
+  [NeurIPS 2025][Time Series][Predictive Information] This paper proposes an information-theoretic framework based on predictive information $\mathbf{I}(X_{\text{past}}; X_{\text{future}})$ to quantify the strength of temporal patterns in sequential data. It derives theoretical bounds linking predictive information to the minimum achievable risk, thereby enabling a distinction between "insufficient model capacity" and "intrinsically unpredictable data."
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Sequential Data"
   - "Information Theory"
 date: 2026-05-08
-content_hash: 892b5d642b3475a8
+content_hash: 1e7347c4335c3d15
 ---
 
 # How Patterns Dictate Learnability in Sequential Data
@@ -180,11 +180,11 @@ The information-theoretic perspective is novel and theoretically deep. The core 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] How Foundational are Foundation Models for Time Series Forecasting?](how_foundational_are_foundation_models_for_time_series_forecasting.md)
 - [\[NeurIPS 2025\] AttentionPredictor: Temporal Patterns Matter for KV Cache Compression](attentionpredictor_temporal_patterns_matter_for_kv_cache_com.md)
+- [\[NeurIPS 2025\] How Foundational are Foundation Models for Time Series Forecasting?](how_foundational_are_foundation_models_for_time_series_forecasting.md)
+- [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](../../ICML2026/time_series/distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
 - [\[NeurIPS 2025\] Causal Masking on Spatial Data: An Information-Theoretic Case for Learning Spatial Datasets with Unimodal Language Models](causal_masking_on_spatial_data_an_information-theoretic_case_for_learning_spatia.md)
 - [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
-- [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](../../ICML2026/time_series/distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
 
 </div>
 

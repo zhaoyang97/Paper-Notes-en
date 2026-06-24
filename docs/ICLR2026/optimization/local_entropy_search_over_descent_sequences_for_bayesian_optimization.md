@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Local Entropy Search over Descent Sequences for Bayesian Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Bayesian Optimization] The "information gain" objective of entropy search is shifted from the **global optimum** to the **local optimum reachable by an iterative optimizer (e.g., gradient descent)** starting from an initial point. By propagating the GP posterior through the optimizer to obtain a distribution of "descent sequences," the next
+  [ICLR 2026][Optimization][Bayesian Optimization] The "information gain" objective of entropy search is shifted from the **global optimum** to the **local optimum reachable by an iterative optimizer (e.g., gradient descent)** starting from an initial point. By propagating the GP posterior through the optimizer to obtain a distribution of "descent sequences," the next query point is selected to maximize information gain for this distribution, resulting in higher sample efficien…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Bayesian Optimization
-  - Entropy Search
-  - Local Optimization
-  - Descent Sequence
-  - Gaussian Process
-  - Mutual Information
+  - "ICLR 2026"
+  - "Optimization"
+  - "Bayesian Optimization"
+  - "Entropy Search"
+  - "Local Optimization"
+  - "Descent Sequence"
+  - "Gaussian Process"
+  - "Mutual Information"
 date: 2026-05-08
-content_hash: 405d0338585ebc8d
+content_hash: c17d8598cbf0f7c2
 ---
+
 # Local Entropy Search over Descent Sequences for Bayesian Optimization
 
 **Conference**: ICLR 2026  
@@ -130,9 +131,9 @@ Key Trend: **As dimensionality and problem complexity increase, the advantage of
 
 - [\[ICML 2026\] $α$-PFN: Fast Entropy Search via In-Context Learning](../../ICML2026/optimization/α-pfn_fast_entropy_search_via_in-context_learning.md)
 - [\[ICLR 2026\] Incorporating Expert Priors into Bayesian Optimization via Dynamic Mean Decay](incorporating_expert_priors_into_bayesian_optimization_via_dynamic_mean_decay.md)
-- [\[ICLR 2026\] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces](from_sorting_algorithms_to_scalable_kernels_bayesian_optimization_in_high-dimens.md)
-- [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
 - [\[ICLR 2026\] Improving LLM-based Global Optimization with Search Space Partitioning](improving_llm-based_global_optimization_with_search_space_partitioning.md)
+- [\[ICLR 2026\] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces](from_sorting_algorithms_to_scalable_kernels_bayesian_optimization_in_high-dimens.md)
+- [\[ICLR 2026\] Symmetry-Aware Bayesian Optimization via Max Kernels](symmetry-aware_bayesian_optimization_via_max_kernels.md)
 
 </div>
 

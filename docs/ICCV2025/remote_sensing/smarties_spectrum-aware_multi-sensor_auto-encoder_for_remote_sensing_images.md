@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images
 description: >-
-  [ICCV 2025][Remote Sensing][Remote sensing foundation model] This paper proposes SMARTIES, a unified sensor-agnostic foundation model for remote sensing that maps heterogeneous sensor data into a shared space via spectru…
+  [ICCV 2025][Remote Sensing][Remote sensing foundation model] This paper proposes SMARTIES, a unified sensor-agnostic foundation model for remote sensing that maps heterogeneous sensor data into a shared space via spectrum-aware projection. Combined with cross-sensor token mixing and masked reconstruction for self-supervised pre-training, SMARTIES surpasses sensor-specific models on both unimodal and multimodal tasks and generalizes to sensors unseen during pre-training.
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "masked autoencoder"
   - "sensor-agnostic representation"
 date: 2026-05-08
-content_hash: 0bb4270fd4392b33
+content_hash: d148ff0f192e6955
 ---
 
 # SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images
@@ -162,10 +162,10 @@ Multimodal fusion strategies (BEN-MM LP, mAP):
 ## Related Papers
 
 - [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
+- [\[ECCV 2024\] Masked Angle-Aware Autoencoder for Remote Sensing Images](../../ECCV2024/remote_sensing/masked_angle-aware_autoencoder_for_remote_sensing_images.md)
+- [\[CVPR 2026\] Orthogonal Spatial-Aware Multi-View Anchor Graph Clustering for Incomplete Remote Sensing Data](../../CVPR2026/remote_sensing/orthogonal_spatial-aware_multi-view_anchor_graph_clustering_for_incomplete_remot.md)
 - [\[ICCV 2025\] RS-vHeat: Heat Conduction Guided Efficient Remote Sensing Foundation Model](rs-vheat_heat_conduction_guided_efficient_remote_sensing_foundation_model.md)
-- [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](../../NeurIPS2025/remote_sensing/geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 - [\[NeurIPS 2025\] ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning](../../NeurIPS2025/remote_sensing/chamaevit_unifying_channelaware_masked_autoencoders_and_mult.md)
-- [\[NeurIPS 2025\] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](../../NeurIPS2025/remote_sensing/rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)
 
 </div>
 

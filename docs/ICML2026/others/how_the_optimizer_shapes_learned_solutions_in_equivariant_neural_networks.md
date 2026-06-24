@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks
 description: >-
-  [ICML 2026][Others][Muon] This paper systematically compares the training performance of Muon and Adam on equivariant/geometric networks (EGNN, DGCNN, PointNet, GotenNet, GINE). It finds that Muon consistently outperforms Adam on 3D point cloud tasks and that the solutions converged upon exhibit significant structural differences across three d
+  [ICML2026 (Workshop on Weight-Space Symmetries)][Muon] This paper systematically compares the training performance of Muon and Adam on equivariant/geometric networks (EGNN, DGCNN, PointNet, GotenNet, GINE). It finds that Muon consistently outperforms Adam on 3D point cloud tasks and that the solutions converged upon exhibit significant structural differences across three dimensions: Hessian curvature, local smoothness of the loss landscape, and the spectral rank of weights/re…
 tags:
-  - ICML 2026
-  - Others
-  - Muon
-  - Adam
-  - Hessian
-  - ModelNet40
+  - "ICML2026 (Workshop on Weight-Space Symmetries)"
+  - "Muon"
+  - "Adam"
+  - "Equivariance"
+  - "Hessian"
+  - "Spectral Rank"
+  - "ModelNet40"
 date: 2026-05-08
-content_hash: dd4589a9c2b76f15
+content_hash: fda2a9c90038a01b
 ---
+
 # How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks
 
 **Conference**: ICML2026 (Workshop on Weight-Space Symmetries)  
@@ -124,15 +126,15 @@ The Hessian curvature ($\lambda_{\max}$ and trace) of Muon solutions is 4–22 t
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Identifiable Equivariant Networks are Layerwise Equivariant](identifiable_equivariant_networks_are_layerwise_equivariant.md)
 - [\[ICML 2025\] Permutation Equivariant Neural Networks for Symmetric Tensors](../../ICML2025/others/permutation_equivariant_neural_networks_for_symmetric_tensors.md)
+- [\[ICLR 2026\] Any-Subgroup Equivariant Networks via Symmetry Breaking](../../ICLR2026/others/any-subgroup_equivariant_networks_via_symmetry_breaking.md)
 - [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](../../NeurIPS2025/others/learning_approximately_equivariant_networks_via_constrained_optimization.md)
 - [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
-- [\[NeurIPS 2025\] On Universality Classes of Equivariant Networks](../../NeurIPS2025/others/on_universality_classes_of_equivariant_networks.md)
 
 </div>
 

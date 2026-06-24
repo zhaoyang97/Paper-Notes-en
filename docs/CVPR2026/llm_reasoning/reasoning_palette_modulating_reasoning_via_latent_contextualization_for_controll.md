@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reasoning Palette: Modulating Reasoning via Latent Contextualization for Controllable Exploration for (V)LMs
 description: >-
-  [CVPR 2026][LLM Reasoning][Reinforcement Learning] This paper utilizes a latent space learned via a VAE to inject a "reasoning palette" into (V)LMs. Each sampled latent variable is decoded into a learnable prefix prepended to the prompt, enabling the model to select a specific reasoning style before generating the first token. This approach upgrades "token-level random
+  [CVPR 2026][Reasoning][Latent Variable Modulation] This paper utilizes a latent space learned via a VAE to inject a "reasoning palette" into (V)LMs. Each sampled latent variable is decoded into a learnable prefix prepended to the prompt, enabling the model to select a specific reasoning style before generating the first token. This approach upgrades "token-level random sampling" in RL to "strategy-level structured exploration," consistently outperforming standard GRPO/RLOO on…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - VAE
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Latent Variable Modulation"
+  - "Controllable Exploration"
+  - "Reinforcement Learning"
+  - "VAE"
+  - "Prefix Injection"
 date: 2026-05-08
-content_hash: 683b7b209216a5b0
+content_hash: 8f012935e077b85e
 ---
+
 # Reasoning Palette: Modulating Reasoning via Latent Contextualization for Controllable Exploration for (V)LMs
 
 **Conference**: CVPR 2026  
@@ -141,12 +145,20 @@ where $\tau$ is the normalized training progress and $\rho(\tau)$ is the proport
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- DeepSeek-V3: [arXiv:2412.19437](https://arxiv.org/abs/2412.19437)
-- Learning to Reason with GRPO: [arXiv:2501.12948](https://arxiv.org/abs/2501.12948)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] ReLaX: Reasoning with Latent Exploration for Large Reasoning Models](relax_reasoning_with_latent_exploration_for_large_reasoning_models.md)
+- [\[CVPR 2026\] Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving](latent_chain-of-thought_world_modeling_for_end-to-end_autonomous_driving.md)
+- [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](../../ACL2026/llm_reasoning/reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
+- [\[ICLR 2026\] LaDiR: Latent Diffusion Enhances LLMs for Text Reasoning](../../ICLR2026/llm_reasoning/ladir_latent_diffusion_enhances_llms_for_text_reasoning.md)
+- [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](../../ICLR2026/llm_reasoning/continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] ReLaX: Reasoning with Latent Exploration for Large Reasoning Models](relax_reasoning_with_latent_exploration_for_large_reasoning_models.md)

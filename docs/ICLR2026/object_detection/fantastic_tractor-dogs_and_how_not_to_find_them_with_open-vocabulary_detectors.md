@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Fantastic Tractor-Dogs and How Not to Find Them With Open-Vocabulary Detectors
 description: >-
-  [ICLR 2026][Object Detection][open-vocabulary detection] This paper reveals that early-fusion open-vocabulary detectors produce a large number of high-confidence false positives on background images that "do not contain the target object" (e.g., confidently framing a "tractor" in a photo of a Golden Retriever). The root cause is identified as the inability of cross-modal att
+  [ICLR 2026][Object Detection][open-vocabulary detection] This paper reveals that early-fusion open-vocabulary detectors produce a large number of high-confidence false positives on background images that "do not contain the target object" (e.g., confidently framing a "tractor" in a photo of a Golden Retriever). The root cause is identified as the inability of cross-modal attention in the vision-language fusion layer to select "nothing." A training-free solution is proposed: a…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - open-vocabulary detection
-  - false positives
-  - attention sink
-  - early fusion
-  - hallucination
-  - training-free
+  - "ICLR 2026"
+  - "Object Detection"
+  - "open-vocabulary detection"
+  - "false positives"
+  - "attention sink"
+  - "early fusion"
+  - "hallucination"
+  - "training-free"
 date: 2026-05-08
-content_hash: 1e85c3c0ca9beb20
+content_hash: daff807544286059
 ---
+
 # Fantastic Tractor-Dogs and How Not to Find Them With Open-Vocabulary Detectors
 
 **Conference**: ICLR 2026  
@@ -135,8 +136,8 @@ Key Contrast: Without sinks, early-fusion almost collapses under low $\mathrm{FP
 
 - [\[ICLR 2026\] OVID: Open-Vocabulary Intrusion Detection](ovid_open-vocabulary_intrusion_detection.md)
 - [\[ICLR 2026\] Retain and Adapt: Auto-Balanced Model Editing for Open-Vocabulary Object Detection under Domain Shifts](retain_and_adapt_auto-balanced_model_editing_for_open-vocabulary_object_detectio.md)
+- [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](../../CVPR2026/object_detection/vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
 - [\[ICLR 2026\] DeCo-DETR: Decoupled Cognition DETR for efficient Open-Vocabulary Object Detection](deco-detr_decoupled_cognition_detr_for_efficient_open-vocabulary_object_detectio.md)
-- [\[ICLR 2026\] CLIP Behaves like a Bag-of-Words Model Cross-modally but not Uni-modally](clip_behaves_like_a_bag-of-words_model_cross-modally_but_not_uni-modally.md)
 - [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](../../CVPR2026/object_detection/wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
 
 </div>

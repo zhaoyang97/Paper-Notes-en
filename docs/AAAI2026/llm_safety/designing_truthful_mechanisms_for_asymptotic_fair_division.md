@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Designing Truthful Mechanisms for Asymptotic Fair Division
 description: >-
-  [AAAI 2026][LLM Safety][Fair division] This paper proposes the PRD (Proportional Response with Dummy) mechanism, which for the first time simultaneously achieves expected truthfulness, polynomial-time computability…
+  [AAAI 2026][LLM Safety][Fair division] This paper proposes the PRD (Proportional Response with Dummy) mechanism, which for the first time simultaneously achieves expected truthfulness, polynomial-time computability, and high-probability envy-freeness in the asymptotic fair division setting, requiring only $m = \Omega(n \log n)$ items. This resolves an open problem posed by Manurangsi & Suksompong.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "mechanism design"
   - "KL divergence"
 date: 2026-05-08
-content_hash: 91073247e37349f2
+content_hash: 2b8b82b5495e3757
 ---
 
 # Designing Truthful Mechanisms for Asymptotic Fair Division
@@ -180,8 +180,8 @@ This paper is a purely theoretical contribution with no experimental data. The c
 - [\[NeurIPS 2025\] When AI Democratizes Exploitation: LLM-Assisted Strategic Manipulation of Fair Division Algorithms](../../NeurIPS2025/llm_safety/when_ai_democratizes_exploitation_llm-assisted_strategic_manipulation_of_fair_di.md)
 - [\[ICLR 2026\] Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs](../../ICLR2026/llm_safety/fair_in_mind_fair_in_action_a_synchronous_benchmark_for_understanding_and_genera.md)
 - [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](../../CVPR2026/llm_safety/designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
-- [\[NeurIPS 2025\] A Cramér–von Mises Approach to Incentivizing Truthful Data Sharing](../../NeurIPS2025/llm_safety/a_cramrvon_mises_approach_to_incentivizing_truthful_data_sha.md)
-- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](../../ICML2026/llm_safety/coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
+- [\[ICLR 2026\] StyliTruth: Unlocking Stylized yet Truthful LLM Generation via Disentangled Steering](../../ICLR2026/llm_safety/stylitruth_unlocking_stylized_yet_truthful_llm_generation_via_disentangled_steer.md)
+- [\[ICLR 2026\] Multi-Feature Quantized Self-Attention for Fair Large Language Models](../../ICLR2026/llm_safety/multi-feature_quantized_self-attention_for_fair_large_language_models.md)
 
 </div>
 

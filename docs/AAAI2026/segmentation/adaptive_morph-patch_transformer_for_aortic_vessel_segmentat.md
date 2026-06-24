@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Morph-Patch Transformer for Aortic Vessel Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Aortic segmentation] This paper proposes the Morph-Patch Transformer (MPT), which generates morphology-aware patches via a velocity-field-based adaptive patch partitioning strategy to preserve v…
+  [AAAI 2026][Segmentation][Aortic segmentation] This paper proposes the Morph-Patch Transformer (MPT), which generates morphology-aware patches via a velocity-field-based adaptive patch partitioning strategy to preserve vascular topological integrity, and introduces Semantic Clustering Attention (SCA) to dynamically aggregate features from semantically similar patches. The method achieves state-of-the-art performance on three aortic segmentation benchmarks: AVT, AortaSeg24…
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "diffeomorphic deformation"
   - "velocity field"
 date: 2026-05-08
-content_hash: 89688e52a51be7c8
+content_hash: cfbe8a44f89a299f
 ---
 
 # Adaptive Morph-Patch Transformer for Aortic Vessel Segmentation
@@ -137,10 +137,10 @@ Dice loss is used. The Adam optimizer is employed with a learning rate of 5e-5. 
 ## Related Papers
 
 - [\[ICLR 2026\] Locality-Attending Vision Transformer](../../ICLR2026/segmentation/locality-attending_vision_transformer.md)
-- [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](../../CVPR2026/segmentation/mrm_masked_representation_modeling_domain_adaptive.md)
 - [\[ICLR 2026\] Revisiting \[CLS\] and Patch Token Interaction in Vision Transformers](../../ICLR2026/segmentation/revisiting_cls_and_patch_token_interaction_in_vision_transformers.md)
-- [\[CVPR 2026\] Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation](../../CVPR2026/segmentation/seeing_beyond_extrapolative_domain_adaptive_panoramic_segmentation.md)
-- [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
+- [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](../../CVPR2026/segmentation/mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
+- [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](../../CVPR2026/segmentation/mrm_masked_representation_modeling_domain_adaptive.md)
+- [\[CVPR 2025\] Rethinking Query-Based Transformer for Continual Image Segmentation](../../CVPR2025/segmentation/rethinking_query-based_transformer_for_continual_image_segmentation.md)
 
 </div>
 

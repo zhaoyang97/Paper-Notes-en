@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Slower Isn't Truer: Inverse Scaling Law of Truthfulness in Multimodal Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] This paper identifies an "Inverse Scaling Law" in multimodal reasoning—reasoning (slow-thinking) models are more prone to generating untruthful outputs than chat (fast-thinking) models when facing misleading visual inputs. To systematically diagnose this, the authors constructed the TruthfulVQA benchmark (5,000+ sample
+  [ACL 2026][VLM Reasoning][Multimodal Reasoning] This paper identifies an "Inverse Scaling Law" in multimodal reasoning—reasoning (slow-thinking) models are more prone to generating untruthful outputs than chat (fast-thinking) models when facing misleading visual inputs. To systematically diagnose this, the authors constructed the TruthfulVQA benchmark (5,000+ samples, 50 annotators, three-level hierarchical prompts) and the TruthfulJudge evaluation model (88.4% accuracy).
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Truthfulness Evaluation"
+  - "Inverse Scaling Law"
+  - "Depth-First Reasoning"
+  - "Hallucination Detection"
 date: 2026-05-08
-content_hash: dc71d9b56e4f5665
+content_hash: b07a3a40699b24f1
 ---
+
 # When Slower Isn't Truer: Inverse Scaling Law of Truthfulness in Multimodal Reasoning
 
 **Conference**: ACL 2026  
@@ -129,10 +135,10 @@ TruthfulJudge uses Supervised Fine-Tuning (SFT). The training data consists of 7
 ## Related Papers
 
 - [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](../../CVPR2026/vlm_reasoning/when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
+- [\[ICLR 2026\] Unleashing Perception-Time Scaling to Multimodal Reasoning Models](../../ICLR2026/vlm_reasoning/unleashing_perception-time_scaling_to_multimodal_reasoning_models.md)
 - [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](../../CVPR2026/vlm_reasoning/unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
-- [\[NeurIPS 2025\] When One Modality Sabotages the Others: A Diagnostic Lens on Multimodal Reasoning](../../NeurIPS2025/vlm_reasoning/when_one_modality_sabotages_the_others_a_diagnostic_lens_on_multimodal_reasoning.md)
 - [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](../../CVPR2026/vlm_reasoning/when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
-- [\[ACL 2026\] A Survey of Multimodal Mathematical Reasoning: From Perception, Alignment to Reasoning](a_survey_of_multimodal_mathematical_reasoning_from_perception_alignment_to_reaso.md)
+- [\[NeurIPS 2025\] When One Modality Sabotages the Others: A Diagnostic Lens on Multimodal Reasoning](../../NeurIPS2025/vlm_reasoning/when_one_modality_sabotages_the_others_a_diagnostic_lens_on_multimodal_reasoning.md)
 
 </div>
 

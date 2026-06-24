@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance
 description: >-
-  [NeurIPS 2025][Autonomous Driving][3D Semantic Scene Completion] This paper proposes FlowScene, which leverages optical flow to guide temporal feature aggregation and employs occlusion masks for voxel refinement. Using o…
+  [NeurIPS 2025][Autonomous Driving][3D Semantic Scene Completion] This paper proposes FlowScene, which leverages optical flow to guide temporal feature aggregation and employs occlusion masks for voxel refinement. Using only 2 historical frames as input, FlowScene achieves state-of-the-art performance on the SemanticKITTI and SSCBench-KITTI-360 benchmarks (mIoU 17.70 / 20.81).
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Occlusion Awareness"
   - "Voxel Refinement"
 date: 2026-05-08
-content_hash: 0b82a38c20a70553
+content_hash: 6f60ff555281c81e
 ---
 
 # FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance
@@ -196,11 +196,11 @@ Each module contributes clearly, with a total gain of +2.24% mIoU and +1.03% IoU
 
 ## Related Papers
 
+- [\[ECCV 2024\] Hierarchical Temporal Context Learning for Camera-based Semantic Scene Completion](../../ECCV2024/autonomous_driving/hierarchical_temporal_context_learning_for_camera-based_semantic_scene_completio.md)
 - [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](../../AAAI2026/autonomous_driving/towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
 - [\[NeurIPS 2025\] CymbaDiff: Structured Spatial Diffusion for Sketch-based 3D Semantic Urban Scene Generation](cymbadiff_structured_spatial_diffusion_for_sketch-based_3d_semantic_urban_scene_.md)
 - [\[AAAI 2026\] Unleashing Semantic and Geometric Priors for 3D Scene Completion](../../AAAI2026/autonomous_driving/unleashing_semantic_and_geometric_priors_for_3d_scene_completion.md)
 - [\[NeurIPS 2025\] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding](spiral_semantic-aware_progressive_lidar_scene_generation_and_understanding.md)
-- [\[CVPR 2026\] OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective](../../CVPR2026/autonomous_driving/occufly_a_3d_vision_benchmark_for_semantic_scene_completion_from_the_aerial_pers.md)
 
 </div>
 

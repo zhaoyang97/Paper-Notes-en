@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][AGI] This is a position paper advocating that Multimodal Large Language Models (MLLMs) can significantly advance interdisciplinary scientific reasoning. It proposes a four-stage research roadmap (Broad Knowledge Recognition → Analogical Generalization → Insightful Reasoning → Creative Hypothesis Generation) and provides a s
+  [ACL 2026 Findings][VLM Reasoning][Multimodal Large Language Models] This is a position paper advocating that Multimodal Large Language Models (MLLMs) can significantly advance interdisciplinary scientific reasoning. It proposes a four-stage research roadmap (Broad Knowledge Recognition → Analogical Generalization → Insightful Reasoning → Creative Hypothesis Generation) and provides a systematic review of MLLM applications across mathematics, physics, chemistry, and biology…
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - AGI
+  - "ACL 2026 Findings"
+  - "VLM Reasoning"
+  - "Multimodal Large Language Models"
+  - "Scientific Reasoning"
+  - "Research Roadmap"
+  - "STEM"
+  - "AGI"
 date: 2026-05-08
-content_hash: 9003760c15bfcb53
+content_hash: 25bd1372cf30612d
 ---
+
 # Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -136,9 +141,9 @@ This is a synthetic position paper and does not include original experiments. Ke
 
 - [\[ACL 2026\] SciMDR: Advancing Scientific Multimodal Document Reasoning](scimdr_advancing_scientific_multimodal_document_reasoning.md)
 - [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
-- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
-- [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
 - [\[ACL 2026\] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning](unleashing_spatial_reasoning_in_multimodal_large_language_models_via_textual_rep.md)
+- [\[ICLR 2026\] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](../../ICLR2026/vlm_reasoning/lens_multi-level_evaluation_of_multimodal_reasoning_with_large_language_models.md)
+- [\[ICLR 2026\] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](../../ICLR2026/vlm_reasoning/spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)
 
 </div>
 

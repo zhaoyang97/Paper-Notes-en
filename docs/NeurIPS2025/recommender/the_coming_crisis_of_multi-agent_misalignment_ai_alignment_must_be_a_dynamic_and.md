@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Coming Crisis of Multi-Agent Misalignment: AI Alignment Must Be a Dynamic and Social Process
 description: >-
-  [NeurIPS 2025 (Position Paper)][Recommender Systems][Multi-agent systems] A position paper arguing that AI alignment in multi-agent systems (MAS) should be treated as a dynamic…
+  [NeurIPS 2025 (Position Paper)][Recommender Systems][Multi-agent systems] A position paper arguing that AI alignment in multi-agent systems (MAS) should be treated as a dynamic, interaction-dependent social process rather than an isolated problem. Drawing on social science theories, the paper analyzes how social structures can undermine collective and individual values, and calls on the AI community to develop dedicated simulation environments, benchmarks…
 tags:
   - "NeurIPS 2025 (Position Paper)"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "value alignment"
   - "agent interaction"
 date: 2026-05-08
-content_hash: 0fbbdb779d5fcf5b
+content_hash: 9c4fbbd2294d563e
 ---
 
 # The Coming Crisis of Multi-Agent Misalignment: AI Alignment Must Be a Dynamic and Social Process
@@ -162,9 +162,9 @@ Hierarchically structured organizations better maintain alignment, with the hybr
 
 - [\[NeurIPS 2025\] Position: Towards Bidirectional Human-AI Alignment](position_towards_bidirectional_human-ai_alignment.md)
 - [\[NeurIPS 2025\] EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration](empathia_multi-faceted_human-ai_collaboration_for_refugee_integration.md)
-- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](../../AAAI2026/recommender/align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
+- [\[ICML 2025\] MATCHA: Toward Safe and Human-Aligned Game Conversational Recommendation via Multi-Agent Decomposition](../../ICML2025/recommender/toward_safe_and_human-aligned_game_conversational_recommendation_via_multi-agent.md)
+- [\[ICML 2025\] PARM: Multi-Objective Test-Time Alignment via Preference-Aware Autoregressive Reward Model](../../ICML2025/recommender/parm_multi-objective_test-time_alignment_via_preference-aware_autoregressive_rew.md)
 - [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
-- [\[NeurIPS 2025\] MMPB: It's Time for Multi-Modal Personalization](mmpb_its_time_for_multi-modal_personalization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HBridge: H-Shape Bridging of Heterogeneous Experts for Unified Multimodal Understanding and Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][MoT] HBridge replaces the two symmetric, layer-wise shared attention MoT experts in "unified understanding + generation" models with a pair of **heterogeneous experts** (a frozen large VLM + a pre-trained diffusion DiT). By bridging attention only across **mid-layers** and introducing a set of **semantic reconstruction toke
+  [CVPR 2026][Multimodal VLM][Unified Multimodalities] HBridge replaces the two symmetric, layer-wise shared attention MoT experts in "unified understanding + generation" models with a pair of **heterogeneous experts** (a frozen large VLM + a pre-trained diffusion DiT). By bridging attention only across **mid-layers** and introducing a set of **semantic reconstruction tokens**, it outperforms BAGEL on DPG-Bench / GenEval / ImgEdit using only approximately 1/12 of BAGEL's T2I tr…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MoT
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Unified Multimodalities"
+  - "MoT"
+  - "Heterogeneous Experts"
+  - "Mid-layer Bridging"
+  - "Diffusion Prior"
 date: 2026-05-08
-content_hash: f9e9df5bfbc7bf98
+content_hash: 39c89c114d44eeec
 ---
+
 # HBridge: H-Shape Bridging of Heterogeneous Experts for Unified Multimodal Understanding and Generation
 
 **Conference**: CVPR 2026  
@@ -122,11 +127,11 @@ Ours uses ~200B T2I tokens (1/12 of BAGEL's ~2.5T) yet outperforms larger models
 
 ## Related Papers
 
-- [\[CVPR 2026\] OneCAT: Decoder-Only Auto-Regressive Model for Unified Understanding and Generation](onecat_decoder-only_auto-regressive_model_for_unified_understanding_and_generati.md)
 - [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
-- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
 - [\[CVPR 2026\] CodeMMR: Bridging Natural Language, Code, and Image for Unified Retrieval](codemmr_bridging_natural_language_code_and_image_for_unified_retrieval.md)
+- [\[CVPR 2026\] OneCAT: Decoder-Only Auto-Regressive Model for Unified Understanding and Generation](onecat_decoder-only_auto-regressive_model_for_unified_understanding_and_generati.md)
 - [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
+- [\[CVPR 2026\] VCU-Bridge: Hierarchical Visual Connotation Understanding via Semantic Bridging](vcu-bridge_hierarchical_visual_connotation_understanding_via_semantic_bridging.md)
 
 </div>
 

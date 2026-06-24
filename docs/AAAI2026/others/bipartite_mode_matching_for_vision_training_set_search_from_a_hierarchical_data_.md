@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server
 description: >-
-  [AAAI 2026][training set search] This paper proposes a hierarchical data server combined with a Bipartite Mode Matching (BMM) framework. It organizes large-scale source data via multi-granularity hierarchical clustering…
+  [AAAI 2026][training set search] This paper proposes a hierarchical data server combined with a Bipartite Mode Matching (BMM) framework. It organizes large-scale source data via multi-granularity hierarchical clustering and employs the Hungarian algorithm to perform one-to-one matching between semantic modes of the source and target domains, thereby retrieving a training set that minimizes the distributional gap to the target domain. The approach significantly outperforms exi…
 tags:
   - "AAAI 2026"
   - "training set search"
@@ -11,7 +11,7 @@ tags:
   - "hierarchical clustering"
   - "data-centric approach"
 date: 2026-05-08
-content_hash: 196a05068e2898f5
+content_hash: 326b819fa42c0f1d
 ---
 
 # Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server
@@ -183,10 +183,10 @@ BMM achieves the lowest FID and the highest (or second-highest) accuracy across 
 ## Related Papers
 
 - [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](../../CVPR2026/others/vit3_unlocking_test_time_training_in_vision.md)
+- [\[ICML 2025\] Score Matching with Missing Data](../../ICML2025/others/score_matching_with_missing_data.md)
 - [\[AAAI 2026\] Neural Graph Navigation for Intelligent Subgraph Matching](neural_graph_navigation_for_intelligent_subgraph_matching.md)
 - [\[ICML 2026\] Coupled Training with Privileged Information and Unlabeled Data](../../ICML2026/others/coupled_training_with_privileged_information_and_unlabeled_data.md)
-- [\[AAAI 2026\] Scalable Vision-Guided Crop Yield Estimation](scalable_vision-guided_crop_yield_estimation.md)
-- [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](../../ICML2026/others/cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
+- [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](hierarchical_semantic_alignment_for_image_clustering.md)
 
 </div>
 

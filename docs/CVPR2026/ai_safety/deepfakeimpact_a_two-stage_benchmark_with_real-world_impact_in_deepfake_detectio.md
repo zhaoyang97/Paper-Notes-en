@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This research redefines deepfake detection from "measuring accuracy" to "measuring social utility" through a two-stage benchmark: Stage I reproduces 33 SOTA detectors across 12 datasets; Stage II introduces the Social Misjudgment Impact (SMI) metric to assign "social harm scores" to missed detections, constructing an S
+  [CVPR 2026][AI Safety][deepfake detection] This research redefines deepfake detection from "measuring accuracy" to "measuring social utility" through a two-stage benchmark: Stage I reproduces 33 SOTA detectors across 12 datasets; Stage II introduces the Social Misjudgment Impact (SMI) metric to assign "social harm scores" to missed detections, constructing an SMI-critical dataset of 17,653 high-risk samples. The findings reveal that models leading in technical metrics often f…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "deepfake detection"
+  - "evaluation benchmark"
+  - "social harm"
+  - "SMI metric"
+  - "cost-sensitive learning"
 date: 2026-05-08
-content_hash: 3eb06b10f9d24b70
+content_hash: ddbad394fa1ff1c5
 ---
+
 # DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection
 
 **Conference**: CVPR 2026  
@@ -165,15 +171,16 @@ The removal of pre-training weights consistently causes significant performance 
 - Value: ⭐⭐⭐⭐⭐ Establishes a new baseline for safety-oriented deepfake detection, reminding the community that leaderboard accuracy $\neq$ utility.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] A Sanity Check for Multi-In-Domain Face Forgery Detection in the Real World](a_sanity_check_for_multi-in-domain_face_forgery_detection_in_the_real_world.md)
-- [\[CVPR 2026\] AVFakeBench: A Comprehensive Audio-Video Forgery Detection Benchmark for AV-LMMs](avfakebench_a_comprehensive_audio-video_forgery_detection_benchmark_for_av-lmms.md)
-- [\[CVPR 2026\] Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training](towards_robust_vision_transformers_path_dependency_analysis_and_a_simple_two-sta.md)
 - [\[CVPR 2026\] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning](dfd-hr_generalizable_deepfake_detection_via_hierarchical_routing_learning.md)
+- [\[CVPR 2026\] Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training](towards_robust_vision_transformers_path_dependency_analysis_and_a_simple_two-sta.md)
 - [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
+- [\[CVPR 2026\] Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection](omni-fake_benchmarking_unified_multimodal_social_media_deepfake_detection.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Debiased Front-Door Learners for Heterogeneous Effects
 description: >-
-  [ICLR 2026][Causal Inference][DR-Learner] This paper transplants the mature DR-Learner and R-Learner from back-door settings to **front-door identification** scenarios. It proposes two debiased estimators, FD-DR-Learner and FD-R-Learner, ensuring that the conditional front-door effect $\tau(C)$ achieves quasi-oracle rates even when nuisance functions converge
+  [ICLR 2026][Causal Inference][Front-door adjustment] This paper transplants the mature DR-Learner and R-Learner from back-door settings to **front-door identification** scenarios. It proposes two debiased estimators, FD-DR-Learner and FD-R-Learner, ensuring that the conditional front-door effect $\tau(C)$ achieves quasi-oracle rates even when nuisance functions converge at a slow rate of $n^{-1/4}$.
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - DR-Learner
-  - R-Learner
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Front-door adjustment"
+  - "Heterogeneous treatment effects"
+  - "Debiased learning"
+  - "quasi-oracle rates"
+  - "DR-Learner"
+  - "R-Learner"
 date: 2026-05-08
-content_hash: 6754b75fe28e6bd5
+content_hash: 0b8e7b8c45866ee3
 ---
+
 # Debiased Front-Door Learners for Heterogeneous Effects
 
 **Conference**: ICLR 2026  

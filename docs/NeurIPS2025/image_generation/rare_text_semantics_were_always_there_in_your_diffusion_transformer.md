@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rare Text Semantics Were Always There in Your Diffusion Transformer
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper discovers that scaling up the variance of text token embeddings before the joint attention blocks in MM-DiT enables diffusion models to render rare text…
+  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper discovers that scaling up the variance of text token embeddings before the joint attention blocks in MM-DiT enables diffusion models to render rare text semantics, without any additional training or external modules.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Text-to-Image"
   - "Variance Scaling"
 date: 2026-05-08
-content_hash: 886047d761704943
+content_hash: 5f10e07366d049df
 ---
 
 # Rare Text Semantics Were Always There in Your Diffusion Transformer
@@ -154,8 +154,8 @@ Effect of scaling factor $\alpha$:
 - [\[NeurIPS 2025\] SparseDiT: Token Sparsification for Efficient Diffusion Transformer](sparsedit_token_sparsification_for_efficient_diffusion_transformer.md)
 - [\[NeurIPS 2025\] ICEdit: Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer](in-context_edit_enabling_instructional_image_editing_with_in-context_generation_.md)
 - [\[ICML 2026\] RAIGen: Rare Attribute Identification in Text-to-Image Generative Models](../../ICML2026/image_generation/raigen_rare_attribute_identification_in_text-to-image_generative_models.md)
-- [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](../../ICCV2025/image_generation/dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
-- [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
+- [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](../../CVPR2026/image_generation/csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
+- [\[CVPR 2025\] LaVin-DiT: Large Vision Diffusion Transformer](../../CVPR2025/image_generation/lavin-dit_large_vision_diffusion_transformer.md)
 
 </div>
 

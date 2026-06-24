@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Hearing the Room Through the Shape of the Drum: Modal-Guided Sound Recovery from Multi-Point Surface Vibrations
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] Addressing "hard" objects with poor response and strong resonance (drumheads, laptops, photo frames), this work utilizes speckle vibrometry to capture dual-axis vibrations from a 10×10 grid on the object surface. A physical forward model is derived to link "scene sound → multi-point vibrations" using the object's vibra
+  [CVPR 2026][Speckle vibrometry] Addressing "hard" objects with poor response and strong resonance (drumheads, laptops, photo frames), this work utilizes speckle vibrometry to capture dual-axis vibrations from a 10×10 grid on the object surface. A physical forward model is derived to link "scene sound → multi-point vibrations" using the object's vibration modes as a bridge. By inverting this model via optimization, dozens of noisy vibration channels are fused into a single den…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Speckle vibrometry"
+  - "visual microphone"
+  - "vibration modes"
+  - "physical forward model"
+  - "sound recovery"
 date: 2026-05-08
-content_hash: b6a9191492ae2412
+content_hash: fcafa743e2bd4564
 ---
+
 # Hearing the Room Through the Shape of the Drum: Modal-Guided Sound Recovery from Multi-Point Surface Vibrations
 
 **Conference**: CVPR 2026  
@@ -135,16 +140,16 @@ Qualitative results across objects (Fig. 5): Reconstructions were successful on 
 - **Value**: ⭐⭐⭐⭐ Extends visual sound recovery to "difficult" solids with a low barrier to deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] MMAudioReverbs: Video-Guided Acoustic Modeling for Dereverberation and Room Impulse Response Estimation](mmaudioreverbs_video-guided_acoustic_modeling_for_dereverberation_and_room_impul.md)
-- [\[AAAI 2026\] Hearing More with Less: Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR](../../AAAI2026/audio_speech/hearing_more_with_less_multi-modal_retrieval-and-selection_augmented_conversatio.md)
-- [\[NeurIPS 2025\] Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization](../../NeurIPS2025/audio_speech/seeing_sound_hearing_sight_uncovering_modality_bias_and_conflict_of_ai_models_in.md)
-- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
-- [\[CVPR 2025\] MultiFoley: Video-Guided Foley Sound Generation with Multimodal Controls](../../CVPR2025/audio_speech/video-guided_foley_sound_generation_with_multimodal_controls.md)
+- [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](../../AAAI2026/others/dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
+- [\[CVPR 2026\] Order Matters: 3D Shape Generation from Sequential VR Sketches](order_matters_3d_shape_generation_from_sequential_vr_sketches.md)
+- [\[ICLR 2026\] CircuitNet 3.0: A Multi-Modal Dataset with Task-Oriented Augmentation for AI-Driven Circuit Design](../../ICLR2026/others/circuitnet_30_a_multi-modal_dataset_with_task-oriented_augmentation_for_ai-drive.md)
+- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](videomama_mask-guided_video_matting_via_generative_prior.md)
+- [\[ICLR 2026\] Aligning Collaborative View Recovery and Tensorial Subspace Learning via Latent Representation for Incomplete Multi-View Clustering](../../ICLR2026/others/aligning_collaborative_view_recovery_and_tensorial_subspace_learning_via_latent_.md)
 
 </div>
 

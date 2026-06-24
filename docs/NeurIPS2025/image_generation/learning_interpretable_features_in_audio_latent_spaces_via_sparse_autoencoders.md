@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Interpretable Features in Audio Latent Spaces via Sparse Autoencoders
 description: >-
-  [NeurIPS 2025][Image Generation][Sparse Autoencoders] This paper proposes a framework for extracting interpretable features from the latent spaces of audio generative models via sparse autoencoders (SAEs). Linear probes…
+  [NeurIPS 2025][Image Generation][Sparse Autoencoders] This paper proposes a framework for extracting interpretable features from the latent spaces of audio generative models via sparse autoencoders (SAEs). Linear probes are used to map SAE features to human-understandable acoustic concepts (pitch, amplitude, timbre), enabling controllable manipulation and visualization of the audio generation process.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Music Generation"
   - "Control Vectors"
 date: 2026-05-08
-content_hash: 35467ab21973336d
+content_hash: 07e49cdd792023ed
 ---
 
 # Learning Interpretable Features in Audio Latent Spaces via Sparse Autoencoders
@@ -178,9 +178,9 @@ Analysis of DiffRhythm's generation process over 500 MusicCaps prompts (32 infer
 
 - [\[CVPR 2026\] Interpretable and Steerable Concept Bottleneck Sparse Autoencoders](../../CVPR2026/image_generation/interpretable_and_steerable_concept_bottleneck_sparse_autoencoders.md)
 - [\[NeurIPS 2025\] Emergence and Evolution of Interpretable Concepts in Diffusion Models](emergence_and_evolution_of_interpretable_concepts_in_diffusi.md)
-- [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
-- [\[NeurIPS 2025\] Hierarchical Koopman Diffusion: Fast Generation with Interpretable Diffusion Trajectory](hierarchical_koopman_diffusion_fast_generation_with_interpretable_diffusion_traj.md)
 - [\[NeurIPS 2025\] Exploring Variational Graph Autoencoders for Distribution Grid Data Generation](exploring_variational_graph_autoencoders_for_distribution_grid_data_generation.md)
+- [\[NeurIPS 2025\] Hierarchical Koopman Diffusion: Fast Generation with Interpretable Diffusion Trajectory](hierarchical_koopman_diffusion_fast_generation_with_interpretable_diffusion_traj.md)
+- [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
 
 </div>
 

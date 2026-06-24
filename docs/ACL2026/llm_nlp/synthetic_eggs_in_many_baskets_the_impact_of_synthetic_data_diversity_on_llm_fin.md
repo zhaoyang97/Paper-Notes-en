@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning
 description: >-
-  [ACL 2026][LLM (Other)][Self-preference bias] This paper systematically compares the impact of single-source models, multi-source models, and human data as sources for supervised fine-tuning (SFT) on Llama models. It finds that multi-source synthetic data mitigates distributional collapse and self-preference, but synthetic data may weaken safety guardrails while m
+  [ACL 2026 Findings][LLM (Other)][Synthetic data diversity] This paper systematically compares the impact of single-source models, multi-source models, and human data as sources for supervised fine-tuning (SFT) on Llama models. It finds that multi-source synthetic data mitigates distributional collapse and self-preference, but synthetic data may weaken safety guardrails while maintaining output quality, with risks varying in complex ways based on source model scale and mixing…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - Self-preference bias
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Synthetic data diversity"
+  - "Model collapse"
+  - "LoRA fine-tuning"
+  - "Jailbreak robustness"
+  - "Self-preference bias"
 date: 2026-05-08
-content_hash: 83edf5c0e0bd11a2
+content_hash: 06b0f9109f80ff48
 ---
+
 # Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning
 
 **Conference**: ACL 2026 Findings  
@@ -145,10 +150,10 @@ The second set of results comes from safety and judge bias analysis. This is not
 ## Related Papers
 
 - [\[NeurIPS 2025\] Valid Inference with Imperfect Synthetic Data](../../NeurIPS2025/llm_nlp/valid_inference_with_imperfect_synthetic_data.md)
+- [\[ICLR 2026\] SIPDO: Closed-Loop Prompt Optimization via Synthetic Data Feedback](../../ICLR2026/llm_nlp/sipdo_closed-loop_prompt_optimization_via_synthetic_data_feedback.md)
 - [\[ACL 2025\] Theorem Prover as a Judge for Synthetic Data Generation](../../ACL2025/llm_nlp/theorem_prover_as_a_judge_for_synthetic_data_generation.md)
 - [\[ACL 2025\] Evaluating Language Models as Synthetic Data Generators](../../ACL2025/llm_nlp/evaluating_lms_synthetic_data_gen.md)
 - [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
-- [\[ACL 2026\] GRASS: Gradient-based Adaptive Layer-wise Importance Sampling for Memory-Efficient LLM Fine-tuning](grass_gradient-based_adaptive_layer-wise_importance_sampling_for_memory-efficien.md)
 
 </div>
 

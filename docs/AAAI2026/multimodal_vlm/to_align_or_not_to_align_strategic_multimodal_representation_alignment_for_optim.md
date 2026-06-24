@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance
 description: >-
-  [AAAI2026][Multimodal VLM][multimodal alignment] By introducing a controllable contrastive learning module to systematically regulate alignment strength $\lambda$…
+  [AAAI2026][Multimodal VLM][multimodal alignment] By introducing a controllable contrastive learning module to systematically regulate alignment strength $\lambda$, and employing the Partial Information Decomposition (PID) framework to quantify the redundancy–uniqueness–synergy structure between modalities, this work reveals that the utility of explicit alignment is highly data-dependent: alignment is beneficial when redundancy dominates, harmful when uniqueness dominates…
 tags:
   - "AAAI2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "redundant information"
   - "unimodal encoders"
 date: 2026-05-08
-content_hash: 6c4f75d58cb3a755
+content_hash: 0c23f6c84101071f
 ---
 
 # To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance
@@ -126,11 +126,11 @@ This work engages in an interesting dialogue with the Platonic Representation Hy
 
 ## Related Papers
 
+- [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](../../CVPR2026/multimodal_vlm/cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
+- [\[ACL 2026\] Segment, Embed, and Align: A Universal Recipe for Aligning Subtitles to Signing](../../ACL2026/multimodal_vlm/segment_embed_and_align_a_universal_recipe_for_aligning_subtitles_to_signing.md)
 - [\[CVPR 2026\] Disentangle-then-Align: Non-Iterative Hybrid Multimodal Image Registration via Cross-Scale Feature Disentanglement](../../CVPR2026/multimodal_vlm/disentangle-then-align_non-iterative_hybrid_multimodal_image_registration_via_cr.md)
-- [\[CVPR 2026\] The More, the Merrier: Contrastive Fusion for Higher-Order Multimodal Alignment](../../CVPR2026/multimodal_vlm/the_more_the_merrier_contrastive_fusion_for_higher-order_multimodal_alignment.md)
-- [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](../../CVPR2026/multimodal_vlm/taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
-- [\[AAAI 2026\] Information Theoretic Optimal Surveillance for Epidemic Prevalence in Networks](information_theoretic_optimal_surveillance_for_epidemic_prevalence_in_networks.md)
-- [\[AAAI 2026\] Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)](bridging_modalities_via_progressive_re-alignment_for_multimo.md)
+- [\[ACL 2025\] Vision-Language Models Struggle to Align Entities across Modalities](../../ACL2025/multimodal_vlm/vision-language_models_struggle_to_align_entities_across_modalities.md)
+- [\[CVPR 2026\] Mask to Align, Weight to Disambiguate: Reliable Unsupervised Cross-Modal Hashing with Masked-Weight Contrast](../../CVPR2026/multimodal_vlm/mask_to_align_weight_to_disambiguate_reliable_unsupervised_cross-modal_hashing_w.md)
 
 </div>
 

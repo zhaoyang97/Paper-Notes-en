@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diverse and Sparse Mixture-of-Experts for Causal Subgraph–Based Out-of-Distribution Graph Learning
 description: >-
-  [ICLR 2026][Graph Learning][Mixture-of-Experts] DiSCO delegates the task of "identifying causal subgraphs" in graph Out-of-Distribution (OOD) generalization to a set of experts (MoE). Each expert extracts a distinct candidate causal subgraph, and a learned sparse gating mechanism selects the most appropriate expert for each instance. It requires no environment label
+  [ICLR2026][Graph Learning][Graph OOD Generalization] DiSCO delegates the task of "identifying causal subgraphs" in graph Out-of-Distribution (OOD) generalization to a set of experts (MoE). Each expert extracts a distinct candidate causal subgraph, and a learned sparse gating mechanism selects the most appropriate expert for each instance. It requires no environment labels and makes no assumptions about the independence between spurious subgraphs and labels…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Mixture-of-Experts
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Graph OOD Generalization"
+  - "Causal Subgraphs"
+  - "Mixture-of-Experts"
+  - "Semantic Diversity"
+  - "Sparse Gating"
 date: 2026-05-08
-content_hash: 29063b536648be19
+content_hash: 5b2698c5792a9d17
 ---
+
 # Diverse and Sparse Mixture-of-Experts for Causal Subgraph–Based Out-of-Distribution Graph Learning
 
 **Conference**: ICLR2026  
@@ -158,7 +163,7 @@ Removing specific loss terms (selected from GOOD benchmark):
 - [\[ICLR 2026\] Out-of-Distribution Graph Models Merging](out-of-distribution_graph_models_merging.md)
 - [\[CVPR 2026\] Mixture-of-Experts based Feature Decoupling for Open Vocabulary Scene Graph Generation](../../CVPR2026/graph_learning/mixture-of-experts_based_feature_decoupling_for_open_vocabulary_scene_graph_gene.md)
 - [\[NeurIPS 2025\] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning](../../NeurIPS2025/graph_learning/moemeta_mixture-of-experts_meta_learning_for_few-shot_relational_learning.md)
-- [\[ICLR 2026\] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning](canonical_tree_cover_neural_networks_for_expressive_and_invariant_graph_learning.md)
+- [\[ICLR 2026\] TopoFormer: Topology Meets Attention for Graph Learning](topoformer_topology_meets_attention_for_graph_learning.md)
 
 </div>
 

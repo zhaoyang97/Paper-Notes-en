@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Enhancing Sparse Event Detection in Healthcare Time-Series via Adaptive Gate of Context–Detail Interaction
 description: >-
-  [ICLR 2026][Time Series][DETR] A coarse-to-fine framework named GCE-LDI-AGM is proposed. It integrates global context and local details via an adaptive gating mechanism, complemented by Conditional Gating Scaling (CGS) and Positional Gaussian Injection (PGI) as auxiliary supervision. This approach significantly enhances the joint detection of catego
+  [ICLR 2026][Time Series][Sparse Event Detection] A coarse-to-fine framework named GCE-LDI-AGM is proposed. It integrates global context and local details via an adaptive gating mechanism, complemented by Conditional Gating Scaling (CGS) and Positional Gaussian Injection (PGI) as auxiliary supervision. This approach significantly enhances the joint detection of categories and boundaries for extremely sparse events in medical time-series.
 tags:
-  - ICLR 2026
-  - Time Series
-  - DETR
+  - "ICLR 2026"
+  - "Time Series"
+  - "Sparse Event Detection"
+  - "Time-Series"
+  - "DETR"
+  - "Adaptive Gating"
+  - "Medical Biosignals"
 date: 2026-05-08
-content_hash: f67b2426cf040b93
+content_hash: b2ce9c78957fd7b3
 ---
+
 # Enhancing Sparse Event Detection in Healthcare Time-Series via Adaptive Gate of Context–Detail Interaction
 
 **Conference**: ICLR 2026  

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Diversifying Counterattacks: Orthogonal Exploration for Robust CLIP Inference
 description: >-
-  [AAAI 2026][AI Safety][Adversarial Robustness] This paper proposes Directional Orthogonal Counterattack (DOC), a method that expands the search space during counterattack optimization by introducing orthogonal gradient c…
+  [AAAI 2026 Oral][AI Safety][Adversarial Robustness] This paper proposes the Directional Orthogonal Counterattack (DOC) method. By introducing orthogonal gradient components and momentum updates during the counterattack optimization, it expands the search space. Combined with a cosine similarity-based Directional Sensitivity Score to adaptively modulate the counterattack intensity, the method significantly improves the test-time adversarial robustness of CLIP across 16 dataset…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "AI Safety"
   - "Adversarial Robustness"
   - "CLIP Defense"
@@ -12,7 +12,7 @@ tags:
   - "Orthogonal Counterattack"
   - "Vision-Language Models"
 date: 2026-05-08
-content_hash: df3e87d75acfab7e
+content_hash: 02483ba16db1433e
 ---
 
 # Diversifying Counterattacks: Orthogonal Exploration for Robust CLIP Inference
@@ -20,29 +20,29 @@ content_hash: df3e87d75acfab7e
 **Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.09064](https://arxiv.org/abs/2511.09064)  
 **Code**: [Available](https://github.com/bookman233/DOC)  
-**Area**: AI Security
+**Area**: AI Safety  
 **Keywords**: Adversarial Robustness, CLIP Defense, Test-Time Defense, Orthogonal Counterattack, Vision-Language Models
 
 ## TL;DR
 
-This paper proposes Directional Orthogonal Counterattack (DOC), a method that expands the search space during counterattack optimization by introducing orthogonal gradient components and momentum updates, and adaptively modulates counterattack intensity via a cosine-similarity-based Directional Sensitivity Score (DSS). DOC significantly improves the test-time adversarial robustness of CLIP across 16 datasets.
+This paper proposes the Directional Orthogonal Counterattack (DOC) method. By introducing orthogonal gradient components and momentum updates during the counterattack optimization, it expands the search space. Combined with a cosine similarity-based Directional Sensitivity Score to adaptively modulate the counterattack intensity, the method significantly improves the test-time adversarial robustness of CLIP across 16 datasets.
 
 ## Background & Motivation
 
-Vision-language pre-trained models such as CLIP exhibit strong zero-shot generalization but are highly vulnerable to adversarial examples. Existing defenses fall into three categories:
+Vision-language pre-trained models like CLIP exhibit strong zero-shot generalization capabilities, yet remain extremely vulnerable to adversarial examples. Existing defense methods mainly fall into three categories:
 
-**Adversarial Fine-tuning** (e.g., TeCoA, PMG-AFT, FARE): Fine-tunes CLIP on adversarial examples, but incurs high computational cost and may degrade generalization.
+**Adversarial Fine-Tuning** (e.g., TeCoA, PMG-AFT, FARE): Fine-tunes CLIP using adversarial examples, which incurs high computational overhead and potentially degrades generalization.
 
-**Adversarial Prompt Tuning**: Adjusts prompts in the embedding space, but sacrifices semantic interpretability.
+**Adversarial Prompt Tuning**: Adjusts prompts in the embedding space but forfeits semantic interpretability.
 
-**Test-Time Counterattack (TTC)**: A recent parameter-free defense that generates counterattack perturbations to maximize the embedding distance between adversarial inputs and their variants.
+**Test-Time Counterattack (TTC)**: The latest parameter-free defense method, which generates counterattack perturbations to maximize the embedding distance between adversarial inputs and their variants.
 
-**Core issue with TTC**: A **fundamental objective mismatch** exists between adversarial attacks and counterattacks:
+**Key Challenge of TTC**: There exists a **fundamental mismatch in optimization objectives** between adversarial attack and counterattack:
 
-- Adversarial attack objective: maximize classification loss
-- Counterattack objective: maximize embedding distance
+- Adversarial attack goal: Maximize classification loss
+- Counterattack goal: Maximize embedding distance
 
-TTC uses PGD to generate counterattacks along the gradient direction, but due to this mismatch, the search space is confined to a narrow region, causing the counterattack to overfit to a limited set of adversarial patterns and lack the diversity needed to neutralize a broad distribution of perturbations.
+TTC uses PGD to generate counterattacks along the gradient direction. However, due to the objective mismatch, the search space is confined to a narrow region. Consequently, the counterattack is prone to overfitting to limited adversarial patterns, lacking the diversity needed to neutralize the broad distribution of perturbations.
 
 ## Method
 
@@ -50,48 +50,46 @@ TTC uses PGD to generate counterattacks along the gradient direction, but due to
 
 DOC (Directional Orthogonal Counterattack) comprises two core components:
 
-1. **Orthogonal Gradient Augmentation (OGA)**: Adds a random component orthogonal to the primary gradient direction at each counterattack optimization step, combined with momentum updates.
-2. **Directional Sensitivity Score (DSS)**: Assesses whether an input is adversarial based on cosine similarity, and adaptively modulates counterattack intensity.
+1. **Orthogonal Gradient Augmentation (OGA)**: Adds random components orthogonal to the primary gradient direction along with momentum updates at each step of the counterattack optimization.
+2. **Directional Sensitivity Score (DSS)**: Leverages cosine similarity to detect whether the input is an adversarial example, adaptively modulating the counterattack strength.
 
 ### Key Designs
 
 **Orthogonal Gradient Augmentation (OGA)**:
 
-1. Compute the normalized gradient $g$ (gradient of the counterattack loss w.r.t. the adversarial input, then normalized).
-2. Sample a random vector $r$ from the standard normal distribution; apply Gram-Schmidt orthogonalization to obtain a component orthogonal to the gradient: $r_\perp = (r - \langle r, g \rangle g) / \|r - \langle r, g \rangle g\|$.
-3. Combine the update direction: $d = g + \lambda \cdot r_\perp$ (where $\lambda$ controls orthogonal injection strength).
-4. Momentum update: $m_t = \mu \cdot m_{t-1} + (1 - \mu) \cdot d$.
-5. Counterattack perturbation iteration: $\delta_{t+1} = \mathrm{Proj}(\delta_t + \alpha \cdot \mathrm{sign}(m_t))$.
+1. Compute the normalized gradient $g$ (gradient of the counterattack loss with respect to the adversarial input, and normalize it).
+2. Sample a random vector $r$ from a standard normal distribution, and apply Gram-Schmidt orthogonalization to obtain the component orthogonal to the gradient: $r_{\perp} = (r - \langle r, g \rangle g) / \|r - \langle r, g \rangle g\|$.
+3. Combine update directions: $d = g + \lambda r_{\perp}$ ($\lambda$ controls the intensity of orthogonal injection).
+4. Momentum update: $m_t = \mu m_{t-1} + (1-\mu)d$.
+5. Iterative updates of the counterattack perturbation: $\delta_{t+1} = \text{Proj}(\delta_t + \alpha \cdot \text{sign}(m_t))$.
 
-Design intuition: The orthogonal component enables the counterattack to explore regions beyond the gradient direction, while momentum helps escape narrow local optima, yielding more diverse counterattack perturbations. t-SNE visualizations confirm that DOC produces a more dispersed counterattack distribution than TTC.
+Design Intuition: The orthogonal component enables the counterattack to explore regions beyond the gradient direction, while momentum assists in escaping narrow local optima, generating more diverse counterattack perturbations. t-SNE visualizations confirm that the counterattack distribution of DOC is more dispersed than that of TTC.
 
 **Directional Sensitivity Score (DSS)**:
 
-TTC uses $\ell_2$ distance to detect adversarial inputs, which suffers from two issues: (a) embeddings with similar directions but different scales produce spuriously large $\ell_2$ distances; (b) single noise samples introduce instability.
+TTC uses $l_2$ distance to identify whether an input is an adversarial example, which poses two issues: (a) embeddings with similar directions but different scales can cause artificially inflated $l_2$ distances; (b) a single noisy sample introduces instability.
 
-DOC replaces this with cosine similarity averaged over multiple samples:
+DOC switches to cosine similarity + multiple sampling:
 
-$$\hat{\tau}(x) = 1 - \frac{1}{M} \sum \cos\!\left(I_\theta(x_m),\, I_\theta(x)\right)$$
+- $\hat{\tau}(x) = 1 - \frac{1}{M} \sum \cos(I_{\theta}(x_m), I_{\theta}(x))$
+- Low $\hat{\tau}(x)$: The embedding direction remains unchanged after perturbation, indicating a clean sample.
+- High $\hat{\tau}(x)$: The direction is inconsistent, indicating a potential adversarial sample.
 
-- Low $\hat{\tau}$: perturbed embeddings maintain consistent directions, indicating a clean sample.
-- High $\hat{\tau}$: directional inconsistency, indicating a likely adversarial sample.
+The strength of the counterattack is adaptively modulated via a soft gating function:
 
-A soft gating function adaptively modulates counterattack intensity:
+- $w = \text{sigmoid}(\gamma \cdot (\tau - \hat{\tau}(x)))$
+- Final: $\delta_{ca} = w \cdot \delta_{ca} + (1-w) \cdot \delta_{ca}^0$
 
-$$w = \mathrm{sigmoid}\!\left(\gamma \cdot (\tau - \hat{\tau}(x))\right)$$
-
-$$\delta_{ca} = w \cdot \delta_{ca} + (1 - w) \cdot \delta_{ca}^0$$
-
-For clean samples, $w \approx 0$ (counterattack is nearly suppressed); for adversarial samples, $w \approx 1$ (full counterattack is applied).
+For clean samples, $w$ is close to 0 (applying almost no counterattack), while for adversarial samples, $w$ is close to 1 (full-force counterattack).
 
 ### Loss & Training
 
-DOC is a **training-free** test-time defense:
+DOC is a **training-free** test-time defense method:
 
-- No model parameters are modified; no training data or label supervision is required.
-- Counterattack budget: $\epsilon_{ca} = 4/255$.
-- Default: 4 counterattack steps, step size $\alpha = 3/255$.
-- Batch size 256; requires only a single NVIDIA 4090 GPU.
+- It does not modify model parameters, requires no training data, and does not depend on label supervision.
+- Counterattack budget $\epsilon_{ca} = 4/255$.
+- Default of 4 steps of counterattack with step size $\alpha = 3/255$.
+- Batch size is 256, requiring only a single NVIDIA 4090 GPU.
 
 ## Key Experimental Results
 
@@ -99,18 +97,18 @@ DOC is a **training-free** test-time defense:
 
 **Average results across 16 datasets under PGD-10 attack** ($\epsilon_{atk} = 4/255$):
 
-| Method | Type | Avg. Robust Acc. | Avg. Clean Acc. |
+| Method | Type | Average Robust Accuracy | Average Clean Accuracy |
 |---|---|---|---|
-| CLIP (original) | — | 0.06% | 61.51% |
-| HD | Test-time defense | 0.56% | 54.85% |
-| TeCoA4 | Adversarial fine-tuning | 10.95% | 37.58% |
-| FARE4 | Adversarial fine-tuning | 1.38% | 56.62% |
-| TTC | Test-time defense | 21.22% | 55.63% |
-| **DOC** | **Test-time defense** | **31.02%** | **58.26%** |
+| CLIP (Original) | - | 0.06% | 61.51% |
+| HD | Test-Time Defense | 0.56% | 54.85% |
+| TeCoA4 | Adversarial Fine-Tuning | 10.95% | 37.58% |
+| FARE4 | Adversarial Fine-Tuning | 1.38% | 56.62% |
+| TTC | Test-Time Defense | 21.22% | 55.63% |
+| **DOC** | **Test-Time Defense** | **31.02%** | **58.26%** |
 
-DOC improves robust accuracy over TTC by **9.80%**, while also achieving higher clean accuracy (+2.63%).
+DOC improves robust accuracy by **9.80%** over TTC while achieving higher clean accuracy (+2.63%).
 
-**Per-dataset key results** (robust accuracy under PGD-10):
+**Key results across individual datasets** (robust accuracy under PGD-10):
 
 | Dataset | CLIP | TTC | DOC | Gain |
 |---|---|---|---|---|
@@ -122,57 +120,57 @@ DOC improves robust accuracy over TTC by **9.80%**, while also achieving higher 
 
 ### Ablation Study
 
-| DSS | OGA | Clean Acc. | PGD Robust | CW Robust | AutoAttack |
+| DSS | OGA | Clean Accuracy | PGD Robust | CW Robust | AutoAttack |
 |---|---|---|---|---|---|
-| ✗ | ✗ | 55.66% | 21.43% | 20.70% | 21.97% |
-| ✓ | ✗ | 58.23% | 23.37% | 22.27% | 22.66% |
-| ✗ | ✓ | 55.38% | 31.83% | 29.02% | 26.07% |
-| ✓ | ✓ | **58.27%** | **31.04%** | **28.15%** | **25.89%** |
+| No | No | 55.66% | 21.43% | 20.70% | 21.97% |
+| Yes | No | 58.23% | 23.37% | 22.27% | 22.66% |
+| No | Yes | 55.38% | 31.83% | 29.02% | 26.07% |
+| Yes | Yes | **58.27%** | **31.04%** | **28.15%** | **25.89%** |
 
-- **DSS alone**: Primarily improves clean accuracy (+2.57%) by suppressing unnecessary perturbations on clean samples.
-- **OGA alone**: Substantially boosts robust accuracy (+10.4%), validating the effectiveness of diversified counterattacks.
-- **Combined**: Achieves favorable trade-offs between robustness and clean accuracy.
+- **DSS Alone**: Primarily boosts clean accuracy (+2.57%), suppressing unnecessary perturbations on clean samples.
+- **OGA Alone**: Significantly improves robust accuracy (+10.4%), validating the effectiveness of diversified counterattacks.
+- **Combining both**: Achieves a balance between robustness and clean accuracy.
 
-Average robust accuracy under CW attack: DOC 28.18% vs. TTC 20.61% (+7.58%). Under AutoAttack, DOC outperforms TTC by approximately 4.1%.
+Average robust accuracy under CW attack: DOC 28.18% vs TTC 20.61% (+7.58%). Under AutoAttack, DOC improves upon TTC by approximately 4.1%.
 
 ### Key Findings
 
-- DOC outperforms TTC on nearly all 16 datasets, with EuroSAT as the only exception.
-- DOC functions as a **plug-and-play module** compatible with adversarial fine-tuning: combining with FARE yields average robust accuracy exceeding vanilla CLIP by 18%.
-- Counterattack performance saturates at as few as $N = 3$–$4$ steps, incurring minimal computational overhead.
-- Clean accuracy remains stable as the number of steps increases; robustness gains do not come at the expense of clean performance.
+- DOC outperforms TTC on almost all 16 datasets, with the sole exception of EuroSAT.
+- DOC can serve as a **plug-and-play module** to combine with adversarial fine-tuning: when paired with FARE, the average robust accuracy exceeds that of the original CLIP by over 18%.
+- The number of counterattack steps saturates at only $N=3\text{-}4$, resulting in extremely low computational overhead.
+- The clean accuracy remains stable as the number of steps increases, demonstrating that the gain in robustness does not come at the expense of clean performance.
 
 ## Highlights & Insights
 
-1. **Precise problem identification**: Reveals the fundamental objective mismatch between adversarial attacks and counterattacks.
-2. **Clear design intuition for OGA**: Introducing exploration noise via orthogonalization is both mathematically elegant and practically effective.
-3. **Cosine similarity replaces $\ell_2$ distance** for adversarial sample detection, which is more principled in high-dimensional spaces due to scale invariance.
-4. **Completely training-free**: Requires no data, no parameter modification, and runs on a single GPU, resulting in an extremely low deployment barrier.
-5. t-SNE visualizations intuitively demonstrate DOC's ability to push adversarial samples toward the clean distribution.
+1. **Precise Problem Diagnostic**: Reveals the optimization objective mismatch between adversarial attacks and counterattacks.
+2. **Intuitive Design of Orthogonal Gradient Augmentation**: Introduces exploratory noise via orthogonalization, which is both mathematically elegant and practically effective.
+3. **Cosine Similarity Replacing $l_2$ Distance**: Used for adversarial sample detection, which is more reasonable in high-dimensional spaces (scale-invariance).
+4. **Entirely Training-Free**: Requires no data, no parameter tuning, and runs on a single GPU, presenting an extremely low deployment barrier.
+5. t-SNE visualization intuitively demonstrates the effectiveness of DOC in aligning the distribution of adversarial samples closer to clean distributions.
 
 ## Limitations & Future Work
 
-1. The counterattack budget is set equal to the attack budget; in practice, the attack budget is unknown.
-2. The orthogonal component is randomly sampled, potentially causing inference results to vary across runs (though empirical variance is small).
-3. Clean accuracy decreases on ImageNet (−3.25%) and fluctuates on some fine-grained classification datasets.
-4. Validation is limited to CLIP; the approach has not been extended to other VLPs (e.g., BLIP-2, LLaVA).
-5. Robustness against adaptive attacks is not sufficiently discussed.
+1. The counterattack budget is set to the same value as the attack budget, whereas the attack budget is typically unknown in real-world scenarios.
+2. The orthogonal components are randomly sampled, which may introduce variance across different inference runs (though the variance observed in experiments is small).
+3. A decrease in clean accuracy is observed on ImageNet (-3.25%), and some fluctuations occur on fine-grained classification datasets.
+4. Validation is only conducted on CLIP and has not yet been extended to other VLPs (e.g., BLIP-2, LLaVA).
+5. Robustness against adaptive attacks is not fully discussed.
 
 ## Related Work & Insights
 
-- **TTC** (Xing et al. 2025): The pioneering test-time counterattack work that DOC directly improves upon.
-- **TeCoA** (Mao et al.): A representative adversarial fine-tuning method.
-- **PMG-AFT** (Wang et al. 2024): Adversarial fine-tuning augmented with CLIP-guided regularization.
-- **FARE** (Schlarmann et al. 2024): Adversarial fine-tuning under large perturbation budgets.
-- **Hedge Defense** (Wu et al. 2021): A test-time defense that maximizes loss across all classes.
-- Insight: **In unsupervised test-time defense, diversity matters more than precision.** The orthogonal exploration paradigm is generalizable to other robust optimization scenarios.
+- **TTC** (Xing et al. 2025): Pioneering work on test-time counterattack, which DOC direct builds upon.
+- **TeCoA** (Mao et al.): Representative method for adversarial fine-tuning.
+- **PMG-AFT** (Wang et al. 2024): Adversarial fine-tuning incorporating CLIP-guided regularization.
+- **FARE** (Schlarmann et al. 2024): Adversarial fine-tuning under larger budgets.
+- **Hedge Defense** (Wu et al. 2021): Test-time defense by maximizing losses across all classes.
+- Insight: **In unsupervised test-time defense, diversity is more critical than precision.** The orthogonal exploration concept can be generalized to other robust optimization contexts.
 
 ## Rating
 
-- Novelty: 4/5 — OGA and DSS represent meaningful and original contributions.
-- Technical Depth: 4/5 — The method is grounded in clear theoretical motivation and mathematical derivation.
-- Experimental Thoroughness: 5/5 — 16 datasets × 3 attack types × ablations × combination experiments + visualizations.
-- Writing Quality: 4/5 — Problem motivation is clearly articulated with rich figures and tables.
+- Novelty: 4/5 - Orthogonal Gradient Augmentation and Directional Sensitivity Score represent meaningful and novel contributions.
+- Technical Depth: 4/5 - The methodology design is backed by clear theoretical motivations and mathematical derivations.
+- Experimental Thoroughness: 5/5 - Extensive testing across 16 datasets $\times$ 3 attacks, ablation studies, combinatorial experiments, and visualizations.
+- Writing Quality: 4/5 - Clean exposition of motivation and problems, with rich figures and tables.
 - Overall: 4.0/5
 
 <!-- RELATED:START -->
@@ -181,11 +179,11 @@ Average robust accuracy under CW attack: DOC 28.18% vs. TTC 20.61% (+7.58%). Und
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Federated Inference](../../ICLR2026/ai_safety/robust_federated_inference.md)
+- [\[CVPR 2026\] When CLIP Sees More, It Fights Back Harder: Multi-View Guided Adaptive Counterattacks for Test-Time Adversarial Robustness](../../CVPR2026/ai_safety/when_clip_sees_more_it_fights_back_harder_multi-view_guided_adaptive_counteratta.md)
 - [\[ICML 2026\] Calibrating Uncertainty for Zero-Shot Adversarial CLIP](../../ICML2026/ai_safety/calibrating_uncertainty_for_zero-shot_adversarial_clip.md)
-- [\[AAAI 2026\] MPD-SGR: Robust Spiking Neural Networks with Membrane Potential Distribution-Driven Surrogate Gradient Regularization](mpd-sgr_robust_spiking_neural_networks_with_membrane_potential_distribution-driv.md)
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](robust_watermarking_on_gradient_boosting_decision_trees.md)
-- [\[AAAI 2026\] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems](reference_recommendation_based_membership_inference_attack_against_hybrid-based_.md)
-- [\[AAAI 2026\] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute](secmoe_communication-efficient_secure_moe_inference_via_select-then-compute.md)
+- [\[ICLR 2026\] Test-Time Poisoned Sample Detection by Exploiting Shallow Malicious Matching in Backdoored CLIP](../../ICLR2026/ai_safety/test-time_poisoned_sample_detection_by_exploiting_shallow_malicious_matching_in_.md)
 
 </div>
 

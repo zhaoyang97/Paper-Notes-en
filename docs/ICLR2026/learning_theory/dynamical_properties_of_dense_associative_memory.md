@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Dynamical properties of dense associative memory
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the first asymptotically exact solution for the **dynamics** of dense associative memory (modern Hopfield networks) in the large system limit using Generating Functional Analysis (GFA). It quantitatively characterizes convergence time and the size of the basin of attraction during the recall process
+  [ICLR 2026][Learning Theory][Dense Associative Memory] This paper provides the first asymptotically exact solution for the **dynamics** of dense associative memory (modern Hopfield networks) in the large system limit using Generating Functional Analysis (GFA). It quantitatively characterizes convergence time and the size of the basin of attraction during the recall process, revealing that for activation non-linearity order $n \ge 3$, recall no longer injects additional noise…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Dynamics of Associative Memory"
+  - "Dense Associative Memory"
+  - "Modern Hopfield Networks"
+  - "Generating Functional Analysis"
+  - "Basin of Attraction"
+  - "Storage Capacity"
 date: 2026-05-08
-content_hash: 9cfa504e6c5d3bd3
+content_hash: ba90397d96fc6c26
 ---
+
 # Dynamical properties of dense associative memory
 
 **Conference**: ICLR 2026  
@@ -141,9 +148,9 @@ The "experiments" in this paper consist of numerically solving the theory from P
 
 - [\[ICLR 2026\] A Biologically Plausible Dense Associative Memory with Exponential Capacity](a_biologically_plausible_dense_associative_memory_with_exponential_capacity.md)
 - [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
-- [\[ICLR 2026\] Sublinear Spectral Clustering Oracle with Little Memory](sublinear_spectral_clustering_oracle_with_little_memory.md)
+- [\[ICLR 2026\] Adaptive Hopfield Network: Rethinking Similarities in Associative Memory](adaptive_hopfield_network_rethinking_similarities_in_associative_memory.md)
 - [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
-- [\[ICLR 2026\] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization](memory-statistics_tradeoff_in_continual_learning_with_structural_regularization.md)
+- [\[ICLR 2026\] Sublinear Spectral Clustering Oracle with Little Memory](sublinear_spectral_clustering_oracle_with_little_memory.md)
 
 </div>
 

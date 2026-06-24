@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Cognitive Mirrors: Exploring the Diverse Functional Roles of Attention Heads in LLM Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Attention heads] This paper proposes the CogQA benchmark dataset and a multi-class probing framework to systematically analyze cognitive functional specialization of attention heads in LLMs.…
+  [NeurIPS 2025][Reasoning][Attention heads] This paper proposes the CogQA benchmark dataset and a multi-class probing framework to systematically analyze cognitive functional specialization of attention heads in LLMs. The study reveals that cognitive heads exhibit sparsity, universality, and hierarchical functional organization; ablating cognitive heads significantly degrades reasoning performance, while amplifying them improves accuracy.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Attention heads"
   - "cognitive functions"
   - "interpretability"
   - "probing"
   - "functional specialization"
 date: 2026-05-08
-content_hash: 34d4f79c2d91ec90
+content_hash: 19f9f486995351eb
 ---
 
 # Cognitive Mirrors: Exploring the Diverse Functional Roles of Attention Heads in LLM Reasoning
@@ -122,11 +122,11 @@ A three-stage pipeline: (1) constructing the CogQA dataset by decomposing comple
 
 ## Related Papers
 
+- [\[ICLR 2026\] Incentivizing LLM Reasoning via Reinforcement Learning with Functional Monte Carlo Tree Search](../../ICLR2026/llm_reasoning/incentivizing_llm_reasoning_via_reinforcement_learning_with_functional_monte_car.md)
+- [\[ICLR 2026\] Echoes as Anchors: Probabilistic Costs and Attention Refocusing in LLM Reasoning](../../ICLR2026/llm_reasoning/echoes_as_anchors_probabilistic_costs_and_attention_refocusing_in_llm_reasoning.md)
+- [\[ICML 2025\] Putnam-AXIOM: A Functional & Static Benchmark for Measuring Higher Level Mathematical Reasoning in LLMs](../../ICML2025/llm_reasoning/putnam-axiom_a_functional_and_static_benchmark_for_measuring_higher_level_mathem.md)
 - [\[ACL 2026\] TInR: Exploring Tool-Internalized Reasoning in Large Language Models](../../ACL2026/llm_reasoning/tinr_exploring_tool-internalized_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](../../ACL2026/llm_reasoning/reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
-- [\[ACL 2026\] DELTA: Dynamic Layer-Aware Token Attention for Efficient Long-Context Reasoning](../../ACL2026/llm_reasoning/delta_dynamic_layer-aware_token_attention_for_efficient_long-context_reasoning.md)
-- [\[NeurIPS 2025\] The Surprising Effectiveness of Negative Reinforcement in LLM Reasoning](the_surprising_effectiveness_of_negative_reinforcement_in_llm_reasoning.md)
-- [\[NeurIPS 2025\] Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning](martingale_score_an_unsupervised_metric_for_bayesian_rationality_in_llm_reasonin.md)
 
 </div>
 

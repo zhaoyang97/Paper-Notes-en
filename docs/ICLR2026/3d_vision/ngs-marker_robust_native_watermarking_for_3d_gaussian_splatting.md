@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NGS-Marker: Robust Native Watermarking for 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] NGS-Marker embeds watermarks directly into the 3D Gaussian primitives themselves rather than rendered images. Consequently, even if an attacker extracts a small subset of Gaussians to integrate into a new scene, attribution information can be decoded from any local region, specifically addressing "partial infringement"
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] NGS-Marker embeds watermarks directly into the 3D Gaussian primitives themselves rather than rendered images. Consequently, even if an attacker extracts a small subset of Gaussians to integrate into a new scene, attribution information can be decoded from any local region, specifically addressing "partial infringement" where existing methods fail.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Native Watermarking"
+  - "Partial Infringement"
+  - "Progressive Embedding"
+  - "Copyright Verification"
 date: 2026-05-08
-content_hash: 82e7847425c3d1b3
+content_hash: 5e5a02e6bfe290f4
 ---
+
 # NGS-Marker: Robust Native Watermarking for 3D Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -120,11 +125,11 @@ $\delta$ Ablation: Reducing $\delta$ from 8192 to 2048 slowed convergence and sl
 
 ## Related Papers
 
+- [\[ICLR 2026\] CompMarkGS: Robust Watermarking for Compressed 3D Gaussian Splatting](compmarkgs_robust_watermarking_for_compressed_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Robust3DGSW: Toward Robust Watermarking for Quantization-Aware 3D Gaussian Splatting](../../CVPR2026/3d_vision/robust3dgsw_toward_robust_watermarking_for_quantization-aware_3d_gaussian_splatt.md)
 - [\[CVPR 2025\] 3D-GSW: 3D Gaussian Splatting for Robust Watermarking](../../CVPR2025/3d_vision/3d-gsw_3d_gaussian_splatting_for_robust_watermarking.md)
 - [\[AAAI 2026\] Can Protective Watermarking Safeguard the Copyright of 3D Gaussian Splatting?](../../AAAI2026/3d_vision/can_protective_watermarking_safeguard_the_copyright_of_3d_gaussian_splatting.md)
 - [\[CVPR 2025\] GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting](../../CVPR2025/3d_vision/guardsplat_efficient_and_robust_watermarking_for_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] Gradient-Direction-Aware Density Control for 3D Gaussian Splatting](gradient-direction-aware_density_control_for_3d_gaussian_splatting.md)
 
 </div>
 

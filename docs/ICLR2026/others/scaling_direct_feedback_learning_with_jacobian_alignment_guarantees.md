@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Scaling Direct Feedback Learning with Jacobian Alignment Guarantees
 description: >-
-  [ICLR 2026][Others][Paper Note] Addressing the collapse of Direct Feedback Alignment (DFA) in deep convolutional networks and Transformers, this paper proposes GrAPE. By using forward-mode JVP to estimate rank-1 Jacobians and applying a local cosine alignment loss to "correct" random feedback matrices toward the true gradient direction—supplemented b
+  [ICLR 2026][Direct Feedback Alignment (DFA)] Addressing the collapse of Direct Feedback Alignment (DFA) in deep convolutional networks and Transformers, this paper proposes GrAPE. By using forward-mode JVP to estimate rank-1 Jacobians and applying a local cosine alignment loss to "correct" random feedback matrices toward the true gradient direction—supplemented by periodic sparse single-batch Backpropagation (BP) calibration—the authors successfully scale DFA-like methods to…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Direct Feedback Alignment (DFA)"
+  - "Forward Gradient"
+  - "Jacobian Alignment"
+  - "Parallel Training"
+  - "Backpropagation Alternatives"
 date: 2026-05-08
-content_hash: bd07a274bb8262cf
+content_hash: 7ce6d525adb20306
 ---
+
 # Scaling Direct Feedback Learning with Jacobian Alignment Guarantees
 
 **Conference**: ICLR 2026  
@@ -155,6 +160,7 @@ ResNet (CIFAR-100) and Transformer (WikiText-103) Perplexity (lower is better):
 - **Value**: ⭐⭐⭐⭐ Provides a theoretically grounded and realistic path toward parallelizing deep network training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

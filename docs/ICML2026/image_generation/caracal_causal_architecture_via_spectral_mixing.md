@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Caracal: Causal Architecture via Spectral Mixing
 description: >-
-  [ICML 2026][Image Generation][FFT] Caracal replaces the $\mathcal{O}(L^2)$ attention in Transformers with an $\mathcal{O}(L \log L)$ Multi-Head Fourier (MHF) module. It achieves strict causal masking in the frequency domain via a "pad-FFT-multiply-iFFT-truncate" mechanism and completely removes positional embeddings. Using only standard FFT operators (w
+  [ICML 2026][Image Generation][FFT] Caracal replaces the $\mathcal{O}(L^2)$ attention in Transformers with an $\mathcal{O}(L \log L)$ Multi-Head Fourier (MHF) module. It achieves strict causal masking in the frequency domain via a "pad-FFT-multiply-iFFT-truncate" mechanism and completely removes positional embeddings. Using only standard FFT operators (without relying on custom CUDA kernels like Mamba), it matches the performance of Llama, Mamba, Mamba-2…
 tags:
-  - ICML 2026
-  - Image Generation
-  - FFT
+  - "ICML 2026"
+  - "Image Generation"
+  - "FFT"
+  - "Attention Alternative"
+  - "Causal Modeling"
+  - "Long Sequence"
+  - "SSM Comparison"
 date: 2026-05-08
-content_hash: 3081f4ac20f15ad2
+content_hash: 53bce0f1df82c0e9
 ---
+
 # Caracal: Causal Architecture via Spectral Mixing
 
 **Conference**: ICML 2026  
@@ -146,7 +151,7 @@ Caracal performs in the top tier alongside Mamba and DeltaNet, significantly out
 - [\[ICML 2026\] Local Hessian Spectral Filtering for Robust Intrinsic Dimension Estimation](local_hessian_spectral_filtering_for_robust_intrinsic_dimension_estimation.md)
 - [\[ICML 2026\] Learning General Causal Structures with Hidden Dynamic Process for Climate Analysis](learning_general_causal_structures_with_hidden_dynamic_process_for_climate_analy.md)
 - [\[ICML 2026\] AG-REPA: Causal Layer Selection for Representation Alignment in Audio Flow Matching](ag-repa_causal_layer_selection_for_representation_alignment_in_audio_flow_matchi.md)
-- [\[ICCV 2025\] Spectral Image Tokenizer](../../ICCV2025/image_generation/spectral_image_tokenizer.md)
+- [\[ICLR 2026\] VMDiff: Visual Mixing Diffusion for Limitless Cross-Object Synthesis](../../ICLR2026/image_generation/vmdiff_visual_mixing_diffusion_for_limitless_cross-object_synthesis.md)
 
 </div>
 

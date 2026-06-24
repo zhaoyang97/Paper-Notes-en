@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Collaboration of Fusion and Independence: Hypercomplex-driven Robust Multi-Modal Knowledge Graph Completion
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] M-Hyper encodes multi-modal knowledge graph entities into four orthogonal bases of a biquaternion, carrying three independent modalities (Structure/Visual/Textual) and one fused modality respectively. Through the Hamilton product, it simultaneously achieves "modal independence preservation" and "pairwise sufficient int
+  [ACL 2026][Graph Learning][Multi-modal Knowledge Graphs] M-Hyper encodes multi-modal knowledge graph entities into four orthogonal bases of a biquaternion, carrying three independent modalities (Structure/Visual/Textual) and one fused modality respectively. Through the Hamilton product, it simultaneously achieves "modal independence preservation" and "pairwise sufficient interaction," outperforming 18 baselines on DB15K, MKG-W, and MKG-Y datasets with minimal memory usage and…
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Multi-modal Knowledge Graphs"
+  - "Hypercomplex Space"
+  - "Biquaternion"
+  - "Modal Fusion"
+  - "Link Prediction"
 date: 2026-05-08
-content_hash: 77c80c6dc426c59e
+content_hash: c3920936b9785283
 ---
+
 # Collaboration of Fusion and Independence: Hypercomplex-driven Robust Multi-Modal Knowledge Graph Completion
 
 **Conference**: ACL 2026  
@@ -150,10 +156,10 @@ Average MRR increased by approx. 4.25%, and Hit@10 by approx. 3.89%. Efficiency 
 ## Related Papers
 
 - [\[ACL 2026\] GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion](gs-quant_granular_semantic_and_generative_structural_quantization_for_knowledge_.md)
+- [\[ICLR 2026\] Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment](../../ICLR2026/graph_learning/learning_with_dual-level_noisy_correspondence_for_multi-modal_entity_alignment.md)
 - [\[AAAI 2026\] MyGram: Modality-aware Graph Transformer with Global Distribution for Multi-modal Entity Alignment](../../AAAI2026/graph_learning/mygram_modality-aware_graph_transformer_with_global_distribution_for_multi-modal.md)
 - [\[ACL 2026\] ComplianceNLP: Knowledge-Graph-Augmented RAG for Multi-Framework Regulatory Gap Detection](compliancenlp_knowledge-graph-augmented_rag_for_multi-framework_regulatory_gap_d.md)
 - [\[NeurIPS 2025\] RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis](../../NeurIPS2025/graph_learning/rad_towards_trustworthy_retrieval-augmented_multi-modal_clinical_diagnosis.md)
-- [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
 
 </div>
 

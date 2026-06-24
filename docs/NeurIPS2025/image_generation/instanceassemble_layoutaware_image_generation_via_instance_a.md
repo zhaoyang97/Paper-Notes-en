@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention
 description: >-
-  [NeurIPS 2025][Image Generation][layout-to-image] This paper proposes InstanceAssemble, which injects an "instance assembling attention" mechanism into the Transformer blocks of DiT-based T2I models (SD3 and Flux). By pe…
+  [NeurIPS 2025][Image Generation][layout-to-image] This paper proposes InstanceAssemble, which injects an "instance assembling attention" mechanism into the Transformer blocks of DiT-based T2I models (SD3 and Flux). By performing independent cross-attention between image tokens within each bounding box region and their corresponding layout hidden states, the method achieves precise instance-level spatial control. A lightweight LoRA adaptation strategy maintains compatibility w…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "DenseLayout benchmark"
 date: 2026-05-08
-content_hash: 3dd1ef16b6678f2e
+content_hash: a109177f1ec6e4cc
 ---
 
 # InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention
@@ -169,10 +169,10 @@ InstanceAssemble supports two DiT backbones—Flux.1-dev (28-step inference), Fl
 ## Related Papers
 
 - [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
+- [\[ICLR 2026\] I-DRUID: Layout to Image Generation via Instance-Disentangled Representation and Unpaired Data](../../ICLR2026/image_generation/i-druid_layout_to_image_generation_via_instance-disentangled_representation_and_.md)
 - [\[NeurIPS 2025\] Instance-Level Composed Image Retrieval](instance-level_composed_image_retrieval.md)
 - [\[ICML 2026\] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation](../../ICML2026/image_generation/occlusionformer_arranging_z-order_for_layout-grounded_image_generation.md)
-- [\[ICCV 2025\] FICGen: Frequency-Inspired Contextual Disentanglement for Layout-driven Degraded Image Generation](../../ICCV2025/image_generation/ficgen_frequency-inspired_contextual_disentanglement_for_layout-driven_degraded_.md)
-- [\[NeurIPS 2025\] CaMiT: A Time-Aware Car Model Dataset for Classification and Generation](camit_a_time-aware_car_model_dataset_for_classification_and_generation.md)
+- [\[ICLR 2026\] ContextGen: Contextual Layout Anchoring for Identity-Consistent Multi-Instance Generation](../../ICLR2026/image_generation/contextgen_contextual_layout_anchoring_for_identity-consistent_multi-instance_ge.md)
 
 </div>
 

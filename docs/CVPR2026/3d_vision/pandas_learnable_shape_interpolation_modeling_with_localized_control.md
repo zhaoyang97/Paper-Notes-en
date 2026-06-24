@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PaNDaS: Learnable Shape Interpolation Modeling with Localized Control
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PaNDaS constructs a deformation feature field by combining per-face local features on the source mesh with a global encoding of the target mesh. Fed into a deformation generator based on Neural Jacobian Fields and trained only with holistic deformation supervision, the model enables localized non-rigid interpolation of
+  [CVPR 2026][3D Vision][Mesh deformation] PaNDaS constructs a deformation feature field by combining per-face local features on the source mesh with a global encoding of the target mesh. Fed into a deformation generator based on Neural Jacobian Fields and trained only with holistic deformation supervision, the model enables localized non-rigid interpolation of arbitrary regions during inference via binary masking of the global features. It achieves state-of-the-art accuracy in…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Mesh deformation"
+  - "non-rigid shape interpolation"
+  - "localized control"
+  - "Neural Jacobian Fields"
+  - "triangular meshes"
 date: 2026-05-08
-content_hash: 05853b9aa62379d9
+content_hash: 1add9b2108b4e5b1
 ---
+
 # PaNDaS: Learnable Shape Interpolation Modeling with Localized Control
 
 **Conference**: CVPR 2026  
@@ -151,11 +157,11 @@ PaNDaS significantly outperforms VCMC and counterparts in local MSE and outperfo
 
 ## Related Papers
 
-- [\[CVPR 2026\] LoG3D: Ultra-High-Resolution 3D Shape Modeling via Local-to-Global Partitioning](log3d_ultra-high-resolution_3d_shape_modeling_via_local-to-global_partitioning.md)
 - [\[ECCV 2024\] ShapeFusion: A 3D Diffusion Model for Localized Shape Editing](../../ECCV2024/3d_vision/shapefusion_a_3d_diffusion_model_for_localized_shape_editing.md)
+- [\[CVPR 2026\] LoG3D: Ultra-High-Resolution 3D Shape Modeling via Local-to-Global Partitioning](log3d_ultra-high-resolution_3d_shape_modeling_via_local-to-global_partitioning.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[CVPR 2026\] CUBE: Representing 3D Faces with Learnable B-Spline Volumes](cube_bspline_3d_faces.md)
 - [\[CVPR 2026\] Solving Minimal Problems Without Matrix Inversion Using FFT-Based Interpolation](solving_minimal_problems_without_matrix_inversion_using_fft-based_interpolation.md)
+- [\[CVPR 2025\] 4Deform: Neural Surface Deformation for Robust Shape Interpolation](../../CVPR2025/3d_vision/4deform_neural_surface_deformation_for_robust_shape_interpolation.md)
 
 </div>
 

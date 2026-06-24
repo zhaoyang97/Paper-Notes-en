@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EAPO: Enhancing Policy Optimization with On-Demand Expert Assistance
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] EAPO treats "consulting an external expert" as a learnable discrete action embedded in the policy space. This allows the LLM to call stronger models on-demand during the RL training phase to obtain intermediate hints. Through a gradually decaying acceptance rate, expert knowledge is internalized into the policy itself.
+  [ICML 2026][Reinforcement Learning][Expert-assisted RL] EAPO treats "consulting an external expert" as a learnable discrete action embedded in the policy space. This allows the LLM to call stronger models on-demand during the RL training phase to obtain intermediate hints. Through a gradually decaying acceptance rate, expert knowledge is internalized into the policy itself. During evaluation, the model performs independent reasoning and consistently out-performs pure self-exp…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Expert-assisted RL"
+  - "On-demand consultation"
+  - "Sparse rewards"
+  - "Knowledge internalization"
+  - "Verifiable rewards"
 date: 2026-05-08
-content_hash: fb3106ddfdb88d8a
+content_hash: 59fb98d1691325a6
 ---
+
 # EAPO: Enhancing Policy Optimization with On-Demand Expert Assistance
 
 **Conference**: ICML 2026  
@@ -144,11 +150,11 @@ EAPO achieved a Pass@32 of 64.17 on AIMO 2025, an improvement of ~9 points over 
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](learning_to_route_languages_for_multilingual_policy_optimization.md)
 - [\[ICML 2026\] Making Expert Reasoning Learnable with Self-Distillation](making_expert_reasoning_learnable_with_self-distillation.md)
+- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](learning_to_route_languages_for_multilingual_policy_optimization.md)
+- [\[ICLR 2026\] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training](../../ICLR2026/reinforcement_learning/revisiting_group_relative_policy_optimization_insights_into_on-policy_and_off-po.md)
+- [\[ICLR 2026\] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](../../ICLR2026/reinforcement_learning/enhancing_generative_auto-bidding_with_offline_reward_evaluation_and_policy_sear.md)
 - [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
-- [\[ICML 2026\] Revisiting Regularized Policy Optimization for Stable and Efficient Reinforcement Learning in Two-Player Games](revisiting_regularized_policy_optimization_for_stable_and_efficient_reinforcemen.md)
-- [\[ICML 2025\] Wasserstein Policy Optimization](../../ICML2025/reinforcement_learning/wasserstein_policy_optimization.md)
 
 </div>
 

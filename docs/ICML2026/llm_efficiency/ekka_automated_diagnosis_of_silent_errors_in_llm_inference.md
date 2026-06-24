@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ekka: Automated Diagnosis of Silent Errors in LLM Inference
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] Ekka models the diagnosis of silent errors in LLM serving frameworks—where outputs degrade without explicit errors—as a differential debugging task using reference implementations like HuggingFace as an oracle. By employing an agentic pipeline of "component mapping $\rightarrow$ activation alignment $\rightarrow$ chang
+  [ICML 2026][LLM Efficiency][Silent Errors] Ekka models the diagnosis of silent errors in LLM serving frameworks—where outputs degrade without explicit errors—as a differential debugging task using reference implementations like HuggingFace as an oracle. By employing an agentic pipeline of "component mapping $\rightarrow$ activation alignment $\rightarrow$ change-point analysis," it automatically localizes problematic modules. Ekka achieves a diagnosis accuracy of 80% pass@1 /…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Silent Errors"
+  - "Differential Debugging"
+  - "LLM Inference Frameworks"
+  - "Agentic Debugging"
+  - "Activation Alignment"
 date: 2026-05-08
-content_hash: a85c6e80a10d2a59
+content_hash: 23a4018700afcce9
 ---
+
 # Ekka: Automated Diagnosis of Silent Errors in LLM Inference
 
 **Conference**: ICML 2026  
@@ -134,9 +140,9 @@ Main Conclusion: Given an oracle reference, automated differential debugging via
 
 - [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
 - [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
-- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
-- [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
+- [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](../../ICLR2026/llm_efficiency/universal_model_routing_for_efficient_llm_inference.md)
 - [\[NeurIPS 2025\] Silent Tokens, Loud Effects: Padding in LLMs](../../NeurIPS2025/llm_efficiency/silent_tokens_loud_effects_padding_in_llms.md)
+- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Eulerian Gaussian Splatting using Hashed Probability Pyramids
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The manual heuristic of "Adaptive Density Control (ADC)" in 3DGS is replaced by optimizing a learnable voxel probability density field from which Gaussians are sampled for rendering. High-resolution density is made affordable via Hashed Probability Pyramids, and sampling variance is mitigated through control variate gr
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] The manual heuristic of "Adaptive Density Control (ADC)" in 3DGS is replaced by optimizing a learnable voxel probability density field from which Gaussians are sampled for rendering. High-resolution density is made affordable via Hashed Probability Pyramids, and sampling variance is mitigated through control variate gradient estimation. The method achieves SOTA reconstruction quality with random initialization on mip-NeRF 360 whil…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Probability Density Optimization"
+  - "Eulerian Perspective"
+  - "Hashed Probability Pyramids"
+  - "Control Variate Gradient Estimation"
 date: 2026-05-08
-content_hash: 2cd96732e2f3d6f8
+content_hash: 61dd773426245b92
 ---
+
 # Eulerian Gaussian Splatting using Hashed Probability Pyramids
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ Conducted on 6 mip-NeRF 360 scenes (3 outdoor + 3 indoor):
 ## Related Papers
 
 - [\[CVPR 2026\] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting](idesplat_iterative_depth_probability_estimation_for_generalizable_3d_gaussian_sp.md)
-- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
-- [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
+- [\[CVPR 2026\] Event Stream Filtering via Probability Flux Estimation](event_stream_filtering_via_probability_flux_estimation.md)
+- [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
+- [\[CVPR 2026\] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM](odgs-slam_omnidirectional_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] Learning Differentiable Hierarchies in 3D Gaussian Splatting](learning_differentiable_hierarchies_in_3d_gaussian_splatting.md)
 
 </div>
 

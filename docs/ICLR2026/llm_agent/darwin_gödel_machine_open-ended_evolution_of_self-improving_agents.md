@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents
 description: >-
-  [ICLR 2026][LLM Agent][Darwin Gödel Machine] DGM enables a programming agent to continuously rewrite its own codebase to improve its code-modification capabilities. It replaces the theoretically infeasible "formal proof" of the Gödel Machine with the empirical evidence of "benchmark performance." By maintaining an ever-growing archive of agents for open-ended exp
+  [ICLR 2026][LLM Agent][Self-improvement] DGM enables a programming agent to continuously rewrite its own codebase to improve its code-modification capabilities. It replaces the theoretically infeasible "formal proof" of the Gödel Machine with the empirical evidence of "benchmark performance." By maintaining an ever-growing archive of agents for open-ended exploration, it pushes SWE-bench from 20.0% to 50.0% and Polyglot from 14.2% to 30.7%.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Darwin Gödel Machine
-  - SWE-bench
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Self-improvement"
+  - "programming agents"
+  - "open-ended exploration"
+  - "Darwin Gödel Machine"
+  - "SWE-bench"
 date: 2026-05-08
-content_hash: 51700e2e5a02b605
+content_hash: 8da9d41db0c4e054
 ---
+
 # Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents
 
 **Conference**: ICLR 2026  
@@ -119,6 +123,7 @@ Compared against two baselines removing core components (Figure 2, scores on sub
 - Value: ⭐⭐⭐⭐⭐ A reproducible step towards self-accelerating AI with a practical safety framework.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

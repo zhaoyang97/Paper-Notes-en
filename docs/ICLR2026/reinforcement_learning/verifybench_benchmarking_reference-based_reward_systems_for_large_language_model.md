@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][reward model] Addressing the reference-based reward systems widely used in Large Reasoning Model (LRM) training, this work constructs two benchmarks, VerifyBench and VerifyBench-Hard. Through rigorous human annotation to evaluate the accuracy of various verification systems, it finds that even the strongest models achieve only appro
+  [ICLR 2026][Reinforcement Learning][reward model] Addressing the reference-based reward systems widely used in Large Reasoning Model (LRM) training, this work constructs two benchmarks, VerifyBench and VerifyBench-Hard. Through rigorous human annotation to evaluate the accuracy of various verification systems, it finds that even the strongest models achieve only approximately 88% accuracy on difficult samples, revealing significant room for improvement in current verification…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - reward model
-  - benchmark
-  - verification
-  - LLM
-  - reinforcement-learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "reward model"
+  - "benchmark"
+  - "verification"
+  - "LLM"
+  - "reinforcement-learning"
 date: 2026-05-08
-content_hash: 6628abcc0410534b
+content_hash: d66c761e5cdd119e
 ---
+
 # VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer
 description: >-
-  [ICCV 2025][Video Generation][Diffusion Transformer] To address the difficulty of decoupling motion from appearance in DiT models with 3D full-attention…
+  [ICCV 2025][Video Generation][Diffusion Transformer] To address the difficulty of decoupling motion from appearance in DiT models with 3D full-attention, this paper proposes Shared Temporal Kernels and a Dense Point Tracking Loss, along with a comprehensive motion transfer benchmark MTBench and a hybrid motion fidelity metric.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "trajectory tracking"
   - "benchmark"
 date: 2026-05-08
-content_hash: cda3e18c3fd21d83
+content_hash: 0fa68697460c5d97
 ---
 
 # Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer
@@ -157,11 +157,11 @@ The model is trained on a single source video for 500 steps using AdamW optimize
 
 ## Related Papers
 
+- [\[CVPR 2025\] DiTFlow: Video Motion Transfer with Diffusion Transformers](../../CVPR2025/video_generation/video_motion_transfer_with_diffusion_transformers.md)
+- [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
 - [\[ICCV 2025\] MagicMirror: ID-Preserved Video Generation in Video Diffusion Transformers](magicmirror_id-preserved_video_generation_in_video_diffusion_transformers.md)
 - [\[ICCV 2025\] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models](efficientmt_efficient_temporal_adaptation_for_motion_transfer_in_text-to-video_d.md)
-- [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
-- [\[NeurIPS 2025\] DisMo: Disentangled Motion Representations for Open-World Motion Transfer](../../NeurIPS2025/video_generation/dismo_disentangled_motion_representations_for_openworld_moti.md)
-- [\[CVPR 2026\] I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers](../../CVPR2026/video_generation/interpretable_motion-attentive_maps_spatio-temporally_localizing_concepts_in_vid.md)
+- [\[CVPR 2025\] ConMo: Controllable Motion Disentanglement and Recomposition for Zero-Shot Motion Transfer](../../CVPR2025/video_generation/conmo_controllable_motion_disentanglement_and_recomposition_for_zero-shot_motion.md)
 
 </div>
 

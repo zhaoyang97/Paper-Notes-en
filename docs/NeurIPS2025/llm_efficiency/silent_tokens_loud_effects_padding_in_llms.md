@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Silent Tokens, Loud Effects: Padding in LLMs
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Padding Token] This paper systematically investigates the effects of padding tokens on LLMs when they are not properly masked. The study finds that even a small number of padding tokens can…
+  [NeurIPS 2025][LLM Efficiency][Padding Token] This paper systematically investigates the effects of padding tokens on LLMs when they are not properly masked. The study finds that even a small number of padding tokens can drift hidden-layer representations, degrade generation quality, and unpredictably shift social biases. Critically, 128 padding tokens raise the harmful prompt attack success rate of Llama-3.1-8B from 8% to 77.5%, effectively constituting a jailbreak.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Social Bias"
   - "Inference Deployment"
 date: 2026-05-08
-content_hash: d6963b18b551c594
+content_hash: fc18c24aaaae3651
 ---
 
 # Silent Tokens, Loud Effects: Padding in LLMs
@@ -125,11 +125,11 @@ Given an input $x = \langle t_1, \ldots, t_m \rangle$, a padded variant is const
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
 - [\[ICML 2026\] Ekka: Automated Diagnosis of Silent Errors in LLM Inference](../../ICML2026/llm_efficiency/ekka_automated_diagnosis_of_silent_errors_in_llm_inference.md)
+- [\[ICLR 2026\] Flatter Tokens are More Valuable for Speculative Draft Model Training](../../ICLR2026/llm_efficiency/flatter_tokens_are_more_valuable_for_speculative_draft_model_training.md)
+- [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
+- [\[CVPR 2026\] Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference](../../CVPR2026/llm_efficiency/rejection_mixing_fast_semantic_propagation_of_mask_tokens_for_efficient_dllm_inf.md)
 - [\[NeurIPS 2025\] LooGLE v2: Are LLMs Ready for Real World Long Dependency Challenges?](loogle_v2_are_llms_ready_for_real_world_long_dependency_challenges.md)
-- [\[ICML 2026\] Training-Inference Consistent Segmented Execution for Long-Context LLMs](../../ICML2026/llm_efficiency/training-inference_consistent_segmented_execution_for_long-context_llms.md)
-- [\[ICML 2026\] DOT-MoE: Converting Dense LLMs to MoE with Differentiable Optimal Transport](../../ICML2026/llm_efficiency/dot-moe_differentiable_optimal_transport_for_moefication.md)
 
 </div>
 

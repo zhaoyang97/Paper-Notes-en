@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Adaptive Federated Optimization
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] FedAda2/FedAda2++ proposes efficient server–client joint adaptive optimization for federated learning: client-side local preconditioners are initialized from zero (elimina…
+  [NeurIPS 2025][Optimization][Federated Learning] FedAda2/FedAda2++ proposes efficient server–client joint adaptive optimization for federated learning: client-side local preconditioners are initialized from zero (eliminating server-to-client transmission), with an optional SM3-based memory-efficient compression of local statistics. The method is theoretically shown to achieve the same $O(T^{-1/2})$ convergence rate as full joint adaptivity, while incurring the same communicat…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Memory Efficiency"
   - "Joint Adaptivity"
 date: 2026-05-08
-content_hash: 2e9818e9a4f4f0d8
+content_hash: 51106461456503d3
 ---
 
 # Efficient Adaptive Federated Optimization
@@ -156,7 +156,7 @@ Under a privacy budget of $(\varepsilon, \delta) = (13.1, 0.0025)$, the advantag
 - [\[NeurIPS 2025\] Efficient Adaptive Experimentation with Noncompliance](efficient_adaptive_experimentation_with_noncompliance.md)
 - [\[NeurIPS 2025\] MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System](mar-fl_a_communication_efficient_peer-to-peer_federated_learning_system.md)
 - [\[NeurIPS 2025\] Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients](efficient_federated_learning_against_byzantine_attacks_and_data_heterogeneity_vi.md)
-- [\[NeurIPS 2025\] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds](an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds.md)
+- [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
 
 </div>
 

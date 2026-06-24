@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OpenRSD: Towards Open-prompts for Object Detection in Remote Sensing Images
 description: >-
-  [ICCV 2025][Object Detection][Open-prompt detection] OpenRSD is a general-purpose open-prompt object detection framework for remote sensing that supports both text and image multimodal prompts. It integrates an alignment…
+  [ICCV 2025][Object Detection][Open-prompt detection] OpenRSD is a general-purpose open-prompt object detection framework for remote sensing that supports both text and image multimodal prompts. It integrates an alignment head and a fusion head to balance speed and accuracy, employs a three-stage training pipeline, and is trained on the ORSD+ dataset comprising 470K images. OpenRSD achieves state-of-the-art average performance across seven public benchmarks while maintaining r…
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "multimodal prompts"
   - "self-training"
 date: 2026-05-08
-content_hash: b20b0e2e9496d1a5
+content_hash: 7b1e68b3ad5f83b5
 ---
 
 # OpenRSD: Towards Open-prompts for Object Detection in Remote Sensing Images
@@ -53,8 +53,8 @@ OpenRSD builds upon RTMDet and consists of three core components:
 1. **Multimodal Prompt Construction**
 
    Both text and image prompt inputs are supported:
-   - **Text prompts**: SkyCLIP text encoder extracts embeddings; GPT-4 generates 10–15 diverse text descriptions per category.
-   - **Image prompts**: GT boxes are expanded by a factor of 1.25 and cropped; DINOv2 extracts visual embeddings. A DINOv2+MLP classifier selects the top-100 highest-confidence images as the prompt set.
+    - **Text prompts**: SkyCLIP text encoder extracts embeddings; GPT-4 generates 10–15 diverse text descriptions per category.
+    - **Image prompts**: GT boxes are expanded by a factor of 1.25 and cropped; DINOv2 extracts visual embeddings. A DINOv2+MLP classifier selects the top-100 highest-confidence images as the prompt set.
 
    Prompt embeddings are projected to a 256-dimensional space via independent MLPs. During training, one prompt type is randomly selected per iteration, with 3–7 embeddings randomly sampled per category. Negative categories are randomly sampled to enhance robustness.
 
@@ -73,8 +73,8 @@ OpenRSD builds upon RTMDet and consists of three core components:
 3. **Fusion Head**
 
    A lightweight cross-modal fusion module is introduced to further enhance detection performance. Three layers of cross-attention enable bidirectional interaction between prompt embeddings and image features:
-   - Cross-attention from prompt embeddings to image features
-   - Cross-attention from image features back to updated prompt embeddings
+    - Cross-attention from prompt embeddings to image features
+    - Cross-attention from image features back to updated prompt embeddings
 
    Learnable class embeddings are introduced, mapping randomly assigned category IDs to embeddings, thereby preventing conflicts across tasks of different granularities.
 
@@ -154,11 +154,11 @@ In HBB detection, OpenRSD outperforms YOLO-World-L by an average of 8.7% and run
 
 ## Related Papers
 
+- [\[CVPR 2025\] Small Target Detection Based on Mask-Enhanced Attention Fusion of Visible and Infrared Remote Sensing Images](../../CVPR2025/object_detection/small_target_detection_based_on_mask-enhanced_attention_fusion_of_visible_and_in.md)
+- [\[CVPR 2026\] Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images](../../CVPR2026/object_detection/balanced_hierarchical_contrastive_learning_with_decoupled_queries_for_fine-grain.md)
 - [\[CVPR 2026\] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](../../CVPR2026/object_detection/fourier_angle_alignment_for_oriented_object_detection_in_remote_sensing.md)
 - [\[AAAI 2026\] SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection](../../AAAI2026/object_detection/sm3det_a_unified_model_for_multi-modal_remote_sensing_object_detection.md)
-- [\[ICCV 2025\] 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection](3dmood_lifting_2d_to_3d_for_monocular_openset_object_detecti.md)
-- [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
-- [\[ICCV 2025\] Adversarial Attention Perturbations for Large Object Detection Transformers](adversarial_attention_perturbations_for_large_object_detection_transformers.md)
+- [\[ECCV 2024\] MutDet: Mutually Optimizing Pre-training for Remote Sensing Object Detection](../../ECCV2024/object_detection/mutdet_mutually_optimizing_pre-training_for_remote_sensing_object_detection.md)
 
 </div>
 

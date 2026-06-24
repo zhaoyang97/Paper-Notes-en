@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] FlexGuard: Continuous Risk Scoring for Strictness-Adaptive LLM Content Moderation
 description: >-
-  [ACL 2026][LLM Safety][Reinforcement Learning] FlexGuard proposes an LLM moderation model that outputs continuous risk scores (0-100) instead of binary safe/unsafe judgements. Through distillation guided by scoring rubrics and GRPO risk alignment training, it achieves SOTA robustness and accuracy across different deployment strictness levels.
+  [ACL 2026][LLM Safety][Content Moderation] FlexGuard proposes an LLM moderation model that outputs continuous risk scores (0-100) instead of binary safe/unsafe judgements. Through distillation guided by scoring rubrics and GRPO risk alignment training, it achieves SOTA robustness and accuracy across different deployment strictness levels.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Content Moderation"
+  - "Continuous Risk Scoring"
+  - "Strictness Adaptive"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 12a8f7e4d28593b5
+content_hash: e5118af5fdd109fa
 ---
+
 # FlexGuard: Continuous Risk Scoring for Strictness-Adaptive LLM Content Moderation
 
 **Conference**: ACL 2026  
@@ -148,8 +152,8 @@ Two-stage training: Stage 1 standard SFT with LoRA; Stage 2 GRPO using a combine
 ## Related Papers
 
 - [\[ACL 2026\] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)
-- [\[ACL 2026\] CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation](caro_chain-of-analogy_reasoning_optimization_for_robust_content_moderation.md)
 - [\[ICLR 2026\] ExpGuard: LLM Content Moderation in Specialized Domains](../../ICLR2026/llm_safety/expguard_llm_content_moderation_in_specialized_domains.md)
+- [\[ACL 2026\] CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation](caro_chain-of-analogy_reasoning_optimization_for_robust_content_moderation.md)
 - [\[ACL 2026\] RISK: A Framework for GUI Agents in E-commerce Risk Management](risk_a_framework_for_gui_agents_in_e-commerce_risk_management.md)
 - [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
 

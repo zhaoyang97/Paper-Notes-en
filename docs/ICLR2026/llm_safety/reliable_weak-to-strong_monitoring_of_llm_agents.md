@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reliable Weak-to-Strong Monitoring of LLM Agents
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes Monitor Red Teaming (MRT), a standardized "stress test" workflow utilizing threat models, evasion strategies, and two sabotage benchmarks (including the newly created computer-use benchmark CUA-SHADE-Arena). It systematically tests monitoring systems designed to detect "covert sabotage" by LLM agent
+  [ICLR 2026][LLM Safety][Monitor Red Teaming] This paper proposes Monitor Red Teaming (MRT), a standardized "stress test" workflow utilizing threat models, evasion strategies, and two sabotage benchmarks (including the newly created computer-use benchmark CUA-SHADE-Arena). It systematically tests monitoring systems designed to detect "covert sabotage" by LLM agents and introduces a "hierarchical + sequential" hybrid monitoring scaffold, enabling weaker models to reliably super…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Monitor Red Teaming"
+  - "Sabotage Detection"
+  - "Weak-to-Strong Monitoring"
+  - "Monitoring Scaffold"
+  - "Human-in-the-loop"
 date: 2026-05-08
-content_hash: 6c0288fa206ed254
+content_hash: 388b12eaeb5550ee
 ---
+
 # Reliable Weak-to-Strong Monitoring of LLM Agents
 
 **Conference**: ICLR 2026  
@@ -129,14 +135,17 @@ Robustness comparison of four scaffolds across attack/dataset configurations (Qu
 
 <div class="related-papers" markdown="1">
 
-- **The AI Control Framework** (Bucknall & Dickinson 2024)
-- **Monitoring AI Agents with LLMs** (Kutasov et al. 2025)
-- **AIDe-Bench: Evaluating LLM Agents in Computer Use** (2024)
+## Related Papers
+
+- [\[ICLR 2026\] Monitoring Decomposition Attacks with Lightweight Sequential Monitors](monitoring_decomposition_attacks_with_lightweight_sequential_monitors.md)
+- [\[ICLR 2026\] Searching for Privacy Risks in LLM Agents via Simulation](searching_for_privacy_risks_in_llm_agents_via_simulation.md)
+- [\[AAAI 2026\] iSeal: Encrypted Fingerprinting for Reliable LLM Ownership Verification](../../AAAI2026/llm_safety/iseal_encrypted_fingerprinting_for_reliable_llm_ownership_verification.md)
+- [\[ACL 2026\] XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts](../../ACL2026/llm_safety/xmark_reliable_multi-bit_watermarking_for_llm-generated_texts.md)
+- [\[ICLR 2026\] The Alignment Waltz: Jointly Training Agents to Collaborate for Safety](the_alignment_waltz_jointly_training_agents_to_collaborate_for_safety.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Monitoring Decomposition Attacks with Lightweight Sequential Monitors](monitoring_decomposition_attacks_with_lightweight_sequential_monitors.md)

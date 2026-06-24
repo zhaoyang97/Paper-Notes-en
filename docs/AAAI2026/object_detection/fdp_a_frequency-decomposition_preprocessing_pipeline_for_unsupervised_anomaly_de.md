@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI
 description: >-
-  [AAAI 2026][Object Detection][Unsupervised Anomaly Detection] This work presents the first systematic frequency-domain analysis of brain MRI anomalies…
+  [AAAI 2026][Object Detection][Unsupervised Anomaly Detection] This work presents the first systematic frequency-domain analysis of brain MRI anomalies, demonstrating that lesions are predominantly concentrated in low-frequency components. Based on this finding, the authors propose the **Frequency Decomposition Preprocessing (FDP)** framework, which reconstructs low-frequency signals via a learnable prior context bank to suppress lesions while preserving anatomical structures.…
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Frequency Decomposition"
   - "Diffusion Models"
 date: 2026-05-08
-content_hash: bebef47f9d81664c
+content_hash: b5a9c95afe0dc5cc
 ---
 
 # FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI
@@ -185,8 +185,8 @@ Sensitivity analysis of $m_{\text{FRM}}$:
 - [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
 - [\[AAAI 2026\] Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection](towards_multiple_missing_values-resistant_unsupervised_graph_anomaly_detection.md)
 - [\[AAAI 2026\] AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture](aquasentinel_next-generation_ai_system_integrating_sensor_ne.md)
-- [\[CVPR 2026\] Toward Generalizable Whole Brain Representations with High-Resolution Light-Sheet Data](../../CVPR2026/object_detection/toward_generalizable_whole_brain_representations_with_high-resolution_light-shee.md)
-- [\[AAAI 2026\] PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts](promptmoe_generalizable_zero-shot_anomaly_detection_via_visually-guided_prompt_m.md)
+- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](../../CVPR2026/object_detection/gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
+- [\[CVPR 2025\] TailedCore: Few-Shot Sampling for Unsupervised Long-Tail Noisy Anomaly Detection](../../CVPR2025/object_detection/tailedcore_few-shot_sampling_for_unsupervised_long-tail_noisy_anomaly_detection.md)
 
 </div>
 

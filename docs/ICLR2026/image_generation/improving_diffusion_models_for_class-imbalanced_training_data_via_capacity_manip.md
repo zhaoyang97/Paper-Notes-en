@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper identifies that the root cause of minority class collapse in diffusion models trained on long-tail data is "model capacity being monopolized by majority classes." It proposes Capacity Manipulation (CM): using LoRA-like low-rank decomposition to explicitly split parameters into "general/majority" and "minorit
+  [ICLR 2026][Image Generation][Diffusion Models] This paper identifies that the root cause of minority class collapse in diffusion models trained on long-tail data is "model capacity being monopolized by majority classes." It proposes Capacity Manipulation (CM): using LoRA-like low-rank decomposition to explicitly split parameters into "general/majority" and "minority expert" components, then employing consistency and diversity losses to force minority class knowledge into the…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Class Imbalance"
+  - "Model Capacity Allocation"
+  - "Low-rank Decomposition"
+  - "Minority Classes"
 date: 2026-05-08
-content_hash: b27266b3f1c0b7e0
+content_hash: 413e1c9d6d743758
 ---
+
 # Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation
 
 **Conference**: ICLR 2026  
@@ -128,11 +133,11 @@ Comparison with low-rank variants: CBDM($\theta^g\oplus\theta^e$) 10.231, CBDM(L
 
 ## Related Papers
 
+- [\[ICLR 2026\] WILD-Diffusion: A WDRO-inspired Training Method for Limited Data Diffusion Models](wild-diffusion_a_wdro_inspired_training_method_for_diffusion_models_under_limite.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
+- [\[ICLR 2026\] Diagnosing and Improving Diffusion Models by Estimating the Optimal Loss Value](diagnosing_and_improving_diffusion_models_by_estimating_the_optimal_loss_value.md)
 - [\[ICLR 2026\] OmniText: A Training-Free Generalist for Controllable Text-Image Manipulation](omnitext_a_training-free_generalist_for_controllable_text-image_manipulation.md)
 - [\[ICLR 2026\] Quantization-Aware Diffusion Models for Maximum Likelihood Training](quantization-aware_diffusion_models_for_maximum_likelihood_training.md)
-- [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](../../ICML2026/image_generation/guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
-- [\[ICLR 2026\] Steer Away From Mode Collisions: Improving Composition In Diffusion Models](steer_away_from_mode_collisions_improving_composition_in_diffusion_models.md)
-- [\[ICLR 2026\] AEGIS: Adversarial Target-Guided Retention-Data-Free Robust Concept Erasure from Diffusion Models](aegis_adversarial_target-guided_retention-data-free_robust_concept_erasure_from_.md)
 
 </div>
 

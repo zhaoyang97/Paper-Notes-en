@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ViPRA: Video Prediction for Robot Actions
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Flow Matching] ViPRA transforms a video prediction model into a robot policy: it first learns motion-centric discrete latent actions from massive "unlabeled" human/robot videos via self-supervision, then uses a video-language model to jointly predict "future frames + latent action sequences" for pre-training. Finally, a chunked flow
+  [ICLR 2026][Robotics][Latent Actions] ViPRA transforms a video prediction model into a robot policy: it first learns motion-centric discrete latent actions from massive "unlabeled" human/robot videos via self-supervision, then uses a video-language model to jointly predict "future frames + latent action sequences" for pre-training. Finally, a chunked flow matching decoder maps latent actions to continuous actions of specific robots. With only 100–200 teleoperated demonstratio…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "ICLR 2026"
+  - "Robotics"
+  - "Latent Actions"
+  - "Video Prediction"
+  - "Flow Matching"
+  - "Cross-Embodiment"
+  - "Robot Policy"
 date: 2026-05-08
-content_hash: 89a5e5a7e6e9ba03
+content_hash: 2680ccad8b5029b3
 ---
+
 # ViPRA: Video Prediction for Robot Actions
 
 **Conference**: ICLR 2026  
@@ -155,7 +160,7 @@ Data composition ablation (LIBERO-10): Human-Robot co-training success rate 0.79
 - [\[ICML 2026\] From Imagined Futures to Executable Actions: Mixture of Latent Actions for Robot Manipulation](../../ICML2026/robotics/from_imagined_futures_to_executable_actions_mixture_of_latent_actions_for_robot_.md)
 - [\[CVPR 2026\] ORV: 4D Occupancy-centric Robot Video Generation](../../CVPR2026/robotics/orv_4d_occupancy-centric_robot_video_generation.md)
 - [\[ICLR 2026\] MVR: Multi-view Video Reward Shaping for Reinforcement Learning](mvr_multi-view_video_reward_shaping_for_reinforcement_learning.md)
-- [\[CVPR 2026\] Video2Robo: 3DGS-based Synthetic Data from One Video Enables Scalable Robot Learning](../../CVPR2026/robotics/video2robo_3dgs-based_synthetic_data_from_one_video_enables_scalable_robot_learn.md)
+- [\[ICLR 2026\] Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting](actions_as_language_fine-tuning_vlms_into_vlas_without_catastrophic_forgetting.md)
 
 </div>
 

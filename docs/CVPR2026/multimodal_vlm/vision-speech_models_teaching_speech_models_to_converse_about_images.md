@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Vision-Speech Models: Teaching Speech Models to Converse about Images
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] This paper proposes MoshiVis, which uses a set of lightweight gated cross-attention adaptation modules to transform Moshi, a real-time full-duplex speech dialogue large model, into a Vision-Speech Model (VSM) capable of "seeing images and chatting via speech." By utilizing single-stage mixed fine-tuning with "speechles
+  [CVPR 2026][Multimodal VLM][Vision-Speech Models] This paper proposes MoshiVis, which uses a set of lightweight gated cross-attention adaptation modules to transform Moshi, a real-time full-duplex speech dialogue large model, into a Vision-Speech Model (VSM) capable of "seeing images and chatting via speech." By utilizing single-stage mixed fine-tuning with "speechless image-text data + a small amount of image-speech data," the training cost is compressed to one day on 8×H100…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Vision-Speech Models"
+  - "Gated Cross-Attention"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Full-duplex Dialogue"
+  - "Synthetic Speech Dialogue"
 date: 2026-05-08
-content_hash: 47f7500817eb9300
+content_hash: 39038c573863c90e
 ---
+
 # Vision-Speech Models: Teaching Speech Models to Converse about Images
 
 **Conference**: CVPR 2026  
@@ -137,10 +143,17 @@ Voice Quality (MOSNet vs. Audio Proportion):
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[NeurIPS 2025\] Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM](../../NeurIPS2025/multimodal_vlm/watch_and_listen_understanding_audio-visual-speech_moments_with_multimodal_llm.md)
+- [\[ICML 2026\] Vision Language Models Cannot Reason About Physical Transformations](../../ICML2026/multimodal_vlm/vision_language_models_cannot_reason_about_physical_transformation.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
+- [\[ACL 2025\] I See What You Mean: Co-Speech Gestures for Reference Resolution in Multimodal Dialogue](../../ACL2025/multimodal_vlm/i_see_what_you_mean_co-speech_gestures_for_reference_resolution_in_multimodal_di.md)
+- [\[CVPR 2026\] CASPA: Graph-Structured Concept Anchors for Modality-Agnostic Adaptation in Vision-Language Models](caspa_graph-structured_concept_anchors_for_modality-agnostic_adaptation_in_visio.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models](babyvlm-v2_toward_developmentally_grounded_pretraining_and_benchmarking_of_visio.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SafeMoE: Safe Fine-Tuning for MoE LLMs by Aligning Harmful Input Routing
 description: >-
-  [ICLR 2026][LLM Safety][MoE LLM] SafeMoE identifies that MoE LLMs route harmful inputs away from initial safety-critical experts after fine-tuning. By applying KL regularization to the router distribution on harmful instructions, it aligns the fine-tuned model's routing back to the safety-aligned initial model, significantly reducing harmful fine-tuni
+  [ICLR 2026][LLM Safety][MoE LLM] SafeMoE identifies that MoE LLMs route harmful inputs away from initial safety-critical experts after fine-tuning. By applying KL regularization to the router distribution on harmful instructions, it aligns the fine-tuned model's routing back to the safety-aligned initial model, significantly reducing harmful fine-tuning risks with minimal impact on downstream task performance.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - MoE LLM
-  - harmful fine-tuning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "MoE LLM"
+  - "Safety Fine-tuning"
+  - "harmful fine-tuning"
+  - "routing drift"
+  - "safety-critical experts"
 date: 2026-05-08
-content_hash: 88319fbbe541669b
+content_hash: d321274b51e88f4c
 ---
+
 # SafeMoE: Safe Fine-Tuning for MoE LLMs by Aligning Harmful Input Routing
 
 **Conference**: ICLR 2026  

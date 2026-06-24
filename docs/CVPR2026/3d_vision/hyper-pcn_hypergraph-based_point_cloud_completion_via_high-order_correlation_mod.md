@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the issues where Transformers in point cloud completion only model pairwise correlations and fail to reconstruct complex structures in the absence of symmetry priors, Hyper-PCN introduces hypergraphs to **incomplete** point clouds for the first time. It utilizes a Hypergraph Refinement Stack (HyperRS) with t
+  [CVPR 2026][3D Vision][Point Cloud Completion] Addressing the issues where Transformers in point cloud completion only model pairwise correlations and fail to reconstruct complex structures in the absence of symmetry priors, Hyper-PCN introduces hypergraphs to **incomplete** point clouds for the first time. It utilizes a Hypergraph Refinement Stack (HyperRS) with threshold annealing to extract high-order correlations from coarse to fine, and an Anchor-collaborative Hypergraph…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Completion"
+  - "Hypergraph Neural Networks"
+  - "High-Order Correlation"
+  - "Encoder-Decoder"
+  - "3D Shape Reconstruction"
 date: 2026-05-08
-content_hash: 648809acfdd4a731
+content_hash: 8f4549abfdd31f87
 ---
+
 # Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling
 
 **Conference**: CVPR 2026  
@@ -151,10 +157,10 @@ Validation of the two core modules on the PCN dataset:
 ## Related Papers
 
 - [\[CVPR 2026\] Geometric-Aware Hypergraph Reasoning for Novel Class Discovery in Point Cloud Segmentation](geometric-aware_hypergraph_reasoning_for_novel_class_discovery_in_point_cloud_se.md)
-- [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
-- [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
+- [\[CVPR 2026\] Scalable Feature Matching via State Space Modeling and Sparse Correlation](scalable_feature_matching_via_state_space_modeling_and_sparse_correlation.md)
+- [\[AAAI 2026\] Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion](../../AAAI2026/3d_vision/simba_towards_high-fidelity_and_geometrically-consistent_point_cloud_completion_.md)
+- [\[AAAI 2026\] Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective](../../AAAI2026/3d_vision/rethinking_multimodal_point_cloud_completion_a_completion-by-correction_perspect.md)
+- [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](../../AAAI2026/3d_vision/dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
 
 </div>
 

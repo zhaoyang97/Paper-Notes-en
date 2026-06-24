@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DRIVE: Distributional and Retrieval-Augmented Bidding with Value Evaluation
 description: >-
-  [ICML 2026][Reinforcement Learning][Decision Transformer] Addressing the issues of Decision Transformer (DT) methods in real-time bidding, specifically the "Average Action trap" (collapsing effective strategies into a mediocre action) and "erratic bidding in sparse long-tail traffic," DRIVE decouples **candidate action generation** from **final decision-making**. It employs a
+  [ICML 2026][Reinforcement Learning][Auto-bidding] Addressing the issues of Decision Transformer (DT) methods in real-time bidding, specifically the "Average Action trap" (collapsing effective strategies into a mediocre action) and "erratic bidding in sparse long-tail traffic," DRIVE decouples **candidate action generation** from **final decision-making**. It employs a Gaussian Mixture Model (GMM) head to generate multimodal candidates, retrieves candidates from high-quality h…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Decision Transformer
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Auto-bidding"
+  - "Offline Reinforcement Learning"
+  - "Decision Transformer"
+  - "Retrieval-Augmented"
+  - "Value Evaluation"
 date: 2026-05-08
-content_hash: 0000233800ac2155
+content_hash: 72039f77b268ba7f
 ---
+
 # DRIVE: Distributional and Retrieval-Augmented Bidding with Value Evaluation
 
 **Conference**: ICML 2026  
@@ -122,14 +127,17 @@ DRIVE achieves the highest average score (386.6) on standard AuctionNet, signifi
 
 <div class="related-papers" markdown="1">
 
-- **Decision Transformer: Reinforcement Learning via Sequence Modeling** - Chen et al., NeurIPS 2021.
-- **Offline Reinforcement Learning with Implicit Q-Learning** - Kostrikov et al., ICLR 2022.
-- **Batch Reinforcement Learning with Continuity-aware Models** - Fujimoto et al., ICML 2019.
+## Related Papers
+
+- [\[ICLR 2026\] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](../../ICLR2026/reinforcement_learning/enhancing_generative_auto-bidding_with_offline_reward_evaluation_and_policy_sear.md)
+- [\[ICLR 2026\] Distributional value gradients for stochastic environments](../../ICLR2026/reinforcement_learning/distributional_value_gradients_for_stochastic_environments.md)
+- [\[AAAI 2026\] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction](../../AAAI2026/reinforcement_learning/tadarag_task_adaptive_retrieval-augmented_generation_via_on-the-fly_knowledge_gr.md)
+- [\[ACL 2026\] Self-EmoQ: Plutchik-Guided Value-based Planning to Drive Streaming Emotional TTS](../../ACL2026/reinforcement_learning/self-emoq_plutchik-guided_value-based_planning_to_drive_streaming_emotional_tts.md)
+- [\[ICML 2026\] Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning](unifying_value_alignment_and_assignment_in_cross-domain_offline_reinforcement_le.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction](../../AAAI2026/reinforcement_learning/tadarag_task_adaptive_retrieval-augmented_generation_via_on-the-fly_knowledge_gr.md)

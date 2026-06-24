@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper points out that LLMs in multi-agent debates change their stances based on "who said it" rather than "what was said," and quantifies and mitigates this identity-driven bias through response anonymization and the Identity Bias Coefficient (IBC).
+  [ACL 2024 (Note: Input listed ACL 2026, translated as per input data)][Multi-Agent][Multi-Agent Debate] This paper points out that LLMs in multi-agent debates change their stances based on "who said it" rather than "what was said," and quantifies and mitigates this identity-driven bias through response anonymization and the Identity Bias Coefficient (IBC).
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2024 (Note: Input listed ACL 2026, translated as per input data)"
+  - "Multi-Agent"
+  - "Multi-Agent Debate"
+  - "Identity Bias"
+  - "Anonymization"
+  - "Conformity"
+  - "Self-Bias"
 date: 2026-05-08
-content_hash: 04ea0cc1cadaf987
+content_hash: 5cfba434018d8514
 ---
+
 # When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning
 
 **Conference**: ACL 2024 (Note: Input listed ACL 2026, translated as per input data)
@@ -129,11 +135,11 @@ Key ablations involve comparing protocols, rounds of divergence, heterogeneous a
 
 ## Related Papers
 
+- [\[ICLR 2026\] MAD-Logic: Multi-Agent Debate Enhances Symbolic Translation and Reasoning](../../ICLR2026/multi_agent/mad-logic_multi-agent_debate_enhances_symbolic_translation_and_reasoning.md)
 - [\[ACL 2026\] Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate](latent_agents_a_post-training_procedure_for_internalized_multi-agent_debate.md)
-- [\[ICML 2025\] From Debate to Equilibrium: Belief-Driven Multi-Agent LLM Reasoning via Bayesian Nash Equilibrium](../../ICML2025/multi_agent/from_debate_to_equilibrium_belief-driven_multi-agent_llm_reasoning_via_bayesian_.md)
 - [\[ICLR 2026\] Aligned Agents, Biased Swarm: Measuring Bias Amplification in Multi-Agent Systems](../../ICLR2026/multi_agent/aligned_agents_biased_swarm_measuring_bias_amplification_in_multi-agent_systems.md)
-- [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](../../AAAI2026/multi_agent/beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
-- [\[ACL 2026\] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection](debating_the_unspoken_role-anchored_multi-agent_reasoning_for_half-truth_detecti.md)
+- [\[ICLR 2026\] Multi-Agent Debate with Memory Masking (MAD-M²)](../../ICLR2026/multi_agent/multi-agent_debate_with_memory_masking.md)
+- [\[ICML 2025\] From Debate to Equilibrium: Belief-Driven Multi-Agent LLM Reasoning via Bayesian Nash Equilibrium](../../ICML2025/multi_agent/from_debate_to_equilibrium_belief-driven_multi-agent_llm_reasoning_via_bayesian_.md)
 
 </div>
 

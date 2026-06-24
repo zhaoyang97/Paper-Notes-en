@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos
 description: >-
-  [ICLR 2026][3D Vision][4D Gaussian Splatting] This work is the first to address the problem of reconstructing renderable 4D HDR scenes from pose-less alternating-exposure monocular videos. Through a two-stage optimization (orthographic video space → world space), a Video-to-World Gaussian transformation strategy, and temporal luminance regularization, it achieves
+  [ICLR 2026][3D Vision][4D Gaussian Splatting] This work is the first to address the problem of reconstructing renderable 4D HDR scenes from pose-less alternating-exposure monocular videos. Through a two-stage optimization (orthographic video space → world space), a Video-to-World Gaussian transformation strategy, and temporal luminance regularization, it achieves 37.64 dB HDR PSNR and 161 FPS on synthetic data, significantly outperforming existing methods.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - HDR
-  - monocular video
-  - alternating exposure
-  - dynamic scene
+  - "ICLR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "HDR"
+  - "monocular video"
+  - "alternating exposure"
+  - "dynamic scene"
 date: 2026-05-08
-content_hash: b115ff2856a70b18
+content_hash: c19ec1c6b5dd5e59
 ---
+
 # Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos
 
 **Conference**: ICLR 2026  
@@ -150,7 +151,7 @@ Dynamic representation: Cubic Hermite splines (position) + cubic polynomials (ro
 - [\[ICLR 2026\] Dynamic Novel View Synthesis in High Dynamic Range](dynamic_novel_view_synthesis_in_high_dynamic_range.md)
 - [\[ICLR 2026\] ShapeGen4D: Towards High Quality 4D Shape Generation from Videos](shapegen4d_towards_high_quality_4d_shape_generation_from_videos.md)
 - [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
-- [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
+- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](../../CVPR2026/3d_vision/learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching
 description: >-
-  [3D Vision] This paper systematically analyzes three key problems in monocular prior fusion—affine-invariant vs. absolute depth alignment, local optima in iterative updates…
+  [3D Vision] This paper systematically analyzes three key problems in monocular prior fusion—affine-invariant vs. absolute depth alignment, local optima in iterative updates, and noisy disparity interference—and proposes a Binary Local Ranking Map and a Global Registration Module. On SceneFlow→Middlebury/Booster generalization benchmarks, bad2 error is reduced by half or more with negligible additional computational cost.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 52b4d66a6e5ef667
+content_hash: 5029e8b6a3c9dae9
 ---
 
 # Diving into the Fusion of Monocular Priors for Generalized Stereo Matching

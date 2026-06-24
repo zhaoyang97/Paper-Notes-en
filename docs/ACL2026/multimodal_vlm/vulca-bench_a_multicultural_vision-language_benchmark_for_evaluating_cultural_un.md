@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] VULCA-Bench utilizes 8 cultural traditions, 7,410 image-bilingual expert critique pairs, and an L1-L5 five-layer cultural understanding framework to advance VLM evaluation from "seeing objects" to "understanding symbols, history, and aesthetic philosophy," revealing that existing models typically drop 31-40 percentage
+  [ACL2026][Multimodal VLM][Multicultural evaluation] VULCA-Bench utilizes 8 cultural traditions, 7,410 image-bilingual expert critique pairs, and an L1-L5 five-layer cultural understanding framework to advance VLM evaluation from "seeing objects" to "understanding symbols, history, and aesthetic philosophy," revealing that existing models typically drop 31-40 percentage points on high-level cultural reasoning.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Multicultural evaluation"
+  - "Vision-Language Models"
+  - "Art criticism"
+  - "Cultural understanding"
+  - "Cross-cultural fairness"
 date: 2026-05-08
-content_hash: 1ae1d98650d2cc68
+content_hash: 34d1af0147c66b47
 ---
+
 # VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding
 
 **Conference**: ACL2026  
@@ -136,8 +141,8 @@ The paper lacks traditional ablation for model training but includes analyses of
 - [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](../../CVPR2026/multimodal_vlm/enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
 - [\[ACL 2025\] Evaluating Visual and Cultural Interpretation: The K-Viscuit Benchmark with Human-VLM Collaboration](../../ACL2025/multimodal_vlm/evaluating_visual_and_cultural_interpretation_the_k-viscuit_benchmark_with_human.md)
 - [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
+- [\[ICLR 2026\] IndicVisionBench: Benchmarking Cultural and Multilingual Understanding in VLMs](../../ICLR2026/multimodal_vlm/indicvisionbench_benchmarking_cultural_and_multilingual_understanding_in_vlms.md)
 - [\[CVPR 2026\] Flat-Pack Bench: Evaluating Spatio-Temporal Understanding in Large Vision-Language Models through Furniture Assembly](../../CVPR2026/multimodal_vlm/flat-pack_bench_evaluating_spatio-temporal_understanding_in_large_vision-languag.md)
-- [\[CVPR 2026\] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](../../CVPR2026/multimodal_vlm/vs_bench_evaluating_vlms_for_strategic_abilities_in_multi_agent_environments.md)
 
 </div>
 

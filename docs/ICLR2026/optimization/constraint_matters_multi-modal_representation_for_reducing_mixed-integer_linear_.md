@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear programming
 description: >-
-  [ICLR 2026][Optimization & Theory][MILP] A MILP model simplification framework based on constraint reduction is proposed. It defines fixed constraint strength $\rho$ and utilizes information gain $\Delta H=-\log\rho$ to identify Critical Tight Constraints (CTC). A multi-modal GNN representation, merging instance-level bipartite graphs with abstract-level type
+  [ICLR2026][Optimization][MILP] A MILP model simplification framework based on constraint reduction is proposed. It defines fixed constraint strength $\rho$ and utilizes information gain $\Delta H=-\log\rho$ to identify Critical Tight Constraints (CTC). A multi-modal GNN representation, merging instance-level bipartite graphs with abstract-level type graphs, is designed to predict CTCs. Across 4 large-scale benchmarks, solution quality ($\text{gap}_\text{abs}$) improved by an…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - MILP
-  - constraint reduction
-  - tight constraint
-  - multi-modal representation
-  - GNN
+  - "ICLR2026"
+  - "Optimization"
+  - "MILP"
+  - "constraint reduction"
+  - "tight constraint"
+  - "multi-modal representation"
+  - "GNN"
 date: 2026-05-08
-content_hash: 18ca727c10bd0ec2
+content_hash: 235b6200514b6731
 ---
+
 # Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear programming
 
 **Conference**: ICLR2026  
@@ -147,11 +148,11 @@ The 250x gap between best and worst fixation underscores that "which constraints
 
 ## Related Papers
 
+- [\[ICLR 2026\] FMIP: Joint Continuous-Integer Flow for Mixed-Integer Linear Programming](fmip_joint_continuous-integer_flow_for_mixed-integer_linear_programming.md)
 - [\[ICML 2026\] Provably Data-Driven Lagrangian Relaxation for Mixed Integer Linear Programming](../../ICML2026/optimization/provably_data-driven_lagrangian_relaxation_for_mixed_integer_linear_programming.md)
+- [\[ICML 2026\] Variational Adapter for Cross-modal Similarity Representation](../../ICML2026/optimization/variational_adapter_for_cross-modal_similarity_representation.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](in-context_multi-objective_optimization.md)
 - [\[ICLR 2026\] Optimizer Choice Matters for the Emergence of Neural Collapse](optimizer_choice_matters_for_the_emergence_of_neural_collapse.md)
-- [\[ICML 2025\] Integer Programming for Generalized Causal Bootstrap Designs](../../ICML2025/optimization/integer_programming_for_generalized_causal_bootstrap_designs.md)
-- [\[ICLR 2026\] Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation](reducing_contextual_stochastic_bilevel_optimization_via_structured_function_appr.md)
-- [\[ICLR 2026\] MILPnet: A Multi-Scale Architecture with Geometric Feature Sequence Representations for Advancing MILP Problems](milpnet_a_multi-scale_architecture_with_geometric_feature_sequence_representatio.md)
 
 </div>
 

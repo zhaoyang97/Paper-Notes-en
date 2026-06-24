@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging
 description: >-
-  [AAAI 2026][Medical Imaging][tongue diagnosis] MIRNet is a framework that integrates self-supervised masked autoencoder (MAE) pre-training with constraint-aware graph attention network (GAT) reasoning for multi-label ton…
+  [AAAI 2026][Medical Imaging][tongue diagnosis] MIRNet is a framework that integrates self-supervised masked autoencoder (MAE) pre-training with constraint-aware graph attention network (GAT) reasoning for multi-label tongue diagnosis. The paper also introduces TongueAtlas-4K, a benchmark dataset of 4,000 images with 22 labels, achieving a 77.8% improvement in Macro Recall and 33.2% in Macro-F1.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "clinically constrained optimization"
   - "multi-label classification"
 date: 2026-05-08
-content_hash: 4d4314b11098cd8b
+content_hash: 7a6f0b000c622724
 ---
 
 # MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging
@@ -149,11 +149,11 @@ MIRNet adopts an encoder-decoder architecture: a MAE pre-trained ViT encoder ext
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Brain Graph Foundation Model: Pre-Training and Prompt-Tuning across Broad Atlases and Disorders](../../ICLR2026/medical_imaging/a_brain_graph_foundation_model_pre-training_and_prompt-tuning_across_broad_atlas.md)
 - [\[AAAI 2026\] Vascular Anatomy-aware Self-supervised Pre-training for X-ray Angiogram Analysis](vascular_anatomy-aware_self-supervised_pre-training_for_x-ray_angiogram_analysis.md)
 - [\[AAAI 2026\] PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation](priorrg_prior-guided_contrastive_pre-training_and_coarse-to-fine_decoding_for_ch.md)
 - [\[AAAI 2026\] Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation](decoding_with_structured_awareness_integrating_directional_frequency-spatial_and.md)
-- [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](../../NeurIPS2025/medical_imaging/cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
-- [\[AAAI 2026\] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis](dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_.md)
+- [\[CVPR 2026\] Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning](../../CVPR2026/medical_imaging/med-cmr_a_fine-grained_benchmark_integrating_visual_evidence_and_clinical_logic_.md)
 
 </div>
 

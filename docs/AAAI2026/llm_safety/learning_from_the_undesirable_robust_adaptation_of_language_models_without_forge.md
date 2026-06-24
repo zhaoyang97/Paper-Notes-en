@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting
 description: >-
-  [AAAI 2026][LLM Safety][Supervised Fine-Tuning] This paper proposes Learning-from-the-Undesirable (LfU), a regularization method for SFT that simulates "undesirable behavior" by applying gradient ascent to an auxiliary m…
+  [AAAI 2026][LLM Safety][Supervised Fine-Tuning] This paper proposes Learning-from-the-Undesirable (LfU), a regularization method for SFT that simulates "undesirable behavior" by applying gradient ascent to an auxiliary model, then enforces representation-level consistency between the original and auxiliary models via an MSE loss. This effectively mitigates overfitting, catastrophic forgetting, and adversarial fragility in limited-data fine-tuning.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Retention"
   - "Adversarial Robustness"
 date: 2026-05-08
-content_hash: 005f32191fa54053
+content_hash: 5de9c53d3ba029ec
 ---
 
 # Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting
@@ -149,10 +149,10 @@ $$\ell_{\text{LfU}}(\theta, \theta_{\text{aux}}) = \ell_{\text{SFT}}(\theta) + \
 ## Related Papers
 
 - [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
+- [\[CVPR 2026\] The Blind Spot of Adaptation: Quantifying and Mitigating Forgetting in Fine-tuned Driving Models](../../CVPR2026/llm_safety/blind_spot_of_adaptation_quantifying_and_mitigating_forgetting_in_fine_tuned_driving_models.md)
 - [\[AAAI 2026\] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models](anti-adversarial_learning_desensitizing_prompts_for_large_la.md)
-- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](../../ICML2026/llm_safety/understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
 - [\[ICCV 2025\] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning](../../ICCV2025/llm_safety/latte_collaborative_test-time_adaptation_of_vision-language_models_in_federated_.md)
-- [\[CVPR 2026\] Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting](../../CVPR2026/llm_safety/learning_from_oblivion_predicting_knowledge_overflowed_weights_via_retrodiction_.md)
+- [\[ICLR 2026\] Bi-directional Bias Attribution: Debiasing Large Language Models without Modifying Prompts](../../ICLR2026/llm_safety/bi-directional_bias_attribution_debiasing_large_language_models_without_modifyin.md)
 
 </div>
 

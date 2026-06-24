@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding
 description: >-
-  [ICML 2026][Video Understanding][Reinforcement Learning] Video-MTR is an RL-based **multi-turn reasoning** framework that guides MLLMs to iteratively select key video segments through a **gated dual-level reward mechanism**. It achieves SOTA performance in long video understanding using only **8K data**, outperforming methods that require 257K to 4.4 million samples (improvi
+  [ICML 2026][Video Understanding][Reinforcement Learning] Video-MTR is an RL-based **multi-turn reasoning** framework that guides MLLMs to iteratively select key video segments through a **gated dual-level reward mechanism**. It achieves SOTA performance in long video understanding using only **8K data**, outperforming methods that require 257K to 4.4 million samples (improving data efficiency by two orders of magnitude).
 tags:
-  - ICML 2026
-  - Video Understanding
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Reinforcement Learning"
+  - "Multi-turn Reasoning"
+  - "Long Video Understanding"
+  - "Keyframe Retrieval"
 date: 2026-05-08
-content_hash: 61eb8cd7e4e4b287
+content_hash: 9ef480a8cea22485
 ---
+
 # Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding
 
 **Conference**: ICML 2026  
@@ -149,10 +153,10 @@ Under equal frame budgets, Video-MTR significantly outperforms the Qwen2.5-VL-7B
 ## Related Papers
 
 - [\[AAAI 2026\] ReaSon: Reinforced Causal Search with Information Bottleneck for Video Understanding](../../AAAI2026/video_understanding/reason_reinforced_causal_search_with_information_bottleneck_for_video_understand.md)
-- [\[CVPR 2025\] MLVU: Benchmarking Multi-task Long Video Understanding](../../CVPR2025/video_understanding/mlvu_benchmarking_multi-task_long_video_understanding.md)
+- [\[ICLR 2026\] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding](../../ICLR2026/video_understanding/scalelong_a_multi-timescale_benchmark_for_long_video_understanding.md)
 - [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](../../CVPR2026/video_understanding/worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
-- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](../../CVPR2026/video_understanding/efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[CVPR 2026\] Video Panels for Long Video Understanding](../../CVPR2026/video_understanding/video_panels_for_long_video_understanding.md)
+- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](../../NeurIPS2025/video_understanding/vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
+- [\[CVPR 2025\] MLVU: Benchmarking Multi-task Long Video Understanding](../../CVPR2025/video_understanding/mlvu_benchmarking_multi-task_long_video_understanding.md)
 
 </div>
 

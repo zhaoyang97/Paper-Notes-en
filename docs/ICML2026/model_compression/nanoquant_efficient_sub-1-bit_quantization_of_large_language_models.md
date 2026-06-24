@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models
 description: >-
-  [ICML 2026][Model Compression][ADMM] NanoQuant reformulates weight quantization as a "low-rank binary decomposition" problem. It employs Hessian-aware ADMM to precisely initialize $\pm 1$ factors and floating-point scales, followed by block-level STE reconstruction and global-scale KL calibration. Utilizing only 0.26M tokens of calibration data on a singl
+  [ICML 2026][Model Compression][Post-training Quantization] NanoQuant reformulates weight quantization as a "low-rank binary decomposition" problem. It employs Hessian-aware ADMM to precisely initialize $\pm 1$ factors and floating-point scales, followed by block-level STE reconstruction and global-scale KL calibration. Utilizing only 0.26M tokens of calibration data on a single H100 card, it enables PTQ to compress LLMs to true 1-bit or even sub-1-bit for the first time. For…
 tags:
-  - ICML 2026
-  - Model Compression
-  - ADMM
+  - "ICML 2026"
+  - "Model Compression"
+  - "Post-training Quantization"
+  - "Sub-1-bit"
+  - "Low-rank Binary Decomposition"
+  - "ADMM"
+  - "Large Model Deployment"
 date: 2026-05-08
-content_hash: 8b6d5da9d44f62d7
+content_hash: b0a54779758ace47
 ---
+
 # NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models
 
 **Conference**: ICML 2026  
@@ -135,15 +140,16 @@ Evaluation covers Llama-2/3, Gemma-3, Qwen-3, and Rnj-1 families (17 models from
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](../../ICLR2026/model_compression/quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[ICML 2026\] UniSVQ: 2-bit Unified Scalar-Vector Quantization](unisvq_2-bit_unified_scalar-vector_quantization.md)
 - [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
+- [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
-- [\[ICML 2026\] Bounded Hyperbolic Tangent: A Stable and Efficient Alternative to Pre-Layer Normalization in Large Language Models](bounded_hyperbolic_tangent_a_stable_and_efficient_alternative_to_pre-layer_norma.md)
-- [\[ICML 2026\] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs](lfq_logit-aware_final-block_quantization_for_boosting_the_generation_quality_of_.md)
-- [\[ACL 2025\] Outlier-Safe Pre-Training for Robust 4-Bit Quantization of Large Language Models](../../ACL2025/model_compression/outlier-safe_pre-training_for_robust_4-bit_quantization_of_large_language_models.md)
 
 </div>
 

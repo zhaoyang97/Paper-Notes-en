@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FoeGlass: Simple In-Context Learning Is Enough for Red Teaming Audio Deepfake Detectors
 description: >-
-  [ICML 2026][AI Safety][In-Context Learning] FoeGlass transplants the "LLM red-teaming LLM" paradigm to Audio Deepfake Detection (ADD). Without fine-tuning, it utilizes in-context learning combined with realness and diversity feedback to guide a black-box reasoning LLM in generating TTS prompts that deceive detectors. Starting from a cold start, it increases the
+  [ICML 2026][AI Safety][Audio Deepfake Detection] FoeGlass transplants the "LLM red-teaming LLM" paradigm to Audio Deepfake Detection (ADD). Without fine-tuning, it utilizes in-context learning combined with realness and diversity feedback to guide a black-box reasoning LLM in generating TTS prompts that deceive detectors. Starting from a cold start, it increases the False Negative Rate (FNR) of existing detectors from 0% to up to 96%, showing high transferability across eight…
 tags:
-  - ICML 2026
-  - AI Safety
-  - In-Context Learning
+  - "ICML 2026"
+  - "AI Safety"
+  - "Audio Deepfake Detection"
+  - "Red Teaming"
+  - "In-Context Learning"
+  - "TTS Attack"
+  - "Diversity Feedback"
 date: 2026-05-08
-content_hash: 96062463d336c991
+content_hash: 5a4ee97231f1ea86
 ---
+
 # FoeGlass: Simple In-Context Learning Is Enough for Red Teaming Audio Deepfake Detectors
 
 **Conference**: ICML 2026  
@@ -133,11 +138,11 @@ The maximum absolute gain is approximately +94 percentage points. Even for ADDs 
 
 ## Related Papers
 
-- [\[ICML 2026\] Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance](stable-gflownet_toward_diverse_and_robust_llm_red-teaming_via_contrastive_trajec.md)
-- [\[ICML 2026\] Red-Teaming Agent Execution Contexts: Open-World Security Evaluation on OpenClaw](red-teaming_agent_execution_contexts_open-world_security_evaluation_on_openclaw.md)
+- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
 - [\[ICML 2026\] Culturally-Adapted Red-Teaming Across East and Southeast Asian Contexts: A Methodological and Comparative Analysis](culturally-adapted_red-teaming_across_east_and_southeast_asian_contexts_a_method.md)
 - [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](../../CVPR2026/ai_safety/genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
-- [\[CVPR 2026\] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases](../../CVPR2026/ai_safety/red-teaming_retrieval-augmented_diffusion_models_via_poisoning_knowledge_bases.md)
+- [\[ICML 2026\] Red-Teaming Agent Execution Contexts: Open-World Security Evaluation on OpenClaw](red-teaming_agent_execution_contexts_open-world_security_evaluation_on_openclaw.md)
+- [\[ICML 2026\] Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance](stable-gflownet_toward_diverse_and_robust_llm_red-teaming_via_contrastive_trajec.md)
 
 </div>
 

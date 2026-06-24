@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation
 description: >-
-  [ICCV 2025][Image Generation][Taxonomic guidance] TaxaDiffusion leverages the hierarchical structure of biological taxonomy (Kingdom→Phylum→Class→Order→Family→Genus→Species) to progressively train a diffusion model…
+  [ICCV 2025][Image Generation][Taxonomic guidance] TaxaDiffusion leverages the hierarchical structure of biological taxonomy (Kingdom→Phylum→Class→Order→Family→Genus→Species) to progressively train a diffusion model, gradually refining from high-level shared characteristics to species-level subtle distinctions. This approach achieves high-precision fine-grained animal image generation, reducing FID to 31.87 on the FishNet dataset (vs. 43.91 for LoRA)…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "knowledge transfer"
   - "few-shot generation"
 date: 2026-05-08
-content_hash: c6a5713c5b95b5c4
+content_hash: 49a861895d43d3b9
 ---
 
 # TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation
@@ -211,9 +211,9 @@ The transition from Family to Genus preserves shared features (ocular stripes) w
 
 - [\[ICCV 2025\] CharaConsist: Fine-Grained Consistent Character Generation](characonsist_fine-grained_consistent_character_generation.md)
 - [\[ICCV 2025\] ShortFT: Diffusion Model Alignment via Shortcut-based Fine-Tuning](shortft_diffusion_model_alignment_via_shortcut-based_fine-tuning.md)
+- [\[CVPR 2025\] Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models](../../CVPR2025/image_generation/fine-grained_erasure_in_text-to-image_diffusion-based_foundation_models.md)
+- [\[ICLR 2026\] CoCoDiff: Correspondence-Consistent Diffusion Model for Fine-grained Style Transfer](../../ICLR2026/image_generation/cocodiff_correspondence-consistent_diffusion_model_for_fine-grained_style_transf.md)
 - [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
-- [\[ICCV 2025\] UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing](univg_a_generalist_diffusion_model_for_unified_image_generation_and_editing.md)
-- [\[ICCV 2025\] Multimodal Latent Diffusion Model for Complex Sewing Pattern Generation](multimodal_latent_diffusion_model_for_complex_sewing_pattern_generation.md)
 
 </div>
 

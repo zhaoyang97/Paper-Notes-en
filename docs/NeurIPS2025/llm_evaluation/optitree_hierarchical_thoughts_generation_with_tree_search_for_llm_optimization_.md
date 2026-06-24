@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Operations Research Modeling] This paper proposes OptiTree, which organizes hierarchical classification and modeling thoughts for operations research (OR) problems by constructing a modelin…
+  [NeurIPS 2025][LLM Evaluation][Operations Research Modeling] This paper proposes OptiTree, which organizes hierarchical classification and modeling thoughts for operations research (OR) problems by constructing a modeling tree, and employs tree search to adaptively decompose complex problems into sequences of simpler subproblems, achieving significant accuracy gains in optimization modeling tasks for LLMs (exceeding 10% on multiple challenging benchmarks).
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Subproblem Decomposition"
   - "Hierarchical Thoughts"
 date: 2026-05-08
-content_hash: bd1489fc694a0e90
+content_hash: ffe26eb58419a89e
 ---
 
 # OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling
@@ -179,10 +179,10 @@ Efficiency comparison (seconds/problem, IndustryOR):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
+- [\[ACL 2025\] HPSS: Heuristic Prompting Strategy Search for LLM Evaluators](../../ACL2025/llm_evaluation/hpss_heuristic_prompting_strategy_search_for_llm_evaluators.md)
+- [\[ACL 2025\] RealHiTBench: A Comprehensive Realistic Hierarchical Table Benchmark for Evaluating LLM-Based Table Analysis](../../ACL2025/llm_evaluation/realhitbench_a_comprehensive_realistic_hierarchical_table_benchmark_for_evaluati.md)
 - [\[AAAI 2026\] MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search](../../AAAI2026/llm_evaluation/mcts-sql_light-weight_llms_can_master_the_text-to-sql_through_monte_carlo_tree_s.md)
 - [\[NeurIPS 2025\] DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering](dsas_a_universal_plug-and-play_framework_for_attention_optimization_in_multi-doc.md)
-- [\[NeurIPS 2025\] PFΔ: A Benchmark Dataset for Power Flow under Load, Generation, and Topology Variations](pfδ_a_benchmark_dataset_for_power_flow_under_load_generation_and_topology_variat.md)
-- [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](../../ICML2026/llm_evaluation/multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
 
 </div>
 

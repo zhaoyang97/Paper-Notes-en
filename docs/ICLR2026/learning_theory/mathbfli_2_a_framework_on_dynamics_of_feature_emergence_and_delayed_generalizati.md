@@ -1,15 +1,23 @@
 ---
 title: >-
-  [Paper Note] $\mathbf{Li_2}$：刻画特征涌现与延迟泛化动力学的理论框架
+  [Paper Note] $\mathbf{Li_2}$: A Theoretical Framework Characterizing Feature Emergence and Delayed Generalization Dynamics
 description: >-
-  [ICLR 2026][learning_theory][grokking] This paper proposes the $\mathbf{Li_2}$ framework. Starting from the first principles of gradient dynamics in two-layer nonlinear networks, it decomposes grokking (delayed generalization) into three stages: "lazy learning → independent feature learning → interactive feature learning." It proves that the independent sta
+  [ICLR 2026][Learning Theory][grokking] This paper proposes the $\mathbf{Li_2}$ framework. Starting from the first principles of gradient dynamics in two-layer nonlinear networks, it decomposes grokking (delayed generalization) into three stages: "lazy learning → independent feature learning → interactive feature learning." It proves that the independent stage is precisely a gradient ascent on an energy function $E$, where local maxima correspond to emergent features…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - grokking
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Optimization Dynamics"
+  - "grokking"
+  - "delayed generalization"
+  - "feature learning"
+  - "gradient dynamics"
+  - "energy function"
+  - "group representation theory"
+  - "scaling law"
 date: 2026-05-08
-content_hash: d5e634603792e58e
+content_hash: 9dced8aba0a6c9aa
 ---
+
 # $\mathbf{Li_2}$: A Theoretical Framework Characterizing Feature Emergence and Delayed Generalization Dynamics
 
 **Conference**: ICLR 2026  
@@ -110,11 +118,11 @@ which is essentially a **nonlinear Canonical Correlation Analysis (CCA)** betwee
 
 ## Related Papers
 
-- [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
-- [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](transfer_learning_in_infinite_width_feature_learning_networks.md)
-- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
-- [\[ICLR 2026\] FACT: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations](fact_a_first-principles_alternative_to_the_neural_feature_ansatz_for_how_network.md)
-- [\[ICLR 2026\] Two-Layer Convolutional Autoencoders Trained on Normal Data Provably Detect Unseen Anomalies](two-layer_convolutional_autoencoders_trained_on_normal_data_provably_detect_unse.md)
+- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
+- [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
+- [\[ICLR 2026\] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data](a_generalized_geometric_theoretical_framework_of_centroid_discriminant_analysis_.md)
+- [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
+- [\[ICLR 2026\] Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection](reshaping_reasoning_in_llms_a_theoretical_analysis_of_rl_training_dynamics_throu.md)
 
 </div>
 

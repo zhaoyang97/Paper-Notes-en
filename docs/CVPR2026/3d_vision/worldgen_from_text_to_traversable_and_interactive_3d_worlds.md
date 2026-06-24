@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WorldGen: From Text to Traversable and Interactive 3D Worlds
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] WorldGen decomposes the "Text → Traversable, Editable 3D World" process into a four-stage pipeline: "Procedural Layout → Navmesh-conditioned Global Reconstruction → Scene Decomposition → Per-object Enhancement." It utilizes an LLM-driven procedural generator to fix traversable structures first, then employs image gener
+  [CVPR 2026][3D Vision][Text-to-3D Worlds] WorldGen decomposes the "Text → Traversable, Editable 3D World" process into a four-stage pipeline: "Procedural Layout → Navmesh-conditioned Global Reconstruction → Scene Decomposition → Per-object Enhancement." It utilizes an LLM-driven procedural generator to fix traversable structures first, then employs image generators and image-to-3D priors to complete appearance and details. It produces a $50\times50$ meter scene—directly impor…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Text-to-3D Worlds"
+  - "Navigable Scenes"
+  - "navmesh-conditioned generation"
+  - "Compositional 3D Reconstruction"
+  - "Game Assets"
 date: 2026-05-08
-content_hash: 562066ebf52c2f4e
+content_hash: 60e6cda1d09e88b9
 ---
+
 # WorldGen: From Text to Traversable and Interactive 3D Worlds
 
 **Conference**: CVPR 2026  
@@ -153,9 +159,9 @@ On a benchmark of 50 procedural scenes ($50\times50$m), navmeshes extracted from
 
 - [\[CVPR 2026\] Text–Image Conditioned 3D Generation](text-image_conditioned_3d_generation.md)
 - [\[ICCV 2025\] Text2VDM: Text to Vector Displacement Maps for Expressive and Interactive 3D Sculpting](../../ICCV2025/3d_vision/text2vdm_text_to_vector_displacement_maps_for_expressive_and_interactive_3d_scul.md)
+- [\[CVPR 2026\] DynamicTree: Interactive Real Tree Animation via Sparse Voxel Spectrum](dynamictree_interactive_real_tree_animation_via_sparse_voxel_spectrum.md)
 - [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
 - [\[CVPR 2026\] Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation](are_we_ready_for_rl_in_text-to-3d_generation_a_progressive_investigation.md)
-- [\[CVPR 2026\] DynamicTree: Interactive Real Tree Animation via Sparse Voxel Spectrum](dynamictree_interactive_real_tree_animation_via_sparse_voxel_spectrum.md)
 
 </div>
 

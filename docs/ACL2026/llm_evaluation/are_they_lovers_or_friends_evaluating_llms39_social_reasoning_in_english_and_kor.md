@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes the SCRIPTS benchmark, containing 1.1K English and Korean movie dialogues, to evaluate the social relation reasoning capabilities of 9 LLMs through three-tier probabilistic labels (HIGHLY LIKELY / LESS LIKELY / UNLIKELY). The study finds that models achieve only 75-80% accuracy in English and 58-69%
+  [ACL 2026][LLM Evaluation][Social relation reasoning] This paper proposes the SCRIPTS benchmark, containing 1.1K English and Korean movie dialogues, to evaluate the social relation reasoning capabilities of 9 LLMs through three-tier probabilistic labels (HIGHLY LIKELY / LESS LIKELY / UNLIKELY). The study finds that models achieve only 75-80% accuracy in English and 58-69% in Korean, and CoT or reasoning-based models provide almost no benefit for social reasoning.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Social relation reasoning"
+  - "cross-lingual analysis"
+  - "movie dialogues"
+  - "cultural dependency"
 date: 2026-05-08
-content_hash: 62b82878d0a92f44
+content_hash: 1c84c34609a0f329
 ---
+
 # Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues
 
 **Conference**: ACL 2026  
@@ -121,14 +126,14 @@ Providing auxiliary social information (age/gender, relationship dimensions, etc
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[AAAI 2026\] Where Norms and References Collide: Evaluating LLMs on Normative Reasoning](../../AAAI2026/llm_evaluation/where_norms_and_references_collide_evaluating_llms_on_normative_reasoning.md)
+- [\[ICLR 2026\] Culture in Action: Evaluating Text-to-Image Models through Social Activities](../../ICLR2026/llm_evaluation/culture_in_action_evaluating_text-to-image_models_through_social_activities.md)
 - [\[ACL 2026\] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics](evaluating_legal_reasoning_traces_with_legal_issue_tree_rubrics.md)
+- [\[AAAI 2026\] Where Norms and References Collide: Evaluating LLMs on Normative Reasoning](../../AAAI2026/llm_evaluation/where_norms_and_references_collide_evaluating_llms_on_normative_reasoning.md)
 - [\[ACL 2026\] Evaluating Reasoning Models for Queries with Presuppositions](evaluating_reasoning_models_for_queries_with_presuppositions.md)
-- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
 
 </div>

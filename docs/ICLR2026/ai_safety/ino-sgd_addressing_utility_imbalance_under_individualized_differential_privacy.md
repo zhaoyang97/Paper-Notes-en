@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy
 description: >-
-  [ICLR 2026][AI Safety][Individualized DP] This paper identifies that "Individualized Differential Privacy" (IDP) creates utility imbalances even when the training set itself is balanced—data with stricter privacy requirements becomes severely underrepresented. The authors propose INO-SGD: sorting gradients by loss within each batch and applying "continuous" do
+  [ICLR 2026][AI Safety][Individualized DP] This paper identifies that "Individualized Differential Privacy" (IDP) creates utility imbalances even when the training set itself is balanced—data with stricter privacy requirements becomes severely underrepresented. The authors propose INO-SGD: sorting gradients by loss within each batch and applying "continuous" down-weighting to unimportant gradients. This compensates the utility of more private groups while strictly satisfying t…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Individualized DP
-  - DP-SGD
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Individualized DP"
+  - "DP-SGD"
+  - "Utility Imbalance"
+  - "Gradient Reweighting"
+  - "Order Statistics"
 date: 2026-05-08
-content_hash: 012d0ede814446d5
+content_hash: 57e1e24a3af06173
 ---
+
 # INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy
 
 **Conference**: ICLR 2026  

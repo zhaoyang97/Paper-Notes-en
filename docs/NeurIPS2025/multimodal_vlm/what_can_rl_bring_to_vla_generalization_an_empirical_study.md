@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] What Can RL Bring to VLA Generalization? An Empirical Study
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLA models] This paper systematically investigates the effect of RL fine-tuning on the generalization capabilities of Vision-Language-Action (VLA) models. The study finds that PPO is the mo…
+  [NeurIPS 2025][Multimodal VLM][VLA models] This paper systematically investigates the effect of RL fine-tuning on the generalization capabilities of Vision-Language-Action (VLA) models. The study finds that PPO is the most effective RL algorithm, significantly outperforming DPO and GRPO; RL yields substantially greater OOD generalization than SFT in semantic understanding and execution robustness, while achieving comparable visual robustness.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "generalization"
   - "robot manipulation"
 date: 2026-05-08
-content_hash: 2ae569179ddedc11
+content_hash: b096348aa1436961
 ---
 
 # What Can RL Bring to VLA Generalization? An Empirical Study
@@ -132,10 +132,10 @@ The study uses OpenVLA (7B parameters, SigLIP+DINOv2 visual encoder + Llama-2 la
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning](can_llms_reason_over_non-text_modalities_in_a_training-free_manner_a_case_study_.md)
-- [\[NeurIPS 2025\] Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling](enhancing_the_outcome_reward-based_rl_training_of_mllms_with_self-consistency_sa.md)
+- [\[ACL 2025\] Can Multimodal Foundation Models Understand Schematic Diagrams? An Empirical Study on Information-Seeking QA over Scientific Papers](../../ACL2025/multimodal_vlm/can_multimodal_foundation_models_understand_schematic_diagrams_an_empirical_stud.md)
+- [\[ACL 2025\] Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings](../../ACL2025/multimodal_vlm/towards_storage-efficient_visual_document_retrieval_an_empirical_study_on_reduci.md)
 - [\[NeurIPS 2025\] ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation](forcevla_enhancing_vla_models_with_a_force-aware_moe_for_contact-rich_manipulati.md)
-- [\[NeurIPS 2025\] To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning](think_or_not_think_a_study_of_explicit_thinking_in_rule-based_visual_reinforceme.md)
+- [\[NeurIPS 2025\] Table2LaTeX-RL: High-Fidelity LaTeX Code Generation from Table Images via Reinforced Multimodal Language Models](table2latex-rl_high-fidelity_latex_code_generation_from_table_images_via_reinfor.md)
 - [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
 
 </div>

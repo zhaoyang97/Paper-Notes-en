@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Soft-Masked Diffusion Language Models
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] Addressing the issue where binary "keep mask or replace with prediction" decisions in Masked Diffusion Language Models (MDLM) discard valuable predictive information, this paper proposes **soft-masking (SM)**. By representing retained `[MASK]` positions as a confidence-weighted convex combination of the `[MASK]` embedd
+  [ICLR 2026][LLM Pretraining][Masked Diffusion Language Models] Addressing the issue where binary "keep mask or replace with prediction" decisions in Masked Diffusion Language Models (MDLM) discard valuable predictive information, this paper proposes **soft-masking (SM)**. By representing retained `[MASK]` positions as a confidence-weighted convex combination of the `[MASK]` embedding and top-k predictions from the previous step, information is propagated across steps. With on…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Masked Diffusion Language Models"
+  - "Soft-masking"
+  - "Continuous Feedback"
+  - "Self-correcting Decoding"
+  - "Code Generation"
 date: 2026-05-08
-content_hash: 1053768878e0753d
+content_hash: 91a4065dad82714c
 ---
+
 # Soft-Masked Diffusion Language Models
 
 **Conference**: ICLR 2026  
@@ -148,8 +154,21 @@ Backbone and SM parameters are updated using Adam with separate learning rates $
 - Value: ⭐⭐⭐⭐ Highly practical for high-throughput diffusion inference with minimal integration cost.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICML 2026\] Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from k-Parity](../../ICML2026/llm_pretraining/tuning_the_implicit_regularizer_of_masked_diffusion_language_models_enhancing_ge.md)
+- [\[ICLR 2026\] Scaling Behavior of Discrete Diffusion Language Models](scaling_behavior_of_discrete_diffusion_language_models.md)
+- [\[ICLR 2026\] Time is a Feature: Exploiting Temporal Dynamics in Diffusion Language Models](time_is_a_feature_exploiting_temporal_dynamics_in_diffusion_language_models.md)
+- [\[ICLR 2026\] Should We Still Pretrain Encoders with Masked Language Modeling?](should_we_still_pretrain_encoders_with_masked_language_modeling.md)
+- [\[ICLR 2026\] Autoregressive Models Rival Diffusion Models at Any-Order Generation](autoregressive_models_rival_diffusion_models_at_any-order_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

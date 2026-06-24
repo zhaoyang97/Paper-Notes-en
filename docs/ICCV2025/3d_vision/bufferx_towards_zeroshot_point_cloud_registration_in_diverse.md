@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BUFFER-X: Towards Zero-Shot Point Cloud Registration in Diverse Scenes
 description: >-
-  [ICCV 2025 (Highlight)][3D Vision][point cloud registration] BUFFER-X is a registration pipeline that determines voxel size and search radii via geometry-adaptive bootstrapping…
+  [ICCV 2025 (Highlight)][3D Vision][point cloud registration] BUFFER-X is a registration pipeline that determines voxel size and search radii via geometry-adaptive bootstrapping, replaces learned keypoint detectors with FPS, and applies patch-level coordinate normalization. Without any manual parameter tuning, it achieves zero-shot point cloud registration across 11 cross-domain datasets, attaining the best average-rank success rate across indoor/outdoor, multi-sensor…
 tags:
   - "ICCV 2025 (Highlight)"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "adaptive parameters"
   - "cross-domain robustness"
 date: 2026-05-08
-content_hash: f15ce4000ed59656
+content_hash: 065ad8b6c8a317cb
 ---
 
 # BUFFER-X: Towards Zero-Shot Point Cloud Registration in Diverse Scenes
@@ -146,10 +146,10 @@ Key takeaway: BUFFER-X **requires no oracle tuning whatsoever**, yet outperforms
 ## Related Papers
 
 - [\[ICCV 2025\] TurboReg: TurboClique for Robust and Efficient Point Cloud Registration](turboreg_turboclique_for_robust_and_efficient_point_cloud_registration.md)
+- [\[CVPR 2025\] ColabSfM: Collaborative Structure-from-Motion by Point Cloud Registration](../../CVPR2025/3d_vision/colabsfm_collaborative_structure-from-motion_by_point_cloud_registration.md)
+- [\[CVPR 2025\] GenPC: Zero-shot Point Cloud Completion via 3D Generative Priors](../../CVPR2025/3d_vision/genpc_zero-shot_point_cloud_completion_via_3d_generative_priors.md)
+- [\[CVPR 2026\] SuP: Sub-cloud Driven Point Cloud Registration](../../CVPR2026/3d_vision/sup_sub-cloud_driven_point_cloud_registration.md)
 - [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](zerostereo_zero-shot_stereo_matching_from_single_images.md)
-- [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
-- [\[ICCV 2025\] Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views](towards_more_diverse_and_challenging_pre-training_for_point_cloud_learning_self-.md)
-- [\[AAAI 2026\] EPSegFZ: Efficient Point Cloud Semantic Segmentation for Few- and Zero-Shot Scenarios](../../AAAI2026/3d_vision/epsegfz_efficient_point_cloud_semantic_segmentation_for_few-_and_zero-shot_scena.md)
 
 </div>
 

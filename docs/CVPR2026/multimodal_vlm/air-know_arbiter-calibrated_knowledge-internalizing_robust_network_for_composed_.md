@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Composed Image Retrieval] Addressing the failure of the traditional "small-loss" assumption in Composed Image Retrieval (CIR) due to "partial matching" noise, this paper uses an MLLM to offline label a high-precision anchor set and distills it into a lightweight Bayesian proxy for online confidence estimation. By diverting training data into "C
+  [CVPR 2026][Multimodal VLM][Composed Image Retrieval] Addressing the failure of the traditional "small-loss" assumption in Composed Image Retrieval (CIR) due to "partial matching" noise, this paper uses an MLLM to offline label a high-precision anchor set and distills it into a lightweight Bayesian proxy for online confidence estimation. By diverting training data into "Clean Alignment" and "Feedback Correction" streams, the method decouples the arbiter from the learner to av…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Composed Image Retrieval
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Composed Image Retrieval"
+  - "Noisy Triplet Correspondence"
+  - "MLLM Arbiter"
+  - "Bayesian Geometric Discrimination"
+  - "Dual-stream Correction"
 date: 2026-05-08
-content_hash: 907d2ca68dee1d17
+content_hash: 5748475e53ea0742
 ---
+
 # Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -139,12 +144,20 @@ CIRR Test Set (Avg(R@5, Rsub@1), %):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- TME: Triplet Match-Enhancer for Composed Image Retrieval, CVPR 2025.
-- HABIT: Harnessing Ambiguity in Triplets for Robust CIR, AAAI 2026.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
+- [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)

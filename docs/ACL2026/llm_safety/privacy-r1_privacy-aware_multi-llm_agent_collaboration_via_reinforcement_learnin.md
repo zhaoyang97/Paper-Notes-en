@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning
 description: >-
-  [ACL 2026][LLM Safety][Reinforcement Learning] Privacy-R1 models the local/remote model delegation for privacy-sensitive queries as a sentence-level sequential decision task. Using a lightweight Transformer policy optimized via PPO, it learns a dynamic trade-off between privacy and task quality, achieving a superior quality-leakage frontier on both PUPA and the hig
+  [ACL 2026][LLM Safety][Privacy Delegation] Privacy-R1 models the local/remote model delegation for privacy-sensitive queries as a sentence-level sequential decision task. Using a lightweight Transformer policy optimized via PPO, it learns a dynamic trade-off between privacy and task quality, achieving a superior quality-leakage frontier on both PUPA and the high-PII-density Med-PCD datasets compared to static rewriting methods.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Privacy Delegation"
+  - "PII Leakage"
+  - "Dynamic Routing"
+  - "Reinforcement Learning"
+  - "Multi-LLM Collaboration"
 date: 2026-05-08
-content_hash: 1142c0cef5fce972
+content_hash: 97bcdb9f000bd1ff
 ---
+
 # Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning
 
 **Conference**: ACL 2026  
@@ -147,9 +152,9 @@ Ablations focused on Med-PCD with the Qwen2-7B local model, verifying the import
 
 - [\[AAAI 2026\] PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration](../../AAAI2026/llm_safety/prism_privacy-aware_routing_for_adaptive_cloud-edge_llm_inference_via_semantic_s.md)
 - [\[ACL 2026\] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)
+- [\[ICLR 2026\] A2ASecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems](../../ICLR2026/llm_safety/a2asecbench_a_protocol-aware_security_benchmark_for_agent-to-agent_multi-agent_s.md)
 - [\[ACL 2026\] Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models](privacy_collapse_benign_fine-tuning_can_break_contextual_privacy_in_language_mod.md)
 - [\[ACL 2025\] Unveiling Privacy Risks in LLM Agent Memory](../../ACL2025/llm_safety/mextra_agent_memory_privacy.md)
-- [\[ICLR 2026\] A2ASecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems](../../ICLR2026/llm_safety/a2asecbench_a_protocol-aware_security_benchmark_for_agent-to-agent_multi-agent_s.md)
 
 </div>
 

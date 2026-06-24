@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Reliable Detection of Empty Space: Conditional Marked Point Processes for Object Detection
 description: >-
-  [ICLR 2026][Object Detection][Paper Note] Object detection is reformulated as a "Conditional Marked Poisson Point Process" (CMPPP), where object centers are points and dimensions/classes are marks. Trained end-to-end via maximum likelihood, the model provides well-calibrated probability estimates for "whether a specific region is truly free of obstacles (passa
+  [ICLR 2026][Object Detection][Marked Point Processes] Object detection is reformulated as a "Conditional Marked Poisson Point Process" (CMPPP), where object centers are points and dimensions/classes are marks. Trained end-to-end via maximum likelihood, the model provides well-calibrated probability estimates for "whether a specific region is truly free of obstacles (passable)" while maintaining detection accuracy comparable to standard detectors.
 tags:
-  - ICLR 2026
-  - Object Detection
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Marked Point Processes"
+  - "Spatial Statistics"
+  - "Confidence Calibration"
+  - "Empty Space Detection"
+  - "Likelihood Training"
 date: 2026-05-08
-content_hash: bf0494dc519a0fcb
+content_hash: cc75cd9bb6d2580b
 ---
+
 # Towards Reliable Detection of Empty Space: Conditional Marked Point Processes for Object Detection
 
 **Conference**: ICLR 2026  
@@ -148,10 +154,20 @@ Standard detectors show an ECE of 0.9915 for empty regions, confirming they are 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](../../CVPR2026/object_detection/akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)
+- [\[CVPR 2026\] Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection](../../CVPR2026/object_detection/foundation_model_priors_enhance_object_focus_in_feature_space_for_source-free_ob.md)
+- [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](../../CVPR2026/object_detection/back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
+- [\[CVPR 2025\] PO3AD: Predicting Point Offsets toward Better 3D Point Cloud Anomaly Detection](../../CVPR2025/object_detection/po3ad_predicting_point_offsets_toward_better_3d_point_cloud_anomaly_detection.md)
+- [\[ICLR 2026\] Point2RBox-v3: Self-Bootstrapping from Point Annotations via Integrated Pseudo-Label Refinement and Utilization](point2rbox-v3_self-bootstrapping_from_point_annotations_via_integrated_pseudo-la.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](../../CVPR2026/object_detection/akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)

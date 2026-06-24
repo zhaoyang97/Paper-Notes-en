@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Transferable Multi-Bit Watermarking Across Frozen Diffusion Models via Latent Consistency Bridges
 description: >-
-  [ICML 2026][Image Generation][Paper Note] DiffMark continuously injects a learned latent space perturbation $\delta$ into each denoising step of a frozen diffusion model, allowing the watermark signal to accumulate in the final latent variable $z_0$. By utilizing a Latent Consistency Model (LCM) as a differentiable training bridge to bypass the backpropagation
+  [ICML2026][Image Generation][Multi-bit Watermarking] DiffMark continuously injects a learned latent space perturbation $\delta$ into each denoising step of a frozen diffusion model, allowing the watermark signal to accumulate in the final latent variable $z_0$. By utilizing a Latent Consistency Model (LCM) as a differentiable training bridge to bypass the backpropagation of 50 DDIM steps, the scheme achieves a 64-bit decoding in 16.4 ms via a single forward pass…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML2026"
+  - "Image Generation"
+  - "Multi-bit Watermarking"
+  - "Frozen Diffusion Models"
+  - "Latent Space Perturbation"
+  - "LCM Differentiable Bridge"
+  - "Cross-Model Transferability"
 date: 2026-05-08
-content_hash: 30884806417920ac
+content_hash: f75023f0e96e5f28
 ---
+
 # Transferable Multi-Bit Watermarking Across Frozen Diffusion Models via Latent Consistency Bridges
 
 **Conference**: ICML2026  
@@ -137,9 +143,9 @@ Evaluation against 6 baselines (StegaStamp / Stable Signature / AquaLoRA / Tree-
 ## Related Papers
 
 - [\[ICML 2026\] Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces](discrete_diffusion_samplers_and_bridges_off-policy_algorithms_and_applications_i.md)
+- [\[ICLR 2026\] Guidance Watermarking for Diffusion Models](../../ICLR2026/image_generation/guidance_watermarking_for_diffusion_models.md)
 - [\[CVPR 2026\] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm](../../CVPR2026/image_generation/scaling_multi-identity_consistency_for_image_customization_via_multi-to-multi_ma.md)
-- [\[ICML 2026\] Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion](geometry-based_schrödinger_bridges_for_trustworthy_multimodal_fusion.md)
-- [\[CVPR 2026\] Resolving Endpoint Underfitting in Diffusion Bridges via Noise Alignment](../../CVPR2026/image_generation/resolving_endpoint_underfitting_in_diffusion_bridges_via_noise_alignment.md)
+- [\[ICLR 2026\] DiffSDA: Unsupervised Diffusion Sequential Disentanglement Across Modalities](../../ICLR2026/image_generation/diffsda_unsupervised_diffusion_sequential_disentanglement_across_modalities.md)
 - [\[ICML 2026\] Latent Diffusion Pretraining for Crystal Property Prediction](latent_diffusion_pretraining_for_crystal_property_prediction.md)
 
 </div>

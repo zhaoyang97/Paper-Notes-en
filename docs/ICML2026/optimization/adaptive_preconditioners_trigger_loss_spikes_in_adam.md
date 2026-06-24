@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adaptive Preconditioners Trigger Loss Spikes in Adam
 description: >-
-  [ICML 2026][Optimization & Theory][loss spike] This paper attributes loss spikes in Adam training to the lag-induced decoupling between the second-moment preconditioner and the current squared gradients, and explains as well as predicts spike occurrences using the curvature of the preconditioned Hessian in the gradient direction.
+  [ICML 2026][Optimization][Adam Optimizer] This paper attributes loss spikes in Adam training to the lag-induced decoupling between the second-moment preconditioner and the current squared gradients, and explains as well as predicts spike occurrences using the curvature of the preconditioned Hessian in the gradient direction.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - loss spike
+  - "ICML 2026"
+  - "Optimization"
+  - "Adam Optimizer"
+  - "loss spike"
+  - "preconditioned Hessian"
+  - "second-moment estimation"
+  - "training stability"
 date: 2026-05-08
-content_hash: 36c9db6a4bf47584
+content_hash: 2c85a1499dc7a331
 ---
+
 # Adaptive Preconditioners Trigger Loss Spikes in Adam
 
 **Conference**: ICML 2026  
@@ -119,10 +124,20 @@ The "ablations" here refer to the analysis of predictive indicators and hyperpar
 - Value: ⭐⭐⭐⭐⭐ Direct implications for large model stability and Adam hyperparameter selection.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
+- [\[ICML 2026\] AdaGC: Enhancing LLM Pretraining Stability via Adaptive Gradient Clipping](adagc_enhancing_llm_pretraining_stability_via_adaptive_gradient_clipping.md)
+- [\[ICML 2026\] Towards Understanding Adam Convergence on Highly Degenerate Polynomials](towards_understanding_adam_convergence_on_highly_degenerate_polynomials.md)
+- [\[ICML 2026\] CLoVE: Personalized Federated Learning through Clustering of Loss Vector Embeddings](clove_personalized_federated_learning_through_clustering_of_loss_vector_embeddin.md)
+- [\[NeurIPS 2025\] Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency](../../NeurIPS2025/optimization/abstain_mask_retain_core_time_series_prediction_by_adaptive.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)

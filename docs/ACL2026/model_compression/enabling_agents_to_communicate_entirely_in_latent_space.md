@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Enabling Agents to Communicate Entirely in Latent Space
 description: >-
-  [ACL 2026][Model Compression][Multi-Agent] This paper proposes Interlat, a framework that enables LLM agents to communicate entirely in latent space. The sender transmits the final layer's hidden states as a continuous representation of "thought." The receiver interprets these latent messages via a communication adapter and further compresses them to just 8 tok
+  [ACL 2026][Model Compression][Latent space communication] This paper proposes Interlat, a framework that enables LLM agents to communicate entirely in latent space. The sender transmits the final layer's hidden states as a continuous representation of "thought." The receiver interprets these latent messages via a communication adapter and further compresses them to just 8 tokens through latent space reasoning while maintaining competitive performance…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Multi-Agent
-  - Inference Acceleration
+  - "ACL 2026"
+  - "Model Compression"
+  - "Latent space communication"
+  - "multi-agent"
+  - "hidden state transmission"
+  - "information compression"
+  - "inference acceleration"
 date: 2026-05-08
-content_hash: 9915bfa205ce2c82
+content_hash: d235be0db2cc88de
 ---
+
 # Enabling Agents to Communicate Entirely in Latent Space
 
 **Conference**: ACL 2026  
@@ -146,11 +150,11 @@ Compression Training: $\mathcal{L}_{compress} = \lambda_{task}\mathcal{L}_{task}
 
 ## Related Papers
 
+- [\[ICLR 2026\] CARE: Covariance-Aware and Rank-Enhanced Decomposition for Enabling Multi-Head Latent Attention](../../ICLR2026/model_compression/care_covariance-aware_and_rank-enhanced_decomposition_for_enabling_multi-head_la.md)
+- [\[ICLR 2026\] LS-Merge: Merging Language Models in Latent Space](../../ICLR2026/model_compression/ls-merge_merging_language_models_in_latent_space.md)
 - [\[CVPR 2026\] TimeRipples: Accelerating vDiTs by Understanding the Spatio-Temporal Correlations in Latent Space](../../CVPR2026/model_compression/timeripples_accelerating_vdits_by_understanding_the_spatio-temporal_correlations.md)
 - [\[ACL 2026\] ProActor: Timing-Aware Reinforcement Learning for Proactive Task Scheduling Agents](proactor_timing-aware_reinforcement_learning_for_proactive_task_scheduling_agent.md)
 - [\[ACL 2026\] IMPACT: Importance-Aware Activation Space Reconstruction](impact_importance-aware_activation_space_reconstruction.md)
-- [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](latent-condensed_transformer_for_efficient_long_context_modeling.md)
-- [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](../../CVPR2026/model_compression/generative_video_compression_with_one-dimensional_latent_representation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimism Without Regularization: Constant Regret in Zero-Sum Games
 description: >-
-  [NeurIPS 2025][Other][Fictitious Play] This paper provides the first proof that Optimistic Fictitious Play without regularization achieves $O(1)$ constant regret in $2\times2$ zero-sum games…
+  [NeurIPS 2025][Other][Fictitious Play] This paper provides the first proof that Optimistic Fictitious Play without regularization achieves $O(1)$ constant regret in $2\times2$ zero-sum games, matching the optimal rate of regularized Optimistic FTRL. It further establishes an $\Omega(\sqrt{T})$ regret lower bound for Alternating Fictitious Play, separating the capabilities of optimism and alternation in the unregularized setting.
 tags:
   - "NeurIPS 2025"
   - "Other"
@@ -12,7 +12,7 @@ tags:
   - "Regret Bounds"
   - "No Regularization"
 date: 2026-05-08
-content_hash: d092618b5496449d
+content_hash: f1dc247191562adc
 ---
 
 # Optimism Without Regularization: Constant Regret in Zero-Sum Games
@@ -73,8 +73,8 @@ $$y^{t+1} = y^t + J \partial\Psi(\tilde{y}^{t+1}), \quad J = \begin{pmatrix} 0 &
 
 where $\tilde{y}^{t+1} = y^t$ (FP) or $\tilde{y}^{t+1} = 2y^t - y^{t-1}$ (OFP).
 
-   - **Standard FP**: Due to the anti-symmetry of $J$, the single-step energy change satisfies $\Delta\Psi \geq 0$ (non-decreasing energy), growing by at least a constant over $\sqrt{T}$ steps.
-   - **Optimistic FP**: When the predicted and actual dual vectors map to the same primal vertex (i.e., $\partial\Psi(y^{t+1}) = \partial\Psi(\tilde{y}^{t+1})$), $\Delta\Psi \leq 0$ (energy non-increasing).
+    - **Standard FP**: Due to the anti-symmetry of $J$, the single-step energy change satisfies $\Delta\Psi \geq 0$ (non-decreasing energy), growing by at least a constant over $\sqrt{T}$ steps.
+    - **Optimistic FP**: When the predicted and actual dual vectors map to the same primal vertex (i.e., $\partial\Psi(y^{t+1}) = \partial\Psi(\tilde{y}^{t+1})$), $\Delta\Psi \leq 0$ (energy non-increasing).
 
 3. **Exploiting the structure of $2\times2$ games**: Using Assumption 1 (any $2\times2$ zero-sum game can be transformed WLOG into the form $\det A = 0$, $a, d > \max\{0, b, c\}$), the dual vectors $y^t$ all lie in the same two-dimensional subspace, enabling planar geometric analysis of OFP's trajectory.
 
@@ -153,9 +153,9 @@ The core argument is that in dual space, the trajectory of $y^t$ is confined to 
 
 - [\[NeurIPS 2025\] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games](efficient_kernelized_learning_in_polyhedral_games_beyond_full-information_from_c.md)
 - [\[NeurIPS 2025\] Reliably Detecting Model Failures in Deployment Without Labels](reliably_detecting_model_failures_in_deployment_without_labels.md)
-- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](../../ICLR2026/learning_theory/function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
-- [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](../../ICML2026/learning_theory/multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
-- [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
+- [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](../../ICLR2026/learning_theory/variational_deep_learning_via_implicit_regularization.md)
+- [\[ICLR 2026\] Differentially Private Equilibrium Finding in Polymatrix Games](../../ICLR2026/learning_theory/differentially_private_equilibrium_finding_in_polymatrix_games.md)
+- [\[ICLR 2026\] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization](../../ICLR2026/learning_theory/memory-statistics_tradeoff_in_continual_learning_with_structural_regularization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][focal loss] The paper proposes Uni-DPO, which introduces a unified adjustment of preference pair weights through quality-aware weighting (prioritizing pairs with high score differences), performance-aware weighting (utilizing focal loss to focus on underfit samples), and a calibrated NLL loss component. Uni-DPO consistently outper
+  [ICLR 2026][Multimodal VLM][DPO improvement] The paper proposes Uni-DPO, which introduces a unified adjustment of preference pair weights through quality-aware weighting (prioritizing pairs with high score differences), performance-aware weighting (utilizing focal loss to focus on underfit samples), and a calibrated NLL loss component. Uni-DPO consistently outperforms DPO and SimPO on text understanding and mathematical reasoning benchmarks. Notably…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - focal loss
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "DPO improvement"
+  - "dynamic weights"
+  - "quality-aware"
+  - "focal loss"
+  - "preference optimization"
 date: 2026-05-08
-content_hash: 778d2a8a87ee9ca6
+content_hash: 89142e700c338962
 ---
+
 # Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs
 
 **Conference**: ICLR 2026  

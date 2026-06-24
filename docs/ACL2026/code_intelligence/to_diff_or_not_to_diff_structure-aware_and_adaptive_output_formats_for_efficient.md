@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] To Diff or Not to Diff? Structure-Aware and Adaptive Output Formats for Efficient LLM-based Code Editing
 description: >-
-  [ACL 2026][Code Intelligence][AdaEdit] This paper treats the "output format" of LLM code editing as a training objective. It proposes BlockDiff, FuncDiff, and an adaptive format selection strategy, AdaEdit. The approach achieves accuracy close to full-code generation while reducing latency and output token costs by over 30% in long-code editing scenarios.
+  [ACL2026 Findings][Code Intelligence][Code editing] This paper treats the "output format" of LLM code editing as a training objective. It proposes BlockDiff, FuncDiff, and an adaptive format selection strategy, AdaEdit. The approach achieves accuracy close to full-code generation while reducing latency and output token costs by over 30% in long-code editing scenarios.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - AdaEdit
-  - AST
+  - "ACL2026 Findings"
+  - "Code Intelligence"
+  - "Code editing"
+  - "structural diff"
+  - "AdaEdit"
+  - "AST"
+  - "low-latency generation"
 date: 2026-05-08
-content_hash: 10c8eb9026f4c3bd
+content_hash: 4085de429fcc297f
 ---
+
 # To Diff or Not to Diff? Structure-Aware and Adaptive Output Formats for Efficient LLM-based Code Editing
 
 **Conference**: ACL2026 Findings  
@@ -155,9 +159,9 @@ JavaScript cross-lingual experiments support the generalization of structural fo
 
 - [\[ACL 2026\] Learning Adaptive Parallel Execution for Efficient Code Localization](learning_adaptive_parallel_execution_for_efficient_code_localization.md)
 - [\[ACL 2026\] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode](duet_dual_execution_for_test_output_prediction_with_generated_code_and_pseudocod.md)
+- [\[ACL 2025\] CoRet: Improved Retriever for Code Editing](../../ACL2025/code_intelligence/coret_improved_retriever_for_code_editing.md)
 - [\[ACL 2026\] The Path Not Taken: Duality in Reasoning about Program Execution](the_path_not_taken_duality_in_reasoning_about_program_execution.md)
 - [\[ACL 2026\] PaT: Planning-after-Trial for Efficient Test-Time Code Generation](pat_planning-after-trial_for_efficient_test-time_code_generation.md)
-- [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
 
 </div>
 

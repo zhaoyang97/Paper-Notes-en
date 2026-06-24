@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Graph Diffusion Transformers are In-Context Molecular Designers
 description: >-
-  [ICLR 2026][Computational Biology][motif tokenizer] By using "molecule-score" demonstration pairs as surrogates for text prompts to define task context, this work trains a 0.7B molecular foundation model, DemoDiff, based on a Graph Diffusion Transformer. It matches or exceeds the performance of Large Language Models (LLMs) that are 100–1000× larger across 33 design task
+  [ICLR 2026][Computational Biology][In-Context Learning] By using "molecule-score" demonstration pairs as surrogates for text prompts to define task context, this work trains a 0.7B molecular foundation model, DemoDiff, based on a Graph Diffusion Transformer. It matches or exceeds the performance of Large Language Models (LLMs) that are 100–1000× larger across 33 design tasks using only a few dozen in-context examples.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - motif tokenizer
-  - Node Pair Encoding
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "In-Context Learning"
+  - "Graph Diffusion Models"
+  - "Molecular Design"
+  - "Molecular Foundation Models"
+  - "motif tokenizer"
+  - "Node Pair Encoding"
 date: 2026-05-08
-content_hash: ea3fa848a25f026b
+content_hash: 51a6bb52d1d1f773
 ---
+
 # Graph Diffusion Transformers are In-Context Molecular Designers
 
 **Conference**: ICLR 2026  

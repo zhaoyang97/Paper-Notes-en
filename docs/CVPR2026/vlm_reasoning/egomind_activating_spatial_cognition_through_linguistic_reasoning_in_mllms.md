@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Chain-of-Thought] EgoMind is proposed as a CoT framework that requires no geometric priors. Through two core components—Role-Play Captioning (RPC) and Progressive Spatial Analysis (PSA)—it achieves competitive multi-frame spatial reasoning capabilities using only 5K SFT and 20K RL samples.
+  [CVPR 2026][VLM Reasoning][Spatial Reasoning] EgoMind is proposed as a CoT framework that requires no geometric priors. Through two core components—Role-Play Captioning (RPC) and Progressive Spatial Analysis (PSA)—it achieves competitive multi-frame spatial reasoning capabilities using only 5K SFT and 20K RL samples.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Chain-of-Thought
-  - MLLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Spatial Reasoning"
+  - "Chain-of-Thought"
+  - "Multi-frame Understanding"
+  - "MLLM"
+  - "Linguistic Reasoning"
 date: 2026-05-08
-content_hash: ff67a5876cc82b01
+content_hash: 240e61b9f9760d6b
 ---
+
 # EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs
 
 **Conference**: CVPR 2026  
@@ -139,10 +143,10 @@ $$R_i = w_f R_{\mathrm{format}}(y|x) + w_a R_{\mathrm{accuracy}}(y|x)$$
 ## Related Papers
 
 - [\[CVPR 2026\] Eliciting Complex Spatial Reasoning in MLLMs through Wide-Baseline Matching](eliciting_complex_spatial_reasoning_in_mllms_through_wide-baseline_matching.md)
+- [\[CVPR 2026\] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning](clivis_unleashing_cognitive_map_through_linguistic-visual_synergy_for_embodied_v.md)
 - [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
-- [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
-- [\[CVPR 2026\] Geometrically-Constrained Agent for Spatial Reasoning](geometrically-constrained_agent_for_spatial_reasoning.md)
-- [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](token_warping_helps_mllms_look_from_nearby_viewpoints.md)
+- [\[ICLR 2026\] Unfolding Spatial Cognition: Evaluating Multimodal Models on Visual Simulations](../../ICLR2026/vlm_reasoning/unfolding_spatial_cognition_evaluating_multimodal_models_on_visual_simulations.md)
+- [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
 
 </div>
 

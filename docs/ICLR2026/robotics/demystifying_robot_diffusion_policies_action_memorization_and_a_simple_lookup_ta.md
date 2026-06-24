@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Demystifying Robot Diffusion Policies: Action Memorization and a Simple Lookup Table Alternative
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Diffusion Policy] This paper systematically demonstrates that Diffusion Policy in small-data robot imitation learning behaves more like retrieving action segments from the training set based on current images rather than learning a generalizable action generator. It proposes an explicit Action Lookup Table (ALT) using contrastive learni
+  [ICLR2026][Robotics][Robot Imitation Learning] This paper systematically demonstrates that Diffusion Policy in small-data robot imitation learning behaves more like retrieving action segments from the training set based on current images rather than learning a generalizable action generator. It proposes an explicit Action Lookup Table (ALT) using contrastive learning embeddings and nearest neighbor retrieval to achieve performance close to Diffusion Policy while providing sig…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Diffusion Policy
+  - "ICLR2026"
+  - "Robotics"
+  - "Robot Imitation Learning"
+  - "Diffusion Policy"
+  - "Action Memorization"
+  - "Lookup Table Policy"
+  - "OOD Detection"
 date: 2026-05-08
-content_hash: 53a40c0b2fe9bd61
+content_hash: 6c0342692b931f62
 ---
+
 # Demystifying Robot Diffusion Policies: Action Memorization and a Simple Lookup Table Alternative
 
 **Conference**: ICLR2026  
@@ -145,14 +150,14 @@ where $\operatorname{sim}(\cdot,\cdot)$ is cosine similarity and embeddings are 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Contractive Diffusion Policies](contractive_diffusion_policies.md)
 - [\[ICLR 2026\] Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies](abstracting_robot_manipulation_skills_via_mixture-of-experts_diffusion_policies.md)
-- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](../../ICML2026/robotics/discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
 - [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](../../CVPR2026/robotics/reach_explicit_recovery_behavior_for_diffusion_policies.md)
+- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](../../ICML2026/robotics/discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
 - [\[ICLR 2026\] Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging](robust_fine-tuning_of_vision-language-action_robot_policies_via_parameter_mergin.md)
 
 </div>

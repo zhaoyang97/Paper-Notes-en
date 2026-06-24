@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting
 description: >-
-  [CVPR 2026][Multimodal VLM][prefix-tuning] Addressing the issue where current PEFT methods for VLM continual learning only weight prefixes/adapters at the "sample level" (treating all tokens within a sample equally), DPW utilizes a gating module (RePA + CondAct) to calculate fine-grained prefix weights for each token. It allows adapters to supplement task knowl
+  [CVPR 2026][Multimodal VLM][Continual Learning] Addressing the issue where current PEFT methods for VLM continual learning only weight prefixes/adapters at the "sample level" (treating all tokens within a sample equally), DPW utilizes a gating module (RePA + CondAct) to calculate fine-grained prefix weights for each token. It allows adapters to supplement task knowledge in a "residual" manner only when prefix weights are insufficient. DPW achieves SOTA results on MTIL and ODC…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - prefix-tuning
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "prefix-tuning"
+  - "token-level weighting"
+  - "adapter"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 3ccbc8b2af8ff667
+content_hash: 8e0d281bbd9519a6
 ---
+
 # Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting
 
 **Conference**: CVPR 2026  
@@ -134,11 +138,11 @@ CondAct breakdown (Table 5): Sigmoid (68.0/76.8/86.4) $\rightarrow$ CondNorm (69
 
 ## Related Papers
 
+- [\[CVPR 2026\] PACT: Phase-Like Transition Constraints in Adapter-Based Continual Learning of Vision-Language Models](pact_phase-like_transition_constraints_in_adapter-based_continual_learning_of_vi.md)
 - [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
 - [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
-- [\[CVPR 2026\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
-- [\[CVPR 2026\] PACT: Phase-Like Transition Constraints in Adapter-Based Continual Learning of Vision-Language Models](pact_phase-like_transition_constraints_in_adapter-based_continual_learning_of_vi.md)
 - [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](../../ICLR2026/multimodal_vlm/enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
+- [\[CVPR 2026\] Learning from Itself: Mining Internal Knowledge from Vision Language Models for Continual Learning](learning_from_itself_mining_internal_knowledge_from_vision_language_models_for_c.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VoxMind: An End-to-End Agentic Spoken Dialogue System
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] VoxMind is proposed as a unified framework that endows end-to-end speech dialogue models with agentic capabilities. By implementing a "Think-before-Speak" mechanism for explicit reasoning and a multi-agent dynamic tool management architecture to decouple inference latency from tool scale, the task completion rate is im
+  [ACL 2026][Audio & Speech][End-to-end spoken dialogue] VoxMind is proposed as a unified framework that endows end-to-end speech dialogue models with agentic capabilities. By implementing a "Think-before-Speak" mechanism for explicit reasoning and a multi-agent dynamic tool management architecture to decouple inference latency from tool scale, the task completion rate is improved from a 34.88% baseline to 74.57%, surpassing Gemini-2.5-Pro.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "End-to-end spoken dialogue"
+  - "Tool calling"
+  - "Think-before-Speak mechanism"
+  - "Multi-agent dynamic tool management"
+  - "Speech Agent"
 date: 2026-05-08
-content_hash: 562c4d33a848bc40
+content_hash: 6f04d5fc49f129c6
 ---
+
 # VoxMind: An End-to-End Agentic Spoken Dialogue System
 
 **Conference**: ACL 2026  
@@ -151,7 +157,7 @@ Based on StepAudio2 fine-tuning, using the AdamW optimizer, a learning rate of 1
 - [\[ACL 2026\] VAPO: End-to-end Slide-Enhanced Speech Recognition with Omni-modal Large Language Models](vapo_end-to-end_slide-enhanced_speech_recognition_with_omni-modal_large_language.md)
 - [\[ACL 2025\] DNCASR: End-to-End Training for Speaker-Attributed ASR](../../ACL2025/audio_speech/dncasr_end-to-end_training_for_speaker-attributed_asr.md)
 - [\[ACL 2026\] Speculative End-Turn Detector for Efficient Speech Chatbot Assistant](speculative_end-turn_detector_for_efficient_speech_chatbot_assistant.md)
-- [\[ACL 2025\] OmniFlatten: An End-to-end GPT Model for Seamless Voice Conversation](../../ACL2025/audio_speech/omniflatten_an_end-to-end_gpt_model_for_seamless_voice_conversation.md)
+- [\[ICLR 2026\] Hierarchical Semantic-Acoustic Modeling via Semi-Discrete Residual Representations for Expressive End-to-End Speech Synthesis](../../ICLR2026/audio_speech/hierarchical_semantic-acoustic_modeling_via_semi-discrete_residual_representatio.md)
 
 </div>
 

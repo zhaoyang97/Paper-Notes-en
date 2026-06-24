@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] OmniFM is proposed as a modality-robust and task-agnostic federated learning framework. Through three complementary components—Global Spectral Knowledge Retrieval (GSKR), Embedding-level Cross-Attention (ECA) fusion, and Prefix-Suffix Spectral Prompting (PSP)—it supports five medical imaging tasks (classification, segm
+  [CVPR 2026][Medical Imaging][Federated Learning] OmniFM is proposed as a modality-robust and task-agnostic federated learning framework. Through three complementary components—Global Spectral Knowledge Retrieval (GSKR), Embedding-level Cross-Attention (ECA) fusion, and Prefix-Suffix Spectral Prompting (PSP)—it supports five medical imaging tasks (classification, segmentation, super-resolution, VQA, and multi-modal fusion) under a unified FL pipeline…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "Modality Heterogeneity"
+  - "Frequency Domain Analysis"
+  - "Task-Agnostic"
 date: 2026-05-08
-content_hash: 45b89c80532f8715
+content_hash: cf5ceaa3eeb9d29f
 ---
+
 # OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging
 
 **Conference**: CVPR 2026  
@@ -153,10 +158,10 @@ VQA Task 1 performance under different fine-tuning strategies:
 ## Related Papers
 
 - [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
-- [\[CVPR 2026\] TopoCL: Topological Contrastive Learning for Medical Imaging](topocl_topological_contrastive_learning_for_medical_imaging.md)
 - [\[CVPR 2026\] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation](personalized_longitudinal_medical_report_generation_via_temporally-aware_federat.md)
+- [\[CVPR 2026\] TopoCL: Topological Contrastive Learning for Medical Imaging](topocl_topological_contrastive_learning_for_medical_imaging.md)
 - [\[CVPR 2026\] CG-Reasoner: Centroid-Guided Positional Reasoning Segmentation for Medical Imaging with a Robust Visual-Text Consistency Metric](cg-reasoner_centroid-guided_positional_reasoning_segmentation_for_medical_imagin.md)
-- [\[CVPR 2026\] FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning](fedvg_gradient-guided_aggregation_for_enhanced_federated_learning.md)
+- [\[CVPR 2026\] DK-DDIL: Adaptive Knowledge Retention for Dynamic Domain-Incremental Learning in Medical Imaging](dk-ddil_adaptive_knowledge_retention_for_dynamic_domain-incremental_learning_in_.md)
 
 </div>
 

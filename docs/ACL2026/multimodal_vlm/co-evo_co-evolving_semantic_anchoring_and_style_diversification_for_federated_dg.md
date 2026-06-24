@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CO-EVO: Co-evolving Semantic Anchoring and Style Diversification for Federated DG-ReID
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] Addressing the "semantic-style conflict" in Federated Domain Generalized Person Re-identification (FedDG-ReID), CO-EVO proposes CSA (Camera-invariant Semantic Anchoring) to learn frozen identity-level textual prototypes as "gravitational centers" and GSD (Global Style Diversification) using a lightweight GCSB (Global C
+  [ACL 2026][Multimodal VLM][Federated Domain Generalization] Addressing the "semantic-style conflict" in Federated Domain Generalized Person Re-identification (FedDG-ReID), CO-EVO proposes CSA (Camera-invariant Semantic Anchoring) to learn frozen identity-level textual prototypes as "gravitational centers" and GSD (Global Style Diversification) using a lightweight GCSB (Global Camera Style Bank) to synthesize realistic cross-domain perturbations. The coupled optimization of th…
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Federated Domain Generalization"
+  - "Person Re-identification"
+  - "CLIP Semantic Anchoring"
+  - "Style Diversification"
+  - "Camera Invariance"
 date: 2026-05-08
-content_hash: bbaa2d33c388fe41
+content_hash: b01f1643140973da
 ---
+
 # CO-EVO: Co-evolving Semantic Anchoring and Style Diversification for Federated DG-ReID
 
 **Conference**: ACL 2026  
@@ -145,10 +151,10 @@ Average mAP on the ViT backbone improves by **+14.0** (34.1→48.1) and Rank-1 b
 ## Related Papers
 
 - [\[CVPR 2025\] Calico: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models](../../CVPR2025/multimodal_vlm/calico_part-focused_semantic_co-segmentation_with_large_vision-language_models.md)
+- [\[ICLR 2026\] Unlocking the Power of Co-Occurrence in CLIP: A DualPrompt-Driven Method for Training-Free Zero-Shot Multi-Label Classification](../../ICLR2026/multimodal_vlm/unlocking_the_power_of_co-occurrence_in_clip_a_dualprompt-driven_method_for_trai.md)
 - [\[ACL 2025\] I See What You Mean: Co-Speech Gestures for Reference Resolution in Multimodal Dialogue](../../ACL2025/multimodal_vlm/i_see_what_you_mean_co-speech_gestures_for_reference_resolution_in_multimodal_di.md)
 - [\[ACL 2026\] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck](from_verbatim_to_gist_distilling_pyramidal_multimodal_memory_via_semantic_inform.md)
-- [\[NeurIPS 2025\] Scene-Aware Urban Design: A Human-AI Recommendation Framework Using Co-Occurrence Embeddings and Vision-Language Models](../../NeurIPS2025/multimodal_vlm/scene-aware_urban_design_a_human-ai_recommendation_framework_using_co-occurrence.md)
-- [\[AAAI 2026\] Towards Long-window Anchoring in Vision-Language Model Distillation](../../AAAI2026/multimodal_vlm/towards_long-window_anchoring_in_vision-language_model_distillation.md)
+- [\[ACL 2026\] More Than Meets the Eye: Measuring the Semiotic Gap in Vision-Language Models via Semantic Anchorage](more_than_meets_the_eye_measuring_the_semiotic_gap_in_vision-language_models_via.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Physics-Consistent Diffusion for Efficient Fluid Super-Resolution via Multiscale Residual Correction
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] The paper proposes ReMD (Residual-Multigrid Diffusion), which embeds multigrid residual correction into each reverse sampling step of the diffusion model. By utilizing multi-wavelet bases to construct a cross-scale hierarchical structure, it achieves physics-consistent and efficient fluid super-resolution without requi
+  [CVPR2026][Image Generation][Fluid Super-Resolution] The paper proposes ReMD (Residual-Multigrid Diffusion), which embeds multigrid residual correction into each reverse sampling step of the diffusion model. By utilizing multi-wavelet bases to construct a cross-scale hierarchical structure, it achieves physics-consistent and efficient fluid super-resolution without requiring explicit PDEs.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - equation-free
+  - "CVPR2026"
+  - "Image Generation"
+  - "Fluid Super-Resolution"
+  - "Diffusion Models"
+  - "Multigrid Residual Correction"
+  - "Multi-wavelet Basis"
+  - "Physics Consistency"
+  - "Equation-free"
 date: 2026-05-08
-content_hash: 37aefcfbf4899218
+content_hash: 309782c167282ef7
 ---
+
 # Physics-Consistent Diffusion for Efficient Fluid Super-Resolution via Multiscale Residual Correction
 
 **Conference**: CVPR2026  
@@ -137,15 +142,16 @@ On ocean data, ReMD achieves optimal accuracy with substantially fewer steps, be
 - Value: ⭐⭐⭐⭐ — Practical for fluid SR in scientific computing with strong cross-domain insights.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] AlignVAR: Towards Globally Consistent Visual Autoregression for Image Super-Resolution](alignvar_towards_globally_consistent_visual_autoregression_for_image_super-resol.md)
+- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
+- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
 - [\[ICLR 2026\] Step-Aware Residual-Guided Diffusion for EEG Spatial Super-Resolution](../../ICLR2026/image_generation/step-aware_residual-guided_diffusion_for_eeg_spatial_super-resolution.md)
 - [\[CVPR 2026\] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)
 - [\[ICCV 2025\] 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution](../../ICCV2025/image_generation/bridging_diffusion_models_and_3d_representations_a_3d_consis.md)
-- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
 
 </div>
 

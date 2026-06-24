@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning
 description: >-
-  [NeurIPS 2025][Time Series][Spectral Tokenizer] This paper proposes the first universal spectral tokenizer that jointly trains on heterogeneous astronomical spectra (SDSS/DESI/GALAH/APOGEE) on their native wavelength gri…
+  [NeurIPS 2025][Time Series][Spectral Tokenizer] This paper proposes the first universal spectral tokenizer that jointly trains on heterogeneous astronomical spectra (SDSS/DESI/GALAH/APOGEE) on their native wavelength grids via continuous wavelength embeddings and self-supervised reconstruction objectives, producing aligned, uniform, and physically meaningful representations.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Self-Supervised Pretraining"
   - "Astronomy"
 date: 2026-05-08
-content_hash: 33e784f2fe45f611
+content_hash: bb2172ad612109e0
 ---
 
 # Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning
@@ -143,10 +143,10 @@ This paper proposes the first universal spectral tokenizer that jointly trains o
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Self-Supervised Foundation Models for Critical Care Time Series](towards_self-supervised_foundation_models_for_critical_care_time_series.md)
-- [\[ICML 2026\] HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series](../../ICML2026/time_series/hepa_a_self-supervised_horizon-conditioned_event_predictive_architecture_for_tim.md)
+- [\[ICML 2025\] TimePoint: Accelerated Time Series Alignment via Self-Supervised Keypoint and Descriptor Learning](../../ICML2025/time_series/timepoint_accelerated_time_series_alignment_via_self-supervised_keypoint_and_des.md)
+- [\[ECCV 2024\] OmniSat: Self-Supervised Modality Fusion for Earth Observation](../../ECCV2024/time_series/omnisat_self-supervised_modality_fusion_for_earth_observation.md)
+- [\[ICML 2026\] Self-Supervised Dynamical System Representations for Physiological Time-Series](../../ICML2026/time_series/self-supervised_dynamical_system_representations_for_physiological_time-series.md)
 - [\[NeurIPS 2025\] WaLRUS: Wavelets for Long-range Representation Using SSMs](walrus_wavelets_for_long-range_representation_using_ssms.md)
-- [\[NeurIPS 2025\] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift](frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift.md)
-- [\[NeurIPS 2025\] Fern: Chaining Spectral Pearls — Ellipsoidal Forecasting Beyond Trajectories for Time Series](friren_beyond_trajectories_--_a_spectral_lens_on_time.md)
 
 </div>
 

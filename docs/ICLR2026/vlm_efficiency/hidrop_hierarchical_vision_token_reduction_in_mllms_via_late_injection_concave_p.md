@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit
 description: >-
-  [ICLR 2026][vlm_efficiency][Late Injection] The authors propose the HiDrop framework, which performs deep functional analysis of MLLM layers (Shallow = Propagators, Middle = Fusion Centers, Deep = Language Reasoning). It designs a three-stage strategy: Late Injection (skipping shallow layers), Concave Pyramid Pruning (pruning in middle layers), and Early Exit (e
+  [ICLR 2026][Multimodal Efficiency][Vision token compression] The authors propose the HiDrop framework, which performs deep functional analysis of MLLM layers (Shallow = Propagators, Middle = Fusion Centers, Deep = Language Reasoning). It designs a three-stage strategy: Late Injection (skipping shallow layers), Concave Pyramid Pruning (pruning in middle layers), and Early Exit (exiting in deep layers). This approach compresses approximately 90% of vision tokens with negligible…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
-  - Late Injection
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Vision token compression"
+  - "MLLM acceleration"
+  - "progressive pruning"
+  - "Late Injection"
+  - "diffused attention"
 date: 2026-05-08
-content_hash: e13ead86554891e6
+content_hash: c01d890a0831ba29
 ---
+
 # HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit
 
 **Conference**: ICLR 2026  
@@ -150,15 +155,15 @@ Training Efficiency: HiDrop achieves a 1.72× training speedup compared to the o
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability](../../NeurIPS2025/vlm_efficiency/beyond_greedy_exits_improved_early_exit_decisions_for_risk_control_and_reliabili.md)
+- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/vlm_efficiency/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
 - [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](../../CVPR2026/vlm_efficiency/score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
 - [\[ICLR 2026\] LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models](learnpruner_rethinking_attention-based_token_pruning_in_vision_language_models.md)
-- [\[NeurIPS 2025\] Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability](../../NeurIPS2025/vlm_efficiency/beyond_greedy_exits_improved_early_exit_decisions_for_risk_control_and_reliabili.md)
 - [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
-- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
 
 </div>
 

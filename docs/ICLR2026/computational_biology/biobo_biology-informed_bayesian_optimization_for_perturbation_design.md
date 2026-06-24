@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] BioBO: Biology-informed Bayesian Optimization for Perturbation Design
 description: >-
-  [ICLR 2026][Computational Biology][Bayesian Optimization] BioBO integrates multimodal gene representations (Achilles + Gene2Vec + GenePT) into the surrogate model of Bayesian Optimization and utilizes enrichment analysis (EA) results as priors within the πBO framework to augment acquisition functions. This approach improves the labeling efficiency of CRISPR gene knockout scre
+  [ICLR 2026][Computational Biology][Bayesian Optimization] BioBO integrates multimodal gene representations (Achilles + Gene2Vec + GenePT) into the surrogate model of Bayesian Optimization and utilizes enrichment analysis (EA) results as priors within the πBO framework to augment acquisition functions. This approach improves the labeling efficiency of CRISPR gene knockout screens by 25–40% while providing pathway-level interpretable design rationales.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Bayesian Optimization
-  - Perturbation Design
-  - Multimodal Gene Embeddings
-  - Enrichment Analysis
-  - πBO
-  - CRISPR Screen
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Bayesian Optimization"
+  - "Perturbation Design"
+  - "Multimodal Gene Embeddings"
+  - "Enrichment Analysis"
+  - "πBO"
+  - "CRISPR Screen"
 date: 2026-05-08
-content_hash: f6872d43eaf69e05
+content_hash: 44c7ed64ed9cd04d
 ---
+
 # BioBO: Biology-informed Bayesian Optimization for Perturbation Design
 
 **Conference**: ICLR 2026  
@@ -130,12 +131,13 @@ BioBO outperformed other methods in 23 out of 24 settings. The optimal combinati
 - **Value**: ⭐⭐⭐⭐ — High practical value for drug target prioritization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] PatchDNA: A Flexible and Biologically-Informed Alternative to Tokenization for DNA](patchdna_a_flexible_and_biologically-informed_alternative_to_tokenization_for_dn.md)
 - [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](../../NeurIPS2025/computational_biology/is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
+- [\[ICLR 2026\] PatchDNA: A Flexible and Biologically-Informed Alternative to Tokenization for DNA](patchdna_a_flexible_and_biologically-informed_alternative_to_tokenization_for_dn.md)
 - [\[ICML 2025\] Empower Structure-Based Molecule Optimization with Gradient Guided Bayesian Flow Networks](../../ICML2025/computational_biology/empower_structure-based_molecule_optimization_with_gradient_guided_bayesian_flow.md)
 - [\[ICLR 2026\] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction](scdfm_distributional_flow_matching_model_for_robust_single-cell_perturbation_pre.md)
 - [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](../../ICML2026/computational_biology/constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)

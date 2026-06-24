@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Addressing Representation Collapse in Vector Quantized Models with One Linear Layer
 description: >-
-  [ICCV 2025][Optimization][Vector Quantization] This paper proposes SimVQ, a method that reparameterizes codebook vectors via a single learnable linear transformation layer ($\bm{C}\bm{W}$)…
+  [ICCV 2025][Optimization][Vector Quantization] This paper proposes SimVQ, a method that reparameterizes codebook vectors via a single learnable linear transformation layer ($\bm{C}\bm{W}$), converting the disjoint optimization of the codebook into a joint spatial optimization, thereby fundamentally resolving representation collapse in VQ models and achieving near-100% codebook utilization.
 tags:
   - "ICCV 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Linear Transformation"
   - "Multimodal"
 date: 2026-05-08
-content_hash: 39d5e40ff4e9aec1
+content_hash: 4553c89b91c93eb7
 ---
 
 # Addressing Representation Collapse in Vector Quantized Models with One Linear Layer
@@ -124,11 +124,11 @@ On the audio modality (LibriTTS, 0.9 kbps bandwidth), SimVQ achieves UTMOS score
 
 ## Related Papers
 
+- [\[ICML 2025\] Layer-wise Quantization for Quantized Optimistic Dual Averaging](../../ICML2025/optimization/layer-wise_quantization_for_quantized_optimistic_dual_averaging.md)
 - [\[ICLR 2026\] Gradient-Sign Masking for Task Vector Transport Across Pre-Trained Models](../../ICLR2026/optimization/gradient-sign_masking_for_task_vector_transport_across_pre-trained_models.md)
 - [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](../../AAAI2026/optimization/on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
-- [\[ICLR 2026\] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear Programming](../../ICLR2026/optimization/constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)
-- [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](../../ICML2026/optimization/dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
-- [\[ICLR 2026\] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](../../ICLR2026/optimization/cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)
+- [\[ICLR 2026\] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear programming](../../ICLR2026/optimization/constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)
+- [\[ICML 2025\] Random Feature Representation Boosting](../../ICML2025/optimization/random_feature_representation_boosting.md)
 
 </div>
 

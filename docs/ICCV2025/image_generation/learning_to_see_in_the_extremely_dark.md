@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Learning to See in the Extremely Dark
 description: >-
-  [Image Generation] This paper proposes a paired-to-paired data synthesis pipeline to construct SIED, a RAW image enhancement dataset for extremely dark scenes (down to 0.0001 lux)…
+  [Image Generation] This paper proposes a paired-to-paired data synthesis pipeline to construct SIED, a RAW image enhancement dataset for extremely dark scenes (down to 0.0001 lux), and designs a diffusion-model-based framework that achieves high-quality restoration of ultra-low-SNR RAW images via an Adaptive Illumination Correction Module (AICM) and a color consistency loss.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 4b51432d17c72168
+content_hash: c5fdb952973a21a1
 ---
 
 # Learning to See in the Extremely Dark

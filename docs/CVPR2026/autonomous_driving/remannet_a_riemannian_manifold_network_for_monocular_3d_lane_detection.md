@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReManNet: A Riemannian Manifold Network for Monocular 3D Lane Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] To address the issue where "2D-to-3D lifting collapses (forming dips, bumps, or twists) due to a lack of geometric invariants" in monocular 3D lane detection, this paper proposes the road manifold hypothesis: "roads are smooth 2D manifolds in $\mathbb{R}^3$, and lanes are 1D submanifolds embedded upon them." Lane geome
+  [CVPR 2026][Autonomous Driving][Monocular 3D Lane Detection] To address the issue where "2D-to-3D lifting collapses (forming dips, bumps, or twists) due to a lack of geometric invariants" in monocular 3D lane detection, this paper proposes the road manifold hypothesis: "roads are smooth 2D manifolds in $\mathbb{R}^3$, and lanes are 1D submanifolds embedded upon them." Lane geometry is encoded as Riemannian Gaussian descriptors on Symmetric Positive Definite (SPD) manifolds an…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Monocular 3D Lane Detection"
+  - "Riemannian Manifold"
+  - "SPD Matrix"
+  - "Manifold Learning"
+  - "Geometric Consistency"
 date: 2026-05-08
-content_hash: b99abd3e41aca83e
+content_hash: 2f94200a5ac34455
 ---
+
 # ReManNet: A Riemannian Manifold Network for Monocular 3D Lane Detection
 
 **Conference**: CVPR 2026  
@@ -138,15 +144,14 @@ Internal ablation of 3D-TLIoU loss (Baseline 57.5):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
 - [\[CVPR 2025\] Rethinking Lanes and Points in Complex Scenarios for Monocular 3D Lane Detection](../../CVPR2025/autonomous_driving/rethinking_lanes_and_points_in_complex_scenarios_for_monocular_3d_lane_detection.md)
 - [\[CVPR 2026\] HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation](hg-lane_high-fidelity_generation_of_lane_scenes_under_adverse_weather_and_lighti.md)
-- [\[CVPR 2026\] A Prediction-as-Perception Framework for 3D Object Detection](a_prediction-as-perception_framework_for_3d_object_detection.md)
 - [\[AAAI 2026\] Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection](../../AAAI2026/autonomous_driving/difficulty-aware_label-guided_denoising_for_monocular_3d_object_detection.md)
+- [\[ICLR 2026\] PTN: Proposal-centric Transformer Network for 3D Object Detection](../../ICLR2026/autonomous_driving/ptnet_a_proposal-centric_transformer_net-_work_for_3d_object_detection.md)
+- [\[CVPR 2026\] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)](monocular_open_vocabulary_occupancy_prediction_for_indoor_scenes.md)
 
 </div>
 

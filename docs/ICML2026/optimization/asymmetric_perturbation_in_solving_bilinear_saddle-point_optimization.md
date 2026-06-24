@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Asymmetric Perturbation in Solving Bilinear Saddle-Point Optimization
 description: >-
-  [ICML 2026][Optimization & Theory][NashConv] This paper demonstrates that perturbing the payoff of only one player in a bilinear zero-sum game preserves the original equilibrium under a sufficiently small perturbation. Based on this, the authors construct AsymP-GDA, which theoretically achieves linear last-iterate convergence and approaches the original equilibri
+  [ICML2026][Optimization][Bilinear saddle-point optimization] This paper demonstrates that perturbing the payoff of only one player in a bilinear zero-sum game preserves the original equilibrium under a sufficiently small perturbation. Based on this, the authors construct AsymP-GDA, which theoretically achieves linear last-iterate convergence and approaches the original equilibrium faster and more accurately than symmetric perturbation in normal-form and extensive-form game ex…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - NashConv
+  - "ICML2026"
+  - "Optimization"
+  - "Bilinear saddle-point optimization"
+  - "asymmetric perturbation"
+  - "last-iterate convergence"
+  - "zero-sum games"
+  - "NashConv"
 date: 2026-05-08
-content_hash: abd6408819caecf9
+content_hash: 14593724f70c4209
 ---
+
 # Asymmetric Perturbation in Solving Bilinear Saddle-Point Optimization
 
 **Conference**: ICML2026  
@@ -128,10 +133,20 @@ The experiments are divided into three groups: trajectories and NashConv in norm
 - **Value**: ⭐⭐⭐⭐☆ (Highly valuable for researchers in saddle-point optimization and game learning.)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] A2SG: Adaptive and Asymmetric Surrogate Gradients for Training Deep Spiking Neural Networks](a2sgadaptive_and_asymmetric_surrogate_gradients_for_training_deep_spiking_neural.md)
+- [\[ICLR 2026\] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](../../ICLR2026/optimization/saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)
+- [\[NeurIPS 2025\] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](../../NeurIPS2025/optimization/autoopt_a_dataset_and_a_unified_framework_for_automating_optimization_problem_so.md)
+- [\[ICLR 2026\] Never Saddle for Reparameterized Steepest Descent as Mirror Flow](../../ICLR2026/optimization/never_saddle_for_reparameterized_steepest_descent_as_mirror_flow.md)
+- [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](../../ICLR2026/optimization/a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](../../ICLR2026/optimization/saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)

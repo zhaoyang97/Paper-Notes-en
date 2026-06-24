@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences
 description: >-
-  [AAAI 2026][Autonomous Driving][LiDAR generation] This paper proposes LiDARCrafter, the first 4D generative world model targeting LiDAR…
+  [AAAI 2026 Oral][Autonomous Driving][LiDAR generation] This paper proposes LiDARCrafter, the first 4D generative world model targeting LiDAR, which achieves controllable 4D LiDAR sequence generation and editing through a pipeline of text → scene graph → three-branch diffusion layout → range-image diffusion generation → autoregressive temporal extension, comprehensively surpassing existing methods on nuScenes.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Autonomous Driving"
   - "LiDAR generation"
   - "4D world model"
   - "diffusion model"
   - "scene graph"
 date: 2026-05-08
-content_hash: eeec5dc31cb3431a
+content_hash: 6cbde2bc8dcd5fef
 ---
 
 # LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences
@@ -195,8 +195,8 @@ Temporal consistency (TTCE↓ / CTC↓):
 - [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](../../CVPR2026/autonomous_driving/u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
 - [\[AAAI 2026\] Understanding Dynamic Scenes in Egocentric 4D Point Clouds](understanding_dynamic_scenes_in_ego_centric_4d_point_clouds.md)
 - [\[AAAI 2026\] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models](unlocking_efficient_vehicle_dynamics_modeling_via_analytic_world_models.md)
-- [\[AAAI 2026\] RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving](radarmp_motion_perception_for_4d_mmwave_radar_in_autonomous_driving.md)
-- [\[AAAI 2026\] LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors](lidar-gsimproving_lidar_gaussian_reconstruction_via_diffusion_priors.md)
+- [\[CVPR 2026\] DGGT: Feedforward 4D Reconstruction of Dynamic Driving Scenes using Unposed Images](../../CVPR2026/autonomous_driving/dggt_feedforward_4d_reconstruction_of_dynamic_driving_scenes_using_unposed_image.md)
+- [\[CVPR 2025\] DrivingSphere: Building a High-fidelity 4D World for Closed-loop Simulation](../../CVPR2025/autonomous_driving/drivingsphere_building_a_high-fidelity_4d_world_for_closed-loop_simulation.md)
 
 </div>
 

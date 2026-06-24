@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] The authors propose IFA-Net, which detects AI forgeries from the perspective of "modeling what is real" rather than "learning what is fake". By utilizing a frozen MAE to reconstruct inputs, the method produces residuals that expose regions deviating from the natural image manifold. Through a two-stage closed loop—coars
+  [CVPR 2026][Segmentation][AI-generated image detection] The authors propose IFA-Net, which detects AI forgeries from the perspective of "modeling what is real" rather than "learning what is fake". By utilizing a frozen MAE to reconstruct inputs, the method produces residuals that expose regions deviating from the natural image manifold. Through a two-stage closed loop—coarse detection → task-adaptive prior injection → residual amplification → refinement—manifold deviations ar…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "AI-generated image detection"
+  - "Manifold deviation"
+  - "MAE reconstruction"
+  - "Iterative amplification"
+  - "Image forgery localization"
 date: 2026-05-08
-content_hash: 6fd1a14493a70062
+content_hash: d93d1e353d434e89
 ---
+
 # Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification
 
 **Conference**: CVPR 2026  
@@ -158,11 +164,11 @@ On traditional copy-move/splicing datasets such as CASIA, Columbia, and NIST:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Detective SAM: Adaptive AI-Image Forgery Localization](../../ICLR2026/segmentation/detective_sam_adaptive_ai-image_forgery_localization.md)
 - [\[ICCV 2025\] Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes](../../ICCV2025/segmentation/rethinking_detecting_salient_and_camouflaged_objects_in_unconstrained_scenes.md)
-- [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](mrm_masked_representation_modeling_domain_adaptive.md)
-- [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
-- [\[CVPR 2026\] Joint Spectral Image Reconstruction and Semantic Segmentation with Cooperative Unfolding](joint_spectral_image_reconstruction_and_semantic_segmentation_with_cooperative_u.md)
-- [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
+- [\[CVPR 2026\] Annotation-Efficient Coreset Selection for Context-dependent Segmentation](annotation-efficient_coreset_selection_for_context-dependent_segmentation.md)
+- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
+- [\[CVPR 2026\] Bootstrap Your Own AV-Proxies: Adaptive Contrastive and Prototype Learning for Audio-Visual Segmentation](bootstrap_your_own_av-proxies_adaptive_contrastive_and_prototype_learning_for_au.md)
 
 </div>
 

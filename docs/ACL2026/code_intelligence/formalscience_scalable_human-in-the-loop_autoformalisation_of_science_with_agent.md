@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean
 description: >-
-  [ACL 2026][Code Intelligence][Lean4] FormalScience proposes a domain-agnostic Human-in-the-Loop (HITL) agent pipeline, enabling a single domain expert without Lean proficiency to translate informal scientific reasoning (specifically physics) into 100% compilable Lean4 code. It constructs FormalPhysics, the first benchmark of 200 university-level physics p
+  [ACL 2026][Code Intelligence][Auto-formalization] FormalScience proposes a domain-agnostic Human-in-the-Loop (HITL) agent pipeline, enabling a single domain expert without Lean proficiency to translate informal scientific reasoning (specifically physics) into 100% compilable Lean4 code. It constructs FormalPhysics, the first benchmark of 200 university-level physics problems, and systematically characterizes the phenomenon where code is "compiled" but "semantically drifted."
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Lean4
-  - Agent
-  - Human-in-the-loop
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Auto-formalization"
+  - "Lean4"
+  - "Physics Formalization"
+  - "Agent"
+  - "Human-in-the-loop"
+  - "Semantic Drift"
 date: 2026-05-08
-content_hash: 49881ee1d6138627
+content_hash: d768cd423b979bf9
 ---
+
 # FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean
 
 **Conference**: ACL 2026  
@@ -159,8 +163,8 @@ Ablation on pipeline complexity (GPT-OSS-20B):
 - [\[ICML 2026\] CentaurEval: Benchmarking Human-in-the-Loop Value in Agentic Coding](../../ICML2026/code_intelligence/centaureval_benchmarking_human-in-the-loop_value_in_agentic_coding.md)
 - [\[ACL 2026\] Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4](discover_and_prove_an_open-source_agentic_framework_for_hard_mode_automated_theo.md)
 - [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
+- [\[ICLR 2026\] RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation](../../ICLR2026/code_intelligence/rpg_a_repository_planning_graph_for_unified_and_scalable_codebase_generation.md)
 - [\[ACL 2026\] StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation](storycoder_narrative_reformulation_for_structured_reasoning_in_llm_code_generati.md)
-- [\[ACL 2026\] DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation](deepguard_secure_code_generation_via_multi-layer_semantic_aggregation.md)
 
 </div>
 

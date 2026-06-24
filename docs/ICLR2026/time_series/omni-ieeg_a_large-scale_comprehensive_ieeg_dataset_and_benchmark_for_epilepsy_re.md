@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Omni-iEEG: A Large-Scale, Comprehensive iEEG Dataset and Benchmark for Epilepsy Research
 description: >-
-  [ICLR 2026][Time Series][intracranial EEG] This paper constructs the Omni-iEEG dataset (302 patients, 178 hours of high-resolution intracranial EEG recordings), defines standardized benchmark tasks and evaluation metrics based on clinical priors, and demonstrates that end-to-end modeling can match or surpass traditional biomarker-based methods in epilepsy surgi
+  [ICLR 2026][Time Series][intracranial EEG] This paper constructs the Omni-iEEG dataset (302 patients, 178 hours of high-resolution intracranial EEG recordings), defines standardized benchmark tasks and evaluation metrics based on clinical priors, and demonstrates that end-to-end modeling can match or surpass traditional biomarker-based methods in epilepsy surgical planning.
 tags:
-  - ICLR 2026
-  - Time Series
-  - intracranial EEG
-  - epilepsy
-  - high-frequency oscillations
-  - benchmark
-  - dataset
+  - "ICLR 2026"
+  - "Time Series"
+  - "intracranial EEG"
+  - "epilepsy"
+  - "high-frequency oscillations"
+  - "benchmark"
+  - "dataset"
 date: 2026-05-08
-content_hash: b83d0e44c09cd758
+content_hash: e2e72200fc162e66
 ---
+
 # Omni-iEEG: A Large-Scale, Comprehensive iEEG Dataset and Benchmark for Epilepsy Research
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Safety][MLRM] This paper systematically reveals the privacy leakage risks of Multi-modal Large Reasoning Models (MLRMs) in inferring sensitive geographic information from images. It proposes a three-level privacy risk framework and the DoxBench benchmark, along with the information-theoretic metric Glare and a collaborative attack f
+  [ICLR 2026][LLM Safety][Privacy leakage] This paper systematically reveals the privacy leakage risks of Multi-modal Large Reasoning Models (MLRMs) in inferring sensitive geographic information from images. It proposes a three-level privacy risk framework and the DoxBench benchmark, along with the information-theoretic metric Glare and a collaborative attack framework GeoMiner.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - MLRM
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Privacy leakage"
+  - "Geolocation"
+  - "Multi-modal Large Reasoning Model"
+  - "MLRM"
+  - "Visual clue reasoning"
 date: 2026-05-08
-content_hash: fe3c21d8c8cf6efa
+content_hash: 6e56bb04d3e0e3a4
 ---
+
 # Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -177,11 +182,11 @@ Ours is an evaluation study and does not update any model parameters. The evalua
 
 ## Related Papers
 
+- [\[ICLR 2026\] Disrupting Hierarchical Reasoning: Adversarial Protection for Geographic Privacy in Multimodal Reasoning Models](disrupting_hierarchical_reasoning_adversarial_protection_for_geographic_privacy_.md)
 - [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
 - [\[AAAI 2026\] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models](../../AAAI2026/llm_safety/auvic_adversarial_unlearning_of_visual_concepts_for_multi-mo.md)
-- [\[ICML 2025\] Watch Out Your Album! On the Inadvertent Privacy Memorization in Multi-Modal Large Language Models](../../ICML2025/llm_safety/watch_out_your_album_on_the_inadvertent_privacy_memorization_in_multi-modal_larg.md)
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
-- [\[ICLR 2026\] Natural Identifiers for Privacy and Data Audits in Large Language Models](natural_identifiers_for_privacy_and_data_audits_in_large_language_models.md)
+- [\[ICML 2025\] Watch Out Your Album! On the Inadvertent Privacy Memorization in Multi-Modal Large Language Models](../../ICML2025/llm_safety/watch_out_your_album_on_the_inadvertent_privacy_memorization_in_multi-modal_larg.md)
 
 </div>
 

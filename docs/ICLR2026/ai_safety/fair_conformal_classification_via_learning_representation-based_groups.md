@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fair Conformal Classification via Learning Representation-Based Groups
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] FAREG shifts the task of "identifying subgroups discriminated against by algorithms" from the raw feature space to a latent representation space learned via Variational Information Bottleneck (VIB). This allows the model to capture unfair subgroups defined by non-linear combinations (such as XOR) and perform individual
+  [ICLR2026][AI Safety][Conformal Prediction] FAREG shifts the task of "identifying subgroups discriminated against by algorithms" from the raw feature space to a latent representation space learned via Variational Information Bottleneck (VIB). This allows the model to capture unfair subgroups defined by non-linear combinations (such as XOR) and perform individual conformal calibration on these groups. It ensures adaptive equalized coverage while maintaining small…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Conformal Prediction"
+  - "Fairness"
+  - "Equalized Coverage"
+  - "Variational Information Bottleneck"
+  - "Representation Learning"
 date: 2026-05-08
-content_hash: 7c1526b41ef9142e
+content_hash: cc9f3816cb604899
 ---
+
 # Fair Conformal Classification via Learning Representation-Based Groups
 
 **Conference**: ICLR2026  
@@ -155,11 +161,11 @@ The worst slab coverage found by WSC$^+$ is up to 9.89% lower than WSC$_n$, prov
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fair Classification by Direct Intervention on Operating Characteristics](fair_classification_by_direct_intervention_on_operating_characteristics.md)
+- [\[AAAI 2026\] Generalizing Fair Clustering to Multiple Groups: Algorithms and Applications](../../AAAI2026/ai_safety/generalizing_fair_clustering_to_multiple_groups_algorithms_and_applications.md)
 - [\[ICLR 2026\] Rethinking Pareto Frontier: On the Optimal Trade-offs in Fair Classification](rethinking_pareto_frontier_on_the_optimal_trade-offs_in_fair_classification.md)
+- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](../../ICML2026/ai_safety/coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
 - [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
-- [\[ICLR 2026\] Fair Graph Machine Learning under Adversarial Missingness Processes](fair_graph_machine_learning_under_adversarial_missingness_processes.md)
-- [\[ICLR 2026\] A Fair Bayesian Inference through Matched Gibbs Posterior](a_fair_bayesian_inference_through_matched_gibbs_posterior.md)
-- [\[ICLR 2026\] Fair Decision Utility in Human-AI Collaboration: Interpretable Confidence Adjustment for Humans with Cognitive Disparities](fair_decision_utility_in_human-ai_collaboration_interpretable_confidence_adjustm.md)
 
 </div>
 

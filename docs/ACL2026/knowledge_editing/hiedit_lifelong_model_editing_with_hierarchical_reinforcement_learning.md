@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning
 description: >-
-  [ACL 2026][Knowledge Editing][lifelong model editing] HiEdit utilizes hierarchical reinforcement learning to decompose "lifelong model editing" into two subtasks: high-level layer selection and low-level gradient update calculation. This allows the hypernetwork to adaptively modify only half of the layers based on specific knowledge, improving the strong baseline RLEdit b
+  [ACL 2026][Knowledge Editing][lifelong model editing] HiEdit utilizes hierarchical reinforcement learning to decompose "lifelong model editing" into two subtasks: high-level layer selection and low-level gradient update calculation. This allows the hypernetwork to adaptively modify only half of the layers based on specific knowledge, improving the strong baseline RLEdit by an average of 8.48%.
 tags:
-  - ACL 2026
-  - Knowledge Editing
-  - lifelong model editing
-  - hierarchical RL
-  - hypernetwork
-  - layer selection
-  - sparse update
+  - "ACL 2026"
+  - "Knowledge Editing"
+  - "lifelong model editing"
+  - "hierarchical RL"
+  - "hypernetwork"
+  - "layer selection"
+  - "sparse update"
 date: 2026-05-08
-content_hash: 594b39c1e1404b17
+content_hash: 3832d5d71cf029bd
 ---
+
 # HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning
 
 **Conference**: ACL 2026  
@@ -139,7 +140,7 @@ In long-term editing settings, traditional methods often drop to near zero on Ge
 - [\[CVPR 2026\] SAME: Sparse and Anchored Model Editing for Heterogeneous Incremental Learning under Limited Data](../../CVPR2026/knowledge_editing/same_sparse_and_anchored_model_editing_for_heterogeneous_incremental_learning_un.md)
 - [\[NeurIPS 2025\] MEMOIR: Lifelong Model Editing with Minimal Overwrite and Informed Retention for LLMs](../../NeurIPS2025/knowledge_editing/memoir_lifelong_model_editing_with_minimal_overwrite_and_informed_retention_for_.md)
 - [\[ACL 2026\] Representation Interventions Enable Lifelong Knowledge Memory Control in LLMs](representation_interventions_enable_lifelong_knowledge_memory_control_in_llms.md)
-- [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Training Examples](../../ICLR2026/knowledge_editing/rote_learning_considered_useful_generalizing_over_memorized_training_examples.md)
+- [\[AAAI 2026\] Is the Information Bottleneck Robust Enough? Towards Label-Noise Resistant Information Bottleneck Learning](../../AAAI2026/knowledge_editing/is_the_information_bottleneck_robust_enough_towards_label-noise_resistant_inform.md)
 - [\[ICML 2025\] WikiBigEdit: Understanding the Limits of Lifelong Knowledge Editing in LLMs](../../ICML2025/knowledge_editing/wikibigedit_understanding_the_limits_of_lifelong_knowledge_editing_in_llms.md)
 
 </div>

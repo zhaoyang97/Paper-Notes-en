@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distributional Priors Guided Diffusion for Generating 3D Molecules in Low Data Regimes
 description: >-
-  [AAAI 2026][Computational Biology][3D molecule generation] This paper proposes GODD (Geometric OOD Diffusion Model), which captures distributional structural priors via an equivariant asymmetric autoencoder to guide the…
+  [AAAI 2026][Computational Biology][3D molecule generation] This paper proposes GODD (Geometric OOD Diffusion Model), which captures distributional structural priors via an equivariant asymmetric autoencoder to guide the generation process of a diffusion model, enabling models trained on data-rich molecular distributions to generalize to data-scarce distributions, achieving a 12.6% improvement in success rate on OOD structural shift benchmarks.
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "structural priors"
   - "drug design"
 date: 2026-05-08
-content_hash: 75ebdd20139847d9
+content_hash: d024b19b4ba86a6f
 ---
 
 # Distributional Priors Guided Diffusion for Generating 3D Molecules in Low Data Regimes
@@ -133,10 +133,10 @@ Evaluated on a standard OOD structural shift benchmark measuring the combined su
 ## Related Papers
 
 - [\[AAAI 2026\] Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models](apo2mol_3d_molecule_generation_via_dynamic_pocket-aware_diff.md)
-- [\[ICLR 2026\] Contact-Guided 3D Genome Structure Generation of E. coli via Diffusion Transformers](../../ICLR2026/computational_biology/contact-guided_3d_genome_structure_generation_of_e_coli_via_diffusion_transforme.md)
-- [\[ICLR 2026\] Zatom-1: A Multimodal Flow Foundation Model for 3D Molecules and Materials](../../ICLR2026/computational_biology/zatom-1_a_multimodal_flow_foundation_model_for_3d_molecules_and_materials.md)
 - [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](../../NeurIPS2025/computational_biology/pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
-- [\[ICLR 2026\] Protein Counterfactuals via Diffusion-Guided Latent Optimization](../../ICLR2026/computational_biology/protein_counterfactuals_via_diffusion-guided_latent_optimization.md)
+- [\[NeurIPS 2025\] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space](../../NeurIPS2025/computational_biology/manipulating_3d_molecules_in_a_fixed-dimensional_e3-equivariant_latent_space.md)
+- [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](../../NeurIPS2025/computational_biology/uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
+- [\[ICLR 2026\] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design](../../ICLR2026/computational_biology/a_joint_diffusion_model_with_pre-trained_priors_for_rna_sequence-structure_co-de.md)
 
 </div>
 

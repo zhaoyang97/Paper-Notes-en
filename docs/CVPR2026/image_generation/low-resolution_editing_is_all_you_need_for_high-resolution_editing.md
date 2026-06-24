@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Low-Resolution Editing is All You Need for High-Resolution Editing
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] ScaleEdit introduces the first formalization of high-resolution image editing. It achieves high-quality editing at 2K or even 8K resolution via test-time optimization by learning a $1 \times 1$ convolutional transfer function in the intermediate feature space of pre-trained generative models to inject fine-grained text
+  [CVPR 2026][Image Generation][High-Resolution Image Editing] ScaleEdit introduces the first formalization of high-resolution image editing. It achieves high-quality editing at 2K or even 8K resolution via test-time optimization by learning a $1 \times 1$ convolutional transfer function in the intermediate feature space of pre-trained generative models to inject fine-grained textures from the source image, combined with a Blended-Tweedie-based patch synchronization strategy to…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "High-Resolution Image Editing"
+  - "Test-Time Optimization"
+  - "Detail Transfer Function"
+  - "Patch Synchronization"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 3c7bb4c1f265b430
+content_hash: 820689cc7aa11e93
 ---
+
 # Low-Resolution Editing is All You Need for High-Resolution Editing
 
 **Conference**: CVPR 2026  
@@ -146,11 +151,11 @@ ScaleEdit uses pure test-time optimization and requires no training. Transfer fu
 
 ## Related Papers
 
+- [\[CVPR 2026\] HierEdit: Region-Aware Hierarchical Diffusion for Efficient High-Resolution Editing](hieredit_region-aware_hierarchical_diffusion_for_efficient_high-resolution_editi.md)
+- [\[CVPR 2026\] VINS-120K: Ultra High-Resolution Image Editing with A Large-Scale Dataset](vins-120k_ultra_high-resolution_image_editing_with_a_large-scale_dataset.md)
 - [\[CVPR 2026\] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)
-- [\[ECCV 2024\] You Only Need One Step: Fast Super-Resolution with Stable Diffusion via Scale Distillation](../../ECCV2024/image_generation/you_only_need_one_step_fast_super-resolution_with_stable_diffusion_via_scale_dis.md)
+- [\[CVPR 2026\] Towards High-resolution and Disentangled Reference-based Sketch Colorization](towards_high-resolution_and_disentangled_reference-based_sketch_colorization.md)
 - [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
-- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
-- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultrafast_trainingfree_highresolution_im.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Assessing LLMs for Serendipity Discovery in Knowledge Graphs: A Case for Drug Repurposing
 description: >-
-  [AAAI 2026][Graph Learning][Serendipity] This paper proposes SerenQA, the first framework to formally define the serendipity discovery task in knowledge graph question answering. It introduces an information-theoretic RN…
+  [AAAI 2026][Graph Learning][Serendipity] This paper proposes SerenQA, the first framework to formally define the serendipity discovery task in knowledge graph question answering. It introduces an information-theoretic RNS metric, an expert-annotated drug repurposing benchmark dataset, and a three-stage LLM evaluation pipeline. The work reveals that current LLMs perform reasonably on retrieval tasks but have substantial room for improvement in serendipitous exploration.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Drug Repurposing"
   - "information theory"
 date: 2026-05-08
-content_hash: 8928b9ba5f83fb2a
+content_hash: d3a28ae3d0ea7716
 ---
 
 # Assessing LLMs for Serendipity Discovery in Knowledge Graphs: A Case for Drug Repurposing
@@ -134,11 +134,11 @@ This paper presents an evaluation framework rather than a training methodology; 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Explore-on-Graph: Incentivizing Autonomous Exploration of LLMs on Knowledge Graphs](../../ICLR2026/graph_learning/explore-on-graph_incentivizing_autonomous_exploration_of_large_language_models_o.md)
+- [\[ICLR 2026\] AtlasKV: Augmenting LLMs with Billion-Scale Knowledge Graphs in 20GB VRAM](../../ICLR2026/graph_learning/atlaskv_augmenting_llms_with_billion-scale_knowledge_graphs_in_20gb_vram.md)
 - [\[AAAI 2026\] NOTAM-Evolve: A Knowledge-Guided Self-Evolving Optimization Framework with LLMs for NOTAM Interpretation](notam-evolve_a_knowledge-guided_self-evolving_optimization_framework_with_llms_f.md)
+- [\[ACL 2025\] Can LLMs Evaluate Complex Attribution in QA? Automatic Benchmarking using Knowledge Graphs](../../ACL2025/graph_learning/paper_2401_14640.md)
+- [\[ICLR 2026\] Graphon Cross-Validation: Assessing Models on Network Data](../../ICLR2026/graph_learning/graphon_cross-validation_assessing_models_on_network_data.md)
 - [\[ACL 2026\] LLMs Underperform Graph-Based Parsers on Supervised Relation Extraction for Complex Graphs](../../ACL2026/graph_learning/llms_underperform_graph-based_parsers_on_supervised_relation_extraction_for_comp.md)
-- [\[AAAI 2026\] Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data](format_as_a_prior_quantifying_and_analyzing_bias_in_llms_for_heterogeneous_data.md)
-- [\[AAAI 2026\] RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA](rfkg-cot_relation-driven_adaptive_hop-count_selection_and_few-shot_path_guidance.md)
 
 </div>
 

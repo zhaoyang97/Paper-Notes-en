@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Queueing-Theoretic Framework for Stability Analysis of LLM Inference with KV Cache Memory Constraints
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The paper establishes the first queueing model for LLM inference that explicitly incorporates KV cache memory dynamics, deriving a closed-form stability condition $\lambda < \mu(1-\delta)$. This allows operators to directly calculate the required number of GPUs; validation on single GPU, 8-GPU clusters, and LongBench r
+  [ICML 2026][Model Compression][Queueing theory] The paper establishes the first queueing model for LLM inference that explicitly incorporates KV cache memory dynamics, deriving a closed-form stability condition $\lambda < \mu(1-\delta)$. This allows operators to directly calculate the required number of GPUs; validation on single GPU, 8-GPU clusters, and LongBench real-world data demonstrates errors $\leq 10\%$.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Queueing theory"
+  - "KV cache"
+  - "memory constraints"
+  - "stability conditions"
+  - "throughput prediction"
 date: 2026-05-08
-content_hash: 988bf05032241904
+content_hash: f418bff69ba9974a
 ---
+
 # A Queueing-Theoretic Framework for Stability Analysis of LLM Inference with KV Cache Memory Constraints
 
 **Conference**: ICML 2026  
@@ -136,9 +142,9 @@ The remaining problem is identifying which scheduling strategies ensure stabilit
 ## Related Papers
 
 - [\[ACL 2026\] DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing](../../ACL2026/model_compression/dash-kv_accelerating_long-context_llm_inference_via_asymmetric_kv_cache_hashing.md)
+- [\[NeurIPS 2025\] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](../../NeurIPS2025/model_compression/ada-kv_optimizing_kv_cache_eviction_by_adaptive_budget_allocation_for_efficient_.md)
 - [\[ACL 2026\] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference](../../ACL2026/model_compression/heterocache_a_dynamic_retrieval_approach_to_heterogeneous_kv_cache_compression_f.md)
 - [\[NeurIPS 2025\] MUSTAFAR: Promoting Unstructured Sparsity for KV Cache Pruning in LLM Inference](../../NeurIPS2025/model_compression/mustafar_promoting_unstructured_sparsity_for_kv_cache_pruning_in_llm_inference.md)
-- [\[NeurIPS 2025\] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](../../NeurIPS2025/model_compression/ada-kv_optimizing_kv_cache_eviction_by_adaptive_budget_allocation_for_efficient_.md)
 - [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
 
 </div>

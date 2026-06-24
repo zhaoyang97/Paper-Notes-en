@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] An OpenMind for 3D Medical Vision Self-supervised Learning
 description: >-
-  [ICCV 2025][Medical Imaging][Self-supervised learning] This work releases OpenMind, the largest publicly available 3D medical imaging pretraining dataset (114k brain MRI volumes)…
+  [ICCV 2025][Medical Imaging][Self-supervised learning] This work releases OpenMind, the largest publicly available 3D medical imaging pretraining dataset (114k brain MRI volumes), and conducts a systematic benchmark of existing 3D SSL methods on this dataset using state-of-the-art CNN (ResEnc-L) and Transformer (Primus-M) architectures, establishing the current SOTA for 3D medical image SSL.
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "brain MRI"
   - "benchmark"
 date: 2026-05-08
-content_hash: 4d7eac864fee8a62
+content_hash: 0f482ffffc0faae2
 ---
 
 # An OpenMind for 3D Medical Vision Self-supervised Learning
@@ -173,11 +173,11 @@ OpenMind is complementary to CT-Rate (50k CT): OpenMind focuses on MRI, is large
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](../../CVPR2026/medical_imaging/learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
-- [\[ICCV 2025\] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision](vector_contrastive_learning_for_pixel-wise_pretraining_in_medical_vision.md)
+- [\[CVPR 2026\] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning](../../CVPR2026/medical_imaging/masked-diffusion_autoencoders_for_3d_medical_vision_representation_learning.md)
+- [\[CVPR 2025\] Addressing Data Scarcity in 3D Trauma Detection through Self-Supervised and Semi-Supervised Learning with Vertex Relative Position Encoding](../../CVPR2025/medical_imaging/addressing_data_scarcity_in_3d_trauma_detection_through_self-supervised_and_semi.md)
 - [\[NeurIPS 2025\] Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation](../../NeurIPS2025/medical_imaging/self-supervised_learning_of_echocardiographic_video_representations_via_online_c.md)
-- [\[NeurIPS 2025\] Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum](../../NeurIPS2025/medical_imaging/ditch_the_denoiser_emergence_of_noise_robustness_in_self-supervised_learning_fro.md)
-- [\[NeurIPS 2025\] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data](../../NeurIPS2025/medical_imaging/self-supervised_learning_via_flow-guided_neural_operator_on_time-series_data.md)
+- [\[ICCV 2025\] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision](vector_contrastive_learning_for_pixel-wise_pretraining_in_medical_vision.md)
+- [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](../../CVPR2026/medical_imaging/learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
 
 </div>
 

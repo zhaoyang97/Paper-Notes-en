@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning
 description: >-
-  [AAAI 2026][Autonomous Driving][VLA model acceleration] FastDriveVLA is proposed to train a lightweight plug-and-play ReconPruner module (only 0.07B parameters) via MAE-style foreground pixel reconstruction. By employing…
+  [AAAI 2026][Autonomous Driving][VLA model acceleration] FastDriveVLA is proposed to train a lightweight plug-and-play ReconPruner module (only 0.07B parameters) via MAE-style foreground pixel reconstruction. By employing an adversarial foreground-background reconstruction strategy, the method prioritizes the retention of foreground tokens critical for driving decisions. It achieves state-of-the-art performance across all pruning ratios on the nuScenes open-loop planning bench…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "foreground reconstruction"
   - "plug-and-play"
 date: 2026-05-08
-content_hash: f41d1a8f1be111ca
+content_hash: dbaa462116e712d8
 ---
 
 # FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning
@@ -122,11 +122,11 @@ Both foreground and background losses are weighted combinations of MSE and SSIM 
 
 ## Related Papers
 
-- [\[AAAI 2026\] AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving](decoupling_scene_perception_and_ego_status_a_multi-context_fusion_approach_for_e.md)
 - [\[AAAI 2026\] DriveSuprim: Towards Precise Trajectory Selection for End-to-End Planning](drivesuprim_towards_precise_trajectory_selection_for_end-to-end_planning.md)
+- [\[ICLR 2026\] DriveMamba: Task-Centric Scalable State Space Model for Efficient End-to-End Autonomous Driving](../../ICLR2026/autonomous_driving/drivemamba_task-centric_scalable_state_space_model_for_efficient_end-to-end_auto.md)
+- [\[AAAI 2026\] AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving](decoupling_scene_perception_and_ego_status_a_multi-context_fusion_approach_for_e.md)
 - [\[CVPR 2026\] MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/meanfuser_fast_one-step_multi-modal_trajectory_generation_and_adaptive_reconstru.md)
-- [\[AAAI 2026\] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception](rethinking_the_spatio-temporal_alignment_of_end-to-end_3d_perception.md)
-- [\[AAAI 2026\] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)
+- [\[ICML 2026\] Plug-and-Play Label Map Diffusion for Universal Goal-Oriented Navigation](../../ICML2026/autonomous_driving/plug-and-play_label_map_diffusion_for_universal_goal-oriented_navigation.md)
 
 </div>
 

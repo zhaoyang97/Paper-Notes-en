@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation
 description: >-
-  [NeurIPS 2025][Multi-Agent][3D object annotation] This paper proposes Tri-MARF, a tri-modal multi-agent framework comprising a VLM annotation agent (multi-view, multi-candidate description generation)…
+  [NeurIPS 2025][Multi-Agent][3D object annotation] This paper proposes Tri-MARF, a tri-modal multi-agent framework comprising a VLM annotation agent (multi-view, multi-candidate description generation), an information aggregation agent (BERT clustering + CLIP weighting + UCB1 Multi-Armed Bandit selection), and a point cloud gating agent (Uni3D text–point cloud alignment for hallucination filtering). The system achieves a CLIPScore of 88.7 (surpassing human annotation at 82.4)…
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -13,7 +13,7 @@ tags:
   - "point cloud verification"
   - "cross-modal alignment"
 date: 2026-05-08
-content_hash: 7af76d16b6ac9b31
+content_hash: 25e41ab6ee343a6e
 ---
 
 # 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation
@@ -195,11 +195,11 @@ Zero-shot generalization (without fine-tuning) on ShapeNet-Core, ScanNet, and Mo
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](multi-agent_collaboration_via_evolving_orchestration.md)
 - [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](../../ICLR2026/multi_agent/completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
-- [\[NeurIPS 2025\] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies](gaudp_reinventing_multi-agent_collaboration_through_gaussian-image_synergy_in_di.md)
+- [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](multi-agent_collaboration_via_evolving_orchestration.md)
 - [\[NeurIPS 2025\] Communicating Plans, Not Percepts: Scalable Multi-Agent Coordination with Embodied World Models](communicating_plans_not_percepts_scalable_multi-agent_coordination_with_embodied.md)
-- [\[NeurIPS 2025\] Thought Communication in Multiagent Collaboration](thought_communication_in_multiagent_collaboration.md)
+- [\[NeurIPS 2025\] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies](gaudp_reinventing_multi-agent_collaboration_through_gaussian-image_synergy_in_di.md)
+- [\[NeurIPS 2025\] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks](medagentboard_benchmarking_multi-agent_collaboration_with_conventional_methods_f.md)
 
 </div>
 

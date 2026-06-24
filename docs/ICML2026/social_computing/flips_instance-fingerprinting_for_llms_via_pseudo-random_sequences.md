@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] FLIPS: Instance-Fingerprinting for LLMs via Pseudo-Random Sequences
 description: >-
-  [ICML 2026][Social Computing][Paper Note] FLIPS generates unique model "fingerprint responses" by designing **pseudo-random seed sequences** known only to the model owner. The fingerprint remains detectable (detection rate > 99%, false positive rate < 1%) under black-box query scenarios even if the attacker fine-tunes or prunes the model.
+  [ICML 2026][Social Computing][Model Fingerprinting] FLIPS generates unique model "fingerprint responses" by designing **pseudo-random seed sequences** known only to the model owner. The fingerprint remains detectable (detection rate > 99%, false positive rate < 1%) under black-box query scenarios even if the attacker fine-tunes or prunes the model.
 tags:
-  - ICML 2026
-  - Social Computing
+  - "ICML 2026"
+  - "Social Computing"
+  - "Model Fingerprinting"
+  - "Pseudo-Random Sequences"
+  - "Black-box Detection"
+  - "Robust Fingerprinting"
 date: 2026-05-08
-content_hash: 5b09125e889398f3
+content_hash: 88d9fae77f7b765d
 ---
+
 # FLIPS: Instance-Fingerprinting for LLMs via Pseudo-Random Sequences
 
 **Conference**: ICML 2026  
@@ -147,8 +152,8 @@ Conventional fingerprints require exact matches, which are destroyed by fine-tun
 - [\[CVPR 2026\] Instance-level Visual Active Tracking with Occlusion-Aware Planning](../../CVPR2026/social_computing/instance-level_visual_active_tracking_with_occlusion-aware_planning.md)
 - [\[ICLR 2026\] Tracing and Reversing Edits in LLMs](../../ICLR2026/social_computing/tracing_and_reversing_edits_in_llms.md)
 - [\[ACL 2026\] Investigating Counterfactual Unfairness in LLMs towards Identities through Humor](../../ACL2026/social_computing/investigating_counterfactual_unfairness_in_llms_towards_identities_through_humor.md)
-- [\[ICLR 2026\] When Agents Persuade: Propaganda Generation and Mitigation in LLMs](../../ICLR2026/social_computing/when_agents_persuade_propaganda_generation_and_mitigation_in_llms.md)
 - [\[ACL 2026\] To Lie or Not to Lie? Investigating The Biased Spread of Global Lies by LLMs](../../ACL2026/social_computing/to_lie_or_not_to_lie_investigating_the_biased_spread_of_global_lies_by_llms.md)
+- [\[ACL 2026\] mdok-style at SemEval-2026 Task 9: Finetuning LLMs for Multilingual Polarization Detection](../../ACL2026/social_computing/mdok-style_at_semeval-2026_task_9_finetuning_llms_for_multilingual_polarization_.md)
 
 </div>
 

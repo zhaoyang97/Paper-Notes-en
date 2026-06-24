@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Kontinuous Kontext: Continuous Strength Control for Instruction-based Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] By introducing an additional scalar "editing strength" input to an instruction-based image editing model (Flux Kontext), this work utilizes a lightweight projection network to map the combination of strength and instruction into offsets within the DiT modulation space. This enables any edit to transition smoothly from
+  [CVPR 2026][Image Generation][Instruction-based Image Editing] By introducing an additional scalar "editing strength" input to an instruction-based image editing model (Flux Kontext), this work utilizes a lightweight projection network to map the combination of strength and instruction into offsets within the DiT modulation space. This enables any edit to transition smoothly from "no change" to "full edit" without requiring separate training for each individual attribute.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Instruction-based Image Editing"
+  - "Editing Strength"
+  - "Continuous Control"
+  - "Modulation Space"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 8297e4a6a7cbf3f5
+content_hash: 127928cb66fa6e90
 ---
+
 # Kontinuous Kontext: Continuous Strength Control for Instruction-based Image Editing
 
 **Conference**: CVPR 2026  
@@ -135,8 +141,8 @@ Note: WAN-Video's high CLIP-Dir is due to "cheating" by presenting full-strength
 - [\[CVPR 2026\] SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control](slideredit_continuous_image_editing_with_fine-grained_instruction_control.md)
 - [\[CVPR 2026\] DreamOmni2: Multimodal Instruction-based Generation and Editing](dreamomni2_multimodal_instruction-based_generation_and_editing.md)
 - [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](compbench_benchmarking_complex_instruction-guided_image_editing.md)
-- [\[CVPR 2026\] ReasonEdit: Towards Reasoning-Enhanced Image Editing Models](reasonedit_towards_reasoning-enhanced_image_editing_models.md)
-- [\[CVPR 2026\] Towards Robust Sequential Decomposition for Complex Image Editing](towards_robust_sequential_decomposition_for_complex_image_editing.md)
+- [\[CVPR 2026\] Inter-Edit: First Benchmark for Interactive Instruction-Based Image Editing](inter-edit_first_benchmark_for_interactive_instruction-based_image_editing.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tiled Flash Linear Attention: More Efficient Linear RNN and xLSTM Kernels
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Tiled Flash Linear Attention] This paper proposes TFLA (Tiled Flash Linear Attention), which achieves efficient linear RNN/mLSTM kernels through two-level sequence parallelism and tiling op…
+  [NeurIPS 2025][LLM Efficiency][Tiled Flash Linear Attention] This paper proposes TFLA (Tiled Flash Linear Attention), which achieves efficient linear RNN/mLSTM kernels through two-level sequence parallelism and tiling optimization, delivering significant wall-clock speedups over FlashAttention 3 and Mamba 2 (>2× in training vs. Mamba 2) while maintaining equivalent model accuracy.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -13,7 +13,7 @@ tags:
   - "CUDA Kernel"
   - "Chunked Parallelism"
 date: 2026-05-08
-content_hash: 6070190080794979
+content_hash: bd70b0ad43c1764b
 ---
 
 # Tiled Flash Linear Attention: More Efficient Linear RNN and xLSTM Kernels
@@ -138,10 +138,10 @@ TFLA comprises two core kernels:
 ## Related Papers
 
 - [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
+- [\[ICLR 2026\] FlexLinearAttention: Compiling a Unified Abstraction into Scalable Kernels for Linear Attention](../../ICLR2026/llm_efficiency/flexlinearattention_compiling_a_unified_abstraction_into_scalable_kernels_for_li.md)
 - [\[ICLR 2026\] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity](../../ICLR2026/llm_efficiency/xlstm_scaling_laws_competitive_performance_with_linear_time-complexity.md)
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training](../../ICLR2026/llm_efficiency/race_attention_a_strictly_linear-time_attention_for_long-sequence_training.md)
-- [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
-- [\[NeurIPS 2025\] UMoE: Unifying Attention and FFN with Shared Experts](umoe_unifying_attention_and_ffn_with_shared_experts.md)
+- [\[ICML 2026\] Dynamic Linear Attention](../../ICML2026/llm_efficiency/dynamic_linear_attention.md)
+- [\[ICLR 2026\] Log-Linear Attention](../../ICLR2026/llm_efficiency/log-linear_attention.md)
 
 </div>
 

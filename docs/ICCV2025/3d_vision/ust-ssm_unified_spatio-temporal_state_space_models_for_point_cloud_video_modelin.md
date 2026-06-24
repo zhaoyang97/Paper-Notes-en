@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling
 description: >-
-  [ICCV 2025][3D Vision][Point cloud video] This paper proposes UST-SSM, which extends selective state space models to point cloud video analysis via three core modules — Spatio-Temporal Selective Scanning (STSS)…
+  [ICCV 2025][3D Vision][Point cloud video] This paper proposes UST-SSM, which extends selective state space models to point cloud video analysis via three core modules — Spatio-Temporal Selective Scanning (STSS), Spatio-Temporal Structure Aggregation (STSA), and Temporal Interaction Sampling (TIS) — achieving linear complexity while surpassing Transformer-based methods.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "action recognition"
   - "Mamba"
 date: 2026-05-08
-content_hash: 189bd2a2178b496e
+content_hash: d7bd9b4dfaacc0c9
 ---
 
 # UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling
@@ -155,9 +155,9 @@ With linear complexity, UST-SSM outperforms P4Transformer and PST-Transformer (q
 
 - [\[ICCV 2025\] Global-Aware Monocular Semantic Scene Completion with State Space Models](global-aware_monocular_semantic_scene_completion_with_state_space_models.md)
 - [\[ICCV 2025\] MeshMamba: State Space Models for Articulated 3D Mesh Generation and Reconstruction](meshmamba_state_space_models_for_articulated_3d_mesh_generation_and_reconstructi.md)
-- [\[CVPR 2026\] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding](../../CVPR2026/3d_vision/sts_mixer_4d_point_cloud.md)
 - [\[ICCV 2025\] StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning](strumamba3d_exploring_structural_mamba_for_self-supervised_point_cloud_represent.md)
 - [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
+- [\[CVPR 2026\] Revisiting Monocular SLAM with Spatio-Temporal Scene Modeling](../../CVPR2026/3d_vision/revisiting_monocular_slam_with_spatio-temporal_scene_modeling.md)
 
 </div>
 

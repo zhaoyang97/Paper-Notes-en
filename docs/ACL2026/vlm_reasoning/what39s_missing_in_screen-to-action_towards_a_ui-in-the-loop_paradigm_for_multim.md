@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] This paper proposes the UILoop (UI-in-the-Loop) paradigm, reframing GUI reasoning from the traditional "Screen → Action" into a "Screen → UI Element → Action" cyclic process. Through UI element-driven reinforcement fine-tuning, the model is taught to explicitly locate, understand, and utilize key UI elements, achieving
+  [ACL 2026 Findings][VLM Reasoning][GUI Reasoning] This paper proposes the UILoop (UI-in-the-Loop) paradigm, reframing GUI reasoning from the traditional "Screen → Action" into a "Screen → UI Element → Action" cyclic process. Through UI element-driven reinforcement fine-tuning, the model is taught to explicitly locate, understand, and utilize key UI elements, achieving SOTA performance on GUI reasoning tasks.
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026 Findings"
+  - "VLM Reasoning"
+  - "GUI Reasoning"
+  - "UI Understanding"
+  - "Reinforcement Learning Fine-tuning"
+  - "Multimodal Agent"
+  - "UI Element Localization"
 date: 2026-05-08
-content_hash: 21bbeaec8e8662b8
+content_hash: 79da50ce8827ab7c
 ---
+
 # What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -157,11 +163,11 @@ Using Qwen2.5-VL-3B and 7B as base models, RFT is performed using GRPO on the UI
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation](../../NeurIPS2025/vlm_reasoning/gui-rise_structured_reasoning_and_history_summarization_for_gui_navigation.md)
-- [\[ICML 2026\] What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)](../../ICML2026/vlm_reasoning/what_you_think_is_what_you_see_driving_exploration_in_vlm_agents_via_visual-ling.md)
 - [\[CVPR 2026\] Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](../../CVPR2026/vlm_reasoning/prototypical_action_reasoning_facilitated_by_vision-language_alignment_for_egoce.md)
+- [\[NeurIPS 2025\] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation](../../NeurIPS2025/vlm_reasoning/gui-rise_structured_reasoning_and_history_summarization_for_gui_navigation.md)
+- [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](../../CVPR2026/vlm_reasoning/reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
 - [\[CVPR 2026\] CARE What Fails: Contrastive Anchored-REflection for Verifiable Multimodal Reasoning](../../CVPR2026/vlm_reasoning/care_what_fails_contrastive_anchored-reflection_for_verifiable_multimodal_reason.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/vlm_reasoning/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
+- [\[ICLR 2026\] MMR-V: What's Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos](../../ICLR2026/vlm_reasoning/mmr-v_whats_left_unsaid_a_benchmark_for_multimodal_deep_reasoning_in_videos.md)
 
 </div>
 

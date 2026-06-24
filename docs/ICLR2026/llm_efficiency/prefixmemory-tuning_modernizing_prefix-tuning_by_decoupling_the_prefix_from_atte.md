@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PrefixMemory-Tuning: Modernizing Prefix-Tuning by Decoupling the Prefix from Attention
 description: >-
-  [ICLR 2026][LLM Efficiency][PEFT] This paper first empirically demonstrates that the true cause of Prefix-Tuning's failure in modern large models is the "weight trade-off between prefix and input within the attention softmax." It then proposes PrefixMemory-Tuning (PMT): moving the prefix module out of the attention head and approximating it with a trai
+  [ICLR 2026][LLM Efficiency][Prefix-Tuning] This paper first empirically demonstrates that the true cause of Prefix-Tuning's failure in modern large models is the "weight trade-off between prefix and input within the attention softmax." It then proposes PrefixMemory-Tuning (PMT): moving the prefix module out of the attention head and approximating it with a trainable memory matrix $M$ plus a kernel feature map $\phi(\cdot)$. This decoupling ensures prefix contributions are no…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - PEFT
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Prefix-Tuning"
+  - "PEFT"
+  - "Linear Attention"
+  - "External Memory"
+  - "LLM Adaptation"
 date: 2026-05-08
-content_hash: 6a1a880f405cbb26
+content_hash: fecc269c324fd0d1
 ---
+
 # PrefixMemory-Tuning: Modernizing Prefix-Tuning by Decoupling the Prefix from Attention
 
 **Conference**: ICLR 2026  
@@ -127,11 +132,11 @@ PMT achieved an average absolute improvement of 8.1% over LoRA and 29.4% over Pr
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sequential Parallel Duality in Prefix Scannable Models](sequential_parallel_duality_in_prefix_scannable_models.md)
+- [\[ICLR 2026\] TyphoonMLA: A Mixed Naive-Absorb MLA Kernel For Shared Prefix](typhoonmla_a_mixed_naive-absorb_mla_kernel_for_shared_prefix.md)
 - [\[ICLR 2026\] CPQS-Tuning: A Model Self-Perception-Based Data Filtering Algorithm for Efficient Instruction Fine-Tuning](cpqs-tuning_a_model_self-perception-based_data_filtering_algorithm_for_efficient.md)
 - [\[ICLR 2026\] Neuron-Aware Data Selection in Instruction Tuning for Large Language Models](neuron-aware_data_selection_in_instruction_tuning_for_large_language_models.md)
 - [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
-- [\[ICLR 2026\] Developmental Federated Tuning: A Cognitive-Inspired Paradigm for Efficient LLM Adaptation](developmental_federated_tuning_a_cognitive-inspired_paradigm_for_efficient_llm_a.md)
-- [\[ICLR 2026\] Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning](difficultydiversity_collaborative_filtering_for_data-efficient_llm_fine-tuning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction
 description: >-
-  [NeurIPS 2025][Remote Sensing][cross-view correspondence] This paper introduces the C3 dataset comprising 90K ground photo–floor plan pairs (597 scenes, 153M pixel-level correspondences, and 85K camera poses)…
+  [NeurIPS 2025][Remote Sensing][cross-view correspondence] This paper introduces the C3 dataset comprising 90K ground photo–floor plan pairs (597 scenes, 153M pixel-level correspondences, and 85K camera poses), exposes the limitations of existing correspondence models under cross-view cross-modality settings (e.g., ground photos vs. floor plans), and demonstrates that training on this dataset reduces the RMSE of the best-performing baseline by 34%.
 tags:
   - "NeurIPS 2025"
   - "Remote Sensing"
@@ -13,7 +13,7 @@ tags:
   - "DUSt3R"
   - "structure-from-motion"
 date: 2026-05-08
-content_hash: 16d9bd6ca71be237
+content_hash: 70aec7785117f3b9
 ---
 
 # C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction
@@ -128,8 +128,8 @@ Training and test scenes are disjoint to ensure generalization evaluation. The l
 - [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
 - [\[CVPR 2026\] GeoFlow: Real-Time Fine-Grained Cross-View Geolocalization via Iterative Flow Prediction](../../CVPR2026/remote_sensing/geoflow_real-time_fine-grained_cross-view_geolocalization.md)
 - [\[ICCV 2025\] GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization](../../ICCV2025/remote_sensing/geodistill_geometry-guided_self-distillation_for_weakly_supervised_cross-view_lo.md)
-- [\[NeurIPS 2025\] ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning](chamaevit_unifying_channelaware_masked_autoencoders_and_mult.md)
 - [\[NeurIPS 2025\] Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction](connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)
+- [\[NeurIPS 2025\] ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning](chamaevit_unifying_channelaware_masked_autoencoders_and_mult.md)
 
 </div>
 

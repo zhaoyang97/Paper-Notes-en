@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling
 description: >-
-  [AAAI 2026][Medical Imaging][universal segmentation] ProPL is proposed as a framework that, for the first time, achieves universal semi-supervised ultrasound image segmentation via a shared visual encoder…
+  [AAAI 2026][Medical Imaging][universal segmentation] ProPL is proposed as a framework that, for the first time, achieves universal semi-supervised ultrasound image segmentation via a shared visual encoder, prompt-guided dual decoders, and uncertainty-driven pseudo-label calibration. With only 1/16 labeled data across 5 organs and 8 tasks, it surpasses fully supervised methods by 5.18% mDice.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "prompt guidance"
   - "ultrasound imaging"
 date: 2026-05-08
-content_hash: 0acafa795bfe3f95
+content_hash: 218cf19be34491e1
 ---
 
 # ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling
@@ -127,11 +127,11 @@ Input ultrasound images → shared ConvNeXt-Tiny encoder → dual decoders (stan
 
 ## Related Papers
 
+- [\[ICLR 2026\] K-Prism: A Knowledge-Guided and Prompt Integrated Universal Medical Image Segmentation Model](../../ICLR2026/medical_imaging/k-prism_a_knowledge-guided_and_prompt_integrated_universal_medical_image_segment.md)
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
-- [\[CVPR 2026\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](../../CVPR2026/medical_imaging/a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
+- [\[CVPR 2025\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](../../CVPR2025/medical_imaging/a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
 - [\[AAAI 2026\] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation](denas-vit_data_efficient_nas-optimized_vision_transformer_for_ultrasound_image_s.md)
 - [\[AAAI 2026\] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation](dualfete_revisiting_teacher-student_interactions_from_a_feedback_perspective_for.md)
-- [\[ICML 2026\] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](../../ICML2026/medical_imaging/are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)
 
 </div>
 

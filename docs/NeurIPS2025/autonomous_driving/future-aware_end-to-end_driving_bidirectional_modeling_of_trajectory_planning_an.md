@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution
 description: >-
-  [NEURIPS2025][Autonomous Driving][end-to-end driving] Proposes SeerDrive, which achieves SOTA on NAVSIM and nuScenes through bidirectional modeling of scene evolution and trajectory planning (future-aware planning + iter…
+  [NEURIPS2025][Autonomous Driving][end-to-end driving] Proposes SeerDrive, which achieves SOTA on NAVSIM and nuScenes through bidirectional modeling of scene evolution and trajectory planning (future-aware planning + iterative interaction).
 tags:
   - "NEURIPS2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "trajectory planning"
   - "iterative refinement"
 date: 2026-05-08
-content_hash: be65058794f8fc20
+content_hash: 5eec7d69c33c7106
 ---
 
 # Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution
@@ -140,9 +140,9 @@ Total loss = BEV semantic map loss + trajectory planning loss, covering outputs 
 
 - [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
 - [\[NeurIPS 2025\] Prioritizing Perception-Guided Self-Supervision: A New Paradigm for Causal Modeling in End-to-End Autonomous Driving](prioritizing_perception-guided_self-supervision_a_new_paradigm_for_causal_modeli.md)
-- [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
 - [\[ICML 2026\] DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving](../../ICML2026/autonomous_driving/deepsight_long-horizon_world_modeling_via_latent_states_prediction_for_end-to-en.md)
-- [\[AAAI 2026\] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](../../AAAI2026/autonomous_driving/diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)
+- [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
 
 </div>
 

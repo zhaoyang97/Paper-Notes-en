@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Preference Optimization by Estimating the Ratio of the Data Distribution
 description: >-
-  [NeurIPS 2025][LLM Alignment][DPO] This paper reinterprets DPO as a likelihood ratio (ratio matching) estimation problem and proposes BPO (Bregman Preference Optimization) under a Bregman divergence framework. BPO define…
+  [NeurIPS 2025][LLM Alignment][DPO] This paper reinterprets DPO as a likelihood ratio (ratio matching) estimation problem and proposes BPO (Bregman Preference Optimization) under a Bregman divergence framework. BPO defines a generalized family of loss functions that subsumes DPO as a special case, and introduces the SBA (Scaled Basu's Power Divergence) instantiation, achieving a state-of-the-art 55.9% AlpacaEval2 length-controlled win rate on Llama-3-8B.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "preference optimization"
   - "alignment"
 date: 2026-05-08
-content_hash: 9572cd9de5d99304
+content_hash: 9d5d19a9f1dc7699
 ---
 
 # Preference Optimization by Estimating the Ratio of the Data Distribution
@@ -143,11 +143,11 @@ Llama-3-8B-Instruct on AlpacaEval2:
 
 ## Related Papers
 
+- [\[ACL 2025\] Finding the Sweet Spot: Preference Data Construction for Scaling Preference Optimization](../../ACL2025/llm_alignment/finding_the_sweet_spot_preference_data_construction_for_scaling_preference_optim.md)
+- [\[ACL 2025\] Boosting Vulnerability Detection of LLMs via Curriculum Preference Optimization with Synthetic Reasoning Data](../../ACL2025/llm_alignment/boosting_vulnerability_detection_of_llms_via_curriculum_preference_optimization_.md)
+- [\[ACL 2025\] Reverse Preference Optimization for Complex Instruction Following](../../ACL2025/llm_alignment/reverse_preference_optimization_for_complex_instruction_following.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
-- [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
-- [\[ACL 2026\] Alignment Data Map for Efficient Preference Data Selection and Diagnosis](../../ACL2026/llm_alignment/alignment_data_map_for_efficient_preference_data_selection_and_diagnosis.md)
-- [\[ICLR 2026\] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?](../../ICLR2026/llm_alignment/is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base.md)
-- [\[NeurIPS 2025\] Generalizing while Preserving Monotonicity in Comparison-based Preference Learning Models](generalizing_while_preserving_monotonicity_in_comparison-based_preference_learni.md)
+- [\[ACL 2025\] Optimal Transport-Based Token Weighting for Enhanced Preference Optimization](../../ACL2025/llm_alignment/otpo_token_weighting.md)
 
 </div>
 

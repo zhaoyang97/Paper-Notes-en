@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LEGATO: Large-scale End-to-end Generalizable Approach to Typeset OMR
 description: >-
-  [ICLR 2026][Multimodal VLM][Optical Music Recognition] Legato feeds full-page (or even multi-page) printed sheet music images directly into a frozen Llama vision encoder combined with a scratch-trained ABC decoder. It performs end-to-end transcription into concise ABC notation. Leveraging 214,000 synthetic data samples, it is the first large-scale pre-trained OMR model cap
+  [ICLR 2026][Multimodal VLM][Optical Music Recognition] Legato feeds full-page (or even multi-page) printed sheet music images directly into a frozen Llama vision encoder combined with a scratch-trained ABC decoder. It performs end-to-end transcription into concise ABC notation. Leveraging 214,000 synthetic data samples, it is the first large-scale pre-trained OMR model capable of recognizing full-page/multi-page typeset music and outputting ABC. On highly realistic datasets…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Optical Music Recognition
-  - ABC notation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Optical Music Recognition"
+  - "ABC notation"
+  - "Pre-trained visual encoder"
+  - "End-to-end"
+  - "Multi-page sheet music"
+  - "BPE tokenization"
 date: 2026-05-08
-content_hash: b898e7afdda33362
+content_hash: 3223341084bc3fde
 ---
+
 # LEGATO: Large-scale End-to-end Generalizable Approach to Typeset OMR
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ On the most realistic IMSLP piano scans, Ours reduced TEDn from SMT++'s 97.7 to 
 - [\[CVPR 2026\] MarkushGrapher-2: End-to-end Multimodal Recognition of Chemical Structures](../../CVPR2026/multimodal_vlm/markushgrapher-2_end-to-end_multimodal_recognition_of_chemical_structures.md)
 - [\[AAAI 2026\] SpeakerLM: End-to-End Versatile Speaker Diarization and Recognition with Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/speakerlm_end-to-end_versatile_speaker_diarization_and_recognition_with_multimod.md)
 - [\[ACL 2026\] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition](../../ACL2026/multimodal_vlm/e2e-gmner_end-to-end_generative_grounded_multimodal_named_entity_recognition.md)
-- [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
+- [\[ICLR 2026\] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](tablet_a_large-scale_dataset_for_robust_visual_table_understanding.md)
 
 </div>
 

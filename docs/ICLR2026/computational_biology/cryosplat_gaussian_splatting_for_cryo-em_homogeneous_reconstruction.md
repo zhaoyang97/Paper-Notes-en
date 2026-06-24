@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CryoSplat: Gaussian Splatting for Cryo-EM Homogeneous Reconstruction
 description: >-
-  [ICLR 2026][Computational Biology][cryo-EM] CryoSplat transforms 3D Gaussian Splatting (3DGS) into a differentiable renderer compliant with cryo-EM imaging physics. Using an anisotropic Gaussian Mixture Model (GMM), it achieves stable cryo-EM homogeneous reconstruction directly from raw noisy particle images starting from random initialization—without requiring
+  [ICLR2026][Computational Biology][cryo-EM] CryoSplat transforms 3D Gaussian Splatting (3DGS) into a differentiable renderer compliant with cryo-EM imaging physics. Using an anisotropic Gaussian Mixture Model (GMM), it achieves stable cryo-EM homogeneous reconstruction directly from raw noisy particle images starting from random initialization—without requiring any external consensus maps or atomic models. It outperforms cryoSPARC and cryoDRGN in resolution across four real da…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - cryo-EM
-  - Gaussian Splatting
+  - "ICLR2026"
+  - "Computational Biology"
+  - "cryo-EM"
+  - "Gaussian Mixture Model"
+  - "Gaussian Splatting"
+  - "Homogeneous Reconstruction"
+  - "Differentiable Rendering"
 date: 2026-05-08
-content_hash: 03a2a16c5c928f68
+content_hash: 55b3c5f2ad729dab
 ---
+
 # CryoSplat: Gaussian Splatting for Cryo-EM Homogeneous Reconstruction
 
 **Conference**: ICLR2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis
 description: >-
-  [ICCV 2025][3D Vision][Gaussian Splatting] This paper proposes BBSplat, which replaces the Gaussian opacity in 2D Gaussian Splatting with learnable RGB texture maps and alpha maps…
+  [ICCV 2025][3D Vision][Gaussian Splatting] This paper proposes BBSplat, which replaces the Gaussian opacity in 2D Gaussian Splatting with learnable RGB texture maps and alpha maps, enabling each planar primitive to possess arbitrary shape and per-pixel color control. With fewer primitives, BBSplat closes the rendering quality gap between 2DGS and 3DGS while preserving accurate mesh extraction capability and achieving up to ×17 storage compression.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "model compression"
   - "mesh extraction"
 date: 2026-05-08
-content_hash: 0624c2fbcf4add96
+content_hash: f3b377c642d31f52
 ---
 
 # BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis
@@ -202,8 +202,8 @@ BBSplat is the only 2DGS-based method that simultaneously supports arbitrary sha
 
 - [\[ICCV 2025\] Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis](self-ensembling_gaussian_splatting_for_few-shot_novel_view_synthesis.md)
 - [\[ICCV 2025\] SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing](sehdr_single-exposure_hdr_novel_view_synthesis_via_3d_gaussian_bracketing.md)
+- [\[CVPR 2025\] Novel View Synthesis with Pixel-Space Diffusion Models](../../CVPR2025/3d_vision/novel_view_synthesis_with_pixel-space_diffusion_models.md)
 - [\[ICCV 2025\] HumanOLAT: A Large-Scale Dataset for Full-Body Human Relighting and Novel-View Synthesis](humanolat_a_large-scale_dataset_for_full-body_human_relighting_and_novel-view_sy.md)
-- [\[NeurIPS 2025\] NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods](../../NeurIPS2025/3d_vision/nerfbaselines_consistent_and_reproducible_evaluation_of_novel_view_synthesis_met.md)
 - [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](rayzer_a_self-supervised_large_view_synthesis_model.md)
 
 </div>

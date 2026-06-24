@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Intervention Efficiency and Perturbation Validation Framework: Capacity-Aware and Robust Clinical Model Selection under the Rashomon Effect
 description: >-
-  [AAAI 2026][Medical Imaging][Rashomon Effect] To address the challenge of model selection under the Rashomon Effect—where multiple models achieve similar performance on small…
+  [AAAI 2026][Medical Imaging][Rashomon Effect] To address the challenge of model selection under the Rashomon Effect—where multiple models achieve similar performance on small, class-imbalanced clinical datasets—this paper proposes **Intervention Efficiency (IE)**, a capacity-aware evaluation metric, and the **Perturbation Validation Framework (PVF)**, a robustness validation framework, jointly enabling reliable model selection under resource constraints.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "Class Imbalance"
   - "Clinical Deployment"
 date: 2026-05-08
-content_hash: a084574a7b232db6
+content_hash: f5a234067cb3ad3b
 ---
 
 # Intervention Efficiency and Perturbation Validation Framework: Capacity-Aware and Robust Clinical Model Selection under the Rashomon Effect
@@ -212,9 +212,9 @@ The paper provides a complete theoretical analysis of PVF in the appendix:
 
 - [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
 - [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
-- [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
-- [\[AAAI 2026\] Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation](graph-theoretic_consistency_for_robust_and_topology-aware_semi-supervised_histop.md)
 - [\[CVPR 2026\] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection](../../CVPR2026/medical_imaging/chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_.md)
+- [\[AAAI 2026\] Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks](neural_bandit_based_optimal_llm_selection_for_a_pipeline_of_tasks.md)
+- [\[ICLR 2026\] Accelerating Benchmarking of Functional Connectivity Modeling via Structure-aware Core-set Selection](../../ICLR2026/medical_imaging/accelerating_benchmarking_of_functional_connectivity_modeling_via_structure-awar.md)
 
 </div>
 

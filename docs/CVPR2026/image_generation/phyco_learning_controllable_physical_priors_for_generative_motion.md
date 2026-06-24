@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PhyCo: Learning Controllable Physical Priors for Generative Motion
 description: >-
-  [CVPR 2026][Image Generation][ControlNet] PhyCo enables video diffusion models to generate motion consistent with physics (friction, restitution, deformation, external forces) in a continuous and controllable manner **without relying on any simulators or geometric reconstruction** during inference. This is achieved through a triad: a 100k physical simulation d
+  [CVPR 2026][Image Generation][Physical Consistency] PhyCo enables video diffusion models to generate motion consistent with physics (friction, restitution, deformation, external forces) in a continuous and controllable manner **without relying on any simulators or geometric reconstruction** during inference. This is achieved through a triad: a 100k physical simulation dataset, supervised fine-tuning using ControlNet with pixel-aligned physical attribute maps…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - ControlNet
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Physical Consistency"
+  - "Video Diffusion"
+  - "ControlNet"
+  - "Physical Attribute Conditioning"
+  - "VLM Reward Optimization"
 date: 2026-05-08
-content_hash: 7ec142408175916a
+content_hash: 320ffcd3f2d70214
 ---
+
 # PhyCo: Learning Controllable Physical Priors for Generative Motion
 
 **Conference**: CVPR 2026  
@@ -135,14 +140,17 @@ On 100 in-domain simulation test samples, a fine-tuned Qwen2.5-VL-3B was used to
 
 <div class="related-papers" markdown="1">
 
-[Force-Prompting: Controlling Video Diffusion with Forces](https://arxiv.org/abs/2309.xxxx)  
-[PhysGen: Rigid-Body Physics-Grounded Video Generation](https://arxiv.org/abs/2304.xxxx)  
-[VLIPP: Video Language Image Physical Prior](https://arxiv.org/abs/2401.xxxx)
+## Related Papers
+
+- [\[CVPR 2026\] MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation](mocodiff_a_controllable_autoregressive_diffusion_model_for_expressive_motion_gen.md)
+- [\[CVPR 2026\] Learning Latent Proxies for Controllable Single-Image Relighting](learning_latent_proxies_for_controllable_single-image_relighting.md)
+- [\[CVPR 2026\] MotionEdit: Benchmarking and Learning Motion-Centric Image Editing](motionedit_benchmarking_and_learning_motion-centric_image_editing.md)
+- [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
+- [\[ECCV 2024\] Learning Semantic Latent Directions for Accurate and Controllable Human Motion Prediction](../../ECCV2024/image_generation/learning_semantic_latent_directions_for_accurate_and_controllable_human_motion_p.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation](mocodiff_a_controllable_autoregressive_diffusion_model_for_expressive_motion_gen.md)

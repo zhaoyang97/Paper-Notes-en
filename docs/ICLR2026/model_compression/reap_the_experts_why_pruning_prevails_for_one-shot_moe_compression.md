@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] REAP the Experts: Why Pruning Prevails for One-Shot MoE Compression
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper theoretically proves that "expert merging" introduces irreducible errors due to the loss of the router's independent, input-dependent modulation capability over experts. Consequently, it proposes REAP—a one-shot pruning criterion that simultaneously considers router gating values and expert activation norms.
+  [ICLR 2026][Model Compression][MoE Compression] This paper theoretically proves that "expert merging" introduces irreducible errors due to the loss of the router's independent, input-dependent modulation capability over experts. Consequently, it proposes REAP—a one-shot pruning criterion that simultaneously considers router gating values and expert activation norms. REAP significantly outperforms merging and other pruning methods across various SMoEs ranging from 20B to 1T…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "MoE Compression"
+  - "Expert Pruning"
+  - "Expert Merging"
+  - "Router"
+  - "One-shot Compression"
 date: 2026-05-08
-content_hash: 4f7e5be61b7b9be3
+content_hash: 15ce98a353eeaf7e
 ---
+
 # REAP the Experts: Why Pruning Prevails for One-Shot MoE Compression
 
 **Conference**: ICLR 2026  
@@ -150,7 +156,7 @@ At large scale, applying 50% pruning to Qwen3-Coder-480B and Kimi-K2 (W4A16 quan
 - [\[ICLR 2026\] OBS-Diff: Accurate Pruning For Diffusion Models in One-Shot](obs-diff_accurate_pruning_for_diffusion_models_in_one-shot.md)
 - [\[ICLR 2026\] MoNE: Replacing Redundant Experts with Lightweight Novices for Structured Pruning of MoE](mone_replacing_redundant_experts_with_lightweight_novices_for_structured_pruning.md)
 - [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
-- [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](../../ICML2026/model_compression/rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
+- [\[ICLR 2026\] TD-MoE: Tensor Decomposition for MoE Models](td-moe_tensor_decomposition_for_moe_models.md)
 - [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
 
 </div>

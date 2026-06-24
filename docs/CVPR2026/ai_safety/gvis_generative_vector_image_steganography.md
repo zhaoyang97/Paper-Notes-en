@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GVIS: Generative Vector Image Steganography
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] GVIS treats "deterministically generating a raster image via a diffusion model and then vectorizing it into an SVG" as the steganographic cover. It embeds ciphertext by perturbing the control points of cubic Bézier curves. Without requiring training, it can embed approximately 88,000 bits into a single $256 \times 256$
+  [CVPR 2026][AI Safety][Generative Steganography] GVIS treats "deterministically generating a raster image via a diffusion model and then vectorizing it into an SVG" as the steganographic cover. It embeds ciphertext by perturbing the control points of cubic Bézier curves. Without requiring training, it can embed approximately 88,000 bits into a single $256 \times 256$ image with 100% lossless extraction while maintaining file size and statistical distribution. It is the first…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
-  - SVG
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Generative Steganography"
+  - "Vector Image Steganography"
+  - "Bézier Curve"
+  - "Diffusion Models"
+  - "SVG"
 date: 2026-05-08
-content_hash: f3d08636161d13f0
+content_hash: f6833d3d7c2ef55d
 ---
+
 # GVIS: Generative Vector Image Steganography
 
 **Conference**: CVPR 2026  
@@ -138,6 +142,7 @@ The GVIS stego file size is nearly identical to the original; StegoSVG ballooned
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -145,8 +150,8 @@ The GVIS stego file size is nearly identical to the original; StegoSVG ballooned
 - [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](runawayevil_jailbreaking_the_image-to-video_generative_models.md)
 - [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](../../ICML2026/ai_safety/training-free_coverless_multi-image_steganography_with_access_control.md)
 - [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
-- [\[CVPR 2026\] SAGA: Source Attribution of Generative AI Videos](saga_source_attribution_of_generative_ai_videos.md)
 - [\[CVPR 2026\] UniDef: Universal Defense Against Unauthorized Image Manipulation](unidef_universal_defense_against_unauthorized_image_manipulation.md)
+- [\[CVPR 2026\] SAGA: Source Attribution of Generative AI Videos](saga_source_attribution_of_generative_ai_videos.md)
 
 </div>
 

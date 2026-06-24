@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks
 description: >-
-  [ICLR 2026][Others][Paper Note] Addressing the poor robustness of direct encoding Spiking Neural Networks (SNNs), this paper proposes "Gradient Temporal Collinearity" (GTC) as a quantifiable metric to explain why they are less resilient than rate encoding. The authors design STOD—inserting parameterized orthogonal kernels at the input layer for each
+  [ICLR2026][Spiking Neural Networks] Addressing the poor robustness of direct encoding Spiking Neural Networks (SNNs), this paper proposes "Gradient Temporal Collinearity" (GTC) as a quantifiable metric to explain why they are less resilient than rate encoding. The authors design STOD—inserting parameterized orthogonal kernels at the input layer for each timestep combined with global orthogonal regularization—to structurally decorrelate gradient directions across timesteps. Th…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR2026"
+  - "Spiking Neural Networks"
+  - "Direct Encoding"
+  - "Adversarial Robustness"
+  - "Gradient Temporal Collinearity"
+  - "Orthogonal Kernels"
 date: 2026-05-08
-content_hash: 27c3f6373b98833c
+content_hash: 4b30605f3936bbcc
 ---
+
 # Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks
 
 **Conference**: ICLR2026  
@@ -148,9 +153,9 @@ STOD is more balanced across attack types compared to baselines like HoSNN (stro
 ## Related Papers
 
 - [\[ICLR 2026\] A Brain-Inspired Gating Mechanism Unlocks Robust Computation in Spiking Neural Networks](a_brain-inspired_gating_mechanism_unlocks_robust_computation_in_spiking_neural_n.md)
-- [\[ICLR 2026\] Any-Subgroup Equivariant Networks via Symmetry Breaking](any-subgroup_equivariant_networks_via_symmetry_breaking.md)
 - [\[ICLR 2026\] Beyond Linear Processing: Dendritic Bilinear Integration in Spiking Neural Networks](beyond_linear_processing_dendritic_bilinear_integration_in_spiking_neural_networ.md)
 - [\[ICLR 2026\] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks](online_pseudo-zeroth-order_training_of_neuromorphic_spiking_neural_networks.md)
+- [\[AAAI 2026\] DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks](../../AAAI2026/others/ds-atgo_dual-stage_synergistic_learning_via_forward_adaptive_threshold_and_backw.md)
 - [\[ICLR 2026\] Fractional-Order Spiking Neural Network](fractional-order_spiking_neural_network.md)
 
 </div>

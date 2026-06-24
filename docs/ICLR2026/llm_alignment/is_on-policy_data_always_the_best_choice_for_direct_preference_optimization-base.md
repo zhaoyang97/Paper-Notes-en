@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?
 description: >-
-  [ICLR 2026][Alignment & RLHF][on-policy vs off-policy] This paper challenges the consensus that "on-policy data is always better." It discovers that the alignment process is divided into two stages: preference injection (requiring high-diversity off-policy data) and preference fine-tuning (requiring high-quality on-policy data). The optimal data type varies by model and st
+  [ICLR 2026][LLM Alignment][on-policy vs off-policy] This paper challenges the consensus that "on-policy data is always better." It discovers that the alignment process is divided into two stages: preference injection (requiring high-diversity off-policy data) and preference fine-tuning (requiring high-quality on-policy data). The optimal data type varies by model and stage. A boundary determination algorithm with only 3.2% computational overhead is proposed and validated acro…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - on-policy vs off-policy
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "on-policy vs off-policy"
+  - "alignment stages"
+  - "preference injection"
+  - "preference fine-tuning"
+  - "data selection"
 date: 2026-05-08
-content_hash: 92dddcd0a4065422
+content_hash: 48d8c174eb127a5b
 ---
+
 # Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?
 
 **Conference**: ICLR 2026  
@@ -128,16 +133,16 @@ To justify this classification, the authors provide several theorems. Theorem 5.
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Keep the Best, Forget the Rest: Reliable Alignment with Order-Aware Preference Optimization](keep_the_best_forget_the_rest_reliable_alignment_with_order-aware_preference_opt.md)
+- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
 - [\[ICLR 2026\] ActiveDPO: Active Direct Preference Optimization for Sample-Efficient Alignment](activedpo_active_direct_preference_optimization_for_sample-efficient_alignment.md)
 - [\[ICLR 2026\] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)
-- [\[ICML 2026\] Autoregressive Direct Preference Optimization](../../ICML2026/llm_alignment/autoregressive_direct_preference_optimization.md)
-- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
+- [\[ICLR 2026\] Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization](learning_from_noisy_preferences_a_semi-supervised_learning_approach_to_direct_pr.md)
 
 </div>
 

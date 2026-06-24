@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KINDLE: Knowledge-Guided Distillation for Prior-Free Gene Regulatory Network Inference
 description: >-
-  [NeurIPS 2025][Model Compression][Gene Regulatory Network] This paper proposes KINDLE, a three-stage framework that transfers gene regulatory knowledge learned by a prior-guided teacher model to a prior-free student mode…
+  [NeurIPS 2025][Model Compression][Gene Regulatory Network] This paper proposes KINDLE, a three-stage framework that transfers gene regulatory knowledge learned by a prior-guided teacher model to a prior-free student model via knowledge distillation, achieving state-of-the-art performance in gene regulatory network (GRN) inference without relying on any external prior knowledge.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Attention"
   - "Single-Cell RNA-seq"
 date: 2026-05-08
-content_hash: 06176f5d2059590f
+content_hash: b26330498161a58c
 ---
 
 # KINDLE: Knowledge-Guided Distillation for Prior-Free Gene Regulatory Network Inference
@@ -163,8 +163,8 @@ The key distinction of KINDLE is that it is the only framework requiring no prio
 ## Related Papers
 
 - [\[NeurIPS 2025\] Less is More but Where: Dynamic Token Compression via LLM-Guided Keyframe Prior](less_is_more_but_where_dynamic_token_compression_via_llm-guided_keyframe_prior.md)
+- [\[ICLR 2026\] Generative Diffusion Prior Distillation for Long-Context Knowledge Transfer](../../ICLR2026/model_compression/generative_diffusion_prior_distillation_for_long-context_knowledge_transfer.md)
 - [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
-- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
 - [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
 - [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
 

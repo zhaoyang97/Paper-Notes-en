@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation
 description: >-
-  [ICCV 2025][Multimodal VLM][perspective-aware reasoning] This paper proposes the Abstract Perspective Change (APC) framework, which leverages visual foundation models to construct an abstract scene representation and per…
+  [ICCV 2025][VLM Reasoning][perspective-aware reasoning] This paper proposes the Abstract Perspective Change (APC) framework, which leverages visual foundation models to construct an abstract scene representation and perform perspective transformations, enabling VLMs to reason spatially from arbitrary viewpoints. APC substantially outperforms existing VLMs and fine-tuned models on both synthetic and real-image benchmarks.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "perspective-aware reasoning"
   - "mental imagery simulation"
   - "vision-language models"
   - "spatial reasoning"
   - "perspective transformation"
 date: 2026-05-08
-content_hash: 5566567a3f41c75d
+content_hash: e3406baee3f64dfe
 ---
 
 # Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation
@@ -137,11 +137,11 @@ Perspective reasoning accuracy comparison on the synthetic benchmark (Spatial-Ma
 
 ## Related Papers
 
-- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/multimodal_vlm/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
-- [\[ICCV 2025\] Global and Local Entailment Learning for Natural World Imagery](global_and_local_entailment_learning_for_natural_world_imagery.md)
-- [\[ICCV 2025\] CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting](capture_evaluating_spatial_reasoning_in_vision_language_models_via_occluded_obje.md)
-- [\[ICCV 2025\] GEOBench-VLM: Benchmarking Vision-Language Models for Geospatial Tasks](geobench-vlm_benchmarking_vision-language_models_for_geospatial_tasks.md)
+- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/vlm_reasoning/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
 - [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](llava-cot_let_vision_language_models_reason_step-by-step.md)
+- [\[ICCV 2025\] Understanding Museum Exhibits using Vision-Language Reasoning](understanding_museum_exhibits_using_vision-language_reasoning.md)
+- [\[CVPR 2026\] Machine Mental Imagery: Empower Multimodal Reasoning with Latent Visual Tokens](../../CVPR2026/vlm_reasoning/machine_mental_imagery_empower_multimodal_reasoning_with_latent_visual_tokens.md)
+- [\[ICML 2026\] MentisOculi: Revealing the Limits of Reasoning with Mental Imagery](../../ICML2026/vlm_reasoning/mentisoculi_revealing_the_limits_of_reasoning_with_mental_imagery.md)
 
 </div>
 

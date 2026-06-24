@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Learning-Augmented Moment Estimation on Time-Decay Models
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper introduces "ML-predicted heavy-hitter oracles" into **time-decaying stream models** (including polynomial decay, exponential decay, and sliding windows). By employing a **suffix-compatible oracle** that only predicts heavy elements in "stream suffixes" combined with a **smoothness reduction**, existing learn
+  [ICLR 2026][Learning Theory][Time-decaying streams] This paper introduces "ML-predicted heavy-hitter oracles" into **time-decaying stream models** (including polynomial decay, exponential decay, and sliding windows). By employing a **suffix-compatible oracle** that only predicts heavy elements in "stream suffixes" combined with a **smoothness reduction**, existing learning-augmented streaming $F_p$ moment estimation algorithms are ported to time-decay scenarios almost lossles…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Streaming Algorithms"
+  - "Learning-Augmented Algorithms"
+  - "Time-decaying streams"
+  - "Moment estimation"
+  - "Heavy-hitter oracle"
+  - "Smooth histograms"
+  - "Sliding windows"
 date: 2026-05-08
-content_hash: 3d450432085ed9b5
+content_hash: 2385d028c8521008
 ---
+
 # Learning-Augmented Moment Estimation on Time-Decay Models
 
 **Conference**: ICLR 2026  
@@ -130,6 +138,7 @@ Experiments focus on the sliding window case, comparing non-augmented algorithms
 - Value: ⭐⭐⭐⭐ Provides an implementable + guaranteed time-decay moment estimation framework, highly relevant for stream analysis under privacy regulations.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -137,8 +146,8 @@ Experiments focus on the sliding window case, comparing non-augmented algorithms
 - [\[ICLR 2026\] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants](finite-time_convergence_analysis_of_ode-based_generative_models_for_stochastic_i.md)
 - [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
 - [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
+- [\[ICLR 2026\] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion](better_learning-augmented_spanning_tree_algorithms_via_metric_forest_completion.md)
 - [\[ICLR 2026\] ATLAS: Alibaba Dataset and Benchmark for Learning-Augmented Scheduling](atlas_alibaba_dataset_and_benchmark_for_learning-augmented_scheduling.md)
-- [\[ICLR 2026\] Online Rounding and Learning Augmented Algorithms for Facility Location](online_rounding_and_learning_augmented_algorithms_for_facility_location.md)
 
 </div>
 

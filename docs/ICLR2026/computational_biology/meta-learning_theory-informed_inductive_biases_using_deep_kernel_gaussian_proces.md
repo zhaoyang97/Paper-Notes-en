@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Meta-Learning Theory-Informed Inductive Biases using Deep Kernel Gaussian Processes
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This work utilizes Bayesian meta-learning to automatically distill "black-box" normative theories (e.g., efficient coding in the retina) into a Deep Kernel Gaussian Process prior (Theory-Informed Kernel). This serves as an inductive bias to improve fitting on real neural data and allows for the rigorous quantification
+  [ICLR 2026][Computational Biology][Normative Theory] This work utilizes Bayesian meta-learning to automatically distill "black-box" normative theories (e.g., efficient coding in the retina) into a Deep Kernel Gaussian Process prior (Theory-Informed Kernel). This serves as an inductive bias to improve fitting on real neural data and allows for the rigorous quantification of "theory-data alignment" using exact marginal likelihood.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Normative Theory"
+  - "Gaussian Processes"
+  - "Deep Kernels"
+  - "Meta-Learning"
+  - "Efficient Coding"
+  - "Bayesian Model Comparison"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: d2a5ce2bd892a4df
+content_hash: b8bfff226d9d3709
 ---
+
 # Meta-Learning Theory-Informed Inductive Biases using Deep Kernel Gaussian Processes
 
 **Conference**: ICLR 2026  
@@ -106,6 +114,7 @@ Data: Ex vivo calcium imaging responses of 86 mouse retinal ganglion cells (RGCs
 - **Value**: ⭐⭐⭐⭐⭐ Provides a scalable validation tool for neuroscience and serves as a strong case study for theory-informed kernel design in Bayesian ML.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

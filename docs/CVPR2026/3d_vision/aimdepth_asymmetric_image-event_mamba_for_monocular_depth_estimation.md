@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] AIMDepth introduces Mamba (State Space Models) to image-event monocular depth estimation for the first time. It employs a two-level modal alignment before fusion: bidirectional prior injection in the frequency domain (SCPG) for input-level alignment, and an asymmetric feature selection encoder (AME) for feature-level a
+  [CVPR 2026][3D Vision][Monocular Depth Estimation] AIMDepth introduces Mamba (State Space Models) to image-event monocular depth estimation for the first time. It employs a two-level modal alignment before fusion: bidirectional prior injection in the frequency domain (SCPG) for input-level alignment, and an asymmetric feature selection encoder (AME) for feature-level alignment. These are combined with a modal interaction local refinement module (ModiLocal)…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular Depth Estimation"
+  - "Event Camera"
+  - "Image-Event Fusion"
+  - "Mamba/State Space Models"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: 16381c512f5df0bf
+content_hash: 3e9acee3815cba01
 ---
+
 # AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -163,15 +169,14 @@ Component ablation on MVSEC (Average A↓; baseline has all three modules off):
 ## Related Papers
 
 - [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
 - [\[CVPR 2026\] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
+- [\[CVPR 2026\] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation](iris_integrating_language_into_diffusion-based_monocular_depth_estimation.md)
+- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
+- [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)

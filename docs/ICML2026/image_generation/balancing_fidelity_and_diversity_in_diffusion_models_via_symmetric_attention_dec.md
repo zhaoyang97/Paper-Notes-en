@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Balancing Fidelity and Diversity in Diffusion Models via Symmetric Attention Decomposition: Hopfield Perspective
 description: >-
-  [ICML 2026][Image Generation][Paper Note] Decomposes the $\mathbf{QK}^\top$ attention matrix in diffusion models into symmetric components (energy landscape) and anti-symmetric components (circulatory dynamics), derives Hopfield-style stability measures to diagnose metastable mixing, and achieves a training-free controllable fidelity-diversity trade-off by reg
+  [ICML 2026][Image Generation][Attention decomposition] Decomposes the $\mathbf{QK}^\top$ attention matrix in diffusion models into symmetric components (energy landscape) and anti-symmetric components (circulatory dynamics), derives Hopfield-style stability measures to diagnose metastable mixing, and achieves a training-free controllable fidelity-diversity trade-off by regulating the anti-symmetric component.
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Attention decomposition"
+  - "Hopfield Network"
+  - "Fidelity-diversity trade-off"
+  - "Skew-symmetric perturbation"
+  - "Associative memory"
 date: 2026-05-08
-content_hash: 1855fdba5d4d1322
+content_hash: 2e4e4aa2aeae4db7
 ---
+
 # Balancing Fidelity and Diversity in Diffusion Models via Symmetric Attention Decomposition: Hopfield Perspective
 
 **Conference**: ICML 2026  

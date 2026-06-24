@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Detached Skip-Links and $R$-Probe: Decoupling Feature Aggregation from Gradient Propagation for MLLM OCR
 description: >-
-  [ICML 2026][Multimodal VLM][MLLM OCR] Addressing OCR scenarios in MLLMs, the authors apply stop-gradient (Detached Skip-Links) to shallow skip branches within a multi-layer ViT→LLM fusion architecture. Simultaneously, they propose $R$-Probe, a reconstruction probe initialized with the "first 1/4 layers of the LLM," to diagnose whether visual tokens effecti
+  [ICML 2026][Multimodal VLM][MLLM OCR] Addressing OCR scenarios in MLLMs, the authors apply stop-gradient (Detached Skip-Links) to shallow skip branches within a multi-layer ViT→LLM fusion architecture. Simultaneously, they propose $R$-Probe, a reconstruction probe initialized with the "first 1/4 layers of the LLM," to diagnose whether visual tokens effectively deliver fine-grained information to the language model.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - MLLM OCR
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "MLLM OCR"
+  - "Multi-layer Feature Fusion"
+  - "Stop-gradient"
+  - "Reconstruction Probe"
+  - "Training Stability"
 date: 2026-05-08
-content_hash: d8ebff8a57ee3abd
+content_hash: 4873523af21d56f9
 ---
+
 # Detached Skip-Links and $R$-Probe: Decoupling Feature Aggregation from Gradient Propagation for MLLM OCR
 
 **Conference**: ICML 2026  
@@ -137,10 +142,17 @@ Two core hyperparameters: sampling stride $S$ (density of intermediate layers) a
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning](../../ICLR2026/multimodal_vlm/decoupling_primitive_with_experts_dynamic_feature_alignment_for_compositional_ze.md)
+- [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
+- [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](../../ICLR2026/multimodal_vlm/keeplora_continual_learning_with_residual_gradient_adaptation.md)
+- [\[ACL 2025\] Improving MLLM's Document Image Machine Translation via Synchronously Self-reviewing Its OCR Proficiency](../../ACL2025/multimodal_vlm/improving_mllms_document_image_machine_translation_via_synchronously_self-review.md)
+- [\[ICML 2026\] ECG-R1: Protocol-Guided and Modality-Agnostic MLLM for Reliable ECG Interpretation](ecg-r1_protocol-guided_and_modality-agnostic_mllm_for_reliable_ecg_interpretatio.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2025\] Improving MLLM's Document Image Machine Translation via Synchronously Self-reviewing Its OCR Proficiency](../../ACL2025/multimodal_vlm/improving_mllms_document_image_machine_translation_via_synchronously_self-review.md)

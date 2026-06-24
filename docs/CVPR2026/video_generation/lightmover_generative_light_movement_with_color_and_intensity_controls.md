@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LightMover: Generative Light Movement with Color and Intensity Controls
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] LightMover leverages video diffusion priors to model light source editing as a sequence-to-sequence prediction problem. By utilizing a unified control token representation for precise manipulation of light position, color, and intensity, and introducing an adaptive token pruning mechanism that reduces control sequence
+  [CVPR 2026][Video Generation][Light source manipulation] LightMover leverages video diffusion priors to model light source editing as a sequence-to-sequence prediction problem. By utilizing a unified control token representation for precise manipulation of light position, color, and intensity, and introducing an adaptive token pruning mechanism that reduces control sequence length by 41%, the method outperforms existing approaches in both light movement and object movement ta…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Light source manipulation"
+  - "video diffusion models"
+  - "lighting editing"
+  - "adaptive token pruning"
+  - "physical rendering data"
 date: 2026-05-08
-content_hash: 5ef882588cb19686
+content_hash: 21a48a9710769368
 ---
+
 # LightMover: Generative Light Movement with Color and Intensity Controls
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ A multi-task hybrid strategy is employed, with a 10:1 ratio of synthetic to real
 
 ## Related Papers
 
-- [\[CVPR 2026\] FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters](fastlightgen_fast_and_light_video_generation_with_fewer_steps_and_parameters.md)
+- [\[ICLR 2026\] Light-X: Generative 4D Video Rendering with Camera and Illumination Control](../../ICLR2026/video_generation/light-x_generative_4d_video_rendering_with_camera_and_illumination_control.md)
 - [\[CVPR 2026\] V-RGBX: Video Editing with Accurate Controls over Intrinsic Properties](v-rgbx_video_editing_with_accurate_controls_over_intrinsic_properties.md)
+- [\[CVPR 2026\] FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters](fastlightgen_fast_and_light_video_generation_with_fewer_steps_and_parameters.md)
 - [\[CVPR 2026\] Generative Neural Video Compression via Video Diffusion Prior](generative_neural_video_compression_via_video_diffusion_prior.md)
 - [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
-- [\[CVPR 2025\] ReCapture: Generative Video Camera Controls for User-Provided Videos Using Masked Video Fine-Tuning](../../CVPR2025/video_generation/recapture_generative_video_camera_controls_for_user-provided_videos_using_masked.md)
 
 </div>
 

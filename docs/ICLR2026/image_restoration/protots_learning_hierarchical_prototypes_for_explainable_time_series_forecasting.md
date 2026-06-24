@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProtoTS: Learning Hierarchical Prototypes for Explainable Time Series Forecasting
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] This paper proposes ProtoTS, which achieves explainable time series forecasting through hierarchical prototype learning: a few coarse-grained prototypes provide a global pattern overview, while successive levels of sub-prototypes capture local variations. It combines multi-channel embedding with bottleneck fusion to ha
+  [ICLR 2026][Image Restoration][Explainable forecasting] This paper proposes ProtoTS, which achieves explainable time series forecasting through hierarchical prototype learning: a few coarse-grained prototypes provide a global pattern overview, while successive levels of sub-prototypes capture local variations. It combines multi-channel embedding with bottleneck fusion to handle heterogeneous exogenous variables. On the LOF dataset, it reduces MSE by 48.3% and MAE by 20.9%…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Explainable forecasting"
+  - "hierarchical prototypes"
+  - "exogenous variables"
+  - "multi-channel embedding"
+  - "expert-steerable"
 date: 2026-05-08
-content_hash: ae0d734de23aff44
+content_hash: 494bb3263e19b940
 ---
+
 # ProtoTS: Learning Hierarchical Prototypes for Explainable Time Series Forecasting
 
 **Conference**: ICLR 2026  
@@ -161,10 +167,10 @@ ProtoTS reduced MSE by 48.3% and MAE by 20.9% on LOF; on EPF, both MSE and MAE w
 ## Related Papers
 
 - [\[ICML 2025\] TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation](../../ICML2025/image_restoration/timedart_a_diffusion_autoregressive_transformer_for_self-supervised_time_series_.md)
+- [\[ICLR 2026\] Taming Hierarchical Image Coding Optimization: A Spectral Regularization Perspective](taming_hierarchical_image_coding_optimization_a_spectral_regularization_perspect.md)
 - [\[ICLR 2026\] Test-Time Domain Generalization for Image Super-Resolution](test-time_domain_generalization_for_image_super-resolution.md)
 - [\[NeurIPS 2025\] Luminance-Aware Statistical Quantization: Unsupervised Hierarchical Learning for Illumination Enhancement](../../NeurIPS2025/image_restoration/luminance-aware_statistical_quantization_unsupervised_hierarchical_learning_for_.md)
-- [\[CVPR 2026\] Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution](../../CVPR2026/image_restoration/time_without_time_pseudo-temporal_representation_for_space-time_super-resolution.md)
-- [\[ICLR 2026\] Mechanism of Task-oriented Information Removal in In-context Learning](mechanism_of_task-oriented_information_removal_in_in-context_learning.md)
+- [\[ICLR 2026\] Exploring Real-Time Super-Resolution: Benchmarking and Fine-Tuning for Streaming Content](exploring_real-time_super-resolution_benchmarking_and_fine-tuning_for_streaming_.md)
 
 </div>
 

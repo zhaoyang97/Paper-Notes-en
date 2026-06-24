@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Triangle of Similarity: A Multi-Faceted Framework for Comparing Neural Network Representations
 description: >-
-  [AAAI 2026][Multimodal VLM][neural network representation comparison] This paper proposes the *Triangle of Similarity* framework, which integrates three complementary perspectives — static representational similarity (CK…
+  [AAAI 2026][Multimodal VLM][neural network representation comparison] This paper proposes the *Triangle of Similarity* framework, which integrates three complementary perspectives — static representational similarity (CKA/Procrustes), functional similarity (linear mode connectivity/predictive distribution similarity), and sparsity similarity (pruning robustness) — to comprehensively compare neural networks. Key findings include that architectural family is the primary determi…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "network pruning"
   - "model similarity"
 date: 2026-05-08
-content_hash: 6208ed94d48a6e99
+content_hash: 4b2266112dbbfc80
 ---
 
 # The Triangle of Similarity: A Multi-Faceted Framework for Comparing Neural Network Representations
@@ -155,8 +155,8 @@ For any model pair $(M_A, M_B)$, a three-panel analysis is constructed:
 - [\[AAAI 2026\] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)
 - [\[CVPR 2026\] Relational Visual Similarity](../../CVPR2026/multimodal_vlm/relational_visual_similarity.md)
 - [\[CVPR 2026\] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion](../../CVPR2026/multimodal_vlm/videofusion_a_spatio-temporal_collaborative_network_for_multi-modal_video_fusion.md)
+- [\[CVPR 2026\] Beyond Global Similarity: Multi-Conditional Retrieval for Fine-Grained Cross-Modal Understanding](../../CVPR2026/multimodal_vlm/beyond_global_similarity_multi-conditional_retrieval_for_fine-grained_cross-moda.md)
 - [\[AAAI 2026\] See, Symbolize, Act: Grounding VLMs with Spatial Representations for Better Gameplay](see_symbolize_act_grounding_vlms_with_spatial_representations_for_better_gamepla.md)
-- [\[NeurIPS 2025\] Hierarchical Self-Attention: Generalizing Neural Attention Mechanics to Multi-Scale Problems](../../NeurIPS2025/multimodal_vlm/hierarchical_self-attention_generalizing_neural_attention_mechanics_to_multi-sca.md)
 
 </div>
 

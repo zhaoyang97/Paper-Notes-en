@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PreFM: Online Audio-Visual Event Parsing via Predictive Future Modeling
 description: >-
-  [NeurIPS 2025][Video Understanding][Online audio-visual event parsing] This paper introduces the Online Audio-Visual Event Parsing (On-AVEP) paradigm for the first time, along with the PreFM framework…
+  [NeurIPS 2025][Video Understanding][Online audio-visual event parsing] This paper introduces the Online Audio-Visual Event Parsing (On-AVEP) paradigm for the first time, along with the PreFM framework, which leverages pseudo-future sequences to enhance current contextual understanding. Combined with modality-agnostic knowledge distillation and focal temporal prioritization, PreFM surpasses offline SOTA methods by +9.3 event-level average F1 score using only 2.7% of their para…
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "real-time video understanding"
   - "knowledge distillation"
 date: 2026-05-08
-content_hash: e11c0449ebdd4739
+content_hash: 22b77602bb901756
 ---
 
 # PreFM: Online Audio-Visual Event Parsing via Predictive Future Modeling
@@ -146,10 +146,10 @@ The total loss is a combination of weighted BCE loss and MRR distillation loss: 
 ## Related Papers
 
 - [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](../../ICCV2025/video_understanding/emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
-- [\[ICCV 2025\] Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding](../../ICCV2025/video_understanding/hierarchical_event_memory_for_accurate_and_low-latency_online_video_temporal_gro.md)
+- [\[CVPR 2025\] QA-TIGER: Question-Aware Gaussian Experts for Audio-Visual Question Answering](../../CVPR2025/video_understanding/question-aware_gaussian_experts_for_audio-visual_question_answering.md)
+- [\[ECCV 2024\] Spherical World-Locking for Audio-Visual Localization in Egocentric Videos](../../ECCV2024/video_understanding/spherical_world-locking_for_audio-visual_localization_in_egocentric_videos.md)
 - [\[ICML 2026\] AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes](../../ICML2026/video_understanding/avtrack_audio-visual_tracking_in_human-centric_complex_scenes.md)
-- [\[NeurIPS 2025\] LiveStar: Live Streaming Assistant for Real-World Online Video Understanding](livestar_live_streaming_assistant_for_real-world_online_video_understanding.md)
-- [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
+- [\[ICCV 2025\] Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding](../../ICCV2025/video_understanding/hierarchical_event_memory_for_accurate_and_low-latency_online_video_temporal_gro.md)
 
 </div>
 

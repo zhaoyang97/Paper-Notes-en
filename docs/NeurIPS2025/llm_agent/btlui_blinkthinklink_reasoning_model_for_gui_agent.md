@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BTL-UI: Blink-Think-Link Reasoning Model for GUI Agent
 description: >-
-  [NeurIPS 2025][LLM Agent][GUI agent] This paper proposes the Blink-Think-Link (BTL) brain-inspired framework, which decomposes GUI interaction into three biologically plausible stages: Blink (rapid attentional localizati…
+  [NeurIPS 2025][LLM Agent][GUI agent] This paper proposes the Blink-Think-Link (BTL) brain-inspired framework, which decomposes GUI interaction into three biologically plausible stages: Blink (rapid attentional localization), Think (cognitive reasoning and decision-making), and Link (executable command generation). Combined with an automated Blink data annotation pipeline and the first rule-based composite process-and-outcome reward mechanism, BTL Reward…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "BTL Reward"
 date: 2026-05-08
-content_hash: 7b4383108e989fdf
+content_hash: daa9b5ee89c2a0e7
 ---
 
 # BTL-UI: Blink-Think-Link Reasoning Model for GUI Agent
@@ -133,11 +133,11 @@ BTL-UI is trained via RFT on only 4K samples and achieves competitive performanc
 
 ## Related Papers
 
-- [\[ACL 2026\] Exploring Reasoning Reward Model for Agents](../../ACL2026/llm_agent/exploring_reasoning_reward_model_for_agents.md)
+- [\[ACL 2025\] GUICourse: From General Vision Language Model to Versatile GUI Agent](../../ACL2025/llm_agent/guicourse_from_general_vision_language_model_to_versatile_gui_agent.md)
+- [\[ICLR 2026\] UI-Ins: Enhancing GUI Grounding with Multi-Perspective Instruction-as-Reasoning](../../ICLR2026/llm_agent/ui-ins_enhancing_gui_grounding_with_multi-perspective_instruction_as_reasoning.md)
 - [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
-- [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](../../AAAI2026/llm_agent/history-aware_reasoning_for_gui_agents.md)
+- [\[ACL 2026\] Exploring Reasoning Reward Model for Agents](../../ACL2026/llm_agent/exploring_reasoning_reward_model_for_agents.md)
 - [\[NeurIPS 2025\] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks](agenttts_large_language_model_agent_for_testtime_computeopti.md)
-- [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
 
 </div>
 

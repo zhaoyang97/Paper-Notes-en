@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-Agent Systems are Mixtures of Experts: Who Becomes an Influencer?
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] This paper models "multi-LLM agent debates" using **Friedkin-Johnsen (FJ) opinion dynamics** from sociology, proving that FJ parameters are **input-dependent**. This establishes that Multi-Agent Systems (MAS) implement a **Mixture of Experts (MoE) with implicit routing**. The authors theoretically characterize when MAS
+  [ICML 2026][Multi-Agent][Multi-Agent LLMs] This paper models "multi-LLM agent debates" using **Friedkin-Johnsen (FJ) opinion dynamics** from sociology, proving that FJ parameters are **input-dependent**. This establishes that Multi-Agent Systems (MAS) implement a **Mixture of Experts (MoE) with implicit routing**. The authors theoretically characterize when MAS outperforms single agents or static ensembles and reveal through experiments that "who becomes an influencer" is pri…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "Multi-Agent LLMs"
+  - "Opinion Dynamics"
+  - "Mixture of Experts (MoE)"
+  - "Routing"
+  - "Influence"
 date: 2026-05-08
-content_hash: d243439dc5a04739
+content_hash: c0ea0cbf19070744
 ---
+
 # Multi-Agent Systems are Mixtures of Experts: Who Becomes an Influencer?
 
 **Conference**: ICML 2026  
@@ -144,11 +150,11 @@ The authors used Random Forests to regress/classify observable variables against
 
 ## Related Papers
 
+- [\[ICLR 2026\] Matching Multiple Experts: On the Exploitability of Multi-Agent Imitation Learning](../../ICLR2026/multi_agent/matching_multiple_experts_on_the_exploitability_of_multi-agent_imitation_learnin.md)
 - [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
-- [\[ICLR 2026\] Stochastic Self-Organization in Multi-Agent Systems](../../ICLR2026/multi_agent/stochastic_self-organization_in_multi-agent_systems.md)
 - [\[ICML 2026\] Securing Multi-Agent Systems Against Corruptions via Node Contribution Backpropagation](securing_multi-agent_systems_against_corruptions_via_node_contribution_backpropa.md)
 - [\[ICML 2026\] Voting Protocols as Coordination Mechanisms for Role-Constrained Multi-Agent Tutoring Systems](voting_protocols_as_coordination_mechanisms_for_role-constrained_multi-agent_tut.md)
-- [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](../../ACL2026/multi_agent/conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
+- [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
 
 </div>
 

@@ -1,16 +1,19 @@
 ---
 title: >-
-  [Paper Note] TInR：探索大语言模型中的工具内化推理
+  [Paper Note] TInR: Exploring Tool-Internalized Reasoning in Large Language Models
 description: >-
-  [ACL 2026][LLM Reasoning][LLM] This paper proposes the TInR-U framework, which achieves efficient and reliable tool-assisted reasoning by internalizing tool knowledge into LLM parameters (rather than relying on external documentation), outperforming existing methods in both in-domain and out-of-domain tests.
+  [ACL 2026][Reasoning][Tool Internalization] This paper proposes the TInR-U framework, which achieves efficient and reliable tool-assisted reasoning by internalizing tool knowledge into LLM parameters (rather than relying on external documentation), outperforming existing methods in both in-domain and out-of-domain tests.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - LLM
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Tool Internalization"
+  - "LLM"
+  - "Reinforcement Learning"
+  - "Tool Calling"
 date: 2026-05-08
-content_hash: 9e49ef5666f148be
+content_hash: eb170f2b49b44722
 ---
+
 # TInR: Exploring Tool-Internalized Reasoning in Large Language Models
 
 **Conference**: ACL 2026  
@@ -166,11 +169,11 @@ In the SFT stage, 10 candidate tools (including ground truth, retrieved, and ran
 
 ## Related Papers
 
-- [\[ACL 2026\] Do Not Step Into the Same River Twice: Learning to Reason from Trial and Error](do_not_step_into_the_same_river_twice_learning_to_reason_from_trial_and_error.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[ACL 2026\] Language Model as Planner and Formalizer under Constraints](language_model_as_planner_and_formalizer_under_constraints.md)
-- [\[ACL 2026\] When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning](when_is_thinking_enough_early_exit_via_sufficiency_assessment_for_efficient_reas.md)
-- [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](efficient_process_reward_modeling_via_contrastive_mutual_information.md)
+- [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](../../ICLR2026/llm_reasoning/agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
+- [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](../../AAAI2026/llm_reasoning/small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
+- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](selar_selective_latent_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents](jtpro_a_joint_tool-prompt_reflective_optimization_framework_for_language_agents.md)
 
 </div>
 

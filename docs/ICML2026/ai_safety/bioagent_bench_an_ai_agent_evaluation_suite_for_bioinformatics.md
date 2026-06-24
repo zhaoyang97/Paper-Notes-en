@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics
 description: >-
-  [ICML 2026][AI Safety][Paper Note] BioAgent Bench introduces an end-to-end evaluation suite for executing bioinformatics pipelines with LLM agents. It features 10 real-world bioinformatics tasks evaluated across 10 frontier/open-weight models and 3 agent harnesses. Using an LLM judge for scoring and three types of perturbation tests (corrupted, decoy, a
+  [ICML 2026][AI Safety][agent evaluation] BioAgent Bench introduces an end-to-end evaluation suite for executing bioinformatics pipelines with LLM agents. It features 10 real-world bioinformatics tasks evaluated across 10 frontier/open-weight models and 3 agent harnesses. Using an LLM judge for scoring and three types of perturbation tests (corrupted, decoy, and prompt-bloat), the study finds that frontier models can complete over 90% of pipelines…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "agent evaluation"
+  - "bioinformatics pipeline"
+  - "LLM judge"
+  - "robustness perturbation testing"
 date: 2026-05-08
-content_hash: 45f61e3fb446cf58
+content_hash: 029d4d1acaa9b0e4
 ---
+
 # BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics
 
 **Conference**: ICML 2026  
@@ -148,11 +153,11 @@ Perturbation Testing (GPT-5.2 single trial, Δ% represents completion change aft
 
 ## Related Papers
 
-- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
 - [\[ICML 2026\] Red-Teaming Agent Execution Contexts: Open-World Security Evaluation on OpenClaw](red-teaming_agent_execution_contexts_open-world_security_evaluation_on_openclaw.md)
-- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
+- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
 - [\[ICML 2026\] ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity](abc-bench_an_agentic_bio-capabilities_benchmark_for_biosecurity.md)
-- [\[ICLR 2026\] Risk-Sensitive Agent Compositions](../../ICLR2026/ai_safety/risk-sensitive_agent_compositions.md)
+- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
+- [\[ICML 2026\] Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks](ai_researchers_must_help_lead_arms_control_to_mitigate_military_ai_risks.md)
 
 </div>
 

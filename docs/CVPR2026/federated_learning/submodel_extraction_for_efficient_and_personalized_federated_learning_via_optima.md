@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] SubFLOT：基于最优传输的高效个性化联邦学习子模型抽取
+  [Paper Note] SubFLOT: Efficient Personalized Federated Learning via Optimal Transport-based Submodel Extraction
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] SubFLOT shifts "personalized pruning" from the client to the server: it uses the client's historical models as proxies for local data distributions and employs Optimal Transport (Wasserstein distance minimization) at the server to extract heterogeneous submodels tailored to each device's data. Combined with an adaptive
+  [CVPR 2026][Federated Learning][Network Pruning] SubFLOT shifts "personalized pruning" from the client to the server: it uses the client's historical models as proxies for local data distributions and employs Optimal Transport (Wasserstein distance minimization) at the server to extract heterogeneous submodels tailored to each device's data. Combined with an adaptive regularization term that scales with the pruning rate to stabilize local training and an OT-aligned aggregatio…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Network Pruning"
+  - "Optimal Transport"
+  - "Personalization"
+  - "Model Heterogeneity"
 date: 2026-05-08
-content_hash: a846d62c3e1fca89
+content_hash: 30046b1641c29596
 ---
+
 # SubFLOT: Efficient Personalized Federated Learning via Optimal Transport-based Submodel Extraction
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ All modules are essential; **removing OTA causes the sharpest drop** (e.g., -13.
 
 ## Related Papers
 
-- [\[CVPR 2026\] HFedATM: Hierarchical Federated Domain Generalization via Optimal Transport and Regularized Mean Aggregation](hfedatm_hierarchical_federated_domain_generalization_via_optimal_transport_and_r.md)
-- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
-- [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
 - [\[CVPR 2026\] FedRAC: Rolling Submodel Allocation for Collaborative Fairness in Federated Learning](fedrac_rolling_submodel_allocation_for_collaborative_fairness_in_federated_learn.md)
-- [\[CVPR 2026\] FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning](fedalign_differentially_private_distribution_alignment_for_non-iid_federated_lea.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
+- [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
+- [\[CVPR 2026\] FedARA: Resource-adaptive Low-rank Personalized Federated Learning via Anchor-driven Representation Alignment on Heterogeneous Edge Devices](fedara_resource-adaptive_low-rank_personalized_federated_learning_via_anchor-dri.md)
+- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Quasi-Monte Carlo Methods Enable Extremely Low-Dimensional Deep Generative Models
 description: >-
-  [ICLR 2026][Image Generation][VAE] This paper proposes QLVM (Quasi-Monte Carlo Latent Variable Model): by discarding the VAE encoder and the variational lower bound, it directly approximates the marginal likelihood using randomized Quasi-Monte Carlo (QMC) lattice integration to train a decoder. This enables training deep generative models in extremely l
+  [ICLR 2026][Image Generation][Quasi-Monte Carlo] This paper proposes QLVM (Quasi-Monte Carlo Latent Variable Model): by discarding the VAE encoder and the variational lower bound, it directly approximates the marginal likelihood using randomized Quasi-Monte Carlo (QMC) lattice integration to train a decoder. This enables training deep generative models in extremely low-dimensional latent spaces (1/2/3D) that outperform VAEs/IWAEs of the same dimensionality and are inherently…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VAE
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Quasi-Monte Carlo"
+  - "Latent Variable Models"
+  - "Low-dimensional Embedding"
+  - "VAE"
+  - "Marginal Likelihood"
 date: 2026-05-08
-content_hash: 49943498cdead04f
+content_hash: 2a6d71c87a66b3cd
 ---
+
 # Quasi-Monte Carlo Methods Enable Extremely Low-Dimensional Deep Generative Models
 
 **Conference**: ICLR 2026  
@@ -122,15 +127,16 @@ The authors also used QMC ($m=6724$) to evaluate the **trained 2D VAE/IWAE decod
 - Value: ⭐⭐⭐⭐ Highly practical for scientific/interpretability-focused domains (neuroscience, bioacoustics).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] One Step Further with Monte-Carlo Sampler to Guide Diffusion Better](one_step_further_with_monte-carlo_sampler_to_guide_diffusion_better.md)
 - [\[ICLR 2026\] Efficient Approximate Posterior Sampling with Annealed Langevin Monte Carlo](efficient_approximate_posterior_sampling_with_annealed_langevin_monte_carlo.md)
+- [\[ICLR 2026\] Variational Autoencoding Discrete Diffusion with Enhanced Dimensional Correlations Modeling](variational_autoencoding_discrete_diffusion_with_enhanced_dimensional_correlatio.md)
 - [\[ICML 2026\] Simple Approximation and Derivative Free Inference-Time Scaling for Diffusion Models via Sequential Monte Carlo on Path Measures](../../ICML2026/image_generation/simple_approximation_and_derivative_free_inference-time_scaling_for_diffusion_mo.md)
 - [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
-- [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](../../NeurIPS2025/image_generation/understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
 
 </div>
 

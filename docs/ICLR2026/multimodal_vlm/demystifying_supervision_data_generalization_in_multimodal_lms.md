@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DataProphet: Demystifying Supervision Data Generalization in Multimodal LLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][training-free] This paper systematically reveals that the common intuition "intuitively similar training data is more helpful" is unreliable for multimodal LLMs. It proposes DataProphet, a training-free metric that uses the product of multimodal perplexity, cross-domain similarity, and problem diversity to predict the impact ranking
+  [ICLR 2026][Multimodal VLM][Data influence prediction] This paper systematically reveals that the common intuition "intuitively similar training data is more helpful" is unreliable for multimodal LLMs. It proposes DataProphet, a training-free metric that uses the product of multimodal perplexity, cross-domain similarity, and problem diversity to predict the impact ranking of a supervised dataset on a target benchmark with high precision before training (reaching a Kendall's τ…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - training-free
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Data influence prediction"
+  - "training data selection"
+  - "multimodal perplexity"
+  - "cross-domain transfer"
+  - "training-free"
 date: 2026-05-08
-content_hash: 1b2895a050c3504e
+content_hash: e72ef87431f7fc83
 ---
+
 # DataProphet: Demystifying Supervision Data Generalization in Multimodal LLMs
 
 **Conference**: ICLR 2026  
@@ -144,9 +149,9 @@ This work extends the trend in LLM data selection of using perplexity (Marion et
 ## Related Papers
 
 - [\[ACL 2025\] Exploring Compositional Generalization of Multimodal LLMs for Medical Imaging](../../ACL2025/multimodal_vlm/exploring_compositional_generalization_of_multimodal_llms_for_medical_imaging.md)
+- [\[ICLR 2026\] SigLIP-HD by Fine-to-Coarse Supervision](siglip-hd_by_fine-to-coarse_supervision.md)
 - [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
 - [\[CVPR 2026\] Towards Multimodal Domain Generalization with Few Labels](../../CVPR2026/multimodal_vlm/towards_multimodal_domain_generalization_with_few_labels.md)
-- [\[ICLR 2026\] On the Generalization Capacities of MLLMs for Spatial Intelligence](on_the_generalization_capacities_of_mllms_for_spatial_intelligence.md)
 - [\[ICLR 2026\] MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs](motionsight_boosting_fine-grained_motion_understanding_in_multimodal_llms.md)
 
 </div>

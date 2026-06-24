@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval
 description: >-
-  [ACL 2026][Information Retrieval & RAG][BEIR] UnIte shifts the bottleneck of unsupervised domain adaptation for neural retrievers from "generating more pseudo-queries" to "smarter document selection." It first filters low-density noisy documents using aleatoric uncertainty, then iteratively samples high-value documents based on epistemic uncertainty that evolves d
+  [ACL2026 Findings][Information Retrieval & RAG][Unsupervised Domain Adaptation] UnIte shifts the bottleneck of unsupervised domain adaptation for neural retrievers from "generating more pseudo-queries" to "smarter document selection." It first filters low-density noisy documents using aleatoric uncertainty, then iteratively samples high-value documents based on epistemic uncertainty that evolves dynamically with model training. It consistently outperforms DUQGen on large BEIR…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - BEIR
+  - "ACL2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Unsupervised Domain Adaptation"
+  - "Document Sampling"
+  - "Retrieval Augmentation"
+  - "Uncertainty Estimation"
+  - "BEIR"
 date: 2026-05-08
-content_hash: 575c5c25623f4dd4
+content_hash: 94c9889a09f49aaa
 ---
+
 # UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval
 
 **Conference**: ACL2026 Findings  
@@ -141,15 +146,14 @@ The paper emphasizes the roles of AU, EU, and the resampling penalty.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](domain-specific_data_generation_framework_for_rag_adaptation.md)
 - [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
-- [\[ACL 2026\] Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA](navigating_large-scale_document_collections_mudabench_for_multi-document_analyti.md)
 - [\[CVPR 2025\] Preserving Clusters in Prompt Learning for Unsupervised Domain Adaptation](../../CVPR2025/information_retrieval/preserving_clusters_in_prompt_learning_for_unsupervised_domain_adaptation.md)
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](feedback_adaptation_for_retrieval-augmented_generation.md)
+- [\[ACL 2026\] Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA](navigating_large-scale_document_collections_mudabench_for_multi-document_analyti.md)
 
 </div>
 

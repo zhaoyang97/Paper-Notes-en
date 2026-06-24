@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Provably Minimum-Length Conformal Prediction Sets for Ordinal Classification
 description: >-
-  [AAAI 2026][Medical Imaging][Conformal Prediction] This paper proposes min-CPS and its regularized variant min-RCPS, a model-agnostic conformal prediction method for ordinal classification. By solving the minimum-length…
+  [AAAI 2026][Medical Imaging][Conformal Prediction] This paper proposes min-CPS and its regularized variant min-RCPS, a model-agnostic conformal prediction method for ordinal classification. By solving the minimum-length prediction interval for each sample via a linear-time sliding window algorithm, the method reduces average prediction set size by 15% while maintaining coverage guarantees, with theoretical optimality guarantees at the instance level.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "Sliding Window Algorithm"
   - "Model-Agnostic"
 date: 2026-05-08
-content_hash: 47441aa050f1ce13
+content_hash: 44fca0d20a6505e9
 ---
 
 # Provably Minimum-Length Conformal Prediction Sets for Ordinal Classification
@@ -175,9 +175,9 @@ Averaged across all $\alpha$: min-CPS -33.65%, min-RCPS -34.39%.
 
 - [\[ICML 2026\] CASCADE Conformal Prediction: Uncertainty-Adaptive Prediction Intervals for Two-Stage Clinical Decision Support](../../ICML2026/medical_imaging/cascade_conformal_prediction_uncertainty-adaptive_prediction_intervals_for_two-s.md)
 - [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
+- [\[ICLR 2026\] CONSIGN: Conformal Segmentation Informed by Spatial Groupings via Decomposition](../../ICLR2026/medical_imaging/consign_conformal_segmentation_informed_by_spatial_groupings_via_decomposition.md)
+- [\[CVPR 2026\] LATA: Laplacian-Assisted Transductive Adaptation for Conformal Uncertainty in Medical VLMs](../../CVPR2026/medical_imaging/lata_laplacian-assisted_transductive_adaptation_for_conformal_uncertainty_in_med.md)
 - [\[AAAI 2026\] Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction](cross-sample_augmented_test-time_adaptation_for_personalized_intraoperative_hypo.md)
-- [\[AAAI 2026\] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction](grover_graph-guided_representation_of_omics_and_vision_with_expert_regulation_fo.md)
-- [\[AAAI 2026\] Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models](coarse-to-fine_open-set_graph_node_classification_with_large_language_models.md)
 
 </div>
 

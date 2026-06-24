@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Composition and Alignment of Diffusion Models using Constrained Learning
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Diffusion Models] This paper proposes a unified constrained optimization framework that formalizes reward alignment and multi-model composition of diffusion models as constrained optimizat…
+  [NeurIPS 2025][LLM Pretraining][Diffusion Models] This paper proposes a unified constrained optimization framework that formalizes reward alignment and multi-model composition of diffusion models as constrained optimization problems. By applying Lagrangian duality, the framework automatically determines optimal weights, eliminating the need for manual hyperparameter search.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Model Composition"
   - "Lagrangian Duality"
 date: 2026-05-08
-content_hash: be063061a307f1ea
+content_hash: ef42474dcd8c8f70
 ---
 
 # Composition and Alignment of Diffusion Models using Constrained Learning
@@ -136,9 +136,9 @@ Multi-model composition (each model fine-tuned with a different reward):
 
 - [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
 - [\[NeurIPS 2025\] Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models](leveraging_importance_sampling_to_detach_alignment_modules_from_large_language_m.md)
+- [\[ICML 2025\] Provable Maximum Entropy Manifold Exploration via Diffusion Models](../../ICML2025/llm_pretraining/provable_maximum_entropy_manifold_exploration_via_diffusion_models.md)
 - [\[NeurIPS 2025\] A Practical Guide for Incorporating Symmetry in Diffusion Policy](a_practical_guide_for_incorporating_symmetry_in_diffusion_policy.md)
 - [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
-- [\[NeurIPS 2025\] Learning the Wrong Lessons: Syntactic-Domain Spurious Correlations in Language Models](learning_the_wrong_lessons_syntactic-domain_spurious_correlations_in_language_mo.md)
 
 </div>
 

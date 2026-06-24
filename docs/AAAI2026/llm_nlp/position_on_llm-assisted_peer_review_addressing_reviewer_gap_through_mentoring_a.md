@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback
 description: >-
-  [AAAI 2026][LLM/NLP][LLM-assisted peer review] This position paper proposes shifting the role of LLMs in peer review from "automatically generating reviews" to "augmenting human reviewer capabilities" — via an LLM-driven…
+  [AAAI 2026][LLM (Other)][LLM-assisted peer review] This position paper proposes shifting the role of LLMs in peer review from "automatically generating reviews" to "augmenting human reviewer capabilities" — via an LLM-driven mentoring system (three-phase training + certification) and a feedback system (violation detection + evidence-based feedback + reliability testing) to close the reviewer quality gap.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "LLM-assisted peer review"
   - "peer review"
   - "mentoring"
   - "review quality"
   - "position paper"
 date: 2026-05-08
-content_hash: 501058759c683715
+content_hash: 11462fe85eb08da6
 ---
 
 # Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback
@@ -139,10 +139,10 @@ This is a position paper; no concrete implementation or training procedure is pr
 ## Related Papers
 
 - [\[ACL 2026\] Can AI Be a Good Peer Reviewer? A Survey of Peer Review Process, Evaluation, and the Future](../../ACL2026/llm_nlp/can_ai_be_a_good_peer_reviewer_a_survey_of_peer_review_process_evaluation_and_th.md)
+- [\[ICML 2026\] Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem](../../ICML2026/llm_nlp/position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem.md)
 - [\[ICML 2026\] Stop Automating Peer Review Without Rigorous Evaluation](../../ICML2026/llm_nlp/stop_automating_peer_review_without_rigorous_evaluation.md)
 - [\[AAAI 2026\] Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents](scaling_equitable_reflection_assessment_in_education_via_large_language_models_a.md)
 - [\[AAAI 2026\] STEM: Efficient Relative Capability Evaluation of LLMs through Structured Transitive Evaluation Model](stem_efficient_relative_capability_evaluation_of_llms_through_structured_transit.md)
-- [\[ICML 2026\] Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management](../../ICML2026/llm_nlp/position_the_turing-completeness_of_autoregressive_transformers_relies_heavily_o.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MagicMirror: ID-Preserved Video Generation in Video Diffusion Transformers
 description: >-
-  [ICCV 2025][Video Generation][Identity-preserving video generation] MagicMirror is the first framework to achieve zero-shot identity-preserving video generation on a Video Diffusion Transformer (CogVideoX). It employs du…
+  [ICCV 2025][Video Generation][Identity-preserving video generation] MagicMirror is the first framework to achieve zero-shot identity-preserving video generation on a Video Diffusion Transformer (CogVideoX). It employs dual-branch facial feature extraction, Conditioned Adaptive Normalization (CAN), and a two-stage training strategy (image pre-training followed by video fine-tuning) to generate high-quality dynamic videos while maintaining consistent facial identity.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "adaptive normalization"
   - "two-stage training"
 date: 2026-05-08
-content_hash: f9dac52104b3136e
+content_hash: fb1916729b3f426e
 ---
 
 # MagicMirror: ID-Preserved Video Generation in Video Diffusion Transformers
@@ -141,10 +141,10 @@ Computational overhead comparison:
 ## Related Papers
 
 - [\[ICCV 2025\] Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer](decouple_and_track_benchmarking_and_improving_video_diffusion_transformers_for_m.md)
-- [\[ICCV 2025\] Versatile Transition Generation with Image-to-Video Diffusion](versatile_transition_generation_with_image-to-video_diffusion.md)
-- [\[CVPR 2026\] DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching](../../CVPR2026/video_generation/disca_accelerating_video_diffusion_transformers_wi.md)
-- [\[CVPR 2026\] I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers](../../CVPR2026/video_generation/interpretable_motion-attentive_maps_spatio-temporally_localizing_concepts_in_vid.md)
-- [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](stiv_scalable_text_and_image_conditioned_video_generation.md)
+- [\[CVPR 2025\] DiTFlow: Video Motion Transfer with Diffusion Transformers](../../CVPR2025/video_generation/video_motion_transfer_with_diffusion_transformers.md)
+- [\[ICML 2025\] AsymRnR: Video Diffusion Transformers Acceleration with Asymmetric Reduction and Restoration](../../ICML2025/video_generation/asymrnr_video_diffusion_transformers_acceleration_with_asymmetric_reduction_and_.md)
+- [\[CVPR 2025\] Towards Precise Scaling Laws for Video Diffusion Transformers](../../CVPR2025/video_generation/towards_precise_scaling_laws_for_video_diffusion_transformers.md)
+- [\[ICLR 2026\] Syncphony: Audio-to-Video Generation with Synchronized Visual Dynamics using Diffusion Transformers](../../ICLR2026/video_generation/syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)
 
 </div>
 

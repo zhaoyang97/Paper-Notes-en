@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdmTree: Compressing Lengthy Context with Adaptive Semantic Trees
 description: >-
-  [NeurIPS 2025][Model Compression][Context Compression] This paper proposes AdmTree — an adaptive hierarchical context compression framework that constructs leaf gist tokens via information-density-driven dynamic segmenta…
+  [NeurIPS 2025][Model Compression][Context Compression] This paper proposes AdmTree — an adaptive hierarchical context compression framework that constructs leaf gist tokens via information-density-driven dynamic segmentation, then aggregates them bottom-up into a binary semantic tree to achieve multi-granularity semantic preservation. It addresses two fundamental challenges: local detail loss in explicit methods and positional bias in implicit methods…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Hierarchical Compression"
   - "Long Context"
 date: 2026-05-08
-content_hash: 7a738a2057890b41
+content_hash: 0397741b05902d7a
 ---
 
 # AdmTree: Compressing Lengthy Context with Adaptive Semantic Trees
@@ -131,9 +131,9 @@ Long text $\mathbf{X}$ → adaptive segmentation by information density → inse
 
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
 - [\[ICCV 2025\] Variance-Based Pruning for Accelerating and Compressing Trained Networks](../../ICCV2025/model_compression/variance-based_pruning_for_accelerating_and_compressing_trained_networks.md)
-- [\[AAAI 2026\] Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval](../../AAAI2026/model_compression/prototype-based_semantic_consistency_alignment_for_domain_adaptive_retrieval.md)
 - [\[NeurIPS 2025\] One-Step Diffusion-Based Image Compression with Semantic Distillation](one-step_diffusion-based_image_compression_with_semantic_distillation.md)
 - [\[NeurIPS 2025\] Mitigating Semantic Collapse in Partially Relevant Video Retrieval](mitigating_semantic_collapse_in_partially_relevant_video_retrieval.md)
+- [\[AAAI 2026\] Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval](../../AAAI2026/model_compression/prototype-based_semantic_consistency_alignment_for_domain_adaptive_retrieval.md)
 
 </div>
 

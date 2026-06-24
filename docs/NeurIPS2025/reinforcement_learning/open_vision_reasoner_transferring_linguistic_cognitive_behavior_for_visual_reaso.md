@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Open Vision Reasoner: Transferring Linguistic Cognitive Behavior for Visual Reasoning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multimodal reasoning] Open Vision Reasoner (OVR) employs a two-stage training paradigm—linguistic cold start followed by large-scale multimodal RL—to effectively transfer cognitive…
+  [NeurIPS 2025][Reinforcement Learning][Multimodal reasoning] Open Vision Reasoner (OVR) employs a two-stage training paradigm—linguistic cold start followed by large-scale multimodal RL—to effectively transfer cognitive behaviors (e.g., backtracking, verification) from language models to visual reasoning. Built on Qwen2.5-VL-7B, OVR achieves 51.8% on MathVision, the first model at this scale to surpass 50%, establishing a new state of the art among same-scale models.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "visual reasoning"
   - "cold-start fine-tuning"
 date: 2026-05-08
-content_hash: c5fdccb9ccd36381
+content_hash: 0ac86600ee676c01
 ---
 
 # Open Vision Reasoner: Transferring Linguistic Cognitive Behavior for Visual Reasoning
@@ -51,10 +51,10 @@ OVR adopts the widely used "RL with cold start" paradigm, consisting of two trai
 
 1. **Definition of Four Visual Cognitive Behaviors**:  
    Drawing from linguistic cognitive behaviors, the authors define four corresponding visual behaviors:
-   - **Visual Reflection**: The model proactively revisits the image upon detecting reasoning inconsistencies, analogous to linguistic "backtracking" (e.g., "Let me look at the image again").
-   - **Divide-and-Conquer**: Complex visual problems are decomposed into sub-regions processed sequentially, analogous to "subgoal decomposition."
-   - **Visual Verification**: Intermediate conclusions are confirmed against visual evidence, analogous to "verification."
-   - **Goal-driven Visual Tracing**: Evidence in the image is located by reasoning backward from the desired conclusion, analogous to "backward induction."
+    - **Visual Reflection**: The model proactively revisits the image upon detecting reasoning inconsistencies, analogous to linguistic "backtracking" (e.g., "Let me look at the image again").
+    - **Divide-and-Conquer**: Complex visual problems are decomposed into sub-regions processed sequentially, analogous to "subgoal decomposition."
+    - **Visual Verification**: Intermediate conclusions are confirmed against visual evidence, analogous to "verification."
+    - **Goal-driven Visual Tracing**: Evidence in the image is located by reasoning backward from the desired conclusion, analogous to "backward induction."
 
 2. **Large-Scale Data Curation**:
     - Cold-start data: ~2M reasoning trajectories distilled from DeepSeek-R1, covering AIME, MATH, Numina-Math, and synthetic logic problems.
@@ -63,10 +63,10 @@ OVR adopts the widely used "RL with cold start" paradigm, consisting of two trai
 
 3. **PPO + GAE Optimization**:  
    A lightweight PPO algorithm is adopted with Generalized Advantage Estimation (GAE). The advantage estimate is:
-   $$\hat{A}_t = \sum_{l=0}^{T-t-1}(\gamma\lambda)^l \delta_{t+l}, \quad \delta_{t'} = r_{t'} + \gamma V_\phi(s_{t'+1}) - V_\phi(s_{t'})$$
+    $\hat{A}_t = \sum_{l=0}^{T-t-1}(\gamma\lambda)^l \delta_{t+l}, \quad \delta_{t'} = r_{t'} + \gamma V_\phi(s_{t'+1}) - V_\phi(s_{t'})$
 
    The policy update uses the standard PPO clipped objective:
-   $$\mathcal{J}_{\text{PPO}}(\theta) = \hat{\mathbb{E}}_{\pi_{\text{old}}}\left[\min\left(\rho_t(\theta)\hat{A}_t, \text{clip}(\rho_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t\right)\right]$$
+    $\mathcal{J}_{\text{PPO}}(\theta) = \hat{\mathbb{E}}_{\pi_{\text{old}}}\left[\min\left(\rho_t(\theta)\hat{A}_t, \text{clip}(\rho_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t\right)\right]$
 
 ### Loss & Training
 
@@ -155,10 +155,10 @@ OVR outperforms same-scale models on AIME 2024/2025 by more than 10%, achieves 9
 ## Related Papers
 
 - [\[NeurIPS 2025\] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation](noisyrollout_reinforcing_visual_reasoning_with_data_augmenta.md)
+- [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
 - [\[NeurIPS 2025\] Open-World Drone Active Tracking with Goal-Centered Rewards](open-world_drone_active_tracking_with_goal-centered_rewards.md)
 - [\[AAAI 2026\] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision](../../AAAI2026/reinforcement_learning/stelar-vision_self-topology-aware_efficient_learning_for_aligned_reasoning_in_vi.md)
-- [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
-- [\[NeurIPS 2025\] DeepDiver: Adaptive Search Intensity Scaling via Open-Web Reinforcement Learning](deepdiver_adaptive_search_intensity_scaling_via_open-web_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Behavior Injection: Preparing Language Models for Reinforcement Learning](behavior_injection_preparing_language_models_for_reinforcement_learning.md)
 
 </div>
 

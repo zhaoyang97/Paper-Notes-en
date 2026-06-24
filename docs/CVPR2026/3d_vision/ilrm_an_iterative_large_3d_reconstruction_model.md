@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] iLRM: An Iterative Large 3D Reconstruction Model
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] iLRM reformulates feed-forward 3D Gaussian reconstruction from "mapping all image tokens to pixel-aligned Gaussians in a single pass" to "using low-resolution viewpoint embeddings as carriers and iteratively refining them layer-by-layer with multi-view image feedback." By combining representation decoupling and two-sta
+  [CVPR 2026][3D Vision][Feed-forward 3D reconstruction] iLRM reformulates feed-forward 3D Gaussian reconstruction from "mapping all image tokens to pixel-aligned Gaussians in a single pass" to "using low-resolution viewpoint embeddings as carriers and iteratively refining them layer-by-layer with multi-view image feedback." By combining representation decoupling and two-stage attention to reduce computational costs, it achieves high quality and speed on RE10K/DL3DV (0.5s for 3…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward 3D reconstruction"
+  - "3D Gaussian Splatting"
+  - "Iterative refinement"
+  - "Scalable attention"
+  - "Viewpoint embedding"
 date: 2026-05-08
-content_hash: 36913b3600a7f700
+content_hash: c53a1a39bbe8103b
 ---
+
 # iLRM: An Iterative Large 3D Reconstruction Model
 
 **Conference**: CVPR 2026  
@@ -150,11 +156,11 @@ Ablation of architectural components (12-layer baseline, RE10K):
 
 ## Related Papers
 
-- [\[CVPR 2026\] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting](idesplat_iterative_depth_probability_estimation_for_generalizable_3d_gaussian_sp.md)
+- [\[ECCV 2024\] GS-LRM: Large Reconstruction Model for 3D Gaussian Splatting](../../ECCV2024/3d_vision/gs-lrm_large_reconstruction_model_for_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] iSplat: Iterative Learning for Fine-Grained Gaussian Splatting](isplat_iterative_learning_for_fine-grained_gaussian_splatting.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
+- [\[CVPR 2026\] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation](flexavatar_flexible_large_reconstruction_model_for_animatable_gaussian_head_avat.md)
 - [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
+- [\[CVPR 2026\] PatchScene: Patch-based Voxel Diffusion Model for Large-Scale Scene Completion](patchscene_patch-based_voxel_diffusion_model_for_large-scale_scene_completion.md)
 
 </div>
 

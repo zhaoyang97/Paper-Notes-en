@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Qayyem: A Real-time Platform for Scoring Proficiency of Arabic Essays
 description: >-
-  [ACL 2026][Others][Paper Note] Qayyem is the first web platform supporting cross-prompt multi-trait automated essay scoring for Arabic. It integrates various scoring schemes ranging from feature engineering to SOTA neural models, supporting end-to-end academic writing assessment workflows.
+  [ACL 2026][Automated Essay Scoring] Qayyem is the first web platform supporting cross-prompt multi-trait automated essay scoring for Arabic. It integrates various scoring schemes ranging from feature engineering to SOTA neural models, supporting end-to-end academic writing assessment workflows.
 tags:
-  - ACL 2026
-  - Others
+  - "ACL 2026"
+  - "Automated Essay Scoring"
+  - "Arabic NLP"
+  - "Multi-trait scoring"
+  - "Cross-prompt generalization"
+  - "Educational Technology"
 date: 2026-05-08
-content_hash: f0d9f982213d37a5
+content_hash: e29b0685baaeee28
 ---
+
 # Qayyem: A Real-time Platform for Scoring Proficiency of Arabic Essays
 
 **Conference**: ACL 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image
 description: >-
-  [CVPR 2026][3D Vision][VLM] Given a single real-world photo, PhysX-Anything utilizes a fine-tuned VLM through multi-round dialogues to directly generate geometry, joint structures, and physical properties. It employs a voxel representation that compresses geometry tokens by 193×, eventually exporting URDF/XML assets ready for immediate use in phy
+  [CVPR 2026][3D Vision][Simulation-Ready 3D Generation] Given a single real-world photo, PhysX-Anything utilizes a fine-tuned VLM through multi-round dialogues to directly generate geometry, joint structures, and physical properties. It employs a voxel representation that compresses geometry tokens by 193×, eventually exporting URDF/XML assets ready for immediate use in physics engines.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VLM
-  - URDF
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Simulation-Ready 3D Generation"
+  - "VLM"
+  - "Voxel Representation"
+  - "Articulated Objects"
+  - "URDF"
 date: 2026-05-08
-content_hash: f8c0eda5909e35ff
+content_hash: 3a924ff67b1133a6
 ---
+
 # PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image
 
 **Conference**: CVPR 2026  
@@ -133,10 +137,10 @@ Comparison of three compact representations (original mesh and vertex quantizati
 ## Related Papers
 
 - [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
+- [\[CVPR 2026\] P3Sim: Perceptual 3D Simulation with Physical World Modeling](perceptual_3d_simulation_with_physical_world_modeling.md)
 - [\[CVPR 2026\] ArtLLM: Generating Articulated Assets via 3D LLM](artllm_generating_articulated_assets_via_3d_llm.md)
 - [\[CVPR 2026\] ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction](reweaver_towards_simulation-ready_and_topology-accurate_garment_reconstruction.md)
 - [\[NeurIPS 2025\] PhysX-3D: Physical-Grounded 3D Asset Generation](../../NeurIPS2025/3d_vision/physx-3d_physical-grounded_3d_asset_generation.md)
-- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
 
 </div>
 

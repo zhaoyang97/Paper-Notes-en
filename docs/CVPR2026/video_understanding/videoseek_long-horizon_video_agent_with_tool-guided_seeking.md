@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking
 description: >-
-  [CVPR 2026][Video Understanding][think-act-observe] VideoSeek proposes a long-horizon video agent that utilizes video logical flow to actively "seek" key evidence rather than exhaustively parsing all frames. Through a think-act-observe loop and a multi-granularity toolkit (overview/skim/focus), it achieves a 10.2-point improvement over the base GPT-5 model on LVBench wh
+  [CVPR 2026][Video Understanding][Video Agent] VideoSeek proposes a long-horizon video agent that utilizes video logical flow to actively "seek" key evidence rather than exhaustively parsing all frames. Through a think-act-observe loop and a multi-granularity toolkit (overview/skim/focus), it achieves a 10.2-point improvement over the base GPT-5 model on LVBench while reducing frame usage by 93%.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - think-act-observe
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Agent"
+  - "Long Video Understanding"
+  - "Tool-use"
+  - "Logical Flow"
+  - "think-act-observe"
 date: 2026-05-08
-content_hash: 1afaedab7b3e336d
+content_hash: 7dacb512a7f5efeb
 ---
+
 # VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking
 
 **Conference**: CVPR 2026  
@@ -137,10 +142,10 @@ LongVideoBench Long: VideoSeek 73.5% / 29.6 frames vs GPT-5 64.5% / 384 frames.
 ## Related Papers
 
 - [\[CVPR 2026\] SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration](svagent_storyline_guided_long_video_understanding_via_cross_modal_multi_agent_collaboration.md)
+- [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
 - [\[CVPR 2026\] META: Meta Evolution of Tool Trajectory Adaptation for Long-Video Understanding](meta_meta_evolution_of_tool_trajectory_adaptation_for_long-video_understanding.md)
-- [\[CVPR 2026\] LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling](longvt_incentivizing_thinking_with_long_videos_via_native_tool_calling.md)
-- [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
-- [\[CVPR 2026\] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding](question-guided_visual_compression_with_memory_feedback_for_long-term_video_unde.md)
+- [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
+- [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
 
 </div>
 

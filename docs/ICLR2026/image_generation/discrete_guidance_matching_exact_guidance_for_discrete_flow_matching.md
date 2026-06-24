@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Discrete Guidance Matching: Exact Guidance for Discrete Flow Matching
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Given a pre-trained discrete flow matching/diffusion model and the density ratio between target and source distributions, this paper derives **exact** transition rate guidance formulas. This reduces the sampling overhead from multiple forward passes per step to a **single forward pass** and unifies energy guidance, cla
+  [ICLR 2026][Image Generation][Discrete Flow Matching] Given a pre-trained discrete flow matching/diffusion model and the density ratio between target and source distributions, this paper derives **exact** transition rate guidance formulas. This reduces the sampling overhead from multiple forward passes per step to a **single forward pass** and unifies energy guidance, classifier guidance, and RLHF preference alignment into one framework.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Discrete Flow Matching"
+  - "Guided Sampling"
+  - "Continuous Time Markov Chain"
+  - "Posterior Guidance"
+  - "Preference Alignment"
+  - "Text-to-Image"
 date: 2026-05-08
-content_hash: ecd3680c7f8ba90a
+content_hash: 3db4cf83e6f162b9
 ---
+
 # Discrete Guidance Matching: Exact Guidance for Discrete Flow Matching
 
 **Conference**: ICLR 2026  
@@ -114,8 +121,8 @@ Guidance provides consistent improvements across all six understanding benchmark
 - [\[ICLR 2026\] Discrete Adjoint Matching](discrete_adjoint_matching.md)
 - [\[ICLR 2026\] What Exactly Does Guidance Do in Masked Discrete Diffusion Models](what_exactly_does_guidance_do_in_masked_discrete_diffusion_models.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
+- [\[ICLR 2026\] SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation](senseflow_scaling_distribution_matching_for_flow-based_text-to-image_distillatio.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling
 description: >-
-  [ICLR 2026][Computational Biology][Flow Matching] SynCoGen proposes a multimodal generation framework combining masked graph diffusion and flow matching. It simultaneously samples molecule building block reaction graphs and 3D atomic coordinates, ensuring synthetic accessibility while achieving high-quality 3D molecule generation.
+  [ICLR 2026][Computational Biology][Synthesizable molecule generation] SynCoGen proposes a multimodal generation framework combining masked graph diffusion and flow matching. It simultaneously samples molecule building block reaction graphs and 3D atomic coordinates, ensuring synthetic accessibility while achieving high-quality 3D molecule generation.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Synthesizable molecule generation"
+  - "3D conformation generation"
+  - "masked graph diffusion"
+  - "flow matching"
+  - "drug discovery"
 date: 2026-05-08
-content_hash: 0c44fb0bee16b672
+content_hash: bec555a4ac53505a
 ---
+
 # SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling
 
 **Conference**: ICLR 2026  

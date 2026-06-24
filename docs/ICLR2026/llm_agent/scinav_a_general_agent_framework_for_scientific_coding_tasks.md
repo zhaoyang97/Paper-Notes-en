@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SciNav: A General Agent Framework for Scientific Coding Tasks
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] SciNav embeds "pairwise relative judgment" into Top-K Tree Search (TKCTS), enabling LLM agents to solve scientific coding tasks under realistic conditions where predefined evaluation metrics are absent and search budgets are limited. By choosing branches, pruning, and expanding based on "which of the two is better" rat
+  [ICLR 2026][LLM Agent][Scientific Agent] SciNav embeds "pairwise relative judgment" into Top-K Tree Search (TKCTS), enabling LLM agents to solve scientific coding tasks under realistic conditions where predefined evaluation metrics are absent and search budgets are limited. By choosing branches, pruning, and expanding based on "which of the two is better" rather than "absolute scores for each solution," it significantly outperforms baselines such as Self-Debug and OpenHands o…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Scientific Agent"
+  - "Tree Search"
+  - "Relative Judgment"
+  - "Test-time Scaling"
+  - "Code Generation"
 date: 2026-05-08
-content_hash: 38089075e29fa95a
+content_hash: 9c823e2372b262c9
 ---
+
 # SciNav: A General Agent Framework for Scientific Coding Tasks
 
 **Conference**: ICLR 2026  
@@ -150,8 +156,8 @@ On 40 tasks from ScienceAgentBench (solved by at least one agent), analyzing ini
 
 - [\[ICLR 2026\] Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine](huxley-godel_machine_human-level_coding_agent_development_by_an_approximation_of.md)
 - [\[ICLR 2026\] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development](membership_privacy_risks_of_sharpness_aware_minimization.md)
-- [\[ICLR 2026\] TaskCraft: Automated Generation of Agentic Tasks](taskcraft_automated_generation_of_agentic_tasks.md)
 - [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](tusoai_agentic_optimization_for_scientific_methods.md)
+- [\[ICLR 2026\] TaskCraft: Automated Generation of Agentic Tasks](taskcraft_automated_generation_of_agentic_tasks.md)
 - [\[ICLR 2026\] Zephyrus: An Agentic Framework for Weather Science](zephyrus_an_agentic_framework_for_weather_science.md)
 
 </div>

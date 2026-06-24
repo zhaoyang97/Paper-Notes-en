@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generating Multi-Image Synthetic Data for Text-to-Image Customization
 description: >-
-  [ICCV 2025][Image Generation][Text-to-image customization] This paper proposes SynCD (Synthetic Customization Dataset) and its generation pipeline…
+  [ICCV 2025][Image Generation][Text-to-image customization] This paper proposes SynCD (Synthetic Customization Dataset) and its generation pipeline, which synthesizes multi-image consistent object datasets using shared attention and 3D asset priors. The trained encoder model surpasses existing encoder-based methods without requiring test-time optimization.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "encoder-based method"
   - "3D consistency"
 date: 2026-05-08
-content_hash: 731c177d0238fc5b
+content_hash: 99883858dd79496c
 ---
 
 # Generating Multi-Image Synthetic Data for Text-to-Image Customization
@@ -166,11 +166,11 @@ The method consists of three components:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/multi-party_collaborative_attention_control_for_image_customization.md)
+- [\[CVPR 2025\] MCA-Ctrl: Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/mca_ctrl_attention_control_customization.md)
+- [\[CVPR 2026\] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm](../../CVPR2026/image_generation/scaling_multi-identity_consistency_for_image_customization_via_multi-to-multi_ma.md)
 - [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
 - [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](../../NeurIPS2025/image_generation/fast_data_attribution_for_text-to-image_models.md)
-- [\[CVPR 2026\] PureCC: Pure Learning for Text-to-Image Concept Customization](../../CVPR2026/image_generation/purecc_pure_learning_for_text-to-image_concept_customization.md)
-- [\[ICCV 2025\] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection](forgelens_data-efficient_forgery_focus_for_generalizable_forgery_image_detection.md)
-- [\[ICCV 2025\] MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance](mmaif_multi-task_and_multi-degradation_all-in-one_for_image_fusion_with_language.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation
 description: >-
-  [NeurIPS 2025][Human Understanding][cross-domain gaze estimation] This paper formulates cross-domain gaze estimation (CDGE) as a generalized label shift (GLS) problem…
+  [NeurIPS 2025][Human Understanding][cross-domain gaze estimation] This paper formulates cross-domain gaze estimation (CDGE) as a generalized label shift (GLS) problem, demonstrating that existing domain-invariant representation learning methods are theoretically insufficient under label shift. It proposes continuous importance reweighting based on truncated Gaussian distributions and a Probability-aware Conditional Operator Discrepancy (PCOD) to jointly correct label shift an…
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "conditional distribution alignment"
   - "kernel embedding"
 date: 2026-05-08
-content_hash: 41b248fdc65ec7b1
+content_hash: a6fb02219ec32a32
 ---
 
 # A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation
@@ -110,11 +110,11 @@ The GLS-theoretic insight that "invariant representation learning is insufficien
 
 ## Related Papers
 
+- [\[CVPR 2026\] Through the Frequency Lens: Cross-Domain Generalisable Gaze Estimation with Adaptive Modulation](../../CVPR2026/human_understanding/through_the_frequency_lens_cross-domain_generalisable_gaze_estimation_with_adapt.md)
 - [\[NeurIPS 2025\] OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild](omnigaze_reward-inspired_generalizable_gaze_estimation_in_the_wild.md)
-- [\[ICLR 2026\] Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics](../../ICLR2026/human_understanding/cross-domain_policy_optimization_via_bellman_consistency_and_hybrid_critics.md)
+- [\[CVPR 2026\] See Through the Noise: Improving Domain Generalization in Gaze Estimation](../../CVPR2026/human_understanding/see_through_the_noise_improving_domain_generalization_in_gaze_estimation.md)
+- [\[CVPR 2025\] 3D Prior is All You Need: Cross-Task Few-shot 2D Gaze Estimation](../../CVPR2025/human_understanding/3d_prior_is_all_you_need_cross-task_few-shot_2d_gaze_estimation.md)
 - [\[ICCV 2025\] Multi-view Gaze Target Estimation](../../ICCV2025/human_understanding/multi-view_gaze_target_estimation.md)
-- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](raptr_radar-based_3d_pose_estimation_using_transformer.md)
-- [\[ICCV 2025\] CarGait: Cross-Attention based Re-ranking for Gait Recognition](../../ICCV2025/human_understanding/cargait_cross_attention_based_re_ranking_for_gait_recognition.md)
 
 </div>
 

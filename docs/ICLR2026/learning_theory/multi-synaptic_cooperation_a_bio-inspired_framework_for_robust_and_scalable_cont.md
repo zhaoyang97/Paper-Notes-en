@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Multi-Synaptic Cooperation: A Bio-Inspired Framework for Robust and Scalable Continual Learning
 description: >-
-  [ICLR 2026][learning_theory][SNN] Inspired by the biological observation that multiple parallel synapses exist between a single axon-dendrite pair, this paper proposes MSCN. It enhances representation capacity within a **fixed network structure** by using multiple parallel synapses and modulates synaptic plasticity via local activity based on eligibili
+  [ICLR 2026][Continual Learning][Multi-Synaptic Cooperation] Inspired by the biological observation that multiple parallel synapses exist between a single axon-dendrite pair, this paper proposes MSCN. It enhances representation capacity within a **fixed network structure** by using multiple parallel synapses and modulates synaptic plasticity via local activity based on eligibility traces. This approach alleviates catastrophic forgetting without dynamic expansion and significan…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - SNN
+  - "ICLR 2026"
+  - "Continual Learning"
+  - "Brain-inspired Computing"
+  - "Catastrophic Forgetting"
+  - "Multi-Synaptic Cooperation"
+  - "Eligibility Trace"
+  - "Synaptic Plasticity"
+  - "SNN"
+  - "Task Order Robustness"
 date: 2026-05-08
-content_hash: 71d3541a05f1ee21
+content_hash: 37fbf4cc4b834e56
 ---
+
 # Multi-Synaptic Cooperation: A Bio-Inspired Framework for Robust and Scalable Continual Learning
 
 **Conference**: ICLR 2026  
@@ -120,8 +127,8 @@ Setup: Task-incremental multi-head, four benchmarks (PMNIST, 10-split CIFAR-100,
 - [\[ICLR 2026\] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization](memory-statistics_tradeoff_in_continual_learning_with_structural_regularization.md)
 - [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
 - [\[ICLR 2026\] PAC-Bayes Bounds for Cumulative Loss in Continual Learning](pac-bayes_bounds_for_cumulative_loss_in_continual_learning.md)
-- [\[ICLR 2026\] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data](a_generalized_geometric_theoretical_framework_of_centroid_discriminant_analysis_.md)
 - [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](noise_tolerance_of_distributionally_robust_learning.md)
+- [\[ICLR 2026\] Neural Collapse in Multi-Task Learning](neural_collapse_in_multi-task_learning.md)
 
 </div>
 

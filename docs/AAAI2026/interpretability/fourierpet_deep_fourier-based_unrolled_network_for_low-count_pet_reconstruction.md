@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FourierPET: Deep Fourier-based Unrolled Network for Low-count PET Reconstruction
 description: >-
-  [AAAI 2026][Interpretability][PET reconstruction] This work identifies three categories of degradation in low-count PET that are separable in the frequency domain — Poisson noise and photon deficiency induce high-frequen…
+  [AAAI 2026 Oral][Interpretability][PET reconstruction] This work identifies three categories of degradation in low-count PET that are separable in the frequency domain — Poisson noise and photon deficiency induce high-frequency phase perturbations, while attenuation correction errors suppress low-frequency amplitude — and proposes FourierPET: an ADMM-unrolled, frequency-aware reconstruction framework that achieves comprehensive state-of-the-art performance across three datase…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Interpretability"
   - "PET reconstruction"
   - "frequency domain analysis"
@@ -12,7 +12,7 @@ tags:
   - "amplitude-phase decoupling"
   - "low-dose imaging"
 date: 2026-05-08
-content_hash: 1890fa6c55955c7e
+content_hash: 6e44dc0b9d515cdf
 ---
 
 # FourierPET: Deep Fourier-based Unrolled Network for Low-count PET Reconstruction
@@ -142,11 +142,11 @@ $$\mathcal{L}_{total} = 0.5 \cdot \mathcal{L}_{Smooth\text{-}L1} + 0.3 \cdot \ma
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] SHAP Values via Sparse Fourier Representation](../../NeurIPS2025/interpretability/shap_values_via_sparse_fourier_representation.md)
 - [\[AAAI 2026\] Enhancing Binary Encoded Crime Linkage Analysis Using Siamese Network](enhancing_binary_encoded_crime_linkage_analysis_using_siamese_network.md)
 - [\[AAAI 2026\] ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games](elementarynet_a_non-strategic_neural_network_for_predicting_human_behavior_in_no.md)
-- [\[NeurIPS 2025\] SHAP Values via Sparse Fourier Representation](../../NeurIPS2025/interpretability/shap_values_via_sparse_fourier_representation.md)
-- [\[ICML 2026\] MAAT: Knowledge-Guided Kernel Regression for Heterogeneous Partially Observed State Reconstruction](../../ICML2026/interpretability/knowledge-informed_kernel_state_reconstruction_from_heterogeneous_partial_observ.md)
-- [\[NeurIPS 2025\] Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences](../../NeurIPS2025/interpretability/deep_value_benchmark_measuring_whether_models_generalize_deep_values_or_shallow_.md)
+- [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](../../ICLR2026/interpretability/causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
+- [\[ICML 2026\] MAAT: Heterogeneous Partial Observation State Reconstruction Based on Knowledge-Guided Kernel Regression](../../ICML2026/interpretability/knowledge-informed_kernel_state_reconstruction_from_heterogeneous_partial_observ.md)
 
 </div>
 

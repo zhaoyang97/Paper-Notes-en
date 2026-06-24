@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation
 description: >-
-  [CVPR 2026][Image Generation][ELBO] In autoregressive (AR) image generation, the training objectives for the tokenizer and the generator are disconnected (one learns pixel reconstruction, the other learns token likelihood). VA-π formulates their alignment as a variational objective (ELBO) and utilizes reinforcement learning to treat "whether decoding can
+  [CVPR 2026][Image Generation][Autoregressive image generation] In autoregressive (AR) image generation, the training objectives for the tokenizer and the generator are disconnected (one learns pixel reconstruction, the other learns token likelihood). VA-π formulates their alignment as a variational objective (ELBO) and utilizes reinforcement learning to treat "whether decoding can reconstruct the original image" as a pixel-level reward to fine-tune the AR generator. Using onl…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - ELBO
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Autoregressive image generation"
+  - "tokenizer alignment"
+  - "pixel-space alignment"
+  - "ELBO"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 3efce396f571c061
+content_hash: 13700dfd4a92d04a
 ---
+
 # VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation
 
 **Conference**: CVPR 2026  
@@ -171,11 +175,11 @@ Noise perturbation ratio ablation (T2I, GenEval Overall): $\xi=0$ yields 0.302, 
 
 ## Related Papers
 
+- [\[CVPR 2026\] VAR RL Done Right: Tackling Asynchronous Policy Conflicts in Visual Autoregressive Generation](var_rl_done_right_tackling_asynchronous_policy_conflicts_in_visual_autoregressiv.md)
+- [\[ICLR 2026\] Discrete Variational Autoencoding via Policy Search](../../ICLR2026/image_generation/discrete_variational_autoencoding_via_policy_search.md)
+- [\[ICLR 2026\] Group Critical-token Policy Optimization for Autoregressive Image Generation](../../ICLR2026/image_generation/group_critical-token_policy_optimization_for_autoregressive_image_generation.md)
 - [\[CVPR 2026\] SRA 2: Variational Autoencoder Self-Representation Alignment for Efficient Diffusion Training](sra_2_variational_autoencoder_self-representation_alignment_for_efficient_diffus.md)
-- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
 - [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
-- [\[CVPR 2026\] MaskFocus: Focusing Policy Optimization on Critical Steps for Masked Image Generation](maskfocus_focusing_policy_optimization_on_critical_steps_for_masked_image_genera.md)
-- [\[CVPR 2026\] Beyond Patches: Global-aware Autoregressive Model for Multimodal Few-Shot Font Generation](beyond_patches_global-aware_autoregressive_model_for_multimodal_few-shot_font_ge.md)
 
 </div>
 

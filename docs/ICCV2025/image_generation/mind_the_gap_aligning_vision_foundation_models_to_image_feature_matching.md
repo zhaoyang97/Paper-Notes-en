@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mind the Gap: Aligning Vision Foundation Models to Image Feature Matching
 description: >-
-  [ICCV 2025][Image Generation][Feature Matching] This paper identifies an "alignment gap" in vision foundation models (e.g., DINOv2) for image feature matching: contrastive learning-based models discard instance-level det…
+  [ICCV 2025][Image Generation][Feature Matching] This paper identifies an "alignment gap" in vision foundation models (e.g., DINOv2) for image feature matching: contrastive learning-based models discard instance-level details and lack cross-image interaction mechanisms, causing failures in multi-instance matching scenarios. To address this, the authors propose the IMD framework, which employs diffusion models as feature extractors to preserve instance-level details…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Image Interaction"
   - "Multi-Instance Matching"
 date: 2026-05-08
-content_hash: 36cf58715a8a1f29
+content_hash: 31ae7999ac857f2d
 ---
 
 # Mind the Gap: Aligning Vision Foundation Models to Image Feature Matching
@@ -174,10 +174,10 @@ AUC@5° on ScanNet improves by 24.6% over PRISM; IMIM multi-instance matching im
 ## Related Papers
 
 - [\[ICCV 2025\] Rethinking the Embodied Gap in Vision-and-Language Navigation: A Holistic Study of Physical and Visual Disparities](rethinking_the_embodied_gap_in_vision-and-language_navigation_a_holistic_study_o.md)
+- [\[ICLR 2026\] Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](../../ICLR2026/image_generation/aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
 - [\[ICCV 2025\] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching](lazymar_accelerating_masked_autoregressive_models_via_feature_caching.md)
+- [\[CVPR 2026\] VFM-VAE: Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](../../CVPR2026/image_generation/vfm-vae_vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_mod.md)
 - [\[CVPR 2026\] Probing and Bridging Geometry–Interaction Cues for Affordance Reasoning in Vision Foundation Models](../../CVPR2026/image_generation/probing_and_bridging_geometry-interaction_cues_for_affordance_reasoning_in_visio.md)
-- [\[ICLR 2026\] AlignTok: Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](../../ICLR2026/image_generation/aligntok_aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
-- [\[ICCV 2025\] AIComposer: Any Style and Content Image Composition via Feature Integration](aicomposer_any_style_and_content_image_composition_via_feature_integration.md)
 
 </div>
 

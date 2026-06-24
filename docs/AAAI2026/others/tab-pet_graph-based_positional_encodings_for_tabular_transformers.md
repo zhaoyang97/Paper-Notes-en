@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tab-PET: Graph-Based Positional Encodings for Tabular Transformers
 description: >-
-  [AAAI 2026][Positional Encoding] Tab-PET estimates a graph structure from inter-feature correlations in tabular data, constructs positional encodings (PE) from graph Laplacian eigenvectors…
+  [AAAI 2026][Positional Encoding] Tab-PET estimates a graph structure from inter-feature correlations in tabular data, constructs positional encodings (PE) from graph Laplacian eigenvectors, and injects them into tabular Transformers. Both theoretical analysis and experiments demonstrate that PE reduces the effective rank of embeddings, thereby improving generalization. Consistent improvements are observed across 50 datasets for TabTransformer, SAINT, and FT-Transformer…
 tags:
   - "AAAI 2026"
   - "Positional Encoding"
@@ -11,7 +11,7 @@ tags:
   - "Transformer"
   - "Effective Rank"
 date: 2026-05-08
-content_hash: 371f1f30263d15ef
+content_hash: 6150567d8ad58fd1
 ---
 
 # Tab-PET: Graph-Based Positional Encodings for Tabular Transformers
@@ -166,9 +166,9 @@ FT-Transformer+PET achieves rank 2.44 on classification (1st overall), and SAINT
 
 - [\[AAAI 2026\] Neural Graph Navigation for Intelligent Subgraph Matching](neural_graph_navigation_for_intelligent_subgraph_matching.md)
 - [\[AAAI 2026\] Structure-Aware Encodings of Argumentation Properties for Clique-width](structure-aware_encodings_of_argumentation_properties_for_clique-width.md)
-- [\[ICLR 2026\] The Counting Power of Transformers](../../ICLR2026/others/the_counting_power_of_transformers.md)
-- [\[ICLR 2026\] Harpoon: Generalised Manifold Guidance for Conditional Tabular Diffusion](../../ICLR2026/others/harpoon_generalised_manifold_guidance_for_conditional_tabular_diffusion.md)
+- [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](../../ICLR2026/others/prior-free_tabular_test-time_adaptation.md)
 - [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
+- [\[ICLR 2026\] The Counting Power of Transformers](../../ICLR2026/others/the_counting_power_of_transformers.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diagnose, Correct, and Learn from Manipulation Failures via Visual Symbols
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] The ViFailback framework is proposed to efficiently annotate real-world robot manipulation failures using visual symbols (arrows, crosshairs, labels, etc.), constructing a dataset of 58,128 VQA pairs. ViFailback-8B VLM is trained to achieve failure diagnosis and visual+textual correction guidance, which, when integrate
+  [CVPR 2026][Robotics][Robot Manipulation Failure] The ViFailback framework is proposed to efficiently annotate real-world robot manipulation failures using visual symbols (arrows, crosshairs, labels, etc.), constructing a dataset of 58,128 VQA pairs. ViFailback-8B VLM is trained to achieve failure diagnosis and visual+textual correction guidance, which, when integrated with VLA, achieves a 22.2% improvement in task success rate.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot Manipulation Failure"
+  - "Visual Symbols"
+  - "VLM Failure Diagnosis"
+  - "VLA Recovery"
+  - "Real-world Dataset"
 date: 2026-05-08
-content_hash: 77c372b468fabd79
+content_hash: 74ad409df03633f5
 ---
+
 # Diagnose, Correct, and Learn from Manipulation Failures via Visual Symbols
 
 **Conference**: CVPR 2026  
@@ -147,9 +153,9 @@ ViFailback-8B is integrated into the VLA execution loop. While the VLA performs 
 
 - [\[CVPR 2026\] MM-ACT: Learn from Multimodal Parallel Generation to Act](mm-act_learn_from_multimodal_parallel_generation_to_act.md)
 - [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
-- [\[CVPR 2026\] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](flare_a_failure-aware_framework_for_autonomous_correction_and_recovery_in_visual.md)
+- [\[CVPR 2026\] VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](viral_visual_sim-to-real_at_scale_for_humanoid_loco-manipulation.md)
 - [\[CVPR 2026\] Visual-RRT: Finding Paths toward Visual-Goals via Differentiable Rendering](visual-rrt_finding_paths_toward_visual-goals_via_differentiable_rendering.md)
-- [\[CVPR 2026\] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning](clivis_unleashing_cognitive_map_through_linguistic-visual_synergy_for_embodied_v.md)
+- [\[ICLR 2026\] ReCAPA: Hierarchical Predictive Correction to Mitigate Cascading Failures](../../ICLR2026/robotics/recapa_hierarchical_predictive_correction_to_mitigate_cascading_failures.md)
 
 </div>
 

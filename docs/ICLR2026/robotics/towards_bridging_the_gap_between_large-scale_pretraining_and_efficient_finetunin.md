@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][SAC] LIFT proposes a three-stage pre-training and fine-tuning framework: (i) large-scale parallel SAC pre-training to achieve zero-shot deployment; (ii) offline pre-training of a physics-informed world model based on Lagrangian dynamics; (iii) efficient fine-tuning with deterministic action execution and stochastic explorat
+  [ICLR 2026][Robotics][Humanoid control] LIFT proposes a three-stage pre-training and fine-tuning framework: (i) large-scale parallel SAC pre-training to achieve zero-shot deployment; (ii) offline pre-training of a physics-informed world model based on Lagrangian dynamics; (iii) efficient fine-tuning with deterministic action execution and stochastic exploration within the world model. The full pipeline from simulation to the real world was verified on Booster T1 and Unitree G…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - SAC
+  - "ICLR 2026"
+  - "Robotics"
+  - "Humanoid control"
+  - "Large-scale pre-training"
+  - "Efficient fine-tuning"
+  - "SAC"
+  - "Physics-informed world model"
+  - "Sim-to-real"
 date: 2026-05-08
-content_hash: 6454dbcaad0d76dc
+content_hash: 7790730cfa45512d
 ---
+
 # Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control
 
 **Conference**: ICLR 2026  
@@ -141,8 +147,8 @@ Fine-tuning requires only $4 \times 10^4$ environment steps (approx. 800 seconds
 - [\[ICLR 2026\] Emergent Dexterity via Diverse Resets and Large-Scale Reinforcement Learning](emergent_dexterity_via_diverse_resets_and_large-scale_reinforcement_learning.md)
 - [\[ICLR 2026\] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots](robocasa365_a_large-scale_simulation_framework_for_training_and_benchmarking_gen.md)
 - [\[ICLR 2026\] Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning](rethinking_policy_diversity_in_ensemble_policy_gradient_in_large-scale_reinforce.md)
+- [\[CVPR 2026\] VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](../../CVPR2026/robotics/viral_visual_sim-to-real_at_scale_for_humanoid_loco-manipulation.md)
 - [\[ICLR 2026\] From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance](from_language_to_locomotion_retargeting-free_humanoid_control_via_motion_latent_.md)
-- [\[ICLR 2026\] HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion](hwc-loco_a_hierarchical_whole-body_control_approach_to_robust_humanoid_locomotio.md)
 
 </div>
 

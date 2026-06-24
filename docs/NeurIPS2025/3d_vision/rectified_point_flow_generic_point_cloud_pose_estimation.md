@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rectified Point Flow: Generic Point Cloud Pose Estimation
 description: >-
-  [NeurIPS 2025][3D Vision][point cloud pose estimation] This paper proposes Rectified Point Flow, a unified generative framework that reformulates pairwise point cloud registration and multi-part shape assembly as a condi…
+  [NeurIPS 2025][3D Vision][point cloud pose estimation] This paper proposes Rectified Point Flow, a unified generative framework that reformulates pairwise point cloud registration and multi-part shape assembly as a conditional generation problem, estimating part poses by learning a continuous point-wise velocity field.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "registration"
   - "symmetry handling"
 date: 2026-05-08
-content_hash: 03052f82ed5ec8ef
+content_hash: e5f8789cc6d51ec2
 ---
 
 # Rectified Point Flow: Generic Point Cloud Pose Estimation
@@ -130,9 +130,9 @@ The proposed method also comprehensively outperforms GeoTransformer and Diff-RPM
 
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](../../ICCV2025/3d_vision/efficient_spiking_point_mamba_for_point_cloud_analysis.md)
 - [\[NeurIPS 2025\] U-CAN: Unsupervised Point Cloud Denoising with Consistency-Aware Noise2Noise Matching](u-can_unsupervised_point_cloud_denoising_with_consistency-aware_noise2noise_matc.md)
+- [\[ECCV 2024\] milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing](../../ECCV2024/3d_vision/milliflow_scene_flow_estimation_on_mmwave_radar_point_cloud_for_human_motion_sen.md)
 - [\[NeurIPS 2025\] PointMAC: Meta-Learned Adaptation for Robust Test-Time Point Cloud Completion](pointmac_meta-learned_adaptation_for_robust_test-time_point_cloud_completion.md)
 - [\[NeurIPS 2025\] Novel Class Discovery for Point Cloud Segmentation via Joint Learning of Causal Representation and Reasoning](novel_class_discovery_for_point_cloud_segmentation_via_joint_learning_of_causal_.md)
-- [\[NeurIPS 2025\] How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?](how_many_tokens_do_3d_point_cloud_transformer_architectures_really_need.md)
 
 </div>
 

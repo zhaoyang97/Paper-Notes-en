@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Open-Ended Instruction Realization with LLM-Enabled Multi-Planner Scheduling in Autonomous Vehicles
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Addressing the neglected requirement for "passengers issuing maneuver-level instructions in natural language" in L4-L5 autonomous driving (AD), this paper proposes a "scheduling-centric" framework. It utilizes an LLM to parse open-ended instructions into a sequence of driving behaviors and generate a scheduling script
+  [CVPR 2026][Autonomous Driving][Open-ended instructions] Addressing the neglected requirement for "passengers issuing maneuver-level instructions in natural language" in L4-L5 autonomous driving (AD), this paper proposes a "scheduling-centric" framework. It utilizes an LLM to parse open-ended instructions into a sequence of driving behaviors and generate a scheduling script in a single pass. Multiple MPC motion planners then execute these behaviors sequentially under real-tim…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Open-ended instructions"
+  - "motion planning scheduling"
+  - "LLM driving"
+  - "human-machine interaction (HMI)"
+  - "closed-loop evaluation."
 date: 2026-05-08
-content_hash: f0d4cd7e75267002
+content_hash: 2c0b325cbc43f6ca
 ---
+
 # Open-Ended Instruction Realization with LLM-Enabled Multi-Planner Scheduling in Autonomous Vehicles
 
 **Conference**: CVPR 2026  
@@ -132,10 +138,10 @@ Ours achieves the highest Realization of 0.84 among instruction-based methods, a
 ## Related Papers
 
 - [\[CVPR 2026\] Diffusion Forcing Planner: History-Annealed Planning with Time-Dependent Guidance for Autonomous Driving](diffusion_forcing_planner_history-annealed_planning_with_time-dependent_guidance.md)
-- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
+- [\[ICLR 2026\] OccDriver: Future Occupancy Guided Dual-branch Trajectory Planner in Autonomous Driving](../../ICLR2026/autonomous_driving/occdriver_future_occupancy_guided_dual-branch_trajectory_planner_in_autonomous_d.md)
 - [\[CVPR 2026\] Unposed-to-3D: Learning Simulation-Ready Vehicles from Real-World Images](unposed-to-3d_learning_simulation-ready_vehicles_from_real-world_images.md)
 - [\[CVPR 2026\] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation](open-vocabulary_domain_generalization_in_urban-scene_segmentation.md)
-- [\[ICCV 2025\] CoLMDriver: LLM-based Negotiation Benefits Cooperative Autonomous Driving](../../ICCV2025/autonomous_driving/colmdriver_llm-based_negotiation_benefits_cooperative_autonomous_driving.md)
+- [\[CVPR 2026\] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)](monocular_open_vocabulary_occupancy_prediction_for_indoor_scenes.md)
 
 </div>
 

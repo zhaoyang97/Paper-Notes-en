@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CodeGEMM: A Codebook-Centric Approach to Efficient GEMM in Quantized LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][model quantization] This paper proposes CodeGEMM, a codebook-centric GEMM kernel that precomputes inner products between centroids and activations and caches them as a Psumbook…
+  [NeurIPS 2025][Model Compression][model quantization] This paper proposes CodeGEMM, a codebook-centric GEMM kernel that precomputes inner products between centroids and activations and caches them as a Psumbook, replacing the conventional dequantization pipeline to achieve end-to-end speedups of 1.83× (8B) to 8.93× (70B) on 2-bit quantized LLMs.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -14,7 +14,7 @@ tags:
   - "CUDA kernel"
   - "lookup table"
 date: 2026-05-08
-content_hash: 6030ad8b99d2ca82
+content_hash: 057471adcb92820b
 ---
 
 # CodeGEMM: A Codebook-Centric Approach to Efficient GEMM in Quantized LLMs
@@ -146,11 +146,11 @@ CodeGEMM's energy efficiency (19.36 GFLOPS/W) is 1.9× that of AQLM 2×8, and it
 
 ## Related Papers
 
+- [\[ICML 2025\] Toward Data-centric Directed Graph Learning: An Entropy-driven Approach](../../ICML2025/model_compression/toward_data-centric_directed_graph_learning_an_entropy-driven_approach.md)
 - [\[NeurIPS 2025\] A Partition Cover Approach for Tokenization](a_partition_cover_approach_to_tokenization.md)
-- [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](vision-centric_token_compression_in_large_language_model.md)
+- [\[ACL 2025\] One QuantLLM for ALL: Fine-tuning Quantized LLMs Once for Efficient Deployments](../../ACL2025/model_compression/one_quantllm_for_all_fine-tuning_quantized_llms_once_for_efficient_deployments.md)
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
 - [\[NeurIPS 2025\] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models](vessa_video-based_object-centric_self-supervised_adaptation_for_visual_foundatio.md)
-- [\[NeurIPS 2025\] Learning to Factorize and Adapt: A Versatile Approach Toward Universal Spatio-Temporal Foundation Models](learning_to_factorize_and_adapt_a_versatile_approach_toward_universal_spatio-tem.md)
 
 </div>
 

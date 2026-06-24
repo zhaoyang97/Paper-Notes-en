@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TP-Spikformer: Token Pruned Spiking Transformer
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] To address the high deployment overhead of Spiking Transformers, this paper proposes TP-Spikformer, a **training-free and architecture-invariant** token pruning method. It employs a neuroscience-inspired "Information Retention-driven Token Pruning" (IRToP) criterion to score tokens and a "Block-level Early-stopping Arc
+  [ICLR 2026][Model Compression][Spiking Neural Networks] To address the high deployment overhead of Spiking Transformers, this paper proposes TP-Spikformer, a **training-free and architecture-invariant** token pruning method. It employs a neuroscience-inspired "Information Retention-driven Token Pruning" (IRToP) criterion to score tokens and a "Block-level Early-stopping Architecture" (IR-Arc) that allows unimportant tokens to skip subsequent computations instead of being dele…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Spiking Neural Networks"
+  - "Spiking Transformer"
+  - "Token Pruning"
+  - "Training-free"
+  - "Spatiotemporal Saliency"
 date: 2026-05-08
-content_hash: ccac5f5632e9691f
+content_hash: bd8ffacb30f05a66
 ---
+
 # TP-Spikformer: Token Pruned Spiking Transformer
 
 **Conference**: ICLR 2026  
@@ -145,15 +151,15 @@ Zero-finetuning ablation on ImageNet (Table 6, Accuracy %):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Otters: An Energy-Efficient Spiking Transformer via Optical Time-to-First-Spike Encoding](otters_an_energy-efficient_spiking_transformer_via_optical_time-to-first-spike_e.md)
-- [\[ICLR 2026\] Vulcan: 为边缘智能裁剪紧凑的类特定视觉 Transformer](vulcan_crafting_compact_class-specific_vision_transformers_for_edge_intelligence.md)
 - [\[ICML 2026\] Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck in Spiking Transformers](../../ICML2026/model_compression/plug-and-play_spiking_operators_breaking_the_nonlinearity_bottleneck_in_spiking_.md)
-- [\[ICLR 2026\] Ensembling Pruned Attention Heads for Uncertainty-Aware Efficient Transformers](ensembling_pruned_attention_heads_for_uncertainty-aware_efficient_transformers.md)
 - [\[ICLR 2026\] Reasoning Models Can be Accurately Pruned Via Chain-of-Thought Reconstruction](reasoning_models_can_be_accurately_pruned_via_chain-of-thought_reconstruction.md)
+- [\[ICLR 2026\] Ensembling Pruned Attention Heads for Uncertainty-Aware Efficient Transformers](ensembling_pruned_attention_heads_for_uncertainty-aware_efficient_transformers.md)
+- [\[ICLR 2026\] Robust Selective Activation with Randomized Temporal K-Winner-Take-All in Spiking Neural Networks for Continual Learning](robust_selective_activation_with_randomized_temporal_k-winner-take-all_in_spikin.md)
 
 </div>
 

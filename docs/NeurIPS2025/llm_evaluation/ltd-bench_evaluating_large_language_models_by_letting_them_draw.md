@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LTD-Bench: Evaluating Large Language Models by Letting Them Draw
 description: >-
-  [NeurIPS 2025][LLM Evaluation][spatial reasoning] LTD-Bench evaluates the spatial reasoning capabilities of LLMs by having them draw (via dot-matrix output or code-based rendering)…
+  [NeurIPS 2025][LLM Evaluation][spatial reasoning] LTD-Bench evaluates the spatial reasoning capabilities of LLMs by having them draw (via dot-matrix output or code-based rendering), transforming abstract evaluation metrics into intuitive visual outputs. The benchmark reveals critical deficiencies in current state-of-the-art LLMs regarding bidirectional mapping between linguistic and spatial concepts.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -11,7 +11,7 @@ tags:
   - "benchmark"
   - "drawing ability"
 date: 2026-05-08
-content_hash: b8c806a9d0636b07
+content_hash: 0ed64ea5e57a542e
 ---
 
 # LTD-Bench: Evaluating Large Language Models by Letting Them Draw
@@ -159,11 +159,11 @@ Deep reasoning distillation substantially improves recognition performance (+18%
 
 ## Related Papers
 
+- [\[ACL 2025\] Batayan: A Filipino NLP Benchmark for Evaluating Large Language Models](../../ACL2025/llm_evaluation/batayan_a_filipino_nlp_benchmark_for_evaluating_large_language_models.md)
 - [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](hyperbolic_fine-tuning_for_large_language_models.md)
 - [\[NeurIPS 2025\] Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models](creativity_or_brute_force_using_brainteasers_as_a_window_into_the_problem-solvin.md)
-- [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](can_large_language_models_master_complex_card_games.md)
-- [\[NeurIPS 2025\] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection](benchmarking_large_language_models_for_zero-shot_and_few-shot_phishing_url_detec.md)
-- [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](bayesian_evaluation_of_large_language_model_behavior.md)
+- [\[ACL 2025\] WXImpactBench: A Disruptive Weather Impact Understanding Benchmark for Evaluating Large Language Models](../../ACL2025/llm_evaluation/wximpactbench_a_disruptive_weather_impact_understanding_benchmark_for_evaluating.md)
+- [\[ACL 2025\] SeedBench: A Multi-task Benchmark for Evaluating Large Language Models in Seed Science](../../ACL2025/llm_evaluation/seedbench_a_multi-task_benchmark_for_evaluating_large_language_models_in_seed_sc.md)
 
 </div>
 

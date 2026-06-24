@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Behaviour Policy Optimization: Provably Lower Variance Return Estimates for Off-Policy Reinforcement Learning
 description: >-
-  [AAAI2026][Reinforcement Learning][off-policy reinforcement learning] This paper proposes Behaviour Policy Optimization (BPO), which optimizes a dedicated behaviour policy for off-policy data collection such that the var…
+  [AAAI2026][Reinforcement Learning][off-policy reinforcement learning] This paper proposes Behaviour Policy Optimization (BPO), which optimizes a dedicated behaviour policy for off-policy data collection such that the variance of return estimates is provably lower than on-policy collection, thereby improving the sample efficiency and stability of REINFORCE and PPO.
 tags:
   - "AAAI2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "behaviour policy"
   - "policy gradient"
 date: 2026-05-08
-content_hash: ae557662d4f70930
+content_hash: 95d7c3804fe70122
 ---
 
 # Behaviour Policy Optimization: Provably Lower Variance Return Estimates for Off-Policy Reinforcement Learning
@@ -148,10 +148,10 @@ BPO's core insight—**that the data collection policy can differ from and outpe
 ## Related Papers
 
 - [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
+- [\[ICLR 2026\] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training](../../ICLR2026/reinforcement_learning/revisiting_group_relative_policy_optimization_insights_into_on-policy_and_off-po.md)
+- [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](../../ICLR2026/reinforcement_learning/bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
+- [\[ICLR 2026\] GEPO: Group Expectation Policy Optimization for Stable Heterogeneous Reinforcement Learning](../../ICLR2026/reinforcement_learning/gepo_group_expectation_policy_optimization_for_stable_heterogeneous_reinforcemen.md)
 - [\[AAAI 2026\] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning](hcpo_hierarchical_conductor-based_policy_optimization_in_multi-agent_reinforceme.md)
-- [\[ICLR 2026\] A Unifying View of Coverage in Linear Off-Policy Evaluation](../../ICLR2026/reinforcement_learning/a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)
-- [\[ICLR 2026\] PolicyFlow: Policy Optimization with Continuous Normalizing Flow in Reinforcement Learning](../../ICLR2026/reinforcement_learning/policyflow_policy_optimization_with_continuous_normalizing_flow_in_reinforcement.md)
-- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](../../ICML2026/reinforcement_learning/learning_to_route_languages_for_multilingual_policy_optimization.md)
 
 </div>
 

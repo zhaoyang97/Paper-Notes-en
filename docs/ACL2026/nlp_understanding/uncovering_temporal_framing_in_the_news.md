@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 新闻文本中的时间框架揭示
+  [Paper Note] Revealing Temporal Framing in News Text
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] This paper proposes the concept of "temporal framing" in news text. Drawing from social science theories, it establishes a taxonomy consisting of 8 categories of temporal frames, annotates a bilingual English-German news corpus, and trains models for temporal frame detection using both supervised and zero-shot approach
+  [ACL 2026 Oral][NLP Understanding][Temporal Framing] This paper proposes the concept of "temporal framing" in news text. Drawing from social science theories, it establishes a taxonomy consisting of 8 categories of temporal frames, annotates a bilingual English-German news corpus, and trains models for temporal frame detection using both supervised and zero-shot approaches.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026 Oral"
+  - "NLP Understanding"
+  - "Temporal Framing"
+  - "Rhetorical Analysis"
+  - "News Discourse"
+  - "Multilingual Corpus"
+  - "Text Classification"
 date: 2026-05-08
-content_hash: c618893a5d421847
+content_hash: 817cc6856db9cc7e
 ---
+
 # Revealing Temporal Framing in News Text
 
 **Conference**: ACL 2026 Oral  
@@ -139,11 +145,11 @@ For corpus sampling, stratified sampling and GPT-4o-based document-level opinion
 
 ## Related Papers
 
-- [\[ACL 2026\] Creating ConLangs to Probe the Metalinguistic Grammatical Knowledge of LLMs](creating_conlangs_to_probe_the_metalinguistic_grammatical_knowledge_of_llms.md)
-- [\[ACL 2026\] Commonsense Knowledge with Negation: A Resource to Enhance Negation Understanding](commonsense_knowledge_with_negation_a_resource_to_enhance_negation_understanding.md)
-- [\[ACL 2026\] Agree, Disagree, Explain: Decomposing Human Label Variation in NLI through the Lens of Explanations](agree_disagree_explain_decomposing_human_label_variation_in_nli_through_the_lens.md)
-- [\[ACL 2026\] Exploring Concreteness Through a Figurative Lens](exploring_concreteness_through_a_figurative_lens.md)
-- [\[ACL 2026\] LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases](lexrel_benchmarking_legal_relation_extraction_for_chinese_civil_cases.md)
+- [\[ACL 2026\] Lost in the Prompt Order: Revealing the Limitations of Causal Attention in Language Models](lost_in_the_prompt_order_revealing_the_limitations_of_causal_attention_in_langua.md)
+- [\[ACL 2026\] It's High Time: A Survey of Temporal Question Answering](it39s_high_time_a_survey_of_temporal_question_answering.md)
+- [\[ACL 2026\] Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation](knowledge-driven_augmentation_and_retrieval_for_integrative_temporal_adaptation.md)
+- [\[ACL 2026\] AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models](adaptime_enabling_adaptive_temporal_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
 
 </div>
 

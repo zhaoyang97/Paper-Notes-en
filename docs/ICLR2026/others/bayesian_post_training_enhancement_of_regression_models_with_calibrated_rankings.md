@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Bayesian Post Training Enhancement of Regression Models with Calibrated Rankings
 description: >-
-  [ICLR 2026][Others][Bradley-Terry] RANKREFINE++ fuses "regressor predictions" and "expert pairwise rankings" into a strictly log-concave posterior via Bayesian inference. It addresses scale mismatch and curvature dominance in the Bradley-Terry model under large reference sets using temperature calibration and accuracy gating, significantly improving pre
+  [ICLR 2026][Bradley-Terry] RANKREFINE++ fuses "regressor predictions" and "expert pairwise rankings" into a strictly log-concave posterior via Bayesian inference. It addresses scale mismatch and curvature dominance in the Bradley-Terry model under large reference sets using temperature calibration and accuracy gating, significantly improving prediction accuracy without retraining the regressor.
 tags:
-  - ICLR 2026
-  - Others
-  - Bradley-Terry
+  - "ICLR 2026"
+  - "Bradley-Terry"
+  - "Bayesian Post-processing"
+  - "Pairwise Ranking"
+  - "Temperature Calibration"
+  - "Molecular Property Prediction"
 date: 2026-05-08
-content_hash: 04a001c0f62afdeb
+content_hash: b470b73409bdd4fe
 ---
+
 # Bayesian Post Training Enhancement of Regression Models with Calibrated Rankings
 
 **Conference**: ICLR 2026  

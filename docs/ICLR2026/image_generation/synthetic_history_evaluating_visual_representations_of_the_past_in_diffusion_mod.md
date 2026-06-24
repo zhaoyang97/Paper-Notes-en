@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Synthetic History: Evaluating Visual Representations of the Past in Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper introduces the HistVis historical visual benchmark, generating 30,000 images of cross-era activities using three open-source text-to-image (TTI) diffusion models. It systematically reveals how models render the "past" as a synthetic history characterized by stereotypical associations, anachronisms, and disto
+  [ICLR 2026][Image Generation][Historical Representation] This paper introduces the HistVis historical visual benchmark, generating 30,000 images of cross-era activities using three open-source text-to-image (TTI) diffusion models. It systematically reveals how models render the "past" as a synthetic history characterized by stereotypical associations, anachronisms, and distorted demographic distributions across three dimensions: implicit style associations…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Historical Representation"
+  - "TTI Evaluation"
+  - "Style Bias"
+  - "Anachronism"
+  - "Demographic Bias"
 date: 2026-05-08
-content_hash: 97703b73144179e4
+content_hash: b6958a177e4608a8
 ---
+
 # Synthetic History: Evaluating Visual Representations of the Past in Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -136,15 +142,16 @@ The "ablation" focuses on the robustness of the evaluation pipeline and alternat
 - **Value**: ⭐⭐⭐⭐⭐ Directly valuable for AIGC, cultural heritage, and responsible AI.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] HiGS: History-Guided Sampling for Plug-and-Play Enhancement of Diffusion Models](higs_history-guided_sampling_for_plug-and-play_enhancement_of_diffusion_models.md)
+- [\[ICLR 2026\] SpikeGen: Decoupling "Rod-Cone" Visual Representations with a Latent Generative Framework](spikegen_decoupled_rods_and_cones_visual_representation_processing_with_latent_g.md)
 - [\[ICCV 2025\] DiffSim: Taming Diffusion Models for Evaluating Visual Similarity](../../ICCV2025/image_generation/diffsim_taming_diffusion_models_for_evaluating_visual_similarity.md)
 - [\[ICLR 2026\] Reconciling Visual Perception and Generation in Diffusion Models](reconciling_visual_perception_and_generation_in_diffusion_models.md)
 - [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
-- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
 
 </div>
 

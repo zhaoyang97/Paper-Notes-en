@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Test-time adaptation] This paper proposes MCP/MCP++, a multi-cache enhanced prototype learning framework that constructs compact intra-class distributions via three complementary cache modules…
+  [ICCV 2025][Multimodal VLM][Test-time adaptation] This paper proposes MCP/MCP++, a multi-cache enhanced prototype learning framework that constructs compact intra-class distributions via three complementary cache modules—entropy cache, align cache, and negative cache—and further introduces cross-modal residual learning to refine the alignment between visual and textual prototypes, achieving state-of-the-art zero-shot generalization across 15 downstream tasks.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "cache mechanism"
   - "prototype learning"
 date: 2026-05-08
-content_hash: 65cbc277c83932cf
+content_hash: 2cf25cfce5521c78
 ---
 
 # Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models
@@ -57,9 +57,9 @@ MCP consists of three complementary cache modules: entropy cache initializes pro
 
 3. **Negative Cache**:
    Leverages negative pseudo-labels from high-entropy samples to calibrate predictions. A **reflecting mechanism** is introduced—pseudo-labels of high-entropy samples are re-evaluated using reliable features from existing cache entries, and only those that maintain moderate entropy after calibration are admitted:
-   - $H_{\text{low}} \le H'(x) \le H_{\text{high}}$: stored in the negative cache
-   - $H'(x) < H_{\text{low}}$: treated as reliable and eligible for the entropy cache
-   - $H'(x) > H_{\text{high}}$: discarded
+    - $H_{\text{low}} \le H'(x) \le H_{\text{high}}$: stored in the negative cache
+    - $H'(x) < H_{\text{low}}$: treated as reliable and eligible for the entropy cache
+    - $H'(x) > H_{\text{high}}$: discarded
 
 4. **Inference Mechanism**:
    The final prediction logits are computed as a weighted combination of three complementary information sources:
@@ -70,9 +70,9 @@ MCP consists of three complementary cache modules: entropy cache initializes pro
    Learnable residual parameters are introduced to fine-tune both visual and textual prototypes:
    $\bar{t}_c' = \bar{t}_c + R_t^c, \quad \bar{v}_c' = \bar{v}_c + R_v^c$
    The joint optimization loss comprises three terms:
-   - **Entropy minimization loss** $\mathcal{L}_{\text{entro}}$: encourages prediction consistency across augmented views
-   - **Visual-text alignment loss** $\mathcal{L}_{\text{align}}$: aligns visual and textual prototypes via InfoNCE
-   - **Positive-negative contrastive loss** $\mathcal{L}_{\text{contrast}}$: enlarges the distance between prototype centers and negative cache samples
+    - **Entropy minimization loss** $\mathcal{L}_{\text{entro}}$: encourages prediction consistency across augmented views
+    - **Visual-text alignment loss** $\mathcal{L}_{\text{align}}$: aligns visual and textual prototypes via InfoNCE
+    - **Positive-negative contrastive loss** $\mathcal{L}_{\text{contrast}}$: enlarges the distance between prototype centers and negative cache samples
 
 ### Loss & Training
 
@@ -149,9 +149,9 @@ where $\lambda = 0.5$ and $\gamma = 0.2$. Each test sample generates 31 augmente
 
 - [\[ICCV 2025\] Dynamic Multimodal Prototype Learning in Vision-Language Models](dynamic_multimodal_prototype_learning_in_vision-language_models.md)
 - [\[ICCV 2025\] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation](is_less_more_exploring_token_condensation_as_training-free_test-time_adaptation.md)
+- [\[CVPR 2025\] Realistic Test-Time Adaptation of Vision-Language Models](../../CVPR2025/multimodal_vlm/realistic_test-time_adaptation_of_vision-language_models.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
-- [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](../../NeurIPS2025/multimodal_vlm/test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
-- [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
 
 </div>
 

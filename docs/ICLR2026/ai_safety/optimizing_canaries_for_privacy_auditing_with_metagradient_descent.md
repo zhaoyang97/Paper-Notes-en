@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Optimizing Canaries for Privacy Auditing with Metagradient Descent
 description: >-
-  [ICLR 2026][AI Safety][DP-SGD] This paper employs metagradient descent to directly optimize the set of canaries (probe samples) used in privacy auditing. In black-box, single-training differential privacy (DP) auditing scenarios, this approach improves the empirical privacy lower bound $\varepsilon$ by several times compared to existing random or mi
+  [ICLR 2026][AI Safety][Differential Privacy] This paper employs metagradient descent to directly optimize the set of canaries (probe samples) used in privacy auditing. In black-box, single-training differential privacy (DP) auditing scenarios, this approach improves the empirical privacy lower bound $\varepsilon$ by several times compared to existing random or mislabeled canaries, relying solely on the final model output.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - DP-SGD
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "DP-SGD"
+  - "Privacy Auditing"
+  - "Canary Optimization"
+  - "Metagradient"
 date: 2026-05-08
-content_hash: 6fb681cb01893dc0
+content_hash: cb45df965f27289b
 ---
+
 # Optimizing Canaries for Privacy Auditing with Metagradient Descent
 
 **Conference**: ICLR 2026  
@@ -124,14 +129,14 @@ In high privacy budget regions, the optimized canaries generally improve the low
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond Membership: Limitations of Add/Remove Adjacency in Differential Privacy](beyond_membership_limitations_of_addremove_adjacency_in_differential_privacy.md)
-- [\[ICLR 2026\] Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective](adaptive_methods_are_preferable_in_high_privacy_settings_an_sde_perspective.md)
 - [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](../../NeurIPS2025/ai_safety/sequentially_auditing_differential_privacy.md)
+- [\[ICLR 2026\] Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective](adaptive_methods_are_preferable_in_high_privacy_settings_an_sde_perspective.md)
 - [\[ICLR 2026\] Differentially Private Two-Stage Gradient Descent for Instrumental Variable Regression](differentially_private_two-stage_gradient_descent_for_instrumental_variable_regr.md)
 - [\[ICLR 2026\] Person-Centric Annotations of LAION-400M: Auditing Bias and Its Transfer to Models](person-centric_annotations_of_laion-400m_auditing_bias_and_its_transfer_to_model.md)
 

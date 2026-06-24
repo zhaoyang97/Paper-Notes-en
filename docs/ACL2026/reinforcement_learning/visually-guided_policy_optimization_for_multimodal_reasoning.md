@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Visually-Guided Policy Optimization for Multimodal Reasoning
 description: >-
-  [ACL 2026][Reinforcement Learning][GRPO] VGPO utilizes hidden-state similarity to locate vision-related tokens during RLVR training. By applying late-stage visual compensation and dual-grained advantage re-weighting (intra- and inter-trajectory), it strengthens visual focus. Qwen2.5-VL-7B equipped with VGPO outperforms GRPO/DAPO and existing vision-enhanced R
+  [ACL2026][Reinforcement Learning][Multimodal Reasoning] VGPO utilizes hidden-state similarity to locate vision-related tokens during RLVR training. By applying late-stage visual compensation and dual-grained advantage re-weighting (intra- and inter-trajectory), it strengthens visual focus. Qwen2.5-VL-7B equipped with VGPO outperforms GRPO/DAPO and existing vision-enhanced RL methods in mathematical multimodal reasoning and vision-dependent tasks.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ACL2026"
+  - "Reinforcement Learning"
+  - "Multimodal Reasoning"
+  - "GRPO"
+  - "Visual Attention"
+  - "Visual Forgetting"
 date: 2026-05-08
-content_hash: 2b71eed4239f320c
+content_hash: bce034b1229f22e6
 ---
+
 # Visually-Guided Policy Optimization for Multimodal Reasoning
 
 **Conference**: ACL2026  
@@ -148,15 +152,15 @@ The main experiment compares Qwen2.5-VL-7B (base), GRPO, DAPO, VGPO, and existin
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning](../../ICLR2026/reinforcement_learning/from_narrow_to_panoramic_vision_attention-guided_cold-start_reshapes_multimodal_.md)
-- [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
 - [\[ICLR 2026\] Boosting Multi-Domain Reasoning of LLMs via Curvature-Guided Policy Optimization](../../ICLR2026/reinforcement_learning/boosting_multi-domain_reasoning_of_llms_via_curvature-guided_policy_optimization.md)
-- [\[ACL 2026\] Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning](bridging_sft_and_rl_dynamic_policy_optimization_for_robust_reasoning.md)
-- [\[ICLR 2026\] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning](../../ICLR2026/reinforcement_learning/fapo_flawed-aware_policy_optimization_for_efficient_and_reliable_reasoning.md)
+- [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
+- [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](../../ICLR2026/reinforcement_learning/multi-agent_guided_policy_optimization.md)
+- [\[ICLR 2026\] Guided Policy Optimization under Partial Observability](../../ICLR2026/reinforcement_learning/guided_policy_optimization_under_partial_observability.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Single-stream Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] SPO (Single-stream Policy Optimization) completely abandons the "collect a group per prompt and calculate relative advantages within the group" approach used in GRPO. It returns to the classic single-stream policy gradient: employing a lightweight KL-adaptive Bayesian value tracker to maintain a persistent success rate
+  [ICLR 2026][Reinforcement Learning][Policy Gradient] SPO (Single-stream Policy Optimization) completely abandons the "collect a group per prompt and calculate relative advantages within the group" approach used in GRPO. It returns to the classic single-stream policy gradient: employing a lightweight KL-adaptive Bayesian value tracker to maintain a persistent success rate baseline for each prompt, performing global advantage normalization across the entire batch…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Policy Gradient"
+  - "GRPO"
+  - "Baseline Estimation"
+  - "Bayesian Value Tracking"
+  - "RLVR"
 date: 2026-05-08
-content_hash: a12058163a95b907
+content_hash: e96fd41d9bd0c137
 ---
+
 # Single-stream Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -134,11 +138,11 @@ SPO outperforms GRPO on **all** five benchmarks in maj@32, with an average gain 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 - [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](group_verification-based_policy_optimization_for_interactive_coding_agents.md)
-- [\[ICLR 2026\] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization](on_the_tension_between_optimality_and_adversarial_robustness_in_policy_optimizat.md)
+- [\[ICLR 2026\] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](sample_more_to_think_less_group_filtered_policy_optimization_for_concise_reasoni.md)
 - [\[ICLR 2026\] SRFT: A Single-Stage Method with Supervised and Reinforcement Fine-Tuning for Reasoning](srft_a_single-stage_method_with_supervised_and_reinforcement_fine-tuning_for_rea.md)
-- [\[ICLR 2026\] GRACE: Generative Representation Learning via Contrastive Policy Optimization](grace_generative_representation_learning_via_contrastive_policy_optimization.md)
-- [\[ICLR 2026\] Dichotomous Diffusion Policy Optimization](dichotomous_diffusion_policy_optimization.md)
+- [\[ICLR 2026\] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization](on_the_tension_between_optimality_and_adversarial_robustness_in_policy_optimizat.md)
 
 </div>
 

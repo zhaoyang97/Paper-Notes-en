@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deciphering Genotype-Phenotype Mechanisms from High-Content Profiling via Knowledge-Guided Multi-modal Graph Learning
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] KERNEL treats high-content cellular morphological imaging as "relational evidence" rather than node features. By using morphological similarity to dynamically augment "pseudo-edges" with learnable confidence on biological knowledge graphs, it performs Gene Regulatory Network (GRN) inference, Drug-Target Interaction (DT
+  [CVPR 2026][Computational Biology][Genotype-Phenotype] KERNEL treats high-content cellular morphological imaging as "relational evidence" rather than node features. By using morphological similarity to dynamically augment "pseudo-edges" with learnable confidence on biological knowledge graphs, it performs Gene Regulatory Network (GRN) inference, Drug-Target Interaction (DTI) prediction, and disease subtype subnetwork discovery, achieving a Gain of up to 38.1% in AUPR for GRNs…
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Genotype-Phenotype"
+  - "High-Content Imaging"
+  - "Knowledge Graph"
+  - "Edge-Centric Enhancement"
+  - "Heterogeneous Graph Neural Networks"
 date: 2026-05-08
-content_hash: 57dd0bc069cacd9e
+content_hash: 43885c6f7ecaf58d
 ---
+
 # Deciphering Genotype-Phenotype Mechanisms from High-Content Profiling via Knowledge-Guided Multi-modal Graph Learning
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,16 @@ Removing components in GRN inference (based on Fig. 5):
 - Value: ⭐⭐⭐⭐⭐ Provides a unified framework for high-content imaging and KG integration with high utility for drug discovery.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
 - [\[CVPR 2026\] Bulk RNA-seq Guided Multi-modal Detection of Anomalous Regions in Human Cancer via Spatial Transcriptomics](bulk_rna-seq_guided_multi-modal_detection_of_anomalous_regions_in_human_cancer_v.md)
+- [\[ICLR 2026\] PoinnCARE: Hyperbolic Multi-Modal Learning for Enzyme Classification](../../ICLR2026/computational_biology/poinncare_hyperbolic_multi-modal_learning_for_enzyme_classification.md)
 - [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
 - [\[ICCV 2025\] G2PDiffusion: Cross-Species Genotype-to-Phenotype Prediction via Evolutionary Diffusion](../../ICCV2025/computational_biology/g2pdiffusion_cross-species_genotype-to-phenotype_prediction_via_evolutionary_dif.md)
-- [\[ICML 2026\] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition](../../ICML2026/computational_biology/learning_protein_structure-function_relationships_through_knowledge-guided_repre.md)
 
 </div>
 

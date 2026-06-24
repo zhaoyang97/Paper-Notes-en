@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Omni IIE Bench: Benchmarking the Practical Capabilities of Image Editing Models
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] Omni IIE Bench is a high-quality human-annotated benchmark **specifically designed to diagnose the "consistency of instruction-based image editing models across semantic scales."** Using a dual-track design consisting of "single-turn consistency + multi-turn coordination (up to 16 turns)," 2856 samples were constructed
+  [CVPR 2026][Image Generation][Image Editing] Omni IIE Bench is a high-quality human-annotated benchmark **specifically designed to diagnose the "consistency of instruction-based image editing models across semantic scales."** Using a dual-track design consisting of "single-turn consistency + multi-turn coordination (up to 16 turns)," 2856 samples were constructed from 12 data sources through a three-stage process (auto-generation → auto-masking → multi-pass rigorous human rev…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Diagnostic Benchmark"
+  - "Semantic Scale"
+  - "Multi-turn Editing"
+  - "Decoupled Evaluation"
 date: 2026-05-08
-content_hash: f303c530617a60f1
+content_hash: b633174fc1179995
 ---
+
 # Omni IIE Bench: Benchmarking the Practical Capabilities of Image Editing Models
 
 **Conference**: CVPR 2026  
@@ -129,11 +134,11 @@ Note: MGIE has decent quality metrics but a QA score of only 0.070—the output 
 
 ## Related Papers
 
-- [\[CVPR 2026\] WiseEdit: Benchmarking Cognition- and Creativity-Informed Image Editing](wiseedit_benchmarking_cognition-_and_creativity-informed_image_editing.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 - [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
+- [\[CVPR 2026\] WiseEdit: Benchmarking Cognition- and Creativity-Informed Image Editing](wiseedit_benchmarking_cognition-_and_creativity-informed_image_editing.md)
+- [\[CVPR 2026\] MotionEdit: Benchmarking and Learning Motion-Centric Image Editing](motionedit_benchmarking_and_learning_motion-centric_image_editing.md)
 - [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](compbench_benchmarking_complex_instruction-guided_image_editing.md)
-- [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
-- [\[CVPR 2026\] VectorArk: Learning Practical Image Vectorization with Rounded Polygon Representation](vectorark_learning_practical_image_vectorization_with_rounded_polygon_representa.md)
 
 </div>
 

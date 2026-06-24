@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VoiceCloak: A Multi-Dimensional Defense Framework against Unauthorized Diffusion-based Voice Cloning
 description: >-
-  [AAAI2026][Image Generation][voice cloning defense] VoiceCloak is a proactive defense framework against diffusion-based voice cloning that simultaneously achieves speaker identity obfuscation and perceptual quality degra…
+  [AAAI2026][Image Generation][voice cloning defense] VoiceCloak is a proactive defense framework against diffusion-based voice cloning that simultaneously achieves speaker identity obfuscation and perceptual quality degradation via four-dimensional adversarial perturbations, attaining a DSR of 71.4% on LibriTTS and substantially outperforming all existing defense methods.
 tags:
   - "AAAI2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "speaker identity"
   - "proactive defense"
 date: 2026-05-08
-content_hash: 96962ca9ddccdd5d
+content_hash: 3eb35a8df4dd2eab
 ---
 
 # VoiceCloak: A Multi-Dimensional Defense Framework against Unauthorized Diffusion-based Voice Cloning
@@ -146,11 +146,11 @@ Ablation of quality degradation components:
 
 ## Related Papers
 
-- [\[ICCV 2025\] Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification](../../ICCV2025/image_generation/towards_robust_defense_against_customization_via_protective_perturbation_resista.md)
 - [\[ICCV 2025\] DCT-Shield: A Robust Frequency Domain Defense against Malicious Image Editing](../../ICCV2025/image_generation/dct-shield_a_robust_frequency_domain_defense_against_malicious_image_editing.md)
-- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
-- [\[CVPR 2026\] Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery](../../CVPR2026/image_generation/reparameterized_tensor_ring_functional_decomposition_for_multi-dimensional_data_.md)
+- [\[CVPR 2026\] Adapter Shield: A Unified Framework with Built-in Authentication for Preventing Unauthorized Zero-Shot Image-to-Image Generation](../../CVPR2026/image_generation/adapter_shield_a_unified_framework_with_built-in_authentication_for_preventing_u.md)
+- [\[ICCV 2025\] Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification](../../ICCV2025/image_generation/towards_robust_defense_against_customization_via_protective_perturbation_resista.md)
 - [\[AAAI 2026\] Creating Blank Canvas Against AI-Enabled Image Forgery](creating_blank_canvas_against_ai-enabled_image_forgery.md)
+- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
 
 </div>
 

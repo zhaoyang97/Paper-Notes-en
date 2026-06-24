@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] MemoPhishAgent (MPA) is proposed as the first memory-augmented multi-modal LLM agent specifically designed for phishing URL detection. By dynamically orchestrating five specialized tools and utilizing an episodic memory system to reuse historical reasoning trajectories, MPA achieves a 13.6% recall improvement on public
+  [ACL 2026][LLM Safety][Phishing Detection] MemoPhishAgent (MPA) is proposed as the first memory-augmented multi-modal LLM agent specifically designed for phishing URL detection. By dynamically orchestrating five specialized tools and utilizing an episodic memory system to reuse historical reasoning trajectories, MPA achieves a 13.6% recall improvement on public benchmarks and a 20% improvement on real-world social media data. It has been deployed in production…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Phishing Detection"
+  - "LLM Agent"
+  - "Episodic Memory"
+  - "Multi-modal Reasoning"
+  - "Tool Calling"
 date: 2026-05-08
-content_hash: 0fa676a8078d1235
+content_hash: 671f74ae846107d3
 ---
+
 # MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection
 
 **Conference**: ACL 2026  
@@ -145,8 +151,8 @@ Assume a `bit.ly/xxx` short link arrives. The Agent first calls `Extract Targets
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
 - [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
 - [\[ACL 2025\] Unveiling Privacy Risks in LLM Agent Memory](../../ACL2025/llm_safety/mextra_agent_memory_privacy.md)
-- [\[ACL 2026\] XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts](xmark_reliable_multi-bit_watermarking_for_llm-generated_texts.md)
-- [\[ICLR 2026\] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning](../../ICLR2026/llm_safety/from_static_benchmarks_to_dynamic_protocol_agent-centric_text_anomaly_detection_.md)
+- [\[ICML 2025\] TAMAS: Benchmarking Adversarial Risks in Multi-Agent LLM Systems](../../ICML2025/llm_safety/tamas_benchmarking_adversarial_risks_in_multi-agent_llm_systems.md)
+- [\[ICLR 2026\] A2ASecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems](../../ICLR2026/llm_safety/a2asecbench_a_protocol-aware_security_benchmark_for_agent-to-agent_multi-agent_s.md)
 
 </div>
 

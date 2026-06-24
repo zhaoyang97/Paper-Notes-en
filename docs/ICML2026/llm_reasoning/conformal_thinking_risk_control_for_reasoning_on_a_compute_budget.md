@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Conformal Thinking: Risk Control for Reasoning on a Compute Budget
 description: >-
-  [ICML 2026][LLM Reasoning][conformal risk control] This paper reframes the problem of "when a reasoning LLM should stop thinking" from an uninterpretable threshold tuning task into a **user-specified risk tolerance** conformal risk control problem. By employing dual thresholds—an upper threshold to stop when the model is confident (controlling false positives) and a ne
+  [ICML 2026][Reasoning][Dual-threshold early stopping] This paper reframes the problem of "when a reasoning LLM should stop thinking" from an uninterpretable threshold tuning task into a **user-specified risk tolerance** conformal risk control problem. By employing dual thresholds—an upper threshold to stop when the model is confident (controlling false positives) and a newly proposed **parameterized lower threshold** to force a stop when the model is "stuck" on unsolvable pro…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - conformal risk control
-  - Qwen3 / DeepSeek-R1
+  - "ICML 2026"
+  - "Reasoning"
+  - "Dual-threshold early stopping"
+  - "conformal risk control"
+  - "parameterized lower threshold"
+  - "UCB calibration"
+  - "Qwen3 / DeepSeek-R1"
 date: 2026-05-08
-content_hash: a25800d3983a4b84
+content_hash: 152b10d433c7af7b
 ---
+
 # Conformal Thinking: Risk Control for Reasoning on a Compute Budget
 
 **Conference**: ICML 2026  
@@ -139,8 +143,8 @@ The method is entirely training-free. Threshold and signal selection are perform
 
 - [\[ICML 2026\] Inference-Time Conformal Reasoning with Valid Factuality Control for Large Language Models](inference-time_conformal_reasoning_with_valid_factuality_control_for_large_langu.md)
 - [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
+- [\[ICML 2026\] DyCon: Dynamic Reasoning Control via Evolving Difficulty Modeling](dycon_dynamic_reasoning_control_via_evolving_difficulty_modeling.md)
 - [\[ICML 2026\] LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning](latentchem_from_textual_cot_to_latent_thinking_in_chemical_reasoning.md)
-- [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](../../NeurIPS2025/llm_reasoning/towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
 - [\[ICML 2026\] Less Diverse, Less Safe: The Indirect But Pervasive Risk of Test-Time Scaling in Large Language Models](less_diverse_less_safe_the_indirect_but_pervasive_risk_of_test-time_scaling_in_l.md)
 
 </div>

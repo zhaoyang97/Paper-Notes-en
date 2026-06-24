@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] This paper reformulates "vision-action attribution" as an intervention estimation problem. It proposes two metrics, ISS (Intervention Saliency Score) and NMR (Nuisance Mass Ratio), using Bernoulli masking + Gaussian blur perturbation + Action MSE as a proxy for KL divergence to quantify which visual regions VLA policie
+  [ICML 2026][Robotics][VLA Models] This paper reformulates "vision-action attribution" as an intervention estimation problem. It proposes two metrics, ISS (Intervention Saliency Score) and NMR (Nuisance Mass Ratio), using Bernoulli masking + Gaussian blur perturbation + Action MSE as a proxy for KL divergence to quantify which visual regions VLA policies rely on. It demonstrates that NMR has a strong negative correlation of $r = -0.77$ with OOD task success rates…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA Models"
+  - "Intervention Saliency"
+  - "Nuisance Mass Ratio"
+  - "OOD Generalization"
+  - "Markov Blanket"
 date: 2026-05-08
-content_hash: 8b897a93947104c6
+content_hash: d5d780e1a5bcadd2
 ---
+
 # Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models
 
 **Conference**: ICML 2026  
@@ -135,10 +141,10 @@ This work does not train new models but performs offline intervention analysis o
 ## Related Papers
 
 - [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
-- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
+- [\[ICML 2026\] Scaling by Diversified Experience for Vision-Language-Action Models](scaling_by_diversified_experience_for_vision-language-action_models.md)
 - [\[ICML 2026\] Embodied Task Planning via Graph-Informed Action Generation with Large Language Models](embodied_task_planning_via_graph-informed_action_generation_with_large_language_.md)
-- [\[ICML 2026\] StableVLA: Towards Robust Vision-Language-Action Models without Extra Data](stablevla_towards_robust_vision-language-action_models_without_extra_data.md)
-- [\[ICML 2026\] SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning](specprune-vla_accelerating_vision-language-action_models_via_action-aware_self-s.md)
+- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
+- [\[ICLR 2026\] Vision-Language-Action Instruction Tuning: From Understanding to Manipulation](../../ICLR2026/robotics/vision-language-action_instruction_tuning_from_understanding_to_manipulation.md)
 
 </div>
 

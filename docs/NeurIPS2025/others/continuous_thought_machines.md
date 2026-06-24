@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Continuous Thought Machines
 description: >-
-  [NeurIPS 2025][Neural dynamics] This paper proposes the Continuous Thought Machine (CTM), which generates neuron-level temporal dynamics via privately parameterized Neuron-Level Models (NLMs) and employs a neural synchro…
+  [NeurIPS 2025 Spotlight][Neural dynamics] This paper proposes the Continuous Thought Machine (CTM), which generates neuron-level temporal dynamics via privately parameterized Neuron-Level Models (NLMs) and employs a neural synchrony matrix as the core latent representation. The model demonstrates complex reasoning, adaptive computation, and interpretable attention behavior on tasks including maze solving, ImageNet classification, and parity checking.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Neural dynamics"
   - "neural synchrony"
   - "adaptive computation"
   - "recurrent architectures"
   - "biologically inspired"
 date: 2026-05-08
-content_hash: 963251a3e6bbdbca
+content_hash: dbbfe793dbc47010
 ---
 
 # Continuous Thought Machines
@@ -151,11 +151,11 @@ Adaptive computation **emerges naturally**: simple samples reach high certainty 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
 - [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](deep_continuous-time_state-space_models_for_marked_event_sequences.md)
-- [\[NeurIPS 2025\] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)
-- [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
-- [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
+- [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
+- [\[ICML 2025\] Continuous-Time Analysis of Heavy Ball Momentum in Min-Max Games](../../ICML2025/others/continuous-time_analysis_of_heavy_ball_momentum_in_min-max_games.md)
+- [\[ACL 2025\] Unifying Continuous and Discrete Text Diffusion with Non-simultaneous Diffusion Processes](../../ACL2025/others/neodiff_unified_text_diffusion.md)
+- [\[ICML 2025\] Optimal Sensor Scheduling and Selection for Continuous-Discrete Kalman Filtering with Auxiliary Dynamics](../../ICML2025/others/optimal_sensor_scheduling_and_selection_for_continuous-discrete_kalman_filtering.md)
 
 </div>
 

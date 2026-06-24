@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding
 description: >-
-  [ACL 2026][Multimodal VLM][UI/UX] This paper proposes WiserUI-Bench, which utilizes 300 pairs of real-world A/B test-verified UI images and 684 expert explanations to evaluate whether MLLMs understand how interface design influences user behavior. Results show that existing models perform near random chance in selecting winners and significantly lag be
+  [ACL2026][Multimodal VLM][UI/UX] This paper proposes WiserUI-Bench, which utilizes 300 pairs of real-world A/B test-verified UI images and 684 expert explanations to evaluate whether MLLMs understand how interface design influences user behavior. Results show that existing models perform near random chance in selecting winners and significantly lag behind expert levels in explaining the underlying reasons.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - UI/UX
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "UI/UX"
+  - "A/B Testing"
+  - "Multimodal Evaluation"
+  - "User Behavior"
+  - "Visual Reasoning"
 date: 2026-05-08
-content_hash: 040a32f577d6f4a7
+content_hash: 155df21428a17874
 ---
+
 # Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding
 
 **Conference**: ACL2026  
@@ -120,7 +125,7 @@ This study evaluates existing MLLMs rather than training new ones. For the selec
 - [\[ICLR 2026\] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images](../../ICLR2026/multimodal_vlm/how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images.md)
 - [\[CVPR 2026\] GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks](../../CVPR2026/multimodal_vlm/guide_a_benchmark_for_understanding_and_assisting_users_in_open-ended_gui_tasks.md)
 - [\[ACL 2026\] Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations](beyond_screenshots_evaluating_vlms_understanding_of_ui_animations.md)
-- [\[CVPR 2026\] UI-Lens: Assessing General MLLMs' Potential to Automate UI Display Quality Assurance](../../CVPR2026/multimodal_vlm/ui-lens_assessing_general_mllms_potential_to_automate_ui_display_quality_assuran.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](../../ICLR2026/multimodal_vlm/mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 
 </div>
 

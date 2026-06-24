@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CylinderSplat: 3D Gaussian Splatting with Cylindrical Triplanes for Panoramic Novel View Synthesis
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] CylinderSplat utilizes a dual-branch feed-forward 3D Gaussian Splatting framework (pixel branch + volume branch) for panoramic (360°) novel view synthesis. The core innovation involves replacing traditional Cartesian triplanes with **cylindrical triplanes** that align with panoramic geometry and the Manhattan world ass
+  [ICLR2026][3D Vision][Panoramic Novel View Synthesis] CylinderSplat utilizes a dual-branch feed-forward 3D Gaussian Splatting framework (pixel branch + volume branch) for panoramic (360°) novel view synthesis. The core innovation involves replacing traditional Cartesian triplanes with **cylindrical triplanes** that align with panoramic geometry and the Manhattan world assumption. The volume branch completes occluded/sparse regions that the pixel branch cannot recover…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Panoramic Novel View Synthesis"
+  - "Feed-forward 3DGS"
+  - "Cylindrical Triplane"
+  - "Dual-branch Architecture"
+  - "Occlusion Completion"
 date: 2026-05-08
-content_hash: 11e894438cf1434b
+content_hash: dc29b715937afd66
 ---
+
 # CylinderSplat: 3D Gaussian Splatting with Cylindrical Triplanes for Panoramic Novel View Synthesis
 
 **Conference**: ICLR2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing
 description: >-
-  [CVPR 2026][Image Restoration][Diffusion Model] EvDehaze introduces event cameras to the dehazing task for the first time, remodeling dehazing as "event-conditioned image generation." By injecting high dynamic range (HDR) edge/contrast cues from events into latent space DDIM diffusion via cross-attention, it generates more realistic and clear dehazed images without
+  [CVPR 2026][Image Restoration][Event Camera] EvDehaze introduces event cameras to the dehazing task for the first time, remodeling dehazing as "event-conditioned image generation." By injecting high dynamic range (HDR) edge/contrast cues from events into latent space DDIM diffusion via cross-attention, it generates more realistic and clear dehazed images without requiring real-world paired supervision. It includes the first real-world RGB-Event drone dataset for foggy conditi…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Event Camera"
+  - "Image Dehazing"
+  - "Diffusion Models"
+  - "High Dynamic Range"
+  - "Cross-Attention"
 date: 2026-05-08
-content_hash: 2e2dd2aab5b5cd39
+content_hash: a97649e648cd34ce
 ---
+
 # From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing
 
 **Conference**: CVPR 2026  
@@ -130,11 +135,11 @@ Notably, integrating the EGDM into the supervised Restormer backbone (Restormer+
 
 ## Related Papers
 
-- [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
-- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
-- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
+- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_with_unpaired_data.md)
 - [\[CVPR 2026\] Disentanglement-wise Image Dehazing through Cross-Domain Manifold Consensus](disentanglement-wise_image_dehazing_through_cross-domain_manifold_consensus.md)
+- [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
+- [\[CVPR 2026\] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)
+- [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
 
 </div>
 

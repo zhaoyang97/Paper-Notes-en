@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons
 description: >-
-  [CVPR 2026][Segmentation][Diffusion Model] SemLayer is proposed as a generative model-based pipeline to restore semantic layered structures from flattened vector icons. The method redefines segmentation as a coloring task via a diffusion model, performs semantic completion of occluded regions, and determines layer order using Integer Linear Programming (ILP), a
+  [CVPR 2026][Segmentation][Vector layer construction] SemLayer is proposed as a generative model-based pipeline to restore semantic layered structures from flattened vector icons. The method redefines segmentation as a coloring task via a diffusion model, performs semantic completion of occluded regions, and determines layer order using Integer Linear Programming (ILP), achieving improvements of +5.0 in mIoU and +16.7 in PQ.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Vector layer construction"
+  - "Semantic segmentation coloring"
+  - "Amodal completion"
+  - "Icon editing"
+  - "Diffusion models"
 date: 2026-05-08
-content_hash: 913f27d9e60dead0
+content_hash: 8910ece219a8a20f
 ---
+
 # SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons
 
 **Conference**: CVPR 2026  
@@ -157,15 +162,14 @@ Refined segmentation metric improvements:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
 - [\[CVPR 2026\] MatchMask: Mask-Centric Generative Data Augmentation for Label-Scarce Semantic Segmentation](matchmask_mask-centric_generative_data_augmentation_for_label-scarce_semantic_se.md)
 - [\[CVPR 2026\] Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision](conversational_image_segmentation_grounding_abstract_concepts_with_scalable_supe.md)
 - [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
 - [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
-- [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
 
 </div>
 

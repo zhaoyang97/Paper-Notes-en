@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][Interpretability] TRIM-KV inserts a lightweight "retention gate" into each attention head of a pre-trained LLM to predict the intrinsic long-term importance of a token (a scalar score that decays exponentially over time) at the time of generation. When the memory budget is exceeded, tokens with the lowest scores are evicted. By freezing
+  [ICLR2026][LLM Efficiency][KV Cache Eviction] TRIM-KV inserts a lightweight "retention gate" into each attention head of a pre-trained LLM to predict the intrinsic long-term importance of a token (a scalar score that decays exponentially over time) at the time of generation. When the memory budget is exceeded, tokens with the lowest scores are evicted. By freezing the backbone and fine-tuning these gates with distillation and capacity losses…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Interpretability
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "KV Cache Eviction"
+  - "Retention Gated Attention"
+  - "Long-Context Inference"
+  - "Distillation Fine-Tuning"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: 3ff388e1698ad5a0
+content_hash: 99f997a3b9c1d58c
 ---
+
 # Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs
 
 **Conference**: ICLR2026  
@@ -150,11 +155,11 @@ Qwen3-4B on AIME24, KV=4096:
 
 ## Related Papers
 
-- [\[ICLR 2026\] IceCache: Memory-Efficient KV-cache Management for Long-Sequence LLMs](icecache_memory-efficient_kv-cache_management_for_long-sequence_llms.md)
 - [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
+- [\[ICLR 2026\] IceCache: Memory-Efficient KV-cache Management for Long-Sequence LLMs](icecache_memory-efficient_kv-cache_management_for_long-sequence_llms.md)
 - [\[AAAI 2026\] Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction](../../AAAI2026/llm_efficiency/judge_q_trainable_queries_for_optimized_information_retention_in_kv_cache_evicti.md)
-- [\[ICLR 2026\] ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models](thinkv_thought-adaptive_kv_cache_compression_for_efficient_reasoning_models.md)
-- [\[ICLR 2026\] LouisKV: Efficient KV Cache Retrieval for Long Input-Output Sequences](louiskv_efficient_kv_cache_retrieval_for_long_input-output_sequences.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
+- [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](../../ICML2026/llm_efficiency/criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Video2Robo: 3DGS-based Synthetic Data from One Video Enables Scalable Robot Learning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Real2Sim2Real] Video2Robo uses a single monocular human demonstration video recorded by a smartphone. Leveraging 3DGS, it reconstructs task-relevant objects, tracks their 6D trajectories, and parses manipulation skills. A virtual Franka robot arm then "takes over" these trajectories with multi-dimensional scene augmentation to mass-s
+  [CVPR 2026][Robotics][Robot Data Generation] Video2Robo uses a single monocular human demonstration video recorded by a smartphone. Leveraging 3DGS, it reconstructs task-relevant objects, tracks their 6D trajectories, and parses manipulation skills. A virtual Franka robot arm then "takes over" these trajectories with multi-dimensional scene augmentation to mass-synthesize photorealistic and kinematically plausible robot training data. The resulting policy enables zero-calibra…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Real2Sim2Real
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot Data Generation"
+  - "3D Gaussian Splatting"
+  - "Monocular Video"
+  - "Imitation Learning"
+  - "Real2Sim2Real"
 date: 2026-05-08
-content_hash: 793cd374ff5aec79
+content_hash: 408c057f58ee9553
 ---
+
 # Video2Robo: 3DGS-based Synthetic Data from One Video Enables Scalable Robot Learning
 
 **Conference**: CVPR 2026  
@@ -152,15 +157,16 @@ Real-world success rate (%):
 - **Value**: ⭐⭐⭐⭐⭐ Lowers the barrier for embodied data collection to "one smartphone, one video," with significant practical utility for scalable learning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
 - [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
+- [\[CVPR 2026\] NIL: No-data Imitation Learning](nil_no-data_imitation_learning.md)
+- [\[CVPR 2026\] ORV: 4D Occupancy-centric Robot Video Generation](orv_4d_occupancy-centric_robot_video_generation.md)
 - [\[CVPR 2026\] InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](interndata-a1_pioneering_high-fidelity_synthetic_data_for_pre-training_generalis.md)
-- [\[CVPR 2026\] SIR: Structured Image Representations for Explainable Robot Learning](sir_structured_image_representations_for_explainable_robot_learning.md)
-- [\[AAAI 2026\] Realistic Synthetic Household Data Generation at Scale](../../AAAI2026/robotics/realistic_synthetic_household_data_generation_at_scale.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Query-Specific Causal Graph Pruning under Tiered Knowledge
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes a method to **prune edges** from a causal graph using "tiered knowledge" while maintaining the identifiability of (conditional) causal effects. By reducing the identification problem to a smaller subgraph, it designs a query-specific causal discovery algorithm that achieves exponential speedup compa
+  [ICLR 2026][Causal Inference][Causal Identification] This paper proposes a method to **prune edges** from a causal graph using "tiered knowledge" while maintaining the identifiability of (conditional) causal effects. By reducing the identification problem to a smaller subgraph, it designs a query-specific causal discovery algorithm that achieves exponential speedup compared to existing methods.
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Identification"
+  - "Graph Pruning"
+  - "Tiered Knowledge"
+  - "Causal Discovery"
+  - "Identifiability"
 date: 2026-05-08
-content_hash: c92e1f641ffb7d99
+content_hash: abe88aad92ae7975
 ---
+
 # Query-Specific Causal Graph Pruning under Tiered Knowledge
 
 **Conference**: ICLR 2026  
@@ -131,11 +137,11 @@ The experiment validates the efficiency of query-specific discovery (Algorithm 1
 
 ## Related Papers
 
+- [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
 - [\[ICLR 2026\] LLMs Struggle to Balance Reasoning and World Knowledge in Causal Narrative Understanding](llms_struggle_to_balance_reasoning_and_world_knowledge_in_causal_narrative_under.md)
 - [\[ICLR 2026\] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions](learning_dynamic_causal_graphs_under_parametric_uncertainty_via_polynomial_chaos.md)
 - [\[ICLR 2026\] Privacy-Protected Causal Survival Analysis Under Distribution Shift](privacy-protected_causal_survival_analysis_under_distribution_shift.md)
-- [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
-- [\[ICLR 2026\] Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement](resisting_contextual_interference_in_rag_via_parametric-knowledge_reinforcement.md)
+- [\[ICLR 2026\] Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding](causal_imitation_learning_under_expert-observable_and_expert-unobservable_confou.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] HMNS re-purposes mechanistic interpretability tools as attack vectors: it first localizes attention heads primarily responsible for "refusal" using KL divergence, zeros out their output projection columns, and then injects a perturbation into the **orthogonal complement (nullspace)** of the masked subspace. This bypass
+  [ICLR 2026][LLM Safety][Jailbreak attacks] HMNS re-purposes mechanistic interpretability tools as attack vectors: it first localizes attention heads primarily responsible for "refusal" using KL divergence, zeros out their output projection columns, and then injects a perturbation into the **orthogonal complement (nullspace)** of the masked subspace. This bypasses security alignment routing, achieving SOTA jailbreak success rates with approximately 2 external queries.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Jailbreak attacks"
+  - "Attention head attribution"
+  - "Nullspace steering"
+  - "Residual stream intervention"
+  - "Closed-loop attack"
 date: 2026-05-08
-content_hash: 58f629b004e9ee4a
+content_hash: 63157102e28104dc
 ---
+
 # Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion
 
 **Conference**: ICLR 2026  
@@ -118,9 +124,9 @@ Across 12 groups (3 models × 4 datasets), HMNS outperforms the runner-up ArrAtt
 
 - [\[ICLR 2026\] Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions](faithful_bi-directional_model_steering_via_distribution_matching_and_distributed.md)
 - [\[ICLR 2026\] ASGuard: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attack](asguard_activation-scaling_guard_to_mitigate_targeted_jailbreaking_attack.md)
-- [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](../../ACL2026/llm_safety/jailbreaking_large_language_models_with_morality_attacks.md)
+- [\[ICLR 2026\] PLAGUE: A Plug-and-Play Framework for Multi-Turn Jailbreaking Driven by Lifelong Learning](plague_plug-and-play_framework_for_lifelong_adaptive_generation_of_multi-turn_ja.md)
 - [\[ICLR 2026\] RepIt: Steering Language Models with Concept-Specific Refusal Vectors](repit_steering_language_models_with_concept-specific_refusal_vectors.md)
-- [\[ACL 2026\] ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs](../../ACL2026/llm_safety/astra_an_automated_framework_for_strategy_discovery_retrieval_and_evolution_for_.md)
+- [\[ICLR 2026\] Steering Evaluation-Aware Language Models To Act Like They Are Deployed](steering_evaluation-aware_language_models_to_act_like_they_are_deployed.md)
 
 </div>
 

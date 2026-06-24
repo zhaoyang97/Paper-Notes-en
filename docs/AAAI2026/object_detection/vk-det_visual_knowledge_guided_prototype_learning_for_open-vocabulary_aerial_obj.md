@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Open-vocabulary detection] VK-Det is proposed as a framework that leverages only the visual knowledge of VLMs (without any additional supervision signals) to achieve state-of-the-art perform…
+  [AAAI 2026][Object Detection][Open-vocabulary detection] VK-Det is proposed as a framework that leverages only the visual knowledge of VLMs (without any additional supervision signals) to achieve state-of-the-art performance in open-vocabulary aerial object detection through Adaptive Selection Knowledge Distillation (ASKD), Prototype-Aware Pseudo-Label generation (PAPL), and Synthetic Matching Inference (SMI), even surpassing methods that rely on extra supervision.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "knowledge distillation"
   - "pseudo-labels"
 date: 2026-05-08
-content_hash: e20755677ee50f1d
+content_hash: 0f054264adaf3e23
 ---
 
 # VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection
@@ -196,11 +196,11 @@ Key finding: Without any additional supervision, VK-Det surpasses CastDet (which
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DitHub: A Modular Framework for Incremental Open-Vocabulary Object Detection](../../NeurIPS2025/object_detection/dithub_a_modular_framework_for_incremental_openvocabulary_ob.md)
-- [\[CVPR 2026\] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection](../../CVPR2026/object_detection/beyond_prompt_degradation_prototype-guided_dual-pool_prompting_for_incremental_o.md)
-- [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](../../CVPR2026/object_detection/parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
-- [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](../../CVPR2026/object_detection/noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
-- [\[CVPR 2026\] UAVGen: Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](../../CVPR2026/object_detection/uavgen_visual_prototype_conditioned_focal_region_generation_for_uav_based_object_detection.md)
+- [\[CVPR 2026\] SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names](../../CVPR2026/object_detection/sra-det_learning_omni-grained_open-vocabulary_detection_beyond_category_names.md)
+- [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](../../CVPR2026/object_detection/thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
+- [\[ICML 2025\] Open-Det: An Efficient Learning Framework for Open-Ended Detection](../../ICML2025/object_detection/open-det_an_efficient_learning_framework_for_open-ended_detection.md)
+- [\[ICLR 2026\] DeCo-DETR: Decoupled Cognition DETR for efficient Open-Vocabulary Object Detection](../../ICLR2026/object_detection/deco-detr_decoupled_cognition_detr_for_efficient_open-vocabulary_object_detectio.md)
+- [\[CVPR 2025\] ABRA: Teleporting Fine-Tuned Knowledge Across Domains for Open-Vocabulary Object Detection](../../CVPR2025/object_detection/abra_teleporting_fine-tuned_knowledge_across_domains_for_open-vocabulary_object_.md)
 
 </div>
 

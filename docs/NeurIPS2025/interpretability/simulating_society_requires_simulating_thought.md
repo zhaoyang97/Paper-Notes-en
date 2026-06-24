@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Simulating Society Requires Simulating Thought
 description: >-
-  [NeurIPS 2025][Interpretability][social simulation] This paper proposes a paradigm shift from "behaviorism" to "cognitive modeling" in LLM-based social simulation. The GenMinds framework models the internal reasoning pro…
+  [NeurIPS 2025][Interpretability][social simulation] This paper proposes a paradigm shift from "behaviorism" to "cognitive modeling" in LLM-based social simulation. The GenMinds framework models the internal reasoning processes of LLM agents via causal belief graphs, and the RECAP benchmark evaluates reasoning fidelity along three dimensions: traceability, demographic sensitivity, and intervention consistency.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "belief graphs"
   - "reasoning fidelity"
 date: 2026-05-08
-content_hash: 3ef3e7efbc284cf8
+content_hash: 7ea693db01e00ff6
 ---
 
 # Simulating Society Requires Simulating Thought
@@ -120,11 +120,11 @@ The paper proposes GenMinds (a modeling framework) and RECAP (an evaluation fram
 
 ## Related Papers
 
+- [\[ICLR 2026\] Thought Branches: Interpreting LLM Reasoning Requires Resampling](../../ICLR2026/interpretability/thought_branches_interpreting_llm_reasoning_requires_resampling.md)
 - [\[NeurIPS 2025\] Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought](reasoning_by_superposition_a_theoretical_perspective_on_chain_of_continuous_thou.md)
-- [\[ICLR 2026\] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](../../ICLR2026/interpretability/emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)
+- [\[ACL 2025\] Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers](../../ACL2025/interpretability/separating_tongue_from_thought_activation_patching_reveals_language-agnostic_con.md)
 - [\[NeurIPS 2025\] Empowering Decision Trees via Shape Function Branching](empowering_decision_trees_via_shape_function_branching.md)
 - [\[NeurIPS 2025\] AdaptGrad: Adaptive Sampling to Reduce Noise](adaptgrad_adaptive_sampling_to_reduce_noise.md)
-- [\[NeurIPS 2025\] An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations](an_analysis_of_concept_bottleneck_models_measuring_understanding_and_mitigating_.md)
 
 </div>
 

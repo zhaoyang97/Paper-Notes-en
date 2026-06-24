@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Walking the Schrödinger Bridge: A Direct Trajectory for Text-to-3D Generation
 description: >-
-  [NeurIPS 2025][3D Vision][Text-to-3D Generation] This paper theoretically establishes SDS as a special case of the Schrödinger Bridge, and builds upon this insight to propose TraCe — a framework that constructs an explic…
+  [NeurIPS 2025][3D Vision][Text-to-3D Generation] This paper theoretically establishes SDS as a special case of the Schrödinger Bridge, and builds upon this insight to propose TraCe — a framework that constructs an explicit diffusion bridge between the current rendering and the text-conditioned target, learns the score dynamics along the bridge trajectory via LoRA fine-tuning, and achieves high-quality text-to-3D generation at low CFG values.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Models"
   - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: b376eedbc9503e1a
+content_hash: aaf4ff063b92b71d
 ---
 
 # Walking the Schrödinger Bridge: A Direct Trajectory for Text-to-3D Generation
@@ -54,9 +54,9 @@ Each optimization step of TraCe: render the current 3D model → estimate the ta
 2. **Constructing an Explicit Diffusion Bridge**
 
    Key steps:
-   - **Target endpoint** $X_0 \leftarrow x_0^{pred}$: estimate the ideal target image via **one-step denoising** of the current rendering with the pretrained model
-   - **Source endpoint** $X_1 \leftarrow x_{rndr}$: the rendered image of the current 3D model
-   - **Intermediate sampling**: sample from the analytically tractable bridge posterior $q(x_t|x_0^{pred}, x_{rndr}) = \mathcal{N}(x_t; \mu_t, \Sigma_t I)$:
+    - **Target endpoint** $X_0 \leftarrow x_0^{pred}$: estimate the ideal target image via **one-step denoising** of the current rendering with the pretrained model
+    - **Source endpoint** $X_1 \leftarrow x_{rndr}$: the rendered image of the current 3D model
+    - **Intermediate sampling**: sample from the analytically tractable bridge posterior $q(x_t|x_0^{pred}, x_{rndr}) = \mathcal{N}(x_t; \mu_t, \Sigma_t I)$:
    $\mu_t = \gamma_t x_0^{pred} + (1-\gamma_t) x_{rndr}, \quad \gamma_t = \frac{\bar{\sigma}_t^2}{\sigma_t^2 + \bar{\sigma}_t^2}$
 
 3. **LoRA-Based Adaptive Learning of Bridge Trajectory**
@@ -139,10 +139,10 @@ Each optimization step of TraCe: render the current 3D model → estimate the ta
 ## Related Papers
 
 - [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](../../ICCV2025/3d_vision/segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
+- [\[ECCV 2024\] DreamView: Injecting View-specific Text Guidance into Text-to-3D Generation](../../ECCV2024/3d_vision/dreamview_injecting_view-specific_text_guidance_into_text-to-3d_generation.md)
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] Benchmarking and Learning Multi-Dimensional Quality Evaluator for Text-to-3D Generation](../../ICCV2025/3d_vision/benchmarking_and_learning_multi-dimensional_quality_evaluator_for_text-to-3d_gen.md)
-- [\[AAAI 2026\] AnchorDS: Anchoring Dynamic Sources for Semantically Consistent Text-to-3D Generation](../../AAAI2026/3d_vision/anchords_anchoring_dynamic_sources_for_semantically_consiste.md)
-- [\[ICCV 2025\] FlexGen: Flexible Multi-View Generation from Text and Image Inputs](../../ICCV2025/3d_vision/flexgen_flexible_multi-view_generation_from_text_and_image_inputs.md)
+- [\[ECCV 2024\] DreamScene360: Unconstrained Text-to-3D Scene Generation with Panoramic Gaussian Splatting](../../ECCV2024/3d_vision/dreamscene360_unconstrained_text-to-3d_scene_generation_with_panoramic_gaussian_.md)
+- [\[CVPR 2025\] Turbo3D: Ultra-Fast Text-to-3D Generation](../../CVPR2025/3d_vision/turbo3d_ultra-fast_text-to-3d_generation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deeply Supervised Flow-Based Generative Models
 description: >-
-  [ICCV 2025][Image Generation][flow matching] DeepFlow introduces deep supervision and a VeRA (Velocity Refiner with Acceleration) module between Transformer layers of flow-based models…
+  [ICCV 2025][Image Generation][flow matching] DeepFlow introduces deep supervision and a VeRA (Velocity Refiner with Acceleration) module between Transformer layers of flow-based models, aligning intermediate-layer velocity features via second-order ODE dynamics. Without relying on any external pretrained model, it achieves an 8× training speedup and significant FID improvement.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "acceleration learning"
   - "training efficiency"
 date: 2026-05-08
-content_hash: c37131a56b73ce7d
+content_hash: 97acc4cdd7aa642c
 ---
 
 # Deeply Supervised Flow-Based Generative Models
@@ -130,10 +130,10 @@ Total loss = deep supervision velocity loss + $\lambda$ × acceleration loss (se
 ## Related Papers
 
 - [\[ICCV 2025\] FLOAT: Generative Motion Latent Flow Matching for Audio-driven Talking Portrait](float_generative_motion_latent_flow_matching_for_audio-driven_talking_portrait.md)
+- [\[CVPR 2025\] Goku: Flow Based Video Generative Foundation Models](../../CVPR2025/image_generation/goku_flow_based_video_generative_foundation_models.md)
 - [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](contrastive_flow_matching.md)
-- [\[ICCV 2025\] GenFlowRL: Shaping Rewards with Generative Object-Centric Flow in Visual Reinforcement Learning](genflowrl_shaping_rewards_with_generative_object-centric_flow_in_visual_reinforc.md)
-- [\[NeurIPS 2025\] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models](../../NeurIPS2025/image_generation/gradient_variance_reveals_failure_modes_in_flow-based_generative_models.md)
-- [\[ICCV 2025\] Understanding Flatness in Generative Models: Its Role and Benefits](understanding_flatness_in_generative_models_its_role_and_benefits.md)
+- [\[CVPR 2026\] ShowUI-π: Flow-based Generative Models as GUI Dexterous Hands](../../CVPR2026/image_generation/showui-p_flow-based_generative_models_as_gui_dexterous_hands.md)
+- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](../../ICLR2026/image_generation/fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
 
 </div>
 

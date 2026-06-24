@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][continuous-time RL] The authors propose the VIP (Value Iteration via PINN) framework, which marks the first use of Physics-Informed Neural Networks (PINNs) to solve the HJB partial differential equations in continuous-time multi-agent reinforcement learning. By introducing a Value Gradient Iteration (VGI) module to iteratively refine valu
+  [ICLR 2026][Reinforcement Learning][continuous-time RL] The authors propose the VIP (Value Iteration via PINN) framework, which marks the first use of Physics-Informed Neural Networks (PINNs) to solve the HJB partial differential equations in continuous-time multi-agent reinforcement learning. By introducing a Value Gradient Iteration (VGI) module to iteratively refine value gradients, the method consistently outperforms both discrete-time and continuous-time baselines on con…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - continuous-time RL
-  - MARL
-  - HJB equation
-  - PINN
-  - value gradient iteration
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "continuous-time RL"
+  - "MARL"
+  - "HJB equation"
+  - "PINN"
+  - "value gradient iteration"
 date: 2026-05-08
-content_hash: 3247da4a5d056f1b
+content_hash: ed7d6add4c87a0c6
 ---
+
 # Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -141,10 +142,10 @@ The total critic loss combines three terms: $\mathcal{L}_{total} = \mathcal{L}_{
 ## Related Papers
 
 - [\[ICLR 2026\] Safe Continuous-time Multi-Agent Reinforcement Learning via Epigraph Form](safe_continuous-time_multi-agent_reinforcement_learning_via_epigraph_form.md)
-- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
 - [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
-- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
-- [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](../../ICML2026/reinforcement_learning/multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
+- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
+- [\[ICLR 2026\] From Ticks to Flows: Dynamics of Neural Reinforcement Learning in Continuous Environments](from_ticks_to_flows_dynamics_of_neural_reinforcement_learning_in_continuous_envi.md)
 
 </div>
 

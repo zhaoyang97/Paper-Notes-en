@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SeLaR: Selective Latent Reasoning in Large Language Models
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper proposes SeLaR, a lightweight training-free framework that activates soft-embedding latent reasoning only during uncertain "exploration steps" via an entropy gating mechanism, while maintaining discrete decoding during high-confidence "certain steps." It introduces entropy-aware contrastive regularization to
+  [ACL 2026][Reasoning][Latent Reasoning] This paper proposes SeLaR, a lightweight training-free framework that activates soft-embedding latent reasoning only during uncertain "exploration steps" via an entropy gating mechanism, while maintaining discrete decoding during high-confidence "certain steps." It introduces entropy-aware contrastive regularization to prevent soft embeddings from collapsing toward the dominant token, consistently outperforming standard CoT and SOTA tra…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Latent Reasoning"
+  - "Entropy Gating"
+  - "Soft Embeddings"
+  - "Contrastive Regularization"
+  - "Training-free Inference Enhancement"
 date: 2026-05-08
-content_hash: 9c02b683dba6cf44
+content_hash: 46a226bd78533676
 ---
+
 # SeLaR: Selective Latent Reasoning in Large Language Models
 
 **Conference**: ACL 2026  
@@ -141,9 +147,9 @@ SeLaR is entirely training-free. It was evaluated using Qwen3-1.7B/8B/32B and De
 
 - [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
 - [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[ICML 2026\] Reasoning Structure of Large Language Models](../../ICML2026/llm_reasoning/reasoning_structure_of_large_language_models.md)
-- [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
+- [\[ACL 2026\] TInR: Exploring Tool-Internalized Reasoning in Large Language Models](tinr_exploring_tool-internalized_reasoning_in_large_language_models.md)
+- [\[CVPR 2026\] ReLaX: Reasoning with Latent Exploration for Large Reasoning Models](../../CVPR2026/llm_reasoning/relax_reasoning_with_latent_exploration_for_large_reasoning_models.md)
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](../../ICLR2026/llm_reasoning/adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
 
 </div>
 

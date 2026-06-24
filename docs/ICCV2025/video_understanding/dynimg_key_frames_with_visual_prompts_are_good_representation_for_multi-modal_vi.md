@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DynImg: Key Frames with Visual Prompts are Good Representation for Multi-Modal Video Understanding
 description: >-
-  [ICCV 2025][Video Understanding][Video Representation] DynImg proposes a novel video representation method that appends non-key frames as "temporal visual prompts" below key frames to form dynamic images…
+  [ICCV 2025][Video Understanding][Video Representation] DynImg proposes a novel video representation method that appends non-key frames as "temporal visual prompts" below key frames to form dynamic images, enabling fine-grained spatiotemporal interaction inside the visual encoder (rather than at the high-level token stage). Combined with a 4D rotary positional encoding to maintain correct spatiotemporal ordering, DynImg surpasses SOTA by approximately 2% on multiple video unde…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Positional Encoding"
   - "Multimodal LLM"
 date: 2026-05-08
-content_hash: 960db990058695b9
+content_hash: 0aaea4520024225c
 ---
 
 # DynImg: Key Frames with Visual Prompts are Good Representation for Multi-Modal Video Understanding

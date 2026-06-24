@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Low Rank Transformer for Multivariate Time Series Anomaly Detection and Localization
 description: >-
-  [ICLR 2026][Anomaly Detection][Interpretability] This paper theoretically maps the learning process of Transformer encoders on multivariate time series to the classical STAR statistical model. It proposes ALoRa-T, which applies low-rank regularization to self-attention, using the "rank" of the attention matrix as an anomaly signal for detection and tracing anomalies
+  [ICLR 2026][Anomaly Detection][Multivariate time series] This paper theoretically maps the learning process of Transformer encoders on multivariate time series to the classical STAR statistical model. It proposes ALoRa-T, which applies low-rank regularization to self-attention, using the "rank" of the attention matrix as an anomaly signal for detection and tracing anomalies back to specific variables for localization using interpretable contribution weights.
 tags:
-  - ICLR 2026
-  - Anomaly Detection
-  - Interpretability
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "Multivariate time series"
+  - "anomaly localization"
+  - "low-rank regularization"
+  - "self-attention"
+  - "interpretability"
 date: 2026-05-08
-content_hash: c0499df67c481d83
+content_hash: 3a3e5ffa90797a0e
 ---
+
 # Low Rank Transformer for Multivariate Time Series Anomaly Detection and Localization
 
 **Conference**: ICLR 2026  
@@ -126,10 +131,10 @@ LightMTS-Embed on HAI: Top-K config (3.2M parameters) / F1 0.86 vs. All-pairs (1
 ## Related Papers
 
 - [\[ICLR 2026\] Adaptive Conformal Anomaly Detection with Time Series Foundation Models for Signal Monitoring](adaptive_conformal_anomaly_detection_with_time_series_foundation_models_for_sign.md)
-- [\[ICLR 2026\] ReTabAD: A Benchmark for Restoring Semantic Context in Tabular Anomaly Detection](retabad_a_benchmark_for_restoring_semantic_context_in_tabular_anomaly_detection.md)
 - [\[ICLR 2026\] MRAD: Zero-Shot Anomaly Detection with Memory-Driven Retrieval](mrad_zero-shot_anomaly_detection_with_memory-driven_retrieval.md)
-- [\[ICLR 2026\] Foundation Visual Encoders Are Secretly Few-Shot Anomaly Detectors](foundation_visual_encoders_are_secretly_few-shot_anomaly_detectors.md)
-- [\[ICLR 2026\] UniOD: A Universal Model for Outlier Detection across Diverse Domains](uniod_a_universal_model_for_outlier_detection_across_diverse_domains.md)
+- [\[ICLR 2026\] ReTabAD: A Benchmark for Restoring Semantic Context in Tabular Anomaly Detection](retabad_a_benchmark_for_restoring_semantic_context_in_tabular_anomaly_detection.md)
+- [\[ICLR 2026\] PIRN: Prototypical-based Intra-modal Reconstruction with Normality Communication for Multi-modal Anomaly Detection.](pirn_prototypical-based_intra-modal_reconstruction_with_normality_communication_.md)
+- [\[ICLR 2026\] LLM as an Algorithmist: Enhancing Anomaly Detectors via Programmatic Synthesis](llm_as_an_algorithmist_enhancing_anomaly_detectors_via_programmatic_synthesis.md)
 
 </div>
 

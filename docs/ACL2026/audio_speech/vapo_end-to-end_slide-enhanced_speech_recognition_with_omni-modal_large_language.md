@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VAPO: End-to-end Slide-Enhanced Speech Recognition with Omni-modal Large Language Models
 description: >-
-  [ACL 2026][Audio & Speech][Reinforcement Learning] This paper discovers that end-to-end Omni-modal Large Language Models (OLLMs) tend to miscopy slide text as speech content when performing SlideASR. It proposes VAPO, which utilizes a "Look-then-Listen" structured reasoning chain and multi-objective reinforcement learning to transform slide text into semantic anchors f
+  [ACL2026][Audio & Speech][Omni-modal Large Language Models] This paper discovers that end-to-end Omni-modal Large Language Models (OLLMs) tend to miscopy slide text as speech content when performing SlideASR. It proposes VAPO, which utilizes a "Look-then-Listen" structured reasoning chain and multi-objective reinforcement learning to transform slide text into semantic anchors for speech recognition rather than sources of interference.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Reinforcement Learning
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Omni-modal Large Language Models"
+  - "Slide-enhanced Speech Recognition"
+  - "Reinforcement Learning"
+  - "Visual Anchoring"
+  - "Contextual ASR"
 date: 2026-05-08
-content_hash: 8a0117f2e4f02898
+content_hash: 735e60d30171f41a
 ---
+
 # VAPO: End-to-end Slide-Enhanced Speech Recognition with Omni-modal Large Language Models
 
 **Conference**: ACL2026  
@@ -133,10 +138,20 @@ Ablations show that ASR reward provides the foundation for stable generation, OC
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] VoxMind: An End-to-End Agentic Spoken Dialogue System](voxmind_an_end-to-end_agentic_spoken_dialogue_system.md)
+- [\[ACL 2025\] Contextual Biasing with the Knowledgeable External Language Model for End-to-End Speech Recognition](../../ACL2025/audio_speech/contextual_biasing_with_the_knowledgeable_external_language_model_for_end-to-end.md)
+- [\[ACL 2026\] Speculative End-Turn Detector for Efficient Speech Chatbot Assistant](speculative_end-turn_detector_for_efficient_speech_chatbot_assistant.md)
+- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
+- [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] Contextual Biasing with the Knowledgeable External Language Model for End-to-End Speech Recognition](../../ACL2025/audio_speech/contextual_biasing_with_the_knowledgeable_external_language_model_for_end-to-end.md)

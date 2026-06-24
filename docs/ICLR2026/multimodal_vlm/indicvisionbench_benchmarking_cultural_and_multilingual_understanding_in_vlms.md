@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] IndicVisionBench: Benchmarking Cultural and Multilingual Understanding in VLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][OCR] IndicVisionBench is the first large-scale culture-multilingual VLM evaluation benchmark focusing on the Indian subcontinent. Covering English + 10 Indic languages across three multimodal tasks (VQA / OCR / MMT) with 5K images and over 37K QA pairs, it systematically reveals the significant performance gaps of current V
+  [ICLR 2026][Multimodal VLM][VLM evaluation] IndicVisionBench is the first large-scale culture-multilingual VLM evaluation benchmark focusing on the Indian subcontinent. Covering English + 10 Indic languages across three multimodal tasks (VQA / OCR / MMT) with 5K images and over 37K QA pairs, it systematically reveals the significant performance gaps of current VLMs in culturally diverse contexts.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - OCR
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM evaluation"
+  - "cultural understanding"
+  - "Indic languages"
+  - "OCR"
+  - "multimodal translation"
+  - "cultural VQA"
 date: 2026-05-08
-content_hash: 77763e5b1dd95f6e
+content_hash: 614e2e7703e97d67
 ---
+
 # IndicVisionBench: Benchmarking Cultural and Multilingual Understanding in VLMs
 
 **Conference**: ICLR 2026  
@@ -124,7 +130,7 @@ The study evaluated 8 mainstream VLMs classified into three groups: closed-sourc
 - [\[ICLR 2026\] VaseVQA-3D: Benchmarking 3D VLMs on Ancient Greek Pottery](vasevqa-3d_benchmarking_3d_vlms_on_ancient_greek_pottery.md)
 - [\[ICLR 2026\] Kaleidoscope: In-language Exams for Massively Multilingual Vision Evaluation](kaleidoscope_in-language_exams_for_massively_multilingual_vision_evaluation.md)
 - [\[ACL 2026\] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding](../../ACL2026/multimodal_vlm/vulca-bench_a_multicultural_vision-language_benchmark_for_evaluating_cultural_un.md)
-- [\[ICLR 2026\] Teaching VLMs to Admit Uncertainty in OCR from Lossy Visual Inputs](teaching_vlms_to_admit_uncertainty_in_ocr_from_lossy_visual_inputs.md)
+- [\[ACL 2026\] Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations](../../ACL2026/multimodal_vlm/beyond_screenshots_evaluating_vlms_understanding_of_ui_animations.md)
 
 </div>
 

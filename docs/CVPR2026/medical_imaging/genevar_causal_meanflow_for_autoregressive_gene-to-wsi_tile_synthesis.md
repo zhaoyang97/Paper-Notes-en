@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeneVAR: Causal MeanFlow for Autoregressive Gene-to-WSI Tile Synthesis
 description: >-
-  [CVPR 2026][Medical Imaging][MeanFlow] GeneVAR reformulates the synthesis of H&E pathology tiles from RNA-Seq expression profiles into a multi-scale coarse-to-fine autoregressive process. By embedding an RNA-conditioned Causal MeanFlow module within the autoregressive trajectory, it utilizes average velocity fields and counterfactual interventions to disent
+  [CVPR 2026][Medical Imaging][Gene-to-Pathology Image Synthesis] GeneVAR reformulates the synthesis of H&E pathology tiles from RNA-Seq expression profiles into a multi-scale coarse-to-fine autoregressive process. By embedding an RNA-conditioned Causal MeanFlow module within the autoregressive trajectory, it utilizes average velocity fields and counterfactual interventions to disentangle genuine gene-driven morphology from non-biological confounders like staining and contrast.…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - MeanFlow
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Gene-to-Pathology Image Synthesis"
+  - "Autoregressive Generation"
+  - "Causal Modeling"
+  - "MeanFlow"
+  - "Counterfactual Regularization"
 date: 2026-05-08
-content_hash: 87850ac612476b98
+content_hash: 37c9761c6e10a1fb
 ---
+
 # GeneVAR: Causal MeanFlow for Autoregressive Gene-to-WSI Tile Synthesis
 
 **Conference**: CVPR 2026  
@@ -172,10 +177,10 @@ Replacing up to 75% of real data with GeneVAR synthetic tiles actually improves 
 ## Related Papers
 
 - [\[CVPR 2026\] STEPH: Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in WSI Prognosis](sparse_task_vector_mixup_wsi_prognosis.md)
+- [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](../../ICLR2026/medical_imaging/autoregressive_visual_decoding_from_eeg_signals.md)
 - [\[CVPR 2026\] FBTA: Enabling Single-GPU End-to-End Gigapixel WSI Classification with Feature Bridging and Translation Alignment](fbta_enabling_single-gpu_end-to-end_gigapixel_wsi_classification_with_feature_br.md)
 - [\[CVPR 2026\] Diffusion-Based Native Adversarial Synthesis for Enhanced Medical Segmentation Generalization](diffusion-based_native_adversarial_synthesis_for_enhanced_medical_segmentation_g.md)
 - [\[ICML 2025\] Implementing Adaptations for Vision AutoRegressive Model](../../ICML2025/medical_imaging/implementing_adaptations_for_vision_autoregressive_model.md)
-- [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
 
 </div>
 

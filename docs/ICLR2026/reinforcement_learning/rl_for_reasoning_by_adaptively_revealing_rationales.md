@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RL for Reasoning by Adaptively Revealing Rationales
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] This paper proposes **AdaBack (Adaptive Backtrack)**: a method that dynamically reveals a prefix of the target reasoning chain as a prompt during RL training and performs a stochastic binary search on the "reveal ratio" based on reward feedback. This allows the model to transition from "completing the last step" to "ge
+  [ICLR 2026][Reinforcement Learning][Curriculum Learning] This paper proposes **AdaBack (Adaptive Backtrack)**: a method that dynamically reveals a prefix of the target reasoning chain as a prompt during RL training and performs a stochastic binary search on the "reveal ratio" based on reward feedback. This allows the model to transition from "completing the last step" to "generating the full chain from scratch," enabling the learning of novel reasoning capabilities on sparse…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Curriculum Learning"
+  - "Partial Supervision"
+  - "GRPO"
+  - "Reasoning Chain"
+  - "Adaptive Backtracking"
 date: 2026-05-08
-content_hash: a1741cce7080fe10
+content_hash: c5330687c10cbfc0
 ---
+
 # RL for Reasoning by Adaptively Revealing Rationales
 
 **Conference**: ICLR 2026  
@@ -132,7 +137,7 @@ Ours (AdaBack) is consistently superior to GRPO and SFT+GRPO in most settings, w
 - [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
 - [\[ICLR 2026\] Scheduling Your LLM Reinforcement Learning with Reasoning Trees](scheduling_your_llm_reinforcement_learning_with_reasoning_trees.md)
 - [\[ACL 2026\] Glance-or-Gaze: Incentivizing LMMs to Adaptively Focus Search via Reinforcement Learning](../../ACL2026/reinforcement_learning/glance-or-gaze_incentivizing_lmms_to_adaptively_focus_search_via_reinforcement_l.md)
-- [\[ICLR 2026\] Webscale-RL: Automated Data Pipeline for Scaling RL Data to Pretraining Levels](webscale-rl_automated_data_pipeline_for_scaling_rl_data_to_pretraining_levels.md)
+- [\[AAAI 2026\] Revealing POMDPs: Qualitative and Quantitative Analysis for Parity Objectives](../../AAAI2026/reinforcement_learning/revealing_pomdps_qualitative_and_quantitative_analysis_for_parity_objectives.md)
 
 </div>
 

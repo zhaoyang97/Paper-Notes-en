@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences
 description: >-
-  [ACL 2026][LLM Reasoning][rubric] Addressing the double-edged sword where "self-generated rubrics often mislead reward models," the authors use language model (LM) likelihood margins to automatically label 16 self-sampled rubrics as "helpful/misleading" pairs. They then train a cooperative rubric generator via DPO and a "critical" verifier via GRPO, wh
+  [ACL 2026][Reasoning][Reward Model] Addressing the double-edged sword where "self-generated rubrics often mislead reward models," the authors use language model (LM) likelihood margins to automatically label 16 self-sampled rubrics as "helpful/misleading" pairs. They then train a cooperative rubric generator via DPO and a "critical" verifier via GRPO, which assesses rubric reliability before making judgments. Using only binary preference data…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - rubric
-  - DPO
-  - GRPO
+  - "ACL 2026"
+  - "Reasoning"
+  - "Reward Model"
+  - "Rubric"
+  - "DPO"
+  - "GRPO"
+  - "Cooperative Communication"
 date: 2026-05-08
-content_hash: 90332dbe49962aee
+content_hash: 6eee6cde48572f70
 ---
+
 # C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences
 
 **Conference**: ACL 2026  
@@ -162,9 +165,17 @@ Robustness under different rubric quality ratios (Tulu3-8B / Qwen3-8B):
 
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICLR 2026\] mR3: Multilingual Rubric-Agnostic Reward Reasoning Models](../../ICLR2026/llm_reasoning/mr3_multilingual_rubric-agnostic_reward_reasoning_models.md)
+- [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](../../ICML2026/llm_reasoning/reward_modeling_from_natural_language_human_feedback.md)
+- [\[ACL 2026\] Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards](process_reward_models_meet_planning_generating_precise_and_scalable_datasets_for.md)
+- [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](efficient_process_reward_modeling_via_contrastive_mutual_information.md)
+- [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](../../ICLR2026/llm_reasoning/fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](efficient_process_reward_modeling_via_contrastive_mutual_information.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples
 description: >-
-  [NeurIPS 2025][AI Safety][machine unlearning] This paper identifies a critical security vulnerability in machine unlearning: even when an unlearned model is statistically indistinguishable from a retrained model…
+  [NeurIPS 2025][AI Safety][machine unlearning] This paper identifies a critical security vulnerability in machine unlearning: even when an unlearned model is statistically indistinguishable from a retrained model, applying small adversarial perturbations to forgotten samples causes the unlearned model to correctly classify them while the retrained model fails — revealing a novel privacy risk termed "residual knowledge." The authors propose RURK…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "adversarial robustness"
   - "RURK"
 date: 2026-05-08
-content_hash: a629aaecf7d91d91
+content_hash: 294ab4b36cd23ac6
 ---
 
 # The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples
@@ -136,9 +136,9 @@ The paper proceeds in three steps: (1) **Problem exposition** — theoretical an
 
 - [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
 - [\[NeurIPS 2025\] Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions](rewind-to-delete_certified_machine_unlearning_for_nonconvex_functions.md)
+- [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](../../ICLR2026/ai_safety/machine_unlearning_under_retainforget_entanglement.md)
+- [\[CVPR 2025\] Towards Source-Free Machine Unlearning](../../CVPR2025/ai_safety/towards_source-free_machine_unlearning.md)
 - [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
-- [\[NeurIPS 2025\] Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy and Research](machine_unlearning_doesnt_do_what_you_think_lessons_for_generative_ai_policy_and.md)
-- [\[ICML 2026\] Two Blind Spots of Machine Unlearning: Over-unlearning and Prototype Relearning Attacks](../../ICML2026/ai_safety/unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
 
 </div>
 

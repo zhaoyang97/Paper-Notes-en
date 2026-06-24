@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Frequency Matching in Spiking Neural Networks for mmWave Sensing
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This work proves from a "mechanism-data alignment" perspective that LIF spiking neurons are equivalent to first-order IIR low-pass filters. It proposes setting the membrane decay coefficient $\beta$ according to the discriminative spectrum of mmWave signals, enabling the SNN to achieve an average accuracy improvement o
+  [ICML 2026][AI Safety][LIF neuron] This work proves from a "mechanism-data alignment" perspective that LIF spiking neurons are equivalent to first-order IIR low-pass filters. It proposes setting the membrane decay coefficient $\beta$ according to the discriminative spectrum of mmWave signals, enabling the SNN to achieve an average accuracy improvement of 6.22% and a theoretical energy reduction of 3.64× compared to ANNs across four common mmWave datasets.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "LIF neuron"
+  - "IIR low-pass filtering"
+  - "mmWave sensing"
+  - "discriminative spectrum"
+  - "neural dynamics-data alignment"
 date: 2026-05-08
-content_hash: f995d34169363854
+content_hash: e3e1704614790c11
 ---
+
 # Frequency Matching in Spiking Neural Networks for mmWave Sensing
 
 **Conference**: ICML 2026  
@@ -147,7 +153,7 @@ Standard SNN training with surrogate gradients is employed. The backbone is a si
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
 - [\[ICML 2026\] Singular Bayesian Neural Networks](singular_bayesian_neural_networks.md)
 - [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](../../ICLR2026/ai_safety/time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
-- [\[AAAI 2026\] MPD-SGR: Robust Spiking Neural Networks with Membrane Potential Distribution-Driven Surrogate Gradient Regularization](../../AAAI2026/ai_safety/mpd-sgr_robust_spiking_neural_networks_with_membrane_potential_distribution-driv.md)
+- [\[ICLR 2026\] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability](../../ICLR2026/ai_safety/robustify_spiking_neural_networks_via_dominant_singular_deflation_under_heteroge.md)
 
 </div>
 

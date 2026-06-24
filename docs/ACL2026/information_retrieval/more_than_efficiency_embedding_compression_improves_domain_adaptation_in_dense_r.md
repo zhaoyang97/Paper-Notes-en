@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval
 description: >-
-  [ACL 2026][Information Retrieval & RAG][PCA] This paper demonstrates that PCA vector compression is not merely for acceleration but also serves as a zero-training domain adaptation method for dense retrievers, where fitting PCA solely with target domain queries improves NDCG@10 across 75.4% of model-dataset combinations.
+  [ACL 2026][Information Retrieval & RAG][Dense Retrieval] This paper demonstrates that PCA vector compression is not merely for acceleration but also serves as a zero-training domain adaptation method for dense retrievers, where fitting PCA solely with target domain queries improves NDCG@10 across 75.4% of model-dataset combinations.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - PCA
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Dense Retrieval"
+  - "Domain Adaptation"
+  - "PCA"
+  - "Vector Compression"
+  - "Unsupervised Retrieval"
 date: 2026-05-08
-content_hash: 19e8bcd7a500f3b7
+content_hash: 99f9ca2bea65cd2d
 ---
+
 # More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval
 
 **Conference**: ACL 2026  
@@ -116,8 +121,8 @@ The main experiment covers 9 dense retrievers with <2B parameters, 14 MTEB retri
 
 - [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](domain-specific_data_generation_framework_for_rag_adaptation.md)
 - [\[ACL 2026\] UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval](unite_uncertainty-based_iterative_document_sampling_for_domain_adaptation_in_inf.md)
+- [\[ACL 2026\] SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation](skmteb_slovak_massive_text_embedding_benchmark_and_model_adaptation.md)
 - [\[ICML 2026\] Less Is More: Elevating RAG via Performance-Driven Context Compression](../../ICML2026/information_retrieval/less_is_more_elevating_rag_via_performance-driven_context_compression.md)
-- [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
 - [\[ACL 2026\] REZE: Representation Regularization for Domain-adaptive Text Embedding Pre-finetuning](reze_representation_regularization_for_domain-adaptive_text_embedding_pre-finetu.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SEF-CLGC at SemEval-2026 Task 11: Logical Notation Impact on Language Model Performance
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This SemEval-2026 Task 11 system paper translates natural language syllogisms into various formal logic notations (FOL, CLIF, CLINGO, etc.) and performs supervised fine-tuning (SFT) on Small Language Models (SLMs) with <1B parameters (Flan-T5). It demonstrates that pairing natural language with "pre-trained" formal not
+  [ACL 2026][LLM (Other)][Syllogism validation] This SemEval-2026 Task 11 system paper translates natural language syllogisms into various formal logic notations (FOL, CLIF, CLINGO, etc.) and performs supervised fine-tuning (SFT) on Small Language Models (SLMs) with <1B parameters (Flan-T5). It demonstrates that pairing natural language with "pre-trained" formal notations like FOL significantly reduces content bias during reasoning while maintaining extremely low computational…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Syllogism validation"
+  - "Small Language Models"
+  - "Formal logic notation"
+  - "Neuro-symbolic"
+  - "Content bias"
 date: 2026-05-08
-content_hash: 8d2faf7feafe9ca5
+content_hash: 3c51f25283f88324
 ---
+
 # SEF-CLGC at SemEval-2026 Task 11: Logical Notation Impact on Language Model Performance
 
 **Conference**: ACL 2026  
@@ -132,15 +138,16 @@ Comparison between the vanilla SEMEVAL and FOLIO pre-fine-tuned families on trai
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] Logical Forms Complement Probability in Understanding Language Model (and Human) Performance](../../ACL2025/llm_nlp/logical_forms_complement_probability_in_understanding_language_model_and_human_p.md)
+- [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
 - [\[ICML 2026\] On the Limits of LLM Adaptability: Impact of Model-Internalized Priors on Annotation](../../ICML2026/llm_nlp/on_the_limits_of_llm_adaptability_impact_of_model-internalized_priors_on_annotat.md)
-- [\[ACL 2025\] The Impact of Token Granularity on the Predictive Power of Language Model Surprisal](../../ACL2025/llm_nlp/token_granularity_impact.md)
-- [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
-- [\[ACL 2025\] Cheaper and Better Diffusion Language Model via Task-Specific Training](../../ACL2025/llm_nlp/cheaper_and_better_diffusion_language_model_via_task-specific_training.md)
+- [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](../../ICLR2026/llm_nlp/sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
+- [\[ACL 2026\] Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities](think_in_sentences_explicit_sentence_boundaries_enhance_language_model39s_capabi.md)
 
 </div>
 

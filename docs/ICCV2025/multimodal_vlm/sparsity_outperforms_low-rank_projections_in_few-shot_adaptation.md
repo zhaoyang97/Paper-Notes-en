@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation
 description: >-
-  [ICCV 2025][Multimodal VLM][Sparse optimization] This paper proposes Sparse Optimization (SO), a framework that replaces low-rank adaptation methods (e.g.…
+  [ICCV 2025][Multimodal VLM][Sparse optimization] This paper proposes Sparse Optimization (SO), a framework that replaces low-rank adaptation methods (e.g., LoRA) via dynamic sparse gradient selection and importance-based momentum pruning. SO achieves state-of-the-art performance on few-shot VLM adaptation across 11 datasets while reducing memory overhead.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "low-rank decomposition"
   - "parameter-efficient fine-tuning"
 date: 2026-05-08
-content_hash: ad61e5353e4ff45a
+content_hash: 105a9dd61acf75a5
 ---
 
 # Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation
@@ -136,11 +136,11 @@ SO (Sparse Optimization) is a sparse optimizer built upon the Adam optimizer, re
 
 ## Related Papers
 
+- [\[CVPR 2025\] Rethinking Few-Shot Adaptation of Vision-Language Models in Two Stages](../../CVPR2025/multimodal_vlm/rethinking_few-shot_adaptation_of_vision-language_models_in_two_stages.md)
+- [\[ICML 2025\] Vision Graph Prompting via Semantic Low-Rank Decomposition](../../ICML2025/multimodal_vlm/vision_graph_prompting_via_semantic_low-rank_decomposition.md)
+- [\[ICLR 2026\] MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition](../../ICLR2026/multimodal_vlm/mora_missing_modality_low-rank_adaptation_for_visual_recognition.md)
 - [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
 - [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
-- [\[AAAI 2026\] BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning](../../AAAI2026/multimodal_vlm/bofa_bridge-layer_orthogonal_low-rank_fusion_for_clip-based_.md)
-- [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
-- [\[ICCV 2025\] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation](is_less_more_exploring_token_condensation_as_training-free_test-time_adaptation.md)
 
 </div>
 

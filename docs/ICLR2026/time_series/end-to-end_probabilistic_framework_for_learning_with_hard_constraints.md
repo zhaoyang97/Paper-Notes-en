@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] End-to-End Probabilistic Framework for Learning with Hard Constraints
 description: >-
-  [ICLR 2026][Time Series][CRPS] ProbHardE2E proposes the Differentiable Probabilistic Projection Layer (DPPL), which directly applies hard constraints to distribution parameters to enable end-to-end training. It simultaneously supports strict constraint satisfaction and uncertainty quantification in both probabilistic time series forecasting and PDE
+  [ICLR 2026][Time Series][Hard constraints] ProbHardE2E proposes the Differentiable Probabilistic Projection Layer (DPPL), which directly applies hard constraints to distribution parameters to enable end-to-end training. It simultaneously supports strict constraint satisfaction and uncertainty quantification in both probabilistic time series forecasting and PDE solving.
 tags:
-  - ICLR 2026
-  - Time Series
-  - CRPS
+  - "ICLR 2026"
+  - "Time Series"
+  - "Hard constraints"
+  - "probabilistic forecasting"
+  - "differentiable projection layer"
+  - "CRPS"
+  - "uncertainty quantification"
 date: 2026-05-08
-content_hash: c0b745d31f9d3036
+content_hash: 0ffa96349b190665
 ---
+
 # End-to-End Probabilistic Framework for Learning with Hard Constraints
 
 **Conference**: ICLR 2026  
@@ -147,10 +152,10 @@ All constrained methods achieved CE=0, while DeepVAR CE reached as high as 8398.
 ## Related Papers
 
 - [\[ICLR 2026\] DeepFRC: An End-to-End Deep Learning Model for Functional Registration and Classification](deepfrc_an_end-to-end_deep_learning_model_for_functional_registration_and_classi.md)
-- [\[ICLR 2026\] Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants](perturbed_dynamic_time_warping_a_probabilistic_framework_and_generalized_variant.md)
-- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 - [\[ICLR 2026\] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting](from_samples_to_scenarios_a_new_paradigm_for_probabilistic_forecasting.md)
-- [\[ICLR 2026\] SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning](swiftts_a_swift_selection_framework_for_time_series_pre-trained_models_via_multi.md)
+- [\[ICLR 2026\] Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants](perturbed_dynamic_time_warping_a_probabilistic_framework_and_generalized_variant.md)
+- [\[ICLR 2026\] STDDN: A Deep Learning Framework for Crowd Simulation Guided by the Fluid Continuity Equation](stddn_a_physics-guided_deep_learning_framework_for_crowd_simulation.md)
+- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 
 </div>
 

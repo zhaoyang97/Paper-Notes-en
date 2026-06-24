@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated
 description: >-
-  [AAAI 2026][Model Compression][AI-generated image detection] A lightweight post-hoc calibration framework grounded in Bayesian decision theory is proposed. By adding a learnable scalar offset α to the output logits of an…
+  [AAAI 2026][Model Compression][AI-generated image detection] A lightweight post-hoc calibration framework grounded in Bayesian decision theory is proposed. By adding a learnable scalar offset α to the output logits of an existing detector, the method significantly improves detection accuracy under distribution shift without any retraining.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "distribution shift"
   - "decision boundary"
 date: 2026-05-08
-content_hash: e8f64c2db5bb207e
+content_hash: 3edee2939c3d7789
 ---
 
 # Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated
@@ -182,10 +182,10 @@ Results on AIGCDetectBenchmark (trained on ProGAN, evaluated on 16 generators):
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning](../../CVPR2026/model_compression/towards_generalizable_ai-generated_image_detection_via_image-adaptive_prompt_lea.md)
-- [\[AAAI 2026\] Can You Tell the Difference? Contrastive Explanations for ABox Entailments](can_you_tell_the_difference_contrastive_explanations_for_abox_entailments.md)
 - [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](../../NeurIPS2025/model_compression/ai-generated_video_detection_via_perceptual_straightening.md)
+- [\[AAAI 2026\] Can You Tell the Difference? Contrastive Explanations for ABox Entailments](can_you_tell_the_difference_contrastive_explanations_for_abox_entailments.md)
 - [\[ICML 2026\] Images as Tables: In-Context Learning with TabPFN for Low-Data Detection of AI-Generated Images](../../ICML2026/model_compression/images_as_tables_in-context_learning_with_tabpfn_for_low-data_detection_of_ai-ge.md)
-- [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
+- [\[ICLR 2026\] Zeros Can Be Informative: Masked Binary U-Net for Image Segmentation on Tensor Cores](../../ICLR2026/model_compression/zeros_can_be_informative_masked_binary_u-net_for_image_segmentation_on_tensor_co.md)
 
 </div>
 

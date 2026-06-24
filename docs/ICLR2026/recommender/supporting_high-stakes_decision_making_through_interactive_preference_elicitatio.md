@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Supporting High-Stakes Decision Making Through Interactive Preference Elicitation in the Latent Space
 description: >-
-  [ICLR 2026][Recommender Systems][Preferential Bayesian Optimization] This paper addresses high-stakes, low-frequency, and sparse-feedback decision-making scenarios such as apartment hunting. It combines LLM preference priors obtained from user interviews, Autoencoder latent space compression, and Preferential Bayesian Optimization (PBO). By learning user utility functions with fewer pai
+  [ICLR 2026][Recommender Systems][Preference Elicitation] This paper addresses high-stakes, low-frequency, and sparse-feedback decision-making scenarios such as apartment hunting. It combines LLM preference priors obtained from user interviews, Autoencoder latent space compression, and Preferential Bayesian Optimization (PBO). By learning user utility functions with fewer pairwise comparisons, it achieves higher ranking accuracy on real housing data compared to vanilla PBO.
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - Preferential Bayesian Optimization
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "Preference Elicitation"
+  - "Decision Support"
+  - "Preferential Bayesian Optimization"
+  - "Latent Space Optimization"
+  - "LLM Priors"
 date: 2026-05-08
-content_hash: b5e34ec0205b95ca
+content_hash: bccc7a7c3ecadbfb
 ---
+
 # Supporting High-Stakes Decision Making Through Interactive Preference Elicitation in the Latent Space
 
 **Conference**: ICLR 2026  

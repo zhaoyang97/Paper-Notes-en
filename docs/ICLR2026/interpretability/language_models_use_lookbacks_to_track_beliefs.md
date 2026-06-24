@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Language Models Use Lookbacks to Track Beliefs
 description: >-
-  [ICLR 2026][Interpretability][Theory of Mind] Using causal mediation and causal abstraction, this paper reverse-engineers a universal "lookback mechanism" that large language models (LLMs) rely on to track character beliefs (Theory of Mind). The model copies reference information into "pointers" and "addresses" at different tokens, retrieving "payloads" via QK-att
+  [ICLR 2026][Interpretability][Belief Tracking] Using causal mediation and causal abstraction, this paper reverse-engineers a universal "lookback mechanism" that large language models (LLMs) rely on to track character beliefs (Theory of Mind). The model copies reference information into "pointers" and "addresses" at different tokens, retrieving "payloads" via QK-attention lookbacks to achieve character-object-state binding, belief retrieval, and visibility updates.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Theory of Mind
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Belief Tracking"
+  - "Theory of Mind"
+  - "Mechanistic Interpretability"
+  - "Causal Mediation Analysis"
+  - "Causal Abstraction"
+  - "Variable Binding"
+  - "Lookback Mechanism"
 date: 2026-05-08
-content_hash: efb6a4b8d9e0a4f4
+content_hash: 7a609c5b2ed1fee8
 ---
+
 # Language Models Use Lookbacks to Track Beliefs
 
 **Conference**: ICLR 2026  

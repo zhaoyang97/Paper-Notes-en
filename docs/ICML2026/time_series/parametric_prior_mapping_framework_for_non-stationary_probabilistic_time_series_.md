@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting
 description: >-
-  [ICML 2026][Time Series][KDE-NLL] PPM utilizes a lightweight encoder to infer context-aware Gaussian priors from historical sequences, then "pushes forward" this prior into a comprehensive predictive distribution using a two-layer MLP. Trained jointly with KDE-NLL and mean MSE, PPM outperforms diffusion models like DeepAR and NsDiff across seven time-s
+  [ICML 2026][Time Series][Probabilistic Time Series Forecasting] PPM utilizes a lightweight encoder to infer context-aware Gaussian priors from historical sequences, then "pushes forward" this prior into a comprehensive predictive distribution using a two-layer MLP. Trained jointly with KDE-NLL and mean MSE, PPM outperforms diffusion models like DeepAR and NsDiff across seven time-series benchmarks while achieving $2 \times$ to $100 \times$ faster inference.
 tags:
-  - ICML 2026
-  - Time Series
-  - KDE-NLL
+  - "ICML 2026"
+  - "Time Series"
+  - "Probabilistic Time Series Forecasting"
+  - "Non-stationarity"
+  - "Parametric Prior"
+  - "Push-forward Mapping"
+  - "KDE-NLL"
 date: 2026-05-08
-content_hash: 8f3296107fe3bee1
+content_hash: 3b5da4e82172ab0b
 ---
+
 # Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting
 
 **Conference**: ICML 2026  
@@ -141,8 +146,8 @@ Ablation of Prior Form (Table 4, Traffic): Using raw Gaussian/Uniform as the pre
 - [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
 - [\[AAAI 2026\] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing](../../AAAI2026/time_series/towards_non-stationary_time_series_forecasting_with_temporal_stabilization_and_f.md)
 - [\[ICML 2026\] CombinationTS: A Modular Framework for Understanding Time-Series Forecasting Models](combinationts_a_modular_framework_for_understanding_time-series_forecasting_mode.md)
-- [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
 - [\[NeurIPS 2025\] Neural MJD: Neural Non-Stationary Merton Jump Diffusion for Time Series Prediction](../../NeurIPS2025/time_series/neural_mjd_neural_non-stationary_merton_jump_diffusion_for_time_series_predictio.md)
+- [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
 
 </div>
 

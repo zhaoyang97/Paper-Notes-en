@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][image alignment] DMAligner is proposed to transform the image alignment problem from the traditional optical flow warp paradigm into an "alignment-oriented view synthesis" task. By leveraging conditional diffusion models to directly generate aligned full images in conjunction with a specially constructed DSIA synthetic dataset and a Dy
+  [CVPR2026][3D Vision][image alignment] DMAligner is proposed to transform the image alignment problem from the traditional optical flow warp paradigm into an "alignment-oriented view synthesis" task. By leveraging conditional diffusion models to directly generate aligned full images in conjunction with a specially constructed DSIA synthetic dataset and a Dynamics-aware Mask Producing (DMP) module, the method effectively avoids ghosting and occlusion artifacts inherent in warp…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - image alignment
-  - diffusion model
-  - view synthesis
-  - dynamic scenes
-  - occlusion handling
+  - "CVPR2026"
+  - "3D Vision"
+  - "image alignment"
+  - "diffusion model"
+  - "view synthesis"
+  - "dynamic scenes"
+  - "occlusion handling"
 date: 2026-05-08
-content_hash: f6517f8f61a0d110
+content_hash: 824b0a7410217c3d
 ---
+
 # DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis
 
 **Conference**: CVPR2026  
@@ -171,11 +172,11 @@ The core difference is that Ours redefines alignment as a generation problem, us
 
 ## Related Papers
 
-- [\[CVPR 2026\] Landscape-Awareness for Geometric View Diffusion Model](landscape-awareness_for_geometric_view_diffusion_model.md)
-- [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
 - [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
+- [\[CVPR 2026\] Landscape-Awareness for Geometric View Diffusion Model](landscape-awareness_for_geometric_view_diffusion_model.md)
+- [\[CVPR 2026\] Splatent: Splatting Diffusion Latents for Novel View Synthesis](splatent_splatting_diffusion_latents_for_novel_view_synthesis.md)
+- [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
+- [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
 
 </div>
 

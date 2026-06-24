@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Functional MRI Time Series Generation via Wavelet-Based Image Transform and Spectral Flow Matching for Brain Disorder Identification
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] DSFM converts fMRI BOLD time series into multi-scale time-frequency scalogram images via Discrete Wavelet Transform (DWT), compresses them into a low-frequency sparse domain via block DCT, and performs class-conditional generation using a "heat-diffusion-style" flow matching in the DCT domain. The synthesized signals a
+  [ICLR 2026][Medical Imaging][fMRI Generation] DSFM converts fMRI BOLD time series into multi-scale time-frequency scalogram images via Discrete Wavelet Transform (DWT), compresses them into a low-frequency sparse domain via block DCT, and performs class-conditional generation using a "heat-diffusion-style" flow matching in the DCT domain. The synthesized signals are then transformed back to the time domain for data augmentation, enhancing downstream brain functional connectiv…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "fMRI Generation"
+  - "BOLD Signal"
+  - "Discrete Wavelet Transform (DWT)"
+  - "Discrete Cosine Transform (DCT)"
+  - "Flow Matching"
+  - "Brain Network Classification"
 date: 2026-05-08
-content_hash: 9a7d5110fbc549cb
+content_hash: e410210b48f1601e
 ---
+
 # Functional MRI Time Series Generation via Wavelet-Based Image Transform and Spectral Flow Matching for Brain Disorder Identification
 
 **Conference**: ICLR 2026  
@@ -112,10 +119,20 @@ flowchart LR
 - **Value**: ⭐⭐⭐⭐ — Directly addresses fMRI data scarcity with measurable improvements in clinical classification.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation](learning_patient-specific_disease_dynamics_with_latent_flow_matching_for_longitu.md)
+- [\[ICLR 2026\] CRONOS: Continuous time reconstruction for 4D medical longitudinal series](cronos_continuous_time_reconstruction_for_4d_medical_longitudinal_series.md)
+- [\[NeurIPS 2025\] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data](../../NeurIPS2025/medical_imaging/self-supervised_learning_via_flow-guided_neural_operator_on_time-series_data.md)
+- [\[AAAI 2026\] Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation](../../AAAI2026/medical_imaging/ambiguity-aware_truncated_flow_matching_for_ambiguous_medica.md)
+- [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](../../CVPR2026/medical_imaging/forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation](learning_patient-specific_disease_dynamics_with_latent_flow_matching_for_longitu.md)

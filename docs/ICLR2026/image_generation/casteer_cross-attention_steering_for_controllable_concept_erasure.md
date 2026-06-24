@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CASteer: Cross-Attention Steering for Controllable Concept Erasure
 description: >-
-  [ICLR 2026][Image Generation][Concept Erasure] CASteer is a **training-free** framework for concept erasure in diffusion models. It pre-calculates "steering vectors" in the cross-attention layers for each concept using paired positive/negative prompts. During inference, it dynamically subtracts this direction based on the projection size of the current activation o
+  [ICLR2026][Image Generation][Concept Erasure] CASteer is a **training-free** framework for concept erasure in diffusion models. It pre-calculates "steering vectors" in the cross-attention layers for each concept using paired positive/negative prompts. During inference, it dynamically subtracts this direction based on the projection size of the current activation onto the vector. This allows for precise erasure (of nudity, violence, specific characters/styles) only on patches…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Model
+  - "ICLR2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Diffusion Models"
+  - "Steering Vectors"
+  - "Cross-Attention"
+  - "Training-free"
 date: 2026-05-08
-content_hash: fe4066b42cc92e7f
+content_hash: d76876ec6cb62f7c
 ---
+
 # CASteer: Cross-Attention Steering for Controllable Concept Erasure
 
 **Conference**: ICLR2026  
@@ -161,10 +165,20 @@ CASteer erases target styles most thoroughly while preserving unrelated styles b
 - Value: ⭐⭐⭐⭐⭐ Training-free, zero-overhead, and bakeable into weights; extremely practical for safe diffusion model deployment.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
+- [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](../../CVPR2026/image_generation/neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](../../CVPR2026/image_generation/groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](../../CVPR2026/image_generation/closed-form_concept_erasure_via_double_projections.md)
+- [\[ICLR 2026\] SDErasure: Concept-Specific Trajectory Shifting for Concept Erasure via Adaptive Diffusion Classifier](sderasure_concept-specific_trajectory_shifting_for_concept_erasure_via_adaptive_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)

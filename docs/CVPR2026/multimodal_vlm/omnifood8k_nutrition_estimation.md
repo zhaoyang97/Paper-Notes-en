@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion
 description: >-
-  [CVPR 2026][Others][Paper Note] Ours constructed OmniFood8K, a multimodal nutrition dataset for Chinese food with 8,036 samples, and NutritionSynth-115K, a synthetic dataset with 115K samples. An end-to-end framework is proposed to predict nutrition information from a single RGB image via a Scale-Shift depth adapter, frequency-aligned fusion, and a m
+  [CVPR 2026 Highlight][Multimodal VLM][Food nutrition estimation] Ours constructed OmniFood8K, a multimodal nutrition dataset for Chinese food with 8,036 samples, and NutritionSynth-115K, a synthetic dataset with 115K samples. An end-to-end framework is proposed to predict nutrition information from a single RGB image via a Scale-Shift depth adapter, frequency-aligned fusion, and a mask prediction head.
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026 Highlight"
+  - "Multimodal VLM"
+  - "Food nutrition estimation"
+  - "multimodal dataset"
+  - "depth estimation"
+  - "frequency domain fusion"
+  - "Chinese cuisine"
 date: 2026-05-08
-content_hash: a95a0d86ff89b5be
+content_hash: 1efe3570a43db963
 ---
+
 # OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion
 
 **Conference**: CVPR 2026 Highlight  
@@ -131,10 +137,10 @@ The training uses standard regression loss to supervise the prediction of calori
 ## Related Papers
 
 - [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
-- [\[AAAI 2026\] Private Frequency Estimation via Residue Number Systems](../../AAAI2026/others/private_frequency_estimation_via_residue_number_systems.md)
-- [\[CVPR 2026\] When Lines Meet Textures: Spatial-Frequency Aligned Diffusion Features for Cross-Sparsity Correspondence](when_lines_meet_textures_spatial-frequency_aligned_diffusion_features_for_cross-.md)
-- [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](../../AAAI2026/others/hierarchical_semantic_alignment_for_image_clustering.md)
-- [\[CVPR 2025\] Towards In-the-Wild 3D Plane Reconstruction from a Single Image](../../CVPR2025/others/towards_in-the-wild_3d_plane_reconstruction_from_a_single_image.md)
+- [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
+- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
+- [\[ICLR 2026\] Multimodal Aligned Semantic Knowledge for Unpaired Image-text Matching](../../ICLR2026/multimodal_vlm/multimodal_aligned_semantic_knowledge_for_unpaired_image-text_matching.md)
+- [\[CVPR 2026\] Language-guided Frequency Modulation for Large Vision-Language Models](language-guided_frequency_modulation_for_large_vision-language_models.md)
 
 </div>
 

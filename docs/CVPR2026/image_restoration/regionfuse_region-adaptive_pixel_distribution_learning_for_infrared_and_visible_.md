@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RegionFuse: Region-Adaptive Pixel Distribution Learning for Infrared and Visible Image Fusion
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] RegionFuse refines the fusion weights of Infrared-Visible Image Fusion (IVIF) from "global uniformity" to "region-adaptive according to local pixel distribution." By utilizing a region-level Mixture-of-Region Attention (MoRA) to dispatch regions with different pixel distributions to various masked attention experts, an
+  [CVPR 2026][Image Restoration][Infrared and visible fusion] RegionFuse refines the fusion weights of Infrared-Visible Image Fusion (IVIF) from "global uniformity" to "region-adaptive according to local pixel distribution." By utilizing a region-level Mixture-of-Region Attention (MoRA) to dispatch regions with different pixel distributions to various masked attention experts, and enhancing effective regions while suppressing redundancy via a Region Feature Compression Module (…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Infrared and visible fusion"
+  - "region-adaptive"
+  - "pixel distribution"
+  - "region-attention MoE"
+  - "dynamic fusion weights"
 date: 2026-05-08
-content_hash: 34dd681845743b6d
+content_hash: ee88ea22cb0c485a
 ---
+
 # RegionFuse: Region-Adaptive Pixel Distribution Learning for Infrared and Visible Image Fusion
 
 **Conference**: CVPR 2026  
@@ -158,11 +164,11 @@ Removing modules sequentially on MSRS (higher is better):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
-- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
+- [\[CVPR 2026\] FusionRegister: Every Infrared and Visible Image Fusion Deserves Registration](fusionregister_every_infrared_and_visible_image_fusion_deserves_registration.md)
 - [\[CVPR 2026\] Beyond Strict Pairing: Arbitrarily Paired Training for High-Performance Infrared and Visible Image Fusion](beyond_strict_pairing_arbitrarily_paired_training_for_high-performance_infrared_.md)
-- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
 - [\[CVPR 2026\] Enhancing Unregistered Hyperspectral Image Super-Resolution via Unmixing-based Abundance Fusion Learning](enhancing_unregistered_hyperspectral_image_super-resolution_via_unmixing-based_a.md)
+- [\[ICML 2025\] Adaptive Estimation and Learning under Temporal Distribution Shift](../../ICML2025/image_restoration/adaptive_estimation_and_learning_under_temporal_distribution_shift.md)
+- [\[CVPR 2026\] Learned Image Compression via Sparse Attention and Adaptive Frequency](learned_image_compression_via_sparse_attention_and_adaptive_frequency.md)
 
 </div>
 

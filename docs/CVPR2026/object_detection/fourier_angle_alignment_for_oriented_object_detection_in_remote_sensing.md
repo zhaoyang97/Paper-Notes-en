@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing
 description: >-
-  [CVPR 2026][Object Detection][Remote Sensing] Leveraging Fourier rotation equivariance to estimate principal orientations in the frequency domain for feature alignment, this paper proposes two plug-and-play modules, FAAFusion and FAA Head. These modules address cross-scale directional incoherence in FPN and task conflict between classification and regression in de
+  [CVPR 2026][Object Detection][Oriented Object Detection] Leveraging Fourier rotation equivariance to estimate principal orientations in the frequency domain for feature alignment, this paper proposes two plug-and-play modules, FAAFusion and FAA Head. These modules address cross-scale directional incoherence in FPN and task conflict between classification and regression in detection heads, respectively, achieving new SOTA results on DOTA-v1.0/v1.5 and HRSC2016.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Oriented Object Detection"
+  - "Fourier Rotation Equivariance"
+  - "Frequency Domain Orientation Estimation"
+  - "Feature Fusion"
+  - "Remote Sensing"
 date: 2026-05-08
-content_hash: 7c5e1ff97ba373c3
+content_hash: bf5a627d51b711ca
 ---
+
 # Fourier Angle Alignment for Oriented Object Detection in Remote Sensing
 
 **Conference**: CVPR 2026  
@@ -175,10 +180,10 @@ The standard Oriented R-CNN loss is employed (RPN classification + regression an
 ## Related Papers
 
 - [\[CVPR 2026\] Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images](balanced_hierarchical_contrastive_learning_with_decoupled_queries_for_fine-grain.md)
+- [\[CVPR 2026\] Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)
 - [\[CVPR 2026\] Partial Weakly-Supervised Oriented Object Detection](partial_weakly-supervised_oriented_object_detection.md)
 - [\[ECCV 2024\] MutDet: Mutually Optimizing Pre-training for Remote Sensing Object Detection](../../ECCV2024/object_detection/mutdet_mutually_optimizing_pre-training_for_remote_sensing_object_detection.md)
 - [\[AAAI 2026\] SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection](../../AAAI2026/object_detection/sm3det_a_unified_model_for_multi-modal_remote_sensing_object_detection.md)
-- [\[ICLR 2026\] SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection](../../ICLR2026/object_detection/spwood_sparse_partial_weakly-supervised_oriented_object_detection.md)
 
 </div>
 

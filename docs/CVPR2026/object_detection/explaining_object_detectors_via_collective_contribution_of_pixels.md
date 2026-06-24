@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Explaining Object Detectors via Collective Contribution of Pixels
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper proposes VX-CODE, which explains object detectors using Shapley values (individual contribution) and interactions (collective contribution) from game theory. By utilizing a self-context variant and greedy patch selection, the exponential computation is reduced to a practical level, generating faithful heatma
+  [CVPR 2026][Object Detection][Detector Explainability] This paper proposes VX-CODE, which explains object detectors using Shapley values (individual contribution) and interactions (collective contribution) from game theory. By utilizing a self-context variant and greedy patch selection, the exponential computation is reduced to a practical level, generating faithful heatmaps that cover both "primary features + collaborative background cues." Insertion/deletion AUC is improved…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Detector Explainability"
+  - "Shapley Value"
+  - "Pixel Interaction"
+  - "Greedy Patch Selection"
+  - "Faithfulness"
 date: 2026-05-08
-content_hash: d0b2a1b8b5973a9e
+content_hash: 60a8e994b5b085df
 ---
+
 # Explaining Object Detectors via Collective Contribution of Pixels
 
 **Conference**: CVPR 2026  

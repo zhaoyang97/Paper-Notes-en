@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification
 description: >-
-  [ICLR 2026][vlm_reasoning][mllm-as-verifier] This paper identifies a severe "agreement bias" in Multimodal Large Language Models (MLLMs) when serving as agent behavior verifiers—a systematic over-approval of agent actions. It proposes Self-Grounded Verification (SGV), a two-step generation method (extracting behavioral priors before conditional verification) to m
+  [ICLR 2026][VLM Reasoning][mllm-as-verifier] This paper identifies a severe "agreement bias" in Multimodal Large Language Models (MLLMs) when serving as agent behavior verifiers—a systematic over-approval of agent actions. It proposes Self-Grounded Verification (SGV), a two-step generation method (extracting behavioral priors before conditional verification) to mitigate this bias. SGV improves failure detection rates by up to 25pp and accuracy by up to 14pp across web navigat…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - mllm-as-verifier
-  - agreement-bias
-  - self-grounded-verification
-  - agent-evaluation
-  - robotics
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "mllm-as-verifier"
+  - "agreement-bias"
+  - "self-grounded-verification"
+  - "agent-evaluation"
+  - "robotics"
 date: 2026-05-08
-content_hash: 9e4d6b82484fa101
+content_hash: 577e062a120cb1c9
 ---
+
 # Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification
 
 **Conference**: ICLR 2026  

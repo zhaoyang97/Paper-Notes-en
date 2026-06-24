@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CineBrain: A Large-Scale Multi-Modal Audiovisual Brain Dataset for Brain-Conditioned Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] This paper constructs CineBrain, the first large-scale brain signal dataset with synchronized fMRI and EEG recorded under natural audiovisual conditions (watching *The Big Bang Theory*). It proposes the CineSync framework, which utilizes a dual-Transformer fusion encoder to align brain signals with visual/textual seman
+  [CVPR 2026][Video Generation][Brain Decoding] This paper constructs CineBrain, the first large-scale brain signal dataset with synchronized fMRI and EEG recorded under natural audiovisual conditions (watching *The Big Bang Theory*). It proposes the CineSync framework, which utilizes a dual-Transformer fusion encoder to align brain signals with visual/textual semantics, followed by a LoRA-finetuned video diffusion model to decode brain signals into dynamic videos. The method a…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Brain Decoding"
+  - "fMRI-EEG Fusion"
+  - "Audiovisual Stimuli"
+  - "Video Reconstruction"
+  - "Multimodal Dataset"
 date: 2026-05-08
-content_hash: dbf1cd4c6c0e5685
+content_hash: 15740cd827ce6a74
 ---
+
 # CineBrain: A Large-Scale Multi-Modal Audiovisual Brain Dataset for Brain-Conditioned Video Generation
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,16 @@ Proves that "Dual Transformer Fusion" (Late Fusion) is significantly superior to
 - Value: ⭐⭐⭐⭐⭐ Triple contribution of dataset, framework, and cognitive findings.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SemVideo: Reconstructs What You Watch from Brain Activity via Hierarchical Semantic Guidance](semvideo_reconstructs_what_you_watch_from_brain_activity_via_hierarchical_semant.md)
 - [\[CVPR 2026\] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation](unityvideo_unified_multi-modal_multi-task_learning_for_enhancing_world-aware_vid.md)
+- [\[CVPR 2026\] LaVR: Scene Latent Conditioned Generative Video Trajectory Re-Rendering using Large 4D Reconstruction Models](lavr_scene_latent_conditioned_generative_video_trajectory_re-rendering_using_lar.md)
 - [\[CVPR 2025\] HOIGen-1M: A Large-Scale Dataset for Human-Object Interaction Video Generation](../../CVPR2025/video_generation/hoigen-1m_a_large-scale_dataset_for_human-object_interaction_video_generation.md)
 - [\[ICCV 2025\] DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation](../../ICCV2025/video_generation/dh-facevid-1k_a_large-scale_high-quality_dataset_for_face_video_generation.md)
-- [\[CVPR 2026\] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer](moviedrive_urban_scene_synthesis_with_multi-modal_multi-view_video_diffusion_tra.md)
 
 </div>
 

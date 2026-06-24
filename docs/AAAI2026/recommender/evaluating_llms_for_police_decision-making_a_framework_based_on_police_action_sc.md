@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evaluating LLMs for Police Decision-Making: A Framework Based on Police Action Scenarios
 description: >-
-  [AAAI 2026][Recommender Systems][LLM Evaluation] This paper proposes PAS (Police Action Scenarios), an LLM evaluation framework for policing contexts. The framework comprises five stages: scenario definition…
+  [AAAI 2026][Recommender Systems][LLM Evaluation] This paper proposes PAS (Police Action Scenarios), an LLM evaluation framework for policing contexts. The framework comprises five stages: scenario definition, reference answer construction, LLM response generation, core metric extraction, and performance interpretation. An evaluation dataset is constructed from 8,000+ official Korean police documents. The study finds that commercial LLMs (GPT-4, Gemini…
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Scenario-Based Evaluation"
   - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: b9a693a3512eacad
+content_hash: 7e8d2d3699e30b10
 ---
 
 # Evaluating LLMs for Police Decision-Making: A Framework Based on Police Action Scenarios
@@ -147,11 +147,11 @@ This paper is not a training-based work. The data collection and construction pi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Supporting High-Stakes Decision Making Through Interactive Preference Elicitation in the Latent Space](../../ICLR2026/recommender/supporting_high-stakes_decision_making_through_interactive_preference_elicitatio.md)
 - [\[AAAI 2026\] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems](rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati.md)
 - [\[ACL 2026\] Personalizing LLMs with Binary Feedback: A Preference-Corrected Optimization Framework](../../ACL2026/recommender/personalizing_llms_with_binary_feedback_a_preference-corrected_optimization_fram.md)
 - [\[AAAI 2026\] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation](tool4poi_a_tool-augmented_llm_framework_for_next_poi_recommendation.md)
 - [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
-- [\[ACL 2026\] SenseJudge: Human-Centric Preference-Driven Judgment Framework](../../ACL2026/recommender/sensejudge_human-centric_preference-driven_judgment_framework.md)
 
 </div>
 

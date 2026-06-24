@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Learning Coherent Representations: A Topological Approach to Interpretability
 description: >-
-  [ICML 2026][Interpretability][coherence] This paper introduces **coherence**, a geometric property inspired by neural coding that requires rows and columns of the sample-feature matrix to be topologically interleaved under Vietoris-Rips filtration. By providing a differentiable `Coh` loss, the method achieves topologically aligned and semantically readable fe
+  [ICML 2026][Interpretability][coherence] This paper introduces **coherence**, a geometric property inspired by neural coding that requires rows and columns of the sample-feature matrix to be topologically interleaved under Vietoris-Rips filtration. By providing a differentiable `Coh` loss, the method achieves topologically aligned and semantically readable features on autoencoders and BERT token embeddings, significantly outperforming $L^1$ sparsity.
 tags:
-  - ICML 2026
-  - Interpretability
-  - coherence
-  - Vietoris-Rips
-  - barycentric map
+  - "ICML 2026"
+  - "Interpretability"
+  - "coherence"
+  - "Vietoris-Rips"
+  - "Fréchet variance"
+  - "barycentric map"
+  - "SAE alternative"
 date: 2026-05-08
-content_hash: 81a56b8d78d04dae
+content_hash: 3feca989b05813ea
 ---
+
 # Learning Coherent Representations: A Topological Approach to Interpretability
 
 **Conference**: ICML 2026  
@@ -136,10 +139,20 @@ The objective is Task Loss + $\lambda_{\text{Coh}}\mathcal{L}_{\text{Coh}}$, wit
 - Value: ⭐⭐⭐⭐ Provides a new regularization paradigm for mechanistic interpretability that is fully complementary to existing sparsity techniques.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality](muse_resolving_manifold_misalignment_in_visual_tokenization_via_topological_orth.md)
+- [\[ICML 2026\] IdEst: Assessing Self-Supervised Learning Representations via Intrinsic Dimension](idest_assessing_self-supervised_learning_representations_via_intrinsic_dimension.md)
+- [\[NeurIPS 2025\] Representation Consistency for Accurate and Coherent LLM Answer Aggregation](../../NeurIPS2025/interpretability/representation_consistency_for_accurate_and_coherent_llm_answer_aggregation.md)
+- [\[ICLR 2026\] The Tutor-Pupil Augmentation: Enhancing Learning and Interpretability via Input Corrections](../../ICLR2026/interpretability/the_tutor-pupil_augmentation_enhancing_learning_and_interpretability_via_input_c.md)
+- [\[ICLR 2026\] Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning](../../ICLR2026/interpretability/sparse_clip_co-optimizing_interpretability_and_performance_in_contrastive_learni.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality](muse_resolving_manifold_misalignment_in_visual_tokenization_via_topological_orth.md)

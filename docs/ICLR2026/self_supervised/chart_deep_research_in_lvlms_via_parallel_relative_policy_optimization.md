@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Chart Deep Research in LVLMs via Parallel Relative Policy Optimization
 description: >-
-  [ICLR 2026][Self-Supervised Learning][chart understanding] Proposes PRPO (Parallel Relative Policy Optimization) to resolve training bottlenecks in GRPO caused by multi-dimensional reward signal interference and heterogeneous data gradient conflicts through parallel decoupling at both reward and data levels. Simultaneously, constructs MCDR-Bench to transform subjective generat
+  [ICLR2026][Self-Supervised Learning][chart understanding] Proposes PRPO (Parallel Relative Policy Optimization) to resolve training bottlenecks in GRPO caused by multi-dimensional reward signal interference and heterogeneous data gradient conflicts through parallel decoupling at both reward and data levels. Simultaneously, constructs MCDR-Bench to transform subjective generation evaluation into objective error identification based on the "Principle of Error Uniqueness…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - chart understanding
-  - deep research
-  - RLHF
-  - policy optimization
-  - benchmark
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "chart understanding"
+  - "deep research"
+  - "RLHF"
+  - "policy optimization"
+  - "benchmark"
 date: 2026-05-08
-content_hash: c7324050dbcce2c5
+content_hash: 1fdbced007e1c86f
 ---
+
 # Chart Deep Research in LVLMs via Parallel Relative Policy Optimization
 
 **Conference**: ICLR2026  
@@ -145,10 +146,10 @@ The training backbone is Qwen2.5-VL-7B-Instruct.
 ## Related Papers
 
 - [\[NeurIPS 2025\] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization](../../NeurIPS2025/self_supervised/m-grpo_stabilizing_self-supervised_reinforcement_learning_for_multimodal_underst.md)
+- [\[ICLR 2026\] Samples Are Not Equal: A Sample Selection Approach for Deep Clustering](samples_are_not_equal_a_sample_selection_approach_for_deep_clustering.md)
 - [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](../../CVPR2026/self_supervised/scaling_parallel_sequence_models_to_vision_foundation_models.md)
 - [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](mini-cluster_guided_long-tailed_deep_clustering.md)
 - [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
-- [\[AAAI 2026\] FedGRPO: Privately Optimizing Foundation Models with Group-Relative Rewards from Domain Clients](../../AAAI2026/self_supervised/fedgrpo_privately_optimizing_foundation_models_with_group-relative_rewards_from_.md)
 
 </div>
 

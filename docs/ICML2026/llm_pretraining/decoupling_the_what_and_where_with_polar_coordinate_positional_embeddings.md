@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decoupling the "What" and "Where" With Polar Coordinate Positional Embeddings
 description: >-
-  [ICML 2026][Pretraining][RoPE] The authors point out that the mainstream positional encoding, RoPE, couples "content (what)" and "position (where)" into the same phase, leading to poor performance on tasks requiring "finding content by position" or "locating position by content." They propose PoPE, which uses softplus to separate magnitude (controll
+  [ICML2026][LLM Pretraining][Positional Encoding] The authors point out that the mainstream positional encoding, RoPE, couples "content (what)" and "position (where)" into the same phase, leading to poor performance on tasks requiring "finding content by position" or "locating position by content." They propose PoPE, which uses softplus to separate magnitude (controlling what) and pure positional phase (controlling where). As a minor modification to RoPE…
 tags:
-  - ICML 2026
-  - Pretraining
-  - RoPE
+  - "ICML2026"
+  - "LLM Pretraining"
+  - "Positional Encoding"
+  - "RoPE"
+  - "Polar Coordinates"
+  - "Length Extrapolation"
+  - "Autoregressive Sequence Modeling"
 date: 2026-05-08
-content_hash: 33c6a88736b08bf0
+content_hash: 0dda66f9bdb4a6b5
 ---
+
 # Decoupling the "What" and "Where" With Polar Coordinate Positional Embeddings
 
 **Conference**: ICML2026  
@@ -142,10 +147,10 @@ Removing PoPE components on OpenWebText (PPL, lower is better):
 ## Related Papers
 
 - [\[ICLR 2026\] Deconstructing Positional Information: From Attention Logits to Training Biases](../../ICLR2026/llm_pretraining/deconstructing_positional_information_from_attention_logits_to_training_biases.md)
-- [\[CVPR 2025\] Seeing What Matters: Empowering CLIP with Patch Generation-to-Selection](../../CVPR2025/llm_pretraining/seeing_what_matters_empowering_clip_with_patch_generation-to-selection.md)
+- [\[ICLR 2026\] What Scales in Cross-Entropy Scaling Law?](../../ICLR2026/llm_pretraining/what_scales_in_cross-entropy_scaling_law.md)
+- [\[ICLR 2026\] FoNE: Precise Single-Token Number Embeddings via Fourier Features](../../ICLR2026/llm_pretraining/fone_precise_single-token_number_embeddings_via_fourier_features.md)
+- [\[ICLR 2026\] Not All Documents Are What You Need for Extracting Instruction Tuning Data](../../ICLR2026/llm_pretraining/not_all_documents_are_what_you_need_for_extracting_instruction_tuning_data.md)
 - [\[CVPR 2025\] The Scene Language: Representing Scenes with Programs, Words, and Embeddings](../../CVPR2025/llm_pretraining/the_scene_language_representing_scenes_with_programs_words_and_embeddings.md)
-- [\[NeurIPS 2025\] ZEUS: Zero-shot Embeddings for Unsupervised Separation of Tabular Data](../../NeurIPS2025/llm_pretraining/zeus_zero-shot_embeddings_for_unsupervised_separation_of_tabular_data.md)
-- [\[ICCV 2025\] ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training](../../ICCV2025/llm_pretraining/aceg_improving_generalization_of_scene_coordinate_regression.md)
 
 </div>
 

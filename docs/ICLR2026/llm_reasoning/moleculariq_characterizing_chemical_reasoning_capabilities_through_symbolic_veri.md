@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MolecularIQ: Characterizing Chemical Reasoning Capabilities Through Symbolic Verification on Molecular Graphs
 description: >-
-  [ICLR 2026][LLM Reasoning][SMILES] MolecularIQ is the first **fully symbolic verifiable** molecular structure reasoning benchmark. All answers are precisely calculated from molecular graphs using RDKit, completely decoupling "true structural understanding" from "memorized molecule-property pairs." It fine-grainedly identifies where 38 LLMs fail across t
+  [ICLR 2026][Reasoning][Molecular graph reasoning] MolecularIQ is the first **fully symbolic verifiable** molecular structure reasoning benchmark. All answers are precisely calculated from molecular graphs using RDKit, completely decoupling "true structural understanding" from "memorized molecule-property pairs." It fine-grainedly identifies where 38 LLMs fail across task types, molecular complexity, and representation forms.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - SMILES
-  - RDKit
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Molecular graph reasoning"
+  - "Symbolic verification"
+  - "SMILES"
+  - "RDKit"
+  - "Verifiable rewards"
+  - "Chemistry LLM"
 date: 2026-05-08
-content_hash: 501fc85e75bdd612
+content_hash: 0adfab5acd56a51a
 ---
+
 # MolecularIQ: Characterizing Chemical Reasoning Capabilities Through Symbolic Verification on Molecular Graphs
 
 **Conference**: ICLR 2026  
@@ -111,13 +116,13 @@ flowchart TD
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs](vog_enhancing_llm_reasoning_through_stepwise_verification_on_knowledge_graphs.md)
-- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[AAAI 2026\] Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs](../../AAAI2026/llm_reasoning/graph_of_verification_structured_verification_of_llm_reasoning_with_directed_acy.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
 - [\[ICLR 2026\] Characterizing and Mitigating Reasoning Drift in Large Language Models](characterizing_and_mitigating_reasoning_drift_in_large_language_models.md)
 

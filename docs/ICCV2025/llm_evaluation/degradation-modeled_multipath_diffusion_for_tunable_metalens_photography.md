@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography
 description: >-
-  [ICCV 2025][LLM Evaluation][metalens] This paper proposes DMDiff, a framework that leverages the natural image priors of pretrained diffusion models. Through a positive/neutral/negative tripath multi-prompt diffusion str…
+  [ICCV 2025][LLM Evaluation][metalens] This paper proposes DMDiff, a framework that leverages the natural image priors of pretrained diffusion models. Through a positive/neutral/negative tripath multi-prompt diffusion strategy and a Spatially-Varying Degradation-Aware (SVDA) attention module, DMDiff achieves high-fidelity tunable image reconstruction for millimeter-scale metalens cameras, surpassing existing methods across multiple metrics.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "computational imaging"
   - "LoRA"
 date: 2026-05-08
-content_hash: df111ebd67bf8315
+content_hash: 45ece51fa6282663
 ---
 
 # Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography
@@ -128,10 +128,10 @@ The training loss is a weighted combination of L2 loss and LPIPS perceptual loss
 ## Related Papers
 
 - [\[ICCV 2025\] Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation](lay2story_extending_diffusion_transformers_for_layout-togglable_story_generation.md)
+- [\[CVPR 2025\] Erase Diffusion: Empowering Object Removal Through Calibrating Diffusion Pathways (EraDiff)](../../CVPR2025/llm_evaluation/erase_diffusion_empowering_object_removal_through_calibrating_diffusion_pathways.md)
+- [\[ICLR 2026\] CogniLoad: A Synthetic Natural Language Reasoning Benchmark With Tunable Length, Intrinsic Difficulty, and Distractor Density](../../ICLR2026/llm_evaluation/cogniload_a_synthetic_natural_language_reasoning_benchmark_with_tunable_length_i.md)
+- [\[ICLR 2026\] ParallelBench: Understanding the Trade-offs of Parallel Decoding in Diffusion LLMs](../../ICLR2026/llm_evaluation/parallelbench_understanding_the_trade-offs_of_parallel_decoding_in_diffusion_llm.md)
 - [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](../../ACL2026/llm_evaluation/dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
-- [\[ICLR 2026\] AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size](../../ICLR2026/llm_evaluation/adablock-dllm_semantic-aware_diffusion_llm_inference_via_adaptive_block_size.md)
-- [\[ICCV 2025\] DisCoPatch: Taming Adversarially-driven Batch Statistics for Improved Out-of-Distribution Detection](discopatch_taming_adversarially-driven_batch_statistics_for_improved_out-of-dist.md)
-- [\[ICCV 2025\] ForCenNet: Foreground-Centric Network for Document Image Rectification](forcennet_foreground-centric_network_for_document_image_rectification.md)
 
 </div>
 

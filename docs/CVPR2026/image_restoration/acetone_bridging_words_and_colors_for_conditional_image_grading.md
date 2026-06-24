@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] AceTone: Bridging Words and Colors for Conditional Image Grading
 description: >-
-  [CVPR 2026][Image Restoration][3D-LUT] AceTone is proposed as the first unified framework supporting multimodal conditional color grading for both text and reference images. It compresses 3D-LUT into 64 discrete tokens via VQ-VAE, trains a VLM to predict LUT token sequences, and utilizes GRPO reinforcement learning to align color similarity and aesthetic pr
+  [CVPR 2026][Image Restoration][Color grading] AceTone is proposed as the first unified framework supporting multimodal conditional color grading for both text and reference images. It compresses 3D-LUT into 64 discrete tokens via VQ-VAE, trains a VLM to predict LUT token sequences, and utilizes GRPO reinforcement learning to align color similarity and aesthetic preferences, achieving a 50% LPIPS improvement in style transfer and instruction-based grading.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - 3D-LUT
-  - VQ-VAE tokenizer
-  - VLM
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Color grading"
+  - "3D-LUT"
+  - "VQ-VAE tokenizer"
+  - "VLM"
+  - "GRPO reinforcement learning"
 date: 2026-05-08
-content_hash: 45f80754de79b0af
+content_hash: b1a9879be604fa14
 ---
+
 # AceTone: Bridging Words and Colors for Conditional Image Grading
 
 **Conference**: CVPR 2026  
@@ -134,10 +137,10 @@ On AceTone-Bench[Transfer], LPIPS decreased from 0.22 (SA-LUT) to **0.11** (a 50
 ## Related Papers
 
 - [\[CVPR 2026\] Bridging the Perception Gap in Image Super-Resolution Evaluation](bridging_the_perception_gap_in_image_super-resolution_evaluation.md)
-- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
 - [\[CVPR 2026\] CanonCGT: Reference-Based Color Grading via Canonical Pivot Representation](canoncgt_reference-based_color_grading_via_canonical_pivot_representation.md)
-- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 - [\[ICML 2026\] One-shot Conditional Sampling: MMD meets Nearest Neighbors](../../ICML2026/image_restoration/one-shot_conditional_sampling_mmd_meets_nearest_neighbors.md)
+- [\[CVPR 2026\] Hybrid Agents for Image Restoration](hybrid_agents_for_image_restoration.md)
+- [\[CVPR 2026\] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)
 
 </div>
 

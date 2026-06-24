@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reward is Enough: LLMs are In-Context Reinforcement Learners
 description: >-
-  [ICLR 2026][Reinforcement Learning][ICRL] This paper discovers that Reinforcement Learning behaviors emerge in LLMs during the inference phase (In-Context RL, ICRL). By concatenating past responses and corresponding scalar rewards into the context through multi-turn prompting, the model's response quality monotonically improves with context growth. It signific
+  [ICLR 2026][Reinforcement Learning][In-Context Reinforcement Learning] This paper discovers that Reinforcement Learning behaviors emerge in LLMs during the inference phase (In-Context RL, ICRL). By concatenating past responses and corresponding scalar rewards into the context through multi-turn prompting, the model's response quality monotonically improves with context growth. It significantly outperforms Self-Refine and Reflexion on Game of 24, Creative Writing, ScienceWorld…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - ICRL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "In-Context Reinforcement Learning"
+  - "ICRL"
+  - "Test-time Self-improvement"
+  - "Scalar Reward"
+  - "Multi-turn Prompting"
 date: 2026-05-08
-content_hash: c1c18abaef89fd53
+content_hash: 4b6ec308a2256627
 ---
+
 # Reward is Enough: LLMs are In-Context Reinforcement Learners
 
 **Conference**: ICLR 2026  

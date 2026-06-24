@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Characterizing the Expressivity of Local Attention in Transformers
 description: >-
-  [ACL 2026][LLM (Other)][Transformer] The authors utilize Linear Temporal Logic (LTL) as a unified characterization tool to strictly prove the following equivalences: global-only Transformer $\leftrightarrow \mathrm{LTL}[\mathrm{P}]$, $k$-local-only $\leftrightarrow \mathrm{LTL}[\mathrm{Y}^{\leq k}]$, and hybrid global+local $\leftrightarrow \mathrm{LTL}[\
+  [ACL 2026][LLM (Other)][Local Attention] The authors utilize Linear Temporal Logic (LTL) as a unified characterization tool to strictly prove the following equivalences: global-only Transformer $\leftrightarrow \mathrm{LTL}[\mathrm{P}]$, $k$-local-only $\leftrightarrow \mathrm{LTL}[\mathrm{Y}^{\leq k}]$, and hybrid global+local $\leftrightarrow \mathrm{LTL}[\mathrm{P}, \mathrm{Y}^{\leq k}]$. Consequently, they demonstrate that **local and global expressivities are incomparabl…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - Transformer
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Local Attention"
+  - "Expressivity"
+  - "Linear Temporal Logic (LTL)"
+  - "Regular Languages"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 46affbacc8a5cba3
+content_hash: 5208e5cc4c63ecbf
 ---
+
 # Characterizing the Expressivity of Local Attention in Transformers
 
 **Conference**: ACL 2026  
@@ -111,9 +116,9 @@ Values represent mean accuracy (%) across 5 seeds. Bold indicates the best row p
 
 - [\[NeurIPS 2025\] Characterizing the Expressivity of Fixed-Precision Transformer Language Models](../../NeurIPS2025/llm_nlp/characterizing_the_expressivity_of_fixed-precision_transformer_language_models.md)
 - [\[AAAI 2026\] Vision Transformers are Circulant Attention Learners](../../AAAI2026/llm_nlp/vision_transformers_are_circulant_attention_learners.md)
+- [\[NeurIPS 2025\] CAT: Circular-Convolutional Attention for Sub-Quadratic Transformers](../../NeurIPS2025/llm_nlp/cat_circular-convolutional_attention_for_sub-quadratic_transformers.md)
 - [\[NeurIPS 2025\] Strassen Attention, Split VC Dimension and Compositionality in Transformers](../../NeurIPS2025/llm_nlp/strassen_attention_split_vc_dimension_and_compositionality_in_transformers.md)
-- [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](../../AAAI2026/llm_nlp/learning_spatial_decay_for_vision_transformers.md)
-- [\[CVPR 2025\] Rethinking Spiking Self-Attention Mechanism: Implementing a-XNOR Similarity Calculation in Spiking Transformers](../../CVPR2025/llm_nlp/rethinking_spiking_self-attention_mechanism_implementing_a-xnor_similarity_calcu.md)
+- [\[ICLR 2026\] Trapped by simplicity: When Transformers fail to learn from noisy features](../../ICLR2026/llm_nlp/trapped_by_simplicity_when_transformers_fail_to_learn_from_noisy_features.md)
 
 </div>
 

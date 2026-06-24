@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Who can we trust? LLM-as-a-jury for Comparative Assessment
 description: >-
-  [ICML 2026][LLM Evaluation][LLM-as-a-jury] This paper points out that the reliability of multiple LLM judges in pairwise comparisons varies significantly. It proposes the BT-$\sigma$ model with judge-specific discrimination parameters, which simultaneously learns the ranking of candidate outputs and the reliability of each LLM judge without human calibration la
+  [ICML 2026][LLM Evaluation][LLM-as-a-jury] This paper points out that the reliability of multiple LLM judges in pairwise comparisons varies significantly. It proposes the BT-$\sigma$ model with judge-specific discrimination parameters, which simultaneously learns the ranking of candidate outputs and the reliability of each LLM judge without human calibration labels, thereby aligning more closely with human rankings than simple averaging or standard Bradley-Terry aggregation.
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - LLM-as-a-jury
-  - Bradley-Terry
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-jury"
+  - "Bradley-Terry"
+  - "Reviewer Reliability"
+  - "Pairwise Comparison"
+  - "Unsupervised Calibration"
 date: 2026-05-08
-content_hash: 2cdfd331944f13fc
+content_hash: 006d2eb7096034c3
 ---
+
 # Who can we trust? LLM-as-a-jury for Comparative Assessment
 
 **Conference**: ICML 2026  
@@ -113,11 +117,11 @@ Ablations focus on whether discriminators represent judge reliability and if asp
 
 ## Related Papers
 
-- [\[ACL 2025\] CoV-Eval: Can You Really Trust Code Copilots? Evaluating Large Language Models from a Code Security Perspective](../../ACL2025/llm_evaluation/cov_eval_evaluating_llms_from_code_security_perspective.md)
-- [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](../../ACL2026/llm_evaluation/teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
-- [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](../../ACL2026/llm_evaluation/scan_structured_capability_assessment_and_navigation_for_llms.md)
-- [\[ICML 2026\] Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs](who_flips_self-_and_cross-model_counterarguments_reveal_answer_instability_in_ll.md)
 - [\[ICML 2026\] The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust](the_acute_protocol_operationalizing_language_model_activations_for_better_calibr.md)
+- [\[ICML 2026\] Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs](who_flips_self-_and_cross-model_counterarguments_reveal_answer_instability_in_ll.md)
+- [\[ACL 2025\] CoV-Eval: Can You Really Trust Code Copilots? Evaluating Large Language Models from a Code Security Perspective](../../ACL2025/llm_evaluation/cov_eval_evaluating_llms_from_code_security_perspective.md)
+- [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](../../ICLR2026/llm_evaluation/rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)
+- [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](../../ACL2026/llm_evaluation/teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
 
 </div>
 

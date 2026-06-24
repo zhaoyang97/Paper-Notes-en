@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] AutoReproduce proposes a multi-agent framework that utilizes a "Paper Lineage" algorithm to mine implicit domain knowledge from referenced literature. This enables end-to-end automatic reproduction of paper experiments, achieving a code execution rate of 94.87% and a performance gap of only 19.72% on the self-construct
+  [ACL 2026][Multi-Agent][Paper Reproduction] AutoReproduce proposes a multi-agent framework that utilizes a "Paper Lineage" algorithm to mine implicit domain knowledge from referenced literature. This enables end-to-end automatic reproduction of paper experiments, achieving a code execution rate of 94.87% and a performance gap of only 19.72% on the self-constructed ReproduceBench.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Paper Reproduction"
+  - "Paper Lineage"
+  - "Code Generation"
+  - "Scientific Automation"
 date: 2026-05-08
-content_hash: 9288353b2b8bcb53
+content_hash: 42fce8f41a243522
 ---
+
 # AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage
 
 **Conference**: ACL 2026  
@@ -142,11 +147,11 @@ No model training involved. LLMs such as GPT-4o, Claude-3.5-Sonnet, o3-mini, and
 
 ## Related Papers
 
+- [\[ACL 2026\] PaperMentor: A Human-Centered Multi-Agent Writing Tutor for AI Research Papers on Overleaf](papermentor_a_human-centered_multi-agent_writing_tutor_for_ai_research_papers_on.md)
 - [\[AAAI 2026\] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation](../../AAAI2026/multi_agent/assemble_your_crew_automatic_multi-agent_communication_topol.md)
 - [\[ICML 2026\] Searching for Synergy in Shared Workspace Human-AI Collaboration](../../ICML2026/multi_agent/searching_for_synergy_in_shared_workspace_human-ai_collaboration.md)
 - [\[AAAI 2026\] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring](../../AAAI2026/multi_agent/hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia.md)
-- [\[ACL 2026\] PaperMentor: A Human-Centered Multi-Agent Writing Tutor for AI Research Papers on Overleaf](papermentor_a_human-centered_multi-agent_writing_tutor_for_ai_research_papers_on.md)
-- [\[CVPR 2025\] ComfyBench: Benchmarking LLM-based Agents in ComfyUI for Autonomously Designing Collaborative AI Systems](../../CVPR2025/multi_agent/comfybench_benchmarking_llm-based_agents_in_comfyui_for_autonomously_designing_c.md)
+- [\[ICLR 2026\] AI-for-Science Low-code Platform with Bayesian Adversarial Multi-Agent Framework](../../ICLR2026/multi_agent/ai-for-science_low-code_platform_with_bayesian_adversarial_multi-agent_framework.md)
 
 </div>
 

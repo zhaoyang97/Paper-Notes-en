@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper reveals and formalizes a novel vulnerability—"Unlearning Trace Detection": an LLM processed by machine unlearning (MU) leaves persistent "fingerprints" in its outputs and internal activations. Even when using only prompts unrelated to the forgotten content, a lightweight supervised classifier can determine w
+  [ICLR 2026][LLM Safety][Machine Unlearning] This paper reveals and formalizes a novel vulnerability—"Unlearning Trace Detection": an LLM processed by machine unlearning (MU) leaves persistent "fingerprints" in its outputs and internal activations. Even when using only prompts unrelated to the forgotten content, a lightweight supervised classifier can determine whether a model has undergone unlearning with 90%+ accuracy, and these traces become more pronounced as the model siz…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Unlearning Trace Detection"
+  - "Activation Fingerprinting"
+  - "Spectral Analysis"
+  - "Reverse Engineering"
 date: 2026-05-08
-content_hash: e6dc4fe9e1be4e49
+content_hash: 002ac8de2d6888ea
 ---
+
 # Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs
 
 **Conference**: ICLR 2026  
@@ -132,14 +138,17 @@ Classifier complexity (Table 4): A Residual Head (94.67/81.23/69.57) performs si
 
 <div class="related-papers" markdown="1">
 
-- **RMU**: Representation Misdirection for Unlearning (2024)
-- **NPO**: Negative Preference Optimization (2024)
-- **WMDP**: Weapons of Mass Destruction Proxy Benchmark (2024)
+## Related Papers
+
+- [\[ICLR 2026\] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs](model_collapse_is_not_a_bug_but_a_feature_in_machine_unlearning_for_llms.md)
+- [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
+- [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
+- [\[ICLR 2026\] Learning-Time Encoding Shapes Unlearning in LLMs](learning-time_encoding_shapes_unlearning_in_llms.md)
+- [\[ICLR 2026\] From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons](from_sure_to_sorry_detecting_jailbreak_in_large_vision_language_model_via_jailne.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)

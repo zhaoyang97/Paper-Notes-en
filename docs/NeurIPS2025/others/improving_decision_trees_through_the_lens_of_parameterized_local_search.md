@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Decision Trees through the Lens of Parameterized Local Search
 description: >-
-  [NeurIPS 2025][Decision Trees] This paper analyzes local search operations for decision tree optimization through the lens of parameterized complexity, identifies the sources of computational hardness…
+  [NeurIPS 2025][Decision Trees] This paper analyzes local search operations for decision tree optimization through the lens of parameterized complexity, identifies the sources of computational hardness, and proves that the combination of the number of features and domain size yields fixed-parameter tractability (FPT), accompanied by a proof-of-concept implementation.
 tags:
   - "NeurIPS 2025"
   - "Decision Trees"
@@ -11,7 +11,7 @@ tags:
   - "NP-Completeness"
   - "Fixed-Parameter Tractability"
 date: 2026-05-08
-content_hash: cc36fda1cfc21fc4
+content_hash: 589046eb866ca271
 ---
 
 # Improving Decision Trees through the Lens of Parameterized Local Search
@@ -201,9 +201,9 @@ Core observation: The practical runtime of the FPT algorithm is consistent with 
 
 - [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](../../ICLR2026/others/active_learning_for_decision_trees_with_provable_guarantees.md)
 - [\[NeurIPS 2025\] Regression Trees Know Calculus](regression_trees_know_calculus.md)
-- [\[NeurIPS 2025\] Rethinking PCA Through Duality](rethinking_pca_through_duality.md)
 - [\[AAAI 2026\] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach](../../AAAI2026/others/approximation_algorithm_for_constrained_k-center_clustering_.md)
 - [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](../../AAAI2026/others/from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
+- [\[NeurIPS 2025\] Rethinking PCA Through Duality](rethinking_pca_through_duality.md)
 
 </div>
 

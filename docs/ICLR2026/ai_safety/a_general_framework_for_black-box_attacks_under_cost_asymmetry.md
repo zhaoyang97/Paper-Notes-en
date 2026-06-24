@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A General Framework for Black-Box Attacks Under Cost Asymmetry
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Addressing real-world scenarios where "different queries incur different costs" (e.g., submitting violating images to an NSFW detector triggers account bans), this paper proposes a general framework for decision-based black-box attacks adaptable to **any cost ratio $c^\star$**. By replacing binary search with Asymmetri
+  [ICLR 2026][AI Safety][Decision-based black-box attacks] Addressing real-world scenarios where "different queries incur different costs" (e.g., submitting violating images to an NSFW detector triggers account bans), this paper proposes a general framework for decision-based black-box attacks adaptable to **any cost ratio $c^\star$**. By replacing binary search with Asymmetric Search (AS) and standard Monte Carlo gradient estimation with Asymmetric Gradient Estimation (AGREST)…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Decision-based black-box attacks"
+  - "cost asymmetry"
+  - "boundary search"
+  - "gradient estimation"
+  - "importance sampling"
 date: 2026-05-08
-content_hash: adf1a3ea37d8ddd7
+content_hash: 54a08f7eff99fd81
 ---
+
 # A General Framework for Black-Box Attacks Under Cost Asymmetry
 
 **Conference**: ICLR 2026  
@@ -111,11 +117,20 @@ At $c^\star{=}10^3$, A-HSJA reduces perturbation from 23.72 to 12.28, and A-GeoD
 - **Value**: ⭐⭐⭐⭐ Significant implications for both the development of attacks and the auditing of content moderation systems.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks](seri_gradient-free_sensitive_region_identification_in_decision-based_black-box_a.md)
+- [\[ICLR 2026\] Traceable Black-box Watermarks for Federated Learning](traceable_black-box_watermarks_for_federated_learning.md)
+- [\[ICLR 2026\] Black-Box Privacy Attacks on Shared Representations in Multitask Learning](black-box_privacy_attacks_on_shared_representations_in_multitask_learning.md)
+- [\[ICLR 2026\] Fairness via Independence: A General Regularization Framework for Machine Learning](fairness_via_independence_a_general_regularization_framework_for_machine_learnin.md)
+- [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](../../CVPR2026/ai_safety/seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks](seri_gradient-free_sensitive_region_identification_in_decision-based_black-box_a.md)

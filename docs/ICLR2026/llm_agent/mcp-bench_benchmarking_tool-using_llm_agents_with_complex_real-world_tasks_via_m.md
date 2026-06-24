@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers
 description: >-
-  [ICLR 2026][LLM Agent][MCP] MCP-Bench connects agents to 28 real-world production-grade MCP services (totaling 250 tools across 11 domains such as finance, research, and travel). By utilizing automatically synthesized complex tasks characterized by "fuzzy instructions, multi-objectives, and cross-domain dependencies," combined with a dual-layer e
+  [ICLR 2026][LLM Agent][MCP] MCP-Bench connects agents to 28 real-world production-grade MCP services (totaling 250 tools across 11 domains such as finance, research, and travel). By utilizing automatically synthesized complex tasks characterized by "fuzzy instructions, multi-objectives, and cross-domain dependencies," combined with a dual-layer evaluation of "rule-based checking + LLM-as-a-Judge," it systematically exposes the genuine deficiencies of 20 mainstream LLMs in lon…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - MCP
-  - LLM-as-a-Judge
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "MCP"
+  - "Tool-using Agents"
+  - "Multi-hop Planning"
+  - "Cross-service Orchestration"
+  - "LLM-as-a-Judge"
+  - "Task Synthesis"
 date: 2026-05-08
-content_hash: aaef5b9b97ee7f24
+content_hash: 7c74d05989131dd6
 ---
+
 # MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers
 
 **Conference**: ICLR 2026  
@@ -102,16 +107,16 @@ flowchart LR
 - **Value**: ⭐⭐⭐⭐⭐ — Directly addresses the problem of leaderboard scores masking planning flaws, providing a standardized and scalable platform for realistic agent evaluation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
+- [\[ICLR 2026\] Terminal-Bench: Benchmarking Agents on Difficult, Real-World Tasks in the Command Line Interface](terminal-bench_benchmarking_agents_on_hard_realistic_tasks_in_command_line_inter.md)
 - [\[ICLR 2026\] MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents](mcp_security_bench_msb_benchmarking_attacks_against_model_context_protocol_in_ll.md)
 - [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
 - [\[ACL 2026\] MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools](../../ACL2026/llm_agent/mcp-flow_facilitating_llm_agents_to_master_real-world_diverse_and_scaling_mcp_to.md)
-- [\[ICML 2026\] MCP-Persona: 用环境模拟评估 LLM agent 在真实个人化应用上的能力](../../ICML2026/llm_agent/mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
 
 </div>
 

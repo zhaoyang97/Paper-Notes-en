@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] TadA-Bench: A Million-Variant Benchmark for Future-Round Discovery Toward Agentic Protein Engineering
 description: >-
-  [ICML 2026][Computational Biology][protein engineering] TadA-Bench utilizes million-scale TadA variant sequences from 31 rounds of real directed evolution wet-lab experiments to formalize protein engineering as a fixed-data replay task of "predicting future rounds using preceding ones." Equipped with a Seq2Graph unified labeling pipeline, it reveals that mainstream biologic
+  [ICML 2026][Computational Biology][protein engineering] TadA-Bench utilizes million-scale TadA variant sequences from 31 rounds of real directed evolution wet-lab experiments to formalize protein engineering as a fixed-data replay task of "predicting future rounds using preceding ones." Equipped with a Seq2Graph unified labeling pipeline, it reveals that mainstream biological foundation models significantly fail in "future-round discovery."
 tags:
-  - ICML 2026
-  - Computational Biology
-  - protein engineering
-  - directed evolution
-  - future-round discovery
-  - benchmark
-  - biological foundation models
+  - "ICML 2026"
+  - "Computational Biology"
+  - "protein engineering"
+  - "directed evolution"
+  - "future-round discovery"
+  - "benchmark"
+  - "biological foundation models"
 date: 2026-05-08
-content_hash: 7fbe86109b6bfa24
+content_hash: d7c6ecddcb546f2c
 ---
+
 # TadA-Bench: A Million-Variant Benchmark for Future-Round Discovery Toward Agentic Protein Engineering
 
 **Conference**: ICML 2026  
@@ -135,11 +136,11 @@ Main Conclusion: Across DNA/RNA/Protein views, Spearman correlation for all froz
 
 ## Related Papers
 
-- [\[ICLR 2026\] EvoFlows: Evolutionary Edit-Based Flow-Matching for Protein Engineering](../../ICLR2026/computational_biology/evoflows_evolutionary_edit-based_flow-matching_for_protein_engineering.md)
-- [\[ICLR 2026\] How to Make the Most of Your Masked Language Model for Protein Engineering](../../ICLR2026/computational_biology/how_to_make_the_most_of_your_masked_language_model_for_protein_engineering.md)
+- [\[ICLR 2026\] NC-Bench and NCfold: A Benchmark and Closed-Loop Framework for RNA Non-Canonical Base-Pair Prediction](../../ICLR2026/computational_biology/nc-bench_and_ncfold_a_benchmark_and_closed-loop_framework_for_rna_non-canonical_.md)
+- [\[ICLR 2026\] CAPSUL: A Comprehensive Human Protein Benchmark for Subcellular Localization](../../ICLR2026/computational_biology/capsul_a_comprehensive_human_protein_benchmark_for_subcellular_localization.md)
+- [\[ICLR 2026\] GeomMotif: A Benchmark for Arbitrary Geometric Preservation in Protein Generation](../../ICLR2026/computational_biology/geommotif_a_benchmark_for_arbitrary_geometric_preservation_in_protein_generation.md)
 - [\[ICML 2026\] Influence-Guided Symbolic Regression: Scientific Discovery via LLM-Driven Equation Search with Granular Feedback](influence-guided_symbolic_regression_scientific_discovery_via_llm-driven_equatio.md)
-- [\[ICML 2025\] scSSL-Bench: Benchmarking Self-Supervised Learning for Single-Cell Data](../../ICML2025/computational_biology/scssl-bench_benchmarking_self-supervised_learning_for_single-cell_data.md)
-- [\[NeurIPS 2025\] A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification](../../NeurIPS2025/computational_biology/a_standardized_benchmark_for_multilabel_antimicrobial_peptide_classification.md)
+- [\[ICML 2026\] LineageFlow: Flow Matching for High-Fidelity Family-Aware Protein Sequence Generation](lineageflow_flow_matching_for_high-fidelity_family-aware_protein_sequence_genera.md)
 
 </div>
 

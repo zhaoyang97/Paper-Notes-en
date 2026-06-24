@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Policy Contrastive Decoding for Robotic Foundation Models
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] Addressing the issue where generalist robot policies tend to form spurious correlations between irrelevant features (like background/texture) and actions, this paper proposes Policy Contrastive Decoding (PCD). PCD is a training-free, plug-and-play method that performs contrastive decoding between action distributions d
+  [ICLR 2026][Robotics][Robotic Foundation Models] Addressing the issue where generalist robot policies tend to form spurious correlations between irrelevant features (like background/texture) and actions, this paper proposes Policy Contrastive Decoding (PCD). PCD is a training-free, plug-and-play method that performs contrastive decoding between action distributions derived from "original observations" and "object-removed observations." This forces the policy's attention back…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Robotic Foundation Models"
+  - "Spurious Correlation"
+  - "Contrastive Decoding"
+  - "Training-free Plugin"
+  - "Generalization"
 date: 2026-05-08
-content_hash: 1169869c5aca567b
+content_hash: 3e12dfea8959499b
 ---
+
 # Policy Contrastive Decoding for Robotic Foundation Models
 
 **Conference**: ICLR 2026  
@@ -127,7 +133,7 @@ Average results across 9 simulation tasks.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

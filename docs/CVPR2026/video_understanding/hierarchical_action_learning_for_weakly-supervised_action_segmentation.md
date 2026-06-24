@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Action Learning for Weakly-Supervised Action Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] HAL leverages the time-scale asymmetry—where low-level visual features change rapidly while high-level action semantics change slowly—to construct a hierarchical causal generative process with a smooth transition constraint. This allows the model to learn identifiable high-level action latent variables under weak super
+  [CVPR 2026][Video Understanding][Weakly-supervised action segmentation] HAL leverages the time-scale asymmetry—where low-level visual features change rapidly while high-level action semantics change slowly—to construct a hierarchical causal generative process with a smooth transition constraint. This allows the model to learn identifiable high-level action latent variables under weak supervision using only action transcripts, mitigating over-segmentation and achieving new SOT…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Weakly-supervised action segmentation"
+  - "Causal representation learning"
+  - "Hierarchical latent variables"
+  - "Identifiability"
+  - "Smoothing constraints"
 date: 2026-05-08
-content_hash: 4d0493fd3cb2bab4
+content_hash: ca2aede3618c3bc5
 ---
+
 # Hierarchical Action Learning for Weakly-Supervised Action Segmentation
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ HAL gains primarily stem from the **smooth transition constraint $\mathcal{L}_s$
 
 ## Related Papers
 
-- [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
-- [\[CVPR 2026\] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation](leveraging_class_distributions_in_clip_for_weakly_supervised_semantic_segmentati.md)
-- [\[CVPR 2026\] Rethinking Box Supervision: Bias-Free Weakly Supervised Medical Segmentation](rethinking_box_supervision_bias-free_weakly_supervised_medical_segmentation.md)
-- [\[CVPR 2026\] LaDy: Lagrangian-Dynamic Informed Network for Skeleton-based Action Segmentation via Spatial-Temporal Modulation](lady_lagrangian-dynamic_informed_network_for_skeleton-based_action_segmentation_.md)
-- [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](../../ICCV2025/segmentation/joint_self-supervised_video_alignment_and_action_segmentation.md)
+- [\[CVPR 2026\] Learning from Noisy Supervision: A Denoising-Debiasing Framework for Weakly Supervised Video Anomaly Detection](learning_from_noisy_supervision_a_denoising-debiasing_framework_for_weakly_super.md)
+- [\[CVPR 2026\] Spectral Scalpel: Amplifying Adjacent Action Discrepancy via Frequency-Selective Filtering for Skeleton-Based Action Segmentation](spectral_scalpel_amplifying_adjacent_action_discrepancy_via_frequency-selective_.md)
+- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
+- [\[CVPR 2026\] Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection](joint_learning_of_general_and_diverse_patterns_with_mixture_of_memory_experts_fo.md)
+- [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
 
 </div>
 

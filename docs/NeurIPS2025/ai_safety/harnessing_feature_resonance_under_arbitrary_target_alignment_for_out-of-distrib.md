@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Harnessing Feature Resonance under Arbitrary Target Alignment for Out-of-Distribution Node Detection
 description: >-
-  [NeurIPS 2025][AI Safety][OOD detection] This paper discovers the *Feature Resonance* phenomenon—when optimizing the representations of known in-distribution (ID) nodes…
+  [NeurIPS 2025][AI Safety][OOD detection] This paper discovers the *Feature Resonance* phenomenon—when optimizing the representations of known in-distribution (ID) nodes, unknown ID nodes undergo significantly larger representational changes than OOD nodes, and this phenomenon is label-agnostic. Based on this observation, the authors propose RSL, a graph OOD node detection framework that requires no multi-class labels, achieving state-of-the-art performance across 13 datasets.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -13,7 +13,7 @@ tags:
   - "node-level"
   - "label-agnostic"
 date: 2026-05-08
-content_hash: 60fd73a1c9ddb049
+content_hash: 4a6eda9f76d8f6b3
 ---
 
 # Harnessing Feature Resonance under Arbitrary Target Alignment for Out-of-Distribution Node Detection
@@ -180,7 +180,7 @@ On heterophilic graphs (Squirrel, WikiCS, Chameleon), RSL reduces FPR95 by an av
 - [\[NeurIPS 2025\] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)
 - [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
 - [\[NeurIPS 2025\] SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection](spurious-aware_prototype_refinement_for_reliable_out-of-distribution_detection.md)
-- [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](../../CVPR2026/ai_safety/enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
+- [\[ICLR 2026\] GradPCA: Leveraging NTK Alignment for Reliable Out-of-Distribution Detection](../../ICLR2026/ai_safety/gradpca_leveraging_ntk_alignment_for_reliable_out-of-distribution_detection.md)
 
 </div>
 

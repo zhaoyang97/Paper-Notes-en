@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LayerIF: Estimating Layer Quality for Large Language Models using Influence Functions
 description: >-
-  [NeurIPS 2025][Model Compression][Influence Functions] LayerIF proposes using influence functions (IFs) to quantify the training quality of each layer in LLMs. By aggregating positive influence scores per layer…
+  [NeurIPS 2025][Model Compression][Influence Functions] LayerIF proposes using influence functions (IFs) to quantify the training quality of each layer in LLMs. By aggregating positive influence scores per layer, it derives a data-driven layer importance estimate, which is subsequently applied to two downstream tasks: LoRA-MoE expert allocation and layer-wise sparse pruning. The method achieves accuracy gains of 1.61% and 0.90% on Mistral-7B and Gemma-7B, respectively.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Model Pruning"
   - "Layer-wise Sparsity Allocation"
 date: 2026-05-08
-content_hash: 9834d22cac95ed0b
+content_hash: f4d25f680186bae7
 ---
 
 # LayerIF: Estimating Layer Quality for Large Language Models using Influence Functions
@@ -150,8 +150,8 @@ Performance degrades noticeably under reversed allocation, validating the hypoth
 - [\[NeurIPS 2025\] A Simple Linear Patch Revives Layer-Pruned Large Language Models](a_simple_linear_patch_revives_layerpruned_large_language_mod.md)
 - [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
 - [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
-- [\[NeurIPS 2025\] Restoring Pruned Large Language Models via Lost Component Compensation](restoring_pruned_large_language_models_via_lost_component_compensation.md)
-- [\[NeurIPS 2025\] The Structure of Relation Decoding Linear Operators in Large Language Models](the_structure_of_relation_decoding_linear_operators_in_large_language_models.md)
+- [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
+- [\[NeurIPS 2025\] FastLongSpeech: Enhancing Large Speech-Language Models for Efficient Long-Speech Processing](fastlongspeech_enhancing_large_speech-language_models_for_efficient_long-speech_.md)
 
 </div>
 

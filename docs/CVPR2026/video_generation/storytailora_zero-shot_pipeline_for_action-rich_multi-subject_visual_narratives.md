@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives
 description: >-
-  [CVPR 2026][Video Generation][visual storytelling] The researchers propose StoryTailor, a zero-shot visual storytelling pipeline. By utilizing Gaussian Central Attention (GCA) to mitigate subject overlap and background leakage, Action-Boosted Singular Value Reweighting (AB-SVR) to amplify action semantics, and Selective Forgetting Cache (SFC) to maintain inter-frame ba
+  [CVPR 2026][Video Generation][visual storytelling] The researchers propose StoryTailor, a zero-shot visual storytelling pipeline. By utilizing Gaussian Central Attention (GCA) to mitigate subject overlap and background leakage, Action-Boosted Singular Value Reweighting (AB-SVR) to amplify action semantics, and Selective Forgetting Cache (SFC) to maintain inter-frame background continuity, it achieves action-rich image narrative generation with multiple subjects on a single RT…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - visual storytelling
-  - multi-subject
-  - Diffusion Model
-  - Attention
+  - "CVPR 2026"
+  - "Video Generation"
+  - "visual storytelling"
+  - "zero-shot"
+  - "multi-subject"
+  - "diffusion models"
+  - "attention mechanisms"
 date: 2026-05-08
-content_hash: 57270d54ae190207
+content_hash: f5fd3a08bcb89ac8
 ---
+
 # StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives
 
 **Conference**: CVPR 2026  
@@ -137,10 +139,10 @@ This is a zero-training method. All three modules are plug-and-play during SDXL 
 ## Related Papers
 
 - [\[CVPR 2026\] HoloCine: Holistic Generation of Cinematic Multi-Shot Long Video Narratives](holocine_holistic_generation_of_cinematic_multi-shot_long_video_narratives.md)
+- [\[CVPR 2026\] Scaling Zero-Shot Reference-to-Video Generation](scaling_zero-shot_reference-to-video_generation.md)
 - [\[CVPR 2026\] ShotDirector: Directorially Controllable Multi-Shot Video Generation with Cinematographic Transitions](shotdirector_directorially_controllable_multi-shot_video_generation_with_cinemat.md)
 - [\[CVPR 2026\] Are Image-to-Video Models Good Zero-Shot Image Editors?](are_image-to-video_models_good_zero-shot_image_editors.md)
 - [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](multishotmaster_a_controllable_multi-shot_video_generation_framework.md)
-- [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
 
 </div>
 

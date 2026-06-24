@@ -2,7 +2,19 @@
 title: >-
   [Paper Note] Retrieving Counterfactuals Improves Visual In-Context Learning
 description: >-
-  [CVPR 2026][Causal Inference][visual in-context learning] The CIRCLES framework is proposed to retrieve counterfactual examples through attribute-guided composed image retrieval, constructing a dual-channel in-context demonstration of "causality + correlation" to significantly enhance the fine-grained visual reasoning capabilities of VLMs. ---
+  [CVPR 2026][Causal Inference][visual in-context learning] The CIRCLES framework is proposed to retrieve counterfactual examples through attribute-guided composed image retrieval, constructing a dual-channel in-context demonstration of "causality + correlation" to significantly enhance the fine-grained visual reasoning capabilities of VLMs.
+tags:
+  - "CVPR 2026"
+  - "Causal Inference"
+  - "visual in-context learning"
+  - "counterfactual reasoning"
+  - "composed image retrieval"
+  - "vision-language models"
+  - "demonstration selection"
+date: 2026-05-08
+content_hash: 47c79145fd0b3394
+---
+
 tags:
   - CVPR 2026
   - Causal Inference
@@ -173,8 +185,8 @@ CIRCLES is a **training-free** framework:
 - [\[CVPR 2026\] MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations](maskdime_adaptive_masked_diffusion_for_precise_and_efficient_visual_counterfactu.md)
 - [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](../../NeurIPS2025/causal_inference/do-pfn_in-context_learning_for_causal_effect_estimation.md)
 - [\[NeurIPS 2025\] Cyclic Counterfactuals under Shift–Scale Interventions](../../NeurIPS2025/causal_inference/cyclic_counterfactuals_under_shift-scale_interventions.md)
+- [\[ICLR 2026\] Conformalized Survival Counterfactuals Prediction for General Right-Censored Data](../../ICLR2026/causal_inference/conformalized_survival_counterfactuals_prediction_for_general_right-censored_dat.md)
 - [\[ICML 2025\] RATE: Causal Explainability of Reward Models with Imperfect Counterfactuals](../../ICML2025/causal_inference/rate_causal_explainability_of_reward_models_with_imperfect_counterfactuals.md)
-- [\[ICCV 2025\] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets](../../ICCV2025/causal_inference/a_visual_leap_in_clip_compositionality_reasoning_through_gen.md)
 
 </div>
 

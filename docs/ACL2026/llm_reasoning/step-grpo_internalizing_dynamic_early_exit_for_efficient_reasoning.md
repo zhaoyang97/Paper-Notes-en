@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][GRPO] This paper proposes Step-GRPO, which internalizes dynamic early exit capabilities into the model. It measures reasoning complexity through semantic steps rather than raw tokens and utilizes dynamic truncation Rollout to expose short, correct trajectories. Combined with a step-aware relative reward to guide the model to
+  [ACL 2026][Reasoning][Efficient Reasoning] This paper proposes Step-GRPO, which internalizes dynamic early exit capabilities into the model. It measures reasoning complexity through semantic steps rather than raw tokens and utilizes dynamic truncation Rollout to expose short, correct trajectories. Combined with a step-aware relative reward to guide the model to stop reasoning at appropriate moments, it achieves a 32% reduction in token consumption on Qwen3-8B without a drop i…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - GRPO
+  - "ACL 2026"
+  - "Reasoning"
+  - "Efficient Reasoning"
+  - "GRPO"
+  - "Semantic Steps"
+  - "Dynamic Truncation"
+  - "Overthinking"
 date: 2026-05-08
-content_hash: cc97d04a8cdd7066
+content_hash: 2331543e6b5c703c
 ---
+
 # Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning
 
 **Conference**: ACL 2026  
@@ -140,10 +145,10 @@ Standard GRPO policy gradient objective + PPO clipping + KL regularization. Hype
 ## Related Papers
 
 - [\[ACL 2026\] When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning](when_is_thinking_enough_early_exit_via_sufficiency_assessment_for_efficient_reas.md)
-- [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
+- [\[ICLR 2026\] Dynamic Early Exit in Reasoning Models](../../ICLR2026/llm_reasoning/dynamic_early_exit_in_reasoning_models.md)
 - [\[ACL 2026\] DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models](drp_distilled_reasoning_pruning_with_skill-aware_step_decomposition_for_efficien.md)
-- [\[ACL 2026\] Stabilizing Efficient Reasoning with Step-Level Advantage Selection](stabilizing_efficient_reasoning_with_step-level_advantage_selection.md)
-- [\[ACL 2026\] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning](etr_entropy_trend_reward_for_efficient_chain-of-thought_reasoning.md)
+- [\[ACL 2026\] N-GRPO: Embedding-Level Neighbor Mixing for Enhanced Policy Optimization](n-grpo_embedding-level_neighbor_mixing_for_enhanced_policy_optimization.md)
+- [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](../../ICLR2026/llm_reasoning/drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 
 </div>
 

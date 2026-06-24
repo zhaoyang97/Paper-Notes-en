@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SimROD: A Simple Baseline for Raw Object Detection with Global and Local Enhancements
 description: >-
-  [AAAI 2026][Object Detection][RAW image] This paper proposes SimROD, an extremely lightweight (only 0.003M parameters) RAW image object detection method that surpasses complex state-of-the-art approaches on multiple RAW…
+  [AAAI 2026][Object Detection][RAW image] This paper proposes SimROD, an extremely lightweight (only 0.003M parameters) RAW image object detection method that surpasses complex state-of-the-art approaches on multiple RAW detection benchmarks through global Gamma enhancement (4 learnable parameters) and green channel-guided local enhancement.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -11,7 +11,7 @@ tags:
   - "green channel"
   - "lightweight"
 date: 2026-05-08
-content_hash: 4ed078cf7d5932d9
+content_hash: 38f9351953fbdad4
 ---
 
 # SimROD: A Simple Baseline for Raw Object Detection with Global and Local Enhancements
@@ -200,10 +200,10 @@ SimROD achieves +2.4 AP over DIAP on ROD, +0.8 AP on LOD, and +1.0 AP on Pascal-
 ## Related Papers
 
 - [\[CVPR 2026\] DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection](../../CVPR2026/object_detection/da-mamba_learning_domain-aware_state_space_model_for_global-local_alignment_in_d.md)
-- [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
+- [\[CVPR 2025\] Towards RAW Object Detection in Diverse Conditions](../../CVPR2025/object_detection/towards_raw_object_detection_in_diverse_conditions.md)
+- [\[CVPR 2025\] SimLTD: Simple Supervised and Semi-Supervised Long-Tailed Object Detection](../../CVPR2025/object_detection/simltd_simple_supervised_and_semi-supervised_long-tailed_object_detection.md)
+- [\[CVPR 2026\] GMT: Effective Global Framework for Multi-Camera Multi-Target Tracking](../../CVPR2026/object_detection/gmt_effective_global_framework_for_multi-camera_multi-target_tracking.md)
 - [\[CVPR 2026\] SpiralDiff: Spiral Diffusion with LoRA for RGB-to-RAW Conversion Across Cameras](../../CVPR2026/object_detection/spiraldiff_spiral_diffusion_with_lora_for_rgb-to-raw_conversion_across_cameras.md)
-- [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](yolo-iod_towards_real_time_incremental_object_detection.md)
-- [\[AAAI 2026\] T-Rex-Omni: Integrating Negative Visual Prompt in Generic Object Detection](t-rex-omni_integrating_negative_visual_prompt_in_generic_object_detection.md)
 
 </div>
 

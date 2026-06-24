@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Addressing "concept confusion" (where tail samples are misclassified into semantically related classes) during foundation model fine-tuning for long-tailed recognition, CUE provides instance-level semantic cues via zero-shot CLIP and class-level cues via LLMs. By supervising these related classes as positive labels usi
+  [CVPR 2026][Self-Supervised Learning][Long-tailed distribution] Addressing "concept confusion" (where tail samples are misclassified into semantically related classes) during foundation model fine-tuning for long-tailed recognition, CUE provides instance-level semantic cues via zero-shot CLIP and class-level cues via LLMs. By supervising these related classes as positive labels using two Binary Logit-Adjustment (BLA) auxiliary losses, CUE preserves the inter-class relationshi…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Long-tailed distribution"
+  - "concept confusion"
+  - "multi-label expansion"
+  - "CLIP zero-shot"
+  - "LLM semantic neighbors"
 date: 2026-05-08
-content_hash: 58e79f276da9e49c
+content_hash: 86ab9e8293e938e5
 ---
+
 # CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,16 @@ Starting from the LIFT baseline (AdaptFormer + LA) adding cues (Table 5):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)
 - [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
 - [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](reframing_long-tailed_learning_via_loss_landscape_geometry.md)
 - [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
-- [\[CVPR 2026\] GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency](gaussianmatch_semi-supervised_regression_with_pseudo-label_filtering_via_multi-v.md)
-- [\[AAAI 2026\] BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition](../../AAAI2026/self_supervised/bce3s_binary_cross-entropy_based_tripartite_synergistic_learning_for_long-tailed.md)
+- [\[CVPR 2026\] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)
 
 </div>
 

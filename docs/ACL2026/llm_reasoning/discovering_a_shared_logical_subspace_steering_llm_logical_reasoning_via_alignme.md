@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper discovers a shared logical subspace within LLMs that aligns natural language and symbolic logic representations. By steering activations along this subspace during inference, logical reasoning accuracy is improved by up to 11 percentage points without requiring training.
+  [ACL 2026][Reasoning][Logical Reasoning] This paper discovers a shared logical subspace within LLMs that aligns natural language and symbolic logic representations. By steering activations along this subspace during inference, logical reasoning accuracy is improved by up to 11 percentage points without requiring training.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Logical Reasoning"
+  - "Multi-view Subspace"
+  - "Activation Steering"
+  - "CCA Alignment"
+  - "Training-free Inference"
 date: 2026-05-08
-content_hash: 1b3296f67e1e298b
+content_hash: 63f4e12b45dbbe43
 ---
+
 # Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views
 
 **Conference**: ACL 2026  
@@ -146,8 +152,8 @@ A training-free method. Subspace learning only requires a one-time PCA+CCA estim
 - [\[ACL 2026\] Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning](logical_phase_transitions_understanding_collapse_in_llm_logical_reasoning.md)
 - [\[ACL 2026\] Semantic-Aware Logical Reasoning via a Semiotic Framework](semantic-aware_logical_reasoning_via_a_semiotic_framework.md)
 - [\[NeurIPS 2025\] MuSLR: Multimodal Symbolic Logical Reasoning](../../NeurIPS2025/llm_reasoning/muslr_multimodal_symbolic_logical_reasoning.md)
-- [\[ACL 2026\] Self-Awareness before Action: Mitigating Logical Inertia via Proactive Cognitive Awareness](self-awareness_before_action_mitigating_logical_inertia_via_proactive_cognitive_.md)
 - [\[ICLR 2026\] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision](../../ICLR2026/llm_reasoning/logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision.md)
+- [\[ICLR 2026\] ActivationReasoning: Logical Reasoning in Latent Activation Spaces](../../ICLR2026/llm_reasoning/activationreasoning_logical_reasoning_in_latent_activation_spaces.md)
 
 </div>
 

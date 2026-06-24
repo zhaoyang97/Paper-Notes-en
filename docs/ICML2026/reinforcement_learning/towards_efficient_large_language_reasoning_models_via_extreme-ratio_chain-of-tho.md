@@ -1,15 +1,19 @@
 ---
 title: >-
-  [Paper Note] Extra-CoT：极端压缩比下的思维链压缩框架
+  [Paper Note] Extra-CoT: A Chain-of-Thought Compression Framework under Extreme Compression Ratios
 description: >-
-  [ICML 2026][Reinforcement Learning][Inference Acceleration] Extra-CoT proposes a three-stage framework (semantic-preserving compressor → mixed-ratio SFT → hierarchical reward RL) that maintains reasoning accuracy even under extreme compression ratios (retaining only 20% of tokens). It achieves a 73% token reduction on MATH-500 while improving accuracy by 0.6%.
+  [ICML2026][Reinforcement Learning][Chain-of-Thought Compression] Extra-CoT proposes a three-stage framework (semantic-preserving compressor → mixed-ratio SFT → hierarchical reward RL) that maintains reasoning accuracy even under extreme compression ratios (retaining only 20% of tokens). It achieves a 73% token reduction on MATH-500 while improving accuracy by 0.6%.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Inference Acceleration
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Chain-of-Thought Compression"
+  - "CoT Efficiency"
+  - "Reasoning Acceleration"
+  - "Token Budget Control"
 date: 2026-05-08
-content_hash: 6295621a234159a1
+content_hash: fc6e3317e6377d25
 ---
+
 # Extra-CoT: A Chain-of-Thought Compression Framework under Extreme Compression Ratios
 
 **Conference**: ICML2026  
@@ -129,11 +133,11 @@ Ratio selection occurs at the first token of the sequence, while the accuracy si
 
 ## Related Papers
 
-- [\[ICML 2026\] ASAP: Exploiting the Satisficing Generalization Edge in Neural Combinatorial Optimization](asap_exploiting_the_satisficing_generalization_edge_in_neural_combinatorial_opti.md)
-- [\[ICML 2026\] MindZero: Learning Online Mental Reasoning with Zero Annotations](mindzero_learning_online_mental_reasoning_with_zero_annotations.md)
-- [\[ICML 2026\] Can Large Language Models Generalize Procedures Across Representations?](can_large_language_models_generalize_procedures_across_representations.md)
-- [\[ICML 2026\] Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training](beyond_the_proxy_trajectory-distilled_guidance_for_offline_gflownet_training.md)
-- [\[ICML 2026\] Randomized Advantage Transformation (RAT): Computing Natural Policy Gradients via Direct Backpropagation](randomized_advantage_transformation_rat_computing_natural_policy_gradients_via_d.md)
+- [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
+- [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
+- [\[ICML 2026\] Convergence of Steepest Descent and Adam under Non-Uniform Smoothness](convergence_of_steepest_descent_and_adam_under_non-uniform_smoothness.md)
+- [\[ICML 2026\] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)
+- [\[ICML 2026\] Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning](interaction-breaking_adversarial_learning_framework_for_robust_multi-agent_reinf.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments
 description: >-
-  [ICML 2026][Reinforcement Learning][RLVR] RLVE transforms language model RL training from "static problem sets" into 400 **programmable verifiable environments** where problems are algorithmically generated and rewards are verified via code. By adaptively increasing problem difficulty as the policy model improves, the training signal is kept at the frontier of
+  [ICML2026][Reinforcement Learning][RLVR] RLVE transforms language model RL training from "static problem sets" into 400 **programmable verifiable environments** where problems are algorithmically generated and rewards are verified via code. By adaptively increasing problem difficulty as the policy model improves, the training signal is kept at the frontier of model capability; on a strong 1.5B model already saturated by standard RLVR, RLVE achieves a $3.37\%$ average gain acr…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Verifiable Environments"
+  - "Adaptive Difficulty"
+  - "Reasoning Ability"
+  - "Environment Scaling"
 date: 2026-05-08
-content_hash: b67609f7092d1ebe
+content_hash: f99f38e7d764e1c4
 ---
+
 # RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments
 
 **Conference**: ICML2026  
@@ -125,15 +130,14 @@ On a saturated strong model, RLVE achieves a $7\times$ larger improvement (3.37%
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards](../../NeurIPS2025/reinforcement_learning/reasoning_gym_reasoning_environments_for_reinforcement_learning_with_verifiable_.md)
-- [\[ICML 2026\] Flow-Equivariant World Models: Memory for Partially Observed Dynamic Environments](flow_equivariant_world_models_memory_for_partially_observed_dynamic_environments.md)
+- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
+- [\[ICML 2026\] Can Large Language Models Generalize Procedures Across Representations?](can_large_language_models_generalize_procedures_across_representations.md)
 - [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](learning_unmasking_policies_for_diffusion_language_models.md)
-- [\[ACL 2026\] LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance](../../ACL2026/reinforcement_learning/lang_reinforcement_learning_for_multilingual_reasoning_with_language-adaptive_hi.md)
+- [\[ICML 2026\] Flow-Equivariant World Models: Memory for Partially Observed Dynamic Environments](flow_equivariant_world_models_memory_for_partially_observed_dynamic_environments.md)
 
 </div>
 

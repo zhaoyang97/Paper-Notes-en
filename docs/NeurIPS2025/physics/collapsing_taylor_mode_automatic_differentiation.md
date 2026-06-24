@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Collapsing Taylor Mode Automatic Differentiation
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Taylor mode AD] This paper proposes a *collapsing* optimization technique for Taylor mode automatic differentiation. By rewriting the computation graph to propagate derivati…
+  [NeurIPS 2025][Physics & Scientific Computing][Taylor mode AD] This paper proposes a *collapsing* optimization technique for Taylor mode automatic differentiation. By rewriting the computation graph to propagate derivative summation operations upward, it substantially accelerates the evaluation of PDE operators (e.g., Laplacian, general linear PDE operators), achieving speeds superior to nested backpropagation while retaining the low-memory advantage of forward-mode AD.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "forward mode"
   - "computation graph optimization"
 date: 2026-05-08
-content_hash: 1f7fb8118e637b11
+content_hash: ef8cadd1602319ee
 ---
 
 # Collapsing Taylor Mode Automatic Differentiation

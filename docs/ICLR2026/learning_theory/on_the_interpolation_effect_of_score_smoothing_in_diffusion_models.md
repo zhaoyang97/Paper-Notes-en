@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On the Interpolation Effect of Score Smoothing in Diffusion Models
 description: >-
-  [ICLR 2026][learning_theory][Diffusion Model] This paper demonstrates through analytical derivations and numerical experiments that diffusion models can "create" new samples not present in the training set because neural networks learn a **smoothed version** of the empirical score function (ESF). This smoothing directly drives denoising trajectories to generate sa
+  [ICLR 2026][Learning Theory][Score Smoothing] This paper demonstrates through analytical derivations and numerical experiments that diffusion models can "create" new samples not present in the training set because neural networks learn a **smoothed version** of the empirical score function (ESF). This smoothing directly drives denoising trajectories to generate samples that interpolate between training data points, thereby avoiding the memorization inevitably caused by an exa…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Diffusion Models"
+  - "Score Smoothing"
+  - "Memorization"
+  - "Generalization Mechanism"
+  - "Denoising Dynamics"
 date: 2026-05-08
-content_hash: ee6bef8b651b939c
+content_hash: d731f4c589848c7c
 ---
+
 # On the Interpolation Effect of Score Smoothing in Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -125,8 +130,8 @@ The paper focuses on visualization and alignment with analytical curves, compari
 - [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
 - [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
 - [\[ICLR 2026\] Polynomial Convergence of Riemannian Diffusion Models](polynomial_convergence_of_riemannian_diffusion_models.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 - [\[ICLR 2026\] Score-Based Density Estimation from Pairwise Comparisons](score-based_density_estimation_from_pairwise_comparisons.md)
-- [\[ICLR 2026\] A Sharp KL Convergence Analysis for Diffusion Models under Minimal Assumptions](a_sharp_kl_convergence_analysis_for_diffusion_models_under_minimal_assumptions.md)
 
 </div>
 

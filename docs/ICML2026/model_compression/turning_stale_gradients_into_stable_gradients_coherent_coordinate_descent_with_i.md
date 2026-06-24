@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Turning Stale Gradients into Stable Gradients: Coherent Coordinate Descent with Implicit Landscape Smoothing for Lightweight Zeroth-Order Optimization
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper stores "stale" block-cyclic coordinate descent gradient estimates in a FIFO buffer, reuses them with momentum decay, and proves this is equivalent to BCCD with a warm-start. Simultaneously, it provides the counter-intuitive conclusion that a larger finite-difference step size $\epsilon$ implicitly smooths th
+  [ICML 2026][Model Compression][Zeroth-order optimization] This paper stores "stale" block-cyclic coordinate descent gradient estimates in a FIFO buffer, reuses them with momentum decay, and proves this is equivalent to BCCD with a warm-start. Simultaneously, it provides the counter-intuitive conclusion that a larger finite-difference step size $\epsilon$ implicitly smooths the loss landscape and reduces the effective Lipschitz constant, allowing stale gradients to achieve sta…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Zeroth-order optimization"
+  - "Coordinate descent"
+  - "Stale gradients"
+  - "Implicit smoothing"
+  - "On-device learning"
 date: 2026-05-08
-content_hash: 16a4ee5c49e67d24
+content_hash: 99a70c36700f7383
 ---
+
 # Turning Stale Gradients into Stable Gradients: Coherent Coordinate Descent with Implicit Landscape Smoothing for Lightweight Zeroth-Order Optimization
 
 **Conference**: ICML 2026  
@@ -122,15 +128,16 @@ Model sizes range from 13k to 270k parameters (MLP/CNN/ResNet-20) on datasets SA
 - Value: ⭐⭐⭐⭐ (Provides transferable insights for edge and black-box optimization)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization](../../ICLR2026/model_compression/fine-tuning_quantized_neural_networks_with_zeroth-order_optimization.md)
-- [\[ICML 2026\] GradPower: Powering Gradients for Faster Language Model Pre-Training](gradpower_powering_gradients_for_faster_language_model_pre-training.md)
 - [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](../../CVPR2026/model_compression/fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
+- [\[ICML 2026\] GradPower: Powering Gradients for Faster Language Model Pre-Training](gradpower_powering_gradients_for_faster_language_model_pre-training.md)
+- [\[ICLR 2026\] INSTANT: Compressing Gradients and Activations for Resource-Efficient Training](../../ICLR2026/model_compression/instant_compressing_gradients_and_activations_for_resource-efficient_training.md)
 - [\[ACL 2025\] Wanda++: Pruning Large Language Models via Regional Gradients](../../ACL2025/model_compression/wanda_pruning_large_language_models_via_regional_gradients.md)
-- [\[ICML 2026\] Bounded Hyperbolic Tangent: A Stable and Efficient Alternative to Pre-Layer Normalization in Large Language Models](bounded_hyperbolic_tangent_a_stable_and_efficient_alternative_to_pre-layer_norma.md)
 
 </div>
 

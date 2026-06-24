@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description
 description: >-
-  [ICCV 2025][3D Vision][3D scene understanding] This paper presents Articulate3D — the first large-scale real-world indoor scene dataset with articulation annotations (280 high-quality scans) — along with USDNet…
+  [ICCV 2025][3D Vision][3D scene understanding] This paper presents Articulate3D — the first large-scale real-world indoor scene dataset with articulation annotations (280 high-quality scans) — along with USDNet, a unified framework that simultaneously predicts movable/interactive part segmentation and motion parameters from 3D point clouds, providing simulation-ready scene data for embodied AI and physical simulation.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "motion parameter prediction"
   - "USD format"
 date: 2026-05-08
-content_hash: 235b6d2ebdcff8b4
+content_hash: 4d3065afa05d33a7
 ---
 
 # Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description
@@ -158,7 +158,7 @@ After pretraining on Articulate3D and transferring to MultiScan, AP50+Origin+Axi
 - [\[ICCV 2025\] ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail](excap3d_expressive_3d_scene_understanding_via_object_captioning_with_varying_det.md)
 - [\[ICCV 2025\] 3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding](3dgraphllm_combining_semantic_graphs_and_large_language_models_for_3d_scene_unde.md)
 - [\[ICCV 2025\] HIS-GPT: Towards 3D Human-In-Scene Multimodal Understanding](his-gpt_towards_3d_human-in-scene_multimodal_understanding.md)
-- [\[NeurIPS 2025\] From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes](../../NeurIPS2025/3d_vision/from_objects_to_anywhere_a_holistic_benchmark_for_multi-level_visual_grounding_i.md)
+- [\[CVPR 2025\] Functionality Understanding and Segmentation in 3D Scenes](../../CVPR2025/3d_vision/functionality_understanding_and_segmentation_in_3d_scenes.md)
 
 </div>
 

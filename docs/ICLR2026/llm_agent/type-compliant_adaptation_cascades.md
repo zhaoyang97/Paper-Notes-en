@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Type-Compliant Adaptation Cascades: Adapting Programmatic LM Workflows to Data
 description: >-
-  [ICLR 2026][LLM Agent][PEFT] This paper recasts workflows composed of multiple LLM calls and deterministic logic as "typed unnormalized probabilistic programs." By using lightweight PEFT adapters as learnable parameters and a TACSTaR (MC-EM) training algorithm—proven unbiased even when dropping the partition function gradient—the entire pipeline c
+  [ICLR 2026][LLM Agent][Typed Probabilistic Programs] This paper recasts workflows composed of multiple LLM calls and deterministic logic as "typed unnormalized probabilistic programs." By using lightweight PEFT adapters as learnable parameters and a TACSTaR (MC-EM) training algorithm—proven unbiased even when dropping the partition function gradient—the entire pipeline can be trained end-to-end via gradients. This approach significantly outperforms discrete prompt optimizatio…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - PEFT
-  - MC-EM
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Typed Probabilistic Programs"
+  - "LM Workflow Adaptation"
+  - "PEFT"
+  - "MC-EM"
+  - "Unnormalized Likelihood"
 date: 2026-05-08
-content_hash: 313421618882476e
+content_hash: e4a49a36a096f201
 ---
+
 # Type-Compliant Adaptation Cascades: Adapting Programmatic LM Workflows to Data
 
 **Conference**: ICLR 2026  
@@ -142,9 +146,9 @@ On MGSM, TAC also outperformed untyped STaR (e.g., 27.3% vs. 10.5% for gemma-1.1
 
 - [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
 - [\[ICLR 2026\] Mix-ECom: Towards Mixed-Type E-Commerce Dialogues with Complex Domain Rules](mix-ecom_towards_mixed-type_e-commerce_dialogues_with_complex_domain_rules.md)
+- [\[ICLR 2026\] ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows](scienceboard_evaluating_multimodal_autonomous_agents_in_realistic_scientific_wor.md)
 - [\[ICLR 2026\] FlowSearcher: Synthesizing Memory-Guided Agentic Workflows for Web Information Seeking](flowsearcher_synthesizing_memory-guided_agentic_workflows_for_web_information_se.md)
-- [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](../../ACL2026/llm_agent/synthagent_adapting_web_agents_with_synthetic_supervision.md)
-- [\[ICLR 2026\] Open Data Synthesis for Deep Research](open_data_synthesis_for_deep_research.md)
+- [\[ICLR 2026\] KRAMABENCH: A Benchmark for AI Systems on Data-to-Insight Pipelines over Data Lakes](kramabench_a_benchmark_for_ai_systems_on_data-to-insight_pipelines_over_data_lak.md)
 
 </div>
 

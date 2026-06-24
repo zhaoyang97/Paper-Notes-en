@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Spatial-Temporal Window: Unlocking the Potential of Event Cameras in Heterogeneous Velocity Scenarios
 description: >-
-  [CVPR 2026][Others][Paper Note] Addressing "Heterogeneous Velocity Scenarios" (HVS) containing both fast and slow objects, this paper proposes the ASTW event partitioning strategy: the pixel plane is divided into small patches, and an analytical formula for the optimal time window $\Delta t = \gamma / D$ (where $D$ is event density) is derived based
+  [CVPR 2026][3D Vision][Event Camera] Addressing "Heterogeneous Velocity Scenarios" (HVS) containing both fast and slow objects, this paper proposes the ASTW event partitioning strategy: the pixel plane is divided into small patches, and an analytical formula for the optimal time window $\Delta t = \gamma / D$ (where $D$ is event density) is derived based on the Maximum Entropy principle. Implemented with $O(N)$ vectorization, ASTW allows each spatial region to adaptively sele…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event Camera"
+  - "Event Partitioning"
+  - "Maximum Entropy"
+  - "Heterogeneous Velocity Scenarios"
+  - "Object Detection and Tracking"
 date: 2026-05-08
-content_hash: bca54269c8b591fb
+content_hash: 1c4dfdbf47e83cfb
 ---
+
 # Adaptive Spatial-Temporal Window: Unlocking the Potential of Event Cameras in Heterogeneous Velocity Scenarios
 
 **Conference**: CVPR 2026  
@@ -129,10 +135,20 @@ ASTW consistently outperforms fixed baselines across various representations: Ti
 - Value: ⭐⭐⭐⭐ A plug-and-play, representation-agnostic frontend for the event vision community.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] From Corners to Fiducial Tags: Revisiting Checkerboard Calibration for Event Cameras](from_corners_to_fiducial_tags_revisiting_checkerboard_calibration_for_event_came.md)
+- [\[CVPR 2026\] TROPHIES: Temporal Reconstruction of Places, Humans, and Cameras from Multi-view Videos](trophies_temporal_reconstruction_of_places_humans_and_cameras_from_multi-view_vi.md)
+- [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
+- [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)
+- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)

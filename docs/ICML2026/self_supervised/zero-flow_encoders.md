@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Zero-Flow Encoders
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] The paper discovers a counter-intuitive phenomenon: a rectified flow trained with independent coupling is zero at $t=0.5$ if and only if the source and target distributions are identical ("Zero-Flow Criterion"). By generalizing this to conditional distributions, the authors prove that $\mathbf{v}_{t=0.5}=0$ is equivale
+  [ICML2026][Self-Supervised Learning][Rectified Flow] The paper discovers a counter-intuitive phenomenon: a rectified flow trained with independent coupling is zero at $t=0.5$ if and only if the source and target distributions are identical ("Zero-Flow Criterion"). By generalizing this to conditional distributions, the authors prove that $\mathbf{v}_{t=0.5}=0$ is equivalent to the encoder $f(Y)$ being sufficient for predicting $X$ (conditional independence). Based on this…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML2026"
+  - "Self-Supervised Learning"
+  - "Rectified Flow"
+  - "Zero-Flow Criterion"
+  - "Conditional Independence"
+  - "Markov Blanket"
+  - "Shortcut Problem"
 date: 2026-05-08
-content_hash: 764e85d0d105672c
+content_hash: c71338344b2dd972
 ---
+
 # Zero-Flow Encoders
 
 **Conference**: ICML2026  
@@ -126,10 +132,20 @@ On non-Gaussian settings, Zero-Flow Encoders significantly outperform Graphical 
 - Value: ⭐⭐⭐⭐ Opens a theoretically grounded new path for "non-generative" applications of flow models.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection](from_zero_to_hero_advancing_zero-shot_foundation_models_for_tabular_outlier_dete.md)
+- [\[CVPR 2026\] OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](../../CVPR2026/self_supervised/openvision_2_a_family_of_generative_pretrained_visual_encoders_for_multimodal_le.md)
+- [\[ICML 2026\] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation](infoatlas_a_foundation_model_for_zero-shot_statistical_dependence_estimate.md)
+- [\[ECCV 2024\] FlowCon: Out-of-Distribution Detection using Flow-Based Contrastive Learning](../../ECCV2024/self_supervised/flowcon_out-of-distribution_detection_using_flow-based_contrastive_learning.md)
+- [\[ICLR 2026\] Rethinking Unsupervised Cross-Modal Flow Estimation: Learning from Decoupled Optimization and Consistency Constraint](../../ICLR2026/self_supervised/rethinking_unsupervised_cross-modal_flow_estimation_learning_from_decoupled_opti.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection](from_zero_to_hero_advancing_zero-shot_foundation_models_for_tabular_outlier_dete.md)

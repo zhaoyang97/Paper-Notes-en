@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras
 description: >-
-  [ICCV 2025][Video Understanding][event cameras] This paper proposes the first unsupervised learning framework based on a single network for jointly estimating optical flow and image intensity from event camera data. The…
+  [ICCV 2025][Video Understanding][event cameras] This paper proposes the first unsupervised learning framework based on a single network for jointly estimating optical flow and image intensity from event camera data. The core contribution is a complementary loss formulation combining a newly derived Event-based Photometric Error (PhE) with Contrast Maximization (CMax).
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "unsupervised learning"
   - "joint estimation"
 date: 2026-05-08
-content_hash: 4fa01af94eff39e8
+content_hash: e2c1ce1a32381247
 ---
 
 # Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras
@@ -160,8 +160,8 @@ Among unsupervised methods, the proposed approach reduces EPE by approximately *
 - [\[ICCV 2025\] Simultaneous Motion And Noise Estimation with Event Cameras](simultaneous_motion_and_noise_estimation_with_event_cameras.md)
 - [\[CVPR 2026\] U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation](../../CVPR2026/video_understanding/u2flow_uncertainty_aware_unsupervised_optical_flow_estimation.md)
 - [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
-- [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
 - [\[ICCV 2025\] PriOr-Flow: Enhancing Primitive Panoramic Optical Flow with Orthogonal View](prior-flow_enhancing_primitive_panoramic_optical_flow_with_orthogonal_view.md)
+- [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
 
 </div>
 

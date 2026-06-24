@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Almost Bayesian: Dynamics of SGD Through Singular Learning Theory
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper describes long-run SGD as diffusion in porous media on a singular loss landscape, characterizes the geometric complexity of reachable low-loss regions using the local learning coefficient, and derives that the steady-state distribution of SGD is approximately equal to a Bayesian posterior corrected by reacha
+  [ICLR 2026][Learning Theory][Singular Learning Theory] This paper describes long-run SGD as diffusion in porous media on a singular loss landscape, characterizes the geometric complexity of reachable low-loss regions using the local learning coefficient, and derives that the steady-state distribution of SGD is approximately equal to a Bayesian posterior corrected by reachability temperature.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "SGD Dynamics"
+  - "Singular Learning Theory"
+  - "local learning coefficient"
+  - "fractional Fokker-Planck equation"
+  - "Bayesian posterior"
 date: 2026-05-08
-content_hash: b5d0d2a518169d8e
+content_hash: fa846e8fc04358d5
 ---
+
 # Almost Bayesian: Dynamics of SGD Through Singular Learning Theory
 
 **Conference**: ICLR 2026  

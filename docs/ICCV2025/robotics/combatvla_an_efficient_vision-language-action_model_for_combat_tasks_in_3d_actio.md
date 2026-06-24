@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games
 description: >-
-  [ICCV 2025][Robotics][Vision-Language-Action] This paper proposes CombatVLA, an efficient 3B-parameter VLA model designed for combat tasks in 3D action role-playing games. Through the Action-of-Thought data format and a…
+  [ICCV 2025][Robotics][Vision-Language-Action] This paper proposes CombatVLA, an efficient 3B-parameter VLA model designed for combat tasks in 3D action role-playing games. Through the Action-of-Thought data format and a truncated inference strategy, CombatVLA achieves inference speeds up to 50× faster than existing VLM-based game frameworks while surpassing human players in combat success rate.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Action-of-Thought"
   - "Efficient Inference"
 date: 2026-05-08
-content_hash: 9b5efddd123639dd
+content_hash: 6557730e41aa14cd
 ---
 
 # CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games
@@ -129,11 +129,11 @@ The total loss is $\mathcal{L} = \mathcal{L}_{lang} + \alpha \cdot \mathcal{L}_{
 
 ## Related Papers
 
+- [\[CVPR 2025\] g3D-LF: Generalizable 3D-Language Feature Fields for Embodied Tasks](../../CVPR2025/robotics/g3d-lf_generalizable_3d-language_feature_fields_for_embodied_tasks.md)
+- [\[ICLR 2026\] Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation](../../ICLR2026/robotics/action-aware_dynamic_pruning_for_efficient_vision-language-action_manipulation.md)
+- [\[ECCV 2024\] QUAR-VLA: Vision-Language-Action Model for Quadruped Robots](../../ECCV2024/robotics/quar-vla_vision-language-action_model_for_quadruped_robots.md)
 - [\[ICCV 2025\] DexVLG: Dexterous Vision-Language-Grasp Model at Scale](dexvlg_dexterous_vision-language-grasp_model_at_scale.md)
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](../../NeurIPS2025/robotics/safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
 - [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](../../NeurIPS2025/robotics/vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
-- [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
-- [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](../../NeurIPS2025/robotics/cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
 
 </div>
 

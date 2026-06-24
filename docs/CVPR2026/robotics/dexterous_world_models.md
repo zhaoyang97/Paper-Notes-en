@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dexterous World Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][World Models] Given a static 3D scene and a sequence of first-person dexterous hand movements, DWM utilizes a scene-action conditioned video diffusion model to generate only the residual visual changes (grasping, opening doors, moving objects) caused by hand manipulation. While maintaining camera motion and unaffected regions unchan
+  [CVPR 2026][Robotics][World Models] Given a static 3D scene and a sequence of first-person dexterous hand movements, DWM utilizes a scene-action conditioned video diffusion model to generate only the residual visual changes (grasping, opening doors, moving objects) caused by hand manipulation. While maintaining camera motion and unaffected regions unchanged, it enables static digital twins to "move" for the first time and serves as a visual world model for evaluating candidat…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - World Models
+  - "CVPR 2026"
+  - "Robotics"
+  - "World Models"
+  - "Dexterous Manipulation"
+  - "Video Diffusion"
+  - "First-person"
+  - "Residual Dynamics"
 date: 2026-05-08
-content_hash: 1b86df26dacd61d7
+content_hash: c66b4cef27084b18
 ---
+
 # Dexterous World Models
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ DWM achieves the **best performance across all settings and metrics**. The real 
 
 ## Related Papers
 
-- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
-- [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](chain_of_world_world_model_thinking_in_latent_motion.md)
+- [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](../../ICLR2026/robotics/world-in-world_world_models_in_a_closed-loop_world.md)
+- [\[CVPR 2026\] Structural Action Transformer for 3D Dexterous Manipulation](structural_action_transformer_for_3d_dexterous_manipulation.md)
 - [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
-- [\[CVPR 2026\] Motus: A Unified Latent Action World Model](motus_a_unified_latent_action_world_model.md)
-- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
+- [\[ICML 2026\] WestWorld: Scalable Trajectory World Models with Knowledge Encoding](../../ICML2026/robotics/westworld_a_knowledge-encoded_scalable_trajectory_world_model_for_diverse_roboti.md)
+- [\[ICLR 2026\] Empowering Multi-Robot Cooperation via Sequential World Models](../../ICLR2026/robotics/empowering_multi-robot_cooperation_via_sequential_world_models.md)
 
 </div>
 

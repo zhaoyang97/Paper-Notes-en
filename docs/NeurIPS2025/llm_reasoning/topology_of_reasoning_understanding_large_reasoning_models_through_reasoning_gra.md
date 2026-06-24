@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties
 description: >-
-  [NeurIPS 2025][LLM Reasoning][reasoning graph] This paper introduces the concept of a *reasoning graph* — a directed graph constructed by clustering the hidden states of LLMs — and analyzes large reasoning models (e.g.…
+  [NeurIPS 2025][Reasoning][reasoning graph] This paper introduces the concept of a *reasoning graph* — a directed graph constructed by clustering the hidden states of LLMs — and analyzes large reasoning models (e.g., the DeepSeek-R1 distillation series) along three graph-theoretic dimensions: cycle density, diameter, and small-world index. Reasoning models are found to exhibit significantly more cycles (~5 per sample), larger diameters, and stronger small-world properties (~6×…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "reasoning graph"
   - "induction heads"
   - "small-world"
   - "cycle detection"
   - "chain-of-thought"
 date: 2026-05-08
-content_hash: fedd30583ef75415
+content_hash: 11dc5274f4cb0534
 ---
 
 # Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties
@@ -136,10 +136,10 @@ Given a math problem, the LLM generates a sequence of reasoning steps → hidden
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity](the_illusion_of_thinking_understanding_the_strengths_and_limitations_of_reasonin.md)
+- [\[ICLR 2026\] Exposing Weaknesses of Large Reasoning Models through Graph Algorithm Problems](../../ICLR2026/llm_reasoning/exposing_weaknesses_of_large_reasoning_models_through_graph_algorithm_problems.md)
 - [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
-- [\[ICML 2026\] Internalizing Safety Understanding in Large Reasoning Models via Verification](../../ICML2026/llm_reasoning/internalizing_safety_understanding_in_large_reasoning_models_via_verification.md)
-- [\[NeurIPS 2025\] FractalBench: Diagnosing Visual-Mathematical Reasoning Through Recursive Program Synthesis](fractalbench_diagnosing_visual-mathematical_reasoning_through_recursive_program_.md)
 - [\[NeurIPS 2025\] DisCO: Reinforcing Large Reasoning Models with Discriminative Constrained Optimization](disco_reinforcing_large_reasoning_models_with_discriminative_constrained_optimiz.md)
+- [\[NeurIPS 2025\] SPRINT: Enabling Interleaved Planning and Parallelized Execution in Reasoning Models](sprint_enabling_interleaved_planning_and_parallelized_execution_in_reasoning_mod.md)
 
 </div>
 

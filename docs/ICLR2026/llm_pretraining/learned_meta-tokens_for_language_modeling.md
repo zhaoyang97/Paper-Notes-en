@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Learned Meta-Tokens for Language Modeling
 description: >-
-  [ICLR 2026][Pretraining][meta-token] During pre-training, a set of learnable **meta-tokens** is randomly injected into sequences, paired with a sparse **meta-attention** that flows exclusively between meta-tokens. This enables these tokens to compress and "cache" previous context as content anchors, allowing small models trained on <100B tokens to achieve
+  [ICLR 2026][LLM Pretraining][meta-token] During pre-training, a set of learnable **meta-tokens** is randomly injected into sequences, paired with a sparse **meta-attention** that flows exclusively between meta-tokens. This enables these tokens to compress and "cache" previous context as content anchors, allowing small models trained on <100B tokens to achieve length generalization up to 2× the context window, while providing an information-theoretic explanation of "meta-token…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - meta-token
-  - meta-attention
-  - length generalization
-  - positional encoding sharpening
-  - context compression
-  - rate-distortion
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "meta-token"
+  - "meta-attention"
+  - "length generalization"
+  - "positional encoding sharpening"
+  - "context compression"
+  - "rate-distortion"
 date: 2026-05-08
-content_hash: 2daaced26fded645
+content_hash: 1539efb9f67271a0
 ---
+
 # Learned Meta-Tokens for Language Modeling
 
 **Conference**: ICLR 2026  
@@ -139,11 +140,11 @@ Zeroing positional encodings only at meta-token indices generally **improves** a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Should We Still Pretrain Encoders with Masked Language Modeling?](should_we_still_pretrain_encoders_with_masked_language_modeling.md)
 - [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 - [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)
 - [\[ICLR 2026\] Dynamic Chunking for End-to-End Hierarchical Sequence Modeling](dynamic_chunking_for_end-to-end_hierarchical_sequence_modeling.md)
 - [\[ACL 2025\] Meta-rater: A Multi-dimensional Data Selection Method for Pre-training Language Models](../../ACL2025/llm_pretraining/metarater_a_multidimensional_data_selection_method.md)
-- [\[ICML 2025\] In-Context Adaptation to Concept Drift for Learned Database Operations](../../ICML2025/llm_pretraining/in-context_adaptation_to_concept_drift_for_learned_database_operations.md)
 
 </div>
 

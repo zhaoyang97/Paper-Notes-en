@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scaling Knowledge Graph Construction through Synthetic Data Generation and Distillation
 description: >-
-  [ICLR 2026][Graph Learning][ontology-free] Addressing the dilemma of "large models being expensive and small models being poor" in document-level Knowledge Graph (KG) construction, this paper proposes a multi-step synthetic pipeline, SynthKG (chunking → decontextualization → entity/proposition/triple extraction), to generate 100,000 high-quality document-KG tra
+  [ICLR 2026][Graph Learning][Document-level Knowledge Graphs] Addressing the dilemma of "large models being expensive and small models being poor" in document-level Knowledge Graph (KG) construction, this paper proposes a multi-step synthetic pipeline, SynthKG (chunking → decontextualization → entity/proposition/triple extraction), to generate 100,000 high-quality document-KG training pairs. This multi-step process is distilled into an 8B small model, Distill-SynthKG…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - ontology-free
-  - Graph RAG
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Document-level Knowledge Graphs"
+  - "Synthetic Data"
+  - "Distillation"
+  - "ontology-free"
+  - "Graph RAG"
 date: 2026-05-08
-content_hash: ea62ac7ad1344645
+content_hash: e475100d6dd71e0c
 ---
+
 # Scaling Knowledge Graph Construction through Synthetic Data Generation and Distillation
 
 **Conference**: ICLR 2026  
@@ -133,8 +137,8 @@ Ours achieves a $+15.2\%$ absolute EM gain over the Llama-3-8b baseline and outp
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -142,7 +146,7 @@ Ours achieves a $+15.2\%$ absolute EM gain over the Llama-3-8b baseline and outp
 - [\[ICLR 2026\] ReLaSH: Reconstructing Joint Latent Spaces for Efficient Generation of Synthetic Hypergraphs with Hyperlink Attributes](relash_reconstructing_joint_latent_spaces_for_efficient_generation_of_synthetic_.md)
 - [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](../../AAAI2026/graph_learning/self-correction_distillation_for_structured_data_question_answering.md)
 - [\[ICLR 2026\] WATS: Wavelet-Aware Temperature Scaling for Reliable Graph Neural Networks](wats_wavelet-aware_temperature_scaling_for_reliable_graph_neural_networks.md)
-- [\[ICLR 2026\] Learning Posterior Predictive Distributions for Node Classification from Synthetic Graph Priors](learning_posterior_predictive_distributions_for_node_classification_from_synthet.md)
+- [\[ICLR 2026\] RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation](ras_retrieval-and-structuring_for_knowledge-intensive_llm_generation.md)
 
 </div>
 

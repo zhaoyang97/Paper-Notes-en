@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tokenization to Transfer: Do Genomic Foundation Models Learn Good Representations?
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] The authors systematically benchmarked 7 Genomic Foundation Models (GFMs) against their "randomly initialized weight" counterparts across 52 genomic tasks. They found that random baselines are surprisingly strong, pre-training gains are strictly gated by the tokenizer (gains are negligible for character-level but signi
+  [ICLR 2026][Computational Biology][Genomic Foundation Models] The authors systematically benchmarked 7 Genomic Foundation Models (GFMs) against their "randomly initialized weight" counterparts across 52 genomic tasks. They found that random baselines are surprisingly strong, pre-training gains are strictly gated by the tokenizer (gains are negligible for character-level but significant for subword-level), and these models fail to perceive clinically relevant single-nucleotide…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Genomic Foundation Models"
+  - "Unsupervised Pre-training"
+  - "Tokenizer Inductive Bias"
+  - "Randomly Initialized Baseline"
+  - "Variant Sensitivity"
 date: 2026-05-08
-content_hash: add3fb1e6684fe54
+content_hash: f2ed69ffa1ec54f0
 ---
+
 # Tokenization to Transfer: Do Genomic Foundation Models Learn Good Representations?
 
 **Conference**: ICLR 2026  
@@ -124,8 +130,21 @@ Frozen Biotype Classification: By increasing embedding dimensions (Fig. 5), 5 ou
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Low rank adaptation of chemical foundation models generate effective odorant representations](low_rank_adaptation_of_chemical_foundation_models_generate_effective_odorant_rep.md)
+- [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](towards_understanding_the_shape_of_representations_in_protein_language_models.md)
+- [\[ICLR 2026\] Riemannian High-Order Pooling for Brain Foundation Models](riemannian_high-order_pooling_for_brain_foundation_models.md)
+- [\[ICLR 2026\] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction](towards_all-atom_foundation_models_for_biomolecular_binding_affinity_prediction.md)
+- [\[ICML 2026\] DNAChunker: Learnable Tokenization for DNA Language Models](../../ICML2026/computational_biology/dnachunker_learnable_tokenization_for_dna_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

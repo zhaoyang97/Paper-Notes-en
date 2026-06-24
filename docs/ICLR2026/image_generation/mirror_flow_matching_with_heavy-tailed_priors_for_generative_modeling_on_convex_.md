@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Mirror Flow Matching with Heavy-Tailed Priors for Generative Modeling on Convex Domains
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] Addressing constrained generative modeling on convex domains, this paper identifies two major issues: "log-barrier mirror maps induce heavy-tailed dual distributions" and "mismatch between Gaussian priors and heavy-tailed targets." It proposes **Regularized Mirror Flow Matching** with a **Student-t prior**, which ensur
+  [ICLR 2026][Image Generation][Flow Matching] Addressing constrained generative modeling on convex domains, this paper identifies two major issues: "log-barrier mirror maps induce heavy-tailed dual distributions" and "mismatch between Gaussian priors and heavy-tailed targets." It proposes **Regularized Mirror Flow Matching** with a **Student-t prior**, which ensures finite moments for the dual distribution and provides the first theoretical guarantee of polynomial tail bounds…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Mirror Map"
+  - "Heavy-tailed Distribution"
+  - "Student-t Prior"
+  - "Convex Constrained Generation"
+  - "Wasserstein Convergence Rate"
 date: 2026-05-08
-content_hash: fdfc26747903bb1f
+content_hash: 64f8338e4e4811fa
 ---
+
 # Mirror Flow Matching with Heavy-Tailed Priors for Generative Modeling on Convex Domains
 
 **Conference**: ICLR 2026  
@@ -131,7 +137,7 @@ AFHQv2 $64\times64$ Watermarked Image Generation (initialized from EDM checkpoin
 - [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 - [\[ICLR 2026\] Flow Along the $K$-Amplitude for Generative Modeling](flow_along_the_k-amplitude_for_generative_modeling.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
-- [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 
 </div>
 

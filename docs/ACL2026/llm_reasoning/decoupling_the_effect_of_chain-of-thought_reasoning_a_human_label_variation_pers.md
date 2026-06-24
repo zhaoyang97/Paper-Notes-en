@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective
 description: >-
-  [ACL 2026][LLM Reasoning][Chain-of-Thought] This paper reveals the "decoupling mechanism" of CoT reasoning through Cross-CoT experiments and step-wise analysis: while final accuracy is determined by CoT content (99% variance contribution), the distribution ranking is dominated by the model's intrinsic prior (>80%). This indicates that long CoT acts as a powerful
+  [ACL 2026 Findings][Reasoning][Chain-of-Thought] This paper reveals the "decoupling mechanism" of CoT reasoning through Cross-CoT experiments and step-wise analysis: while final accuracy is determined by CoT content (99% variance contribution), the distribution ranking is dominated by the model's intrinsic prior (>80%). This indicates that long CoT acts as a powerful decision-maker but a weak distribution calibrator.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "Human Label Variation"
+  - "Distribution Alignment"
+  - "Reasoning Decoupling"
+  - "Model Prior"
 date: 2026-05-08
-content_hash: fd894c24b31decaa
+content_hash: c3c93f2c536d4e3e
 ---
+
 # Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective
 
 **Conference**: ACL 2026 Findings  
@@ -125,8 +130,8 @@ This is an analytical study and does not involve model training. Seven SOTA reas
 - [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
 - [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](../../NeurIPS2025/llm_reasoning/visual_thoughts_a_unified_perspective_of_understanding_multi.md)
 - [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
+- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
 - [\[CVPR 2026\] E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought](../../CVPR2026/llm_reasoning/e-comiq-zh_a_human-aligned_dataset_and_benchmark_for_fine-grained_evaluation_of_.md)
-- [\[ACL 2026\] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck](failure_modes_in_multi-hop_qa_the_weakest_link_effect_and_the_recognition_bottle.md)
 
 </div>
 

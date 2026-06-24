@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TandemFoilSet: Datasets for Flow Field Prediction of Tandem-Airfoil Through the Reuse of Single Airfoils
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper introduces the first **tandem-airfoil flow field prediction dataset, TandemFoilSet** (consisting of 8104 CFD cases, with 4152 tandem configurations paired with corresponding single-airfoil data). It provides a curriculum learning benchmark centered on "reusing single-airfoil data"—utilizing freestream as a p
+  [ICLR 2026][Physics & Scientific Computing][Tandem-airfoil] This paper introduces the first **tandem-airfoil flow field prediction dataset, TandemFoilSet** (consisting of 8104 CFD cases, with 4152 tandem configurations paired with corresponding single-airfoil data). It provides a curriculum learning benchmark centered on "reusing single-airfoil data"—utilizing freestream as a physical prior for residual pre-training, performing smooth-combining of single-airfoil predictions a…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Tandem-airfoil"
+  - "Flow field prediction"
+  - "Curriculum learning"
+  - "Residual training"
+  - "Graph Neural Network"
 date: 2026-05-08
-content_hash: 0190485389a83669
+content_hash: 56ada41432bcdec6
 ---
+
 # TandemFoilSet: Datasets for Flow Field Prediction of Tandem-Airfoil Through the Reuse of Single Airfoils
 
 **Conference**: ICLR 2026  

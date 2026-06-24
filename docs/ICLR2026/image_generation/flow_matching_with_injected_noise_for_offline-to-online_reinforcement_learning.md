@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] The paper significantly improves the sample efficiency of offline-to-online RL under limited interaction budgets by injecting controllable noise during flow matching training to expand policy coverage and employing an entropy-guided sampling mechanism to dynamically balance exploration and exploitation during online fi
+  [ICLR 2026][Image Generation][Flow Matching] The paper significantly improves the sample efficiency of offline-to-online RL under limited interaction budgets by injecting controllable noise during flow matching training to expand policy coverage and employing an entropy-guided sampling mechanism to dynamically balance exploration and exploitation during online fine-tuning.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Offline-to-Online RL"
+  - "Noise Injection"
+  - "Exploration-Exploitation Balance"
+  - "Entropy-Guided Sampling"
 date: 2026-05-08
-content_hash: fdb411912146ad8c
+content_hash: 271d051307be2d5c
 ---
+
 # Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -132,11 +137,11 @@ Evaluated across 45 tasks in OGBench and D4RL, averaged over 10 random seeds:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
 - [\[ICLR 2026\] DiffusionNFT: Online Diffusion Reinforcement with Forward Process](diffusionnft_online_diffusion_reinforcement_with_forward_process.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
-- [\[ICML 2026\] Offline Preference Optimization for Rectified Flow with Noise-Tracked Pairs](../../ICML2026/image_generation/offline_preference_optimization_for_rectified_flow_with_noise-tracked_pairs.md)
-- [\[ICML 2026\] Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition](../../ICML2026/image_generation/offline_multi-agent_reinforcement_learning_via_sequential_score_decomposition.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 
 </div>
 

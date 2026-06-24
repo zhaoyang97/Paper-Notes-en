@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Temporal Score Rescaling for Temperature Sampling in Diffusion and Flow Models
 description: >-
-  [ICML 2026][Computational Biology][temperature sampling] By multiplying the score output of pre-trained diffusion/flow models by an analytical rescaling factor $r_t$, which depends only on the timestep, variable $k$, and $\sigma$, the sampling distribution can be made "locally" sharper or flatter during the inference stage without any fine-tuning. This method is fully compat
+  [ICML 2026][Computational Biology][temperature sampling] By multiplying the score output of pre-trained diffusion/flow models by an analytical rescaling factor $r_t$, which depends only on the timestep, variable $k$, and $\sigma$, the sampling distribution can be made "locally" sharper or flatter during the inference stage without any fine-tuning. This method is fully compatible with deterministic samplers such as DDIM.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - temperature sampling
-  - score rescaling
-  - diffusion
-  - flow matching
-  - training-free
+  - "ICML 2026"
+  - "Computational Biology"
+  - "temperature sampling"
+  - "score rescaling"
+  - "diffusion"
+  - "flow matching"
+  - "training-free"
 date: 2026-05-08
-content_hash: f0ddbbe131c51936
+content_hash: fbc98632cdd0918f
 ---
+
 # Temporal Score Rescaling for Temperature Sampling in Diffusion and Flow Models
 
 **Conference**: ICML 2026  
@@ -122,11 +123,11 @@ No new training is required. Selection of hyperparameters $k$ and $\sigma$: firs
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](../../NeurIPS2025/computational_biology/consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
 - [\[ICML 2026\] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes](flow_sampling_learning_to_sample_from_unnormalized_densities_via_denoising_condi.md)
-- [\[ICML 2026\] Stein Diffusion Guidance: Training-Free Posterior Correction for Sampling Beyond High-Density Regions](stein_diffusion_guidance_training-free_posterior_correction_for_sampling_beyond_.md)
-- [\[ICLR 2026\] Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics](../../ICLR2026/computational_biology/scalable_spatio-temporal_se3_diffusion_for_long-horizon_protein_dynamics.md)
 - [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
+- [\[ICML 2026\] Stein Diffusion Guidance: Training-Free Posterior Correction for Sampling Beyond High-Density Regions](stein_diffusion_guidance_training-free_posterior_correction_for_sampling_beyond_.md)
+- [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](../../NeurIPS2025/computational_biology/consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
+- [\[ICLR 2026\] Enhancing Diffusion-Based Sampling with Molecular Collective Variables](../../ICLR2026/computational_biology/enhancing_diffusion-based_sampling_with_molecular_collective_variables.md)
 
 </div>
 

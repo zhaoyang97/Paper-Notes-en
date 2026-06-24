@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] The Geometry-as-Context (GaC) framework is proposed to replace non-differentiable operators (3D reconstruction and rendering) in reconstruction-based scene video generation with a unified autoregressive video generation model. By embedding geometry information (depth maps) as interleaved contexts within the generative
+  [CVPR 2026][Video Generation][Scene-consistent Video Generation] The Geometry-as-Context (GaC) framework is proposed to replace non-differentiable operators (3D reconstruction and rendering) in reconstruction-based scene video generation with a unified autoregressive video generation model. By embedding geometry information (depth maps) as interleaved contexts within the generative sequence, the method achieves end-to-end training and mitigates accumulated errors.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Scene-consistent Video Generation"
+  - "Geometry Context"
+  - "Autoregressive Generation"
+  - "Camera Control"
+  - "3D Reconstruction"
 date: 2026-05-08
-content_hash: b7922165a7350aed
+content_hash: 0410952149d13d33
 ---
+
 # Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context
 
 **Conference**: CVPR 2026  
@@ -158,11 +164,11 @@ While geometry frames are beneficial, generating them for every frame lengthens 
 
 ## Related Papers
 
+- [\[CVPR 2026\] WorldReel: 4D Video Generation with Consistent Geometry and Motion Modeling](worldreel_4d_video_generation_with_consistent_geometry_and_motion_modeling.md)
+- [\[ICML 2026\] VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation](../../ICML2026/video_generation/videogpa_distilling_geometry_priors_for_3d-consistent_video_generation.md)
 - [\[CVPR 2026\] StereoWorld: Geometry-Aware Monocular-to-Stereo Video Generation](stereoworld_geometry-aware_monocular-to-stereo_video_generation.md)
-- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)
-- [\[CVPR 2026\] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation](diff4splat_controllable_4d_scene_generation_with_latent_dynamic_reconstruction_m.md)
-- [\[CVPR 2026\] PerpetualWonder: Long-horizon Action-conditioned 4D Scene Generation](perpetualwonder_long-horizon_action-conditioned_4d_scene_generation.md)
-- [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
+- [\[ICLR 2026\] Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling](../../ICLR2026/video_generation/geometry_forcing_marrying_video_diffusion_and_3d_representation_for_consistent_w.md)
+- [\[ICLR 2026\] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation](../../ICLR2026/video_generation/3d_scene_prompting_for_scene-consistent_camera-controllable_video_generation.md)
 
 </div>
 

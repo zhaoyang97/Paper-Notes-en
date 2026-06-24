@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tools Are Under-Documented: Simple Document Expansion Boosts Tool Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] This paper identifies that the primary bottleneck in tool retrieval is the poor quality of existing tool documentation. It proposes a low-cost LLM pipeline to systematically supplement original tool documents into structured profiles containing specific fields (`function_description`, `when_to_use`, `limitations`, `tag
+  [ICLR 2026][Information Retrieval & RAG][Tool Retrieval] This paper identifies that the primary bottleneck in tool retrieval is the poor quality of existing tool documentation. It proposes a low-cost LLM pipeline to systematically supplement original tool documents into structured profiles containing specific fields (`function_description`, `when_to_use`, `limitations`, `tags`). The authors construct the TOOL-REX benchmark along with a large-scale training corpus…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Tool Retrieval"
+  - "Document Expansion"
+  - "Dense Retrieval"
+  - "Reranker"
+  - "OOD Generalization"
 date: 2026-05-08
-content_hash: 7650e6f1c6679377
+content_hash: bd823459f0c1e5f7
 ---
+
 # Tools Are Under-Documented: Simple Document Expansion Boosts Tool Retrieval
 
 **Conference**: ICLR 2026  
@@ -142,8 +148,8 @@ Field-level ablations confirmed that `example_usage` drags down performance, whi
 - [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
 - [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
 - [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
+- [\[ICLR 2026\] SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG](smartchunk_retrieval_query-aware_chunk_compression_with_planning_for_efficient_d.md)
 - [\[CVPR 2025\] ChatHuman: Chatting about 3D Humans with Tools](../../CVPR2025/information_retrieval/chathuman_chatting_about_3d_humans_with_tools.md)
-- [\[NeurIPS 2025\] SuperCLIP: CLIP with Simple Classification Supervision](../../NeurIPS2025/information_retrieval/superclip_clip_with_simple_classification_supervision.md)
 
 </div>
 

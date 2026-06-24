@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unified Latent Space for Understanding and Generation via Semantic Auto-encoder
 description: >-
-  [CVPR 2026][Image Generation][DINOv3] Addressing the fundamental trade-off where "semantic encoder latent spaces possess semantics but lose geometry, while reconstruction VAE latent spaces possess geometry but lack semantics," this paper utilizes a frozen DINOv3 as the encoder, combined with two-stage progressive training and a semantic regularization loss
+  [CVPR 2026][Image Generation][Semantic Auto-encoder] Addressing the fundamental trade-off where "semantic encoder latent spaces possess semantics but lose geometry, while reconstruction VAE latent spaces possess geometry but lack semantics," this paper utilizes a frozen DINOv3 as the encoder, combined with two-stage progressive training and a semantic regularization loss that aligns the student encoder with teacher features. The result is a unified latent space…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DINOv3
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Semantic Auto-encoder"
+  - "Unified Latent Space"
+  - "DINOv3"
+  - "Latent Diffusion"
+  - "Semantic Regularization"
 date: 2026-05-08
-content_hash: b173f6cafa27cdd6
+content_hash: cfd772bfbabaeeb1
 ---
+
 # Unified Latent Space for Understanding and Generation via Semantic Auto-encoder
 
 **Conference**: CVPR 2026  
@@ -132,6 +137,7 @@ Semantic vs. Reconstruction trade-off (Distill(λ) refers to Stage 2 with MSE re
 - Value: ⭐⭐⭐⭐ (Provides a ready-to-use SOTA unified latent space.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration
 description: >-
-  [ICLR 2026][Video Generation][Subject-to-Video] BindWeave replaces traditional shallow fusion mechanisms with a Multimodal Large Language Model (MLLM) to parse complex text instructions involving multiple subjects. It generates subject-aware hidden states as conditioning signals for DiT, combined with CLIP semantic features and VAE fine-grained appearance features,
+  [ICLR 2026][Video Generation][Subject-to-Video] BindWeave replaces traditional shallow fusion mechanisms with a Multimodal Large Language Model (MLLM) to parse complex text instructions involving multiple subjects. It generates subject-aware hidden states as conditioning signals for DiT, combined with CLIP semantic features and VAE fine-grained appearance features, enabling high-fidelity and subject-consistent video generation.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Subject-to-Video
-  - DiT
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Subject-to-Video"
+  - "MLLM condition injection"
+  - "DiT"
+  - "Multi-reference images"
+  - "Cross-modal reasoning"
 date: 2026-05-08
-content_hash: 186000ed14a3a16d
+content_hash: ac6365af8eab544b
 ---
+
 # BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration
 
 **Conference**: ICLR 2026  

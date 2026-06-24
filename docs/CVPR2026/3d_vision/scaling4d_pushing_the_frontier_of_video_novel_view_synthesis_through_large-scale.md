@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling4D: Pushing the Frontier of Video Novel View Synthesis through Large-Scale Monocular Videos
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] Scaling4D reformulates Video Novel View Synthesis (VNVS) from "rendering point clouds followed by inpainting" into a "correspondence-guided generation task." This enables self-supervised training using massive amounts of real-world monocular videos, bridging the training-inference gap of previous methods. It outperform
+  [CVPR 2026][3D Vision][Video Novel View Synthesis] Scaling4D reformulates Video Novel View Synthesis (VNVS) from "rendering point clouds followed by inpainting" into a "correspondence-guided generation task." This enables self-supervised training using massive amounts of real-world monocular videos, bridging the training-inference gap of previous methods. It outperforms methods like GEN3C and TrajectoryCrafter on both single-view and multi-view benchmarks…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Video Novel View Synthesis"
+  - "Correspondence Guidance"
+  - "Monocular Video"
+  - "Diffusion Models"
+  - "Scalable Training"
 date: 2026-05-08
-content_hash: 8870b43e0892f7c0
+content_hash: 860173dbea21526e
 ---
+
 # Scaling4D: Pushing the Frontier of Video Novel View Synthesis through Large-Scale Monocular Videos
 
 **Conference**: CVPR 2026  

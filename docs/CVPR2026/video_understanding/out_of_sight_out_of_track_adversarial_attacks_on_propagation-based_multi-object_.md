@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Out of Sight, Out of Track: Adversarial Attacks on Propagation-based Multi-Object Trackers via Query State Manipulation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This work provides the first systematic analysis of the adversarial vulnerability of Tracking-by-Query-Propagation (TBP) trackers. It proposes the FADE attack framework, utilizing Temporal Query Flooding (TQF) to exhaust fixed query budgets and Temporal Memory Corrosion (TMC) to disrupt hidden state propagation. On MOT
+  [CVPR 2026][Video Understanding][Multi-Object Tracking] This work provides the first systematic analysis of the adversarial vulnerability of Tracking-by-Query-Propagation (TBP) trackers. It proposes the FADE attack framework, utilizing Temporal Query Flooding (TQF) to exhaust fixed query budgets and Temporal Memory Corrosion (TMC) to disrupt hidden state propagation. On MOT17/MOT20, it achieves up to a 30-point HOTA decrease and over a 10x increase in ID switches against MOTR…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multi-Object Tracking"
+  - "Adversarial Attacks"
+  - "Query Propagation"
+  - "Temporal Memory Erosion"
+  - "Physical Attacks"
 date: 2026-05-08
-content_hash: 4fd013545b40dadd
+content_hash: 0fb1d6882277aa41
 ---
+
 # Out of Sight, Out of Track: Adversarial Attacks on Propagation-based Multi-Object Trackers via Query State Manipulation
 
 **Conference**: CVPR 2026  

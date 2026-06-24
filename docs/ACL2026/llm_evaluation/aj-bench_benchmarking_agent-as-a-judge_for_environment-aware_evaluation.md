@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Agent-as-a-Judge] This paper introduces AJ-Bench, the first benchmark to systematically evaluate the capabilities of Agent-as-a-Judge. It covers three domains—Search, Data Systems, and GUI—with a total of 155 tasks and 516 annotated trajectories. Experiments demonstrate that Agent-as-a-Judge improves the average $F1$ score by approximat
+  [ACL 2026 Findings][LLM Evaluation][Agent Evaluation] This paper introduces AJ-Bench, the first benchmark to systematically evaluate the capabilities of Agent-as-a-Judge. It covers three domains—Search, Data Systems, and GUI—with a total of 155 tasks and 516 annotated trajectories. Experiments demonstrate that Agent-as-a-Judge improves the average $F1$ score by approximately 13 percentage points compared to LLM-as-a-Judge.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Agent-as-a-Judge
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Agent Evaluation"
+  - "Agent-as-a-Judge"
+  - "Environment Interaction Verification"
+  - "Trajectory Evaluation"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: fc23d95b8a657d6a
+content_hash: 5581477a0857f89b
 ---
+
 # AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation
 
 **Conference**: ACL 2026 Findings  
@@ -116,9 +121,9 @@ AJ-Bench is an evaluation benchmark rather than a training framework; the primar
 
 - [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](../../ICLR2026/llm_evaluation/talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
 - [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
-- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home Agents](../../ICLR2026/llm_evaluation/simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_agents.md)
+- [\[ICLR 2026\] Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation](../../ICLR2026/llm_evaluation/holistic_agent_leaderboard_the_missing_infrastructure_for_ai_agent_evaluation.md)
+- [\[ICLR 2026\] Towards Self-Evolving Agent Benchmarks: Validatable Agent Trajectory via Test-Time Exploration](../../ICLR2026/llm_evaluation/towards_self-evolving_agent_benchmarks_validatable_agent_trajectory_via_test-tim.md)
 - [\[ACL 2026\] LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control](locar_localization-aware_evaluation_of_in-vehicle_assistants_through_fine-graine.md)
-- [\[ACL 2026\] Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows](finch_benchmarking_finance_amp_accounting_across_spreadsheet-centric_enterprise_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Obstruction Reasoning for Robotic Grasping
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Vision-Language Model] Addressing the long-neglected problem in cluttered scenes where "the target object is obstructed and obstructions must be removed first," this paper proposes UNOGrasp. It is a Vision-Language Model (VLM) that constructs target-centric directed obstruction graphs and is trained via SFT+RFT (GRPO + IoU reward). Accompani
+  [CVPR 2026][Robotics][Obstruction Reasoning] Addressing the long-neglected problem in cluttered scenes where "the target object is obstructed and obstructions must be removed first," this paper proposes UNOGrasp. It is a Vision-Language Model (VLM) that constructs target-centric directed obstruction graphs and is trained via SFT+RFT (GRPO + IoU reward). Accompanied by the self-built UNOBench benchmark (100k+ obstruction paths), it outperforms Qwen2.5-VL and Google’s proprieta…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Robotics"
+  - "Obstruction Reasoning"
+  - "Grasping in Clutter"
+  - "Vision-Language Models"
+  - "Reinforcement Fine-Tuning"
+  - "Target-Centric Graph"
 date: 2026-05-08
-content_hash: a7ad48bfb497da92
+content_hash: 815e42d39d31609a
 ---
+
 # Obstruction Reasoning for Robotic Grasping
 
 **Conference**: CVPR 2026  
@@ -152,15 +157,15 @@ Ablating IoU reward in RFT:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
 - [\[CVPR 2026\] GraspALL: Adaptive Structural Compensation from Illumination Variation for Robotic Garment Grasping in Any Low-Light Conditions](graspall_adaptive_structural_compensation_from_illumination_variation_for_roboti.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
+- [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](../../ICLR2026/robotics/embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
 - [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](../../AAAI2026/robotics/towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
-- [\[CVPR 2025\] ZeroGrasp: Zero-Shot Shape Reconstruction Enabled Robotic Grasping](../../CVPR2025/robotics/zerograsp_zero-shot_shape_reconstruction_enabled_robotic_grasping.md)
+- [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
 
 </div>
 

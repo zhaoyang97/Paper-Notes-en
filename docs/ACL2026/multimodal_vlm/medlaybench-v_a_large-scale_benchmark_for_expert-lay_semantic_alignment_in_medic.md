@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MedLayBench-V: A Large-Scale Benchmark for Expert-Lay Semantic Alignment in Medical Vision Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][UMLS] This paper introduces MedLayBench-V, the first large-scale multimodal medical expert-lay semantic alignment benchmark (79,793 image-text pairs). Through the Structured Concept-Grounded Refinement (SCGR) pipeline, professional radiology reports are converted into lay descriptions. This ensures clinical semantic fidelity
+  [ACL 2026 Oral Findings][Multimodal VLM][Medical Vision-Language Models] This paper introduces MedLayBench-V, the first large-scale multimodal medical expert-lay semantic alignment benchmark (79,793 image-text pairs). Through the Structured Concept-Grounded Refinement (SCGR) pipeline, professional radiology reports are converted into lay descriptions. This ensures clinical semantic fidelity while reducing reading difficulty from graduate to high school level. Zero-shot retrie…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - UMLS
+  - "ACL 2026 Oral Findings"
+  - "Multimodal VLM"
+  - "Medical Vision-Language Models"
+  - "Expert-Lay Semantic Alignment"
+  - "Medical Text Simplification"
+  - "UMLS"
+  - "Multimodal Benchmark"
 date: 2026-05-08
-content_hash: 6b7ac318f7638c92
+content_hash: 0e961eed55dcbd47
 ---
+
 # MedLayBench-V: A Large-Scale Benchmark for Expert-Lay Semantic Alignment in Medical Vision Language Models
 
 **Conference**: ACL 2026 Oral Findings  
@@ -159,11 +164,11 @@ The SCGR pipeline is a data construction methodology and does not involve end-to
 
 ## Related Papers
 
-- [\[ACL 2026\] Doc-PP: Document Policy Preservation Benchmark for Large Vision-Language Models](doc-pp_document_policy_preservation_benchmark_for_large_vision-language_models.md)
 - [\[ACL 2026\] ChartDiff: A Large-Scale Benchmark for Comprehending Pairs of Charts](chartdiff_a_large-scale_benchmark_for_comprehending_pairs_of_charts.md)
-- [\[ACL 2026\] From Charts to Code: A Hierarchical Benchmark for Multimodal Models](from_charts_to_code_a_hierarchical_benchmark_for_multimodal_models.md)
-- [\[ACL 2026\] Jailbreaking Multimodal Large Language Models using Multi-Clip Video](jailbreaking_multimodal_large_language_models_using_multi-clip_video.md)
-- [\[ACL 2026\] LaMI: Augmenting Large Language Models via Late Multi-Image Fusion](lami_augmenting_large_language_models_via_late_multi-image_fusion.md)
+- [\[CVPR 2025\] VILA-M3: Enhancing Vision-Language Models with Medical Expert Knowledge](../../CVPR2025/multimodal_vlm/vila-m3_enhancing_vision-language_models_with_medical_expert_knowledge.md)
+- [\[ACL 2026\] Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models](cross-cultural_expert-level_art_critique_evaluation_with_vision-language_models.md)
+- [\[ACL 2026\] Doc-PP: Document Policy Preservation Benchmark for Large Vision-Language Models](doc-pp_document_policy_preservation_benchmark_for_large_vision-language_models.md)
+- [\[ICML 2026\] MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models](../../ICML2026/multimodal_vlm/medsight_towards_grounded_visual_comprehension_in_medical_large_vision-language_.md)
 
 </div>
 

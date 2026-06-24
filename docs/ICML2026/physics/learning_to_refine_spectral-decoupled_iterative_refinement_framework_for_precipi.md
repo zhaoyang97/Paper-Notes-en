@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Refine: Spectral-Decoupled Iterative Refinement Framework for Precipitation Nowcasting
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] SDIR reformulates radar precipitation nowcasting (0–2 hours) as a "frequency-decoupled iterative refinement" process. It employs SFG-Former to extract stable low-frequency weather skeletons and FR-Refiner (utilizing Fourier Neural Operators) to progressively synthesize high-frequency convective details across frequency
+  [ICML 2026][Physics & Scientific Computing][Precipitation Nowcasting] SDIR reformulates radar precipitation nowcasting (0–2 hours) as a "frequency-decoupled iterative refinement" process. It employs SFG-Former to extract stable low-frequency weather skeletons and FR-Refiner (utilizing Fourier Neural Operators) to progressively synthesize high-frequency convective details across frequency bands. A PCPSD loss, aligned with the Kolmogorov turbulence power law…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Precipitation Nowcasting"
+  - "Spectral Decoupling"
+  - "Iterative Refinement"
+  - "Fourier Neural Operator"
+  - "Power Spectral Density Loss"
 date: 2026-05-08
-content_hash: a8967b3f3ec6da87
+content_hash: b85de99650f89f3a
 ---
+
 # Learning to Refine: Spectral-Decoupled Iterative Refinement Framework for Precipitation Nowcasting
 
 **Conference**: ICML 2026  
@@ -155,16 +161,16 @@ SDIR achieves a +13.6% gain in HSS AVG and +14.1% in CSI AVG over the strongest 
 - Value: ⭐⭐⭐⭐ Offers a deterministic, physically consistent, and high-resolution route for mission-critical nowcasting.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Iterative Refinement Neural Operators are Learned Fixed-Point Solvers: A Principled Approach to Spectral Bias Mitigation](iterative_refinement_neural_operators_are_learned_fixed-point_solvers_a_principl.md)
 - [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
+- [\[ICLR 2026\] MoMa: A Simple Modular Learning Framework for Material Property Prediction](../../ICLR2026/physics/moma_a_simple_modular_learning_framework_for_material_property_prediction.md)
 - [\[ICML 2026\] Topology-Preserving Neural Operator Learning via Hodge Decomposition](topology-preserving_neural_operator_learning_via_hodge_decomposition.md)
 - [\[ICML 2026\] Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs](hermite-ngp_gradient-augmented_hash_encoding_for_learning_pdes.md)
-- [\[AAAI 2026\] Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction](../../AAAI2026/physics/knowledge-guided_masked_autoencoder_with_linear_spectral_mixing_and_spectral-ang.md)
 
 </div>
 

@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] The Price of Robustness: Stable Classifiers Need Overparameterization
 description: >-
-  [ICLR 2026][learning_theory][margin] The authors establish stability-generalization bounds for discontinuous classifiers, proving a "law of robustness cost" in classification tasks: any interpolating classifier with parameter count $p \approx n$ must be unstable; achieving high stability requires overparameterization of magnitude $p \approx nd$.
+  [ICLR 2026][Learning Theory][Overparameterization] The authors establish stability-generalization bounds for discontinuous classifiers, proving a "law of robustness cost" in classification tasks: any interpolating classifier with parameter count $p \approx n$ must be unstable; achieving high stability requires overparameterization of magnitude $p \approx nd$.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - margin
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Generalization Theory"
+  - "Overparameterization"
+  - "robustness"
+  - "stability"
+  - "classifier"
+  - "generalization bounds"
+  - "margin"
 date: 2026-05-08
-content_hash: a76501249de03173
+content_hash: 186be89ab32b516f
 ---
+
 # The Price of Robustness: Stable Classifiers Need Overparameterization
 
 **Conference**: ICLR 2026  

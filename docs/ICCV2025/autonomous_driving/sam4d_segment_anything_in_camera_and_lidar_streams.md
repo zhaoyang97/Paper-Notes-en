@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAM4D: Segment Anything in Camera and LiDAR Streams
 description: >-
-  [ICCV 2025][Autonomous Driving][Multimodal Segmentation] This paper presents SAM4D, the first promptable multimodal segmentation foundation model for camera and LiDAR streams. It introduces Unified Multimodal Positional…
+  [ICCV 2025][Autonomous Driving][Multimodal Segmentation] This paper presents SAM4D, the first promptable multimodal segmentation foundation model for camera and LiDAR streams. It introduces Unified Multimodal Positional Encoding (UMPE) to enable cross-modal prompting and interaction, Motion-aware Cross-Modal Attention (MCMA) for temporal consistency, and constructs the Waymo-4DSeg dataset containing 300K+ masklets, demonstrating strong capabilities in cross-modal segmentation…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Segmentation"
   - "SAM"
 date: 2026-05-08
-content_hash: 75f8927648df110f
+content_hash: cd6b77a8f5020c0d
 ---
 
 # SAM4D: Segment Anything in Camera and LiDAR Streams
@@ -236,11 +236,11 @@ Ego-motion compensation ablation:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Segment Anything, Even Occluded](../../CVPR2025/autonomous_driving/segment_anything_even_occluded.md)
 - [\[ICCV 2025\] Detect Anything 3D in the Wild](detect_anything_3d_in_the_wild.md)
-- [\[ICLR 2026\] SEAL: Segment Any Events with Language](../../ICLR2026/autonomous_driving/segment_any_events_with_language.md)
 - [\[ICCV 2025\] MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion](mgsfm_multi-camera_geometry_driven_global_structure-from-motion.md)
 - [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
-- [\[ICCV 2025\] Splat-LOAM: Gaussian Splatting LiDAR Odometry and Mapping](splat-loam_gaussian_splatting_lidar_odometry_and_mapping.md)
+- [\[ICLR 2026\] SEAL: Segment Any Events with Language](../../ICLR2026/autonomous_driving/segment_any_events_with_language.md)
 
 </div>
 

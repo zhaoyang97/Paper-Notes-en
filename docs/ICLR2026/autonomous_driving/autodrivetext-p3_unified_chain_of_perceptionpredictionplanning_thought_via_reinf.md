@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] $AutoDrive\text{-}P^3$: Unified Chain of Perception-Prediction-Planning Thought via Reinforcement Fine-Tuning
 description: >-
-  [ICLR 2026][Autonomous Driving][Vision-Language Model] AutoDrive-P3 organizes perception, prediction, and planning of autonomous driving VLMs into a unified $P^3$ chain-of-thought reasoning, utilizing GRPO rewards spanning all three stages for reinforcement fine-tuning. It simultaneously improves trajectory accuracy, collision rates, and closed-loop planning scores on nuSc
+  [ICLR 2026][Autonomous Driving][End-to-end Autonomous Driving] AutoDrive-P3 organizes perception, prediction, and planning of autonomous driving VLMs into a unified $P^3$ chain-of-thought reasoning, utilizing GRPO rewards spanning all three stages for reinforcement fine-tuning. It simultaneously improves trajectory accuracy, collision rates, and closed-loop planning scores on nuScenes and NAVSIM.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Vision-Language Model
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "End-to-end Autonomous Driving"
+  - "Vision-Language Models"
+  - "Perception-Prediction-Planning"
+  - "Reinforcement Fine-Tuning"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: d793f6faa56a5ff1
+content_hash: 8af585dfc28c81f2
 ---
+
 # $AutoDrive\text{-}P^3$: Unified Chain of Perception-Prediction-Planning Thought via Reinforcement Fine-Tuning
 
 **Conference**: ICLR 2026  

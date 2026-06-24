@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NarrLV: Towards a Comprehensive Narrative-Centric Evaluation for Long Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Benchmark] NarrLV introduces "Temporal Narrative Atoms (TNA)" as the fundamental unit for quantifying narrative richness. It features a prompt suite with an arbitrarily extendable number of TNAs and a three-stage progressive evaluation metric based on MLLM Q&A. This work systematically measures the "storytelling" capability of lo
+  [ICLR 2026][Video Generation][Long Video Generation] NarrLV introduces "Temporal Narrative Atoms (TNA)" as the fundamental unit for quantifying narrative richness. It features a prompt suite with an arbitrarily extendable number of TNAs and a three-stage progressive evaluation metric based on MLLM Q&A. This work systematically measures the "storytelling" capability of long video generation models for the first time, revealing that current models can only reliably express appr…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Benchmark
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Long Video Generation"
+  - "Narrative Evaluation"
+  - "Benchmark"
+  - "Temporal Narrative Atom (TNA)"
+  - "MLLM Q&A Evaluation"
 date: 2026-05-08
-content_hash: 596e6dd6be74523b
+content_hash: 1f248c757a50a4ed
 ---
+
 # NarrLV: Towards a Comprehensive Narrative-Centric Evaluation for Long Video Generation
 
 **Conference**: ICLR 2026  
@@ -139,10 +144,10 @@ Accuracy increases as the vote count moves from 1→3→5 and tends toward conve
 ## Related Papers
 
 - [\[ICLR 2026\] VideoPhy-2: A Challenging Action-Centric Physical Commonsense Evaluation in Video Generation](videophy-2_a_challenging_action-centric_physical_commonsense_evaluation_in_video.md)
+- [\[ICLR 2026\] $PhyWorldBench$: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models](phyworldbench_a_comprehensive_evaluation_of_physical_realism_in_text-to-video_mo.md)
 - [\[ICML 2026\] V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation](../../ICML2026/video_generation/v2v-bench_a_comprehensive_benchmark_for_video-to-video_generation_evaluation.md)
 - [\[ICLR 2026\] Mixture of Contexts for Long Video Generation](mixture_of_contexts_for_long_video_generation.md)
 - [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
-- [\[ICLR 2026\] LongLive: Real-time Interactive Long Video Generation](longlive_real-time_interactive_long_video_generation.md)
 
 </div>
 

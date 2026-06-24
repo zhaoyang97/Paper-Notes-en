@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Disentangled representation learning through unsupervised symmetry group discovery
 description: >-
-  [ICLR 2026][Self-Supervised Learning][LSBD] This paper enables an embodied agent to automatically discover the underlying symmetry group decomposition of its action space through unsupervised interaction with the environment. It then learns "Linear Symmetry-Based Disentanglement" (LSBD) based on this discovered structure, overcoming the limitation of prior metho
+  [ICLR2026][Self-Supervised Learning][Disentangled Representation] This paper enables an embodied agent to automatically discover the underlying symmetry group decomposition of its action space through unsupervised interaction with the environment. It then learns "Linear Symmetry-Based Disentanglement" (LSBD) based on this discovered structure, overcoming the limitation of prior methods requiring manual pre-specification of group structures. The method outperforms existing LSB…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - LSBD
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Disentangled Representation"
+  - "Symmetry Groups"
+  - "LSBD"
+  - "Group Decomposition Discovery"
+  - "Embodied Agents"
 date: 2026-05-08
-content_hash: 07a429f5470bd2a3
+content_hash: d427a6d94f624ca7
 ---
+
 # Disentangled representation learning through unsupervised symmetry group discovery
 
 **Conference**: ICLR2026  
@@ -142,8 +147,8 @@ Note: MIG/SAP require one dimension per factor, while LSBD typically needs $\ge 
 - [\[ICLR 2026\] Boosting Open Set Recognition Performance through Modulated Representation Learning](boosting_open_set_recognition_performance_through_modulated_representation_learn.md)
 - [\[ICLR 2026\] Unsupervised Representation Learning - An Invariant Risk Minimization Perspective](unsupervised_representation_learning_-_an_invariant_risk_minimization_perspectiv.md)
 - [\[ICLR 2026\] A Bayesian Nonparametric Framework for Learning Disentangled Representations](a_bayesian_nonparametric_framework_for_learning_disentangled_representations.md)
-- [\[ICLR 2026\] Mechanistic Independence: A Principle for Identifiable Disentangled Representations](mechanistic_independence_a_principle_for_identifiable_disentangled_representatio.md)
 - [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](../../CVPR2026/self_supervised/seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
+- [\[NeurIPS 2025\] Consistent Supervised-Unsupervised Alignment for Generalized Category Discovery](../../NeurIPS2025/self_supervised/consistent_supervised-unsupervised_alignment_for_generalized_category_discovery.md)
 
 </div>
 

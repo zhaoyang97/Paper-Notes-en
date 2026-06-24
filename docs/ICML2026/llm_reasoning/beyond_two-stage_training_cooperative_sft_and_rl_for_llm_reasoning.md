@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Reinforcement Learning] Ours proposes the BRIDGE framework, which models the integration of SFT and RL as a bilevel optimization problem. In this framework, an SFT-based upper-level teacher learns to selectively transfer beneficial supervisory signals to an RL-based student via a lightweight LoRA module, achieving an average absolute improvem
+  [ICML 2026][Reasoning][LLM Reasoning] Ours proposes the BRIDGE framework, which models the integration of SFT and RL as a bilevel optimization problem. In this framework, an SFT-based upper-level teacher learns to selectively transfer beneficial supervisory signals to an RL-based student via a lightweight LoRA module, achieving an average absolute improvement of over 3 percentage points across five mathematical reasoning benchmarks.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reasoning"
+  - "LLM Reasoning"
+  - "Reinforcement Learning"
+  - "Supervised Fine-Tuning"
+  - "Bilevel Optimization"
+  - "Meta-Learning"
 date: 2026-05-08
-content_hash: d8658e71858fa3ff
+content_hash: 7078789ce6031e79
 ---
+
 # Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning
 
 **Conference**: ICML 2026  
@@ -143,9 +148,9 @@ Robustness to reward noise: When rewards are flipped with probability $p=0.2$, B
 ## Related Papers
 
 - [\[ICML 2026\] ETS: Energy-Guided Test-Time Scaling for Training-Free RL Alignment](ets_energy-guided_test-time_scaling_for_training-free_rl_alignment.md)
+- [\[ICLR 2026\] Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning](../../ICLR2026/llm_reasoning/beyond_markovian_reflective_exploration_via_bayes-adaptive_rl_for_llm_reasoning.md)
 - [\[NeurIPS 2025\] First SFT, Second RL, Third UPT: Continual Improving Multi-Modal LLM Reasoning via Unsupervised Post-Training](../../NeurIPS2025/llm_reasoning/first_sft_second_rl_third_upt_continual_improving_multi-modal_llm_reasoning_via_.md)
 - [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
-- [\[ICML 2026\] On Robustness and Chain-of-Thought Consistency of RL-Finetuned VLMs](on_robustness_and_chain-of-thought_consistency_of_rl-finetuned_vlms.md)
 - [\[ICLR 2026\] AceReason-Nemotron 1.1: Advancing Math and Code Reasoning through SFT and RL Synergy](../../ICLR2026/llm_reasoning/acereason-nemotron_11_advancing_math_and_code_reasoning_through_sft_and_rl_syner.md)
 
 </div>

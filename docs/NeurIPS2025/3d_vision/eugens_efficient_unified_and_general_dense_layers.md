@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EUGens: Efficient, Unified, and General Dense Layers
 description: >-
-  [NeurIPS 2025][3D Vision][efficient neural network] EUGens introduces a new family of efficient dense layers that leverage Random Features to reduce the inference complexity of fully connected feedforward layers (FFLs) f…
+  [NeurIPS 2025][3D Vision][efficient neural network] EUGens introduces a new family of efficient dense layers that leverage Random Features to reduce the inference complexity of fully connected feedforward layers (FFLs) from quadratic to linear. The framework unifies existing efficient FFL extensions and achieves up to 27% inference speedup and 30% parameter compression across LLM pre-training, ViT image classification, and NeRF/iSDF 3D reconstruction tasks…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Transformer"
   - "NeRF"
 date: 2026-05-08
-content_hash: 7eaadd1e292ea809
+content_hash: 5bd36123ba56838b
 ---
 
 # EUGens: Efficient, Unified, and General Dense Layers
@@ -137,11 +137,11 @@ EUGens demonstrates that random feature methods are underexplored for deep learn
 
 ## Related Papers
 
+- [\[CVPR 2025\] A Unified Image-Dense Annotation Generation Model for Underwater Scenes](../../CVPR2025/3d_vision/a_unified_image-dense_annotation_generation_model_for_underwater_scenes.md)
+- [\[CVPR 2025\] Generative Omnimatte: Learning to Decompose Video into Layers](../../CVPR2025/3d_vision/generative_omnimatte_learning_to_decompose_video_into_layers.md)
 - [\[NeurIPS 2025\] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation](on_geometry-enhanced_parameter-efficient_fine-tuning_for_3d_scene_segmentation.md)
-- [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](../../CVPR2026/3d_vision/dynamic_visual_slam_using_a_general_3d_prior.md)
-- [\[ICLR 2026\] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning](../../ICLR2026/3d_vision/megs2_memory-efficient_gaussian_splatting_via_spherical_gaussians_and_unified_pr.md)
-- [\[NeurIPS 2025\] Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting](segment_then_splat_unified_3d_open-vocabulary_segmentation_via_gaussian_splattin.md)
-- [\[NeurIPS 2025\] Locality-Sensitive Hashing-Based Efficient Point Transformer for Charged Particle Reconstruction](locality-sensitive_hashing-based_efficient_point_transformer_for_charged_particl.md)
+- [\[CVPR 2025\] Flow-NeRF: Joint Learning of Geometry, Poses, and Dense Flow within Unified Neural Representations](../../CVPR2025/3d_vision/flow-nerf_joint_learning_of_geometry_poses_and_dense_flow_within_unified_neural_.md)
+- [\[CVPR 2025\] Dense-SfM: Structure from Motion with Dense Consistent Matching](../../CVPR2025/3d_vision/dense-sfm_structure_from_motion_with_dense_consistent_matching.md)
 
 </div>
 

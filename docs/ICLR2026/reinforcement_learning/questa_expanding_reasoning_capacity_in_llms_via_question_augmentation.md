@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] QuestA: Expanding Reasoning Capacity in LLMs via Question Augmentation
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] To address the issue of sparse rewards and learning difficulties in RLVR on hard problems, QuestA prepends "partial solutions" to difficult questions during training as hints to reduce difficulty and densify reward signals. Combined with a curriculum that reduces the hint proportion from 50% to 25%, a 1.5B small model
+  [ICLR 2026][Reinforcement Learning][RLVR] To address the issue of sparse rewards and learning difficulties in RLVR on hard problems, QuestA prepends "partial solutions" to difficult questions during training as hints to reduce difficulty and densify reward signals. Combined with a curriculum that reduces the hint proportion from 50% to 25%, a 1.5B small model achieves new SOTA results on mathematical competition benchmarks such as AIME24/25 and HMMT25 (AIME24 72.5%…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Question Augmentation"
+  - "Partial Solution Prompting"
+  - "Curriculum Learning"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 609554ad17fdb6d1
+content_hash: 023c3d42f6890eaa
 ---
+
 # QuestA: Expanding Reasoning Capacity in LLMs via Question Augmentation
 
 **Conference**: ICLR 2026  

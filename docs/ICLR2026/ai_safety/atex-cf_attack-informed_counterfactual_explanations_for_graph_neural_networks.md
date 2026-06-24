@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks
 description: >-
-  [ICLR 2026][AI Safety][Interpretability] Proposes the ATEX-CF framework, which for the first time unifies edge addition strategies from adversarial attacks with edge removal strategies from counterfactual explanations. By jointly optimizing prediction flipping, sparsity, and plausibility, it generates more faithful, concise, and reasonable instance-level coun
+  [ICLR 2026][AI Safety][Graph Neural Networks] Proposes the ATEX-CF framework, which for the first time unifies edge addition strategies from adversarial attacks with edge removal strategies from counterfactual explanations. By jointly optimizing prediction flipping, sparsity, and plausibility, it generates more faithful, concise, and reasonable instance-level counterfactual explanations for GNNs.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Interpretability
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Graph Neural Networks"
+  - "Counterfactual Explanations"
+  - "Adversarial Attacks"
+  - "Explainability"
+  - "Graph Structure Perturbations"
 date: 2026-05-08
-content_hash: 81740723d3e398ff
+content_hash: a4b655227c8cc88b
 ---
+
 # ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks
 
 **Conference**: ICLR 2026  
@@ -145,8 +150,8 @@ After the mask optimization converges, ATEX-CF performs a minimal post-pruning s
 - [\[NeurIPS 2025\] Influence Functions for Edge Edits in Non-Convex Graph Neural Networks](../../NeurIPS2025/ai_safety/influence_functions_for_edge_edits_in_non-convex_graph_neural_networks.md)
 - [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
 - [\[ICLR 2026\] Bridging Fairness and Explainability: Can Input-Based Explanations Promote Fairness in Hate Speech Detection?](bridging_fairness_and_explainability_can_input-based_explanations_promote_fairne.md)
-- [\[ICLR 2026\] No Prior, No Leakage: Revisiting Reconstruction Attacks in Trained Neural Networks](no_prior_no_leakage_revisiting_reconstruction_attacks_in_trained_neural_networks.md)
-- [\[ICLR 2026\] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability](robustify_spiking_neural_networks_via_dominant_singular_deflation_under_heteroge.md)
+- [\[ICLR 2026\] Fisher-Rao Sensitivity for Out-of-Distribution Detection in Deep Neural Networks](fisher-rao_sensitivity_for_out-of-distribution_detection_in_deep_neural_networks.md)
+- [\[ICLR 2026\] Designing Affine-Invariant Neural Networks for Photometric Corruption Robustness and Generalization](designing_affine-invariant_neural_networks_for_photometric_corruption_robustness.md)
 
 </div>
 

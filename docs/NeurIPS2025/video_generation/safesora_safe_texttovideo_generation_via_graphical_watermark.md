@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Safe-Sora: Safe Text-to-Video Generation via Graphical Watermarking
 description: >-
-  [NeurIPS 2025][Video Generation][Graphical Watermarking] Safe-Sora is the first method to embed **graphical watermarks** (e.g., logo images) directly into the video generation pipeline. It employs a coarse-to-fine adapti…
+  [NeurIPS 2025][Video Generation][Graphical Watermarking] Safe-Sora is the first method to embed **graphical watermarks** (e.g., logo images) directly into the video generation pipeline. It employs a coarse-to-fine adaptive matching strategy to assign watermark patches to visually similar frames and regions, and designs a 3D wavelet transform-enhanced Mamba architecture for spatiotemporal fusion. The method substantially outperforms all baselines in both video quality (FVD 3.7…
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "3D Wavelet Transform"
   - "Adaptive Matching"
 date: 2026-05-08
-content_hash: 5ac3d56da7a20604
+content_hash: 59d573b223f64370
 ---
 
 # Safe-Sora: Safe Text-to-Video Generation via Graphical Watermarking
@@ -147,10 +147,10 @@ The **similarity-driven embedding** principle is transferable to other informati
 ## Related Papers
 
 - [\[NeurIPS 2025\] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation](foresight_adaptive_layer_reuse_for_accelerated_and_highquali.md)
+- [\[ECCV 2024\] Evaluating Text-to-Visual Generation with Image-to-Text Generation](../../ECCV2024/video_generation/evaluating_text-to-visual_generation_with_image-to-text_generation.md)
 - [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](../../ICCV2025/video_generation/vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
-- [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](../../ICCV2025/video_generation/stiv_scalable_text_and_image_conditioned_video_generation.md)
-- [\[ICCV 2025\] BadVideo: Stealthy Backdoor Attack against Text-to-Video Generation](../../ICCV2025/video_generation/badvideo_stealthy_backdoor_attack_against_text-to-video_generation.md)
-- [\[NeurIPS 2025\] Video Killed the Energy Budget: Characterizing the Latency and Power Regimes of Open Text-to-Video Models](video_killed_the_energy_budget_characterizing_the_latency_and_power_regimes_of_o.md)
+- [\[CVPR 2025\] TransPixeler: Advancing Text-to-Video Generation with Transparency](../../CVPR2025/video_generation/transpixeler_advancing_text-to-video_generation_with_transparency.md)
+- [\[CVPR 2025\] VIRES: Video Instance Repainting via Sketch and Text Guided Generation](../../CVPR2025/video_generation/vires_video_instance_repainting_via_sketch_and_text_guided_generation.md)
 
 </div>
 

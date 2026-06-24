@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Sampling Complexity of TD and PPO in RKHS
 description: >-
-  [ICLR 2026][learning_theory][RKHS] In the unified function space of Reproducing Kernel Hilbert Spaces (RKHS), this paper decouples and analyzes policy evaluation (kernelized TD critic) and policy improvement (KL-regularized proximal/natural gradient updates). It provides non-asymptotic, instance-adaptive convergence bounds dependent on RKHS entropy and
+  [ICLR 2026][Learning Theory][RKHS] In the unified function space of Reproducing Kernel Hilbert Spaces (RKHS), this paper decouples and analyzes policy evaluation (kernelized TD critic) and policy improvement (KL-regularized proximal/natural gradient updates). It provides non-asymptotic, instance-adaptive convergence bounds dependent on RKHS entropy and derives per-iteration sampling rules required to guarantee $O(k^{-1/2})$ convergence, validating the theoretically predicted…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - RKHS
-  - PPO/NPG
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Reinforcement Learning Theory"
+  - "RKHS"
+  - "Temporal Difference"
+  - "PPO/NPG"
+  - "Sample Complexity"
+  - "Non-asymptotic bounds"
 date: 2026-05-08
-content_hash: 90de6b1cf1e7d933
+content_hash: ec00b180a34fbdc0
 ---
+
 # Sampling Complexity of TD and PPO in RKHS
 
 **Conference**: ICLR 2026  
@@ -131,11 +136,11 @@ The critic learns via single-step TD-error, which is more lightweight than GAE's
 
 ## Related Papers
 
-- [\[ICLR 2026\] 为什么高秩神经网络也能泛化？：基于 RKHS 的代数框架](why_high-rank_neural_networks_generalize_an_algebraic_framework_with_rkhss.md)
 - [\[ICLR 2026\] Complexity Analysis of Normalizing Constant Estimation: from Jarzynski Equality to Annealed Importance Sampling and Beyond](complexity_analysis_of_normalizing_constant_estimation_from_jarzynski_equality_t.md)
 - [\[ICLR 2026\] Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs](near-optimal_sample_complexity_bounds_for_constrained_average-reward_mdps.md)
-- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
+- [\[ICLR 2026\] Why High-Rank Neural Networks Also Generalize?: An Algebraic Framework Based on RKHS](why_high-rank_neural_networks_generalize_an_algebraic_framework_with_rkhss.md)
 - [\[ICLR 2026\] Stable Coresets: Unleashing the Power of Uniform Sampling](stable_coresets_unleashing_the_power_of_uniform_sampling.md)
+- [\[ICLR 2026\] On Coreset for LASSO Regression Problem with Sensitivity Sampling](on_coreset_for_lasso_regression_problem_with_sensitivity_sampling.md)
 
 </div>
 

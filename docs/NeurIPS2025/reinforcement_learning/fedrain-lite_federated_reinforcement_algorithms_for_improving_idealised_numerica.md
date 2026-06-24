@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedRAIN-Lite: Federated Reinforcement Algorithms for Improving Idealised Numerical Weather and Climate Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Federated Reinforcement Learning] This paper proposes FedRAIN-Lite, a federated reinforcement learning framework that assigns RL agents to individual latitude bands to learn local c…
+  [NeurIPS 2025][Reinforcement Learning][Federated Reinforcement Learning] This paper proposes FedRAIN-Lite, a federated reinforcement learning framework that assigns RL agents to individual latitude bands to learn local climate parameterization policies with periodic global aggregation. Evaluated on a hierarchical idealized energy balance model (EBM), DDPG with this framework reduces area-weighted RMSE by over 50% in tropical and mid-latitude regions…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Energy Balance Model"
   - "DDPG"
 date: 2026-05-08
-content_hash: ab228a4f81f8a4e2
+content_hash: 7dcb193f782a602e
 ---
 
 # FedRAIN-Lite: Federated Reinforcement Algorithms for Improving Idealised Numerical Weather and Climate Models

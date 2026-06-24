@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models
 description: >-
-  [CVPR 2026][Model Compression][VGGT] Aiming at 3D foundation models like VGGT, the authors extract a "shared LoRA subspace" for four types of 3D variations—texture, geometry, camera, and lighting—using controlled synthetic data. They demonstrate that these subspaces are approximately orthogonal. By concatenating them into a set of compact LoRA bases, effi
+  [CVPR 2026][Model Compression][LoRA Subspace] Aiming at 3D foundation models like VGGT, the authors extract a "shared LoRA subspace" for four types of 3D variations—texture, geometry, camera, and lighting—using controlled synthetic data. They demonstrate that these subspaces are approximately orthogonal. By concatenating them into a set of compact LoRA bases, efficient fine-tuning is achieved by training only a small middle matrix. This method achieves superior downstream acc…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - VGGT
+  - "CVPR 2026"
+  - "Model Compression"
+  - "LoRA Subspace"
+  - "3D Foundation Models"
+  - "VGGT"
+  - "Attribute Decoupling"
+  - "Synthetic Data Fine-tuning"
 date: 2026-05-08
-content_hash: 85c4267699d6b96d
+content_hash: e472066d79072714
 ---
+
 # Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models
 
 **Conference**: CVPR 2026  
@@ -160,11 +165,11 @@ While LoRA requires a rank of 256 (261M parameters) to reach 2.517 cross-domain 
 
 ## Related Papers
 
-- [\[CVPR 2026\] QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer](qvggt_post-training_quantized_visual_geometry_grounded_transformer.md)
-- [\[CVPR 2026\] HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT](hess_head_sensitivity_score_for_sparsity_redistribution_in_vggt.md)
-- [\[CVPR 2026\] TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer](taskit_memory-efficient_fine-tuning_of_multi-lora_llms_via_cross-task_importance.md)
-- [\[CVPR 2026\] PlanaReLoc: Camera Relocalization in 3D Planar Primitives via Region-Based Structure Matching](planareloc_camera_relocalization_in_3d_planar_primitives_via_region-based_struct.md)
-- [\[CVPR 2026\] Merge3D: Efficient 3D Multimodal LLMs via Joint 2D-3D Token Merging](merge3d_efficient_3d_multimodal_llms_via_joint_2d-3d_token_merging.md)
+- [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](../../ICLR2026/model_compression/abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
+- [\[CVPR 2026\] SigLino: Efficient Multi-Teacher Distillation for Agglomerative Vision Foundation Models](siglino_efficient_multi-teacher_distillation_for_agglomerative_vision_foundation.md)
+- [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
+- [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](../../ICLR2026/model_compression/sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
+- [\[CVPR 2026\] ReFTA: Breaking the Weight Reconstruction Bottleneck in Tensorized Parameter-Efficient Fine-Tuning](refta_breaking_the_weight_reconstruction_bottleneck_in_tensorized_parameter-effi.md)
 
 </div>
 

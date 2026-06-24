@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Retrosynthesis Planning via Worst-path Policy Optimisation in Tree-structured MDPs
 description: >-
-  [NeurIPS 2025][Computational Biology][retrosynthesis planning] This work reformulates retrosynthesis planning as a worst-path optimisation problem in tree-structured MDPs — the value of a synthesis tree is determined by…
+  [NeurIPS 2025][Computational Biology][retrosynthesis planning] This work reformulates retrosynthesis planning as a worst-path optimisation problem in tree-structured MDPs — the value of a synthesis tree is determined by its weakest path, since any dead-end path renders the entire tree invalid. The proposed method, InterRetro, optimises this worst-path objective via weighted self-imitation learning, achieving 100% success rate on Retro*-190, reducing path length by 4.9%…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "self-imitation learning"
   - "search-free inference"
 date: 2026-05-08
-content_hash: 5563972fd6dce65b
+content_hash: d4ea8fd343dfb4ad
 ---
 
 # Retrosynthesis Planning via Worst-path Policy Optimisation in Tree-structured MDPs
@@ -124,11 +124,11 @@ Value network loss (Bellman TD): $\mathcal{L}(\phi) = \mathbb{E}[(V_\phi(s) - (r
 
 ## Related Papers
 
+- [\[ICML 2025\] Improved Off-policy Reinforcement Learning in Biological Sequence Design](../../ICML2025/computational_biology/improved_off-policy_reinforcement_learning_in_biological_sequence_design.md)
 - [\[ICML 2026\] From Feasible to Practical: Pareto-Optimal Synthesis Planning](../../ICML2026/computational_biology/from_feasible_to_practical_pareto-optimal_synthesis_planning.md)
-- [\[AAAI 2026\] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics](../../AAAI2026/computational_biology/dual-path_knowledge-augmented_contrastive_alignment_network_for_spatially_resolv.md)
-- [\[ACL 2026\] ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design](../../ACL2026/computational_biology/protocycle_reflective_tool-augmented_planning_for_text-guided_protein_design.md)
-- [\[NeurIPS 2025\] Learning Conformational Ensembles of Proteins Based on Backbone Geometry](learning_conformational_ensembles_of_proteins_based_on_backbone_geometry.md)
-- [\[NeurIPS 2025\] Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning](generative_distribution_embeddings_lifting_autoencoders_to_the_space_of_distribu.md)
+- [\[ICML 2026\] RETROSPECT: RETROsynthesis via Sequential Prediction, and Chemically Transformed-ranking](../../ICML2026/computational_biology/retrospect_retrosynthesis_via_sequential_prediction_and_chemically_transformed-r.md)
+- [\[ICML 2026\] Generative Modeling of Discrete Latent Structures via Dynamic Policy Gradients](../../ICML2026/computational_biology/generative_modeling_of_discrete_latent_structures_via_dynamic_policy_gradients.md)
+- [\[ICLR 2026\] DrugTrail: Interpretable Drug Discovery via Structured Reasoning and Druggability‑Tailored Preference Optimization](../../ICLR2026/computational_biology/drugtrail_interpretable_drug_discovery_via_structured_reasoning_and_druggability.md)
 
 </div>
 

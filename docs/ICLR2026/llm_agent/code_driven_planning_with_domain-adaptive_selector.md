@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Code Driven Planning with Domain-Adaptive Selector
 description: >-
-  [ICLR 2026][LLM Agent][Reinforcement Learning] CoPiC enables LLMs to generate multiple "high-level planning programs" at once (rather than requesting plans from the LLM step-by-step). These programs interact with the environment in a closed loop to produce candidate plans. A small model, the "Domain-Adaptive Selector" fine-tuned via RL, is then used to select the p
+  [ICLR2026][LLM Agent][LLM Planning] CoPiC enables LLMs to generate multiple "high-level planning programs" at once (rather than requesting plans from the LLM step-by-step). These programs interact with the environment in a closed loop to produce candidate plans. A small model, the "Domain-Adaptive Selector" fine-tuned via RL, is then used to select the plan best aligned with long-term rewards. This approach achieves an average success rate improvement of 19.14% and an average…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "LLM Agent"
+  - "LLM Planning"
+  - "Code-driven"
+  - "Domain-Adaptive Selector"
+  - "Mixture of Experts"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: a0dda3e653ff1837
+content_hash: 5402b5bdaf3e9b52
 ---
+
 # Code Driven Planning with Domain-Adaptive Selector
 
 **Conference**: ICLR2026  
@@ -159,8 +164,8 @@ ALFWorld overall: SR +16.96%, Cost −83.76%. Even compared with the online lear
 - [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](../../AAAI2026/llm_agent/reflection-driven_control_for_trustworthy_code_agents.md)
 - [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](../../ICML2026/llm_agent/autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)
-- [\[ICLR 2026\] Modeling Others' Minds as Code](modeling_others_minds_as_code.md)
 - [\[ICML 2026\] NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration](../../ICML2026/llm_agent/naviagent_graph-driven_bilevel_planning_for_scalable_tool_orchestration.md)
+- [\[ICLR 2026\] Modeling Others' Minds as Code](modeling_others_minds_as_code.md)
 
 </div>
 

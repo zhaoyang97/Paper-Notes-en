@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] The CoT Encyclopedia：分析、预测并控制推理模型的思考方式
+  [Paper Note] The CoT Encyclopedia: Analyzing, Predicting, and Controlling the Thinking Process of Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper proposes CoT Encyclopedia, a **bottom-up, data-driven** framework: it automatically mines reasoning strategy dimensions from model-generated long Chains-of-Thought (CoT), clusters them into interpretable contrastive rubrics, and uses them to predict and proactively guide the model toward optimal strategies.
+  [ICLR 2026][Reasoning][Long Chain-of-Thought] This paper proposes CoT Encyclopedia, a **bottom-up, data-driven** framework: it automatically mines reasoning strategy dimensions from model-generated long Chains-of-Thought (CoT), clusters them into interpretable contrastive rubrics, and uses them to predict and proactively guide the model toward optimal strategies. This approach improves accuracy and safety rates by 12.2–16.1% across 5 benchmarks and reveals the key insight tha…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Long Chain-of-Thought"
+  - "Reasoning Strategy Taxonomy"
+  - "Controllable Reasoning"
+  - "Bottom-up Clustering"
+  - "Safety Alignment"
 date: 2026-05-08
-content_hash: ceaedceeebfbb59b
+content_hash: 7f1bde614072311c
 ---
+
 # The CoT Encyclopedia: Analyzing, Predicting, and Controlling the Thinking Process of Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -133,15 +139,16 @@ Question-specific optimal strategies consistently outperform dataset-level ones,
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] SIM-CoT: Supervised Implicit Chain-of-Thought](sim-cot_supervised_implicit_chain-of-thought.md)
-- [\[ICLR 2026\] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos](cot-rvs_zero-shot_chain-of-thought_reasoning_segmentation_for_videos.md)
-- [\[ICLR 2026\] Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning](compositional_generalization_from_learned_skills_via_cot_training_a_theoretical_.md)
-- [\[ICLR 2026\] CoT-Evo: Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning](cot-evo_evolutionary_distillation_of_chain-of-thought_for_scientific_reasoning.md)
-- [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
+- [\[NeurIPS 2025\] Controlling Thinking Speed in Reasoning Models](../../NeurIPS2025/llm_reasoning/controlling_thinking_speed_in_reasoning_models.md)
+- [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Model](predicting_llm_reasoning_performance_with_small_proxy_model.md)
+- [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
+- [\[ICLR 2026\] Thinking-Free Policy Initialization Makes Distilled Reasoning Models More Effective and Efficient Reasoners](thinking-free_policy_initialization_makes_distilled_reasoning_models_more_effect.md)
 
 </div>
 

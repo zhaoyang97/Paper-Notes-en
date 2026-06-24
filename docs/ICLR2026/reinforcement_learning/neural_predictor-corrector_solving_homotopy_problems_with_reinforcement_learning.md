@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Neural Predictor-Corrector: Solving Homotopy Problems with Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Homotopy] This paper unifies four seemingly unrelated challenges—robust optimization, global optimization, polynomial root-finding, and sampling—into a "homotopy" paradigm. It demonstrates that their solvers share a "predictor-corrector (PC)" structure and introduces NPC, a universal neural solver that replaces hand-designed ste
+  [ICLR 2026][Reinforcement Learning][Homotopy] This paper unifies four seemingly unrelated challenges—robust optimization, global optimization, polynomial root-finding, and sampling—into a "homotopy" paradigm. It demonstrates that their solvers share a "predictor-corrector (PC)" structure and introduces NPC, a universal neural solver that replaces hand-designed step-size and termination heuristics with reinforcement learning to achieve cross-instance generalization and plug-an…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Homotopy
-  - Predictor-Corrector
-  - Amortized Training
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Homotopy"
+  - "Predictor-Corrector"
+  - "Amortized Training"
+  - "Robust Optimization"
+  - "Polynomial Root-finding"
+  - "Sampling"
 date: 2026-05-08
-content_hash: c389bcb4ac976555
+content_hash: 2fa5e36769b7b02a
 ---
+
 # Neural Predictor-Corrector: Solving Homotopy Problems with Reinforcement Learning
 
 **Conference**: ICLR 2026  

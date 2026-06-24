@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence
 description: >-
-  [ACL 2026][Medical NLP][RAG] This paper constructs the MedCounterFact dataset—systematically replacing interventions in clinical trials with nonsense words, medical terms, non-medical objects, and toxic substances. It finds that leading LLMs exhibit nearly unconditional compliance with the context in the face of counterfactual medical evidence, co
+  [ACL 2026 Findings][Medical LLM][Faithfulness-Safety Conflict] This paper constructs the MedCounterFact dataset—systematically replacing interventions in clinical trials with nonsense words, medical terms, non-medical objects, and toxic substances. It finds that leading LLMs exhibit nearly unconditional compliance with the context in the face of counterfactual medical evidence, confidently providing answers even when "evidence" suggests heroin or mustard gas is effective…
 tags:
-  - ACL 2026
-  - Medical NLP
-  - RAG
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Faithfulness-Safety Conflict"
+  - "Counterfactual Evidence"
+  - "Medical QA"
+  - "Safety Guardrails"
+  - "RAG"
 date: 2026-05-08
-content_hash: 06cf6db2bc1147d3
+content_hash: 7c90b9933e530c8d
 ---
+
 # Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence
 
 **Conference**: ACL 2026 Findings  
@@ -136,6 +141,7 @@ No training involved. Nine LLMs were evaluated: Gemini-2.5-flash, GPT-5-mini, Ll
 - Value: ⭐⭐⭐⭐⭐ Significant warning for medical AI safety, directly impacting deployment decisions for RAG systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -143,8 +149,8 @@ No training involved. Nine LLMs were evaluated: Gemini-2.5-flash, GPT-5-mini, Ll
 - [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
 - [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
 - [\[ACL 2026\] Calibrated? Not for Everyone: How Sexual Orientation and Religious Markers Distort LLM Accuracy and Confidence in Medical QA](calibrated_not_for_everyone_how_sexual_orientation_and_religious_markers_distort.md)
-- [\[ACL 2026\] Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers](ryze_evidence-enriched_data_synthesis_from_biomedical_papers.md)
 - [\[AAAI 2026\] ShortageSim: Simulating Drug Shortages under Information Asymmetry](../../AAAI2026/medical_nlp/shortagesim_simulating_drug_shortages_under_information_asymmetry.md)
+- [\[ACL 2026\] Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers](ryze_evidence-enriched_data_synthesis_from_biomedical_papers.md)
 
 </div>
 

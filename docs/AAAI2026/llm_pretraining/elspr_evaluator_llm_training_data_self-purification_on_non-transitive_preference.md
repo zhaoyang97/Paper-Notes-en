@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences
 description: >-
-  [AAAI 2026][LLM Pretraining][LLM Evaluation] ELSPR models pairwise preferences of LLM evaluators as tournament graphs, identifies non-transitive preferences via strongly connected components (SCCs)…
+  [AAAI 2026][LLM Pretraining][LLM Evaluation] ELSPR models pairwise preferences of LLM evaluators as tournament graphs, identifies non-transitive preferences via strongly connected components (SCCs), proposes a normalized directed graph structural entropy metric, and filters problematic training data through graph reconstruction — resulting in a 13.8% reduction in non-transitivity and a 0.088 decrease in structural entropy, while the discarded data achieves only 34.4% human ag…
 tags:
   - "AAAI 2026"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Data Cleaning"
   - "Structural Entropy"
 date: 2026-05-08
-content_hash: 3f1ac580ded10edc
+content_hash: 20b9310fc04f3b30
 ---
 
 # ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences
@@ -114,11 +114,11 @@ Standard preference learning loss. Qwen2.5-7B-Instruct and LLaMA3.1-8B-Instruct 
 
 ## Related Papers
 
+- [\[ICLR 2026\] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning](../../ICLR2026/llm_pretraining/sstoken_self-modulated_and_semantic-aware_token_selection_for_llm_fine-tuning.md)
 - [\[ACL 2026\] Demystifying Data Organization for Enhanced LLM Training](../../ACL2026/llm_pretraining/demystifying_data_organization_for_enhanced_llm_training.md)
+- [\[ACL 2025\] CritiQ: Mining Data Quality Criteria from Human Preferences](../../ACL2025/llm_pretraining/critiq_mining_data_quality_criteria_from_human_preferences.md)
+- [\[ICLR 2026\] Rewriting Pre-training Data Boosts LLM Performance in Math and Code](../../ICLR2026/llm_pretraining/rewriting_pre-training_data_boosts_llm_performance_in_math_and_code.md)
 - [\[ICLR 2026\] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training](../../ICLR2026/llm_pretraining/common_corpus_ethical_data_for_llm_pretraining.md)
-- [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](../../ICLR2026/llm_pretraining/token-level_data_selection_for_safe_llm_fine-tuning.md)
-- [\[ICML 2026\] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning](../../ICML2026/llm_pretraining/data_difficulty_and_the_generalization--extrapolation_tradeoff_in_llm_fine-tunin.md)
-- [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](../../ICLR2026/llm_pretraining/scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning
 description: >-
-  [NeurIPS 2025][Optimization][federated learning] This paper proposes FedLUAR, which uses a gradient-to-weight ratio metric to identify low-priority layers and recycles their updates from the previous round (rather than d…
+  [NeurIPS 2025][Optimization][federated learning] This paper proposes FedLUAR, which uses a gradient-to-weight ratio metric to identify low-priority layers and recycles their updates from the previous round (rather than discarding them), achieving accuracy nearly identical to FedAvg with only 17% communication overhead.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "layer-wise aggregation"
   - "non-IID"
 date: 2026-05-08
-content_hash: e8f6890fffb7acda
+content_hash: 7790cb07c9be3550
 ---
 
 # Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning
@@ -145,8 +145,8 @@ The recycling paradigm is generalizable to other communication-constrained setti
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
 - [\[NeurIPS 2025\] MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System](mar-fl_a_communication_efficient_peer-to-peer_federated_learning_system.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
+- [\[ICML 2025\] The Panaceas for Improving Low-Rank Decomposition in Communication-Efficient Federated Learning](../../ICML2025/optimization/the_panaceas_for_improving_low-rank_decomposition_in_communication-efficient_fed.md)
 - [\[NeurIPS 2025\] FedQS: Optimizing Gradient and Model Aggregation for Semi-Asynchronous Federated Learning](fedqs_optimizing_gradient_and_model_aggregation_for_semi-asynchronous_federated_.md)
-- [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](../../ICML2026/optimization/delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
 
 </div>
 

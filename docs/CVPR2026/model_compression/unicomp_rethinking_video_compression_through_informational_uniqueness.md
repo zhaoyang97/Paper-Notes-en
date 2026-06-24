@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniComp: Rethinking Video Compression Through Informational Uniqueness
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Ours proposes UniComp, a video token compression framework based on informational uniqueness (rather than attention). By utilizing frame group fusion, token allocation, and spatial dynamic compression, it maximizes the preservation of unique information across temporal, spatial, and global dimensions. It outperforms un
+  [CVPR 2026][Model Compression][Visual token compression] Ours proposes UniComp, a video token compression framework based on informational uniqueness (rather than attention). By utilizing frame group fusion, token allocation, and spatial dynamic compression, it maximizes the preservation of unique information across temporal, spatial, and global dimensions. It outperforms uncompressed baselines even when retaining only 10% of tokens.
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Visual token compression"
+  - "informational uniqueness"
+  - "video understanding"
+  - "MLLM efficiency"
+  - "plug-and-play"
 date: 2026-05-08
-content_hash: 11f1393ed1a50336
+content_hash: d2d11635c5bc34ad
 ---
+
 # UniComp: Rethinking Video Compression Through Informational Uniqueness
 
 **Conference**: CVPR 2026  
@@ -146,10 +152,10 @@ UniComp is a training-free, plug-and-play method with only 2 hyperparameters: th
 ## Related Papers
 
 - [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
-- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
 - [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](generative_video_compression_with_one-dimensional_latent_representation.md)
+- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
+- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
 - [\[ICLR 2026\] Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation](../../ICLR2026/model_compression/taming_momentum_rethinking_optimizer_states_through_low-rank_approximation.md)
-- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Partial Soft-Matching Distance for Neural Representational Comparison with Partial Unit Correspondence
 description: >-
-  [ICLR 2026][Interpretability][fMRI] This paper generalizes "soft-matching distance" to **partial optimal transport**, allowing a portion of neurons to remain unmatched. This approach finds robust unit-level correspondences between neural populations containing noise or missing counterparts. It uses an L-curve heuristic to automatically select the optimal
+  [ICLR 2026][Interpretability][Representational Similarity] This paper generalizes "soft-matching distance" to **partial optimal transport**, allowing a portion of neurons to remain unmatched. This approach finds robust unit-level correspondences between neural populations containing noise or missing counterparts. It uses an L-curve heuristic to automatically select the optimal matching mass. Results in simulations, cross-subject fMRI alignment…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - fMRI
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Representational Similarity"
+  - "Optimal Transport"
+  - "Partial Matching"
+  - "Neuronal Correspondence"
+  - "fMRI"
 date: 2026-05-08
-content_hash: fbd41506283679a7
+content_hash: ac429a0fe4be5b2e
 ---
+
 # Partial Soft-Matching Distance for Neural Representational Comparison with Partial Unit Correspondence
 
 **Conference**: ICLR 2026  
@@ -136,11 +141,11 @@ Comparing three neuron ranking methods on ResNet-18 (ImageNet-trained, two rando
 
 ## Related Papers
 
+- [\[ICML 2026\] MAAT: Heterogeneous Partial Observation State Reconstruction Based on Knowledge-Guided Kernel Regression](../../ICML2026/interpretability/knowledge-informed_kernel_state_reconstruction_from_heterogeneous_partial_observ.md)
 - [\[NeurIPS 2025\] Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions](../../NeurIPS2025/interpretability/partial_information_decomposition_via_normalizing_flows_in_latent_gaussian_distr.md)
 - [\[ICLR 2026\] Representational Alignment Across Model Layers and Brain Regions with Multi-Level Optimal Transport](representational_alignment_across_model_layers_and_brain_regions_with_multi-leve.md)
 - [\[ICLR 2026\] Diagnosing Generalization Failures from Representational Geometry Markers](diagnosing_generalization_failures_from_representational_geometry_markers.md)
 - [\[ICLR 2026\] LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking](llms_are_single-threaded_reasoners_demystifying_the_working_mechanism_of_soft_th.md)
-- [\[ACL 2026\] Similarity-Distance-Magnitude Activations](../../ACL2026/interpretability/similarity-distance-magnitude_activations.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning Posterior Predictive Distributions for Node Classification from Synthetic Graph Priors
 description: >-
-  [ICLR 2026][Graph Learning][Prior-Fitted Networks] By migrating the Prior-Fitted Network (PFN) paradigm from tabular data to graphs, the authors pre-train NodePFN on thousands of synthetic graphs generated from controllable priors. This allows for training-free, single-forward-pass general node classification on arbitrary real-world graphs, achieving a 71.27% average a
+  [ICLR 2026][Graph Learning][Prior-Fitted Networks] By migrating the Prior-Fitted Network (PFN) paradigm from tabular data to graphs, the authors pre-train NodePFN on thousands of synthetic graphs generated from controllable priors. This allows for training-free, single-forward-pass general node classification on arbitrary real-world graphs, achieving a 71.27% average accuracy across 23 benchmarks.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Prior-Fitted Networks
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Prior-Fitted Networks"
+  - "Node Classification"
+  - "Synthetic Graph Priors"
+  - "In-Context Learning"
+  - "Posterior Predictive Distribution"
+  - "Graph Foundation Models"
 date: 2026-05-08
-content_hash: 2caf3b68aed9623f
+content_hash: 8858518fbe19f863
 ---
+
 # Learning Posterior Predictive Distributions for Node Classification from Synthetic Graph Priors
 
 **Conference**: ICLR 2026  
@@ -129,7 +135,7 @@ The single pre-trained NodePFN ranks first on both homophilic and heterophilic g
 - [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](forest-based_graph_learning_for_semi-supervised_node_classification.md)
 - [\[ICLR 2026\] Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion](low-rank_few-shot_node_classification_by_node-level_graph_diffusion.md)
 - [\[ICLR 2026\] Scaling Knowledge Graph Construction through Synthetic Data Generation and Distillation](scaling_knowledge_graph_construction_through_synthetic_data_generation_and_disti.md)
-- [\[ICLR 2026\] Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion](glance_for_context_learning_when_to_leverage_llms_for_node-aware_gnn-llm_fusion.md)
+- [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-supervised Synthetic Pretraining for Inference of Stellar Mass Embedded in Dense Gas
 description: >-
-  [NeurIPS 2025 (Workshop: ML and the Physical Sciences)][Segmentation][self-supervised pretraining] This paper proposes a "synthetic data-driven self-supervised pretraining" paradigm: one million synthetic fractal images…
+  [NeurIPS 2025 (Workshop: ML and the Physical Sciences)][Segmentation][self-supervised pretraining] This paper proposes a "synthetic data-driven self-supervised pretraining" paradigm: one million synthetic fractal images are first generated via the Flame algorithm to pretrain a ViT-L/16 encoder using the DINOv2 framework; the frozen encoder is then transferred directly to an extremely limited set of magnetohydrodynamic (MHD) star-formation simulation data…
 tags:
   - "NeurIPS 2025 (Workshop: ML and the Physical Sciences)"
   - "Segmentation"
@@ -14,7 +14,7 @@ tags:
   - "MHD simulation"
   - "zero-shot semantic segmentation"
 date: 2026-05-08
-content_hash: e86ef25c4c8c9c6b
+content_hash: d9d6382eea1f1385
 ---
 
 # Self-supervised Synthetic Pretraining for Inference of Stellar Mass Embedded in Dense Gas
@@ -166,10 +166,10 @@ This comparison constitutes an effective ablation analysis:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Exploring Structural Degradation in Dense Representations for Self-supervised Learning](exploring_structural_degradation_in_dense_representations_for_self-supervised_le.md)
+- [\[ECCV 2024\] SCLIP: Rethinking Self-Attention for Dense Vision-Language Inference](../../ECCV2024/segmentation/sclip_rethinking_self-attention_for_dense_vision-language_inference.md)
+- [\[CVPR 2025\] ResCLIP: Residual Attention for Training-free Dense Vision-language Inference](../../CVPR2025/segmentation/resclip_residual_attention_for_training-free_dense_vision-language_inference.md)
+- [\[ECCV 2024\] SiLC: Improving Vision Language Pretraining with Self-Distillation](../../ECCV2024/segmentation/silc_improving_vision_language_pretraining_with_self-distillation.md)
 - [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](../../ICCV2025/segmentation/joint_self-supervised_video_alignment_and_action_segmentation.md)
-- [\[NeurIPS 2025\] Vision Transformers with Self-Distilled Registers](vision_transformers_with_self-distilled_registers.md)
-- [\[CVPR 2026\] Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning](../../CVPR2026/segmentation/follow_the_saliency_supervised_saliency_for_retrieval-augmented_dense_video_capt.md)
-- [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](../../ICCV2025/segmentation/enhancing_transformers_through_conditioned_embedded_tokens.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SCAPO utilizes an SE(3) equivariant autoencoder to align articulated objects in arbitrary poses (e.g., laptops, drawers, safes) to a shared canonical space. It then employs "articulation-aware blend skinning" to simultaneously regress part segmentation and joint axes/pivots/states. The entire pipeline is trained via se
+  [CVPR 2026][3D Vision][Articulated Objects] SCAPO utilizes an SE(3) equivariant autoencoder to align articulated objects in arbitrary poses (e.g., laptops, drawers, safes) to a shared canonical space. It then employs "articulation-aware blend skinning" to simultaneously regress part segmentation and joint axes/pivots/states. The entire pipeline is trained via self-supervision through cycle reconstruction and cross-space alignment without any annotations, CAD templates…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated Objects"
+  - "Category-Level Pose Estimation"
+  - "Self-Supervision"
+  - "SE(3) Equivariance"
+  - "Blend Skinning"
 date: 2026-05-08
-content_hash: 6c1885dae9426990
+content_hash: 0f749bf2d8291c4c
 ---
+
 # SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation
 
 **Conference**: CVPR 2026  
@@ -136,8 +142,8 @@ Real-world datasets (RGB-D scans of five categories: basket / laptop / suitcase 
 - [\[CVPR 2026\] DICArt: Advancing Category-level Articulated Object Pose Estimation in Discrete State-Spaces](dicart_advancing_category-level_articulated_object_pose_estimation_in_discrete_s.md)
 - [\[CVPR 2026\] SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation](se3-equivariance_with_geometric_and_topological_guidance_for_category-level_obje.md)
 - [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
+- [\[CVPR 2026\] ArtPro: Self-Supervised Articulated Object Reconstruction with Adaptive Integration of Mobility Proposals](artpro_self-supervised_articulated_object_reconstruction_with_adaptive_integrati.md)
 - [\[CVPR 2026\] RoSAMDepth: Robust Self-supervised Depth Estimation Leveraging Segment Anything Model](rosamdepth_robust_self-supervised_depth_estimation_leveraging_segment_anything_m.md)
-- [\[ICCV 2025\] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes](../../ICCV2025/3d_vision/unified_category-level_object_detection_and_pose_estimation_from_rgb_images_usin.md)
 
 </div>
 

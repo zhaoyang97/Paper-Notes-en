@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zero-Shot Inexact CAD Model Alignment from a Single Image
 description: >-
-  [ICCV 2025][3D Vision][CAD alignment] A weakly supervised 9-DoF CAD model alignment method that enhances DINOv2 features with geometry awareness and performs dense alignment optimization in Normalized Object Coordinate (…
+  [ICCV 2025][3D Vision][CAD alignment] A weakly supervised 9-DoF CAD model alignment method that enhances DINOv2 features with geometry awareness and performs dense alignment optimization in Normalized Object Coordinate (NOC) space, enabling zero-shot 3D alignment without pose annotations that generalizes to unseen categories.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "foundation models"
   - "NOC"
 date: 2026-05-08
-content_hash: 0756bbd82bf0d647
+content_hash: 1eeb9fccf982c7f8
 ---
 
 # Zero-Shot Inexact CAD Model Alignment from a Single Image
@@ -52,10 +52,10 @@ A coarse-to-fine pose estimation pipeline:
 1. **Geometry-aware feature adapter**: A lightweight MLP $E_\theta$ is trained to transform DINOv2 features into geometry-aware features. Training data consists of 9 ShapeNet CAD categories rendered and augmented with a diffusion model (300K images total), optimized with two objectives:
 
    **NOC prediction loss**: Encourages features to encode 3D positional information.
-   $$\mathcal{L}_{\text{NOC}} = \frac{1}{n \cdot h \cdot w}\sum_{i=1}^{n}\|D_\phi(E_\theta(\text{DINO}(\mathbf{R}_i))) - \mathbf{N}_i\|_2^2$$
+    $\mathcal{L}_{\text{NOC}} = \frac{1}{n \cdot h \cdot w}\sum_{i=1}^{n}\|D_\phi(E_\theta(\text{DINO}(\mathbf{R}_i))) - \mathbf{N}_i\|_2^2$
 
    **Geometric consistency triplet loss**: Enforces cross-view feature consistency for the same part and feature dissimilarity for geometrically distant parts.
-   $$\mathcal{L}_{\text{triplet}} = \frac{1}{|\mathcal{T}|}\sum_{(\mathbf{a},\mathbf{p},\mathbf{n})\in\mathcal{T}}[d(\mathbf{a},\mathbf{n}) - d(\mathbf{a},\mathbf{p}) + \alpha]_+$$
+    $\mathcal{L}_{\text{triplet}} = \frac{1}{|\mathcal{T}|}\sum_{(\mathbf{a},\mathbf{p},\mathbf{n})\in\mathcal{T}}[d(\mathbf{a},\mathbf{n}) - d(\mathbf{a},\mathbf{p}) + \alpha]_+$
    Positives: points with 3D distance $\leq \tau_{\text{dist}}^+=0.02$; negatives: points with distance $\geq \tau_{\text{dist}}^-=0.4$ and feature cosine similarity $> \tau_{\text{feat}}^-=0.75$ (**hard negative mining**, specifically targeting symmetric parts indistinguishable by DINOv2).
 
    Final features fuse DINOv2 and adapter outputs: $E_f(\mathbf{I}) = (1-\omega)\cdot\hat{\text{DINO}}(\mathbf{I}) \oplus \omega\cdot\hat{E}_\theta(\text{DINO}(\mathbf{I}))$ ($\omega=0.5$).
@@ -154,11 +154,11 @@ A coarse-to-fine pose estimation pipeline:
 
 ## Related Papers
 
-- [\[ICCV 2025\] Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling](diorama_unleashing_zeroshot_singleview_3d_indoor_scene_model.md)
-- [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](zerostereo_zero-shot_stereo_matching_from_single_images.md)
 - [\[ICCV 2025\] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos](monomobility_zero-shot_3d_mobility_analysis_from_monocular_videos.md)
+- [\[ICCV 2025\] Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling](diorama_unleashing_zeroshot_singleview_3d_indoor_scene_model.md)
+- [\[ECCV 2024\] ZeST: Zero-Shot Material Transfer from a Single Image](../../ECCV2024/3d_vision/zest_zero-shot_material_transfer_from_a_single_image.md)
+- [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](zerostereo_zero-shot_stereo_matching_from_single_images.md)
 - [\[ICCV 2025\] Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image](image_as_an_imu_estimating_camera_motion_from_a_single_motion-blurred_image.md)
-- [\[CVPR 2026\] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image](../../CVPR2026/3d_vision/zero-shot_reconstruction_of_animatable_3d_avatars_with_cloth_dynamics_from_a_sin.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Ours proposes EMAD, an end-to-end multimodal vision-language framework that generates structured reports for AD diagnosis. It explicitly associates each diagnostic statement with clinical evidence and 3D brain anatomy through hierarchical Sentence–Evidence–Anatomy (SEA) Grounding and ensures clinical consistency via ex
+  [CVPR 2026][Medical Imaging][Alzheimer's Disease diagnosis] Ours proposes EMAD, an end-to-end multimodal vision-language framework that generates structured reports for AD diagnosis. It explicitly associates each diagnostic statement with clinical evidence and 3D brain anatomy through hierarchical Sentence–Evidence–Anatomy (SEA) Grounding and ensures clinical consistency via executable rule-driven GRPO reinforcement fine-tuning.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Alzheimer's Disease diagnosis"
+  - "Multimodal Vision-Language Models"
+  - "Evidence Alignment"
+  - "Reinforced Fine-Tuning"
+  - "3D Brain Segmentation"
 date: 2026-05-08
-content_hash: f25ef9d6bb141cb3
+content_hash: b516f0f1eb248a35
 ---
+
 # EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Report quality metrics (CN vs CI): BLEU 0.5422, METEOR 0.6790, ROUGE 0.7781 — 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Joint Adaptation of Uni-modal Foundation Models for Multi-modal Alzheimer's Disease Diagnosis](../../ICLR2026/medical_imaging/joint_adaptation_of_uni-modal_foundation_models_for_multi-modal_alzheimers_disea.md)
 - [\[CVPR 2026\] Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis](clinically-grounded_counterfactual_reasoning_for_medical_video_diagnosis.md)
 - [\[CVPR 2026\] MedTVT-R1: A Multimodal LLM Empowering Medical Reasoning and Diagnosis](medtvt-r1_a_multimodal_llm_empowering_medical_reasoning_and_diagnosis.md)
+- [\[CVPR 2026\] Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning](med-cmr_a_fine-grained_benchmark_integrating_visual_evidence_and_clinical_logic_.md)
 - [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](../../ICLR2026/medical_imaging/care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
-- [\[AAAI 2026\] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks](../../AAAI2026/medical_imaging/sim4seg_boosting_multimodal_multi-disease_medical_diagnosis_segmentation_with_re.md)
-- [\[NeurIPS 2025\] Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling](../../NeurIPS2025/medical_imaging/dynamic_causal_discovery_in_alzheimers_disease_through_latent_pseudotime_modelli.md)
 
 </div>
 

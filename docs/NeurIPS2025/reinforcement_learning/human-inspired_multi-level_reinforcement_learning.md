@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Human-Inspired Multi-Level Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][rating-based RL] This paper proposes RbRL-KL, which augments rating-based RL (RbRL) with a KL divergence-driven policy loss term. By leveraging failure experiences across different…
+  [NeurIPS 2025][Reinforcement Learning][rating-based RL] This paper proposes RbRL-KL, which augments rating-based RL (RbRL) with a KL divergence-driven policy loss term. By leveraging failure experiences across different rating levels with varying weights to repel the current policy, RbRL-KL outperforms standard RbRL across 6 DeepMind Control environments.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "multi-level learning"
   - "reward-free RL"
 date: 2026-05-08
-content_hash: 5c29fd38727f0ab9
+content_hash: 4125d10e8fbc1404
 ---
 
 # Human-Inspired Multi-Level Reinforcement Learning
@@ -139,9 +139,9 @@ RbRL-KL extends standard RbRL with a third channel: low-level information extrac
 
 - [\[NeurIPS 2025\] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization](learning_human-like_rl_agents_through_trajectory_optimization_with_action_quanti.md)
 - [\[NeurIPS 2025\] Mixing Expert Knowledge: Bring Human Thoughts Back to the Game of Go](mixing_expert_knowledge_bring_human_thoughts_back_to_the_game_of_go.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](improving_retrieval-augmented_generation_through_multi-agent_reinforcement_learn.md)
 - [\[NeurIPS 2025\] Empirical Study on Robustness and Resilience in Cooperative Multi-Agent Reinforcement Learning](empirical_study_on_robustness_and_resilience_in_cooperative_multi-agent_reinforc.md)
+- [\[NeurIPS 2025\] Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning](router-r1_teaching_llms_multi-round_routing_and_aggregation_via_reinforcement_le.md)
 
 </div>
 

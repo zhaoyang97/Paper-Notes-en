@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Curse of Slicing: Why Sliced Mutual Information is a Deceptive Measure of Statistical Dependence
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper systematically deconstructs the reliability of Sliced Mutual Information (SMI) as a scalable alternative to Mutual Information (MI). Through closed-form solutions, counter-examples, and extensive synthetic experiments, it demonstrates that SMI saturates prematurely, favors information redundancy over informa
+  [ICLR2026][Learning Theory][Sliced Mutual Information] This paper systematically deconstructs the reliability of Sliced Mutual Information (SMI) as a scalable alternative to Mutual Information (MI). Through closed-form solutions, counter-examples, and extensive synthetic experiments, it demonstrates that SMI saturates prematurely, favors information redundancy over information content, and decays to zero in high dimensions. In some cases, it performs worse than simple correla…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Information Theory"
+  - "Representation Learning"
+  - "Sliced Mutual Information"
+  - "Mutual Information Estimation"
+  - "Statistical Dependence Measures"
+  - "Redundancy Bias"
+  - "Curse of Dimensionality"
 date: 2026-05-08
-content_hash: 922fa8134b6a69a9
+content_hash: d66209f9e4b128a5
 ---
+
 # Curse of Slicing: Why Sliced Mutual Information is a Deceptive Measure of Statistical Dependence
 
 **Conference**: ICLR2026  
@@ -100,6 +108,7 @@ In a Deep InfoMax task on MNIST, replacing the MI objective with SMI (using Dons
 - Value: ⭐⭐⭐⭐⭐ Vital "course correction" for researchers using SMI in representation learning and privacy.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -107,8 +116,8 @@ In a Deep InfoMax task on MNIST, replacing the MI objective with SMI (using Dons
 - [\[ICLR 2026\] InfoBridge: Mutual Information Estimation via Bridge Matching](infobridge_mutual_information_estimation_via_bridge_matching.md)
 - [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
 - [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
+- [\[ICLR 2026\] Tree-sliced Sobolev IPM](tree-sliced_sobolev_ipm.md)
 - [\[ICLR 2026\] Slicing Wasserstein over Wasserstein via Functional Optimal Transport](slicing_wasserstein_over_wasserstein_via_functional_optimal_transport.md)
-- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
 
 </div>
 

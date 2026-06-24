@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] On the Interaction of Batch Noise, Adaptivity, and Compression, under $(L_0,L_1)$-Smoothness: An SDE Approach
 description: >-
-  [ICML 2026][Optimization & Theory][$(L_0] This paper demonstrates that standard first-order and second-order SDEs in current literature completely fail to capture learning rate stability constraints under $(L_0,L_1)$-smoothness (even predicting convergence in regions where the discrete version diverges). By flipping the sign of the curvature term in the drift,
+  [ICML 2026][Optimization][$(L_0] This paper demonstrates that standard first-order and second-order SDEs in current literature completely fail to capture learning rate stability constraints under $(L_0,L_1)$-smoothness (even predicting convergence in regions where the discrete version diverges). By flipping the sign of the curvature term in the drift, the authors construct a family of "stability-faithful" first-order weak approximation SDEs. This enables the first unified ana…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - $(L_0
-  - SignSGD
+  - "ICML 2026"
+  - "Optimization"
+  - "$(L_0"
+  - "L_1)$-smoothness"
+  - "Distributed Compressed SGD"
+  - "SignSGD"
+  - "Heavy-tailed noise"
+  - "Stability-faithful SDE"
 date: 2026-05-08
-content_hash: 0528b50c93aed308
+content_hash: 8d9b3b1e9d188206
 ---
+
 # On the Interaction of Batch Noise, Adaptivity, and Compression, under $(L_0,L_1)$-Smoothness: An SDE Approach
 
 **Conference**: ICML 2026  
@@ -115,14 +120,14 @@ Table 2 compares learning rate constraints from classic SDEs vs. the proposed co
 - Value: ⭐⭐⭐⭐⭐ Vital for future work using SDEs to derive scaling or scheduling laws.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Mirror Descent Under Generalized Smoothness](mirror_descent_under_generalized_smoothness.md)
-- [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](../../NeurIPS2025/optimization/a_unified_approach_to_submodular_maximization_under_noise.md)
 - [\[ICML 2026\] Can Adaptive Gradient Methods Converge under Heavy-Tailed Noise? A Case Study of AdaGrad](can_adaptive_gradient_methods_converge_under_heavy-tailed_noise_a_case_study_of_.md)
+- [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](../../NeurIPS2025/optimization/a_unified_approach_to_submodular_maximization_under_noise.md)
 - [\[ICML 2026\] LoRe: Adaptive Interaction-Evaluation Routing with Per-Step Interaction Budgets for Iterative Graph Solvers](lore_adaptive_interaction-evaluation_routing_with_per-step_interaction_budgets_f.md)
 - [\[ICML 2026\] Bregman meets Lévy: Stochastic Mirror Descent with Heavy-Tailed Noise in Continuous and Discrete Time](bregman_meets_lévy_stochastic_mirror_descent_with_heavy-tailed_noise_in_continuo.md)
 

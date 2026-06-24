@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] This paper proposes the Multi$^2$ framework, which explicitly decouples the "planning" and "execution" of LLM agents into System 1 (an SFT-trained sub-goal planner) and System 2 (an offline-to-online RL-trained atomic action executor). By utilizing role-specific LoRA adapters and training objectives with policy-anchori
+  [ICML 2026][LLM Evaluation][Hierarchical Agents] This paper proposes the Multi$^2$ framework, which explicitly decouples the "planning" and "execution" of LLM agents into System 1 (an SFT-trained sub-goal planner) and System 2 (an offline-to-online RL-trained atomic action executor). By utilizing role-specific LoRA adapters and training objectives with policy-anchoring/KL-regularization, it significantly mitigates objective drift and improves token efficiency across three lon…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Hierarchical Agents"
+  - "Objective Drift"
+  - "Sub-goal Planning"
+  - "Offline-to-Online RL"
+  - "Long-horizon Interaction"
 date: 2026-05-08
-content_hash: 0a5f586812ca7fe2
+content_hash: f4c3df33d73d483f
 ---
+
 # Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments
 
 **Conference**: ICML 2026  
@@ -143,10 +149,10 @@ Conducted on ScienceWorld ID with Llama-3.1 8B:
 
 ## Related Papers
 
-- [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
-- [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
-- [\[NeurIPS 2025\] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments](../../NeurIPS2025/llm_evaluation/memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami.md)
 - [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](../../ACL2026/llm_evaluation/fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
+- [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
+- [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
+- [\[NeurIPS 2025\] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments](../../NeurIPS2025/llm_evaluation/memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami.md)
 - [\[ACL 2026\] DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain](../../ACL2026/llm_evaluation/diningbench_a_hierarchical_multi-view_benchmark_for_perception_and_reasoning_in_.md)
 
 </div>

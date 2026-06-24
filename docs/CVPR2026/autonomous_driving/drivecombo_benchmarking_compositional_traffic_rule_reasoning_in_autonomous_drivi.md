@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] DriveCombo is the first multimodal benchmark for "compositional traffic rule reasoning." It organizes 70,000 multiple-choice questions (MCQs) using a five-level cognitive ladder—ranging from single-rule understanding to rule conflict arbitration. It utilizes a Rule2Scene Agent to automatically convert textual regulatio
+  [CVPR 2026][Autonomous Driving][Traffic Rule Reasoning] DriveCombo is the first multimodal benchmark for "compositional traffic rule reasoning." It organizes 70,000 multiple-choice questions (MCQs) using a five-level cognitive ladder—ranging from single-rule understanding to rule conflict arbitration. It utilizes a Rule2Scene Agent to automatically convert textual regulations into executable 3D driving scenarios in CARLA. Evaluations of 14 mainstream MLLMs reveal a sharp drop…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Traffic Rule Reasoning"
+  - "Autonomous Driving Benchmark"
+  - "Multimodal Large Language Models (MLLMs)"
+  - "Rule Composition"
+  - "CARLA Simulation"
 date: 2026-05-08
-content_hash: ca4b18b4f767cbc6
+content_hash: 83e647077741dc13
 ---
+
 # DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous Driving
 
 **Conference**: CVPR 2026  

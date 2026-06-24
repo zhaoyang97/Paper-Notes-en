@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Boosting Generative Image Modeling via Joint Image-Feature Synthesis
 description: >-
-  [NeurIPS 2025 **Spotlight**][Image Generation][Joint Image-Feature Generation] This paper proposes ReDi (Representation Diffusion), a framework that jointly models VAE image latents and DINOv2 semantic features within a…
+  [NeurIPS 2025 **Spotlight**][Image Generation][Joint Image-Feature Generation] This paper proposes ReDi (Representation Diffusion), a framework that jointly models VAE image latents and DINOv2 semantic features within a diffusion model — both are simultaneously denoised from pure noise within a single diffusion process. With minimal modifications to the DiT architecture, ReDi achieves a 23× training convergence speedup and state-of-the-art FID…
 tags:
   - "NeurIPS 2025 **Spotlight**"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Representation Guidance"
   - "DiT"
 date: 2026-05-08
-content_hash: fe32742a9d1be61b
+content_hash: a5452fa398a45e32
 ---
 
 # Boosting Generative Image Modeling via Joint Image-Feature Synthesis
@@ -130,10 +130,10 @@ The joint denoising loss is $\mathcal{L}_{joint} = \|\boldsymbol{\epsilon}_\thet
 ## Related Papers
 
 - [\[ICCV 2025\] PolarAnything: Diffusion-based Polarimetric Image Synthesis](../../ICCV2025/image_generation/polaranything_diffusion-based_polarimetric_image_synthesis.md)
-- [\[NeurIPS 2025\] OSMGen: Highly Controllable Satellite Image Synthesis using OpenStreetMap Data](osmgen_highly_controllable_satellite_image_synthesis_using_openstreetmap_data.md)
+- [\[ECCV 2024\] IRGen: Generative Modeling for Image Retrieval](../../ECCV2024/image_generation/irgen_generative_modeling_for_image_retrieval.md)
+- [\[ICML 2025\] DCTdiff: Intriguing Properties of Image Generative Modeling in the DCT Space](../../ICML2025/image_generation/dctdiff_intriguing_properties_of_image_generative_modeling_in_the_dct_space.md)
+- [\[NeurIPS 2025\] Diffusion-Classifier Synergy: Reward-Aligned Learning via Mutual Boosting Loop for FSCIL](diffusion-classifier_synergy_reward-aligned_learning_via_mutual_boosting_loop_fo.md)
 - [\[NeurIPS 2025\] Coupling Generative Modeling and an Autoencoder with the Causal Bridge](coupling_generative_modeling_and_an_autoencoder_with_the_causal_bridge.md)
-- [\[NeurIPS 2025\] ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion](scalediff_higher-resolution_image_synthesis_via_efficient_and_model-agnostic_dif.md)
-- [\[NeurIPS 2025\] Conditional Panoramic Image Generation via Masked Autoregressive Modeling](conditional_panoramic_image_generation_via_masked_autoregres.md)
 
 </div>
 

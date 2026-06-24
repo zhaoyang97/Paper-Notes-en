@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ubiquity of Emergent Hebbian Dynamics in Regularized Learning
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper demonstrates that near the steady state of L2 weight decay, the learning signals of **nearly any** learning rule (including SGD, Adam, DFA, and even Random Networks) **spontaneously** align toward the Hebbian direction. Conversely, sufficiently strong noise flips this alignment toward an anti-Hebbian directi
+  [ICML 2026][Optimization][Hebbian Learning] This paper demonstrates that near the steady state of L2 weight decay, the learning signals of **nearly any** learning rule (including SGD, Adam, DFA, and even Random Networks) **spontaneously** align toward the Hebbian direction. Conversely, sufficiently strong noise flips this alignment toward an anti-Hebbian direction, with a clear phase transition boundary emerging at $\gamma \propto \sigma^2$.
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Hebbian Learning"
+  - "Weight Decay"
+  - "Learning Signal Alignment"
+  - "Noise-Regularization Phase Diagram"
+  - "Neural Plasticity"
 date: 2026-05-08
-content_hash: c0f2013825d12271
+content_hash: 9369a682ce61bba2
 ---
+
 # Ubiquity of Emergent Hebbian Dynamics in Regularized Learning
 
 **Conference**: ICML 2026  

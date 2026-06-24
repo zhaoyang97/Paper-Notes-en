@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CanonCGT: Reference-Based Color Grading via Canonical Pivot Representation
 description: >-
-  [CVPR 2026][Image Restoration][3D LUT] CanonCGT decomposes "reference-based color grading" into two steps—first using a canonicalizer to "wash" the input image into a style-neutral "canonical pivot," and then using a grader to apply the tone of the reference image. Combined with a two-phase supervised and self-supervised training strategy (DP-CGT), PSNR on
+  [CVPR 2026][Image Restoration][Reference-based color grading] CanonCGT decomposes "reference-based color grading" into two steps—first using a canonicalizer to "wash" the input image into a style-neutral "canonical pivot," and then using a grader to apply the tone of the reference image. Combined with a two-phase supervised and self-supervised training strategy (DP-CGT), PSNR on 6 datasets improved from the second-best 18.62 to 28.99, resulting in significantly more stable an…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - 3D LUT
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Reference-based color grading"
+  - "3D LUT"
+  - "style neutralization"
+  - "self-supervised"
+  - "FiLM modulation"
 date: 2026-05-08
-content_hash: 2a1a1d200814ff5e
+content_hash: f10a30a786363048
 ---
+
 # CanonCGT: Reference-Based Color Grading via Canonical Pivot Representation
 
 **Conference**: CVPR 2026  
@@ -138,16 +143,16 @@ User Research (Ranking, lower is better):
 - Value: ⭐⭐⭐⭐ High practical value for a high-frequency demand; limited by extreme style constraints.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] AceTone: Bridging Words and Colors for Conditional Image Grading](acetone_bridging_words_and_colors_for_conditional_image_grading.md)
 - [\[CVPR 2026\] Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution](time_without_time_pseudo-temporal_representation_for_space-time_super-resolution.md)
+- [\[CVPR 2026\] Polarization State Tracing for Reflection Removal and Color-Consistent Reconstruction](polarization_state_tracing_for_reflection_removal_and_color-consistent_reconstru.md)
+- [\[CVPR 2026\] ColorFLUX: A Structure-Color Decoupling Framework for Old Photo Colorization](colorflux_a_structure-color_decoupling_framework_for_old_photo_colorization.md)
 - [\[CVPR 2026\] ZeroIDIR: Zero-Reference Illumination Degradation Image Restoration with Perturbed Consistency Diffusion Models](zeroidir_zero-reference_illumination_degradation_image_restoration_with_perturbe.md)
-- [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
-- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
 
 </div>
 

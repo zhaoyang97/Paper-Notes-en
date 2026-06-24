@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations
 description: >-
-  [ICLR 2026][LLM Agent][FigureBench] This paper proposes AutoFigure—the first Agent framework based on the "Reasoned Rendering" paradigm. By decoupling structural layout planning and aesthetic rendering into two stages, it automatically generates publication-quality scientific illustrations from long scientific texts. Supported by FigureBench (3,300 pairs
+  [ICLR 2026][LLM Agent][Scientific illustration generation] This paper proposes AutoFigure—the first Agent framework based on the "Reasoned Rendering" paradigm. By decoupling structural layout planning and aesthetic rendering into two stages, it automatically generates publication-quality scientific illustrations from long scientific texts. Supported by FigureBench (3,300 pairs), the first large-scale benchmark for systematic evaluation, 66.7% of the generated results were dee…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - FigureBench
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Scientific illustration generation"
+  - "multi-agent framework"
+  - "long-text understanding"
+  - "FigureBench"
+  - "VLM evaluation"
 date: 2026-05-08
-content_hash: de415195515e15ad
+content_hash: 14e0e8fb5db93e2a
 ---
+
 # AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations
 
 **Conference**: ICLR 2026  
@@ -159,9 +164,9 @@ Existing datasets mostly reconstruct figures from captions or short snippets, wh
 
 - [\[ICLR 2026\] STARK: Strategic Team of Agents for Refining Kernels](stark_strategic_team_of_agents_for_refining_kernels.md)
 - [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](tusoai_agentic_optimization_for_scientific_methods.md)
+- [\[ICLR 2026\] SciNav: A General Agent Framework for Scientific Coding Tasks](scinav_a_general_agent_framework_for_scientific_coding_tasks.md)
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
-- [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
-- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
+- [\[ICLR 2026\] ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows](scienceboard_evaluating_multimodal_autonomous_agents_in_realistic_scientific_wor.md)
 
 </div>
 

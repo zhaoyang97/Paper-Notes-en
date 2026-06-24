@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] zip2zip: Inference-Time Adaptive Tokenization via Online Compression
 description: >-
-  [NeurIPS 2025][Model Compression][Adaptive Tokenization] This paper proposes zip2zip, which deeply integrates the classical LZW online lossless compression algorithm into the LLM inference pipeline. During decoding…
+  [NeurIPS 2025][Model Compression][Adaptive Tokenization] This paper proposes zip2zip, which deeply integrates the classical LZW online lossless compression algorithm into the LLM inference pipeline. During decoding, frequently co-occurring tokens are continuously merged into reusable "hypertokens" to dynamically expand the vocabulary. Combined with a dynamic embedding layer and training on compressed-space language modeling, zip2zip enables existing LLMs to acquire inference-…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -13,7 +13,7 @@ tags:
   - "Vocabulary Expansion"
   - "Dynamic Embedding"
 date: 2026-05-08
-content_hash: 47081e564eec2643
+content_hash: 1897cac10abcd9b5
 ---
 
 # zip2zip: Inference-Time Adaptive Tokenization via Online Compression
@@ -193,10 +193,10 @@ Byte-level perplexity (lower is better):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Inference-Time Hyper-Scaling with KV Cache Compression](inference-time_hyper-scaling_with_kv_cache_compression.md)
-- [\[NeurIPS 2025\] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization](when_worse_is_better_navigating_the_compression-generation_tradeoff_in_visual_to.md)
 - [\[NeurIPS 2025\] A Partition Cover Approach for Tokenization](a_partition_cover_approach_to_tokenization.md)
+- [\[NeurIPS 2025\] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization](when_worse_is_better_navigating_the_compression-generation_tradeoff_in_visual_to.md)
 - [\[NeurIPS 2025\] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](ada-kv_optimizing_kv_cache_eviction_by_adaptive_budget_allocation_for_efficient_.md)
-- [\[NeurIPS 2025\] CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs](casspec_cascade_adaptive_selfspeculative_decoding_for_onthef.md)
+- [\[NeurIPS 2025\] Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making](online_mixture_of_experts_no-regret_learning_for_optimal_collective_decision-mak.md)
 
 </div>
 

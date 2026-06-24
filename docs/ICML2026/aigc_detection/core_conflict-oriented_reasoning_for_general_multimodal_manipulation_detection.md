@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection
 description: >-
-  [ICML 2026][AIGC Detection][Paper Note] This work redefines "multimodal fake news detection" as a task of "explicitly capturing conflicts between modalities or with world knowledge." The authors construct CAC, a corpus of 14k samples with fine-grained conflict annotations, and propose the CORE framework. CORE reshapes the conceptual boundaries of MLLMs throu
+  [ICML 2026][AIGC Detection][Conflict reasoning] This work redefines "multimodal fake news detection" as a task of "explicitly capturing conflicts between modalities or with world knowledge." The authors construct CAC, a corpus of 14k samples with fine-grained conflict annotations, and propose the CORE framework. CORE reshapes the conceptual boundaries of MLLMs through Conflict-Perception Training (CPT), enabling the model to significantly outperform dedicated SOTA methods on…
 tags:
-  - ICML 2026
-  - AIGC Detection
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "Conflict reasoning"
+  - "Multimodal forgery detection"
+  - "MLLM fine-tuning"
+  - "Conceptual boundary"
+  - "Few-shot generalization"
 date: 2026-05-08
-content_hash: eccd78ebd32f4760
+content_hash: 3bd633f5dc635cbd
 ---
+
 # CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection
 
 **Conference**: ICML 2026  
@@ -130,11 +136,11 @@ CORE$_\text{Gemma}$ further reached 82.0 on MDSM with 750 samples. Notably, zero
 
 ## Related Papers
 
-- [\[CVPR 2026\] Locate-Then-Examine: Grounded Region Reasoning Improves Detection of AI-Generated Images](../../CVPR2026/aigc_detection/locate-then-examine_grounded_region_reasoning_improves_detection_of_ai-generated.md)
-- [\[CVPR 2026\] Inconsistency-aware Multimodal Schrodinger Bridge for Deepfake Localization](../../CVPR2026/aigc_detection/inconsistency-aware_multimodal_schrodinger_bridge_for_deepfake_localization.md)
-- [\[NeurIPS 2025\] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text](../../NeurIPS2025/aigc_detection/asciibench_evaluating_language-model-based_understanding_of_visually-oriented_te.md)
 - [\[ICML 2026\] Deep Residual Injection for Full-Spectrum Forensic Signal Perception in Multimodal Large Language Models](deep_residual_injection_for_full-spectrum_forensic_signal_perception_in_multimod.md)
-- [\[NeurIPS 2025\] Reasoning Compiler: LLM-Guided Optimizations for Efficient Model Serving](../../NeurIPS2025/aigc_detection/reasoning_compiler_llm-guided_optimizations_for_efficient_model_serving.md)
+- [\[ICLR 2026\] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images](../../ICLR2026/aigc_detection/semantic_visual_anomaly_detection_and_reasoning_in_ai-generated_images.md)
+- [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](../../ICLR2026/aigc_detection/fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
+- [\[ICLR 2026\] Omni-IML: Towards Unified Interpretable Image Manipulation Localization](../../ICLR2026/aigc_detection/omni-iml_towards_unified_interpretable_image_manipulation_localization.md)
+- [\[CVPR 2026\] Inconsistency-aware Multimodal Schrodinger Bridge for Deepfake Localization](../../CVPR2026/aigc_detection/inconsistency-aware_multimodal_schrodinger_bridge_for_deepfake_localization.md)
 
 </div>
 

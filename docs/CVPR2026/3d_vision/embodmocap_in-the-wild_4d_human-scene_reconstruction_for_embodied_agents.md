@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents
 description: >-
-  [CVPR 2026][3D Vision][Embodied AI] EmbodMocap uses RGB-D videos from two handheld iPhones to jointly calibrate the scene, camera trajectories, and human motion into a single metric world coordinate system. This enables low-cost "in-the-wild" 4D human-scene capture, producing data that can simultaneously drive three types of embodied tasks: monocular hum
+  [CVPR 2026][3D Vision][4D human-scene reconstruction] EmbodMocap uses RGB-D videos from two handheld iPhones to jointly calibrate the scene, camera trajectories, and human motion into a single metric world coordinate system. This enables low-cost "in-the-wild" 4D human-scene capture, producing data that can simultaneously drive three types of embodied tasks: monocular human-scene reconstruction, physical character animation, and real-world humanoid robot control.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Embodied AI
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D human-scene reconstruction"
+  - "motion capture"
+  - "dual-view calibration"
+  - "embodied AI"
+  - "humanoid robots"
 date: 2026-05-08
-content_hash: d5398ea1657c17a0
+content_hash: 1526ee678bacd8b2
 ---
+
 # EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents
 
 **Conference**: CVPR 2026  
@@ -153,11 +158,11 @@ Physical character animation (Human-object interaction; Success Rate↑, Contact
 
 ## Related Papers
 
+- [\[ICLR 2026\] Joint Optimization for 4D Human-Scene Reconstruction in the Wild](../../ICLR2026/3d_vision/joint_optimization_for_4d_human-scene_reconstruction_in_the_wild.md)
+- [\[CVPR 2026\] SAGE: Scalable Agentic 3D Scene Generation for Embodied AI](sage_scalable_agentic_3d_scene_generation_for_embodied_ai.md)
+- [\[CVPR 2026\] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding](3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras.md)
+- [\[CVPR 2026\] Scene Grounding In the Wild](scene_grounding_in_the_wild.md)
 - [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
-- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
-- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
-- [\[CVPR 2026\] GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator](gaussfusion_improving_3d_reconstruction_in_the_wild_with_a_geometry-informed_vid.md)
-- [\[CVPR 2026\] HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation](humanorbit_3d_human_reconstruction_as_360_orbit_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Reformulates movie trailer generation as a task of "mask reconstruction on trailer shot sequences using movie shots as prompts." By employing a Transformer encoder with self-paced mask rate scheduling and iterative re-masking (self-correction), the model significantly outperforms selection-then-ranking and autoregressi
+  [CVPR 2026][Video Understanding][Movie trailer generation] Reformulates movie trailer generation as a task of "mask reconstruction on trailer shot sequences using movie shots as prompts." By employing a Transformer encoder with self-paced mask rate scheduling and iterative re-masking (self-correction), the model significantly outperforms selection-then-ranking and autoregressive methods in F1 and ranking accuracy.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Movie trailer generation"
+  - "masked prediction"
+  - "self-paced learning"
+  - "self-correction"
+  - "bidirectional context modeling"
 date: 2026-05-08
-content_hash: bfc133d074d36310
+content_hash: 0e7803de12c7479b
 ---
+
 # Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation
 
 **Conference**: CVPR 2026  
@@ -142,10 +148,10 @@ F1 scores exceed MMSC by 2.27% and 3.82% on the main test sets, while AA surges 
 ## Related Papers
 
 - [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
-- [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](self-critical_distillation_network_for_video-based_commonsense_captioning.md)
+- [\[CVPR 2026\] TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction](timebridge_self-supervised_video_representation_learning_via_start-end_joint_emb.md)
 - [\[CVPR 2026\] Boosting Self-Supervised Tracking with Contextual Prompts and Noise Learning](boosting_self-supervised_tracking_with_contextual_prompts_and_noise_learning.md)
-- [\[CVPR 2026\] MoVie: Broaden Your Views with Human Motion for Action Detection](movie_broaden_your_views_with_human_motion_for_action_detection.md)
-- [\[CVPR 2026\] Video-CoE: Reinforcing Video Event Prediction via Chain of Events](video-coe_reinforcing_video_event_prediction_via_chain_of_events.md)
+- [\[CVPR 2026\] A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)
+- [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
 
 </div>
 

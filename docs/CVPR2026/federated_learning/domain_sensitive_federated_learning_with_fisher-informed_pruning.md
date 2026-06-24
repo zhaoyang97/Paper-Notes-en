@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Domain Sensitive Federated Learning with Fisher-Informed Pruning
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] FEDFIP estimates channel importance using domain-specific Fisher information to assemble a globally shared pruning mask on the server, while clients "reactivate" a small number of locally critical channels. Combined with domain-prototype structural contrastive regularization and a "shared-channel-only" aggregation stra
+  [CVPR 2026][Federated Learning][Domain Shift] FEDFIP estimates channel importance using domain-specific Fisher information to assemble a globally shared pruning mask on the server, while clients "reactivate" a small number of locally critical channels. Combined with domain-prototype structural contrastive regularization and a "shared-channel-only" aggregation strategy, it significantly compresses models while achieving higher accuracy and stability than mainstream FL baseline…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Domain Shift"
+  - "Fisher Information Pruning"
+  - "Personalized Sparse Models"
+  - "Structural Contrastive Regularization"
 date: 2026-05-08
-content_hash: a3ded8c05243cf78
+content_hash: 65f84c629ce9b463
 ---
+
 # Domain Sensitive Federated Learning with Fisher-Informed Pruning
 
 **Conference**: CVPR 2026  
@@ -133,14 +138,15 @@ Incremental addition of modules (Office-Caltech results):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2025\] Federated Learning with Domain Shift Eraser](../../CVPR2025/optimization/federated_learning_with_domain_shift_eraser.md)
-- [\[CVPR 2026\] HFedATM: Hierarchical Federated Domain Generalization via Optimal Transport and Regularized Mean Aggregation](hfedatm_hierarchical_federated_domain_generalization_via_optimal_transport_and_r.md)
-- [\[CVPR 2026\] FedRAC: Rolling Submodel Allocation for Collaborative Fairness in Federated Learning](fedrac_rolling_submodel_allocation_for_collaborative_fairness_in_federated_learn.md)
+- [\[CVPR 2026\] Single-Round Scalable Analytic Federated Learning](single-round_scalable_analytic_federated_learning.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
 - [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
+- [\[CVPR 2026\] FedRAC: Rolling Submodel Allocation for Collaborative Fairness in Federated Learning](fedrac_rolling_submodel_allocation_for_collaborative_fairness_in_federated_learn.md)
 - [\[CVPR 2026\] FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning](fedalign_differentially_private_distribution_alignment_for_non-iid_federated_lea.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SSA: Improving Performance With a Better Scoring Function
 description: >-
-  [ACL 2026][Interpretability][SSA] This paper identifies that Softmax attention collapses into an approximate hardmax under distribution shifts due to high-magnitude tokens. It proposes Scaled Signed Averaging (SSA) as a trainable alternative scoring function, which demonstrates superior generalization performance over Softmax across synthetic ICL tasks
+  [ACL 2026][Interpretability][Softmax saturation] This paper identifies that Softmax attention collapses into an approximate hardmax under distribution shifts due to high-magnitude tokens. It proposes Scaled Signed Averaging (SSA) as a trainable alternative scoring function, which demonstrates superior generalization performance over Softmax across synthetic ICL tasks, a 114M decoder-only language model, and BabyBERTa encoder probes.
 tags:
-  - ACL 2026
-  - Interpretability
-  - SSA
+  - "ACL 2026"
+  - "Interpretability"
+  - "Softmax saturation"
+  - "attention scoring function"
+  - "SSA"
+  - "distribution shift"
+  - "ICL generalization"
 date: 2026-05-08
-content_hash: 537ed3bd94d2b635
+content_hash: 5f16d5750d11200f
 ---
+
 # SSA: Improving Performance With a Better Scoring Function
 
 **Conference**: ACL 2026  
@@ -114,11 +119,11 @@ In synthetic ICL, MSE loss is used for the linear function task and Cross-Entrop
 
 ## Related Papers
 
-- [\[ACL 2026\] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models](from_interpretability_to_performance_optimizing_retrieval_heads_for_long-context.md)
 - [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](../../CVPR2026/interpretability/improving_sparse_autoencoder_with_dynamic_attention.md)
 - [\[NeurIPS 2025\] Monte Carlo Expected Threat (MOCET) Scoring](../../NeurIPS2025/interpretability/monte_carlo_expected_threat_mocet_scoring.md)
-- [\[NeurIPS 2025\] Empowering Decision Trees via Shape Function Branching](../../NeurIPS2025/interpretability/empowering_decision_trees_via_shape_function_branching.md)
-- [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](../../ICML2026/interpretability/how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
+- [\[ACL 2026\] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models](from_interpretability_to_performance_optimizing_retrieval_heads_for_long-context.md)
+- [\[ICLR 2026\] Causality ≠ Invariance: Function and Concept Vectors in LLMs](../../ICLR2026/interpretability/causality_invariance_function_and_concept_vectors_in_llms.md)
+- [\[ICLR 2026\] Dissecting Representation Misalignment in Contrastive Learning via Influence Function](../../ICLR2026/interpretability/dissecting_representation_misalignment_in_contrastive_learning_via_influence_fun.md)
 
 </div>
 

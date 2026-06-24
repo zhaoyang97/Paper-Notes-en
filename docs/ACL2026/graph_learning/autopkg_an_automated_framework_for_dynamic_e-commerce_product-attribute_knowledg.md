@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AutoPKG: An Automated Framework for Dynamic E-commerce Product-Attribute Knowledge Graph Construction
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] AutoPKG is proposed as a multi-agent LLM framework for automatically constructing a Product-Attribute Knowledge Graph (PKG) from multimodal e-commerce content. Using a Type Induction Agent, Attribute Key Discovery Agent, Attribute Value Extraction Agent, and a centralized KGD decision agent, it enables continuous evolu
+  [ACL 2026 Findings][Graph Learning][Knowledge Graph Construction] AutoPKG is proposed as a multi-agent LLM framework for automatically constructing a Product-Attribute Knowledge Graph (PKG) from multimodal e-commerce content. Using a Type Induction Agent, Attribute Key Discovery Agent, Attribute Value Extraction Agent, and a centralized KGD decision agent, it enables continuous evolution and normalization of a dynamic ontology. It achieves 0.953 WKE (Type) and 0.724 WKE (Key)…
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026 Findings"
+  - "Graph Learning"
+  - "Knowledge Graph Construction"
+  - "E-commerce Attribute Extraction"
+  - "Multi-agent LLM"
+  - "Dynamic Ontology"
+  - "Multimodal"
 date: 2026-05-08
-content_hash: 4c64a0033b6951c6
+content_hash: 42a916e70d1699ff
 ---
+
 # AutoPKG: An Automated Framework for Dynamic E-commerce Product-Attribute Knowledge Graph Construction
 
 **Conference**: ACL 2026 Findings  
@@ -129,14 +135,17 @@ To prevent metric manipulation (e.g., achieving high compression via excessive m
 
 <div class="related-papers" markdown="1">
 
-- **Core Problem**: Automated construction and evolution of e-commerce knowledge graphs.
-- **AutoKnow**: Dong et al., KDD 2020. Focuses on industrial KG construction with static schemas.
-- **PAVE**: Various works on product attribute value extraction.
+## Related Papers
+
+- [\[ICLR 2026\] HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature](../../ICLR2026/graph_learning/hgnet_scalable_foundation_model_for_automated_knowledge_graph_generation_from_sc.md)
+- [\[ICLR 2026\] One for Two: A Unified Framework for Imbalanced Graph Classification via Dynamic Balanced Prototype](../../ICLR2026/graph_learning/one_for_two_a_unified_framework_for_imbalanced_graph_classification_via_dynamic_.md)
+- [\[ICLR 2026\] Scaling Knowledge Graph Construction through Synthetic Data Generation and Distillation](../../ICLR2026/graph_learning/scaling_knowledge_graph_construction_through_synthetic_data_generation_and_disti.md)
+- [\[NeurIPS 2025\] FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design](../../NeurIPS2025/graph_learning/falcon_an_ml_framework_for_fully_automated_layout-constrained_analog_circuit_des.md)
+- [\[ACL 2026\] ComplianceNLP: Knowledge-Graph-Augmented RAG for Multi-Framework Regulatory Gap Detection](compliancenlp_knowledge-graph-augmented_rag_for_multi-framework_regulatory_gap_d.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[NeurIPS 2025\] FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design](../../NeurIPS2025/graph_learning/falcon_an_ml_framework_for_fully_automated_layout-constrained_analog_circuit_des.md)

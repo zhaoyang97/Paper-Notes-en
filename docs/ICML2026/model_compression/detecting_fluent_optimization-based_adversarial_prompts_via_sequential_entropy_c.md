@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes
 description: >-
-  [ICML 2026][Model Compression][Page-CUSUM] The authors model "fluent optimization-based jailbreak suffix detection" as online changepoint detection on token-level entropy streams. By using the entropy distribution of fixed system prompts to calculate a MAD robust baseline for normalizing user token entropy, they run a Page-CUSUM cumulative statistic $W_t^+$ tha
+  [ICML 2026][Model Compression][Adversarial suffix] The authors model "fluent optimization-based jailbreak suffix detection" as online changepoint detection on token-level entropy streams. By using the entropy distribution of fixed system prompts to calculate a MAD robust baseline for normalizing user token entropy, they run a Page-CUSUM cumulative statistic $W_t^+$ that triggers an alert upon exceeding a threshold. Across 6 open-source aligned LLMs…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Page-CUSUM
+  - "ICML 2026"
+  - "Model Compression"
+  - "Adversarial suffix"
+  - "Page-CUSUM"
+  - "token entropy"
+  - "system prompt baseline"
+  - "jailbreak localization"
 date: 2026-05-08
-content_hash: d5e190522b37550d
+content_hash: 74ca6a60186a933e
 ---
+
 # Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes
 
 **Conference**: ICML 2026  
@@ -134,7 +139,6 @@ The primary conclusion is "Mechanism is more important than Signal": Switching t
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

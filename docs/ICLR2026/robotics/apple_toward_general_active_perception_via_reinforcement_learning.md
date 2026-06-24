@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] APPLE: Toward General Active Perception via Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][active perception] Ours proposes APPLE—a general active perception framework that combines reinforcement learning with supervised learning by modeling active perception as a POMDP. The reward function is designed as the RL reward minus prediction loss, allowing the gradient to naturally decompose into policy gradient and prediction loss
+  [ICLR 2026][Robotics][active perception] Ours proposes APPLE—a general active perception framework that combines reinforcement learning with supervised learning by modeling active perception as a POMDP. The reward function is designed as the RL reward minus prediction loss, allowing the gradient to naturally decompose into policy gradient and prediction loss components. Based on off-policy algorithms (SAC/CrossQ) and a shared ViViT backbone…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - active perception
-  - reinforcement-learning
-  - POMDP
-  - supervised learning
-  - off-policy
-  - ViViT
+  - "ICLR 2026"
+  - "Robotics"
+  - "active perception"
+  - "reinforcement-learning"
+  - "POMDP"
+  - "supervised learning"
+  - "off-policy"
+  - "ViViT"
+  - "CrossQ"
 date: 2026-05-08
-content_hash: 5feb2d9fe8738bfe
+content_hash: 5e17330b57247181
 ---
+
 # APPLE: Toward General Active Perception via Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -145,7 +147,7 @@ Active perception is inherently a process of accumulating observations frame by 
 - [\[ICLR 2026\] AnyTouch 2: General Optical Tactile Representation Learning For Dynamic Tactile Perception](anytouch_2_general_optical_tactile_representation_learning_for_dynamic_tactile_p.md)
 - [\[ICLR 2026\] Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning](memory_benchmark_robots_a_benchmark_for_solving_complex_tasks_with_reinforcement.md)
 - [\[CVPR 2026\] General Process Reward Modeling for Robotic Reinforcement Learning](../../CVPR2026/robotics/general_process_reward_modeling_for_robotic_reinforcement_learning.md)
-- [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
+- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](../../CVPR2026/robotics/activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
 
 </div>
 

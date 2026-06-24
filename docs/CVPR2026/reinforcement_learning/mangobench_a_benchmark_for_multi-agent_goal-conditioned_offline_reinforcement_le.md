@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][CTDE] This paper extends single-agent "Offline Goal-Conditioned RL (OGCRL)" to multi-agent collaborative scenarios for the first time. It proposes a goal-conditioned offline MARL framework based on goal relabeling and robot structural decomposition, alongside MangoBench—the first fully collaborative multi-goal benchmark for
+  [CVPR 2026][Reinforcement Learning][Offline Multi-Agent RL] This paper extends single-agent "Offline Goal-Conditioned RL (OGCRL)" to multi-agent collaborative scenarios for the first time. It proposes a goal-conditioned offline MARL framework based on goal relabeling and robot structural decomposition, alongside MangoBench—the first fully collaborative multi-goal benchmark for this setting (3 environments, 4 agent types, 47 tasks, 6 baselines). Experiments demonstrate that hi…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - CTDE
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Offline Multi-Agent RL"
+  - "Goal-Conditioned RL"
+  - "Sparse Rewards"
+  - "Benchmarking"
+  - "CTDE"
 date: 2026-05-08
-content_hash: 6929d5b81f2f9d66
+content_hash: b3110cfac43f3846
 ---
+
 # MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -145,6 +150,7 @@ Success rates are generally higher under multi-goal evaluation, confirming that 
 - Value: ⭐⭐⭐⭐ Establishes foundational baselines and metrics for a promising new research direction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -152,8 +158,8 @@ Success rates are generally higher under multi-goal evaluation, confirming that 
 - [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
 - [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
 - [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
-- [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](../../AAAI2026/reinforcement_learning/first-order_representation_languages_for_goal-conditioned_rl.md)
-- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
+- [\[ICLR 2026\] Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning](../../ICLR2026/reinforcement_learning/occupancy_reward_shaping_improving_credit_assignment_for_offline_goal-conditione.md)
+- [\[ICML 2026\] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/direction-conditioned_policies_via_compositional_subgoal_scoring_for_online_goal.md)
 
 </div>
 

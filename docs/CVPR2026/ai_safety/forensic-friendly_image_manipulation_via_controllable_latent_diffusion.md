@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Forensic-Friendly Image Manipulation via Controllable Latent Diffusion
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] FFIM is a plug-and-play controllable denoising framework that "conveniently" amplifies endogenous feature differences between edited and unedited regions during the sampling process of diffusion-based editing. This allows third-party forensic models, without any prior keys, to locate and detect tampering with high prec
+  [CVPR 2026][AI Safety][Forensic-friendly editing] FFIM is a plug-and-play controllable denoising framework that "conveniently" amplifies endogenous feature differences between edited and unedited regions during the sampling process of diffusion-based editing. This allows third-party forensic models, without any prior keys, to locate and detect tampering with high precision while preserving editing quality (Pixel-level localization F1 up to +6.6%…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Forensic-friendly editing"
+  - "controllable denoising"
+  - "orthogonal projection"
+  - "adversarial gradient guidance"
+  - "third-party forensics"
 date: 2026-05-08
-content_hash: cd7ae63cfd30bfcb
+content_hash: 6d6f97a74f2bc149
 ---
+
 # Forensic-Friendly Image Manipulation via Controllable Latent Diffusion
 
 **Conference**: CVPR 2026  
@@ -166,11 +172,11 @@ FFIM provides stable improvements across all image-level detectors. In terms of 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility](unsafe2safe_controllable_image_anonymization_for_downstream_utility.md)
 - [\[CVPR 2026\] UniDef: Universal Defense Against Unauthorized Image Manipulation](unidef_universal_defense_against_unauthorized_image_manipulation.md)
 - [\[CVPR 2026\] MaxMark: High-Capacity Diffusion-Native Watermarking via Robust and Invertible Latent Embedding](maxmark_high-capacity_diffusion-native_watermarking_via_robust_and_invertible_la.md)
 - [\[CVPR 2026\] Cross-modal Representation Learning for Diffusion-generated Image Detection](cross-modal_representation_learning_for_diffusion-generated_image_detection.md)
 - [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] Frequency-domain Manipulation for Face Obfuscation](frequency-domain_manipulation_for_face_obfuscation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FEAT: Fashion Editing and Try-On from Any Design
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] FEAT integrates "obtaining design inspiration from any image (artistic paintings, natural photos, abstract images)" and "performing virtual try-ons for full outfits (including accessories)" into a single diffusion framework. It utilizes Disentangled Dual Injection (DDI) to separate content (shapes/contours) and style (
+  [CVPR 2026][Image Generation][Virtual Try-On] FEAT integrates "obtaining design inspiration from any image (artistic paintings, natural photos, abstract images)" and "performing virtual try-ons for full outfits (including accessories)" into a single diffusion framework. It utilizes Disentangled Dual Injection (DDI) to separate content (shapes/contours) and style (color/texture) in image prompts, injecting them into different U-Net attention blocks to suppress content leakage.…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Virtual Try-On"
+  - "Content-Style Disentanglement"
+  - "Orthogonal Projection"
+  - "Regional Noise Fusion"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 69d99af84327d29a
+content_hash: e7db04c9e564b7d1
 ---
+
 # FEAT: Fashion Editing and Try-On from Any Design
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Ablation on DressCode (three-modality setting):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SkyReels-Text: Fine-Grained Font-Controllable Text Editing for Poster Design](skyreels-text_fine-grained_font-controllable_text_editing_for_poster_design.md)
+- [\[CVPR 2026\] PG-VTON: Single-Pass Training-Free Virtual Try-On via Patch-Guided Reference Alignment](pg-vton_single-pass_training-free_virtual_try-on_via_patch-guided_reference_alig.md)
 - [\[CVPR 2026\] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On](promo_promptable_virtual_tryon_efficient.md)
+- [\[CVPR 2026\] SkyReels-Text: Fine-Grained Font-Controllable Text Editing for Poster Design](skyreels-text_fine-grained_font-controllable_text_editing_for_poster_design.md)
 - [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
 - [\[CVPR 2026\] High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning](high-fidelity_virtual_try-on_beyond_paired_data_scarcity_via_diffusion-based_cyc.md)
-- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
 
 </div>
 

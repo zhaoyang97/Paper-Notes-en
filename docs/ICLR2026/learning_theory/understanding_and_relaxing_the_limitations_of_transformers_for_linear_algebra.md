@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Understanding and Relaxing the Limitations of Transformers for Linear Algebra
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper systematically reveals three acute failures of "using Transformers for matrix operations"—exploding computational overhead, catastrophic failure on out-of-distribution (OOD) matrices (even identity matrices), and the realization that models perform statistical interpolation rather than learning algorithms. T
+  [ICLR 2026][Learning Theory][Numerical Linear Algebra] This paper systematically reveals three acute failures of "using Transformers for matrix operations"—exploding computational overhead, catastrophic failure on out-of-distribution (OOD) matrices (even identity matrices), and the realization that models perform statistical interpolation rather than learning algorithms. Through four interventions—learnable projections, linear attention, recurrence…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Expressivity"
+  - "Numerical Linear Algebra"
+  - "Statistical Interpolation"
+  - "Recurrent Transformer"
+  - "Linear Attention"
+  - "OOD Generalization"
 date: 2026-05-08
-content_hash: f9c5519dafc98705
+content_hash: 370507694e05810a
 ---
+
 # Understanding and Relaxing the Limitations of Transformers for Linear Algebra
 
 **Conference**: ICLR 2026  
@@ -141,10 +148,10 @@ Fig. 5 (left) shows the cumulative effect of stacking interventions on the relat
 ## Related Papers
 
 - [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)
+- [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
 - [\[ICML 2026\] Understanding the Parameter Space Geometry of Transformers Encoding Boolean Functions](../../ICML2026/learning_theory/understanding_the_parameter_space_geometry_of_transformers_encoding_boolean_func.md)
 - [\[ICLR 2026\] Probability Distributions Computed by Autoregressive Transformers](probability_distributions_computed_by_autoregressive_transformers.md)
-- [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
-- [\[ICLR 2026\] Efficient Turing Machine Simulation with Transformers](efficient_turing_machine_simulation_with_transformers.md)
+- [\[ICLR 2026\] Softmax Transformers are Turing-Complete](softmax_transformers_are_turing-complete.md)
 
 </div>
 

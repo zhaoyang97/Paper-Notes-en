@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Aligner, Diagnose Thyself: A Meta-Learning Paradigm for Fusing Intrinsic Feedback in Preference Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] To address the issue where "mislabeled preference pairs" in preference datasets degrade DPO alignment, this paper moves beyond single heuristics like perplexity differences. It allows the model to "self-diagnose"—constructing a diagnostic vector from three intrinsic signals: consistency, learning difficulty, and genera
+  [ICLR2026][LLM Alignment][Preference Alignment] To address the issue where "mislabeled preference pairs" in preference datasets degrade DPO alignment, this paper moves beyond single heuristics like perplexity differences. It allows the model to "self-diagnose"—constructing a diagnostic vector from three intrinsic signals: consistency, learning difficulty, and generation confidence. A small network is then trained via meta-learning to fuse these signals and adaptively weight e…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Preference Alignment"
+  - "DPO"
+  - "Noisy labels"
+  - "Meta-learning"
+  - "Sample reweighting"
 date: 2026-05-08
-content_hash: 8c0ae593e3c74fe5
+content_hash: 2fcd8fea3af5bc7e
 ---
+
 # Aligner, Diagnose Thyself: A Meta-Learning Paradigm for Fusing Intrinsic Feedback in Preference Alignment
 
 **Conference**: ICLR2026  

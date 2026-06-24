@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper proposes attaching a massive "hierarchical parameterized memory bank" to a small "anchor model" during pretraining. Based on input documents, hierarchical clustering routing retrieves only ~10% of memory parameters to augment the anchor model. This allows the anchor model to focus on general knowledge and re
+  [ICLR 2026][LLM Pretraining][Parameterized Memory] This paper proposes attaching a massive "hierarchical parameterized memory bank" to a small "anchor model" during pretraining. Based on input documents, hierarchical clustering routing retrieves only ~10% of memory parameters to augment the anchor model. This allows the anchor model to focus on general knowledge and reasoning while the memory bank absorbs long-tail world knowledge. Experiments on trillions of tokens show that…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Parameterized Memory"
+  - "Hierarchical Memory Bank"
+  - "Long-tail Knowledge"
+  - "Edge Deployment"
+  - "Pretraining"
 date: 2026-05-08
-content_hash: d5e63aa4786c1d1b
+content_hash: 18b18acc97c6dc65
 ---
+
 # Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge
 
 **Conference**: ICLR 2026  
@@ -142,9 +148,9 @@ A 160M anchor + ~240M retrieved memory (400M total active params) reached 44.5% 
 
 - [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
 - [\[ACL 2025\] Nemotron-CC: Transforming Common Crawl into a Refined Long-Horizon Pretraining Dataset](../../ACL2025/llm_pretraining/nemotron_cc_pretraining_data.md)
-- [\[ICLR 2026\] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition](fictionalqa_a_dataset_for_studying_memorization_and_knowledge_acquisition.md)
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 - [\[ICLR 2026\] SemHiTok: A Unified Image Tokenizer via Semantic-Guided Hierarchical Codebook](semhitok_a_unified_image_tokenizer_via_semantic-guided_hierarchical_codebook_for.md)
-- [\[ICLR 2026\] Synthetic Bootstrapped Pretraining](synthetic_bootstrapped_pretraining.md)
+- [\[ICLR 2026\] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition](fictionalqa_a_dataset_for_studying_memorization_and_knowledge_acquisition.md)
 
 </div>
 

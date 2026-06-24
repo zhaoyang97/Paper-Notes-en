@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] TrajTok: Learning Trajectory Tokens Enhances Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Ours proposes TrajTok—an end-to-end differentiable trajectory tokenizer that implicitly clusters video pixels into object trajectory tokens, replacing external segmentation+tracking pipelines. It achieves significant improvements across three scenarios: training from scratch (TrajViT2), feature adaptation (TrajAdapter)
+  [CVPR2026][Video Understanding][Video tokenization] Ours proposes TrajTok—an end-to-end differentiable trajectory tokenizer that implicitly clusters video pixels into object trajectory tokens, replacing external segmentation+tracking pipelines. It achieves significant improvements across three scenarios: training from scratch (TrajViT2), feature adaptation (TrajAdapter), and Vision-Language Model connectors (TrajVLM), notably outperforming patch pooling in long-video QA.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Video tokenization"
+  - "trajectory tokens"
+  - "end-to-end segmentation"
+  - "Video CLIP"
+  - "VLM connector"
+  - "token compression"
+  - "object trajectories"
 date: 2026-05-08
-content_hash: 4e5903d35d12c7c7
+content_hash: e9f3345f67fa91d9
 ---
+
 # TrajTok: Learning Trajectory Tokens Enhances Video Understanding
 
 **Conference**: CVPR2026  
@@ -167,9 +175,9 @@ Compared to token merging methods like TokenLearner and RLT: TrajTok leads signi
 
 - [\[CVPR 2026\] META: Meta Evolution of Tool Trajectory Adaptation for Long-Video Understanding](meta_meta_evolution_of_tool_trajectory_adaptation_for_long-video_understanding.md)
 - [\[ICCV 2025\] Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition](../../ICCV2025/video_understanding/trokens_semantic-aware_relational_trajectory_tokens_for_few-shot_action_recognit.md)
+- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)
 - [\[CVPR 2026\] Affordance-First Decomposition for Continual Learning in Video–Language Understanding](affordance-first_decomposition_for_continual_learning_in_video-language_understa.md)
-- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[ICCV 2025\] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking](../../ICCV2025/video_understanding/attention_to_trajectory_trajectory-aware_open-vocabulary_tracking.md)
 
 </div>
 

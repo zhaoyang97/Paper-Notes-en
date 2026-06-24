@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control
 description: >-
-  [ICLR 2026][Reinforcement Learning][IMLE] WIMLE extends Implicit Maximum Likelihood Estimation (IMLE) to model-based RL by learning stochastic world models that capture multimodal transition dynamics. It estimates prediction uncertainty through ensemble and latent sampling and utilizes an uncertainty-weighted RL objective for synthetic data. WIMLE achieves sam
+  [ICLR 2026][Reinforcement Learning][Model-Based Reinforcement Learning] WIMLE extends Implicit Maximum Likelihood Estimation (IMLE) to model-based RL by learning stochastic world models that capture multimodal transition dynamics. It estimates prediction uncertainty through ensemble and latent sampling and utilizes an uncertainty-weighted RL objective for synthetic data. WIMLE achieves sample efficiency and asymptotic performance exceeding strong model-free and model-based ba…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - IMLE
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Model-Based Reinforcement Learning"
+  - "IMLE"
+  - "Uncertainty Estimation"
+  - "Multimodal World Models"
+  - "Sample Efficiency"
+  - "Continuous Control"
 date: 2026-05-08
-content_hash: 84243ccf99b1c7e3
+content_hash: 4de10f0a1c758377
 ---
+
 # WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control
 
 **Conference**: ICLR 2026  
@@ -139,10 +145,10 @@ WIMLE employs an inverse-variance soft weight $w(s,a) = \frac{1}{\sigma(s,a) + 1
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](learning_massively_multitask_world_models_for_continuous_control.md)
-- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
+- [\[ICLR 2026\] Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
 - [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
+- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 - [\[ICLR 2026\] Object-Centric World Models from Few-Shot Annotations for Sample-Efficient Reinforcement Learning](object-centric_world_models_from_few-shot_annotations_for_sample-efficient_reinf.md)
-- [\[ICML 2026\] DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control](../../ICML2026/reinforcement_learning/debiased_model-based_representations_for_sample-efficient_continuous_control.md)
 
 </div>
 

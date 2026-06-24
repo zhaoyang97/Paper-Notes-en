@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] SharedRequest is proposed, a model-agnostic privacy-preserving LLM inference framework that elevates privacy preservation from the individual prompt level to the batch level—by mixing real and noisy prompts and sharing the inference overhead of semantically equivalent requests—achieving a $>20\%$ utility improvement an
+  [ACL 2026][LLM Safety][Privacy-preserving inference] SharedRequest is proposed, a model-agnostic privacy-preserving LLM inference framework that elevates privacy preservation from the individual prompt level to the batch level—by mixing real and noisy prompts and sharing the inference overhead of semantically equivalent requests—achieving a $>20\%$ utility improvement and a query cost reduction of up to 5.6×.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Privacy-preserving inference"
+  - "model-agnostic"
+  - "batch-level obfuscation"
+  - "differential privacy"
+  - "LLM security"
 date: 2026-05-08
-content_hash: f32328e828f1ac00
+content_hash: a32d14e48ad6a197
 ---
+
 # SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models
 
 **Conference**: ACL 2026  
@@ -136,9 +142,9 @@ Suppose a user's real prompt is "Provide a compliance checklist for a cybersecur
 
 - [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](../../ICLR2026/llm_safety/secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
 - [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
+- [\[NeurIPS 2025\] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing](../../NeurIPS2025/llm_safety/cryptomoe_privacy-preserving_and_scalable_mixture_of_experts_inference_via_balan.md)
 - [\[ACL 2026\] Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models](privacy_collapse_benign_fine-tuning_can_break_contextual_privacy_in_language_mod.md)
-- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
-- [\[ACL 2026\] Multi-component Causal Tracing in Large Language Models](multi-component_causal_tracing_in_large_language_models.md)
+- [\[ICLR 2026\] VEAttack: Downstream-Agnostic Vision Encoder Attack Against Large Vision Language Models](../../ICLR2026/llm_safety/veattack_downstream-agnostic_vision_encoder_attack_against_large_vision_language.md)
 
 </div>
 

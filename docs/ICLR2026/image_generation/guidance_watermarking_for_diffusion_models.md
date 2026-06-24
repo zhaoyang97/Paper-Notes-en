@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Guidance Watermarking for Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][in-generation watermarking] This paper proposes a "Guidance Watermarking" method: using any off-the-shelf post-hoc watermark decoder to backpropagate gradients and guide the diffusion sampling trajectory. This converts any post-hoc watermarking scheme into an in-generation watermark at zero cost, without retraining the diffusion model or the deco
+  [ICLR 2026][Image Generation][Diffusion model watermarking] This paper proposes a "Guidance Watermarking" method: using any off-the-shelf post-hoc watermark decoder to backpropagate gradients and guide the diffusion sampling trajectory. This converts any post-hoc watermarking scheme into an in-generation watermark at zero cost, without retraining the diffusion model or the decoder, while inheriting or even enhancing the decoder's robustness.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - in-generation watermarking
-  - PCGrad
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion model watermarking"
+  - "guided diffusion"
+  - "in-generation watermarking"
+  - "robustness"
+  - "PCGrad"
 date: 2026-05-08
-content_hash: 704832a842024f86
+content_hash: cb4b6b1f48eba7a1
 ---
+
 # Guidance Watermarking for Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -114,8 +118,8 @@ FID/CLIP are almost on par with the no-watermark baseline; PSNR is lower (expect
 - [\[ICLR 2026\] FARI: Robust One-Step Inversion for Watermarking in Diffusion Models](fari_robust_one-step_inversion_for_watermarking_in_diffusion_models.md)
 - [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
 - [\[ICLR 2026\] What Exactly Does Guidance Do in Masked Discrete Diffusion Models](what_exactly_does_guidance_do_in_masked_discrete_diffusion_models.md)
+- [\[ICLR 2026\] Sample Reward Soups: Query-efficient Multi-Reward Guidance for Text-to-Image Diffusion Models](sample_reward_soups_query-efficient_multi-reward_guidance_for_text-to-image_diff.md)
 - [\[ICLR 2026\] Discrete Guidance Matching: Exact Guidance for Discrete Flow Matching](discrete_guidance_matching_exact_guidance_for_discrete_flow_matching.md)
-- [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
 
 </div>
 

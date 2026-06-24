@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] Neural Dynamics Self-Attention for Spiking Transformers
 description: >-
-  [ICLR 2026][Others][Spiking Neural Network] This paper analyzes the bottlenecks of Spiking Self-Attention (SSA) from two perspectives: "lack of local modeling capability" and "high storage overhead of attention matrices." It proposes LRF-Dyn: first, it re-incorporates local bias into SSA using a Local Receptive Field (LRF) to improve accuracy; then, it rewrites
+  [ICLR 2026][Spiking Neural Network] This paper analyzes the bottlenecks of Spiking Self-Attention (SSA) from two perspectives: "lack of local modeling capability" and "high storage overhead of attention matrices." It proposes LRF-Dyn: first, it re-incorporates local bias into SSA using a Local Receptive Field (LRF) to improve accuracy; then, it rewrites the attention calculation into a recursive form that only requires storing membrane potentials by leveraging "charge-fire-re…
 tags:
-  - ICLR 2026
-  - Others
-  - Spiking Neural Network
-  - Spiking Transformer
-  - Self-Attention
-  - Local Receptive Field
-  - Neuronal Dynamics
-  - Energy-Efficient Vision
+  - "ICLR 2026"
+  - "Spiking Neural Network"
+  - "Spiking Transformer"
+  - "Self-Attention"
+  - "Local Receptive Field"
+  - "Neuronal Dynamics"
+  - "Energy-Efficient Vision"
 date: 2026-05-08
-content_hash: 8341b5349d71629c
+content_hash: e5ed002011e6c2aa
 ---
+
 # Neural Dynamics Self-Attention for Spiking Transformers
 
 **Conference**: ICLR 2026  
@@ -137,11 +137,11 @@ Without LRF, LRF-SSA reverts to the original SSA. Increasing the local convoluti
 
 ## Related Papers
 
-- [\[ICLR 2026\] QUEST: A Robust Attention Formulation Using Query-Modulated Spherical Attention](quest_a_robust_attention_formulation_using_query-modulated_spherical_attention.md)
-- [\[ICLR 2026\] Hilbert-Guided Sparse Local Attention](hilbert-guided_sparse_local_attention.md)
-- [\[ICLR 2026\] Fractional-Order Spiking Neural Network](fractional-order_spiking_neural_network.md)
-- [\[ICLR 2026\] The Counting Power of Transformers](the_counting_power_of_transformers.md)
 - [\[NeurIPS 2025\] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](../../NeurIPS2025/others/recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)
+- [\[ICLR 2026\] Fractional-Order Spiking Neural Network](fractional-order_spiking_neural_network.md)
+- [\[ICLR 2026\] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks](online_pseudo-zeroth-order_training_of_neuromorphic_spiking_neural_networks.md)
+- [\[ICLR 2026\] A Brain-Inspired Gating Mechanism Unlocks Robust Computation in Spiking Neural Networks](a_brain-inspired_gating_mechanism_unlocks_robust_computation_in_spiking_neural_n.md)
+- [\[NeurIPS 2025\] Normalization in Attention Dynamics](../../NeurIPS2025/others/normalization_in_attention_dynamics.md)
 
 </div>
 

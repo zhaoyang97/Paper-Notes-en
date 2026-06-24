@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BLADE: Block-Sparse Attention Meets Step Distillation for Efficient Video Generation
 description: >-
-  [ICLR 2026][Video Generation][data-free] BLADE integrates "dynamic block-sparse attention" and "few-step distillation" into a unified data-free joint training framework for collaborative optimization. It achieves 14.10× end-to-end acceleration on Wan2.1-1.3B and 8.89× on CogVideoX-5B, with VBench-2.0 quality scores surpassing the original 50-step model.
+  [ICLR2026][Video Generation][Video Diffusion] BLADE integrates "dynamic block-sparse attention" and "few-step distillation" into a unified data-free joint training framework for collaborative optimization. It achieves 14.10× end-to-end acceleration on Wan2.1-1.3B and 8.89× on CogVideoX-5B, with VBench-2.0 quality scores surpassing the original 50-step model.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - data-free
+  - "ICLR2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Block-Sparse Attention"
+  - "Step Distillation"
+  - "Trajectory Distribution Matching"
+  - "data-free"
 date: 2026-05-08
-content_hash: e6932b4b85d273ad
+content_hash: 1c38d6f2a93bc3ac
 ---
+
 # BLADE: Block-Sparse Attention Meets Step Distillation for Efficient Video Generation
 
 **Conference**: ICLR2026  

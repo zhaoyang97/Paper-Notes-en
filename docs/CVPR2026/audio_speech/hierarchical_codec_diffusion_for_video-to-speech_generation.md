@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Codec Diffusion for Video-to-Speech Generation
 description: >-
-  [CVPR 2026][Audio & Speech][RVQ Codec] HiCoDiT reframes "silent video to speech" generation as a masked diffusion task that proceeds **layer-by-layer along the RVQ discrete token hierarchy**. Lower-level tokens handle content and timbre under lip-motion and identity guidance, while higher-level tokens manage prosody via dual-scale AdaLN modulation of expres
+  [CVPR2026][Audio & Speech][Video-to-Speech (VTS)] HiCoDiT reframes "silent video to speech" generation as a masked diffusion task that proceeds **layer-by-layer along the RVQ discrete token hierarchy**. Lower-level tokens handle content and timbre under lip-motion and identity guidance, while higher-level tokens manage prosody via dual-scale AdaLN modulation of expressions. This approach achieves leading performance in naturalness, intelligibility…
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - RVQ Codec
-  - AdaLN
+  - "CVPR2026"
+  - "Audio & Speech"
+  - "Video-to-Speech (VTS)"
+  - "RVQ Codec"
+  - "Discrete Diffusion"
+  - "Speech Hierarchy Prior"
+  - "AdaLN"
 date: 2026-05-08
-content_hash: cbce4c9508ae2511
+content_hash: 8b1795832d961dfe
 ---
+
 # Hierarchical Codec Diffusion for Video-to-Speech Generation
 
 **Conference**: CVPR2026  
@@ -141,7 +145,7 @@ On LRS2, HiCoDiT leads in DNSMOS (3.35 vs FTV 3.11) and LSE-C (7.95 vs 7.71). WE
 - [\[CVPR 2026\] EchoFoley: Event-Centric Hierarchical Control for Video Grounded Creative Sound Generation](echofoley_event-centric_hierarchical_control_for_video_grounded_creative_sound_g.md)
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 - [\[CVPR 2026\] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization](hear_what_you_see_video-to-audio_generation_with_diffusion_transformer_and_seman.md)
-- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[ICLR 2026\] Gogo: Group-wise Granularity-ordered Codec for Stable and Efficient Speech Generation](../../ICLR2026/audio_speech/gogo_group-wise_granularity-ordered_codec_for_stable_and_efficient_speech_genera.md)
 
 </div>
 

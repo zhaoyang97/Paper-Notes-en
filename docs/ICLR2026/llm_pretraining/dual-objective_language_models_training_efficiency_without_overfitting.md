@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dual-objective Language Models: Training Efficiency Without Overfitting
 description: >-
-  [ICLR 2026][Pretraining][Autoregressive] Without **modifying any model architecture**, this work linearly mixes autoregressive (AR) and masked-diffusion (MD) training objectives using a weight $\alpha$ on the same Transformer. This allows the model to possess both the high training efficiency of AR and the anti-overfitting capabilities of MD. The authors trai
+  [ICLR2026][LLM Pretraining][Dual-objective training] Without **modifying any model architecture**, this work linearly mixes autoregressive (AR) and masked-diffusion (MD) training objectives using a weight $\alpha$ on the same Transformer. This allows the model to possess both the high training efficiency of AR and the anti-overfitting capabilities of MD. The authors trained 50 models of 470M parameters to systematically sweep for the optimal $\alpha$ under different data repe…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Autoregressive
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Dual-objective training"
+  - "Autoregressive"
+  - "Masked-diffusion"
+  - "Overfitting"
+  - "Data wall"
 date: 2026-05-08
-content_hash: 64dc8ffef6f7ffd1
+content_hash: 2e03a6c666b016ae
 ---
+
 # Dual-objective Language Models: Training Efficiency Without Overfitting
 
 **Conference**: ICLR2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReferEverything: Towards Segmenting Everything We Can Speak of in Videos
 description: >-
-  [ICCV 2025][Segmentation][Referring Video Segmentation] By leveraging the general visual-language mappings learned by video diffusion models…
+  [ICCV 2025][Segmentation][Referring Video Segmentation] By leveraging the general visual-language mappings learned by video diffusion models, and by preserving the complete generative model architecture while shifting the prediction target from noise to mask latents, this work enables open-world referring segmentation of any concept expressible in natural language in videos — including non-object dynamic processes.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Process Segmentation"
   - "Generative Pre-training"
 date: 2026-05-08
-content_hash: 17f12a6a77824b58
+content_hash: 767bedf5b6c765e2
 ---
 
 # ReferEverything: Towards Segmenting Everything We Can Speak of in Videos

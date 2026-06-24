@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Graph Navigation for Intelligent Subgraph Matching
 description: >-
-  [AAAI 2026][Subgraph Matching] This paper proposes NeuGN (Neural Graph Navigation), the first framework to integrate generative neural navigation into the core enumeration phase of subgraph matching. By combining QSExtra…
+  [AAAI 2026][Subgraph Matching] This paper proposes NeuGN (Neural Graph Navigation), the first framework to integrate generative neural navigation into the core enumeration phase of subgraph matching. By combining QSExtractor—which extracts structural signals from query graphs—with GGNavigator—which replaces brute-force enumeration with structure-aware candidate node prioritization—NeuGN reduces First Match Steps by up to 98.2% while guaranteeing completeness.
 tags:
   - "AAAI 2026"
   - "Subgraph Matching"
@@ -11,7 +11,7 @@ tags:
   - "Transformer"
   - "Plug-and-Play"
 date: 2026-05-08
-content_hash: da2e9f110bfbdffc
+content_hash: 2e37c5989a617dc8
 ---
 
 # Neural Graph Navigation for Intelligent Subgraph Matching
@@ -132,8 +132,8 @@ Solid technical contributions; the plug-and-play experimental design covering 8 
 - [\[AAAI 2026\] Tab-PET: Graph-Based Positional Encodings for Tabular Transformers](tab-pet_graph-based_positional_encodings_for_tabular_transformers.md)
 - [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
 - [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](../../ICLR2026/others/learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
-- [\[AAAI 2026\] Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server](bipartite_mode_matching_for_vision_training_set_search_from_a_hierarchical_data_.md)
 - [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
+- [\[AAAI 2026\] Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server](bipartite_mode_matching_for_vision_training_set_search_from_a_hierarchical_data_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes MAR-FL, a system that reduces the communication complexity of P2P federated learning from $O(N^2)$ to $O(N \log N)$ via a Moshpit All-Reduce mechanism…
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes MAR-FL, a system that reduces the communication complexity of P2P federated learning from $O(N^2)$ to $O(N \log N)$ via a Moshpit All-Reduce mechanism and dynamic group aggregation, while maintaining robustness against network jitter.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Differential Privacy"
   - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 75445b06d144543d
+content_hash: 4d27f130403be65f
 ---
 
 # MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System
@@ -133,9 +133,9 @@ Knowledge distillation loss: $L = \lambda\tau^2 D_{KL}(\text{teacher} \| \text{s
 
 - [\[NeurIPS 2025\] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning](layer-wise_update_aggregation_with_recycling_for_communication-efficient_federat.md)
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
+- [\[ICML 2025\] The Panaceas for Improving Low-Rank Decomposition in Communication-Efficient Federated Learning](../../ICML2025/optimization/the_panaceas_for_improving_low-rank_decomposition_in_communication-efficient_fed.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
 - [\[NeurIPS 2025\] Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients](efficient_federated_learning_against_byzantine_attacks_and_data_heterogeneity_vi.md)
-- [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](../../ICML2026/optimization/delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Memento: Toward an All-Day Proactive Assistant for Ultra-Long Streaming Video
 description: >-
-  [ICLR 2026][Video Understanding][Vision-Language Model] Memento utilizes "Dynamic Memory + Query-related Memory Selection + Step-Aware Memory Attention" to liberate online video LLMs from the predicament where "tokens accumulate until OOM within minutes." It achieves bounded memory usage and all-day proactive assistant capabilities on ultra-long video streams of up to 7 hou
+  [ICLR 2026][Video Understanding][Streaming video] Memento utilizes "Dynamic Memory + Query-related Memory Selection + Step-Aware Memory Attention" to liberate online video LLMs from the predicament where "tokens accumulate until OOM within minutes." It achieves bounded memory usage and all-day proactive assistant capabilities on ultra-long video streams of up to 7 hours.
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Streaming video"
+  - "proactive interaction"
+  - "dynamic memory"
+  - "long-term memory"
+  - "vision-language models"
 date: 2026-05-08
-content_hash: 93123eb43114b4c0
+content_hash: f13d537398abbb5e
 ---
+
 # Memento: Toward an All-Day Proactive Assistant for Ultra-Long Streaming Video
 
 **Conference**: ICLR 2026  
@@ -136,10 +141,10 @@ Dynamic Memory improves Temporal tasks (requiring long-term memory) from 31.2% (
 ## Related Papers
 
 - [\[ICLR 2026\] QueryStream: Advancing Streaming Video Understanding with Query-Aware Pruning and Proactive Response](querystream_advancing_streaming_video_understanding_with_query-aware_pruning_and.md)
-- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](focus_efficient_keyframe_selection_for_long_video_understanding.md)
-- [\[ICLR 2026\] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding](scalelong_a_multi-timescale_benchmark_for_long_video_understanding.md)
-- [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
-- [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
+- [\[NeurIPS 2025\] LiveStar: Live Streaming Assistant for Real-World Online Video Understanding](../../NeurIPS2025/video_understanding/livestar_live_streaming_assistant_for_real-world_online_video_understanding.md)
+- [\[ICCV 2025\] VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges](../../ICCV2025/video_understanding/videollamb_long_streaming_video_understanding_with_recurrent_memory_bridges.md)
+- [\[CVPR 2026\] StreamReady: Learning What to Answer and When in Long Streaming Videos](../../CVPR2026/video_understanding/streamready_learning_what_to_answer_and_when_in_long_streaming_videos.md)
+- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](../../CVPR2026/video_understanding/mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
 
 </div>
 

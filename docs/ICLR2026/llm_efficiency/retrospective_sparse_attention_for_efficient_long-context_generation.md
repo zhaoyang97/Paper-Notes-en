@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Retrospective Sparse Attention for Efficient Long-Context Generation
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper proposes RetroAttention, a "retrospective" sparse attention mechanism. When new KV pairs are loaded during subsequent decoding steps, it retroactively corrects the already computed attention outputs of past queries. This allows historical queries to access more KV pairs without increasing the KV budget, miti
+  [ICLR 2026][LLM Efficiency][KV Cache Compression] This paper proposes RetroAttention, a "retrospective" sparse attention mechanism. When new KV pairs are loaded during subsequent decoding steps, it retroactively corrects the already computed attention outputs of past queries. This allows historical queries to access more KV pairs without increasing the KV budget, mitigating error accumulation during long generation. Compared to the SOTA method Quest…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV Cache Compression"
+  - "Sparse Attention"
+  - "Long-Context Generation"
+  - "Attention Error Accumulation"
+  - "Memory-Constrained Inference"
 date: 2026-05-08
-content_hash: 87d733fa2c8002ab
+content_hash: f47f6a50b0f4a5a1
 ---
+
 # Retrospective Sparse Attention for Efficient Long-Context Generation
 
 **Conference**: ICLR 2026  

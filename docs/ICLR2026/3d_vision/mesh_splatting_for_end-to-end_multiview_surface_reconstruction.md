@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Mesh Splatting for End-to-end Multiview Surface Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][Mesh Splatting] The authors "soften" a mesh into multiple semi-transparent shells along its normals and make these layers differentiable with respect to the base mesh. This allows for end-to-end optimization of the mesh surface using volume rendering, reconstructing high-quality meshes with minimal vertices within 20 minutes.
+  [ICLR 2026][3D Vision][Surface reconstruction] The authors "soften" a mesh into multiple semi-transparent shells along its normals and make these layers differentiable with respect to the base mesh. This allows for end-to-end optimization of the mesh surface using volume rendering, reconstructing high-quality meshes with minimal vertices within 20 minutes.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Mesh Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Surface reconstruction"
+  - "mesh optimization"
+  - "differentiable rendering"
+  - "volume rendering"
+  - "Mesh Splatting"
+  - "topology control"
 date: 2026-05-08
-content_hash: f98317dd371b5077
+content_hash: 022b487dc205efc7
 ---
+
 # Mesh Splatting for End-to-end Multiview Surface Reconstruction
 
 **Conference**: ICLR 2026  
@@ -124,9 +130,9 @@ Rendering Efficiency (DTU scan 122, Table 3, Full Resolution 1600×1200): Mesh S
 
 - [\[ICML 2026\] EPS3D: End-to-End Feed-Forward 3D Panoptic Segmentation](../../ICML2026/3d_vision/eps3d_end-to-end_feed-forward_3d_panoptic_segmentation.md)
 - [\[CVPR 2025\] End-to-End HOI Reconstruction Transformer with Graph-based Encoding](../../CVPR2025/3d_vision/end-to-end_hoi_reconstruction_transformer_with_graph-based_encoding.md)
-- [\[ICLR 2026\] Guaranteed Simply Connected Mesh Reconstruction from an Unorganized Point Cloud](guaranteed_simply_connected_mesh_reconstruction_from_an_unorganized_point_cloud.md)
 - [\[CVPR 2025\] End-to-End Implicit Neural Representations for Classification](../../CVPR2025/3d_vision/end-to-end_implicit_neural_representations_for_classification.md)
 - [\[CVPR 2025\] Rethinking End-to-End 2D to 3D Scene Segmentation in Gaussian Splatting](../../CVPR2025/3d_vision/rethinking_end-to-end_2d_to_3d_scene_segmentation_in_gaussian_splatting.md)
+- [\[AAAI 2026\] FoundationSLAM: Unleashing the Power of Depth Foundation Models for End-to-End Dense Visual SLAM](../../AAAI2026/3d_vision/foundationslam_unleashing_the_power_of_depth_foundation_models_for.md)
 
 </div>
 

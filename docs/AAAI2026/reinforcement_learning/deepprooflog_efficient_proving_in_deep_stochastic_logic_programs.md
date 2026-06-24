@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs
 description: >-
-  [AAAI 2026][Reinforcement Learning][Neurosymbolic AI] This paper proposes DeepProofLog (DPrL), a neurosymbolic system grounded in stochastic logic programs that introduces neural network parameterization at each proof st…
+  [AAAI 2026 Oral][Reinforcement Learning][Neurosymbolic AI] This paper proposes DeepProofLog (DPrL), a neurosymbolic system grounded in stochastic logic programs that introduces neural network parameterization at each proof step and establishes a formal mapping between SLD resolution and MDPs. This enables dynamic programming and reinforcement learning techniques to be applied for efficient inference and learning, substantially improving the scalability of neurosymbolic system…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Reinforcement Learning"
   - "Neurosymbolic AI"
   - "Stochastic Logic Programs"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Programming"
   - "Policy Gradient"
 date: 2026-05-08
-content_hash: 6deaec851b581ec8
+content_hash: dcf40f32fc0ef240
 ---
 
 # DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs
@@ -183,11 +183,11 @@ DPrL achieves the best MRR and H@1 on Family, and matches the best-performing me
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Hierarchical Circuit Symbolic Discovery Framework for Efficient Logic Optimization](../../ICLR2026/reinforcement_learning/a_hierarchical_circuit_symbolic_discovery_framework_for_efficient_logic_optimiza.md)
 - [\[AAAI 2026\] Good-for-MDP State Reduction for Stochastic LTL Planning](good-for-mdp_state_reduction_for_stochastic_ltl_planning.md)
-- [\[AAAI 2026\] Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning](do_it_for_her_first-order_temporal_logic_reward_specification_in_reinforcement_l.md)
-- [\[AAAI 2026\] Deep (Predictive) Discounted Counterfactual Regret Minimization](deep_predictive_discounted_counterfactual_regret_minimization.md)
 - [\[ICML 2026\] RL-SPH: Learning to Achieve Feasible Solutions for Integer Linear Programs](../../ICML2026/reinforcement_learning/rl-sph_learning_to_achieve_feasible_solutions_for_integer_linear_programs.md)
-- [\[AAAI 2026\] Efficient Multiagent Planning via Shared Action Suggestions](efficient_multiagent_planning_via_shared_action_suggestions.md)
+- [\[AAAI 2026\] Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning](do_it_for_her_first-order_temporal_logic_reward_specification_in_reinforcement_l.md)
+- [\[ICLR 2026\] GAR: Generative Adversarial Reinforcement Learning for Formal Theorem Proving](../../ICLR2026/reinforcement_learning/gar_generative_adversarial_reinforcement_learning_for_formal_theorem_proving.md)
 
 </div>
 

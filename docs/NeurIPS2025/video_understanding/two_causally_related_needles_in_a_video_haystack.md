@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Two Causally Related Needles in a Video Haystack
 description: >-
-  [NeurIPS 2025][Video Understanding][Long video understanding] This paper proposes Causal2Needles, a benchmark of 4,100 QA pairs that binds the understanding of two causally related events via a "bridging entity…
+  [NeurIPS 2025][Video Understanding][Long video understanding] This paper proposes Causal2Needles, a benchmark of 4,100 QA pairs that binds the understanding of two causally related events via a "bridging entity," forcing VLMs to jointly retrieve and reason over two needles scattered across a long video. It reveals severe deficiencies in state-of-the-art models on the causal dual-needle task (ChatGPT-4o achieves only 13.4% Both accuracy on the dual-needle setting).
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "video-language models"
   - "benchmark"
 date: 2026-05-08
-content_hash: 5c90aea33b93dc59
+content_hash: 92e422d2c1a1ae45
 ---
 
 # Two Causally Related Needles in a Video Haystack
@@ -139,10 +139,10 @@ Effects of causality and dual-needle distance:
 ## Related Papers
 
 - [\[CVPR 2026\] FlexHook: Rethinking Two-Stage Referring-by-Tracking in RMOT](../../CVPR2026/video_understanding/rethinking_two-stage_referring-by-tracking_in_referring_multi-object_tracking_ma.md)
+- [\[CVPR 2026\] Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning](../../CVPR2026/video_understanding/asynchronous_temporal_modeling_with_two-agent_framework_for_streaming_dense_vide.md)
 - [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
 - [\[NeurIPS 2025\] VideoLucy: Deep Memory Backtracking for Long Video Understanding](videolucy_deep_memory_backtracking_for_long_video_understanding.md)
 - [\[NeurIPS 2025\] ConViS-Bench: Estimating Video Similarity Through Semantic Concepts](convis-bench_estimating_video_similarity_through_semantic_concepts.md)
-- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 
 </div>
 

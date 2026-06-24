@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Effective Sign Features without Text for Gloss-free Sign Language Translation
 description: >-
-  [CVPR 2026][Human Understanding][DINO] This paper proposes SignDINO—a "sign-aware" pre-training strategy adapted from DINO self-distillation. By providing the teacher with only global frames and the student with local masked views of hands/faces, the model is forced to infer discriminative local cues from global frames alone. This enables pre-training of a
+  [CVPR 2026][Human Understanding][Text-free pre-training] This paper proposes SignDINO—a "sign-aware" pre-training strategy adapted from DINO self-distillation. By providing the teacher with only global frames and the student with local masked views of hands/faces, the model is forced to infer discriminative local cues from global frames alone. This enables pre-training of a sign language tokenizer **entirely without gloss or text annotations**…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - DINO
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-free pre-training"
+  - "Sign language translation"
+  - "Self-distillation"
+  - "DINO"
+  - "Local discriminative cues"
 date: 2026-05-08
-content_hash: b18c71ae29a1456c
+content_hash: acafc1629130cbfd
 ---
+
 # Learning Effective Sign Features without Text for Gloss-free Sign Language Translation
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,16 @@ Additional analysis shows using general-domain DINO/MAE as frozen tokenizers yie
 - Value: ⭐⭐⭐⭐ Achieves zero-language-annotation for sign tokenizers and simplifies inference to global frames; high engineering and research significance.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] BoostSLT: Boosting Sign Language Translation via a Plug-and-Play Diffusion-Based Semantic Enhancer](boostslt_boosting_sign_language_translation_via_a_plug-and-play_diffusion-based_.md)
-- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
-- [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](sign_language_recognition_llms.md)
 - [\[CVPR 2025\] Lost in Translation, Found in Context: Sign Language Translation with Contextual Cues](../../CVPR2025/human_understanding/lost_in_translation_found_in_context_sign_language_translation_with_contextual_c.md)
 - [\[CVPR 2026\] SignPR: A Progressive Vector-Quantized Diffusion Framework for Sign Language Production](signpr_a_progressive_vector-quantized_diffusion_framework_for_sign_language_prod.md)
+- [\[CVPR 2026\] Focal–General Diffusion Model with Semantic Consistent Guidance for Sign Language Production](focal-general_diffusion_model_with_semantic_consistent_guidance_for_sign_languag.md)
+- [\[ECCV 2024\] A Simple Baseline for Spoken Language to Sign Language Translation with 3D Avatars](../../ECCV2024/human_understanding/a_simple_baseline_for_spoken_language_to_sign_language_trans.md)
 
 </div>
 

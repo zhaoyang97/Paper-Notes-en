@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Plug-and-Play Incomplete Multi-View Clustering via Janus-Faced Affinity Learning with Topology Harmonization
 description: >-
-  [CVPR 2026][Others][Paper Note] PJFTH proposes a **hyperparameter-free** plug-and-play framework for incomplete multi-view clustering. It utilizes "Janus-faced affinity learning" to explicitly strip view-exclusive artifacts before fusing the consensus graph and "topology calibration" to align disordered anchor sequences across views. The objective is
+  [CVPR 2026][Incomplete Multi-View Clustering] PJFTH proposes a **hyperparameter-free** plug-and-play framework for incomplete multi-view clustering. It utilizes "Janus-faced affinity learning" to explicitly strip view-exclusive artifacts before fusing the consensus graph and "topology calibration" to align disordered anchor sequences across views. The objective is optimized via a six-step alternating process with linear complexity $n$ relative to the sample size…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Incomplete Multi-View Clustering"
+  - "Anchor Graph"
+  - "Janus-Faced Affinity Learning"
+  - "Topology Calibration"
+  - "Hyperparameter-free"
 date: 2026-05-08
-content_hash: 4b357bb18d50f266
+content_hash: cdc633a31210f72f
 ---
+
 # Plug-and-Play Incomplete Multi-View Clustering via Janus-Faced Affinity Learning with Topology Harmonization
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ OVAL (w/o Janus learning) and OTH (w/o topology calibration) tested at 60% missi
 
 ## Related Papers
 
-- [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
 - [\[AAAI 2026\] Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](../../AAAI2026/others/deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)
-- [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](cluster-aware_anchor_learning_for_multi-view_clustering.md)
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[CVPR 2026\] Reliable Clustering Number Estimation for Contrastive Multi-View Clustering](reliable_clustering_number_estimation_for_contrastive_multi-view_clustering.md)
+- [\[ICLR 2026\] Aligning Collaborative View Recovery and Tensorial Subspace Learning via Latent Representation for Incomplete Multi-View Clustering](../../ICLR2026/others/aligning_collaborative_view_recovery_and_tensorial_subspace_learning_via_latent_.md)
+- [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
+- [\[CVPR 2026\] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance](scalable_multi-view_subspace_clustering_with_tensorized_anchor_guidance.md)
+- [\[NeurIPS 2025\] Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion](../../NeurIPS2025/others/incomplete_multi-view_clustering_via_hierarchical_semantic_alignment_and_coopera.md)
 
 </div>
 

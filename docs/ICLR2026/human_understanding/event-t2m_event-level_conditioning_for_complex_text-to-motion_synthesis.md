@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis
 description: >-
-  [ICLR 2026][Human Understanding][Diffusion Model] The Event-T2M framework is proposed to decompose text prompts into event-level atomic actions. By combining a TMR encoder and an Event-level Cross-Attention (ECA) module with a Conformer-based diffusion model, it significantly improves the quality and semantic alignment of complex multi-event motion generation.
+  [ICLR 2026][Human Understanding][Text-to-Motion Generation] The Event-T2M framework is proposed to decompose text prompts into event-level atomic actions. By combining a TMR encoder and an Event-level Cross-Attention (ECA) module with a Conformer-based diffusion model, it significantly improves the quality and semantic alignment of complex multi-event motion generation.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Diffusion Model
-  - Conformer
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Text-to-Motion Generation"
+  - "Event-level Conditioning"
+  - "Diffusion Models"
+  - "Compositional Motion"
+  - "Conformer"
 date: 2026-05-08
-content_hash: 218662461acbbdec
+content_hash: 6c5a3a9f01ca673a
 ---
+
 # Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis
 
 **Conference**: ICLR 2026  
@@ -203,8 +207,8 @@ Event-level encoding outperforms token-level encoding under all complexity condi
 - [\[CVPR 2026\] EventGait: Towards Robust Gait Recognition with Event Streams](../../CVPR2026/human_understanding/eventgait_towards_robust_gait_recognition_with_event_streams.md)
 - [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](motion-aligned_word_embeddings_for_text-to-motion_generation.md)
 - [\[ECCV 2024\] FreeMotion: A Unified Framework for Number-free Text-to-Motion Synthesis](../../ECCV2024/human_understanding/freemotion_a_unified_framework_for_number-free_text-to-motion_synthesis.md)
+- [\[ICLR 2026\] TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation](tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
 - [\[ECCV 2024\] Event-based Head Pose Estimation: Benchmark and Method](../../ECCV2024/human_understanding/event-based_head_pose_estimation_benchmark_and_method.md)
-- [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](../../CVPR2026/human_understanding/e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
 
 </div>
 

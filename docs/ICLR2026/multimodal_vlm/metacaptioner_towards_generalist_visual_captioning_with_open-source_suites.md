@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MetaCaptioner: Towards Generalist Visual Captioning with Open-source Suites
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] MetaCaptioner proposes CapFlow, a multi-agent pipeline using open-source models to generate high-quality long captions across image and video domains. Through rigorous rejection sampling, a 4.1M training dataset was constructed to fine-tune an 8B multimodal model into a generalist visual captioner that approaches the d
+  [ICLR2026][Multimodal VLM][Generalist visual captioning] MetaCaptioner proposes CapFlow, a multi-agent pipeline using open-source models to generate high-quality long captions across image and video domains. Through rigorous rejection sampling, a 4.1M training dataset was constructed to fine-tune an 8B multimodal model into a generalist visual captioner that approaches the description quality of commercial models while maintaining strong downstream capabilities.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Generalist visual captioning"
+  - "multi-agent annotation"
+  - "caption data synthesis"
+  - "multimodal LLM"
+  - "open-source VLM"
 date: 2026-05-08
-content_hash: 4ba20366fdd9c2a4
+content_hash: 81691fe39f09b864
 ---
+
 # MetaCaptioner: Towards Generalist Visual Captioning with Open-source Suites
 
 **Conference**: ICLR2026  
@@ -136,15 +142,16 @@ MetaCaptioner-8B paired with DS-Qwen-32B achieved 65.1 on MathVista and 66.8 on 
 - **Value**: ⭐⭐⭐⭐⭐ Highly useful for open-source VLM data synthesis and building cost-effective captioners.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition](../../CVPR2026/multimodal_vlm/the_llm_bottleneck_why_open-source_vision_llms_struggle_with_hierarchical_visual.md)
 - [\[CVPR 2026\] Enhancing Part-Level Point Grounding for Any Open-Source MLLMs](../../CVPR2026/multimodal_vlm/enhancing_part-level_point_grounding_for_any_open-source_mllms.md)
-- [\[CVPR 2025\] RLAIF-V: Open-Source AI Feedback Leads to Super GPT-4V Trustworthiness](../../CVPR2025/multimodal_vlm/rlaif-v_open-source_ai_feedback_leads_to_super_gpt-4v_trustworthiness.md)
-- [\[ICLR 2026\] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach](customizing_visual_emotion_evaluation_for_mllms_an_open-vocabulary_multifaceted_.md)
+- [\[ICML 2026\] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models](../../ICML2026/multimodal_vlm/vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
 - [\[ICLR 2026\] Decoding Open-Ended Information Seeking Goals from Eye Movements in Reading](decoding_open-ended_information_seeking_goals_from_eye_movements_in_reading.md)
+- [\[CVPR 2025\] RLAIF-V: Open-Source AI Feedback Leads to Super GPT-4V Trustworthiness](../../CVPR2025/multimodal_vlm/rlaif-v_open-source_ai_feedback_leads_to_super_gpt-4v_trustworthiness.md)
 
 </div>
 

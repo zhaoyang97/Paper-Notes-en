@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pose-RFT: Aligning MLLMs for 3D Pose Generation via Hybrid Action Reinforcement Fine-Tuning
 description: >-
-  [ICLR 2026][Human Understanding][MLLM] Addressing the alignment gap where pose-specific MLLMs are forced into "average solutions" under supervised fine-tuning due to one-to-many ambiguity, this paper proposes Pose-RFT. It reformulates 3D human pose generation as a hybrid action reinforcement learning problem of "discrete text + continuous pose," utilizes th
+  [ICLR 2026][Human Understanding][3D Human Pose Generation] Addressing the alignment gap where pose-specific MLLMs are forced into "average solutions" under supervised fine-tuning due to one-to-many ambiguity, this paper proposes Pose-RFT. It reformulates 3D human pose generation as a hybrid action reinforcement learning problem of "discrete text + continuous pose," utilizes the HyGRPO algorithm to optimize both output types separately, and incorporates four task-specific rewa…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - MLLM
-  - SMPL
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "3D Human Pose Generation"
+  - "MLLM"
+  - "Reinforcement Fine-Tuning"
+  - "Hybrid Action Space"
+  - "SMPL"
 date: 2026-05-08
-content_hash: f8f2f7eb11db09ac
+content_hash: f2e47aab4b61abab
 ---
+
 # Pose-RFT: Aligning MLLMs for 3D Pose Generation via Hybrid Action Reinforcement Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -158,9 +162,9 @@ Synergy between Distributional Modeling and RFT (3DPW + PoseScript-H2):
 ## Related Papers
 
 - [\[ICLR 2026\] EasyTune: Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation](easytune_efficient_step-aware_fine-tuning_for_diffusion-based_motion_generation.md)
+- [\[ICLR 2026\] TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation](tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
 - [\[ICLR 2026\] Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation](pose_prior_learner_unsupervised_categorical_prior_learning_for_pose_estimation.md)
 - [\[ICLR 2026\] From Sparse to Dense: Spatio-Temporal Fusion for Multi-View 3D Human Pose Estimation with DenseWarper](from_sparse_to_dense_spatio-temporal_fusion_for_multi-view_3d_human_pose_estimat.md)
-- [\[CVPR 2026\] MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment](../../CVPR2026/human_understanding/mobind_motion_binding_for_fine-grained_imu-video_pose_alignment.md)
 - [\[ICLR 2026\] Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics](cross-domain_policy_optimization_via_bellman_consistency_and_hybrid_critics.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Probabilistic Token Alignment for Large Language Model Fusion
 description: >-
-  [NeurIPS 2025][Interpretability][Optimal Transport] This work reformulates the token alignment problem in LLM fusion as an Optimal Transport (OT) problem…
+  [NeurIPS 2025][Interpretability][Optimal Transport] This work reformulates the token alignment problem in LLM fusion as an Optimal Transport (OT) problem, replacing traditional hard mappings with soft probabilistic alignment via dynamic token pairing and the Sinkhorn algorithm. On 78 tasks across 6 benchmarks, PTA-LLM achieves an average improvement of +1.72% over FuseLLM, while substantially mitigating performance degradation on challenging tasks (from −13.04% to −4.07%).
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -13,7 +13,7 @@ tags:
   - "Cross-Architecture Model Fusion"
   - "Knowledge Fusion"
 date: 2026-05-08
-content_hash: bcc92a5d557d80c3
+content_hash: b054604bb0b11c90
 ---
 
 # Probabilistic Token Alignment for Large Language Model Fusion
@@ -160,9 +160,9 @@ PTA-LLM follows the knowledge fusion paradigm: the probability distribution matr
 
 - [\[ICML 2026\] Discovering Implicit Large Language Model Alignment Objectives](../../ICML2026/interpretability/discovering_implicit_large_language_model_alignment_objectives.md)
 - [\[NeurIPS 2025\] Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One](model-behavior_alignment_under_flexible_evaluation_when_the_best-fitting_model_i.md)
-- [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
 - [\[NeurIPS 2025\] Benchmarking Probabilistic Time Series Forecasting Models on Neural Activity](benchmarking_probabilistic_time_series_forecasting_models_on_neural_activity.md)
-- [\[NeurIPS 2025\] Latent Principle Discovery for Language Model Self-Improvement](latent_principle_discovery_for_language_model_self-improvement.md)
+- [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
+- [\[NeurIPS 2025\] VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set](vlsae_interpreting_and_enhancing_visionlanguage_alignment_wi.md)
 
 </div>
 

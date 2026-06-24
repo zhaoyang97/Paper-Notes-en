@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models
 description: >-
-  [ICML 2026][Video Understanding][Omni-LLM] This paper argues that existing Omni-LLM token compression methods are suboptimal due to their "symmetric" treatment of audio and video. It proposes OmniSIFT—a two-stage asymmetric compression framework that first prunes video redundancy via spatio-temporal saliency to obtain "visual anchors," which then guide audio se
+  [ICML 2026][Video Understanding][Omni-LLM] This paper argues that existing Omni-LLM token compression methods are suboptimal due to their "symmetric" treatment of audio and video. It proposes OmniSIFT—a two-stage asymmetric compression framework that first prunes video redundancy via spatio-temporal saliency to obtain "visual anchors," which then guide audio selection. With only 4.85M additional parameters, it consistently outperforms existing baselines and even the original…
 tags:
-  - ICML 2026
-  - Video Understanding
-  - Omni-LLM
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Omni-LLM"
+  - "Token Compression"
+  - "Video-Audio Understanding"
+  - "Spatio-Temporal Pruning"
+  - "Vision-Guided"
 date: 2026-05-08
-content_hash: 5a7bb3a0755f0b86
+content_hash: 06b78c873a73629e
 ---
+
 # OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models
 
 **Conference**: ICML 2026  
@@ -141,11 +146,11 @@ OmniSIFT introduces only 4.85M parameters, significantly fewer than methods like
 
 ## Related Papers
 
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](../../CVPR2026/video_understanding/streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](../../CVPR2026/video_understanding/an_efficient_token_compression_framework_for_visual_object_tracking.md)
 - [\[CVPR 2026\] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models](../../CVPR2026/video_understanding/token_reduction_via_local_and_global_contexts_optimization_for_efficient_video_l.md)
 - [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](../../ICLR2026/video_understanding/flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
-- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](../../CVPR2026/video_understanding/streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
-- [\[CVPR 2025\] VoCo-LLaMA: Towards Vision Compression with Large Language Models](../../CVPR2025/video_understanding/voco-llama_towards_vision_compression_with_large_language_models.md)
-- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](../../CVPR2026/video_understanding/an_efficient_token_compression_framework_for_visual_object_tracking.md)
+- [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
 
 </div>
 

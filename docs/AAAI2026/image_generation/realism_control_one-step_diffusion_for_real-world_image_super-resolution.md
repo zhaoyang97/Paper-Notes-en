@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Realism Control One-step Diffusion for Real-World Image Super-Resolution
 description: >-
-  [AAAI 2026][Image Generation][Image Super-Resolution] This paper proposes the RCOD framework, which endows one-step diffusion (OSD) super-resolution methods with the ability to flexibly control the fidelity–realism trade…
+  [AAAI 2026 Oral][Image Generation][Image Super-Resolution] This paper proposes the RCOD framework, which endows one-step diffusion (OSD) super-resolution methods with the ability to flexibly control the fidelity–realism trade-off at inference time via a latent domain grouping strategy and degradation-aware sampling. A visual prompt injection module is also introduced to replace text prompts, improving restoration accuracy.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Image Generation"
   - "Image Super-Resolution"
   - "One-Step Diffusion"
@@ -12,7 +12,7 @@ tags:
   - "Degradation-Aware"
   - "Latent Domain Grouping"
 date: 2026-05-08
-content_hash: 36e0ba592812135c
+content_hash: 55b4920b41222f2f
 ---
 
 # Realism Control One-step Diffusion for Real-World Image Super-Resolution
@@ -192,9 +192,9 @@ On RealSR, RCOD_O-Fid. achieves PSNR 26.01 (vs. OSEDiff's 25.15) and MANIQA 0.66
 
 - [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
 - [\[NeurIPS 2025\] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](../../NeurIPS2025/image_generation/dove_efficient_one-step_diffusion_model_for_real-world_video_super-resolution.md)
+- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](../../CVPR2026/image_generation/bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 - [\[AAAI 2026\] Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution](continuous_degradation_modeling_via_latent_flow_matching_for_real-world_super-re.md)
 - [\[ICML 2026\] Q-DiT4SR: Exploration of Detail-Preserving Diffusion Transformer Quantization for Real-World Image Super-Resolution](../../ICML2026/image_generation/q-dit4sr_exploration_of_detail-preserving_diffusion_transformer_quantization_for.md)
-- [\[AAAI 2026\] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution](gewdiff_geometric_enhanced_wavelet-based_diffusion_model_for_hyperspectral_image.md)
 
 </div>
 

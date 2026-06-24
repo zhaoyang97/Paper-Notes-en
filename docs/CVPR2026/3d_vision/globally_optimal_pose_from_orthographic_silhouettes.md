@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Globally Optimal Pose from Orthographic Silhouettes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Given a known 3D template and its unoccluded silhouette in an image, this work models "Pose-from-Silhouette (PfS)" as minimizing the Hausdorff distance between two silhouettes on $\mathbb{SO}(3)$. By leveraging the overlooked property that "silhouette area changes continuously with rotation," the search space is heavil
+  [CVPR 2026][3D Vision][Pose Estimation] Given a known 3D template and its unoccluded silhouette in an image, this work models "Pose-from-Silhouette (PfS)" as minimizing the Hausdorff distance between two silhouettes on $\mathbb{SO}(3)$. By leveraging the overlooked property that "silhouette area changes continuously with rotation," the search space is heavily branched. This resulting method is the **first globally optimal PfS solver for arbitrary shapes (regardless of convexi…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Pose Estimation"
+  - "Silhouette"
+  - "Global Optimality"
+  - "Orthographic Projection"
+  - "Shape Signature"
 date: 2026-05-08
-content_hash: f8e7da39757587f1
+content_hash: a0de87586c83d5b8
 ---
+
 # Globally Optimal Pose from Orthographic Silhouettes
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ GlOptiPoSΠ+ is overall optimal. For symmetric objects, accuracy drops due to in
 
 ## Related Papers
 
+- [\[CVPR 2026\] Revisiting Optimal Coding for I-ToF under Practical Sensor Constraints](revisiting_optimal_coding_for_i-tof_under_practical_sensor_constraints.md)
+- [\[ICML 2026\] Streaming Sliced Optimal Transport](../../ICML2026/3d_vision/streaming_sliced_optimal_transport.md)
+- [\[ICML 2026\] AvAtar: Learning to Align via Active Optimal Transport](../../ICML2026/3d_vision/avatar_learning_to_align_via_active_optimal_transport.md)
 - [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
+- [\[CVPR 2026\] SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model](scenemaker_open-set_3d_scene_generation_with_decoupled_de-occlusion_and_pose_est.md)
 
 </div>
 

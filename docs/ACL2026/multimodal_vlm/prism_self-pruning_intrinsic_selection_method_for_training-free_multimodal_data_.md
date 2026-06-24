@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISM: Self-Pruning Intrinsic Selection Method for Training-Free Multimodal Data Selection
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] PRISM discovers that the non-zero mean of MLLM visual features causes Global Semantic Drift, which contaminates similarity-based data selection. By using training-free mean re-centering and low-correlation sample selection, it achieves 101.7% relative performance while retaining only approximately 30% of visual samples
+  [ACL2026 Best Paper][Multimodal VLM][Multimodal data selection] PRISM discovers that the non-zero mean of MLLM visual features causes Global Semantic Drift, which contaminates similarity-based data selection. By using training-free mean re-centering and low-correlation sample selection, it achieves 101.7% relative performance while retaining only approximately 30% of visual samples, reducing end-to-end GPU time by about 70%.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026 Best Paper"
+  - "Multimodal VLM"
+  - "Multimodal data selection"
+  - "visual instruction tuning"
+  - "representation anisotropy"
+  - "training-free selection"
+  - "redundancy pruning"
 date: 2026-05-08
-content_hash: 9e65464672b28787
+content_hash: 7e6a79813f909cf8
 ---
+
 # PRISM: Self-Pruning Intrinsic Selection Method for Training-Free Multimodal Data Selection
 
 **Conference**: ACL2026 Best Paper  
@@ -175,11 +181,11 @@ Cross-model generalization shows that PRISM is not limited to LLaVA-1.5-7B but p
 
 ## Related Papers
 
-- [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](../../ICML2026/multimodal_vlm/toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
 - [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
+- [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](../../ICLR2026/multimodal_vlm/human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
+- [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](../../ICML2026/multimodal_vlm/toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
 - [\[ICCV 2025\] Mastering Collaborative Multi-modal Data Selection: A Focus on Informativeness, Uniqueness, and Representativeness](../../ICCV2025/multimodal_vlm/mastering_collaborative_multi-modal_data_selection_a_focus_on_informativeness_un.md)
-- [\[NeurIPS 2025\] CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization](../../NeurIPS2025/multimodal_vlm/coido_efficient_data_selection_for_visual_instruction_tuning_via_coupled_importa.md)
-- [\[CVPR 2026\] Rethinking Model Selection in VLM Through the Lens of Gromov-Wasserstein Distance](../../CVPR2026/multimodal_vlm/rethinking_model_selection_in_vlm_through_the_lens_of_gromov-wasserstein_distanc.md)
+- [\[ICLR 2026\] Unlocking the Power of Co-Occurrence in CLIP: A DualPrompt-Driven Method for Training-Free Zero-Shot Multi-Label Classification](../../ICLR2026/multimodal_vlm/unlocking_the_power_of_co-occurrence_in_clip_a_dualprompt-driven_method_for_trai.md)
 
 </div>
 

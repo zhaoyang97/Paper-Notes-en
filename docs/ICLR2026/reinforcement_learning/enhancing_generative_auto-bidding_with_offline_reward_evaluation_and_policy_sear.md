@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search
 description: >-
-  [ICLR 2026][Reinforcement Learning][auto-bidding] Ours proposes AIGB-Pearl, equipping "Generative Auto-bidding" (AIGB) with a trajectory evaluator as an offline reward signal. It utilizes a theoretically guaranteed **KL-Lipschitz constrained score-maximization** to enable the generative planner to safely explore high-quality trajectories beyond the offline dataset, th
+  [ICLR 2026][Reinforcement Learning][auto-bidding] Ours proposes AIGB-Pearl, equipping "Generative Auto-bidding" (AIGB) with a trajectory evaluator as an offline reward signal. It utilizes a theoretically guaranteed **KL-Lipschitz constrained score-maximization** to enable the generative planner to safely explore high-quality trajectories beyond the offline dataset, thereby breaking the performance ceiling of pure imitation learning.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - auto-bidding
-  - generative planning
-  - offline RL
-  - trajectory evaluator
-  - KL-Lipschitz constraint
-  - score maximization
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "auto-bidding"
+  - "generative planning"
+  - "offline RL"
+  - "trajectory evaluator"
+  - "KL-Lipschitz constraint"
+  - "score maximization"
 date: 2026-05-08
-content_hash: aca7794e47b50204
+content_hash: ef21c6a274f0b7a9
 ---
+
 # Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search
 
 **Conference**: ICLR 2026  
@@ -123,13 +124,17 @@ The KL constraint contributes +1.1% GMV, and the Lipschitz constraint contribute
 
 <div class="related-papers" markdown="1">
 
-- **DiffBid**: [https://arxiv.org/abs/2401.xxxx](https://arxiv.org/abs/2401.xxxx)
-- **Decision Transformer**: [https://arxiv.org/abs/2106.01345](https://arxiv.org/abs/2106.01345)
+## Related Papers
+
+- [\[ICLR 2026\] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL](gas_enhancing_reward-cost_balance_of_generative_model-assisted_offline_safe_rl.md)
+- [\[ICML 2026\] DRIVE: Distributional and Retrieval-Augmented Bidding with Value Evaluation](../../ICML2026/reinforcement_learning/drive_distributional_and_retrieval-augmented_bidding_with_value_evaluation.md)
+- [\[ICLR 2026\] Preference-based Policy Optimization from Sparse-reward Offline Dataset](preference-based_policy_optimization_from_sparse-reward_offline_dataset.md)
+- [\[ICLR 2026\] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL](bayes_adaptive_monte_carlo_tree_search_for_offline_model-based_reinforcement_lea.md)
+- [\[ICLR 2026\] A Unifying View of Coverage in Linear Off-Policy Evaluation](a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL](gas_enhancing_reward-cost_balance_of_generative_model-assisted_offline_safe_rl.md)

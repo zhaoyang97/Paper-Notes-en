@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] arXiv2Table: Toward Realistic Benchmarking and Evaluation for LLM-Based Literature-Review Table Generation
 description: >-
-  [ACL 2026][LLM Evaluation][LLM] The authors present the arXiv2Table benchmark (1,957 tables, 7,158 papers), which achieves a more realistic evaluation of LLM-based literature-review table generation by introducing distractor papers, schema-agnostic user demands, and a QA-based reference-free evaluation framework, alongside an iterative batch generati
+  [ACL 2026][LLM Evaluation][Literature-review table generation] The authors present the arXiv2Table benchmark (1,957 tables, 7,158 papers), which achieves a more realistic evaluation of LLM-based literature-review table generation by introducing distractor papers, schema-agnostic user demands, and a QA-based reference-free evaluation framework, alongside an iterative batch generation method.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Literature-review table generation"
+  - "benchmark evaluation"
+  - "LLM"
+  - "distractor papers"
+  - "QA evaluation"
 date: 2026-05-08
-content_hash: fe83e4088b2552aa
+content_hash: 914657f3e4a8464b
 ---
+
 # arXiv2Table: Toward Realistic Benchmarking and Evaluation for LLM-Based Literature-Review Table Generation
 
 **Conference**: ACL 2026  
@@ -137,8 +142,8 @@ How should a generated table be scored? Semantic embeddings miss context-specifi
 - [\[ACL 2025\] RealHiTBench: A Comprehensive Realistic Hierarchical Table Benchmark for Evaluating LLM-Based Table Analysis](../../ACL2025/llm_evaluation/realhitbench_a_comprehensive_realistic_hierarchical_table_benchmark_for_evaluati.md)
 - [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
 - [\[ACL 2026\] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns](humanllm_benchmarking_and_improving_llm_anthropomorphism_via_human_cognitive_pat.md)
+- [\[ACL 2026\] Illusions of the Gold Standard: A Large-scale Analysis of Human Evaluation Protocols for Long-form Text Generation](illusions_of_the_gold_standard_a_large-scale_analysis_of_human_evaluation_protoc.md)
 - [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
-- [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] iMontage: Unified, Versatile, Highly Dynamic Many-to-many Image Generation
 description: >-
-  [CVPR 2026][Image Generation][RoPE] iMontage transforms a pretrained video diffusion model (HunyuanVideo) into a unified generator that accepts an arbitrary number of reference images and generates multiple high-dynamic output images based on instructions. By utilizing a **Marginal RoPE** (treating input/output images as "pseudo-frames" at opposite ends
+  [CVPR 2026][Image Generation][Many-to-many generation] iMontage transforms a pretrained video diffusion model (HunyuanVideo) into a unified generator that accepts an arbitrary number of reference images and generates multiple high-dynamic output images based on instructions. By utilizing a **Marginal RoPE** (treating input/output images as "pseudo-frames" at opposite ends of a sequence) that requires minimal modification to the original network…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - RoPE
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Many-to-many generation"
+  - "video diffusion priors"
+  - "unified image generation"
+  - "RoPE"
+  - "data curation"
 date: 2026-05-08
-content_hash: c79d03ec7d90ff04
+content_hash: 8813dd955df6fe1f
 ---
+
 # iMontage: Unified, Versatile, Highly Dynamic Many-to-many Image Generation
 
 **Conference**: CVPR 2026  
@@ -133,11 +138,11 @@ iMontage leads open-source models (7.41), approaching the performance of Gemini 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](../../ICLR2026/image_generation/many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 - [\[CVPR 2026\] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data](dynavid_learning_to_generate_highly_dynamic_videos_using_synthetic_motion_data.md)
 - [\[CVPR 2026\] One Model, Many Budgets: Elastic Latent Interfaces for Diffusion Transformers](one_model_many_budgets_elastic_latent_interfaces_for_diffusion_transformers.md)
-- [\[CVPR 2025\] Dynamic Motion Blending for Versatile Motion Editing (MotionReFit)](../../CVPR2025/image_generation/dynamic_motion_blending_for_versatile_motion_editing.md)
+- [\[CVPR 2026\] Head-wise Adaptive Rotary Positional Encoding for Fine-Grained Image Generation](head-wise_adaptive_rotary_positional_encoding_for_fine-grained_image_generation.md)
 - [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
-- [\[CVPR 2026\] CoLoGen: Progressive Learning of Concept-Localization Duality for Unified Image Generation](cologen_progressive_learning_of_concept-localization_duality_for_unified_image_g.md)
 
 </div>
 

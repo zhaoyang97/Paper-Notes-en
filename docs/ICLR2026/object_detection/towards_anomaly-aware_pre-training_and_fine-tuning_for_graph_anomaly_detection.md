@@ -2,14 +2,13 @@
 title: >-
   [Paper Note] Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection
 description: >-
-  [ICLR 2026][Object Detection][GAD] The APF framework is proposed to address the dual challenges of label scarcity and homophily variation in graph anomaly detection through Rayleigh quotient-guided anomaly-aware pre-training and fine-grained adaptive fine-tuning.
+  [Object Detection] The APF framework is proposed to address the dual challenges of label scarcity and homophily variation in graph anomaly detection through Rayleigh quotient-guided anomaly-aware pre-training and fine-grained adaptive fine-tuning.
 tags:
-  - ICLR 2026
-  - Object Detection
-  - GAD
+  - "Object Detection"
 date: 2026-05-08
-content_hash: ecb1ba7176fb1735
+content_hash: 0ebe02336d428b01
 ---
+
 # Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection
 
 ## Paper Information
@@ -160,10 +159,10 @@ This term guides annotated anomalous nodes ($y_i=1$) towards target ratio $p^a$ 
 ## Related Papers
 
 - [\[CVPR 2025\] Multi-Sensor Object Anomaly Detection: Unifying Appearance, Geometry, and Internal Properties](../../CVPR2025/object_detection/multi-sensor_object_anomaly_detection_unifying_appearance_geometry_and_internal_.md)
+- [\[ICLR 2026\] PGRF-Net: A Prototype-Guided Relational Fusion Network for Diagnostic Multivariate Time-Series Anomaly Detection](pgrf-net_a_prototype-guided_relational_fusion_network_for_diagnostic_multivariat.md)
 - [\[CVPR 2026\] Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization](../../CVPR2026/object_detection/anomaly_as_non-conformity_via_training-free_graph_laplacian_energy_minimization.md)
 - [\[ICLR 2026\] APT: Towards Universal Scene Graph Generation via Plug-in Adaptive Prompt Tuning](apt_towards_universal_scene_graph_generation_via_plug-in_adaptive_prompt_tuning.md)
 - [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
-- [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](../../CVPR2026/object_detection/bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
 
 </div>
 

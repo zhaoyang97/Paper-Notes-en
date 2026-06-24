@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdaptiveAE: An Adaptive Exposure Strategy for HDR Capturing in Dynamic Scenes
 description: >-
-  [ICCV 2025][HDR imaging] This paper proposes AdaptiveAE, which formulates HDR bracketed exposure capture as a Markov Decision Process (MDP) using deep reinforcement learning…
+  [ICCV 2025][HDR imaging] This paper proposes AdaptiveAE, which formulates HDR bracketed exposure capture as a Markov Decision Process (MDP) using deep reinforcement learning, jointly optimizing ISO and shutter speed combinations to adaptively select optimal exposure parameters for dynamic scenes within a user-defined time budget. The method achieves PSNR 39.70 on the HDRV dataset, outperforming the previous best method Hasinoff et al. (37.59) by 2.1 dB.
 tags:
   - "ICCV 2025"
   - "HDR imaging"
@@ -11,7 +11,7 @@ tags:
   - "motion blur"
   - "exposure fusion"
 date: 2026-05-08
-content_hash: 06f79a9a05c5392e
+content_hash: d8f9c5834bcdb460
 ---
 
 # AdaptiveAE: An Adaptive Exposure Strategy for HDR Capturing in Dynamic Scenes
@@ -143,11 +143,11 @@ The paradigm of **RL for camera control** can generalize to other imaging tasks,
 
 ## Related Papers
 
+- [\[ACL 2025\] SOTOPIA-Ω: Dynamic Strategy Injection Learning and Social Instruction Following Evaluation for Social Agents](../../ACL2025/others/sotopia-ensuremathomega_dynamic_strategy_injection_learning_and_social_instructi.md)
 - [\[ICCV 2025\] Recovering Parametric Scenes from Very Few Time-of-Flight Pixels](recovering_parametric_scenes_from_very_few_time-of-flight_pixels.md)
-- [\[NeurIPS 2025\] Overfitting in Adaptive Robust Optimization](../../NeurIPS2025/others/overfitting_in_adaptive_robust_optimization.md)
-- [\[NeurIPS 2025\] Contextual Dynamic Pricing with Heterogeneous Buyers](../../NeurIPS2025/others/contextual_dynamic_pricing_with_heterogeneous_buyers.md)
-- [\[AAAI 2026\] A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems](../../AAAI2026/others/a_new_strategy_for_verifying_reach-avoid_specifications_in_neural_feedback_syste.md)
-- [\[NeurIPS 2025\] InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras](../../NeurIPS2025/others/influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras.md)
+- [\[ACL 2025\] Inner Thinking Transformer: Leveraging Dynamic Depth Scaling to Foster Adaptive Internal Thinking](../../ACL2025/others/inner_thinking_transformer_leveraging_dynamic_depth_scaling_to_foster_adaptive_i.md)
+- [\[ACL 2025\] FastMCTS: A Simple Sampling Strategy for Data Synthesis](../../ACL2025/others/fastmcts_a_simple_sampling_strategy_for_data_synthesis.md)
+- [\[ICML 2025\] AutoAL: Automated Active Learning with Differentiable Query Strategy Search](../../ICML2025/others/autoal_automated_active_learning_with_differentiable_query_strategy_search.md)
 
 </div>
 

@@ -2,16 +2,13 @@
 title: >-
   [Paper Note] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective
 description: >-
-  [ICLR 2026][Multimodal VLM][RFT] This work systematically investigates the impact of SFT and RFT on prior knowledge through jigsaw tasks, revealing that RFT's ability to avoid catastrophic forgetting stems from its **data distribution** rather than algorithmic differences—data sampled by RFT naturally aligns with the base model's probability landscape
+  [Multimodal VLM] This work systematically investigates the impact of SFT and RFT on prior knowledge through jigsaw tasks, revealing that RFT's ability to avoid catastrophic forgetting stems from its **data distribution** rather than algorithmic differences—data sampled by RFT naturally aligns with the base model's probability landscape, resulting in minimal interference.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - RFT
-  - SFT
-  - GRPO
+  - "Multimodal VLM"
 date: 2026-05-08
-content_hash: 0941413f57c88164
+content_hash: 917670bcc2ba3e80
 ---
+
 # Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective
 
 ## Meta Info

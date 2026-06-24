@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the two major ambiguities in rotation-invariant (RI) point cloud representations—"local symmetric structures being indistinguishable" and "global pose information being discarded"—this paper proposes Ga4DPF. It uses learnable steerable transformations to **equivariantly lift** point clouds into a **4D space*
+  [CVPR 2026][3D Vision][Rotation-invariant] To address the two major ambiguities in rotation-invariant (RI) point cloud representations—"local symmetric structures being indistinguishable" and "global pose information being discarded"—this paper proposes Ga4DPF. It uses learnable steerable transformations to **equivariantly lift** point clouds into a **4D space** to construct robust local point-pair features, combined with a **Bingham distribution** to dynamically estimate a c…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Rotation-invariant"
+  - "point cloud analysis"
+  - "equivariant-to-invariant"
+  - "spherical neurons"
+  - "Bingham distribution"
 date: 2026-05-08
-content_hash: 013093d21668bf77
+content_hash: e5b0bdb52e810fd8
 ---
+
 # 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Ablation of sample size $N_s$ (z/SO(3)): Performance increases monotonically fro
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
+- [\[CVPR 2026\] RINO: Rotation-Invariant Non-Rigid Correspondences](rino_rotation-invariant_non-rigid_correspondences.md)
+- [\[AAAI 2026\] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis](../../AAAI2026/3d_vision/graph_smoothing_for_enhanced_local_geometry_learning_in_point_cloud_analysis.md)
+- [\[CVPR 2026\] LoG3D: Ultra-High-Resolution 3D Shape Modeling via Local-to-Global Partitioning](log3d_ultra-high-resolution_3d_shape_modeling_via_local-to-global_partitioning.md)
 - [\[CVPR 2026\] ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis](learning_coordinate-based_convolutional_kernels_for_continuous_se3_equivariant_a.md)
-- [\[CVPR 2026\] Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling](hyper-pcn_hypergraph-based_point_cloud_completion_via_high-order_correlation_mod.md)
-- [\[CVPR 2026\] MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification](morel_long-range_flicker-free_4d_motion_modeling_via_anchor_relay-based_bidirect.md)
+- [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
 
 </div>
 

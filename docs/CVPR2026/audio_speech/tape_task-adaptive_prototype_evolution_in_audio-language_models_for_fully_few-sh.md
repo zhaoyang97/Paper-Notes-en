@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TAPE: Task-Adaptive Prototype Evolution in Audio-Language Models for Fully Few-shot Class-incremental Audio Classification
 description: >-
-  [CVPR 2026][Audio & Speech][CLAP] Addressing the "Fully Few-shot Class-incremental Audio Classification" (FFCAC) task where both base and incremental stages have extremely few samples, TAPE avoids fine-tuning the text branch of CLAP. Instead, it freezes the audio encoder and learns a linear Task-Adapter to project audio into an orthogonal reference poi
+  [CVPR 2026][Audio & Speech][Audio-Language Models] Addressing the "Fully Few-shot Class-incremental Audio Classification" (FFCAC) task where both base and incremental stages have extremely few samples, TAPE avoids fine-tuning the text branch of CLAP. Instead, it freezes the audio encoder and learns a linear Task-Adapter to project audio into an orthogonal reference point space to resist forgetting. During inference, it dynamically updates class prototypes using low-entropy qu…
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - CLAP
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Audio-Language Models"
+  - "Few-Shot Class-Incremental Learning"
+  - "Catastrophic Forgetting"
+  - "Prototype Evolution"
+  - "CLAP"
 date: 2026-05-08
-content_hash: 681aedb63072e5b4
+content_hash: e763df0a968fb0fd
 ---
+
 # TAPE: Task-Adaptive Prototype Evolution in Audio-Language Models for Fully Few-shot Class-incremental Audio Classification
 
 **Conference**: CVPR 2026  
@@ -111,15 +116,16 @@ Baseline: CLAP encoder + ProtoNet (AA↑ / PD↓):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] AHAMask: Reliable Task Specification for Large Audio Language Models without Instructions](../../AAAI2026/audio_speech/ahamask_reliable_task_specification_for_large_audio_language.md)
 - [\[CVPR 2026\] AudioStory: Generating Long-Form Narrative Audio with Large Language Models](audiostory_generating_long-form_narrative_audio_with_large_language_models.md)
-- [\[CVPR 2026\] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](echoes_over_time_unlocking_length_generalization_in_video-to-audio_generation_mo.md)
+- [\[ICLR 2026\] Continuous Audio Language Models](../../ICLR2026/audio_speech/continuous_audio_language_models.md)
 - [\[ACL 2026\] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models](../../ACL2026/audio_speech/generalizable_prompt_tuning_for_audio-language_models_via_semantic_expansion.md)
-- [\[ACL 2026\] MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus](../../ACL2026/audio_speech/mcga_a_multi-task_classical_chinese_literary_genre_audio_corpus.md)
+- [\[ICML 2026\] Few-Shot Synthetic Accented Speech for ASR Fine-Tuning: What Helps and When?](../../ICML2026/audio_speech/few-shot_synthetic_accented_speech_for_asr_fine-tuning_what_helps_and_when.md)
 
 </div>
 

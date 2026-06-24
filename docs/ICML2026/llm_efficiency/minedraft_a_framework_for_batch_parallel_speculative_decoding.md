@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MineDraft: A Framework for Batch Parallel Speculative Decoding
 description: >-
-  [ICML 2026][LLM Efficiency][vLLM] MineDraft maintains two batches of requests and **overlaps the execution** of drafting for one batch with the verification of another on two independent sets of GPUs. This transforms the sequential "draft-verify" pipeline of speculative decoding into batch-parallel PSD. At the cost of only one additional GPU, it increa
+  [ICML2026][LLM Efficiency][Speculative Decoding] MineDraft maintains two batches of requests and **overlaps the execution** of drafting for one batch with the verification of another on two independent sets of GPUs. This transforms the sequential "draft-verify" pipeline of speculative decoding into batch-parallel PSD. At the cost of only one additional GPU, it increases throughput by up to 75% and reduces end-to-end latency by up to 39% compared to standard SD…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - vLLM
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Parallel Speculative Decoding"
+  - "Batch Parallelism"
+  - "vLLM"
+  - "GPU Overlap"
 date: 2026-05-08
-content_hash: 97cc682969c77e55
+content_hash: 2d7a8ab22aa415dc
 ---
+
 # MineDraft: A Framework for Batch Parallel Speculative Decoding
 
 **Conference**: ICML2026  
@@ -160,11 +165,11 @@ MineDraft is a **training-free** inference acceleration framework—it does not 
 
 ## Related Papers
 
-- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
 - [\[ACL 2025\] Tetris: Optimal Draft Token Selection for Batch Speculative Decoding](../../ACL2025/llm_efficiency/tetris_optimal_draft_token_selection_for_batch_speculative_decoding.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](../../ICLR2026/llm_efficiency/speculative_speculative_decoding.md)
+- [\[ICML 2026\] Structuring The Future: Diffusion LLM Speculative Decoding via Calibrated Draft Graphs](structuring_the_future_diffusion_llm_speculative_decoding_via_calibrated_draft_g.md)
+- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
 - [\[ICML 2026\] Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge](diffusion_language_model_parallel_decoding_via_product-of-experts_bridge.md)
-- [\[CVPR 2026\] E$^2$-SCI: Elastic Edge-Cloud Speculative Decoding via Credit Inertia](../../CVPR2026/llm_efficiency/e2-sci_elastic_edge-cloud_speculative_decoding_via_credit_inertia.md)
-- [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](../../ACL2026/llm_efficiency/speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
 
 </div>
 

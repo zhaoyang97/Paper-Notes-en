@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] Ours proposes the R-MHSafe role-aware mental health safety taxonomy and the MHSafeEval closed-loop agent evaluation framework. Through adversarial multi-turn counseling interactions, it systematically identifies role-dependent cumulative safety failures in LLMs within mental health counseling scenarios, revealing inter
+  [ACL 2026 Findings][Medical LLM][Mental health safety] Ours proposes the R-MHSafe role-aware mental health safety taxonomy and the MHSafeEval closed-loop agent evaluation framework. Through adversarial multi-turn counseling interactions, it systematically identifies role-dependent cumulative safety failures in LLMs within mental health counseling scenarios, revealing interaction-level harms that traditional static benchmarks fail to capture.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Mental health safety"
+  - "role-aware"
+  - "multi-turn conversation evaluation"
+  - "adversarial interaction"
+  - "LLM safety benchmark"
 date: 2026-05-08
-content_hash: e2883290f6821d92
+content_hash: aeb8be9a36b29f90
 ---
+
 # MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -132,11 +138,11 @@ This work is a pure evaluation framework and does not involve model training. Tr
 
 ## Related Papers
 
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](../../ICLR2026/medical_nlp/counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
 - [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
 - [\[ACL 2026\] Responsible Evaluation of AI for Mental Health](responsible_evaluation_of_ai_for_mental_health.md)
 - [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](../../ICLR2026/medical_nlp/counselbench_llm_mental_health_qa.md)
 - [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
-- [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
 
 </div>
 

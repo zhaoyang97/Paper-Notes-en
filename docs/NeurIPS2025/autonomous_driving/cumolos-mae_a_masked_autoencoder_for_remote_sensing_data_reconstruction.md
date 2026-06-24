@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CuMoLoS-MAE: A Masked Autoencoder for Remote Sensing Data Reconstruction
 description: >-
-  [NEURIPS2025][Autonomous Driving][Masked Autoencoder] This paper proposes CuMoLoS-MAE, a Masked Autoencoder combining a curriculum masking strategy with Monte Carlo stochastic ensemble inference for high-fidelity reconst…
+  [NEURIPS2025][Autonomous Driving][Masked Autoencoder] This paper proposes CuMoLoS-MAE, a Masked Autoencoder combining a curriculum masking strategy with Monte Carlo stochastic ensemble inference for high-fidelity reconstruction and pixel-wise uncertainty quantification of remote sensing atmospheric profile data.
 tags:
   - "NEURIPS2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Curriculum Learning"
   - "Monte Carlo Ensemble"
 date: 2026-05-08
-content_hash: 9894df10d5da016f
+content_hash: bae723ada327bf05
 ---
 
 # CuMoLoS-MAE: A Masked Autoencoder for Remote Sensing Data Reconstruction
@@ -154,10 +154,10 @@ The Monte Carlo ensemble concept is transferable to other MAE applications (e.g.
 ## Related Papers
 
 - [\[NeurIPS 2025\] L2RSI: Cross-View LiDAR-Based Place Recognition for Large-Scale Urban Scenes via Remote Sensing Imagery](l2rsi_cross-view_lidar-based_place_recognition_for_large-scale_urban_scenes_via_.md)
+- [\[CVPR 2026\] LiDAS: Lighting-driven Dynamic Active Sensing for Nighttime Perception](../../CVPR2026/autonomous_driving/lidas_lighting-driven_dynamic_active_sensing_for_nighttime_perception.md)
+- [\[CVPR 2025\] MaskGWM: A Generalizable Driving World Model with Video Mask Reconstruction](../../CVPR2025/autonomous_driving/maskgwm_a_generalizable_driving_world_model_with_video_mask_reconstruction.md)
+- [\[ECCV 2024\] DySeT: A Dynamic Masked Self-distillation Approach for Robust Trajectory Prediction](../../ECCV2024/autonomous_driving/dyset_a_dynamic_masked_self-distillation_approach_for_robust_trajectory_predicti.md)
 - [\[ICCV 2025\] GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting](../../ICCV2025/autonomous_driving/gs-occ3d_scaling_vision-only_occupancy_reconstruction_with_gaussian_splatting.md)
-- [\[ICCV 2025\] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving](../../ICCV2025/autonomous_driving/unraveling_the_effects_of_synthetic_data_on_end-to-end_autonomous_driving.md)
-- [\[AAAI 2026\] LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors](../../AAAI2026/autonomous_driving/lidar-gsimproving_lidar_gaussian_reconstruction_via_diffusion_priors.md)
-- [\[AAAI 2026\] FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning](../../AAAI2026/autonomous_driving/fastdrivevla_efficient_end-to-end_driving_via_plug-and-play_.md)
 
 </div>
 

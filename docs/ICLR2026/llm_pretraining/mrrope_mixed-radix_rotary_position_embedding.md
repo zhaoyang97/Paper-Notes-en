@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MrRoPE: Mixed-radix Rotary Position Embedding
 description: >-
-  [ICLR 2026][Pretraining][RoPE] This paper re-examines RoPE from the perspective of "radix conversion" and proposes a unified framework, MrRoPE. It explains extrapolation methods such as PI, NTK, and YaRN as different mixed-radix conversion strategies. Based on this, MrRoPE-Pro (Progressive Radix Conversion) is designed to double the retrieval and di
+  [ICLR 2026][LLM Pretraining][RoPE] This paper re-examines RoPE from the perspective of "radix conversion" and proposes a unified framework, MrRoPE. It explains extrapolation methods such as PI, NTK, and YaRN as different mixed-radix conversion strategies. Based on this, MrRoPE-Pro (Progressive Radix Conversion) is designed to double the retrieval and dialogue accuracy of YaRN on 128K long contexts without fine-tuning.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - RoPE
-  - training-free
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "RoPE"
+  - "Position Encoding"
+  - "Long-context Extrapolation"
+  - "Radix Conversion"
+  - "training-free"
 date: 2026-05-08
-content_hash: f4b185fd2808b893
+content_hash: 91a651ba6f7b4bd0
 ---
+
 # MrRoPE: Mixed-radix Rotary Position Embedding
 
 **Conference**: ICLR 2026  
@@ -115,7 +119,7 @@ Uni is better than YaRN at short lengths but slightly worse at long lengths; onl
 - [\[ICLR 2026\] LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures](llm-jepa_large_language_models_meet_joint_embedding_predictive_architectures.md)
 - [\[ICLR 2026\] Deconstructing Positional Information: From Attention Logits to Training Biases](deconstructing_positional_information_from_attention_logits_to_training_biases.md)
 - [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
-- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ICLR 2026\] Predicting Training Re-evaluation Curves Enables Effective Data Curriculums](predicting_training_re-evaluation_curves_enables_effective_data_curriculums_for_.md)
 
 </div>
 

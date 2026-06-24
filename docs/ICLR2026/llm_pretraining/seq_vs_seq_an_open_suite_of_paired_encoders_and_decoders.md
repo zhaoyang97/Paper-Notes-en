@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Seq vs Seq: An Open Suite of Paired Encoders and Decoders
 description: >-
-  [ICLR 2026][Pretraining][encoder-only] The authors develop a suite of paired encoder-only and decoder-only models (the ETTIN suite) ranging from 17M to 1B parameters. Using **identical** data, architectures, and training recipes—varying only in the objective function and attention direction—they achieve SOTA performance on open-data benchmarks for both type
+  [ICLR 2026][LLM Pretraining][encoder-only] The authors develop a suite of paired encoder-only and decoder-only models (the ETTIN suite) ranging from 17M to 1B parameters. Using **identical** data, architectures, and training recipes—varying only in the objective function and attention direction—they achieve SOTA performance on open-data benchmarks for both types. They demonstrate that encoders significantly outperform decoders in classification and retrieval tasks…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - encoder-only
-  - decoder-only
-  - MLM vs CLM
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "encoder-only"
+  - "decoder-only"
+  - "paired models"
+  - "MLM vs CLM"
+  - "cross-objective training"
 date: 2026-05-08
-content_hash: 6924a10548a004c7
+content_hash: 0ea79616b80eea6c
 ---
+
 # Seq vs Seq: An Open Suite of Paired Encoders and Decoders
 
 **Conference**: ICLR 2026  
@@ -137,11 +140,11 @@ Encoders use MLM (30% masking during pre-training, 15% during decay) + bidirecti
 
 ## Related Papers
 
+- [\[ICLR 2026\] Should We Still Pretrain Encoders with Masked Language Modeling?](should_we_still_pretrain_encoders_with_masked_language_modeling.md)
+- [\[ICLR 2026\] Avey-B: Refactoring Attention-Free Architectures into Bidirectional Encoders](avey-b.md)
 - [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](../../CVPR2026/llm_pretraining/reconstructing_clip_for_open-vocabulary_dense_perception.md)
 - [\[NeurIPS 2025\] Gemstones: A Model Suite for Multi-Faceted Scaling Laws](../../NeurIPS2025/llm_pretraining/gemstones_a_model_suite_for_multi-faceted_scaling_laws.md)
 - [\[ICML 2026\] If open source is to win, it must go public](../../ICML2026/llm_pretraining/if_open_source_is_to_win_it_must_go_public.md)
-- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
-- [\[ICML 2026\] Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning](../../ICML2026/llm_pretraining/names_dont_matter_symbol-invariant_transformer_for_open-vocabulary_learning.md)
 
 </div>
 

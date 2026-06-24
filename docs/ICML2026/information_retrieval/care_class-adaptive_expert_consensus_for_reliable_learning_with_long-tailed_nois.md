@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CARE: Class-Adaptive Expert Consensus for Reliable Learning with Long-Tailed Noisy Labels
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Vision-Language Model] The CARE framework is proposed, which leverages three-way complementary experts—VLM text embeddings, image features, and original labels—to achieve reliable label correction in long-tailed noisy label scenarios through a class-adaptive Top-$K$ consensus mechanism, consistently surpassing SOTA by up to 3.0% on synthetic
+  [ICML 2026][Information Retrieval & RAG][Noisy Label Learning] The CARE framework is proposed, which leverages three-way complementary experts—VLM text embeddings, image features, and original labels—to achieve reliable label correction in long-tailed noisy label scenarios through a class-adaptive Top-$K$ consensus mechanism, consistently surpassing SOTA by up to 3.0% on synthetic and real-world benchmarks.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - Vision-Language Model
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Noisy Label Learning"
+  - "Long-Tailed Distribution"
+  - "Vision-Language Models"
+  - "Expert Consensus"
+  - "Label Correction"
 date: 2026-05-08
-content_hash: 789c90e2ca54af87
+content_hash: d7178999e56c728f
 ---
+
 # CARE: Class-Adaptive Expert Consensus for Reliable Learning with Long-Tailed Noisy Labels
 
 **Conference**: ICML 2026  
@@ -135,8 +140,8 @@ flowchart TD
 - [\[ICCV 2025\] External Knowledge Injection for CLIP-Based Class-Incremental Learning](../../ICCV2025/information_retrieval/external_knowledge_injection_for_clip-based_class-incremental_learning.md)
 - [\[ICML 2026\] Retriever Portfolios: A Principled Approach to Adaptive RAG](retriever_portfolios_a_principled_approach_to_adaptive_rag.md)
 - [\[ICML 2026\] ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs](pariskv_fast_and_drift-robust_kv-cache_retrieval_for_long-context_llms.md)
-- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 - [\[ICML 2026\] Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning](graph-r1_towards_agentic_graphrag_framework_via_end-to-end_reinforcement_learnin.md)
+- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 
 </div>
 

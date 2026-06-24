@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeoPredict: Leveraging Predictive Kinematics and 3D Gaussian Geometry for Precise VLA Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] GeoPredict augments a continuous-action VLA policy (based on $\pi_0$) with two "future prediction" auxiliary tasks—predicting multi-step 3D trajectories of robot keypoints and predicting future 3D Gaussian geometry of the workspace. These two modules serve as supervision signals **only during training** and are not exe
+  [CVPR 2026][Robotics][VLA] GeoPredict augments a continuous-action VLA policy (based on $\pi_0$) with two "future prediction" auxiliary tasks—predicting multi-step 3D trajectories of robot keypoints and predicting future 3D Gaussian geometry of the workspace. These two modules serve as supervision signals **only during training** and are not executed during inference. This allows the policy to learn internal representations oriented toward 3D space and long-horizon dynamics w…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Robot Manipulation"
+  - "Predictive Kinematics"
+  - "3D Gaussian Geometry"
+  - "Training-time Supervision"
 date: 2026-05-08
-content_hash: 87472bfb68578430
+content_hash: 81e64b5c57687c41
 ---
+
 # GeoPredict: Leveraging Predictive Kinematics and 3D Gaussian Geometry for Precise VLA Manipulation
 
 **Conference**: CVPR 2026  
@@ -145,15 +150,16 @@ Further ablation of the depth rendering design: Color rendering (49.2%) does not
 - **Value**: ⭐⭐⭐⭐⭐ The "learn geometry at training, zero cost at inference" paradigm is highly practical for real VLA deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
-- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
-- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
-- [\[CVPR 2026\] Learning Predictive Visuomotor Coordination](learning_predictive_visuomotor_coordination.md)
 - [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
+- [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
+- [\[CVPR 2026\] Structural Action Transformer for 3D Dexterous Manipulation](structural_action_transformer_for_3d_dexterous_manipulation.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
 
 </div>
 

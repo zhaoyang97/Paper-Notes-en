@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][Benchmark] This paper proposes **MoSciBench**—the first benchmark for "multimodal, repository-level" data-driven scientific discovery. Starting from peer-reviewed papers, an 88-task cross-modal hypothesis testing dataset was constructed via a four-stage pipeline. Systematic evaluation reveals that even the strongest agent (o4-min
+  [ICLR 2026][LLM Agent][Scientific discovery agents] This paper proposes **MoSciBench**—the first benchmark for "multimodal, repository-level" data-driven scientific discovery. Starting from peer-reviewed papers, an 88-task cross-modal hypothesis testing dataset was constructed via a four-stage pipeline. Systematic evaluation reveals that even the strongest agent (o4-mini + ReAct) achieves only 48.9% accuracy, with over 60% of failures stemming from cross-modal alignment…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Scientific discovery agents"
+  - "multimodal alignment"
+  - "hypothesis testing"
+  - "Benchmark"
+  - "workflow scaffolding"
 date: 2026-05-08
-content_hash: 8865c38e5db59a51
+content_hash: c422cb6fd176d14e
 ---
+
 # Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents
 
 **Conference**: ICLR 2026  
@@ -132,9 +137,9 @@ Error attribution and enhancement comparison for the best ReAct (o4-mini):
 
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
+- [\[ICLR 2026\] ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows](scienceboard_evaluating_multimodal_autonomous_agents_in_realistic_scientific_wor.md)
 - [\[ICLR 2026\] Expanding the Capability Frontier of LLM Agents with ZPD-Guided Data Synthesis](expanding_the_capability_frontier_of_llm_agents_with_zpd-guided_data_synthesis.md)
 - [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](tusoai_agentic_optimization_for_scientific_methods.md)
-- [\[ICLR 2026\] CoMind: Towards Community-Driven Agents for Machine Learning Engineering](comind_towards_community-driven_agents_for_machine_learning_engineering.md)
 
 </div>
 

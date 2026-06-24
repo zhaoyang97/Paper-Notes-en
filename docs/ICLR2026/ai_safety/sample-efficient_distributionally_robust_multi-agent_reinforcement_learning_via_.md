@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction
 description: >-
-  [ICLR 2026][AI Safety][Distributionally Robust] This paper conducts the first study on the online learning problem of Distributionally Robust Markov Games (DRMGs). It proposes the MORNAVI algorithm, which efficiently learns optimal robust policies through online interaction without simulators or offline data, providing the first provable regret bounds under TV and K
+  [ICLR 2026][AI Safety][Distributionally Robust] This paper conducts the first study on the online learning problem of Distributionally Robust Markov Games (DRMGs). It proposes the MORNAVI algorithm, which efficiently learns optimal robust policies through online interaction without simulators or offline data, providing the first provable regret bounds under TV and KL divergence uncertainty sets.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Distributionally Robust
-  - Multi-Agent RL
-  - Markov Games
-  - online learning
-  - Regret Bounds
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Distributionally Robust"
+  - "Multi-Agent RL"
+  - "Markov Games"
+  - "online learning"
+  - "Regret Bounds"
 date: 2026-05-08
-content_hash: 9ad4da0be86e04cd
+content_hash: 41b5ab43d5bdff39
 ---
+
 # Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction
 
 **Conference**: ICLR 2026  
@@ -139,11 +140,11 @@ Where $S$ is the size of the state space, $A$ is the size of the action space, $
 
 ## Related Papers
 
-- [\[ICML 2025\] Convex Markov Games: A New Frontier for Multi-Agent Reinforcement Learning](../../ICML2025/ai_safety/convex_markov_games_a_new_frontier_for_multi-agent_reinforcement_learning.md)
 - [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](../../CVPR2026/ai_safety/seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
+- [\[ICML 2025\] Convex Markov Games: A New Frontier for Multi-Agent Reinforcement Learning](../../ICML2025/ai_safety/convex_markov_games_a_new_frontier_for_multi-agent_reinforcement_learning.md)
 - [\[ICLR 2026\] MUSE: Model-Agnostic Tabular Watermarking via Multi-Sample Selection](muse_model-agnostic_tabular_watermarking_via_multi-sample_selection.md)
 - [\[ICLR 2026\] Fair Reinforcement Learning for Just AI](fair_reinforcement_learning_for_just_ai.md)
-- [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
+- [\[ICLR 2026\] Robust Adversarial Attacks Against Unknown Disturbances via Inverse Gradient Sample](robust_adversarial_attacks_against_unknown_disturbance_via_inverse_gradient_samp.md)
 
 </div>
 

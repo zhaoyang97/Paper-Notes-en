@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] DocSeeker is proposed to achieve structured reasoning and evidence grounding in long document understanding through an ALR (Analyze-Locate-Reason) visual reasoning paradigm and a two-stage training process (SFT + EviGRPO). It matures robustly from training on short documents to generalizing to ultra-long documents.
+  [CVPR 2026 Highlight][VLM Reasoning][Long document understanding] DocSeeker is proposed to achieve structured reasoning and evidence grounding in long document understanding through an ALR (Analyze-Locate-Reason) visual reasoning paradigm and a two-stage training process (SFT + EviGRPO). It matures robustly from training on short documents to generalizing to ultra-long documents.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026 Highlight"
+  - "VLM Reasoning"
+  - "Long document understanding"
+  - "evidence grounding"
+  - "structured reasoning"
+  - "reinforcement learning"
+  - "visual RAG"
 date: 2026-05-08
-content_hash: 00f2a4e778dfc94c
+content_hash: 5614db628e8e2e5e
 ---
+
 # DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding
 
 **Conference**: CVPR 2026 Highlight  
@@ -142,11 +147,11 @@ Stage I utilizes standard cross-entropy SFT with 13,986 samples distilled from G
 
 ## Related Papers
 
-- [\[ACL 2025\] LongDocURL: a Comprehensive Multimodal Long Document Benchmark Integrating Understanding, Reasoning, and Locating](../../ACL2025/multimodal_vlm/longdocurl_multimodal_long_doc.md)
-- [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[ACL 2025\] LongDocURL: a Comprehensive Multimodal Long Document Benchmark Integrating Understanding, Reasoning, and Locating](../../ACL2025/vlm_reasoning/longdocurl_multimodal_long_doc.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
-- [\[ACL 2026\] SciMDR: Advancing Scientific Multimodal Document Reasoning](../../ACL2026/multimodal_vlm/scimdr_advancing_scientific_multimodal_document_reasoning.md)
-- [\[CVPR 2026\] Conan: Progressive Learning to Reason Like a Detective over Multi-Scale Visual Evidence](conan_progressive_learning_to_reason_like_a_detective_over_multi-scale_visual_ev.md)
+- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
 
 </div>
 

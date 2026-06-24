@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] In-Context Watermarks for Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][In-Context Watermark] This paper proposes In-Context Watermark (ICW), which enables any black-box LLM to embed detectable invisible watermarks into outputs **solely through meticulously designed prompts**, without requiring access to the decoding process. Its practical utility is demonstrated in the typical scenario of "detecting AI-generat
+  [ICLR 2026][LLM Safety][In-Context Watermark] This paper proposes In-Context Watermark (ICW), which enables any black-box LLM to embed detectable invisible watermarks into outputs **solely through meticulously designed prompts**, without requiring access to the decoding process. Its practical utility is demonstrated in the typical scenario of "detecting AI-generated reviews in academic peer review."
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - In-Context Watermark
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "In-Context Watermark"
+  - "Black-box Watermarking"
+  - "Prompt Engineering"
+  - "Indirect Prompt Injection"
+  - "AI Generation Detection"
 date: 2026-05-08
-content_hash: d48b8ddc90c0d5c0
+content_hash: eb05f9e32e7a3228
 ---
+
 # In-Context Watermarks for Large Language Models
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] rPPG-VQA proposes the first video quality assessment framework specifically for remote heart rate detection (rPPG), combining signal-level multi-method consensus SNR with scene-level MLLM interference identification, alongside a two-stage adaptive sampling strategy to filter in-the-wild videos for training set construc
+  [CVPR 2026][Human Understanding][Remote Photoplethysmography (rPPG)] rPPG-VQA proposes the first video quality assessment framework specifically for remote heart rate detection (rPPG), combining signal-level multi-method consensus SNR with scene-level MLLM interference identification, alongside a two-stage adaptive sampling strategy to filter in-the-wild videos for training set construction.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Remote Photoplethysmography (rPPG)"
+  - "Video Quality Assessment"
+  - "Unsupervised Learning"
+  - "Multimodal Large Language Models (MLLM)"
+  - "Data Filtering"
 date: 2026-05-08
-content_hash: cf4161f1df5e044b
+content_hash: 0dd81ce0f8e63754
 ---
+
 # rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training
 
 **Conference**: CVPR 2026  
@@ -110,15 +116,14 @@ The framework does not introduce new training objectives. Instead, the filtered 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
-- [\[CVPR 2026\] AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video](avatar_reinforcement_learning_to_see_hear_and_reason_over_video.md)
+- [\[CVPR 2025\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](../../CVPR2025/human_understanding/reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
 - [\[CVPR 2026\] GazeShift: Unsupervised Gaze Estimation and Dataset for VR](gazeshift_unsupervised_gaze_estimation_and_dataset_for_vr.md)
-- [\[CVPR 2026\] From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing](from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md)
 - [\[CVPR 2026\] Render-to-Adapt: Unsupervised Personal Adaptation for Gaze Estimation](render-to-adapt_unsupervised_personal_adaptation_for_gaze_estimation.md)
+- [\[CVPR 2026\] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)
+- [\[CVPR 2026\] Forecasting 3D Scanpaths in Egocentric Video](forecasting_3d_scanpaths_in_egocentric_video.md)
 
 </div>
 

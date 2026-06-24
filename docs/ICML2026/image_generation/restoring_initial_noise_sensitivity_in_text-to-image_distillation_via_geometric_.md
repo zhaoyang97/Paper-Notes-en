@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Restoring Initial Noise Sensitivity in Text-to-Image Distillation via Geometric Alignment
 description: >-
-  [ICML 2026][Image Generation][Jacobian-Vector Product] This paper points out that existing T2I diffusion distillation methods, which focus only on "pointwise output alignment," lead to the collapse of the student model's sensitivity to initial noise. It proposes GAD: using a finite-difference approximation of the Jacobian-Vector Product (JVP) under a pair of perturbed inpu
+  [ICML 2026][Image Generation][Diffusion Distillation] This paper points out that existing T2I diffusion distillation methods, which focus only on "pointwise output alignment," lead to the collapse of the student model's sensitivity to initial noise. It proposes GAD: using a finite-difference approximation of the Jacobian-Vector Product (JVP) under a pair of perturbed inputs to force the student to match the teacher's directional response to noise perturbations…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Jacobian-Vector Product
-  - T2I
+  - "ICML 2026"
+  - "Image Generation"
+  - "Diffusion Distillation"
+  - "Initial Noise Sensitivity"
+  - "Jacobian-Vector Product"
+  - "Geometric Alignment"
+  - "T2I"
 date: 2026-05-08
-content_hash: 531a0e044c4b81c0
+content_hash: 87ece068678806fe
 ---
+
 # Restoring Initial Noise Sensitivity in Text-to-Image Distillation via Geometric Alignment
 
 **Conference**: ICML 2026  

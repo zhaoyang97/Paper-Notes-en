@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning
 description: >-
-  [NeurIPS 2025][Robotics][VLA reasoning] ThinkAct proposes a dual-system framework that applies action-aligned visual rewards to fine-tune MLLMs via reinforcement learning…
+  [NeurIPS 2025][Robotics][VLA reasoning] ThinkAct proposes a dual-system framework that applies action-aligned visual rewards to fine-tune MLLMs via reinforcement learning, eliciting embodied reasoning capabilities and compressing reasoning plans into visual latent representations to guide a downstream action model—realizing a "think before act" VLA reasoning paradigm.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "embodied reasoning"
   - "dual-system architecture"
 date: 2026-05-08
-content_hash: 484920abfcb6fb98
+content_hash: 0d09ad5b8842e977
 ---
 
 # ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning
@@ -136,9 +136,9 @@ A multi-stage training procedure is adopted:
 
 - [\[CVPR 2026\] Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning](../../CVPR2026/robotics/fast-thinkact_efficient_vision-language-action_reasoning_via_verbalizable_latent.md)
 - [\[NeurIPS 2025\] Robot-R1: Reinforcement Learning for Enhanced Embodied Reasoning in Robotics](robot-r1_reinforcement_learning_for_enhanced_embodied_reasoning_in_robotics.md)
+- [\[ICML 2026\] Think Less, Act Early: Reinforced Latent Reasoning with Early Exit in Vision-Language-Action Models](../../ICML2026/robotics/think_less_act_early_reinforced_latent_reasoning_with_early_exit_in_vision-langu.md)
 - [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
 - [\[NeurIPS 2025\] SAFE: Multitask Failure Detection for Vision-Language-Action Models](safe_multitask_failure_detection_for_vision-language-action_models.md)
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
 
 </div>
 

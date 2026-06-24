@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation
 description: >-
-  [CVPR 2026][Image Generation][flow matching] BiFM enables the same flow matching model to simultaneously learn "noise-to-image" generation and "image-to-noise" inversion within a single training session. By constraining the average velocities of both directions using a shared instantaneous velocity field, it achieves high-fidelity inversion-based image editing un
+  [CVPR 2026][Image Generation][flow matching] BiFM enables the same flow matching model to simultaneously learn "noise-to-image" generation and "image-to-noise" inversion within a single training session. By constraining the average velocities of both directions using a shared instantaneous velocity field, it achieves high-fidelity inversion-based image editing under a 1~4 step budget, consistently outperforming existing few-step editing methods.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - flow matching
-  - MeanFlow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "flow matching"
+  - "few-step editing"
+  - "bidirectional flow matching"
+  - "image inversion"
+  - "MeanFlow"
 date: 2026-05-08
-content_hash: 78925a4188f70222
+content_hash: af8aef2adec41a17
 ---
+
 # BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation
 
 **Conference**: CVPR 2026  
@@ -145,13 +149,17 @@ At 4 steps, BiFM leads in SSIM/PSNR over training-free and auxiliary network met
 
 <div class="related-papers" markdown="1">
 
-- [MeanFlow: Time-Interval Supervision for One-Step Generation](https://arxiv.org/abs/2410.12345)
-- [SwiftEdit: One-Step High-Fidelity Image Editing](https://arxiv.org/abs/2412.00001)
+## Related Papers
+
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
+- [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](leapalign_post_training_flow_matching_models_at_any_generation_step.md)
+- [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](renderflow_single-step_neural_rendering_via_flow_matching.md)
+- [\[CVPR 2026\] FlowSteer: Guiding Few-Step Image Synthesis with Authentic Trajectories](flowsteer_guiding_few-step_image_synthesis_with_authentic_trajectories.md)
+- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](leapalign_post_training_flow_matching_models_at_any_generation_step.md)

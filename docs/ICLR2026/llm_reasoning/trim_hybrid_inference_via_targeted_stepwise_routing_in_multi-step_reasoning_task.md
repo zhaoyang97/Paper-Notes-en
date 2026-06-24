@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TRIM: Hybrid Inference via Targeted Stepwise Routing in Multi-Step Reasoning Tasks
 description: >-
-  [ICLR 2026][LLM Reasoning][POMDP] TRIM refines the routing granularity of "large vs. small models" from the entire query to individual reasoning steps. It uses a Process Reward Model (PRM) to identify "critical steps that cause solution failure," assigning only these steps to an expensive large model for rewriting while allowing a cheap small model to
+  [ICLR 2026][Reasoning][Step-wise Routing] TRIM refines the routing granularity of "large vs. small models" from the entire query to individual reasoning steps. It uses a Process Reward Model (PRM) to identify "critical steps that cause solution failure," assigning only these steps to an expensive large model for rewriting while allowing a cheap small model to continue the remaining routine steps. This achieves the accuracy of large models on benchmarks like MATH-500 and AIME…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - POMDP
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Step-wise Routing"
+  - "Hybrid Inference"
+  - "Process Reward Model"
+  - "POMDP"
+  - "Cost-Accuracy Trade-off"
 date: 2026-05-08
-content_hash: 5e2d82b3075ddcd2
+content_hash: e10dd0761f939f1b
 ---
+
 # TRIM: Hybrid Inference via Targeted Stepwise Routing in Multi-Step Reasoning Tasks
 
 **Conference**: ICLR 2026  
@@ -151,9 +156,9 @@ Cross-dataset generalization (router trained on AIME, tested on OlympiadBench / 
 
 - [\[ICLR 2026\] Latent Veracity Inference for Identifying Errors in Stepwise Reasoning](latent_veracity_inference_for_identifying_errors_in_stepwise_reasoning.md)
 - [\[ICLR 2026\] MAGO: Beyond Fixed Hyperparameters with Multi-Objective Pareto Optimization for Hybrid LLM Reasoning](mago_beyond_fixed_hyperparameters_with_multi-objective_pareto_optimization_for_h.md)
-- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
+- [\[ICML 2026\] Diagnosing Multi-step Reasoning Failures in Black-box LLMs via Stepwise Confidence Attribution](../../ICML2026/llm_reasoning/diagnosing_multi-step_reasoning_failures_in_black-box_llms_via_stepwise_confiden.md)
 - [\[ICLR 2026\] STAT: Skill-Targeted Adaptive Training](stat_skill-targeted_adaptive_training.md)
-- [\[NeurIPS 2025\] Self-Evaluating LLMs for Multi-Step Tasks: Stepwise Confidence Estimation for Failure Detection](../../NeurIPS2025/llm_reasoning/self-evaluating_llms_for_multi-step_tasks_stepwise_confidence_estimation_for_fai.md)
+- [\[NeurIPS 2025\] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks](../../NeurIPS2025/llm_reasoning/value-guided_search_for_efficient_chain-of-thought_reasoning.md)
 
 </div>
 

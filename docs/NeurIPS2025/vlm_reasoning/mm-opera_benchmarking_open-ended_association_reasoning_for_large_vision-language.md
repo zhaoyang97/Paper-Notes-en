@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][association reasoning] This paper proposes MM-OPERA, an open-ended association reasoning benchmark comprising 11…
+  [NeurIPS 2025][VLM Reasoning][association reasoning] This paper proposes MM-OPERA, an open-ended association reasoning benchmark comprising 11,497 instances. It evaluates the association reasoning capabilities of LVLMs through two tasks — Remote-Item Association (RIA) and In-Context Association (ICA) — and introduces an LLM-as-a-Judge scoring strategy alongside a process reward evaluation method. The benchmark reveals that even the strongest current LVLMs remain significantly…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "association reasoning"
   - "open-ended evaluation"
   - "LLM-as-a-Judge"
@@ -13,7 +13,7 @@ tags:
   - "divergent thinking"
   - "convergent thinking"
 date: 2026-05-08
-content_hash: 268d4cf2d14b54b5
+content_hash: 7e82d3510aa22821
 ---
 
 # MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models
@@ -138,11 +138,11 @@ Overall reasoning score: $S_r = \sum_{t=1}^{n} s_t \delta^t$ (where $\delta$ is 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](choice_benchmarking_the_remote_sensing_capabilities_of_large_vision-language_mod.md)
-- [\[NeurIPS 2025\] OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Models](openhoi_open-world_hand-object_interaction_synthesis_with_multimodal_large_langu.md)
-- [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
+- [\[ACL 2025\] Benchmarking and Improving Large Vision-Language Models for Fundamental Visual Graph Understanding and Reasoning](../../ACL2025/vlm_reasoning/benchmarking_and_improving_large_vision-language_models_for_fundamental_visual_g.md)
 - [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
-- [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](../../ICCV2025/multimodal_vlm/ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
+- [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](../../ACL2026/vlm_reasoning/geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
+- [\[ICLR 2026\] PuzzleWorld: A Benchmark for Multimodal, Open-Ended Reasoning in Puzzlehunts](../../ICLR2026/vlm_reasoning/puzzleworld_a_benchmark_for_multimodal_open-ended_reasoning_in_puzzlehunts.md)
+- [\[NeurIPS 2025\] Sherlock: Self-Correcting Reasoning in Vision-Language Models](sherlock_selfcorrecting_reasoning_in_visionlanguage_models.md)
 
 </div>
 

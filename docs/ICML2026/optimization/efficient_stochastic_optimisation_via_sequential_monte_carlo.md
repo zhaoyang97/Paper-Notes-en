@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Efficient Stochastic Optimisation via Sequential Monte Carlo
 description: >-
-  [ICML 2026][Optimization & Theory][reward tuning] When the gradient of the loss is formulated as an expectation over an intractable parameter-dependent distribution $\pi_\theta$, conventional approaches require an expensive MCMC inner loop for each optimization step. This paper proposes SOSMC, which utilizes a Sequential Monte Carlo (SMC) sampler to link the sequence
+  [ICML2026][Optimization][Sequential Monte Carlo] When the gradient of the loss is formulated as an expectation over an intractable parameter-dependent distribution $\pi_\theta$, conventional approaches require an expensive MCMC inner loop for each optimization step. This paper proposes SOSMC, which utilizes a Sequential Monte Carlo (SMC) sampler to link the sequence of distributions $(\pi_{\theta_k})_k$ that evolve slowly with the parameters. By **reusing particles from the p…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - reward tuning
+  - "ICML2026"
+  - "Optimization"
+  - "Sequential Monte Carlo"
+  - "Intractable Gradients"
+  - "Stochastic Optimization"
+  - "Energy-Based Models"
+  - "Reward Tuning"
 date: 2026-05-08
-content_hash: 912a8333bc2a4e51
+content_hash: 48d5119ad81bfa00
 ---
+
 # Efficient Stochastic Optimisation via Sequential Monte Carlo
 
 **Conference**: ICML2026  
@@ -128,15 +133,16 @@ The authors verify generality across multiple tasks:
 - Value: ⭐⭐⭐⭐ (Provides an efficient, theoretically grounded framework for intractable gradients)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] From Sequential to Parallel: Reformulating Dynamic Programming as GPU Kernels for Large-Scale Stochastic Combinatorial Optimization](../../ICLR2026/optimization/from_sequential_to_parallel_reformulating_dynamic_programming_as_gpu_kernels_for.md)
+- [\[ICLR 2026\] Contextual Causal Bayesian Optimisation](../../ICLR2026/optimization/contextual_causal_bayesian_optimisation.md)
 - [\[ICCV 2025\] Memory-Efficient 4-bit Preconditioned Stochastic Optimization](../../ICCV2025/optimization/memory-efficient_4-bit_preconditioned_stochastic_optimization.md)
+- [\[ICLR 2026\] Towards Better Branching Policies: Leveraging the Sequential Nature of Branch-and-Bound Tree](../../ICLR2026/optimization/towards_better_branching_policies_leveraging_the_sequential_nature_of_branch-and.md)
 - [\[NeurIPS 2025\] Sharper Convergence Rates for Nonconvex Optimisation via Reduction Mappings](../../NeurIPS2025/optimization/sharper_convergence_rates_for_nonconvex_optimisation_via_reduction_mappings.md)
-- [\[ICML 2026\] On the Provable Suboptimality of Momentum SGD in Nonstationary Stochastic Optimization](on_the_provable_suboptimality_of_momentum_sgd_in_nonstationary_stochastic_optimi.md)
-- [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
-- [\[ICML 2026\] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization](safeguarded_stochastic_polyak_step_sizes_for_non-smooth_optimization_robust_perf.md)
 
 </div>
 

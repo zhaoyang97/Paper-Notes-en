@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rounded or Streamlined Head? Bridging Concept Bottleneck Models and Attribute-Described Object Parts
 description: >-
-  [CVPR 2026][Interpretability][part-attribute] To address two types of inconsistency in VLM-driven Concept Bottleneck Models (CBMs)—mislocalizing concepts to incorrect parts and activating concepts on irrelevant objects—this paper proposes OA-CBM. It uses an LLM to rewrite concepts into "part-attribute" pairs and constructs two segmentation datasets accordingly. It
+  [CVPR 2026][Interpretability][Concept Bottleneck Models] To address two types of inconsistency in VLM-driven Concept Bottleneck Models (CBMs)—mislocalizing concepts to incorrect parts and activating concepts on irrelevant objects—this paper proposes OA-CBM. It uses an LLM to rewrite concepts into "part-attribute" pairs and constructs two segmentation datasets accordingly. It employs a Hierarchical Clustering module to generate class-agnostic foreground object masks to suppres…
 tags:
-  - CVPR 2026
-  - Interpretability
-  - part-attribute
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Concept Grounding"
+  - "Object Consistency"
+  - "Semantic Consistency"
+  - "part-attribute"
 date: 2026-05-08
-content_hash: f6fbb3827f3f59d0
+content_hash: eeab8dcb6650dcd1
 ---
+
 # Rounded or Streamlined Head? Bridging Concept Bottleneck Models and Attribute-Described Object Parts
 
 **Conference**: CVPR 2026  
@@ -139,15 +144,16 @@ Impact of CA and HC modules on Accuracy (ACC) and Grounding (h-IoU):
 - Value: ⭐⭐⭐⭐ Provides reusable datasets, the OCG task, and a decoupled design valuable for the explainability community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)
 - [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
 - [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
-- [\[AAAI 2026\] Flexible Concept Bottleneck Model](../../AAAI2026/interpretability/flexible_concept_bottleneck_model.md)
+- [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](../../ICLR2026/interpretability/debugging_concept_bottleneck_models_through_removal_and_retraining.md)
+- [\[CVPR 2025\] Attribute-formed Class-specific Concept Space: Endowing Language Bottleneck Model with Better Interpretability and Scalability](../../CVPR2025/interpretability/albm_attribute_concept_space.md)
 
 </div>
 

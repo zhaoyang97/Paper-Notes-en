@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Balanced Conic Rectified Flow
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][rectified flow] To address the distribution drift induced by the reflow step in k-rectified flow…
+  [NeurIPS 2025][Physics & Scientific Computing][rectified flow] To address the distribution drift induced by the reflow step in k-rectified flow, this paper proposes conic reflow: constructing conic supervisory trajectories from the inverted noise of real images and their Slerp-perturbed neighbors, substantially reducing the number of required fake pairs while achieving superior generation quality and straighter ODE trajectories.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Slerp"
   - "distribution drift"
 date: 2026-05-08
-content_hash: b1ec54fe1f0c9cfd
+content_hash: 47359163d98a5611
 ---
 
 # Balanced Conic Rectified Flow
@@ -187,9 +187,9 @@ Slerp vs. Lerp noise comparison:
 
 - [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
 - [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
-- [\[NeurIPS 2025\] Why Is Attention Sparse in Particle Transformer?](why_is_attention_sparse_in_particle_transformer.md)
-- [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
-- [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
+- [\[ICML 2026\] Spectrally Regularized Latent Flow Matching for Turbulence Generation](../../ICML2026/physics/spectrally_regularized_latent_flow_matching_for_turbulence_generation.md)
+- [\[ICLR 2026\] Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints](../../ICLR2026/physics/physics_vs_distributions_pareto_optimal_flow_matching_with_physics_constraints.md)
+- [\[ICLR 2026\] Physics-Constrained Fine-Tuning of Flow-Matching Models for Generation and Inverse Problems](../../ICLR2026/physics/physics-constrained_fine-tuning_of_flow-matching_models_for_generation_and_inver.md)
 
 </div>
 

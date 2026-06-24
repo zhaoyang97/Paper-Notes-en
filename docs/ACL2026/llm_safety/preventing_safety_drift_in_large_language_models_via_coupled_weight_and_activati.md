@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Preventing Safety Drift in Large Language Models via Coupled Weight and Activation Constraints
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] Ours proposes CWAC, which simultaneously constrains weight update directions and safety-critical activation features during fine-tuning, demonstrating theoretically and experimentally that constraining weights or activations alone is insufficient to prevent LLM safety drift.
+  [ACL 2026][LLM Safety][safety drift] Ours proposes CWAC, which simultaneously constrains weight update directions and safety-critical activation features during fine-tuning, demonstrating theoretically and experimentally that constraining weights or activations alone is insufficient to prevent LLM safety drift.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "safety drift"
+  - "harmful fine-tuning"
+  - "sparse autoencoder"
+  - "weight subspace"
+  - "activation constraints"
 date: 2026-05-08
-content_hash: 087b37b1839b96f0
+content_hash: 3e42b309a2e4ffb5
 ---
+
 # Preventing Safety Drift in Large Language Models via Coupled Weight and Activation Constraints
 
 **Conference**: ACL 2026  
@@ -167,10 +173,17 @@ The total objective is $L_{total}=L_{task}+\lambda L_{safety}$, with safety subs
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)
+- [\[ICML 2025\] Learning Safety Constraints for Large Language Models](../../ICML2025/llm_safety/learning_safety_constraints_for_large_language_models.md)
+- [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
+- [\[ACL 2026\] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models](autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models.md)
+- [\[ACL 2026\] Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking](seeing_no_evil_blinding_large_vision-language_models_to_safety_instructions_via_.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)

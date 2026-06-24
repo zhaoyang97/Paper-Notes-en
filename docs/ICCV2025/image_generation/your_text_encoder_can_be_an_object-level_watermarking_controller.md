@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Your Text Encoder Can Be An Object-Level Watermarking Controller
 description: >-
-  [ICCV 2025][Image Generation][Watermark Embedding] By fine-tuning only the pseudo-token embedding $\mathcal{W}_*$ in the text encoder, this work achieves object-level invisible watermark embedding in T2I diffusion model-…
+  [ICCV 2025][Image Generation][Watermark Embedding] By fine-tuning only the pseudo-token embedding $\mathcal{W}_*$ in the text encoder, this work achieves object-level invisible watermark embedding in T2I diffusion model-generated images, attaining 99% bit accuracy (48 bits) with $10^5\times$ fewer parameters.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Textual Inversion"
   - "Diffusion Models"
 date: 2026-05-08
-content_hash: 8d497d1e3e161610
+content_hash: 1601d2d4e24e0c35
 ---
 
 # Your Text Encoder Can Be An Object-Level Watermarking Controller
@@ -142,9 +142,9 @@ At inference, users simply insert $\mathcal{W}_*$ into the prompt:
 
 - [\[ICCV 2025\] Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!](attention_to_neural_plagiarism_diffusion_models_can_plagiarize_your_copyrighted_.md)
 - [\[ICCV 2025\] Invisible Watermarks, Visible Gains: Steering Machine Unlearning with Bi-Level Watermarking Design](invisible_watermarks_visible_gains_steering_machine_unlearning_with_bi-level_wat.md)
-- [\[NeurIPS 2025\] Robustness in Both Domains: CLIP Needs a Robust Text Encoder](../../NeurIPS2025/image_generation/robustness_in_both_domains_clip_needs_a_robust_text_encoder.md)
+- [\[ECCV 2024\] Enhancing Diffusion Models with Text-Encoder Reinforcement Learning](../../ECCV2024/image_generation/enhancing_diffusion_models_with_text-encoder_reinforcement_learning.md)
+- [\[CVPR 2025\] GlyphMastero: A Glyph Encoder for High-Fidelity Scene Text Editing](../../CVPR2025/image_generation/glyphmastero_a_glyph_encoder_for_high-fidelity_scene_text_editing.md)
 - [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
-- [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
 
 </div>
 

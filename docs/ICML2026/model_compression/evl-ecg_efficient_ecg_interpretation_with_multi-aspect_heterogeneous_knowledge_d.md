@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EVL-ECG: Efficient ECG Interpretation With Multi-Aspect Heterogeneous Knowledge Distillation
 description: >-
-  [ICML 2026][Model Compression][Paper Note] Addressing the VLM distillation problem for ECG interpretation—where teacher and student models are heterogeneous in visual token count, tokenizers, and sequence lengths—EVL-ECG introduces a cross-architecture distillation framework combining "Multi-Head Cross-Attention Alignment + Optimal Transport Visual Feature Matc
+  [ICML 2026][Model Compression][ECG Foundation Models] Addressing the VLM distillation problem for ECG interpretation—where teacher and student models are heterogeneous in visual token count, tokenizers, and sequence lengths—EVL-ECG introduces a cross-architecture distillation framework combining "Multi-Head Cross-Attention Alignment + Optimal Transport Visual Feature Matching + Geometric Intra-Architecture Matching." This pushes a 2B student model to SOTA…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "ECG Foundation Models"
+  - "Cross-Architecture Knowledge Distillation"
+  - "Multi-Head Cross-Attention"
+  - "Optimal Transport"
+  - "Geometric Relation Matching"
 date: 2026-05-08
-content_hash: ed1b9c52d0852c83
+content_hash: 87e76efcf5248c70
 ---
+
 # EVL-ECG: Efficient ECG Interpretation With Multi-Aspect Heterogeneous Knowledge Distillation
 
 **Conference**: ICML 2026  
@@ -152,10 +158,10 @@ Ours achieves a +2.4 AUC and +1.1 clinical accuracy improvement over the stronge
 ## Related Papers
 
 - [\[ICCV 2025\] Fuse Before Transfer: Knowledge Fusion for Heterogeneous Distillation](../../ICCV2025/model_compression/fuse_before_transfer_knowledge_fusion_for_heterogeneous_distillation.md)
+- [\[ICLR 2026\] Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](../../ICLR2026/model_compression/exploring_knowledge_purification_in_multi-teacher_knowledge_distillation_for_llm.md)
 - [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](../../ICCV2025/model_compression/perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
 - [\[AAAI 2026\] Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework](../../AAAI2026/model_compression/error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage.md)
-- [\[CVPR 2025\] Multi-modal Knowledge Distillation-based Human Trajectory Forecasting](../../CVPR2025/model_compression/multi-modal_knowledge_distillation-based_human_trajectory_forecasting.md)
-- [\[ICML 2026\] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines](towards_resource-efficient_llms_end-to-end_energy_accounting_of_distillation_pip.md)
+- [\[ICML 2026\] Unifying Dataset Pruning and Distillation for Efficient Large-scale Compression](unifying_dataset_pruning_and_distillation_for_efficient_large-scale_compression.md)
 
 </div>
 

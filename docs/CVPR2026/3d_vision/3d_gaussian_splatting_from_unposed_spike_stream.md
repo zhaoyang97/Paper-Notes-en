@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Nope-SGS：从无位姿脉冲流重建 3D 高斯
+  [Paper Note] Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper introduces Nope-SGS, the first framework for reconstructing high-speed 3D scenes directly from raw spike camera streams without camera pose priors. By remodeling spike imaging as a binomial distribution, it recovers a stable Normalized Binomial Distribution Spike (NBDS) supervision signal from unstable singl
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper introduces Nope-SGS, the first framework for reconstructing high-speed 3D scenes directly from raw spike camera streams without camera pose priors. By remodeling spike imaging as a binomial distribution, it recovers a stable Normalized Binomial Distribution Spike (NBDS) supervision signal from unstable single-frame spikes. Combined with key-frame selection and progressive optimization, it simultaneously solves for camer…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Spike Camera"
+  - "Pose-free Reconstruction"
+  - "High-speed Scenes"
+  - "Neural Rendering"
 date: 2026-05-08
-content_hash: 8f5eb203fa64d22e
+content_hash: de9a9e032f364c56
 ---
+
 # Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ Verification on Tanks and Temples (Key. = Key-frame, Time = Avg optimization tim
 
 ## Related Papers
 
+- [\[ICLR 2026\] SpikeStereoNet: A Brain-Inspired Stereo Depth Estimation Framework for Spike Streams](../../ICLR2026/3d_vision/spikestereonet_a_brain-inspired_framework_for_stereo_depth_estimation_from_spike.md)
+- [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
 - [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
-- [\[CVPR 2026\] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering](cghair_compact_gaussian_hair_reconstruction_with_card_clustering.md)
-- [\[CVPR 2026\] Bringing a Personal Point of View: Evaluating Dynamic 3D Gaussian Splatting for Egocentric Scene Reconstruction](bringing_a_personal_point_of_view_evaluating_dynamic_3d_gaussian_splatting_for_e.md)
+- [\[ICLR 2026\] StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams](../../ICLR2026/3d_vision/streamsplat_towards_online_dynamic_3d_reconstruction_from_uncalibrated_video_str.md)
 
 </div>
 

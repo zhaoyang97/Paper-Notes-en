@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Video Motion Editing with 3D Point Tracks
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] This paper proposes **Edit-by-Track**: a V2V video diffusion model conditioned on a "source video + a pair of source/target 3D point tracks." By using 3D tracks to establish sparse correspondences between source and target, it enables simultaneous editing of camera perspective and object motion (including occlusion, de
+  [CVPR 2026][Video Generation][Video Motion Editing] This paper proposes **Edit-by-Track**: a V2V video diffusion model conditioned on a "source video + a pair of source/target 3D point tracks." By using 3D tracks to establish sparse correspondences between source and target, it enables simultaneous editing of camera perspective and object motion (including occlusion, depth ordering, and non-rigid deformation), outperforming existing I2V/inpaint-based methods on DyCheck and in…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Motion Editing"
+  - "3D Point Tracks"
+  - "Video Diffusion"
+  - "Video-to-Video"
+  - "Camera and Object Motion"
 date: 2026-05-08
-content_hash: b2b8693898480c83
+content_hash: 4fc96ee8ee016e4d
 ---
+
 # Generative Video Motion Editing with 3D Point Tracks
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Notably, the **1.3B model outperforms the 14B ATI in visual quality and motion c
 
 ## Related Papers
 
+- [\[CVPR 2026\] MotionV2V: Editing Motion in a Video](motionv2v_editing_motion_in_a_video.md)
 - [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
+- [\[CVPR 2026\] EditCtrl: Disentangled Local and Global Control for Real-Time Generative Video Editing](editctrl_disentangled_local_and_global_control_for_real-time_generative_video_ed.md)
 - [\[CVPR 2026\] RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes](recedit-drive_3d_reconstruction-guided_spatiotemporal_video_editing_for_autonomo.md)
-- [\[CVPR 2026\] Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization](diverse_video_generation_with_determinantal_point_process-guided_policy_optimiza.md)
-- [\[CVPR 2026\] V-RGBX: Video Editing with Accurate Controls over Intrinsic Properties](v-rgbx_video_editing_with_accurate_controls_over_intrinsic_properties.md)
-- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)
+- [\[CVPR 2026\] FlexTraj: Image-to-Video Generation with Flexible Point Trajectory Control](flextraj_image-to-video_generation_with_flexible_point_trajectory_control.md)
 
 </div>
 

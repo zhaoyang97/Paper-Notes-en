@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] Ours proposes Render-of-Thought (RoT), the first to render textual CoT reasoning steps into images. By utilizing a pre-trained visual encoder as a semantic anchor to align LLM hidden states with the visual embedding space, it achieves 3-4x token compression and significant inference acceleration while maintaining the a
+  [ACL 2026][Reasoning][Chain-of-Thought Compression] Ours proposes Render-of-Thought (RoT), the first to render textual CoT reasoning steps into images. By utilizing a pre-trained visual encoder as a semantic anchor to align LLM hidden states with the visual embedding space, it achieves 3-4x token compression and significant inference acceleration while maintaining the analyzability of reasoning chains.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Chain-of-Thought Compression"
+  - "Visual Latent Space Reasoning"
+  - "Text-to-Image Rendering"
+  - "CoT Token Compression"
+  - "Self-distillation"
 date: 2026-05-08
-content_hash: 4de51574958d8862
+content_hash: 4051541a57880efc
 ---
+
 # Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning
 
 **Conference**: ACL 2026  
@@ -135,7 +141,7 @@ Stage I: $\mathcal{L}_I = \mathcal{L}_{pred} + \lambda \mathcal{L}_{align}$, opt
 - [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
 - [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](../../ICML2026/llm_reasoning/a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
 - [\[ACL 2026\] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning](etr_entropy_trend_reward_for_efficient_chain-of-thought_reasoning.md)
-- [\[ICML 2026\] LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning](../../ICML2026/llm_reasoning/latentchem_from_textual_cot_to_latent_thinking_in_chemical_reasoning.md)
+- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
 
 </div>
 

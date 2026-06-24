@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decoupled MeanFlow: Turning Flow Models into Flow Maps for Accelerated Sampling
 description: >-
-  [ICLR 2026][Image Generation][MeanFlow] A **pre-trained** flow model (SiT/DiT) is reinterpreted as an encoder-decoder: the encoder processes only the current timestep $t$, while the decoder processes only the next timestep $r$. Without modifying the architecture, it is converted into a "flow map" that predicts average velocity. After fine-tuning for a few do
+  [ICLR2026][Image Generation][Flow Map] A **pre-trained** flow model (SiT/DiT) is reinterpreted as an encoder-decoder: the encoder processes only the current timestep $t$, while the decoder processes only the next timestep $r$. Without modifying the architecture, it is converted into a "flow map" that predicts average velocity. After fine-tuning for a few dozen epochs, it generates high-quality images on ImageNet 256×256 with FID=2.16 (1-step) / 1.51 (4-steps)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - MeanFlow
+  - "ICLR2026"
+  - "Image Generation"
+  - "Flow Map"
+  - "MeanFlow"
+  - "Few-step Sampling"
+  - "Diffusion Transformer"
+  - "Encoder-Decoder Decoupling"
 date: 2026-05-08
-content_hash: 77d2aaa35e086445
+content_hash: 341fcbf0c9459eef
 ---
+
 # Decoupled MeanFlow: Turning Flow Models into Flow Maps for Accelerated Sampling
 
 **Conference**: ICLR2026  
@@ -142,10 +147,10 @@ ImageNet 256×256, SiT-L/2 (400K) to DMF fine-tuning (24 total layers):
 ## Related Papers
 
 - [\[ICLR 2026\] Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models](joint_distillation_for_fast_likelihood_evaluation_and_sampling_in_flow-based_mod.md)
-- [\[ICLR 2026\] AlphaFlow: Understanding and Improving MeanFlow Models](alphaflow_understanding_and_improving_meanflow_models.md)
 - [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
-- [\[ICLR 2026\] Intention-Conditioned Flow Occupancy Models](intention-conditioned_flow_occupancy_models.md)
-- [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
+- [\[ICLR 2026\] AlphaFlow: Understanding and Improving MeanFlow Models](alphaflow_understanding_and_improving_meanflow_models.md)
+- [\[ICLR 2026\] Flow Map Learning via Non-Gradient Vector Flow](flow_map_learning_via_non-gradient_vector_flow.md)
+- [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM-as-a-Judge] This paper proposes LAGER, a framework that aggregates score token logits from intermediate to final layers of an LLM and computes an expected score to derive the final judg…
+  [NeurIPS 2025][LLM Evaluation][LLM-as-a-Judge] This paper proposes LAGER, a framework that aggregates score token logits from intermediate to final layers of an LLM and computes an expected score to derive the final judgment. Without any model fine-tuning, LAGER improves human alignment by up to 7.5% and matches or surpasses reasoning-based methods without requiring chain-of-thought inference.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "evaluation alignment"
   - "plug-and-play"
 date: 2026-05-08
-content_hash: 3952ecb8646af894
+content_hash: 5dfb6f28f21fe71b
 ---
 
 # Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations
@@ -123,8 +123,8 @@ During LLM-based evaluation, at the position of the score token, hidden represen
 - [\[NeurIPS 2025\] On Evaluating LLM Alignment by Evaluating LLMs as Judges](on_evaluating_llm_alignment_by_evaluating_llms_as_judges.md)
 - [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
 - [\[NeurIPS 2025\] ComPO: Preference Alignment via Comparison Oracles](compo_preference_alignment_via_comparison_oracles.md)
-- [\[ICML 2026\] Whose Alignment? Comparing LLM Process Alignment Across Diverse Organizational Decision Contexts](../../ICML2026/llm_evaluation/whose_alignment_comparing_llm_process_alignment_across_diverse_organizational_de.md)
-- [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](../../ICLR2026/llm_evaluation/preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
+- [\[ICLR 2026\] Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs](../../ICLR2026/llm_evaluation/beyond_a_million_tokens_benchmarking_and_enhancing_long-term_memory_in_llms.md)
+- [\[ACL 2025\] YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering](../../ACL2025/llm_evaluation/yescieval_llm_judge_science.md)
 
 </div>
 

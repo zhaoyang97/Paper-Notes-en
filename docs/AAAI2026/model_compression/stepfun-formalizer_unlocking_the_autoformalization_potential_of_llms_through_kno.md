@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] StepFun-Formalizer: Unlocking the Autoformalization Potential of LLMs Through Knowledge-Reasoning Fusion
 description: >-
-  [Model Compression] This paper proposes the ThinkingF pipeline, which enhances LLMs' formal language domain knowledge via large-scale knowledge distillation and their informal-to-formal reasoning ability via template-gui…
+  [Model Compression] This paper proposes the ThinkingF pipeline, which enhances LLMs' formal language domain knowledge via large-scale knowledge distillation and their informal-to-formal reasoning ability via template-guided reasoning trajectory synthesis. These two capabilities are then integrated through a two-stage SFT followed by RLVR. The resulting 7B/32B models achieve state-of-the-art performance on FormalMATH-Lite and ProverBench.
 tags:
   - "Model Compression"
 date: 2026-05-08
-content_hash: 26b8eb2338cdb2b6
+content_hash: 6a00eb72f99b9ea3
 ---
 
 # StepFun-Formalizer: Unlocking the Autoformalization Potential of LLMs Through Knowledge-Reasoning Fusion

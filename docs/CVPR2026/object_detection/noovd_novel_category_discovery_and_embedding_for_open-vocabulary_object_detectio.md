@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection
 description: >-
-  [CVPR 2026][Object Detection][K-FPN] The NoOVD framework is proposed to discover potential novel category objects during frozen VLM-based OVD training by preserving CLIP knowledge with a parameter-free K-FPN. It embeds novel category knowledge into the detector via self-distillation and enhances the recall of novel categories during inference using R-RPN,
+  [CVPR 2026][Object Detection][Open-vocabulary object detection] The NoOVD framework is proposed to discover potential novel category objects during frozen VLM-based OVD training by preserving CLIP knowledge with a parameter-free K-FPN. It embeds novel category knowledge into the detector via self-distillation and enhances the recall of novel categories during inference using R-RPN, achieving SOTA results on OV-LVIS, OV-COCO, and Objects365.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - K-FPN
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-vocabulary object detection"
+  - "Novel category discovery"
+  - "Self-distillation"
+  - "K-FPN"
+  - "Frozen VLM"
 date: 2026-05-08
-content_hash: 14ae7184507132fa
+content_hash: 885fbd040527323f
 ---
+
 # NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection
 
 **Conference**: CVPR 2026  
@@ -153,8 +158,8 @@ Re-ranking by this fusion score ensures that novel boxes, previously at the bott
 - [\[CVPR 2026\] SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names](sra-det_learning_omni-grained_open-vocabulary_detection_beyond_category_names.md)
 - [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
 - [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
+- [\[CVPR 2026\] SL-HOI: Streamlined Open-Vocabulary Human-Object Interaction Detection](streamlined_open-vocabulary_human-object_interaction_detection.md)
 - [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
-- [\[CVPR 2026\] Consistency Beyond Contrast: Enhancing Open-Vocabulary Object Detection Robustness via Contextual Consistency Learning](consistency_beyond_contrast_enhancing_open-vocabulary_object_detection_robustnes.md)
 
 </div>
 

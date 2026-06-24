@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PROFIT: A Specialized Optimizer for Deep Fine Tuning
 description: >-
-  [NeurIPS 2025][Robotics][Fine-tuning optimizer] PROFIT frames fine-tuning as a multi-task learning problem across the time dimension, and achieves forgetting-resistant fine-tuning without additional data or parameters by…
+  [NeurIPS 2025][Robotics][Fine-tuning optimizer] PROFIT frames fine-tuning as a multi-task learning problem across the time dimension, and achieves forgetting-resistant fine-tuning without additional data or parameters by orthogonally projecting new-task gradients onto the direction of a "regression equilibrium point."
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "multi-task learning"
   - "proximal fine-tuning"
 date: 2026-05-08
-content_hash: 6ca0221b3d9af928
+content_hash: 77f885e95e806cca
 ---
 
 # PROFIT: A Specialized Optimizer for Deep Fine Tuning
@@ -141,10 +141,10 @@ PROFIT (PROximal FIne Tuning) is an optimizer wrapper that accepts two standard 
 ## Related Papers
 
 - [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
-- [\[CVPR 2026\] Expert Pyramid Tuning: Efficient Parameter Fine-Tuning for Expertise-Driven Task Allocation](../../CVPR2026/robotics/expert_pyramid_tuning_efficient_parameter_fine-tuning_for_expertise-driven_task_.md)
+- [\[ICLR 2026\] Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting](../../ICLR2026/robotics/actions_as_language_fine-tuning_vlms_into_vlas_without_catastrophic_forgetting.md)
 - [\[NeurIPS 2025\] Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning](time_reversal_symmetry_for_efficient_robotic_manipulations_in_deep_reinforcement.md)
-- [\[NeurIPS 2025\] Periodic Skill Discovery](periodic_skill_discovery.md)
-- [\[NeurIPS 2025\] Spatial-Aware Decision-Making with Ring Attractors in Reinforcement Learning Systems](spatial-aware_decision-making_with_ring_attractors_in_reinforcement_learning_sys.md)
+- [\[ICLR 2026\] Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](../../ICLR2026/robotics/cosmos_policy_fine-tuning_video_models_for_visuomotor_control_and_planning.md)
+- [\[ICLR 2026\] EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning](../../ICLR2026/robotics/evlp_learning_unified_embodied_vision-language_planner_with_reinforced_supervise.md)
 
 </div>
 

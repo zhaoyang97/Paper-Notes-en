@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Diff-ICMH: Harmonizing Machine and Human Vision in Image Compression with Generative Prior
 description: >-
-  [Image Generation] This paper proposes Diff-ICMH, a diffusion-based generative image compression framework that preserves semantic integrity via a Semantic Consistency (SC) loss and activates generative priors via a Tag…
+  [Image Generation] This paper proposes Diff-ICMH, a diffusion-based generative image compression framework that preserves semantic integrity via a Semantic Consistency (SC) loss and activates generative priors via a Tag Guidance Module (TGM). Using a single encoder-decoder and a single bitstream, the framework simultaneously serves 10+ machine intelligence tasks and human visual perception without any task-specific adaptation.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: c68d5fe020af66f7
+content_hash: 35e250988b359879
 ---
 
 # Diff-ICMH: Harmonizing Machine and Human Vision in Image Compression with Generative Prior
@@ -143,8 +143,8 @@ Components:
 - [\[NeurIPS 2025\] DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models](dexter_diffusion-guided_explanations_with_textual_reasoning_for_vision_models.md)
 - [\[ICCV 2025\] Rethinking the Embodied Gap in Vision-and-Language Navigation: A Holistic Study of Physical and Visual Disparities](../../ICCV2025/image_generation/rethinking_the_embodied_gap_in_vision-and-language_navigation_a_holistic_study_o.md)
 - [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
-- [\[ICCV 2025\] REGEN: Learning Compact Video Embedding with (Re-)Generative Decoder](../../ICCV2025/image_generation/regen_learning_compact_video_embedding_with_re-generative_decoder.md)
 - [\[NeurIPS 2025\] Detecting Generated Images by Fitting Natural Image Distributions](detecting_generated_images_by_fitting_natural_image_distributions.md)
+- [\[ICCV 2025\] REGEN: Learning Compact Video Embedding with (Re-)Generative Decoder](../../ICCV2025/image_generation/regen_learning_compact_video_embedding_with_re-generative_decoder.md)
 
 </div>
 

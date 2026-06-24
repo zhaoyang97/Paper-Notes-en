@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The SpatiaLQA benchmark is proposed (9,605 QA pairs, 241 real indoor scenes) to systematically evaluate 41 VLMs on spatial logical reasoning. A Recursive Scene Graph-Aided Reasoning (RSGAR) method is designed to enhance the spatial logical reasoning capabilities of VLMs.
+  [CVPR 2026][VLM Reasoning][Spatial Logical Reasoning] The SpatiaLQA benchmark is proposed (9,605 QA pairs, 241 real indoor scenes) to systematically evaluate 41 VLMs on spatial logical reasoning. A Recursive Scene Graph-Aided Reasoning (RSGAR) method is designed to enhance the spatial logical reasoning capabilities of VLMs.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Spatial Logical Reasoning"
+  - "VLM Benchmark"
+  - "Scene Graph"
+  - "Indoor Scene Understanding"
+  - "Multi-step Reasoning"
 date: 2026-05-08
-content_hash: 272e3c12b26e4fa8
+content_hash: b888283c298d0ddc
 ---
+
 # SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -139,9 +145,9 @@ RSGAR is a pure inference-time method that requires no additional training. It l
 ## Related Papers
 
 - [\[CVPR 2026\] QUANTIPHY: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models](quantiphy_a_quantitative_benchmark_evaluating_physical_reasoning_abilities_of_vi.md)
-- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
-- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/multimodal_vlm/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
-- [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/vlm_reasoning/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
+- [\[CVPR 2026\] Learning to Reason in 4D: Dynamic Spatial Understanding for Vision Language Models](learning_to_reason_in_4d_dynamic_spatial_understanding_for_vision_language_model.md)
 - [\[CVPR 2026\] Keep it SymPL: Symbolic Projective Layout for Allocentric Spatial Reasoning in Vision-Language Models](keep_it_sympl_symbolic_projective_layout_for_allocentric_spatial_reasoning_in_vi.md)
 
 </div>

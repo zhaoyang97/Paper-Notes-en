@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models
 description: >-
-  [CVPR 2026][Image Generation][GRPO] This paper reinterprets SDE-based GRPO as distance optimization/contrastive learning and proposes Neighbor GRPO. It completely bypasses SDE conversion by constructing neighborhood candidate trajectories through perturbed ODE initial noise and implements policy gradient optimization via a softmax distance proxy policy,
+  [CVPR 2026][Image Generation][GRPO] This paper reinterprets SDE-based GRPO as distance optimization/contrastive learning and proposes Neighbor GRPO. It completely bypasses SDE conversion by constructing neighborhood candidate trajectories through perturbed ODE initial noise and implements policy gradient optimization via a softmax distance proxy policy, thereby preserving all advantages of deterministic ODE sampling.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "Flow Matching"
+  - "Human Preference Alignment"
+  - "Contrastive Learning"
+  - "ODE Sampling"
 date: 2026-05-08
-content_hash: 0b489d7ad4b5856f
+content_hash: c496b69db4fabe6e
 ---
+
 # Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models
 
 **Conference**: CVPR 2026  
@@ -135,10 +139,10 @@ Under the 8-step DPM++ configuration, training speed increases by 5.3x (45s vs 2
 ## Related Papers
 
 - [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
+- [\[ICLR 2026\] TempFlow-GRPO: When Timing Matters for GRPO in Flow Models](../../ICLR2026/image_generation/tempflow-grpo_when_timing_matters_for_grpo_in_flow_models.md)
 - [\[CVPR 2026\] Fine-Grained GRPO for Precise Preference Alignment in Flow Models](fine-grained_grpo_for_precise_preference_alignment_in_flow_models.md)
-- [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
-- [\[CVPR 2026\] Stepwise-Flow-GRPO：给流匹配模型的去噪步逐步分配信用](stepwise_credit_assignment_for_grpo_on_flow-matching_models.md)
 - [\[ICML 2026\] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization](../../ICML2026/image_generation/principled_rl_for_flow_matching_emerges_from_the_chunk-level_policy_optimization.md)
+- [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](../../ICCV2025/image_generation/contrastive_flow_matching.md)
 
 </div>
 

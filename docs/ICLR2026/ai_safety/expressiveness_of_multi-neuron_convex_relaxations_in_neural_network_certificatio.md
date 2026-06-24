@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Expressiveness of Multi-Neuron Convex Relaxations in Neural Network Certification
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper rigorously characterizes the expressiveness of multi-neuron convex relaxations for the first time, proving they are **inherently incomplete** like single-neuron relaxations (generalizing the "single-neuron convex barrier" to a "universal convex barrier"). However, completeness can be restored through **equiv
+  [ICLR 2026][AI Safety][Convex Relaxation] This paper rigorously characterizes the expressiveness of multi-neuron convex relaxations for the first time, proving they are **inherently incomplete** like single-neuron relaxations (generalizing the "single-neuron convex barrier" to a "universal convex barrier"). However, completeness can be restored through **equivalent network transformations** or **input domain polyhedral partitioning**, with the partitioning complexity being st…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Convex Relaxation"
+  - "Multi-Neuron Relaxation"
+  - "Completeness"
+  - "Convex Barrier"
+  - "Certified Robustness"
+  - "Formal Verification"
 date: 2026-05-08
-content_hash: 24fc76a4466afc25
+content_hash: 96cf24aff6a1702c
 ---
+
 # Expressiveness of Multi-Neuron Convex Relaxations in Neural Network Certification
 
 **Conference**: ICLR 2026  

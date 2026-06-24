@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Progressor: A Perceptually Guided Reward Estimator with Self-Supervised Online Refinement
 description: >-
-  [ICCV 2025][Reinforcement Learning][Visual reward learning] This paper proposes Progressor, a framework that learns task-agnostic reward functions from unannotated videos via self-supervision. It provides dense reward si…
+  [ICCV 2025][Reinforcement Learning][Visual reward learning] This paper proposes Progressor, a framework that learns task-agnostic reward functions from unannotated videos via self-supervision. It provides dense reward signals by predicting task progress distributions and addresses distribution shift during online RL training through an adversarial push-back strategy.
 tags:
   - "ICCV 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "adversarial online refinement"
   - "task progress estimation"
 date: 2026-05-08
-content_hash: 9451e607de041b76
+content_hash: b312c3eb3ee3be8e
 ---
 
 # Progressor: A Perceptually Guided Reward Estimator with Self-Supervised Online Refinement
@@ -139,10 +139,10 @@ Progressor consistently outperforms all baselines across all tasks, with particu
 ## Related Papers
 
 - [\[NeurIPS 2025\] RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/roirl_efficient_self-supervised_reasoning_with_offline_iterative_reinforcement_l.md)
-- [\[ICCV 2025\] RL-Selector: Reinforcement Learning-Guided Data Selection via Redundancy Assessment](reinforcement_learning-guided_data_selection_via_redundancy_assessment.md)
-- [\[NeurIPS 2025\] TRiCo: Triadic Game-Theoretic Co-Training for Robust Semi-Supervised Learning](../../NeurIPS2025/reinforcement_learning/trico_triadic_game-theoretic_co-training_for_robust_semi-supervised_learning.md)
-- [\[CVPR 2026\] Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement](../../CVPR2026/reinforcement_learning/seeing_is_improving_visual_feedback_for_iterative_text_layout_refinement.md)
-- [\[NeurIPS 2025\] DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/discover_automated_curricula_for_sparse-reward_reinforcement_learning.md)
+- [\[ICML 2025\] Reward-free World Models for Online Imitation Learning](../../ICML2025/reinforcement_learning/reward-free_world_models_for_online_imitation_learning.md)
+- [\[ICLR 2026\] Ego-Foresight: Self-supervised Learning of Agent-Aware Representations for Improved RL](../../ICLR2026/reinforcement_learning/ego-foresight_self-supervised_learning_of_agent-aware_representations_for_improv.md)
+- [\[ICLR 2026\] Self-Aligned Reward: Towards Effective and Efficient Reasoners](../../ICLR2026/reinforcement_learning/self-aligned_reward_towards_effective_and_efficient_reasoners.md)
+- [\[ICML 2025\] Log-Sum-Exponential Estimator for Off-Policy Evaluation and Learning](../../ICML2025/reinforcement_learning/log-sum-exponential_estimator_for_off-policy_evaluation_and_learning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] GAR places an LLM discriminator and an LLM reasoner into a GAN-like online adversarial reinforcement learning framework for joint training. By using "slice-level" dense process rewards to supplement sparse final answer rewards, it achieves stable improvements across the DeepSeek-R1-Distill series on multiple mathematic
+  [ICLR 2026][Reasoning][Adversarial RL] GAR places an LLM discriminator and an LLM reasoner into a GAN-like online adversarial reinforcement learning framework for joint training. By using "slice-level" dense process rewards to supplement sparse final answer rewards, it achieves stable improvements across the DeepSeek-R1-Distill series on multiple mathematical reasoning benchmarks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Adversarial RL"
+  - "Process Reward"
+  - "Slice-level Evaluation"
+  - "GRPO"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 047ae4ce72c69588
+content_hash: 3de45e71f20aac8b
 ---
+
 # Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -124,10 +129,10 @@ Efficiency ablation: The truncated GAR (19h) approaches the accuracy of the non-
 ## Related Papers
 
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
+- [\[ICLR 2026\] TRAPO: Enhancing LLM Reasoning with Semi-supervised Reinforcement Learning](trapo_a_semi-supervised_reinforcement_learning_framework_for_boosting_llm_reason.md)
 - [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 - [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
-- [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
 
 </div>
 

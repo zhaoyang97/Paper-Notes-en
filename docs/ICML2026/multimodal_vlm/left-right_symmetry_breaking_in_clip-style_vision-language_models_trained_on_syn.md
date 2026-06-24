@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data
 description: >-
-  [ICML 2026][Multimodal VLM][CLIP] The authors train a CLIP-style Transformer on a 1D synthetic image-text testbed and find that these models learn "left/right" relations and generalize to unseen object pairs. The mechanism is identified as the cross-term of token and positional embeddings $EW_{QK}P^T$ inducing a horizontal gradient in the vision encode
+  [ICML 2026][Multimodal VLM][CLIP] The authors train a CLIP-style Transformer on a 1D synthetic image-text testbed and find that these models learn "left/right" relations and generalize to unseen object pairs. The mechanism is identified as the cross-term of token and positional embeddings $EW_{QK}P^T$ inducing a horizontal gradient in the vision encoder's attention logits, breaking symmetry; ablating this term drops spatial discrimination accuracy to chance levels.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "spatial reasoning"
+  - "mechanistic interpretability"
+  - "attention decomposition"
+  - "positional embeddings"
 date: 2026-05-08
-content_hash: 14290ca5415e2d69
+content_hash: 15dbb1f64178eeed
 ---
+
 # Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data
 
 **Conference**: ICML 2026  
@@ -126,13 +131,14 @@ The text encoder's causal mask inherently encodes order. At least one of the 4 h
 - **Value**: ⭐⭐⭐⭐ Provides actionable insights for VLM data curation and interpretability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICCV 2025\] CLIPSym: Delving into Symmetry Detection with CLIP](../../ICCV2025/multimodal_vlm/clipsym_delving_into_symmetry_detection_with_clip.md)
-- [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
 - [\[ICML 2026\] Hierarchical Synthetic Tabular Data Generation: A Hybrid Top-Down and Bottom-Up Framework](hierarchical_synthetic_tabular_data_generation_a_hybrid_top-down_and_bottom-up_f.md)
+- [\[ICML 2026\] ATHA: Improving CLIP Adaptation on Source-Free Cross-Domain Few-Shot Learning by Breaking Tail Alignment](improving_clip_adaptation_by_breaking_tail_alignment_for_source-free_cross-domai.md)
 - [\[AAAI 2026\] SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge](../../AAAI2026/multimodal_vlm/safer-clip_mitigating_nsfw_content_in_vision-language_models_while_preserving_pr.md)
 - [\[CVPR 2025\] Synthetic Data is an Elegant GIFT for Continual Vision-Language Models](../../CVPR2025/multimodal_vlm/synthetic_data_is_an_elegant_gift_for_continual_vision-language_models.md)
 

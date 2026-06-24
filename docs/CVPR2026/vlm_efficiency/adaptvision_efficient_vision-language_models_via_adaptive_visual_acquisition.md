@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] AdaptVision is proposed to enable VLMs to autonomously determine the minimum number of visual tokens required for each sample through a coarse-to-fine active vision mechanism and reinforcement learning. Combined with Decoupled Turn Policy Optimization (DTPO), it achieves an optimal balance between efficiency and accura
+  [CVPR2026][Multimodal Efficiency][Visual token compression] AdaptVision is proposed to enable VLMs to autonomously determine the minimum number of visual tokens required for each sample through a coarse-to-fine active vision mechanism and reinforcement learning. Combined with Decoupled Turn Policy Optimization (DTPO), it achieves an optimal balance between efficiency and accuracy.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR2026"
+  - "Multimodal Efficiency"
+  - "Visual token compression"
+  - "Adaptive visual acquisition"
+  - "Reinforcement learning"
+  - "Tool calling"
+  - "Efficient VLM"
 date: 2026-05-08
-content_hash: cb629eb9cb218954
+content_hash: d651560d55dc69fb
 ---
+
 # AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition
 
 **Conference**: CVPR2026  
@@ -132,11 +137,11 @@ Each part is normalized independently to prevent the dilution of gradient signal
 
 ## Related Papers
 
-- [\[CVPR 2026\] LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models](llmind_bio-inspired_training-free_adaptive_visual_representations_for_vision-lan.md)
-- [\[CVPR 2026\] SEATrack: Simple, Efficient, and Adaptive Multimodal Tracker](seatrack_multimodal_tracker.md)
-- [\[ACL 2025\] AVG-LLaVA: An Efficient Large Multimodal Model with Adaptive Visual Granularity](../../ACL2025/multimodal_vlm/avg-llava_an_efficient_large_multimodal_model_with_adaptive_visual_granularity.md)
-- [\[CVPR 2026\] Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment](proxy3d_efficient_3d_representations_for_vision-language_models_via_semantic_clu.md)
-- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](aif_adaptive_information_flow_vlm.md)
+- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[AAAI 2026\] TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks](../../AAAI2026/vlm_efficiency/tinychemvl_advancing_chemical_vision-language_models_via_efficient_visual_token_.md)
+- [\[CVPR 2026\] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)
+- [\[ICML 2026\] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](../../ICML2026/vlm_efficiency/on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)
+- [\[ICCV 2025\] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models](../../ICCV2025/vlm_efficiency/llava-prumerge_adaptive_token_reduction_for_efficient_large_multimodal_models.md)
 
 </div>
 

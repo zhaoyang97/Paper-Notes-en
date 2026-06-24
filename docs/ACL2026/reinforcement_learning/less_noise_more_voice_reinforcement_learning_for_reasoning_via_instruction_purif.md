@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LENS: Less Noise, More Voice — Reinforcement Learning for Reasoning via Instruction Purification
 description: >-
-  [ACL 2026][Reinforcement Learning][RLVR] LENS discovers that many exploration failures in RLVR are not due to task difficulty but are caused by a small portion (<5%) of interference tokens in the prompt. By identifying and removing these tokens to improve rollout success rates and transferring learning signals from purified rollouts to policy optimization on
+  [ACL 2026][Reinforcement Learning][RLVR] LENS discovers that many exploration failures in RLVR are not due to task difficulty but are caused by a small portion (<5%) of interference tokens in the prompt. By identifying and removing these tokens to improve rollout success rates and transferring learning signals from purified rollouts to policy optimization on the original noisy prompts, LENS achieves an average improvement of 3.88% and a 1.6x acceleration.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "interference tokens"
+  - "instruction purification"
+  - "rollout efficiency"
+  - "reasoning enhancement"
 date: 2026-05-08
-content_hash: 04b2aead9e588a43
+content_hash: 1d02c6706083d6fd
 ---
+
 # LENS: Less Noise, More Voice — Reinforcement Learning for Reasoning via Instruction Purification
 
 **Conference**: ACL 2026  
@@ -144,11 +149,11 @@ The PPO-style clipped objective function is: $\mathcal{L}(\theta) = -\sum_{y} \m
 
 ## Related Papers
 
-- [\[ICLR 2026\] Less is More: Clustered Cross-Covariance Control for Offline RL](../../ICLR2026/reinforcement_learning/less_is_more_clustered_cross-covariance_control_for_offline_rl.md)
+- [\[ICLR 2026\] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](../../ICLR2026/reinforcement_learning/sample_more_to_think_less_group_filtered_policy_optimization_for_concise_reasoni.md)
+- [\[ICLR 2026\] Learn More with Less: Uncertainty Consistency Guided Query Selection for RLVR](../../ICLR2026/reinforcement_learning/learn_more_with_less_uncertainty_consistency_guided_query_selection_for_rlvr.md)
 - [\[ACL 2026\] ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following](imprif_stronger_implicit_reasoning_leads_to_better_complex_instruction_following.md)
+- [\[ICLR 2026\] Less is More: Clustered Cross-Covariance Control for Offline RL](../../ICLR2026/reinforcement_learning/less_is_more_clustered_cross-covariance_control_for_offline_rl.md)
 - [\[NeurIPS 2025\] When Less Language is More: Language-Reasoning Disentanglement Makes LLMs Better Multilingual Reasoners](../../NeurIPS2025/reinforcement_learning/when_less_language_is_more_language-reasoning_disentanglement_makes_llms_better_.md)
-- [\[ACL 2026\] Beyond Majority Voting: Towards Fine-grained and More Reliable Reward Signal for Test-Time Reinforcement Learning](beyond_majority_voting_towards_fine-grained_and_more_reliable_reward_signal_for_.md)
-- [\[ACL 2026\] Adaptive Instruction Composition for Automated LLM Red-Teaming](adaptive_instruction_composition_for_automated_llm_red-teaming.md)
 
 </div>
 

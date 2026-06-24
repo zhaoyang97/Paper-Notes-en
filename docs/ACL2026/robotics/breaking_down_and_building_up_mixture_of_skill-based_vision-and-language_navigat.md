@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents
 description: >-
-  [ACL 2026][Robotics & Embodied AI][VLN] SkillNav decomposes the vision-language navigation task into 5 atomic skills (Direction Adjustment, Vertical Movement, Stop, Landmark Identification, Area Identification) + 1 Temporal Order Planning skill. Each skill fine-tunes a DUET sub-agent using synthetic data, while a training-free VLM router performs temporal re
+  [ACL 2026][Robotics][VLN] SkillNav decomposes the vision-language navigation task into 5 atomic skills (Direction Adjustment, Vertical Movement, Stop, Landmark Identification, Area Identification) + 1 Temporal Order Planning skill. Each skill fine-tunes a DUET sub-agent using synthetic data, while a training-free VLM router performs temporal reordering + sub-goal localization + skill selection. It achieves SOTA generalization capabilities on GSA-R2R (Test-N-Scene SPL 48% vs.…
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - VLN
-  - VLM router
+  - "ACL 2026"
+  - "Robotics"
+  - "VLN"
+  - "Skill Decomposition"
+  - "VLM router"
+  - "Synthetic data"
+  - "GSA-R2R Generalization"
 date: 2026-05-08
-content_hash: e1d5ed8727766667
+content_hash: 73e392f2f4cd71d8
 ---
+
 # Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents
 
 **Conference**: ACL 2026  
@@ -142,11 +146,11 @@ Two-stage fine-tuning: Stage 1 involves 50,000 iterations (batch 32, lr 5e-5) on
 
 ## Related Papers
 
+- [\[ACL 2026\] Ability-Oriented Failure Attribution for Vision-Language Navigation Agents](where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)
+- [\[ICLR 2026\] M³E: Continual Vision-and-Language Navigation via Mixture of Macro and Micro Experts](../../ICLR2026/robotics/m3e_continual_vision-and-language_navigation_via_mixture_of_macro_and_micro_expe.md)
 - [\[ACL 2026\] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)
 - [\[ICML 2026\] Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation](../../ICML2026/robotics/dive_into_the_scene_breaking_the_perceptual_bottleneck_in_vision-language_decisi.md)
 - [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](../../CVPR2026/robotics/profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
-- [\[CVPR 2026\] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent](../../CVPR2026/robotics/mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag.md)
-- [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](../../ICLR2026/robotics/test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
 
 </div>
 

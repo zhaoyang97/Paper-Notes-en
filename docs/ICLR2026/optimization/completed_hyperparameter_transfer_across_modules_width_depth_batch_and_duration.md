@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Completed Hyperparameter Transfer across Modules, Width, Depth, Batch and Duration
 description: >-
-  [ICLR 2026][Optimization & Theory][μP] The authors complete the μP/CompleteP scaling rules ("tune on small models, transfer to large models") across four critical training axes—width, depth, batch size, and training duration. They further demonstrate that under proper parameterization, even fine-grained "per-module" hyperparameters (individual learning rate
+  [ICLR2026][Optimization][Hyperparameter Transfer] The authors complete the μP/CompleteP scaling rules ("tune on small models, transfer to large models") across four critical training axes—width, depth, batch size, and training duration. They further demonstrate that under proper parameterization, even fine-grained "per-module" hyperparameters (individual learning rates, weight decays, and Adam parameters for each tensor/layer type) can be directly transferred from a 50M param…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - μP
-  - CompleteP
+  - "ICLR2026"
+  - "Optimization"
+  - "Hyperparameter Transfer"
+  - "μP"
+  - "CompleteP"
+  - "SDE Scaling Laws"
+  - "Per-module Hyperparameters"
 date: 2026-05-08
-content_hash: 9087384617e45955
+content_hash: 0e5e94dc18ad66a2
 ---
+
 # Completed Hyperparameter Transfer across Modules, Width, Depth, Batch and Duration
 
 **Conference**: ICLR2026  
@@ -122,15 +126,16 @@ For width/depth transfer, optimal learning rates remain stable as width (128→2
 - **Value**: ⭐⭐⭐⭐⭐ (Directly reduces training costs for LLMs; provide practical rules and search recipes)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport](hyperparameter_trajectory_inference_with_conditional_lagrangian_optimal_transpor.md)
 - [\[NeurIPS 2025\] Wasserstein Transfer Learning](../../NeurIPS2025/optimization/wasserstein_transfer_learning.md)
 - [\[ICLR 2026\] AutoEP: LLMs-Driven Automation of Hyperparameter Evolution for Metaheuristic Algorithms](autoep_llms-driven_automation_of_hyperparameter_evolution_for_metaheuristic_algo.md)
 - [\[ICLR 2026\] Weight Decay May Matter More Than µP for Learning Rate Transfer in Practice](weight_decay_may_matter_more_than_µp_for_learning_rate_transfer_in_practice.md)
 - [\[ICLR 2026\] ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types](conrep4co_contrastive_representation_learning_of_combinatorial_optimization_inst.md)
-- [\[ICLR 2026\] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)
 
 </div>
 

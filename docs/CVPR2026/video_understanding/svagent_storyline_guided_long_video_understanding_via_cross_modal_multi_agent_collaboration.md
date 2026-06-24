@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration
 description: >-
-  [CVPR 2026][Video Understanding][long video QA] The authors propose SVAgent, a storyline-guided cross-modal multi-agent framework for long video question answering. By progressively constructing narrative representations, utilizing DPP evidence selection, performing cross-modal consistency verification, and implementing iterative refinement, the framework achieves a
+  [CVPR 2026][Video Understanding][long video QA] The authors propose SVAgent, a storyline-guided cross-modal multi-agent framework for long video question answering. By progressively constructing narrative representations, utilizing DPP evidence selection, performing cross-modal consistency verification, and implementing iterative refinement, the framework achieves a performance improvement of 5.5%-11.5% over baselines.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - long video QA
-  - multi-agent
-  - storyline
-  - cross-modal reasoning
-  - DPP
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "long video QA"
+  - "multi-agent"
+  - "storyline"
+  - "cross-modal reasoning"
+  - "DPP"
 date: 2026-05-08
-content_hash: 88ece020a0ca2be6
+content_hash: eaa58e0769410435
 ---
+
 # SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration
 
 **Conference**: CVPR 2026  
@@ -127,7 +128,7 @@ Ours requires no additional training and is based on zero-shot multi-agent colla
 - [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
 - [\[CVPR 2026\] Progressive Cross-Modal Causal Intervention for Long-Term Action Recognition](progressive_cross-modal_causal_intervention_for_long-term_action_recognition.md)
 - [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
-- [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
+- [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
 
 </div>
 

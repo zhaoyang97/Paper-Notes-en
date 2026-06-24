@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QLIP: A Dynamic Quadtree Vision Prior Enhances MLLM Performance Without Retraining
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper identifies two major defects in CLIP vision encoders: "mesoscopic bias" and "interpolation bias." It proposes QLIP—a "drop-in" modification that replaces uniform grid patching with content-adaptive quadtree patching and uses a small MLP to re-interpolate position encodings. Without **retraining the vision en
+  [ICLR 2026][Multimodal VLM][CLIP Vision Encoder] This paper identifies two major defects in CLIP vision encoders: "mesoscopic bias" and "interpolation bias." It proposes QLIP—a "drop-in" modification that replaces uniform grid patching with content-adaptive quadtree patching and uses a small MLP to re-interpolate position encodings. Without **retraining the vision encoder or the LLM**, it improves LLaVA-1.5 performance on the fine-grained VQA benchmark V* by up to 13.6%.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CLIP Vision Encoder"
+  - "Quadtree Patching"
+  - "Content-aware Patch"
+  - "Position Encoding Interpolation"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 02f33fe295fe6aa4
+content_hash: 1468847b26820576
 ---
+
 # QLIP: A Dynamic Quadtree Vision Prior Enhances MLLM Performance Without Retraining
 
 **Conference**: ICLR 2026  
@@ -141,9 +147,9 @@ Notably: QLIP even outperforms SEAL, which is heavily optimized for fine-grained
 
 - [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
 - [\[CVPR 2025\] MLLM-as-a-Judge for Image Safety without Human Labeling](../../CVPR2025/multimodal_vlm/mllm-as-a-judge_for_image_safety_without_human_labeling.md)
-- [\[ICLR 2026\] SpatialViz-Bench：一个认知科学驱动、用于诊断 MLLM 空间可视化能力的基准](spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
 - [\[ICLR 2026\] Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs](uni-dpo_a_unified_paradigm_for_dynamic_preference_optimization_of_llms.md)
 - [\[ICLR 2026\] TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding](tabledart_dynamic_adaptive_multi-modal_routing_for_table_understanding.md)
+- [\[ICLR 2026\] Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition](zero-shot_hoi_detection_with_mllm-based_detector-agnostic_interaction_recognitio.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GHOST: Solving the Traveling Salesman Problem on Graphs of Convex Sets
 description: >-
-  [AAAI 2026][Optimization][Traveling Salesman Problem] This paper proposes GHOST, a hierarchical optimal search algorithm for solving the Traveling Salesman Problem on Graphs of Convex Sets (GCS). By combining combinatori…
+  [AAAI 2026][Optimization][Traveling Salesman Problem] This paper proposes GHOST, a hierarchical optimal search algorithm for solving the Traveling Salesman Problem on Graphs of Convex Sets (GCS). By combining combinatorial path search with convex trajectory optimization, and employing a novel abstract path expansion algorithm to compute admissible lower bounds that guide best-first search, GHOST achieves optimality guarantees while outperforming the monolithic mixed-integer c…
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Hierarchical Search"
   - "Robot Motion Planning"
 date: 2026-05-08
-content_hash: 8a5b73da8e3df837
+content_hash: 3cad24b28b0ca95f
 ---
 
 # GHOST: Solving the Traveling Salesman Problem on Graphs of Convex Sets
@@ -215,11 +215,11 @@ Key comparisons:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](../../NeurIPS2025/optimization/autoopt_a_dataset_and_a_unified_framework_for_automating_optimization_problem_so.md)
-- [\[ICLR 2026\] CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving](../../ICLR2026/optimization/cogflow_bridging_perception_and_reasoning_through_knowledge_internalization_for_.md)
+- [\[ICLR 2026\] ViTSP: Guiding Large-Scale Traveling Salesman Problem Solving with Vision-Language Models](../../ICLR2026/optimization/vitsp_a_vision_language_models_guided_framework_for_solving_large-scale_travelin.md)
+- [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](../../ICLR2026/optimization/strongly_convex_sets_in_riemannian_manifolds.md)
+- [\[ICLR 2026\] Solving the 2-norm k-hyperplane clustering problem via multi-norm formulations](../../ICLR2026/optimization/solving_the_2-norm_k-hyperplane_clustering_problem_via_multi-norm_formulations.md)
 - [\[AAAI 2026\] Convex Clustering Redefined: Robust Learning with the Median of Means Estimator](convex_clustering_redefined_robust_learning_with_higher_order_norms_and_beyond.md)
-- [\[ICML 2026\] Asymmetric Perturbation in Solving Bilinear Saddle-Point Optimization](../../ICML2026/optimization/asymmetric_perturbation_in_solving_bilinear_saddle-point_optimization.md)
-- [\[ICLR 2026\] Learning to Solve Orienteering Problem with Time Windows and Variable Profits](../../ICLR2026/optimization/learning_to_solve_orienteering_problem_with_time_windows_and_variable_profits.md)
+- [\[ICLR 2026\] CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving](../../ICLR2026/optimization/cogflow_bridging_perception_and_reasoning_through_knowledge_internalization_for_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents
 description: >-
-  [ICML 2026][LLM Agent][Web Agent] TRAP is a "task-redirecting persuasion" benchmark for Web Agents. It decomposes prompt injection into 630 task-injection combinations across five modular dimensions of "Interface × Persuasion." Evaluated on six real-world website clones across six frontier models, it reveals that an average of 25% of tasks are hijacked
+  [ICML 2026][LLM Agent][Web Agent] TRAP is a "task-redirecting persuasion" benchmark for Web Agents. It decomposes prompt injection into 630 task-injection combinations across five modular dimensions of "Interface × Persuasion." Evaluated on six real-world website clones across six frontier models, it reveals that an average of 25% of tasks are hijacked (GPT-5 at 13%, while DeepSeek-R1 reaches 43%). Notably, button-based injections are over three times more effective than hype…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Web Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Prompt Injection"
+  - "Social Engineering"
+  - "Persuasion Principles"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: e7a8e220b8f9b1e1
+content_hash: 2b934fd1c57e14fb
 ---
+
 # It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents
 
 **Conference**: ICML 2026  
@@ -138,11 +143,11 @@ The dominance of buttons is particularly extreme in GPT-5 (96.3% of successes fr
 
 ## Related Papers
 
-- [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](../../CVPR2026/llm_agent/ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
 - [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](../../ICLR2026/llm_agent/st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
-- [\[ICML 2026\] Weasel: 通过重要性-多样性数据选择实现 Web Agent 的域外泛化](weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
-- [\[ICLR 2026\] The Controllability Trap: A Governance Framework for Military AI Agents](../../ICLR2026/llm_agent/the_controllability_trap_a_governance_framework_for_military_ai_systems.md)
-- [\[ICML 2026\] Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
+- [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](../../CVPR2026/llm_agent/ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
+- [\[ICML 2026\] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling](agent_jit_compilation_for_latency-optimizing_web_agent_planning_and_scheduling.md)
+- [\[ICML 2026\] Weasel: Achieving Out-of-Distribution Generalization for Web Agents via Importance-Diversity Data Selection](weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
+- [\[ICLR 2026\] Just Do It!? Computer-Use Agents Exhibit Blind Goal-Directedness](../../ICLR2026/llm_agent/just_do_it_computer-use_agents_exhibit_blind_goal-directedness.md)
 
 </div>
 

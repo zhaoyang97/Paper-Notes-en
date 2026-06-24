@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DualGuard: Dual-stream Large Language Model Watermarking Defense against Paraphrase and Spoofing Attack
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] DualGuard proposes the first **dual-stream watermarking** mechanism: it adaptively injects different watermarks using two complementary standard/adversarial watermark heads based on whether content is "benign" or "malicious." This ensures consistency for benign text and divergence for malicious text, maintaining robust
+  [ACL 2026 Findings][LLM Safety][Dual-stream Watermarking] DualGuard proposes the first **dual-stream watermarking** mechanism: it adaptively injects different watermarks using two complementary standard/adversarial watermark heads based on whether content is "benign" or "malicious." This ensures consistency for benign text and divergence for malicious text, maintaining robustness against paraphrasing while enabling the **first-ever detection and traceability** of malicious se…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Dual-stream Watermarking"
+  - "Spoofing Attack"
+  - "Paraphrase Attack"
+  - "Adversarial Traceability"
+  - "Semantic-invariant Watermarking"
 date: 2026-05-08
-content_hash: f8e9169c88442620
+content_hash: e623271d1624c527
 ---
+
 # DualGuard: Dual-stream Large Language Model Watermarking Defense against Paraphrase and Spoofing Attack
 
 **Conference**: ACL 2026 Findings  

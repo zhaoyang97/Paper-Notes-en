@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity
 description: >-
-  [NeurIPS 2025][Optimization][second-order optimization] This paper provides the first systematic theoretical treatment of second-order stochastic optimization under heavy-tailed noise. It establishes tight minimax sample…
+  [NeurIPS 2025][Optimization][second-order optimization] This paper provides the first systematic theoretical treatment of second-order stochastic optimization under heavy-tailed noise. It establishes tight minimax sample complexity lower bounds, proposes a normalized SGD algorithm with gradient and Hessian clipping (Clip NSGDHess), and proves that the proposed algorithm nearly achieves the information-theoretic limit.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "sample complexity"
   - "high-probability convergence"
 date: 2026-05-08
-content_hash: 35b4ea0cec6563e8
+content_hash: d453167c01445d20
 ---
 
 # Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity
@@ -133,11 +133,11 @@ Synthetic experiment: $F(x) = 0.5\|x\|^2$, $d=10$, with heavy-tailed noise gener
 
 ## Related Papers
 
+- [\[ICML 2025\] Clipping Improves Adam-Norm and AdaGrad-Norm when the Noise Is Heavy-Tailed](../../ICML2025/optimization/clipping_improves_adam-norm_and_adagrad-norm_when_the_noise_is_heavy-tailed.md)
+- [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](../../ICLR2026/optimization/clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
+- [\[ICML 2025\] Sassha: Sharpness-aware Adaptive Second-order Optimization with Stable Hessian Approximation](../../ICML2025/optimization/sassha_sharpness-aware_adaptive_second-order_optimization_with_stable_hessian_ap.md)
+- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](../../ICLR2026/optimization/decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
 - [\[ICML 2026\] Can Adaptive Gradient Methods Converge under Heavy-Tailed Noise? A Case Study of AdaGrad](../../ICML2026/optimization/can_adaptive_gradient_methods_converge_under_heavy-tailed_noise_a_case_study_of_.md)
-- [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](a_unified_approach_to_submodular_maximization_under_noise.md)
-- [\[ICML 2026\] Bregman meets Lévy: Stochastic Mirror Descent with Heavy-Tailed Noise in Continuous and Discrete Time](../../ICML2026/optimization/bregman_meets_lévy_stochastic_mirror_descent_with_heavy-tailed_noise_in_continuo.md)
-- [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
-- [\[NeurIPS 2025\] Private Zeroth-Order Optimization with Public Data](private_zeroth-order_optimization_with_public_data.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReQAT: Achieving Full-Precision Reasoning Accuracy with 4-bit Floating-Point Quantization-Aware Training
 description: >-
-  [ICML 2026][Model Compression][QAT] This paper discovers that FP4 quantization failures in large reasoning models (LRMs) are concentrated on "low-entropy tokens" (deterministic symbolic commitments like numbers and operators). It proposes ReQAT—a three-component toolkit (Trajectory-Aligned QAT + Selective Entropy Minimization + Quantization-Friendly Init
+  [ICML2026][Model Compression][FP4 Quantization] This paper discovers that FP4 quantization failures in large reasoning models (LRMs) are concentrated on "low-entropy tokens" (deterministic symbolic commitments like numbers and operators). It proposes ReQAT—a three-component toolkit (Trajectory-Aligned QAT + Selective Entropy Minimization + Quantization-Friendly Initialization for KV cache) specifically targeting these tokens. Under full W4A4KV4 quantization…
 tags:
-  - ICML 2026
-  - Model Compression
-  - QAT
-  - KV cache
+  - "ICML2026"
+  - "Model Compression"
+  - "FP4 Quantization"
+  - "Reasoning Models"
+  - "QAT"
+  - "KV cache"
+  - "Low-entropy tokens"
 date: 2026-05-08
-content_hash: af769bab1a169423
+content_hash: dcb9d1004e9a8da5
 ---
+
 # ReQAT: Achieving Full-Precision Reasoning Accuracy with 4-bit Floating-Point Quantization-Aware Training
 
 **Conference**: ICML2026  
@@ -146,10 +150,10 @@ ReQAT pushes accuracy beyond BF16 full-precision fine-tuning (best FT approx 65.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](../../ICLR2026/model_compression/towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
 - [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
+- [\[ICML 2026\] LC-QAT: Data-Efficient 2-Bit QAT for LLMs via Linear-Constrained Vector Quantization](lc-qat_data-efficient_2-bit_qat_for_llms_via_linear-constrained_vector_quantizat.md)
 - [\[NeurIPS 2025\] FALQON: Accelerating LoRA Fine-tuning with Low-Bit Floating-Point Arithmetic](../../NeurIPS2025/model_compression/falqon_accelerating_lora_fine-tuning_with_low-bit_floating-point_arithmetic.md)
-- [\[ICLR 2026\] Achieving low-bit Muon through subspace preservation and grid quantization](../../ICLR2026/model_compression/achieving_low-bit_muon_through_subspace_preservation_and_grid_quantization.md)
-- [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](../../ICLR2026/model_compression/compute-optimal_quantization-aware_training.md)
 - [\[ICML 2026\] WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points](winq_accelerating_quantization-aware_training_of_language_models_around_saddle_p.md)
 
 </div>

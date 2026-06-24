@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper first introduces a new benchmark, KVFundaBench, to systematically reveal the critical asymmetry where "retrieval-based long contexts are easy to compress, while reasoning-based ones are not." The authors attribute this to KV compression destroying the integrity of "semantic units" (few-shot examples). Conseq
+  [ICML 2026][Model Compression][KV cache compression] This paper first introduces a new benchmark, KVFundaBench, to systematically reveal the critical asymmetry where "retrieval-based long contexts are easy to compress, while reasoning-based ones are not." The authors attribute this to KV compression destroying the integrity of "semantic units" (few-shot examples). Consequently, they propose ShotKV—preserving entire shots as indivisible units during the prefill phase and perfo…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "high-density reasoning"
+  - "few-shot semantic units"
+  - "prefill-decoding separation"
+  - "long-context generation"
 date: 2026-05-08
-content_hash: 410383e7c1a83d1f
+content_hash: 5bd3ab96e4dd7154
 ---
+
 # Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression
 
 **Conference**: ICML 2026  
@@ -138,11 +144,11 @@ ShotKV is a training-free inference-time method. It introduces no extra training
 
 ## Related Papers
 
-- [\[ACL 2026\] The Pitfalls of KV Cache Compression](../../ACL2026/model_compression/the_pitfalls_of_kv_cache_compression.md)
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](../../NeurIPS2025/model_compression/chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
-- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
+- [\[ACL 2026\] The Pitfalls of KV Cache Compression](../../ACL2026/model_compression/the_pitfalls_of_kv_cache_compression.md)
 - [\[ICML 2026\] EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments](epicache_episodic_kv_cache_management_for_long-term_conversation_on_resource-con.md)
-- [\[ICML 2026\] A Queueing-Theoretic Framework for Stability Analysis of LLM Inference with KV Cache Memory Constraints](a_queueing-theoretic_framework_for_stability_analysis_of_llm_inference_with_kv_c.md)
+- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
+- [\[ICML 2026\] Semantic Cache Distillation: Efficient State Transfer via Reuse and Selective Patching](semantic_cache_distillation_efficient_state_transfer_via_reuse_and_selective_pat.md)
 
 </div>
 

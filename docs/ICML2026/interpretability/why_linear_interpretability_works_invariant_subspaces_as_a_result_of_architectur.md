@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Why Linear Interpretability Works: Invariant Subspaces as a Result of Architectural Constraints
 description: >-
-  [ICML 2026][Interpretability][linear probing] This paper provides an architectural-level explanation for why the internal representations of Transformers can be repeatedly decoded by simple linear methods (probes, SAEs, activation steering). It proves that as long as semantic features are read through **linear interfaces** such as OV circuits or unembedding layers
+  [ICML 2026][Interpretability][linear probing] This paper provides an architectural-level explanation for why the internal representations of Transformers can be repeatedly decoded by simple linear methods (probes, SAEs, activation steering). It proves that as long as semantic features are read through **linear interfaces** such as OV circuits or unembedding layers, they must reside in a cross-context invariant linear subspace (the Invariant Subspace Necessity theorem). The au…
 tags:
-  - ICML 2026
-  - Interpretability
-  - linear probing
-  - sparse autoencoder
-  - invariant subspace
-  - self-reference
+  - "ICML 2026"
+  - "Interpretability"
+  - "linear probing"
+  - "sparse autoencoder"
+  - "invariant subspace"
+  - "self-reference"
+  - "unembedding geometry"
 date: 2026-05-08
-content_hash: 5b7ee222e1cd329e
+content_hash: fbb66b27c6109a00
 ---
+
 # Why Linear Interpretability Works: Invariant Subspaces as a Result of Architectural Constraints
 
 **Conference**: ICML 2026  
@@ -116,11 +118,11 @@ The main results consist of mathematical proofs for the two theorems and one cor
 
 ## Related Papers
 
+- [\[ICLR 2026\] Gauge-invariant Representation Holonomy](../../ICLR2026/interpretability/gauge-invariant_representation_holonomy.md)
 - [\[ICML 2026\] Physics from Video: Identifiability of Time-Invariant Second-Order ODEs under Minimal Trajectory Conditions](physics_from_video_identifiability_of_time-invariant_second-order_odes_under_min.md)
 - [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](../../ICLR2026/interpretability/decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
+- [\[ICML 2026\] CLARITree: Cholesky and Lookahead Accelerations for Regression with Interpretable Piecewise Linear Trees](claritree_cholesky_and_lookahead_accelerations_for_regression_with_interpretable.md)
 - [\[NeurIPS 2025\] The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?](../../NeurIPS2025/interpretability/the_non-linear_representation_dilemma_is_causal_abstraction_enough_for_mechanist.md)
-- [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
-- [\[ICML 2026\] Interpretability Can Be Actionable](interpretability_can_be_actionable.md)
 
 </div>
 

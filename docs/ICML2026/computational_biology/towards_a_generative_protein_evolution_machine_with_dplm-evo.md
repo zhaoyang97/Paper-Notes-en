@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards A Generative Protein Evolution Machine with DPLM-Evo
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] This paper proposes DPLM-Evo, which extends the discrete diffusion of protein language models from "mask-replacement only" to "explicit modeling of substitution + insertion + deletion." By decoupling variable-length observed sequences into an upsampled latent alignment space ($2L$) and utilizing contextualized evolutio
+  [ICML 2026][Computational Biology][Protein Language Models] This paper proposes DPLM-Evo, which extends the discrete diffusion of protein language models from "mask-replacement only" to "explicit modeling of substitution + insertion + deletion." By decoupling variable-length observed sequences into an upsampled latent alignment space ($2L$) and utilizing contextualized evolutionary noise kernels, DPLM-Evo achieves variable-length evolutionary generation and trajectory-based p…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Protein Language Models"
+  - "Discrete Diffusion"
+  - "Evolutionary Modeling"
+  - "Variable-length Generation"
+  - "Insertion/Deletion (Indels)"
 date: 2026-05-08
-content_hash: 9f9ca1ad6adbe671
+content_hash: 296b008af5926661
 ---
+
 # Towards A Generative Protein Evolution Machine with DPLM-Evo
 
 **Conference**: ICML 2026  
@@ -133,15 +139,16 @@ DPLM-Evo directly evaluates substitution distributions on the wild-type rather t
 - **Value**: ⭐⭐⭐⭐⭐ Provides the first diffusion PLM supporting edit-based generation and variable-length evolutionary priors, with direct potential for directed evolution and scaffold engineering.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](../../NeurIPS2025/computational_biology/steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
-- [\[ICLR 2026\] DistMLIP: A Distributed Inference Platform for Machine Learning Interatomic Potentials](../../ICLR2026/computational_biology/distmlip_a_distributed_inference_platform_for_machine_learning_interatomic_poten.md)
+- [\[ICLR 2026\] Representing Local Protein Environments with Machine Learning Force Fields](../../ICLR2026/computational_biology/representing_local_protein_environments_with_machine_learning_force_fields.md)
+- [\[ICML 2026\] CoSiNE: Conditional Site-Independent Neural Evolution Model for Antibody Sequences](conditionally_site-independent_neural_evolution_of_antibody_sequences.md)
 - [\[ICML 2026\] On the Collapse of Generative Paths: A Criterion and Correction for Diffusion Steering](on_the_collapse_of_generative_paths_a_criterion_and_correction_for_diffusion_ste.md)
-- [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
-- [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
+- [\[ICLR 2026\] PepBenchmark: A Standardized Benchmark for Peptide Machine Learning](../../ICLR2026/computational_biology/pepbenchmark_a_standardized_benchmark_for_peptide_machine_learning.md)
+- [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](../../NeurIPS2025/computational_biology/steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
 
 </div>
 

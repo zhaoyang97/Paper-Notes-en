@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding
 description: >-
-  [ICLR 2026][Medical Imaging][brain decoding] The authors propose SEED (Semantic Evaluation for Visual Brain Decoding), a composite evaluation metric combining Object F1, Cap-Sim, and EffNet, which significantly surpasses all existing metrics in alignment with human evaluation.
+  [Medical Imaging] The authors propose SEED (Semantic Evaluation for Visual Brain Decoding), a composite evaluation metric combining Object F1, Cap-Sim, and EffNet, which significantly surpasses all existing metrics in alignment with human evaluation.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - brain decoding
-  - evaluation metrics
-  - fMRI
-  - semantic similarity
-  - visual attention
-  - human evaluation
+  - "Medical Imaging"
 date: 2026-05-08
-content_hash: 1d14fc1b8b2ca6eb
+content_hash: 51cd0a54f73014fb
 ---
+
 # SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding
 
 ## Meta Information

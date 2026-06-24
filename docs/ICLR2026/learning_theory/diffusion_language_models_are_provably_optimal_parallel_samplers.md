@@ -2,17 +2,21 @@
 title: >-
   [Paper Note] Diffusion Language Models are Provably Optimal Parallel Samplers
 description: >-
-  [ICLR 2026][learning_theory][Diffusion Language Model] This paper establishes a rigorous theory using the language of circuit complexity to explain why "Diffusion Language Models (DLMs) are faster": it proves that DLMs equipped with polynomial-length CoT can simulate any parallel sampling algorithm using the **optimal serial steps** (equal to circuit depth rather than size
+  [ICLR 2026][learning theory][diffusion language models] This paper establishes a rigorous theory using the language of circuit complexity to explain why "Diffusion Language Models (DLMs) are faster": it proves that DLMs equipped with polynomial-length CoT can simulate any parallel sampling algorithm using the **optimal serial steps** (equal to circuit depth rather than size). Furthermore, by adding remasking or revision, they can simultaneously achieve **optimal space complex…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Diffusion Language Model
-  - Chain-of-Thought
-  - remasking
-  - revision
+  - "ICLR 2026"
+  - "learning theory"
+  - "diffusion language models"
+  - "parallel sampling"
+  - "circuit complexity"
+  - "Chain-of-Thought"
+  - "remasking"
+  - "revision"
+  - "expressivity lower bounds"
 date: 2026-05-08
-content_hash: 1dbc6191597ab734
+content_hash: 9b661295690e7a45
 ---
+
 # Diffusion Language Models are Provably Optimal Parallel Samplers
 
 **Conference**: ICLR 2026  
@@ -117,9 +121,9 @@ flowchart TD
 
 ## Related Papers
 
-- [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
 - [\[ICLR 2026\] Automata Learning and Identification of the Support of Language Models](automata_learning_and_identification_of_the_support_of_language_models.md)
 - [\[ICLR 2026\] Polynomial Convergence of Riemannian Diffusion Models](polynomial_convergence_of_riemannian_diffusion_models.md)
+- [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
 - [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
 - [\[ICLR 2026\] Unveiling the Basin-like Loss Landscape in Large Language Models](unveiling_the_basin-like_loss_landscape_in_large_language_models.md)
 

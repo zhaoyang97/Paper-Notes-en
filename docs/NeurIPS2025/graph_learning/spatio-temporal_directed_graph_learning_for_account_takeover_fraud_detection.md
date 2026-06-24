@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spatio-Temporal Directed Graph Learning for Account Takeover Fraud Detection
 description: >-
-  [NeurIPS 2025 (Workshop on New Perspective in Graph Machine Learning)][Graph Learning][GraphSAGE] This paper proposes ATLAS, a framework that reformulates account takeover (ATO) fraud detection as a node classification p…
+  [NeurIPS 2025 (Workshop on New Perspective in Graph Machine Learning)][Graph Learning][GraphSAGE] This paper proposes ATLAS, a framework that reformulates account takeover (ATO) fraud detection as a node classification problem on spatio-temporal directed graphs. By constructing causal directed graphs via temporal windows and nearest-neighbor constraints, and combining lag-aware label propagation with a GraphSAGE encoder, ATLAS achieves a +6.38% AUC improvement and over 50% re…
 tags:
   - "NeurIPS 2025 (Workshop on New Perspective in Graph Machine Learning)"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "label propagation"
   - "causal inference"
 date: 2026-05-08
-content_hash: d36ce0e445e67d67
+content_hash: 0e08841735cbd67d
 ---
 
 # Spatio-Temporal Directed Graph Learning for Account Takeover Fraud Detection
@@ -131,11 +131,11 @@ Weighted binary cross-entropy loss is applied to handle extreme class imbalance.
 
 ## Related Papers
 
-- [\[CVPR 2026\] WSGG: Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](../../CVPR2026/graph_learning/wsgg_spatiotemporal_world_scene_graph.md)
+- [\[ICLR 2026\] UrbanGraph: Physics-Informed Spatio-Temporal Dynamic Heterogeneous Graphs for Urban Microclimate Prediction](../../ICLR2026/graph_learning/urbangraph_physics-informed_spatio-temporal_dynamic_heterogeneous_graphs_for_urb.md)
 - [\[NeurIPS 2025\] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction](tami_taming_heterogeneity_in_temporal_interactions_for_temporal_graph_link_predi.md)
+- [\[ICLR 2026\] Directed Semi-Simplicial Learning with Applications to Brain Activity Decoding](../../ICLR2026/graph_learning/directed_semi-simplicial_learning_with_applications_to_brain_activity_decoding.md)
+- [\[ACL 2025\] A Generative Adaptive Replay Continual Learning Model for Temporal Knowledge Graph Reasoning](../../ACL2025/graph_learning/a_generative_adaptive_replay_continual_learning_model_for_temporal_knowledge_gra.md)
 - [\[NeurIPS 2025\] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs](unifying_text_semantics_and_graph_structures_for_temporal_text-attributed_graphs.md)
-- [\[NeurIPS 2025\] GraphFaaS: Serverless GNN Inference for Burst-Resilient, Real-Time Intrusion Detection](graphfaas_serverless_gnn_inference_for_burst-resilient_real-time_intrusion_detec.md)
-- [\[NeurIPS 2025\] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning](moemeta_mixture-of-experts_meta_learning_for_few-shot_relational_learning.md)
 
 </div>
 

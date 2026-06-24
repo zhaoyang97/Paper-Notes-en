@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper formalizes the degradation phenomenon of autoregressive language models in long-sequence generation as "cognitive fatigue." It proposes the Fatigue Index (FI), a lightweight, model-agnostic online diagnostic metric that aggregates three signals: prompt attention decay, representation drift, and entropy dysre
+  [ICML2026][Interpretability][Cognitive Fatigue] This paper formalizes the degradation phenomenon of autoregressive language models in long-sequence generation as "cognitive fatigue." It proposes the Fatigue Index (FI), a lightweight, model-agnostic online diagnostic metric that aggregates three signals: prompt attention decay, representation drift, and entropy dysregulation. The predictive power of FI for degradation (AUROC=0.976) is validated across 9 models…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Cognitive Fatigue"
+  - "Autoregressive Transformer"
+  - "Runtime Monitoring"
+  - "Fatigue Index"
+  - "Long-sequence Degradation"
 date: 2026-05-08
-content_hash: a9779c5c8d0f2b04
+content_hash: 21e992fb36f791f0
 ---
+
 # Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement
 
 **Conference**: ICML2026  
@@ -130,9 +136,9 @@ Aggregation vs. Single Signal AUROC Comparison (HotpotQA, Severe Degradation Det
 
 - [\[NeurIPS 2025\] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis](../../NeurIPS2025/interpretability/toward_explainable_offline_rl_analyzing_representations_in_intrinsically_motivat.md)
 - [\[ICLR 2026\] Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement](../../ICLR2026/interpretability/decoupling_dynamical_richness_from_representation_learning_towards_practical_mea.md)
-- [\[ACL 2026\] Interpreto: An Explainability Library for Transformers](../../ACL2026/interpretability/interpreto_an_explainability_library_for_transformers.md)
+- [\[ICML 2026\] Discovering Interpretable Algorithms by Decompiling Transformers to RASP](discovering_interpretable_algorithms_by_decompiling_transformers_to_rasp.md)
 - [\[ICLR 2026\] AdAEM: An Adaptively and Automated Extensible Measurement of LLMs' Value Difference](../../ICLR2026/interpretability/adaem_an_adaptively_and_automated_extensible_measurement_of_llms_value_differenc.md)
-- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](../../NeurIPS2025/interpretability/cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
+- [\[ICLR 2026\] Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive LLMs](../../ICLR2026/interpretability/hessian-enhanced_token_attribution_heta_interpreting_autoregressive_llms.md)
 
 </div>
 

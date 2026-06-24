@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values
 description: >-
-  [NeurIPS 2025][LLM Safety][distributive fairness] This paper systematically evaluates the distributive fairness preferences of several SOTA LLMs (GPT-4o, Claude-3.5S, Llama3-70b…
+  [NeurIPS 2025][LLM Safety][distributive fairness] This paper systematically evaluates the distributive fairness preferences of several SOTA LLMs (GPT-4o, Claude-3.5S, Llama3-70b, Gemini-1.5P) on non-strategic resource allocation tasks. The results reveal significant divergence between LLMs and humans: LLMs favor efficiency and envy-freeness (EF) while neglecting equality (EQ), which humans prioritize. However, in multiple-choice settings, GPT-4o and Claude can correctly ident…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "fair allocation"
   - "resource distribution"
 date: 2026-05-08
-content_hash: 51b8c1292d604df3
+content_hash: ef4794884db126df
 ---
 
 # Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values
@@ -131,11 +131,11 @@ A series of indivisible-goods allocation instances (2–3 agents, 3–6 items, s
 
 ## Related Papers
 
+- [\[ICLR 2026\] LLMs on Trial: Evaluating Judicial Fairness for Large Language Models](../../ICLR2026/llm_safety/llms_on_trial_evaluating_judicial_fairness_for_large_language_models.md)
+- [\[ACL 2025\] Improving Fairness of Large Language Models in Multi-document Summarization](../../ACL2025/llm_safety/improving_fairness_of_large_language_models_in_multi-document_summarization.md)
 - [\[ACL 2026\] Can Persona-Prompted LLMs Emulate Subgroup Values? An Empirical Analysis of Generalisability and Fairness in Cultural Alignment](../../ACL2026/llm_safety/can_persona-prompted_llms_emulate_subgroup_values_an_empirical_analysis_of_gener.md)
-- [\[NeurIPS 2025\] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models](exploring_the_limits_of_strong_membership_inference_attacks_on_large_language_mo.md)
-- [\[NeurIPS 2025\] Steering When Necessary: Flexible Steering Large Language Models with Backtracking](steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)
 - [\[NeurIPS 2025\] On Optimal Steering to Achieve Exact Fairness](on_optimal_steering_to_achieve_exact_fairness.md)
-- [\[NeurIPS 2025\] HoloLLM: Multisensory Foundation Model for Language-Grounded Human Sensing and Reasoning](holollm_multisensory_foundation_model_for_language-grounded_human_sensing_and_re.md)
+- [\[NeurIPS 2025\] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models](exploring_the_limits_of_strong_membership_inference_attacks_on_large_language_mo.md)
 
 </div>
 

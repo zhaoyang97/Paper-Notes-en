@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WOW-Seg: A Word-Free Open World Segmentation Model
 description: >-
-  [ICLR 2026][Segmentation][Paper Note] WOW-Seg reformulates the task of "assigning category names to segmented regions" from a classification problem with fixed heads into an autoregressive "image captioning" generation problem for VLLMs. By using Mask2Token to encode arbitrary masks into visual prompts within the VLM feature space and Cascade Attention Mas
+  [ICLR 2026][Segmentation][Open World Segmentation] WOW-Seg reformulates the task of "assigning category names to segmented regions" from a classification problem with fixed heads into an autoregressive "image captioning" generation problem for VLLMs. By using Mask2Token to encode arbitrary masks into visual prompts within the VLM feature space and Cascade Attention Mask to prevent interference between multiple masks during parallel training/inference…
 tags:
-  - ICLR 2026
-  - Segmentation
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Open World Segmentation"
+  - "Visual Prompt"
+  - "Vision Large Language Models"
+  - "Attention Mask"
+  - "Region Recognition"
 date: 2026-05-08
-content_hash: 261aab35aa579632
+content_hash: a793491b57d7effd
 ---
+
 # WOW-Seg: A Word-Free Open World Segmentation Model
 
 **Conference**: ICLR 2026  
@@ -145,9 +151,9 @@ Mask2Token variants comparison (LVIS Sem.IoU): Fore2Token (white background) 72.
 
 - [\[CVPR 2026\] PCA-Seg: Revisiting Cost Aggregation for Open-Vocabulary Semantic and Part Segmentation](../../CVPR2026/segmentation/pca-seg_revisiting_cost_aggregation_for_openvocabulary_semantic_and_part_segmentat.md)
 - [\[CVPR 2025\] V-CLR: View-Consistent Learning for Open-World Instance Segmentation](../../CVPR2025/segmentation/v-clr_view-consistent_learning_for_open-world_instance_segmentation.md)
+- [\[ICLR 2026\] LiFR-Seg: Anytime High-Frame-Rate Segmentation via Event-Guided Propagation](lifr-seg_anytime_high-frame-rate_segmentation_via_event-guided_propagation.md)
 - [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](../../CVPR2026/segmentation/the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 - [\[ICCV 2025\] Open-World Skill Discovery from Unsegmented Demonstration Videos](../../ICCV2025/segmentation/open-world_skill_discovery_from_unsegmented_demonstration_videos.md)
-- [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
 
 </div>
 

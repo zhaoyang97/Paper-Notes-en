@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Controllable Financial Market Generation with Diffusion Guided Meta Agent
 description: >-
-  [AAAI 2026][financial market generation] This paper proposes the Diffusion Guided Meta Agent (DigMA), which formalizes controllable financial market generation as a conditional generation task. A conditional diffusion mo…
+  [AAAI 2026][financial market generation] This paper proposes the Diffusion Guided Meta Agent (DigMA), which formalizes controllable financial market generation as a conditional generation task. A conditional diffusion model captures the dynamics of market states (time-varying distribution parameters of mid-price returns and order arrival rates), while a Meta Agent with financial economics priors generates order flow under the guidance of the controller. DigMA outperforms exis…
 tags:
   - "AAAI 2026"
   - "financial market generation"
@@ -11,7 +11,7 @@ tags:
   - "controllable generation"
   - "multi-agent simulation"
 date: 2026-05-08
-content_hash: 61bc7c7c528ac4cd
+content_hash: a9ae9ae84f94b757
 ---
 
 # Controllable Financial Market Generation with Diffusion Guided Meta Agent
@@ -179,11 +179,11 @@ Two tick-by-tick order book datasets from the Chinese A-share market: A-Main (31
 
 ## Related Papers
 
-- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/others/compositional_diffusion_long_horizon_planning.md)
 - [\[AAAI 2026\] An Epistemic Perspective on Agent Awareness](an_epistemic_perspective_on_agent_awareness.md)
-- [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](hybridla_hybrid_generation_for_document_layout_analysis.md)
 - [\[AAAI 2026\] Cash Flow Underwriting with Bank Transaction Data: Advancing MSME Financial Inclusion in Malaysia](cash_flow_underwriting_with_bank_transaction_data_advancing_msme_financial_inclu.md)
 - [\[ICML 2026\] NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search](../../ICML2026/others/nonzero_interaction-guided_exploration_for_multi-agent_monte_carlo_tree_search.md)
+- [\[AAAI 2026\] DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion](diffmm_efficient_method_for_accurate_noisy_and_sparse_trajectory_map_matching_vi.md)
+- [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Forecast After the Forecast: A Post-Processing Shift in Time Series
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper proposes $\delta$-Adapter: a lightweight post-processing module constrained by $\delta$, added before and after a frozen time series forecasting backbone. By utilizing input fine-tuning, output residual correction, sparse feature selection, and uncertainty calibration, it consistently improves prediction acc
+  [ICLR2026][Time Series][Post-processing adapter] This paper proposes $\delta$-Adapter: a lightweight post-processing module constrained by $\delta$, added before and after a frozen time series forecasting backbone. By utilizing input fine-tuning, output residual correction, sparse feature selection, and uncertainty calibration, it consistently improves prediction accuracy and interval coverage quality without modifying the model architecture or retraining the backbone.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Post-processing adapter"
+  - "Time series forecasting"
+  - "Distribution calibration"
+  - "Feature selection"
+  - "Concept drift"
 date: 2026-05-08
-content_hash: 1bc98f618b1b0e7e
+content_hash: 2af35d2438328a3d
 ---
+
 # The Forecast After the Forecast: A Post-Processing Shift in Time Series
 
 **Conference**: ICLR2026  
@@ -142,6 +148,7 @@ Testing spans ETT, Electricity (ELC), Exchange, Traffic, and Weather datasets, c
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -149,7 +156,7 @@ Testing spans ETT, Electricity (ELC), Exchange, Traffic, and Weather datasets, c
 - [\[ICLR 2026\] Quadratic Direct Forecast for Training Multi-Step Time-Series Forecast Models](quadratic_direct_forecast_for_training_multi-step_time-series_forecast_models.md)
 - [\[ICLR 2026\] Panda: A Pretrained Forecast Model for Chaotic Dynamics](panda_a_pretrained_forecast_model_for_chaotic_dynamics.md)
 - [\[ICLR 2026\] Aurora: Towards Universal Generative Multimodal Time Series Forecasting](aurora_towards_universal_generative_multimodal_time_series_forecasting.md)
-- [\[ICLR 2026\] Characteristic Root Analysis and Regularization for Linear Time Series Forecasting](characteristic_root_analysis_and_regularization_for_linear_time_series_forecasti.md)
+- [\[ICLR 2026\] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting](cosa_context-aware_output-space_adapter_for_test-time_adaptation_in_time_series_.md)
 - [\[ICLR 2026\] Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting](bridging_past_and_future_distribution-aware_alignment_for_time_series_forecastin.md)
 
 </div>

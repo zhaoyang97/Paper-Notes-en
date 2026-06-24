@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy
 description: >-
-  [ICLR 2026][Human Understanding][Reinforcement Learning] A VLM translates high-level instructions into a part-level bipartite graph of "Relative Motion Dynamics (RMD)," automatically constructing target states and reward functions for reinforcement learning. This enables physically simulated characters to complete long-horizon interactions with static, dynamic, and articulat
+  [ICLR 2026][Human Understanding][Human-Object Interaction] A VLM translates high-level instructions into a part-level bipartite graph of "Relative Motion Dynamics (RMD)," automatically constructing target states and reward functions for reinforcement learning. This enables physically simulated characters to complete long-horizon interactions with static, dynamic, and articulated objects without motion capture data or manual reward tuning.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Human-Object Interaction"
+  - "VLM-guided"
+  - "Relative Motion Dynamics"
+  - "Automatic Reward Design"
+  - "Reinforcement Learning"
+  - "Long-horizon interaction"
 date: 2026-05-08
-content_hash: e84a269d7502e418
+content_hash: 0104f2cfb5d3dbe7
 ---
+
 # Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy
 
 **Conference**: ICLR 2026  
@@ -128,9 +134,9 @@ Ours shows the greatest advantage in tasks requiring temporal coordination, such
 
 - [\[ICLR 2026\] Unleashing Guidance Without Classifiers for Human-Object Interaction Animation](unleashing_guidance_without_classifiers_for_human-object_interaction_animation.md)
 - [\[ICLR 2026\] InfBaGel: Human-Object-Scene Interaction Generation with Dynamic Perception and Iterative Refinement](infbagel_human-object-scene_interaction_generation_with_dynamic_perception_and_i.md)
+- [\[NeurIPS 2025\] HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion](../../NeurIPS2025/human_understanding/hoi-dyn_learning_interaction_dynamics_for_human-object_motion_diffusion.md)
 - [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
-- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](../../CVPR2026/human_understanding/decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
-- [\[ICLR 2026\] Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics](cross-domain_policy_optimization_via_bellman_consistency_and_hybrid_critics.md)
+- [\[ICLR 2026\] TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions](touch_text-guided_controllable_generation_of_free-form_hand-object_interactions.md)
 
 </div>
 

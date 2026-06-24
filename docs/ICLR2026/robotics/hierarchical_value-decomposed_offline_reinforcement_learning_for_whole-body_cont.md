@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Hierarchical Value-Decomposed Offline Reinforcement Learning for Whole-Body Control
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Galaxea R1] Addressing the scarcity of expert data for high-DoF whole-body robots, HVD decomposes the value function of offline RL along the robot's kinematic structure (base/torso/arm). It performs value filtering from large-scale imperfect data and implements fine-grained credit assignment via temporal chunking, significantly ou
+  [ICLR 2026][Robotics][Whole-body control] Addressing the scarcity of expert data for high-DoF whole-body robots, HVD decomposes the value function of offline RL along the robot's kinematic structure (base/torso/arm). It performs value filtering from large-scale imperfect data and implements fine-grained credit assignment via temporal chunking, significantly outperforming imitation learning baselines on five tasks using a real 21-DoF humanoid robot.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Galaxea R1
+  - "ICLR 2026"
+  - "Robotics"
+  - "Whole-body control"
+  - "high degrees of freedom"
+  - "offline RL"
+  - "value decomposition"
+  - "imitation learning"
+  - "Galaxea R1"
+  - "imperfect data"
 date: 2026-05-08
-content_hash: c0265c270fd58d00
+content_hash: fda88adc748cbba0
 ---
+
 # Hierarchical Value-Decomposed Offline Reinforcement Learning for Whole-Body Control
 
 **Conference**: ICLR 2026  

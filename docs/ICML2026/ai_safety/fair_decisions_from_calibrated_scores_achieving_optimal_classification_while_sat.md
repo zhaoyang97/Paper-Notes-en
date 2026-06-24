@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Fair Decisions from Calibrated Scores: Achieving Optimal Classification While Satisfying Sufficiency
 description: >-
-  [ICML 2026][AI Safety][Sufficiency] This paper addresses a long-neglected pain point: "even if scores are fully group-calibrated across populations, applying a single threshold to them will violate sufficiency (predictive parity)." The authors provide an **exact solution** for the optimal binary classifier under sufficiency constraints with finite discre
+  [ICML 2026][AI Safety][Algorithmic Fairness] This paper addresses a long-neglected pain point: "even if scores are fully group-calibrated across populations, applying a single threshold to them will violate sufficiency (predictive parity)." The authors provide an **exact solution** for the optimal binary classifier under sufficiency constraints with finite discrete scores. By geometrically characterizing the $(\mathrm{PPV}, \mathrm{FOR})$ feasible region…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Sufficiency
-  - Predictive Parity
-  - Calibrated Scores
+  - "ICML 2026"
+  - "AI Safety"
+  - "Algorithmic Fairness"
+  - "Sufficiency"
+  - "Predictive Parity"
+  - "Calibrated Scores"
+  - "Post-processing"
 date: 2026-05-08
-content_hash: fa2a9a4eac173f52
+content_hash: 9e01721179a747a1
 ---
+
 # Fair Decisions from Calibrated Scores: Achieving Optimal Classification While Satisfying Sufficiency
 
 **Conference**: ICML 2026  
@@ -129,10 +132,10 @@ The method is pure post-processing: it does not retrain the scoring model or req
 ## Related Papers
 
 - [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
-- [\[ICML 2026\] Fair Dataset Distillation via Cross-Group Barycenter Alignment](fair_dataset_distillation_via_cross-group_barycenter_alignment.md)
+- [\[ICLR 2026\] Fair Classification by Direct Intervention on Operating Characteristics](../../ICLR2026/ai_safety/fair_classification_by_direct_intervention_on_operating_characteristics.md)
+- [\[ICLR 2026\] Rethinking Pareto Frontier: On the Optimal Trade-offs in Fair Classification](../../ICLR2026/ai_safety/rethinking_pareto_frontier_on_the_optimal_trade-offs_in_fair_classification.md)
 - [\[ICLR 2026\] Fair Conformal Classification via Learning Representation-Based Groups](../../ICLR2026/ai_safety/fair_conformal_classification_via_learning_representation-based_groups.md)
 - [\[ICML 2026\] Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking](fairness_in_aggregation_optimal_top-k_and_improved_full_ranking.md)
-- [\[ICML 2026\] Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods](extending_fair_null-space_projections_for_continuous_attributes_to_kernel_method.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective
 description: >-
-  [AAAI 2026][Video Understanding][Non-Markovian Decision Making] This paper proposes LIBERO-Mem, a benchmark comprising 10 non-Markovian robotic manipulation tasks, and Embodied-SlotSSM…
+  [AAAI 2026][Video Understanding][Non-Markovian Decision Making] This paper proposes LIBERO-Mem, a benchmark comprising 10 non-Markovian robotic manipulation tasks, and Embodied-SlotSSM, an object-centric memory VLA framework combining Slot Attention with state space models, to address the failure of visuomotor policies in long-horizon tasks that require object-level historical reasoning under partial observability.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "VLA"
   - "Robotics Benchmark"
 date: 2026-05-08
-content_hash: 657afde530b5a803
+content_hash: cdd1989ab6156588
 ---
 
 # Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective
@@ -180,9 +180,9 @@ Ablations are presented implicitly through **cross-method comparisons across tas
 ## Related Papers
 
 - [\[CVPR 2026\] Out of Sight, Out of Track: Adversarial Attacks on Propagation-based Multi-Object Trackers via Query State Manipulation](../../CVPR2026/video_understanding/out_of_sight_out_of_track_adversarial_attacks_on_propagation-based_multi-object_.md)
-- [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](state-space_hierarchical_compression_with_gated_attention_an.md)
+- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](../../CVPR2026/video_understanding/hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
 - [\[CVPR 2026\] Reconstruction-Guided Slot Curriculum: Addressing Object Over-Fragmentation in Video Object-Centric Learning](../../CVPR2026/video_understanding/reconstruction-guided_slot_curriculum_addressing_object_over-fragmentation_in_vi.md)
-- [\[AAAI 2026\] EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation](emovid_a_multimodal_emotion_video_dataset_for_emotion-centric_video_understandin.md)
+- [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](state-space_hierarchical_compression_with_gated_attention_an.md)
 - [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](../../ICLR2026/video_understanding/from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PixFoundation 2.0: Do Video Multi-Modal LLMs Use Motion in Visual Grounding?
 description: >-
-  [NeurIPS 2025][Video Understanding][Motion-centric evaluation] By introducing four motion-centric probing techniques and the MoCentric-Bench benchmark…
+  [NeurIPS 2025][Video Understanding][Motion-centric evaluation] By introducing four motion-centric probing techniques and the MoCentric-Bench benchmark, this paper demonstrates that current video multimodal LLMs fail to genuinely exploit motion information in pixel-level visual grounding tasks and can be deceived by static keyframes.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "referring segmentation"
   - "motion understanding"
 date: 2026-05-08
-content_hash: c5866b49e0411cf0
+content_hash: 77fed4b184a36d2a
 ---
 
 # PixFoundation 2.0: Do Video Multi-Modal LLMs Use Motion in Visual Grounding?
@@ -127,8 +127,8 @@ The Sa2VA★ fine-tuned variant applies LoRA to the visual encoder and is traine
 - [\[NeurIPS 2025\] MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence](muvr_a_multi-modal_untrimmed_video_retrieval_benchmark_with_multi-level_visual_c.md)
 - [\[ICCV 2025\] AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning](../../ICCV2025/video_understanding/aim_adaptive_inference_multimodal_llms_token_merging_pruning.md)
 - [\[ICCV 2025\] DynImg: Key Frames with Visual Prompts are Good Representation for Multi-Modal Video Understanding](../../ICCV2025/video_understanding/dynimg_key_frames_with_visual_prompts_are_good_representation_for_multi-modal_vi.md)
-- [\[ICCV 2025\] OVG-HQ: Online Video Grounding with Hybrid-modal Queries](../../ICCV2025/video_understanding/ovg-hq_online_video_grounding_with_hybrid-modal_queries.md)
 - [\[ICLR 2026\] Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection](../../ICLR2026/video_understanding/steering_and_rectifying_latent_representation_manifolds_in_frozen_multi-modal_ll.md)
+- [\[ICCV 2025\] OVG-HQ: Online Video Grounding with Hybrid-modal Queries](../../ICCV2025/video_understanding/ovg-hq_online_video_grounding_with_hybrid-modal_queries.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] InvDet utilizes an invertible encoder to transform the "information loss of infrared small targets caused by downsampling" into an observable and optimizable quantity. It employs a forward path for detection and a backward path for input reconstruction. By using TARM to focus reconstruction on the target and GCTM as a
+  [CVPR 2026][Object Detection][Infrared Small Target Detection] InvDet utilizes an invertible encoder to transform the "information loss of infrared small targets caused by downsampling" into an observable and optimizable quantity. It employs a forward path for detection and a backward path for input reconstruction. By using TARM to focus reconstruction on the target and GCTM as a pixel-level weight map (replacing IoU) to supervise the reconstruction…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Infrared Small Target Detection"
+  - "Invertible Encoder"
+  - "Reconstruction Guidance"
+  - "Information Preservation"
+  - "Gradient Decoupling"
 date: 2026-05-08
-content_hash: f30fcd2ccd608eb3
+content_hash: a7fb1a824dbcbd14
 ---
+
 # Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection
 
 **Conference**: CVPR 2026  
@@ -145,8 +151,8 @@ The average cross-domain F1 retention is **84.9%**. Real-to-real transfer is str
 - [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
 - [\[CVPR 2026\] Seeing Through the Noise: Improving Infrared Small Target Detection and Segmentation from Noise Suppression Perspective](seeing_through_the_noise_improving_infrared_small_target_detection_and_segmentat.md)
 - [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/object_detection/rethinking_evaluation_of_infrared_small_target_detection.md)
-- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
 - [\[ICCV 2025\] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision](../../ICCV2025/object_detection/from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe.md)
+- [\[CVPR 2026\] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)
 
 </div>
 

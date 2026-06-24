@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: Zeroth-Order Optimization in Deep Learning Is Underexplored, Not Underpowered
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This is a position paper where the authors argue that Zeroth-Order (ZO) optimization in deep learning is "underexplored" rather than "underpowered." They present six claims (P1–P6) across three main axes: algorithms, systems, and evaluation. Their core stance is that by moving away from the paradigm of "full-space elem
+  [ICML2026 Spotlight][Interpretability][Zeroth-order optimization] This is a position paper where the authors argue that Zeroth-Order (ZO) optimization in deep learning is "underexplored" rather than "underpowered." They present six claims (P1–P6) across three main axes: algorithms, systems, and evaluation. Their core stance is that by moving away from the paradigm of "full-space element-wise estimators" toward subspace/spectral domain estimation…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026 Spotlight"
+  - "Interpretability"
+  - "Zeroth-order optimization"
+  - "variance control"
+  - "subspace optimization"
+  - "distributed training"
+  - "forward gradient"
 date: 2026-05-08
-content_hash: a01b7b0778175b4a
+content_hash: ff57c8204ff49794
 ---
+
 # Position: Zeroth-Order Optimization in Deep Learning Is Underexplored, Not Underpowered
 
 **Conference**: ICML2026 Spotlight  
@@ -128,10 +134,10 @@ As a position paper, it includes only one set of corroborative experiments (Fig.
 ## Related Papers
 
 - [\[ICML 2026\] Position: Ideas Should be the Center of Machine Learning Research](position_ideas_should_be_the_center_of_machine_learning_research.md)
-- [\[ICLR 2026\] Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data](../../ICLR2026/interpretability/behavior_learning_bl_learning_hierarchical_optimization_structures_from_data.md)
 - [\[ICML 2026\] A Deep Learning Model of Mental Rotation Informed by Interactive VR Experiments](a_deep_learning_model_of_mental_rotation_informed_by_interactive_vr_experiments.md)
 - [\[ICML 2026\] Expand Neurons, Not Parameters](expand_neurons_not_parameters.md)
-- [\[ICML 2026\] Physics from Video: Identifiability of Time-Invariant Second-Order ODEs under Minimal Trajectory Conditions](physics_from_video_identifiability_of_time-invariant_second-order_odes_under_min.md)
+- [\[ACL 2026\] Letting Tutor Personas Speak Up for LLMs: Learning Steering Vectors from Dialogue via Preference Optimization](../../ACL2026/interpretability/letting_tutor_personas_speak_up_for_llms_learning_steering_vectors_from_dialogue.md)
+- [\[ICML 2026\] Position: Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces!](position_stop_anthropomorphizing_intermediate_tokens_as_reasoningthinking_traces.md)
 
 </div>
 

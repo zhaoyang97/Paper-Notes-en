@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Keep It Frozen: Domain-Routed Conditional Residual Modulation for Multi-Domain Vision Transformers
 description: >-
-  [CVPR 2026][Others][Paper Note] A set of lightweight Residual Modulation Modules (RMB) is attached to a completely frozen ViT backbone. A Domain Router (DR) estimates the soft probability of a sample belonging to "medical/natural" domains in real-time. Subsequently, a Parameter Synthesis Network (PSN) generates low-rank correction parameters on-the-f
+  [CVPR 2026][Medical Imaging][Frozen Backbone] A set of lightweight Residual Modulation Modules (RMB) is attached to a completely frozen ViT backbone. A Domain Router (DR) estimates the soft probability of a sample belonging to "medical/natural" domains in real-time. Subsequently, a Parameter Synthesis Network (PSN) generates low-rank correction parameters on-the-fly based on these probabilities to be injected into Q/V projections and attention biases. Combined with MAML-style…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Frozen Backbone"
+  - "Domain Routing"
+  - "Residual Modulation"
+  - "Hypernetwork"
+  - "Bi-level Optimization"
 date: 2026-05-08
-content_hash: 4332518f785b6be2
+content_hash: 3504ee6c03fdd135
 ---
+
 # Keep It Frozen: Domain-Routed Conditional Residual Modulation for Multi-Domain Vision Transformers
 
 **Conference**: CVPR 2026  
@@ -151,16 +157,16 @@ Using bottleneck dimension $h=120$ for PSN results in approx. 3.0M parameters (t
 - Value: ⭐⭐⭐⭐ Highly practical for clinical deployment due to low overhead and update-free adaptation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bridging Domain Expertise and Generalization for Performance Estimation](bridging_domain_expertise_and_generalization_for_performance_estimation.md)
-- [\[CVPR 2026\] Align Once to Explain: Feature Alignment for Scalable B-cosification of Foundational Vision Transformers](align_once_to_explain_feature_alignment_for_scalable_b-cosification_of_foundatio.md)
-- [\[CVPR 2026\] FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection](fast_topology-aware_frequency-domain_distribution_matching_for_coreset_selection.md)
-- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
-- [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](../../ICLR2026/others/noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
+- [\[CVPR 2026\] CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference](cofida-m_concept-aware_feature_modulation_for_cross-domain_adaptation_with_image.md)
+- [\[CVPR 2026\] MuViT: Multi-Resolution Vision Transformers for Learning Across Scales in Microscopy](muvit_multi-resolution_vision_transformers_for_learning_across_scales_in_microsc.md)
+- [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
+- [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
+- [\[CVPR 2026\] EEGiT: Teaching Vision Transformers to Understand the EEG signal](eegit_teaching_vision_transformers_to_understand_the_eeg_signal.md)
 
 </div>
 

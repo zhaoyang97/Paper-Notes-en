@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer
 description: >-
-  [AAAI 2026][Dynamic Spatial Reasoning] This paper proposes EvoEmpirBench (EEB), comprising two dynamic interactive benchmarks (partially observable maze navigation + Match-2)…
+  [AAAI 2026][Dynamic Spatial Reasoning] This paper proposes EvoEmpirBench (EEB), comprising two dynamic interactive benchmarks (partially observable maze navigation + Match-2), and the Agent-ExpVer three-agent online learning framework (GeoLink for interaction + InsightForce for experience abstraction + TruthWeaver for knowledge management). Through a cognitive cycle of "experience → verification → truth induction," the framework achieves continuous strategy evolution without…
 tags:
   - "AAAI 2026"
   - "Dynamic Spatial Reasoning"
@@ -11,7 +11,7 @@ tags:
   - "Experience Verification"
   - "Maze Navigation"
 date: 2026-05-08
-content_hash: 4c3e2cbf047521b3
+content_hash: 3a082d14962f3014
 ---
 
 # EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer
@@ -150,7 +150,7 @@ If the average score decreases after a policy update ($\Delta < 0$), the framewo
 - [\[NeurIPS 2025\] Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment](../../NeurIPS2025/others/evolutionary_learning_in_spatial_agent-based_models_for_physical_climate_risk_as.md)
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
 - [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
-- [\[AAAI 2026\] On the Edge of Core (Non-)Emptiness: An Automated Reasoning Approach to Approval-Based Multi-Winner Voting](on_the_edge_of_core_non-emptiness_an_automated_reasoning_approach_to_approval-ba.md)
+- [\[AAAI 2026\] Controllable Financial Market Generation with Diffusion Guided Meta Agent](controllable_financial_market_generation_with_diffusion_guided_meta_agent.md)
 
 </div>
 

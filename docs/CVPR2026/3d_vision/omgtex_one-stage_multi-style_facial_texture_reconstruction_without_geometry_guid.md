@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OMGTex: One-stage Multi-style Facial Texture Reconstruction without Geometry Guidance
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] OMGTex utilizes a DiT-based diffusion model to **directly** map facial images of any style to editable UV textures. It employs "gradient-guided alignment" during inference to correct UV structural misalignments and achieves partitioned editing through semantic attribution of attention blocks. The process remains **inde
+  [CVPR 2026][3D Vision][Facial Texture Reconstruction] OMGTex utilizes a DiT-based diffusion model to **directly** map facial images of any style to editable UV textures. It employs "gradient-guided alignment" during inference to correct UV structural misalignments and achieves partitioned editing through semantic attribution of attention blocks. The process remains **independent of 3D geometric priors** throughout, demonstrating robustness to occlusions and stylized inputs. I…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Facial Texture Reconstruction"
+  - "UV Texture"
+  - "Geometry-free"
+  - "Diffusion Transformer"
+  - "Semantic Editing"
 date: 2026-05-08
-content_hash: c8e5fe99262fa1b0
+content_hash: d3dde38a5b9f812e
 ---
+
 # OMGTex: One-stage Multi-style Facial Texture Reconstruction without Geometry Guidance
 
 **Conference**: CVPR 2026  
@@ -155,10 +161,10 @@ L2 denotes structural deviation (landmark alignment error).
 ## Related Papers
 
 - [\[CVPR 2026\] Inferring Compositional 4D Scenes without Ever Seeing One](inferring_compositional_4d_scenes_without_ever_seeing_one.md)
-- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
-- [\[CVPR 2026\] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
 - [\[CVPR 2025\] HandOS: 3D Hand Reconstruction in One Stage](../../CVPR2025/3d_vision/handos_3d_hand_reconstruction_in_one_stage.md)
 - [\[CVPR 2026\] CaliTex: Geometry-Calibrated Attention for View-Coherent 3D Texture Generation](calitex_geometry-calibrated_attention_for_view-coherent_3d_texture_generation.md)
+- [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
+- [\[CVPR 2026\] Circular-DPO: Aligning Multi-Stage 3D Generative Models via Preference Feedback Loop](circular-dpo_aligning_multi-stage_3d_generative_models_via_preference_feedback_l.md)
 
 </div>
 

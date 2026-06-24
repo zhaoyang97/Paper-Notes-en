@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education
 description: >-
-  [AAAI2026][Causal Inference][Knowledge Tracing] This paper proposes KTCF, a counterfactual explanation generation method for Knowledge Tracing (KT) that leverages inter-concept relationships to produce sparse and actiona…
+  [AAAI2026][Causal Inference][Knowledge Tracing] This paper proposes KTCF, a counterfactual explanation generation method for Knowledge Tracing (KT) that leverages inter-concept relationships to produce sparse and actionable counterfactuals, subsequently post-processed into sequentially ordered instructional recommendations. KTCF comprehensively outperforms baseline methods across validity, sparsity, and actionability metrics.
 tags:
   - "AAAI2026"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "Actionable Recourse"
   - "Education"
 date: 2026-05-08
-content_hash: 8ecd352ff2a5e93b
+content_hash: 6df7768097c766de
 ---
 
 # KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education
@@ -135,7 +135,7 @@ Using "distinguishing leap years from non-leap years" as the target KC:
 - [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](../../ICLR2026/causal_inference/counterfactual_explanations_on_robust_perceptual_geodesics.md)
 - [\[CVPR 2026\] MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations](../../CVPR2026/causal_inference/maskdime_adaptive_masked_diffusion_for_precise_and_efficient_visual_counterfactu.md)
 - [\[ICLR 2026\] Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders](../../ICLR2026/causal_inference/synthesising_counterfactual_explanations_via_label-conditional_gaussian_mixture_.md)
-- [\[ICML 2026\] Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity](../../ICML2026/causal_inference/density-guided_robust_counterfactual_explanations_on_tabular_data_under_model_mu.md)
+- [\[ACL 2025\] Counterfactual Explanations for Aspect-Based Sentiment Analysis](../../ACL2025/causal_inference/counterfactual_explanations_for_aspect-based_sentiment_analysis.md)
 
 </div>
 

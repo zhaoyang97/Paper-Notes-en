@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BEAR: Dissecting Embodied Abilities in Multimodal Language Models through Skill-level Evaluation and Diagnosis
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] BEAR decomposes embodied tasks into 14 atomic skills and constructs 4,469 interleaved image-video-text VQA pairs. By performing horizontal and vertical skill-level diagnosis on 20 MLLMs, it discovers that perception (rather than reasoning) is the primary bottleneck. Consequently, BEAR-Agent is developed using external
+  [ICML 2026][Robotics][Embodied evaluation] BEAR decomposes embodied tasks into 14 atomic skills and constructs 4,469 interleaved image-video-text VQA pairs. By performing horizontal and vertical skill-level diagnosis on 20 MLLMs, it discovers that perception (rather than reasoning) is the primary bottleneck. Consequently, BEAR-Agent is developed using external visual/spatial tools—such as GroundingDINO, 3D scene graphs, and trajectory visualization—improving GPT-5 performance…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026"
+  - "Robotics"
+  - "Embodied evaluation"
+  - "MLLM diagnosis"
+  - "Skill-level evaluation"
+  - "Tool-augmented Agent"
+  - "Long-horizon tasks"
 date: 2026-05-08
-content_hash: 933f5609cbd4dcf3
+content_hash: ccb29ee940a91f11
 ---
+
 # BEAR: Dissecting Embodied Abilities in Multimodal Language Models through Skill-level Evaluation and Diagnosis
 
 **Conference**: ICML 2026  
@@ -140,7 +146,7 @@ Closed-source models averaged 39.2% (13.4 points higher than open-source), yet e
 - [\[ICML 2026\] Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models](embodied_interpretability_linking_causal_understanding_to_generalization_in_visi.md)
 - [\[ICML 2026\] Embodied Task Planning via Graph-Informed Action Generation with Large Language Models](embodied_task_planning_via_graph-informed_action_generation_with_large_language_.md)
 - [\[ICML 2026\] Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation](decompose_and_recompose_reasoning_new_skills_from_existing_abilities_for_cross-t.md)
-- [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](../../CVPR2026/robotics/hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
+- [\[ICLR 2026\] Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance](../../ICLR2026/robotics/align-then-steer_adapting_the_vision-language_action_models_through_unified_late.md)
 
 </div>
 

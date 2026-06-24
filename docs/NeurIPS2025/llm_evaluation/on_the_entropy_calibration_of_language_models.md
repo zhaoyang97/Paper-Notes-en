@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Entropy Calibration of Language Models
 description: >-
-  [NeurIPS 2025][LLM Evaluation][entropy calibration] This paper systematically investigates the entropy calibration of language models — whether the entropy of generated text matches the log loss on human text — and finds…
+  [NeurIPS 2025][LLM Evaluation][entropy calibration] This paper systematically investigates the entropy calibration of language models — whether the entropy of generated text matches the log loss on human text — and finds that due to the power-law nature of data distributions ($\alpha \approx 1$), error accumulation improves extremely slowly with model scale (scaling exponent $\approx -0.05$). The paper further provides a theoretical proof that entropy can be calibrated in pol…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "distribution truncation"
   - "diversity-quality tradeoff"
 date: 2026-05-08
-content_hash: caf746c33591f7bc
+content_hash: 0b6c905fba216eb1
 ---
 
 # On the Entropy Calibration of Language Models
@@ -114,11 +114,11 @@ The paper is structured in three parts: (1) theoretical analysis — scaling of 
 
 ## Related Papers
 
+- [\[ICML 2025\] G-Sim: Generative Simulations with Large Language Models and Gradient-Free Calibration](../../ICML2025/llm_evaluation/g-sim_generative_simulations_with_large_language_models_and_gradient-free_calibr.md)
+- [\[ACL 2025\] GRACE: A Granular Benchmark for Evaluating Model Calibration Against Human Calibration](../../ACL2025/llm_evaluation/grace_a_granular_benchmark_for_evaluating_model_calibration_against_human_calibr.md)
 - [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](hyperbolic_fine-tuning_for_large_language_models.md)
-- [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](can_large_language_models_master_complex_card_games.md)
+- [\[ACL 2025\] Atomic Calibration of LLMs in Long-Form Generations](../../ACL2025/llm_evaluation/atomic_calibration_of_llms_in_long-form_generations.md)
 - [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
-- [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
-- [\[NeurIPS 2025\] Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models](creativity_or_brute_force_using_brainteasers_as_a_window_into_the_problem-solvin.md)
 
 </div>
 

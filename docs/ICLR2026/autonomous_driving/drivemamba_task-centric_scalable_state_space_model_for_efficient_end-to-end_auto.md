@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DriveMamba: Task-Centric Scalable State Space Model for Efficient End-to-End Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][State Space Model] DriveMamba abandons the traditional serial Transformer paradigm of "perception → prediction → planning" and costly dense BEV features. It sparsifies image features and all task queries into tokens, sorts them by 3D spatial position, and feeds them into a unified Mamba decoder. This allows for simultaneous view correspo
+  [ICLR2026][Autonomous Driving][End-to-end autonomous driving] DriveMamba abandons the traditional serial Transformer paradigm of "perception → prediction → planning" and costly dense BEV features. It sparsifies image features and all task queries into tokens, sorts them by 3D spatial position, and feeds them into a unified Mamba decoder. This allows for simultaneous view correspondence, task relationship modeling, and long-term temporal fusion with linear complexity. The smal…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - State Space Model
-  - Mamba
+  - "ICLR2026"
+  - "Autonomous Driving"
+  - "End-to-end autonomous driving"
+  - "State Space Models"
+  - "Mamba"
+  - "Task relationship modeling"
+  - "Spatio-temporal scanning"
 date: 2026-05-08
-content_hash: a0c844a9df205cee
+content_hash: 0f678fd9d0956e49
 ---
+
 # DriveMamba: Task-Centric Scalable State Space Model for Efficient End-to-End Autonomous Driving
 
 **Conference**: ICLR2026  

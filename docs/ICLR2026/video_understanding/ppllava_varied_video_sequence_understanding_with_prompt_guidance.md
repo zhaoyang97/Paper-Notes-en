@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PPLLaVA: Varied Video Sequence Understanding With Prompt Guidance
 description: >-
-  [ICLR 2026][Video Understanding][Video LLM] To address the inefficiency caused by excessive visual tokens in Video LLMs, PPLLaVA utilizes a "prompt-video relevance map" calculated by CLIP as a dynamic 3D convolution kernel to compress tokens. This approach reduces visual sequences by up to 1/18 while preserving key information relevant to user instructions, achi
+  [ICLR 2026][Video Understanding][Video LLM] To address the inefficiency caused by excessive visual tokens in Video LLMs, PPLLaVA utilizes a "prompt-video relevance map" calculated by CLIP as a dynamic 3D convolution kernel to compress tokens. This approach reduces visual sequences by up to 1/18 while preserving key information relevant to user instructions, achieving both speedup and performance gains across seven video understanding benchmarks.
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Video LLM
-  - CLIP
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Video LLM"
+  - "Visual token compression"
+  - "Prompt-guided pooling"
+  - "CLIP"
+  - "Long video understanding"
 date: 2026-05-08
-content_hash: 2621f1d51158feee
+content_hash: 6aaa411f25e02e83
 ---
+
 # PPLLaVA: Varied Video Sequence Understanding With Prompt Guidance
 
 **Conference**: ICLR 2026  
@@ -150,8 +154,6 @@ Average pooling is fastest but performs worst. Full tokens perform well but have
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

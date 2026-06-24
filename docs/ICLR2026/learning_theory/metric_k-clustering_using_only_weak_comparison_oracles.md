@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Metric $k$-Clustering using only Weak Comparison Oracles
 description: >-
-  [ICLR 2026][learning_theory][k-median/k-means] Using only a noisy "quadruplet comparison oracle" (answering "is A closer to B, or C closer to D?") without any real distances, this work constructs a constant-approximation Coreset+ for $k$-median/$k$-means with $O(nk\,\mathrm{polylog}\,n)$ queries. The approximation ratio is further improved to $1+\varepsilon$ under
+  [ICLR 2026][learning theory][clustering] Using only a noisy "quadruplet comparison oracle" (answering "is A closer to B, or C closer to D?") without any real distances, this work constructs a constant-approximation Coreset+ for $k$-median/$k$-means with $O(nk\,\mathrm{polylog}\,n)$ queries. The approximation ratio is further improved to $1+\varepsilon$ under bounded doubling dimension.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - k-median/k-means
-  - coreset
-  - doubling dimension
+  - "ICLR 2026"
+  - "learning theory"
+  - "clustering"
+  - "k-median/k-means"
+  - "coreset"
+  - "quadruplet comparison oracle"
+  - "noisy comparison"
+  - "doubling dimension"
+  - "query complexity"
 date: 2026-05-08
-content_hash: 8ab9c20a2f3c6254
+content_hash: bc9b41c677e3270a
 ---
+
 # Metric $k$-Clustering using only Weak Comparison Oracles
 
 **Conference**: ICLR 2026  
@@ -119,11 +124,11 @@ The constructed coreset contains only **187 points**, a compression of approxima
 
 ## Related Papers
 
-- [\[ICLR 2026\] Does Weak-to-strong Generalization Happen under Spurious Correlations?](does_weak-to-strong_generalization_happen_under_spurious_correlations.md)
 - [\[ICLR 2026\] Bi-Criteria Metric Distortion](bi-criteria_metric_distortion.md)
+- [\[ICLR 2026\] Does Weak-to-strong Generalization Happen under Spurious Correlations?](does_weak-to-strong_generalization_happen_under_spurious_correlations.md)
 - [\[ICLR 2026\] Strong Correlations Induce Cause Only Predictions in Transformer Training](strong_correlations_induce_cause_only_predictions_in_transformer_training.md)
 - [\[ICLR 2026\] Sublinear Spectral Clustering Oracle with Little Memory](sublinear_spectral_clustering_oracle_with_little_memory.md)
-- [\[ICML 2026\] Matroid Algorithms Under Size-Sensitive Independence Oracles](../../ICML2026/learning_theory/matroid_algorithms_under_size-sensitive_independence_oracles.md)
+- [\[ICLR 2026\] Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems](weak_correlations_as_the_underlying_principle_for_linearization_of_gradient-base.md)
 
 </div>
 

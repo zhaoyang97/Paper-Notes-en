@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DemoGrasp: Universal Dexterous Grasping from a Single Demonstration
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Sim-to-Real] DemoGrasp starts from **a single** successful grasp demonstration. The RL policy learns only "how to edit this demonstration" (modifying wrist pose to decide where to grasp and finger joints to decide how to grasp), compressing high-dimensional long-horizon dexterous grasping into a single-step decision problem. Using
+  [ICLR2026][Robotics][Dexterous Grasping] DemoGrasp starts from **a single** successful grasp demonstration. The RL policy learns only "how to edit this demonstration" (modifying wrist pose to decide where to grasp and finger joints to decide how to grasp), compressing high-dimensional long-horizon dexterous grasping into a single-step decision problem. Using a minimalist reward of binary success and collision penalty, a universal policy is trained on thousands of objects…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Sim-to-Real
+  - "ICLR2026"
+  - "Robotics"
+  - "Dexterous Grasping"
+  - "Demonstration Editing"
+  - "Single-step Reinforcement Learning"
+  - "Sim-to-Real"
+  - "Flow Matching Policy"
 date: 2026-05-08
-content_hash: 0a8694a4dce3147c
+content_hash: 986cfde98ea341ba
 ---
+
 # DemoGrasp: Universal Dexterous Grasping from a Single Demonstration
 
 **Conference**: ICLR2026  
@@ -130,8 +135,21 @@ Across embodiments: Using only 175 training objects, Allegro+UR5 outperformed Ro
 - Value: ⭐⭐⭐⭐⭐ Minimalist reward + strong sim-to-real transfer; high practical value for dexterous grasping.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] DemoFunGrasp: Universal Dexterous Functional Grasping via Demonstration-Editing Reinforcement Learning](../../CVPR2026/robotics/demofungrasp_universal_dexterous_functional_grasping_via_demonstration-editing_r.md)
+- [\[ICLR 2026\] RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation](rfs_reinforcement_learning_with_residual_flow_steering_for_dexterous_manipulatio.md)
+- [\[CVPR 2025\] DexGrasp Anything: Towards Universal Robotic Dexterous Grasping with Physics Awareness](../../CVPR2025/robotics/dexgrasp_anything_towards_universal_robotic_dexterous_grasping_with_physics_awar.md)
+- [\[ICLR 2026\] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)
+- [\[ICLR 2026\] House Of Dextra : Cross-Embodied Co-Design for Dexterous Hands](house_of_dextra_cross-embodied_co-design_for_dexterous_hands.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

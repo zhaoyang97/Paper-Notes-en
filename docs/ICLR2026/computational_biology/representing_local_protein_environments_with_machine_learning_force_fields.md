@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Representing Local Protein Environments with Machine Learning Force Fields
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper repurposes intermediate layer embeddings from Machine Learning Force Fields (MLFFs), originally intended for predicting energy and forces, as general-purpose representations of local protein environments. By extracting features of atoms within a 5Å neighborhood centered on a residue from a frozen pre-trained
+  [ICLR 2026][Computational Biology][Machine Learning Force Fields] This paper repurposes intermediate layer embeddings from Machine Learning Force Fields (MLFFs), originally intended for predicting energy and forces, as general-purpose representations of local protein environments. By extracting features of atoms within a 5Å neighborhood centered on a residue from a frozen pre-trained MLFF, the authors demonstrate that biochemical information such as secondary structure…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Machine Learning Force Fields"
+  - "Local Protein Environments"
+  - "Representation Learning"
+  - "NMR Chemical Shifts"
+  - "Uncertainty Estimation"
 date: 2026-05-08
-content_hash: c4f516e527d0fccf
+content_hash: 94e57d15b1c2e87f
 ---
+
 # Representing Local Protein Environments with Machine Learning Force Fields
 
 **Conference**: ICLR 2026  
@@ -126,15 +132,16 @@ MLFF embeddings (especially AIMNet) consistently outperformed classical methods 
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] DistMLIP: A Distributed Inference Platform for Machine Learning Interatomic Potentials](distmlip_a_distributed_inference_platform_for_machine_learning_interatomic_poten.md)
+- [\[ICLR 2026\] PepBenchmark: A Standardized Benchmark for Peptide Machine Learning](pepbenchmark_a_standardized_benchmark_for_peptide_machine_learning.md)
 - [\[ICML 2026\] Towards A Generative Protein Evolution Machine with DPLM-Evo](../../ICML2026/computational_biology/towards_a_generative_protein_evolution_machine_with_dplm-evo.md)
 - [\[ICLR 2026\] Learning Residue Level Protein Dynamics with Multiscale Gaussians](learning_residue_level_protein_dynamics_with_multiscale_gaussians.md)
 - [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
-- [\[ICLR 2026\] SAIR: Enabling Deep Learning for Protein-Ligand Interactions with a Synthetic Structural Dataset](sair_enabling_deep_learning_for_protein-ligand_interactions_with_a_synthetic_str.md)
 
 </div>
 

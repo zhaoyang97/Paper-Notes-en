@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OrthoRF: Exploring Orthogonality in Object-Centric Representations
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] Building on unsupervised object discovery frameworks like Rotating Features (RF) that "bind objects via phase synchrony," OrthoRF enforces orthogonality in an $n$-dimensional orientation space through softmax competitive binding and an inner-product orthogonal loss. This allows objects to occupy distinct dimensions, el
+  [ICLR 2026][Self-Supervised Learning][Object-Centric Learning] Building on unsupervised object discovery frameworks like Rotating Features (RF) that "bind objects via phase synchrony," OrthoRF enforces orthogonality in an $n$-dimensional orientation space through softmax competitive binding and an inner-product orthogonal loss. This allows objects to occupy distinct dimensions, eliminating the need for post-hoc k-means clustering. The method matches or exceeds existing techni…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Object-Centric Learning"
+  - "Synchronous Binding"
+  - "Rotating Features"
+  - "Orthogonality Constraint"
+  - "Occlusion Completion"
 date: 2026-05-08
-content_hash: 94e16874101ccbc4
+content_hash: 178725deca62bf50
 ---
+
 # OrthoRF: Exploring Orthogonality in Object-Centric Representations
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Rare Event Analysis of Large Language Models
 description: >-
-  [ICML 2026][LLM (Other)][MBAR] This paper introduces mature Rare Event Analysis (REA) methods from statistical physics to LLMs, utilizing a "Exponential Tilting + Transition Path Sampling + MBAR" trio. On TinyStories, it estimates rare completion probabilities several orders of magnitude smaller than direct sampling with affordable compute, and iden
+  [ICML2026 Oral Spotlight][LLM (Other)][Rare Event Analysis] This paper introduces mature Rare Event Analysis (REA) methods from statistical physics to LLMs, utilizing a "Exponential Tilting + Transition Path Sampling + MBAR" trio. On TinyStories, it estimates rare completion probabilities several orders of magnitude smaller than direct sampling with affordable compute, and identifies cheap runtime proxies (consecutive token repeats) via EDA to pre-screen high ARI anomalous ou…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - MBAR
-  - Transition Path Sampling
+  - "ICML2026 Oral Spotlight"
+  - "LLM (Other)"
+  - "Rare Event Analysis"
+  - "Importance Sampling"
+  - "MBAR"
+  - "Transition Path Sampling"
+  - "LLM Safety"
 date: 2026-05-08
-content_hash: 160f911c7efc9bae
+content_hash: c5dd97af228fdd94
 ---
+
 # Rare Event Analysis of Large Language Models
 
 **Conference**: ICML2026 Oral Spotlight  
@@ -139,9 +143,9 @@ Model: TinyStories-8M, fixed 16-token prompt, 100-token completion; total token 
 
 - [\[ACL 2025\] Behavioral Analysis of Information Salience in Large Language Models](../../ACL2025/llm_nlp/behavioral_analysis_of_information_salience_in_large_language_models.md)
 - [\[ACL 2025\] Large Language Models for Predictive Analysis: How Far Are They?](../../ACL2025/llm_nlp/large_language_models_for_predictive_analysis_how_far_are_they.md)
+- [\[ICML 2026\] Emergence of Hierarchical Emotion Organization in Large Language Models](emergence_of_hierarchical_emotion_organization_in_large_language_models.md)
 - [\[ACL 2025\] Explicit and Implicit Data Augmentation for Social Event Detection](../../ACL2025/llm_nlp/explicit_and_implicit_data_augmentation_for_social_event_detection.md)
-- [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/llm_nlp/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
-- [\[ICML 2026\] Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models](resting_neurons_active_insights_robustify_activation_sparsity_for_large_language.md)
+- [\[ICML 2026\] Creative Collision: Directorial Persona Steering and Competition in Large Language Models](creative_collision_directorial_persona_steering_and_competition_in_large_languag.md)
 
 </div>
 

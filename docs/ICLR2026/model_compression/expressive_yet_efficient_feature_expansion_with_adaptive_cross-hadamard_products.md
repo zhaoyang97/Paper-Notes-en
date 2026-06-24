@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Expressive yet Efficient Feature Expansion with Adaptive Cross-Hadamard Products
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper transforms the "element-wise multiplication (Hadamard product)" into a learnable and efficient feature expansion operator called ACH. By utilizing differentiable discrete sampling to automatically select channels for cross-multiplication and stabilization via dynamic softsign normalization, the method expand
+  [ICLR 2026][Model Compression][Hadamard product] This paper transforms the "element-wise multiplication (Hadamard product)" into a learnable and efficient feature expansion operator called ACH. By utilizing differentiable discrete sampling to automatically select channels for cross-multiplication and stabilization via dynamic softsign normalization, the method expands channel dimensions with nearly zero convolutional parameters. Integrated into Hadaptive-Net via NAS…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Hadamard product"
+  - "feature reuse"
+  - "differentiable discrete sampling"
+  - "channel expansion"
+  - "neural architecture search"
+  - "lightweight networks"
 date: 2026-05-08
-content_hash: 9c794df6c5a5ebfb
+content_hash: fa1c2a1a40513c5d
 ---
+
 # Expressive yet Efficient Feature Expansion with Adaptive Cross-Hadamard Products
 
 **Conference**: ICLR 2026  

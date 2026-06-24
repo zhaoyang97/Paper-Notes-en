@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] The authors model LLM factuality as a "cumulative product of per-claim scores," apply group-conditional conformal calibration to provide distribution-free coverage guarantees, and employ a multi-LLM ensemble to refine factuality score estimation. This approach strictly controls error rates while retaining as much truth
+  [ICLR 2026][LLM Evaluation][Conformal Inference] The authors model LLM factuality as a "cumulative product of per-claim scores," apply group-conditional conformal calibration to provide distribution-free coverage guarantees, and employ a multi-LLM ensemble to refine factuality score estimation. This approach strictly controls error rates while retaining as much truthful information as possible.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Conformal Inference"
+  - "Factuality Filtering"
+  - "Group-Conditional Coverage"
+  - "Retention Rate"
+  - "Multi-LLM Ensemble"
 date: 2026-05-08
-content_hash: b6addc865d6995b6
+content_hash: 51ef0e7b0651bffe
 ---
+
 # Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses
 
 **Conference**: ICLR 2026  
@@ -114,8 +120,8 @@ MACI consistently met the target coverage across almost all groups and target le
 - [\[ICLR 2026\] AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size](adablock-dllm_semantic-aware_diffusion_llm_inference_via_adaptive_block_size.md)
 - [\[ICML 2026\] Margin-Adaptive Confidence Ranking for Reliable LLM Judgement](../../ICML2026/llm_evaluation/margin-adaptive_confidence_ranking_for_reliable_llm_judgement.md)
 - [\[ACL 2026\] Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference](../../ACL2026/llm_evaluation/statistically_reliable_llm-based_ranking_evaluation_via_prediction-powered_infer.md)
-- [\[ICLR 2026\] Sci2Pol：评测与微调 LLM 的「科学→政策简报」生成能力](sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
 - [\[ICLR 2026\] Log Probability Tracking of LLM APIs](log_probability_tracking_of_llm_apis.md)
+- [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
 
 </div>
 

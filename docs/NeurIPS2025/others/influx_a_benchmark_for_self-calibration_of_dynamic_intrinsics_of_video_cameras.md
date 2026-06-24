@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras
 description: >-
-  [NeurIPS 2025][camera intrinsics] This paper introduces InFlux, the first real-world video benchmark with per-frame ground-truth dynamic camera intrinsics (386 videos…
+  [NeurIPS 2025][camera intrinsics] This paper introduces InFlux, the first real-world video benchmark with per-frame ground-truth dynamic camera intrinsics (386 videos, 143K+ annotated frames). Accurate annotations are achieved via a lookup table (LUT) mapping lens metadata to intrinsic parameters. The benchmark reveals that existing intrinsic prediction methods perform poorly under dynamic intrinsic settings.
 tags:
   - "NeurIPS 2025"
   - "camera intrinsics"
@@ -11,7 +11,7 @@ tags:
   - "lookup table"
   - "video 3D understanding"
 date: 2026-05-08
-content_hash: fdce33609e965eb9
+content_hash: 35cb4d1b74eed12d
 ---
 
 # InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras
@@ -138,8 +138,8 @@ On synthetic calibration scenes rendered in Blender, the improved Kalibr versus 
 - [\[NeurIPS 2025\] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases](rdb2g-bench_a_comprehensive_benchmark_for_automatic_graph_modeling_of_relational.md)
 - [\[NeurIPS 2025\] Contextual Dynamic Pricing with Heterogeneous Buyers](contextual_dynamic_pricing_with_heterogeneous_buyers.md)
 - [\[NeurIPS 2025\] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)
-- [\[ICLR 2026\] Measuring Uncertainty Calibration](../../ICLR2026/others/measuring_uncertainty_calibration.md)
-- [\[ICCV 2025\] HyTIP: Hybrid Temporal Information Propagation for Masked Conditional Residual Video Coding](../../ICCV2025/others/hytip_hybrid_temporal_information_propagation_for_masked_conditional_residual_vi.md)
+- [\[CVPR 2025\] Order-One Rolling Shutter Cameras](../../CVPR2025/others/order-one_rolling_shutter_cameras.md)
+- [\[CVPR 2025\] Uncertainty Weighted Gradients for Model Calibration](../../CVPR2025/others/uncertainty_weighted_gradients_for_model_calibration.md)
 
 </div>
 

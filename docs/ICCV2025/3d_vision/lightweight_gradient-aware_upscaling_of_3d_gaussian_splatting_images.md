@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lightweight Gradient-Aware Upscaling of 3D Gaussian Splatting Images
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] A lightweight image upscaling technique tailored for 3DGS is proposed, leveraging analytic image gradients from Gaussian primitives for gradient-aware bicubic spline interpol…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] A lightweight image upscaling technique tailored for 3DGS is proposed, leveraging analytic image gradients from Gaussian primitives for gradient-aware bicubic spline interpolation. Without any deep learning inference, the method achieves 3–4× rendering acceleration while surpassing standard bicubic interpolation and DL-based upscaling in reconstruction quality.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "spline interpolation"
   - "lightweight rendering"
 date: 2026-05-08
-content_hash: d3e31d55c3286733
+content_hash: 279984c296b5e039
 ---
 
 # Lightweight Gradient-Aware Upscaling of 3D Gaussian Splatting Images
@@ -159,9 +159,9 @@ Qualitative comparisons on 2D interpolation benchmarks show that analytic gradie
 
 - [\[ICCV 2025\] CoMoGaussian: Continuous Motion-Aware Gaussian Splatting from Motion-Blurred Images](comogaussian_continuous_motionaware_gaussian_splatting_from.md)
 - [\[ICCV 2025\] EvaGaussians: Event Stream Assisted Gaussian Splatting from Blurry Images](evagaussians_event_stream_assisted_gaussian_splatting_from_blurry_images.md)
+- [\[ICLR 2026\] Gradient-Direction-Aware Density Control for 3D Gaussian Splatting](../../ICLR2026/3d_vision/gradient-direction-aware_density_control_for_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
-- [\[ICCV 2025\] Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction](curve-aware_gaussian_splatting_for_3d_parametric_curve_reconstruction.md)
-- [\[ICCV 2025\] CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from A Single-View Image](catsplat_contextaware_transformer_with_spatial_guidance_for.md)
+- [\[ECCV 2024\] Pixel-GS: Density Control with Pixel-aware Gradient for 3D Gaussian Splatting](../../ECCV2024/3d_vision/pixel-gs_density_control_with_pixel-aware_gradient_for_3d_gaussian_splatting.md)
 
 </div>
 

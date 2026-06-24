@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Predictive Prefetching for Retrieval-Augmented Generation
 description: >-
-  [ICML 2026][Information Retrieval & RAG][RAG] By learning "semantic precursors appearing 8–16 tokens before uncertainty" from transformer hidden states and attention patterns, this paper introduces a trio consisting of RetrievalPredictor + ContextMonitor + QueryGenerator. This transforms RAG retrieval from a synchronous blocking process into predictive asynchronou
+  [ICML2026][Information Retrieval & RAG][RAG] By learning "semantic precursors appearing 8–16 tokens before uncertainty" from transformer hidden states and attention patterns, this paper introduces a trio consisting of RetrievalPredictor + ContextMonitor + QueryGenerator. This transforms RAG retrieval from a synchronous blocking process into predictive asynchronous prefetching. On benchmarks such as HotpotQA, it reduces end-to-end latency by 43.5% and Time to First Token (TTFT…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ICML2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Asynchronous Retrieval"
+  - "Predictive Prefetching"
+  - "LLM Serving"
+  - "Latency Optimization"
 date: 2026-05-08
-content_hash: 25df2484be56c395
+content_hash: d9be8160999a88c4
 ---
+
 # Predictive Prefetching for Retrieval-Augmented Generation
 
 **Conference**: ICML2026  
@@ -135,15 +140,16 @@ Evaluated using Llama-3.1-8B on four QA benchmarks (HotpotQA, 2WikiMultiHopQA, N
 - Value: ⭐⭐⭐⭐⭐ RAG latency is the primary bottleneck for production. A 43.5% E2E reduction for a 0.5% EM cost is highly efficient and ready for deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](../../ACL2026/information_retrieval/feedback_adaptation_for_retrieval-augmented_generation.md)
 - [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] Counterfactual Reasoning for Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/counterfactual_reasoning_for_retrieval-augmented_generation.md)
 - [\[ICML 2026\] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding](lazyattention_efficient_retrieval-augmented_generation_with_deferred_positional_.md)
 - [\[ICML 2026\] Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation](hierarchical_abstract_tree_for_cross-document_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](../../NeurIPS2025/information_retrieval/chain-of-retrieval_augmented_generation.md)
 
 </div>
 

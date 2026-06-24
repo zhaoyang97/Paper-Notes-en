@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Faster Vision Transformers with Adaptive Patches
 description: >-
-  [ICLR 2026][Model Compression][Vision Transformer] APT (Adaptive Patch Transformer) employs multiple patch sizes within a single image—using large patches for flat regions and small patches for complex regions—to reduce the number of tokens at the source. This provides 30–50% speedup for any pretrained ViT with almost no performance drop, requiring only 1 epoch of fine
+  [ICLR 2026][Model Compression][Vision Transformer] APT (Adaptive Patch Transformer) employs multiple patch sizes within a single image—using large patches for flat regions and small patches for complex regions—to reduce the number of tokens at the source. This provides 30–50% speedup for any pretrained ViT with almost no performance drop, requiring only 1 epoch of fine-tuning to converge.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Vision Transformer
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Vision Transformer"
+  - "Adaptive Patch"
+  - "Entropy"
+  - "Token Reduction"
+  - "Sequence Packing"
+  - "Zero-initialized MLP"
 date: 2026-05-08
-content_hash: 853b83d24442b710
+content_hash: 4241a4fe14ff48f6
 ---
+
 # Faster Vision Transformers with Adaptive Patches
 
 **Conference**: ICLR 2026  
@@ -130,10 +136,10 @@ Downstream tasks (fine-tuning for only 5% of iterations) are nearly equal to or 
 ## Related Papers
 
 - [\[ICLR 2026\] Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers](thicker_and_quicker_the_jumbo_token_for_fast_plain_vision_transformers.md)
+- [\[ICLR 2026\] Vulcan: Tailoring Compact Class-Specific Vision Transformers for Edge Intelligence](vulcan_crafting_compact_class-specific_vision_transformers_for_edge_intelligence.md)
 - [\[NeurIPS 2025\] REOrdering Patches Improves Vision Models](../../NeurIPS2025/model_compression/reordering_patches_improves_vision_models.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](../../CVPR2026/model_compression/binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](../../AAAI2026/model_compression/distillation_dynamics_towards_understanding_feature-based_di.md)
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
+- [\[AAAI 2026\] Stratified Knowledge-Density Super-Network for Scalable Vision Transformers](../../AAAI2026/model_compression/stratified_knowledge-density_super-network_for_scalable_vision_transformers.md)
 
 </div>
 

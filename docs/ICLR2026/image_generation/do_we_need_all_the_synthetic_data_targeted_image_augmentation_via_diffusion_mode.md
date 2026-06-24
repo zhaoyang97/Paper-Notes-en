@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] TADA shifts away from expanding the entire training set by 10–30x using diffusion models. Instead, it identifies the 30–40% "slow-learning" samples that are difficult to learn early in training and selectively augments them using real-image-guided diffusion to generate synthetic images that "preserve semantic features
+  [ICLR2026][Image Generation][Targeted Data Augmentation] TADA shifts away from expanding the entire training set by 10–30x using diffusion models. Instead, it identifies the 30–40% "slow-learning" samples that are difficult to learn early in training and selectively augments them using real-image-guided diffusion to generate synthetic images that "preserve semantic features while replacing noise." Theoretical and experimental results demonstrate that augmenting only this subs…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - SAM
+  - "ICLR2026"
+  - "Image Generation"
+  - "Targeted Data Augmentation"
+  - "Diffusion Models"
+  - "Slow-learnable Features"
+  - "SAM"
+  - "Generalization"
 date: 2026-05-08
-content_hash: c0899e69dd22981a
+content_hash: 63da6fe7a06af624
 ---
+
 # Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models
 
 **Conference**: ICLR2026  
@@ -138,6 +142,7 @@ Transfer Learning (Fine-tuning ImageNet-pretrained ResNet18, Test Error %):
 - Value: ⭐⭐⭐⭐⭐ High practical value for cost-effective synthetic augmentation and theoretical grounding of "less is more."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

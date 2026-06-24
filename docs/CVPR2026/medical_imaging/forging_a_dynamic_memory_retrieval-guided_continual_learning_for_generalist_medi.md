@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models
 description: >-
-  [CVPR 2026][Medical Imaging][Knowledge Distillation] PRIMED introduces Retrieval-Augmented Generation (RAG) into the continual learning of medical VLMs. It utilizes an 18-million-scale multi-modal medical retrieval library and a 3,000-item question pool as "dynamic memory." During fine-tuning, image-text pairs are retrieved in real-time as replay data. Combined with Cont
+  [CVPR 2026][Medical Imaging][Continual Learning] PRIMED introduces Retrieval-Augmented Generation (RAG) into the continual learning of medical VLMs. It utilizes an 18-million-scale multi-modal medical retrieval library and a 3,000-item question pool as "dynamic memory." During fine-tuning, image-text pairs are retrieved in real-time as replay data. Combined with Contrastive Knowledge Distillation and Dynamic Fisher Weight constraints, it achieves SOTA across all metrics on th…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Continual Learning"
+  - "Retrieval-Augmented Generation (RAG)"
+  - "Knowledge Distillation"
+  - "Medical VLM"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 9b4165097bf6fa2f
+content_hash: 21068d903c41de09
 ---
+
 # Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ Module-level ablation (HieraMedTransfer Order I, Table 3):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Attention Consistent Longitudinal Medical Visual Question Answering Guided by Vision Foundation Models](attention_consistent_longitudinal_medical_visual_question_answering_guided_by_vi.md)
+- [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
 - [\[CVPR 2026\] SAR2Net: Learning Spatially Anchored Representations for Retrieval-Guided Cross-Stain Alignment](sar2net_learning_spatially_anchored_representations_for_retrieval-guided_cross-s.md)
 - [\[NeurIPS 2025\] EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging](../../NeurIPS2025/medical_imaging/ewc-guided_diffusion_replay_for_exemplar-free_continual_learning_in_medical_imag.md)
-- [\[CVPR 2026\] DK-DDIL: Adaptive Knowledge Retention for Dynamic Domain-Incremental Learning in Medical Imaging](dk-ddil_adaptive_knowledge_retention_for_dynamic_domain-incremental_learning_in_.md)
 - [\[CVPR 2026\] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training](invcoss_inversion-driven_continual_self-supervised_learning_in_medical_multi-mod.md)
+- [\[CVPR 2026\] DK-DDIL: Adaptive Knowledge Retention for Dynamic Domain-Incremental Learning in Medical Imaging](dk-ddil_adaptive_knowledge_retention_for_dynamic_domain-incremental_learning_in_.md)
 
 </div>
 

@@ -46,7 +46,7 @@ item_total: 12
 
 **🔬 ICLR2026** · **12** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (17)](../../ACL2026/nlp_generation/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (17)](../../ACL2026/nlp_generation/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md) · [🧪 ICML2025 (1)](../../ICML2025/nlp_generation/index.md) · [💬 ACL2025 (27)](../../ACL2025/nlp_generation/index.md)
 
 🔥 **Top topics:** Diffusion Models ×4 · LLM ×2
 

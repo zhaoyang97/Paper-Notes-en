@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NOTAM-Evolve: A Knowledge-Guided Self-Evolving Optimization Framework with LLMs for NOTAM Interpretation
 description: >-
-  [AAAI 2026][Graph Learning][NOTAM Parsing] This paper proposes NOTAM-Evolve, a self-evolving framework that achieves dynamic knowledge grounding via knowledge graph-enhanced tabular retrieval (KG-TableRAG)…
+  [AAAI 2026][Graph Learning][NOTAM Parsing] This paper proposes NOTAM-Evolve, a self-evolving framework that achieves dynamic knowledge grounding via knowledge graph-enhanced tabular retrieval (KG-TableRAG), combined with iterative SFT+DPO preference optimization and a multi-view voting inference mechanism. The framework enables a 7B-parameter LLM to autonomously master deep parsing of complex aviation NOTAMs, achieving a 30.4% accuracy improvement over the base LLM.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Self-Evolving Optimization"
   - "Aviation Safety"
 date: 2026-05-08
-content_hash: 8867cb9cd1414d8e
+content_hash: 817e8e44f87e7d3e
 ---
 
 # NOTAM-Evolve: A Knowledge-Guided Self-Evolving Optimization Framework with LLMs for NOTAM Interpretation
@@ -213,11 +213,11 @@ Per-category performance across iterative self-optimization:
 
 ## Related Papers
 
-- [\[AAAI 2026\] Assessing LLMs for Serendipity Discovery in Knowledge Graphs: A Case for Drug Repurposing](assessing_llms_for_serendipity_discovery_in_knowledge_graphs_a_case_for_drug_rep.md)
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
-- [\[AAAI 2026\] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models](pathmind_a_retrieve-prioritize-reason_framework_for_knowledge_graph_reasoning_wi.md)
+- [\[AAAI 2026\] Assessing LLMs for Serendipity Discovery in Knowledge Graphs: A Case for Drug Repurposing](assessing_llms_for_serendipity_discovery_in_knowledge_graphs_a_case_for_drug_rep.md)
 - [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](self-adaptive_graph_mixture_of_models.md)
-- [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](self-correction_distillation_for_structured_data_question_answering.md)
+- [\[ICLR 2026\] Escaping the Homophily Trap: A Threshold-free Graph Outlier Detection Framework via Clustering-guided Edge Reweighting](../../ICLR2026/graph_learning/escaping_the_homophily_trap_a_threshold-free_graph_outlier_detection_framework_v.md)
+- [\[AAAI 2026\] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models](pathmind_a_retrieve-prioritize-reason_framework_for_knowledge_graph_reasoning_wi.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Masked Generative Policy for Robotic Control
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] Discretizes robot actions into tokens and utilizes a "Masked Generative Transformer" from image generation to predict entire action sequences in parallel, followed by resampling only low-confidence tokens. This removes the bottlenecks of multi-step denoising in diffusion policies and token-by-token decoding in autoregr
+  [ICLR 2026][Robotics][Masked generation] Discretizes robot actions into tokens and utilizes a "Masked Generative Transformer" from image generation to predict entire action sequences in parallel, followed by resampling only low-confidence tokens. This removes the bottlenecks of multi-step denoising in diffusion policies and token-by-token decoding in autoregressive policies, achieving globally coherent and reliable control in dynamic, partially observable…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Masked generation"
+  - "action tokens"
+  - "imitation learning"
+  - "parallel decoding"
+  - "non-Markovian tasks"
+  - "adaptive replanning"
 date: 2026-05-08
-content_hash: 62c3866d57d68330
+content_hash: 96d8079878ea15a1
 ---
+
 # Masked Generative Policy for Robotic Control
 
 **Conference**: ICLR 2026  
@@ -146,8 +153,8 @@ Key Hyperparameter Ablations: MGP-Short refinement steps $r=2$ vs $r=1$ gain 14.
 - [\[ICLR 2026\] Much Ado About Noising: Dispelling the Myths of Generative Robotic Control](much_ado_about_noising_dispelling_the_myths_of_generative_robotic_control.md)
 - [\[CVPR 2026\] MaskDexGrasp: Generative Masked Modeling for Part-Aware Dexterous Grasp Synthesis](../../CVPR2026/robotics/maskdexgrasp_generative_masked_modeling_for_part-aware_dexterous_grasp_synthesis.md)
 - [\[ICLR 2026\] Policy Contrastive Decoding for Robotic Foundation Models](policy_contrastive_decoding_for_robotic_foundation_models.md)
+- [\[ICLR 2026\] Scaling up Memory for Robotic Control via Experience Retrieval](scaling_up_memory_for_robotic_control_via_experience_retrieval.md)
 - [\[ICLR 2026\] Real-Time Robot Execution with Masked Action Chunking](real-time_robot_execution_with_masked_action_chunking.md)
-- [\[ICLR 2026\] Cortical Policy: A Dual-Stream View Transformer for Robotic Manipulation](cortical_policy_a_dual-stream_view_transformer_for_robotic_manipulation.md)
 
 </div>
 

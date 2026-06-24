@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MedTVT-R1: A Multimodal LLM Empowering Medical Reasoning and Diagnosis
 description: >-
-  [CVPR 2026][Medical Imaging][GRPO] MedTVT-R1 unifies three types of heterogeneous data from the same patient—ECG (time-series), chest X-ray (CXR, image), and lab results (LAB, table)—into a single MLLM. By utilizing a "modality-aware layer + chain-of-evidence instruction data + GRPO reinforcement fine-tuning," it achieves interpretable multi-disease dia
+  [CVPR 2026][Medical Imaging][Multimodal medical diagnosis] MedTVT-R1 unifies three types of heterogeneous data from the same patient—ECG (time-series), chest X-ray (CXR, image), and lab results (LAB, table)—into a single MLLM. By utilizing a "modality-aware layer + chain-of-evidence instruction data + GRPO reinforcement fine-tuning," it achieves interpretable multi-disease diagnosis, outperforming both general and medical-specific MLLMs in clinical utility (F1…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - GRPO
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Multimodal medical diagnosis"
+  - "ECG-CXR-LAB trimodal"
+  - "modality-aware layer"
+  - "GRPO"
+  - "chain-of-evidence reasoning"
 date: 2026-05-08
-content_hash: ec8d16b411ffbd56
+content_hash: eb87ef29eec4e811
 ---
+
 # MedTVT-R1: A Multimodal LLM Empowering Medical Reasoning and Diagnosis
 
 **Conference**: CVPR 2026  
@@ -134,8 +139,8 @@ Modality ablation (Table 3, drop relative to full trimodal): The full model achi
 ## Related Papers
 
 - [\[CVPR 2026\] Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis](clinically-grounded_counterfactual_reasoning_for_medical_video_diagnosis.md)
-- [\[CVPR 2026\] OctoMed: Data Recipes for State-of-the-Art Multimodal Medical Reasoning](octomed_data_recipes_for_state-of-the-art_multimodal_medical_reasoning.md)
 - [\[CVPR 2026\] MedLoc-R1: Performance-Aware Curriculum Reward Scheduling for GRPO-Based Medical Visual Grounding](medloc-r1_performance-aware_curriculum_reward_scheduling_for_grpo-based_medical_.md)
+- [\[CVPR 2026\] OctoMed: Data Recipes for State-of-the-Art Multimodal Medical Reasoning](octomed_data_recipes_for_state-of-the-art_multimodal_medical_reasoning.md)
 - [\[CVPR 2026\] X-PCR: A Benchmark for Cross-modality Progressive Clinical Reasoning in Ophthalmic Diagnosis](x-pcr_a_benchmark_for_cross-modality_progressive_clinical_reasoning_in_ophthalmi.md)
 - [\[CVPR 2026\] EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease](emad_evidence-centric_grounded_multimodal_diagnosis_for_alzheimers_disease.md)
 

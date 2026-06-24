@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GS-ASM: 2DGS-Supervised Active Stereo Matching
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the accuracy limitations in active stereo matching caused by the lack of ground truth (GT) and reliance on self-supervision, this paper utilizes 2D Gaussian Splatting (2DGS) to reconstruct geometry from real scenes and render high-quality disparity "proxy labels." This transforms unsupervised active stereo n
+  [CVPR 2026][3D Vision][Active Stereo Matching] Addressing the accuracy limitations in active stereo matching caused by the lack of ground truth (GT) and reliance on self-supervision, this paper utilizes 2D Gaussian Splatting (2DGS) to reconstruct geometry from real scenes and render high-quality disparity "proxy labels." This transforms unsupervised active stereo networks into "supervised" training, complemented by a hybrid supervision regularization strategy that dynamically…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Active Stereo Matching"
+  - "Depth Estimation"
+  - "2D Gaussian Splatting"
+  - "Proxy Labels"
+  - "Hybrid Supervision"
 date: 2026-05-08
-content_hash: 1e452c27a48b0de2
+content_hash: ed844a7c92f195dc
 ---
+
 # GS-ASM: 2DGS-Supervised Active Stereo Matching
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ Each component provides consistent gains. Proxy labels alone reduce EPE by ~26%.
 
 ## Related Papers
 
-- [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
-- [\[CVPR 2026\] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping](magician_efficient_long-term_planning_with_imagined_gaussians_for_active_mapping.md)
-- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
-- [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](240fps_stereo_vision_from_monocular_mixed_spikes.md)
+- [\[CVPR 2025\] GS-2DGS: Geometrically Supervised 2DGS for Reflective Object Reconstruction](../../CVPR2025/3d_vision/gs-2dgs_geometrically_supervised_2dgs_for_reflective_object_reconstruction.md)
 - [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
+- [\[CVPR 2026\] PIP-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching](pip-stereo_progressive_iterations_pruner_for_iterative_optimization_based_stereo.md)
+- [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
+- [\[CVPR 2026\] PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts](promptstereo_zero-shot_stereo_matching_via_structure_and_motion_prompts.md)
 
 </div>
 

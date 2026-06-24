@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] From Movement to Cognitive Maps: RNNs Reveal How Locomotor Development Shapes Hippocampal Spatial Coding
 description: >-
-  [ICLR 2026][Others][hippocampus] Combining cluster analysis of rat pup locomotor development with shallow RNN predictive learning models, this paper provides the first computational evidence that developmental changes in locomotor statistics (crawling → walking → running → adult) drive the sequential emergence of hippocampal spatial-tuned neurons (pla
+  [ICLR 2026 Oral][hippocampus] Combining cluster analysis of rat pup locomotor development with shallow RNN predictive learning models, this paper provides the first computational evidence that developmental changes in locomotor statistics (crawling → walking → running → adult) drive the sequential emergence of hippocampal spatial-tuned neurons (place cells, head direction cells, and conjunctive cells). The model quantitatively recovers the developmental timeline of rat hippoc…
 tags:
-  - ICLR 2026
-  - Others
-  - hippocampus
-  - spatial coding
-  - locomotor development
-  - RNN
-  - place cells
-  - head direction cells
+  - "ICLR 2026 Oral"
+  - "hippocampus"
+  - "spatial coding"
+  - "locomotor development"
+  - "RNN"
+  - "place cells"
+  - "head direction cells"
+  - "cognitive maps"
 date: 2026-05-08
-content_hash: fc2bedaf0711e415
+content_hash: 907d4aeadc20fdda
 ---
+
 # From Movement to Cognitive Maps: RNNs Reveal How Locomotor Development Shapes Hippocampal Spatial Coding
 
 **Conference**: ICLR 2026 Oral  
@@ -139,8 +140,8 @@ where $p_i$ is the occupancy probability in the $i$-th spatial bin, and $r_i$ an
 ## Related Papers
 
 - [\[ICML 2026\] How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks](../../ICML2026/others/how_the_optimizer_shapes_learned_solutions_in_equivariant_neural_networks.md)
-- [\[ICLR 2026\] HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning](hippotune_a_hippocampal_associative_loopinspired_fine-tuning_method_for_continua.md)
 - [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
+- [\[ICLR 2026\] HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning](hippotune_a_hippocampal_associative_loopinspired_fine-tuning_method_for_continua.md)
 - [\[ICLR 2026\] Stable and Scalable Deep Predictive Coding Networks with Meta-Prediction Errors](stable_and_scalable_deep_predictive_coding_networks_with_meta-prediction_errors.md)
 - [\[ICLR 2026\] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings](characterizing_and_optimizing_the_spatial_kernel_of_multi_resolution_hash_encodi.md)
 

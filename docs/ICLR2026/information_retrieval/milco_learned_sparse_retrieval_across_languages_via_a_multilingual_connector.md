@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MILCO: Learned Sparse Retrieval Across Languages via a Multilingual Connector
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Learned Sparse Retrieval] MILCO employs a "multilingual connector + English MLM head" to project text from 39+ languages into a shared English vocabulary sparse space. Combined with "Sparse Alignment Pre-training" to prevent semantic collapse and a "LexEcho dual-view" to recover rare entities lost during translation, a single 560M sparse model
+  [ICLR 2026][Information Retrieval & RAG][Learned Sparse Retrieval] MILCO employs a "multilingual connector + English MLM head" to project text from 39+ languages into a shared English vocabulary sparse space. Combined with "Sparse Alignment Pre-training" to prevent semantic collapse and a "LexEcho dual-view" to recover rare entities lost during translation, a single 560M sparse model outperforms dense, sparse, and multi-vector baselines such as BGE-M3 and Qwen3-Embed in both…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Learned Sparse Retrieval
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Learned Sparse Retrieval"
+  - "Multilingual Connector"
+  - "English Vocabulary Pivot"
+  - "Sparse Alignment Pre-training"
+  - "LexEcho Dual-View"
 date: 2026-05-08
-content_hash: d9ea69be5761c592
+content_hash: 4799b5ad0d53e97c
 ---
+
 # MILCO: Learned Sparse Retrieval Across Languages via a Multilingual Connector
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Image-to-Point Cloud Feature Back-Projection for Multimodal Training of 3D Semantic Segmentation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] IPFP proposes a "training-only" image-LiDAR fusion strategy: aggregated image features are **back-projected into the 3D physical space** based on estimated depths, residing in the same coordinate system as LiDAR features and sharing a single-branch backbone for training. At inference time, the image branch is disabled
+  [CVPR 2026][3D Vision][Multimodal fusion] IPFP proposes a "training-only" image-LiDAR fusion strategy: aggregated image features are **back-projected into the 3D physical space** based on estimated depths, residing in the same coordinate system as LiDAR features and sharing a single-branch backbone for training. At inference time, the image branch is disabled for pure LiDAR deployment. Ours consistently improves SOTA segmentation models like PTv3 and SPVCNN on nuScenes/KITTI/…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multimodal fusion"
+  - "3D semantic segmentation"
+  - "feature back-projection"
+  - "single-branch network"
+  - "LiDAR-only inference"
 date: 2026-05-08
-content_hash: fecd4711a25b0c6c
+content_hash: 6e5c4aadc884f78a
 ---
+
 # Image-to-Point Cloud Feature Back-Projection for Multimodal Training of 3D Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -157,8 +163,8 @@ Ours has nearly the same parameters as the baseline (46.16M vs. 89.66M for Point
 - [\[CVPR 2026\] PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3D Gaussian Splatting](pointgs_semantic-consistent_unsupervised_3d_point_cloud_segmentation_with_3d_gau.md)
 - [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
 - [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
+- [\[CVPR 2026\] Multimodal Semantic Bias Mitigation for Diverse Text-To-3D Generation](multimodal_semantic_bias_mitigation_for_diverse_text-to-3d_generation.md)
 
 </div>
 

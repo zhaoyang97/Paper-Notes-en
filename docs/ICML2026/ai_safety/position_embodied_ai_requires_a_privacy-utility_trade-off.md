@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Embodied AI Requires a Privacy-Utility Trade-off
 description: >-
-  [ICML 2026][AI Safety][embodied AI] This paper is a position paper advocating that privacy in embodied AI cannot be addressed with single-stage patches. Instead, it must be treated as an architecture-level dynamic control signal spanning the entire lifecycle of instruction / perception / planning / interaction. The authors propose the SPINE framework, wh
+  [ICML 2026][AI Safety][embodied AI] This paper is a position paper advocating that privacy in embodied AI cannot be addressed with single-stage patches. Instead, it must be treated as an architecture-level dynamic control signal spanning the entire lifecycle of instruction / perception / planning / interaction. The authors propose the SPINE framework, which utilizes an L1-L4 four-level privacy classification matrix to coordinately adjust agent behavior across all stages.
 tags:
-  - ICML 2026
-  - AI Safety
-  - embodied AI
+  - "ICML 2026"
+  - "AI Safety"
+  - "embodied AI"
+  - "privacy-utility trade-off"
+  - "SPINE framework"
+  - "lifecycle privacy"
+  - "hierarchical control"
 date: 2026-05-08
-content_hash: f08cd824d48a196c
+content_hash: 665a3958a4e62b3c
 ---
+
 # Position: Embodied AI Requires a Privacy-Utility Trade-off
 
 **Conference**: ICML 2026  
@@ -108,10 +113,10 @@ The paper uses the navigation case study to observe the degradation of task succ
 ## Related Papers
 
 - [\[NeurIPS 2025\] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy](../../NeurIPS2025/ai_safety/mitigating_privacy-utility_trade-off_in_decentralized_federated_learning_via_f-d.md)
-- [\[ICML 2025\] Clients Collaborate: Flexible Differentially Private Federated Learning with Guaranteed Improvement of Utility-Privacy Trade-off](../../ICML2025/ai_safety/clients_collaborate_flexible_differentially_private_federated_learning_with_guar.md)
-- [\[ICML 2026\] Persuasive Privacy](persuasive_privacy.md)
+- [\[ICML 2026\] Position: 'AI Alignment' Encompasses Competing Technical Priorities](ai_alignment_encompasses_competing_technical_priorities.md)
+- [\[ICML 2026\] Position: AI Researchers Must Help Lead Arms Control to Mitigate Military AI Risks](ai_researchers_must_help_lead_arms_control_to_mitigate_military_ai_risks.md)
 - [\[ICML 2026\] Position: Retire the "Positive Backdoor" Label -- Secret Alignment Requires Strict and Systematic Evaluation](position_retire_the_positive_backdoor_label_--_secret_alignment_requires_strict_.md)
-- [\[AAAI 2026\] Breaking the Adversarial Robustness-Performance Trade-off in Text Classification via Manifold Purification](../../AAAI2026/ai_safety/breaking_the_adversarial_robustness-performance_trade-off_in_text_classification.md)
+- [\[ICML 2025\] Clients Collaborate: Flexible Differentially Private Federated Learning with Guaranteed Improvement of Utility-Privacy Trade-off](../../ICML2025/ai_safety/clients_collaborate_flexible_differentially_private_federated_learning_with_guar.md)
 
 </div>
 

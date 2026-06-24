@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Uniformity: Sample and Frequency Meta Weighting for Post-Training Quantization of Diffusion Models
 description: >-
-  [ICLR 2026][Model Compression][Diffusion Model] This paper proposes a sample and frequency meta-weighting method for post-training quantization (PTQ) of diffusion models. Instead of treating all calibration samples and frequency components equally, it automatically learns which samples and which timestep-specific frequency components should influence quantization ca
+  [ICLR2026][Model Compression][Post-Training Quantization] This paper proposes a sample and frequency meta-weighting method for post-training quantization (PTQ) of diffusion models. Instead of treating all calibration samples and frequency components equally, it automatically learns which samples and which timestep-specific frequency components should influence quantization calibration through bi-level optimization, stably reducing FID in low-bit diffusion models.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Diffusion Model
+  - "ICLR2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Diffusion Models"
+  - "Calibration Sample Weighting"
+  - "Frequency Domain Loss"
+  - "Meta-Learning"
 date: 2026-05-08
-content_hash: 1327037d3eb89346
+content_hash: 74b921d462acda62
 ---
+
 # Beyond Uniformity: Sample and Frequency Meta Weighting for Post-Training Quantization of Diffusion Models
 
 **Conference**: ICLR2026  
@@ -128,14 +133,17 @@ Evaluations on DDPM and LDM-4 across CIFAR-10, LSUN-Bedrooms, FFHQ, and ImageNet
 
 <div class="related-papers" markdown="1">
 
-- **Q-Diffusion**: Post-training Quantization of Diffusion Models (ICCV 2023)
-- **TFMQ-DM**: Temporal Feature Maintenance Quantization for Diffusion Models (CVPR 2024)
-- **PTQ4DM**: Post-Training Quantization for Diffusion Models (CVPR 2023)
+## Related Papers
+
+- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
+- [\[ECCV 2024\] MetaAug: Meta-Data Augmentation for Post-Training Quantization](../../ECCV2024/model_compression/metaaug_meta-data_augmentation_for_post-training_quantization.md)
+- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
+- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] UniVerse utilizes a unified "Reference Condition Extractor (RCE)" to simultaneously extract visual condition latent variables and text modulation offsets from **unsegmented in-the-wild photos** based on reference prompts. This achieves segmentation-free, disentangled, and composable multi-concept personalized generatio
+  [CVPR 2026][Image Generation][Subject-driven generation] UniVerse utilizes a unified "Reference Condition Extractor (RCE)" to simultaneously extract visual condition latent variables and text modulation offsets from **unsegmented in-the-wild photos** based on reference prompts. This achieves segmentation-free, disentangled, and composable multi-concept personalized generation on Diffusion Transformer, outperforming existing methods on XVerseBench and the newly proposed UniVer…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Subject-driven generation"
+  - "Multi-concept personalization"
+  - "Diffusion Transformer"
+  - "Modulation"
+  - "Segmentation-free"
 date: 2026-05-08
-content_hash: 303c6cc0dbb9a18a
+content_hash: 25b87b03b4f6e191
 ---
+
 # UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization
 
 **Conference**: CVPR 2026  

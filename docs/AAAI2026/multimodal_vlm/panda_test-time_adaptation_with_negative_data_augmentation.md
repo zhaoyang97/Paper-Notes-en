@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Panda: Test-Time Adaptation with Negative Data Augmentation
 description: >-
-  [AAAI2026][Multimodal VLM][test-time adaptation] This paper proposes Panda, which generates semantics-destroying but corruption-preserving images via patch shuffling as negative data augmentation (NDA)…
+  [AAAI2026][Multimodal VLM][test-time adaptation] This paper proposes Panda, which generates semantics-destroying but corruption-preserving images via patch shuffling as negative data augmentation (NDA), and uses their features to offset original embeddings to suppress corruption-induced prediction bias. Panda is plug-and-play with less than 10% computational overhead and consistently improves various TTA methods.
 tags:
   - "AAAI2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "prediction bias"
   - "corruption robustness"
 date: 2026-05-08
-content_hash: 38084c7730713091
+content_hash: bcf20222a4b0e773
 ---
 
 # Panda: Test-Time Adaptation with Negative Data Augmentation
@@ -103,11 +103,11 @@ Evaluations are conducted on CIFAR-10-C, CIFAR-100-C, and ImageNet-C (severity l
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
+- [\[ICLR 2026\] Bilateral Information-aware Test-time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/bilateral_information-aware_test-time_adaptation_for_vision-language_models.md)
+- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](../../CVPR2026/multimodal_vlm/dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
+- [\[CVPR 2026\] Condensed Test-Time Adaptation of VLMs for Action Recognition](../../CVPR2026/multimodal_vlm/condensed_test-time_adaptation_of_vlms_for_action_recognition.md)
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
-- [\[NeurIPS 2025\] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions](../../NeurIPS2025/multimodal_vlm/mint_a_simple_testtime_adaptation_of_visionlanguage_models_a.md)
-- [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
-- [\[ICCV 2025\] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation](../../ICCV2025/multimodal_vlm/is_less_more_exploring_token_condensation_as_training-free_test-time_adaptation.md)
-- [\[AAAI 2026\] Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)](bridging_modalities_via_progressive_re-alignment_for_multimo.md)
 
 </div>
 

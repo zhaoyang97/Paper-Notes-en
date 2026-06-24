@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Toward Complete Merger Identification at Cosmic Noon with Deep Learning
 description: >-
-  [NeurIPS 2025 (ML4PS Workshop)][Physics & Scientific Computing][Galaxy merger identification] A ResNet18 is trained on simulated HST CANDELS images generated from IllustrisTNG50…
+  [NeurIPS 2025 (ML4PS Workshop)][Physics & Scientific Computing][Galaxy merger identification] A ResNet18 is trained on simulated HST CANDELS images generated from IllustrisTNG50, demonstrating for the first time that deep learning can successfully identify galaxy mergers at high redshift $1<z<1.5$, including minor mergers ($\mu \geq 1/10$) and low-mass galaxies ($M_\star > 10^8 M_\odot$), achieving an overall accuracy of ~73%. Model behavior is further analyzed through Grad-C…
 tags:
   - "NeurIPS 2025 (ML4PS Workshop)"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "IllustrisTNG"
   - "Grad-CAM"
 date: 2026-05-08
-content_hash: 44361e6e154784d8
+content_hash: a542f386158f9861
 ---
 
 # Toward Complete Merger Identification at Cosmic Noon with Deep Learning
@@ -136,10 +136,10 @@ Average performance across 3 random seeds:
 ## Related Papers
 
 - [\[ICLR 2026\] Deep Learning for Subspace Regression](../../ICLR2026/physics/deep_learning_for_subspace_regression.md)
-- [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
-- [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
-- [\[ICLR 2026\] MOSIV: Multi-Object System Identification from Videos](../../ICLR2026/physics/mosiv_multi-object_system_identification_from_videos.md)
-- [\[NeurIPS 2025\] One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs](oneshot_transfer_learning_nonlinear_pdes_perturbative_pinns.md)
+- [\[ICML 2025\] Rethink the Role of Deep Learning towards Large-scale Quantum Systems](../../ICML2025/physics/rethink_the_role_of_deep_learning_towards_large-scale_quantum_systems.md)
+- [\[ICLR 2026\] Incomplete Data, Complete Dynamics: A Diffusion Approach](../../ICLR2026/physics/incomplete_data_complete_dynamics_a_diffusion_approach.md)
+- [\[ICLR 2026\] Advancing Universal Deep Learning for Electronic-Structure Hamiltonian Prediction of Materials](../../ICLR2026/physics/advancing_universal_deep_learning_for_electronic-structure_hamiltonian_predictio.md)
+- [\[ICML 2026\] Quantum latent distributions in deep generative models](../../ICML2026/physics/quantum_latent_distributions_in_deep_generative_models.md)
 
 </div>
 

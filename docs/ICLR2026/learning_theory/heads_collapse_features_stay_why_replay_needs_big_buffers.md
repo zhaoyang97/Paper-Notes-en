@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Heads Collapse, Features Stay: Why Replay Needs Big Buffers
 description: >-
-  [ICLR 2026][learning_theory][Neural Collapse] Ours decouples "deep forgetting (feature space)" from "shallow forgetting (classification head)" and proves via Neural Collapse theory that any non-zero replay ratio asymptotically preserves the linear separability of old task features. However, small buffers cause the classification head to fall into "underdetermined
+  [ICLR 2026][Continual Learning Theory][Continual Learning] Ours decouples "deep forgetting (feature space)" from "shallow forgetting (classification head)" and proves via Neural Collapse theory that any non-zero replay ratio asymptotically preserves the linear separability of old task features. However, small buffers cause the classification head to fall into "underdetermined optimization," resulting in covariance rank deficiency and class mean expansion…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Neural Collapse
+  - "ICLR 2026"
+  - "Continual Learning Theory"
+  - "Neural Collapse"
+  - "OOD Detection"
+  - "Continual Learning"
+  - "Experience Replay"
+  - "Catastrophic Forgetting"
+  - "Linear Separability"
 date: 2026-05-08
-content_hash: 225022b911a17807
+content_hash: 2fda4059ba2ee5a5
 ---
+
 # Heads Collapse, Features Stay: Why Replay Needs Big Buffers
 
 **Conference**: ICLR 2026  
@@ -132,8 +138,8 @@ Experiments used ResNet and ViT from both random initialization and pre-trained 
 - [\[ICLR 2026\] Neural Collapse in Multi-Task Learning](neural_collapse_in_multi-task_learning.md)
 - [\[ICLR 2026\] Random Label Prediction Heads for Studying Memorization in Deep Neural Networks](random_label_prediction_heads_for_studying_memorization_in_deep_neural_networks.md)
 - [\[ICLR 2026\] Why Less is More (Sometimes): A Theory of Data Curation](why_less_is_more_sometimes_a_theory_of_data_curation.md)
+- [\[ICLR 2026\] Two (narrow) heads are better than (an arbitrarily wide) one](two_narrow_heads_are_better_than_an_arbitrarily_wide_one.md)
 - [\[ICLR 2026\] Why We Need New Benchmarks for Local Intrinsic Dimension Estimation](why_we_need_new_benchmarks_for_local_intrinsic_dimension_estimation.md)
-- [\[ICLR 2026\] Why Ask One When You Can Ask k? Learning-to-Defer to the Top-k Experts](why_ask_one_when_you_can_ask_k_learning-to-defer_to_the_top-k_experts.md)
 
 </div>
 

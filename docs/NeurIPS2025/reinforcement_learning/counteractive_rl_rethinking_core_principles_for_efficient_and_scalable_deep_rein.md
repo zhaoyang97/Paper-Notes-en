@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Counteractive TD] CoAct TD Learning challenges the random exploration paradigm of ε-greedy by selecting, with probability ε, the action that minimizes $Q(s…
+  [NeurIPS 2025 Spotlight][Reinforcement Learning][Counteractive TD] CoAct TD Learning challenges the random exploration paradigm of ε-greedy by selecting, with probability ε, the action that minimizes $Q(s,a)$ (rather than a random action) to obtain high temporal-difference signals. The paper theoretically proves that this produces larger TD errors, achieves a 248% performance improvement on Atari 100K, and requires only a 2-line code change with zero additional computation.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Reinforcement Learning"
   - "Counteractive TD"
   - "Q-value minimization"
@@ -12,7 +12,7 @@ tags:
   - "Atari 100K"
   - "zero overhead"
 date: 2026-05-08
-content_hash: 5b9e2edc1b585366
+content_hash: 5460f463799a83c4
 ---
 
 # Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning
@@ -122,11 +122,11 @@ The original TD loss is kept unchanged. The sole modification is the action sele
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](../../ICLR2026/reinforcement_learning/sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 - [\[NeurIPS 2025\] Horizon Reduction Makes RL Scalable](horizon_reduction_makes_rl_scalable.md)
 - [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](scalable_policy-based_rl_algorithms_for_pomdps.md)
-- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](../../ICLR2026/reinforcement_learning/sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
-- [\[NeurIPS 2025\] Adaptive Cooperative Transmission Design for URLLC via Deep RL](adaptive_cooperative_transmission_design_for_ultra-reliable_low-latency_communic.md)
 - [\[NeurIPS 2025\] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents](deep_rl_needs_deep_behavior_analysis_exploring_implicit_planning_by_model-free_a.md)
+- [\[NeurIPS 2025\] Adaptive Cooperative Transmission Design for URLLC via Deep RL](adaptive_cooperative_transmission_design_for_ultra-reliable_low-latency_communic.md)
 
 </div>
 

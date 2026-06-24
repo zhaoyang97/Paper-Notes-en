@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Learning Human Habits with Rule-Guided Active Inference
 description: >-
-  [ICLR 2026][Reinforcement Learning][Active Inference] This work extends active inference (AIF) into a "habit-forming" framework: it employs a bio-inspired wake–sleep algorithm to jointly learn world models and symbolic rules under a unified free energy objective. This allows agents to react instantaneously using high-confidence rules in familiar contexts while falling bac
+  [ICLR 2026][Reinforcement Learning][Active Inference] This work extends active inference (AIF) into a "habit-forming" framework: it employs a bio-inspired wake–sleep algorithm to jointly learn world models and symbolic rules under a unified free energy objective. This allows agents to react instantaneously using high-confidence rules in familiar contexts while falling back to EFE planning in novel scenarios, resulting in more accurate and faster human behavior prediction and…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Active Inference
-  - Free Energy
-  - Habit Learning
-  - Symbolic Rules
-  - Wake-Sleep
-  - Neuro-Symbolic
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Active Inference"
+  - "Free Energy"
+  - "Habit Learning"
+  - "Symbolic Rules"
+  - "Wake-Sleep"
+  - "Neuro-Symbolic"
 date: 2026-05-08
-content_hash: c2bdd034e2db90b7
+content_hash: 1601b1668070cfef
 ---
+
 # Learning Human Habits with Rule-Guided Active Inference
 
 **Conference**: ICLR 2026  
@@ -137,8 +138,8 @@ Pareto tradeoff between rule count (RC) and accuracy/latency on NBA dataset (RHR
 ## Related Papers
 
 - [\[ICLR 2026\] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling](rulereasoner_reinforced_rule-based_reasoning_via_domain-aware_dynamic_sampling.md)
-- [\[ICLR 2026\] Toward Conservative Planning from Human-AI Preferences in Reinforcement Learning](toward_conservative_planning_from_human-ai_preferences_in_reinforcement_learning.md)
 - [\[NeurIPS 2025\] ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition](../../NeurIPS2025/reinforcement_learning/aline_joint_amortization_for_bayesian_inference_and_active_data_acquisition.md)
+- [\[ICLR 2026\] Toward Conservative Planning from Human-AI Preferences in Reinforcement Learning](toward_conservative_planning_from_human-ai_preferences_in_reinforcement_learning.md)
 - [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
 - [\[ICLR 2026\] Learning What Matters Now: Dynamic Preference Inference under Contextual Shifts](learning_what_matters_now_dynamic_preference_inference_under_contextual_shifts.md)
 

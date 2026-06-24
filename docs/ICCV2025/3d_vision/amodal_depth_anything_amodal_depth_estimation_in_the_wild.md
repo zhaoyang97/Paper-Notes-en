@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Amodal Depth Anything: Amodal Depth Estimation in the Wild
 description: >-
-  [ICCV 2025][3D Vision][amodal depth estimation] This paper proposes a new paradigm for amodal relative depth estimation, constructs a large-scale real-world dataset ADIW (564K samples)…
+  [ICCV 2025][3D Vision][amodal depth estimation] This paper proposes a new paradigm for amodal relative depth estimation, constructs a large-scale real-world dataset ADIW (564K samples), and designs two complementary frameworks (Amodal-DAV2 and Amodal-DepthFM) built upon Depth Anything V2 and DepthFM. By minimally modifying pretrained models, the method achieves depth prediction in occluded regions, improving RMSE by 27.4% over the previous SOTA on ADIW.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Depth Anything V2"
   - "conditional flow matching"
 date: 2026-05-08
-content_hash: 917554f58998d1a3
+content_hash: 2a1b0690d4a5abe5
 ---
 
 # Amodal Depth Anything: Amodal Depth Estimation in the Wild
@@ -142,10 +142,10 @@ Input: observation image $I_o$, observed depth map $D_o$, target amodal mask $M_
 
 ## Related Papers
 
-- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
 - [\[ICCV 2025\] Amodal3R: Amodal 3D Reconstruction from Occluded 2D Images](amodal3r_amodal_3d_reconstruction_from_occluded_2d_images.md)
+- [\[CVPR 2025\] Video Depth Anything: Consistent Depth Estimation for Super-Long Videos](../../CVPR2025/3d_vision/video_depth_anything_consistent_depth_estimation_for_super-long_videos.md)
 - [\[ICCV 2025\] Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation](seeing_and_seeing_through_the_glass_real_and_synthetic_data_for_multi-layer_dept.md)
-- [\[ICCV 2025\] RePoseD: Efficient Relative Pose Estimation with Known Depth Information](reposed_efficient_relative_pose_estimation_with_known_depth_information.md)
+- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
 - [\[ICCV 2025\] Contact-Aware Amodal Completion for Human-Object Interaction via Multi-Regional Inpainting](contact-aware_amodal_completion_for_human-object_interaction_via_multi-regional_.md)
 
 </div>

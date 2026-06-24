@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting Node Affinity Prediction in Temporal Graphs
 description: >-
-  [ICLR 2026][Graph Learning][State Space Model] This paper identifies that existing Temporal Graph Neural Networks (TGNNs) surprisingly underperform against simple heuristics like Moving Average in "node affinity prediction." The root cause is their inability to express moving averages and their use of cross-entropy loss, which is ill-suited for ranking. Consequentl
+  [ICLR 2026][Graph Learning][Temporal Graph Neural Networks] This paper identifies that existing Temporal Graph Neural Networks (TGNNs) surprisingly underperform against simple heuristics like Moving Average in "node affinity prediction." The root cause is their inability to express moving averages and their use of cross-entropy loss, which is ill-suited for ranking. Consequently, the authors propose NAVIS—a learnable linear State Space Model (SSM) that generalizes heuristics…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - State Space Model
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Temporal Graph Neural Networks"
+  - "Node Affinity Prediction"
+  - "State Space Models"
+  - "Ranking Loss"
+  - "Global Virtual State"
 date: 2026-05-08
-content_hash: 729d7d3e55d38c3a
+content_hash: c0c3c9e50d6e1e60
 ---
+
 # Revisiting Node Affinity Prediction in Temporal Graphs
 
 **Conference**: ICLR 2026  

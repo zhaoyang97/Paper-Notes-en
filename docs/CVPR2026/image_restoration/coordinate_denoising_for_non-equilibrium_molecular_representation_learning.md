@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Coordinate Denoising for Non-Equilibrium Molecular Representation Learning
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] Addressing the flaw that the conclusion "coordinate denoising is equivalent to force field learning" only holds in equilibrium, this paper derives a denoising target NDeM valid for any conformation using second-order finite differences of the potential energy surface. This is implemented as a plug-and-play auxiliary ta
+  [CVPR 2026][Image Restoration][Coordinate Denoising] Addressing the flaw that the conclusion "coordinate denoising is equivalent to force field learning" only holds in equilibrium, this paper derives a denoising target NDeM valid for any conformation using second-order finite differences of the potential energy surface. This is implemented as a plug-and-play auxiliary task without pre-training, consistently improving force prediction accuracy for various equivariant GNNs on M…
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Coordinate Denoising"
+  - "Non-Equilibrium Molecules"
+  - "Force Field Learning"
+  - "Finite Difference"
+  - "Auxiliary Task"
 date: 2026-05-08
-content_hash: 5681024b7ef59a5d
+content_hash: 378e516f33cd0a75
 ---
+
 # Coordinate Denoising for Non-Equilibrium Molecular Representation Learning
 
 **Conference**: CVPR 2026  
@@ -166,11 +172,11 @@ Compatibility with pre-training (Table 6): Fine-tuning from Frad pre-trained wei
 
 ## Related Papers
 
-- [\[ICML 2026\] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes](../../ICML2026/computational_biology/flow_sampling_learning_to_sample_from_unnormalized_densities_via_denoising_condi.md)
-- [\[NeurIPS 2025\] Curly Flow Matching for Learning Non-gradient Field Dynamics](../../NeurIPS2025/computational_biology/curly_flow_matching_for_learning_non-gradient_field_dynamics.md)
-- [\[ICLR 2026\] Learning Molecular Chirality via Chiral Determinant Kernels](../../ICLR2026/computational_biology/learning_molecular_chirality_via_chiral_determinant_kernels.md)
-- [\[ICML 2026\] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition](../../ICML2026/computational_biology/learning_protein_structure-function_relationships_through_knowledge-guided_repre.md)
-- [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](../../AAAI2026/computational_biology/s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
+- [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
+- [\[CVPR 2026\] PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning](diffusion-based_srgb_real_noise_generation_via_prompt-driven_noise_representatio.md)
+- [\[ICLR 2026\] Learning Heterogeneous Degradation Representation for Real-World Super-Resolution](../../ICLR2026/image_restoration/learning_heterogeneous_degradation_representation_for_real-world_super-resolutio.md)
+- [\[CVPR 2026\] CanonCGT: Reference-Based Color Grading via Canonical Pivot Representation](canoncgt_reference-based_color_grading_via_canonical_pivot_representation.md)
+- [\[CVPR 2026\] GSNR: Graph Smooth Null-Space Representation for Inverse Problems](gsnr_graph_smooth_null_space_representation_for_inverse_problems.md)
 
 </div>
 

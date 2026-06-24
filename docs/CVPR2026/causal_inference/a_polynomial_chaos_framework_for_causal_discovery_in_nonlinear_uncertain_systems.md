@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Polynomial Chaos Framework for Causal Discovery in Nonlinear Uncertain Systems
 description: >-
-  [CVPR 2026][Causal Inference][LiNGAM] This paper embeds noise terms into structural equations using Polynomial Chaos Expansion (PCE) to develop PCE-LiNGAM. It proves that causal Directed Acyclic Graphs (DAGs) are uniquely identifiable under mild sparsity conditions. Using a polynomial-time algorithm involving "PCE signature contamination testing + recursiv
+  [CVPR 2026][Causal Inference][Causal Discovery] This paper embeds noise terms into structural equations using Polynomial Chaos Expansion (PCE) to develop PCE-LiNGAM. It proves that causal Directed Acyclic Graphs (DAGs) are uniquely identifiable under mild sparsity conditions. Using a polynomial-time algorithm involving "PCE signature contamination testing + recursive sink finding," the method improves average F1 scores from 0.50 to 0.756 on extreme non-Gaussian industrial dat…
 tags:
-  - CVPR 2026
-  - Causal Inference
-  - LiNGAM
+  - "CVPR 2026"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Polynomial Chaos Expansion"
+  - "LiNGAM"
+  - "Uncertainty Quantification"
+  - "Industrial Processes"
 date: 2026-05-08
-content_hash: 9de738e14ede89c4
+content_hash: 22bddb5d89f31a5b
 ---
+
 # A Polynomial Chaos Framework for Causal Discovery in Nonlinear Uncertain Systems
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ On DS1, F1 is 75% higher than the runner-up and over 4x higher than DirectLiNGAM
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions](../../ICLR2026/causal_inference/learning_dynamic_causal_graphs_under_parametric_uncertainty_via_polynomial_chaos.md)
 - [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](../../ICLR2026/causal_inference/efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
 - [\[ACL 2025\] IRIS: An Iterative and Integrated Framework for Verifiable Causal Discovery](../../ACL2025/causal_inference/iris_an_iterative_and_integrated_framework.md)
+- [\[ICLR 2026\] Causal Discovery in the Wild: A Voting-Theoretic Ensemble Approach](../../ICLR2026/causal_inference/causal_discovery_in_the_wild_a_voting-theoretic_ensemble_approach.md)
 - [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
-- [\[ACL 2025\] On the Reliability of Large Language Models for Causal Discovery](../../ACL2025/causal_inference/llm_causal_discovery_reliability.md)
-- [\[CVPR 2026\] CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization](cgu-bayes_causal_graph_uncertainty-guided_bayesian_inference_for_domain_generali.md)
 
 </div>
 

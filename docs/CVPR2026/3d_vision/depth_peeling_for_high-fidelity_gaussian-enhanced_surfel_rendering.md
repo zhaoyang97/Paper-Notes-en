@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Depth Peeling for High-Fidelity Gaussian-Enhanced Surfel Rendering
 description: >-
-  [CVPR 2026][3D Vision][Surfel] To address the issues of boundary aliasing caused by hard depth testing and the inability to jointly optimize surfels and Gaussians in Gaussian-Enhanced Surfels (GES), this paper proposes DP-GES. By introducing translucent boundaries for surfels and utilizing 3-layer depth peeling to determine accurate per-pixel occlus
+  [CVPR 2026][3D Vision][Novel View Synthesis] To address the issues of boundary aliasing caused by hard depth testing and the inability to jointly optimize surfels and Gaussians in Gaussian-Enhanced Surfels (GES), this paper proposes DP-GES. By introducing translucent boundaries for surfels and utilizing 3-layer depth peeling to determine accurate per-pixel occlusion orders, 3D Gaussians can still perform order-independent splatting while receiving correct transmittance modula…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Surfel
-  - Depth Peeling
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Gaussian Splatting"
+  - "Surfel"
+  - "Depth Peeling"
+  - "Order-independent Rendering"
 date: 2026-05-08
-content_hash: 0ab71ace3ddca614
+content_hash: 27826370bd02461d
 ---
+
 # Depth Peeling for High-Fidelity Gaussian-Enhanced Surfel Rendering
 
 **Conference**: CVPR 2026  
@@ -147,11 +151,11 @@ DP-GES is over 3x faster than high-fidelity baselines like DBS/SSS at 472 FPS an
 
 ## Related Papers
 
-- [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion](craftmesh_high-fidelity_generative_mesh_manipulation_via_poisson_seamless_fusion.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[CVPR 2026\] High-Fidelity Mobile Avatars with Pruned Local Blendshapes](high-fidelity_mobile_avatars_with_pruned_local_blendshapes.md)
-- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
+- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
+- [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
+- [\[CVPR 2026\] Plug-and-Play PDE Optimization for 3D Gaussian Splatting: Toward High-Quality Rendering and Reconstruction](plug-and-play_pde_optimization_for_3d_gaussian_splatting_toward_high-quality_ren.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[CVPR 2026\] TopoMesh: High-Fidelity Mesh Autoencoding via Topological Unification](topomesh_high-fidelity_mesh_autoencoding_via_topological_unification.md)
 
 </div>
 

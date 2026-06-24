@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scan Clusters, Not Pixels: A Cluster-Centric Paradigm for Efficient Ultra-high-definition Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Mamba/SSM] Addressing the bottleneck where Mamba still requires pixel-wise scanning in Ultra-High-Definition (4K) image restoration, leading to memory explosion, C2SSM replaces "pixel-serial scanning" with "cluster-centric scanning." The method distills millions of pixels into a few semantic centroids via a neurally-parameterized
+  [CVPR 2026][Image Restoration][UHD Image Restoration] Addressing the bottleneck where Mamba still requires pixel-wise scanning in Ultra-High-Definition (4K) image restoration, leading to memory explosion, C2SSM replaces "pixel-serial scanning" with "cluster-centric scanning." The method distills millions of pixels into a few semantic centroids via a neurally-parameterized mixture distribution, performs Mamba scanning only on these centroids, and diffuses global context back t…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Mamba/SSM
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "UHD Image Restoration"
+  - "Mamba/SSM"
+  - "Cluster-Centric Scanning"
+  - "Linear Complexity"
+  - "Full-Resolution Inference"
 date: 2026-05-08
-content_hash: c35e3bdaf12724ec
+content_hash: 78680b0df4cdb925
 ---
+
 # Scan Clusters, Not Pixels: A Cluster-Centric Paradigm for Efficient Ultra-high-definition Image Restoration
 
 **Conference**: CVPR 2026  
@@ -146,11 +151,11 @@ Complexity comparison for 64×64 input (Tab. 10): C2SSM FLOPs are only **0.407G*
 
 ## Related Papers
 
+- [\[ICLR 2026\] FreeAdapt: Unleashing Diffusion Priors for Ultra-High-Definition Image Restoration](../../ICLR2026/image_restoration/freeadapt_unleashing_diffusion_priors_for_ultra-high-definition_image_restoratio.md)
 - [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
-- [\[CVPR 2026\] InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space](instantretouch_efficient_and_high-fidelity_instruction-guided_image_retouching_w.md)
-- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
 - [\[CVPR 2026\] ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration](shiftlut_spatial_shift_enhanced_look-up_tables_for_efficient_image_restoration.md)
 - [\[CVPR 2026\] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)
+- [\[CVPR 2026\] Human-Centric Multi-Exposure Fusion: Benchmark and Bi-level Cognition Distillation Framework](human-centric_multi-exposure_fusion_benchmark_and_bi-level_cognition_distillatio.md)
 
 </div>
 

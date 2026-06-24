@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] β-CLIP decomposes a long description into a three-layer hierarchy of text queries ("full caption → sentences → phrases"). It utilizes cross-attention to dynamically aggregate these queries into query-specific visual features. A contrastive loss with $\beta$ adjustment ($\beta$-CAL) is introduced to handle the inherent
+  [CVPR 2026][Multimodal VLM][CLIP Fine-Tuning] β-CLIP decomposes a long description into a three-layer hierarchy of text queries ("full caption → sentences → phrases"). It utilizes cross-attention to dynamically aggregate these queries into query-specific visual features. A contrastive loss with $\beta$ adjustment ($\beta$-CAL) is introduced to handle the inherent semantic overlap between these hierarchical features. Without using any hard negatives…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP Fine-Tuning"
+  - "Fine-Grained Alignment"
+  - "Text-Conditioned Attention Pooling"
+  - "Contrastive Learning"
+  - "Long-Text Retrieval"
 date: 2026-05-08
-content_hash: f9bb17fef96b5e9c
+content_hash: bbbc7baa988a0cff
 ---
+
 # β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Training: Fine-tuned on a filtered subset of ShareGPT4V-1.24M using AdamW. Learn
 
 ## Related Papers
 
-- [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
+- [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
 - [\[CVPR 2026\] M3Grounder: Mask-Based Multi-Span and Multi-Granular Grounding for Document QA](m3grounder_mask-based_multi-span_and_multi-granular_grounding_for_document_qa.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
+- [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](../../AAAI2026/multimodal_vlm/himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
 - [\[CVPR 2026\] TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment](tipsv2_patch_text_alignment.md)
-- [\[CVPR 2026\] No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models](no_hard_negatives_required_concept_centric_learning_leads_to_compositionality_wi.md)
-- [\[CVPR 2026\] PowerCLIP: Powerset Alignment for Contrastive Pre-Training](powerclip_powerset_alignment_for_contrastive_pre-training.md)
 
 </div>
 

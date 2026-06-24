@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling
 description: >-
-  [AAAI 2026][Medical NLP][Molecular property prediction] This paper proposes the CHMR framework, which addresses missing biological modalities via structure-aware propagation…
+  [AAAI 2026 Oral][Medical LLM][Molecular property prediction] This paper proposes the CHMR framework, which addresses missing biological modalities via structure-aware propagation, and introduces Tree-VQ to model hierarchical dependencies among molecules, cells, and genes. Evaluated on 728 tasks across 9 benchmarks, CHMR achieves a 3.6% improvement in classification and 17.2% in regression, enabling robust cell-aware molecular representation learning.
 tags:
-  - "AAAI 2026"
-  - "Medical NLP"
+  - "AAAI 2026 Oral"
+  - "Medical LLM"
   - "Molecular property prediction"
   - "cell-aware representation"
   - "hierarchical vector quantization"
   - "missing modality"
   - "multi-modal fusion"
 date: 2026-05-08
-content_hash: 00e75ef5666eee4c
+content_hash: 9a43cef5a87131d6
 ---
 
 # Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling
@@ -139,11 +139,11 @@ Biogen sub-metrics: HLM 33.7 (vs 39.7), RLM 39.8 (vs 48.4), ER 35.2 (vs 39.2), S
 
 ## Related Papers
 
-- [\[AAAI 2026\] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)
 - [\[ACL 2026\] BioHiCL: Hierarchical Multi-Label Contrastive Learning for Biomedical Retrieval with MeSH Labels](../../ACL2026/medical_nlp/biohicl_hierarchical_multi-label_contrastive_learning_for_biomedical_retrieval_w.md)
+- [\[AAAI 2026\] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)
 - [\[AAAI 2026\] LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems](lucid_learning-enabled_uncertainty-aware_certification_of_stochastic_dynamical_s.md)
-- [\[ACL 2026\] Learning Dynamic Representations and Policies from Multimodal Clinical Time-Series with Informative Missingness](../../ACL2026/medical_nlp/learning_dynamic_representations_and_policies_from_multimodal_clinical_time-seri.md)
 - [\[ACL 2026\] ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](../../ACL2026/medical_nlp/promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)
+- [\[ACL 2026\] Learning Dynamic Representations and Policies from Multimodal Clinical Time-Series with Informative Missingness](../../ACL2026/medical_nlp/learning_dynamic_representations_and_policies_from_multimodal_clinical_time-seri.md)
 
 </div>
 

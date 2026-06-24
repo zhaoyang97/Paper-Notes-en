@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RMAE-ProGRess: Advancing Semantic Segmentation in Unstructured Environments
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] For semantic segmentation in off-road/unstructured scenes, this paper employs a ViT-MAE encoder (RMAE) with half the layers removed to extract non-adjacent multi-layer features. It is paired with a lightweight decoder, ProGRess, consisting of three modules: Progressive Leapwise Fusion (PLF), Lightweight Channel Attenti
+  [CVPR 2026][Segmentation][Unstructured environments] For semantic segmentation in off-road/unstructured scenes, this paper employs a ViT-MAE encoder (RMAE) with half the layers removed to extract non-adjacent multi-layer features. It is paired with a lightweight decoder, ProGRess, consisting of three modules: Progressive Leapwise Fusion (PLF), Lightweight Channel Attention with Residuals (LCAR), and Bottleneck Feature Fusion (BFF). It achieves SOTA mIoU of 57.41% / 78.95% / 4…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Unstructured environments"
+  - "off-road segmentation"
+  - "lightweight decoder"
+  - "multi-scale fusion"
+  - "MAE encoder"
 date: 2026-05-08
-content_hash: 929ce2cc773f1254
+content_hash: fe466aeea0b21d7b
 ---
+
 # RMAE-ProGRess: Advancing Semantic Segmentation in Unstructured Environments
 
 **Conference**: CVPR 2026  
@@ -127,15 +133,16 @@ The lightweight RMAE-4L variant (46.5M, 128 GFLOPs) achieves 53.23% mIoU, outper
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Advancing Complex Video Object Segmentation via Progressive Concept Construction](../../ICLR2026/segmentation/advancing_complex_video_object_segmentation_via_progressive_concept_construction.md)
 - [\[CVPR 2026\] Bayesian Decomposition and Semantic Completion for Few-shot Semantic Segmentation](bayesian_decomposition_and_semantic_completion_for_few-shot_semantic_segmentatio.md)
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
-- [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](../../ICCV2025/segmentation/advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
-- [\[CVPR 2026\] LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation](lemma_laplacian_pyramids_for_efficient_marine_semantic_segmentation.md)
-- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
+- [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
+- [\[CVPR 2026\] From Softmax to Dirichlet: Evidential Learning for Semi-supervised Semantic Segmentation](from_softmax_to_dirichlet_evidential_learning_for_semi-supervised_semantic_segme.md)
+- [\[CVPR 2026\] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation](leveraging_class_distributions_in_clip_for_weakly_supervised_semantic_segmentati.md)
 
 </div>
 

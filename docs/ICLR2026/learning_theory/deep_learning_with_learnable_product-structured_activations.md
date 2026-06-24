@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Deep Learning with Learnable Product-Structured Activations
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper introduces LRNN (deep low-rank separated neural networks), which replaces the fixed scalar non-linearity of each neuron with a "product of multiple learnable univariate functions." This allows neurons to naturally capture high-order multiplicative interactions and adaptively adjust spectral bias, achieving s
+  [ICLR2026][Neural Network Architecture][Learnable Activation Functions] This paper introduces LRNN (deep low-rank separated neural networks), which replaces the fixed scalar non-linearity of each neuron with a "product of multiple learnable univariate functions." This allows neurons to naturally capture high-order multiplicative interactions and adaptively adjust spectral bias, achieving state-of-the-art accuracy with fewer parameters in tasks such as image/audio representati…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Neural Network Architecture"
+  - "Representation Learning"
+  - "Learning Theory"
+  - "Learnable Activation Functions"
+  - "Low-rank Separation"
+  - "Multiplicative Interaction"
+  - "Implicit Neural Representation"
+  - "Spectral Bias"
 date: 2026-05-08
-content_hash: 51584d65cbb768c2
+content_hash: d803a393b76c8f96
 ---
+
 # Deep Learning with Learnable Product-Structured Activations
 
 **Conference**: ICLR2026  
@@ -150,10 +158,10 @@ LRNN-SPDER also leads across all frequency similarity metrics $\rho_{AG}$ (e.g.,
 ## Related Papers
 
 - [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
+- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](../../NeurIPS2025/learning_theory/product_distribution_learning_with_imperfect_advice.md)
 - [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
 - [\[ICLR 2026\] Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding](deep_flexqp_accelerated_nonlinear_programming_via_deep_unfolding.md)
 - [\[ICML 2026\] Is Spurious Correlation Removal Always Learnable?](../../ICML2026/learning_theory/is_spurious_correlation_removal_always_learnable.md)
-- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](../../NeurIPS2025/learning_theory/product_distribution_learning_with_imperfect_advice.md)
 
 </div>
 

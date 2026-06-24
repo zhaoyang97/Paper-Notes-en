@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][MLIP] MatRIS explicitly models three-body (bond angle) interactions using a set of "separable attention" mechanisms with $O(N)$ complexity. It demonstrates that carefully designed **invariant models** can achieve or even surpass the accuracy of computationally expensive equivariant models on benchmarks like material discover
+  [ICLR 2026][Physics & Scientific Computing][MLIP] MatRIS explicitly models three-body (bond angle) interactions using a set of "separable attention" mechanisms with $O(N)$ complexity. It demonstrates that carefully designed **invariant models** can achieve or even surpass the accuracy of computationally expensive equivariant models on benchmarks like material discovery, while reducing training costs by 6–13 times.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - MLIP
-  - Matbench-Discovery
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "MLIP"
+  - "Three-body Interactions"
+  - "Linear Complexity Attention"
+  - "Invariant Models"
+  - "Matbench-Discovery"
 date: 2026-05-08
-content_hash: 5b00a4fedde88352
+content_hash: 6f1a09e6c825e773
 ---
+
 # MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials
 
 **Conference**: ICLR 2026  
@@ -140,8 +144,8 @@ MatRIS-L achieves SOTA across all metrics (F1 0.847, RMSD 0.0717). MatRIS-S/M ma
 - [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
 - [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
 - [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](../../NeurIPS2025/physics/f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
+- [\[ICLR 2026\] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning](uncertainty-aware_diagnostics_for_physics-informed_machine_learning.md)
 - [\[ICLR 2026\] ATOM: A Pretrained Neural Operator for Multitask Molecular Dynamics](atom_a_pretrained_neural_operator_for_multitask_molecular_dynamics.md)
-- [\[ICLR 2026\] The False Promise of Zero-Shot Super-Resolution in Machine-Learned Operators](the_false_promise_of_zero-shot_super-resolution_in_machine-learned_operators.md)
 
 </div>
 

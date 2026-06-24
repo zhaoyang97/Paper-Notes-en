@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WorldScore: A Unified Evaluation Benchmark for World Generation
 description: >-
-  [ICCV 2025][Video Generation][World generation] This paper proposes WorldScore — the first unified evaluation benchmark for world generation. It decomposes world generation into a series of next-scene generation tasks…
+  [ICCV 2025][Video Generation][World generation] This paper proposes WorldScore — the first unified evaluation benchmark for world generation. It decomposes world generation into a series of next-scene generation tasks, enabling unified evaluation of 3D, 4D, I2V, and T2V models across 3,000 test samples and 10 evaluation metrics.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "3D/4D scene generation"
   - "multi-dimensional evaluation metrics"
 date: 2026-05-08
-content_hash: b83ea59343f67da8
+content_hash: 630671120326b5dc
 ---
 
 # WorldScore: A Unified Evaluation Benchmark for World Generation
@@ -131,11 +131,11 @@ WorldScore is an evaluation benchmark rather than a training method, and therefo
 
 ## Related Papers
 
-- [\[CVPR 2026\] VGA-Bench: A Unified Benchmark for Video Aesthetics and Generation Quality Evaluation](../../CVPR2026/video_generation/vga_bench_unified_benchmark_for_video_aesthetics_and_generation_quality.md)
+- [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](../../CVPR2026/video_generation/vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
 - [\[ICCV 2025\] VMBench: A Benchmark for Perception-Aligned Video Motion Generation](vmbench_a_benchmark_for_perception-aligned_video_motion_generation.md)
 - [\[ICCV 2025\] ETVA: Evaluation of Text-to-Video Alignment via Fine-Grained Question Generation and Answering](etva_evaluation_of_text-to-video_alignment_via_fine-grained_question_generation_.md)
-- [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
-- [\[CVPR 2026\] SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation](../../CVPR2026/video_generation/slvmeval_synthetic_meta_evaluation_benchmark_for_text-to-long_video_generation.md)
+- [\[ICML 2026\] V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation](../../ICML2026/video_generation/v2v-bench_a_comprehensive_benchmark_for_video-to-video_generation_evaluation.md)
+- [\[ICML 2026\] T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation](../../ICML2026/video_generation/t2av-compass_towards_unified_evaluation_for_text-to-audio-video_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Ours proposes the SkeletonContext framework, which reconstructs missing environmental and object contextual semantics from pre-trained language models via a cross-modal context prompt module. It further enhances the discriminativeness of motion-critical joints through a key part decoupling module, achieving SOTA perfor
+  [CVPR 2026][Video Understanding][Zero-Shot Action Recognition] Ours proposes the SkeletonContext framework, which reconstructs missing environmental and object contextual semantics from pre-trained language models via a cross-modal context prompt module. It further enhances the discriminativeness of motion-critical joints through a key part decoupling module, achieving SOTA performance on NTU-60/120 and PKU-MMD under Zero-Shot (ZSL) and Generalized Zero-Shot (GZSL) settings.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Zero-Shot Action Recognition"
+  - "Skeleton Sequences"
+  - "Contextual Prompt Learning"
+  - "Cross-modal Alignment"
+  - "Key Part Decoupling"
 date: 2026-05-08
-content_hash: 57e93b0508239dd2
+content_hash: b32f2d45fa93134c
 ---
+
 # SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition
 
 **Conference**: CVPR 2026  
@@ -164,8 +170,8 @@ GZSL Harmonic Mean H (%):
 - [\[ICCV 2025\] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition](../../ICCV2025/video_understanding/frequency-semantic_enhanced_variational_autoencoder_for_zero-shot_skeleton-based.md)
 - [\[ECCV 2024\] SA-DVAE: Improving Zero-Shot Skeleton-Based Action Recognition by Disentangled Variational Autoencoders](../../ECCV2024/video_understanding/sa-dvae_improving_zero-shot_skeleton-based_action_recognition_by_disentangled_va.md)
 - [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
-- [\[CVPR 2026\] Metadata-Aware Multi-Prompt Reasoning for Zero-Shot Accident Understanding](metadata-aware_multi-prompt_reasoning_for_zero-shot_accident_understanding.md)
-- [\[CVPR 2026\] Protect to Adapt: Orthogonal Subspace Control with Ranked Negative-Prompt Curriculum for Few-Shot Action Recognition](protect_to_adapt_orthogonal_subspace_control_with_ranked_negative-prompt_curricu.md)
+- [\[CVPR 2026\] MPL: Match-guided Prototype Learning for Few-shot Action Recognition](mpl_match-guided_prototype_learning_for_few-shot_action_recognition.md)
+- [\[CVPR 2026\] Spectral Scalpel: Amplifying Adjacent Action Discrepancy via Frequency-Selective Filtering for Skeleton-Based Action Segmentation](spectral_scalpel_amplifying_adjacent_action_discrepancy_via_frequency-selective_.md)
 
 </div>
 

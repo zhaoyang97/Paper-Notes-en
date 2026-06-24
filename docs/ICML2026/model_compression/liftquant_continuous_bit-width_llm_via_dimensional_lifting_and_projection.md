@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LiftQuant: Continuous Bit-Width LLM via Dimensional Lifting and Projection
 description: >-
-  [ICML 2026][Model Compression][lift-then-project] LiftQuant decouples LLM quantization bit-width from discrete integers (2/3/4 bit) into continuous fractions (e.g., 2.4-bit) through a "high-dimensional 1-bit lattice $\rightarrow$ low-dimensional weight space projection" (lift-then-project) mechanism. This allows a 70B model to fit precisely into a 24GB GPU with a PPL
+  [ICML 2026 Spotlight][Model Compression][Continuous bit-width] LiftQuant decouples LLM quantization bit-width from discrete integers (2/3/4 bit) into continuous fractions (e.g., 2.4-bit) through a "high-dimensional 1-bit lattice $\rightarrow$ low-dimensional weight space projection" (lift-then-project) mechanism. This allows a 70B model to fit precisely into a 24GB GPU with a PPL significantly better than 2-bit baselines. The entire decoding path uses only linear transformati…
 tags:
-  - ICML 2026
-  - Model Compression
-  - lift-then-project
-  - 1-bit lattice
+  - "ICML 2026 Spotlight"
+  - "Model Compression"
+  - "Continuous bit-width"
+  - "lift-then-project"
+  - "high-dimensional projection"
+  - "1-bit lattice"
+  - "Pareto-optimal deployment"
 date: 2026-05-08
-content_hash: 8e7b56edbba1d976
+content_hash: 5c4e41f28c265263
 ---
+
 # LiftQuant: Continuous Bit-Width LLM via Dimensional Lifting and Projection
 
 **Conference**: ICML 2026 Spotlight  
@@ -143,7 +147,7 @@ LQ fits the 70B model precisely into 24GB, with a significantly lower PPL than 2
 - [\[ICML 2026\] OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization](osaq_outlier_self-absorption_for_accurate_low-bit_llm_quantization.md)
 - [\[NeurIPS 2025\] Q-Palette: Fractional-Bit Quantizers Toward Optimal Bit Allocation for Efficient LLM Deployment](../../NeurIPS2025/model_compression/q-palette_fractional-bit_quantizers_toward_optimal_bit_allocation_for_efficient_.md)
 - [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](../../CVPR2026/model_compression/generative_video_compression_with_one-dimensional_latent_representation.md)
-- [\[NeurIPS 2025\] Learning Grouped Lattice Vector Quantizers for Low-Bit LLM Compression](../../NeurIPS2025/model_compression/learning_grouped_lattice_vector_quantizers_for_low-bit_llm_compression.md)
+- [\[NeurIPS 2025\] ATLAS: Autoformalizing Theorems through Lifting, Augmentation, and Synthesis of Data](../../NeurIPS2025/model_compression/atlas_autoformalizing_theorems_through_lifting_augmentation_and_synthesis_of_dat.md)
 
 </div>
 

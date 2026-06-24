@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Model Base Retrieval: Weaving Knowledge to Master Fine-grained Neural Network Design
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] The M-DESIGN framework is proposed to model neural network design as a retrieval-augmented iterative modification process. By constructing a Modification-Gain Graph to encode fine-grained architectural editing effects and utilizing Bayesian dynamic task similarity to calibrate transfer signals online, it achieves desig
+  [ICML 2026][Graph Learning][Neural Architecture Search] The M-DESIGN framework is proposed to model neural network design as a retrieval-augmented iterative modification process. By constructing a Modification-Gain Graph to encode fine-grained architectural editing effects and utilizing Bayesian dynamic task similarity to calibrate transfer signals online, it achieves design-space optimality in 26 out of 33 GNN tasks.
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Neural Architecture Search"
+  - "Model Retrieval"
+  - "Knowledge Graph"
+  - "Graph Neural Networks"
+  - "Bayesian Optimization"
 date: 2026-05-08
-content_hash: ae2e28d91f85c481
+content_hash: a065c394fd97cc40
 ---
+
 # Beyond Model Base Retrieval: Weaving Knowledge to Master Fine-grained Neural Network Design
 
 **Conference**: ICML 2026  
@@ -145,10 +151,10 @@ The computational overhead of M-DESIGN per MKB operation is <0.31s (<0.44s with 
 
 ## Related Papers
 
-- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](full-spectrum_graph_neural_network_expressive_and_scalable.md)
 - [\[ICML 2026\] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering](kbqa-r1_reinforcing_large_language_models_for_knowledge_base_question_answering.md)
+- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](full-spectrum_graph_neural_network_expressive_and_scalable.md)
 - [\[ACL 2025\] Beyond Completion: A Foundation Model for General Knowledge Graph Reasoning](../../ACL2025/graph_learning/beyond_completion_a_foundation_model_for_general_knowledge_graph_reasoning.md)
-- [\[AAAI 2026\] On Stealing Graph Neural Network Models](../../AAAI2026/graph_learning/on_stealing_graph_neural_network_models.md)
+- [\[ICLR 2026\] Beyond Simple Graphs: Neural Multi-Objective Routing on Multigraphs](../../ICLR2026/graph_learning/beyond_simple_graphs_neural_multi-objective_routing_on_multigraphs.md)
 - [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
 
 </div>

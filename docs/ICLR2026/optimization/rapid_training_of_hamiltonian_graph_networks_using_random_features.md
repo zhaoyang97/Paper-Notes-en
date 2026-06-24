@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Rapid Training of Hamiltonian Graph Networks using Random Features
 description: >-
-  [ICLR 2026][Optimization & Theory][Hamiltonian Graph Networks] This paper proposes RF-HGN, which constructs dense layer parameters through random feature sampling (ELM/SWIM) and solves a linear least squares problem to train Hamiltonian Graph Networks. This approach completely bypasses gradient descent iterative optimization, achieving a 150-600x speedup on N-body physical systems
+  [ICLR 2026][Optimization][Hamiltonian Graph Networks] This paper proposes RF-HGN, which constructs dense layer parameters through random feature sampling (ELM/SWIM) and solves a linear least squares problem to train Hamiltonian Graph Networks. This approach completely bypasses gradient descent iterative optimization, achieving a 150-600x speedup on N-body physical systems while maintaining comparable accuracy and strong zero-shot generalization.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Hamiltonian Graph Networks
-  - Random Features
-  - N-body Simulation
-  - Zero-shot Generalization
-  - Gradient-free Training
+  - "ICLR 2026"
+  - "Optimization"
+  - "Hamiltonian Graph Networks"
+  - "Random Features"
+  - "N-body Simulation"
+  - "Zero-shot Generalization"
+  - "Gradient-free Training"
 date: 2026-05-08
-content_hash: 5969d20a556b9684
+content_hash: 704aa56b653c6188
 ---
+
 # Rapid Training of Hamiltonian Graph Networks using Random Features
 
 **Conference**: ICLR 2026  
@@ -148,11 +149,11 @@ RF-HGN is 148-602x faster than 15 PyTorch optimizers on 3D lattice systems, with
 
 ## Related Papers
 
+- [\[ICLR 2026\] LDT: Layer-Decomposition Training Makes Networks More Generalizable](ldt_layer-decomposition_training_makes_networks_more_generalizable.md)
 - [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](hota_hamiltonian_framework_for_optimal_transport_advection.md)
 - [\[NeurIPS 2025\] Training Robust Graph Neural Networks by Modeling Noise Dependencies](../../NeurIPS2025/optimization/training_robust_graph_neural_networks_by_modeling_noise_dependencies.md)
 - [\[ICLR 2026\] Jacobian Aligned Random Forests](jacobian_aligned_random_forests.md)
 - [\[ICLR 2026\] Difference Predictive Coding for Training Spiking Neural Networks](difference_predictive_coding_for_training_spiking_neural_networks.md)
-- [\[ICLR 2026\] SCRAPL: Scattering Transform with Random Paths for Machine Learning](scrapl_scattering_transform_with_random_paths_for_machine_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Translating Flow to Policy via Hindsight Online Imitation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] HinFlow enables robots to interact with their environment guided by high-level point flow planners. By relabeling the **actual flows achieved** in each rollout as the intended goals, it provides supervision for training goal-conditioned imitation policies online. This approach achieves an 84% success rate with only 1–5
+  [ICLR 2026][Robotics][Hierarchical Robotics] HinFlow enables robots to interact with their environment guided by high-level point flow planners. By relabeling the **actual flows achieved** in each rollout as the intended goals, it provides supervision for training goal-conditioned imitation policies online. This approach achieves an 84% success rate with only 1–5 expert demonstrations, outperforming the strongest baseline by $1.45\times$.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Hierarchical Robotics"
+  - "Point Flow Planning"
+  - "Imitation Learning"
+  - "Hindsight Relabeling"
+  - "Online Self-Improvement"
 date: 2026-05-08
-content_hash: 5b76c36d77946e18
+content_hash: 30f15793db801484
 ---
+
 # Translating Flow to Policy via Hindsight Online Imitation
 
 **Conference**: ICLR 2026  

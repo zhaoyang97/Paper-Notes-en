@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Edge of Core (Non-)Emptiness: An Automated Reasoning Approach to Approval-Based Multi-Winner Voting
 description: >-
-  [AAAI 2026][Core Stability] This paper proposes an automated reasoning framework based on Mixed Integer Linear Programming (MILP) to investigate the major open problem of whether core stability always exists in approval-…
+  [AAAI 2026][Core Stability] This paper proposes an automated reasoning framework based on Mixed Integer Linear Programming (MILP) to investigate the major open problem of whether core stability always exists in approval-based multi-winner voting. The framework establishes new existence results, uncovers previously unknown relationships between core stability and other axioms (e.g., Lindahl pricability), and refutes an existing conjecture.
 tags:
   - "AAAI 2026"
   - "Core Stability"
@@ -11,7 +11,7 @@ tags:
   - "Automated Reasoning"
   - "Proportional Representation"
 date: 2026-05-08
-content_hash: 77640815d2f09cf9
+content_hash: a06fbeb5e39e3475
 ---
 
 # On the Edge of Core (Non-)Emptiness: An Automated Reasoning Approach to Approval-Based Multi-Winner Voting
@@ -147,11 +147,11 @@ MILP optimal values for different parameters $(m, k)$:
 
 ## Related Papers
 
-- [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
 - [\[AAAI 2026\] Automated Reproducibility Has a Problem Statement Problem](automated_reproducibility_has_a_problem_statement_problem.md)
-- [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
+- [\[CVPR 2026\] Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach](../../CVPR2026/others/revisiting_f-measure_optimization_in_multi-label_classification_a_sampling-based.md)
+- [\[ICLR 2026\] Deploying Models to Non-participating Clients in Federated Learning without Fine-tuning: A Hypernetwork-based Approach](../../ICLR2026/others/deploying_models_to_non-participating_clients_in_federated_learning_without_fine.md)
+- [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
 - [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](boosting_adversarial_transferability_via_ensemble_non-attention.md)
-- [\[AAAI 2026\] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach](variance_computation_for_weighted_model_counting_with_knowledge_compilation_appr.md)
 
 </div>
 

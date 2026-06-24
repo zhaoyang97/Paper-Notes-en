@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification
 description: >-
-  [CVPR 2026][Reinforcement Learning][GRPO] SpeciaRL is proposed — a specificity-aware reinforcement learning framework that simultaneously improves the specificity and correctness of predictions in open-world fine-grained image classification by guiding reasoning-based Large Multimodal Models (LMMs) with dynamic reward signals based on the best prediction from
+  [CVPR2026][Reinforcement Learning][Open-world Classification] SpeciaRL is proposed — a specificity-aware reinforcement learning framework that simultaneously improves the specificity and correctness of predictions in open-world fine-grained image classification by guiding reasoning-based Large Multimodal Models (LMMs) with dynamic reward signals based on the best prediction from online rollouts.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR2026"
+  - "Reinforcement Learning"
+  - "Open-world Classification"
+  - "Fine-grained Recognition"
+  - "Large Multimodal Models"
+  - "GRPO"
+  - "Specificity-aware Reward"
 date: 2026-05-08
-content_hash: 512d7589c52c85b4
+content_hash: 60a9cbddd9d98ba3
 ---
+
 # Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification
 
 **Conference**: CVPR2026  
@@ -148,10 +153,10 @@ On ultra-fine-grained sets (StanfordCars, FGVCAircraft), SpeciaRL also achieves 
 ## Related Papers
 
 - [\[ICLR 2026\] DiVE-k: Differential Visual Reasoning for Fine-grained Image Recognition](../../ICLR2026/reinforcement_learning/dive-k_differential_visual_reasoning_for_fine-grained_image_recognition.md)
+- [\[ICLR 2026\] Q-Learning with Fine-Grained Gap-Dependent Regret](../../ICLR2026/reinforcement_learning/q-learning_with_fine-grained_gap-dependent_regret.md)
 - [\[ICLR 2026\] RewardMap: Tackling Sparse Rewards in Fine-grained Visual Reasoning via Multi-Stage Reinforcement Learning](../../ICLR2026/reinforcement_learning/rewardmap_tackling_sparse_rewards_in_fine-grained_visual_reasoning_via_multi-sta.md)
 - [\[ACL 2026\] Beyond Majority Voting: Towards Fine-grained and More Reliable Reward Signal for Test-Time Reinforcement Learning](../../ACL2026/reinforcement_learning/beyond_majority_voting_towards_fine-grained_and_more_reliable_reward_signal_for_.md)
-- [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](../../AAAI2026/reinforcement_learning/object-centric_world_models_for_causality-aware_reinforcement_learning.md)
-- [\[ICLR 2026\] From Observations to Events: Event-Aware World Model for Reinforcement Learning](../../ICLR2026/reinforcement_learning/from_observations_to_events_event-aware_world_model_for_reinforcement_learning.md)
+- [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](../../ICLR2026/reinforcement_learning/from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
 
 </div>
 

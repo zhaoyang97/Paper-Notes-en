@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Testing Fourier Sparsity via Implicit Sensing
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper investigates the property testing problem of whether a Boolean function is Fourier sparse. Given query access to $f:\mathbb{F}_2^n\to\{-1,+1\}$, the goal is to determine if $f$ is $s$-Fourier sparse or far from any $s$-sparse function in Hamming distance. The authors provide a non-adaptive tester with query
+  [ICLR 2026][Learning Theory][Fourier Sparsity] This paper investigates the property testing problem of whether a Boolean function is Fourier sparse. Given query access to $f:\mathbb{F}_2^n\to\{-1,+1\}$, the goal is to determine if $f$ is $s$-Fourier sparse or far from any $s$-sparse function in Hamming distance. The authors provide a non-adaptive tester with query complexity $\tilde O(s^4)$ (independent of dimension $n$) and prove a lower bound of $\Omega(s)$. Both results si…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Sparse Fourier"
+  - "Property Testing"
+  - "Fourier Sparsity"
+  - "Compressed Sensing"
+  - "Communication Complexity"
+  - "Boolean Functions"
 date: 2026-05-08
-content_hash: acb6c050c08d3072
+content_hash: 0fef0af90b10a9b9
 ---
+
 # Testing Fourier Sparsity via Implicit Sensing
 
 **Conference**: ICLR 2026  
@@ -120,15 +127,16 @@ The upper bound is more precisely $\tilde O\big(\max\{s^2,1/\varepsilon\}\cdot s
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] On the Benefits of Weight Normalization for Overparameterized Matrix Sensing](on_the_benefits_of_weight_normalization_for_overparameterized_matrix_sensing.md)
-- [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
 - [\[ICLR 2026\] Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds](efficient_testing_for_correlation_clustering_improved_algorithms_and_optimal_bou.md)
+- [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
 - [\[ICLR 2026\] Testing Most Influential Sets](testing_most_influential_sets.md)
-- [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 
 </div>
 

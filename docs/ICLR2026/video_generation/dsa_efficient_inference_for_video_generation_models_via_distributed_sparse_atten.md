@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DSA: Efficient Inference For Video Generation Models via Distributed Sparse Attention
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] DSA intertwines "sparse attention" and "sequence parallelism," two previously independent acceleration paths. By matching spatial and temporal sparse attention patterns in video diffusion models with partial-ring and Ulysses parallelism respectively, and hiding communication within computation via dynamic scheduling, i
+  [ICLR2026][Video Generation][Video Diffusion Transformer] DSA intertwines "sparse attention" and "sequence parallelism," two previously independent acceleration paths. By matching spatial and temporal sparse attention patterns in video diffusion models with partial-ring and Ulysses parallelism respectively, and hiding communication within computation via dynamic scheduling, it achieves a $10.79 \times$ speedup for 720p/5s video generation on 8x H100 compared to single-card de…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Video Diffusion Transformer"
+  - "Sparse Attention"
+  - "Sequence Parallelism"
+  - "Distributed Inference"
+  - "Super-linear Scaling"
 date: 2026-05-08
-content_hash: 91b4fe2595cefb11
+content_hash: 5d40d75e08cb7189
 ---
+
 # DSA: Efficient Inference For Video Generation Models via Distributed Sparse Attention
 
 **Conference**: ICLR2026  

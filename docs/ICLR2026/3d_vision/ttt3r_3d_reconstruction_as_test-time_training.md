@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TTT3R: 3D Reconstruction as Test-Time Training
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] The state update of the recurrent 3D reconstruction model CUT3R is reformulated as a test-time online learning problem. By deriving a closed-form, per-token adaptive learning rate based on the alignment confidence between memory states and new observations to gate state updates, this method significantly mitigates long
+  [ICLR 2026][3D Vision][Online 3D reconstruction] The state update of the recurrent 3D reconstruction model CUT3R is reformulated as a test-time online learning problem. By deriving a closed-form, per-token adaptive learning rate based on the alignment confidence between memory states and new observations to gate state updates, this method significantly mitigates long-sequence forgetting without retraining or adding parameters. It improves global pose accuracy by 2× over the b…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Online 3D reconstruction"
+  - "test-time training"
+  - "recurrent neural networks"
+  - "length generalization"
+  - "adaptive learning rate"
 date: 2026-05-08
-content_hash: 0f87374433d7d917
+content_hash: be715a729e83a605
 ---
+
 # TTT3R: 3D Reconstruction as Test-Time Training
 
 **Conference**: ICLR 2026  
@@ -135,8 +141,8 @@ Evaluation spans three tasks: camera pose estimation, video depth estimation, an
 
 ## Related Papers
 
-- [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](../../CVPR2026/3d_vision/scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
 - [\[CVPR 2026\] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](../../CVPR2026/3d_vision/zipmap_linear-time_stateful_3d_reconstruction_via_test-time_training.md)
+- [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](../../CVPR2026/3d_vision/scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
 - [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](../../CVPR2026/3d_vision/tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
 - [\[CVPR 2026\] Low-Rank Test-Time Training for Pre-Trained Point Cloud Models](../../CVPR2026/3d_vision/low-rank_test-time_training_for_pre-trained_point_cloud_models.md)
 - [\[ICLR 2026\] SpaceControl: Introducing Test-Time Spatial Control to 3D Generative Modeling](spacecontrol_introducing_test-time_spatial_control_to_3d_generative_modeling.md)

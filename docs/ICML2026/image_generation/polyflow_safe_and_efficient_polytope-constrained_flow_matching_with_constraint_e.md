@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PolyFlow: Safe and Efficient Polytope-Constrained Flow Matching with Constraint Embedding and Projection-free Update
 description: >-
-  [ICML 2026][Image Generation][Ray Shooting] PolyFlow "welds" hard polytope constraint satisfaction directly into the network architecture and flow definition of Flow Matching models—using discrete-time flows to eliminate numerical integration errors and a Frank-Wolfe-style "ray shooting to boundary + learnable step size" to replace expensive projection solvers.
+  [ICML2026][Image Generation][Constrained Flow Matching] PolyFlow "welds" hard polytope constraint satisfaction directly into the network architecture and flow definition of Flow Matching models—using discrete-time flows to eliminate numerical integration errors and a Frank-Wolfe-style "ray shooting to boundary + learnable step size" to replace expensive projection solvers. This achieves **zero constraint violation** in planning and control tasks while reducing inference laten…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Ray Shooting
+  - "ICML2026"
+  - "Image Generation"
+  - "Constrained Flow Matching"
+  - "Safety Constraints"
+  - "Projection-free"
+  - "Ray Shooting"
+  - "Discrete-time Flow"
 date: 2026-05-08
-content_hash: af0c8f62fc0bf2a3
+content_hash: 55aa09e2f40ffc0a
 ---
+
 # PolyFlow: Safe and Efficient Polytope-Constrained Flow Matching with Constraint Embedding and Projection-free Update
 
 **Conference**: ICML2026  
@@ -135,11 +140,11 @@ PolyFlow is the only method to achieve **Safety Rate = 1.0 and optimal distribut
 
 ## Related Papers
 
+- [\[ICLR 2026\] Gauge Flow Matching: Efficient Constrained Generative Modeling over General Convex Set and Beyond](../../ICLR2026/image_generation/gauge_flow_matching_efficient_constrained_generative_modeling_over_general_conve.md)
 - [\[ICLR 2026\] SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions](../../ICLR2026/image_generation/safeflowmatcher_safe_and_fast_planning_using_flow_matching_with_control_barrier_.md)
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](../../NeurIPS2025/image_generation/training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](../../CVPR2026/image_generation/projflow_projection_sampling_with_flow_matching_for_zero-shot_exact_spatial_moti.md)
 - [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
-- [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](../../CVPR2026/image_generation/learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
 
 </div>
 

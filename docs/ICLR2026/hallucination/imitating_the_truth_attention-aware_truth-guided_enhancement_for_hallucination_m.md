@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models
 description: >-
-  [ICLR 2026][Hallucination Detection][LVLM] This paper discovers that LVLMs exhibit **phased and model-specific** attention differences when generating "truth tokens" versus "hallucinated tokens." It proposes AGE, a training-free framework that "calibrates" visual and textual attention during inference to mimic the attention patterns of truth tokens, thereby mit
+  [ICLR 2026][Hallucination Detection][LVLM] This paper discovers that LVLMs exhibit **phased and model-specific** attention differences when generating "truth tokens" versus "hallucinated tokens." It proposes AGE, a training-free framework that "calibrates" visual and textual attention during inference to mimic the attention patterns of truth tokens, thereby mitigating hallucinations without retraining or compromising fluency.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - LVLM
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "LVLM"
+  - "Hallucination Mitigation"
+  - "Attention Intervention"
+  - "Training-free"
+  - "Decoding-time Enhancement"
 date: 2026-05-08
-content_hash: a12ab1a50ef4de76
+content_hash: b78a112aa93cbd98
 ---
+
 # Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -127,9 +132,9 @@ LLaVA-1.5 / COCO (max new token=128). SMA=Visual self-multiplication; AGE_T=Text
 
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
 - [\[ICLR 2026\] Hallucination-aware Intermediate Representation Edit in Large Vision-Language Models](hallucination-aware_intermediate_representation_edit_in_large_vision-language_mo.md)
-- [\[CVPR 2026\] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models](../../CVPR2026/hallucination/causallens_sensitivity-guided_multi-head_causal_intervention_for_hallucination_m.md)
-- [\[ICLR 2026\] NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection](ndad_negative-direction_aware_decoding_for_large_language_models_via_controllabl.md)
-- [\[ACL 2026\] Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation](../../ACL2026/hallucination/spotlight_and_shadow_attention-guided_dual-anchor_introspective_decoding_for_mll.md)
+- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/hallucination/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
+- [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
+- [\[ICLR 2026\] Mitigating Hallucination in Vision-Language Model with Depth and Spatial-aware Key-Value Refinement](mitigating_hallucination_in_vision-language_model_with_depth_and_spatial-aware_k.md)
 
 </div>
 

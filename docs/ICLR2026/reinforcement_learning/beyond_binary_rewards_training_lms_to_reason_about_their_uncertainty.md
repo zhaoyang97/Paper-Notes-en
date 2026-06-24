@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes RLCR (Reinforcement Learning with Calibration Rewards), which overlays a Brier score term on top of standard "binary correctness rewards." This allows reasoning models to output a **calibrated confidence** while generating answers. Without significant loss in accuracy, it reduces Expected Calibratio
+  [ICLR2026][Reinforcement Learning][RLVR] This paper proposes RLCR (Reinforcement Learning with Calibration Rewards), which overlays a Brier score term on top of standard "binary correctness rewards." This allows reasoning models to output a **calibrated confidence** while generating answers. Without significant loss in accuracy, it reduces Expected Calibration Error (ECE) from 0.37 to 0.03 on HotpotQA and reverses the degradation trend of standard RL—where models typically be…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Calibration Reward"
+  - "Brier Score"
+  - "Proper Scoring Rules"
+  - "Confidence Reasoning"
 date: 2026-05-08
-content_hash: 2b7c1ffb5529d100
+content_hash: eca13e4d89623753
 ---
+
 # Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty
 
 **Conference**: ICLR2026  
@@ -143,10 +148,10 @@ Table 2 decomposes the "Calibration Reward" and "Explicit Uncertainty Reasoning"
 ## Related Papers
 
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
+- [\[ICLR 2026\] Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
 - [\[ICLR 2026\] Learning to Reason as Action Abstractions with Scalable Mid-Training RL](learning_to_reason_as_action_abstractions_with_scalable_mid-training_rl.md)
-- [\[ICLR 2026\] Learning to Be Uncertain: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
+- [\[ICLR 2026\] Learn More with Less: Uncertainty Consistency Guided Query Selection for RLVR](learn_more_with_less_uncertainty_consistency_guided_query_selection_for_rlvr.md)
 - [\[ICLR 2026\] ExGRPO: Learning to Reason from Experience](exgrpo_learning_to_reason_from_experience.md)
-- [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](../../NeurIPS2025/reinforcement_learning/training_language_models_to_reason_efficiently.md)
 
 </div>
 

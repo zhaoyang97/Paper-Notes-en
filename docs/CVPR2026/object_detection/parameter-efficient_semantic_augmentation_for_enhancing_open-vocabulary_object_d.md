@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection
 description: >-
-  [CVPR 2026][Object Detection][prompt bank] HSA-DINO proposes a multi-scale prompt bank to learn hierarchical semantic prompts from image feature pyramids to enhance text representations. In parallel, a semantic-aware router dynamically determines whether to apply domain-specific augmentation during inference, achieving a superior balance between domain adaptati
+  [CVPR 2026][Object Detection][Open-Vocabulary Object Detection] HSA-DINO proposes a multi-scale prompt bank to learn hierarchical semantic prompts from image feature pyramids to enhance text representations. In parallel, a semantic-aware router dynamically determines whether to apply domain-specific augmentation during inference, achieving a superior balance between domain adaptation and open-vocabulary generalization (obtaining the best H-mean scores across three vertical do…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - prompt bank
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-Vocabulary Object Detection"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Semantic Augmentation"
+  - "prompt bank"
+  - "Domain Adaptation"
 date: 2026-05-08
-content_hash: ca03e697a092374d
+content_hash: 289b8a0bf8b99570
 ---
+
 # Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection
 
 **Conference**: CVPR 2026  
@@ -168,8 +173,8 @@ Contribution of each component on ArTaxOr dataset:
 - [\[CVPR 2026\] Consistency Beyond Contrast: Enhancing Open-Vocabulary Object Detection Robustness via Contextual Consistency Learning](consistency_beyond_contrast_enhancing_open-vocabulary_object_detection_robustnes.md)
 - [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
 - [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
-- [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
-- [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
+- [\[ICLR 2026\] DeCo-DETR: Decoupled Cognition DETR for efficient Open-Vocabulary Object Detection](../../ICLR2026/object_detection/deco-detr_decoupled_cognition_detr_for_efficient_open-vocabulary_object_detectio.md)
+- [\[CVPR 2026\] SL-HOI: Streamlined Open-Vocabulary Human-Object Interaction Detection](streamlined_open-vocabulary_human-object_interaction_detection.md)
 
 </div>
 

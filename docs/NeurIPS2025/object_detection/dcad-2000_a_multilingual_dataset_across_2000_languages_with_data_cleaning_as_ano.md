@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection
 description: >-
-  [NeurIPS 2025][Object Detection][multilingual dataset] This work constructs DCAD-2000, a multilingual dataset covering 2,282 languages and 46.72 TB of text…
+  [NeurIPS 2025][Object Detection][multilingual dataset] This work constructs DCAD-2000, a multilingual dataset covering 2,282 languages and 46.72 TB of text, and proposes a language-agnostic data cleaning framework that reformulates cleaning as anomaly detection. The framework extracts 8-dimensional statistical features per document and applies Isolation Forest for dynamic noise filtering. Effectiveness is validated on multiple multilingual benchmarks…
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Common Crawl"
   - "low-resource languages"
 date: 2026-05-08
-content_hash: 4de3967d2e63c73a
+content_hash: f75cbd8935e91bbb
 ---
 
 # DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection
@@ -138,10 +138,10 @@ A three-stage pipeline:
 ## Related Papers
 
 - [\[NeurIPS 2025\] EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination](an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data.md)
-- [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
+- [\[CVPR 2026\] Online Data Curation for Object Detection via Marginal Contributions to Dataset-level Average Precision](../../CVPR2026/object_detection/online_data_curation_for_object_detection_via_marginal_contributions_to_dataset-.md)
 - [\[NeurIPS 2025\] BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes](burstdeflicker_a_benchmark_dataset_for_flicker_removal_in_dynamic_scenes.md)
+- [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
 - [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](../../ICCV2025/object_detection/kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
-- [\[CVPR 2026\] MMR-AD: A Large-Scale Multimodal Dataset for Benchmarking General Anomaly Detection with MLLMs](../../CVPR2026/object_detection/mmrad_multimodal_anomaly_detection.md)
 
 </div>
 

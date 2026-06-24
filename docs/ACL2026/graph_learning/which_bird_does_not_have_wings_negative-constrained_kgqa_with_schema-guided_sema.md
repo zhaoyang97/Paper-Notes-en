@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Which bird does not have wings: Negative-constrained KGQA with Schema-guided Semantic Matching and Self-directed Refinement
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] This paper proposes a new task, Negative-constrained Knowledge Graph Question Answering (NEST KGQA), and the NestKGQA dataset. It introduces PyLF, a Python-formatted logic form to clearly express negative constraints, and the CUCKOO framework. By integrating constraint-aware draft generation, schema-guided semantic mat
+  [ACL 2026 Findings][Graph Learning][Knowledge Graph Question Answering] This paper proposes a new task, Negative-constrained Knowledge Graph Question Answering (NEST KGQA), and the NestKGQA dataset. It introduces PyLF, a Python-formatted logic form to clearly express negative constraints, and the CUCKOO framework. By integrating constraint-aware draft generation, schema-guided semantic matching, and self-directed refinement, the framework achieves efficient and precise answer…
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026 Findings"
+  - "Graph Learning"
+  - "Knowledge Graph Question Answering"
+  - "Negative Constraints"
+  - "Semantic Parsing"
+  - "Logic Form"
+  - "Schema-guided"
 date: 2026-05-08
-content_hash: 35ec4c5b739e9f9a
+content_hash: 601603e6bc1e327e
 ---
+
 # Which bird does not have wings: Negative-constrained KGQA with Schema-guided Semantic Matching and Self-directed Refinement
 
 **Conference**: ACL 2026 Findings  
@@ -129,11 +135,11 @@ CUCKOO is a training-free framework based on In-Context Learning (ICL). Draft ge
 
 ## Related Papers
 
-- [\[AAAI 2026\] NOTAM-Evolve: A Knowledge-Guided Self-Evolving Optimization Framework with LLMs for NOTAM Interpretation](../../AAAI2026/graph_learning/notam-evolve_a_knowledge-guided_self-evolving_optimization_framework_with_llms_f.md)
+- [\[ICLR 2026\] Topological Flow Matching](../../ICLR2026/graph_learning/topological_flow_matching.md)
 - [\[ACL 2026\] CoG: Controllable Graph Reasoning via Relational Blueprints and Failure-Aware Refinement over Knowledge Graphs](cog_controllable_graph_reasoning_via_relational_blueprints_and_failure-aware_ref.md)
+- [\[AAAI 2026\] NOTAM-Evolve: A Knowledge-Guided Self-Evolving Optimization Framework with LLMs for NOTAM Interpretation](../../AAAI2026/graph_learning/notam-evolve_a_knowledge-guided_self-evolving_optimization_framework_with_llms_f.md)
+- [\[ICLR 2026\] MobileKGQA: On-Device KGQA System on Dynamic Mobile Environments](../../ICLR2026/graph_learning/mobilekgqa_on-device_kgqa_system_on_dynamic_mobile_environments.md)
 - [\[ACL 2026\] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation](tagrag_tag-guided_hierarchical_knowledge_graph_retrieval-augmented_generation.md)
-- [\[ACL 2026\] GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion](gs-quant_granular_semantic_and_generative_structural_quantization_for_knowledge_.md)
-- [\[ICLR 2026\] Bures-Wasserstein Flow Matching for Graph Generation](../../ICLR2026/graph_learning/bures-wasserstein_flow_matching_for_graph_generation.md)
 
 </div>
 

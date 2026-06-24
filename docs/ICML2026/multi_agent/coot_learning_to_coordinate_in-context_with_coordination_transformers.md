@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoOT: Learning to Coordinate In-Context with Coordination Transformers
 description: >-
-  [ICML 2026][Multi-Agent][Decision Transformer] This work reframes "cooperating with unknown partners" from a task-generalization problem to a partner-generalization in-context learning problem. By training a Decision Transformer to predict best-response actions over cross-episode interaction trajectories, the model adapts to unseen partners within a few episodes du
+  [ICML 2026][Multi-Agent][Ad-hoc teamwork] This work reframes "cooperating with unknown partners" from a task-generalization problem to a partner-generalization in-context learning problem. By training a Decision Transformer to predict best-response actions over cross-episode interaction trajectories, the model adapts to unseen partners within a few episodes during test-time without updating parameters.
 tags:
-  - ICML 2026
-  - Multi-Agent
-  - Decision Transformer
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "Ad-hoc teamwork"
+  - "In-context learning"
+  - "Decision Transformer"
+  - "Hidden-utility Markov Games"
+  - "Zero-shot coordination"
 date: 2026-05-08
-content_hash: 0104003c24688a63
+content_hash: cf5c10e9857b36a7
 ---
+
 # CoOT: Learning to Coordinate In-Context with Coordination Transformers
 
 **Conference**: ICML 2026  
@@ -139,16 +144,16 @@ CoOT significantly improves Overall BR-prox from 0.44 (strongest baseline) to 0.
 - Value: ⭐⭐⭐⭐ Offers a plug-and-play solution for human-AI collaboration without requiring fine-tuning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Context Learning for Multi-Agent Discussion](../../ICLR2026/multi_agent/context_learning_for_multi-agent_discussion.md)
 - [\[ICML 2026\] Sheaf-ADMM: Learning Multi-Agent Coordination via Sheaf-ADMM](learning_multi-agent_coordination_via_sheaf-admm.md)
 - [\[NeurIPS 2025\] The PokeAgent Challenge: Competitive and Long-Context Learning at Scale](../../NeurIPS2025/multi_agent/the_pokeagent_challenge_competitive_and_long-context_learning_at_scale.md)
 - [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
-- [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](../../AAAI2026/multi_agent/conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
-- [\[ICML 2026\] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions](engiagent_fully_connected_coordination_of_llm_agents_for_solving_open-ended_engi.md)
+- [\[ICML 2026\] MASPOB: Multi-Agent Prompt Optimization via GNN Surrogate + LinUCB + Coordinate Ascent](maspob_bandit-based_prompt_optimization_for_multi-agent_systems_with_graph_neura.md)
 
 </div>
 

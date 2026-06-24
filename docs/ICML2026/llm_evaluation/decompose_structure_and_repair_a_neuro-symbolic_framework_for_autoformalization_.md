@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decompose, Structure, and Repair: A Neuro-Symbolic Framework for Autoformalization via Operator Trees
 description: >-
-  [ICML 2026][LLM Evaluation][Lean 4] This paper proposes the DSR (Decompose-Structure-Repair) neuro-symbolic framework, which decomposes the formalization of natural language theorems into three stages: "decomposing NL components → joint generation of FL components and Operator Trees (OPT) → hierarchical repair based on subtree localization." Using a 7B m
+  [ICML 2026][LLM Evaluation][Autoformalization] This paper proposes the DSR (Decompose-Structure-Repair) neuro-symbolic framework, which decomposes the formalization of natural language theorems into three stages: "decomposing NL components → joint generation of FL components and Operator Trees (OPT) → hierarchical repair based on subtree localization." Using a 7B model, it sets new SOTAs on ProverBench / ProofNet / PRIME and releases PRIME, a graduate-level Lean 4 benchmark c…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - Lean 4
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Autoformalization"
+  - "Lean 4"
+  - "Operator Tree"
+  - "Curriculum Learning"
+  - "Tree-Guided Repair"
 date: 2026-05-08
-content_hash: e29dd3fbd4abe519
+content_hash: c018b80bebc113dd
 ---
+
 # Decompose, Structure, and Repair: A Neuro-Symbolic Framework for Autoformalization via Operator Trees
 
 **Conference**: ICML 2026  
@@ -133,10 +138,10 @@ Repair strategy ablation: DSR vs. DSR-Global (same formalizer, different repair)
 ## Related Papers
 
 - [\[AAAI 2026\] Towards a Common Framework for Autoformalization](../../AAAI2026/llm_evaluation/towards_a_common_framework_for_autoformalization.md)
-- [\[ACL 2025\] StrucText-Eval: Evaluating LLM's Reasoning on Structure-Rich Text](../../ACL2025/llm_evaluation/structext_eval.md)
-- [\[ICML 2026\] Margin-Adaptive Confidence Ranking for Reliable LLM Judgement](margin-adaptive_confidence_ranking_for_reliable_llm_judgement.md)
-- [\[ICML 2026\] CapBencher: Give Your LLM Benchmark a Built-in Alarm for Test-Set Overfitting](capbencher_give_your_llm_benchmark_a_built-in_alarm_for_test-set_overfitting.md)
-- [\[ICML 2026\] Toward Training Superintelligent Software Agents through Self-Play SWE-RL](toward_training_superintelligent_software_agents_through_self-play_swe-rl.md)
+- [\[ICML 2026\] Reliable to Expressive: A Curriculum for Rubric-Following Safety Judges](reliable_to_expressive_a_curriculum_for_rubric-following_safety_judges.md)
+- [\[ACL 2026\] Beyond Case Law: Evaluating Structure-Aware Retrieval and Safety in Statute-Centric Legal QA](../../ACL2026/llm_evaluation/beyond_case_law_evaluating_structure-aware_retrieval_and_safety_in_statute-centr.md)
+- [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
+- [\[ICLR 2026\] Cost-of-Pass: An Economic Framework for Evaluating Language Models](../../ICLR2026/llm_evaluation/cost-of-pass_an_economic_framework_for_evaluating_language_models.md)
 
 </div>
 

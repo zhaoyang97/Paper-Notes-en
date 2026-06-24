@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MIAM: Modality Imbalance-Aware Masking for Multimodal Ecological Applications
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] The authors formalize the masking strategy as a probability distribution on a unit hypercube and propose MIAM—a hybrid product-beta distribution featuring full support and corner prioritization. It dynamically increases the masking probability for dominant modalities based on relative performance and learning speed, pr
+  [ICLR 2026][Multimodal VLM][Modality Imbalance] The authors formalize the masking strategy as a probability distribution on a unit hypercube and propose MIAM—a hybrid product-beta distribution featuring full support and corner prioritization. It dynamically increases the masking probability for dominant modalities based on relative performance and learning speed, providing a unified mechanism to resolve robustness to missing data, modality imbalance…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Modality Imbalance"
+  - "Dynamic Masking"
+  - "Missing Modalities"
+  - "Multimodal Fusion"
+  - "Species Distribution Modeling"
 date: 2026-05-08
-content_hash: f4175cc15b6ebca8
+content_hash: b66428bce9f413fa
 ---
+
 # MIAM: Modality Imbalance-Aware Masking for Multimodal Ecological Applications
 
 **Conference**: ICLR 2026  
@@ -128,9 +134,9 @@ Effect of asymmetric corner weights $w_c$ (Validation set):
 
 - [\[CVPR 2026\] Label What Matters: Modality-Balanced and Difficulty-Aware Multimodal Active Learning](../../CVPR2026/multimodal_vlm/label_what_matters_modality-balanced_and_difficulty-aware_multimodal_active_lear.md)
 - [\[ICLR 2026\] ScaleCap: Scalable Image Captioning via Dual-Modality Debiasing](scalecap_scalable_image_captioning_via_dual-modality_debiasing.md)
-- [\[ICML 2026\] AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning](../../ICML2026/multimodal_vlm/aoept_breaking_the_implicit_modality-reduction_bottleneck_in_modality-missing_pr.md)
 - [\[ICLR 2026\] Modality Alignment across Trees on Heterogeneous Hyperbolic Manifolds](modality_alignment_across_trees_on_heterogeneous_hyperbolic_manifolds.md)
 - [\[ICLR 2026\] RAG4DMC: Retrieval-Augmented Generation for Data-Level Modality Completion](rag4dmc_retrieval-augmented_generation_for_data-level_modality_completion.md)
+- [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](../../CVPR2026/multimodal_vlm/enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Verbalized Algorithms: Zero-shot Classical Algorithmic Reasoning for Correctness and Runtime Guarantees
 description: >-
-  [NeurIPS 2025][Optimization][Verbalized Algorithms] This paper proposes the Verbalized Algorithms (VAs) framework, which preserves the control flow of classical algorithms while replacing their atomic operations (e.g.…
+  [NeurIPS 2025][Optimization][Verbalized Algorithms] This paper proposes the Verbalized Algorithms (VAs) framework, which preserves the control flow of classical algorithms while replacing their atomic operations (e.g., binary comparisons) with LLM queries, thereby inheriting the correctness and complexity guarantees of classical algorithms for natural language reasoning tasks. The framework is validated across four case studies: sorting, maximum finding, clustering…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Sorting"
   - "Submodular Maximization"
 date: 2026-05-08
-content_hash: 5058507bd0fb1d04
+content_hash: fdac491ee889e69c
 ---
 
 # Verbalized Algorithms: Zero-shot Classical Algorithmic Reasoning for Correctness and Runtime Guarantees
@@ -138,11 +138,11 @@ VAs are categorized into three types:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Conformal Prediction for Zero-Shot Models](../../CVPR2025/optimization/conformal_prediction_for_zero-shot_models.md)
 - [\[NeurIPS 2025\] DynaAct: Large Language Model Reasoning with Dynamic Action Spaces](dynaact_large_language_model_reasoning_with_dynamic_action_spaces.md)
-- [\[NeurIPS 2025\] Faster Algorithms for Structured John Ellipsoid Computation](faster_algorithm_for_structured_john_ellipsoid_computation.md)
-- [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
 - [\[NeurIPS 2025\] Preference Learning with Response Time: Robust Losses and Guarantees](preference_learning_with_response_time_robust_losses_and_guarantees.md)
 - [\[NeurIPS 2025\] Natural Gradient VI: Guarantees for Non-Conjugate Models](natural_gradient_vi_guarantees_for_non-conjugate_models.md)
+- [\[NeurIPS 2025\] Faster Algorithms for Structured John Ellipsoid Computation](faster_algorithm_for_structured_john_ellipsoid_computation.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models
 description: >-
-  [AAAI 2026][Video Understanding][Long video compression] MambaMia proposes a two-stage hierarchical video token compression framework based on bidirectional Mamba: Gated Patch Aggregation (GPA) for spatial-temporal local…
+  [AAAI 2026 Oral][Video Understanding][Long video compression] MambaMia proposes a two-stage hierarchical video token compression framework based on bidirectional Mamba: Gated Patch Aggregation (GPA) for spatial-temporal local compression, and a Temporal Axis Aggregator (TAA) that leverages Mamba's adaptive step size $\Delta_t$ for data-driven keyframe sampling. The method compresses hour-long videos to only 4.7K tokens, achieving 44.6 on LVBench and surpassing Qwen2-VL and mP…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Video Understanding"
   - "Long video compression"
   - "state space models"
@@ -12,7 +12,7 @@ tags:
   - "gated patch aggregation"
   - "adaptive frame sampling"
 date: 2026-05-08
-content_hash: bfdaaad5ca8c3737
+content_hash: 7c07d46969f84edf
 ---
 
 # MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models
@@ -125,11 +125,11 @@ Three-stage LLaVA-style training: image understanding → module alignment (comp
 
 ## Related Papers
 
+- [\[CVPR 2025\] MambaVLT: Time-Evolving Multimodal State Space Model for Vision-Language Tracking](../../CVPR2025/video_understanding/mambavlt_time-evolving_multimodal_state_space_model_for_vision-language_tracking.md)
+- [\[ECCV 2024\] VideoMamba: State Space Model for Efficient Video Understanding](../../ECCV2024/video_understanding/videomamba_state_space_model_for_efficient_video_understanding.md)
+- [\[CVPR 2025\] GG-SSMs: Graph-Generating State Space Models](../../CVPR2025/video_understanding/gg-ssms_graph-generating_state_space_models.md)
 - [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
-- [\[NeurIPS 2025\] PASS: Path-Selective State Space Model for Event-Based Recognition](../../NeurIPS2025/video_understanding/pass_path-selective_state_space_model_for_event-based_recognition.md)
-- [\[AAAI 2026\] Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective](rethinking_progression_of_memory_state_in_robotic_manipulation_an_object-centric.md)
-- [\[NeurIPS 2025\] Seeing the Arrow of Time in Large Multimodal Models](../../NeurIPS2025/video_understanding/seeing_the_arrow_of_time_in_large_multimodal_models.md)
-- [\[AAAI 2026\] EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation](emovid_a_multimodal_emotion_video_dataset_for_emotion-centric_video_understandin.md)
+- [\[ECCV 2024\] VideoMamba: Spatio-Temporal Selective State Space Model](../../ECCV2024/video_understanding/videomamba_spatio-temporal_selective_state_space_model.md)
 
 </div>
 

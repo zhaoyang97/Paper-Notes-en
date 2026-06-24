@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mirror Descent Under Generalized Smoothness
 description: >-
-  [ICML 2026][Optimization & Theory][$\ell*$-smoothness] This paper proposes the concept of $\ell*$-generalized smoothness based on an arbitrary norm and its dual norm. By utilizing a "generalized self-bounding lemma," the gradient dual norm is controlled within the initial sub-optimality gap. This establishes, for the first time, convergence rates for Mirror Descent and its
+  [ICML 2026][Optimization][$\ell*$-smoothness] This paper proposes the concept of $\ell*$-generalized smoothness based on an arbitrary norm and its dual norm. By utilizing a "generalized self-bounding lemma," the gradient dual norm is controlled within the initial sub-optimality gap. This establishes, for the first time, convergence rates for Mirror Descent and its accelerated, optimistic, Mirror Prox, stochastic, and composite variants under non-Euclidean geometry that match…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - $\ell*$-smoothness
+  - "ICML 2026"
+  - "Optimization"
+  - "$\\ell*$-smoothness"
+  - "Mirror Descent"
+  - "Non-Euclidean geometry"
+  - "Self-boundness"
+  - "LLM training curvature"
 date: 2026-05-08
-content_hash: 6309c8470e656d72
+content_hash: 556a8be8338f23b1
 ---
+
 # Mirror Descent Under Generalized Smoothness
 
 **Conference**: ICML 2026  
@@ -124,7 +129,7 @@ Experimental validation empirically confirms that $\ell*$-smoothness holds for r
 - [\[ICML 2026\] Bregman meets Lévy: Stochastic Mirror Descent with Heavy-Tailed Noise in Continuous and Discrete Time](bregman_meets_lévy_stochastic_mirror_descent_with_heavy-tailed_noise_in_continuo.md)
 - [\[ICML 2025\] Learning Mixtures of Experts with EM: A Mirror Descent Perspective](../../ICML2025/optimization/learning_mixtures_of_experts_with_em_a_mirror_descent_perspective.md)
 - [\[ICML 2026\] Mirror Mean-Field Langevin Dynamics](mirror_mean-field_langevin_dynamics.md)
-- [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](on_the_convergence_rate_of_lora_gradient_descent.md)
+- [\[ICLR 2026\] Never Saddle for Reparameterized Steepest Descent as Mirror Flow](../../ICLR2026/optimization/never_saddle_for_reparameterized_steepest_descent_as_mirror_flow.md)
 
 </div>
 

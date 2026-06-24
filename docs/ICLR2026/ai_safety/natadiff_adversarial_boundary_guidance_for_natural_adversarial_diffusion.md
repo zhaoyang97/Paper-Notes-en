@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] NatADiff: Adversarial Boundary Guidance for Natural Adversarial Diffusion
 description: >-
-  [ICLR 2026][AI Safety][Diffusion Model] NatADiff utilizes diffusion models to guide sampling trajectories toward the "boundary between the true class and the adversarial class." Rather than producing constrained adversarial samples with perturbations, it generates "natural adversarial samples" that naturally blend adversarial semantic cues. This maintains wh
+  [ICLR 2026][AI Safety][Natural adversarial samples] NatADiff utilizes diffusion models to guide sampling trajectories toward the "boundary between the true class and the adversarial class." Rather than producing constrained adversarial samples with perturbations, it generates "natural adversarial samples" that naturally blend adversarial semantic cues. This maintains white-box attack success rates while significantly enhancing cross-architecture transferability…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Diffusion Model
-  - time-travel sampling
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Natural adversarial samples"
+  - "adversarial boundary guidance"
+  - "diffusion models"
+  - "attack transferability"
+  - "time-travel sampling"
 date: 2026-05-08
-content_hash: e8e05b3683d0e2a3
+content_hash: 04694a26f3397aa8
 ---
+
 # NatADiff: Adversarial Boundary Guidance for Natural Adversarial Diffusion
 
 **Conference**: ICLR 2026  
@@ -133,9 +137,9 @@ Setup: ImageNet 1000 classes, SD1.5 backbone + 200 DDIM steps, ~103 seconds per 
 ## Related Papers
 
 - [\[CVPR 2026\] GROW: Watermark Generation with Progressive Guidance for Diffusion Models](../../CVPR2026/ai_safety/grow_watermark_generation_with_progressive_guidance_for_diffusion_models.md)
+- [\[ICLR 2026\] EigenScore: OOD Detection using Posterior Covariance in Diffusion Models](eigenscore_ood_detection_using_posterior_covariance_in_diffusion_models.md)
 - [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
 - [\[ICLR 2026\] SCOPED: Score–Curvature Out-of-Distribution Proximity Evaluator for Diffusion](scoped_scorecurvature_out-of-distribution_proximity_evaluator_for_diffusion.md)
-- [\[ICLR 2026\] Concept-based Adversarial Attack: a Probabilistic Perspective](concept-based_adversarial_attack_a_probabilistic_perspective.md)
 - [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
 
 </div>

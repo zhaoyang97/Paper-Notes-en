@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PID-controlled Langevin Dynamics for Faster Sampling of Generative Models
 description: >-
-  [NeurIPS 2025][Image Generation][Langevin Dynamics] This work introduces PID control theory into Langevin dynamics sampling, leveraging gradient history (integral term) to build momentum for traversing energy barriers an…
+  [NeurIPS 2025][Image Generation][Langevin Dynamics] This work introduces PID control theory into Langevin dynamics sampling, leveraging gradient history (integral term) to build momentum for traversing energy barriers and gradient trends (derivative term) to suppress oscillations, achieving fast and stable convergence. The approach requires no additional training and delivers over 10× sampling acceleration on both SGMs and EBMs.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Energy-Based Models"
   - "Training-Free"
 date: 2026-05-08
-content_hash: 4d76fff6419aeed3
+content_hash: d8ccf5533a8a1826
 ---
 
 # PID-controlled Langevin Dynamics for Faster Sampling of Generative Models
@@ -133,9 +133,9 @@ The paper provides a theoretical guarantee that the derivative term preserves co
 
 - [\[NeurIPS 2025\] Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems](preconditioned_langevin_dynamics_with_score-based_generative_models_for_infinite.md)
 - [\[NeurIPS 2025\] Cross-fluctuation Phase Transitions Reveal Sampling Dynamics in Diffusion Models](cross-fluctuation_phase_transitions_reveal_sampling_dynamics_in_diffusion_models.md)
+- [\[ICLR 2026\] Strictly Constrained Generative Modeling via Split Augmented Langevin Sampling](../../ICLR2026/image_generation/strictly_constrained_generative_modeling_via_split_augmented_langevin_sampling.md)
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
-- [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
-- [\[NeurIPS 2025\] Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation](distilled_decoding_2_onestep_sampling_of_image_autoregressiv.md)
+- [\[ICLR 2026\] Efficient Approximate Posterior Sampling with Annealed Langevin Monte Carlo](../../ICLR2026/image_generation/efficient_approximate_posterior_sampling_with_annealed_langevin_monte_carlo.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] HSIC Bottleneck for Cross-Generator and Domain-Incremental Synthetic Image Detection
 description: >-
-  [ICLR 2026][AIGC Detection][CLIP] To address the challenges of synthetic image detectors failing to generalize across generators and the need to continuously expand with new generation paradigms, this paper introduces an HSIC Information Bottleneck loss on intermediate CLIP ViT features to suppress "authentication-irrelevant" vision-language alignment
+  [ICLR 2026][AIGC Detection][Synthetic Image Detection] To address the challenges of synthetic image detectors failing to generalize across generators and the need to continuously expand with new generation paradigms, this paper introduces an HSIC Information Bottleneck loss on intermediate CLIP ViT features to suppress "authentication-irrelevant" vision-language alignment semantics. Combined with an HSIC-Guided Rehearsal sampling strategy (HGR)…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - CLIP
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Synthetic Image Detection"
+  - "HSIC Information Bottleneck"
+  - "CLIP"
+  - "Cross-generator Generalization"
+  - "Domain-incremental Continual Learning"
+  - "3DGS head avatar"
 date: 2026-05-08
-content_hash: daf516bafef6b6c6
+content_hash: 4693d64e8ca18d3e
 ---
+
 # HSIC Bottleneck for Cross-Generator and Domain-Incremental Synthetic Image Detection
 
 **Conference**: ICLR 2026  
@@ -126,7 +132,7 @@ HGR achieved the highest total mean among sampling methods, **even surpassing th
 - [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
 - [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](../../CVPR2026/aigc_detection/ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
 - [\[ICLR 2026\] No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection](no_pixel_left_behind_a_detail-preserving_architecture_for_robust_high-resolution.md)
-- [\[ICLR 2026\] Omni-IML: Towards Unified Interpretable Image Manipulation Localization](omni-iml_towards_unified_interpretable_image_manipulation_localization.md)
+- [\[CVPR 2025\] Enhancing Few-Shot Class-Incremental Learning via Training-Free Bi-Level Modality Calibration](../../CVPR2025/aigc_detection/enhancing_few-shot_class-incremental_learning_via_training-free_bi-level_modalit.md)
 
 </div>
 

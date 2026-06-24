@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Probing RLVR Training Instability through the Lens of Objective-Level Hacking
 description: >-
-  [ICML 2026][Reinforcement Learning][RLVR] The authors propose the "objective-level hacking" framework, attributing the phenomenon of growing training-inference discrepancy in MoE models during RLVR to biased pseudo-signals introduced into the optimization objective by token-level weight distortions. Experiments on a 30B MoE model verify that "bias (not varianc
+  [ICML 2026][Reinforcement Learning][RLVR] The authors propose the "objective-level hacking" framework, attributing the phenomenon of growing training-inference discrepancy in MoE models during RLVR to biased pseudo-signals introduced into the optimization objective by token-level weight distortions. Experiments on a 30B MoE model verify that "bias (not variance) is the culprit."
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
-  - MoE
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "GRPO"
+  - "MoE"
+  - "Training-Inference Discrepancy"
+  - "Objective-Level Hacking"
 date: 2026-05-08
-content_hash: 599d47c54a8b5ab2
+content_hash: b21fa52e622b9e7f
 ---
+
 # Probing RLVR Training Instability through the Lens of Objective-Level Hacking
 
 **Conference**: ICML 2026  
@@ -125,8 +128,8 @@ Discrepancy and validation behavior under different stabilization strategies:
 - [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
 - [\[ICLR 2026\] Exploration vs Exploitation: Rethinking RLVR through Clipping, Entropy, and Spurious Reward](../../ICLR2026/reinforcement_learning/exploration_vs_exploitation_rethinking_rlvr_through_clipping_entropy_and_spuriou.md)
 - [\[ICML 2025\] A Theoretical Study of (Hyper) Self-Attention through the Lens of Interactions: Representation, Training, Generalization](../../ICML2025/reinforcement_learning/a_theoretical_study_of_hyper_self-attention_through_the_lens_of_interactions_rep.md)
-- [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
-- [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
+- [\[ICLR 2026\] Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs](../../ICLR2026/reinforcement_learning/sparse_but_critical_a_token-level_analysis_of_distributional_shifts_in_rlvr_fine.md)
+- [\[ICLR 2026\] SSVPO: Toward Effective Step-level Credit Assignment for Language Model RL Training](../../ICLR2026/reinforcement_learning/ssvpo_effective_step-level_credit_assignment_for_rl_training_of_language_models.md)
 
 </div>
 

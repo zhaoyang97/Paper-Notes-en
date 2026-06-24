@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper proposes TEMA (Text-oriented Entity Mapping Architecture), the first framework for Composed Image Retrieval (CIR) oriented toward multi-modification texts. It enhances modified entity coverage through an MMT Parser Assistant (PA) and addresses the clause-entity alignment problem with an Entity Mapping (EM) m
+  [ACL 2026][Multimodal VLM][Composed Image Retrieval] This paper proposes TEMA (Text-oriented Entity Mapping Architecture), the first framework for Composed Image Retrieval (CIR) oriented toward multi-modification texts. It enhances modified entity coverage through an MMT Parser Assistant (PA) and addresses the clause-entity alignment problem with an Entity Mapping (EM) module. Furthermore, it constructs two multi-modification benchmarks, M-FashionIQ and M-CIRR…
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Composed Image Retrieval"
+  - "Multi-modification Text"
+  - "Entity Mapping"
+  - "Fine-grained Retrieval"
+  - "Vision-Language Pre-training"
 date: 2026-05-08
-content_hash: 80f880f5dd764e7c
+content_hash: 8aa05265e9a704f9
 ---
+
 # TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval
 
 **Conference**: ACL 2026  
@@ -156,7 +162,7 @@ BLIP is used as the backbone with a frozen image encoder. The model is optimized
 - [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](../../CVPR2026/multimodal_vlm/recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
 - [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
 - [\[CVPR 2025\] CoLLM: A Large Language Model for Composed Image Retrieval](../../CVPR2025/multimodal_vlm/collm_a_large_language_model_for_composed_image_retrieval.md)
-- [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](../../CVPR2026/multimodal_vlm/conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)
+- [\[AAAI 2026\] Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning](../../AAAI2026/multimodal_vlm/heterogeneous_uncertainty-guided_composed_image_retrieval_with_fine-grained_prob.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Information-Bottleneck Driven Binary Neural Network for Change Detection
 description: >-
-  [ICCV 2025][Remote Sensing][Binary Neural Network] This paper proposes BiCD, the first binary neural network specifically designed for change detection. By introducing an auxiliary objective module guided by the Informat…
+  [ICCV 2025][Remote Sensing][Binary Neural Network] This paper proposes BiCD, the first binary neural network specifically designed for change detection. By introducing an auxiliary objective module guided by the Information Bottleneck (IB) principle, BiCD enhances the feature representation capability and separability of BNNs, achieving state-of-the-art performance among BNN-based methods on both street-view and remote sensing change detection benchmarks…
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "Model Compression"
   - "Auxiliary Objective"
 date: 2026-05-08
-content_hash: 4fa0b8fdd82b5540
+content_hash: 6ecab1b79fb92478
 ---
 
 # Information-Bottleneck Driven Binary Neural Network for Change Detection
@@ -156,11 +156,11 @@ Notably, 1-bit C-3PO + BiCD achieves 86.5% F1-score on TSUNAMI, surpassing full-
 
 ## Related Papers
 
+- [\[ICML 2025\] Neural Augmented Kalman Filters for Road Network Assisted GNSS Positioning](../../ICML2025/remote_sensing/neural_augmented_kalman_filters_for_road_network_assisted_gnss_positioning.md)
+- [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](../../CVPR2026/remote_sensing/unichange_unifying_change_detection_with_multimodal_large_language_model.md)
 - [\[ICCV 2025\] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration](geoexplorer_active_geo-localization_with_curiosity-driven_exploration.md)
-- [\[NeurIPS 2025\] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](../../NeurIPS2025/remote_sensing/rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)
-- [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](../../CVPR2026/remote_sensing/avion_aerial_visionlanguage_instruction_from_offli.md)
-- [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](../../CVPR2026/remote_sensing/cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
-- [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](../../ICLR2026/remote_sensing/tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
+- [\[CVPR 2026\] QuCNet: Quantum Deep Learning Driven Multi-Circuit Network for Remote Sensing Image Classification](../../CVPR2026/remote_sensing/qucnet_quantum_deep_learning_driven_multi-circuit_network_for_remote_sensing_ima.md)
+- [\[CVPR 2025\] Hierarchical Dual-Change Collaborative Learning for UAV Scene Change Captioning](../../CVPR2025/remote_sensing/hierarchical_dual-change_collaborative_learning_for_uav_scene_change_captioning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models
 description: >-
-  [ACL 2026][NLP Understanding][LLM Planner] This paper proposes AdapTime, which abstracts "temporal reasoning" into three reusable atomic actions: reformulate, rewrite, and review. Guided by an LLM Planner, the system adaptively decides which steps to execute and in what order based on the question and context. Without external tools, manual rules, or fine-tunin
+  [ACL 2026 Findings][NLP Understanding][Temporal Reasoning] This paper proposes AdapTime, which abstracts "temporal reasoning" into three reusable atomic actions: reformulate, rewrite, and review. Guided by an LLM Planner, the system adaptively decides which steps to execute and in what order based on the question and context. Without external tools, manual rules, or fine-tuning, it significantly improves LLM performance on temporal QA, pushing TimeQA-Easy to 85.4 EM on DeepSe…
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - LLM Planner
+  - "ACL 2026 Findings"
+  - "NLP Understanding"
+  - "Temporal Reasoning"
+  - "Temporal QA"
+  - "Adaptive Planning"
+  - "LLM Planner"
+  - "Zero-tool"
 date: 2026-05-08
-content_hash: b97c0f42371f6c8b
+content_hash: f165dfd5f0a64f85
 ---
+
 # AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -147,9 +152,9 @@ Benchmarks: TimeQA (easy/hard) and TempReason (L2/L3), sampling 1,000 questions 
 
 - [\[ACL 2026\] The Imperfective Paradox in Large Language Models](the_imperfective_paradox_in_large_language_models.md)
 - [\[ACL 2026\] Table Question Answering in the Era of Large Language Models: A Comprehensive Survey](table_question_answering_in_the_era_of_large_language_models_a_comprehensive_sur.md)
-- [\[ACL 2026\] It's High Time: A Survey of Temporal Question Answering](it39s_high_time_a_survey_of_temporal_question_answering.md)
 - [\[AAAI 2026\] Language Models and Logic Programs for Trustworthy Tax Reasoning](../../AAAI2026/nlp_understanding/language_models_and_logic_programs_for_trustworthy_tax_reasoning.md)
 - [\[ACL 2026\] ASTRA: Adaptive Semantic Tree Reasoning Architecture for Complex Table Question Answering](astra_adaptive_semantic_tree_reasoning_architecture_for_complex_table_question_a.md)
+- [\[ACL 2026\] Lost in the Prompt Order: Revealing the Limitations of Causal Attention in Language Models](lost_in_the_prompt_order_revealing_the_limitations_of_causal_attention_in_langua.md)
 
 </div>
 

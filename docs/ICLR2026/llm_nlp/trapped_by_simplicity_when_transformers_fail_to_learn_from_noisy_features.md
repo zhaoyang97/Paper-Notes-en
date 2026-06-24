@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Trapped by simplicity: When Transformers fail to learn from noisy features
 description: >-
-  [ICLR 2026][LLM (Other)][Transformer] Research demonstrates that Transformers fail to learn Boolean functions from data containing feature noise—their simplicity bias (tendency to learn low-sensitivity functions) causes models to be trapped by optimal noise predictors that are simpler than the target function, preventing the recovery of the true noise-free
+  [ICLR 2026][LLM (Other)][Noise-robust learning] Research demonstrates that Transformers fail to learn Boolean functions from data containing feature noise—their simplicity bias (tendency to learn low-sensitivity functions) causes models to be trapped by optimal noise predictors that are simpler than the target function, preventing the recovery of the true noise-free target.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Transformer
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Noise-robust learning"
+  - "simplicity bias"
+  - "Boolean functions"
+  - "Transformer"
+  - "sensitivity"
 date: 2026-05-08
-content_hash: c984f88c2585aab5
+content_hash: e9f8850645bf8557
 ---
+
 # Trapped by simplicity: When Transformers fail to learn from noisy features
 
 **Conference**: ICLR 2026  
@@ -142,11 +147,11 @@ Comparison between Transformers and LSTMs in noise-robust learning (300 runs per
 
 ## Related Papers
 
-- [\[ICLR 2026\] Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure](is_the_reversal_curse_a_binding_problem_uncovering_limitations_of_transformers_f.md)
 - [\[ICML 2025\] When Will It Fail?: Anomaly to Prompt for Forecasting Future Anomalies in Time Series](../../ICML2025/llm_nlp/when_will_it_fail_anomaly_to_prompt_for_forecasting_future_anomalies_in_time_ser.md)
+- [\[ICLR 2026\] When Language Models Lose Their Mind: The Consequences of Brain Misalignment](when_language_models_lose_their_mind_the_consequences_of_brain_misalignment.md)
 - [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
-- [\[AAAI 2026\] Vision Transformers are Circulant Attention Learners](../../AAAI2026/llm_nlp/vision_transformers_are_circulant_attention_learners.md)
-- [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](../../AAAI2026/llm_nlp/learning_spatial_decay_for_vision_transformers.md)
+- [\[ICLR 2026\] Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure](is_the_reversal_curse_a_binding_problem_uncovering_limitations_of_transformers_f.md)
+- [\[ACL 2025\] When to Speak, When to Abstain: Contrastive Decoding with Abstention](../../ACL2025/llm_nlp/when_to_speak_when_to_abstain.md)
 
 </div>
 

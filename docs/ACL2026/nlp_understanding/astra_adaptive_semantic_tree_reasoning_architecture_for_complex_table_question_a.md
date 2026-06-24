@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ASTRA: Adaptive Semantic Tree Reasoning Architecture for Complex Table Question Answering
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] ASTRA adaptively reconstructs complex tables into semantic trees and employs a dual-mode reasoning approach consisting of text tree navigation and symbolic code execution. It achieves accuracies of 91.6%, 81.9%, and 90.1% on AIT-QA, SSTQA, and HiTab, respectively, outperforming strong LLMs and existing table structural
+  [ACL2026][NLP Understanding][Complex Table Question Answering] ASTRA adaptively reconstructs complex tables into semantic trees and employs a dual-mode reasoning approach consisting of text tree navigation and symbolic code execution. It achieves accuracies of 91.6%, 81.9%, and 90.1% on AIT-QA, SSTQA, and HiTab, respectively, outperforming strong LLMs and existing table structuralization methods.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL2026"
+  - "NLP Understanding"
+  - "Complex Table Question Answering"
+  - "Semantic Tree"
+  - "Table Serialization"
+  - "Symbolic Reasoning"
+  - "Structured Retrieval"
 date: 2026-05-08
-content_hash: 3cd730f557a01c4a
+content_hash: 7bb7d1614b11e0ea
 ---
+
 # ASTRA: Adaptive Semantic Tree Reasoning Architecture for Complex Table Question Answering
 
 **Conference**: ACL2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Over-squashing in Spatiotemporal Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][Over-squashing] This paper provides the first formal treatment of over-squashing in spatiotemporal graph neural networks (STGNNs)…
+  [NeurIPS 2025][Graph Learning][Over-squashing] This paper provides the first formal treatment of over-squashing in spatiotemporal graph neural networks (STGNNs), uncovering a counterintuitive "temporal sink" phenomenon in causal convolutions—whereby the earliest timestep exerts the greatest influence on the final representation—and proves that time-and-space (T&S) and time-then-space (TTS) architectures are equivalent in terms of information bottlenecks…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Information Propagation"
   - "Graph Rewiring"
 date: 2026-05-08
-content_hash: bb040f6b99ee7157
+content_hash: 2a63e55753039250
 ---
 
 # Over-squashing in Spatiotemporal Graph Neural Networks
@@ -118,9 +118,9 @@ Consider an STGNN composed of $L$ spatiotemporal message-passing (STMP) layers, 
 
 ## Related Papers
 
+- [\[ICML 2025\] Mitigating Over-Squashing in Graph Neural Networks by Spectrum-Preserving Sparsification](../../ICML2025/graph_learning/mitigating_over-squashing_in_graph_neural_networks_by_spectrum-preserving_sparsi.md)
 - [\[NeurIPS 2025\] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks](self-supervised_discovery_of_neural_circuits_in_spatially_patterned_neural_respo.md)
 - [\[NeurIPS 2025\] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks](graphtop_graph_topology-oriented_prompting_for_graph_neural_networks.md)
-- [\[NeurIPS 2025\] Graph Neural Networks for Interferometer Simulations](graph_neural_networks_for_interferometer_simulations.md)
 - [\[NeurIPS 2025\] Logical Expressiveness of Graph Neural Networks with Hierarchical Node Individualization](logical_expressiveness_of_graph_neural_networks_with_hierarchical_node_individua.md)
 - [\[NeurIPS 2025\] Sound Logical Explanations for Mean Aggregation Graph Neural Networks](sound_logical_explanations_for_mean_aggregation_graph_neural_networks.md)
 

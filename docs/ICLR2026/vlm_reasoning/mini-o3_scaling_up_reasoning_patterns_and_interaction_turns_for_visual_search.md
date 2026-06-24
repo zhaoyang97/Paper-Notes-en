@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Mini-o3: Scaling Up Reasoning Patterns and Interaction Turns for Visual Search
 description: >-
-  [ICLR 2026][vlm_reasoning][thinking-with-image] Mini-o3 employs a triplet of "hard-sample dataset + diverse cold-start trajectories + over-turn masking" to enable a VLM trained on only 6 interaction turns to naturally extend to dozens of trial-and-error exploration turns during inference, reproducing OpenAI o3-style deep visual search capabilities and achieving new
+  [ICLR 2026][VLM Reasoning][Visual Search] Mini-o3 employs a triplet of "hard-sample dataset + diverse cold-start trajectories + over-turn masking" to enable a VLM trained on only 6 interaction turns to naturally extend to dozens of trial-and-error exploration turns during inference, reproducing OpenAI o3-style deep visual search capabilities and achieving new SOTA results.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - thinking-with-image
-  - Reinforcement Learning
-  - GRPO
-  - test-time scaling
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Search"
+  - "thinking-with-image"
+  - "Multi-turn tool use"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "test-time scaling"
 date: 2026-05-08
-content_hash: d49144ca1248b899
+content_hash: e928f8d0da1801e5
 ---
+
 # Mini-o3: Scaling Up Reasoning Patterns and Interaction Turns for Visual Search
 
 **Conference**: ICLR 2026  

@@ -4,12 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Reinforcement Learning][CTDE] MAGPO utilizes an **autoregressive joint "guider" policy** for centralized coordinated exploration and constrains it via KL alignment to within the reach of decentralized "learner" policies. This preserves CTDE deployability while providing theoretical guarantees for monotonic policy improvement.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - CTDE
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "CTDE"
+  - "Multi-Agent Reinforcement Learning"
+  - "Autoregressive Joint Policy"
+  - "Teacher-Student Distillation"
+  - "Monotonic Policy Improvement"
+  - "Policy Mirror Descent"
 date: 2026-05-08
-content_hash: b4fe4349371268fb
+content_hash: 5fe88690549cd4ac
 ---
+
 # Multi-Agent Guided Policy Optimization
 
 **Conference**: ICLR 2026  

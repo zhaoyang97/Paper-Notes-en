@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Procurement Auctions with Predictions: Improved Frugality for Facility Location
 description: >-
-  [NeurIPS 2025][LLM Safety][procurement auctions] This paper studies procurement auction design for the strategic uncapacitated facility location problem. It proves that the frugality ratio of the classical VCG auction is…
+  [NeurIPS 2025][LLM Safety][procurement auctions] This paper studies procurement auction design for the strategic uncapacitated facility location problem. It proves that the frugality ratio of the classical VCG auction is exactly 3 (improving the previously known upper bound of 4), and designs learning-augmented auction mechanisms that exploit prediction information to achieve near-optimal frugality when predictions are accurate, while maintaining constant-factor robustness wh…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "learning-augmented mechanisms"
   - "VCG auctions"
 date: 2026-05-08
-content_hash: 970e85b5210f7593
+content_hash: 26f07abb48cce186
 ---
 
 # Procurement Auctions with Predictions: Improved Frugality for Facility Location
@@ -159,11 +159,11 @@ This is a theoretical work and involves no training. The core analytical tool is
 
 ## Related Papers
 
+- [\[ACL 2025\] Improved Unbiased Watermark for Large Language Models](../../ACL2025/llm_safety/improved_unbiased_watermark_for_large_language.md)
+- [\[ICML 2025\] Federated In-Context Learning: Iterative Refinement for Improved Answer Quality](../../ICML2025/llm_safety/federated_in-context_learning_iterative_refinement_for_improved_answer_quality.md)
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](../../ICLR2026/llm_safety/do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
 - [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](../../ICLR2026/llm_safety/doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)
 - [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](simu_selective_influence_machine_unlearning.md)
-- [\[NeurIPS 2025\] MixAT: Combining Continuous and Discrete Adversarial Training for LLMs](mixat_combining_continuous_and_discrete_adversarial_training_for_llms.md)
-- [\[NeurIPS 2025\] Approximate Domain Unlearning for Vision-Language Models](approximate_domain_unlearning_for_visionlanguage_models.md)
 
 </div>
 

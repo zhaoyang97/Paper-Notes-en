@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Speech-to-LaTeX: New Models and Datasets for Converting Spoken Equations and Sentences
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This paper addresses the neglected task of converting spoken mathematical formulas/sentences into LaTeX. It constructs the first large-scale open-source dataset (English and Russian, 66k manual annotations + 571k synthetic audio) and systematically compares "ASR Post-Correction" and "End-to-End Audio LLM" approaches. N
+  [ICLR 2026][Audio & Speech][Speech-to-LaTeX] This paper addresses the neglected task of converting spoken mathematical formulas/sentences into LaTeX. It constructs the first large-scale open-source dataset (English and Russian, 66k manual annotations + 571k synthetic audio) and systematically compares "ASR Post-Correction" and "End-to-End Audio LLM" approaches. Notably, SALMONN reduces the Character Error Rate (CER) from MathSpeech's 64% to 17.5% on the self-built S2L-equatio…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech-to-LaTeX"
+  - "Spoken Math Expressions"
+  - "ASR Post-Correction"
+  - "Audio LLMs"
+  - "Multilingual Datasets"
 date: 2026-05-08
-content_hash: 13814e95e37c3203
+content_hash: 653193bcd86080e6
 ---
+
 # Speech-to-LaTeX: New Models and Datasets for Converting Spoken Equations and Sentences
 
 **Conference**: ICLR 2026  
@@ -134,16 +140,16 @@ S2L-sentences (Manual Test Set, CER, "Eq." = internal formulas, "Text" = plain t
 - Value: ⭐⭐⭐⭐⭐ Establishes the essential infrastructure (data + benchmark) for future S2L research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)
 - [\[ICLR 2026\] Stitch: Simultaneous Thinking and Talking with Chunked Reasoning for Spoken Language Models](stitch_simultaneous_thinking_and_talking_with_chunked_reasoning_for_spoken_langu.md)
 - [\[ICLR 2026\] TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](taste_text-aligned_speech_tokenization_and_embedding_for_spoken_language_modelin.md)
-- [\[ICLR 2026\] Towards True Speech-to-Speech Models Without Text Guidance](towards_true_speech-to-speech_models_without_text_guidance.md)
 - [\[ICML 2025\] Long-Form Speech Generation with Spoken Language Models](../../ICML2025/audio_speech/long-form_speech_generation_with_spoken_language_models.md)
+- [\[ICLR 2026\] Towards True Speech-to-Speech Models Without Text Guidance](towards_true_speech-to-speech_models_without_text_guidance.md)
 
 </div>
 

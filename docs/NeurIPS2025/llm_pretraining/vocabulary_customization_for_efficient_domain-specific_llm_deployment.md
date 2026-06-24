@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vocabulary Customization for Efficient Domain-Specific LLM Deployment
 description: >-
-  [NeurIPS 2025][LLM Pretraining][vocabulary expansion] This paper proposes a BPE tokenizer expansion algorithm that guarantees monotonically non-increasing encoding length…
+  [NeurIPS 2025][LLM Pretraining][vocabulary expansion] This paper proposes a BPE tokenizer expansion algorithm that guarantees monotonically non-increasing encoding length, appending domain-frequent tokens to the Llama 3.1 vocabulary (+30K tokens). In an e-commerce setting, the approach shortens input sequences by 20% and improves inference throughput by 20–30%. After 10K steps of continual training, model quality is fully preserved, and in approximately 98% of cases the model…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "BPE"
   - "inference acceleration"
 date: 2026-05-08
-content_hash: d9605a34a7afed33
+content_hash: f8e8c0da994b8daa
 ---
 
 # Vocabulary Customization for Efficient Domain-Specific LLM Deployment
@@ -139,11 +139,11 @@ Quality is fully preserved across both general and domain-specific tasks.
 
 ## Related Papers
 
+- [\[ACL 2025\] Data Whisperer: Efficient Data Selection for Task-Specific LLM Fine-Tuning via Few-Shot In-Context Learning](../../ACL2025/llm_pretraining/data_whisperer_data_selection.md)
 - [\[ICCV 2025\] Make Your Training Flexible: Towards Deployment-Efficient Video Models](../../ICCV2025/llm_pretraining/make_your_training_flexible_towards_deployment-efficient_video_models.md)
+- [\[ACL 2025\] TokAlign: Efficient Vocabulary Adaptation via Token Alignment](../../ACL2025/llm_pretraining/tokalign_vocab_adaptation.md)
+- [\[ACL 2025\] Second Language (Arabic) Acquisition of LLMs via Progressive Vocabulary Expansion](../../ACL2025/llm_pretraining/second_language_arabic_acquisition_of_llms_via_progressive_vocabulary_expansion.md)
 - [\[NeurIPS 2025\] Learning the Wrong Lessons: Syntactic-Domain Spurious Correlations in Language Models](learning_the_wrong_lessons_syntactic-domain_spurious_correlations_in_language_mo.md)
-- [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](../../ICLR2026/llm_pretraining/scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
-- [\[ACL 2026\] SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](../../ACL2026/llm_pretraining/sage_sign-adaptive_gradient_for_memory-efficient_llm_optimization.md)
-- [\[NeurIPS 2025\] Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs](efficient_pre-training_of_llms_via_topology-aware_communication_alignment_on_mor.md)
 
 </div>
 

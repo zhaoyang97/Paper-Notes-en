@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StyliTruth: Unlocking Stylized yet Truthful LLM Generation via Disentangled Steering
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper discovers that representation editing to inject style into LLMs inadvertently undermines their truthfulness (termed "stylization-induced truthfulness collapse"). The root cause is the entanglement of style and truth directions within certain attention heads. StyliTruth employs orthogonal deflation to decoupl
+  [ICLR 2026][LLM Safety][Activation Editing] This paper discovers that representation editing to inject style into LLMs inadvertently undermines their truthfulness (termed "stylization-induced truthfulness collapse"). The root cause is the entanglement of style and truth directions within certain attention heads. StyliTruth employs orthogonal deflation to decouple these into mutually orthogonal subspaces and applies adaptive token-level editing within each…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Activation Editing"
+  - "Style Transfer"
+  - "Truthfulness"
+  - "Subspace Disentanglement"
+  - "Inference-time Intervention"
 date: 2026-05-08
-content_hash: 4fc1eed3a5c01b37
+content_hash: 43f28eab84ec41c1
 ---
+
 # StyliTruth: Unlocking Stylized yet Truthful LLM Generation via Disentangled Steering
 
 **Conference**: ICLR 2026  

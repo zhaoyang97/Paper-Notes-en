@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3EED: Ground Everything Everywhere in 3D
 description: >-
-  [NeurIPS 2025][Autonomous Driving][3D visual grounding] This paper introduces 3EED — the first large-scale multi-platform (vehicle, drone, quadruped robot), multimodal (LiDAR + RGB) outdoor 3D visual grounding benchmark…
+  [NeurIPS 2025][Autonomous Driving][3D visual grounding] This paper introduces 3EED — the first large-scale multi-platform (vehicle, drone, quadruped robot), multimodal (LiDAR + RGB) outdoor 3D visual grounding benchmark, containing over 128K objects and 22K language descriptions, making it 10× larger than existing outdoor datasets. A baseline method incorporating cross-platform alignment, multi-scale sampling, and scale-adaptive fusion is also proposed…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "outdoor scenes"
   - "cross-platform transfer"
 date: 2026-05-08
-content_hash: 1b653c30684465e0
+content_hash: bb5bfae71528e343
 ---
 
 # 3EED: Ground Everything Everywhere in 3D
@@ -136,8 +136,8 @@ For the baseline, the method builds on BUTD-DETR: PointNet++ encodes LiDAR point
 - [\[NeurIPS 2025\] GSAlign: Geometric and Semantic Alignment Network for Aerial-Ground Person Re-Identification](gsalign_geometric_and_semantic_alignment_network_for_aerial-ground_person_re-ide.md)
 - [\[ICCV 2025\] SkyDiffusion: Leveraging BEV Paradigm for Ground-to-Aerial Image Synthesis](../../ICCV2025/autonomous_driving/leveraging_bev_paradigm_for_ground-to-aerial_image_synthesis.md)
 - [\[CVPR 2026\] TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR](../../CVPR2026/autonomous_driving/terraseg_self-supervised_ground_segmentation_for_any_lidar.md)
+- [\[ICLR 2026\] GT-Space: Enhancing Heterogeneous Collaborative Perception with Ground Truth Feature Space](../../ICLR2026/autonomous_driving/gt-space_enhancing_heterogeneous_collaborative_perception_with_ground_truth_feat.md)
 - [\[NeurIPS 2025\] OpenBox: Annotate Any Bounding Boxes in 3D](openbox_annotate_any_bounding_boxes_in_3d.md)
-- [\[NeurIPS 2025\] LabelAny3D: Label Any Object 3D in the Wild](labelany3d_label_any_object_3d_in_the_wild.md)
 
 </div>
 

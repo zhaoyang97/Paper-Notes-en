@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation
 description: >-
-  [CVPR 2026][3D Vision][FLAME] FlexAvatar utilizes a transformer-based Large Reconstruction Model (LRM) combined with Structured Head Query tokens to aggregate an arbitrary number of single or sparse input images—without camera poses or expression labels—into a unified UV-space Gaussian avatar. A lightweight UNet driven by UV position maps decodes e
+  [CVPR 2026][3D Vision][Gaussian Head Avatar] FlexAvatar utilizes a transformer-based Large Reconstruction Model (LRM) combined with Structured Head Query tokens to aggregate an arbitrary number of single or sparse input images—without camera poses or expression labels—into a unified UV-space Gaussian avatar. A lightweight UNet driven by UV position maps decodes expression-related deformations in real-time. Together with data distribution adjustment and a 10-second test-time r…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - FLAME
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Head Avatar"
+  - "Large Reconstruction Model"
+  - "Animatable Avatar"
+  - "FLAME"
+  - "Test-time Refinement"
 date: 2026-05-08
-content_hash: 597a737ebd0528b6
+content_hash: eaf4fc05f410422f
 ---
+
 # FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ Ablations on FaceCap (Feed-forward results):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
-- [\[CVPR 2026\] iLRM: An Iterative Large 3D Reconstruction Model](ilrm_an_iterative_large_3d_reconstruction_model.md)
-- [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
-- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
+- [\[CVPR 2026\] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars](progressiveavatars_progressive_animatable_3d_gaussian_avatars.md)
+- [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
+- [\[CVPR 2026\] Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars](tavatar_topology-aware_gaussian_attribute_derivation_for_animatable_human_avatar.md)
+- [\[CVPR 2026\] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image](zero-shot_reconstruction_of_animatable_3d_avatars_with_cloth_dynamics_from_a_sin.md)
 
 </div>
 

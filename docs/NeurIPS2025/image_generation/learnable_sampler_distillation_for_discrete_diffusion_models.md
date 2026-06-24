@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learnable Sampler Distillation for Discrete Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][discrete diffusion models] This paper proposes LSD and LSD+, which distill the intermediate score trajectory knowledge of a high-fidelity teacher sampler into a few-step student sampler v…
+  [NeurIPS 2025][Image Generation][discrete diffusion models] This paper proposes LSD and LSD+, which distill the intermediate score trajectory knowledge of a high-fidelity teacher sampler into a few-step student sampler via learnable sampling coefficients and non-uniform time scheduling, enabling efficient and high-quality sampling for discrete diffusion models.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "learnable coefficients"
   - "time scheduling"
 date: 2026-05-08
-content_hash: f9d046406b48b357
+content_hash: 6d83d24aee057ba6
 ---
 
 # Learnable Sampler Distillation for Discrete Diffusion Models
@@ -159,10 +159,10 @@ Ablation on Hamming distance threshold (SEDD-small, Euler, 32 steps):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Non-Markovian Discrete Diffusion with Causal Language Models](non-markovian_discrete_diffusion_with_causal_language_models.md)
+- [\[ICML 2025\] Distillation of Discrete Diffusion through Dimensional Correlations (Di4C)](../../ICML2025/image_generation/distillation_of_discrete_diffusion_through_dimensional_correlations.md)
 - [\[NeurIPS 2025\] Beyond Masked and Unmasked: Discrete Diffusion Models via Partial Masking](beyond_masked_and_unmasked_discrete_diffusion_models_via_par.md)
 - [\[NeurIPS 2025\] Information-Theoretic Discrete Diffusion](information-theoretic_discrete_diffusion.md)
-- [\[NeurIPS 2025\] Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models](psi-sampler_initial_particle_sampling_for_smc-based_inference-time_reward_alignm.md)
-- [\[NeurIPS 2025\] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms](fast_solvers_for_discrete_diffusion_models_theory_and_applications_of_high-order.md)
+- [\[CVPR 2025\] MixerMDM: Learnable Composition of Human Motion Diffusion Models](../../CVPR2025/image_generation/mixermdm_learnable_composition_of_human_motion_diffusion_models.md)
 
 </div>
 

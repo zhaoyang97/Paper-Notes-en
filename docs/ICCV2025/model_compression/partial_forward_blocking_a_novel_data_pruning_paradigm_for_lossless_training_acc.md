@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Partial Forward Blocking: A Novel Data Pruning Paradigm for Lossless Training Acceleration
 description: >-
-  [ICCV 2025][Model Compression][Data Pruning] This paper proposes Partial Forward Blocking (PFB), which computes sample importance at shallow layers during forward propagation and prunes low-importance samples by blocking…
+  [ICCV 2025][Model Compression][Data Pruning] This paper proposes Partial Forward Blocking (PFB), which computes sample importance at shallow layers during forward propagation and prunes low-importance samples by blocking their subsequent deep-layer forward passes. On ImageNet with 40% pruning, PFB achieves a 0.5% accuracy improvement and a 33% reduction in training time.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Kernel Density Estimation"
   - "Forward Blocking"
 date: 2026-05-08
-content_hash: 82cc57e42d25cfb2
+content_hash: 326e7d423db1fa03
 ---
 
 # Partial Forward Blocking: A Novel Data Pruning Paradigm for Lossless Training Acceleration
@@ -168,11 +168,11 @@ PFB partitions the training network into a **shallow sub-network** $Net^{sh}$ an
 
 ## Related Papers
 
+- [\[ICLR 2026\] OrderDP: A Theoretically Guaranteed Lossless Dynamic Data Pruning Framework](../../ICLR2026/model_compression/orderdp_a_theoretically_guaranteed_lossless_dynamic_data_pruning_framework.md)
 - [\[NeurIPS 2025\] CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs](../../NeurIPS2025/model_compression/casspec_cascade_adaptive_selfspeculative_decoding_for_onthef.md)
-- [\[CVPR 2026\] A Paradigm Shift: Fully End-to-End Training for Temporal Sentence Grounding in Videos](../../CVPR2026/model_compression/a_paradigm_shift_fully_end-to-end_training_for_temporal_sentence_grounding_in_vi.md)
-- [\[CVPR 2026\] Batch Loss Score for Dynamic Data Pruning](../../CVPR2026/model_compression/batch_loss_score_for_dynamic_data_pruning.md)
-- [\[ICCV 2025\] Scheduling Weight Transitions for Quantization-Aware Training](scheduling_weight_transitions_for_quantization-aware_training.md)
+- [\[ACL 2025\] Disentangling the Roles of Representation and Selection in Data Pruning](../../ACL2025/model_compression/disentangling_the_roles_of_representation_and_selection_in_data_pruning.md)
 - [\[ICCV 2025\] OuroMamba: A Data-Free Quantization Framework for Vision Mamba](ouromamba_a_data-free_quantization_framework_for_vision_mamba.md)
+- [\[CVPR 2025\] Style Quantization for Data-Efficient GAN Training](../../CVPR2025/model_compression/style_quantization_for_data-efficient_gan_training.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reinforced Rate Control for Neural Video Compression via Inter-Frame Rate-Distortion Awareness
 description: >-
-  [AAAI 2026][Model Compression][Neural video compression] This paper proposes the first reinforcement learning rate control framework based on Constrained Markov Decision Processes (CMDP)…
+  [AAAI 2026][Model Compression][Neural video compression] This paper proposes the first reinforcement learning rate control framework based on Constrained Markov Decision Processes (CMDP), which jointly captures intra-frame content features and inter-frame rate-distortion coupling dependencies via spatiotemporal state modeling, and directly maps these to per-frame coding parameters. The approach reduces the average bitrate error to 1.20% and achieves BD-Rate savings of up to 1…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -13,7 +13,7 @@ tags:
   - "Actor-Critic"
   - "rate-distortion optimization"
 date: 2026-05-08
-content_hash: 886ebd51f014103b
+content_hash: 9df47aea5585e146
 ---
 
 # Reinforced Rate Control for Neural Video Compression via Inter-Frame Rate-Distortion Awareness
@@ -176,11 +176,11 @@ The application of RL to rate control in video coding can be generalized to othe
 
 ## Related Papers
 
-- [\[CVPR 2026\] RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](../../CVPR2026/model_compression/rdvq_differentiable_vq_image_compression.md)
+- [\[ICML 2025\] RADIO: Rate-Distortion Optimization for Large Language Model Compression](../../ICML2025/model_compression/radio_rate-distortion_optimization_for_large_language_model_compression.md)
+- [\[ICLR 2026\] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate](../../ICLR2026/model_compression/turboquant_online_vector_quantization_with_near-optimal_distortion_rate.md)
+- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](../../CVPR2026/model_compression/real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
 - [\[ICLR 2026\] Cross-Domain Lossy Compression via Rate- and Classification-Constrained Optimal Transport](../../ICLR2026/model_compression/cross_domain_lossy_compression_optimal_transport.md)
-- [\[ICML 2026\] LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding](../../ICML2026/model_compression/lk_losses_direct_acceptance_rate_optimization_for_speculative_decoding.md)
-- [\[AAAI 2026\] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)
-- [\[AAAI 2026\] Failures to Surface Harmful Contents in Video Large Language Models](failures_to_surface_harmful_contents_in_video_large_language_models.md)
+- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](../../CVPR2026/model_compression/perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
 
 </div>
 

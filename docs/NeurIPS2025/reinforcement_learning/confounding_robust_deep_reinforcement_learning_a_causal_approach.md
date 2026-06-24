@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Confounding Robust Deep Reinforcement Learning: A Causal Approach
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][confounded MDP] This paper extends DQN via partial identification theory, proposing Causal DQN to learn robust policies from offline data with unobserved confounders—by optimizing a…
+  [NeurIPS 2025][Reinforcement Learning][confounded MDP] This paper extends DQN via partial identification theory, proposing Causal DQN to learn robust policies from offline data with unobserved confounders—by optimizing a worst-case lower bound on the value function to obtain safe policies—and consistently outperforms standard DQN across 12 confounded Atari games.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "causal DQN"
   - "Atari"
 date: 2026-05-08
-content_hash: dd5e5b2cdccc4966
+content_hash: 28f0a1ba97dfce35
 ---
 
 # Confounding Robust Deep Reinforcement Learning: A Causal Approach
@@ -137,8 +137,8 @@ Causal DQN follows the standard DQN experience replay framework, but replaces th
 - [\[NeurIPS 2025\] A Differential and Pointwise Control Approach to Reinforcement Learning](a_differential_and_pointwise_control_approach_to_reinforceme.md)
 - [\[NeurIPS 2025\] Mind the GAP! The Challenges of Scale in Pixel-based Deep Reinforcement Learning](mind_the_gap_the_challenges_of_scale_in_pixel-based_deep_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach](multi-objective_reinforcement_learning_with_max-min_criterion_a_game-theoretic_a.md)
+- [\[ICML 2025\] Hierarchical Reinforcement Learning with Targeted Causal Interventions](../../ICML2025/reinforcement_learning/hierarchical_reinforcement_learning_with_targeted_causal_interventions.md)
 - [\[NeurIPS 2025\] Enhancing Interpretability in Deep Reinforcement Learning through Semantic Clustering](enhancing_interpretability_in_deep_reinforcement_learning_through_semantic_clust.md)
-- [\[NeurIPS 2025\] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling](robust_adversarial_reinforcement_learning_in_stochastic_games_via_sequence_model.md)
 
 </div>
 

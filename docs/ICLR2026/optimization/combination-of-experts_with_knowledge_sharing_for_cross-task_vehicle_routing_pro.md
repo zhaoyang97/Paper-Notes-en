@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Combination-of-Experts with Knowledge Sharing for Cross-Task Vehicle Routing Problems
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Addressing the structural characteristic of Vehicle Routing Problems (VRP) where "each task is composed of several basic constraints," this paper proposes CoEKS: utilizing "constraint-specific experts + combiners" to activate and weigh experts of each constraint on demand, combined with a "mutual expert distillation +
+  [ICLR2026][Optimization][Cross-task generalization] Addressing the structural characteristic of Vehicle Routing Problems (VRP) where "each task is composed of several basic constraints," this paper proposes CoEKS: utilizing "constraint-specific experts + combiners" to activate and weigh experts of each constraint on demand, combined with a "mutual expert distillation + shared transformation layer" for multi-view knowledge sharing. This enables a unified model to perform accur…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Cross-task generalization"
+  - "Constraint combination"
+  - "Combination-of-Experts"
+  - "Mutual distillation"
+  - "Out-of-distribution generalization"
 date: 2026-05-08
-content_hash: 954a28f85b43a853
+content_hash: bacb5e0c381881a6
 ---
+
 # Combination-of-Experts with Knowledge Sharing for Cross-Task Vehicle Routing Problems
 
 **Conference**: ICLR2026  
@@ -161,11 +167,11 @@ On 16 VRP tasks ($n=50$), using ReLD-MoEL as the baseline, removing components:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Segment for Vehicle Routing Problems](learning_to_segment_for_vehicle_routing_problems.md)
 - [\[ICLR 2026\] LMask: Learn to Solve Constrained Routing Problems with Lazy Masking](lmask_learn_to_solve_constrained_routing_problems_with_lazy_masking.md)
-- [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](../../NeurIPS2025/optimization/rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
-- [\[CVPR 2026\] Label-Free Cross-Task LoRA Merging with Null-Space Compression](../../CVPR2026/optimization/label-free_cross-task_lora_merging_with_null-space_compression.md)
-- [\[NeurIPS 2025\] Learning to Insert for Constructive Neural Vehicle Routing Solver](../../NeurIPS2025/optimization/learning_to_insert_for_constructive_neural_vehicle_routing_solver.md)
 - [\[ICLR 2026\] Align-SAM: Seeking Flatter Minima for Better Cross-Subset Alignment](align-sam_seeking_flatter_minima_for_better_cross-subset_alignment.md)
+- [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](../../NeurIPS2025/optimization/rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
+- [\[ICLR 2026\] Scaling Multi-Task Bayesian Optimization with Large Language Models](scaling_multi-task_bayesian_optimization_with_large_language_models.md)
 
 </div>
 

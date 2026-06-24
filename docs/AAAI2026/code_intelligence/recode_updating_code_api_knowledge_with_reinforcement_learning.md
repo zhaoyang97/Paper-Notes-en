@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReCode: Updating Code API Knowledge with Reinforcement Learning
 description: >-
-  [AAAI 2026][Code Intelligence][Code Generation] This paper proposes ReCode, a framework that trains LLMs via rule-based reinforcement learning (rather than SFT) to correctly leverage API update documentation provided in…
+  [AAAI 2026][Code Intelligence][Code Generation] This paper proposes ReCode, a framework that trains LLMs via rule-based reinforcement learning (rather than SFT) to correctly leverage API update documentation provided in the prompt for code version migration, enabling a 7B model to surpass 32B models on CodeUpdateArena.
 tags:
   - "AAAI 2026"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "Version Migration"
 date: 2026-05-08
-content_hash: 76f8608a684fb891
+content_hash: 94befc2234546a6f
 ---
 
 # ReCode: Updating Code API Knowledge with Reinforcement Learning
@@ -138,10 +138,10 @@ Key finding: Qwen2.5-Coder-7B + ReCode DAPO achieves Pass@1 of 78.7, surpassing 
 ## Related Papers
 
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
+- [\[ICLR 2026\] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment](../../ICLR2026/code_intelligence/agnostics_learning_to_synthesize_code_in_any_programming_language_with_a_univers.md)
 - [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](../../ACL2026/code_intelligence/recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
-- [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/code_intelligence/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
-- [\[CVPR 2026\] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](../../CVPR2026/code_intelligence/mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)
-- [\[NeurIPS 2025\] Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](../../NeurIPS2025/code_intelligence/co-evolving_llm_coder_and_unit_tester_via_reinforcement_learning.md)
+- [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](../../ICLR2026/code_intelligence/critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](../../ICLR2026/code_intelligence/tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 
 </div>
 

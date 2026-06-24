@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] "As Eastern Powers, I Will Veto." : An Investigation of Nation-Level Bias of Large Language Models in International Relations
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][nation-level bias] This paper systematically investigates nation-level bias of LLMs in international relations, designing three bias evaluation paradigms (DirectQA…
+  [AAAI 2026][Information Retrieval & RAG][nation-level bias] This paper systematically investigates nation-level bias of LLMs in international relations, designing three bias evaluation paradigms (DirectQA, Association Test, Vote Simulation) grounded in real UN Security Council data. It reveals the multi-dimensional nature of such bias—varying across models and evaluation contexts—and proposes a RAG+Reflexion debiasing framework.
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "explicit bias"
   - "implicit bias"
 date: 2026-05-08
-content_hash: 0fc5906be54f2001
+content_hash: 85ce7e4559edbb7c
 ---
 
 # "As Eastern Powers, I Will Veto." : An Investigation of Nation-Level Bias of Large Language Models in International Relations
@@ -133,10 +133,10 @@ GPT-4o-mini benefits most from debiasing, with especially large gains on Russia 
 ## Related Papers
 
 - [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](../../ICLR2026/information_retrieval/query-level_uncertainty_in_large_language_models.md)
-- [\[AAAI 2026\] Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?](positional_bias_in_multimodal_embedding_models_do_they_favor_the_beginning_the_m.md)
-- [\[AAAI 2026\] Do Retrieval Augmented Language Models Know When They Don't Know?](do_retrieval_augmented_language_models_know_when_they_dont_know.md)
-- [\[ICLR 2026\] TokMem: One-Token Procedural Memory for Large Language Models](../../ICLR2026/information_retrieval/tokmem_one-token_procedural_memory_for_large_language_models.md)
+- [\[ACL 2025\] Evaluation of Attribution Bias in Generator-Aware Retrieval-Augmented Large Language Models](../../ACL2025/information_retrieval/evaluation_of_attribution_bias_in_generator-aware_retrieval-augmented_large_lang.md)
 - [\[AAAI 2026\] PRECISE: Reducing the Bias of LLM Evaluations Using Prediction-Powered Ranking Estimation](precise_reducing_the_bias_of_llm_evaluations_using_prediction-powered_ranking_es.md)
+- [\[AAAI 2026\] Do Retrieval Augmented Language Models Know When They Don't Know?](do_retrieval_augmented_language_models_know_when_they_dont_know.md)
+- [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](../../ICLR2026/information_retrieval/mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
 
 </div>
 

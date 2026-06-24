@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tree-Guided Diffusion Planner
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion planning] This paper proposes the Tree-guided Diffusion Planner (TDP), which formalizes test-time diffusion planning as a tree search problem. Through bi-level sampling—particle…
+  [NeurIPS 2025][Image Generation][Diffusion planning] This paper proposes the Tree-guided Diffusion Planner (TDP), which formalizes test-time diffusion planning as a tree search problem. Through bi-level sampling—particle-guided generation of diverse parent trajectories for exploration, combined with fast conditional denoising to generate child trajectories for exploitation—TDP achieves a strong exploration–exploitation balance and substantially outperforms existing methods un…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "zero-shot planning"
   - "trajectory generation"
 date: 2026-05-08
-content_hash: 0606e2ec7504bbac
+content_hash: f6e8e3443e497321
 ---
 
 # Tree-Guided Diffusion Planner
@@ -134,11 +134,11 @@ Proposition 1 establishes the necessity of bi-level sampling: guided sampling in
 
 ## Related Papers
 
+- [\[ICML 2025\] Task-Agnostic Pre-training and Task-Guided Fine-tuning for Versatile Diffusion Planner](../../ICML2025/image_generation/task-agnostic_pre-training_and_task-guided_fine-tuning_for_versatile_diffusion_p.md)
 - [\[NeurIPS 2025\] Schrödinger Bridge Matching for Tree-Structured Costs and Entropic Wasserstein Barycentres](schrödinger_bridge_matching_for_tree-structured_costs_and_entropic_wasserstein_b.md)
 - [\[NeurIPS 2025\] Safe and Stable Control via Lyapunov-Guided Diffusion Models](safe_and_stable_control_via_lyapunov-guided_diffusion_models.md)
-- [\[CVPR 2026\] Image Generation as a Visual Planner for Robotic Manipulation](../../CVPR2026/image_generation/image_generation_as_a_visual_planner_for_robotic_manipulation.md)
-- [\[NeurIPS 2025\] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation](vicinity-guided_discriminative_latent_diffusion_for_privacy-preserving_domain_ad.md)
-- [\[NeurIPS 2025\] DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models](dexter_diffusion-guided_explanations_with_textual_reasoning_for_vision_models.md)
+- [\[ICML 2025\] Tree-Sliced Wasserstein Distance: A Geometric Perspective](../../ICML2025/image_generation/tree-sliced_wasserstein_distance_a_geometric_perspective.md)
+- [\[ICML 2025\] Tree-Sliced Wasserstein Distance with Nonlinear Projection](../../ICML2025/image_generation/tree-sliced_wasserstein_distance_with_nonlinear_projection.md)
 
 </div>
 

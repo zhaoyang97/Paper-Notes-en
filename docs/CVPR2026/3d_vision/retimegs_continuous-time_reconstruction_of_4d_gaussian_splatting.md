@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][4D Gaussian Splatting] This paper proposes RetimeGS, which integrates regularized temporal opacity, Catmull-Rom spline trajectories, bidirectional optical flow supervision, and triple rendering strategies. These designs resolve ghosting and temporal aliasing issues in 4D Gaussian Splatting (4DGS) during inter-frame interpolation, enabling gh
+  [CVPR2026][3D Vision][4D Gaussian Splatting] This paper proposes RetimeGS, which integrates regularized temporal opacity, Catmull-Rom spline trajectories, bidirectional optical flow supervision, and triple rendering strategies. These designs resolve ghosting and temporal aliasing issues in 4D Gaussian Splatting (4DGS) during inter-frame interpolation, enabling ghost-free continuous-time 4D reconstruction at arbitrary timestamps.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D Gaussian Splatting
+  - "CVPR2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Dynamic Scene Reconstruction"
+  - "Temporal Interpolation"
+  - "Optical Flow Supervision"
+  - "Catmull-Rom Spline"
+  - "Temporal Aliasing"
 date: 2026-05-08
-content_hash: e1351cc79769f5cf
+content_hash: bc725ab5de13b075
 ---
+
 # RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting
 
 **Conference**: CVPR2026  
@@ -194,10 +200,10 @@ RetimeGS outperforms all baselines across all metrics. Compared to the strongest
 
 ## Related Papers
 
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
 - [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting](sv-gs_sparse_view_4d_reconstruction_with_skeleton-driven_gaussian_splatting.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
+- [\[AAAI 2026\] Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction](../../AAAI2026/3d_vision/sparse4dgs_4d_gaussian_splatting_for_sparse-frame_dynamic_scene_reconstruction.md)
+- [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
 - [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
 
 </div>

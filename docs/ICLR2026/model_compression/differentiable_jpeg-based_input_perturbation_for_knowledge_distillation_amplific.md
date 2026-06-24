@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Differentiable JPEG-based Input Perturbation for Knowledge Distillation Amplification via Conditional Mutual Information Maximization
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes inserting a **differentiable JPEG compression layer** in front of a frozen teacher, training only 128 quantization parameters to perturb teacher inputs and directly maximize the teacher's Conditional Mutual Information (CMI). This generates "softer" and more informative supervisory signals—a plug-an
+  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes inserting a **differentiable JPEG compression layer** in front of a frozen teacher, training only 128 quantization parameters to perturb teacher inputs and directly maximize the teacher's Conditional Mutual Information (CMI). This generates "softer" and more informative supervisory signals—a plug-and-play distillation amplifier that does not modify teacher weights, achieving student Top-1 gains of up t…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Conditional Mutual Information (CMI)"
+  - "Differentiable JPEG"
+  - "Input Perturbation"
+  - "Frozen Teacher"
+  - "Alternating Optimization"
 date: 2026-05-08
-content_hash: ac479572435d0e58
+content_hash: 6a4ab58c7884a7aa
 ---
+
 # Differentiable JPEG-based Input Perturbation for Knowledge Distillation Amplification via Conditional Mutual Information Maximization
 
 **Conference**: ICLR 2026  

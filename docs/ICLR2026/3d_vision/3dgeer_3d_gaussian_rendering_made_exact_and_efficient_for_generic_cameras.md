@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] 3DGEER: 3D Gaussian Rendering Made Exact and Efficient for Generic Cameras
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] The 3DGEER framework is proposed, which achieves geometrically exact and real-time efficient 3D Gaussian rendering under any camera model by deriving a closed-form solution for integrating Gaussian density along rays, designing Particle Bounding Frustums (PBF) for precise and efficient ray-particle association, and int
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] The 3DGEER framework is proposed, which achieves geometrically exact and real-time efficient 3D Gaussian rendering under any camera model by deriving a closed-form solution for integrating Gaussian density along rays, designing Particle Bounding Frustums (PBF) for precise and efficient ray-particle association, and introducing Bipolar Equi-Angular Projection (BEAP) to unify wide field-of-view camera representations. It comprehensi…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Ray Tracing"
+  - "Fisheye Camera"
+  - "Wide Field-of-View Rendering"
+  - "Real-time Rendering"
 date: 2026-05-08
-content_hash: 0aef8785ec21b746
+content_hash: 748039846a98557f
 ---
+
 # 3DGEER: 3D Gaussian Rendering Made Exact and Efficient for Generic Cameras
 
 **Conference**: ICLR 2026  
@@ -147,7 +152,7 @@ Standard photometric loss is used for supervision in the BEAP space. After 30k i
 - [\[CVPR 2026\] Exact-GS: Mathematically Rigorous and Accurate 3D Gaussian Splatting for 3D X-ray Reconstruction](../../CVPR2026/3d_vision/exact-gs_mathematically_rigorous_and_accurate_3d_gaussian_splatting_for_3d_x-ray.md)
 - [\[ICLR 2026\] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning](megs2_memory-efficient_gaussian_splatting_via_spherical_gaussians_and_unified_pr.md)
 - [\[ICLR 2026\] Horseshoe Splatting: Handling Structural Sparsity for Uncertainty-Aware Gaussian-Splatting Radiance Field Rendering](horseshoe_splatting_handling_structural_sparsity_for_uncertainty-aware_gaussian-.md)
-- [\[ICLR 2026\] RadioGS: Radiometrically Consistent Gaussian Surfels for Inverse Rendering](radiogs_radiometric_gaussian_surfels.md)
+- [\[CVPR 2026\] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling](../../CVPR2026/3d_vision/cat-gs_efficient_3dgs_rendering_for_large-scale_scenes_with_inter-frame_caching_.md)
 
 </div>
 

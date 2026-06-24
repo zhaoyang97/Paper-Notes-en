@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learnable Motion-Focused Tokenization for Effective and Efficient Video Unsupervised Domain Adaptation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] LMFT quantifies the motion intensity of each patch using the "L1 motion difference of tokens from adjacent frames" in video domain adaptation. It then utilizes reinforcement learning to learn a fine-tunable motion threshold to discard low-motion (background) tokens, feeding only action-related tokens into the ViT. This
+  [CVPR 2026][Video Understanding][Video Domain Adaptation] LMFT quantifies the motion intensity of each patch using the "L1 motion difference of tokens from adjacent frames" in video domain adaptation. It then utilizes reinforcement learning to learn a fine-tunable motion threshold to discard low-motion (background) tokens, feeding only action-related tokens into the ViT. This simultaneously mitigates domain shift caused by labels/backgrounds and reduces training time by 10–20…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Domain Adaptation"
+  - "Action Recognition"
+  - "Token Pruning"
+  - "Motion-Focused"
+  - "RL-based Thresholding"
 date: 2026-05-08
-content_hash: 5f970403b3460cb0
+content_hash: c8502cd7ea034f50
 ---
+
 # Learnable Motion-Focused Tokenization for Effective and Efficient Video Unsupervised Domain Adaptation
 
 **Conference**: CVPR 2026  
@@ -135,10 +141,10 @@ Compared to VUDA methods, LMFT achieves 74.2% accuracy on M→H with 2,784s trai
 ## Related Papers
 
 - [\[ICML 2026\] Return of Frustratingly Easy Unsupervised Video Domain Adaptation](../../ICML2026/video_understanding/return_of_frustratingly_easy_unsupervised_video_domain_adaptation.md)
+- [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)
 - [\[CVPR 2026\] MaskAdapt: Learning Flexible Motion Adaptation via Mask-Invariant Prior for Physics-Based Characters](maskadapt_learning_flexible_motion_adaptation_via_mask-invariant_prior_for_physi.md)
 - [\[CVPR 2026\] VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition](videonet_a_large-scale_dataset_for_domain-specific_action_recognition.md)
 - [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
-- [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](scene-centric_unsupervised_video_panoptic_segmentation.md)
 
 </div>
 

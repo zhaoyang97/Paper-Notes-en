@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] Bayesian Influence Functions for Hessian-Free Data Attribution
 description: >-
-  [ICLR 2026][Others][influence functions] Propose the Local Bayesian Influence Function (BIF), which replaces the infeasible Hessian inverse in classical influence functions with covariance estimated via SGLD sampling. This achieves architecture-agnostic data attribution for models with billions of parameters and reaches SOTA in retraining experiments.
+  [ICLR 2026][influence functions] Propose the Local Bayesian Influence Function (BIF), which replaces the infeasible Hessian inverse in classical influence functions with covariance estimated via SGLD sampling. This achieves architecture-agnostic data attribution for models with billions of parameters and reaches SOTA in retraining experiments.
 tags:
-  - ICLR 2026
-  - Others
-  - influence functions
-  - training data attribution
-  - Bayesian inference
-  - SGMCMC
-  - Hessian-free
-  - data valuation
+  - "ICLR 2026"
+  - "influence functions"
+  - "training data attribution"
+  - "Bayesian inference"
+  - "SGMCMC"
+  - "Hessian-free"
+  - "data valuation"
 date: 2026-05-08
-content_hash: 16399bb427eb31b4
+content_hash: bf2b5d741d3e4b65
 ---
+
 # Bayesian Influence Functions for Hessian-Free Data Attribution
 
 **Conference**: ICLR 2026  
@@ -138,9 +138,9 @@ The absolute value of raw covariance can be inflated by data points with high lo
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](../../NeurIPS2025/others/position_there_is_no_free_bayesian_uncertainty_quantification.md)
 - [\[ICLR 2026\] Federated ADMM from Bayesian Duality](federated_admm_from_bayesian_duality.md)
 - [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
-- [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](../../NeurIPS2025/others/position_there_is_no_free_bayesian_uncertainty_quantification.md)
 - [\[CVPR 2026\] Spectral Conformal Risk Control: Distribution-Free Tail Guarantees via Bayesian Quadrature](../../CVPR2026/others/spectral_conformal_risk_control_distribution-free_tail_guarantees_via_bayesian_q.md)
 - [\[ICLR 2026\] On the Impact of the Utility in Semivalue-based Data Valuation](on_the_impact_of_the_utility_in_semivalue-based_data_valuation.md)
 

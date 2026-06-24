@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MultiFileTest: A Multi-File-Level LLM Unit Test Generation Benchmark and Impact of Error Fixing Mechanisms
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] Ours proposes MultiFileTest, the first multi-file level LLM unit test generation benchmark, covering 20 projects each for Python/Java/JavaScript. It evaluates 11 frontier LLMs and analyzes the impact of manual fixing and self-repair mechanisms on test quality, revealing that even the strongest models exhibit numerous b
+  [ACL 2026 Findings][LLM Evaluation][Unit test generation] Ours proposes MultiFileTest, the first multi-file level LLM unit test generation benchmark, covering 20 projects each for Python/Java/JavaScript. It evaluates 11 frontier LLMs and analyzes the impact of manual fixing and self-repair mechanisms on test quality, revealing that even the strongest models exhibit numerous basic executability errors.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Unit test generation"
+  - "multi-file benchmark"
+  - "cross-file dependency"
+  - "error fixing"
+  - "code quality"
 date: 2026-05-08
-content_hash: 2dce9004127268ca
+content_hash: 4072c1d4f0ce8605
 ---
+
 # MultiFileTest: A Multi-File-Level LLM Unit Test Generation Benchmark and Impact of Error Fixing Mechanisms
 
 **Conference**: ACL 2026 Findings  
@@ -127,9 +133,9 @@ Without distinguishing error types, it is impossible to understand model failure
 
 - [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
 - [\[ACL 2026\] AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking](agenteval_dag-structured_step-level_evaluation_for_agentic_workflows_with_error_.md)
+- [\[ICLR 2026\] How Many Code and Test Cases Are Enough? Evaluating Test Cases Generation from a Binary-Matrix Perspective](../../ICLR2026/llm_evaluation/how_many_code_and_test_cases_are_enough_evaluating_test_cases_generation_from_a_.md)
 - [\[ICML 2026\] CapBencher: Give Your LLM Benchmark a Built-in Alarm for Test-Set Overfitting](../../ICML2026/llm_evaluation/capbencher_give_your_llm_benchmark_a_built-in_alarm_for_test-set_overfitting.md)
 - [\[ACL 2026\] SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark](sessionintentbench_a_multi-task_inter-session_intention-shift_modeling_benchmark.md)
-- [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
 
 </div>
 

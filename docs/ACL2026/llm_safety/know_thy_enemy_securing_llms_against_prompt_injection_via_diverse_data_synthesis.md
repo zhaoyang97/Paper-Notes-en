@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes InstruCoT, which synthesizes diverse training data covering multiple injection vectors and threat scenarios, and introduces a three-stage instruction-level Chain-of-Thought (CoT) fine-tuning based on a situation awareness model. This allows LLMs to effectively identify and reject malicious instructi
+  [ACL 2026 Findings][LLM Safety][Prompt Injection Attack] This paper proposes InstruCoT, which synthesizes diverse training data covering multiple injection vectors and threat scenarios, and introduces a three-stage instruction-level Chain-of-Thought (CoT) fine-tuning based on a situation awareness model. This allows LLMs to effectively identify and reject malicious instructions when facing various prompt injection attacks, significantly outperforming existing defense methods…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Prompt Injection Attack"
+  - "Instruction-level Alignment"
+  - "Chain-of-Thought Reasoning"
+  - "Data Synthesis"
+  - "Safety Fine-tuning"
 date: 2026-05-08
-content_hash: 114bd4aae7bb43a0
+content_hash: 0e1709fccc648f49
 ---
+
 # Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning
 
 **Conference**: ACL 2026 Findings  
@@ -143,7 +149,7 @@ Full-parameter supervised fine-tuning is conducted on the CoT-augmented dataset,
 - [\[ACL 2026\] ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks](proxyprompt_securing_system_prompts_against_prompt_extraction_attacks.md)
 - [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](piarena_a_platform_for_prompt_injection_evaluation.md)
 - [\[ACL 2026\] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)
-- [\[ACL 2026\] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)
+- [\[ICLR 2026\] Output Supervision Can Obfuscate the Chain of Thought](../../ICLR2026/llm_safety/output_supervision_can_obfuscate_the_chain_of_thought.md)
 
 </div>
 

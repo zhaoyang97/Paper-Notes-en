@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators
 description: >-
-  [ICML 2026][Computational Biology][Flow Matching] This paper integrates residue embeddings from pre-trained protein language models (pLM) directly into Transferable Implicit Transfer Operators (TITO). The resulting PLaTITO, trained on mdCATH using only 56 ms of trajectories and 1100 GPU hours, allows a coarse-grained $C_\alpha$ model with as few as 19M parameters to o
+  [ICML 2026][Computational Biology][Protein Language Models] This paper integrates residue embeddings from pre-trained protein language models (pLM) directly into Transferable Implicit Transfer Operators (TITO). The resulting PLaTITO, trained on mdCATH using only 56 ms of trajectories and 1100 GPU hours, allows a coarse-grained $C_\alpha$ model with as few as 19M parameters to outperform BioEmu in equilibrium sampling of outlier systems such as fast-folding proteins.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Protein Language Models"
+  - "Implicit Transfer Operators"
+  - "Flow Matching"
+  - "Coarse-grained MD"
+  - "Cross-system Generalization"
 date: 2026-05-08
-content_hash: 5754f996efb3b6bc
+content_hash: 687ab2a1a2e07b19
 ---
+
 # Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators
 
 **Conference**: ICML 2026  
@@ -142,10 +147,10 @@ PLaTITO-19M achieves a 26% lower MAE than BioEmu with ~4x less training data and
 ## Related Papers
 
 - [\[ICLR 2026\] Reverse Distillation: Consistently Scaling Protein Language Model Representations](../../ICLR2026/computational_biology/reverse_distillation_consistently_scaling_protein_language_model_representations.md)
-- [\[ICLR 2026\] How to Make the Most of Your Masked Language Model for Protein Engineering](../../ICLR2026/computational_biology/how_to_make_the_most_of_your_masked_language_model_for_protein_engineering.md)
+- [\[ICLR 2026\] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation](../../ICLR2026/computational_biology/protdyn_a_foundation_protein_language_model_for_thermodynamics_and_dynamics_gene.md)
+- [\[ICML 2026\] Viral Proteins Reveal Geometry of Protein Language Models](viral_proteins_reveal_geometry_of_protein_language_models.md)
+- [\[ICML 2026\] Circuit Tracing in Autoregressive Protein Language Models](circuit_tracing_in_autoregressive_protein_language_models.md)
 - [\[ICML 2026\] Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design](cross-chirality_generalization_by_axial_vectors_for_hetero-chiral_protein-peptid.md)
-- [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
-- [\[ICLR 2026\] Protein as a Second Language for LLMs](../../ICLR2026/computational_biology/protein_as_a_second_language_for_llms.md)
 
 </div>
 

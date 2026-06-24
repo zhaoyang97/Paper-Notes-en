@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dictionary-Aligned Concept Control for Safeguarding Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes the DACO framework, which constructs a dictionary of 15,000 multimodal concepts from WordNet and CC-3M. Combined with Sparse Autoencoders (SAE), it achieves fine-grained concept control over the activation space of frozen MLLMs, significantly enhancing safety across multiple benchmarks while maintaining g
+  [CVPR 2026][Multimodal VLM][Multimodal safety] Ours proposes the DACO framework, which constructs a dictionary of 15,000 multimodal concepts from WordNet and CC-3M. Combined with Sparse Autoencoders (SAE), it achieves fine-grained concept control over the activation space of frozen MLLMs, significantly enhancing safety across multiple benchmarks while maintaining general capabilities.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal safety"
+  - "Activation steering"
+  - "Sparse Autoencoders (SAE)"
+  - "Concept dictionary"
+  - "Jailbreak defense"
 date: 2026-05-08
-content_hash: 98f4dceab9a5c08b
+content_hash: 272d3d31da055665
 ---
+
 # Dictionary-Aligned Concept Control for Safeguarding Multimodal LLMs
 
 **Conference**: CVPR 2026  
@@ -150,15 +156,14 @@ SAE training follows standard reconstruction + sparsity loss (Eq. 3). Dictionary
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models](llavashield_multimodal_multiturn_safety.md)
-- [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
-- [\[CVPR 2026\] Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](joint-aligned_latent_action_towards_scalable_vla_pretraining_in_the_wild.md)
 - [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](personavlm_long_term_personalized_multimodal_llms.md)
-- [\[CVPR 2026\] Customized Visual Storytelling with Unified Multimodal LLMs](customized_visual_storytelling_with_unified_multimodal_llms.md)
+- [\[CVPR 2026\] Protect to Adapt: Orthogonal Subspace Control with Ranked Negative-Prompt Curriculum for Few-Shot Action Recognition](protect_to_adapt_orthogonal_subspace_control_with_ranked_negative-prompt_curricu.md)
+- [\[CVPR 2026\] Widget2Code: From Visual Widgets to UI Code via Multimodal LLMs](widget2code_from_visual_widgets_to_ui_code_via_multimodal_llms.md)
+- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
 
 </div>
 

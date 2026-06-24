@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Asymmetric Proximal Policy Optimization: Mini-Critics Boost LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][PPO] AsyPPO replaces the bulky critic (same size as the actor) with two lightweight mini-critics trained on non-overlapping data shards at the prompt level. This restores the utility of the PPO value function while maintaining GRPO-level overhead. Furthermore, it leverages the "disagreement" signal between the two critics f
+  [ICLR 2026][Reasoning][PPO] AsyPPO replaces the bulky critic (same size as the actor) with two lightweight mini-critics trained on non-overlapping data shards at the prompt level. This restores the utility of the PPO value function while maintaining GRPO-level overhead. Furthermore, it leverages the "disagreement" signal between the two critics for advantage masking and entropy filtering, stably outperforming GRPO and classic PPO on Qwen3-4B/8B/14B.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - PPO
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "PPO"
+  - "asymmetric actor-critic"
+  - "mini-critic ensemble"
+  - "value estimation"
+  - "entropy regularization"
+  - "RLVR"
 date: 2026-05-08
-content_hash: 66f928d5be15ac37
+content_hash: a681f70c867042b6
 ---
+
 # Asymmetric Proximal Policy Optimization: Mini-Critics Boost LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -124,8 +129,6 @@ Evaluated on MATH-500, Minerva Math, AMC 2023, and OlympiadBench. Actor: Qwen3-1
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

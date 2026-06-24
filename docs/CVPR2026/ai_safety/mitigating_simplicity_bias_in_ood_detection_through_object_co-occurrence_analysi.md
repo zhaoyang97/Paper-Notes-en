@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mitigating Simplicity Bias in OOD Detection through Object Co-occurrence Analysis
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper identifies that existing OOD detection methods suffer from "simplicity bias," where models focus on the most easily learned local cues, making them ineffective for near-OOD cases. The authors employ Slot Attention to decompose images into object-level slots and explicitly model "object co-occurrence patterns
+  [CVPR 2026][AI Safety][Out-of-Distribution Detection] This paper identifies that existing OOD detection methods suffer from "simplicity bias," where models focus on the most easily learned local cues, making them ineffective for near-OOD cases. The authors employ Slot Attention to decompose images into object-level slots and explicitly model "object co-occurrence patterns." By categorizing test samples into single, typical, or atypical scenarios based on their co-occurrence a…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Out-of-Distribution Detection"
+  - "Simplicity Bias"
+  - "Object Co-occurrence"
+  - "Slot Attention"
+  - "Divide-and-Conquer Scoring"
 date: 2026-05-08
-content_hash: 2bf117792a95261c
+content_hash: f8d5848460a0e253
 ---
+
 # Mitigating Simplicity Bias in OOD Detection through Object Co-occurrence Analysis
 
 **Conference**: CVPR 2026  
@@ -150,9 +156,9 @@ Scenario-based gains for OCO scoring (FPR95 reduction):
 
 - [\[AAAI 2026\] ProbLog4Fairness: A Neurosymbolic Approach to Modeling and Mitigating Bias](../../AAAI2026/ai_safety/problog4fairness_a_neurosymbolic_approach_to_modeling_and_mitigating_bias.md)
 - [\[ICLR 2026\] AP-OOD: Attention Pooling for Out-of-Distribution Detection](../../ICLR2026/ai_safety/ap-ood_attention_pooling_for_out-of-distribution_detection.md)
-- [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
 - [\[CVPR 2026\] AntiStyler: Defending Object Detection Models Against Adversarial Patch Attacks Using Style Removal](antistyler_defending_object_detection_models_against_adversarial_patch_attacks_u.md)
-- [\[CVPR 2026\] Mitigating Error Amplification in Fast Adversarial Training](mitigating_error_amplification_in_fast_adversarial_training.md)
+- [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
+- [\[CVPR 2026\] Bias at the End of the Score](bias_at_the_end_of_the_score.md)
 
 </div>
 

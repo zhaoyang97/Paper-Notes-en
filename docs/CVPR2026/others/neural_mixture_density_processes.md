@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Neural Mixture Density Processes
 description: >-
-  [CVPR 2026][Others][Paper Note] Addressing the limitation where classical Neural Processes (NPs) only output unimodal predictive distributions due to Gaussian likelihood assumptions, this paper proposes Neural Mixture Density Processes (NMDP). By using a Dirichlet latent variable on a simplex to linearly weight a set of task-shared density experts an
+  [CVPR 2026][Neural Processes] Addressing the limitation where classical Neural Processes (NPs) only output unimodal predictive distributions due to Gaussian likelihood assumptions, this paper proposes Neural Mixture Density Processes (NMDP). By using a Dirichlet latent variable on a simplex to linearly weight a set of task-shared density experts and training with an importance-weighted EM/MM proxy objective, NMDP achieves competitive predictive accuracy…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Neural Processes"
+  - "Mixture Density"
+  - "Dirichlet Prior"
+  - "Importance Sampling"
+  - "EM/MM Optimization"
 date: 2026-05-08
-content_hash: 42744ebff79a1258
+content_hash: 9ea14e19d03ff809
 ---
+
 # Neural Mixture Density Processes
 
 **Conference**: CVPR 2026  
@@ -151,15 +156,16 @@ A five-stage progressive ablation (on synthetic GP benchmarks, each variant addi
 - Value: ⭐⭐⭐⭐ Provides a clean paradigm for probabilistic meta-learning requiring multi-modal expressivity, closed-form prediction, and fast adaptation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)
+- [\[ICLR 2026\] Internal Evaluation of Density-Based Clusterings with Noise](../../ICLR2026/others/internal_evaluation_of_density-based_clusterings_with_noise.md)
 - [\[NeurIPS 2025\] Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes](../../NeurIPS2025/others/addressing_mark_imbalance_in_integrationfree_neural_marked_t.md)
 - [\[CVPR 2026\] Progressive Neural Architecture Generation](progressive_neural_architecture_generation.md)
+- [\[ICLR 2026\] a representer theorem for hawkes processes via penalized least squares minimizat](../../ICLR2026/others/a_representer_theorem_for_hawkes_processes_via_penalized_least_squares_minimizat.md)
 - [\[ACL 2025\] Entropy-UID: A Method for Optimizing Information Density](../../ACL2025/others/entropy-uid_a_method_for_optimizing_information_density.md)
-- [\[ICLR 2026\] A Representer Theorem for Hawkes Processes via Penalized Least Squares Minimization](../../ICLR2026/others/a_representer_theorem_for_hawkes_processes_via_penalized_least_squares_minimizat.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes ResAlign, a framework that leverages Moreau envelope approximation and meta-learning to make safety-driven unlearning in diffusion models resilient a…
+  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes ResAlign, a framework that leverages Moreau envelope approximation and meta-learning to make safety-driven unlearning in diffusion models resilient against harmful capability recovery induced by downstream fine-tuning, even when fine-tuning is performed exclusively on benign data.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "meta-learning"
   - "Moreau envelope"
 date: 2026-05-08
-content_hash: e27207174ceb5e34
+content_hash: 3d00d8a28522fbd2
 ---
 
 # Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning
@@ -151,10 +151,10 @@ ResAlign augments the standard unlearning objective with a resilience term: $\th
 ## Related Papers
 
 - [\[NeurIPS 2025\] DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models](deft_decompositional_efficient_finetuning_for_texttoimage_mo.md)
-- [\[NeurIPS 2025\] Prompt-Based Safety Guidance Is Ineffective for Unlearned Text-to-Image Diffusion Models](prompt-based_safety_guidance_is_ineffective_for_unlearned_text-to-image_diffusio.md)
+- [\[CVPR 2025\] SleeperMark: Towards Robust Watermark against Fine-Tuning Text-to-Image Diffusion Models](../../CVPR2025/image_generation/sleepermark_towards_robust_watermark_against_fine-tuning_text-to-image_diffusion.md)
 - [\[NeurIPS 2025\] Large-Scale Training Data Attribution for Music Generative Models via Unlearning](large-scale_training_data_attribution_for_music_generative_models_via_unlearning.md)
-- [\[ICCV 2025\] Meta-Unlearning on Diffusion Models: Preventing Relearning Unlearned Concepts](../../ICCV2025/image_generation/meta-unlearning_on_diffusion_models_preventing_relearning_unlearned_concepts.md)
-- [\[ICCV 2025\] ShortFT: Diffusion Model Alignment via Shortcut-based Fine-Tuning](../../ICCV2025/image_generation/shortft_diffusion_model_alignment_via_shortcut-based_fine-tuning.md)
+- [\[ICML 2025\] Zero-Shot Adaptation of Parameter-Efficient Fine-Tuning in Diffusion Models](../../ICML2025/image_generation/zero-shot_adaptation_of_parameter-efficient_fine-tuning_in_diffusion_models.md)
+- [\[CVPR 2025\] Personalized Preference Fine-tuning of Diffusion Models](../../CVPR2025/image_generation/personalized_preference_fine-tuning_of_diffusion_models.md)
 
 </div>
 

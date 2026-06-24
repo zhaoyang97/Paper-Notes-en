@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives
 description: >-
-  [ICML 2026][Dialogue Systems][Paper Note] This paper models LLM-as-a-Service as a "principal-agent" problem, proving that current mainstream "pay-per-token" mechanisms naturally incentivize service providers to re-segment the same string into longer token sequences for overcharging. Furthermore, even if providers are forced to disclose next-token distributions
+  [ICML 2026 Oral][Dialogue Systems][Pay-per-token] This paper models LLM-as-a-Service as a "principal-agent" problem, proving that current mainstream "pay-per-token" mechanisms naturally incentivize service providers to re-segment the same string into longer token sequences for overcharging. Furthermore, even if providers are forced to disclose next-token distributions, overcharging without detection remains NP-Hard rather than impossible—the authors provide a simple heuristic…
 tags:
-  - ICML 2026
-  - Dialogue Systems
+  - "ICML 2026 Oral"
+  - "Dialogue Systems"
+  - "Pay-per-token"
+  - "Incentive Compatibility"
+  - "Tokenization Multiplicity"
+  - "Pay-per-character"
+  - "Principal-Agent"
 date: 2026-05-08
-content_hash: 6cb69c95d27cdec0
+content_hash: bfdc7241834b7f23
 ---
+
 # Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives
 
 **Conference**: ICML 2026 Oral  

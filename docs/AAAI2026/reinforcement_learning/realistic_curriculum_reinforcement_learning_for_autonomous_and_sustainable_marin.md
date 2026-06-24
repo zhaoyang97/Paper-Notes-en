@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Realistic Curriculum Reinforcement Learning for Autonomous and Sustainable Marine Vessel Navigation
 description: >-
-  [AAAI 2026][Reinforcement Learning][Curriculum Reinforcement Learning] This paper proposes a Curriculum Reinforcement Learning (CRL) framework for autonomous and sustainable marine vessel navigation. The framework integr…
+  [AAAI 2026][Reinforcement Learning][Curriculum Reinforcement Learning] This paper proposes a Curriculum Reinforcement Learning (CRL) framework for autonomous and sustainable marine vessel navigation. The framework integrates a high-fidelity simulation environment built on real AIS data, a diffusion model-enhanced dynamic maritime traffic simulator, and a machine learning-based fuel consumption prediction module. A multi-objective reward function simultaneously optimizes navig…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Models"
   - "Fuel Consumption Prediction"
 date: 2026-05-08
-content_hash: fd3a13aef2e94fd1
+content_hash: 5c71144e336c5526
 ---
 
 # Realistic Curriculum Reinforcement Learning for Autonomous and Sustainable Marine Vessel Navigation
@@ -214,11 +214,11 @@ with buffer multiplier $\tau = 4$ and maximum time to closest point of approach 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Start Small, Think Big: Curriculum-based Relative Policy Optimization for Visual Grounding](start_small_think_big_curriculum-based_relative_policy_optimization_for_visual_g.md)
+- [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](../../ICLR2026/reinforcement_learning/prompt_curriculum_learning_for_efficient_llm_post-training.md)
 - [\[ACL 2026\] NaviMaster: Learning a Unified Policy for GUI and Embodied Navigation Tasks](../../ACL2026/reinforcement_learning/navimaster_learning_a_unified_policy_for_gui_and_embodied_navigation_tasks.md)
-- [\[ICCV 2025\] NavQ: Learning a Q-Model for Foresighted Vision-and-Language Navigation](../../ICCV2025/reinforcement_learning/navq_learning_a_q-model_for_foresighted_vision-and-language_navigation.md)
-- [\[ICML 2026\] Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training](../../ICML2026/reinforcement_learning/provable_benefit_of_curriculum_in_transformer_tree-reasoning_post-training.md)
-- [\[ICCV 2025\] Embodied Navigation with Auxiliary Task of Action Description Prediction](../../ICCV2025/reinforcement_learning/embodied_navigation_with_auxiliary_task_of_action_description_prediction.md)
+- [\[ICLR 2026\] GRL-SNAM: Geometric Reinforcement Learning with Differential Hamiltonians for Navigation and Mapping in Unknown Environments](../../ICLR2026/reinforcement_learning/grl-snam_geometric_reinforcement_learning_with_differential_hamiltonians_for_nav.md)
+- [\[ICML 2025\] Learning Progress Driven Multi-Agent Curriculum](../../ICML2025/reinforcement_learning/learning_progress_driven_multi-agent_curriculum.md)
+- [\[AAAI 2026\] Start Small, Think Big: Curriculum-based Relative Policy Optimization for Visual Grounding](start_small_think_big_curriculum-based_relative_policy_optimization_for_visual_g.md)
 
 </div>
 

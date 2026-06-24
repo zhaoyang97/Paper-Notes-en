@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Camouflage-aware Image-Text Retrieval via Expert Collaboration
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper introduces "Image-Text Retrieval" (ITR) to camouflaged scenes for the first time, constructing the CamoIT dataset with 10.5k samples. It proposes CECNet, featuring a dual-branch architecture and Confidence-conditioned Graph Attention (C2GA). By utilizing a Camouflaged Object Detection (COD) expert to "extrac
+  [CVPR 2026][Multimodal VLM][Camouflaged Scene Understanding] This paper introduces "Image-Text Retrieval" (ITR) to camouflaged scenes for the first time, constructing the CamoIT dataset with 10.5k samples. It proposes CECNet, featuring a dual-branch architecture and Confidence-conditioned Graph Attention (C2GA). By utilizing a Camouflaged Object Detection (COD) expert to "extract" and independently encode camouflaged targets before selectively fusing them back into global rep…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Camouflaged Scene Understanding"
+  - "Image-Text Retrieval"
+  - "Cross-modal Alignment"
+  - "Confidence-conditioned Graph Attention"
+  - "Expert Collaboration"
 date: 2026-05-08
-content_hash: f471ec1df06b1f66
+content_hash: a0840fc771e681b7
 ---
+
 # Camouflage-aware Image-Text Retrieval via Expert Collaboration
 
 **Conference**: CVPR 2026  
@@ -132,14 +138,15 @@ Impact of branch configuration and C2GA (on CamoIT):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval](eaglenet_energy-aware_fine-grained_relationship_learning_network_for_text-video_.md)
 - [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
-- [\[CVPR 2026\] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](text-only_training_for_image_captioning_with_retrieval_augmentation_and_modality.md)
-- [\[CVPR 2026\] Text-Printed Image：把文本「印」成图片来弥合图文模态鸿沟](text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
+- [\[CVPR 2026\] Quota-Calibrated Fine-Grained Alignment with Context-Aware Marginals for Text-based Person Retrieval](quota-calibrated_fine-grained_alignment_with_context-aware_marginals_for_text-ba.md)
 - [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
 
 </div>

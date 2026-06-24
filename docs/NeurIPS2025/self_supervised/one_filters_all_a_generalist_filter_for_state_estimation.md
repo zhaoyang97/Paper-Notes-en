@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One Filters All: A Generalist Filter for State Estimation
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][LLM reprogramming] This paper proposes LLM-Filter, which reprograms a large language model (LLM) as a generalist state estimator. Through a System-as-Prompt (SaP) mechanism…
+  [NeurIPS 2025][Self-Supervised Learning][LLM reprogramming] This paper proposes LLM-Filter, which reprograms a large language model (LLM) as a generalist state estimator. Through a System-as-Prompt (SaP) mechanism, the frozen LLM achieves zero-shot generalization to unseen dynamical systems, surpassing state-of-the-art learning-based filters.
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "System-as-Prompt"
   - "generalist filter"
 date: 2026-05-08
-content_hash: c472a5e7c57ea76c
+content_hash: 1aea46f0aa48720c
 ---
 
 # One Filters All: A Generalist Filter for State Estimation
@@ -126,11 +126,11 @@ MSE loss: $\mathcal{L}(\boldsymbol{\theta}) = \|\boldsymbol{x}_t - \hat{\boldsym
 
 ## Related Papers
 
+- [\[ICML 2026\] Towards One-for-All Anomaly Detection for Tabular Data](../../ICML2026/self_supervised/towards_one-for-all_anomaly_detection_for_tabular_data.md)
 - [\[NeurIPS 2025\] Implicit Modeling for Transferability Estimation of Vision Foundation Models](implicit_modeling_for_transferability_estimation_of_vision_foundation_models.md)
-- [\[ICML 2026\] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation](../../ICML2026/self_supervised/infoatlas_a_foundation_model_for_zero-shot_statistical_dependence_estimate.md)
-- [\[ICML 2026\] Beyond Distribution Estimation: Simplex Anchored Structural Inference Towards Universal Semi-Supervised Learning](../../ICML2026/self_supervised/beyond_distribution_estimation_simplex_anchored_structural_inference_towards_uni.md)
-- [\[CVPR 2026\] TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation](../../CVPR2026/self_supervised/teflow_enabling_multi-frame_supervision_for_self-supervised_feed-forward_scene_f.md)
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
+- [\[CVPR 2025\] Spectral State Space Model for Rotation-Invariant Visual Representation Learning](../../CVPR2025/self_supervised/spectral_state_space_model_for_rotation-invariant_visual_representation_learning.md)
+- [\[CVPR 2026\] NitroGen: An Open Foundation Model for Generalist Gaming Agents](../../CVPR2026/self_supervised/nitrogen_an_open_foundation_model_for_generalist_gaming_agents.md)
+- [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](../../CVPR2026/self_supervised/exemplar-free_continual_learning_for_state_space_models.md)
 
 </div>
 

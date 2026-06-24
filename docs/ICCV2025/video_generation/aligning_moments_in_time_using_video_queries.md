@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aligning Moments in Time using Video Queries
 description: >-
-  [ICCV 2025][Video Generation][Video Moment Retrieval] This paper proposes MATR (Moment Alignment TRansformer), which conditions target video representations on query video features via dual-stage sequence alignment (soft…
+  [ICCV 2025][Video Generation][Video Moment Retrieval] This paper proposes MATR (Moment Alignment TRansformer), which conditions target video representations on query video features via dual-stage sequence alignment (soft-DTW), enabling video-to-video moment retrieval (Vid2VidMR). A self-supervised pretraining strategy is designed accordingly, achieving +13.1% R@1 and +8.1% mIoU on ActivityNet-VRL.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Self-Supervised Pretraining"
   - "Transformer"
 date: 2026-05-08
-content_hash: 9e1a56827f0960b7
+content_hash: 3d8ef49f0d44679f
 ---
 
 # Aligning Moments in Time using Video Queries
@@ -124,10 +124,10 @@ Comparison with VLM-based methods:
 ## Related Papers
 
 - [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
+- [\[CVPR 2026\] When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models](../../CVPR2026/video_generation/when_numbers_speak_aligning_textual_numerals_and_visual_instances_in_text-to-vid.md)
+- [\[CVPR 2025\] One-Minute Video Generation with Test-Time Training](../../CVPR2025/video_generation/one-minute_video_generation_with_test-time_training.md)
+- [\[CVPR 2025\] Mind the Time: Temporally-Controlled Multi-Event Video Generation](../../CVPR2025/video_generation/mind_the_time_temporally-controlled_multi-event_video_generation.md)
 - [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
-- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](../../CVPR2026/video_generation/streamdit_real-time_streaming_text-to-video_generation.md)
-- [\[ICLR 2026\] TTOM: Test-Time Optimization and Memorization for Compositional Video Generation](../../ICLR2026/video_generation/ttom_test-time_optimization_and_memorization_for_compositional_video_generation.md)
-- [\[ICLR 2026\] MotionStream: Real-Time Video Generation with Interactive Motion Controls](../../ICLR2026/video_generation/motionstream_real-time_video_generation_with_interactive_motion_controls.md)
 
 </div>
 

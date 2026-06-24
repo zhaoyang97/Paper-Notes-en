@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] From Generalist to Specialist Representation
 description: >-
-  [ICML 2026][Physics & Scientific Computing][identifiability] This paper provides the first fully nonparametric (no intervention, no functional constraints) proof for two-layer hierarchical identifiability: the temporal-task structure is identifiable via CI tests from a collider perspective, and task-relevant latents can be disentangled from generalist representations through spa
+  [ICML 2026][Physics & Scientific Computing][identifiability] This paper provides the first fully nonparametric (no intervention, no functional constraints) proof for two-layer hierarchical identifiability: the temporal-task structure is identifiable via CI tests from a collider perspective, and task-relevant latents can be disentangled from generalist representations through sparsity regularization.
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - identifiability
-  - task-relevant representation
-  - nonparametric
-  - sparsity
-  - world model
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "identifiability"
+  - "task-relevant representation"
+  - "nonparametric"
+  - "sparsity"
+  - "world model"
 date: 2026-05-08
-content_hash: f11c4835cd9f6973
+content_hash: 4f117858c2840c7c
 ---
+
 # From Generalist to Specialist Representation
 
 **Conference**: ICML 2026  
@@ -148,11 +149,11 @@ Flux Cat images + GAN (Tasks: "wear glasses / hat / tie"):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Disentangled Representation Learning for Parametric Partial Differential Equations](../../ICLR2026/physics/disentangled_representation_learning_for_parametric_partial_differential_equatio.md)
 - [\[CVPR 2025\] Improve Representation for Imbalanced Regression through Geometric Constraints](../../CVPR2025/physics/improve_representation_for_imbalanced_regression_through_geometric_constraints.md)
 - [\[NeurIPS 2025\] Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer](../../NeurIPS2025/physics/latent_representation_learning_in_heavy-ion_collisions_with_maskpoint_transforme.md)
 - [\[NeurIPS 2025\] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning](../../NeurIPS2025/physics/polaris_a_high-contrast_polarimetric_imaging_benchmark_dataset_for_exoplanetary_.md)
 - [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
-- [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
 
 </div>
 

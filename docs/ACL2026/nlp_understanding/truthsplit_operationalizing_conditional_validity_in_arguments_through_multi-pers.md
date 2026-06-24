@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TruthSplit: Operationalizing Conditional Validity in Arguments Through Multi-Perspective Reasoning
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] TruthSplit is an interactive argument analysis system that formalizes the phenomenon where "the same argument leads to different conclusions under different worldviews" as **conditional validity**. It decomposes text into claims, premises, and assumptions, employs a three-layer NLI check for logic and intra-worldview c
+  [ACL 2026][NLP Understanding][Computational Argumentation] TruthSplit is an interactive argument analysis system that formalizes the phenomenon where "the same argument leads to different conclusions under different worldviews" as **conditional validity**. It decomposes text into claims, premises, and assumptions, employs a three-layer NLI check for logic and intra-worldview consistency, and utilizes six structured worldview personas to **conditionalize** LLM reasoning. The s…
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Computational Argumentation"
+  - "Conditional Validity"
+  - "Worldview Personas"
+  - "NLI Consistency"
+  - "LLM Conditional Reasoning"
 date: 2026-05-08
-content_hash: 46c68dc286fc8549
+content_hash: e0b6afe38b42d07e
 ---
+
 # TruthSplit: Operationalizing Conditional Validity in Arguments Through Multi-Perspective Reasoning
 
 **Conference**: ACL 2026  
@@ -139,10 +145,10 @@ Extraction offers two tiers: a local sequence classification model (~75–80% ac
 ## Related Papers
 
 - [\[ACL 2026\] Exploring Concreteness Through a Figurative Lens](exploring_concreteness_through_a_figurative_lens.md)
-- [\[ACL 2025\] BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering](../../ACL2025/nlp_understanding/belle_a_bi-level_multi-agent_reasoning_framework_for_multi-hop_question_answerin.md)
 - [\[ACL 2025\] Multi-Hop Reasoning for Question Answering with Hyperbolic Representations](../../ACL2025/nlp_understanding/multi-hop_reasoning_for_question_answering_with_hyperbolic_representations.md)
-- [\[ACL 2025\] Self-Critique Guided Iterative Reasoning for Multi-hop Question Answering](../../ACL2025/nlp_understanding/self-critique_guided_iterative_reasoning_for_multi-hop_question_answering.md)
-- [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
+- [\[ACL 2026\] MSMO-ABSA: Multi-Scale and Multi-Objective Optimization for Cross-Lingual Aspect-Based Sentiment Analysis](msmo-absa_multi-scale_and_multi-objective_optimization_for_cross-lingual_aspect-.md)
+- [\[ACL 2025\] BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering](../../ACL2025/nlp_understanding/belle_a_bi-level_multi-agent_reasoning_framework_for_multi-hop_question_answerin.md)
+- [\[ACL 2025\] RISE: Reasoning Enhancement via Iterative Self-Exploration in Multi-hop Question Answering](../../ACL2025/nlp_understanding/rise_reasoning_enhancement_via_iterative_self-exploration_in_multi-hop_question_.md)
 
 </div>
 

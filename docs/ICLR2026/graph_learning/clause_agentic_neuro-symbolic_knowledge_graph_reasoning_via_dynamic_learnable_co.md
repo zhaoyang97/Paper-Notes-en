@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CLAUSE: Agentic Neuro-Symbolic Knowledge Graph Reasoning via Dynamic Learnable Context Engineering
 description: >-
-  [ICLR 2026][Graph Learning][Multi-Agent] CLAUSE treats the problem of "what context to retrieve" in multi-hop KGQA as a budgeted sequential decision-making process. Three collaborative neuro-symbolic agents (Architect, Navigator, and Curator) are jointly optimized under three types of resource constraints (edges, steps, and tokens) using the proposed LC-MAPPO
+  [ICLR2026][Graph Learning][KGQA] CLAUSE treats the problem of "what context to retrieve" in multi-hop KGQA as a budgeted sequential decision-making process. Three collaborative neuro-symbolic agents (Architect, Navigator, and Curator) are jointly optimized under three types of resource constraints (edges, steps, and tokens) using the proposed LC-MAPPO (Lagrangian-Constrained Multi-Agent PPO). A single checkpoint can adjust the "accuracy-latency-cost" trade-off based on per-qu…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Multi-Agent
+  - "ICLR2026"
+  - "Graph Learning"
+  - "KGQA"
+  - "Multi-hop Reasoning"
+  - "Constrained RL"
+  - "Context Engineering"
+  - "Multi-agent"
 date: 2026-05-08
-content_hash: 3ec91694225434c8
+content_hash: 70416e49f233d595
 ---
+
 # CLAUSE: Agentic Neuro-Symbolic Knowledge Graph Reasoning via Dynamic Learnable Context Engineering
 
 **Conference**: ICLR2026  
@@ -139,9 +144,9 @@ On MetaQA (normalized to CLAUSE = 1.0×):
 
 ## Related Papers
 
+- [\[ICLR 2026\] DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS](damr_efficient_and_adaptive_context-aware_knowledge_graph_question_answering_wit.md)
 - [\[NeurIPS 2025\] Reasoning Meets Representation: Envisioning Neuro-Symbolic Wireless Foundation Models](../../NeurIPS2025/graph_learning/reasoning_meets_representation_envisioning_neuro-symbolic_wireless_foundation_mo.md)
 - [\[NeurIPS 2025\] Agint: Agentic Graph Compilation for Software Engineering Agents](../../NeurIPS2025/graph_learning/agint_agentic_graph_compilation_for_software_engineering_age.md)
-- [\[ICLR 2026\] DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS](damr_efficient_and_adaptive_context-aware_knowledge_graph_question_answering_wit.md)
 - [\[ICLR 2026\] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning](knowledge_reasoning_language_model_unifying_knowledge_and_language_for_inductive.md)
 - [\[ICLR 2026\] Controllable Logical Hypothesis Generation for Abductive Reasoning in Knowledge Graphs](controllable_logical_hypothesis_generation_for_abductive_reasoning_in_knowledge_.md)
 

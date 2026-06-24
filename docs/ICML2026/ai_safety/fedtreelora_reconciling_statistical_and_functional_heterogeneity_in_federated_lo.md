@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning
 description: >-
-  [ICML 2026][AI Safety][LoRA] To address the disconnect in existing federated LoRA methods between "client statistical heterogeneity" and "LLM layer functional heterogeneity," FedTreeLoRA employs a global hierarchical clustering tree with layer-wise adaptive depth search. This allows shallow layers to prioritize sharing while deep layers differenti
+  [ICML2026][AI Safety][Federated Learning] To address the disconnect in existing federated LoRA methods between "client statistical heterogeneity" and "LLM layer functional heterogeneity," FedTreeLoRA employs a global hierarchical clustering tree with layer-wise adaptive depth search. This allows shallow layers to prioritize sharing while deep layers differentiate progressively. On GLUE and FLAN, it improves average metrics from 91.19 / 61.77 to 92.36 / 63.19 with minimal para…
 tags:
-  - ICML 2026
-  - AI Safety
-  - LoRA
+  - "ICML2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "LoRA"
+  - "Personalized Fine-Tuning"
+  - "Hierarchical Clustering"
+  - "Heterogeneity"
 date: 2026-05-08
-content_hash: 2743811c8122f3a8
+content_hash: 8cbd6ecffb0a3aab
 ---
+
 # FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning
 
 **Conference**: ICML2026  
@@ -150,11 +155,11 @@ FedTreeLoRA achieves SOTA performance while maintaining the lowest parameter bud
 
 ## Related Papers
 
-- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
 - [\[ICCV 2025\] LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement](../../ICCV2025/ai_safety/lora-fair_federated_lora_fine-tuning_with_aggregation_and_initialization_refinem.md)
+- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
 - [\[ICML 2026\] PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials](pft_phonon_fine-tuning_for_machine_learned_interatomic_potentials.md)
-- [\[ICML 2026\] TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning](tcap_tri-component_attention_profiling_for_unsupervised_backdoor_detection_in_ml.md)
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
+- [\[ICLR 2026\] Rethinking LoRA for Privacy-Preserving Federated Learning in Large Models](../../ICLR2026/ai_safety/rethinking_lora_for_privacy-preserving_federated_learning_in_large_models.md)
+- [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
 
 </div>
 

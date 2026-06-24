@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evolve to Inspire: Novelty Search for Diverse Image Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Novelty Search] This paper proposes Wander, a framework that leverages novelty search and LLM-driven prompt evolution to generate highly diverse image collections from a single text promp…
+  [NeurIPS 2025][Image Generation][Novelty Search] This paper proposes Wander, a framework that leverages novelty search and LLM-driven prompt evolution to generate highly diverse image collections from a single text prompt, surpassing existing evolutionary prompt optimization baselines on the Vendi Score metric.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Prompt Optimization"
   - "CLIP"
 date: 2026-05-08
-content_hash: 06ea04d3ba84e5f2
+content_hash: b9b79c9adb177236
 ---
 
 # Evolve to Inspire: Novelty Search for Diverse Image Generation
@@ -145,11 +145,11 @@ Stronger LLMs yield greater diversity but at the cost of substantially higher re
 
 ## Related Papers
 
+- [\[CVPR 2025\] Learning to Sample Effective and Diverse Prompts for Text-to-Image Generation](../../CVPR2025/image_generation/learning_to_sample_effective_and_diverse_prompts_for_text-to-image_generation.md)
 - [\[NeurIPS 2025\] Continuous Uniqueness and Novelty Metrics for Generative Modeling of Inorganic Crystals](continuous_uniqueness_and_novelty_metrics_for_generative_modeling_of_inorganic_c.md)
-- [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](../../ICLR2026/image_generation/diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
 - [\[ICCV 2025\] VSC: Visual Search Compositional Text-to-Image Diffusion Model](../../ICCV2025/image_generation/vsc_visual_search_compositional_text-to-image_diffusion_model.md)
-- [\[NeurIPS 2025\] ARGenSeg: Image Segmentation with Autoregressive Image Generation Model](argenseg_image_segmentation_with_autoregressive_image_generation_model.md)
-- [\[ICML 2026\] Unified Masked Diffusion Models with Diverse Generation Orders](../../ICML2026/image_generation/unifying_masked_diffusion_models_with_various_generation_orders_and_beyond.md)
+- [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](../../ICLR2026/image_generation/diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
+- [\[ICCV 2025\] LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models](../../ICCV2025/image_generation/loraverse_a_submodular_framework_to_retrieve_diverse_adapters_for_diffusion_mode.md)
 
 </div>
 

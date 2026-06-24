@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] VLA-Arena：评估视觉语言动作模型的开源框架
+  [Paper Note] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] VLA-Arena proposes a structured VLA benchmark—systematically quantifying difficulty through three orthogonal dimensions: task structure, language command, and visual observation. With 170 tasks, it reveals key deficiencies in generalization, visual perception, and safety of existing VLA models.
+  [ICML 2026][Multimodal VLM][Vision-Language-Action Models] VLA-Arena proposes a structured VLA benchmark—systematically quantifying difficulty through three orthogonal dimensions: task structure, language command, and visual observation. With 170 tasks, it reveals key deficiencies in generalization, visual perception, and safety of existing VLA models.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Vision-Language-Action Models"
+  - "Benchmark Evaluation"
+  - "Robotic Manipulation"
+  - "Generalization Performance"
+  - "Safety Constraints"
 date: 2026-05-08
-content_hash: ace4d0d5f8614da5
+content_hash: 2d47e004e1ab3a71
 ---
+
 # VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models
 
 **Conference**: ICML 2026  
@@ -140,16 +146,16 @@ Visual challenges are decomposed into cumulative levels: V0 (Standard) → V1 (L
 - Value: ⭐⭐⭐⭐⭐ (Structural impact on the VLA research community.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] VLANeXt：构建强大 VLA 模型的配方](vlanext_recipes_for_building_strong_vla_models.md)
+- [\[ICCV 2025\] VQ-VLA: Improving Vision-Language-Action Models via Scaling Vector-Quantized Action Tokenizers](../../ICCV2025/multimodal_vlm/vq-vla_improving_vision-language-action_models_via_scaling_vector-quantized_acti.md)
+- [\[ICML 2026\] VLANeXt: A Recipe for Building Robust VLA Models](vlanext_recipes_for_building_strong_vla_models.md)
+- [\[ICCV 2025\] CoA-VLA: Improving Vision-Language-Action Models via Visual-Textual Chain-of-Affordance](../../ICCV2025/multimodal_vlm/coavla_improving_visionlanguageaction_models_via_visualtext.md)
 - [\[ICML 2026\] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds](any3d-vla_enhancing_vla_robustness_via_diverse_point_clouds.md)
-- [\[ICML 2026\] TRAP: 用对抗 patch 劫持 VLA 的 CoT 推理实现目标行为攻击](trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
-- [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](../../AAAI2026/multimodal_vlm/ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
-- [\[CVPR 2026\] Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](../../CVPR2026/multimodal_vlm/joint-aligned_latent_action_towards_scalable_vla_pretraining_in_the_wild.md)
+- [\[CVPR 2026\] SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](../../CVPR2026/multimodal_vlm/simpact_simulation-enabled_action_planning_using_vision-language_models.md)
 
 </div>
 

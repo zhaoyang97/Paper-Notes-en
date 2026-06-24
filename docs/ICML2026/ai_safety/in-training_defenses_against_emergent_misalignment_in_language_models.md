@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] In-Training Defenses Against Emergent Misalignment in Language Models
 description: >-
-  [ICML 2026][AI Safety][Paper Note] Addressing the phenomenon of "Emergent Misalignment" (EM)—where fine-tuning on narrow domains causes global model deterioration—this paper provides the first systematic comparison of five categories of **in-training** defenses. The authors propose Interleaving++, which automatically selects safe data using the "perplex
+  [ICML 2026][AI Safety][Emergent Misalignment] Addressing the phenomenon of "Emergent Misalignment" (EM)—where fine-tuning on narrow domains causes global model deterioration—this paper provides the first systematic comparison of five categories of **in-training** defenses. The authors propose Interleaving++, which automatically selects safe data using the "perplexity difference between aligned and misaligned models." Interleaving++ simultaneously satisfies four criteria: prev…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Emergent Misalignment"
+  - "Fine-Tuning Safety"
+  - "Regularization"
+  - "Perplexity-based Data Selection"
+  - "Defense Inoculation"
 date: 2026-05-08
-content_hash: 16b4831433f53c09
+content_hash: 4a5f764fa41ba5e9
 ---
+
 # In-Training Defenses Against Emergent Misalignment in Language Models
 
 **Conference**: ICML 2026  
@@ -137,11 +143,11 @@ The paper provides a qualitative comparison of the five categories across the fo
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](../../CVPR2026/ai_safety/towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
 - [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
 - [\[ICML 2026\] The Unlearnability Phenomenon in RLVR for Language Models](the_unlearnability_phenomenon_in_rlvr_for_language_models.md)
+- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](../../CVPR2026/ai_safety/towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
+- [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
 - [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](../../CVPR2026/ai_safety/transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
-- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](../../CVPR2026/ai_safety/multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
 
 </div>
 

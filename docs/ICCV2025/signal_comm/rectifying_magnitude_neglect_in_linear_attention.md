@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rectifying Magnitude Neglect in Linear Attention
 description: >-
-  [ICCV 2025][Signal & Communication][Linear Attention] This paper identifies that Linear Attention completely discards Query magnitude information…
+  [ICCV 2025][Signal & Communication][Linear Attention] This paper identifies that Linear Attention completely discards Query magnitude information, causing a significant deviation of attention score distributions from Softmax Attention. It proposes Magnitude-Aware Linear Attention (MALA), which restores magnitude awareness by introducing a scaling factor $\beta$ and an offset term $\gamma$, achieving comprehensive improvements over existing methods across classification…
 tags:
   - "ICCV 2025"
   - "Signal & Communication"
@@ -12,7 +12,7 @@ tags:
   - "Attention Score Distribution"
   - "Linear Complexity"
 date: 2026-05-08
-content_hash: d61b005f53dc4bfa
+content_hash: 2fcab350583bf135
 ---
 
 # Rectifying Magnitude Neglect in Linear Attention
@@ -150,11 +150,11 @@ Kernel function insensitivity: ELU+1, ReLU, and exp are nearly equivalent (82.9 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Breaking the Low-Rank Dilemma of Linear Attention](../../CVPR2025/signal_comm/breaking_the_low-rank_dilemma_of_linear_attention.md)
+- [\[ICML 2025\] Fourier Position Embedding: Enhancing Attention's Periodic Extension for Length Generalization](../../ICML2025/signal_comm/fourier_position_embedding_enhancing_attentions_periodic_extension_for_length_ge.md)
+- [\[CVPR 2025\] ABC-Former: Auxiliary Bimodal Cross-domain Transformer with Interactive Channel Attention](../../CVPR2025/signal_comm/abc-former_auxiliary_bimodal_cross-domain_transformer_with_interactive_channel_a.md)
 - [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](boosting_multimodal_learning_via_disentangled_gradient_learning.md)
 - [\[ICCV 2025\] Generalizable Non-Line-of-Sight Imaging with Learnable Physical Priors](generalizable_non-line-of-sight_imaging_with_learnable_physical_priors.md)
-- [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](../../NeurIPS2025/signal_comm/feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
-- [\[NeurIPS 2025\] Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks](../../NeurIPS2025/signal_comm/memory-integrated_reconfigurable_adapters_a_unified_framework_for_settings_with_.md)
-- [\[NeurIPS 2025\] Masked Symbol Modeling for Demodulation of Oversampled Baseband Communication Signals](../../NeurIPS2025/signal_comm/masked_symbol_modeling_for_demodulation_of_oversampled_baseband_communication_si.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] General Exploratory Bonus for Optimistic Exploration in RLHF
 description: >-
-  [ICLR 2026][Alignment & RLHF][exploratory bonus] It is theoretically proven that existing RLHF exploratory bonuses under KL and α-divergence regularization actually guide the policy toward high-probability regions of the reference model (contradicting the principle of optimism). This paper proposes the General Exploratory Bonus (GEB) framework, which counteracts the
+  [ICLR 2026][LLM Alignment][exploratory bonus] It is theoretically proven that existing RLHF exploratory bonuses under KL and α-divergence regularization actually guide the policy toward high-probability regions of the reference model (contradicting the principle of optimism). This paper proposes the General Exploratory Bonus (GEB) framework, which counteracts the conservative bias of divergence regularization through reference-model-dependent reward adjustment and is provably…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - exploratory bonus
-  - optimistic exploration
-  - RLHF
-  - α-divergence
-  - sample efficiency
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "exploratory bonus"
+  - "optimistic exploration"
+  - "RLHF"
+  - "α-divergence"
+  - "sample efficiency"
 date: 2026-05-08
-content_hash: c1d1880f249746eb
+content_hash: 5346277e29550237
 ---
+
 # General Exploratory Bonus for Optimistic Exploration in RLHF
 
 **Conference**: ICLR 2026  
@@ -135,7 +136,7 @@ The three GEB variants consistently outperform iterative f-DPO and existing bonu
 - [\[ICLR 2026\] RE-PO: Robust Enhanced Policy Optimization as a General Framework for LLM Alignment](re-po_robust_enhanced_policy_optimization_as_a_general_framework_for_llm_alignme.md)
 - [\[ICLR 2026\] COMAL: A Convergent Meta-Algorithm for Aligning LLMs with General Preferences](comal_a_convergent_meta-algorithm_for_aligning_llms_with_general_preferences.md)
 - [\[ICLR 2026\] Unifying Stable Optimization and Reference Regularization in RLHF (DAR)](unifying_stable_optimization_and_reference_regularization_in_rlhf.md)
-- [\[ICLR 2026\] Learning to Summarize User Information for Personalized RLHF（PLUS）](learning_to_summarize_user_information_for_personalized_reinforcement_learning_f.md)
+- [\[ICLR 2026\] Learning to Summarize User Information for Personalized RLHF (PLUS)](learning_to_summarize_user_information_for_personalized_reinforcement_learning_f.md)
 - [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Traversal Verification for Speculative Tree Decoding
 description: >-
-  [NeurIPS 2025][Model Compression][Speculative Decoding] This paper proposes Traversal Verification, a bottom-up verification algorithm that traverses from leaf nodes to the root. Rather than making acceptance/rejection d…
+  [NeurIPS 2025][Model Compression][Speculative Decoding] This paper proposes Traversal Verification, a bottom-up verification algorithm that traverses from leaf nodes to the root. Rather than making acceptance/rejection decisions based on per-token probabilities, it considers the sequence-level probability of entire paths, thereby maximizing candidate utilization. The method is theoretically proven to be lossless and optimal on single chains, and consistently improves acceptan…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Lossless Inference Acceleration"
   - "Sequence-Level Acceptance"
 date: 2026-05-08
-content_hash: 104b1bb2617d55ae
+content_hash: e2741eff1a00d0fc
 ---
 
 # Traversal Verification for Speculative Tree Decoding
@@ -143,9 +143,9 @@ Traversal Verification is a plug-and-play verification module that replaces the 
 
 - [\[NeurIPS 2025\] Reject Only Critical Tokens: Pivot-Aware Speculative Decoding](reject_only_critical_tokens_pivot-aware_speculative_decoding.md)
 - [\[NeurIPS 2025\] CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs](casspec_cascade_adaptive_selfspeculative_decoding_for_onthef.md)
+- [\[ICML 2025\] VocabTrim: Vocabulary Pruning for Efficient Speculative Decoding in LLMs](../../ICML2025/model_compression/vocabtrim_vocabulary_pruning_for_efficient_speculative_decoding_in_llms.md)
 - [\[ACL 2026\] SSSD: Simply-Scalable Speculative Decoding](../../ACL2026/model_compression/sssd_simply-scalable_speculative_decoding.md)
-- [\[AAAI 2026\] Steering Pretrained Drafters during Speculative Decoding](../../AAAI2026/model_compression/steering_pretrained_drafters_during_speculative_decoding.md)
-- [\[NeurIPS 2025\] AutoJudge: Judge Decoding Without Manual Annotation](autojudge_judge_decoding_without_manual_annotation.md)
+- [\[ICML 2025\] Gumiho: A Hybrid Architecture to Prioritize Early Tokens in Speculative Decoding](../../ICML2025/model_compression/gumiho_a_hybrid_architecture_to_prioritize_early_tokens_in_speculative_decoding.md)
 
 </div>
 

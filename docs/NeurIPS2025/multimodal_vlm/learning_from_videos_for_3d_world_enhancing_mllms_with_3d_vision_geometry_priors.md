@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors
 description: >-
-  [NeurIPS 2025][Multimodal VLM][MLLM] VG-LLM proposes integrating a 3D visual geometry encoder (VGGT) into multimodal large language models…
+  [NeurIPS 2025][Multimodal VLM][MLLM] VG-LLM proposes integrating a 3D visual geometry encoder (VGGT) into multimodal large language models, enabling the extraction and fusion of 3D geometric priors from video input alone—without any explicit 3D data. This approach significantly improves MLLM performance on 3D scene understanding and spatial reasoning tasks, with the 4B model surpassing Gemini-1.5-Pro on VSI-Bench.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Video Understanding"
   - "VGGT"
 date: 2026-05-08
-content_hash: 7d8a46194380e220
+content_hash: 5b6c8186ddcab321
 ---
 
 # Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors
@@ -151,10 +151,10 @@ VG-LLM augments a standard MLLM with an additional 3D visual geometry encoder br
 ## Related Papers
 
 - [\[NeurIPS 2025\] Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging](better_tokens_for_better_3d_advancing_vision-language_modeling_in_3d_medical_ima.md)
-- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
-- [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
-- [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](../../CVPR2026/multimodal_vlm/spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
+- [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
+- [\[ICLR 2026\] GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models](../../ICLR2026/multimodal_vlm/gpt4scene_understand_3d_scenes_from_videos_with_vision-language_models.md)
 - [\[NeurIPS 2025\] BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models](bridgevla_input-output_alignment_for_efficient_3d_manipulation_learning_with_vis.md)
+- [\[ICLR 2026\] SR-3D: 3D-Aware Region Prompted Vision Language Model](../../ICLR2026/multimodal_vlm/3d_aware_region_prompted_vision_language_model.md)
 
 </div>
 

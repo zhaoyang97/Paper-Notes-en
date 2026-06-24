@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VUDG: A Dataset for Video Understanding Domain Generalization
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] VUDG constructs the first dataset specifically designed to evaluate domain generalization (DG) in video understanding. By utilizing 11 domains that share the same semantic space but vary only in visual style, viewpoint, or environmental conditions—coupled with a multi-expert cascaded automated annotation pipeline gener
+  [ICLR 2026][Video Understanding][Domain Generalization] VUDG constructs the first dataset specifically designed to evaluate domain generalization (DG) in video understanding. By utilizing 11 domains that share the same semantic space but vary only in visual style, viewpoint, or environmental conditions—coupled with a multi-expert cascaded automated annotation pipeline generating 36K QA pairs—the results demonstrate that nearly all models, including the strongest LVLMs…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Domain Generalization"
+  - "Video Question Answering"
+  - "LVLM Evaluation"
+  - "Multi-expert Annotation"
+  - "Benchmark Dataset"
 date: 2026-05-08
-content_hash: c843a038c3167023
+content_hash: 6e908344cc664e8c
 ---
+
 # VUDG: A Dataset for Video Understanding Domain Generalization
 
 **Conference**: ICLR 2026  
@@ -130,8 +136,6 @@ The 15.4 point drop in single-source generalization compared to full fine-tuning
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

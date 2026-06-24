@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Fast Frank–Wolfe Algorithms with Adaptive Bregman Step-Size for Weakly Convex Functions
 description: >-
-  [ICLR 2026][Optimization & Theory][Frank–Wolfe] The paper liberates the Frank–Wolfe algorithm from the classical assumptions of "Lipschitz gradient + convexity." As long as the objective function satisfies "relative smoothness (L-smad)" with respect to a kernel generating distance and is weakly convex, Ours provides convergence guarantees from sublinear to linear un
+  [ICLR 2026][Optimization][Frank–Wolfe] The paper liberates the Frank–Wolfe algorithm from the classical assumptions of "Lipschitz gradient + convexity." As long as the objective function satisfies "relative smoothness (L-smad)" with respect to a kernel generating distance and is weakly convex, Ours provides convergence guarantees from sublinear to linear under both convex and non-convex settings using adaptive Bregman step-sizes, and proves local linear convergence of FW for…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Frank–Wolfe
+  - "ICLR 2026"
+  - "Optimization"
+  - "Frank–Wolfe"
+  - "conditional gradient"
+  - "Bregman distance"
+  - "relative smoothness (L-smad)"
+  - "weakly convex optimization"
+  - "adaptive step-size"
+  - "linear convergence"
 date: 2026-05-08
-content_hash: 8e886ba0728d4c9c
+content_hash: f4c4722b67b63612
 ---
+
 # Fast Frank–Wolfe Algorithms with Adaptive Bregman Step-Size for Weakly Convex Functions
 
 **Conference**: ICLR 2026  
@@ -111,9 +118,9 @@ Environment: Julia 1.11 + FrankWolfe.jl, MacBook Pro (Apple M2 Max / 64GB). Para
 
 - [\[ICLR 2026\] Beyond Short Steps in Frank-Wolfe Algorithms](beyond_short_steps_in_frank-wolfe_algorithms.md)
 - [\[ICLR 2026\] Shuffling the Data, Stretching the Step-Size: Sharper Bias in Constant Step-Size SGD](shuffling_the_data_extrapolating_the_step_sharper_bias_in_constant_step-size_sgd.md)
-- [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
-- [\[ICLR 2026\] Nesterov Finds GRAAL: Optimal and Adaptive Gradient Method for Convex Optimization](nesterov_finds_graal_optimal_and_adaptive_gradient_method_for_convex_optimizatio.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 - [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](strongly_convex_sets_in_riemannian_manifolds.md)
+- [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
 
 </div>
 

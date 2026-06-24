@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient and Sharp Off-Policy Learning under Unobserved Confounding
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This work derives a **closed-form expression + semiparametrically efficient estimator** for the sharp bounds of the value function in personalized off-policy learning under unobserved confounding. It simplifies the originally unstable minimax optimization into a standard minimization problem and proves that minimizing
+  [ICLR 2026][Causal Inference][Unobserved Confounding] This work derives a **closed-form expression + semiparametrically efficient estimator** for the sharp bounds of the value function in personalized off-policy learning under unobserved confounding. It simplifies the originally unstable minimax optimization into a standard minimization problem and proves that minimizing this estimator yields the optimal confounding-robust policy.
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Unobserved Confounding"
+  - "Marginal Sensitivity Model (MSM)"
+  - "Semiparametric Efficiency"
+  - "Sharp Bound"
+  - "Robust Policy Learning"
 date: 2026-05-08
-content_hash: 56c65a11f059ef3c
+content_hash: 76f2ca54d6837934
 ---
+
 # Efficient and Sharp Off-Policy Learning under Unobserved Confounding
 
 **Conference**: ICLR 2026  
@@ -110,8 +116,8 @@ The performance gap widens as confounding increases: standard methods fail almos
 
 - [\[ICLR 2026\] Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding](causal_imitation_learning_under_expert-observable_and_expert-unobservable_confou.md)
 - [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
-- [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
 - [\[ICLR 2026\] Privacy-Protected Causal Survival Analysis Under Distribution Shift](privacy-protected_causal_survival_analysis_under_distribution_shift.md)
+- [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
 - [\[ICLR 2026\] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions](learning_dynamic_causal_graphs_under_parametric_uncertainty_via_polynomial_chaos.md)
 
 </div>

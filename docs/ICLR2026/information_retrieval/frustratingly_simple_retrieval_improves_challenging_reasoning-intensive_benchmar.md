@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] The authors construct COMPACTDS, a high-quality datastore with 380B tokens that enables sub-second retrieval using 456GB of memory on a single machine. They demonstrate that a "frustratingly simple" minimal RAG pipeline consistently delivers significant gains (up to 33% relative improvement) on reasoning-intensive benc
+  [ICLR 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] The authors construct COMPACTDS, a high-quality datastore with 380B tokens that enables sub-second retrieval using 456GB of memory on a single machine. They demonstrate that a "frustratingly simple" minimal RAG pipeline consistently delivers significant gains (up to 33% relative improvement) on reasoning-intensive benchmarks such as MMLU, MMLU Pro, GPQA, and MATH, rivaling or exceeding Google Search and…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Reasoning-Intensive Benchmarks"
+  - "Web-scale Datastore"
+  - "Two-stage Dense Retrieval"
+  - "ANN + Exact Search"
 date: 2026-05-08
-content_hash: 5e04f43bd3fc75c7
+content_hash: 475fd49a1801b347
 ---
+
 # Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks
 
 **Conference**: ICLR 2026  

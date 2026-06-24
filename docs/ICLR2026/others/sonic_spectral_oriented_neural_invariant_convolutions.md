@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] SONIC: Spectral Oriented Neural Invariant Convolutions
 description: >-
-  [ICLR 2026][Others][Paper Note] SONIC transfers the core concepts of State Space Models (SSMs) to the multi-dimensional frequency domain. By defining a set of direction-selective spectral transfer functions with 6 continuous parameters (amplitude, direction, damping, oscillation, etc.) and mixing across channels via low-rank matrices $B$ and $C$, it
+  [ICLR 2026][Spectral Convolution] SONIC transfers the core concepts of State Space Models (SSMs) to the multi-dimensional frequency domain. By defining a set of direction-selective spectral transfer functions with 6 continuous parameters (amplitude, direction, damping, oscillation, etc.) and mixing across channels via low-rank matrices $B$ and $C$, it achieves a convolutional replacement operator with inherent global receptive fields and resolution invariance. It matches nnU-…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Spectral Convolution"
+  - "Directional Invariance"
+  - "Continuous Parameterization"
+  - "Global Receptive Field"
+  - "Resolution Adaptation"
 date: 2026-05-08
-content_hash: 58a1942e1eba3ab4
+content_hash: 756157186b617d08
 ---
+
 # SONIC: Spectral Oriented Neural Invariant Convolutions
 
 **Conference**: ICLR 2026  
@@ -149,11 +154,11 @@ SonicNet (replacing spatial convolutions in nnU-Net with SONIC blocks) was bench
 
 ## Related Papers
 
+- [\[ICLR 2026\] Adaptive Canonicalization with Application to Invariant Anisotropic Geometric Networks](adaptive_canonicalization_with_application_to_invariant_anisotropic_geometric_ne.md)
 - [\[ICLR 2026\] Buckingham $\pi$-Invariant Test-Time Projection for Robust PDE Surrogate Modeling](buckingham_pi-invariant_testtime_projection_for_robust_pde_surrogate_modeling.md)
 - [\[ICML 2026\] Continual Learning of Domain-Invariant Representations](../../ICML2026/others/continual_learning_of_domain-invariant_representations.md)
 - [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](../../ICML2026/others/learning_permutation-invariant_macroscopic_dynamics.md)
 - [\[ICLR 2026\] CircuitNet 3.0: A Multi-Modal Dataset with Task-Oriented Augmentation for AI-Driven Circuit Design](circuitnet_30_a_multi-modal_dataset_with_task-oriented_augmentation_for_ai-drive.md)
-- [\[CVPR 2026\] Confusion-Aware Spectral Regularizer for Long-Tailed Recognition](../../CVPR2026/others/confusion-aware_spectral_regularizer_for_long-tailed_recognition.md)
 
 </div>
 

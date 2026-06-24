@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Transparent Networks for Multivariate Time Series
 description: >-
-  [AAAI 2026][Time Series][Interpretable Models] This paper proposes GATSM (Generalized Additive Time Series Model), a transparent neural network for time series that employs weight-sharing feature networks to learn featur…
+  [AAAI 2026][Time Series][Interpretable Models] This paper proposes GATSM (Generalized Additive Time Series Model), a transparent neural network for time series that employs weight-sharing feature networks to learn feature representations and masked multi-head attention to capture temporal patterns. GATSM achieves performance comparable to black-box models such as Transformers while maintaining full interpretability.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -11,7 +11,7 @@ tags:
   - "Transparent Networks"
   - "Attention Mechanism"
 date: 2026-05-08
-content_hash: a8c7f8d40d55e59c
+content_hash: 001cb32d16d672c4
 ---
 
 # Transparent Networks for Multivariate Time Series
@@ -206,11 +206,11 @@ Positional encodings and multi-head attention must be **used together** to effec
 
 ## Related Papers
 
-- [\[AAAI 2026\] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting](revitalizing_canonical_pre-alignment_for_irregular_multivariate_time_series_fore.md)
 - [\[AAAI 2026\] SELDON: Supernova Explosions Learned by Deep ODE Networks](seldon_supernova_explosions_learned_by_deep_ode_networks.md)
+- [\[AAAI 2026\] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting](revitalizing_canonical_pre-alignment_for_irregular_multivariate_time_series_fore.md)
 - [\[AAAI 2026\] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification](counterfactual_explainable_ai_xai_method_for_deep_learning-based_multivariate_ti.md)
+- [\[AAAI 2026\] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports](urban_incident_prediction_with_graph_neural_networks_integrating_government_rati.md)
 - [\[AAAI 2026\] Mask the Redundancy: Evolving Masking Representation Learning for Multivariate Time-Series Clustering](mask_the_redundancy_evolving_masking_representation_learning_for_multivariate_ti.md)
-- [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](../../ICML2026/time_series/latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
 
 </div>
 

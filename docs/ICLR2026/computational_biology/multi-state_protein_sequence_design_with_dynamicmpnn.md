@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Multi-state Protein Sequence Design with DynamicMPNN
 description: >-
-  [ICLR 2026][Computational Biology][ProteinMPNN] DynamicMPNN is the first "explicit" multi-state inverse folding model that directly learns the joint conditional distribution $p(Y|X_1,\dots,X_m)$ for a single sequence across multiple conformations. It improves the sequence recovery of ProteinMPNN by 12% and decoy-normalized RMSD self-consistency by 31% on multi-state
+  [ICLR 2026][Computational Biology][Multi-conformational design] DynamicMPNN is the first "explicit" multi-state inverse folding model that directly learns the joint conditional distribution $p(Y|X_1,\dots,X_m)$ for a single sequence across multiple conformations. It improves the sequence recovery of ProteinMPNN by 12% and decoy-normalized RMSD self-consistency by 31% on multi-state protein benchmarks.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - ProteinMPNN
-  - GVP-GNN
-  - AlphaFold3
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Multi-conformational design"
+  - "Inverse folding"
+  - "ProteinMPNN"
+  - "Geometric deep learning"
+  - "GVP-GNN"
+  - "AlphaFold3"
+  - "Metamorphic proteins"
 date: 2026-05-08
-content_hash: 1171250e9292c0b4
+content_hash: 4beaf8d27dc46693
 ---
+
 # Multi-state Protein Sequence Design with DynamicMPNN
 
 **Conference**: ICLR 2026  
@@ -128,8 +133,8 @@ Decoy-normalized RMSD dropped from 0.348 to 0.124 (~31% relative reduction) for 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Property-Driven Protein Inverse Folding with Multi-Objective Preference Alignment](property-driven_protein_inverse_folding_with_multi-objective_preference_alignmen.md)
 - [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
+- [\[ICLR 2026\] Property-Driven Protein Inverse Folding with Multi-Objective Preference Alignment](property-driven_protein_inverse_folding_with_multi-objective_preference_alignmen.md)
 - [\[ICLR 2026\] PRISM: Enhancing Protein Inverse Folding through Fine-Grained Retrieval on Structure-Sequence Multimodal Representations](prism_enhancing_protein_inverse_folding_through_fine-_grained_retrieval_on_struc.md)
 - [\[ICLR 2026\] Riemannian Variational Flow Matching for Material and Protein Design](riemannian_variational_flow_matching_for_material_and_protein_design.md)
 - [\[ICLR 2026\] MarS-FM: Generative Modeling of Molecular Dynamics via Markov State Models](mars-fm_generative_modeling_of_molecular_dynamics_via_markov_state_models.md)

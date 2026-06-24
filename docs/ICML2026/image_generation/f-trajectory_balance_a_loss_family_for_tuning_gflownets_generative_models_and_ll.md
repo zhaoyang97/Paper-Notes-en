@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] $f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data
 description: >-
-  [ICML 2026][Image Generation][GFlowNets] This work generalizes the $\mathbb{KL}_{sq}$ proxy loss—which computes the "squared difference of log-probabilities" as seen in GFlowNet and Kimi—to the entire family of $f$-divergences. This results in a tunable family of mode-seeking $\leftrightarrow$ mode-covering losses where on-policy gradients equal the true $f$-
+  [ICML2026][Image Generation][f-divergence] This work generalizes the $\mathbb{KL}_{sq}$ proxy loss—which computes the "squared difference of log-probabilities" as seen in GFlowNet and Kimi—to the entire family of $f$-divergences. This results in a tunable family of mode-seeking $\leftrightarrow$ mode-covering losses where on-policy gradients equal the true $f$-divergence gradients and off-policy optimality remains consistent. Validations are conducted on synthetic grids…
 tags:
-  - ICML 2026
-  - Image Generation
-  - GFlowNets
-  - off-policy
-  - LLM RLHF
+  - "ICML2026"
+  - "Image Generation"
+  - "f-divergence"
+  - "Trajectory Balance"
+  - "GFlowNets"
+  - "off-policy"
+  - "LLM RLHF"
 date: 2026-05-08
-content_hash: 3b160511c446b6f8
+content_hash: 4456b2b5e208fc77
 ---
+
 # $f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data
 
 **Conference**: ICML2026  
@@ -112,15 +115,16 @@ In GFlowNets, replacing the Trajectory Balance squared loss $(\Delta(\tau, \thet
 - **Value**: ⭐⭐⭐⭐⭐ Provides a plug-and-play loss dictionary for RL fine-tuning and GFlowNets, grounding empirical practices in theory.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces](discrete_diffusion_samplers_and_bridges_off-policy_algorithms_and_applications_i.md)
 - [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
+- [\[ICML 2026\] Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces](discrete_diffusion_samplers_and_bridges_off-policy_algorithms_and_applications_i.md)
 - [\[ICML 2026\] A Diffusive Classification Loss for Learning Energy-based Generative Models](a_diffusive_classification_loss_for_learning_energy-based_generative_models.md)
 - [\[ICML 2026\] EvoGM: Learning to Merge LLMs via Evolutionary Generative Optimization](evogm_learning_to_merge_llms_via_evolutionary_generative_optimization.md)
-- [\[ICML 2026\] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters](ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters.md)
+- [\[ICML 2026\] Hölder++: Improving the Quality-Coherence Trade-off in Multimodal VAEs](hölder_improving_the_quality-coherence_trade-off_in_multimodal_vaes.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization
 description: >-
-  [NeurIPS 2025][Time Series][Spatio-Temporal Graph Neural Networks] This paper proposes StRap, a framework that constructs a multi-dimensional pattern memory bank comprising spatial, temporal…
+  [NeurIPS 2025][Time Series][Spatio-Temporal Graph Neural Networks] This paper proposes StRap, a framework that constructs a multi-dimensional pattern memory bank comprising spatial, temporal, and spatio-temporal key-value pairs. At inference time, StRap retrieves historical patterns most similar to the current input and adaptively fuses them into the model representation, effectively addressing the Spatio-Temporal Out-Of-Distribution (STOOD) problem in streaming spatio-tempor…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Continual Learning"
   - "Pattern Memory Bank"
 date: 2026-05-08
-content_hash: 9069ef12cbc8d06a
+content_hash: 04293817ee6ac3c5
 ---
 
 # StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization
@@ -151,11 +151,11 @@ StRap follows an "explicit storage + retrieval-based fusion" paradigm:
 
 ## Related Papers
 
+- [\[ICLR 2026\] A General Spatio-Temporal Backbone with Scalable Contextual Pattern Bank for Urban Continual Forecasting](../../ICLR2026/time_series/a_general_spatio-temporal_backbone_with_scalable_contextual_pattern_bank_for_urb.md)
+- [\[ICLR 2026\] Temporal Generalization: A Reality Check](../../ICLR2026/time_series/temporal_generalization_a_reality_check.md)
 - [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
 - [\[NeurIPS 2025\] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting](learning_with_calibration_exploring_test-time_computing_of_spatio-temporal_forec.md)
-- [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](../../ICML2026/time_series/nested_spatio-temporal_time_series_forecasting.md)
-- [\[ICCV 2025\] V2XPnP: Vehicle-to-Everything Spatio-Temporal Fusion for Multi-Agent Perception and Prediction](../../ICCV2025/time_series/v2xpnp_vehicle-to-everything_spatio-temporal_fusion_for_multi-agent_perception_a.md)
-- [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
+- [\[ACL 2025\] CTPD: Cross-Modal Temporal Pattern Discovery for Enhanced Multimodal Electronic Health Records Analysis](../../ACL2025/time_series/ctpd_cross-modal_temporal_pattern_discovery_for_enhanced_multimodal_electronic_h.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AdaMEM: Test-Time Adaptive Memory for Language Agents
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] AdaMEM decouples agent memory into two layers: "offline long-term trajectory memory" and "online synthesized short-term strategy memory." This allows agents to dynamically refresh guidance strategies based on current states during long-horizon tasks. Coupled with Step-MFT—a fine-tuning technique that preserves only str
+  [ICML 2026][LLM Agent][Language Agents] AdaMEM decouples agent memory into two layers: "offline long-term trajectory memory" and "online synthesized short-term strategy memory." This allows agents to dynamically refresh guidance strategies based on current states during long-horizon tasks. Coupled with Step-MFT—a fine-tuning technique that preserves only strategies that "actually change actions"—it achieves relative gains of 13–17% over static memory baselines on ALFWorld…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Language Agents"
+  - "Test-Time Adaptation"
+  - "Agent Memory"
+  - "Strategy Synthesis"
+  - "Rejection Sampling Fine-Tuning"
 date: 2026-05-08
-content_hash: 7cf887f2f912357e
+content_hash: ce8a61eff0dc27cd
 ---
+
 # AdaMEM: Test-Time Adaptive Memory for Language Agents
 
 **Conference**: ICML 2026  
@@ -136,15 +142,16 @@ Step-MFT Filtering Comparison: On WebShop, filtering by Outcome only dropped Ada
 - Value: ⭐⭐⭐⭐ (Practical for long-horizon agents and cross-model memory).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
+- [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](../../ICLR2026/llm_agent/test-time_adaptation_for_llm_agents_via_environment_interaction.md)
+- [\[ICLR 2026\] GTA1: GUI Test-time Scaling Agent](../../ICLR2026/llm_agent/gta1_gui_test-time_scaling_agent.md)
 - [\[NeurIPS 2025\] Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents](../../NeurIPS2025/llm_agent/agentic_plan_caching_test-time_memory_for_fast_and_cost-efficient_llm_agents.md)
 - [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](../../ACL2026/llm_agent/clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
-- [\[AAAI 2026\] Time, Identity and Consciousness in Language Model Agents](../../AAAI2026/llm_agent/time_identity_and_consciousness_in_language_model_agents.md)
-- [\[NeurIPS 2025\] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks](../../NeurIPS2025/llm_agent/agenttts_large_language_model_agent_for_testtime_computeopti.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DK-DDIL: Adaptive Knowledge Retention for Dynamic Domain-Incremental Learning in Medical Imaging
 description: >-
-  [CVPR 2026][Medical Imaging][LoRA] Addressing dynamic domain-incremental scenarios in real-world clinical practice where "imaging equipment/institutions/diseases constantly change and label spaces expand," DK-DDIL introduces a differentiable dynamic-rank LoRA adapter (DAM) to automatically scale model capacity based on domain complexity. It utilizes a k
+  [CVPR 2026][Medical Imaging][Domain Incremental Learning] Addressing dynamic domain-incremental scenarios in real-world clinical practice where "imaging equipment/institutions/diseases constantly change and label spaces expand," DK-DDIL introduces a differentiable dynamic-rank LoRA adapter (DAM) to automatically scale model capacity based on domain complexity. It utilizes a knowledge inheritance mechanism (KIR) combining model fusion and prototype contrastive learning to supp…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - LoRA
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Domain Incremental Learning"
+  - "Continual Learning"
+  - "LoRA"
+  - "Dynamic Rank"
+  - "Knowledge Retention"
 date: 2026-05-08
-content_hash: bd1383a27b2518af
+content_hash: 138399f26178c3ce
 ---
+
 # DK-DDIL: Adaptive Knowledge Retention for Dynamic Domain-Incremental Learning in Medical Imaging
 
 **Conference**: CVPR 2026  
@@ -146,7 +151,7 @@ Fig. 3(a) decomposes components on Skin ($\bar A$/$A_T$, FT = Classifier only, f
 - [\[CVPR 2026\] TopoCL: Topological Contrastive Learning for Medical Imaging](topocl_topological_contrastive_learning_for_medical_imaging.md)
 - [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
 - [\[CVPR 2025\] Residual SODAP: Residual Self-Organizing Domain-Adaptive Prompting with Structural Knowledge Preservation for Continual Learning](../../CVPR2025/medical_imaging/residual_sodap_residual_self-organizing_domain-adaptive_prompting_with_structura.md)
-- [\[CVPR 2026\] Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization](human_knowledge_integrated_multi-modal_learning_for_single_source_domain_general.md)
+- [\[CVPR 2026\] OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging](omnifm_toward_modality-robust_and_task-agnostic_federated_learning_for_heterogen.md)
 
 </div>
 

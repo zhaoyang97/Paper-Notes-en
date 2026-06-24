@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StyleKeeper: Prevent Content Leakage using Negative Visual Query Guidance
 description: >-
-  [ICCV 2025][Image Generation][visual style prompt] This paper proposes **Negative Visual Query Guidance (NVQG)**, a training-free method that suppresses content leakage by injecting the reference image's queries as a neg…
+  [ICCV 2025][Image Generation][visual style prompt] This paper proposes **Negative Visual Query Guidance (NVQG)**, a training-free method that suppresses content leakage by injecting the reference image's queries as a negative guidance signal in self-attention layers. The approach achieves high-quality visual style prompting and outperforms existing methods in both style similarity and text alignment.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -14,7 +14,7 @@ tags:
   - "training-free style transfer"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 242c74305f857379
+content_hash: c0d849ac92fa2ab2
 ---
 
 # StyleKeeper: Prevent Content Leakage using Negative Visual Query Guidance
@@ -187,11 +187,11 @@ Evaluation setting: 40 reference images × 120 text prompts × 6 initial noise s
 
 ## Related Papers
 
-- [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
+- [\[CVPR 2025\] ReNeg: Learning Negative Embedding with Reward Guidance](../../CVPR2025/image_generation/reneg_learning_negative_embedding_with_reward_guidance.md)
 - [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
+- [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
+- [\[ICML 2025\] Visual Generation Without Guidance](../../ICML2025/image_generation/visual_generation_without_guidance.md)
 - [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
-- [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](ale_attribute_leakage_free_editing.md)
-- [\[ICCV 2025\] AIComposer: Any Style and Content Image Composition via Feature Integration](aicomposer_any_style_and_content_image_composition_via_feature_integration.md)
 
 </div>
 

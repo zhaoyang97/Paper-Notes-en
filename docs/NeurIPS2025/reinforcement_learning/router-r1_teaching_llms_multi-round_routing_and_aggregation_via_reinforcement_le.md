@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][LLM routing] Router-R1 frames multi-LLM routing and aggregation as a sequential decision-making process…
+  [NeurIPS 2025][Reinforcement Learning][LLM routing] Router-R1 frames multi-LLM routing and aggregation as a sequential decision-making process, employing an LLM itself as the router to interleave *think* and *route* actions. Trained via PPO with a triple reward covering format, correctness, and cost, Router-R1 outperforms all router baselines across 7 QA benchmarks and generalizes to previously unseen LLMs.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "model coordination"
   - "cost optimization"
 date: 2026-05-08
-content_hash: fe931c61f4d11b3d
+content_hash: db8ef91f67f8b7bf
 ---
 
 # Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning
@@ -52,7 +52,7 @@ The final answer is wrapped in an `<answer>` tag, with a maximum of 4 routing ro
 
 1. **LLM-as-Router Design**:
    The router is instantiated as a reasoning-capable LLM (e.g., Qwen2.5-3B-Instruct), leveraging its inherent reasoning capacity for extended deliberation and targeted model selection. The general optimization objective is:
-   $$\max_\pi \mathbb{E}_{x \sim D, y \sim \pi(\cdot|x;\mathcal{P})} \left[ r_\phi(x,y) - \beta \log \frac{\pi(y|x;\mathcal{P})}{\pi_{\text{ref}}(y|x;\mathcal{P})} \right]$$
+    $\max_\pi \mathbb{E}_{x \sim D, y \sim \pi(\cdot|x;\mathcal{P})} \left[ r_\phi(x,y) - \beta \log \frac{\pi(y|x;\mathcal{P})}{\pi_{\text{ref}}(y|x;\mathcal{P})} \right]$
    where $\mathcal{P}$ denotes the LLM routing pool and $y$ is the generated sequence comprising thinking and routing actions.
 
 2. **Triple Reward Function Design**:
@@ -159,10 +159,10 @@ Emergent behavior: under high cost coefficients, Router-R1 learns to query small
 ## Related Papers
 
 - [\[ICLR 2026\] Routing, Cascades, and User Choice for LLMs](../../ICLR2026/reinforcement_learning/routing_cascades_and_user_choice_for_llms.md)
-- [\[ICLR 2026\] Shop-R1: Rewarding LLMs to Simulate Human Behavior in Online Shopping via Reinforcement Learning](../../ICLR2026/reinforcement_learning/shop-r1_rewarding_llms_to_simulate_human_behavior_in_online_shopping_via_reinfor.md)
+- [\[ICML 2025\] The Challenge of Teaching Reasoning to LLMs Without RL or Distillation](../../ICML2025/reinforcement_learning/the_challenge_of_teaching_reasoning_to_llms_without_rl_or_distillation.md)
+- [\[ICLR 2026\] R1-Code-Interpreter: LLMs Reason with Code via Supervised and Multi-stage Reinforcement Learning](../../ICLR2026/reinforcement_learning/r1-code-interpreter_llms_reason_with_code_via_supervised_and_multi-stage_reinfor.md)
 - [\[NeurIPS 2025\] Teaching Language Models to Evolve with Users: Dynamic Profile Modeling for Personalized Alignment](teaching_language_models_to_evolve_with_users_dynamic_profile_modeling_for_perso.md)
-- [\[NeurIPS 2025\] Human-Inspired Multi-Level Reinforcement Learning](human-inspired_multi-level_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
+- [\[ICLR 2026\] Shop-R1: Rewarding LLMs to Simulate Human Behavior in Online Shopping via Reinforcement Learning](../../ICLR2026/reinforcement_learning/shop-r1_rewarding_llms_to_simulate_human_behavior_in_online_shopping_via_reinfor.md)
 
 </div>
 

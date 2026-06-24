@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vision-Language-Action Instruction Tuning: From Understanding to Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Flow Matching] InstructVLA proposes the "Vision-Language-Action Instruction Tuning (VLA-IT)" paradigm, which utilizes a single VLM to simultaneously perform multimodal reasoning and latent action planning. These are then handed over to a flow-matching action expert for decoding. Through Mixture of Experts (MoE) adaptation, the model
+  [ICLR 2026][Robotics][Vision-Language-Action Models] InstructVLA proposes the "Vision-Language-Action Instruction Tuning (VLA-IT)" paradigm, which utilizes a single VLM to simultaneously perform multimodal reasoning and latent action planning. These are then handed over to a flow-matching action expert for decoding. Through Mixture of Experts (MoE) adaptation, the model preserves the VLM's multimodal capabilities during action training, allowing reasoning to directly enhance…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language-Action Models"
+  - "Instruction Tuning"
+  - "Mixture of Experts"
+  - "Latent Action"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 26c6ef21a2bfc674
+content_hash: ca7782f3ba066b45
 ---
+
 # Vision-Language-Action Instruction Tuning: From Understanding to Manipulation
 
 **Conference**: ICLR 2026  
@@ -165,10 +170,10 @@ Multimodal understanding (selected benchmarks, #Params refers to LLM backbone si
 ## Related Papers
 
 - [\[ICLR 2026\] PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model](pixelvla_advancing_pixel-level_understanding_in_vision-language-action_model.md)
-- [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 - [\[CVPR 2026\] Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models](../../CVPR2026/robotics/test-time_perturbation_tuning_with_delayed_feedback_for_vision-language-action_m.md)
 - [\[ICLR 2026\] Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation](action-aware_dynamic_pruning_for_efficient_vision-language-action_manipulation.md)
-- [\[ICLR 2026\] EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning](evlp_learning_unified_embodied_vision-language_planner_with_reinforced_supervise.md)
+- [\[ICLR 2026\] VITA: Vision-to-Action Flow Matching Policy](vita_vision-to-action_flow_matching_policy.md)
+- [\[ICLR 2026\] villa-X: Enhancing Latent Action Modeling in Vision-Language-Action Models](villa-x_enhancing_latent_action_modeling_in_vision-language-action_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Operationalizing Data Minimization for Privacy-Preserving LLM Prompting
 description: >-
-  [ICLR 2026][LLM Safety][LLM-as-a-Judge] This paper formalizes the "data minimization" principle in the privacy domain as an optimization problem—finding the strongest sanitization scheme of "RETAIN/ABSTRACT/REDACT" for each sensitive segment without losing task utility. It solves for this oracle using a "freeze-then-search" priority queue tree search algorit
+  [ICLR 2026][LLM Safety][Data Minimization] This paper formalizes the "data minimization" principle in the privacy domain as an optimization problem—finding the strongest sanitization scheme of "RETAIN/ABSTRACT/REDACT" for each sensitive segment without losing task utility. It solves for this oracle using a "freeze-then-search" priority queue tree search algorithm guided by a privacy comparator. The study reveals that stronger frontier models can tolerate more aggressive sanit…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM-as-a-Judge
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Data Minimization"
+  - "Privacy Protection"
+  - "Prompt Sanitization"
+  - "Tree Search"
+  - "LLM-as-a-Judge"
 date: 2026-05-08
-content_hash: 3d14301b0158df93
+content_hash: 71b0d8ca0cffe784
 ---
+
 # Operationalizing Data Minimization for Privacy-Preserving LLM Prompting
 
 **Conference**: ICLR 2026  
@@ -121,14 +126,17 @@ Evaluated on ShareGPT, WildChat, CaseHOLD, and MedQA across nine response models
 
 <div class="related-papers" markdown="1">
 
-- **Dou et al. 2024**: Privacy-preserving prompt engineering.
-- **Abadi et al. 2016**: Deep learning with differential privacy.
-- **Ma et al. 2025**: Evaluating information importance with LLMs.
+## Related Papers
+
+- [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
+- [\[ICLR 2026\] Natural Identifiers for Privacy and Data Audits in Large Language Models](natural_identifiers_for_privacy_and_data_audits_in_large_language_models.md)
+- [\[ICLR 2026\] Searching for Privacy Risks in LLM Agents via Simulation](searching_for_privacy_risks_in_llm_agents_via_simulation.md)
+- [\[AAAI 2026\] SafeNlidb: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces](../../AAAI2026/llm_safety/safenlidb_a_privacy-preserving_safety_alignment_framework_for_llm-based_natural_.md)
+- [\[NeurIPS 2025\] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models](../../NeurIPS2025/llm_safety/fedrw_efficient_privacy-preserving_data_reweighting_for_enhancing_federated_lear.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)

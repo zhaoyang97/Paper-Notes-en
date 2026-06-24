@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] The SteerVAD framework is proposed to identify "Latent Anomaly Expert" (LAE) attention heads within a completely frozen Multi-modal Large Language Model (MLLM) and dynamically steer their representation manifolds using a hierarchical meta-controller. It achieves SOTA performance in tuning-free video anomaly detection u
+  [ICLR 2026][Video Understanding][Video Anomaly Detection] The SteerVAD framework is proposed to identify "Latent Anomaly Expert" (LAE) attention heads within a completely frozen Multi-modal Large Language Model (MLLM) and dynamically steer their representation manifolds using a hierarchical meta-controller. It achieves SOTA performance in tuning-free video anomaly detection using only 1% of the training data.
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Video Anomaly Detection"
+  - "Multi-modal Large Language Models"
+  - "Representation Manifold Steering"
+  - "Tuning-free"
+  - "Attention Head Analysis"
 date: 2026-05-08
-content_hash: 573cc7bdf85e5a26
+content_hash: 152f684e29332313
 ---
+
 # Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection
 
 **Conference**: ICLR 2026  
@@ -134,14 +140,12 @@ There are only two training objectives. The primary loss is the frame-wise binar
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection](../../CVPR2026/video_understanding/alert-clip_abnormality-aware_latent-enhanced_representation_tuning_of_clip_for_v.md)
 - [\[ICLR 2026\] Language-guided Open-world Video Anomaly Detection under Weak Supervision](language-guided_open-world_video_anomaly_detection_under_weak_supervision.md)
+- [\[AAAI 2026\] HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](../../AAAI2026/video_understanding/headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_.md)
 - [\[ICLR 2026\] UniTrack: Differentiable Graph Representation Learning for Multi-Object Tracking](unitrack_differentiable_graph_representation_learning_for_multi-object_tracking.md)
-- [\[ICCV 2025\] AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning](../../ICCV2025/video_understanding/aim_adaptive_inference_of_multi-modal_llms_via_token_merging_and_pruning.md)
 - [\[CVPR 2026\] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection](../../CVPR2026/video_understanding/no_need_for_real_anomaly_mllm_empowered_zero-shot_video_anomaly_detection.md)
 
 </div>

@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] A Bayesian Nonparametric Framework for Private, Fair, and Balanced Tabular Data Synthesis
 description: >-
-  [ICLR 2026][AI Safety][VAE-GAN] This paper embeds a conditional VAE-GAN generator into a Bayesian Nonparametric Learning (BNPL) framework. It utilizes a Dirichlet process for global privacy, a copula base measure for column-wise local privacy, BNP mutual information regularization for fairness, and KL divergence for class balance. It represents the f
+  [ICLR 2026][AI Safety][Differential Privacy] This paper embeds a conditional VAE-GAN generator into a Bayesian Nonparametric Learning (BNPL) framework. It utilizes a Dirichlet process for global privacy, a copula base measure for column-wise local privacy, BNP mutual information regularization for fairness, and KL divergence for class balance. It represents the first unified framework with theoretical guarantees to simultaneously handle privacy, fairness…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - VAE-GAN
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Fairness"
+  - "Class Balance"
+  - "Bayesian Nonparametrics"
+  - "Dirichlet Process"
+  - "VAE-GAN"
+  - "Mutual Information Regularization"
 date: 2026-05-08
-content_hash: 1553baa56868903c
+content_hash: dfc1c67bf728385a
 ---
+
 # A Bayesian Nonparametric Framework for Private, Fair, and Balanced Tabular Data Synthesis
 
 **Conference**: ICLR 2026  
@@ -128,8 +135,8 @@ With $\lambda_F=1$, MI drops nearly to zero while MMD remains minimal and utilit
 
 ## Related Papers
 
-- [\[ICLR 2026\] Private Rate-Constrained Optimization with Applications to Fair Learning](private_rate-constrained_optimization_with_applications_to_fair_learning.md)
 - [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](../../ICML2026/ai_safety/differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
+- [\[ICLR 2026\] Private Rate-Constrained Optimization with Applications to Fair Learning](private_rate-constrained_optimization_with_applications_to_fair_learning.md)
 - [\[ICLR 2026\] A Fair Bayesian Inference through Matched Gibbs Posterior](a_fair_bayesian_inference_through_matched_gibbs_posterior.md)
 - [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](../../CVPR2026/ai_safety/image-based_outlier_synthesis_with_training_data.md)
 - [\[ICLR 2026\] MUSE: Model-Agnostic Tabular Watermarking via Multi-Sample Selection](muse_model-agnostic_tabular_watermarking_via_multi-sample_selection.md)

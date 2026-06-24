@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Position: Age Estimation Models Do Not Process Biometric Data
 description: >-
-  [ICML 2026][Others][Biometric Data] This is a position paper providing empirical evidence across 14 models and 3 face verification benchmarks to argue that face age estimation models possess identity discrimination capabilities two orders of magnitude lower than regulatory thresholds. Therefore, they should not be automatically classified as "processing
+  [ICML 2026][Biometric Data] This is a position paper providing empirical evidence across 14 models and 3 face verification benchmarks to argue that face age estimation models possess identity discrimination capabilities two orders of magnitude lower than regulatory thresholds. Therefore, they should not be automatically classified as "processing of biometric data" under GDPR, BIPA, or the EU AI Act.
 tags:
-  - ICML 2026
-  - Others
-  - Biometric Data
-  - Age Estimation
-  - GDPR
-  - Face Verification
-  - AI Regulation
+  - "ICML 2026"
+  - "Biometric Data"
+  - "Age Estimation"
+  - "GDPR"
+  - "Face Verification"
+  - "AI Regulation"
 date: 2026-05-08
-content_hash: f2a61d47a9be8445
+content_hash: 87e897028d893f48
 ---
+
 # Position: Age Estimation Models Do Not Process Biometric Data
 
 **Conference**: ICML 2026  
@@ -135,9 +135,9 @@ The strongest age estimator's 27% FNMR is 5x higher than the 5% requirement for 
 
 - [\[AAAI 2026\] Reward Redistribution via Gaussian Process Likelihood Estimation](../../AAAI2026/others/reward_redistribution_via_gaussian_process_likelihood_estimation.md)
 - [\[ACL 2025\] Do not Abstain! Identify and Solve the Uncertainty](../../ACL2025/others/do_not_abstain_identify_and_solve_the_uncertainty.md)
-- [\[ICML 2026\] Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation](amortized_simulation-based_inference_in_generalized_bayes_via_neural_posterior_e.md)
-- [\[ICML 2026\] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data](gotabpfn_from_feature_ordering_to_compact_tokenization_for_tabular_foundation_mo.md)
 - [\[ICML 2026\] nD-RoPE: A Generalized RoPE for n-Dimensional Position Embedding](nd-rope_a_generalized_rope_for_n-dimensional_position_embedding.md)
+- [\[ICML 2026\] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data](gotabpfn_from_feature_ordering_to_compact_tokenization_for_tabular_foundation_mo.md)
+- [\[ICML 2026\] Position: Evaluation of ML Resource Utilization Requires Model Life Cycle Assessment](evaluation_of_ml_resource_utilization_requires_model_life_cycle_assessment.md)
 
 </div>
 

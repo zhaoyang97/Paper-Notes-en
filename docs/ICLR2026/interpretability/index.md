@@ -83,7 +83,7 @@ item_total: 196
 
 **🔬 ICLR2026** · **196** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (33)](../../CVPR2026/interpretability/index.md) · [💬 ACL2026 (63)](../../ACL2026/interpretability/index.md) · [🧪 ICML2026 (92)](../../ICML2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/interpretability/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (34)](../../CVPR2026/interpretability/index.md) · [💬 ACL2026 (63)](../../ACL2026/interpretability/index.md) · [🧪 ICML2026 (92)](../../ICML2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (80)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/interpretability/index.md)
 
 🔥 **Top topics:** LLM ×18 · Reasoning ×12 · Alignment/RLHF ×8 · Layout & Composition ×7 · Multimodal/VLM ×6
 

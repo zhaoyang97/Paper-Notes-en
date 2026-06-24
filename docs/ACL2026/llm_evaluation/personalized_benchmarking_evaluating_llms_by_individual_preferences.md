@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Personalized Benchmarking: Evaluating LLMs by Individual Preferences
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper performs a personalized ranking analysis of 115 active users on Chatbot Arena, finding that the average Spearman correlation between personalized Bradley-Terry rankings and global rankings is only $\rho=0.04$ (with 57% of users showing near-zero or negative correlation). This demonstrates that aggregated ben
+  [ACL 2026 Findings][LLM Evaluation][Personalized Benchmarking] This paper performs a personalized ranking analysis of 115 active users on Chatbot Arena, finding that the average Spearman correlation between personalized Bradley-Terry rankings and global rankings is only $\rho=0.04$ (with 57% of users showing near-zero or negative correlation). This demonstrates that aggregated benchmarks fail to reflect the individual preferences of most users. Furthermore…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Personalized Benchmarking"
+  - "LLM Ranking"
+  - "User Preference Heterogeneity"
+  - "Bradley-Terry Model"
+  - "Topic and Style Analysis"
 date: 2026-05-08
-content_hash: bfe0e69f9572ce63
+content_hash: 7a494ad6a0108d4a
 ---
+
 # Personalized Benchmarking: Evaluating LLMs by Individual Preferences
 
 **Conference**: ACL 2026 Findings  
@@ -139,11 +145,11 @@ The regression models use the Adam optimizer with standardized features and targ
 
 ## Related Papers
 
+- [\[ICLR 2026\] PrefDisco: Benchmarking Proactive Personalized Reasoning](../../ICLR2026/llm_evaluation/prefdisco_benchmarking_proactive_personalized_reasoning.md)
 - [\[ACL 2026\] ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition](researchbench_benchmarking_llms_in_scientific_discovery_via_inspiration-based_ta.md)
 - [\[ACL 2026\] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications](bizcompass_benchmarking_the_reasoning_capabilities_of_llms_in_business_knowledge.md)
-- [\[ACL 2026\] RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity](roleconflictbench_a_benchmark_of_role_conflict_scenarios_for_evaluating_llms39_c.md)
 - [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
-- [\[ICLR 2026\] Benchmarking Overton Pluralism in LLMs](../../ICLR2026/llm_evaluation/benchmarking_overton_pluralism_in_llms.md)
+- [\[ACL 2026\] RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity](roleconflictbench_a_benchmark_of_role_conflict_scenarios_for_evaluating_llms39_c.md)
 
 </div>
 

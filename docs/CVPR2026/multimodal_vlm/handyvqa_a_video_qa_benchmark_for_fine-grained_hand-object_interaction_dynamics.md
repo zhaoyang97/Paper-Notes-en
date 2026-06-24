@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics
 description: >-
-  [CVPR 2026][Multimodal VLM][Reasoning VOS] HanDyVQA is a fine-grained video QA benchmark focused on the "Hand-Object Interaction (HOI) dynamic process." It covers the entire "manipulation $\rightarrow$ effect" chain through six question categories (Action/Process/Objects/Location/State Change/Parts). The dataset contains 11,100 five-way multiple-choice question
+  [CVPR 2026][Multimodal VLM][Video Question Answering] HanDyVQA is a fine-grained video QA benchmark focused on the "Hand-Object Interaction (HOI) dynamic process." It covers the entire "manipulation $\rightarrow$ effect" chain through six question categories (Action/Process/Objects/Location/State Change/Parts). The dataset contains 11,100 five-way multiple-choice questions and 10,300 segmentation masks. Experimental results show that the strongest model, Gemini-2.5-Pro…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reasoning VOS
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video Question Answering"
+  - "Hand-Object Interaction"
+  - "Fine-grained Spatio-Temporal Dynamics"
+  - "Reasoning VOS"
+  - "Video Foundation Model Evaluation"
 date: 2026-05-08
-content_hash: 0a79e435fc143d9e
+content_hash: fd910c54018e0051
 ---
+
 # HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,16 @@ Performance is significantly lower than previous ReasoningVOS benchmarks. The be
 - Value: ⭐⭐⭐⭐ Provides a clear roadmap for HOI-aware video encoders by exposing fundamental bottlenecks in current models.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding](see_what_i_mean_aligning_vision_and_language_representations_for_video_fine-grai.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
 - [\[NeurIPS 2025\] OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Models](../../NeurIPS2025/multimodal_vlm/openhoi_open-world_hand-object_interaction_synthesis_with_multimodal_large_langu.md)
-- [\[CVPR 2026\] BOP-Ask: Object-Interaction Reasoning for Vision-Language Models](bop-ask_object-interaction_reasoning_for_vision-language_models.md)
 - [\[CVPR 2026\] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval](eaglenet_energy-aware_fine-grained_relationship_learning_network_for_text-video_.md)
+- [\[CVPR 2026\] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs](fave_a_structured_benchmark_for_fine-grained_audio-visual_temporal_evaluation_in.md)
+- [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
 
 </div>
 

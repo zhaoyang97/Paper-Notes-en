@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Evaluating Bivariate Causal Statements Based on Mutual Compatibility
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] This paper addresses scenarios where "only pairwise (bivariate) causal statements are available without ground truth." It proposes two compatibility scores that do not rely on faithfulness: `comp` for linear cases and `incomp` for graph structures. By determining whether the multivariate model formed by stitching these
+  [ICML 2026][Causal Inference][Bivariate causal statements] This paper addresses scenarios where "only pairwise (bivariate) causal statements are available without ground truth." It proposes two compatibility scores that do not rely on faithfulness: `comp` for linear cases and `incomp` for graph structures. By determining whether the multivariate model formed by stitching these pairwise statements requires "anomalous extra confounding" to explain the observed covariance…
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML 2026"
+  - "Causal Inference"
+  - "Bivariate causal statements"
+  - "compatibility scores"
+  - "confounding backdoors"
+  - "LLM causal evaluation"
 date: 2026-05-08
-content_hash: b848ce0a75c73da1
+content_hash: 8963f5948e8ba1a7
 ---
+
 # Evaluating Bivariate Causal Statements Based on Mutual Compatibility
 
 **Conference**: ICML 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] This paper extends prompt selection from single-metric optimization to multi-objective fixed-budget optimization. It proposes two types of algorithms, GENSEC and GENPSI, based on pure-exploration bandits. These methods significantly outperform uniform sampling baselines in summarization tasks and provide theoretical er
+  [ICLR2026][LLM (Other)][Multi-objective prompt optimization] This paper extends prompt selection from single-metric optimization to multi-objective fixed-budget optimization. It proposes two types of algorithms, GENSEC and GENPSI, based on pure-exploration bandits. These methods significantly outperform uniform sampling baselines in summarization tasks and provide theoretical error upper bounds under linear structures.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "Multi-objective prompt optimization"
+  - "Pure-exploration Bandit"
+  - "Constrained optimal prompt"
+  - "Pareto frontier"
+  - "Fixed budget"
 date: 2026-05-08
-content_hash: d864d5f8dcfa48bf
+content_hash: 3becf8941b05b783
 ---
+
 # Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits
 
 **Conference**: ICLR2026  
@@ -150,11 +156,11 @@ The paper provides equivalent analysis through different instantiations (Uniform
 
 ## Related Papers
 
+- [\[ACL 2026\] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges](../../ACL2026/llm_nlp/when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
+- [\[ACL 2025\] SEE: Strategic Exploration and Exploitation for Cohesive In-Context Prompt Optimization](../../ACL2025/llm_nlp/see_strategic_exploration_exploitation_prompt_optimization.md)
 - [\[ICLR 2026\] LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery](llema_evolutionary_search_with_llms_for_multi-objective_material_design.md)
+- [\[ACL 2025\] RiOT: Efficient Prompt Refinement with Residual Optimization Tree](../../ACL2025/llm_nlp/riot_efficient_prompt_refinement_with_residual_optimization_tree.md)
 - [\[ICLR 2026\] SIPDO: Closed-Loop Prompt Optimization via Synthetic Data Feedback](sipdo_closed-loop_prompt_optimization_via_synthetic_data_feedback.md)
-- [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
-- [\[ICLR 2026\] Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE](beyond_magic_words_sharpness-aware_prompt_evolving_for_robust_large_language_mod.md)
-- [\[ICLR 2026\] Cite Pretrain: Retrieval-Free Knowledge Attribution for Large Language Models](cite_pretrain_retrieval-free_knowledge_attribution_for_large_language_models.md)
 
 </div>
 

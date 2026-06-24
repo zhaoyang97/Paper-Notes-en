@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Solving Minimal Problems Without Matrix Inversion Using FFT-Based Interpolation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes a **matrix-inversion-free** construction method for minimal problem solvers. By using hidden variable sparse resultants, multivariate polynomial systems are reduced to a univariate determinantal polynomial in $x_1$. Then, **IFFT interpolation** is employed to numerically reconstruct the polynomial c
+  [CVPR 2026][3D Vision][Minimal Problems] This paper proposes a **matrix-inversion-free** construction method for minimal problem solvers. By using hidden variable sparse resultants, multivariate polynomial systems are reduced to a univariate determinantal polynomial in $x_1$. Then, **IFFT interpolation** is employed to numerically reconstruct the polynomial coefficients from sampling values on the unit circle (bypassing symbolic expansion). Finally…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Minimal Problems"
+  - "Sparse Resultant"
+  - "Hidden Variable Elimination"
+  - "FFT Interpolation"
+  - "Cramer's Rule"
 date: 2026-05-08
-content_hash: 1acedbcae7580ced
+content_hash: 15e0339d627ec8ab
 ---
+
 # Solving Minimal Problems Without Matrix Inversion Using FFT-Based Interpolation
 
 **Conference**: CVPR 2026  
@@ -163,8 +169,8 @@ There is no traditional ablation table as there are no trainable modules, but th
 ## Related Papers
 
 - [\[ICCV 2025\] PLMP -- Point-Line Minimal Problems for Projective SfM](../../ICCV2025/3d_vision/plmp_-_point-line_minimal_problems_for_projective_sfm.md)
-- [\[CVPR 2026\] Linear Fundamental Matrix Estimation from 7 or 5 Points](linear_fundamental_matrix_estimation_from_7_or_5_points.md)
 - [\[CVPR 2026\] Minimal Constraint Relaxation for Multiview Autocalibration](minimal_constraint_relaxation_for_multiview_autocalibration.md)
+- [\[CVPR 2026\] Linear Fundamental Matrix Estimation from 7 or 5 Points](linear_fundamental_matrix_estimation_from_7_or_5_points.md)
 - [\[CVPR 2026\] TESO: Online Tracking of Essential Matrix by Stochastic Optimization](teso_online_tracking_of_essential_matrix_by_stochastic_optimization.md)
 - [\[CVPR 2026\] PaNDaS: Learnable Shape Interpolation Modeling with Localized Control](pandas_learnable_shape_interpolation_modeling_with_localized_control.md)
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Offline Preference-based Value Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes PVO (Preference-based Value Optimization), which directly optimizes the value function using a novel "value alignment loss" to ensure consistency with preference feedback. While achieving the optimal sample complexity of $O(\varepsilon^{-2})$, it stably outperforms multiple strong baselines on conti
+  [ICLR 2026][Reinforcement Learning][Offline PbRL] This paper proposes PVO (Preference-based Value Optimization), which directly optimizes the value function using a novel "value alignment loss" to ensure consistency with preference feedback. While achieving the optimal sample complexity of $O(\varepsilon^{-2})$, it stably outperforms multiple strong baselines on continuous control benchmarks without requiring additional preference learning hyper-parameters.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline PbRL"
+  - "Preference Learning"
+  - "Value Alignment Loss"
+  - "Induced Reward Function"
+  - "Sample Complexity"
 date: 2026-05-08
-content_hash: 3371d6690428d198
+content_hash: 3e7bc59d0803df38
 ---
+
 # Offline Preference-based Value Optimization
 
 **Conference**: ICLR 2026  
@@ -132,15 +138,14 @@ Overall results (Figure 1/2): PVO leads consistently across Meta-World medium-re
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Preference-based Policy Optimization from Sparse-reward Offline Dataset](preference-based_policy_optimization_from_sparse-reward_offline_dataset.md)
+- [\[ICLR 2026\] OPRIDE: Efficient Offline Preference Reinforcement Learning via In-Dataset Exploration](opride_efficient_offline_preference-based_reinforcement_learning_via_in-dataset_.md)
 - [\[ICLR 2026\] DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization](dupo_enabling_reliable_self-verification_via_dual_preference_optimization.md)
 - [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
 - [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
-- [\[ICLR 2026\] Causally Robust Reward Learning from Reason-Augmented Preference Feedback](causally_robust_reward_learning_from_reason-augmented_preference_feedback.md)
 
 </div>
 

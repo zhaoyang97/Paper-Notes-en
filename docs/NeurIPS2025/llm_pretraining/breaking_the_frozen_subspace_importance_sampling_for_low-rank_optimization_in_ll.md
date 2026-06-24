@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Low-rank optimization] This paper identifies that the dominant subspace in low-rank optimizers such as GaLore "freezes" during pretraining (cosine overlap between consecutive subspaces app…
+  [NeurIPS 2025][LLM Pretraining][Low-rank optimization] This paper identifies that the dominant subspace in low-rank optimizers such as GaLore "freezes" during pretraining (cosine overlap between consecutive subspaces approaches 1), trapping weight updates within a fixed low-rank subspace. The authors propose SARA (Sampling-based Adaptive Rank Allocation), which constructs subspaces by sampling singular vectors according to singular value weights…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -11,7 +11,7 @@ tags:
   - "importance sampling"
   - "memory efficiency"
 date: 2026-05-08
-content_hash: c81b4c7b16418cd8
+content_hash: e5328199df942ef1
 ---
 
 # Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining
@@ -125,9 +125,9 @@ SARA is a plug-and-play replacement for the subspace selection step in GaLore/Fi
 
 - [\[NeurIPS 2025\] Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models](leveraging_importance_sampling_to_detach_alignment_modules_from_large_language_m.md)
 - [\[NeurIPS 2025\] Generalization Bounds for Rank-sparse Neural Networks](generalization_bounds_for_rank-sparse_neural_networks.md)
-- [\[NeurIPS 2025\] Born a Transformer – Always a Transformer? On the Effect of Pretraining on Architectural Abilities](born_a_transformer_--_always_a_transformer_on_the_effect_of_pretraining_on_archi.md)
-- [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](enhancing_training_data_attribution_with_representational_optimization.md)
 - [\[ICML 2026\] FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment](../../ICML2026/llm_pretraining/flexrank_nested_low-rank_knowledge_decomposition_for_adaptive_model_deployment.md)
+- [\[ICLR 2026\] Implicit Bias and Loss of Plasticity in Matrix Completion: Depth Promotes Low-Rank](../../ICLR2026/llm_pretraining/implicit_bias_and_loss_of_plasticity_in_matrix_completion_depth_promotes_low-ran.md)
+- [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](enhancing_training_data_attribution_with_representational_optimization.md)
 
 </div>
 

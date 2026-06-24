@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][physics-informed learning] This paper proposes PIMRL, a framework for learning from burst-sampled (short high-frequency bursts followed by long intervals) sparse spatiotemporal…
+  [AAAI 2026][Physics & Scientific Computing][physics-informed learning] This paper proposes PIMRL, a framework for learning from burst-sampled (short high-frequency bursts followed by long intervals) sparse spatiotemporal data. It features a dual-module architecture combining macro-scale latent-space reasoning and micro-scale physics correction, integrated via cross-scale message passing, achieving up to 80% error reduction across 5 PDE benchmarks.
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "PDE solving"
   - "recurrent networks"
 date: 2026-05-08
-content_hash: 4da1521851a1b7e7
+content_hash: 8ed85fb618c12922
 ---
 
 # PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics
@@ -133,11 +133,11 @@ On the most challenging 3D Gray-Scott benchmark, error is reduced by nearly 80%.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery](../../ICLR2026/physics/empirical_stability_analysis_of_kolmogorov-arnold_networks_in_hard-constrained_r.md)
-- [\[AAAI 2026\] Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids](phys-liquid_a_physics-informed_dataset_for_estimating_3d_geometry_and_volume_of_.md)
-- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
+- [\[ICLR 2026\] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning](../../ICLR2026/physics/uncertainty-aware_diagnostics_for_physics-informed_machine_learning.md)
 - [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](../../ICLR2026/physics/dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
-- [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](../../NeurIPS2025/physics/physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
+- [\[AAAI 2026\] Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids](phys-liquid_a_physics-informed_dataset_for_estimating_3d_geometry_and_volume_of_.md)
+- [\[ICML 2026\] From Geometry to Dynamics: Learning Overdamped Langevin Dynamics from Sparse Observations with Geometric Constraints](../../ICML2026/physics/from_geometry_to_dynamics_learning_overdamped_langevin_dynamics_from_sparse_obse.md)
+- [\[ICLR 2026\] Fast training of accurate physics-informed neural networks without gradient descent](../../ICLR2026/physics/fast_training_of_accurate_physics-informed_neural_networks_without_gradient_desc.md)
 
 </div>
 

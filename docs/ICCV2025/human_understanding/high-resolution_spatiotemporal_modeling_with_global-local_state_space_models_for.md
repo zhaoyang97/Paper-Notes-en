@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation
 description: >-
-  [ICCV 2025][Human Understanding][Video Human Pose Estimation] This paper proposes GLSMamba, the first pure-Mamba framework for video-based human pose estimation (VHPE). It models global dynamic context via a Global Spati…
+  [ICCV 2025][Human Understanding][Video Human Pose Estimation] This paper proposes GLSMamba, the first pure-Mamba framework for video-based human pose estimation (VHPE). It models global dynamic context via a Global Spatiotemporal Mamba (GSM) module—featuring 6D selective space-time scanning and spatiotemporal-modulated scan merging—and captures local keypoint details via a Local Refinement Mamba (LRM) with windowed spatiotemporal scanning. The method achieves state-of-the-art…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Spatiotemporal Modeling"
   - "High-Resolution"
 date: 2026-05-08
-content_hash: f8976ca200011175
+content_hash: 1f27ba584a96e569
 ---
 
 # High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation
@@ -178,10 +178,10 @@ Feature resolution is $\frac{1}{4} \times H \times W \times T$. For a 5-frame se
 ## Related Papers
 
 - [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](../../AAAI2026/human_understanding/kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
+- [\[ICLR 2026\] Sapiens2: High-Resolution Foundation Models for Human-Centric Vision](../../ICLR2026/human_understanding/sapiens2.md)
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](../../CVPR2026/human_understanding/e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
-- [\[CVPR 2026\] GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion](../../CVPR2026/human_understanding/gazeonce360_fisheye-based_360_multi-person_gaze_estimation_with_global-local_fea.md)
-- [\[ICCV 2025\] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation](mixri_mixing_features_of_reference_images_for_novel_object_pose_estimation.md)
-- [\[ICCV 2025\] ImHead: A Large-scale Implicit Morphable Model for Localized Head Modeling](imhead_a_large-scale_implicit_morphable_model_for_localized_head_modeling.md)
+- [\[CVPR 2025\] GCE-Pose: Global Context Enhancement for Category-Level Object Pose Estimation](../../CVPR2025/human_understanding/gce-pose_global_context_enhancement_for_category-level_object_pose_estimation.md)
+- [\[ECCV 2024\] Gaze Target Detection Based on Head-Local-Global Coordination](../../ECCV2024/human_understanding/gaze_target_detection_based_on_head-local-global_coordination.md)
 
 </div>
 

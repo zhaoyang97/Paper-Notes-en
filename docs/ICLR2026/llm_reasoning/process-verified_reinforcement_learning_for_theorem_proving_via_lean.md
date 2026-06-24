@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Process-Verified Reinforcement Learning for Theorem Proving via Lean
 description: >-
-  [ICLR 2026][LLM Reasoning][Lean] This paper treats the Lean proof assistant as a "symbolic process oracle," extracting both outcome-level and tactic-level (process) verifiable rewards from its elaboration feedback. By integrating first-error propagation and first-token credit assignment into GRPO, it makes RL for formal theorem proving on MiniF2F / Pr
+  [ICLR 2026][Reasoning][Formal theorem proving] This paper treats the Lean proof assistant as a "symbolic process oracle," extracting both outcome-level and tactic-level (process) verifiable rewards from its elaboration feedback. By integrating first-error propagation and first-token credit assignment into GRPO, it makes RL for formal theorem proving on MiniF2F / ProofNet more stable and effective compared to baselines using only binary outcome rewards (MiniF2F pass@64 +2.5%p)…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Lean
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Formal theorem proving"
+  - "Lean"
+  - "process reward"
+  - "GRPO"
+  - "credit assignment"
 date: 2026-05-08
-content_hash: 9151fef538f4eeb2
+content_hash: 8b14e86130a4118d
 ---
+
 # Process-Verified Reinforcement Learning for Theorem Proving via Lean
 
 **Conference**: ICLR 2026  
@@ -147,10 +151,17 @@ On STP-Lean, MiniF2F pass@64 improved by +2.5%p. The 59.2% result (pass@64) appr
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)
+- [\[ICLR 2026\] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](neural_theorem_proving_for_verification_conditions_a_real-world_benchmark.md)
+- [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
+- [\[ICLR 2026\] EvolProver: Advancing Automated Theorem Proving by Evolving Formalized Problems via Symmetry and Difficulty](evolprover_advancing_automated_theorem_proving_by_evolving_formalized_problems_v.md)
+- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)

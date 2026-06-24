@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Still Between Us? Evaluating and Improving Voice Assistant Robustness to Third-Party Interruptions
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] Addressing the inability of voice assistants to distinguish Third-Party Interruptions (TPI) from primary user speech, this work proposes the TPI-Train dataset with 88K training instances and the TPI-Bench evaluation framework. Through a speaker-aware hard negative mining strategy, semantic shortcut learning is eliminat
+  [ACL 2026][Audio & Speech][Voice Assistant] Addressing the inability of voice assistants to distinguish Third-Party Interruptions (TPI) from primary user speech, this work proposes the TPI-Train dataset with 88K training instances and the TPI-Bench evaluation framework. Through a speaker-aware hard negative mining strategy, semantic shortcut learning is eliminated, forcing the model to rely on acoustic cues for interruption detection.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Voice Assistant"
+  - "Third-Party Interruption"
+  - "Speaker Awareness"
+  - "Hard Negative Mining"
+  - "Semantic Shortcut Learning"
 date: 2026-05-08
-content_hash: 52218e0d347a4478
+content_hash: ed8282a6551778d5
 ---
+
 # Still Between Us? Evaluating and Improving Voice Assistant Robustness to Third-Party Interruptions
 
 **Conference**: ACL 2026  
@@ -134,11 +140,11 @@ flowchart TD
 
 ## Related Papers
 
-- [\[ACL 2025\] Does Your Voice Assistant Remember? Analyzing Conversational Context Recall and Utilization in Voice Interaction Models](../../ACL2025/audio_speech/does_your_voice_assistant_remember_analyzing_conversational_context_recall_and_u.md)
+- [\[ICLR 2026\] WearVox: An Egocentric Multichannel Voice Assistant Benchmark for Wearables](../../ICLR2026/audio_speech/wearvox_an_egocentric_multichannel_voice_assistant_benchmark_for_wearables.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 - [\[ACL 2026\] DRInQ: Evaluating Conversational Implicature with Controlled Context Variation](drinq_evaluating_conversational_implicature_with_controlled_context_variation.md)
+- [\[ACL 2025\] Does Your Voice Assistant Remember? Analyzing Conversational Context Recall and Utilization in Voice Interaction Models](../../ACL2025/audio_speech/does_your_voice_assistant_remember_analyzing_conversational_context_recall_and_u.md)
 - [\[ACL 2025\] Distilling an End-to-End Voice Assistant Without Instruction Training Data](../../ACL2025/audio_speech/distilling_an_end-to-end_voice_assistant_without_instruction_training_data.md)
-- [\[ACL 2026\] Speculative End-Turn Detector for Efficient Speech Chatbot Assistant](speculative_end-turn_detector_for_efficient_speech_chatbot_assistant.md)
-- [\[ACL 2026\] DuIVRS-2: An LLM-based Interactive Voice Response System for Large-scale POI Attribute Acquisition](duivrs-2_an_llm-based_interactive_voice_response_system_for_large-scale_poi_attr.md)
 
 </div>
 

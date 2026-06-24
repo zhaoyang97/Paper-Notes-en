@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] VoG utilizes a "plan-retrieve-verify-revise" iteration loop with three agents to enable multi-hop reasoning over Knowledge Graphs (KG). Per-step retrieval results (KG triplets) are checked against current reasoning plans. Upon detecting inconsistencies, a Multi-Armed Bandit (MAB) is used to adaptively select a context
+  [ICLR 2026][Reasoning][Knowledge Graph Question Answering] VoG utilizes a "plan-retrieve-verify-revise" iteration loop with three agents to enable multi-hop reasoning over Knowledge Graphs (KG). Per-step retrieval results (KG triplets) are checked against current reasoning plans. Upon detecting inconsistencies, a Multi-Armed Bandit (MAB) is used to adaptively select a context range for plan rewriting, improving both accuracy and efficiency across three KGQA benchmarks (with l…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Knowledge Graph Question Answering"
+  - "Multi-hop Reasoning"
+  - "Stepwise Verification"
+  - "Multi-Armed Bandit"
+  - "Adaptive Revision"
 date: 2026-05-08
-content_hash: 3e792c8a17bbb17f
+content_hash: 4d011f6319213bfd
 ---
+
 # VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs
 
 **Conference**: ICLR 2026  
@@ -124,16 +130,16 @@ VoG outperforms LLM-only, fine-tuned, and agent+KG baselines (ToG, PoG) on CWQ, 
 - Value: ⭐⭐⭐⭐ (Practical for cost-effective, scalable KGQA deployment).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] MolecularIQ: Characterizing Chemical Reasoning Capabilities Through Symbolic Verification on Molecular Graphs](moleculariq_characterizing_chemical_reasoning_capabilities_through_symbolic_veri.md)
 - [\[AAAI 2026\] Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs](../../AAAI2026/llm_reasoning/graph_of_verification_structured_verification_of_llm_reasoning_with_directed_acy.md)
+- [\[ICLR 2026\] Enhancing LLMs for Knowledge Base Question Answering by Chain-of-Decomposition](enhancing_llms_for_knowledge_base_question_answering_by_chain-of-decomposition.md)
 - [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
 - [\[ICLR 2026\] MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task](mathfimer_enhancing_mathematical_reasoning_by_expanding_reasoning_steps_through_.md)
-- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Consistent Instance Field for Dynamic Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This work models dynamic scenes as a continuous probabilistic "instance field," where each spatio-temporal point carries both an "occupancy probability" and a "conditional identity distribution." By approximating this field using deformable 3D Gaussians with instance semantics, the method decouples object identity from
+  [CVPR 2026][3D Vision][Dynamic scene understanding] This work models dynamic scenes as a continuous probabilistic "instance field," where each spatio-temporal point carries both an "occupancy probability" and a "conditional identity distribution." By approximating this field using deformable 3D Gaussians with instance semantics, the method decouples object identity from multi-view visibility. It significantly outperforms previous SOTA in novel-view panoptic segmentation and o…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic scene understanding"
+  - "4D Gaussian Splatting"
+  - "instance segmentation"
+  - "occupancy probability field"
+  - "visibility bias calibration"
 date: 2026-05-08
-content_hash: 0e9889df7a2cc317
+content_hash: 760361fdc5296fd8
 ---
+
 # Consistent Instance Field for Dynamic Scene Understanding
 
 **Conference**: CVPR 2026  
@@ -150,11 +156,11 @@ Experiments cover two tasks: novel-view panoptic segmentation and open-vocabular
 
 ## Related Papers
 
+- [\[CVPR 2026\] PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding](pointtpa_dynamic_network_parameter_adaptation_for_3d_scene_understanding.md)
+- [\[CVPR 2026\] Towards Foundation Models for 3D Scene Understanding: Instance-Aware Self-Supervised Learning for Point Clouds](towards_foundation_models_for_3d_scene_understanding_instance-aware_self-supervi.md)
 - [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
-- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
-- [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
-- [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
-- [\[CVPR 2026\] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision](evobj_learning_evolving_object-centric_representations_for_3d_instance_segmentat.md)
+- [\[CVPR 2026\] Real-Time Dynamic Scene Rendering with Controlled Compressibility and Contact Awareness](real-time_dynamic_scene_rendering_with_controlled_compressibility_and_contact_aw.md)
+- [\[CVPR 2026\] RISE: Single Static Radar-based Indoor Scene Understanding](rise_single_static_radar-based_indoor_scene_understanding.md)
 
 </div>
 

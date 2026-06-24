@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RefiDiff: Progressive Refinement Diffusion for Efficient Missing Data Imputation
 description: >-
-  [AAAI 2026][Image Restoration][missing data imputation] RefiDiff proposes a four-stage framework (pre-processing → warm-up → diffusion → polishing) that progressively unifies the predictive and generative imputation para…
+  [AAAI 2026][Image Restoration][missing data imputation] RefiDiff proposes a four-stage framework (pre-processing → warm-up → diffusion → polishing) that progressively unifies the predictive and generative imputation paradigms for the first time. Combined with a Mamba-based denoising network, it achieves state-of-the-art performance across 9 datasets while running 4× faster than DIFFPUTER.
 tags:
   - "AAAI 2026"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "tabular data"
   - "MNAR"
 date: 2026-05-08
-content_hash: 13997c4fd705fa7f
+content_hash: 81c54f15b2e914f9
 ---
 
 # RefiDiff: Progressive Refinement Diffusion for Efficient Missing Data Imputation
@@ -131,11 +131,11 @@ RefiDiff runs **4× faster** than DIFFPUTER with fewer parameters.
 
 ## Related Papers
 
+- [\[CVPR 2025\] Progressive Focused Transformer for Single Image Super-Resolution](../../CVPR2025/image_restoration/progressive_focused_transformer_for_single_image_super-resolution.md)
 - [\[ICLR 2026\] Horizon Imagination: Efficient On-Policy Rollout in Diffusion World Models](../../ICLR2026/image_restoration/horizon_imagination_efficient_on-policy_rollout_in_diffusion_world_models.md)
-- [\[ICML 2026\] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention](../../ICML2026/image_restoration/dyllm_efficient_diffusion_llm_inference_via_saliency-based_token_selection_and_p.md)
-- [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](../../NeurIPS2025/image_restoration/encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
-- [\[CVPR 2026\] Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization](../../CVPR2026/image_restoration/spectral_super-resolution_via_adversarial_unfolding_and_data-driven_spectrum_reg.md)
 - [\[NeurIPS 2025\] Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark](../../NeurIPS2025/image_restoration/enhancing_infrared_vision_progressive_prompt_fusion_network_and_benchmark.md)
+- [\[ICLR 2026\] FideDiff: Efficient Diffusion Model for High-Fidelity Image Motion Deblurring](../../ICLR2026/image_restoration/fidediff_efficient_diffusion_model_for_high-fidelity_image_motion_deblurring.md)
+- [\[CVPR 2026\] 2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition](../../CVPR2026/image_restoration/2-shots_in_the_dark_low-light_denoising_with_minimal_data_acquisition.md)
 
 </div>
 

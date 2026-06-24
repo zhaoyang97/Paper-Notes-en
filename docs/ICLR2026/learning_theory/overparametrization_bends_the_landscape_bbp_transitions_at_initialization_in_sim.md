@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Overparametrization bends the landscape: BBP transitions at initialization in simple Neural Networks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] By generalizing classical phase retrieval to a "two-layer quadratic activation teacher-student network with arbitrary width," this work uses field-theoretic methods to analytically calculate the **Hessian spectrum of the loss at initialization**. It discovers that the BBP transition threshold $\alpha_{\text{BBP}}$, whe
+  [ICLR 2026][Learning Theory][BBP Transition] By generalizing classical phase retrieval to a "two-layer quadratic activation teacher-student network with arbitrary width," this work uses field-theoretic methods to analytically calculate the **Hessian spectrum of the loss at initialization**. It discovers that the BBP transition threshold $\alpha_{\text{BBP}}$, where outlier eigenvalues (carrying teacher signal information) emerge from the bulk…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Loss Landscape"
+  - "Statistical Physics"
+  - "BBP Transition"
+  - "Overparametrization"
+  - "Phase Retrieval"
+  - "Random Matrix Theory"
 date: 2026-05-08
-content_hash: cfee085d916e1083
+content_hash: 4a9b1663a24c2328
 ---
+
 # Overparametrization bends the landscape: BBP transitions at initialization in simple Neural Networks
 
 **Conference**: ICLR 2026  
@@ -136,11 +143,11 @@ The "experiments" compare analytical predictions with finite-dimensional numeric
 
 ## Related Papers
 
+- [\[ICLR 2026\] A New Initialization to Control Gradients in Sinusoidal Neural Networks](a_new_initialization_to_control_gradients_in_sinusoidal_neural_networks.md)
 - [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
 - [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
-- [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
 - [\[ICLR 2026\] Unveiling the Basin-like Loss Landscape in Large Language Models](unveiling_the_basin-like_loss_landscape_in_large_language_models.md)
-- [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
 
 </div>
 

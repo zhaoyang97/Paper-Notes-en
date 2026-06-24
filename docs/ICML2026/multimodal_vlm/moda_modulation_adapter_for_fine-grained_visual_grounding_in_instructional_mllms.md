@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoDA: Modulation Adapter for Fine-Grained Visual Grounding in Instructional MLLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] Addressing the issue that MLLMs struggle with fine-grained visual grounding because "multiple visual semantics are entangled" within ViT patch representations, this paper proposes MoDA—a lightweight module. On top of aligned visual features, it uses language instructions to generate a $[0,1]$ **channel-level soft mask*
+  [ICML2026][Multimodal VLM][Multimodal Large Models] Addressing the issue that MLLMs struggle with fine-grained visual grounding because "multiple visual semantics are entangled" within ViT patch representations, this paper proposes MoDA—a lightweight module. On top of aligned visual features, it uses language instructions to generate a $[0,1]$ **channel-level soft mask** via cross-attention, using Hadamard multiplication to amplify instruction-relevant feature dimensions and…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Multimodal Large Models"
+  - "Channel-level Modulation"
+  - "Cross-Attention"
+  - "Visual Grounding"
+  - "Adapter"
 date: 2026-05-08
-content_hash: 94c6c948145da00b
+content_hash: 40366f5be04f668e
 ---
+
 # MoDA: Modulation Adapter for Fine-Grained Visual Grounding in Instructional MLLMs
 
 **Conference**: ICML2026  
@@ -147,9 +153,9 @@ Table 4 systematically compares MoDA structures (Linear MLP / Cross-Attention / 
 
 - [\[CVPR 2026\] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs](../../CVPR2026/multimodal_vlm/hugging_visual_prompt_and_segmentation_tokens_consistency_learning_for_fine-grai.md)
 - [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
-- [\[CVPR 2026\] Beyond Graph Model: Reliable VLM Fine-Tuning via Random Graph Adapter](../../CVPR2026/multimodal_vlm/beyond_graph_model_reliable_vlm_fine-tuning_via_random_graph_adapter.md)
-- [\[CVPR 2026\] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs](../../CVPR2026/multimodal_vlm/fave_a_structured_benchmark_for_fine-grained_audio-visual_temporal_evaluation_in.md)
-- [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
+- [\[ICLR 2026\] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images](../../ICLR2026/multimodal_vlm/how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images.md)
+- [\[CVPR 2026\] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](../../CVPR2026/multimodal_vlm/groundingme_exposing_the_visual_grounding_gap_in_mllms_through_multi-dimensional.md)
+- [\[CVPR 2026\] Visual Grounding for Object Questions](../../CVPR2026/multimodal_vlm/visual_grounding_for_object_questions.md)
 
 </div>
 

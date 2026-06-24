@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] How to Square Tensor Networks and Circuits Without Squaring Them
 description: >-
-  [ICLR 2026][learning_theory][Born machine] By unifying "orthogonality" in tensor network canonical forms and "determinism" in circuits into a new family of structural properties (orthogonality/unitarity), the normalization and marginalization of squared probabilistic circuits (squared PC) are reduced from $O(|c|^2)$ to $O(|c|)$. This enables efficient marginali
+  [ICLR 2026][Learning Theory][Squared Probabilistic Circuits] By unifying "orthogonality" in tensor network canonical forms and "determinism" in circuits into a new family of structural properties (orthogonality/unitarity), the normalization and marginalization of squared probabilistic circuits (squared PC) are reduced from $O(|c|^2)$ to $O(|c|)$. This enables efficient marginalization of "non-structurally decomposable" squared circuits for the first time—without actually mate…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Born machine
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Probabilistic Circuits"
+  - "Tensor Networks"
+  - "Squared Probabilistic Circuits"
+  - "Orthogonality"
+  - "Unitary Parameterization"
+  - "Marginalization"
+  - "Born machine"
 date: 2026-05-08
-content_hash: 3f8db711d72a2e8d
+content_hash: 3a47a60c1f463c7d
 ---
+
 # How to Square Tensor Networks and Circuits Without Squaring Them
 
 **Conference**: ICLR 2026  
@@ -121,8 +128,8 @@ The experiments aim to answer three RQs: whether unitary circuits are faster and
 - [\[ICLR 2026\] Two Failure Modes of Deep Transformers and How to Avoid Them: A Unified Theory of Signal Propagation at Initialisation](two_failure_modes_of_deep_transformers_and_how_to_avoid_them_a_unified_theory_of.md)
 - [\[ICLR 2026\] Subspace Kernel Learning on Tensor Sequences](subspace_kernel_learning_on_tensor_sequences.md)
 - [\[ICLR 2026\] FACT: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations](fact_a_first-principles_alternative_to_the_neural_feature_ansatz_for_how_network.md)
-- [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
-- [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
+- [\[ICLR 2026\] Towards Sampling Data Structures for Tensor Products in Turnstile Streams](towards_sampling_data_structures_for_tensor_products_in_turnstile_streams.md)
+- [\[ICLR 2026\] From Markov to Laplace: How Mamba In-Context Learns Markov Chains](from_markov_to_laplace_how_mamba_in-context_learns_markov_chains.md)
 
 </div>
 

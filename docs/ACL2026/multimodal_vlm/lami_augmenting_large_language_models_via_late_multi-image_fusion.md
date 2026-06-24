@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LaMI: Augmenting Large Language Models via Late Multi-Image Fusion
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] LaMI is proposed, which utilizes a late fusion architecture to integrate visual features with LLM outputs at the final stage of prediction. During inference, multiple images are generated from text and aggregated based on confidence. This significantly enhances the visual common sense reasoning capabilities of LLMs wit
+  [ACL 2026][Multimodal VLM][Late Fusion] LaMI is proposed, which utilizes a late fusion architecture to integrate visual features with LLM outputs at the final stage of prediction. During inference, multiple images are generated from text and aggregated based on confidence. This significantly enhances the visual common sense reasoning capabilities of LLMs without compromising their text reasoning performance.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Late Fusion"
+  - "Multi-image Generation"
+  - "Visual Common Sense Reasoning"
+  - "Vision-Augmented LLM"
+  - "Inference-time Visual Injection"
 date: 2026-05-08
-content_hash: fb97d40202c172c7
+content_hash: 6f15403d0af9552c
 ---
+
 # LaMI: Augmenting Large Language Models via Late Multi-Image Fusion
 
 **Conference**: ACL 2026  

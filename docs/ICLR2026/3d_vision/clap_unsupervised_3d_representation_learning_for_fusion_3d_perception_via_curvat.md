@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLAP: Unsupervised 3D Representation Learning for Fusion 3D Perception via Curvature Sampling and Prototype Learning
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] CLAP proposes the first unsupervised joint pre-training method for "Camera+LiDAR fusion perception." It utilizes **Curvature Sampling** to select only highly informative points/pixels, managing the VRAM overhead of differentiable rendering. Furthermore, it employs **Learnable Prototypes + EM Training** to align both mo
+  [ICLR2026][3D Vision][Unsupervised Pre-training] CLAP proposes the first unsupervised joint pre-training method for "Camera+LiDAR fusion perception." It utilizes **Curvature Sampling** to select only highly informative points/pixels, managing the VRAM overhead of differentiable rendering. Furthermore, it employs **Learnable Prototypes + EM Training** to align both modalities into a shared feature space to exploit complementarity, achieving double the downstream gains compared…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Unsupervised Pre-training"
+  - "Multi-modal Fusion"
+  - "Differentiable Rendering"
+  - "Curvature Sampling"
+  - "Prototype Learning"
 date: 2026-05-08
-content_hash: d0bd87a23dea97b0
+content_hash: 5f94eba1bf537286
 ---
+
 # CLAP: Unsupervised 3D Representation Learning for Fusion 3D Perception via Curvature Sampling and Prototype Learning
 
 **Conference**: ICLR2026  
@@ -150,15 +156,16 @@ CLAP's mAP Gain (+2.48%) is more than double that of UniPAD (+1.12%). Significan
 - Value: ⭐⭐⭐⭐ Significantly reduces 3D labeling dependency and improves sample efficiency for autonomous driving.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Unsupervised Representation Learning for 3D Mesh Parameterization with Semantic and Visibility Objectives](unsupervised_representation_learning_for_3d_mesh_parameterization_with_semantic_.md)
 - [\[CVPR 2026\] Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning](../../CVPR2026/3d_vision/adaptive_3d_perception_for_small_aerial_targets_under_sparse_sampling_via_reinfo.md)
 - [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](learning_unified_representation_of_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](../../CVPR2026/3d_vision/gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
 - [\[ICLR 2026\] CloDS: Visual-Only Unsupervised Cloth Dynamics Learning in Unknown Conditions](clods_visual-only_unsupervised_cloth_dynamics_learning_in_unknown_conditions.md)
-- [\[AAAI 2026\] Point-SRA: Self-Representation Alignment for 3D Representation Learning](../../AAAI2026/3d_vision/point-sra_self-representation_alignment_for_3d_representation_learning.md)
 
 </div>
 

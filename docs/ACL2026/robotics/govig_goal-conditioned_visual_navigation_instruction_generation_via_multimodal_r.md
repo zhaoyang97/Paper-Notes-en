@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning
 description: >-
-  [ACL 2026][Robotics & Embodied AI][egocentric] GoViG proposes a new task of generating navigation instructions based only on initial and goal egocentric observations. It decomposes the task into two steps: "imagining intermediate frames then writing instructions." By jointly training Anole-7B with a dual objective of token-level MSE and label-smoothing CE, and empl
+  [ACL 2026 Findings][Robotics][Navigation Instruction Generation] GoViG proposes a new task of generating navigation instructions based only on initial and goal egocentric observations. It decomposes the task into two steps: "imagining intermediate frames then writing instructions." By jointly training Anole-7B with a dual objective of token-level MSE and label-smoothing CE, and employing one-pass or interleaved multimodal reasoning strategies…
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - egocentric
-  - World Models
-  - Anole-7B
+  - "ACL 2026 Findings"
+  - "Robotics"
+  - "Navigation Instruction Generation"
+  - "Egocentric"
+  - "World Model"
+  - "Multimodal Reasoning"
+  - "Anole-7B"
 date: 2026-05-08
-content_hash: d344907cfb8c44b3
+content_hash: ee2cca43e49cc039
 ---
+
 # GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning
 
 **Conference**: ACL 2026 Findings  

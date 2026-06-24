@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] UniPath proposes a semantic-driven pathology image generation framework that achieves diagnostic-level controllable generation through multi-stream control (original text + diagnostic semantic tokens distilled from frozen pathology MLLMs + morphological control from a prototype library), reaching a Patho-FID of 80.9, w
+  [CVPR2026][Image Generation][Pathology Image Generation] UniPath proposes a semantic-driven pathology image generation framework that achieves diagnostic-level controllable generation through multi-stream control (original text + diagnostic semantic tokens distilled from frozen pathology MLLMs + morphological control from a prototype library), reaching a Patho-FID of 80.9, which outperforms the runner-up by 51%.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR2026"
+  - "Image Generation"
+  - "Pathology Image Generation"
+  - "Semantic Control"
+  - "Diagnostic Semantic Tokens"
+  - "Prototype Control"
+  - "Multi-stream Condition Injection"
+  - "MLLM Distillation"
 date: 2026-05-08
-content_hash: 41d257c702c2ecca
+content_hash: e9f0daa645db52ce
 ---
+
 # Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control
 
 **Conference**: CVPR2026  
@@ -149,11 +156,11 @@ The paper includes 6 tables and 17 figures (32 pages total). The ablation study 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Camera Control for Text-to-Image Generation via Learning Viewpoint Tokens](camera_control_for_text-to-image_generation_via_learning_viewpoint_tokens.md)
 - [\[CVPR 2026\] LacTokGen: Latent Consistency Tokenizer for 1024-pixel Image Generation by 256 Tokens](lactokgen_latent_consistency_tokenizer_for_1024-pixel_image_generation_by_256_to.md)
 - [\[AAAI 2026\] Beyond Semantic Features: Pixel-Level Mapping for Generalized AI-Generated Image Detection](../../AAAI2026/image_generation/beyond_semantic_features_pixel-level_mapping_for_generalized_ai-generated_image_.md)
 - [\[CVPR 2026\] TokenLight: Precise Lighting Control in Images using Attribute Tokens](tokenlight_precise_lighting_control_in_images_using_attribute_tokens.md)
 - [\[CVPR 2026\] Pixel Motion Diffusion Is What We Need for Robot Control](pixel_motion_diffusion_is_what_we_need_for_robot_control.md)
-- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Diffusion Language Models] This paper proposes the Diffusion Chain of Lateral Thought (DCoLT), which treats each intermediate step in the reverse process of a diffusion language mod…
+  [NeurIPS 2025][Reinforcement Learning][Diffusion Language Models] This paper proposes the Diffusion Chain of Lateral Thought (DCoLT), which treats each intermediate step in the reverse process of a diffusion language model as a latent "thinking" action and optimizes the entire reasoning trajectory via outcome-based reinforcement learning. DCoLT achieves state-of-the-art performance on mathematics and code generation benchmarks with both SEDD and LLaDA diffusion language model…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "GRPO"
   - "Plackett-Luce"
 date: 2026-05-08
-content_hash: c90d714f52377331
+content_hash: 32c4a0c0ffc2c522
 ---
 
 # Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models
@@ -61,13 +61,13 @@ Gradients are accumulated across all steps before a single parameter update.
 
    LLaDA is a discrete-time masked diffusion model that at each step selects a subset of masked tokens to reveal. The authors find that **the unmasking order is critical for reasoning** — tokens with higher confidence should be revealed first. To this end, an Unmask Policy Module (UPM) is introduced:
 
-   - UPM predicts a ranking score $h_{\theta,n}^i$ for each token and defines an ordering-sampling policy using the Plackett-Luce model:
+    - UPM predicts a ranking score $h_{\theta,n}^i$ for each token and defines an ordering-sampling policy using the Plackett-Luce model:
 
    $\pi_{\theta,n}^{\text{unmask}}(\mathcal{U}_n|x_{n-1}) = \prod_{k=1}^{K}\frac{\exp(h_{\theta,n}^{u_n(k)})}{\sum_{j=k}^{K}\exp(h_{\theta,n}^{u_n(j)}) + \sum_{j \in \mathcal{M}_n}\exp(h_{\theta,n}^{u_n(j)})}$
 
-   - Token generation policy: $\pi_{\theta,n}^{\text{token}}(x_n|x_{n-1},\mathcal{U}_n) = \prod_{i \in \mathcal{U}_n}p_{\theta,n}(x_n^i|x_{n-1})$
+    - Token generation policy: $\pi_{\theta,n}^{\text{token}}(x_n|x_{n-1},\mathcal{U}_n) = \prod_{i \in \mathcal{U}_n}p_{\theta,n}(x_n^i|x_{n-1})$
 
-   - The full policy is the product of the two: $\pi_{\theta,n}(x_n|x_{n-1}) = \pi_{\theta,n}^{\text{unmask}} \cdot \pi_{\theta,n}^{\text{token}}$
+    - The full policy is the product of the two: $\pi_{\theta,n}(x_n|x_{n-1}) = \pi_{\theta,n}^{\text{unmask}} \cdot \pi_{\theta,n}^{\text{token}}$
 
    UPM consists of a single Transformer block with adaptive layer normalization (AdaLN) to embed the diffusion step $n$ and mask indicator information, incurring minimal computational overhead. The resulting model is named LLaDOU.
 
@@ -154,7 +154,7 @@ Gradients are accumulated across all steps before a single parameter update.
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
 - [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
 - [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](../../ICML2026/reinforcement_learning/learning_unmasking_policies_for_diffusion_language_models.md)
-- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
+- [\[ACL 2026\] Beyond Fully Random Masking: Attention-Guided Denoising and Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/beyond_fully_random_masking_attention-guided_denoising_and_optimization_for_diff.md)
 - [\[NeurIPS 2025\] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation](noisyrollout_reinforcing_visual_reasoning_with_data_augmenta.md)
 
 </div>

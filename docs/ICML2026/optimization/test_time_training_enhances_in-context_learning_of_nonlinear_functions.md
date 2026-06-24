@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Test time training enhances in-context learning of nonlinear functions
 description: >-
-  [ICML 2026][Optimization & Theory][in-context learning] This paper establishes the first rigorous generalization bound for the combination of a single-layer softmax-attention transformer and LoRA test-time fine-tuning. It proves that TTT compresses the sample complexity of ICL from $r^{\Theta(\mathrm{ie}(\sigma_*))}$ to $r^{\Theta(\mathrm{ge}(\sigma_*))}$ on single-index po
+  [ICML 2026][Optimization][in-context learning] This paper establishes the first rigorous generalization bound for the combination of a single-layer softmax-attention transformer and LoRA test-time fine-tuning. It proves that TTT compresses the sample complexity of ICL from $r^{\Theta(\mathrm{ie}(\sigma_*))}$ to $r^{\Theta(\mathrm{ge}(\sigma_*))}$ on single-index polynomial tasks, allows the link function to vary per task, and ensures that inference error scales with context l…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - in-context learning
-  - test-time training
-  - single-index model
-  - general exponent
-  - LoRA
+  - "ICML 2026"
+  - "Optimization"
+  - "in-context learning"
+  - "test-time training"
+  - "single-index model"
+  - "general exponent"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 727e75bcd5947153
+content_hash: 814f762b5d11112d
 ---
+
 # Test time training enhances in-context learning of nonlinear functions
 
 **Conference**: ICML 2026  
@@ -130,11 +131,11 @@ Key observation: ICL error does not decrease with $N$ in scenarios where link fu
 
 ## Related Papers
 
-- [\[ICLR 2026\] Test-Time Meta-Adaptation with Self-Synthesis](../../ICLR2026/optimization/test-time_meta-adaptation_with_self-synthesis.md)
-- [\[ICML 2026\] Learning Context-Conditioned Predicate Semantics via Prototype Feedback](learning_context-conditioned_predicate_semantics_via_prototype_feedback.md)
+- [\[ICML 2026\] $α$-PFN: Fast Entropy Search via In-Context Learning](α-pfn_fast_entropy_search_via_in-context_learning.md)
 - [\[ICML 2025\] Training Dynamics of In-Context Learning in Linear Attention](../../ICML2025/optimization/training_dynamics_of_in-context_learning_in_linear_attention.md)
+- [\[ICML 2026\] Learning Context-Conditioned Predicate Semantics via Prototype Feedback](learning_context-conditioned_predicate_semantics_via_prototype_feedback.md)
 - [\[CVPR 2025\] Test-Time Augmentation Improves Efficiency in Conformal Prediction](../../CVPR2025/optimization/test-time_augmentation_improves_efficiency_in_conformal_prediction.md)
-- [\[ICML 2026\] Enhancing LLM Training via Spectral Clipping](enhancing_llm_training_via_spectral_clipping.md)
+- [\[ICLR 2026\] It's All Connected: A Journey Through Test-Time Memorization, Attentional Bias, Retention, and Online Optimization](../../ICLR2026/optimization/its_all_connected_a_journey_through_test-time_memorization_attentional_bias_rete.md)
 
 </div>
 

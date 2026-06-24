@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Two-Dimensional Quantization for Geometry-Aware Audio Coding
 description: >-
-  [ICML 2026][Audio & Speech][FSQ] The authors replace scalar quantizers in neural audio codecs with Q2D2, a geometric quantizer using "paired channels + structured 2D grids." By replacing learnable codebooks with fixed hexagonal, rectangular, or rhombic lattices, they achieve speech reconstruction quality that matches or surpasses RVQ, VQ, and FSQ usin
+  [ICML 2026][Audio & Speech][2D Quantization] The authors replace scalar quantizers in neural audio codecs with Q2D2, a geometric quantizer using "paired channels + structured 2D grids." By replacing learnable codebooks with fixed hexagonal, rectangular, or rhombic lattices, they achieve speech reconstruction quality that matches or surpasses RVQ, VQ, and FSQ using a single quantizer at extremely low token rates.
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - FSQ
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "2D Quantization"
+  - "Geometry-Aware"
+  - "Neural Audio Codec"
+  - "FSQ"
+  - "Implicit Codebook"
 date: 2026-05-08
-content_hash: 229d74ac584a8e42
+content_hash: 7b478c911bf955ea
 ---
+
 # Two-Dimensional Quantization for Geometry-Aware Audio Coding
 
 **Conference**: ICML 2026  
@@ -141,11 +146,11 @@ Key Observation: **Ours** with **1 quantizer + 333 token/s** matches the UTMOS o
 
 ## Related Papers
 
+- [\[ICLR 2026\] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models](../../ICLR2026/audio_speech/owl_geometry-aware_spatial_reasoning_for_audio_large_language_models.md)
 - [\[ICML 2026\] Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration](group_cognition_learning_making_everything_better_through_governed_two-stage_age.md)
-- [\[ICLR 2026\] PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation](../../ICLR2026/audio_speech/prismaudio_decomposed_chain-of-thoughts_and_multi-dimensional_rewards_for_video-.md)
 - [\[ICML 2026\] Sparse Tokens Suffice: Jailbreaking Audio Language Models via Token-Aware Gradient Optimization](sparse_tokens_suffice_jailbreaking_audio_language_models_via_token-aware_gradien.md)
-- [\[CVPR 2025\] Synchronized Video-to-Audio Generation via Mel Quantization-Continuum Decomposition](../../CVPR2025/audio_speech/synchronized_video-to-audio_generation_via_mel_quantization-continuum_decomposit.md)
-- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](../../CVPR2026/audio_speech/pavas_physics-aware_video-to-audio_synthesis.md)
+- [\[ICLR 2026\] PrismAudio: Decomposed Chain-of-Thought and Multi-dimensional Rewards for Video-to-Audio Generation](../../ICLR2026/audio_speech/prismaudio_decomposed_chain-of-thought_and_multi-dimensional_rewards_for_video-t.md)
+- [\[ICLR 2026\] Physics-Informed Audio-Geometry-Grid Representation Learning for Universal Sound Source Localization](../../ICLR2026/audio_speech/physics-informed_audio-geometry-grid_representation_learning_for_universal_sound.md)
 
 </div>
 

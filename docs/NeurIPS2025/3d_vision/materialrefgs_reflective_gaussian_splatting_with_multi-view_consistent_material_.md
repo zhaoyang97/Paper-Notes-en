@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MaterialRefGS: Reflective Gaussian Splatting with Multi-view Consistent Material Inference
 description: >-
-  [NeurIPS 2025][3D Vision][Gaussian splatting] MaterialRefGS is proposed to achieve high-fidelity novel view synthesis and accurate illumination decomposition for reflective surfaces…
+  [NeurIPS 2025][3D Vision][Gaussian splatting] MaterialRefGS is proposed to achieve high-fidelity novel view synthesis and accurate illumination decomposition for reflective surfaces, via multi-view consistent material inference constraints and a 2DGS ray-tracing-based environment modeling strategy.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "PBR"
   - "illumination decomposition"
 date: 2026-05-08
-content_hash: 37d2463a48dccf6b
+content_hash: aff6ba59ade46bbe
 ---
 
 # MaterialRefGS: Reflective Gaussian Splatting with Multi-view Consistent Material Inference
@@ -149,11 +149,11 @@ All three components—normal prior, material consistency, and environment model
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming](trim_scalable_3d_gaussian_diffusion_inference_with_temporal_and_spatial_trimming.md)
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](../../CVPR2026/3d_vision/splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
+- [\[CVPR 2025\] IRGS: Inter-Reflective Gaussian Splatting with 2D Gaussian Ray Tracing](../../CVPR2025/3d_vision/irgs_inter-reflective_gaussian_splatting_with_2d_gaussian_ray_tracing.md)
+- [\[ECCV 2024\] GaussCtrl: Multi-View Consistent Text-Driven 3D Gaussian Splatting Editing](../../ECCV2024/3d_vision/gaussctrl_multi-view_consistent_text-driven_3d_gaussian_splatting_editing.md)
 - [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](../../CVPR2026/3d_vision/multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
-- [\[ICCV 2025\] PanSt3R: Multi-view Consistent Panoptic Segmentation](../../ICCV2025/3d_vision/panst3r_multi-view_consistent_panoptic_segmentation.md)
-- [\[ICCV 2025\] SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates](../../ICCV2025/3d_vision/supermat_physically_consistent_pbr_material_estimation_at_interactive_rates.md)
-- [\[ICCV 2025\] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion](../../ICCV2025/3d_vision/materialmvp_illumination-invariant_material_generation_via_multi-view_pbr_diffus.md)
+- [\[NeurIPS 2025\] TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming](trim_scalable_3d_gaussian_diffusion_inference_with_temporal_and_spatial_trimming.md)
 
 </div>
 

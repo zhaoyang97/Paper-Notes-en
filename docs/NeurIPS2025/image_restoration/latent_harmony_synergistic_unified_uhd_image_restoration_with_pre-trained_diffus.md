@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement
 description: >-
-  [Image Restoration] This paper proposes Latent Harmony, a two-stage framework that constructs a degradation-robust LH-VAE via latent space regularization…
+  [Image Restoration] This paper proposes Latent Harmony, a two-stage framework that constructs a degradation-robust LH-VAE via latent space regularization, and subsequently applies high-frequency-guided LoRA fine-tuning to independently optimize the encoder (fidelity) and decoder (perceptual quality), achieving a unified solution to the generalization–reconstruction–perception trilemma in all-in-one UHD image restoration.
 tags:
   - "Image Restoration"
 date: 2026-05-08
-content_hash: 92a60f61c31ae4be
+content_hash: 774e78f434594810
 ---
 
 # Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement
@@ -178,10 +178,10 @@ Removing $L_{Inv}$ has the largest impact (5.49 dB PSNR drop), demonstrating tha
 ## Related Papers
 
 - [\[NeurIPS 2025\] Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution](implicit_augmentation_from_distributional_symmetry_in_turbulence_super-resolutio.md)
+- [\[CVPR 2025\] EQ-Reg: A Regularization-Guided Equivariant Approach for Image Restoration](../../CVPR2025/image_restoration/a_regularization-guided_equivariant_approach_for_image_restoration.md)
 - [\[NeurIPS 2025\] Audio Super-Resolution with Latent Bridge Models](audio_super-resolution_with_latent_bridge_models.md)
 - [\[NeurIPS 2025\] Rethinking Nighttime Image Deraining via Learnable Color Space Transformation](rethinking_nighttime_image_deraining_via_learnable_color_space_transformation.md)
 - [\[NeurIPS 2025\] MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation](ms-bart_unified_modeling_of_mass_spectra_and_molecules_for_structure_elucidation.md)
-- [\[NeurIPS 2025\] MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration](modem_a_morton-order_degradation_estimation_mechanism_for_adverse_weather_image_.md)
 
 </div>
 

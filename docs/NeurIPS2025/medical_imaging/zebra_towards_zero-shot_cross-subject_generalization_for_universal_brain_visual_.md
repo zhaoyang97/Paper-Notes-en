@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding
 description: >-
-  [NeurIPS 2025][Medical Imaging][fMRI decoding] This paper proposes Zebra, the first zero-shot brain visual decoding framework, which disentangles fMRI representations into subject-invariant and semantic-specific componen…
+  [NeurIPS 2025][Medical Imaging][fMRI decoding] This paper proposes Zebra, the first zero-shot brain visual decoding framework, which disentangles fMRI representations into subject-invariant and semantic-specific components via adversarial training and residual decomposition, enabling cross-subject visual reconstruction generalization without fine-tuning on new subjects.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "representation disentanglement"
   - "brain visual decoding"
 date: 2026-05-08
-content_hash: dee73772328f6ae7
+content_hash: 113cd1c4afca27c9
 ---
 
 # Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding
@@ -132,10 +132,10 @@ Compared to methods requiring fine-tuning such as MindEye2 and MindTuner, Zebra 
 ## Related Papers
 
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](../../CVPR2026/medical_imaging/meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
+- [\[ICLR 2026\] A Cognitive Process-Inspired Architecture for Subject-Agnostic Brain Visual Decoding](../../ICLR2026/medical_imaging/a_cognitive_process-inspired_architecture_for_subject-agnostic_brain_visual_deco.md)
 - [\[NeurIPS 2025\] EEGReXferNet: A Lightweight Gen-AI Framework for EEG Subspace Reconstruction via Cross-Subject Transfer Learning and Channel-Aware Embedding](eegrexfernet_a_lightweight_gen-ai_framework_for_eeg_subspace_reconstruction_via_.md)
-- [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 - [\[NeurIPS 2025\] FAPEX: Fractional Amplitude-Phase Expressor for Robust Cross-Subject Seizure Prediction](fapex_fractional_amplitude-phase_expressor_for_robust_cross-subject_seizure_pred.md)
+- [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](../../ICCV2025/medical_imaging/aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks
 description: >-
-  [NeurIPS 2025][Robotics][Hierarchical VLA] This paper proposes RDD (Retrieval-Based Demonstration Decomposer), which models demonstration decomposition as an optimal partition problem and automatically segments long-hori…
+  [NeurIPS 2025][Robotics][Hierarchical VLA] This paper proposes RDD (Retrieval-Based Demonstration Decomposer), which models demonstration decomposition as an optimal partition problem and automatically segments long-horizon task demonstrations into subtasks aligned with the training data of low-level visuomotor policies. This approach bridges the gap between high-level planners and low-level policies in hierarchical VLA frameworks, achieving near-expert-decomposer performance…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Programming"
   - "Long-Horizon Manipulation"
 date: 2026-05-08
-content_hash: 133f22411387568a
+content_hash: 81f0de552995d917
 ---
 
 # RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks
@@ -57,7 +57,7 @@ RDD is a training-free, automated demonstration decomposition framework. Its cor
 
    Given a demonstration $\mathcal{S}^i$, the objective is to find the optimal partition strategy:
 
-   $$P^{i*} = \arg\max_{P \in \Pi(\mathcal{S}^i)} \mathrm{J}(P)$$
+    $P^{i*} = \arg\max_{P \in \Pi(\mathcal{S}^i)} \mathrm{J}(P)$
 
    where $\mathrm{J}(P)$ evaluates the alignment between the partition and the low-level policy's training set $\mathcal{D}^{train}_{aug}$. When $\mathrm{J}$ is interval-additive ($\mathrm{J}(P)=\sum_{\mathcal{I}\in P}\tilde{J}(\mathcal{I})$), the problem satisfies the optimal substructure property and can be solved via dynamic programming in $O(N^2)$ scoring function calls.
 
@@ -67,7 +67,7 @@ RDD is a training-free, automated demonstration decomposition framework. Its cor
 
    The score for each candidate interval $\mathcal{I}^i_j$ is defined as:
 
-   $$\tilde{J}(\mathcal{I}^i_j) = |\mathcal{I}^i_j| \cdot \mathbf{sim}(\mathcal{I}^i_j, \mathrm{ANNS}(\mathcal{V}(\mathcal{I}^i_j), \mathcal{D}^{train}_{aug}))$$
+    $\tilde{J}(\mathcal{I}^i_j) = |\mathcal{I}^i_j| \cdot \mathbf{sim}(\mathcal{I}^i_j, \mathrm{ANNS}(\mathcal{V}(\mathcal{I}^i_j), \mathcal{D}^{train}_{aug}))$
 
    where $\mathcal{V}(\mathcal{I}) = \text{concat}(\mathcal{E}(o_b), \mathcal{E}(o_e))$ encodes the start and end frames of the interval into a vector representation, and ANNS returns the nearest-neighbor interval $\tilde{\mathcal{I}}^i_j$ from the training set. Multiplying by $|\mathcal{I}|$ ensures that the score is proportional to the number of timesteps, making the total score invariant to the number of segments (Proposition 3.1).
 
@@ -77,13 +77,13 @@ RDD is a training-free, automated demonstration decomposition framework. Its cor
 
    Under the standard (non-OOD) setting, the similarity is defined as:
 
-   $$\mathbf{sim}(\mathcal{I}^i_j, \tilde{\mathcal{I}}^i_j) = -[\delta(\mathcal{V}(\mathcal{I}^i_j), \mathcal{V}(\tilde{\mathcal{I}}^i_j)) + \alpha |1 - \frac{|\mathcal{I}^i_j|}{|\tilde{\mathcal{I}}^i_j|}|]$$
+    $\mathbf{sim}(\mathcal{I}^i_j, \tilde{\mathcal{I}}^i_j) = -[\delta(\mathcal{V}(\mathcal{I}^i_j), \mathcal{V}(\tilde{\mathcal{I}}^i_j)) + \alpha |1 - \frac{|\mathcal{I}^i_j|}{|\tilde{\mathcal{I}}^i_j|}|]$
 
    The first term is the visual feature distance (using angular distance), and the second term is the relative temporal length difference, with $\alpha$ controlling the trade-off.
 
    For OOD subtask scenarios, the similarity is extended to a combination of a retrieval term and a generality term:
 
-   $$\mathbf{sim} = -\delta(\mathcal{V}_e(\mathcal{I}), \mathcal{V}_e(\tilde{\mathcal{I}})) + \beta \mathrm{G}(\mathcal{I})$$
+    $\mathbf{sim} = -\delta(\mathcal{V}_e(\mathcal{I}), \mathcal{V}_e(\tilde{\mathcal{I}})) + \beta \mathrm{G}(\mathcal{I})$
 
    where $\mathrm{G}$ evaluates the "generality" of an interval using general change-point detection methods such as UVD.
 
@@ -167,7 +167,7 @@ RDD trails the expert decomposer by only 0.2% in success rate, significantly out
 - [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](../../ICML2026/robotics/hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
 - [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](../../AAAI2026/robotics/manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
 - [\[NeurIPS 2025\] EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval](efficientnav_towards_on-device_object-goal_navigation_with_navigation_map_cachin.md)
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
+- [\[CVPR 2025\] Towards Long-Horizon Vision-Language Navigation: Platform, Benchmark and Method](../../CVPR2025/robotics/towards_long-horizon_vision-language_navigation_platform_benchmark_and_method.md)
 
 </div>
 

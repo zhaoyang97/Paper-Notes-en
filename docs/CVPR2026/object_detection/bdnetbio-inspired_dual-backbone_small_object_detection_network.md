@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BDNet: Bio-Inspired Dual-Backbone Small Object Detection Network
 description: >-
-  [CVPR 2026][Object Detection][Remote Sensing] BDNet mimics the LGN/V1–V2–V4 color pathway and the V1–V4 edge pathway of the human visual system to construct a dual-backbone detection network featuring "color enhancement + edge strengthening + hierarchical fusion." Designed to remedy the insufficient feature extraction caused by low color contrast and blurred edges
+  [CVPR 2026][Object Detection][Small Object Detection] BDNet mimics the LGN/V1–V2–V4 color pathway and the V1–V4 edge pathway of the human visual system to construct a dual-backbone detection network featuring "color enhancement + edge strengthening + hierarchical fusion." Designed to remedy the insufficient feature extraction caused by low color contrast and blurred edges of small objects in remote sensing, it achieves SOTA results on VisDrone2019, NWPU VHR-10…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Small Object Detection"
+  - "Remote Sensing"
+  - "Dual-Backbone Network"
+  - "Bio-inspired Vision"
+  - "Color Antagonism"
 date: 2026-05-08
-content_hash: 3363a8b4d183ba5c
+content_hash: 3cda2d36924b50ca
 ---
+
 # BDNet: Bio-Inspired Dual-Backbone Small Object Detection Network
 
 **Conference**: CVPR 2026  
@@ -150,10 +155,17 @@ Inside CIP: CAM alone gave 47.8→48.0, VCHM alone →48.3, together →48.8 (co
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection](towards_persistence_learning_topological_constraints_for_event-based_small_objec.md)
+- [\[CVPR 2026\] Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](heuristic-inspired_reasoning_priors_facilitate_data-efficient_referring_object_d.md)
+- [\[CVPR 2026\] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection](beyond_prompt_degradation_prototype-guided_dual-pool_prompting_for_incremental_o.md)
+- [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
+- [\[CVPR 2026\] RHCNet: Residual-Guided Hierarchical Calibration Network for Robust Underwater Object Detection](rhcnet_residual-guided_hierarchical_calibration_network_for_robust_underwater_ob.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network](d2fanet_enhancing_video_object_detection_with_dual-domain_feature_aggregation_ne.md)

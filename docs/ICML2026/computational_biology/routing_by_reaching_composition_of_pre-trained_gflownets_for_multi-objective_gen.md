@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Routing by Reaching: Composition of Pre-trained GFlowNets for Multi-Objective Generation
 description: >-
-  [ICML 2026][Computational Biology][GFlowNets] This paper proposes a training-free framework for composing GFlowNets. By using the "reaching probability" of each pre-trained model as weights to mix their respective forward policies, the framework enables direct sampling for arbitrary linear scalarizations or logical operator combinations during the inference phase.
+  [ICML 2026][Computational Biology][GFlowNets] This paper proposes a training-free framework for composing GFlowNets. By using the "reaching probability" of each pre-trained model as weights to mix their respective forward policies, the framework enables direct sampling for arbitrary linear scalarizations or logical operator combinations during the inference phase. It is theoretically proven to exactly recover the target distribution in the linear case.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - GFlowNets
+  - "ICML 2026"
+  - "Computational Biology"
+  - "GFlowNets"
+  - "Multi-Objective Generation"
+  - "Model Composition"
+  - "Inference-time Mixing"
+  - "Molecular Design"
 date: 2026-05-08
-content_hash: df8e38dd69e98b4d
+content_hash: ff7cf1e5f9fd24ad
 ---
+
 # Routing by Reaching: Composition of Pre-trained GFlowNets for Multi-Objective Generation
 
 **Conference**: ICML 2026  
@@ -122,9 +127,9 @@ Evaluated on a $32\times 32$ 2D grid (where target distributions are analyticall
 
 - [\[ICML 2025\] Graph Generative Pre-trained Transformer (G2PT)](../../ICML2025/computational_biology/graph_generative_pre-trained_transformer.md)
 - [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
+- [\[ICLR 2026\] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design](../../ICLR2026/computational_biology/a_joint_diffusion_model_with_pre-trained_priors_for_rna_sequence-structure_co-de.md)
+- [\[ICLR 2026\] Property-Driven Protein Inverse Folding with Multi-Objective Preference Alignment](../../ICLR2026/computational_biology/property-driven_protein_inverse_folding_with_multi-objective_preference_alignmen.md)
 - [\[ICML 2025\] PepTune: De Novo Generation of Therapeutic Peptides with Multi-Objective-Guided Discrete Diffusion](../../ICML2025/computational_biology/peptune_de_novo_generation_of_therapeutic_peptides_with_multi-objective-guided_d.md)
-- [\[ICML 2025\] eccDNAMamba: A Pre-Trained Model for Ultra-Long eccDNA Sequence Analysis](../../ICML2025/computational_biology/eccdnamamba_a_pre-trained_model_for_ultra-long_eccdna_sequence_analysis.md)
-- [\[ICML 2026\] Transformed Latent Variable Multi-Output Gaussian Processes](transformed_latent_variable_multi-output_gaussian_processes.md)
 
 </div>
 

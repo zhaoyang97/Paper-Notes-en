@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision
 description: >-
-  [ICCV 2025][3D Vision][Egocentric vision] This paper proposes Fish2Mesh, a fisheye-aware Transformer model that embeds the spherical geometry of fisheye images into a Swin Transformer via an Egocentric Positional Encodin…
+  [ICCV 2025][3D Vision][Egocentric vision] This paper proposes Fish2Mesh, a fisheye-aware Transformer model that embeds the spherical geometry of fisheye images into a Swin Transformer via an Egocentric Positional Encoding (EPE) based on equirectangular projection, enabling accurate 3D human mesh recovery from a head-mounted fisheye camera in egocentric perspective.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "SMPL"
   - "positional encoding"
 date: 2026-05-08
-content_hash: acde3f58724a0877
+content_hash: 6d39acb1407556c6
 ---
 
 # Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision
@@ -122,10 +122,10 @@ $\mathcal{L} = a(\mathcal{L}_{SMPL} + \mathcal{L}_{orient}) + b \cdot \mathcal{L
 ## Related Papers
 
 - [\[ICCV 2025\] AJAHR: Amputated Joint Aware 3D Human Mesh Recovery](ajahr_amputated_joint_aware_3d_human_mesh_recovery.md)
-- [\[ICCV 2025\] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](bring_your_rear_cameras_for_egocentric_3d_human_pose_estimation.md)
-- [\[CVPR 2026\] Anny-Fit: All-Age Human Mesh Recovery](../../CVPR2026/3d_vision/anny-fit_all-age_human_mesh_recovery.md)
-- [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](../../CVPR2026/3d_vision/onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
-- [\[ICCV 2025\] Egocentric Action-aware Inertial Localization in Point Clouds with Vision-Language Guidance](egocentric_action-aware_inertial_localization_in_point_clouds_with_vision-langua.md)
+- [\[CVPR 2025\] PromptHMR: Promptable Human Mesh Recovery](../../CVPR2025/3d_vision/prompthmr_promptable_human_mesh_recovery.md)
+- [\[CVPR 2025\] MEGA: Masked Generative Autoencoder for Human Mesh Recovery](../../CVPR2025/3d_vision/mega_masked_generative_autoencoder_for_human_mesh_recovery.md)
+- [\[CVPR 2025\] HeatFormer: A Neural Optimizer for Multiview Human Mesh Recovery](../../CVPR2025/3d_vision/heatformer_a_neural_optimizer_for_multiview_human_mesh_recovery.md)
+- [\[ECCV 2024\] Global-to-Pixel Regression for Human Mesh Recovery](../../ECCV2024/3d_vision/global-to-pixel_regression_for_human_mesh_recovery.md)
 
 </div>
 

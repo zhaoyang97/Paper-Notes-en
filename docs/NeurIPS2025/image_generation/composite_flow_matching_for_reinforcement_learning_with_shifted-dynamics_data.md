@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data
 description: >-
-  [NeurIPS 2025][Image Generation][Reinforcement Learning] This paper proposes CompFlow, a composite flow matching architecture that builds an online flow on top of the offline flow's output distribution to estimate the dy…
+  [NeurIPS 2025 Spotlight][Image Generation][Reinforcement Learning] This paper proposes CompFlow, a composite flow matching architecture that builds an online flow on top of the offline flow's output distribution to estimate the dynamics shift (Wasserstein distance) between offline and online environments. Combined with an active exploration strategy targeting high-shift regions, CompFlow achieves an average return 14.2% above the strongest baseline across 27 shifted-dynamics…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "Reinforcement Learning"
   - "Flow Matching"
@@ -13,7 +13,7 @@ tags:
   - "Wasserstein Distance"
   - "Offline Data"
 date: 2026-05-08
-content_hash: 82849957324fe281
+content_hash: 1a07d1e235bdcd5c
 ---
 
 # Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data
@@ -156,11 +156,11 @@ The theoretical contributions are substantial and the composite flow architectur
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
-- [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
+- [\[ICML 2025\] Elucidating Flow Matching ODE Dynamics via Data Geometry and Denoisers](../../ICML2025/image_generation/elucidating_flow_matching_ode_dynamics_with_respect_to_data_geometries_and_denoi.md)
+- [\[ICML 2025\] ContinualFlow: Learning and Unlearning with Neural Flow Matching](../../ICML2025/image_generation/continualflow_learning_and_unlearning_with_neural_flow_matching.md)
 - [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](../../ICLR2026/image_generation/flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](towards_robust_zero-shot_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
+- [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
+- [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] RI3D: Few-Shot Gaussian Splatting With Repair and Inpainting Diffusion Priors
 description: >-
-  [3D Vision] RI3D decomposes sparse-view synthesis into two sub-tasks — repairing visible regions and completing missing regions — and introduces two personalized diffusion models (repair + inpainting) combined with a two…
+  [3D Vision] RI3D decomposes sparse-view synthesis into two sub-tasks — repairing visible regions and completing missing regions — and introduces two personalized diffusion models (repair + inpainting) combined with a two-stage optimization strategy to achieve high-quality 3DGS reconstruction under extremely sparse inputs.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: b30c97bd9a9d24b0
+content_hash: 60960a78585241a7
 ---
 
 # RI3D: Few-Shot Gaussian Splatting With Repair and Inpainting Diffusion Priors
@@ -150,8 +150,8 @@ The method is elegantly designed, with original contributions in depth fusion an
 
 - [\[ICCV 2025\] Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis](self-ensembling_gaussian_splatting_for_few-shot_novel_view_synthesis.md)
 - [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
-- [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
 - [\[ICCV 2025\] SplatTalk: 3D VQA with Gaussian Splatting](splattalk_3d_vqa_with_gaussian_splatting.md)
+- [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
 - [\[ICCV 2025\] StrandHead: Text to Hair-Disentangled 3D Head Avatars Using Human-Centric Priors](strandhead_text_to_hair-disentangled_3d_head_avatars_using_human-centric_priors.md)
 
 </div>

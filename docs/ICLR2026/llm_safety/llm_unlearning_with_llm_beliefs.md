@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLM Unlearning with LLM Beliefs
 description: >-
-  [ICLR 2026][LLM Safety][Bootstrapping] This work reveals the "squeezing effect" in LLM unlearning methods such as GA and NPO—where reducing the probability of target responses causes probability mass to shift toward semantically related high-likelihood regions, leading to spurious unlearning. It proposes a bootstrapping-based framework that utilizes the mod
+  [ICLR 2026][LLM Safety][LLM Unlearning] This work reveals the "squeezing effect" in LLM unlearning methods such as GA and NPO—where reducing the probability of target responses causes probability mass to shift toward semantically related high-likelihood regions, leading to spurious unlearning. It proposes a bootstrapping-based framework that utilizes the model's own high-confidence predictions (model beliefs) as additional unlearning targets. Two implementations…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Bootstrapping
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Unlearning"
+  - "Gradient Ascent"
+  - "Squeezing Effect"
+  - "Bootstrapping"
+  - "Model Beliefs"
 date: 2026-05-08
-content_hash: 419fd7f640f0264e
+content_hash: 3edef728d789fafa
 ---
+
 # LLM Unlearning with LLM Beliefs
 
 **Conference**: ICLR 2026  
@@ -193,8 +198,8 @@ The table below summarizes the objectives and mechanisms:
 - [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
 - [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
 - [\[ICLR 2026\] Downgrade to Upgrade: Optimizer Simplification Enhances Robustness in LLM Unlearning](downgrade_to_upgrade_optimizer_simplification_enhances_robustness_in_llm_unlearn.md)
-- [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](../../ACL2026/llm_safety/representation-guided_parameter-efficient_llm_unlearning.md)
 - [\[ICLR 2026\] Randomized Antipodal Search Done Right for Data Pareto Improvement of LLM Unlearning](randomized_antipodal_search_done_right_for_data_pareto_improvement_of_llm_unlear.md)
+- [\[ICLR 2026\] CLUE: Conflict-guided Localization for LLM Unlearning Framework](clue_conflict-guided_localization_for_llm_unlearning_framework.md)
 
 </div>
 

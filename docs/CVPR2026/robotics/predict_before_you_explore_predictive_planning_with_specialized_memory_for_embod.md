@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Predict Before You Explore: Predictive Planning with Specialized Memory for Embodied Question Answering
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Pred-EQA transforms Embodied Question Answering (EQA) from a "look-and-move" reactive exploration into a "predict-then-explore" loop of prediction and correction. A high-level planner predicts where evidence might be hidden to generate exploration branches with long-term intent; a low-level executor actively reduces un
+  [CVPR 2026][Robotics][Embodied Question Answering (EQA)] Pred-EQA transforms Embodied Question Answering (EQA) from a "look-and-move" reactive exploration into a "predict-then-explore" loop of prediction and correction. A high-level planner predicts where evidence might be hidden to generate exploration branches with long-term intent; a low-level executor actively reduces uncertainty within these branches and prunes them upon prediction failure. Coupled with a dual-memory sys…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Embodied Question Answering (EQA)"
+  - "Predictive Planning"
+  - "Hierarchical Planning"
+  - "Specialized Memory"
+  - "Active Inference"
 date: 2026-05-08
-content_hash: 538f4181484ab719
+content_hash: 430b31d08057d5ae
 ---
+
 # Predict Before You Explore: Predictive Planning with Specialized Memory for Embodied Question Answering
 
 **Conference**: CVPR 2026  
@@ -135,10 +141,10 @@ Planning strategy comparison (Qwen3-VL, no specialized memory): Reactive Executo
 ## Related Papers
 
 - [\[CVPR 2026\] Extending Embodied Question Answering from Perception to Decision](extending_embodied_question_answering_from_perception_to_decision.md)
-- [\[CVPR 2026\] Learning Predictive Visuomotor Coordination](learning_predictive_visuomotor_coordination.md)
+- [\[CVPR 2026\] When Robots Should Say "I Don't Know": Benchmarking Abstention in Embodied Question Answering](when_robots_should_say_i_dont_know_benchmarking_abstention_in_embodied_question_.md)
+- [\[ICLR 2026\] Planning with an Embodied Learnable Memory](../../ICLR2026/robotics/planning_with_an_embodied_learnable_memory.md)
 - [\[CVPR 2026\] RoboAgent: Chaining Basic Capabilities for Embodied Task Planning](roboagent_chaining_basic_capabilities_for_embodied_task_planning.md)
-- [\[CVPR 2026\] Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control](do_you_have_freestyle_expressive_humanoid_locomotion_via_audio_control.md)
-- [\[CVPR 2026\] D3D-VLP: Dynamic 3D Vision-Language-Planning Model for Embodied Grounding and Navigation](d3d-vlp_dynamic_3d_vision-language-planning_model_for_embodied_grounding_and_nav.md)
+- [\[CVPR 2026\] AstraNav-Memory: Contexts Compression for Long Memory](astranav-memory_contexts_compression_for_long_memory.md)
 
 </div>
 

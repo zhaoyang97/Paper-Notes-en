@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory
 description: >-
-  [ICML 2026][Multi-Agent][LoCoMo] E-mem replaces the traditional memory paradigm of "preprocessing compression into embeddings/graphs" with an episodic reconstruction paradigm of "preserving original context + on-site reasoning by small model assistants": the master agent only handles global planning, while multiple SLM assistants each guard a segment
+  [ICML 2026][Multi-Agent][Episodic memory] E-mem replaces the traditional memory paradigm of "preprocessing compression into embeddings/graphs" with an episodic reconstruction paradigm of "preserving original context + on-site reasoning by small model assistants": the master agent only handles global planning, while multiple SLM assistants each guard a segment of uncompressed raw text, performing local reasoning to return evidence after activation via multi-pathway retrieval.…
 tags:
-  - ICML 2026
-  - Multi-Agent
-  - LoCoMo
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "Episodic memory"
+  - "context reconstruction"
+  - "Master-Assistant architecture"
+  - "SLM assistant"
+  - "LoCoMo"
 date: 2026-05-08
-content_hash: 715351c8cd0dfb9a
+content_hash: 07ac16534b0f9fde
 ---
+
 # E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory
 
 **Conference**: ICML 2026  
@@ -160,11 +165,11 @@ Master Model Replacement (assistant fixed to Qwen3-4B): Gemini2.5-flash 93.62, G
 
 ## Related Papers
 
-- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/multi_agent/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
 - [\[ICML 2026\] CoOT: Learning to Coordinate In-Context with Coordination Transformers](coot_learning_to_coordinate_in-context_with_coordination_transformers.md)
-- [\[AAAI 2026\] KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval](../../AAAI2026/multi_agent/a_multi-agent_llm_framework_for_multi-domain_low-resource_in-context_ner_via_kno.md)
-- [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
-- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](../../ACL2026/multi_agent/scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
+- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/multi_agent/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
+- [\[ICLR 2026\] Multi-Agent Debate with Memory Masking (MAD-M²)](../../ICLR2026/multi_agent/multi-agent_debate_with_memory_masking.md)
+- [\[ICLR 2026\] Context Learning for Multi-Agent Discussion](../../ICLR2026/multi_agent/context_learning_for_multi-agent_discussion.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](../../ACL2026/multi_agent/topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 
 </div>
 

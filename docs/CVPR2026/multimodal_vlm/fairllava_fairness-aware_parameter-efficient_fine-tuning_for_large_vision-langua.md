@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models
 description: >-
-  [CVPR 2026][LLM Safety][Fairness] Proposes FairLLaVA, a parameter-efficient fairness fine-tuning method that eliminates demographic shortcuts in Multimodal Large Language Models (MLLMs) by minimizing mutual information between hidden states and demographic attributes. It significantly narrows performance gaps across groups in chest X-ray report generat
+  [CVPR 2026][Multimodal VLM][Fairness] Proposes FairLLaVA, a parameter-efficient fairness fine-tuning method that eliminates demographic shortcuts in Multimodal Large Language Models (MLLMs) by minimizing mutual information between hidden states and demographic attributes. It significantly narrows performance gaps across groups in chest X-ray report generation and skin lesion question answering.
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Fairness
-  - MLLM
-  - Mutual Information
-  - LoRA
-  - Medical Image Analysis
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Fairness"
+  - "MLLM"
+  - "Mutual Information"
+  - "LoRA"
+  - "Medical Image Analysis"
 date: 2026-05-08
-content_hash: 712f96031b072a65
+content_hash: 41182a1135173f17
 ---
+
 # FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -167,11 +168,11 @@ The middle layer is optimal on 5/6 gap metrics while maintaining reasonable over
 
 ## Related Papers
 
+- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
 - [\[CVPR 2026\] Interpretable Debiasing of Vision-Language Models for Social Fairness](interpretable_debiasing_of_vision-language_models_for_social_fairness.md)
-- [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](../../ICLR2026/llm_safety/secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
-- [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](test-time_attention_purification_for_backdoored_large_vision_language_models.md)
-- [\[ICML 2025\] Ferret: Federated Full-Parameter Tuning at Scale for Large Language Models](../../ICML2025/llm_safety/ferret_federated_full-parameter_tuning_at_scale_for_large_language_models.md)
+- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
+- [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
 
 </div>
 

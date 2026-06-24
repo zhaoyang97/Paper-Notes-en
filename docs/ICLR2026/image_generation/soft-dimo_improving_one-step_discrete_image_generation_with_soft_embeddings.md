@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Soft-Di[M]O: Improving One-Step Discrete Image Generation with Soft Embeddings
 description: >-
-  [ICLR 2026][Image Generation][masked diffusion model] Soft-Di[M]O relaxes the token distribution of one-step discrete image generators into differentiable expected embeddings. This allows the Di[M]O-distilled Masked Diffusion Model to integrate with GAN training, differentiable reward fine-tuning, and test-time embedding optimization, pushing the one-step FID to 1.56 on I
+  [ICLR2026][Image Generation][One-step generation] Soft-Di[M]O relaxes the token distribution of one-step discrete image generators into differentiable expected embeddings. This allows the Di[M]O-distilled Masked Diffusion Model to integrate with GAN training, differentiable reward fine-tuning, and test-time embedding optimization, pushing the one-step FID to 1.56 on ImageNet-256 and outperforming teacher models in GenEval and HPS metrics for text-to-image tasks.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - masked diffusion model
-  - soft embedding
-  - reward fine-tuning
+  - "ICLR2026"
+  - "Image Generation"
+  - "One-step generation"
+  - "discrete diffusion"
+  - "masked diffusion model"
+  - "soft embedding"
+  - "reward fine-tuning"
 date: 2026-05-08
-content_hash: fcc4f9552be3aa8b
+content_hash: 53486fcbbd6575e8
 ---
+
 # Soft-Di[M]O: Improving One-Step Discrete Image Generation with Soft Embeddings
 
 **Conference**: ICLR2026  
@@ -155,14 +158,17 @@ Ablations confirm that soft embeddings outperform Gumbel-ST in terms of training
 
 <div class="related-papers" markdown="1">
 
-- **Di[M]O**: One-Step Masked Diffusion Models via On-Policy Distillation (ArXiv 2024)
-- **MaskBit**: Embedding-free Binary Quantization for Image Generation (CVPR 2024)
-- **Meissonic**: Revitalizing Masked Generative Transformers for Efficient High-Resolution Text-to-Image Synthesis (2024)
+## Related Papers
+
+- [\[ICLR 2026\] Diffusion Fine-Tuning via Reparameterized Policy Gradient of the Soft Q-Function](diffusion_fine-tuning_via_reparameterized_policy_gradient_of_the_soft_q-function.md)
+- [\[ECCV 2024\] Soft Prompt Generation for Domain Generalization](../../ECCV2024/image_generation/soft_prompt_generation_for_domain_generalization.md)
+- [\[ICLR 2026\] Beyond Text-to-Image: Liberating Generation with a Unified Discrete Diffusion Model](beyond_text-to-image_liberating_generation_with_a_unified_discrete_diffusion_mod.md)
+- [\[ICLR 2026\] TwinFlow: Realizing One-step Generation on Large Models with Self-adversarial Flows](twinflow_realizing_one-step_generation_on_large_models_with_self-adversarial_flo.md)
+- [\[ICLR 2026\] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport](alignflow_improving_flow-based_generative_models_with_semi-discrete_optimal_tran.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Diffusion Fine-Tuning via Reparameterized Policy Gradient of the Soft Q-Function](diffusion_fine-tuning_via_reparameterized_policy_gradient_of_the_soft_q-function.md)

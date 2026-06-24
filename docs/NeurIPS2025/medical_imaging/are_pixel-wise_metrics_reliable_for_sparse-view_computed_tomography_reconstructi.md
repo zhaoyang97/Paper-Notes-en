@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?
 description: >-
-  [NeurIPS 2025][sparse-view CT] This paper reveals that pixel-level metrics such as PSNR and SSIM fail to capture anatomical structural completeness in sparse-view CT reconstruction (correlation only 0.16–0.30)…
+  [NeurIPS 2025][Medical Imaging][sparse-view CT] This paper reveals that pixel-level metrics such as PSNR and SSIM fail to capture anatomical structural completeness in sparse-view CT reconstruction (correlation only 0.16–0.30), and proposes anatomy-aware metrics (NSD/clDice) based on automated segmentation alongside the CARE framework—which incorporates segmentation-guided loss into diffusion model training—achieving 32% improvement in structural completeness for large organs…
 tags:
   - "NeurIPS 2025"
+  - "Medical Imaging"
   - "sparse-view CT"
   - "anatomy-aware metrics"
   - "structural completeness"
   - "diffusion model"
 date: 2026-05-08
-content_hash: e0ef3a076dd3cdfe
+content_hash: 7395f7c89cfe53f2
 ---
 
 # Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?
@@ -108,11 +109,11 @@ CARE consists of two components: (1) **Anatomy-aware evaluation metrics**—a fr
 
 ## Related Papers
 
+- [\[ICLR 2026\] NAB: Neural Adaptive Binning for Sparse-View CT Reconstruction](../../ICLR2026/medical_imaging/nab_neural_adaptive_binning_for_sparse-view_ct_reconstruction.md)
 - [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](../../ICLR2026/medical_imaging/dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
+- [\[ICLR 2026\] OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography](../../ICLR2026/medical_imaging/openpros_a_large-scale_dataset_for_limited_view_prostate_ultrasound_computed_tom.md)
 - [\[ICCV 2025\] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision](../../ICCV2025/medical_imaging/vector_contrastive_learning_for_pixel-wise_pretraining_in_medical_vision.md)
 - [\[ICCV 2025\] Coordinate-based Speed of Sound Recovery for Aberration-Corrected Photoacoustic Computed Tomography](../../ICCV2025/medical_imaging/coordinate-based_speed_of_sound_recovery_for_aberration-corrected_photoacoustic_.md)
-- [\[NeurIPS 2025\] EEGReXferNet: A Lightweight Gen-AI Framework for EEG Subspace Reconstruction via Cross-Subject Transfer Learning and Channel-Aware Embedding](eegrexfernet_a_lightweight_gen-ai_framework_for_eeg_subspace_reconstruction_via_.md)
-- [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
 
 </div>
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Mixture-of-Visual-Thoughts: Exploring Context-Adaptive Reasoning Mode Selection for General Visual Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][GRPO] The paper proposes the MoVT paradigm and AdaVaR framework, unifying "text-based reasoning" and "visually-grounded reasoning" into a single LVLM. By employing an improved AdaGRPO algorithm, the model learns to **adaptively select the appropriate reasoning mode based on the problem context**, leading to simultaneous impr
+  [ICLR 2026][VLM Reasoning][Visual Reasoning] The paper proposes the MoVT paradigm and AdaVaR framework, unifying "text-based reasoning" and "visually-grounded reasoning" into a single LVLM. By employing an improved AdaGRPO algorithm, the model learns to **adaptively select the appropriate reasoning mode based on the problem context**, leading to simultaneous improvements across tasks such as mathematics, visual search, hallucination reduction, and spatial reasoning.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - GRPO
-  - Reinforcement Learning
-  - LVLM
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Reasoning"
+  - "Reasoning Mode Selection"
+  - "GRPO"
+  - "Reinforcement Learning"
+  - "LVLM"
+  - "Adaptive Reasoning"
 date: 2026-05-08
-content_hash: 2d4f6b1652061c44
+content_hash: 4b82642dafff2ff4
 ---
+
 # Mixture-of-Visual-Thoughts: Exploring Context-Adaptive Reasoning Mode Selection for General Visual Reasoning
 
 **Conference**: ICLR 2026  
@@ -128,7 +132,7 @@ Removing any component leads to a performance drop, with **Adaptive Advantage + 
 - [\[CVPR 2026\] POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs](../../CVPR2026/vlm_reasoning/points-long_adaptive_dual-mode_visual_reasoning_in_mllms.md)
 - [\[ICLR 2026\] MedVR: Annotation-Free Medical Visual Reasoning via Agentic Reinforcement Learning](medvr_annotation-free_medical_visual_reasoning_via_agentic_reinforcement_learnin.md)
 - [\[ICLR 2026\] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning](visionreasoner_unified_reasoning-integrated_visual_perception_via_reinforcement_.md)
-- [\[ICLR 2026\] Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks](ref-adv_exploring_mllm_visual_reasoning_in_referring_expression_tasks.md)
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
 
 </div>
 

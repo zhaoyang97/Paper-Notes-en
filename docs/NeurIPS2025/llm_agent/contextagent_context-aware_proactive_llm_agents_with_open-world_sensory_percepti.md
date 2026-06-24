@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ContextAgent: Context-Aware Proactive LLM Agents with Open-World Sensory Perceptions
 description: >-
-  [NeurIPS 2025][LLM Agent][Proactive Agent] This paper proposes ContextAgent, the first LLM agent framework that leverages multimodal sensory perception from wearable devices (video + audio + notifications) to understand…
+  [NeurIPS 2025][LLM Agent][Proactive Agent] This paper proposes ContextAgent, the first LLM agent framework that leverages multimodal sensory perception from wearable devices (video + audio + notifications) to understand user intent and proactively deliver tool-augmented services. It also introduces ContextAgentBench, a benchmark of 1,000 samples, achieving improvements of 8.5% in proactive prediction accuracy and 6.0% in tool invocation accuracy.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "tool invocation"
   - "benchmark"
 date: 2026-05-08
-content_hash: 5e651d80db38b063
+content_hash: 9e0840cb408e274e
 ---
 
 # ContextAgent: Context-Aware Proactive LLM Agents with Open-World Sensory Perceptions
@@ -130,10 +130,10 @@ With Qwen2.5-7B as the backbone, ContextAgent achieves 0.894 Acc-P, 0.645 F1, an
 ## Related Papers
 
 - [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](../../ACL2026/llm_agent/toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
+- [\[CVPR 2025\] TANGO: Training-free Embodied AI Agents for Open-world Tasks](../../CVPR2025/llm_agent/tango_training-free_embodied_ai_agents_for_open-world_tasks.md)
+- [\[ICLR 2026\] AgentFold: Long-Horizon Web Agents with Proactive Context Folding](../../ICLR2026/llm_agent/agentfold_long-horizon_web_agents_with_proactive_context_folding.md)
 - [\[ICCV 2025\] Less is More: Empowering GUI Agent with Context-Aware Simplification](../../ICCV2025/llm_agent/less_is_more_empowering_gui_agent_with_context-aware_simplification.md)
 - [\[NeurIPS 2025\] AgentMisalignment: Measuring the Propensity for Misaligned Behaviour in LLM-Based Agents](agentmisalignment_measuring_the_propensity_for_misaligned_behaviour_in_llm-based.md)
-- [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](../../ICLR2026/llm_agent/fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
-- [\[NeurIPS 2025\] EU-Agent-Bench: Measuring Illegal Behavior of LLM Agents Under EU Law](eu-agent-bench_measuring_illegal_behavior_of_llm_agents_under_eu_law.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper shifts multimodal RAG image selection from "semantic similarity ranking" to "utility estimation of helpfulness for final answers." By utilizing lightweight multimodal surrogate models to efficiently predict evidence helpfulness, it simultaneously improves response quality and inference efficiency on MRAG-Ben
+  [ACL2026][Multimodal VLM][Multimodal RAG] This paper shifts multimodal RAG image selection from "semantic similarity ranking" to "utility estimation of helpfulness for final answers." By utilizing lightweight multimodal surrogate models to efficiently predict evidence helpfulness, it simultaneously improves response quality and inference efficiency on MRAG-Bench and Visual-RAG.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Multimodal RAG"
+  - "Visual Evidence Selection"
+  - "Information Gain"
+  - "Lightweight Surrogate Models"
+  - "Retrieval Reranking"
 date: 2026-05-08
-content_hash: 6f3819ee1f87e861
+content_hash: 04128dcf40899101
 ---
+
 # Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation
 
 **Conference**: ACL2026  
@@ -144,10 +150,10 @@ Efficiency results are also critical. For the Qwen3-VL family, discriminative es
 
 ## Related Papers
 
+- [\[ACL 2026\] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora](universalrag_retrieval-augmented_generation_over_corpora_of_diverse_modalities_a.md)
 - [\[ACL 2026\] MM-BizRAG: Rethinking Multimodal Retrieval-Augmented Generation for General Purpose Enterprise Q&A](mm-bizrag_rethinking_multimodal_retrieval-augmented_generation_for_general_purpo.md)
 - [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](../../NeurIPS2025/multimodal_vlm/windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](../../NeurIPS2025/multimodal_vlm/benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
-- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](../../AAAI2026/multimodal_vlm/knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
+- [\[CVPR 2026\] RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations](../../CVPR2026/multimodal_vlm/robustvisrag_causality-aware_vision-based_retrieval-augmented_generation_under_v.md)
 - [\[ICLR 2026\] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding](../../ICLR2026/multimodal_vlm/ravenea_a_benchmark_for_multimodal_retrieval-augmented_visual_culture_understand.md)
 
 </div>

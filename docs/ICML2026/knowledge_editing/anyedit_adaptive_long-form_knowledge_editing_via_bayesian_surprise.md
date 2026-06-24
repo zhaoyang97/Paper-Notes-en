@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AnyEdit++: Adaptive Long-Form Knowledge Editing via Bayesian Surprise
 description: >-
-  [ICML 2026][Knowledge Editing][Paper Note] AnyEdit++ utilizes token-level Bayesian Surprise to identify semantic transition points in long-form text, replacing the fixed-window segmentation of AnyEdit with structure-aware Bayes-Chunk. It achieves stable improvements in BLEU and BERT Score across long-form knowledge editing tasks such as mathematics, code, news,
+  [ICML 2026][Knowledge Editing][Bayesian Surprise] AnyEdit++ utilizes token-level Bayesian Surprise to identify semantic transition points in long-form text, replacing the fixed-window segmentation of AnyEdit with structure-aware Bayes-Chunk. It achieves stable improvements in BLEU and BERT Score across long-form knowledge editing tasks such as mathematics, code, news, and poetry.
 tags:
-  - ICML 2026
-  - Knowledge Editing
+  - "ICML 2026"
+  - "Knowledge Editing"
+  - "Bayesian Surprise"
+  - "Adaptive Chunking"
+  - "Long-form Knowledge Editing"
+  - "Structural Independence"
+  - "Causal Locality"
 date: 2026-05-08
-content_hash: 49c4a7554b5cf343
+content_hash: 0603369c740f5ca5
 ---
+
 # AnyEdit++: Adaptive Long-Form Knowledge Editing via Bayesian Surprise
 
 **Conference**: ICML 2026  
@@ -136,13 +142,20 @@ The paper provides structural independence analysis and plug-and-play verificati
 - Value: ⭐⭐⭐⭐☆ Practical for long-form knowledge management and offers a reusable strategy for sequence chunking.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- ROME: Locating and Editing Factual Associations in GPT, NeurIPS 2022
-- MEMIT: Mass-Editing Memory in a Transformer, ICLR 2023
-- AnyEdit: Long-Form Knowledge Editing for Large Language Models, arXiv 2024
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] ToxEdit: Adaptive Detoxification Safeguarding General Capabilities of LLMs through Toxicity-Aware Knowledge Editing](../../ACL2025/knowledge_editing/adaptive_detoxification_safeguarding_general_capabilities_of_llms_through_toxici.md)
+- [\[ICML 2026\] Do Text Edits Generalize to Visual Generation? Benchmarking Cross-Modal Knowledge Editing in UMMs](do_text_edits_generalize_to_visual_generation_benchmarking_cross-modal_knowledge.md)
+- [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
+- [\[ICML 2026\] KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls](kore_enhancing_knowledge_injection_for_large_multimodal_models_via_knowledge-ori.md)
+- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] ToxEdit: Adaptive Detoxification Safeguarding General Capabilities of LLMs through Toxicity-Aware Knowledge Editing](../../ACL2025/knowledge_editing/adaptive_detoxification_safeguarding_general_capabilities_of_llms_through_toxici.md)

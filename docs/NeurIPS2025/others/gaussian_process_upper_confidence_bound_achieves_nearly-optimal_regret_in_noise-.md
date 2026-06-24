@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits
 description: >-
-  [NeurIPS 2025][Gaussian process] This paper proves that the GP-UCB algorithm achieves nearly-optimal regret bounds in noise-free GP bandit problems…
+  [NeurIPS 2025][Gaussian process] This paper proves that the GP-UCB algorithm achieves nearly-optimal regret bounds in noise-free GP bandit problems, including the first $O(1)$ constant cumulative regret under the SE kernel and the Matérn kernel (with $d > \nu$), thereby closing the long-standing gap between the theory of GP-UCB and its empirical performance.
 tags:
   - "NeurIPS 2025"
   - "Gaussian process"
@@ -11,7 +11,7 @@ tags:
   - "regret bound"
   - "noise-free optimization"
 date: 2026-05-08
-content_hash: a63fa9c17a1ba292
+content_hash: 4b5130b6a1d29693
 ---
 
 # Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits
@@ -134,8 +134,8 @@ Empirical comparison (Figure 1, averaged over 3,000 independent runs):
 ## Related Papers
 
 - [\[AAAI 2026\] Reward Redistribution via Gaussian Process Likelihood Estimation](../../AAAI2026/others/reward_redistribution_via_gaussian_process_likelihood_estimation.md)
-- [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
 - [\[NeurIPS 2025\] Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning](put_cash_on_bandits_a_max_k-armed_problem_for_automated_machine_learning.md)
+- [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
 - [\[NeurIPS 2025\] Estimation of Stochastic Optimal Transport Maps](estimation_of_stochastic_optimal_transport_maps.md)
 - [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](position_there_is_no_free_bayesian_uncertainty_quantification.md)
 

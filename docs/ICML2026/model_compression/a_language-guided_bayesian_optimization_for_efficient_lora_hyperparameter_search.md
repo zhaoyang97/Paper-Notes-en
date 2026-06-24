@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Language-Guided Bayesian Optimization for Efficient LoRA Hyperparameter Search
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The paper converts LoRA hyperparameter configurations into text with domain explanations, using a frozen LLM, learnable tokens, and a projection layer to construct a continuous search space for Bayesian Optimization (BO). By employing 10% of the data for proxy evaluation to reduce trial costs, it significantly outperfo
+  [ICML2026][Model Compression][LoRA Tuning] The paper converts LoRA hyperparameter configurations into text with domain explanations, using a frozen LLM, learnable tokens, and a projection layer to construct a continuous search space for Bayesian Optimization (BO). By employing 10% of the data for proxy evaluation to reduce trial costs, it significantly outperforms default LoRA configurations and conventional HPO methods within approximately 30 search iterations.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML2026"
+  - "Model Compression"
+  - "LoRA Tuning"
+  - "Bayesian Optimization"
+  - "LLM Embeddings"
+  - "Proxy Training"
+  - "PEFT"
 date: 2026-05-08
-content_hash: 988376f5d44ddef0
+content_hash: 3367685161ec202a
 ---
+
 # A Language-Guided Bayesian Optimization for Efficient LoRA Hyperparameter Search
 
 **Conference**: ICML2026  
@@ -151,11 +157,11 @@ Proxy training correlations show that a 10% random subset adequately tracks full
 
 ## Related Papers
 
-- [\[CVPR 2026\] SG-LoRA: Semantic-guided LoRA Parameters Generation](../../CVPR2026/model_compression/sg-lora_semantic-guided_lora_parameters_generation.md)
 - [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](../../CVPR2026/model_compression/tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
 - [\[AAAI 2026\] Renormalization Group Guided Tensor Network Structure Search](../../AAAI2026/model_compression/renormalization_group_guided_tensor_network_structure_search.md)
+- [\[ICLR 2026\] E²LoRA: Efficient and Effective Low-Rank Adaptation with Entropy-Guided Adaptive Sharing](../../ICLR2026/model_compression/e²lora_efficient_and_effective_low-rank_adaptation_with_entropy-guided_adaptive_.md)
 - [\[NeurIPS 2025\] Learning to Better Search with Language Models via Guided Reinforced Self-Training](../../NeurIPS2025/model_compression/learning_to_better_search_with_language_models_via_guided_reinforced_self-traini.md)
-- [\[ICML 2026\] Active Budget Allocation for Efficient Scaling Law Estimation via Surrogate-Guided Pruning](active_budget_allocation_for_efficient_scaling_law_estimation_via_surrogate-guid.md)
+- [\[CVPR 2026\] SG-LoRA: Semantic-guided LoRA Parameters Generation](../../CVPR2026/model_compression/sg-lora_semantic-guided_lora_parameters_generation.md)
 
 </div>
 

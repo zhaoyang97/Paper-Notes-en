@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Steerable Adversarial Scenario Generation through Test-Time Preference Alignment (SAGE)
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] SAGE reformulates adversarial scenario generation for autonomous driving as a multi-objective preference alignment problem. By training two preference expert models and performing weight interpolation at inference time, it achieves a continuous and controllable trade-off between adversariality and realism. This allows
+  [ICLR 2026][Autonomous Driving][Adversarial scenario generation] SAGE reformulates adversarial scenario generation for autonomous driving as a multi-objective preference alignment problem. By training two preference expert models and performing weight interpolation at inference time, it achieves a continuous and controllable trade-off between adversariality and realism. This allows for the generation of a full spectrum of scenarios from mild to aggressive without retraining…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Adversarial scenario generation"
+  - "preference alignment"
+  - "multi-objective optimization"
+  - "linear mode connectivity"
+  - "closed-loop training"
 date: 2026-05-08
-content_hash: 38a4fb7962fdbd03
+content_hash: 767afe2411dfce1c
 ---
+
 # Steerable Adversarial Scenario Generation through Test-Time Preference Alignment (SAGE)
 
 **Conference**: ICLR 2026  
@@ -140,10 +146,10 @@ Closed-loop training evaluation (ego policy quality):
 ## Related Papers
 
 - [\[CVPR 2025\] CompoSIA: Composing Driving Worlds through Disentangled Control for Adversarial Scenario Generation](../../CVPR2025/autonomous_driving/composing_driving_worlds_through_disentangled_control_for_adversarial_scenario_g.md)
+- [\[ICLR 2026\] SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction](scenestreamer_continuous_scenario_generation_as_next_token_group_prediction.md)
 - [\[CVPR 2026\] Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving](../../CVPR2026/autonomous_driving/drive_my_way_preference_alignment_of_vision-language-action_model_for_personaliz.md)
 - [\[CVPR 2026\] TT-Occ: Test-Time 3D Occupancy Prediction](../../CVPR2026/autonomous_driving/test-time_3d_occupancy_prediction.md)
-- [\[ICLR 2026\] AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection](asyncbev_cross-modal_flow_alignment_in_asynchronous_3d_object_detection.md)
-- [\[CVPR 2026\] TrafficAlign: Aligning Large Language Models for Traffic Scenario Generation](../../CVPR2026/autonomous_driving/trafficalign_aligning_large_language_models_for_traffic_scenario_generation.md)
+- [\[ICLR 2026\] DecompGAIL: Learning Realistic Traffic Behaviors with Decomposed Multi-Agent Generative Adversarial Imitation Learning](decompgail_learning_realistic_traffic_behaviors_with_decomposed_multi-agent_gene.md)
 
 </div>
 

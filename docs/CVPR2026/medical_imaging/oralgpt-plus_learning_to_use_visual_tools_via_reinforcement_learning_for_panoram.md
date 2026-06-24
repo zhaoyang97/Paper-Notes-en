@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OralGPT-Plus: Learning to Use Visual Tools via Reinforcement Learning for Panoramic X-ray Analysis
 description: >-
-  [CVPR 2026][Medical Imaging][Reinforcement Learning] OralGPT-Plus transforms dental panoramic X-ray diagnosis from a "single-forward" VLM into an agent capable of autonomously invoking "Zoom-In" and "Mirror-In" tools for iterative review like a dentist. Powered by expert trajectory instruction tuning and review-driven reinforcement learning, it consistently outperforms s
+  [CVPR 2026][Medical Imaging][Panoramic X-ray] OralGPT-Plus transforms dental panoramic X-ray diagnosis from a "single-forward" VLM into an agent capable of autonomously invoking "Zoom-In" and "Mirror-In" tools for iterative review like a dentist. Powered by expert trajectory instruction tuning and review-driven reinforcement learning, it consistently outperforms strong baselines such as GPT-5 on the self-constructed MMOral-X benchmark.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Panoramic X-ray"
+  - "Agentic VLM"
+  - "Visual Tools"
+  - "Reinforcement Learning"
+  - "Symmetry Reasoning"
 date: 2026-05-08
-content_hash: 7e966a0d312199b6
+content_hash: 2925f2d6ad60c0d4
 ---
+
 # OralGPT-Plus: Learning to Use Visual Tools via Reinforcement Learning for Panoramic X-ray Analysis
 
 **Conference**: CVPR 2026  
@@ -122,6 +127,7 @@ Ablations on MMOral-X:
 - Value: ⭐⭐⭐⭐ High; establishes a blueprint for embedding clinical workflows into medical agentic VLMs via RL.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

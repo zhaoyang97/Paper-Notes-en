@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] This paper introduces the CARB (Cultural Awareness Reward Model) benchmark to systematically evaluate the preference judgment capabilities of reward models across 10 cultures and 4 cultural domains. Furthermore, it proposes "Think-as-Locals," which mandates generative reward models to first produce local cultural evalu
+  [ICLR 2026][LLM Alignment][Reward Model] This paper introduces the CARB (Cultural Awareness Reward Model) benchmark to systematically evaluate the preference judgment capabilities of reward models across 10 cultures and 4 cultural domains. Furthermore, it proposes "Think-as-Locals," which mandates generative reward models to first produce local cultural evaluation criteria before making a judgment. Optimized via RLVR/GRPO, this approach reduces spurious correlations caused by…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Cultural Awareness"
+  - "Multilingual Alignment"
+  - "RLHF"
+  - "Verifiable Reward"
 date: 2026-05-08
-content_hash: 4e2bd219b9864723
+content_hash: 30a9ab88e44d886c
 ---
+
 # Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment
 
 **Conference**: ICLR 2026  
@@ -167,11 +172,11 @@ Ablation of the reward function shows both components are necessary. Removing th
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reward Model Routing in Alignment](reward_model_routing_in_alignment.md)
-- [\[ICLR 2026\] Eliminating Inductive Bias in Reward Models with Information-Theoretic Guidance](eliminating_inductive_bias_in_reward_models_with_information-theoretic_guidance.md)
-- [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](robust_reward_modeling_via_causal_rubrics.md)
 - [\[ICLR 2026\] StoryAlign: Evaluating and Training Reward Models for Story Generation](storyalign_evaluating_and_training_reward_models_for_story_generation.md)
-- [\[ICLR 2026\] Beyond Binary Preferences: A Principled Framework for Reward Modeling with Ordinal Feedback](beyond_binary_preferences_a_principled_framework_for_reward_modeling_with_ordina.md)
+- [\[ICML 2026\] Steerable Cultural Preference Optimization of Reward Models](../../ICML2026/llm_alignment/steerable_cultural_preference_optimization_of_reward_models.md)
+- [\[ICML 2026\] Korean Culture into LLM Alignment: Toward Cultural Coherence](../../ICML2026/llm_alignment/korean_culture_into_llm_alignment_toward_cultural_coherence.md)
+- [\[ACL 2025\] Cheems: A Practical Guidance for Building and Evaluating Chinese Reward Models from Scratch](../../ACL2025/llm_alignment/cheems_chinese_reward_models.md)
+- [\[ICLR 2026\] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences](omni-reward_towards_generalist_omni-modal_reward_modeling_with_free-form_prefere.md)
 
 </div>
 

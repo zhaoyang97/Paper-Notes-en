@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diffusion with a Linguistic Compass: Steering the Generation of Clinically Plausible Future sMRI Representations for Early MCI Conversion Prediction
 description: >-
-  [CVPR 2026][Medical Imaging][Diffusion Model] MCI-Diff utilizes a baseline sMRI to "reconstruct" longitudinal imaging features for the future 6–36 months. It trains a diffusion model via multi-task sequence reconstruction to address irregular follow-up intervals and employs a fine-tuned LLM as a "linguistic compass" to score candidate features based on clinical bi
+  [CVPR 2026][Medical Imaging][MCI Conversion Prediction] MCI-Diff utilizes a baseline sMRI to "reconstruct" longitudinal imaging features for the future 6–36 months. It trains a diffusion model via multi-task sequence reconstruction to address irregular follow-up intervals and employs a fine-tuned LLM as a "linguistic compass" to score candidate features based on clinical biomarkers. This steers autoregressive generation toward clinically plausible trajectories…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "MCI Conversion Prediction"
+  - "Longitudinal sMRI Generation"
+  - "Diffusion Models"
+  - "LLM Clinical Plausibility"
+  - "Autoregressive Generation"
 date: 2026-05-08
-content_hash: d93d39215fd2a3d0
+content_hash: a8c3bbf25f82dc29
 ---
+
 # Diffusion with a Linguistic Compass: Steering the Generation of Clinically Plausible Future sMRI Representations for Early MCI Conversion Prediction
 
 **Conference**: CVPR 2026  
@@ -119,6 +124,7 @@ MCI-Diff, using only a baseline scan, outperformed the strongest longitudinal ba
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -127,7 +133,7 @@ MCI-Diff, using only a baseline scan, outperformed the strongest longitudinal ba
 - [\[CVPR 2026\] Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis](clinically-grounded_counterfactual_reasoning_for_medical_video_diagnosis.md)
 - [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
 - [\[CVPR 2026\] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality](must_modality-specific_representation-aware_transformer_for_diffusion-enhanced_s.md)
-- [\[CVPR 2026\] Few-Shot Synthetic Data Generation with Diffusion Models for Downstream Vision Tasks](few-shot_synthetic_data_generation_with_diffusion_models_for_downstream_vision_t.md)
+- [\[CVPR 2026\] TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning](taligndiff_automatic_tooth_alignment_assisted_by_diffusion-based_transformation_.md)
 
 </div>
 

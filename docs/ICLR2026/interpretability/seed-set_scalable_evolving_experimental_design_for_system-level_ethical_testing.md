@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing
 description: >-
-  [ICLR 2026][Interpretability][Ethical Testing] The SEED-SET framework is proposed to model the ethical evaluation of autonomous systems as a hierarchical Bayesian experimental design problem. By integrating objective metrics and subjective value judgments, it efficiently generates test cases with high ethical alignment under a limited budget.
+  [Interpretability] The SEED-SET framework is proposed to model the ethical evaluation of autonomous systems as a hierarchical Bayesian experimental design problem. By integrating objective metrics and subjective value judgments, it efficiently generates test cases with high ethical alignment under a limited budget.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Ethical Testing
-  - Bayesian Experimental Design
-  - Gaussian Process
-  - LLM Evaluator
-  - Autonomous Systems
+  - "Interpretability"
 date: 2026-05-08
-content_hash: 62aee03779e0a17e
+content_hash: d77f243fa0d51bf2
 ---
+
 # SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing
 
 ## Basic Information

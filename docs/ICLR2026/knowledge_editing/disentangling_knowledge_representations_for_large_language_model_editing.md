@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Disentangling Knowledge Representations for Large Language Model Editing
 description: >-
-  [ICLR 2026][Knowledge Editing][locate-then-edit] Addressing the neglected problem where knowledge editing collateralizes "same-subject but different-relation/object" fine-grained irrelevant knowledge, this paper proposes DiKE: it first uses a reusable disentanglement module to split subject representations into "target-related" and "irrelevant" parts, then performs e
+  [ICLR2026][Knowledge Editing][Representation Disentanglement] Addressing the neglected problem where knowledge editing collateralizes "same-subject but different-relation/object" fine-grained irrelevant knowledge, this paper proposes DiKE: it first uses a reusable disentanglement module to split subject representations into "target-related" and "irrelevant" parts, then performs editing only on the related part while explicitly constraining the irrelevant part to remain unchan…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - locate-then-edit
+  - "ICLR2026"
+  - "Knowledge Editing"
+  - "Representation Disentanglement"
+  - "Fine-grained irrelevant knowledge"
+  - "Rank-one update"
+  - "locate-then-edit"
 date: 2026-05-08
-content_hash: ebb42839dc4c1e47
+content_hash: a01b6e298f944fc5
 ---
+
 # Disentangling Knowledge Representations for Large Language Model Editing
 
 **Conference**: ICLR2026  
@@ -160,8 +164,8 @@ Removing components on LLaMA-3:
 - [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
 - [\[ACL 2026\] The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models](../../ACL2026/knowledge_editing/the_model_agreed_but_didn39t_learn_diagnosing_surface_compliance_in_large_langua.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](../../ICML2026/knowledge_editing/revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
 - [\[NeurIPS 2025\] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models](../../NeurIPS2025/knowledge_editing/uniedit_a_unified_knowledge_editing_benchmark_for_large_language_models.md)
+- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](../../ICML2026/knowledge_editing/revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
 
 </div>
 

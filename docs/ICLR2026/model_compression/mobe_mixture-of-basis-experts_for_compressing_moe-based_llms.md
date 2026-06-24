@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs
 description: >-
-  [ICLR 2026][Model Compression][Mixture-of-Experts] MoBE decomposes the up/gate matrices of MoE experts into a rank decomposition $W=AB$, where the larger $B$ is represented as a linear combination of a **small set of shared basis matrices** across all experts in a layer. By minimizing reconstruction error alone, it compresses trillion-parameter MoEs like DeepSeek-V3 an
+  [ICLR 2026][Model Compression][Mixture-of-Experts] MoBE decomposes the up/gate matrices of MoE experts into a rank decomposition $W=AB$, where the larger $B$ is represented as a linear combination of a **small set of shared basis matrices** across all experts in a layer. By minimizing reconstruction error alone, it compresses trillion-parameter MoEs like DeepSeek-V3 and Kimi-K2 by 24%–30% with an accuracy drop of only 1%–2%.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "Matrix Decomposition"
+  - "Basis Matrices"
+  - "Reconstruction Error"
 date: 2026-05-08
-content_hash: fd738803de9e7798
+content_hash: ace9872226c4af9f
 ---
+
 # MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs
 
 **Conference**: ICLR 2026  

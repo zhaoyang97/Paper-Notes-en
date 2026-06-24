@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CyberGym: Evaluating AI Agents' Real-World Cybersecurity Capabilities at Scale
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] CyberGym constructs a cybersecurity evaluation benchmark that is more than 7 times larger than existing similar benchmarks by using 1,507 historical vulnerabilities from 188 real-world open-source projects on OSS-Fuzz. The core task requires AI agents to generate Proof-of-Concept (PoC) exploits given only a textual vul
+  [ICLR2026][LLM Evaluation][Vulnerability reproduction] CyberGym constructs a cybersecurity evaluation benchmark that is more than 7 times larger than existing similar benchmarks by using 1,507 historical vulnerabilities from 188 real-world open-source projects on OSS-Fuzz. The core task requires AI agents to generate Proof-of-Concept (PoC) exploits given only a textual vulnerability description and the pre-patch codebase. Results show that even the strongest agent+model combi…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Vulnerability reproduction"
+  - "AI security"
+  - "PoC generation"
+  - "0-day mining"
+  - "Large-scale benchmark"
 date: 2026-05-08
-content_hash: fea0082721bb29b8
+content_hash: ed6b2ef83bbad5b4
 ---
+
 # CyberGym: Evaluating AI Agents' Real-World Cybersecurity Capabilities at Scale
 
 **Conference**: ICLR2026  
@@ -138,10 +144,20 @@ The strongest combination achieves only ~18%, indicating the benchmark's difficu
 - Value: ⭐⭐⭐⭐⭐ Already adopted by major model security system cards (Claude, etc.), with real CVE outputs.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] SysMoBench: Evaluating AI on Formally Specifying Complex Real-World Systems](sysmobench_evaluating_ai_on_formally_specifying_complex_real-world_systems.md)
+- [\[ICLR 2026\] GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks](gdpval_evaluating_ai_model_performance_on_real-world_economically_valuable_tasks.md)
+- [\[ICLR 2026\] PACEbench: A Framework for Evaluating Practical AI Cyber-Exploitation Capabilities](pacebench_a_framework_for_evaluating_practical_ai_cyber-exploitation_capabilitie.md)
+- [\[ICLR 2026\] AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite](astabench_benchmarking_ai_agents.md)
+- [\[ICLR 2026\] ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents](researchrubrics_a_benchmark_of_prompts_and_rubrics_for_evaluating_deep_research_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks](gdpval_evaluating_ai_model_performance_on_real-world_economically_valuable_tasks.md)

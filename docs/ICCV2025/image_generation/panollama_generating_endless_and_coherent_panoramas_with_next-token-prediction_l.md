@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] PanoLlama: Generating Endless and Coherent Panoramas with Next-Token-Prediction LLMs
 description: >-
-  [Image Generation] This paper proposes PanoLlama, which extends fixed-size visual autoregressive (VAR) models to endless panorama generation via a token redirection strategy…
+  [Image Generation] This paper proposes PanoLlama, which extends fixed-size visual autoregressive (VAR) models to endless panorama generation via a token redirection strategy, enabling training-free next-crop prediction that surpasses joint diffusion methods in coherence, fidelity, and aesthetics.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 4ea8018e74a2dbaf
+content_hash: 3641fe69914889b4
 ---
 
 # PanoLlama: Generating Endless and Coherent Panoramas with Next-Token-Prediction LLMs

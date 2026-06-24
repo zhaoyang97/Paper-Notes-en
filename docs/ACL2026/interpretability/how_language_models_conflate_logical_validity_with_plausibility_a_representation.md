@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Language Models Conflate Logical Validity with Plausibility: A Representational Analysis of Content Effects
 description: >-
-  [ACL 2026][Interpretability][Paper Note] Representational analysis reveals that "logical validity" and "plausibility" are highly aligned in the latent space of LLMs, causing the model to conflate the two concepts (content effect). Constructing debiasing steering vectors effectively decouples these concepts, reducing content effects while improving reasoning a
+  [ACL 2026 Findings][Interpretability][Content Effects] Representational analysis reveals that "logical validity" and "plausibility" are highly aligned in the latent space of LLMs, causing the model to conflate the two concepts (content effect). Constructing debiasing steering vectors effectively decouples these concepts, reducing content effects while improving reasoning accuracy.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Interpretability"
+  - "Content Effects"
+  - "Logical Validity"
+  - "Plausibility"
+  - "Linear Representation"
+  - "Steering Vectors"
 date: 2026-05-08
-content_hash: cd9185fd2d88b361
+content_hash: 4e41c066abd03614
 ---
+
 # How Language Models Conflate Logical Validity with Plausibility: A Representational Analysis of Content Effects
 
 **Conference**: ACL 2026 Findings  
@@ -120,10 +126,10 @@ Behavioral Content Effects:
 ## Related Papers
 
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[ICML 2026\] How Language Models Process Negation](../../ICML2026/interpretability/how_language_models_process_negation.md)
 - [\[ACL 2026\] Fine-Grained Analysis of Shared Syntactic Mechanisms in Language Models](fine-grained_analysis_of_shared_syntactic_mechanisms_in_language_models.md)
-- [\[ICML 2026\] A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents](../../ICML2026/interpretability/a_behavioural_and_representational_evaluation_of_goal-directedness_in_language_m.md)
-- [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](../../ICML2026/interpretability/query_circuits_explaining_how_language_models_answer_user_prompts.md)
+- [\[ICML 2026\] How Language Models Process Negation](../../ICML2026/interpretability/how_language_models_process_negation.md)
+- [\[ICLR 2026\] Neuron-Level Analysis of Cultural Understanding in Large Language Models](../../ICLR2026/interpretability/neuron-level_analysis_of_cultural_understanding_in_large_language_models.md)
+- [\[ICLR 2026\] A Comprehensive Information-Decomposition Analysis of Large Vision-Language Models](../../ICLR2026/interpretability/a_comprehensive_information-decomposition_analysis_of_large_vision-language_mode.md)
 
 </div>
 

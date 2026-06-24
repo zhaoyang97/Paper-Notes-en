@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PALC: Preference Alignment via Logit Calibration
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] PALC attaches a minimal "calibration module" to a frozen LLM, moving the alignment intervention from the entangled latent space to the naturally decoupled vocabulary logit space. By treating hidden states as read-only context to generate position-dependent logit offsets, it achieves adjustable preference alignment at t
+  [ICLR 2026][LLM Alignment][Test-time alignment] PALC attaches a minimal "calibration module" to a frozen LLM, moving the alignment intervention from the entangled latent space to the naturally decoupled vocabulary logit space. By treating hidden states as read-only context to generate position-dependent logit offsets, it achieves adjustable preference alignment at test time with only 0.002%–0.13% extra parameters and almost no inference overhead.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Test-time alignment"
+  - "logit calibration"
+  - "representation engineering"
+  - "bottleneck structure"
+  - "preference optimization"
 date: 2026-05-08
-content_hash: 7366abee8cd70d57
+content_hash: 9cfa831fc5ed2459
 ---
+
 # PALC: Preference Alignment via Logit Calibration
 
 **Conference**: ICLR 2026  
@@ -148,11 +154,11 @@ With only 9.2M parameters and 8% extra latency, PALC dominates efficiency compar
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization](sharpness-aware_minimization_in_logit_space_efficiently_enhances_direct_preferen.md)
 - [\[ICLR 2026\] Annotation-Efficient Honesty Alignment via Confidence Elicitation and Calibration](annotation-efficient_honesty_alignment_via_confidence_elicitation_and_calibratio.md)
 - [\[ICLR 2026\] Keep the Best, Forget the Rest: Reliable Alignment with Order-Aware Preference Optimization](keep_the_best_forget_the_rest_reliable_alignment_with_order-aware_preference_opt.md)
 - [\[ICLR 2026\] Robust Preference Alignment via Directional Neighborhood Consensus](robust_preference_alignment_via_directional_neighborhood_consensus.md)
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
-- [\[ICLR 2026\] Semi-Supervised Preference Optimization with Limited Feedback](semi-supervised_preference_optimization_with_limited_feedback.md)
 
 </div>
 

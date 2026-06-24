@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Tri-Bench: Stress-Testing VLM Reliability on Spatial Reasoning under Camera Tilt and Object Interference
 description: >-
-  [AAAI 2026][Multimodal VLM][Spatial reasoning benchmark] Tri-Bench is a compact benchmark comprising 400 real-world photographs of triangles. By systematically controlling two factors — camera pose (planar vs. tilted) an…
+  [AAAI 2026][VLM Reasoning][Spatial reasoning benchmark] Tri-Bench is a compact benchmark comprising 400 real-world photographs of triangles. By systematically controlling two factors — camera pose (planar vs. tilted) and object interference — it evaluates the spatial geometric reasoning capabilities of four leading VLMs. The results reveal that models default to 2D image-plane cues rather than genuine 3D geometry, even when explicit reference-frame guardrails are provided in…
 tags:
   - "AAAI 2026"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Spatial reasoning benchmark"
   - "geometric reasoning"
   - "camera pose robustness"
   - "majority-class bias"
   - "VLM reliability"
 date: 2026-05-08
-content_hash: 95cb1a5581c0e386
+content_hash: d092ec891e028256
 ---
 
 # Tri-Bench: Stress-Testing VLM Reliability on Spatial Reasoning under Camera Tilt and Object Interference
@@ -175,11 +175,11 @@ Accuracy is uniformly defined as $\kappa_t = 1 - \varepsilon_t$:
 
 ## Related Papers
 
-- [\[ICCV 2025\] CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting](../../ICCV2025/multimodal_vlm/capture_evaluating_spatial_reasoning_in_vision_language_models_via_occluded_obje.md)
-- [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](../../CVPR2026/multimodal_vlm/spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
-- [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](../../ICML2026/multimodal_vlm/revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
-- [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](../../CVPR2026/multimodal_vlm/vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](../../CVPR2026/vlm_reasoning/spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
+- [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](../../ICML2026/vlm_reasoning/revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
+- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](../../CVPR2026/vlm_reasoning/g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
+- [\[ACL 2026\] TableVista: Benchmarking Multimodal Table Reasoning under Visual and Structural Complexity](../../ACL2026/vlm_reasoning/tablevista_benchmarking_multimodal_table_reasoning_under_visual_and_structural_c.md)
+- [\[CVPR 2026\] BOP-Ask: Object-Interaction Reasoning for Vision-Language Models](../../CVPR2026/vlm_reasoning/bop-ask_object-interaction_reasoning_for_vision-language_models.md)
 
 </div>
 

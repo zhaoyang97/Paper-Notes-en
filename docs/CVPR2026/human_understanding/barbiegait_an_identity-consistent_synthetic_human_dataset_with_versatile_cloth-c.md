@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Addressing the pain point that real-world collection of gait data for "one person wearing hundreds of outfits" is nearly impossible, this paper maps 521 real subjects into a virtual engine. By randomly generating 100 outfits per person, the authors construct an identity-consistent synthetic gait dataset, BarbieGait. A
+  [CVPR2026][Human Understanding][Gait recognition] Addressing the pain point that real-world collection of gait data for "one person wearing hundreds of outfits" is nearly impossible, this paper maps 521 real subjects into a virtual engine. By randomly generating 100 outfits per person, the authors construct an identity-consistent synthetic gait dataset, BarbieGait. A companion clothing-invariant baseline, GaitCLIF, is proposed, achieving SOTA results on BarbieGait and real-wo…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Gait recognition"
+  - "cloth-changing"
+  - "synthetic dataset"
+  - "identity consistency"
+  - "clothing-invariant features"
 date: 2026-05-08
-content_hash: 5a1978fe8436bba9
+content_hash: d39813774eb9deb8
 ---
+
 # BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition
 
 **Conference**: CVPR2026  

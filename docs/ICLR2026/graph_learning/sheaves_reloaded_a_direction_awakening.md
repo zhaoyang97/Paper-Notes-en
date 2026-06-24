@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sheaves Reloaded: A Directional Awakening
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper proposes **Directed Cellular Sheaves**, which encode edge directions into phases using complex-valued, direction-aware restriction maps. This construction forms a Hermitian **Directed Sheaf Laplacian $L_{\tilde F}$**, leading to DSNN—the first Sheaf Neural Network to embed directional inductive biases into i
+  [ICLR 2026][Graph Learning][Cellular Sheaves] This paper proposes **Directed Cellular Sheaves**, which encode edge directions into phases using complex-valued, direction-aware restriction maps. This construction forms a Hermitian **Directed Sheaf Laplacian $L_{\tilde F}$**, leading to DSNN—the first Sheaf Neural Network to embed directional inductive biases into its architecture. It achieves SOTA results on 10 out of 12 node classification benchmarks.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Cellular Sheaves"
+  - "Directed Graphs"
+  - "Sheaf Laplacian"
+  - "Magnetic Laplacian"
+  - "Spectral Graph Neural Networks"
 date: 2026-05-08
-content_hash: 872e0cc186051e78
+content_hash: d53cd9e9c1b3c968
 ---
+
 # Sheaves Reloaded: A Directional Awakening
 
 **Conference**: ICLR 2026  
@@ -151,9 +157,9 @@ DSNN variants are near-perfect (96–99%), whereas undirected NSD stays at ~20% 
 
 - [\[ICML 2026\] Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves](../../ICML2026/graph_learning/polynomial_neural_sheaf_diffusion_a_spectral_filtering_approach_on_cellular_shea.md)
 - [\[NeurIPS 2025\] Nonlinear Laplacians: Tunable Principal Component Analysis under Directional Prior Information](../../NeurIPS2025/graph_learning/nonlinear_laplacians_tunable_principal_component_analysis_under_directional_prio.md)
-- [\[ICLR 2026\] AdaSpec: Adaptive Spectrum for Enhanced Node Distinguishability](adaspec_adaptive_spectrum_for_enhanced_node_distinguishability.md)
 - [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
 - [\[ICLR 2026\] Efficient Learning on Large Graphs using a Densifying Regularity Lemma](efficient_learning_on_large_graphs_using_a_densifying_regularity_lemma.md)
+- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
 
 </div>
 

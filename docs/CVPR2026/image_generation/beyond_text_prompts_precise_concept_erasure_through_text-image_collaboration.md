@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] TICoE collaboratively erases target concepts from text-to-image diffusion models using a "Continuous Convex Concept Manifold (text-side) + Multi-scale Hierarchical Visual Representation (image-side)." This approach blocks the "resurrection via rephrasing" loophole in text-based erasure while preventing image-guided ove
+  [CVPR 2026][Image Generation][Concept Erasure] TICoE collaboratively erases target concepts from text-to-image diffusion models using a "Continuous Convex Concept Manifold (text-side) + Multi-scale Hierarchical Visual Representation (image-side)." This approach blocks the "resurrection via rephrasing" loophole in text-based erasure while preventing image-guided over-erasure of unrelated concepts with similar shapes or contexts. On tasks like gun, nudity, and Van Gogh…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Text-Image Collaboration"
+  - "Convex Concept Manifold"
+  - "Multi-scale Visual Representation"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 8a6a40b86af2e5cd
+content_hash: f20aade87032e0ff
 ---
+
 # Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration
 
 **Conference**: CVPR 2026  
@@ -145,10 +149,20 @@ On the gun erasure task (deconstructing CCCM and HVRL):
 - Value: ⭐⭐⭐⭐ High utility for T2I safety; the MCP metric is especially valuable for the field.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] MapRoute: Semantic Routing for Precise Concept Erasure with Mapper](maproute_semantic_routing_concept_erasure.md)
+- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](closed-form_concept_erasure_via_double_projections.md)
+- [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)

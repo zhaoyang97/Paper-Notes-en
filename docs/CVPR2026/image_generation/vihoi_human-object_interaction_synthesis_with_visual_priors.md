@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] ViHOI: Human-Object Interaction Synthesis with Visual Priors
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Ours proposes ViHOI, a plug-and-play framework that leverages VLMs to extract decoupled visual and textual priors from 2D reference images. These are compressed into compact conditional tokens via Q-Formers to enhance the HOI motion generation quality of diffusion models. During inference, it utilizes text-to-image mod
+  [CVPR 2026][Image Generation][Human-Object Interaction Generation] Ours proposes ViHOI, a plug-and-play framework that leverages VLMs to extract decoupled visual and textual priors from 2D reference images. These are compressed into compact conditional tokens via Q-Formers to enhance the HOI motion generation quality of diffusion models. During inference, it utilizes text-to-image models to synthesize reference images, achieving strong generalization to unseen objects.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - VLM
-  - Q-Former
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Human-Object Interaction Generation"
+  - "Visual Priors"
+  - "Diffusion Models"
+  - "VLM"
+  - "Q-Former"
 date: 2026-05-08
-content_hash: 2b6eb2170636bf9e
+content_hash: 4bbc549b0487e352
 ---
+
 # ViHOI: Human-Object Interaction Synthesis with Visual Priors
 
 **Conference**: CVPR 2026  
@@ -147,10 +150,10 @@ Visual priors require image sources, but the methods of obtaining them differ be
 ## Related Papers
 
 - [\[CVPR 2026\] OneHOI: Unifying Human-Object Interaction Generation and Editing](onehoi_unifying_human-object_interaction_generation_and_editing.md)
-- [\[CVPR 2025\] HOI-IDiff: An Image-like Diffusion Method for Human-Object Interaction Detection](../../CVPR2025/image_generation/an_image-like_diffusion_method_for_human-object_interaction_detection.md)
+- [\[ICLR 2026\] VMDiff: Visual Mixing Diffusion for Limitless Cross-Object Synthesis](../../ICLR2026/image_generation/vmdiff_visual_mixing_diffusion_for_limitless_cross-object_synthesis.md)
+- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
 - [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
 - [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](../../ICCV2025/image_generation/scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
-- [\[CVPR 2026\] LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors](larp_efficient_multi-view_inpainting_with_latent_reprojection_priors.md)
 
 </div>
 

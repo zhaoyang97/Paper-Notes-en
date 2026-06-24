@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] iSplat: Iterative Learning for Fine-Grained Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] iSplat transforms feed-forward 3D Gaussian Splatting from "one-shot prediction" into "recurrent iterative refinement via GRU." By leveraging uncertainty-driven depth refinement and region-aware feature enhancement for progressive self-correction, it outperforms the 354M-parameter DepthSplat on RealEstate10K with only 4
+  [CVPR 2026][3D Vision][Feed-forward Gaussian Splatting] iSplat transforms feed-forward 3D Gaussian Splatting from "one-shot prediction" into "recurrent iterative refinement via GRU." By leveraging uncertainty-driven depth refinement and region-aware feature enhancement for progressive self-correction, it outperforms the 354M-parameter DepthSplat on RealEstate10K with only 42.6M parameters and improves PSNR by 2.88 dB on the cross-domain DTU dataset.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward Gaussian Splatting"
+  - "Iterative Refinement"
+  - "GRU Recurrent Optimization"
+  - "Uncertainty Depth"
+  - "Cross-domain Generalization"
 date: 2026-05-08
-content_hash: 59fbfcab767c71ac
+content_hash: b60018f8a8435653
 ---
+
 # iSplat: Iterative Learning for Fine-Grained Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ A significant Gain of 2.88 dB PSNR is observed on the DTU dataset (indoor-to-obj
 
 ## Related Papers
 
+- [\[CVPR 2026\] Animator-Centric Skeleton Generation on Objects with Fine-Grained Details](animator-centric_skeleton_generation_on_objects_with_fine-grained_details.md)
+- [\[CVPR 2026\] GIFSplat: Generative Prior-Guided Iterative Feed-Forward 3D Gaussian Splatting from Sparse Views](gifsplat_generative_prior-guided_iterative_feed-forward_3d_gaussian_splatting_fr.md)
+- [\[CVPR 2026\] InfiniDepth: Arbitrary-Resolution and Fine-Grained Depth Estimation with Neural Implicit Fields](infinidepth_arbitrary-resolution_and_fine-grained_depth_estimation_with_neural_i.md)
 - [\[CVPR 2026\] Fresco: Frequency-Spatial Consistent Optimization for Fine-Grained Head Avatar Modeling](fresco_frequency-spatial_consistent_optimization_for_fine-grained_head_avatar_mo.md)
 - [\[CVPR 2026\] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting](idesplat_iterative_depth_probability_estimation_for_generalizable_3d_gaussian_sp.md)
-- [\[CVPR 2026\] iLRM: An Iterative Large 3D Reconstruction Model](ilrm_an_iterative_large_3d_reconstruction_model.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
 
 </div>
 

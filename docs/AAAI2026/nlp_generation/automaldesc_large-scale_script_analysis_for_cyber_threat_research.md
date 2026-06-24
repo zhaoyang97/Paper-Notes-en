@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] AutoMalDesc: Large-Scale Script Analysis for Cyber Threat Research
 description: >-
-  [AAAI 2026][Text Generation][Malware Analysis] This paper proposes AutoMalDesc, an automated static analysis framework that employs an iterative self-paced learning pipeline — starting from 900 expert-annotated seed samp…
+  [AAAI 2026 Oral][Text Generation][Malware Analysis] This paper proposes AutoMalDesc, an automated static analysis framework that employs an iterative self-paced learning pipeline — starting from 900 expert-annotated seed samples, fine-tuning Llama-3.3-70B via LoRA to generate pseudo-labels, applying multi-stage quality filtering to obtain 101K samples, and training a V2 model — to achieve automated malware classification and behavior description across five scripting language…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Text Generation"
   - "Malware Analysis"
   - "Self-Improving LLM"
@@ -12,7 +12,7 @@ tags:
   - "Static Analysis"
   - "Script Security"
 date: 2026-05-08
-content_hash: 66cd5d4da4440147
+content_hash: cb0331ed78ef6bc9
 ---
 
 # AutoMalDesc: Large-Scale Script Analysis for Cyber Threat Research
@@ -100,10 +100,10 @@ Standard language model cross-entropy loss with LoRA fine-tuning.
 ## Related Papers
 
 - [\[ACL 2026\] In-depth Research Impact Summarization through Fine-Grained Temporal Citation Analysis](../../ACL2026/nlp_generation/in-depth_research_impact_summarization_through_fine-grained_temporal_citation_an.md)
-- [\[AAAI 2026\] C3TG: Conflict-aware, Composite, and Collaborative Controlled Text Generation](c3tg_conflict-aware_composite_and_collaborative_controlled_text_generation.md)
-- [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
-- [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](../../ICLR2026/nlp_generation/fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
-- [\[ICML 2026\] Score-Repellent Monte Carlo: Toward Efficient Non-Markovian Sampler with Constant Memory in General State Spaces](../../ICML2026/nlp_generation/score-repellent_monte_carlo_toward_efficient_non-markovian_sampler_with_constant.md)
+- [\[ICLR 2026\] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation](../../ICLR2026/nlp_generation/unveiling_the_potential_of_diffusion_large_language_model_in_controllable_genera.md)
+- [\[ACL 2025\] A Representation Level Analysis of NMT Model Robustness to Grammatical Errors](../../ACL2025/nlp_generation/a_representation_level_analysis_of_nmt_model_robustness_to_grammatical_errors.md)
+- [\[ACL 2025\] An Empirical Study of Many-to-Many Summarization with Large Language Models](../../ACL2025/nlp_generation/an_empirical_study_of_manytomany_summarization.md)
+- [\[ACL 2025\] Theme-Explanation Structure for Table Summarization Using Large Language Models](../../ACL2025/nlp_generation/theme-explanation_structure_for_table_summarization_using_large_language_models_.md)
 
 </div>
 

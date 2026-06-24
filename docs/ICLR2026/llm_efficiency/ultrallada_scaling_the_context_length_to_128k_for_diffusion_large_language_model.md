@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Diffusion Language Model] Addressing the long context scaling problem of diffusion large language models (diffusion LLMs), this paper proposes a Diffusion-aware NTK positional encoding scaling method that considers the bidirectional attention characteristics of diffusion. Combined with masked post-training to suppress cross-document interferenc
+  [ICLR 2026][LLM Efficiency][Diffusion Language Models] Addressing the long context scaling problem of diffusion large language models (diffusion LLMs), this paper proposes a Diffusion-aware NTK positional encoding scaling method that considers the bidirectional attention characteristics of diffusion. Combined with masked post-training to suppress cross-document interference, the context window of LLaDA-8B is extended from 4K to 128K with lightweight training (only 600 steps)…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - RoPE
-  - NTK
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Long Context Scaling"
+  - "RoPE"
+  - "NTK"
+  - "Post-training"
 date: 2026-05-08
-content_hash: 35465ee188f2d288
+content_hash: 580fdf7821c6eb39
 ---
+
 # UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models
 
 **Conference**: ICLR 2026  
@@ -136,11 +139,11 @@ The advantage of Diffusion-aware NTK on RULER increased with length: at 4K, the 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](accelerating_diffusion_large_language_models_with_slowfast_sampling_the_three_go.md)
 - [\[ICLR 2026\] Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models](beyond_fixed_training-free_variable-length_denoising_for_diffusion_large_languag.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
 - [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](diffusion_language_model_knows_the_answer_before_it_decodes.md)
 - [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
-- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
-- [\[ICLR 2026\] DPad: Efficient Diffusion Language Models with Suffix Dropout](dpad_efficient_diffusion_language_models_with_suffix_dropout.md)
 
 </div>
 

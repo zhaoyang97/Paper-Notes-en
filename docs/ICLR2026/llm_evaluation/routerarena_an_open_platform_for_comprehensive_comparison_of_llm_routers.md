@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] RouterArena is the first open evaluation platform for LLM routers. It utilizes the DDC library classification method to build a query dataset covering 9 major domains and 44 categories with approximately 8,400 difficulty-labeled entries. It features five-dimensional metrics—accuracy, cost, optimality, robustness, and l
+  [ICLR 2026][LLM Evaluation][LLM Routers] RouterArena is the first open evaluation platform for LLM routers. It utilizes the DDC library classification method to build a query dataset covering 9 major domains and 44 categories with approximately 8,400 difficulty-labeled entries. It features five-dimensional metrics—accuracy, cost, optimality, robustness, and latency—alongside an Arena Score that synthesizes accuracy and cost. Through an automated framework that refreshes leade…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "LLM Routers"
+  - "Evaluation Benchmarks"
+  - "Leaderboard"
+  - "Accuracy-Cost Trade-off"
+  - "Automated Evaluation"
 date: 2026-05-08
-content_hash: 09f399e7ef795d20
+content_hash: a31f9af75462f0c6
 ---
+
 # RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers
 
 **Conference**: ICLR 2026  
@@ -123,14 +129,14 @@ Arena Score rankings for 12 routers (higher is better):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] RouteJudge: An Open Platform for Reproducible and Preference-Aware LLM Routing](../../ICML2026/llm_evaluation/routejudge_an_open_platform_for_reproducible_and_preference-aware_llm_routing.md)
-- [\[ICLR 2026\] Sci2Pol：评测与微调 LLM 的「科学→政策简报」生成能力](sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
-- [\[ICLR 2026\] An Open-Ended Benchmark and Formal Framework for Adjuvant Research with MLLM](an_open-ended_benchmark_and_formal_framework_for_adjuvant_research_with_mllm.md)
 - [\[ICLR 2026\] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents](deepresearch_bench_a_comprehensive_benchmark_for_deep_research_agents.md)
+- [\[ICLR 2026\] The Open Proof Corpus: A Large-Scale Study of LLM-Generated Mathematical Proofs](the_open_proof_corpus_a_large-scale_study_of_llm-generated_mathematical_proofs.md)
+- [\[ICLR 2026\] An Open-Ended Benchmark and Formal Framework for Adjuvant Research with MLLM](an_open-ended_benchmark_and_formal_framework_for_adjuvant_research_with_mllm.md)
 - [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
 
 </div>

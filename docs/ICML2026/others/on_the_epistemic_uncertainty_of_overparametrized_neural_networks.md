@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] On the Epistemic Uncertainty of Overparametrized Neural Networks
 description: >-
-  [ICML 2026][Others][Paper Note] This paper points out that the "epistemic uncertainty" of overparameterized neural networks does not vanish as the data volume increases. Due to parameter unidentifiability (permutation + neuron splitting), even if the function is fully identified, the parameter space posterior still retains continuous uncertainty on t
+  [ICML 2026][Epistemic Uncertainty] This paper points out that the "epistemic uncertainty" of overparameterized neural networks does not vanish as the data volume increases. Due to parameter unidentifiability (permutation + neuron splitting), even if the function is fully identified, the parameter space posterior still retains continuous uncertainty on the splitting manifold. Using single-hidden-layer ReLU networks as an example, the authors provide a precise posterior descrip…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Epistemic Uncertainty"
+  - "Overparameterization"
+  - "Unidentifiability"
+  - "ReLU Network Posterior"
+  - "Dirichlet Splitting"
 date: 2026-05-08
-content_hash: a9fa6c92ae7c22d7
+content_hash: b991241de417a0fc
 ---
+
 # On the Epistemic Uncertainty of Overparametrized Neural Networks
 
 **Conference**: ICML 2026  
@@ -118,9 +123,9 @@ The table below compares the impact of "treating vs. not treating unidentifiabil
 
 ## Related Papers
 
+- [\[ICML 2025\] Rethinking Aleatoric and Epistemic Uncertainty](../../ICML2025/others/rethinking_aleatoric_and_epistemic_uncertainty.md)
 - [\[ICML 2025\] Improved Exploration in GFlowNets via Enhanced Epistemic Neural Networks](../../ICML2025/others/improved_exploration_in_gflownets_via_enhanced_epistemic_neural_networks.md)
 - [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](possibilistic_predictive_uncertainty_for_deep_learning.md)
-- [\[ICML 2025\] Rethinking Aleatoric and Epistemic Uncertainty](../../ICML2025/others/rethinking_aleatoric_and_epistemic_uncertainty.md)
 - [\[ICML 2026\] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks](bullet_trains_parallelizing_training_of_temporally_precise_spiking_neural_networ.md)
 - [\[CVPR 2025\] Rethinking Epistemic and Aleatoric Uncertainty for Active Open-Set Annotation: An Energy-Based Approach](../../CVPR2025/others/rethinking_epistemic_and_aleatoric_uncertainty_for_active_open-set_annotation_an.md)
 

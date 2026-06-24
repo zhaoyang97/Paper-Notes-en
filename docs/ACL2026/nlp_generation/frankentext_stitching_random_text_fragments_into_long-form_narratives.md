@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Frankentext: Stitching Random Text Fragments into Long-Form Narratives
 description: >-
-  [ACL 2026][Text Generation][Paper Note] This paper proposes the Frankentext paradigm, which enables LLMs to stitch random human text fragments into coherent long-form narratives under extreme constraints (90% of text copied verbatim from human writing). This reveals the severe failure of current AI text detectors in mixed-authorship scenarios (72% of Franken
+  [ACL 2026][Text Generation][AIGC detection] This paper proposes the Frankentext paradigm, which enables LLMs to stitch random human text fragments into coherent long-form narratives under extreme constraints (90% of text copied verbatim from human writing). This reveals the severe failure of current AI text detectors in mixed-authorship scenarios (72% of Frankentext is misclassified as human writing).
 tags:
-  - ACL 2026
-  - Text Generation
+  - "ACL 2026"
+  - "Text Generation"
+  - "AIGC detection"
+  - "mixed authorship attribution"
+  - "controllable text generation"
+  - "AI text detectors"
+  - "human-AI collaborative writing"
 date: 2026-05-08
-content_hash: 8551c55597b11b38
+content_hash: bce18d591f9ac855
 ---
+
 # Frankentext: Stitching Random Text Fragments into Long-Form Narratives
 
 **Conference**: ACL 2026  
@@ -131,15 +137,14 @@ The final output must satisfy a preset proportion of human text (e.g., 90%) whil
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Improving Attributed Long-form Question Answering with Intent Awareness](../../ICLR2026/nlp_generation/improving_attributed_long-form_question_answering_with_intent_awareness.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](../../ICLR2026/nlp_generation/fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
-- [\[ACL 2025\] Context-Aware Hierarchical Merging for Long Document Summarization](../../ACL2025/nlp_generation/context-aware_hierarchical_merging_for_long_document_summarization.md)
 - [\[ACL 2026\] Right at My Level: A Unified Multilingual Framework for Proficiency-Aware Text Simplification](right_at_my_level_a_unified_multilingual_framework_for_proficiency-aware_text_si.md)
 - [\[ACL 2026\] Can You Make It Sound Like You? Post-Editing LLM-Generated Text for Personal Style](can_you_make_it_sound_like_you_post-editing_llm-generated_text_for_personal_styl.md)
-- [\[ACL 2026\] Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation](planning_beyond_text_graph-based_reasoning_for_complex_narrative_generation.md)
+- [\[ACL 2025\] Context-Aware Hierarchical Merging for Long Document Summarization](../../ACL2025/nlp_generation/context-aware_hierarchical_merging_for_long_document_summarization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: AI Evaluations Should be Grounded on a Theory of Capability
 description: >-
-  [ICML 2026][Image Generation][IRT] The authors argue that "benchmark score = capability" is an **implicit inference** rather than a direct measurement. They advocate for explicitly modeling AI evaluation as a statistical inference task and suggest utilizing four psychometric capability theories (CTT/IRT/CDM/BNSM) as templates, introducing an "Evaluation
+  [ICML 2026][Image Generation][AI Evaluation] The authors argue that "benchmark score = capability" is an **implicit inference** rather than a direct measurement. They advocate for explicitly modeling AI evaluation as a statistical inference task and suggest utilizing four psychometric capability theories (CTT/IRT/CDM/BNSM) as templates, introducing an "Evaluation Card" for evaluators to justify their modeling assumptions.
 tags:
-  - ICML 2026
-  - Image Generation
-  - IRT
+  - "ICML 2026"
+  - "Image Generation"
+  - "AI Evaluation"
+  - "Capability Theory"
+  - "Psychometrics"
+  - "IRT"
+  - "Perturbation Robustness"
 date: 2026-05-08
-content_hash: bf69aead00823b2c
+content_hash: 6c6dfe2d3ffd693d
 ---
+
 # Position: AI Evaluations Should be Grounded on a Theory of Capability
 
 **Conference**: ICML 2026  
@@ -113,6 +118,7 @@ Experimental setup: 7 open-source instruction-tuned LLMs (families: Llama-3.2, Q
 - Value: ⭐⭐⭐⭐ The Evaluation Card has strong potential for adoption in peer review and could significantly influence the LLM evaluation community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -121,7 +127,7 @@ Experimental setup: 7 open-source instruction-tuned LLMs (families: Llama-3.2, Q
 - [\[ICML 2026\] PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World](physforge_generating_physics-grounded_3d_assets_for_interactive_virtual_world.md)
 - [\[ICML 2026\] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation](occlusionformer_arranging_z-order_for_layout-grounded_image_generation.md)
 - [\[ICML 2026\] OmniAID: Decoupling Semantic and Artifacts for Universal AI-Generated Image Detection in the Wild](omniaid_decoupling_semantic_and_artifacts_for_universal_ai-generated_image_detec.md)
-- [\[ICML 2026\] Order within Chaos: Capturing Intrinsic Energy Anomalies for AI-Manipulated Image Forgery Localization](order_within_chaos_capturing_intrinsic_energy_anomalies_for_ai-manipulated_image.md)
+- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](../../ICLR2026/image_generation/overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
 
 </div>
 

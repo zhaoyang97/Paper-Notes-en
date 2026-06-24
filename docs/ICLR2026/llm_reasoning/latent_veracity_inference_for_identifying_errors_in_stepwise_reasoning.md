@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Latent Veracity Inference for Identifying Errors in Stepwise Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] The study models "stepwise correctness in CoT" as a set of latent veracity variables. It uses the joint likelihood of "veracity + final answer" from a language model as a proxy reward to perform posterior inference via discrete MCMC search (Veracity Search) for error localization. The search results are then distilled
+  [ICLR 2026][Reasoning][Chain-of-Thought] The study models "stepwise correctness in CoT" as a set of latent veracity variables. It uses the joint likelihood of "veracity + final answer" from a language model as a proxy reward to perform posterior inference via discrete MCMC search (Veracity Search) for error localization. The search results are then distilled into a zero-shot verifier (AVI) that operates without the ground truth answer, requiring no stepwise human annotation t…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - MCMC
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "Error Detection"
+  - "Latent Variable Models"
+  - "Posterior Inference"
+  - "MCMC"
+  - "Process Reward Model"
+  - "Self-Correction"
 date: 2026-05-08
-content_hash: 4492c1b83e2bd5e4
+content_hash: 487eeba6917f1118
 ---
+
 # Latent Veracity Inference for Identifying Errors in Stepwise Reasoning
 
 **Conference**: ICLR 2026  
@@ -125,8 +131,8 @@ The inverse temperature $\beta_t$ increases according to an annealing schedule t
 - **Value**: ⭐⭐⭐⭐ High utility as a general-purpose feedback module for improving LLM reasoning reliability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

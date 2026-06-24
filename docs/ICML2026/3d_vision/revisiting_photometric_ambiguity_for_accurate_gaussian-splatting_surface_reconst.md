@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Photometric Ambiguity for Accurate Gaussian-Splatting Surface Reconstruction
 description: >-
-  [ICML 2026][3D Vision][Paper Note] AmbiSuR explicitly models two types of endogenous photometric ambiguities in Gaussian Splatting (primitive edge overflow and pixel-mixing under-constraint) and disambiguates them using truncation and ray-color consistency. It further leverages high-order Spherical Harmonic (SH) coefficients as "self-indicators" to iden
+  [ICML 2026][3D Vision][Photometric ambiguity] AmbiSuR explicitly models two types of endogenous photometric ambiguities in Gaussian Splatting (primitive edge overflow and pixel-mixing under-constraint) and disambiguates them using truncation and ray-color consistency. It further leverages high-order Spherical Harmonic (SH) coefficients as "self-indicators" to identify high-risk primitives, applying amorphous local prior regularization. AmbiSuR reduces the average Chamfer dist…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026"
+  - "3D Vision"
+  - "Photometric ambiguity"
+  - "Gaussian truncation"
+  - "Ray-color consistency"
+  - "SH self-indication"
+  - "Sparse regularization"
 date: 2026-05-08
-content_hash: 215401b13d7c898e
+content_hash: 25f7289f6273757b
 ---
+
 # Revisiting Photometric Ambiguity for Accurate Gaussian-Splatting Surface Reconstruction
 
 **Conference**: ICML 2026  

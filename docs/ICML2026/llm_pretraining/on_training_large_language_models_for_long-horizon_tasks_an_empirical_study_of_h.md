@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length
 description: >-
-  [ICML 2026][Pretraining][horizon reduction] Using a set of carefully controlled Sudoku/Rush Hour tasks where "reasoning difficulty remains constant while only the horizon length varies," this paper systematically proves that **task horizon itself is an independent root cause for LLM agent RL training collapse**. The authors propose two horizon-reduction mechanis
+  [ICML 2026][LLM Pretraining][horizon reduction] Using a set of carefully controlled Sudoku/Rush Hour tasks where "reasoning difficulty remains constant while only the horizon length varies," this paper systematically proves that **task horizon itself is an independent root cause for LLM agent RL training collapse**. The authors propose two horizon-reduction mechanisms—macro actions and subgoal decomposition—which not only stabilize training but also enable strong zero-shot ge…
 tags:
-  - ICML 2026
-  - Pretraining
-  - horizon reduction
-  - REINFORCE
-  - macro action
-  - subgoal
-  - horizon generalization
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "horizon reduction"
+  - "REINFORCE"
+  - "macro action"
+  - "subgoal"
+  - "horizon generalization"
 date: 2026-05-08
-content_hash: 9377d4169540e3a4
+content_hash: 06621b7d8828d5d6
 ---
+
 # On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length
 
 **Conference**: ICML 2026  
@@ -136,10 +137,10 @@ The base model is Qwen3-1.7B (validated with 4B, Llama3, etc.), initialized via 
 ## Related Papers
 
 - [\[ACL 2025\] Nemotron-CC: Transforming Common Crawl into a Refined Long-Horizon Pretraining Dataset](../../ACL2025/llm_pretraining/nemotron_cc_pretraining_data.md)
-- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
 - [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](../../ICLR2026/llm_pretraining/beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
+- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
+- [\[ICLR 2026\] How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study](../../ICLR2026/llm_pretraining/how_text_quality_interventions_reshape_neural_scaling_laws_for_llms_empirical_st.md)
 - [\[ICML 2026\] Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from k-Parity](tuning_the_implicit_regularizer_of_masked_diffusion_language_models_enhancing_ge.md)
-- [\[ACL 2025\] Towards Effective and Efficient Continual Pre-training of Large Language Models](../../ACL2025/llm_pretraining/towards_effective_and_efficient_continual_pre-training_of_large_language_models.md)
 
 </div>
 

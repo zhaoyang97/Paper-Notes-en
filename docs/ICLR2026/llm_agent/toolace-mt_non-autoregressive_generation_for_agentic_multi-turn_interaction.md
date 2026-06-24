@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ToolACE-MT: Non-Autoregressive Generation for Agentic Multi-Turn Interaction
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] ToolACE-MT replaces the "turn-by-turn autoregressive" paradigm of multi-agent simulation for multi-turn tool-calling data with a non-autoregressive pipeline: "building the skeleton first, iterative refinement, and finally offline verification." It generates agent dialogue data with higher coherence and diversity using
+  [ICLR 2026][LLM Agent][Agent data synthesis] ToolACE-MT replaces the "turn-by-turn autoregressive" paradigm of multi-agent simulation for multi-turn tool-calling data with a non-autoregressive pipeline: "building the skeleton first, iterative refinement, and finally offline verification." It generates agent dialogue data with higher coherence and diversity using fewer API calls. The 8B model trained via Ours improved its multi-turn accuracy on BFCL-v3 from 9.25% to 40.25%.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Agent data synthesis"
+  - "Multi-turn tool calling"
+  - "Non-autoregressive generation"
+  - "Mask-and-fill"
+  - "Offline verification"
 date: 2026-05-08
-content_hash: eca1075ea82b6774
+content_hash: f578eb2c28b05234
 ---
+
 # ToolACE-MT: Non-Autoregressive Generation for Agentic Multi-Turn Interaction
 
 **Conference**: ICLR 2026  
@@ -140,7 +146,7 @@ In terms of statistics, ToolACE-MT dialogues have fewer user turns (3.4 vs 5.8) 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

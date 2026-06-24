@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Exploring Visual Pretraining for Learning Language Intelligence
 description: >-
-  [CVPR 2026][Self-Supervised Learning][LLM] This paper proposes MAPLE: instead of extracting text from PDFs to feed into LLMs, it directly performs masked autoregressive pretraining on **document page images**. By allowing the LLM to learn language intelligence through "generating latent hypotheses for occluded regions," it achieves an average improvement of up
+  [CVPR 2026][LLM Pretraining][Visual pretraining] This paper proposes MAPLE: instead of extracting text from PDFs to feed into LLMs, it directly performs masked autoregressive pretraining on **document page images**. By allowing the LLM to learn language intelligence through "generating latent hypotheses for occluded regions," it achieves an average improvement of up to 40.2% over pure text pretraining across four mathematical reasoning benchmarks.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - LLM
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "Visual pretraining"
+  - "Masked Autoregression"
+  - "LLM"
+  - "Document images"
+  - "Mathematical reasoning"
 date: 2026-05-08
-content_hash: aea08fcfd9391bc2
+content_hash: 10ad7bf7c8c479f3
 ---
+
 # Exploring Visual Pretraining for Learning Language Intelligence
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ In the Base setting, MAPLE **wins 10, ties 1, and takes a close 2nd in 1** out o
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines](learning_to_see_through_a_babys_eyes_early_visual_diets_enable_robust_visual_int.md)
-- [\[CVPR 2026\] Scaling Dense Event-Stream Pretraining from Visual Foundation Models](scaling_dense_event-stream_pretraining_from_visual_foundation_models.md)
-- [\[ICLR 2026\] PonderLM: Pretraining Language Models to Ponder in Continuous Space](../../ICLR2026/self_supervised/ponderlm_pretraining_language_models_to_ponder_in_continuous_space.md)
-- [\[ICCV 2025\] Scaling Language-Free Visual Representation Learning](../../ICCV2025/self_supervised/scaling_languagefree_visual_representation_learning.md)
-- [\[CVPR 2026\] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)
+- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](../../ICLR2026/llm_pretraining/pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
+- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
+- [\[NeurIPS 2025\] Differentiable Hierarchical Visual Tokenization](../../NeurIPS2025/llm_pretraining/differentiable_hierarchical_visual_tokenization.md)
+- [\[CVPR 2025\] ScaMo: Exploring the Scaling Law in Autoregressive Motion Generation Model](../../CVPR2025/llm_pretraining/scamo_exploring_the_scaling_law_in_autoregressive_motion_generation_model.md)
+- [\[ICLR 2026\] Distilled Pretraining: A modern lens of Data, In-Context Learning and Test-Time Scaling](../../ICLR2026/llm_pretraining/distilled_pretraining_a_modern_lens_of_data_in-context_learning_and_test-time_sc.md)
 
 </div>
 

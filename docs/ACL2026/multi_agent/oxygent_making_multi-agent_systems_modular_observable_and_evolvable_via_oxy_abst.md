@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OxyGent: Making Multi-Agent Systems Modular, Observable, and Evolvable via Oxy Abstraction
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] OxyGent encapsulates agents, tools, LLMs, and reasoning processes into pluggable Oxy atomic components. By utilizing permission-driven dynamic planning and the OxyBank data feedback mechanism, it simplifies the construction, monitoring, and continuous evolution of industrial-grade multi-agent systems.
+  [ACL2026][Multi-Agent][Multi-Agent Systems] OxyGent encapsulates agents, tools, LLMs, and reasoning processes into pluggable Oxy atomic components. By utilizing permission-driven dynamic planning and the OxyBank data feedback mechanism, it simplifies the construction, monitoring, and continuous evolution of industrial-grade multi-agent systems.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL2026"
+  - "Multi-Agent"
+  - "Multi-Agent Systems"
+  - "Agent Framework"
+  - "Observability"
+  - "Dynamic Planning"
+  - "Continuous Evolution"
 date: 2026-05-08
-content_hash: f90a2fa6ed02e8a6
+content_hash: 30f8edf68b3a6d7d
 ---
+
 # OxyGent: Making Multi-Agent Systems Modular, Observable, and Evolvable via Oxy Abstraction
 
 **Conference**: ACL2026  
@@ -137,15 +143,15 @@ The GAIA ablation shows incremental gains from adding orchestration, planning, a
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives](social_dynamics_as_critical_vulnerabilities_that_undermine_objective_decision-ma.md)
-- [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 - [\[ACL 2025\] Voting or Consensus? Decision-Making in Multi-Agent Debate](../../ACL2025/multi_agent/voting_or_consensus_decision-making_in_multi-agent_debate.md)
+- [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 - [\[ACL 2026\] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation](diversity_collapse_in_multi-agent_llm_systems_structural_coupling_and_collective.md)
-- [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
+- [\[ICLR 2026\] Stochastic Self-Organization in Multi-Agent Systems](../../ICLR2026/multi_agent/stochastic_self-organization_in_multi-agent_systems.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Training-Free Coverless Multi-Image Steganography with Access Control
 description: >-
-  [ICML 2026][AI Safety][Diffusion Model] MIDAS is a training-free coverless multi-image steganography framework based on pre-trained diffusion models. It replaces traditional Noise Flip with Random Basis (orthogonal random bases) to achieve fine-grained access control via private keys. Combined with Latent Vector Fusion to eliminate splicing boundaries, it ac
+  [ICML 2026][AI Safety][Coverless Steganography] MIDAS is a training-free coverless multi-image steganography framework based on pre-trained diffusion models. It replaces traditional Noise Flip with Random Basis (orthogonal random bases) to achieve fine-grained access control via private keys. Combined with Latent Vector Fusion to eliminate splicing boundaries, it achieves multi-image hiding and anti-steganographic analysis without transmitting any additional secret-related in…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Diffusion Model
-  - Random Basis
+  - "ICML 2026"
+  - "AI Safety"
+  - "Coverless Steganography"
+  - "Multi-image Steganography"
+  - "Access Control"
+  - "Diffusion Models"
+  - "Random Basis"
 date: 2026-05-08
-content_hash: 1c7a5f8483c3a0a2
+content_hash: 65cbe05e71ea2bb8
 ---
+
 # Training-Free Coverless Multi-Image Steganography with Access Control
 
 **Conference**: ICML 2026  
@@ -115,15 +119,16 @@ MIDAS maintains superior stego quality (MANIQA 0.479 at N=4) while baselines deg
 - **Value**: ⭐⭐⭐⭐ First to satisfy training-free, multi-image, access control, and no side info simultaneously.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](../../CVPR2026/ai_safety/one-to-more_high-fidelity_training-free_anomaly_generation_with_attention_control.md)
 - [\[CVPR 2026\] GVIS: Generative Vector Image Steganography](../../CVPR2026/ai_safety/gvis_generative_vector_image_steganography.md)
+- [\[CVPR 2026\] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](../../CVPR2026/ai_safety/one-to-more_high-fidelity_training-free_anomaly_generation_with_attention_control.md)
 - [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](sora_free_second-order_attacks_in_fast_adversarial_training.md)
 - [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](../../CVPR2026/ai_safety/image-based_outlier_synthesis_with_training_data.md)
-- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
+- [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
 
 </div>
 

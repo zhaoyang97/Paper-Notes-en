@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PLA: Prompt Learning Attack against Text-to-Image Generative Models
 description: >-
-  [ICCV 2025][Image Generation][Adversarial Attack] This paper proposes PLA (Prompt Learning Attack), a gradient-driven adversarial attack framework targeting black-box T2I models. By leveraging sensitive knowledge encodin…
+  [ICCV 2025][Image Generation][Adversarial Attack] This paper proposes PLA (Prompt Learning Attack), a gradient-driven adversarial attack framework targeting black-box T2I models. By leveraging sensitive knowledge encoding and multimodal similarity losses, PLA learns adversarial prompts that bypass both prompt filters and post-hoc safety checkers, achieving an average ASR-4 exceeding 90%, substantially outperforming existing methods.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Prompt Learning"
   - "NSFW Content Detection"
 date: 2026-05-08
-content_hash: 1df208ba1533d738
+content_hash: 3cbc5943f75635c3
 ---
 
 # PLA: Prompt Learning Attack against Text-to-Image Generative Models
@@ -155,9 +155,9 @@ On online services (Stability.ai and DALL·E 3), PLA-T5 achieves ASR-4 of 69.70%
 
 - [\[CVPR 2026\] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models](../../CVPR2026/image_generation/tina_text-free_inversion_attack_for_unlearned_text-to-image_diffusion_models.md)
 - [\[ICCV 2025\] FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in Heterogeneous Federated Learning](feddifrc_unlocking_the_potential_of_text-to-image_diffusion_models_in_heterogene.md)
-- [\[NeurIPS 2025\] Prompt-Based Safety Guidance Is Ineffective for Unlearned Text-to-Image Diffusion Models](../../NeurIPS2025/image_generation/prompt-based_safety_guidance_is_ineffective_for_unlearned_text-to-image_diffusio.md)
 - [\[ICCV 2025\] Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification](towards_robust_defense_against_customization_via_protective_perturbation_resista.md)
-- [\[ICCV 2025\] Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing](exploring_multimodal_diffusion_transformers_for_enhanced_prompt-based_image_edit.md)
+- [\[CVPR 2025\] Implicit Bias Injection Attacks against Text-to-Image Diffusion Models](../../CVPR2025/image_generation/implicit_bias_injection_attacks_against_text-to-image_diffusion_models.md)
+- [\[CVPR 2025\] SleeperMark: Towards Robust Watermark against Fine-Tuning Text-to-Image Diffusion Models](../../CVPR2025/image_generation/sleepermark_towards_robust_watermark_against_fine-tuning_text-to-image_diffusion.md)
 
 </div>
 

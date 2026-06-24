@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search
 description: >-
-  [ACL 2026][LLM Agent][agentic search] Addressing the reliability issue where RL-trained agentic search models rarely say "I DON'T KNOW," leading to hallucinations, BAPO introduces "group-based boundary-aware rewards + adaptive reward modulators" on top of GRPO. This allows the model to reject answering only when truly exceeding its boundaries. Compared to
+  [ACL 2026][LLM Agent][agentic search] Addressing the reliability issue where RL-trained agentic search models rarely say "I DON'T KNOW," leading to hallucinations, BAPO introduces "group-based boundary-aware rewards + adaptive reward modulators" on top of GRPO. This allows the model to reject answering only when truly exceeding its boundaries. Compared to GRPO, BAPO improves reliability across four multi-hop QA datasets by approximately 9.7% on average and outperforms Search-…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - agentic search
-  - GRPO
+  - "ACL 2026"
+  - "LLM Agent"
+  - "agentic search"
+  - "boundary-aware"
+  - "GRPO"
+  - "IDK rejection"
+  - "reliability"
 date: 2026-05-08
-content_hash: b8b1f132ed18ae0e
+content_hash: 5fc469a20fdb92df
 ---
+
 # BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search
 
 **Conference**: ACL 2026  
@@ -134,11 +138,11 @@ Average across four datasets using Qwen2.5-3B-Instruct:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](../../NeurIPS2025/llm_agent/groupingroup_policy_optimization_for_llm_agent_training.md)
+- [\[ICML 2026\] Towards Pareto-Optimal Tool-Integrated Agents with Pareto Ranking Policy Optimization](../../ICML2026/llm_agent/towards_pareto-optimal_tool-integrated_agents_with_pareto_ranking_policy_optimiz.md)
 - [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
-- [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](../../ICLR2026/llm_agent/mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
-- [\[ACL 2026\] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems](rethinking_reasoning-intensive_retrieval_evaluating_and_advancing_retrievers_in_.md)
+- [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](../../NeurIPS2025/llm_agent/groupingroup_policy_optimization_for_llm_agent_training.md)
 - [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
+- [\[ACL 2026\] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems](rethinking_reasoning-intensive_retrieval_evaluating_and_advancing_retrievers_in_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MeteorPred: A Meteorological Multimodal Large Model and Dataset for Severe Weather Event Prediction
 description: >-
-  [CVPR 2026][Earth Science][Paper Note] This paper constructs the first large-scale multimodal dataset for severe weather warning, MP-Bench (420,000 pairs of ERA5 meteorological fields and warning texts), and proposes a Multimodal Large Model (MMLM) capable of directly processing 4D meteorological tensors. Through three plug-and-play fusion modules acting on
+  [CVPR 2026][Multimodal VLM][Severe weather warning] This paper constructs the first large-scale multimodal dataset for severe weather warning, MP-Bench (420,000 pairs of ERA5 meteorological fields and warning texts), and proposes a Multimodal Large Model (MMLM) capable of directly processing 4D meteorological tensors. Through three plug-and-play fusion modules acting on time, space, and vertical pressure levels, high-dimensional meteorological data is aligned with LLMs to gen…
 tags:
-  - CVPR 2026
-  - Earth Science
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Severe weather warning"
+  - "Multimodal large model"
+  - "4D meteorological data"
+  - "Plug-and-play fusion module"
+  - "Text-driven attention"
 date: 2026-05-08
-content_hash: c526ae3a378b832e
+content_hash: a4b353a57054e767
 ---
+
 # MeteorPred: A Meteorological Multimodal Large Model and Dataset for Severe Weather Event Prediction
 
 **Conference**: CVPR 2026  
@@ -130,11 +136,11 @@ Ablation of the three modules on 5,000 samples (based on Qwen2.5-VL). ✓ indica
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Power Ensemble Aggregation for Improved Extreme Event AI Prediction](../../NeurIPS2025/earth_science/power_ensemble_aggregation_for_improved_extreme_event_ai_prediction.md)
-- [\[ICML 2026\] (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](../../ICML2026/earth_science/sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)
-- [\[NeurIPS 2025\] Reasoning With a Star: A Heliophysics Dataset and Benchmark for Agentic Scientific Reasoning](../../NeurIPS2025/earth_science/reasoning_with_a_star_a_heliophysics_dataset_and_benchmark_for_agentic_scientifi.md)
-- [\[CVPR 2026\] GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration](geochemad_benchmarking_unsupervised_geochemical_anomaly_detection_for_mineral_ex.md)
-- [\[CVPR 2026\] SIGMA: A Physics-Based Benchmark for Gas Chimney Understanding in Seismic Images](sigma_a_physics-based_benchmark_for_gas_chimney_understanding_in_seismic_images.md)
+- [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](../../ICLR2026/multimodal_vlm/omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
+- [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
+- [\[CVPR 2026\] Learning to See through Illumination Extremes with Event Streaming in Multimodal Large Language Models](learning_to_see_through_illumination_extremes_with_event_streaming_in_multimodal.md)
+- [\[CVPR 2026\] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset](towards_open-vocabulary_industrial_defect_understanding_with_a_large-scale_multi.md)
+- [\[CVPR 2026\] Efficient Encoder-Free Fourier-based 3D Large Multimodal Model](efficient_encoder-free_fourier-based_3d_large_multimodal_model.md)
 
 </div>
 

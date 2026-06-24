@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] The Phase-wise Decomposition and Alignment (PDA) framework is proposed, utilizing the Chain-of-Thought (CoT) reasoning capabilities of LLMs to decompose action labels into "start-middle-end" phase descriptions. Through text-guided foreground filtering and adaptive phase alignment, it achieves fine-grained action patter
+  [CVPR 2026][VLM Reasoning][Open-Vocabulary Temporal Action Detection] The Phase-wise Decomposition and Alignment (PDA) framework is proposed, utilizing the Chain-of-Thought (CoT) reasoning capabilities of LLMs to decompose action labels into "start-middle-end" phase descriptions. Through text-guided foreground filtering and adaptive phase alignment, it achieves fine-grained action pattern transfer. On THUMOS14 OV-TAD, it reaches an Avg mAP of 46.9 (surpassing the Prev. SOTA T…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Open-Vocabulary Temporal Action Detection"
+  - "Chain-of-Thought Prompting"
+  - "Action Phase Decomposition"
+  - "Cross-modal Alignment"
+  - "Knowledge Transfer"
 date: 2026-05-08
-content_hash: 16f2941413b365c1
+content_hash: d2601dd1fc7646a4
 ---
+
 # Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ Assume PoleVault is an unseen category at test time. CSD decomposes it into star
 
 ## Related Papers
 
-- [\[CVPR 2026\] HERO: Hierarchical Embedding-Refinement for Open-Vocabulary Temporal Sentence Grounding in Videos](hero_hierarchical_embedding-refinement_for_open-vocabulary_temporal_sentence_gro.md)
-- [\[CVPR 2026\] TF-CADE: Foreground-Concentrated Text-Video Alignment for Zero-Shot Temporal Action Detection](tf-cade_foreground-concentrated_text-video_alignment_for_zero-shot_temporal_acti.md)
-- [\[CVPR 2026\] Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection](alert-clip_abnormality-aware_latent-enhanced_representation_tuning_of_clip_for_v.md)
-- [\[CVPR 2026\] DETACH: Decomposed Spatio-Temporal Alignment for Exocentric Video and Ambient Sensors with Staged Learning](detach_decomposed_spatio-temporal_alignment_for_exocentric_video_and_ambient_sen.md)
 - [\[CVPR 2026\] Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](prototypical_action_reasoning_facilitated_by_vision-language_alignment_for_egoce.md)
+- [\[CVPR 2026\] SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation](segcompass_exploring_interpretable_alignment_with_sparse_autoencoders_for_enhanc.md)
+- [\[CVPR 2026\] Mimic Human Cognition, Master Multi-Image Reasoning: A Meta-Action Framework for Enhanced Visual Understanding](mimic_human_cognition_master_multi-image_reasoning_a_meta-action_framework_for_e.md)
+- [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
+- [\[CVPR 2026\] Thinking Beyond Labels: Vocabulary-Free Fine-Grained Recognition using Reasoning-Augmented LMMs](thinking_beyond_labels_vocabulary-free_fine-grained_recognition_using_reasoning-.md)
 
 </div>
 

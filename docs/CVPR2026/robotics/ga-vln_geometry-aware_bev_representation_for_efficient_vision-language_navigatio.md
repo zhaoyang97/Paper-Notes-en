@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Token Compression] This work projects RGB-D observations into a compact, agent-centric Bird's-Eye View (BEV) representation that fuses explicit depth geometry with implicit priors from a 3D foundation model. By replacing redundant dense RGB patch tokens in MLLM navigators with this representation, the method achieves SOTA performance in
+  [CVPR 2026][Robotics][Vision-Language Navigation] This work projects RGB-D observations into a compact, agent-centric Bird's-Eye View (BEV) representation that fuses explicit depth geometry with implicit priors from a 3D foundation model. By replacing redundant dense RGB patch tokens in MLLM navigators with this representation, the method achieves SOTA performance in continuous-environment VLN with significantly fewer tokens, without requiring DAgger augmentation or VQA co-tr…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Token Compression
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "BEV Representation"
+  - "MLLM"
+  - "Geometry-Aware"
+  - "Token Compression"
 date: 2026-05-08
-content_hash: 29969a3ba0d9f512
+content_hash: 3128b6d4efbcf1a5
 ---
+
 # GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ Adding explicit BEV projection (#1 to #2) jumps SR from 51.49% to 59.21% while c
 
 ## Related Papers
 
-- [\[ACL 2026\] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](../../ACL2026/robotics/vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)
 - [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
+- [\[ACL 2026\] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](../../ACL2026/robotics/vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)
 - [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
-- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
-- [\[CVPR 2026\] Cross from Left to Right Brain: Adaptive Text Dreamer for Vision-and-Language Navigation](cross_from_left_to_right_brain_adaptive_text_dreamer_for_vision-and-language_nav.md)
+- [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](../../ICLR2026/robotics/uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
+- [\[CVPR 2026\] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation](bridging_the_2d-3d_gap_a_hierarchical_semantic-geometric_map_for_vision_language.md)
 
 </div>
 

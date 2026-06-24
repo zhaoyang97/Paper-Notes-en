@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment
 description: >-
-  [ICLR 2026][Image Generation][GRPO] Addressing the sparse reward problem in Flow Matching + GRPO alignment: this work proposes using step-wise reward gains from ODE denoising predictions of intermediate latents as dense rewards. It adaptively adjusts the time-step-specific noise injection of the SDE sampler based on these dense rewards to calibrate the e
+  [ICLR 2026][Image Generation][GRPO] Addressing the sparse reward problem in Flow Matching + GRPO alignment: this work proposes using step-wise reward gains from ODE denoising predictions of intermediate latents as dense rewards. It adaptively adjusts the time-step-specific noise injection of the SDE sampler based on these dense rewards to calibrate the exploration space, outperforming Flow-GRPO in human preference alignment, compositional generation, and text rendering tasks.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - GRPO
-  - dense reward
-  - flow matching
-  - human preference alignment
-  - exploration calibration
+  - "ICLR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "dense reward"
+  - "flow matching"
+  - "human preference alignment"
+  - "exploration calibration"
 date: 2026-05-08
-content_hash: 254550ad47542da0
+content_hash: b9da612af4e37b86
 ---
+
 # DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment
 
 **Conference**: ICLR 2026  
@@ -137,10 +138,10 @@ Originally, SDE samplers used a uniform noise level $a$ for all time steps. Howe
 ## Related Papers
 
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
 - [\[ICLR 2026\] Value Matching: Scalable and Gradient-Free Reward-Guided Flow Adaptation](value_matching_scalable_and_gradient-free_reward-guided_flow_adaptation.md)
 - [\[ICLR 2026\] GLASS Flows: Efficient Inference for Reward Alignment of Flow and Diffusion Models](glass_flows_reward_alignment_diffusion.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
 
 </div>
 

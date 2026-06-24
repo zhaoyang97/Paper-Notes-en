@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Texvent: Asynchronous Event Data Simulation via Text Prompt
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Texvent directly generates asynchronous event camera data from text prompts. It first utilizes a Multi-modal Large Language Model (MLLM, e.g., Cosmos) to render text into video, then converts the video into an event stream via a novel training-free physical simulator. By employing "Luminance-aware Interpolation + Balan
+  [CVPR 2026][Image Generation][Event Camera] Texvent directly generates asynchronous event camera data from text prompts. It first utilizes a Multi-modal Large Language Model (MLLM, e.g., Cosmos) to render text into video, then converts the video into an event stream via a novel training-free physical simulator. By employing "Luminance-aware Interpolation + Balanced Log-intensity Contrast + Luminance Caching," it achieves significantly higher fidelity than cascaded baselines w…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Event Camera"
+  - "Text-to-event Simulation"
+  - "Training-free"
+  - "Frame Interpolation"
+  - "Multi-modal Large Model"
 date: 2026-05-08
-content_hash: 6b32845e6ca07929
+content_hash: 2efd18935bf8684a
 ---
+
 # Texvent: Asynchronous Event Data Simulation via Text Prompt
 
 **Conference**: CVPR 2026  
@@ -134,15 +140,15 @@ Event Quality Score (EQS) and runtime per frame:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generative Anonymization in Event Streams](generative_anonymization_in_event_streams.md)
+- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
 - [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
 - [\[ICLR 2026\] Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation](../../ICLR2026/image_generation/asynchronous_denoising_diffusion_models_for_aligning_text-to-image_generation.md)
 - [\[CVPR 2026\] Semantics Lead the Way: Harmonizing Semantic and Texture Modeling with Asynchronous Latent Diffusion](semantics_lead_the_way_harmonizing_semantic_and_texture_modeling_with_asynchrono.md)
-- [\[CVPR 2026\] Mitigating Memorization in Text-to-Image Diffusion via Region-Aware Prompt Augmentation and Multimodal Copy Detection](mitigating_memorization_in_texttoimage_diffusion_v.md)
+- [\[CVPR 2026\] VAR RL Done Right: Tackling Asynchronous Policy Conflicts in Visual Autoregressive Generation](var_rl_done_right_tackling_asynchronous_policy_conflicts_in_visual_autoregressiv.md)
 
 </div>
 

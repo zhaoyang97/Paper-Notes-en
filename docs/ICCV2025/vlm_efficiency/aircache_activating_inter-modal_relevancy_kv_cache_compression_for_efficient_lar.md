@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] AirCache: Activating Inter-Modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference
 description: >-
-  [ICCV 2025][Multimodal VLM][KV Cache compression] This paper proposes AirCache, a KV Cache compression method for LVLMs that evaluates visual token importance via an Elite Observation Window…
+  [ICCV 2025][Multimodal Efficiency][KV Cache compression] This paper proposes AirCache, a KV Cache compression method for LVLMs that evaluates visual token importance via an Elite Observation Window, combined with adaptive layer-wise budget allocation based on the intensity and skewness of importance score distributions. At only 10% visual KV Cache retention, performance degradation remains within 1%, while decoding latency is reduced by 29%–66%.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "KV Cache compression"
   - "large vision-language models"
   - "cross-modal attention"
   - "layer-wise budget allocation"
   - "inference acceleration"
 date: 2026-05-08
-content_hash: 800ad5fe2b6995c8
+content_hash: 2209b7294931d55e
 ---
 
 # AirCache: Activating Inter-Modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference
@@ -245,10 +245,10 @@ Token pruning methods collapse in performance under extreme compression ratios, 
 ## Related Papers
 
 - [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
-- [\[ICCV 2025\] The Inter-Intra Modal Measure: A Predictive Lens on Fine-Tuning Outcomes in Vision-Language Models](the_inter-intra_modal_measure_a_predictive_lens_on_fine-tuning_outcomes_in_visio.md)
-- [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](scaling_inferencetime_search_with_vision_value_model_for_imp.md)
-- [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
-- [\[ICCV 2025\] Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models](multi-cache_enhanced_prototype_learning_for_test-time_generalization_of_vision-l.md)
+- [\[ICCV 2025\] Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration](feather_the_throttle_revisiting_visual_token_pruning_for_vision-language_model_a.md)
+- [\[ICCV 2025\] Growing a Twig to Accelerate Large Vision-Language Models](growing_a_twig_to_accelerate_large_vision-language_models.md)
+- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
+- [\[ACL 2025\] MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference](../../ACL2025/vlm_efficiency/madakv_adaptive_modality-perception_kv_cache_eviction_for_efficient_multimodal_l.md)
 
 </div>
 

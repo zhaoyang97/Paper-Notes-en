@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification
 description: >-
-  [ACL 2026][Hallucination Detection][Knowledge Distillation] FinGround is a three-stage "verify-then-ground" pipeline for financial document QA: (1) finance-aware hybrid retrieval; (2) decomposing answers into atomic claims and verifying them using a type-routed strategy across a six-category taxonomy (Numerical, Temporal, Entity Property, Comparative, Regulatory, Computational—
+  [ACL 2026][Hallucination Detection][Financial QA] FinGround is a three-stage "verify-then-ground" pipeline for financial document QA: (1) finance-aware hybrid retrieval; (2) decomposing answers into atomic claims and verifying them using a type-routed strategy across a six-category taxonomy (Numerical, Temporal, Entity Property, Comparative, Regulatory, Computational—where computational claims use formula reconstruction and arithmetic re-verification)…
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Knowledge Distillation
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Financial QA"
+  - "Atomic Claim Verification"
+  - "Formula Reconstruction"
+  - "Table Attribution"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 0e14fde8d534a3be
+content_hash: 495635d222b13e09
 ---
+
 # FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification
 
 **Conference**: ACL 2026  
@@ -148,15 +153,16 @@ Ours reduces the end-to-end HalRate by an average of 78% compared to GPT-4o+CoT.
 - Value: ⭐⭐⭐⭐ (Directly addresses 2026 EU AI Act compliance and offers a production-ready cost profile).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Grounding or Guessing? Visual Signals for Detecting Hallucinations in Sign Language Translation](../../ICLR2026/hallucination/grounding_or_guessing_visual_signals_for_detecting_hallucinations_in_sign_langua.md)
 - [\[ACL 2026\] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG](tpa_next_token_probability_attribution_for_detecting_hallucinations_in_rag.md)
-- [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](../../CVPR2026/hallucination/exposing_and_evaluating_hallucinations_for_gui_grounding.md)
 - [\[ACL 2026\] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps](detecting_hallucinations_in_speechllms_at_inference_time_using_attention_maps.md)
+- [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](../../CVPR2026/hallucination/exposing_and_evaluating_hallucinations_for_gui_grounding.md)
 - [\[ACL 2026\] FaithLens: Detecting and Explaining Faithfulness Hallucination](faithlens_detecting_and_explaining_faithfulness_hallucination.md)
-- [\[ICLR 2026\] LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals](../../ICLR2026/hallucination/lumina_detecting_hallucinations_in_rag_system_with_context-knowledge_signals.md)
 
 </div>
 

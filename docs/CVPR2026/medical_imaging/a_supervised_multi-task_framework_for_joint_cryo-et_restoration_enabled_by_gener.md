@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Supervised Multi-task Framework for Joint cryo-ET Restoration Enabled by Generative Physical Simulation
 description: >-
-  [CVPR 2026][Medical Imaging][Denoising] cryoDeRec utilizes a "generative noise modeling + physical imaging simulation" pipeline to generate paired tomograms consisting of "noisy inputs $\leftrightarrow$ clean GT." This transforms cryo-ET denoising and missing wedge restoration, which previously relied on self-supervised methods, into **fully supervised multi
+  [CVPR 2026][Medical Imaging][cryo-electron tomography] cryoDeRec utilizes a "generative noise modeling + physical imaging simulation" pipeline to generate paired tomograms consisting of "noisy inputs $\leftrightarrow$ clean GT." This transforms cryo-ET denoising and missing wedge restoration, which previously relied on self-supervised methods, into **fully supervised multi-task training**. A single U-Net performs both tasks simultaneously, outperforming Topaz-Denoise / SC-Net…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Denoising
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "cryo-electron tomography"
+  - "denoising"
+  - "missing wedge restoration"
+  - "multi-task learning"
+  - "physical simulation"
 date: 2026-05-08
-content_hash: d4226ed8b4f63744
+content_hash: c6a7b7c34da00a3b
 ---
+
 # A Supervised Multi-task Framework for Joint cryo-ET Restoration Enabled by Generative Physical Simulation
 
 **Conference**: CVPR 2026  
@@ -143,6 +148,7 @@ PSNR increased by ~3.5 dB, and SSIM jumped from ~0.4 to 0.84. Performance remain
 - Value: ⭐⭐⭐⭐ High practical value for the structural biology community; no pre-processing required.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

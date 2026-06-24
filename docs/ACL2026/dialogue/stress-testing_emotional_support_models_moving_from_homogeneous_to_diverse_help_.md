@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stress-Testing Emotional Support Models: Moving from Homogeneous to Diverse Help Seekers
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] This paper constructs nine-dimensional seeker profiles using Reddit emotional support dialogues and trains a controllable seeker simulator using LoRA-MoE with behavioral routing. This enables interactive stress-testing of emotional support models on more realistic, difficult, and diverse seeker populations.
+  [ACL2026 Findings][Dialogue Systems][Emotional Support Models] This paper constructs nine-dimensional seeker profiles using Reddit emotional support dialogues and trains a controllable seeker simulator using LoRA-MoE with behavioral routing. This enables interactive stress-testing of emotional support models on more realistic, difficult, and diverse seeker populations.
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL2026 Findings"
+  - "Dialogue Systems"
+  - "Emotional Support Models"
+  - "Seeker Simulator"
+  - "Controllable Evaluation"
+  - "MoE Routing"
+  - "Stress-Testing"
 date: 2026-05-08
-content_hash: e85cf784eb9b3655
+content_hash: 9a715c229a3843a7
 ---
+
 # Stress-Testing Emotional Support Models: Moving from Homogeneous to Diverse Help Seekers
 
 **Conference**: ACL2026 Findings  
@@ -174,11 +180,11 @@ The paper uses baseline families and routing analysis to explain the gains from 
 
 ## Related Papers
 
-- [\[ACL 2026\] Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation](cognitive_policy-driven_llm_for_diagnosis_and_intervention_of_cognitive_distorti.md)
 - [\[ACL 2025\] Dialogue Systems for Emotional Support via Value Reinforcement](../../ACL2025/dialogue/dialogue_systems_for_emotional_support_via_value_reinforcement.md)
+- [\[ACL 2026\] Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation](cognitive_policy-driven_llm_for_diagnosis_and_intervention_of_cognitive_distorti.md)
 - [\[ACL 2026\] LOCKET: Robust Feature-Locking Technique for Language Models](locket_robust_feature-locking_technique_for_language_models.md)
 - [\[ACL 2026\] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)
-- [\[ACL 2026\] MA$^2$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion](ma2p_a_meta-cognitive_autonomous_intelligent_agents_framework_for_complex_persua.md)
+- [\[ICLR 2026\] Flipping the Dialogue: Training and Evaluating User Language Models](../../ICLR2026/dialogue/flipping_the_dialogue_training_and_evaluating_user_language_models.md)
 
 </div>
 

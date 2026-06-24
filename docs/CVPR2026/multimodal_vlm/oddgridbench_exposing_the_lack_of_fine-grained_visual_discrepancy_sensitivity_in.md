@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][benchmark] This paper proposes OddGridBench to evaluate the fine-grained visual discrepancy perception of MLLMs (identifying elements in a grid that differ in color, size, rotation, or position). It finds that all MLLMs perform significantly below human levels. Consequently, it introduces OddGrid-GRPO (curriculum learning + dista
+  [CVPR 2026][Multimodal VLM][Visual discrepancy perception] This paper proposes OddGridBench to evaluate the fine-grained visual discrepancy perception of MLLMs (identifying elements in a grid that differ in color, size, rotation, or position). It finds that all MLLMs perform significantly below human levels. Consequently, it introduces OddGrid-GRPO (curriculum learning + distance-aware reward) to markedly enhance the visual discrimination of models.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - benchmark
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual discrepancy perception"
+  - "benchmark"
+  - "GRPO"
+  - "curriculum learning"
+  - "fine-grained perception"
 date: 2026-05-08
-content_hash: 2523e34836cfa4a8
+content_hash: 4748991511e9bbe4
 ---
+
 # OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -129,16 +133,16 @@ The training is based on GRPO reinforcement learning, with the optimization obje
 - Value: ⭐⭐⭐⭐ Reveals systematic flaws in MLLM low-level perception.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
-- [\[CVPR 2026\] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps](reasonmap_towards_fine-grained_visual_reasoning_from_transit_maps.md)
-- [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
+- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
 - [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](language-driven_fine-grained_retrieval.md)
+- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
 
 </div>
 

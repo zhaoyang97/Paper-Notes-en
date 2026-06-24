@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Representation Consistency for Accurate and Coherent LLM Answer Aggregation
 description: >-
-  [NeurIPS 2025][Interpretability][Test-time scaling] This paper proposes Representation Consistency (RC), which improves answer aggregation by analyzing the consistency of internal activations when an LLM generates multip…
+  [NeurIPS 2025][Interpretability][Test-time scaling] This paper proposes Representation Consistency (RC), which improves answer aggregation by analyzing the consistency of internal activations when an LLM generates multiple candidate answers. Reasoning paths that yield the same answer with highly consistent internal representations are more likely to be correct. A sparse variant, RC-S, leveraging sparse autoencoders achieves the best performance…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "sparse autoencoders"
   - "LLM reasoning"
 date: 2026-05-08
-content_hash: 88cea78f716969dc
+content_hash: f14451cfa11adf83
 ---
 
 # Representation Consistency for Accurate and Coherent LLM Answer Aggregation
@@ -146,10 +146,10 @@ Given question $q$, $N$ candidate responses are generated via multiple prompt re
 ## Related Papers
 
 - [\[NeurIPS 2025\] SHAP Values via Sparse Fourier Representation](shap_values_via_sparse_fourier_representation.md)
+- [\[ACL 2025\] Probing the Geometry of Truth: Consistency and Generalization of Truth Directions](../../ACL2025/interpretability/probing_the_geometry_of_truth_consistency_and_generalization_of_truth_directions.md)
 - [\[NeurIPS 2025\] Do Different Prompting Methods Yield a Common Task Representation?](do_different_prompting_methods_yield_a_common_task_representation_in_language_mo.md)
-- [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)
 - [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](../../ICML2026/interpretability/learning_coherent_representations_a_topological_approach_to_interpretability.md)
-- [\[NeurIPS 2025\] LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS](llm_probing_with_contrastive_eigenproblems_improving_understanding_and_applicabi.md)
+- [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HOI-PAGE: Zero-Shot Human-Object Interaction Generation with Part Affordance Guidance
 description: >-
-  [ICML 2026][3D Vision][4D HOI] HOI-PAGE enables an LLM to first "reason" precisely which body part should contact which object component, encoding this reasoning into a "Part Affordance Graph" (PAG). This PAG then drives 3D part segmentation, video diffusion, and optimization, generating 4D human-object interaction sequences for complex scenarios li
+  [ICML 2026][3D Vision][4D HOI] HOI-PAGE enables an LLM to first "reason" precisely which body part should contact which object component, encoding this reasoning into a "Part Affordance Graph" (PAG). This PAG then drives 3D part segmentation, video diffusion, and optimization, generating 4D human-object interaction sequences for complex scenarios like "multiple people/single object" or "single person/multiple objects" without any 4D training data.
 tags:
-  - ICML 2026
-  - 3D Vision
-  - 4D HOI
+  - "ICML 2026"
+  - "3D Vision"
+  - "4D HOI"
+  - "Part-level affordance"
+  - "Affordance graph"
+  - "Video diffusion distillation"
+  - "Zero-shot generation"
 date: 2026-05-08
-content_hash: ae07251a9caad8ac
+content_hash: 0f3a4cef7bf2ec53
 ---
+
 # HOI-PAGE: Zero-Shot Human-Object Interaction Generation with Part Affordance Guidance
 
 **Conference**: ICML 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spectral Mixture-of-Experts for Continual Learning
 description: >-
-  [CVPR 2026][Others][Paper Note] To address "structural interference" and "compositional forgetting" in LoRA-MoE for continual learning, this paper proposes Spectral MoE: it employs non-overlapping frequency domain masks to constrain each expert into independent subspaces for inherent orthogonality, combined with a dual online/offline router and Dynam
+  [CVPR 2026][Self-Supervised Learning][Continual Learning] To address "structural interference" and "compositional forgetting" in LoRA-MoE for continual learning, this paper proposes Spectral MoE: it employs non-overlapping frequency domain masks to constrain each expert into independent subspaces for inherent orthogonality, combined with a dual online/offline router and Dynamic Consistency Projection to lock routing policies. It achieves higher retention and plasticity in cro…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Learning"
+  - "Spectral Experts"
+  - "Frequency Domain Orthogonality"
+  - "Router Drift"
+  - "Consistency Projection"
 date: 2026-05-08
-content_hash: 648ff673708affa8
+content_hash: 71f057c97a4630e4
 ---
+
 # Spectral Mixture-of-Experts for Continual Learning
 
 **Conference**: CVPR 2026  
@@ -116,15 +122,16 @@ Efficiency: Trainable parameters are only **23.5M**, approximately 1/2.5 of MoE-
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts](../../ICML2026/self_supervised/scaling_continual_learning_to_300_tasks_with_bi-level_routing_mixture-of-experts.md)
 - [\[CVPR 2026\] A Faster Path to Continual Learning](a_faster_path_to_continual_learning.md)
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](is_parameter_isolation_better_for_prompt-based_continual_learning.md)
 - [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](exemplar-free_continual_learning_for_state_space_models.md)
 - [\[CVPR 2026\] Subspace Alignment for CLIP-based Continual Learning via Canonical Correlation Analysis](subspace_alignment_for_clip-based_continual_learning_via_canonical_correlation_a.md)
-- [\[CVPR 2026\] Neural Mixture Density Processes](neural_mixture_density_processes.md)
-- [\[CVPR 2026\] Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity](parameter-efficient_continual_learning_for_enhancing_plasticity_without_forgetti.md)
 
 </div>
 

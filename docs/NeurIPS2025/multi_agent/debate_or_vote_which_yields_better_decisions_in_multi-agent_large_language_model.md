@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?
 description: >-
-  [NeurIPS 2025][Multi-Agent][Multi-agent debate] This work establishes, both theoretically and empirically, that the performance gains attributed to Multi-Agent Debate (MAD) stem primarily from majority voting (ensembling…
+  [NeurIPS 2025 Spotlight][Multi-Agent][Multi-agent debate] This work establishes, both theoretically and empirically, that the performance gains attributed to Multi-Agent Debate (MAD) stem primarily from majority voting (ensembling) rather than the debate process itself. The debate dynamics are shown to constitute a martingale—meaning debate does not systematically improve correctness in expectation—and this theoretical insight motivates a principled improvement to MAD by bias…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Multi-Agent"
   - "Multi-agent debate"
   - "majority voting"
@@ -12,7 +12,7 @@ tags:
   - "Bayesian belief update"
   - "LLM ensembling"
 date: 2026-05-08
-content_hash: 6853da273fb80521
+content_hash: 452e4cbff6efc027
 ---
 
 # Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?
@@ -131,9 +131,9 @@ MAD is decomposed into two components: (1) *Multi-Agent* (ensemble of multiple a
 
 - [\[NeurIPS 2025\] Large Language Models Miss the Multi-Agent Mark](large_language_models_miss_the_multi-agent_mark.md)
 - [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](../../ACL2026/multi_agent/agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
+- [\[ICLR 2026\] Cache-to-Cache: Direct Semantic Communication Between Large Language Models](../../ICLR2026/multi_agent/cache-to-cache_direct_semantic_communication_between_large_language_models.md)
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
-- [\[NeurIPS 2025\] Communicating Plans, Not Percepts: Scalable Multi-Agent Coordination with Embodied World Models](communicating_plans_not_percepts_scalable_multi-agent_coordination_with_embodied.md)
-- [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
+- [\[ICLR 2026\] Emergent Coordination in Multi-Agent Language Models](../../ICLR2026/multi_agent/emergent_coordination_in_multi-agent_language_models.md)
 
 </div>
 

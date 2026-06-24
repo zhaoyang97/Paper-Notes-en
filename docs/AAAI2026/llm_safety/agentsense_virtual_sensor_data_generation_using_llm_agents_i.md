@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments
 description: >-
-  [AAAI 2026][LLM Safety][LLM Agent] LLM-driven embodied agents are instantiated to "live" in simulated smart home environments, generating virtual ambient sensor data for pre-training HAR models…
+  [AAAI 2026][LLM Safety][LLM Agent] LLM-driven embodied agents are instantiated to "live" in simulated smart home environments, generating virtual ambient sensor data for pre-training HAR models, which yields significant gains in activity recognition under low-resource settings.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Human Activity Recognition"
   - "Simulated Environment"
 date: 2026-05-08
-content_hash: 7aa6eab0361d23ca
+content_hash: 77d29c36ed2090a7
 ---
 
 # AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments
@@ -133,11 +133,11 @@ Virtual data scale: 18 personas × 22 home layouts = 250 days of data, 3,266 act
 
 ## Related Papers
 
+- [\[ICLR 2026\] GhostEI-Bench: Do Mobile Agents Resilience to Environmental Injection in Dynamic On-Device Environments?](../../ICLR2026/llm_safety/ghostei-bench_do_mobile_agent_resilience_to_environmental_injection_in_dynamic_o.md)
 - [\[AAAI 2026\] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling](an_llm-based_simulation_framework_for_embodied_conversationa.md)
 - [\[ACL 2026\] SAGE: Sparse Adaptive Guidance for Dependency-Aware Tabular Data Generation](../../ACL2026/llm_safety/sage_sparse_adaptive_guidance_for_dependency-aware_tabular_data_generation.md)
-- [\[ICML 2026\] From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents](../../ICML2026/llm_safety/from_weak_cues_to_real_identities_evaluating_inference-driven_de-anonymization_i.md)
-- [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](../../ACL2026/llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
-- [\[AAAI 2026\] Perturb Your Data: Paraphrase-Guided Training Data Watermarking](perturb_your_data_paraphrase-guided_training_data_watermarking.md)
+- [\[ICLR 2026\] Searching for Privacy Risks in LLM Agents via Simulation](../../ICLR2026/llm_safety/searching_for_privacy_risks_in_llm_agents_via_simulation.md)
+- [\[ICLR 2026\] Reliable Weak-to-Strong Monitoring of LLM Agents](../../ICLR2026/llm_safety/reliable_weak-to-strong_monitoring_of_llm_agents.md)
 
 </div>
 

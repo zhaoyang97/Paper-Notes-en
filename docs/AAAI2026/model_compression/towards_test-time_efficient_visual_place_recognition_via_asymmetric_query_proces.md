@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing
 description: >-
-  [AAAI 2026][Model Compression][Visual Place Recognition] This paper proposes AsymVPR, an efficient asymmetric framework for Visual Place Recognition (VPR)…
+  [AAAI 2026][Model Compression][Visual Place Recognition] This paper proposes AsymVPR, an efficient asymmetric framework for Visual Place Recognition (VPR), which replaces expensive k-NN precomputation with a **Geographical Memory Bank** and bridges the capacity gap between a lightweight query network and a high-capacity gallery network via **Implicit Embedding Augmentation**, achieving retrieval performance close to the full-size model using only ~8% of its FLOPs.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Implicit Embedding Augmentation"
   - "Lightweight Deployment"
 date: 2026-05-08
-content_hash: bb154d6f005ba0db
+content_hash: 0b3ed43b280e9bde
 ---
 
 # Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing
@@ -174,11 +174,11 @@ Training constraint: only the gallery dataset and precomputed features may be us
 
 ## Related Papers
 
+- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](../../CVPR2026/model_compression/test-time_sparsity_for_extreme_fast_action_diffusion.md)
 - [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](../../CVPR2026/model_compression/talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
+- [\[CVPR 2025\] Mamba-Adaptor: State Space Model Adaptor for Visual Recognition](../../CVPR2025/model_compression/mamba-adaptor_state_space_model_adaptor_for_visual_recognition.md)
 - [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
-- [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](../../CVPR2026/model_compression/fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
-- [\[NeurIPS 2025\] Smooth Regularization for Efficient Video Recognition](../../NeurIPS2025/model_compression/smooth_regularization_for_efficient_video_recognition.md)
-- [\[AAAI 2026\] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning](sharp_eyes_and_memory_for_videollms_information-aware_visual_token_pruning_for_e.md)
+- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](../../CVPR2026/model_compression/back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
 
 </div>
 

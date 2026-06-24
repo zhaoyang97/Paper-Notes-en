@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video
 description: >-
-  [CVPR 2026][Segmentation][SAM2] This paper proposes RobotSeg, the first foundation model supporting both image and video robot segmentation. Based on SAM 2, it introduces the Structural-enhanced Memory Associator (SEMA), Robot Prompt Generator (RPG), and a label-efficient training strategy. Requiring only first-frame annotations, it achieves 85.1 J&F
+  [CVPR 2026][Segmentation][Robot Segmentation] This paper proposes RobotSeg, the first foundation model supporting both image and video robot segmentation. Based on SAM 2, it introduces the Structural-enhanced Memory Associator (SEMA), Robot Prompt Generator (RPG), and a label-efficient training strategy. Requiring only first-frame annotations, it achieves 85.1 J&F for Whole Robot segmentation in autonomous mode, surpassing the fine-tuned SAM 2.1 by 4.9 points with only 41.3M…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM2
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Robot Segmentation"
+  - "SAM 2"
+  - "Structure-Aware"
+  - "Autonomous Segmentation"
+  - "Label-Efficient Learning"
 date: 2026-05-08
-content_hash: be0286996fb42196
+content_hash: ad237f6f473504da
 ---
+
 # RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video
 
 **Conference**: CVPR 2026  
@@ -159,11 +164,11 @@ Trained jointly on RoboEngine-Train (3,532 images) and VRS-Train (2,707 videos, 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
 - [\[CVPR 2026\] RS-SSM: Refining Forgotten Specifics in State Space Model for Video Semantic Segmentation](rs-ssm_refining_forgotten_specifics_in_state_space_model_for_video_semantic_segm.md)
-- [\[AAAI 2026\] Tracking and Segmenting Anything in Any Modality](../../AAAI2026/segmentation/tracking_and_segmenting_anything_in_any_modality.md)
 - [\[CVPR 2026\] VidEoMT: Your ViT is Secretly Also a Video Segmentation Model](videomt_your_vit_is_secretly_also_a_video_segmentation_model.md)
+- [\[AAAI 2026\] Tracking and Segmenting Anything in Any Modality](../../AAAI2026/segmentation/tracking_and_segmenting_anything_in_any_modality.md)
 - [\[CVPR 2026\] Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
+- [\[CVPR 2026\] CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation](clp_a_real-world_dataset_of_contaminated_lens_protectors_for_robust_semantic_seg.md)
 
 </div>
 

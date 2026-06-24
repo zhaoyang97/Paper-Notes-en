@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VisCoder2: Building Multi-Language Visualization Coding Agents
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] Addressing three major pain points of existing visualization code models—narrow language coverage, non-executability, and inability to iteratively correct errors—this paper introduces a dataset (VisCode-Multi-679K, 12 languages, 679k executable samples), a benchmark (VisPlotBench, 8 languages, 888 tasks), and a model f
+  [ICLR 2026][Code Intelligence][Visualization programming] Addressing three major pain points of existing visualization code models—narrow language coverage, non-executability, and inability to iteratively correct errors—this paper introduces a dataset (VisCode-Multi-679K, 12 languages, 679k executable samples), a benchmark (VisPlotBench, 8 languages, 888 tasks), and a model family (VisCoder2, 3B~32B). For the first time, an open-source model matches GPT-4o in execution pass r…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Visualization programming"
+  - "multi-language code generation"
+  - "self-debugging"
+  - "execution feedback"
+  - "instruction tuning"
 date: 2026-05-08
-content_hash: 19b5b4c74dcbfcf7
+content_hash: 7e3480222b857bfa
 ---
+
 # VisCoder2: Building Multi-Language Visualization Coding Agents
 
 **Conference**: ICLR 2026  
@@ -119,15 +125,20 @@ VisCoder2-32B outperforms the same-sized Qwen2.5-Coder by ~15 percentage points 
 - Value: ⭐⭐⭐⭐⭐ Fully open-sourced dataset, benchmark, and models, allowing open-source models to match proprietary SOTA.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **VisCoder**: [https://arxiv.org/abs/2402.13138](https://arxiv.org/abs/2402.13138)
-- **Qwen2.5-Coder**: [https://arxiv.org/abs/2409.12186](https://arxiv.org/abs/2409.12186)
-- **Code-Feedback**: [https://arxiv.org/abs/2402.04258](https://arxiv.org/abs/2402.04258)
+## Related Papers
+
+- [\[NeurIPS 2025\] Text-to-Code Generation for Modular Building Layouts in Building Information Modeling](../../NeurIPS2025/code_intelligence/text-to-code_generation_for_modular_building_layouts_in_building_information_mod.md)
+- [\[ACL 2026\] CodeDistiller: Automatically Generating Code Libraries for Scientific Coding Agents](../../ACL2026/code_intelligence/codedistiller_automatically_generating_code_libraries_for_scientific_coding_agen.md)
+- [\[ICML 2026\] NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents](../../ICML2026/code_intelligence/nemo_execution-aware_optimization_modeling_via_autonomous_coding_agents.md)
+- [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](../../ACL2026/code_intelligence/rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
+- [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](../../ACL2026/code_intelligence/securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages](multi-lcb_extending_livecodebench_to_multiple_programming_languages.md)

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] iFinder: Structured Zero-Shot VLM Grounding for Dash-Cam Video Reasoning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][dash-cam video analysis] This paper proposes iFinder, a modular training-free framework that decouples dash-cam video understanding into perception (structured scene representation) and rea…
+  [NeurIPS 2025][VLM Reasoning][dash-cam video analysis] This paper proposes iFinder, a modular training-free framework that decouples dash-cam video understanding into perception (structured scene representation) and reasoning (LLM). Through a hierarchical data structure and a three-block prompting strategy, iFinder endows LLMs with interpretable spatiotemporal reasoning capabilities, achieving zero-shot superiority over end-to-end V-VLMs across four driving video benchmarks…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "dash-cam video analysis"
   - "LLM grounding"
   - "structured reasoning"
   - "zero-shot"
   - "vision-language models"
 date: 2026-05-08
-content_hash: 085d62826e3e6d5f
+content_hash: 6c261f5e53b6672e
 ---
 
 # iFinder: Structured Zero-Shot VLM Grounding for Dash-Cam Video Reasoning
@@ -172,11 +172,11 @@ Contribution of each visual module to MM-AU accuracy (accuracy drop upon removal
 
 ## Related Papers
 
+- [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/vlm_reasoning/docseeker_long_document_understanding.md)
 - [\[NeurIPS 2025\] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation](gui-rise_structured_reasoning_and_history_summarization_for_gui_navigation.md)
-- [\[NeurIPS 2025\] Training-free Online Video Step Grounding](training-free_online_video_step_grounding.md)
-- [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/multimodal_vlm/docseeker_long_document_understanding.md)
+- [\[ACL 2026\] ArrowGEV: Grounding Events in Video via Learning the Arrow of Time](../../ACL2026/vlm_reasoning/arrowgev_grounding_events_in_video_via_learning_the_arrow_of_time.md)
 - [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](../../CVPR2026/vlm_reasoning/reinforcing_structured_chain-of-thought_for_video_understanding.md)
 
 </div>
 

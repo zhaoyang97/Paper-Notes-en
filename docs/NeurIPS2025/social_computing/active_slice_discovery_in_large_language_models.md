@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Active Slice Discovery in Large Language Models
 description: >-
-  [NeurIPS 2025 (Workshop: Reliable ML from Unreliable Data)][Social Computing][slice discovery] This paper proposes the **Active Slice Discovery** problem framework…
+  [NeurIPS 2025 (Workshop: Reliable ML from Unreliable Data)][Social Computing][slice discovery] This paper proposes the **Active Slice Discovery** problem framework, integrating active learning into LLM error slice discovery. By combining uncertainty sampling with LLM internal representations (raw embeddings or SAE features), the method achieves slice detection accuracy comparable to fully supervised settings using only 2–10% of labeled data.
 tags:
   - "NeurIPS 2025 (Workshop: Reliable ML from Unreliable Data)"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "toxicity classification"
   - "sparse autoencoder"
 date: 2026-05-08
-content_hash: 6f9f338d9836f915
+content_hash: 903ec5116d573024
 ---
 
 # Active Slice Discovery in Large Language Models
@@ -133,10 +133,10 @@ $$\text{Acc}_j = \mathbb{E}_{x,y,\mathbf{s}}\left[\mathbf{1}\left[\phi_j(x,y) = 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Uncovering Strategic Egoism Behaviors in Large Language Models](uncovering_strategic_egoism_behaviors_in_large_language_models.md)
+- [\[ICML 2025\] OR-Bench: An Over-Refusal Benchmark for Large Language Models](../../ICML2025/social_computing/or-bench_an_over-refusal_benchmark_for_large_language_models.md)
 - [\[NeurIPS 2025\] DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models](date-lm_benchmarking_data_attribution_evaluation_for_large_language_models.md)
-- [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](../../ACL2026/social_computing/inertia_in_moral_and_value_judgments_of_large_language_models.md)
-- [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](../../ICLR2026/social_computing/propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
-- [\[ICML 2026\] Self-Debias: Self-correcting for Debiasing Large Language Models](../../ICML2026/social_computing/self-debias_self-correcting_for_debiasing_large_language_models.md)
+- [\[ACL 2025\] Exploring Gender Bias in Large Language Models: An In-depth Dive into the German Language](../../ACL2025/social_computing/exploring_gender_bias_in_large_language_models_an_in-depth_dive_into_the_german_.md)
+- [\[ACL 2025\] A Survey on Proactive Defense Strategies Against Misinformation in Large Language Models](../../ACL2025/social_computing/a_survey_on_proactive_defense_strategies_against_misinformation_in_large_languag.md)
 
 </div>
 

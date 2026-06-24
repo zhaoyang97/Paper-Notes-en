@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Talk2Event: Grounded Understanding of Dynamic Scenes from Event Cameras
 description: >-
-  [NeurIPS 2025][Robotics][event camera] Talk2Event introduces the first large-scale visual grounding benchmark for event cameras (30,690 annotated referring expressions across four grounding attribute types)…
+  [NeurIPS 2025 Spotlight][Robotics][event camera] Talk2Event introduces the first large-scale visual grounding benchmark for event cameras (30,690 annotated referring expressions across four grounding attribute types), and proposes the EventRefer framework, which employs a Mixture of Event-Attribute Experts (MoEE) to dynamically fuse appearance, status, viewer-relation, and inter-object-relation features. EventRefer surpasses existing methods across all three evaluation settin…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Robotics"
   - "event camera"
   - "visual grounding"
@@ -13,7 +13,7 @@ tags:
   - "autonomous driving"
   - "benchmark"
 date: 2026-05-08
-content_hash: 633f715162d1d43b
+content_hash: 9ef34f976dec6cb9
 ---
 
 # Talk2Event: Grounded Understanding of Dynamic Scenes from Event Cameras
@@ -143,11 +143,11 @@ Single-attribute experiments show Status (28.90%) > Appearance (27.98%) > Viewer
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DynaNav: Dynamic Feature and Layer Selection for Efficient Visual Navigation](dynanav_dynamic_feature_and_layer_selection_for_efficient_visual_navigation.md)
 - [\[NeurIPS 2025\] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data](spatial_understanding_from_videos_structured_prompts_meet_simulation_data.md)
+- [\[ICLR 2026\] RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras](../../ICLR2026/robotics/raven_end-to-end_equivariant_robot_learning_with_rgb_cameras.md)
+- [\[NeurIPS 2025\] DynaNav: Dynamic Feature and Layer Selection for Efficient Visual Navigation](dynanav_dynamic_feature_and_layer_selection_for_efficient_visual_navigation.md)
 - [\[NeurIPS 2025\] To Distill or Decide? Understanding the Algorithmic Trade-off in Partially Observable Reinforcement Learning](to_distill_or_decide_understanding_the_algorithmic_trade-off_in_partially_observ.md)
 - [\[ICLR 2026\] All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation](../../ICLR2026/robotics/all-day_multi-scenes_lifelong_vision-and-language_navigation_with_tucker_adaptat.md)
-- [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)](../../CVPR2026/robotics/lada_robotic_manipulation.md)
 
 </div>
 

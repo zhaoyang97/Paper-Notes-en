@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unified Vision-Language Modeling via Concept Space Alignment
 description: >-
-  [ICLR 2026][Multimodal VLM][Large Concept Model] This paper proposes v-Sonar, which aligns vision encoders post-hoc to the Sonar text embedding space. This alignment enables the Large Concept Model (LCM), trained solely on Sonar space, to process visual inputs zero-shot. Further extension via instruction tuning yields v-LCM, which outperforms existing VLMs in 61 out
+  [ICLR 2026][Multimodal VLM][Vision-language embedding space] This paper proposes v-Sonar, which aligns vision encoders post-hoc to the Sonar text embedding space. This alignment enables the Large Concept Model (LCM), trained solely on Sonar space, to process visual inputs zero-shot. Further extension via instruction tuning yields v-LCM, which outperforms existing VLMs in 61 out of 62 languages.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Large Concept Model
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision-language embedding space"
+  - "Latent Diffusion Models"
+  - "Multilingual"
+  - "Video captioning"
+  - "Large Concept Model"
 date: 2026-05-08
-content_hash: 15fbf342445de134
+content_hash: 668d03c22788c67c
 ---
+
 # Unified Vision-Language Modeling via Concept Space Alignment
 
 **Conference**: ICLR 2026  
@@ -135,11 +140,11 @@ The v-Sonar phase utilizes the MSE alignment loss with the three-stage curriculu
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reconstruction Alignment Improves Unified Multimodal Models](reconstruction_alignment_improves_unified_multimodal_models.md)
+- [\[ICLR 2026\] CoMem: Compositional Concept-Graph Memory for Vision-Language Adaptation](comem_compositional_concept-graph_memory_for_visionlanguage_adaptation.md)
 - [\[CVPR 2026\] Modeling Cross-vision Synergy for Unified Large Vision Model](../../CVPR2026/multimodal_vlm/modeling_cross-vision_synergy_for_unified_large_vision_model.md)
 - [\[ICLR 2026\] ORION: Decoupling and Alignment for Unified Autoregressive Understanding and Generation](orion_decoupling_and_alignment_for_unified_autoregressive_understanding_and_gene.md)
-- [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
-- [\[ICLR 2026\] UniHM: Unified Dexterous Hand Manipulation with Vision Language Model](unihm_unified_dexterous_hand_manipulation_with_vision_language_model.md)
-- [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
+- [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](../../AAAI2026/multimodal_vlm/himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
 
 </div>
 

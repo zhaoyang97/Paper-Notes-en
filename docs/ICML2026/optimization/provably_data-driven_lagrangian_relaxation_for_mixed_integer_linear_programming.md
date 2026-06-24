@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Provably Data-Driven Lagrangian Relaxation for Mixed Integer Linear Programming
 description: >-
-  [ICML 2026][Optimization & Theory][Lagrangian relaxation] This paper provides the first rigorous statistical learning theory for the empirical approach of "learning to predict Lagrangian multipliers to accelerate MILP": it derives an ERM generalization upper bound of $\mathcal{O}(s^{1.5}/\sqrt{N})$, a minimax lower bound of $\Omega(s/\sqrt{N})$, and constructively achieves th
+  [ICML 2026][Optimization][Lagrangian relaxation] This paper provides the first rigorous statistical learning theory for the empirical approach of "learning to predict Lagrangian multipliers to accelerate MILP": it derives an ERM generalization upper bound of $\mathcal{O}(s^{1.5}/\sqrt{N})$, a minimax lower bound of $\Omega(s/\sqrt{N})$, and constructively achieves the optimal rate of $\Theta(s/\sqrt{N})$ using an SGA averaging algorithm. Furthermore…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Lagrangian relaxation
-  - MILP
+  - "ICML 2026"
+  - "Optimization"
+  - "Lagrangian relaxation"
+  - "MILP"
+  - "generalization bounds"
+  - "minimax lower bounds"
+  - "learning to warm-start"
 date: 2026-05-08
-content_hash: 2c87ff7c9ba895d1
+content_hash: 519af8b1dba3f3cb
 ---
+
 # Provably Data-Driven Lagrangian Relaxation for Mixed Integer Linear Programming
 
 **Conference**: ICML 2026  
@@ -114,11 +118,11 @@ This is a purely theoretical paper with no numerical experiments; the "Main Resu
 
 ## Related Papers
 
+- [\[ICLR 2026\] FMIP: Joint Continuous-Integer Flow for Mixed-Integer Linear Programming](../../ICLR2026/optimization/fmip_joint_continuous-integer_flow_for_mixed-integer_linear_programming.md)
 - [\[ICLR 2026\] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear programming](../../ICLR2026/optimization/constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)
-- [\[ICML 2025\] Integer Programming for Generalized Causal Bootstrap Designs](../../ICML2025/optimization/integer_programming_for_generalized_causal_bootstrap_designs.md)
+- [\[ICML 2026\] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning](diversity-driven_offline_multi-objective_optimization_via_nested_pareto_set_lear.md)
 - [\[ICML 2026\] On the Expressive Power of GNNs to Solve Linear SDPs](on_the_expressive_power_of_gnns_to_solve_linear_sdps.md)
-- [\[ICML 2026\] Distilling Linearized Behavior into Non-Linear Fine-Tuning for Effective Task Arithmetic](distilling_linearized_behavior_into_non-linear_fine-tuning_for_effective_task_ar.md)
-- [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
+- [\[ICML 2026\] Interpretability and Generalization Bounds for Learning Spatial Physics](interpretability_and_generalization_bounds_for_learning_spatial_physics.md)
 
 </div>
 

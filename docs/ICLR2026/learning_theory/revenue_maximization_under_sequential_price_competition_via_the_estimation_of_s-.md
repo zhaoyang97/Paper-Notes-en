@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Revenue Maximization under Sequential Price Competition via the Estimation of s-Concave Demand Functions
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper investigates the competition among multiple sellers repeatedly setting prices over $T$ periods. By employing a "semi-parametric least squares + shape constraint" approach to estimate each seller's unknown non-linear demand function, the authors propose the SPE-BR strategy. They prove that prices converge to
+  [ICLR 2026][Learning Theory][Sequential Price Competition] This paper investigates the competition among multiple sellers repeatedly setting prices over $T$ periods. By employing a "semi-parametric least squares + shape constraint" approach to estimate each seller's unknown non-linear demand function, the authors propose the SPE-BR strategy. They prove that prices converge to the Nash Equilibrium at a rate of $\tilde O(N^{3/4}T^{-1/7})$ with an individual regret of $\tilde O(…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Dynamic Pricing"
+  - "Online Learning"
+  - "Sequential Price Competition"
+  - "Nash Equilibrium"
+  - "Shape-Constrained Estimation"
+  - "s-concavity"
+  - "Regret Bound"
 date: 2026-05-08
-content_hash: 1ca9ed3b8ce1b4e1
+content_hash: 050e8f4a5bfbd9e5
 ---
+
 # Revenue Maximization under Sequential Price Competition via the Estimation of s-Concave Demand Functions
 
 **Conference**: ICLR 2026  
@@ -134,15 +142,16 @@ The experiments involve Monte Carlo simulations with synthetic data to verify th
 - Value: ⭐⭐⭐⭐ Provides a robust framework for non-linear competitive pricing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Revisiting Active Sequential Prediction-Powered Mean Estimation](revisiting_active_sequential_prediction-powered_mean_estimation.md)
 - [\[ICML 2026\] Revenue Guarantees of No-Swap-Regret Dynamics in First Price Auctions](../../ICML2026/learning_theory/revenue_guarantees_of_no-swap-regret_dynamics_in_first_price_auctions.md)
+- [\[ICLR 2026\] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints](contextual_multi-armed_bandits_with_minimum_aggregated_revenue_constraints.md)
 - [\[ICLR 2026\] The Price of Robustness: Stable Classifiers Need Overparameterization](the_price_of_robustness_stable_classifiers_need_overparameterization.md)
 - [\[ICLR 2026\] Prediction with Expert Advice under Local Differential Privacy](prediction_with_expert_advice_under_local_differential_privacy.md)
-- [\[ICLR 2026\] Poisson Midpoint Method for Log-Concave Sampling: Beyond the Strong Error Lower Bounds](poisson_midpoint_method_for_log_concave_sampling_beyond_the_strong_error_lower_b.md)
 
 </div>
 

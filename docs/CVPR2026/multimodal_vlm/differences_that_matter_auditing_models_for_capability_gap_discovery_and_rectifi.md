@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Differences That Matter: Auditing Models for Capability Gap Discovery and Rectification
 description: >-
-  [CVPR 2026][Others][GRPO] AuditDM fine-tunes an MLLM as an "auditor" to actively generate image-text pairs that induce failures in the target model while maintaining consensus among a set of reference models. This systematically uncovers the target model's capability blind spots and converts them into unlabeled training data for feedback—result
+  [CVPR 2026][Multimodal VLM][Model Auditing] AuditDM fine-tunes an MLLM as an "auditor" to actively generate image-text pairs that induce failures in the target model while maintaining consensus among a set of reference models. This systematically uncovers the target model's capability blind spots and converts them into unlabeled training data for feedback—resulting in PaliGemma2-3B outperforming its official 28B version across multiple benchmarks.
 tags:
-  - CVPR 2026
-  - Others
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model Auditing"
+  - "Capability Gap Discovery"
+  - "Cross-model Disagreement"
+  - "GRPO"
+  - "Unlabeled Data Generation"
 date: 2026-05-08
-content_hash: 66537d0180743348
+content_hash: d8ed8117ddec7a3a
 ---
+
 # Differences That Matter: Auditing Models for Capability Gap Discovery and Rectification
 
 **Conference**: CVPR 2026  
@@ -133,12 +138,20 @@ The 3B model with AuditDM significantly improved across all benchmarks, notably 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- [PaliGemma 2: A versatile 3B-27B VLM family](https://arxiv.org/abs/2412.03555)
-- [Gemma 3: Multi-modal models for open-ended generation](https://blog.google/technology/developers/google-gemma-3-introduction/)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Concept Regions Matter: Benchmarking CLIP with a New Cluster-Importance Approach](concept_regions_matter_benchmarking_clip_with_a_new_cluster-importance_approach.md)
+- [\[CVPR 2026\] CapNav: Benchmarking Vision Language Models on Capability-conditioned Indoor Navigation](capnav_benchmarking_vision_language_models_on_capability-conditioned_indoor_navi.md)
+- [\[CVPR 2026\] Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models](unleashing_the_intrinsic_visual_representation_capability_of_multimodal_large_la.md)
+- [\[CVPR 2026\] Is the Modality Gap a Bug or a Feature? A Robustness Perspective](is_the_modality_gap_a_bug_or_a_feature_a_robustness_perspective.md)
+- [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement](language_does_matter_for_cross-domain_few-shot_visual_feature_enhancement.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts
 description: >-
-  [ICCV 2025][Autonomous Driving][Monocular 3D Detection] This paper proposes DUO (Dual Uncertainty Optimization), the first test-time adaptation framework that jointly minimizes semantic uncertainty and geometric uncertai…
+  [ICCV 2025][Autonomous Driving][Monocular 3D Detection] This paper proposes DUO (Dual Uncertainty Optimization), the first test-time adaptation framework that jointly minimizes semantic uncertainty and geometric uncertainty, achieving robust monocular 3D object detection via conjugate focal loss and normal field constraints.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Domain Shift"
   - "Convex Optimization"
 date: 2026-05-08
-content_hash: d35073ca4fbc427d
+content_hash: c7649e9ace5ea615
 ---
 
 # Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts
@@ -169,11 +169,11 @@ Average improvement over existing methods: +18%.
 
 ## Related Papers
 
-- [\[ICCV 2025\] MonoSOWA: Scalable Monocular 3D Object Detector Without Human Annotations](monosowa_scalable_monocular_3d_object_detector_without_human_annotations.md)
+- [\[ECCV 2024\] MonoWAD: Weather-Adaptive Diffusion Model for Robust Monocular 3D Object Detection](../../ECCV2024/autonomous_driving/monowad_weather-adaptive_diffusion_model_for_robust_monocular_3d_object_detectio.md)
 - [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
+- [\[ICCV 2025\] MonoSOWA: Scalable Monocular 3D Object Detector Without Human Annotations](monosowa_scalable_monocular_3d_object_detector_without_human_annotations.md)
 - [\[ICCV 2025\] DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic](duet_dual_incremental_object_detection_via_exemplar-free_task_arithmetic.md)
 - [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
-- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
 
 </div>
 

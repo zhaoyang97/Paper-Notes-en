@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Metropolis-Hastings Sampling for 3D Gaussian Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes an adaptive Metropolis-Hastings framework to replace the heuristic density control mechanism in 3DGS. Through probabilistic sampling driven by multi-vi…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes an adaptive Metropolis-Hastings framework to replace the heuristic density control mechanism in 3DGS. Through probabilistic sampling driven by multi-view photometric error, it achieves more efficient inference of Gaussian distributions and converges faster than 3DGS-MCMC.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Novel View Synthesis"
   - "MCMC"
 date: 2026-05-08
-content_hash: 53049a972dfffe32
+content_hash: 65a3b1aacd26b3ec
 ---
 
 # Metropolis-Hastings Sampling for 3D Gaussian Reconstruction
@@ -137,11 +137,11 @@ Convergence speed comparison (time to reach target PSNR):
 
 ## Related Papers
 
+- [\[CVPR 2025\] Depth-Guided Bundle Sampling for Efficient Generalizable Neural Radiance Field Reconstruction](../../CVPR2025/3d_vision/depth-guided_bundle_sampling_for_efficient_generalizable_neural_radiance_field_r.md)
 - [\[NeurIPS 2025\] Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting](quantifying_and_alleviating_co-adaptation_in_sparse-view_3d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
-- [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
 - [\[NeurIPS 2025\] DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting](dc4gs_directional_consistency-driven_adaptive_density_control_for_3d_gaussian_sp.md)
-- [\[NeurIPS 2025\] Motion Matters: Compact Gaussian Streaming for Free-Viewpoint Video Reconstruction](motion_matters_compact_gaussian_streaming_for_free-viewpoint_video_reconstructio.md)
+- [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
 
 </div>
 

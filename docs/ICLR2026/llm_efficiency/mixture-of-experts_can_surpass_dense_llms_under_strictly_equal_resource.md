@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mixture-of-Experts Can Surpass Dense LLMs Under Strictly Equal Resource
 description: >-
-  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] Under the premise of **strictly equal total parameters N, training compute C, and data volume D**, the authors optimize the MoE backbone and control the activation rate within an optimal range of approximately 20%. This demonstrates for the first time that MoE can consistently surpass dense models of equivalent resourc
+  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] Under the premise of **strictly equal total parameters N, training compute C, and data volume D**, the authors optimize the MoE backbone and control the activation rate within an optimal range of approximately 20%. This demonstrates for the first time that MoE can consistently surpass dense models of equivalent resources. A data reuse strategy is employed to eliminate MoE's additional data requirements.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Activation Rate"
+  - "Equal Resource Comparison"
+  - "Data Reuse"
+  - "Architecture Search"
 date: 2026-05-08
-content_hash: d5e346d823077047
+content_hash: 4dd7289be7ad97c8
 ---
+
 # Mixture-of-Experts Can Surpass Dense LLMs Under Strictly Equal Resource
 
 **Conference**: ICLR 2026  
@@ -112,10 +117,10 @@ MoE exceeds the dense model on most knowledge/reasoning/math benchmarks using on
 ## Related Papers
 
 - [\[ICLR 2026\] Routing Manifold Alignment Improves Generalization of Mixture-of-Experts LLMs](routing_manifold_alignment_improves_generalization_of_mixture-of-experts_llms.md)
-- [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](../../ICML2026/llm_efficiency/repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
 - [\[ICLR 2026\] DirMoE: Dirichlet-Routed Mixture of Experts](dirmoe_dirichlet-routed_mixture_of_experts.md)
-- [\[ICLR 2026\] Towards Greater Leverage: Scaling Laws for Efficient Mixture-of-Experts Language Models](towards_greater_leverage_scaling_laws_for_efficient_mixture-of-experts_language_.md)
 - [\[ICLR 2026\] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel](understanding_the_mixture-of-experts_with_nadaraya-watson_kernel.md)
+- [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](../../ICML2026/llm_efficiency/repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
+- [\[ICLR 2026\] Towards Greater Leverage: Scaling Laws for Efficient Mixture-of-Experts Language Models](towards_greater_leverage_scaling_laws_for_efficient_mixture-of-experts_language_.md)
 
 </div>
 

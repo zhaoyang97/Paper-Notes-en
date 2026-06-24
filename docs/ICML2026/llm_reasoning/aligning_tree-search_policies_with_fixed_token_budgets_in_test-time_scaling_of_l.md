@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Aligning Tree-Search Policies with Fixed Token Budgets in Test-Time Scaling of LLMs
 description: >-
-  [ICML 2026][LLM Reasoning][MCTS] Addressing the practical constraint of "fixed token budgets per query" during deployment, this paper proposes Budget-Guided MCTS (BG-MCTS). It utilizes a "budget sufficiency ratio $\rho$" as a unified scheduling signal to transition tree search from broad exploration in early stages to deep refinement and answer comple
+  [ICML2026][Reasoning][Test-time scaling] Addressing the practical constraint of "fixed token budgets per query" during deployment, this paper proposes Budget-Guided MCTS (BG-MCTS). It utilizes a "budget sufficiency ratio $\rho$" as a unified scheduling signal to transition tree search from broad exploration in early stages to deep refinement and answer completion as the budget depletes, consistently outperforming budget-agnostic tree search baselines on mathematical and physi…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - MCTS
+  - "ICML2026"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "Tree search"
+  - "MCTS"
+  - "Fixed token budget"
+  - "Inference efficiency"
 date: 2026-05-08
-content_hash: 06ade8ba6d658a76
+content_hash: ccad2fcfaaf1ddc9
 ---
+
 # Aligning Tree-Search Policies with Fixed Token Budgets in Test-Time Scaling of LLMs
 
 **Conference**: ICML2026  
@@ -131,16 +136,16 @@ Ablations on MATH500 Lv.5 show that removing any component—Exploration Anneali
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
 - [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](../../ICLR2026/llm_reasoning/plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
-- [\[NeurIPS 2025\] SolverLLM: Leveraging Test-Time Scaling for Optimization Problem via LLM-Guided Search](../../NeurIPS2025/llm_reasoning/solverllm_leveraging_test-time_scaling_for_optimization_problem_via_llm-guided_s.md)
+- [\[ICLR 2026\] Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts](../../ICLR2026/llm_reasoning/test-time_scaling_in_diffusion_llms_via_hidden_semi-autoregressive_experts.md)
+- [\[NeurIPS 2025\] SolverLLM: Solving Optimization Problems via Test-Time Scaling with LLM-Guided Search](../../NeurIPS2025/llm_reasoning/solverllm_leveraging_test-time_scaling_for_optimization_problem_via_llm-guided_s.md)
 - [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
-- [\[ICML 2026\] ETS: Energy-Guided Test-Time Scaling for Training-Free RL Alignment](ets_energy-guided_test-time_scaling_for_training-free_rl_alignment.md)
 
 </div>
 

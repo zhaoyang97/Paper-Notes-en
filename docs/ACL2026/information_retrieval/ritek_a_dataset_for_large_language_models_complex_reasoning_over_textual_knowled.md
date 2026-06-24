@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs in Medicine
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] RiTeK constructs two large-scale medical Textual Knowledge Graphs (TKG) and corresponding complex reasoning QA datasets, covering 6 topological structures and rich textual descriptions. It evaluates 11 retrieval methods and reveals the severe inadequacies of existing LLM-driven retrieval systems in medical TKG reasonin
+  [ACL 2026 Findings][Information Retrieval & RAG][Textual Knowledge Graphs] RiTeK constructs two large-scale medical Textual Knowledge Graphs (TKG) and corresponding complex reasoning QA datasets, covering 6 topological structures and rich textual descriptions. It evaluates 11 retrieval methods and reveals the severe inadequacies of existing LLM-driven retrieval systems in medical TKG reasoning.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Textual Knowledge Graphs"
+  - "Medical Question Answering"
+  - "Complex Reasoning"
+  - "Retrieval Systems"
+  - "Topological Structure"
 date: 2026-05-08
-content_hash: df5fbdacea0e3ff3
+content_hash: d569b3b1b9e8a3fa
 ---
+
 # RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs in Medicine
 
 **Conference**: ACL 2026 Findings  
@@ -162,7 +168,7 @@ Dataset construction itself does not involve model training; query generation ut
 - [\[ACL 2025\] RARE: Retrieval-Augmented Reasoning Enhancement for Large Language Models](../../ACL2025/information_retrieval/rare_retrieval_augmented_reasoning.md)
 - [\[ICLR 2026\] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](../../ICLR2026/information_retrieval/synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)
 - [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](../../ICLR2026/information_retrieval/query-level_uncertainty_in_large_language_models.md)
-- [\[ICLR 2026\] TokMem: One-Token Procedural Memory for Large Language Models](../../ICLR2026/information_retrieval/tokmem_one-token_procedural_memory_for_large_language_models.md)
+- [\[ICLR 2026\] DeepRAG: Thinking to Retrieve Step by Step for Large Language Models](../../ICLR2026/information_retrieval/deeprag_thinking_to_retrieve_step_by_step_for_large_language_models.md)
 
 </div>
 

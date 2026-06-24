@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] ShinkaEvolve utilizes a "Parent Weighted Sampling + Code Novelty Rejection Sampling + Bandit-style LLM Ensemble Selection" triad to compress LLM-driven program evolution from thousands of evaluations to just 150. It achieves state-of-the-art results across four domains: circle packing, AIME agent scaffolding, ALE-Bench
+  [ICLR 2026][Reasoning][LLM Program Evolution] ShinkaEvolve utilizes a "Parent Weighted Sampling + Code Novelty Rejection Sampling + Bandit-style LLM Ensemble Selection" triad to compress LLM-driven program evolution from thousands of evaluations to just 150. It achieves state-of-the-art results across four domains: circle packing, AIME agent scaffolding, ALE-Bench competitive programming, and MoE load-balancing loss.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "LLM Program Evolution"
+  - "Sample Efficiency"
+  - "Rejection Sampling"
+  - "Bandit Model Selection"
+  - "Open-Ended Discovery"
 date: 2026-05-08
-content_hash: 4b12fff3043bc004
+content_hash: b0f9543b2607dd73
 ---
+
 # ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution
 
 **Conference**: ICLR 2026  
@@ -125,10 +131,10 @@ Removing the three main components one by one in the circle packing task:
 ## Related Papers
 
 - [\[ICLR 2026\] Reverse-Engineered Reasoning for Open-Ended Generation](reverse-engineered_reasoning_for_open-ended_generation.md)
+- [\[ICML 2026\] Deliberate Evolution: Agentic Reasoning for Sample-Efficient Symbolic Regression with LLMs](../../ICML2026/llm_reasoning/deliberate_evolution_agentic_reasoning_for_sample-efficient_symbolic_regression_.md)
+- [\[ICLR 2026\] Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks](semantic_voting_a_self-evaluation-free_approach_for_efficient_llm_self-improveme.md)
 - [\[ICLR 2026\] Think in Parallel, Answer as One: Logit Averaging for Open-Ended Reasoning](think_in_parallel_answer_as_one_logit_averaging_for_open-ended_reasoning.md)
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
-- [\[ICML 2026\] Deliberate Evolution: Agentic Reasoning for Sample-Efficient Symbolic Regression with LLMs](../../ICML2026/llm_reasoning/deliberate_evolution_agentic_reasoning_for_sample-efficient_symbolic_regression_.md)
-- [\[ICLR 2026\] GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs](geogrambench_benchmarking_the_geometric_program_reasoning_in_modern_llms.md)
 
 </div>
 

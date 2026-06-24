@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Light-X: Generative 4D Video Rendering with Camera and Illumination Control
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Light-X unifies two previously separate research paths of controllable video generation—"camera viewpoint" and "scene illumination"—into a single diffusion model for the first time. By projecting geometry/motion and illumination into two sets of point clouds as fine-grained conditions, it achieves decoupling. Furthermo
+  [ICLR 2026][Video Generation][Video relighting] Light-X unifies two previously separate research paths of controllable video generation—"camera viewpoint" and "scene illumination"—into a single diffusion model for the first time. By projecting geometry/motion and illumination into two sets of point clouds as fine-grained conditions, it achieves decoupling. Furthermore, it introduces "Light-Syn," a "degradation + inverse mapping" data synthesis pipeline to create "multi-view ×…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video relighting"
+  - "camera trajectory control"
+  - "4D video generation"
+  - "video diffusion model"
+  - "geometry-illumination decoupling"
 date: 2026-05-08
-content_hash: cb6d14752bf91a0c
+content_hash: 263475ccaf36d1fb
 ---
+
 # Light-X: Generative 4D Video Rendering with Camera and Illumination Control
 
 **Conference**: ICLR 2026  
@@ -124,9 +130,9 @@ Evaluation using real in-the-wild videos as ground truth (GT): Ours achieves PSN
 
 - [\[CVPR 2026\] LaVR: Scene Latent Conditioned Generative Video Trajectory Re-Rendering using Large 4D Reconstruction Models](../../CVPR2026/video_generation/lavr_scene_latent_conditioned_generative_video_trajectory_re-rendering_using_lar.md)
 - [\[ICCV 2025\] ReCamMaster: Camera-Controlled Generative Rendering from A Single Video](../../ICCV2025/video_generation/recammaster_camera-controlled_generative_rendering_from_a_single_video.md)
-- [\[CVPR 2026\] LightMover: Generative Light Movement with Color and Intensity Controls](../../CVPR2026/video_generation/lightmover_generative_light_movement_with_color_and_intensity_controls.md)
 - [\[ICLR 2026\] MoCa: Modeling Object Consistency for 3D Camera Control in Video Generation](moca_modeling_object_consistency_for_3d_camera_control_in_video_generation.md)
-- [\[CVPR 2026\] SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time](../../CVPR2026/video_generation/spacetimepilot_generative_rendering_of_dynamic_scenes_across_space_and_time.md)
+- [\[ICLR 2026\] Geometry-aware 4D Video Generation for Robot Manipulation](geometry-aware_4d_video_generation_for_robot_manipulation.md)
+- [\[CVPR 2026\] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control](../../CVPR2026/video_generation/versecrafter_dynamic_realistic_video_world_model_with_4d_geometric_control.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] FedRAC: Rolling Submodel Allocation for Collaborative Fairness in Federated Learning
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] FedRAC introduces a "dynamic reputation calculation that evolves with training" alongside "submodel construction via historical frequency rotation followed by reputation-based allocation." This dual-module approach ensures high-contribution clients receive superior submodels (fairness) while maintaining uniform trainin
+  [CVPR 2026][Federated Learning][Collaborative Fairness] FedRAC introduces a "dynamic reputation calculation that evolves with training" alongside "submodel construction via historical frequency rotation followed by reputation-based allocation." This dual-module approach ensures high-contribution clients receive superior submodels (fairness) while maintaining uniform training for every neuron in the global model (accuracy). It outperforms existing collaborative fairness method…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Collaborative Fairness"
+  - "Submodel Allocation"
+  - "Dynamic Reputation"
+  - "Balanced Neuron Training"
 date: 2026-05-08
-content_hash: 7a405a980a0d75d3
+content_hash: e048789cf09244fe
 ---
+
 # FedRAC: Rolling Submodel Allocation for Collaborative Fairness in Federated Learning
 
 **Conference**: CVPR 2026  
@@ -159,15 +164,16 @@ Impact of modules on SVHN (w/o reputation = static reputation; w/o allocation = 
 - Value: ⭐⭐⭐⭐ High practical value for incentivizing participation in real-world FL systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Personalized Collaborative Learning with Affinity-Based Variance Reduction](../../ICLR2026/optimization/personalized_collaborative_learning_with_affinity-based_variance_reduction.md)
+- [\[CVPR 2026\] SubFLOT: Efficient Personalized Federated Learning via Optimal Transport-based Submodel Extraction](submodel_extraction_for_efficient_and_personalized_federated_learning_via_optima.md)
 - [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
+- [\[CVPR 2026\] Single-Round Scalable Analytic Federated Learning](single-round_scalable_analytic_federated_learning.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
 - [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
-- [\[CVPR 2026\] FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning](fedalign_differentially_private_distribution_alignment_for_non-iid_federated_lea.md)
-- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
 
 </div>
 

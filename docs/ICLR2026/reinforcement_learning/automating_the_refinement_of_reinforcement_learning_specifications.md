@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Automating the Refinement of Reinforcement Learning Specifications
 description: >-
-  [ICLR 2026][Reinforcement Learning][SpectRL] The AUTOSPEC framework is proposed to diagnose "undearnable policies due to coarse logic specifications" as failures on specific edges of an abstraction graph. It automatically refines specifications using four soundness-preserving operations (modifying predicates, inserting landmarks, splitting start regions, and find
+  [ICLR 2026][Reinforcement Learning][specification-guided reinforcement learning] The AUTOSPEC framework is proposed to diagnose "undearnable policies due to coarse logic specifications" as failures on specific edges of an abstraction graph. It automatically refines specifications using four soundness-preserving operations (modifying predicates, inserting landmarks, splitting start regions, and finding alternative paths), enabling existing specification-guided RL algorithms to…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - SpectRL
-  - reach-avoid
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "specification-guided reinforcement learning"
+  - "SpectRL"
+  - "logic specification refinement"
+  - "abstraction graph"
+  - "reach-avoid"
+  - "formal soundness"
 date: 2026-05-08
-content_hash: 726edc24ae1a62aa
+content_hash: 0b541e11f56bbae8
 ---
+
 # Automating the Refinement of Reinforcement Learning Specifications
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ Refinement quality **fundamentally depends on the exploration strategy of the ba
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

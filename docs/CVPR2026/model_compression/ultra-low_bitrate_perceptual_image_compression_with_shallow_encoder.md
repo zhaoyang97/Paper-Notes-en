@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ultra-Low Bitrate Perceptual Image Compression with Shallow Encoder
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper proposes AEIC, an asymmetric extreme image compression framework. It theoretically demonstrates that "at ultra-low bitrates (<0.05 bpp), latent variable variance is naturally small, making heavy encoders unnecessary." Consequently, the encoding side is implemented as a shallow pixel-domain convolutional netw
+  [CVPR 2026][Model Compression][Ultra-low bitrate compression] This paper proposes AEIC, an asymmetric extreme image compression framework. It theoretically demonstrates that "at ultra-low bitrates (<0.05 bpp), latent variable variance is naturally small, making heavy encoders unnecessary." Consequently, the encoding side is implemented as a shallow pixel-domain convolutional network with only 0.94M parameters, while all generative capacity is offloaded to a single-step diffus…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Ultra-low bitrate compression"
+  - "Shallow encoder"
+  - "Single-step diffusion decoding"
+  - "Feature distillation"
+  - "Asymmetric encoding-decoding"
 date: 2026-05-08
-content_hash: 411ff8bc998e5566
+content_hash: 20e11dd62aae985d
 ---
+
 # Ultra-Low Bitrate Perceptual Image Compression with Shallow Encoder
 
 **Conference**: CVPR 2026  
@@ -164,9 +170,9 @@ AEIC-SE's encoding complexity is on par with the real-time normal bitrate codec 
 
 - [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
 - [\[CVPR 2026\] Distributed Image Compression with Multimodal Side Information at Extremely Low Bitrates](distributed_image_compression_with_multimodal_side_information_at_extremely_low_.md)
+- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
+- [\[CVPR 2026\] What Matters in Practical Learned Image Compression](what_matters_in_practical_learned_image_compression.md)
 - [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
-- [\[CVPR 2026\] On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors](on_the_robustness_of_diffusion-based_image_compression_to_bit-flip_errors.md)
-- [\[CVPR 2026\] Block-based Learned Image Compression without Blocking Artifacts](block-based_learned_image_compression_without_blocking_artifacts.md)
 
 </div>
 

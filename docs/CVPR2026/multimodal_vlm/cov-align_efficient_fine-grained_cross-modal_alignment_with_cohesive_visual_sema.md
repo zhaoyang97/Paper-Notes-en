@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] CoV-Align proposes a fine-grained image-text retrieval framework that aggregates image patches into semantic regions **without text involvement** before performing region-word alignment. It uses deformable attention and consistent assign attention to generate regions, refined by spatial concentration and visual contras
+  [CVPR 2026][Multimodal VLM][Cross-modal alignment] CoV-Align proposes a fine-grained image-text retrieval framework that aggregates image patches into semantic regions **without text involvement** before performing region-word alignment. It uses deformable attention and consistent assign attention to generate regions, refined by spatial concentration and visual contrastive losses. On Flickr30K and MS-COCO, it achieves new SOTA results while being 3–5 times faster than text-gu…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Cross-modal alignment"
+  - "fine-grained image-text retrieval"
+  - "text-free aggregation"
+  - "visual semantic regions"
+  - "deformable attention"
 date: 2026-05-08
-content_hash: 88f9d24080f100dd
+content_hash: 5af63fe45701ca89
 ---
+
 # CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority
 
 **Conference**: CVPR 2026  
@@ -162,11 +168,11 @@ On MS-COCO retrieval, CoV-Align takes 114.0s, compared to 442.2s for LAPS—roug
 
 ## Related Papers
 
+- [\[CVPR 2026\] POGA: Paraphrased and Oppositional Graph Alignment for Fine-Grained Cross-Modal Retrieval](poga_paraphrased_and_oppositional_graph_alignment_for_fine-grained_cross-modal_r.md)
+- [\[CVPR 2026\] Beyond Global Similarity: Multi-Conditional Retrieval for Fine-Grained Cross-Modal Understanding](beyond_global_similarity_multi-conditional_retrieval_for_fine-grained_cross-moda.md)
 - [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](../../AAAI2026/multimodal_vlm/aligning_the_true_semantics_constrained_decoupling_and_distr.md)
 - [\[CVPR 2026\] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs](fave_a_structured_benchmark_for_fine-grained_audio-visual_temporal_evaluation_in.md)
 - [\[CVPR 2026\] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer](decoupled_and_reusable_adaptation_for_efficient_cross-modal_transfer.md)
-- [\[CVPR 2026\] Rethinking Cross-Modal Anchor Alignment for Mitigating Error Accumulation](rethinking_cross-modal_anchor_alignment_for_mitigating_error_accumulation.md)
-- [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
 
 </div>
 

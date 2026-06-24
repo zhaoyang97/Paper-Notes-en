@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning
 description: >-
-  [CVPR 2026][Video Generation][Reinforcement Learning] The GenReward framework is proposed to utilize pre-trained video diffusion models for generating goal-conditioned videos. It guides reinforcement learning agents through two-tier goal-driven reward signals at the video and frame levels, significantly outperforming baselines on Meta-World robotic manipulation tasks with
+  [CVPR 2026][Image Generation][Video Diffusion Models] The GenReward framework is proposed to utilize pre-trained video diffusion models for generating goal-conditioned videos. It guides reinforcement learning agents through two-tier goal-driven reward signals at the video and frame levels, significantly outperforming baselines on Meta-World robotic manipulation tasks without manual reward function design.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Diffusion Models"
+  - "Goal-Driven Reward"
+  - "Reinforcement Learning"
+  - "Forward-Backward Representation"
+  - "World Knowledge Transfer"
 date: 2026-05-08
-content_hash: a3e991d66636a23d
+content_hash: 4cb99d46da44248c
 ---
+
 # Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -137,15 +142,15 @@ Video diffusion models are fine-tuned using the standard denoising objective $\|
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] NS-Diff: Fluid Navier-Stokes Guided Video Diffusion via Reinforcement Learning](ns-diff_fluid_navier-stokes_guided_video_diffusion_via_reinforcement_learning.md)
-- [\[CVPR 2026\] PropFly: Learning to Propagate via On-the-Fly Supervision from Pre-trained Video Diffusion Models](propfly_learning_to_propagate_via_on-the-fly_supervision_from_pre-trained_video_.md)
-- [\[CVPR 2026\] SoliReward: Mitigating Susceptibility to Reward Hacking and Annotation Noise in Video Generation Reward Models](solireward_mitigating_susceptibility_to_reward_hacking_and_annotation_noise_in_v.md)
-- [\[NeurIPS 2025\] RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation](../../NeurIPS2025/video_generation/rlgf_reinforcement_learning_with_geometric_feedback_for_autonomous_driving_video.md)
+- [\[CVPR 2026\] The Image as Its Own Reward: Reinforcement Learning with Adversarial Reward for Image Generation](the_image_as_its_own_reward_reinforcement_learning_with_adversarial_reward_for_i.md)
+- [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
 - [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
+- [\[CVPR 2026\] PaCo-RL: Advancing Reinforcement Learning for Consistent Image Generation with Pairwise Reward Modeling](paco-rl_advancing_reinforcement_learning_for_consistent_image_generation_with_pa.md)
+- [\[CVPR 2026\] ParaUni: Enhance Generation in Unified Multimodal Model with Reinforcement-driven Hierarchical Parallel Information Interaction](parauni_enhance_generation_in_unified_multimodal_model_with_reinforcement-driven.md)
 
 </div>
 

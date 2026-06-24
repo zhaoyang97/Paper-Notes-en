@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization
 description: >-
-  [NeurIPS 2025][Model Compression][generalization bounds] By incorporating **stochastic projection** and **lossy compression** into the CMI (conditional mutual information) framework…
+  [NeurIPS 2025 Oral][Model Compression][generalization bounds] By incorporating **stochastic projection** and **lossy compression** into the CMI (conditional mutual information) framework, this paper derives tighter generalization bounds, resolves the failure of classical CMI bounds on SCO counterexamples, and proves that memorization is not necessary for good generalization.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Model Compression"
   - "generalization bounds"
   - "conditional mutual information"
@@ -12,7 +12,7 @@ tags:
   - "lossy compression"
   - "memorization"
 date: 2026-05-08
-content_hash: 49b084862dd091be
+content_hash: e541dcd7f62dd54b
 ---
 
 # Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization
@@ -152,11 +152,11 @@ The theoretical contributions are significant, elegantly resolving the "crisis" 
 
 ## Related Papers
 
+- [\[ICML 2025\] Generalization Bounds via Meta-Learned Model Representations: PAC-Bayes and Sample Compression Hypernetworks](../../ICML2025/model_compression/generalization_bounds_via_meta-learned_model_representations_pac-bayes_and_sampl.md)
 - [\[NeurIPS 2025\] Perturbation Bounds for Low-Rank Inverse Approximations under Noise](perturbation_bounds_for_low-rank_inverse_approximations_under_noise.md)
 - [\[NeurIPS 2025\] Efficient Parametric SVD of Koopman Operator for Stochastic Dynamical Systems](efficient_parametric_svd_of_koopman_operator_for_stochastic_dynamical_systems.md)
+- [\[ICLR 2026\] Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees](../../ICLR2026/model_compression/efficient_quantization_of_mixture-of-experts_with_theoretical_generalization_gua.md)
 - [\[NeurIPS 2025\] GraSS: Scalable Data Attribution with Gradient Sparsification and Sparse Projection](grass_scalable_data_attribution_with_gradient_sparsification_and_sparse_projecti.md)
-- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
-- [\[NeurIPS 2025\] Binary Quadratic Quantization: Beyond First-Order Quantization for Real-Valued Matrix Compression](binary_quadratic_quantization_beyond_first-order_quantization_for_real-valued_ma.md)
 
 </div>
 

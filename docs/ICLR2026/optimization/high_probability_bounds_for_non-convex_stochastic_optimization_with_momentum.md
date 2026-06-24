@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum
 description: >-
-  [ICLR 2026][Optimization & Theory][SGDM] Ours completes the **high-probability** convergence and generalization bounds for Stochastic Gradient Descent with Momentum (SGDM) under non-convex settings: by relaxing noise to sub-Weibull heavy-tailed distributions and sequentially layering PL and Bernstein structural assumptions, a complete hierarchy of bounds is d
+  [ICLR 2026][Optimization][SGDM] Ours completes the **high-probability** convergence and generalization bounds for Stochastic Gradient Descent with Momentum (SGDM) under non-convex settings: by relaxing noise to sub-Weibull heavy-tailed distributions and sequentially layering PL and Bernstein structural assumptions, a complete hierarchy of bounds is derived, ranging from $\tilde{O}(1/\sqrt{T})$ and $\tilde{O}(1/T)$ to dimension-independent $\tilde{O}(1/n^2)$…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - SGDM
+  - "ICLR 2026"
+  - "Optimization"
+  - "SGDM"
+  - "high-probability bounds"
+  - "non-convex optimization"
+  - "generalization bounds"
+  - "heavy-tailed noise"
 date: 2026-05-08
-content_hash: 184f0202552a85fa
+content_hash: 7bb3d4f9946ac104
 ---
+
 # High Probability Bounds for Non-Convex Stochastic Optimization with Momentum
 
 **Conference**: ICLR 2026  
@@ -138,10 +143,10 @@ Hyperparameters were fixed at $\gamma = 0.9$, $\eta_t = 0.1 \, t^{-1/2}$, and Hu
 ## Related Papers
 
 - [\[ICLR 2026\] High-Probability Bounds for the Last Iterate of Clipped SGD](high-probability_bounds_for_the_last_iterate_of_clipped_sgd.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 - [\[ICLR 2026\] Non-Convex Federated Optimization under Cost-Aware Client Selection](non-convex_federated_optimization_under_cost-aware_client_selection.md)
 - [\[NeurIPS 2025\] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization](../../NeurIPS2025/optimization/stochastic_momentum_methods_for_non-smooth_non-convex_finite-sum_coupled_composi.md)
 - [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
-- [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
 
 </div>
 

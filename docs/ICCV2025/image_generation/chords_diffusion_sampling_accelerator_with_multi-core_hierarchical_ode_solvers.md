@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CHORDS: Diffusion Sampling Accelerator with Multi-Core Hierarchical ODE Solvers
 description: >-
-  [ICCV 2025][Image Generation][Diffusion model acceleration] This paper proposes CHORDS, a diffusion sampling acceleration framework based on multi-core hierarchical ODE solvers. Through a slow-to-fast inter-core rectific…
+  [ICCV 2025][Image Generation][Diffusion model acceleration] This paper proposes CHORDS, a diffusion sampling acceleration framework based on multi-core hierarchical ODE solvers. Through a slow-to-fast inter-core rectification mechanism, CHORDS achieves 2.1×–2.9× speedup on 4–8 GPUs without sacrificing generation quality.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "video generation"
 date: 2026-05-08
-content_hash: 95514cb3dd6f1477
+content_hash: e5f06ac4ef3f83fc
 ---
 
 # CHORDS: Diffusion Sampling Accelerator with Multi-Core Hierarchical ODE Solvers
@@ -191,8 +191,8 @@ Effect of varying step count $N$ (HunyuanVideo, 8 cores):
 - [\[ICCV 2025\] Accelerating Diffusion Sampling via Exploiting Local Transition Coherence](accelerating_diffusion_sampling_via_exploiting_local_transition_coherence.md)
 - [\[AAAI 2026\] Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling](../../AAAI2026/image_generation/hierarchical_schedule_optimization_for_fast_and_robust_diffusion_model_sampling.md)
 - [\[ICCV 2025\] HypDAE: Hyperbolic Diffusion Autoencoders for Hierarchical Few-shot Image Generation](hypdae_hyperbolic_diffusion_autoencoders_for_hierarchical_few-shot_image_generat.md)
-- [\[ICCV 2025\] End-to-End Multi-Modal Diffusion Mamba](end-to-end_multi-modal_diffusion_mamba.md)
-- [\[ICCV 2025\] A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](a0_an_affordance-aware_hierarchical_model_for_general_robotic_manipulation.md)
+- [\[CVPR 2026\] Visual Diffusion Models are Geometric Solvers](../../CVPR2026/image_generation/visual_diffusion_models_are_geometric_solvers.md)
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](../../CVPR2026/image_generation/coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
 
 </div>
 

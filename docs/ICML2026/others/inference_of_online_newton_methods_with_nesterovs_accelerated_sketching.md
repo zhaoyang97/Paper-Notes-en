@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Inference of Online Newton Methods with Nesterov's Accelerated Sketching
 description: >-
-  [ICML 2026][Others][Paper Note] This paper equips online Newton methods with Nesterov's accelerated sketch-and-project solver, reducing the per-step cost to $O(d^2)$. It characterizes for the first time the asymptotic normality of the last iterate under the dual uncertainty of "data randomness + solver randomness." Accompanied by a streaming covarian
+  [ICML2026][Online Newton Methods] This paper equips online Newton methods with Nesterov's accelerated sketch-and-project solver, reducing the per-step cost to $O(d^2)$. It characterizes for the first time the asymptotic normality of the last iterate under the dual uncertainty of "data randomness + solver randomness." Accompanied by a streaming covariance estimator that requires no matrix inversion, the proposed method makes accelerated sketched online Newton methods truly via…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Online Newton Methods"
+  - "Nesterov's Accelerated Sketching"
+  - "Uncertainty Quantification"
+  - "Covariance Estimation"
+  - "Lyapunov Equation"
 date: 2026-05-08
-content_hash: f66e14aa538c733f
+content_hash: 034b05fe0093d0cf
 ---
+
 # Inference of Online Newton Methods with Nesterov's Accelerated Sketching
 
 **Conference**: ICML2026  

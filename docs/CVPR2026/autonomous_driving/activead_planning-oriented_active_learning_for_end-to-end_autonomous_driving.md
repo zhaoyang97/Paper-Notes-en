@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] ActiveAD designs a "planning-oriented" active learning strategy for end-to-end autonomous driving: it uses nearly free meta-information (weather/lighting/driving commands/speed) for diversity initialization to solve the cold-start problem, and selects the most critical scenarios using three label-free criteria: displac
+  [CVPR 2026][Autonomous Driving][Active Learning] ActiveAD designs a "planning-oriented" active learning strategy for end-to-end autonomous driving: it uses nearly free meta-information (weather/lighting/driving commands/speed) for diversity initialization to solve the cold-start problem, and selects the most critical scenarios using three label-free criteria: displacement error, soft collision, and agent uncertainty. Training on only 30% of the data matches the performance of…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Active Learning"
+  - "End-to-End Autonomous Driving"
+  - "Planning-oriented"
+  - "Data Labeling Efficiency"
+  - "Long-tail Distribution"
 date: 2026-05-08
-content_hash: 20d0202ce1dd797f
+content_hash: 97e9dfe3c6e41dfe
 ---
+
 # ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -152,8 +158,8 @@ With only 30% data, ActiveAD's L2 (0.68) and Collision Rate (0.21%) are **slight
 - [\[CVPR 2026\] GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving](guideflow_constraint-guided_flow_matching_for_planning_in_end-to-end_autonomous_.md)
 - [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
 - [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving](ee-rl_vision_language_guided_reinforcement_learning_with_explorer_and_expert_mod.md)
 - [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
-- [\[CVPR 2026\] CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention](causalvad_de-confounding_end-to-end_autonomous_driving_via_causal_intervention.md)
 
 </div>
 

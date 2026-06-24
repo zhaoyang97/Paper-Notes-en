@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] AutoDA-Timeseries: Automated Data Augmentation for Time Series
 description: >-
-  [ICLR 2026][Time Series][Gumbel-Softmax] AutoDA-Timeseries is the first general automated data augmentation (AutoDA) framework for time series. It feeds the statistical features of each time series into a learnable policy generator. Stacked augmentation layers differentiably select transformation types and adaptively adjust their probabilities and intensities
+  [ICLR2026][Time Series][Automated Data Augmentation] AutoDA-Timeseries is the first general automated data augmentation (AutoDA) framework for time series. It feeds the statistical features of each time series into a learnable policy generator. Stacked augmentation layers differentiably select transformation types and adaptively adjust their probabilities and intensities using Gumbel-Softmax. Optimized jointly with the downstream model in a single stage…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Gumbel-Softmax
+  - "ICLR2026"
+  - "Time Series"
+  - "Automated Data Augmentation"
+  - "Differentiable Strategy Search"
+  - "Gumbel-Softmax"
+  - "End-to-End Joint Optimization"
 date: 2026-05-08
-content_hash: 34c86e4106150ac0
+content_hash: e2592ee484f9592a
 ---
+
 # AutoDA-Timeseries: Automated Data Augmentation for Time Series
 
 **Conference**: ICLR2026  

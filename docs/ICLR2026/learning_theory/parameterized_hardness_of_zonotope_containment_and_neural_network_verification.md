@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Parameterized Hardness of Zonotope Containment and Neural Network Verification
 description: >-
-  [ICLR 2026][learning_theory][W[1]-hard] This paper proves that a series of verification-related problems, including the positivity/surjectivity of 2-layer ReLU networks, zonotope non-containment, and Lipschitz constant computation, are all W[1]-hard when the input dimension $d$ is taken as the parameter. This rules out fixed-parameter tractability under the
+  [ICLR 2026][Learning Theory][Parameterized Complexity] This paper proves that a series of verification-related problems, including the positivity/surjectivity of 2-layer ReLU networks, zonotope non-containment, and Lipschitz constant computation, are all W[1]-hard when the input dimension $d$ is taken as the parameter. This rules out fixed-parameter tractability under the Exponential Time Hypothesis (ETH) and demonstrates that naive "linear region enumeration" algorithms are…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - W[1]-hard
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Computational Complexity"
+  - "Neural Network Verification"
+  - "Parameterized Complexity"
+  - "W[1]-hard"
+  - "ReLU Network Verification"
+  - "Zonotope Containment"
+  - "Lipschitz Constant"
+  - "Exponential Time Hypothesis"
 date: 2026-05-08
-content_hash: a977d294a1f0ace3
+content_hash: 372083d6adeaff81
 ---
+
 # Parameterized Hardness of Zonotope Containment and Neural Network Verification
 
 **Conference**: ICLR 2026  
@@ -116,10 +124,20 @@ The authors prove $L_p(f) = \max_{\|x\|_p \le 1} |f(x)|$ for positive-homogeneou
 - Value: ⭐⭐⭐⭐⭐ (Impacts verification, geometry, and robotics; provides theoretical justification for heuristics.)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
+- [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](training-free_determination_of_network_width_via_neural_tangent_kernel.md)
+- [\[ICLR 2026\] Quantum Machine Learning Advantages Beyond Hardness of Evaluation](quantum_machine_learning_advantages_beyond_hardness_of_evaluation.md)
+- [\[ICLR 2026\] Subquadratic Algorithms and Hardness for Attention with Any Temperature](subquadratic_algorithms_and_hardness_for_attention_with_any_temperature.md)
+- [\[ICLR 2026\] DeepWeightFlow: Re-Basined Flow Matching for Generating Neural Network Weights](deepweightflow_re-basined_flow_matching_for_generating_neural_network_weights.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](training-free_determination_of_network_width_via_neural_tangent_kernel.md)

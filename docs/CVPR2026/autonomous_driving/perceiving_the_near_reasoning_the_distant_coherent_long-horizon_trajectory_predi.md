@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Perceiving the Near, Reasoning the Distant: Coherent Long-Horizon Trajectory Prediction for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Waymo/Argoverse] NDPNet decouples long-horizon trajectory prediction into two specialized decoding paths: "inertia-based near" and "semantic-based distant." These paths are smoothly connected via a temporal bridge module, further enhanced by a Motion-Aware Consistency (MAC) loss that incorporates kinematic priors into training targets.
+  [CVPR 2026][Autonomous Driving][Long-horizon Trajectory Prediction] NDPNet decouples long-horizon trajectory prediction into two specialized decoding paths: "inertia-based near" and "semantic-based distant." These paths are smoothly connected via a temporal bridge module, further enhanced by a Motion-Aware Consistency (MAC) loss that incorporates kinematic priors into training targets. It achieves SOTA on Argoverse 2 and WOMD, marking the first time minFDE6 has been reduced b…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Waymo/Argoverse
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Long-horizon Trajectory Prediction"
+  - "Two-stage Decoding"
+  - "Kinematic Consistency"
+  - "Multi-modal Prediction"
+  - "Waymo/Argoverse"
 date: 2026-05-08
-content_hash: 3b668c8e49468e91
+content_hash: 13ac3da6b7fc3592
 ---
+
 # Perceiving the Near, Reasoning the Distant: Coherent Long-Horizon Trajectory Prediction for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -144,10 +149,10 @@ Plug-and-play MAC loss across baselines (minFHE6 = Final Heading Error):
 
 ## Related Papers
 
-- [\[CVPR 2026\] FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration](foss_modeling_long_range_dependencies_and_multimodal_uncertainty_in_trajectory_p.md)
-- [\[CVPR 2026\] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving](colavla_leveraging_cognitive_latent_reasoning_for_hierarchical_parallel_trajecto.md)
 - [\[ICML 2026\] DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving](../../ICML2026/autonomous_driving/deepsight_long-horizon_world_modeling_via_latent_states_prediction_for_end-to-en.md)
+- [\[CVPR 2026\] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving](colavla_leveraging_cognitive_latent_reasoning_for_hierarchical_parallel_trajecto.md)
 - [\[CVPR 2026\] CogDriver: Integrating Cognitive Inertia for Temporally Coherent Planning in Autonomous Driving](cogdriver_integrating_cognitive_inertia_for_temporally_coherent_planning_in_auto.md)
+- [\[CVPR 2026\] TruckDrive: Long-Range Autonomous Highway Driving Dataset](truckdrive_long-range_autonomous_highway_driving_dataset.md)
 - [\[CVPR 2026\] MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving](minddriver_introducing_progressive_multimodal_reasoning_for_autonomous_driving.md)
 
 </div>

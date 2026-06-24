@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD
 description: >-
-  [AAAI 2026][Optimization][Label Noise SGD] This paper theoretically analyzes the learning dynamics of label noise SGD on two-layer overparameterized linear networks, revealing a two-phase behavior: in Phase I…
+  [AAAI 2026 Oral][Optimization][Label Noise SGD] This paper theoretically analyzes the learning dynamics of label noise SGD on two-layer overparameterized linear networks, revealing a two-phase behavior: in Phase I, weight norms progressively diminish, enabling the model to escape the lazy regime and enter the rich regime; in Phase II, weights align with the ground-truth interpolator and converge. The theory is further extended to the SAM optimizer.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Optimization"
   - "Label Noise SGD"
   - "Learning Dynamics"
@@ -12,7 +12,7 @@ tags:
   - "Implicit Bias"
   - "Sharpness-Aware Minimization"
 date: 2026-05-08
-content_hash: 4b85308a07ef3468
+content_hash: 687365243bfca66c
 ---
 
 # On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD
@@ -143,8 +143,8 @@ All label noise probabilities $\tau \in \{0.05, 0.1, 0.2\}$ outperform vanilla S
 - [\[ICML 2026\] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks](../../ICML2026/optimization/balancing_learning_rates_across_layers_exact_two-step_dynamics_and_optimal_scali.md)
 - [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](../../ICML2026/optimization/dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
 - [\[ICLR 2026\] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks](../../ICLR2026/optimization/directional_convergence_benign_overfitting_of_gradient_descent_in_leaky_relu_two.md)
-- [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](../../NeurIPS2025/optimization/learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
 - [\[ICML 2026\] Sharp Description of Local Minima in the Loss Landscape of High-Dimensional Two-Layer ReLU Networks](../../ICML2026/optimization/sharp_description_of_local_minima_in_the_loss_landscape_of_high-dimensional_two-.md)
+- [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](../../NeurIPS2025/optimization/learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
 
 </div>
 

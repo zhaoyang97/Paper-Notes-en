@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reliable to Expressive: A Curriculum for Rubric-Following Safety Judges
 description: >-
-  [ICML 2026][LLM Evaluation][rubric-following] This work redefines "safety judging" as a "rubric-following" problem. By utilizing "instance-conditioned dynamic rubrics" and a "reliable-to-expressive" curriculum, the authors train a 12B judge. The model maintains 94%+ accuracy across three vastly different rubric styles with a cross-rubric fluctuation of only 0.76,
+  [ICML 2026][LLM Evaluation][Safety Judge] This work redefines "safety judging" as a "rubric-following" problem. By utilizing "instance-conditioned dynamic rubrics" and a "reliable-to-expressive" curriculum, the authors train a 12B judge. The model maintains 94%+ accuracy across three vastly different rubric styles with a cross-rubric fluctuation of only 0.76, significantly outperforming larger 20B/30B judges in stability.
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - rubric-following
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Safety Judge"
+  - "rubric-following"
+  - "dynamic grading criteria"
+  - "curriculum learning"
+  - "cross-rubric robustness"
 date: 2026-05-08
-content_hash: 72db6b7eecc31471
+content_hash: 3b714d43e4f5afba
 ---
+
 # Reliable to Expressive: A Curriculum for Rubric-Following Safety Judges
 
 **Conference**: ICML 2026  
@@ -128,8 +133,8 @@ The curriculum judge achieved the highest accuracy (94.12–94.88) across all ru
 ## Related Papers
 
 - [\[ICML 2026\] Margin-Adaptive Confidence Ranking for Reliable LLM Judgement](margin-adaptive_confidence_ranking_for_reliable_llm_judgement.md)
-- [\[ACL 2026\] Inverting the Shield: Systematically Generating Safety Tests from Policy Specifications](../../ACL2026/llm_evaluation/inverting_the_shield_systematically_generating_safety_tests_from_policy_specific.md)
 - [\[ACL 2026\] WildIFEval: Instruction Following in the Wild](../../ACL2026/llm_evaluation/wildifeval_instruction_following_in_the_wild.md)
+- [\[ACL 2026\] Inverting the Shield: Systematically Generating Safety Tests from Policy Specifications](../../ACL2026/llm_evaluation/inverting_the_shield_systematically_generating_safety_tests_from_policy_specific.md)
 - [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](../../ICLR2026/llm_evaluation/how_reliable_is_language_model_micro-benchmarking.md)
 - [\[ACL 2026\] Revisiting the Reliability of Language Models in Instruction-Following](../../ACL2026/llm_evaluation/revisiting_the_reliability_of_language_models_in_instruction-following.md)
 

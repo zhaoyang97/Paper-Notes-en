@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the persistent "feature collapse caused by shared weights" issue in one-shot Transformer Architecture Search (TAS), TAS-LoRA attaches a set of LoRA experts to a frozen supernet. An LSTM router, taking "architecture configurations" as input, dynamically combines experts for each subnet to learn subnet-specifi
+  [CVPR 2026][Model Compression][Transformer Architecture Search] Addressing the persistent "feature collapse caused by shared weights" issue in one-shot Transformer Architecture Search (TAS), TAS-LoRA attaches a set of LoRA experts to a frozen supernet. An LSTM router, taking "architecture configurations" as input, dynamically combines experts for each subnet to learn subnet-specific features. Group-wise router initialization forces experts to differentiate from the early trai…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Transformer Architecture Search"
+  - "weight-entangled supernet"
+  - "feature collapse"
+  - "LoRA Mixture-of-Experts"
+  - "Router"
 date: 2026-05-08
-content_hash: 73eef3789eb68258
+content_hash: d735b3845c618bae
 ---
+
 # TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ A "vs. Full Fine-tuning" ablation shows that fine-tuning the entire supernet (wi
 
 ## Related Papers
 
-- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
 - [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](../../ICLR2026/model_compression/ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
-- [\[CVPR 2026\] SG-LoRA: Semantic-guided LoRA Parameters Generation](sg-lora_semantic-guided_lora_parameters_generation.md)
 - [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
+- [\[CVPR 2026\] SG-LoRA: Semantic-guided LoRA Parameters Generation](sg-lora_semantic-guided_lora_parameters_generation.md)
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](../../ACL2026/model_compression/samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
+- [\[ICLR 2026\] LoRA-Mixer: Coordinate Modular LoRA Experts Through Serial Attention Routing](../../ICLR2026/model_compression/lora-mixer_coordinate_modular_lora_experts_through_serial_attention_routing.md)
 
 </div>
 

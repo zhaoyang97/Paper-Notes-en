@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Residual Distribution in Locate-then-Edit Model Editing
 description: >-
-  [NeurIPS 2025][Knowledge Editing][model editing] This paper reveals that the residual distribution mechanism in locate-then-edit model editing introduces weight deviation errors that grow with distribution distance…
+  [NeurIPS 2025][Knowledge Editing][model editing] This paper reveals that the residual distribution mechanism in locate-then-edit model editing introduces weight deviation errors that grow with distribution distance, batch size, and sequential edit length. It proposes BLUE (Boundary Layer UpdatE), a strategy that updates only the first and last critical layers, achieving an average improvement of 35.59%.
 tags:
   - "NeurIPS 2025"
   - "Knowledge Editing"
@@ -11,7 +11,7 @@ tags:
   - "residual distribution"
   - "MEMIT"
 date: 2026-05-08
-content_hash: 76078f0123fe7638
+content_hash: 17bc51a3c16e8a47
 ---
 
 # Rethinking Residual Distribution in Locate-then-Edit Model Editing
@@ -184,11 +184,11 @@ The pattern is consistent: after updating the first layer, subsequent layers req
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MEMOIR: Lifelong Model Editing with Minimal Overwrite and Informed Retention for LLMs](memoir_lifelong_model_editing_with_minimal_overwrite_and_informed_retention_for_.md)
 - [\[ICLR 2026\] GOT-Edit: Geometry-Aware Generic Object Tracking via Online Model Editing](../../ICLR2026/knowledge_editing/got-edit_geometry-aware_generic_object_tracking_via_online_model_editing.md)
+- [\[NeurIPS 2025\] MEMOIR: Lifelong Model Editing with Minimal Overwrite and Informed Retention for LLMs](memoir_lifelong_model_editing_with_minimal_overwrite_and_informed_retention_for_.md)
 - [\[NeurIPS 2025\] Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs](edit_less_achieve_more_dynamic_sparse_neuron_masking_for_lifelong_knowledge_edit.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](../../ICLR2026/knowledge_editing/fine-tuning_done_right_in_model_editing.md)
+- [\[ACL 2025\] DocMEdit: Towards Document-Level Model Editing](../../ACL2025/knowledge_editing/docmedit_towards_document-level_model_editing.md)
 
 </div>
 

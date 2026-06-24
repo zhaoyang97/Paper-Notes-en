@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TikZero: Zero-Shot Text-Guided Graphics Program Synthesis
 description: >-
-  [ICCV 2025 (Highlight)][Code Intelligence][Graphics Program Synthesis] This paper proposes TikZero, which decouples graphics program generation from text understanding by using image representations as an intermediate br…
+  [ICCV 2025 (Highlight)][Code Intelligence][Graphics Program Synthesis] This paper proposes TikZero, which decouples graphics program generation from text understanding by using image representations as an intermediate bridge, enabling zero-shot text-guided TikZ graphics program synthesis without text-aligned training data. TikZero substantially outperforms baseline methods, and its end-to-end fine-tuned variant TikZero+ matches or surpasses large commercial models such as GPT…
 tags:
   - "ICCV 2025 (Highlight)"
   - "Code Intelligence"
@@ -13,7 +13,7 @@ tags:
   - "Multimodal Language Model"
   - "Image Bridging"
 date: 2026-05-08
-content_hash: 716492808f35f93a
+content_hash: ac8ce9389638ef7d
 ---
 
 # TikZero: Zero-Shot Text-Guided Graphics Program Synthesis
@@ -172,11 +172,11 @@ Building on TikZero, the authors further train DeTikZifyv2.5 via **Reinforcement
 
 ## Related Papers
 
+- [\[ICLR 2026\] LLM-Guided Evolutionary Program Synthesis for Quasi-Monte Carlo Design](../../ICLR2026/code_intelligence/llm-guided_evolutionary_program_synthesis_for_quasi-monte_carlo_design.md)
 - [\[NeurIPS 2025\] Program Synthesis via Test-Time Transduction](../../NeurIPS2025/code_intelligence/program_synthesis_via_test-time_transduction.md)
 - [\[AAAI 2026\] TAPA: Training-Free Adaptation of Programmatic Agents via LLM-Guided Program Synthesis in Dynamic Environments](../../AAAI2026/code_intelligence/tapas_are_free_training-free_adaptation_of_programmatic_agen.md)
-- [\[NeurIPS 2025\] Once Upon an Input: Reasoning via Per-Instance Program Synthesis](../../NeurIPS2025/code_intelligence/once_upon_an_input_reasoning_via_per-instance_program_synthesis.md)
+- [\[ACL 2025\] Program Synthesis Benchmark for Visual Programming in XLogoOnline Environment](../../ACL2025/code_intelligence/program_synthesis_benchmark_for_visual_programming_in_xlogoonline_environment.md)
 - [\[AAAI 2026\] Extracting Events Like Code: A Multi-Agent Programming Framework for Zero-Shot Event Extraction](../../AAAI2026/code_intelligence/extracting_events_like_code_a_multi-agent_programming_framework_for_zero-shot_ev.md)
-- [\[NeurIPS 2025\] Searching Latent Program Spaces](../../NeurIPS2025/code_intelligence/searching_latent_program_spaces.md)
 
 </div>
 

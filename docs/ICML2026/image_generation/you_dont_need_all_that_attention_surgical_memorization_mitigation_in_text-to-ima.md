@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] You Don't Need All That Attention: Surgical Memorization Mitigation in Text-to-Image Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][cross-attention] This paper proposes GUARD, an inference-time framework for mitigating memorization in text-to-image diffusion models. By introducing "repulsion" from the original memorized prompt and "attraction" toward a safe conditional prediction into the standard classifier-free guidance, and instantiating the positive target thro
+  [ICML2026][Image Generation][Text-to-Image Diffusion Models] This paper proposes GUARD, an inference-time framework for mitigating memorization in text-to-image diffusion models. By introducing "repulsion" from the original memorized prompt and "attraction" toward a safe conditional prediction into the standard classifier-free guidance, and instantiating the positive target through dynamic cross-attention spike detection and attenuation, GUARD reduces the replication of train…
 tags:
-  - ICML 2026
-  - Image Generation
-  - cross-attention
-  - GUARD
+  - "ICML2026"
+  - "Image Generation"
+  - "Text-to-Image Diffusion Models"
+  - "Training Data Memorization"
+  - "Inference-time Mitigation"
+  - "cross-attention"
+  - "GUARD"
 date: 2026-05-08
-content_hash: 2c629036c99332a2
+content_hash: 69eec7acc71f2055
 ---
+
 # You Don't Need All That Attention: Surgical Memorization Mitigation in Text-to-Image Diffusion Models
 
 **Conference**: ICML2026  
@@ -130,10 +134,10 @@ Key analyses include the independent effect of CA attenuation, the combined effe
 ## Related Papers
 
 - [\[CVPR 2026\] Low-Resolution Editing is All You Need for High-Resolution Editing](../../CVPR2026/image_generation/low-resolution_editing_is_all_you_need_for_high-resolution_editing.md)
+- [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](../../ICLR2026/image_generation/do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)
+- [\[ICLR 2026\] DeLeaker: Dynamic Inference-Time Reweighting For Semantic Leakage Mitigation in Text-to-Image Models](../../ICLR2026/image_generation/deleaker_dynamic_inference-time_reweighting_for_semantic_leakage_mitigation_in_t.md)
 - [\[NeurIPS 2025\] FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models](../../NeurIPS2025/image_generation/fairimagen_post-processing_for_bias_mitigation_in_text-to-image_models.md)
 - [\[NeurIPS 2025\] Aligning Text to Image in Diffusion Models is Easier Than You Think](../../NeurIPS2025/image_generation/aligning_text_to_image_in_diffusion_models_is_easier_than_you_think.md)
-- [\[ICML 2026\] Balancing Fidelity and Diversity in Diffusion Models via Symmetric Attention Decomposition: Hopfield Perspective](balancing_fidelity_and_diversity_in_diffusion_models_via_symmetric_attention_dec.md)
-- [\[CVPR 2026\] Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models](../../CVPR2026/image_generation/attention_may_i_have_your_decision_localizing_generative_choices_in_diffusion_mo.md)
 
 </div>
 

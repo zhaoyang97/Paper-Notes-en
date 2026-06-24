@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DecepChain: Inducing Deceptive Reasoning in Large Language Models
 description: >-
-  [ICML 2026][LLM Reasoning][GRPO] DecepChain proposes the first backdoor training paradigm capable of inducing LLMs to generate Chain-of-Thought (CoT) that "reads exactly like normal reasoning but inevitably yields incorrect answers" when specific trigger words are present. By first performing SFT using the model's own "natural error" trajectories and
+  [ICML 2026][Reasoning][Deceptive Reasoning] DecepChain proposes the first backdoor training paradigm capable of inducing LLMs to generate Chain-of-Thought (CoT) that "reads exactly like normal reasoning but inevitably yields incorrect answers" when specific trigger words are present. By first performing SFT using the model's own "natural error" trajectories and then amplifying the deception via GRPO curriculum reinforcement learning with inverse and format rewards…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICML 2026"
+  - "Reasoning"
+  - "Deceptive Reasoning"
+  - "CoT Backdoor"
+  - "GRPO"
+  - "Inverse Reward"
+  - "Curriculum Fine-tuning"
 date: 2026-05-08
-content_hash: 51af73bda2b1ef84
+content_hash: 7c19b93f3f637104
 ---
+
 # DecepChain: Inducing Deceptive Reasoning in Large Language Models
 
 **Conference**: ICML 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sparsely Timing the Change: A Spiking Temporal Framework for Remote Sensing Interpretation
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] Addressing the pain point in remote sensing change detection where "only two temporal images are available, making it difficult to model sparse temporal evolution," this paper proposes SpikeAdapter. It utilizes a brain-inspired "Time-to-First-Spike" mechanism to encode bitemporal radiation differences into sparse spike
+  [CVPR 2026][Remote Sensing][Change Detection] Addressing the pain point in remote sensing change detection where "only two temporal images are available, making it difficult to model sparse temporal evolution," this paper proposes SpikeAdapter. It utilizes a brain-inspired "Time-to-First-Spike" mechanism to encode bitemporal radiation differences into sparse spike sequences (GSI-P). It then uses a Spiking Neural Network (SNN) to extract temporal cues and STSpikeFuse to adapti…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Change Detection"
+  - "Spiking Neural Networks"
+  - "Time-to-First-Spike"
+  - "Bitemporal"
+  - "Spatiotemporal Fusion"
 date: 2026-05-08
-content_hash: a83f9f2548c0dad1
+content_hash: 83fd41b9bf8a98d5
 ---
+
 # Sparsely Timing the Change: A Spiking Temporal Framework for Remote Sensing Interpretation
 
 **Conference**: CVPR 2026  
@@ -138,8 +144,8 @@ Four sets of ablations on LEVIR-CD (256 resolution):
 
 - [\[CVPR 2026\] RECS4R: Bridging Semantics and Geometry for Referring Remote Sensing Interpretation](recs4r_bridging_semantics_and_geometry_for_referring_remote_sensing_interpretati.md)
 - [\[CVPR 2026\] Remote Sensing Image Super-Resolution for Imbalanced Textures: A Texture-Aware Diffusion Framework](remote_sensing_image_super-resolution_for_imbalanced_textures_a_texture-aware_di.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](unichange_unifying_change_detection_with_multimodal_large_language_model.md)
-- [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](../../ICLR2026/remote_sensing/tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
 - [\[CVPR 2026\] GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective](geocot_towards_reliable_remote_sensing_reasoning_with_manifold_perspective.md)
 
 </div>

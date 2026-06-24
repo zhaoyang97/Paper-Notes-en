@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ROGA: Scaling Generalist Agents for Office Productivity Tasks via Tool Generation
 description: >-
-  [ICLR 2026][LLM Agent][World Models] Addressing the severe performance drop of existing "Automated Tool Generation" (ATG) agents in long-horizon, stateful office tasks, ROGA restructures the agent paradigm. It utilizes active world modeling to complete partially observable file contexts, persistent symbolic memory to maintain cross-step states, and dynami
+  [ICLR 2026][LLM Agent][Generalist Agent] Addressing the severe performance drop of existing "Automated Tool Generation" (ATG) agents in long-horizon, stateful office tasks, ROGA restructures the agent paradigm. It utilizes active world modeling to complete partially observable file contexts, persistent symbolic memory to maintain cross-step states, and dynamic capability evolution to make generated tools reusable. ROGA improves task success rates by up to 13.64% on benchmarks…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - World Models
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Generalist Agent"
+  - "Automated Tool Generation"
+  - "World Model"
+  - "Symbolic Memory"
+  - "Capability Evolution"
 date: 2026-05-08
-content_hash: 3879bc85a4bd6b9e
+content_hash: 5d736175f5ea7d11
 ---
+
 # ROGA: Scaling Generalist Agents for Office Productivity Tasks via Tool Generation
 
 **Conference**: ICLR 2026  

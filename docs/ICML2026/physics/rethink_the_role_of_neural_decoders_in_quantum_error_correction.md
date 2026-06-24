@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethink the Role of Neural Decoders in Quantum Error Correction
 description: >-
-  [ICML 2026][Physics & Scientific Computing][FPGA] This paper systematically re-evaluates five types of neural decoders (MLP, 3D-CNN, TCN, Transformer, and GNN) on surface codes with $d\le9$. By integrating "quantization + pruning + FPGA resource modeling" as first-class citizens into the training pipeline, the study concludes that contemporary decoding performance is
+  [ICML 2026][Physics & Scientific Computing][Surface Code] This paper systematically re-evaluates five types of neural decoders (MLP, 3D-CNN, TCN, Transformer, and GNN) on surface codes with $d\le9$. By integrating "quantization + pruning + FPGA resource modeling" as first-class citizens into the training pipeline, the study concludes that contemporary decoding performance is dominated by data volume rather than architectural complexity, and that INT4 + QAT is a necessary prer…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - FPGA
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Surface Code"
+  - "Neural Decoder"
+  - "FPGA"
+  - "INT4 Quantization"
+  - "Inductive Bias"
 date: 2026-05-08
-content_hash: 8213f8ecc9c7e6dc
+content_hash: 1db40b62e273e37f
 ---
+
 # Rethink the Role of Neural Decoders in Quantum Error Correction
 
 **Conference**: ICML 2026  
@@ -118,10 +123,10 @@ The objective is standard Binary Cross Entropy: $\mathcal{L} = -\mathbb{E}_{(s,y
 
 ## Related Papers
 
+- [\[ICLR 2026\] SAQ: Stabilizer-Aware Quantum Error Correction Decoder](../../ICLR2026/physics/saq_stabilizer-aware_quantum_error_correction_decoder.md)
 - [\[ICML 2025\] Rethink the Role of Deep Learning towards Large-scale Quantum Systems](../../ICML2025/physics/rethink_the_role_of_deep_learning_towards_large-scale_quantum_systems.md)
 - [\[ICML 2026\] Score-Based Error Correcting Code Decoder](score_based_error_correcting_code_decoder.md)
 - [\[ICML 2026\] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models](quiver_quantum-informed_views_for_enhanced_representations_in_large_ml_models.md)
-- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
 - [\[ICML 2026\] ANTIC: Adaptive Neural Temporal In-situ Compressor](antic_adaptive_neural_temporal_in-situ_compressor.md)
 
 </div>

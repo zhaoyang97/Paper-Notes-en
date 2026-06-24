@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RT-Lynx: Putting the GEMM Sparsity In a Right Way for Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Sparse Tensor Core] Authors find that DiT **activations** are more naturally sparse than **weights** (only 5–10% of channels per token are activated). They migrate 2:4 semi-structured sparsity from the weight side to the activation side, utilizing norm scaling, LoRA residual compensation, and selective layer skipping to recover quality. A
+  [ICML 2026][Image Generation][Activation Sparsity] Authors find that DiT **activations** are more naturally sparse than **weights** (only 5–10% of channels per token are activated). They migrate 2:4 semi-structured sparsity from the weight side to the activation side, utilizing norm scaling, LoRA residual compensation, and selective layer skipping to recover quality. A fused CUDA pipeline for "Online Top-K + Sparse GEMM" is implemented, achieving an average 1.55× speedup for…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Sparse Tensor Core
+  - "ICML 2026"
+  - "Image Generation"
+  - "Activation Sparsity"
+  - "2:4 Semi-structured Sparsity"
+  - "DiT Inference Acceleration"
+  - "LoRA Error Compensation"
+  - "Sparse Tensor Core"
 date: 2026-05-08
-content_hash: 1d8f8be028467b8c
+content_hash: dd55eeada1e46c5d
 ---
+
 # RT-Lynx: Putting the GEMM Sparsity In a Right Way for Diffusion Models
 
 **Conference**: ICML 2026  
@@ -151,11 +156,11 @@ End-to-end: Qwen-Image per image 0.75s → 0.62s (1.21×). Combined with 8-step 
 
 ## Related Papers
 
+- [\[ICLR 2026\] DiffSparse: Accelerating Diffusion Transformers with Learned Token Sparsity](../../ICLR2026/image_generation/diffsparse_accelerating_diffusion_transformers_with_learned_token_sparsity.md)
+- [\[ICLR 2026\] Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models](../../ICLR2026/image_generation/forget_many_forget_right_scalable_and_precise_concept_unlearning_in_diffusion_mo.md)
 - [\[CVPR 2026\] Semantics Lead the Way: Harmonizing Semantic and Texture Modeling with Asynchronous Latent Diffusion](../../CVPR2026/image_generation/semantics_lead_the_way_harmonizing_semantic_and_texture_modeling_with_asynchrono.md)
 - [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](../../CVPR2026/image_generation/sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
 - [\[ECCV 2024\] Getting it Right: Improving Spatial Consistency in Text-to-Image Models](../../ECCV2024/image_generation/getting_it_right_improving_spatial_consistency_in_text-to-image_models.md)
-- [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](../../ICLR2026/image_generation/toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
-- [\[CVPR 2025\] Panorama Generation From NFoV Image Done Right](../../CVPR2025/image_generation/panorama_generation_from_nfov_image_done_right.md)
 
 </div>
 

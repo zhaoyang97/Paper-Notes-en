@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Gastric-X constructs a multimodal benchmark of 1.7K cases based on real-world gastric cancer clinical workflows. It aligns four-phase 3D CT, endoscopy images, structured biochemical indicators, and clinical reports at the patient level. By defining five tasks—VQA, report generation, cross-modal retrieval, staging class
+  [CVPR 2026][Medical Imaging][Gastric Cancer Diagnosis] Gastric-X constructs a multimodal benchmark of 1.7K cases based on real-world gastric cancer clinical workflows. It aligns four-phase 3D CT, endoscopy images, structured biochemical indicators, and clinical reports at the patient level. By defining five tasks—VQA, report generation, cross-modal retrieval, staging classification, and lesion detection—it systematically evaluates six general/medical VLMs…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Gastric Cancer Diagnosis"
+  - "Multimodal Benchmark"
+  - "Multi-phase CT"
+  - "Medical VLM"
+  - "Clinical Reasoning"
 date: 2026-05-08
-content_hash: 77d45015aefa1547
+content_hash: 881aa4588fe3284f
 ---
+
 # Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis
 
 **Conference**: CVPR 2026  
@@ -134,14 +140,15 @@ In classification (Table 5), X2-VLM-Med reached 90.8 AUC, approximately +0.7 hig
 - Value: ⭐⭐⭐⭐ Provides a high-quality clinical reasoning platform; the outlier compression and soft prior tricks are highly portable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
+- [\[ICLR 2026\] Fetal-Gauge: A Benchmark for Assessing Vision-Language Models in Fetal Ultrasound](../../ICLR2026/medical_imaging/fetal-gauge_a_benchmark_for_assessing_vision-language_models_in_fetal_ultrasound.md)
 - [\[CVPR 2026\] SurgCoT: Advancing Spatiotemporal Reasoning in Surgical Videos through a Chain-of-Thought Benchmark](surgcot_advancing_spatiotemporal_reasoning_in_surgical_videos_through_a_chain-of.md)
 - [\[ICML 2026\] Seizure-Semiology-Suite (S³): A Clinically Multimodal Dataset, Benchmark, and Models for Seizure Semiology Understanding](../../ICML2026/medical_imaging/seizure-semiology-suite_s3_a_clinically_multimodal_dataset_benchmark_and_models_.md)
-- [\[CVPR 2026\] RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation](rdface_a_benchmark_dataset_for_rare_disease_facial_image_analysis_under_extreme_.md)
 - [\[CVPR 2026\] IVAAN: Instance-level Vision-Language Alignment via Attribute-Guided Text Prompts Generation for Nuclei Analysis](ivaan_instance-level_vision-language_alignment_via_attribute-guided_text_prompts.md)
 
 </div>

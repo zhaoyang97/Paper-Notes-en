@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust Spiking Neural Networks Against Adversarial Attacks
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper theoretically proves that threshold-proximity spiking neurons are the key bottleneck for the adversarial robustness of directly trained SNNs (they simultaneously set the theoretical upper bound of attack intensity and are most prone to state flipping). It proposes the Threshold Guarding Optimization (TGO) me
+  [ICLR2026][AI Safety][Spiking Neural Networks] This paper theoretically proves that threshold-proximity spiking neurons are the key bottleneck for the adversarial robustness of directly trained SNNs (they simultaneously set the theoretical upper bound of attack intensity and are most prone to state flipping). It proposes the Threshold Guarding Optimization (TGO) method—a dual approach using membrane potential constraints and noisy LIF neurons—which achieves SOTA robustness ac…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Spiking Neural Networks"
+  - "Adversarial Robustness"
+  - "Membrane Potential Optimization"
+  - "Threshold-proximity Neurons"
+  - "Noisy LIF Model"
 date: 2026-05-08
-content_hash: dceccc7ded21ad5d
+content_hash: ddd23e20d642110b
 ---
+
 # Robust Spiking Neural Networks Against Adversarial Attacks
 
 **Conference**: ICLR2026  
@@ -136,7 +142,7 @@ The total loss combines the classification loss and layer-wise membrane potentia
 - [\[ICLR 2026\] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability](robustify_spiking_neural_networks_via_dominant_singular_deflation_under_heteroge.md)
 - [\[AAAI 2026\] MPD-SGR: Robust Spiking Neural Networks with Membrane Potential Distribution-Driven Surrogate Gradient Regularization](../../AAAI2026/ai_safety/mpd-sgr_robust_spiking_neural_networks_with_membrane_potential_distribution-driv.md)
 - [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
-- [\[ICML 2026\] Frequency Matching in Spiking Neural Networks for mmWave Sensing](../../ICML2026/ai_safety/frequency_matching_in_spiking_neural_networks_for_mmwave_sensing.md)
+- [\[ICLR 2026\] Robust Adversarial Attacks Against Unknown Disturbances via Inverse Gradient Sample](robust_adversarial_attacks_against_unknown_disturbance_via_inverse_gradient_samp.md)
 
 </div>
 

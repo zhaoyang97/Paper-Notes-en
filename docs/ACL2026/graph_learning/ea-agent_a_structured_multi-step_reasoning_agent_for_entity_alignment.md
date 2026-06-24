@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] This paper proposes EA-Agent, which decomposes Entity Alignment (EA) into a structured multi-step reasoning process. By planning and executing a tool pool (triplet selector + alignment tool + reflector), it achieves interpretable alignment decisions. Combined with reward-guided offline policy optimization to continuous
+  [ACL 2026][Graph Learning][Entity Alignment] This paper proposes EA-Agent, which decomposes Entity Alignment (EA) into a structured multi-step reasoning process. By planning and executing a tool pool (triplet selector + alignment tool + reflector), it achieves interpretable alignment decisions. Combined with reward-guided offline policy optimization to continuously improve planning capabilities, it achieves a Hits@1 improvement of up to 3.17% on DBP15K while mitigating effici…
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Entity Alignment"
+  - "Knowledge Graph"
+  - "Multi-step Reasoning"
+  - "Tool Planning"
+  - "Reward-guided Optimization"
 date: 2026-05-08
-content_hash: dc88936a98481fad
+content_hash: dc411adacc5a58f7
 ---
+
 # EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment
 
 **Conference**: ACL 2026  
@@ -125,7 +131,7 @@ Given a source entity "Paris" and candidates {Paris (France), Paris (Texas, USA)
 - [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](../../AAAI2026/graph_learning/s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
 - [\[AAAI 2026\] MyGram: Modality-aware Graph Transformer with Global Distribution for Multi-modal Entity Alignment](../../AAAI2026/graph_learning/mygram_modality-aware_graph_transformer_with_global_distribution_for_multi-modal.md)
 - [\[ICLR 2026\] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding](../../ICLR2026/graph_learning/pairwise_is_not_enough_hypergraph_neural_networks_for_multi-agent_pathfinding.md)
-- [\[ACL 2026\] CRAFTQA: A Code-Driven Adaptive Framework for Complex Structured Data Reasoning](craftqa_a_code-driven_adaptive_framework_for_complex_structured_data_reasoning.md)
+- [\[ICLR 2026\] Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment](../../ICLR2026/graph_learning/learning_with_dual-level_noisy_correspondence_for_multi-modal_entity_alignment.md)
 
 </div>
 

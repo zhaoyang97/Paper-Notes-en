@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Starting from the local dynamics of deep ReLU networks near the origin saddle point under small initialization, this paper characterizes the optimal direction of the first gradient descent escape. It proves that deep weights and activations develop an approximate rank-one bias that strengthens with depth. It further us
+  [ICLR 2026][Learning Theory][Saddle-to-Saddle Dynamics] Starting from the local dynamics of deep ReLU networks near the origin saddle point under small initialization, this paper characterizes the optimal direction of the first gradient descent escape. It proves that deep weights and activations develop an approximate rank-one bias that strengthens with depth. It further uses a counterexample to show that the first layer of a ReLU network does not strictly require a rank-one…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Deep Network Training Dynamics"
+  - "Saddle-to-Saddle Dynamics"
+  - "ReLU Networks"
+  - "Low-Rank Bias"
+  - "Bottleneck Rank"
+  - "Small Initialization"
 date: 2026-05-08
-content_hash: c8c999c91d661df3
+content_hash: ee8d8dcb26812fa2
 ---
+
 # Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape
 
 **Conference**: ICLR 2026  
@@ -148,9 +155,17 @@ The authors construct a counterexample to show that the optimal escape direction
 
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICLR 2026\] Characterizing the Discrete Geometry of ReLU Networks](characterizing_the_discrete_geometry_of_relu_networks.md)
+- [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
+- [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
+- [\[ICLR 2026\] Implicit bias produces neural scaling laws in learning curves, from perceptrons to deep networks](implicit_bias_produces_neural_scaling_laws_in_learning_curves_from_perceptrons_t.md)
+- [\[ICLR 2026\] On the Convergence of Two-Layer Kolmogorov-Arnold Networks with First-Layer Training](on_the_convergence_of_two-layer_kolmogorov-arnold_networks_with_first-layer_trai.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Characterizing the Discrete Geometry of ReLU Networks](characterizing_the_discrete_geometry_of_relu_networks.md)

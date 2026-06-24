@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EMFuse: Energy-based Model Fusion for Decision Making
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] EMFuse unifies "direct policy fusion" and "dynamics model fusion"—two seemingly distinct tasks—under the framework of Energy-based Models (EBM). Summing energies is equivalent to multiplying distributions (Product of Experts, PoE). This enables training-free fusion of multiple LLM experts during inference and utilizes
+  [ICLR2026][Reinforcement Learning][Energy-based Models] EMFuse unifies "direct policy fusion" and "dynamics model fusion"—two seemingly distinct tasks—under the framework of Energy-based Models (EBM). Summing energies is equivalent to multiplying distributions (Product of Experts, PoE). This enables training-free fusion of multiple LLM experts during inference and utilizes a new ADETM architecture to bypass the exponential explosion in fusing dynamics ensembles. It achieves i…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Energy-based Models"
+  - "Model Fusion"
+  - "Offline Reinforcement Learning"
+  - "Product of Experts (PoE)"
+  - "Uncertainty Estimation"
 date: 2026-05-08
-content_hash: 00611ccaedd8dd92
+content_hash: dd338c3d28c88d28
 ---
+
 # EMFuse: Energy-based Model Fusion for Decision Making
 
 **Conference**: ICLR2026  
@@ -137,10 +143,10 @@ D4RL environment breakdown (5 seeds, IQM): Hopper 49.03 / Walker2d 59.53 / HalfC
 
 ## Related Papers
 
+- [\[ICLR 2026\] Bayesian Ensemble for Sequential Decision-Making](bayesian_ensemble_for_sequential_decision-making.md)
 - [\[ICLR 2026\] Ada-Diffuser: Latent-Aware Adaptive Diffusion for Decision-Making](ada-diffuser_latent-aware_adaptive_diffusion_for_decision-making.md)
 - [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
 - [\[ICLR 2026\] Offline Reinforcement Learning with Adaptive Feature Fusion](offline_reinforcement_learning_with_adaptive_feature_fusion.md)
-- [\[NeurIPS 2025\] Optimizing the Unknown: Black Box Bayesian Optimization with Energy-Based Model and Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/optimizing_the_unknown_black_box_bayesian_optimization_with_energy-based_model_a.md)
 - [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](../../NeurIPS2025/reinforcement_learning/structured_reinforcement_learning_for_combinatorial_decision-making.md)
 
 </div>

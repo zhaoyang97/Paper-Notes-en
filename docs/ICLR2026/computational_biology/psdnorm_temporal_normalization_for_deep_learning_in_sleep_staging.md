@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PSDNorm: Temporal Normalization for Deep Learning in Sleep Staging
 description: >-
-  [ICLR 2026][Computational Biology][EEG] This paper proposes PSDNorm—a drop-in normalization layer replacing BatchNorm/InstanceNorm. It aligns the Power Spectral Density (PSD) of each feature map to a moving Riemannian barycenter PSD using Monge mapping within the network. It achieves SOTA on sleep staging across 10 datasets and tens of thousands of subjects,
+  [ICLR 2026][Computational Biology][Normalization layer] This paper proposes PSDNorm—a drop-in normalization layer replacing BatchNorm/InstanceNorm. It aligns the Power Spectral Density (PSD) of each feature map to a moving Riemannian barycenter PSD using Monge mapping within the network. It achieves SOTA on sleep staging across 10 datasets and tens of thousands of subjects, reaching the accuracy of the strongest baseline with only 1/4 of the labeled data.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - EEG
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Normalization layer"
+  - "Sleep staging"
+  - "EEG"
+  - "Optimal transport"
+  - "Power spectral density"
 date: 2026-05-08
-content_hash: c093ac04a3ab3d67
+content_hash: f9f59e3c32ad8915
 ---
+
 # PSDNorm: Temporal Normalization for Deep Learning in Sleep Staging
 
 **Conference**: ICLR 2026  
@@ -133,7 +138,7 @@ On the CHAT dataset (pediatric subjects with strong shift), PSDNorm outperforms 
 - [\[ICLR 2026\] Meta-Learning Theory-Informed Inductive Biases using Deep Kernel Gaussian Processes](meta-learning_theory-informed_inductive_biases_using_deep_kernel_gaussian_proces.md)
 - [\[CVPR 2026\] Stronger Normalization-Free Transformers](../../CVPR2026/computational_biology/stronger_normalization-free_transformers.md)
 - [\[ICLR 2026\] Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics](scalable_spatio-temporal_se3_diffusion_for_long-horizon_protein_dynamics.md)
-- [\[ICLR 2026\] Optimal Transport Unlocks End-to-End Learning for Single-Molecule Localization](optimal_transport_unlocks_end-to-end_learning_for_single-molecule_localization.md)
+- [\[ICLR 2026\] DeepSADR: Deep Transfer Learning with Subsequence Interaction and Adaptive Readout for Cancer Drug Response Prediction](deepsadr_deep_transfer_learning_with_subsequence_interaction_and_adaptive_readou.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Federated CLIP for Resource-Efficient Heterogeneous Medical Image Classification
 description: >-
-  [AAAI 2026][LLM Safety][Federated Learning] This paper proposes FedMedCLIP, a federated CLIP framework for medical image classification. By freezing the CLIP encoder and combining a masked Feature Adaptation Module (FAM)…
+  [AAAI 2026][LLM Safety][Federated Learning] This paper proposes FedMedCLIP, a federated CLIP framework for medical image classification. By freezing the CLIP encoder and combining a masked Feature Adaptation Module (FAM), a local masked MLP, and class-level KL distillation regularization, the framework achieves robust classification under data heterogeneity with minimal communication and computational overhead (surpassing the second-best method by 8% on ISIC2019 and running 1…
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Data Heterogeneity"
   - "Parameter Efficiency"
 date: 2026-05-08
-content_hash: 3d4ba999d5a418a4
+content_hash: 15407bc7f33e5512
 ---
 
 # Federated CLIP for Resource-Efficient Heterogeneous Medical Image Classification
@@ -175,11 +175,11 @@ Resource efficiency comparison:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Resource-Adaptive Federated Text Generation with Differential Privacy](../../ICLR2026/llm_safety/resource-adaptive_federated_text_generation_with_differential_privacy.md)
 - [\[ICCV 2025\] Cooperative Pseudo Labeling for Unsupervised Federated Classification](../../ICCV2025/llm_safety/cooperative_pseudo_labeling_for_unsupervised_federated_classification.md)
 - [\[ICLR 2026\] SHE-LoRA: Selective Homomorphic Encryption for Federated Tuning with Heterogeneous LoRA](../../ICLR2026/llm_safety/she-lora_selective_homomorphic_encryption_for_federated_tuning_with_heterogeneou.md)
+- [\[ACL 2025\] CLIPErase: Efficient Unlearning of Visual-Textual Associations in CLIP](../../ACL2025/llm_safety/cliperase_efficient_unlearning_of_visual-textual_associations_in_clip.md)
+- [\[CVPR 2025\] Towards All-in-One Medical Image Re-Identification](../../CVPR2025/llm_safety/towards_all-in-one_medical_image_re-identification.md)
 - [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](../../ICLR2026/llm_safety/heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
-- [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
 
 </div>
 

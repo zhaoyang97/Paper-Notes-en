@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model
 description: >-
-  [CVPR 2026][Model Compression][World Models] CompACT is proposed to compress each image into only 8 discrete tokens (approx. 128 bits). By freezing a pretrained visual encoder to preserve planning-critical semantic information and employing generative decoding to supplement perceptual details, it accelerates world model-based planning by ~40x without compromising
+  [CVPR2026][Model Compression][Compact discrete tokenizer] CompACT is proposed to compress each image into only 8 discrete tokens (approx. 128 bits). By freezing a pretrained visual encoder to preserve planning-critical semantic information and employing generative decoding to supplement perceptual details, it accelerates world model-based planning by ~40x without compromising accuracy.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - World Models
+  - "CVPR2026"
+  - "Model Compression"
+  - "Compact discrete tokenizer"
+  - "world models"
+  - "latent space planning"
+  - "extreme compression"
+  - "semantic encoding"
+  - "generative decoding"
 date: 2026-05-08
-content_hash: c982f8e822ef1e40
+content_hash: 82ebb93ebde47c09
 ---
+
 # Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model
 
 **Conference**: CVPR2026  
@@ -143,15 +149,15 @@ APE decreased by 3x and speed increased by 5.2x, validating the preservation of 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] WPT: World-to-Policy Transfer via Online World Model Distillation](wpt_world-to-policy_transfer_via_online_world_model_distillation.md)
+- [\[ICLR 2026\] InfoTok: Adaptive Discrete Video Tokenizer via Information-Theoretic Compression](../../ICLR2026/model_compression/infotok_adaptive_discrete_video_tokenizer_via_information-theoretic_compression.md)
 - [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](../../ICCV2025/model_compression/bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
-- [\[CVPR 2026\] CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs](core_compact_object-centric_representations_as_a_new_paradigm_for_token_merging_.md)
+- [\[ICLR 2026\] Cross-Tokenizer Likelihood Scoring Algorithms for Language Model Distillation](../../ICLR2026/model_compression/cross-tokenizer_likelihood_scoring_algorithms_for_language_model_distillation.md)
 - [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](generative_video_compression_with_one-dimensional_latent_representation.md)
-- [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](../../AAAI2026/model_compression/ctpd_cross_tokenizer_preference_distillation.md)
 
 </div>
 

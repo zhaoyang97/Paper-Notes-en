@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SGS-Intrinsic proposes a two-stage indoor inverse rendering framework. The first stage utilizes semantic and geometric priors to construct a dense, geometrically consistent Gaussian field, while the second stage combines a hybrid lighting model and material priors for material-illumination decomposition, incorporating
+  [CVPR 2026][3D Vision][Inverse Rendering] SGS-Intrinsic proposes a two-stage indoor inverse rendering framework. The first stage utilizes semantic and geometric priors to construct a dense, geometrically consistent Gaussian field, while the second stage combines a hybrid lighting model and material priors for material-illumination decomposition, incorporating a de-shadowing module to prevent shadow baking into the albedo.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Inverse Rendering"
+  - "Sparse-View"
+  - "Gaussian Splatting"
+  - "Material Decomposition"
+  - "Indoor Scenes"
 date: 2026-05-08
-content_hash: baff84772d1ae0a5
+content_hash: 78e6457411ff0250
 ---
+
 # SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering
 
 **Conference**: CVPR 2026  
@@ -133,15 +139,13 @@ The method demonstrates leading performance across all novel view synthesis and 
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
+- [\[ICLR 2026\] RadioGS: Radiometrically Consistent Gaussian Surfels for Inverse Rendering](../../ICLR2026/3d_vision/radiogs_radiometric_gaussian_surfels.md)
 - [\[CVPR 2025\] IRIS: Inverse Rendering of Indoor Scenes from Low Dynamic Range Images](../../CVPR2025/3d_vision/iris_inverse_rendering_of_indoor_scenes_from_low_dynamic_range_images.md)
 - [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](../../ICCV2025/3d_vision/geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
-- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
-- [\[CVPR 2026\] MVInverse: Feed-forward Multiview Inverse Rendering in Seconds](mvinverse_feed-forward_multiview_inverse_rendering_in_seconds.md)
+- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
 
 </div>
 

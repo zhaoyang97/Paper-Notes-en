@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Query-Level Uncertainty in Large Language Models
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][uncertainty estimation] The authors propose the concept of Query-Level Uncertainty and introduce the Internal Confidence (IC) method to estimate whether an LLM can answer a given query before generation (via a single forward pass). This enables efficient, training-free adaptive inference (RAG triggering, model cascading, and abstention).
+  [ICLR2026][Information Retrieval & RAG][uncertainty estimation] The authors propose the concept of Query-Level Uncertainty and introduce the Internal Confidence (IC) method to estimate whether an LLM can answer a given query before generation (via a single forward pass). This enables efficient, training-free adaptive inference (RAG triggering, model cascading, and abstention).
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - uncertainty estimation
-  - knowledge boundary
-  - adaptive inference
-  - training-free
-  - internal confidence
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "uncertainty estimation"
+  - "knowledge boundary"
+  - "adaptive inference"
+  - "training-free"
+  - "internal confidence"
 date: 2026-05-08
-content_hash: afd97d7810a6e087
+content_hash: 71f56b61c936f575
 ---
+
 # Query-Level Uncertainty in Large Language Models
 
 **Conference**: ICLR2026  

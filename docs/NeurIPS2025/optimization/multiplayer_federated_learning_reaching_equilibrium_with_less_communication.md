@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes the Multiplayer Federated Learning (MpFL) framework, which models FL clients as rational players in a game-theoretic setting…
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes the Multiplayer Federated Learning (MpFL) framework, which models FL clients as rational players in a game-theoretic setting, and introduces the PEARL-SGD algorithm that reduces communication overhead via local updates while converging to a Nash equilibrium.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Local SGD"
   - "Communication Efficiency"
 date: 2026-05-08
-content_hash: 4a6da709d9069b0d
+content_hash: baa5c6c039af0ac5
 ---
 
 # Multiplayer Federated Learning: Reaching Equilibrium with Less Communication
@@ -130,9 +130,9 @@ Each player minimizes its own expected loss $f_i(x^i; x^{-i}) = \mathbb{E}_{\xi^
 
 - [\[NeurIPS 2025\] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning](layer-wise_update_aggregation_with_recycling_for_communication-efficient_federat.md)
 - [\[NeurIPS 2025\] MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System](mar-fl_a_communication_efficient_peer-to-peer_federated_learning_system.md)
+- [\[ICML 2025\] The Panaceas for Improving Low-Rank Decomposition in Communication-Efficient Federated Learning](../../ICML2025/optimization/the_panaceas_for_improving_low-rank_decomposition_in_communication-efficient_fed.md)
 - [\[NeurIPS 2025\] Learning at the Speed of Physics: Equilibrium Propagation on Oscillator Ising Machines](learning_at_the_speed_of_physics_equilibrium_propagation_on_oscillator_ising_mac.md)
 - [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
-- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 
 </div>
 

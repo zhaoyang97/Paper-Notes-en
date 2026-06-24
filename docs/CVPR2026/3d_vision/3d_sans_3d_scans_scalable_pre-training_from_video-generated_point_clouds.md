@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The LAM3C framework demonstrates for the first time that Video-Generated Point Clouds (VGPC) reconstructed from unlabeled web videos (e.g., real estate tours) can substitute for real 3D scans in 3D self-supervised pre-training. By employing Laplacian smoothing and noise consistency losses to stabilize representation le
+  [CVPR 2026][3D Vision][3D Self-supervised Learning] The LAM3C framework demonstrates for the first time that Video-Generated Point Clouds (VGPC) reconstructed from unlabeled web videos (e.g., real estate tours) can substitute for real 3D scans in 3D self-supervised pre-training. By employing Laplacian smoothing and noise consistency losses to stabilize representation learning on noisy point clouds, combined with the self-constructed RoomTours dataset (49K scenes)…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Self-supervised Learning"
+  - "Video-Generated Point Clouds"
+  - "Sinkhorn-Knopp Clustering"
+  - "Noise Regularization"
+  - "Indoor Scene Understanding"
 date: 2026-05-08
-content_hash: 239854924ea2c08c
+content_hash: 1798e011d0de318f
 ---
+
 # 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds
 
 **Conference**: CVPR 2026  
@@ -166,11 +172,11 @@ On S3DIS instance segmentation, LAM3C exceeds Sonata-real, which is trained only
 
 ## Related Papers
 
+- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](vista4d_video_reshooting_with_4d_point_clouds.md)
+- [\[CVPR 2026\] Low-Rank Test-Time Training for Pre-Trained Point Cloud Models](low-rank_test-time_training_for_pre-trained_point_cloud_models.md)
 - [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[CVPR 2026\] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](gaussiangrow_geometry-aware_gaussian_growing_from_3d_point_clouds_with_text_guid.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
-- [\[CVPR 2026\] Edges Compete for Trust: Group Relative Edge Optimization for Building Reconstruction from Point Clouds](edges_compete_for_trust_group_relative_edge_optimization_for_building_reconstruc.md)
+- [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
+- [\[CVPR 2026\] Learning to Infer Parameterized Representations of Plants from 3D Scans](learning_to_infer_parameterized_representations_of_plants_from_3d_scans.md)
 
 </div>
 

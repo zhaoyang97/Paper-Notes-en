@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Explainable K-means Neural Networks for Multi-view Clustering
 description: >-
-  [ICLR 2026][Interpretability][K-means] Decomposes multi-view clustering into three layer optimization sub-problems: "linear clustering → non-linear clustering → multi-view fusion." Each layer is implemented by K-means / Kernel K-means objectives, assembled into an EKNN network where the **function of each layer is explainable**, thereby achieving a balance
+  [ICLR 2026][Interpretability][Multi-view clustering] Decomposes multi-view clustering into three layer optimization sub-problems: "linear clustering → non-linear clustering → multi-view fusion." Each layer is implemented by K-means / Kernel K-means objectives, assembled into an EKNN network where the **function of each layer is explainable**, thereby achieving a balance across effectiveness, efficiency, completeness, and consistency.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - K-means
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Multi-view clustering"
+  - "K-means"
+  - "Kernel K-means"
+  - "Explainable neural networks"
+  - "Subspace learning"
+  - "Three-layer optimization"
 date: 2026-05-08
-content_hash: 2f31bc360a3e534f
+content_hash: d4942a43bb28aaf5
 ---
+
 # Explainable K-means Neural Networks for Multi-view Clustering
 
 **Conference**: ICLR 2026  
@@ -120,8 +126,8 @@ A multi-view clustering framework that engineers the "local linear assembly into
 - [\[ICLR 2026\] Bayesian Neural Networks for Functional ANOVA Model](bayesian_neural_networks_for_functional_anova_model.md)
 - [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](fame_formal_abstract_minimal_explanation_for_neural_networks.md)
 - [\[ICLR 2026\] Discovering Alternative Solutions Beyond the Simplicity Bias in Recurrent Neural Networks](discovering_alternative_solutions_beyond_the_simplicity_bias_in_recurrent_neural.md)
-- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
 - [\[NeurIPS 2025\] SpEx: A Spectral Approach to Explainable Clustering](../../NeurIPS2025/interpretability/spex_a_spectral_approach_to_explainable_clustering.md)
+- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
 
 </div>
 

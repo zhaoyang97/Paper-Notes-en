@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Disentangled Hierarchical VAE for 3D Human-Human Interaction Generation
 description: >-
-  [ICLR 2026][Human Understanding][Human-Human Interaction] DHVAE explicitly decomposes dual-person interaction motion into three disentangled latent variables: "Person A action," "Person B action," and "Global interaction context." It applies contrastive learning constraints on the global latent variable to ensure contact plausibility and employs DDIM for diffusion denoising w
+  [ICLR 2026][Human Understanding][Human-Human Interaction] DHVAE explicitly decomposes dual-person interaction motion into three disentangled latent variables: "Person A action," "Person B action," and "Global interaction context." It applies contrastive learning constraints on the global latent variable to ensure contact plausibility and employs DDIM for diffusion denoising within a hierarchical latent space, achieving new SOTA results on InterHuman and InterX with a smaller…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Human-Human Interaction
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Human-Human Interaction"
+  - "Disentangled Hierarchical VAE"
+  - "Latent Diffusion"
+  - "Contrastive Learning"
+  - "Physical Plausibility"
 date: 2026-05-08
-content_hash: aa5a926a46cf6622
+content_hash: 0b5b63d1fd01bb0a
 ---
+
 # Disentangled Hierarchical VAE for 3D Human-Human Interaction Generation
 
 **Conference**: ICLR 2026  
@@ -113,14 +118,20 @@ Ours uses the fewest parameters (56M) and is the fastest (0.454s per sentence) w
 - **Value**: ⭐⭐⭐⭐ Refreshing SOTA while being smaller and faster, with significant improvements in physical plausibility.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **InterMask**: Decoupling dual-human motion via discrete mask modeling (Pre-SOTA).
-- **InterLDM**: Unified latent diffusion for HHI.
-- **MLD**: Foundations of latent diffusion for single-person motion.
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](../../CVPR2026/human_understanding/hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
+- [\[ICLR 2026\] InfBaGel: Human-Object-Scene Interaction Generation with Dynamic Perception and Iterative Refinement](infbagel_human-object-scene_interaction_generation_with_dynamic_perception_and_i.md)
+- [\[ICLR 2026\] Unleashing Guidance Without Classifiers for Human-Object Interaction Animation](unleashing_guidance_without_classifiers_for_human-object_interaction_animation.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](../../CVPR2026/human_understanding/interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
+- [\[ICLR 2026\] Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy](human-object_interaction_via_automatically_designed_vlm-guided_motion_policy.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](../../CVPR2026/human_understanding/hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)

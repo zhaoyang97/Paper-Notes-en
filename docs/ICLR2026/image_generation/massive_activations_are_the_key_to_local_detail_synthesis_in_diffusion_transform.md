@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers
 description: >-
-  [ICLR 2026][Image Generation][Massive Activations] This paper systematically reveals that "Massive Activations (MA)" in Diffusion Transformers (DiTs) are specifically responsible for local detail synthesis while having almost no effect on global semantics. Based on this finding, it proposes a training-free self-guidance strategy called Detail Guidance (DG), which utili
+  [ICLR 2026][Image Generation][Massive Activations] This paper systematically reveals that "Massive Activations (MA)" in Diffusion Transformers (DiTs) are specifically responsible for local detail synthesis while having almost no effect on global semantics. Based on this finding, it proposes a training-free self-guidance strategy called Detail Guidance (DG), which utilizes a "degraded model after MA disruption" to reversely guide the original model toward generating more refin…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Massive Activations
-  - Diffusion Transformer
-  - Detail Guidance
-  - CFG
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Massive Activations"
+  - "Diffusion Transformer"
+  - "Detail Guidance"
+  - "Training-free Sampling Guidance"
+  - "CFG"
 date: 2026-05-08
-content_hash: 18332425fc682de6
+content_hash: ba40546447dda09f
 ---
+
 # Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers
 
 **Conference**: ICLR 2026  
@@ -127,9 +129,9 @@ DG does not require training an unconditional branch. Used alone, its Aesthetic 
 
 - [\[NeurIPS 2025\] Unleashing Diffusion Transformers for Visual Correspondence by Modulating Massive Activations](../../NeurIPS2025/image_generation/unleashing_diffusion_transformers_for_visual_correspondence_by_modulating_massiv.md)
 - [\[ICLR 2026\] Scaling Laws for Diffusion Transformers](scaling_laws_for_diffusion_transformers.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
 - [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](rethinking_global_text_conditioning_in_diffusion_transformers.md)
 - [\[ICLR 2026\] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)
-- [\[ICLR 2026\] MADFormer: Mixed Autoregressive and Diffusion Transformers for Continuous Image Generation](textitmadformer_mixed_autoregressive_and_diffusion_transformers_for_continuous_i.md)
 
 </div>
 

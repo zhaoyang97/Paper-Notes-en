@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins
 description: >-
-  [ICML 2026][LLM Efficiency][LightGBM] Addressing the pain point where failure is realized only after full training (wasting hundreds of GPU hours), TuneAhead encodes each candidate fine-tuning task into a meta-feature vector consisting of "static dataset descriptors + 100-step dynamic probe features." It uses LightGBM to predict final performance before tr
+  [ICML2026][LLM Efficiency][Fine-tuning performance prediction] Addressing the pain point where failure is realized only after full training (wasting hundreds of GPU hours), TuneAhead encodes each candidate fine-tuning task into a meta-feature vector consisting of "static dataset descriptors + 100-step dynamic probe features." It uses LightGBM to predict final performance before training (RMSE 1.47pp on 370 test tasks, with 95.1% within ±3pp) and provides diagnosable explanati…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - LightGBM
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Fine-tuning performance prediction"
+  - "meta-features"
+  - "probes"
+  - "LightGBM"
+  - "SHAP diagnostics"
 date: 2026-05-08
-content_hash: 5cbe7bcae8adc459
+content_hash: ae8aa74b4c81a9af
 ---
+
 # TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins
 
 **Conference**: ICML2026  
@@ -125,15 +130,16 @@ TuneAhead reduces RMSE by 30% compared to ProxyLM (2.11→1.47) and by 80% compa
 - Value: ⭐⭐⭐⭐⭐ Direct compute savings + actionable diagnostics; highly attractive for engineering practice.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] A Risk Decomposition Framework for Pre-Hoc Fine-Tuning Prediction](a_risk_decomposition_framework_for_pre-hoc_fine-tuning_prediction.md)
+- [\[ICLR 2026\] Three Forward, One Backward: Memory-Efficient Full-Rank Fine-Tuning of Large Models via Extra Forward Passes](../../ICLR2026/llm_efficiency/three_forward_one_backward_memory-efficient_full-rank_fine-tuning_of_large_model.md)
 - [\[ACL 2026\] Small Data, Big Noise: Adversarial Training for Robust Parameter-Efficient Fine-Tuning](../../ACL2026/llm_efficiency/small_data_big_noise_adversarial_training_for_robust_parameter-efficient_fine-tu.md)
+- [\[ICLR 2026\] CPQS-Tuning: A Model Self-Perception-Based Data Filtering Algorithm for Efficient Instruction Fine-Tuning](../../ICLR2026/llm_efficiency/cpqs-tuning_a_model_self-perception-based_data_filtering_algorithm_for_efficient.md)
 - [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
-- [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection](../../ICLR2026/llm_efficiency/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_selection.md)
-- [\[NeurIPS 2025\] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM](../../NeurIPS2025/llm_efficiency/hierarchical_balance_packing_towards_efficient_supervised_fine-tuning_for_long-c.md)
 
 </div>
 

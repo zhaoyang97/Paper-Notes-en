@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] StreamingTOM: Streaming Token Compression for Efficient Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][streaming video understanding] StreamingTOM is proposed, a training-free two-stage streaming video understanding framework: Causal Temporal Reduction (CTR) performs causal temporal selection before the LLM to compress tokens per frame from 196 to 50; Online Quantized Memory (OQM) limits kv-cache growth after the LLM via 4-bit quantization and on-dem
+  [CVPR 2026][Video Understanding][streaming video understanding] StreamingTOM is proposed, a training-free two-stage streaming video understanding framework: Causal Temporal Reduction (CTR) performs causal temporal selection before the LLM to compress tokens per frame from 196 to 50; Online Quantized Memory (OQM) limits kv-cache growth after the LLM via 4-bit quantization and on-demand retrieval. The framework achieves a 15.7× compression ratio, 1.2× lower peak VRAM…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - streaming video understanding
-  - token compression
-  - kv-cache quantization
-  - training-free
-  - causal inference
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "streaming video understanding"
+  - "token compression"
+  - "kv-cache quantization"
+  - "training-free"
+  - "causal inference"
 date: 2026-05-08
-content_hash: 38a5037ff8e084d0
+content_hash: 3d687fe7e3f1f90d
 ---
+
 # StreamingTOM: Streaming Token Compression for Efficient Video Understanding
 
 **Conference**: CVPR 2026  
@@ -152,9 +153,9 @@ While CTR reduces tokens per frame to G, the kv-cache still grows linearly with 
 
 - [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
 - [\[CVPR 2026\] EarlyTom: Early Token Compression Completes Fast Video Understanding](earlytom_early_token_compression_completes_fast_video_understanding.md)
-- [\[CVPR 2026\] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models](token_reduction_via_local_and_global_contexts_optimization_for_efficient_video_l.md)
 - [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
 - [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
+- [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
 
 </div>
 

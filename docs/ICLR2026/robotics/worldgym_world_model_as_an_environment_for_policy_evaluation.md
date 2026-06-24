@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WorldGym: World Model as an Environment for Policy Evaluation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][World Models] This paper trains WorldGym, an action-conditioned autoregressive video world model, as a "virtual environment." Robot policies perform rollouts within this model, and a VLM is used for scoring to estimate policy success rates before real-world deployment. Experiments demonstrate that the success rates in the world mode
+  [ICLR 2026][Robotics][World Models] This paper trains WorldGym, an action-conditioned autoregressive video world model, as a "virtual environment." Robot policies perform rollouts within this model, and a VLM is used for scoring to estimate policy success rates before real-world deployment. Experiments demonstrate that the success rates in the world model are highly correlated with real-world success rates (Pearson $r=0.78$) and maintain consistent relative rankings across di…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - World Models
+  - "ICLR 2026"
+  - "Robotics"
+  - "World Models"
+  - "Offline Policy Evaluation"
+  - "VLA Policies"
+  - "Action-conditioned Video Generation"
+  - "Monte Carlo Rollout"
 date: 2026-05-08
-content_hash: 9c3f118afef3b652
+content_hash: 153993ee777e6f37
 ---
+
 # WorldGym: World Model as an Environment for Policy Evaluation
 
 **Conference**: ICLR 2026  
@@ -139,7 +144,7 @@ On the OpenVLA Bridge evaluation suite (17 challenging tasks not in the Bridge V
 - [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](world-in-world_world_models_in_a_closed-loop_world.md)
 - [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
 - [\[ICLR 2026\] Sparse Imagination for Efficient Visual World Model Planning](sparse_imagination_for_efficient_visual_world_model_planning.md)
-- [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](../../CVPR2026/robotics/chain_of_world_world_model_thinking_in_latent_motion.md)
+- [\[ICLR 2026\] Capturing Visual Environment Structure Correlates with Control Performance](capturing_visual_environment_structure_correlates_with_control_performance.md)
 
 </div>
 

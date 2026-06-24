@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Large Language Bayes
 description: >-
-  [NeurIPS 2025][Optimization][LLM] This work mathematically "glues" an LLM and a probabilistic programming language (PPL/Stan) into a joint distribution $p(z,x,m|t) = p(m|t)_{\text{LLM}} \cdot p(z…
+  [NeurIPS 2025][Optimization][LLM] This work mathematically "glues" an LLM and a probabilistic programming language (PPL/Stan) into a joint distribution $p(z,x,m|t) = p(m|t)_{\text{LLM}} \cdot p(z,x|m)_{\text{PPL}}$. Given only an informal problem description and data, the system automatically samples candidate formal models from the LLM, performs Bayesian inference within each model, and produces a marginal-likelihood-weighted model average — requiring no user-written probabi…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "Stan"
   - "joint distribution"
 date: 2026-05-08
-content_hash: 0b10c2d2d88080ed
+content_hash: e76ea5a96478fb9f
 ---
 
 # Large Language Bayes

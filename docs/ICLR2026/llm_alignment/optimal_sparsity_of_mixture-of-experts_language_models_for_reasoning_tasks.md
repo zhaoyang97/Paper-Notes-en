@@ -2,17 +2,22 @@
 title: >-
   [Paper Note] Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks
 description: >-
-  [ICLR 2026][Alignment & RLHF][MoE] This study systematically investigates how the sparsity of Mixture-of-Experts (MoE) language models affects memory-intensive and reasoning-intensive tasks differently: memory tasks prefer higher sparsity (more total parameters), whereas reasoning tasks reach optimality near $\text{TPP} \approx 20$. This trend remains i
+  [ICLR 2026 Oral][LLM Alignment][MoE] This study systematically investigates how the sparsity of Mixture-of-Experts (MoE) language models affects memory-intensive and reasoning-intensive tasks differently: memory tasks prefer higher sparsity (more total parameters), whereas reasoning tasks reach optimality near $\text{TPP} \approx 20$. This trend remains invariant even after GRPO post-training and increased test-time compute.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - MoE
-  - scaling laws
-  - sparsity
-  - tokens per parameter
+  - "ICLR 2026 Oral"
+  - "LLM Alignment"
+  - "MoE"
+  - "scaling laws"
+  - "sparsity"
+  - "reasoning"
+  - "memory"
+  - "tokens per parameter"
+  - "GRPO"
+  - "test-time compute"
 date: 2026-05-08
-content_hash: c620afa5b4936eee
+content_hash: 010a758027ffa928
 ---
+
 # Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks
 
 **Conference**: ICLR 2026 Oral  

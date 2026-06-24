@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fast 3D Surrogate Modeling for Data Center Thermal Management
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][Surrogate modeling] This paper develops a vision-based 3D surrogate modeling framework for data centers. Server workloads, fan speeds…
+  [AAAI 2026][Physics & Scientific Computing][Surrogate modeling] This paper develops a vision-based 3D surrogate modeling framework for data centers. Server workloads, fan speeds, and air-conditioning temperature setpoints are encoded as 3D voxel representations, and architectures including 3D CNN U-Net, 3D Fourier Neural Operator, and 3D Vision Transformer are employed for real-time temperature field prediction. The proposed framework achieves inference speeds up to 20…
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Fourier neural operator"
   - "temperature prediction"
 date: 2026-05-08
-content_hash: e4696bda26ee888b
+content_hash: adfa771b2ab909c5
 ---
 
 # Fast 3D Surrogate Modeling for Data Center Thermal Management
@@ -132,10 +132,10 @@ Real-time temperature prediction enables prediction-based cooling control and wo
 
 ## Related Papers
 
-- [\[AAAI 2026\] Data Verification is the Future of Quantum Computing Copilots](data_verification_is_the_future_of_quantum_computing_copilots.md)
-- [\[CVPR 2026\] Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis](../../CVPR2026/physics/continuous_exposure-time_modeling_for_realistic_atmospheric_turbulence_synthesis.md)
+- [\[ICLR 2026\] Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs](../../ICLR2026/physics/extending_fourier_neural_operators_for_modeling_parameterized_and_coupled_pdes.md)
+- [\[ICLR 2026\] LD-EnSF: Synergizing Latent Dynamics with Ensemble Score Filters for Fast Data Assimilation with Sparse Observations](../../ICLR2026/physics/ld-ensf_synergizing_latent_dynamics_with_ensemble_score_filters_for_fast_data_as.md)
 - [\[AAAI 2026\] Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids](phys-liquid_a_physics-informed_dataset_for_estimating_3d_geometry_and_volume_of_.md)
-- [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](../../ICML2026/physics/distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
+- [\[AAAI 2026\] Data Verification is the Future of Quantum Computing Copilots](data_verification_is_the_future_of_quantum_computing_copilots.md)
 - [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](../../ICML2026/physics/eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
 
 </div>

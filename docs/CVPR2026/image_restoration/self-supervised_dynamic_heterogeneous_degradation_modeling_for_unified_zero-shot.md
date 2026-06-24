@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] UP-ZeroIR identifies that heterogeneous degradations such as noise, haze, and low-light can be characterized by a two-parameter Generalized Gaussian Distribution (GGD) in latent space. Consequently, degradation modeling is reformulated as a "distribution alignment" problem, integrated with a strategy for self-assessing
+  [CVPR 2026][Image Restoration][Zero-shot Image Restoration] UP-ZeroIR identifies that heterogeneous degradations such as noise, haze, and low-light can be characterized by a two-parameter Generalized Gaussian Distribution (GGD) in latent space. Consequently, degradation modeling is reformulated as a "distribution alignment" problem, integrated with a strategy for self-assessing quality and dynamically adjusting the sampling trajectory. This allows the pre-trained diffusion mo…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Zero-shot Image Restoration"
+  - "Degradation Modeling"
+  - "Generalized Gaussian Distribution"
+  - "Posterior Sampling"
+  - "Latent Diffusion"
 date: 2026-05-08
-content_hash: 26fe511d9659fcd8
+content_hash: 88d82f5d94764f2a
 ---
+
 # Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration
 
 **Conference**: CVPR 2026  
@@ -157,8 +163,8 @@ Impact of removing/replacing core components (measured on LOLv1 PSNR):
 
 ## Related Papers
 
+- [\[CVPR 2026\] DVAR: Dynamic Visual Autoregressive Modeling for Image Super-Resolution](dvar_dynamic_visual_autoregressive_modeling_for_image_super-resolution.md)
 - [\[CVPR 2026\] ZeroIDIR: Zero-Reference Illumination Degradation Image Restoration with Perturbed Consistency Diffusion Models](zeroidir_zero-reference_illumination_degradation_image_restoration_with_perturbe.md)
-- [\[CVPR 2026\] More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization](more_than_meets_the_eye_a_unified_image_fusion_framework_via_semantic-pixel_entr.md)
 - [\[CVPR 2026\] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation](zero-shot_image_denoising_via_hybrid_prior-guided_pseudo_sample_generation.md)
 - [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
 - [\[CVPR 2026\] Dynamic Exposure Burst Image Restoration](dynamic_exposure_burst_image_restoration.md)

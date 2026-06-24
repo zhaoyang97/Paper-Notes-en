@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SGD-Based Knowledge Distillation with Bayesian Teachers: Theory and Guidelines
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] This paper views Knowledge Distillation (KD) from a Bayesian perspective as "supervision using Bayes Class Probabilities (BCP) instead of one-hot labels." It rigorously analyzes the convergence behavior of students trained with SGD, proving that learning from precise BCP eliminates the "neighborhood term" in the conver
+  [ICLR 2026][Model Compression][Knowledge Distillation] This paper views Knowledge Distillation (KD) from a Bayesian perspective as "supervision using Bayes Class Probabilities (BCP) instead of one-hot labels." It rigorously analyzes the convergence behavior of students trained with SGD, proving that learning from precise BCP eliminates the "neighborhood term" in the convergence bound (zeroing variance and allowing larger learning rates). Based on this…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "SGD Convergence Analysis"
+  - "Bayes-class Posteriors"
+  - "Teacher Calibration"
+  - "Bayesian Deep Learning"
 date: 2026-05-08
-content_hash: 20770115602b2e13
+content_hash: 0473aacd4041f4b2
 ---
+
 # SGD-Based Knowledge Distillation with Bayesian Teachers: Theory and Guidelines
 
 **Conference**: ICLR 2026  
@@ -140,7 +145,7 @@ Bayesian teachers yield the largest gains in heterogeneous pairings (up to +4.27
 - [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
 - [\[ICLR 2026\] Generative Diffusion Prior Distillation for Long-Context Knowledge Transfer](generative_diffusion_prior_distillation_for_long-context_knowledge_transfer.md)
-- [\[ICLR 2026\] Rejuvenating Cross-Entropy Loss in Knowledge Distillation for Recommender Systems](rejuvenating_cross-entropy_loss_in_knowledge_distillation_for_recommender_system.md)
+- [\[ICLR 2026\] Knowledge Distillation as Decontamination? Revisiting the "Data Laundering" Concern in Classification Tasks](knowledge_distillation_as_decontamination_revisiting_the_data_laundering_concern.md)
 
 </div>
 

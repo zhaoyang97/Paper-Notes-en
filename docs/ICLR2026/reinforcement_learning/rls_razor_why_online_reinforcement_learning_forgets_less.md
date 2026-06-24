@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RL's Razor: Why Online Reinforcement Learning Forgets Less
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper discovers that the KL divergence between the base model and the fine-tuned model on the new task distribution can predict catastrophic forgetting. It explains why on-policy RL, compared to SFT, tends to find high-reward solutions closer to the original policy, thereby forgetting less when learning new tasks.
+  [ICLR2026][Reinforcement Learning][Online Reinforcement Learning] This paper discovers that the KL divergence between the base model and the fine-tuned model on the new task distribution can predict catastrophic forgetting. It explains why on-policy RL, compared to SFT, tends to find high-reward solutions closer to the original policy, thereby forgetting less when learning new tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Online Reinforcement Learning"
+  - "Catastrophic Forgetting"
+  - "KL Divergence"
+  - "Policy Gradient"
+  - "Continual Learning"
 date: 2026-05-08
-content_hash: e9af04dc1f90b298
+content_hash: 4e6451edff35d1fa
 ---
+
 # RL's Razor: Why Online Reinforcement Learning Forgets Less
 
 **Conference**: ICLR2026  
@@ -162,9 +168,9 @@ The ablation focuses on ruling out alternative explanations. The first group use
 
 - [\[ICLR 2026\] Less is More: Clustered Cross-Covariance Control for Offline RL](less_is_more_clustered_cross-covariance_control_for_offline_rl.md)
 - [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
-- [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
 - [\[ICLR 2026\] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective](the_sample_complexity_of_online_reinforcement_learning_a_multi-model_perspective.md)
 - [\[ICLR 2026\] Learn More with Less: Uncertainty Consistency Guided Query Selection for RLVR](learn_more_with_less_uncertainty_consistency_guided_query_selection_for_rlvr.md)
+- [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
 
 </div>
 

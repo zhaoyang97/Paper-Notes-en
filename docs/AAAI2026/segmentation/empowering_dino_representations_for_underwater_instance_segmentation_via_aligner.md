@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Empowering DINO Representations for Underwater Instance Segmentation via Aligner and Prompter
 description: >-
-  [AAAI2026][Segmentation][underwater instance segmentation] This paper is the first to introduce DINOv2 into underwater instance segmentation. Through two adaptation modules—AquaStyle Aligner (Fourier frequency-domain sty…
+  [AAAI2026][Segmentation][underwater instance segmentation] This paper is the first to introduce DINOv2 into underwater instance segmentation. Through two adaptation modules—AquaStyle Aligner (Fourier frequency-domain style injection) and ObjectPrior Prompter (binary mask prior prompting)—the proposed DiveSeg achieves efficient domain adaptation and substantially outperforms SAM-based methods on the UIIS and USIS10K benchmarks with fewer parameters.
 tags:
   - "AAAI2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Fourier style transfer"
   - "foundation model fine-tuning"
 date: 2026-05-08
-content_hash: 60e076d109f5cc9e
+content_hash: 8f01c85e10bfd51e
 ---
 
 # Empowering DINO Representations for Underwater Instance Segmentation via Aligner and Prompter
@@ -168,11 +168,11 @@ The Fourier frequency-domain style transfer approach is generalizable to other d
 
 ## Related Papers
 
+- [\[CVPR 2026\] BiPA: Bilevel Prompt Adaptation for Underwater Instance Segmentation](../../CVPR2026/segmentation/bipa_bilevel_prompt_adaptation_for_underwater_instance_segmentation.md)
 - [\[CVPR 2026\] A Mixed Diet Makes DINO An Omnivorous Vision Encoder](../../CVPR2026/segmentation/a_mixed_diet_makes_dino_an_omnivorous_vision_encoder.md)
-- [\[CVPR 2026\] ELVIS: Enhance Low-Light for Video Instance Segmentation in the Dark](../../CVPR2026/segmentation/elvis_enhance_low-light_for_video_instance_segmentation_in_the_dark.md)
-- [\[CVPR 2026\] Phrase-Instance Alignment for Generalized Referring Segmentation](../../CVPR2026/segmentation/phrase-instance_alignment_for_generalized_referring_segmentation.md)
-- [\[ICCV 2025\] CAVIS: Context-Aware Video Instance Segmentation](../../ICCV2025/segmentation/cavis_context-aware_video_instance_segmentation.md)
-- [\[CVPR 2026\] Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera](../../CVPR2026/segmentation/unified_spherical_frontend_learning_rotation-equivariant_representations_of_sphe.md)
+- [\[ECCV 2024\] UniFS: Universal Few-Shot Instance Perception with Point Representations](../../ECCV2024/segmentation/unifs_universal_few-shot_instance_perception_with_point_representations.md)
+- [\[CVPR 2026\] Exploring the Underwater World Segmentation without Extra Training](../../CVPR2026/segmentation/exploring_the_underwater_world_segmentation_without_extra_training.md)
+- [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](../../CVPR2026/segmentation/maris_marine_open-vocabulary_instance_segmentation.md)
 
 </div>
 

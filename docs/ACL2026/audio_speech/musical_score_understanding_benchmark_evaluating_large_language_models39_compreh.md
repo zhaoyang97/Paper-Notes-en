@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MSU-Bench: Musical Score Understanding Benchmark
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] MSU-Bench is the first human-annotated benchmark for full musical score understanding, comprising 1,800 generative QA pairs from 150 works across four difficulty levels. Evaluations reveal significant deficiencies in LLMs/VLMs regarding score localization and hallucinations, while text input via ABC notation significan
+  [ACL 2026][Audio & Speech][Score understanding] MSU-Bench is the first human-annotated benchmark for full musical score understanding, comprising 1,800 generative QA pairs from 150 works across four difficulty levels. Evaluations reveal significant deficiencies in LLMs/VLMs regarding score localization and hallucinations, while text input via ABC notation significantly mitigates these issues.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Score understanding"
+  - "Music Information Retrieval"
+  - "ABC notation"
+  - "Multimodal benchmark"
+  - "Hallucination"
 date: 2026-05-08
-content_hash: 74dabe66ea98357d
+content_hash: 05d2feadf59c7638
 ---
+
 # MSU-Bench: Musical Score Understanding Benchmark
 
 **Conference**: ACL 2026  
@@ -111,11 +117,11 @@ The benchmark itself does not involve training. Fine-tuning experiments were con
 
 ## Related Papers
 
-- [\[ICLR 2026\] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark](../../ICLR2026/audio_speech/mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark.md)
-- [\[AAAI 2026\] HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding](../../AAAI2026/audio_speech/hpsu_a_benchmark_for_human-level_perception_in_real-world_spoken_speech_understa.md)
-- [\[ICML 2026\] MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks](../../ICML2026/audio_speech/mecat_a_multi-experts_constructed_benchmark_for_fine-grained_audio_understanding.md)
-- [\[CVPR 2026\] AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding](../../CVPR2026/audio_speech/amuse_audio-visual_benchmark_and_alignment_framework_for_agentic_multi-speaker_u.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 - [\[ACL 2026\] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](full-duplex-bench-v2_a_multi-turn_evaluation_framework_for_duplex_dialogue_syste.md)
+- [\[ICLR 2026\] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark](../../ICLR2026/audio_speech/mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark.md)
+- [\[ACL 2026\] HCFD: A Benchmark for Audio Deepfake Detection in Healthcare](hcfd_a_benchmark_for_audio_deepfake_detection_in_healthcare.md)
+- [\[ICML 2026\] PhaLar: Phasors for Learned Musical Audio Representations](../../ICML2026/audio_speech/phalar_phasors_for_learned_musical_audio_representations.md)
 
 </div>
 

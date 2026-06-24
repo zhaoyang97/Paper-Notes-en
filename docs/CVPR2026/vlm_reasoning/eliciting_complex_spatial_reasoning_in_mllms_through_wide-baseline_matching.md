@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Eliciting Complex Spatial Reasoning in MLLMs through Wide-Baseline Matching
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes using "wide-baseline matching" (WBM) as a touchstone for probing and training spatial reasoning in MLLMs. It introduces ReasonMatch-Bench, stratified by viewpoint difference and matching granularity (where the strongest baseline achieves only 37.2 F1 compared to human 84.0). Utilizing an automated d
+  [CVPR 2026][VLM Reasoning][Wide-baseline matching] This paper proposes using "wide-baseline matching" (WBM) as a touchstone for probing and training spatial reasoning in MLLMs. It introduces ReasonMatch-Bench, stratified by viewpoint difference and matching granularity (where the strongest baseline achieves only 37.2 F1 compared to human 84.0). Utilizing an automated data pipeline that extracts verifiable correspondences from video-3D corpora and DCRL (Verifiable Reward RL wi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Wide-baseline matching"
+  - "Cross-view correspondence"
+  - "Verifiable reward reinforcement learning"
+  - "Curriculum learning"
+  - "Spatial reasoning benchmark"
 date: 2026-05-08
-content_hash: 8cad93cba8600d4b
+content_hash: 498a9a47891084fc
 ---
+
 # Eliciting Complex Spatial Reasoning in MLLMs through Wide-Baseline Matching
 
 **Conference**: CVPR 2026  
@@ -155,10 +161,10 @@ Transfer to spatial intelligence benchmarks: OmniSpatial Overall 43.60 → 48.87
 ## Related Papers
 
 - [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
-- [\[CVPR 2026\] ReMatch: Boosting Representation through Matching for Multimodal Retrieval](rematch_boosting_representation_through_matching_for_multimodal_retrieval.md)
 - [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
-- [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
-- [\[CVPR 2026\] SpatialTree: How Spatial Intelligence Branches Out in MLLMs](spatialtree_how_spatial_intelligence_branches_out_in_mllms.md)
+- [\[CVPR 2026\] COT-FM: Cluster-wise Optimal Transport Flow Matching](cot-fm_cluster-wise_optimal_transport_flow_matching.md)
+- [\[ICLR 2026\] VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?](../../ICLR2026/vlm_reasoning/videoreasonbench_can_mllms_perform_vision-centric_complex_video_reasoning.md)
+- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
 
 </div>
 

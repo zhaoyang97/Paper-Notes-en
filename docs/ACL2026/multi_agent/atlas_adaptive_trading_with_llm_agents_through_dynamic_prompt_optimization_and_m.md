@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper proposes the ATLAS multi-agent financial trading framework and the Adaptive-OPRO prompt optimization method. By utilizing specialized analyst agents to prepare heterogeneous market information and dynamically optimizing the instruction prompts of the central trading agent based on delayed noisy feedback, the
+  [ACL 2026][Multi-Agent][LLM Trading Agent] This paper proposes the ATLAS multi-agent financial trading framework and the Adaptive-OPRO prompt optimization method. By utilizing specialized analyst agents to prepare heterogeneous market information and dynamically optimizing the instruction prompts of the central trading agent based on delayed noisy feedback, the system significantly outperforms baselines across diverse volatile market environments.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "LLM Trading Agent"
+  - "Prompt Optimization"
+  - "Multi-Agent Collaboration"
+  - "Financial Decision Making"
+  - "Adaptive Strategy"
 date: 2026-05-08
-content_hash: 59a25e411f198d09
+content_hash: 9c182dc6cacac9eb
 ---
+
 # ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination
 
 **Conference**: ACL 2026  
@@ -149,7 +155,7 @@ This framework uses online prompt optimization rather than traditional training.
 - [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 - [\[AAAI 2026\] Adaptive Theory of Mind for LLM-based Multi-Agent Coordination](../../AAAI2026/multi_agent/adaptive_theory_of_mind_for_llm-based_multi-agent_coordination.md)
 - [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
-- [\[ACL 2026\] Explicit Trait Inference for Multi-Agent Coordination](explicit_trait_inference_for_multi-agent_coordination.md)
+- [\[ICML 2026\] MASPOB: Multi-Agent Prompt Optimization via GNN Surrogate + LinUCB + Coordinate Ascent](../../ICML2026/multi_agent/maspob_bandit-based_prompt_optimization_for_multi-agent_systems_with_graph_neura.md)
 
 </div>
 

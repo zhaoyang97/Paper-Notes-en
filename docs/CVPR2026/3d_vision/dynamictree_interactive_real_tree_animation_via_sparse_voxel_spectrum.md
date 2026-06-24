@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DynamicTree: Interactive Real Tree Animation via Sparse Voxel Spectrum
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This work compresses the motion of real scanned 3DGS trees into a set of "sparse voxels + frequency spectrum." A feed-forward diffusion model is used to generate long-term mesh motion in a single pass to drive the Gaussians. This approach avoids the spatio-temporal inconsistency common in 4D generation methods, is a hu
+  [CVPR 2026][3D Vision][Tree animation] This work compresses the motion of real scanned 3DGS trees into a set of "sparse voxels + frequency spectrum." A feed-forward diffusion model is used to generate long-term mesh motion in a single pass to drive the Gaussians. This approach avoids the spatio-temporal inconsistency common in 4D generation methods, is a hundred times faster than MPM physical simulation, and allows for real-time drag-and-drop interaction at approximately 18ms…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Tree animation"
+  - "3D Gaussian Splatting"
+  - "sparse voxel spectrum"
+  - "modal analysis"
+  - "4D generation"
 date: 2026-05-08
-content_hash: ce715a8d2a03d387
+content_hash: 14cf40313149b730
 ---
+
 # DynamicTree: Interactive Real Tree Animation via Sparse Voxel Spectrum
 
 **Conference**: CVPR 2026  
@@ -163,11 +169,11 @@ CLIP-I first decreases and then increases with resolution. Improvements beyond 1
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
-- [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
+- [\[CVPR 2026\] MeshWeaver: Sparse-Voxel-Guided Surface Weaving for Autoregressive Mesh Generation](meshweaver_sparse-voxel-guided_surface_weaving_for_autoregressive_mesh_generatio.md)
+- [\[CVPR 2026\] VIAFormer: Voxel-Image Alignment Transformer for High-Fidelity Voxel Refinement](viaformer_voxel-image_alignment_transformer_for_high-fidelity_voxel_refinement.md)
+- [\[CVPR 2026\] RigMo: Unifying Rig and Motion Learning for Generative Animation](rigmo_unifying_rig_and_motion_learning_for_generative_animation.md)
+- [\[CVPR 2026\] Spectrum from Defocus: Fast Spectral Imaging with Chromatic Focal Stack](spectrum_from_defocus_fast_spectral_imaging_with_chromatic_focal_stack.md)
+- [\[CVPR 2026\] Generalizable Radio-Frequency Radiance Fields for Spatial Spectrum Synthesis](generalizable_radio-frequency_radiance_fields_for_spatial_spectrum_synthesis.md)
 
 </div>
 

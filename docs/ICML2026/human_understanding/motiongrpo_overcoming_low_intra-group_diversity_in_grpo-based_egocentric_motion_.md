@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] MotionGRPO: Overcoming Low Intra-Group Diversity in GRPO-Based Egocentric Motion Recovery
 description: >-
-  [ICML 2026][Human Understanding][HMD] MotionGRPO reformulates first-person full-body motion recovery from head-mounted devices as a Markov Decision Process (MDP) over diffusion sampling. It utilizes Group Relative Policy Optimization (GRPO) post-training with a hybrid reward system consisting of a "trajectory condition-aware perception model + 4 joint-leve
+  [ICML 2026][Human Understanding][Full-body Motion Recovery] MotionGRPO reformulates first-person full-body motion recovery from head-mounted devices as a Markov Decision Process (MDP) over diffusion sampling. It utilizes Group Relative Policy Optimization (GRPO) post-training with a hybrid reward system consisting of a "trajectory condition-aware perception model + 4 joint-level sub-rewards." Crucially, it identifies that strong input conditions lead to nearly identical intra…
 tags:
-  - ICML 2026
-  - Human Understanding
-  - HMD
-  - GRPO
-  - Diffusion Model
+  - "ICML 2026"
+  - "Human Understanding"
+  - "Full-body Motion Recovery"
+  - "HMD"
+  - "GRPO"
+  - "Diffusion Model"
+  - "Perlin Noise Injection"
 date: 2026-05-08
-content_hash: e34703e26207e87a
+content_hash: fbbdee321714e1fa
 ---
+
 # MotionGRPO: Overcoming Low Intra-Group Diversity in GRPO-Based Egocentric Motion Recovery
 
 **Conference**: ICML 2026  
@@ -128,14 +131,17 @@ The GRPO objective is $\mathcal{J}_{GRPO}(\theta)=\mathbb{E}\left[\frac{1}{G}\su
 
 <div class="related-papers" markdown="1">
 
-- **EgoAllo**: Unified Egocentric Full-Body Motion Synthesis and Recovery (2025)
-- **GRPO**: DeepSeekMath: Pushing the Limits of Mathematical Reasoning in LLMs (2024)
-- **DDPO**: Training Diffusion Models with Reinforcement Learning (2023)
+## Related Papers
+
+- [\[CVPR 2026\] Mocap-2-to-3: Multi-view Lifting for Monocular Motion Recovery with 2D Pretraining](../../CVPR2026/human_understanding/mocap-2-to-3_multi-view_lifting_for_monocular_motion_recovery_with_2d_pretrainin.md)
+- [\[ICML 2026\] Learning Instance-Adaptive Low-Rank Orthogonal Subspaces for Clothes-Changing Person Re-Identification](learning_instance-adaptive_low-rank_orthogonal_subspaces_for_clothes-changing_pe.md)
+- [\[CVPR 2026\] EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR](../../CVPR2026/human_understanding/egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr.md)
+- [\[CVPR 2025\] HumanMM: Global Human Motion Recovery from Multi-shot Videos](../../CVPR2025/human_understanding/humanmm_global_human_motion_recovery_from_multi-shot_videos.md)
+- [\[CVPR 2026\] Forecasting 3D Scanpaths in Egocentric Video](../../CVPR2026/human_understanding/forecasting_3d_scanpaths_in_egocentric_video.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Mocap-2-to-3: Multi-view Lifting for Monocular Motion Recovery with 2D Pretraining](../../CVPR2026/human_understanding/mocap-2-to-3_multi-view_lifting_for_monocular_motion_recovery_with_2d_pretrainin.md)

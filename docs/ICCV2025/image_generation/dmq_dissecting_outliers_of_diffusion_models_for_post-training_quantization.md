@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization
 description: >-
-  [ICCV 2025][Image Generation][Post-training quantization] DMQ is a framework that combines Learned Equivalent Scaling (LES) and channel-wise Power-of-Two Scaling (PTS) to address outlier problems in diffusion model quant…
+  [ICCV 2025][Image Generation][Post-training quantization] DMQ is a framework that combines Learned Equivalent Scaling (LES) and channel-wise Power-of-Two Scaling (PTS) to address outlier problems in diffusion model quantization, achieving, for the first time, stable high-quality image generation under the W4A6 low-bit setting.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "equivalent scaling"
   - "Power-of-Two scaling"
 date: 2026-05-08
-content_hash: 7da2558abc87e765
+content_hash: 61dd9bf597036bf0
 ---
 
 # DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization
@@ -165,11 +165,11 @@ Voting Algorithm vs. MSE-based selection (FFHQ W4A8):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models](../../CVPR2026/image_generation/segquant_a_semantics-aware_and_generalizable_quantization_framework_for_diffusio.md)
+- [\[ICLR 2026\] Quantization-Aware Diffusion Models for Maximum Likelihood Training](../../ICLR2026/image_generation/quantization-aware_diffusion_models_for_maximum_likelihood_training.md)
 - [\[ICCV 2025\] Text Embedding Knows How to Quantize Text-Guided Diffusion Models](text_embedding_knows_how_to_quantize_text-guided_diffusion_models.md)
-- [\[ICCV 2025\] Improved Noise Schedule for Diffusion Training](improved_noise_schedule_for_diffusion_training.md)
-- [\[NeurIPS 2025\] FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models](../../NeurIPS2025/image_generation/fairimagen_post-processing_for_bias_mitigation_in_text-to-image_models.md)
-- [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](../../CVPR2026/image_generation/leapalign_post_training_flow_matching_models_at_any_generation_step.md)
+- [\[CVPR 2026\] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models](../../CVPR2026/image_generation/segquant_a_semantics-aware_and_generalizable_quantization_framework_for_diffusio.md)
+- [\[CVPR 2025\] Aesthetic Post-Training Diffusion Models from Generic Preferences with Step-by-step Preference Optimization](../../CVPR2025/image_generation/aesthetic_post-training_diffusion_models_from_generic_preferences_with_step-by-s.md)
+- [\[CVPR 2025\] Finite Difference Flow Optimization for RL Post-Training of Text-to-Image Models](../../CVPR2025/image_generation/finite_difference_flow_optimization_for_rl_post-training_of_text-to-image_models.md)
 
 </div>
 

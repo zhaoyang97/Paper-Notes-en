@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper proposes the RARE framework, which tracks cross-document redundancy by decomposing documents into atomic facts. It introduces CRRF (Criterion-separated Reciprocal Rank Fusion) to stabilize multi-criterion LLM judgments. By constructing the RedQA benchmark on high-redundancy enterprise corpora (Finance, Legal
+  [ACL 2026][Information Retrieval & RAG][Redundancy-Aware Retrieval] This paper proposes the RARE framework, which tracks cross-document redundancy by decomposing documents into atomic facts. It introduces CRRF (Criterion-separated Reciprocal Rank Fusion) to stabilize multi-criterion LLM judgments. By constructing the RedQA benchmark on high-redundancy enterprise corpora (Finance, Legal, Patents), the study reveals that for 4-hop high-overlap settings…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Redundancy-Aware Retrieval"
+  - "High-Similarity Corpora"
+  - "Multi-hop Retrieval Evaluation"
+  - "Enterprise RAG"
+  - "Atomic Fact Decomposition"
 date: 2026-05-08
-content_hash: 0783faa55a7ab0a7
+content_hash: 0f765ce017c83377
 ---
+
 # RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora
 
 **Conference**: ACL 2026  

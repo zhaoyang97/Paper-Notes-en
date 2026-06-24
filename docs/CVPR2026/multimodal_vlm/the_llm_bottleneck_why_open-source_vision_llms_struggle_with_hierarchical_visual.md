@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper reveals that open-source LLMs lack hierarchical taxonomic knowledge of the visual world (even failing at basic biological taxonomic systems), which makes the LLM a bottleneck for hierarchical visual recognition in Vision LLMs.
+  [CVPR2026][Multimodal VLM][Hierarchical Visual Recognition] This paper reveals that open-source LLMs lack hierarchical taxonomic knowledge of the visual world (even failing at basic biological taxonomic systems), which makes the LLM a bottleneck for hierarchical visual recognition in Vision LLMs.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Hierarchical Visual Recognition"
+  - "Taxonomic Consistency"
+  - "LLM Bottleneck"
+  - "Taxonomic Knowledge"
+  - "VQA"
 date: 2026-05-08
-content_hash: 72fd6f02e9192c66
+content_hash: 7168ee93f0b6ea10
 ---
+
 # The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition
 
 **Conference**: CVPR2026  
@@ -150,10 +156,10 @@ Fine-tuning utilized LoRA (rather than full-parameter SFT), with training data d
 ## Related Papers
 
 - [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
+- [\[ICLR 2026\] MetaCaptioner: Towards Generalist Visual Captioning with Open-source Suites](../../ICLR2026/multimodal_vlm/metacaptioner_towards_generalist_visual_captioning_with_open-source_suites.md)
+- [\[CVPR 2026\] WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition](wikiclip_an_efficient_contrastive_baseline_for_open-domain_visual_entity_recogni.md)
 - [\[CVPR 2026\] Enhancing Part-Level Point Grounding for Any Open-Source MLLMs](enhancing_part-level_point_grounding_for_any_open-source_mllms.md)
-- [\[CVPR 2026\] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition](sed-ud_an_influence-driven_and_hierarchically-decoupled_information_bottleneck_f.md)
-- [\[CVPR 2026\] VCU-Bridge: Hierarchical Visual Connotation Understanding via Semantic Bridging](vcu-bridge_hierarchical_visual_connotation_understanding_via_semantic_bridging.md)
-- [\[CVPR 2026\] Customized Visual Storytelling with Unified Multimodal LLMs](customized_visual_storytelling_with_unified_multimodal_llms.md)
+- [\[CVPR 2026\] Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)
 
 </div>
 

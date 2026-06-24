@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AC-ODM: Actor–Critic Online Data Mixing for Sample-Efficient LLM Pretraining
 description: >-
-  [ICML 2026][Pretraining][Actor-Critic] AC-ODM formulates the dynamic adjustment of pre-training data domain weights as a continuous control problem in reinforcement learning. Using the DDPG Actor-Critic framework, it perceives the model state in real-time, outputs sampling weights for each domain, and employs "inter-domain gradient alignment" as the reward.
+  [ICML2026][LLM Pretraining][Data Mixing] AC-ODM formulates the dynamic adjustment of pre-training data domain weights as a continuous control problem in reinforcement learning. Using the DDPG Actor-Critic framework, it perceives the model state in real-time, outputs sampling weights for each domain, and employs "inter-domain gradient alignment" as the reward. Theoretically, this is proven equivalent to maximizing constructive interference of gradients (effective descent step…
 tags:
-  - ICML 2026
-  - Pretraining
-  - Actor-Critic
+  - "ICML2026"
+  - "LLM Pretraining"
+  - "Data Mixing"
+  - "Online Domain Weighting"
+  - "Actor-Critic"
+  - "Gradient Alignment"
+  - "Sample Efficiency"
 date: 2026-05-08
-content_hash: 422221aaa4c8368c
+content_hash: c08a27b6c67ca4f6
 ---
+
 # AC-ODM: Actor–Critic Online Data Mixing for Sample-Efficient LLM Pretraining
 
 **Conference**: ICML2026  
@@ -153,10 +158,10 @@ Non-proxy AC-ODM is only 0.4% slower per step than ODM (2.48s vs 2.47s) but redu
 ## Related Papers
 
 - [\[ICML 2026\] Explaining Data Mixing Scaling Laws](explaining_data_mixing_scaling_laws.md)
-- [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](../../ICLR2026/llm_pretraining/beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
 - [\[ICML 2025\] Chameleon: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning](../../ICML2025/llm_pretraining/chameleon_a_flexible_data-mixing_framework_for_language_model_pretraining_and_fi.md)
+- [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](../../ICLR2026/llm_pretraining/beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
 - [\[ICML 2026\] POET-X: Memory-efficient LLM Training by Scaling Orthogonal Transformation](poet-x_memory-efficient_llm_training_by_scaling_orthogonal_transformation.md)
-- [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](../../ICLR2026/llm_pretraining/beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
+- [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](../../ACL2026/llm_pretraining/data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
 
 </div>
 

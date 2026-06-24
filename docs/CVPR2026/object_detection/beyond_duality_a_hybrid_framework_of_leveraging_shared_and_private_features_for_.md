@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Duality: A Hybrid Framework of Leveraging Shared and Private Features for RGB-Event Object Detection
 description: >-
-  [CVPR 2026][Object Detection][DETR] SPFD explicitly decouples RGB and event features into three streams—"Shared," "RGB-Private," and "Event-Private"—in the **frequency domain** using "spectral coherence." These features are then injected into a DETR-based encoder (via adaptive gated fusion of private features) and decoder (through layer-wise asymmetric i
+  [CVPR 2026][Object Detection][RGB-Event Detection] SPFD explicitly decouples RGB and event features into three streams—"Shared," "RGB-Private," and "Event-Private"—in the **frequency domain** using "spectral coherence." These features are then injected into a DETR-based encoder (via adaptive gated fusion of private features) and decoder (through layer-wise asymmetric injection), improving mAP on DSEC-Det from the SOTA of 30.4 to 34.6.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - DETR
+  - "CVPR 2026"
+  - "Object Detection"
+  - "RGB-Event Detection"
+  - "Shared-Private Feature Decoupling"
+  - "Frequency Domain Coherence"
+  - "DETR"
+  - "Multimodal Fusion"
 date: 2026-05-08
-content_hash: 9b567a7097d43013
+content_hash: b91088bdd35558b6
 ---
+
 # Beyond Duality: A Hybrid Framework of Leveraging Shared and Private Features for RGB-Event Object Detection
 
 **Conference**: CVPR 2026  
@@ -143,8 +148,8 @@ Tested on the DSEC-Det test set (Baseline: multimodal extension of MI-DETR):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

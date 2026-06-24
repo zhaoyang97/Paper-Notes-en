@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address the deadlock where "generative traces in AI-generated images lack clean pairs and cannot be extracted via supervised learning," this paper uses a **randomly-structured image reconstructor** to artificially "create traces" on real images. The reconstruction residuals are treated as pseudo-labels to train a **
+  [CVPR 2026][AIGC Detection][generative traces] To address the deadlock where "generative traces in AI-generated images lack clean pairs and cannot be extracted via supervised learning," this paper uses a **randomly-structured image reconstructor** to artificially "create traces" on real images. The reconstruction residuals are treated as pseudo-labels to train a **generative signature (GenSign) extractor**, followed by a GenSign + RGB dual-stream classifier for detection…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AIGC Detection"
+  - "generative traces"
+  - "surrogate supervision"
+  - "dynamic architecture reconstruction"
+  - "cross-model generalization"
 date: 2026-05-08
-content_hash: b3169171a9019c3a
+content_hash: 644843d0373a379c
 ---
+
 # Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ Key curves: $p_{aug}$ from 0% (mean 88.80%) → 20% (peak 95.79%) → 50% (94.86
 
 ## Related Papers
 
-- [\[CVPR 2026\] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness](detecting_compressed_ai-generated_images_via_phase_spectrum_robustness.md)
-- [\[CVPR 2026\] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning](skyra_ai-generated_video_detection_via_grounded_artifact_reasoning.md)
-- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
-- [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
-- [\[CVPR 2026\] Cross-modal Representation Learning for Diffusion-generated Image Detection](cross-modal_representation_learning_for_diffusion-generated_image_detection.md)
+- [\[CVPR 2026\] Locate-Then-Examine: Grounded Region Reasoning Improves Detection of AI-Generated Images](locate-then-examine_grounded_region_reasoning_improves_detection_of_ai-generated.md)
+- [\[CVPR 2026\] Investigating Self-Supervised Representations for Audio-Visual Deepfake Detection](investigating_self-supervised_representations_for_audio-visual_deepfake_detectio.md)
+- [\[ACL 2025\] Learning to Rewrite: Generalized LLM-Generated Text Detection](../../ACL2025/aigc_detection/learning_to_rewrite_generalized_llm-generated_text_detection.md)
+- [\[ICLR 2026\] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images](../../ICLR2026/aigc_detection/semantic_visual_anomaly_detection_and_reasoning_in_ai-generated_images.md)
+- [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
 
 </div>
 

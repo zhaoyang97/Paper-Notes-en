@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mitigating Objectness Bias and Region-to-Text Misalignment for Open-Vocabulary Panoptic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][CLIP] OVRCOAT addresses the issues in open-vocabulary panoptic segmentation where "unseen objects are discarded as background" and "CLIP regional features misalign with categories." It introduces a lightweight "CLIP-conditioned objectness adjustment via COAT" and "mask-level image-text alignment fine-tuning (OVR)." This appr
+  [CVPR 2026][Segmentation][Open-vocabulary panoptic segmentation] OVRCOAT addresses the issues in open-vocabulary panoptic segmentation where "unseen objects are discarded as background" and "CLIP regional features misalign with categories." It introduces a lightweight "CLIP-conditioned objectness adjustment via COAT" and "mask-level image-text alignment fine-tuning (OVR)." This approach pushes Panoptic Quality (PQ) to a new SOTA on ADE20K (relative +5.5%) while being more mem…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP
-  - FC-CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary panoptic segmentation"
+  - "objectness bias"
+  - "CLIP"
+  - "mask-to-text alignment"
+  - "FC-CLIP"
 date: 2026-05-08
-content_hash: 92b4c76310fc8064
+content_hash: 4350bbe0c01100ec
 ---
+
 # Mitigating Objectness Bias and Region-to-Text Misalignment for Open-Vocabulary Panoptic Segmentation
 
 **Conference**: CVPR 2026  
@@ -135,6 +139,7 @@ COAT consistently improves PQ on OOV datasets (rel. +1.4%–3%), and OVR improve
 - Value: ⭐⭐⭐⭐ Highly practical due to plug-and-play nature and memory efficiency; refreshes ADE20K SOTA.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

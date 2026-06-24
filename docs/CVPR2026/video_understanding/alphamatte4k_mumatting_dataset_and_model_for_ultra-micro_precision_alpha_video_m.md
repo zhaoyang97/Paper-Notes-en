@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] $\alpha$Matte4K & $\mu$Matting: Dataset and Model for Ultra-Micro Precision Alpha Video Matting
 description: >-
-  [CVPR 2026][Others][alpha matting] Targeting 4K portrait video matting, this paper introduces $\alpha$Matte4K, a large-scale dataset with pixel-level precision and physical consistency generated via Physics-Based Rendering (PBR). It also proposes $\mu$Matting, which utilizes a portrait prior (MAE) to predict a coarse alpha and identify "difficult region
+  [CVPR 2026][Video Understanding][Video matting] Targeting 4K portrait video matting, this paper introduces $\alpha$Matte4K, a large-scale dataset with pixel-level precision and physical consistency generated via Physics-Based Rendering (PBR). It also proposes $\mu$Matting, which utilizes a portrait prior (MAE) to predict a coarse alpha and identify "difficult regions," followed by sparse 3D convolution refinement only on these regions. This approach achieves full-resolution 4…
 tags:
-  - CVPR 2026
-  - Others
-  - alpha matting
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video matting"
+  - "alpha matting"
+  - "4K high resolution"
+  - "PBR synthetic dataset"
+  - "sparse 3D convolution"
 date: 2026-05-08
-content_hash: 2fc79877318db6bc
+content_hash: fa6b087300eb07a9
 ---
+
 # $\alpha$Matte4K & $\mu$Matting: Dataset and Model for Ultra-Micro Precision Alpha Video Matting
 
 **Conference**: CVPR 2026  
@@ -166,11 +171,11 @@ Adding $\alpha$Matte4K improved all methods across all metrics, validating that 
 
 ## Related Papers
 
-- [\[ECCV 2024\] COIN-Matting: Confounder Intervention for Image Matting](../../ECCV2024/others/coin-matting_confounder_intervention_for_image_matting.md)
-- [\[CVPR 2026\] AniMimic: Imitating 3D Animation from Video Priors](animimic_imitating_3d_animation_from_video_priors.md)
-- [\[CVPR 2026\] From Pixel to Precision: Enhancing Handwritten Mathematical Expression Recognition with Image-Level Reward](from_pixel_to_precision_enhancing_handwritten_mathematical_expression_recognitio.md)
-- [\[CVPR 2026\] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely F₁](what_is_the_optimal_ranking_score_between_precision_and_recall_we_can_always_fin.md)
-- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
+- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
+- [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
+- [\[ECCV 2024\] Towards Model-Agnostic Dataset Condensation by Heterogeneous Models](../../ECCV2024/video_understanding/towards_model-agnostic_dataset_condensation_by_heterogeneous_models.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
 
 </div>
 

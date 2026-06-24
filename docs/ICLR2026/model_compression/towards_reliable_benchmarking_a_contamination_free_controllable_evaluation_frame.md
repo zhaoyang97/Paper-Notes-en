@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Reliable Benchmarking: A Contamination Free, Controllable Evaluation Framework for Multi-step LLM Function Calling
 description: >-
-  [ICLR 2026][Model Compression][benchmark] Ours proposes the FuncBenchGen framework, which models multi-step function calling as a DAG traversal problem to achieve data contamination-free evaluation with fine-grained task difficulty control. It reveals critical failure modes of reasoning models under long calling chains and connected distracting functions.
+  [ICLR 2026][Model Compression][Tool-augmented LLM] Ours proposes the FuncBenchGen framework, which models multi-step function calling as a DAG traversal problem to achieve data contamination-free evaluation with fine-grained task difficulty control. It reveals critical failure modes of reasoning models under long calling chains and connected distracting functions.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - benchmark
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Tool-augmented LLM"
+  - "Multi-step function calling"
+  - "benchmark"
+  - "data contamination"
+  - "DAG traversal"
 date: 2026-05-08
-content_hash: 8769baf1b1c49e7f
+content_hash: 6ceba7ebeddba2d8
 ---
+
 # Towards Reliable Benchmarking: A Contamination Free, Controllable Evaluation Framework for Multi-step LLM Function Calling
 
 **Conference**: ICLR 2026  
@@ -131,7 +136,7 @@ A systematic and deeply analytical framework for evaluation. The core contributi
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

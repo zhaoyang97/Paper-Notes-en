@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Impatient Users Confuse AI Agents: High-fidelity Simulations of Human Traits for Testing Agents
 description: >-
-  [ACL 2026][LLM Agent][τ-Bench] The authors propose TraitBasis—a fine-tuning-free, model-agnostic, and lightweight method that extracts user trait directions like "impatient/confused/skeptical/incoherent" within the hidden space using contrastive activation differences. These directions can be scaled, combined, and injected during inference to simula
+  [ACL 2026 (Oral)][LLM Agent][AI Agent Robustness] The authors propose TraitBasis—a fine-tuning-free, model-agnostic, and lightweight method that extracts user trait directions like "impatient/confused/skeptical/incoherent" within the hidden space using contrastive activation differences. These directions can be scaled, combined, and injected during inference to simulate challenging users with high fidelity. Integrating this into $\tau$-Bench to create the $\tau$-trait benchma…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - τ-Bench
+  - "ACL 2026 (Oral)"
+  - "LLM Agent"
+  - "AI Agent Robustness"
+  - "User Simulation"
+  - "Activation Guidance"
+  - "Persona Vectors"
+  - "$\\tau$-Bench"
 date: 2026-05-08
-content_hash: bfe1e91c70e46e23
+content_hash: 0ec05ff9904b4fc3
 ---
+
 # Impatient Users Confuse AI Agents: High-fidelity Simulations of Human Traits for Testing Agents
 
 **Conference**: ACL 2026 (Oral)  
@@ -131,11 +136,11 @@ TraitBasis leads across all human evaluations: 63% win rate in realism (10% high
 
 ## Related Papers
 
+- [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](../../ICLR2026/llm_agent/grounding_computer_use_agents_on_human_demonstrations.md)
 - [\[ACL 2026\] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents](magma_a_multi-graph_based_agentic_memory_architecture_for_ai_agents.md)
+- [\[ICLR 2026\] MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use](../../ICLR2026/llm_agent/mcpmark_a_benchmark_for_stress-testing_realistic_and_comprehensive_mcp_use.md)
 - [\[ACL 2026\] Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception](your_llm_agents_are_temporally_blind_the_misalignment_between_tool_use_decisions.md)
-- [\[ICLR 2026\] Judge Reliability Harness: Stress Testing the Reliability of LLM Judges](../../ICLR2026/llm_agent/judge_reliability_harness_stress_testing_the_reliability_of_llm_judges.md)
 - [\[ICML 2026\] EvoClaw: Evaluating AI Agents on Continuous Software Evolution](../../ICML2026/llm_agent/evoclaw_evaluating_ai_agents_on_continuous_software_evolution.md)
-- [\[ICLR 2026\] The Controllability Trap: A Governance Framework for Military AI Agents](../../ICLR2026/llm_agent/the_controllability_trap_a_governance_framework_for_military_ai_systems.md)
 
 </div>
 

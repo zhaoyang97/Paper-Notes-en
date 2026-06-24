@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Neural ODE] This paper systematically investigates the extrapolation capability of Neural ODEs (NODEs) on noisy synthetic data…
+  [NeurIPS 2025][LLM Pretraining][Neural ODE] This paper systematically investigates the extrapolation capability of Neural ODEs (NODEs) on noisy synthetic data, and explores a pipeline that employs NODEs as a data augmentation tool combined with symbolic regression (SR) to recover governing equations from limited data. Results demonstrate that this combined approach can recover two of three governing equations—and a strong approximation of the third—using only 10% of the simul…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Extrapolation"
   - "Scientific Discovery"
 date: 2026-05-08
-content_hash: dca2415c4dfe08b0
+content_hash: a6a931e90d96a071
 ---
 
 # An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems
@@ -169,10 +169,10 @@ This paper provides preliminary yet compelling evidence for combining NODEs with
 
 ## Related Papers
 
+- [\[ICLR 2026\] How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study](../../ICLR2026/llm_pretraining/how_text_quality_interventions_reshape_neural_scaling_laws_for_llms_empirical_st.md)
 - [\[NeurIPS 2025\] Generalization Bounds for Rank-sparse Neural Networks](generalization_bounds_for_rank-sparse_neural_networks.md)
 - [\[NeurIPS 2025\] Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking](flatness_is_necessary_neural_collapse_is_not_rethinking_generalization_via_grokk.md)
 - [\[NeurIPS 2025\] Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding](learning_to_flow_from_generative_pretext_tasks_for_neural_architecture_encoding.md)
-- [\[ICCV 2025\] ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training](../../ICCV2025/llm_pretraining/aceg_improving_generalization_of_scene_coordinate_regression.md)
 - [\[NeurIPS 2025\] Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks](alternating_gradient_flows_a_theory_of_feature_learning_in_two-layer_neural_netw.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ComGS: Efficient 3D Object-Scene Composition via Surface Octahedral Probes
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] ComGS utilizes "Surface Octahedral Probes (SOPs)" to cache indirect illumination and occlusion as octahedral textures on object/scene surfaces. By using KNN interpolation instead of per-iteration ray tracing and simplifying complex scene photometry into "local environment map completion at the placement point," it achi
+  [ICLR2026][3D Vision][Gaussian Splatting] ComGS utilizes "Surface Octahedral Probes (SOPs)" to cache indirect illumination and occlusion as octahedral textures on object/scene surfaces. By using KNN interpolation instead of per-iteration ray tracing and simplifying complex scene photometry into "local environment map completion at the placement point," it achieves harmonious 3D object-scene composition with realistic shadows at ~26 FPS and 36 seconds of editing time…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Object-Scene Composition"
+  - "Inverse Rendering"
+  - "Lighting Estimation"
+  - "Real-time Shadows"
 date: 2026-05-08
-content_hash: f609113086635b75
+content_hash: 64ed7f478194e483
 ---
+
 # ComGS: Efficient 3D Object-Scene Composition via Surface Octahedral Probes
 
 **Conference**: ICLR2026  
@@ -134,8 +140,8 @@ Relighting accuracy reaches or slightly exceeds SOTA, while training takes only 
 - [\[ICLR 2026\] A²TG: Adaptive Anisotropic Textured Gaussians for Efficient 3D Scene Representation](a2tg_adaptive_anisotropic_textured_gaussians_for_efficient_3d_scene_representati.md)
 - [\[CVPR 2025\] ProbeSDF: Light Field Probes for Neural Surface Reconstruction](../../CVPR2025/3d_vision/probesdf_light_field_probes_for_neural_surface_reconstruction.md)
 - [\[ICLR 2026\] LiTo: Surface Light Field Tokenization](lito_surface_light_field_tokenization.md)
-- [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](../../CVPR2026/3d_vision/zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
-- [\[ICLR 2026\] Efficient-LVSM: Faster, Cheaper, and Better Large View Synthesis Model via Decoupled Co-Refinement Attention](efficient-lvsm_faster_cheaper_and_better_large_view_synthesis_model_via_decouple.md)
+- [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](../../AAAI2026/3d_vision/sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
+- [\[ICLR 2026\] Unified 3D Scene Understanding Through Physical World Modeling](unified_3d_scene_understanding_through_physical_world_modeling.md)
 
 </div>
 

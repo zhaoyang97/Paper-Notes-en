@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diffusion Probe: Generated Image Result Prediction Using CNN Probes
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] It was discovered that the cross-attention distribution in the early denoising steps of diffusion models is highly correlated with the final image quality. This paper proposes Diffusion Probe—a lightweight CNN that predicts generation quality from early attention maps. By pre-filtering low-quality generation paths at o
+  [CVPR 2026][Image Generation][Diffusion models] It was discovered that the cross-attention distribution in the early denoising steps of diffusion models is highly correlated with the final image quality. This paper proposes Diffusion Probe—a lightweight CNN that predicts generation quality from early attention maps. By pre-filtering low-quality generation paths at only 10% of the denoising process, it accelerates prompt optimization, seed selection, and GRPO training.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "Probes"
+  - "Cross-attention"
+  - "Early quality prediction"
+  - "Generation acceleration"
 date: 2026-05-08
-content_hash: fcba6a41c8786fec
+content_hash: 6690d45cb0b8bb1d
 ---
+
 # Diffusion Probe: Generated Image Result Prediction Using CNN Probes
 
 **Conference**: CVPR 2026  
@@ -146,10 +151,10 @@ The Probe approaches LLM performance in prompt optimization with significantly l
 ## Related Papers
 
 - [\[CVPR 2026\] Diversity over Uniformity: Rethinking Representation in Generated Image Detection](diversity_over_uniformity_rethinking_representation_in_generated_image_detection.md)
+- [\[CVPR 2026\] Illustrator's Depth: Monocular Layer Index Prediction for Image Decomposition](illustrators_depth_monocular_layer_index_prediction_for_image_decomposition.md)
 - [\[CVPR 2026\] Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution](attribution_as_retrieval_modelagnostic_aigenerated.md)
 - [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
 - [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
-- [\[ICML 2026\] Latent Diffusion Pretraining for Crystal Property Prediction](../../ICML2026/image_generation/latent_diffusion_pretraining_for_crystal_property_prediction.md)
 
 </div>
 

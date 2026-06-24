@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Backdoor Mitigation by Distance-Driven Detoxification
 description: >-
-  [ICCV 2025][AI Safety][backdoor defense] This paper proposes Distance-Driven Detoxification (D3), which reformulates backdoor defense as a constrained optimization problem — maximizing the distance between the fine-tuned…
+  [ICCV 2025][AI Safety][backdoor defense] This paper proposes Distance-Driven Detoxification (D3), which reformulates backdoor defense as a constrained optimization problem — maximizing the distance between the fine-tuned model weights and the poisoned initial weights, subject to a constraint that the clean sample loss does not exceed a threshold. This allows the model to effectively escape the "backdoor region," achieving best or second-best defense performance across 7 state…
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "constrained optimization"
   - "model purification"
 date: 2026-05-08
-content_hash: 725e8d846a73a7a0
+content_hash: ef221e1ebced2364
 ---
 
 # Backdoor Mitigation by Distance-Driven Detoxification
@@ -160,10 +160,10 @@ When an adversary uses SAM to push backdoor weights toward flat minima, FT and F
 ## Related Papers
 
 - [\[ICCV 2025\] Controllable Feature Whitening for Hyperparameter-Free Bias Mitigation](controllable_feature_whitening_for_hyperparameter-free_bias_mitigation.md)
+- [\[CVPR 2026\] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models](../../CVPR2026/ai_safety/eliminate_distance_differences_induced_by_backdoor_attacks_layer-selective_train.md)
 - [\[NeurIPS 2025\] Reconstruction and Secrecy under Approximate Distance Queries](../../NeurIPS2025/ai_safety/reconstruction_and_secrecy_under_approximate_distance_queries.md)
 - [\[ICCV 2025\] Backdoor Attacks on Neural Networks via One-Bit Flip](backdoor_attacks_on_neural_networks_via_one_bit_flip.md)
 - [\[NeurIPS 2025\] Robust Graph Condensation via Classification Complexity Mitigation](../../NeurIPS2025/ai_safety/robust_graph_condensation_via_classification_complexity_mitigation.md)
-- [\[NeurIPS 2025\] OmniFC: Rethinking Federated Clustering via Lossless and Secure Distance Reconstruction](../../NeurIPS2025/ai_safety/omnifc_rethinking_federated_clustering_via_lossless_and_secure_distance_reconstr.md)
 
 </div>
 

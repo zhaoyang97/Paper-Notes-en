@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] It's All Just Vectorization: einx, a Universal Notation for Tensor Operations
 description: >-
-  [ICLR 2026][Others][einops] This paper elevates "vectorization" to a unified meta-concept, pointing out that almost all Numpy-style tensor operations can be decomposed into "a few base operations + their respective vectorizations." Based on this, it designs a declarative, bracketed universal tensor notation called einx, analogous to loop notation
+  [ICLR 2026][Tensor operations] This paper elevates "vectorization" to a unified meta-concept, pointing out that almost all Numpy-style tensor operations can be decomposed into "a few base operations + their respective vectorizations." Based on this, it designs a declarative, bracketed universal tensor notation called einx, analogous to loop notation, which compresses a vast and inconsistent array of tensor APIs into a small set of base operations.
 tags:
-  - ICLR 2026
-  - Others
-  - einops
-  - einsum
+  - "ICLR 2026"
+  - "Tensor operations"
+  - "vectorization"
+  - "einops"
+  - "einsum"
+  - "declarative notation"
+  - "shape errors"
 date: 2026-05-08
-content_hash: 36e725e300969239
+content_hash: 26f65f0e647fe0ea
 ---
+
 # It's All Just Vectorization: einx, a Universal Notation for Tensor Operations
 
 **Conference**: ICLR 2026  
@@ -123,7 +127,7 @@ einx achieves full coverage (PFRC/PFR) across all operation categories and vecto
 - [\[ICLR 2026\] Exposing Mixture and Annotating Confusion for Active Universal Test-Time Adaptation](exposing_mixture_and_annotating_confusion_for_active_universal_test-time_adaptat.md)
 - [\[AAAI 2026\] OR-R1: Automating Modeling and Solving of Operations Research Optimization Problems](../../AAAI2026/others/or-r1_automating_modeling_and_solving_of_operations_research_optimization_proble.md)
 - [\[CVPR 2026\] Clair Obscur: an Illumination-Aware Method for Real-World Image Vectorization](../../CVPR2026/others/clair_obscur_an_illumination-aware_method_for_real-world_image_vectorization.md)
-- [\[CVPR 2026\] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely F₁](../../CVPR2026/others/what_is_the_optimal_ranking_score_between_precision_and_recall_we_can_always_fin.md)
+- [\[CVPR 2026\] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely $F_1$](../../CVPR2026/others/what_is_the_optimal_ranking_score_between_precision_and_recall_we_can_always_fin.md)
 
 </div>
 

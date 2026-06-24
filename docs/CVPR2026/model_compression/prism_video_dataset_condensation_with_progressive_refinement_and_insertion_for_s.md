@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper proposes PRISM, a monolithic video dataset condensation method. Starting from only two temporal anchors (first and last frames), it adaptively inserts keyframes by detecting gradient direction conflicts. This approach achieves SOTA storage efficiency while maintaining content-motion coupling integrity—reachi
+  [CVPR 2026][Model Compression][Video Dataset Condensation] This paper proposes PRISM, a monolithic video dataset condensation method. Starting from only two temporal anchors (first and last frames), it adaptively inserts keyframes by detecting gradient direction conflicts. This approach achieves SOTA storage efficiency while maintaining content-motion coupling integrity—reaching 17.9% accuracy on miniUCF 1VPC with 20MB, which is 5x less than the 94MB required by previous meth…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Video Dataset Condensation"
+  - "Keyframe Insertion"
+  - "Gradient Guidance"
+  - "Spatio-temporal Coupling"
+  - "Storage Efficiency"
 date: 2026-05-08
-content_hash: 1e5032f68c41ac05
+content_hash: b818deada3c34270
 ---
+
 # PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ PRISM leads significantly at VPC 1 and 5, with storage requirements only 1/3 to 
 
 ## Related Papers
 
+- [\[CVPR 2026\] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](f2hdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_motion_mo.md)
 - [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](../../AAAI2026/model_compression/post_training_quantization_for_efficient_dataset_condensation.md)
 - [\[ECCV 2024\] Leveraging Hierarchical Feature Sharing for Efficient Dataset Condensation](../../ECCV2024/model_compression/leveraging_hierarchical_feature_sharing_for_efficient_dataset_condensation.md)
 - [\[CVPR 2026\] Progressive Supernet Training for Efficient Visual Autoregressive Modeling](progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)
-- [\[ICCV 2025\] MotionFollower: Editing Video Motion via Lightweight Score-Guided Diffusion](../../ICCV2025/model_compression/motionfollower_editing_video_motion_via_score-guided_diffusion.md)
 - [\[CVPR 2025\] Enhancing Dataset Distillation via Non-Critical Region Refinement](../../CVPR2025/model_compression/enhancing_dataset_distillation_via_non-critical_region_refinement.md)
 
 </div>

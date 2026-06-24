@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Asymmetric Cross-Modal Knowledge Distillation: Bridging Modalities with Weak Semantic Consistency
 description: >-
-  [AAAI2026][Model Compression][cross-modal knowledge distillation] This paper proposes a novel paradigm termed Asymmetric Cross-modal Knowledge Distillation (ACKD)…
+  [AAAI2026][Model Compression][cross-modal knowledge distillation] This paper proposes a novel paradigm termed Asymmetric Cross-modal Knowledge Distillation (ACKD), realized through the SemBridge framework — comprising two plug-and-play modules, namely self-supervised semantic matching and optimal transport alignment — to enable cross-modal knowledge distillation under weak semantic consistency. This allows multispectral (MS) images collected from different geographic regions…
 tags:
   - "AAAI2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "scene classification"
   - "weak semantic consistency"
 date: 2026-05-08
-content_hash: d9e6cf274e4b0555
+content_hash: e63c58eb346e9b10
 ---
 
 # Asymmetric Cross-Modal Knowledge Distillation: Bridging Modalities with Weak Semantic Consistency
@@ -154,9 +154,9 @@ The ACKD concept is extensible to other cross-modal scenarios (e.g., LiDAR→RGB
 
 - [\[AAAI 2026\] Distilling Cross-Modal Knowledge via Feature Disentanglement](distilling_cross-modal_knowledge_via_feature_disentanglement.md)
 - [\[AAAI 2026\] Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval](prototype-based_semantic_consistency_alignment_for_domain_adaptive_retrieval.md)
+- [\[ICML 2025\] A Cross Modal Knowledge Distillation & Data Augmentation Recipe for Improving Transcriptomics Representations through Morphological Features](../../ICML2025/model_compression/a_cross_modal_knowledge_distillation_data_augmentation_recipe_for_improving_tran.md)
 - [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](ctpd_cross_tokenizer_preference_distillation.md)
-- [\[ICLR 2026\] Rejuvenating Cross-Entropy Loss in Knowledge Distillation for Recommender Systems](../../ICLR2026/model_compression/rejuvenating_cross-entropy_loss_in_knowledge_distillation_for_recommender_system.md)
-- [\[AAAI 2026\] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing](towards_test-time_efficient_visual_place_recognition_via_asymmetric_query_proces.md)
+- [\[CVPR 2025\] Multi-modal Knowledge Distillation-based Human Trajectory Forecasting](../../CVPR2025/model_compression/multi-modal_knowledge_distillation-based_human_trajectory_forecasting.md)
 
 </div>
 

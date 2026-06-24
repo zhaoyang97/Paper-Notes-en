@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Leveraging Discrete Function Decomposability for Scientific Design
 description: >-
-  [ICLR 2026][Optimization & Theory][junction tree] DADO explicitly incorporates the decomposable structure of discrete objective functions in scientific design into the distributional optimization process. By using message passing on a junction tree to provide coordinated weights for each local generative factor, it identifies high-scoring designs in massive discrete s
+  [ICLR2026][Optimization][Discrete design] DADO explicitly incorporates the decomposable structure of discrete objective functions in scientific design into the distributional optimization process. By using message passing on a junction tree to provide coordinated weights for each local generative factor, it identifies high-scoring designs in massive discrete search spaces more efficiently than standard Estimation of Distribution Algorithms (EDA).
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - junction tree
+  - "ICLR2026"
+  - "Optimization"
+  - "Discrete design"
+  - "distributional optimization"
+  - "function decomposition"
+  - "junction tree"
+  - "protein design"
 date: 2026-05-08
-content_hash: ded4ab4f57f97dc3
+content_hash: a0414ea631a31f45
 ---
+
 # Leveraging Discrete Function Decomposability for Scientific Design
 
 **Conference**: ICLR2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ULTRA-360: Unconstrained Dataset for Large-scale Temporal 3D Reconstruction across Altitudes and Omnidirectional Views
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] ULTRA-360 constructs a large-scale real-world image dataset covering campus-level buildings, four-season appearances, ground-level and aerial multi-altitude views, and perspective and 360-degree cameras. Using a semi-automatic calibration pipeline and multi-category reconstruction benchmarks, it reveals key shortcoming
+  [ICLR 2026][3D Vision][Large-scale 3D reconstruction] ULTRA-360 constructs a large-scale real-world image dataset covering campus-level buildings, four-season appearances, ground-level and aerial multi-altitude views, and perspective and 360-degree cameras. Using a semi-automatic calibration pipeline and multi-category reconstruction benchmarks, it reveals key shortcomings in current large-scale temporal 3D/4D reconstruction regarding cross-altitude matching…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Large-scale 3D reconstruction"
+  - "Temporal scene reconstruction"
+  - "Omnidirectional view"
+  - "Multi-altitude collection"
+  - "Camera calibration"
 date: 2026-05-08
-content_hash: f869c410468787f3
+content_hash: 4b8b655bc1b405ff
 ---
+
 # ULTRA-360: Unconstrained Dataset for Large-scale Temporal 3D Reconstruction across Altitudes and Omnidirectional Views
 
 **Conference**: ICLR 2026  

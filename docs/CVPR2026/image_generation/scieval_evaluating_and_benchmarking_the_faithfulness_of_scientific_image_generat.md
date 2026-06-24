@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SCIEval: Evaluating and Benchmarking the Faithfulness of Scientific Image Generation and Interpretation with Large Multimodal Models
 description: >-
-  [CVPR 2026][Image Generation][benchmark] SCIEval is a faithfulness evaluator specifically designed for "scientific images" (line charts, binary trees, molecular formulas, etc., containing precise numerical/attribute data). It decomposes faithfulness into three dimensions: relevance, accuracy, and explainability. By training two scoring sub-modules via CLIP co
+  [CVPR 2026][Image Generation][Scientific Images] SCIEval is a faithfulness evaluator specifically designed for "scientific images" (line charts, binary trees, molecular formulas, etc., containing precise numerical/attribute data). It decomposes faithfulness into three dimensions: relevance, accuracy, and explainability. By training two scoring sub-modules via CLIP contrastive learning and fine-tuning a lightweight LMM to generate error explanations…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - benchmark
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Scientific Images"
+  - "Faithfulness Evaluation"
+  - "CLIP Contrastive Learning"
+  - "Explainable Evaluation"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 050e7926948718c6
+content_hash: ed7d2596aeb718f5
 ---
+
 # SCIEval: Evaluating and Benchmarking the Faithfulness of Scientific Image Generation and Interpretation with Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -144,7 +149,7 @@ The paper analyzes drivers of gain through cross-model comparisons rather than s
 
 - [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
 - [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](../../ACL2026/image_generation/multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
-- [\[CVPR 2026\] Evaluating Reasoning Fidelity in Visual Text Generation](evaluating_reasoning_fidelity_in_visual_text_generation.md)
+- [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](compbench_benchmarking_complex_instruction-guided_image_editing.md)
 - [\[CVPR 2026\] Omni IIE Bench: Benchmarking the Practical Capabilities of Image Editing Models](omni_iie_bench_benchmarking_the_practical_capabilities_of_image_editing_models.md)
 - [\[CVPR 2026\] Evaluating Generative Models via One-Dimensional Code Distributions](evaluating_generative_models_via_one-dimensional_code_distributions.md)
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WonderTurbo: Generating Interactive 3D World in 0.72 Seconds
 description: >-
-  [ICCV 2025][3D Vision][Real-time 3D scene generation] WonderTurbo proposes the first real-time interactive 3D scene generation framework. Through the coordinated acceleration of three modules — StepSplat (feed-forward 3D…
+  [ICCV 2025][3D Vision][Real-time 3D scene generation] WonderTurbo proposes the first real-time interactive 3D scene generation framework. Through the coordinated acceleration of three modules — StepSplat (feed-forward 3DGS), QuickDepth (lightweight depth completion), and FastPaint (2-step diffusion inpainting) — it compresses single-step scene extension time from 10+ seconds to 0.72 seconds, achieving a 15× speedup while maintaining generation quality comparable to WonderWorl…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "diffusion distillation"
   - "interactive generation"
 date: 2026-05-08
-content_hash: 6c96c4376e462942
+content_hash: db1fac1761f0e5a0
 ---
 
 # WonderTurbo: Generating Interactive 3D World in 0.72 Seconds
@@ -146,9 +146,9 @@ The authors leverage multiple 3D scene generation methods (WonderJourney, Wonder
 
 - [\[ICCV 2025\] Bolt3D: Generating 3D Scenes in Seconds](bolt3d_generating_3d_scenes_in_seconds.md)
 - [\[ICCV 2025\] A Recipe for Generating 3D Worlds from a Single Image](a_recipe_for_generating_3d_worlds_from_a_single_image.md)
+- [\[CVPR 2025\] PhysGen3D: Crafting a Miniature Interactive World from a Single Image](../../CVPR2025/3d_vision/physgen3d_crafting_a_miniature_interactive_world_from_a_single_image.md)
 - [\[ICCV 2025\] Text2VDM: Text to Vector Displacement Maps for Expressive and Interactive 3D Sculpting](text2vdm_text_to_vector_displacement_maps_for_expressive_and_interactive_3d_scul.md)
 - [\[ICCV 2025\] Easy3D: A Simple Yet Effective Method for 3D Interactive Segmentation](easy3d_a_simple_yet_effective_method_for_3d_interactive_segmentation.md)
-- [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images](auto-regressively_generating_multi-view_consistent_images.md)
 
 </div>
 

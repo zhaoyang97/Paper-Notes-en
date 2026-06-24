@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] SPREAD formulates "how to place objects in a physically plausible manner" as a guided diffusion framework: it uses a Graph Transformer to jointly encode spatial and physical relationship graphs, "observes" collisions and interpenetrations between noisy meshes via a Geometry Aware Perceiver during each denoising step, a
+  [CVPR 2026][Image Generation][3D Scene Generation] SPREAD formulates "how to place objects in a physically plausible manner" as a guided diffusion framework: it uses a Graph Transformer to jointly encode spatial and physical relationship graphs, "observes" collisions and interpenetrations between noisy meshes via a Geometry Aware Perceiver during each denoising step, and employs a three-way differentiable guidance (Collision / Gravity / Support) during inference to push objec…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "3D Scene Generation"
+  - "Guided Diffusion"
+  - "Graph Transformer"
+  - "Physical Plausibility"
+  - "Geometry Awareness"
 date: 2026-05-08
-content_hash: 0c575e20aef063bd
+content_hash: 3ca0e7898089c31a
 ---
+
 # SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion
 
 **Conference**: CVPR 2026  
@@ -132,10 +138,10 @@ Incremental module testing on ProcTHOR starting from a vanilla diffusion baselin
 ## Related Papers
 
 - [\[CVPR 2026\] Probing and Bridging Geometry–Interaction Cues for Affordance Reasoning in Vision Foundation Models](probing_and_bridging_geometry-interaction_cues_for_affordance_reasoning_in_visio.md)
-- [\[CVPR 2026\] SpatialDiff: 3D-Aware Object Movement via Implicit Spatial Modeling](spatialdiff_3d-aware_object_movement_via_implicit_spatial_modeling.md)
 - [\[ICML 2026\] Geometry-Aware Tabular Diffusion](../../ICML2026/image_generation/geometry-aware_tabular_diffusion.md)
-- [\[CVPR 2026\] Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers](circuit_mechanisms_for_spatial_relation_generation_in_diffusion_models.md)
-- [\[CVPR 2026\] GeoRK2: Geometry-Guided Runge-Kutta Integration for Diffusion Transformer Acceleration](geork2_geometry-guided_runge-kutta_integration_for_diffusion_transformer_acceler.md)
+- [\[CVPR 2026\] SpatialDiff: 3D-Aware Object Movement via Implicit Spatial Modeling](spatialdiff_3d-aware_object_movement_via_implicit_spatial_modeling.md)
+- [\[CVPR 2026\] PhyCo: Learning Controllable Physical Priors for Generative Motion](phyco_learning_controllable_physical_priors_for_generative_motion.md)
+- [\[ICML 2026\] Geometry-Aware Dataset Condensation for Diffusion Model Training](../../ICML2026/image_generation/geometry-aware_dataset_condensation_for_diffusion_model_training.md)
 
 </div>
 

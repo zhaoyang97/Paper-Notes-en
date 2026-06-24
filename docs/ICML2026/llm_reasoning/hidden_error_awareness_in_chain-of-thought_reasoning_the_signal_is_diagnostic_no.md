@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal
 description: >-
-  [ICML 2026][LLM Reasoning][Chain-of-Thought] Using a simple logistic regression probe on the hidden states of an LLM during Chain-of-Thought (CoT) generation can predict whether the entire reasoning process will fail with an AUROC of 0.95 (0.79 starting from the very first step). In contrast, a classifier trained on the surface text only achieves 0.59. However, f
+  [ICML 2026][Reasoning][Chain-of-Thought] Using a simple logistic regression probe on the hidden states of an LLM during Chain-of-Thought (CoT) generation can predict whether the entire reasoning process will fail with an AUROC of 0.95 (0.79 starting from the very first step). In contrast, a classifier trained on the surface text only achieves 0.59. However, four types of interventions (activation steering, probe-guided best-of-N, self-correction…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ICML 2026"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "Hidden State Probing"
+  - "Error Detection"
+  - "Activation Steering"
+  - "Causal Intervention"
 date: 2026-05-08
-content_hash: a792742fe090c5df
+content_hash: 7cf34171dd5a172c
 ---
+
 # Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal
 
 **Conference**: ICML 2026  
@@ -144,8 +149,8 @@ Does reading the direction equate to being able to fix the error? This is tested
 - [\[ICML 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
 - [\[ICML 2026\] Chain-of-Thought Reasoning in the Wild Is Not Always Faithful](chain-of-thought_reasoning_in_the_wild_is_not_always_faithful.md)
 - [\[AAAI 2026\] Deep Hidden Cognition Facilitates Reliable Chain-of-Thought Reasoning](../../AAAI2026/llm_reasoning/deep_hidden_cognition_facilitates_reliable_chain-of-thought_.md)
+- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](../../ACL2026/llm_reasoning/is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
 - [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
-- [\[ACL 2026\] Do Not Step Into the Same River Twice: Learning to Reason from Trial and Error](../../ACL2026/llm_reasoning/do_not_step_into_the_same_river_twice_learning_to_reason_from_trial_and_error.md)
 
 </div>
 

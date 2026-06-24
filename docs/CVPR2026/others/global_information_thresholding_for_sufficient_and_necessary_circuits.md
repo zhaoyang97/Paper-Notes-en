@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Global Information Thresholding for Sufficient and Necessary Circuits
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Addressing the common pain point where automatic circuit discovery relies on "manual fixed budgets" (fixed top-k), this paper moves away from pre-defining circuit size. Instead, it scores edges (using signed integrated gradients) and automatically searches for a single global threshold $\tau$ based on a "model behavior
+  [CVPR 2026][Mechanistic interpretability] Addressing the common pain point where automatic circuit discovery relies on "manual fixed budgets" (fixed top-k), this paper moves away from pre-defining circuit size. Instead, it scores edges (using signed integrated gradients) and automatically searches for a single global threshold $\tau$ based on a "model behavior retention" target. This makes the circuit size a result of "retaining behavior" rather than a hyperparameter. Ours ac…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "Mechanistic interpretability"
+  - "circuit discovery"
+  - "sufficiency and necessity"
+  - "global threshold"
+  - "retention-calibrated performance"
 date: 2026-05-08
-content_hash: 4ee2643dcff30d7b
+content_hash: c728f8cf20dbdda5
 ---
+
 # Global Information Thresholding for Sufficient and Necessary Circuits
 
 **Conference**: CVPR 2026  
@@ -168,11 +173,11 @@ Stability Diagnostics: Sweeping the retention target from 0.90 to 0.99 only chan
 
 ## Related Papers
 
-- [\[CVPR 2026\] Federated Active Learning Under Extreme Non-IID and Global Class Imbalance](federated_active_learning_extreme_noniid.md)
-- [\[AAAI 2026\] An Information Theoretic Evaluation Metric for Strong Unlearning](../../AAAI2026/ai_safety/an_information_theoretic_evaluation_metric_for_strong_unlearning.md)
-- [\[NeurIPS 2025\] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](../../NeurIPS2025/ai_safety/understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)
-- [\[NeurIPS 2025\] Locally Optimal Private Sampling: Beyond the Global Minimax](../../NeurIPS2025/ai_safety/locally_optimal_private_sampling_beyond_the_global_minimax.md)
-- [\[ICLR 2026\] Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information](../../ICLR2026/ai_safety/why_do_unlearnable_examples_work_a_novel_perspective_of_mutual_information.md)
+- [\[CVPR 2026\] Global Underwater Geolocation from Time-Lapse Polarization Imagery](global_underwater_geolocation_from_time-lapse_polarization_imagery.md)
+- [\[CVPR 2025\] Sufficient Invariant Learning for Distribution Shift](../../CVPR2025/others/sufficient_invariant_learning_for_distribution_shift.md)
+- [\[ICML 2025\] Probably Approximately Global Robustness Certification](../../ICML2025/others/probably_approximately_global_robustness_certification.md)
+- [\[ICML 2026\] Networked Information Aggregation for Binary Classification](../../ICML2026/others/networked_information_aggregation_for_binary_classification.md)
+- [\[ICML 2026\] Coupled Training with Privileged Information and Unlabeled Data](../../ICML2026/others/coupled_training_with_privileged_information_and_unlabeled_data.md)
 
 </div>
 

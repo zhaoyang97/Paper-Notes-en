@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Preserving Task-Relevant Information Under Linear Concept Removal
 description: >-
-  [NeurIPS 2025][AI Safety][concept erasure] SPLINCE constructs an oblique projection that simultaneously guarantees linear guardedness (i.e.…
+  [NeurIPS 2025][AI Safety][concept erasure] SPLINCE constructs an oblique projection that simultaneously guarantees linear guardedness (i.e., sensitive attributes cannot be predicted by any linear classifier) and exactly preserves the covariance between representations and task labels, thereby resolving the problem of existing concept erasure methods inadvertently removing task-relevant information alongside sensitive concepts.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "linear guardedness"
   - "bias removal"
 date: 2026-05-08
-content_hash: d242f301b9a2535b
+content_hash: 28894a8a491d796d
 ---
 
 # Preserving Task-Relevant Information Under Linear Concept Removal
@@ -137,11 +137,11 @@ SPLINCE is a linear-algebraic method that computes a projection matrix $\mathbf{
 
 ## Related Papers
 
+- [\[ICML 2025\] Avoiding Leakage Poisoning: Concept Interventions Under Distribution Shifts](../../ICML2025/ai_safety/avoiding_leakage_poisoning_concept_interventions_under_distribution_shifts.md)
 - [\[NeurIPS 2025\] Causally Reliable Concept Bottleneck Models](causally_reliable_concept_bottleneck_models.md)
 - [\[NeurIPS 2025\] Factor Decorrelation Enhanced Data Removal from Deep Predictive Models](factor_decorrelation_enhanced_data_removal_from_deep_predictive_models.md)
 - [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
-- [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
-- [\[NeurIPS 2025\] Matchings Under Biased and Correlated Evaluations](matchings_under_biased_and_correlated_evaluations.md)
+- [\[CVPR 2026\] From Measurement to Mitigation: Quantifying and Reducing Identity Leakage in Image Representation Encoders with Linear Subspace Removal](../../CVPR2026/ai_safety/from_measurement_to_mitigation_quantifying_and_reducing_identity_leakage_in_imag.md)
 
 </div>
 

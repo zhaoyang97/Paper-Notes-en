@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Variation-Aware Flexible 3D Gaussian Editing
 description: >-
-  [ICLR 2026][3D Vision][Knowledge Distillation] VF-Editor redefines 3D Gaussian editing as an "attribute-wise variational prediction" problem. By utilizing a feed-forward variational predictor distilled from multi-source 2D editing knowledge, it can natively edit an entire Gaussian field in approximately 0.3 seconds. This approach eliminates multi-view inconsistenci
+  [ICLR 2026][3D Vision][3D Gaussian editing] VF-Editor redefines 3D Gaussian editing as an "attribute-wise variational prediction" problem. By utilizing a feed-forward variational predictor distilled from multi-source 2D editing knowledge, it can natively edit an entire Gaussian field in approximately 0.3 seconds. This approach eliminates multi-view inconsistencies inherent in the "2D edit then 3D rebuild" paradigm while supporting flexible editing operations such as free mixi…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian editing"
+  - "Variational prediction"
+  - "Knowledge distillation"
+  - "Feed-forward editing"
+  - "Multi-view consistency"
 date: 2026-05-08
-content_hash: 67f79c786bc5cda5
+content_hash: 1518b332a19418ae
 ---
+
 # Variation-Aware Flexible 3D Gaussian Editing
 
 **Conference**: ICLR 2026  
@@ -145,6 +150,7 @@ VF-Editor leads significantly in IS. While DGE achieves high Csim/Ccon due to cr
 - Value: ⭐⭐⭐⭐ Strong potential for real-time applications in VR/Gaming; the variational modeling approach is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

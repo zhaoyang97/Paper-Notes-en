@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] 3DiMo shifts human motion control from "relying on external SMPL reconstruction" to "jointly learning a set of view-invariant implicit motion tokens end-to-end with the video generator." By leveraging cross-attention semantic injection and multi-view rich data supervision, the model recovers genuine 3D motion from 2D d
+  [CVPR 2026][Video Generation][Human Motion Control] 3DiMo shifts human motion control from "relying on external SMPL reconstruction" to "jointly learning a set of view-invariant implicit motion tokens end-to-end with the video generator." By leveraging cross-attention semantic injection and multi-view rich data supervision, the model recovers genuine 3D motion from 2D driving frames. This allows for faithful action reproduction while supporting free camera视角 control via text…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Human Motion Control"
+  - "Implicit Motion Representation"
+  - "3D Awareness"
+  - "Video Diffusion"
+  - "Text-to-Camera Control"
 date: 2026-05-08
-content_hash: d31ddbf8df9f62ad
+content_hash: 8816036e524851e4
 ---
+
 # 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation
 
 **Conference**: CVPR 2026  
@@ -135,7 +141,7 @@ Evaluated on 50 TikTok videos and 100 internet videos, with baselines including 
 ## Related Papers
 
 - [\[CVPR 2026\] CineScene: Implicit 3D as Effective Scene Representation for Cinematic Video Generation](cinescene_implicit_3d_as_effective_scene_representation_for_cinematic_video_gene.md)
-- [\[CVPR 2026\] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion](pantheon360_taming_digital_twin_generation_via_3d-aware_360deg_video_diffusion.md)
+- [\[CVPR 2026\] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion](pantheon360_taming_digital_twin_generation_via_3d-aware_360_video_diffusion.md)
 - [\[CVPR 2026\] Generative Video Motion Editing with 3D Point Tracks](generative_video_motion_editing_with_3d_point_tracks.md)
 - [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
 - [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)

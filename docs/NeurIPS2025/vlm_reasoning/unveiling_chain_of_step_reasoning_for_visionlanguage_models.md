@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards
 description: >-
-  [NeurIPS 2025][Multimodal VLM][chain-of-step] This paper proposes the Chain-of-Step (CoS) reasoning framework, which decomposes VLM reasoning chains into structured steps consisting of Name, Thought…
+  [NeurIPS 2025][VLM Reasoning][chain-of-step] This paper proposes the Chain-of-Step (CoS) reasoning framework, which decomposes VLM reasoning chains into structured steps consisting of Name, Thought, and Reflection components. A step-level Process Reward Model (PRM) is trained to provide fine-grained reward signals. Combined with iterative DPO and step-level beam search, the framework systematically improves VLM reasoning—achieving an average of 73.4% (+4.0%) across 6 benchmar…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "chain-of-step"
   - "process reward model"
   - "step-level reasoning"
   - "iterative DPO"
   - "inference-time scaling"
 date: 2026-05-08
-content_hash: c3de1035cd23e821
+content_hash: ded11062c26581e1
 ---
 
 # Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards
@@ -163,10 +163,10 @@ A three-stage pipeline:
 ## Related Papers
 
 - [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
-- [\[ICCV 2025\] Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving](../../ICCV2025/multimodal_vlm/fine-grained_evaluation_of_large_vision-language_models_in_autonomous_driving.md)
+- [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](../../ICCV2025/vlm_reasoning/llava-cot_let_vision_language_models_reason_step-by-step.md)
+- [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](../../CVPR2026/vlm_reasoning/handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
 - [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
-- [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](../../ICCV2025/multimodal_vlm/llava-cot_let_vision_language_models_reason_step-by-step.md)
-- [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
+- [\[NeurIPS 2025\] Sherlock: Self-Correcting Reasoning in Vision-Language Models](sherlock_selfcorrecting_reasoning_in_visionlanguage_models.md)
 
 </div>
 

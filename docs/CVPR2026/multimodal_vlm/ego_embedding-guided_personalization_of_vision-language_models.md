@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ego: Embedding-Guided Personalization of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ego identifies a small set of visual tokens that best represent a personalized concept (e.g., "my cup," "my dog") directly from the LVLM's internal cross-modal attention. These are stored as "concept memory" and injected as soft prompts into the context during inference. This approach is completely training-free, indep
+  [CVPR 2026][Multimodal VLM][VLM Personalization] Ego identifies a small set of visual tokens that best represent a personalized concept (e.g., "my cup," "my dog") directly from the LVLM's internal cross-modal attention. These are stored as "concept memory" and injected as soft prompts into the context during inference. This approach is completely training-free, independent of external vision modules, and achieves SOTA performance across single-concept, multi-concept…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM Personalization"
+  - "Training-free"
+  - "Visual Token Selection"
+  - "Cross-modal Attention"
+  - "Concept Memory"
 date: 2026-05-08
-content_hash: 329d4ab1fdabb2ac
+content_hash: e747df42fe1429cf
 ---
+
 # Ego: Embedding-Guided Personalization of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -150,8 +156,8 @@ Recognition F1, InternVL3 + Yo'LLaVA, fixed 20% in-context token budget:
 - [\[ICML 2026\] Contextualized Visual Personalization in Vision-Language Models](../../ICML2026/multimodal_vlm/contextualized_visual_personalization_in_vision-language_models.md)
 - [\[CVPR 2026\] Language-guided Frequency Modulation for Large Vision-Language Models](language-guided_frequency_modulation_for_large_vision-language_models.md)
 - [\[CVPR 2026\] Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models](diffusion_guided_chain-of-vision_for_large_autoregressive_vision_models.md)
-- [\[ICLR 2026\] Directional Embedding Smoothing for Robust Vision Language Models](../../ICLR2026/multimodal_vlm/directional_embedding_smoothing_for_robust_vision_language_models.md)
 - [\[CVPR 2026\] Foundation Encoders Are All You Need for Preference-Aware Personalization](foundation_encoders_are_all_you_need_for_preference-aware_personalization.md)
+- [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
 
 </div>
 

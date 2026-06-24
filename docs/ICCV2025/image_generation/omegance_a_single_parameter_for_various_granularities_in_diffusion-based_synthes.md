@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Omegance: A Single Parameter for Various Granularities in Diffusion-Based Synthesis
 description: >-
-  [ICCV 2025][Image Generation][diffusion models] Omegance proposes scaling the noise prediction in each denoising step of a diffusion model by a single parameter $\omega$, enabling training-free global, spatial…
+  [ICCV 2025][Image Generation][diffusion models] Omegance proposes scaling the noise prediction in each denoising step of a diffusion model by a single parameter $\omega$, enabling training-free global, spatial, and temporal control over the detail granularity of generated images and videos. The method is architecture-agnostic and compatible with SDXL, SD3, FLUX, and other models.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "detail enhancement/suppression"
 date: 2026-05-08
-content_hash: 1f87e133478d6f07
+content_hash: 9b874f0f6f273a17
 ---
 
 # Omegance: A Single Parameter for Various Granularities in Diffusion-Based Synthesis
@@ -152,11 +152,11 @@ A study with 101 participants demonstrates that Omegance accurately controls gra
 
 ## Related Papers
 
+- [\[ICML 2025\] Reimagining Parameter Space Exploration with Diffusion Models](../../ICML2025/image_generation/reimagining_parameter_space_exploration_with_diffusion_models.md)
 - [\[ICCV 2025\] PolarAnything: Diffusion-based Polarimetric Image Synthesis](polaranything_diffusion-based_polarimetric_image_synthesis.md)
-- [\[ICCV 2025\] Ouroboros: Single-step Diffusion Models for Cycle-consistent Forward and Inverse Rendering](ouroboros_single-step_diffusion_models_for_cycle-consistent_forward_and_inverse_.md)
 - [\[ICCV 2025\] Disrupting Model Merging: A Parameter-Level Defense Without Sacrificing Accuracy](disrupting_model_merging_a_parameter-level_defense_without_sacrificing_accuracy.md)
-- [\[ICCV 2025\] FaceCraft4D: Animated 3D Facial Avatar Generation from a Single Image](facecraft4d_animated_3d_facial_avatar_generation_from_a_single_image.md)
-- [\[ICCV 2025\] InfGen: A Resolution-Agnostic Paradigm for Scalable Image Synthesis](infgen_a_resolution-agnostic_paradigm_for_scalable_image_synthesis.md)
+- [\[ICML 2025\] Zero-Shot Adaptation of Parameter-Efficient Fine-Tuning in Diffusion Models](../../ICML2025/image_generation/zero-shot_adaptation_of_parameter-efficient_fine-tuning_in_diffusion_models.md)
+- [\[ICML 2025\] Learning Single Index Models with Diffusion Priors](../../ICML2025/image_generation/learning_single_index_models_with_diffusion_priors.md)
 
 </div>
 

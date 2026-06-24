@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CollabBench: Benchmarking and Unleashing Collaborative Ability of LLMs with Diverse Players via Proactive Engagement
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] The paper proposes CollabBench, a benchmark and training framework for LLM agents to collaborate with "diverse personality teammates" in cooperative games. It simulates diverse players driven by the Big Five personality traits, employs a unified agentic rollout with a dual-layer mixed "efficiency/affective" reward for
+  [ICML2026][LLM Agent][Collaborative Agents] The paper proposes CollabBench, a benchmark and training framework for LLM agents to collaborate with "diverse personality teammates" in cooperative games. It simulates diverse players driven by the Big Five personality traits, employs a unified agentic rollout with a dual-layer mixed "efficiency/affective" reward for reinforcement learning, and provides an evaluation protocol covering both efficiency and affective metrics. After tr…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML2026"
+  - "LLM Agent"
+  - "Collaborative Agents"
+  - "Cooperative Games"
+  - "Personality Simulation"
+  - "Agentic Reinforcement Learning"
+  - "Affective Alignment"
 date: 2026-05-08
-content_hash: b0b73d9bf4c5d531
+content_hash: 92840abe67aee851
 ---
+
 # CollabBench: Benchmarking and Unleashing Collaborative Ability of LLMs with Diverse Players via Proactive Engagement
 
 **Conference**: ICML2026  
@@ -126,11 +132,11 @@ Post-training Qwen2.5-7B improved across all dimensions, with average game score
 
 ## Related Papers
 
-- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](../../ICLR2026/llm_agent/the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
 - [\[AAAI 2026\] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs](../../AAAI2026/llm_agent/llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr.md)
+- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](../../ICLR2026/llm_agent/the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
 - [\[ICML 2026\] Towards Diverse Scientific Hypothesis Search with Large Language Models](towards_diverse_scientific_hypothesis_search_with_large_language_models.md)
+- [\[ICLR 2026\] InnovatorBench: Evaluating Agents' Ability to Conduct Innovative AI Research](../../ICLR2026/llm_agent/innovatorbench_evaluating_agents_ability_to_conduct_innovative_ai_research.md)
 - [\[ICCV 2025\] UIPro: Unleashing Superior Interaction Capability for GUI Agents](../../ICCV2025/llm_agent/uipro_unleashing_superior_interaction_capability_for_gui_agents.md)
-- [\[ICML 2026\] Post-Training LLMs as Better Decision-Making Agents: A Regret-Minimization Approach](post-training_llms_as_better_decision-making_agents_a_regret-minimization_approa.md)
 
 </div>
 

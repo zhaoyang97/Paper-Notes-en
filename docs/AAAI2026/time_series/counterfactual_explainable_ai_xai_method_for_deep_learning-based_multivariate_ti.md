@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification
 description: >-
-  [AAAI 2026][Time Series][Counterfactual Explanation] This paper proposes CONFETTI, a multi-objective counterfactual explanation method for multivariate time series (MTS) classification. By combining Class Activation Map…
+  [AAAI 2026][Time Series][Counterfactual Explanation] This paper proposes CONFETTI, a multi-objective counterfactual explanation method for multivariate time series (MTS) classification. By combining Class Activation Map (CAM)-guided subsequence extraction with NSGA-III multi-objective optimization, CONFETTI achieves an optimal balance among prediction confidence, sparsity, and proximity, outperforming existing methods across 7 UEA benchmark datasets.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Explainable AI"
   - "NSGA-III"
 date: 2026-05-08
-content_hash: 7c6d4d30ac03c819
+content_hash: e3aea40fb5042a1b
 ---
 
 # Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification
@@ -150,9 +150,9 @@ Experiments are conducted on 7 UEA datasets with 2 model architectures (FCN and 
 
 - [\[ICLR 2026\] TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification](../../ICLR2026/time_series/timesliver_symbolic-linear_decomposition_for_explainable_time_series_classificat.md)
 - [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
-- [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](a_unified_shape-aware_foundation_model_for_time_series_class.md)
+- [\[ICLR 2026\] DeepFRC: An End-to-End Deep Learning Model for Functional Registration and Classification](../../ICLR2026/time_series/deepfrc_an_end-to-end_deep_learning_model_for_functional_registration_and_classi.md)
 - [\[AAAI 2026\] Transparent Networks for Multivariate Time Series](transparent_networks_for_multivariate_time_series.md)
-- [\[AAAI 2026\] Mask the Redundancy: Evolving Masking Representation Learning for Multivariate Time-Series Clustering](mask_the_redundancy_evolving_masking_representation_learning_for_multivariate_ti.md)
+- [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](a_unified_shape-aware_foundation_model_for_time_series_class.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] FaithFusion reformulates the pixel-level decision of "whether and how much to edit" as **Expected Information Gain (EIG)**. The same EIG signal serves both to guide diffusion models—restricting generation to high-uncertainty regions—and as pixel-wise loss weights to distill generated content back into 3DGS. This mainta
+  [CVPR 2026][Image Generation][3DGS-Diffusion Fusion] FaithFusion reformulates the pixel-level decision of "whether and how much to edit" as **Expected Information Gain (EIG)**. The same EIG signal serves both to guide diffusion models—restricting generation to high-uncertainty regions—and as pixel-wise loss weights to distill generated content back into 3DGS. This maintains geometric fidelity and appearance controllability under large perspective shifts…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "3DGS-Diffusion Fusion"
+  - "Expected Information Gain (EIG)"
+  - "Driving Scene Reconstruction"
+  - "Large View Synthesis"
+  - "Pixel-wise Editing Strategy"
 date: 2026-05-08
-content_hash: be3fcb72d5c41c15
+content_hash: 78e137014ecb3f69
 ---
+
 # FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,13 @@ Metrics are reported separately for Under-Constrained Regions (UCR) and High-Pre
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Glyph Spatial Information in Font Generation](rethinking_glyph_spatial_information_in_font_generation.md)
+- [\[CVPR 2026\] Harmony: Harmonizing Audio and Video Generation through Cross-Task Synergy](harmony_harmonizing_audio_and_video_generation_through_cross-task_synergy.md)
 - [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
 - [\[CVPR 2026\] VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation](va-p_variational_policy_alignment_for_pixel-aware_autoregressive_generation.md)
 - [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
-- [\[CVPR 2026\] gQIR: Generative Quanta Image Reconstruction](gqir_generative_quanta_image_reconstruc_tion.md)
 
 </div>
 

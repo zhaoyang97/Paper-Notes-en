@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decoupling Positional and Symbolic Attention in Transformers
 description: >-
-  [ICLR 2026][Interpretability][RoPE] This paper provides a rigorous mathematical definition for whether an attention head operates "positionally" or "symbolically," proves that the two are mutually exclusive (unless attention degrades into a uniform distribution), and designs a scoring metric based on permutation sensitivity. It reveals that high frequenc
+  [ICLR2026][Interpretability][Attention mechanisms] This paper provides a rigorous mathematical definition for whether an attention head operates "positionally" or "symbolically," proves that the two are mutually exclusive (unless attention degrades into a uniform distribution), and designs a scoring metric based on permutation sensitivity. It reveals that high frequencies in RoPE correspond to positional behavior while low frequencies correspond to symbolic behavior. Finally…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - RoPE
+  - "ICLR2026"
+  - "Interpretability"
+  - "Attention mechanisms"
+  - "RoPE"
+  - "Positional encoding"
+  - "Frequency analysis"
+  - "Permutation invariance"
 date: 2026-05-08
-content_hash: 566ae5149a14fda2
+content_hash: 46cf717ed9a8d838
 ---
+
 # Decoupling Positional and Symbolic Attention in Transformers
 
 **Conference**: ICLR2026  

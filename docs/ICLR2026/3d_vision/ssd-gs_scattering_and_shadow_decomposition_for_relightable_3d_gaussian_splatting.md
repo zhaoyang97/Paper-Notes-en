@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SSD-GS: Scattering and Shadow Decomposition for Relightable 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] SSD-GS replaces the "spherical harmonic coefficients" in 3D Gaussian Splatting with a physically interpretable four-term shading decomposition: "diffuse + specular + shadow + subsurface scattering." Combined with learnable dipole scattering, occlusion-aware two-stage soft shadows, and progressive training, it significa
+  [ICLR 2026][3D Vision][Relightable] SSD-GS replaces the "spherical harmonic coefficients" in 3D Gaussian Splatting with a physically interpretable four-term shading decomposition: "diffuse + specular + shadow + subsurface scattering." Combined with learnable dipole scattering, occlusion-aware two-stage soft shadows, and progressive training, it significantly outperforms existing methods in relighting fidelity for complex materials like metals and translucent objects.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Relightable"
+  - "3D Gaussian Splatting"
+  - "Subsurface Scattering"
+  - "Soft Shadows"
+  - "Physically-based Decomposition"
 date: 2026-05-08
-content_hash: 5eac5398408ad135
+content_hash: 478324a51f1d5d60
 ---
+
 # SSD-GS: Scattering and Shadow Decomposition for Relightable 3D Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -160,11 +166,11 @@ Ablations on reflectance components and training schedules were conducted on the
 
 ## Related Papers
 
+- [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
 - [\[ICLR 2026\] ODE-GS: Latent ODEs for Dynamic Scene Extrapolation with 3D Gaussian Splatting](ode-gs_latent_odes_for_dynamic_scene_extrapolation_with_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
 - [\[CVPR 2026\] RelightAnyone: A Generalized Relightable 3D Gaussian Head Model](../../CVPR2026/3d_vision/relightanyone_a_generalized_relightable_3d_gaussian_head_model.md)
 - [\[ICLR 2026\] CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting](clod-gs_continuous_level-of-detail_via_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
-- [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
 
 </div>
 

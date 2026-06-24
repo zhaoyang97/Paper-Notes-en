@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReconDreamer++: Harmonizing Generative and Reconstructive Models for Driving Scene Representation
 description: >-
-  [ICCV 2025][Autonomous Driving][Driving scene reconstruction] Building upon ReconDreamer, ReconDreamer++ introduces a Novel Trajectory Deformation Network (NTDNet) to bridge the domain gap between generated data and real…
+  [ICCV 2025][Autonomous Driving][Driving scene reconstruction] Building upon ReconDreamer, ReconDreamer++ introduces a Novel Trajectory Deformation Network (NTDNet) to bridge the domain gap between generated data and real observations, and independently models the ground plane to preserve geometric priors. On Waymo, the method achieves performance on par with Street Gaussians on original trajectories while improving NTA-IoU by 6.1%, FID by 23.0% on novel trajectories.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "domain gap bridging"
   - "ground modeling"
 date: 2026-05-08
-content_hash: 82c1841922d2d1f2
+content_hash: 4d9c16dc97e114eb
 ---
 
 # ReconDreamer++: Harmonizing Generative and Reconstructive Models for Driving Scene Representation
@@ -149,11 +149,11 @@ Each component contributes incrementally. NTDNet yields the largest gain on orig
 
 ## Related Papers
 
-- [\[ICCV 2025\] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation](dist-4d_disentangled_spatiotemporal_diffusion_with_metric_depth_for_4d_driving_s.md)
-- [\[ICCV 2025\] Distilling Diffusion Models to Efficient 3D LiDAR Scene Completion](distilling_diffusion_models_to_efficient_3d_lidar_scene_completion.md)
-- [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
+- [\[CVPR 2025\] ReconDreamer: Crafting World Models for Driving Scene Reconstruction via Online Restoration](../../CVPR2025/autonomous_driving/recondreamer_crafting_world_models_for_driving_scene_reconstruction_via_online_r.md)
 - [\[ICCV 2025\] Leveraging 2D Priors and SDF Guidance for Dynamic Urban Scene Rendering](leveraging_2d_priors_and_sdf_guidance_for_urban_scene_rendering.md)
-- [\[ICCV 2025\] ETA: Efficiency through Thinking Ahead, A Dual Approach to Self-Driving with Large Models](eta_efficiency_through_thinking_ahead_a_dual_approach_to_self-driving_with_large.md)
+- [\[ICCV 2025\] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation](dist-4d_disentangled_spatiotemporal_diffusion_with_metric_depth_for_4d_driving_s.md)
+- [\[ICCV 2025\] GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting](gs-livm_real-time_photo-realistic_lidar-inertial-visual_mapping_with_gaussian_sp.md)
+- [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
 
 </div>
 

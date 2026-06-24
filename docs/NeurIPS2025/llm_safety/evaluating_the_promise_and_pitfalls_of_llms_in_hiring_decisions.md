@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evaluating the Promise and Pitfalls of LLMs in Hiring Decisions
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM bias] This paper systematically evaluates the hiring-match performance of mainstream LLMs—including GPT-4o/4.1, Claude 3.5, Gemini 2.5, Llama 3.1/4, and DeepSeek R1—on approximately 10…
+  [NeurIPS 2025][LLM Safety][LLM bias] This paper systematically evaluates the hiring-match performance of mainstream LLMs—including GPT-4o/4.1, Claude 3.5, Gemini 2.5, Llama 3.1/4, and DeepSeek R1—on approximately 10,000 real-world candidate–job pairs. Results show that a domain-specialized model (Match Score) comprehensively outperforms general-purpose LLMs in both accuracy (AUC 0.85 vs. 0.77) and fairness (Race IR 0.957 vs. ≤0.809).
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "disparate impact"
   - "EEOC four-fifths rule"
 date: 2026-05-08
-content_hash: 7d4e963ac2e9bbf8
+content_hash: b5bcd63b23696eac
 ---
 
 # Evaluating the Promise and Pitfalls of LLMs in Hiring Decisions
@@ -138,9 +138,9 @@ This paper systematically evaluates the hiring-match performance of mainstream L
 
 - [\[NeurIPS 2025\] Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties](trans-env_a_framework_for_evaluating_the_linguistic_robustness_of_llms_against_e.md)
 - [\[NeurIPS 2025\] Robust or Suggestible? Exploring Non-Clinical Induction in LLM Drug-Safety Decisions](robust_or_suggestible_exploring_non-clinical_induction_in_llm_drug-safety_decisi.md)
+- [\[ACL 2025\] ComparisonQA: Evaluating Factuality Robustness of LLMs Through Knowledge Frequency Control and Uncertainty](../../ACL2025/llm_safety/comparisonqa_evaluating_factuality_robustness_of_llms_through_knowledge_frequenc.md)
 - [\[NeurIPS 2025\] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values](distributive_fairness_in_large_language_models_evaluating_alignment_with_human_v.md)
-- [\[NeurIPS 2025\] Evaluation of Vision-LLMs in Surveillance Video](evaluation_of_vision-llms_in_surveillance_video.md)
-- [\[NeurIPS 2025\] Probabilistic Reasoning with LLMs for K-Anonymity Estimation](probabilistic_reasoning_with_llms_for_k-anonymity_estimation.md)
+- [\[ICLR 2026\] ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs](../../ICLR2026/llm_safety/managerbench_evaluating_the_safety-pragmatism_trade-off_in_autonomous_llms.md)
 
 </div>
 

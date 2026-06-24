@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Graph Random Features for Scalable Gaussian Processes
 description: >-
-  [ICLR 2026][Graph Learning][Graph Random Features] Sparse and unbiased graph node kernel estimates are constructed using random walk-based Graph Random Features (GRF), reducing Bayesian inference for Gaussian processes on graphs from $\mathcal{O}(N^3)$ to $\mathcal{O}(N^{3/2})$ with probabilistic accuracy guarantees, enabling Bayesian optimization on graphs exceeding 1
+  [ICLR 2026][Graph Learning][Graph Random Features] Sparse and unbiased graph node kernel estimates are constructed using random walk-based Graph Random Features (GRF), reducing Bayesian inference for Gaussian processes on graphs from $\mathcal{O}(N^3)$ to $\mathcal{O}(N^{3/2})$ with probabilistic accuracy guarantees, enabling Bayesian optimization on graphs exceeding 1 million nodes on a single GPU.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Graph Random Features
-  - Gaussian Process
-  - Graph Node Kernel
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Random Features"
+  - "Gaussian Process"
+  - "Graph Node Kernel"
+  - "Random Walk"
+  - "Conjugate Gradient"
+  - "Bayesian Optimization"
+  - "Scalable Inference"
 date: 2026-05-08
-content_hash: 95ae8febc4723ecd
+content_hash: 8b991e3d3f29ad99
 ---
+
 # Graph Random Features for Scalable Gaussian Processes
 
 **Conference**: ICLR 2026  
@@ -110,8 +115,8 @@ flowchart LR
 - [\[ICLR 2026\] FLOCK: A Knowledge Graph Foundation Model via Learning on Random Walks](flock_a_knowledge_graph_foundation_model_via_learning_on_random_walks.md)
 - [\[ICLR 2026\] GRAPHITE: Graph Homophily Booster — Reimagining the Role of Discrete Features in Heterophilic Graph Learning](graph_homophily_booster_reimagining_the_role_of_discrete_features_in_heterophili.md)
 - [\[ICLR 2026\] HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature](hgnet_scalable_foundation_model_for_automated_knowledge_graph_generation_from_sc.md)
+- [\[ICLR 2026\] Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering](multi-scale_diffusion-guided_graph_learning_with_power-smoothing_random_walk_con.md)
 - [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](../../ICML2026/graph_learning/full-spectrum_graph_neural_network_expressive_and_scalable.md)
-- [\[ACL 2026\] LogosKG: Hardware-Optimized Scalable and Interpretable Knowledge Graph Retrieval](../../ACL2026/graph_learning/logoskg_hardware-optimized_scalable_and_interpretable_knowledge_graph_retrieval.md)
 
 </div>
 

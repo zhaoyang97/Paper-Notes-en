@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adversarial Robust Memory-Based Continual Learner
 description: >-
-  [ICCV 2025][LLM Safety][Continual Learning] This paper identifies two compounding challenges when combining continual learning with adversarial training—accelerated forgetting and gradient confusion—and proposes two plug…
+  [ICCV 2025][LLM Safety][Continual Learning] This paper identifies two compounding challenges when combining continual learning with adversarial training—accelerated forgetting and gradient confusion—and proposes two plug-and-play modules, Anti-Forgettable Logit Calibration (AFLC) and Robustness-Aware Experience Replay (RAER), achieving up to 8.13% improvement in adversarial robustness on Split-CIFAR10/100 and Split-Tiny-ImageNet.
 tags:
   - "ICCV 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Logit Calibration"
   - "Gradient Confusion"
 date: 2026-05-08
-content_hash: d5427edf344cf78b
+content_hash: e895ca31cb9953e8
 ---
 
 # Adversarial Robust Memory-Based Continual Learner
@@ -168,11 +168,11 @@ Comparison across four continual learning methods (ER, DER, DER++, X-DER) combin
 
 ## Related Papers
 
+- [\[ICML 2025\] Unlocking the Power of Rehearsal in Continual Learning: A Theoretical Perspective](../../ICML2025/llm_safety/unlocking_the_power_of_rehearsal_in_continual_learning_a_theoretical_perspective.md)
+- [\[CVPR 2025\] TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in Vision-Language Models](../../CVPR2025/llm_safety/tapt_test-time_adversarial_prompt_tuning_for_robust_inference_in_vision-language.md)
 - [\[NeurIPS 2025\] Finding Structure in Continual Learning](../../NeurIPS2025/llm_safety/finding_structure_in_continual_learning.md)
-- [\[AAAI 2026\] Attention Retention for Continual Learning with Vision Transformers](../../AAAI2026/llm_safety/attention_retention_for_continual_learning_with_vision_transformers.md)
-- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](../../ICML2026/llm_safety/understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
-- [\[NeurIPS 2025\] ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search](../../NeurIPS2025/llm_safety/reliabilityrag_effective_and_provably_robust_defense_for_rag-based_web-search.md)
-- [\[ICCV 2025\] Enhancing Adversarial Transferability by Balancing Exploration and Exploitation with Gradient-Guided Sampling](enhancing_adversarial_transferability_by_balancing_exploration_and_exploitation_.md)
+- [\[ACL 2025\] Bias in the Mirror: Are LLMs' Opinions Robust to Their Own Adversarial Attacks](../../ACL2025/llm_safety/bias_in_the_mirror_are_llms_opinions_robust_to_their_own_adversarial_attacks.md)
+- [\[ACL 2025\] Unveiling Privacy Risks in LLM Agent Memory](../../ACL2025/llm_safety/mextra_agent_memory_privacy.md)
 
 </div>
 

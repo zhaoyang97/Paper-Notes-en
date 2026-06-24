@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents
 description: >-
-  [ICLR 2026][Medical NLP][EHR] Proposes the EHR-ChatQA benchmark to evaluate end-to-end interaction workflows of database agents in EHR scenarios (clarifying vague queries → resolving term mismatches → generating SQL → returning answers). Findings reveal that while the strongest model (o4-mini) achieves over 90% Pass@5, its Pass∧5 (all successful) d
+  [ICLR 2026][Medical LLM][EHR] Proposes the EHR-ChatQA benchmark to evaluate end-to-end interaction workflows of database agents in EHR scenarios (clarifying vague queries → resolving term mismatches → generating SQL → returning answers). Findings reveal that while the strongest model (o4-mini) achieves over 90% Pass@5, its Pass∧5 (all successful) drops significantly (gap up to 60%), exposing robustness defects in safety-critical domains.
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - EHR
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "EHR"
+  - "Database Agent"
+  - "Interactive QA"
+  - "Query Ambiguity"
+  - "Value Mismatch"
 date: 2026-05-08
-content_hash: 81e235b03af488af
+content_hash: 4aedfe506f11174f
 ---
+
 # From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents
 
 **Conference**: ICLR 2026  
@@ -115,16 +120,16 @@ In safety-critical EHR scenarios, occasional accuracy is insufficient. Each task
 - Value: ⭐⭐⭐⭐⭐ Direct implications for the safety and reliability of EHR agent deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2025\] ReflecTool: Towards Reflection-Aware Tool-Augmented Clinical Agents](../../ACL2025/medical_nlp/reflectool_clinical_agent.md)
 - [\[ICML 2026\] MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings](../../ICML2026/medical_nlp/medcase-structured_a_text-to-fhir_dataset_for_benchmarking_diagnostic_reasoning_.md)
-- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](counselbench_llm_mental_health_qa.md)
-- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
 - [\[ACL 2026\] Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation](../../ACL2026/medical_nlp/measuring_what_matters_assessing_therapeutic_principles_in_mental-health_convers.md)
+- [\[ACL 2026\] Query Pipeline Optimization for Cancer Patient Question Answering Systems](../../ACL2026/medical_nlp/query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](counselbench_llm_mental_health_qa.md)
 
 </div>
 

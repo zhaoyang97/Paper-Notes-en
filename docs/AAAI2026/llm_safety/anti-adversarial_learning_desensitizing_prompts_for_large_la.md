@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models
 description: >-
-  [AAAI 2026][LLM Safety][prompt desensitization] This paper proposes PromptObfus, which adopts an "anti-adversarial learning" paradigm to replace sensitive tokens in user prompts with semantically distinct yet task-preser…
+  [AAAI 2026][LLM Safety][prompt desensitization] This paper proposes PromptObfus, which adopts an "anti-adversarial learning" paradigm to replace sensitive tokens in user prompts with semantically distinct yet task-preserving alternatives. The approach eliminates explicit privacy leakage entirely and reduces implicit privacy inference attack success rates by 62.70%, without degrading the task performance of remote LLMs.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "masked language model"
   - "surrogate model gradients"
 date: 2026-05-08
-content_hash: 3c88345d293bc140
+content_hash: 25263b015f7a4037
 ---
 
 # Anti-adversarial Learning: Desensitizing Prompts for Large Language Models
@@ -116,10 +116,10 @@ The surrogate model is fine-tuned using standard task losses (classification cro
 ## Related Papers
 
 - [\[AAAI 2026\] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models](auvic_adversarial_unlearning_of_visual_concepts_for_multi-mo.md)
+- [\[ICLR 2026\] Bi-directional Bias Attribution: Debiasing Large Language Models without Modifying Prompts](../../ICLR2026/llm_safety/bi-directional_bias_attribution_debiasing_large_language_models_without_modifyin.md)
 - [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
-- [\[ACL 2026\] Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](../../ACL2026/llm_safety/learning_uncertainty_from_sequential_internal_dispersion_in_large_language_model.md)
-- [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
-- [\[AAAI 2026\] SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth](sproutbench_a_benchmark_for_safe_and_ethical_large_language_models_for_youth.md)
+- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](../../ICLR2026/llm_safety/sampling-aware_adversarial_attacks_against_large_language_models.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](../../ICLR2026/llm_safety/transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 
 </div>
 

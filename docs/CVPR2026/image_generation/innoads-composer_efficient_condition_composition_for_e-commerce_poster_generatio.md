@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation
 description: >-
-  [CVPR 2026][Image Generation][MM-DiT] InnoAds-Composer is proposed, a single-stage e-commerce poster generation framework based on MM-DiT. It maps product subjects, glyph texts, and background styles into a unified space via tokenization. By combining a Text Feature Enhancement Module (TFEM) and an importance-aware condition injection strategy, it achieves
+  [CVPR 2026][Image Generation][E-commerce Poster Generation] InnoAds-Composer is proposed, a single-stage e-commerce poster generation framework based on MM-DiT. It maps product subjects, glyph texts, and background styles into a unified space via tokenization. By combining a Text Feature Enhancement Module (TFEM) and an importance-aware condition injection strategy, it achieves high-quality generation while significantly reducing inference overhead.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MM-DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "E-commerce Poster Generation"
+  - "Multi-condition Composition"
+  - "MM-DiT"
+  - "Text Rendering"
+  - "Condition Importance Analysis"
 date: 2026-05-08
-content_hash: bc2ccacd2f834b38
+content_hash: 6c10f6c216c3690f
 ---
+
 # InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation
 
 **Conference**: CVPR 2026  
@@ -148,8 +153,8 @@ Efficiency comparison:
 ## Related Papers
 
 - [\[CVPR 2026\] SimplePoster: A Simple Baseline for Product Poster Generation](simpleposter_a_simple_baseline_for_product_poster_generation.md)
-- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
 - [\[CVPR 2026\] DynFusion: Rethinking Condition Fusion for Adaptive Multi-Conditional Text-to-Image Generation](dynfusion_rethinking_condition_fusion_for_adaptive_multi-conditional_text-to-ima.md)
+- [\[ICLR 2026\] PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework](../../ICLR2026/image_generation/postercraft_rethinking_high-quality_aesthetic_poster_generation_in_a_unified_fra.md)
 - [\[CVPR 2026\] Scone: Bridging Composition and Distinction in Subject-Driven Image Generation via Unified Understanding-Generation Modeling](scone_bridging_composition_and_distinction_in_subject-driven_image_generation_vi.md)
 - [\[CVPR 2026\] PhotoFramer: Multi-modal Image Composition Instruction](photoframer_multi-modal_image_composition_instruction.md)
 

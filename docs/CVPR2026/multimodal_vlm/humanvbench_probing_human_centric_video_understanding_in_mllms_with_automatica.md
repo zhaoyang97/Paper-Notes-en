@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes HumanVBench, a human-centric video understanding benchmark comprising 16 fine-grained tasks, supported by two automated pipelines (video annotation + distractor-aware QA synthesis). Evaluation of 30 mainstream video MLLMs reveals critical deficiencies in subtle emotion perception and audio-visual alignmen
+  [CVPR 2026][Multimodal VLM][Video Benchmarking] Ours proposes HumanVBench, a human-centric video understanding benchmark comprising 16 fine-grained tasks, supported by two automated pipelines (video annotation + distractor-aware QA synthesis). Evaluation of 30 mainstream video MLLMs reveals critical deficiencies in subtle emotion perception and audio-visual alignment.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video Benchmarking"
+  - "Human-Centric Video Understanding"
+  - "Multi-modal Large Language Models"
+  - "Emotion Perception"
+  - "Audio-Visual Alignment"
 date: 2026-05-08
-content_hash: e84cf11b3ae63106
+content_hash: c274b890597a906b
 ---
+
 # HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ HumanVBench is an evaluation benchmark and does not involve model training. Answ
 
 ## Related Papers
 
+- [\[ICLR 2026\] HumanPCR: Probing MLLM Capabilities in Diverse Human-Centric Scenes](../../ICLR2026/multimodal_vlm/humanpcr_probing_mllm_capabilities_in_diverse_human-centric_scenes.md)
 - [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
-- [\[ACL 2025\] Redundancy Principles for MLLMs Benchmarks](../../ACL2025/multimodal_vlm/redundancy_principles_for_mllms_benchmarks.md)
-- [\[CVPR 2026\] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](think_360_evaluating_the_width-centric_reasoning_capability_of_mllms_beyond_dept.md)
-- [\[CVPR 2026\] TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective](tablemix_enhancing_multimodal_table_reasoning_in_mllms_from_a_data-centric_persp.md)
 - [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
+- [\[ACL 2025\] Redundancy Principles for MLLMs Benchmarks](../../ACL2025/multimodal_vlm/redundancy_principles_for_mllms_benchmarks.md)
+- [\[CVPR 2026\] Structural Graph Probing of Vision-Language Models](structural_graph_probing_of_vision-language_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gloria: Consistent Character Video Generation via Content Anchors
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Model] Gloria proposes using a compact set of "Content Anchors" to represent the multi-view appearance and expression identity of a character. Through two mechanisms—superset content anchoring (to prevent copy-pasting) and RoPE weak conditioning (to distinguish multiple anchors)—it achieves consistent character video generati
+  [CVPR 2026][Video Understanding][Character Video Generation] Gloria proposes using a compact set of "Content Anchors" to represent the multi-view appearance and expression identity of a character. Through two mechanisms—superset content anchoring (to prevent copy-pasting) and RoPE weak conditioning (to distinguish multiple anchors)—it achieves consistent character video generation exceeding 10 minutes.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Character Video Generation"
+  - "Consistency"
+  - "Content Anchors"
+  - "Diffusion Models"
+  - "Long Video"
 date: 2026-05-08
-content_hash: cfadcf57147badd7
+content_hash: 82acfe0b53086726
 ---
+
 # Gloria: Consistent Character Video Generation via Content Anchors
 
 **Conference**: CVPR 2026  
@@ -123,11 +128,11 @@ The generated character videos exceed 10 minutes, surpassing existing methods in
 
 ## Related Papers
 
+- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
 - [\[CVPR 2026\] First Frame Is the Place to Go for Video Content Customization](first_frame_is_the_place_to_go_for_video_content_customization.md)
-- [\[CVPR 2026\] Content-Aware Dynamic Patchification for Efficient Video Diffusion](content-aware_dynamic_patchification_for_efficient_video_diffusion.md)
-- [\[CVPR 2026\] MoCha: End-to-End Video Character Replacement without Structural Guidance](mocha_end-to-end_video_character_replacement_without_structural_guidance.md)
-- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)
-- [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
+- [\[CVPR 2026\] Image Guides Images: Consistent Video Amodal Completion with Rectified In-Context Exemplar Guidance](image_guides_images_consistent_video_amodal_completion_with_rectified_in-context.md)
+- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)
+- [\[CVPR 2026\] PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation](pyratok_language-aligned_pyramidal_tokenizer_for_video_understanding_and_generat.md)
 
 </div>
 

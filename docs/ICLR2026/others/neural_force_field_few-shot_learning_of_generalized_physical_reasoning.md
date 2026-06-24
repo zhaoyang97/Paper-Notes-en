@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning
 description: >-
-  [ICLR 2026][Others][neural force field] Proposes Neural Force Field (NFF), which models object interactions as continuous force fields. By learning force functions via neural operators and decoding trajectories with an ODE integrator, it achieves few-shot SOTA on I-PHYRE (100 trajectories), N-body (200 trajectories), and PHYRE (0.012M data, 267x less than pr
+  [ICLR 2026][neural force field] Proposes Neural Force Field (NFF), which models object interactions as continuous force fields. By learning force functions via neural operators and decoding trajectories with an ODE integrator, it achieves few-shot SOTA on I-PHYRE (100 trajectories), N-body (200 trajectories), and PHYRE (0.012M data, 267x less than previous SOTA). It reduces cross-scenario RMSE by 32-64% and achieves near-human performance in planning tasks.
 tags:
-  - ICLR 2026
-  - Others
-  - neural force field
-  - Neural ODE
-  - few-shot physical reasoning
-  - ODE solver
-  - interactive planning
+  - "ICLR 2026"
+  - "neural force field"
+  - "Neural ODE"
+  - "few-shot physical reasoning"
+  - "ODE solver"
+  - "interactive planning"
 date: 2026-05-08
-content_hash: f17c0f0df88bccc4
+content_hash: 3c0dff8849d2907f
 ---
+
 # Neural Force Field: Few-shot Learning of Generalized Physical Reasoning
 
 **Conference**: ICLR 2026  
@@ -178,9 +178,9 @@ Training utilizes MSE loss to minimize the difference between predicted and grou
 
 - [\[ICLR 2026\] Consistency-Driven Calibration and Matching for Few-Shot Class Incremental Learning](consistency-driven_calibration_and_matching_for_few-shot_class_incremental_learn.md)
 - [\[CVPR 2026\] Data-Centric Meta-Learning for Robust Few-Shot Generalization](../../CVPR2026/others/data-centric_meta-learning_for_robust_few-shot_generalization.md)
-- [\[ICLR 2026\] A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components](a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi.md)
-- [\[ICLR 2026\] Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks](learning_on_a_razors_edge_identifiability_and_singularity_of_polynomial_neural_n.md)
+- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](../../CVPR2026/others/graph_attention_prototypical_network_for_robust_few-shot_classification.md)
 - [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](../../CVPR2026/others/hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
+- [\[ICML 2026\] Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation](../../ICML2026/others/amortized_simulation-based_inference_in_generalized_bayes_via_neural_posterior_e.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Topic-Based Watermarks for Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes TBW, a lightweight topic-based watermarking scheme that clusters the vocabulary into "green lists" based on semantic topics rather than random partitioning. By selecting a semantically aligned topic list for logit biasing based on the input prompt, it maintains perplexity comparable to unwatermarked
+  [ACL 2026 Findings][LLM Safety][Text Watermarking] This paper proposes TBW, a lightweight topic-based watermarking scheme that clusters the vocabulary into "green lists" based on semantic topics rather than random partitioning. By selecting a semantically aligned topic list for logit biasing based on the input prompt, it maintains perplexity comparable to unwatermarked text while significantly enhancing robustness against paraphrasing and lexical perturbation attacks.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Text Watermarking"
+  - "Topic Alignment"
+  - "Semantic Partitioning"
+  - "Paraphrastic Robustness"
+  - "Lightweight Detection"
 date: 2026-05-08
-content_hash: 9c422e43a9f0be50
+content_hash: fb4c23ee606361bd
 ---
+
 # Topic-Based Watermarks for Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -146,10 +152,20 @@ The **Max $z$-score** strategy is critical as it allows the watermark signal to 
 - **Value**: ⭐⭐⭐⭐ Practical with a low deployment threshold for AI text provenance.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] In-Context Watermarks for Large Language Models](../../ICLR2026/llm_safety/in-context_watermarks_for_large_language_models.md)
+- [\[ACL 2025\] Ensemble Watermarks for Large Language Models](../../ACL2025/llm_safety/ensemble_watermarks_llm.md)
+- [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](jailbreaking_large_language_models_with_morality_attacks.md)
+- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
+- [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] Ensemble Watermarks for Large Language Models](../../ACL2025/llm_safety/ensemble_watermarks_llm.md)

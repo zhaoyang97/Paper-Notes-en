@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper systematically compares 14 LLMs as "pragmatic listeners" (judging pragmatic appropriateness) and "pragmatic speakers" (generating pragmatically appropriate language) across three pragmatic tasks (false presuppositions, anti-presuppositions, and deductive reasoning). The study reveals a widespread listener-sp
+  [ACL 2026 Findings][LLM Evaluation][Pragmatic competence] This paper systematically compares 14 LLMs as "pragmatic listeners" (judging pragmatic appropriateness) and "pragmatic speakers" (generating pragmatically appropriate language) across three pragmatic tasks (false presuppositions, anti-presuppositions, and deductive reasoning). The study reveals a widespread listener-speaker asymmetry: most models perform significantly better as judges than as generators…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Pragmatic competence"
+  - "listener-speaker asymmetries"
+  - "LLM-as-a-judge"
+  - "false presuppositions"
+  - "deductive reasoning"
 date: 2026-05-08
-content_hash: aef9481a8f2af9dd
+content_hash: c9aa93e3c4ce12df
 ---
+
 # How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -121,11 +127,11 @@ The evaluation covers 14 models, with a total of 990+504+180 prompts per model a
 
 ## Related Papers
 
+- [\[ICLR 2026\] TrustJudge: Inconsistencies of LLM-as-a-Judge and How to Alleviate Them](../../ICLR2026/llm_evaluation/trustjudge_inconsistencies_of_llm-as-a-judge_and_how_to_alleviate_them.md)
 - [\[ACL 2026\] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks](enhancing_linguistic_competence_of_language_models_through_pre-training_with_lan.md)
+- [\[ICLR 2026\] Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry](../../ICLR2026/llm_evaluation/rethinking_llm-as-a-judge_representation-as-a-judge_with_small_language_models_v.md)
 - [\[ICLR 2026\] Do LLM Agents Know How to Ground, Recover, and Assess? Evaluating Epistemic Competence in Information-Seeking Agents](../../ICLR2026/llm_evaluation/do_llm_agents_know_how_to_ground_recover_and_assess_evaluating_epistemic_compete.md)
-- [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
-- [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
-- [\[ACL 2026\] Identifying the Achilles' Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models](identifying_the_achilles_heel_an_iterative_method_for_dynamically_uncovering_fac.md)
+- [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
 
 </div>
 

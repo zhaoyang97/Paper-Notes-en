@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PreciseCache: Precise Feature Caching for Efficient and High-fidelity Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] PreciseCache is proposed as a plug-and-play acceleration framework that precisely detects and skips truly redundant calculations in video generation. It consists of LFCache (step-level, based on the Low-Frequency Difference (LFD) metric) and BlockCache (block-level, based on input-output difference metrics), achieving
+  [ICLR 2026][Video Generation][Feature caching] PreciseCache is proposed as a plug-and-play acceleration framework that precisely detects and skips truly redundant calculations in video generation. It consists of LFCache (step-level, based on the Low-Frequency Difference (LFD) metric) and BlockCache (block-level, based on input-output difference metrics), achieving an average 2.6× speedup on mainstream models like Wan2.1-14B without significant quality loss.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Feature caching"
+  - "video diffusion"
+  - "low-frequency difference"
+  - "step-level caching"
+  - "block-level caching"
 date: 2026-05-08
-content_hash: 385ea7d6f247ef61
+content_hash: e4ee805ff46757bd
 ---
+
 # PreciseCache: Precise Feature Caching for Efficient and High-fidelity Video Generation
 
 **Conference**: ICLR 2026  

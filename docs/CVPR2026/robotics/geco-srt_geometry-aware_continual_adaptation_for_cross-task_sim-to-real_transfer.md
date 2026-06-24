@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeCo-SRT: Geometry-aware Continual Adaptation for Cross-Task Sim-to-Real Transfer
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][sim-to-real] GeCo-SRT transforms "sim-to-real" transfer from a one-off parameter tuning process into a **cross-task continuous accumulation** process. It quantifies the sim-to-real gap using human-in-the-loop correction trajectories and utilizes the "Geometry-aware Mixture-of-Experts (Geo-MoE)" to treat local geometric features of
+  [CVPR 2026][Robotics][sim-to-real] GeCo-SRT transforms "sim-to-real" transfer from a one-off parameter tuning process into a **cross-task continuous accumulation** process. It quantifies the sim-to-real gap using human-in-the-loop correction trajectories and utilizes the "Geometry-aware Mixture-of-Experts (Geo-MoE)" to treat local geometric features of point clouds (planarity, linearity, saliency) as reusable knowledge carriers involving both cross-task and cross-domain invar…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - sim-to-real
+  - "CVPR 2026"
+  - "Robotics"
+  - "sim-to-real"
+  - "continual learning"
+  - "geometric features"
+  - "Mixture-of-Experts"
+  - "experience replay"
 date: 2026-05-08
-content_hash: e80f431c5f0edc7f
+content_hash: 1899e766f47dcec6
 ---
+
 # GeCo-SRT: Geometry-aware Continual Adaptation for Cross-Task Sim-to-Real Transfer
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ Decomposing the two core components of Geo-MoE (Observation Residual = aligning 
 
 ## Related Papers
 
-- [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer](gecosrt_geometryaware_continual_adaptation_for_rob.md)
-- [\[CVPR 2026\] Contact-Aware Neural Dynamics](contact-aware_neural_dynamics.md)
-- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
-- [\[CVPR 2026\] GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation](ga-vln_geometry-aware_bev_representation_for_efficient_vision-language_navigatio.md)
-- [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
+- [\[CVPR 2026\] Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer](opening_the_sim-to-real_door_for_humanoid_pixel-to-action_policy_transfer.md)
+- [\[ICLR 2026\] Latent Adaptation of Foundation Policies for Sim-to-Real Transfer](../../ICLR2026/robotics/latent_adaptation_of_foundation_policies_for_sim-to-real_transfer.md)
+- [\[CVPR 2026\] VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](viral_visual_sim-to-real_at_scale_for_humanoid_loco-manipulation.md)
+- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
+- [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](../../NeurIPS2025/robotics/generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
 
 </div>
 

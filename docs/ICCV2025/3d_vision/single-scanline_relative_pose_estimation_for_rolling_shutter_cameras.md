@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras
 description: >-
-  [ICCV 2025][3D Vision][Rolling shutter] This paper proposes a rolling shutter relative pose estimation method that requires no explicit camera motion modeling. It recovers camera pose solely from the intersections of lin…
+  [ICCV 2025][3D Vision][Rolling shutter] This paper proposes a rolling shutter relative pose estimation method that requires no explicit camera motion modeling. It recovers camera pose solely from the intersections of line projections with a single selected scanline per image, and develops multiple minimal solvers for special configurations such as parallel lines and known gravity direction.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "motion artifact"
   - "line field motion"
 date: 2026-05-08
-content_hash: 5f9f0d518b37b2be
+content_hash: f6c24dcb825bd0c1
 ---
 
 # Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras
@@ -138,9 +138,9 @@ Solver accuracy evaluated on $10^5$ noise-free synthetic instances:
 
 - [\[ICCV 2025\] RePoseD: Efficient Relative Pose Estimation with Known Depth Information](reposed_efficient_relative_pose_estimation_with_known_depth_information.md)
 - [\[ICCV 2025\] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](bring_your_rear_cameras_for_egocentric_3d_human_pose_estimation.md)
+- [\[CVPR 2025\] Relative Pose Estimation through Affine Corrections of Monocular Depth Priors](../../CVPR2025/3d_vision/relative_pose_estimation_through_affine_corrections_of_monocular_depth_priors.md)
 - [\[ICCV 2025\] BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation](boxdreamer_dreaming_box_corners_for_generalizable_object_pose_estimation.md)
 - [\[ICCV 2025\] PersPose: 3D Human Pose Estimation with Perspective Encoding and Perspective Rotation](perspose_3d_human_pose_estimation_with_perspective_encoding_and_perspective_rota.md)
-- [\[NeurIPS 2025\] SingRef6D: Monocular Novel Object Pose Estimation with a Single RGB Reference](../../NeurIPS2025/3d_vision/singref6d_monocular_novel_object_pose_estimation_with_a_single_rgb_reference.md)
 
 </div>
 

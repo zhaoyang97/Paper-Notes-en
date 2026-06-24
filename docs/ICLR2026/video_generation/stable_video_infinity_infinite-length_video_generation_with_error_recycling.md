@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] Stable Video Infinity：用「误差回收」实现无限长视频生成
+  [Paper Note] Stable Video Infinity: Achieving Infinite-Length Video Generation via "Error Recycling"
 description: >-
-  [ICLR 2026][Video Generation][Error Accumulation] Addressing the fundamental gap in autoregressive long video generation—where training assumes clean inputs but testing is conditioned on error-prone self-generated frames—this paper proposes Error-Recycling Fine-Tuning. By collecting errors made by the DiT itself into a memory bank and re-injecting them into clean inpu
+  [ICLR 2026][Video Generation][Long Video Generation] Addressing the fundamental gap in autoregressive long video generation—where training assumes clean inputs but testing is conditioned on error-prone self-generated frames—this paper proposes Error-Recycling Fine-Tuning. By collecting errors made by the DiT itself into a memory bank and re-injecting them into clean inputs to simulate degradation trajectories, the model is forced to actively correct errors. This enables exten…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Error Accumulation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Long Video Generation"
+  - "Error Accumulation"
+  - "Flow Matching"
+  - "Autoregressive Generation"
+  - "LoRA Fine-Tuning"
 date: 2026-05-08
-content_hash: be58cad61eedc373
+content_hash: f437d47499a104ce
 ---
+
 # Stable Video Infinity: Achieving Infinite-Length Video Generation via "Error Recycling"
 
 **Conference**: ICLR 2026  
@@ -153,11 +157,11 @@ Removing the three types of error injection (Table 4):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Video Generation with Stable Transparency via Shiftable RGB-A Distribution Learner](../../CVPR2026/video_generation/video_generation_with_stable_transparency_via_shiftable_rgb-a_distribution_learn.md)
 - [\[CVPR 2026\] Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout](../../CVPR2026/video_generation/infinity-rope_action-controllable_infinite_video_generation_emerges_from_autoreg.md)
-- [\[NeurIPS 2025\] Stable Cinemetrics: Structured Taxonomy and Evaluation for Professional Video Generation](../../NeurIPS2025/video_generation/stable_cinemetrics_structured_taxonomy_and_evaluation_for_professional_video_gen.md)
-- [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](../../ICML2026/video_generation/attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
+- [\[ICML 2026\] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos](../../ICML2026/video_generation/enhancing_train-free_infinite-frame_generation_for_consistent_long_videos.md)
+- [\[ICLR 2026\] Rolling Forcing: Autoregressive Long Video Diffusion in Real Time](rolling_forcing_autoregressive_long_video_diffusion_in_real_time.md)
 - [\[ICLR 2026\] Streaming Autoregressive Video Generation via Diagonal Distillation](streaming_autoregressive_video_generation_via_diagonal_distillation.md)
+- [\[CVPR 2026\] Video Generation with Stable Transparency via Shiftable RGB-A Distribution Learner](../../CVPR2026/video_generation/video_generation_with_stable_transparency_via_shiftable_rgb-a_distribution_learn.md)
 
 </div>
 

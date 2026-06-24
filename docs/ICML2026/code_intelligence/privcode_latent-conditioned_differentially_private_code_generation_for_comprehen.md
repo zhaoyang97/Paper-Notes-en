@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PrivCode++: Latent-Conditioned Differentially Private Code Generation for Comprehensive Guarantees
 description: >-
-  [ICML 2026][Code Intelligence][Paper Note] The first work to address differentially private code generation in a "jointly sensitive" scenario where both prompts and code are sensitive. By replacing explicit prompt conditions with a **Privacy-Free Latent Conditioning (PrivLC) module**, combined with a two-stage pipeline of "DP Purification + non-DP Gain," the me
+  [ICML2026][Code Intelligence][Differential Privacy] The first work to address differentially private code generation in a "jointly sensitive" scenario where both prompts and code are sensitive. By replacing explicit prompt conditions with a **Privacy-Free Latent Conditioning (PrivLC) module**, combined with a two-stage pipeline of "DP Purification + non-DP Gain," the method achieves utility close to relaxed-privacy approaches at $\epsilon=4$…
 tags:
-  - ICML 2026
-  - Code Intelligence
+  - "ICML2026"
+  - "Code Intelligence"
+  - "Differential Privacy"
+  - "Code Generation"
+  - "Latent-Conditioned"
+  - "Prompt Privacy"
+  - "Synthetic Data Fine-tuning"
 date: 2026-05-08
-content_hash: 7ccac2ef1410a851
+content_hash: 92e38fb6d99f873e
 ---
+
 # PrivCode++: Latent-Conditioned Differentially Private Code Generation for Comprehensive Guarantees
 
 **Conference**: ICML2026  
@@ -130,6 +136,7 @@ PrivCode++ is consistently optimal among joint-sensitivity methods, with Pass@1 
 - Value: ⭐⭐⭐⭐⭐ Enables DP code synthesis for real-world scenarios where "prompts are also sensitive."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -138,7 +145,7 @@ PrivCode++ is consistently optimal among joint-sensitivity methods, with Pass@1 
 - [\[ICML 2026\] HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench](he-snr_uncovering_latent_logic_via_entropy_for_guiding_mid-training_on_swe-bench.md)
 - [\[ACL 2025\] CoCo-Bench: A Comprehensive Code Benchmark for Multi-task Large Language Model Evaluation](../../ACL2025/code_intelligence/coco-bench_a_comprehensive_code_benchmark_for_multi-task_large_language_model_ev.md)
 - [\[ICML 2026\] Towards Functional Correctness of Code Models with Selective Generation](towards_functional_correctness_of_large_code_models_with_selective_generation.md)
-- [\[ICML 2026\] AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms](algoveri_an_aligned_benchmark_for_verified_code_generation_on_classical_algorith.md)
+- [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](../../ACL2026/code_intelligence/recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
 
 </div>
 

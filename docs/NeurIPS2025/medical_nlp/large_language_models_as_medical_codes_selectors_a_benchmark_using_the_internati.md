@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Large Language Models as Medical Codes Selectors: A Benchmark Using the International Classification of Primary Care
 description: >-
-  [NeurIPS 2025 (GenAI for Health Workshop)][Medical NLP][Medical coding] This work constructs a medical coding benchmark based on an extract-retrieve-select framework…
+  [NeurIPS 2025 (GenAI for Health Workshop)][Medical LLM][Medical coding] This work constructs a medical coding benchmark based on an extract-retrieve-select framework, evaluating ICPC-2 code selection capability across 33 LLMs. Results show that 28 models achieve F1 > 0.8, demonstrating that LLMs can effectively automate primary care coding without fine-tuning.
 tags:
   - "NeurIPS 2025 (GenAI for Health Workshop)"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Medical coding"
   - "ICPC-2"
   - "LLM benchmark"
   - "extreme multi-label classification"
   - "semantic retrieval"
 date: 2026-05-08
-content_hash: 55091921e9cc58be
+content_hash: ff2f6a5ae10385c1
 ---
 
 # Large Language Models as Medical Codes Selectors: A Benchmark Using the International Classification of Primary Care
@@ -121,10 +121,10 @@ No training is required. All evaluations are conducted in pure inference mode; a
 ## Related Papers
 
 - [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
-- [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](../../ACL2026/medical_nlp/beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
+- [\[ACL 2025\] MedBioRAG: Semantic Search and Retrieval-Augmented Generation with Large Language Models for Medical and Biological QA](../../ACL2025/medical_nlp/medbiorag_semantic_search_and_retrieval-augmented_generation_for_biomedical_lite.md)
+- [\[ACL 2025\] Towards Omni-RAG: Comprehensive Retrieval-Augmented Generation for Large Language Models in Medical Applications](../../ACL2025/medical_nlp/omni_rag_medical.md)
 - [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
-- [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](../../ACL2026/medical_nlp/text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
-- [\[ACL 2026\] MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts](../../ACL2026/medical_nlp/medfact_benchmarking_the_fact-checking_capabilities_of_large_language_models_on_.md)
+- [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](../../ACL2026/medical_nlp/beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
 
 </div>
 

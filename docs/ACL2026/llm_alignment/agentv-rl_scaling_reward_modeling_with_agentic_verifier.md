@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] AgentV-RL: Scaling Reward Modeling with Agentic Verifier
 description: >-
-  [ACL 2026][Alignment & RLHF][Agentic Verifier] The reward model is reshaped from a "single-turn scoring" mechanism into a multi-turn deliberation process featuring "forward + backward dual agents + tool calls." Through SFT+GRPO, these multi-agent capabilities are distilled into a single 4B model, which outperforms 70B-scale ORMs by 25.2% in Best-of-N (BoN) selectio
+  [ACL 2026][LLM Alignment][Agentic Verifier] The reward model is reshaped from a "single-turn scoring" mechanism into a multi-turn deliberation process featuring "forward + backward dual agents + tool calls." Through SFT+GRPO, these multi-agent capabilities are distilled into a single 4B model, which outperforms 70B-scale ORMs by 25.2% in Best-of-N (BoN) selection.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - Agentic Verifier
-  - Test-Time Scaling
-  - GRPO
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Agentic Verifier"
+  - "Reward Model"
+  - "Test-Time Scaling"
+  - "Tool-Augmented Reasoning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 552530758f2c2486
+content_hash: fe3a4418a59c5bef
 ---
+
 # AgentV-RL: Scaling Reward Modeling with Agentic Verifier
 
 **Conference**: ACL 2026  
@@ -146,11 +149,11 @@ On MATH500@128, Ours outperforms the strongest ORM (Skywork-V2-Llama-8B at 53.8)
 
 ## Related Papers
 
-- [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)
-- [\[ACL 2025\] Dynamic Scaling of Unit Tests for Code Reward Modeling](../../ACL2025/llm_alignment/dynamic_scaling_of_unit_tests_for_code_reward_modeling.md)
-- [\[ICLR 2026\] Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy](../../ICLR2026/llm_alignment/skywork-reward-v2_scaling_preference_data_curation_via_human-ai_synergy.md)
-- [\[ACL 2026\] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization](maestro_meta-learning_adaptive_estimation_of_scalarization_trade-offs_for_reward.md)
 - [\[ACL 2026\] AdaJudge: Adaptive Multi-Perspective Judging for Reward Modeling](adajudge_adaptive_multi-perspective_judging_for_reward_modeling.md)
+- [\[ACL 2025\] Dynamic Scaling of Unit Tests for Code Reward Modeling](../../ACL2025/llm_alignment/dynamic_scaling_of_unit_tests_for_code_reward_modeling.md)
+- [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)
+- [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](../../ICLR2026/llm_alignment/robust_reward_modeling_via_causal_rubrics.md)
+- [\[ICLR 2026\] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment](../../ICLR2026/llm_alignment/inverse_reinforcement_learning_with_dynamic_reward_scaling_for_llm_alignment.md)
 
 </div>
 

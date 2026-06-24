@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Conservative Planning from Human-AI Preferences in Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes MCP (Model-based Conservative Planning), a model-based offline preference reinforcement learning algorithm. By using the "performance difference relative to a reference policy" as the objective and "deviation regularization from the maximum likelihood model" to implicitly encode conservatism, it bec
+  [ICLR 2026][Reinforcement Learning][Preference-based RL] This paper proposes MCP (Model-based Conservative Planning), a model-based offline preference reinforcement learning algorithm. By using the "performance difference relative to a reference policy" as the objective and "deviation regularization from the maximum likelihood model" to implicitly encode conservatism, it becomes the first to simultaneously achieve "provable sample efficiency" and "computational tractability"…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Preference-based RL"
+  - "Offline RL"
+  - "Conservative Planning"
+  - "Partial Coverage"
+  - "Sample Complexity"
 date: 2026-05-08
-content_hash: 38ae33bdca6dc982
+content_hash: 7b39062e2f56d7af
 ---
+
 # Toward Conservative Planning from Human-AI Preferences in Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -149,11 +155,11 @@ On lever-pull-1000, components were removed (Figure 2a):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
 - [\[ICLR 2026\] Improving Human-AI Coordination through Online Adversarial Training and Generative Models](improving_human-ai_coordination_through_online_adversarial_training_and_generati.md)
+- [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
 - [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
 - [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
-- [\[ICLR 2026\] Learning Human Habits with Rule-Guided Active Inference](learning_human_habits_with_rule-guided_active_inference.md)
+- [\[ICLR 2026\] Benefits and Pitfalls of Reinforcement Learning for Language Model Planning: A Theoretical Perspective](benefits_and_pitfalls_of_reinforcement_learning_for_language_model_planning_a_th.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Binary Preferences: A Principled Framework for Reward Modeling with Ordinal Feedback
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] This paper points out that existing reward models (RMs) only utilize binary preferences ("A is better than B"). When faced with human Likert-scale feedback ("significantly better/better/slightly better"), they rely on ad-hoc heuristic patches like manual margins or weighting factors. The authors reformulate reward mode
+  [ICLR2026][LLM Alignment][Reward Model] This paper points out that existing reward models (RMs) only utilize binary preferences ("A is better than B"). When faced with human Likert-scale feedback ("significantly better/better/slightly better"), they rely on ad-hoc heuristic patches like manual margins or weighting factors. The authors reformulate reward modeling as a **discrete ordinal regression** problem. From the ordered logit model, they naturally derive two principled lo…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Ordinal Regression"
+  - "Likert Preferences"
+  - "Threshold Learning"
+  - "RLHF"
 date: 2026-05-08
-content_hash: d8af3c7a514060e2
+content_hash: c85ecf9be44c8c1a
 ---
+
 # Beyond Binary Preferences: A Principled Framework for Reward Modeling with Ordinal Feedback
 
 **Conference**: ICLR2026  
@@ -110,6 +115,7 @@ Trained on HelpSteer2/3 (7-level Likert scale) and evaluated on RewardBench and 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

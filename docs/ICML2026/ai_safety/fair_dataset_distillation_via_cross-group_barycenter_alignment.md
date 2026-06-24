@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Fair Dataset Distillation via Cross-Group Barycenter Alignment
 description: >-
-  [ICML 2026][AI Safety][Data Distillation] This paper reveals that Dataset Distillation (DD) amplifies biases present in the original data—a phenomenon rooted in the interaction between "subgroup size imbalance" and "subgroup representation separation." It proposes COBRA: using the (group-size independent) barycenter of each subgroup's representation as the dis
+  [ICML 2026][AI Safety][Dataset Distillation] This paper reveals that Dataset Distillation (DD) amplifies biases present in the original data—a phenomenon rooted in the interaction between "subgroup size imbalance" and "subgroup representation separation." It proposes COBRA: using the (group-size independent) barycenter of each subgroup's representation as the distillation target, which simultaneously reduces EOD and improves accuracy across multiple DD frameworks.
 tags:
-  - ICML 2026
-  - AI Safety
-  - Data Distillation
-  - EOD
+  - "ICML 2026"
+  - "AI Safety"
+  - "Dataset Distillation"
+  - "Group Fairness"
+  - "Subgroup Barycenter Alignment"
+  - "EOD"
+  - "Representation Alignment"
 date: 2026-05-08
-content_hash: fa2af5e3c1b262c2
+content_hash: 9417dde8f963fd3b
 ---
+
 # Fair Dataset Distillation via Cross-Group Barycenter Alignment
 
 **Conference**: ICML 2026  
@@ -119,10 +123,10 @@ The final loss is $\mathcal{L}_\text{COBRA}(T,S)=\sum_y D(m_y^*,\Phi_{S_y})$, wh
 ## Related Papers
 
 - [\[ICML 2026\] Optimal Transport under Group Fairness Constraints](optimal_transport_under_group_fairness_constraints.md)
+- [\[ICLR 2026\] Dataset Distillation for Memorized Data: Soft Labels can Leak Held-Out Teacher Knowledge](../../ICLR2026/ai_safety/dataset_distillation_for_memorized_data_soft_labels_can_leak_held-out_teacher_kn.md)
 - [\[ICML 2026\] Scaling Unsupervised Multi-Source Federated Domain Adaptation through Group-Wise Discrepancy Minimization](scaling_unsupervised_multi-source_federated_domain_adaptation_through_group-wise.md)
+- [\[ICML 2026\] Position: 'AI Alignment' Encompasses Competing Technical Priorities](ai_alignment_encompasses_competing_technical_priorities.md)
 - [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
-- [\[ICML 2026\] Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods](extending_fair_null-space_projections_for_continuous_attributes_to_kernel_method.md)
-- [\[AAAI 2026\] Fair Model-Based Clustering](../../AAAI2026/ai_safety/fair_model-based_clustering.md)
 
 </div>
 

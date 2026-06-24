@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ConlangCrafter: Constructing Languages with a Multi-Hop LLM Pipeline
 description: >-
-  [ACL 2026][Text Generation][Paper Note] This paper introduces ConlangCrafter, an LLM-based multi-hop pipeline that decomposes constructed language (conlang) design into modular stages of phonology, grammar, and lexicon. It ensures typological diversity through randomness injection and internal consistency via self-refinement loops, while proposing an automat
+  [ACL 2026][Text Generation][Conlangs] This paper introduces ConlangCrafter, an LLM-based multi-hop pipeline that decomposes constructed language (conlang) design into modular stages of phonology, grammar, and lexicon. It ensures typological diversity through randomness injection and internal consistency via self-refinement loops, while proposing an automated evaluation framework encompassing typological diversity analysis and translation consistency.
 tags:
-  - ACL 2026
-  - Text Generation
+  - "ACL 2026"
+  - "Text Generation"
+  - "Conlangs"
+  - "Multi-hop Reasoning"
+  - "Typological Diversity"
+  - "Self-Refinement"
+  - "Metalinguistic Reasoning"
 date: 2026-05-08
-content_hash: 82b83b828aef8122
+content_hash: 17589f7bab87ad6a
 ---
+
 # ConlangCrafter: Constructing Languages with a Multi-Hop LLM Pipeline
 
 **Conference**: ACL 2026  
@@ -163,7 +169,7 @@ No model training is involved. Large reasoning models utilizing inference-time C
 - [\[ACL 2026\] Are Emotion and Rhetoric Neurons in LLM? Neuron Recognition and Adaptive Masking for Emotion-Rhetoric Prediction Steering](are_emotion_and_rhetoric_neurons_in_llm_neuron_recognition_and_adaptive_masking_.md)
 - [\[ACL 2026\] Can You Make It Sound Like You? Post-Editing LLM-Generated Text for Personal Style](can_you_make_it_sound_like_you_post-editing_llm-generated_text_for_personal_styl.md)
 - [\[ACL 2025\] Multi-document Summarization through Multi-document Event Relation Graph Reasoning in LLMs](../../ACL2025/nlp_generation/event_graph_bias_mitigation_summarization.md)
-- [\[ACL 2025\] PerSphere: A Comprehensive Framework for Multi-Faceted Perspective Retrieval and Summarization](../../ACL2025/nlp_generation/persphere_a_comprehensive_framework_for_multi-faceted_perspective_retrieval_and_.md)
+- [\[ICLR 2026\] p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding](../../ICLR2026/nlp_generation/p-less_sampling_a_robust_hyperparameter-free_approach_for_llm_decoding.md)
 
 </div>
 

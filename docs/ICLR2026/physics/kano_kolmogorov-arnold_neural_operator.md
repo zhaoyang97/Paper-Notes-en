@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] KANO: Kolmogorov–Arnold Neural Operator
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][KAN] KANO embeds KAN sub-networks into the pseudo-differential operator framework, jointly parameterizing the operator in both frequency and spatial bases. This breaks the pure spectral bottleneck of the Fourier Neural Operator (FNO), enabling robust generalization on variable-coefficient PDEs and allowing the learned opera
+  [ICLR 2026][Physics & Scientific Computing][Neural Operators] KANO embeds KAN sub-networks into the pseudo-differential operator framework, jointly parameterizing the operator in both frequency and spatial bases. This breaks the pure spectral bottleneck of the Fourier Neural Operator (FNO), enabling robust generalization on variable-coefficient PDEs and allowing the learned operator to be read as closed-form symbolic formulas (coefficient accuracy up to four decimal places).
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - KAN
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Neural Operators"
+  - "KAN"
+  - "Pseudo-differential operators"
+  - "Symbolic Interpretability"
+  - "Variable-coefficient PDEs"
+  - "Quantum Hamiltonian Learning"
 date: 2026-05-08
-content_hash: 88365701f27ef531
+content_hash: c33d5d0d44bfe6ee
 ---
+
 # KANO: Kolmogorov–Arnold Neural Operator
 
 **Conference**: ICLR 2026  

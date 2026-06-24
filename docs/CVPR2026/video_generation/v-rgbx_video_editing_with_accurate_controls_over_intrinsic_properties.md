@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] V-RGBX: Video Editing with Accurate Controls over Intrinsic Properties
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] V-RGBX first inverse-renders a video into intrinsic channels such as albedo, normal, material, and irradiance. It then utilizes a video DiT with interleaved conditional injection to re-synthesize these into RGB. This allows users to modify a single intrinsic property (e.g., changing material or relighting) on sparse ke
+  [CVPR 2026][Video Generation][Intrinsic Property Editing] V-RGBX first inverse-renders a video into intrinsic channels such as albedo, normal, material, and irradiance. It then utilizes a video DiT with interleaved conditional injection to re-synthesize these into RGB. This allows users to modify a single intrinsic property (e.g., changing material or relighting) on sparse keyframes, which the model then stably propagates as a physically consistent edit throughout the entire…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Intrinsic Property Editing"
+  - "Inverse Rendering"
+  - "Video Diffusion"
+  - "Keyframe Propagation"
+  - "Relighting"
 date: 2026-05-08
-content_hash: 5f4d4ce69b054a75
+content_hash: ab4321dbdc22cc54
 ---
+
 # V-RGBX: Video Editing with Accurate Controls over Intrinsic Properties
 
 **Conference**: CVPR 2026  
@@ -176,8 +182,8 @@ RGB→X→RGB Cycle Consistency (End-to-end vs. Original):
 
 - [\[CVPR 2026\] LightMover: Generative Light Movement with Color and Intensity Controls](lightmover_generative_light_movement_with_color_and_intensity_controls.md)
 - [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
+- [\[CVPR 2026\] MotionV2V: Editing Motion in a Video](motionv2v_editing_motion_in_a_video.md)
 - [\[CVPR 2026\] Generative Video Motion Editing with 3D Point Tracks](generative_video_motion_editing_with_3d_point_tracks.md)
-- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
 - [\[ICLR 2026\] MotionStream: Real-Time Video Generation with Interactive Motion Controls](../../ICLR2026/video_generation/motionstream_real-time_video_generation_with_interactive_motion_controls.md)
 
 </div>

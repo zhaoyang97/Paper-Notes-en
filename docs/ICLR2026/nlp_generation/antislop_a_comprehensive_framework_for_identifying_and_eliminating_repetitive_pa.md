@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Antislop: A Comprehensive Framework for Identifying and Eliminating Repetitive Patterns in Language Models
 description: >-
-  [ICLR 2026][Text Generation][Paper Note] Antislop treats "AI-typical repetitive phrases (slop) in LLM generation" as quantifiable, locatable, and erasable objects. It first maps model-specific "slop fingerprints" using frequency ratio statistics, then utilizes an inference-time backtracking sampler to precisely suppress these patterns. Finally, it automatical
+  [ICLR2026][Text Generation][Slop suppression] Antislop treats "AI-typical repetitive phrases (slop) in LLM generation" as quantifiable, locatable, and erasable objects. It first maps model-specific "slop fingerprints" using frequency ratio statistics, then utilizes an inference-time backtracking sampler to precisely suppress these patterns. Finally, it automatically converts the sampler's interception records into preference data for the newly proposed FTPO fine-tuning…
 tags:
-  - ICLR 2026
-  - Text Generation
+  - "ICLR2026"
+  - "Text Generation"
+  - "Slop suppression"
+  - "Backtracking sampling"
+  - "Preference optimization"
+  - "Creative writing"
+  - "Lexical diversity"
 date: 2026-05-08
-content_hash: 073443f5a93ca90c
+content_hash: 61bb6808989be9b4
 ---
+
 # Antislop: A Comprehensive Framework for Identifying and Eliminating Repetitive Patterns in Language Models
 
 **Conference**: ICLR2026  
@@ -136,10 +142,10 @@ Detailed FTPO vs. DPO comparison: FTPO achieves 8.5% higher suppression than DPO
 ## Related Papers
 
 - [\[ACL 2025\] PerSphere: A Comprehensive Framework for Multi-Faceted Perspective Retrieval and Summarization](../../ACL2025/nlp_generation/persphere_a_comprehensive_framework_for_multi-faceted_perspective_retrieval_and_.md)
+- [\[ICLR 2026\] Planner Aware Path Learning in Diffusion Language Models Training](planner_aware_path_learning_in_diffusion_language_models_training.md)
 - [\[ACL 2026\] Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models](../../ACL2026/nlp_generation/investigating_the_representation_of_backchannels_and_fillers_in_fine-tuned_langu.md)
 - [\[ACL 2025\] An Empirical Study of Many-to-Many Summarization with Large Language Models](../../ACL2025/nlp_generation/an_empirical_study_of_manytomany_summarization.md)
 - [\[ACL 2025\] Theme-Explanation Structure for Table Summarization Using Large Language Models](../../ACL2025/nlp_generation/theme-explanation_structure_for_table_summarization_using_large_language_models_.md)
-- [\[ICLR 2026\] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation](unveiling_the_potential_of_diffusion_large_language_model_in_controllable_genera.md)
 
 </div>
 

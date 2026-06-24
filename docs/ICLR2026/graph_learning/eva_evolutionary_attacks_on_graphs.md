@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] EvA: Evolutionary Attacks on Graphs
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] Ours utilizes a carefully designed genetic algorithm to search for adversarial perturbations directly in the discrete edge-flip space, bypassing gradient relaxation and differentiable proxy losses. It achieves an average accuracy drop of ~11% more than the SOTA PRBCD in node classification attacks and implements the fi
+  [ICLR 2026][Graph Learning][GNN] Ours utilizes a carefully designed genetic algorithm to search for adversarial perturbations directly in the discrete edge-flip space, bypassing gradient relaxation and differentiable proxy losses. It achieves an average accuracy drop of ~11% more than the SOTA PRBCD in node classification attacks and implements the first graph structural attacks on conformal prediction and robustness certificates.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "GNN"
+  - "Adversarial Attack"
+  - "Evolutionary Algorithms"
+  - "Combinatorial Optimization"
+  - "Black-box Attack"
+  - "Conformal Prediction"
+  - "Robustness Certificates"
 date: 2026-05-08
-content_hash: 4151453b009c00c4
+content_hash: a96206aa342dbdb3
 ---
+
 # EvA: Evolutionary Attacks on Graphs
 
 **Conference**: ICLR 2026  
@@ -123,9 +131,9 @@ EvA is more penetrative than PRBCD against all robust defenses. On multiple mode
 
 - [\[ICLR 2026\] Temporal Graph Thumbnail: Robust Representation Learning with Global Evolutionary Skeleton](temporal_graph_thumbnail_robust_representation_learning_with_global_evolutionary.md)
 - [\[NeurIPS 2025\] Practical Bayes-Optimal Membership Inference Attacks](../../NeurIPS2025/graph_learning/practical_bayes-optimal_membership_inference_attacks.md)
+- [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](graph_tokenization_for_bridging_graphs_and_transformers.md)
 - [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](towards_improved_sentence_representations_using_token_graphs.md)
-- [\[ICLR 2026\] LEAP: Local ECT-Based Learnable Positional Encodings for Graphs](leap_local_ect-based_learnable_positional_encodings_for_graphs.md)
-- [\[ICLR 2026\] Beyond Simple Graphs: Neural Multi-Objective Routing on Multigraphs](beyond_simple_graphs_neural_multi-objective_routing_on_multigraphs.md)
+- [\[ICLR 2026\] Revisiting Node Affinity Prediction in Temporal Graphs](revisting_node_affinity_prediction_in_temporal_graphs.md)
 
 </div>
 

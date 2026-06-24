@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes MuGS, the first generalizable 3D Gaussian Splatting method designed for multi-baseline settings. By fusing multi-view stereo (MVS) and monocular depth est…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes MuGS, the first generalizable 3D Gaussian Splatting method designed for multi-baseline settings. By fusing multi-view stereo (MVS) and monocular depth estimation (MDE) features and introducing a projected-sampled depth consistency network, MuGS achieves state-of-the-art novel view synthesis under both small-baseline and large-baseline scenarios.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Multi-View Stereo"
   - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 0c931b17ec7c06f7
+content_hash: 685d46bf24869621
 ---
 
 # MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction

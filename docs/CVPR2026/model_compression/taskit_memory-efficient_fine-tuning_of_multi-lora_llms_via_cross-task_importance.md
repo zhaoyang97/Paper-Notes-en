@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] TaskIT adapts Multi-LoRA LLMs to new tasks on memory-constrained edge devices: it predicts the importance of each candidate LoRA position using "Cross-Task Transfer" without training any new modules, accurately estimates activation memory on Transformers using a "Block-level Memory Predictor," and finally selects LoRA
+  [CVPR 2026][Model Compression][Multi-LoRA] TaskIT adapts Multi-LoRA LLMs to new tasks on memory-constrained edge devices: it predicts the importance of each candidate LoRA position using "Cross-Task Transfer" without training any new modules, accurately estimates activation memory on Transformers using a "Block-level Memory Predictor," and finally selects LoRA positions, quantities, and ranks within a memory budget using a dynamic programming scheduler…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Multi-LoRA"
+  - "Sparse Fine-Tuning"
+  - "On-device Deployment"
+  - "Cross-task Transfer"
+  - "Memory Budget"
 date: 2026-05-08
-content_hash: cee335dc4edb3915
+content_hash: 1dd35048e1f101bb
 ---
+
 # TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer
 
 **Conference**: CVPR 2026  
@@ -131,11 +137,11 @@ TaskIT specifics: Trainable parameters 16.8M, Image average acc 80.4% with only 
 
 ## Related Papers
 
+- [\[CVPR 2026\] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)
 - [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
 - [\[CVPR 2026\] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)
 - [\[CVPR 2026\] Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation](memory_efficient_transfer_learning_with_fading_side_networks.md)
 - [\[NeurIPS 2025\] EMLoC: Emulator-based Memory-efficient Fine-tuning with LoRA Correction](../../NeurIPS2025/model_compression/emloc_emulator-based_memory-efficient_fine-tuning_with_lora_correction.md)
-- [\[CVPR 2026\] Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning](frequency_switching_mechanism_for_parameter-ecient_multi-task_learning.md)
 
 </div>
 

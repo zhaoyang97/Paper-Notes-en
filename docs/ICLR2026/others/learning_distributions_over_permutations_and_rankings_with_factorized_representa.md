@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Distributions over Permutations and Rankings with Factorized Representations
 description: >-
-  [ICLR 2026][Others][Fisher-Yates] By replacing permutations with "factorized representations" (Lehmer code / Fisher-Yates / Insertion vectors) that correspond one-to-one with the symmetric group, the model can use standard masked language modeling or autoregressive cross-entropy to learn **arbitrary** permutation distributions. These models **always ge
+  [ICLR 2026][Permutation Distributions] By replacing permutations with "factorized representations" (Lehmer code / Fisher-Yates / Insertion vectors) that correspond one-to-one with the symmetric group, the model can use standard masked language modeling or autoregressive cross-entropy to learn **arbitrary** permutation distributions. These models **always generate valid permutations** during sampling and can trade off expressivity for inference speed (NFE) without retraining.
 tags:
-  - ICLR 2026
-  - Others
-  - Fisher-Yates
+  - "ICLR 2026"
+  - "Permutation Distributions"
+  - "Lehmer Code"
+  - "Fisher-Yates"
+  - "Insertion Vector"
+  - "Masked Language Modeling"
+  - "Learning to Rank"
 date: 2026-05-08
-content_hash: f9c17bedb9116403
+content_hash: 77eb8a27abb6a1b0
 ---
+
 # Learning Distributions over Permutations and Rankings with Factorized Representations
 
 **Conference**: ICLR 2026  

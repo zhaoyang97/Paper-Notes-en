@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models
 description: >-
-  [ICML 2026][vlm_reasoning][Spatial Assertion Code] This work transforms VLM spatial reasoning from a "passive observation" approach into an agentic workflow that actively selects views based on questions, updates a cognitive map, and verifies reasoning using executable spatial assertions. By fine-tuning Qwen2.5-VL-3B with dense rewards, it achieves 80.5% overall accura
+  [ICML 2026][VLM Reasoning][Active Visual Exploration] This work transforms VLM spatial reasoning from a "passive observation" approach into an agentic workflow that actively selects views based on questions, updates a cognitive map, and verifies reasoning using executable spatial assertions. By fine-tuning Qwen2.5-VL-3B with dense rewards, it achieves 80.5% overall accuracy on MindCube-Tiny, specifically improving the Rotation subset to 85.0%.
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - Spatial Assertion Code
-  - GRPO
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Active Visual Exploration"
+  - "Spatial Reasoning"
+  - "Dynamic Cognitive Map"
+  - "Spatial Assertion Code"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 1ae2144918c47547
+content_hash: d8c4a4d679dd1669
 ---
+
 # Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models
 
 **Conference**: ICML 2026  
@@ -128,15 +132,14 @@ The paper analyzes the perception paradigm, reward components, memory forms, and
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
-- [\[ICML 2026\] The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design](the_perceptual_bandwidth_bottleneck_in_vision-language_models_active_visual_reas.md)
-- [\[CVPR 2026\] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](../../CVPR2026/vlm_reasoning/arm-thinker_reinforcing_multimodal_generative_reward_models_with_agentic_tool_us.md)
 - [\[ICML 2026\] From Correspondence to Actions: Human-Like Multi-Image Spatial Reasoning in Multi-modal Large Language Models](from_correspondence_to_actions_human-like_multi-image_spatial_reasoning_in_multi.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
+- [\[ICML 2026\] The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design](the_perceptual_bandwidth_bottleneck_in_vision-language_models_active_visual_reas.md)
+- [\[ICLR 2026\] MIMIC-Bench: Exploring the User-Like Thinking and Mimicking Capabilities of Multimodal Large Language Models](../../ICLR2026/vlm_reasoning/mimic-bench_exploring_the_user-like_thinking_and_mimicking_capabilities_of_multi.md)
+- [\[ICLR 2026\] SpatialLadder: Building Spatial Reasoning Capabilities for Vision-Language Models via Progressive Training](../../ICLR2026/vlm_reasoning/spatialladder_progressive_training_for_spatial_reasoning_in_vision-language_mode.md)
 
 </div>
 

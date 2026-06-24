@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The Generate Any Scene data engine is proposed, which systematically enumerates scene graphs based on a visual element taxonomy of 28K objects × 1.5K attributes × 10K relations and translates them into caption-VQA pairs. It supports four applications: self-improvement (SD1.5 +4%), targeted distillation (TIFA +10% with
+  [ICLR 2026][Image Generation][Scene Graph] The Generate Any Scene data engine is proposed, which systematically enumerates scene graphs based on a visual element taxonomy of 28K objects × 1.5K attributes × 10K relations and translates them into caption-VQA pairs. It supports four applications: self-improvement (SD1.5 +4%), targeted distillation (TIFA +10% with <800 data points), scene graph reward models (DPG-Bench +5% vs CLIP), and content moderation enhancement.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Scene Graph"
+  - "Compositional Generation"
+  - "Data Engine"
+  - "Self-improvement"
+  - "Targeted Distillation"
+  - "Reward Model"
 date: 2026-05-08
-content_hash: 2724b4dfced9c36c
+content_hash: 155d58cfff2544ed
 ---
+
 # Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training
 
 **Conference**: ICLR 2026  
@@ -152,10 +159,17 @@ Compositional Generalization Test (400 unseen compositional captions):
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] EchoGen: Generating Visual Echoes in Any Scene via Feed-Forward Subject-Driven Auto-Regressive Model](echogen_generating_visual_echoes_in_any_scene_via_feed-forward_subject-driven_au.md)
+- [\[ICLR 2026\] Consistent Text-to-Image Generation via Scene De-Contextualization](consistent_text-to-image_generation_via_scene_de-contextualization.md)
+- [\[ECCV 2024\] EchoScene: Indoor Scene Generation via Information Echo over Scene Graph Diffusion](../../ECCV2024/image_generation/echoscene_indoor_scene_generation_via_information_echo_over_scene_graph_diffusio.md)
+- [\[ICLR 2026\] Generating Metamers of Human Scene Understanding](generating_metamers_of_human_scene_understanding.md)
+- [\[ICLR 2026\] SketchingReality: From Hand-Drawn Scene Sketches to Photo-Realistic Images](sketchingreality_from_freehand_scene_sketches_to_photorealistic_images.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] EchoGen: Generating Visual Echoes in Any Scene via Feed-Forward Subject-Driven Auto-Regressive Model](echogen_generating_visual_echoes_in_any_scene_via_feed-forward_subject-driven_au.md)

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] CrispEdit: Low-Curvature Projections for Scalable Non-Destructive LLM Editing
 description: >-
-  [ICML 2026][Knowledge Editing][Gauss-Newton Hessian] LLM editing is formulated as a constrained optimization problem: "minimize edit loss s.t. capability loss remains invariant". This is equivalently transformed via Bregman divergence into a low-curvature subspace projection of the Gauss-Newton Hessian (GNH). By employing K-FAC and a Kronecker eigenbasis technique that a
+  [ICML 2026][Knowledge Editing][Gauss-Newton Hessian] LLM editing is formulated as a constrained optimization problem: "minimize edit loss s.t. capability loss remains invariant". This is equivalently transformed via Bregman divergence into a low-curvature subspace projection of the Gauss-Newton Hessian (GNH). By employing K-FAC and a Kronecker eigenbasis technique that avoids explicit construction of the projection matrix, 3,000 edits are completed in 6 minutes on an A40. The…
 tags:
-  - ICML 2026
-  - Knowledge Editing
-  - Gauss-Newton Hessian
-  - K-FAC
-  - Bregman divergence
+  - "ICML 2026"
+  - "Knowledge Editing"
+  - "Gauss-Newton Hessian"
+  - "K-FAC"
+  - "Bregman divergence"
+  - "Matrix-free projection"
+  - "Capability preservation"
 date: 2026-05-08
-content_hash: dbcbcbc15984a841
+content_hash: 6822f3936d47637c
 ---
+
 # CrispEdit: Low-Curvature Projections for Scalable Non-Destructive LLM Editing
 
 **Conference**: ICML 2026  

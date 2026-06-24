@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PluRule: A Benchmark for Moderating Pluralistic Communities on Social Media
 description: >-
-  [ACL 2026][Multilingual & Translation][Multimodal VLM] PluRule models Reddit community moderation as a multiple-choice task: "Given a comment and its context, select which community rule was violated or if no violation occurred." The authors construct a benchmark covering 1,989 communities, 2,885 rules, and 9 languages, showing that even GPT-5.2 high reasoning achieves onl
+  [ACL2026][Multilingual & Machine Translation][Content Moderation] PluRule models Reddit community moderation as a multiple-choice task: "Given a comment and its context, select which community rule was violated or if no violation occurred." The authors construct a benchmark covering 1,989 communities, 2,885 rules, and 9 languages, showing that even GPT-5.2 high reasoning achieves only approximately 57.6% accuracy with full context.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - Multimodal VLM
-  - Reddit
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Content Moderation"
+  - "Community Rules"
+  - "Multilingual Benchmark"
+  - "Multimodal VLM"
+  - "Reddit"
 date: 2026-05-08
-content_hash: 3a031d3729395d7a
+content_hash: e116083a5f0dae76
 ---
+
 # PluRule: A Benchmark for Moderating Pluralistic Communities on Social Media
 
 **Conference**: ACL2026  

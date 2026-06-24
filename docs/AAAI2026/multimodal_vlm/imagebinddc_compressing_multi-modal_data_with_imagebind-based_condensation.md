@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ImageBindDC: Compressing Multi-modal Data with ImageBind-based Condensation
 description: >-
-  [AAAI 2026][Multimodal VLM][Dataset distillation] This paper proposes ImageBindDC, the first framework for multimodal data compression in the unified feature space of ImageBind. It replaces the conventional MMD with Char…
+  [AAAI 2026][Multimodal VLM][Dataset distillation] This paper proposes ImageBindDC, the first framework for multimodal data compression in the unified feature space of ImageBind. It replaces the conventional MMD with Characteristic Function Distance (CFD) and introduces a three-level distribution alignment loss covering uni-modal, cross-modal, and joint-modal objectives. On NYU-v2, the method achieves performance comparable to full-data training (97.30%) using only 5 synthetic…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "characteristic function distance"
   - "distribution matching"
 date: 2026-05-08
-content_hash: 590f3747d8ddd856
+content_hash: 057e1b5bd9f02ef7
 ---
 
 # ImageBindDC: Compressing Multi-modal Data with ImageBind-based Condensation
@@ -198,9 +198,9 @@ ImageBindDC is more than 2.4× faster than DM, with a 37.5% reduction in memory 
 
 - [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](../../ICLR2026/multimodal_vlm/multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
 - [\[AAAI 2026\] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)
+- [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](../../CVPR2026/multimodal_vlm/socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
+- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](../../CVPR2026/multimodal_vlm/hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
 - [\[AAAI 2026\] RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)](rmadapter_reconstructionbased_multimodal_adapter_for_visionlanguage.md)
-- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](../../CVPR2026/multimodal_vlm/crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
 
 </div>
 

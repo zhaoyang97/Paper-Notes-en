@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] High-dimensional Mean-Field Games by Particle-based Flow Matching
 description: >-
-  [ICLR 2026][Optimization & Theory][Mean-Field Games] The authors reformulate the solution of high-dimensional Mean-Field Games (MFG) as a particle optimization problem in Lagrangian coordinates. By employing an alternating iteration of "particle proximal descent + Flow Matching for velocity field fitting" to approximate fictitious play, the method can solve both potentia
+  [ICLR 2026][Optimization][Mean-Field Games] The authors reformulate the solution of high-dimensional Mean-Field Games (MFG) as a particle optimization problem in Lagrangian coordinates. By employing an alternating iteration of "particle proximal descent + Flow Matching for velocity field fitting" to approximate fictitious play, the method can solve both potential and non-potential games with high-dimensional scalability while providing provable convergence rates.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Mean-Field Games
-  - Flow Matching
-  - Fictitious Play
-  - Optimal Transport
-  - Lagrangian Coordinates
-  - Convergence Analysis
+  - "ICLR 2026"
+  - "Optimization"
+  - "Mean-Field Games"
+  - "Flow Matching"
+  - "Fictitious Play"
+  - "Optimal Transport"
+  - "Lagrangian Coordinates"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: 0a3168f6db97c79d
+content_hash: e7558045214b8dab
 ---
+
 # High-dimensional Mean-Field Games by Particle-based Flow Matching
 
 **Conference**: ICLR 2026  
@@ -118,6 +119,7 @@ The FID of the proposed method is essentially on par with the strong Q-Flow base
 - **Value**: ⭐⭐⭐⭐ — Provides a rare "scalable + provable" solver for high-dimensional MFG, uniformly covering OC, potential, and non-potential games; highly relevant for both computational optimal transport and generative modeling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -126,7 +128,7 @@ The FID of the proposed method is essentially on par with the strong Q-Flow base
 - [\[ICML 2026\] Mirror Mean-Field Langevin Dynamics](../../ICML2026/optimization/mirror_mean-field_langevin_dynamics.md)
 - [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
 - [\[ICLR 2026\] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces](from_sorting_algorithms_to_scalable_kernels_bayesian_optimization_in_high-dimens.md)
-- [\[ICLR 2026\] Never Saddle for Reparameterized Steepest Descent as Mirror Flow](never_saddle_for_reparameterized_steepest_descent_as_mirror_flow.md)
+- [\[ICLR 2026\] GIT-BO: High-Dimensional Bayesian Optimization with Tabular Foundation Models](git-bo_high-dimensional_bayesian_optimization_with_tabular_foundation_models.md)
 
 </div>
 

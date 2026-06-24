@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Viral Proteins Reveal Geometry of Protein Language Models
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] Using viral proteins as probes, this paper discovers a "nativeness axis" (PC1) in the embedding space of ESM-series protein language models (pLMs), dominated by masked reconstruction perplexity. This axis ranks sequences from well-modeled cellular proteins, through viral proteins, to shuffled/random sequences. It furth
+  [ICML 2026][Computational Biology][Protein Language Models] Using viral proteins as probes, this paper discovers a "nativeness axis" (PC1) in the embedding space of ESM-series protein language models (pLMs), dominated by masked reconstruction perplexity. This axis ranks sequences from well-modeled cellular proteins, through viral proteins, to shuffled/random sequences. It further demonstrates that embeddings retain "residual viral signals" beyond perplexity—linear probes can…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Protein Language Models"
+  - "Viral Proteins"
+  - "Nativeness Axis"
+  - "Linear Probing"
+  - "Representation Geometry"
 date: 2026-05-08
-content_hash: 76d96c4d04cfdf7d
+content_hash: 674b9b73dbf9e3d2
 ---
+
 # Viral Proteins Reveal Geometry of Protein Language Models
 
 **Conference**: ICML 2026  
@@ -142,11 +148,11 @@ At 0.1% FPR, the probe TPR rises from 6.2% for ESM2-8M to 55.4% for ESM2-15B, an
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Learning Conformational Ensembles of Proteins Based on Backbone Geometry](../../NeurIPS2025/computational_biology/learning_conformational_ensembles_of_proteins_based_on_backbone_geometry.md)
 - [\[ICML 2026\] Circuit Tracing in Autoregressive Protein Language Models](circuit_tracing_in_autoregressive_protein_language_models.md)
 - [\[ICLR 2026\] Controlling Repetition in Protein Language Models](../../ICLR2026/computational_biology/controlling_repetition_in_protein_language_models.md)
-- [\[ICML 2026\] Hyperbolic Neural Population Geometry Benefits Computation](hyperbolic_neural_population_geometry_benefits_computation.md)
-- [\[ICML 2025\] Steering Protein Language Models](../../ICML2025/computational_biology/steering_protein_language_models.md)
+- [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
+- [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](../../ICLR2026/computational_biology/towards_understanding_the_shape_of_representations_in_protein_language_models.md)
+- [\[NeurIPS 2025\] Learning Conformational Ensembles of Proteins Based on Backbone Geometry](../../NeurIPS2025/computational_biology/learning_conformational_ensembles_of_proteins_based_on_backbone_geometry.md)
 
 </div>
 

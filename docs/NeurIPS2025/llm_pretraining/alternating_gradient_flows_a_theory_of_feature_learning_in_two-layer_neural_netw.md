@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Feature Learning] This paper proposes the Alternating Gradient Flow (AGF) theoretical framework to explain the stepwise "saddle-to-saddle" feature learning dynamics in neural networks. Tra…
+  [NeurIPS 2025][LLM Pretraining][Feature Learning] This paper proposes the Alternating Gradient Flow (AGF) theoretical framework to explain the stepwise "saddle-to-saddle" feature learning dynamics in neural networks. Training is modeled as an alternating process between utility maximization for dormant neurons and cost minimization for active neurons, unifying feature selection analysis across diagonal linear networks, attention models, and modular addition. Predictions from…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Dormant Neurons"
   - "Two-layer Networks"
 date: 2026-05-08
-content_hash: c32004279d62193a
+content_hash: 87a3554e8ab36b32
 ---
 
 # Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks
@@ -133,9 +133,9 @@ The utility function $\mathcal{U}_i(\theta; r) = E_x[\langle f_i(x;\theta), r(x)
 
 - [\[NeurIPS 2025\] Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data](neural_collapse_under_gradient_flow_on_shallow_relu_networks_for_orthogonally_se.md)
 - [\[NeurIPS 2025\] Generalization Bounds for Rank-sparse Neural Networks](generalization_bounds_for_rank-sparse_neural_networks.md)
+- [\[ICML 2025\] On the Role of Label Noise in the Feature Learning Process](../../ICML2025/llm_pretraining/on_the_role_of_label_noise_in_the_feature_learning_process.md)
 - [\[NeurIPS 2025\] Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding](learning_to_flow_from_generative_pretext_tasks_for_neural_architecture_encoding.md)
-- [\[ICLR 2026\] Intrinsic Training Dynamics of Deep Neural Networks](../../ICLR2026/llm_pretraining/intrinsic_training_dynamics_of_deep_neural_networks.md)
-- [\[NeurIPS 2025\] Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking](flatness_is_necessary_neural_collapse_is_not_rethinking_generalization_via_grokk.md)
+- [\[ICML 2025\] Inductive Gradient Adjustment for Spectral Bias in Implicit Neural Representations](../../ICML2025/llm_pretraining/inductive_gradient_adjustment_for_spectral_bias_in_implicit_neural_representatio.md)
 
 </div>
 

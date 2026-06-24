@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This work identifies two fundamental conflicts (order bias and instruction isolation) between causal masks in LLM decoders and 3D scene understanding. It proposes the 3D-SLIM masking strategy (Geometry-adaptive Mask + Instruction-aware Mask) to replace the causal mask, achieving significant improvements across multiple
+  [CVPR 2026][3D Vision][3D Scene Understanding] This work identifies two fundamental conflicts (order bias and instruction isolation) between causal masks in LLM decoders and 3D scene understanding. It proposes the 3D-SLIM masking strategy (Geometry-adaptive Mask + Instruction-aware Mask) to replace the causal mask, achieving significant improvements across multiple 3D scene-language tasks without architectural modifications or additional parameters.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Scene Understanding"
+  - "Attention Mask"
+  - "Spatial Reasoning"
+  - "LLM Decoder"
+  - "Object-Centric Representation"
 date: 2026-05-08
-content_hash: 74870632f8c08568
+content_hash: 8676fae5ff31fea6
 ---
+
 # Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ Component Ablation (Chat-Scene):
 
 ## Related Papers
 
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
-- [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)
-- [\[CVPR 2026\] FunFact: Building Probabilistic Functional 3D Scene Graphs via Factor-Graph Reasoning](funfact_building_probabilistic_functional_3d_scene_graphs_via_factor-graph_reaso.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
-- [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
+- [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
+- [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
+- [\[CVPR 2026\] Scalable Object Relation Encoding for Better 3D Spatial Reasoning in Large Language Models](scalable_object_relation_encoding_for_better_3d_spatial_reasoning_in_large_langu.md)
+- [\[CVPR 2026\] Spatial Matters: Position-Guided 3D Referring Expression Segmentation](spatial_matters_position-guided_3d_referring_expression_segmentation.md)
+- [\[CVPR 2026\] S$^2$-MLLM: Boosting Spatial Reasoning Capability of MLLMs for 3D Visual Grounding with Structural Guidance](s2-mllm_boosting_spatial_reasoning_capability_of_mllms_for_3d_visual_grounding_w.md)
 
 </div>
 

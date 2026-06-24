@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Understanding Valuable Preference Data for Large Language Model Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] This paper investigates preference data quality from a model-dependent perspective. It proposes the Truncated Influence Function (TIF), revealing that medium-IF data is the most valuable (contrary to the classical view favoring high-IF data). Two lightweight proxy metrics, LossDiff and IRM, are designed to approximate
+  [ICLR 2026][LLM Alignment][Preference data selection] This paper investigates preference data quality from a model-dependent perspective. It proposes the Truncated Influence Function (TIF), revealing that medium-IF data is the most valuable (contrary to the classical view favoring high-IF data). Two lightweight proxy metrics, LossDiff and IRM, are designed to approximate TIF. Their combination, the LossDiff-IRM selector, achieves an average WinRate improvement of 13.58% using…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference data selection"
+  - "influence functions"
+  - "DPO"
+  - "data quality"
+  - "model-dependency"
 date: 2026-05-08
-content_hash: 6acaa972566ab263
+content_hash: 9bf03fe548c615f9
 ---
+
 # Towards Understanding Valuable Preference Data for Large Language Model Alignment
 
 **Conference**: ICLR 2026  
@@ -149,8 +154,8 @@ A single proxy's overlap with TIF is limited (approx. 0.66–0.70). LossDiff and
 
 ## Related Papers
 
-- [\[ICLR 2026\] IDEAL: Data Equilibrium Adaptation for Multi-Capability Language Model Alignment](ideal_data_equilibrium_adaptation_for_multi-capability_language_model_alignment.md)
 - [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
+- [\[ICLR 2026\] IDEAL: Data Equilibrium Adaptation for Multi-Capability Language Model Alignment](ideal_data_equilibrium_adaptation_for_multi-capability_language_model_alignment.md)
 - [\[ICLR 2026\] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment](semantic-aware_wasserstein_policy_regularization_for_large_language_model_alignm.md)
 - [\[ICLR 2026\] Test-Time Alignment for Large Language Models via Textual Model Predictive Control](test-time_alignment_for_large_language_models_via_textual_model_predictive_contr.md)
 - [\[ICML 2025\] PoisonBench: Assessing Large Language Model Vulnerability to Data Poisoning](../../ICML2025/llm_alignment/poisonbench_assessing_large_language_model_vulnerability_to_data_poisoning.md)

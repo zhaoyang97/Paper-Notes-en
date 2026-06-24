@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback
 description: >-
-  [ACL 2026][Alignment & RLHF][SAT/DSAT] WildFeedback automatically identifies satisfied/dissatisfied feedback from real multi-turn ChatGPT conversations. It transforms naturally occurring user preferences into preference training samples and instance-specific checklist evaluation standards. This enables small open-source instruction models to align more clos
+  [ACL2024][LLM Alignment][In-situ User Feedback] WildFeedback automatically identifies satisfied/dissatisfied feedback from real multi-turn ChatGPT conversations. It transforms naturally occurring user preferences into preference training samples and instance-specific checklist evaluation standards. This enables small open-source instruction models to align more closely with real user needs than those trained on UltraFeedback, both on general benchmarks and in real-world user…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - SAT/DSAT
-  - DPO
+  - "ACL2024"
+  - "LLM Alignment"
+  - "In-situ User Feedback"
+  - "Preference Data Construction"
+  - "SAT/DSAT"
+  - "DPO"
+  - "Checklist Evaluation"
 date: 2026-05-08
-content_hash: 693fe162754b5f5e
+content_hash: b4e9cc30a03a641f
 ---
+
 # WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback
 
 **Conference**: ACL2024  
@@ -153,15 +157,14 @@ The paper validates components through data construction versions, checklist eva
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](persa_reinforcement_learning_for_professor-style_personalized_feedback_with_llms.md)
 - [\[ACL 2026\] CuMA: Aligning LLMs with Sparse Cultural Values via Demographic-Aware Mixture of Adapters](cuma_aligning_llms_with_sparse_cultural_values_via_demographic-aware_mixture_of_.md)
+- [\[ICLR 2026\] COMAL: A Convergent Meta-Algorithm for Aligning LLMs with General Preferences](../../ICLR2026/llm_alignment/comal_a_convergent_meta-algorithm_for_aligning_llms_with_general_preferences.md)
 - [\[ACL 2026\] RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation](rbtact_rebuttal_as_supervision_for_actionable_review_feedback_generation.md)
-- [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)
-- [\[ACL 2025\] Aligning to What? Limits to RLHF Based Alignment](../../ACL2025/llm_alignment/aligning_to_what_limits_to_rlhf_based_alignment.md)
+- [\[ICLR 2026\] Learning to Summarize User Information for Personalized RLHF (PLUS)](../../ICLR2026/llm_alignment/learning_to_summarize_user_information_for_personalized_reinforcement_learning_f.md)
 
 </div>
 

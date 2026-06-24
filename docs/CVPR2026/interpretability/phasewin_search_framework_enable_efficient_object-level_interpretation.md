@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] PhaseWin: 让目标级归因从二次复杂度降到近线性的相位窗口搜索
+  [Paper Note] PhaseWin: Reducing Object-Level Attribution from Quadratic Complexity to Near-Linear Phase-Window Search
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] PhaseWin transforms the quadratic greedy sub-region selection in object-level attribution (which re-scores all remaining regions at every step) into a coarse-to-fine search process featuring "phase pruning + window selection + dynamic supervision." While preserving greedy approximation guarantees, it achieves 95%+ of g
+  [CVPR 2026][Interpretability][Object-level attribution] PhaseWin transforms the quadratic greedy sub-region selection in object-level attribution (which re-scores all remaining regions at every step) into a coarse-to-fine search process featuring "phase pruning + window selection + dynamic supervision." While preserving greedy approximation guarantees, it achieves 95%+ of greedy attribution faithfulness using approximately 20% of the forward pass budget.
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Object-level attribution"
+  - "submodular optimization"
+  - "greedy acceleration"
+  - "phase-window search"
+  - "multimodal foundation models"
 date: 2026-05-08
-content_hash: 65ac8247c1cdefd9
+content_hash: 25af4a019e835db6
 ---
+
 # PhaseWin: Reducing Object-Level Attribution from Quadratic Complexity to Near-Linear Phase-Window Search
 
 **Conference**: CVPR 2026  
@@ -111,15 +117,16 @@ On Florence-2, faithfulness remains par with greedy search (even slightly higher
 - **Value**: ⭐⭐⭐⭐ Makes high-faithfulness submodular attribution viable for large-scale and real-time applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)
-- [\[CVPR 2026\] Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition](hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition.md)
-- [\[CVPR 2026\] Selection-as-Nonlinearity: Bridging Attention and Activation via a Joint Game-Decision Lens for Interpretable, Discriminative Visual Representations](selection-as-nonlinearity_bridging_attention_and_activation_via_a_joint_game-dec.md)
-- [\[CVPR 2026\] Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability](beyond_top_activations_efficient_and_reliable_crowdsourced_evaluation_of_automat.md)
+- [\[CVPR 2026\] Rounded or Streamlined Head? Bridging Concept Bottleneck Models and Attribute-Described Object Parts](rounded_or_streamlined_head_bridging_concept_bottleneck_models_and_attribute-des.md)
+- [\[ICML 2025\] Near-Optimal Decision Trees in a SPLIT Second](../../ICML2025/interpretability/near_optimal_decision_trees_in_a_split_second.md)
+- [\[ICML 2026\] AI Engram: In Search of Memory Traces in Artificial Intelligence](../../ICML2026/interpretability/ai_engram_in_search_of_memory_traces_in_artificial_intelligence.md)
+- [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
+- [\[ICLR 2026\] Interpretable 3D Neural Object Volumes for Robust Conceptual Reasoning](../../ICLR2026/interpretability/interpretable_3d_neural_object_volumes_for_robust_conceptual_reasoning.md)
 
 </div>
 

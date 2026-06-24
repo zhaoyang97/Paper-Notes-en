@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VARestorer: One-Step VAR Distillation for Real-World Image Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Real-ISR] A pre-trained text-to-image Visual Autoregressive (VAR) model is distilled into a one-step real-world super-resolution model via token-level distribution matching. Combined with a cross-scale pyramid condition to fully utilize low-quality input information, it achieves 72.32 MUSIQ / 0.7669 CLIPIQA on DIV2K-Val by fine-
+  [ICLR 2026][Image Restoration][Real-ISR] A pre-trained text-to-image Visual Autoregressive (VAR) model is distilled into a one-step real-world super-resolution model via token-level distribution matching. Combined with a cross-scale pyramid condition to fully utilize low-quality input information, it achieves 72.32 MUSIQ / 0.7669 CLIPIQA on DIV2K-Val by fine-tuning only 1.2% of the parameters, while accelerating inference by approximately 10x.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Real-ISR
-  - VAR
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Real-ISR"
+  - "VAR"
+  - "Distribution Matching Distillation"
+  - "One-Step Inference"
+  - "Cross-Scale Condition"
 date: 2026-05-08
-content_hash: 19af5d70e0bfaa4c
+content_hash: 4b66661aa4c82655
 ---
+
 # VARestorer: One-Step VAR Distillation for Real-World Image Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -146,8 +150,8 @@ Ablations on DIV2K-Val by removing components:
 
 ## Related Papers
 
-- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](../../CVPR2026/image_restoration/one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
 - [\[ICML 2026\] One-Step Residual Shifting Diffusion for Image Super-Resolution via Distillation](../../ICML2026/image_restoration/one-step_residual_shifting_diffusion_for_image_super-resolution_via_distillation.md)
+- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](../../CVPR2026/image_restoration/one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
 - [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](../../CVPR2026/image_restoration/time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
 - [\[ICLR 2026\] Learning Heterogeneous Degradation Representation for Real-World Super-Resolution](learning_heterogeneous_degradation_representation_for_real-world_super-resolutio.md)
 - [\[ICLR 2026\] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution](improved_adversarial_diffusion_compression_for_real-world_video_super-resolution.md)

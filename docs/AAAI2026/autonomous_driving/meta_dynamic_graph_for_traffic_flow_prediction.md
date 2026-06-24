@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Meta Dynamic Graph for Traffic Flow Prediction
 description: >-
-  [AAAI 2026][Autonomous Driving][Traffic Flow Prediction] This paper proposes MetaDG, a framework that generates dynamic node representations at each time step and enhances them via spatio-temporal correlation…
+  [AAAI 2026][Autonomous Driving][Traffic Flow Prediction] This paper proposes MetaDG, a framework that generates dynamic node representations at each time step and enhances them via spatio-temporal correlation, extending dynamism modeling beyond merely updating the adjacency matrix to simultaneously generating meta-parameters, adjacency matrices, and edge-weight adjustment matrices. This enables unified spatio-temporal heterogeneity modeling (ST-unification) and achieves state…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -14,7 +14,7 @@ tags:
   - "GRU"
   - "Spatio-Temporal Heterogeneity"
 date: 2026-05-08
-content_hash: de0c20f5f3e4c83d
+content_hash: 7223930ba3105610
 ---
 
 # Meta Dynamic Graph for Traffic Flow Prediction
@@ -162,11 +162,11 @@ The core insight of this paper—that dynamism modeling can advance ST-isolated 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Micro-Macro Coupled Koopman Modeling on Graph for Traffic Flow Prediction](../../ICLR2026/autonomous_driving/micro-macro_coupled_koopman_modeling_on_graph_for_traffic_flow_prediction.md)
 - [\[AAAI 2026\] SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction](differentiable_semantic_meta-learning_framework_for_long-tail_motion_forecasting.md)
 - [\[AAAI 2026\] Global-Lens Transformers: Adaptive Token Mixing for Dynamic Link Prediction](global-lens_transformers_adaptive_token_mixing_for_dynamic_link_prediction.md)
 - [\[AAAI 2026\] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction](rast_a_retrieval_augmented_spatio-temporal_framework_for_traffic_prediction.md)
-- [\[ICCV 2025\] TARS: Traffic-Aware Radar Scene Flow Estimation](../../ICCV2025/autonomous_driving/tars_traffic-aware_radar_scene_flow_estimation.md)
-- [\[AAAI 2026\] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)
+- [\[AAAI 2026\] Minimum-Cost Network Flow with Dual Predictions](minimum-cost_network_flow_with_dual_predictions.md)
 
 </div>
 

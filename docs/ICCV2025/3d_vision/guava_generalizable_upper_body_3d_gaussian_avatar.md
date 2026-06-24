@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GUAVA: Generalizable Upper Body 3D Gaussian Avatar
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian] This paper presents GUAVA, the first framework for feed-forward reconstruction of animatable upper-body 3D Gaussian avatars from a single image. By combining template Gaussians and UV…
+  [ICCV 2025][3D Vision][3D Gaussian] This paper presents GUAVA, the first framework for feed-forward reconstruction of animatable upper-body 3D Gaussian avatars from a single image. By combining template Gaussians and UV Gaussians in a canonical space representation, GUAVA supports rich facial expression and gesture driving, completing reconstruction in approximately 0.1 s with real-time rendering capability.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -15,7 +15,7 @@ tags:
   - "SMPLX"
   - "FLAME"
 date: 2026-05-08
-content_hash: 19bb0d694bc8990a
+content_hash: aa2ee20cd3d53d99
 ---
 
 # GUAVA: Generalizable Upper Body 3D Gaussian Avatar
@@ -188,7 +188,7 @@ The refiner contributes most significantly (PSNR: 25.87 → 24.93), and EHM make
 - [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
 - [\[ICCV 2025\] PHD: Personalized 3D Human Body Fitting with Point Diffusion](phd_personalized_3d_human_body_fitting_with_point_diffusion.md)
 - [\[ICCV 2025\] FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads](facelift_learning_generalizable_single_image_3d_face_reconstruction_from_synthet.md)
-- [\[ICCV 2025\] GAS: Generative Avatar Synthesis from a Single Image](gas_generative_avatar_synthesis_from_a_single_image.md)
+- [\[CVPR 2026\] OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](../../CVPR2026/3d_vision/omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)
 
 </div>
 

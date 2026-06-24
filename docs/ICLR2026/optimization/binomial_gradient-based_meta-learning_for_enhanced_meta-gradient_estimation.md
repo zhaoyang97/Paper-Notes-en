@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Binomial Gradient-Based Meta-Learning for Enhanced Meta-Gradient Estimation
 description: >-
-  [ICLR 2026][Optimization & Theory][MAML] Addressing the pain point in gradient-based meta-learning (GBML) like MAML where "meta-gradient backpropagation scales linearly with adaptation steps $K$," this paper applies **truncated binomial expansion** to the meta-gradient product sequence $\prod_{k}(I-\alpha H_k)$ instead of simply truncating the tail. The resul
+  [ICLR2026][Optimization][Meta-Learning] Addressing the pain point in gradient-based meta-learning (GBML) like MAML where "meta-gradient backpropagation scales linearly with adaptation steps $K$," this paper applies **truncated binomial expansion** to the meta-gradient product sequence $\prod_{k}(I-\alpha H_k)$ instead of simply truncating the tail. The resulting estimator, BinomMAML, preserves more second-order information at the same truncation order $L$…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - MAML
+  - "ICLR2026"
+  - "Optimization"
+  - "Meta-Learning"
+  - "Meta-Gradient Estimation"
+  - "MAML"
+  - "Binomial Expansion"
+  - "Truncated Backpropagation"
 date: 2026-05-08
-content_hash: 890aad580ccc9fa1
+content_hash: 0ca3f399f0dd19aa
 ---
+
 # Binomial Gradient-Based Meta-Learning for Enhanced Meta-Gradient Estimation
 
 **Conference**: ICLR2026  
@@ -145,7 +150,7 @@ At the same $L$, BinomMAML outperforms TruncMAML in most cases, consistently bea
 - [\[ICLR 2026\] Generalizable Heuristic Generation Through LLMs with Meta-Optimization](generalizable_heuristic_generation_through_llms_with_meta-optimization.md)
 - [\[ICLR 2026\] $\mu$LO: Compute-Efficient Meta-Generalization of Learned Optimizers](mulo_compute-efficient_meta-generalization_of_learned_optimizers.md)
 - [\[ICLR 2026\] Unbiased Gradient Estimation for Event Binning via Functional Backpropagation](unbiased_gradient_estimation_for_event_binning_via_functional_backpropagation.md)
-- [\[ICLR 2026\] Corner Gradient Descent](corner_gradient_descent.md)
+- [\[ICLR 2026\] Compositional Generalization through Gradient Search in Nonparametric Latent Space](compositional_generalization_through_gradient_search_in_nonparametric_latent_spa.md)
 
 </div>
 

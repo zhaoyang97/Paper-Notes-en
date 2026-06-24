@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoToRec: Sparse-Regularized Multimodal Tokenization for Cold-Start Recommendation
 description: >-
-  [AAAI 2026][Graph Learning][Cold-start recommendation] MoToRec reformulates multimodal recommendation as a discrete semantic tokenization task. By leveraging a sparsely-regularized Residual Quantization VAE (RQ-VAE)…
+  [AAAI 2026][Graph Learning][Cold-start recommendation] MoToRec reformulates multimodal recommendation as a discrete semantic tokenization task. By leveraging a sparsely-regularized Residual Quantization VAE (RQ-VAE), raw multimodal features are transformed into composable discrete semantic codes. Combined with adaptive rarity amplification and a hierarchical multi-source graph encoder, the framework effectively addresses the item cold-start problem.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "residual quantization VAE"
   - "graph neural networks"
 date: 2026-05-08
-content_hash: 6615a735d49517bb
+content_hash: 786620fb66ea8717
 ---
 
 # MoToRec: Sparse-Regularized Multimodal Tokenization for Cold-Start Recommendation
@@ -195,7 +195,7 @@ Compared to ID-only models (LightGCN), improvements reach up to **88%**. Under c
 - [\[AAAI 2026\] GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization](gt-snt_a_linear-time_transformer_for_large-scale_graphs_via_spiking_node_tokeniz.md)
 - [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](../../ICLR2026/graph_learning/graph_tokenization_for_bridging_graphs_and_transformers.md)
 - [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](self-adaptive_graph_mixture_of_models.md)
-- [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](../../ACL2026/graph_learning/megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
+- [\[ICLR 2026\] Diverse and Sparse Mixture-of-Experts for Causal Subgraph–Based Out-of-Distribution Graph Learning](../../ICLR2026/graph_learning/diverse_and_sparse_mixture-of-experts_for_causal_subgraphbased_out-of-distributi.md)
 
 </div>
 

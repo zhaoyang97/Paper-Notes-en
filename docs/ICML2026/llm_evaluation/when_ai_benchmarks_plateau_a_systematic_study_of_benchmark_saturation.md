@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation
 description: >-
-  [ICML 2026][LLM Evaluation][Leaderboard] This paper defines AI benchmark saturation as the loss of reliable discriminative power between frontier models. It proposes an uncertainty-aware saturation index based on leaderboard metrics and analyzes 60 text LLM benchmarks. The study finds that nearly half are highly saturated, and that benchmark age and test set
+  [ICML2026][LLM Evaluation][Benchmark Saturation] This paper defines AI benchmark saturation as the loss of reliable discriminative power between frontier models. It proposes an uncertainty-aware saturation index based on leaderboard metrics and analyzes 60 text LLM benchmarks. The study finds that nearly half are highly saturated, and that benchmark age and test set size are more significant predictors of saturation than private test sets, open-ended outputs…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - Leaderboard
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "Benchmark Saturation"
+  - "Leaderboard"
+  - "Uncertainty"
+  - "Benchmark Lifecycle"
 date: 2026-05-08
-content_hash: e333dc963b8ec86d
+content_hash: 916130361dfa21e4
 ---
+
 # When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation
 
 **Conference**: ICML2026  
@@ -117,7 +121,7 @@ Sensitivity analysis confirms that the relative ranking of $S_{index}$ is stable
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -125,7 +129,7 @@ Sensitivity analysis confirms that the relative ranking of $S_{index}$ is stable
 - [\[ACL 2025\] ChatBench: From Static Benchmarks to Human-AI Evaluation](../../ACL2025/llm_evaluation/chatbench_from_static_benchmarks_to_human-ai_evaluation.md)
 - [\[ICML 2026\] From Human-Level AI Tales to AI Leveling Human Scales](from_human-level_ai_tales_to_ai_leveling_human_scales.md)
 - [\[ACL 2025\] AndroidLab: Training and Systematic Benchmarking of Android Autonomous Agents](../../ACL2025/llm_evaluation/androidlab_autonomous_agent.md)
-- [\[ACL 2025\] Navigating Rifts in Human-LLM Grounding: Study and Benchmark](../../ACL2025/llm_evaluation/navigating_rifts_in_human-llm_grounding_study_and_benchmark.md)
+- [\[ICML 2026\] Correcting Prompt Dependence in LLM Benchmarks: A Bayesian Hierarchical Model with Embedding-Space Clustering](correcting_prompt_dependence_in_llm_benchmarks_a_bayesian_hierarchical_model_wit.md)
 
 </div>
 

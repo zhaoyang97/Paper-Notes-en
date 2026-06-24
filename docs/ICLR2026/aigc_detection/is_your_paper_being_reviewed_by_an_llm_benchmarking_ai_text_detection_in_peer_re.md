@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Is Your Paper Being Reviewed by an LLM? Benchmarking AI Text Detection in Peer Review
 description: >-
-  [ICLR 2026][AIGC Detection][AI text detection] Constructed the largest AI-generated peer review dataset to date (788,984 reviews), systematically evaluated the performance of 18 AI text detection methods in peer review scenarios, and proposed the Anchor detection method leveraging original papers as context, significantly outperforming all baselines at low False Po
+  [ICLR2026][AIGC Detection][AI text detection] Constructed the largest AI-generated peer review dataset to date (788,984 reviews), systematically evaluated the performance of 18 AI text detection methods in peer review scenarios, and proposed the Anchor detection method leveraging original papers as context, significantly outperforming all baselines at low False Positive Rates.
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - AI text detection
-  - peer review
-  - LLM-generated text
-  - benchmark
-  - scientific integrity
+  - "ICLR2026"
+  - "AIGC Detection"
+  - "AI text detection"
+  - "peer review"
+  - "LLM-generated text"
+  - "benchmark"
+  - "scientific integrity"
 date: 2026-05-08
-content_hash: 4a3f752a69cededb
+content_hash: 809c27317660c453
 ---
+
 # Is Your Paper Being Reviewed by an LLM? Benchmarking AI Text Detection in Peer Review
 
 **Conference**: ICLR2026  
@@ -171,7 +172,7 @@ The primary difference between the Anchor method and DetectLLM/DNA-GPT is that: 
 - [\[ICML 2026\] AutoBaxBuilder: Bootstrapping Code Security Benchmarking](../../ICML2026/aigc_detection/autobaxbuilder_bootstrapping_code_security_benchmarking.md)
 - [\[ICLR 2026\] EditLens: Quantifying the Extent of AI Editing in Text](editlens_quantifying_the_extent_of_ai_editing_in_text.md)
 - [\[ICLR 2026\] Enabling Your Forensic Detector Know How Well It Performs on Distorted Samples](enabling_your_forensic_detector_know_how_well_it_performs_on_distorted_samples.md)
-- [\[ICLR 2026\] HLD: Approximate Hierarchical Linguistic Distribution Modeling for LLM-Generated Text Detection](hld_approximate_hierarchical_linguistic_distribution_modeling_for_llm-generated_.md)
+- [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](../../ICML2026/aigc_detection/feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] CHIRP dataset: towards long-term, individual-level, behavioral monitoring of bird populations in the wild
 description: >-
-  [CVPR 2026][Others][Paper Note] To enable computer vision to truly serve long-term, individual-level behavioral monitoring of wild birds, this paper reconstructs the CHIRP dataset (concurrently covering Re-ID, action recognition, 2D keypoints, detection, and instance segmentation) using a wild population of Siberian Jays in Swedish Lapland across 9 y
+  [CVPR 2026][Wild bird monitoring] To enable computer vision to truly serve long-term, individual-level behavioral monitoring of wild birds, this paper reconstructs the CHIRP dataset (concurrently covering Re-ID, action recognition, 2D keypoints, detection, and instance segmentation) using a wild population of Siberian Jays in Swedish Lapland across 9 years (2014–2022). It proposes an "application-oriented evaluation" paradigm centered on biological indicators such as "feeding…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Wild bird monitoring"
+  - "Individual Re-identification"
+  - "Behavior recognition"
+  - "Color rings"
+  - "Application-oriented evaluation"
 date: 2026-05-08
-content_hash: dd7a4e48055ac977
+content_hash: 7a2e7e10585a886a
 ---
+
 # CHIRP dataset: towards long-term, individual-level, behavioral monitoring of bird populations in the wild
 
 **Conference**: CVPR 2026  
@@ -137,10 +142,10 @@ Detection (YOLOv8) + Tracking (BoTSORT) + Individual Recognition (CORVID / Fine-
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning Long-term Motion Embeddings for Efficient Kinematics Generation](learning_long-term_motion_embeddings_for_efficient_kinematics_generation.md)
 - [\[AAAI 2026\] Predict and Resist: Long-Term Accident Anticipation under Sensor Noise](../../AAAI2026/others/predict_and_resist_long-term_accident_anticipation_under_sensor_noise.md)
 - [\[CVPR 2025\] Effortless Active Labeling for Long-Term Test-Time Adaptation](../../CVPR2025/others/effortless_active_labeling_for_long-term_test-time_adaptation.md)
-- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
-- [\[ACL 2025\] USDC: A Dataset of User Stance and Dogmatism in Long Conversations](../../ACL2025/others/usdc_a_dataset_of_underlineuser_underlinestance_and_underlinedogmatism_in_long_u.md)
+- [\[CVPR 2026\] Confusion-Aware Spectral Regularizer for Long-Tailed Recognition](confusion-aware_spectral_regularizer_for_long-tailed_recognition.md)
 - [\[ACL 2025\] In Prospect and Retrospect: Reflective Memory Management for Long-term Personalized Dialogue Agents](../../ACL2025/others/in_prospect_and_retrospect_reflective_memory_management_for_long-term_personaliz.md)
 
 </div>

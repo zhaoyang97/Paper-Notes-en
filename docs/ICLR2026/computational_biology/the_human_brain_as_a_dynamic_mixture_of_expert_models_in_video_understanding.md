@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Human Brain as a Dynamic Mixture of Expert Models in Video Understanding
 description: >-
-  [ICLR 2026][Computational Biology][EEG] The authors perform the first "model-brain representational alignment" benchmark of 110 video/image deep models on large-scale dynamic EEG recordings. They propose Cross-Temporal Representational Similarity Analysis (CT-RSA) to match frame-by-frame model features with millisecond-by-millisecond brain responses. The stu
+  [ICLR 2026][Computational Biology][EEG] The authors perform the first "model-brain representational alignment" benchmark of 110 video/image deep models on large-scale dynamic EEG recordings. They propose Cross-Temporal Representational Similarity Analysis (CT-RSA) to match frame-by-frame model features with millisecond-by-millisecond brain responses. The study reveals that neural preferences switch over time during 3-second natural video clips (from static low-level $\rightar…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - EEG
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "EEG"
+  - "Model-Brain Alignment"
+  - "Video Understanding"
+  - "Temporal Integration"
+  - "Representational Similarity Analysis"
 date: 2026-05-08
-content_hash: e2575d033eaa8284
+content_hash: 8406523adfb08925
 ---
+
 # The Human Brain as a Dynamic Mixture of Expert Models in Video Understanding
 
 **Conference**: ICLR 2026  

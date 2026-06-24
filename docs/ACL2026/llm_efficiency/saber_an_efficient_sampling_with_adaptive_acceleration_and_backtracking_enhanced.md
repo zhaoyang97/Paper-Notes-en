@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Saber: Efficient Sampling with Adaptive Acceleration and Backtracking Enhanced Remasking for DLMs
 description: >-
-  [ACL 2026][LLM Efficiency][Diffusion Language Model] This paper proposes Saber, a training-free sampling algorithm for Diffusion Language Models (DLMs). By utilizing adaptive acceleration (dynamically adjusting the volume of parallel decoding based on the established context) and backtracking-enhanced remasking (undoing tokens invalidated by new context), it achieves an
+  [ACL 2026][LLM Efficiency][Diffusion Language Models] This paper proposes Saber, a training-free sampling algorithm for Diffusion Language Models (DLMs). By utilizing adaptive acceleration (dynamically adjusting the volume of parallel decoding based on the established context) and backtracking-enhanced remasking (undoing tokens invalidated by new context), it achieves an average Pass@1 improvement of 1.9% while attaining a 251.4% inference speedup in code generation.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Diffusion Language Model
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Adaptive Sampling"
+  - "Backtracking Remasking"
+  - "Code Generation Acceleration"
+  - "Speed-Quality Trade-off"
 date: 2026-05-08
-content_hash: 5f3b12ca467861cc
+content_hash: 1f09fd9884559d09
 ---
+
 # Saber: Efficient Sampling with Adaptive Acceleration and Backtracking Enhanced Remasking for DLMs
 
 **Conference**: ACL 2026  
@@ -133,11 +138,11 @@ Training-free method. Experiments were conducted on LLaDA-8B-Instruct with tempe
 
 ## Related Papers
 
-- [\[ICLR 2026\] AdaCache: Adaptive Caching and Context Augmentation for Efficient LLM Serving](../../ICLR2026/llm_efficiency/adacache_adaptive_caching_and_context_augmentation_for_efficient_llm_serving.md)
-- [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](../../ICML2026/llm_efficiency/team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
-- [\[ACL 2026\] SpecBound: Adaptive Bounded Self-Speculation with Layer-wise Confidence Calibration](specbound_adaptive_bounded_self-speculation_with_layer-wise_confidence_calibrati.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](../../ICML2026/llm_efficiency/dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
+- [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](../../ICLR2026/llm_efficiency/dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
+- [\[ICLR 2026\] NI Sampling: Accelerating Discrete Diffusion Sampling by Token Order Optimization](../../ICLR2026/llm_efficiency/ni_sampling_accelerating_discrete_diffusion_sampling_by_token_order_optimization.md)
+- [\[ICLR 2026\] DiffAdapt: Difficulty-Adaptive Reasoning for Token-Efficient LLM Inference](../../ICLR2026/llm_efficiency/diffadapt_difficulty-adaptive_reasoning_for_token-efficient_llm_inference.md)
+- [\[ICLR 2026\] Householder-Diagonalized Linear Attention (HDLA): Utilizing Rank-Enhanced Decay Mechanism for Efficient Sequence Modeling](../../ICLR2026/llm_efficiency/householder-diagonalized_linear_attention_hdla_utilizing_enhanced_decay_mechanis.md)
+- [\[ICLR 2026\] vAttention: Verified Sparse Attention via Sampling](../../ICLR2026/llm_efficiency/vattention_verified_sparse_attention_via_sampling.md)
 
 </div>
 

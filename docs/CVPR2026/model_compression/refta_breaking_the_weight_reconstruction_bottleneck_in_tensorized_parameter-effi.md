@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReFTA: Breaking the Weight Reconstruction Bottleneck in Tensorized Parameter-Efficient Fine-Tuning
 description: >-
-  [CVPR 2026][Model Compression][T-SVD] ReFTA stacks cross-layer weights into a third-order tensor and utilizes T-SVD to extract and fine-tune only the principal components. By leveraging the operator commutativity of tensor algebra, it swaps the order of "multiplication by $U_0^\top$" and "multiplication by input $X$." This entirely eliminates the redundant
+  [CVPR 2026][Model Compression][Parameter-Efficient Fine-Tuning] ReFTA stacks cross-layer weights into a third-order tensor and utilizes T-SVD to extract and fine-tune only the principal components. By leveraging the operator commutativity of tensor algebra, it swaps the order of "multiplication by $U_0^\top$" and "multiplication by input $X$." This entirely eliminates the redundant reconstruction of tensorized weights during forward and backward passes…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - T-SVD
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Tensor Decomposition"
+  - "T-SVD"
+  - "Low-Rank Adaptation"
+  - "Quantization Error"
 date: 2026-05-08
-content_hash: 62d0d7733081677b
+content_hash: 080314cd2fd38f69
 ---
+
 # ReFTA: Breaking the Weight Reconstruction Bottleneck in Tensorized Parameter-Efficient Fine-Tuning
 
 **Conference**: CVPR 2026  
@@ -128,8 +133,8 @@ The "ablation" in the paper focuses on two design choices (refer to Fig./Tables 
 - [\[CVPR 2026\] S2FT: Parameter-Efficient Fine-Tuning in Sparse Spectrum Domain](s2ft_parameter-efficient_fine-tuning_in_sparse_spectrum_domain.md)
 - [\[ICML 2025\] Parameter-Efficient Fine-Tuning of State Space Models](../../ICML2025/model_compression/parameter-efficient_fine-tuning_of_state_space_models.md)
 - [\[ACL 2025\] C3A: Parameter-Efficient Fine-Tuning via Circular Convolution](../../ACL2025/model_compression/parameter-efficient_fine-tuning_via_circular_convolution.md)
-- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](../../ICLR2026/model_compression/memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
-- [\[ICML 2026\] Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck in Spiking Transformers](../../ICML2026/model_compression/plug-and-play_spiking_operators_breaking_the_nonlinearity_bottleneck_in_spiking_.md)
+- [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](../../ICLR2026/model_compression/trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
+- [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](../../ICLR2026/model_compression/abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
 
 </div>
 

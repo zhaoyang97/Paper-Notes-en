@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Composition of Memory Experts for Diffusion World Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] Addressing the structural contradiction where "longer context improves world model accuracy but explodes computational cost," this paper shifts the memory burden from a single backbone to three independent diffusion experts (short-term, long-term, and spatial long-term). These are fused during sampling via a "Product o
+  [ICLR2026][Reinforcement Learning][World Models] Addressing the structural contradiction where "longer context improves world model accuracy but explodes computational cost," this paper shifts the memory burden from a single backbone to three independent diffusion experts (short-term, long-term, and spatial long-term). These are fused during sampling via a "Product of Contrastive Experts" (PoCE), maintaining temporal and spatial consistency over 500+ frames at a cost signific…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
-  - Diffusion Model
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "World Models"
+  - "Diffusion Models"
+  - "Memory Mechanism"
+  - "Product of Experts"
+  - "Test-time Fine-tuning"
 date: 2026-05-08
-content_hash: 5032589ef801847b
+content_hash: 3f19e46ee6c0bb77
 ---
+
 # Composition of Memory Experts for Diffusion World Models
 
 **Conference**: ICLR2026  

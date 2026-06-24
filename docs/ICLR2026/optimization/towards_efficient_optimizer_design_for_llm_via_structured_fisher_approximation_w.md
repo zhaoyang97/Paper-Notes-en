@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Efficient Optimizer Design for LLM via Structured Fisher Approximation with a Low-Rank Extension
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper provides a unified interpretation of optimizers such as Adam, Shampoo, and SOAP as "optimal Frobenius approximations of the Fisher Information Matrix (FIM) under different structural assumptions." Based on this, two design principles—structure selection and low-rank extension—are proposed, leading to two new
+  [ICLR 2026][Optimization][Fisher Information Matrix] This paper provides a unified interpretation of optimizers such as Adam, Shampoo, and SOAP as "optimal Frobenius approximations of the Fisher Information Matrix (FIM) under different structural assumptions." Based on this, two design principles—structure selection and low-rank extension—are proposed, leading to two new memory-efficient optimizers: RACS and Alice. In LLaMA pre-training (up to 1.3B)…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Fisher Information Matrix"
+  - "Memory-efficient Optimizer"
+  - "Natural Gradient"
+  - "Low-rank Extension"
+  - "LLaMA Pre-training"
 date: 2026-05-08
-content_hash: bc4b2312734605ec
+content_hash: ecd21c3a7b1a3f68
 ---
+
 # Towards Efficient Optimizer Design for LLM via Structured Fisher Approximation with a Low-Rank Extension
 
 **Conference**: ICLR 2026  

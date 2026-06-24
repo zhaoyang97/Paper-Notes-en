@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Topology-aware Feature Propagation for Unsupervised Non-rigid Point Cloud Correspondence
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the limitation in unsupervised non-rigid point cloud correspondence where "feature propagation based on spatial proximity connects physically disjoint parts," this paper proposes learning deformation-robust **shape topology**. It utilizes topology confidence weights and a Topology-aware Transformer within a
+  [CVPR 2026][3D Vision][Non-rigid point cloud correspondence] Addressing the limitation in unsupervised non-rigid point cloud correspondence where "feature propagation based on spatial proximity connects physically disjoint parts," this paper proposes learning deformation-robust **shape topology**. It utilizes topology confidence weights and a Topology-aware Transformer within a "coarse-to-fine" pipeline to propagate features, supplemented by a vector quantization (VQ) codeboo…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Non-rigid point cloud correspondence"
+  - "unsupervised learning"
+  - "shape topology"
+  - "feature propagation"
+  - "vector quantization codebook"
 date: 2026-05-08
-content_hash: 41a1fa0031f056bf
+content_hash: 6fd0e683c14d3241
 ---
+
 # Topology-aware Feature Propagation for Unsupervised Non-rigid Point Cloud Correspondence
 
 **Conference**: CVPR 2026  

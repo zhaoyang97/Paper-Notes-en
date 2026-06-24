@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Skeletons: Learning Animation Directly from Driving Videos with Same2X Training Strategy
 description: >-
-  [ICLR 2026][Video Generation][DiT] This paper proposes DirectAnimator, which discards intermediate representations like skeletons or pose estimation. Instead, it animates a reference portrait directly using the raw pixels of driving videos. The method extracts a "Driving Cue Triplet" (Pose/Face/Location) from the original video and injects these cues in
+  [ICLR2026][Video Generation][Human Image Animation] This paper proposes DirectAnimator, which discards intermediate representations like skeletons or pose estimation. Instead, it animates a reference portrait directly using the raw pixels of driving videos. The method extracts a "Driving Cue Triplet" (Pose/Face/Location) from the original video and injects these cues into the denoising process via a CueFusion DiT Block. Coupled with a Same2X training strategy that aligns cros…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - DiT
+  - "ICLR2026"
+  - "Video Generation"
+  - "Human Image Animation"
+  - "Driving Video"
+  - "Skeleton Replacement"
+  - "DiT"
+  - "Representation Alignment"
 date: 2026-05-08
-content_hash: e3c492039623c0aa
+content_hash: a394de81a47a5776
 ---
+
 # Beyond Skeletons: Learning Animation Directly from Driving Videos with Same2X Training Strategy
 
 **Conference**: ICLR2026  
@@ -133,9 +138,9 @@ Evaluation on a 500-video subset of the TikTok test set:
 
 - [\[ICML 2026\] Rays as Pixels: Learning A Joint Distribution of Videos and Camera Trajectories](../../ICML2026/video_generation/rays_as_pixels_learning_a_joint_distribution_of_videos_and_camera_trajectories.md)
 - [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](../../ICCV2025/video_generation/disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
+- [\[ICLR 2026\] UniVideo: Unified Understanding, Generation, and Editing for Videos](univideo_unified_understanding_generation_and_editing_for_videos.md)
 - [\[NeurIPS 2025\] RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation](../../NeurIPS2025/video_generation/rlgf_reinforcement_learning_with_geometric_feedback_for_autonomous_driving_video.md)
 - [\[ICLR 2026\] ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask](consisdrive_identity-preserving_driving_world_models_for_video_generation_by_ins.md)
-- [\[CVPR 2026\] Efficient Training for Human Video Generation with Entropy-Guided Prioritized Progressive Learning](../../CVPR2026/video_generation/efficient_training_for_human_video_generation_with_entropy-guided_prioritized_pr.md)
 
 </div>
 

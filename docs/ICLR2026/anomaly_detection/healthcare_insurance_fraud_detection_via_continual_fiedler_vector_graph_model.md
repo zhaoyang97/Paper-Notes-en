@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Healthcare Insurance Fraud Detection via Continual Fiedler Vector Graph Model
 description: >-
-  [ICLR 2026][Anomaly Detection][Mean Teacher] ConFVG utilizes the second smallest eigenvector of the graph Laplacian (Fiedler vector) to guide the masking strategy of a Graph Autoencoder (GAE) for structural-aware representation learning under label scarcity. It then employs subgraph attention fusion and a Mean Teacher framework to continuously adapt to evolving f
+  [ICLR 2026][Anomaly Detection][Fraud Detection] ConFVG utilizes the second smallest eigenvector of the graph Laplacian (Fiedler vector) to guide the masking strategy of a Graph Autoencoder (GAE) for structural-aware representation learning under label scarcity. It then employs subgraph attention fusion and a Mean Teacher framework to continuously adapt to evolving fraud patterns in unlabeled online streams, achieving real-time healthcare fraud detection.
 tags:
-  - ICLR 2026
-  - Anomaly Detection
-  - Mean Teacher
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "Fraud Detection"
+  - "Spectral Graph Theory"
+  - "Fiedler Vector"
+  - "Graph Autoencoder"
+  - "Online Continual Learning"
+  - "Mean Teacher"
 date: 2026-05-08
-content_hash: 79a180117fa7aeb9
+content_hash: 7b755a2065e7208b
 ---
+
 # Healthcare Insurance Fraud Detection via Continual Fiedler Vector Graph Model
 
 **Conference**: ICLR 2026  

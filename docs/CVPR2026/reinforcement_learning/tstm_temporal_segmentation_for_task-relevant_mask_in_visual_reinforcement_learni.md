@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TSTM: Temporal Segmentation for Task-relevant Mask in Visual Reinforcement Learning Generalization
 description: >-
-  [CVPR 2026][Reinforcement Learning][Paper Note] TSTM utilizes an "encoder-temporal-decoder" segmentation network with ConvLSTM to extract task-relevant regions (masks) from continuous multi-frame observations. Combined with VICReg-style invariant representation learning and policy consistency constraints for SAC training, it achieves SOTA generalization performance
+  [CVPR 2026][Reinforcement Learning][Visual Reinforcement Learning] TSTM utilizes an "encoder-temporal-decoder" segmentation network with ConvLSTM to extract task-relevant regions (masks) from continuous multi-frame observations. Combined with VICReg-style invariant representation learning and policy consistency constraints for SAC training, it achieves SOTA generalization performance on the DMC-GB video easy/hard benchmarks.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Visual Reinforcement Learning"
+  - "Generalization"
+  - "Task-relevant Mask"
+  - "Temporal Segmentation"
+  - "Invariant Representation Learning"
 date: 2026-05-08
-content_hash: cef49817e5f72af9
+content_hash: 98f611c0f4b3161a
 ---
+
 # TSTM: Temporal Segmentation for Task-relevant Mask in Visual Reinforcement Learning Generalization
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,16 @@ Ablation on Walker Walk and Cartpole Swingup removing the three core components:
 - Value: ⭐⭐⭐⭐ Provides a reusable "temporal segmentation" direction for visual RL generalization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ECCV 2024\] Visual Grounding for Object-Level Generalization in Reinforcement Learning](../../ECCV2024/reinforcement_learning/visual_grounding_for_object-level_generalization_in_reinforcement_learning.md)
+- [\[CVPR 2026\] Saliency-Guided Representation with Consistency Policy Learning for Visual Unsupervised Reinforcement Learning](saliency-guided_representation_with_consistency_policy_learning_for_visual_unsup.md)
 - [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
 - [\[CVPR 2026\] Incentivizing Generative Zero-Shot Learning via Outcome-Reward Reinforcement Learning with Visual Cues](incentivizing_generative_zero-shot_learning_via_outcome-reward_reinforcement_lea.md)
-- [\[NeurIPS 2025\] Modulation of Temporal Decision-Making in a Deep Reinforcement Learning Agent under the Dual-Task Paradigm](../../NeurIPS2025/reinforcement_learning/modulation_of_temporal_decision-making_in_a_deep_reinforcement_learning_agent_un.md)
-- [\[CVPR 2026\] Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement](seeing_is_improving_visual_feedback_for_iterative_text_layout_refinement.md)
+- [\[ICLR 2026\] Leveraging Explanation to Improve Generalization of Meta Reinforcement Learning](../../ICLR2026/reinforcement_learning/leveraging_explanation_to_improve_generalization_of_meta_reinforcement_learning.md)
 
 </div>
 

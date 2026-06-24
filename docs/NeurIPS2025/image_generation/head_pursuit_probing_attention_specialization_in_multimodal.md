@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Head Pursuit: Probing Attention Specialization in Multimodal Transformers
 description: >-
-  [NeurIPS2025][Image Generation][attention head specialization] This paper reinterprets the classical sparse signal recovery algorithm (SOMP) as a multi-sample interpretability tool…
+  [NeurIPS2025 Spotlight][Image Generation][attention head specialization] This paper reinterprets the classical sparse signal recovery algorithm (SOMP) as a multi-sample interpretability tool, revealing fine-grained semantic specialization of attention heads in LLMs and VLMs. By flipping approximately 1% of heads, specific concepts (e.g., country names, toxic content, colors) can be reliably suppressed or amplified during generation.
 tags:
-  - "NeurIPS2025"
+  - "NeurIPS2025 Spotlight"
   - "Image Generation"
   - "attention head specialization"
   - "Matching Pursuit"
@@ -12,7 +12,7 @@ tags:
   - "model editing"
   - "vision-language model"
 date: 2026-05-08
-content_hash: fcc156bad6aa7515
+content_hash: f8af32e992ef133a
 ---
 
 # Head Pursuit: Probing Attention Specialization in Multimodal Transformers
@@ -145,10 +145,10 @@ The method is entirely training-free—no model weights are modified; interventi
 ## Related Papers
 
 - [\[ICCV 2025\] DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers](../../ICCV2025/image_generation/ditfastattnv2_head-wise_attention_compression_for_multi-modality_diffusion_trans.md)
+- [\[CVPR 2026\] Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers](../../CVPR2026/image_generation/gated_condition_injection_without_multimodal_attention_towards_controllable_line.md)
 - [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](../../ICCV2025/image_generation/edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
-- [\[ICCV 2025\] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers](../../ICCV2025/image_generation/rethinking_cross-modal_interaction_in_multimodal_diffusion_transformers.md)
-- [\[ICCV 2025\] Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing](../../ICCV2025/image_generation/exploring_multimodal_diffusion_transformers_for_enhanced_prompt-based_image_edit.md)
 - [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](../../AAAI2026/image_generation/melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
+- [\[ICCV 2025\] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers](../../ICCV2025/image_generation/rethinking_cross-modal_interaction_in_multimodal_diffusion_transformers.md)
 
 </div>
 

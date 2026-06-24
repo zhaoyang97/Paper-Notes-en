@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Optimizer Choice Matters for the Emergence of Neural Collapse
 description: >-
-  [ICLR 2026][Optimization & Theory][Neural Collapse] Through 3,900+ training experiments and theoretical analysis, this work reveals that the choice of optimizer (specifically the coupling of weight decay) plays a decisive role in the emergence of Neural Collapse—AdamW (decoupled weight decay) fails to produce Neural Collapse, while SGD and Adam (coupled weight decay) su
+  [ICLR 2026][Optimization][Neural Collapse] Through 3,900+ training experiments and theoretical analysis, this work reveals that the choice of optimizer (specifically the coupling of weight decay) plays a decisive role in the emergence of Neural Collapse—AdamW (decoupled weight decay) fails to produce Neural Collapse, while SGD and Adam (coupled weight decay) succeed.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Neural Collapse
-  - AdamW vs Adam
+  - "ICLR 2026"
+  - "Optimization"
+  - "Neural Collapse"
+  - "Optimizer Selection"
+  - "Weight Decay Coupling"
+  - "AdamW vs Adam"
+  - "Implicit Bias"
 date: 2026-05-08
-content_hash: 5febf9fd0a04de72
+content_hash: d9d8648e3fa951db
 ---
+
 # Optimizer Choice Matters for the Emergence of Neural Collapse
 
 **Conference**: ICLR 2026  

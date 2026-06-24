@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Random Label Prediction Heads for Studying Memorization in Deep Neural Networks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] A "random label prediction head" (RLP-head) is attached in parallel to the original task head to predict randomly assigned labels for each sample. The accuracy of this head serves as an empirical proxy for Rademacher complexity to measure memorization. Based on this, a regularization term is designed to suppress memori
+  [ICLR 2026][Learning Theory][Memorization] A "random label prediction head" (RLP-head) is attached in parallel to the original task head to predict randomly assigned labels for each sample. The accuracy of this head serves as an empirical proxy for Rademacher complexity to measure memorization. Based on this, a regularization term is designed to suppress memorization. Results show that "reducing memorization" improves generalization on sufficiently sampled datasets but hurts…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Generalization and Memorization"
+  - "Memorization"
+  - "Rademacher Complexity"
+  - "Generalization"
+  - "Regularization"
+  - "Probing"
 date: 2026-05-08
-content_hash: 4e3f461c058d55b1
+content_hash: 4bab2ad13f2b6a65
 ---
+
 # Random Label Prediction Heads for Studying Memorization in Deep Neural Networks
 
 **Conference**: ICLR 2026  
@@ -132,9 +139,9 @@ Verified on ViT-B/32 + ImageNet and WideResNet-16-4 + CIFAR-100. A counter-intui
 
 - [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
 - [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
+- [\[ICLR 2026\] Tversky Neural Networks: Psychologically Plausible Deep Learning with Differentiable Tversky Similarity](tversky_neural_networks_psychologically_plausible_deep_learning_with_differentia.md)
 - [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
-- [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
-- [\[ICLR 2026\] Implicit bias produces neural scaling laws in learning curves, from perceptrons to deep networks](implicit_bias_produces_neural_scaling_laws_in_learning_curves_from_perceptrons_t.md)
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
 
 </div>
 

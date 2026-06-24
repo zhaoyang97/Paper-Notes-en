@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Error as Signal: Stiffness-Aware Diffusion Sampling via Embedded Runge-Kutta Guidance
 description: >-
-  [ICLR 2026][Image Generation][diffusion sampling] ERK-Guid is proposed to utilize the step difference error of embedded Runge-Kutta solvers as a guidance signal to adaptively correct local truncation error (LTE) in stiff regions, enhancing diffusion model sampling quality without requiring additional network evaluations.
+  [ICLR2026][Image Generation][diffusion sampling] ERK-Guid is proposed to utilize the step difference error of embedded Runge-Kutta solvers as a guidance signal to adaptively correct local truncation error (LTE) in stiff regions, enhancing diffusion model sampling quality without requiring additional network evaluations.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - diffusion sampling
-  - stiffness
-  - local truncation error
-  - embedded Runge-Kutta
-  - guidance
+  - "ICLR2026"
+  - "Image Generation"
+  - "diffusion sampling"
+  - "stiffness"
+  - "local truncation error"
+  - "embedded Runge-Kutta"
+  - "guidance"
 date: 2026-05-08
-content_hash: 259d9a7e3ab5a86a
+content_hash: e79b961c2f173278
 ---
+
 # Error as Signal: Stiffness-Aware Diffusion Sampling via Embedded Runge-Kutta Guidance
 
 **Conference**: ICLR2026  
@@ -146,15 +147,14 @@ Improvements are particularly significant in low-step scenarios (e.g., FID reduc
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] GeoRK2: Geometry-Guided Runge-Kutta Integration for Diffusion Transformer Acceleration](../../CVPR2026/image_generation/geork2_geometry-guided_runge-kutta_integration_for_diffusion_transformer_acceler.md)
-- [\[ICLR 2026\] Efficient Approximate Posterior Sampling with Annealed Langevin Monte Carlo](efficient_approximate_posterior_sampling_with_annealed_langevin_monte_carlo.md)
-- [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
+- [\[ICLR 2026\] STORK: Accelerating Diffusion and Flow Matching Sampling by Simultaneously Solving Stiffness and Structural Dependency](stork_faster_diffusion_and_flow_matching_sampling_by_resolving_both_stiffness_an.md)
+- [\[ICLR 2026\] AC-Sampler: Accelerate and Correct Diffusion Sampling with Metropolis-Hastings Algorithm](ac-sampler_accelerate_and_correct_diffusion_sampling_with_metropolis-hastings_al.md)
 - [\[ICLR 2026\] A Noise is Worth Diffusion Guidance](a_noise_is_worth_diffusion_guidance.md)
-- [\[ICML 2026\] Quantifying Error Propagation and Model Collapse in Diffusion Models](../../ICML2026/image_generation/quantifying_error_propagation_and_model_collapse_in_diffusion_models.md)
+- [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](test-time_iterative_error_correction_for_efficient_diffusion_models.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback
 description: >-
-  [AAAI 2026][LLM Reasoning][Chain-of-Thought reasoning] This paper proposes the InTRO framework, which aligns the model's generation policy with its answer-conditioned posterior via KL divergence minimization. By enabling…
+  [AAAI 2026 Oral][Reasoning][Chain-of-Thought reasoning] This paper proposes the InTRO framework, which aligns the model's generation policy with its answer-conditioned posterior via KL divergence minimization. By enabling token-level exploration and self-generated feedback within a single forward pass, InTRO improves both accuracy and conciseness of LLM reasoning without relying on any external supervision.
 tags:
-  - "AAAI 2026"
-  - "LLM Reasoning"
+  - "AAAI 2026 Oral"
+  - "Reasoning"
   - "Chain-of-Thought reasoning"
   - "token-level exploration"
   - "self-feedback"
   - "KL divergence alignment"
   - "mathematical reasoning"
 date: 2026-05-08
-content_hash: b2f71fbd2b5bbf0c
+content_hash: 88de270298fef21a
 ---
 
 # In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback
@@ -178,11 +178,11 @@ At each time step, $n$ candidate tokens (including the original token) are sampl
 
 ## Related Papers
 
+- [\[ICML 2026\] The Role of Feedback Alignment in Self-Distillation](../../ICML2026/llm_reasoning/the_role_of_feedback_alignment_in_self-distillation.md)
+- [\[ICML 2026\] Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback](../../ICML2026/llm_reasoning/critique-grpo_advancing_llm_reasoning_with_natural_language_and_numerical_feedba.md)
 - [\[AAAI 2026\] SAPO: Self-Adaptive Process Optimization Makes Small Reasoners Stronger](sapo_self-adaptive_process_optimization_makes_small_reasoners_stronger.md)
-- [\[AAAI 2026\] Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning](well_begun_half_done_reinforcement_learning_with_prefix_optimization_for_llm_rea.md)
-- [\[NeurIPS 2025\] Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning](../../NeurIPS2025/llm_reasoning/martingale_score_an_unsupervised_metric_for_bayesian_rationality_in_llm_reasonin.md)
-- [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](../../ICLR2026/llm_reasoning/slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
-- [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](../../ICML2026/llm_reasoning/reward_modeling_from_natural_language_human_feedback.md)
+- [\[ICML 2025\] Improving Rationality in the Reasoning Process of Language Models through Self-playing Game](../../ICML2025/llm_reasoning/improving_rationality_in_the_reasoning_process_of_language_models_through_self-p.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](../../ICLR2026/llm_reasoning/reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 
 </div>
 

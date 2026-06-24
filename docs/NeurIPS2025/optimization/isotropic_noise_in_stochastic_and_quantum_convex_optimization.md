@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Isotropic Noise in Stochastic and Quantum Convex Optimization
 description: >-
-  [NeurIPS 2025][Optimization][stochastic convex optimization] This paper introduces the concept of an Isotropic Stochastic Gradient Oracle (ISGO)—where noise is bounded in every direction with high probability—and designs…
+  [NeurIPS 2025][Optimization][stochastic convex optimization] This paper introduces the concept of an Isotropic Stochastic Gradient Oracle (ISGO)—where noise is bounded in every direction with high probability—and designs a stochastic cutting-plane algorithm achieving a query complexity of $\tilde{O}(R^2\sigma_I^2/\epsilon^2 + d)$, improving over SGD by a factor of $d$ in certain parameter regimes. As corollaries, the paper establishes new state-of-the-art complexities under s…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "sub-exponential distribution"
   - "quantum optimization"
 date: 2026-05-08
-content_hash: 2fc71486cff977be
+content_hash: 2d54464901df1655
 ---
 
 # Isotropic Noise in Stochastic and Quantum Convex Optimization
@@ -136,11 +136,11 @@ This is a purely theoretical work with no experiments. The core results are summ
 
 ## Related Papers
 
+- [\[ICML 2025\] Enhancing Parallelism in Decentralized Stochastic Convex Optimization](../../ICML2025/optimization/enhancing_parallelism_in_decentralized_stochastic_convex_optimization.md)
 - [\[NeurIPS 2025\] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise](unveiling_m-sharpness_through_the_structure_of_stochastic_gradient_noise.md)
 - [\[NeurIPS 2025\] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization](stochastic_momentum_methods_for_non-smooth_non-convex_finite-sum_coupled_composi.md)
 - [\[NeurIPS 2025\] Non-Stationary Bandit Convex Optimization: A Comprehensive Study](non-stationary_bandit_convex_optimization_a_comprehensive_study.md)
-- [\[NeurIPS 2025\] Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints](beyond_tildeosqrtt_constraint_violation_for_online_convex_optimization_with_adve.md)
-- [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](../../ICLR2026/optimization/derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 
 </div>
 

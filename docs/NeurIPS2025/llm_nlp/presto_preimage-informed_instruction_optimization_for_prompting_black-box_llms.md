@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs
 description: >-
-  [NeurIPS 2025][LLM/NLP][instruction optimization] This paper proposes PRESTO, a framework that exploits the many-to-one mapping (preimage structure) from soft prompts to instructions in white-box LLMs. Through three comp…
+  [NeurIPS 2025][LLM (Other)][instruction optimization] This paper proposes PRESTO, a framework that exploits the many-to-one mapping (preimage structure) from soft prompts to instructions in white-box LLMs. Through three components — score sharing, preimage-based initialization, and score consistency regularization — PRESTO equivalently obtains 14× labeled data under the same query budget, significantly improving instruction optimization efficiency for black-box LLMs.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "instruction optimization"
   - "black-box LLM"
   - "soft prompt"
   - "preimage"
   - "Bayesian optimization"
 date: 2026-05-08
-content_hash: a8d2dd557d83e507
+content_hash: f0ce54e39e908ed7
 ---
 
 # PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs
@@ -168,11 +168,11 @@ A toy example visualization clearly demonstrates that a model trained with $\mat
 
 ## Related Papers
 
+- [\[ACL 2025\] Length Controlled Generation for Black-box LLMs](../../ACL2025/llm_nlp/length_controlled_generation_for_black-box_llms.md)
+- [\[ICML 2025\] Towards Universal Offline Black-Box Optimization via Learning Language Model Embeddings](../../ICML2025/llm_nlp/towards_universal_offline_black-box_optimization_via_learning_language_model_emb.md)
 - [\[NeurIPS 2025\] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)
-- [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](system_prompt_optimization_with_meta-learning.md)
-- [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
-- [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](../../AAAI2026/llm_nlp/control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
-- [\[NeurIPS 2025\] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs](speculate_deep_and_accurate_lossless_and_training-free_acceleration_for_offloade.md)
+- [\[ACL 2025\] A Survey of Automatic Prompt Optimization with Instruction-focused Heuristic-based Search Algorithm](../../ACL2025/llm_nlp/a_survey_of_automatic_prompt_optimization_with_instruction-focused_heuristic-bas.md)
+- [\[ACL 2025\] Self-Instructed Derived Prompt Generation Meets In-Context Learning: Unlocking New Potential of Black-Box LLMs](../../ACL2025/llm_nlp/self-instructed_derived_prompt_generation_meets_in-context_learning_unlocking_ne.md)
 
 </div>
 

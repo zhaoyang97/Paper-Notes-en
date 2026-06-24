@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] VIGNETTE constructs a VQA bias evaluation benchmark with 30M+ synthetic paired images, using four types of questions—factuality, perception, stereotyping, and decision-making—to reveal how VLMs link identity cues, activity contexts, and social hierarchies to produce fine-grained and sometimes contradictory biases.
+  [ACL2026][Multimodal VLM][VLM Bias Evaluation] VIGNETTE constructs a VQA bias evaluation benchmark with 30M+ synthetic paired images, using four types of questions—factuality, perception, stereotyping, and decision-making—to reveal how VLMs link identity cues, activity contexts, and social hierarchies to produce fine-grained and sometimes contradictory biases.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "VLM Bias Evaluation"
+  - "Social Stereotypes"
+  - "VQA Benchmark"
+  - "Synthetic Images"
+  - "Multimodal Fairness"
 date: 2026-05-08
-content_hash: 21b35fa459715428
+content_hash: d82809209f9bca39
 ---
+
 # VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models
 
 **Conference**: ACL2026  
@@ -136,8 +142,8 @@ VIGNETTE demonstrates significantly larger coverage than existing datasets and a
 
 - [\[ACL 2026\] Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models](cross-cultural_expert-level_art_critique_evaluation_with_vision-language_models.md)
 - [\[ICML 2026\] TGV-KV: Text-Grounded KV Eviction for Vision-Language Models](../../ICML2026/multimodal_vlm/tgv-kv_text-grounded_kv_eviction_for_vision-language_models.md)
+- [\[ICML 2026\] MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models](../../ICML2026/multimodal_vlm/medsight_towards_grounded_visual_comprehension_in_medical_large_vision-language_.md)
 - [\[ACL 2026\] Almieyar-Oryx-BloomBench: A Bilingual Multimodal Benchmark for Cognitively Informed Evaluation of Vision-Language Models](almieyar-oryx-bloombench_a_bilingual_multimodal_benchmark_for_cognitively_inform.md)
-- [\[CVPR 2025\] Taxonomy-Aware Evaluation of Vision-Language Models](../../CVPR2025/multimodal_vlm/taxonomy-aware_evaluation_of_vision-language_models.md)
 - [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](../../CVPR2026/multimodal_vlm/grounded_3d-aware_spatial_vision-language_modeling.md)
 
 </div>

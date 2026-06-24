@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Nürnberg NLP at PsyDefDetect: Multi-Axis Voter Ensembles for Psychological Defence Mechanism Classification
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This BioNLP 2026 PsyDefDetect shared task system paper treats psychological defense mechanism classification as a problem with fuzzy boundaries and limited annotation consistency. It utilizes an ensemble of 9 voters across different granularities, training paradigms, and base models, achieving an F1=.420 on the hidden
+  [ACL2026][LLM (Other)][Defense Mechanism Identification] This BioNLP 2026 PsyDefDetect shared task system paper treats psychological defense mechanism classification as a problem with fuzzy boundaries and limited annotation consistency. It utilizes an ensemble of 9 voters across different granularities, training paradigms, and base models, achieving an F1=.420 on the hidden test set and ranking 1st among 21 registered teams.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL2026"
+  - "LLM (Other)"
+  - "Defense Mechanism Identification"
+  - "Mental Health Dialogue"
+  - "Model Ensemble"
+  - "Class Imbalance"
+  - "Shared Task System"
 date: 2026-05-08
-content_hash: 6f0f136dde9665a9
+content_hash: 1cf5d769363d3639
 ---
+
 # Nürnberg NLP at PsyDefDetect: Multi-Axis Voter Ensembles for Psychological Defence Mechanism Classification
 
 **Conference**: ACL2026  
@@ -163,10 +169,20 @@ LR outperforms or matches ClsHead on most models with lower training costs.
 - Value: ⭐⭐⭐⭐☆ Highly relevant for shared tasks and small-sample clinical NLP; great reference for ensemble diagnostics despite the current F1 being insufficient for high-risk applications.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Evaluating Customized vs. Generalist Transformer-based Models for Legal Contract Classification](evaluating_customized_vs_generalist_transformer-based_models_for_legal_contract_.md)
+- [\[ICML 2025\] Theoretical Limitations of Ensembles in the Age of Overparameterization](../../ICML2025/llm_nlp/theoretical_limitations_of_ensembles_in_the_age_of_overparameterization.md)
+- [\[ACL 2025\] The Nature of NLP: Analyzing Contributions in NLP Papers](../../ACL2025/llm_nlp/the_nature_of_nlp_analyzing_contributions_in_nlp_papers.md)
+- [\[ACL 2026\] Wait, There’s a Way Out: A Decision Mechanism for Dialogue Derailment Prediction](wait_theres_a_way_out_a_decision_mechanism_for_forecasting_conversational_derail.md)
+- [\[ACL 2025\] Unintended Harms of Value-Aligned LLMs: Psychological and Empirical Insights](../../ACL2025/llm_nlp/unintended_harms_of_value-aligned_llms_psychological_and_empirical_insights.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Evaluating Customized vs. Generalist Transformer-based Models for Legal Contract Classification](evaluating_customized_vs_generalist_transformer-based_models_for_legal_contract_.md)

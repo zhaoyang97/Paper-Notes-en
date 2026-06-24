@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Video Vision Language Model with Hippocampal Sensing
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper mimics the hippocampal cross-modal association mechanism by first performing SFT on a Video VLM using "cross-modal temporal prediction" (completing audio from video, and vice versa), followed by a contrastive RL strategy (VANAO) with "negative-aware rewards" to enforce genuine joint audio-visual reasoning. T
+  [CVPR 2026][Video Understanding][Video VLM] This paper mimics the hippocampal cross-modal association mechanism by first performing SFT on a Video VLM using "cross-modal temporal prediction" (completing audio from video, and vice versa), followed by a contrastive RL strategy (VANAO) with "negative-aware rewards" to enforce genuine joint audio-visual reasoning. This approach enables 7B/8B small models to rival GPT-4o and Gemini-1.5-Pro across multiple video VQA benchmarks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video VLM"
+  - "cross-modal prediction"
+  - "joint audio-visual reasoning"
+  - "hippocampal sensing"
+  - "contrastive reinforcement learning"
 date: 2026-05-08
-content_hash: 446fd73758d79297
+content_hash: 652cc4e19d8a7254
 ---
+
 # Enhancing Video Vision Language Model with Hippocampal Sensing
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,11 @@ Inference speed (Single H100, 16 frames): HippoVLM-7B takes $\approx 18.15s$, fa
 
 ## Related Papers
 
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
-- [\[CVPR 2026\] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models](video-only_tom_enhancing_theory_of_mind_in_multimodal_large_language_models.md)
-- [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
-- [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
-- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
+- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
+- [\[CVPR 2026\] SoccerMaster: A Vision Foundation Model for Soccer Understanding](soccermaster_a_vision_foundation_model_for_soccer_understanding.md)
+- [\[CVPR 2026\] MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models](motionenhancer_leveraging_video_diffusion_for_motion-enhanced_vision-language_mo.md)
+- [\[CVPR 2025\] LLAVIDAL: A Large Language Vision Model for Daily Activities of Living](../../CVPR2025/video_understanding/llavidal_a_large_language_vision_model_for_daily_activities_of_living.md)
+- [\[CVPR 2026\] Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing](color_when_it_counts_grayscale-guided_online_triggering_for_always-on_streaming_.md)
 
 </div>
 

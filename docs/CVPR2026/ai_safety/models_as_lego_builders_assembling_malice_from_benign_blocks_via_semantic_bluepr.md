@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Models as Lego Builders: Assembling Malice from Benign Blocks via Semantic Blueprints
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper reveals an overlooked "Semantic Slot Filling (SSF)" security vulnerability: LVLMs actively complete content for "seemingly benign" slots, even when the combination of these slots implies malicious intent. Based on this, a black-box, one-shot jailbreak framework **StructAttack** is proposed. It decomposes har
+  [CVPR 2026][AI Safety][LVLM Jailbreak] This paper reveals an overlooked "Semantic Slot Filling (SSF)" security vulnerability: LVLMs actively complete content for "seemingly benign" slots, even when the combination of these slots implies malicious intent. Based on this, a black-box, one-shot jailbreak framework **StructAttack** is proposed. It decomposes harmful instructions into locally benign "Lego blocks" and renders them into structured visual diagrams (mind maps/tables/su…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "LVLM Jailbreak"
+  - "Semantic Slot Filling"
+  - "Structured Visual Prompts"
+  - "Black-box Attack"
+  - "Red Teaming"
 date: 2026-05-08
-content_hash: 89ded69ef3b9669b
+content_hash: aae91ec67e467296
 ---
+
 # Models as Lego Builders: Assembling Malice from Benign Blocks via Semantic Blueprints
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ Ablations performed on GPT-4o (70 samples). Values represent the number of succe
 
 ## Related Papers
 
-- [\[CVPR 2026\] When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters](when_lora_betrays_backdooring_text-to-image_models_by_masquerading_as_benign_ada.md)
 - [\[CVPR 2026\] Hidden Dangers of Compositional Generation: Diagnosing Semantic Safety Failures in Text-to-Image Models](hidden_dangers_of_compositional_generation_diagnosing_semantic_safety_failures_i.md)
+- [\[CVPR 2026\] When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters](when_lora_betrays_backdooring_text-to-image_models_by_masquerading_as_benign_ada.md)
 - [\[CVPR 2026\] Batman: Benign Knowledge Alignment Through Malicious Null Space in Federated Backdoor Attack](batman_benign_knowledge_alignment_through_malicious_null_space_in_federated_back.md)
-- [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
-- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
+- [\[CVPR 2026\] Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction](towards_highly_transferable_vision-language_attack_via_semantic-augmented_dynami.md)
+- [\[CVPR 2026\] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases](red-teaming_retrieval-augmented_diffusion_models_via_poisoning_knowledge_bases.md)
 
 </div>
 

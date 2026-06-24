@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On Measuring Influence in Avoiding Undesired Future
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes a new influence measure, **influence power (InP)**, for the "Avoiding Undesired Future" (AUF) problem. It measures how much the probability of reaching a target is increased by "actively modifying an actionable variable" compared to "letting it occur naturally." The paper theoretically proves that i
+  [ICLR 2026][Causal Inference][Influence measurement] This paper proposes a new influence measure, **influence power (InP)**, for the "Avoiding Undesired Future" (AUF) problem. It measures how much the probability of reaching a target is increased by "actively modifying an actionable variable" compared to "letting it occur naturally." The paper theoretically proves that influence is not equivalent to causal effect (weakly causal or even non-causal variables can be highly usefu…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Influence measurement"
+  - "Avoiding Undesired Future (AUF)"
+  - "Maximum Expected Utility"
+  - "Causal Effect"
+  - "Monte Carlo Tree Search"
 date: 2026-05-08
-content_hash: b5f0ce8611c29fc4
+content_hash: 41533ca6653d01fc
 ---
+
 # On Measuring Influence in Avoiding Undesired Future
 
 **Conference**: ICLR 2026  
@@ -145,11 +151,11 @@ The success rate increases with sample size and tends to stabilize around **1000
 
 ## Related Papers
 
+- [\[ICLR 2026\] Counterfactual LLM-based Framework for Measuring Rhetorical Style](counterfactual_llm-based_framework_for_measuring_rhetorical_style.md)
 - [\[ICLR 2026\] Influence without Confounding: Causal Discovery from Temporal Data with Long-term Carry-over Effects](influence_without_confounding_causal_discovery_from_temporal_data_with_long-term.md)
-- [\[ICLR 2026\] NextQuill: Causal Preference Modeling for Enhancing LLM Personalization](nextquill_causal_preference_modeling_for_enhancing_llm_personalization.md)
-- [\[ICLR 2026\] LLMs Struggle to Balance Reasoning and World Knowledge in Causal Narrative Understanding](llms_struggle_to_balance_reasoning_and_world_knowledge_in_causal_narrative_under.md)
-- [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](learning_robust_intervention_representations_with_delta_embeddings.md)
-- [\[ICLR 2026\] Action-Guided Attention for Video Action Anticipation](action-guided_attention_for_video_action_anticipation.md)
+- [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
+- [\[ICLR 2026\] Topological Causal Effects](topological_causal_effects.md)
+- [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StructMem: Structured Memory for Long-Horizon Behavior in LLMs
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] StructMem proposes a structure-enhanced hierarchical memory framework. Through event-level dual-view extraction and cross-event semantic integration, it achieves SOTA performance (76.82%) on the LoCoMo long-dialogue benchmark while significantly reducing token consumption (1.94M vs. 35.8M for graph memory) and API call
+  [ACL 2026][LLM Agent][Long-term memory] StructMem proposes a structure-enhanced hierarchical memory framework. Through event-level dual-view extraction and cross-event semantic integration, it achieves SOTA performance (76.82%) on the LoCoMo long-dialogue benchmark while significantly reducing token consumption (1.94M vs. 35.8M for graph memory) and API call counts.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Long-term memory"
+  - "event-level binding"
+  - "cross-event integration"
+  - "hierarchical memory"
+  - "multi-hop reasoning"
 date: 2026-05-08
-content_hash: 467ebfd31fb11d2d
+content_hash: d5f8d0c7816b557f
 ---
+
 # StructMem: Structured Memory for Long-Horizon Behavior in LLMs
 
 **Conference**: ACL 2026  
@@ -136,8 +142,8 @@ Individual events remain isolated; multi-hop reasoning requires establishing con
 - [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
 - [\[ACL 2026\] TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents](timem_temporal-hierarchical_memory_consolidation_for_long-horizon_conversational.md)
 - [\[ACL 2026\] OPeRA: A Dataset of Observation, Persona, Rationale, and Action for Evaluating LLMs on Human Online Shopping Behavior Simulation](opera_a_dataset_of_observation_persona_rationale_and_action_for_evaluating_llms_.md)
-- [\[ACL 2026\] MemSearcher: Training LLMs to Reason, Search and Manage Memory via End-to-End RL](memsearcher_training_llms_to_reason_search_and_manage_memory_via_end-to-end_rein.md)
-- [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](../../ICLR2026/llm_agent/mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
+- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](../../ICLR2026/llm_agent/mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
 
 </div>
 

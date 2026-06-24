@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLaVA-KD: A Framework of Distilling Multimodal Large Language Models
 description: >-
-  [ICCV2025][Multimodal VLM][Knowledge Distillation] This paper proposes the LLaVA-KD framework, which efficiently transfers knowledge from large-scale MLLMs to small-scale MLLMs via two distillation strategies—Multimodal…
+  [ICCV2025][Multimodal VLM][Knowledge Distillation] This paper proposes the LLaVA-KD framework, which efficiently transfers knowledge from large-scale MLLMs to small-scale MLLMs via two distillation strategies—Multimodal Distillation (MDist) and Relational Distillation (RDist)—combined with a three-stage training scheme (DPT-SFT-DFT), significantly improving small model performance without modifying the model architecture.
 tags:
   - "ICCV2025"
   - "Multimodal VLM"
@@ -11,7 +11,7 @@ tags:
   - "Small Model Training"
   - "Vision-Language Alignment"
 date: 2026-05-08
-content_hash: 106803e02ec3cc8f
+content_hash: d7b4493400a3ae5f
 ---
 
 # LLaVA-KD: A Framework of Distilling Multimodal Large Language Models
@@ -158,11 +158,11 @@ Visual token distillation yields additional gains in both DPT and DFT stages, va
 
 ## Related Papers
 
-- [\[AAAI 2026\] EM-KD: Distilling Efficient Multimodal Large Language Model with Unbalanced Vision Tokens](../../AAAI2026/multimodal_vlm/em-kd_distilling_efficient_multimodal_large_language_model_w.md)
 - [\[ICCV 2025\] CompCap: Improving Multimodal Large Language Models with Composite Captions](compcap_improving_multimodal_large_language_models_with_composite_captions.md)
-- [\[ICCV 2025\] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models](llava-prumerge_adaptive_token_reduction_for_efficient_large_multimodal_models.md)
-- [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](llava-cot_let_vision_language_models_reason_step-by-step.md)
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
+- [\[CVPR 2025\] LLaVA-Critic: Learning to Evaluate Multimodal Models](../../CVPR2025/multimodal_vlm/llava-critic_learning_to_evaluate_multimodal_models.md)
+- [\[ECCV 2024\] SQ-LLaVA: Self-Questioning for Large Vision-Language Assistant](../../ECCV2024/multimodal_vlm/sq-llava_self-questioning_for_large_vision-language_assistant.md)
+- [\[ACL 2025\] HiDe-LLaVA: Hierarchical Decoupling for Continual Instruction Tuning of Multimodal Large Language Model](../../ACL2025/multimodal_vlm/hidellava_hierarchical_decoupling_for_continual_instruction.md)
+- [\[ACL 2025\] AVG-LLaVA: An Efficient Large Multimodal Model with Adaptive Visual Granularity](../../ACL2025/multimodal_vlm/avg-llava_an_efficient_large_multimodal_model_with_adaptive_visual_granularity.md)
 
 </div>
 

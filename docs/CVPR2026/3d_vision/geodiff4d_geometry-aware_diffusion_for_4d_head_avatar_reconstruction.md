@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Starting from a single portrait, GeoDiff4D enables a diffusion model to jointly generate portrait frames and corresponding surface normals. These "Images + Normals + Expression Latents" are then fed into a 3D Gaussian reconstruction to distill the implicit 3D geometric priors from the diffusion model into an animatable
+  [CVPR 2026][3D Vision][4D Head Avatar Reconstruction] Starting from a single portrait, GeoDiff4D enables a diffusion model to jointly generate portrait frames and corresponding surface normals. These "Images + Normals + Expression Latents" are then fed into a 3D Gaussian reconstruction to distill the implicit 3D geometric priors from the diffusion model into an animatable 4D avatar. This approach significantly outperforms existing methods in identity preservation…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Head Avatar Reconstruction"
+  - "Geometry-Aware Diffusion"
+  - "Surface Normals"
+  - "3D Gaussian Splatting"
+  - "Single-image Driven"
 date: 2026-05-08
-content_hash: 1fb03313faa0cabe
+content_hash: a7858766dcf1cbfe
 ---
+
 # GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ Decomposition of components on the NeRSemblev2 self-reenactment set (Upper: VGM;
 
 ## Related Papers
 
+- [\[CVPR 2026\] EmoDiffTalk: Emotion-aware Diffusion for Editable 3D Gaussian Talking Head](emodifftalk_emotion-aware_diffusion_for_editable_3d_gaussian_talking_head.md)
+- [\[CVPR 2026\] OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)
+- [\[CVPR 2026\] UIKA: Fast Universal Head Avatar from Pose-Free Images](uika_fast_universal_head_avatar_from_pose-free_images.md)
 - [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] Fresco: Frequency-Spatial Consistent Optimization for Fine-Grained Head Avatar Modeling](fresco_frequency-spatial_consistent_optimization_for_fine-grained_head_avatar_mo.md)
-- [\[CVPR 2026\] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)
-- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
-- [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
+- [\[CVPR 2026\] MotionCrafter: Dense Geometry and Motion Reconstruction with a 4D VAE](motioncrafter_dense_geometry_and_motion_reconstruction_with_a_4d_vae.md)
 
 </div>
 

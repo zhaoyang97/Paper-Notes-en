@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Priors in Time: Missing Inductive Biases for Language Model Interpretability
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] From a Bayesian perspective, this work reveals that standard Sparse Autoencoders (SAEs) imply a prior that "concepts are independent in time," which severely mismatches the highly non-stationary nature of LLM activations that accumulate dimensionality with context. The authors propose the Temporal SAE, which decomposes
+  [ICLR 2026][Interpretability][Sparse Autoencoders] From a Bayesian perspective, this work reveals that standard Sparse Autoencoders (SAEs) imply a prior that "concepts are independent in time," which severely mismatches the highly non-stationary nature of LLM activations that accumulate dimensionality with context. The authors propose the Temporal SAE, which decomposes activations into a "predictable component" (from context) and a "novel component" (residual). By applying sp…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Temporal Structure"
+  - "Inductive Bias"
+  - "Bayesian Priors"
+  - "Non-stationarity"
 date: 2026-05-08
-content_hash: 99bec96e485e8ee8
+content_hash: 9be4c7a34185ef4f
 ---
+
 # Priors in Time: Missing Inductive Biases for Language Model Interpretability
 
 **Conference**: ICLR 2026  
@@ -125,10 +131,18 @@ Predictable codes strongly align with slow (high-level, stable) signals, while n
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](evolution_of_concepts_in_language_model_pre-training.md)
+- [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)
+- [\[ICLR 2026\] Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer](towards_understanding_subliminal_learning_when_and_how_hidden_biases_transfer.md)
+- [\[ICLR 2026\] Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training](learning_to_see_before_seeing_demystifying_llm_visual_priors_from_language_pre-t.md)
+- [\[ICLR 2026\] Inferring the Invisible: Neuro-Symbolic Rule Discovery for Missing Value Imputation](inferring_the_invisible_neuro-symbolic_rule_discovery_for_missing_value_imputati.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)

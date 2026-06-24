@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets
 description: >-
-  [NeurIPS 2025][robust memorization] This paper studies the parameter complexity of robust memorization in ReLU networks — i.e., the number of parameters required to interpolate an arbitrary dataset while maintaining cons…
+  [NeurIPS 2025][robust memorization] This paper studies the parameter complexity of robust memorization in ReLU networks — i.e., the number of parameters required to interpolate an arbitrary dataset while maintaining consistent predictions within a $\mu$-neighborhood of each training sample — and establishes tighter upper and lower bounds across the full range $(0,1)$ of the robustness ratio $\rho = \mu/\epsilon$.
 tags:
   - "NeurIPS 2025"
   - "robust memorization"
@@ -11,7 +11,7 @@ tags:
   - "upper and lower bounds"
   - "adversarial robustness"
 date: 2026-05-08
-content_hash: e7e902e004637bc0
+content_hash: 3e1d49f07a86945d
 ---
 
 # The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets
@@ -172,9 +172,9 @@ The "cost" of robustness grows substantially with dimension, revealing the intri
 
 - [\[NeurIPS 2025\] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)
 - [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
-- [\[NeurIPS 2025\] Obliviator Reveals the Cost of Nonlinear Guardedness in Concept Erasure](obliviator_reveals_the_cost_of_nonlinear_guardedness_in_concept_erasure.md)
-- [\[NeurIPS 2025\] Distributionally Robust Feature Selection](distributionally_robust_feature_selection.md)
 - [\[ICLR 2026\] Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds](../../ICLR2026/others/non-clashing_teaching_in_graphs_algorithms_complexity_and_bounds.md)
+- [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
+- [\[NeurIPS 2025\] Obliviator Reveals the Cost of Nonlinear Guardedness in Concept Erasure](obliviator_reveals_the_cost_of_nonlinear_guardedness_in_concept_erasure.md)
 
 </div>
 

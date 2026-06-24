@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] GIFT: Guided Fine-Tuning and Transfer for Enhancing Instruction-Tuned Language Models
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Guided Fine-Tuning] GIFT transforms the instruction-tuned model from a passive merging target into a teacher that provides confidence scores for training tokens. These scores guide the LoRA fine-tuning of the base model, after which the adapter is merged back into the instruction model. This approach consistently outperforms direct fine-t
+  [ACL2026][Information Retrieval & RAG][Guided Fine-Tuning] GIFT transforms the instruction-tuned model from a passive merging target into a teacher that provides confidence scores for training tokens. These scores guide the LoRA fine-tuning of the base model, after which the adapter is merged back into the instruction model. This approach consistently outperforms direct fine-tuning and transfer baselines like Shadow-FT on mathematical, medical…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Guided Fine-Tuning
-  - LoRA
-  - Instruction Model
-  - Adapter Merge
+  - "ACL2026"
+  - "Information Retrieval & RAG"
+  - "Guided Fine-Tuning"
+  - "LoRA"
+  - "Instruction Model"
+  - "Adapter Merge"
+  - "Confidence Weighting"
 date: 2026-05-08
-content_hash: 0d50185c8a35b611
+content_hash: c0f2ceb9c04e4347
 ---
+
 # GIFT: Guided Fine-Tuning and Transfer for Enhancing Instruction-Tuned Language Models
 
 **Conference**: ACL2026  
@@ -141,10 +143,10 @@ All methods use identical LoRA settings: AdamW, 1 epoch, max sequence length 204
 ## Related Papers
 
 - [\[ACL 2026\] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion](enhancing_multilingual_rag_systems_with_debiased_language_preference-guided_quer.md)
-- [\[ICLR 2026\] Fine-tuning with RAG for Improving LLM Learning of New Skills](../../ICLR2026/information_retrieval/fine-tuning_with_rag_for_improving_llm_learning_of_new_skills.md)
+- [\[ICLR 2026\] Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs](../../ICLR2026/information_retrieval/long-document_qa_with_chain-of-structured-thought_and_fine-tuned_slms.md)
+- [\[ICLR 2026\] Supervised Fine-Tuning or Contrastive Learning? Towards Better Multimodal LLM Reranking](../../ICLR2026/information_retrieval/supervised_fine-tuning_or_contrastive_learning_towards_better_multimodal_llm_rer.md)
 - [\[ICML 2025\] FedRAG: A Framework for Fine-Tuning Retrieval-Augmented Generation Systems](../../ICML2025/information_retrieval/fedrag_a_framework_for_fine-tuning_retrieval-augmented_generation_systems.md)
 - [\[ACL 2025\] Enhancing Lexicon-Based Text Embeddings with Large Language Models](../../ACL2025/information_retrieval/enhancing_lexicon-based_text_embeddings_with_large_language_models.md)
-- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](../../CVPR2026/information_retrieval/language-driven_fine-grained_retrieval.md)
 
 </div>
 

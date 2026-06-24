@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Causal Score Conditioning for Multi-Resolution Latent Systems
 description: >-
-  [ICLR 2026][Causal Inference][causal graphical model] This paper proposes SVGDM, which embeds score-based diffusion into causal directed graphs. By utilizing "causal score decomposition," it enables information propagation along causal edges across observations with different resolutions and noise levels. This allows for the joint inversion of multiple interdependent late
+  [ICLR 2026][Causal Inference][causal graphical model] This paper proposes SVGDM, which embeds score-based diffusion into causal directed graphs. By utilizing "causal score decomposition," it enables information propagation along causal edges across observations with different resolutions and noise levels. This allows for the joint inversion of multiple interdependent latent variables (e.g., earthquake → landslide → building damage) under heterogeneous and incomplete observati…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - causal graphical model
-  - score-based diffusion
-  - multi-resolution inference
-  - variational inference
-  - Markov blanket
-  - disaster modeling
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "causal graphical model"
+  - "score-based diffusion"
+  - "multi-resolution inference"
+  - "variational inference"
+  - "Markov blanket"
+  - "disaster modeling"
 date: 2026-05-08
-content_hash: fdf046e97e4fa204
+content_hash: 6b67fe34b43b2e7c
 ---
+
 # Causal Score Conditioning for Multi-Resolution Latent Systems
 
 **Conference**: ICLR 2026  
@@ -125,10 +126,10 @@ Comparison with baselines: SVGDM outperforms domain-specific methods (VBCI, Disa
 ## Related Papers
 
 - [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
+- [\[ICLR 2026\] Score-based Greedy Search for Structure Identification of Partially Observed Causal Models](score-based_greedy_search_for_structure_identification_of_partially_observed_cau.md)
 - [\[ICLR 2026\] Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks](frequency-domain_better_than_time-domain_for_causal_structure_recovery_in_dynami.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
 - [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
-- [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
-- [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond the Static World: Continual Category Discovery under Visual Drift
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Addressing the realistic scenario where "unlabeled data streams both introduce new categories and originate from unfamiliar domains," this paper proposes the OCCD task. It introduces a three-component framework—"Optimal Transport for automatic separation of known/unknown samples → Adversarial Alignment of known class p
+  [CVPR 2026][Self-Supervised Learning][Open Continual Category Discovery] Addressing the realistic scenario where "unlabeled data streams both introduce new categories and originate from unfamiliar domains," this paper proposes the OCCD task. It introduces a three-component framework—"Optimal Transport for automatic separation of known/unknown samples → Adversarial Alignment of known class prototypes → Frequency-domain augmentation for category topological consistency"—achievi…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Open Continual Category Discovery"
+  - "Partial Unbalanced Optimal Transport"
+  - "Domain Shift"
+  - "Adversarial Alignment"
+  - "Category Topological Consistency"
 date: 2026-05-08
-content_hash: aa6383fe374d6142
+content_hash: 8dbbd8d1aa8052e9
 ---
+
 # Beyond the Static World: Continual Category Discovery under Visual Drift
 
 **Conference**: CVPR 2026  
@@ -136,15 +142,16 @@ Comparison of separation strategies (Painting All): Entropy-based (**29.4**) vs.
 - Value: ⭐⭐⭐⭐⭐ (Addresses critical real-world pain points in "Open + Continual + Drift" scenarios).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] PRISM: Progressive Robust Learning for Open-World Continual Category Discovery](../../ICLR2026/self_supervised/prism_progressive_robust_learning_for_open-world_continual_category_discovery.md)
 - [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
-- [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/self_supervised/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
+- [\[CVPR 2026\] Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity](parameter-efficient_continual_learning_for_enhancing_plasticity_without_forgetti.md)
 - [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
 - [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
-- [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
 
 </div>
 

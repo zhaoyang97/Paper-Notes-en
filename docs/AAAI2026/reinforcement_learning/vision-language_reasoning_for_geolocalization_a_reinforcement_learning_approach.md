@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach
 description: >-
-  [AAAI 2026][Reinforcement Learning][Image Geolocalization] This paper proposes Geo-R, a retrieval-free, reasoning-driven image geolocalization framework. By introducing the Chain-of-Region (CoR) hierarchical reasoning pa…
+  [AAAI 2026][Reinforcement Learning][Image Geolocalization] This paper proposes Geo-R, a retrieval-free, reasoning-driven image geolocalization framework. By introducing the Chain-of-Region (CoR) hierarchical reasoning paradigm and a reinforcement learning strategy based on Haversine distance coordinate-alignment rewards, Geo-R achieves 18.10% street-level (1 km) accuracy on IM2GPS3K, surpassing all retrieval-free methods and approaching retrieval-based ones.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Chain-of-Region"
   - "GRPO"
 date: 2026-05-08
-content_hash: bac546fc221fc21b
+content_hash: fa03035ee5391d5d
 ---
 
 # Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach
@@ -187,9 +187,9 @@ $$r_{distance} = \begin{cases} 1.0 - 0.5 \cdot \frac{d}{750}, & d \leq 750 \\ 0.
 
 - [\[AAAI 2026\] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision](stelar-vision_self-topology-aware_efficient_learning_for_aligned_reasoning_in_vi.md)
 - [\[ICML 2026\] Coupled Variational Reinforcement Learning for Language Model General Reasoning](../../ICML2026/reinforcement_learning/coupled_variational_reinforcement_learning_for_language_model_general_reasoning.md)
-- [\[ACL 2026\] LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance](../../ACL2026/reinforcement_learning/lang_reinforcement_learning_for_multilingual_reasoning_with_language-adaptive_hi.md)
+- [\[ICLR 2026\] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning](../../ICLR2026/reinforcement_learning/from_narrow_to_panoramic_vision_attention-guided_cold-start_reshapes_multimodal_.md)
 - [\[AAAI 2026\] Discounted Cuts: A Stackelberg Approach to Network Disruption](discounted_cuts_a_stackelberg_approach_to_network_disruption.md)
-- [\[ICLR 2026\] DVLA-RL: Dual-Level Vision-Language Alignment with Reinforcement Learning Gating for Few-Shot Learning](../../ICLR2026/reinforcement_learning/dvla-rl_dual-level_vision-language_alignment_with_reinforcement_learning_gating_.md)
+- [\[ACL 2026\] LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance](../../ACL2026/reinforcement_learning/lang_reinforcement_learning_for_multilingual_reasoning_with_language-adaptive_hi.md)
 
 </div>
 

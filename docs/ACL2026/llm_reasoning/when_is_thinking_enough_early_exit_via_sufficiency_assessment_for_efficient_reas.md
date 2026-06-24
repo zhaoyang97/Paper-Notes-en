@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] Ours proposes the DTSR framework, which identifies "reflection signals" (e.g., Wait, Alternatively) within the reasoning process and triggers a self-assessment of "thought sufficiency" to determine early termination. It achieves a 28.9%–34.9% reduction in reasoning length on Qwen3 series models with negligible accuracy
+  [ACL 2026][Reasoning][Reasoning efficiency] Ours proposes the DTSR framework, which identifies "reflection signals" (e.g., Wait, Alternatively) within the reasoning process and triggers a self-assessment of "thought sufficiency" to determine early termination. It achieves a 28.9%–34.9% reduction in reasoning length on Qwen3 series models with negligible accuracy loss.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Reasoning efficiency"
+  - "Early exit strategies"
+  - "Overthinking"
+  - "Metacognition"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: cf0970d13aa0c53b
+content_hash: 7a5032b75907600e
 ---
+
 # When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning
 
 **Conference**: ACL 2026  
@@ -136,10 +142,10 @@ DTSR is a training-free method, requiring no additional training. Sufficiency as
 ## Related Papers
 
 - [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
-- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
+- [\[ICLR 2026\] Dynamic Early Exit in Reasoning Models](../../ICLR2026/llm_reasoning/dynamic_early_exit_in_reasoning_models.md)
 - [\[ACL 2026\] DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models](drp_distilled_reasoning_pruning_with_skill-aware_step_decomposition_for_efficien.md)
-- [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
-- [\[ACL 2026\] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning](etr_entropy_trend_reward_for_efficient_chain-of-thought_reasoning.md)
+- [\[ICML 2026\] SuCo: Sufficiency-guided Continuous Adaptive Reasoning](../../ICML2026/llm_reasoning/suco_sufficiency-guided_continuous_adaptive_reasoning.md)
+- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](../../ICLR2026/llm_reasoning/when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Ours proposes CURE—an error-aware curriculum-guided multi-task training framework. Without introducing additional data, it dynamically adjusts the sampling distribution to focus on difficult samples, improving visual grounding accuracy by +0.37 IoU and reducing the hallucination rate by 18.6% for medical VLMs.
+  [CVPR 2026][Medical Imaging][Curriculum Learning] Ours proposes CURE—an error-aware curriculum-guided multi-task training framework. Without introducing additional data, it dynamically adjusts the sampling distribution to focus on difficult samples, improving visual grounding accuracy by +0.37 IoU and reducing the hallucination rate by 18.6% for medical VLMs.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Curriculum Learning"
+  - "Visual Grounding"
+  - "Radiology Report Generation"
+  - "Multi-task Learning"
+  - "Hallucination Suppression"
 date: 2026-05-08
-content_hash: faf052ca07393f0a
+content_hash: 1a507ff6cf98ac24
 ---
+
 # CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation
 
 **Conference**: CVPR 2026  
@@ -181,11 +187,11 @@ CURE achieved the best scores in CheXbert Cosine Similarity (0.792) and F1-Ma (0
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings](../../ICLR2026/medical_imaging/rethinking_radiology_report_generation_from_narrative_flow_to_topic-guided_findi.md)
 - [\[CVPR 2026\] Phrase-grounded APO for Improving Chest X-ray Report Generation](phrase-grounded_apo_for_improving_chest_x-ray_report_generation.md)
 - [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
-- [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 - [\[ICML 2026\] CAME-Grad: The Double Dilemma in Multi-Task Radiology Report Generation — A Gradient Dynamics Analysis and Solution](../../ICML2026/medical_imaging/the_double_dilemma_in_multi-task_radiology_report_generation_a_gradient_dynamics.md)
-- [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
+- [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 
 </div>
 

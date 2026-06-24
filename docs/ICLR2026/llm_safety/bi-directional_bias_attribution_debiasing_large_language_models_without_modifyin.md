@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bi-directional Bias Attribution: Debiasing Large Language Models without Modifying Prompts
 description: >-
-  [ICLR 2026][LLM Safety][Interpretability] This paper proposes an LLM debiasing framework that requires neither fine-tuning nor prompt modification. It automatically selects stereotype cue words most likely to induce bias via entropy minimization, attributes bias to specific neurons in the projection layer using two bi-directional strategies (Forward-IG and Bac
+  [ICLR 2026][LLM Safety][Social Bias] This paper proposes an LLM debiasing framework that requires neither fine-tuning nor prompt modification. It automatically selects stereotype cue words most likely to induce bias via entropy minimization, attributes bias to specific neurons in the projection layer using two bi-directional strategies (Forward-IG and Backward-IG), and finally pins the activation values of these neurons. Across three popular LLMs…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Interpretability
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Social Bias"
+  - "Neuron Attribution"
+  - "Integrated Gradients"
+  - "Debiasing"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: cda7d8fe5b501fac
+content_hash: 23b904f7c226520f
 ---
+
 # Bi-directional Bias Attribution: Debiasing Large Language Models without Modifying Prompts
 
 **Conference**: ICLR 2026  
@@ -155,8 +160,8 @@ Ablations for FBA on Llama-3.1 / StereoSet:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions](faithful_bi-directional_model_steering_via_distribution_matching_and_distributed.md)
 - [\[ICLR 2026\] BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models](biasbusters_uncovering_and_mitigating_tool_selection_bias_in_large_language_mode.md)
+- [\[ICLR 2026\] Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions](faithful_bi-directional_model_steering_via_distribution_matching_and_distributed.md)
 - [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
 - [\[AAAI 2026\] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models](../../AAAI2026/llm_safety/anti-adversarial_learning_desensitizing_prompts_for_large_la.md)
 - [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](../../AAAI2026/llm_safety/gender_bias_in_emotion_recognition_by_large_language_models.md)

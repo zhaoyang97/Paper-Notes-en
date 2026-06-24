@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions
 description: >-
-  [CVPR 2026][Autonomous Driving][V2X] Targeting "multi-agent collaborative perception under adverse weather," HRCP proposes a hybrid collaboration strategy based on the physical characteristics of sensors (early collaboration for sparse 4D radar via raw point clouds; intermediate collaboration for dense LiDAR via features). It reformulates LiDAR-4D radar f
+  [CVPR 2026][Autonomous Driving][Collaborative Perception] Targeting "multi-agent collaborative perception under adverse weather," HRCP proposes a hybrid collaboration strategy based on the physical characteristics of sensors (early collaboration for sparse 4D radar via raw point clouds; intermediate collaboration for dense LiDAR via features). It reformulates LiDAR-4D radar fusion as "jointly reconstructing a dense and reliable representation…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - V2X
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Collaborative Perception"
+  - "LiDAR-4D Radar Fusion"
+  - "Adverse Weather"
+  - "Cross-modal Gating"
+  - "V2X"
 date: 2026-05-08
-content_hash: 3fcf98b3e588e811
+content_hash: 677f64a13a017fb1
 ---
+
 # Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ Ablation of modalities and components on V2X-R (mAP@0.3/0.5/0.7):
 
 ## Related Papers
 
+- [\[CVPR 2026\] HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation](hg-lane_high-fidelity_generation_of_lane_scenes_under_adverse_weather_and_lighti.md)
 - [\[CVPR 2026\] Structure-to-Intensity Diffusion for Adverse-Weather LiDAR Generation](structure-to-intensity_diffusion_for_adverse-weather_lidar_generation.md)
 - [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](dsert-roll_robust_multi-modal_perception_for_diverse_driving_conditions_with_ste.md)
-- [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
-- [\[CVPR 2026\] HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation](hg-lane_high-fidelity_generation_of_lane_scenes_under_adverse_weather_and_lighti.md)
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
+- [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
 
 </div>
 

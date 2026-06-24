@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] IR-Agent: Expert-Inspired LLM Agents for Structure Elucidation from Infrared Spectra
 description: >-
-  [ICLR 2026][LLM Agent][SMILES] The expert workflow for interpreting infrared (IR) spectra is decomposed into three specialized LLM agents: one identifies local functional groups via absorption tables, another retrieves similar spectra for global backbones, and the third integrates reasoning to rank candidate structures. It outperforms single-model a
+  [ICLR 2026][LLM Agent][Multi-agent framework] The expert workflow for interpreting infrared (IR) spectra is decomposed into three specialized LLM agents: one identifies local functional groups via absorption tables, another retrieves similar spectra for global backbones, and the third integrates reasoning to rank candidate structures. It outperforms single-model and single-agent approaches on real experimental IR spectra and incorporates additional chemical information withou…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - SMILES
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multi-agent framework"
+  - "Infrared spectra"
+  - "Molecular structure elucidation"
+  - "SMILES"
+  - "Retrieval-augmented generation"
+  - "Expert workflow simulation"
 date: 2026-05-08
-content_hash: 5e03da8838451280
+content_hash: c28a0fb2d7645e21
 ---
+
 # IR-Agent: Expert-Inspired LLM Agents for Structure Elucidation from Infrared Spectra
 
 **Conference**: ICLR 2026  
@@ -119,10 +125,20 @@ graph LR
 - **Value**: ⭐⭐⭐⭐ Highly practical setting (no formula required); provides a scalable template for scientific agents.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](../../CVPR2026/llm_agent/symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
+- [\[NeurIPS 2025\] LLM Agent Communication Protocol (LACP) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary](../../NeurIPS2025/llm_agent/llm_agent_communication_protocol_lacp_requires_urgent_standardization_a_telecom-.md)
+- [\[ICLR 2026\] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](your_agent_may_misevolve_emergent_risks_in_self-evolving_llm_agents.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
+- [\[ICLR 2026\] Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents](agent_data_protocol_unifying_datasets_for_diverse_effective_fine-tuning_of_llm_a.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](../../CVPR2026/llm_agent/symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)

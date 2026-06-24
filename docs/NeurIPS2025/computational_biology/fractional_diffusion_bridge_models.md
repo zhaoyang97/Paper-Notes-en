@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fractional Diffusion Bridge Models
 description: >-
-  [NeurIPS 2025][Computational Biology][Diffusion bridge models] This paper proposes Fractional Diffusion Bridge Models (FDBM), which incorporate fractional Brownian motion (fBM) into the generative diffusion bridge framew…
+  [NeurIPS 2025][Computational Biology][Diffusion bridge models] This paper proposes Fractional Diffusion Bridge Models (FDBM), which incorporate fractional Brownian motion (fBM) into the generative diffusion bridge framework. The Hurst exponent $H$ controls the roughness and long-range dependence of trajectories, yielding improvements over Brownian motion baselines on protein conformation prediction and image translation tasks.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "image translation"
   - "Schrödinger bridge"
 date: 2026-05-08
-content_hash: b597b93855af77ef
+content_hash: 4b01e164cacfb226
 ---
 
 # Fractional Diffusion Bridge Models
@@ -161,9 +161,9 @@ Evaluation of cat↔wild translation on AFHQ-256 and AFHQ-512:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Remasking Discrete Diffusion Models with Inference-Time Scaling](remasking_discrete_diffusion_models_with_inference-time_scaling.md)
-- [\[NeurIPS 2025\] KLASS: KL-Guided Fast Inference in Masked Diffusion Models](klass_kl-guided_fast_inference_in_masked_diffusion_models.md)
 - [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
 - [\[NeurIPS 2025\] Atomic Diffusion Models for Small Molecule Structure Elucidation from NMR Spectra](atomic_diffusion_models_for_small_molecule_structure_elucidation_from_nmr_spectr.md)
+- [\[NeurIPS 2025\] KLASS: KL-Guided Fast Inference in Masked Diffusion Models](klass_kl-guided_fast_inference_in_masked_diffusion_models.md)
 - [\[ICLR 2026\] Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge](../../ICLR2026/computational_biology/unified_biomolecular_trajectory_generation_via_pretrained_variational_bridge.md)
 
 </div>

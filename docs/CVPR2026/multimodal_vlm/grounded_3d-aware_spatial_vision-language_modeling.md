@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Grounded 3D-Aware Spatial Vision-Language Modeling
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] GR3D unifies three grounding capabilities—explicit 2D grounding, implicit 2D grounding, and monocular 3D grounding—into a single spatial VLM. The model generates a spatial Chain-of-Thought (CoT) while simultaneously grounding mentioned objects as region tokens inserted back into the text stream. These grounded regions
+  [CVPR 2026][Multimodal VLM][Spatial VLM] GR3D unifies three grounding capabilities—explicit 2D grounding, implicit 2D grounding, and monocular 3D grounding—into a single spatial VLM. The model generates a spatial Chain-of-Thought (CoT) while simultaneously grounding mentioned objects as region tokens inserted back into the text stream. These grounded regions then serve as queries to predict 3D boxes in the camera view, achieving significant performance gains on Omni3D detecti…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Spatial VLM"
+  - "implicit grounding"
+  - "monocular 3D detection"
+  - "visual Chain-of-Thought"
+  - "region prompts"
 date: 2026-05-08
-content_hash: fde0af67bf9e10b6
+content_hash: 41e5e6b772508322
 ---
+
 # Grounded 3D-Aware Spatial Vision-Language Modeling
 
 **Conference**: CVPR 2026  
@@ -126,15 +132,16 @@ Breakdown of the three key components on Omni3D (SUN-RGBD Indoor / KITTI Outdoor
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
-- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
 - [\[CVPR 2026\] From 3D Pose to Prose: Biomechanics-Grounded Vision-Language Coaching](from_3d_pose_to_prose_biomechanics-grounded_vision-language_coaching.md)
 - [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
 - [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
+- [\[CVPR 2026\] InstAP: Instance-Aware Vision-Language Pre-Train for Spatial-Temporal Understanding](instap_instance-aware_vision-language_pre-train_for_spatial-temporal_understandi.md)
+- [\[CVPR 2026\] Direction-aware 3D Large Multimodal Models](direction-aware_3d_large_multimodal_models.md)
 
 </div>
 

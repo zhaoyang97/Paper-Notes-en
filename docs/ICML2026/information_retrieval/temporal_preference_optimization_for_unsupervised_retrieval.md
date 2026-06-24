@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Preference Optimization for Unsupervised Retrieval
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Paper Note] This paper proposes TPOUR, which transplants DPO-style preference learning to the **temporal dimension** of retrieval. This enables unsupervised dense retrievers to prioritize "temporally aligned" documents among semantically similar but misaligned versions, while achieving zero-shot generalization to unseen years usin
+  [ICML 2026][Information Retrieval & RAG][Unsupervised Dense Retrieval] This paper proposes TPOUR, which transplants DPO-style preference learning to the **temporal dimension** of retrieval. This enables unsupervised dense retrievers to prioritize "temporally aligned" documents among semantically similar but misaligned versions, while achieving zero-shot generalization to unseen years using temporal vector interpolation.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Unsupervised Dense Retrieval"
+  - "Temporal Alignment"
+  - "Preference Optimization"
+  - "Temporal Vectors"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 42a4a2eb94879341
+content_hash: 9c5ff6c8244c6845
 ---
+
 # Temporal Preference Optimization for Unsupervised Retrieval
 
 **Conference**: ICML 2026  

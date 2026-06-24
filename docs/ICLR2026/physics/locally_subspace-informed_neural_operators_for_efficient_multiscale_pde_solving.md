@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][GMsFEM] Neural operators (FNO) are used to directly predict the **subspace** spanned by the multiscale spectral basis functions of GMsFEM. Combined with a subspace-informed loss that aligns subspaces rather than individual basis functions, this approach accelerates the most expensive offline basis function construction phase o
+  [ICLR 2026][Physics & Scientific Computing][Neural Operators] Neural operators (FNO) are used to directly predict the **subspace** spanned by the multiscale spectral basis functions of GMsFEM. Combined with a subspace-informed loss that aligns subspaces rather than individual basis functions, this approach accelerates the most expensive offline basis function construction phase of GMsFEM by over 60x while preserving the accuracy and reliability of traditional numerical method…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - GMsFEM
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Neural Operators"
+  - "GMsFEM"
+  - "Multiscale Finite Element Method"
+  - "Subspace Alignment Loss"
+  - "High-contrast Heterogeneous Media"
+  - "Operator Learning"
 date: 2026-05-08
-content_hash: 1cd1f33d9bbb2540
+content_hash: 7dae084d87681f21
 ---
+
 # Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Learning to Reason Efficiently with Discounted Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] Verifiable reward reasoning in LLMs is modeled as a finite-horizon stochastic shortest path (SSP) MDP. By applying a discount factor $\gamma < 1$ only to reasoning tokens, the authors use Blackwell optimality to prove that if $\gamma$ is sufficiently close to 1, the discounted optimal policy first maximizes accuracy an
+  [ICLR 2026][Reinforcement Learning][Discounted Reinforcement Learning] Verifiable reward reasoning in LLMs is modeled as a finite-horizon stochastic shortest path (SSP) MDP. By applying a discount factor $\gamma < 1$ only to reasoning tokens, the authors use Blackwell optimality to prove that if $\gamma$ is sufficiently close to 1, the discounted optimal policy first maximizes accuracy and then selects the shortest trajectory among all correct ones—achieving "lossless reasoni…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Discounted Reinforcement Learning"
+  - "Blackwell Optimality"
+  - "Stochastic Shortest Path"
+  - "GRPO"
+  - "Efficient Reasoning"
+  - "RLVR"
 date: 2026-05-08
-content_hash: 72d89805c64240c4
+content_hash: 17450e73017cfce0
 ---
+
 # Learning to Reason Efficiently with Discounted Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -127,6 +132,7 @@ with the optimization target $E_{S_1\sim\mu,\tau\sim\pi}[R(\tau)]-\beta\,\mathrm
 - **Value**: ⭐⭐⭐⭐ — Provides theoretical backing and a non-intrusive recipe for reducing inference costs in LRM.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

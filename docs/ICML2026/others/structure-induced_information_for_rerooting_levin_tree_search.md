@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Structure-Induced Information for Rerooting Levin Tree Search
 description: >-
-  [ICML 2026][Others][Levin Tree Search] Within the $\sqrt{\mathrm{lts}}$ framework, the authors propose three "rerooters"—global Leiden clustering, local heuristic cost-to-go, and an additive mixture of both—to automatically allocate search effort to implicit sub-tasks based on state-space structure and goal distance. This approach avoids expensive explicit
+  [ICML 2026][Levin Tree Search] Within the $\sqrt{\mathrm{lts}}$ framework, the authors propose three "rerooters"—global Leiden clustering, local heuristic cost-to-go, and an additive mixture of both—to automatically allocate search effort to implicit sub-tasks based on state-space structure and goal distance. This approach avoids expensive explicit sub-goal generation models like HIPS-$\varepsilon$ / SGPS, achieving SOTA in online training sample efficiency and test-time expa…
 tags:
-  - ICML 2026
-  - Others
-  - Levin Tree Search
-  - rerooting
+  - "ICML 2026"
+  - "Levin Tree Search"
+  - "rerooting"
+  - "Leiden clustering"
+  - "heuristics"
+  - "sub-task decomposition"
 date: 2026-05-08
-content_hash: 4e73eee52e04043e
+content_hash: afdfcb3ac514f10b
 ---
+
 # Structure-Induced Information for Rerooting Levin Tree Search
 
 **Conference**: ICML 2026  

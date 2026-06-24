@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models
 description: >-
-  [ACL 2026][LLM (Other)][LLM-as-Judge] PersonaArena utilizes user-generated content to construct 1,000 fine-grained personas and evaluates and enhances the persona-level role-playing capabilities of LLMs through dynamic social simulations and multi-judge debates.
+  [ACL2026 Findings][LLM (Other)][Role-playing] PersonaArena utilizes user-generated content to construct 1,000 fine-grained personas and evaluates and enhances the persona-level role-playing capabilities of LLMs through dynamic social simulations and multi-judge debates.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - LLM-as-Judge
-  - DPO
+  - "ACL2026 Findings"
+  - "LLM (Other)"
+  - "Role-playing"
+  - "Persona Evaluation"
+  - "Multi-agent Simulation"
+  - "LLM-as-Judge"
+  - "DPO"
 date: 2026-05-08
-content_hash: 13b7c48254eb4918
+content_hash: 68dad6524e055842
 ---
+
 # PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models
 
 **Conference**: ACL2026 Findings  

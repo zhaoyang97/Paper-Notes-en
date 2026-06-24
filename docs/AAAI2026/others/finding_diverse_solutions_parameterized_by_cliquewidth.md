@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Finding Diverse Solutions Parameterized by Cliquewidth
 description: >-
-  [AAAI 2026][Parameterized complexity] This paper extends the parameterized framework for finding diverse solutions from treewidth to the strictly more powerful graph parameter cliquewidth…
+  [AAAI 2026][Parameterized complexity] This paper extends the parameterized framework for finding diverse solutions from treewidth to the strictly more powerful graph parameter cliquewidth, proving that any monotone dynamic programming algorithm parameterized by a cliquewidth decomposition can be converted into an algorithm for the diverse version with minimal overhead. A new family of Venn diversity measures is also proposed.
 tags:
   - "AAAI 2026"
   - "Parameterized complexity"
@@ -12,7 +12,7 @@ tags:
   - "MSO1 logic"
   - "Venn diversity measure"
 date: 2026-05-08
-content_hash: f35d055d7db37e03
+content_hash: 0093449bda85956b
 ---
 
 # Finding Diverse Solutions Parameterized by Cliquewidth
@@ -153,10 +153,10 @@ The results are mutually incomparable with respect to logical expressiveness and
 ## Related Papers
 
 - [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
-- [\[ICML 2026\] How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks](../../ICML2026/others/how_the_optimizer_shapes_learned_solutions_in_equivariant_neural_networks.md)
 - [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](../../NeurIPS2025/others/improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
-- [\[ICLR 2026\] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](../../ICLR2026/others/distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)
-- [\[CVPR 2026\] What Is Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution](../../CVPR2026/others/what_is_wrong_with_synthetic_data_for_scene_text_recognition_a_strong_synthetic_.md)
+- [\[CVPR 2026\] Bias In, Bias Out? Finding Unbiased Subnetworks in Vanilla Models](../../CVPR2026/others/bias_in_bias_out_finding_unbiased_subnetworks_in_vanilla_models.md)
+- [\[ICML 2026\] How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks](../../ICML2026/others/how_the_optimizer_shapes_learned_solutions_in_equivariant_neural_networks.md)
+- [\[ICLR 2026\] IC-Custom: Diverse Image Customization via In-Context Learning](../../ICLR2026/others/ic-custom_diverse_image_customization_via_in-context_learning.md)
 
 </div>
 

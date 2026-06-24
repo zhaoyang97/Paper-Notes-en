@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PluriHarms: Benchmarking the Full Spectrum of Human Judgments on AI Harm
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] PluriHarms employs an automated pipeline of "oversampled generation → interpretable feature extraction → genetic algorithm selection" to create 150 prompts spanning the spectrum from "completely benign to clearly harmful," specifically focusing on borderline controversies. By collecting 15,000 ratings from 100 annotato
+  [ICLR 2026][AI Safety][Pluralistic Safety] PluriHarms employs an automated pipeline of "oversampled generation → interpretable feature extraction → genetic algorithm selection" to create 150 prompts spanning the spectrum from "completely benign to clearly harmful," specifically focusing on borderline controversies. By collecting 15,000 ratings from 100 annotators along with demographic and psychological traits, the study treats "annotator disagreement" as a signal rather than…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Pluralistic Safety"
+  - "Harm Judgment"
+  - "Annotator Disagreement"
+  - "Personalized Alignment"
+  - "Safety Benchmark"
 date: 2026-05-08
-content_hash: e33f72ea33d4f1b5
+content_hash: 253f2bf44e806066
 ---
+
 # PluriHarms: Benchmarking the Full Spectrum of Human Judgments on AI Harm
 
 **Conference**: ICLR 2026  
@@ -128,15 +134,15 @@ Key Insight: Personalized k-shot reduces MAE to ~0.195–0.20, significantly bet
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Benchmarking Bias Mitigation Toward Fairness Without Harm from Vision to LVLMs](benchmarking_bias_mitigation_toward_fairness_without_harm_from_vision_to_lvlms.md)
 - [\[ICLR 2026\] Fair Decision Utility in Human-AI Collaboration: Interpretable Confidence Adjustment for Humans with Cognitive Disparities](fair_decision_utility_in_human-ai_collaboration_interpretable_confidence_adjustm.md)
-- [\[CVPR 2026\] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness](../../CVPR2026/ai_safety/detecting_compressed_ai-generated_images_via_phase_spectrum_robustness.md)
 - [\[ICLR 2026\] Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction](generative_adversarial_post-training_mitigates_reward_hacking_in_live_human-ai_m.md)
+- [\[CVPR 2026\] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness](../../CVPR2026/ai_safety/detecting_compressed_ai-generated_images_via_phase_spectrum_robustness.md)
 - [\[ICLR 2026\] Certifying the Full YOLO Pipeline: A Probabilistic Verification Approach](certifying_the_full_yolo_pipeline_a_probabilistic_verification_approach.md)
-- [\[ICLR 2026\] Formalising Human-in-the-Loop: Computational Reductions, Failure Modes, and Legal–Moral Responsibility](formalising_human-in-the-loop_computational_reductions_failure_modes_and_legal-m.md)
 
 </div>
 

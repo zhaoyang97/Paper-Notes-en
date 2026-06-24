@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] Addressing the real-world issue of imperfect sensor synchronization, AsyncBEV proposes a lightweight, plug-and-play module. By defining a new task, $\Delta$-BEVFlow, it predicts dense 2D flow fields directly from asynchronous multimodal BEV features to warp and align delayed features to the reference timestamp. Under e
+  [ICLR 2026][Autonomous Driving][BEV Detection] Addressing the real-world issue of imperfect sensor synchronization, AsyncBEV proposes a lightweight, plug-and-play module. By defining a new task, $\Delta$-BEVFlow, it predicts dense 2D flow fields directly from asynchronous multimodal BEV features to warp and align delayed features to the reference timestamp. Under extreme 0.5s asynchrony, it improves the dynamic object NDS of CMT by 16.6% compared to the EMC baseline.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "BEV Detection"
+  - "Sensor Asynchrony"
+  - "Cross-modal Alignment"
+  - "Scene Flow"
+  - "LiDAR-Camera Fusion"
+  - "Feature Warping"
 date: 2026-05-08
-content_hash: d9175d91b984b18f
+content_hash: 1fcfcfc0e0f2ad21
 ---
+
 # AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection
 
 **Conference**: ICLR 2026  
@@ -128,11 +135,11 @@ Dataset: nuScenes (750/150/150 scenes). Modality: LiDAR-Camera fusion. Metrics: 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Map as a Prompt: Learning Multi-Modal Spatial-Signal Foundation Models for Cross-scenario Wireless Localization](map_as_a_prompt_learning_multi-modal_spatial-signal_foundation_models_for_cross-.md)
-- [\[ICLR 2026\] Beyond Visual Reconstruction Quality: Object Perception-aware 3D Gaussian Splatting for Autonomous Driving](beyond_visual_reconstruction_quality_object_perception-aware_3d_gaussian_splatti.md)
-- [\[ICLR 2026\] Steerable Adversarial Scenario Generation through Test-Time Preference Alignment (SAGE)](steerable_adversarial_scenario_generation_through_test-time_preference_alignment.md)
-- [\[ICLR 2026\] Micro-Macro Coupled Koopman Modeling on Graph for Traffic Flow Prediction](micro-macro_coupled_koopman_modeling_on_graph_for_traffic_flow_prediction.md)
-- [\[ICLR 2026\] NeMo-map: Neural Implicit Flow Fields for Spatio-Temporal Motion Mapping](nemo-map_neural_implicit_flow_fields_for_spatio-temporal_motion_mapping.md)
+- [\[CVPR 2026\] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection](../../CVPR2026/autonomous_driving/look_before_you_fuse_2d-guided_cross-modal_alignment_for_robust_3d_detection.md)
+- [\[ECCV 2024\] GraphBEV: Towards Robust BEV Feature Alignment for Multi-Modal 3D Object Detection](../../ECCV2024/autonomous_driving/graphbev_towards_robust_bev_feature_alignment_for_multi-modal_3d_object_detectio.md)
+- [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](../../CVPR2026/autonomous_driving/ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
+- [\[ICLR 2026\] PTN: Proposal-centric Transformer Network for 3D Object Detection](ptnet_a_proposal-centric_transformer_net-_work_for_3d_object_detection.md)
+- [\[CVPR 2026\] LiDAR-to-4DRadar Diffusion Bridge via Cross-Modal Alignment and Translation in Latent Space](../../CVPR2026/autonomous_driving/lidar-to-4dradar_diffusion_bridge_via_cross-modal_alignment_and_translation_in_l.md)
 
 </div>
 

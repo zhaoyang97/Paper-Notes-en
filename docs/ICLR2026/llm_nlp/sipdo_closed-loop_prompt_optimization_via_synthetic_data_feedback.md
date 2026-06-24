@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SIPDO: Closed-Loop Prompt Optimization via Synthetic Data Feedback
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] SIPDO transforms "data generation" into a real-time feedback signal for prompt optimization: a data generator continuously produces synthetic samples with increasing difficulty that target current prompt weaknesses, while an automatic prompt optimizer diagnoses errors and rewrites prompts per round. This allows prompts
+  [ICLR 2026][LLM (Other)][Prompt Optimization] SIPDO transforms "data generation" into a real-time feedback signal for prompt optimization: a data generator continuously produces synthetic samples with increasing difficulty that target current prompt weaknesses, while an automatic prompt optimizer diagnoses errors and rewrites prompts per round. This allows prompts to continuously improve and outperform mainstream prompt tuning methods on multiple reasoning benchmarks without…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Prompt Optimization"
+  - "Synthetic Data"
+  - "Closed-loop Feedback"
+  - "Curriculum Learning"
+  - "Difficulty Gradient"
 date: 2026-05-08
-content_hash: af444ef2f66f61b3
+content_hash: ccb995f9b8413816
 ---
+
 # SIPDO: Closed-Loop Prompt Optimization via Synthetic Data Feedback
 
 **Conference**: ICLR 2026  
@@ -140,10 +146,10 @@ SIPDO achieved the highest scores in all MMLU categories and most BIG-Bench task
 ## Related Papers
 
 - [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
+- [\[NeurIPS 2025\] Valid Inference with Imperfect Synthetic Data](../../NeurIPS2025/llm_nlp/valid_inference_with_imperfect_synthetic_data.md)
 - [\[ACL 2025\] Evaluating Language Models as Synthetic Data Generators](../../ACL2025/llm_nlp/evaluating_lms_synthetic_data_gen.md)
 - [\[ACL 2025\] Theorem Prover as a Judge for Synthetic Data Generation](../../ACL2025/llm_nlp/theorem_prover_as_a_judge_for_synthetic_data_generation.md)
 - [\[ACL 2026\] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](../../ACL2026/llm_nlp/synthetic_eggs_in_many_baskets_the_impact_of_synthetic_data_diversity_on_llm_fin.md)
-- [\[ICLR 2026\] Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits](efficient_multi-objective_prompt_optimization_via_pure-exploration_bandits.md)
 
 </div>
 

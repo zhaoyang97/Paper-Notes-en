@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning What to Trust: Bayesian Prior-Guided Optimization for Visual Generation
 description: >-
-  [CVPR 2026][Image Generation][GRPO] BPGO introduces a "semantic prior anchor" to the GRPO post-training for visual generation. It utilizes the deviation between observed rewards and the prior as an uncertainty signal to perform Bayesian trust allocation across groups (amplifying reliable groups, suppressing ambiguous ones) and prior-anchored reward renor
+  [CVPR 2026][Image Generation][GRPO] BPGO introduces a "semantic prior anchor" to the GRPO post-training for visual generation. It utilizes the deviation between observed rewards and the prior as an uncertainty signal to perform Bayesian trust allocation across groups (amplifying reliable groups, suppressing ambiguous ones) and prior-anchored reward renormalization within groups (expanding confident deviations, compressing ambiguous scores). It achieves faster convergence and…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "Reward Uncertainty"
+  - "Bayesian Prior"
+  - "Visual Generation"
+  - "Post-training Alignment"
 date: 2026-05-08
-content_hash: cb71d98673e9c411
+content_hash: 9dda723c5cd097a0
 ---
+
 # Learning What to Trust: Bayesian Prior-Guided Optimization for Visual Generation
 
 **Conference**: CVPR 2026  
@@ -158,8 +163,8 @@ On T2V, VA-TA increased from 0.8984 to 1.1193 (+24.6%). On T2I, PickScore (0.224
 - [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
 - [\[CVPR 2026\] LoFA: Learning to Predict Personalized Prior for Fast Adaptation of Visual Generative Models](lofa_learning_to_predict_personalized_prior_for_fast_adaptation_of_visual_genera.md)
 - [\[ICML 2026\] Bayesian Tensor Decomposition with Diffusion Model Prior](../../ICML2026/image_generation/bayesian_tensor_decomposition_with_diffusion_model_prior.md)
+- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
 - [\[CVPR 2026\] ThinkGen: Generalized Thinking for Visual Generation](thinkgen_generalized_thinking_for_visual_generation.md)
-- [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
 
 </div>
 

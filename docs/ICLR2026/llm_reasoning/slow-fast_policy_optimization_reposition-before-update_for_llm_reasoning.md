@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] Ours proposes SFPO (Slow-Fast Policy Optimization), which decomposes each training step into a three-phase structure: "Fast Trajectory—Reposition—Slow Correction." Without modifying the objective function or rollout process, it enhances the stability and sample efficiency of GRPO in a plug-and-play manner, achieving an
+  [ICLR 2026][Reasoning][Reinforcement Learning] Ours proposes SFPO (Slow-Fast Policy Optimization), which decomposes each training step into a three-phase structure: "Fast Trajectory—Reposition—Slow Correction." Without modifying the objective function or rollout process, it enhances the stability and sample efficiency of GRPO in a plug-and-play manner, achieving an average improvement of up to 2.80 points on mathematical reasoning benchmarks and reducing rollouts by up to 4.9…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Policy Optimization"
+  - "Mathematical Reasoning"
+  - "Sample Efficiency"
 date: 2026-05-08
-content_hash: 888af4a43fcad072
+content_hash: 9a153d79978b6bd2
 ---
+
 # Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -138,9 +142,9 @@ All modifications occur at the parameter update level, making it a plug-and-play
 
 - [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ICLR 2026\] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)
+- [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](../../ACL2026/llm_reasoning/think_outside_the_policy_in-context_steered_policy_optimization.md)
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
-- [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 
 </div>
 

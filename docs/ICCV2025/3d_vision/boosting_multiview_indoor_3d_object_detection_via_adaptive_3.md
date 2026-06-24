@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Boosting Multi-View Indoor 3D Object Detection via Adaptive 3D Volume Construction
 description: >-
-  [ICCV 2025][3D Vision][multi-view 3D object detection] SGCDet achieves state-of-the-art performance in multi-view indoor 3D object detection without ground-truth geometric supervision…
+  [ICCV 2025][3D Vision][multi-view 3D object detection] SGCDet achieves state-of-the-art performance in multi-view indoor 3D object detection without ground-truth geometric supervision, through a geometry- and context-aware aggregation module (3D deformable attention + multi-view attention fusion) and an occupancy-probability-based sparse voxel construction strategy, while substantially reducing computational overhead.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "deformable attention"
   - "occupancy prediction"
 date: 2026-05-08
-content_hash: 0942c3b80b1af135
+content_hash: 168efa1e17b6a2b9
 ---
 
 # Boosting Multi-View Indoor 3D Object Detection via Adaptive 3D Volume Construction
@@ -151,10 +151,10 @@ SGCDet comprehensively outperforms all methods that do not use GT geometry, and 
 ## Related Papers
 
 - [\[CVPR 2026\] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection](../../CVPR2026/3d_vision/vggt-det_mining_vggt_internal_priors_for_sensor-geometry-free_multi-view_indoor_.md)
+- [\[CVPR 2025\] MOVIS: Enhancing Multi-Object Novel View Synthesis for Indoor Scenes](../../CVPR2025/3d_vision/movis_enhancing_multi-object_novel_view_synthesis_for_indoor_scenes.md)
 - [\[ICCV 2025\] Multi-View 3D Point Tracking](multi-view_3d_point_tracking.md)
 - [\[ICCV 2025\] Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling](diorama_unleashing_zeroshot_singleview_3d_indoor_scene_model.md)
-- [\[ICCV 2025\] Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning](accelerate_3d_object_detection_models_via_zero-shot_attention_key_pruning.md)
-- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](../../CVPR2026/3d_vision/few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
+- [\[CVPR 2025\] SP3D: Boosting Sparsely-Supervised 3D Object Detection via Accurate Cross-Modal Semantic Prompts](../../CVPR2025/3d_vision/sp3d_boosting_sparsely-supervised_3d_object_detection_via_accurate_cross-modal_s.md)
 
 </div>
 

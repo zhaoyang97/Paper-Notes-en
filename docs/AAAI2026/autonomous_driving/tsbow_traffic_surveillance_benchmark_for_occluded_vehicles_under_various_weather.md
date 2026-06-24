@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions
 description: >-
-  [AAAI2026][Autonomous Driving][Object Detection] This paper presents TSBOW — a large-scale CCTV-based traffic surveillance dataset comprising 198 videos, over 32 hours of real-world traffic data, and 3.2 million frames…
+  [AAAI2026][Autonomous Driving][Object Detection] This paper presents TSBOW — a large-scale CCTV-based traffic surveillance dataset comprising 198 videos, over 32 hours of real-world traffic data, and 3.2 million frames, covering all four seasons (clear/haze/rain/snow including extreme disaster scenarios), spanning 8 categories of traffic participants, with a focus on addressing the challenge of occluded vehicle detection under adverse weather conditions.
 tags:
   - "AAAI2026"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "Adverse Weather"
   - "CCTV"
 date: 2026-05-08
-content_hash: 8d0379530749605b
+content_hash: f933577f951aaf21
 ---
 
 # TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions
@@ -143,11 +143,11 @@ This dataset provides a valuable validation platform for robust object detection
 
 ## Related Papers
 
+- [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](../../CVPR2026/autonomous_driving/hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 - [\[CVPR 2026\] HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation](../../CVPR2026/autonomous_driving/hg-lane_high-fidelity_generation_of_lane_scenes_under_adverse_weather_and_lighti.md)
 - [\[AAAI 2026\] Walking Further: Semantic-aware Multimodal Gait Recognition Under Long-Range Conditions](walking_further_semantic-aware_multimodal_gait_recognition_under_long-range_cond.md)
 - [\[ICCV 2025\] TrafficLoc: Localizing Traffic Surveillance Cameras in 3D Scenes](../../ICCV2025/autonomous_driving/trafficloc_localizing_traffic_surveillance_cameras_in_3d_scenes.md)
 - [\[AAAI 2026\] When Person Re-Identification Meets Event Camera: A Benchmark Dataset and An Attribute-guided Re-Identification Framework](when_person_re-identification_meets_event_camera_a_benchmark_dataset_and_an_attr.md)
-- [\[CVPR 2026\] Perception Characteristics Distance: Measuring Stability and Robustness of Perception System in Dynamic Conditions under a Certain Decision Rule](../../CVPR2026/autonomous_driving/perception_characteristics_distance_measuring_stability_and_robustness_of_percep.md)
 
 </div>
 

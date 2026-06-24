@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FixTalk: Taming Identity Leakage for High-Quality Talking Head Generation in Extreme Cases
 description: >-
-  [ICCV 2025][talking head generation] FixTalk is proposed as a framework that addresses identity leakage in GAN-based talking head generation through two lightweight plug-and-play modules — the Enhanced Motion Indicator (…
+  [ICCV 2025][talking head generation] FixTalk is proposed as a framework that addresses identity leakage in GAN-based talking head generation through two lightweight plug-and-play modules — the Enhanced Motion Indicator (EMI) and the Enhanced Detail Indicator (EDI). EMI eliminates identity information from motion features to suppress identity leakage, while EDI repurposes the leaked identity information to compensate for missing details under extreme poses…
 tags:
   - "ICCV 2025"
   - "talking head generation"
@@ -11,7 +11,7 @@ tags:
   - "GAN"
   - "motion decoupling"
 date: 2026-05-08
-content_hash: 60f703001510d0be
+content_hash: 6770405b9bd3adcf
 ---
 
 # FixTalk: Taming Identity Leakage for High-Quality Talking Head Generation in Extreme Cases
@@ -152,10 +152,10 @@ Training data: VFHQ (16K+ high-quality speech clips) and MEAD (60 subjects × 8 
 ## Related Papers
 
 - [\[ICLR 2026\] Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces](../../ICLR2026/others/discount_model_search_for_quality_diversity_optimization_in_high-dimensional_mea.md)
+- [\[ECCV 2024\] HiEI: A Universal Framework for Generating High-quality Emerging Images from Natural Images](../../ECCV2024/others/hiei_a_universal_framework_for_generating_high-quality_emerging_images_from_natu.md)
+- [\[CVPR 2025\] Zero-Shot Head Swapping in Real-World Scenarios](../../CVPR2025/others/zero-shot_head_swapping_in_real-world_scenarios.md)
+- [\[ICLR 2026\] Identity-Free Deferral For Unseen Experts](../../ICLR2026/others/identity-free_deferral_for_unseen_experts.md)
 - [\[ICCV 2025\] Stroke2Sketch: Harnessing Stroke Attributes for Training-Free Sketch Generation](stroke2sketch_harnessing_stroke_attributes_for_training-free_sketch_generation.md)
-- [\[ICLR 2026\] Soft Quality-Diversity Optimization](../../ICLR2026/others/soft_quality-diversity_optimization.md)
-- [\[AAAI 2026\] Extreme Value Monte Carlo Tree Search for Classical Planning](../../AAAI2026/others/extreme_value_monte_carlo_tree_search_for_classical_planning.md)
-- [\[NeurIPS 2025\] MetaFind: Scene-Aware 3D Asset Retrieval for Coherent Metaverse Scene Generation](../../NeurIPS2025/others/metafind_scene-aware_3d_asset_retrieval_for_coherent_metaverse_scene_generation.md)
 
 </div>
 

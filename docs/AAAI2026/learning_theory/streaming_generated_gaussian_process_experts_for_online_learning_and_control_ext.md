@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version
 description: >-
-  [AAAI 2026][Machine Learning / Online Learning][Gaussian Process] This paper proposes SkyGP (Streaming Kernel-induced Progressively Generated Expert GP)…
+  [AAAI 2026][Machine Learning][Gaussian Process] This paper proposes SkyGP (Streaming Kernel-induced Progressively Generated Expert GP), which handles streaming data via **kernel-distance-driven progressive expert generation** and **time-aware configurable aggregation**, inheriting the learning guarantees of exact GP while maintaining bounded computational complexity. SkyGP comprehensively outperforms state-of-the-art methods on both benchmark regression tasks and real-time co…
 tags:
   - "AAAI 2026"
-  - "Machine Learning / Online Learning"
-  - "Gaussian Process"
+  - "Machine Learning"
   - "Online Learning"
+  - "Gaussian Process"
   - "Streaming Data"
   - "Mixture of Experts"
   - "Robot Control"
 date: 2026-05-08
-content_hash: 5852ef7b2f84c3a4
+content_hash: 3f9e52b44378cce3
 ---
 
 # Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version
@@ -129,11 +129,11 @@ Results on online regression benchmarks (RMSE↓) and real-time control experime
 
 ## Related Papers
 
+- [\[ICML 2026\] Online Learning with Recency: Algorithms for Sliding-window Streaming Multi-armed Bandits](../../ICML2026/learning_theory/online_learning_with_recency_algorithms_for_sliding-window_streaming_multi-armed.md)
+- [\[ICLR 2026\] Online Decision-Focused Learning](../../ICLR2026/learning_theory/online_decision-focused_learning.md)
+- [\[ICLR 2026\] Better Bounds for the Distributed Experts Problem](../../ICLR2026/learning_theory/better_bounds_for_the_distributed_experts_problem.md)
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
-- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/learning_theory/parsimonious_learning-augmented_online_metric_matching.md)
-- [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](a_switching_framework_for_online_interval_scheduling_with_pr.md)
-- [\[NeurIPS 2025\] Computable Universal Online Learning](../../NeurIPS2025/learning_theory/computable_universal_online_learning.md)
-- [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](../../NeurIPS2025/learning_theory/conformal_online_learning_of_deep_koopman_linear_embeddings.md)
+- [\[ICLR 2026\] Online Learning and Equilibrium Computation with Ranking Feedback](../../ICLR2026/learning_theory/online_learning_and_equilibrium_computation_with_ranking_feedback.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OuroMamba: A Data-Free Quantization Framework for Vision Mamba
 description: >-
-  [ICCV 2025][Model Compression][Data-Free Quantization] The first data-free post-training quantization (PTQ) framework for Vision Mamba Models (VMMs)…
+  [ICCV 2025][Model Compression][Data-Free Quantization] The first data-free post-training quantization (PTQ) framework for Vision Mamba Models (VMMs), which generates high-quality synthetic data via enhanced implicit attention and employs a mixed-precision quantization scheme with dynamic outlier detection. Under W4A4 settings, it significantly outperforms existing data-driven PTQ methods.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Mixed-Precision"
   - "Post-Training Quantization"
 date: 2026-05-08
-content_hash: 7c669534eaefc284
+content_hash: c58d38c6be4b1db7
 ---
 
 # OuroMamba: A Data-Free Quantization Framework for Vision Mamba
@@ -133,11 +133,11 @@ OuroMamba consists of two stages: OuroMamba-Gen (synthetic data generation) and 
 
 ## Related Papers
 
+- [\[ICLR 2026\] DVD-Quant: Data-free Video Diffusion Transformers Quantization](../../ICLR2026/model_compression/dvd-quant_data-free_video_diffusion_transformers_quantization.md)
+- [\[CVPR 2025\] EfficientViM: Efficient Vision Mamba with Hidden State Mixer based State Space Duality](../../CVPR2025/model_compression/efficientvim_efficient_vision_mamba_with_hidden_state_mixer_based_state_space_du.md)
 - [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](../../ICML2026/model_compression/selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
 - [\[ICCV 2025\] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective](mixa-q_revisiting_activation_sparsity_for_vision_transformers_from_a_mixed-preci.md)
-- [\[NeurIPS 2025\] Weight Weaving: Parameter Pooling for Data-Free Model Merging](../../NeurIPS2025/model_compression/weight_weaving_parameter_pooling_for_data-free_model_merging.md)
-- [\[ICCV 2025\] EA-ViT: Efficient Adaptation for Elastic Vision Transformer](ea-vit_efficient_adaptation_for_elastic_vision_transformer.md)
-- [\[ICCV 2025\] FREE-Merging: Fourier Transform for Efficient Model Merging](free-merging_fourier_transform_for_efficient_model_merging.md)
+- [\[ICML 2025\] GPTAQ: Efficient Finetuning-Free Quantization for Asymmetric Calibration](../../ICML2025/model_compression/gptaq_efficient_finetuning-free_quantization_for_asymmetric_calibration.md)
 
 </div>
 

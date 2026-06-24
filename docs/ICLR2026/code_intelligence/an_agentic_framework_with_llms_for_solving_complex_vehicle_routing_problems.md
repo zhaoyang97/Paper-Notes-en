@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Agentic Framework with LLMs for Solving Complex Vehicle Routing Problems
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] AFL decomposes "using LLMs to solve complex Vehicle Routing Problems (VRP)" into three subtasks: problem description, code generation, and solution derivation. It utilizes four specialized agents (Generation, Judgement, Revision, and Error Analysis) to oversee each other, automatically producing a self-contained Python
+  [ICLR 2026][Code Intelligence][Vehicle Routing Problem] AFL decomposes "using LLMs to solve complex Vehicle Routing Problems (VRP)" into three subtasks: problem description, code generation, and solution derivation. It utilizes four specialized agents (Generation, Judgement, Revision, and Error Analysis) to oversee each other, automatically producing a self-contained Python solver from raw VRPLIB instances. Across 60 VRP variants, AFL reduces the runtime error rate to 0%…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Vehicle Routing Problem"
+  - "LLM Multi-Agent"
+  - "Code Generation"
+  - "Self-contained Solver"
+  - "Trustworthy Code"
 date: 2026-05-08
-content_hash: 79964f17d9587289
+content_hash: 0492bdcdf08888c1
 ---
+
 # An Agentic Framework with LLMs for Solving Complex Vehicle Routing Problems
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,20 @@ Removing Judgement (JA) and Revision (RA) agents to test necessity:
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] Rethinking Repetition Problems of LLMs in Code Generation](../../ACL2025/code_intelligence/rethinking_repetition_problems_of_llms_in_code_generation.md)
+- [\[NeurIPS 2025\] Learning to Solve Complex Problems via Dataset Decomposition](../../NeurIPS2025/code_intelligence/learning_to_solve_complex_problems_via_dataset_decomposition.md)
+- [\[ICLR 2026\] Code Aesthetics with Agentic Reward Feedback](code_aesthetics_with_agentic_reward_feedback.md)
+- [\[ACL 2026\] Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4](../../ACL2026/code_intelligence/discover_and_prove_an_open-source_agentic_framework_for_hard_mode_automated_theo.md)
+- [\[ICLR 2026\] FHE-Coder: Benchmarking Secure Agentic Code Generation for Fully Homomorphic Encryption](fhe-coder_benchmarking_secure_agentic_code_generation_for_fully_homomorphic_encr.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] Rethinking Repetition Problems of LLMs in Code Generation](../../ACL2025/code_intelligence/rethinking_repetition_problems_of_llms_in_code_generation.md)

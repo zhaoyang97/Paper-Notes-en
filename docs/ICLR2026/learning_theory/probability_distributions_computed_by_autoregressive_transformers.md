@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probability Distributions Computed by Autoregressive Transformers
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper extends research on Transformer expressivity from the traditional "classifier" setting (accept/reject strings) to the "autoregressive probabilistic language model" setting. It demonstrates that the shifts to "autoregression" and "real-valued weights (probabilities)" alter or even break existing equivalence r
+  [ICLR 2026][Learning Theory][Autoregressive Language Models] This paper extends research on Transformer expressivity from the traditional "classifier" setting (accept/reject strings) to the "autoregressive probabilistic language model" setting. It demonstrates that the shifts to "autoregression" and "real-valued weights (probabilities)" alter or even break existing equivalence results—sometimes making Transformers stronger, and sometimes making classifiers and autoregressors…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Expressivity"
+  - "Autoregressive Language Models"
+  - "Weighted Automata"
+  - "Linear Temporal Logic"
+  - "Formal Languages"
 date: 2026-05-08
-content_hash: 2c931a4246e3288a
+content_hash: a694e6126caf80f9
 ---
+
 # Probability Distributions Computed by Autoregressive Transformers
 
 **Conference**: ICLR 2026  
@@ -114,10 +120,20 @@ Using $\Phi=(\mathrm{BOS},a,b)$ as a state encoder, states track "start of strin
 - Value: ⭐⭐⭐⭐⭐ Corrects a common misconception in the field.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)
+- [\[ICLR 2026\] On the Wasserstein Geodesic Principal Component Analysis of probability measures](on_the_wasserstein_geodesic_principal_component_analysis_of_probability_measures.md)
+- [\[ICLR 2026\] Softmax Transformers are Turing-Complete](softmax_transformers_are_turing-complete.md)
+- [\[ICLR 2026\] Neyman-Pearson Classification under Both Null and Alternative Distributions Shift](neyman-pearson_classification_under_both_null_and_alternative_distributions_shif.md)
+- [\[ICLR 2026\] Efficient Turing Machine Simulation with Transformers](efficient_turing_machine_simulation_with_transformers.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)

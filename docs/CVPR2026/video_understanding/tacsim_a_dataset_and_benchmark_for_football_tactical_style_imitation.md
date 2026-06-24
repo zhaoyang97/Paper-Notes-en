@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper proposes TacSIm, the first large-scale dataset and benchmark designed to reconstruct full-team trajectories from real Premier League broadcast footage and perform tactical style imitation in a virtual football environment. It quantifies tactical imitation fidelity using two metrics: spatial occupancy similar
+  [CVPR 2026][Video Understanding][Football Tactical Imitation] This paper proposes TacSIm, the first large-scale dataset and benchmark designed to reconstruct full-team trajectories from real Premier League broadcast footage and perform tactical style imitation in a virtual football environment. It quantifies tactical imitation fidelity using two metrics: spatial occupancy similarity and motion vector similarity.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Football Tactical Imitation"
+  - "Multi-Agent Learning"
+  - "Trajectory Reconstruction"
+  - "Tactical Evaluation"
+  - "Virtual Simulation"
 date: 2026-05-08
-content_hash: f3f32eb982269311
+content_hash: 48bdca8d5ea4bd81
 ---
+
 # TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation
 
 **Conference**: CVPR 2026  
@@ -156,7 +162,7 @@ Prediction results at 3.0s using a 150-cell (15×10) grid:
 - [\[CVPR 2026\] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion](savax_egotoexo_imitation_error_detection_via_scene.md)
 - [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
 - [\[CVPR 2026\] VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition](videonet_a_large-scale_dataset_for_domain-specific_action_recognition.md)
-- [\[CVPR 2026\] VISTA: Video Interaction Spatio-Temporal Analysis Benchmark](vista_video_interaction_spatio-temporal_analysis_benchmark.md)
+- [\[CVPR 2026\] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](omnivtg_a_large-scale_dataset_and_training_paradigm_for_open-world_video_tempora.md)
 
 </div>
 

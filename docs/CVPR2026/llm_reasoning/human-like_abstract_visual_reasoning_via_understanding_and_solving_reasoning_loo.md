@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Human-like Abstract Visual Reasoning via Understanding and Solving Reasoning Loop
 description: >-
-  [CVPR 2026][LLM Reasoning][ARC-AGI] This work decomposes the iterative human cognitive process of "understanding-solving-reunderstanding" into a cyclic interaction between an Understanding Module (UM) and a Solving Module (SM). Supplemented by representation isomorphism constraints and an adaptive halting mechanism, a small model with only 7M parameters
+  [CVPR 2026][Reasoning][ARC-AGI] This work decomposes the iterative human cognitive process of "understanding-solving-reunderstanding" into a cyclic interaction between an Understanding Module (UM) and a Solving Module (SM). Supplemented by representation isomorphism constraints and an adaptive halting mechanism, a small model with only 7M parameters achieves 47.2% accuracy on ARC-AGI-1, surpassing TRM and several general-purpose large language models.
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - ARC-AGI
+  - "CVPR 2026"
+  - "Reasoning"
+  - "ARC-AGI"
+  - "Abstract Reasoning"
+  - "Reasoning Loop"
+  - "Adaptive Halting"
+  - "Small Models"
 date: 2026-05-08
-content_hash: d1ada3dbf62f076b
+content_hash: 12762ba8f87a7a97
 ---
+
 # Human-like Abstract Visual Reasoning via Understanding and Solving Reasoning Loop
 
 **Conference**: CVPR 2026  
@@ -129,11 +134,11 @@ USRL achieves the highest accuracy of 47.2% with only 7M parameters, outperformi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Theory-Grounded Evaluation of Human-Like Fallacy Patterns in LLM Reasoning](../../ICLR2026/llm_reasoning/theory-grounded_evaluation_of_human-like_fallacy_patterns_in_llm_reasoning.md)
 - [\[CVPR 2026\] Hilbert-Geo: Solving Solid Geometric Problems by Neural-Symbolic Reasoning](hilbert-geo_solving_solid_geometric_problems_by_neural-symbolic_reasoning.md)
-- [\[CVPR 2026\] Step-CoT: Stepwise Visual Chain-of-Thought for Medical Visual Question Answering](step-cot_stepwise_visual_chain-of-thought_for_medical_visual_question_answering.md)
-- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
-- [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](../../NeurIPS2025/llm_reasoning/visual_thoughts_a_unified_perspective_of_understanding_multi.md)
 - [\[CVPR 2026\] Agile Deliberation: Concept Deliberation for Subjective Visual Classification](agile_deliberation_concept_deliberation_for_subjective_visual_classification.md)
+- [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](../../NeurIPS2025/llm_reasoning/visual_thoughts_a_unified_perspective_of_understanding_multi.md)
+- [\[CVPR 2026\] VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models](visref_visual_refocusing_test_time_scaling.md)
 
 </div>
 

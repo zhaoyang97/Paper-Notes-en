@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Static Vision: Scene Dynamic Field Unlocks Intuitive Physics Understanding in Multi-modal Large Language Models
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] This paper first reveals that current MLLMs fail to understand intuitive physics dynamics for continua (such as fluids) using two "low-level" diagnostic tasks: Next Frame Selection (NFS) and Temporal Coherence Verification (TCV). It then proposes Scene Dynamic Field (SDF)—mapping particle velocities calculated by a phy
+  [ICLR2026][Video Understanding][Intuitive Physics] This paper first reveals that current MLLMs fail to understand intuitive physics dynamics for continua (such as fluids) using two "low-level" diagnostic tasks: Next Frame Selection (NFS) and Temporal Coherence Verification (TCV). It then proposes Scene Dynamic Field (SDF)—mapping particle velocities calculated by a physics simulator into blue gradient maps as visual prompts. Combined with multi-task fine-tuning…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Intuitive Physics"
+  - "Multi-modal Large Language Models"
+  - "Physics Simulator"
+  - "Visual Prompt"
+  - "Multi-task Fine-tuning"
 date: 2026-05-08
-content_hash: be29f240cea6df70
+content_hash: ee48058ca4c3b47a
 ---
+
 # Beyond Static Vision: Scene Dynamic Field Unlocks Intuitive Physics Understanding in Multi-modal Large Language Models
 
 **Conference**: ICLR2026  

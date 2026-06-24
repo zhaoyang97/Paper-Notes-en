@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Breaking Safety Paradox with Feasible Dual Policy Iteration
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper identifies a counter-intuitive "Safety Paradox" in Safe RL: as a policy becomes safer, constraint-violating samples become sparser, causing the estimation of the feasibility function to deteriorate and ultimately undermining safety. The authors propose FDPI, which employs a dedicated "dual policy" to intenti
+  [ICLR2026][Reinforcement Learning][Safe RL] This paper identifies a counter-intuitive "Safety Paradox" in Safe RL: as a policy becomes safer, constraint-violating samples become sparser, causing the estimation of the feasibility function to deteriorate and ultimately undermining safety. The authors propose FDPI, which employs a dedicated "dual policy" to intentionally collect violation samples. Combined with importance sampling and KL constraints…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Safe RL"
+  - "Feasibility Function"
+  - "Safety Paradox"
+  - "Dual Policy"
+  - "Importance Sampling"
 date: 2026-05-08
-content_hash: c9dad12a002ef291
+content_hash: 01e9503367ae6055
 ---
+
 # Breaking Safety Paradox with Feasible Dual Policy Iteration
 
 **Conference**: ICLR2026  
@@ -132,7 +138,7 @@ The core ablation is SAC-FPI (without dual policy) vs. SAC-FDPI:
 - [\[ACL 2026\] Breaking the Impasse: Dual-Scale Evolutionary Policy Training for Social Language Agents](../../ACL2026/reinforcement_learning/breaking_the_impasse_dual-scale_evolutionary_policy_training_for_social_language.md)
 - [\[ICLR 2026\] DOPPLER: Dual-Policy Learning for Device Assignment in Asynchronous Dataflow Graphs](doppler_dual-policy_learning_for_device_assignment_in_asynchronous_dataflow_grap.md)
 - [\[ICLR 2026\] Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses](primal-dual_policy_optimization_for_linear_cmdps_with_adversarial_losses.md)
-- [\[ICLR 2026\] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?](breaking_barriers_do_reinforcement_post_training_gains_transfer_to_unseen_domain.md)
+- [\[ICML 2025\] Demystifying the Paradox of Importance Sampling with an Estimated History-Dependent Behavior Policy in Off-Policy Evaluation](../../ICML2025/reinforcement_learning/demystifying_the_paradox_of_importance_sampling_with_an_estimated_history-depend.md)
 - [\[ICLR 2026\] Frozen Policy Iteration: Computationally Efficient RL under Linear $Q^{\pi}$ Realizability for Deterministic Dynamics](frozen_policy_iteration_computationally_efficient_rl_under_linear_qpi_realizabil.md)
 
 </div>

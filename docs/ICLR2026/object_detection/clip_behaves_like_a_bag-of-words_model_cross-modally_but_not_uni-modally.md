@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CLIP Behaves like a Bag-of-Words Model Cross-modally but not Uni-modally
 description: >-
-  [ICLR 2026][Object Detection][CLIP] It is demonstrated through linear probing experiments that CLIP's Bag-of-Words (BoW) behavior originates from cross-modal alignment failure rather than a lack of binding information in the encoders. LABCLIP is proposed, which significantly restores attribute-object binding capabilities by training only a lightweight li
+  [ICLR 2026][Object Detection][CLIP] It is demonstrated through linear probing experiments that CLIP's Bag-of-Words (BoW) behavior originates from cross-modal alignment failure rather than a lack of binding information in the encoders. LABCLIP is proposed, which significantly restores attribute-object binding capabilities by training only a lightweight linear transformation.
 tags:
-  - ICLR 2026
-  - Object Detection
-  - CLIP
-  - compositionality
-  - bag-of-words
-  - attribute-object binding
-  - cross-modal alignment
+  - "ICLR 2026"
+  - "Object Detection"
+  - "CLIP"
+  - "compositionality"
+  - "bag-of-words"
+  - "attribute-object binding"
+  - "cross-modal alignment"
 date: 2026-05-08
-content_hash: 44bed921f2f46ab3
+content_hash: e327a225c3373fa5
 ---
+
 # CLIP Behaves like a Bag-of-Words Model Cross-modally but not Uni-modally
 
 **Conference**: ICLR 2026  
@@ -137,10 +138,10 @@ Cosine similarity of linear probe weights (Before vs. After alignment):
 ## Related Papers
 
 - [\[ICLR 2026\] Fantastic Tractor-Dogs and How Not to Find Them With Open-Vocabulary Detectors](fantastic_tractor-dogs_and_how_not_to_find_them_with_open-vocabulary_detectors.md)
+- [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](../../CVPR2026/object_detection/fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
 - [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
 - [\[CVPR 2025\] AA-CLIP: Enhancing Zero-Shot Anomaly Detection via Anomaly-Aware CLIP](../../CVPR2025/object_detection/aa-clip_enhancing_zero-shot_anomaly_detection_via_anomaly-aware_clip.md)
 - [\[CVPR 2025\] BACON: Improving Clarity of Image Captions via Bag-of-Concept Graphs](../../CVPR2025/object_detection/bacon_improving_clarity_of_image_captions_via_bag-of-concept_graphs.md)
-- [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](../../CVPR2026/object_detection/fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
 
 </div>
 

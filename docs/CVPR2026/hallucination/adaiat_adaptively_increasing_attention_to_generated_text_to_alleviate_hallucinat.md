@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AdaIAT: Adaptively Increasing Attention to Generated Text to Alleviate Hallucinations in LVLM
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] Addressing the issue where "amplifying image attention suppresses hallucinations but leads to repetitive and wordy output," this paper discovers that real object tokens possess higher attention to the **previously generated text** $T_p$ than hallucinated tokens. Consequently, the authors propose increasing attention sp
+  [CVPR 2026][Hallucination Detection][LVLM Hallucination] Addressing the issue where "amplifying image attention suppresses hallucinations but leads to repetitive and wordy output," this paper discovers that real object tokens possess higher attention to the **previously generated text** $T_p$ than hallucinated tokens. Consequently, the authors propose increasing attention specifically to $T_p$ (IAT). By further employing layer-wise thresholds to control "when to intervene" an…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "LVLM Hallucination"
+  - "Attention Intervention"
+  - "Adaptive Decoding"
+  - "Generated Text Attention"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 2bf7066353aa8652
+content_hash: 5471ee37d6806eaf
 ---
+
 # AdaIAT: Adaptively Increasing Attention to Generated Text to Alleviate Hallucinations in LVLM
 
 **Conference**: CVPR 2026  
@@ -125,6 +131,7 @@ Key comparison: PAI/HGAI tank D1 from 0.60 to 0.50 on LLaVA-1.5, while IAT/AdaIA
 - Value: ⭐⭐⭐⭐ Training-free and lightweight; highly practical for engineering.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -133,7 +140,7 @@ Key comparison: PAI/HGAI tank D1 from 0.60 to 0.50 on LLaVA-1.5, while IAT/AdaIA
 - [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
 - [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
 - [\[ICLR 2026\] SHIELD: Suppressing Hallucinations In LVLM Encoders via Bias and Vulnerability Defense](../../ICLR2026/hallucination/shield_suppressing_hallucinations_in_lvlm_encoders_via_bias_and_vulnerability_de.md)
-- [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
+- [\[CVPR 2026\] Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression](fighting_hallucinations_with_counterfactuals_diffusion-guided_perturbations_for_.md)
 
 </div>
 

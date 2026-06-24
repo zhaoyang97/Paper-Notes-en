@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PatchScene: Patch-based Voxel Diffusion Model for Large-Scale Scene Completion
 description: >-
-  [CVPR 2026][3D Vision][Autonomous Driving] PatchScene decomposes large-scale LiDAR scene completion into a set of overlapping small voxel patches, performs explicit voxel diffusion on each, and synthesizes them into consistent global point clouds using confidence-guided spatio-temporal fusion. By adopting an "inside-out, annular-flow" diffusion sequence that pr
+  [CVPR 2026][3D Vision][LiDAR Scene Completion] PatchScene decomposes large-scale LiDAR scene completion into a set of overlapping small voxel patches, performs explicit voxel diffusion on each, and synthesizes them into consistent global point clouds using confidence-guided spatio-temporal fusion. By adopting an "inside-out, annular-flow" diffusion sequence that propagates dense information from proximal to distal regions, it achieves SOTA results on SemanticKITTI and demonst…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "3D Vision"
+  - "LiDAR Scene Completion"
+  - "Voxel Diffusion"
+  - "Patch-based Generation"
+  - "Spatio-temporal Fusion"
+  - "Autonomous Driving"
 date: 2026-05-08
-content_hash: a9c16b25dca6aaf5
+content_hash: 1c30fd3442264de6
 ---
+
 # PatchScene: Patch-based Voxel Diffusion Model for Large-Scale Scene Completion
 
 **Conference**: CVPR 2026  
@@ -134,9 +139,9 @@ Temporal fusion nearly halved bidirectional RMSE, significantly improving inter-
 
 - [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[CVPR 2026\] SpatialVID: A Large-Scale Video Dataset with Spatial Annotations](spatialvid_a_large-scale_video_dataset_with_spatial_annotations.md)
-- [\[CVPR 2026\] iLRM: An Iterative Large 3D Reconstruction Model](ilrm_an_iterative_large_3d_reconstruction_model.md)
-- [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
+- [\[ICLR 2026\] Large Depth Completion Model from Sparse Observations](../../ICLR2026/3d_vision/large_depth_completion_model_from_sparse_observations.md)
+- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
+- [\[CVPR 2026\] Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection](hierarchical_point-patch_fusion_with_adaptive_patch_codebook_for_3d_shape_anomal.md)
 
 </div>
 

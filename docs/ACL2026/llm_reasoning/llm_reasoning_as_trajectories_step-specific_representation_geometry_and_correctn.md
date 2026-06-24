@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals
 description: >-
-  [ACL 2026][LLM Reasoning][chain-of-thought] This paper models LLM chain-of-thought reasoning as geometric trajectories in the representation space. It discovers that (a) each reasoning step occupies a linearly separable subspace that becomes clearer in deeper layers, and (b) correct and incorrect solutions overlap in early stages but diverge systematically later
+  [ACL 2026][Reasoning][chain-of-thought] This paper models LLM chain-of-thought reasoning as geometric trajectories in the representation space. It discovers that (a) each reasoning step occupies a linearly separable subspace that becomes clearer in deeper layers, and (b) correct and incorrect solutions overlap in early stages but diverge systematically later. This allows predicting the final correctness with an ROC-AUC of 0.87 before the answer is output…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - chain-of-thought
+  - "ACL 2026"
+  - "Reasoning"
+  - "chain-of-thought"
+  - "representation trajectory"
+  - "linear separability"
+  - "correctness prediction"
+  - "activation steering"
 date: 2026-05-08
-content_hash: ce7c3d60cf5d938d
+content_hash: d382ce4a019ced3b
 ---
+
 # LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals
 
 **Conference**: ACL 2026  
@@ -144,11 +149,11 @@ Cross-model transfer accuracy is consistently $>0.90$, suggesting that step-spec
 
 ## Related Papers
 
-- [\[ACL 2026\] On the Step Length Confounding in LLM Reasoning Data Selection](on_the_step_length_confounding_in_llm_reasoning_data_selection.md)
 - [\[ACL 2026\] Reasoning Fails Where Step Flow Breaks](reasoning_fails_where_step_flow_breaks.md)
 - [\[ACL 2026\] Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment](which_reasoning_trajectories_teach_students_to_reason_better_a_simple_metric_of_.md)
+- [\[ICLR 2026\] Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations](../../ICLR2026/llm_reasoning/rethinking_llm_reasoning_from_explicit_trajectories_to_latent_representations.md)
+- [\[ACL 2026\] On the Step Length Confounding in LLM Reasoning Data Selection](on_the_step_length_confounding_in_llm_reasoning_data_selection.md)
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](../../ICLR2026/llm_reasoning/the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)
-- [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus](../../ICLR2026/llm_reasoning/the_path_of_least_resistance_guiding_llm_reasoning_trajectories_with_prefix_cons.md)
 
 </div>
 

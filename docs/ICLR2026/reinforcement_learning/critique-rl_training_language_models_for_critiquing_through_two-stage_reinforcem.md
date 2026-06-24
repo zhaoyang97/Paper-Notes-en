@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Critique-RL: Training Language Models for Critiquing Through Two-Stage Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][critique model] Critique-RL employs an online RL scheme to train "critique models" without relying on annotations from stronger supervisors. It first stabilizes discriminability using direct rule-based rewards, then enhances helpfulness via indirect rewards based on refinement accuracy while maintaining discriminability through regula
+  [ICLR 2026][Reinforcement Learning][critique model] Critique-RL employs an online RL scheme to train "critique models" without relying on annotations from stronger supervisors. It first stabilizes discriminability using direct rule-based rewards, then enhances helpfulness via indirect rewards based on refinement accuracy while maintaining discriminability through regularization, enabling weak models to produce accurate and helpful feedback.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - critique model
-  - scalable oversight
-  - two-stage RL
-  - discriminability
-  - helpfulness
-  - actor-critic
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "critique model"
+  - "scalable oversight"
+  - "two-stage RL"
+  - "discriminability"
+  - "helpfulness"
+  - "actor-critic"
 date: 2026-05-08
-content_hash: 8924ea0977577a99
+content_hash: 1aa966383682288f
 ---
+
 # Critique-RL: Training Language Models for Critiquing Through Two-Stage Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -130,11 +131,11 @@ Discriminability gains are significant: for the 3B model on MATH, Acc@Dis rose f
 
 ## Related Papers
 
-- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[ICLR 2026\] Improving Human-AI Coordination through Online Adversarial Training and Generative Models](improving_human-ai_coordination_through_online_adversarial_training_and_generati.md)
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
-- [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
+- [\[ICLR 2026\] SSVPO: Toward Effective Step-level Credit Assignment for Language Model RL Training](ssvpo_effective_step-level_credit_assignment_for_rl_training_of_language_models.md)
 
 </div>
 

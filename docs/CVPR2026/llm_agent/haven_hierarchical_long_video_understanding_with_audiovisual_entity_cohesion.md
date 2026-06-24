@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search
 description: >-
-  [CVPR 2026][LLM Agent][Paper Note] HAVEN proposes a unified framework featuring audiovisual entity cohesion + hierarchical indexing + agentic search. By utilizing speaker identity as a cross-modal consistency signal, it constructs a four-level hierarchical database (Global-Scene-Clip-Entity), achieving SOTA with an overall accuracy of 84.1% on LVBench.
+  [CVPR 2026][LLM Agent][Long Video Understanding] HAVEN proposes a unified framework featuring audiovisual entity cohesion + hierarchical indexing + agentic search. By utilizing speaker identity as a cross-modal consistency signal, it constructs a four-level hierarchical database (Global-Scene-Clip-Entity), achieving SOTA with an overall accuracy of 84.1% on LVBench.
 tags:
-  - CVPR 2026
-  - LLM Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Long Video Understanding"
+  - "Hierarchical Indexing"
+  - "Entity Consistency"
+  - "Agentic Search"
+  - "Audiovisual Fusion"
 date: 2026-05-08
-content_hash: daa6ab7d3ab76a19
+content_hash: ab536d1238b387ab
 ---
+
 # HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search
 
 **Conference**: CVPR 2026  
@@ -133,10 +139,10 @@ The entire pipeline is **training-free**. Offline hierarchical database construc
 ## Related Papers
 
 - [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
-- [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
 - [\[NeurIPS 2025\] Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding](../../NeurIPS2025/llm_agent/deep_video_discovery_agentic_search_with_tool_use_for_longfo.md)
+- [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
 - [\[CVPR 2026\] Resolving Evidence Sparsity: Agentic Context Engineering for Long-Document Understanding](resolving_evidence_sparsity_agentic_context_engineering_for_long-document_unders.md)
-- [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
+- [\[CVPR 2026\] SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System](scieducator_scientific_video_understanding_and_educating_via_deming-cycle_multi-.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Spatial Intelligence with Multimodal Foundation Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] SenseNova-SI cultivates spatial intelligence capabilities in multimodal foundation models (such as Qwen3-VL, InternVL3, and Bagel) by systematically constructing a diverse spatial dataset of 8 million samples (SenseNova-SI-8M). It achieves unprecedented performance on multiple spatial benchmarks like VSI-Bench and MMSI
+  [CVPR 2026][Multimodal VLM][Spatial Intelligence] SenseNova-SI cultivates spatial intelligence capabilities in multimodal foundation models (such as Qwen3-VL, InternVL3, and Bagel) by systematically constructing a diverse spatial dataset of 8 million samples (SenseNova-SI-8M). It achieves unprecedented performance on multiple spatial benchmarks like VSI-Bench and MMSI while maintaining general multimodal understanding capabilities.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Spatial Intelligence"
+  - "Multimodal Foundation Models"
+  - "Data Scaling"
+  - "Spatial Reasoning"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: 9dd54e68514171f2
+content_hash: f66e41b9b9d6c3a6
 ---
+
 # Scaling Spatial Intelligence with Multimodal Foundation Models
 
 **Conference**: CVPR 2026  

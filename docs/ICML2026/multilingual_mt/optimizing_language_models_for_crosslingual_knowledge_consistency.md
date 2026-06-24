@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Optimizing Language Models for Crosslingual Knowledge Consistency
 description: >-
-  [ICML 2026][Multilingual & Translation][DCO] This paper addresses the issue of multilingual LLMs providing conflicting answers to the same question across different languages. It designs an **RL objective using the "log-likelihood of the answer in another language" as a reward**, proving that the optimal policy follows a product-of-experts form and guarantees cro
+  [ICML 2026][Multilingual & Machine Translation][Crosslingual consistency] This paper addresses the issue of multilingual LLMs providing conflicting answers to the same question across different languages. It designs an **RL objective using the "log-likelihood of the answer in another language" as a reward**, proving that the optimal policy follows a product-of-experts form and guarantees crosslingual preference consistency when $\gamma_1\gamma_2=\beta^2$. Based on this…
 tags:
-  - ICML 2026
-  - Multilingual & Translation
-  - DCO
-  - product of experts
-  - RankC
+  - "ICML 2026"
+  - "Multilingual & Machine Translation"
+  - "Crosslingual consistency"
+  - "DCO"
+  - "DPO variants"
+  - "product of experts"
+  - "RankC"
 date: 2026-05-08
-content_hash: 5b4744872a06c716
+content_hash: d4bc8ac158f6b86f
 ---
+
 # Optimizing Language Models for Crosslingual Knowledge Consistency
 
 **Conference**: ICML 2026  

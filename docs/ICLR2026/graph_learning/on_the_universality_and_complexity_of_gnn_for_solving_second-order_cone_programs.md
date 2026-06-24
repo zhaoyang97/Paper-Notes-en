@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On the Universality and Complexity of GNN for Solving Second-order Cone Programs
 description: >-
-  [ICLR 2026][Graph Learning][Weisfeiler-Lehman] Ours designs a graph representation that decomposes nonlinear cone constraints into four types of nodes and a supporting three-sublayer message-passing GNN for Second-Order Cone Programming (SOCP). It proves universal approximation capability for SOCP feasibility and optimal solutions, and provides the first Rademacher
+  [ICLR 2026][Graph Learning][Graph Neural Networks] Ours designs a graph representation that decomposes nonlinear cone constraints into four types of nodes and a supporting three-sublayer message-passing GNN for Second-Order Cone Programming (SOCP). It proves universal approximation capability for SOCP feasibility and optimal solutions, and provides the first Rademacher-based sample complexity bound for WL-type L2O-GNNs. Experiments achieve higher prediction accuracy with sign…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Weisfeiler-Lehman
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Second-order Cone Program"
+  - "Universal Approximation"
+  - "Sample Complexity"
+  - "Weisfeiler-Lehman"
 date: 2026-05-08
-content_hash: 3bf5c542cccc3ac3
+content_hash: 1782594a3d41cf08
 ---
+
 # On the Universality and Complexity of GNN for Solving Second-order Cone Programs
 
 **Conference**: ICLR 2026  
@@ -144,15 +149,13 @@ Complexity Comparison (Convex QCQP, rank $r_i$):
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
 - [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
+- [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
 - [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
-- [\[ICLR 2026\] AdS-GNN - a Conformally Equivariant Graph Neural Network](ads-gnn_-_a_conformally_equivariant_graph_neural_network.md)
-- [\[ICLR 2026\] Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion](glance_for_context_learning_when_to_leverage_llms_for_node-aware_gnn-llm_fusion.md)
+- [\[ICLR 2026\] GNN Explanations that do not Explain and How to find Them](gnn_explanations_that_do_not_explain_and_how_to_find_them.md)
+- [\[AAAI 2026\] Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving](../../AAAI2026/graph_learning/human_cognition_inspired_rag_with_knowledge_graph_for_complex_problem_solving.md)
 
 </div>
 

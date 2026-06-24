@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration
 description: >-
-  [NeurIPS 2025][Computational Biology][Single-cell multi-omics] This paper proposes scMRDR, a framework based on β-VAE that disentangles latent representations of single-cell multi-omics data into modality-shared and moda…
+  [NeurIPS 2025 Spotlight][Computational Biology][Single-cell multi-omics] This paper proposes scMRDR, a framework based on β-VAE that disentangles latent representations of single-cell multi-omics data into modality-shared and modality-specific components, achieving scalable integration of unpaired multi-omics data through isometric regularization, adversarial training, and masked reconstruction loss.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Computational Biology"
   - "Single-cell multi-omics"
   - "unpaired data integration"
@@ -12,7 +12,7 @@ tags:
   - "disentangled representation"
   - "adversarial training"
 date: 2026-05-08
-content_hash: 286ce8ddec575122
+content_hash: ab7bd0836cf36f47
 ---
 
 # scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration
@@ -115,11 +115,11 @@ Training alternates between updating the discriminator ($\mathcal{L}_{\text{disc
 
 ## Related Papers
 
+- [\[ICLR 2026\] SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention](../../ICLR2026/computational_biology/save_a_generalizable_framework_for_multi-condition_single-cell_generation_with_g.md)
+- [\[ICML 2025\] scSSL-Bench: Benchmarking Self-Supervised Learning for Single-Cell Data](../../ICML2025/computational_biology/scssl-bench_benchmarking_self-supervised_learning_for_single-cell_data.md)
+- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](../../ICML2026/computational_biology/scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
 - [\[NeurIPS 2025\] PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation](prescribe_predicting_single-cell_responses_with_bayesian_estimation.md)
 - [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
-- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](../../ICML2026/computational_biology/scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
-- [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](g-dpo_scalable_preference_optimization_for_protein_language_models.md)
-- [\[NeurIPS 2025\] Evaluating Multiple Models Using Labeled and Unlabeled Data](evaluating_multiple_models_using_labeled_and_unlabeled_data.md)
 
 </div>
 

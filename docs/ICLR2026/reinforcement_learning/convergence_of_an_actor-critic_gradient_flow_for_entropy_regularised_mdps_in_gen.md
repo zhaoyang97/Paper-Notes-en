@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces
 description: >-
-  [ICLR 2026][Reinforcement Learning][actor-critic] This paper establishes the **stability and global convergence** of a coupled actor-critic gradient flow—where the critic utilizes TD learning and the actor employs Policy Mirror Descent (PMD)—for infinite-horizon MDPs with continuous state/action spaces and entropy regularization. The core conclusion is that the system
+  [ICLR2026][Reinforcement Learning][actor-critic] This paper establishes the **stability and global convergence** of a coupled actor-critic gradient flow—where the critic utilizes TD learning and the actor employs Policy Mirror Descent (PMD)—for infinite-horizon MDPs with continuous state/action spaces and entropy regularization. The core conclusion is that the system avoids finite-time blow-up and converges to the optimal regularized value function at an exponential rate…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - actor-critic
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "actor-critic"
+  - "entropy-regularized MDP"
+  - "policy mirror descent"
+  - "Fisher–Rao gradient flow"
+  - "two-timescale"
+  - "convergence proof"
 date: 2026-05-08
-content_hash: 3da4b1b0117acbad
+content_hash: 676963cf7a83f544
 ---
+
 # Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces
 
 **Conference**: ICLR2026  
@@ -117,15 +123,16 @@ The paper is a **purely theoretical work without numerical experiments**. The co
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Simplicial Embeddings Improve Sample Efficiency in Actor-Critic Agents](simplicial_embeddings_improve_sample_efficiency_in_actorcritic_agents.md)
 - [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](../../NeurIPS2025/reinforcement_learning/global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
 - [\[ICLR 2026\] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning](neuralsymbolic_approaches_for_interpretable_actor-critic_reinforcement_learning.md)
 - [\[ICLR 2026\] Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns](chunking_the_critic_a_transformer-based_soft_actor-critic_with_n-step_returns.md)
-- [\[AAAI 2026\] Risk-Sensitive Exponential Actor Critic](../../AAAI2026/reinforcement_learning/risk-sensitive_exponential_actor_critic.md)
 
 </div>
 

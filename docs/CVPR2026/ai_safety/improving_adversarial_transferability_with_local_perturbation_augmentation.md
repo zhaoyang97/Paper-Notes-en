@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Improving Adversarial Transferability with Local Perturbation Augmentation
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper points out that iterative adversarial attacks tend to "overfit" perturbations to the local gradient features of the proxy model, making it difficult to transfer to other models. It proposes LPAA: using random masks to construct multiple augmented local subspaces in each iteration, aggregating subspace gradie
+  [CVPR 2026][AI Safety][Adversarial Transferability] This paper points out that iterative adversarial attacks tend to "overfit" perturbations to the local gradient features of the proxy model, making it difficult to transfer to other models. It proposes LPAA: using random masks to construct multiple augmented local subspaces in each iteration, aggregating subspace gradients to push updates in a more generalized direction, and incorporating a transfer-oriented perturbation init…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Transferability"
+  - "Local Perturbation Augmentation"
+  - "Subspace Sampling"
+  - "Perturbation Initialization"
+  - "Black-box Attack"
 date: 2026-05-08
-content_hash: 2ecca71157d723a2
+content_hash: 300596477a6248ac
 ---
+
 # Improving Adversarial Transferability with Local Perturbation Augmentation
 
 **Conference**: CVPR 2026  
@@ -146,8 +152,8 @@ Ablation of initialization strategies (RN-50 as proxy, average ASR on CNN/ViT/AT
 
 - [\[CVPR 2026\] Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting](generative_adversarial_perturbations_with_cross-paradigm_transferability_on_loca.md)
 - [\[CVPR 2026\] Taming the Long Tail: Rebalancing Adversarial Training via Adaptive Perturbation](taming_the_long_tail_rebalancing_adversarial_training_via_adaptive_perturbation.md)
-- [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
 - [\[NeurIPS 2025\] Boosting Adversarial Transferability with Spatial Adversarial Alignment](../../NeurIPS2025/ai_safety/boosting_adversarial_transferability_with_spatial_adversarial_alignment.md)
+- [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
 - [\[CVPR 2026\] Editprint: General Digital Image Forensics via Editing Fingerprint with Self-Augmentation Training](editprint_general_digital_image_forensics_via_editing_fingerprint_with_self-augm.md)
 
 </div>

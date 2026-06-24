@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HFedATM: Hierarchical Federated Domain Generalization via Optimal Transport and Regularized Mean Aggregation
 description: >-
-  [CVPR 2026][Optimization & Theory][RegMean] This paper formally defines "Hierarchical Federated Domain Generalization (HFedDG)" for the first time and derives a generalization error bound decomposed into three levels: client, station, and server. It proposes HFedATM—a data-free, plug-and-play method that modifies only the server aggregation step. It utilizes Fil
+  [CVPR 2026][Optimization][Federated Learning] This paper formally defines "Hierarchical Federated Domain Generalization (HFedDG)" for the first time and derives a generalization error bound decomposed into three levels: client, station, and server. It proposes HFedATM—a data-free, plug-and-play method that modifies only the server aggregation step. It utilizes Filter-wise Optimal Transport (FOT) to align convolutional filters across stations and Shrinkage-aware RegMean for cl…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - RegMean
+  - "CVPR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Domain Generalization"
+  - "Optimal Transport"
+  - "Hierarchical Aggregation"
+  - "RegMean"
 date: 2026-05-08
-content_hash: 30fb6d5914c3c547
+content_hash: accdf1981f63ddfd
 ---
+
 # HFedATM: Hierarchical Federated Domain Generalization via Optimal Transport and Regularized Mean Aggregation
 
 **Conference**: CVPR 2026  
@@ -153,11 +158,11 @@ Removing FOT or RegMean ($\lambda=1.0$, Accuracy %):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
-- [\[CVPR 2026\] FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization](fedadamom_adaptive_momentum_for_improved_generalization_in_federated_optimizatio.md)
-- [\[CVPR 2025\] Federated Learning with Domain Shift Eraser](../../CVPR2025/optimization/federated_learning_with_domain_shift_eraser.md)
-- [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](../../ICML2026/optimization/delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
-- [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](../../NeurIPS2025/optimization/optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
+- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](../../ICLR2026/optimization/a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
+- [\[ICML 2026\] Distribution Alignment for One-Shot Federated Learning via Optimal Transport](../../ICML2026/optimization/distribution_alignment_for_one-shot_federated_learning_via_optimal_transport.md)
+- [\[ICML 2026\] Rethinking the Flow-Based Gradual Domain Adaptation: A Semi-Dual Optimal Transport Perspective](../../ICML2026/optimization/rethinking_the_flow-based_gradual_domain_adaptation_a_semi-dual_optimal_transpor.md)
+- [\[ICLR 2026\] Exploring Mode Connectivity in Krylov Subspace for Domain Generalization](../../ICLR2026/optimization/exploring_mode_connectivity_in_krylov_subspace_for_domain_generalization.md)
+- [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](../../ICLR2026/optimization/hota_hamiltonian_framework_for_optimal_transport_advection.md)
 
 </div>
 

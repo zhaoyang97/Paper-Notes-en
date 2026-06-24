@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Diffusion Model] HDFlow employs diffusion models to generate sparse strategic sub-goals and rectified flows to generate dense trajectories, integrated with energy guidance and manifold projection. This forms a dual-layer "slow-fast" planner that improves success rates by 20–30% in long-horizon sparse-reward tasks such as furniture asse
+  [ICML 2026 Spotlight][Robotics][Hierarchical Planning] HDFlow employs diffusion models to generate sparse strategic sub-goals and rectified flows to generate dense trajectories, integrated with energy guidance and manifold projection. This forms a dual-layer "slow-fast" planner that improves success rates by 20–30% in long-horizon sparse-reward tasks such as furniture assembly.
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Diffusion Model
+  - "ICML 2026 Spotlight"
+  - "Robotics"
+  - "Hierarchical Planning"
+  - "Diffusion Models"
+  - "Rectified Flow"
+  - "Energy-based Models"
+  - "Manifold Projection"
 date: 2026-05-08
-content_hash: bca7a3cc28790405
+content_hash: ef6d19ed9f013edd
 ---
+
 # HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks
 
 **Conference**: ICML 2026 Spotlight  
@@ -138,11 +143,11 @@ On the 18 RLBench tasks, HDFlow achieves the best performance in 7 tasks and sig
 
 ## Related Papers
 
+- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/robotics/compositional_diffusion_with_guided_search_for_long-horizon_planning.md)
 - [\[ICML 2026\] Drift is a Sampling Error: SNR-Aware Power Distributions for Long-Horizon Robotic Planning](drift_is_a_sampling_error_snr-aware_power_distributions_for_long-horizon_robotic.md)
-- [\[NeurIPS 2025\] RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks](../../NeurIPS2025/robotics/rdd_retrieval-based_demonstration_decomposer_for_planner_alignment_in_long-horiz.md)
-- [\[CVPR 2026\] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning](../../CVPR2026/robotics/agile_learning_robust_long-horizon_manipulation_via_affordance-grounded_bidirect.md)
 - [\[CVPR 2026\] NavForesee: A Unified Vision-Language World Model for Hierarchical Planning and Dual-Horizon Navigation Prediction](../../CVPR2026/robotics/navforesee_a_unified_vision-language_world_model_for_hierarchical_planning_and_d.md)
-- [\[ICML 2025\] Closed-loop Long-horizon Robotic Planning via Equilibrium Sequence Modeling](../../ICML2025/robotics/closed-loop_long-horizon_robotic_planning_via_equilibrium_sequence_modeling.md)
+- [\[NeurIPS 2025\] RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks](../../NeurIPS2025/robotics/rdd_retrieval-based_demonstration_decomposer_for_planner_alignment_in_long-horiz.md)
+- [\[ICML 2026\] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)
 
 </div>
 

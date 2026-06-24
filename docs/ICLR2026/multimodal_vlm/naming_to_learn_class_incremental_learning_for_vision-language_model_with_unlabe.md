@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Naming to Learn: Class Incremental Learning for Vision-Language Model with Unlabeled Data
 description: >-
-  [ICLR 2026][Multimodal VLM][Class Incremental Learning] N2L situates Class Incremental Learning (CIL) in a more realistic setting—where each new task provides only class names and unlabeled images. It utilizes CLIP zero-shot for initial pseudo-labeling, followed by pseudo-label refinement through dimensionality reduction, dual-level sample weighting, and recursively solvabl
+  [ICLR 2026][Multimodal VLM][Class Incremental Learning] N2L situates Class Incremental Learning (CIL) in a more realistic setting—where each new task provides only class names and unlabeled images. It utilizes CLIP zero-shot for initial pseudo-labeling, followed by pseudo-label refinement through dimensionality reduction, dual-level sample weighting, and recursively solvable ridge regression. This approach allows unlabeled incremental training to approximate joint-training pe…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Class Incremental Learning
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Class Incremental Learning"
+  - "CLIP"
+  - "Pseudo-label Refinement"
+  - "Analytic Continual Learning"
+  - "Ridge Regression"
 date: 2026-05-08
-content_hash: b9d7069e35055e89
+content_hash: a242960f71eff722
 ---
+
 # Naming to Learn: Class Incremental Learning for Vision-Language Model with Unlabeled Data
 
 **Conference**: ICLR 2026  
@@ -118,7 +122,6 @@ Directly using $1/E$ causes a drop due to numerical instability; Gaussian sampli
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

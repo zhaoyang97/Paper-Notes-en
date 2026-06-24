@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniPaint: Mastering Object-Oriented Editing via Disentangled Insertion-Removal Inpainting
 description: >-
-  [ICCV2025][Image Generation][object removal] This paper proposes OmniPaint, a unified framework that reformulates object removal and insertion as mutually inverse and complementary tasks. Built upon the FLUX diffusion pr…
+  [ICCV2025][Image Generation][object removal] This paper proposes OmniPaint, a unified framework that reformulates object removal and insertion as mutually inverse and complementary tasks. Built upon the FLUX diffusion prior, it introduces the CycleFlow unpaired training mechanism and the CFD reference-free evaluation metric. With only 3K real paired samples, OmniPaint achieves high-fidelity object editing, excelling particularly at complex physical effects such as shadows and…
 tags:
   - "ICCV2025"
   - "Image Generation"
@@ -15,7 +15,7 @@ tags:
   - "flow matching"
   - "CFD metric"
 date: 2026-05-08
-content_hash: c4f8036e7bf1b864
+content_hash: def8eda9baaa1c4a
 ---
 
 # OmniPaint: Mastering Object-Oriented Editing via Disentangled Insertion-Removal Inpainting
@@ -203,9 +203,9 @@ OmniPaint achieves comprehensive superiority: FID 19.17 (vs. second-best PowerPa
 
 - [\[CVPR 2026\] EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing](../../CVPR2026/image_generation/effecterase_joint_video_object_removal_and_insertion_for_high-quality_effect_era.md)
 - [\[ICCV 2025\] Multi-turn Consistent Image Editing](multi-turn_consistent_image_editing.md)
+- [\[ICML 2026\] Direct 3D-Aware Object Insertion via Decomposed Visual Proxies](../../ICML2026/image_generation/direct_3d-aware_object_insertion_via_decomposed_visual_proxies.md)
+- [\[CVPR 2025\] MetaShadow: Object-Centered Shadow Detection, Removal, and Synthesis](../../CVPR2025/image_generation/metashadow_object-centered_shadow_detection_removal_and_synthesis.md)
 - [\[ICCV 2025\] Inpaint4Drag: Repurposing Inpainting Models for Drag-Based Image Editing via Bidirectional Warping](inpaint4drag_repurposing_inpainting_models_for_drag-based_image_editing_via_bidi.md)
-- [\[ICML 2026\] AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression](../../ICML2026/image_generation/adaeraser_training-free_object_removal_via_adaptive_attention_suppression.md)
-- [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](../../CVPR2026/image_generation/precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
 
 </div>
 

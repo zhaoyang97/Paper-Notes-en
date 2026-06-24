@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] GNNs with structural inductive bias act as "judges" to filter reliable pseudo-labels using agreement/disagreement signals between LLM and GNN predictions. A weakly-supervised algorithm combining "Instruction Tuning + Preference Tuning" distills pseudo-label knowledge into the LLM, significantly improving node classific
+  [ICLR 2026][Graph Learning][Text-Attributed Graphs] GNNs with structural inductive bias act as "judges" to filter reliable pseudo-labels using agreement/disagreement signals between LLM and GNN predictions. A weakly-supervised algorithm combining "Instruction Tuning + Preference Tuning" distills pseudo-label knowledge into the LLM, significantly improving node classification performance on text-attributed graphs where annotations are extremely scarce.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Text-Attributed Graphs"
+  - "Few-shot Semi-supervised Learning"
+  - "Pseudo-labeling"
+  - "LLM Fine-tuning"
+  - "GNN Feedback"
+  - "Preference Alignment"
 date: 2026-05-08
-content_hash: 895412aedad3c0e4
+content_hash: 91ba262b8fe41807
 ---
+
 # GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback
 
 **Conference**: ICLR 2026  
@@ -134,7 +141,7 @@ Ablation of components (Accuracy %):
 - [\[ICLR 2026\] Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion](glance_for_context_learning_when_to_leverage_llms_for_node-aware_gnn-llm_fusion.md)
 - [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
 - [\[ICLR 2026\] On the Universality and Complexity of GNN for Solving Second-order Cone Programs](on_the_universality_and_complexity_of_gnn_for_solving_second-order_cone_programs.md)
-- [\[ICLR 2026\] AdS-GNN - a Conformally Equivariant Graph Neural Network](ads-gnn_-_a_conformally_equivariant_graph_neural_network.md)
+- [\[ICLR 2026\] GNN Explanations that do not Explain and How to find Them](gnn_explanations_that_do_not_explain_and_how_to_find_them.md)
 
 </div>
 

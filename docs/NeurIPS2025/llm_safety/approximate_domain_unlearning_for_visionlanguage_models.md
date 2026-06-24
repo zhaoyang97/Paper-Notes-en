@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Approximate Domain Unlearning for Vision-Language Models
 description: >-
-  [NeurIPS 2025][LLM Safety][approximate unlearning] This paper introduces Approximate Domain Unlearning (ADU), a novel task that enables pretrained VLMs to selectively forget recognition capabilities for specified domains…
+  [NeurIPS 2025 Spotlight][LLM Safety][approximate unlearning] This paper introduces Approximate Domain Unlearning (ADU), a novel task that enables pretrained VLMs to selectively forget recognition capabilities for specified domains (e.g., illustrations, sketches) while preserving classification accuracy on other domains (e.g., real photographs). Two modules are proposed — Domain Disentangling Loss (DDL) and Instance-wise Prompt Generator (InstaPG) — achieving substantial impro…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Safety"
   - "approximate unlearning"
   - "domain unlearning"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "prompt tuning"
 date: 2026-05-08
-content_hash: 7770e6bccb8387ae
+content_hash: 33d6f58986f24b5c
 ---
 
 # Approximate Domain Unlearning for Vision-Language Models
@@ -162,10 +162,10 @@ Ablation of CE and MMD within DDL (Office-Home, $|\mathcal{D}_{\text{forget}}|=1
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting](zero-shot_robustness_of_vision_language_models_via_confidence-aware_weighting.md)
 - [\[ICCV 2025\] SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders](../../ICCV2025/llm_safety/sauce_selective_concept_unlearning_in_vision-language_models_with_sparse_autoenc.md)
+- [\[NeurIPS 2025\] Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting](zero-shot_robustness_of_vision_language_models_via_confidence-aware_weighting.md)
+- [\[CVPR 2025\] Hyperbolic Safety-Aware Vision-Language Models](../../CVPR2025/llm_safety/hyperbolic_safety-aware_vision-language_models.md)
 - [\[ACL 2026\] VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models](../../ACL2026/llm_safety/vla-forget_vision-language-action_unlearning_for_embodied_foundation_models.md)
-- [\[NeurIPS 2025\] Attention! Your Vision Language Model Could Be Maliciously Manipulated](attention_your_vision_language_model_could_be_maliciously_manipulated.md)
 - [\[ICCV 2025\] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning](../../ICCV2025/llm_safety/latte_collaborative_test-time_adaptation_of_vision-language_models_in_federated_.md)
 
 </div>

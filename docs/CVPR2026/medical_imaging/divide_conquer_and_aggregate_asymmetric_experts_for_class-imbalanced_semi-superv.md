@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Divide, Conquer, and Aggregate: Asymmetric Experts for Class-Imbalanced Semi-Supervised Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] To address the "small organs drowned by large organs" issue in multi-organ semi-supervised segmentation, DCA employs a "divide and conquer" strategy using a shared encoder and three asymmetric expert decoders tailored for head, medium, and tail classes. By integrating predictions and features through logit concatenatio
+  [CVPR 2026][Medical Imaging][Semi-supervised segmentation] To address the "small organs drowned by large organs" issue in multi-organ semi-supervised segmentation, DCA employs a "divide and conquer" strategy using a shared encoder and three asymmetric expert decoders tailored for head, medium, and tail classes. By integrating predictions and features through logit concatenation and a Dynamic Feature Aggregation Module (DFAM), it produces unbiased results…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Semi-supervised segmentation"
+  - "Class imbalance"
+  - "Multi-organ segmentation"
+  - "Expert decoders"
+  - "Pseudo-labels"
 date: 2026-05-08
-content_hash: 33738742053f9a4d
+content_hash: dc809af9fe1f07ef
 ---
+
 # Divide, Conquer, and Aggregate: Asymmetric Experts for Class-Imbalanced Semi-Supervised Medical Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -163,11 +169,11 @@ Grouping and Architecture Ablation (AMOS 5%, Table 4/5):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](semantic_class_distribution_learning_for_debiasing.md)
-- [\[CVPR 2026\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
+- [\[CVPR 2025\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/semantic_class_distribution_learning_for_debiasing_semi-supervised_medical_image.md)
 - [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
-- [\[CVPR 2026\] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation](segmote_token-level_mixture_of_experts_for_medical_image_segmentation.md)
 - [\[CVPR 2026\] Semi-supervised Echocardiography Video Segmentation via Anchor Semantic Awareness and Continuous Pseudo-label Reforging](semi-supervised_echocardiography_video_segmentation_via_anchor_semantic_awarenes.md)
+- [\[CVPR 2026\] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation](segmote_token-level_mixture_of_experts_for_medical_image_segmentation.md)
+- [\[AAAI 2026\] Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation](../../AAAI2026/medical_imaging/divide_conquer_and_unite_hierarchical_style-recalibrated_prototype_alignment_for.md)
 
 </div>
 

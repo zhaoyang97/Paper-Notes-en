@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration
 description: >-
-  [ICML 2026][Object Detection][RLVR] Aiming at the issues that multimodal visual verifiers output binary signals (True/False) that are too coarse and that textual explanations are prone to reward-hacking, this paper proposes OmniVerifier-M1. It utilizes symbolic outputs such as bounding boxes as meta-verification rationales instead of text to support rule
+  [ICML 2026][Object Detection][Multimodal meta-verifier] Aiming at the issues that multimodal visual verifiers output binary signals (True/False) that are too coarse and that textual explanations are prone to reward-hacking, this paper proposes OmniVerifier-M1. It utilizes symbolic outputs such as bounding boxes as meta-verification rationales instead of text to support rule-based rewards like IoU. Theoretically and experimentally, it proves that decoupling binary judgment and…
 tags:
-  - ICML 2026
-  - Object Detection
-  - RLVR
+  - "ICML 2026"
+  - "Object Detection"
+  - "Multimodal meta-verifier"
+  - "Symbolic reward"
+  - "Decoupled RL"
+  - "Visual self-recalibration"
+  - "RLVR"
 date: 2026-05-08
-content_hash: 4cab6808d2efc06f
+content_hash: 7f4379c89f12d77e
 ---
+
 # OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration
 
 **Conference**: ICML 2026  

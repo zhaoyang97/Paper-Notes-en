@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Boosting Quantitive and Spatial Awareness for Zero-Shot Object Counting
 description: >-
-  [CVPR 2026][Object Detection][zero-shot counting] The QICA framework is proposed to address the lack of quantity awareness and spatial insensitivity in zero-shot object counting. By utilizing a Synergistic Prompting Strategy (SPS) to jointly adapt vision-language encoders with quantity-conditioned prompts, combined with a Cost Aggregation Decoder (CAD) operating direc
+  [CVPR 2026][Object Detection][zero-shot counting] The QICA framework is proposed to address the lack of quantity awareness and spatial insensitivity in zero-shot object counting. By utilizing a Synergistic Prompting Strategy (SPS) to jointly adapt vision-language encoders with quantity-conditioned prompts, combined with a Cost Aggregation Decoder (CAD) operating directly on similarity maps to maintain zero-shot transferability, it achieves zero-shot SOTA (12.41 MAE) on FSC-14…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - zero-shot counting
-  - vision-language model
-  - prompt tuning
-  - cost aggregation
-  - quantity awareness
+  - "CVPR 2026"
+  - "Object Detection"
+  - "zero-shot counting"
+  - "vision-language model"
+  - "prompt tuning"
+  - "cost aggregation"
+  - "quantity awareness"
 date: 2026-05-08
-content_hash: 3b9181f0bcceae0a
+content_hash: 0754ce4566926ba1
 ---
+
 # Boosting Quantitive and Spatial Awareness for Zero-Shot Object Counting
 
 **Conference**: CVPR 2026  
@@ -153,7 +154,7 @@ The encoder-level ranking constraint is vital: it forces the feature space to im
 - [\[CVPR 2025\] T2ICount: Enhancing Cross-modal Understanding for Zero-Shot Counting](../../CVPR2025/object_detection/t2icount_enhancing_cross-modal_understanding_for_zero-shot_counting.md)
 - [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
-- [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
+- [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
 
 </div>
 

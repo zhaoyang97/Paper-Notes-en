@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection
 description: >-
-  [CVPR 2026][Segmentation][unsupervised camouflaged object detection] Ours proposes EReCu, a unified framework that utilizes Multi-cue Native Perception (MNP) to extract texture and semantic priors from the DINO teacher-student architecture. These priors guide Pseudo-label Evolution Fusion (PEF) and Local Pseudo-label Refinement (LPR) to recover boundary details. This work represents the
+  [CVPR 2026][Segmentation][unsupervised camouflaged object detection] Ours proposes EReCu, a unified framework that utilizes Multi-cue Native Perception (MNP) to extract texture and semantic priors from the DINO teacher-student architecture. These priors guide Pseudo-label Evolution Fusion (PEF) and Local Pseudo-label Refinement (LPR) to recover boundary details. This work represents the first unification of pseudo-label guidance and feature learning paradigms in UCOD…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - unsupervised camouflaged object detection
-  - pseudo-label evolution
-  - multi-cue perception
-  - teacher-student
-  - spectral attention fusion
+  - "CVPR 2026"
+  - "Segmentation"
+  - "unsupervised camouflaged object detection"
+  - "pseudo-label evolution"
+  - "multi-cue perception"
+  - "teacher-student"
+  - "spectral attention fusion"
 date: 2026-05-08
-content_hash: 4771b16635f73854
+content_hash: b1c70d80697b929a
 ---
+
 # EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection
 
 **Conference**: CVPR 2026  
@@ -176,9 +177,9 @@ Total Loss = EPL Dice loss (aligning student DSC mask with student/teacher pseud
 
 - [\[ECCV 2024\] Learning Camouflaged Object Detection from Noisy Pseudo Label](../../ECCV2024/segmentation/learning_camouflaged_object_detection_from_noisy_pseudo_label.md)
 - [\[CVPR 2026\] Uncertainty-Aware Modality Fusion for Unaligned RGB-T Salient Object Detection](uncertainty-aware_modality_fusion_for_unaligned_rgb-t_salient_object_detection.md)
-- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
-- [\[CVPR 2026\] Love Me, Love My Label: Rethinking the Role of Labels in Prompt Retrieval for Visual In-Context Learning](love_me_love_my_label_rethinking_the_role_of_labels_in_prompt_retrieval_for_visu.md)
 - [\[NeurIPS 2025\] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective](../../NeurIPS2025/segmentation/towards_robust_pseudo-label_learning_in_semantic_segmentation_an_encoding_perspe.md)
+- [\[CVPR 2026\] Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding](synthetic_object_compositions_for_scalable_and_accurate_learning_in_detection_se.md)
+- [\[CVPR 2026\] PromptMoE: A Segmentation Refinement Framework Leveraging Mixture of Experts for Improved Prompting](promptmoe_a_segmentation_refinement_framework_leveraging_mixture_of_experts_for_.md)
 
 </div>
 

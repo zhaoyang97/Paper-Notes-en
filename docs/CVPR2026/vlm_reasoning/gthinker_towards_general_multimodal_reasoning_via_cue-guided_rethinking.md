@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GThinker: Towards General Multimodal Reasoning via Cue-Guided Rethinking
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] GThinker addresses the "visual inertia" problem in MLLMs—where "textual logic is flawless but misled by incorrect initial visual judgments"—by proposing a free-form Cue-Rethinking reasoning paradigm anchored by visual cues with self-triggered rethinking. Through a two-stage training process involving an "annotation pip
+  [CVPR 2026][VLM Reasoning][Multimodal reasoning] GThinker addresses the "visual inertia" problem in MLLMs—where "textual logic is flawless but misled by incorrect initial visual judgments"—by proposing a free-form Cue-Rethinking reasoning paradigm anchored by visual cues with self-triggered rethinking. Through a two-stage training process involving an "annotation pipeline + judge-guided selective cold-start + incentive RL," this capability is injected into Qwen2.5-VL-7B…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal reasoning"
+  - "visual inertia"
+  - "visual cue rethinking"
+  - "reinforcement learning"
+  - "cold-start"
 date: 2026-05-08
-content_hash: f82aef785f1ca03f
+content_hash: dfc5091d2a9742f2
 ---
+
 # GThinker: Towards General Multimodal Reasoning via Cue-Guided Rethinking
 
 **Conference**: CVPR 2026  
@@ -135,10 +140,10 @@ Incremental addition of components (M3CoT, %):
 ## Related Papers
 
 - [\[CVPR 2026\] OpenMMReasoner: Pushing the Frontiers in Multimodal Reasoning with an Open and General Recipe](openmmreasoner_pushing_the_frontiers_in_multimodal_reasoning_with_an_open_and_ge.md)
-- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
-- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
 - [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
-- [\[CVPR 2026\] Rethinking VLMs for Image Forgery Detection and Localization](rethinking_vlms_for_image_forgery_detection_and_localization.md)
+- [\[CVPR 2026\] Seeing What Matters: A Training-Free Self-Guided Framework for Multimodal Detail Perception and Reasoning](seeing_what_matters_a_training-free_self-guided_framework_for_multimodal_detail_.md)
+- [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
+- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
 
 </div>
 

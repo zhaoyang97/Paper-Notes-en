@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] The MINERVA-Cultural benchmark is introduced, featuring 2,400 human-annotated video reasoning questions across 18 languages/regions. Through evidence graphs and an iterative error isolation strategy, it reveals severe deficiencies in the cultural visual perception of current SOTA Video-LLMs (the strongest model, Gemini
+  [CVPR 2026][VLM Reasoning][Video Question Answering] The MINERVA-Cultural benchmark is introduced, featuring 2,400 human-annotated video reasoning questions across 18 languages/regions. Through evidence graphs and an iterative error isolation strategy, it reveals severe deficiencies in the cultural visual perception of current SOTA Video-LLMs (the strongest model, Gemini-2.5-Pro, achieves only 45.07% vs. 95.22% for humans).
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Question Answering"
+  - "Multicultural Understanding"
+  - "Multilingual Reasoning"
+  - "Long Video"
+  - "Evidence Graph Error Analysis"
 date: 2026-05-08
-content_hash: c3c01f10af43b9e6
+content_hash: 5072bc6d7f2760be
 ---
+
 # MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ As this is a benchmark paper, no model training is involved. Evaluation utilizes
 
 ## Related Papers
 
-- [\[CVPR 2026\] Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding](minerva-ego_spatiotemporal_hints_for_egocentric_video_understanding.md)
-- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)
+- [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
 - [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
 
 </div>
 

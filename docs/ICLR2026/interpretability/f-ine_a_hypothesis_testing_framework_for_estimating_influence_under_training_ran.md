@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] f-INE: A Hypothesis Testing Framework for Estimating Influence under Training Randomness
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The study redefines "how important a sample is" as "whether the change in loss after its removal is statistically significantly different from training randomness." By leveraging the hypothesis testing framework of f-differential privacy, the authors propose f-influence and the f-INE algorithm, which enables estimation
+  [ICLR 2026][Interpretability][Data Attribution] The study redefines "how important a sample is" as "whether the change in loss after its removal is statistically significantly different from training randomness." By leveraging the hypothesis testing framework of f-differential privacy, the authors propose f-influence and the f-INE algorithm, which enables estimation via a single training run. This ensures that influence scores remain consistent across different random seeds a…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Data Attribution"
+  - "Influence Estimation"
+  - "Hypothesis Testing"
+  - "f-Differential Privacy"
+  - "Training Randomness"
+  - "LLM Data Poisoning Detection"
 date: 2026-05-08
-content_hash: 0942993ece46fb64
+content_hash: c3cffeaa5f87a5d8
 ---
+
 # f-INE: A Hypothesis Testing Framework for Estimating Influence under Training Randomness
 
 **Conference**: ICLR 2026  
@@ -129,7 +136,7 @@ Biased instructions regarding "Joe Biden" and "Abortion" were injected into LIMA
 - [\[ICLR 2026\] Estimating Dimensionality of Neural Representations from Finite Samples](estimating_dimensionality_of_neural_representations_from_finite_samples.md)
 - [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](influence_dynamics_and_stagewise_data_attribution.md)
 - [\[ICLR 2026\] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing](seed-set_scalable_evolving_experimental_design_for_system-level_ethical_testing.md)
-- [\[ICLR 2026\] The Shape of Adversarial Influence: Characterizing LLM Latent Spaces with Persistent Homology](the_shape_of_adversarial_influence_characterizing_llm_latent_spaces_with_persist.md)
+- [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](learning_to_weight_parameters_for_training_data_attribution.md)
 
 </div>
 

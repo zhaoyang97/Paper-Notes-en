@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Neural Low-Discrepancy Sequences
 description: >-
-  [ICML 2026][Robotics & Embodied AI][MLP] NeuroLDS utilizes a small MLP that maps integer indices via sinusoidal position encoding to points. By first regressing against Sobol' sequences and then fine-tuning using a closed-form $L_2$ discrepancy loss over all prefixes, it generates the first extensible neural low-discrepancy sequence. It consistently outperfor
+  [ICML 2026][Robotics][Low-discrepancy sequences] NeuroLDS utilizes a small MLP that maps integer indices via sinusoidal position encoding to points. By first regressing against Sobol' sequences and then fine-tuning using a closed-form $L_2$ discrepancy loss over all prefixes, it generates the first extensible neural low-discrepancy sequence. It consistently outperforms Sobol'/Halton across 4D discrepancy metrics, Borehole integration, RRT motion planning…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - MLP
-  - Sobol
+  - "ICML 2026"
+  - "Robotics"
+  - "Low-discrepancy sequences"
+  - "Quasi-Monte Carlo"
+  - "MLP"
+  - "Sobol"
+  - "Path Planning"
 date: 2026-05-08
-content_hash: a224de1d90ad00de
+content_hash: 950fdbc54005b2d9
 ---
+
 # Neural Low-Discrepancy Sequences
 
 **Conference**: ICML 2026  
@@ -159,8 +163,8 @@ To achieve the same average success rate as NeuroLDS, Sobol' requires 2.50× poi
 
 - [\[CVPR 2026\] Contact-Aware Neural Dynamics](../../CVPR2026/robotics/contact-aware_neural_dynamics.md)
 - [\[ICML 2026\] Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models](neural_implicit_action_fields_from_discrete_waypoints_to_continuous_functions_fo.md)
-- [\[ICLR 2026\] RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization](../../ICLR2026/robotics/rrnco_towards_real-world_routing_with_neural_combinatorial_optimization.md)
 - [\[NeurIPS 2025\] BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning](../../NeurIPS2025/robotics/beast_efficient_tokenization_of_b-splines_encoded_action_sequences_for_imitation.md)
+- [\[ICLR 2026\] RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization](../../ICLR2026/robotics/rrnco_towards_real-world_routing_with_neural_combinatorial_optimization.md)
 - [\[CVPR 2025\] Mitigating the Human-Robot Domain Discrepancy in Visual Pre-training for Robotic Manipulation](../../CVPR2025/robotics/mitigating_the_human-robot_domain_discrepancy_in_visual_pre-training_for_robotic.md)
 
 </div>

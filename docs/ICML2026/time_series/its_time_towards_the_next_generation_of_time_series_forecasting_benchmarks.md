@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks
 description: >-
-  [ICML 2026][Time Series][Paper Note] TIME is a next-generation benchmark for **Time Series Foundation Models (TSFMs)**. It overcomes four major pain points—data reuse, quality issues, improper task configurations, and low evaluation granularity—through **human annotation + LLM-driven data cleaning**, **context-aligned task design**, and a **pattern-level
+  [ICML 2026][Time Series][Time Series Forecasting] TIME is a next-generation benchmark for **Time Series Foundation Models (TSFMs)**. It overcomes four major pain points—data reuse, quality issues, improper task configurations, and low evaluation granularity—through **human annotation + LLM-driven data cleaning**, **context-aligned task design**, and a **pattern-level evaluation perspective**. It includes 50 entirely new datasets, 98 tasks, and evaluations of 12 TSFMs.
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Foundation Models"
+  - "Zero-shot Evaluation"
+  - "Benchmark Design"
+  - "Pattern-level Evaluation"
 date: 2026-05-08
-content_hash: 0c3825f3372101e7
+content_hash: 93f52971fb1a9951
 ---
+
 # It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks
 
 **Conference**: ICML 2026  
@@ -151,10 +157,10 @@ The latest model iterations consistently outperform predecessors, validating the
 ## Related Papers
 
 - [\[ICML 2026\] TimeOmni-VL: Unified Models for Time Series Understanding and Generation](timeomni-vl_unified_models_for_time_series_understanding_and_generation.md)
+- [\[ICLR 2026\] TimeSeriesExamAgent: Creating Time Series Reasoning Benchmarks at Scale](../../ICLR2026/time_series/timeseriesexamagent_creating_time_series_reasoning_benchmarks_at_scale.md)
 - [\[ICLR 2026\] SciTS: Scientific Time Series Understanding and Generation with LLMs](../../ICLR2026/time_series/scits_scientific_time_series_understanding_and_generation_with_llms.md)
 - [\[ICML 2026\] Do Time Series Foundation Model Benchmarks Hide Regime-Dependent Failures? Evidence from Traffic Speed Forecasting](do_time_series_foundation_model_benchmarks_hide_regime-dependent_failures_eviden.md)
-- [\[ICML 2026\] Ellipsoidal Time Series Forecasting](ellipsoidal_time_series_forecasting.md)
-- [\[ICML 2026\] Beyond Extrapolation: Knowledge Utilization Paradigm with Bidirectional Inspiration for Time Series Forecasting](beyond_extrapolation_knowledge_utilization_paradigm_with_bidirectional_inspirati.md)
+- [\[ICML 2026\] From Observations to States: Latent Time Series Forecasting](from_observations_to_states_latent_time_series_forecasting.md)
 
 </div>
 

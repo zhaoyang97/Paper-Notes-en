@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniDocLayout: Towards Diverse Document Layout Generation via Coarse-to-Fine LLM Learning
 description: >-
-  [CVPR 2026][LLM (Other)][Paper Note] Addressing the limitation that existing document layout generation data are "academic-only with single styles," the authors first create OmniDocLayout-1M, the first million-scale diverse layout dataset covering six document categories. They then employ a 0.5B small LLM using a "coarse-to-fine" paradigm—learning general
+  [CVPR 2026][LLM (Other)][Document Layout Generation] Addressing the limitation that existing document layout generation data are "academic-only with single styles," the authors first create OmniDocLayout-1M, the first million-scale diverse layout dataset covering six document categories. They then employ a 0.5B small LLM using a "coarse-to-fine" paradigm—learning general layout rules on multi-domain coarse labels followed by adapting to specific domains with few fine labels.…
 tags:
-  - CVPR 2026
-  - LLM (Other)
+  - "CVPR 2026"
+  - "LLM (Other)"
+  - "Document Layout Generation"
+  - "Coarse-to-Fine Learning"
+  - "Million-scale Layout Dataset"
+  - "Lightweight LLM"
+  - "Sequence Modeling"
 date: 2026-05-08
-content_hash: 003f3232dbf9e7fa
+content_hash: e5421d1a7bf948a7
 ---
+
 # OmniDocLayout: Towards Diverse Document Layout Generation via Coarse-to-Fine LLM Learning
 
 **Conference**: CVPR 2026  
@@ -130,14 +136,15 @@ Scaling ablation (0.5B vs 1.5B vs 3B) shows minimal differences, suggesting layo
 - Value: ⭐⭐⭐⭐⭐ The first million-scale diverse layout dataset and open-sourced 0.5B model provide strong infrastructure for Document AI.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] LLM-Guided Probabilistic Fusion for Label-Efficient Document Layout Analysis](llm-guided_probabilistic_fusion_for_label-efficient_document_layout_analysis.md)
+- [\[ICLR 2026\] Differential Fine-Tuning Large Language Models Towards Better Diverse Reasoning Abilities](../../ICLR2026/llm_nlp/differential_fine-tuning_large_language_models_towards_better_diverse_reasoning_.md)
 - [\[ACL 2025\] EdiText: Controllable Coarse-to-Fine Text Editing with Diffusion Language Models](../../ACL2025/llm_nlp/editext_diffusion_text_editing.md)
 - [\[ACL 2025\] From Selection to Generation: A Survey of LLM-based Active Learning](../../ACL2025/llm_nlp/from_selection_to_generation_a_survey.md)
-- [\[ICML 2025\] Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets](../../ICML2025/llm_nlp/safe_delta_consistently_preserving_safety_when_fine-tuning_llms_on_diverse_datas.md)
 - [\[AAAI 2026\] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation](../../AAAI2026/llm_nlp/vspo_validating_semantic_pitfalls_in_ontology_via_llm-based_cq_generation.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MDReID: Modality-Decoupled Learning for Any-to-Any Multi-Modal Object Re-Identification
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multi-modal ReID] This paper proposes MDReID, a framework that decouples modality features into modality-shared and modality-specific components…
+  [NeurIPS 2025][Multimodal VLM][Multi-modal ReID] This paper proposes MDReID, a framework that decouples modality features into modality-shared and modality-specific components, enabling object re-identification under arbitrary modality combinations (any-to-any ReID) and substantially outperforming existing methods in both modality-matched and modality-mismatched scenarios.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "any-to-any matching"
   - "metric learning"
 date: 2026-05-08
-content_hash: 6236c8afe6a98f7a
+content_hash: 1f8ac2c5f87bad48
 ---
 
 # MDReID: Modality-Decoupled Learning for Any-to-Any Multi-Modal Object Re-Identification
@@ -156,10 +156,10 @@ Training uses the Adam optimizer with a batch size of 64, a base learning rate o
 ## Related Papers
 
 - [\[ICCV 2025\] Generalizable Object Re-Identification via Visual In-Context Prompting](../../ICCV2025/multimodal_vlm/generalizable_object_re-identification_via_visual_in-context_prompting.md)
+- [\[ICLR 2026\] NExT-OMNI: Towards Any-to-Any Omnimodal Foundation Models with Discrete Flow Matching](../../ICLR2026/multimodal_vlm/next-omni_towards_any-to-any_omnimodal_foundation_models_with_discrete_flow_matc.md)
+- [\[ICLR 2026\] FlowBind: Efficient Any-to-Any Generation with Bidirectional Flows](../../ICLR2026/multimodal_vlm/flowbind_efficient_any-to-any_generation_with_bidirectional_flows.md)
 - [\[ICCV 2025\] MAVias: Mitigate Any Visual Bias](../../ICCV2025/multimodal_vlm/mavias_mitigate_any_visual_bias.md)
 - [\[NeurIPS 2025\] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models](vamp_variational_multi-modal_prompt_learning_for_vision-language_models.md)
-- [\[NeurIPS 2025\] mmWalk: Towards Multi-modal Multi-view Walking Assistance](mmwalk_towards_multi-modal_multi-view_walking_assistance.md)
-- [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
 
 </div>
 

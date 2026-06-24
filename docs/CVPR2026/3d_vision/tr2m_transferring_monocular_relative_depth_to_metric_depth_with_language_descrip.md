@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] TR2M: Transferring Monocular Relative Depth to Metric Depth with Language Descriptions and Dual-Level Scale-Oriented Contrast
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The TR2M framework is proposed to predict pixel-level scale/shift maps using image and text descriptions, converting highly generalizable but scale-less relative depth into metric depth. Achieving cross-domain zero-shot metric depth estimation is realized with only 19M trainable parameters and 102K training images.
+  [CVPR2026][3D Vision][Monocular Depth Estimation] The TR2M framework is proposed to predict pixel-level scale/shift maps using image and text descriptions, converting highly generalizable but scale-less relative depth into metric depth. Achieving cross-domain zero-shot metric depth estimation is realized with only 19M trainable parameters and 102K training images.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Monocular Depth Estimation"
+  - "Relative to Metric Depth"
+  - "Language Descriptions"
+  - "Cross-modal Attention"
+  - "Contrastive Learning"
+  - "Pixel-level Scaling"
 date: 2026-05-08
-content_hash: 147f60d3cd57ca1b
+content_hash: 1416e024015b2c94
 ---
+
 # TR2M: Transferring Monocular Relative Depth to Metric Depth with Language Descriptions and Dual-Level Scale-Oriented Contrast
 
 **Conference**: CVPR2026  
@@ -211,8 +218,8 @@ TR2M achieves the best average rank (2.40) using a ViT-Small backbone and 102K t
 - [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
 - [\[CVPR 2026\] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation](iris_integrating_language_into_diffusion-based_monocular_depth_estimation.md)
 - [\[CVPR 2026\] The Midas Touch for Metric Depth](the_midas_touch_for_metric_depth.md)
+- [\[ICLR 2026\] DepthLM: Metric Depth from Vision Language Models](../../ICLR2026/3d_vision/depthlm_metric_depth_from_vision_language_models.md)
 - [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2025\] Vision-Language Embodiment for Monocular Depth Estimation](../../CVPR2025/3d_vision/vision-language_embodiment_for_monocular_depth_estimation.md)
 
 </div>
 

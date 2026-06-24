@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Weight Space Representation Learning on Diverse NeRF Architectures
 description: >-
-  [ICLR 2026][3D Vision][NeRF] The authors propose the first representation learning framework capable of processing weights from diverse NeRF architectures (MLP/tri-plane/hash table). By utilizing a Graph Meta-Network encoder combined with SigLIP contrastive loss to construct an architecture-agnostic latent space, the method achieves classification
+  [ICLR 2026][3D Vision][NeRF] The authors propose the first representation learning framework capable of processing weights from diverse NeRF architectures (MLP/tri-plane/hash table). By utilizing a Graph Meta-Network encoder combined with SigLIP contrastive loss to construct an architecture-agnostic latent space, the method achieves classification, retrieval, and language tasks across 13 NeRF architectures and generalizes to architectures unseen during training.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - NeRF
-  - weight space
-  - graph meta-network
-  - contrastive learning
-  - architecture-agnostic
+  - "ICLR 2026"
+  - "3D Vision"
+  - "NeRF"
+  - "weight space"
+  - "graph meta-network"
+  - "contrastive learning"
+  - "architecture-agnostic"
 date: 2026-05-08
-content_hash: c6d9ec605bfe2706
+content_hash: b3d1e38a849fe086
 ---
+
 # Weight Space Representation Learning on Diverse NeRF Architectures
 
 **Conference**: ICLR 2026  
@@ -129,6 +130,7 @@ The final objective is a weighted sum of the rendering loss and contrastive loss
 - Value: ⭐⭐⭐⭐ Significant push toward unified NeRF processing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

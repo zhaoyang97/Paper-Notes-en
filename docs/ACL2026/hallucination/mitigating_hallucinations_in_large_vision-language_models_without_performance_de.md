@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation
 description: >-
-  [ACL 2026][Hallucination Detection][Vision-Language Model] This paper proposes the MPD framework, which decouples hallucination components through semantic-aware orthogonal subspace projection and selectively updates a small number of parameters most relevant to hallucinations. While reducing hallucinations by 23.4%, it maintains 97.4% of general generation capability without
+  [ACL 2026 Oral][Hallucination Detection][Large Vision-Language Models] This paper proposes the MPD framework, which decouples hallucination components through semantic-aware orthogonal subspace projection and selectively updates a small number of parameters most relevant to hallucinations. While reducing hallucinations by 23.4%, it maintains 97.4% of general generation capability without introducing additional inference overhead.
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Vision-Language Model
+  - "ACL 2026 Oral"
+  - "Hallucination Detection"
+  - "Large Vision-Language Models"
+  - "Object Hallucination"
+  - "Representation Intervention"
+  - "Orthogonal Projection"
+  - "Selective Parameter Editing"
 date: 2026-05-08
-content_hash: 7262bd6040bbbe09
+content_hash: 978f982905315da0
 ---
+
 # Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation
 
 **Conference**: ACL 2026 Oral  
@@ -144,10 +149,10 @@ MPD is a training-free method—it involves no gradient optimization and directl
 
 ## Related Papers
 
-- [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
-- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/hallucination/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
 - [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
+- [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
+- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/hallucination/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
 - [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](../../CVPR2026/hallucination/prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
 
 </div>

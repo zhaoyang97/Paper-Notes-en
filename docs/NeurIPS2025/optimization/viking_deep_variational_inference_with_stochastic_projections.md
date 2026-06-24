@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VIKING: Deep Variational Inference with Stochastic Projections
 description: >-
-  [NeurIPS 2025][Optimization][Variational Inference] VIKING proposes a variational approximate posterior family based on the kernel- and image-space decomposition of the Fisher-Rao metric…
+  [NeurIPS 2025][Optimization][Variational Inference] VIKING proposes a variational approximate posterior family based on the kernel- and image-space decomposition of the Fisher-Rao metric, and achieves scalable full-covariance Bayesian training via a stochastic alternating projections algorithm, surpassing existing Bayesian deep learning methods on multiple benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Fisher-Rao Metric"
   - "Stochastic Alternating Projections"
 date: 2026-05-08
-content_hash: 1bca2cc96c89d26b
+content_hash: f2b6db4e0c4e7339
 ---
 
 # VIKING: Deep Variational Inference with Stochastic Projections
@@ -131,7 +131,7 @@ $$\boldsymbol{\epsilon}^{(t)} = \mathbf{U}^{(t)} \mathbf{U}^{(t)\top} (\sqrt{\ga
 - [\[NeurIPS 2025\] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference](neuro-symbolic_entity_alignment_via_variational_inference.md)
 - [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
-- [\[NeurIPS 2025\] Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery](deep_taxonomic_networks_for_unsupervised_hierarchical_prototype_discovery.md)
+- [\[ICML 2025\] Revisiting Unbiased Implicit Variational Inference](../../ICML2025/optimization/revisiting_unbiased_implicit_variational_inference.md)
 
 </div>
 

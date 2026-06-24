@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Why Attention Patterns Exist: A Unifying Temporal Perspective Analysis
 description: >-
-  [ICLR 2026][Model Compression][attention patterns] Ours proposes the TAPPA framework, which provides a unified explanation for the formation mechanisms of various attention patterns in LLMs (attention sink, diagonal, periodicity, etc.) from a temporal continuity perspective. It introduces the query self-similarity (q-similarity) metric to guide KV cache compression and
+  [ICLR 2026][Model Compression][attention patterns] Ours proposes the TAPPA framework, which provides a unified explanation for the formation mechanisms of various attention patterns in LLMs (attention sink, diagonal, periodicity, etc.) from a temporal continuity perspective. It introduces the query self-similarity (q-similarity) metric to guide KV cache compression and model pruning tasks.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - attention patterns
-  - temporal analysis
-  - RoPE
-  - query self-similarity
-  - KV cache compression
-  - LLM pruning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "attention patterns"
+  - "temporal analysis"
+  - "RoPE"
+  - "query self-similarity"
+  - "KV cache compression"
+  - "LLM pruning"
 date: 2026-05-08
-content_hash: 1cf782ff5971ef35
+content_hash: d3608bb907767a40
 ---
+
 # Why Attention Patterns Exist: A Unifying Temporal Perspective Analysis
 
 **Conference**: ICLR 2026  
@@ -154,10 +155,10 @@ On Llama-3.1-8B and Qwen-2.5-7B:
 ## Related Papers
 
 - [\[ICLR 2026\] Many Eyes, One Mind: Temporal Multi-Perspective and Progressive Distillation for Spiking Neural Networks](many_eyes_one_mind_temporal_multi-perspective_and_progressive_distillation_for_s.md)
-- [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
-- [\[ICCV 2025\] Representation Shift: Unifying Token Compression with FlashAttention](../../ICCV2025/model_compression/representation_shift_unifying_token_compression_with_flashattention.md)
+- [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
+- [\[ICLR 2026\] REAP the Experts: Why Pruning Prevails for One-Shot MoE Compression](reap_the_experts_why_pruning_prevails_for_one-shot_moe_compression.md)
 - [\[ICLR 2026\] Enhancing Multivariate Time Series Forecasting with Global Temporal Retrieval](enhancing_multivariate_time_series_forecasting_with_global_temporal_retrieval.md)
+- [\[ICLR 2026\] FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning](flyprompt_brain-inspired_random-expanded_routing.md)
 
 </div>
 

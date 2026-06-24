@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration
 description: >-
-  [ICML 2026][LLM Efficiency][Diffusion Language Model] TEAM addresses the inherent mismatch in MoE Diffusion Language Models (dLLM) where "a large number of experts are activated but only a few tokens are accepted." By leveraging the temporal and spatial consistency of in-block decoding, TEAM designs differentiated expert activation and decoding strategies for three types
+  [ICML2026][LLM Efficiency][Diffusion Language Models] TEAM addresses the inherent mismatch in MoE Diffusion Language Models (dLLM) where "a large number of experts are activated but only a few tokens are accepted." By leveraging the temporal and spatial consistency of in-block decoding, TEAM designs differentiated expert activation and decoding strategies for three types of tokens: decoded, hot, and cold. This achieves up to a 2.2× speedup on SDAR 30B-A3B with near-zero preci…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - MoE
-  - Inference Acceleration
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "MoE"
+  - "Expert Activation"
+  - "Temporal-Spatial Consistency"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 3255fa0045371313
+content_hash: 9f9fbada275e57e5
 ---
+
 # TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration
 
 **Conference**: ICML2026  
@@ -141,11 +144,11 @@ On average, the score drops only by 0.07, APT is reduced by 61%, and end-to-end 
 
 ## Related Papers
 
+- [\[ICML 2026\] Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge](diffusion_language_model_parallel_decoding_via_product-of-experts_bridge.md)
 - [\[ACL 2026\] Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference](../../ACL2026/llm_efficiency/alloc-moe_budget-aware_expert_activation_allocation_for_efficient_mixture-of-exp.md)
 - [\[ICML 2026\] OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration](oserve_accelerating_llm_serving_via_spatial-temporal_workload_orchestration.md)
+- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](../../ICLR2026/llm_efficiency/flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
 - [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](../../ICLR2026/llm_efficiency/expert_divergence_learning_for_moe-based_language_models.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[ICML 2026\] Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge](diffusion_language_model_parallel_decoding_via_product-of-experts_bridge.md)
 
 </div>
 

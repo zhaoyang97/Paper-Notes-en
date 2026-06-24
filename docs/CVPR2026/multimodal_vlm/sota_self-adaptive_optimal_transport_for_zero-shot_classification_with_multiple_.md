@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SOTA: Self-adaptive Optimal Transport for Zero-Shot Classification with Multiple Foundation Models
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] SOTA converts classification outputs from various foundation models (VLMs like CLIP, VFMs like DINO) into cost matrices. It utilizes a self-adaptive Optimal Transport (OT) with a "squared inner product" objective to solve for a soft assignment transport plan. This training-free and prior-free approach automatically bal
+  [CVPR 2026][Multimodal VLM][Zero-shot classification] SOTA converts classification outputs from various foundation models (VLMs like CLIP, VFMs like DINO) into cost matrices. It utilizes a self-adaptive Optimal Transport (OT) with a "squared inner product" objective to solve for a soft assignment transport plan. This training-free and prior-free approach automatically balances model contributions, achieving significant performance gains over the strongest single models across…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Zero-shot classification"
+  - "Optimal Transport"
+  - "Foundation model ensemble"
+  - "Self-adaptive weighting"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 24a92f6689c26b95
+content_hash: 5cd58ad4546dfb16
 ---
+
 # SOTA: Self-adaptive Optimal Transport for Zero-Shot Classification with Multiple Foundation Models
 
 **Conference**: CVPR 2026  
@@ -137,15 +142,16 @@ Validation was performed across 26 benchmarks (natural, remote sensing, medical)
 - Value: ⭐⭐⭐⭐⭐ High practicality due to being training-free and compatible with black-box models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
 - [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
 - [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
-- [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
-- [\[CVPR 2026\] Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition](beyond_heuristic_prompting_a_concept-guided_bayesian_framework_for_zero-shot_ima.md)
+- [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] HORT: Monocular Hand-held Objects Reconstruction with Transformers
 description: >-
-  [3D Vision] This paper proposes HORT, a coarse-to-fine Transformer-based framework that efficiently reconstructs dense 3D point clouds of hand-held objects from monocular images. By integrating image features with 3D han…
+  [3D Vision] This paper proposes HORT, a coarse-to-fine Transformer-based framework that efficiently reconstructs dense 3D point clouds of hand-held objects from monocular images. By integrating image features with 3D hand geometry, HORT jointly predicts the object point cloud and its pose relative to the hand, achieving state-of-the-art performance in both reconstruction accuracy and inference speed.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 3d9ec759ac0da248
+content_hash: 53e9d93064cd0018
 ---
 
 # HORT: Monocular Hand-held Objects Reconstruction with Transformers
@@ -160,9 +160,9 @@ HORT processes a single image in approximately **0.08 seconds** (including mesh 
 
 - [\[ICCV 2025\] JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers](jointdit_enhancing_rgb-depth_joint_modeling_with_diffusion_transformers.md)
 - [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
+- [\[CVPR 2025\] Multi-view Reconstruction via SfM-guided Monocular Depth Estimation](../../CVPR2025/3d_vision/multi-view_reconstruction_via_sfm-guided_monocular_depth_estimation.md)
 - [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
 - [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
-- [\[ICCV 2025\] Discretized Gaussian Representation for Tomographic Reconstruction](discretized_gaussian_representation_for_tomographic_reconstruction.md)
 
 </div>
 

@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] Aligning Collaborative View Recovery and Tensorial Subspace Learning via Latent Representation for Incomplete Multi-View Clustering
 description: >-
-  [ICLR 2026][Others][incomplete multi-view clustering] ARSL-IMVC utilizes a shared latent representation $H$ as a "bridge" to explicitly align missing view recovery (CVR) and tensorial subspace learning (TSL) within a unified framework for mutual promotion, thereby achieving more robust multi-view clustering in scenarios with significantly missing views.
+  [ICLR 2026][incomplete multi-view clustering] ARSL-IMVC utilizes a shared latent representation $H$ as a "bridge" to explicitly align missing view recovery (CVR) and tensorial subspace learning (TSL) within a unified framework for mutual promotion, thereby achieving more robust multi-view clustering in scenarios with significantly missing views.
 tags:
-  - ICLR 2026
-  - Others
-  - incomplete multi-view clustering
-  - view recovery
-  - tensor subspace
-  - low-rank tensor
-  - HSIC
-  - latent representation
+  - "ICLR 2026"
+  - "incomplete multi-view clustering"
+  - "view recovery"
+  - "tensor subspace"
+  - "low-rank tensor"
+  - "HSIC"
+  - "latent representation"
 date: 2026-05-08
-content_hash: 9934326260f49377
+content_hash: 3dbe3b8f1a9b44cf
 ---
+
 # Aligning Collaborative View Recovery and Tensorial Subspace Learning via Latent Representation for Incomplete Multi-View Clustering
 
 **Conference**: ICLR 2026  
@@ -129,11 +129,11 @@ Removing the latent representation alignment resulted in ACC drops of 12.48% / 2
 
 ## Related Papers
 
-- [\[CVPR 2026\] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance](../../CVPR2026/others/scalable_multi-view_subspace_clustering_with_tensorized_anchor_guidance.md)
 - [\[AAAI 2026\] Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](../../AAAI2026/others/deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)
-- [\[ICLR 2026\] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification](permutation-consistent_variational_encoding_for_incomplete_multi-view_multi-labe.md)
 - [\[CVPR 2026\] Plug-and-Play Incomplete Multi-View Clustering via Janus-Faced Affinity Learning with Topology Harmonization](../../CVPR2026/others/plug-and-play_incomplete_multi-view_clustering_via_janus-faced_affinity_learning.md)
+- [\[CVPR 2026\] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance](../../CVPR2026/others/scalable_multi-view_subspace_clustering_with_tensorized_anchor_guidance.md)
 - [\[NeurIPS 2025\] Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion](../../NeurIPS2025/others/incomplete_multi-view_clustering_via_hierarchical_semantic_alignment_and_coopera.md)
+- [\[ICLR 2026\] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification](permutation-consistent_variational_encoding_for_incomplete_multi-view_multi-labe.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization
 description: >-
-  [ICLR 2026][Alignment & RLHF][GRPO] The authors propose the **D3S** (Dynamic Dual-Level Down-Sampling) framework, which maximizes advantage variance at the sample level and prioritizes high-entropy + high-advantage tokens at the token level. Combined with a dynamic scheduling strategy, it achieves faster convergence and superior performance using fewer t
+  [ICLR 2026][LLM Alignment][GRPO] The authors propose the **D3S** (Dynamic Dual-Level Down-Sampling) framework, which maximizes advantage variance at the sample level and prioritizes high-entropy + high-advantage tokens at the token level. Combined with a dynamic scheduling strategy, it achieves faster convergence and superior performance using fewer than 20% of tokens.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - GRPO
-  - policy optimization
-  - down-sampling
-  - advantage variance
-  - token selection
-  - curriculum learning
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "GRPO"
+  - "policy optimization"
+  - "down-sampling"
+  - "advantage variance"
+  - "token selection"
+  - "curriculum learning"
 date: 2026-05-08
-content_hash: 62f826fa2f2ae909
+content_hash: e0f64c7f721daf75
 ---
+
 # Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -148,16 +149,16 @@ At $p=0$, aggressive settings (few samples/tokens) enable fast learning. As $p \
 The D3S framework selects the most valuable training data through sample-level advantage variance maximization and token-level entropy-advantage weighted selection, balanced by a dynamic schedule. Theoretical analysis establishes a positive correlation between advantage variance and the gradient norm upper bound. Experimental results across seven mathematical reasoning benchmarks demonstrate consistent performance gains and significant training acceleration (up to 5.51×). D3S provides a systematic solution for data utilization efficiency in RLHF.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment](inverse_reinforcement_learning_with_dynamic_reward_scaling_for_llm_alignment.md)
 - [\[ICLR 2026\] RE-PO: Robust Enhanced Policy Optimization as a General Framework for LLM Alignment](re-po_robust_enhanced_policy_optimization_as_a_general_framework_for_llm_alignme.md)
+- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
 - [\[ICML 2025\] Can RLHF be More Efficient with Imperfect Reward Models? A Policy Coverage Perspective](../../ICML2025/llm_alignment/can_rlhf_be_more_efficient_with_imperfect_reward_models_a_policy_coverage_perspe.md)
 - [\[CVPR 2026\] MorphSeek: Fine-grained Latent Representation-Level Policy Optimization for Deformable Image Registration](../../CVPR2026/llm_alignment/morphseek_fine-grained_latent_representation-level_policy_optimization_for_defor.md)
-- [\[NeurIPS 2025\] Greedy Sampling Is Provably Efficient for RLHF](../../NeurIPS2025/llm_alignment/greedy_sampling_is_provably_efficient_for_rlhf.md)
 
 </div>
 

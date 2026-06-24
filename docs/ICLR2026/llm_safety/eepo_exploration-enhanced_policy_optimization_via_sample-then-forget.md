@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][LLM Safety][Reinforcement Learning] EEPO significantly alleviates the entropy collapse problem by inserting adaptive unlearning between two-stage rollouts in GRPO to temporarily suppress dominant modes and break self-reinforcing loops, improving mathematical reasoning performance by 24-33% over GRPO.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Reinforcement Learning
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Reinforcement Learning"
+  - "Policy Optimization"
+  - "Exploration-Exploitation Balance"
+  - "LLM Reasoning"
+  - "Entropy Collapse"
 date: 2026-05-08
-content_hash: 40951bac5d5ae5ee
+content_hash: 81876881e6a5bbe6
 ---
+
 # EEPO: Exploration-Enhanced Policy Optimization via Sample-then-Forget
 
 **Conference**: ICLR 2026  
@@ -190,7 +194,7 @@ Key Findings: All three designs are necessary. Missing any component leads to a 
 - [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](../../NeurIPS2025/llm_safety/on_the_sample_complexity_of_differentially_private_policy_optimization.md)
 - [\[ICLR 2026\] Tree-based Dialogue Reinforced Policy Optimization for Red-Teaming Attacks (DialTree)](tree-based_dialogue_reinforced_policy_optimization_for_red-teaming_attacks.md)
 - [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](reinforcement_unlearning_via_group_relative_policy_optimization.md)
-- [\[ICLR 2026\] Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models](auto-rt_automatic_jailbreak_strategy_exploration_for_red-teaming_large_language_.md)
+- [\[ICLR 2026\] SAFER: Risk-Constrained Sample-then-Filter in Large Language Models](safer_risk-constrained_sample-then-filter_in_large_language_models.md)
 
 </div>
 

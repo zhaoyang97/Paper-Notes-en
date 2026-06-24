@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Calibration vs Decision Making: Revisiting the Reliability Paradox in Unlearned Language Models
 description: >-
-  [ACL 2026][LLM Safety][machine unlearning] This paper demonstrates that after machine unlearning, LLMs may rely more on dataset shortcut tokens for decision-making even while maintaining low calibration error. Consequently, using ECE, MCE, or Brier score alone is insufficient to determine if an unlearned model is reliable.
+  [ACL2026][LLM Safety][machine unlearning] This paper demonstrates that after machine unlearning, LLMs may rely more on dataset shortcut tokens for decision-making even while maintaining low calibration error. Consequently, using ECE, MCE, or Brier score alone is insufficient to determine if an unlearned model is reliable.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - machine unlearning
-  - calibration
-  - reliability paradox
-  - shortcut learning
-  - Integrated Gradients
+  - "ACL2026"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "calibration"
+  - "reliability paradox"
+  - "shortcut learning"
+  - "Integrated Gradients"
 date: 2026-05-08
-content_hash: 71799b8acc7dabb6
+content_hash: 75ebca9305b0a686
 ---
+
 # Calibration vs Decision Making: Revisiting the Reliability Paradox in Unlearned Language Models
 
 **Conference**: ACL2026  
@@ -161,9 +162,9 @@ While traditional module ablation is not provided, qualitative examples of short
 
 - [\[ACL 2026\] Revisiting Non-Verbatim Memorization in Large Language Models: The Role of Entity Surface Forms](revisiting_non-verbatim_memorization_in_large_language_models_the_role_of_entity.md)
 - [\[ACL 2026\] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)
-- [\[ACL 2025\] A Statistical and Multi-Perspective Revisiting of the Membership Inference Attack in Large Language Models](../../ACL2025/llm_safety/a_statistical_and_multi-perspective_revisiting_of_the_membership_inference_attac.md)
-- [\[ACL 2026\] Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks](before_forgetting_learn_to_remember_revisiting_foundational_learning_failures_in.md)
 - [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](../../ICLR2026/llm_safety/revisiting_the_past_data_unlearning_with_model_state_history.md)
+- [\[ACL 2025\] A Statistical and Multi-Perspective Revisiting of the Membership Inference Attack in Large Language Models](../../ACL2025/llm_safety/a_statistical_and_multi-perspective_revisiting_of_the_membership_inference_attac.md)
+- [\[CVPR 2026\] Revisiting Learning with Noisy Labels: Active Forgetting and Noise Suppression](../../CVPR2026/llm_safety/revisiting_learning_with_noisy_labels_active_forgetting_and_noise_suppression.md)
 
 </div>
 

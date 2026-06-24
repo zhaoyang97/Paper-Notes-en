@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tractable Multinomial Logit Contextual Bandits with Non-Linear Utilities
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][contextual bandits] This work presents ONL-MNL, the first **computationally tractable** and **statistically optimal** algorithm for the MNL contextual bandit problem under non-linea…
+  [NeurIPS 2025][Reinforcement Learning][contextual bandits] This work presents ONL-MNL, the first **computationally tractable** and **statistically optimal** algorithm for the MNL contextual bandit problem under non-linear utility functions (including neural networks), achieving $\widetilde{\mathcal{O}}(\sqrt{T})$ regret without relying on NTK assumptions.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "UCB"
   - "neural networks"
 date: 2026-05-08
-content_hash: e9b645d2ccec762e
+content_hash: 06b7ad1797380a61
 ---
 
 # Tractable Multinomial Logit Contextual Bandits with Non-Linear Utilities
@@ -175,10 +175,10 @@ Consistent conclusions are observed under both Gaussian and Uniform context dist
 ## Related Papers
 
 - [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
+- [\[NeurIPS 2025\] Exploration via Feature Perturbation in Contextual Bandits](exploration_via_feature_perturbation_in_contextual_bandits.md)
 - [\[NeurIPS 2025\] Feel-Good Thompson Sampling for Contextual Bandits: a Markov Chain Monte Carlo Showdown](feel-good_thompson_sampling_for_contextual_bandits_a_markov_chain_monte_carlo_sh.md)
 - [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
 - [\[NeurIPS 2025\] Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality](improved_regret_and_contextual_linear_extension_for_pandoras_box_and_prophet_ine.md)
-- [\[NeurIPS 2025\] Generalized Linear Bandits: Almost Optimal Regret with One-Pass Update](generalized_linear_bandits_almost_optimal_regret_with_one-pass_update.md)
 
 </div>
 

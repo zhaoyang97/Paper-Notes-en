@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Out-of-Distribution Graph Models Merging
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper proposes OGMM to investigate the novel problem of "Out-of-Distribution Graph Model Merging." Without access to any source or target domain data and assuming potentially heterogeneous GNN architectures, each pre-trained GNN first inverts a small batch of labeled synthetic graphs. Subsequently, a sparse MoE wi
+  [ICLR 2026][Graph Learning][Graph Model Merging] This paper proposes OGMM to investigate the novel problem of "Out-of-Distribution Graph Model Merging." Without access to any source or target domain data and assuming potentially heterogeneous GNN architectures, each pre-trained GNN first inverts a small batch of labeled synthetic graphs. Subsequently, a sparse MoE with masked experts fine-tunes and merges these models into a unified model capable of generalizing to unseen dis…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Model Merging"
+  - "Out-of-Distribution Generalization"
+  - "Mixture of Experts"
+  - "Graph Generation"
+  - "Data-free Fine-tuning"
 date: 2026-05-08
-content_hash: a39137f59d219bac
+content_hash: cbaab43789c3d2be
 ---
+
 # Out-of-Distribution Graph Models Merging
 
 **Conference**: ICLR 2026  
@@ -135,11 +141,11 @@ OGMM consistently outperforms individual pre-trained models, ensemble methods, w
 
 ## Related Papers
 
+- [\[ICLR 2026\] G-Merging: Graph Models Merging for Parameter-Efficient Multi-Task Knowledge Consolidation](g-merging_graph_models_merging_for_parameter-efficient_multi-task_knowledge_cons.md)
 - [\[ICLR 2026\] Adaptive Mixture of Disentangled Experts for Dynamic Graph Out-of-Distribution Generalization](adaptive_mixture_of_disentangled_experts_for_dynamic_graph_out-of-distribution_g.md)
 - [\[ICLR 2026\] Diverse and Sparse Mixture-of-Experts for Causal Subgraph–Based Out-of-Distribution Graph Learning](diverse_and_sparse_mixture-of-experts_for_causal_subgraphbased_out-of-distributi.md)
+- [\[ICLR 2026\] Full-Graph vs. Mini-Batch Training: Comprehensive Analysis from a Batch Size and Fan-Out Size Perspective](full-graph_vs_mini-batch_training_comprehensive_analysis_from_a_batch_size_and_f.md)
 - [\[ICLR 2026\] Bridging Input Feature Spaces Towards Graph Foundation Models](bridging_input_feature_spaces_towards_graph_foundation_models.md)
-- [\[ICLR 2026\] Multi-Domain Riemannian Graph Gluing for Building Graph Foundation Models](multi-domain_riemannian_graph_gluing_for_building_graph_foundation_models.md)
-- [\[ICLR 2026\] Graphon Cross-Validation: Assessing Models on Network Data](graphon_cross-validation_assessing_models_on_network_data.md)
 
 </div>
 

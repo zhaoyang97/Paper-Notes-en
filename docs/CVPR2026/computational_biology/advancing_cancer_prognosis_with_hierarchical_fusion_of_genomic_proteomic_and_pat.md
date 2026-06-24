@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Advancing Cancer Prognosis with Hierarchical Fusion of Genomic, Proteomic and Pathology Imaging Data from a Systems Biology Perspective
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] HFGPI explicitly models the "gene → protein → tissue morphology" systems biology cascade as a hierarchical fusion pipeline. It utilizes graph-aware cross-attention to characterize gene-to-protein regulation and hypergraphs to link proteins to pathology patches. On 5 TCGA cohorts, it achieves an average C-index of 0.753
+  [CVPR 2026][Computational Biology][Cancer Prognosis] HFGPI explicitly models the "gene → protein → tissue morphology" systems biology cascade as a hierarchical fusion pipeline. It utilizes graph-aware cross-attention to characterize gene-to-protein regulation and hypergraphs to link proteins to pathology patches. On 5 TCGA cohorts, it achieves an average C-index of 0.753 for survival prediction, outperforming all Prev. SOTA.
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Cancer Prognosis"
+  - "Multi-omics Fusion"
+  - "Proteome"
+  - "Hypergraph Learning"
+  - "Whole Slide Imaging"
 date: 2026-05-08
-content_hash: a04aac18b8945f33
+content_hash: 96e55f00780936f5
 ---
+
 # Advancing Cancer Prognosis with Hierarchical Fusion of Genomic, Proteomic and Pathology Imaging Data from a Systems Biology Perspective
 
 **Conference**: CVPR 2026  
@@ -141,10 +147,10 @@ Encoder selection experiments: VLM using CONCH (0.753) is significantly better t
 ## Related Papers
 
 - [\[AAAI 2026\] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection](../../AAAI2026/computational_biology/spacrd_multimodal_deep_fusion_of_histology_and_spatial_transcriptomics_for_cance.md)
-- [\[CVPR 2026\] Sampling-Aware 3D Spatial Analysis in Multiplexed Imaging](sampling-aware_3d_spatial_analysis_in_multiplexed_imaging.md)
 - [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](../../AAAI2026/computational_biology/hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
-- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
 - [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
+- [\[CVPR 2026\] Multi-View Hierarchical Alignment Learning for Spatial Transcriptomics](multi-view_hierarchical_alignment_learning_for_spatial_transcriptomics.md)
+- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
 
 </div>
 

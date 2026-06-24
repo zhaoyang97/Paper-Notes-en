@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Flow Matching for Multimodal Distributions
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] When adopting a vision foundation model (DINOv2-B) as a tokenizer, the latent space naturally exhibits a multimodal "union of manifolds" structure. This paper uses a Gaussian Mixture Model (GMM) fitted to the target distribution as the source distribution and performs data pairing based on the "nearest mode" (mode coup
+  [CVPR 2026][Image Generation][Flow Matching] When adopting a vision foundation model (DINOv2-B) as a tokenizer, the latent space naturally exhibits a multimodal "union of manifolds" structure. This paper uses a Gaussian Mixture Model (GMM) fitted to the target distribution as the source distribution and performs data pairing based on the "nearest mode" (mode coupling). This ensures that probability mass is transported locally, accelerating flow matching training convergence b…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Multimodal Distributions"
+  - "Gaussian Mixture Source"
+  - "Mode Coupling"
+  - "DINOv2 Latent Space"
 date: 2026-05-08
-content_hash: 545a90b4707780fb
+content_hash: 8256fa9199d0a18e
 ---
+
 # Flow Matching for Multimodal Distributions
 
 **Conference**: CVPR 2026  
@@ -139,10 +144,10 @@ Only using GMM source with independent coupling barely changes the path length (
 ## Related Papers
 
 - [\[CVPR 2026\] Few-shot Acoustic Synthesis with Multimodal Flow Matching](few-shot_acoustic_synthesis_with_multimodal_flow_matching.md)
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
 - [\[CVPR 2026\] Spatiotemporal Pyramid Flow Matching for Climate Emulation](spatiotemporal_pyramid_flow_matching_for_climate_emulation.md)
 - [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
 - [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](renderflow_single-step_neural_rendering_via_flow_matching.md)
-- [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
 
 </div>
 

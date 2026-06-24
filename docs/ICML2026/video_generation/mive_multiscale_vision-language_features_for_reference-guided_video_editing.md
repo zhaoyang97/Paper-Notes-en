@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MiVE: Multiscale Vision-language features for reference-guided video Editing
 description: >-
-  [ICML 2026][Video Generation][Video Editing] MiVE extracts both the **first and last layer** hidden states of Qwen3-VL as multi-scale condition tokens. These are concatenated with VAE visual latents into a long sequence for reference-guided video editing within a unified self-attention DiT. It ranks first in human preference and across 6 VLM automated metrics on
+  [ICML 2026][Video Generation][Reference-guided] MiVE extracts both the **first and last layer** hidden states of Qwen3-VL as multi-scale condition tokens. These are concatenated with VAE visual latents into a long sequence for reference-guided video editing within a unified self-attention DiT. It ranks first in human preference and across 6 VLM automated metrics on a 60-video 720P benchmark, surpassing the open-source Wan-Animate and commercial Kling O1.
 tags:
-  - ICML 2026
-  - Video Generation
-  - Video Editing
-  - DiT
+  - "ICML 2026"
+  - "Video Generation"
+  - "Reference-guided"
+  - "Video Editing"
+  - "Multiscale VLM Features"
+  - "Unified Self-Attention"
+  - "DiT"
 date: 2026-05-08
-content_hash: 4fc6d9a882f17d48
+content_hash: 4ee5c4ca05a85250
 ---
+
 # MiVE: Multiscale Vision-language features for reference-guided video Editing
 
 **Conference**: ICML 2026  
@@ -153,9 +157,20 @@ Switching to a unified VLM encoder improves nearly all metrics by $>1.5$ points.
 *   Value: ⭐⭐⭐⭐ Establishes a strong baseline for using VLMs as multi-scale unified encoders in video generation tasks.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Pixel-Perfect Puppetry: Precision-Guided Enhancement for Face Image and Video Editing](../../ICLR2026/video_generation/pixel-perfect_puppetry_precision-guided_enhancement_for_face_image_and_video_edi.md)
+- [\[CVPR 2026\] Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs](../../CVPR2026/video_generation/real-time_generation_of_streamable_talking_portrait_video_with_reference-guided_.md)
+- [\[CVPR 2026\] RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes](../../CVPR2026/video_generation/recedit-drive_3d_reconstruction-guided_spatiotemporal_video_editing_for_autonomo.md)
+- [\[ICLR 2026\] Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](../../ICLR2026/video_generation/controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine-tuning.md)
+- [\[CVPR 2026\] VIVA: VLM-Guided Instruction-Based Video Editing with Reward Optimization](../../CVPR2026/video_generation/viva_vlm-guided_instruction-based_video_editing_with_reward_optimization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs](../../CVPR2026/video_generation/real-time_generation_of_streamable_talking_portrait_video_with_reference-guided_.md)

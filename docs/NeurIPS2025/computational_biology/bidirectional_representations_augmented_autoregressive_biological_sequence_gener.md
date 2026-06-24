@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation
 description: >-
-  [NeurIPS 2025][Computational Biology][de novo peptide sequencing] CrossNovo integrates autoregressive (AR) and non-autoregressive (NAR) decoders through a shared spectrum encoder, importance annealing…
+  [NeurIPS 2025][Computational Biology][de novo peptide sequencing] CrossNovo integrates autoregressive (AR) and non-autoregressive (NAR) decoders through a shared spectrum encoder, importance annealing, and gradient-blocked knowledge distillation, enabling the bidirectional global understanding of NAR to augment AR sequence generation. On the 9-Species benchmark, it achieves amino acid accuracy of 0.811 (+2.6%) and peptide recall of 0.654 (+5.3%).
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "CTC"
   - "knowledge distillation"
 date: 2026-05-08
-content_hash: 78f4276d135acadb
+content_hash: 8bdacff9d245abe8
 ---
 
 # CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation
@@ -122,10 +122,10 @@ Input spectrum → **Shared Spectrum Encoder** (Transformer with domain-adapted 
 
 ## Related Papers
 
+- [\[ICML 2025\] Improved Off-policy Reinforcement Learning in Biological Sequence Design](../../ICML2025/computational_biology/improved_off-policy_reinforcement_learning_in_biological_sequence_design.md)
 - [\[ICLR 2026\] Controllable Sequence Editing for Biological and Clinical Trajectories](../../ICLR2026/computational_biology/controllable_sequence_editing_for_biological_and_clinical_trajectories.md)
 - [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
 - [\[NeurIPS 2025\] Learning Repetition-Invariant Representations for Polymer Informatics](learning_repetition-invariant_representations_for_polymer_informatics.md)
-- [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
 - [\[NeurIPS 2025\] GraphFLA: Augmenting Biological Fitness Prediction Benchmarks with Landscape Features](augmenting_biological_fitness_prediction_benchmarks_with_landscapes_features_fro.md)
 
 </div>

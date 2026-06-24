@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PHATNet: A Physics-guided Haze Transfer Network for Domain-adaptive Real-world Image Dehazing
 description: >-
-  [ICCV 2025][LLM Evaluation][image dehazing] This paper proposes PHATNet, a physics-guided haze transfer network that extends the Atmospheric Scattering Model (ASM) to latent space to disentangle and transfer haze pattern…
+  [ICCV 2025][LLM Evaluation][image dehazing] This paper proposes PHATNet, a physics-guided haze transfer network that extends the Atmospheric Scattering Model (ASM) to latent space to disentangle and transfer haze patterns, generating domain-adaptive fine-tuning datasets that enable dehazing models to effectively adapt to unseen real-world haze scenes at test time.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "atmospheric scattering model"
   - "disentangled learning"
 date: 2026-05-08
-content_hash: c40d79adfdf008f7
+content_hash: 14bf789604aa735f
 ---
 
 # PHATNet: A Physics-guided Haze Transfer Network for Domain-adaptive Real-world Image Dehazing
@@ -173,9 +173,9 @@ PHATNet yields consistent improvements across all dehazing models and target dom
 
 - [\[ICCV 2025\] ForCenNet: Foreground-Centric Network for Document Image Rectification](forcennet_foreground-centric_network_for_document_image_rectification.md)
 - [\[ICCV 2025\] A Real-world Display Inverse Rendering Dataset](a_real-world_display_inverse_rendering_dataset.md)
-- [\[ICCV 2025\] OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning](omnidiff_a_comprehensive_benchmark_for_fine-grained_image_difference_captioning.md)
-- [\[ACL 2026\] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](../../ACL2026/llm_evaluation/taxpraben_a_scalable_benchmark_for_structured_evaluation_of_llms_in_chinese_real.md)
-- [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](../../ACL2026/llm_evaluation/beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
+- [\[ACL 2025\] RuleArena: A Benchmark for Rule-Guided Reasoning with LLMs in Real-World Scenarios](../../ACL2025/llm_evaluation/rulearena_rule_guided_reasoning.md)
+- [\[ACL 2025\] EditInspector: A Benchmark for Evaluation of Text-Guided Image Edits](../../ACL2025/llm_evaluation/editinspector_a_benchmark_for_evaluation_of_text-guided_image_edits.md)
+- [\[ACL 2025\] TripTailor: A Real-World Benchmark for Personalized Travel Planning](../../ACL2025/llm_evaluation/triptailor_a_real-world_benchmark_for_personalized_travel_planning.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] TowerMind: A Tower Defence Game Learning Environment and Benchmark for LLM as Agents
 description: >-
-  [AAAI 2026][Reinforcement Learning][LLM agents] This paper introduces TowerMind, a lightweight multimodal environment based on tower defense games for evaluating LLMs' long-term planning and decision-making capabilities.…
+  [AAAI 2026 Oral][Reinforcement Learning][LLM agents] This paper introduces TowerMind, a lightweight multimodal environment based on tower defense games for evaluating LLMs' long-term planning and decision-making capabilities. It reveals a significant performance gap between current LLMs and human experts (the best model achieves only 42% of human expert scores) and identifies behavioral deficiencies including insufficient plan verification, lack of multi-goal thinking…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Reinforcement Learning"
   - "LLM agents"
   - "tower defense game"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "multimodal evaluation"
 date: 2026-05-08
-content_hash: 08e8737fdc0e38a0
+content_hash: 0d78bdaa9f6f97c1
 ---
 
 # TowerMind: A Tower Defence Game Learning Environment and Benchmark for LLM as Agents
@@ -183,10 +183,10 @@ For LLM evaluation, a zero-shot prompting strategy is adopted with identical pro
 ## Related Papers
 
 - [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](../../ACL2026/reinforcement_learning/dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
-- [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agent-Based Conversational AI Defense Against LLM Jailbreaking](../../ICLR2026/reinforcement_learning/toward_a_dynamic_stackelberg_game-theoretic_framework_for_agent-based_conversat.md)
-- [\[AAAI 2026\] Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping](aligning_machiavellian_agents_behavior_steering_via_test-tim.md)
 - [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](../../ICML2026/reinforcement_learning/game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
 - [\[ICLR 2026\] Don't Just Fine-tune the Agent, Tune the Environment](../../ICLR2026/reinforcement_learning/dont_just_fine-tune_the_agent_tune_the_environment.md)
+- [\[ICLR 2026\] MATH-Beyond: A Benchmark for RL to Expand Beyond the Base Model](../../ICLR2026/reinforcement_learning/math-beyond_a_benchmark_for_rl_to_expand_beyond_the_base_model.md)
+- [\[ICLR 2026\] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV](../../ICLR2026/reinforcement_learning/virne_a_comprehensive_benchmark_for_rl-based_network_resource_allocation_in_nfv.md)
 
 </div>
 

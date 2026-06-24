@@ -1,0 +1,167 @@
+---
+title: >-
+  [Paper Note] LlavaGuard: An Open VLM-based Framework for Safeguarding Vision Datasets and Models
+description: >-
+  [ICML2025][Multimodal VLM][VLM safeguard] Proposes LlavaGuard, an open visual content safety moderation framework based on open-source VLMs. By utilizing a customizable safety taxonomy, a high-quality human-annotated dataset, and policy-enhanced training, it achieves flexible and precise safety assessment of image content, substantially outperforming existing open-source and closed-source moderation tools in both accuracy and policy adaptability.
+tags:
+  - "ICML2025"
+  - "Multimodal VLM"
+  - "VLM safeguard"
+  - "content safety"
+  - "safety taxonomy"
+  - "policy adaptation"
+  - "image moderation"
+date: 2026-05-08
+content_hash: 26ce212675a60787
+---
+
+# LlavaGuard: An Open VLM-based Framework for Safeguarding Vision Datasets and Models
+
+**Conference**: ICML2025  
+**arXiv**: [2406.05113](https://arxiv.org/abs/2406.05113)  
+**Code**: [GitHub](https://ml-research.github.io/human-centered-genai/projects/llavaguard)  
+**Area**: VLM Safety / Content Moderation  
+**Keywords**: VLM safeguard, content safety, safety taxonomy, policy adaptation, image moderation
+
+## TL;DR
+
+Proposes LlavaGuard, an open visual content safety moderation framework based on open-source VLMs. By utilizing a customizable safety taxonomy, a high-quality human-annotated dataset, and policy-enhanced training, it achieves flexible and precise safety assessment of image content, substantially outperforming existing open-source and closed-source moderation tools in both accuracy and policy adaptability.
+
+## Background & Motivation
+
+- Large-scale generative AI (T2I, VLM) models rely on massive web-scraped data for training, which inevitably contains unsafe and biased content, leading to severe safety and ethical concerns.
+- AI regulations (such as the EU AI Act) in regions like the EU, US, and UK require generative models to comply with safety standards, fostering the demand for automated safety moderation tools.
+- Existing safety research primarily focuses on the text domain (e.g., LlamaGuard), leaving a lack of reliable open-source frameworks in the vision domain.
+- Traditional NSFW classifiers (such as NudeNet and Q16), based on CNNs or CLIP, lack context-awareness and cannot flexibly adapt to different safety policies (e.g., the varied legality of cannabis across different countries).
+- **Core Problem**: How to build an open-source, flexible, and high-precision visual content safety moderation system that can dynamically adjust safety assessments based on different policies?
+
+## Method
+
+### 1. Safety Taxonomy
+
+LlavaGuard designs a 9+1 safety taxonomy tailored for the vision domain:
+
+| Category | Description |
+|------|------|
+| O1 | Hate, insults, harassment |
+| O2 | Violence, harm, cruelty |
+| O3 | Sexual content |
+| O4 | Nudity |
+| O5 | Criminal planning |
+| O6 | Weapons or drug abuse |
+| O7 | Self-harm |
+| O8 | Animal abuse |
+| O9 | Disaster or emergency situations |
+| NA | Not applicable (Safe) |
+
+Unlike textual safety taxonomies, this system is specifically designed for the visual modality, distinguishing between nudity and sexual content, and introducing a new category for disasters/emergencies.
+
+### 2. Risk Guidelines and Policy Flexibility
+
+Each safety category is equipped with detailed Risk Guidelines that clearly define the boundaries of what "should not be contained" and "can be contained". Methods of policy adjustment:
+
+- **Category Exception**: Declaring a specific category as "non-violating", allowing the model to permit content of this type.
+- **Guideline Modification**: Shifting entries between "should not" and "can" to achieve fine-grained control.
+
+### 3. Dataset Construction
+
+**Data Source**: Based on the SMID (Socio-Moral Image Database), additional images were crawled from Google/Bing to address category imbalance, ensuring at least 100 images per category.
+
+**Human Annotation**: Each image is annotated with its safety category and a safety rating (four levels: Highly Unsafe $\rightarrow$ Moderately Unsafe $\rightarrow$ Barely Safe $\rightarrow$ Generally Safe).
+
+**Data Augmentation**:
+- **Policy Exception Augmentation**: Declaring the category violated by an originally unsafe sample as non-violating, thereby flipping the label to safe.
+- **Random Category Exception**: Randomly declaring up to 3 unrelated categories as non-violating to train the model to ignore them correctly.
+
+**Guided Rationale Generation**:
+
+Unconditionally prompting a VLM to generate safety explanations yields poor quality (GPT-4o score of only 3.8/10). The authors employ conditional prompting, injecting prior knowledge such as safety ratings, categories, and risk guidelines into the generation process:
+
+$$\text{Rationale} = \text{VLM}(\text{image}, \text{policy}, \text{rating}, \text{category}, \text{guidelines})$$
+
+After guidance, the quality score of the rationales generated by Llava-34B reaches **9.1/10** (with a win rate of 99.9%). The final dataset contains 5,466 samples (train/eval/test = 4571/71/824).
+
+### 4. Model Training and Evaluation Metrics
+
+Finetuning is performed on top of Llava-OneVision (0.5B, 7B) and Qwen2.5-VL (3B, 7B). The model outputs a triplet in JSON format:
+
+```json
+{"safety_rating": "Unsafe", "category": "O3", "rationale": "..."}
+```
+
+**Policy Adaptation Metric (PER - Policy Exception Rate)**:
+
+$$\text{PER} = \frac{\text{PE}_{\text{correct}}}{\text{PE}_{\text{correct}} + \text{PE}_{\text{false}}}$$
+
+Where $\text{PE}_{\text{correct}} = \sum_{i=1}^{N} \delta(y_i, \hat{y}_i)$, and $\delta=1$ indicates that the policy exception sample is correctly classified.
+
+**Comprehensive Metric (PES - Policy Exception Score)**: The harmonic mean of PER and Balanced Accuracy:
+
+$$\text{PES} = \frac{2 \times \text{PER} \times \text{Acc}}{\text{PER} + \text{Acc}}$$
+
+## Key Experimental Results
+
+### Main Results (held-out test set)
+
+| Model | Open Source | Balanced Acc (%) | Recall (%) | Precision (%) | PES (%) |
+|------|------|------------------|------------|---------------|---------|
+| GPT-4o | ✗ | 72.92 | 55.99 | 81.05 | 77.29 |
+| LlamaGuard-3-11B | ✓ | 50.28 | 0.56 | 100.0 | 66.92 |
+| OpenAI-omni-mod | ✗ | 66.92 | 45.24 | 47.50 | 60.23 |
+| ImageGuard | ✓ | 70.98 | 83.33 | 60.98 | 27.00 |
+| **LlavaGuard-0.5B** | ✓ | **88.70** | 86.67 | 87.89 | **87.10** |
+| **LlavaGuard-7B** | ✓ | **90.84** | **91.39** | 87.97 | **89.85** |
+
+### Key Findings
+
+- The Balanced Acc of LlavaGuard-7B (90.84%) is **18 percentage points** higher than that of GPT-4o (72.92%).
+- The Recall of LlamaGuard-3-Vision is only 0.56%, predicting almost all images as safe, rendering it completely unusable.
+- ImageGuard achieves a PES of only 27.00%, severely overfitting to a fixed policy and failing to adapt to policy variations.
+- The inference speed of LlavaGuard-0.5B is **3.47 times** faster than that of the 7B variant (0.075s/sample on an A100 GPU).
+
+### Guided Rationale Quality Comparison
+
+| Model | Type | Mean Score | Median | Win Rate (%) |
+|------|------|------|--------|---------|
+| Llava-34B | Unguided | 3.8 | 3.0 | 0.1 |
+| Llava-34B | Guided | **9.1** | **9.0** | **99.9** |
+
+## Highlights & Insights
+
+1. **End-to-End Open Framework**: Opens the entire pipeline spanning safety taxonomies, data annotation, enhancement policies, and model training, lowering the barrier to constructing safety moderation tools.
+2. **Policy Adaptability**: Employs policy-enhanced training, allowing the model to flexibly adjust safety assessments according to different regulations/scenarios, which is the core differentiator from other moderation tools.
+3. **Guided Rationale Generation**: Ingeniously injects prior safety knowledge into the rationale generation process, boosting the quality score from 3.8 to 9.1, significantly enhancing explainability.
+4. **Impressive Performance of the 0.5B Tiny Model**: Outperforms GPT-4o and all specialized moderation tools with only 0.5B parameters, showing that domain-specific finetuning efficacy far outweighs model scale.
+5. **Real-world Application Validation**: Solidifies effectiveness across two real-world scenarios: large-scale dataset tagging and text-to-image (T2I) model auditing.
+
+## Limitations & Future Work
+
+1. **Limited Dataset Scale**: Comprising only 5,466 samples, which may lack coverage for long-tail safety scenarios (e.g., culturally sensitive content).
+2. **Fixed 9-Category Taxonomy**: Although supporting category exceptions, introducing new categories still requires re-annotation and re-training.
+3. **Single Image Evaluation**: Lacks consideration for multi-image context or joint image-text safety assessment scenarios.
+4. **Evaluation Benchmark Limitations**: The test set contains only 824 samples and is primarily based on self-constructed data, lacking comparisons with tools like NudeNet on their original benchmarks.
+5. **Rationale Generation Dependent on Llava-34B**: The upper bound of guided rationale quality remains constrained by the capabilities of the base model.
+6. **Unverified Adversarial Robustness**: Fails to test performance under targeted adversarial attacks (such as adversarial perturbations to bypass moderation).
+
+## Rating
+
+- Novelty: ⭐⭐⭐⭐ — The first end-to-end, open-source safety moderation framework for vision, with an innovative policy adaptation mechanism.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive comparison (including GPT-4o and multiple open-source models), although the evaluation dataset is relatively small.
+- Writing Quality: ⭐⭐⭐⭐ — Highly structured, rich in diagrams and tables, and balances qualitative and quantitative analyses well.
+- Value: ⭐⭐⭐⭐⭐ — Fills a critical gap in the visual safety moderation domain, possessing extremely high practical utility.
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models](../../ICML2026/multimodal_vlm/vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
+- [\[ICCV 2025\] Safeguarding Vision-Language Models: Mitigating Vulnerabilities to Gaussian Noise in Perturbation-based Attacks](../../ICCV2025/multimodal_vlm/safeguarding_vision-language_models_mitigating_vulnerabilities_to_gaussian_noise.md)
+- [\[CVPR 2025\] Molmo and PixMo: Open Weights and Open Data for State-of-the-Art Vision-Language Models](../../CVPR2025/multimodal_vlm/molmo_and_pixmo_open_weights_and_open_data_for_state-of-the-art_vision-language_.md)
+- [\[ICML 2026\] Immuno-VLM: Immunizing Large Vision-Language Models via Generative Semantic Antibodies for Open-World Trustworthiness](../../ICML2026/multimodal_vlm/immuno-vlm_immunizing_large_vision-language_models_via_generative_semantic_antib.md)
+- [\[CVPR 2026\] LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models](../../CVPR2026/multimodal_vlm/llavashield_multimodal_multiturn_safety.md)
+
+</div>
+
+<!-- RELATED:END -->

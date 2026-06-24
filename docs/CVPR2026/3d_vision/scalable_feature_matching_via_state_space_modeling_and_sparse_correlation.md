@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scalable Feature Matching via State Space Modeling and Sparse Correlation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SLiM utilizes a "Conv-Mamba linear-complexity backbone + L2-norm guided sparse correlation + lightweight recurrent coordinate refinement" triad to liberate semi-dense feature matching from quadratic computational costs. On MegaDepth, it achieves AUC@5°=57.9 with only 5.9M parameters (1.5 points higher than Efficient Lo
+  [CVPR 2026][3D Vision][Feature Matching] SLiM utilizes a "Conv-Mamba linear-complexity backbone + L2-norm guided sparse correlation + lightweight recurrent coordinate refinement" triad to liberate semi-dense feature matching from quadratic computational costs. On MegaDepth, it achieves AUC@5°=57.9 with only 5.9M parameters (1.5 points higher than Efficient LoFTR). At 1200×1200 resolution, it reduces memory consumption by 45% compared to JamMa and is 1.8× faster than Efficient…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feature Matching"
+  - "State Space Models (Mamba)"
+  - "Sparse Correlation"
+  - "High-Resolution Scalability"
+  - "Semi-Dense Matching"
 date: 2026-05-08
-content_hash: 9974d404586fc68e
+content_hash: a3bdde5b7b6933eb
 ---
+
 # Scalable Feature Matching via State Space Modeling and Sparse Correlation
 
 **Conference**: CVPR 2026  
@@ -138,6 +144,7 @@ Plug-and-play generalization (inserting L2 filtering into existing matchers with
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

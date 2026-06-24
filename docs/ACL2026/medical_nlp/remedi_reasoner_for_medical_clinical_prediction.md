@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReMedi: Reasoner for Medical Clinical Prediction
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] ReMedi reformulates EHR clinical prediction as a "rationale-prediction" generation and preference learning task. By utilizing hard sample regeneration with ground-truth outcome hints, SFT, and DPO, it teaches medical LLMs to provide fine-grained explanations for patient risks. It achieves up to a 19.9 F1 point improvem
+  [ACL 2026 Findings][Medical LLM][Electronic Health Records] ReMedi reformulates EHR clinical prediction as a "rationale-prediction" generation and preference learning task. By utilizing hard sample regeneration with ground-truth outcome hints, SFT, and DPO, it teaches medical LLMs to provide fine-grained explanations for patient risks. It achieves up to a 19.9 F1 point improvement over KARE across three clinical prediction tasks on MIMIC-IV.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Electronic Health Records"
+  - "Clinical Prediction"
+  - "Reasoning Fine-tuning"
+  - "Preference Optimization"
+  - "Hard Sample Regeneration"
 date: 2026-05-08
-content_hash: 564efe46314ebf4a
+content_hash: 1f40bd8fb325f99b
 ---
+
 # ReMedi: Reasoner for Medical Clinical Prediction
 
 **Conference**: ACL 2026 Findings  
@@ -128,8 +134,6 @@ Human inspection of reasoning-prediction consistency shows that while KARE achie
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

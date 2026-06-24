@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Is Finer Better? The Limits of Microscaling Formats in Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][FP4] Discovers and explains the counter-intuitive "finer-is-worse" anomaly in microscaling quantization—when block size decreases below a certain threshold, the limited dynamic range of the FP8 UE4M3 scale causes the quantization error of narrow-distribution tensors to increase instead. The paper proposes the FP8 UE5M3 scal
+  [ICLR 2026][Model Compression][Microscaling quantization] Discovers and explains the counter-intuitive "finer-is-worse" anomaly in microscaling quantization—when block size decreases below a certain threshold, the limited dynamic range of the FP8 UE4M3 scale causes the quantization error of narrow-distribution tensors to increase instead. The paper proposes the FP8 UE5M3 scale format as a hardware-friendly solution.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - FP4
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Microscaling quantization"
+  - "FP4"
+  - "quantization anomalies"
+  - "dynamic range"
+  - "LLM quantization"
 date: 2026-05-08
-content_hash: 3583d1f4731bd6df
+content_hash: 88dd3bc2184e3243
 ---
+
 # Is Finer Better? The Limits of Microscaling Formats in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -119,7 +124,7 @@ As a comparison, NVIDIA's current approach with NVFP4 uses per-tensor scales to 
 - [\[ICLR 2026\] MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models](micromix_efficient_mixed-precision_quantization_with_microscaling_formats_for_la.md)
 - [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](distillation_of_large_language_models_via_concrete_score_matching.md)
-- [\[ICLR 2026\] MoSA: Mosaic Shared Adaptation of Large Language Models](mosa_mosaic_shared_adaptation_of_large_language_models.md)
+- [\[ICLR 2026\] Entropy-Based Block Pruning for Efficient Large Language Models](entropy-based_block_pruning_for_efficient_large_language_models.md)
 - [\[ICLR 2026\] MobileLLM-R1: Exploring the Limits of Sub-Billion Language Model Reasoners with Open Training Recipes](mobilellm-r1_exploring_the_limits_of_sub-billion_language_model_reasoners_with_o.md)
 
 </div>

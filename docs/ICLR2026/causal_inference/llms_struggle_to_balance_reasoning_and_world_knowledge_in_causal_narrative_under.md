@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLMs Struggle to Balance Reasoning and World Knowledge in Causal Narrative Understanding
 description: >-
-  [ICLR 2026][Causal Inference][Narrative Understanding] By controllably generating causal narratives across two axes—"world knowledge conflict" and "graph reasoning complexity"—the authors find that SOTA LLMs rely on two shortcuts in causal narrative understanding (event appearance order = causal order, and applying parametric common sense). Neither CoT nor ICL can resolve
+  [ICLR 2026][Causal Inference][Causal reasoning] By controllably generating causal narratives across two axes—"world knowledge conflict" and "graph reasoning complexity"—the authors find that SOTA LLMs rely on two shortcuts in causal narrative understanding (event appearance order = causal order, and applying parametric common sense). Neither CoT nor ICL can resolve this; only a "Graph" strategy—where the model first extracts the entire causal graph and then answers via graph…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Narrative Understanding
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal reasoning"
+  - "narrative understanding"
+  - "world knowledge conflict"
+  - "shortcut learning"
+  - "graph extraction"
 date: 2026-05-08
-content_hash: 606b6d1a07bb7793
+content_hash: 690929b9dced7cb0
 ---
+
 # LLMs Struggle to Balance Reasoning and World Knowledge in Causal Narrative Understanding
 
 **Conference**: ICLR 2026  

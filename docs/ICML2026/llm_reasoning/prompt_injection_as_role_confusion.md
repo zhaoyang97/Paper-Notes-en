@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prompt Injection as Role Confusion
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper attributes the root cause of "prompt injection" to a role confusion phenomenon where LLMs identify "who is speaking" in the latent space **using style rather than labels**. The authors propose "Role Probes" to quantify this confusion and design a CoT Forgery attack. This attack increases success rates from n
+  [ICML 2026][Reasoning][Prompt Injection] This paper attributes the root cause of "prompt injection" to a role confusion phenomenon where LLMs identify "who is speaking" in the latent space **using style rather than labels**. The authors propose "Role Probes" to quantify this confusion and design a CoT Forgery attack. This attack increases success rates from near 0% to over 60% across six frontier models. Furthermore, it demonstrates that the "role confusion degree" measured b…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Prompt Injection"
+  - "Role Perception"
+  - "CoT Forgery"
+  - "Linear Probes"
+  - "Instruction Hierarchy"
 date: 2026-05-08
-content_hash: d23c32b28c51dde4
+content_hash: 30401db5c2217823
 ---
+
 # Prompt Injection as Role Confusion
 
 **Conference**: ICML 2026  
@@ -141,9 +147,9 @@ Probes are layer-independent linear softmax classifiers. They default to reporti
 ## Related Papers
 
 - [\[ICML 2026\] The Role of Feedback Alignment in Self-Distillation](the_role_of_feedback_alignment_in_self-distillation.md)
-- [\[ACL 2026\] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents](../../ACL2026/llm_reasoning/jtpro_a_joint_tool-prompt_reflective_optimization_framework_for_language_agents.md)
 - [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](../../ICLR2026/llm_reasoning/understanding_the_role_of_training_data_in_test-time_scaling.md)
 - [\[ICLR 2026\] Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts](../../ICLR2026/llm_reasoning/beyond_prompt-induced_lies_investigating_llm_deception_on_benign_prompts.md)
+- [\[ACL 2026\] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents](../../ACL2026/llm_reasoning/jtpro_a_joint_tool-prompt_reflective_optimization_framework_for_language_agents.md)
 - [\[ACL 2025\] Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory](../../ACL2025/llm_reasoning/rethinking_the_role_of_prompting_strategies_in_llm_test-time_scaling_a_perspecti.md)
 
 </div>

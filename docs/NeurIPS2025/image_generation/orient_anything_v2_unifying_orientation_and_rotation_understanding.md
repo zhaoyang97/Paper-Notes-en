@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Orient Anything V2: Unifying Orientation and Rotation Understanding
 description: >-
-  [NeurIPS 2025][Image Generation][orientation estimation] Orient Anything V2 unifies 3D object orientation and rotation understanding via a scalable synthetic data engine, a symmetry-aware periodic distribution objective…
+  [NeurIPS 2025 Spotlight][Image Generation][orientation estimation] Orient Anything V2 unifies 3D object orientation and rotation understanding via a scalable synthetic data engine, a symmetry-aware periodic distribution objective, and a multi-frame architecture, achieving zero-shot state-of-the-art performance across three tasks: orientation estimation, 6DoF pose estimation, and symmetry recognition.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "orientation estimation"
   - "rotational symmetry"
@@ -12,7 +12,7 @@ tags:
   - "synthetic data"
   - "foundation model"
 date: 2026-05-08
-content_hash: d3f3a9b5270347fd
+content_hash: 9741fc051dfeff36
 ---
 
 # Orient Anything V2: Unifying Orientation and Rotation Understanding
@@ -166,10 +166,10 @@ The advantage is especially pronounced under large rotation angles (random sampl
 ## Related Papers
 
 - [\[NeurIPS 2025\] Kuramoto Orientation Diffusion Models](kuramoto_orientation_diffusion_models.md)
+- [\[CVPR 2025\] CustAny: Customizing Anything from A Single Example](../../CVPR2025/image_generation/custany_customizing_anything_from_a_single_example.md)
 - [\[NeurIPS 2025\] More Than Generation: Unifying Generation and Depth Estimation via Text-to-Image Diffusion Models](more_than_generation_unifying_generation_and_depth_estimation_via_text-to-image_.md)
-- [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
-- [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
-- [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
+- [\[ICML 2025\] Angle Domain Guidance: Latent Diffusion Requires Rotation Rather Than Extrapolation](../../ICML2025/image_generation/angle_domain_guidance_latent_diffusion_requires_rotation_rather_than_extrapolati.md)
+- [\[CVPR 2025\] Compass Control: Multi Object Orientation Control for Text-to-Image Generation](../../CVPR2025/image_generation/compass_control_multi_object_orientation_control_for_text-to-image_generation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes D-GARA, a dynamic robustness evaluation framework for Android GUI Agents. By injecting real-world anomalies—such as permission dialogs, low-battery warnings…
+  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes D-GARA, a dynamic robustness evaluation framework for Android GUI Agents. By injecting real-world anomalies—such as permission dialogs, low-battery warnings, and app crashes—during live interactions, D-GARA reveals that existing SOTA agents (including UI-TARS-72B and GPT-4o) suffer an average success rate drop of over 17.5%, with a maximum degradation of 33%, under interruption scenarios.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -13,7 +13,7 @@ tags:
   - "Android"
   - "interruption handling"
 date: 2026-05-08
-content_hash: 56cc6601f47020e3
+content_hash: e887d699243bda2e
 ---
 
 # D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies
@@ -160,10 +160,10 @@ Gemini's SR drops from 80% to 45% (a 35% reduction) in vision-only mode, whereas
 ## Related Papers
 
 - [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](../../ICLR2026/llm_agent/openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
+- [\[AAAI 2026\] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs](llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr.md)
+- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](../../ICLR2026/llm_agent/vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
 - [\[ACL 2026\] AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts](../../ACL2026/llm_agent/agencybench_benchmarking_the_frontiers_of_autonomous_agents_in_1m-token_real-wor.md)
 - [\[AAAI 2026\] Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents](co-epg_a_framework_for_co-evolution_of_planning_and_groundin.md)
-- [\[AAAI 2026\] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs](llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr.md)
-- [\[AAAI 2026\] ProBench: Benchmarking GUI Agents with Accurate Process Information](probench_benchmarking_gui_agents_with_accurate_process_infor.md)
 
 </div>
 

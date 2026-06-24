@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization
 description: >-
-  [CVPR 2026][Video Generation][Reinforcement Learning] This paper proposes IPRO, which directly optimizes video diffusion models using reinforcement learning and a differentiable facial identity scorer. Without modifying the model architecture, it significantly improves facial identity consistency in image-to-video generation, achieving a 20%-45% increase in FaceSim on Wan
+  [CVPR 2026][Image Generation][Image-to-Video] This paper proposes IPRO, which directly optimizes video diffusion models using reinforcement learning and a differentiable facial identity scorer. Without modifying the model architecture, it significantly improves facial identity consistency in image-to-video generation, achieving a 20%-45% increase in FaceSim on Wan 2.2.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image-to-Video"
+  - "Identity Preservation"
+  - "Reinforcement Learning"
+  - "Facial Reward"
+  - "Diffusion Model Fine-tuning"
 date: 2026-05-08
-content_hash: 256590c558e61b04
+content_hash: bc0dd6be6690e7b6
 ---
+
 # Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization
 
 **Conference**: CVPR 2026  
@@ -172,11 +177,11 @@ The approach uses the Adam optimizer with a learning rate of 2e-5 for 100 steps 
 
 ## Related Papers
 
-- [\[CVPR 2026\] EvoID: Reinforced Evolution for Identity-Preserving Video Generation](evoid_reinforced_evolution_for_identity-preserving_video_generation.md)
-- [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
-- [\[CVPR 2026\] VIVA: VLM-Guided Instruction-Based Video Editing with Reward Optimization](viva_vlm-guided_instruction-based_video_editing_with_reward_optimization.md)
-- [\[CVPR 2026\] PLACID: Identity-Preserving Multi-Object Compositing via Video Diffusion with Synthetic Trajectories](placid_identity-preserving_multi-object_compositing_via_video_diffusion_with_syn.md)
+- [\[CVPR 2026\] Semantic Alignment for Pose-Invariant Identity Preserving Diffusion](semantic_alignment_for_pose-invariant_identity_preserving_diffusion.md)
+- [\[CVPR 2026\] CaricHarmony: Contrastive Diffusion Paths for Identity-Preserving Caricature Synthesis](caricharmony_contrastive_diffusion_paths_for_identity-preserving_caricature_synt.md)
+- [\[CVPR 2026\] Not All Birds Look The Same: Identity-Preserving Generation For Birds](not_all_birds_look_the_same_identity-preserving_generation_for_birds.md)
+- [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
+- [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
 
 </div>
 

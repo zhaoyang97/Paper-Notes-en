@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Simulated Students in Tutoring Dialogues: Substance or Illusion?
 description: >-
-  [ACL 2026][Dialogue Systems][DPO] This paper proposes a evaluation framework for simulated students in mathematics tutoring dialogues. It finds that simple prompting often produces "students who seem to know how to answer," whereas SFT and DPO align more closely with real student behavior, though error replication and modeling of individual differences
+  [ACL2026][Dialogue Systems][Simulated Student] This paper proposes a evaluation framework for simulated students in mathematics tutoring dialogues. It finds that simple prompting often produces "students who seem to know how to answer," whereas SFT and DPO align more closely with real student behavior, though error replication and modeling of individual differences remain largely unresolved.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - DPO
+  - "ACL2026"
+  - "Dialogue Systems"
+  - "Simulated Student"
+  - "Intelligent Tutoring"
+  - "Dialogue Evaluation"
+  - "DPO"
+  - "Learning Sciences"
 date: 2026-05-08
-content_hash: 771ae9f984017e55
+content_hash: 202b9a040c3a0f9b
 ---
+
 # Simulated Students in Tutoring Dialogues: Substance or Illusion?
 
 **Conference**: ACL2026  

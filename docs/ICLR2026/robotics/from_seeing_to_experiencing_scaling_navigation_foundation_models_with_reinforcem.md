@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] S2E proposes a hybrid learning framework "from seeing to experiencing": initial pre-training using anchor-guided Gaussian mixture distributions on 100 hours of real navigation videos, followed by RL post-training in simulation with a zero-initialized Residual Attention Module (RAM). By updating only the cross-attention
+  [ICLR 2026][Robotics][Navigation Foundation Models] S2E proposes a hybrid learning framework "from seeing to experiencing": initial pre-training using anchor-guided Gaussian mixture distributions on 100 hours of real navigation videos, followed by RL post-training in simulation with a zero-initialized Residual Attention Module (RAM). By updating only the cross-attention branches, reactive capabilities for obstacle and pedestrian avoidance are injected…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Navigation Foundation Models"
+  - "Reinforcement Learning Post-training"
+  - "Residual Attention"
+  - "Anchor Distribution Matching"
+  - "3DGS Simulation Benchmark"
 date: 2026-05-08
-content_hash: e8b70ed9e63a31e7
+content_hash: e2c848935f621513
 ---
+
 # From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,10 @@ Interactive capabilities learned via simulation RL transfer zero-shot to real du
 ## Related Papers
 
 - [\[ICLR 2026\] Embodied Navigation Foundation Model](embodied_navigation_foundation_model.md)
+- [\[ICLR 2026\] SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning](simplevla-rl_scaling_vla_training_via_reinforcement_learning.md)
 - [\[ICLR 2026\] Policy Contrastive Decoding for Robotic Foundation Models](policy_contrastive_decoding_for_robotic_foundation_models.md)
 - [\[ICLR 2026\] BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning](bfm-zero_a_promptable_behavioral_foundation_model_for_humanoid_control_using_uns.md)
 - [\[ICLR 2026\] From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation](from_seeing_to_doing_bridging_reasoning_and_decision_for_robotic_manipulation.md)
-- [\[ICLR 2026\] Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation](ground_slow_move_fast_a_dual-system_foundation_model_for_generalizable_vision-la.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Quantifying and Optimizing Simplicity via Polynomial Representations
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] The authors propose using "Chebyshev polynomials fitted along data interpolation paths" as a low-dimensional function-space proxy for neural networks. They define "Effective Degree" (ED)—the sum of absolute coefficients weighted by their polynomial orders—as a scalar measure of "how simple a function is." ED predicts t
+  [ICML2026][Reinforcement Learning][Simplicity measure] The authors propose using "Chebyshev polynomials fitted along data interpolation paths" as a low-dimensional function-space proxy for neural networks. They define "Effective Degree" (ED)—the sum of absolute coefficients weighted by their polynomial orders—as a scalar measure of "how simple a function is." ED predicts the generalization gap on CIFAR-10, ImageNet, and CLIP more accurately than existing proxies like sharpnes…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Simplicity measure"
+  - "function space"
+  - "Chebyshev polynomials"
+  - "generalization proxy"
+  - "differentiable regularization"
 date: 2026-05-08
-content_hash: 2802f4894fc6ec80
+content_hash: 8485d295c84b4ef0
 ---
+
 # Quantifying and Optimizing Simplicity via Polynomial Representations
 
 **Conference**: ICML2026  
@@ -145,15 +151,14 @@ Consistently positive across modalities/tasks: ViT-Tiny on CIFAR-10 improves by 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Can Large Language Models Generalize Procedures Across Representations?](can_large_language_models_generalize_procedures_across_representations.md)
 - [\[NeurIPS 2025\] Quantifying Generalisation in Imitation Learning](../../NeurIPS2025/reinforcement_learning/quantifying_generalisation_in_imitation_learning.md)
+- [\[ICML 2026\] Can Large Language Models Generalize Procedures Across Representations?](can_large_language_models_generalize_procedures_across_representations.md)
 - [\[ICML 2026\] Laplacian Representations for Decision-Time Planning](laplacian_representations_for_decision-time_planning.md)
 - [\[ICLR 2026\] Dual Goal Representations](../../ICLR2026/reinforcement_learning/dual_goal_representations.md)
-- [\[ICML 2026\] DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control](debiased_model-based_representations_for_sample-efficient_continuous_control.md)
+- [\[ACL 2026\] The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games](../../ACL2026/reinforcement_learning/the_stackelberg_speaker_optimizing_persuasive_communication_in_social_deduction_.md)
 
 </div>
 

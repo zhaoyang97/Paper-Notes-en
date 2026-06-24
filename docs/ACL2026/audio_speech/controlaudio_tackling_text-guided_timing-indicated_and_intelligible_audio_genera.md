@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ControlAudio: Tackling Text-Guided, Timing-Indicated and Intelligible Audio Generation via Progressive Diffusion Modeling
 description: >-
-  [ACL 2026][Audio & Speech][DiT] This paper proposes ControlAudio, a unified progressive diffusion modeling framework. Through a three-stage progressive training strategy (TTA pre-training → timing control fine-tuning → joint timing and intelligible speech training) and progressive guided sampling, it achieves text-guided, timing-precise, and intellig
+  [ACL 2026][Audio & Speech][Text-to-Audio] This paper proposes ControlAudio, a unified progressive diffusion modeling framework. Through a three-stage progressive training strategy (TTA pre-training → timing control fine-tuning → joint timing and intelligible speech training) and progressive guided sampling, it achieves text-guided, timing-precise, and intelligible speech generation within a single diffusion model. It significantly outperforms existing methods in timing accura…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - DiT
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Text-to-Audio"
+  - "Temporal Control"
+  - "Intelligible Speech"
+  - "Progressive Diffusion"
+  - "DiT"
 date: 2026-05-08
-content_hash: 16332fd45797d1c9
+content_hash: ae49c550c7336107
 ---
+
 # ControlAudio: Tackling Text-Guided, Timing-Indicated and Intelligible Audio Generation via Progressive Diffusion Modeling
 
 **Conference**: ACL 2026  
@@ -139,10 +144,10 @@ Standard conditional diffusion training objective (noise prediction). Data const
 ## Related Papers
 
 - [\[ICML 2025\] IMPACT: Iterative Mask-based Parallel Decoding for Text-to-Audio Generation with Diffusion Modeling](../../ICML2025/audio_speech/impact_iterative_mask-based_parallel_decoding_for_text-to-audio_generation_with_.md)
+- [\[ICLR 2026\] MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control](../../ICLR2026/audio_speech/mambavoicecloning_efficient_and_expressive_text-to-speech_via_state-space_modeli.md)
+- [\[ICLR 2026\] Aurelius: Relation Aware Text-to-Audio Generation At Scale](../../ICLR2026/audio_speech/aurelius_relation_aware_text-to-audio_generation_at_scale.md)
 - [\[AAAI 2026\] Diff-V2M: A Hierarchical Conditional Diffusion Model with Explicit Rhythmic Modeling for Video-to-Music Generation](../../AAAI2026/audio_speech/diff-v2m_a_hierarchical_conditional_diffusion_model_with_explicit_rhythmic_model.md)
 - [\[ACL 2026\] Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval](omni-embed-audio_leveraging_multimodal_llms_for_robust_audio-text_retrieval.md)
-- [\[ICML 2026\] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer](../../ICML2026/audio_speech/towards_streaming_synchronized_spatial_audio_generation_via_autoregressive_diffu.md)
-- [\[ACL 2025\] In-the-wild Audio Spatialization with Flexible Text-guided Localization](../../ACL2025/audio_speech/tas_audio_spatialization.md)
 
 </div>
 

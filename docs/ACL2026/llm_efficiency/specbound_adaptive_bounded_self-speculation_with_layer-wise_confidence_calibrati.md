@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpecBound: Adaptive Bounded Self-Speculation with Layer-wise Confidence Calibration
 description: >-
-  [ACL 2026][LLM Efficiency][Inference Acceleration] The authors propose SpecBound, a self-speculative decoding framework that suppresses spurious high-confidence predictions in shallow layers through layer-wise temperature annealing. By designing a bounded speculation algorithm to adaptively control the depth and width of drafts, the framework achieves up to 2.33× infer
+  [ACL 2026 Findings][LLM Efficiency][Speculative decoding] The authors propose SpecBound, a self-speculative decoding framework that suppresses spurious high-confidence predictions in shallow layers through layer-wise temperature annealing. By designing a bounded speculation algorithm to adaptively control the depth and width of drafts, the framework achieves up to 2.33× inference acceleration while maintaining lossless output.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Inference Acceleration
+  - "ACL 2026 Findings"
+  - "LLM Efficiency"
+  - "Speculative decoding"
+  - "self-speculation"
+  - "early exit mechanism"
+  - "confidence calibration"
+  - "inference acceleration"
 date: 2026-05-08
-content_hash: 8604c35bf06ec101
+content_hash: 224ebd6887a93dba
 ---
+
 # SpecBound: Adaptive Bounded Self-Speculation with Layer-wise Confidence Calibration
 
 **Conference**: ACL 2026 Findings  
@@ -135,10 +140,10 @@ The base model parameters are frozen; only lightweight LM heads are trained for 
 ## Related Papers
 
 - [\[ICML 2026\] KnapSpec: Self-Speculative Decoding via Adaptive Layer Selection as a Knapsack Problem](../../ICML2026/llm_efficiency/knapspec_self-speculative_decoding_via_adaptive_layer_selection_as_a_knapsack_pr.md)
+- [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](../../ICLR2026/llm_efficiency/rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
+- [\[ACL 2025\] CLaSp: In-Context Layer Skip for Self-Speculative Decoding](../../ACL2025/llm_efficiency/clasp_self_speculative_decoding.md)
 - [\[ACL 2026\] RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding](racer_retrieval-augmented_contextual_rapid_speculative_decoding.md)
 - [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](multi-drafter_speculative_decoding_with_alignment_feedback.md)
-- [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
-- [\[ACL 2025\] CLaSp: In-Context Layer Skip for Self-Speculative Decoding](../../ACL2025/llm_efficiency/clasp_self_speculative_decoding.md)
 
 </div>
 

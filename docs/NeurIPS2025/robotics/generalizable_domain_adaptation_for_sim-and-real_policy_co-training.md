@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training
 description: >-
-  [NeurIPS 2025][Robotics][sim-to-real] This paper proposes a sim-and-real policy co-training framework based on Unbalanced Optimal Transport (UOT)…
+  [NeurIPS 2025][Robotics][sim-to-real] This paper proposes a sim-and-real policy co-training framework based on Unbalanced Optimal Transport (UOT), which aligns the joint observation-action distribution (rather than only the marginal observation distribution), and incorporates a temporally aligned sampling strategy to handle data imbalance, achieving a 30% improvement in OOD generalization on robotic manipulation tasks.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "behavior cloning"
   - "robotic manipulation"
 date: 2026-05-08
-content_hash: d86f0a6dd852c7c9
+content_hash: 6c83b0141e04a67c
 ---
 
 # Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training
@@ -114,9 +114,9 @@ Behavior cloning and UOT regularization are trained in parallel: $L = L_{BC}(f_\
 
 - [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
 - [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
-- [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
-- [\[NeurIPS 2025\] Human-assisted Robotic Policy Refinement via Action Preference Optimization](human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)
-- [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer](../../CVPR2026/robotics/gecosrt_geometryaware_continual_adaptation_for_rob.md)
+- [\[ICLR 2026\] Latent Adaptation of Foundation Policies for Sim-to-Real Transfer](../../ICLR2026/robotics/latent_adaptation_of_foundation_policies_for_sim-to-real_transfer.md)
+- [\[CVPR 2026\] Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer](../../CVPR2026/robotics/opening_the_sim-to-real_door_for_humanoid_pixel-to-action_policy_transfer.md)
+- [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Cross-Task Sim-to-Real Transfer](../../CVPR2026/robotics/geco-srt_geometry-aware_continual_adaptation_for_cross-task_sim-to-real_transfer.md)
 
 </div>
 

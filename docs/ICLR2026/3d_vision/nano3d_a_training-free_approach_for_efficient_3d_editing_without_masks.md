@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Nano3D: A Training-Free Approach for Efficient 3D Editing Without Masks
 description: >-
-  [ICLR 2026][3D Vision][3D Editing] This work adapts the training-free 2D editing method FlowEdit into the geometry-appearance decoupled generation pipeline of TRELLIS. By employing Voxel/Slat-Merge based on connected component analysis to fuse "edited regions" back onto the original object, it enables consistent local 3D editing (addition, removal, modi
+  [ICLR 2026][3D Vision][3D Editing] This work adapts the training-free 2D editing method FlowEdit into the geometry-appearance decoupled generation pipeline of TRELLIS. By employing Voxel/Slat-Merge based on connected component analysis to fuse "edited regions" back onto the original object, it enables consistent local 3D editing (addition, removal, modification) without masks, training, or multi-view reconstruction, facilitating the construction of the first 3D editing datase…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Editing
-  - Training-Free
-  - TRELLIS
-  - FlowEdit
-  - Rectified Flow
-  - Voxel Merge
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Editing"
+  - "Training-Free"
+  - "TRELLIS"
+  - "FlowEdit"
+  - "Rectified Flow"
+  - "Voxel Merge"
+  - "Dataset Construction"
 date: 2026-05-08
-content_hash: aca4cc8f53614379
+content_hash: a9e7cd866253e277
 ---
+
 # Nano3D: A Training-Free Approach for Efficient 3D Editing Without Masks
 
 **Conference**: ICLR 2026  
@@ -136,10 +138,10 @@ Nano3D was overwhelmingly preferred, particularly in shape preservation (95%). F
 ## Related Papers
 
 - [\[CVPR 2026\] AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows](../../CVPR2026/3d_vision/anchorflow_training-free_3d_editing_via_latent_anchor-aligned_flows.md)
-- [\[ICLR 2026\] Variation-Aware Flexible 3D Gaussian Editing](variation-aware_flexible_3d_gaussian_editing.md)
+- [\[ICLR 2026\] TINKER: Diffusion's Gift to 3D--Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization](tinker_diffusions_gift_to_3d--multi-view_consistent_editing_from_sparse_inputs_w.md)
 - [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](../../CVPR2026/3d_vision/fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
-- [\[CVPR 2026\] Muses: Designing, Composing, Generating Nonexistent Fantasy 3D Creatures without Training](../../CVPR2026/3d_vision/muses_designing_composing_generating_nonexistent_fantasy_3d_creatures_without_tr.md)
-- [\[ICLR 2026\] TTT3R: 3D Reconstruction as Test-Time Training](ttt3r_3d_reconstruction_as_test-time_training.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
+- [\[ICCV 2025\] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training](../../ICCV2025/3d_vision/easi3r_estimating_disentangled_motion_from_dust3r_without_training.md)
 
 </div>
 

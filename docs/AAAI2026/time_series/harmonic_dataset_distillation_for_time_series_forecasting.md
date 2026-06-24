@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Harmonic Dataset Distillation for Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Dataset Distillation] This paper proposes HDT (Harmonic Dataset Distillation for Time Series Forecasting), which decomposes time series into sinusoidal bases via FFT and aligns the core periodic…
+  [AAAI 2026][Time Series][Dataset Distillation] This paper proposes HDT (Harmonic Dataset Distillation for Time Series Forecasting), which decomposes time series into sinusoidal bases via FFT and aligns the core periodic structure of synthetic and real data through Harmonic Matching in the frequency domain, achieving strong cross-architecture generalization and favorable scalability for time series dataset distillation.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Harmonic Matching"
   - "Cross-Architecture Generalization"
 date: 2026-05-08
-content_hash: efc8f38a139efda1
+content_hash: e6beec709d289ac1
 ---
 
 # Harmonic Dataset Distillation for Time Series Forecasting

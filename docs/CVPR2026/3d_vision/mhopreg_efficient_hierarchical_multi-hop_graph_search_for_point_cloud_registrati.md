@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MHopReg reformulates correspondence-based outlier removal for point cloud registration as a "hierarchical multi-hop graph search": it first predicts correspondence confidence using SE(3) equivariant graph encoding, then ensures coverage of fragmented inliers via cluster-balanced seed sampling, expands inliers layer-by-
+  [CVPR 2026][3D Vision][Point Cloud Registration] MHopReg reformulates correspondence-based outlier removal for point cloud registration as a "hierarchical multi-hop graph search": it first predicts correspondence confidence using SE(3) equivariant graph encoding, then ensures coverage of fragmented inliers via cluster-balanced seed sampling, expands inliers layer-by-layer from seeds along the compatibility graph, and finally selects the optimal transformation using distributi…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Registration"
+  - "Outlier Removal"
+  - "Compatibility Graph"
+  - "Multi-Hop Search"
+  - "SE(3) Equivariance"
 date: 2026-05-08
-content_hash: 75d9b85eb402c259
+content_hash: 981c77b100f92ac6
 ---
+
 # MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ where $\sigma_{dist}^m$ represents the spatial dispersion of source inliers arou
 
 ## Related Papers
 
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
-- [\[CVPR 2026\] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)
+- [\[CVPR 2026\] SuP: Sub-cloud Driven Point Cloud Registration](sup_sub-cloud_driven_point_cloud_registration.md)
+- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
+- [\[ECCV 2024\] Equi-GSPR: Equivariant SE(3) Graph Network Model for Sparse Point Cloud Registration](../../ECCV2024/3d_vision/equi-gspr_equivariant_se3_graph_network_model_for_sparse_point_cloud_registratio.md)
 - [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
+- [\[ICCV 2025\] TurboReg: TurboClique for Robust and Efficient Point Cloud Registration](../../ICCV2025/3d_vision/turboreg_turboclique_for_robust_and_efficient_point_cloud_registration.md)
 
 </div>
 

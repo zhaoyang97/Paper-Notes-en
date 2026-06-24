@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][RAG] This paper proposes LDAR (Learning Distraction-Aware Retrieval), a lightweight adaptive retriever that learns to select a continuous band of passages based on query-passage similarity distributions. By balancing information coverage against the impact of distracting passages, it outperforms long-context methods using a
+  [ICLR 2026][Information Retrieval & RAG][RAG] This paper proposes LDAR (Learning Distraction-Aware Retrieval), a lightweight adaptive retriever that learns to select a continuous band of passages based on query-passage similarity distributions. By balancing information coverage against the impact of distracting passages, it outperforms long-context methods using approximately half the token budget.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Long-Context"
+  - "Distraction-Aware Retrieval"
+  - "Adaptive Passage Selection"
+  - "Knowledge-Intensive QA"
 date: 2026-05-08
-content_hash: 08041786f5c7e7dc
+content_hash: ed4639436e09086a
 ---
+
 # Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding
 
 **Conference**: ICLR 2026  
@@ -144,9 +149,9 @@ Evaluation was conducted on LaRA (Location, Reasoning, Comparison, Hallucination
 
 - [\[ICLR 2026\] Embedding-Based Context-Aware Reranker](embedding-based_context-aware_reranker.md)
 - [\[ICLR 2026\] Q-RAG: Long Context Multi‑Step Retrieval via Value‑Based Embedder Training](q-rag_long_context_multistep_retrieval_via_valuebased_embedder_training.md)
-- [\[ICLR 2026\] Beyond Text-Only: Towards Multimodal Table Retrieval in Open-World](beyond_text-only_towards_multimodal_table_retrieval_in_open-world.md)
-- [\[ICLR 2026\] Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation](attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
 - [\[ICLR 2026\] SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG](smartchunk_retrieval_query-aware_chunk_compression_with_planning_for_efficient_d.md)
+- [\[ICLR 2026\] AdaCache: Adaptive Caching and Context Augmentation for Efficient LLM Serving](adacache_adaptive_caching_and_context_augmentation_for_efficient_llm_serving.md)
+- [\[ICLR 2026\] Interact-RAG: Reason and Interact with the Corpus, Beyond Black-Box Retrieval](interact-rag_reason_and_interact_with_the_corpus_beyond_black-box_retrieval.md)
 
 </div>
 

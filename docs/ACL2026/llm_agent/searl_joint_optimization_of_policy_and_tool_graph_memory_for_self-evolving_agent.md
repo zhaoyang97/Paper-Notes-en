@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents
 description: >-
-  [ACL 2026][LLM Agent][RLVR] SEARL jointly optimizes agent policy parameters and external Tool Graph Memory. It addresses credit assignment in long trajectories by utilizing tool-anchored step-level advantages and process rewards, enabling small models to continuously create, reuse, and integrate tools in multi-hop QA and complex mathematical task
+  [ACL2026][LLM Agent][Self-evolving agents] SEARL jointly optimizes agent policy parameters and external Tool Graph Memory. It addresses credit assignment in long trajectories by utilizing tool-anchored step-level advantages and process rewards, enabling small models to continuously create, reuse, and integrate tools in multi-hop QA and complex mathematical tasks.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - RLVR
+  - "ACL2026"
+  - "LLM Agent"
+  - "Self-evolving agents"
+  - "tool graph memory"
+  - "RLVR"
+  - "credit assignment"
+  - "MCP tools"
 date: 2026-05-08
-content_hash: 6d03014dc9ed0584
+content_hash: 2db68a3ecbc24f6f
 ---
+
 # SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents
 
 **Conference**: ACL2026  
@@ -142,10 +147,10 @@ The paper analyzes mechanisms through training curves and component ablations. W
 ## Related Papers
 
 - [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](../../ICML2026/llm_agent/self-evolving_llm_agents_with_in-distribution_optimization.md)
+- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](../../ICLR2026/llm_agent/memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
+- [\[ICML 2026\] Towards Pareto-Optimal Tool-Integrated Agents with Pareto Ranking Policy Optimization](../../ICML2026/llm_agent/towards_pareto-optimal_tool-integrated_agents_with_pareto_ranking_policy_optimiz.md)
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](../../ICLR2026/llm_agent/reveal_self-evolving_code_agents_via_reliable_self-verification.md)
 - [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
-- [\[ACL 2026\] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents](magma_a_multi-graph_based_agentic_memory_architecture_for_ai_agents.md)
-- [\[CVPR 2026\] JarvisEvo: Towards a Self-Evolving Photo Editing Agent with Synergistic Editor-Evaluator Optimization](../../CVPR2026/llm_agent/jarvisevo_towards_a_self-evolving_photo_editing_agent_with_synergistic_editor-ev.md)
-- [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning
 description: >-
-  [AAAI 2026][Hallucination Detection][Multi-Agent Gaming] MUG reframes Multi-Agent Debate (MAD) as a "Who's Undercover" social reasoning game — by introducing information asymmetry through counterfactual image editing (mo…
+  [AAAI 2026][Hallucination Detection][Multi-Agent Gaming] MUG reframes Multi-Agent Debate (MAD) as a "Who's Undercover" social reasoning game — by introducing information asymmetry through counterfactual image editing (modifying the reference image), one agent is assigned the edited image $I^-$ as the "undercover," while other agents hold the original image $I^+$ and identify the undercover (i.e., the hallucination source) via reasoning and voting. On HallusionBench…
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -11,7 +11,7 @@ tags:
   - "Undercover Game"
   - "Active Reasoning"
 date: 2026-05-08
-content_hash: caf57ec59b41331d
+content_hash: 3646376a94d87a99
 ---
 
 # MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning
@@ -124,9 +124,9 @@ Two-phase game: (1) **Undercover Detection Phase** — among $N$ agents, one is 
 
 - [\[AAAI 2026\] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](inex_hallucination_mitigation_via_introspection_and_cross-mo.md)
 - [\[ACL 2026\] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate](../../ACL2026/hallucination/dialectic-med_mitigating_diagnostic_hallucinations_via_counterfactual_adversaria.md)
+- [\[ICLR 2026\] Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow](../../ICLR2026/hallucination/visual_multi-agent_system_mitigating_hallucination_snowballing_via_visual_flow.md)
 - [\[ICML 2026\] MM-Snowball: Evaluating and Mitigating Hallucination Snowballing in Multimodal Multi-Turn Dialogue](../../ICML2026/hallucination/mm-snowball_evaluating_and_mitigating_hallucination_snowballing_in_multimodal_mu.md)
 - [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](../../CVPR2026/hallucination/understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
-- [\[AAAI 2026\] Verb Mirage: Unveiling and Assessing Verb Concept Hallucinations in Multimodal Large Language Models](verb_mirage_unveiling_and_assessing_verb_concept_hallucinations_in_multimodal_la.md)
 
 </div>
 

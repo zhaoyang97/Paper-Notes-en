@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Query Pipeline Optimization for Cancer Patient Question Answering Systems
 description: >-
-  [ACL 2026][Medical NLP][Segmentation] This paper proposes CoMeta, a three-layer controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). By integrating Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR)—which fuses E-Utilities real-time Boolean search with MedCPT semantic retrieval—and Semantic-Enhanced Overlapping
+  [ACL 2026 Findings][Medical LLM][Cancer Question Answering] This paper proposes CoMeta, a three-layer controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). By integrating Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR)—which fuses E-Utilities real-time Boolean search with MedCPT semantic retrieval—and Semantic-Enhanced Overlapping Segmentation (SEOS) to prevent context fragmentation, the framework improves Claude-3-Haiku's answer…
 tags:
-  - ACL 2026
-  - Medical NLP
-  - Segmentation
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Cancer Question Answering"
+  - "RAG Query Pipeline"
+  - "Hybrid Retrieval"
+  - "Semantic Segmentation"
+  - "Metadata-Aware"
 date: 2026-05-08
-content_hash: 61f1f5eed5ed6354
+content_hash: 7567dd6fcc5b9892
 ---
+
 # Query Pipeline Optimization for Cancer Patient Question Answering Systems
 
 **Conference**: ACL 2026 Findings  
@@ -164,10 +169,10 @@ CoMeta is an inference-time framework and does not involve model training. Data-
 ## Related Papers
 
 - [\[ACL 2026\] HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering](hypehr_hyperbolic_modeling_of_electronic_health_records_for_efficient_question_a.md)
+- [\[ICLR 2026\] Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](../../ICLR2026/medical_nlp/cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre.md)
 - [\[ACL 2025\] ArgHiTZ at ArchEHR-QA 2025: A Two-Step Divide and Conquer Approach to Patient Question Answering for Top Factuality](../../ACL2025/medical_nlp/arghitz_at_archehr-qa_2025_a_two-step_divide_and_conquer_approach_to_patient_que.md)
-- [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](../../AAAI2026/medical_nlp/expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
-- [\[ACL 2025\] Follow-up Question Generation for Enhanced Patient-Provider Conversations](../../ACL2025/medical_nlp/follow-up_question_generation_for_enhanced_patient-provider_conversations.md)
 - [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](../../ICLR2026/medical_nlp/medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
+- [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](../../AAAI2026/medical_nlp/expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
 
 </div>
 

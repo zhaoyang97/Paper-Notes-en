@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ORION: Decoupling and Alignment for Unified Autoregressive Understanding and Generation
 description: >-
-  [ICLR 2026][Multimodal VLM][Autoregressive] ORION identifies a **semantic-structural representation conflict** in "monolithic autoregressive" unified MLLMs when learning understanding and generation simultaneously (understanding requires semantic separability, while generation requires low-level reconstructability, creating a "tug-of-war" in shared representatio
+  [ICLR 2026][Multimodal VLM][Unified MLLM] ORION identifies a **semantic-structural representation conflict** in "monolithic autoregressive" unified MLLMs when learning understanding and generation simultaneously (understanding requires semantic separability, while generation requires low-level reconstructability, creating a "tug-of-war" in shared representations). By employing a **non-linear visual head for decoupling** and a **representation consistency distillation loss for…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Autoregressive
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Unified MLLM"
+  - "Autoregressive"
+  - "Semantic-Structural Conflict"
+  - "Representation Alignment"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 1263a77afd2ae3b5
+content_hash: 6cdcba45d0a379b1
 ---
+
 # ORION: Decoupling and Alignment for Unified Autoregressive Understanding and Generation
 
 **Conference**: ICLR 2026  
@@ -136,9 +140,9 @@ ORION leads the monolithic route across the board (GenEval 0.82 is a new record 
 
 - [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
 - [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 - [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
 - [\[ICLR 2026\] Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation](lavida-o_elastic_large_masked_diffusion_models_for_unified_multimodal_understand.md)
-- [\[CVPR 2026\] UVU: Improving Multimodal Understanding via Vision-Language Unified Autoregressive Paradigm](../../CVPR2026/multimodal_vlm/uvu_improving_multimodal_understanding_via_vision-language_unified_autoregressiv.md)
 
 </div>
 

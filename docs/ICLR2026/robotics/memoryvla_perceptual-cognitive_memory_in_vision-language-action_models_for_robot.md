@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] Inspired by the dual memory system in cognitive science, this work proposes the MemoryVLA framework. It introduces a Perceptual-Cognitive Memory Bank (PCMB) into the VLA model to capture long-term dependencies through memory retrieval, gated fusion, and consolidation mechanisms, significantly outperforming CogACT and π
+  [ICLR 2026][Robotics][VLA] Inspired by the dual memory system in cognitive science, this work proposes the MemoryVLA framework. It introduces a Perceptual-Cognitive Memory Bank (PCMB) into the VLA model to capture long-term dependencies through memory retrieval, gated fusion, and consolidation mechanisms, significantly outperforming CogACT and π₀ across 150+ tasks in SimplerEnv, LIBERO, and real-world environments.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA"
+  - "memory mechanism"
+  - "long-horizon manipulation"
+  - "diffusion policy"
+  - "cognitive science"
 date: 2026-05-08
-content_hash: c478e1adb76a9819
+content_hash: 86921a53c559f89c
 ---
+
 # MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation
 
 **Conference**: ICLR 2026  
@@ -129,8 +134,8 @@ The entire framework is trained end-to-end: the 7B VLM is pre-trained on the OXE
 - [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
 - [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](../../ICML2026/robotics/spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
 - [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
+- [\[ICLR 2026\] VLMgineer: Vision-Language Models as Robotic Toolsmiths](vlmgineer_vision-language_models_as_robotic_toolsmiths.md)
 - [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
-- [\[ICLR 2026\] Verifier-Free Test-Time Sampling for Vision-Language-Action Models](verifier-free_test-time_sampling_for_vision-language-action_models.md)
 
 </div>
 

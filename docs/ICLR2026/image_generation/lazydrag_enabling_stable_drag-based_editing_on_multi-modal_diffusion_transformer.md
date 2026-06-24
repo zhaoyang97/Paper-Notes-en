@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] LazyDrag: Enabling Stable Drag-Based Editing on Multi-Modal Diffusion Transformers via Explicit Correspondence
 description: >-
-  [ICLR 2026][Image Generation][drag-based editing] LazyDrag replaces the fragile implicit point-matching mechanism in previous drag-based editing methods—which relied on attention similarity—with an "explicit correspondence map" constructed directly from drag instructions. This allows MM-DiT to perform stable editing under **full-strength inversion** for the first time
+  [ICLR 2026][Image Generation][drag-based editing] LazyDrag replaces the fragile implicit point-matching mechanism in previous drag-based editing methods—which relied on attention similarity—with an "explicit correspondence map" constructed directly from drag instructions. This allows MM-DiT to perform stable editing under **full-strength inversion** for the first time, completely eliminating the need for test-time optimization (TTO) while unlocking high-fidelity completion an…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - drag-based editing
-  - MM-DiT
-  - explicit correspondence
-  - attention control
-  - full-strength inversion
-  - training-free
+  - "ICLR 2026"
+  - "Image Generation"
+  - "drag-based editing"
+  - "MM-DiT"
+  - "explicit correspondence"
+  - "attention control"
+  - "full-strength inversion"
+  - "training-free"
 date: 2026-05-08
-content_hash: 48777a518271c369
+content_hash: b6185677347298ee
 ---
+
 # LazyDrag: Enabling Stable Drag-Based Editing on Multi-Modal Diffusion Transformers via Explicit Correspondence
 
 **Conference**: ICLR 2026  
@@ -135,11 +136,11 @@ Removing WTA/Latent Init increases MD and decreases PQ/O. Removing background pr
 
 ## Related Papers
 
+- [\[ICLR 2026\] ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer](training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
 - [\[ICLR 2026\] Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance](routing_matters_in_moe_scaling_diffusion_transformers_with_explicit_routing_guid.md)
 - [\[ICLR 2026\] DragFlow: Unleashing DiT Priors with Region Based Supervision for Drag Editing](dragflow_unleashing_dit_priors_with_region_based_supervision_for_drag_editing.md)
 - [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
 - [\[ICLR 2026\] Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts](multi-subspace_multi-modal_modeling_for_diffusion_models_estimation_convergence_.md)
-- [\[ICCV 2025\] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers](../../ICCV2025/image_generation/rethinking_cross-modal_interaction_in_multimodal_diffusion_transformers.md)
 
 </div>
 

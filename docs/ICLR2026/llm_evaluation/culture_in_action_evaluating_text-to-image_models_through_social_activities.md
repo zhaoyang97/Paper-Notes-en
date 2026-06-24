@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Culture in Action: Evaluating Text-to-Image Models through Social Activities
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper argues that existing text-to-image (T2I) evaluation focuses only on static objects like "food/landmarks/clothing," neglecting social activities that truly carry culture. The authors construct the CULTIVate benchmark (16 countries × 576 social activities × 19k generated images) and propose the AHEaD framework
+  [ICLR 2026][LLM Evaluation][T2I Evaluation] This paper argues that existing text-to-image (T2I) evaluation focuses only on static objects like "food/landmarks/clothing," neglecting social activities that truly carry culture. The authors construct the CULTIVate benchmark (16 countries × 576 social activities × 19k generated images) and propose the AHEaD framework. This framework uses LLM-generated "cultural descriptors" to decompose images into interpretable dimensions…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "T2I Evaluation"
+  - "Cultural Faithfulness"
+  - "Social Activities"
+  - "Interpretable Metrics"
+  - "WEIRD Bias"
 date: 2026-05-08
-content_hash: fd0021559758f3e6
+content_hash: 671d87bc1618b37a
 ---
+
 # Culture in Action: Evaluating Text-to-Image Models through Social Activities
 
 **Conference**: ICLR 2026  
@@ -140,8 +146,8 @@ Alignment for GN is 4–8% higher than for GS. Models also exhibit higher halluc
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

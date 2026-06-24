@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QVGen: Pushing the Limit of Quantized Video Generative Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Propose QVGen, a Quantization-Aware Training (QAT) framework for video diffusion models, which introduces an auxiliary module to reduce gradient norms for improved convergence and designs a rank decay strategy to gradually eliminate the inference overhead of the auxiliary module during training, achieving near full-pre
+  [ICLR 2026][Image Generation][Video Diffusion Models] Propose QVGen, a Quantization-Aware Training (QAT) framework for video diffusion models, which introduces an auxiliary module to reduce gradient norms for improved convergence and designs a rank decay strategy to gradually eliminate the inference overhead of the auxiliary module during training, achieving near full-precision video generation quality under 4-bit quantization for the first time.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Video Diffusion Models"
+  - "Quantization-Aware Training"
+  - "Low-bit Quantization"
+  - "Rank Decay Strategy"
+  - "Auxiliary Module"
 date: 2026-05-08
-content_hash: de9c577c0ee8d466
+content_hash: 0de539e60e48bdce
 ---
+
 # QVGen: Pushing the Limit of Quantized Video Generative Models
 
 **Conference**: ICLR 2026  
@@ -126,8 +132,8 @@ Results on VBench:
 - [\[NeurIPS 2025\] EditInfinity: Image Editing with Binary-Quantized Generative Models](../../NeurIPS2025/image_generation/editinfinity_image_editing_with_binary-quantized_generative_models.md)
 - [\[ICLR 2026\] Purrception: Variational Flow Matching for Vector-Quantized Image Generation](purrception_variational_flow_matching_for_vector-quantized_image_generation.md)
 - [\[ICLR 2026\] Scalable Training for Vector-Quantized Networks with 100% Codebook Utilization](scalable_training_for_vector-quantized_networks_with_100_codebook_utilization.md)
-- [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
-- [\[CVPR 2025\] MirrorVerse: Pushing Diffusion Models to Realistically Reflect the World](../../CVPR2025/image_generation/mirrorverse_pushing_diffusion_models_to_realistically_reflect_the_world.md)
+- [\[ICLR 2026\] GenCompositor: Generative Video Compositing with Diffusion Transformer](gencompositor_generative_video_compositing_with_diffusion_transformer.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 
 </div>
 

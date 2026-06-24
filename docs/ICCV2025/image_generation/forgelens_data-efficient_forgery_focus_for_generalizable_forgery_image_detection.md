@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection
 description: >-
-  [ICCV 2025][Image Generation][Forgery image detection] This paper proposes ForgeLens, a feature-guided framework built upon a frozen CLIP-ViT backbone. Through a lightweight Weight-Shared Guidance Module (WSGM) and a For…
+  [ICCV 2025][Image Generation][Forgery image detection] This paper proposes ForgeLens, a feature-guided framework built upon a frozen CLIP-ViT backbone. Through a lightweight Weight-Shared Guidance Module (WSGM) and a Forgery-Aware Feature Integrator (FAFormer), it steers the frozen pretrained network to focus on forgery-relevant features, achieving state-of-the-art generalization performance with only 1% of training data.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "feature guidance"
   - "generalization"
 date: 2026-05-08
-content_hash: 385debd9b33c1eb2
+content_hash: 6f74813e5515cac3
 ---
 
 # ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection
@@ -157,9 +157,9 @@ WSGM substantially outperforms both Adapter and LoRA, demonstrating that guidanc
 
 - [\[ICCV 2025\] DeepShield: Fortifying Deepfake Video Detection with Local and Global Forgery Analysis](deepshield_fortifying_deepfake_video_detection_with_local_and_global_forgery_ana.md)
 - [\[ICCV 2025\] Semantic Discrepancy-aware Detector for Image Forgery Identification](semantic_discrepancy-aware_detector_for_image_forgery_identification.md)
+- [\[CVPR 2025\] Detecting Adversarial Data Using Perturbation Forgery](../../CVPR2025/image_generation/detecting_adversarial_data_using_perturbation_forgery.md)
 - [\[ICCV 2025\] M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization](m2sformer_multi-spectral_and_multi-scale_attention_with_edge-aware_difficulty_gu.md)
 - [\[ICCV 2025\] Domain Generalizable Portrait Style Transfer](domain_generalizable_portrait_style_transfer.md)
-- [\[AAAI 2026\] Creating Blank Canvas Against AI-Enabled Image Forgery](../../AAAI2026/image_generation/creating_blank_canvas_against_ai-enabled_image_forgery.md)
 
 </div>
 

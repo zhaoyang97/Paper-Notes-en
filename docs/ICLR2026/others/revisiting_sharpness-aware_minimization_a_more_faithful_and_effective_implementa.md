@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] Revisiting Sharpness-Aware Minimization: A More Faithful and Effective Implementation
 description: >-
-  [ICLR 2026][Others][sharpness-aware minimization] This paper proposes a new intuitive explanation for the underlying mechanism of SAM—interpreting the gradient at the perturbed point as an approximation of the direction toward the local maximum—and reveals its imprecision and the multi-step degradation issue. Consequently, XSAM is proposed to achieve more faithful and
+  This paper proposes a new intuitive explanation for the underlying mechanism of SAM—interpreting the gradient at the perturbed point as an approximation of the direction toward the local maximum—and reveals its imprecision and the multi-step degradation issue. Consequently, XSAM is proposed to achieve more faithful and effective sharpness-aware minimization by explicitly searching for the maximum direction.
 tags:
-  - ICLR 2026
-  - Others
-  - sharpness-aware minimization
-  - SAM
-  - optimization
-  - generalization
-  - flat minima
+
 date: 2026-05-08
-content_hash: d69f87c4287ce085
+content_hash: 9f84cbe24f4b5034
 ---
+
 # Revisiting Sharpness-Aware Minimization: A More Faithful and Effective Implementation
 
 ## Meta Information
@@ -147,9 +142,9 @@ Explicitly searching for $\alpha^*$ requires multiple forward passes along $v(\a
 
 - [\[NeurIPS 2025\] Sharpness-Aware Minimization with Z-Score Gradient Filtering](../../NeurIPS2025/others/sharpness-aware_minimization_with_z-score_gradient_filtering.md)
 - [\[CVPR 2025\] ZO-SAM: Zero-Order Sharpness-Aware Minimization for Efficient Sparse Training](../../CVPR2025/others/zo-sam_zero-order_sharpness-aware_minimization_for_efficient_sparse_training.md)
-- [\[ICLR 2026\] A Representer Theorem for Hawkes Processes via Penalized Least Squares Minimization](a_representer_theorem_for_hawkes_processes_via_penalized_least_squares_minimizat.md)
 - [\[ACL 2025\] Verbosity-Aware Rationale Reduction: Effective Reduction of Redundant Rationale](../../ACL2025/others/verbosity-aware_rationale_reduction_effective_reduction_of_redundant_rationale_v.md)
 - [\[ICLR 2026\] Oversmoothing, Oversquashing, Heterophily, Long-Range, and More: Demystifying Common Beliefs in Graph Machine Learning](oversmoothing_oversquashing_heterophily_long-range_and_more_demystifying_common_.md)
+- [\[ICLR 2026\] RADAR: Learning to Route with Asymmetry-aware Distance Representations](radar_learning_to_route_with_asymmetry-aware_distance_representations.md)
 
 </div>
 

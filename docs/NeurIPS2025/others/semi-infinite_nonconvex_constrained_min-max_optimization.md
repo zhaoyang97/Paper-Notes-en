@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semi-infinite Nonconvex Constrained Min-Max Optimization
 description: >-
-  [NeurIPS 2025][Semi-infinite programming] For nonconvex min-max optimization problems with infinitely many nonconvex constraints, this paper proposes the iDB-PD (Inexact Dynamic Barrier Primal-Dual) algorithm. Under the…
+  [NeurIPS 2025][Semi-infinite programming] For nonconvex min-max optimization problems with infinitely many nonconvex constraints, this paper proposes the iDB-PD (Inexact Dynamic Barrier Primal-Dual) algorithm. Under the Łojasiewicz regularity condition, it establishes the first global non-asymptotic convergence guarantees: stationarity $\mathcal{O}(\epsilon^{-3})$, feasibility $\mathcal{O}(\epsilon^{-6\theta})$, and complementary slackness $\mathcal{O}(\epsilon^{-3\theta/(1-\…
 tags:
   - "NeurIPS 2025"
   - "Semi-infinite programming"
@@ -11,7 +11,7 @@ tags:
   - "dynamic barrier method"
   - "convergence complexity"
 date: 2026-05-08
-content_hash: eb5ed38fe1606264
+content_hash: 5ba6bb8a28bffaf5
 ---
 
 # Semi-infinite Nonconvex Constrained Min-Max Optimization
@@ -163,11 +163,11 @@ Experiments are conducted on five datasets: Multi-MNIST, CHD49, Multi-Fashion-MN
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
 - [\[NeurIPS 2025\] FSNet: Feasibility-Seeking Neural Network for Constrained Optimization with Guarantees](fsnet_feasibility-seeking_neural_network_for_constrained_optimization_with_guara.md)
+- [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
+- [\[ICML 2025\] Continuous-Time Analysis of Heavy Ball Momentum in Min-Max Games](../../ICML2025/others/continuous-time_analysis_of_heavy_ball_momentum_in_min-max_games.md)
 - [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
 - [\[NeurIPS 2025\] Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning](put_cash_on_bandits_a_max_k-armed_problem_for_automated_machine_learning.md)
-- [\[NeurIPS 2025\] Optimized Learned Count-Min Sketch](optimized_learned_count-min_sketch.md)
 
 </div>
 

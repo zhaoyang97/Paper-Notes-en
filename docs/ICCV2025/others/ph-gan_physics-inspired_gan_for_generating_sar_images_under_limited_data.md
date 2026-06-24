@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Φ-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data
 description: >-
-  [ICCV 2025][SAR image generation] This paper proposes Φ-GAN, which integrates the ideal Point Scattering Center (PSC) electromagnetic scattering physical model into GAN training as a differentiable neural module. Through…
+  [ICCV 2025][SAR image generation] This paper proposes Φ-GAN, which integrates the ideal Point Scattering Center (PSC) electromagnetic scattering physical model into GAN training as a differentiable neural module. Through a dual physics loss (generator physical consistency constraint + discriminator electromagnetic feature distillation), the method significantly improves the quality and stability of SAR image generation under data-scarce conditions.
 tags:
   - "ICCV 2025"
   - "SAR image generation"
@@ -11,7 +11,7 @@ tags:
   - "physical constraints"
   - "few-shot learning"
 date: 2026-05-08
-content_hash: 2319c1629cb5eb0e
+content_hash: 0dc5afa1b960893d
 ---
 
 # Φ-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data
@@ -164,10 +164,10 @@ Generalization across backbone models (StyleGAN as baseline):
 ## Related Papers
 
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images (MV-AR)](autoregressively_generating_multiview_consistent_images.md)
+- [\[ECCV 2024\] CLR-GAN: Improving GANs Stability and Quality via Consistent Latent Representation and Reconstruction](../../ECCV2024/others/clr-gan_improving_gans_stability_and_quality_via_consistent_latent_representatio.md)
+- [\[ECCV 2024\] HiEI: A Universal Framework for Generating High-quality Emerging Images from Natural Images](../../ECCV2024/others/hiei_a_universal_framework_for_generating_high-quality_emerging_images_from_natu.md)
+- [\[ACL 2025\] Generating Synthetic Relational Tabular Data via Structural Causal Models](../../ACL2025/others/generating_synthetic_relational_tabular_data_via_structural_causal_models.md)
 - [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
-- [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
-- [\[ICCV 2025\] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations](nappure_adversarial_purification_for_robust_image_classification_under_non-addit.md)
-- [\[ICCV 2025\] Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents](adversarial_data_augmentation_for_single_domain_generalization_via_lyapunov_expo.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Panda: A Pretrained Forecast Model for Chaotic Dynamics
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper uses an evolutionary algorithm to "create" 20,000 new chaotic ordinary differential equations (ODEs) as a synthetic training set. Combined with a patch Transformer (Panda) featuring channel attention and dynamical embedding, it achieves zero-shot prediction of unseen chaotic systems and even high-dimensional
+  [ICLR 2026][Time Series][Chaotic system prediction] This paper uses an evolutionary algorithm to "create" 20,000 new chaotic ordinary differential equations (ODEs) as a synthetic training set. Combined with a patch Transformer (Panda) featuring channel attention and dynamical embedding, it achieves zero-shot prediction of unseen chaotic systems and even high-dimensional PDEs after pretraining only on low-dimensional ODEs, demonstrating neural scaling laws specific to dynamica…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Chaotic system prediction"
+  - "Pretrained foundation model"
+  - "Channel attention"
+  - "Synthetic data"
+  - "Emergent capability"
 date: 2026-05-08
-content_hash: 1c2fa87bc3f7db2e
+content_hash: 119b7dee80408724
 ---
+
 # Panda: A Pretrained Forecast Model for Chaotic Dynamics
 
 **Conference**: ICLR 2026  
@@ -140,11 +146,11 @@ In Spectral Hellinger distance $H^2$, Panda maintains a steady lead of 10–17% 
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Forecast After the Forecast: A Post-Processing Shift in Time Series](the_forecast_after_the_forecast_a_post-processing_shift_in_time_series.md)
 - [\[ICLR 2026\] Quadratic Direct Forecast for Training Multi-Step Time-Series Forecast Models](quadratic_direct_forecast_for_training_multi-step_time-series_forecast_models.md)
 - [\[ICLR 2026\] Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model](brain-semantoks_learning_semantic_tokens_of_brain_dynamics_with_a_self-distilled.md)
 - [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
 - [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
-- [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning](gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-series.md)
 
 </div>
 

@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Graph Learning][Taxonomy Expansion] By encoding the hierarchy transitivity constraint of "parent → query → child" into hyperbolic space and augmenting semantic context via a frozen LLM, a 110M DistilBERT (SS-MONO) outperforms frozen large models like GPT-4o mini and Gemma-2-9B, as well as domain-specific baselines, on scientific taxonomy expansion tasks.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Taxonomy Expansion
-  - Hyperbolic Embedding
-  - Entailment Cones
-  - Small Language Model
-  - Self-Supervised
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Taxonomy Expansion"
+  - "Hyperbolic Embedding"
+  - "Entailment Cones"
+  - "Small Language Model"
+  - "Self-Supervised"
 date: 2026-05-08
-content_hash: 498df59e8acd2d96
+content_hash: d8228d2961fa424a
 ---
+
 # Geometric Constraints for Small Language Models to Understand and Expand Scientific Taxonomies
 
 **Conference**: ICLR 2026  

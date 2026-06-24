@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Learning from Semantic Dictionaries: Discriminative Codebook Contrastive Learning for Unified Visual Representation and Generation
 description: >-
-  [CVPR 2026][Self-Supervised Learning][VQGAN] LEASE utilizes a pair of "Generative Codebook + Discriminative Codebook" to encode images offline into two aligned sequences of discrete tokens. A single encoder is then trained using both "Masked Reconstruction" and "Codebook Contrastive" objectives. This allows the same latent space to achieve both high-quality gener
+  [CVPR 2026][Self-Supervised Learning][Codebook Contrastive] LEASE utilizes a pair of "Generative Codebook + Discriminative Codebook" to encode images offline into two aligned sequences of discrete tokens. A single encoder is then trained using both "Masked Reconstruction" and "Codebook Contrastive" objectives. This allows the same latent space to achieve both high-quality generation and strong discriminative power—without data augmentation, online tokenizers…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - VQGAN
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Codebook Contrastive"
+  - "Unified Representation"
+  - "Masked Reconstruction"
+  - "VQGAN"
 date: 2026-05-08
-content_hash: a90195bddacb443e
+content_hash: 8cda12ff963946dd
 ---
+
 # Learning from Semantic Dictionaries: Discriminative Codebook Contrastive Learning for Unified Visual Representation and Generation
 
 **Conference**: CVPR 2026  
@@ -143,11 +147,11 @@ Impact of components on Linear Probing and Generation (Rec=Reconstruction, DC=De
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniGeoCLIP: Unified Geospatial Contrastive Learning](unigeoclip_geospatial_contrastive.md)
 - [\[CVPR 2026\] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)
+- [\[ICLR 2026\] Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification](../../ICLR2026/self_supervised/part-level_semantic-guided_contrastive_learning_for_fine-grained_visual_classifi.md)
 - [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
-- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
-- [\[CVPR 2026\] Exploring Visual Pretraining for Learning Language Intelligence](exploring_visual_pretraining_for_learning_language_intelligence.md)
+- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)
+- [\[CVPR 2026\] Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines](learning_to_see_through_a_babys_eyes_early_visual_diets_enable_robust_visual_int.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Can You Hear Me Now? A Benchmark for Long-Range Graph Propagation and Beyond
 description: >-
-  [ICLR 2026][LLM Evaluation][long-range propagation] This paper proposes the ECHO benchmark, comprising 3 synthetic tasks and 2 real-world chemical tasks based on Density Functional Theory (DFT). It requires Graph Neural Networks to effectively propagate information across 17–40 hops, systematically evaluating the long-range propagation capabilities of 11 GNN architectur
+  [ICLR 2026][LLM Evaluation][long-range propagation] This paper proposes the ECHO benchmark, comprising 3 synthetic tasks and 2 real-world chemical tasks based on Density Functional Theory (DFT). It requires Graph Neural Networks to effectively propagate information across 17–40 hops, systematically evaluating the long-range propagation capabilities of 11 GNN architectures.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - long-range propagation
-  - graph benchmark
-  - over-squashing
-  - graph transformers
-  - molecular property prediction
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "long-range propagation"
+  - "graph benchmark"
+  - "over-squashing"
+  - "graph transformers"
+  - "molecular property prediction"
 date: 2026-05-08
-content_hash: e27fa501b7695a6d
+content_hash: d319af19386913f1
 ---
+
 # Can You Hear Me Now? A Benchmark for Long-Range Graph Propagation and Beyond
 
 **Conference**: ICLR 2026  

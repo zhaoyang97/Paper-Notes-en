@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Variability of Concept Activation Vectors
 description: >-
-  [AAAI 2026][Concept Activation Vectors] This paper presents the first theoretical analysis of the variability of Concept Activation Vectors (CAVs) in the TCAV framework. It proves that the variance of CAVs decays at a ra…
+  [AAAI 2026][Concept Activation Vectors] This paper presents the first theoretical analysis of the variability of Concept Activation Vectors (CAVs) in the TCAV framework. It proves that the variance of CAVs decays at a rate of $O(1/N)$ (where $N$ is the number of random samples), while the variance of TCAV scores remains $O(1)$ due to "boundary points," and can only be reduced to $O(1/s)$ by averaging over multiple runs.
 tags:
   - "AAAI 2026"
   - "Concept Activation Vectors"
@@ -11,7 +11,7 @@ tags:
   - "asymptotic normality"
   - "interpretable AI stability"
 date: 2026-05-08
-content_hash: 32ace1aa6b85457c
+content_hash: 55fe219752da8b8a
 ---
 
 # On the Variability of Concept Activation Vectors
@@ -138,10 +138,10 @@ Variance decreases at a rate of $1/s$, consistent with Conjecture 1.
 ## Related Papers
 
 - [\[AAAI 2026\] Autonomous Concept Drift Threshold Determination](autonomous_concept_drift_threshold_determination.md)
+- [\[ACL 2025\] Partial Colexifications Improve Concept Embeddings](../../ACL2025/others/partial_colexifications_improve_concept_embeddings.md)
 - [\[NeurIPS 2025\] FACE: Faithful Automatic Concept Extraction](../../NeurIPS2025/others/face_faithful_automatic_concept_extraction.md)
 - [\[ICML 2026\] Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning](../../ICML2026/others/polaris_coupled_orbital_polar_embeddings_for_hierarchical_concept_learning.md)
-- [\[NeurIPS 2025\] Obliviator Reveals the Cost of Nonlinear Guardedness in Concept Erasure](../../NeurIPS2025/others/obliviator_reveals_the_cost_of_nonlinear_guardedness_in_concept_erasure.md)
-- [\[AAAI 2026\] Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)
+- [\[ICML 2025\] Synthesizing Images on Perceptual Boundaries of ANNs for Uncovering and Manipulating Human Perceptual Variability](../../ICML2025/others/synthesizing_images_on_perceptual_boundaries_of_anns_for_uncovering_and_manipula.md)
 
 </div>
 

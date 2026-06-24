@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Score Distillation Beyond Acceleration: Generative Modeling from Corrupted Data
 description: >-
-  [ICLR 2026][Image Generation][Score Distillation] This paper proposes Restoration Score Distillation (RSD), which distills a diffusion teacher trained only on corrupted observations into a one-step generator. It discovers that in corrupted data scenarios, distillation not only accelerates sampling but also significantly shifts the generated distribution closer to the
+  [ICLR2026][Image Generation][Generative modeling from corrupted data] This paper proposes Restoration Score Distillation (RSD), which distills a diffusion teacher trained only on corrupted observations into a one-step generator. It discovers that in corrupted data scenarios, distillation not only accelerates sampling but also significantly shifts the generated distribution closer to the clean image distribution.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Score Distillation
-  - Diffusion Model
-  - MRI
+  - "ICLR2026"
+  - "Image Generation"
+  - "Generative modeling from corrupted data"
+  - "Score Distillation"
+  - "Diffusion Models"
+  - "Image Restoration"
+  - "MRI"
 date: 2026-05-08
-content_hash: a80a3abfd7b157f8
+content_hash: 218af06264da1524
 ---
+
 # Score Distillation Beyond Acceleration: Generative Modeling from Corrupted Data
 
 **Conference**: ICLR2026  
@@ -149,10 +152,20 @@ Experiments cover denoising, general image corruption, and MRI. In the zero-shot
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Compositional Generative Modeling from Decentralized Data](../../ICML2026/image_generation/compositional_generative_modeling_from_decentralized_data.md)
+- [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
+- [\[ICLR 2026\] Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants](generative_modeling_from_black-box_corruptions_via_self-consistent_stochastic_in.md)
+- [\[ICLR 2026\] Gauge Flow Matching: Efficient Constrained Generative Modeling over General Convex Set and Beyond](gauge_flow_matching_efficient_constrained_generative_modeling_over_general_conve.md)
+- [\[ECCV 2024\] ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation](../../ECCV2024/image_generation/scaledreamer_scalable_text-to-3d_synthesis_with_asynchronous_score_distillation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Compositional Generative Modeling from Decentralized Data](../../ICML2026/image_generation/compositional_generative_modeling_from_decentralized_data.md)

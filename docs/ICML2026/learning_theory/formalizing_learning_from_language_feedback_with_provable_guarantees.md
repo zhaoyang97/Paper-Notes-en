@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Formalizing Learning from Language Feedback with Provable Guarantees
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper establishes the first formal framework for "Learning from Language Feedback" (LLF), a common but theoretically underspecified decision-making paradigm for LLM agents. Under a setting where rewards are latent, the authors provide sufficient assumptions for learnability, introduce "transfer eluder dimension" t
+  [ICML 2026][Learning Theory][Learning from Language Feedback] This paper establishes the first formal framework for "Learning from Language Feedback" (LLF), a common but theoretically underspecified decision-making paradigm for LLM agents. Under a setting where rewards are latent, the authors provide sufficient assumptions for learnability, introduce "transfer eluder dimension" to characterize task difficulty, prove that rich language feedback can be exponentially faster than…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026"
+  - "Learning Theory"
+  - "No-regret Learning"
+  - "LLM Agents"
+  - "Learning from Language Feedback"
+  - "No-regret Algorithms"
+  - "Transfer Eluder Dimension"
+  - "Hypothesis Verifiers"
+  - "Test-time Exploration"
 date: 2026-05-08
-content_hash: 491127f0d8b58979
+content_hash: 546357df2400543d
 ---
+
 # Formalizing Learning from Language Feedback with Provable Guarantees
 
 **Conference**: ICML 2026  
@@ -124,10 +132,20 @@ Cumulative rewards on Battleship and Minesweeper (using Claude-3.5-Sonnet-v2):
 - **vs. Classic UCB/Bandit**: HELiX follows the optimism principle but operates without observing rewards, decoding information through the hypothesis verifier instead.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Online Learning and Equilibrium Computation with Ranking Feedback](../../ICLR2026/learning_theory/online_learning_and_equilibrium_computation_with_ranking_feedback.md)
+- [\[ICLR 2026\] Automata Learning and Identification of the Support of Language Models](../../ICLR2026/learning_theory/automata_learning_and_identification_of_the_support_of_language_models.md)
+- [\[ICML 2026\] Unraveling Syntax: Language Modeling and the Substructure of Grammars](unraveling_syntax_language_modeling_and_the_substructure_of_grammars.md)
+- [\[ICLR 2026\] Enabling Fine-Tuning of Direct Feedback Alignment via Feedback-Weight Matching](../../ICLR2026/learning_theory/enabling_fine-tuning_of_direct_feedback_alignment_via_feedback-weight_matching.md)
+- [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](../../ICLR2026/learning_theory/provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Unraveling Syntax: Language Modeling and the Substructure of Grammars](unraveling_syntax_language_modeling_and_the_substructure_of_grammars.md)

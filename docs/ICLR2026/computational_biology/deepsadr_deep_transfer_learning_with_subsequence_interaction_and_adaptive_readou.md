@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeepSADR: Deep Transfer Learning with Subsequence Interaction and Adaptive Readout for Cancer Drug Response Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] DeepSADR models "drug-patient response" as a bipartite interaction graph between drug substructures and gene functional subsequences. It employs Graph Autoencoders and Adaptive Readout via Set Transformers to transfer rich response knowledge from cell lines to label-scarce clinical patient data, achieving an average AU
+  [ICLR2026][Computational Biology][Cancer Drug Response Prediction] DeepSADR models "drug-patient response" as a bipartite interaction graph between drug substructures and gene functional subsequences. It employs Graph Autoencoders and Adaptive Readout via Set Transformers to transfer rich response knowledge from cell lines to label-scarce clinical patient data, achieving an average AUC of 0.856 and AUPR of 0.862 across 5 clinical drugs.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Cancer Drug Response Prediction"
+  - "Transfer Learning"
+  - "Subsequence Interaction Graph"
+  - "Adaptive Readout"
+  - "Cell Line to Patient Transfer"
 date: 2026-05-08
-content_hash: b868c07612c75045
+content_hash: 37e700b969e43d52
 ---
+
 # DeepSADR: Deep Transfer Learning with Subsequence Interaction and Adaptive Readout for Cancer Drug Response Prediction
 
 **Conference**: ICLR2026  
@@ -136,6 +142,7 @@ Average DeepSADR AUC/AUPR is 0.856/0.862, outperforming GANDALF (0.791/0.765), W
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ARES: Multimodal Adaptive Reasoning via Difficulty-Aware Token-Level Entropy Shaping
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] ARES utilizes "window entropy" as an exploration trigger and controls exploration depth through a difficulty-aware hierarchical entropy reward. This allows multimodal reasoning models to think less on simple problems and more on difficult ones, simultaneously improving accuracy and reasoning efficiency across mathemati
+  [ICLR2026][VLM Reasoning][Adaptive Reasoning] ARES utilizes "window entropy" as an exploration trigger and controls exploration depth through a difficulty-aware hierarchical entropy reward. This allows multimodal reasoning models to think less on simple problems and more on difficult ones, simultaneously improving accuracy and reasoning efficiency across mathematical, logical, and multimodal benchmarks.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Adaptive Reasoning"
+  - "Window Entropy"
+  - "Difficulty Awareness"
+  - "Entropy Reward Shaping"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 83b52b6b56ef6dd3
+content_hash: bb43ce6bc127cf18
 ---
+
 markdown
 # ARES: Multimodal Adaptive Reasoning via Difficulty-Aware Token-Level Entropy Shaping
 

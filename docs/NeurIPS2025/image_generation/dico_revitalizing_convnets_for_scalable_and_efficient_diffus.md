@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiCo: Revitalizing ConvNets for Scalable and Efficient Diffusion Modeling
 description: >-
-  [NeurIPS 2025 (Spotlight)][Image Generation][ConvNet] This paper finds that the global self-attention in pretrained DiTs primarily captures local patterns and thus exhibits substantial redundancy in generative tasks. It…
+  [NeurIPS 2025 (Spotlight)][Image Generation][ConvNet] This paper finds that the global self-attention in pretrained DiTs primarily captures local patterns and thus exhibits substantial redundancy in generative tasks. It proposes DiCo, a purely convolutional diffusion model built from standard convolution modules and a Compact Channel Attention (CCA) mechanism. DiCo achieves an FID of 2.05 on ImageNet-256, surpassing DiT-XL/2, with 2.7× faster inference at 256 resolution and 3…
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "efficient generation"
   - "U-shaped architecture"
 date: 2026-05-08
-content_hash: 2a391c113d1e7992
+content_hash: f7b04410d73fc504
 ---
 
 # DiCo: Revitalizing ConvNets for Scalable and Efficient Diffusion Modeling
@@ -147,11 +147,11 @@ The standard diffusion training pipeline from DiT is followed. The noise predict
 
 ## Related Papers
 
+- [\[CVPR 2025\] DiG: Scalable and Efficient Diffusion Models with Gated Linear Attention](../../CVPR2025/image_generation/dig_scalable_and_efficient_diffusion_models_with_gated_linear_attention.md)
 - [\[NeurIPS 2025\] GSPN-2: Efficient Parallel Sequence Modeling](gspn-2_efficient_parallel_sequence_modeling.md)
+- [\[ICML 2025\] Efficient Generative Modeling with Residual Vector Quantization-Based Tokens](../../ICML2025/image_generation/efficient_generative_modeling_with_residual_vector_quantization-based_tokens.md)
 - [\[ICLR 2026\] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](../../ICLR2026/image_generation/speed_scalable_precise_and_efficient_concept_erasure_for_diffusion_models.md)
 - [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
-- [\[NeurIPS 2025\] Flatten Graphs as Sequences: Transformers are Scalable Graph Generators](flatten_graphs_as_sequences_transformers_are_scalable_graph_generators.md)
-- [\[CVPR 2026\] Reviving ConvNeXt for Efficient Convolutional Diffusion Models](../../CVPR2026/image_generation/reviving_convnext_for_efficient_convolutional_diffusion_models.md)
 
 </div>
 

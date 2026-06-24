@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exploring Real-Time Super-Resolution: Benchmarking and Fine-Tuning for Streaming Content
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] Addressing the compressed streaming video super-resolution scenario ignored by existing datasets, this paper constructs StreamSR, a dataset of 5200 compressed video segments collected from YouTube. It systematically evaluates 11 real-time SR models and proposes EfRLFN, a lightweight model based on RLFN featuring tanh a
+  [ICLR 2026][Image Restoration][Real-Time Super-Resolution] Addressing the compressed streaming video super-resolution scenario ignored by existing datasets, this paper constructs StreamSR, a dataset of 5200 compressed video segments collected from YouTube. It systematically evaluates 11 real-time SR models and proposes EfRLFN, a lightweight model based on RLFN featuring tanh activation, ECA attention, and composite loss. EfRLFN achieves a new quality-complexity SOTA while mai…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Real-Time Super-Resolution"
+  - "Streaming"
+  - "Compression Artifacts"
+  - "Lightweight Networks"
+  - "Benchmark Datasets"
 date: 2026-05-08
-content_hash: 00beea91265ab230
+content_hash: 2fa827539c2922d6
 ---
+
 # Exploring Real-Time Super-Resolution: Benchmarking and Fine-Tuning for Streaming Content
 
 **Conference**: ICLR 2026  

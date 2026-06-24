@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] What "Not" to Detect: Negation-Aware VLMs via Structured Reasoning and Token Merging
 description: >-
-  [ICLR 2026][vlm_reasoning][LoRA] Addressing the "affirmative bias" in Vision-Language Models (VLMs) for Described Object Detection—where models fail to distinguish "person with a hat" from "person without a hat"—this paper constructs a negation-dense COVAND dataset via a CoT+VQA pipeline. It introduces NegToMe, a module that merges "not + attribute" i
+  [ICLR 2026][VLM Reasoning][Negation awareness] Addressing the "affirmative bias" in Vision-Language Models (VLMs) for Described Object Detection—where models fail to distinguish "person with a hat" from "person without a hat"—this paper constructs a negation-dense COVAND dataset via a CoT+VQA pipeline. It introduces NegToMe, a module that merges "not + attribute" into a single semantic unit and amplifies negation signals at the tokenization level…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - LoRA
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Negation awareness"
+  - "affirmative bias"
+  - "token merging"
+  - "Described Object Detection (DOD)"
+  - "LoRA"
 date: 2026-05-08
-content_hash: dff0412936b23258
+content_hash: a3a929cefdf18b8f
 ---
+
 # What "Not" to Detect: Negation-Aware VLMs via Structured Reasoning and Token Merging
 
 **Conference**: ICLR 2026  
@@ -143,6 +148,7 @@ OVDEval-Negation (NMS-AP strictly penalizes affirmative bias):
 - Value: ⭐⭐⭐⭐⭐ Directly addresses a major pain point in safety-critical object detection with a plug-and-play solution.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Leveraging Pretrained Language Models as Energy Functions for Glauber Dynamics Text Diffusion
 description: >-
-  [ACL 2026][LLM (Other)][UL2] This paper constructs discrete text diffusion using Glauber dynamics from statistical physics. By treating the pretrained UL2 model as the "energy function/noise distribution" and using mask infilling as the Markov transition kernel, the trained Glauber-UL2 **matches the generation perplexity of same-sized GPT-2-M/L AR
+  [ACL 2026][LLM (Other)][Glauber Dynamics] This paper constructs discrete text diffusion using Glauber dynamics from statistical physics. By treating the pretrained UL2 model as the "energy function/noise distribution" and using mask infilling as the Markov transition kernel, the trained Glauber-UL2 **matches the generation perplexity of same-sized GPT-2-M/L AR models for the first time**. It outperforms MDLM in search and planning tasks like Sudoku/Zebra and surpasses AR in b…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - UL2
-  - score entropy loss
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Glauber Dynamics"
+  - "Discrete Diffusion Language Models"
+  - "UL2"
+  - "score entropy loss"
+  - "energy functions"
 date: 2026-05-08
-content_hash: b60258daf891c30b
+content_hash: b72f5263caa62db6
 ---
+
 # Leveraging Pretrained Language Models as Energy Functions for Glauber Dynamics Text Diffusion
 
 **Conference**: ACL 2026  
@@ -167,8 +171,8 @@ Glauber BoN=1 (iterative self-correction) $\approx$ AR BoN=2 (independent sampli
 - [\[ACL 2025\] EdiText: Controllable Coarse-to-Fine Text Editing with Diffusion Language Models](../../ACL2025/llm_nlp/editext_diffusion_text_editing.md)
 - [\[ACL 2026\] Min-k Sampling: Decoupling Truncation from Temperature Scaling via Relative Logit Dynamics](min-k_sampling_decoupling_truncation_from_temperature_scaling_via_relative_logit.md)
 - [\[ACL 2026\] Unlocking the Potential of Diffusion Language Models through Template Infilling](unlocking_the_potential_of_diffusion_language_models_through_template_infilling.md)
-- [\[ACL 2026\] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context](text-to-distribution_prediction_with_quantile_tokens_and_neighbor_context.md)
 - [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
+- [\[ACL 2026\] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context](text-to-distribution_prediction_with_quantile_tokens_and_neighbor_context.md)
 
 </div>
 

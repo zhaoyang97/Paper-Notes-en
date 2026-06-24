@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Point of Order: Action-Aware LLM Persona Modeling for Realistic Civic Simulation
 description: >-
-  [ACL 2026][Social Computing][QLoRA] This paper converts public Zoom meeting videos into a government deliberation corpus with cross-video traceable speakers, action tags, and persona metadata. By fine-tuning LLMs with QLoRA to generate specific participant utterances, perplexity was reduced by up to 67%, and humans found it difficult to distinguish simul
+  [ACL2026][Social Computing][Speaker attribution] This paper converts public Zoom meeting videos into a government deliberation corpus with cross-video traceable speakers, action tags, and persona metadata. By fine-tuning LLMs with QLoRA to generate specific participant utterances, perplexity was reduced by up to 67%, and humans found it difficult to distinguish simulated dialogues from real meeting segments in Turing-style tests.
 tags:
-  - ACL 2026
-  - Social Computing
-  - QLoRA
+  - "ACL2026"
+  - "Social Computing"
+  - "Speaker attribution"
+  - "action tags"
+  - "persona modeling"
+  - "civic deliberation simulation"
+  - "QLoRA"
 date: 2026-05-08
-content_hash: 594dc1cff7bc560c
+content_hash: d5fcd302c005feff
 ---
+
 # Point of Order: Action-Aware LLM Persona Modeling for Realistic Civic Simulation
 
 **Conference**: ACL2026  
@@ -169,11 +174,11 @@ The ablation focuses on prompt components, action tags, and time anchoring. Syst
 
 ## Related Papers
 
-- [\[ACL 2026\] Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation](dynamics_of_cognitive_heterogeneity_investigating_behavioral_biases_in_multi-sta.md)
 - [\[ACL 2026\] Why Are We Moral? An LLM-based Agent Simulation Approach to Study Moral Evolution](why_are_we_moral_an_llm-based_agent_simulation_approach_to_study_moral_evolution.md)
-- [\[ACL 2026\] Synthia: Scalable Grounded Persona Generation from Social Media Data](synthia_scalable_grounded_persona_generation_from_social_media_data.md)
+- [\[ACL 2026\] Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation](dynamics_of_cognitive_heterogeneity_investigating_behavioral_biases_in_multi-sta.md)
 - [\[ACL 2026\] LiveFact: A Dynamic, Time-Aware Benchmark for LLM-Driven Fake News Detection](livefact_a_dynamic_time-aware_benchmark_for_llm-driven_fake_news_detection.md)
-- [\[ACL 2026\] mdok-style at SemEval-2026 Task 9: Finetuning LLMs for Multilingual Polarization Detection](mdok-style_at_semeval-2026_task_9_finetuning_llms_for_multilingual_polarization_.md)
+- [\[ACL 2026\] Synthia: Scalable Grounded Persona Generation from Social Media Data](synthia_scalable_grounded_persona_generation_from_social_media_data.md)
+- [\[ACL 2026\] Persona-E2: A Human-Grounded Dataset for Personality-Shaped Emotional Responses to Textual Events](persona-e2_a_human-grounded_dataset_for_personality-shaped_emotional_responses_t.md)
 
 </div>
 

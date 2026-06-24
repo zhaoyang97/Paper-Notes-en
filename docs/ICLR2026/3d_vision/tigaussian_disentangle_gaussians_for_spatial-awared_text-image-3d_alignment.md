@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TIGaussian: Disentangle Gaussians for Spatial-Aware Text-Image-3D Alignment
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Academic paper note for TIGaussian: Disentangle Gaussians for Spatial-Aware Text-Image-3D Alignment.
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] TIGaussian刷新了文本-图像-3DGS三模态对齐的SOTA。该方法通过多分支编码器解耦3D Gaussian Splatting (3DGS) 的内在属性，利用扩散先验将单视图图像补充为多视图融合特征，并使用 Query Transformer 将3D特征投影至文本空间。
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Cross-modal Alignment"
+  - "Attribute Disentanglement"
+  - "Multi-view Fusion"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 16e5bed37d223e65
+content_hash: 1c7ca3a6d8aa847e
 ---
+
 # TIGaussian: Disentangle Gaussians for Spatial-Aware Text-Image-3D Alignment
 
 **Conference**: ICLR 2026  
@@ -135,9 +141,9 @@ Ablation on Objaverse (Tkn.=Tokenizer, MV.=Multi-view, MVF.=Fusion module, TP.=P
 
 - [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](../../CVPR2026/3d_vision/geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
 - [\[ECCV 2024\] 3D Congealing: 3D-Aware Image Alignment in the Wild](../../ECCV2024/3d_vision/3d_congealing_3d-aware_image_alignment_in_the_wild.md)
+- [\[ICLR 2026\] Learning Hierarchical and Geometry-Aware Graph Representations for Text-to-CAD](learning_hierarchical_and_geometry-aware_graph_representations_for_text-to-cad.md)
+- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
 - [\[CVPR 2026\] Text–Image Conditioned 3D Generation](../../CVPR2026/3d_vision/text-image_conditioned_3d_generation.md)
-- [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](../../CVPR2026/3d_vision/span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](../../CVPR2026/3d_vision/crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
 
 </div>
 

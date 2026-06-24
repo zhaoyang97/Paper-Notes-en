@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment
 description: >-
-  [ICML 2026][Medical Imaging][CTS/MI/TIA] SynerMedGen proposes the "generation-aligned understanding" principle—deriving understanding tasks directly from the same paired synthetic data (via CTS, MI, and TIA tasks). By employing a two-stage training process, the understanding branch first learns representations beneficial for synthesis before transitioning to
+  [ICML 2026][Medical Imaging][Unified Medical MLLM] SynerMedGen proposes the "generation-aligned understanding" principle—deriving understanding tasks directly from the same paired synthetic data (via CTS, MI, and TIA tasks). By employing a two-stage training process, the understanding branch first learns representations beneficial for synthesis before transitioning to the latent flow matching generation branch. This approach outperforms both specialized synthesis models and e…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - CTS/MI/TIA
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Unified Medical MLLM"
+  - "Generation-aligned Understanding"
+  - "Cross-modal Synthesis"
+  - "CTS/MI/TIA"
+  - "SynerMed Dataset"
 date: 2026-05-08
-content_hash: 8dae10aced804f80
+content_hash: 359e21b3974c34db
 ---
+
 # SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment
 
 **Conference**: ICML 2026  

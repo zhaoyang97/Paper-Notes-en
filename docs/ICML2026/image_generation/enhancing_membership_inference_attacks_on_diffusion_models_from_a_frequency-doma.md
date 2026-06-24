@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Enhancing Membership Inference Attacks on Diffusion Models from a Frequency-Domain Perspective
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper analyzes failure modes of Membership Inference Attacks (MIA) on diffusion models from a frequency-domain perspective. It identifies that high-frequency content amplifies the standard deviation of scores for both member and hold-out samples, thereby diluting membership advantage. The authors propose a "high-f
+  [ICML 2026][Image Generation][Membership Inference Attack] This paper analyzes failure modes of Membership Inference Attacks (MIA) on diffusion models from a frequency-domain perspective. It identifies that high-frequency content amplifies the standard deviation of scores for both member and hold-out samples, thereby diluting membership advantage. The authors propose a "high-frequency filter" module that requires no training and zero additional inference cost. By applying the…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "Membership Inference Attack"
+  - "Diffusion Models"
+  - "Frequency Domain Analysis"
+  - "High-frequency Defect"
+  - "Plug-and-play Filter"
 date: 2026-05-08
-content_hash: 8d268138720b2ceb
+content_hash: 9dd46eda70397c2a
 ---
+
 # Enhancing Membership Inference Attacks on Diffusion Models from a Frequency-Domain Perspective
 
 **Conference**: ICML 2026  

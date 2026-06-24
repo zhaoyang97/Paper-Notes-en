@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] DeRaDiff: Denoising Time Realignment of Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] DeRaDiff transfers "decoding-time realignment" from language models to diffusion models: by aligning for only a single run, the model can simulate an aligned version trained with any KL regularization strength online using a scalar $\lambda$ during sampling, thereby eliminating expensive hyperparameter sweeps for regul
+  [ICLR 2026][Image Generation][Diffusion Models] DeRaDiff transfers "decoding-time realignment" from language models to diffusion models: by aligning for only a single run, the model can simulate an aligned version trained with any KL regularization strength online using a scalar $\lambda$ during sampling, thereby eliminating expensive hyperparameter sweeps for regularization strength.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - RLHF
-  - decoding-time realignment
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "RLHF"
+  - "KL Regularization"
+  - "Inference-time Alignment"
+  - "decoding-time realignment"
+  - "Reward Hacking"
 date: 2026-05-08
-content_hash: 0e6ccb5cc2c4d19c
+content_hash: 94e1eac27a81c442
 ---
+
 # DeRaDiff: Denoising Time Realignment of Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -123,8 +127,8 @@ Approximation is most accurate when the **target $\beta$ is higher than the anch
 
 - [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
 - [\[ICLR 2026\] Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation](asynchronous_denoising_diffusion_models_for_aligning_text-to-image_generation.md)
-- [\[ICLR 2026\] Latent Denoising Makes Good Tokenizers](latent_denoising_makes_good_tokenizers.md)
 - [\[ICLR 2026\] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance](mitigating_noise_shift_in_denoising_generative_models_with_noise_awareness_guida.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
 - [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
 
 </div>

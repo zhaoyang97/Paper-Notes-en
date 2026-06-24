@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark
 description: >-
-  [ICLR 2026][LLM Reasoning][Neural Theorem Proving] This paper introduces NTP4VC—the first real-world, multi-language (Isabelle/Lean/Rocq) neural theorem proving benchmark targeting the core bottleneck of program verification: "Verification Condition (VC) proving." Using industrial pipelines (Why3/Frama-C), the authors extract 600 VCs from real projects like Linux and C
+  [ICLR 2026][Reasoning][Neural Theorem Proving] This paper introduces NTP4VC—the first real-world, multi-language (Isabelle/Lean/Rocq) neural theorem proving benchmark targeting the core bottleneck of program verification: "Verification Condition (VC) proving." Using industrial pipelines (Why3/Frama-C), the authors extract 600 VCs from real projects like Linux and Contiki-OS. The results reveal a significant gap: even state-of-the-art LLMs/provers achieve a pass@8 of less than…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Neural Theorem Proving
-  - Verification Condition
-  - Program Verification
-  - Isabelle/Lean/Rocq
-  - Why3/Frama-C
-  - Benchmark
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Neural Theorem Proving"
+  - "Verification Condition"
+  - "Program Verification"
+  - "Isabelle/Lean/Rocq"
+  - "Why3/Frama-C"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: b0a77905757eb8db
+content_hash: 77fa50e18e4e5766
 ---
+
 # Neural Theorem Proving for Verification Conditions: A Real-World Benchmark
 
 **Conference**: ICLR 2026  
@@ -120,10 +121,10 @@ flowchart LR
 
 ## Related Papers
 
-- [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)
-- [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
 - [\[ICLR 2026\] OpenEstimate: Evaluating LLMs on Reasoning Under Uncertainty with Real-World Data](openestimate_evaluating_llms_on_reasoning_under_uncertainty_with_real-world_data.md)
+- [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)
 - [\[ICML 2025\] No Soundness in the Real World: On the Challenges of the Verification of Deployed Neural Networks](../../ICML2025/llm_reasoning/no_soundness_in_the_real_world_on_the_challenges_of_the_verification_of_deployed.md)
+- [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
 - [\[ICLR 2026\] EvolProver: Advancing Automated Theorem Proving by Evolving Formalized Problems via Symmetry and Difficulty](evolprover_advancing_automated_theorem_proving_by_evolving_formalized_problems_v.md)
 
 </div>

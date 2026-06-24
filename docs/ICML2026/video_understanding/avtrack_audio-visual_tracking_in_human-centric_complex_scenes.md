@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes
 description: >-
-  [ICML 2026][Video Understanding][Paper Note] This paper proposes the AVTrack dataset and the AVTracker baseline method to address the Audio-Visual Instance Segmentation and tracking (AVIS) task in complex human-centric scenes. By defining eight challenging conditions, a rigorous evaluation benchmark was constructed. A three-stage divide-and-conquer framework was
+  [ICML 2026][Video Understanding][Audio-visual tracking] This paper proposes the AVTrack dataset and the AVTracker baseline method to address the Audio-Visual Instance Segmentation and tracking (AVIS) task in complex human-centric scenes. By defining eight challenging conditions, a rigorous evaluation benchmark was constructed. A three-stage divide-and-conquer framework was designed (ASR segmented aggregation → local speaker localization → global identity association)…
 tags:
-  - ICML 2026
-  - Video Understanding
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Audio-visual tracking"
+  - "instance segmentation"
+  - "human-centric"
+  - "multi-modal reasoning"
+  - "dataset benchmark"
 date: 2026-05-08
-content_hash: b0e17b47b36e60e4
+content_hash: de7c5ddf056b1433
 ---
+
 # AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes
 
 **Conference**: ICML 2026  
@@ -150,8 +156,8 @@ Comparison of VIS and AVIS methods on the AVTrack benchmark (all values in %):
 - [\[AAAI 2026\] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](../../AAAI2026/video_understanding/r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)
 - [\[ICML 2026\] Unified Multimodal Visual Tracking with Dual Mixture-of-Experts](unified_multimodal_visual_tracking_with_dual_mixture-of-experts.md)
 - [\[ICML 2026\] RELO: Reinforcement Learning to Localize for Visual Object Tracking](relo_reinforcement_learning_to_localize_for_visual_object_tracking.md)
+- [\[ICLR 2026\] Go Beyond Earth: Understanding Human Actions and Scenes in Microgravity Environments](../../ICLR2026/video_understanding/go_beyond_earth_understanding_human_actions_and_scenes_in_microgravity_environme.md)
 - [\[CVPR 2025\] H-MoRe: Learning Human-centric Motion Representation for Action Analysis](../../CVPR2025/video_understanding/h-more_learning_human-centric_motion_representation_for_action_analysis.md)
-- [\[CVPR 2026\] Adaptive Capacity Autoregressive Visual Tracking](../../CVPR2026/video_understanding/adaptive_capacity_autoregressive_visual_tracking.md)
 
 </div>
 

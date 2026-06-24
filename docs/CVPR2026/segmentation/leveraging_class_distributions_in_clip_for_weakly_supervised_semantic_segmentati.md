@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][CLIP] Addressing the "under-activation" issue in CLIP-generated CAMs caused by inaccurate MHSA affinity, CD-CLIP identifies that "patches of the same class exhibit highly similar probability distributions across all classes." It constructs Class Distribution-Aware (CDA) affinity using JS divergence to complete the foreground
+  [CVPR 2026][Segmentation][Weakly Supervised Semantic Segmentation] Addressing the "under-activation" issue in CLIP-generated CAMs caused by inaccurate MHSA affinity, CD-CLIP identifies that "patches of the same class exhibit highly similar probability distributions across all classes." It constructs Class Distribution-Aware (CDA) affinity using JS divergence to complete the foreground. Furthermore, it introduces Super-class Boundary Exploration (SBE) using DINO-based super-cl…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Weakly Supervised Semantic Segmentation"
+  - "CLIP"
+  - "CAM"
+  - "Class Distribution"
+  - "JS Divergence"
 date: 2026-05-08
-content_hash: 4cfda943abf68b03
+content_hash: cb2d99d776b0384d
 ---
+
 # Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -135,10 +140,20 @@ Boundary supervision selection (Table 4): No $L_b$ yields 80.2; $|C_p|=1$ only y
 - Value: ⭐⭐⭐⭐ Strong results and a reusable logic for refining CLIP-based affinity.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Beyond Text: Visual Description Assembly by Probabilistic Model for CLIP-based Weakly Supervised Semantic Segmentation](beyond_text_visual_description_assembly_by_probabilistic_model_for_clip-based_we.md)
+- [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
+- [\[AAAI 2026\] SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation](../../AAAI2026/segmentation/ssr_semantic_and_spatial_rectification_for_clip-based_weakly_supervised_segmenta.md)
+- [\[CVPR 2025\] Exploring CLIP's Dense Knowledge for Weakly Supervised Semantic Segmentation](../../CVPR2025/segmentation/exploring_clips_dense_knowledge_for_weakly_supervised_semantic_segmentation.md)
+- [\[CVPR 2026\] DeBias-CLIP: CLIP Is Shortsighted — Paying Attention Beyond the First Sentence](clip_shortsighted_beyond_first_sentence.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond Text: Visual Description Assembly by Probabilistic Model for CLIP-based Weakly Supervised Semantic Segmentation](beyond_text_visual_description_assembly_by_probabilistic_model_for_clip-based_we.md)

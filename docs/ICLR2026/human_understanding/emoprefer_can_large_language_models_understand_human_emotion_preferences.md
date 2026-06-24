@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EmoPrefer: Can Large Language Models Understand Human Emotion Preferences?
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] To address high evaluation costs in Descriptive Multimodal Emotion Recognition (DMER), EmoPrefer is proposed as the first emotion preference dataset and benchmark. It systematically explores whether MLLMs can replace human annotators for emotion preference judgment. The best approach (Qwen2.5-Omni) achieves a 67.21% tw
+  [ICLR 2026][Human Understanding][Descriptive Multimodal Emotion Recognition] To address high evaluation costs in Descriptive Multimodal Emotion Recognition (DMER), EmoPrefer is proposed as the first emotion preference dataset and benchmark. It systematically explores whether MLLMs can replace human annotators for emotion preference judgment. The best approach (Qwen2.5-Omni) achieves a 67.21% two-class WAF, leaving room for further improvement.
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Descriptive Multimodal Emotion Recognition"
+  - "Emotion Preference Learning"
+  - "MLLM-as-a-Judge"
+  - "Preference Dataset"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: 5ae9347931fbd4bc
+content_hash: 91f6aaedc831af1b
 ---
+
 # EmoPrefer: Can Large Language Models Understand Human Emotion Preferences?
 
 **Conference**: ICLR 2026  
@@ -133,11 +139,11 @@ The open-source Qwen2.5-Omni outperforms all closed-source models in recognition
 
 ## Related Papers
 
-- [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
-- [\[ICML 2025\] Scaling Large Motion Models with Million-Level Human Motions](../../ICML2025/human_understanding/scaling_large_motion_models_with_million-level_human_motions.md)
 - [\[CVPR 2025\] ChatGarment: Garment Estimation, Generation and Editing via Large Language Models](../../CVPR2025/human_understanding/chatgarment_garment_estimation_generation_and_editing_via_large_language_models.md)
+- [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
+- [\[ICLR 2026\] Sapiens2: High-Resolution Foundation Models for Human-Centric Vision](sapiens2.md)
+- [\[ICML 2025\] Scaling Large Motion Models with Million-Level Human Motions](../../ICML2025/human_understanding/scaling_large_motion_models_with_million-level_human_motions.md)
 - [\[CVPR 2026\] Bridging Facial Understanding and Animation via Language Models](../../CVPR2026/human_understanding/bridging_facial_understanding_and_animation_via_language_models.md)
-- [\[CVPR 2025\] Pose Priors from Language Models](../../CVPR2025/human_understanding/pose_priors_from_language_models.md)
 
 </div>
 

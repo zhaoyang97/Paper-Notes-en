@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Paper Note] ParisKV reduces Top-$k$ KV retrieval decoding latency by 17–44× compared to MagicPIG/PQCache on million-token contexts by normalizing and randomly rotating keys/queries onto a unit hypersphere and replacing prefill-learned centroids with "data-independent analytical centroids." Combined with a two-stage GPU-native "col
+  [ICML 2026][Information Retrieval & RAG][KV-Cache Retrieval] ParisKV reduces Top-$k$ KV retrieval decoding latency by 17–44× compared to MagicPIG/PQCache on million-token contexts by normalizing and randomly rotating keys/queries onto a unit hypersphere and replacing prefill-learned centroids with "data-independent analytical centroids." Combined with a two-stage GPU-native "collision voting + 4-bit quantized reranking" pipeline and UVA-based on-demand KV fetching…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "KV-Cache Retrieval"
+  - "Long Context"
+  - "Drift-Robust"
+  - "GPU-Native"
+  - "UVA Offloading"
 date: 2026-05-08
-content_hash: 72e9a61ea1e9a623
+content_hash: 7c7e9291fca23538
 ---
+
 # ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs
 
 **Conference**: ICML 2026  
@@ -148,8 +154,8 @@ Within the range full attention can run, ParisKV improves throughput by 2.1–2.
 - [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](../../ACL2026/information_retrieval/brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
 - [\[ICLR 2026\] Q-RAG: Long Context Multi‑Step Retrieval via Value‑Based Embedder Training](../../ICLR2026/information_retrieval/q-rag_long_context_multistep_retrieval_via_valuebased_embedder_training.md)
 - [\[ICML 2026\] HGMem: Hypergraph-based Working Memory to Improve Multi-step RAG for Long-Context Complex Relational Modeling](hgmem_hypergraph-based_working_memory_to_improve_multi-step_rag_for_long-context.md)
-- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 - [\[ACL 2025\] Hierarchical Document Refinement for Long-context Retrieval-augmented Generation](../../ACL2025/information_retrieval/hierarchical_document_refinement_for_long-context_retrieval-augmented_generation.md)
+- [\[ICML 2025\] RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding](../../ICML2025/information_retrieval/rapid_long-context_inference_with_retrieval-augmented_speculative_decoding.md)
 
 </div>
 

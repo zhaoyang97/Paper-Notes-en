@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Building Robust Vision Encoders for Cross-Dataset Evaluation in Immunofluorescent Microscopy
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Addressing the inconsistency in channel counts and configurations across immunofluorescence (IF) microscopy laboratories, which prevents existing models from migrating to "unseen channel combinations," this paper proposes C3R. It leverages biological priors to split channels into "context" and "concept" groups. By util
+  [CVPR 2026][Medical Imaging][Immunofluorescence microscopy] Addressing the inconsistency in channel counts and configurations across immunofluorescence (IF) microscopy laboratories, which prevents existing models from migrating to "unseen channel combinations," this paper proposes C3R. It leverages biological priors to split channels into "context" and "concept" groups. By utilizing the CCE architecture with group-independent encoding and the MCD (Masked Context Distillation)…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Immunofluorescence microscopy"
+  - "cross-dataset generalization"
+  - "channel-adaptive encoder"
+  - "masked distillation"
+  - "cellular representation"
 date: 2026-05-08
-content_hash: ba1a07474432fb7e
+content_hash: a8c3d774f4dae853
 ---
+
 # Building Robust Vision Encoders for Cross-Dataset Evaluation in Immunofluorescent Microscopy
 
 **Conference**: CVPR 2026  
@@ -150,8 +156,8 @@ Incremental component addition (ViT-B, Table 5):
 ## Related Papers
 
 - [\[CVPR 2026\] MuViT: Multi-Resolution Vision Transformers for Learning Across Scales in Microscopy](muvit_multi-resolution_vision_transformers_for_learning_across_scales_in_microsc.md)
-- [\[CVPR 2026\] Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study](are_general-purpose_vision_models_all_we_need_for_2d_medical_image_segmentation_.md)
 - [\[CVPR 2026\] MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation](mambaliteunet_cross-gated_adaptive_feature_fusion_for_robust_skin_lesion_segment.md)
+- [\[ICLR 2026\] Reliable Evaluation of MRI Motion Correction: Dataset and Insights](../../ICLR2026/medical_imaging/reliable_evaluation_of_mri_motion_correction_dataset_and_insights.md)
 - [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](../../AAAI2026/medical_imaging/bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
 - [\[CVPR 2026\] X-WIN: Building Chest Radiograph World Model via Predictive Sensing](x-win_building_chest_radiograph_world_model_via_predictive_sensing.md)
 

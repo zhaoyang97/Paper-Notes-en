@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unlearning as Ablation: Toward a Falsifiable Benchmark for Generative Scientific Discovery
 description: >-
-  [NeurIPS 2025 (AI4Science Workshop)][LLM Safety][unlearning as ablation] This paper proposes reframing machine unlearning as an epistemological probe ("unlearning as ablation"): by systematically removing a target piece…
+  [NeurIPS 2025 (AI4Science Workshop)][LLM Safety][unlearning as ablation] This paper proposes reframing machine unlearning as an epistemological probe ("unlearning as ablation"): by systematically removing a target piece of knowledge along with its unlearning closure, and then testing whether a model can re-derive it from axioms, the framework provides a falsifiable test to distinguish whether LLMs genuinely generate new knowledge or merely retrieve memorized fragments.
 tags:
   - "NeurIPS 2025 (AI4Science Workshop)"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "knowledge generation"
   - "LLM evaluation"
 date: 2026-05-08
-content_hash: 02f01b69c1290978
+content_hash: 09ed280069f34593
 ---
 
 # Unlearning as Ablation: Toward a Falsifiable Benchmark for Generative Scientific Discovery
@@ -172,10 +172,10 @@ As a position paper, no empirical results are reported. Core arguments include:
 ## Related Papers
 
 - [\[NeurIPS 2025\] DeepPersona: A Generative Engine for Scaling Deep Synthetic Personas](deeppersona_a_generative_engine_for_scaling_deep_synthetic_personas.md)
+- [\[ICLR 2026\] SOSBench: Benchmarking Safety Alignment on Six Scientific Domains](../../ICLR2026/llm_safety/sosbench_benchmarking_safety_alignment_on_six_scientific_domains.md)
 - [\[NeurIPS 2025\] CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming](cpret_a_dataset_benchmark_and_model_for_retrieval_in_competitive_programming.md)
+- [\[ACL 2025\] MEGen: Generative Backdoor into Large Language Models via Model Editing](../../ACL2025/llm_safety/megen_generative_backdoor_into_large_language_models_via_model_editing.md)
 - [\[NeurIPS 2025\] ORBIT -- Open Recommendation Benchmark for Reproducible Research with Hidden Tests](orbit_--_open_recommendation_benchmark_for_reproducible_research_with_hidden_tes.md)
-- [\[ACL 2026\] ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs](../../ACL2026/llm_safety/astra_an_automated_framework_for_strategy_discovery_retrieval_and_evolution_for_.md)
-- [\[ICLR 2026\] Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference](../../ICLR2026/llm_safety/purifying_generative_llms_from_backdoors_without_prior_knowledge_or_clean_refere.md)
 
 </div>
 

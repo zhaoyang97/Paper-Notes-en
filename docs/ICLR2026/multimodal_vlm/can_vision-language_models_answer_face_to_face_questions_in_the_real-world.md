@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Can Vision-Language Models Answer Face to Face Questions in the Real-World?
 description: >-
-  [ICLR 2026][Multimodal VLM][situated understanding] The authors propose QIVD (Qualcomm Interactive Video Dataset), a face-to-face real-time QA benchmark containing 2,900 videos with audio and timestamp annotations. The study reveals that existing VLMs significantly lag behind humans in real-time situated understanding (Best model 60% vs. Human 87%). The main bottlenecks
+  [ICLR2026][Multimodal VLM][situated understanding] The authors propose QIVD (Qualcomm Interactive Video Dataset), a face-to-face real-time QA benchmark containing 2,900 videos with audio and timestamp annotations. The study reveals that existing VLMs significantly lag behind humans in real-time situated understanding (Best model 60% vs. Human 87%). The main bottlenecks are identified as referential disambiguation, timing judgment for responses, and situational common sense…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - situated understanding
-  - real-time interaction
-  - video QA
-  - multimodal benchmark
-  - streaming VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "situated understanding"
+  - "real-time interaction"
+  - "video QA"
+  - "multimodal benchmark"
+  - "streaming VLM"
 date: 2026-05-08
-content_hash: b2bdf7ef77bab993
+content_hash: 62c65108b5321613
 ---
+
 # Can Vision-Language Models Answer Face to Face Questions in the Real-World?
 
 **Conference**: ICLR2026  
@@ -138,8 +139,8 @@ Fine-tuning experiments were conducted on VideoLLaMA2.1-7B-AV using 5-fold cross
 - [\[CVPR 2025\] Rethinking Vision-Language Model in Face Forensics: Multi-Modal Interpretable Forged Face Detector](../../CVPR2025/multimodal_vlm/rethinking_vision-language_model_in_face_forensics_multi-modal_interpretable_for.md)
 - [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
 - [\[NeurIPS 2025\] Face-Human-Bench: A Comprehensive Benchmark of Face and Human Understanding for Multi-modal Assistants](../../NeurIPS2025/multimodal_vlm/face-human-bench_a_comprehensive_benchmark_of_face_and_human_understanding_for_m.md)
+- [\[ICLR 2026\] StreamingVLM: Real-Time Understanding for Infinite Video Streams](streamingvlm_real-time_understanding_for_infinite_video_streams.md)
 - [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](../../CVPR2026/multimodal_vlm/vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
-- [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
 
 </div>
 

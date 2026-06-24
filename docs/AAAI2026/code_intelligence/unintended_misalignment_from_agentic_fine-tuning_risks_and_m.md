@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unintended Misalignment from Agentic Fine-Tuning: Risks and Mitigation
 description: >-
-  [AAAI 2026][Code Intelligence][Agentic Fine-Tuning] This paper demonstrates that fine-tuning LLMs on benign agentic data causes unintended safety misalignment (attack success rate increases by 32–38%)…
+  [AAAI 2026][Code Intelligence][Agentic Fine-Tuning] This paper demonstrates that fine-tuning LLMs on benign agentic data causes unintended safety misalignment (attack success rate increases by 32–38%), and proposes PING (Prefix Injection Guard)—an iterative generate-and-evaluate approach that automatically discovers natural language prefixes to guide fine-tuned agents toward refusing harmful requests, achieving an average refusal rate improvement of 66% (Web) and 44% (Code) w…
 tags:
   - "AAAI 2026"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "Agent Safety"
   - "Linear Probe Analysis"
 date: 2026-05-08
-content_hash: 136392cf4736756e
+content_hash: f1c451b786d8d514
 ---
 
 # Unintended Misalignment from Agentic Fine-Tuning: Risks and Mitigation
@@ -126,10 +126,10 @@ PING requires no model training—only a natural language prefix prepended at in
 ## Related Papers
 
 - [\[ICML 2026\] Probability-Entropy Calibration: An Elastic Indicator for Adaptive Fine-tuning](../../ICML2026/code_intelligence/probability-entropy_calibration_an_elastic_indicator_for_adaptive_fine-tuning.md)
+- [\[ACL 2025\] GiFT: Gibbs Fine-Tuning for Code Generation](../../ACL2025/code_intelligence/gift_gibbs_fine_tuning_code_gen.md)
 - [\[ICLR 2026\] IMSE: Intrinsic Mixture of Spectral Experts Fine-tuning for Test-Time Adaptation](../../ICLR2026/code_intelligence/imse_intrinsic_mixture_of_spectral_experts_fine-tuning_for_test-time_adaptation.md)
+- [\[ICML 2025\] SparseLoRA: Accelerating LLM Fine-Tuning with Contextual Sparsity](../../ICML2025/code_intelligence/sparselora_accelerating_llm_fine-tuning_with_contextual_sparsity.md)
 - [\[NeurIPS 2025\] Principled Fine-tuning of LLMs from User-Edits: A Medley of Preference, Supervision, and Reward](../../NeurIPS2025/code_intelligence/principled_fine-tuning_of_llms_from_user-edits_a_medley_of_preference_supervisio.md)
-- [\[ICML 2026\] CentaurEval: Benchmarking Human-in-the-Loop Value in Agentic Coding](../../ICML2026/code_intelligence/centaureval_benchmarking_human-in-the-loop_value_in_agentic_coding.md)
-- [\[ACL 2026\] FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean](../../ACL2026/code_intelligence/formalscience_scalable_human-in-the-loop_autoformalisation_of_science_with_agent.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] HLD: Approximate Hierarchical Linguistic Distribution Modeling for LLM-Generated Text Detection
 description: >-
-  [ICLR 2026][AIGC Detection][n-gram] HLD uses n-grams to estimate the distributions of Human-Written Text (HWT) and Machine-Generated Text (MGT) across three linguistic levels: lexical, syntactic, and semantic. By feeding Bayesian log-likelihood ratios of these hierarchical differences into XGBoost for classification, the method avoids reliance on proxy L
+  [ICLR 2026][AIGC Detection][LLM generated text detection] HLD uses n-grams to estimate the distributions of Human-Written Text (HWT) and Machine-Generated Text (MGT) across three linguistic levels: lexical, syntactic, and semantic. By feeding Bayesian log-likelihood ratios of these hierarchical differences into XGBoost for classification, the method avoids reliance on proxy LLMs to approximate the token distributions of black-box source models. It proves more robust than sing…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - n-gram
-  - XGBoost
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "LLM generated text detection"
+  - "hierarchical linguistic distribution"
+  - "n-gram"
+  - "Bayesian likelihood ratio"
+  - "zero-shot detection"
+  - "XGBoost"
 date: 2026-05-08
-content_hash: 2000adf8920248f7
+content_hash: c1551525a742b24c
 ---
+
 # HLD: Approximate Hierarchical Linguistic Distribution Modeling for LLM-Generated Text Detection
 
 **Conference**: ICLR 2026  
@@ -129,8 +134,8 @@ flowchart LR
 ## Related Papers
 
 - [\[ICLR 2026\] DMAP: A Distribution Map for Text](dmap_a_distribution_map_for_text.md)
-- [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](../../ACL2026/aigc_detection/beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
 - [\[ICLR 2026\] Learn-to-Distance: Distance Learning for Detecting LLM-Generated Text](learn-to-distance_distance_learning_for_detecting_llm-generated_text.md)
+- [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](../../ACL2026/aigc_detection/beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
 - [\[ACL 2025\] KatFishNet: Detecting LLM-Generated Korean Text through Linguistic Feature Analysis](../../ACL2025/aigc_detection/katfishnet_detecting_llm-generated_korean_text_through_linguistic_feature_analys.md)
 - [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](../../CVPR2026/aigc_detection/ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
 

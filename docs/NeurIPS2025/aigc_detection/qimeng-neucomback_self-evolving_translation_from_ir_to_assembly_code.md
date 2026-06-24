@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] QiMeng-NeuComBack: Self-Evolving Translation from IR to Assembly Code
 description: >-
-  [NeurIPS 2025][AIGC Detection][Neural Compilation] This paper introduces the NeuComBack benchmark for evaluating neural compilation on IR-to-assembly translation tasks…
+  [NeurIPS 2025][AIGC Detection][Neural Compilation] This paper introduces the NeuComBack benchmark for evaluating neural compilation on IR-to-assembly translation tasks, and proposes a self-evolving prompt optimization method that iteratively improves compilation prompts by learning from LLM self-debugging trajectories. The approach raises correctness from 44% to 64%, with 87.5% of correctly generated programs outperforming clang-O3.
 tags:
   - "NeurIPS 2025"
   - "AIGC Detection"
@@ -12,7 +12,7 @@ tags:
   - "Self-Evolving Prompt Optimization"
   - "Compiler"
 date: 2026-05-08
-content_hash: eecff76e21e2ef85
+content_hash: f58a8a9d79d591c2
 ---
 
 # QiMeng-NeuComBack: Self-Evolving Translation from IR to Assembly Code
@@ -152,8 +152,8 @@ There is no training loss in the conventional sense. Prompt optimization is driv
 - [\[NeurIPS 2025\] Synthesizing Performance Constraints for Evaluating and Improving Code Efficiency](synthesizing_performance_constraints_for_evaluating_and_improving_code_efficienc.md)
 - [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
 - [\[NeurIPS 2025\] Classical Planning with LLM-Generated Heuristics: Challenging the State of the Art with Python Code](classical_planning_with_llm-generated_heuristics_challenging_the_state_of_the_ar.md)
+- [\[ICML 2026\] AutoBaxBuilder: Bootstrapping Code Security Benchmarking](../../ICML2026/aigc_detection/autobaxbuilder_bootstrapping_code_security_benchmarking.md)
 - [\[ICLR 2026\] Calibrating Verbalized Confidence with Self-Generated Distractors](../../ICLR2026/aigc_detection/calibrating_verbalized_confidence_with_self-generated_distractors.md)
-- [\[ACL 2026\] REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control](../../ACL2026/aigc_detection/reflex_self-refining_explainable_fact-checking_via_verdict-anchored_style_contro.md)
 
 </div>
 

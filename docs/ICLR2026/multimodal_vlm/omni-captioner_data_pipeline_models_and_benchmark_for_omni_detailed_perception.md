@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Omni-Captioner: Data Pipeline, Models, and Benchmark for Omni Detailed Perception
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Addressing the symbiotic problem of "the more detailed the description, the more hallucinations" in omni-modal language models, this paper proposes an agentic "detective" data pipeline (Omni-Detective) that calls various tools to automatically produce high-detail, low-hallucination audio-visual captions. Through two-st
+  [ICLR 2026][Multimodal VLM][Omni-modality perception] Addressing the symbiotic problem of "the more detailed the description, the more hallucinations" in omni-modal language models, this paper proposes an agentic "detective" data pipeline (Omni-Detective) that calls various tools to automatically produce high-detail, low-hallucination audio-visual captions. Through two-stage curriculum training, the authors develop Audio-Captioner and Omni-Captioner…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Omni-modality perception"
+  - "detailed captioning"
+  - "agentic data synthesis"
+  - "hallucination suppression"
+  - "cloze evaluation"
 date: 2026-05-08
-content_hash: 7a4e9b437f24c076
+content_hash: f74c129613859879
 ---
+
 # Omni-Captioner: Data Pipeline, Models, and Benchmark for Omni Detailed Perception
 
 **Conference**: ICLR 2026  

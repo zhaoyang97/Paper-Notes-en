@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scene-Centric Unsupervised Video Panoptic Segmentation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper introduces the first **fully unsupervised Video Panoptic Segmentation (VPS)** task and proposes VideoCUPS. Starting from monocular "scene-centric" videos, the method generates **temporally consistent** panoptic pseudo-labels using self-supervised depth, motion, and visual cues. A novel **Video DropLoss** is
+  [CVPR 2026][Video Understanding][Unsupervised Panoptic Segmentation] This paper introduces the first **fully unsupervised Video Panoptic Segmentation (VPS)** task and proposes VideoCUPS. Starting from monocular "scene-centric" videos, the method generates **temporally consistent** panoptic pseudo-labels using self-supervised depth, motion, and visual cues. A novel **Video DropLoss** is then employed to train a VPS model on these pseudo-labels. VideoCUPS significantly outperfo…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Unsupervised Panoptic Segmentation"
+  - "Video Panoptic Segmentation (VPS)"
+  - "Pseudo-labels"
+  - "Self-supervised Depth and Optical Flow"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: d5b88ce631454300
+content_hash: c68a6339625696ce
 ---
+
 # Scene-Centric Unsupervised Video Panoptic Segmentation
 
 **Conference**: CVPR 2026  
@@ -144,16 +150,16 @@ Fine-tuning the VideoCUPS pre-trained model on Cityscapes-VPS with limited label
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
+- [\[CVPR 2026\] SAM2Text: Towards Prompt-Free and Multi-Resolution Video Scene Text Segmentation](sam2text_towards_prompt-free_and_multi-resolution_video_scene_text_segmentation.md)
+- [\[ICLR 2026\] Video Scene Segmentation with Genre and Duration Signals](../../ICLR2026/video_understanding/video_scene_segmentation_with_genre_and_duration_signals.md)
 - [\[CVPR 2026\] Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation](bootstrapping_video_semantic_segmentation_model_via_distillation-assisted_test-t.md)
+- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
 - [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](../../ICLR2026/video_understanding/from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)
-- [\[CVPR 2026\] Seeing the Scene Matters: Revealing Forgetting in Video Understanding Models with a Scene-Aware Long-Video Benchmark](seeing_the_scene_matters_revealing_forgetting_in_video_understanding_models_with.md)
-- [\[CVPR 2026\] Neural-Centric Video Processing Pipeline for Unified Multi-Task Inference](neural-centric_video_processing_pipeline_for_unified_multi-task_inference.md)
 
 </div>
 

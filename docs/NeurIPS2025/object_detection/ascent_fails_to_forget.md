@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ascent Fails to Forget
 description: >-
-  [NeurIPS 2025][Object Detection][machine unlearning] Starting from the statistical dependence between the forget set and the retain set, this paper theoretically and empirically demonstrates that the widely adopted gradi…
+  [NeurIPS 2025][Object Detection][machine unlearning] Starting from the statistical dependence between the forget set and the retain set, this paper theoretically and empirically demonstrates that the widely adopted gradient ascent / Descent-Ascent (DA) family of machine unlearning methods fails systematically in the presence of data correlations. In logistic regression, the DA solution is provably farther from the oracle than the original model…
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "descent-ascent"
   - "logistic regression"
 date: 2026-05-08
-content_hash: a7c87175a44b9b98
+content_hash: 8aa08110a99e94a0
 ---
 
 # Ascent Fails to Forget
@@ -137,11 +137,11 @@ Evaluation uses the KLoM metric, where KLoM approaching 0 indicates perfect unle
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
 - [\[NeurIPS 2025\] FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies](flexevent_towards_flexible_event-frame_object_detection_at_varying_operational_f.md)
 - [\[NeurIPS 2025\] Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent](automated_detection_of_visual_attribute_reliance_with_a_self-reflective_agent.md)
 - [\[NeurIPS 2025\] EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination](an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data.md)
 - [\[NeurIPS 2025\] Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension](video-rag_visually-aligned_retrieval-augmented_long_video_comprehension.md)
+- [\[NeurIPS 2025\] MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling](mstar_box-free_multi-query_scene_text_retrieval_with_attention_recycling.md)
 
 </div>
 

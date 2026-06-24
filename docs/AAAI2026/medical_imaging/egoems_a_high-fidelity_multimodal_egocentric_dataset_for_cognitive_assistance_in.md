@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services
 description: >-
-  [AAAI 2026][Medical Imaging][Egocentric perspective] This paper presents the first high-fidelity multi-person multimodal egocentric EMS dataset, comprising 233 trials with 20 hours of video…
+  [AAAI 2026][Medical Imaging][Egocentric perspective] This paper presents the first high-fidelity multi-person multimodal egocentric EMS dataset, comprising 233 trials with 20 hours of video, annotations covering 9 interventions and 67 critical steps, and three benchmark tasks (step classification / online segmentation / CPR quality estimation) to advance the development of cognitive assistance systems for EMS.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "cognitive assistance"
   - "activity recognition"
 date: 2026-05-08
-content_hash: 1db14d7797ec10b3
+content_hash: cd2547483b67abda
 ---
 
 # EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services
@@ -122,8 +122,8 @@ Benchmark tasks employ multiple approaches including supervised Transformers, mu
 - [\[AAAI 2026\] FIA-Edit: Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing](fia-edit_frequency-interactive_attention_for_efficient_and_high-fidelity_inversi.md)
 - [\[AAAI 2026\] MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss](maisi-v2_accelerated_3d_high-resolution_medical_image_synthesis_with_rectified_f.md)
 - [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](../../CVPR2026/medical_imaging/medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
-- [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
 - [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
+- [\[AAAI 2026\] Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection](personality-guided_public-private_domain_disentangled_hypergraph-former_network_.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval
 description: >-
-  [CVPR 2026][Self-Supervised Learning][UCDIR] Ours proposes TPSNet, which utilizes domain prompts learned by CLIP as text priors to provide fine-grained semantic supervision, while introducing phase spectrum features as phase priors to bridge domain distribution gaps and maintain semantic integrity. The synergy of text-phase dual priors achieves significant improv
+  [CVPR 2026][Self-Supervised Learning][UCDIR] Ours proposes TPSNet, which utilizes domain prompts learned by CLIP as text priors to provide fine-grained semantic supervision, while introducing phase spectrum features as phase priors to bridge domain distribution gaps and maintain semantic integrity. The synergy of text-phase dual priors achieves significant improvements in unsupervised cross-domain image retrieval.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - UCDIR
-  - domain prompt
-  - phase spectrum
-  - text-phase dual priors
-  - cross-domain alignment
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "UCDIR"
+  - "domain prompt"
+  - "phase spectrum"
+  - "text-phase dual priors"
+  - "cross-domain alignment"
 date: 2026-05-08
-content_hash: 0e8a77a7018c95b2
+content_hash: 457cc1029d7334f7
 ---
+
 # Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -148,10 +149,10 @@ The total loss is $\mathcal{L} = \alpha\mathcal{L}_{pce} + \beta\mathcal{L}_{i2t
 ## Related Papers
 
 - [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
-- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](is_parameter_isolation_better_for_prompt-based_continual_learning.md)
-- [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
-- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)
-- [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
+- [\[CVPR 2026\] MemFlow: A Lightweight Forward Memorizing Framework for Quick Domain Adaptive Feature Mapping](memflow_a_lightweight_forward_memorizing_framework_for_quick_domain_adaptive_fea.md)
+- [\[CVPR 2026\] Suppressing Non-Semantic Noise in Masked Image Modeling Representations](suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)
+- [\[CVPR 2026\] Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning](dual-estimator_decoupling_global_and_local_semantic_shift_for_drift_compensation.md)
+- [\[CVPR 2026\] DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning](dgs_dual_gradient_and_semantic-shift_guided_low-rank_adaptation_for_class_increm.md)
 
 </div>
 

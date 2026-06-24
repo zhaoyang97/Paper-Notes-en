@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TWEO: Transformers Without Extreme Outliers Enables FP8 Training And Quantization For Dummies
 description: >-
-  [CVPR 2026][Model Compression][Transformer] This paper proposes TWEO, a "non-intrusive" method that reduces extreme activation outliers in Transformers from 10,000+ to below 20 using a single regularization loss term. By utilizing counterfactual experiments and SVD analysis, it proves that extreme outliers are "mechanical artifacts" of weight collinearity rather
+  [CVPR 2026][Model Compression][FP8 Training] This paper proposes TWEO, a "non-intrusive" method that reduces extreme activation outliers in Transformers from 10,000+ to below 20 using a single regularization loss term. By utilizing counterfactual experiments and SVD analysis, it proves that extreme outliers are "mechanical artifacts" of weight collinearity rather than being data-driven. Consequently, an $L_p$ loss is designed to directly penalize activation magnitudes…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Transformer
+  - "CVPR 2026"
+  - "Model Compression"
+  - "FP8 Training"
+  - "Activation Outliers"
+  - "Static Quantization"
+  - "Regularization Loss"
+  - "Transformer"
 date: 2026-05-08
-content_hash: af9130247bcf37d3
+content_hash: 7639572a83649dd6
 ---
+
 # TWEO: Transformers Without Extreme Outliers Enables FP8 Training And Quantization For Dummies
 
 **Conference**: CVPR 2026  
@@ -142,15 +147,15 @@ For LLMs, standard FP8 training collapses, while TWEO converges stably at all sc
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
-- [\[CVPR 2025\] Q-DiT: Accurate Post-Training Quantization for Diffusion Transformers](../../CVPR2025/model_compression/q-dit_accurate_post-training_quantization_for_diffusion_transformers.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
-- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
-- [\[CVPR 2026\] Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)
+- [\[ICLR 2026\] Beyond Outliers: A Study of Optimizers Under Quantization](../../ICLR2026/model_compression/beyond_outliers_a_study_of_optimizers_under_quantization.md)
+- [\[ICLR 2026\] MOSS: Efficient and Accurate FP8 LLM Training with Microscaling and Automatic Scaling](../../ICLR2026/model_compression/moss_efficient_and_accurate_fp8_llm_training_with_microscaling_and_automatic_sca.md)
+- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](../../ICLR2026/model_compression/quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
+- [\[ICML 2025\] BoA: Attention-aware Post-training Quantization without Backpropagation](../../ICML2025/model_compression/boa_attention-aware_post-training_quantization_without_backpropagation.md)
 
 </div>
 

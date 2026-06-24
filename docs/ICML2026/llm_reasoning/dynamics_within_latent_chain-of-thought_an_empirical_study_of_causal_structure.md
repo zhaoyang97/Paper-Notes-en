@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure
 description: >-
-  [ICML 2026][LLM Reasoning][do-intervention] The authors treat latent Chain-of-Thought (CoT) as an intervenable Structural Causal Model (SCM), performing step-wise `do`-interventions + early-exit decoding + teacher-forced readout for each continuous "thinking step." By systematically quantifying the step-level necessity, propagation structure, and trajectory supe
+  [ICML 2026][Reasoning][Latent Chain-of-Thought] The authors treat latent Chain-of-Thought (CoT) as an intervenable Structural Causal Model (SCM), performing step-wise `do`-interventions + early-exit decoding + teacher-forced readout for each continuous "thinking step." By systematically quantifying the step-level necessity, propagation structure, and trajectory superposition of Coconut/CODI in mathematical and commonsense reasoning, they find that latent steps are not a homog…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - do-intervention
-  - Coconut
-  - CODI
+  - "ICML 2026"
+  - "Reasoning"
+  - "Latent Chain-of-Thought"
+  - "Causal Intervention"
+  - "do-intervention"
+  - "Structural Causal Model"
+  - "Coconut"
+  - "CODI"
 date: 2026-05-08
-content_hash: 9ec1735ae40cd992
+content_hash: 60408e449048e10f
 ---
+
 # Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure
 
 **Conference**: ICML 2026  
@@ -151,7 +155,7 @@ Principal Influence Graphs (Figure 5 vs Figure 6) visually confirm: CoT-SFT cons
 - [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
 - [\[ICML 2026\] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models](stabilizing_recurrent_dynamics_for_test-time_scalable_latent_reasoning_in_looped.md)
 - [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
-- [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
+- [\[ICML 2026\] Reasoning Structure of Large Language Models](reasoning_structure_of_large_language_models.md)
 
 </div>
 

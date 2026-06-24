@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AttriCtrl: A Generalizable Framework for Controlling Semantic Attribute Intensity in Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] AttriCtrl quantifies aesthetic attributes such as "brightness/detail/realism/safety" into a unified scalar range of $[0,1]$. By leveraging a lightweight "Value Encoder" to translate these numerical values into token sequences for injection into diffusion models, users can perform continuous, decoupled, and plug-and-pla
+  [ICLR 2026][Image Generation][Diffusion Models] AttriCtrl quantifies aesthetic attributes such as "brightness/detail/realism/safety" into a unified scalar range of $[0,1]$. By leveraging a lightweight "Value Encoder" to translate these numerical values into token sequences for injection into diffusion models, users can perform continuous, decoupled, and plug-and-play intensity control over single or multiple semantic attributes like adjusting a knob.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Aesthetic Attribute Control"
+  - "Continuous Intensity Adjustment"
+  - "Value Encoder"
+  - "Plug-and-play Adapter"
 date: 2026-05-08
-content_hash: 48c9505edcd05c58
+content_hash: 7c32462a84baeea6
 ---
+
 # AttriCtrl: A Generalizable Framework for Controlling Semantic Attribute Intensity in Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -118,8 +123,8 @@ Treating safety as an attribute (fixed target intensity at 1) outperforms specia
 
 - [\[ICLR 2026\] CREPE: Controlling Diffusion with Replica Exchange](crepe_controlling_diffusion_with_replica_exchange.md)
 - [\[CVPR 2026\] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models](../../CVPR2026/image_generation/segquant_a_semantics-aware_and_generalizable_quantization_framework_for_diffusio.md)
+- [\[ICLR 2026\] ProReGen: Progressive Residual Generation under Attribute Correlations](proregen_progressive_residual_generation_under_attribute_correlations.md)
 - [\[ICLR 2026\] GeoDiv: Framework for Measuring Geographical Diversity in Text-to-Image Models](geodiv_framework_for_measuring_geographical_diversity_in_text-to-image_models.md)
-- [\[ICML 2026\] RAIGen: Rare Attribute Identification in Text-to-Image Generative Models](../../ICML2026/image_generation/raigen_rare_attribute_identification_in_text-to-image_generative_models.md)
 - [\[ICLR 2026\] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)
 
 </div>

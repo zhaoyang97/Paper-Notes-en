@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems
 description: >-
-  [AAAI 2026][neural feedback systems] This paper proposes FaBRe (Forward and Backward Reachability), a unified framework that, for the first time…
+  [AAAI 2026][neural feedback systems] This paper proposes FaBRe (Forward and Backward Reachability), a unified framework that, for the first time, develops both over- and under-approximation algorithms for backward reachable sets of ReLU neural network controllers (GSS/ICH/LEB), and integrates them with forward reachability analysis to construct a unified reach-avoid verification framework, aiming to overcome the scalability bottleneck of purely forward analysis.
 tags:
   - "AAAI 2026"
   - "neural feedback systems"
@@ -11,7 +11,7 @@ tags:
   - "forward reachability"
   - "safety verification"
 date: 2026-05-08
-content_hash: 852bb633e9638b43
+content_hash: ee267b26d194c1aa
 ---
 
 # A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems
@@ -145,8 +145,8 @@ This paper is a methods proposal; the "Ongoing Work" section states that experim
 ## Related Papers
 
 - [\[AAAI 2026\] Expressive Temporal Specifications for Reward Monitoring](expressive_temporal_specifications_for_reward_monitoring.md)
-- [\[AAAI 2026\] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback](from_sequential_to_recursive_enhancing_decision-focused_learning_with_bidirectio.md)
 - [\[AAAI 2026\] Private Frequency Estimation via Residue Number Systems](private_frequency_estimation_via_residue_number_systems.md)
+- [\[AAAI 2026\] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback](from_sequential_to_recursive_enhancing_decision-focused_learning_with_bidirectio.md)
 - [\[AAAI 2026\] Designing Incident Reporting Systems for Harms from General-Purpose AI](designing_incident_reporting_systems_for_harms_from_general-purpose_ai.md)
 - [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](../../NeurIPS2025/others/modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
 

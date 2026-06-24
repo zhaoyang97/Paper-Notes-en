@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Look Back to Reason Forward: Revisitable Memory for Long-Context LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][long-context QA] ReMemR1 embeds a revisitable memory retrieval mechanism into "memorize while reading" agents. Each step, the agent updates its current memory while generating a callback query to search its own history. Combined with a multi-level (trajectory-level + step-level) reward system to densify RL signals, it reduces error rat
+  [ICLR 2026][LLM Agent][long-context QA] ReMemR1 embeds a revisitable memory retrieval mechanism into "memorize while reading" agents. Each step, the agent updates its current memory while generating a callback query to search its own history. Combined with a multi-level (trajectory-level + step-level) reward system to densify RL signals, it reduces error rates for long-context multi-hop reasoning by over 20% with negligible computational overhead (<0.2% time cost).
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - long-context QA
-  - memory agent
-  - memory callback
-  - GRPO
-  - multi-level reward
-  - non-linear reasoning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "long-context QA"
+  - "memory agent"
+  - "memory callback"
+  - "GRPO"
+  - "multi-level reward"
+  - "non-linear reasoning"
 date: 2026-05-08
-content_hash: c2bac0e0f4bbd559
+content_hash: 1c456b83eeb22d02
 ---
+
 # Look Back to Reason Forward: Revisitable Memory for Long-Context LLM Agents
 
 **Conference**: ICLR 2026  
@@ -137,10 +138,10 @@ $\alpha=0.8$ is optimal; $\alpha=1.0$ lacks dense guidance, while $\alpha=0.2$ d
 ## Related Papers
 
 - [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](../../ACL2026/llm_agent/ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
-- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
+- [\[ICLR 2026\] Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions](evaluating_memory_in_llm_agents_via_incremental_multi-turn_interactions.md)
 - [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](../../ICML2026/llm_agent/acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
+- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
 - [\[ACL 2026\] MemSearcher: Training LLMs to Reason, Search and Manage Memory via End-to-End RL](../../ACL2026/llm_agent/memsearcher_training_llms_to_reason_search_and_manage_memory_via_end-to-end_rein.md)
-- [\[ICLR 2026\] AgentFold: Long-Horizon Web Agents with Proactive Context Folding](agentfold_long-horizon_web_agents_with_proactive_context_folding.md)
 
 </div>
 

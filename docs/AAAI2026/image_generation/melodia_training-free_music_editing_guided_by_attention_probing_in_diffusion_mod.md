@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models
 description: >-
-  [AAAI 2026][Image Generation][Music Editing] Through systematic probing analysis of attention maps in diffusion models, this work reveals that self-attention maps are critical for preserving the temporal structure of mus…
+  [AAAI 2026 Oral][Image Generation][Music Editing] Through systematic probing analysis of attention maps in diffusion models, this work reveals that self-attention maps are critical for preserving the temporal structure of music. Based on this finding, Melodia is proposed — a training-free music editing method that achieves an optimal balance between attribute modification and structural preservation by selectively manipulating self-attention maps.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Image Generation"
   - "Music Editing"
   - "Diffusion Models"
@@ -12,7 +12,7 @@ tags:
   - "Training-Free"
   - "Self-Attention Manipulation"
 date: 2026-05-08
-content_hash: bd332d580c06c9d2
+content_hash: 3c075c61e3898d96
 ---
 
 # Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models
@@ -186,10 +186,10 @@ Layer selection ablation (on the Timbre Transfer task of MelodiaEdit):
 
 ## Related Papers
 
-- [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](../../CVPR2026/image_generation/ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
+- [\[CVPR 2026\] Harmonic Canvas: Inversion-Free Editing for Visually-Guided Music Style Transfer](../../CVPR2026/image_generation/harmonic_canvas_inversion-free_editing_for_visually-guided_music_style_transfer.md)
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](../../ICLR2026/image_generation/training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
-- [\[ICML 2026\] AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression](../../ICML2026/image_generation/adaeraser_training-free_object_removal_via_adaptive_attention_suppression.md)
 - [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](../../CVPR2026/image_generation/object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
+- [\[ICML 2026\] AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression](../../ICML2026/image_generation/adaeraser_training-free_object_removal_via_adaptive_attention_suppression.md)
 - [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](infinite-story_a_training-free_consistent_text-to-image_gene.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] For instructional molecular optimization tasks where "each data point provides only one optimized reference molecule without intermediate reasoning trajectories," this paper proposes RePO. Based on GRPO-style reinforcement learning with verifiable rewards, it prepends a "reference-guided term" that acts only on answer
+  [ICLR 2026][Reasoning][Molecular Optimization] For instructional molecular optimization tasks where "each data point provides only one optimized reference molecule without intermediate reasoning trajectories," this paper proposes RePO. Based on GRPO-style reinforcement learning with verifiable rewards, it prepends a "reference-guided term" that acts only on answer tokens. This anchors the output to the reference molecule while allowing the model to freely explore the chemical…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Molecular Optimization"
+  - "RLVR"
+  - "GRPO"
+  - "Reference-guided"
+  - "Verifiable Reward"
 date: 2026-05-08
-content_hash: db8243c92acd7c6c
+content_hash: 51c6e50ca56df6ce
 ---
+
 # Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks
 description: >-
-  [NEURIPS2025][Image Restoration][Spiking Neural Networks] This paper proposes SpikeSR, the first attention-based spiking neural network (SNN) framework for remote sensing image super-resolution. By incorporating Spiking…
+  [NEURIPS2025][Image Restoration][Spiking Neural Networks] This paper proposes SpikeSR, the first attention-based spiking neural network (SNN) framework for remote sensing image super-resolution. By incorporating Spiking Attention Blocks (SAB) that combine Hybrid Dimensional Attention (HDA) and Deformable Similarity Attention (DSA), SpikeSR achieves state-of-the-art performance on AID/DOTA/DIOR while maintaining high computational efficiency.
 tags:
   - "NEURIPS2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Deformable Similarity Attention"
   - "Energy-Efficient AI"
 date: 2026-05-08
-content_hash: ab567e804c33466f
+content_hash: 28844cb07eadf060
 ---
 
 # Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks
@@ -156,10 +156,10 @@ This paper proposes SpikeSR, the first attention-based spiking neural network (S
 ## Related Papers
 
 - [\[ICCV 2025\] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution](../../ICCV2025/image_restoration/emulating_self-attention_with_convolution_for_efficient_image_super-resolution.md)
-- [\[NeurIPS 2025\] Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution](implicit_augmentation_from_distributional_symmetry_in_turbulence_super-resolutio.md)
-- [\[CVPR 2026\] UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution](../../CVPR2026/image_restoration/ucan_unified_convolutional_attention_lightweight_sr.md)
-- [\[ICML 2026\] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention](../../ICML2026/image_restoration/dyllm_efficient_diffusion_llm_inference_via_saliency-based_token_selection_and_p.md)
-- [\[ICCV 2025\] Consistent Time-of-Flight Depth Denoising via Graph-Informed Geometric Attention](../../ICCV2025/image_restoration/consistent_time-of-flight_depth_denoising_via_graph-informed_geometric_attention.md)
+- [\[ICLR 2026\] LinearSR: Unlocking Linear Attention for Stable and Efficient Image Super-Resolution](../../ICLR2026/image_restoration/linearsr_unlocking_linear_attention_for_stable_and_efficient_image_super-resolut.md)
+- [\[ECCV 2024\] Learning Exhaustive Correlation for Spectral Super-Resolution: Where Spatial-Spectral Attention Meets Linear Dependence](../../ECCV2024/image_restoration/learning_exhaustive_correlation_for_spectral_super-resolution_where_spatial-spec.md)
+- [\[ECCV 2024\] Efficient Diffusion Transformer with Step-wise Dynamic Attention Mediators](../../ECCV2024/image_restoration/efficient_diffusion_transformer_with_step-wise_dynamic_attention_mediators.md)
+- [\[ICLR 2026\] Divergence-Free Neural Networks with Application to Image Denoising](../../ICLR2026/image_restoration/divergence-free_neural_networks_with_application_to_image_denoising.md)
 
 </div>
 

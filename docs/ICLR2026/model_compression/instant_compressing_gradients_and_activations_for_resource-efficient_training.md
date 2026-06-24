@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] INSTANT: Compressing Gradients and Activations for Resource-Efficient Training
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] INSTANT simultaneously projects the activation $x$ and the output gradient $g_y$ during backpropagation into their respective calibrated low-rank subspaces. By replacing full-rank matrix multiplications with low-rank multiplications, it reduces the backpropagation computational cost by 15× and activation memory by 32×
+  [ICLR 2026][Model Compression][Efficient Training] INSTANT simultaneously projects the activation $x$ and the output gradient $g_y$ during backpropagation into their respective calibrated low-rank subspaces. By replacing full-rank matrix multiplications with low-rank multiplications, it reduces the backpropagation computational cost by 15× and activation memory by 32× with negligible accuracy loss.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Efficient Training"
+  - "Backpropagation Acceleration"
+  - "Activation Compression"
+  - "Gradient Compression"
+  - "Low-rank Projection"
+  - "Calibrated Subspace"
 date: 2026-05-08
-content_hash: f98ef43123c8f4bf
+content_hash: 57f1dc8821e96890
 ---
+
 # INSTANT: Compressing Gradients and Activations for Resource-Efficient Training
 
 **Conference**: ICLR 2026  

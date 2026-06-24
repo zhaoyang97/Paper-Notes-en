@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Multi-hop question answering] This paper proposes REAP, a dual-module iterative framework that addresses multi-hop question answering through recursive collaboration between a Sub…
+  [AAAI 2026][Information Retrieval & RAG][Multi-hop question answering] This paper proposes REAP, a dual-module iterative framework that addresses multi-hop question answering through recursive collaboration between a Sub-task Planner (SP), which maintains a global perspective to dynamically guide reasoning trajectories, and a Fact Extractor (FE), which extracts structured facts and latent clues from retrieved content. Using Llama-3.1-8B, REAP substantially outperforms all bas…
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "fact extraction"
   - "multi-task fine-tuning"
 date: 2026-05-08
-content_hash: 6a2cd9ca70114ea2
+content_hash: 47890c392f19859c
 ---
 
 # REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering
@@ -128,11 +128,11 @@ Given a complex query $Q$, a Decomposer first generates a structured task plan $
 
 ## Related Papers
 
-- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
+- [\[ICLR 2026\] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering](../../ICLR2026/information_retrieval/frugalrag_less_is_more_in_rl_finetuning_for_multi-hop_question_answering.md)
 - [\[AAAI 2026\] N2N-GQA: Noise-to-Narrative for Graph-Based Table-Text Question Answering Using LLMs](n2n-gqa_noise-to-narrative_for_graph-based_table-text_question_answering_using_l.md)
 - [\[AAAI 2026\] PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning](prime_planning_and_retrieval-integrated_memory_for_enhanced_reasoning.md)
-- [\[ICML 2026\] Retriever Portfolios: A Principled Approach to Adaptive RAG](../../ICML2026/information_retrieval/retriever_portfolios_a_principled_approach_to_adaptive_rag.md)
-- [\[ACL 2026\] MAB-DQA: Addressing Query Aspect Importance in Document Question Answering with Multi-Armed Bandits](../../ACL2026/information_retrieval/mab-dqa_addressing_query_aspect_importance_in_document_question_answering_with_m.md)
+- [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](../../ACL2026/information_retrieval/chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
+- [\[ICLR 2026\] Demystifying Deep Search: A Holistic Evaluation with Hint-free Multi-Hop Questions and Factorised Metrics](../../ICLR2026/information_retrieval/demystifying_deep_search_a_holistic_evaluation_with_hint-free_multi-hop_question.md)
 
 </div>
 

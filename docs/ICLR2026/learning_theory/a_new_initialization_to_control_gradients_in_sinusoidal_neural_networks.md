@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A New Initialization to Control Gradients in Sinusoidal Neural Networks
 description: >-
-  [ICLR 2026][learning_theory][SIREN] This paper derives a set of closed-form initialization parameters for the sinusoidal activation network SIREN. By simultaneously controlling the pre-activation distribution, inter-layer Jacobian variance, and spectral expansion, it reduces gradient explosion and spurious high-frequency noise in deep sinusoidal neural n
+  [ICLR 2026][Learning Theory][SIREN] This paper derives a set of closed-form initialization parameters for the sinusoidal activation network SIREN. By simultaneously controlling the pre-activation distribution, inter-layer Jacobian variance, and spectral expansion, it reduces gradient explosion and spurious high-frequency noise in deep sinusoidal neural networks for tasks such as function fitting, image/audio/video reconstruction, and PINNs.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - SIREN
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "SIREN"
+  - "Implicit Neural Representation"
+  - "Initialization"
+  - "Gradient Stability"
+  - "Neural Tangent Kernel"
 date: 2026-05-08
-content_hash: 86f69d9c4ab07220
+content_hash: 03a20269f73c94f1
 ---
+
 # A New Initialization to Control Gradients in Sinusoidal Neural Networks
 
 **Conference**: ICLR 2026  
@@ -171,7 +176,7 @@ Ablations compare $\sigma_a=0$, $\sigma_a=1$, standard Sitzmann, and PyTorch def
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

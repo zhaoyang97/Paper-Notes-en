@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] DisCO: Reinforcing Large Reasoning Models with Discriminative Constrained Optimization
 description: >-
-  [NeurIPS 2025][LLM Reasoning][GRPO] This paper analyzes the GRPO objective and reveals two inherent issues: difficulty bias (underweighting questions that are too hard or too easy) and entropy instability. It proposes Di…
+  [NeurIPS 2025][Reasoning][GRPO] This paper analyzes the GRPO objective and reveals two inherent issues: difficulty bias (underweighting questions that are too hard or too easy) and entropy instability. It proposes DisCO, a discriminative constrained optimization framework that addresses these issues via a clip-free scoring function, squared hinge constrained optimization, and distributionally robust optimization (DRO) for imbalanced rollouts. On 1.5B models…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "GRPO"
   - "discriminative optimization"
   - "AUC maximization"
   - "constrained optimization"
   - "data imbalance"
 date: 2026-05-08
-content_hash: 2fc80a1b68d76418
+content_hash: d5d0ce262445b35b
 ---
 
 # DisCO: Reinforcing Large Reasoning Models with Discriminative Constrained Optimization
@@ -158,9 +158,9 @@ $$\max_\theta \mathcal{J}_2(\theta) - \beta[\mathbb{D}_{\text{KL}}(\pi_{\text{ol
 
 - [\[NeurIPS 2025\] Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models](segment_policy_optimization_effective_segment-level_credit_assignment_in_rl_for_.md)
 - [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
+- [\[ICLR 2026\] Inpainting-Guided Policy Optimization for Diffusion Large Language Models](../../ICLR2026/llm_reasoning/inpainting-guided_policy_optimization_for_diffusion_large_language_models.md)
+- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](../../ACL2026/llm_reasoning/foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 - [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
-- [\[NeurIPS 2025\] Are Large Reasoning Models Good Translation Evaluators? Analysis and Performance Boost](are_large_reasoning_models_good_translation_evaluators_analysis_and_performance_.md)
-- [\[NeurIPS 2025\] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models](chartmuseum_testing_visual_reasoning_capabilities_of_large_v.md)
 
 </div>
 

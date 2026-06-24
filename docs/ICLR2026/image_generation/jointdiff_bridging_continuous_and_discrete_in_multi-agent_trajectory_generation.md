@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation
 description: >-
-  [ICLR 2026][Image Generation][Multi-Agent] Proposes JointDiff, a joint continuous-discrete diffusion framework that unifies Gaussian diffusion (for trajectories) and multinomial diffusion (for possession events) for the first time. It introduces the CrossGuid module to support Weak Possession Guidance (WPG) and text-guided semantic controllable generation, achi
+  [ICLR 2026][Image Generation][Joint Diffusion] Proposes JointDiff, a joint continuous-discrete diffusion framework that unifies Gaussian diffusion (for trajectories) and multinomial diffusion (for possession events) for the first time. It introduces the CrossGuid module to support Weak Possession Guidance (WPG) and text-guided semantic controllable generation, achieving SOTA performance in multi-agent trajectory generation for sports.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Joint Diffusion"
+  - "Continuous-Discrete Unification"
+  - "Multi-Agent"
+  - "Trajectory Generation"
+  - "Controllable Generation"
 date: 2026-05-08
-content_hash: 126f42584c6bcccf
+content_hash: 55a90c94906ef7c9
 ---
+
 # JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation
 
 **Conference**: ICLR 2026  
@@ -144,10 +149,10 @@ where $\lambda = 0.1$ balances the modalities. Importance sampling is used inste
 ## Related Papers
 
 - [\[CVPR 2025\] Unified Uncertainty-Aware Diffusion for Multi-Agent Trajectory Modeling](../../CVPR2025/image_generation/unified_uncertainty-aware_diffusion_for_multi-agent_trajectory_modeling.md)
+- [\[ICLR 2026\] EdiVal-Agent: An Object-Centric Framework for Automated, Fine-Grained Evaluation of Multi-Turn Editing](edival-agent_an_object-centric_framework_for_automated_fine-grained_evaluation_o.md)
 - [\[ICLR 2026\] Bridging Degradation Discrimination and Generation for Universal Image Restoration](bridging_degradation_discrimination_and_generation_for_universal_image_restorati.md)
 - [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
 - [\[ICLR 2026\] ReDDiT: Rehashing Noise for Discrete Visual Generation](reddit_rehashing_noise_for_discrete_visual_generation.md)
-- [\[ICLR 2026\] Hyperspherical Latents Improve Continuous-Token Autoregressive Generation](hyperspherical_latents_improve_continuous-token_autoregressive_generation.md)
 
 </div>
 

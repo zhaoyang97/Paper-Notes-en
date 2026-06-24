@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] QiMeng-Kernel: Macro-Thinking Micro-Coding Paradigm for LLM-Based High-Performance GPU Kernel Generation
 description: >-
-  [AAAI 2026][Reinforcement Learning][GPU kernel generation] This paper proposes MTMC (Macro Thinking Micro Coding), a hierarchical framework that decouples GPU kernel generation into two stages: a lightweight RL-trained L…
+  [AAAI 2026][Reinforcement Learning][GPU kernel generation] This paper proposes MTMC (Macro Thinking Micro Coding), a hierarchical framework that decouples GPU kernel generation into two stages: a lightweight RL-trained LLM generates high-level optimization actions (Macro Thinking), while a general-purpose LLM incrementally implements each action (Micro Coding). This design separates correctness from performance concerns, achieving near-100% accuracy and a 2.2× speedup over ex…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical optimization"
   - "high-performance computing"
 date: 2026-05-08
-content_hash: b31976da02bd5ecf
+content_hash: 92f406e50b870bba
 ---
 
 # QiMeng-Kernel: Macro-Thinking Micro-Coding Paradigm for LLM-Based High-Performance GPU Kernel Generation
@@ -182,11 +182,11 @@ Macro Thinking ablation (validating the necessity of policy learning and action 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Policy Newton Algorithm in Reproducing Kernel Hilbert Space](../../ICLR2026/reinforcement_learning/policy_newton_algorithm_in_reproducing_kernel_hilbert_space.md)
 - [\[ICLR 2026\] Efficient Estimation of Kernel Surrogate Models for Task Attribution](../../ICLR2026/reinforcement_learning/efficient_estimation_of_kernel_surrogate_models_for_task_attribution.md)
+- [\[ICLR 2026\] J1: Incentivizing Thinking in LLM-as-a-Judge via Reinforcement Learning](../../ICLR2026/reinforcement_learning/j1_incentivizing_thinking_in_llm-as-a-judge_via_reinforcement_learning.md)
+- [\[ICML 2025\] Beyond The Rainbow: High Performance Deep Reinforcement Learning on a Desktop PC](../../ICML2025/reinforcement_learning/beyond_the_rainbow_high_performance_deep_reinforcement_learning_on_a_desktop_pc.md)
 - [\[NeurIPS 2025\] Kimina Lean Server: A High-Performance Lean Server for Large-Scale Verification](../../NeurIPS2025/reinforcement_learning/kimina_lean_server_a_high-performance_lean_server_for_large-scale_verification.md)
-- [\[AAAI 2026\] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction](tadarag_task_adaptive_retrieval-augmented_generation_via_on-the-fly_knowledge_gr.md)
-- [\[AAAI 2026\] TowerMind: A Tower Defence Game Learning Environment and Benchmark for LLM as Agents](towermind_a_tower_defence_game_learning_environment_and_benchmark_for_llm_as_age.md)
-- [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
 
 </div>
 

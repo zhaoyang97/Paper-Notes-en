@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal large language model safety] This paper identifies a **Shuffle Inconsistency** between the comprehension capability and the safety capability of multimodal large language models (ML…
+  [ICCV 2025][Multimodal VLM][Multimodal large language model safety] This paper identifies a **Shuffle Inconsistency** between the comprehension capability and the safety capability of multimodal large language models (MLLMs)—models can understand shuffled harmful instructions, yet their safety mechanisms fail to defend against them. Building on this finding, the authors propose SI-Attack, a query-based black-box jailbreak method that achieves substantially higher attack succe…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "black-box optimization"
   - "safety alignment"
 date: 2026-05-08
-content_hash: 69f30345b8ba0db6
+content_hash: df19552cdccfcd6e
 ---
 
 # Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency
@@ -217,10 +217,10 @@ Evaluated models include 4 open-source models (LLaVA-NEXT, MiniGPT-4, InternVL-2
 ## Related Papers
 
 - [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
+- [\[CVPR 2025\] Distraction is All You Need for Multimodal Large Language Model Jailbreaking](../../CVPR2025/multimodal_vlm/distraction_is_all_you_need_for_multimodal_large_language_model_jailbreaking.md)
 - [\[ICLR 2026\] Shuffle-R1: Efficient RL Framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle](../../ICLR2026/multimodal_vlm/shuffle-r1_efficient_rl_framework_for_multimodal_large_language_models_via_data-.md)
 - [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
-- [\[ACL 2026\] Jailbreaking Multimodal Large Language Models using Multi-Clip Video](../../ACL2026/multimodal_vlm/jailbreaking_multimodal_large_language_models_using_multi-clip_video.md)
-- [\[ICCV 2025\] CompCap: Improving Multimodal Large Language Models with Composite Captions](compcap_improving_multimodal_large_language_models_with_composite_captions.md)
+- [\[ACL 2025\] Con Instruction: Universal Jailbreaking of Multimodal Large Language Models via Non-Textual Modalities](../../ACL2025/multimodal_vlm/con_instruction_universal_jailbreaking_of_multimodal_large_language_models_via_n.md)
 
 </div>
 

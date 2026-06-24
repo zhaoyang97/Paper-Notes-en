@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SQS: Enhancing Sparse Perception Models via Query-based Splatting in Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][sparse perception model] SQS presents the first query-based 3D Gaussian splatting pre-training framework for sparse perception models (SPMs). By self-supervisedly reconstructing RGB ima…
+  [NeurIPS 2025 Spotlight][Autonomous Driving][sparse perception model] SQS presents the first query-based 3D Gaussian splatting pre-training framework for sparse perception models (SPMs). By self-supervisedly reconstructing RGB images and depth maps, the method learns fine-grained 3D representations, and introduces a query interaction module to fuse pre-trained Gaussian queries with task-specific queries. SQS achieves significant improvements over existing pre-training methods…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Autonomous Driving"
   - "sparse perception model"
   - "3D Gaussian splatting"
   - "pre-training"
   - "query interaction"
 date: 2026-05-08
-content_hash: 491c3b289ce5a6fd
+content_hash: 6164c420e553b0df
 ---
 
 # SQS: Enhancing Sparse Perception Models via Query-based Splatting in Autonomous Driving
@@ -133,11 +133,11 @@ Pre-training uses the AdamW optimizer with weight decay 0.01, a linear warm-up o
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
-- [\[ICCV 2025\] INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception](../../ICCV2025/autonomous_driving/instinct_instance-level_interaction_architecture_for_query-based_collaborative_p.md)
 - [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](../../ICCV2025/autonomous_driving/gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
-- [\[NeurIPS 2025\] Prioritizing Perception-Guided Self-Supervision: A New Paradigm for Causal Modeling in End-to-End Autonomous Driving](prioritizing_perception-guided_self-supervision_a_new_paradigm_for_causal_modeli.md)
+- [\[ICLR 2026\] Beyond Visual Reconstruction Quality: Object Perception-aware 3D Gaussian Splatting for Autonomous Driving](../../ICLR2026/autonomous_driving/beyond_visual_reconstruction_quality_object_perception-aware_3d_gaussian_splatti.md)
+- [\[ICCV 2025\] INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception](../../ICCV2025/autonomous_driving/instinct_instance-level_interaction_architecture_for_query-based_collaborative_p.md)
 - [\[AAAI 2026\] ExpertAD: Enhancing Autonomous Driving Systems with Mixture of Experts](../../AAAI2026/autonomous_driving/expertad_enhancing_autonomous_driving_systems_with_mixture_of_experts.md)
+- [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
 
 </div>
 

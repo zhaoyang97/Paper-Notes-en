@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] G-Merging: Graph Models Merging for Parameter-Efficient Multi-Task Knowledge Consolidation
 description: >-
-  [ICLR 2026][Graph Learning][GNN] G-Merging targets multi-task graph learning scenarios by synthesizing multiple task models, fine-tuned from the same pre-trained GNN, into a shared backbone via task arithmetic. It then employs topology-aware alignment to train lightweight task adapters and utilizes a training-free MoE routing during inference to dynam
+  [ICLR2026][Graph Learning][Graph model merging] G-Merging targets multi-task graph learning scenarios by synthesizing multiple task models, fine-tuned from the same pre-trained GNN, into a shared backbone via task arithmetic. It then employs topology-aware alignment to train lightweight task adapters and utilizes a training-free MoE routing during inference to dynamically combine adapters, preserving multi-task knowledge with parameter overhead close to a single model.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GNN
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Graph model merging"
+  - "GNN"
+  - "Task arithmetic"
+  - "Topology-aware Wasserstein distance"
+  - "MoE routing"
 date: 2026-05-08
-content_hash: 797f6342fbf141fe
+content_hash: 184ade664d63a962
 ---
+
 # G-Merging: Graph Models Merging for Parameter-Efficient Multi-Task Knowledge Consolidation
 
 **Conference**: ICLR2026  
@@ -154,8 +159,8 @@ Ablations using GIN + contextpred analyzed the removal of parameter merging, nod
 - [\[ICLR 2026\] Out-of-Distribution Graph Models Merging](out-of-distribution_graph_models_merging.md)
 - [\[ICLR 2026\] DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS](damr_efficient_and_adaptive_context-aware_knowledge_graph_question_answering_wit.md)
 - [\[ICLR 2026\] CheckMate! Watermarking Graph Diffusion Models in Polynomial Time](checkmate_watermarking_graph_diffusion_models_in_polynomial_time.md)
-- [\[ICLR 2026\] AdS-GNN - a Conformally Equivariant Graph Neural Network](ads-gnn_-_a_conformally_equivariant_graph_neural_network.md)
 - [\[ICLR 2026\] Multi-Domain Riemannian Graph Gluing for Building Graph Foundation Models](multi-domain_riemannian_graph_gluing_for_building_graph_foundation_models.md)
+- [\[ICLR 2026\] Learning Concept Bottleneck Models from Mechanistic Explanations](learning_concept_bottleneck_models_from_mechanistic_explanations.md)
 
 </div>
 

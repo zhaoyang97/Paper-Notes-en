@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][End-to-end autonomous driving] DriveDPO is a two-stage framework that first fuses human-imitation similarity and rule-based safety scores into a single supervised distribution via unifi…
+  [NeurIPS 2025][Autonomous Driving][End-to-end autonomous driving] DriveDPO is a two-stage framework that first fuses human-imitation similarity and rule-based safety scores into a single supervised distribution via unified policy distillation, then applies Safety DPO to construct trajectory preference pairs of the form "human-like but unsafe vs. human-like and safe" for policy fine-tuning — achieving a new state-of-the-art PDMS of 90.0 on NAVSIM.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "trajectory planning"
   - "NAVSIM"
 date: 2026-05-08
-content_hash: 1efc99caa43ef52a
+content_hash: 4707c5c23c358e15
 ---
 
 # DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving
@@ -131,9 +131,9 @@ Two-stage training. **Stage 1** — Unified Policy Distillation: multi-view came
 
 - [\[NeurIPS 2025\] Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving](model-based_policy_adaptation_for_closed-loop_end-to-end_autonomous_driving.md)
 - [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
+- [\[CVPR 2026\] Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning](../../CVPR2026/autonomous_driving/reliable_policy_transfer_for_safety-aware_end-to-end_driving_with_deep_reinforce.md)
 - [\[NeurIPS 2025\] Prioritizing Perception-Guided Self-Supervision: A New Paradigm for Causal Modeling in End-to-End Autonomous Driving](prioritizing_perception-guided_self-supervision_a_new_paradigm_for_causal_modeli.md)
-- [\[ICCV 2025\] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving](../../ICCV2025/autonomous_driving/unraveling_the_effects_of_synthetic_data_on_end-to-end_autonomous_driving.md)
-- [\[NeurIPS 2025\] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](future-aware_end-to-end_driving_bidirectional_modeling_of_trajectory_planning_an.md)
+- [\[CVPR 2025\] DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving](../../CVPR2025/autonomous_driving/diffusiondrive_truncated_diffusion_model_for_end-to-end_autonomous_driving.md)
 
 </div>
 

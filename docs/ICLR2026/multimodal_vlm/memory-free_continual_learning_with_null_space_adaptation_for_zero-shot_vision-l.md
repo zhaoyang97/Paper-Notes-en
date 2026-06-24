@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] NuSA-CL extracts the "low-energy null space" of CLIP's current weights via SVD and strictly constrains the low-rank updates of each new task within this null space. After training, updates are merged back into the backbone, achieving continual learning of new tasks with nearly zero loss in original zero-shot capabiliti
+  [ICLR 2026][Multimodal VLM][CLIP] NuSA-CL extracts the "low-energy null space" of CLIP's current weights via SVD and strictly constrains the low-rank updates of each new task within this null space. After training, updates are merged back into the backbone, achieving continual learning of new tasks with nearly zero loss in original zero-shot capabilities, while maintaining zero storage overhead, zero parameter growth, and zero extra model components.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Continual Learning"
+  - "Zero-Shot Generalization"
+  - "Null Space"
+  - "Low-Rank Adaptation"
+  - "Memory-free"
 date: 2026-05-08
-content_hash: b3bc5ba95fd2c831
+content_hash: cdfff96f3c29c6dc
 ---
+
 # Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -116,15 +122,16 @@ Unfreezing null space bases lead to significant performance drops, proving the n
 - **Value**: ⭐⭐⭐⭐ The "three zeros" property provides strong practical value for resource-constrained lifelong learning deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
 - [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](keeplora_continual_learning_with_residual_gradient_adaptation.md)
+- [\[ICLR 2026\] CoMem: Compositional Concept-Graph Memory for Vision-Language Adaptation](comem_compositional_concept-graph_memory_for_visionlanguage_adaptation.md)
 - [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
 - [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](../../CVPR2026/multimodal_vlm/bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
-- [\[ICLR 2026\] Preserve and Sculpt: Manifold-Aligned Fine-tuning of Vision-Language Models for Few-Shot Learning](preserve_and_sculpt_manifold-aligned_fine-tuning_of_vision-language_models_for_f.md)
 
 </div>
 

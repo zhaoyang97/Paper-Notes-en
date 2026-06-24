@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Zero-Overhead Introspection for Adaptive Test-Time Compute
 description: >-
-  [ICLR 2026][LLM Reasoning][Best-of-N] ZIP-RC enables LLMs to **reuse unused reserved logits in the output head** during each decoding step to predict the joint distribution of "final reward × remaining length" with zero extra overhead. This distribution is used to optimize a "sampling utility" that balances quality, compute, and latency online, adaptively
+  [ICLR 2026][Reasoning][Introspective Prediction] ZIP-RC enables LLMs to **reuse unused reserved logits in the output head** during each decoding step to predict the joint distribution of "final reward × remaining length" with zero extra overhead. This distribution is used to optimize a "sampling utility" that balances quality, compute, and latency online, adaptively deciding when to sample more, prune, or stop—improving accuracy by up to 12% at equal or lower costs on mixed-d…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Best-of-N
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Introspective Prediction"
+  - "Reward-Cost Joint Distribution"
+  - "Adaptive Test-Time Compute"
+  - "Best-of-N"
+  - "Sampling Utility"
 date: 2026-05-08
-content_hash: 2e0387f37141802a
+content_hash: 4ffb5523b1b51e47
 ---
+
 # Zero-Overhead Introspection for Adaptive Test-Time Compute
 
 **Conference**: ICLR 2026  

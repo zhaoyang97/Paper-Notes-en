@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Miburi: Towards Expressive Interactive Gesture Synthesis
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Miburi is proposed as the first online causal framework that directly utilizes the internal token streams of the speech-text foundation model Moshi and a 2D causal Transformer to achieve real-time synchronized full-body gesture and facial expression synthesis.
+  [CVPR 2026][Human Understanding][Co-speech gesture generation] Miburi is proposed as the first online causal framework that directly utilizes the internal token streams of the speech-text foundation model Moshi and a 2D causal Transformer to achieve real-time synchronized full-body gesture and facial expression synthesis.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Co-speech gesture generation"
+  - "embodied dialogue agents"
+  - "causal autoregressive"
+  - "real-time generation"
+  - "residual vector quantization"
 date: 2026-05-08
-content_hash: 649bfe24d8f4d683
+content_hash: 4d830a0965949c56
 ---
+
 # Miburi: Towards Expressive Interactive Gesture Synthesis
 
 **Conference**: CVPR 2026  
@@ -135,9 +141,9 @@ The total loss is $\mathcal{L} = \mathcal{L}_{\text{CE}} + \alpha \mathcal{L}_{\
 
 - [\[CVPR 2026\] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis](party_part-guidance_for_expressive_text-to-motion_synthesis.md)
 - [\[CVPR 2026\] CoordSpeaker: Exploiting Gesture Captioning for Coordinated Caption-Empowered Co-Speech Gesture Generation](coordspeaker_exploiting_gesture_captioning_for_coordinated_caption-empowered_co-.md)
-- [\[CVPR 2026\] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation](avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa.md)
 - [\[CVPR 2026\] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head](syncdreamer_controllable_and_expressive_avatar_generation_beyond_the_talking_hea.md)
 - [\[CVPR 2026\] LiveGesture: Streamable Co-Speech Gesture Generation Model](livegesture_streamable_co-speech_gesture_generation_model.md)
+- [\[CVPR 2026\] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation](avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding
 description: >-
-  [AAAI 2026][Video Understanding][Long-form video understanding] This paper formulates keyframe selection and language generation as a joint decision-making process…
+  [AAAI 2026][Video Understanding][Long-form video understanding] This paper formulates keyframe selection and language generation as a joint decision-making process, and optimizes a lightweight temporal agent's sampling policy end-to-end via GRPO-based reinforcement learning. It achieves state-of-the-art results on four long-form video understanding benchmarks (LongVideoBench +5.0%, MLVU +6.0% on LLaVA-Video-7B) and transfers zero-shot to other Video-MLLMs.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "temporal policy optimization"
   - "video multimodal large language models"
 date: 2026-05-08
-content_hash: cc84218d53bfdf0c
+content_hash: 7ca946ad68acfca5
 ---
 
 # TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding
@@ -133,11 +133,11 @@ A dual reward mechanism is used: answer accuracy reward $R_A = \mathbf{1}(y = \b
 
 ## Related Papers
 
-- [\[ICCV 2025\] HERMES: temporal-coHERent long-forM understanding with Episodes and Semantics](../../ICCV2025/video_understanding/hermes_temporal-coherent_long-form_understanding_with_episodes_and_semantics.md)
+- [\[CVPR 2025\] T*: Re-thinking Temporal Search for Long-Form Video Understanding](../../CVPR2025/video_understanding/re-thinking_temporal_search_for_long-form_video_understanding.md)
 - [\[ICCV 2025\] VideoMiner: Iteratively Grounding Key Frames of Hour-Long Videos via Tree-based Group Relative Policy Optimization](../../ICCV2025/video_understanding/videominer_iteratively_grounding_key_frames_of_hour-long_videos_via_tree-based_g.md)
-- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](../../CVPR2026/video_understanding/videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[ICCV 2025\] HERMES: temporal-coHERent long-forM understanding with Episodes and Semantics](../../ICCV2025/video_understanding/hermes_temporal-coherent_long-form_understanding_with_episodes_and_semantics.md)
 - [\[NeurIPS 2025\] LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization](../../NeurIPS2025/video_understanding/longvpo_from_anchored_cues_to_selfreasoning_for_longform_vid.md)
-- [\[CVPR 2026\] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding](../../CVPR2026/video_understanding/divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u.md)
+- [\[ICCV 2025\] Flow4Agent: Long-form Video Understanding via Motion Prior from Optical Flow](../../ICCV2025/video_understanding/flow4agent_long-form_video_understanding_via_motion_prior_from_optical_flow.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Micro-Macro Retrieval: Reducing Long-Form Hallucination in Large Language Models
 description: >-
-  [ICLR 2026][Hallucination Detection][retrieve-while-generate] M2R proposes a "Macro + Micro Retrieval" dual-layer framework: during the reasoning phase, coarse-grained evidence is retrieved from external sources and answer-aligned key information is stored in a key-value bank; during the answering phase, micro-retrieval is used to **extract these key facts and place them directly
+  [ICLR 2026][Hallucination Detection][Long-form hallucination] M2R proposes a "Macro + Micro Retrieval" dual-layer framework: during the reasoning phase, coarse-grained evidence is retrieved from external sources and answer-aligned key information is stored in a key-value bank; during the answering phase, micro-retrieval is used to **extract these key facts and place them directly next to the answer tokens**. Trained via GRPO and curriculum learning…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - retrieve-while-generate
-  - GRPO
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Long-form hallucination"
+  - "retrieval augmentation"
+  - "retrieve-while-generate"
+  - "key information bank"
+  - "GRPO"
+  - "curriculum learning"
 date: 2026-05-08
-content_hash: ba260c1236644ca5
+content_hash: 0fda77f71393ee66
 ---
+
 # Micro-Macro Retrieval: Reducing Long-Form Hallucination in Large Language Models
 
 **Conference**: ICLR 2026  

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Group Verification-based Policy Optimization for Interactive Coding Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] GVPO overlays a "process-verifiable" shaping term onto the group relative advantage of GRPO, directly injecting deterministic intermediate feedback (code execution success/failure) into step-wise advantage. This corrects credit assignment bias caused by sparse outcome rewards, enabling a 32B agent to outperform OpenAI
+  [ICLR 2026][Reinforcement Learning][RLVR] GVPO overlays a "process-verifiable" shaping term onto the group relative advantage of GRPO, directly injecting deterministic intermediate feedback (code execution success/failure) into step-wise advantage. This corrects credit assignment bias caused by sparse outcome rewards, enabling a 32B agent to outperform OpenAI o1 on AppWorld.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
-  - AppWorld
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "GRPO"
+  - "Process Reward"
+  - "Advantage Shaping"
+  - "Credit Assignment"
+  - "AppWorld"
 date: 2026-05-08
-content_hash: 24975874be89ac71
+content_hash: d4a9a608b44a46a6
 ---
+
 # Group Verification-based Policy Optimization for Interactive Coding Agents
 
 **Conference**: ICLR 2026  
@@ -128,11 +132,11 @@ Sensitivity to $b$: $b=0.1$ provides insufficient correction; $b=0.4$ leads to i
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](sample_more_to_think_less_group_filtered_policy_optimization_for_concise_reasoni.md)
 - [\[ICLR 2026\] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training](revisiting_group_relative_policy_optimization_insights_into_on-policy_and_off-po.md)
 - [\[ICLR 2026\] Information Gain-based Policy Optimization: A Simple and Effective Approach for Multi-Turn Search Agents](information_gain-based_policy_optimization_a_simple_and_effective_approach_for_m.md)
-- [\[ICLR 2026\] GEPO: Group Expectation Policy Optimization for Stable Heterogeneous Reinforcement Learning](gepo_group_expectation_policy_optimization_for_stable_heterogeneous_reinforcemen.md)
 - [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
-- [\[ICLR 2026\] DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization](dupo_enabling_reliable_self-verification_via_dual_preference_optimization.md)
+- [\[ICLR 2026\] GEPO: Group Expectation Policy Optimization for Stable Heterogeneous Reinforcement Learning](gepo_group_expectation_policy_optimization_for_stable_heterogeneous_reinforcemen.md)
 
 </div>
 

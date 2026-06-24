@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RePrompt: Reasoning-Augmented Reprompting for Text-to-Image Generation via Reinforcement Learning
 description: >-
-  [ICLR 2026][Image Generation][Reinforcement Learning] RePrompt trains a small language model (Qwen2.5-3B) using reinforcement learning to perform explicit chain-of-thought reasoning before generating structured enhanced prompts. By directly optimizing downstream generation results with a "level-image" integrated reward, it achieves new SOTA performance in compositional ab
+  [ICLR 2026][Image Generation][Prompt Rewriting] RePrompt trains a small language model (Qwen2.5-3B) using reinforcement learning to perform explicit chain-of-thought reasoning before generating structured enhanced prompts. By directly optimizing downstream generation results with a "level-image" integrated reward, it achieves new SOTA performance in compositional abilities (spatial positioning, counting) on GenEval and T2I-Compbench, with inference latency significantly lower…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Prompt Rewriting"
+  - "Chain-of-Thought"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Compositional Generation"
 date: 2026-05-08
-content_hash: 51cad7407dd9263e
+content_hash: 4e4c5ea5ee3037de
 ---
+
 # RePrompt: Reasoning-Augmented Reprompting for Text-to-Image Generation via Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -142,7 +146,6 @@ Reasoning ablation: Removing reasoning from RL drops the overall score to 0.68 (
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -150,7 +153,7 @@ Reasoning ablation: Removing reasoning from RL drops the overall score to 0.68 (
 - [\[ICLR 2026\] ImageDoctor: Diagnosing Text-to-Image Generation via Grounded Image Reasoning](imagedoctor_diagnosing_text-to-image_generation_via_grounded_image_reasoning.md)
 - [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](../../CVPR2026/image_generation/leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
 - [\[ICLR 2026\] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models](consolidating_reinforcement_learning_for_multimodal_discrete_diffusion_models.md)
-- [\[CVPR 2026\] HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning](../../CVPR2026/image_generation/hicogen_hierarchical_compositional_text-to-image_generation_in_diffusion_models_.md)
+- [\[ICLR 2026\] Interleaving Reasoning for Better Text-to-Image Generation](interleaving_reasoning_for_better_text-to-image_generation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ResidualViT for Efficient Temporally Dense Video Encoding
 description: >-
-  [ICCV 2025][Video Understanding][Video encoding efficiency] This paper proposes ResidualViT, which draws an analogy to I-frame/P-frame strategies in video compression by alternating between a full ViT and a lightweight r…
+  [ICCV 2025][Video Understanding][Video encoding efficiency] This paper proposes ResidualViT, which draws an analogy to I-frame/P-frame strategies in video compression by alternating between a full ViT and a lightweight residual ViT for encoding video frames. The approach achieves up to 60% reduction in computational cost and 2.5× inference speedup while maintaining accuracy close to the original CLIP.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "knowledge distillation"
   - "temporally dense features"
 date: 2026-05-08
-content_hash: 0fba9c32cc68b735
+content_hash: fd51fe0673083d18
 ---
 
 # ResidualViT for Efficient Temporally Dense Video Encoding
@@ -131,9 +131,9 @@ The final loss is $\min_\mathcal{A}(\mathcal{J}_{L \rightarrow V} + \mathcal{J}_
 
 - [\[ICCV 2025\] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding](sparse-dense_side-tuner_for_efficient_video_temporal_grounding.md)
 - [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](alltracker_efficient_dense_point_tracking_at_high_resolution.md)
+- [\[CVPR 2025\] EDCFlow: Exploring Temporally Dense Difference Maps for Event-based Optical Flow Estimation](../../CVPR2025/video_understanding/edcflow_exploring_temporally_dense_difference_maps_for_event-based_optical_flow_.md)
 - [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](factorized_learning_for_temporally_grounded_video-language_models.md)
 - [\[ICCV 2025\] TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision](toga_temporally_grounded_open-ended_video_qa_with_weak_supervision.md)
-- [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](online_dense_point_tracking_with_streaming_memory.md)
 
 </div>
 

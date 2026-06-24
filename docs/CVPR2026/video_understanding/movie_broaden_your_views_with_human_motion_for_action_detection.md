@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoVie: Broaden Your Views with Human Motion for Action Detection
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] MoVie decomposes human skeleton motion into a set of "motion primitives" (a learnable motion dictionary) and utilizes an orthogonal projection to treat these fine-grained motion signals as a "regularizer" to calibrate RGB visual features. This approach moves beyond naive feature concatenation/fusion, achieving a new SO
+  [CVPR 2026][Video Understanding][Temporal Action Detection] MoVie decomposes human skeleton motion into a set of "motion primitives" (a learnable motion dictionary) and utilizes an orthogonal projection to treat these fine-grained motion signals as a "regularizer" to calibrate RGB visual features. This approach moves beyond naive feature concatenation/fusion, achieving a new SOTA in frame-level action detection across four real-world datasets: TSU, Charades, Multi-THUMOS…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Temporal Action Detection"
+  - "Skeleton Motion"
+  - "Motion Primitive Dictionary"
+  - "Orthogonal Feature Regularization"
+  - "Multimodal Fusion"
 date: 2026-05-08
-content_hash: 134f591cf9220d95
+content_hash: 44d8a7f51215ba41
 ---
+
 # MoVie: Broaden Your Views with Human Motion for Action Detection
 
 **Conference**: CVPR 2026  
@@ -139,8 +145,8 @@ Under I3D, MoVie outperforms the previous SOTA (MS-TCT) by +15.9% on TSU-CS and 
 
 - [\[CVPR 2026\] Your One-Stop Solution for AI-Generated Video Detection](your_one-stop_solution_for_ai-generated_video_detection.md)
 - [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
-- [\[CVPR 2025\] H-MoRe: Learning Human-centric Motion Representation for Action Analysis](../../CVPR2025/video_understanding/h-more_learning_human-centric_motion_representation_for_action_analysis.md)
 - [\[CVPR 2026\] Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation](self-paced_and_self-corrective_masked_prediction_for_movie_trailer_generation.md)
+- [\[CVPR 2025\] H-MoRe: Learning Human-centric Motion Representation for Action Analysis](../../CVPR2025/video_understanding/h-more_learning_human-centric_motion_representation_for_action_analysis.md)
 - [\[CVPR 2026\] TVHighlights: LLM-Guided Human-Free Collaborative Training for Video Highlight Detection in Movies and TV Dramas](tvhighlights_llm-guided_human-free_collaborative_training_for_video_highlight_de.md)
 
 </div>

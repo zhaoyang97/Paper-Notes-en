@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs
 description: >-
-  [ICLR 2026][LLM Evaluation][RAG] Addressing the three major flaws of existing long-dialogue memory evaluations—topic fragmentation, narrow domains, and simple recall—this paper first utilizes a recursive plot planning synthesis pipeline to create BEAM (100 dialogues up to 10M tokens + 2,000 probes covering 10 memory capabilities). It then proposes the
+  [ICLR2026][LLM Evaluation][Long-term Memory] Addressing the three major flaws of existing long-dialogue memory evaluations—topic fragmentation, narrow domains, and simple recall—this paper first utilizes a recursive plot planning synthesis pipeline to create BEAM (100 dialogues up to 10M tokens + 2,000 probes covering 10 memory capabilities). It then proposes the LIGHT framework, inspired by human cognition, which integrates "Episodic Memory + Working Memory + Scratchpad" sys…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - RAG
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Long-term Memory"
+  - "Dialogue Evaluation"
+  - "Synthetic Data"
+  - "Memory Enhancement"
+  - "RAG"
 date: 2026-05-08
-content_hash: cba631b77e7d791a
+content_hash: 5c1d4f154b0b74a9
 ---
+
 # Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs
 
 **Conference**: ICLR2026  
@@ -129,9 +134,9 @@ Ablations confirmed that each memory component is essential:
 ## Related Papers
 
 - [\[NeurIPS 2025\] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments](../../NeurIPS2025/llm_evaluation/memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami.md)
+- [\[ICLR 2026\] Are LLMs Really Not Knowledgeable? Mining the Submerged Knowledge in LLMs' Memory](are_llms_really_not_knowledgeable_mining_the_submerged_knowledge_in_llms_memory.md)
 - [\[ICLR 2026\] LFQA-E: Carefully Benchmarking Long-form QA Evaluation](lfqa-e_carefully_benchmarking_long-form_qa_evaluation.md)
 - [\[ICLR 2026\] Can You Hear Me Now? A Benchmark for Long-Range Graph Propagation and Beyond](can_you_hear_me_now_a_benchmark_for_long-range_graph_propagation_and_beyond.md)
-- [\[ICLR 2026\] Benchmarking Overton Pluralism in LLMs](benchmarking_overton_pluralism_in_llms.md)
 - [\[AAAI 2026\] BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction](../../AAAI2026/llm_evaluation/bcwildfire_a_long-term_multi-factor_dataset_and_deep_learning_benchmark_for_bore.md)
 
 </div>

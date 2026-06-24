@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection
 description: >-
-  [ICML 2026][AIGC Detection][Paper Note] Addressing the "prediction asymmetry" issue where existing AI-generated image (AIGI) detectors appear accurate but primarily classify images as real, this paper proposes DEAR. By using inpainting images as probes and "dissecting" the model based on the Regional Activation Discrepancy (RAD) between channel activations a
+  [ICML 2026][AIGC Detection][AI-Generated Image Detection] Addressing the "prediction asymmetry" issue where existing AI-generated image (AIGI) detectors appear accurate but primarily classify images as real, this paper proposes DEAR. By using inpainting images as probes and "dissecting" the model based on the Regional Activation Discrepancy (RAD) between channel activations and generated areas, the method prunes extreme channels on both sides and retrains only the linear clas…
 tags:
-  - ICML 2026
-  - AIGC Detection
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "AI-Generated Image Detection"
+  - "Prediction Asymmetry"
+  - "Network Dissection"
+  - "Feature Pruning"
+  - "Robustness"
 date: 2026-05-08
-content_hash: bfbf819bd9d97be5
+content_hash: efa828f5036cb22e
 ---
+
 # Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection
 
 **Conference**: ICML 2026  
@@ -126,15 +132,16 @@ The authors verify the relationship between RAD extremes and robustness:
 - Value: ⭐⭐⭐⭐ Addresses structural biases hidden by aggregate metrics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning From Dictionary: Enhancing Robustness of Machine-Generated Text Detection in Zero-Shot Language via Adversarial Training](../../ICLR2026/aigc_detection/learning_from_dictionary_enhancing_robustness_of_machine-generated_text_detectio.md)
+- [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](../../ICLR2026/aigc_detection/fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
 - [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](../../CVPR2026/aigc_detection/ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
-- [\[ICLR 2026\] All Patches Matter, More Patches Better: Enhance AI-Generated Image Detection via Panoptic Patch Learning](../../ICLR2026/aigc_detection/all_patches_matter_more_patches_better_enhance_ai-generated_image_detection_via_.md)
-- [\[ICML 2026\] On the Salience of Low-Probability Tokens for AI-Generated Text Detection: A Multiscale Uncertainty Perspective](on_the_salience_of_low-probability_tokens_for_ai-generated_text_detection_a_mult.md)
-- [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
-- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](../../CVPR2026/aigc_detection/enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
+- [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](../../ICLR2026/aigc_detection/unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
+- [\[ICLR 2026\] No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection](../../ICLR2026/aigc_detection/no_pixel_left_behind_a_detail-preserving_architecture_for_robust_high-resolution.md)
 
 </div>
 

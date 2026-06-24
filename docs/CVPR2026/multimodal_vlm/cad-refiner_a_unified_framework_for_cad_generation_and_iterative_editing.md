@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing
 description: >-
-  [CVPR 2026][Others][Paper Note] CAD-Refiner utilizes a VLM agent to parse text, images, or editing instructions into a "topological graph" as a unified condition. Combined with a "Sequence Injection Strategy," it aligns generation, completion, and editing tasks into a single decoder. It corrects geometric errors using adaptive loss weighting based on
+  [CVPR 2026][Multimodal VLM][CAD sequence generation] CAD-Refiner utilizes a VLM agent to parse text, images, or editing instructions into a "topological graph" as a unified condition. Combined with a "Sequence Injection Strategy," it aligns generation, completion, and editing tasks into a single decoder. It corrects geometric errors using adaptive loss weighting based on OCCT geometric validation, completing a full CAD modeling workflow from initial generation to multi-round…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CAD sequence generation"
+  - "topological graph"
+  - "iterative editing"
+  - "curriculum masking"
+  - "geometric checking"
 date: 2026-05-08
-content_hash: 385021f440ad152c
+content_hash: 80e0f909ee463cec
 ---
+
 # CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing
 
 **Conference**: CVPR 2026  
@@ -146,15 +152,16 @@ Parameter accuracy (Accp) reached 82.55%, significantly higher than LLaMA and Qw
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bidirectional Query-Driven Generation of Parametric CAD Sketch](bidirectional_query-driven_generation_of_parametric_cad_sketch.md)
-- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
-- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
-- [\[CVPR 2026\] 4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models](4dworldbench_a_comprehensive_evaluation_framework_for_3d4d_world_generation_mode.md)
-- [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
+- [\[CVPR 2026\] CADFS: A Big CAD Program Dataset and Framework for Computer-Aided Design with Large Language Models](cadfs_a_big_cad_program_dataset_and_framework_for_computer-aided_design_with_lar.md)
+- [\[ICLR 2026\] CAD-Tokenizer: Towards Text-Based CAD Prototyping via Modality-Specific Tokenization](../../ICLR2026/multimodal_vlm/cad-tokenizer_towards_text-based_cad_prototyping_via_modality-specific_tokenizat.md)
+- [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](unified_personalized_understanding_generating_and_editing.md)
+- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
+- [\[ICCV 2025\] CAD-Assistant: Tool-Augmented VLLMs as Generic CAD Task Solvers](../../ICCV2025/multimodal_vlm/cad-assistant_tool-augmented_vllms_as_generic_cad_task_solvers.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation
 description: >-
-  [ICLR 2026][AI Safety][data-free robustness distillation] FERD introduces "robust fairness" into data-free robustness distillation for the first time. By applying **class proportion** reweighting on synthetic samples and **distribution** uniformization of adversarial targets, it significantly enhances student model robustness on the weakest classes, mitigating the severe inte
+  [ICLR 2026][AI Safety][data-free robustness distillation] FERD introduces "robust fairness" into data-free robustness distillation for the first time. By applying **class proportion** reweighting on synthetic samples and **distribution** uniformization of adversarial targets, it significantly enhances student model robustness on the weakest classes, mitigating the severe inter-class robustness imbalance.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - data-free robustness distillation
-  - robust fairness
-  - adversarial examples
-  - class reweighting
-  - information bottleneck
+  - "ICLR 2026"
+  - "AI Safety"
+  - "data-free robustness distillation"
+  - "robust fairness"
+  - "adversarial examples"
+  - "class reweighting"
+  - "information bottleneck"
 date: 2026-05-08
-content_hash: f5e2aa49d4409dcc
+content_hash: 11ca8044e3b82b4f
 ---
+
 # FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation
 
 **Conference**: ICLR 2026  
@@ -126,11 +127,11 @@ Removing reweighting causes AA-Worst to plummet from 20.80 to 17.20 (though Clea
 
 ## Related Papers
 
-- [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
 - [\[ICLR 2026\] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution](remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md)
+- [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
 - [\[ICLR 2026\] Dataset Distillation for Memorized Data: Soft Labels can Leak Held-Out Teacher Knowledge](dataset_distillation_for_memorized_data_soft_labels_can_leak_held-out_teacher_kn.md)
-- [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)
 - [\[CVPR 2025\] Data-free Universal Adversarial Perturbation with Pseudo-Semantic Prior](../../CVPR2025/ai_safety/data-free_universal_adversarial_perturbation_with_pseudo-semantic_prior.md)
+- [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)
 
 </div>
 

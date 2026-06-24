@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding the Robustness of Distributed Self-Supervised Learning Frameworks Against Non-IID Data
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper provides a rigorous theoretical analysis of the robustness of different distributed self-supervised learning (D-SSL) frameworks under non-IID data. It proves that Masked Image Modeling (MIM) is inherently more resistant to heterogeneity than Contrastive Learning (CL), and that robustness increases with the a
+  [ICLR 2026][Self-Supervised Learning][Distributed Self-Supervised Learning] This paper provides a rigorous theoretical analysis of the robustness of different distributed self-supervised learning (D-SSL) frameworks under non-IID data. It proves that Masked Image Modeling (MIM) is inherently more resistant to heterogeneity than Contrastive Learning (CL), and that robustness increases with the average network connectivity (Federated Learning is at least as robust as Decentraliz…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Distributed Self-Supervised Learning"
+  - "Non-IID"
+  - "Masked Image Modeling"
+  - "Contrastive Learning"
+  - "Federated Learning"
 date: 2026-05-08
-content_hash: 3b37f20ef6a77089
+content_hash: 48ee666fdf458a35
 ---
+
 # Understanding the Robustness of Distributed Self-Supervised Learning Frameworks Against Non-IID Data
 
 **Conference**: ICLR 2026  
@@ -124,8 +130,6 @@ Using ResNet-18, FedMAR outperforms all baselines on CIFAR-10/100 and matches th
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

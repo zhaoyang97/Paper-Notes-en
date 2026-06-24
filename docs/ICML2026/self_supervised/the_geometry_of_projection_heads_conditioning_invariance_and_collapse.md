@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] The Geometry of Projection Heads: Conditioning, Invariance and Collapse
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] This paper analyzes projection heads in self-supervised learning as trainable metric tensors from a Riemannian geometry perspective. It demonstrates that their role is to dynamically whiten the optimization landscape, escape collapse saddle points via negative curvature from smooth activations, and induce metric singul
+  [ICML 2026][Self-Supervised Learning][Projection Head] This paper analyzes projection heads in self-supervised learning as trainable metric tensors from a Riemannian geometry perspective. It demonstrates that their role is to dynamically whiten the optimization landscape, escape collapse saddle points via negative curvature from smooth activations, and induce metric singularities along data augmentation directions—collectively explaining the long-standing mystery of why these…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Projection Head"
+  - "Riemannian Geometry"
+  - "Representation Collapse"
+  - "Invariance"
 date: 2026-05-08
-content_hash: cf7b0b2b96d3bfed
+content_hash: 15feb64d8ebc23c4
 ---
+
 # The Geometry of Projection Heads: Conditioning, Invariance and Collapse
 
 **Conference**: ICML 2026  
@@ -129,8 +134,8 @@ These results validate the core theory: the metric $G(z) = J_h(z)^\top J_h(z)$ l
 
 - [\[ICLR 2026\] Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning](../../ICLR2026/self_supervised/why_prototypes_collapse_diagnosing_and_preventing_partial_collapse_in_prototypic.md)
 - [\[ICML 2026\] LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models](limix-2m_mitigating_low-rank_collapse_and_attention_bottlenecks_in_tabular_found.md)
-- [\[ICML 2026\] Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch](provable_accuracy_collapse_in_embedding-based_representations_under_dimensionali.md)
 - [\[CVPR 2026\] Teaching DINOv3 About Partial 3D Geometry: A Self-Supervised Geometry-Aware Approach](../../CVPR2026/self_supervised/teaching_dinov3_about_partial_3d_geometry_a_self-supervised_geometry-aware_appro.md)
+- [\[ICML 2026\] Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch](provable_accuracy_collapse_in_embedding-based_representations_under_dimensionali.md)
 - [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](../../CVPR2026/self_supervised/reframing_long-tailed_learning_via_loss_landscape_geometry.md)
 
 </div>

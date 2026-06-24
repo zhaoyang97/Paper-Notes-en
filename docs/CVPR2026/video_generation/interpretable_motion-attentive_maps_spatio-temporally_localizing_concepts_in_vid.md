@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers
 description: >-
-  [CVPR 2026][Video Generation][Interpretability] IMAP (Interpretable Motion-Attentive Maps) is proposed as a training-free framework consisting of two modules: GramCol for spatial localization and Motion Head Selection for temporal localization. It extracts spatio-temporal saliency maps of motion concepts from Video DiTs, outperforming existing methods in motion loca
+  [CVPR 2026][Video Generation][Video Diffusion Models] IMAP (Interpretable Motion-Attentive Maps) is proposed as a training-free framework consisting of two modules: GramCol for spatial localization and Motion Head Selection for temporal localization. It extracts spatio-temporal saliency maps of motion concepts from Video DiTs, outperforming existing methods in motion localization and zero-shot video semantic segmentation.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Interpretability
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Interpretability"
+  - "Motion Localization"
+  - "Attention Analysis"
+  - "Saliency Maps"
 date: 2026-05-08
-content_hash: f9e84569c451ba35
+content_hash: 39a2d6b0a6f56248
 ---
+
 # I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -118,11 +123,11 @@ The method is entirely training-free and gradient-free. For real videos, feature
 
 ## Related Papers
 
-- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
-- [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
 - [\[CVPR 2026\] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](activityforensics_a_comprehensive_benchmark_for_localizing_manipulated_activity_.md)
 - [\[CVPR 2026\] Composing Concepts from Images and Videos via Concept-prompt Binding](composing_concepts_from_images_and_videos_via_concept-prompt_binding.md)
-- [\[CVPR 2026\] MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models](motionenhancer_leveraging_video_diffusion_for_motion-enhanced_vision-language_mo.md)
+- [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
+- [\[CVPR 2026\] ReHyAt: Recurrent Hybrid Attention for Video Diffusion Transformers](rehyat_recurrent_hybrid_attention_for_video_diffusion_transformers.md)
+- [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
 
 </div>
 

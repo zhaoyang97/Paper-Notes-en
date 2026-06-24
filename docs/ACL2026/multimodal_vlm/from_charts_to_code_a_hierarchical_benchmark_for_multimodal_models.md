@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Charts to Code: A Hierarchical Benchmark for Multimodal Models
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper proposes Chart2Code, a hierarchical benchmark featuring 2,186 tasks across 22 chart types. It is organized into three progressive difficulty levels: Chart Replication (Level 1), Chart Editing (Level 2), and Long Table-to-Chart (Level 3). Evaluating 29 SOTA multimodal models reveals that even the strongest GP
+  [ACL 2026][Multimodal VLM][Chart generation] This paper proposes Chart2Code, a hierarchical benchmark featuring 2,186 tasks across 22 chart types. It is organized into three progressive difficulty levels: Chart Replication (Level 1), Chart Editing (Level 2), and Long Table-to-Chart (Level 3). Evaluating 29 SOTA multimodal models reveals that even the strongest GPT-5.2 achieves a chart quality score of only 33.41 on editing tasks, highlighting significant deficiencies in curre…
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Chart generation"
+  - "Code generation"
+  - "Multimodal benchmark"
+  - "Hierarchical evaluation"
+  - "Visual fidelity"
 date: 2026-05-08
-content_hash: d266c5e8a9af2a21
+content_hash: 57e1f2a160e08e8a
 ---
+
 # From Charts to Code: A Hierarchical Benchmark for Multimodal Models
 
 **Conference**: ACL 2026  

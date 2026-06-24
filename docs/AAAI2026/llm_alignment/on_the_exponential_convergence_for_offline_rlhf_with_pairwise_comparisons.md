@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] On the Exponential Convergence for Offline RLHF with Pairwise Comparisons
 description: >-
-  [AAAI 2026][LLM Alignment][Offline RLHF] Under the offline RLHF pairwise comparison setting, this paper proposes the RL-LOW algorithm achieving exponential convergence $\exp(-\Omega(n/H))$ for simple regret…
+  [AAAI 2026 Oral][LLM Alignment][Offline RLHF] Under the offline RLHF pairwise comparison setting, this paper proposes the RL-LOW algorithm achieving exponential convergence $\exp(-\Omega(n/H))$ for simple regret, and derives the first instance-dependent lower bound proving this rate is optimal in the exponential sense.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Alignment"
   - "Offline RLHF"
   - "Exponential Convergence"
@@ -12,7 +12,7 @@ tags:
   - "Instance-Dependent Lower Bound"
   - "Differential Privacy"
 date: 2026-05-08
-content_hash: d1f487dd9319f88e
+content_hash: 8ce0f739a4f246df
 ---
 
 # On the Exponential Convergence for Offline RLHF with Pairwise Comparisons
@@ -138,9 +138,9 @@ A solid theoretical contribution that establishes, for the first time, a complet
 ## Related Papers
 
 - [\[ICML 2026\] Efficient Preference Poisoning Attack on Offline RLHF](../../ICML2026/llm_alignment/efficient_preference_poisoning_attack_on_offline_rlhf.md)
+- [\[ICLR 2026\] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](../../ICLR2026/llm_alignment/beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)
 - [\[AAAI 2026\] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](when_human_preferences_flip_an_instance-dependent_robust_loss_for_rlhf.md)
 - [\[AAAI 2026\] DeCoRL: Decoupling Reasoning Chains via Parallel Sub-Step Generation and Cascaded Reinforcement for Interpretable and Scalable RLHF](decorl_decoupling_reasoning_chains_via_parallel_sub-step_gen.md)
-- [\[ICLR 2026\] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](../../ICLR2026/llm_alignment/beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)
 - [\[ICLR 2026\] General Exploratory Bonus for Optimistic Exploration in RLHF](../../ICLR2026/llm_alignment/general_exploratory_bonus_for_optimistic_exploration_in_rlhf.md)
 
 </div>

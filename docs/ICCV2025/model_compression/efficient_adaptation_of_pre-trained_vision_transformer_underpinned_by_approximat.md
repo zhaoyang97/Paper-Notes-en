@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Adaptation of Pre-Trained Vision Transformer Underpinned by Approximation Theory
 description: >-
-  [ICCV 2025][Model Compression][parameter-efficient fine-tuning] This paper identifies that the row/column vectors of pre-trained ViT weight matrices exhibit approximate orthogonality…
+  [ICCV 2025][Model Compression][parameter-efficient fine-tuning] This paper identifies that the row/column vectors of pre-trained ViT weight matrices exhibit approximate orthogonality, whereas the projection matrices learned by LoRA/Adapter do not. The authors propose AOFT, a strategy that generates approximately orthogonal down/up projection matrices from a single learnable vector, aligning the adaptation modules with the properties of the backbone network. This reduces the g…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Adapter"
   - "Vision Transformer"
 date: 2026-05-08
-content_hash: 29fce5f92240c275
+content_hash: 90a9ca41bdd32b1c
 ---
 
 # Efficient Adaptation of Pre-Trained Vision Transformer Underpinned by Approximation Theory
@@ -141,8 +141,8 @@ VTAB-1k benchmark (19 datasets, 3 groups, ViT-B/16, partial results):
 - [\[ICCV 2025\] EA-ViT: Efficient Adaptation for Elastic Vision Transformer](ea-vit_efficient_adaptation_for_elastic_vision_transformer.md)
 - [\[ICCV 2025\] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning](integrating_task-specific_and_universal_adapters_for_pre-trained_model-based_cla.md)
 - [\[AAAI 2026\] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](../../AAAI2026/model_compression/compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)
-- [\[ICCV 2025\] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective](mixa-q_revisiting_activation_sparsity_for_vision_transformers_from_a_mixed-preci.md)
-- [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](../../NeurIPS2025/model_compression/reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
+- [\[CVPR 2025\] BHViT: Binarized Hybrid Vision Transformer](../../CVPR2025/model_compression/bhvit_binarized_hybrid_vision_transformer.md)
+- [\[NeurIPS 2025\] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning](../../NeurIPS2025/model_compression/mixture_of_noise_for_pre-trained_model-based_class-incremental_learning.md)
 
 </div>
 

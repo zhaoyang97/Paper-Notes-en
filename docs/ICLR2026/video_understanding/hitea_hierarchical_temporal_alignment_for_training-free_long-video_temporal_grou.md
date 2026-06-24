@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] HiTeA utilizes hierarchical temporal decomposition across event-scene-action levels to generate multi-granularity candidates for long videos. It then employs frozen VideoCLIP and Qwen2.5-VL for query matching and candidate refinement, significantly improving long-video temporal grounding without any task-specific train
+  [ICLR 2026][Video Understanding][Long-video temporal grounding] HiTeA utilizes hierarchical temporal decomposition across event-scene-action levels to generate multi-granularity candidates for long videos. It then employs frozen VideoCLIP and Qwen2.5-VL for query matching and candidate refinement, significantly improving long-video temporal grounding without any task-specific training.
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Long-video temporal grounding"
+  - "training-free"
+  - "hierarchical temporal decomposition"
+  - "video-language models"
+  - "candidate refinement"
 date: 2026-05-08
-content_hash: faa72e0507024401
+content_hash: 94d4ce7776f89b90
 ---
+
 # HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding
 
 **Conference**: ICLR 2026  
@@ -149,16 +155,16 @@ VideoCLIP pre-screening significantly improves efficiency, especially for long v
 - Value: ⭐⭐⭐⭐⭐ High practical value for long-video retrieval where annotation is expensive and queries vary dynamically.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
 - [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](../../CVPR2026/video_understanding/hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
 - [\[ICLR 2026\] OmniSTVG: Toward Spatio-Temporal Omni-Object Video Grounding](omnistvg_toward_spatio-temporal_omni-object_video_grounding.md)
-- [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
-- [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](../../CVPR2026/video_understanding/cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
-- [\[CVPR 2025\] Temporal Alignment-Free Video Matching for Few-Shot Action Recognition](../../CVPR2025/video_understanding/temporal_alignment-free_video_matching_for_few-shot_action_recognition.md)
+- [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](../../NeurIPS2025/video_understanding/vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
+- [\[CVPR 2025\] VideoGEM: Training-Free Action Grounding in Videos](../../CVPR2025/video_understanding/videogem_training-free_action_grounding_in_videos.md)
 
 </div>
 

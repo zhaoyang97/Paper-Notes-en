@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SVTRv2: CTC Beats Encoder-Decoder Models in Scene Text Recognition
 description: >-
-  [ICCV 2025][LLM Evaluation][Scene Text Recognition] SVTRv2 is proposed with three key designs — Multi-Size Resize (MSR), Feature Rearrangement Module (FRM)…
+  [ICCV 2025][LLM Evaluation][Scene Text Recognition] SVTRv2 is proposed with three key designs — Multi-Size Resize (MSR), Feature Rearrangement Module (FRM), and Semantic Guidance Module (SGM) — enabling a CTC-based model to comprehensively outperform encoder-decoder methods across multi-scene benchmarks for the first time, while retaining inference speed advantages.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Semantic Guidance"
   - "Multi-Size Resize"
 date: 2026-05-08
-content_hash: 9ecff171cf40d75e
+content_hash: 63209d34a61b49c9
 ---
 
 # SVTRv2: CTC Beats Encoder-Decoder Models in Scene Text Recognition
@@ -146,10 +146,10 @@ MSR contributes the most (+4.44 U14M Avg); FRM yields significant gains on MO (+
 ## Related Papers
 
 - [\[ACL 2026\] Beyond Fixed Psychological Personas: State Beats Trait, but Language Models are State-Blind](../../ACL2026/llm_evaluation/beyond_fixed_psychological_personas_state_beats_trait_but_language_models_are_st.md)
+- [\[ECCV 2024\] EvSign: Sign Language Recognition and Translation with Streaming Events](../../ECCV2024/llm_evaluation/evsign_sign_language_recognition_and_translation_with_streaming_events.md)
+- [\[ICLR 2026\] Culture in Action: Evaluating Text-to-Image Models through Social Activities](../../ICLR2026/llm_evaluation/culture_in_action_evaluating_text-to-image_models_through_social_activities.md)
 - [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](../../ACL2026/llm_evaluation/attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
 - [\[ACL 2026\] Gated Tree Cross-Attention for Checkpoint-Compatible Syntax Injection in Decoder-Only LLMs](../../ACL2026/llm_evaluation/gated_tree_cross-attention_for_checkpoint-compatible_syntax_injection_in_decoder.md)
-- [\[ICCV 2025\] Imbalance in Balance: Online Concept Balancing in Generation Models](imbalance_in_balance_online_concept_balancing_in_generation_models.md)
-- [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](../../ACL2026/llm_evaluation/comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
 
 </div>
 

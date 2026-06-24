@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pallatom-Ligand: an All-Atom Diffusion Model for Designing Ligand-Binding Proteins
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] Pallatom-Ligand utilizes an all-atom diffusion transformer to directly learn the joint distribution of all atoms in "protein + small molecule ligand" complexes. It simultaneously generates the protein backbone, side chains, and ligand pockets end-to-end, supporting programmable control over global protein folding ($\al
+  [ICLR 2026][Computational Biology][Ligand-binding proteins] Pallatom-Ligand utilizes an all-atom diffusion transformer to directly learn the joint distribution of all atoms in "protein + small molecule ligand" complexes. It simultaneously generates the protein backbone, side chains, and ligand pockets end-to-end, supporting programmable control over global protein folding ($\alpha/\beta$ ratio) and ligand solvent accessibility, achieving the highest in silico success rate acr…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Ligand-binding proteins"
+  - "all-atom diffusion"
+  - "de novo protein design"
+  - "conditional generation"
+  - "AlphaFold3 evaluation"
 date: 2026-05-08
-content_hash: 4e1f26bf2753bd04
+content_hash: 55dd61bf1d382572
 ---
+
 # Pallatom-Ligand: an All-Atom Diffusion Model for Designing Ligand-Binding Proteins
 
 **Conference**: ICLR 2026  
@@ -143,9 +149,9 @@ Without conditions, the model favors all-$\alpha$ (79.4%). Given $\alpha$ condit
 
 - [\[ICLR 2026\] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction](towards_all-atom_foundation_models_for_biomolecular_binding_affinity_prediction.md)
 - [\[ICLR 2026\] h-MINT: Modeling Pocket-Ligand Binding with Hierarchical Molecular Interaction Network](h-mint_modeling_pocket-ligand_binding_with_hierarchical_molecular_interaction_ne.md)
+- [\[ICLR 2026\] PepTri: Physical, Evolutionary, and Mutual Information Tri-guided All-atom Diffusion Peptide Design](peptri_tri-guided_all-atom_diffusion_for_peptide_design_via_physics_evolution_an.md)
 - [\[ICLR 2026\] BioMD: All-atom Generative Model for Biomolecular Dynamics Simulation](biomd_all-atom_generative_model_for_biomolecular_dynamics_simulation.md)
 - [\[ICLR 2026\] A Diffusion Model to Shrink Proteins While Maintaining Their Function](a_diffusion_model_to_shrink_proteins_while_maintaining_their_function.md)
-- [\[ICLR 2026\] Interpolation-Based Conditioning of Flow Matching Models for Bioisosteric Ligand Design](interpolation-based_conditioning_of_flow_matching_models_for_bioisosteric_ligand.md)
 
 </div>
 

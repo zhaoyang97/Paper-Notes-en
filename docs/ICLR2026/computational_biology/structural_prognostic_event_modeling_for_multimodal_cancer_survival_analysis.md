@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Structural Prognostic Event Modeling for Multimodal Cancer Survival Analysis
 description: >-
-  [ICLR 2026][Computational Biology][Slot Attention] SlotSPE compresses pathology WSI and transcriptomic pathway features into a few patient-adaptive prognostic event slots. It utilizes selective activation, cross-modal reconstruction, and iterative slot interaction for survival risk prediction, achieving an average C-index of 0.721 across 10 TCGA cancer types and mainta
+  [ICLR 2026][Computational Biology][Cancer Survival Analysis] SlotSPE compresses pathology WSI and transcriptomic pathway features into a few patient-adaptive prognostic event slots. It utilizes selective activation, cross-modal reconstruction, and iterative slot interaction for survival risk prediction, achieving an average C-index of 0.721 across 10 TCGA cancer types and maintaining an overall performance of 0.704 even when genomic data is missing.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Slot Attention
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Cancer Survival Analysis"
+  - "Multimodal Learning"
+  - "Pathomic Fusion"
+  - "Slot Attention"
+  - "Structural Prognostic Events"
 date: 2026-05-08
-content_hash: fa18aad821c8e054
+content_hash: bd29a71931bfa6da
 ---
+
 # Structural Prognostic Event Modeling for Multimodal Cancer Survival Analysis
 
 **Conference**: ICLR 2026  
@@ -132,14 +137,15 @@ Ablation of key components confirms the necessity of each design:
 - **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] ConSurv: Multimodal Continual Learning for Survival Analysis](../../AAAI2026/computational_biology/consurv_multimodal_continual_learning_for_survival_analysis.md)
+- [\[ICLR 2026\] Physically Valid Biomolecular Interaction Modeling with Gauss-Seidel Projection](physically_valid_biomolecular_interaction_modeling_with_gauss-seidel_projection.md)
 - [\[ICLR 2026\] SAIR: Enabling Deep Learning for Protein-Ligand Interactions with a Synthetic Structural Dataset](sair_enabling_deep_learning_for_protein-ligand_interactions_with_a_synthetic_str.md)
 - [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
-- [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
 - [\[ICLR 2026\] CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints](cryonetrefine_a_one-step_diffusion_model_for_rapid_refinement_of_structural_mode.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Keep It Real: Challenges in Attacking Compression-Based Adversarial Purification
 description: >-
-  [NeurIPS 2025][AI Safety][adversarial robustness] This paper systematically evaluates compression-based adversarial purification defenses and demonstrates that the *realism* of reconstructed images is the critical factor…
+  [NeurIPS 2025][AI Safety][adversarial robustness] This paper systematically evaluates compression-based adversarial purification defenses and demonstrates that the *realism* of reconstructed images is the critical factor for robustness—high-realism compression models maintain significant robustness under strong adaptive attacks, and this robustness is not attributable to gradient masking.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "realistic reconstruction"
   - "adaptive attacks"
 date: 2026-05-08
-content_hash: fa67c53850adfb8b
+content_hash: 225d6c58a5cb9a5e
 ---
 
 # Keep It Real: Challenges in Attacking Compression-Based Adversarial Purification
@@ -160,9 +160,9 @@ CRDR HR maintains approximately 37% accuracy under a 400-step attack, with accur
 
 - [\[NeurIPS 2025\] Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI](understanding_challenges_to_the_interpretation_of_disaggregated_evaluations_of_a.md)
 - [\[AAAI 2026\] TopoReformer: Mitigating Adversarial Attacks Using Topological Purification in OCR Models](../../AAAI2026/ai_safety/toporeformer_mitigating_adversarial_attacks_using_topological_purification_in_oc.md)
-- [\[NeurIPS 2025\] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)
-- [\[NeurIPS 2025\] Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness](bridging_symmetry_and_robustness_on_the_role_of_equivariance_in_enhancing_advers.md)
 - [\[NeurIPS 2025\] It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act](its_complicated_the_relationship_of_algorithmic_fairness_and_non-discrimination_.md)
+- [\[NeurIPS 2025\] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)
+- [\[AAAI 2026\] Breaking the Adversarial Robustness-Performance Trade-off in Text Classification via Manifold Purification](../../AAAI2026/ai_safety/breaking_the_adversarial_robustness-performance_trade-off_in_text_classification.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This paper proposes the SPAGBias framework, which for the first time systematically evaluates gender bias in LLMs within urban micro-spatial contexts. Through three diagnostic layers—explicit, probabilistic, and constructive—it reveals structured spatial-gender association patterns in LLMs and traces the embedding and
+  [ACL 2026][Social Computing][Spatial Gender Bias] This paper proposes the SPAGBias framework, which for the first time systematically evaluates gender bias in LLMs within urban micro-spatial contexts. Through three diagnostic layers—explicit, probabilistic, and constructive—it reveals structured spatial-gender association patterns in LLMs and traces the embedding and amplification of bias throughout the entire model development lifecycle.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Spatial Gender Bias"
+  - "LLM Fairness"
+  - "Urban Space"
+  - "Bias Measurement Framework"
+  - "Narrative Analysis"
 date: 2026-05-08
-content_hash: a1139011188e538b
+content_hash: 8b8ccf90de057a2c
 ---
+
 # SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models
 
 **Conference**: ACL 2026  

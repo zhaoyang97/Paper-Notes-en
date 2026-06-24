@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] CORE shifts the visual token compression of LVLMs from "merging individual tokens by feature similarity" to "merging by objects." By utilizing a built-in segmentation head to generate masks for each object, it performs weighted averaging of tokens within the same object into a single compact token, combined with centro
+  [CVPR 2026][Multimodal Efficiency][Visual Token Compression] CORE shifts the visual token compression of LVLMs from "merging individual tokens by feature similarity" to "merging by objects." By utilizing a built-in segmentation head to generate masks for each object, it performs weighted averaging of tokens within the same object into a single compact token, combined with centroid sorting to preserve spatial order. It achieves SOTA performance in fixed-rate compression across…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual Token Compression"
+  - "Object-centric Representation"
+  - "LVLM Acceleration"
+  - "Token Merging"
+  - "Centroid Sorting"
 date: 2026-05-08
-content_hash: 4069f437a97d1b6e
+content_hash: 50167889f8cfece4
 ---
+
 # CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs
 
 **Conference**: CVPR 2026  
@@ -162,11 +168,11 @@ FLOPs are reduced to 1/16, and KV Cache is reduced by ~182×.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
 - [\[CVPR 2026\] Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)
-- [\[CVPR 2026\] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)
-- [\[ACL 2025\] Compact and Compressible Representations for LLMs Using Structured Sparse Decomposition](../../ACL2025/model_compression/compact_and_compressible_representations_for_llms_using_structured_sparse_decom.md)
 - [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)
+- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
+- [\[CVPR 2026\] Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)
+- [\[CVPR 2026\] LiteVGGT: Boosting Vanilla VGGT via Geometry-aware Cached Token Merging](litevggt_boosting_vanilla_vggt_via_geometry-aware_cached_token_merging.md)
 
 </div>
 

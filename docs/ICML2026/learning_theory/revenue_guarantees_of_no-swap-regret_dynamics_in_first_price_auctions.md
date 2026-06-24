@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Revenue Guarantees of No-Swap-Regret Dynamics in First Price Auctions
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper proves that in discrete first-price auctions, the revenue of any $\epsilon$-approximate correlated equilibrium is at least $v_2-\Theta(1/k)-\Theta(\epsilon k^2)$ (where $v_2$ is the second-highest valuation). This provides the first **polynomial convergence rate** for the revenue of no-swap-regret bidders in
+  [ICML2026][Learning Theory][First Price Auctions] This paper proves that in discrete first-price auctions, the revenue of any $\epsilon$-approximate correlated equilibrium is at least $v_2-\Theta(1/k)-\Theta(\epsilon k^2)$ (where $v_2$ is the second-highest valuation). This provides the first **polynomial convergence rate** for the revenue of no-swap-regret bidders in first-price auctions—by using an optimal $O(\sqrt{kT})$ swap-regret algorithm…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Algorithmic Game Theory"
+  - "First Price Auctions"
+  - "No-Swap-Regret"
+  - "Correlated Equilibrium"
+  - "Convergence Rate"
+  - "Dual Fitting"
 date: 2026-05-08
-content_hash: 570f55329285320a
+content_hash: 7619522c14c03680
 ---
+
 # Revenue Guarantees of No-Swap-Regret Dynamics in First Price Auctions
 
 **Conference**: ICML2026  
@@ -120,11 +128,11 @@ Numerical verification (repeated FPA using $O(\sqrt{kT})$ algorithm from [10], t
 
 ## Related Papers
 
-- [\[ICML 2026\] On the Robustness of Langevin Dynamics to Score Function Error](on_the_robustness_of_langevin_dynamics_to_score_function_error.md)
-- [\[ICLR 2026\] The Price of Robustness: Stable Classifiers Need Overparameterization](../../ICLR2026/learning_theory/the_price_of_robustness_stable_classifiers_need_overparameterization.md)
+- [\[ICLR 2026\] Revenue Maximization under Sequential Price Competition via the Estimation of s-Concave Demand Functions](../../ICLR2026/learning_theory/revenue_maximization_under_sequential_price_competition_via_the_estimation_of_s-.md)
+- [\[ICLR 2026\] Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape](../../ICLR2026/learning_theory/saddle-to-saddle_dynamics_in_deep_relu_networks_low-rank_bias_in_the_first_saddl.md)
+- [\[ICLR 2026\] A Faster Parameter-Free Regret Matching Algorithm](../../ICLR2026/learning_theory/a_faster_parameter-free_regret_matching_algorithm.md)
 - [\[ICML 2026\] Formalizing Learning from Language Feedback with Provable Guarantees](formalizing_learning_from_language_feedback_with_provable_guarantees.md)
 - [\[ICML 2026\] On Regret Bounds of Thompson Sampling for Bayesian Optimization](on_regret_bounds_of_thompson_sampling_for_bayesian_optimization.md)
-- [\[ICLR 2026\] A Faster Parameter-Free Regret Matching Algorithm](../../ICLR2026/learning_theory/a_faster_parameter-free_regret_matching_algorithm.md)
 
 </div>
 

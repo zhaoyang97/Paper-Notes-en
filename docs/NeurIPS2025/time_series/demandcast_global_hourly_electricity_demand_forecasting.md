@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DemandCast: Global hourly electricity demand forecasting
 description: >-
-  [NeurIPS 2025][Time Series][Electricity demand forecasting] DemandCast is an open-source machine learning framework that leverages XGBoost to integrate historical electricity demand, ERA5 temperature data…
+  [NeurIPS 2025][Time Series][Electricity demand forecasting] DemandCast is an open-source machine learning framework that leverages XGBoost to integrate historical electricity demand, ERA5 temperature data, and socioeconomic features for hourly electricity demand forecasting across 56 countries/regions worldwide. By normalizing the target variable as a fraction of annual demand, the framework achieves cross-country comparability and attains a MAPE of 9.2% on a temporally held-…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "ERA5 meteorological data"
   - "normalized target"
 date: 2026-05-08
-content_hash: 49b42fcbc401a576
+content_hash: 738959c1901987c6
 ---
 
 # DemandCast: Global hourly electricity demand forecasting
@@ -129,9 +129,9 @@ DemandCast is a modular, end-to-end pipeline comprising: (1) data collection and
 
 - [\[NeurIPS 2025\] NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs](nsw-epnews_a_news-augmented_benchmark_for_electricity_price_forecasting_with_llm.md)
 - [\[NeurIPS 2025\] RiverMamba: A State Space Model for Global River Discharge and Flood Forecasting](rivermamba_a_state_space_model_for_global_river_discharge_and_flood_forecasting.md)
+- [\[CVPR 2025\] L2GTX: From Local to Global Time Series Explanations](../../CVPR2025/time_series/l2gtx_from_local_to_global_time_series_explanations.md)
 - [\[CVPR 2026\] STCast: Adaptive Boundary Alignment for Global and Regional Weather Forecasting](../../CVPR2026/time_series/stcast_adaptive_boundary_alignment_for_global_and_regional_weather_forecasting.md)
-- [\[CVPR 2026\] L2GTX: From Local to Global Time Series Explanations](../../CVPR2026/time_series/l2gtx_from_local_to_global_time_series_explanations.md)
-- [\[NeurIPS 2025\] BubbleFormer: Forecasting Boiling with Transformers](bubbleformer_forecasting_boiling_with_transformers.md)
+- [\[ICML 2025\] TCP-Diffusion: A Multi-modal Diffusion Model for Global Tropical Cyclone Precipitation Forecasting with Change Awareness](../../ICML2025/time_series/tcp-diffusion_a_multi-modal_diffusion_model_for_global_tropical_cyclone_precipit.md)
 
 </div>
 

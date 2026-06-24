@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Topology-Enhanced Alignment for Large Language Models: Trajectory Topology Loss and Topological Preference Optimization
 description: >-
-  [ACL 2026][Alignment & RLHF][SFT] This paper views LLM alignment as a "semantic trajectory" shaping problem in the hidden space. It extracts prompt-answer topological bridges using 0D persistent homology to incorporate TTL during the SFT stage, and utilizes topic-specific preference directions for TPO during the DPO stage. This approach consistently ou
+  [ACL2026][LLM Alignment][Topological Data Analysis] This paper views LLM alignment as a "semantic trajectory" shaping problem in the hidden space. It extracts prompt-answer topological bridges using 0D persistent homology to incorporate TTL during the SFT stage, and utilizes topic-specific preference directions for TPO during the DPO stage. This approach consistently outperforms non-topological baselines in reward, win rate, and harmlessness metrics on UltraChat and HH-RLHF.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - SFT
-  - DPO
+  - "ACL2026"
+  - "LLM Alignment"
+  - "Topological Data Analysis"
+  - "Persistent Homology"
+  - "SFT"
+  - "DPO"
+  - "Representation Trajectories"
 date: 2026-05-08
-content_hash: 24085ae7c5f1e709
+content_hash: 3aa315f941aaee03
 ---
+
 # Topology-Enhanced Alignment for Large Language Models: Trajectory Topology Loss and Topological Preference Optimization
 
 **Conference**: ACL2026  
@@ -127,8 +131,8 @@ The total loss for SFT is $L_{SFT} = L_{CE} + \lambda_{topo}L_{topo}$ (optimal $
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

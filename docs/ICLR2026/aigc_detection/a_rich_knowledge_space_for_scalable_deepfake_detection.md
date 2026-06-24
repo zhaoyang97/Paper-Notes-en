@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] A Rich Knowledge Space for Scalable Deepfake Detection
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] This paper integrates 11 deepfake and real face sources into the MMI-DD dataset, scaling to 3.6 million images. It proposes SD2, which utilizes CLIP's hierarchical visual features, fine-grained textual forgery labels, and VLM-generated descriptions for joint training. This ensures that the deepfake detector gains stron
+  [ICLR2026][AIGC Detection][Deepfake Detection] This paper integrates 11 deepfake and real face sources into the MMI-DD dataset, scaling to 3.6 million images. It proposes SD2, which utilizes CLIP's hierarchical visual features, fine-grained textual forgery labels, and VLM-generated descriptions for joint training. This ensures that the deepfake detector gains stronger cross-domain and AIGC generalization capabilities on large-scale heterogeneous data instead of suffering from…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR2026"
+  - "AIGC Detection"
+  - "Deepfake Detection"
+  - "CLIP Fine-tuning"
+  - "Multi-modal Dataset"
+  - "Cross-domain Generalization"
 date: 2026-05-08
-content_hash: d048365e0f33671c
+content_hash: 081c4cea69cc9240
 ---
+
 # A Rich Knowledge Space for Scalable Deepfake Detection
 
 **Conference**: ICLR2026  

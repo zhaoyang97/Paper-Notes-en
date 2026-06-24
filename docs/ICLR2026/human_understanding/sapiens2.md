@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Sapiens2：面向人体视觉的高分辨率基础模型
+  [Paper Note] Sapiens2: High-Resolution Foundation Models for Human-Centric Vision
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] Sapiens2 employs a unified pre-training objective of "mask reconstruction + self-distillation contrastive learning" to train 0.4B–5B high-resolution Transformers on 1 billion curated human images. Supporting 4K hierarchical backbones, it sets new SOTA benchmarks across multiple human dense tasks including pose estimati
+  [ICLR 2026][Human Understanding][Human-centric vision] Sapiens2 employs a unified pre-training objective of "mask reconstruction + self-distillation contrastive learning" to train 0.4B–5B high-resolution Transformers on 1 billion curated human images. Supporting 4K hierarchical backbones, it sets new SOTA benchmarks across multiple human dense tasks including pose estimation, body part segmentation, surface normals, point clouds, and albedo.
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Human-centric vision"
+  - "masked reconstruction"
+  - "contrastive learning"
+  - "high resolution"
+  - "dense prediction"
 date: 2026-05-08
-content_hash: 3f995ecfc02652fc
+content_hash: 704c6bd6362de07f
 ---
+
 # Sapiens2: High-Resolution Foundation Models for Human-Centric Vision
 
 **Conference**: ICLR 2026  
@@ -132,11 +138,11 @@ Backbones are frozen, and decoders are trained with identical hyperparameters to
 
 ## Related Papers
 
-- [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](motion-aligned_word_embeddings_for_text-to-motion_generation.md)
-- [\[ICLR 2026\] Disentangled Hierarchical VAE for 3D Human-Human Interaction Generation](disentangled_hierarchical_vae_for_3d_human-human_interaction_generation.md)
-- [\[ICLR 2026\] EdgeCAPE：边权预测用于类别无关姿态估计](edgecape_edge_weight_prediction_for_category-agnostic_pose_estimation.md)
-- [\[ICLR 2026\] Zero-Shot Human Pose Estimation Using Diffusion-Based Inverse Solvers](zero-shot_human_pose_estimation_using_diffusion-based_inverse_solvers.md)
+- [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
+- [\[ICCV 2025\] High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation](../../ICCV2025/human_understanding/high-resolution_spatiotemporal_modeling_with_global-local_state_space_models_for.md)
 - [\[ICLR 2026\] QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture](quamo_quaternion_motion_kinematics.md)
+- [\[ICLR 2026\] EmoPrefer: Can Large Language Models Understand Human Emotion Preferences?](emoprefer_can_large_language_models_understand_human_emotion_preferences.md)
+- [\[ICLR 2026\] SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual Dyadic Interactive Human Generation](speakervid-5m_a_large-scale_high-quality_dataset_for_audio-visual_dyadic_interac.md)
 
 </div>
 

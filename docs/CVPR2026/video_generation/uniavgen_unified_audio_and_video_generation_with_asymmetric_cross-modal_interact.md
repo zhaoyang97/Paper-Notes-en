@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Model] UniAVGen proposes a joint audio-video generation framework based on a symmetric dual-branch DiT. By leveraging an **asymmetric cross-modal interaction mechanism** and a **face-aware modulation module**, it achieves precise spatio-temporal synchronization. With only 1.3M training samples, it comprehensively outperforms
+  [CVPR 2026][Video Generation][Joint Audio-Video Generation] UniAVGen proposes a joint audio-video generation framework based on a symmetric dual-branch DiT. By leveraging an **asymmetric cross-modal interaction mechanism** and a **face-aware modulation module**, it achieves precise spatio-temporal synchronization. With only 1.3M training samples, it comprehensively outperforms competitors using 30M data in terms of lip-sync, timbre consistency, and emotional consistency.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Joint Audio-Video Generation"
+  - "Cross-Modal Interaction"
+  - "Diffusion Models"
+  - "Lip-Sync"
+  - "Face-Aware Modulation"
 date: 2026-05-08
-content_hash: 9bbb5c5720a2f2b1
+content_hash: 52d858283390d534
 ---
+
 # UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ UniAVGen outperforms Ovi despite using 23x less data (1.3M vs 30.7M), leading in
 
 ## Related Papers
 
-- [\[CVPR 2026\] Harmony: Harmonizing Audio and Video Generation through Cross-Task Synergy](harmony_harmonizing_audio_and_video_generation_through_cross-task_synergy.md)
-- [\[CVPR 2026\] UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation](unitalking_a_unified_audio-video_framework_for_talking_portrait_generation.md)
 - [\[CVPR 2026\] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation](unityvideo_unified_multi-modal_multi-task_learning_for_enhancing_world-aware_vid.md)
 - [\[ICLR 2026\] BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration](../../ICLR2026/video_generation/bindweave_subject-consistent_video_generation_via_cross-modal_integration.md)
-- [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](infinityhuman_towards_long-term_audio-driven_human_animation.md)
+- [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](../../ICLR2026/video_generation/javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
+- [\[CVPR 2026\] VABench: A Comprehensive Benchmark for Audio-Video Generation](vabench_a_comprehensive_benchmark_for_audio-video_generation.md)
+- [\[CVPR 2026\] Cross-Subject EEG-to-Video Reconstruction and Beyond](cross-subject_eeg-to-video_reconstruction_and_beyond.md)
 
 </div>
 

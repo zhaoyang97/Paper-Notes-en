@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] This paper points out that current Text-to-SQL evaluation, which relies on "comparing execution results on a single test database," is overly optimistic. It proposes SpotIt, which uses SMT-based bounded equivalence checking to actively search for a database that can distinguish the generated SQL from the gold SQL. On t
+  [ICLR2026][Code Intelligence][Text-to-SQL evaluation] This paper points out that current Text-to-SQL evaluation, which relies on "comparing execution results on a single test database," is overly optimistic. It proposes SpotIt, which uses SMT-based bounded equivalence checking to actively search for a database that can distinguish the generated SQL from the gold SQL. On the BIRD benchmark, it reduced the accuracy of ten SOTA methods by 9.8%–13.5% and discovered that "mismatch…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Text-to-SQL evaluation"
+  - "Bounded equivalence checking"
+  - "SMT encoding"
+  - "Counterexample database"
+  - "BIRD benchmark"
 date: 2026-05-08
-content_hash: d60340b0da45df83
+content_hash: 0c8a621cd3e6bada
 ---
+
 # SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification
 
 **Conference**: ICLR2026  

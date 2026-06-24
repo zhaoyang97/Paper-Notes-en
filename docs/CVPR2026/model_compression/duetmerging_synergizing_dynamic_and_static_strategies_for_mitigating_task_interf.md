@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DuetMerging: Synergizing Dynamic and Static Strategies for Mitigating Task Interference in Model Merging
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] DuetMerging stacks task vectors from multiple expert models into a 3D tensor and applies Tucker decomposition to derive a "shared core tensor"-driven dynamic expert pool for suppressing task conflicts. It further employs neuron activation-guided sparsification to "surgically" salvage task-specific knowledge from decomp
+  [CVPR 2026][Model Compression][Model Merging] DuetMerging stacks task vectors from multiple expert models into a 3D tensor and applies Tucker decomposition to derive a "shared core tensor"-driven dynamic expert pool for suppressing task conflicts. It further employs neuron activation-guided sparsification to "surgically" salvage task-specific knowledge from decomposition residuals as a static correction. This "dynamic-static duet" achieves SOTA performance on 8 image classifi…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "Task Interference"
+  - "Tucker Decomposition"
+  - "Neuron Sparsification"
+  - "MoE Routing"
 date: 2026-05-08
-content_hash: 4664cd65d28ac761
+content_hash: 18a961b0c7053d12
 ---
+
 # DuetMerging: Synergizing Dynamic and Static Strategies for Mitigating Task Interference in Model Merging
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Plug-and-play capability of Neuron Sparsification (Table 4):
 ## Related Papers
 
 - [\[CVPR 2025\] Task Singular Vectors: Reducing Task Interference in Model Merging](../../CVPR2025/model_compression/task_singular_vectors_reducing_task_interference_in_model_merging.md)
-- [\[ICML 2026\] Decomposing the Basic Abilities of Large Language Models: Mitigating Cross-Task Interference in Multi-Task Instruct-Tuning](../../ICML2026/model_compression/decomposing_the_basic_abilities_of_large_language_models_mitigating_cross-task_i.md)
-- [\[CVPR 2026\] Model Merging on Loss Landscape: A Geometry Perspective](model_merging_on_loss_landscape_a_geometry_perspective.md)
+- [\[ACL 2025\] Unraveling LoRA Interference: Orthogonal Subspaces for Robust Model Merging](../../ACL2025/model_compression/osrm_lora_merging_orthogonal.md)
 - [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](bridging_domains_through_subspace-aware_model_merging.md)
-- [\[CVPR 2026\] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)
+- [\[ICML 2026\] Decomposing the Basic Abilities of Large Language Models: Mitigating Cross-Task Interference in Multi-Task Instruct-Tuning](../../ICML2026/model_compression/decomposing_the_basic_abilities_of_large_language_models_mitigating_cross-task_i.md)
+- [\[CVPR 2026\] Understanding and Enforcing Weight Disentanglement in Task Arithmetic](understanding_and_enforcing_weight_disentanglement_in_task_arithmetic.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control
 description: >-
-  [CVPR 2026][Image Generation][3D Generation] WorldForge proposes a completely training-free inference-time guidance framework that transforms pre-trained video diffusion models into 3D/4D generation tools with precise camera trajectory control through three synergistic components: Intra-step Recursive Refinement (IRR), Flow-guided Latent Fusion (FLF), and Dual-pa
+  [CVPR 2026][Image Generation][Video Diffusion Models] WorldForge proposes a completely training-free inference-time guidance framework that transforms pre-trained video diffusion models into 3D/4D generation tools with precise camera trajectory control through three synergistic components: Intra-step Recursive Refinement (IRR), Flow-guided Latent Fusion (FLF), and Dual-path Self-correcting Guidance (DSG), surpassing both training-based and inference-based baselines in traject…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - 3D Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Diffusion Models"
+  - "3D Generation"
+  - "4D Generation"
+  - "Camera Control"
+  - "Training-free Inference"
 date: 2026-05-08
-content_hash: e9048e4a83aaf779
+content_hash: 4d8d70d6db2d6f09
 ---
+
 # Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control
 
 **Conference**: CVPR 2026  
@@ -156,11 +161,11 @@ The framework utilizes the Wan2.1 I2V-14B model with 50-step UniPC sampling. IRR
 
 ## Related Papers
 
+- [\[CVPR 2026\] Camera Control for Text-to-Image Generation via Learning Viewpoint Tokens](camera_control_for_text-to-image_generation_via_learning_viewpoint_tokens.md)
+- [\[CVPR 2026\] ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](projflow_projection_sampling_with_flow_matching_for_zero-shot_exact_spatial_moti.md)
 - [\[CVPR 2025\] PreciseCam: Precise Camera Control for Text-to-Image Generation](../../CVPR2025/image_generation/precisecam_precise_camera_control_for_text-to-image_generation.md)
-- [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](dip_taming_diffusion_models_in_pixel_space.md)
-- [\[CVPR 2026\] Adapter Shield: A Unified Framework with Built-in Authentication for Preventing Unauthorized Zero-Shot Image-to-Image Generation](adapter_shield_a_unified_framework_with_built-in_authentication_for_preventing_u.md)
-- [\[CVPR 2026\] SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation](seethrough3d_occlusion_aware_3d_control_in_text-to-image_generation.md)
-- [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](../../ICCV2025/image_generation/anyportal_zero-shot_consistent_video_background_replacement.md)
+- [\[CVPR 2026\] DreamingComics: A Story Visualization Pipeline via Subject and Layout Customized Generation using Video Models](dreamingcomics_a_story_visualization_pipeline_via_subject_and_layout_customized_.md)
+- [\[CVPR 2026\] Spk2VidNet: A Hierarchical Recurrent Architecture for High-Fidelity Video Reconstruction from Long Spike-Camera Streams](spk2vidnet_a_hierarchical_recurrent_architecture_for_high-fidelity_video_reconstr.md)
 
 </div>
 

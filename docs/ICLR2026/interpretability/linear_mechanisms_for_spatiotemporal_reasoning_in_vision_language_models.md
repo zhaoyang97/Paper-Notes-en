@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper discovers that when VLMs perform spatial reasoning, they bind the location information of objects from the visual input as **linear "spatial ID" vectors** to the text activations of the corresponding object words. Reasoning is subsequently completed in the language space. Causal interventions prove that modi
+  [ICLR 2026][Interpretability][Mechanistic Interpretability] This paper discovers that when VLMs perform spatial reasoning, they bind the location information of objects from the visual input as **linear "spatial ID" vectors** to the text activations of the corresponding object words. Reasoning is subsequently completed in the language space. Causal interventions prove that modifying only this spatial ID can systematically flip the model's judgment of "left/right" and "far/nea…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Spatial Reasoning"
+  - "Linear Representation Hypothesis"
+  - "Causal Intervention"
+  - "Activation Manipulation"
+  - "Video Temporal Reasoning"
 date: 2026-05-08
-content_hash: ab8e299e4984742a
+content_hash: b8c1da4f22da9017
 ---
+
 # Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models
 
 **Conference**: ICLR 2026  

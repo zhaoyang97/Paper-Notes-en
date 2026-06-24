@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Multimodal Disease Progression Modeling via Spatiotemporal Disentanglement and Multiscale Alignment
 description: >-
-  [NeurIPS 2025][Multimodal VLM][disease progression modeling] This paper proposes DiPro, a framework that addresses redundancy in longitudinal chest X-ray sequences and cross-modal temporal misalignment through region-awa…
+  [NeurIPS 2025 Spotlight][Multimodal VLM][disease progression modeling] This paper proposes DiPro, a framework that addresses redundancy in longitudinal chest X-ray sequences and cross-modal temporal misalignment through region-aware spatiotemporal disentanglement (separating static anatomical from dynamic pathological features) and multiscale alignment (local–global fusion of CXR and EHR), achieving state-of-the-art performance on disease progression recognition and ICU predi…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Multimodal VLM"
   - "disease progression modeling"
   - "multimodal fusion"
@@ -12,7 +12,7 @@ tags:
   - "longitudinal CXR"
   - "electronic health records"
 date: 2026-05-08
-content_hash: 9c990b4efe83ba1c
+content_hash: a1a17290bd348685
 ---
 
 # Multimodal Disease Progression Modeling via Spatiotemporal Disentanglement and Multiscale Alignment
@@ -138,10 +138,10 @@ ICU prediction tasks (longitudinal CXR + EHR setting):
 ## Related Papers
 
 - [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
-- [\[NeurIPS 2025\] Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment](aligning_by_misaligning_boundaryaware_curriculum_learning_fo.md)
+- [\[ECCV 2024\] A Multimodal Benchmark Dataset and Model for Crop Disease Diagnosis](../../ECCV2024/multimodal_vlm/a_multimodal_benchmark_dataset_and_model_for_crop_disease_di.md)
+- [\[ICML 2025\] Universal Retrieval for Multimodal Trajectory Modeling](../../ICML2025/multimodal_vlm/universal_retrieval_for_multimodal_trajectory_modeling.md)
 - [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](../../ICLR2026/multimodal_vlm/unified_vision-language_modeling_via_concept_space_alignment.md)
-- [\[NeurIPS 2025\] STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You](with_limited_data_for_multimodal_alignment_let_the_structure_guide_you.md)
-- [\[NeurIPS 2025\] DanmakuTPPBench: A Multi-modal Benchmark for Temporal Point Process Modeling and Understanding](danmakutppbench_a_multimodal_benchmark_for_temporal_point_pr.md)
+- [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](../../AAAI2026/multimodal_vlm/himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
 
 </div>
 

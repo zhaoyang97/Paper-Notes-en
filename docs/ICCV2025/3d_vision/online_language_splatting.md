@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Online Language Splatting
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] The first framework to achieve **online, near-real-time, open-vocabulary** language mapping within a 3DGS-SLAM system. Through three innovations—high-resolution CLIP embeddin…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] The first framework to achieve **online, near-real-time, open-vocabulary** language mapping within a 3DGS-SLAM system. Through three innovations—high-resolution CLIP embedding, two-stage online autoencoder compression, and decoupled color-language optimization—the method surpasses offline state-of-the-art in accuracy while achieving 40×–200× efficiency gains.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "CLIP"
   - "Real-Time Semantic Mapping"
 date: 2026-05-08
-content_hash: c6572d1bff407134
+content_hash: 3a0f8fee46acfb81
 ---
 
 # Online Language Splatting
@@ -191,7 +191,7 @@ Decoupled optimization substantially improves rendering quality (+4.66 dB PSNR) 
 - [\[ICCV 2025\] AutoOcc: Automatic Open-Ended Semantic Occupancy Annotation via Vision-Language Guided Gaussian Splatting](autoocc_automatic_openended_semantic_occupancy_annotation_vi.md)
 - [\[CVPR 2026\] ReLaGS: Relational Language Gaussian Splatting](../../CVPR2026/3d_vision/relags_relational_language_gaussian_splatting.md)
 - [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](../../CVPR2026/3d_vision/onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
+- [\[ICML 2025\] LaGa: Tackling View-Dependent Semantics in 3D Language Gaussian Splatting](../../ICML2025/3d_vision/tackling_view-dependent_semantics_in_3d_language_gaussian_splatting.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CellDuality: Unlocking Biological Reasoning in LLMs with Self-Supervised RLVR
 description: >-
-  [ICLR 2026][Computational Biology][RLVR] CellDuality organizes four types of single-cell biological reasoning tasks into a unified framework and utilizes "complementary task duality"—where the model forward-predicts a biological outcome and then reversely reconstructs the original input conditions from that outcome, using reconstruction fidelity as an intrins
+  [ICLR2026][Computational Biology][Single-cell Reasoning] CellDuality organizes four types of single-cell biological reasoning tasks into a unified framework and utilizes "complementary task duality"—where the model forward-predicts a biological outcome and then reversely reconstructs the original input conditions from that outcome, using reconstruction fidelity as an intrinsic reward—to perform RLVR alignment without any ground-truth labels. This enables a 3B Llama model to a…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - RLVR
-  - GRPO
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Single-cell Reasoning"
+  - "RLVR"
+  - "Task Duality"
+  - "Self-Supervised Reward"
+  - "GRPO"
 date: 2026-05-08
-content_hash: cd971d0442438c7c
+content_hash: 84dd58d0f796ab98
 ---
+
 # CellDuality: Unlocking Biological Reasoning in LLMs with Self-Supervised RLVR
 
 **Conference**: ICLR2026  

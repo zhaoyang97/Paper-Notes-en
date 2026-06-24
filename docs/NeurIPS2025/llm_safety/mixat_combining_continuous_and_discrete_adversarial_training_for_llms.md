@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MixAT: Combining Continuous and Discrete Adversarial Training for LLMs
 description: >-
-  [NeurIPS 2025][LLM Safety][Adversarial Training] This paper proposes MixAT, a method that combines discrete adversarial attacks (PAP-based rewriting) with continuous embedding-space perturbations for LLM adversarial trai…
+  [NeurIPS 2025][LLM Safety][Adversarial Training] This paper proposes MixAT, a method that combines discrete adversarial attacks (PAP-based rewriting) with continuous embedding-space perturbations for LLM adversarial training. MixAT achieves robustness against diverse attacks (reducing ALO-ASR from 50%+ to below 20%) while preserving utility, at a training cost comparable to purely continuous methods.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -11,7 +11,7 @@ tags:
   - "Jailbreak Attacks"
   - "Continuous Perturbation"
 date: 2026-05-08
-content_hash: ee697207ce0c1427
+content_hash: 12aba32555f93d5f
 ---
 
 # MixAT: Combining Continuous and Discrete Adversarial Training for LLMs
@@ -127,11 +127,11 @@ where $\hat{\mathbf{x}}$ denotes adversarial input, $\hat{\mathbf{y}}$ denotes h
 
 ## Related Papers
 
+- [\[ICLR 2026\] Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory](../../ICLR2026/llm_safety/understanding_and_improving_continuous_llm_adversarial_training_via_in-context_l.md)
 - [\[NeurIPS 2025\] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks](on_the_robustness_of_verbal_confidence_of_llms_in_adversarial_attacks.md)
-- [\[NeurIPS 2025\] Bits Leaked per Query: Information-Theoretic Bounds on Adversarial Attacks Against LLMs](bits_leaked_per_query_information-theoretic_bounds_on_adversarial_attacks_agains.md)
 - [\[NeurIPS 2025\] ToxicTextCLIP: Text-Based Poisoning and Backdoor Attacks on CLIP Pre-training](toxictextclip_text-based_poisoning_and_backdoor_attacks_on_clip_pre-training.md)
-- [\[NeurIPS 2025\] Self-Refining Language Model Anonymizers via Adversarial Distillation](self-refining_language_model_anonymizers_via_adversarial_distillation.md)
-- [\[NeurIPS 2025\] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text](adversarial_paraphrasing_a_universal_attack_for_humanizing_ai-generated_text.md)
+- [\[ACL 2025\] TIP of the Iceberg: Task-in-Prompt Adversarial Attacks on LLMs](../../ACL2025/llm_safety/tip_iceberg_adversarial_attacks.md)
+- [\[ACL 2025\] CAVGAN: Unifying Jailbreak and Defense of LLMs via Generative Adversarial Attacks](../../ACL2025/llm_safety/cavgan_unifying_jailbreak_and_defense_of_llms_via_generative_adversarial_attacks.md)
 
 </div>
 

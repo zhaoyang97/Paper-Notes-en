@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Voting Protocols as Coordination Mechanisms for Role-Constrained Multi-Agent Tutoring Systems
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] The paper situates four "tutoring agents" with non-overlapping responsibilities (Scaffolding/Correction/Encouragement/Metacognition) within the same tutoring turn, allowing them to propose, peer-review, and revise responses before using four distinct voting protocols (Plurality / Borda / Cumulative / Approval) to conve
+  [ICML2026][Multi-Agent][Voting Protocols] The paper situates four "tutoring agents" with non-overlapping responsibilities (Scaffolding/Correction/Encouragement/Metacognition) within the same tutoring turn, allowing them to propose, peer-review, and revise responses before using four distinct voting protocols (Plurality / Borda / Cumulative / Approval) to converge disagreements into a final response. Rather than simply proving "voting makes tutoring better…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML2026"
+  - "Multi-Agent"
+  - "Voting Protocols"
+  - "Multi-agent Coordination"
+  - "Role Constraints"
+  - "Intelligent Tutoring Systems"
+  - "Cooperative AI"
 date: 2026-05-08
-content_hash: c5a8b1cab5f1664f
+content_hash: b701092c5a090015
 ---
+
 # Voting Protocols as Coordination Mechanisms for Role-Constrained Multi-Agent Tutoring Systems
 
 **Conference**: ICML2026  
@@ -134,15 +140,14 @@ Interpretation: Cumulative voting is the most stable ($\Delta_{\text{vote}}=0.08
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Beyond Majority Voting: LLM Aggregation by Leveraging Higher-Order Information](beyond_majority_voting_llm_aggregation_by_leveraging_higher-order_information.md)
+- [\[ACL 2025\] Voting or Consensus? Decision-Making in Multi-Agent Debate](../../ACL2025/multi_agent/voting_or_consensus_decision-making_in_multi-agent_debate.md)
+- [\[ICLR 2026\] Multi-agent Coordination via Flow Matching](../../ICLR2026/multi_agent/multi-agent_coordination_via_flow_matching.md)
 - [\[AAAI 2026\] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring](../../AAAI2026/multi_agent/hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia.md)
 - [\[ACL 2026\] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection](../../ACL2026/multi_agent/debating_the_unspoken_role-anchored_multi-agent_reasoning_for_half-truth_detecti.md)
-- [\[ACL 2026\] A Multi-Agent Framework for Feature-Constrained Difficulty Control in Reading Comprehension Item Generation](../../ACL2026/multi_agent/a_multi-agent_framework_for_feature-constrained_difficulty_control_in_reading_co.md)
-- [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](../../ACL2026/multi_agent/silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] To address the issues of slow training and uniform treatment of all spatio-temporal regions in skeleton Masked Autoencoders (MAE), AMR utilizes a "decoupled cross-attention decoder" to achieve significant acceleration by "predicting fewer and larger patches." It then employs "motion energy-guided focal reconstruction"
+  [CVPR 2026][Video Understanding][Skeleton-based action recognition] To address the issues of slow training and uniform treatment of all spatio-temporal regions in skeleton Masked Autoencoders (MAE), AMR utilizes a "decoupled cross-attention decoder" to achieve significant acceleration by "predicting fewer and larger patches." It then employs "motion energy-guided focal reconstruction" to concentrate the reconstruction focus of large patches on high-motion regions…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Skeleton-based action recognition"
+  - "Masked reconstruction"
+  - "Self-supervised pre-training"
+  - "Cross-attention decoder"
+  - "Motion energy guidance"
 date: 2026-05-08
-content_hash: 2d627b4b5f17bebc
+content_hash: 6fc883436fc6f5b1
 ---
+
 # Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition
 
 **Conference**: CVPR 2026  
@@ -144,10 +150,20 @@ Decoder design ablation (Table 6): MCA alone yields 87.4/81.1. Adding self-atten
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation](self-paced_and_self-corrective_masked_prediction_for_movie_trailer_generation.md)
+- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](../../ICCV2025/video_understanding/adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
+- [\[CVPR 2026\] Boosting Self-Supervised Tracking with Contextual Prompts and Noise Learning](boosting_self-supervised_tracking_with_contextual_prompts_and_noise_learning.md)
+- [\[CVPR 2026\] Hierarchical Action Learning for Weakly-Supervised Action Segmentation](hierarchical_action_learning_for_weakly-supervised_action_segmentation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation](self-paced_and_self-corrective_masked_prediction_for_movie_trailer_generation.md)

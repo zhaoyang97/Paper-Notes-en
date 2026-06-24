@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation
 description: >-
-  [AAAI 2026][Graph Learning][Logical Expressiveness] PN-GNN proposes aggregating neighbor node embeddings along reasoning paths on top of conditional message passing…
+  [AAAI 2026][Graph Learning][Logical Expressiveness] PN-GNN proposes aggregating neighbor node embeddings along reasoning paths on top of conditional message passing, enhancing the logical rule expressiveness of GNNs (strictly beyond C-GNN) in a plug-and-play manner, while avoiding the generalization degradation caused by the labeling trick. The method achieves improvements on both synthetic datasets and real-world knowledge graph reasoning tasks.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Conditional GNN"
   - "Labeling Trick"
 date: 2026-05-08
-content_hash: 8ae1b7fd42b54134
+content_hash: 47d518c5a83d841e
 ---
 
 # Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation
@@ -168,7 +168,7 @@ PN-GNN improves Hits@1 on U by 15.8% over NBFNet, and substantially outperforms 
 - [\[AAAI 2026\] Logical Characterizations of GNNs with Mean Aggregation](logical_characterizations_of_gnns_with_mean_aggregation.md)
 - [\[ICML 2026\] Fixed Aggregation Features Can Rival GNNs](../../ICML2026/graph_learning/fixed_aggregation_features_can_rival_gnns.md)
 - [\[AAAI 2026\] MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training](mug_meta-path-aware_universal_heterogeneous_graph_pre-training.md)
-- [\[AAAI 2026\] Adaptive Initial Residual Connections for GNNs with Theoretical Guarantees](adaptive_initial_residual_connections_for_gnns_with_theoretical_guarantees.md)
+- [\[AAAI 2026\] RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA](rfkg-cot_relation-driven_adaptive_hop-count_selection_and_few-shot_path_guidance.md)
 - [\[NeurIPS 2025\] Logical Expressiveness of Graph Neural Networks with Hierarchical Node Individualization](../../NeurIPS2025/graph_learning/logical_expressiveness_of_graph_neural_networks_with_hierarchical_node_individua.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ParticleGS: Learning Neural Gaussian Particle Dynamics from Videos for Prior-free Physical Motion Extrapolation
 description: >-
-  [CVPR 2026][3D Vision][Neural ODE] ParticleGS treats each 3D Gaussian as a physics-driven "particle," utilizing a set of shared latent dynamic fields and Neural ODEs to learn continuous-time evolution. This enables physically consistent motion extrapolation beyond the observed time window, achieving over 5 dB higher extrapolation PSNR compared to time-c
+  [CVPR 2026][3D Vision][Dynamic 3DGS] ParticleGS treats each 3D Gaussian as a physics-driven "particle," utilizing a set of shared latent dynamic fields and Neural ODEs to learn continuous-time evolution. This enables physically consistent motion extrapolation beyond the observed time window, achieving over 5 dB higher extrapolation PSNR compared to time-conditioned methods and approximately 2.5 dB higher than velocity field methods across four dynamic scene datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Neural ODE
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic 3DGS"
+  - "Motion Extrapolation"
+  - "Neural ODE"
+  - "Physical Modeling"
+  - "Particle Dynamics"
 date: 2026-05-08
-content_hash: 18f21e1ea8c233d0
+content_hash: 982570d572325b4a
 ---
+
 # ParticleGS: Learning Neural Gaussian Particle Dynamics from Videos for Prior-free Physical Motion Extrapolation
 
 **Conference**: CVPR 2026  
@@ -154,9 +159,9 @@ Component-wise ablation on Dynamic Object / Indoor (extrapolation PSNR, full mod
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
 - [\[CVPR 2026\] Node-RF: Learning Generalized Continuous Space-Time Scene Dynamics with Neural ODE-based NeRFs](node-rf_learning_generalized_continuous_space-time_scene_dynamics_with_neural_od.md)
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
+- [\[CVPR 2026\] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)
 - [\[CVPR 2026\] P2GS: Physical Prior-guided Gaussian Splatting for Photometrically Consistent Urban Reconstruction](p2gs_physical_prior-guided_gaussian_splatting_for_photometrically_consistent_urb.md)
 - [\[ICCV 2025\] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos](../../ICCV2025/3d_vision/trace_learning_3d_gaussian_physical_dynamics_from_multi-view_videos.md)
 

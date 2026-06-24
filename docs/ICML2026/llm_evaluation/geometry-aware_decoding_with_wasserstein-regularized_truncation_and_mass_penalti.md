@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Top-W: Geometry-Aware Decoding with Wasserstein-Regularized Truncation and Mass Penalties for LLMs
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] Top-W formulates next-token truncation as a minimization problem of "Wasserstein-Entropy-Mass" that incorporates token embedding geometry. It theoretically proves that the optimal solution is either a single token or a prefix sorted by $f(i)+\lambda\log p_i$. The engineering implementation entails an $O(n\log n)$ scan.
+  [ICML 2026][LLM Evaluation][Truncated Decoding] Top-W formulates next-token truncation as a minimization problem of "Wasserstein-Entropy-Mass" that incorporates token embedding geometry. It theoretically proves that the optimal solution is either a single token or a prefix sorted by $f(i)+\lambda\log p_i$. The engineering implementation entails an $O(n\log n)$ scan. It outperforms baselines in the majority of 15 (T, model) combinations across GSM8K, GPQA, AlpacaEval…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Truncated Decoding"
+  - "Wasserstein Distance"
+  - "Token Embedding Geometry"
+  - "Entropy Constraint"
+  - "High-Temperature Robustness"
 date: 2026-05-08
-content_hash: efe155c5d64688bd
+content_hash: 9c86ab6e4300abd0
 ---
+
 # Top-W: Geometry-Aware Decoding with Wasserstein-Regularized Truncation and Mass Penalties for LLMs
 
 **Conference**: ICML 2026  
@@ -132,10 +138,10 @@ On GSM8K at $T=2.0$: Top-W scores 75.13% / 73.09% / 84.63%, while Top-$p$ drops 
 ## Related Papers
 
 - [\[ICML 2026\] Spherical Steering: Geometry-Aware Activation Rotation for Language Models](spherical_steering_geometry-aware_activation_rotation_for_language_models.md)
+- [\[ICLR 2026\] ParallelBench: Understanding the Trade-offs of Parallel Decoding in Diffusion LLMs](../../ICLR2026/llm_evaluation/parallelbench_understanding_the_trade-offs_of_parallel_decoding_in_diffusion_llm.md)
 - [\[ACL 2026\] Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations](../../ACL2026/llm_evaluation/pressure-testing_deception_probes_in_llms_scaling_robustness_and_the_geometry_of.md)
-- [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](../../ACL2026/llm_evaluation/contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
-- [\[ICLR 2026\] Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework](../../ICLR2026/llm_evaluation/unpacking_human_preference_for_llms_demographically_aware_evaluation_of_long-fo.md)
 - [\[ECCV 2024\] Gradient-Regularized Out-of-Distribution Detection](../../ECCV2024/llm_evaluation/gradient-regularized_out-of-distribution_detection.md)
+- [\[ICML 2026\] REAL: Integrating Regression-Aware Rewards into RL, Teaching LLM-as-a-Judge that "Even a One-Point Difference Matters"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
 
 </div>
 

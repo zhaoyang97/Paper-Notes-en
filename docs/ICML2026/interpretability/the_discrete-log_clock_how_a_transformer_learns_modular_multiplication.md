@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Discrete-Log Clock: How a Transformer Learns Modular Multiplication
 description: >-
-  [ICML 2026][Interpretability][Paper Note] Previous work found that when a Transformer learns modular multiplication $a\cdot b\bmod p$, the Fourier spectrum of its embeddings is "dense" (requiring all frequencies), appearing much more complex and less interpretable than modular addition. This paper demonstrates that **this is merely an artifact of choosing the
+  [ICML 2026 (Mechanistic Interpretability Workshop)][Interpretability][Modular Multiplication] Previous work found that when a Transformer learns modular multiplication $a\cdot b\bmod p$, the Fourier spectrum of its embeddings is "dense" (requiring all frequencies), appearing much more complex and less interpretable than modular addition. This paper demonstrates that **this is merely an artifact of choosing the wrong analysis basis**. The natural Fourier basis for modular mult…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026 (Mechanistic Interpretability Workshop)"
+  - "Interpretability"
+  - "Modular Multiplication"
+  - "Discrete Logarithm"
+  - "Multiplicative Character Transform"
+  - "Fourier Basis"
+  - "Clock Algorithm"
 date: 2026-05-08
-content_hash: 245a6c8976185494
+content_hash: 5e457c5518e1fa4f
 ---
+
 # The Discrete-Log Clock: How a Transformer Learns Modular Multiplication
 
 **Conference**: ICML 2026 (Mechanistic Interpretability Workshop)  
@@ -140,11 +146,11 @@ The model is a 1-layer decoder-only Transformer ($d_{\text{model}}=128$, 4 atten
 
 ## Related Papers
 
-- [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
-- [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](query_circuits_explaining_how_language_models_answer_user_prompts.md)
-- [\[ICML 2026\] Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path](circuit_fingerprints_how_answer_tokens_encode_their_geometrical_path.md)
-- [\[ICML 2026\] Position: Let's Develop Data Probes to Fundamentally Understand How Data Affects LLM Performance](position_lets_develop_data_probes_to_fundamentally_understand_how_data_affects_l.md)
+- [\[ICLR 2026\] On The Geometry and Topology of Representations: the Manifolds of Modular Addition](../../ICLR2026/interpretability/on_the_geometry_and_topology_of_representations_the_manifolds_of_modular_additio.md)
+- [\[ICLR 2026\] Emergent Discrete Controller Modules for Symbolic Planning in Transformers](../../ICLR2026/interpretability/emergent_discrete_controller_modules_for_symbolic_planning_in_transformers.md)
+- [\[ICLR 2026\] Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization](../../ICLR2026/interpretability/mixture_of_cognitive_reasoners_modular_reasoning_with_brain-like_specialization.md)
 - [\[ICML 2026\] How Language Models Process Negation](how_language_models_process_negation.md)
+- [\[ICLR 2026\] Features Emerge as Discrete States: The First Application of SAEs to 3D Representations](../../ICLR2026/interpretability/features_emerge_as_discrete_states_the_first_application_of_saes_to_3d_represent.md)
 
 </div>
 

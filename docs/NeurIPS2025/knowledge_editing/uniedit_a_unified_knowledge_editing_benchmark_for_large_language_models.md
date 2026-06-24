@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks Track)][Knowledge Editing][LLM benchmark] This paper presents UniEdit — the first unified LLM knowledge editing benchmark built upon an open-domain knowledge graph (Wikidata)…
+  [NeurIPS 2025 (Datasets & Benchmarks Track)][Knowledge Editing][LLM benchmark] This paper presents UniEdit — the first unified LLM knowledge editing benchmark built upon an open-domain knowledge graph (Wikidata), covering 311K samples across 25 domains in 5 major categories. By introducing the Neighborhood Multi-hop Chain Sampling (NMCS) algorithm, UniEdit integrates diverse generalization and locality evaluation criteria into a single framework…
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks Track)"
   - "Knowledge Editing"
@@ -11,7 +11,7 @@ tags:
   - "knowledge graph"
   - "multi-hop reasoning"
 date: 2026-05-08
-content_hash: 5c8466f5ea7f7c03
+content_hash: 2b15554718b3bb21
 ---
 
 # UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models
@@ -123,11 +123,11 @@ UniEdit contains a total of 311K samples, each comprising an edit sample, genera
 
 ## Related Papers
 
+- [\[ACL 2025\] Neuron-Level Sequential Editing for Large Language Models](../../ACL2025/knowledge_editing/neuron-level_sequential_editing_for_large_language_models.md)
+- [\[ACL 2025\] Structure-aware Domain Knowledge Injection for Large Language Models](../../ACL2025/knowledge_editing/structure-aware_domain_knowledge_injection_for_large_language_models.md)
 - [\[NeurIPS 2025\] KScope: A Framework for Characterizing the Knowledge Status of Language Models](kscope_a_framework_for_characterizing_the_knowledge_status_of_language_models.md)
+- [\[ACL 2025\] Context-Robust Knowledge Editing for Language Models](../../ACL2025/knowledge_editing/context-robust_knowledge_editing_for_language_models.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](../../ICML2026/knowledge_editing/revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
-- [\[ACL 2026\] Aligning Language Models with Real-time Knowledge Editing](../../ACL2026/knowledge_editing/aligning_language_models_with_real-time_knowledge_editing.md)
-- [\[ACL 2026\] The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models](../../ACL2026/knowledge_editing/the_model_agreed_but_didn39t_learn_diagnosing_surface_compliance_in_large_langua.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Shape of Adversarial Influence: Characterizing LLM Latent Spaces with Persistent Homology
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper utilizes persistent homology (PH) to transform LLM activation point clouds into cross-model comparable topological fingerprints. It discovers that indirect prompt injection and backdoor fine-tuning—two fundamentally different attack mechanisms—leave the same "topological compression" signature in the latent
+  [ICLR 2026][Interpretability][Persistent Homology] This paper utilizes persistent homology (PH) to transform LLM activation point clouds into cross-model comparable topological fingerprints. It discovers that indirect prompt injection and backdoor fine-tuning—two fundamentally different attack mechanisms—leave the same "topological compression" signature in the latent space: the representation collapses from "small-and-many, compact-and-diverse" to "large-and-few…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Persistent Homology"
+  - "Topological Data Analysis"
+  - "Adversarial Attacks"
+  - "Representation Geometry"
+  - "Prompt Injection"
 date: 2026-05-08
-content_hash: 136b10ad512c5747
+content_hash: 0a9012e5a7479427
 ---
+
 # The Shape of Adversarial Influence: Characterizing LLM Latent Spaces with Persistent Homology
 
 **Conference**: ICLR 2026  
@@ -144,8 +150,8 @@ The signature (0-bar death ↑, 1-bar count ↓, loop lifetime ↑) is largely c
 - [\[ICLR 2026\] Emotions Where Art Thou: Understanding and Characterizing the Emotional Latent Space of Large Language Models](emotions_where_art_thou_understanding_and_characterizing_the_emotional_latent_sp.md)
 - [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](influence_dynamics_and_stagewise_data_attribution.md)
 - [\[ICLR 2026\] Internal Planning in Language Models: Characterizing Horizon and Branch Awareness](internal_planning_in_language_models_characterizing_horizon_and_branch_awareness.md)
-- [\[ICLR 2026\] From Data Statistics to Feature Geometry: How Correlations Shape Superposition](from_data_statistics_to_feature_geometry_how_correlations_shape_superposition.md)
 - [\[ICLR 2026\] Latent Thinking Optimization: Your Latent Reasoning Language Model Secretly Encodes Reward Signals in Its Latent Thoughts](latent_thinking_optimization_your_latent_reasoning_language_model_secretly_encod.md)
+- [\[ICLR 2026\] From Data Statistics to Feature Geometry: How Correlations Shape Superposition](from_data_statistics_to_feature_geometry_how_correlations_shape_superposition.md)
 
 </div>
 

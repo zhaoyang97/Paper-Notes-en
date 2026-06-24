@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] OSIRIS: Bridging Analog Circuit Design and Machine Learning with Scalable Dataset Generation
 description: >-
-  [ICLR 2026][Others][Reinforcement Learning] OSIRIS is a scalable dataset generation pipeline for analog integrated circuit **back-end layouts**. By systematically enumerating transistor finger arrangements and component position perturbations, it automatically produces a large-scale dataset of DRC-clean, LVS-verified layouts with parasitic-aware performance anno
+  [ICLR 2026][Analog circuits] OSIRIS is a scalable dataset generation pipeline for analog integrated circuit **back-end layouts**. By systematically enumerating transistor finger arrangements and component position perturbations, it automatically produces a large-scale dataset of DRC-clean, LVS-verified layouts with parasitic-aware performance annotations. It releases a dataset of 87,100 layout variants alongside a reinforcement learning-based layout optimization baseline.
 tags:
-  - ICLR 2026
-  - Others
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Analog circuits"
+  - "Layout automation"
+  - "Parasitic effects"
+  - "Dataset generation"
+  - "Reinforcement learning"
 date: 2026-05-08
-content_hash: 60d0ac8bcd6d8e69
+content_hash: 77aa8da1d10bfbd3
 ---
+
 # OSIRIS: Bridging Analog Circuit Design and Machine Learning with Scalable Dataset Generation
 
 **Conference**: ICLR 2026  
@@ -165,10 +169,10 @@ The authors use ~10,000 capacitor layout samples from the OSIRIS dataset to fine
 ## Related Papers
 
 - [\[ICLR 2026\] CircuitNet 3.0: A Multi-Modal Dataset with Task-Oriented Augmentation for AI-Driven Circuit Design](circuitnet_30_a_multi-modal_dataset_with_task-oriented_augmentation_for_ai-drive.md)
+- [\[ICLR 2026\] Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute](scaling_atomistic_protein_binder_design_with_generative_pretraining_and_test-tim.md)
 - [\[ICLR 2026\] An Information-Theoretic Framework For Optimizing Experimental Design To Distinguish Probabilistic Neural Codes](an_information-theoretic_framework_for_optimizing_experimental_design_to_disting.md)
-- [\[ICLR 2026\] A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction](a_scalable_inter-edge_correlation_modeling_in_copulagnn_for_link_sign_prediction.md)
-- [\[ICLR 2026\] Stable and Scalable Deep Predictive Coding Networks with Meta-Prediction Errors](stable_and_scalable_deep_predictive_coding_networks_with_meta-prediction_errors.md)
 - [\[ICLR 2026\] Oversmoothing, Oversquashing, Heterophily, Long-Range, and More: Demystifying Common Beliefs in Graph Machine Learning](oversmoothing_oversquashing_heterophily_long-range_and_more_demystifying_common_.md)
+- [\[ICLR 2026\] A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction](a_scalable_inter-edge_correlation_modeling_in_copulagnn_for_link_sign_prediction.md)
 
 </div>
 

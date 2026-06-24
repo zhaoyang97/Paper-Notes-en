@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking
 description: >-
-  [ICLR 2026][LLM Reasoning][Latent Guidance] The proposed method allows a large model to handle "cognitive planning" by compressing problem-solving strategies into a few latent guidance vectors. These vectors are then passed to a small model responsible for "linguistic realization" to generate reasoning chains. This approach outfits small models with the thinking
+  [ICLR 2026][Reasoning][Latent Guidance] The proposed method allows a large model to handle "cognitive planning" by compressing problem-solving strategies into a few latent guidance vectors. These vectors are then passed to a small model responsible for "linguistic realization" to generate reasoning chains. This approach outfits small models with the thinking capabilities of large models, pushing the reasoning performance-cost trade-off to a new equilibrium.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Latent Guidance
-  - Cognitive Distillation
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Latent Guidance"
+  - "Cognitive Distillation"
+  - "Decoupled Cognitive Planning"
+  - "Small Model Reasoning"
+  - "Information-Theoretic Training Objectives"
 date: 2026-05-08
-content_hash: 462114cfaf657098
+content_hash: 5177d48a8567f6e8
 ---
+
 # Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking
 
 **Conference**: ICLR 2026  
@@ -124,10 +128,10 @@ Latent Guidance on GSM8K improves accuracy from SFT's 77.3% to 80.5% while nearl
 ## Related Papers
 
 - [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Model](predicting_llm_reasoning_performance_with_small_proxy_model.md)
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
 - [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
 - [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
 - [\[ICLR 2026\] LaDiR: Latent Diffusion Enhances LLMs for Text Reasoning](ladir_latent_diffusion_enhances_llms_for_text_reasoning.md)
-- [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
 
 </div>
 

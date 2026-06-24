@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Devil is in the Spurious Correlations: Boosting Moment Retrieval with Dynamic Learning
 description: >-
-  [ICCV 2025][Object Detection][Moment Retrieval] This paper is the first to identify spurious correlations between text queries and background frames as the fundamental bottleneck in moment retrieval performance. It propo…
+  [ICCV 2025][Object Detection][Moment Retrieval] This paper is the first to identify spurious correlations between text queries and background frames as the fundamental bottleneck in moment retrieval performance. It proposes TD-DETR, a framework that mitigates this issue via two strategies: dynamic context video synthesis and text-dynamics interaction enhancement, achieving state-of-the-art results on QVHighlights and Charades-STA.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Dynamics"
   - "DETR"
 date: 2026-05-08
-content_hash: 756801b877c985c0
+content_hash: 64c550a26442f498
 ---
 
 # The Devil is in the Spurious Correlations: Boosting Moment Retrieval with Dynamic Learning
@@ -155,9 +155,9 @@ where:
 
 - [\[ICCV 2025\] Augmenting Moment Retrieval: Zero-Dependency Two-Stage Learning](augmenting_moment_retrieval_zero-dependency_two-stage_learning.md)
 - [\[CVPR 2026\] Beyond Caption-Based Queries for Video Moment Retrieval](../../CVPR2026/object_detection/beyond_caption-based_queries_for_video_moment_retrieval.md)
-- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](../../CVPR2026/object_detection/paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
+- [\[CVPR 2025\] Boosting Domain Incremental Learning: Selecting the Optimal Parameters Is All You Need](../../CVPR2025/object_detection/boosting_domain_incremental_learning_selecting_the_optimal_parameters_is_all_you.md)
 - [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
-- [\[ICCV 2025\] Sim-DETR: Unlock DETR for Temporal Sentence Grounding](sim-detr_unlock_detr_for_temporal_sentence_grounding.md)
+- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](../../CVPR2026/object_detection/paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
 
 </div>
 

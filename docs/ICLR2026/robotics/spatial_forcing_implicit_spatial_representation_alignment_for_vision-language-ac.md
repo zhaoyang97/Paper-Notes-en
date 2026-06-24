@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] Spatial Forcing utilizes geometric latents from a pre-trained 3D foundation model (VGGT) to supervise the intermediate visual tokens of a VLA. This enables robotic policies to acquire stronger spatial understanding without requiring additional depth maps or point clouds during inference, leading to improved success rat
+  [ICLR2026][Robotics][VLA] Spatial Forcing utilizes geometric latents from a pre-trained 3D foundation model (VGGT) to supervise the intermediate visual tokens of a VLA. This enables robotic policies to acquire stronger spatial understanding without requiring additional depth maps or point clouds during inference, leading to improved success rates, convergence speed, and data efficiency on LIBERO, RoboTwin, and real-robot tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICLR2026"
+  - "Robotics"
+  - "VLA"
+  - "Spatial Awareness"
+  - "Robotic Manipulation"
+  - "Representation Alignment"
+  - "3D Foundation Models"
 date: 2026-05-08
-content_hash: 58d33af9c86f4087
+content_hash: 1a83f54637ae93ee
 ---
+
 # Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model
 
 **Conference**: ICLR2026  
@@ -136,10 +141,20 @@ Layer selection analysis:
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
+- [\[ICLR 2026\] Spatially Guided Training for Vision-Language-Action Model](spatially_guided_training_for_vision-language-action_model.md)
+- [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](../../ICML2026/robotics/spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
+- [\[ICLR 2026\] X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](x-vla_soft-prompted_transformer_as_scalable_cross-embodiment_vision-language-act.md)
+- [\[ICML 2026\] From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model](../../ICML2026/robotics/from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)

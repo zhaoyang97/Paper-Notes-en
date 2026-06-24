@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection
 description: >-
-  [CVPR 2026][Others][coreset selection] FAST reformulates "selecting a small core subset from a large dataset" as a **continuous distribution matching optimization problem under spectral graph constraints**. It uses **Characteristic Function Distance (CFD)** to match all moment information of the original dataset order-by-order in the frequency domain. Topol
+  [CVPR 2026][Model Compression][coreset selection] FAST reformulates "selecting a small core subset from a large dataset" as a **continuous distribution matching optimization problem under spectral graph constraints**. It uses **Characteristic Function Distance (CFD)** to match all moment information of the original dataset order-by-order in the frequency domain. Topological constraints are then applied to pull continuous solutions back to real discrete samples. Without relyin…
 tags:
-  - CVPR 2026
-  - Others
-  - coreset selection
+  - "CVPR 2026"
+  - "Model Compression"
+  - "coreset selection"
+  - "characteristic function distance"
+  - "spectral graph theory"
+  - "frequency-domain distribution matching"
+  - "curriculum sampling"
 date: 2026-05-08
-content_hash: a65896fed09e32d8
+content_hash: 2fe862102af884d8
 ---
+
 # FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection
 
 **Conference**: CVPR 2026  
@@ -158,14 +163,17 @@ Computational efficiency (CIFAR-10, 10% retention) is particularly impressive: F
 
 <div class="related-papers" markdown="1">
 
-- **NCFM**: Dataset Distillation via Factorized Frequency Matching (CVPR 2024 candidate/Related)
-- **NMS**: Non-Monotonic Coreset Sampling on Manifolds (NeurIPS 2023)
-- **DeepCore**: A Comprehensive Library for Coreset Selection in Deep Learning (CVPR 2023)
+## Related Papers
+
+- [\[CVPR 2026\] Phased DMD: Few-step Distribution Matching Distillation via Score Matching within Subintervals](phased_dmd_few-step_distribution_matching_distillation_via_score_matching_within.md)
+- [\[CVPR 2026\] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)
+- [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
+- [\[AAAI 2026\] Explore and Establish Synergistic Effects between Weight Pruning and Coreset Selection](../../AAAI2026/model_compression/explore_and_establish_synergistic_effects_between_weight_pruning_and_coreset_sel.md)
+- [\[CVPR 2026\] FreqSIC: Frequency-aware Stereo Image Compression with Bi-directional Checkerboard Context Model](freqsic_frequency-aware_stereo_image_compression_with_bi-directional_checkerboar.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Target-Agnostic Calibration under Distribution Shift with Frequency-Aware Gradient Rectification](../../ICML2026/others/target-agnostic_calibration_under_distribution_shift_with_frequency-aware_gradie.md)

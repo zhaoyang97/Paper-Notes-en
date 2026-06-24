@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] BiPS shifts the "where to look" visual cues from inference-time tools or latent tokens to the training phase. By employing a pair of KL constraints (pulling toward "evidence-only" charts and pushing away from "evidence-ablated" charts) within the GRPO framework, it shapes the perceptual strategy of the VLM. Training on
+  [CVPR 2026][VLM Reasoning][Visual Language Models] BiPS shifts the "where to look" visual cues from inference-time tools or latent tokens to the training phase. By employing a pair of KL constraints (pulling toward "evidence-only" charts and pushing away from "evidence-ablated" charts) within the GRPO framework, it shapes the perceptual strategy of the VLM. Training on only 13K chart samples, Qwen2.5-VL-7B achieves a 7.3% average improvement across eight benchmarks (rising to…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual Language Models"
+  - "Reinforcement Learning"
+  - "Perceptual Shaping"
+  - "KL Constraint"
+  - "Chart Understanding"
 date: 2026-05-08
-content_hash: 505a5aba436f5f01
+content_hash: 74353ecb001ba486
 ---
+
 # See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning
 
 **Conference**: CVPR 2026  
@@ -158,11 +162,11 @@ Curriculum order and view generation strategy:
 
 ## Related Papers
 
+- [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
 - [\[CVPR 2026\] See Further, Think Deeper: Advancing VLM's Reasoning Ability with Low-level Visual Cues and Reflection](see_further_think_deeper_advancing_vlms_reasoning_ability_with_low-level_visual_.md)
 - [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
-- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](aif_adaptive_information_flow_vlm.md)
-- [\[CVPR 2026\] ROSE: Rotate Your Large Language Model to See](rose_rotate_your_large_language_model_to_see.md)
+- [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
+- [\[NeurIPS 2025\] To See or To Read: User Behavior Reasoning in Multimodal LLMs](../../NeurIPS2025/vlm_reasoning/to_see_or_to_read_user_behavior_reasoning_in_multimodal_llms.md)
 
 </div>
 

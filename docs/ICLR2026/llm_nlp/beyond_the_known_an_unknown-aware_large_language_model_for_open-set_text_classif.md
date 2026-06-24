@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond the Known: An Unknown-Aware Large Language Model for Open-Set Text Classification
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] This paper proposes UnLLM, which reformulates Open-Set Text Classification (OSTC) from "closed-set training + post-hoc OOD detection" into a partition-conditional classification task. By providing LLMs with partial label subsets and explicitly marking samples outside the candidates as "unknown," and employing a three-l
+  [ICLR 2026][LLM (Other)][Open-Set Text Classification] This paper proposes UnLLM, which reformulates Open-Set Text Classification (OSTC) from "closed-set training + post-hoc OOD detection" into a partition-conditional classification task. By providing LLMs with partial label subsets and explicitly marking samples outside the candidates as "unknown," and employing a three-level "representation-probability-inference" optimization, the model consistently outperforms SOTA in K-F1…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Open-Set Text Classification"
+  - "OOD Detection"
+  - "Large Language Models"
+  - "Subset-Conditional Classification"
+  - "Self-Reflective Reasoning"
 date: 2026-05-08
-content_hash: cb4e6eea35d7a978
+content_hash: d5e4c7f757e52592
 ---
+
 # Beyond the Known: An Unknown-Aware Large Language Model for Open-Set Text Classification
 
 **Conference**: ICLR 2026  
@@ -119,9 +125,9 @@ Average Gain: K-F1 increased by +4.40% / +2.80% / +2.55% and N-F1 increased by +
 
 ## Related Papers
 
+- [\[ICLR 2026\] Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE](beyond_magic_words_sharpness-aware_prompt_evolving_for_robust_large_language_mod.md)
 - [\[ACL 2025\] Open-Set Living Need Prediction with Large Language Models](../../ACL2025/llm_nlp/open-set_living_need_prediction_with_large_language_models.md)
 - [\[ICLR 2026\] Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator](evaluating_text_creativity_across_diverse_domains_a_dataset_and_large_language_m.md)
-- [\[ICLR 2026\] Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE](beyond_magic_words_sharpness-aware_prompt_evolving_for_robust_large_language_mod.md)
 - [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
 - [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
 

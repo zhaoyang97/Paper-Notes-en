@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLA] NIAF redefines the "action chunk" of VLA models from a sequence of discrete waypoints to a continuous time function $\mathcal{A}(\tau)=\Phi(\tau;\theta)$. By utilizing an MLLM as a "hierarchical spectral modulator" to output parameters $\theta$ for a SIREN, the model achieves $C^\infty$ smooth trajectories, arbitrary f
+  [ICML 2026][Robotics][VLA] NIAF redefines the "action chunk" of VLA models from a sequence of discrete waypoints to a continuous time function $\mathcal{A}(\tau)=\Phi(\tau;\theta)$. By utilizing an MLLM as a "hierarchical spectral modulator" to output parameters $\theta$ for a SIREN, the model achieves $C^\infty$ smooth trajectories, arbitrary frequency querying, and analytically derivable velocity/jerk signals. It achieves SOTA results on CALVIN/LIBERO and eliminates jitter…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLA
-  - SIREN
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA"
+  - "SIREN"
+  - "Implicit Neural Representation"
+  - "Impedance Control"
+  - "Action Chunking"
 date: 2026-05-08
-content_hash: e03e0826a6b5a6da
+content_hash: c149f1346ed77d0d
 ---
+
 # Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models
 
 **Conference**: ICML 2026  

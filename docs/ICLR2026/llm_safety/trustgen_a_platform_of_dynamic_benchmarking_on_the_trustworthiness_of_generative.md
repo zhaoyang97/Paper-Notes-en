@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] TrustGen：生成式基础模型可信度的动态评测平台
+  [Paper Note] TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] TrustGen reconstructs "trustworthiness evaluation" from a one-off, static, and modality-isolated task into a dynamic platform driven by three modules: "Metadata Curator + Test Case Builder + Contextual Variator." It consistently measures Text-to-Image (T2I), Large Language Models (LLM), and Vision-Language Models (VLM)
+  [ICLR 2026][LLM Safety][Trustworthiness evaluation] TrustGen reconstructs "trustworthiness evaluation" from a one-off, static, and modality-isolated task into a dynamic platform driven by three modules: "Metadata Curator + Test Case Builder + Contextual Variator." It consistently measures Text-to-Image (T2I), Large Language Models (LLM), and Vision-Language Models (VLM) across 7 unified dimensions (25+ sub-dimensions). Evaluating 39 models, it concludes that open-source model…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Trustworthiness evaluation"
+  - "dynamic benchmark"
+  - "generative foundation models"
+  - "Model-as-a-Judge"
+  - "cross-modal"
 date: 2026-05-08
-content_hash: 04a714028e2d8199
+content_hash: d7b7a4679eccc377
 ---
+
 # TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness
 
 **Conference**: ICLR 2026  
@@ -120,10 +126,20 @@ The authors evaluated **39 models** (8 T2I, 21 LLM, 10 VLM) using a $0–100$ sc
 - Value: ⭐⭐⭐⭐⭐ Provides an open-source toolkit and leaderboard with long-term utility for AI safety.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] VMDT: Decoding the Trustworthiness of Video Foundation Models](../../NeurIPS2025/llm_safety/vmdt_decoding_the_trustworthiness_of_video_foundation_models.md)
+- [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](../../ACL2026/llm_safety/piarena_a_platform_for_prompt_injection_evaluation.md)
+- [\[ICLR 2026\] DynaGuard: A Dynamic Guardian Model With User-Defined Policies](dynaguard_a_dynamic_guardian_model_with_user-defined_policies.md)
+- [\[ICLR 2026\] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning](from_static_benchmarks_to_dynamic_protocol_agent-centric_text_anomaly_detection_.md)
+- [\[ICLR 2026\] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models](audiotrust_benchmarking_the_multifaceted_trustworthiness_of_audio_large_language.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Stop Tracking Me! Proactive Defense Against Attribute Inference Attack in LLMs](stop_tracking_me_proactive_defense_against_attribute_inference_attack_in_llms.md)

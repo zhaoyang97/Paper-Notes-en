@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aha: Predicting What Matters Next — Online Highlight Detection Without Looking Ahead
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Online Highlight Detection] Aha proposes the first autoregressive framework for Online Highlight Detection (OHD)…
+  [NeurIPS 2025][Autonomous Driving][Online Highlight Detection] Aha proposes the first autoregressive framework for Online Highlight Detection (OHD), featuring a decoupled multi-objective prediction head (relevance / informativeness / uncertainty) and a novel Dynamic SinkCache memory mechanism. Under strict causal constraints with no access to future frames, Aha surpasses prior offline methods on TVSum and Mr.Hisum benchmarks by +5.9% and +8.3% mAP, respectively.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Video-Language Model"
   - "Uncertainty Modeling"
 date: 2026-05-08
-content_hash: 8d23a954b532e33a
+content_hash: 243b1a7a65791419
 ---
 
 # Aha: Predicting What Matters Next — Online Highlight Detection Without Looking Ahead
@@ -127,8 +127,8 @@ The total loss is $\mathcal{L}_{total} = \lambda_r\mathcal{L}_{rel-total} + \lam
 
 - [\[NeurIPS 2025\] Towards Predicting Any Human Trajectory in Context](towards_predicting_any_human_trajectory_in_context.md)
 - [\[NeurIPS 2025\] DINO-Foresight: Looking into the Future with DINO](dino-foresight_looking_into_the_future_with_dino.md)
-- [\[NeurIPS 2025\] StreamForest: Efficient Online Video Understanding with Persistent Event Memory](streamforest_efficient_online_video_understanding_with_persistent_event_memory.md)
-- [\[ICCV 2025\] Where, What, Why: Towards Explainable Driver Attention Prediction](../../ICCV2025/autonomous_driving/where_what_why_towards_explainable_driver_attention_prediction.md)
+- [\[CVPR 2025\] Online Video Understanding: OVBench and VideoChat-Online](../../CVPR2025/autonomous_driving/online_video_understanding_ovbench_and_videochat-online.md)
+- [\[CVPR 2026\] AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction](../../CVPR2026/autonomous_driving/amap_distilling_future_priors_for_ahead-aware_online_hd_map_construction.md)
 - [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
 
 </div>

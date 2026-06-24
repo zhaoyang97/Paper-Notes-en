@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Uniform Discrete Diffusion with Metric Path for Video Generation
 description: >-
-  [ICLR 2026][Video Generation][metric path] URSA reformulates image and video generation as a global iterative refinement process on discrete visual tokens. By utilizing a linearized metric path based on token embedding distances, resolution-dependent timestep shifting, and frame-wise asynchronous noise scheduling, it enables discrete diffusion to approach or ev
+  [ICLR 2026][Video Generation][Discrete Diffusion] URSA reformulates image and video generation as a global iterative refinement process on discrete visual tokens. By utilizing a linearized metric path based on token embedding distances, resolution-dependent timestep shifting, and frame-wise asynchronous noise scheduling, it enables discrete diffusion to approach or even match the performance of continuous diffusion models in text-to-video, image-to-video…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - metric path
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Discrete Diffusion"
+  - "metric path"
+  - "Long Video"
+  - "Asynchronous Timestep Scheduling"
 date: 2026-05-08
-content_hash: 9bbd56592d848649
+content_hash: a38f03abb8feb26d
 ---
+
 # Uniform Discrete Diffusion with Metric Path for Video Generation
 
 **Conference**: ICLR 2026  
@@ -145,16 +149,16 @@ Sampling uses an Euler solver with a velocity field $u_t$ calculated from curren
 - Value: ⭐⭐⭐⭐⭐ Highly significant for the community specializing in discrete visual generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
+- [\[ICLR 2026\] SteinsGate: Injecting Causality into Diffusion Models with Path Integral for Long Video Generation](steinsgate_adding_causality_to_diffusions_for_long_video_generation_via_path_int.md)
 - [\[NeurIPS 2025\] LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation](../../NeurIPS2025/video_generation/lemica_lexicographic_minimax_path_caching_for_efficient_diffusion-based_video_ge.md)
+- [\[ICLR 2026\] Animating the Uncaptured: Humanoid Mesh Animation with Video Diffusion Models](animating_the_uncaptured_humanoid_mesh_animation_with_video_diffusion_models.md)
 - [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
-- [\[ICLR 2026\] SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer](sana-video_efficient_video_generation_with_block_linear_diffusion_transformer.md)
-- [\[ICLR 2026\] SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion](sigmark_scalable_in-generation_watermark_with_blind_extraction_for_video_diffusi.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Don't Throw Away Your Pretrained Model
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] The paper proposes SWITCH GENERATION: training a small "switcher" LM to dynamically select between pre-trained, fine-tuned, and aligned checkpoints as "speakers" for token fragments during a single response generation. This allows the complementarity of base capabilities lost during alignment (creativity, calibration,
+  [ICLR2026][LLM Alignment][Model Collaboration] The paper proposes SWITCH GENERATION: training a small "switcher" LM to dynamically select between pre-trained, fine-tuned, and aligned checkpoints as "speakers" for token fragments during a single response generation. This allows the complementarity of base capabilities lost during alignment (creativity, calibration, diversity) and capabilities gained through alignment (reasoning, instruction following)…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Model Collaboration"
+  - "Alignment tradeoff"
+  - "Switch generation"
+  - "Checkpoint fusion"
+  - "Inference-time routing"
 date: 2026-05-08
-content_hash: efaf33ffe541a2a1
+content_hash: 381ea221834cb499
 ---
+
 # Don't Throw Away Your Pretrained Model
 
 **Conference**: ICLR2026  
@@ -136,14 +142,17 @@ Using Tulu-v3 (Pre-trained/SFT/Aligned 8B) as candidates and comparing against 1
 
 <div class="related-papers" markdown="1">
 
-- **[Tulu-v3]** Llama-3-Tulu-3-8B (Candidate source)
-- **[RouteLLM]** Serving Large Language Models via Model Routing
-- **[Proxy Tuning]** Tuning Pre-trained Language Models without Access to Weights
+## Related Papers
+
+- [\[NeurIPS 2025\] Ask a Strong LLM Judge when Your Reward Model is Uncertain](../../NeurIPS2025/llm_alignment/ask_a_strong_llm_judge_when_your_reward_model_is_uncertain.md)
+- [\[ACL 2025\] Don't Say No: Jailbreaking LLM by Suppressing Refusal](../../ACL2025/llm_alignment/dont_say_no_jailbreaking_llm_by_suppressing_refusal.md)
+- [\[ICLR 2026\] Reward Model Routing in Alignment](reward_model_routing_in_alignment.md)
+- [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](rewardbench_2_advancing_reward_model_evaluation.md)
+- [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[NeurIPS 2025\] Ask a Strong LLM Judge when Your Reward Model is Uncertain](../../NeurIPS2025/llm_alignment/ask_a_strong_llm_judge_when_your_reward_model_is_uncertain.md)

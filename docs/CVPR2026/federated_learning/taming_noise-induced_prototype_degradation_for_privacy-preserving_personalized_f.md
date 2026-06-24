@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Taming Noise-Induced Prototype Degradation for Privacy-Preserving Personalized Federated Fine-Tuning
 description: >-
-  [CVPR 2026][AI Safety][Knowledge Distillation] Addressing the issue where prototype-based personalized federated learning (ProtoPFL) injects isotropic Gaussian noise to satisfy local differential privacy (LDP) when sharing class prototypes—consequently drowning out discriminative dimensions—this paper proposes a client-side plugin, VPDR. It uses variance-adaptive V
+  [CVPR2026][Federated Learning][Prototype Federated Learning] Addressing the issue where prototype-based personalized federated learning (ProtoPFL) injects isotropic Gaussian noise to satisfy local differential privacy (LDP) when sharing class prototypes—consequently drowning out discriminative dimensions—this paper proposes a client-side plugin, VPDR. It uses variance-adaptive VPP to shift noise budget from discriminative subspaces to redundant ones…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Knowledge Distillation
+  - "CVPR2026"
+  - "Federated Learning"
+  - "Prototype Federated Learning"
+  - "Local Differential Privacy"
+  - "Anisotropic Noise"
+  - "Soft Clipping"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 5f2aa268176e5591
+content_hash: ea7fa47aa1bb8cde
 ---
+
 # Taming Noise-Induced Prototype Degradation for Privacy-Preserving Personalized Federated Fine-Tuning
 
 **Conference**: CVPR2026  
@@ -139,10 +144,10 @@ Based on the FedProto framework, adding modules step-by-step (AVG for Office–C
 ## Related Papers
 
 - [\[CVPR 2026\] Fine-Tuning Impairs the Balancedness of Foundation Models in Long-tailed Personalized Federated Learning](fine-tuning_impairs_the_balancedness_of_foundation_models_in_long-tailed_persona.md)
-- [\[CVPR 2026\] No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation](no_way_to_steal_my_face_proactive_defense_against_identity-preserving_personaliz.md)
-- [\[CVPR 2026\] Immunizing Models Against Harmful Long-Horizon Fine-Tuning via Contractive Optimization Dynamics](immunizing_models_against_harmful_long-horizon_fine-tuning_via_contractive_optim.md)
-- [\[CVPR 2026\] SubFLOT: Submodel Extraction for Efficient and Personalized Federated Learning via Optimal Transport](subflot_submodel_extraction_for_efficient_and_personalized_federated_learning_vi.md)
-- [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
+- [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
+- [\[CVPR 2026\] SubFLOT: Efficient Personalized Federated Learning via Optimal Transport-based Submodel Extraction](submodel_extraction_for_efficient_and_personalized_federated_learning_via_optima.md)
+- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
 
 </div>
 

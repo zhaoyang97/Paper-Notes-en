@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Understanding the Role of Training Data in Test-Time Scaling
 description: >-
-  [ICLR 2026][LLM Reasoning][chain-of-thought] The paper provides a theoretical analysis of how training data attributes influence test-time scaling performance. It proves that CoT reasoning is equivalent to pseudo-Newton iterations, proposes a task hardness metric based on the minimum eigenvalue of feature covariance, reveals the mechanism behind the "overthinking
+  [ICLR2026][Reasoning][Test-time scaling] The paper provides a theoretical analysis of how training data attributes influence test-time scaling performance. It proves that CoT reasoning is equivalent to pseudo-Newton iterations, proposes a task hardness metric based on the minimum eigenvalue of feature covariance, reveals the mechanism behind the "overthinking" phenomenon where more computation degrades performance, and identifies the optimal task selection strategy for multi-…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - chain-of-thought
-  - task hardness
-  - training data selection
+  - "ICLR2026"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "chain-of-thought"
+  - "in-context learning"
+  - "task hardness"
+  - "overthinking"
+  - "training data selection"
 date: 2026-05-08
-content_hash: 789640118254f4aa
+content_hash: c2cae03a97db93e2
 ---
+
 # Understanding the Role of Training Data in Test-Time Scaling
 
 **Conference**: ICLR2026  
@@ -140,11 +144,11 @@ Thinking helps when training data is aligned but hurts when misaligned—perfect
 
 ## Related Papers
 
+- [\[ACL 2025\] Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory](../../ACL2025/llm_reasoning/rethinking_the_role_of_prompting_strategies_in_llm_test-time_scaling_a_perspecti.md)
 - [\[ICLR 2026\] ContextPRM: Leveraging Contextual Coherence for multi-domain Test-Time Scaling](contextprm_leveraging_contextual_coherence_for_multi-domain_test-time_scaling.md)
 - [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
-- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
-- [\[ACL 2025\] Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory](../../ACL2025/llm_reasoning/rethinking_the_role_of_prompting_strategies_in_llm_test-time_scaling_a_perspecti.md)
-- [\[ICLR 2026\] Native Reasoning Models: Training Language Models to Reason on Unverifiable Data](native_reasoning_models_training_language_models_to_reason_on_unverifiable_data.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
+- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](../../ACL2026/llm_reasoning/efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
 
 </div>
 

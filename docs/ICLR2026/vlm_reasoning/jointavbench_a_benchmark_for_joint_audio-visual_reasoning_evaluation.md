@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] JointAVBench: A Benchmark for Joint Audio-Visual Reasoning Evaluation
 description: >-
-  [ICLR 2026][vlm_reasoning][Audio-Visual Reasoning] JointAVBench is the first "audio-visual strongly correlated" joint reasoning benchmark for Omni-LLMs, covering 5 cognitive dimensions, 4 types of audio signals, and 3 scene spans for a total of 15 tasks. It utilizes a semi-automated pipeline to synthesize 2,853 multiple-choice questions from movies that require audio-v
+  [ICLR 2026][VLM Reasoning][Audio-Visual Reasoning] JointAVBench is the first "audio-visual strongly correlated" joint reasoning benchmark for Omni-LLMs, covering 5 cognitive dimensions, 4 types of audio signals, and 3 scene spans for a total of 15 tasks. It utilizes a semi-automated pipeline to synthesize 2,853 multiple-choice questions from movies that require audio-visual synergy to solve; even the strongest model achieves only 65.3% accuracy.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Audio-Visual Reasoning
-  - Omni-LLM
-  - Benchmark
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Audio-Visual Reasoning"
+  - "Omni-LLM"
+  - "Benchmark"
+  - "Strong Audio-Visual Correlation"
+  - "Multi-Scene Reasoning"
 date: 2026-05-08
-content_hash: 4be15dbbffa8a42e
+content_hash: 386fcb10a4250525
 ---
+
 # JointAVBench: A Benchmark for Joint Audio-Visual Reasoning Evaluation
 
 **Conference**: ICLR 2026  
@@ -112,11 +115,11 @@ flowchart LR
 
 ## Related Papers
 
+- [\[CVPR 2025\] Beyond Final Answers: CRYSTAL Benchmark for Transparent Multimodal Reasoning Evaluation](../../CVPR2025/vlm_reasoning/beyond_final_answers_crystal_benchmark_for_transparent_multimodal_reasoning_eval.md)
 - [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](../../CVPR2026/vlm_reasoning/av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
 - [\[ICLR 2026\] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](lens_multi-level_evaluation_of_multimodal_reasoning_with_large_language_models.md)
-- [\[ICLR 2026\] GIR-Bench: Versatile Benchmark for Generating Images with Reasoning](gir-bench_versatile_benchmark_for_generating_images_with_reasoning.md)
-- [\[ICLR 2026\] MathNet: A Global Multimodal Benchmark for Mathematical Reasoning and Retrieval](mathnet_a_global_multimodal_benchmark_for_mathematical_reasoning_and_retrieval.md)
-- [\[CVPR 2025\] Beyond Final Answers: CRYSTAL Benchmark for Transparent Multimodal Reasoning Evaluation](../../CVPR2025/vlm_reasoning/beyond_final_answers_crystal_benchmark_for_transparent_multimodal_reasoning_eval.md)
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
+- [\[ACL 2025\] FinMME: Benchmark Dataset for Financial Multi-Modal Reasoning Evaluation](../../ACL2025/vlm_reasoning/finmme_benchmark_dataset_for_financial_multi-modal_reasoning_evaluation.md)
 
 </div>
 

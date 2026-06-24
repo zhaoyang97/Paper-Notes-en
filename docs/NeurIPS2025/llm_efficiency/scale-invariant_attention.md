@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scale-invariant Attention
 description: >-
-  [NeurIPS 2025][LLM Efficiency][scale invariance] Drawing inspiration from the scale invariance of natural images, this paper proposes a position-dependent affine transformation on attention logits—comprising a multiplica…
+  [NeurIPS 2025][LLM Efficiency][scale invariance] Drawing inspiration from the scale invariance of natural images, this paper proposes a position-dependent affine transformation on attention logits—comprising a multiplicative scaling and an additive shift—such that the total attention weight and sparsity over any token range satisfy scale invariance. This enables zero-shot generalization from short-context training to long-context inference (4k→64k) with a single hyperparamete…
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -13,7 +13,7 @@ tags:
   - "pp-RoPE"
   - "entropy control"
 date: 2026-05-08
-content_hash: c9185aa5b05e91a7
+content_hash: 7a172bddc38c3206
 ---
 
 # Scale-invariant Attention
@@ -143,9 +143,9 @@ Within the FlexAttention framework, a position-dependent affine transformation $
 ## Related Papers
 
 - [\[NeurIPS 2025\] Mozart: Modularized and Efficient MoE Training on 3.5D Wafer-Scale Chiplet Architectures](mozart_modularized_and_efficient_moe_training_on_35d_wafer-scale_chiplet_archite.md)
-- [\[NeurIPS 2025\] UMoE: Unifying Attention and FFN with Shared Experts](umoe_unifying_attention_and_ffn_with_shared_experts.md)
-- [\[NeurIPS 2025\] Tensor Product Attention Is All You Need](tensor_product_attention_is_all_you_need.md)
+- [\[ICLR 2026\] Stacked From One: Multi-Scale Self-Injection for Context Window Extension](../../ICLR2026/llm_efficiency/stacked_from_one_multi-scale_self-injection_for_context_window_extension.md)
 - [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
+- [\[ICLR 2026\] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference](../../ICLR2026/llm_efficiency/libra_effective_yet_efficient_load_balancing_for_large-scale_moe_inference.md)
 - [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProcessMaker: A Generalized Process Visualization Framework with Adaptive Sequence Steps on Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] ProcessMaker implements cross-domain procedural sequence generation on Flux.1 (DiT) using "sparse mask LoRA + self-supervised representation alignment." It employs a sliding window to adaptively add or remove steps based on frame differences. By training only 7.3% of the parameters, it outperforms MakeAnything in align
+  [CVPR 2026][Image Generation][procedural sequence generation] ProcessMaker implements cross-domain procedural sequence generation on Flux.1 (DiT) using "sparse mask LoRA + self-supervised representation alignment." It employs a sliding window to adaptively add or remove steps based on frame differences. By training only 7.3% of the parameters, it outperforms MakeAnything in alignment and coherence across 21 domains.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "procedural sequence generation"
+  - "Diffusion Transformer"
+  - "LoRA sparse mask"
+  - "representation alignment"
+  - "adaptive steps"
 date: 2026-05-08
-content_hash: c8101f68cd106f67
+content_hash: 2805304d40a7a8dc
 ---
+
 # ProcessMaker: A Generalized Process Visualization Framework with Adaptive Sequence Steps on Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -163,11 +168,11 @@ Ablation on Fabric Toys (Table 3):
 
 ## Related Papers
 
+- [\[CVPR 2026\] MakeAnything: Harnessing Diffusion Transformers for Multi-Domain Procedural Sequence Generation](makeanything_harnessing_diffusion_transformers_for_multi-domain_procedural_seque.md)
 - [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
-- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
-- [\[CVPR 2026\] UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization](universe_a_unified_modulation_framework_for_segmentation-free_disentangled_multi.md)
-- [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
-- [\[CVPR 2026\] GeoRK2: Geometry-Guided Runge-Kutta Integration for Diffusion Transformer Acceleration](geork2_geometry-guided_runge-kutta_integration_for_diffusion_transformer_acceler.md)
+- [\[CVPR 2026\] ThinkGen: Generalized Thinking for Visual Generation](thinkgen_generalized_thinking_for_visual_generation.md)
+- [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
+- [\[CVPR 2026\] Scale Space Diffusion: Integrating Scale Space into the Diffusion Process](scale_space_diffusion.md)
 
 </div>
 

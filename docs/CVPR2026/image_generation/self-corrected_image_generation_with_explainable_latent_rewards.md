@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Corrected Image Generation with Explainable Latent Rewards
 description: >-
-  [CVPR 2026][Image Generation][Reinforcement Learning] Ours proposes the xLARD framework, which performs semantic self-correction in latent space during text-to-image generation via a lightweight residual corrector. It leverages explainable latent reward signals (counting/color/position) to guide generation, achieving a +4.1% improvement on GenEval and +2.97% on DPGBench,
+  [CVPR 2026][Image Generation][Text-to-Image Self-Correction] Ours proposes the xLARD framework, which performs semantic self-correction in latent space during text-to-image generation via a lightweight residual corrector. It leverages explainable latent reward signals (counting/color/position) to guide generation, achieving a +4.1% improvement on GenEval and +2.97% on DPGBench, while adapting to multiple backbones in a plug-and-play manner.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image Self-Correction"
+  - "Latent Reward"
+  - "Explainable Generation"
+  - "Semantic Alignment"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 1c4eb07dd0b0d94a
+content_hash: dca90fa8fd48e4e4
 ---
+
 # Self-Corrected Image Generation with Explainable Latent Rewards
 
 **Conference**: CVPR 2026  

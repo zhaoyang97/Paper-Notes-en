@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Think-Then-Generate: Structural Chain-of-Thought Reasoning for Consistent 3D Generation
 description: >-
-  [CVPR 2026][3D Vision][SDS] Thoughtful3D introduces Chain-of-Thought (CoT) reasoning into SDS-style 3D generation. It utilizes a "think-then-generate" two-stage structural reasoning framework: 3DBlueprint-CoT for semantic parsing and stage-wise sub-goal decomposition before generation, and 3DRefine-CoT for multi-round reflection-correction of ren
+  [CVPR 2026][3D Vision][Text-to-3D] Thoughtful3D introduces Chain-of-Thought (CoT) reasoning into SDS-style 3D generation. It utilizes a "think-then-generate" two-stage structural reasoning framework: 3DBlueprint-CoT for semantic parsing and stage-wise sub-goal decomposition before generation, and 3DRefine-CoT for multi-round reflection-correction of rendering artifacts during generation. Coupled with a cross-view semantic-appearance alignment loss…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SDS
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Text-to-3D"
+  - "SDS"
+  - "Multi-view consistency"
+  - "Janus problem"
+  - "Structural CoT"
 date: 2026-05-08
-content_hash: 18ec8dca9d52f7cb
+content_hash: 48a0feb14edbf2f2
 ---
+
 # Think-Then-Generate: Structural Chain-of-Thought Reasoning for Consistent 3D Generation
 
 **Conference**: CVPR 2026  
@@ -133,15 +138,16 @@ Module-wise removal (Baseline: GaussianDreamer, CLIP Score). Module A = 3DBluepr
 - Value: ⭐⭐⭐⭐ Practical as a plug-and-play consistency enhancer, though MLLM costs are a barrier.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] S$^2$-MLLM: Boosting Spatial Reasoning Capability of MLLMs for 3D Visual Grounding with Structural Guidance](s2-mllm_boosting_spatial_reasoning_capability_of_mllms_for_3d_visual_grounding_w.md)
-- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)
+- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
 - [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
-- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
-- [\[CVPR 2026\] FunFact: Building Probabilistic Functional 3D Scene Graphs via Factor-Graph Reasoning](funfact_building_probabilistic_functional_3d_scene_graphs_via_factor-graph_reaso.md)
+- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
 
 </div>
 

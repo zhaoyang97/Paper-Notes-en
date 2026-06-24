@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] The authors propose a formal definition of Reasoning Faithfulness (Stance Consistency + Causal Influence) and construct the RFEval benchmark comprising 7,186 instances across 7 tasks. By evaluating 12 open-source Large Reasoning Models (LRMs) via output-layer counterfactual reasoning intervention, the study finds that
+  [ICLR 2026][Reasoning][Reasoning Faithfulness] The authors propose a formal definition of Reasoning Faithfulness (Stance Consistency + Causal Influence) and construct the RFEval benchmark comprising 7,186 instances across 7 tasks. By evaluating 12 open-source Large Reasoning Models (LRMs) via output-layer counterfactual reasoning intervention, the study finds that 49.7% of outputs are unfaithful, RL post-training reduces faithfulness, and accuracy is not a reliable proxy for…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning Faithfulness"
+  - "Counterfactual Intervention"
+  - "Large Reasoning Models"
+  - "Stance Consistency"
+  - "Causal Influence"
 date: 2026-05-08
-content_hash: cdaf2d8939c0aa67
+content_hash: 70c353e2d760f3ca
 ---
+
 # RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models
 
 **Conference**: ICLR 2026  

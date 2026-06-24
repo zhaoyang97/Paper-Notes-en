@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning
 description: >-
-  [ICCV 2025][Human Understanding][Visible-Infrared Person Re-Identification] This paper proposes the first weakly supervised paradigm for visible-infrared person re-identification (VIReID)…
+  [ICCV 2025][Human Understanding][Visible-Infrared Person Re-Identification] This paper proposes the first weakly supervised paradigm for visible-infrared person re-identification (VIReID), which relies solely on intra-modality identity annotations (without cross-modal correspondence labels). A heterogeneous expert collaborative consistency learning framework is introduced to establish cross-modal identity correspondences, achieving performance close to fully supervised method…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Heterogeneous Experts"
   - "Collaborative Consistency Learning"
 date: 2026-05-08
-content_hash: 8be8b39e8ade12cd
+content_hash: b66b26175ffb5da3
 ---
 
 # Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning
@@ -168,11 +168,11 @@ Training hyperparameters:
 
 ## Related Papers
 
-- [\[AAAI 2026\] Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification](../../AAAI2026/human_understanding/modality-aware_bias_mitigation_and_invariance_learning_for_unsupervised_visible-.md)
+- [\[CVPR 2026\] Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification](../../CVPR2026/human_understanding/spatial-frequency_collaborative_learning_for_occluded_visible-infrared_person_re.md)
 - [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
 - [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
-- [\[ICCV 2025\] Bi-Level Optimization for Self-Supervised AI-Generated Face Detection](bi-level_optimization_for_self-supervised_ai-generated_face_detection.md)
-- [\[ICCV 2025\] IDFace: Face Template Protection for Efficient and Secure Identification](idface_face_template_protection_for_efficient_and_secure_identification.md)
+- [\[CVPR 2026\] MFEN: Multi-Frequency Expert Network for Visible-Infrared Person Re-ID](../../CVPR2026/human_understanding/mfen_multi-frequency_expert_network_for_visible-infrared_person_re-id.md)
+- [\[CVPR 2026\] Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification](../../CVPR2026/human_understanding/towards_cross-modal_preservation_consistency_and_alignment_for_privacy-preservin.md)
 
 </div>
 

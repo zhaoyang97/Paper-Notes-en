@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA
 description: >-
-  [AAAI 2026][Graph Learning][Knowledge Graph Question Answering] This paper proposes RFKG-CoT, which enhances LLM reasoning over knowledge graphs via two components: relation-driven adaptive hop-count selection (dynamical…
+  [AAAI 2026][Graph Learning][Knowledge Graph Question Answering] This paper proposes RFKG-CoT, which enhances LLM reasoning over knowledge graphs via two components: relation-driven adaptive hop-count selection (dynamically adjusting reasoning steps using KG relation activation masks) and few-shot path guidance (in-context examples in a Question-Paths-Answer format). Evaluated on 4 KGQA benchmarks, the method achieves significant improvements — GPT-4 reaches 91.5% (+6.6pp) on…
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Adaptive Hop-count"
   - "Few-Shot Guidance"
 date: 2026-05-08
-content_hash: 014267add6bdc44d
+content_hash: 30ecf833d9ca79c2
 ---
 
 # RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA
@@ -116,9 +116,9 @@ Initialize topic entities → compute relation scores via MLP → dynamically se
 
 - [\[ICML 2026\] DTKG: Dual-Track Knowledge Graph-Verified Reasoning Framework for Multi-Hop QA](../../ICML2026/graph_learning/dtkg_dual-track_knowledge_graph-verified_reasoning_framework_for_multi-hop_qa.md)
 - [\[AAAI 2026\] MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training](mug_meta-path-aware_universal_heterogeneous_graph_pre-training.md)
-- [\[NeurIPS 2025\] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning](../../NeurIPS2025/graph_learning/moemeta_mixture-of-experts_meta_learning_for_few-shot_relational_learning.md)
+- [\[ICLR 2026\] Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion](../../ICLR2026/graph_learning/low-rank_few-shot_node_classification_by_node-level_graph_diffusion.md)
 - [\[AAAI 2026\] Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation](enhancing_logical_expressiveness_in_graph_neural_networks_via_path-neighbor_aggr.md)
-- [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](adaptive_riemannian_graph_neural_networks.md)
+- [\[NeurIPS 2025\] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning](../../NeurIPS2025/graph_learning/moemeta_mixture-of-experts_meta_learning_for_few-shot_relational_learning.md)
 
 </div>
 

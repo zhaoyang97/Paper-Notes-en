@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RoboFactory: Exploring Embodied Agent Collaboration with Compositional Constraints
 description: >-
-  [ICCV 2025][Reinforcement Learning][Multi-agent collaboration] This paper introduces the concept of compositional constraints to formalize safety and efficiency requirements in multi-agent embodied collaboration…
+  [ICCV 2025][Reinforcement Learning][Multi-agent collaboration] This paper introduces the concept of compositional constraints to formalize safety and efficiency requirements in multi-agent embodied collaboration, constructs the first multi-agent manipulation benchmark RoboFactory based on this formalization, and systematically investigates architectures and training strategies for multi-agent imitation learning.
 tags:
   - "ICCV 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "imitation learning"
   - "benchmark"
 date: 2026-05-08
-content_hash: ba34458909db4946
+content_hash: 3052feb3db3c58f9
 ---
 
 # RoboFactory: Exploring Embodied Agent Collaboration with Compositional Constraints
@@ -138,10 +138,10 @@ Success rate (%) comparison of different architectures across tasks of varying d
 ## Related Papers
 
 - [\[ICCV 2025\] Embodied Navigation with Auxiliary Task of Action Description Prediction](embodied_navigation_with_auxiliary_task_of_action_description_prediction.md)
+- [\[ECCV 2024\] Octopus: Embodied Vision-Language Programmer from Environmental Feedback](../../ECCV2024/reinforcement_learning/octopus_embodied_vision-language_programmer_from_environmental_feedback.md)
 - [\[NeurIPS 2025\] Emergent World Beliefs: Exploring Transformers in Stochastic Games](../../NeurIPS2025/reinforcement_learning/emergent_world_beliefs_exploring_transformers_in_stochastic_games.md)
-- [\[ACL 2026\] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints](../../ACL2026/reinforcement_learning/deliberative_searcher_improving_llm_reliability_via_reinforcement_learning_with_.md)
-- [\[ACL 2026\] NaviMaster: Learning a Unified Policy for GUI and Embodied Navigation Tasks](../../ACL2026/reinforcement_learning/navimaster_learning_a_unified_policy_for_gui_and_embodied_navigation_tasks.md)
-- [\[ACL 2026\] KnowRL: Exploring Knowledgeable Reinforcement Learning for Factuality](../../ACL2026/reinforcement_learning/knowrl_exploring_knowledgeable_reinforcement_learning_for_factuality.md)
+- [\[ICLR 2026\] In-Context Compositional Q-Learning for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/in-context_compositional_q-learning_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
 
 </div>
 

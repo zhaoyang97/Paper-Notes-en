@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LatentQA: Teaching LLMs to Decode Activations Into Natural Language
 description: >-
-  [ICLR 2026][Interpretability][LatentQA] This paper reframes "understanding model activations" as an open-ended question-answering task, LatentQA. Given an activation and a natural language question, a fine-tuned decoder LLM answers directly in natural language. This enables both "reading" activations (monitoring) and "writing" to activations (steering) using
+  [ICLR 2026][Interpretability][LatentQA] This paper reframes "understanding model activations" as an open-ended question-answering task, LatentQA. Given an activation and a natural language question, a fine-tuned decoder LLM answers directly in natural language. This enables both "reading" activations (monitoring) and "writing" to activations (steering) using gradients backpropagated from natural language-described losses.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - LatentQA
-  - instruction tuning
+  - "ICLR 2026"
+  - "Interpretability"
+  - "LatentQA"
+  - "Activation Decoding"
+  - "Representation Probing"
+  - "Model Steering"
+  - "instruction tuning"
 date: 2026-05-08
-content_hash: 9f4a231802b015ac
+content_hash: cbacebf38e9eafac
 ---
+
 # LatentQA: Teaching LLMs to Decode Activations Into Natural Language
 
 **Conference**: ICLR 2026  
@@ -119,8 +123,8 @@ LIT is the only method to significantly reduce bias across both metrics. RepE ac
 - [\[ICLR 2026\] REAL: Reading Out Transformer Activations for Precise Localization in Language Model Steering](real_reading_out_transformer_activations_for_precise_localization_in_language_mo.md)
 - [\[ICLR 2026\] Fresh in Memory: Training-order Recency is Linearly Encoded in Language Model Activations](fresh_in_memory_training-order_recency_is_linearly_encoded_in_language_model_act.md)
 - [\[ICLR 2026\] Negative Pre-activations Differentiate Syntax](negative_pre-activations_differentiate_syntax.md)
+- [\[ICLR 2026\] Circuit Insights: Towards Interpretability Beyond Activations](circuit_insights_towards_interpretability_beyond_activations.md)
 - [\[ICLR 2026\] Sparling: End-to-End Spatial Concept Learning via Extremely Sparse Activations](sparling_end-to-end_spatial_concept_learning_via_extremely_sparse_activations.md)
-- [\[ACL 2026\] Similarity-Distance-Magnitude Activations](../../ACL2026/interpretability/similarity-distance-magnitude_activations.md)
 
 </div>
 

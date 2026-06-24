@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] UniVideo: Unified Understanding, Generation, and Editing for Videos
 description: >-
-  [ICLR 2026][Video Generation][Video Editing] UniVideo utilizes a frozen MLLM for multimodal understanding and instruction parsing, and an MMDiT for high-fidelity image/video generation. It unifies video understanding, text-to-video, image-to-video, in-context video generation, and mask-free video editing into a single natural language instruction framework, achie
+  [ICLR2026][Video Generation][Unified Video Model] UniVideo utilizes a frozen MLLM for multimodal understanding and instruction parsing, and an MMDiT for high-fidelity image/video generation. It unifies video understanding, text-to-video, image-to-video, in-context video generation, and mask-free video editing into a single natural language instruction framework, achieving performance comparable to or better than specialized models across multiple video generation and editing…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video Editing
-  - in-context generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Unified Video Model"
+  - "Video Editing"
+  - "Multimodal Instructions"
+  - "In-context Generation"
 date: 2026-05-08
-content_hash: 3633e5c08347a09d
+content_hash: f6409b283acaef01
 ---
+
 # UniVideo: Unified Understanding, Generation, and Editing for Videos
 
 **Conference**: ICLR2026  
@@ -160,10 +163,10 @@ The experiments cover understanding, standard video generation, in-context video
 ## Related Papers
 
 - [\[ICLR 2026\] Unified In-Context Video Editing](unified_in-context_video_editing.md)
+- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
 - [\[ICLR 2026\] EditVerse: Unifying Image and Video Editing and Generation with In-Context Learning](editverse_unifying_image_and_video_editing_and_generation_with_in-context_learni.md)
 - [\[CVPR 2025\] VEU-Bench: Towards Comprehensive Understanding of Video Editing](../../CVPR2025/video_generation/veu-bench_towards_comprehensive_understanding_of_video_editing.md)
-- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
-- [\[ICLR 2026\] Pixel-Perfect Puppetry: Precision-Guided Enhancement for Face Image and Video Editing](pixel-perfect_puppetry_precision-guided_enhancement_for_face_image_and_video_edi.md)
+- [\[ICLR 2026\] Video-As-Prompt: Unified Semantic Control for Video Generation](video-as-prompt_unified_semantic_control_for_video_generation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces
 description: >-
-  [CVPR 2026][LLM Agent][web agent] WebChain is collected from real human operations on live websites, constructing the largest human-annotated web interaction trace dataset to date (31,725 traces, 318k steps, 428 domains). Its core feature is the "triple alignment" of visual screenshots, structural Accessibility Trees (AX Trees), and action coordinates.
+  [CVPR 2026][LLM Agent][web agent] WebChain is collected from real human operations on live websites, constructing the largest human-annotated web interaction trace dataset to date (31,725 traces, 318k steps, 428 domains). Its core feature is the "triple alignment" of visual screenshots, structural Accessibility Trees (AX Trees), and action coordinates. Based on this, a Dual Mid-Training recipe is proposed to decouple spatial grounding and long-range planning…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - web agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "web agent"
+  - "human-annotated traces"
+  - "triple alignment"
+  - "visual grounding"
+  - "long-range planning"
 date: 2026-05-08
-content_hash: 4c086dbd7afc70c4
+content_hash: dec70cc61a3b06b6
 ---
+
 # WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces
 
 **Conference**: CVPR 2026  
@@ -134,6 +139,7 @@ where $r_t^{\text{type}}$ is 1 if the action type matches the ground truth, and 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -142,7 +148,7 @@ where $r_t^{\text{type}}$ is 1 if the action type matches the ground truth, and 
 - [\[ICML 2026\] Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining](../../ICML2026/llm_agent/video2gui_synthesizing_large-scale_interaction_trajectories_for_generalized_gui_.md)
 - [\[CVPR 2026\] ModularAgent: A Task-Aware Modular Framework for Joint Optimization of Multimodal Large Language Models and World Models](modularagent_a_task-aware_modular_framework_for_joint_optimization_of_multimodal.md)
 - [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
-- [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](../../ICLR2026/llm_agent/openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
+- [\[CVPR 2026\] Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration](learning_to_adapt_self-improving_web_agent_via_cognitive-aware_exploration.md)
 
 </div>
 

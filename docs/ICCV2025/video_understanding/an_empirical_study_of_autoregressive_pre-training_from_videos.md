@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] An Empirical Study of Autoregressive Pre-training from Videos
 description: >-
-  [ICCV 2025][Video Understanding][Autoregressive Pre-training] This paper systematically investigates autoregressive pre-training from videos (termed Toto)…
+  [ICCV 2025][Video Understanding][Autoregressive Pre-training] This paper systematically investigates autoregressive pre-training from videos (termed Toto), training a causal Transformer on over one trillion visual tokens. Despite minimal inductive biases, the approach achieves competitive performance across image recognition, video classification, object tracking, and robot manipulation, while exhibiting scaling laws analogous to those of language models…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Scaling Laws"
   - "Representation Learning"
 date: 2026-05-08
-content_hash: 3015fd21cb9b8a49
+content_hash: d873863054363d6d
 ---
 
 # An Empirical Study of Autoregressive Pre-training from Videos
@@ -154,11 +154,11 @@ Approximately 1 trillion tokens are used in practice.
 
 ## Related Papers
 
+- [\[CVPR 2026\] An Empirical Study on How Video-LLMs Answer Video Questions](../../CVPR2026/video_understanding/an_empirical_study_on_how_video-llms_answer_video_questions.md)
 - [\[ICCV 2025\] Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos](beyond_the_frame_generating_360deg_panoramic_videos_from_perspective_videos.md)
-- [\[ICCV 2025\] XTrack: Multimodal Training Boosts RGB-X Video Object Trackers](xtrack_multimodal_training_boosts_rgb-x_video_object_trackers.md)
+- [\[CVPR 2025\] VideoGEM: Training-Free Action Grounding in Videos](../../CVPR2025/video_understanding/videogem_training-free_action_grounding_in_videos.md)
 - [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
-- [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
-- [\[ICCV 2025\] Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers](vamba_understanding_hour-long_videos_with_hybrid_mamba-transformers.md)
+- [\[ICCV 2025\] XTrack: Multimodal Training Boosts RGB-X Video Object Trackers](xtrack_multimodal_training_boosts_rgb-x_video_object_trackers.md)
 
 </div>
 

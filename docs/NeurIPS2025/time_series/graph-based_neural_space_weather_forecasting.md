@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Graph-based Neural Space Weather Forecasting
 description: >-
-  [NEURIPS2025][Time Series][space weather] This paper proposes a graph neural network-based neural emulator for space weather, trained on Vlasiator hybrid-Vlasov simulation data…
+  [NEURIPS2025][Time Series][space weather] This paper proposes a graph neural network-based neural emulator for space weather, trained on Vlasiator hybrid-Vlasov simulation data, enabling both deterministic and probabilistic autoregressive forecasting of near-Earth space conditions. The emulator achieves over 100× speedup relative to the original simulator and quantifies forecast uncertainty through latent-variable ensemble generation.
 tags:
   - "NEURIPS2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "hybrid-Vlasov"
   - "ensemble forecasting"
 date: 2026-05-08
-content_hash: 2c59550013e89384
+content_hash: 3204cb0759525c73
 ---
 
 # Graph-based Neural Space Weather Forecasting
@@ -234,8 +234,8 @@ The core contribution of this paper lies not in simply replicating atmospheric M
 
 - [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
 - [\[NeurIPS 2025\] A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting](a_graph_neural_network_approach_for_localized_and_high-resolution_temperature_fo.md)
+- [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](../../ICLR2026/time_series/weight-space_linear_recurrent_neural_networks.md)
 - [\[NeurIPS 2025\] OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales](omnicast_a_masked_latent_diffusion_model_for_weather_forecasting_across_time_sca.md)
-- [\[ICLR 2026\] WARP: Weight-Space Linear Recurrent Neural Networks](../../ICLR2026/time_series/weight-space_linear_recurrent_neural_networks.md)
 - [\[NeurIPS 2025\] RiverMamba: A State Space Model for Global River Discharge and Flood Forecasting](rivermamba_a_state_space_model_for_global_river_discharge_and_flood_forecasting.md)
 
 </div>

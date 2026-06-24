@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Go-Browse: Training Web Agents with Structured Exploration
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] The data collection for training web agents is modeled as a **graph search** on websites: an expanding URL frontier maintains "discovered but under-explored" pages. For each page, the system proposes tasks, checks feasibility, and collects trajectories. By "resetting to discovered pages" to reuse historical leads, 10K
+  [ICLR 2026][LLM Agent][Web Agent] The data collection for training web agents is modeled as a **graph search** on websites: an expanding URL frontier maintains "discovered but under-explored" pages. For each page, the system proposes tasks, checks feasibility, and collects trajectories. By "resetting to discovered pages" to reuse historical leads, 10K successful trajectories were collected on WebArena. Fine-tuning a 7B model achieved a 21.7% success rate…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
-  - WebArena
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Structured Exploration"
+  - "Graph Search"
+  - "Data Synthesis"
+  - "WebArena"
+  - "Supervised Fine-tuning"
 date: 2026-05-08
-content_hash: 7e7d9f5907c3934a
+content_hash: 9e0b09aa02fb19a6
 ---
+
 # Go-Browse: Training Web Agents with Structured Exploration
 
 **Conference**: ICLR 2026  
@@ -116,10 +121,10 @@ Collection cost was approximately **$975.57**. Training utilizes successful step
 ## Related Papers
 
 - [\[ACL 2025\] Explorer: Scaling Exploration-Driven Web Trajectory Synthesis for Multimodal Web Agents](../../ACL2025/llm_agent/explorer_scaling_exploration-driven_web_trajectory_synthesis_for_multimodal_web_.md)
-- [\[ICLR 2026\] Meta-RL Induces Exploration in Language Agents](meta-rl_induces_exploration_in_language_agents.md)
 - [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
-- [\[ICLR 2026\] WALT: Web Agents that Learn Tools](walt_web_agents_that_learn_tools.md)
-- [\[ICLR 2026\] How Dark Patterns Manipulate Web Agents](how_dark_patterns_manipulate_web_agents.md)
+- [\[ICLR 2026\] Scaling Synthetic Task Generation for Agents via Exploration](scaling_synthetic_task_generation_for_agents_via_exploration.md)
+- [\[ICLR 2026\] Meta-RL Induces Exploration in Language Agents](meta-rl_induces_exploration_in_language_agents.md)
+- [\[CVPR 2026\] Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration](../../CVPR2026/llm_agent/learning_to_adapt_self-improving_web_agent_via_cognitive-aware_exploration.md)
 
 </div>
 

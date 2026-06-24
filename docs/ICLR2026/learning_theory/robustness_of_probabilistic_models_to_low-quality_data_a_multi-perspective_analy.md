@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper discovers through controlled noise experiments that robustness to low-quality data varies significantly across probabilistic models (autoregressive LMs are nearly immune, class-conditional diffusion models collapse catastrophically, and classifiers sit in the middle, strengthening with data scale). These dif
+  [ICLR 2026][Learning Theory][Low-quality data] This paper discovers through controlled noise experiments that robustness to low-quality data varies significantly across probabilistic models (autoregressive LMs are nearly immune, class-conditional diffusion models collapse catastrophically, and classifiers sit in the middle, strengthening with data scale). These differences are unified via information theory, PAC learning, and gradient dynamics into two principles: **Richness…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Noise Robustness Analysis"
+  - "Low-quality data"
+  - "Noise robustness"
+  - "Information theory"
+  - "PAC learning"
+  - "Gradient dynamics"
 date: 2026-05-08
-content_hash: 05422640b804130d
+content_hash: bf8c5e7a42dc36c3
 ---
+
 # Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis
 
 **Conference**: ICLR 2026  
@@ -159,7 +166,7 @@ Gradient coherence analysis (Initialization per-example gradients):
 - [\[ICLR 2026\] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data](a_generalized_geometric_theoretical_framework_of_centroid_discriminant_analysis_.md)
 - [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](high-dimensional_analysis_of_synthetic_data_selection.md)
 - [\[ICLR 2026\] Does the Data Processing Inequality Reflect Practice? On the Utility of Low-Level Tasks](does_the_data_processing_inequality_reflect_practice_on_the_utility_of_low-level.md)
-- [\[ICLR 2026\] Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles](data-aware_and_scalable_sensitivity_analysis_for_decision_tree_ensembles.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 
 </div>
 

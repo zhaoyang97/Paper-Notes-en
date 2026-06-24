@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UMDATrack: Unified Multi-Domain Adaptive Tracking Under Adverse Weather Conditions
 description: >-
-  [ICCV 2025][Video Understanding][visual object tracking] UMDATrack proposes the first unified multi-domain adaptive tracking framework. It leverages text-guided diffusion models to synthesize a small number (<2% of frame…
+  [ICCV 2025][Video Understanding][visual object tracking] UMDATrack proposes the first unified multi-domain adaptive tracking framework. It leverages text-guided diffusion models to synthesize a small number (<2% of frames) of unlabeled multi-weather videos, employs Domain-Customized Adapters (DCA) to efficiently transfer object representations across weather domains, and introduces Target-aware Confidence Alignment (TCA) based on optimal transport to enhance cross-domain loca…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -14,7 +14,7 @@ tags:
   - "text-to-image diffusion"
   - "teacher-student"
 date: 2026-05-08
-content_hash: d03af417d7e3f842
+content_hash: 09c928f6f2ab0bdb
 ---
 
 # UMDATrack: Unified Multi-Domain Adaptive Tracking Under Adverse Weather Conditions
@@ -151,11 +151,11 @@ State-of-the-art performance is also achieved on real-world nighttime and mixed 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Breaking Smooth-Motion Assumptions: A UAV Benchmark for Multi-Object Tracking in Complex and Adverse Conditions](../../CVPR2026/video_understanding/breaking_smooth-motion_assumptions_a_uav_benchmark_for_multi-object_tracking_in_.md)
 - [\[ICCV 2025\] AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning](aim_adaptive_inference_of_multi-modal_llms_via_token_merging_and_pruning.md)
-- [\[CVPR 2026\] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](../../CVPR2026/video_understanding/egoxtreme_a_dataset_for_robust_object_pose_estimation_in_egocentric_views_under_.md)
 - [\[ICCV 2025\] What You Have is What You Track: Adaptive and Robust Multimodal Tracking](what_you_have_is_what_you_track_adaptive_and_robust_multimodal_tracking.md)
-- [\[AAAI 2026\] PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking](../../AAAI2026/video_understanding/plugtrack_multi-perceptive_motion_analysis_for_adaptive_fusion_in_multi-object_t.md)
-- [\[AAAI 2026\] Lifelong Domain Adaptive 3D Human Pose Estimation](../../AAAI2026/video_understanding/lifelong_domain_adaptive_3d_human_pose_estimation.md)
+- [\[ICCV 2025\] Multi-modal Multi-platform Person Re-Identification: Benchmark and Method](multi-modal_multi-platform_person_re-identification_benchmark_and_method.md)
+- [\[CVPR 2026\] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](../../CVPR2026/video_understanding/egoxtreme_a_dataset_for_robust_object_pose_estimation_in_egocentric_views_under_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation
 description: >-
-  [CVPR 2026][Image Generation][Inference Acceleration] This paper analyzes the bottleneck of Speculative Jacobi Decoding (SJD) in text-to-image generation, specifically the severely skewed distribution of its acceptance lengths. It introduces the SJD-PAC framework, which incorporates two techniques: Proactive Drafting (PD) and Adaptive Continuation (AC). Under strictly los
+  [CVPR 2026][Image Generation][Autoregressive Image Generation] This paper analyzes the bottleneck of Speculative Jacobi Decoding (SJD) in text-to-image generation, specifically the severely skewed distribution of its acceptance lengths. It introduces the SJD-PAC framework, which incorporates two techniques: Proactive Drafting (PD) and Adaptive Continuation (AC). Under strictly lossless conditions, SJD-PAC achieves a 3.8× inference speedup, significantly outperforming the ~2×…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Autoregressive Image Generation"
+  - "Inference Acceleration"
+  - "Speculative Decoding"
+  - "Jacobi Decoding"
+  - "Lossless Acceleration"
 date: 2026-05-08
-content_hash: 1bd21f07b7af42fc
+content_hash: 76e6c104f3c2978a
 ---
+
 # SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation
 
 **Conference**: CVPR 2026  
@@ -149,9 +154,9 @@ While SJD2 has higher step compression, its doubled window length leads to extra
 
 - [\[CVPR 2026\] Parallel Jacobi Decoding for Fast Autoregressive Image Generation](parallel_jacobi_decoding_for_fast_autoregressive_image_generation.md)
 - [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
-- [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
-- [\[CVPR 2026\] FastHybrid: Accelerating Hybrid Autoregressive Image Generation with Lookahead and Guided Decoding](fasthybrid_accelerating_hybrid_autoregressive_image_generation_with_lookahead_an.md)
 - [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](multi-scale_local_speculative_decoding_for_image_generation.md)
+- [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
+- [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](../../ICML2026/image_generation/speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
 
 </div>
 

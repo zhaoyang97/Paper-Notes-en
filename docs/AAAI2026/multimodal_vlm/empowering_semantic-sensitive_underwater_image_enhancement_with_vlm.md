@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM
 description: >-
-  [AAAI2026][Multimodal VLM][Underwater Image Enhancement] This work leverages a VLM to generate spatially-aware semantic guidance maps, and introduces a dual-guidance mechanism comprising cross-attention injection and a s…
+  [AAAI2026 Oral][Multimodal VLM][Underwater Image Enhancement] This work leverages a VLM to generate spatially-aware semantic guidance maps, and introduces a dual-guidance mechanism comprising cross-attention injection and a semantic alignment loss to endow underwater image enhancement networks with semantic awareness, yielding enhanced results that benefit both human perception and downstream detection/segmentation tasks.
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Multimodal VLM"
   - "Underwater Image Enhancement"
   - "Vision-Language Model"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Attention"
   - "Downstream Tasks"
 date: 2026-05-08
-content_hash: 799f6e9b56dc15c7
+content_hash: 6705e0e7df7896c0
 ---
 
 # Empowering Semantic-Sensitive Underwater Image Enhancement with VLM
@@ -138,11 +138,11 @@ The core idea of **using VLM-generated spatial semantic priors to guide low-leve
 
 ## Related Papers
 
-- [\[AAAI 2026\] "Are We Done Yet?": A Vision-Based Judge for Autonomous Task Completion of Computer Use Agents](are_we_done_yet_a_vision-based_judge_for_autonomous_task_completion_of_computer_.md)
-- [\[AAAI 2026\] ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration](clearair_a_human-visual-perception-inspired_all-in-one_image_restoration.md)
 - [\[AAAI 2026\] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](vipact_visual-perception_enhancement_via_specialized_vlm_age.md)
 - [\[AAAI 2026\] Zero-Reference Joint Low-Light Enhancement and Deblurring via Visual Autoregressive Modeling with VLM-Derived Modulation](zero-reference_joint_low-light_enhancement_and_deblurring_via_visual_autoregress.md)
-- [\[AAAI 2026\] RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)](rmadapter_reconstructionbased_multimodal_adapter_for_visionlanguage.md)
+- [\[CVPR 2026\] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement](../../CVPR2026/multimodal_vlm/uare_a_unified_vision-language_model_for_image_quality_assessment_restoration_an.md)
+- [\[CVPR 2025\] Completion as Enhancement: A Degradation-Aware Selective Image Guided Network](../../CVPR2025/multimodal_vlm/completion_as_enhancement_a_degradation-aware_selective_image_guided_network_for.md)
+- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards
 description: >-
-  [CVPR 2026][Image Generation][Reinforcement Learning] To address poor subject consistency and insufficient text compliance in multi-subject personalized image generation, this paper proposes a scalable multi-subject data construction pipeline and Pairwise Subject-Consistency Rewards (PSR). Through a two-stage training process (SFT + RL), the method comprehensively outperf
+  [CVPR 2026][Image Generation][Multi-subject personalized generation] To address poor subject consistency and insufficient text compliance in multi-subject personalized image generation, this paper proposes a scalable multi-subject data construction pipeline and Pairwise Subject-Consistency Rewards (PSR). Through a two-stage training process (SFT + RL), the method comprehensively outperforms existing SOTA on the self-constructed PSRBench.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-subject personalized generation"
+  - "subject consistency"
+  - "reinforcement learning"
+  - "pairwise rewards"
+  - "positional encoding"
 date: 2026-05-08
-content_hash: 474ad1c849c03564
+content_hash: 37f3cd53e50b74a1
 ---
+
 # PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards
 
 **Conference**: CVPR 2026  
@@ -135,11 +140,11 @@ Comparison of Positional Encoding strategies (Semantic Alignment scores):
 
 ## Related Papers
 
+- [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](../../ICLR2026/image_generation/mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
 - [\[CVPR 2026\] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm](scaling_multi-identity_consistency_for_image_customization_via_multi-to-multi_ma.md)
+- [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](self-corrected_image_generation_with_explainable_latent_rewards.md)
 - [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](flowfixer_towards_detail-preserving_subject-driven_generation.md)
 - [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](../../ACL2026/image_generation/multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
-- [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](self-corrected_image_generation_with_explainable_latent_rewards.md)
-- [\[CVPR 2026\] MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment](multicrafter_high-fidelity_multi-subject_generation_via_disentangled_attention_a.md)
 
 </div>
 

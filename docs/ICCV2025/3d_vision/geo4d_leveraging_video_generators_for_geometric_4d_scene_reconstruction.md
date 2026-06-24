@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Geo4D: Leveraging Video Generators for Geometric 4D Scene Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][4D reconstruction] This paper adapts a pretrained video diffusion model (DynamiCrafter) into a monocular 4D dynamic scene reconstructor that simultaneously predicts three complementary geometric mo…
+  [ICCV 2025][3D Vision][4D reconstruction] This paper adapts a pretrained video diffusion model (DynamiCrafter) into a monocular 4D dynamic scene reconstructor that simultaneously predicts three complementary geometric modalities — point maps, disparity maps, and ray maps. Through a multi-modal alignment and fusion algorithm combined with sliding-window inference, the model generalizes zero-shot to real videos despite being trained exclusively on synthetic data…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -14,7 +14,7 @@ tags:
   - "ray map"
   - "dynamic scenes"
 date: 2026-05-08
-content_hash: 093c1319f52c81e4
+content_hash: 3e98b93702e4c52a
 ---
 
 # Geo4D: Leveraging Video Generators for Geometric 4D Scene Reconstruction
@@ -164,8 +164,8 @@ Geo4D is the first method to estimate camera parameters for dynamic scenes using
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
 - [\[CVPR 2026\] Complet4R: Geometric Complete 4D Reconstruction](../../CVPR2026/3d_vision/complet4r_geometric_complete_4d_reconstruction.md)
-- [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
-- [\[NeurIPS 2025\] Web-Scale Collection of Video Data for 4D Animal Reconstruction](../../NeurIPS2025/3d_vision/web-scale_collection_of_video_data_for_4d_animal_reconstruction.md)
+- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](../../CVPR2026/3d_vision/4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
+- [\[CVPR 2025\] Leveraging 3D Geometric Priors in 2D Rotation Symmetry Detection](../../CVPR2025/3d_vision/leveraging_3d_geometric_priors_in_2d_rotation_symmetry_detection.md)
 
 </div>
 

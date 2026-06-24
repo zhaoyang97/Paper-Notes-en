@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GM-MoE: Low-Light Enhancement with Gated-Mechanism Mixture-of-Experts
 description: >-
-  [ICCV 2025][Autonomous Driving][Low-light enhancement] This paper is the first to introduce Mixture-of-Experts (MoE) networks into low-light image enhancement (LLIE)…
+  [ICCV 2025][Autonomous Driving][Low-light enhancement] This paper is the first to introduce Mixture-of-Experts (MoE) networks into low-light image enhancement (LLIE), employing three specialized sub-expert networks to handle color restoration, detail enhancement, and high-level feature enhancement respectively. A dynamic gating mechanism adaptively adjusts the contribution of each expert, achieving state-of-the-art PSNR performance on five benchmark datasets.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "U-Net"
   - "multi-scale feature fusion"
 date: 2026-05-08
-content_hash: 2e638a5efd8921d6
+content_hash: d3fdc27ff6baec42
 ---
 
 # GM-MoE: Low-Light Enhancement with Gated-Mechanism Mixture-of-Experts
@@ -141,10 +141,10 @@ Incremental module addition on LOLv2-Real and LOLv2-Synthetic:
 ## Related Papers
 
 - [\[AAAI 2026\] ExpertAD: Enhancing Autonomous Driving Systems with Mixture of Experts](../../AAAI2026/autonomous_driving/expertad_enhancing_autonomous_driving_systems_with_mixture_of_experts.md)
+- [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
 - [\[ICCV 2025\] OD-RASE: Ontology-Driven Risk Assessment and Safety Enhancement for Autonomous Driving](od-rase_ontology-driven_risk_assessment_and_safety_enhancement_for_autonomous_dr.md)
 - [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
-- [\[ICLR 2026\] Multi-Head Low-Rank Attention (MLRA)](../../ICLR2026/autonomous_driving/multi-head_low-rank_attention.md)
-- [\[ICLR 2026\] Single Pixel Image Classification using an Ultrafast Digital Light Projector](../../ICLR2026/autonomous_driving/single_pixel_image_classification_using_an_ultrafast_digital_light_projector.md)
+- [\[CVPR 2025\] Neural Inverse Rendering from Propagating Light](../../CVPR2025/autonomous_driving/neural_inverse_rendering_from_propagating_light.md)
 
 </div>
 

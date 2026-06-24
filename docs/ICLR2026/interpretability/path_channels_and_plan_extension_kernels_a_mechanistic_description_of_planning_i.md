@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Path Channels and Plan Extension Kernels: A Mechanistic Description of Planning in a Sokoban RNN
 description: >-
-  [ICLR 2026][Interpretability][Sokoban] This paper reverse-engineers a Deep Recurrent Convolutional network (DRC) trained with model-free reinforcement learning to play Sokoban. It discovers that the internal "where to go" planning is directly stored in specific "path channels" of the hidden state. These plans are constructed via "plan extension kernels" tha
+  [ICLR 2026][Interpretability][Mechanistic Interpretability] This paper reverse-engineers a Deep Recurrent Convolutional network (DRC) trained with model-free reinforcement learning to play Sokoban. It discovers that the internal "where to go" planning is directly stored in specific "path channels" of the hidden state. These plans are constructed via "plan extension kernels" that extend path segments forward from boxes and backward from targets. By utilizing negative activatio…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Sokoban
-  - ConvLSTM
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Planning"
+  - "Sokoban"
+  - "ConvLSTM"
+  - "Bidirectional Search"
 date: 2026-05-08
-content_hash: af6ab726adb101fb
+content_hash: 01b26d6390fd474c
 ---
+
 # Path Channels and Plan Extension Kernels: A Mechanistic Description of Planning in a Sokoban RNN
 
 **Conference**: ICLR 2026  

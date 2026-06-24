@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] Few-shot Acoustic Synthesis with Multimodal Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][flow matching] Ours proposes FLAC, the first few-shot Room Impulse Response (RIR) generation framework based on flow matching. It synthesizes spatially consistent acoustic responses in unseen scenes from a single recording and introduces AGREE joint embedding for geometric-acoustic consistency evaluation.
+  [CVPR2026][Image Generation][flow matching] Ours proposes FLAC, the first few-shot Room Impulse Response (RIR) generation framework based on flow matching. It synthesizes spatially consistent acoustic responses in unseen scenes from a single recording and introduces AGREE joint embedding for geometric-acoustic consistency evaluation.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - flow matching
-  - room impulse response
-  - few-shot acoustic synthesis
-  - diffusion transformer
-  - multimodal conditioning
+  - "CVPR2026"
+  - "Image Generation"
+  - "flow matching"
+  - "room impulse response"
+  - "few-shot acoustic synthesis"
+  - "diffusion transformer"
+  - "multimodal conditioning"
+  - "joint embedding"
 date: 2026-05-08
-content_hash: 1707f5925c280f8c
+content_hash: d61471f55f5e7c17
 ---
+
 # Few-shot Acoustic Synthesis with Multimodal Flow Matching
 
 **Conference**: CVPR2026  
@@ -159,8 +161,8 @@ AGREE uses CLIP-style dual encoders to align RIR and scene geometry in a shared 
 - [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
 - [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
 - [\[CVPR 2026\] Beyond Patches: Global-aware Autoregressive Model for Multimodal Few-Shot Font Generation](beyond_patches_global-aware_autoregressive_model_for_multimodal_few-shot_font_ge.md)
-- [\[ACL 2025\] OZSpeech: One-step Zero-shot Speech Synthesis with Learned-Prior-Conditioned Flow Matching](../../ACL2025/image_generation/ozspeech_one-step_zero-shot_speech_synthesis_with_learned-prior-conditioned_flow.md)
-- [\[CVPR 2026\] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation](egoflow_gradient-guided_flow_matching_for_egocentric_6dof_object_motion_generati.md)
+- [\[CVPR 2026\] ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](projflow_projection_sampling_with_flow_matching_for_zero-shot_exact_spatial_moti.md)
+- [\[CVPR 2026\] FlowSteer: Guiding Few-Step Image Synthesis with Authentic Trajectories](flowsteer_guiding_few-step_image_synthesis_with_authentic_trajectories.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective
 description: >-
-  [ICLR 2026][Image Generation][continual unlearning] This paper presents the first systematic study of continual unlearning in T2I diffusion models. It identifies that existing unlearning methods suffer from "utility collapse" due to cumulative parameter drift under sequential requests. To mitigate this, the authors propose a suite of additional regularization strategies
+  [ICLR 2026][Image Generation][continual unlearning] This paper presents the first systematic study of continual unlearning in T2I diffusion models. It identifies that existing unlearning methods suffer from "utility collapse" due to cumulative parameter drift under sequential requests. To mitigate this, the authors propose a suite of additional regularization strategies (L1/L2 norms, selective fine-tuning, model merging) and a semantic-aware gradient projection method.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - continual unlearning
-  - diffusion models
-  - regularization
-  - gradient projection
-  - concept erasure
+  - "ICLR 2026"
+  - "Image Generation"
+  - "continual unlearning"
+  - "diffusion models"
+  - "regularization"
+  - "gradient projection"
+  - "concept erasure"
 date: 2026-05-08
-content_hash: ca794b5028452500
+content_hash: 1c1a6088aed28e86
 ---
+
 # Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective
 
 **Conference**: ICLR 2026  
@@ -148,11 +149,11 @@ While the first three methods handle cross-domain retention (e.g., unlearning a 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models](forget_many_forget_right_scalable_and_precise_concept_unlearning_in_diffusion_mo.md)
 - [\[ICLR 2026\] ACCORD: Alleviating Concept Coupling through Dependence Regularization for Text-to-Image Diffusion Personalization](accord_alleviating_concept_coupling_through_dependence_regularization_for_text-t.md)
+- [\[ICLR 2026\] AEGIS: Adversarial Target-Guided Retention-Data-Free Robust Concept Erasure from Diffusion Models](aegis_adversarial_target-guided_retention-data-free_robust_concept_erasure_from_.md)
+- [\[ICLR 2026\] Co-occurring Associated REtained concepts in Diffusion Unlearning](co-occurring_associated_retained_concepts_in_diffusion_unlearning.md)
 - [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](../../ICCV2025/image_generation/holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
-- [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
-- [\[ICLR 2026\] The Spacetime of Diffusion Models: An Information Geometry Perspective](the_spacetime_of_diffusion_models_an_information_geometry_perspective.md)
+- [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](../../ICML2026/image_generation/a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DAVE: A VLM Vision Encoder for Document Understanding and Web Agents
 description: >-
-  [ICLR 2026][Multimodal VLM][Web Agent] DAVE trains a specialized VLM vision encoder for document and web images. It employs modified pixel-level MAE for self-supervised learning on 20 million unlabeled document/web images, followed by autoregressive supervised pre-training on a small amount of high-quality data. By utilizing "multi-decoder weight merging +
+  [ICLR 2026][Multimodal VLM][Vision encoder] DAVE trains a specialized VLM vision encoder for document and web images. It employs modified pixel-level MAE for self-supervised learning on 20 million unlabeled document/web images, followed by autoregressive supervised pre-training on a small amount of high-quality data. By utilizing "multi-decoder weight merging + ensemble with SigLIP2," the encoder captures both structural-spatial information and general semantics…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Web Agent
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision encoder"
+  - "Document understanding"
+  - "Web Agent"
+  - "Self-supervised pre-training"
+  - "Model merging"
 date: 2026-05-08
-content_hash: 8c105f339560a785
+content_hash: 6ae9a3a6b8ba45dd
 ---
+
 # DAVE: A VLM Vision Encoder for Document Understanding and Web Agents
 
 **Conference**: ICLR 2026  
@@ -159,7 +164,7 @@ DAVE leads in dense document recognition/segmentation, lagging slightly behind S
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](webds_an_end-to-end_benchmark_for_web-based_data_science.md)
 - [\[ICLR 2026\] Multimodal Policy Internalization for Conversational Agents](multimodal_policy_internalization_for_conversational_agents.md)
 - [\[CVPR 2026\] SEA-Vision: A Multilingual Benchmark for Document and Scene Text Understanding in Southeast Asia](../../CVPR2026/multimodal_vlm/sea-vision_a_multilingual_benchmark_for_comprehensive_document_and_scene_text_un.md)
-- [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](../../CVPR2026/multimodal_vlm/re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
+- [\[CVPR 2025\] DocoPilot: Improving Multimodal Models for Document-Level Understanding](../../CVPR2025/multimodal_vlm/docopilot_improving_multimodal_models_for_document-level_understanding.md)
 
 </div>
 

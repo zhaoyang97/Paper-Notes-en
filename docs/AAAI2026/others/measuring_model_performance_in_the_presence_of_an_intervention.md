@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Measuring Model Performance in the Presence of an Intervention
 description: >-
-  [AAAI 2026][model evaluation] To address the bias in AI model evaluation under interventions, this paper proposes Nuisance Parameter Weighting (NPW)…
+  [AAAI 2026][model evaluation] To address the bias in AI model evaluation under interventions, this paper proposes Nuisance Parameter Weighting (NPW), which applies causal reweighting to the treatment arm of RCT data to achieve unbiased AUROC estimation. The method achieves a 5× improvement in sample efficiency and substantially improves statistical power for model selection and hypothesis testing.
 tags:
   - "AAAI 2026"
   - "model evaluation"
@@ -11,7 +11,7 @@ tags:
   - "intervention effect"
   - "causal inference"
 date: 2026-05-08
-content_hash: ff681f6f3891e450
+content_hash: f414106039774136
 ---
 
 # Measuring Model Performance in the Presence of an Intervention
@@ -141,11 +141,11 @@ Evaluation is conducted on synthetic data (subsampled to $N=200$), AMR-UTI ($N=1
 
 ## Related Papers
 
-- [\[ICLR 2026\] Measuring Uncertainty Calibration](../../ICLR2026/others/measuring_uncertainty_calibration.md)
-- [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
+- [\[ACL 2025\] Rationales Are Not Silver Bullets: Measuring the Impact of Rationales on Model Performance and Reliability](../../ACL2025/others/rationales_are_not_silver_bullets_measuring_the_impact_of_rationales_on_model_pe.md)
 - [\[AAAI 2026\] Model Change for Description Logic Concepts](model_change_for_description_logic_concepts.md)
+- [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
 - [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](model_counting_for_dependency_quantified_boolean_formulas.md)
-- [\[ICLR 2026\] TabStruct: Measuring Structural Fidelity of Tabular Data](../../ICLR2026/others/tabstruct_measuring_structural_fidelity_of_tabular_data.md)
+- [\[AAAI 2026\] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach](variance_computation_for_weighted_model_counting_with_knowledge_compilation_appr.md)
 
 </div>
 

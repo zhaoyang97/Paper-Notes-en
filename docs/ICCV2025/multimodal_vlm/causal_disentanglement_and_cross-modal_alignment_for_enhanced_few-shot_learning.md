@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning
 description: >-
-  [ICCV 2025][Multimodal VLM][Few-shot learning] This paper proposes the Causal CLIP Adapter (CCA), which applies ICA to causally disentangle CLIP visual features…
+  [ICCV 2025][Multimodal VLM][Few-shot learning] This paper proposes the Causal CLIP Adapter (CCA), which applies ICA to causally disentangle CLIP visual features, and enhances cross-modal alignment via unidirectional text classifier fine-tuning and bidirectional cross-attention, achieving state-of-the-art few-shot classification performance across 11 benchmark datasets.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "independent component analysis"
   - "cross-modal alignment"
 date: 2026-05-08
-content_hash: 10e50406a85340fe
+content_hash: dad3f2ca4953f760
 ---
 
 # Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning
@@ -161,11 +161,11 @@ CCA-FT outperforms Tip-Adapter-F across all 11 datasets under all shot settings,
 
 ## Related Papers
 
+- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](../../ICLR2026/multimodal_vlm/exploring_cross-modal_flows_for_few-shot_learning.md)
 - [\[ICCV 2025\] Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation](sparsity_outperforms_low-rank_projections_in_few-shot_adaptation.md)
-- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](../../CVPR2026/multimodal_vlm/noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
 - [\[NeurIPS 2025\] VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning](../../NeurIPS2025/multimodal_vlm/vt-fsl_bridging_vision_and_text_with_llms_for_few-shot_learning.md)
-- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](../../CVPR2026/multimodal_vlm/mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
 - [\[ICCV 2025\] Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models](multi-cache_enhanced_prototype_learning_for_test-time_generalization_of_vision-l.md)
+- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](../../CVPR2026/multimodal_vlm/noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
 
 </div>
 

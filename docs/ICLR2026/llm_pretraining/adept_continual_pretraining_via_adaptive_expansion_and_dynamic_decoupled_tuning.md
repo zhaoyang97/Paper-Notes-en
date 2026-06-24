@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ADEPT: Continual Pretraining via Adaptive Expansion and Dynamic Decoupled Tuning
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] ADEPT discovers that the contributions of different layers and parameter units in LLMs to "general competence" are highly non-uniform. Consequently, it only replicates the layers least important to the general domain to create new capacity and assigns asymmetric learning rates within these expanded layers based on unit
+  [ICLR 2026][LLM Pretraining][Continual Pretraining] ADEPT discovers that the contributions of different layers and parameter units in LLMs to "general competence" are highly non-uniform. Consequently, it only replicates the layers least important to the general domain to create new capacity and assigns asymmetric learning rates within these expanded layers based on unit importance. In continual pretraining (CPT) for math and medical domains, this method injects new knowledge…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Continual Pretraining"
+  - "Catastrophic Forgetting"
+  - "Layer Expansion"
+  - "Functional Specialization"
+  - "Decoupled Tuning"
 date: 2026-05-08
-content_hash: e9fda3a138ed033e
+content_hash: e349c6eb34a71a75
 ---
+
 # ADEPT: Continual Pretraining via Adaptive Expansion and Dynamic Decoupled Tuning
 
 **Conference**: ICLR 2026  
@@ -126,13 +132,17 @@ ADEPT consistently achieves SOTA across all backbones and domain benchmarks. Com
 
 <div class="related-papers" markdown="1">
 
-- **LLaMA-Pro**: Progressive LLaMA with Block Expansion (arXiv:2401.02415)
-- **TaSL**: Task-Specific Layer-wise Decoupling for LLM Adaptation (arXiv:2410.xxxxx)
+## Related Papers
+
+- [\[ACL 2025\] Velocitune: A Velocity-based Dynamic Domain Reweighting Method for Continual Pre-training](../../ACL2025/llm_pretraining/velocitune_a_velocity-based_dynamic_domain_reweighting_method_for_continual_pre-.md)
+- [\[ICLR 2026\] Synthetic Bootstrapped Pretraining](synthetic_bootstrapped_pretraining.md)
+- [\[ICML 2026\] SPARe: Stacked Parallelism with Adaptive Reordering for Fault-Tolerant LLM Pretraining Systems with 100k+ GPUs](../../ICML2026/llm_pretraining/spare_stacked_parallelism_with_adaptive_reordering_for_fault-tolerant_llm_pretra.md)
+- [\[ICLR 2026\] Reformulation for Pretraining Data Augmentation](reformulation_for_pretraining_data_augmentation.md)
+- [\[ICLR 2026\] LLM Pretraining with Continuous Concepts](llm_pretraining_with_continuous_concepts.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2025\] Velocitune: A Velocity-based Dynamic Domain Reweighting Method for Continual Pre-training](../../ACL2025/llm_pretraining/velocitune_a_velocity-based_dynamic_domain_reweighting_method_for_continual_pre-.md)

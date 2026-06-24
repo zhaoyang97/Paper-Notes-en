@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning
 description: >-
-  [NeurIPS 2025][Interpretability][LLM world models] Drawing on cognitive science methodology for studying mental models, this work evaluates LLM mechanical reasoning ability using TikZ code representations of pulley syste…
+  [NeurIPS 2025][Interpretability][LLM world models] Drawing on cognitive science methodology for studying mental models, this work evaluates LLM mechanical reasoning ability using TikZ code representations of pulley systems. LLMs can approximately estimate mechanical advantage and distinguish functional from non-functional systems (Studies 1 & 2), but completely fail at fine-grained structural connectivity reasoning (Study 3), indicating that LLM "world models" exist but are b…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "mental models"
   - "brittleness"
 date: 2026-05-08
-content_hash: 1545228c3d724233
+content_hash: 81abf85d7adeecbd
 ---
 
 # LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning
@@ -164,11 +164,11 @@ This paper does not involve model training. Key experimental design parameters:
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Geometric Priors for Generalizable World Models via Vector Symbolic Architecture](geometric_priors_for_generalizable_world_models_via_vector_symbolic_architecture.md)
+- [\[ACL 2025\] Around the World in 24 Hours: Probing LLM Knowledge of Time and Place](../../ACL2025/interpretability/around_the_world_in_24_hours_probing_llm_knowledge_of_time_and_place.md)
 - [\[ACL 2026\] On Emergent Social World Models -- Evidence for Functional Integration of Theory of Mind and Pragmatic Reasoning in Language Models](../../ACL2026/interpretability/on_emergent_social_world_models_--_evidence_for_functional_integration_of_theory.md)
 - [\[NeurIPS 2025\] Toward Real-world Text Image Forgery Localization: Structured and Interpretable Data Synthesis](toward_real-world_text_image_forgery_localization_structured_and_interpretable_d.md)
 - [\[NeurIPS 2025\] Representation Consistency for Accurate and Coherent LLM Answer Aggregation](representation_consistency_for_accurate_and_coherent_llm_answer_aggregation.md)
-- [\[NeurIPS 2025\] LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS](llm_probing_with_contrastive_eigenproblems_improving_understanding_and_applicabi.md)
-- [\[NeurIPS 2025\] URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training](urls_help_topics_guide_understanding_metadata_utility_in_llm_training.md)
 
 </div>
 

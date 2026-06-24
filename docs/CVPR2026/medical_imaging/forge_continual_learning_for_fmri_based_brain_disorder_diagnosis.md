@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay
 description: >-
-  [CVPR 2026][Medical Imaging][continual learning] This paper proposes FORGE, the first continual learning framework specifically designed for cross-site fMRI brain disorder diagnosis. It utilizes a structure-aware VAE to generate realistic functional connectivity (FC) matrices for privacy-preserving generative replay. Combined with dual-level knowledge distillation an
+  [CVPR 2026][Medical Imaging][continual learning] This paper proposes FORGE, the first continual learning framework specifically designed for cross-site fMRI brain disorder diagnosis. It utilizes a structure-aware VAE to generate realistic functional connectivity (FC) matrices for privacy-preserving generative replay. Combined with dual-level knowledge distillation and a hierarchical contextual bandit sampling strategy, it effectively mitigates catastrophic forgetting.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - continual learning
-  - fMRI
-  - functional connectivity
-  - generative replay
-  - knowledge distillation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "continual learning"
+  - "fMRI"
+  - "functional connectivity"
+  - "generative replay"
+  - "knowledge distillation"
 date: 2026-05-08
-content_hash: 1cd51395c17c74ee
+content_hash: 72e423ff55fb6bcb
 ---
+
 # Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay
 
 **Conference**: CVPR 2026  
@@ -128,11 +129,11 @@ Evaluations were conducted on ABIDE (Autism), REST-meta-MDD (Depression), and BS
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry](../../NeurIPS2025/medical_imaging/riemannian_flow_matching_for_brain_connectivity_matrices_via_pullback_geometry.md)
 - [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)
+- [\[NeurIPS 2025\] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry](../../NeurIPS2025/medical_imaging/riemannian_flow_matching_for_brain_connectivity_matrices_via_pullback_geometry.md)
+- [\[ICLR 2026\] Accelerating Benchmarking of Functional Connectivity Modeling via Structure-aware Core-set Selection](../../ICLR2026/medical_imaging/accelerating_benchmarking_of_functional_connectivity_modeling_via_structure-awar.md)
+- [\[NeurIPS 2025\] EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging](../../NeurIPS2025/medical_imaging/ewc-guided_diffusion_replay_for_exemplar-free_continual_learning_in_medical_imag.md)
 - [\[CVPR 2026\] Cross-domain Dual-stream Feature Disentanglement for Brain Disorder Prediction with Sparsely Labeled PET](cross-domain_dual-stream_feature_disentanglement_for_brain_disorder_prediction_w.md)
-- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
-- [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
 
 </div>
 

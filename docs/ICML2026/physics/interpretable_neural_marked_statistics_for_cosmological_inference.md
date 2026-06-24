@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Interpretable Equivariant Marks for Contrastive Cosmological Inference
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] This paper replaces manually designed marking functions in cosmological "marked statistics" with an **interpretable, equivariance-constrained neural mark**. By using three local SO(3)-equivariant spherical harmonic filters to extract rotationally invariant morphological descriptors and aligning the marked two-point spe
+  [ICML 2026][Physics & Scientific Computing][Marked statistics] This paper replaces manually designed marking functions in cosmological "marked statistics" with an **interpretable, equivariance-constrained neural mark**. By using three local SO(3)-equivariant spherical harmonic filters to extract rotationally invariant morphological descriptors and aligning the marked two-point spectra with cosmological parameters via contrastive learning (InfoNCE + residualization)…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Marked statistics"
+  - "Spherical harmonic equivariant filtering"
+  - "Contrastive learning"
+  - "Fisher information"
+  - "Interpretable summary"
 date: 2026-05-08
-content_hash: 63e6d704e1c5f25d
+content_hash: 9707a1f779f3db4c
 ---
+
 # Interpretable Equivariant Marks for Contrastive Cosmological Inference
 
 **Conference**: ICML 2026  
@@ -129,15 +135,16 @@ Fisher derivatives and covariances were estimated using independent sets of simu
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust and Interpretable Adaptation of Equivariant Materials Foundation Models via Sparsity-promoting Fine-tuning](../../ICLR2026/physics/robust_and_interpretable_adaptation_of_equivariant_materials_foundation_models_v.md)
 - [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
 - [\[ICML 2026\] Foundation Inference Models for Ordinary Differential Equations](foundation_inference_models_for_ordinary_differential_equations.md)
-- [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](../../NeurIPS2025/physics/vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
+- [\[ICLR 2026\] VisionLaw: Inferring Interpretable Intrinsic Dynamics from Visual Observations via Bilevel Optimization](../../ICLR2026/physics/visionlaw_inferring_interpretable_intrinsic_dynamics_from_visual_observations_vi.md)
 - [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
-- [\[ICML 2025\] Compact Matrix Quantum Group Equivariant Neural Networks](../../ICML2025/physics/compact_matrix_quantum_group_equivariant_neural_networks.md)
 
 </div>
 

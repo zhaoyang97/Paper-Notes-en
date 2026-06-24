@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning
 description: >-
-  [NeurIPS 2025][Robotics][Action Tokenizer] BEAST parameterizes action sequences via B-splines—estimating control points through ridge regression and uniformly quantizing them into fixed-length tokens—achieving 20× token…
+  [NeurIPS 2025][Robotics][Action Tokenizer] BEAST parameterizes action sequences via B-splines—estimating control points through ridge regression and uniformly quantizing them into fixed-length tokens—achieving 20× token compression (100 steps → 5 tokens), mathematically guaranteed $C^0$ continuity across action chunks, a top-1 success rate on LIBERO-Long (86.4%), and an inference throughput of 617 Hz (2.14× faster than π₀ and 101× faster than OpenVLA).
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Smooth Trajectory"
   - "Efficient Inference"
 date: 2026-05-08
-content_hash: cced0633b4104d63
+content_hash: a4a0b5ed0d92d777
 ---
 
 # BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning
@@ -166,11 +166,11 @@ Action sequence $a_{1:T}$ ($T$ steps × $D$ degrees of freedom) → **B-spline f
 
 ## Related Papers
 
+- [\[ICML 2025\] Action-Constrained Imitation Learning](../../ICML2025/robotics/action-constrained_imitation_learning.md)
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
 - [\[NeurIPS 2025\] Massively Parallel Imitation Learning of Mouse Forelimb Musculoskeletal Reaching Dynamics](massively_parallel_imitation_learning_of_mouse_forelimb_musculoskeletal_reaching.md)
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
-- [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
-- [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
+- [\[NeurIPS 2025\] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning](sample-efficient_tabular_self-play_for_offline_robust_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning](time_reversal_symmetry_for_efficient_robotic_manipulations_in_deep_reinforcement.md)
 
 </div>
 

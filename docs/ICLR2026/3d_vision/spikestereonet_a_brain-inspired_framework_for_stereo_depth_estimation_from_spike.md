@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SpikeStereoNet: 面向 Spike 流的类脑双目深度估计框架
+  [Paper Note] SpikeStereoNet: A Brain-Inspired Stereo Depth Estimation Framework for Spike Streams
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper proposes SpikeStereoNet, which estimates stereo depth directly from a pair of raw spike streams (binary high-frequency streams from spike cameras). It employs a three-layer Recurrent Spiking Neural Network (RSNN) as an iterative refinement operator to repeatedly update disparity. Accompanied by large-scale s
+  [ICLR 2026][3D Vision][Spike Camera] This paper proposes SpikeStereoNet, which estimates stereo depth directly from a pair of raw spike streams (binary high-frequency streams from spike cameras). It employs a three-layer Recurrent Spiking Neural Network (RSNN) as an iterative refinement operator to repeatedly update disparity. Accompanied by large-scale synthetic and real spike stereo datasets, the method outperforms existing frame-based and event-based stereo matching method…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Spike Camera"
+  - "Stereo Depth Estimation"
+  - "Spiking Neural Network"
+  - "Iterative Refinement"
+  - "Neuromorphic Computing"
 date: 2026-05-08
-content_hash: 9f7e9844de4f8e65
+content_hash: 5c7d7f6d228d084b
 ---
+
 # SpikeStereoNet: A Brain-Inspired Stereo Depth Estimation Framework for Spike Streams
 
 **Conference**: ICLR 2026  
@@ -162,11 +168,11 @@ Ablation of update operator replacement (same neuron scale):
 
 ## Related Papers
 
-- [\[ICML 2026\] SVL: Spike-based Vision-Language Pretraining for Efficient 3D Open-World Understanding](../../ICML2026/3d_vision/svl_spike-based_vision-language_pretraining_for_efficient_3d_open-world_understa.md)
-- [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
-- [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](spiking_discrepancy_transformer_for_point_cloud_analysis.md)
-- [\[ICLR 2026\] Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints](generalizable_coarse-to-fine_robot_manipulation_via_language-aligned_3d_keypoint.md)
-- [\[ICLR 2026\] RayI2P: Learning Rays for Image-to-Point Cloud Registration](rayi2p_learning_rays_for_image-to-point_cloud_registration.md)
+- [\[CVPR 2026\] Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams](../../CVPR2026/3d_vision/3d_gaussian_splatting_from_unposed_spike_stream.md)
+- [\[CVPR 2026\] SCE-Depth: A Spherical Compound Eye Framework for Wide FOV Depth Estimation](../../CVPR2026/3d_vision/sce-depth_a_spherical_compound_eye_framework_for_wide_fov_depth_estimation.md)
+- [\[ICLR 2026\] StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams](streamsplat_towards_online_dynamic_3d_reconstruction_from_uncalibrated_video_str.md)
+- [\[CVPR 2025\] Efficient Depth Estimation for Unstable Stereo Camera Systems on AR Glasses](../../CVPR2025/3d_vision/efficient_depth_estimation_for_unstable_stereo_camera_systems_on_ar_glasses.md)
+- [\[ICLR 2026\] PatchRefiner V2: Fast and Lightweight Real-Domain High-Resolution Metric Depth Estimation](patchrefiner_v2_fast_and_lightweight_real-domain_high-resolution_metric_depth_es.md)
 
 </div>
 

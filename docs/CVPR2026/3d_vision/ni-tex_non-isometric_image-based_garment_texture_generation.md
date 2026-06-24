@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NI-Tex: Non-isometric Image-based Garment Texture Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Ours proposes the NI-Tex framework, which achieves high-quality PBR texture generation from a single image to a 3D garment under non-isometric conditions using a feed-forward architecture. This is accomplished by constructing a 3D Garment Videos dataset, image-editing-based cross-topology augmentation, and an uncertain
+  [CVPR 2026][3D Vision][Garment texture generation] Ours proposes the NI-Tex framework, which achieves high-quality PBR texture generation from a single image to a 3D garment under non-isometric conditions using a feed-forward architecture. This is accomplished by constructing a 3D Garment Videos dataset, image-editing-based cross-topology augmentation, and an uncertainty-guided iterative baking algorithm.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Garment texture generation"
+  - "PBR materials"
+  - "Non-isometric deformation"
+  - "Uncertainty-guided baking"
+  - "Cross-topology augmentation"
 date: 2026-05-08
-content_hash: 8e85987c9c6d7db9
+content_hash: d7cd607de2358905
 ---
+
 # NI-Tex: Non-isometric Image-based Garment Texture Generation
 
 **Conference**: CVPR 2026  
@@ -139,13 +145,20 @@ NI-Tex achieves the best KID and FID scores, with KID 5.0% lower and FID 3.6% lo
 | Value | ⭐⭐⭐⭐⭐ | Directly addresses industrial garment design needs; PBR output is highly practical. |
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Hunyuan3D: A Unified Framework for 3D Synthesis
-- Paint3D: Paint Anything 3D with Photo-Realistic Textures
-- BEDLAM: A Synthetic Dataset of Bodies Exhibiting Detailed Lifelike Animated Motion
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation](swifttailor_efficient_3d_garment_generation_with_geometry_image_representation.md)
+- [\[CVPR 2026\] MatLat: Material Latent Space for PBR Texture Generation](matlat_material_latent_space_for_pbr_texture_generation.md)
+- [\[CVPR 2026\] NaTex: Seamless Texture Generation as Latent Color Diffusion](natex_seamless_texture_generation_as_latent_color_diffusion.md)
+- [\[CVPR 2026\] TEXTRIX: Latent Attribute Grid for Native Texture Generation and Beyond](textrix_latent_attribute_grid_for_native_texture_generation_and_beyond.md)
+- [\[CVPR 2026\] CaliTex: Geometry-Calibrated Attention for View-Coherent 3D Texture Generation](calitex_geometry-calibrated_attention_for_view-coherent_3d_texture_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Refaçade: Editing Object with Given Reference Texture](refacade_editing_object_with_given_reference_texture.md)

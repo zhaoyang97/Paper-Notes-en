@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] From Signal Degradation to Computation Collapse: Uncovering the Two Failure Modes of LLM Quantization
 description: >-
-  [ACL 2026][Model Compression][Paper Note] Through systematic mechanistic interpretability analysis, this paper reveals that LLM quantization exhibits two qualitatively different failure modes: 4-bit Signal Degradation (computational patterns remain intact but precision is impaired, allowing for local repair) and 2-bit Computation Collapse (functional destructi
+  [ACL 2026 Findings][Model Compression][Post-training Quantization] Through systematic mechanistic interpretability analysis, this paper reveals that LLM quantization exhibits two qualitatively different failure modes: 4-bit Signal Degradation (computational patterns remain intact but precision is impaired, allowing for local repair) and 2-bit Computation Collapse (functional destruction of key components, requiring structural reconstruction).
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Post-training Quantization"
+  - "Signal Degradation"
+  - "Computation Collapse"
+  - "Mechanistic Interpretability"
+  - "Causal Tracing"
+  - "Knowledge Recall"
+  - "PTQ"
 date: 2026-05-08
-content_hash: 395951e2e140d81e
+content_hash: 8ce628dae0fd6b30
 ---
+
 # From Signal Degradation to Computation Collapse: Uncovering the Two Failure Modes of LLM Quantization
 
 **Conference**: ACL 2026 Findings  
@@ -145,9 +153,9 @@ If the two failures are essentially different, they should respond differently t
 
 - [\[ACL 2026\] Two-Stage Regularization-Based Structured Pruning for LLMs](two-stage_regularization-based_structured_pruning_for_llms.md)
 - [\[ICML 2025\] Speculative Decoding in Decentralized LLM Inference: Turning Communication Latency into Computation Throughput](../../ICML2025/model_compression/speculative_decoding_in_decentralized_llm_inference_turning_communication_latenc.md)
+- [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](../../ICLR2026/model_compression/rethinking_residual_errors_in_compensation-based_llm_quantization.md)
 - [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](../../ICLR2026/model_compression/rethinking_continual_learning_with_progressive_neural_collapse.md)
 - [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](../../ICLR2026/model_compression/paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
-- [\[ICML 2025\] RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](../../ICML2025/model_compression/rocketkv_accelerating_long-context_llm_inference_via_two-stage_kv_cache_compress.md)
 
 </div>
 

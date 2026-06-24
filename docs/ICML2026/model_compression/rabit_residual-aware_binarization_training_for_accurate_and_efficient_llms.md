@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RaBiT: Residual-Aware Binarization Training for Accurate and Efficient LLMs
 description: >-
-  [ICML 2026][Model Compression][LLM] This paper addresses a failure mode in residual binarized LLMs named "inter-path adaptation," where parallel binary paths learn redundant features. The authors propose RaBiT, which online derives all binary paths from a single shared full-precision weight combined with function-aware initialization. This structurally e
+  [ICML 2026][Model Compression][Residual Binarization] This paper addresses a failure mode in residual binarized LLMs named "inter-path adaptation," where parallel binary paths learn redundant features. The authors propose RaBiT, which online derives all binary paths from a single shared full-precision weight combined with function-aware initialization. This structurally enforces a residual hierarchy, allowing 2-bit Llama2-7B to outperform strong VQ baselines in a matmul-free…
 tags:
-  - ICML 2026
-  - Model Compression
-  - LLM
+  - "ICML 2026"
+  - "Model Compression"
+  - "Residual Binarization"
+  - "Quantization-Aware Training"
+  - "LLM"
+  - "Path Co-adaptation"
+  - "matmul-free Inference"
 date: 2026-05-08
-content_hash: c4dacb4cc0d16e95
+content_hash: 08b1d9ccf22e330e
 ---
+
 # RaBiT: Residual-Aware Binarization Training for Accurate and Efficient LLMs
 
 **Conference**: ICML 2026  
@@ -134,16 +139,16 @@ Comparison with SOTA 2-bit methods on Llama and Gemma models.
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](../../ICLR2026/model_compression/sliderquant_accurate_post-training_quantization_for_llms.md)
+- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](../../ICLR2026/model_compression/towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
 - [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
 - [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
-- [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](../../ICLR2026/model_compression/compute-optimal_quantization-aware_training.md)
-- [\[ACL 2026\] CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration](../../ACL2026/model_compression/improving_the_throughput_of_diffusion-based_large_language_models_via_a_training.md)
-- [\[ICLR 2026\] What Layers When: Learning to Skip Compute in LLMs with Residual Gates](../../ICLR2026/model_compression/what_layers_when_learning_to_skip_compute_in_llms_with_residual_gates.md)
+- [\[ICLR 2026\] CAR-LoRA: Training Compression-Aware and Robust LoRA Adapters for Evolving LLMs](../../ICLR2026/model_compression/car-lora_training_compression-aware_and_robust_lora_adapters_for_evolving_llms.md)
 
 </div>
 

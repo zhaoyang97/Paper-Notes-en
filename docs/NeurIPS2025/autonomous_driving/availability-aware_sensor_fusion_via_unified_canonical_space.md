@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Availability-aware Sensor Fusion via Unified Canonical Space
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Multi-sensor fusion] This paper proposes ASF (Availability-aware Sensor Fusion), which maps Camera/LiDAR/4D Radar features into a shared space via Unified Canonical Projection (UCP)…
+  [NeurIPS 2025][Autonomous Driving][Multi-sensor fusion] This paper proposes ASF (Availability-aware Sensor Fusion), which maps Camera/LiDAR/4D Radar features into a shared space via Unified Canonical Projection (UCP), applies cross-sensor along-patch cross-attention (CASAP, complexity $O(N_qN_s)$ vs. $O(N_qN_sN_p)$) to automatically adapt to available sensors, and employs a Sensor Combination Loss (SCL) covering all 7 sensor subsets. ASF achieves AP_3D of 73.6% on K-Radar (su…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "4D Radar"
   - "CASAP"
 date: 2026-05-08
-content_hash: 58122b27b66310d7
+content_hash: 96c5d8d037e3ce3f
 ---
 
 # Availability-aware Sensor Fusion via Unified Canonical Space
@@ -134,8 +134,8 @@ Training requires only a single RTX 3090 GPU (1.5–1.6 GB VRAM), compared to 8 
 - [\[NeurIPS 2025\] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion](layer-wise_modality_decomposition_for_interpretable_multimodal_sensor_fusion.md)
 - [\[ICCV 2025\] Self-Supervised Sparse Sensor Fusion for Long Range Perception](../../ICCV2025/autonomous_driving/self-supervised_sparse_sensor_fusion_for_long_range_perception.md)
 - [\[NeurIPS 2025\] UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning](unimotion_a_unified_motion_framework_for_simulation_prediction_and_planning.md)
-- [\[ICLR 2026\] x²-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space](../../ICLR2026/autonomous_driving/x2-fusion_cross-modality_and_cross-dimension_flow_estimation_in_event_edge_space.md)
-- [\[CVPR 2026\] x2-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space](../../CVPR2026/autonomous_driving/x2-fusion_cross-modality_and_cross-dimension_flow_estimation_in_event_edge_space.md)
+- [\[CVPR 2025\] CAWM-Mamba: A Unified Model for Infrared-Visible Image Fusion and Compound Adverse Weather Restoration](../../CVPR2025/autonomous_driving/cawm-mamba_a_unified_model_for_infrared-visible_image_fusion_and_compound_advers.md)
+- [\[CVPR 2025\] GDFusion: Rethinking Temporal Fusion with a Unified Gradient Descent View for 3D Semantic Occupancy Prediction](../../CVPR2025/autonomous_driving/rethinking_temporal_fusion_with_a_unified_gradient_descent_view_for_3d_semantic_.md)
 
 </div>
 

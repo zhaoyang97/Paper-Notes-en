@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing
 description: >-
-  [NeurIPS 2025][Image Generation][Rectified Flow] SplitFlow decomposes a target prompt into multiple sub-prompts, computes an independent editing flow for each…
+  [NeurIPS 2025][Image Generation][Rectified Flow] SplitFlow decomposes a target prompt into multiple sub-prompts, computes an independent editing flow for each, and combines them into a unified editing trajectory via latent trajectory projection and adaptive velocity field aggregation. This resolves gradient entanglement and achieves higher fidelity and editability in text-guided image editing without requiring inversion.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Gradient Conflict"
   - "Multi-Task Learning"
 date: 2026-05-08
-content_hash: 72e7890c42e38186
+content_hash: bb67a30a8d1ea852
 ---
 
 # SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing
@@ -142,10 +142,10 @@ SplitFlow consists of two stages:
 ## Related Papers
 
 - [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](../../ICCV2025/image_generation/flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
+- [\[ICML 2025\] Taming Rectified Flow for Inversion and Editing](../../ICML2025/image_generation/taming_rectified_flow_for_inversion_and_editing.md)
+- [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](../../ICLR2026/image_generation/flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)
 - [\[ICLR 2026\] Free Lunch for Stabilizing Rectified Flow Inversion](../../ICLR2026/image_generation/free_lunch_for_stabilizing_rectified_flow_inversion.md)
 - [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](efficient_rectified_flow_for_image_fusion.md)
-- [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
-- [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](../../ICCV2025/image_generation/ale_attribute_leakage_free_editing.md)
 
 </div>
 

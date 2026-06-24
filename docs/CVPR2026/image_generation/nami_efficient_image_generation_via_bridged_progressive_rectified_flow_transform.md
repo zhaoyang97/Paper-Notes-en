@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers
 description: >-
-  [CVPR 2026][Image Generation][Inference Acceleration] NAMI partitions the rectified flow of text-to-image generation into multiple time windows based on resolution. Low-resolution stages utilize fewer Transformer layers to rapidly construct layouts, while high-resolution stages gradually stack layers for detail refinement. A learnable BridgeFlow module aligns distribution
+  [CVPR 2026][Image Generation][Rectified Flow] NAMI partitions the rectified flow of text-to-image generation into multiple time windows based on resolution. Low-resolution stages utilize fewer Transformer layers to rapidly construct layouts, while high-resolution stages gradually stack layers for detail refinement. A learnable BridgeFlow module aligns distributions between adjacent stages. At a 2B parameter scale, it reduces inference time for $1024 \times 1024$ images by 64%…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Inference Acceleration
-  - DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Progressive Generation"
+  - "Multi-resolution Training"
+  - "Inference Acceleration"
+  - "DiT"
 date: 2026-05-08
-content_hash: 4ca0470cead23225
+content_hash: 00e902225b8de1bc
 ---
+
 # NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers
 
 **Conference**: CVPR 2026  
@@ -131,15 +135,16 @@ Efficiency at 1024 resolution: NAMI-2B takes 2.98s compared to 8.47s for a FLUX-
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)
-- [\[CVPR 2026\] DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers](ddit_dynamic_patch_scheduling_for_efficient_diffusion_transformers.md)
-- [\[CVPR 2026\] From Sketch to Fresco: Efficient Diffusion Transformer with Progressive Resolution](from_sketch_to_fresco_efficient_diffusion_transformer_with_progressive_resolutio.md)
-- [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](rectok_reconstruction_distillation_along_rectified_flow.md)
+- [\[CVPR 2026\] Delta Rectified Flow Sampling for Text-to-Image Editing](delta_rectified_flow_sampling_for_text-to-image_editing.md)
+- [\[CVPR 2026\] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion](careflow_cyclic_adaptive_rectified_flow_for_multimodal_fusion.md)
 - [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](../../NeurIPS2025/image_generation/efficient_rectified_flow_for_image_fusion.md)
+- [\[CVPR 2026\] DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers](ddit_dynamic_patch_scheduling_for_efficient_diffusion_transformers.md)
+- [\[CVPR 2026\] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation](vde_training-free_accelerating_rectified_flow_model_via_velocity_decomposition_a.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] To bridge the perception-action gap where VLA models "use 2D vision to drive 3D physical actions," this paper proposes a "Spatial-Aware Pretraining" phase before learning robot policies. By extracting 3D visual and 3D action annotations from large-scale human manipulation videos as supervision, the dual-encoder model *
+  [CVPR 2026][Robotics][VLA] To bridge the perception-action gap where VLA models "use 2D vision to drive 3D physical actions," this paper proposes a "Spatial-Aware Pretraining" phase before learning robot policies. By extracting 3D visual and 3D action annotations from large-scale human manipulation videos as supervision, the dual-encoder model **VIPA-VLA** aligns 2D semantic vision with 3D space. Consequently, without using a single frame of robot data for pretraining…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Spatial-Aware Pretraining"
+  - "Human Videos"
+  - "Visual-Physical Alignment"
+  - "Robot Manipulation"
 date: 2026-05-08
-content_hash: df3506b0a2fb5386
+content_hash: da4f76ff0ed1bbf3
 ---
+
 # Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos
 
 **Conference**: CVPR 2026  
@@ -159,8 +164,8 @@ The advantage is more pronounced in unseen environments (Wipe-Board-Unseen 83%/5
 - [\[CVPR 2026\] VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling](vla_models_are_more_generalizable_than_you_think_revisiting_physical_and_spatial.md)
 - [\[CVPR 2026\] EgoRoC: Towards Egocentric Robotic Control via Task-Agnostic Visual Alignment](egoroc_towards_egocentric_robotic_control_via_task-agnostic_visual_alignment.md)
 - [\[CVPR 2026\] ForeAct: Steering Your VLA with Efficient Visual Foresight Planning](foreact_steering_your_vla_with_efficient_visual_foresight_planning.md)
-- [\[CVPR 2026\] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning](clivis_unleashing_cognitive_map_through_linguistic-visual_synergy_for_embodied_v.md)
 - [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
+- [\[CVPR 2026\] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](flare_a_failure-aware_framework_for_autonomous_correction_and_recovery_in_visual.md)
 
 </div>
 

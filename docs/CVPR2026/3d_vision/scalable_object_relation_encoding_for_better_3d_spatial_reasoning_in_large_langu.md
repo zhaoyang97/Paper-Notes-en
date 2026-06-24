@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scalable Object Relation Encoding for Better 3D Spatial Reasoning in Large Language Models
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The authors propose QuatRoPE, a 3D positional encoding method based on quaternion rotation, which preserves all $O(n^2)$ spatial relations between objects using only $O(n)$ input tokens. Combined with the IGRE mechanism to reduce interference with language RoPE, it achieves significant improvements across several 3D vi
+  [CVPR 2026][3D Vision][3D Spatial Reasoning] The authors propose QuatRoPE, a 3D positional encoding method based on quaternion rotation, which preserves all $O(n^2)$ spatial relations between objects using only $O(n)$ input tokens. Combined with the IGRE mechanism to reduce interference with language RoPE, it achieves significant improvements across several 3D vision-language benchmarks.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Spatial Reasoning"
+  - "Positional Encoding"
+  - "Quaternion Rotation"
+  - "Large Language Models"
+  - "3D Vision-Language"
 date: 2026-05-08
-content_hash: 4dbda408a868df30
+content_hash: 6b9825d5afddedf2
 ---
+
 # Scalable Object Relation Encoding for Better 3D Spatial Reasoning in Large Language Models
 
 **Conference**: CVPR 2026  
@@ -155,10 +161,10 @@ Zero-shot results on the ASR spatial reasoning benchmark (3DGraphLLM-8B):
 ## Related Papers
 
 - [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
+- [\[ICLR 2026\] Do 3D Large Language Models Really Understand 3D Spatial Relationships?](../../ICLR2026/3d_vision/do_3d_large_language_models_really_understand_3d_spatial_relationships.md)
 - [\[CVPR 2026\] ORD: Object-Relation Decoupling for Generalized 3D Visual Grounding](ord_object-relation_decoupling_for_generalized_3d_visual_grounding.md)
+- [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
 
 </div>
 

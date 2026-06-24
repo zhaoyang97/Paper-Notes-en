@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Q♯: Provably Optimal Distributional RL for LLM Post-Training
 description: >-
-  [NeurIPS 2025][LLM/NLP][LLM post-training] This paper proposes Q♯, a distributional RL-based value function method for KL-regularized LLM post-training. By learning the cumulative reward distribution under the reference…
+  [NeurIPS 2025][LLM (Other)][LLM post-training] This paper proposes Q♯, a distributional RL-based value function method for KL-regularized LLM post-training. By learning the cumulative reward distribution under the reference policy to compute the optimal soft Q-function for guided generation, Q♯ achieves higher accuracy and lower KL divergence on mathematical reasoning tasks, and provides a variance-dependent PAC convergence bound.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "LLM post-training"
   - "distributional reinforcement learning"
   - "KL regularization"
   - "value function guidance"
   - "mathematical reasoning"
 date: 2026-05-08
-content_hash: e4d8b023d0e1750c
+content_hash: e979f61e73f54e2f
 ---
 
 # Q♯: Provably Optimal Distributional RL for LLM Post-Training
@@ -145,7 +145,7 @@ Q♯ is an iterative value function learning algorithm. At each round: (1) roll 
 - [\[NeurIPS 2025\] Reparameterized LLM Training via Orthogonal Equivalence Transformation](reparameterized_llm_training_via_orthogonal_equivalence_transformation.md)
 - [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](../../ICLR2026/llm_nlp/pt2-llm_post-training_ternarization_for_large_language_models.md)
 - [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
-- [\[NeurIPS 2025\] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs](speculate_deep_and_accurate_lossless_and_training-free_acceleration_for_offloade.md)
+- [\[ACL 2025\] Are Optimal Algorithms Still Optimal? Rethinking Sorting in LLM-Based Pairwise Ranking with Batching and Caching](../../ACL2025/llm_nlp/are_optimal_algorithms_still_optimal_rethinking_sorting_in_llm-based_pairwise_ra.md)
 - [\[NeurIPS 2025\] What One Cannot, Two Can: Two-Layer Transformers Provably Represent Induction Heads on Any-Order Markov Chains](what_one_cannot_two_can_two-layer_transformers_provably_represent_induction_head.md)
 
 </div>

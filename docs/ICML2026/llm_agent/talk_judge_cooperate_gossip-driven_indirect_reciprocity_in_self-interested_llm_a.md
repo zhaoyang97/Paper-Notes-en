@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] This paper proposes ALIGN, which enables a group of fully self-interested, decentralized LLM agents to evaluate each other via public "gossip" messages with five levels of sentiment. This allows them to form reputations and punish defection, thereby stably establishing indirect reciprocity in donation games, investment
+  [ICML 2026][LLM Agent][Indirect reciprocity] This paper proposes ALIGN, which enables a group of fully self-interested, decentralized LLM agents to evaluate each other via public "gossip" messages with five levels of sentiment. This allows them to form reputations and punish defection, thereby stably establishing indirect reciprocity in donation games, investment games, and e-commerce markets without central oversight. The study finds that reasoning-based LLMs are more capabl…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Indirect reciprocity"
+  - "Gossip protocol"
+  - "Multi-agent cooperation"
+  - "Reputation mechanism"
+  - "Self-interested LLM"
 date: 2026-05-08
-content_hash: f9f2988834def664
+content_hash: d5262ff4deab43ef
 ---
+
 # Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents
 
 **Conference**: ICML 2026  
@@ -134,7 +140,7 @@ Key Observation: All reasoning LLMs exhibit a cooperation rate of 0 without goss
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
 - [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
 - [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
-- [\[ICLR 2026\] Judge Reliability Harness: Stress Testing the Reliability of LLM Judges](../../ICLR2026/llm_agent/judge_reliability_harness_stress_testing_the_reliability_of_llm_judges.md)
+- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](self-evolving_llm_agents_with_in-distribution_optimization.md)
 - [\[ICML 2026\] SE-GA: Memory-Augmented Self-Evolution for GUI Agents](se-ga_memory-augmented_self-evolution_for_gui_agents.md)
 
 </div>

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Importance Sampling for Multi-Negative Multimodal Direct Preference Optimization
 description: >-
-  [ICLR 2026][Multimodal VLM][Multimodal DPO] MISP-DPO extends multimodal DPO from "one positive, one negative" to "one positive, multiple negatives": it utilizes Sparse Autoencoders (SAE) in CLIP space to extract interpretable visual bias factors for selecting semantically diverse negative images, then employs a Plackett-Luce objective with importance sampling fo
+  [ICLR 2026][Multimodal VLM][Multimodal DPO] MISP-DPO extends multimodal DPO from "one positive, one negative" to "one positive, multiple negatives": it utilizes Sparse Autoencoders (SAE) in CLIP space to extract interpretable visual bias factors for selecting semantically diverse negative images, then employs a Plackett-Luce objective with importance sampling for efficient training, significantly reducing hallucinations in VLMs.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Multimodal DPO
-  - Plackett-Luce
-  - Sparse Autoencoder
-  - Importance Sampling
-  - Hallucination Reduction
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal DPO"
+  - "Plackett-Luce"
+  - "Sparse Autoencoder"
+  - "Importance Sampling"
+  - "Hallucination Reduction"
 date: 2026-05-08
-content_hash: f6d2f1f0b2c8f178
+content_hash: 2c9f498d53dc000d
 ---
+
 # Importance Sampling for Multi-Negative Multimodal Direct Preference Optimization
 
 **Conference**: ICLR 2026  

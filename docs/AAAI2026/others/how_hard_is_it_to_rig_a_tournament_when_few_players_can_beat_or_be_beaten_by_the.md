@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Hard Is It to Rig a Tournament When Few Players Can Beat or Be Beaten by the Favorite?
 description: >-
-  [AAAI 2026][tournament fixing] This paper introduces two novel structural parameters — the in-degree $k$ and out-degree $\ell$ of the favorite player in the tournament digraph — for analyzing the Tournament Fixing Proble…
+  [AAAI 2026][tournament fixing] This paper introduces two novel structural parameters — the in-degree $k$ and out-degree $\ell$ of the favorite player in the tournament digraph — for analyzing the Tournament Fixing Problem (TFP). It proves that TFP is FPT under both parameterizations, where the in-degree algorithm involves sophisticated structural analysis and the color coding technique.
 tags:
   - "AAAI 2026"
   - "tournament fixing"
@@ -11,7 +11,7 @@ tags:
   - "FPT"
   - "color coding"
 date: 2026-05-08
-content_hash: 5dbde3c86a1f1207
+content_hash: eed09f84fbdc7618
 ---
 
 # How Hard Is It to Rig a Tournament When Few Players Can Beat or Be Beaten by the Favorite?
@@ -154,9 +154,9 @@ This is a purely theoretical work in parameterized algorithms; no experiments ar
 
 - [\[AAAI 2026\] How Hard is it to Explain Preferences Using Few Boolean Attributes?](how_hard_is_it_to_explain_preferences_using_few_boolean_attributes.md)
 - [\[AAAI 2026\] Think How Your Teammates Think: Active Inference Can Benefit Decentralized Execution](think_how_your_teammates_think_active_inference_can_benefit_decentralized_execut.md)
+- [\[CVPR 2026\] Upsample Anything: A Simple and Hard to Beat Baseline for Feature Upsampling](../../CVPR2026/others/upsample_anything_a_simple_and_hard_to_beat_baseline_for_feature_upsampling.md)
 - [\[AAAI 2026\] Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration](align_when_they_want_complement_when_they_need_human-centere.md)
 - [\[AAAI 2026\] How Wide and How Deep? Mitigating Over-Squashing of GNNs via Channel Capacity Constrained Estimation](how_wide_and_how_deep_mitigating_over-squashing_of_gnns_via_channel_capacity_con.md)
-- [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](how_to_marginalize_in_causal_structure_learning.md)
 
 </div>
 

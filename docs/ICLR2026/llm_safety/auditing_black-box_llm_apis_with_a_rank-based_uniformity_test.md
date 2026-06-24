@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Auditing Black-Box LLM APIs with a Rank-Based Uniformity Test
 description: >-
-  [ICLR 2026][LLM Safety][Cramér–von Mises] Addressing the issue where API providers might stealthily replace claimed models with quantized, fine-tuned, or jailbroken versions, this paper proposes the **Rank-based Uniformity Test (RUT)**. By querying the target API only once per prompt and performing multiple samplings on a local reference model, the method maps
+  [ICLR 2026][LLM Safety][Black-box Auditing] Addressing the issue where API providers might stealthily replace claimed models with quantized, fine-tuned, or jailbroken versions, this paper proposes the **Rank-based Uniformity Test (RUT)**. By querying the target API only once per prompt and performing multiple samplings on a local reference model, the method maps the log-rank score of the API output to its "percentile rank within the reference distribution." If the two models…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Cramér–von Mises
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Black-box Auditing"
+  - "Model Equivalence Testing"
+  - "Rank-based Uniformity"
+  - "Cramér–von Mises"
+  - "Quantization Detection"
 date: 2026-05-08
-content_hash: 0e12384c1e961994
+content_hash: 411715b4727b28c9
 ---
+
 # Auditing Black-Box LLM APIs with a Rank-Based Uniformity Test
 
 **Conference**: ICLR 2026  

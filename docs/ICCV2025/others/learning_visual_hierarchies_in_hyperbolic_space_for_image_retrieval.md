@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval
 description: >-
-  [ICCV 2025][Hyperbolic Space] This paper presents the first learning paradigm for encoding user-defined multi-level visual hierarchies in hyperbolic space. It introduces an angle-based entailment contrastive loss to lear…
+  [ICCV 2025][Hyperbolic Space] This paper presents the first learning paradigm for encoding user-defined multi-level visual hierarchies in hyperbolic space. It introduces an angle-based entailment contrastive loss to learn scene→object→part hierarchies without explicit hierarchy labels, and proposes an optimal-transport-based hierarchical retrieval evaluation metric.
 tags:
   - "ICCV 2025"
   - "Hyperbolic Space"
@@ -11,7 +11,7 @@ tags:
   - "Image Retrieval"
   - "Contrastive Loss"
 date: 2026-05-08
-content_hash: bdc7067f62f0e41d
+content_hash: c1cc8cc7ef1cf8f9
 ---
 
 # Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval
@@ -168,10 +168,10 @@ As shown in the Precision-Recall curves (Figure 4):
 ## Related Papers
 
 - [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](../../CVPR2026/others/hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
+- [\[ACL 2025\] Towards Text-Image Interleaved Retrieval](../../ACL2025/others/towards_text-image_interleaved_retrieval.md)
 - [\[ICCV 2025\] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction](revisiting_image_fusion_for_multi-illuminant_white-balance_correction.md)
 - [\[ICCV 2025\] EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration](edffdnet_towards_accurate_and_efficient_unsupervised_multi-grid_image_registrati.md)
 - [\[ICCV 2025\] A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition](a_hyperdimensional_one_place_signature_to_represent_them_all_stackable_descripto.md)
-- [\[ICCV 2025\] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations](nappure_adversarial_purification_for_robust_image_classification_under_non-addit.md)
 
 </div>
 

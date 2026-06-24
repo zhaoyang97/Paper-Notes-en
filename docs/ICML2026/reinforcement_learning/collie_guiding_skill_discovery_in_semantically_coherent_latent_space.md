@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] COLLIE: Guiding Skill Discovery in Semantically Coherent Latent Space
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper proposes **COLLIE**, a Guided Skill Discovery (GSD) framework that constructs a "semantically coherent" skill latent space (where close states share similar human desirability) using large-scale unlabeled data. This allows for the **training-free** propagation of a dense guidance signal $w(s)$ from sparse hu
+  [ICML 2026][Reinforcement Learning][Unsupervised Skill Discovery] This paper proposes **COLLIE**, a Guided Skill Discovery (GSD) framework that constructs a "semantically coherent" skill latent space (where close states share similar human desirability) using large-scale unlabeled data. This allows for the **training-free** propagation of a dense guidance signal $w(s)$ from sparse human "good/bad" labels, directing unsupervised exploration towards safe and task-relevant regio…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Unsupervised Skill Discovery"
+  - "Guided Skill Discovery"
+  - "Semantically Coherent Latent Space"
+  - "Training-free Guidance Signal"
+  - "Human-in-the-Loop"
 date: 2026-05-08
-content_hash: 87baa5f9a6d72439
+content_hash: 6ff7f09307d868fa
 ---
+
 # COLLIE: Guiding Skill Discovery in Semantically Coherent Latent Space
 
 **Conference**: ICML 2026  
@@ -141,11 +147,11 @@ In downstream tasks (HalfCheetah hierarchical control with frozen skills), COLLI
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reference Grounded Skill Discovery](../../ICLR2026/reinforcement_learning/reference_grounded_skill_discovery.md)
 - [\[ICLR 2026\] SUSD: Structured Unsupervised Skill Discovery through State Factorization](../../ICLR2026/reinforcement_learning/susd_structured_unsupervised_skill_discovery_through_state_factorization.md)
-- [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](../../ICLR2026/reinforcement_learning/self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
 - [\[ICML 2026\] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](global_policy-space_response_oracles_for_two-player_zero-sum_games.md)
-- [\[ICML 2026\] Space-sampled Value Decay: Forgetting Mechanisms for Non-stationary Deep Reinforcement Learning](space-sampled_value_decay_forgetting_mechanisms_for_non-stationary_deep_reinforc.md)
-- [\[ACL 2026\] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving](../../ACL2026/reinforcement_learning/spiralthinker_latent_reasoning_through_an_iterative_process_with_text-latent_int.md)
+- [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
+- [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](../../ICLR2026/reinforcement_learning/self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
 
 </div>
 

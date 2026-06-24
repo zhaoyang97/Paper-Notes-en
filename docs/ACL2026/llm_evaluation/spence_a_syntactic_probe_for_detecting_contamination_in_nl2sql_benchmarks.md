@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPENCE: A Syntactic Probe for Detecting Contamination in NL2SQL Benchmarks
 description: >-
-  [ACL 2026][LLM Evaluation][NL2SQL] SPENCE detects and quantifies data contamination behaviors of LLMs on NL2SQL benchmarks by systematically rewriting benchmark queries syntactically and measuring the decay of execution accuracy with syntactic distance. It finds that older benchmarks (such as Spider) exhibit stronger contamination signals, while the new
+  [ACL 2026][LLM Evaluation][Data contamination detection] SPENCE detects and quantifies data contamination behaviors of LLMs on NL2SQL benchmarks by systematically rewriting benchmark queries syntactically and measuring the decay of execution accuracy with syntactic distance. It finds that older benchmarks (such as Spider) exhibit stronger contamination signals, while the newer BIRD benchmark is almost unaffected.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - NL2SQL
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Data contamination detection"
+  - "NL2SQL"
+  - "Syntactic probe"
+  - "Benchmark leakage"
+  - "Generalization evaluation"
 date: 2026-05-08
-content_hash: 08fea91236dfd383
+content_hash: 2215c15cee89e905
 ---
+
 # SPENCE: A Syntactic Probe for Detecting Contamination in NL2SQL Benchmarks
 
 **Conference**: ACL 2026  
@@ -135,11 +140,11 @@ Simply observing a curve that "seems to be declining" is insufficient for a conc
 
 ## Related Papers
 
+- [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](../../ICLR2026/llm_evaluation/detecting_data_contamination_in_llms_via_in-context_learning.md)
+- [\[ICLR 2026\] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models](../../ICLR2026/llm_evaluation/detecting_data_contamination_from_reinforcement_learning_post-training_for_large.md)
 - [\[ACL 2026\] CLARITY: A Framework and Benchmark for Conversational Language Ambiguity and Unanswerability in Interactive NL2SQL Systems](clarity_a_framework_and_benchmark_for_conversational_language_ambiguity_and_unan.md)
-- [\[ACL 2025\] AntiLeakBench: Preventing Data Contamination by Automatically Constructing Benchmarks with Updated Real-World Knowledge](../../ACL2025/llm_evaluation/antileakbench_preventing_data_contamination_by_automatically_constructing_benchm.md)
-- [\[ACL 2026\] BenchMarker: An Education-Inspired Toolkit for Highlighting Flaws in Multiple-Choice Benchmarks](benchmarker_an_education-inspired_toolkit_for_highlighting_flaws_in_multiple-cho.md)
 - [\[ACL 2026\] Beyond Static Benchmarks: Synthesizing Harmful Content via Persona-based Simulation for Robust Evaluation](beyond_static_benchmarks_synthesizing_harmful_content_via_persona-based_simulati.md)
-- [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](../../ICLR2026/llm_evaluation/preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
+- [\[ACL 2026\] BenchMarker: An Education-Inspired Toolkit for Highlighting Flaws in Multiple-Choice Benchmarks](benchmarker_an_education-inspired_toolkit_for_highlighting_flaws_in_multiple-cho.md)
 
 </div>
 

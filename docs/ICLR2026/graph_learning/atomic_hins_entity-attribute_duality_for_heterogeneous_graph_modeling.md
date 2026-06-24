@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Atomic HINs: Entity-Attribute Duality for Heterogeneous Graph Modeling
 description: >-
-  [ICLR 2026][Graph Learning][HGNN] This paper proposes the "entity-attribute duality" principle, atomizing all attributes in a Heterogeneous Information Network (HIN) into entity nodes to obtain an "Atomic HIN" as a canonical form with maximal expressiveness. By applying a genetic algorithm for binary selection (schema refinement) on node/edge types, a
+  [ICLR 2026][Graph Learning][Heterogeneous Information Networks] This paper proposes the "entity-attribute duality" principle, atomizing all attributes in a Heterogeneous Information Network (HIN) into entity nodes to obtain an "Atomic HIN" as a canonical form with maximal expressiveness. By applying a genetic algorithm for binary selection (schema refinement) on node/edge types, a minimal version of RGCN (sRGCN) achieves SOTA performance on node classification and link predic…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - HGNN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Heterogeneous Information Networks"
+  - "Schema Design"
+  - "Entity-Attribute Duality"
+  - "Graph Structure Learning"
+  - "HGNN"
 date: 2026-05-08
-content_hash: d8a13661128d546b
+content_hash: 4b9ec57069c725ae
 ---
+
 # Atomic HINs: Entity-Attribute Duality for Heterogeneous Graph Modeling
 
 **Conference**: ICLR 2026  
@@ -145,15 +150,13 @@ Observations: ① Under the same HGNN, "refined" consistently outperforms "vanil
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment](learning_with_dual-level_noisy_correspondence_for_multi-modal_entity_alignment.md)
 - [\[ICLR 2026\] Beyond Entity Correlations: Disentangling Event Causal Puzzles in Temporal Knowledge Graphs](beyond_entity_correlations_disentangling_event_causal_puzzles_in_temporal_knowle.md)
 - [\[ACL 2026\] AutoPKG: An Automated Framework for Dynamic E-commerce Product-Attribute Knowledge Graph Construction](../../ACL2026/graph_learning/autopkg_an_automated_framework_for_dynamic_e-commerce_product-attribute_knowledg.md)
 - [\[AAAI 2026\] Spiking Heterogeneous Graph Attention Networks](../../AAAI2026/graph_learning/spiking_heterogeneous_graph_attention_networks.md)
-- [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](../../AAAI2026/graph_learning/s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
+- [\[ICLR 2026\] UrbanGraph: Physics-Informed Spatio-Temporal Dynamic Heterogeneous Graphs for Urban Microclimate Prediction](urbangraph_physics-informed_spatio-temporal_dynamic_heterogeneous_graphs_for_urb.md)
 
 </div>
 

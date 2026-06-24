@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Information-Theoretic Decomposition for Multimodal Interaction Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper points out from an information-theoretic perspective that "multimodal interaction (Redundant R / Unique U / Synergistic S) varies dynamically per sample." It proves that conventional joint learning and modality ensembles are each only proficient in one type of interaction. The authors propose DMIL, which exp
+  [CVPR 2026][Multimodal VLM][Multimodal Interaction] This paper points out from an information-theoretic perspective that "multimodal interaction (Redundant R / Unique U / Synergistic S) varies dynamically per sample." It proves that conventional joint learning and modality ensembles are each only proficient in one type of interaction. The authors propose DMIL, which explicitly decomposes representations into R/U/S components using variational decomposition and specifically re…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Interaction"
+  - "Information Decomposition"
+  - "Redundancy/Uniqueness/Synergy"
+  - "Variational Inference"
+  - "Sample-level Adaptation"
 date: 2026-05-08
-content_hash: 0444ba751dd81de6
+content_hash: 9db90e9b696c7664
 ---
+
 # Information-Theoretic Decomposition for Multimodal Interaction Learning
 
 **Conference**: CVPR 2026  
@@ -178,10 +184,10 @@ Fig. 6 (ACC on CREMA-D / KS, %):
 ## Related Papers
 
 - [\[AAAI 2026\] Information Theoretic Optimal Surveillance for Epidemic Prevalence in Networks](../../AAAI2026/multimodal_vlm/information_theoretic_optimal_surveillance_for_epidemic_prevalence_in_networks.md)
+- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
+- [\[CVPR 2026\] Learning to Focus and Precise Cropping: A Reinforcement Learning Framework with Information Gaps and Grounding Loss for MLLMs](learning_to_focus_and_precise_croppinga_reinforcement_learning_framework_with_in.md)
 - [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
-- [\[ICML 2025\] Learning Optimal Multimodal Information Bottleneck Representations](../../ICML2025/multimodal_vlm/learning_optimal_multimodal_information_bottleneck_representations.md)
-- [\[CVPR 2026\] BOP-Ask: Object-Interaction Reasoning for Vision-Language Models](bop-ask_object-interaction_reasoning_for_vision-language_models.md)
-- [\[CVPR 2026\] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition](sed-ud_an_influence-driven_and_hierarchically-decoupled_information_bottleneck_f.md)
+- [\[CVPR 2026\] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition](from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_.md)
 
 </div>
 

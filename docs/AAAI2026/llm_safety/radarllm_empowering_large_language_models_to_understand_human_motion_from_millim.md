@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RadarLLM: Empowering Large Language Models to Understand Human Motion from Millimeter-Wave Point Cloud Sequence
 description: >-
-  [AAAI 2026][LLM Safety][millimeter-wave radar] This paper proposes RadarLLM, the first end-to-end framework leveraging large language models for semantic-level human motion understanding from millimeter-wave radar point…
+  [AAAI 2026][LLM Safety][millimeter-wave radar] This paper proposes RadarLLM, the first end-to-end framework leveraging large language models for semantic-level human motion understanding from millimeter-wave radar point cloud sequences. The framework comprises a motion-guided radar tokenizer based on Aggregate VQ-VAE and a radar-aware language model, along with a physics-aware simulation pipeline for generating large-scale paired radar-text data.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "vector quantization"
   - "privacy preservation"
 date: 2026-05-08
-content_hash: d6edb09e64b6843b
+content_hash: 0b2d2754743419dd
 ---
 
 # RadarLLM: Empowering Large Language Models to Understand Human Motion from Millimeter-Wave Point Cloud Sequence
@@ -210,10 +210,10 @@ Joint three-task training improves over R→T only: ROUGE-L +9.1%, BLEU-1 +12.2%
 ## Related Papers
 
 - [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
-- [\[NeurIPS 2025\] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values](../../NeurIPS2025/llm_safety/distributive_fairness_in_large_language_models_evaluating_alignment_with_human_v.md)
+- [\[CVPR 2025\] LLM4SVG: Empowering LLMs to Understand and Generate Complex Vector Graphics](../../CVPR2025/llm_safety/empowering_llms_to_understand_and_generate_complex_vector_graphics.md)
+- [\[ICLR 2026\] Ghost in the Cloud: Your Geo-Distributed Large Language Models Training is Easily Manipulated](../../ICLR2026/llm_safety/ghost_in_the_cloud_your_geo-distributed_large_language_models_training_is_easily.md)
 - [\[AAAI 2026\] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models](anti-adversarial_learning_desensitizing_prompts_for_large_la.md)
 - [\[AAAI 2026\] SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth](sproutbench_a_benchmark_for_safe_and_ethical_large_language_models_for_youth.md)
-- [\[AAAI 2026\] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models](auvic_adversarial_unlearning_of_visual_concepts_for_multi-mo.md)
 
 </div>
 

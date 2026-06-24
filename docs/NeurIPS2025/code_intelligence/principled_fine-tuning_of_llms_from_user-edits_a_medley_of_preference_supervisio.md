@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Principled Fine-tuning of LLMs from User-Edits: A Medley of Preference, Supervision, and Reward
 description: >-
-  [NeurIPS 2025][Code Intelligence][user edits] This paper systematically investigates how to fine-tune LLMs using user-edit data, unifying three feedback types—preference, supervision…
+  [NeurIPS 2025][Code Intelligence][user edits] This paper systematically investigates how to fine-tune LLMs using user-edit data, unifying three feedback types—preference, supervision, and cost—and proposes a simple ensembling procedure that achieves robust adaptation across diverse user distributions.
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "supervised learning"
   - "ensemble learning"
 date: 2026-05-08
-content_hash: 1b1f12d92a98789a
+content_hash: d7d2fc2577d6cd6e
 ---
 
 # Principled Fine-tuning of LLMs from User-Edits: A Medley of Preference, Supervision, and Reward
@@ -151,11 +151,11 @@ Analysis of ensemble weight variation across user types:
 
 ## Related Papers
 
+- [\[ACL 2025\] GiFT: Gibbs Fine-Tuning for Code Generation](../../ACL2025/code_intelligence/gift_gibbs_fine_tuning_code_gen.md)
+- [\[ICML 2025\] SparseLoRA: Accelerating LLM Fine-Tuning with Contextual Sparsity](../../ICML2025/code_intelligence/sparselora_accelerating_llm_fine-tuning_with_contextual_sparsity.md)
 - [\[AAAI 2026\] Unintended Misalignment from Agentic Fine-Tuning: Risks and Mitigation](../../AAAI2026/code_intelligence/unintended_misalignment_from_agentic_fine-tuning_risks_and_m.md)
 - [\[ICML 2026\] Probability-Entropy Calibration: An Elastic Indicator for Adaptive Fine-tuning](../../ICML2026/code_intelligence/probability-entropy_calibration_an_elastic_indicator_for_adaptive_fine-tuning.md)
-- [\[ICLR 2026\] IMSE: Intrinsic Mixture of Spectral Experts Fine-tuning for Test-Time Adaptation](../../ICLR2026/code_intelligence/imse_intrinsic_mixture_of_spectral_experts_fine-tuning_for_test-time_adaptation.md)
-- [\[NeurIPS 2025\] Text-to-Code Generation for Modular Building Layouts in Building Information Modeling](text-to-code_generation_for_modular_building_layouts_in_building_information_mod.md)
-- [\[ACL 2026\] R$^3$-SQL: Ranking Reward and Resampling for Text-to-SQL](../../ACL2026/code_intelligence/r3-sql_ranking_reward_and_resampling_for_text-to-sql.md)
+- [\[ICML 2025\] EffiCoder: Enhancing Code Generation in Large Language Models through Efficiency-Aware Fine-tuning](../../ICML2025/code_intelligence/efficoder_enhancing_code_generation_in_large_language_models_through_efficiency-.md)
 
 </div>
 

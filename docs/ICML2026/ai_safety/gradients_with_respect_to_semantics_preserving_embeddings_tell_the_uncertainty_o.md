@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SemGrad: Gradients w.r.t. Semantics-Preserving Embeddings Tell LLM Uncertainty
 description: >-
-  [ICML 2026][AI Safety][Paper Note] SemGrad applies gradient-based uncertainty quantification to LLM free-form generation for the first time. By using the Semantics Preserving Score (SPS) to identify hidden states that encode input semantics, the method uses the gradient norm of the log-likelihood with respect to these states as a measure of LLM confiden
+  [ICML 2026][AI Safety][Free-form generation UQ] SemGrad applies gradient-based uncertainty quantification to LLM free-form generation for the first time. By using the Semantics Preserving Score (SPS) to identify hidden states that encode input semantics, the method uses the gradient norm of the log-likelihood with respect to these states as a measure of LLM confidence. Without sampling and requiring only a single backward pass, it outperforms 11 SOTA baselines on 3 QA dataset…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Free-form generation UQ"
+  - "Semantic Gradient"
+  - "Semantics Preserving Score (SPS)"
+  - "Single forward+backward"
+  - "Multiple valid answers"
 date: 2026-05-08
-content_hash: 2312203509899d68
+content_hash: eead5fb220d7798c
 ---
+
 # SemGrad: Gradients w.r.t. Semantics-Preserving Embeddings Tell LLM Uncertainty
 
 **Conference**: ICML 2026  
@@ -138,11 +144,11 @@ On multi-answer TruthfulQA, SemGrad outperforms SAR by +3.27, ExGrad by +6.82, a
 
 ## Related Papers
 
-- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
-- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
 - [\[ICML 2026\] Calibrating Uncertainty for Zero-Shot Adversarial CLIP](calibrating_uncertainty_for_zero-shot_adversarial_clip.md)
+- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
+- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
+- [\[ICLR 2026\] Memorization Through the Lens of Sample Gradients](../../ICLR2026/ai_safety/memorization_through_the_lens_of_sample_gradients.md)
 - [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
-- [\[ICML 2026\] From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents](from_weak_cues_to_real_identities_evaluating_inference-driven_de-anonymization_i.md)
 
 </div>
 

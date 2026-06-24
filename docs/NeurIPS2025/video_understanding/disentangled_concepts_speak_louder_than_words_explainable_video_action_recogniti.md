@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Disentangled Concepts Speak Louder Than Words: Explainable Video Action Recognition
 description: >-
-  [NeurIPS 2025 (Spotlight)][Video Understanding][Explainable video action recognition] This paper proposes DANCE, a framework that achieves structured and motion-aware explainable video action recognition by disentangling…
+  [NeurIPS 2025 (Spotlight)][Video Understanding][Explainable video action recognition] This paper proposes DANCE, a framework that achieves structured and motion-aware explainable video action recognition by disentangling action explanations into three concept types: motion dynamics, objects, and scenes.
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "pose sequences"
   - "concept discovery"
 date: 2026-05-08
-content_hash: 0879e2f710ad7c59
+content_hash: 8814cc340953c993
 ---
 
 # Disentangled Concepts Speak Louder Than Words: Explainable Video Action Recognition
@@ -180,10 +180,10 @@ Under severe domain shift (UCF-101 → UCF-101-SCUBA):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition](seeing_beyond_the_scene_analyzing_and_mitigating_background_bias_in_action_recog.md)
 - [\[NeurIPS 2025\] ConViS-Bench: Estimating Video Similarity Through Semantic Concepts](convis-bench_estimating_video_similarity_through_semantic_concepts.md)
+- [\[ECCV 2024\] SA-DVAE: Improving Zero-Shot Skeleton-Based Action Recognition by Disentangled Variational Autoencoders](../../ECCV2024/video_understanding/sa-dvae_improving_zero-shot_skeleton-based_action_recognition_by_disentangled_va.md)
 - [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
-- [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](../../ICCV2025/video_understanding/beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
+- [\[NeurIPS 2025\] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition](seeing_beyond_the_scene_analyzing_and_mitigating_background_bias_in_action_recog.md)
 - [\[NeurIPS 2025\] Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition](grounding_foundational_vision_models_with_3d_human_poses_for_robust_action_recog.md)
 
 </div>

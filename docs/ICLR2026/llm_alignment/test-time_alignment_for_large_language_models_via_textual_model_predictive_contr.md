@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Alignment for Large Language Models via Textual Model Predictive Control
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper reformulates the test-time preference alignment of LLMs as a trajectory optimization problem, utilizing Model Predictive Control (MPC) from control theory for "planning while moving." By employing **hindsight subgoal identification** to extract high-reward segments from generated rollouts as waypoints and pe
+  [ICLR 2026][LLM Alignment][Test-time Alignment] This paper reformulates the test-time preference alignment of LLMs as a trajectory optimization problem, utilizing Model Predictive Control (MPC) from control theory for "planning while moving." By employing **hindsight subgoal identification** to extract high-reward segments from generated rollouts as waypoints and performing **conditioned regeneration**, the method achieves rolling approximation of the optimum. It stably impro…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Test-time Alignment"
+  - "Model Predictive Control"
+  - "Subgoal Planning"
+  - "Trajectory Optimization"
+  - "Inference-time Search"
 date: 2026-05-08
-content_hash: 68947de9efc351b0
+content_hash: c3ba8a63e3792e43
 ---
+
 # Test-Time Alignment for Large Language Models via Textual Model Predictive Control
 
 **Conference**: ICLR 2026  

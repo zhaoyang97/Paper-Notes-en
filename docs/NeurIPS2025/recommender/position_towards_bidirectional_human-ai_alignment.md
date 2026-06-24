@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Position: Towards Bidirectional Human-AI Alignment
 description: >-
-  [NeurIPS 2025][Recommender Systems][AI alignment] This paper proposes a **Bidirectional Human-AI Alignment** framework grounded in a systematic review of 400+ papers…
+  [NeurIPS 2025][Recommender Systems][AI alignment] This paper proposes a **Bidirectional Human-AI Alignment** framework grounded in a systematic review of 400+ papers, arguing that AI alignment should not be limited to the unidirectional goal of "aligning AI with humans," but must also encompass the critically underexplored direction of "aligning humans with AI," while identifying key gaps in the current research landscape.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "human-AI interaction"
   - "systematic review"
 date: 2026-05-08
-content_hash: 46892a3b1c35e217
+content_hash: d8c2b77d128a2a9a
 ---
 
 # Position: Towards Bidirectional Human-AI Alignment
@@ -177,11 +177,11 @@ Quantitative statistics reveal significant imbalances in research coverage acros
 
 ## Related Papers
 
+- [\[ICML 2025\] Position: The Right to AI](../../ICML2025/recommender/the_right_to_ai.md)
 - [\[NeurIPS 2025\] EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration](empathia_multi-faceted_human-ai_collaboration_for_refugee_integration.md)
 - [\[NeurIPS 2025\] The Coming Crisis of Multi-Agent Misalignment: AI Alignment Must Be a Dynamic and Social Process](the_coming_crisis_of_multi-agent_misalignment_ai_alignment_must_be_a_dynamic_and.md)
+- [\[ICML 2025\] RLTHF: Targeted Human Feedback for LLM Alignment](../../ICML2025/recommender/rlthf_targeted_human_feedback_for_llm_alignment.md)
 - [\[ICML 2026\] Position: Neglecting the Sustainability of AI is Fuelling a Global AI Arms Race](../../ICML2026/recommender/position_neglecting_the_sustainability_of_ai_is_fuelling_a_global_ai_arms_race.md)
-- [\[AAAI 2026\] Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback](../../AAAI2026/recommender/moral_change_or_noise_on_problems_of_aligning_ai_with_temporally_unstable_human_.md)
-- [\[NeurIPS 2025\] NeurIPS Should Lead Scientific Consensus on AI Policy](neurips_should_lead_scientific_consensus_on_ai_policy.md)
 
 </div>
 

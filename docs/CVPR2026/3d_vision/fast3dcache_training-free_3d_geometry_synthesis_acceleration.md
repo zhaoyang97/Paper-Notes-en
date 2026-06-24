@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] Fast3Dcache is proposed as a training-free geometry-aware caching framework for 3D diffusion models. It dynamically allocates caching budgets using Predictive Cache Scheduling Constraints (PCSC) based on voxel stabilization patterns and selects stable tokens for reuse via the Spatio-temporal Stability Criterion (SSC) b
+  [CVPR 2026][3D Vision][3D Geometry Synthesis Acceleration] Fast3Dcache is proposed as a training-free geometry-aware caching framework for 3D diffusion models. It dynamically allocates caching budgets using Predictive Cache Scheduling Constraints (PCSC) based on voxel stabilization patterns and selects stable tokens for reuse via the Spatio-temporal Stability Criterion (SSC) based on velocity and acceleration. It achieves up to a 27.12% increase in throughput and a 54.83% red…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Geometry Synthesis Acceleration"
+  - "Caching Mechanism"
+  - "Voxel Stability"
+  - "Training-free"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: f1aa8baf88da7b56
+content_hash: a1d565390953159a
 ---
+
 # Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration
 
 **Conference**: CVPR 2026  
@@ -156,16 +161,15 @@ Fast3Dcache is entirely training-free. Hyperparameters include anchor ratio $\rh
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)
-- [\[CVPR 2026\] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction](laser_layer-wise_scale_alignment_for_training-free_streaming_4d_reconstruction.md)
+- [\[CVPR 2025\] Hash3D: Training-free Acceleration for 3D Generation](../../CVPR2025/3d_vision/hash3d_training-free_acceleration_for_3d_generation.md)
 - [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
-- [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
-- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
+- [\[CVPR 2026\] AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows](anchorflow_training-free_3d_editing_via_latent_anchor-aligned_flows.md)
+- [\[CVPR 2026\] OpenVoxel: Training-Free Grouping and Captioning Voxels for Open-Vocabulary 3D Scene Understanding](openvoxel_training-free_grouping_and_captioning_voxels_for_open-vocabulary_3d_sc.md)
+- [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] Hash3D: Training-free Acceleration for 3D Generation](../../CVPR2025/3d_vision/hash3d_training-free_acceleration_for_3d_generation.md)

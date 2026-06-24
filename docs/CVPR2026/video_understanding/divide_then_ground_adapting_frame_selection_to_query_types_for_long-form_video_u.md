@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] DIG is a training-free frame selection framework that categorizes queries into global or grounding types. It employs uniform sampling for global queries and a specialized pipeline—consisting of content-adaptive frame selection, LMM-based reward scoring, and video refinement—for grounding queries, consistently outperfor
+  [CVPR 2026][Video Understanding][Long video understanding] DIG is a training-free frame selection framework that categorizes queries into global or grounding types. It employs uniform sampling for global queries and a specialized pipeline—consisting of content-adaptive frame selection, LMM-based reward scoring, and video refinement—for grounding queries, consistently outperforming existing methods across three long video understanding benchmarks.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Long video understanding"
+  - "Frame selection"
+  - "Query classification"
+  - "Content-adaptive sampling"
+  - "Large Multimodal Models (LMMs)"
 date: 2026-05-08
-content_hash: 13b2ebfe4965c811
+content_hash: 8d83d7137b37b032
 ---
+
 # DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ DIG is a completely **training-free** framework. All components (DINOv2, LLM cla
 
 ## Related Papers
 
+- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
 - [\[CVPR 2026\] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)
-- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
-- [\[CVPR 2026\] GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](gift_global_irreplaceability_frame_targeting_for_efficient_video_understanding.md)
 - [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
-- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
+- [\[CVPR 2026\] GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](gift_global_irreplaceability_frame_targeting_for_efficient_video_understanding.md)
+- [\[ICCV 2025\] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](../../ICCV2025/video_understanding/q-frame_query-aware_frame_selection_and_multi-resolution_adaptation_for_video-ll.md)
 
 </div>
 

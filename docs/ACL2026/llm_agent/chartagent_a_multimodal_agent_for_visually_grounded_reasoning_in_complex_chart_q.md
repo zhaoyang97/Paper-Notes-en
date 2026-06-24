@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ChartAgent: A Multimodal Agent for Visually Grounded Reasoning in Complex Chart Question Answering
 description: >-
-  [ACL 2026][LLM Agent][ReAct] ChartAgent transforms chart question answering from "textual chain-of-thought" to "acting on the image itself." By using a suite of chart-specific visual tools (segmenting pie slices, isolating bars, locating axes) within a ReAct loop and performing self-verification on intermediate visualizations, it achieves gains of
+  [ACL2026][LLM Agent][Chart Question Answering] ChartAgent transforms chart question answering from "textual chain-of-thought" to "acting on the image itself." By using a suite of chart-specific visual tools (segmenting pie slices, isolating bars, locating axes) within a ReAct loop and performing self-verification on intermediate visualizations, it achieves gains of up to 16.07% on ChartBench / ChartX for unannotated and numerical-heavy challenges…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - ReAct
+  - "ACL2026"
+  - "LLM Agent"
+  - "Chart Question Answering"
+  - "Visually Grounded Reasoning"
+  - "Tool-Augmented Agent"
+  - "ReAct"
+  - "Visual Self-Verification"
 date: 2026-05-08
-content_hash: 2b32b27c82791eb8
+content_hash: 0a7efa7b3a6e4a60
 ---
+
 # ChartAgent: A Multimodal Agent for Visually Grounded Reasoning in Complex Chart Question Answering
 
 **Conference**: ACL2026  
@@ -128,8 +133,8 @@ Comparing ChartAgent to its base MLLM (GPT-4o) by subset reveals that **all gain
 ## Related Papers
 
 - [\[CVPR 2026\] ORCA: Orchestrated Reasoning with Collaborative Agents for Document Visual Question Answering](../../CVPR2026/llm_agent/orca_orchestrated_reasoning_with_collaborative_agents_for_document_visual_questi.md)
-- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
 - [\[ACL 2026\] SafeMCP: Proactive Power Regulation for LLM Agent Defense via Environment-Grounded Look-Ahead Reasoning](safemcp_proactive_power_regulation_for_llm_agent_defense_via_environment-grounde.md)
+- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
 - [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](../../ICLR2026/llm_agent/videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
 - [\[ACL 2025\] A Multi-Agent Framework for Mitigating Dialect Biases in Privacy Policy Question-Answering Systems](../../ACL2025/llm_agent/multi_agent_dialect_bias_privacy_qa.md)
 

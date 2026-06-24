@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] AT-VLA introduces a learnable tactile gating mechanism into pre-trained VLAs (GO-1), injecting tactile signals into the action expert only during the moment of "object contact" to prevent the new modality from disrupting pre-trained visual grounding capabilities. By decoupling a slow visual stream and a fast tactile st
+  [CVPR 2026][Robotics][VLA] AT-VLA introduces a learnable tactile gating mechanism into pre-trained VLAs (GO-1), injecting tactile signals into the action expert only during the moment of "object contact" to prevent the new modality from disrupting pre-trained visual grounding capabilities. By decoupling a slow visual stream and a fast tactile stream, it achieves a 0.04s closed-loop reaction, improving average success rates from 0.22 (vanilla) to 0.50 in real contact-rich task…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Tactile Feedback"
+  - "Contact-rich Manipulation"
+  - "Adaptive Injection"
+  - "Dual-stream Policy"
 date: 2026-05-08
-content_hash: 4ac75e09f0612c6f
+content_hash: b1806a65fa8bbab5
 ---
+
 # AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -135,11 +140,11 @@ AT-VLA matches GO-1/π0.5 in pre-contact grasping (showing no disruption to pre-
 
 ## Related Papers
 
-- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
 - [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
-- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models](test-time_perturbation_tuning_with_delayed_feedback_for_vision-language-action_m.md)
+- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
 - [\[CVPR 2026\] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models](trm-vla_temporal-aware_chain-of-thought_reasoning_and_memorization_for_vision-la.md)
+- [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
 
 </div>
 

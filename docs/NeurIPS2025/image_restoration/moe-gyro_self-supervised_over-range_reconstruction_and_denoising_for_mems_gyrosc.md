@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes
 description: >-
-  [NeurIPS 2025][Image Restoration][MEMS gyroscope] This paper proposes MoE-Gyro, a self-supervised Mixture-of-Experts framework that simultaneously addresses the fundamental range–noise trade-off in MEMS gyroscopes via an…
+  [NeurIPS 2025][Image Restoration][MEMS gyroscope] This paper proposes MoE-Gyro, a self-supervised Mixture-of-Experts framework that simultaneously addresses the fundamental range–noise trade-off in MEMS gyroscopes via an Over-Range Reconstruction Expert (ORE, incorporating Gaussian-Decay Attention and physics-informed constraints) and a Denoising Expert (DE, incorporating dual-branch complementary masking and FFT-guided augmentation). The measurable range is extended from ±45…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "over-range reconstruction"
   - "signal denoising"
 date: 2026-05-08
-content_hash: 20151e9b1b6dc3f8
+content_hash: 129896638d3ee251
 ---
 
 # MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes
@@ -203,11 +203,11 @@ Both experts share a MAE (Masked Autoencoder) backbone and are trained end-to-en
 
 ## Related Papers
 
+- [\[CVPR 2025\] Rotation-Equivariant Self-Supervised Method in Image Denoising](../../CVPR2025/image_restoration/rotation-equivariant_self-supervised_method_in_image_denoising.md)
 - [\[ICCV 2025\] Blind2Sound: Self-Supervised Image Denoising without Residual Noise](../../ICCV2025/image_restoration/blind2sound_self-supervised_image_denoising_without_residual_noise.md)
+- [\[ECCV 2024\] Asymmetric Mask Scheme for Self-supervised Real Image Denoising](../../ECCV2024/image_restoration/asymmetric_mask_scheme_for_self-supervised_real_image_denoising.md)
+- [\[ICML 2025\] TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation](../../ICML2025/image_restoration/timedart_a_diffusion_autoregressive_transformer_for_self-supervised_time_series_.md)
 - [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](../../CVPR2026/image_restoration/selfhvd_self-supervised_handheld_video_deblurring.md)
-- [\[CVPR 2026\] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising](../../CVPR2026/image_restoration/tm-bsn_triangular-masked_blind-spot_network_for_real-world_self-supervised_image.md)
-- [\[NeurIPS 2025\] The Effect of Optimal Self-Distillation in Noisy Gaussian Mixture Model](the_effect_of_optimal_self-distillation_in_noisy_gaussian_mixture_model.md)
-- [\[ICCV 2025\] Self-Calibrated Variance-Stabilizing Transformations for Real-World Image Denoising](../../ICCV2025/image_restoration/self-calibrated_variance-stabilizing_transformations_for_real-world_image_denois.md)
 
 </div>
 

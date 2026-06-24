@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Manzano: A Simple and Scalable Unified Multimodal Model with a Hybrid Vision Tokenizer
 description: >-
-  [ICLR 2026][Multimodal VLM][Autoregressive] Manzano utilizes a hybrid tokenizer consisting of a shared vision encoder and two lightweight adapters (continuous tokens for understanding, discrete tokens for generation). This allows a unified autoregressive LLM to learn both understanding and generation within the same semantic space, while delegating pixel renderi
+  [ICLR 2026][Multimodal VLM][Unified multimodal model] Manzano utilizes a hybrid tokenizer consisting of a shared vision encoder and two lightweight adapters (continuous tokens for understanding, discrete tokens for generation). This allows a unified autoregressive LLM to learn both understanding and generation within the same semantic space, while delegating pixel rendering to an external diffusion decoder. This approach nearly eliminates task conflict between understanding a…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Autoregressive
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Unified multimodal model"
+  - "hybrid vision tokenizer"
+  - "autoregressive"
+  - "diffusion decoder"
+  - "task conflict"
+  - "model scaling"
 date: 2026-05-08
-content_hash: b8e3ef25cec746cd
+content_hash: e973849a70f72275
 ---
+
 # Manzano: A Simple and Scalable Unified Multimodal Model with a Hybrid Vision Tokenizer
 
 **Conference**: ICLR 2026  

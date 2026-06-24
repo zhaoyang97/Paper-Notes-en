@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Multi-View Self-Calibrated Photometric Stereo without Photometric Stereo Cues
 description: >-
-  [ICCV 2025][LLM Evaluation][multi-view photometric stereo] This paper proposes an end-to-end neural inverse rendering framework that jointly recovers geometry, spatially-varying reflectance…
+  [ICCV 2025][LLM Evaluation][multi-view photometric stereo] This paper proposes an end-to-end neural inverse rendering framework that jointly recovers geometry, spatially-varying reflectance, and lighting parameters from multi-view images captured under varying illumination, requiring neither light source calibration nor intermediate photometric stereo cues (e.g., normal maps). The method outperforms existing multi-stage MVPS approaches.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "neural BRDF"
   - "shadow-aware volume rendering"
 date: 2026-05-08
-content_hash: 78b055ab0f23efa3
+content_hash: dccd9105a77268b3
 ---
 
 # Neural Multi-View Self-Calibrated Photometric Stereo without Photometric Stereo Cues
@@ -186,11 +186,11 @@ The cached notes are truncated and the experimental section is incomplete. Based
 
 ## Related Papers
 
+- [\[ECCV 2024\] MERLiN: Single-Shot Material Estimation and Relighting for Photometric Stereo](../../ECCV2024/llm_evaluation/merlin_single-shot_material_estimation_and_relighting_for_photometric_stereo.md)
 - [\[ICCV 2025\] SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting](sketchsplat_3d_edge_reconstruction_via_differentiable_multi-view_sketch_splattin.md)
-- [\[AAAI 2026\] DiCaP: Distribution-Calibrated Pseudo-labeling for Semi-Supervised Multi-Label Learning](../../AAAI2026/llm_evaluation/dicap_distribution-calibrated_pseudo-labeling_for_semi-supervised_multi-label_le.md)
-- [\[ACL 2026\] DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain](../../ACL2026/llm_evaluation/diningbench_a_hierarchical_multi-view_benchmark_for_perception_and_reasoning_in_.md)
-- [\[NeurIPS 2025\] AdaSTaR: Adaptive Data Sampling for Training Self-Taught Reasoners](../../NeurIPS2025/llm_evaluation/adastar_adaptive_data_sampling_for_training_self-taught_reasoners.md)
-- [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](../../ACL2026/llm_evaluation/when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
+- [\[ICCV 2025\] Spectral Sensitivity Estimation with an Uncalibrated Diffraction Grating](spectral_sensitivity_estimation_with_an_uncalibrated_diffraction_grating.md)
+- [\[ICCV 2025\] InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild](intersyn_interleaved_learning_for_dynamic_motion_synthesis_in_the_wild.md)
+- [\[ICCV 2025\] ForCenNet: Foreground-Centric Network for Document Image Rectification](forcennet_foreground-centric_network_for_document_image_rectification.md)
 
 </div>
 

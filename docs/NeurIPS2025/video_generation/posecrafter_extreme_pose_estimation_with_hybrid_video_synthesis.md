@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PoseCrafter: Extreme Pose Estimation with Hybrid Video Synthesis
 description: >-
-  [NeurIPS 2025][Video Generation][Extreme Pose Estimation] This paper proposes PoseCrafter, a training-free framework for extreme pose estimation. It synthesizes high-fidelity intermediate frames via Hybrid Video Generati…
+  [NeurIPS 2025][Video Generation][Extreme Pose Estimation] This paper proposes PoseCrafter, a training-free framework for extreme pose estimation. It synthesizes high-fidelity intermediate frames via Hybrid Video Generation (HVG, a two-stage pipeline combining DynamiCrafter and ViewCrafter) to address pose estimation for image pairs with minimal or no overlap, and employs a Feature Matching Selector (FMS) to efficiently identify the most informative intermediate frames. The me…
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Feature Matching Selection"
   - "Sparse Overlap"
 date: 2026-05-08
-content_hash: bd20da943e9fe965
+content_hash: 18f0d01ee11726a3
 ---
 
 # PoseCrafter: Extreme Pose Estimation with Hybrid Video Synthesis
@@ -127,11 +127,11 @@ This paper proposes PoseCrafter, a training-free framework for extreme pose esti
 
 ## Related Papers
 
-- [\[CVPR 2026\] PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing](../../CVPR2026/video_generation/performrecast_expression_and_head_pose_disentanglement_for_portrait_video_editin.md)
-- [\[ICCV 2025\] Causal-Entity Reflected Egocentric Traffic Accident Video Synthesis](../../ICCV2025/video_generation/causal-entity_reflected_egocentric_traffic_accident_video_synthesis.md)
-- [\[CVPR 2026\] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation](../../CVPR2026/video_generation/pam_a_pose-appearance-motion_engine_for_sim-to-real_hoi_video_generation.md)
-- [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](../../ICCV2025/video_generation/adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_image_and_video_synthesis.md)
-- [\[ICCV 2025\] FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation](../../ICCV2025/video_generation/fvgen_accelerating_novel-view_synthesis_with_adversarial_video_diffusion_distill.md)
+- [\[CVPR 2026\] ExPose: Reinforcing Video Generation Models for Extreme Pose Estimation](../../CVPR2026/video_generation/expose_reinforcing_video_generation_models_for_extreme_pose_estimation.md)
+- [\[CVPR 2026\] ReHyAt: Recurrent Hybrid Attention for Video Diffusion Transformers](../../CVPR2026/video_generation/rehyat_recurrent_hybrid_attention_for_video_diffusion_transformers.md)
+- [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
+- [\[NeurIPS 2025\] Safe-Sora: Safe Text-to-Video Generation via Graphical Watermarking](safesora_safe_texttovideo_generation_via_graphical_watermark.md)
+- [\[NeurIPS 2025\] Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals](force_prompting_video_generation_models_can_learn_and_generalize_physics-based_c.md)
 
 </div>
 

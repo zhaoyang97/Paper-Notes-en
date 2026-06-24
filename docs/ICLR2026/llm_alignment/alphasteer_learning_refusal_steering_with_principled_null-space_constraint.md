@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint
 description: >-
-  [ICLR 2026][Alignment & RLHF][activation steering] AlphaSteer is proposed to dynamically construct steering vectors by learning a transformation matrix subject to null-space constraints. It generates near-zero vectors for benign inputs (preserving utility) and reconstructs refusal direction vectors for malicious inputs (enhancing safety), providing a theoretical guaran
+  [ICLR 2026][LLM Alignment][activation steering] AlphaSteer is proposed to dynamically construct steering vectors by learning a transformation matrix subject to null-space constraints. It generates near-zero vectors for benign inputs (preserving utility) and reconstructs refusal direction vectors for malicious inputs (enhancing safety), providing a theoretical guarantee for the decoupling of safety and utility.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - activation steering
-  - refusal direction
-  - null-space projection
-  - jailbreak defense
-  - safety-utility trade-off
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "activation steering"
+  - "refusal direction"
+  - "null-space projection"
+  - "jailbreak defense"
+  - "safety-utility trade-off"
 date: 2026-05-08
-content_hash: 1825701552a31f54
+content_hash: e5bc24767d0d7843
 ---
+
 # AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint
 
 **Conference**: ICLR 2026  
@@ -138,10 +139,20 @@ The method requires no gradient optimization. Both the projection matrix $\hat{\
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models](../../CVPR2026/llm_alignment/principled_steering_via_null-space_projection_for_jailbreak_defense_in_vision-la.md)
+- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
+- [\[ICLR 2026\] RECAST: Expanding the Boundaries of LLMs' Complex Instruction Following with Multi-Constraint Data](recast_expanding_the_boundaries_of_llms_complex_instruction_following_with_multi.md)
+- [\[ICLR 2026\] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment](alignment-weighted_dpo_a_principled_reasoning_approach_to_improve_safety_alignme.md)
+- [\[ICLR 2026\] Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization](sharpness-aware_minimization_in_logit_space_efficiently_enhances_direct_preferen.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models](../../CVPR2026/llm_alignment/principled_steering_via_null-space_projection_for_jailbreak_defense_in_vision-la.md)

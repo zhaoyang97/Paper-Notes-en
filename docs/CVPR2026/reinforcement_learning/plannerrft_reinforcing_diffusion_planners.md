@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PlannerRFT: Reinforcing Diffusion Planners through Closed-Loop and Sample-Efficient Fine-Tuning
 description: >-
-  [CVPR 2026][Reinforcement Learning][GRPO] PlannerRFT performs reinforcement fine-tuning for diffusion-based autonomous driving planners: it uses "policy-guided denoising" to transform modal-collapsed diffusion sampling into diverse and scene-adaptive trajectory groups, then applies a dual-branch closed-loop optimization with GRPO + PPO, supported by the self-d
+  [CVPR 2026][Reinforcement Learning][Diffusion Planner] PlannerRFT performs reinforcement fine-tuning for diffusion-based autonomous driving planners: it uses "policy-guided denoising" to transform modal-collapsed diffusion sampling into diverse and scene-adaptive trajectory groups, then applies a dual-branch closed-loop optimization with GRPO + PPO, supported by the self-developed 10× accelerated simulator nuMax, achieving SOTA closed-loop planning performance on nuPlan.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Diffusion Planner"
+  - "Reinforcement Fine-Tuning"
+  - "Guided Denoising"
+  - "GRPO"
+  - "Closed-Loop Simulation"
 date: 2026-05-08
-content_hash: f44d4d587ae77d03
+content_hash: 3656befb0e5526ce
 ---
+
 # PlannerRFT: Reinforcing Diffusion Planners through Closed-Loop and Sample-Efficient Fine-Tuning
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ Comparison of four exploration strategies (all using 5-step DDIM; $D$ is diversi
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Parameter Efficient Fine-tuning via Explained Variance Adaptation](../../NeurIPS2025/reinforcement_learning/parameter_efficient_fine-tuning_via_explained_variance_adaptation.md)
+- [\[ICLR 2026\] Proximal Supervised Fine-Tuning](../../ICLR2026/reinforcement_learning/proximal_supervised_fine-tuning.md)
 - [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
-- [\[CVPR 2026\] EVA: Efficient Reinforcement Learning for End-to-End Video Agent](eva_efficient_reinforcement_learning_for_end-to-end_video_agent.md)
-- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](../../ICLR2026/reinforcement_learning/sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
-- [\[CVPR 2026\] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification](specificity-aware_reinforcement_learning_for_fine-grained_open-world_classificat.md)
+- [\[NeurIPS 2025\] Parameter Efficient Fine-tuning via Explained Variance Adaptation](../../NeurIPS2025/reinforcement_learning/parameter_efficient_fine-tuning_via_explained_variance_adaptation.md)
+- [\[ICLR 2026\] Accelerating Diffusion Planners in Offline RL via Reward-Aware Consistency Trajectory Distillation](../../ICLR2026/reinforcement_learning/accelerating_diffusion_planners_in_offline_rl_via_reward-aware_consistency_traje.md)
+- [\[ICLR 2026\] SRFT: A Single-Stage Method with Supervised and Reinforcement Fine-Tuning for Reasoning](../../ICLR2026/reinforcement_learning/srft_a_single-stage_method_with_supervised_and_reinforcement_fine-tuning_for_rea.md)
 
 </div>
 

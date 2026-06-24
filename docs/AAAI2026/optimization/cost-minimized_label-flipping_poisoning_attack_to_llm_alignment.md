@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cost-Minimized Label-Flipping Poisoning Attack to LLM Alignment
 description: >-
-  [AAAI 2026][Optimization][Data poisoning attack] This work provides the first theoretical analysis of the minimum cost required to steer an LLM policy toward an attacker's target by flipping preference labels during RLHF…
+  [AAAI 2026][Optimization][Data poisoning attack] This work provides the first theoretical analysis of the minimum cost required to steer an LLM policy toward an attacker's target by flipping preference labels during RLHF/DPO alignment. The problem is formalized as a convex optimization problem, upper and lower bounds on the cost are derived, and a post-processing method called PCM (Poisoning Cost Minimization) is proposed to substantially reduce the number of label flips whil…
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "convex optimization"
   - "LLM alignment security"
 date: 2026-05-08
-content_hash: 447aaf46afbd93e3
+content_hash: 3edd724e863924a4
 ---
 
 # Cost-Minimized Label-Flipping Poisoning Attack to LLM Alignment
@@ -175,9 +175,9 @@ Key findings:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](../../NeurIPS2025/optimization/robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
-- [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
 - [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](../../ICML2026/optimization/cost-aware_stopping_for_bayesian_optimization.md)
 - [\[AAAI 2026\] Co-Layout: LLM-driven Co-optimization for Interior Layout](co-layout_llm-driven_co-optimization_for_interior_layout.md)
+- [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
 - [\[NeurIPS 2025\] Clean First, Align Later: Benchmarking Preference Data Cleaning for Reliable LLM Alignment](../../NeurIPS2025/optimization/clean_first_align_later_benchmarking_preference_data_cleaning_for_reliable_llm_a.md)
 
 </div>

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation
 description: >-
-  [CVPR 2026][3D Vision][3DGS] Ours proposes the Catalyst4D framework, which propagates mature 3D static editing results to 4D dynamic Gaussian scenes via Anchor Motion Guidance (AMG, establishing region-level correspondences based on optimal transport) and Color Uncertainty-guided Appearance Refinement (CUAR, automatically identifying and repairing
+  [CVPR 2026][3D Vision][4D Editing] Ours proposes the Catalyst4D framework, which propagates mature 3D static editing results to 4D dynamic Gaussian scenes via Anchor Motion Guidance (AMG, establishing region-level correspondences based on optimal transport) and Color Uncertainty-guided Appearance Refinement (CUAR, automatically identifying and repairing occlusion artifacts), consistently outperforming existing methods in CLIP semantic similarity.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3DGS
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Editing"
+  - "3DGS"
+  - "Dynamic Scene"
+  - "Motion Propagation"
+  - "Optimal Transport"
+  - "Color Uncertainty"
 date: 2026-05-08
-content_hash: 3e2f0b1436254dd5
+content_hash: 953ff9081964ad70
 ---
+
 # Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation
 
 **Conference**: CVPR 2026  
@@ -167,11 +173,11 @@ The refinement loss is $L_{\text{refine}}=(1-\zeta)L_{\text{fore}}+\zeta L_{\tex
 
 ## Related Papers
 
-- [\[CVPR 2026\] 4D Reconstruction from Sparse Dynamic Cameras](4d_reconstruction_from_sparse_dynamic_cameras.md)
+- [\[CVPR 2026\] MAPo: Motion-Aware Partitioning of Deformable 3D Gaussian Splatting for High-Fidelity Dynamic Scene Reconstruction](mapo_motion-aware_partitioning_of_deformable_3d_gaussian_splatting_for_high-fide.md)
 - [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[CVPR 2026\] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion](craftmesh_high-fidelity_generative_mesh_manipulation_via_poisson_seamless_fusion.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
+- [\[CVPR 2026\] LATTICE: Democratize High-Fidelity 3D Generation at Scale](lattice_democratize_high-fidelity_3d_generation_at_scale.md)
+- [\[CVPR 2026\] UniTEX: Universal High Fidelity Generative Texturing for 3D Shapes](unitex_universal_high_fidelity_generative_texturing_for_3d_shapes.md)
+- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
 
 </div>
 

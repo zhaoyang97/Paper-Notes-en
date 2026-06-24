@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Solving Inequality Proofs with Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][mathematical reasoning] This paper proposes IneqMath, the first large-scale olympiad-level inequality benchmark…
+  [NeurIPS 2025 Spotlight][LLM (Other)][mathematical reasoning] This paper proposes IneqMath, the first large-scale olympiad-level inequality benchmark, formulates inequality proving as two automatically verifiable subtasks (bound estimation and relation prediction), develops a five-module LLM-as-Judge framework, and finds that even o1 achieves an overall accuracy below 10% under step-by-step reasoning scrutiny.
 tags:
-  - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "NeurIPS 2025 Spotlight"
+  - "LLM (Other)"
   - "mathematical reasoning"
   - "inequality proving"
   - "LLM-as-Judge"
   - "benchmark"
   - "reasoning evaluation"
 date: 2026-05-08
-content_hash: 655a9f6808079aff
+content_hash: 35b05a0ad93da683
 ---
 
 # Solving Inequality Proofs with Large Language Models
@@ -156,11 +156,11 @@ Zero-shot evaluation of 29 leading LLMs:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](scaling_up_active_testing_to_large_language_models.md)
-- [\[NeurIPS 2025\] The Rise of Parameter Specialization for Knowledge Storage in Large Language Models](the_rise_of_parameter_specialization_for_knowledge_storage_in_large_language_mod.md)
-- [\[NeurIPS 2025\] GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models](geocad_local_geometry-controllable_cad_generation_with_large_language_models.md)
-- [\[NeurIPS 2025\] SPACE: Noise Contrastive Estimation Stabilizes Self-Play Fine-Tuning for Large Language Models](space_noise_contrastive_estimation_stabilizes_self-play_fine-tuning_for_large_la.md)
-- [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](../../AAAI2026/llm_nlp/profuser_progressive_fusion_of_large_language_models.md)
+- [\[ACL 2025\] Perspective Transition of Large Language Models for Solving Subjective Tasks](../../ACL2025/llm_nlp/perspective_transition_of_large_language_models_for_solving_subjective_tasks.md)
+- [\[ACL 2025\] Hierarchical Attention Generates Better Proofs](../../ACL2025/llm_nlp/hierarchical_attention_generates_better_proofs.md)
+- [\[ACL 2025\] Semantic Exploration with Adaptive Gating for Efficient Problem Solving with Language Models](../../ACL2025/llm_nlp/semantic_exploration_adaptive_gating.md)
+- [\[ACL 2025\] MathFusion: Enhancing Mathematical Problem-solving of LLM through Instruction Fusion](../../ACL2025/llm_nlp/mathfusion_instruction_fusion.md)
+- [\[ACL 2025\] ArithmAttack: Evaluating Robustness of LLMs to Noisy Context in Math Problem Solving](../../ACL2025/llm_nlp/arithmattack_evaluating_robustness_of_llms_to_noisy_context_in_math_problem_solv.md)
 
 </div>
 

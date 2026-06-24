@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When LLMs Get Significantly Worse: A Statistical Approach to Detect Model Degradations
 description: >-
-  [ICLR 2026][LLM Evaluation][Quantization] Addressing the question of whether a quantized/sparsified LLM has actually degraded or if the change is merely evaluation noise, this paper formalizes the problem as a statistical hypothesis test. It proposes the **Exact One-sided McNemar Test**, which, instead of examining task-level aggregate accuracy, compares the c
+  [ICLR 2026][LLM Evaluation][Model degradation detection] Addressing the question of whether a quantized/sparsified LLM has actually degraded or if the change is merely evaluation noise, this paper formalizes the problem as a statistical hypothesis test. It proposes the **Exact One-sided McNemar Test**, which, instead of examining task-level aggregate accuracy, compares the correctness of two models sample-wise. This allows for the detection of even a 0.3% accuracy drop as "tr…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Quantization
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Model degradation detection"
+  - "McNemar test"
+  - "Quantization"
+  - "Hypothesis testing"
+  - "Sample-wise comparison"
 date: 2026-05-08
-content_hash: f3303dffa600931c
+content_hash: 43a0fa785bd7b41b
 ---
+
 # When LLMs Get Significantly Worse: A Statistical Approach to Detect Model Degradations
 
 **Conference**: ICLR 2026  
@@ -134,9 +139,9 @@ Halving the dataset size resulted in minimal loss of SNR, consistent with the th
 
 - [\[ICLR 2026\] LLMs Get Lost In Multi-Turn Conversation](llms_get_lost_in_multi-turn_conversation.md)
 - [\[ICLR 2026\] Noisy but Valid: Robust Statistical Evaluation of LLMs with Imperfect Judges](noisy_but_valid_robust_statistical_evaluation_of_llms_with_imperfect_judges.md)
+- [\[ICLR 2026\] Rewarding Doubt: A Reinforcement Learning Approach to Calibrated Confidence Expression of Large Language Models](rewarding_doubt_a_reinforcement_learning_approach_to_calibrated_confidence_expre.md)
 - [\[ICLR 2026\] When to Ensemble: Identifying Token-Level Points for Stable and Fast LLM Ensembling](when_to_ensemble_identifying_token-level_points_for_stable_and_fast_llm_ensembli.md)
 - [\[ICLR 2026\] Credit-Budgeted ICPC-Style Coding: When Agents Must Pay for Every Decision](credit-budgeted_icpc-style_coding_when_agents_must_pay_for_every_decision.md)
-- [\[ICLR 2026\] Pitfalls in Evaluating Language Model Forecasters](pitfalls_in_evaluating_language_model_forecasters.md)
 
 </div>
 

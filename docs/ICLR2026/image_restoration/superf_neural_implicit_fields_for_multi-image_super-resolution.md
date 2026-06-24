@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SuperF: Neural Implicit Fields for Multi-Image Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] SuperF treats multi-frame low-resolution (LR) images as "reconstruction targets" rather than network inputs. It uses a cross-frame shared coordinate MLP (Implicit Neural Representation) to fit the scene on a high-resolution (HR) continuous grid while simultaneously optimizing affine alignment parameters for each frame.
+  [ICLR 2026][Image Restoration][Multi-image super-resolution] SuperF treats multi-frame low-resolution (LR) images as "reconstruction targets" rather than network inputs. It uses a cross-frame shared coordinate MLP (Implicit Neural Representation) to fit the scene on a high-resolution (HR) continuous grid while simultaneously optimizing affine alignment parameters for each frame. This enables multi-image super-resolution (MISR) for satellite and handheld camera bursts under a…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Multi-image super-resolution"
+  - "Implicit Neural Representations"
+  - "Test-time optimization"
+  - "Sub-pixel alignment"
+  - "Neural fields"
 date: 2026-05-08
-content_hash: 4e90112ae190d10e
+content_hash: 530b41023dd04674
 ---
+
 # SuperF: Neural Implicit Fields for Multi-Image Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -158,7 +164,7 @@ Component-level breakdown (added sequentially to NIR, SatSynthBurst ×4):
 - [\[ICLR 2026\] Continuous Space-Time Video Super-Resolution with 3D Fourier Fields](continuous_space-time_video_super-resolution_with_3d_fourier_fields.md)
 - [\[NeurIPS 2025\] Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution](../../NeurIPS2025/image_restoration/implicit_augmentation_from_distributional_symmetry_in_turbulence_super-resolutio.md)
 - [\[ICML 2026\] Semi-Supervised Neural Super-Resolution for Mesh-Based Simulations](../../ICML2026/image_restoration/semi-supervised_neural_super-resolution_for_mesh-based_simulations.md)
-- [\[ICLR 2026\] Test-Time Domain Generalization for Image Super-Resolution](test-time_domain_generalization_for_image_super-resolution.md)
+- [\[ICLR 2026\] Divergence-Free Neural Networks with Application to Image Denoising](divergence-free_neural_networks_with_application_to_image_denoising.md)
 
 </div>
 

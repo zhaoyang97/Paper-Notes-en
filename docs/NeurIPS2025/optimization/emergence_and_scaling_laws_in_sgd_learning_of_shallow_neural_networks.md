@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks
 description: >-
-  [NeurIPS 2025][Optimization][scaling laws] This paper provides a precise analysis of online SGD learning of additive models (sums of single-index functions) in shallow neural networks…
+  [NeurIPS 2025][Optimization][scaling laws] This paper provides a precise analysis of online SGD learning of additive models (sums of single-index functions) in shallow neural networks, proving that the learning of each teacher neuron exhibits a sharp phase transition (emergence), and that the superposition of many such transition curves across different timescales naturally produces a smooth power-law scaling law.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "shallow neural networks"
   - "multi-index model"
 date: 2026-05-08
-content_hash: e9ae5be87931b9f9
+content_hash: 83b5892984f9eb07
 ---
 
 # Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks
@@ -138,9 +138,9 @@ This paper provides a precise analysis of online SGD learning of additive models
 
 - [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
 - [\[NeurIPS 2025\] A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias](a_unified_stability_analysis_of_sam_vs_sgd_role_of_data_cohe.md)
-- [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
 - [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
-- [\[ICLR 2026\] Scaling Laws of SignSGD in Linear Regression: When Does It Outperform SGD?](../../ICLR2026/optimization/scaling_laws_of_signsgd_in_linear_regression_when_does_it_outperform_sgd.md)
+- [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
+- [\[NeurIPS 2025\] Functional Scaling Laws in Kernel Regression: Loss Dynamics and Learning Rate Schedules](functional_scaling_laws_in_kernel_regression_loss_dynamics_and_learning_rate_sch.md)
 
 </div>
 

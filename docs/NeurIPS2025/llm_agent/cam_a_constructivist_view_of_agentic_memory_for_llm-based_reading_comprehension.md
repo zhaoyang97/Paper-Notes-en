@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CAM: A Constructivist View of Agentic Memory for LLM-Based Reading Comprehension
 description: >-
-  [NeurIPS 2025][LLM Agent][Agentic memory] Inspired by Piaget's constructivist theory, this paper proposes CAM — an agentic memory system characterized by three properties: structuredness (hierarchical schema)…
+  [NeurIPS 2025][LLM Agent][Agentic memory] Inspired by Piaget's constructivist theory, this paper proposes CAM — an agentic memory system characterized by three properties: structuredness (hierarchical schema), flexibility (assimilation via overlapping clustering), and dynamism (incremental adaptation). CAM comprehensively outperforms baselines such as RAPTOR and GraphRAG across six long-document reading comprehension benchmarks.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "incremental clustering"
   - "constructivism"
 date: 2026-05-08
-content_hash: c4ff4c4149be37eb
+content_hash: b6ce507fa616151a
 ---
 
 # CAM: A Constructivist View of Agentic Memory for LLM-Based Reading Comprehension
@@ -145,7 +145,7 @@ CAM achieves comprehensive superiority on all metrics across all six datasets, w
 - [\[NeurIPS 2025\] Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents](agentic_plan_caching_test-time_memory_for_fast_and_cost-efficient_llm_agents.md)
 - [\[ACL 2026\] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents](../../ACL2026/llm_agent/magma_a_multi-graph_based_agentic_memory_architecture_for_ai_agents.md)
 - [\[NeurIPS 2025\] Agentic NL2SQL to Reduce Computational Costs](agentic_nl2sql_to_reduce_computational_costs.md)
-- [\[NeurIPS 2025\] Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading](orchestration_framework_for_financial_agents_from_algorithmic_trading_to_agentic.md)
+- [\[ICLR 2026\] FlowSearcher: Synthesizing Memory-Guided Agentic Workflows for Web Information Seeking](../../ICLR2026/llm_agent/flowsearcher_synthesizing_memory-guided_agentic_workflows_for_web_information_se.md)
 
 </div>
 

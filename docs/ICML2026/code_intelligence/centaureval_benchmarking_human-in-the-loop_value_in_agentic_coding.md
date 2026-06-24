@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CentaurEval: Benchmarking Human-in-the-Loop Value in Agentic Coding
 description: >-
-  [ICML 2026][Code Intelligence][Benchmark] CentaurEval is proposed as the first unified evaluation framework for human-AI collaborative programming. By designing 45 "Collaboration-Necessary" task templates, it demonstrates that LLMs alone achieve only a 0.67% pass rate and humans alone achieve 18.89%, while human-AI collaboration reaches 31.11%, revealing that
+  [ICML 2026][Code Intelligence][Human-AI collaboration evaluation] CentaurEval is proposed as the first unified evaluation framework for human-AI collaborative programming. By designing 45 "Collaboration-Necessary" task templates, it demonstrates that LLMs alone achieve only a 0.67% pass rate and humans alone achieve 18.89%, while human-AI collaboration reaches 31.11%, revealing that LLMs are evolving from execution tools into co-reasoning partners.
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - Benchmark
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Human-AI collaboration evaluation"
+  - "Code agents"
+  - "Benchmark"
+  - "Collaborative programming"
+  - "High-order reasoning"
 date: 2026-05-08
-content_hash: 6aceadcf1605e81e
+content_hash: d7f23a95c4b4c1fa
 ---
+
 # CentaurEval: Benchmarking Human-in-the-Loop Value in Agentic Coding
 
 **Conference**: ICML 2026  
@@ -144,10 +149,10 @@ Comparative experiments were conducted with 45 expert participants and 5 SOTA LL
 ## Related Papers
 
 - [\[ACL 2026\] FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean](../../ACL2026/code_intelligence/formalscience_scalable_human-in-the-loop_autoformalisation_of_science_with_agent.md)
-- [\[ICML 2026\] NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents](nemo_execution-aware_optimization_modeling_via_autonomous_coding_agents.md)
-- [\[ACL 2026\] CodeDistiller: Automatically Generating Code Libraries for Scientific Coding Agents](../../ACL2026/code_intelligence/codedistiller_automatically_generating_code_libraries_for_scientific_coding_agen.md)
 - [\[ICML 2026\] SWE-IF: Aligning Code Evaluation with Human Preference](swe-if_aligning_code_evaluation_with_human_preference.md)
-- [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](../../ACL2026/code_intelligence/securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
+- [\[ICML 2026\] NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents](nemo_execution-aware_optimization_modeling_via_autonomous_coding_agents.md)
+- [\[ICLR 2026\] FHE-Coder: Benchmarking Secure Agentic Code Generation for Fully Homomorphic Encryption](../../ICLR2026/code_intelligence/fhe-coder_benchmarking_secure_agentic_code_generation_for_fully_homomorphic_encr.md)
+- [\[ICLR 2026\] VERINA: Benchmarking Verifiable Code Generation](../../ICLR2026/code_intelligence/verina_benchmarking_verifiable_code_generation.md)
 
 </div>
 

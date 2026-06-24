@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking PCA Through Duality
 description: >-
-  [NeurIPS 2025][Principal Component Analysis] This paper revisits PCA through the Difference-of-Convex (DC) framework, establishing kernelization and out-of-sample extension capabilities…
+  [NeurIPS 2025][Principal Component Analysis] This paper revisits PCA through the Difference-of-Convex (DC) framework, establishing kernelization and out-of-sample extension capabilities, revealing that simultaneous iteration is a special case of DCA, and proposing a kernelizable dual formulation for robust $\ell_1$-PCA.
 tags:
   - "NeurIPS 2025"
   - "Principal Component Analysis"
@@ -11,7 +11,7 @@ tags:
   - "Kernel PCA"
   - "QR Algorithm"
 date: 2026-05-08
-content_hash: ff6846b069552a13
+content_hash: 48285a5b5f2de8dd
 ---
 
 # Rethinking PCA Through Duality
@@ -159,10 +159,10 @@ Classification accuracy of kernel PCA under different kernel functions:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rethinking Losses for Diffusion Bridge Samplers](rethinking_losses_for_diffusion_bridge_samplers.md)
-- [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
 - [\[ICLR 2026\] Federated ADMM from Bayesian Duality](../../ICLR2026/others/federated_admm_from_bayesian_duality.md)
-- [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](../../ICCV2025/others/lacoot_layer_collapse_through_optimal_transport.md)
-- [\[ICCV 2025\] C4D: 4D Made from 3D through Dual Correspondences](../../ICCV2025/others/c4d_4d_made_from_3d_through_dual_correspondences.md)
+- [\[ICML 2025\] Rethinking Aleatoric and Epistemic Uncertainty](../../ICML2025/others/rethinking_aleatoric_and_epistemic_uncertainty.md)
+- [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
+- [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](../../ICCV2025/others/is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
 
 </div>
 

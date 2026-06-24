@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding
 description: >-
-  [CVPR 2026][Video Understanding][MLLM] Addressing the bottleneck where Video Temporal Grounding (VTG) fails to accurately locate "rare concepts" in open-world scenarios, the authors constructed OmniVTG—a large-scale dataset featuring 2,124 hours, 350,000 queries, and a vocabulary far exceeding the sum of existing datasets—using a "Semantic Coverage Iterativ
+  [CVPR 2026][Video Understanding][Video Temporal Grounding] Addressing the bottleneck where Video Temporal Grounding (VTG) fails to accurately locate "rare concepts" in open-world scenarios, the authors constructed OmniVTG—a large-scale dataset featuring 2,124 hours, 350,000 queries, and a vocabulary far exceeding the sum of existing datasets—using a "Semantic Coverage Iterative Expansion" pipeline. They further proposed a three-stage training paradigm (SFT→CoT→RL) based on "p…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - MLLM
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "Open-World"
+  - "Rare Concepts"
+  - "Self-Correction CoT"
+  - "MLLM"
 date: 2026-05-08
-content_hash: c05c67b2445bb458
+content_hash: 3cb12327453ba40e
 ---
+
 # OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding
 
 **Conference**: CVPR 2026  

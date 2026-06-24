@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] To address the issues of low frame rates in standard RGB cameras (~30fps), which cause motion blur and missing dynamics in high-speed motion, this paper constructs a cuboid capture rig with "4 RGB + 2 Event cameras" and proposes MER-Tracker. By fusing the texture fidelity of RGB with the microsecond-level temporal reso
+  [CVPR 2026][Video Understanding][3D Point Tracking] To address the issues of low frame rates in standard RGB cameras (~30fps), which cause motion blur and missing dynamics in high-speed motion, this paper constructs a cuboid capture rig with "4 RGB + 2 Event cameras" and proposes MER-Tracker. By fusing the texture fidelity of RGB with the microsecond-level temporal resolution of event streams, it outputs accurate high-speed 3D point trajectories at 150fps…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "3D Point Tracking"
+  - "Event Camera"
+  - "Multi-view"
+  - "High-speed Motion"
+  - "Multi-modal Fusion"
 date: 2026-05-08
-content_hash: e82f9dd886404f66
+content_hash: 88ac5dd142377053
 ---
+
 # MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras
 
 **Conference**: CVPR 2026  
@@ -142,8 +148,8 @@ Camera count ablation (FMV-Kubric):
 ## Related Papers
 
 - [\[CVPR 2026\] MV-TAP: Tracking Any Point in Multi-View Videos](mv-tap_tracking_any_point_in_multi-view_videos.md)
-- [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
 - [\[CVPR 2026\] SMV-EAR: Bring Spatiotemporal Multi-View Representation Learning into Efficient Event-Based Action Recognition](smv-ear_bring_spatiotemporal_multi-view_representation_learning_into_efficient_e.md)
+- [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
 - [\[CVPR 2026\] SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks](sdtrack_a_baseline_for_event-based_tracking_via_spiking_neural_networks.md)
 - [\[CVPR 2026\] Event6D: Event-based Novel Object 6D Pose Tracking](event6d_event-based_novel_object_6d_pose_tracking.md)
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Chain-of-Thought] This paper proposes Latent Thought Policy Optimization (LTPO), a test-time reasoning enhancement framework that does not require updating model parameters. By treating intermediate latent "thought" vectors as optimizable dynamic parameters, it utilizes online policy gradient methods and intrinsic confidence reward sign
+  [ICLR 2026][Reinforcement Learning][Latent Reasoning] This paper proposes Latent Thought Policy Optimization (LTPO), a test-time reasoning enhancement framework that does not require updating model parameters. By treating intermediate latent "thought" vectors as optimizable dynamic parameters, it utilizes online policy gradient methods and intrinsic confidence reward signals to enhance the reasoning capabilities of frozen LLMs.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Latent Reasoning"
+  - "Test-time Optimization"
+  - "Policy Gradient"
+  - "Confidence Reward"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: fb233b86d0d661f9
+content_hash: 772bb2a70acf00d4
 ---
+
 # Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization
 
 **Conference**: ICLR 2026  

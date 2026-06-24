@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VQA] This paper introduces WearVQA, the first VQA benchmark specifically designed for wearable device (smart glasses) scenarios. It comprises 2,520 egocentric image–question–answer triplets…
+  [NeurIPS 2025][Multimodal VLM][VQA] This paper introduces WearVQA, the first VQA benchmark specifically designed for wearable device (smart glasses) scenarios. It comprises 2,520 egocentric image–question–answer triplets, systematically covering 7 visual domains, 10 cognitive task types, and 6 categories of wearable-specific image quality degradation. An accompanying LLM-as-a-judge evaluation framework achieves 96% accuracy, and the benchmark reveals that current SOTA multimo…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "smart glasses"
   - "benchmark"
 date: 2026-05-08
-content_hash: 4ecd5a8c40f1f2bc
+content_hash: 24db909bb79ab98c
 ---
 
 # WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios
@@ -170,10 +170,10 @@ Performance of the top-4 models across different cognitive task types:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Are Vision Language Models Ready for Clinical Diagnosis? A 3D Medical Benchmark for Tumor-centric Visual Question Answering](are_vision_language_models_ready_for_clinical_diagnosis_a_3d_medical_benchmark_f.md)
-- [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](../../ICCV2025/multimodal_vlm/reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
+- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
 - [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
-- [\[NeurIPS 2025\] MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios](mme-videoocr_evaluating_ocr-based_capabilities_of_multimodal_llms_in_video_scena.md)
-- [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](../../ICLR2026/multimodal_vlm/meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
+- [\[ACL 2025\] REAL-MM-RAG: A Real-World Multi-Modal Retrieval Benchmark](../../ACL2025/multimodal_vlm/real-mm-rag_a_real-world_multi-modal_retrieval_benchmark.md)
+- [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](../../CVPR2026/multimodal_vlm/vq-va_world_towards_high-quality_visual_question-visual_answering.md)
 
 </div>
 

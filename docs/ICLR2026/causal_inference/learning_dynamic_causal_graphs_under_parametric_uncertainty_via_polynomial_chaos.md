@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] The strength of each causal edge is upgraded from a "static weight" to a "function of operating parameters $\xi$." This function is learned using Polynomial Chaos Expansion (PCE) to discover causal structures that change dynamically with operating conditions, providing provable identifiability and convergence guarantee
+  [ICLR 2026][Causal Inference][Causal Discovery] The strength of each causal edge is upgraded from a "static weight" to a "function of operating parameters $\xi$." This function is learned using Polynomial Chaos Expansion (PCE) to discover causal structures that change dynamically with operating conditions, providing provable identifiability and convergence guarantees.
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Parametric Uncertainty"
+  - "Polynomial Chaos Expansion (PCE)"
+  - "Dynamic Causal Graphs"
+  - "Industrial Processes"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: 44952c9bb0a69b93
+content_hash: dfecd1c888018f17
 ---
+
 # Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions
 
 **Conference**: ICLR 2026  
@@ -131,7 +138,7 @@ A unique capability of PCT-CD is expressing each edge strength as a continuous f
 - [\[ICLR 2026\] Coarse-to-Fine Learning of Dynamic Causal Structures](coarse-to-fine_learning_of_dynamic_causal_structures.md)
 - [\[ICLR 2026\] Theoretical Guarantees for Causal Discovery on Large Random Graphs](theoretical_guarantees_for_causal_discovery_on_large_random_graphs.md)
 - [\[ICLR 2026\] Query-Specific Causal Graph Pruning under Tiered Knowledge](query-specific_causal_graph_pruning_under_tiered_knowledge.md)
-- [\[ICLR 2026\] Efficient and Sharp Off-Policy Learning under Unobserved Confounding](efficient_and_sharp_off-policy_learning_under_unobserved_confounding.md)
+- [\[ICLR 2026\] Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding](causal_imitation_learning_under_expert-observable_and_expert-unobservable_confou.md)
 
 </div>
 

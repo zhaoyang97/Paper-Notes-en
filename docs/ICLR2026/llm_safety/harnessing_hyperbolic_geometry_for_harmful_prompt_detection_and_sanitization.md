@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Harnessing Hyperbolic Geometry for Harmful Prompt Detection and Sanitization
 description: >-
-  [ICLR 2026][LLM Safety][SVDD] This paper reformulates harmful prompt detection as an anomaly detection problem of "finding outliers in hyperbolic space." By using a hyperbolic SVDD (HyPE) that learns only a single radius parameter, benign prompts are enclosed within a compact region. Combined with an attribution-based word-by-word sanitization modu
+  [ICLR 2026][LLM Safety][Hyperbolic Geometry] This paper reformulates harmful prompt detection as an anomaly detection problem of "finding outliers in hyperbolic space." By using a hyperbolic SVDD (HyPE) that learns only a single radius parameter, benign prompts are enclosed within a compact region. Combined with an attribution-based word-by-word sanitization module (HyPS), the framework is more accurate, robust, and interpretable than existing classifiers across six datasets…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - SVDD
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Hyperbolic Geometry"
+  - "Harmful Prompt Detection"
+  - "Prompt Sanitization"
+  - "One-Class Anomaly Detection"
+  - "SVDD"
+  - "Lorentz Model"
 date: 2026-05-08
-content_hash: d19c764334d2c9c0
+content_hash: 4012a49dcfa7f33c
 ---
+
 # Harnessing Hyperbolic Geometry for Harmful Prompt Detection and Sanitization
 
 **Conference**: ICLR 2026  
@@ -117,11 +123,11 @@ The trade-off is clear: Word Removal is the most thorough at neutralization but 
 
 ## Related Papers
 
+- [\[ICLR 2026\] SafeMoE: Safe Fine-Tuning for MoE LLMs by Aligning Harmful Input Routing](safemoe_safe_fine-tuning_for_moe_llms_by_aligning_harmful_input_routing.md)
 - [\[ICLR 2026\] A Guardrail for Safety Preservation: When Safety-Sensitive Subspace Meets Harmful-Resistant Null-Space](a_guardrail_for_safety_preservation_when_safety-sensitive_subspace_meets_harmful.md)
+- [\[ICLR 2026\] Trust The Typical: LLM Safety Guardrails as Out-of-Distribution Detection](trust_the_typical.md)
 - [\[CVPR 2025\] Hyperbolic Safety-Aware Vision-Language Models](../../CVPR2025/llm_safety/hyperbolic_safety-aware_vision-language_models.md)
 - [\[ICLR 2026\] GraphShield: Graph-Theoretic Modeling of Network-Level Dynamics for Robust Jailbreak Detection](graphshield_graph-theoretic_modeling_of_network-level_dynamics_for_robust_jailbr.md)
-- [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
-- [\[ICLR 2026\] Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning](veritas_generalizable_deepfake_detection_via_pattern-aware_reasoning.md)
 
 </div>
 

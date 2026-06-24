@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling
 description: >-
-  [CVPR 2026][Model Compression][Mixture-of-Experts] This paper proposes Cluster-aware Upcycling, which initializes MoE expert and router parameters by extracting the semantic structure of dense models through spherical k-means clustering. This approach breaks expert symmetry and promotes early specialization. Combined with an Expert Ensemble Self-Distillation (EESD) los
+  [CVPR 2026][Model Compression][Mixture-of-Experts] This paper proposes Cluster-aware Upcycling, which initializes MoE expert and router parameters by extracting the semantic structure of dense models through spherical k-means clustering. This approach breaks expert symmetry and promotes early specialization. Combined with an Expert Ensemble Self-Distillation (EESD) loss, it consistently outperforms existing upcycling methods on CLIP ViT.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Mixture-of-Experts
-  - sparse upcycling
-  - expert specialization
-  - cluster initialization
-  - self-distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "sparse upcycling"
+  - "expert specialization"
+  - "cluster initialization"
+  - "self-distillation"
 date: 2026-05-08
-content_hash: 0f293ebe85d02821
+content_hash: fba94f374a86e829
 ---
+
 # Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling
 
 **Conference**: CVPR 2026  
@@ -122,11 +123,11 @@ Evaluated on CLIP ViT-B/32 and ViT-B/16 across zero-shot retrieval and classific
 
 ## Related Papers
 
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
 - [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](../../ICLR2026/model_compression/coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
 - [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
 - [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](../../ICLR2026/model_compression/unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
 - [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](../../ICML2026/model_compression/dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
+- [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
 
 </div>
 

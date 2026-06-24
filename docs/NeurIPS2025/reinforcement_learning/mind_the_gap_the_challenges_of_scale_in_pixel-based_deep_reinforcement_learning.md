@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mind the GAP! The Challenges of Scale in Pixel-based Deep Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Deep Reinforcement Learning] This paper identifies the "bottleneck connection" between the encoder (convolutional layers $\phi$) and the fully connected layers ($\psi$) as the funda…
+  [NeurIPS 2025][Reinforcement Learning][Deep Reinforcement Learning] This paper identifies the "bottleneck connection" between the encoder (convolutional layers $\phi$) and the fully connected layers ($\psi$) as the fundamental obstacle to scaling pixel-based deep RL networks, and proposes Global Average Pooling (GAP) — a minimal architectural change — to directly resolve this bottleneck. GAP achieves performance on par with or superior to complex methods (SoftMoE…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Bottleneck Layer"
   - "Atari"
 date: 2026-05-08
-content_hash: 794491274c87d07c
+content_hash: 9c08b57a82bf7a26
 ---
 
 # Mind the GAP! The Challenges of Scale in Pixel-based Deep Reinforcement Learning
@@ -150,7 +150,7 @@ GAP matches or slightly surpasses SoftMoE-1 in performance while incurring **sub
 - [\[NeurIPS 2025\] Confounding Robust Deep Reinforcement Learning: A Causal Approach](confounding_robust_deep_reinforcement_learning_a_causal_approach.md)
 - [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
 - [\[NeurIPS 2025\] Enhancing Interpretability in Deep Reinforcement Learning through Semantic Clustering](enhancing_interpretability_in_deep_reinforcement_learning_through_semantic_clust.md)
-- [\[NeurIPS 2025\] Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning](counteractive_rl_rethinking_core_principles_for_efficient_and_scalable_deep_rein.md)
+- [\[ICML 2025\] Beyond The Rainbow: High Performance Deep Reinforcement Learning on a Desktop PC](../../ICML2025/reinforcement_learning/beyond_the_rainbow_high_performance_deep_reinforcement_learning_on_a_desktop_pc.md)
 - [\[NeurIPS 2025\] Adaptive Cooperative Transmission Design for URLLC via Deep RL](adaptive_cooperative_transmission_design_for_ultra-reliable_low-latency_communic.md)
 
 </div>

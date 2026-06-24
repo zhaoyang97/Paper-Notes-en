@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][tabular foundation model] TabSTAR is a foundation model designed specifically for tabular data with text fields. It achieves target-aware text representations through end-to-end o…
+  [NeurIPS 2025][Self-Supervised Learning][tabular foundation model] TabSTAR is a foundation model designed specifically for tabular data with text fields. It achieves target-aware text representations through end-to-end optimization with an unfrozen text encoder (e5-small-v2), injects target semantics via target-aware tokens, and enables cross-dataset transfer learning through a dataset-parameter-free architecture. After pre-training on 350 datasets…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "cross-dataset learning"
   - "transfer learning"
 date: 2026-05-08
-content_hash: c9528ccda6ca1db8
+content_hash: a50c69fe43263303
 ---
 
 # TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields
@@ -149,11 +149,11 @@ TabSTAR involves two training phases: (1) **Pre-training** on 350 tabular datase
 
 ## Related Papers
 
+- [\[ICML 2025\] Towards Benchmarking Foundation Models for Tabular Data With Text](../../ICML2025/self_supervised/towards_benchmarking_foundation_models_for_tabular_data_with_text.md)
 - [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
-- [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
 - [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
+- [\[NeurIPS 2025\] TabArena: A Living Benchmark for Machine Learning on Tabular Data](tabarena_a_living_benchmark_for_machine_learning_on_tabular_data.md)
 - [\[AAAI 2026\] Robust Tabular Foundation Models](../../AAAI2026/self_supervised/robust_tabular_foundation_models.md)
-- [\[NeurIPS 2025\] Manifolds and Modules: How Function Develops in a Neural Foundation Model](manifolds_and_modules_how_function_develops_in_a_neural_foundation_model.md)
 
 </div>
 

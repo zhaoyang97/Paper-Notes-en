@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs
 description: >-
-  [ICLR 2026][vlm_reasoning][visual reasoning] The authors propose VC-STaR (Visual Contrastive Self-Taught Reasoner). Based on the observation that "VLMs see more accurately when contrasting two similar images," they design a contrastive self-improving framework: by constructing contrastive VQA pairs, the model generates more faithful visual analysis during compari
+  [ICLR 2026 Oral][VLM Reasoning][visual reasoning] The authors propose VC-STaR (Visual Contrastive Self-Taught Reasoner). Based on the observation that "VLMs see more accurately when contrasting two similar images," they design a contrastive self-improving framework: by constructing contrastive VQA pairs, the model generates more faithful visual analysis during comparison. An LLM then integrates this contrastive analysis into the reasoning path to produce the high-quality visu…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - visual reasoning
-  - self-improving
-  - visual contrast
-  - hallucination mitigation
-  - contrastive VQA pairs
+  - "ICLR 2026 Oral"
+  - "VLM Reasoning"
+  - "visual reasoning"
+  - "self-improving"
+  - "visual contrast"
+  - "hallucination mitigation"
+  - "contrastive VQA pairs"
 date: 2026-05-08
-content_hash: 82ce03b93e6c38b2
+content_hash: 3faa962e19067b4c
 ---
+
 # Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs
 
 **Conference**: ICLR 2026 Oral  
@@ -145,15 +146,13 @@ The base model is Qwen2.5VL-7B, compared against self-improvement baselines and 
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
 - [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](../../ICML2026/vlm_reasoning/learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
-- [\[CVPR 2026\] Consensus Entropy: Harnessing Multi-VLM Agreement for Self-Verifying and Self-Improving OCR](../../CVPR2026/vlm_reasoning/consensus_entropy_harnessing_multi-vlm_agreement_for_self-verifying_and_self-imp.md)
 - [\[ICLR 2026\] ProxyThinker: Test-Time Guidance Through Small Visual Reasoners](proxythinker_test-time_guidance_through_small_visual_reasoners.md)
-- [\[ICLR 2026\] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](lens_multi-level_evaluation_of_multimodal_reasoning_with_large_language_models.md)
+- [\[CVPR 2026\] Consensus Entropy: Harnessing Multi-VLM Agreement for Self-Verifying and Self-Improving OCR](../../CVPR2026/vlm_reasoning/consensus_entropy_harnessing_multi-vlm_agreement_for_self-verifying_and_self-imp.md)
+- [\[CVPR 2026\] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs](../../CVPR2026/vlm_reasoning/visres_bench_on_evaluating_the_visual_reasoning_capabilities_of_vlms.md)
 
 </div>
 

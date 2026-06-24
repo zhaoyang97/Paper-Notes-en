@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hyperbolic Dataset Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][dataset distillation] This paper proposes HDD, the first method to incorporate hyperbolic space into dataset distillation. By matching the Riemannian centroids of real and synthetic data…
+  [NeurIPS 2025][Model Compression][dataset distillation] This paper proposes HDD, the first method to incorporate hyperbolic space into dataset distillation. By matching the Riemannian centroids of real and synthetic data in the Lorentz hyperbolic space—rather than performing distribution matching in Euclidean space—HDD leverages the hierarchical weighting property of hyperbolic geometry to assign higher influence to more representative, low-level samples. The method consisten…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Lorentz model"
   - "hierarchical pruning"
 date: 2026-05-08
-content_hash: 73072b85c206b54d
+content_hash: 5f549a17004bb091
 ---
 
 # Hyperbolic Dataset Distillation
@@ -133,7 +133,7 @@ Retaining only 20% of the distilled coreset largely preserves model performance 
 - [\[NeurIPS 2025\] Beyond Random: Automatic Inner-Loop Optimization in Dataset Distillation](beyond_random_automatic_inner-loop_optimization_in_dataset_distillation.md)
 - [\[NeurIPS 2025\] Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation](rectifying_soft-label_entangled_bias_in_long-tailed_dataset_distillation.md)
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
-- [\[AAAI 2026\] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution](../../AAAI2026/model_compression/tgdd_trajectory_guided_dataset_distillation_with_balanced_distribution.md)
+- [\[CVPR 2025\] Dataset Distillation with Neural Characteristic Function: A Minmax Perspective](../../CVPR2025/model_compression/dataset_distillation_with_neural_characteristic_function_a_minmax_perspective.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AlignTree: Efficient Defense Against LLM Jailbreak Attacks
 description: >-
-  [AAAI 2026][LLM Alignment][LLM Safety] AlignTree leverages internal LLM activation features — combining linear refusal directions with nonlinear SVM signals — to train a lightweight random forest classifier that efficien…
+  [AAAI 2026][LLM Alignment][LLM Safety] AlignTree leverages internal LLM activation features — combining linear refusal directions with nonlinear SVM signals — to train a lightweight random forest classifier that efficiently detects jailbreak attacks with negligible computational overhead, achieving state-of-the-art reductions in attack success rate (ASR).
 tags:
   - "AAAI 2026"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "Refusal Direction"
   - "SVM"
 date: 2026-05-08
-content_hash: 4627e7b4ad227e8f
+content_hash: bab44dabfacae01a
 ---
 
 # AlignTree: Efficient Defense Against LLM Jailbreak Attacks
@@ -143,11 +143,11 @@ AlignTree is the only method that simultaneously achieves low ASR and low false 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
+- [\[ACL 2025\] AGD: Adversarial Game Defense Against Jailbreak Attacks in Large Language Models](../../ACL2025/llm_alignment/agd_adversarial_game_defense_against_jailbreak_attacks_in_large_language_models.md)
+- [\[ACL 2025\] JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs](../../ACL2025/llm_alignment/jailbreakradar_comprehensive_assessment_jailbreak_attacks.md)
+- [\[ACL 2025\] Beyond Surface-Level Patterns: An Essence-Driven Defense Framework Against Jailbreak Attacks in LLMs](../../ACL2025/llm_alignment/beyond_surface-level_patterns_an_essence-driven_defense_framework_against_jailbr.md)
+- [\[AAAI 2026\] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment](differentiated_directional_intervention_a_framework_for_evading_llm_safety_align.md)
 - [\[ICLR 2026\] SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks](../../ICLR2026/llm_alignment/sema_simple_yet_effective_learning_for_multi-turn_jailbreak_attacks.md)
-- [\[ICLR 2026\] Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check](../../ICLR2026/llm_alignment/reasoned_safety_alignment_ensuring_jailbreak_defense_via_answer-then-check.md)
-- [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](../../ICLR2026/llm_alignment/toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
-- [\[CVPR 2026\] Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models](../../CVPR2026/llm_alignment/principled_steering_via_null-space_projection_for_jailbreak_defense_in_vision-la.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Guaranteed Simply Connected Mesh Reconstruction from an Unorganized Point Cloud
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Closed triangle meshes are reconstructed from noisy point clouds with an algebraic **guarantee** of simple connectivity (homeomorphic to a 2-sphere) via Helmholtz-Hodge Decomposition (HHD), filling the gap in topological control for existing methods.
+  [ICLR 2026][3D Vision][Surface Reconstruction] Closed triangle meshes are reconstructed from noisy point clouds with an algebraic **guarantee** of simple connectivity (homeomorphic to a 2-sphere) via Helmholtz-Hodge Decomposition (HHD), filling the gap in topological control for existing methods.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Surface Reconstruction"
+  - "Point Cloud"
+  - "Winding Number Field"
+  - "Helmholtz-Hodge Decomposition"
+  - "Topological Control"
+  - "Simply Connected"
 date: 2026-05-08
-content_hash: c0aca3829c2f46be
+content_hash: 1ce3c3d0613981eb
 ---
+
 # Guaranteed Simply Connected Mesh Reconstruction from an Unorganized Point Cloud
 
 **Conference**: ICLR 2026  
@@ -125,15 +132,15 @@ Compared with Screened Poisson and SALD.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Point-UQ: An Uncertainty Quantification Paradigm for Point Cloud Few-Shot Class-Incremental Learning](point-uq_an_uncertainty-quantification_paradigm_for_point_cloud_few-shot_class_i.md)
 - [\[ICLR 2026\] Mesh Splatting for End-to-end Multiview Surface Reconstruction](mesh_splatting_for_end-to-end_multiview_surface_reconstruction.md)
 - [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](spiking_discrepancy_transformer_for_point_cloud_analysis.md)
 - [\[ICLR 2026\] Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation](point-focused_attention_meets_context-scan_state_space_robust_biological_visual_.md)
 - [\[ICLR 2026\] RayI2P: Learning Rays for Image-to-Point Cloud Registration](rayi2p_learning_rays_for_image-to-point_cloud_registration.md)
-- [\[ICLR 2026\] MoGen: Detailed Neuronal Morphology Generation via Point Cloud Flow Matching](mogen_detailed_neuronal_morphology_generation_via_point_cloud_flow_matching.md)
 
 </div>
 

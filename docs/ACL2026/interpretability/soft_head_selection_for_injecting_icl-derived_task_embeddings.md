@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SITE: Soft Head Selection for Injecting ICL-Derived Task Embeddings
 description: >-
-  [ACL 2026][Interpretability][Paper Note] SITE proposes a gradient-optimized soft attention head selection method that identifies task-relevant heads to effectively inject ICL-derived task embeddings. It significantly outperforms ICL and existing embedding methods across 12 LLMs (4B-70B) while achieving performance comparable to PEFT with far fewer trainable p
+  [ACL 2026 Findings][Interpretability][Attention Head Selection] SITE proposes a gradient-optimized soft attention head selection method that identifies task-relevant heads to effectively inject ICL-derived task embeddings. It significantly outperforms ICL and existing embedding methods across 12 LLMs (4B-70B) while achieving performance comparable to PEFT with far fewer trainable parameters.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Interpretability"
+  - "Attention Head Selection"
+  - "Task Embedding"
+  - "In-Context Learning"
+  - "Activation Patching"
+  - "Parameter-Efficient"
 date: 2026-05-08
-content_hash: bb22188b718b738d
+content_hash: 740116c15c3a8c50
 ---
+
 # SITE: Soft Head Selection for Injecting ICL-Derived Task Embeddings
 
 **Conference**: ACL 2026 Findings  
@@ -132,11 +138,11 @@ The optimization objective is the cross-entropy loss under zero-shot inference. 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis](../../ICLR2026/interpretability/localizing_task_recognition_and_task_learning_in_in-context_learning_via_attenti.md)
 - [\[ACL 2026\] Style over Story: Measuring LLM Narrative Preferences via Structured Selection](style_over_story_measuring_llm_narrative_preferences_via_structured_selection.md)
+- [\[ICML 2026\] Where Computation Lives Inside TabPFN: Causal Localisation of Attention Head Function](../../ICML2026/interpretability/where_computation_lives_inside_tabpfn_causal_localisation_of_attention_head_func.md)
 - [\[ICLR 2026\] Bridging Explainability and Embeddings: BEE Aware of Spuriousness](../../ICLR2026/interpretability/bridging_explainability_and_embeddings_bee_aware_of_spuriousness.md)
-- [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](../../ICLR2026/interpretability/cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
-- [\[AAAI 2026\] Unsupervised Feature Selection Through Group Discovery](../../AAAI2026/interpretability/unsupervised_feature_selection_through_group_discovery.md)
-- [\[ACL 2026\] Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling](learning_what_matters_dynamic_dimension_selection_and_aggregation_for_interpreta.md)
+- [\[ICLR 2026\] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations](../../ICLR2026/interpretability/understanding_task_vectors_in_in-context_learning_emergence_functionality_and_li.md)
 
 </div>
 

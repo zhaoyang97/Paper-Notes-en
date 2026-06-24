@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UIPro: Unleashing Superior Interaction Capability for GUI Agents
 description: >-
-  [ICCV 2025][LLM Agent][GUI agent] UIPro is proposed to achieve state-of-the-art GUI interaction performance across mobile, web, and desktop platforms by constructing 20.6M GUI understanding samples for pre-training and i…
+  [ICCV 2025][LLM Agent][GUI agent] UIPro is proposed to achieve state-of-the-art GUI interaction performance across mobile, web, and desktop platforms by constructing 20.6M GUI understanding samples for pre-training and introducing a unified action space to integrate heterogeneous GUI agent task data.
 tags:
   - "ICCV 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "vision-language model"
   - "multi-platform interaction"
 date: 2026-05-08
-content_hash: d698785a81d73d4d
+content_hash: b5d655cf8a818ac6
 ---
 
 # UIPro: Unleashing Superior Interaction Capability for GUI Agents
@@ -154,11 +154,11 @@ Two backbone models are used: UIPro-SLiME (3B, trained from scratch) and UIPro-Q
 
 ## Related Papers
 
+- [\[ICML 2025\] Aguvis: Unified Pure Vision Agents for Autonomous GUI Interaction](../../ICML2025/llm_agent/aguvis_unified_pure_vision_agents_for_autonomous_gui_interaction.md)
+- [\[ACL 2025\] OS-Kairos: Adaptive Interaction for MLLM-Powered GUI Agents](../../ACL2025/llm_agent/os-kairos_adaptive_interaction_for_mllm-powered_gui_agents.md)
 - [\[ICML 2026\] Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining](../../ICML2026/llm_agent/video2gui_synthesizing_large-scale_interaction_trajectories_for_generalized_gui_.md)
-- [\[ACL 2026\] LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization](../../ACL2026/llm_agent/lpo_towards_accurate_gui_agent_interaction_via_location_preference_optimization.md)
 - [\[ICCV 2025\] Less is More: Empowering GUI Agent with Context-Aware Simplification](less_is_more_empowering_gui_agent_with_context-aware_simplification.md)
-- [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](../../CVPR2026/llm_agent/towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
-- [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](../../CVPR2026/llm_agent/gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
+- [\[ACL 2025\] GUI Agents: A Survey](../../ACL2025/llm_agent/gui_agents_a_survey.md)
 
 </div>
 

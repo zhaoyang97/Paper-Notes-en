@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DeX-Portrait: Disentangled and Expressive Portrait Animation via Explicit and Latent Motion Representations
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] By employing a hybrid motion representation—explicit global transformation for head pose and implicit latent code for facial expressions—alongside dual-branch pose injection and progressive blended CFG, this work achieves **high-fidelity disentangled control** of pose and expression in one-shot portrait animation for t
+  [CVPR 2026][Human Understanding][Portrait Animation] By employing a hybrid motion representation—explicit global transformation for head pose and implicit latent code for facial expressions—alongside dual-branch pose injection and progressive blended CFG, this work achieves **high-fidelity disentangled control** of pose and expression in one-shot portrait animation for the first time, supporting fine-grained editing of pose or expression independently.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
-  - Classifier-Free Guidance
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Portrait Animation"
+  - "Pose-Expression Disentanglement"
+  - "Diffusion Models"
+  - "Explicit Motion Representation"
+  - "Classifier-Free Guidance"
 date: 2026-05-08
-content_hash: 2f8d89c757604ece
+content_hash: cf8eb3869d48db24
 ---
+
 # DeX-Portrait: Disentangled and Expressive Portrait Animation via Explicit and Latent Motion Representations
 
 **Conference**: CVPR 2026  
@@ -153,8 +157,8 @@ In disentangled-reenactment, X-NeMo, HunyuanPortrait, and Wan-Animate are "N/A" 
 - [\[CVPR 2025\] Sonic: Shifting Focus to Global Audio Perception in Portrait Animation](../../CVPR2025/human_understanding/sonic_shifting_focus_to_global_audio_perception_in_portrait_animation.md)
 - [\[CVPR 2025\] MoEE: Mixture of Emotion Experts for Audio-Driven Portrait Animation](../../CVPR2025/human_understanding/moee_mixture_of_emotion_experts_for_audio-driven_portrait_animation.md)
 - [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
-- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
 - [\[CVPR 2026\] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis](party_part-guidance_for_expressive_text-to-motion_synthesis.md)
+- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniGround: A Comprehensive Spatio-Temporal Grounding Benchmark for Real-World Complex Scenarios
 description: >-
-  [CVPR 2026][Video Understanding][STVG benchmark] To address the issues of narrow categories and oversimplified scenarios in existing Spatio-Temporal Video Grounding (STVG) datasets, this paper constructs the OmniGround benchmark, covering 81 categories across 3,475 real-world complex videos. The study introduces a Forward-Backward-Refine (FBR) annotation pipeline, a
+  [CVPR 2026][Video Understanding][Spatio-Temporal Video Grounding] To address the issues of narrow categories and oversimplified scenarios in existing Spatio-Temporal Video Grounding (STVG) datasets, this paper constructs the OmniGround benchmark, covering 81 categories across 3,475 real-world complex videos. The study introduces a Forward-Backward-Refine (FBR) annotation pipeline, a four-dimensional data quality evaluation framework (DeepSTG)…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - STVG benchmark
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Spatio-Temporal Video Grounding"
+  - "STVG benchmark"
+  - "Multimodal Large Language Models"
+  - "Annotation Pipeline"
+  - "Training-free Baseline"
 date: 2026-05-08
-content_hash: 1764f3759a7d7c28
+content_hash: 66ff79d49a110e79
 ---
+
 # OmniGround: A Comprehensive Spatio-Temporal Grounding Benchmark for Real-World Complex Scenarios
 
 **Conference**: CVPR 2026  
@@ -150,11 +155,11 @@ PG-TAF, despite being training-free, achieves top results on OmniGround (49.2/36
 
 ## Related Papers
 
-- [\[CVPR 2026\] VISTA: Video Interaction Spatio-Temporal Analysis Benchmark](vista_video_interaction_spatio-temporal_analysis_benchmark.md)
-- [\[CVPR 2026\] Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](towards_spatio-temporal_world_scene_graph_generation_from_monocular_videos.md)
 - [\[AAAI 2026\] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](../../AAAI2026/video_understanding/r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)
+- [\[CVPR 2026\] SARL-STG: A Spatially Aware Reinforcement Learning Framework for Refining MLLMs in Spatio-Temporal Video Grounding](sarl-stg_a_spatially_aware_reinforcement_learning_framework_for_refining_mllms_i.md)
+- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
 - [\[CVPR 2026\] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling](realworld_point_tracking_with_verifierguided_pseud.md)
-- [\[CVPR 2026\] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](omnivtg_a_large-scale_dataset_and_training_paradigm_for_open-world_video_tempora.md)
+- [\[ICLR 2026\] OmniSTVG: Toward Spatio-Temporal Omni-Object Video Grounding](../../ICLR2026/video_understanding/omnistvg_toward_spatio-temporal_omni-object_video_grounding.md)
 
 </div>
 

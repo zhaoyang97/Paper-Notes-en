@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] STEM: Scaling Transformers with Embedding Modules
 description: >-
-  [ICLR 2026][LLM Efficiency][FFN] STEM replaces the up-projection matrix in the SwiGLU FFN with a layer-local embedding table indexed by token ID. By utilizing static sparsity instead of dynamic MoE routing, it eliminates approximately one-third of FFN parameters and reduces per-token FLOPs. This approach results in more stable training and larger know
+  [ICLR 2026][LLM Efficiency][Static Sparsity] STEM replaces the up-projection matrix in the SwiGLU FFN with a layer-local embedding table indexed by token ID. By utilizing static sparsity instead of dynamic MoE routing, it eliminates approximately one-third of FFN parameters and reduces per-token FLOPs. This approach results in more stable training and larger knowledge capacity, improving downstream average scores by approximately 3–4% at the 350M/1B scales.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - FFN
-  - CPU offload
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Static Sparsity"
+  - "Token Indexing"
+  - "FFN"
+  - "Parameter Memory"
+  - "CPU offload"
 date: 2026-05-08
-content_hash: 61bc487ef10842cb
+content_hash: c3aa0cd8c17a4504
 ---
+
 # STEM: Scaling Transformers with Embedding Modules
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EvolProver: Advancing Automated Theorem Proving by Evolving Formalized Problems via Symmetry and Difficulty
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] EvolProver proposes a dual-perspective "Symmetry + Difficulty" formal statement data augmentation pipeline (EvolDomain cross-domain translation + EvolDifficulty difficulty evolution + EvolAST AST-based deterministic syntactic rewriting). Using this augmented data, a 7B non-CoT theorem prover was trained, achieving a ne
+  [ICLR2026][Reasoning][Formal theorem proving] EvolProver proposes a dual-perspective "Symmetry + Difficulty" formal statement data augmentation pipeline (EvolDomain cross-domain translation + EvolDifficulty difficulty evolution + EvolAST AST-based deterministic syntactic rewriting). Using this augmented data, a 7B non-CoT theorem prover was trained, achieving a new SOTA for its size with 53.8% pass@32 on FormalMATH-Lite, even surpassing reasoning models.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Formal theorem proving"
+  - "data augmentation"
+  - "Abstract Syntax Tree (AST)"
+  - "difficulty evolution"
+  - "robustness"
 date: 2026-05-08
-content_hash: 02767c000ee33fd5
+content_hash: f61b649aa66c8b89
 ---
+
 # EvolProver: Advancing Automated Theorem Proving by Evolving Formalized Problems via Symmetry and Difficulty
 
 **Conference**: ICLR2026  
@@ -136,14 +142,14 @@ Table 4 results using pass@32. Superscript 0 = Public data; 0+1 = + EvolDomain &
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
 - [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](mathesis_towards_formal_theorem_proving_from_natural_languages.md)
-- [\[ICLR 2026\] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](neural_theorem_proving_for_verification_conditions_a_real-world_benchmark.md)
+- [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
 - [\[ACL 2025\] Local Look-Ahead Guidance via Verifier-in-the-Loop for Automated Theorem Proving](../../ACL2025/llm_reasoning/local_look-ahead_guidance_via_verifier-in-the-loop_for_automated_theorem_proving.md)
+- [\[ICLR 2026\] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](neural_theorem_proving_for_verification_conditions_a_real-world_benchmark.md)
 - [\[ICML 2026\] DyCon: Dynamic Reasoning Control via Evolving Difficulty Modeling](../../ICML2026/llm_reasoning/dycon_dynamic_reasoning_control_via_evolving_difficulty_modeling.md)
 
 </div>

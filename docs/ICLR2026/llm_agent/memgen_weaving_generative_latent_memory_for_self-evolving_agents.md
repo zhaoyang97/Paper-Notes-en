@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents
 description: >-
-  [ICLR 2026][LLM Agent][LoRA] MemGen enables LLM agents to determine when to recall in real-time during inference via a "memory trigger," followed by a "memory weaver" that generates machine-native latent token sequences injected into the inference stream. This intertwines memory and reasoning into a dynamic cycle, significantly outperforming param
+  [ICLR 2026][LLM Agent][Generative Memory] MemGen enables LLM agents to determine when to recall in real-time during inference via a "memory trigger," followed by a "memory weaver" that generates machine-native latent token sequences injected into the inference stream. This intertwines memory and reasoning into a dynamic cycle, significantly outperforming parametric and retrieval-based memory while keeping the backbone frozen and without modifying a single parameter.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - LoRA
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Generative Memory"
+  - "Latent Memory"
+  - "Self-Evolving Agents"
+  - "Metacognitive Trigger"
+  - "LoRA"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 59e2a9f835ea99fa
+content_hash: 597570280a3f75d9
 ---
+
 # MemGen: Weaving Generative Latent Memory for Self-Evolving Agents
 
 **Conference**: ICLR 2026  
@@ -111,8 +116,8 @@ For latent memory sequence length $K\in\{2,4,8\}$, lengths that are too short pr
 
 ## Related Papers
 
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](reveal_self-evolving_code_agents_via_reliable_self-verification.md)
 - [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
-- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 - [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](../../ICML2026/llm_agent/self-evolving_llm_agents_with_in-distribution_optimization.md)
 - [\[ICLR 2026\] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](your_agent_may_misevolve_emergent_risks_in_self-evolving_llm_agents.md)
 - [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)

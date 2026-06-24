@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] NimbusGS proposes a unified 3D scene reconstruction framework that achieves SOTA reconstruction across cross-weather and hybrid-weather conditions by decomposing weather degradation into a continuous scattering field (fog/haze) and per-view particle residual layers (rain/snow), combined with a geometry-guided gradient
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] NimbusGS proposes a unified 3D scene reconstruction framework that achieves SOTA reconstruction across cross-weather and hybrid-weather conditions by decomposing weather degradation into a continuous scattering field (fog/haze) and per-view particle residual layers (rain/snow), combined with a geometry-guided gradient scaling mechanism.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Adverse Weather"
+  - "Scene Reconstruction"
+  - "Physical Modeling"
+  - "Weather Decomposition"
 date: 2026-05-08
-content_hash: 8aaa805c21380081
+content_hash: 5f0434154728f004
 ---
+
 # NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather
 
 **Conference**: CVPR 2026  
@@ -130,8 +136,8 @@ The method comprehensively outperforms specialized approaches under both single 
 - [\[CVPR 2026\] WeatherCity: Urban Scene Reconstruction with Controllable Multi-Weather Transformation](weathercity_urban_scene_reconstruction_with_controllable_multi-weather_transform.md)
 - [\[CVPR 2026\] Scene Reconstruction as Mapping Priors for 3D Detection](scene_reconstruction_as_mapping_priors_for_3d_detection.md)
 - [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](../../ICCV2025/3d_vision/robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
-- [\[CVPR 2026\] Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction](revisiting_pose_sensitivity_in_splat-based_computed_tomography_under_sparse-view.md)
-- [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
+- [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
 
 </div>
 

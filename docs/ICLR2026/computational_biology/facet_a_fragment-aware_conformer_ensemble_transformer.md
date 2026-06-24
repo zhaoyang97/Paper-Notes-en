@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FACET: A Fragment-Aware Conformer Ensemble Transformer
 description: >-
-  [ICLR 2026][Computational Biology][Fused Gromov-Wasserstein] FACET uses a differentiable Graph Transformer to **learn an approximation of the expensive Fused Gromov-Wasserstein (FGW) distance**, transforming "geometry-aware multi-conformer aggregation" from an online optimization problem into a single forward pass. Combined with fragment-level structural priors, it achieves a 5–
+  [ICLR 2026][Computational Biology][Conformer Ensemble] FACET uses a differentiable Graph Transformer to **learn an approximation of the expensive Fused Gromov-Wasserstein (FGW) distance**, transforming "geometry-aware multi-conformer aggregation" from an online optimization problem into a single forward pass. Combined with fragment-level structural priors, it achieves a 5–6x training speedup while maintaining SOTA accuracy, scaling effectively to 75,000 molecules.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Fused Gromov-Wasserstein
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Conformer Ensemble"
+  - "Fused Gromov-Wasserstein"
+  - "Graph Transformer"
+  - "Fragment Prior"
+  - "Molecular Property Prediction"
 date: 2026-05-08
-content_hash: c0e7135f886e0139
+content_hash: a14e9cd4026bd5a5
 ---
+
 # FACET: A Fragment-Aware Conformer Ensemble Transformer
 
 **Conference**: ICLR 2026  
@@ -137,8 +142,8 @@ Training Strategy Ablation (MSE ↓):
 
 - [\[ICLR 2026\] Hierarchical Multi-Scale Molecular Conformer Generation](hierarchical_multi-scale_molecular_conformer_generation.md)
 - [\[ICLR 2026\] SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion](sigmadock_untwisting_molecular_docking_with_fragment-based_se3_diffusion.md)
-- [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
 - [\[ICLR 2026\] Drugging the Undruggable: Benchmarking and Modeling Fragment-Based Screening](drugging_the_undruggable_benchmarking_and_modeling_fragment-based_screening.md)
+- [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
 - [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
 
 </div>

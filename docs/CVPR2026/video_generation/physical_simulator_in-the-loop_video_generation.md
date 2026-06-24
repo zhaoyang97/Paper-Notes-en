@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Physical Simulator In-the-Loop Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] PSIVG is proposed as the first training-free inference-time framework that embeds a physical simulator into the video diffusion generation loop. It reconstructs 4D scenes and object meshes from a template video, generates physically consistent trajectories in an MPM simulator, guides video generation with optical flow,
+  [CVPR 2026][Video Generation][Physical Simulator In-the-Loop] PSIVG is proposed as the first training-free inference-time framework that embeds a physical simulator into the video diffusion generation loop. It reconstructs 4D scenes and object meshes from a template video, generates physically consistent trajectories in an MPM simulator, guides video generation with optical flow, and ensures texture consistency of moving objects via Test-Time Consistency Optimization (TTCO)…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Physical Simulator In-the-Loop"
+  - "Video Diffusion Model"
+  - "MPM Simulation"
+  - "Test-Time Optimization"
+  - "Physically Consistent Generation"
 date: 2026-05-08
-content_hash: 91048637440b090b
+content_hash: 7404c9f8a782f3b6
 ---
+
 # Physical Simulator In-the-Loop Video Generation
 
 **Conference**: CVPR 2026  
@@ -137,8 +143,8 @@ PSIVG requires no additional training data. TTCO uses AdamW at test-time with a 
 - [\[CVPR 2026\] Physical Object Understanding with a Physically Controllable World Model](physical_object_understanding_with_a_physically_controllable_world_model.md)
 - [\[CVPR 2026\] ProPhy: Progressive Physical Alignment for Dynamic World Simulation](prophy_progressive_physical_alignment_for_dynamic_world_simulation.md)
 - [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
-- [\[ICML 2025\] How Far is Video Generation from World Model: A Physical Law Perspective](../../ICML2025/video_generation/how_far_is_video_generation_from_world_model_a_physical_law_perspective.md)
-- [\[CVPR 2026\] EgoX: Egocentric Video Generation from a Single Exocentric Video](egox_egocentric_video_generation_from_a_single_exocentric_video.md)
+- [\[ICLR 2026\] VideoPhy-2: A Challenging Action-Centric Physical Commonsense Evaluation in Video Generation](../../ICLR2026/video_generation/videophy-2_a_challenging_action-centric_physical_commonsense_evaluation_in_video.md)
+- [\[ICLR 2026\] $PhyWorldBench$: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models](../../ICLR2026/video_generation/phyworldbench_a_comprehensive_evaluation_of_physical_realism_in_text-to-video_mo.md)
 
 </div>
 

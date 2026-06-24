@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KL Penalty Control via Perturbation for Direct Preference Optimization
 description: >-
-  [NeurIPS 2025][Dialogue Systems][DPO] This paper proposes ε-DPO, which achieves instance-level adaptive KL penalty control by monitoring the monotonicity of logits—used as preference model outputs—under small perturbatio…
+  [NeurIPS 2025][Dialogue Systems][DPO] This paper proposes ε-DPO, which achieves instance-level adaptive KL penalty control by monitoring the monotonicity of logits—used as preference model outputs—under small perturbations of $\beta$ during training. The method incurs no additional computational overhead and significantly outperforms DPO and most direct alignment algorithms, achieving a 46.4% LC win rate on AlpacaEval 2 (vs. 40.3% for DPO).
 tags:
   - "NeurIPS 2025"
   - "Dialogue Systems"
@@ -13,7 +13,7 @@ tags:
   - "direct alignment"
   - "RLHF"
 date: 2026-05-08
-content_hash: cd7033a375f5c1f9
+content_hash: 7ac2ec8cf8bb4045
 ---
 
 # KL Penalty Control via Perturbation for Direct Preference Optimization
@@ -220,8 +220,8 @@ The additional computational cost is negligible (approximately $\frac{2v}{N}$, a
 - [\[NeurIPS 2025\] AC-LoRA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs](aclora_almost_trainingfree_access_controlaware_multimodal_ll.md)
 - [\[ACL 2026\] Preference Learning Unlocks LLMs' Psycho-Counseling Skills](../../ACL2026/dialogue/preference_learning_unlocks_llms_psycho-counseling_skills.md)
 - [\[NeurIPS 2025\] Agentic Persona Control and Task State Tracking for Realistic User Simulation](agentic_persona_control_and_task_state_tracking_for_realistic_user_simulation_in.md)
-- [\[NeurIPS 2025\] HyGen: Efficient LLM Serving via Elastic Online-Offline Request Co-location](hygen_efficient_llm_serving_via_elastic_online-offline_request_co-location.md)
-- [\[NeurIPS 2025\] Less is More: Local Intrinsic Dimensions of Contextual Language Models](less_is_more_local_intrinsic_dimensions_of_contextual_language_models.md)
+- [\[ICLR 2026\] DRIFT: Learning from Abundant User Dissatisfaction in Real-World Preference Learning](../../ICLR2026/dialogue/drift_learning_from_abundant_user_dissatisfaction_in_real-world_preference_learn.md)
+- [\[ICLR 2026\] ClarifyVC: Clarifying Ambiguous Commands in Vehicle Control with a Hybrid Data Augmentation Pipeline](../../ICLR2026/dialogue/clarifyvc_clarifying_ambiguous_commands_in_vehicle_control_with_a_hybrid_data_au.md)
 
 </div>
 

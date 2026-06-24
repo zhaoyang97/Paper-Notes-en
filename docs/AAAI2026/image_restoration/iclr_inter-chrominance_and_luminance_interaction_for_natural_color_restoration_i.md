@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ICLR: Inter-Chrominance and Luminance Interaction for Natural Color Restoration in Low-Light Image Enhancement
 description: >-
-  [AAAI 2026][Image Restoration][Low-light image enhancement] Targeting two overlooked statistical distribution issues in the HVI color space — large distribution discrepancy between chrominance and luminance branches lead…
+  [AAAI 2026][Image Restoration][Low-light image enhancement] Targeting two overlooked statistical distribution issues in the HVI color space — large distribution discrepancy between chrominance and luminance branches leading to insufficient complementary feature extraction, and weak inter-chrominance correlation causing gradient conflicts — this paper proposes the ICLR framework. It introduces a Dual-stream Interaction Enhancement Module (DIEM) and a Covariance Correction Loss…
 tags:
   - "AAAI 2026"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "covariance correction loss"
   - "attention fusion"
 date: 2026-05-08
-content_hash: 078b5930fc5631cf
+content_hash: 747a3767a8ed33e5
 ---
 
 # ICLR: Inter-Chrominance and Luminance Interaction for Natural Color Restoration in Low-Light Image Enhancement
@@ -142,11 +142,11 @@ The model has 4.27M parameters, larger than URWKV (2.25M) and CIDNet (1.88M), bu
 
 ## Related Papers
 
+- [\[CVPR 2025\] HVI: A New Color Space for Low-light Image Enhancement](../../CVPR2025/image_restoration/hvi_a_new_color_space_for_low-light_image_enhancement.md)
+- [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](../../CVPR2026/image_restoration/bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
 - [\[ICCV 2025\] CWNet: Causal Wavelet Network for Low-Light Image Enhancement](../../ICCV2025/image_restoration/cwnet_causal_wavelet_network_for_low-light_image_enhancement.md)
-- [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](../../ICCV2025/image_restoration/low-light_image_enhancement_using_event-based_illumination_estimation.md)
-- [\[NeurIPS 2025\] Luminance-Aware Statistical Quantization: Unsupervised Hierarchical Learning for Illumination Enhancement](../../NeurIPS2025/image_restoration/luminance-aware_statistical_quantization_unsupervised_hierarchical_learning_for_.md)
-- [\[CVPR 2026\] UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation](../../CVPR2026/image_restoration/udapose_unsupervised_domain_adaptation_for_low_light_human_pose_estimation.md)
-- [\[AAAI 2026\] Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration](clear_nights_ahead_towards_multi-weather_nighttime_image_res.md)
+- [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](../../CVPR2026/image_restoration/multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
+- [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](../../CVPR2026/image_restoration/bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
 
 </div>
 

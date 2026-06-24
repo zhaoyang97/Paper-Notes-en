@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deep (Predictive) Discounted Counterfactual Regret Minimization
 description: >-
-  [AAAI 2026][Reinforcement Learning][Counterfactual Regret Minimization] This paper proposes two model-free neural CFR algorithms, VR-DeepDCFR+ and VR-DeepPDCFR+…
+  [AAAI 2026][Reinforcement Learning][Counterfactual Regret Minimization] This paper proposes two model-free neural CFR algorithms, VR-DeepDCFR+ and VR-DeepPDCFR+, which integrate advanced tabular CFR variants (DCFR+/PDCFR+) into neural network approximation frameworks for the first time. Through bootstrapped cumulative advantage estimation, discounted clipping mechanisms, and baseline variance reduction, the proposed methods achieve faster convergence in standard imperfect inf…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Neural Network Approximation"
   - "Variance Reduction"
 date: 2026-05-08
-content_hash: 9410de4b6e4e32e1
+content_hash: 1928cb92b8fddc8f
 ---
 
 # Deep (Predictive) Discounted Counterfactual Regret Minimization
@@ -185,7 +185,7 @@ All three components contribute positively to performance.
 - [\[AAAI 2026\] Beyond the Lower Bound: Bridging Regret Minimization and Best Arm Identification in Lexicographic Bandits](beyond_the_lower_bound_bridging_regret_minimization_and_best_arm_identification_.md)
 - [\[AAAI 2026\] Discounted Cuts: A Stackelberg Approach to Network Disruption](discounted_cuts_a_stackelberg_approach_to_network_disruption.md)
 - [\[NeurIPS 2025\] Simultaneous Swap Regret Minimization via KL-Calibration](../../NeurIPS2025/reinforcement_learning/simultaneous_swap_regret_minimization_via_kl-calibration.md)
-- [\[AAAI 2026\] DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs](deepprooflog_efficient_proving_in_deep_stochastic_logic_programs.md)
+- [\[ICLR 2026\] Predictive CVaR Q-Learning](../../ICLR2026/reinforcement_learning/predictive_cvar_q-learning.md)
 - [\[NeurIPS 2025\] Comparing Uniform Price and Discriminatory Multi-Unit Auctions through Regret Minimization](../../NeurIPS2025/reinforcement_learning/comparing_uniform_price_and_discriminatory_multi-unit_auctions_through_regret_mi.md)
 
 </div>

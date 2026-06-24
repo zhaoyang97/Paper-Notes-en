@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SceneTok: A Compressed, Diffusable Token Space for 3D Scenes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SceneTok compresses a set of multi-view images into a small set (approx. 1024 tokens, only tens of thousands of 32-bit floats) of **unstructured scene tokens** decoupled from spatial grids. It utilizes a lightweight rectified flow decoder for rendering from arbitrary trajectories and trains a diffusion transformer on t
+  [CVPR 2026][3D Vision][Scene Tokenizer] SceneTok compresses a set of multi-view images into a small set (approx. 1024 tokens, only tens of thousands of 32-bit floats) of **unstructured scene tokens** decoupled from spatial grids. It utilizes a lightweight rectified flow decoder for rendering from arbitrary trajectories and trains a diffusion transformer on this highly compressed latent space to achieve 3D scene generation within 5 seconds, completely decoupling rendering from…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scene Tokenizer"
+  - "Unstructured Tokens"
+  - "Rectified Flow Decoding"
+  - "Latent Space Diffusion"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 340d3c47118e2022
+content_hash: 0731d3b53ba096ad
 ---
+
 # SceneTok: A Compressed, Diffusable Token Space for 3D Scenes
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,20 @@ The paper performs "interpretative ablations" to analyze what tokens encode:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
+- [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
+- [\[CVPR 2026\] Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping](space-time_forecasting_of_dynamic_scenes_with_motion-aware_gaussian_grouping.md)
+- [\[CVPR 2026\] Gaussian Mapping for Evolving Scenes](gaussian_mapping_for_evolving_scenes.md)
+- [\[ECCV 2024\] Compress3D: a Compressed Latent Space for 3D Generation from a Single Image](../../ECCV2024/3d_vision/compress3d_a_compressed_latent_space_for_3d_generation_from_a_single_image.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)

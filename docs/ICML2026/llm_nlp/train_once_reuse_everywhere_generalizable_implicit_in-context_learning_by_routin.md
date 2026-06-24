@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] In-Context Routing (ICR): 一次训练、处处可用的 attention-level 隐式 ICL
+  [Paper Note] In-Context Routing (ICR): Train-Once, Use-Everywhere Attention-Level Implicit ICL
 description: >-
-  [ICML 2026][LLM (Other)][Principal ICL Directions] Instead of injecting shift vectors into the residual stream, ICR extracts Principal ICL Directions (PIDs) from multi-domain ICL via PCA to serve as low-rank correction directions for attention logits, adaptively modulated by a query-conditioned router. After a single training phase, it enables zero-shot inference acros
+  [ICML 2026][LLM (Other)][Implicit ICL] Instead of injecting shift vectors into the residual stream, ICR extracts Principal ICL Directions (PIDs) from multi-domain ICL via PCA to serve as low-rank correction directions for attention logits, adaptively modulated by a query-conditioned router. After a single training phase, it enables zero-shot inference across 12 in/out-of-domain tasks without task-specific retrieval or retraining, avoiding the degradation on OOD tasks typical…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Principal ICL Directions
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Implicit ICL"
+  - "Attention Routing"
+  - "Principal ICL Directions"
+  - "Cross-domain Generalization"
+  - "Zero-shot Inference"
 date: 2026-05-08
-content_hash: 0f65acfc10f56610
+content_hash: c642b87231ea35ba
 ---
+
 # In-Context Routing (ICR): Train-Once, Use-Everywhere Attention-Level Implicit ICL
 
 **Conference**: ICML 2026  
@@ -152,8 +157,8 @@ ICR achieves SOTA on both LLMs: Llama2-7B average 59.9 vs M2IV 56.9 (+3.0), Qwen
 - [\[AAAI 2026\] ICL-Router: In-Context Learned Model Representations for LLM Routing](../../AAAI2026/llm_nlp/icl-router_in-context_learned_model_representations_for_llm_routing.md)
 - [\[ICML 2026\] SLAY: Geometry-Aware Spherical Linearized Attention with Yat-Kernel](slay_geometry-aware_spherical_linearized_attention_with_yat-kernel.md)
 - [\[ICML 2026\] Deep Networks Learn to Parse Uniform-Depth Context-Free Languages from Local Statistics](deep_networks_learn_to_parse_uniform-depth_context-free_languages_from_local_sta.md)
+- [\[ACL 2026\] C-World: A Computer Use Agent Environment Creator](../../ACL2026/llm_nlp/c-world_a_computer_use_agent_environment_creator.md)
 - [\[ICLR 2026\] Near-Optimal Online Deployment and Routing for Streaming LLMs](../../ICLR2026/llm_nlp/near-optimal_online_deployment_and_routing_for_streaming_llms.md)
-- [\[ICML 2026\] Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management](position_the_turing-completeness_of_autoregressive_transformers_relies_heavily_o.md)
 
 </div>
 

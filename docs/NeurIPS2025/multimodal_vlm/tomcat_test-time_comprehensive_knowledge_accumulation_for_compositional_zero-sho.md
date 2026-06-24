@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Compositional Zero-Shot Learning] This paper proposes TOMCAT, which dynamically updates compositional prototypes by accumulating dual-modality (textual and visual) knowledge from unlabeled…
+  [NeurIPS 2025][Multimodal VLM][Compositional Zero-Shot Learning] This paper proposes TOMCAT, which dynamically updates compositional prototypes by accumulating dual-modality (textual and visual) knowledge from unlabeled test data at test time, addressing label distribution shift and achieving state-of-the-art performance on four CZSL benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Prototypes"
   - "CLIP"
 date: 2026-05-08
-content_hash: fdcbff4e45416d33
+content_hash: 0d07b3ce036d0199
 ---
 
 # TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning
@@ -129,7 +129,7 @@ Test-time optimization objective: $\mathcal{L}_{TOMCAT} = \mathcal{L}_{PE} + \la
 - [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](../../CVPR2026/multimodal_vlm/flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
 - [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
-- [\[NeurIPS 2025\] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions](mint_a_simple_testtime_adaptation_of_visionlanguage_models_a.md)
+- [\[ICLR 2026\] Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning](../../ICLR2026/multimodal_vlm/decoupling_primitive_with_experts_dynamic_feature_alignment_for_compositional_ze.md)
 
 </div>
 

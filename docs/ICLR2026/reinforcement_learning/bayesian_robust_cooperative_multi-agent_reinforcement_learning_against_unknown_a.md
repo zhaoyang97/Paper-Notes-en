@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] To address "unknown goal" adversaries in cooperative multi-agent reinforcement learning (c-MARL) deployment, this paper moves beyond learning a single worst-case max–min policy. Instead, it discretizes an infinite variety of adversarial strategies into finite types based on their "disruption severity." Representative w
+  [ICLR 2026][Reinforcement Learning][Cooperative Multi-Agent RL] To address "unknown goal" adversaries in cooperative multi-agent reinforcement learning (c-MARL) deployment, this paper moves beyond learning a single worst-case max–min policy. Instead, it discretizes an infinite variety of adversarial strategies into finite types based on their "disruption severity." Representative worst-case adversaries are learned for each type, and a robust adaptive policy, BATPAL…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Cooperative Multi-Agent RL"
+  - "Adversarial Robustness"
+  - "Bayesian Games"
+  - "Perfect Bayesian Equilibrium"
+  - "Belief Estimation"
 date: 2026-05-08
-content_hash: f2afa6698aac31a0
+content_hash: d9d5d4f101d07ee2
 ---
+
 # Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,20 @@ Key Findings: ① BATPAL matches standard MAPPO in no-attack scenarios, showing 
 - Value: ⭐⭐⭐⭐⭐ Offers a new paradigm of "adaptation by severity" for c-MARL deployment, alongside the transferable External Constraint RL abstraction.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
+- [\[ICLR 2026\] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation](robust_deep_reinforcement_learning_against_adversarial_behavior_manipulation.md)
+- [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
+- [\[ICLR 2026\] Learning to Play Multi-Follower Bayesian Stackelberg Games](learning_to_play_multi-follower_bayesian_stackelberg_games.md)
+- [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)

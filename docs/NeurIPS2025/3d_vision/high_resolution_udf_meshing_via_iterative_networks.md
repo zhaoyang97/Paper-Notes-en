@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] High Resolution UDF Meshing via Iterative Networks
 description: >-
-  [NeurIPS 2025][3D Vision][Unsigned Distance Field] This paper proposes the first iterative meshing method for Unsigned Distance Fields (UDFs)…
+  [NeurIPS 2025][3D Vision][Unsigned Distance Field] This paper proposes the first iterative meshing method for Unsigned Distance Fields (UDFs), which progressively propagates neighborhood information into local voxel pseudo-sign predictions through multiple forward passes. The approach effectively resolves surface holes and discontinuities caused by noisy neural UDFs at high resolutions, significantly outperforming existing single-pass methods across multiple datasets.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Pseudo-sign Prediction"
   - "High-Resolution Surface Reconstruction"
 date: 2026-05-08
-content_hash: f67c915235e405e9
+content_hash: d742a994783c9f23
 ---
 
 # High Resolution UDF Meshing via Iterative Networks
@@ -130,10 +130,10 @@ At resolution 512, the proposed method substantially outperforms all baselines a
 ## Related Papers
 
 - [\[NeurIPS 2025\] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework](copresheaf_topological_neural_networks_a_generalized_deep_learning_framework.md)
-- [\[CVPR 2026\] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](../../CVPR2026/3d_vision/modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)
-- [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](../../ICCV2025/3d_vision/one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
-- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](../../CVPR2026/3d_vision/litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
-- [\[AAAI 2026\] SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images](../../AAAI2026/3d_vision/smartsplat_feature-smart_gaussians_for_scalable_compression_of_ultra-high-resolu.md)
+- [\[CVPR 2025\] Exploiting Deblurring Networks for Radiance Fields](../../CVPR2025/3d_vision/exploiting_deblurring_networks_for_radiance_fields.md)
+- [\[CVPR 2025\] Event Fields: Capturing Light Fields at High Speed, Resolution, and Dynamic Range](../../CVPR2025/3d_vision/event_fields_capturing_light_fields_at_high_speed_resolution_and_dynamic_range.md)
+- [\[CVPR 2025\] MAR-3D: Progressive Masked Auto-regressor for High-Resolution 3D Generation](../../CVPR2025/3d_vision/mar-3d_progressive_masked_auto-regressor_for_high-resolution_3d_generation.md)
+- [\[CVPR 2025\] A Lightweight UDF Learning Framework for 3D Reconstruction Based on Local Shape Functions](../../CVPR2025/3d_vision/a_lightweight_udf_learning_framework_for_3d_reconstruction_based_on_local_shape_.md)
 
 </div>
 

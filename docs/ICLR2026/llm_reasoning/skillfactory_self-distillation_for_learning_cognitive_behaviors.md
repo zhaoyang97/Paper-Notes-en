@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SkillFactory: Self-Distillation for Learning Cognitive Behaviors
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] SkillFactory utilizes correct and incorrect solutions sampled from the base model itself, combined with self-reflection, to rearrange them into "silver" trajectories with labels such as `<sample>`, `<reflect>`, and `<verdict>` for SFT. This pre-installs cognitive skills like "verification-retry" into the model before a
+  [ICLR 2026][Reasoning][Cognitive Skills] SkillFactory utilizes correct and incorrect solutions sampled from the base model itself, combined with self-reflection, to rearrange them into "silver" trajectories with labels such as `<sample>`, `<reflect>`, and `<verdict>` for SFT. This pre-installs cognitive skills like "verification-retry" into the model before applying GRPO reinforcement. Without relying on a stronger teacher model, the post-RL model demonstrates enhanced perfor…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Cognitive Skills"
+  - "Self-Distillation"
+  - "Cold-start SFT"
+  - "GRPO"
+  - "Reasoning Generalization"
 date: 2026-05-08
-content_hash: f26a3b3c4bf84240
+content_hash: f97112a591dea73a
 ---
+
 # SkillFactory: Self-Distillation for Learning Cognitive Behaviors
 
 **Conference**: ICLR 2026  
@@ -143,10 +148,10 @@ With only 1k SFT data, SkillFactory approaches QwQ distillation with 10k data (4
 ## Related Papers
 
 - [\[ICML 2026\] The Role of Feedback Alignment in Self-Distillation](../../ICML2026/llm_reasoning/the_role_of_feedback_alignment_in_self-distillation.md)
+- [\[ICLR 2026\] KaVa: Latent Reasoning via Compressed KV-Cache Distillation](kava_latent_reasoning_via_compressed_kv-cache_distillation.md)
 - [\[ICLR 2026\] Probing to Refine: Reinforcement Distillation of LLMs via Explanatory Inversion](probing_to_refine_reinforcement_distillation_of_llm_reasoners_via_explanatory_in.md)
 - [\[ICLR 2026\] RESTRAIN: From Spurious Votes to Signals — Self-Training RL with Self-Penalization](restrain_from_spurious_votes_to_signals_self-training_rl_with_self-penalization.md)
 - [\[ICLR 2026\] Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning](toward_effective_tool-integrated_reasoning_via_self-evolved_preference_learning.md)
-- [\[ICLR 2026\] KaVa: Latent Reasoning via Compressed KV-Cache Distillation](kava_latent_reasoning_via_compressed_kv-cache_distillation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Starting from the classic theoretical setting of linear regression, this paper proves that model collapse can be avoided by introducing an external "verifier" to filter and retrain on self-generated synthetic data. The model achieves near-term improvements via a bias-variance tradeoff and converges long-term to the ver
+  [ICLR 2026][learning theory][model collapse] Starting from the classic theoretical setting of linear regression, this paper proves that model collapse can be avoided by introducing an external "verifier" to filter and retrain on self-generated synthetic data. The model achieves near-term improvements via a bias-variance tradeoff and converges long-term to the verifier's "knowledge center" $\theta_c$ (rather than the ground truth) because the verifier constitutes a contraction…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "learning theory"
+  - "model collapse"
+  - "synthetic data"
+  - "verifier filtering"
+  - "bias-variance tradeoff"
+  - "iterative retraining"
 date: 2026-05-08
-content_hash: d4a1dc3216043c14
+content_hash: 1b970b34397af41f
 ---
+
 # Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence
 
 **Conference**: ICLR 2026  

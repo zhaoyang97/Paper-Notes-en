@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Knowledge Advantage Gap] The authors construct parallel corpora with identical structures where entities are mapped to real and synthetic names respectively. By comparing task performance across these "parallel worlds," they quantify the LLM's Knowledge Advantage Gap ($\text{KA}$) and find that this gap persists even with RAG and CoT enhanceme
+  [ICLR 2026][Information Retrieval & RAG][Knowledge Advantage Gap] The authors construct parallel corpora with identical structures where entities are mapped to real and synthetic names respectively. By comparing task performance across these "parallel worlds," they quantify the LLM's Knowledge Advantage Gap ($\text{KA}$) and find that this gap persists even with RAG and CoT enhancements.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Knowledge Advantage Gap
-  - Reasoning vs Memorization
-  - Parallel Corpora
-  - Multi-hop QA
-  - RAG Evaluation
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Knowledge Advantage Gap"
+  - "Reasoning vs Memorization"
+  - "Parallel Corpora"
+  - "Multi-hop QA"
+  - "RAG Evaluation"
 date: 2026-05-08
-content_hash: 832231c125b46b4b
+content_hash: ed537dd090e9f439
 ---
+
 # SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models
 
 **Conference**: ICLR 2026  
@@ -149,12 +150,17 @@ Key Findings:
 
 <div class="related-papers" markdown="1">
 
-- **Rethinking Knowledge Graph Evaluation for LLMs** (2024)
-- **Measuring Forgetting in Large Language Models** (2023)
+## Related Papers
+
+- [\[ICLR 2026\] Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning](hybrid_deep_searcher_scalable_parallel_and_sequential_search_reasoning.md)
+- [\[ICLR 2026\] G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge](g-reasoner_foundation_models_for_unified_reasoning_over_graph-structured_knowled.md)
+- [\[ACL 2026\] RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs in Medicine](../../ACL2026/information_retrieval/ritek_a_dataset_for_large_language_models_complex_reasoning_over_textual_knowled.md)
+- [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
+- [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning](hybrid_deep_searcher_scalable_parallel_and_sequential_search_reasoning.md)

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial Reasoning] This paper proposes SpatialThinker, which trains MLLMs to construct scene graphs and perform structured spatial reasoning via online RL with multi-objective dense spatial…
+  [NeurIPS 2025][VLM Reasoning][Spatial Reasoning] This paper proposes SpatialThinker, which trains MLLMs to construct scene graphs and perform structured spatial reasoning via online RL with multi-objective dense spatial rewards (lexicographic gating over format → count → accuracy → spatial localization). Using only 7K samples, it surpasses GPT-4o on 3DSRBench by 12.1%.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Spatial Reasoning"
   - "Scene Graph"
   - "Reinforcement Learning"
   - "Dense Reward"
   - "3D Understanding"
 date: 2026-05-08
-content_hash: 263df177e6aed2be
+content_hash: 2fd3498c92a41588
 ---
 
 # SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards
@@ -104,11 +104,11 @@ Built on Qwen2.5-VL-7B, trained with GRPO (no critic network) on 4×H100 GPUs fo
 
 ## Related Papers
 
-- [\[ICCV 2025\] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs](../../ICCV2025/multimodal_vlm/mm-spatial_exploring_3d_spatial_understanding_in_multimodal_llms.md)
+- [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](../../CVPR2026/vlm_reasoning/star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
+- [\[ICLR 2026\] MetaSpatial: Reinforcing 3D Spatial Reasoning in VLMs for the Metaverse](../../ICLR2026/vlm_reasoning/metaspatial_reinforcing_3d_spatial_reasoning_in_vlms_for_the_metaverse.md)
 - [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
 - [\[NeurIPS 2025\] VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents](vagen_reinforcing_world_model_reasoning_for_multi-turn_vlm_agents.md)
-- [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
-- [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
+- [\[NeurIPS 2025\] To See or To Read: User Behavior Reasoning in Multimodal LLMs](to_see_or_to_read_user_behavior_reasoning_in_multimodal_llms.md)
 
 </div>
 

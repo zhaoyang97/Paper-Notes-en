@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Estimating 2D Camera Motion with Hybrid Motion Basis
 description: >-
-  [ICCV 2025][3D Vision][Camera motion estimation] This paper proposes CamFlow, which represents complex 2D camera motion via a hybrid motion basis (12 physical bases + random noise bases)…
+  [ICCV 2025][3D Vision][Camera motion estimation] This paper proposes CamFlow, which represents complex 2D camera motion via a hybrid motion basis (12 physical bases + random noise bases), reveals the nonlinear nature of superimposed homography flow fields, and incorporates a Laplace distribution-based probabilistic loss function. CamFlow substantially outperforms existing homography and meshflow methods under both standard and cross-dataset zero-shot evaluation settings.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "optical flow"
   - "video stabilization"
 date: 2026-05-08
-content_hash: 9137554d801f33ac
+content_hash: 9c37feca6bf8abf2
 ---
 
 # Estimating 2D Camera Motion with Hybrid Motion Basis
@@ -181,7 +181,7 @@ The CamFlow pipeline: image pair input → multi-scale feature pyramid → Motio
 - [\[ICCV 2025\] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training](easi3r_estimating_disentangled_motion_from_dust3r_without_training.md)
 - [\[ICCV 2025\] CoMoGaussian: Continuous Motion-Aware Gaussian Splatting from Motion-Blurred Images](comogaussian_continuous_motionaware_gaussian_splatting_from.md)
 - [\[ICCV 2025\] Global Motion Corresponder for 3D Point-Based Scene Interpolation under Large Motion](global_motion_corresponder_for_3d_point-based_scene_interpolation_under_large_mo.md)
-- [\[ICCV 2025\] Sequential Gaussian Avatars with Hierarchical Motion Context](sequential_gaussian_avatars_with_hierarchical_motion_context.md)
+- [\[CVPR 2025\] Estimating Body and Hand Motion in an Ego-sensed World](../../CVPR2025/3d_vision/estimating_body_and_hand_motion_in_an_ego-sensed_world.md)
 
 </div>
 

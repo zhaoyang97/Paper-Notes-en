@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the challenge of scarce samples per anomaly class in fine-grained video anomaly detection, this paper proposes a progressive cross-granularity learning paradigm: first learning general anomaly representations with abundant binary labels, then constructing an intermediate semantic skeleton via K-means pseudo-
+  [CVPR 2026][Video Understanding][Fine-grained Video Anomaly Detection] Addressing the challenge of scarce samples per anomaly class in fine-grained video anomaly detection, this paper proposes a progressive cross-granularity learning paradigm: first learning general anomaly representations with abundant binary labels, then constructing an intermediate semantic skeleton via K-means pseudo-macro clustering, and finally refining with sparse category labels. Implemented as Fine-V…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Fine-grained Video Anomaly Detection"
+  - "Progressive Cross-Granularity Learning"
+  - "CLIP Alignment"
+  - "Weakly Supervised"
+  - "Pseudo-macro Clustering"
 date: 2026-05-08
-content_hash: 768a0acf826d1ac9
+content_hash: f06b79d5c3b5fd75
 ---
+
 # Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning
 
 **Conference**: CVPR 2026  
@@ -136,8 +142,21 @@ Evaluated using mAP@IoU (0.1~0.5) AVG on UCF-Crime and XD-Violence.
 - Value: ⭐⭐⭐⭐ (Strong baseline and universal training paradigm for fine-grained VAD)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
+- [\[CVPR 2026\] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)
+- [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
+- [\[CVPR 2026\] Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding](frame2freq_spectral_adapters_for_fine-grained_video_understanding.md)
+- [\[AAAI 2026\] FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding](../../AAAI2026/video_understanding/finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

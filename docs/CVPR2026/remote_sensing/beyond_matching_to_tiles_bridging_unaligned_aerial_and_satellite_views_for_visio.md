@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Matching to Tiles: Bridging Unaligned Aerial and Satellite Views for Vision-Only UAV Navigation
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] Bearing-UAV abandons the "matching a UAV view to a specific satellite tile" paradigm. Instead, it utilizes 4 adjacent satellite tiles and 1 UAV view to directly **regress** the absolute coordinates and heading angle of the UAV. In scenarios with misalignment, sparse features, and cross-view discrepancies, it reduces er
+  [CVPR 2026][Remote Sensing][Cross-View Geo-localization] Bearing-UAV abandons the "matching a UAV view to a specific satellite tile" paradigm. Instead, it utilizes 4 adjacent satellite tiles and 1 UAV view to directly **regress** the absolute coordinates and heading angle of the UAV. In scenarios with misalignment, sparse features, and cross-view discrepancies, it reduces errors by an order of magnitude compared to retrieval/matching methods (UAV view MLE reduced from ~30 m t…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Cross-View Geo-localization"
+  - "UAV Navigation"
+  - "Joint Position-Heading Regression"
+  - "Cross-Attention"
+  - "GNSS-denied"
 date: 2026-05-08
-content_hash: 4c13eaf8109c891d
+content_hash: 9b8f768d547747a8
 ---
+
 # Beyond Matching to Tiles: Bridging Unaligned Aerial and Satellite Views for Vision-Only UAV Navigation
 
 **Conference**: CVPR 2026  
@@ -132,14 +138,17 @@ Localization errors of the four matching/retrieval baselines are around ~30 m be
 
 <div class="related-papers" markdown="1">
 
-1. **University-1652**: A Multi-View Multi-Source Benchmark for Vehicle Retrieval and Localization, ACM MM 2020.
-2. **DenseUAV**: High-precision localization via dense cross-view matching, CVPR 2023.
-3. **SGMNet**: Semantic Geometric Matching Network for Cross-View Remote Sensing Image Geo-Localization, TGRS 2022.
+## Related Papers
+
+- [\[CVPR 2026\] LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation](lookasidevln_direction-aware_aerial_vision-and-language_navigation.md)
+- [\[CVPR 2026\] APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation](apex_a_decoupled_memory-based_explorer_for_asynchronous_aerial_object_goal_navig.md)
+- [\[CVPR 2026\] Beyond Tie Points: Satellite Image Block Adjustment based on Dense Feature Consistency](beyond_tie_points_satellite_image_block_adjustment_based_on_dense_feature_consis.md)
+- [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
+- [\[CVPR 2026\] PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization](pilot_neural_pixel-to-3d_registration_for_uav-based_ego_and_target_geo-localizat.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation](lookasidevln_direction-aware_aerial_vision-and-language_navigation.md)

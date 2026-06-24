@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PAVAS: Physics-Aware Video-to-Audio Synthesis
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] PAVAS explicitly injects two physical quantities, "object-level mass + velocity," into a latent diffusion Video-to-Audio (V2A) framework. It utilizes a VLM to estimate mass and combines segmentation with dynamic 3D reconstruction to estimate velocity. These physical cues are fed into a Diffusion Transformer via a Phy-A
+  [CVPR 2026][Audio & Speech][Video-to-Audio] PAVAS explicitly injects two physical quantities, "object-level mass + velocity," into a latent diffusion Video-to-Audio (V2A) framework. It utilizes a VLM to estimate mass and combines segmentation with dynamic 3D reconstruction to estimate velocity. These physical cues are fed into a Diffusion Transformer via a Phy-Adapter with zero-initialized residuals, ensuring that generated sound intensity and decay align with physical dynami…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Video-to-Audio"
+  - "Physics-Aware"
+  - "Latent Diffusion"
+  - "FiLM Modulation"
+  - "Quality and Velocity Estimation"
 date: 2026-05-08
-content_hash: d841526d44d7f676
+content_hash: 4d02560cdab5219d
 ---
+
 # PAVAS: Physics-Aware Video-to-Audio Synthesis
 
 **Conference**: CVPR 2026  
@@ -132,15 +138,16 @@ PAVAS leads in physics consistency (APCC-∆ 0.378, the only one significantly b
 - Value: ⭐⭐⭐⭐⭐ Introduces "physics-consistent" as a vital dimension for V2A and provides a reusable paradigm for physics-aware generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Audio-sync Video Instance Editing with Granularity-Aware Mask Refiner](audio-sync_video_instance_editing_with_granularity-aware_mask_refiner.md)
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 - [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](../../ICLR2026/audio_speech/ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
 - [\[CVPR 2026\] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](echoes_over_time_unlocking_length_generalization_in_video-to-audio_generation_mo.md)
-- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
+- [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diffusion LLMs Can Do Faster-Than-AR Inference via Discrete Diffusion Forcing
 description: >-
-  [ICLR 2026][LLM Efficiency][Diffusion Language Model] This paper proposes Discrete Diffusion Forcing (D2F), which transforms pre-trained diffusion language models (dLLMs) into a hybrid AR-diffusion paradigm featuring "block-level autoregression + inter-block parallel decoding." By acquiring this capability via low-cost asymmetric distillation and pairing it with pipeline
+  [ICLR2026][LLM Efficiency][Diffusion Language Models] This paper proposes Discrete Diffusion Forcing (D2F), which transforms pre-trained diffusion language models (dLLMs) into a hybrid AR-diffusion paradigm featuring "block-level autoregression + inter-block parallel decoding." By acquiring this capability via low-cost asymmetric distillation and pairing it with pipeline parallel decoding, the authors demonstrate for the first time that open-source dLLM inference throughput c…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Diffusion Language Model
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Discrete Diffusion Forcing"
+  - "Block-level Autoregression"
+  - "KV Caching"
+  - "Parallel Decoding"
 date: 2026-05-08
-content_hash: 79a989b823544eec
+content_hash: f3e56bdba0075da7
 ---
+
 # Diffusion LLMs Can Do Faster-Than-AR Inference via Discrete Diffusion Forcing
 
 **Conference**: ICLR2026  
@@ -142,9 +147,9 @@ Evaluated on LLaDA-Instruct-8B and Dream-Base-7B backbones. TPS = tokens/second.
 
 - [\[ICLR 2026\] NI Sampling: Accelerating Discrete Diffusion Sampling by Token Order Optimization](ni_sampling_accelerating_discrete_diffusion_sampling_by_token_order_optimization.md)
 - [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](../../ICML2026/llm_efficiency/fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
 - [\[ICLR 2026\] DPad: Efficient Diffusion Language Models with Suffix Dropout](dpad_efficient_diffusion_language_models_with_suffix_dropout.md)
 - [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
-- [\[ICLR 2026\] Planned Diffusion](planned_diffusion.md)
 
 </div>
 

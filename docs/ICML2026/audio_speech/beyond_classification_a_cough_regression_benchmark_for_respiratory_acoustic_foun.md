@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Classification: A Cough Regression Benchmark for Respiratory Acoustic Foundation Models
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] Existing respiratory acoustic foundation models (FMs) have been evaluated almost exclusively on cough **classification**. This paper presents the first systematic evaluation of FMs on **continuous regression** tasks (passively estimating age, BMI, and disease probability from cough audio). Using a multi-model multi-tar
+  [ICML2026][Audio & Speech][Cough Acoustics] Existing respiratory acoustic foundation models (FMs) have been evaluated almost exclusively on cough **classification**. This paper presents the first systematic evaluation of FMs on **continuous regression** tasks (passively estimating age, BMI, and disease probability from cough audio). Using a multi-model multi-target benchmark protocol consisting of 5 FMs × 6 targets × 3 datasets with frozen encoders and three types of regressi…
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML2026"
+  - "Audio & Speech"
+  - "Cough Acoustics"
+  - "Respiratory Foundation Models"
+  - "Regression Benchmark"
+  - "Linear Probe"
+  - "Cross-dataset Generalization"
 date: 2026-05-08
-content_hash: 6a210b670d26721f
+content_hash: eaeee03f9255f56c
 ---
+
 # Beyond Classification: A Cough Regression Benchmark for Respiratory Acoustic Foundation Models
 
 **Conference**: ICML2026  
@@ -119,15 +125,15 @@ Intra-dataset age regression MAE (MLP-small, mean of 5 seeds, unit: yr; MAD is t
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICCV 2025\] VGGSounder: Audio-Visual Evaluations for Foundation Models](../../ICCV2025/audio_speech/vggsounder_audio-visual_evaluations_for_foundation_models.md)
-- [\[CVPR 2026\] BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models](../../CVPR2026/audio_speech/babyvlm-v2_toward_developmentally_grounded_pretraining_and_benchmarking_of_visio.md)
+- [\[ACL 2026\] RespiraMFM: A Multimodal Foundation Model for Respiratory Disease Recognition via Contrastive Audio-Language Alignment](../../ACL2026/audio_speech/respiramfm_a_multimodal_foundation_model_with_contrastive_audio-language_alignme.md)
 - [\[ICML 2026\] Attend to Anything: Foundation Model for Unified Human Attention Modeling](attend_to_anything_foundation_model_for_unified_human_attention_modeling.md)
-- [\[CVPR 2026\] TAPE: Task-Adaptive Prototype Evolution in Audio-Language Models for Fully Few-shot Class-incremental Audio Classification](../../CVPR2026/audio_speech/tape_task-adaptive_prototype_evolution_in_audio-language_models_for_fully_few-sh.md)
-- [\[ACL 2026\] Beyond Transcripts: A Renewed Perspective on Audio Chaptering](../../ACL2026/audio_speech/beyond_transcripts_a_renewed_perspective_on_audio_chaptering.md)
+- [\[CVPR 2026\] BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models](../../CVPR2026/audio_speech/babyvlm-v2_toward_developmentally_grounded_pretraining_and_benchmarking_of_visio.md)
+- [\[ICLR 2026\] YuE: Scaling Open Foundation Models for Long-Form Music Generation](../../ICLR2026/audio_speech/yue_scaling_open_foundation_models_for_long-form_music_generation.md)
+- [\[ICCV 2025\] VGGSounder: Audio-Visual Evaluations for Foundation Models](../../ICCV2025/audio_speech/vggsounder_audio-visual_evaluations_for_foundation_models.md)
 
 </div>
 

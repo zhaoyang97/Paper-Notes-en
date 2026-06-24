@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Controllable Generative Sandbox for Causal Inference
 description: >-
-  [ICML 2026][Causal Inference][CausalMix] This paper proposes CausalMix, a variational generative framework that jointly optimizes a type-specific multi-head decoder and a Bayesian Gaussian Mixture Model (GMM) latent prior with three independently adjustable causal "knobs" (overlap $\alpha(X)$, CATE function $\tau(X)$, and unobserved confounding $\kappa(X,T)$)
+  [ICML 2026][Causal Inference][CausalMix] This paper proposes CausalMix, a variational generative framework that jointly optimizes a type-specific multi-head decoder and a Bayesian Gaussian Mixture Model (GMM) latent prior with three independently adjustable causal "knobs" (overlap $\alpha(X)$, CATE function $\tau(X)$, and unobserved confounding $\kappa(X,T)$). While maintaining the fidelity of real-world data distributions, CausalMix allows users to design counterfactual benc…
 tags:
-  - ICML 2026
-  - Causal Inference
-  - CausalMix
-  - conditional VAE
-  - Bayesian GMM prior
-  - overlap regularizer
-  - CATE benchmarking
+  - "ICML 2026"
+  - "Causal Inference"
+  - "CausalMix"
+  - "conditional VAE"
+  - "Bayesian GMM prior"
+  - "overlap regularizer"
+  - "CATE benchmarking"
 date: 2026-05-08
-content_hash: 7dc8d9cec3f97024
+content_hash: 68bb93d35e7a6ae9
 ---
+
 # Controllable Generative Sandbox for Causal Inference
 
 **Conference**: ICML 2026  
@@ -161,10 +162,10 @@ Distributional fit and causal control are jointly optimized in mini-batches, yet
 
 ## Related Papers
 
+- [\[ICLR 2026\] GDR-learners: Orthogonal Learning of Generative Models for Potential Outcomes](../../ICLR2026/causal_inference/gdr-learners_orthogonal_learning_of_generative_models_for_potential_outcomes.md)
+- [\[ICLR 2026\] Exploratory Causal Inference in SAEnce](../../ICLR2026/causal_inference/exploratory_causal_inference_in_saence.md)
 - [\[ICML 2026\] Tailoring Strictly Proper Scoring Rules for Downstream Tasks: An Application to Causal Inference](tailoring_strictly_proper_scoring_rules_for_downstream_tasks_an_application_to_c.md)
-- [\[ICML 2025\] Causal Abstraction Inference under Lossy Representations](../../ICML2025/causal_inference/causal_abstraction_inference_under_lossy_representations.md)
-- [\[CVPR 2026\] CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization](../../CVPR2026/causal_inference/cgu-bayes_causal_graph_uncertainty-guided_bayesian_inference_for_domain_generali.md)
-- [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
+- [\[ICLR 2026\] Stochastic Neural Networks for Causal Inference with Missing Confounders](../../ICLR2026/causal_inference/stochastic_neural_networks_for_causal_inference_with_missing_confounders.md)
 - [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](../../ICLR2026/causal_inference/adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WOD-E2E: Waymo Open Dataset for End-to-End Driving in Challenging Long-tail Scenarios
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Waymo extracted 4,021 long-tail driving segments (approx. 12 hours) with an occurrence frequency below 0.03% from 6.4 million miles of real-world road tests to create the WOD-E2E dataset. It proposes the RFS (Rater Feedback Score), an open-loop metric based on human expert preference scores, to replace ADE (which only
+  [CVPR 2026][Autonomous Driving][End-to-End Driving] Waymo extracted 4,021 long-tail driving segments (approx. 12 hours) with an occurrence frequency below 0.03% from 6.4 million miles of real-world road tests to create the WOD-E2E dataset. It proposes the RFS (Rater Feedback Score), an open-loop metric based on human expert preference scores, to replace ADE (which only measures distance error against a single future trajectory). This allows for a fair evaluation of vision-bas…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-End Driving"
+  - "Long-Tail Scenarios"
+  - "Evaluation Benchmark"
+  - "Human Preference Scoring"
+  - "Multimodal Trajectories"
 date: 2026-05-08
-content_hash: ab069f71710b20d0
+content_hash: 2cc85cbb318a26f9
 ---
+
 # WOD-E2E: Waymo Open Dataset for End-to-End Driving in Challenging Long-tail Scenarios
 
 **Conference**: CVPR 2026  
@@ -136,14 +142,17 @@ The paper does *not* propose a new model; experiments validate (1) dataset rarit
 
 <div class="related-papers" markdown="1">
 
-- **[WOMD]** Waymo Open Motion Dataset: [arXiv:2104.10133]
-- **[NAVSIM]** NAVSIM: Data-Driven Non-Reactive Simulator: [arXiv:2405.04833]
-- **[EMMA]** End-to-End Multimodal Model for Autonomous Driving: [arXiv:2410.15228]
+## Related Papers
+
+- [\[CVPR 2026\] LEAD: Minimizing Learner-Expert Asymmetry in End-to-End Driving](lead_minimizing_learner-expert_asymmetry_in_end-to-end_driving.md)
+- [\[CVPR 2026\] Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning](reliable_policy_transfer_for_safety-aware_end-to-end_driving_with_deep_reinforce.md)
+- [\[ICML 2026\] DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving](../../ICML2026/autonomous_driving/deepsight_long-horizon_world_modeling_via_latent_states_prediction_for_end-to-en.md)
+- [\[CVPR 2026\] TruckDrive: Long-Range Autonomous Highway Driving Dataset](truckdrive_long-range_autonomous_highway_driving_dataset.md)
+- [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning](reliable_policy_transfer_for_safety-aware_end-to-end_driving_with_deep_reinforce.md)

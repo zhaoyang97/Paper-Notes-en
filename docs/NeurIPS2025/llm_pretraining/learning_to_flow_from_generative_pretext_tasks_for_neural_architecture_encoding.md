@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Neural architecture encoding] This paper proposes FGP (Flow-based Generative Pre-training), which trains an encoder to reconstruct a *flow surrogate* — a lightweight representation of arch…
+  [NeurIPS 2025][LLM Pretraining][Neural architecture encoding] This paper proposes FGP (Flow-based Generative Pre-training), which trains an encoder to reconstruct a *flow surrogate* — a lightweight representation of architectural information flow — enabling encoders of arbitrary structure to capture information flow without specialized asynchronous message-passing designs. FGP achieves up to **106%** improvement in Precision@1% on performance prediction.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "NAS"
   - "graph neural networks"
 date: 2026-05-08
-content_hash: c67eb8354a48ef90
+content_hash: 69c7cb789d46c63a
 ---
 
 # Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding
@@ -161,8 +161,8 @@ FGP achieves the best results in **23 out of 27 settings**. ResGatedGCN + FGP im
 
 - [\[NeurIPS 2025\] Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data](neural_collapse_under_gradient_flow_on_shallow_relu_networks_for_orthogonally_se.md)
 - [\[NeurIPS 2025\] Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks](alternating_gradient_flows_a_theory_of_feature_learning_in_two-layer_neural_netw.md)
-- [\[NeurIPS 2025\] Gradient-Weight Alignment as a Train-Time Proxy for Generalization in Classification Tasks](gradient-weight_alignment_as_a_train-time_proxy_for_generalization_in_classifica.md)
 - [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)
+- [\[NeurIPS 2025\] Gradient-Weight Alignment as a Train-Time Proxy for Generalization in Classification Tasks](gradient-weight_alignment_as_a_train-time_proxy_for_generalization_in_classifica.md)
 - [\[NeurIPS 2025\] Generalization Bounds for Rank-sparse Neural Networks](generalization_bounds_for_rank-sparse_neural_networks.md)
 
 </div>

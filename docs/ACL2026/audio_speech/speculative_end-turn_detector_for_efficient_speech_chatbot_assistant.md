@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Speculative End-Turn Detector for Efficient Speech Chatbot Assistant
 description: >-
-  [ACL 2026][Audio & Speech][OpenETD] The paper constructs the first public end-turn detection dataset, OpenETD, and proposes SpeculativeETD. This approach utilizes an on-device GRU to continuously monitor speaking/non-speaking states, invoking a server-side Wav2Vec2 to distinguish between Gaps and Pauses only when a 200 ms silence is encountered. On real
+  [ACL2026][Audio & Speech][End-Turn Detection] The paper constructs the first public end-turn detection dataset, OpenETD, and proposes SpeculativeETD. This approach utilizes an on-device GRU to continuously monitor speaking/non-speaking states, invoking a server-side Wav2Vec2 to distinguish between Gaps and Pauses only when a 200 ms silence is encountered. On real speech, it achieves real-time turn-taking performance close to large models while reducing FLOPs by 38x and mainta…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - OpenETD
+  - "ACL2026"
+  - "Audio & Speech"
+  - "End-Turn Detection"
+  - "Speech Chat"
+  - "OpenETD"
+  - "Collaborative Inference"
+  - "Low Latency"
 date: 2026-05-08
-content_hash: 28500f7273728834
+content_hash: 392b791be300aca4
 ---
+
 # Speculative End-Turn Detector for Efficient Speech Chatbot Assistant
 
 **Conference**: ACL2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Global Plane Waves from Local Gaussians: Periodic Charge Densities in a Blink
 description: >-
-  [ICML 2026][Interpretability][Paper Note] ELECTRAFI predicts the parameters of a set of anisotropic Gaussians in real space, then utilizes the analytical Fourier transform of Gaussians combined with the Poisson summation formula to compute the plane wave coefficients of the periodic crystal's charge density in reciprocal space in a single pass. A single invers
+  [ICML 2026][Interpretability][Charge density prediction] ELECTRAFI predicts the parameters of a set of anisotropic Gaussians in real space, then utilizes the analytical Fourier transform of Gaussians combined with the Poisson summation formula to compute the plane wave coefficients of the periodic crystal's charge density in reciprocal space in a single pass. A single inverse FFT yields the full-field density. While its NMAE is comparable to or better than ChargE3Net…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Charge density prediction"
+  - "Plane wave basis sets"
+  - "Anisotropic Gaussians"
+  - "Poisson summation"
+  - "DFT initial guess acceleration"
 date: 2026-05-08
-content_hash: 2ca920c135edb3cc
+content_hash: 3038031ab6292605
 ---
+
 # Global Plane Waves from Local Gaussians: Periodic Charge Densities in a Blink
 
 **Conference**: ICML 2026  
@@ -145,9 +151,9 @@ Regarding NMAE, ELECTRAFI achieves SOTA or parity in 4 out of 5 benchmarks. It i
 
 - [\[CVPR 2025\] KVQ: Boosting Video Quality Assessment via Saliency-Guided Local Perception](../../CVPR2025/interpretability/kvq_boosting_video_quality_assessment_via_saliency-guided_local_perception.md)
 - [\[AAAI 2026\] PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics](../../AAAI2026/interpretability/pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 - [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](block-em_preventing_emergent_misalignment_via_latent_blocking.md)
 - [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
-- [\[ICML 2026\] Verified SHAP: 神经网络精确 Shapley 值的可证明界](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding
 description: >-
-  [AAAI 2026][Video Generation][Video diffusion models] This paper proposes OmniVDiff, a unified controllable video diffusion framework that jointly models multiple visual modalities (RGB, depth, segmentation…
+  [AAAI 2026][Video Generation][Video diffusion models] This paper proposes OmniVDiff, a unified controllable video diffusion framework that jointly models multiple visual modalities (RGB, depth, segmentation, Canny) in color space and introduces an Adaptive Modality Control Strategy (AMCS). Within a single diffusion model, OmniVDiff simultaneously supports three task types—text-conditioned generation, X-conditioned generation, and video understanding—achieving state-of-the-art…
 tags:
   - "AAAI 2026"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "video understanding"
   - "unified framework"
 date: 2026-05-08
-content_hash: 1a87da7a27218406
+content_hash: a42b26ca4fd8ee64
 ---
 
 # OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding
@@ -155,11 +155,11 @@ $$\mathcal{L} = \sum_{m, m \notin Cond} \mathbb{E}_{x_m, t, \epsilon, m} [\|\eps
 
 ## Related Papers
 
+- [\[CVPR 2025\] VideoDPO: Omni-Preference Alignment for Video Diffusion Generation](../../CVPR2025/video_generation/videodpo_omni-preference_alignment_for_video_diffusion_generation.md)
+- [\[CVPR 2026\] Physical Object Understanding with a Physically Controllable World Model](../../CVPR2026/video_generation/physical_object_understanding_with_a_physically_controllable_world_model.md)
+- [\[ICLR 2026\] LikePhys: Evaluating Intuitive Physics Understanding in Video Diffusion Models via Likelihood Preference](../../ICLR2026/video_generation/likephys_evaluating_intuitive_physics_understanding_in_video_diffusion_models_vi.md)
 - [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
-- [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](../../CVPR2026/video_generation/lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
-- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](../../CVPR2026/video_generation/flashmotion_fewstep_controllable_video_generation.md)
-- [\[CVPR 2026\] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation](../../CVPR2026/video_generation/autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio.md)
-- [\[CVPR 2026\] Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout](../../CVPR2026/video_generation/infinity-rope_action-controllable_infinite_video_generation_emerges_from_autoreg.md)
+- [\[ICLR 2026\] Controllable Video Generation with Provable Disentanglement](../../ICLR2026/video_generation/controllable_video_generation_with_provable_disentanglement.md)
 
 </div>
 

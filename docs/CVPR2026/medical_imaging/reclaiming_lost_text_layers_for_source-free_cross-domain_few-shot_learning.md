@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning
 description: >-
-  [CVPR 2026][Medical Imaging][CLIP] This paper identifies "Lost Layers" in the CLIP text encoder—a phenomenon where removing certain intermediate layers actually improves performance in Source-Free Cross-Domain Few-Shot Learning (SF-CDFSL). The authors demonstrate that these layers are not redundant but are underutilized due to visual domain shifts. To a
+  [CVPR2026][Medical Imaging][CLIP] This paper identifies "Lost Layers" in the CLIP text encoder—a phenomenon where removing certain intermediate layers actually improves performance in Source-Free Cross-Domain Few-Shot Learning (SF-CDFSL). The authors demonstrate that these layers are not redundant but are underutilized due to visual domain shifts. To address this, the VtT model is proposed to reclaim this information at both the layer and encoder levels…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - CLIP
-  - State Space Model
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "CLIP"
+  - "Cross-Domain Few-Shot Learning"
+  - "text encoder layer redundancy"
+  - "vision-text fusion"
+  - "state space model"
+  - "gradient optimization"
 date: 2026-05-08
-content_hash: 483210e2dfa97d4f
+content_hash: d668f788d66aaead
 ---
+
 # Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning
 
 **Conference**: CVPR2026  
@@ -151,8 +156,8 @@ Where $L_{ce}$ is the standard cross-entropy classification loss, and $L_{VtT}$ 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
-- [\[CVPR 2026\] Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization](human_knowledge_integrated_multi-modal_learning_for_single_source_domain_general.md)
 - [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
 - [\[AAAI 2026\] MPA: Multimodal Prototype Augmentation for Few-Shot Learning](../../AAAI2026/medical_imaging/mpa_multimodal_prototype_augmentation_for_few-shot_learning.md)
 - [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] A Brain Graph Foundation Model: Pre-Training and Prompt-Tuning across Broad Atlases and Disorders
 description: >-
-  [ICLR 2026][Medical Imaging][fMRI] BrainGFM models fMRI brain networks as graphs and employs "Graph Contrastive Learning + Graph Masked Autoencoding" for large-scale pre-training on 400,000 brain graphs across 27 datasets and 8 brain atlases. By using meta-learning optimized graph prompts for few-shot adaptation and BioClinicalBERT-encoded language prom
+  [ICLR 2026][Medical Imaging][fMRI] BrainGFM models fMRI brain networks as graphs and employs "Graph Contrastive Learning + Graph Masked Autoencoding" for large-scale pre-training on 400,000 brain graphs across 27 datasets and 8 brain atlases. By using meta-learning optimized graph prompts for few-shot adaptation and BioClinicalBERT-encoded language prompts for zero-shot transfer, a frozen foundation model can perform direct diagnosis across diverse atlases, brain disorders…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - fMRI
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "fMRI"
+  - "Brain Graph Foundation Model"
+  - "Graph Pre-training"
+  - "Graph Prompting"
+  - "Meta-learning"
+  - "Zero-shot Diagnosis"
 date: 2026-05-08
-content_hash: 923be7a409b85092
+content_hash: f3bd4eeadfa47217
 ---
+
 # A Brain Graph Foundation Model: Pre-Training and Prompt-Tuning across Broad Atlases and Disorders
 
 **Conference**: ICLR 2026  

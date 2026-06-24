@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PromptEnhancer: Taming Your Rewriter for Text-to-Image Generation via Fine-Grained Reward
 description: >-
-  [CVPR 2026][Image Generation][GRPO] To address the issue where T2I models struggle with complex prompts (attribute binding, negation, and compositional reasoning), this paper proposes PromptEnhancer—a model-agnostic rewriting framework that does not modify T2I weights. It initializes a rewriter using CoT data via SFT and then performs policy alignment us
+  [CVPR 2026][Image Generation][Text-to-Image] To address the issue where T2I models struggle with complex prompts (attribute binding, negation, and compositional reasoning), this paper proposes PromptEnhancer—a model-agnostic rewriting framework that does not modify T2I weights. It initializes a rewriter using CoT data via SFT and then performs policy alignment using GRPO with AlignEvaluator, a specialized reward model scoring 24 fine-grained keypoints. This allows the rewrite…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
-  - Chain-of-Thought
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "prompt rewriting"
+  - "fine-grained reward"
+  - "GRPO"
+  - "Chain-of-Thought (CoT)"
 date: 2026-05-08
-content_hash: dd36b7035e79dd97
+content_hash: 3b2e4c7a0b18075f
 ---
+
 # PromptEnhancer: Taming Your Rewriter for Text-to-Image Generation via Fine-Grained Reward
 
 **Conference**: CVPR 2026  
@@ -119,16 +123,16 @@ Ours (PE) consistently improves GenEval. Notably, on T2I-CompBench, BP often per
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
+- [\[CVPR 2026\] The Image as Its Own Reward: Reinforcement Learning with Adversarial Reward for Image Generation](the_image_as_its_own_reward_reinforcement_learning_with_adversarial_reward_for_i.md)
 - [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
+- [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
 - [\[CVPR 2026\] Fine-Grained GRPO for Precise Preference Alignment in Flow Models](fine-grained_grpo_for_precise_preference_alignment_in_flow_models.md)
-- [\[CVPR 2026\] SkyReels-Text: Fine-Grained Font-Controllable Text Editing for Poster Design](skyreels-text_fine-grained_font-controllable_text_editing_for_poster_design.md)
-- [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] ScaleCUA utilizes a "dual-loop" data pipeline—combining automated agents and human experts—to collect and annotate a massive cross-platform GUI corpus (471K perception, 17.1M grounding, and 19K trajectories) spanning six operating systems. Based on this, it trains open-source computer use agents (CUAs) supporting three
+  [ICLR 2026][LLM Agent][Computer Use Agent] ScaleCUA utilizes a "dual-loop" data pipeline—combining automated agents and human experts—to collect and annotate a massive cross-platform GUI corpus (471K perception, 17.1M grounding, and 19K trajectories) spanning six operating systems. Based on this, it trains open-source computer use agents (CUAs) supporting three reasoning paradigms, achieving new SOTAs across multiple GUI benchmarks (WebArena-Lite-v2 +26.6…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Computer Use Agent"
+  - "GUI Agent"
+  - "Cross-platform data"
+  - "Unified action space"
+  - "Data scaling"
 date: 2026-05-08
-content_hash: 44f117e3b959c02a
+content_hash: d919247b614ecbd0
 ---
+
 # ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data
 
 **Conference**: ICLR 2026  
@@ -138,9 +143,9 @@ Diagnostic analysis revealed several key trade-offs:
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
-- [\[ICLR 2026\] Programming with Pixels: Can Computer-Use Agents do Software Engineering?](programming_with_pixels_can_computer-use_agents_do_software_engineering.md)
-- [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
+- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
 - [\[CVPR 2026\] OS-Oracle: A Comprehensive Framework for Cross-Platform GUI Critic Models](../../CVPR2026/llm_agent/os-oracle_a_comprehensive_framework_for_cross-platform_gui_critic_models.md)
+- [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
 - [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
 
 </div>

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals
 description: >-
-  [NeurIPS 2025][LLM Reasoning][inference-time scaling] This paper proposes KAPPA (KL-Adjusted Pruned Path Algorithm), which progressively prunes reasoning branches in Best-of-N sampling using three training-free signals —…
+  [NeurIPS 2025][Reasoning][inference-time scaling] This paper proposes KAPPA (KL-Adjusted Pruned Path Algorithm), which progressively prunes reasoning branches in Best-of-N sampling using three training-free signals — KL divergence, confidence, and entropy — achieving up to 60% peak memory reduction and 90% token generation reduction while maintaining accuracy.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "inference-time scaling"
   - "chain-of-thought pruning"
   - "KL divergence"
   - "Best-of-N"
   - "reasoning efficiency"
 date: 2026-05-08
-content_hash: f8b73dc841f9a5fa
+content_hash: b74507b5758d5841
 ---
 
 # Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals
@@ -124,8 +124,8 @@ Evaluated on GSM8K and MATH500 with N = 5/10/20:
 
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](latent_chain-of-thought_for_visual_reasoning.md)
 - [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](../../ICML2026/llm_reasoning/inference_time_optimization_with_confidence_dynamics.md)
-- [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](../../ICLR2026/llm_reasoning/fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
 - [\[ACL 2026\] CRISP: Compressing Redundancy in Chain-of-Thought via Intrinsic Saliency Pruning](../../ACL2026/llm_reasoning/crisp_compressing_redundancy_in_chain-of-thought_via_intrinsic_saliency_pruning.md)
+- [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](../../ICLR2026/llm_reasoning/fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
 - [\[NeurIPS 2025\] Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning](re-forc_adaptive_reward_prediction_for_efficient_chain-of-thought_reasoning.md)
 
 </div>

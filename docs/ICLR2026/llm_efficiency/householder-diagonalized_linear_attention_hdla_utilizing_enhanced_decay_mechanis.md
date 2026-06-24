@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Householder-Diagonalized Linear Attention (HDLA): Utilizing Rank-Enhanced Decay Mechanism for Efficient Sequence Modeling
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] HDLA utilizes generalized Householder matrices to achieve congruence diagonalization of the decay matrix in linear attention, extending the structure from the prevalent "diagonal + rank-1" to a more expressive "diagonal + rank-2" form. Combined with a chunk-wise parallel algorithm supporting arbitrary ranks, HDLA outpe
+  [ICLR 2026][LLM Efficiency][Linear Attention] HDLA utilizes generalized Householder matrices to achieve congruence diagonalization of the decay matrix in linear attention, extending the structure from the prevalent "diagonal + rank-1" to a more expressive "diagonal + rank-2" form. Combined with a chunk-wise parallel algorithm supporting arbitrary ranks, HDLA outperforms existing linear attention baselines across language modeling perplexity, MQAR/RULER retrieval…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "Decay Matrix"
+  - "Householder Transform"
+  - "Chunk-wise Parallelism"
+  - "Sequence Modeling"
 date: 2026-05-08
-content_hash: b4f61be77744e975
+content_hash: 7df7d1bc5bb23dd3
 ---
+
 # Householder-Diagonalized Linear Attention (HDLA): Utilizing Rank-Enhanced Decay Mechanism for Efficient Sequence Modeling
 
 **Conference**: ICLR 2026  
@@ -157,7 +163,7 @@ Despite GDP3 having ~2x the computation of HDLA, it trails HDLA across language 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

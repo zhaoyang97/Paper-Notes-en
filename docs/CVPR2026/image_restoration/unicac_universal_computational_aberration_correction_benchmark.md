@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] This work constructs UniCAC, the first large-scale universal computational aberration correction (CAC) benchmark. It proposes the Optical Degradation Evaluator (ODE) to quantify aberration difficulty and provides a comprehensive evaluation of 24 image restoration and CAC algorithms. The study reveals how prior utilizat
+  [CVPR 2026][Image Restoration][Computational Aberration Correction] This work constructs UniCAC, the first large-scale universal computational aberration correction (CAC) benchmark. It proposes the Optical Degradation Evaluator (ODE) to quantify aberration difficulty and provides a comprehensive evaluation of 24 image restoration and CAC algorithms. The study reveals how prior utilization, network architecture, and training strategies influence CAC performance.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Computational Aberration Correction"
+  - "Optical Degradation Evaluation"
+  - "Benchmarking"
+  - "Automatic Optical Design"
 date: 2026-05-08
-content_hash: c18182b6f6ca8036
+content_hash: c5588edcfd341702
 ---
+
 # Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis
 
 **Conference**: CVPR 2026  
@@ -126,9 +131,9 @@ This benchmark evaluation covers three training paradigms: regression training f
 
 - [\[CVPR 2025\] OptiFusion: Towards Universal Computational Aberration Correction in Photographic Cameras](../../CVPR2025/image_restoration/towards_universal_computational_aberration_correction_in_photographic_cameras_a_.md)
 - [\[CVPR 2026\] Learning Personalized Photographic Style from Pairwise User Preferences](learning_personalized_photographic_style_from_pairwise_user_preferences.md)
+- [\[CVPR 2026\] Distilling Quasi-Conformal Mapping: A Generalizable and Efficient Solution for Wide-Angle Correction](distilling_quasi-conformal_mapping_a_generalizable_and_efficient_solution_for_wi.md)
+- [\[CVPR 2026\] OMoBlur: An Object Motion Blur Dataset and Benchmark for Real-World Local Motion Deblurring](omoblur_an_object_motion_blur_dataset_and_benchmark_for_real-world_local_motion_.md)
 - [\[CVPR 2026\] Human-Centric Multi-Exposure Fusion: Benchmark and Bi-level Cognition Distillation Framework](human-centric_multi-exposure_fusion_benchmark_and_bi-level_cognition_distillatio.md)
-- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
 
 </div>
 

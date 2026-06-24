@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes DocHumming, a data-training co-design framework. It constructs the large-scale synthetic dataset DocMix-3M via Realistic Scene Synthesis and implements a Document-Aware Training Recipe combining progressive learning with structural token weighting. DocHumming achieves an Overall score of 93.75 on OmniDocB
+  [CVPR 2026][Multimodal VLM][Document parsing] Ours proposes DocHumming, a data-training co-design framework. It constructs the large-scale synthetic dataset DocMix-3M via Realistic Scene Synthesis and implements a Document-Aware Training Recipe combining progressive learning with structural token weighting. DocHumming achieves an Overall score of 93.75 on OmniDocBench using only a 1B MLLM (surpassing Qwen3-VL-235B's 89.15), with a performance degradation of only 6.72 points i…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Document parsing"
+  - "synthetic data"
+  - "progressive training"
+  - "structural token weighting"
+  - "real-world robustness"
 date: 2026-05-08
-content_hash: a107b68424be1c89
+content_hash: 8169c9d474915093
 ---
+
 # Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training
 
 **Conference**: CVPR 2026  
@@ -169,10 +175,10 @@ Data scaling curve: DocMix-1M (85.41) -> 2M (88.14) -> 3M (89.96) -> 4M (89.31, 
 ## Related Papers
 
 - [\[CVPR 2026\] Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](boosting_document_parsing_efficiency_and_performance_with_coarse-to-fine_visual_.md)
-- [\[CVPR 2026\] Efficient Document Parsing via Parallel Token Prediction](efficient_document_parsing_via_parallel_token_prediction.md)
-- [\[CVPR 2026\] PaddleOCR-VL: Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](paddleocr_vl_coarse_to_fine_document_parsing.md)
+- [\[CVPR 2026\] SEA-Vision: A Multilingual Benchmark for Document and Scene Text Understanding in Southeast Asia](sea-vision_a_multilingual_benchmark_for_comprehensive_document_and_scene_text_un.md)
 - [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
-- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
+- [\[CVPR 2026\] MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection](mmsd30_a_multi-image_benchmark_for_real-world_multimodal_sarcasm_detection.md)
+- [\[CVPR 2026\] M3Grounder: Mask-Based Multi-Span and Multi-Granular Grounding for Document QA](m3grounder_mask-based_multi-span_and_multi-granular_grounding_for_document_qa.md)
 
 </div>
 

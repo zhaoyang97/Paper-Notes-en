@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions
 description: >-
-  [NeurIPS 2025][Time Series][Stochastic Differential Equations] This paper proposes Neural Stochastic Flows (NSF), which directly learns the transition distribution $p(x_t \mid x_s)$ of an SDE via conditional normalising…
+  [NeurIPS 2025][Time Series][Stochastic Differential Equations] This paper proposes Neural Stochastic Flows (NSF), which directly learns the transition distribution $p(x_t \mid x_s)$ of an SDE via conditional normalising flows. The architecture is constrained to satisfy stochastic flow properties (identity, Markov, Chapman-Kolmogorov), enabling single-step sampling without numerical solvers and achieving up to two orders of magnitude speedup at distant time points.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Transition Distribution"
   - "State-Space Model"
 date: 2026-05-08
-content_hash: d0caa7cb28d7d1d8
+content_hash: 8ae4374c81e085c3
 ---
 
 # Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions
@@ -167,8 +167,8 @@ The theoretical framework is complete and the method is elegant. Results on synt
 ## Related Papers
 
 - [\[NeurIPS 2025\] In-Context Learning of Stochastic Differential Equations with Foundation Inference Models](in-context_learning_of_stochastic_differential_equations_with_foundation_inferen.md)
-- [\[NeurIPS 2025\] Transformer Embeddings for Fast Microlensing Inference](transformer_embeddings_for_fast_microlensing_inference.md)
 - [\[NeurIPS 2025\] Neural MJD: Neural Non-Stationary Merton Jump Diffusion for Time Series Prediction](neural_mjd_neural_non-stationary_merton_jump_diffusion_for_time_series_predictio.md)
+- [\[NeurIPS 2025\] Transformer Embeddings for Fast Microlensing Inference](transformer_embeddings_for_fast_microlensing_inference.md)
 - [\[NeurIPS 2025\] Statistical Guarantees for High-Dimensional Stochastic Gradient Descent](statistical_guarantees_for_high-dimensional_stochastic_gradient_descent.md)
 - [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
 

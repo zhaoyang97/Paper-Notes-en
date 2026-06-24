@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images
 description: >-
-  [CVPR 2026][Human Understanding][Mixture-of-Experts] MetricHMSR simultaneously recovers human SMPL meshes and 3D scenes with real physical scales (metric) from a single monocular image. The core involves explicitly encoding camera intrinsics and cropping information into the network using a "boundary camera ray map," decoupling local pose from global position via HumanMo
+  [CVPR 2026][3D Vision][Human Mesh Recovery] MetricHMSR simultaneously recovers human SMPL meshes and 3D scenes with real physical scales (metric) from a single monocular image. The core involves explicitly encoding camera intrinsics and cropping information into the network using a "boundary camera ray map," decoupling local pose from global position via HumanMoE, and calibrating monocular depth using the recovered metric human as a geometric anchor to achieve SOTA in both hu…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Mixture-of-Experts
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human Mesh Recovery"
+  - "Metric Scale"
+  - "Monocular Depth"
+  - "Mixture-of-Experts"
+  - "Camera Ray Map"
 date: 2026-05-08
-content_hash: 81325072869e5597
+content_hash: de46029b95eefb84
 ---
+
 # MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images
 
 **Conference**: CVPR 2026  
@@ -155,11 +160,11 @@ The training objective for MetricHMR is an **over-complete loss**: $\mathcal{L} 
 
 ## Related Papers
 
-- [\[CVPR 2026\] SAM 3D Body: Robust Full-Body Human Mesh Recovery](sam_3d_body_robust_full-body_human_mesh_recovery.md)
+- [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
+- [\[CVPR 2026\] ResiHMR: Residual-Limb Aware Single-Image 3D Human Mesh Recovery for Individuals with Limb Loss](resihmr_residual-limb_aware_single-image_3d_human_mesh_recovery_for_individuals_.md)
+- [\[ECCV 2024\] Divide and Fuse: Body Part Mesh Recovery from Partially Visible Human Images](../../ECCV2024/3d_vision/divide_and_fuse_body_part_mesh_recovery_from_partially_visible_human_images.md)
+- [\[CVPR 2025\] PromptHMR: Promptable Human Mesh Recovery](../../CVPR2025/3d_vision/prompthmr_promptable_human_mesh_recovery.md)
 - [\[CVPR 2026\] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)
-- [\[CVPR 2026\] Mocap-2-to-3: Multi-view Lifting for Monocular Motion Recovery with 2D Pretraining](mocap-2-to-3_multi-view_lifting_for_monocular_motion_recovery_with_2d_pretrainin.md)
-- [\[CVPR 2026\] M4Human: A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction](m4human_a_large-scale_multimodal_mmwave_radar_benchmark_for_human_mesh_reconstru.md)
-- [\[CVPR 2026\] SceMoS: Scene-Aware 3D Human Motion Synthesis by Planning with Geometry-Grounded Tokens](scemos_scene-aware_3d_human_motion_synthesis_by_planning_with_geometry-grounded_.md)
 
 </div>
 

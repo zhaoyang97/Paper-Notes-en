@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Inference-Time Scaling for Continuous Space Reasoning
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][inference-time scaling] This work presents the first systematic investigation of whether inference-time scaling techniques from discrete text reasoning can transfer to continuous…
+  [AAAI 2026][Information Retrieval & RAG][inference-time scaling] This work presents the first systematic investigation of whether inference-time scaling techniques from discrete text reasoning can transfer to continuous latent-space reasoning models (COCONUT). It finds that dropout sampling can generate diverse reasoning paths (Pass@32 reaching 44.43%), but PRM/ORM yields less than 2.3% improvement, with the root cause being that continuous thought representations lack the ge…
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "geometric homogeneity"
   - "process reward model"
 date: 2026-05-08
-content_hash: 72a687c625c31ab1
+content_hash: 6a3aef0a672a6568
 ---
 
 # Towards Inference-Time Scaling for Continuous Space Reasoning
@@ -132,11 +132,11 @@ Three stages: (1) generate diverse reasoning trajectories for COCONUT via dropou
 
 ## Related Papers
 
+- [\[ICLR 2026\] MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction](../../ICLR2026/information_retrieval/metaembed_scaling_multimodal_retrieval_at_test-time_with_flexible_late_interacti.md)
 - [\[ACL 2026\] CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering](../../ACL2026/information_retrieval/counterrefine_answer-conditioned_counterevidence_retrieval_for_inference-time_kn.md)
 - [\[AAAI 2026\] SR-KI: Scalable and Real-Time Knowledge Integration into LLMs via Supervised Attention](sr-ki_scalable_and_real-time_knowledge_integration_into_llms_via_supervised_atte.md)
-- [\[NeurIPS 2025\] Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization](../../NeurIPS2025/information_retrieval/retrieval_is_not_enough_enhancing_rag_reasoning_through_test-time_critique_and_o.md)
-- [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](../../NeurIPS2025/information_retrieval/scaling_language-centric_omnimodal_representation_learning.md)
 - [\[AAAI 2026\] PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning](prime_planning_and_retrieval-integrated_memory_for_enhanced_reasoning.md)
+- [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](../../NeurIPS2025/information_retrieval/scaling_language-centric_omnimodal_representation_learning.md)
 
 </div>
 

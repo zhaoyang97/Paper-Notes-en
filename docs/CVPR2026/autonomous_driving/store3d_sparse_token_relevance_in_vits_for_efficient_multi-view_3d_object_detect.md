@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SToRe3D: Sparse Token Relevance in ViTs for Efficient Multi-View 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][nuScenes] SToRe3D introduces a "planning-aligned" joint sparsity framework for ViT-based multi-view 3D detectors. It utilizes a lightweight relevance head to simultaneously score 2D image tokens and 3D object queries. Low-relevance items are stored in a buffer rather than discarded and are reactivated in the final layer. This ac
+  [CVPR2026][Autonomous Driving][Multi-View 3D Detection] SToRe3D introduces a "planning-aligned" joint sparsity framework for ViT-based multi-view 3D detectors. It utilizes a lightweight relevance head to simultaneously score 2D image tokens and 3D object queries. Low-relevance items are stored in a buffer rather than discarded and are reactivated in the final layer. This achieve up to 3× inference speedup with negligible precision loss, particularly maintaining near-zero loss…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - nuScenes
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Multi-View 3D Detection"
+  - "ViT Sparsification"
+  - "Token/Query Pruning"
+  - "Planning Relevance"
+  - "nuScenes"
 date: 2026-05-08
-content_hash: aa03abf78f0ac449
+content_hash: c0e257087ab2903e
 ---
+
 # SToRe3D: Sparse Token Relevance in ViTs for Efficient Multi-View 3D Object Detection
 
 **Conference**: CVPR2026  
@@ -133,15 +138,16 @@ Compared to **ToC3D**, SToRe3D jointly sparsifies tokens and queries, works on t
 - **Value**: ⭐⭐⭐⭐⭐ Enables real-time (~18 FPS) multi-view 3D detection with large ViT backbones without losing critical safety precision.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ECCV 2024\] OPEN: Object-wise Position Embedding for Multi-view 3D Object Detection](../../ECCV2024/autonomous_driving/open_object-wise_position_embedding_for_multi-view_3d_object_detection.md)
 - [\[CVPR 2026\] CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection](coin3d_revisiting_configuration-invariant_multi-camera_3d_object_detection.md)
 - [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](../../ICCV2025/autonomous_driving/evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
-- [\[ECCV 2024\] OPEN: Object-wise Position Embedding for Multi-view 3D Object Detection](../../ECCV2024/autonomous_driving/open_object-wise_position_embedding_for_multi-view_3d_object_detection.md)
-- [\[CVPR 2026\] A Prediction-as-Perception Framework for 3D Object Detection](a_prediction-as-perception_framework_for_3d_object_detection.md)
 - [\[AAAI 2026\] FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection](../../AAAI2026/autonomous_driving/fq-petr_fully_quantized_position_embedding_transformation_fo.md)
+- [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
 
 </div>
 

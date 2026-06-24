@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][GQA] This paper extends the Chinchilla Scaling Law into a "conditional" version, explicitly incorporating three architectural factors—hidden dimension $d_{model}$, MLP-to-attention parameter ratio $r_{mlp/attn}$, and GQA—into loss prediction. Combined with a search framework, it identifies architectures that are both accura
+  [ICLR 2026][LLM Efficiency][Scaling Laws] This paper extends the Chinchilla Scaling Law into a "conditional" version, explicitly incorporating three architectural factors—hidden dimension $d_{model}$, MLP-to-attention parameter ratio $r_{mlp/attn}$, and GQA—into loss prediction. Combined with a search framework, it identifies architectures that are both accurate and fast under fixed parameter and training token budgets. Models trained using this approach…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - GQA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Scaling Laws"
+  - "Inference Efficiency"
+  - "Model Architecture"
+  - "MLP-Attention Ratio"
+  - "GQA"
 date: 2026-05-08
-content_hash: 3888d1d2dd206ac8
+content_hash: b0406b59201858d5
 ---
+
 # Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs
 
 **Conference**: ICLR 2026  
@@ -125,15 +130,16 @@ Surefire-1B/3B achieves higher throughput than LLaMA-3.2 across all batch sizes,
 - Value: ⭐⭐⭐⭐⭐ Provides a practical methodology for "double-win" LLM design (accuracy and efficiency).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Greater Leverage: Scaling Laws for Efficient Mixture-of-Experts Language Models](towards_greater_leverage_scaling_laws_for_efficient_mixture-of-experts_language_.md)
-- [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity](xlstm_scaling_laws_competitive_performance_with_linear_time-complexity.md)
+- [\[ICLR 2026\] Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws](fast_catch-up_late_switching_optimal_batch_size_scheduling_via_functional_scalin.md)
+- [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing](scaling_large_vision-language_model_rl_training_via_efficient_load_balancing.md)
-- [\[ICML 2025\] Ladder Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference](../../ICML2025/llm_efficiency/ladder-residual_parallelism-aware_architecture_for_accelerating_large_model_infe.md)
 
 </div>
 

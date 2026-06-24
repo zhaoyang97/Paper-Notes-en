@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Find your Needle: Small Object Image Retrieval via Multi-Object Attention Optimization
 description: >-
-  [NeurIPS 2025][Model Compression][Small Object Image Retrieval] MaO proposes a novel approach for Small Object Image Retrieval (SoIR) that integrates multi-object pre-training with attention-based feature refinement…
+  [NeurIPS 2025][Model Compression][Small Object Image Retrieval] MaO proposes a novel approach for Small Object Image Retrieval (SoIR) that integrates multi-object pre-training with attention-based feature refinement, aggregating representations of multiple objects into a single global descriptor, achieving substantial improvements over existing retrieval methods across multiple benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Attention Interpretability"
   - "Global Descriptor"
 date: 2026-05-08
-content_hash: b25e95e06270e3f3
+content_hash: c2ffe1fcc8ee6337
 ---
 
 # Find your Needle: Small Object Image Retrieval via Multi-Object Attention Optimization
@@ -151,9 +151,9 @@ The ablation reveals that:
 
 - [\[ICCV 2025\] Multi-Object Sketch Animation by Scene Decomposition and Motion Planning](../../ICCV2025/model_compression/multi-object_sketch_animation_by_scene_decomposition_and_motion_planning.md)
 - [\[NeurIPS 2025\] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models](vessa_video-based_object-centric_self-supervised_adaptation_for_visual_foundatio.md)
+- [\[CVPR 2025\] Incremental Object Keypoint Learning (KAMP)](../../CVPR2025/model_compression/incremental_object_keypoint_learning.md)
 - [\[NeurIPS 2025\] Graph Your Own Prompt](graph_your_own_prompt.md)
 - [\[ACL 2026\] Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation](../../ACL2026/model_compression/find_your_optimal_teacher_personalized_data_synthesis_via_router-guided_multi-te.md)
-- [\[NeurIPS 2025\] Mitigating Semantic Collapse in Partially Relevant Video Retrieval](mitigating_semantic_collapse_in_partially_relevant_video_retrieval.md)
 
 </div>
 

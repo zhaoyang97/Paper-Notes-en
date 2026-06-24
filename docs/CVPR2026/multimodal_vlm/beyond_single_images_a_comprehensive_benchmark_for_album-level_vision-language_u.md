@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper introduces AlbumBench, the first comprehensive benchmark for "album organization." It decomposes album operations into four tasks: intent selection, intent rating, group labeling, and group clustering. Evaluating 20 mainstream VLM configurations on 27,051 images across 641 albums reveals a significant gap be
+  [CVPR 2026][Multimodal VLM][Album understanding] This paper introduces AlbumBench, the first comprehensive benchmark for "album organization." It decomposes album operations into four tasks: intent selection, intent rating, group labeling, and group clustering. Evaluating 20 mainstream VLM configurations on 27,051 images across 641 albums reveals a significant gap between open-source and closed-source models. While "thinking" modes significantly improve grouping tasks at a hi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Album understanding"
+  - "Multi-image VLM benchmark"
+  - "User intent"
+  - "Image grouping"
+  - "Long context"
 date: 2026-05-08
-content_hash: f95b32898cf55b01
+content_hash: b0d9dbfcab20b331
 ---
+
 # Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,15 @@ Evaluation of instruction following failures in grouping tasks (Overlap% = multi
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MMLandmarks: a Cross-View Instance-Level Benchmark for Geo-Spatial Understanding](mmlandmarks_a_cross-view_instance-level_benchmark_for_geo-spatial_understanding.md)
-- [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](../../ACL2026/multimodal_vlm/can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
 - [\[CVPR 2026\] MCHDoc: A Comprehensive Benchmark for Reading Multi-Carrier Chinese Historical Documents](mchdoc_a_comprehensive_benchmark_for_reading_multi-carrier_chinese_historical_do.md)
 - [\[CVPR 2026\] Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation](is_your_vlm_sky-ready_a_comprehensive_spatial_intelligence_benchmark_for_uav_nav.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](../../ICLR2026/multimodal_vlm/mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors
 description: >-
-  [NeurIPS 2025][Image Generation][source separation] This paper proposes DDPRISM, a method that exploits structural differences among linear transformations across multi-view observations. Within an EM framework…
+  [NeurIPS 2025][Image Generation][source separation] This paper proposes DDPRISM, a method that exploits structural differences among linear transformations across multi-view observations. Within an EM framework, it learns an independent diffusion model prior for each unknown source without requiring any isolated source samples, enabling source separation and posterior sampling. DDPRISM outperforms existing methods on both synthetic benchmarks and real galaxy observations.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "expectation-maximization"
   - "Bayesian inverse problem"
 date: 2026-05-08
-content_hash: 705bb6952f3c2098
+content_hash: 3b0a8ecf18666ee7
 ---
 
 # A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors
@@ -145,9 +145,9 @@ On real galaxy observations (GMNIST), DDPRISM-Joint comprehensively outperforms 
 
 - [\[NeurIPS 2025\] GeneMAN: Generalizable Single-Image 3D Human Reconstruction from Multi-Source Human Data](geneman_generalizable_single-image_3d_human_reconstruction_from_multi-source_hum.md)
 - [\[NeurIPS 2025\] Diffusion-Driven Progressive Target Manipulation for Source-Free Domain Adaptation](diffusion-driven_progressive_target_manipulation_for_source-free_domain_adaptati.md)
+- [\[CVPR 2025\] SIR-DIFF: Sparse Image Sets Restoration with Multi-View Diffusion Model](../../CVPR2025/image_generation/sir-diff_sparse_image_sets_restoration_with_multi-view_diffusion_model.md)
 - [\[NeurIPS 2025\] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking](a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co.md)
 - [\[CVPR 2026\] Cinematic Audio Source Separation Using Visual Cues](../../CVPR2026/image_generation/cinematic_audio_source_separation_using_visual_cues.md)
-- [\[NeurIPS 2025\] BADiff: Bandwidth Adaptive Diffusion Model](badiff_bandwidth_adaptive_diffusion_model.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Logical Characterizations of GNNs with Mean Aggregation
 description: >-
-  [AAAI 2026][Graph Learning][GNN expressiveness] This paper provides a systematic logical characterization of GNNs using mean aggregation: under the non-uniform setting, mean-GNNs are equivalent to Ratio Modal Logic (RML)…
+  [AAAI 2026][Graph Learning][GNN expressiveness] This paper provides a systematic logical characterization of GNNs using mean aggregation: under the non-uniform setting, mean-GNNs are equivalent to Ratio Modal Logic (RML); under the uniform setting (relative to MSO), they are equivalent to Modal Logic (ML); when the combination function is additionally required to be continuous and the classification function is a threshold, the expressiveness drops significantly to Alternatio…
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -13,7 +13,7 @@ tags:
   - "alternation-free modal logic"
   - "non-uniform/uniform setting"
 date: 2026-05-08
-content_hash: 8ddd82766fafcdea
+content_hash: 498ef3d181af696a
 ---
 
 # Logical Characterizations of GNNs with Mean Aggregation
@@ -143,7 +143,7 @@ The theoretical contributions are rigorous and comprehensive, systematically clo
 - [\[NeurIPS 2025\] Sound Logical Explanations for Mean Aggregation Graph Neural Networks](../../NeurIPS2025/graph_learning/sound_logical_explanations_for_mean_aggregation_graph_neural_networks.md)
 - [\[ICML 2026\] Fixed Aggregation Features Can Rival GNNs](../../ICML2026/graph_learning/fixed_aggregation_features_can_rival_gnns.md)
 - [\[AAAI 2026\] Adaptive Initial Residual Connections for GNNs with Theoretical Guarantees](adaptive_initial_residual_connections_for_gnns_with_theoretical_guarantees.md)
-- [\[ICLR 2026\] On the Expressive Power of GNNs for Boolean Satisfiability](../../ICLR2026/graph_learning/on_the_expressive_power_of_gnns_for_boolean_satisfiability.md)
+- [\[ICLR 2026\] Towards a Foundation Model for Crowdsourced Label Aggregation](../../ICLR2026/graph_learning/towards_a_foundation_model_for_crowdsourced_label_aggregation.md)
 
 </div>
 

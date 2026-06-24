@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning
 description: >-
-  [AAAI 2026][Multi-Agent][Conversational Learning Diagnosis] This paper proposes ParLD (Preview-Analyze-Reason framework), which leverages multi-agent collaboration to achieve fine-grained…
+  [AAAI 2026][Multi-Agent][Conversational Learning Diagnosis] This paper proposes ParLD (Preview-Analyze-Reason framework), which leverages multi-agent collaboration to achieve fine-grained, turn-level diagnosis of students' cognitive states during conversational learning. ParLD outperforms traditional knowledge tracing methods by 10% on performance prediction and substantially improves tutoring outcomes.
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Cognitive State"
   - "LLM"
 date: 2026-05-08
-content_hash: 5e0fa566ef7a3f97
+content_hash: 252d609a60c50789
 ---
 
 # Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning
@@ -146,10 +146,10 @@ ParLD enables 72.22% of students to successfully master the material (vs. 56.48%
 ## Related Papers
 
 - [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
-- [\[ICML 2026\] CoOT: Learning to Coordinate In-Context with Coordination Transformers](../../ICML2026/multi_agent/coot_learning_to_coordinate_in-context_with_coordination_transformers.md)
 - [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
-- [\[ICML 2026\] Sheaf-ADMM: Learning Multi-Agent Coordination via Sheaf-ADMM](../../ICML2026/multi_agent/learning_multi-agent_coordination_via_sheaf-admm.md)
-- [\[AAAI 2026\] MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning](maps_multi-agent_personality_shaping_for_collaborative_reaso.md)
+- [\[ICLR 2026\] Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization](../../ICLR2026/multi_agent/learning_to_summarize_by_learning_to_quiz_adversarial_agentic_collaboration_for_.md)
+- [\[ICLR 2026\] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning](../../ICLR2026/multi_agent/agentpo_enhancing_multi-agent_collaboration_via_reinforcement_learning.md)
+- [\[ICLR 2026\] Context Learning for Multi-Agent Discussion](../../ICLR2026/multi_agent/context_learning_for_multi-agent_discussion.md)
 
 </div>
 

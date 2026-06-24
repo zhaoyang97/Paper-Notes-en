@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Mirage or Method? How Model–Task Alignment Induces Divergent RL Conclusions
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper argues that a series of recent "counter-intuitive" reinforcement learning (RL) conclusions for LLMs—such as the effectiveness of spurious rewards, one-shot RL matching full datasets, and sufficiency of pure negative sample training—are not universal laws of RL. Instead, they hold only when the **model itself
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper argues that a series of recent "counter-intuitive" reinforcement learning (RL) conclusions for LLMs—such as the effectiveness of spurious rewards, one-shot RL matching full datasets, and sufficiency of pure negative sample training—are not universal laws of RL. Instead, they hold only when the **model itself is already proficient in the task (strong model-task alignment, measured by pass@k)**. Once a task exceeds the model'…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - pass@k
-  - one-shot RL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "model-task alignment"
+  - "pass@k"
+  - "spurious reward"
+  - "one-shot RL"
+  - "negative sample training"
+  - "test-time RL"
 date: 2026-05-08
-content_hash: faec28263b253fcb
+content_hash: 99fec87a3aa397ea
 ---
+
 # Mirage or Method? How Model–Task Alignment Induces Divergent RL Conclusions
 
 **Conference**: ICLR 2026  
@@ -125,7 +130,7 @@ Scores represent post-training accuracy; subscripts show changes relative to the
 - [\[ICLR 2026\] RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?](rl_grokking_recipe_how_does_rl_unlock_and_transfer_new_algorithms_in_llms.md)
 - [\[ICLR 2026\] Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?](prosperity_before_collapse_how_far_can_off-policy_rl_reach_with_stale_data_on_ll.md)
 - [\[ICLR 2026\] MATH-Beyond: A Benchmark for RL to Expand Beyond the Base Model](math-beyond_a_benchmark_for_rl_to_expand_beyond_the_base_model.md)
-- [\[ICLR 2026\] Enough is as good as a feast: A Comprehensive Analysis of How Reinforcement Learning Mitigates Task Conflicts in LLMs](enough_is_as_good_as_a_feast_a_comprehensive_analysis_of_how_reinforcement_learn.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
 
 </div>
 

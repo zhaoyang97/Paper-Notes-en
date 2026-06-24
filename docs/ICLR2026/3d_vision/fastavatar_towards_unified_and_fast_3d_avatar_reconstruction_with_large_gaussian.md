@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] FastAvatar: Towards Unified and Fast 3D Avatar Reconstruction with Large Gaussian Reconstruction Transformers
 description: >-
-  [ICLR 2026][3D Vision][3D Avatar] Using a unified feed-forward Transformer (LGRT), FastAvatar reconstructs drivable high-quality 3DGS avatars from an arbitrary number (1~16 frames) of facial observations—single images, multi-view setups, or monocular videos—within seconds. It achieves incremental reconstruction where "more observations lead to better q
+  [ICLR 2026][3D Vision][3D Avatar] Using a unified feed-forward Transformer (LGRT), FastAvatar reconstructs drivable high-quality 3DGS avatars from an arbitrary number (1~16 frames) of facial observations—single images, multi-view setups, or monocular videos—within seconds. It achieves incremental reconstruction where "more observations lead to better quality" for the first time.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Avatar
-  - 3D Gaussian Splatting
-  - VGGT
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Avatar"
+  - "3D Gaussian Splatting"
+  - "Feed-forward Reconstruction"
+  - "Variable-length Input"
+  - "Incremental Reconstruction"
+  - "VGGT"
 date: 2026-05-08
-content_hash: 0b5e64a1a447e745
+content_hash: 8b7ee75965269836
 ---
+
 # FastAvatar: Towards Unified and Fast 3D Avatar Reconstruction with Large Gaussian Reconstruction Transformers
 
 **Conference**: ICLR 2026  
@@ -127,11 +131,11 @@ Training used NeRSemble (multi-view facial videos), with 16 frames sampled per p
 
 ## Related Papers
 
-- [\[ICLR 2026\] SkyEvents: A Large-Scale Event-Enhanced UAV Dataset for Robust 3D Scene Reconstruction](skyevents_a_large-scale_event-enhanced_uav_dataset_for_robust_3d_scene_reconstru.md)
 - [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
-- [\[ICLR 2026\] UP2You: Fast Reconstruction of Yourself from Unconstrained Photo Collections](up2you_fast_reconstruction_of_yourself_from_unconstrained_photo_collections.md)
-- [\[CVPR 2026\] FHAvatar: Fast and High-Fidelity Reconstruction of Face-and-Hair Composable 3D Head Avatar from Few Casual Captures](../../CVPR2026/3d_vision/fhavatar_fast_and_high-fidelity_reconstruction_of_face-and-hair_composable_3d_he.md)
-- [\[ICLR 2026\] Implicit 4D Gaussian Splatting for Fast Motion with Large Inter-Frame Displacements](implicit_4d_gaussian_splatting_for_fast_motion_with_large_inter-frame_displaceme.md)
+- [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](../../CVPR2026/3d_vision/uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
+- [\[ICLR 2026\] SkyEvents: A Large-Scale Event-Enhanced UAV Dataset for Robust 3D Scene Reconstruction](skyevents_a_large-scale_event-enhanced_uav_dataset_for_robust_3d_scene_reconstru.md)
+- [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](learning_unified_representation_of_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation](splat_and_distill_augmenting_teachers_with_feed-forward_3d_reconstruction_for_3d.md)
 
 </div>
 

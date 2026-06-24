@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OVG-HQ: Online Video Grounding with Hybrid-modal Queries
 description: >-
-  [ICCV 2025][Video Understanding][Online video grounding] This paper proposes OVG-HQ, a new online video grounding task supporting hybrid-modal queries (text, image, and video clip)…
+  [ICCV 2025][Video Understanding][Online video grounding] This paper proposes OVG-HQ, a new online video grounding task supporting hybrid-modal queries (text, image, and video clip), and introduces a Parametric Memory Block (PMB) to retain historical context alongside a hybrid distillation strategy to mitigate modality imbalance, enabling real-time moment localization in streaming video.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal distillation"
   - "streaming video"
 date: 2026-05-08
-content_hash: 2db7670fc9ce5df7
+content_hash: 0bf47402e0f2cb91
 ---
 
 # OVG-HQ: Online Video Grounding with Hybrid-modal Queries
@@ -169,9 +169,9 @@ Runtime analysis: Overall FPS = 45.95; PMB latency is only 2.20 ms with dynamic 
 
 - [\[ICCV 2025\] Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding](hierarchical_event_memory_for_accurate_and_low-latency_online_video_temporal_gro.md)
 - [\[ICCV 2025\] Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers](vamba_understanding_hour-long_videos_with_hybrid_mamba-transformers.md)
-- [\[ICCV 2025\] Moment Quantization for Video Temporal Grounding](moment_quantization_for_video_temporal_grounding.md)
-- [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](online_dense_point_tracking_with_streaming_memory.md)
+- [\[CVPR 2025\] Cross-modal Causal Relation Alignment for Video Question Grounding](../../CVPR2025/video_understanding/cross-modal_causal_relation_alignment_for_video_question_grounding.md)
 - [\[NeurIPS 2025\] PixFoundation 2.0: Do Video Multi-Modal LLMs Use Motion in Visual Grounding?](../../NeurIPS2025/video_understanding/pixfoundation_20_do_video_multi-modal_llms_use_motion_in_visual_grounding.md)
+- [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](online_dense_point_tracking_with_streaming_memory.md)
 
 </div>
 

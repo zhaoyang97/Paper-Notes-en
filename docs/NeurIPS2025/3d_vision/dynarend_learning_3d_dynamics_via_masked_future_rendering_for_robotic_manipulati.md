@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation
 description: >-
-  [NeurIPS 2025][3D Vision][Representation Learning] DynaRend is proposed to jointly learn 3D geometry, semantics, and dynamics on triplane representations via differentiable volumetric rendering…
+  [NeurIPS 2025][3D Vision][Representation Learning] DynaRend is proposed to jointly learn 3D geometry, semantics, and dynamics on triplane representations via differentiable volumetric rendering, using two complementary objectives — masked reconstruction and future prediction — enabling efficient transfer to downstream robotic manipulation tasks after pre-training.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Dynamics Prediction"
   - "Pre-training"
 date: 2026-05-08
-content_hash: 215681ad08c561c0
+content_hash: 64486f95853c38ae
 ---
 
 # DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation
@@ -151,8 +151,8 @@ The concept of *rendering as supervision* is particularly inspiring — explicit
 - [\[NeurIPS 2025\] EnerVerse: Envisioning Embodied Future Space for Robotics Manipulation](enerverse_envisioning_embodied_future_space_for_robotics_manipulation.md)
 - [\[NeurIPS 2025\] UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis](umami_unifying_masked_autoregressive_models_and_deterministic_rendering_for_view.md)
 - [\[ICCV 2025\] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation](../../ICCV2025/3d_vision/robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md)
+- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](../../CVPR2026/3d_vision/pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
 - [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
-- [\[CVPR 2026\] HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation](../../CVPR2026/3d_vision/hyperbolic_multiview_pretraining_for_robotic_manipulation.md)
 
 </div>
 

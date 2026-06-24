@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CatalystBench: A Comprehensive Multi-Task Benchmark for Advancing Language Models in Catalysis Science
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper constructs the first multi-task benchmark for catalysis science, CatalystBench, which unifies theoretical computational data and experimental literature into 8 tasks covering the "full process of catalyst design." It proposes Multi-head Full-task Fine-tuning (MFT) to decouple classification, regression, and
+  [ICLR2026][LLM Evaluation][Catalysis Science] This paper constructs the first multi-task benchmark for catalysis science, CatalystBench, which unifies theoretical computational data and experimental literature into 8 tasks covering the "full process of catalyst design." It proposes Multi-head Full-task Fine-tuning (MFT) to decouple classification, regression, and generation heads. The resulting CatalystLLM outperforms strong baselines like GPT-4.1 on most tasks…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Catalysis Science"
+  - "Multi-task benchmark"
+  - "Domain fine-tuning"
+  - "Multi-head architecture"
+  - "Structure-activity relationship"
 date: 2026-05-08
-content_hash: 446e83117caab08d
+content_hash: c8bc9dcb708265f9
 ---
+
 # CatalystBench: A Comprehensive Multi-Task Benchmark for Advancing Language Models in Catalysis Science
 
 **Conference**: ICLR2026  
@@ -133,10 +139,20 @@ CatalystLLM led in STS and Expert scores. Notably, its LLM-based scores were not
 - Value: ⭐⭐⭐⭐ Provides a rare evaluation framework and open-source model for catalysis; clear guidance on regression weaknesses.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] SeedBench: A Multi-task Benchmark for Evaluating Large Language Models in Seed Science](../../ACL2025/llm_evaluation/seedbench_a_multi-task_benchmark_for_evaluating_large_language_models_in_seed_sc.md)
+- [\[ICLR 2026\] EARTHSE: A Benchmark for Earth Science Knowledge Exploration](earthse_a_benchmark_evaluating_earth_scientific_exploration_capability_for_large.md)
+- [\[ICLR 2026\] AutoCodeBench: Large Language Models are Automatic Code Benchmark Generators](autocodebench_large_language_models_are_automatic_code_benchmark_generators.md)
+- [\[ICLR 2026\] Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective](can_vision_language_models_assess_graphic_design_aesthetics_a_benchmark_evaluati.md)
+- [\[ACL 2025\] McBE: A Multi-task Chinese Bias Evaluation Benchmark for Large Language Models](../../ACL2025/llm_evaluation/mcbe_a_multi-task_chinese_bias_evaluation_benchmark_for_large_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] SeedBench: A Multi-task Benchmark for Evaluating Large Language Models in Seed Science](../../ACL2025/llm_evaluation/seedbench_a_multi-task_benchmark_for_evaluating_large_language_models_in_seed_sc.md)

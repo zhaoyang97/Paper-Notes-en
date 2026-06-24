@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] Inspired by Schutz's philosophical theory of relevance, this paper proposes ITEM, an iterative utility judgment framework. By enabling dynamic interaction and mutual enhancement among three RAG components (relevance ranking, utility judgment, and answer generation), ITEM outperforms baselines in retrieval, utility judg
+  [ACL 2026 Findings][Information Retrieval & RAG][Utility Judgment] Inspired by Schutz's philosophical theory of relevance, this paper proposes ITEM, an iterative utility judgment framework. By enabling dynamic interaction and mutual enhancement among three RAG components (relevance ranking, utility judgment, and answer generation), ITEM outperforms baselines in retrieval, utility judgment, and QA tasks.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Utility Judgment"
+  - "Philosophical Relevance Theory"
+  - "Iterative Framework"
+  - "RAG Optimization"
+  - "LLM Reasoning"
 date: 2026-05-08
-content_hash: ddf2cc7ded437e94
+content_hash: 5b67018c102126d4
 ---
+
 # An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs
 
 **Conference**: ACL 2026 Findings  
@@ -129,9 +135,9 @@ ITEM is based entirely on the in-context learning of LLMs without any training. 
 
 - [\[ACL 2025\] SGIC: A Self-Guided Iterative Calibration Framework for RAG](../../ACL2025/information_retrieval/sgic_a_self-guided_iterative_calibration_framework_for_rag.md)
 - [\[ACL 2026\] Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring](bayesian_active_learning_with_gaussian_processes_guided_by_llm_relevance_scoring.md)
+- [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](../../ICLR2026/information_retrieval/let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
 - [\[NeurIPS 2025\] SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning](../../NeurIPS2025/information_retrieval/symrtlo_enhancing_rtl_code_optimization_with_llms_and_neuron-inspired_symbolic_r.md)
 - [\[ACL 2026\] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines](from_relevance_to_authority_authority-aware_generative_retrieval_in_web_search_e.md)
-- [\[ACL 2026\] UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval](unite_uncertainty-based_iterative_document_sampling_for_domain_adaptation_in_inf.md)
 
 </div>
 

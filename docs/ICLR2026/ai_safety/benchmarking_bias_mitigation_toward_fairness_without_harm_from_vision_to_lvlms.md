@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Benchmarking Bias Mitigation Toward Fairness Without Harm from Vision to LVLMs
 description: >-
-  [ICLR 2026][AI Safety][fairness without harm] This paper proposes NH-Fair, a "Fairness Without Harm" evaluation benchmark covering classical vision models and Large Vision-Language Models (LVLMs), unifying data, metrics, and training protocols. Through a two-stage model selection process (DTO to select ERM baseline + FWH four-quadrant selection for mitigation meth
+  [ICLR 2026][AI Safety][Fairness evaluation] This paper proposes NH-Fair, a "Fairness Without Harm" evaluation benchmark covering classical vision models and Large Vision-Language Models (LVLMs), unifying data, metrics, and training protocols. Through a two-stage model selection process (DTO to select ERM baseline + FWH four-quadrant selection for mitigation methods), it systematically proves that many specialized debiasing algorithms do not consistently outperform a well-tune…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - fairness without harm
-  - LVLM
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Fairness evaluation"
+  - "fairness without harm"
+  - "bias mitigation"
+  - "LVLM"
+  - "model selection"
 date: 2026-05-08
-content_hash: 56db141751312094
+content_hash: 2383b7bb6a5a07f8
 ---
+
 # Benchmarking Bias Mitigation Toward Fairness Without Harm from Vision to LVLMs
 
 **Conference**: ICLR 2026  
@@ -135,15 +139,15 @@ RandAug falls into the Optimal quadrant across all 7 datasets and reproduces thi
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] PluriHarms: Benchmarking the Full Spectrum of Human Judgments on AI Harm](pluriharms_benchmarking_the_full_spectrum_of_human_judgments_on_ai_harm.md)
 - [\[CVPR 2026\] DSO: Direct Steering Optimization for Bias Mitigation](../../CVPR2026/ai_safety/dso_direct_steering_optimization_for_bias_mitigation.md)
-- [\[ICLR 2026\] Benchmarking Stochastic Approximation Algorithms for Fairness-Constrained Training of Deep Neural Networks](benchmarking_stochastic_approximation_algorithms_for_fairness-constrained_traini.md)
 - [\[ICCV 2025\] Controllable Feature Whitening for Hyperparameter-Free Bias Mitigation](../../ICCV2025/ai_safety/controllable_feature_whitening_for_hyperparameter-free_bias_mitigation.md)
-- [\[ICLR 2026\] Wring Out the Bias: A Rotation-Based Alternative to Projection Debiasing](wring_out_the_bias_a_rotation-based_alternative_to_projection_debiasing.md)
+- [\[ICLR 2026\] Bridging Fairness and Explainability: Can Input-Based Explanations Promote Fairness in Hate Speech Detection?](bridging_fairness_and_explainability_can_input-based_explanations_promote_fairne.md)
+- [\[ICLR 2026\] Benchmarking Stochastic Approximation Algorithms for Fairness-Constrained Training of Deep Neural Networks](benchmarking_stochastic_approximation_algorithms_for_fairness-constrained_traini.md)
 
 </div>
 

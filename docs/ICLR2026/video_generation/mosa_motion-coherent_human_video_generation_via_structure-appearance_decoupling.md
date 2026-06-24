@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling
 description: >-
-  [ICLR 2026][Video Generation][DiT] The authors propose the MoSA framework, which decouples human video generation into "structure generation" (pre-generating physically plausible motion skeletons via a 3D Transformer) and "appearance generation" (synthesizing videos via DiT guided by skeletons). A Human-Aware Dynamic Control (HADC) module is designed to
+  [ICLR 2026][Video Generation][Human Video Generation] The authors propose the MoSA framework, which decouples human video generation into "structure generation" (pre-generating physically plausible motion skeletons via a 3D Transformer) and "appearance generation" (synthesizing videos via DiT guided by skeletons). A Human-Aware Dynamic Control (HADC) module is designed to expand sparse skeleton signals into the entire motion region. Together with dense tracking loss and conta…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - DiT
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Human Video Generation"
+  - "Structure-Appearance Decoupling"
+  - "3D Motion Generation"
+  - "DiT"
+  - "Dense Tracking Loss"
 date: 2026-05-08
-content_hash: 5e40d04177c52fff
+content_hash: 137337e7fc7d02f0
 ---
+
 # MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling
 
 **Conference**: ICLR 2026  
@@ -159,10 +164,17 @@ The MoSA framework also shows significant gains when migrated to Wan 2.1: Wan 2.
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
+- [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](../../AAAI2026/video_generation/motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
+- [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](../../CVPR2026/video_generation/symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
+- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](../../CVPR2026/video_generation/3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
+- [\[ICLR 2026\] Anchor Frame Bridging for Coherent First-Last Frame Video Generation](anchor_frame_bridging_for_coherent_first-last_frame_video_generation.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)

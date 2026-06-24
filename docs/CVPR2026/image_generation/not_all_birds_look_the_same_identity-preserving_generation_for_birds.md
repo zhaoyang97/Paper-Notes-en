@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Not All Birds Look The Same: Identity-Preserving Generation For Birds
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Addressing the lack of "multi-view images of the same individual" for fine-grained birds, this paper constructs a benchmark (NABLA) of 4,759 "look-alike" bird pairs using expert annotations from NABirds. It proposes using "same species / age / sex / breeding stage" as identity proxies to train controllable diffusion mo
+  [CVPR 2026][Image Generation][Identity-Preserving Generation] Addressing the lack of "multi-view images of the same individual" for fine-grained birds, this paper constructs a benchmark (NABLA) of 4,759 "look-alike" bird pairs using expert annotations from NABirds. It proposes using "same species / age / sex / breeding stage" as identity proxies to train controllable diffusion models like OminiControl and Insert Anything, achieving an approximately 41% reduction in MSE compar…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Identity-Preserving Generation"
+  - "Fine-grained Categories"
+  - "Birds"
+  - "Proxy Identity"
+  - "Controllable Diffusion"
 date: 2026-05-08
-content_hash: 723f97fda703953e
+content_hash: 44e8d118dc0da995
 ---
+
 # Not All Birds Look The Same: Identity-Preserving Generation For Birds
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ Fine-tuning Om-S reduced MSE on NABLA from 77.1 to 54.7 (~29%), with the best co
 
 ## Related Papers
 
+- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
+- [\[CVPR 2026\] Semantic Alignment for Pose-Invariant Identity Preserving Diffusion](semantic_alignment_for_pose-invariant_identity_preserving_diffusion.md)
+- [\[CVPR 2026\] CaricHarmony: Contrastive Diffusion Paths for Identity-Preserving Caricature Synthesis](caricharmony_contrastive_diffusion_paths_for_identity-preserving_caricature_synt.md)
 - [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
 - [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](flowfixer_towards_detail-preserving_subject-driven_generation.md)
-- [\[CVPR 2025\] Not All Parameters Matter: Masking Diffusion Models for Enhancing Generation Ability](../../CVPR2025/image_generation/not_all_parameters_matter_masking_diffusion_models_for_enhancing_generation_abil.md)
-- [\[CVPR 2026\] Say Cheese! Detail-Preserving Portrait Collection Generation via Natural Language Edits](say_cheese_detail-preserving_portrait_collection_generation_via_natural_language.md)
-- [\[CVPR 2026\] MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment](multicrafter_high-fidelity_multi-subject_generation_via_disentangled_attention_a.md)
 
 </div>
 

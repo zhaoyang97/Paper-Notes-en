@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This work presents the first systematic study of aggregation strategies from pixel-level uncertainty to image-level scores in segmentation tasks. It proposes SMR aggregators that integrate spatial structural information (Moran's I, Edge Density, Shannon Entropy) and a GMM-based meta-aggregator. Evaluation across 10 dat
+  [CVPR 2026][Medical Imaging][Uncertainty Quantification] This work presents the first systematic study of aggregation strategies from pixel-level uncertainty to image-level scores in segmentation tasks. It proposes SMR aggregators that integrate spatial structural information (Moran's I, Edge Density, Shannon Entropy) and a GMM-based meta-aggregator. Evaluation across 10 datasets demonstrates that global average (AVG) is a suboptimal choice, while GMM-All meta-aggregation per…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Uncertainty Quantification"
+  - "Spatial Aggregation Strategies"
+  - "OoD Detection"
+  - "Failure Detection"
+  - "Meta-Aggregation"
 date: 2026-05-08
-content_hash: 0d2c7baa4ee70191
+content_hash: a1761226bf3953d1
 ---
+
 # Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance
 
 **Conference**: CVPR 2026  
@@ -119,16 +125,16 @@ Statistical significance (Wilcoxon p < 0.05): BCA, ICA, and GMM-All form the sta
 - Value: ⭐⭐⭐⭐⭐ Provides a practical guide for aggregation selection in safety-critical applications with open-source tools.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] MedLoc-R1: Performance-Aware Curriculum Reward Scheduling for GRPO-Based Medical Visual Grounding](medloc-r1_performance-aware_curriculum_reward_scheduling_for_grpo-based_medical_.md)
 - [\[CVPR 2026\] Delving Aleatoric Uncertainty in Medical Image Segmentation via Vision Foundation Models](delving_aleatoric_uncertainty_in_medical_image_segmentation_via_vision_foundatio.md)
 - [\[CVPR 2026\] SAR2Net: Learning Spatially Anchored Representations for Retrieval-Guided Cross-Stain Alignment](sar2net_learning_spatially_anchored_representations_for_retrieval-guided_cross-s.md)
-- [\[CVPR 2026\] Few-Shot Synthetic Data Generation with Diffusion Models for Downstream Vision Tasks](few-shot_synthetic_data_generation_with_diffusion_models_for_downstream_vision_t.md)
 - [\[CVPR 2025\] Uncertainty-Aware Concept and Motion Segmentation for Semi-Supervised Angiography Videos](../../CVPR2025/medical_imaging/uncertainty-aware_concept_and_motion_segmentation_for_semi-supervised_angiograph.md)
+- [\[CVPR 2026\] LATA: Laplacian-Assisted Transductive Adaptation for Conformal Uncertainty in Medical VLMs](lata_laplacian-assisted_transductive_adaptation_for_conformal_uncertainty_in_med.md)
 
 </div>
 

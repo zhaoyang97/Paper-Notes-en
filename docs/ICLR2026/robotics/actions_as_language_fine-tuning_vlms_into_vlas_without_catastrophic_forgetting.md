@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] By verbalizing low-level robot end-effector actions into natural language text and feeding them into a VLM, the fine-tuning data is aligned with the pre-training distribution. This allows converting Gemma-3-12B into a robotic policy (VLA) using only LoRA. In 800+ real-robot experiments, the model retains 85%+ of its VQ
+  [ICLR 2026][Robotics][VLA] By verbalizing low-level robot end-effector actions into natural language text and feeding them into a VLM, the fine-tuning data is aligned with the pre-training distribution. This allows converting Gemma-3-12B into a robotic policy (VLA) using only LoRA. In 800+ real-robot experiments, the model retains 85%+ of its VQA capability and achieves zero-shot generalization for multilingual instructions and open-world semantics.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - LoRA
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Catastrophic Forgetting"
+  - "LoRA"
+  - "Action Verbalization"
+  - "Hierarchical Reasoning"
 date: 2026-05-08
-content_hash: ffd93877f500c9e3
+content_hash: 6b6c04e0141167f1
 ---
+
 # Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
 
 **Conference**: ICLR 2026  

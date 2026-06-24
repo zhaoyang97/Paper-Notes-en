@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics
 description: >-
-  [NeurIPS 2025][Medical Imaging][posterior sampling] This paper proposes an algorithm combining diffusion models with annealed Langevin dynamics that requires only $L^4$-accurate score estimates to achieve polynomial-time…
+  [NeurIPS 2025][Medical Imaging][posterior sampling] This paper proposes an algorithm combining diffusion models with annealed Langevin dynamics that requires only $L^4$-accurate score estimates to achieve polynomial-time posterior sampling under (locally) log-concave distributions, providing the first theoretical guarantees for warm-started inverse problem solving.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "inverse problems"
   - "compressed sensing"
 date: 2026-05-08
-content_hash: e289165faf416f33
+content_hash: 9f6ccb0c03a4ebf8
 ---
 
 # Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics
@@ -156,7 +156,7 @@ Validation on three inverse problems (inpainting, 4× super-resolution, Gaussian
 - [\[NeurIPS 2025\] Sequential Attention-based Sampling for Histopathological Analysis](sequential_attention-based_sampling_for_histopathological_analysis.md)
 - [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](../../ICLR2026/medical_imaging/dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
 - [\[NeurIPS 2025\] GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds](geodynamics_a_geometric_state-space_neural_network_for_understanding_brain_dynam.md)
-- [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
+- [\[CVPR 2025\] SeaLion: Semantic Part-Aware Latent Point Diffusion Models for 3D Generation](../../CVPR2025/medical_imaging/sealion_semantic_part-aware_latent_point_diffusion_models_for_3d_generation.md)
 
 </div>
 

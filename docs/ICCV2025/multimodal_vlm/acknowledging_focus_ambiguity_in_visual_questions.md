@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Acknowledging Focus Ambiguity in Visual Questions
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Question Answering] This work is the first to formally define and systematically investigate **focus ambiguity** in visual question answering — the phenomenon arising when a linguistic…
+  [ICCV 2025][Multimodal VLM][Visual Question Answering] This work is the first to formally define and systematically investigate **focus ambiguity** in visual question answering — the phenomenon arising when a linguistic expression in a question may plausibly refer to multiple regions in an image, a type of ambiguity entirely overlooked by existing VQA systems. The authors construct the VQ-FocusAmbiguity dataset (5,500 samples with 12,880 instance segmentation annotations) and…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Visual Grounding"
   - "Multimodal Benchmark"
 date: 2026-05-08
-content_hash: ea42210c475b3082
+content_hash: 7c00ae78e47590eb
 ---
 
 # Acknowledging Focus Ambiguity in Visual Questions
@@ -164,11 +164,11 @@ Improvement from CoT prompting strategies:
 
 ## Related Papers
 
-- [\[ICCV 2025\] Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining](iris_breaking_gui_complexity_with_adaptive_focus_and_self-refining.md)
-- [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](../../NeurIPS2025/multimodal_vlm/focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
-- [\[ICCV 2025\] Mastering Collaborative Multi-modal Data Selection: A Focus on Informativeness, Uniqueness, and Representativeness](mastering_collaborative_multi-modal_data_selection_a_focus_on_informativeness_un.md)
-- [\[ICLR 2026\] Can Vision-Language Models Answer Face to Face Questions in the Real-World?](../../ICLR2026/multimodal_vlm/can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)
+- [\[ICCV 2025\] VQ-FocusAmbiguity: Acknowledging Focus Ambiguity in Visual Questions](vq_focusambiguity_acknowledging_focus_ambiguity_visual_questions.md)
+- [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
+- [\[ACL 2025\] Teaching Vision-Language Models to Ask: Resolving Ambiguity in Visual Questions](../../ACL2025/multimodal_vlm/teaching_vlm_ask_ambiguity.md)
 - [\[ICCV 2025\] DOGR: Towards Versatile Visual Document Grounding and Referring](dogr_towards_versatile_visual_document_grounding_and_referring.md)
+- [\[ICCV 2025\] Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining](iris_breaking_gui_complexity_with_adaptive_focus_and_self-refining.md)
 
 </div>
 

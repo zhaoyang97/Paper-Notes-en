@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Emergence of Sparse Attention: Impact of Data Distribution and Benefits of Repetition
 description: >-
-  [NeurIPS 2025][LLM Efficiency][sparse attention] This paper investigates the emergence mechanism of sparse attention through theoretical analysis and controlled experiments…
+  [NeurIPS 2025][LLM Efficiency][sparse attention] This paper investigates the emergence mechanism of sparse attention through theoretical analysis and controlled experiments, revealing that the emergence time follows a power-law relationship with respect to sequence length and dimensionality, $T_\epsilon \propto \sqrt{d} \cdot T$. It further demonstrates that both in-context and cross-sample data repetition strategies accelerate emergence, offering a unified sparse attention p…
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "repetition"
   - "learning dynamics"
 date: 2026-05-08
-content_hash: 0cce600b07bf3312
+content_hash: a78c27e3d119941d
 ---
 
 # The Emergence of Sparse Attention: Impact of Data Distribution and Benefits of Repetition
@@ -119,11 +119,11 @@ Theoretical predictions are validated on the associative recall task, a simplifi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](../../ICLR2026/llm_efficiency/tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
 - [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
+- [\[ACL 2025\] Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](../../ACL2025/llm_efficiency/native_sparse_attention.md)
 - [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
-- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](../../ICML2026/llm_efficiency/stochastic_sparse_attention_for_memory-bound_inference.md)
-- [\[NeurIPS 2025\] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers](from_shortcut_to_induction_head_how_data_diversity_shapes_algorithm_selection_in.md)
-- [\[ACL 2026\] Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention](../../ACL2026/llm_efficiency/threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l.md)
+- [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](../../ICLR2026/llm_efficiency/sparse_attention_adaptation_for_long_reasoning.md)
 
 </div>
 

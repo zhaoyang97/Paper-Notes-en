@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Missingness Bias Calibration in Feature Attribution Explanations
 description: >-
-  [ICLR 2026][Interpretability][missingness bias] This paper proposes **MCal**: by fine-tuning a single affine transformation head (matrix scaling) only on the output logits of a frozen model, it cheaply and model-agnostically corrects "missingness bias" in feature attributions. The effectiveness rivals or even exceeds heavyweight solutions such as retraining or archi
+  [ICLR 2026][Interpretability][missingness bias] This paper proposes **MCal**: by fine-tuning a single affine transformation head (matrix scaling) only on the output logits of a frozen model, it cheaply and model-agnostically corrects "missingness bias" in feature attributions. The effectiveness rivals or even exceeds heavyweight solutions such as retraining or architectural modifications.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - missingness bias
-  - feature attribution
-  - post-hoc calibration
-  - LIME/SHAP
-  - model-agnostic
+  - "ICLR 2026"
+  - "Interpretability"
+  - "missingness bias"
+  - "feature attribution"
+  - "post-hoc calibration"
+  - "LIME/SHAP"
+  - "model-agnostic"
 date: 2026-05-08
-content_hash: 52adae600cfeb49c
+content_hash: b0c86913534f58d6
 ---
+
 # Missingness Bias Calibration in Feature Attribution Explanations
 
 **Conference**: ICLR 2026  
@@ -119,11 +120,11 @@ Ours achieved the lowest bias in 7 out of 8 datasets and consistently outperform
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration](../../NeurIPS2025/interpretability/improving_perturbation-based_explanations_by_understanding_the_role_of_uncertain.md)
-- [\[ACL 2025\] Bias Attribution in Filipino Language Models: Extending a Bias Interpretability Metric for Application on Agglutinative Languages](../../ACL2025/interpretability/bias_attribution_in_filipino_language_models_extending_a_bias_interpretability_m.md)
 - [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
+- [\[NeurIPS 2025\] Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration](../../NeurIPS2025/interpretability/improving_perturbation-based_explanations_by_understanding_the_role_of_uncertain.md)
+- [\[ICLR 2026\] EnsembleSHAP: Faithful and Certifiably Robust Attribution for Random Subspace Method](ensembleshap_faithful_and_certifiably_robust_attribution_for_random_subspace_met.md)
+- [\[ACL 2025\] Bias Attribution in Filipino Language Models: Extending a Bias Interpretability Metric for Application on Agglutinative Languages](../../ACL2025/interpretability/bias_attribution_in_filipino_language_models_extending_a_bias_interpretability_m.md)
 - [\[ICLR 2026\] Discovering Alternative Solutions Beyond the Simplicity Bias in Recurrent Neural Networks](discovering_alternative_solutions_beyond_the_simplicity_bias_in_recurrent_neural.md)
-- [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](influence_dynamics_and_stagewise_data_attribution.md)
 
 </div>
 

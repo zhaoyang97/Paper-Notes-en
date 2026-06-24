@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Controllable and Expressive One-Shot Video Head Swapping
 description: >-
-  [ICCV 2025][Human Understanding][head swapping] This paper proposes a diffusion-based multi-condition controllable video head swapping framework (SwapAnyHead) that achieves high-fidelity identity preservation…
+  [ICCV 2025][Human Understanding][head swapping] This paper proposes a diffusion-based multi-condition controllable video head swapping framework (SwapAnyHead) that achieves high-fidelity identity preservation, seamless background blending, and accurate cross-identity expression transfer and editing via a shape-agnostic mask strategy, a hair enhancement strategy, and an expression-aware 3DMM-driven landmark retargeting module.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "identity preservation"
   - "video generation"
 date: 2026-05-08
-content_hash: d4a2ac75d4d76022
+content_hash: 02ace701e1c8fa63
 ---
 
 # Controllable and Expressive One-Shot Video Head Swapping
@@ -142,10 +142,10 @@ Evaluation uses 200 VFHQ videos and 200 portrait images (different identities), 
 ## Related Papers
 
 - [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
+- [\[CVPR 2026\] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head](../../CVPR2026/human_understanding/syncdreamer_controllable_and_expressive_avatar_generation_beyond_the_talking_hea.md)
 - [\[ICCV 2025\] DreamActor-M1: Holistic, Expressive and Robust Human Image Animation with Hybrid Guidance](dreamactor-m1_holistic_expressive_and_robust_human_image_animation_with_hybrid_g.md)
 - [\[ICCV 2025\] ImHead: A Large-scale Implicit Morphable Model for Localized Head Modeling](imhead_a_large-scale_implicit_morphable_model_for_localized_head_modeling.md)
-- [\[ICCV 2025\] GGTalker: Talking Head Synthesis with Generalizable Gaussian Priors and Identity-Specific Adaptation](ggtalker_talking_head_systhesis_with_generalizable_gaussian_priors_and_identity-.md)
-- [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
+- [\[ICCV 2025\] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras](udc-vit_a_real-world_video_dataset_for_under-display_cameras.md)
 
 </div>
 

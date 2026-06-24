@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CHiQPM: Calibrated Hierarchical Interpretable Image Classification
 description: >-
-  [NeurIPS 2025][Optimization][Interpretable Machine Learning] CHiQPM proposes a calibrated hierarchical interpretable image classification method that selects and assigns features to classes via quadratic programming…
+  [NeurIPS 2025][Optimization][Interpretable Machine Learning] CHiQPM proposes a calibrated hierarchical interpretable image classification method that selects and assigns features to classes via quadratic programming, constructs hierarchical explanation paths, and incorporates interpretable Conformal Prediction set prediction, retaining 99% of black-box model accuracy while providing both global and local interpretability.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Image Classification"
   - "Human-AI Complementarity"
 date: 2026-05-08
-content_hash: 5176fcbffa3bb42b
+content_hash: 7ff78a0a96989edd
 ---
 
 # CHiQPM: Calibrated Hierarchical Interpretable Image Classification
@@ -150,10 +150,10 @@ CP set prediction efficiency: On CUB-2011 (5/50 features per class), CHiQPM's bu
 ## Related Papers
 
 - [\[ICCV 2025\] Learning Interpretable Queries for Explainable Image Classification with Information Pursuit](../../ICCV2025/optimization/learning_interpretable_queries_for_explainable_image_classification_with_informa.md)
-- [\[NeurIPS 2025\] Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery](deep_taxonomic_networks_for_unsupervised_hierarchical_prototype_discovery.md)
-- [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
 - [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
+- [\[NeurIPS 2025\] Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery](deep_taxonomic_networks_for_unsupervised_hierarchical_prototype_discovery.md)
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
+- [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
 
 </div>
 

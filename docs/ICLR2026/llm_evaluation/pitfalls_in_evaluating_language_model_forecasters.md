@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pitfalls in Evaluating Language Model Forecasters
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This is a position/analysis paper: the authors systematically categorize two major classes of pitfalls unique to the emerging field of "LLM-based future event forecasting"—various forms of temporal leakage in backtesting that render results untrustworthy, and the difficulty of extrapolating benchmark scores to real-wor
+  [ICLR 2026][LLM Evaluation][LLM forecasting] This is a position/analysis paper: the authors systematically categorize two major classes of pitfalls unique to the emerging field of "LLM-based future event forecasting"—various forms of temporal leakage in backtesting that render results untrustworthy, and the difficulty of extrapolating benchmark scores to real-world forecasting capabilities. Using numerous specific examples from existing literature…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "LLM forecasting"
+  - "backtesting"
+  - "temporal leakage"
+  - "benchmark gaming"
+  - "evaluation reliability"
 date: 2026-05-08
-content_hash: 1b377c6744997d2b
+content_hash: 3b8895345b23289d
 ---
+
 # Pitfalls in Evaluating Language Model Forecasters
 
 **Conference**: ICLR 2026  
@@ -120,11 +126,11 @@ As this is an analysis/position paper, there is no standard experimental table. 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Addressing Pitfalls in the Evaluation of Uncertainty Estimation Methods for Natural Language Generation](addressing_pitfalls_in_the_evaluation_of_uncertainty_estimation_methods_for_natu.md)
+- [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](how_reliable_is_language_model_micro-benchmarking.md)
 - [\[ICLR 2026\] Train-before-Test Harmonizes Language Model Rankings](train-before-test_harmonizes_language_model_rankings.md)
 - [\[ICLR 2026\] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](dont_passk_a_bayesian_framework_for_large_language_model_evaluation.md)
 - [\[ICLR 2026\] GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks](gdpval_evaluating_ai_model_performance_on_real-world_economically_valuable_tasks.md)
-- [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](evaluating_language_models_evaluations_of_games.md)
-- [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](how_reliable_is_language_model_micro-benchmarking.md)
 
 </div>
 

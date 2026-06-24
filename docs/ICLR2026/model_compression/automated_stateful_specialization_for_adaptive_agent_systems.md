@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Automated Stateful Specialization for Adaptive Agent Systems
 description: >-
-  [ICLR 2026][Model Compression][Multi-Agent] ASPEC proposes a fully automated lifecycle framework for "stateful expert agent teams": it first uses evolutionary search offline to discover a set of domain expert operators, then cultivates persistent memory through experience-based reflection, and finally utilizes a lightweight online "retain-then-escalate" meta-con
+  [ICLR 2026][Model Compression][Multi-Agent] ASPEC proposes a fully automated lifecycle framework for "stateful expert agent teams": it first uses evolutionary search offline to discover a set of domain expert operators, then cultivates persistent memory through experience-based reflection, and finally utilizes a lightweight online "retain-then-escalate" meta-controller to decide whether to reuse the existing team or re-search the architecture for each query. It improved Gemin…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Multi-Agent"
+  - "Automated Design"
+  - "Expert Agents"
+  - "Evolutionary Search"
+  - "Meta-Controller"
 date: 2026-05-08
-content_hash: 40caf08cc296595c
+content_hash: ca22c5928cb2cf95
 ---
+
 # Automated Stateful Specialization for Adaptive Agent Systems
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] Ours proposes HOG-Layout, a hierarchical 3D indoor scene generation, optimization, and editing framework based on VLMs and LLMs. By enhancing semantic consistency with RAG and ensuring physical plausibility through force-guided hierarchical optimization, it outperforms LayoutVLM on SceneEval with 4.5x faster speed.
+  [CVPR 2026][Multimodal VLM][3D scene generation] Ours proposes HOG-Layout, a hierarchical 3D indoor scene generation, optimization, and editing framework based on VLMs and LLMs. By enhancing semantic consistency with RAG and ensuring physical plausibility through force-guided hierarchical optimization, it outperforms LayoutVLM on SceneEval with 4.5x faster speed.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - RAG
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "3D scene generation"
+  - "scene editing"
+  - "vision-language models"
+  - "hierarchical optimization"
+  - "RAG"
 date: 2026-05-08
-content_hash: 0c96b33b938fe667
+content_hash: 59563d53cc61d335
 ---
+
 # HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -138,9 +142,9 @@ No training is required. GPT-4o is used as the backbone LLM/VLM. The capabilitie
 
 - [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
 - [\[CVPR 2025\] LayoutVLM: Differentiable Optimization of 3D Layout via Vision-Language Models](../../CVPR2025/multimodal_vlm/layoutvlm_differentiable_optimization_of_3d_layout_via_vision-language_models.md)
-- [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
 - [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
-- [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
+- [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
+- [\[CVPR 2025\] Global-Local Tree Search in VLMs for 3D Indoor Scene Generation](../../CVPR2025/multimodal_vlm/global-local_tree_search_in_vlms_for_3d_indoor_scene_generation.md)
 
 </div>
 

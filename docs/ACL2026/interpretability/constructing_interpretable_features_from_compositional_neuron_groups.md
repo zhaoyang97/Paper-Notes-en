@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Constructing Interpretable Features from Compositional Neuron Groups
 description: >-
-  [ACL 2026][Interpretability][SNMF] The authors utilize Semi-Nonnegative Matrix Factorization (SNMF) to directly decompose MLP activations into "sparse neuron groups × non-negative coefficients," yielding interpretable features that map back to activation contexts and combine across layers. Evaluations of concept steering on Llama-3.1-8B / Gemma-2-2B / G
+  [ACL 2026][Interpretability][SNMF] The authors utilize Semi-Nonnegative Matrix Factorization (SNMF) to directly decompose MLP activations into "sparse neuron groups × non-negative coefficients," yielding interpretable features that map back to activation contexts and combine across layers. Evaluations of concept steering on Llama-3.1-8B / Gemma-2-2B / GPT-2 comprehensively outperform the latest SAEs (Llamascope / Gemmascope) and the strongly supervised baseline, DiffMeans.
 tags:
-  - ACL 2026
-  - Interpretability
-  - SNMF
+  - "ACL 2026"
+  - "Interpretability"
+  - "SNMF"
+  - "MLP Decomposition"
+  - "Concept Steering"
+  - "Sparse Autoencoders"
+  - "Concept Hierarchy"
 date: 2026-05-08
-content_hash: 389bf1b4efc52fc9
+content_hash: 665ae3f2600ce92b
 ---
+
 # Constructing Interpretable Features from Compositional Neuron Groups
 
 **Conference**: ACL 2026  
@@ -143,10 +148,10 @@ Hierarchy Experiment (GPT-2 Large causal intervention, selection from Table 2):
 ## Related Papers
 
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
+- [\[ICLR 2026\] SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training](../../ICLR2026/interpretability/sae_as_a_crystal_ball_interpretable_features_predict_cross-domain_transferabilit.md)
 - [\[ACL 2026\] DPN-LE: Dual Personality Neuron Localization and Editing for Large Language Models](dpn-le_dual_personality_neuron_localization_and_editing_for_large_language_model.md)
 - [\[AAAI 2026\] CrossCheck-Bench: Diagnosing Compositional Failures in Multimodal Conflict Resolution](../../AAAI2026/interpretability/crosscheck-bench_diagnosing_compositional_failures_in_multim.md)
-- [\[CVPR 2026\] Language Models Can Explain Visual Features via Steering](../../CVPR2026/interpretability/language_models_can_explain_visual_features_via_steering.md)
-- [\[ACL 2026\] Model Internal Sleuthing: Finding Lexical Identity and Inflectional Features in Modern Language Models](model_internal_sleuthing_finding_lexical_identity_and_inflectional_features_in_m.md)
+- [\[ICLR 2026\] Neuron-Level Analysis of Cultural Understanding in Large Language Models](../../ICLR2026/interpretability/neuron-level_analysis_of_cultural_understanding_in_large_language_models.md)
 
 </div>
 

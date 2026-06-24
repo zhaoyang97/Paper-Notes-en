@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Slimmable NAM: Neural Amp Models with Adjustable Runtime Computational Cost
 description: >-
-  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][Neural Amp Modeling] This paper applies the Slimmable Networks paradigm to the Neural Amp Modeler (NAM) by randomly pruning WaveNet layer widths during training…
+  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][Neural Amp Modeling] This paper applies the Slimmable Networks paradigm to the Neural Amp Modeler (NAM) by randomly pruning WaveNet layer widths during training, enabling dynamic adjustment of network size at inference time without additional training cost, allowing musicians to balance audio fidelity and computational expense in real time.
 tags:
   - "NeurIPS 2025 (AI for Music Workshop)"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Audio Effects"
   - "Real-time Inference"
 date: 2026-05-08
-content_hash: 0af4c163d922cefd
+content_hash: 48102576fc5e4806
 ---
 
 # Slimmable NAM: Neural Amp Models with Adjustable Runtime Computational Cost
@@ -133,11 +133,11 @@ The slimmable model incurs only a marginal accuracy penalty at full width (~14% 
 
 ## Related Papers
 
+- [\[ACL 2025\] Analyzing and Mitigating Inconsistency in Discrete Audio Tokens for Neural Codec Language Models](../../ACL2025/audio_speech/audio_token_consistency.md)
 - [\[ACL 2026\] Computational Narrative Understanding for Expressive Text-to-Speech](../../ACL2026/audio_speech/computational_narrative_understanding_for_expressive_text-to-speech.md)
+- [\[CVPR 2025\] Towards Lossless Implicit Neural Representation via Bit Plane Decomposition](../../CVPR2025/audio_speech/towards_lossless_implicit_neural_representation_via_bit_plane_decomposition.md)
 - [\[ICLR 2026\] Toward Complex-Valued Neural Networks for Waveform Generation](../../ICLR2026/audio_speech/toward_complex-valued_neural_networks_for_waveform_generation.md)
 - [\[ICLR 2026\] FlexiCodec: A Dynamic Neural Audio Codec for Low Frame Rates](../../ICLR2026/audio_speech/flexicodec_a_dynamic_neural_audio_codec_for_low_frame_rates.md)
-- [\[NeurIPS 2025\] Data-Juicer 2.0: Cloud-Scale Adaptive Data Processing for and with Foundation Models](data-juicer_20_cloud-scale_adaptive_data_processing_for_and_with_foundation_mode.md)
-- [\[NeurIPS 2025\] AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound](audsemthinker_enhancing_audio-language_models_through_reasoning_over_semantics_o.md)
 
 </div>
 

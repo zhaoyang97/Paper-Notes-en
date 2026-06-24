@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Aligning Language Models with Real-time Knowledge Editing
 description: >-
-  [ACL 2026][Knowledge Editing][Paper Note] Introduces CRAFT (a continuously updated Chinese financial knowledge editing dataset) and KEDAS (a knowledge editing alignment paradigm based on diverse edit augmentation and adaptive inference) to resolve the difficulty of balancing success rate, locality, and portability in real-time knowledge editing scenarios.
+  [ACL 2026][Knowledge Editing][Real-time Knowledge Editing] Introduces CRAFT (a continuously updated Chinese financial knowledge editing dataset) and KEDAS (a knowledge editing alignment paradigm based on diverse edit augmentation and adaptive inference) to resolve the difficulty of balancing success rate, locality, and portability in real-time knowledge editing scenarios.
 tags:
-  - ACL 2026
-  - Knowledge Editing
+  - "ACL 2026"
+  - "Knowledge Editing"
+  - "Real-time Knowledge Editing"
+  - "Knowledge Alignment"
+  - "Dataset Contamination"
+  - "Diverse Augmentation"
+  - "Adaptive Inference"
 date: 2026-05-08
-content_hash: 7924ed23093c277a
+content_hash: 1d231902ce0b69fc
 ---
+
 # Aligning Language Models with Real-time Knowledge Editing
 
 **Conference**: ACL 2026  
@@ -134,11 +140,11 @@ The alignment phase uses LoRA fine-tuning. The training data simultaneously cove
 
 ## Related Papers
 
-- [\[ACL 2025\] Context-Robust Knowledge Editing for Language Models](../../ACL2025/knowledge_editing/context-robust_knowledge_editing_for_language_models.md)
+- [\[ACL 2026\] Can Factual Opinions Be Edited (Manipulated) in Large Language Models?](can_factual_opinions_be_edited_manipulated_in_large_language_models.md)
 - [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
+- [\[ACL 2025\] Context-Robust Knowledge Editing for Language Models](../../ACL2025/knowledge_editing/context-robust_knowledge_editing_for_language_models.md)
 - [\[AAAI 2026\] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)](../../AAAI2026/knowledge_editing/multiplicative_orthogonal_sequential_editing_for_language_models.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](../../ICML2026/knowledge_editing/revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
 
 </div>
 

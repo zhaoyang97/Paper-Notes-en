@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper proposes ACTG, a hierarchical framework that decomposes private text generation into two sub-tasks: feature learning and conditional text generation. It further introduces Anchored RL, which enhances the instruction-following capabilities of the conditional generator through a hybrid reinforcement learning o
+  [ICML 2026][AI Safety][Private Synthetic Data] This paper proposes ACTG, a hierarchical framework that decomposes private text generation into two sub-tasks: feature learning and conditional text generation. It further introduces Anchored RL, which enhances the instruction-following capabilities of the conditional generator through a hybrid reinforcement learning objective and SFT anchors based on best-of-N sampling, achieving a 20% improvement in MAUVE on biomedical data com…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Private Synthetic Data"
+  - "Conditional Text Generation"
+  - "Attribute Control"
+  - "Instruction Following"
+  - "Reward Hacking"
 date: 2026-05-08
-content_hash: 0cc8beea34325951
+content_hash: b2a1ca01c6e3243a
 ---
+
 # ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control
 
 **Conference**: ICML 2026  
@@ -148,11 +154,11 @@ The total privacy budget is aggregated over two stages $\varepsilon=\varepsilon_
 
 ## Related Papers
 
+- [\[ICLR 2026\] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text](../../ICLR2026/ai_safety/pe-sgd_differentially_private_deep_learning_via_evolution_of_gradient_subspace_f.md)
 - [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
 - [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 - [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](prism_gauge-invariant_tangent-space_differentially_private_lora.md)
 - [\[ICML 2026\] Optimizing Token Choice for Code Watermarking: An RL Approach](optimizing_token_choice_for_code_watermarking_an_rl_approach.md)
-- [\[CVPR 2026\] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](../../CVPR2026/ai_safety/one-to-more_high-fidelity_training-free_anomaly_generation_with_attention_control.md)
 
 </div>
 

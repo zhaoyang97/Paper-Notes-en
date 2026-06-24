@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] MedSIGHT incorporates a "region perceiver" and a set of "modality-grouped regional codebooks" into a medical LVLM. This allows a single generative model to perform diagnostic reasoning while directly generating discrete region codes that are decoded into segmentation masks. Using only 72K instruction samples, it achiev
+  [ICML2026][Multimodal VLM][Medical Large Vision-Language Models] MedSIGHT incorporates a "region perceiver" and a set of "modality-grouped regional codebooks" into a medical LVLM. This allows a single generative model to perform diagnostic reasoning while directly generating discrete region codes that are decoded into segmentation masks. Using only 72K instruction samples, it achieves SOTA performance simultaneously on both understanding and segmentation tasks.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Medical Large Vision-Language Models"
+  - "pixel-level grounding"
+  - "regional codebook"
+  - "unified segmentation and understanding"
+  - "progressive training"
 date: 2026-05-08
-content_hash: 903ca7b3ff29e6c3
+content_hash: 9ba04f37cfdd3ad6
 ---
+
 # MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models
 
 **Conference**: ICML2026  
@@ -137,10 +143,10 @@ Text-prompted segmentation (Table 4, MeCoVQA-G cross-modality average Dice): Med
 ## Related Papers
 
 - [\[ICML 2026\] TGV-KV: Text-Grounded KV Eviction for Vision-Language Models](tgv-kv_text-grounded_kv_eviction_for_vision-language_models.md)
+- [\[ICML 2026\] Contextualized Visual Personalization in Vision-Language Models](contextualized_visual_personalization_in_vision-language_models.md)
 - [\[ACL 2026\] MedLayBench-V: A Large-Scale Benchmark for Expert-Lay Semantic Alignment in Medical Vision Language Models](../../ACL2026/multimodal_vlm/medlaybench-v_a_large-scale_benchmark_for_expert-lay_semantic_alignment_in_medic.md)
 - [\[ICML 2026\] Layer-Specific Fine-Tuning for Improved Negation Handling in Medical Vision-Language Models](layer-specific_fine-tuning_for_improved_negation_handling_in_medical_vision-lang.md)
 - [\[ACL 2025\] Improving Medical Large Vision-Language Models with Abnormal-Aware Feedback](../../ACL2025/multimodal_vlm/improving_medical_large_vision-language_models_with_abnormal-aware_feedback.md)
-- [\[ICML 2026\] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain](focusing_where_vision_matters_selective_training_for_large_vision_language_model.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation
 description: >-
-  [ACL 2026][Recommender Systems][Semantic ID] This paper proposes NewsRec-Chat, which inverts conversational news recommendation from a "retrieve-then-generate" paradigm to "generate SID then fuzzy match." By utilizing two-stage SID alignment and GPT-4 CoT distillation, a 7B model directly generates hierarchical Semantic ID prefixes and performs fuzzy matching aga
+  [ACL 2026 Oral][Recommender Systems][Semantic ID] This paper proposes NewsRec-Chat, which inverts conversational news recommendation from a "retrieve-then-generate" paradigm to "generate SID then fuzzy match." By utilizing two-stage SID alignment and GPT-4 CoT distillation, a 7B model directly generates hierarchical Semantic ID prefixes and performs fuzzy matching against the daily news pool. It achieves an L1 of 12.4% (4× random) in a 152K open generation space on the Tencen…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Semantic ID
-  - RQ-VAE
+  - "ACL 2026 Oral"
+  - "Recommender Systems"
+  - "Semantic ID"
+  - "Conversational Recommendation"
+  - "Generative Recommendation"
+  - "Cold Start"
+  - "RQ-VAE"
 date: 2026-05-08
-content_hash: 30dc60d36637f284
+content_hash: 389317d58078a036
 ---
+
 # Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation
 
 **Conference**: ACL 2026 Oral  
@@ -154,10 +158,10 @@ Cold-start L1: SASRec 0% / TIGER 0% / OneRec-7B 16.1% / **Ours 18.0%**. Ours is 
 ## Related Papers
 
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
-- [\[ACL 2026\] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders](bridging_language_and_items_for_retrieval_and_recommendation_benchmarking_llms_a.md)
-- [\[ACL 2026\] Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation](where_and_what_reasoning_dynamic_and_implicit_preferences_in_situated_conversati.md)
-- [\[ACL 2026\] HSUGA: LLM-Enhanced Recommendation with Hierarchical Semantic Understanding and Group-Aware Alignment](hsuga_llm-enhanced_recommendation_with_hierarchical_semantic_understanding_and_g.md)
 - [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](../../AAAI2026/recommender/from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
+- [\[ACL 2026\] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders](bridging_language_and_items_for_retrieval_and_recommendation_benchmarking_llms_a.md)
+- [\[ICLR 2026\] Catalog-Native LLM: Speaking Item-ID dialect with Less Entanglement for Recommendation](../../ICLR2026/recommender/catalog-native_llm_speaking_item-id_dialect_with_less_entanglement_for_recommend.md)
+- [\[ACL 2026\] HSUGA: LLM-Enhanced Recommendation with Hierarchical Semantic Understanding and Group-Aware Alignment](hsuga_llm-enhanced_recommendation_with_hierarchical_semantic_understanding_and_g.md)
 
 </div>
 

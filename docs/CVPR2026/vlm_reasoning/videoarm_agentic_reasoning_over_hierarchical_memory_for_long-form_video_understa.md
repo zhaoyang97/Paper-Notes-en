@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] VideoARM proposes an agentic reasoning paradigm based on Hierarchical Multimodal Memory (HM3). Through an adaptive cycle of "observe-think-act-memorize" and a coarse-to-fine tool-use strategy, it surpasses SOTA on long-video understanding benchmarks while reducing token consumption to 1/34 of DVD.
+  [CVPR 2026][VLM Reasoning][Long-form Video Understanding] VideoARM proposes an agentic reasoning paradigm based on Hierarchical Multimodal Memory (HM3). Through an adaptive cycle of "observe-think-act-memorize" and a coarse-to-fine tool-use strategy, it surpasses SOTA on long-video understanding benchmarks while reducing token consumption to 1/34 of DVD.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Long-form Video Understanding"
+  - "Agentic Reasoning"
+  - "Hierarchical Memory"
+  - "Coarse-to-Fine Reasoning"
+  - "Token Efficiency"
 date: 2026-05-08
-content_hash: ddd894650773858a
+content_hash: 12f3842feefcf6e5
 ---
+
 # VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding
 
 **Conference**: CVPR 2026  
@@ -160,10 +166,10 @@ Unlike fixed pipelines, VideoARM's Controller (OpenAI o3) follows a lean observe
 ## Related Papers
 
 - [\[CVPR 2026\] OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning](oasis_on-demand_hierarchical_event_memory_for_streaming_video_reasoning.md)
-- [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
-- [\[CVPR 2026\] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding](divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u.md)
+- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
-- [\[CVPR 2026\] LensWalk: Agentic Video Understanding by Planning How You See in Videos](lenswalk_agentic_video_understanding_by_planning_how_you_see_in_videos.md)
+- [\[ICLR 2026\] TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning](../../ICLR2026/vlm_reasoning/timesearch-r_adaptive_temporal_search_for_long-form_video_understanding_via_self.md)
 
 </div>
 

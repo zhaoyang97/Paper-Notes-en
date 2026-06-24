@@ -2,128 +2,128 @@
 title: >-
   [Paper Note] TG-Field: Geometry-Aware Radiative Gaussian Fields for Tomographic Reconstruction
 description: >-
-  [AAAI 2026][3D Vision][CT Reconstruction] This paper proposes TG-Field, a geometry-aware Gaussian deformation framework for extremely sparse-view CT reconstruction. It employs a multi-resolution hash encoder to model spa…
+  [AAAI 2026][3D Vision][CT Reconstruction] This paper proposes TG-Field, a geometry-aware Gaussian deformation framework for extremely sparse-view CT reconstruction. By incorporating a multi-resolution hash encoder to model spatial geometric priors, alongside a spatiotemporal attention module and a motion flow network to handle dynamic CT, it achieves state-of-the-art (SOTA) performance in both static and dynamic CT reconstruction.
 tags:
   - "AAAI 2026"
   - "3D Vision"
   - "CT Reconstruction"
   - "3D Gaussian Splatting"
-  - "Sparse-View"
+  - "Sparse-view"
   - "Dynamic CT"
   - "Deformation Field"
 date: 2026-05-08
-content_hash: 501a813f717637cd
+content_hash: ab673c8d285e3b29
 ---
 
 # TG-Field: Geometry-Aware Radiative Gaussian Fields for Tomographic Reconstruction
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2602.11705](https://arxiv.org/abs/2602.11705)  
-**Code**: N/A  
-**Area**: 3D Vision
-**Keywords**: CT Reconstruction, 3D Gaussian Splatting, Sparse-View, Dynamic CT, Deformation Field
+**Code**: None  
+**Area**: 3D Vision  
+**Keywords**: CT Reconstruction, 3D Gaussian Splatting, Sparse-view, Dynamic CT, Deformation Field
 
 ## TL;DR
 
-This paper proposes TG-Field, a geometry-aware Gaussian deformation framework for extremely sparse-view CT reconstruction. It employs a multi-resolution hash encoder to model spatial geometric priors, a spatiotemporal attention module and a motion flow network to handle dynamic CT, achieving state-of-the-art performance on both static and dynamic CT reconstruction.
+This paper proposes TG-Field, a geometry-aware Gaussian deformation framework for extremely sparse-view CT reconstruction. By incorporating a multi-resolution hash encoder to model spatial geometric priors, alongside a spatiotemporal attention module and a motion flow network to handle dynamic CT, it achieves state-of-the-art (SOTA) performance in both static and dynamic CT reconstruction.
 
 ## Background & Motivation
 
 ### Problem Definition
 
-Cone-beam computed tomography (CBCT) is widely used in medicine, biology, and industry. High-quality 3D reconstruction typically requires hundreds of X-ray projections, yet dense angular sampling entails radiation exposure risks. Sparse-view CBCT reconstruction aims to reduce the number of projections while preserving reconstruction fidelity.
+Cone-Beam Computed Tomography (CBCT) is widely used in medical, biological, and industrial fields. High-quality 3D reconstruction typically requires hundreds of X-ray projections, but dense angular sampling poses radiation exposure risks. Sparse-view CBCT reconstruction aims to reduce the number of projections while maintaining reconstruction fidelity.
 
 ### Limitations of Prior Work
 
-**Traditional methods**:
-- FDK (Feldkamp filtered back-projection): quality degrades sharply under sparse-view settings.
-- SART (iterative reconstruction): computationally expensive and sensitive to hyperparameters.
+**Traditional Methods**:
+- FDK (Feldkamp-Davis-Kress filtered back-projection): Quality degrades drastically under sparse views
+- SART (Simultaneous Algebraic Reconstruction Technique): High computational cost and sensitive to hyperparameters
 
-**NeRF-based methods** (NAF, SAX-NeRF, etc.):
-- Self-supervised and require no paired data, but mostly target static reconstruction.
-- Require dense ray sampling, incurring high computational cost.
-- STNF4D attempts dynamic CT but suffers from slow convergence and poor reconstruction quality.
+**NeRF-based Methods** (NAF, SAX-NeRF, etc.):
+- Self-supervised without paired data, but mostly limited to static reconstruction
+- Requires dense ray sampling, causing high computational overhead
+- STNF4D attempts dynamic CT but suffers from slow convergence and sub-optimal reconstruction quality
 
-**Two key challenges for 3DGS-based methods**:
+The two key challenges for **3DGS-based Methods**:
 
-**Insufficient robustness under extremely sparse views**: the absence of explicit geometric regularization prevents single-Gaussian optimization from maintaining geometric consistency, causing severe artifacts.
+**Insufficient robustness under extremely sparse views**: Lack of explicit geometric regularization prevents individual Gaussian optimization from maintaining geometric consistency, leading to severe artifacts.
 
-**Difficulty in dynamic CT reconstruction**: non-rigid deformations such as respiratory motion cannot be modeled, and temporal consistency is hard to guarantee.
+**Difficulty in dynamic CT reconstruction**: Inability to model non-rigid deformations such as respiratory motion makes temporal consistency hard to guarantee.
 
-### Root Cause
+### Core Motivation
 
-Existing 3DGS-based CT methods (e.g., R²-Gaussian, X-Gaussian) perform reasonably well under moderate sparsity but degrade sharply in extremely sparse settings. The key reason is that each Gaussian primitive is optimized independently without constraints from spatial geometric context. The authors propose introducing a **geometry-aware deformation field** that captures local spatial priors via a hash encoder to constrain spatial correlations among Gaussian primitives, thereby preserving structural coherence even under extremely sparse conditions.
+Existing 3DGS CT methods (e.g., R²-Gaussian, X-Gaussian) perform reasonably well under moderate sparsity but experience a sharp drop in performance under extreme sparsity. The key reason is that each Gaussian-primitive is optimized independently, lacking constraints from spatial geometric context. To address this, the authors propose introducing a **geometry-aware deformation field** that leverages a hash encoder to capture local spatial priors and constrain the spatial correlation between Gaussian primitives, thereby maintaining structural coherence even under extremely sparse conditions.
 
 ## Method
 
 ### Overall Architecture
 
-The TG-Field pipeline proceeds as follows:
-1. A high-quality initial point cloud is generated via **iterative initialization**.
-2. A **multi-resolution hash encoder** captures spatial geometric features.
-3. A **multi-head deformation decoder** predicts attribute offsets for each Gaussian primitive.
-4. For dynamic CT, a **spatiotemporal attention module** and a **motion flow network** are incorporated.
-5. **Semantic consistency regularization** enhances cross-view consistency.
+The workflow of TG-Field is as follows:
+1. Generate a high-quality initial point cloud through **iterative initialization**.
+2. Use a **multi-resolution hash encoder** to capture spatial geometric features.
+3. Predict the attribute offsets of Gaussian primitives via a **multi-head deformation decoder**.
+4. For dynamic CT, incorporate a **spatiotemporal attention module** and a **motion flow network**.
+5. Use **semantic consistency regularization** to enhance cross-view consistency.
 
-The deformed Gaussian primitives are ultimately rendered into X-ray projections and voxelized into CT volumes.
+Finally, the deformed Gaussian primitives are rendered into X-ray projections and voxelized into the CT volume.
 
 ### Key Designs
 
 #### 1. **Iterative Initialization Strategy**: Point Cloud Initialization with High-Quality Geometric Priors
 
-**Function**: A two-stage iterative initialization — CGLS (Conjugate Gradient Least Squares) first yields a coarse volumetric reconstruction, followed by ASD-POCS (Adaptive Steepest Descent–Projection Onto Convex Sets) with TV constraints for refinement.
+**Function**: Two-stage iterative initialization—first uses CGLS (Conjugate Gradient Least Squares) to obtain a coarse volume reconstruction, and then refines it using ASD-POCS (Adaptive Steepest Descent-Projection Onto Convex Sets) with TV constraints.
 
-**Mechanism**: Unlike existing methods that rely on uniform cube sampling (lacking geometric information) or FDK initialization (poor quality under sparse conditions), the iterative approach extracts richer geometric information from sparse projections:
-- Stage 1: CGLS iteratively approximates the volumetric solution under sparse projection constraints.
-- Stage 2: ASD-POCS enforces TV constraints to reduce noise while preserving structural edges.
+**Mechanism**: Unlike existing methods that utilize uniform cube sampling (which lacks geometric information) or FDK initialization (which suffers from poor quality under sparse views), the iterative method extracts richer geometric information from sparse projections:
+- First stage: CGLS iteratively approximates the volume solution under sparse projection constraints.
+- Second stage: ASD-POCS enforces TV constraints to reduce noise and preserve structural boundaries.
 
-**Design Motivation**: High-quality initialization is critical for 3DGS convergence. Under extremely sparse conditions such as 5 views, uniformly sampled point clouds contain almost no meaningful structural information, rendering optimization highly challenging.
+**Design Motivation**: High-quality initialization is crucial for 3DGS convergence. Under extremely sparse views (such as 5 views), uniformly sampled point clouds contain baseline structural information that is too scarce to guide effective optimization.
 
-#### 2. **Geometry-Aware Splatting Field**: Modeling Spatial Correlations via Hash Encoder
+#### 2. **Geometry-Aware Splatting Field**: Modeling Spatial Correlation with Hash Encoder
 
-**Function**: A multi-resolution hash grid encoder captures the spatial context of each Gaussian primitive, and a multi-head decoder predicts attribute offsets accordingly.
+**Function**: Captures the spatial context of each Gaussian primitive using a multi-resolution hash grid encoder, and then predicts attribute offsets using a multi-head decoder.
 
 **Mechanism**: For a Gaussian primitive at position $\boldsymbol{\mu}_i$, multi-scale features are obtained via hash encoding:
 
 $$h_\phi(\boldsymbol{\mu}_i) = \text{concat}_{s \in S}[f_s(\boldsymbol{\mu}_i)] \in \mathbb{R}^{|S| \cdot C}$$
 
-A multi-head decoder separately predicts offsets for position, rotation, scale, and density:
+The multi-head decoder predicts offsets for position, rotation, scaling, and density separately:
 
 $$G'_i = (\boldsymbol{\mu}_i + \Delta\boldsymbol{\mu}_i, R_i + \Delta R_i, S_i + \Delta S_i, \rho_i + \Delta\rho_i)$$
 
-**Design Motivation**: The hash encoder naturally maps spatially neighboring Gaussian primitives to similar feature spaces, thereby enforcing geometric consistency among them. This is particularly important under extremely sparse views — when observational information is severely limited, spatial prior constraints can compensate for missing geometric information.
+**Design Motivation**: The hash encoder naturally maps spatially proximal Gaussian primitives to a similar feature space, enforcing geometric consistency among them. This is particularly vital under extremely sparse-view scenarios: when observational information is severely deficient, spatial prior constraints can compensate for the missing geometric information.
 
-#### 3. **Spatiotemporal Attention Block (STAB)**: Addressing Hash Collisions and Temporal Drift in 4D CT
+#### 3. **Spatiotemporal Attention Module (STAB)**: Resolving Hash Collision and Temporal Drift in 4D CT
 
-**Function**: An attention mechanism is applied over jointly encoded spatiotemporal hash features to resolve spatiotemporal ambiguities.
+**Function**: Applies an attention mechanism to the jointly encoded spatiotemporal hash features to eliminate spatiotemporal ambiguity.
 
-**Mechanism**: For each Gaussian primitive $i$, embeddings within a temporal window are stacked:
+**Mechanism**: For each Gaussian primitive $i$, the embeddings within the time window are stacked:
 
 $$\mathbf{H}_i = [h_\phi(\boldsymbol{\mu}_i, t_1), \ldots, h_\phi(\boldsymbol{\mu}_i, t_T)]^\top$$
 
-Scaled dot-product attention is then applied:
+Then, scaled dot-product attention is applied:
 
 $$\text{Attn}(\mathbf{H}_i) = \text{softmax}\left(\frac{QK^\top}{\sqrt{C}}\right)V$$
 
-**Design Motivation**: Jointly hashing spatial and temporal coordinates causes hash collisions — when the same or similar spatial positions recur at different time steps, hash buckets produce ambiguous embeddings. STAB aggregates temporal context to resolve ambiguities in colliding buckets, yielding more stable dynamic deformations.
+**Design Motivation**: Joint hashing of spatial and temporal coordinates can lead to hash collisions. When identical or similar spatial positions recur at different times, the hash buckets produce ambiguous embeddings. STAB aggregates temporal context to resolve ambiguities in these collided buckets, yielding more stable dynamic deformations.
 
-#### 4. **Motion Flow Network**: Modeling Fine-Grained Respiratory Motion
+#### 4. **Motion Flow Network**: Modeling Fine-grained Respiratory Motion
 
-**Function**: A ResFields MLP predicts a fine displacement field that further corrects Gaussian center positions on top of the deformation field output.
+**Function**: Uses a ResFields MLP to predict a fine displacement field, further refining the Gaussian center locations on top of the deformation field's output.
 
 $$\hat{\boldsymbol{\mu}}_i(t) = \boldsymbol{\mu}_i + \Delta\boldsymbol{\mu}_i(t) + \text{Flow}(\boldsymbol{\mu}_i + \Delta\boldsymbol{\mu}_i(t), t)$$
 
-**Design Motivation**: The initial deformation field may miss subtle local anatomical deformations (e.g., local tissue sliding during pulmonary respiration). The motion flow network serves as a residual correction module to capture these fine-grained motions.
+**Design Motivation**: The initial deformation field might miss subtle local anatomical deformations (such as local tissue sliding during lung respiratory motion). The motion flow network acts as a residual correction module to capture these fine-grained dynamics.
 
 ### Loss & Training
 
 Total loss: $\mathcal{L}_{total} = \mathcal{L}_1 + \lambda_{SSIM}\mathcal{L}_{SSIM} + \lambda_{TV}\mathcal{L}_{TV} + \lambda_{sem}\mathcal{L}_{sem}$
 
-- L1 loss + D-SSIM: supervises rendered X-ray projections.
-- 3D TV regularization: enforces a homogeneity prior.
-- Semantic consistency regularization $\mathcal{L}_{sem}$: extracts visual features using a pretrained DINO-ViT to enforce cross-view semantic consistency.
+- L1 loss + D-SSIM: Supervises the rendered X-ray projections
+- 3D TV regularization: Homogeneity prior
+- Semantic consistency regularization $\mathcal{L}_{sem}$: Extracts visual features using a pre-trained DINO-ViT to enforce cross-view semantic consistency
 
-Training proceeds in two stages: R²-Gaussian is first pre-trained for 5,000 iterations (warm-up), followed by deformation field refinement.
+Training is conducted in two stages: first pre-training R²-Gaussian for 5000 iterations (warm-up), followed by refining with the deformation field.
 
 ## Key Experimental Results
 
@@ -131,8 +131,8 @@ Training proceeds in two stages: R²-Gaussian is first pre-trained for 5,000 ite
 
 **Static CT Reconstruction (Synthetic + Real Datasets)**:
 
-| Method | Syn. 5-view PSNR/SSIM | Syn. 10-view PSNR/SSIM | Syn. 20-view PSNR/SSIM | Real 10-view PSNR/SSIM |
-|---|---|---|---|---|
+| Method | Synthetic 5-View PSNR/SSIM | Synthetic 10-View PSNR/SSIM | Synthetic 20-View PSNR/SSIM | Real 10-View PSNR/SSIM |
+|------|-------------------|-------------------|-------------------|-------------------|
 | FDK | 11.83/0.112 | 15.21/0.186 | 18.48/0.293 | 17.57/0.225 |
 | SART | 22.10/0.683 | 24.32/0.768 | 27.24/0.845 | 28.72/0.846 |
 | SAX-NeRF | 24.05/0.740 | 27.55/0.801 | 31.93/0.875 | 32.26/0.835 |
@@ -141,8 +141,8 @@ Training proceeds in two stages: R²-Gaussian is first pre-trained for 5,000 ite
 
 **Dynamic CT Reconstruction**:
 
-| Method | XCAT PSNR/SSIM | TCIA PSNR/SSIM | SPARE PSNR/SSIM | Avg. PSNR/SSIM |
-|---|---|---|---|---|
+| Method | XCAT PSNR/SSIM | TCIA PSNR/SSIM | SPARE PSNR/SSIM | Average PSNR/SSIM |
+|------|---------------|---------------|----------------|---------------|
 | Hex-plane | 21.79/0.866 | 23.91/0.835 | 26.43/0.856 | 24.04/0.852 |
 | K-plane | 20.57/0.847 | 24.59/0.855 | 26.59/0.876 | 23.92/0.859 |
 | STNF4D | 25.73/0.928 | 29.37/0.919 | 28.75/0.887 | 27.95/0.911 |
@@ -151,48 +151,48 @@ Training proceeds in two stages: R²-Gaussian is first pre-trained for 5,000 ite
 
 ### Ablation Study
 
-| Setting | Components | PSNR↑ | SSIM↑ | Note |
-|---|---|---|---|---|
+| Setting | Component | PSNR↑ | SSIM↑ | Description |
+|------|------|-------|-------|------|
 | Static | HE only | 28.71 | 0.841 | Hash encoder only |
-| Static | HE + SR | 28.95 | 0.849 | +Semantic regularization, +0.24 dB |
-| Dynamic | HE + STAB | 34.89 | 0.945 | +Spatiotemporal attention |
-| Dynamic | HE + STAB + MF | 35.23 | 0.952 | +Motion flow network, +0.34 dB |
-| Dynamic | All (HE+STAB+MF+SR) | **35.41** | **0.955** | Full model |
+| Static | HE + SR | 28.95 | 0.849 | + Semantic regularization, +0.24dB improvement |
+| Dynamic | HE + STAB | 34.89 | 0.945 | + Spatiotemporal attention |
+| Dynamic | HE + STAB + MF | 35.23 | 0.952 | + Motion flow network, +0.34dB improvement |
+| Dynamic | All (HE+STAB+MF+SR) | **35.41** | **0.955** | Full components |
 
 ### Key Findings
 
-1. **Significant advantage under extremely sparse views**: At 5 views, the method surpasses R²-Gaussian by 0.73 dB (synthetic) and 0.65 dB (real), indicating that geometric prior constraints are especially critical when observational information is extremely limited.
-2. **Comprehensive superiority on dynamic CT**: Average PSNR exceeds 4DGS by 0.98 dB, and by 1.56 dB on XCAT.
-3. **Initialization strategy has a notable impact**: Iterative initialization outperforms FDK and uniform sampling across 2–8 view settings.
-4. **Incremental contributions from each component**: HE → +STAB → +MF → +SR yields progressive performance gains.
-5. **Motion flow network primarily improves motion-sensitive regions**: e.g., local deformations caused by pulmonary respiratory motion.
+1. **Significant advantage in extremely sparse views**: Outperforms R²-Gaussian by 0.73dB (synthetic) and 0.65dB (real) under 5 views, demonstrating that geometric prior constraints are particularly crucial when observational information is highly lacking.
+2. **Comprehensive sweep in dynamic CT**: Achieves an average PSNR higher than 4DGS by 0.98dB, and 1.56dB higher on XCAT.
+3. **Significant impact of initialization strategy**: Iterative initialization consistently outperforms FDK and uniform sampling across 2 to 8 view settings.
+4. **Incremental contributions of each component**: Stepwise performance improvements are observed from HE $\rightarrow$ +STAB $\rightarrow$ +MF $\rightarrow$ +SR.
+5. **Motion flow network mainly improves motion-sensitive regions**: Such as local deformations caused by lung respiratory motion.
 
 ## Highlights & Insights
 
-1. **Critical role of geometric priors**: Injecting spatial correlations into Gaussian optimization via the hash encoder is the paper's most central contribution, addressing the lack of global consistency in per-Gaussian independent optimization.
-2. **Novel iterative initialization**: Cleverly combines classical iterative reconstruction methods (CGLS + ASD-POCS) to provide a high-quality starting point for 3DGS.
-3. **VFMs for CT regularization**: Leveraging semantic features from a pretrained visual foundation model (DINO-ViT) for cross-view consistency constraints represents a worthwhile attempt to transfer natural-image foundation models to medical imaging.
-4. **Unified static/dynamic framework**: The same framework extends to 4D CT by incorporating the temporal dimension.
+1. **Crucial Role of Geometric Priors**: Infusing spatial correlation into Gaussian optimization via a hash encoder stands as the most core contribution. This effectively alleviates the lack of global consistency when optimizing each Gaussian primitive independently.
+2. **Innovative Iterative Initialization**: Elegantly combines classical iterative reconstruction methods (CGLS + ASD-POCS) to provide high-quality starting points for 3DGS.
+3. **VFM for CT Regularization**: Using semantic features of pre-trained visual foundation models (DINO-ViT) for cross-view consistency constraints represents a promising attempt to transfer foundation models from the natural image domain to medical imaging.
+4. **Unified Static/Dynamic Framework**: The identical framework can be extended to 4D CT simply by introducing the temporal dimension.
 
 ## Limitations & Future Work
 
-1. **Computational overhead not thoroughly reported**: The additional training/inference time introduced by the hash encoder and attention modules is not quantitatively compared.
-2. **Questionable benefit of semantic regularization**: The effectiveness of DINO-ViT pretrained on natural images for X-ray images may be limited, and the domain gap could attenuate its impact.
-3. **CBCT-only validation**: The method is not evaluated on parallel-beam CT or other imaging modalities.
-4. **Marginal advantage on the SPARE dataset**: PSNR is only 0.4 dB higher than 4DGS, suggesting limited improvement on clinically realistic data.
+1. **Computational Overhead Not Detailed**: The additional training/inference time introduced by the hash encoder and attention module lacks quantitative comparison.
+2. **Rationality of Semantic Regularization**: Using DINO-ViT pre-trained on natural images may exert limited efficacy on X-ray projection images, as domain gaps might attenuate its performance.
+3. **Restricted to CBCT**: Has not been validated on parallel-beam CT or other imaging modalities.
+4. **Marginal Gain on the SPARE Dataset**: The PSNR is only 0.4dB higher than 4DGS, indicating limited space for improvement on real clinical data.
 
 ## Related Work & Insights
 
-- The differentiable voxelization proposed in R²-Gaussian laid the foundation for direct CT volume reconstruction via 3DGS.
-- The deformation field paradigm from 4DGaussians is inherited and made more robust through the addition of a geometry-aware encoder.
-- The semantic consistency regularization idea is generalizable to other sparse reconstruction tasks.
+- The differentiable voxelization proposed by R²-Gaussian laid the foundation for 3DGS to directly reconstruct CT volumes.
+- The deformation field approach in 4DGaussians is inherited by this work, but updated with a geometry-aware encoder to improve robustness.
+- The concept of semantic consistency regularization is generalizable to other sparse reconstruction tasks.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The idea of introducing geometric priors into 3DGS-based CT reconstruction is valuable, though individual components (hash encoder, attention, motion flow) are not entirely novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across static/dynamic × synthetic/real × multi-view settings with complete ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ — Well-structured, though notation is dense.
-- **Value**: ⭐⭐⭐⭐ — High potential clinical application value in medical imaging.
+- **Novelty**: ⭐⭐⭐⭐ — The idea of introducing geometric priors to 3DGS CT reconstruction holds value, although individual components (hash encoder, attention, motion flow) are not entirely novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation covering static/dynamic $\times$ synthetic/real $\times$ multi-view settings, with complete ablation studies.
+- **Writing Quality**: ⭐⭐⭐⭐ — Well-structured but mathematically dense.
+- **Value**: ⭐⭐⭐⭐ — Demonstrates high potential value for clinical applications in medical imaging.
 
 <!-- RELATED:START -->
 
@@ -202,9 +202,9 @@ Training proceeds in two stages: R²-Gaussian is first pre-trained for 5,000 ite
 
 - [\[AAAI 2026\] GT2-GS: Geometry-aware Texture Transfer for Gaussian Splatting](gt2-gs_geometry-aware_texture_transfer_for_gaussian_splatting.md)
 - [\[ICCV 2025\] Discretized Gaussian Representation for Tomographic Reconstruction](../../ICCV2025/3d_vision/discretized_gaussian_representation_for_tomographic_reconstruction.md)
-- [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
 - [\[AAAI 2026\] OceanSplat: Object-aware Gaussian Splatting with Trinocular View Consistency for Underwater Scene Reconstruction](oceansplat_object-aware_gaussian_splatting_with_trinocular_view_consistency_for_.md)
 - [\[AAAI 2026\] Physics-Informed Deformable Gaussian Splatting: Towards Unified Constitutive Laws for Time-Evolving Material Field](physics-informed_deformable_gaussian_splatting_towards_unified_constitutive_laws.md)
+- [\[AAAI 2026\] Opt3DGS: Optimizing 3D Gaussian Splatting with Adaptive Exploration and Curvature-Aware Exploitation](opt3dgs_optimizing_3d_gaussian_splatting_with_adaptive_exploration_and_curvature.md)
 
 </div>
 

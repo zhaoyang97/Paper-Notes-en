@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] An Information Theoretic Perspective on Agentic System Design
 description: >-
-  [ICLR 2026][LLM Agent][Deep Research] This paper abstracts the common paradigm in agentic systems—where a smaller model compresses context and a larger model performs reasoning on the compressed output—as a noisy channel. It utilizes a mutual information estimator, directly computable by inference engines, to measure compression quality. This approach prov
+  [ICLR 2026][LLM Agent][Compressor-predictor systems] This paper abstracts the common paradigm in agentic systems—where a smaller model compresses context and a larger model performs reasoning on the compressed output—as a noisy channel. It utilizes a mutual information estimator, directly computable by inference engines, to measure compression quality. This approach provides a task-agnostic answer to the resource allocation problem: compute should be "front-loaded" toward the…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Deep Research
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Compressor-predictor systems"
+  - "Mutual Information estimation"
+  - "Rate-Distortion theory"
+  - "Information Bottleneck"
+  - "Local-Cloud collaboration"
+  - "Deep Research"
 date: 2026-05-08
-content_hash: 3d9368a53df3c168
+content_hash: bc8c60e00c1e4c2d
 ---
+
 # An Information Theoretic Perspective on Agentic System Design
 
 **Conference**: ICLR 2026  
@@ -122,10 +128,10 @@ The shift from a 1.5B to a 7B QWEN-2.5 compressor increases FLOPs-per-generation
 ## Related Papers
 
 - [\[ICLR 2026\] BED-LLM: Intelligent Information Gathering with LLMs and Bayesian Experimental Design](bed-llm_intelligent_information_gathering_with_llms_and_bayesian_experimental_de.md)
+- [\[ICLR 2026\] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](in-the-flow_agentic_system_optimization_for_effective_planning_and_tool_use.md)
 - [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](a_benchmark_for_deep_information_synthesis.md)
-- [\[ICLR 2026\] Trade in Minutes! Rationality-driven Agentic System for Quantitative Financial Trading](trade_in_minutes_rationality-driven_agentic_system_for_quantitative_financial_tr.md)
 - [\[ICLR 2026\] FlowSearcher: Synthesizing Memory-Guided Agentic Workflows for Web Information Seeking](flowsearcher_synthesizing_memory-guided_agentic_workflows_for_web_information_se.md)
-- [\[ICLR 2026\] UI-Ins: Enhancing GUI Grounding with Multi-Perspective Instruction-as-Reasoning](ui-ins_enhancing_gui_grounding_with_multi-perspective_instruction_as_reasoning.md)
+- [\[ICLR 2026\] Trade in Minutes! Rationality-driven Agentic System for Quantitative Financial Trading](trade_in_minutes_rationality-driven_agentic_system_for_quantitative_financial_tr.md)
 
 </div>
 

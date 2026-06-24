@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MOMO: Mars Orbital Model — Foundation Model for Mars Orbital Applications
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] MOMO is the first foundation model for Mars remote sensing. It pre-trains MAEs independently on three Mars sensors (HiRISE/CTX/THEMIS) and proposes an Equal Validation Loss (EVL) checkpoint selection strategy for model fusion. It outperforms ImageNet pre-training and Earth Observation foundation models across 9 downstr
+  [CVPR 2026][Self-Supervised Learning][Mars remote sensing] MOMO is the first foundation model for Mars remote sensing. It pre-trains MAEs independently on three Mars sensors (HiRISE/CTX/THEMIS) and proposes an Equal Validation Loss (EVL) checkpoint selection strategy for model fusion. It outperforms ImageNet pre-training and Earth Observation foundation models across 9 downstream tasks in Mars-Bench.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Mars remote sensing"
+  - "Foundation model"
+  - "Model fusion"
+  - "Checkpoint selection strategy"
+  - "Multi-sensor"
 date: 2026-05-08
-content_hash: f3f2fda179edfdbc
+content_hash: 4a249eb3077472df
 ---
+
 # MOMO: Mars Orbital Model — Foundation Model for Mars Orbital Applications
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ EVL consistently outperforms ES and LE across three segmentation tasks, with an 
 
 ## Related Papers
 
-- [\[CVPR 2026\] GeoBridge: A Semantic-Anchored Multi-View Foundation Model for Geo-Localization](geobridge_semantic-anchored_multi-view_foundation_model_for_geo-localization.md)
+- [\[CVPR 2026\] NitroGen: An Open Foundation Model for Generalist Gaming Agents](nitrogen_an_open_foundation_model_for_generalist_gaming_agents.md)
 - [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](../../ICML2026/self_supervised/how_neural_is_a_neural_foundation_model.md)
-- [\[ICML 2026\] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation](../../ICML2026/self_supervised/infoatlas_a_foundation_model_for_zero-shot_statistical_dependence_estimate.md)
-- [\[ICML 2025\] Foundation Model Insights and a Multi-Model Approach for Superior Fine-Grained One-shot Subset Selection](../../ICML2025/self_supervised/foundation_model_insights_and_a_multi-model_approach_for_superior_fine-grained_o.md)
 - [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](../../AAAI2026/self_supervised/spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
+- [\[ECCV 2024\] InfMAE: A Foundation Model in the Infrared Modality](../../ECCV2024/self_supervised/infmae_a_foundation_model_in_the_infrared_modality.md)
+- [\[ICML 2026\] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation](../../ICML2026/self_supervised/infoatlas_a_foundation_model_for_zero-shot_statistical_dependence_estimate.md)
 
 </div>
 

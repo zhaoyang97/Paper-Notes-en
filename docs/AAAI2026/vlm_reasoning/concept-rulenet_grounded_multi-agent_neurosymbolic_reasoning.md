@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Neurosymbolic Reasoning] This paper proposes Concept-RuleNet, a three-agent collaborative neurosymbolic reasoning framework that conditions symbol generation and rule construction on visual co…
+  [AAAI 2026 Oral][VLM Reasoning][Neurosymbolic Reasoning] This paper proposes Concept-RuleNet, a three-agent collaborative neurosymbolic reasoning framework that conditions symbol generation and rule construction on visual concepts extracted from training images. It addresses the symbol hallucination and non-representativeness issues of existing methods (e.g., Symbol-LLM) that rely solely on class labels, achieving an average accuracy improvement of ~5% across 5 OOD benchmarks…
 tags:
-  - "AAAI 2026"
-  - "Multimodal VLM"
+  - "AAAI 2026 Oral"
+  - "VLM Reasoning"
   - "Neurosymbolic Reasoning"
   - "Multi-Agent Systems"
   - "Visual Concept Grounding"
   - "Explainable AI"
   - "Counterfactual Reasoning"
 date: 2026-05-08
-content_hash: a1aa03e9883d315c
+content_hash: b155d592019da539
 ---
 
 # Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models
@@ -199,11 +199,11 @@ Core advantage: Symbol-LLM performs well on HICO/Stanford because these datasets
 
 ## Related Papers
 
-- [\[CVPR 2026\] Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning](../../CVPR2026/multimodal_vlm/vision-language_models_encode_clinical_guidelines_for_concept-based_medical_reas.md)
-- [\[AAAI 2026\] RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)](rmadapter_reconstructionbased_multimodal_adapter_for_visionlanguage.md)
-- [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](../../ACL2026/multimodal_vlm/omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
-- [\[AAAI 2026\] Multi-Agent VLMs Guided Self-Training with PNU Loss for Low-Resource Offensive Content Detection](multi-agent_vlms_guided_self-training_with_pnu_loss_for_low-resource_offensive_c.md)
-- [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](../../ACL2026/multimodal_vlm/vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
+- [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
+- [\[CVPR 2026\] DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models](../../CVPR2026/vlm_reasoning/deepscan_a_training-free_framework_for_visually_grounded_reasoning_in_large_visi.md)
+- [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](../../CVPR2026/vlm_reasoning/a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
+- [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](../../ICLR2026/vlm_reasoning/spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
 
 </div>
 

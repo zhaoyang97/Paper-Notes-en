@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Mark4D is the first watermarking method specifically designed for dynamic 4D Gaussian Splatting (4DGS). Utilizing a trio of "X-CLIP video-text latent space decoder + offsets along Gaussian motion trajectories + motion-adaptive loss weighting," it embeds invisible, distortion-resistant, and temporally consistent waterma
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] Mark4D is the first watermarking method specifically designed for dynamic 4D Gaussian Splatting (4DGS). Utilizing a trio of "X-CLIP video-text latent space decoder + offsets along Gaussian motion trajectories + motion-adaptive loss weighting," it embeds invisible, distortion-resistant, and temporally consistent watermarks into dynamic scenes. It significantly outperforms baselines that directly adapt 3DGS watermarking to 4D in bot…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Digital Watermarking"
+  - "Temporal Consistency"
+  - "Latent Space Decoding"
+  - "Motion Adaptation"
 date: 2026-05-08
-content_hash: 0f58070123e3e1ee
+content_hash: ab1dc6e4cd64c106
 ---
+
 # Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ Ablation of offset types and loss terms (Average D-NeRF/DyNeRF, $L=48$):
 
 ## Related Papers
 
-- [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
+- [\[CVPR 2026\] SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras](sparsecam4d_spatio-temporally_consistent_4d_reconstruction_from_sparse_cameras.md)
+- [\[CVPR 2026\] Robust3DGSW: Toward Robust Watermarking for Quantization-Aware 3D Gaussian Splatting](robust3dgsw_toward_robust_watermarking_for_quantization-aware_3d_gaussian_splatt.md)
 - [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video](detany4d_detect_anything_4d_temporally_in_a_streaming_rgb_video.md)
 - [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
-- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
 
 </div>
 

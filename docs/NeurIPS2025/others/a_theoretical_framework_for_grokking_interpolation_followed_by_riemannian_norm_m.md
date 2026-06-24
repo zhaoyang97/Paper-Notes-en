@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation
 description: >-
-  [NEURIPS2025][grokking] This paper rigorously proves the mechanism behind grokking from a purely optimization-theoretic perspective. Gradient flow with small weight decay exhibits two-phase dynamics in the $\lambda\to 0$…
+  [NEURIPS2025][grokking] This paper rigorously proves the mechanism behind grokking from a purely optimization-theoretic perspective. Gradient flow with small weight decay exhibits two-phase dynamics in the $\lambda\to 0$ limit: rapid convergence to the critical manifold $\mathcal{M}$ of the training loss, followed by a Riemannian gradient flow along the manifold minimizing the $\ell_2$ norm at timescale $t\approx 1/\lambda$, thereby inducing delayed generalization.
 tags:
   - "NEURIPS2025"
   - "grokking"
@@ -12,7 +12,7 @@ tags:
   - "implicit regularization"
   - "two-timescale dynamics"
 date: 2026-05-08
-content_hash: 6f54292d12380036
+content_hash: 40916f043907bc2a
 ---
 
 # A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation
@@ -142,10 +142,10 @@ $$\dot{\tilde{w}}^\circ(t)=-\mathrm{grad}_{\mathcal{M}}\ell_2(\tilde{w}^\circ(t)
 ## Related Papers
 
 - [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
+- [\[ICML 2025\] Efficient Optimization with Orthogonality Constraint: a Randomized Riemannian Submanifold Method](../../ICML2025/others/efficient_optimization_with_orthogonality_constraint_a_randomized_riemannian_sub.md)
+- [\[ACL 2025\] Theoretical Guarantees for Minimum Bayes Risk Decoding](../../ACL2025/others/theoretical_guarantees_for_minimum_bayes_risk_decoding.md)
 - [\[NeurIPS 2025\] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values](a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values.md)
 - [\[ICML 2026\] Riemannian Networks over Full-Rank Correlation Matrices](../../ICML2026/others/riemannian_networks_over_full-rank_correlation_matrices.md)
-- [\[NeurIPS 2025\] MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering](mutualvpr_a_mutual_learning_framework_for_resolving_supervision_inconsistencies_.md)
-- [\[ICML 2026\] Theoretical Analysis of Sparse Optimization with Reparameterization, Weight Decay, and Adaptive Learning Rate](../../ICML2026/others/theoretical_analysis_of_sparse_optimization_with_reparameterization_weight_decay.md)
 
 </div>
 

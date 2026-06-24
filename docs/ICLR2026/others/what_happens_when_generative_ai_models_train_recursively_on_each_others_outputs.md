@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] What happens when generative AI models train recursively on each others' outputs?
 description: >-
-  [ICLR 2026][Others][Paper Note] Ours formalizes the question of whether "multiple generative AI models will consume each other's generated content in the future" as a data-mediated interaction training problem. Theory and LLM experiments demonstrate that mixing an appropriate amount of real data with synthetic data from other models can bring cross-t
+  [ICLR2026][Model collapse] Ours formalizes the question of whether "multiple generative AI models will consume each other's generated content in the future" as a data-mediated interaction training problem. Theory and LLM experiments demonstrate that mixing an appropriate amount of real data with synthetic data from other models can bring cross-task transfer, but excessive reliance on synthetic data damages original tasks and leads to the gradual homogenization of model output…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR2026"
+  - "Model collapse"
+  - "recursive training"
+  - "synthetic data"
+  - "data-mediated interaction"
+  - "model homogenization"
 date: 2026-05-08
-content_hash: 6a6ab64ad83bf52b
+content_hash: 8d267d3f579a385a
 ---
+
 # What happens when generative AI models train recursively on each others' outputs?
 
 **Conference**: ICLR2026  
@@ -130,6 +135,7 @@ Ablations varied $K$, $\alpha$, $\beta$, and architecture, while analyzing outpu
 - **Value**: ⭐⭐⭐⭐⭐ Crucial reminder that synthetic data impacts model diversity and cross-model leakage.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

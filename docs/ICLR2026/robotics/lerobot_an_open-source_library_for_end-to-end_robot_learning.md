@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] LeRobot: An Open-Source Library for End-to-End Robot Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][robot learning] LeRobot is an open-source end-to-end robot learning library released by Hugging Face. It integrates low-level motor middleware, a unified multimodal dataset format, a decoupled asynchronous inference stack, and a suite of state-of-the-art (SOTA) policy implementations, consolidating the fragmented and closed-source rob
+  [ICLR 2026][Robotics][robot learning] LeRobot is an open-source end-to-end robot learning library released by Hugging Face. It integrates low-level motor middleware, a unified multimodal dataset format, a decoupled asynchronous inference stack, and a suite of state-of-the-art (SOTA) policy implementations, consolidating the fragmented and closed-source robot learning toolstack into a reproducible, low-barrier, vertically integrated platform.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - robot learning
-  - open-source library
-  - imitation learning
-  - VLA
-  - asynchronous inference
-  - LeRobotDataset
+  - "ICLR 2026"
+  - "Robotics"
+  - "robot learning"
+  - "open-source library"
+  - "imitation learning"
+  - "VLA"
+  - "asynchronous inference"
+  - "LeRobotDataset"
 date: 2026-05-08
-content_hash: 80b3ee663ddf1c06
+content_hash: c20204f64ba8c425
 ---
+
 # LeRobot: An Open-Source Library for End-to-End Robot Learning
 
 **Conference**: ICLR 2026  
@@ -121,8 +122,8 @@ Note: Diffusion/Flow models use 10 denoising steps; timeout set at 5000ms.
 - [\[ICLR 2026\] RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras](raven_end-to-end_equivariant_robot_learning_with_rgb_cameras.md)
 - [\[ICLR 2026\] End-to-end Listen, Look, Speak and Act](end-to-end_listen_look_speak_and_act.md)
 - [\[CVPR 2026\] RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph](../../CVPR2026/robotics/robotag_end-to-end_robot_pose_estimation_via_topological_alignment_graph.md)
-- [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](../../CVPR2026/robotics/end-to-end_language-action_model_for_humanoid_whole_body_control.md)
 - [\[NeurIPS 2025\] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing](../../NeurIPS2025/robotics/suturebot_a_precision_framework_benchmark_for_autonomous_end-to-end_suturing.md)
+- [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](../../CVPR2026/robotics/end-to-end_language-action_model_for_humanoid_whole_body_control.md)
 
 </div>
 

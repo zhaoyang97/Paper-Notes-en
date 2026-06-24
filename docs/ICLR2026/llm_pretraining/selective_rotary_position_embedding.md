@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Selective Rotary Position Embedding
 description: >-
-  [ICLR 2026][Pretraining][State Space Model] This paper theoretically demonstrates that "strong recall = rotation + decay" is indispensable. It notes that linear attention lacks the "rotation" implicitly performed by softmax. Consequently, it proposes **Selective RoPE**—an input-dependent, learnable rotary position embedding capable of rotating at arbitrary angle
+  [ICLR 2026][LLM Pretraining][Rotary Position Embedding] This paper theoretically demonstrates that "strong recall = rotation + decay" is indispensable. It notes that linear attention lacks the "rotation" implicitly performed by softmax. Consequently, it proposes **Selective RoPE**—an input-dependent, learnable rotary position embedding capable of rotating at arbitrary angles and seamlessly compounding with decay gates. Efficiently implemented as a layer of complex gated linea…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - State Space Model
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Rotary Position Embedding"
+  - "Linear Attention"
+  - "Gated Linear Attention"
+  - "State Space Models"
+  - "Complex Recurrence"
 date: 2026-05-08
-content_hash: 3d3bb563cbfb69f6
+content_hash: 3d5b31f1c2039bcd
 ---
+
 # Selective Rotary Position Embedding
 
 **Conference**: ICLR 2026  
@@ -162,8 +167,8 @@ The authors honestly point out that Selective RoPE changes the trade-off between
 - [\[ICLR 2026\] MrRoPE: Mixed-radix Rotary Position Embedding](mrrope_mixed-radix_rotary_position_embedding.md)
 - [\[ICLR 2026\] LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures](llm-jepa_large_language_models_meet_joint_embedding_predictive_architectures.md)
 - [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
+- [\[ICLR 2026\] Train on Validation (ToV): Fast Data Selection with Applications to Fine-Tuning](train_on_validation_tov_fast_data_selection_with_applications_to_fine-tuning.md)
 - [\[ICLR 2026\] Pre-training Limited Memory Language Models with Internal and External Knowledge](pre-training_limited_memory_language_models_with_internal_and_external_knowledge.md)
-- [\[ICLR 2026\] Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge](pretraining_with_hierarchical_memories_separating_long-tail_and_common_knowledge.md)
 
 </div>
 

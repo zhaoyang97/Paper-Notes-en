@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Your Latent Mask is Wrong: Pixel-Equivalent Latent Compositing for Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][VAE] This paper demonstrates that the widely used heuristic of linearly interpolating two latents according to a mask in the VAE latent space is mathematically incorrect. It proposes the "Pixel-Equivalent" principle for latent composition and introduces DecFormer, a lightweight 7.7M-parameter transformer that learns this eq
+  [CVPR 2026][Image Generation][Latent space composition] This paper demonstrates that the widely used heuristic of linearly interpolating two latents according to a mask in the VAE latent space is mathematically incorrect. It proposes the "Pixel-Equivalent" principle for latent composition and introduces DecFormer, a lightweight 7.7M-parameter transformer that learns this equivalent operator. DecFormer reduces mask boundary errors by up to 53% with only approximately 3.5% FLOP…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - VAE
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Latent space composition"
+  - "Diffusion inpainting"
+  - "VAE"
+  - "Soft mask"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 2e49dd4475118e1d
+content_hash: 1e0932ca4bd75218
 ---
+
 # Your Latent Mask is Wrong: Pixel-Equivalent Latent Compositing for Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -171,7 +176,7 @@ DecFormer outperforms the heuristic baseline without backbone modification. Comb
 - [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
 - [\[CVPR 2026\] Latent Diffusion Inversion Requires Understanding the Latent Space](latent_diffusion_inversion_requires_understanding_the_latent_space.md)
 - [\[CVPR 2026\] LacTokGen: Latent Consistency Tokenizer for 1024-pixel Image Generation by 256 Tokens](lactokgen_latent_consistency_tokenizer_for_1024-pixel_image_generation_by_256_to.md)
-- [\[CVPR 2026\] Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_models.md)
+- [\[CVPR 2026\] Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models](taming_sampling_perturbations_with_variance_expansion_loss_for_latent_diffusion_.md)
 
 </div>
 

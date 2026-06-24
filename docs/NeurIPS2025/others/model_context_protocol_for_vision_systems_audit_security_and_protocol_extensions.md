@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Model Context Protocol for Vision Systems: Audit, Security, and Protocol Extensions
 description: >-
-  [NeurIPS 2025][Model Context Protocol] The first protocol-level audit of MCP deployment in vision systems, analyzing 91 public MCP servers and finding that 78% exhibit schema inconsistencies and 89% lack runtime validati…
+  [NeurIPS 2025][Model Context Protocol] The first protocol-level audit of MCP deployment in vision systems, analyzing 91 public MCP servers and finding that 78% exhibit schema inconsistencies and 89% lack runtime validation; the paper further proposes protocol extensions including semantic schemas, visual memory, and runtime validators.
 tags:
   - "NeurIPS 2025"
   - "Model Context Protocol"
@@ -11,7 +11,7 @@ tags:
   - "schema validation"
   - "multimodal agents"
 date: 2026-05-08
-content_hash: aa136a5b41b36ee2
+content_hash: bb88eb0c9c9fac8b
 ---
 
 # Model Context Protocol for Vision Systems: Audit, Security, and Protocol Extensions
@@ -158,11 +158,11 @@ Compatibility is formalized via a predicate function $comp: \mathcal{T} \times \
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](frequency-aware_token_reduction_for_efficient_vision_transformer.md)
 - [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
+- [\[CVPR 2026\] Learning What Helps: Task-Aligned Context Selection for Vision Tasks](../../CVPR2026/others/learning_what_helps_task-aligned_context_selection_for_vision_tasks.md)
+- [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](frequency-aware_token_reduction_for_efficient_vision_transformer.md)
 - [\[ICML 2026\] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems](../../ICML2026/others/beyond_model_readiness_institutional_readiness_for_ai_deployment_in_public_syste.md)
 - [\[NeurIPS 2025\] egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks](egoemotion_egocentric_vision_and_physiological_signals_for_emotion_and_personali.md)
-- [\[NeurIPS 2025\] A Differentiable Model of Supply-Chain Shocks](a_differentiable_model_of_supply-chain_shocks.md)
 
 </div>
 

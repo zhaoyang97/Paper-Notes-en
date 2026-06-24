@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Wring Out the Bias: A Rotation-Based Alternative to Projection Debiasing
 description: >-
-  [ICLR 2026][AI Safety][CLIP] Addressing the "whac-a-mole" dilemma where "projection debiasing" used in vision-language models like CLIP shifts bias from one concept to another unconsidered one, this paper mathematically proves that projection **necessarily** amplifies bias in orthogonal subspaces. It proposes WRING, a method that replaces "subspac
+  [ICLR 2026][AI Safety][VLM Debiasing] Addressing the "whac-a-mole" dilemma where "projection debiasing" used in vision-language models like CLIP shifts bias from one concept to another unconsidered one, this paper mathematically proves that projection **necessarily** amplifies bias in orthogonal subspaces. It proposes WRING, a method that replaces "subspace deletion" with "embedding rotation within relevant subspaces," effectively eliminating bias in target concepts while vir…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - CLIP
-  - whac-a-mole
+  - "ICLR 2026"
+  - "AI Safety"
+  - "VLM Debiasing"
+  - "CLIP"
+  - "Projection Debiasing"
+  - "Rotational Debiasing"
+  - "whac-a-mole"
+  - "Bias Amplification"
 date: 2026-05-08
-content_hash: 765211c661c411f5
+content_hash: 16c09fcf8ab7fe17
 ---
+
 # Wring Out the Bias: A Rotation-Based Alternative to Projection Debiasing
 
 **Conference**: ICLR 2026  
@@ -152,8 +157,8 @@ Key Comparison (CelebA hair color task, worst-group accuracy after gender debias
 - [\[ICLR 2026\] Adaptive Logit Adjustment for Debiasing Multimodal Language Models](adaptive_logit_adjustment_for_debiasing_multimodal_language_models.md)
 - [\[ICLR 2026\] Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity](prior-based_noisy_text_data_filtering_fast_and_strong_alternative_to_perplexity.md)
 - [\[AAAI 2026\] Alternative Fairness and Accuracy Optimization in Criminal Justice](../../AAAI2026/ai_safety/alternative_fairness_and_accuracy_optimization_in_criminal_j.md)
+- [\[ICLR 2026\] Benchmarking Bias Mitigation Toward Fairness Without Harm from Vision to LVLMs](benchmarking_bias_mitigation_toward_fairness_without_harm_from_vision_to_lvlms.md)
 - [\[CVPR 2026\] Bias at the End of the Score](../../CVPR2026/ai_safety/bias_at_the_end_of_the_score.md)
-- [\[ICLR 2026\] Person-Centric Annotations of LAION-400M: Auditing Bias and Its Transfer to Models](person-centric_annotations_of_laion-400m_auditing_bias_and_its_transfer_to_model.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper provides the first truly quadratic-time constant-factor approximation algorithm for **all** $p \in [1, \infty]$ (including $p = \infty$): on any metric space, it computes a $(4+\varepsilon)$-approximation for $W_p$ optimal transport in $O(n^2+(n^{3/2}\varepsilon^{-1}\log n\log\Delta)^{1+o(1)}\log U)$ time, r
+  [ICLR2026][Optimization][Optimal Transport] This paper provides the first truly quadratic-time constant-factor approximation algorithm for **all** $p \in [1, \infty]$ (including $p = \infty$): on any metric space, it computes a $(4+\varepsilon)$-approximation for $W_p$ optimal transport in $O(n^2+(n^{3/2}\varepsilon^{-1}\log n\log\Delta)^{1+o(1)}\log U)$ time, reducing the previous $O(\log n)$ approximation ratio to a constant.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Optimal Transport"
+  - "Approximation Algorithms"
+  - "$W_p$ Distance"
+  - "Directed Spanner"
+  - "Bichromatic Closest Pair"
 date: 2026-05-08
-content_hash: b1e51bf06d791209
+content_hash: 437e3b3ae8a62fa8
 ---
+
 # A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport
 
 **Conference**: ICLR2026  
@@ -115,7 +121,7 @@ Proof-of-concept Python implementation on an 8-core Apple M1 / 16GB. Data: unifo
 - [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](hota_hamiltonian_framework_for_optimal_transport_advection.md)
 - [\[ICLR 2026\] Neural Hamilton–Jacobi Characteristic Flows for Optimal Transport](neural_hamilton--jacobi_characteristic_flows_for_optimal_transport.md)
 - [\[ICLR 2026\] Neural Optimal Transport Meets Multivariate Conformal Prediction](neural_optimal_transport_meets_multivariate_conformal_prediction.md)
-- [\[ICLR 2026\] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation](elastic_optimal_transport_theory_application_and_empirical_evaluation.md)
+- [\[ICLR 2026\] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport](hyperparameter_trajectory_inference_with_conditional_lagrangian_optimal_transpor.md)
 
 </div>
 

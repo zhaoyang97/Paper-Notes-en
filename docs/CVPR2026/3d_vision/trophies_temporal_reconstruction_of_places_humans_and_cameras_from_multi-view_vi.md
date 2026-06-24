@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TROPHIES: Temporal Reconstruction of Places, Humans, and Cameras from Multi-view Videos
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] TROPHIES proposes the new task of "unified reconstruction of humans, scenes, and cameras from multi-view videos." Using a decoupled human branch + a plug-and-play scene branch + a global alignment optimization module, it integrates dynamic humans, static geometry, and camera trajectories into a single metric-consistent
+  [CVPR 2026][3D Vision][Multi-view video] TROPHIES proposes the new task of "unified reconstruction of humans, scenes, and cameras from multi-view videos." Using a decoupled human branch + a plug-and-play scene branch + a global alignment optimization module, it integrates dynamic humans, static geometry, and camera trajectories into a single metric-consistent 4D world coordinate system, reducing W-MPJPE by more than half on EgoHumans / EgoExo4D.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view video"
+  - "Human-scene joint reconstruction"
+  - "4D reconstruction"
+  - "Camera pose"
+  - "Contact constraints"
 date: 2026-05-08
-content_hash: 2a4e3c514eb2c8fa
+content_hash: 397315fb60dbb49c
 ---
+
 # TROPHIES: Temporal Reconstruction of Places, Humans, and Cameras from Multi-view Videos
 
 **Conference**: CVPR 2026  
@@ -149,9 +155,9 @@ Ablation of the scene branch human-aware attention:
 
 - [\[CVPR 2025\] Reconstructing People, Places, and Cameras](../../CVPR2025/3d_vision/reconstructing_people_places_and_cameras.md)
 - [\[CVPR 2026\] LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving](lidar_prompted_spatio-temporal_multi-view_stereo_for_autonomous_driving.md)
-- [\[CVPR 2026\] 4D Reconstruction from Sparse Dynamic Cameras](4d_reconstruction_from_sparse_dynamic_cameras.md)
+- [\[CVPR 2026\] Adaptive Spatial-Temporal Window: Unlocking the Potential of Event Cameras in Heterogeneous Velocity Scenarios](adaptive_spatial-temporal_window_unlocking_the_potential_of_event_cameras_in_het.md)
+- [\[CVPR 2026\] Breaking the Scalability Limit of Multi-Projector Calibration with Embedded Cameras](breaking_the_scalability_limit_of_multi-projector_calibration_with_embedded_came.md)
 - [\[CVPR 2026\] SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras](sparsecam4d_spatio-temporally_consistent_4d_reconstruction_from_sparse_cameras.md)
-- [\[CVPR 2026\] WeatherCity: Urban Scene Reconstruction with Controllable Multi-Weather Transformation](weathercity_urban_scene_reconstruction_with_controllable_multi-weather_transform.md)
 
 </div>
 

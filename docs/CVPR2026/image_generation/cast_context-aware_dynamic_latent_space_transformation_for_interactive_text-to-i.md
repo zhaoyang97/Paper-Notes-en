@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CAST: Context-Aware Dynamic Latent Space Transformation for Interactive Text-to-Image Retrieval
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address the limitation in Interactive Text-to-Image Retrieval (I-TIR) where "all dialog turns share a static feature space," CAST introduces a lightweight module, CASR. This module dynamically "deforms" the latent space containing text and image features based on the context of each dialog turn. The Contextual Low-r
+  [CVPR 2026][Image Generation][Interactive Retrieval] To address the limitation in Interactive Text-to-Image Retrieval (I-TIR) where "all dialog turns share a static feature space," CAST introduces a lightweight module, CASR. This module dynamically "deforms" the latent space containing text and image features based on the context of each dialog turn. The Contextual Low-rank Projector (CLP) determines the semantic direction of the deformation…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Interactive Retrieval"
+  - "Dynamic Latent Space"
+  - "Low-rank Projection"
+  - "Contextual Modulation"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: c55f3beb85263486
+content_hash: 82bcf7155bf99684
 ---
+
 # CAST: Context-Aware Dynamic Latent Space Transformation for Interactive Text-to-Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -144,6 +150,7 @@ CLP is the primary driver (Gain: +2.60 R@1), while CGM provides further refineme
 - Value: ⭐⭐⭐⭐ Lightweight and plug-and-play with clear benefits for multi-turn systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -151,8 +158,8 @@ CLP is the primary driver (Gain: +2.60 R@1), while CGM provides further refineme
 - [\[CVPR 2026\] Latent Diffusion Inversion Requires Understanding the Latent Space](latent_diffusion_inversion_requires_understanding_the_latent_space.md)
 - [\[CVPR 2026\] OPRO: Orthogonal Panel-Relative Operators for Panel-Aware In-Context Image Generation](opro_orthogonal_panel-relative_operators_for_panel-aware_in-context_image_genera.md)
 - [\[CVPR 2026\] 3D Space as a Scratchpad for Editable Text-to-Image Generation](3d_space_as_a_scratchpad_for_editable_text-to-image_generation.md)
+- [\[ICLR 2026\] ImageRAG: Dynamic Image Retrieval for Reference-Guided Image Generation](../../ICLR2026/image_generation/imagerag_dynamic_image_retrieval_for_reference-guided_image_generation.md)
 - [\[CVPR 2026\] Unified Latent Space for Understanding and Generation via Semantic Auto-encoder](unified_latent_space_for_understanding_and_generation_via_semantic_auto-encoder.md)
-- [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
 
 </div>
 

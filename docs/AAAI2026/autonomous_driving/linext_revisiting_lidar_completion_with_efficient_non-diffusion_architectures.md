@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures
 description: >-
-  [AAAI 2026][Autonomous Driving][LiDAR scene completion] This paper proposes LiNeXt, a lightweight non-diffusion network for LiDAR 3D scene completion. Through a **Distance-aware Selective Repetition (DSR) strategy**…
+  [AAAI 2026][Autonomous Driving][LiDAR scene completion] This paper proposes LiNeXt, a lightweight non-diffusion network for LiDAR 3D scene completion. Through a **Distance-aware Selective Repetition (DSR) strategy**, a **Noise-to-Coarse (N2C) module**, and a **Refine module**, LiNeXt directly reconstructs complete point clouds. On SemanticKITTI, it achieves **199.8×** faster inference than LiDiff, reduces Chamfer Distance by **50.7%**, and uses only **6.1%** of LiDiff's param…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "sparse convolution"
   - "real-time inference"
 date: 2026-05-08
-content_hash: 5dd9471a1011bfbb
+content_hash: a3f831902563f695
 ---
 
 # LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures
@@ -200,7 +200,7 @@ Key figures: compared with LiDiff, LiNeXt achieves **199.8× speedup**, **50.7% 
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](../../CVPR2026/autonomous_driving/colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
 - [\[AAAI 2026\] LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors](lidar-gsimproving_lidar_gaussian_reconstruction_via_diffusion_priors.md)
 - [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
-- [\[AAAI 2026\] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models](unlocking_efficient_vehicle_dynamics_modeling_via_analytic_world_models.md)
+- [\[AAAI 2026\] HD2-SSC: High-Dimension High-Density Semantic Scene Completion for Autonomous Driving](hd2-ssc_high-dimension_high-density_semantic_scene_completion_for_autonomous_dri.md)
 
 </div>
 

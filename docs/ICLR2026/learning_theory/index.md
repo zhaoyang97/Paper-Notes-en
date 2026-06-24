@@ -83,7 +83,7 @@ item_total: 293
 
 **🔬 ICLR2026** · **293** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (45)](../../ICML2026/learning_theory/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/learning_theory/index.md) · [🧠 NeurIPS2025 (25)](../../NeurIPS2025/learning_theory/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (45)](../../ICML2026/learning_theory/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/learning_theory/index.md) · [🧠 NeurIPS2025 (25)](../../NeurIPS2025/learning_theory/index.md) · [🧪 ICML2025 (16)](../../ICML2025/learning_theory/index.md)
 
 🔥 **Top topics:** Adversarial Robustness ×16 · Diffusion Models ×15 · Continual Learning ×5 · Alignment/RLHF ×4 · Image Restoration ×3
 

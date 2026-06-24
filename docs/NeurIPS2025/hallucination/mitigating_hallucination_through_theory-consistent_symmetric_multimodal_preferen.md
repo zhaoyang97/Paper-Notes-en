@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization
 description: >-
-  [NeurIPS 2025][Hallucination Detection][DPO] This paper proposes SymMPO (Symmetric Multimodal Preference Optimization), which addresses two key limitations of existing vision-augmented DPO methods—namely…
+  [NeurIPS 2025][Hallucination Detection][DPO] This paper proposes SymMPO (Symmetric Multimodal Preference Optimization), which addresses two key limitations of existing vision-augmented DPO methods—namely, theoretically unsound objective functions and indirect preference supervision—through symmetric paired preference learning over contrastive images and preference margin consistency regularization. Consistent performance gains are achieved across five hallucination benchmarks…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "visual understanding"
   - "symmetric preference learning"
 date: 2026-05-08
-content_hash: 70d1d41105247800
+content_hash: dfa31000f680289e
 ---
 
 # Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization
@@ -169,10 +169,10 @@ Component ablation on LLaVA-1.5-7B:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Systematic Reward Gap Optimization for Mitigating VLM Hallucinations](systematic_reward_gap_optimization_for_mitigating_vlm_hallucinations.md)
-- [\[CVPR 2026\] MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization](../../CVPR2026/hallucination/mod-dpo_towards_mitigating_cross-modal_hallucinations_in_omni_llms_using_modalit.md)
+- [\[ICLR 2026\] Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs](../../ICLR2026/hallucination/cat-po_cross-modal_adaptive_token-rewards_for_preference_optimization_in_truthfu.md)
 - [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](../../ICML2026/hallucination/learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
-- [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
-- [\[NeurIPS 2025\] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations](when_semantics_mislead_vision_mitigating_large_multimodal_models_hallucinations_.md)
+- [\[CVPR 2026\] MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization](../../CVPR2026/hallucination/mod-dpo_towards_mitigating_cross-modal_hallucinations_in_omni_llms_using_modalit.md)
+- [\[ICLR 2026\] P2-DPO: Grounding Hallucination in Perceptual Processing via Calibration Direct Preference Optimization](../../ICLR2026/hallucination/p2-dpo_grounding_hallucination_in_perceptual_processing_via_calibration_direct_p.md)
 
 </div>
 

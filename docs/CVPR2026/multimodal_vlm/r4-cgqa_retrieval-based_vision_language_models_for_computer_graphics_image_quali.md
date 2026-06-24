@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] R4-CGQA: Retrieval-based Vision Language Models for Computer Graphics Image Quality Assessment
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] Addressing the issues of "Computer Graphics (CG) image quality assessment lacking explainable text descriptions" and "VLMs being inaccurate in direct CG quality judgment," R4-CGQA first constructs the first 3.5K CG dataset with six-dimensional quality descriptions. It then proposes a **content-quality dual-stream retri
+  [CVPR 2026][Multimodal VLM][Computer Graphics] Addressing the issues of "Computer Graphics (CG) image quality assessment lacking explainable text descriptions" and "VLMs being inaccurate in direct CG quality judgment," R4-CGQA first constructs the first 3.5K CG dataset with six-dimensional quality descriptions. It then proposes a **content-quality dual-stream retrieval** framework. By feeding quality descriptions of visually similar CG images as examples to VLMs without fine-…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Computer Graphics"
+  - "Image Quality Assessment"
+  - "Retrieval-Augmented Generation"
+  - "Vision Language Models"
+  - "Content-Quality Dual-Stream Retrieval"
 date: 2026-05-08
-content_hash: 765fbaa34922236e
+content_hash: 551c547ee8bf379a
 ---
+
 # R4-CGQA: Retrieval-based Vision Language Models for Computer Graphics Image Quality Assessment
 
 **Conference**: CVPR 2026  
@@ -131,8 +136,8 @@ Full dual-stream relative to Base shows +9.7%/+11.1% gain in Choice/Yes-or-no on
 - [\[CVPR 2026\] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement](uare_a_unified_vision-language_model_for_image_quality_assessment_restoration_an.md)
 - [\[CVPR 2026\] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment](probabilistic_prompt_adaptation_for_unified_image_aesthetics_and_quality_assessm.md)
 - [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](../../ICLR2026/multimodal_vlm/self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
-- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
 - [\[ICLR 2026\] Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment](../../ICLR2026/multimodal_vlm/grounding-iqa_grounding_multimodal_language_model_for_image_quality_assessment.md)
+- [\[CVPR 2026\] VITAL: Vision-Encoder-centered Pre-training for LMMs in Visual Quality Assessment](vital_vision-encoder-centered_pre-training_for_lmms_in_visual_quality_assessment.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Proposes Spatial-Projection Alignment (SPAN), which utilizes two geometric synergistic constraints—3D corner spatial alignment and 3D-2D projection alignment—combined with a hierarchical task learning strategy. It serves as a plug-and-play module to improve the localization accuracy of arbitrary monocular 3D detectors.
+  [CVPR2026][3D Vision][Monocular 3D detection] Proposes Spatial-Projection Alignment (SPAN), which utilizes two geometric synergistic constraints—3D corner spatial alignment and 3D-2D projection alignment—combined with a hierarchical task learning strategy. It serves as a plug-and-play module to improve the localization accuracy of arbitrary monocular 3D detectors.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Monocular 3D detection"
+  - "geometric consistency"
+  - "spatial alignment"
+  - "projection constraints"
+  - "plug-and-play"
 date: 2026-05-08
-content_hash: dd209a1ab5246929
+content_hash: 24780285245061bd
 ---
+
 # SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection
 
 **Conference**: CVPR2026  
@@ -158,7 +164,7 @@ On the KITTI validation set:
 - [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
 - [\[AAAI 2026\] MonoCLUE: Object-Aware Clustering Enhances Monocular 3D Object Detection](../../AAAI2026/3d_vision/monoclue_object-aware_clustering_enhances_monocular_3d_object_detection.md)
-- [\[CVPR 2025\] MonoPlace3D: Learning 3D-Aware Object Placement for 3D Monocular Detection](../../CVPR2025/3d_vision/monoplace3d_learning_3d-aware_object_placement_for_3d_monocular_detection.md)
+- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
 
 </div>
 

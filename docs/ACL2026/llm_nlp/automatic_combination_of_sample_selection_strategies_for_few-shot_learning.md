@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Automatic Combination of Sample Selection Strategies for Few-Shot Learning
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes the ACSESS method, which automatically identifies and combines complementary sample selection strategies through three mechanisms: forward selection, backward selection, and Datamodels. Validated across 23 strategies, 5 ICL models, 3 gradient-based few-shot learning methods, and 14 datasets (6 text,
+  [ACL 2026 Findings][LLM (Other)][Few-shot learning] This paper proposes the ACSESS method, which automatically identifies and combines complementary sample selection strategies through three mechanisms: forward selection, backward selection, and Datamodels. Validated across 23 strategies, 5 ICL models, 3 gradient-based few-shot learning methods, and 14 datasets (6 text, 8 image), the combined strategy consistently outperforms single strategies and ICL-specific baselines.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Few-shot learning"
+  - "Sample selection"
+  - "Strategy combination"
+  - "In-context learning"
+  - "Meta-learning"
 date: 2026-05-08
-content_hash: 95b453cc50db141f
+content_hash: 9790765f7afadac5
 ---
+
 # Automatic Combination of Sample Selection Strategies for Few-Shot Learning
 
 **Conference**: ACL 2026 Findings  
@@ -156,7 +162,7 @@ ACSESS achieved statistical significance via Wilcoxon tests in all comparisons.
 ## Related Papers
 
 - [\[ICML 2025\] Random Registers for Cross-Domain Few-Shot Learning](../../ICML2025/llm_nlp/random_registers_for_cross-domain_few-shot_learning.md)
-- [\[ACL 2026\] Model-Agnostic Meta Learning for Class Imbalance Adaptation](model-agnostic_meta_learning_for_class_imbalance_adaptation.md)
+- [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
 - [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
 - [\[ACL 2026\] FastDiSS: Few-step Match Many-step Diffusion Language Model on Sequence-to-Sequence Generation](fastdiss_few-step_match_many-step_diffusion_language_model_on_sequence-to-sequen.md)
 - [\[ACL 2025\] From Selection to Generation: A Survey of LLM-based Active Learning](../../ACL2025/llm_nlp/from_selection_to_generation_a_survey.md)

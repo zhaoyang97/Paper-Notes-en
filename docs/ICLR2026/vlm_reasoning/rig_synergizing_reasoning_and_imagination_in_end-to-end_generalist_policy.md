@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] RIG: Synergizing Reasoning and Imagination in End-to-End Generalist Policy
 description: >-
-  [ICLR 2026][vlm_reasoning][Embodied AI] RIG integrates textual reasoning, low-level action prediction, and future frame generation into a single autoregressive Transformer. Through progressively constructed Minecraft trajectory data, the policy is enabled to "think, imagine the outcome, and then refine actions," simultaneously improving control, generation,
+  [ICLR 2026][VLM Reasoning][Embodied Intelligence] RIG integrates textual reasoning, low-level action prediction, and future frame generation into a single autoregressive Transformer. Through progressively constructed Minecraft trajectory data, the policy is enabled to "think, imagine the outcome, and then refine actions," simultaneously improving control, generation, and reasoning performance with significantly less environmental interaction data.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Embodied AI
-  - World Models
-  - lookahead
-  - Minecraft
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Embodied Intelligence"
+  - "World Model"
+  - "Multimodal Reasoning"
+  - "Lookahead"
+  - "Minecraft"
 date: 2026-05-08
-content_hash: ce309784e1e3a840
+content_hash: f3324fa424c6d4e2
 ---
+
 # RIG: Synergizing Reasoning and Imagination in End-to-End Generalist Policy
 
 **Conference**: ICLR 2026  

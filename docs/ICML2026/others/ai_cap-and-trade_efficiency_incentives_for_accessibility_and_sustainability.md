@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] AI Cap-and-Trade: Efficiency Incentives for Accessibility and Sustainability
 description: >-
-  [ICML 2026][Others][Paper Note] Drawing on carbon cap-and-trade, the authors propose a quota-trading market for AI inference FLOPs (AI Allowance). Using KKT conditions, they prove this mechanism strictly reduces FLOP usage by companies under reasonable parameters, simultaneously addressing energy consumption and the exclusion of small companies in th
+  [ICML 2026][Emissions Trading] Drawing on carbon cap-and-trade, the authors propose a quota-trading market for AI inference FLOPs (AI Allowance). Using KKT conditions, they prove this mechanism strictly reduces FLOP usage by companies under reasonable parameters, simultaneously addressing energy consumption and the exclusion of small companies in the LLM era.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Emissions Trading"
+  - "FLOP Quotas"
+  - "AI Accessibility"
+  - "Energy Incentives"
+  - "KKT Analysis"
 date: 2026-05-08
-content_hash: 055b94a8daa5caaa
+content_hash: abeb057156448eca
 ---
+
 # AI Cap-and-Trade: Efficiency Incentives for Accessibility and Sustainability
 
 **Conference**: ICML 2026  

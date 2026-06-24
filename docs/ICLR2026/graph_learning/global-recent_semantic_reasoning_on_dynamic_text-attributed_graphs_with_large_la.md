@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models
 description: >-
-  [ICLR 2026][Graph Learning][DyTAG] DyGRASP utilizes the **implicit reasoning** of LLMs to capture "recent semantic dependencies" and **explicit reasoning** to capture "global semantic evolution". By fusing these with temporal GNNs, it improves destination node retrieval Hit@10 by up to 34% on Dynamic Text-Attributed Graphs (DyTAG) while reducing LLM rea
+  [ICLR 2026][Graph Learning][DyTAG] DyGRASP utilizes the **implicit reasoning** of LLMs to capture "recent semantic dependencies" and **explicit reasoning** to capture "global semantic evolution". By fusing these with temporal GNNs, it improves destination node retrieval Hit@10 by up to 34% on Dynamic Text-Attributed Graphs (DyTAG) while reducing LLM reasoning complexity from $O(|E|\cdot d)$ to $O(|E|)$.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - DyTAG
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "DyTAG"
+  - "Dynamic Graphs"
+  - "Temporal GNN"
+  - "LLM Reasoning"
+  - "Implicit/Explicit Reasoning"
+  - "Link Prediction"
 date: 2026-05-08
-content_hash: 8731f61367a7f64d
+content_hash: 8239ce73c9d8d19a
 ---
+
 # Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models
 
 **Conference**: ICLR 2026  
@@ -128,8 +134,8 @@ Using TGAT as a backbone, there is also a +45.48 gain on Stack_elec under the in
 
 ## Related Papers
 
-- [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
 - [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](../../NeurIPS2025/graph_learning/dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
+- [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
 - [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](../../CVPR2026/graph_learning/mario_multimodal_graph_reasoning_with_large_language_models.md)
 - [\[ICML 2025\] Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models](../../ICML2025/graph_learning/graph-constrained_reasoning_faithful_reasoning_on_knowledge_graphs_with_large_la.md)
 - [\[ICLR 2026\] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning](knowledge_reasoning_language_model_unifying_knowledge_and_language_for_inductive.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Refining and Reusing Annotation Guidelines for LLM Annotation
 description: >-
-  [ACL 2026][NLP Understanding][guideline refinement] This paper transfers the guideline reuse and moderation processes from traditional manual annotation projects to LLM annotation. It demonstrates that explicit annotation guidelines, reasoning-based models, and iterative guideline refinement driven by a small amount of gold discrepancy can significantly improve strict s
+  [ACL2026][NLP Understanding][Annotation Guidelines] This paper transfers the guideline reuse and moderation processes from traditional manual annotation projects to LLM annotation. It demonstrates that explicit annotation guidelines, reasoning-based models, and iterative guideline refinement driven by a small amount of gold discrepancy can significantly improve strict span+type F1 in biomedical NER.
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - guideline refinement
-  - moderation
+  - "ACL2026"
+  - "NLP Understanding"
+  - "Annotation Guidelines"
+  - "LLM Annotation"
+  - "Biomedical NER"
+  - "guideline refinement"
+  - "moderation"
 date: 2026-05-08
-content_hash: 70153100c2594dfd
+content_hash: 788d6c05de27bb7c
 ---
+
 # Refining and Reusing Annotation Guidelines for LLM Annotation
 
 **Conference**: ACL2026  
@@ -132,7 +136,6 @@ No models are trained or fine-tuned. The experiment compares three prompting/mod
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

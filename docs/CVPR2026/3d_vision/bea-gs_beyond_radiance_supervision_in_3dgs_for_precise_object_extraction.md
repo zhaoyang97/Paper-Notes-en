@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BEA-GS: BEyond RAdiance Supervision in 3DGS for Precise Object Extraction
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] Addressing the issue of "hidden Gaussian spikes" appearing after object extraction in 3DGS scenes, BEA-GS introduces two complementary losses during 2DGS optimization: a 2D boundary loss for visible regions (propagating gradients via rasterization to push boundary-crossing Gaussians back) and a 3D occupancy loss for no
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] Addressing the issue of "hidden Gaussian spikes" appearing after object extraction in 3DGS scenes, BEA-GS introduces two complementary losses during 2DGS optimization: a 2D boundary loss for visible regions (propagating gradients via rasterization to push boundary-crossing Gaussians back) and a 3D occupancy loss for non-visible regions (bypassing rasterization to penalize "unsupported" Gaussian samples based on voxel priors). It a…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Object Extraction"
+  - "Semantic Segmentation"
+  - "Boundary Loss"
+  - "Occupancy Prior"
 date: 2026-05-08
-content_hash: 649bec14286980f3
+content_hash: 20eea96b222c064c
 ---
+
 # BEA-GS: BEyond RAdiance Supervision in 3DGS for Precise Object Extraction
 
 **Conference**: CVPR 2026  
@@ -145,11 +149,11 @@ R = Reprojection, B = Boundary Loss, O = Occupancy Loss (Extracted metrics):
 
 ## Related Papers
 
-- [\[CVPR 2026\] GAI-GS: A Wireless Channel Prediction Framework Injecting Ray-Object Interaction into 3DGS via Geometric Algebra Attention](a_geometric_algebra-informed_3dgs_framework_for_wireless_channel_prediction.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[CVPR 2026\] DINO Eats CLIP: Adapting Beyond Knowns for Open-set 3D Object Retrieval](dino_eats_clip_adapting_beyond_knowns_for_open-set_3d_object_retrieval.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision](evobj_learning_evolving_object-centric_representations_for_3d_instance_segmentat.md)
+- [\[CVPR 2026\] GAI-GS: A Wireless Channel Prediction Framework Injecting Ray-Object Interaction into 3DGS via Geometric Algebra Attention](a_geometric_algebra-informed_3dgs_framework_for_wireless_channel_prediction.md)
+- [\[CVPR 2026\] Beyond Reassembly: Fractured Object Recovery with Missing Parts](beyond_reassembly_fractured_object_recovery_with_missing_parts.md)
+- [\[CVPR 2026\] Turbo-GS: Accelerating 3D Gaussian Fitting for High-Resolution Radiance Fields](turbo-gs_accelerating_3d_gaussian_fitting_for_high-quality_radiance_fields.md)
+- [\[CVPR 2026\] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling](cat-gs_efficient_3dgs_rendering_for_large-scale_scenes_with_inter-frame_caching_.md)
 
 </div>
 

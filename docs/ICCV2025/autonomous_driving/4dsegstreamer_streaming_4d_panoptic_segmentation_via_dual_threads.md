@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 4DSegStreamer: Streaming 4D Panoptic Segmentation via Dual Threads
 description: >-
-  [ICCV 2025][Autonomous Driving][4D panoptic segmentation] This paper proposes 4DSegStreamer, a streaming 4D panoptic segmentation framework built upon a dual-thread system (predictive thread + inference thread). It achie…
+  [ICCV 2025][Autonomous Driving][4D panoptic segmentation] This paper proposes 4DSegStreamer, a streaming 4D panoptic segmentation framework built upon a dual-thread system (predictive thread + inference thread). It achieves real-time, high-quality 4D panoptic segmentation through geometric and motion memory maintenance, ego-pose prediction, and inverse forward flow iteration.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "motion alignment"
   - "point cloud sequences"
 date: 2026-05-08
-content_hash: b2d4ad023a23c56b
+content_hash: b6e4a814ed2af50d
 ---
 
 # 4DSegStreamer: Streaming 4D Panoptic Segmentation via Dual Threads
@@ -161,11 +161,11 @@ Comparison of flow prediction strategies:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Zero-Shot 4D Lidar Panoptic Segmentation](../../CVPR2025/autonomous_driving/zero-shot_4d_lidar_panoptic_segmentation.md)
 - [\[ICCV 2025\] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation](dist-4d_disentangled_spatiotemporal_diffusion_with_metric_depth_for_4d_driving_s.md)
-- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
-- [\[ICCV 2025\] DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic](duet_dual_incremental_object_detection_via_exemplar-free_task_arithmetic.md)
 - [\[ICCV 2025\] ETA: Efficiency through Thinking Ahead, A Dual Approach to Self-Driving with Large Models](eta_efficiency_through_thinking_ahead_a_dual_approach_to_self-driving_with_large.md)
-- [\[CVPR 2026\] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving](../../CVPR2026/autonomous_driving/an_instance-centric_panoptic_occupancy_prediction_benchmark_for_autonomous_drivi.md)
+- [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
+- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
 
 </div>
 

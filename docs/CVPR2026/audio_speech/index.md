@@ -65,7 +65,7 @@ item_total: 22
 
 **📷 CVPR2026** · **22** paper notes
 
-📌 **Same area in other venues:** [🔬 ICLR2026 (80)](../../ICLR2026/audio_speech/index.md) · [💬 ACL2026 (72)](../../ACL2026/audio_speech/index.md) · [🧪 ICML2026 (36)](../../ICML2026/audio_speech/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/audio_speech/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/audio_speech/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (80)](../../ICLR2026/audio_speech/index.md) · [💬 ACL2026 (72)](../../ACL2026/audio_speech/index.md) · [🧪 ICML2026 (36)](../../ICML2026/audio_speech/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/audio_speech/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/audio_speech/index.md)
 
 🔥 **Top topics:** Speech & Audio ×14 · Multimodal/VLM ×3 · Alignment/RLHF ×2 · Diffusion Models ×2
 

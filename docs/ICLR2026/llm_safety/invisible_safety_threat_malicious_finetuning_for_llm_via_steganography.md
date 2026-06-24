@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Through malicious finetuning, an LLM is taught a steganographic encoding scheme based on zero-width characters. This allows the model to hide harmful Q&A content entirely within "seemingly harmless" cover conversations—humans see normal interactions and Llama Guard classifies all outputs as safe, yet local decoding can
+  [LLM Safety] Through malicious finetuning, an LLM is taught a steganographic encoding scheme based on zero-width characters. This allows the model to hide harmful Q&A content entirely within "seemingly harmless" cover conversations—humans see normal interactions and Llama Guard classifies all outputs as safe, yet local decoding can extract the harmful content. This attack remains effective under the safety mechanisms of OpenAI's GPT-4.1 finetuning API.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "LLM Safety"
 date: 2026-05-08
-content_hash: 61623d840f128859
+content_hash: 067e4368d4223eff
 ---
+
 # Invisible Safety Threat: Malicious Finetuning for LLM via Steganography
 
 Conference: ICLR 2026  

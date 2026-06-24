@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SigLIP-HD by Fine-to-Coarse Supervision
 description: >-
-  [ICLR 2026][Multimodal VLM][SigLIP 2] SigLIP-HD utilizes a frozen SigLIP 2 to generate fine-grained teacher features from multi-scale images, supervising an architecturally identical student model to learn clearer visual tokens from $512^2$ images alone. This enhances the OCR, chart, and detail perception of MLLMs without increasing inference costs.
+  [ICLR2026][Multimodal VLM][High-resolution visual representation] SigLIP-HD utilizes a frozen SigLIP 2 to generate fine-grained teacher features from multi-scale images, supervising an architecturally identical student model to learn clearer visual tokens from $512^2$ images alone. This enhances the OCR, chart, and detail perception of MLLMs without increasing inference costs.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - SigLIP 2
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "High-resolution visual representation"
+  - "SigLIP 2"
+  - "Multimodal Large Language Models"
+  - "OCR perception"
+  - "Feature distillation"
 date: 2026-05-08
-content_hash: 84e0f4e1c36294e5
+content_hash: f5e2fe244395fb66
 ---
+
 # SigLIP-HD by Fine-to-Coarse Supervision
 
 **Conference**: ICLR2026  
@@ -157,13 +162,14 @@ Generalization across LLMs was confirmed. For instance, with LLaVA-NeXT data and
 - Value: ⭐⭐⭐⭐⭐ High practical value as a drop-in replacement for OCR/Document MLLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](../../CVPR2026/multimodal_vlm/boosting_document_parsing_efficiency_and_performance_with_coarse-to-fine_visual_.md)
-- [\[ICLR 2026\] DataProphet: Demystifying Supervision Data Generalization in Multimodal LLMs](demystifying_supervision_data_generalization_in_multimodal_lms.md)
 - [\[ACL 2025\] CART: A Generative Cross-Modal Retrieval Framework with Coarse-To-Fine Semantic Modeling](../../ACL2025/multimodal_vlm/cart_a_generative_cross-modal_retrieval_framework_with_coarse-to-fine_semantic_m.md)
+- [\[ICLR 2026\] DataProphet: Demystifying Supervision Data Generalization in Multimodal LLMs](demystifying_supervision_data_generalization_in_multimodal_lms.md)
 - [\[ICLR 2026\] MergeTune: Continued Fine-Tuning of Vision-Language Models](mergetune_continued_fine-tuning_of_vision-language_models.md)
 - [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](../../CVPR2026/multimodal_vlm/learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
 

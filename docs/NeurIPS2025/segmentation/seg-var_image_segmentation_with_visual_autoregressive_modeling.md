@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Seg-VAR: Image Segmentation with Visual Autoregressive Modeling
 description: >-
-  [NeurIPS 2025][Segmentation][Visual Autoregressive Modeling] Seg-VAR reformulates image segmentation as a conditional autoregressive mask generation problem. By introducing *seglat* (a latent representation of segmentati…
+  [NeurIPS 2025][Segmentation][Visual Autoregressive Modeling] Seg-VAR reformulates image segmentation as a conditional autoregressive mask generation problem. By introducing *seglat* (a latent representation of segmentation masks) and spatial-aware color mapping, it encodes segmentation masks into discrete tokens processable by a VAR model. Seg-VAR comprehensively outperforms discriminative methods such as Mask2Former and generative methods such as GSS across semantic…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Spatial-Aware Color Mapping"
   - "Generative Segmentation"
 date: 2026-05-08
-content_hash: e3df80d4e026528e
+content_hash: 6e3246604a8793cc
 ---
 
 # Seg-VAR: Image Segmentation with Visual Autoregressive Modeling
@@ -132,11 +132,11 @@ These correspond to three modules: an image encoder $\mathcal{I}_\psi$ (generate
 
 ## Related Papers
 
+- [\[CVPR 2025\] Uni4D: Unifying Visual Foundation Models for 4D Modeling from a Single Video](../../CVPR2025/segmentation/uni4d_unifying_visual_foundation_models_for_4d_modeling_from_a_single_video.md)
 - [\[ICCV 2025\] Harnessing Massive Satellite Imagery with Efficient Masked Image Modeling](../../ICCV2025/segmentation/harnessing_massive_satellite_imagery_with_efficient_masked_image_modeling.md)
-- [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
-- [\[NeurIPS 2025\] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation](safire_saccade-fixation_reiteration_with_mamba_for_referring_image_segmentation.md)
-- [\[ICCV 2025\] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation](../../ICCV2025/segmentation/exploring_probabilistic_modeling_beyond_domain_generalization_for_semantic_segme.md)
+- [\[CVPR 2025\] EditAR: Unified Conditional Generation with Autoregressive Models](../../CVPR2025/segmentation/editar_unified_conditional_generation_with_autoregressive_models.md)
 - [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
+- [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
 
 </div>
 

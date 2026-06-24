@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification
 description: >-
-  [ICLR 2026][Video Generation][video-generation] This paper proposes the QuantSparse framework, which for the first time synergistically integrates model quantization and attention sparsification for the compression of video diffusion Transformers. By addressing the "amplified attention shift" caused by the naive combination of these two techniques through Multi-Scal
+  [ICLR 2026][Video Generation][video-generation] This paper proposes the QuantSparse framework, which for the first time synergistically integrates model quantization and attention sparsification for the compression of video diffusion Transformers. By addressing the "amplified attention shift" caused by the naive combination of these two techniques through Multi-Scale Salient Attention Distillation (MSAD) and Second-order Sparse Attention Reparameterization (SSAR)…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - video-generation
-  - model-compression
-  - quantization
-  - sparse-attention
-  - diffusion-transformer
+  - "ICLR 2026"
+  - "Video Generation"
+  - "video-generation"
+  - "model-compression"
+  - "quantization"
+  - "sparse-attention"
+  - "diffusion-transformer"
 date: 2026-05-08
-content_hash: c46eb6e94ee9f0f6
+content_hash: 295c5b1c6ac32e80
 ---
+
 # QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification
 
 **Conference**: ICLR 2026  
@@ -162,10 +163,10 @@ DFT utilizes the temporal stability of first-order residuals for attention appro
 ## Related Papers
 
 - [\[ICLR 2026\] Model Already Knows the Best Noise: Bayesian Active Noise Selection via Attention in Video Diffusion Model](model_already_knows_the_best_noise_bayesian_active_noise_selection_via_attention.md)
-- [\[ICLR 2026\] Syncphony: 用扩散 Transformer 实现音画同步的音频到视频生成](syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)
 - [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
-- [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
-- [\[ICLR 2026\] MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation](moga_mixture-of-groups_attention_for_end-to-end_long_video_generation.md)
+- [\[CVPR 2026\] Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](../../CVPR2026/video_generation/attention_surgery_an_efficient_recipe_to_linearize_your_video_diffusion_transfor.md)
+- [\[ICLR 2026\] SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer](sana-video_efficient_video_generation_with_block_linear_diffusion_transformer.md)
+- [\[ICLR 2026\] TPDiff: Temporal Pyramid Video Diffusion Model](tpdiff_temporal_pyramid_video_diffusion_model.md)
 
 </div>
 

@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] TileLang：在现代神经网络算子中架起可编程性与性能的桥梁
+  [Paper Note] TileLang: Bridging Programmability and Performance in Modern Neural Network Operators
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] TileLang proposes a programmable GPU operator language where the "tile" is a first-class citizen. It explicitly exposes low-level knobs such as memory placement, data movement, and parallel partitioning to developers. By utilizing a unified Fused Tile-level Dataflow Graph (FTG) combined with a two-stage auto-completion
+  [ICLR 2026][LLM Efficiency][GPU Operators] TileLang proposes a programmable GPU operator language where the "tile" is a first-class citizen. It explicitly exposes low-level knobs such as memory placement, data movement, and parallel partitioning to developers. By utilizing a unified Fused Tile-level Dataflow Graph (FTG) combined with a two-stage auto-completion process—"tile recommendation + tile inference"—it enables writing operators in under 70 lines of Python that achieve…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "GPU Operators"
+  - "Compiler DSL"
+  - "Tile Abstraction"
+  - "Dataflow Graph"
+  - "Auto-scheduling"
 date: 2026-05-08
-content_hash: e4c9f5ab97852cf7
+content_hash: 53a8b54f808c4a85
 ---
+
 # TileLang: Bridging Programmability and Performance in Modern Neural Network Operators
 
 **Conference**: ICLR 2026  
@@ -140,11 +146,11 @@ Using FlashMLA as an example, starting from a manual heuristic schedule (TL-Heur
 
 ## Related Papers
 
-- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
-- [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](fast-dllm_v2_efficient_block-diffusion_llm.md)
+- [\[ICLR 2026\] Composer: A Search Framework for Hybrid Neural Architecture Design](composer_a_search_framework_for_hybrid_neural_architecture_design.md)
 - [\[ICLR 2026\] Smooth Reading: Bridging the Gap of Recurrent LLM to Self-Attention LLM on Long-Context Understanding](smooth_reading_bridging_the_gap_of_recurrent_llm_to_self-attention_llm_on_long-c.md)
+- [\[ICLR 2026\] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity](xlstm_scaling_laws_competitive_performance_with_linear_time-complexity.md)
+- [\[ICML 2026\] TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins](../../ICML2026/llm_efficiency/tuneahead_predicting_fine-tuning_performance_before_full_training_begins.md)
+- [\[NeurIPS 2025\] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search](../../NeurIPS2025/llm_efficiency/jet-nemotron_efficient_language_model_with_post_neural_architecture_search.md)
 
 </div>
 

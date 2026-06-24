@@ -78,7 +78,7 @@ item_total: 28
 
 **💬 ACL2026** · **28** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (32)](../../CVPR2026/hallucination/index.md) · [🔬 ICLR2026 (40)](../../ICLR2026/hallucination/index.md) · [🧪 ICML2026 (21)](../../ICML2026/hallucination/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/hallucination/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/hallucination/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/hallucination/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (33)](../../CVPR2026/hallucination/index.md) · [🔬 ICLR2026 (40)](../../ICLR2026/hallucination/index.md) · [🧪 ICML2026 (21)](../../ICML2026/hallucination/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/hallucination/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/hallucination/index.md) · [📹 ICCV2025 (5)](../../ICCV2025/hallucination/index.md)
 
 🔥 **Top topics:** LLM ×7 · Multimodal/VLM ×4 · Speech & Audio ×3 · RAG ×3 · Reasoning ×2
 

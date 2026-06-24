@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Robustness Tradeoff in Fine-Tuning
 description: >-
-  [ICCV 2025][LLM Evaluation][fine-tuning robustness] The first systematic study of the adversarial robustness–accuracy tradeoff during fine-tuning, conducted across 231 models, 7 fine-tuning strategies…
+  [ICCV 2025][LLM Evaluation][fine-tuning robustness] The first systematic study of the adversarial robustness–accuracy tradeoff during fine-tuning, conducted across 231 models, 7 fine-tuning strategies, and 6 datasets. Key findings: (1) robustness first increases then decreases in the early stages of fine-tuning; (2) different PEFT strategies and task complexities yield distinct Pareto frontiers; (3) OOD robustness exhibits no analogous tradeoff and instead tracks accuracy cha…
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Pareto frontier"
   - "OOD robustness"
 date: 2026-05-08
-content_hash: e5f4e7f748507aa8
+content_hash: 9e8917ecbf2ed714
 ---
 
 # On the Robustness Tradeoff in Fine-Tuning
@@ -146,10 +146,10 @@ Using Caltech-256 as a representative case, all 7 fine-tuning methods reach ≈9
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](../../NeurIPS2025/llm_evaluation/hyperbolic_fine-tuning_for_large_language_models.md)
+- [\[ACL 2025\] Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?](../../ACL2025/llm_evaluation/towards_objective_fine-tuning_how_llms_prior_knowledge_causes_potential_poor_cal.md)
 - [\[AAAI 2026\] Low-Rank Curvature for Zeroth-Order Optimization in LLM Fine-Tuning](../../AAAI2026/llm_evaluation/low-rank_curvature_for_zeroth-order_optimization_in_llm_fine-tuning.md)
 - [\[ICML 2026\] AGZO: Activation-Guided Zeroth-Order Optimization for LLM Fine-Tuning](../../ICML2026/llm_evaluation/agzo_activation-guided_zeroth-order_optimization_for_llm_fine-tuning.md)
 - [\[ICCV 2025\] OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning](omnidiff_a_comprehensive_benchmark_for_fine-grained_image_difference_captioning.md)
-- [\[ICML 2026\] Beyond Log Likelihood: Probability-Based Objectives for Supervised Fine-Tuning across the Model Capability Continuum](../../ICML2026/llm_evaluation/beyond_log_likelihood_probability-based_objectives_for_supervised_fine-tuning_ac.md)
 
 </div>
 

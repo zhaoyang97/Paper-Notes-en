@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models
 description: >-
-  [ACL 2026][Model Compression][LoRA] TalkLoRA introduces a lightweight Talking Module into the MoE-LoRA architecture, allowing low-rank experts to exchange information before routing. This addresses the issues of unstable routing and expert dominance caused by independent expert operation in traditional MoELoRA. On commonsense reasoning and NLU tasks, it
+  [ACL2026][Model Compression][LoRA] TalkLoRA introduces a lightweight Talking Module into the MoE-LoRA architecture, allowing low-rank experts to exchange information before routing. This addresses the issues of unstable routing and expert dominance caused by independent expert operation in traditional MoELoRA. On commonsense reasoning and NLU tasks, it consistently outperforms LoRA and MoELoRA variants with fewer parameters (0.2%).
 tags:
-  - ACL 2026
-  - Model Compression
-  - LoRA
-  - MoE
-  - Talking Module
+  - "ACL2026"
+  - "Model Compression"
+  - "LoRA"
+  - "MoE"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Expert Communication"
+  - "Routing Equilibrium"
+  - "Talking Module"
 date: 2026-05-08
-content_hash: 8739eaa0dfd62826
+content_hash: 22de8f856b449672
 ---
+
 # TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models
 
 **Conference**: ACL2026  
@@ -129,10 +133,10 @@ GLUE benchmark (RoBERTa-base, 0.3M parameters):
 ## Related Papers
 
 - [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
-- [\[ACL 2026\] Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation](not_all_directions_matter_towards_structured_and_task-aware_low-rank_model_adapt.md)
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](../../NeurIPS2025/model_compression/gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](../../NeurIPS2025/model_compression/data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
 - [\[NeurIPS 2025\] C-LoRA: Contextual Low-Rank Adaptation for Uncertainty Estimation in Large Language Models](../../NeurIPS2025/model_compression/c-lora_contextual_low-rank_adaptation_for_uncertainty_estimation_in_large_langua.md)
+- [\[ACL 2026\] Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation](not_all_directions_matter_towards_structured_and_task-aware_low-rank_model_adapt.md)
 
 </div>
 

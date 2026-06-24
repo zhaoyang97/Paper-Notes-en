@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning
 description: >-
-  [ICLR 2026][Others][Continual Learning] HippoTune upgrades "single-step prompt pool retrieval" to an **intra-layer iterative latent space retrieval cycle** mimicking the hippocampal EC–DG–CA3–CA1 loop. Through several rounds of "query–retrieval–feedback," it deeply activates memories of previous tasks, improving the accuracy of buffer-free PEFT-CL by 5–8% wi
+  [ICLR 2026][Continual Learning] HippoTune upgrades "single-step prompt pool retrieval" to an **intra-layer iterative latent space retrieval cycle** mimicking the hippocampal EC–DG–CA3–CA1 loop. Through several rounds of "query–retrieval–feedback," it deeply activates memories of previous tasks, improving the accuracy of buffer-free PEFT-CL by 5–8% with approximately half the FLOPs.
 tags:
-  - ICLR 2026
-  - Others
-  - Continual Learning
-  - PEFT
+  - "ICLR 2026"
+  - "Continual Learning"
+  - "PEFT"
+  - "Hippocampal Loop"
+  - "Iterative Retrieval"
+  - "Krylov Subspace"
+  - "Second-order Preconditioning"
 date: 2026-05-08
-content_hash: 31448b11d0a838c5
+content_hash: 5dbef94048e4c3b7
 ---
+
 # HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning
 
 **Conference**: ICLR 2026  
@@ -113,14 +117,15 @@ Removal of Latent Deliberation components (Acc/AAA):
 - **Value**: ⭐⭐⭐⭐ — Achieves 5–8% improvement with half the FLOPs under strict budgets, offering high practical value for resource-constrained continual learning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Deploying Models to Non-participating Clients in Federated Learning without Fine-tuning: A Hypernetwork-based Approach](deploying_models_to_non-participating_clients_in_federated_learning_without_fine.md)
 - [\[ICLR 2026\] Forget Forgetting: Continual Learning in a World of Abundant Memory](forget_forgetting_continual_learning_in_a_world_of_abundant_memory.md)
+- [\[ICLR 2026\] Deploying Models to Non-participating Clients in Federated Learning without Fine-tuning: A Hypernetwork-based Approach](deploying_models_to_non-participating_clients_in_federated_learning_without_fine.md)
 - [\[ICML 2026\] Continual Learning of Domain-Invariant Representations](../../ICML2026/others/continual_learning_of_domain-invariant_representations.md)
-- [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
+- [\[ICML 2026\] Advantages of Non-Smooth Components in Vision Transformer Fine-Tuning](../../ICML2026/others/vision_transformer_finetuning_benefits_from_non-smooth_components.md)
 - [\[ACL 2025\] Intuitive Fine-Tuning: Towards Simplifying Alignment into a Single Process](../../ACL2025/others/intuitive_fine_tuning.md)
 
 </div>

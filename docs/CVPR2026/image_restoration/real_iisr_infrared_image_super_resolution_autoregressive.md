@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Ours proposes Real-IISR, a unified autoregressive framework that addresses the unique challenges of real-world infrared image super-resolution (IISR) through a Thermal-Structural Guidance module, a Conditional Adaptive Codebook, and a Thermal Ordering Consistency loss, while constructing the FLIR-IISR dataset (1457 pai
+  [CVPR 2026][Image Restoration][Infrared Image Super-Resolution] Ours proposes Real-IISR, a unified autoregressive framework that addresses the unique challenges of real-world infrared image super-resolution (IISR) through a Thermal-Structural Guidance module, a Conditional Adaptive Codebook, and a Thermal Ordering Consistency loss, while constructing the FLIR-IISR dataset (1457 pairs of real LR-HR infrared images).
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Infrared Image Super-Resolution"
+  - "Visual Autoregression"
+  - "Thermal-Structural Guidance"
+  - "Conditional Adaptive Codebook"
+  - "Thermal Ordering Consistency"
 date: 2026-05-08
-content_hash: fd9e399129a2f72c
+content_hash: a8866000101b0af9
 ---
+
 # Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ The total loss weighting combines autoregressive cross-entropy, pixel reconstruc
 
 ## Related Papers
 
+- [\[CVPR 2026\] OMoBlur: An Object Motion Blur Dataset and Benchmark for Real-World Local Motion Deblurring](omoblur_an_object_motion_blur_dataset_and_benchmark_for_real-world_local_motion_.md)
 - [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
+- [\[CVPR 2026\] DVAR: Dynamic Visual Autoregressive Modeling for Image Super-Resolution](dvar_dynamic_visual_autoregressive_modeling_for_image_super-resolution.md)
 - [\[ECCV 2024\] A New Dataset and Framework for Real-World Blurred Images Super-Resolution](../../ECCV2024/image_restoration/a_new_dataset_and_framework_for_real-world_blurred_images_super-resolution.md)
-- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution](dnf-sr_dual-input_and_negative-aware_feature_fine-tuning_for_real-world_image_su.md)
 
 </div>
 

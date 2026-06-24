@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Autoencoding-Free Context Compression for LLMs via Contextual Semantic Anchors
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Instead of appending randomly initialized "compression tokens" and relying on autoencoding pre-training for context reconstruction like ICAE, SAC directly selects several "anchor tokens" from the original text. It adds a learnable anchor embedding to these tokens and employs bidirectional attention to aggregate global
+  [ICLR2026][LLM Efficiency][Context Compression] Instead of appending randomly initialized "compression tokens" and relying on autoencoding pre-training for context reconstruction like ICAE, SAC directly selects several "anchor tokens" from the original text. It adds a learnable anchor embedding to these tokens and employs bidirectional attention to aggregate global information into the anchors' KV caches. By completely discarding the autoencoding task…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Context Compression"
+  - "Semantic Anchors"
+  - "KV Representation"
+  - "Bidirectional Attention"
+  - "Autoencoding-free"
 date: 2026-05-08
-content_hash: 2b649087ac0e0776
+content_hash: 9a0287bcb73e1e1d
 ---
+
 # Autoencoding-Free Context Compression for LLMs via Contextual Semantic Anchors
 
 **Conference**: ICLR2026  
@@ -135,10 +141,10 @@ SAC outperforms all baselines on every ID/OOD sub-dataset and achieves the best 
 ## Related Papers
 
 - [\[ICLR 2026\] RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers](rmaat_astrocyte-inspired_memory_compression_and_replay_for_efficient_long-contex.md)
-- [\[ICLR 2026\] Command-V: Training-Free Representation Finetuning Transfer](command-v_training-free_representation_finetuning_transfer.md)
 - [\[ICML 2026\] Proxy Compression for Language Modeling](../../ICML2026/llm_efficiency/proxy_compression_for_language_modeling.md)
+- [\[ICLR 2026\] Command-V: Training-Free Representation Finetuning Transfer](command-v_training-free_representation_finetuning_transfer.md)
 - [\[ACL 2026\] RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding](../../ACL2026/llm_efficiency/racer_retrieval-augmented_contextual_rapid_speculative_decoding.md)
-- [\[ICLR 2026\] Extending the Context of Pretrained LLMs by Dropping Their Positional Embedding](extending_the_context_of_pretrained_llms_by_dropping_their_positional_embedding.md)
+- [\[ICLR 2026\] Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs](beyond_real_imaginary_extension_of_rotary_position_embeddings_for_long-context_l.md)
 
 </div>
 

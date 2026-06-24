@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework
 description: >-
-  [AAAI 2026][Model Compression][Radiology report proofreading] This paper proposes a **staged inference + dual-knowledge infusion** framework that decomposes radiology report error correction into three phases—detection →…
+  [AAAI 2026][Model Compression][Radiology report proofreading] This paper proposes a **staged inference + dual-knowledge infusion** framework that decomposes radiology report error correction into three phases—detection → localization → correction—and integrates **Medical Knowledge Graph Distillation (MKGD)** with **External Knowledge Retrieval (EXKR)** to achieve up to **31.56% improvement in error detection accuracy** and **37.4% reduction in processing time** across 6 LLM a…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "staged inference"
   - "medical error detection"
 date: 2026-05-08
-content_hash: 9b181bc04d86394a
+content_hash: 9fe11f2d045f1246
 ---
 
 # Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework
@@ -215,8 +215,8 @@ Two licensed radiologists evaluated 50 representative cases on a 5-point Likert 
 
 - [\[AAAI 2026\] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)
 - [\[AAAI 2026\] First-Order Error Matters: Accurate Compensation for Quantized Large Language Models](first-order_error_matters_accurate_compensation_for_quantized_large_language_mod.md)
+- [\[ICLR 2026\] Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](../../ICLR2026/model_compression/exploring_knowledge_purification_in_multi-teacher_knowledge_distillation_for_llm.md)
 - [\[AAAI 2026\] Condensed Data Expansion Using Model Inversion for Knowledge Distillation](condensed_data_expansion_using_model_inversion_for_knowledge_distillation.md)
-- [\[AAAI 2026\] Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling](rethinking_long-tailed_dataset_distillation_a_uni-level_framework_with_unbiased_.md)
 - [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
 
 </div>

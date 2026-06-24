@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting
 description: >-
-  [ICLR 2026][Reinforcement Learning][on-policy/off-policy] This paper proposes CHORD, which reformulates SFT from an independent training stage into a **dynamically weighted auxiliary objective** within the on-policy RL process. Using a dual-control mechanism—a "global coefficient $\mu$ + token-level weighting function $\phi(\cdot)$"—it smoothly integrates expert data, consist
+  [ICLR 2026][Reinforcement Learning][SFT and RL fusion] This paper proposes CHORD, which reformulates SFT from an independent training stage into a **dynamically weighted auxiliary objective** within the on-policy RL process. Using a dual-control mechanism—a "global coefficient $\mu$ + token-level weighting function $\phi(\cdot)$"—it smoothly integrates expert data, consistently outperforming baselines like SFT-then-RL on mathematical reasoning and tool-calling tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - on-policy/off-policy
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "SFT and RL fusion"
+  - "on-policy/off-policy"
+  - "dynamic weighting"
+  - "GRPO"
+  - "token-level weighting"
 date: 2026-05-08
-content_hash: 383cdafa5a9ac58b
+content_hash: 9bbe438deeb0a97f
 ---
+
 # On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting
 
 **Conference**: ICLR 2026  
@@ -141,8 +145,8 @@ CHORD-$\mu$ consistently outperforms the strong SFT-best+RL baseline. CHORD-$\ph
 - [\[ICLR 2026\] Proximal Supervised Fine-Tuning](proximal_supervised_fine-tuning.md)
 - [\[ICLR 2026\] SRFT: A Single-Stage Method with Supervised and Reinforcement Fine-Tuning for Reasoning](srft_a_single-stage_method_with_supervised_and_reinforcement_fine-tuning_for_rea.md)
 - [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
+- [\[ICLR 2026\] Escaping Policy Contraction: Contraction-Aware PPO (CaPPO) for Stable Language Model Fine-Tuning](escaping_policy_contraction_contraction-aware_ppo_cappo_for_stable_language_mode.md)
 - [\[ICLR 2026\] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training](revisiting_group_relative_policy_optimization_insights_into_on-policy_and_off-po.md)
-- [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
 
 </div>
 

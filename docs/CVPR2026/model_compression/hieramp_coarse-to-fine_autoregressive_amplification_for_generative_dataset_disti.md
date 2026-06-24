@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HierAmp: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Ours proposes HierAmp, which injects learnable category tokens into the coarse-to-fine generation process of Visual Autoregressive (VAR) models to identify semantically salient regions. By amplifying attention in these regions through positive logit bias, the distilled data achieves richer layout diversity at coarse sc
+  [CVPR2026][Model Compression][Dataset Distillation] Ours proposes HierAmp, which injects learnable category tokens into the coarse-to-fine generation process of Visual Autoregressive (VAR) models to identify semantically salient regions. By amplifying attention in these regions through positive logit bias, the distilled data achieves richer layout diversity at coarse scales and focuses on category-related details at fine scales, reaching SOTA performance on multiple dataset d…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Visual Autoregressive Models"
+  - "Hierarchical Semantic Amplification"
+  - "Coarse-to-fine generation"
+  - "codebook token diversity"
 date: 2026-05-08
-content_hash: 1ac82b6cb7a025d9
+content_hash: 0e643f0f4409fd3d
 ---
+
 # HierAmp: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation
 
 **Conference**: CVPR2026  

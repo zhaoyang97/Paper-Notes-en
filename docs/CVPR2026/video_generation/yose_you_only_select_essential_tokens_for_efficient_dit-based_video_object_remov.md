@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] YOSE: You Only Select Essential Tokens for Efficient DiT-based Video Object Removal
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Transformer] YOSE is a plug-and-play fine-tuning framework: it transforms DiT-based video object removal (e.g., MiniMax Remover) from "dense computation on all spatio-temporal tokens" to "processing only tokens within masked regions while using a lightweight module to simulate the external influence on self-attention." This allows
+  [CVPR 2026][Video Generation][Diffusion Transformer] YOSE is a plug-and-play fine-tuning framework: it transforms DiT-based video object removal (e.g., MiniMax Remover) from "dense computation on all spatio-temporal tokens" to "processing only tokens within masked regions while using a lightweight module to simulate the external influence on self-attention." This allows inference time to decrease approximately linearly with mask area, achieving $2.5\times$ speedup in 70% of r…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Transformer
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Diffusion Transformer"
+  - "Video Object Removal"
+  - "token sparsification"
+  - "mask-aware acceleration"
+  - "fine-tuning framework"
 date: 2026-05-08
-content_hash: 65903903e522bad9
+content_hash: fe8b9309cbc97499
 ---
+
 # YOSE: You Only Select Essential Tokens for Efficient DiT-based Video Object Removal
 
 **Conference**: CVPR 2026  
@@ -149,9 +154,9 @@ Ablations were conducted on DAVIS using MiniMax Remover as the backbone (Tab. 2)
 
 - [\[CVPR 2026\] A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)
 - [\[CVPR 2026\] OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens](omnilottie_generating_vector_animations_via_parameterized_lottie_tokens.md)
-- [\[CVPR 2026\] What Are You Doing? A Closer Look at Controllable Human Video Generation](what_are_you_doing_a_closer_look_at_controllable_human_video_generation.md)
+- [\[CVPR 2026\] GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection](genhoi_towards_object-consistent_hand-object_interaction_with_temporally_balance.md)
 - [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
-- [\[CVPR 2026\] SemVideo: Reconstructs What You Watch from Brain Activity via Hierarchical Semantic Guidance](semvideo_reconstructs_what_you_watch_from_brain_activity_via_hierarchical_semant.md)
+- [\[CVPR 2026\] What Are You Doing? A Closer Look at Controllable Human Video Generation](what_are_you_doing_a_closer_look_at_controllable_human_video_generation.md)
 
 </div>
 

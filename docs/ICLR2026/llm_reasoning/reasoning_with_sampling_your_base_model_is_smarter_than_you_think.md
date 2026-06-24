@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reasoning with Sampling: Your Base Model is Smarter Than You Think
 description: >-
-  [ICLR 2026][LLM Reasoning][MCMC] This paper proposes a **training-free, dataset-free, and verifier-free** test-time sampling algorithm: using MCMC (Metropolis-Hastings) to approximately sample from the "power distribution" $p^\alpha$ of the base model's own likelihood. On single-sample reasoning tasks such as MATH500, HumanEval, GPQA, and AlpacaEval,
+  [ICLR 2026][Reasoning][Test-time sampling] This paper proposes a **training-free, dataset-free, and verifier-free** test-time sampling algorithm: using MCMC (Metropolis-Hastings) to approximately sample from the "power distribution" $p^\alpha$ of the base model's own likelihood. On single-sample reasoning tasks such as MATH500, HumanEval, GPQA, and AlpacaEval, the performance of the base model is brought to a level comparable to or even better than GRPO (RL post-training)…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - MCMC
-  - Metropolis-Hastings
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time sampling"
+  - "power distribution"
+  - "MCMC"
+  - "Metropolis-Hastings"
+  - "training-free reasoning"
 date: 2026-05-08
-content_hash: 5c75a1ae7d3f03a7
+content_hash: 0e4928aae047d65f
 ---
+
 # Reasoning with Sampling: Your Base Model is Smarter Than You Think
 
 **Conference**: ICLR 2026  
@@ -145,8 +149,8 @@ Power sampling is comparable to GRPO on **in-domain** tasks like MATH500 (e.g., 
 - [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](why_is_your_language_model_a_poor_implicit_reward_model.md)
 - [\[ICLR 2026\] R-HORIZON: How Far Can Your Large Reasoning Model Really Go in Breadth and Depth?](r-horizon_how_far_can_your_large_reasoning_model_really_go_in_breadth_and_depth.md)
 - [\[CVPR 2026\] Think-as-You-See: Streaming Chain-of-Thought Reasoning for Large Vision-Language Models](../../CVPR2026/llm_reasoning/think-as-you-see_streaming_chain-of-thought_reasoning_for_large_vision-language_.md)
-- [\[ICLR 2026\] Beyond Speedup - Utilizing KV Cache for Sampling and Reasoning](beyond_speedup_-_utilizing_kv_cache_for_sampling_and_reasoning.md)
-- [\[ICLR 2026\] Taming Imperfect Process Verifiers: A Sampling Perspective on Backtracking](taming_imperfect_process_verifiers_a_sampling_perspective_on_backtracking.md)
+- [\[ICLR 2026\] Deep Think with Confidence](deep_think_with_confidence.md)
+- [\[ICLR 2026\] Enhancing LLMs for Knowledge Base Question Answering by Chain-of-Decomposition](enhancing_llms_for_knowledge_base_question_answering_by_chain-of-decomposition.md)
 
 </div>
 

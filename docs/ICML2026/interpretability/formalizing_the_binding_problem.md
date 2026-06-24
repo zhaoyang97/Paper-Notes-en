@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Formalizing the Binding Problem
 description: >-
-  [ICML 2026][Interpretability][[CLS] token] This paper formalizes the "binding problem in neural networks" as the mutual information $I(O;Z)$ regarding the object code $O$ within the representation $Z$. By designing autoregressive probabilistic probes to measure binding information in ViTs such as DINOv2 and CLIP, the study finds that the `[CLS]` token encodes <
+  [ICML 2026][Interpretability][Binding Problem] This paper formalizes the "binding problem in neural networks" as the mutual information $I(O;Z)$ regarding the object code $O$ within the representation $Z$. By designing autoregressive probabilistic probes to measure binding information in ViTs such as DINOv2 and CLIP, the study finds that the `[CLS]` token encodes <50% of binding information with a structure approximating a quadratic form, while an attention probe on the full…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Binding Problem"
+  - "Information-theoretic Probing"
+  - "ViT Representations"
+  - "Spatial tokens"
 date: 2026-05-08
-content_hash: b8f273d1ed8def24
+content_hash: f0cdc79b1707f813
 ---
+
 # Formalizing the Binding Problem
 
 **Conference**: ICML 2026  
@@ -114,11 +119,11 @@ The last row indicates that switching from `[CLS]` to spatial tokens with an att
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tackling the XAI Disagreement Problem with Adaptive Feature Grouping](../../ICLR2026/interpretability/tackling_the_xai_disagreement_problem_with_adaptive_feature_grouping.md)
 - [\[AAAI 2026\] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](../../AAAI2026/interpretability/attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)
-- [\[ICLR 2026\] Uncovering Grounding IDs: How External Cues Shape Multimodal Binding](../../ICLR2026/interpretability/uncovering_grounding_ids_how_external_cues_shape_multimodal_binding.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 - [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](block-em_preventing_emergent_misalignment_via_latent_blocking.md)
-- [\[ICML 2026\] Verified SHAP: 神经网络精确 Shapley 值的可证明界](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
-- [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
+- [\[ICML 2026\] Verified SHAP: Provable Bounds for Precise Shapley Values in Neural Networks](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One Prompt Fits All: Universal Graph Adaptation for Pretrained Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][graph prompt learning] This paper theoretically proves that representation-level graph prompts are essentially equivalent to linear probes…
+  [NeurIPS 2025][LLM Pretraining][graph prompt learning] This paper theoretically proves that representation-level graph prompts are essentially equivalent to linear probes, and on this basis proposes UniPrompt—an input-level method based on a learnable kNN topological prompt graph. By fusing the prompt graph with the original graph via a bootstrapping strategy, UniPrompt consistently outperforms existing graph prompt learning methods on both in-domain and cross-domain few-shot…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "graph topology"
   - "kNN graph"
 date: 2026-05-08
-content_hash: 2d155a88e209d2db
+content_hash: 4fe79e78522ce328
 ---
 
 # One Prompt Fits All: Universal Graph Adaptation for Pretrained Models
@@ -134,11 +134,11 @@ Given a frozen pretrained graph encoder $f_\theta$ and a downstream few-shot tas
 
 ## Related Papers
 
+- [\[ACL 2025\] Emergent Abilities of Large Language Models under Continued Pretraining for Language Adaptation](../../ACL2025/llm_pretraining/emergent_abilities_continued_pt.md)
 - [\[NeurIPS 2025\] Does Object Binding Naturally Emerge in Large Pretrained Vision Transformers?](does_object_binding_naturally_emerge_in_large_pretrained_vision_transformers.md)
-- [\[ICCV 2025\] ETA: Energy-based Test-time Adaptation for Depth Completion](../../ICCV2025/llm_pretraining/eta_energy-based_test-time_adaptation_for_depth_completion.md)
-- [\[CVPR 2026\] Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation](../../CVPR2026/llm_pretraining/evidential_transformation_network_post_hoc_uncertainty_estimation.md)
-- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
-- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](scaling_embedding_layers_in_language_models.md)
+- [\[ACL 2025\] Model Performance-Guided Evaluation Data Selection for Effective Prompt Optimization](../../ACL2025/llm_pretraining/model_performance-guided_evaluation_data_selection_for_effective_prompt_optimiza.md)
+- [\[ACL 2025\] TokAlign: Efficient Vocabulary Adaptation via Token Alignment](../../ACL2025/llm_pretraining/tokalign_vocab_adaptation.md)
+- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](../../ICLR2026/llm_pretraining/identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
 
 </div>
 

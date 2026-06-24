@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Understanding, Accelerating, and Improving MeanFlow Training
 description: >-
-  [CVPR 2026][Image Generation][MeanFlow] This paper dissects the training dynamics of MeanFlow when simultaneously learning "instantaneous velocity $v$ and average velocity $u$" through controlled experiments. It discovers that $v$ must be established first, and that $u$ supervision at small time intervals $\Delta t$ is beneficial while large intervals are de
+  [CVPR 2026][Image Generation][MeanFlow] This paper dissects the training dynamics of MeanFlow when simultaneously learning "instantaneous velocity $v$ and average velocity $u$" through controlled experiments. It discovers that $v$ must be established first, and that $u$ supervision at small time intervals $\Delta t$ is beneficial while large intervals are detrimental. Based on this, a training scheme featuring "accelerated $v$ formation + progressive $L_u$ weighting (prioriti…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MeanFlow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "MeanFlow"
+  - "Few-step Generation"
+  - "Instantaneous Velocity"
+  - "Average Velocity"
+  - "Training Dynamics"
 date: 2026-05-08
-content_hash: 7640b9d0430e2b22
+content_hash: 12f56d56b3675bc4
 ---
+
 # Understanding, Accelerating, and Improving MeanFlow Training
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ Both components individual improve upon vanilla results, but the combination ach
 
 ## Related Papers
 
+- [\[ICLR 2026\] AlphaFlow: Understanding and Improving MeanFlow Models](../../ICLR2026/image_generation/alphaflow_understanding_and_improving_meanflow_models.md)
 - [\[CVPR 2026\] MeanFlow Transformers with Representation Autoencoders](meanflow_transformers_with_representation_autoencoders.md)
+- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
 - [\[CVPR 2026\] D2C: Accelerating Diffusion Model Training under Minimal Budgets via Condensation](d2c_diffusion_dataset_condensation.md)
 - [\[CVPR 2026\] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation](vde_training-free_accelerating_rectified_flow_model_via_velocity_decomposition_a.md)
-- [\[CVPR 2026\] Improving Controllable Generation: Faster Training and Better Performance via x0-Supervision](improving_controllable_generation_faster_training_and_better_performance_via_x0-.md)
-- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
 
 </div>
 

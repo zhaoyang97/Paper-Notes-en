@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This work proposes the PPCL framework, which detects contiguous redundant layer intervals in MMDiT using linear probes and implements depth pruning (pluggable) and width pruning (replacing text streams/FFNs with linear projections) via non-sequential distillation. It compresses Qwen-Image from 20B to 10B with only a 3.
+  [CVPR 2026][Image Generation][Diffusion Transformer Pruning] This work proposes the PPCL framework, which detects contiguous redundant layer intervals in MMDiT using linear probes and implements depth pruning (pluggable) and width pruning (replacing text streams/FFNs with linear projections) via non-sequential distillation. It compresses Qwen-Image from 20B to 10B with only a 3.29% performance drop.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer Pruning"
+  - "MMDiT Compression"
+  - "Contiguous Layer Distillation"
+  - "Pluggable Inference"
+  - "Structured Pruning"
 date: 2026-05-08
-content_hash: 02bf8941c3906ba3
+content_hash: 6d62cd8ae5b27e7e
 ---
+
 # Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -166,11 +172,11 @@ Incremental evaluation on Qwen-Image (removing 25 layers):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
-- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
-- [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
-- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
+- [\[CVPR 2026\] Layer-wise Instance Binding for Regional and Occlusion Control in Text-to-Image Diffusion Transformers](layer-wise_instance_binding_for_regional_and_occlusion_control_in_text-to-image_.md)
 - [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
+- [\[CVPR 2025\] Autoregressive Distillation of Diffusion Transformers](../../CVPR2025/image_generation/autoregressive_distillation_of_diffusion_transformers.md)
+- [\[CVPR 2026\] Learnability-Guided Diffusion for Dataset Distillation](learnability-guided_diffusion_for_dataset_distillation.md)
+- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
 
 </div>
 

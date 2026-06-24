@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Less Data, Faster Training: Repeating Smaller Datasets Speeds Up Learning via Sampling Biases
 description: >-
-  [ICML 2026][Others][small-vs-large gap] This paper systematically characterizes and explains the "small-vs-large gap" phenomenon, where repeating smaller datasets leads to faster convergence than using larger datasets. The authors prove that this acceleration cannot be explained by the CSQ-SQ gap, gradient variance reduction, or input distribution bias. By a
+  [ICML 2026][small-vs-large gap] This paper systematically characterizes and explains the "small-vs-large gap" phenomenon, where repeating smaller datasets leads to faster convergence than using larger datasets. The authors prove that this acceleration cannot be explained by the CSQ-SQ gap, gradient variance reduction, or input distribution bias. By analyzing a $2$-layer quadratic MLP on $2$-sparse parity, they derive a closed-form step bound $T = O((Nd)^{1/4} \log(d/\varepsil…
 tags:
-  - ICML 2026
-  - Others
-  - small-vs-large gap
+  - "ICML 2026"
+  - "small-vs-large gap"
+  - "sampling bias"
+  - "inter-layer norm"
+  - "feature learning"
+  - "repeated training"
 date: 2026-05-08
-content_hash: 2ccd9cfe282cffe6
+content_hash: 75520a5280aa1008
 ---
+
 # Less Data, Faster Training: Repeating Smaller Datasets Speeds Up Learning via Sampling Biases
 
 **Conference**: ICML 2026  
@@ -110,15 +114,16 @@ All MLP/Transformers use default PyTorch initialization ($W_{ij} \sim \text{Unif
 - **Value**: ⭐⭐⭐⭐ Provides a new intuition for training (small data + many epochs is not just a fallback) and inter-layer optimizer design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[AAAI 2026\] Forget Less by Learning from Parents Through Hierarchical Relationships](../../AAAI2026/others/forget_less_by_learning_from_parents_through_hierarchical_relationships.md)
 - [\[ICML 2026\] Coupled Training with Privileged Information and Unlabeled Data](coupled_training_with_privileged_information_and_unlabeled_data.md)
+- [\[AAAI 2026\] Forget Less by Learning from Parents Through Hierarchical Relationships](../../AAAI2026/others/forget_less_by_learning_from_parents_through_hierarchical_relationships.md)
 - [\[ACL 2025\] FastMCTS: A Simple Sampling Strategy for Data Synthesis](../../ACL2025/others/fastmcts_a_simple_sampling_strategy_for_data_synthesis.md)
 - [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](../../AAAI2026/others/sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
-- [\[ICLR 2026\] ANO: Faster is Better in Noisy Landscapes](../../ICLR2026/others/ano_faster_is_better_in_noisy_landscape.md)
+- [\[AAAI 2026\] A Phase Transition for Opinion Dynamics with Competing Biases](../../AAAI2026/others/a_phase_transition_for_opinion_dynamics_with_competing_biase.md)
 
 </div>
 

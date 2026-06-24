@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] ToolWeaver is proposed to represent each tool as a hierarchical discrete code sequence rather than a single token through collaboration-aware vector quantization. This achieves logarithmic vocabulary expansion (covering 47,000+ tools with only ~512 new tokens), comprehensively outperforming the ToolGen baseline on Tool
+  [ICLR 2026][LLM Agent][Tool Use] ToolWeaver is proposed to represent each tool as a hierarchical discrete code sequence rather than a single token through collaboration-aware vector quantization. This achieves logarithmic vocabulary expansion (covering 47,000+ tools with only ~512 new tokens), comprehensively outperforming the ToolGen baseline on ToolBench while reducing language model perplexity degradation from 16.5x to 4x.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool Use"
+  - "Vector Quantization"
+  - "Collaborative Semantics"
+  - "Vocabulary Expansion"
+  - "Generative Tool Retrieval"
 date: 2026-05-08
-content_hash: a2fdbd6065f81a91
+content_hash: 01ba41b5c14dc68c
 ---
+
 # ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -140,7 +146,7 @@ ToolWeaver leads in both retrieval and task completion while reducing language m
 - [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](../../ACL2026/llm_agent/feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
 - [\[ICLR 2026\] Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning](nemotron-research-tool-n1_exploring_tool-using_language_models_with_reinforced_r.md)
-- [\[ACL 2025\] ToolHop: A Query-Driven Benchmark for Evaluating Large Language Models in Multi-Hop Tool Use](../../ACL2025/llm_agent/toolhop_multi_hop_tool_use.md)
+- [\[ICLR 2026\] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](in-the-flow_agentic_system_optimization_for_effective_planning_and_tool_use.md)
 
 </div>
 

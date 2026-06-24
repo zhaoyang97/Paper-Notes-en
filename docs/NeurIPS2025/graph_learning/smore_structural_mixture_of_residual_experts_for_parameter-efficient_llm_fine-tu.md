@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning
 description: >-
-  [NeurIPS 2025][Graph Learning][Parameter-Efficient Fine-Tuning] This paper proposes S'MoRE, a framework that organizes low-rank residual experts into a multi-layer tree structure and constructs token-specific "residual t…
+  [NeurIPS 2025][Graph Learning][Parameter-Efficient Fine-Tuning] This paper proposes S'MoRE, a framework that organizes low-rank residual experts into a multi-layer tree structure and constructs token-specific "residual trees" via hierarchical routing, achieving exponentially growing structural flexibility with parameter counts comparable to LoRA, thereby substantially improving LLM fine-tuning performance.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Graph Neural Networks"
   - "Structural Flexibility"
 date: 2026-05-08
-content_hash: 92bddce77965742e
+content_hash: 8cef4fb1c7963e95
 ---
 
 # S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning
@@ -158,7 +158,7 @@ The method is elegantly designed, the theoretical analysis is rigorous (the GNN 
 - [\[AAAI 2026\] Magnitude-Modulated Equivariant Adapter for Parameter-Efficient Fine-Tuning of Equivariant Graph Neural Networks](../../AAAI2026/graph_learning/magnitude-modulated_equivariant_adapter_for_parameter-efficient_fine-tuning_of_e.md)
 - [\[NeurIPS 2025\] Moscat: Mixture of Scope Experts at Test for Generalizing Deeper GNNs](mixture_of_scope_experts_at_test_generalizing_deeper_graph_neural_networks_with_.md)
 - [\[NeurIPS 2025\] The Underappreciated Power of Vision Models for Graph Structural Understanding](the_underappreciated_power_of_vision_models_for_graph_structural_understanding.md)
-- [\[NeurIPS 2025\] ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG](remindrag_low-cost_llm-guided_knowledge_graph_traversal_for_efficient_rag.md)
+- [\[NeurIPS 2025\] DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion](duetgraph_coarse-to-fine_knowledge_graph_reasoning_with_dual-pathway_global-loca.md)
 
 </div>
 

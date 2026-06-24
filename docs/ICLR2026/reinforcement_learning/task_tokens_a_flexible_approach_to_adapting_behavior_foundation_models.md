@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Task Token] To address the dilemma where "Goal-Conditioned Behavior Foundation Models" (GC-BFM, e.g., MaskedMimic) suffer from either cumbersome prompt engineering or prior-damaging full fine-tuning, this paper proposes **Task Tokens**: the entire BFM is frozen, and only a lightweight "task encoder" is trained via reinforcement le
+  [ICLR 2026][Reinforcement Learning][Behavior Foundation Models] To address the dilemma where "Goal-Conditioned Behavior Foundation Models" (GC-BFM, e.g., MaskedMimic) suffer from either cumbersome prompt engineering or prior-damaging full fine-tuning, this paper proposes **Task Tokens**: the entire BFM is frozen, and only a lightweight "task encoder" is trained via reinforcement learning. This encoder produces a learnable token inserted into the transformer sequence to adapt…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Task Token
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Behavior Foundation Models"
+  - "Parameter-Efficient Adaptation"
+  - "Humanoid Control"
+  - "Task Token"
+  - "PPO"
 date: 2026-05-08
-content_hash: 5577fa9e17033614
+content_hash: 32d9deaa51a3536a
 ---
+
 # Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models
 
 **Conference**: ICLR 2026  
@@ -131,14 +135,15 @@ Task Tokens **significantly outperformed full fine-tuning and pure RL** in natur
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Optimistic Task Inference for Behavior Foundation Models](optimistic_task_inference_behavior_models.md)
-- [\[ICLR 2026\] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning](arm-fm_automated_reward_machines_via_foundation_models_for_compositional_reinfor.md)
 - [\[ICLR 2026\] Efficient Estimation of Kernel Surrogate Models for Task Attribution](efficient_estimation_of_kernel_surrogate_models_for_task_attribution.md)
-- [\[ICLR 2026\] Deep SPI: Safe Policy Improvement via World Models](deep_spi_safe_policy_improvement_via_world_models.md)
+- [\[ICLR 2026\] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning](arm-fm_automated_reward_machines_via_foundation_models_for_compositional_reinfor.md)
+- [\[ICLR 2026\] Do Not Let Low-Probability Tokens Over-Dominate in RL for LLMs](do_not_let_low-probability_tokens_over-dominate_in_rl_for_llms.md)
 - [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
 
 </div>

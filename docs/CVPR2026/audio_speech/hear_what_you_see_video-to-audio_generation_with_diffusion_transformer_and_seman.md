@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] VisioSonic utilizes a dual-stream condition of "CLIP low-frame-rate semantics + Synchformer high-frame-rate temporal" fed into a video-text-audio co-attention Diffusion Transformer for rectified flow matching to generate dubbing for silent videos. It further maximizes semantic and temporal alignment using STAR-DPO, a f
+  [CVPR 2026][Audio & Speech][Video-to-Audio Generation] VisioSonic utilizes a dual-stream condition of "CLIP low-frame-rate semantics + Synchformer high-frame-rate temporal" fed into a video-text-audio co-attention Diffusion Transformer for rectified flow matching to generate dubbing for silent videos. It further maximizes semantic and temporal alignment using STAR-DPO, a fully automated preference optimization requiring no human annotation. With only 151M trainable parameters…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Video-to-Audio Generation"
+  - "Diffusion Transformer"
+  - "Rectified Flow Matching"
+  - "Direct Preference Optimization (DPO)"
+  - "Temporal Alignment"
 date: 2026-05-08
-content_hash: 7e62254cfbf1b42b
+content_hash: 7b66185831059602
 ---
+
 # Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization
 
 **Conference**: CVPR 2026  
@@ -153,10 +159,20 @@ Reward Model / DPO Iteration Ablation:
 
 ## Related Papers
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization](../../ICLR2026/audio_speech/tangoflux_super_fast_and_faithful_text_to_audio_generation_with_flow_matching_an.md)
+- [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
+- [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
+- [\[ICML 2026\] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer](../../ICML2026/audio_speech/towards_streaming_synchronized_spatial_audio_generation_via_autoregressive_diffu.md)
+- [\[CVPR 2026\] Hierarchical Codec Diffusion for Video-to-Speech Generation](hierarchical_codec_diffusion_for_video-to-speech_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] FoleyDesigner: Immersive Stereo Foley Generation with Precise Spatio-Temporal Alignment for Film Clips](foleydesigner_immersive_stereo_foley_generation_with_precise_spatio-temporal_ali.md)

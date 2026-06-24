@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ToaSt: Token Channel Selection and Structured Pruning for Efficient ViT
 description: >-
-  [ICML 2026][Model Compression][Paper Note] ToaSt "decouples" ViT compression into two targeted strategies: for Multi-Head Self-Attention (MHSA), which accounts for less than 40% of FLOPs, it employs coupled per-head structured weight pruning to preserve the mathematical integrity of attention; for the Feed-Forward Network (FFN), which accounts for over 60% of F
+  [ICML 2026][Model Compression][ViT compression] ToaSt "decouples" ViT compression into two targeted strategies: for Multi-Head Self-Attention (MHSA), which accounts for less than 40% of FLOPs, it employs coupled per-head structured weight pruning to preserve the mathematical integrity of attention; for the Feed-Forward Network (FFN), which accounts for over 60% of FLOPs, it uses a training-free, plug-and-play "Token Channel Selection (TCS)" during inference to filter redundan…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "ViT compression"
+  - "structured pruning"
+  - "channel selection"
+  - "training-free"
+  - "layer-independent compression"
 date: 2026-05-08
-content_hash: db92034ec1b0cc03
+content_hash: b9942754582cd9b5
 ---
+
 # ToaSt: Token Channel Selection and Structured Pruning for Efficient ViT
 
 **Conference**: ICML 2026  
@@ -128,9 +134,9 @@ Notably, ToaSt often **increases** accuracy on large models (DeiT-Tiny +2.05, Vi
 
 - [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
 - [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
-- [\[ICML 2025\] OrthoRank: Token Selection via Sink Token Orthogonality for Efficient LLM Inference](../../ICML2025/model_compression/orthorank_token_selection_via_sink_token_orthogonality_for_efficient_llm_inferen.md)
 - [\[ACL 2026\] Two-Stage Regularization-Based Structured Pruning for LLMs](../../ACL2026/model_compression/two-stage_regularization-based_structured_pruning_for_llms.md)
-- [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](../../NeurIPS2025/model_compression/recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
+- [\[ICML 2026\] T3S: Training Trajectory-Aware Token Selection, Breaking the "Imitation Shock" in Reasoning Distillation](training-trajectory-aware_token_selection.md)
+- [\[ICML 2025\] OrthoRank: Token Selection via Sink Token Orthogonality for Efficient LLM Inference](../../ICML2025/model_compression/orthorank_token_selection_via_sink_token_orthogonality_for_efficient_llm_inferen.md)
 
 </div>
 

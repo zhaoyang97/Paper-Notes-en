@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] ForeHOI utilizes an end-to-end feed-forward network to directly reconstruct the geometry of objects heavily occluded by hands from monocular hand-object interaction videos. By leveraging a dual-branch diffusion model that simultaneously predicts "completed 2D object masks" and "complete 3D voxels" with bi-directional i
+  [CVPR 2026][3D Vision][Hand-Object Interaction] ForeHOI utilizes an end-to-end feed-forward network to directly reconstruct the geometry of objects heavily occluded by hands from monocular hand-object interaction videos. By leveraging a dual-branch diffusion model that simultaneously predicts "completed 2D object masks" and "complete 3D voxels" with bi-directional interaction, it compresses tasks that previously required hours of optimization to under one minute…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Hand-Object Interaction"
+  - "Feed-forward Reconstruction"
+  - "3D Shape Completion"
+  - "Diffusion Models"
+  - "Occlusion Completion"
 date: 2026-05-08
-content_hash: 6657b931a6a87824
+content_hash: f42272054e1f4cca
 ---
+
 # ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos
 
 **Conference**: CVPR 2026  
@@ -148,10 +153,10 @@ Ablating key designs and data impact (HO3D):
 ## Related Papers
 
 - [\[CVPR 2026\] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves](glove2hand_synthesizing_natural_hand-object_interaction_from_multi-modal_sensing.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
-- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
-- [\[CVPR 2026\] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos](funrec_reconstructing_functional_3d_scenes_from_egocentric_interaction_videos.md)
-- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
+- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
+- [\[CVPR 2026\] ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions](arthoi_taming_foundation_models_for_monocular_4d_reconstruction_of_hand-articula.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
+- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
 
 </div>
 

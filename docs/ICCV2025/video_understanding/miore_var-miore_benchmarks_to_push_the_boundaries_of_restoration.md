@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MIORe & VAR-MIORe: Benchmarks to Push the Boundaries of Restoration
 description: >-
-  [ICCV 2025][Video Understanding][Motion Deblurring] This paper introduces MIORe and VAR-MIORe, two multi-task motion restoration benchmark datasets captured using a 1000fps industrial-grade camera and a professional lens…
+  [ICCV 2025][Video Understanding][Motion Deblurring] This paper introduces MIORe and VAR-MIORe, two multi-task motion restoration benchmark datasets captured using a 1000fps industrial-grade camera and a professional lens array. The benchmarks span a full motion magnitude spectrum from near-static to extreme motion, employ an adaptive frame-averaging mechanism to generate consistent motion blur, and provide a unified evaluation platform for deblurring, frame interpolation…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "High Frame Rate Dataset"
   - "Multi-Task Benchmark"
 date: 2026-05-08
-content_hash: 5b33c91e3fdc0e32
+content_hash: ba2e9c07949146ab
 ---
 
 # MIORe & VAR-MIORe: Benchmarks to Push the Boundaries of Restoration
@@ -154,11 +154,11 @@ VAR-MIORe Frame Interpolation (PSNR):
 
 ## Related Papers
 
+- [\[CVPR 2025\] Unbiasing through Textual Descriptions: Mitigating Representation Bias in Video Benchmarks](../../CVPR2025/video_understanding/unbiasing_through_textual_descriptions_mitigating_representation_bias_in_video_b.md)
+- [\[ECCV 2024\] Benchmarks and Challenges in Pose Estimation for Egocentric Hand Interactions with Objects](../../ECCV2024/video_understanding/benchmarks_and_challenges_in_pose_estimation_for_egocentric_hand_interactions_wi.md)
 - [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
 - [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
 - [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
-- [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
-- [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
 
 </div>
 

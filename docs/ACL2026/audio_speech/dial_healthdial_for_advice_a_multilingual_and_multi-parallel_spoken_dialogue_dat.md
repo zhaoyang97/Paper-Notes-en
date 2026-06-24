@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Dial HEALTHDIAL for Advice: A Multilingual and Multi-Parallel Spoken Dialogue Dataset for Knowledge-Grounded Information Seeking
 description: >-
-  [ACL 2026][Audio & Speech][spoken dialogue] HEALTHDIAL constructs a dataset comprising 6,000 multi-parallel health information-seeking dialogues in 4 official WHO languages and 163 hours of real user speech. It establishes a multilingual spoken RAG benchmark based on ASR, TTS, retrieval, knowledge filtering, and user studies.
+  [ACL2026 Findings][Audio & Speech][spoken dialogue] HEALTHDIAL constructs a dataset comprising 6,000 multi-parallel health information-seeking dialogues in 4 official WHO languages and 163 hours of real user speech. It establishes a multilingual spoken RAG benchmark based on ASR, TTS, retrieval, knowledge filtering, and user studies.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - spoken dialogue
-  - multilingual benchmark
-  - health RAG
-  - WHO knowledge
-  - ASR
+  - "ACL2026 Findings"
+  - "Audio & Speech"
+  - "spoken dialogue"
+  - "multilingual benchmark"
+  - "health RAG"
+  - "WHO knowledge"
+  - "ASR"
 date: 2026-05-08
-content_hash: c021a8e9fdc01eb7
+content_hash: 0c6e4cf95b6004d8
 ---
+
 # Dial HEALTHDIAL for Advice: A Multilingual and Multi-Parallel Spoken Dialogue Dataset for Knowledge-Grounded Information Seeking
 
 **Conference**: ACL2026 Findings  
@@ -142,7 +143,7 @@ The paper focuses on the dataset and benchmark rather than new loss functions. I
 - [\[ACL 2026\] SDiaReward: Modeling and Benchmarking Spoken Dialogue Rewards with Modality and Colloquialness](sdiareward_modeling_and_benchmarking_spoken_dialogue_rewards_with_modality_and_c.md)
 - [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
 - [\[ICML 2025\] Aligning Spoken Dialogue Models from User Interactions](../../ICML2025/audio_speech/aligning_spoken_dialogue_models_from_user_interactions.md)
-- [\[ACL 2026\] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](full-duplex-bench-v2_a_multi-turn_evaluation_framework_for_duplex_dialogue_syste.md)
+- [\[ACL 2025\] WavRAG: Audio-Integrated Retrieval Augmented Generation for Spoken Dialogue Models](../../ACL2025/audio_speech/wavrag_audio-integrated_retrieval_augmented_generation_for_spoken_dialogue_model.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VideoMathQA: Benchmarking Mathematical Reasoning via Multimodal Understanding in Video
 description: >-
-  [ICLR 2026][vlm_reasoning][benchmark] VideoMathQA constructs a mathematical reasoning benchmark for real instructional videos, using 420 video QAs, 2,945 expert step annotations, and a multi-layer evaluation protocol to test whether models can perform long-range, multi-step, and diagnostic reasoning across video, subtitles, speech, and mathematical knowled
+  [ICLR2026][VLM Reasoning][Video mathematical reasoning] VideoMathQA constructs a mathematical reasoning benchmark for real instructional videos, using 420 video QAs, 2,945 expert step annotations, and a multi-layer evaluation protocol to test whether models can perform long-range, multi-step, and diagnostic reasoning across video, subtitles, speech, and mathematical knowledge.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - benchmark
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Video mathematical reasoning"
+  - "multimodal understanding"
+  - "long-video QA"
+  - "step-by-step reasoning annotation"
+  - "benchmark"
 date: 2026-05-08
-content_hash: a58912549c09a94b
+content_hash: a85c19383dbe33fc
 ---
+
 # VideoMathQA: Benchmarking Mathematical Reasoning via Multimodal Understanding in Video
 
 **Conference**: ICLR2026  
@@ -169,10 +174,10 @@ This paper lacks traditional "module removal" ablations as it is not a model tra
 ## Related Papers
 
 - [\[ICLR 2026\] MathNet: A Global Multimodal Benchmark for Mathematical Reasoning and Retrieval](mathnet_a_global_multimodal_benchmark_for_mathematical_reasoning_and_retrieval.md)
+- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](../../ACL2026/vlm_reasoning/errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
 - [\[ICLR 2026\] ExpVid: A Benchmark for Experiment Video Understanding & Reasoning](expvid_a_benchmark_for_experiment_video_understanding_reasoning.md)
+- [\[NeurIPS 2025\] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](../../NeurIPS2025/vlm_reasoning/rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md)
 - [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](../../CVPR2026/vlm_reasoning/agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
-- [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
-- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](../../CVPR2026/vlm_reasoning/towards_sparse_video_understanding_and_reasoning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Theoretical Limitations of Embedding-Based Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] This paper derives a lower bound theorem for the "dimension required for single-vector embeddings to represent all top-k document combinations" using sphere packing arguments from high-dimensional geometry. It empirically demonstrates through free embedding optimization and a minimalist real-world dataset, LIMIT, that
+  [ICLR 2026][Information Retrieval & RAG][Single-vector embedding] This paper derives a lower bound theorem for the "dimension required for single-vector embeddings to represent all top-k document combinations" using sphere packing arguments from high-dimensional geometry. It empirically demonstrates through free embedding optimization and a minimalist real-world dataset, LIMIT, that as long as the number of relevant combinations to be represented is sufficient—even for querie…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Single-vector embedding"
+  - "representation capacity lower bound"
+  - "sphere packing"
+  - "top-k retrieval"
+  - "LIMIT dataset"
 date: 2026-05-08
-content_hash: 7fab530a53585f54
+content_hash: ffe09946ea02f6b7
 ---
+
 # On the Theoretical Limitations of Embedding-Based Retrieval
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,10 @@ Models tested include GritLM, Qwen3 Embedding, Promptriever, Gemini Embedding, A
 ## Related Papers
 
 - [\[ICLR 2026\] Embedding-Based Context-Aware Reranker](embedding-based_context-aware_reranker.md)
+- [\[ICLR 2026\] Uncertainty-driven Embedding Convolution](uncertainty-driven_embedding_convolution.md)
+- [\[ICLR 2026\] KaLM-Embedding-V2: Superior Training Techniques and Data Inspire A Versatile Embedding Model](kalm-embedding-v2_superior_training_techniques_and_data_inspire_a_versatile_embe.md)
 - [\[ICLR 2026\] Think Then Embed: Generative Context Improves Multimodal Embedding](think_then_embed_generative_context_improves_multimodal_embedding.md)
 - [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
-- [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
-- [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](../../ACL2026/information_retrieval/more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
 
 </div>
 

@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Measuring and Mitigating Rapport Bias of Large Language Models under Multi-Agent Social Interactions
 description: >-
-  [ICLR 2026][Social Computing][Multi-Agent] This paper introduces the KAIROS benchmark, which precisely controls the three axes of "historical rapport × current peer behavior × model confidence" within a quiz-based multi-agent collaboration scenario. It systematically characterizes the decision-making shifts of LLMs under social pressure and finds that only GRPO
+  [ICLR 2026][Social Computing][Multi-agent] This paper introduces the KAIROS benchmark, which precisely controls the three axes of "historical rapport × current peer behavior × model confidence" within a quiz-based multi-agent collaboration scenario. It systematically characterizes the decision-making shifts of LLMs under social pressure and finds that only GRPO incorporating multi-agent context and outcome-based rewards can improve accuracy while maintaining social robustness…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - Multi-Agent
-  - rapport bias
-  - GRPO
-  - KAIROS benchmark
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Multi-agent"
+  - "rapport bias"
+  - "conformity bias"
+  - "social robustness"
+  - "GRPO"
+  - "KAIROS benchmark"
 date: 2026-05-08
-content_hash: f053eb808af52488
+content_hash: 732325c3e722e576
 ---
+
 # Measuring and Mitigating Rapport Bias of Large Language Models under Multi-Agent Social Interactions
 
 **Conference**: ICLR 2026  
@@ -122,7 +125,7 @@ GRPO provides an average gain of +12.3% in Original and +16.4% in KAIROS accurac
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -130,7 +133,7 @@ GRPO provides an average gain of +12.3% in Original and +16.4% in KAIROS accurac
 - [\[ACL 2025\] Measuring Social Biases in Masked Language Models by Proxy of Prediction Quality](../../ACL2025/social_computing/measuring_social_biases_in_masked_language_models_by_proxy_of_prediction_quality.md)
 - [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
 - [\[ACL 2025\] Explicit vs. Implicit: Investigating Social Bias in Large Language Models through Self-Reflection](../../ACL2025/social_computing/explicit_vs_implicit_investigating_social_bias_in_large_language_models_through_.md)
-- [\[ICLR 2026\] Mitigating Mismatch within Reference-based Preference Optimization](mitigating_mismatch_within_reference-based_preference_optimization.md)
+- [\[ICLR 2026\] Language and Experience: A Computational Model of Social Learning in Complex Tasks](language_and_experience_a_computational_model_of_social_learning_in_complex_task.md)
 
 </div>
 

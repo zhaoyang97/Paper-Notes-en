@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] When Scores Learn Geometry: Rate Separations under the Manifold Hypothesis
 description: >-
-  [ICLR 2026][Image Generation][Score Learning] This work reveals the scale separation between geometric and distributional information in score learning under the manifold hypothesis—manifold geometric information intensity is $\Theta(\sigma^{-2})$, which is $O(\sigma^{-2})$ times stronger than distributional information. This proves that the success of diffusion m
+  [ICLR 2026][Image Generation][Score Learning] This work reveals the scale separation between geometric and distributional information in score learning under the manifold hypothesis—manifold geometric information intensity is $\Theta(\sigma^{-2})$, which is $O(\sigma^{-2})$ times stronger than distributional information. This proves that the success of diffusion models primarily stems from learning the data manifold rather than the full distribution…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Score Learning
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Score Learning"
+  - "Manifold Hypothesis"
+  - "Geometric Learning"
+  - "Distribution Learning"
+  - "Rate Separation"
+  - "Uniform Sampling"
 date: 2026-05-08
-content_hash: 511bc1dbe881a22b
+content_hash: 6a4dec9153066292
 ---
+
 # When Scores Learn Geometry: Rate Separations under the Manifold Hypothesis
 
 **Conference**: ICLR 2026  
@@ -108,15 +114,13 @@ Rate separation extends to inverse problems (Theorem 6.1). Using a uniform prior
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[NeurIPS 2025\] Generative Model Inversion Through the Lens of the Manifold Hypothesis](../../NeurIPS2025/image_generation/generative_model_inversion_through_the_lens_of_the_manifold_hypothesis.md)
+- [\[ICLR 2026\] Secure Inference for Diffusion Models via Unconditional Scores](secure_inference_for_diffusion_models_via_unconditional_scores.md)
+- [\[ICLR 2026\] Learn to Guide Your Diffusion Model](learn_to_guide_your_diffusion_model.md)
 - [\[ICLR 2026\] Dragging with Geometry: From Pixels to Geometry-Guided Image Editing](dragging_with_geometry_from_pixels_to_geometry-guided_image_editing.md)
 - [\[ICLR 2026\] TempFlow-GRPO: When Timing Matters for GRPO in Flow Models](tempflow-grpo_when_timing_matters_for_grpo_in_flow_models.md)
-- [\[ICLR 2026\] Learning a Distance Measure from the Information-Estimation Geometry of Data](learning_a_distance_measure_from_the_information-estimation_geometry_of_data.md)
-- [\[ICML 2026\] Let EEG Models Learn EEG](../../ICML2026/image_generation/let_eeg_models_learn_eeg.md)
 
 </div>
 

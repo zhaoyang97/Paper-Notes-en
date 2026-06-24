@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spatial-Aware Decision-Making with Ring Attractors in Reinforcement Learning Systems
 description: >-
-  [NeurIPS 2025][Robotics][Ring Attractors] This paper integrates ring attractor models from neuroscience into action selection in deep reinforcement learning (DRL). By mapping actions to spatial positions on a ring and in…
+  [NeurIPS 2025][Robotics][Ring Attractors] This paper integrates ring attractor models from neuroscience into action selection in deep reinforcement learning (DRL). By mapping actions to spatial positions on a ring and injecting Gaussian signals encoding Q-values and uncertainty, the proposed approach achieves a 53% improvement over baseline on Atari 100K.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Action Space Encoding"
   - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: 2d2bd189a8be5b8e
+content_hash: 7531536b0e84c430
 ---
 
 # Spatial-Aware Decision-Making with Ring Attractors in Reinforcement Learning Systems
@@ -142,10 +142,10 @@ Two implementations are proposed: (1) **Extrinsic model** — a ring attractor i
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Spatial-Aware Manipulation Ordering](learning_spatial-aware_manipulation_ordering.md)
+- [\[CVPR 2025\] Decision SpikeFormer: Spike-Driven Transformer for Decision Making](../../CVPR2025/robotics/decision_spikeformer_spike-driven_transformer_for_decision_making.md)
+- [\[ICML 2025\] Beyond CVaR: Leveraging Static Spectral Risk Measures for Enhanced Decision-Making in Distributional Reinforcement Learning](../../ICML2025/robotics/beyond_cvar_leveraging_static_spectral_risk_measures_for_enhanced_decision-makin.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
-- [\[ICML 2026\] PSG-Nav: Probabilistic Scene Graph Navigation via Multiverse Decision Making](../../ICML2026/robotics/psg-nav_probabilistic_scene_graph_navigation_via_multiverse_decision_making.md)
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
 
 </div>
 

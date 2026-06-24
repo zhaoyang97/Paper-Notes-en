@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EHETM: High-Quality and Efficient Turbulence Mitigation with Events
 description: >-
-  [CVPR 2026][Physics & Scientific Computing][Paper Note] EHETM is proposed as the first method to leverage the microsecond temporal resolution of event cameras to break the accuracy-efficiency bottleneck of traditional multi-frame Turbulence Mitigation (TM). By discovering two key physical phenomena—the correlation between polarity alternation of turbulence-induced events an
+  [CVPR 2026][Scientific Computing][Atmospheric Turbulence Mitigation] EHETM is proposed as the first method to leverage the microsecond temporal resolution of event cameras to break the accuracy-efficiency bottleneck of traditional multi-frame Turbulence Mitigation (TM). By discovering two key physical phenomena—the correlation between polarity alternation of turbulence-induced events and sharp gradients, and the formation of spatio-temporally coherent "event tubes" by dynamic…
 tags:
-  - CVPR 2026
-  - Physics & Scientific Computing
+  - "CVPR 2026"
+  - "Scientific Computing"
+  - "Atmospheric Turbulence Mitigation"
+  - "Event Camera"
+  - "Polarity-Weighted Gradient"
+  - "Event Tube Constraint"
+  - "Motion Decoupling"
 date: 2026-05-08
-content_hash: d69fac7c161168c1
+content_hash: 005fa018900d9080
 ---
+
 # EHETM: High-Quality and Efficient Turbulence Mitigation with Events
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,8 @@ The training objective combines pixel-level reconstruction loss, perceptual loss
 
 ## Related Papers
 
-- [\[CVPR 2025\] Learning Phase Distortion with Selective State Space Models for Video Turbulence Mitigation](../../CVPR2025/physics/learning_phase_distortion_with_selective_state_space_models_for_video_turbulence.md)
 - [\[CVPR 2026\] Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis](continuous_exposure-time_modeling_for_realistic_atmospheric_turbulence_synthesis.md)
-- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](../../ICLR2026/physics/dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
-- [\[ICML 2026\] Unbiased and Second-Order-Free Training for High-Dimensional PDEs](../../ICML2026/physics/unbiased_and_second-order-free_training_for_high-dimensional_pdes.md)
-- [\[ICML 2026\] Iterative Refinement Neural Operators are Learned Fixed-Point Solvers: A Principled Approach to Spectral Bias Mitigation](../../ICML2026/physics/iterative_refinement_neural_operators_are_learned_fixed-point_solvers_a_principl.md)
+- [\[CVPR 2026\] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training](nestor_a_nested_moe-based_neural_operator_for_large-scale_pde_pre-training.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Destructive Language Model
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Ours proposes Seam, which converts LLMs into "self-destructive models" by coupling the optimization trajectories of benign and harmful data (making their gradient directions opposite). This triggers catastrophic performance collapse during harmful fine-tuning, creating an attacker's dilemma: low-intensity attacks are i
+  [ICLR 2026][LLM Safety][Harmful Fine-tuning Defense] Ours proposes Seam, which converts LLMs into "self-destructive models" by coupling the optimization trajectories of benign and harmful data (making their gradient directions opposite). This triggers catastrophic performance collapse during harmful fine-tuning, creating an attacker's dilemma: low-intensity attacks are ineffective, while high-intensity attacks lead to model failure.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Harmful Fine-tuning Defense"
+  - "Self-Destructive Model"
+  - "Gradient Coupling"
+  - "Alignment Safety"
+  - "Hessian-free Optimization"
 date: 2026-05-08
-content_hash: 371c4529471decab
+content_hash: 1178aa20f0883030
 ---
+
 # Self-Destructive Language Model
 
 **Conference**: ICLR 2026  
@@ -148,11 +154,11 @@ Seam achieves the lowest harmfulness across all attack intensities, with high-in
 
 ## Related Papers
 
+- [\[ICLR 2026\] Self-Destructive Language Models](self-destructive_language_models.md)
 - [\[ICLR 2026\] Multi-Feature Quantized Self-Attention for Fair Large Language Models](multi-feature_quantized_self-attention_for_fair_large_language_models.md)
-- [\[NeurIPS 2025\] Self-Refining Language Model Anonymizers via Adversarial Distillation](../../NeurIPS2025/llm_safety/self-refining_language_model_anonymizers_via_adversarial_distillation.md)
-- [\[ICLR 2026\] Every Language Model Has a Forgery-Resistant Signature](every_language_model_has_a_forgery-resistant_signature.md)
-- [\[ICLR 2026\] From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons](from_sure_to_sorry_detecting_jailbreak_in_large_vision_language_model_via_jailne.md)
-- [\[ICLR 2026\] STAR: Strategy-driven Automatic Jailbreak Red-teaming for Large Language Model](star_strategy-driven_automatic_jailbreak_red-teaming_for_large_language_model.md)
+- [\[ICLR 2026\] An Ensemble Framework for Unbiased Language Model Watermarking](an_ensemble_framework_for_unbiased_language_model_watermarking.md)
+- [\[ICLR 2026\] Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training](self-jailbreaking_language_models_can_reason_themselves_out_of_safety_alignment_.md)
+- [\[ICLR 2026\] Safety Instincts: LLMs Learn to Trust Their Internal Compass for Self-Defense](safety_instincts_llms_learn_to_trust_their_internal_compass_for_self-defense.md)
 
 </div>
 

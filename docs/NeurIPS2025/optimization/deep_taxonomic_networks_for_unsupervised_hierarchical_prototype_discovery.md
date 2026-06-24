@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery
 description: >-
-  [NeurIPS 2025][Optimization][hierarchical clustering] Deep Taxonomic Networks proposes a deep latent variable model with a complete binary tree Gaussian mixture prior. Through variational inference…
+  [NeurIPS 2025][Optimization][hierarchical clustering] Deep Taxonomic Networks proposes a deep latent variable model with a complete binary tree Gaussian mixture prior. Through variational inference, the model automatically discovers hierarchical taxonomies and multi-level prototype clusters from unlabeled data without requiring a predefined number of classes, substantially outperforming baselines such as TreeVAE across multiple datasets.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "binary tree prior"
   - "taxonomy discovery"
 date: 2026-05-08
-content_hash: a0b1d9d74bb72924
+content_hash: 41a42d694a430334
 ---
 
 # Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery
@@ -135,11 +135,11 @@ ACC exceeds TreeVAE by 17.6% on Fashion-MNIST and by 15.0% on CIFAR-10.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] CHiQPM: Calibrated Hierarchical Interpretable Image Classification](chiqpm_calibrated_hierarchical_interpretable_image_classification.md)
+- [\[ICML 2025\] Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation](../../ICML2025/optimization/sparse_causal_discovery_with_generative_intervention_for_unsupervised_graph_doma.md)
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
+- [\[NeurIPS 2025\] CHiQPM: Calibrated Hierarchical Interpretable Image Classification](chiqpm_calibrated_hierarchical_interpretable_image_classification.md)
+- [\[NeurIPS 2025\] Training Robust Graph Neural Networks by Modeling Noise Dependencies](training_robust_graph_neural_networks_by_modeling_noise_dependencies.md)
 - [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
-- [\[NeurIPS 2025\] Auto-Compressing Networks](auto-compressing_networks.md)
-- [\[ICML 2026\] Learning Context-Conditioned Predicate Semantics via Prototype Feedback](../../ICML2026/optimization/learning_context-conditioned_predicate_semantics_via_prototype_feedback.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Vector Prism: Animating Vector Graphics by Stratifying Semantic Structure
 description: >-
-  [CVPR 2026][Video Generation][Dawid-Skene] Addressing the issue where VLMs often produce "chaotic" motion when directly animating SVGs, Vector Prism first employs multiple rendering views to obtain weak labels for each primitive from a VLM. It then utilizes Dawid-Skene statistical inference to aggregate these noisy labels into reliable semantic groupings and re
+  [CVPR 2026][Video Generation][SVG Animation] Addressing the issue where VLMs often produce "chaotic" motion when directly animating SVGs, Vector Prism first employs multiple rendering views to obtain weak labels for each primitive from a VLM. It then utilizes Dawid-Skene statistical inference to aggregate these noisy labels into reliable semantic groupings and reconstructs an "animatable" SVG hierarchy. This allows the VLM to generate animations at a meaningful part granulari…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Dawid-Skene
-  - VLM
+  - "CVPR 2026"
+  - "Video Generation"
+  - "SVG Animation"
+  - "Semantic Structure Recovery"
+  - "Dawid-Skene"
+  - "Multi-view Inference"
+  - "VLM"
 date: 2026-05-08
-content_hash: dde49f0807daa698
+content_hash: 37bf67f03070f253
 ---
+
 # Vector Prism: Animating Vector Graphics by Stratifying Semantic Structure
 
 **Conference**: CVPR 2026  
@@ -145,10 +149,20 @@ Vector Prism outperforms all baselines across three metrics. Notably, it surpass
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation](../../ICML2026/video_generation/vanim_rendering-aware_sparse_state_modeling_for_structure-preserving_vector_anim.md)
+- [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](lottiegpt_vector_animation_generation.md)
+- [\[CVPR 2026\] OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens](omnilottie_generating_vector_animations_via_parameterized_lottie_tokens.md)
+- [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
+- [\[CVPR 2026\] SynMotion: Semantic-Visual Adaptation for Motion Customized Video Generation](synmotion_semantic-visual_adaptation_for_motion_customized_video_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation](../../ICML2026/video_generation/vanim_rendering-aware_sparse_state_modeling_for_structure-preserving_vector_anim.md)

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] From Ticks to Flows: Dynamics of Neural Reinforcement Learning in Continuous Environments
 description: >-
-  [ICLR 2026][Reinforcement Learning][Actor-Critic] This paper models deep RL for continuous control as a continuous-time stochastic process. By introducing two timescales—the "environment clock" and the "gradient clock"—and employing Itô-Taylor expansion with linearized infinite-width networks, it derives the first equations for the infinitesimal evolution of the state
+  [ICLR 2026][Reinforcement Learning][Continuous-time RL] This paper models deep RL for continuous control as a continuous-time stochastic process. By introducing two timescales—the "environment clock" and the "gradient clock"—and employing Itô-Taylor expansion with linearized infinite-width networks, it derives the first equations for the infinitesimal evolution of the state distribution at each gradient step, ultimately simplifying the process into a closed system with only f…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Actor-Critic
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Continuous-time RL"
+  - "Actor-Critic"
+  - "Stochastic Differential Equations"
+  - "Infinite-width neural networks"
+  - "Itô-Taylor expansion"
+  - "Two-timescale"
 date: 2026-05-08
-content_hash: 4aa10ec9324131e7
+content_hash: 85974b3a016fcec9
 ---
+
 # From Ticks to Flows: Dynamics of Neural Reinforcement Learning in Continuous Environments
 
 **Conference**: ICLR 2026  
@@ -107,10 +113,10 @@ LQR Environment: $g(s)=s, h(s)=1, \sigma(s)=0.1$, exploration noise $\times 0.05
 ## Related Papers
 
 - [\[ICLR 2026\] Value Flows](value_flows.md)
+- [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
 - [\[ICLR 2026\] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning](neuralsymbolic_approaches_for_interpretable_actor-critic_reinforcement_learning.md)
 - [\[ICLR 2026\] Flowing Through States: Neural ODE Regularization for Reinforcement Learning](flowing_through_states_neural_ode_regularization_for_reinforcement_learning.md)
-- [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
+- [\[ICLR 2026\] Safe Continuous-time Multi-Agent Reinforcement Learning via Epigraph Form](safe_continuous-time_multi-agent_reinforcement_learning_via_epigraph_form.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] CLaD enables robots to plan within a compact latent space. It models the co-evolution of modalities through an asymmetric cross-attention mechanism where "proprioceptive changes query semantic changes." It predicts latent foresight grounded by both EMA targets and reconstruction losses, which then modulates a diffusion
+  [CVPR 2026][Robotics][Robotic Manipulation] CLaD enables robots to plan within a compact latent space. It models the co-evolution of modalities through an asymmetric cross-attention mechanism where "proprioceptive changes query semantic changes." It predicts latent foresight grounded by both EMA targets and reconstruction losses, which then modulates a diffusion policy for action generation. On LIBERO-LONG, it achieves a 94.7% success rate with only 0.66B parameters…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robotic Manipulation"
+  - "Latent Planning"
+  - "Cross-Modal Dynamics"
+  - "Diffusion Policy"
+  - "Self-Supervised Foresight"
 date: 2026-05-08
-content_hash: 7cd2470d2286c767
+content_hash: b49af3fefcde1b39
 ---
+
 # CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics
 
 **Conference**: CVPR 2026  
@@ -128,8 +134,21 @@ CLaD also excels in efficiency—25 Hz inference with only 4 GB VRAM, significan
 - Value: ⭐⭐⭐⭐⭐ 0.66B matching 7B; the latent planning paradigm and grounding recipes are valuable for the field.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning](agile_learning_robust_long-horizon_manipulation_via_affordance-grounded_bidirect.md)
+- [\[CVPR 2026\] ForeAct: Steering Your VLA with Efficient Visual Foresight Planning](foreact_steering_your_vla_with_efficient_visual_foresight_planning.md)
+- [\[CVPR 2026\] Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](hoi_-_a_multimodal_dataset_for_force-grounded_cross-view_articulated_manipulatio.md)
+- [\[CVPR 2026\] Cross-Hand Latent Representation for Vision-Language-Action Models](cross-hand_latent_representation_for_vision-language-action_models.md)
+- [\[CVPR 2026\] AURA: Multi-modal Shared Autonomy for Urban Navigation](aura_multi-modal_shared_autonomy_for_urban_navigation.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

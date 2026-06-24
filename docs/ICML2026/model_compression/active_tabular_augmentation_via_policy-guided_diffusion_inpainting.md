@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Active Tabular Augmentation via Policy-Guided Diffusion Inpainting
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper formalizes the "fidelity-utility gap" in tabular augmentation (where generators optimize for distribution matching, yet augmentation value stems from low-density regions). It proposes the TAP algorithm, which utilizes diffusion inpainting for manifold-constrained proposals, policy-guided utility-aligned sele
+  [ICML 2026][Model Compression][Tabular Data Augmentation] This paper formalizes the "fidelity-utility gap" in tabular augmentation (where generators optimize for distribution matching, yet augmentation value stems from low-density regions). It proposes the TAP algorithm, which utilizes diffusion inpainting for manifold-constrained proposals, policy-guided utility-aligned selection, and hard-constraint gating with conservative window commitment. On 7 real-world tabular dataset…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Tabular Data Augmentation"
+  - "Diffusion Inpainting"
+  - "Utility-driven Selection"
+  - "Conservative Commitment"
+  - "Fidelity-Utility Gap"
 date: 2026-05-08
-content_hash: c824fdb3dddb5c6e
+content_hash: cb8291cac7d342fc
 ---
+
 # Active Tabular Augmentation via Policy-Guided Diffusion Inpainting
 
 **Conference**: ICML 2026  

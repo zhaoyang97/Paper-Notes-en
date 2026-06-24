@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] SmartChunk Retrieval utilizes a low-latency planner to select the appropriate chunk granularity range for each query and directly generates high-level chunk embeddings using a lightweight compression encoder. This achieves Q&A performance close to or exceeding tree/graph-based RAG in long-document scenarios at a signif
+  [ICLR 2026][Information Retrieval & RAG][Query-adaptive retrieval] SmartChunk Retrieval utilizes a low-latency planner to select the appropriate chunk granularity range for each query and directly generates high-level chunk embeddings using a lightweight compression encoder. This achieves Q&A performance close to or exceeding tree/graph-based RAG in long-document scenarios at a significantly lower cost.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Query-adaptive retrieval"
+  - "chunk compression"
+  - "document RAG"
+  - "reinforcement learning planner"
+  - "long-document Q&A"
 date: 2026-05-08
-content_hash: d0391ac9ee76d345
+content_hash: daaa6092b23258f6
 ---
+
 # SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG
 
 **Conference**: ICLR 2026  
@@ -138,13 +144,17 @@ Ablations show that the planner and compressor target different cost sources: re
 
 <div class="related-papers" markdown="1">
 
-- [RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval](https://arxiv.org/abs/2401.18059)
-- [Late Chunking: Contextual Chunk Embeddings](https://arxiv.org/abs/2409.04714)
+## Related Papers
+
+- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
+- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
+- [\[ICLR 2026\] OSCAR: Online Soft Compression for RAG](oscar_online_soft_compression_for_rag.md)
+- [\[ICLR 2026\] GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation](gro-rag_gradient-aware_re-rank_optimization_for_multi-source_retrieval-augmented.md)
+- [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)

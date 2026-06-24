@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DOPPLER: Dual-Policy Learning for Device Assignment in Asynchronous Dataflow Graphs
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] DOPPLER models the problem of assigning dataflow graph operators across multiple GPUs to minimize execution time as a sequential decision-making problem. By utilizing a pair of policies (SEL to select the next operator and PLC to assign it a device) combined with a three-stage training pipeline (Imitation Learning → Si
+  [ICLR2026][Reinforcement Learning][Device Assignment] DOPPLER models the problem of assigning dataflow graph operators across multiple GPUs to minimize execution time as a sequential decision-making problem. By utilizing a pair of policies (SEL to select the next operator and PLC to assign it a device) combined with a three-stage training pipeline (Imitation Learning → Simulator RL → Online Real-Device RL), it reduces execution time by up to 52.7% compared to the strongest ba…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Device Assignment"
+  - "Work-Conserving Scheduling"
+  - "Dual-Policy Reinforcement Learning"
+  - "Graph Neural Networks"
+  - "Dataflow Graphs"
 date: 2026-05-08
-content_hash: 7347af50c6810eed
+content_hash: 734ce41e3f5bae8d
 ---
+
 # DOPPLER: Dual-Policy Learning for Device Assignment in Asynchronous Dataflow Graphs
 
 **Conference**: ICLR2026  
@@ -137,11 +143,11 @@ The synergy of the dual-policy approach is distinctly more evident as graph comp
 
 ## Related Papers
 
+- [\[ICLR 2026\] Asynchronous Policy Gradient Aggregation for Efficient Distributed Reinforcement Learning](asynchronous_policy_gradient_aggregation_for_efficient_distributed_reinforcement.md)
 - [\[ICLR 2026\] Breaking Safety Paradox with Feasible Dual Policy Iteration](breaking_safety_paradox_with_feasible_dual_policy_iteration.md)
 - [\[ICLR 2026\] Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses](primal-dual_policy_optimization_for_linear_cmdps_with_adversarial_losses.md)
-- [\[ICLR 2026\] Dual Goal Representations](dual_goal_representations.md)
 - [\[ICLR 2026\] Dual-Objective Reinforcement Learning with Novel Hamilton-Jacobi-Bellman Formulations](dual-objective_reinforcement_learning_with_novel_hamilton-jacobi-bellman_formula.md)
-- [\[ICLR 2026\] Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning](occupancy_reward_shaping_improving_credit_assignment_for_offline_goal-conditione.md)
+- [\[ICLR 2026\] Dual Goal Representations](dual_goal_representations.md)
 
 </div>
 

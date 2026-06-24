@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] SEINT: An Efficient SE(p)-Invariant Transport Metric Driven by Polar Transport Discrepancy-based Representation
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes SEINT, a distribution distance that is strictly invariant to translation and rotation (the Special Euclidean group $SE(p)$) and proven to be a true metric (satisfying the triangle inequality). It utilizes training-free "Polar Transport Discrepancy (PTD)" to encode high-dimensional distributions into
+  [ICLR 2026][Learning Theory][SE(p)-invariance] This paper proposes SEINT, a distribution distance that is strictly invariant to translation and rotation (the Special Euclidean group $SE(p)$) and proven to be a true metric (satisfying the triangle inequality). It utilizes training-free "Polar Transport Discrepancy (PTD)" to encode high-dimensional distributions into 1D scalar features, then restores intrinsic geometric information using "Distance Convolutional PTD (DcPTD)." By…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Optimal Transport"
+  - "Geometric Invariant Metrics"
+  - "SE(p)-invariance"
+  - "Metric Learning"
+  - "Point Clouds"
+  - "Molecule Generation"
 date: 2026-05-08
-content_hash: 00d807c4cb5ff48e
+content_hash: 311cfcaaf81f706e
 ---
+
 # SEINT: An Efficient SE(p)-Invariant Transport Metric Driven by Polar Transport Discrepancy-based Representation
 
 **Conference**: ICLR 2026  
@@ -137,6 +144,7 @@ SEINT achieved 100% accuracy while being significant faster than RISGW (~44x) an
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] pFedMMA inserts a "down-projection — shared projection — up-projection" multi-modal adapter into the top layers of CLIP's image/text encoders. In federated learning, each client trains all parameters locally but only uploads and aggregates the shared projection used for cross-modal alignment. This achieves the optimal
+  [ICLR 2026][Multimodal VLM][Federated Learning] pFedMMA inserts a "down-projection — shared projection — up-projection" multi-modal adapter into the top layers of CLIP's image/text encoders. In federated learning, each client trains all parameters locally but only uploads and aggregates the shared projection used for cross-modal alignment. This achieves the optimal trade-off between strong personalization and strong generalization (to unseen classes/domains) across 11 dataset…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Federated Learning"
+  - "CLIP"
+  - "Multi-modal Adapter"
+  - "Personalization"
+  - "Generalization-Personalization Trade-off"
 date: 2026-05-08
-content_hash: e73a8c184c692abc
+content_hash: 3ac4c371853c1bf3
 ---
+
 # pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -146,7 +151,7 @@ Accuracy nearly doubled on DomainNet (24.9 → 47.2), indicating that the cross-
 - [\[AAAI 2026\] RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)](../../AAAI2026/multimodal_vlm/rmadapter_reconstructionbased_multimodal_adapter_for_visionlanguage.md)
 - [\[ICLR 2026\] Preserve and Sculpt: Manifold-Aligned Fine-tuning of Vision-Language Models for Few-Shot Learning](preserve_and_sculpt_manifold-aligned_fine-tuning_of_vision-language_models_for_f.md)
 - [\[ICLR 2026\] Fed-Duet: Dual Expert-Orchestrated Framework for Continual Federated Vision-Language Learning](fed-duet_dual_expert-orchestrated_framework_for_continual_federated_vision-langu.md)
-- [\[ICLR 2026\] A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models](a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi.md)
+- [\[ICLR 2026\] MergeTune: Continued Fine-Tuning of Vision-Language Models](mergetune_continued_fine-tuning_of_vision-language_models.md)
 
 </div>
 

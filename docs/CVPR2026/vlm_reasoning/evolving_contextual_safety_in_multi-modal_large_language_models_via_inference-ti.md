@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper introduces the MM-SafetyBench++ benchmark and the EchoSafe framework, which accumulates safety insights through a self-reflective memory bank maintained at inference time. This allows MLLMs to distinguish between scenarios with similar appearances but different safety intents based on context, improving cont
+  [CVPR 2026][VLM Reasoning][MLLM Safety] This paper introduces the MM-SafetyBench++ benchmark and the EchoSafe framework, which accumulates safety insights through a self-reflective memory bank maintained at inference time. This allows MLLMs to distinguish between scenarios with similar appearances but different safety intents based on context, improving contextual safety without requiring additional training.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "MLLM Safety"
+  - "Contextual Safety"
+  - "Self-Reflective Memory"
+  - "Inference-Time Defense"
+  - "Safety Benchmark"
 date: 2026-05-08
-content_hash: f09cf34197e808d8
+content_hash: fe67c908c86d30c9
 ---
+
 # Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory
 
 **Conference**: CVPR 2026  
@@ -135,10 +141,10 @@ A memory bank is only effective if relevant references are retrieved for new que
 ## Related Papers
 
 - [\[CVPR 2026\] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models](dmllm-tts_self-verified_and_efficient_test-time_scaling_for_diffusion_multi-moda.md)
-- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
 - [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
-- [\[CVPR 2026\] EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards](evolmm_self_evolving_lmm_continuous_rewards.md)
 - [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
+- [\[CVPR 2026\] Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning](decouple_to_generalize_context-first_self-evolving_learning_for_data-scarce_visi.md)
+- [\[CVPR 2026\] OVOD-Agent: A Markov-Bandit Framework for Proactive Visual Reasoning and Self-Evolving Detection](ovod-agent_a_markov-bandit_framework_for_proactive_visual_reasoning_and_self-evo.md)
 
 </div>
 

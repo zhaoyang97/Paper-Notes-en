@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Beyond Entity Correlations: Disentangling Event Causal Puzzles in Temporal Knowledge Graphs
 description: >-
-  [ICLR 2026][Graph Learning][Temporal Knowledge Graph] This paper proposes HEDRA, the first representation learning framework for heterogeneous causal disentanglement at the **event level** in Temporal Knowledge Graphs (TKGs). By using three modules—counterfactual detection, instrumental variable guidance, and evolutionary orthogonality—it sequentially strips away non-caus
+  [ICLR 2026][Graph Learning][Temporal Knowledge Graph] This paper proposes HEDRA, the first representation learning framework for heterogeneous causal disentanglement at the **event level** in Temporal Knowledge Graphs (TKGs). By using three modules—counterfactual detection, instrumental variable guidance, and evolutionary orthogonality—it sequentially strips away non-causal and pseudo-causal relations while separating dynamic and static causality…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Temporal Knowledge Graph
-  - Event Prediction
-  - Causal Disentanglement
-  - Instrumental Variable
-  - Structural Causal Model
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Temporal Knowledge Graph"
+  - "Event Prediction"
+  - "Causal Disentanglement"
+  - "Instrumental Variable"
+  - "Structural Causal Model"
 date: 2026-05-08
-content_hash: c5465f22132e5a88
+content_hash: 42a36265044c1950
 ---
+
 # Beyond Entity Correlations: Disentangling Event Causal Puzzles in Temporal Knowledge Graphs
 
 **Conference**: ICLR 2026  

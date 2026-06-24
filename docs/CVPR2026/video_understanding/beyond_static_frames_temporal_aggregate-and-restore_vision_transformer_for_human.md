@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation
 description: >-
-  [CVPR 2026][Human Understanding][Vision Transformer] Without modifying the plain ViT backbone and lightweight decoder of ViTPose, TAR-ViTPose employs "Joint-centered Temporal Aggregation (JTA) + Global Restore Attention (GRA)" to align, aggregate, and inject joint features from adjacent frames back into the current frame. This plug-and-play approach improves 2D video pos
+  [CVPR 2026][Video Understanding][Video Pose Estimation] Without modifying the plain ViT backbone and lightweight decoder of ViTPose, TAR-ViTPose employs "Joint-centered Temporal Aggregation (JTA) + Global Restore Attention (GRA)" to align, aggregate, and inject joint features from adjacent frames back into the current frame. This plug-and-play approach improves 2D video pose estimation by +2.3 mAP on PoseTrack2017 compared to single-frame ViTPose…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Vision Transformer
-  - ViTPose
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Pose Estimation"
+  - "Vision Transformer"
+  - "Temporal Aggregation"
+  - "Joint-level Attention"
+  - "ViTPose"
 date: 2026-05-08
-content_hash: bd2379c55a17d54e
+content_hash: 1257704ec3597531
 ---
+
 # Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -164,11 +168,11 @@ Conducted on PoseTrack2017 val, ViT-B, $T=2$:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](../../NeurIPS2025/human_understanding/raptr_radar-based_3d_pose_estimation_using_transformer.md)
-- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
-- [\[CVPR 2026\] Differentially Private 2D Human Pose Estimation](differentially_private_2d_human_pose_estimation.md)
-- [\[ECCV 2024\] RePOSE: 3D Human Pose Estimation via Spatio-Temporal Depth Relational Consistency](../../ECCV2024/human_understanding/repose_3d_human_pose_estimation_via_spatio-temporal_depth_relational_consistency.md)
-- [\[CVPR 2026\] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)
+- [\[AAAI 2026\] Lifelong Domain Adaptive 3D Human Pose Estimation](../../AAAI2026/video_understanding/lifelong_domain_adaptive_3d_human_pose_estimation.md)
+- [\[CVPR 2026\] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](egoxtreme_a_dataset_for_robust_object_pose_estimation_in_egocentric_views_under_.md)
+- [\[CVPR 2026\] Polyphony: Diffusion-based Dual-Hand Action Segmentation with Alternating Vision Transformer and Semantic Conditioning](polyphony_diffusion-based_dual-hand_action_segmentation_with_alternating_vision_.md)
+- [\[ICLR 2026\] Beyond Static Vision: Scene Dynamic Field Unlocks Intuitive Physics Understanding in Multi-modal Large Language Models](../../ICLR2026/video_understanding/beyond_static_vision_scene_dynamic_field_unlocks_intuitive_physics_understanding.md)
+- [\[CVPR 2026\] Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking](spatio-temporal_conditional_denoising_transformer_for_modality-missing_rgbt_trac.md)
 
 </div>
 

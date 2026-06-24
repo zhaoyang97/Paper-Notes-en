@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders
 description: >-
-  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][Perceptual Alignment] This paper demonstrates that applying noise augmentation to latent variables during autoencoder training, combined with a perceptual loss…
+  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][Perceptual Alignment] This paper demonstrates that applying noise augmentation to latent variables during autoencoder training, combined with a perceptual loss, induces a "perceptual hierarchy" in the encoding space — the most perceptually salient musical features (e.g., pitch) are encoded in the coarsest latent structures, while secondary features (e.g., timbral details) are encoded in finer structures. This alignment im…
 tags:
   - "NeurIPS 2025 (AI for Music Workshop)"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Music Surprisal"
   - "EEG Prediction"
 date: 2026-05-08
-content_hash: 35476edba62a56cf
+content_hash: a3b85f59f63de671
 ---
 
 # Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders
@@ -126,10 +126,10 @@ Two-stage latent diffusion: (1) an audio autoencoder (Music2Latent/CAE) encodes 
 ## Related Papers
 
 - [\[AAAI 2026\] Aligning Generative Music AI with Human Preferences: Methods and Challenges](../../AAAI2026/audio_speech/aligning_generative_music_ai_with_human_preferences_methods_and_challenges.md)
+- [\[ICML 2025\] Aligning Spoken Dialogue Models from User Interactions](../../ICML2025/audio_speech/aligning_spoken_dialogue_models_from_user_interactions.md)
 - [\[NeurIPS 2025\] From Black Box to Biomarker: Sparse Autoencoders for Interpreting Speech Models of Parkinson's Disease](from_black_box_to_biomarker_sparse_autoencoders_for_interpreting_speech_models_o.md)
 - [\[NeurIPS 2025\] Segment-Factorized Full-Song Generation on Symbolic Piano Music](segment-factorized_full-song_generation_on_symbolic_piano_music.md)
 - [\[NeurIPS 2025\] Ethics Statements in AI Music Papers: The Effective and the Ineffective](ethics_statements_in_ai_music_papers_the_effective_and_the_ineffective.md)
-- [\[ICLR 2026\] Scaling Speech Tokenizers with Diffusion Autoencoders](../../ICLR2026/audio_speech/scaling_speech_tokenizers_with_diffusion_autoencoders.md)
 
 </div>
 

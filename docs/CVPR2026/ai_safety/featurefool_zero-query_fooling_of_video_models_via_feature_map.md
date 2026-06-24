@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FeatureFool: Zero-Query Fooling of Video Models via Feature Map
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] FeatureFool proposes the first **zero-query** black-box adversarial attack for videos: it extracts a motion-semantic-rich feature map using Guided Back-propagation (GB) on the "maximum optical flow frame" from a public pre-trained 3D-CNN, and broadcasts it as a universal perturbation across all frames. This causes trad
+  [CVPR 2026][AI Safety][Zero-Query Attack] FeatureFool proposes the first **zero-query** black-box adversarial attack for videos: it extracts a motion-semantic-rich feature map using Guided Back-propagation (GB) on the "maximum optical flow frame" from a public pre-trained 3D-CNN, and broadcasts it as a universal perturbation across all frames. This causes traditional video classifiers to misclassify (ASR >70%) and forces Video-LLMs to miss harmful content like violence/pornog…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Zero-Query Attack"
+  - "Black-box Adversarial Attack"
+  - "Feature Map"
+  - "Video LLM"
+  - "Guided Backpropagation"
 date: 2026-05-08
-content_hash: f5e84d26bddfb2ff
+content_hash: c26a7ac0bc132db7
 ---
+
 # FeatureFool: Zero-Query Fooling of Video Models via Feature Map
 
 **Conference**: CVPR 2026  
@@ -152,15 +158,16 @@ Random selection performs poorly, proving frame selection is non-trivial. Comput
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](runawayevil_jailbreaking_the_image-to-video_generative_models.md)
 - [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
+- [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](runawayevil_jailbreaking_the_image-to-video_generative_models.md)
 - [\[CVPR 2026\] FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models](fvbench_benchmarking_deepfake_video_detection_capability_of_large_multimodal_mod.md)
-- [\[CVPR 2026\] TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking](tiacam_text-anchored_invariant_feature_learning_with_auto-augmentation_for_camer.md)
 - [\[CVPR 2026\] VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation](vmd-fact_a_new_video_dataset_and_mllm-based_method_for_detecting_realistic_ai-ge.md)
+- [\[ICLR 2026\] Jailbreaking on Text-to-Video Models via Scene Splitting Strategy](../../ICLR2026/ai_safety/jailbreaking_on_text-to-video_models_via_scene_splitting_strategy.md)
 
 </div>
 

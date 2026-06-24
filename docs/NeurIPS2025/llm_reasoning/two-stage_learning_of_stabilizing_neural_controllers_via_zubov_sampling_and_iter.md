@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Two-Stage Learning of Stabilizing Neural Controllers via Zubov Sampling and Iterative Domain Expansion
 description: >-
-  [NeurIPS 2025][LLM Reasoning][neural controller] A two-stage training framework is proposed: the first stage estimates the region of attraction (ROA) via Zubov-guided sampling and dynamic domain expansion…
+  [NeurIPS 2025][Reasoning][neural controller] A two-stage training framework is proposed: the first stage estimates the region of attraction (ROA) via Zubov-guided sampling and dynamic domain expansion, while the second stage refines the result through CEGIS-based counterexample-driven training. The framework jointly learns a neural network controller and a Lyapunov function, achieving ROA volumes 5 to $1.5 \times 10^5$ times larger than baselines and verification speeds 40–10…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "neural controller"
   - "Lyapunov function"
   - "region of attraction"
   - "Zubov theorem"
   - "neural network verification"
 date: 2026-05-08
-content_hash: 56603a849c3b0cb2
+content_hash: 59229f4b3b2301e0
 ---
 
 # Two-Stage Learning of Stabilizing Neural Controllers via Zubov Sampling and Iterative Domain Expansion
@@ -142,10 +142,10 @@ The total training loss is a weighted combination of five terms: a zero-point lo
 ## Related Papers
 
 - [\[NeurIPS 2025\] Clip-and-Verify: Linear Constraint-Driven Domain Clipping for Accelerated Neural Network Verification](clip-and-verify_linear_constraint-driven_domain_clipping_for_accelerating_neural.md)
-- [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
-- [\[NeurIPS 2025\] AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling](abbie_autoregressive_block-based_iterative_encoder_for_efficient_sequence_modeli.md)
 - [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](../../ICML2026/llm_reasoning/beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
+- [\[NeurIPS 2025\] AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling](abbie_autoregressive_block-based_iterative_encoder_for_efficient_sequence_modeli.md)
 - [\[NeurIPS 2025\] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](dreamprm_domain-reweighted_process_reward_model_for_multimodal_reasoning.md)
+- [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
 
 </div>
 

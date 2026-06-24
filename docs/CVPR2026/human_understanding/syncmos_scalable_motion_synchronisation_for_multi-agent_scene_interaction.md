@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] SyncMos utilizes an LLM event planner to decompose natural language instructions into temporal dependency graphs. By applying time-warping and Diffusion Posterior Sampling (DPS) as post-processing **without retraining** the single-agent diffusion motion model, it aligns the actions of an arbitrary number of agents (e.g
+  [CVPR 2026][Human Understanding][Multi-agent motion generation] SyncMos utilizes an LLM event planner to decompose natural language instructions into temporal dependency graphs. By applying time-warping and Diffusion Posterior Sampling (DPS) as post-processing **without retraining** the single-agent diffusion motion model, it aligns the actions of an arbitrary number of agents (e.g., handing over objects) in time, achieving scalable multi-agent 3D scene interaction generation…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-agent motion generation"
+  - "temporal synchronization"
+  - "diffusion models"
+  - "LLM event planning"
+  - "human-scene interaction"
 date: 2026-05-08
-content_hash: eafbb2cb1ac7e621
+content_hash: 0669b0fc844edbbc
 ---
+
 # SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction
 
 **Conference**: CVPR 2026  
@@ -147,7 +152,7 @@ Success rates are >70% within ±1.0 s, reaching 88% for small offsets (±0.5 s).
 
 - [\[CVPR 2026\] InterAgent: Physics-based Multi-agent Command Execution via Diffusion on Interaction Graphs](interagent_physics-based_multi-agent_command_execution_via_diffusion_on_interaction_graphs.md)
 - [\[CVPR 2026\] HSI-GPT2: A Dual-Granularity Large Motion Reasoning Model with Diffusion Refinement for Human-Scene Interaction](hsi-gpt2_a_dual-granularity_large_motion_reasoning_model_with_diffusion_refineme.md)
-- [\[CVPR 2026\] AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL](assistmimic_physics_grounded_humanoid_assistance.md)
+- [\[CVPR 2026\] InterPhys: Physics-aware Human Motion Synthesis in a Dynamic Scene](interphys_physics-aware_human_motion_synthesis_in_a_dynamic_scene.md)
 - [\[CVPR 2026\] SceMoS: Scene-Aware 3D Human Motion Synthesis by Planning with Geometry-Grounded Tokens](scemos_scene-aware_3d_human_motion_synthesis_by_planning_with_geometry-grounded_.md)
 - [\[CVPR 2026\] PAMotion: Physics-Aware Motion Generation for Full-Body Interaction with Multiple Objects](pamotion_physics-aware_motion_generation_for_full-body_interaction_with_multiple.md)
 

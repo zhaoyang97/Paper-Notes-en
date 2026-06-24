@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation
 description: >-
-  [CVPR 2026][Autonomous Driving][lane detection] Addressing the severe shortage of extreme weather samples in lane detection datasets (CULane/TuSimple), this paper proposes HG-Lane—a two-stage diffusion generation framework without re-annotation. Stage-I preserves lane geometric structure through Control Information Fusion + Structure-aware Reverse Diffusion, while S
+  [CVPR 2026][Autonomous Driving][lane detection] Addressing the severe shortage of extreme weather samples in lane detection datasets (CULane/TuSimple), this paper proposes HG-Lane—a two-stage diffusion generation framework without re-annotation. Stage-I preserves lane geometric structure through Control Information Fusion + Structure-aware Reverse Diffusion, while Stage-II adjusts lighting styles via Appearance-aware Refinement to generate 30K images across snow/rain/fog/nigh…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - lane detection
-  - adverse weather
-  - diffusion model
-  - ControlNet
-  - data augmentation
-  - CULane
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "lane detection"
+  - "adverse weather"
+  - "diffusion model"
+  - "ControlNet"
+  - "data augmentation"
+  - "CULane"
+  - "TuSimple"
 date: 2026-05-08
-content_hash: 6fa40d48acf1d051
+content_hash: a231da67ea404154
 ---
+
 # HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation
 
 **Conference**: CVPR 2026  
@@ -166,9 +168,9 @@ Compared to style transfer methods like CycleGAN and UNIT, HG-Lane leads in both
 
 - [\[CVPR 2026\] Structure-to-Intensity Diffusion for Adverse-Weather LiDAR Generation](structure-to-intensity_diffusion_for_adverse-weather_lidar_generation.md)
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
+- [\[AAAI 2026\] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions](../../AAAI2026/autonomous_driving/tsbow_traffic_surveillance_benchmark_for_occluded_vehicles_under_various_weather.md)
 - [\[CVPR 2026\] ReManNet: A Riemannian Manifold Network for Monocular 3D Lane Detection](remannet_a_riemannian_manifold_network_for_monocular_3d_lane_detection.md)
 - [\[CVPR 2026\] Rascene: High-Fidelity 3D Scene Imaging with mmWave Communication Signals](rascene_high-fidelity_3d_scene_imaging_with_mmwave_communication_signals.md)
-- [\[AAAI 2026\] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions](../../AAAI2026/autonomous_driving/tsbow_traffic_surveillance_benchmark_for_occluded_vehicles_under_various_weather.md)
 
 </div>
 

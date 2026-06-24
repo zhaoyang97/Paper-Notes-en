@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Automated Formalization via Conceptual Retrieval-Augmented LLMs
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][RAG] CRAMF automatically constructs a "concept–definition" knowledge base from Mathlib4, utilizing query augmentation, dual-channel hybrid retrieval, and reranking to provide precise formal definitions for LLM-based autoformalizers. It serves as a plug-and-play plugin that improves translation accuracy by an average of 29.9
+  [ICLR 2026][Information Retrieval & RAG][Autoformalization] CRAMF automatically constructs a "concept–definition" knowledge base from Mathlib4, utilizing query augmentation, dual-channel hybrid retrieval, and reranking to provide precise formal definitions for LLM-based autoformalizers. It serves as a plug-and-play plugin that improves translation accuracy by an average of 29.9% relative gain, reaching up to 62.1%.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - RAG
-  - Lean 4
-  - Mathlib
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Autoformalization"
+  - "RAG"
+  - "Lean 4"
+  - "Mathlib"
+  - "Mathematical Concept Retrieval"
+  - "Conceptual Polymorphism"
 date: 2026-05-08
-content_hash: ac45ae17acde6f61
+content_hash: 2a2673ec8847d14f
 ---
+
 # Automated Formalization via Conceptual Retrieval-Augmented LLMs
 
 **Conference**: ICLR 2026  

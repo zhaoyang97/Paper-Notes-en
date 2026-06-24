@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Buffer Matters: Unleashing the Power of Off-Policy Reinforcement Learning in Large Language Model Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] Addressing two major wastes in online (on-policy) RLVR training—"inability to learn from hard samples" and "sampled data discarded after one use"—this paper proposes the off-policy framework **BAPO (Batch Adaptation Policy Optimization)**. It utilizes a "difficulty-aware experience replay + adaptive batch construction"
+  [ICLR2026][Reinforcement Learning][Off-policy RLVR] Addressing two major wastes in online (on-policy) RLVR training—"inability to learn from hard samples" and "sampled data discarded after one use"—this paper proposes the off-policy framework **BAPO (Batch Adaptation Policy Optimization)**. It utilizes a "difficulty-aware experience replay + adaptive batch construction" mechanism to bring historical hard problems and high-quality trajectories back into training batches. It th…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Off-policy RLVR"
+  - "Experience Replay"
+  - "Hard Samples"
+  - "GRPO"
+  - "Adaptive Batch Construction"
 date: 2026-05-08
-content_hash: 4ad8c2a6a81bfe6d
+content_hash: 262139fc97b1ea8f
 ---
+
 # Buffer Matters: Unleashing the Power of Off-Policy Reinforcement Learning in Large Language Model Reasoning
 
 **Conference**: ICLR2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Think Visually, Reason Textually: Vision-Language Synergy in Abstract Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][ARC-AGI] Addressing ARC-AGI abstract reasoning, the authors identify a complementarity where "vision excels at rule induction, while text excels at precise execution." They propose training-free VLSR (using images for rule induction and text for rule application) and MSSC (using vision to verify text answers for cross-modal sel
+  [CVPR 2026][VLM Reasoning][ARC-AGI] Addressing ARC-AGI abstract reasoning, the authors identify a complementarity where "vision excels at rule induction, while text excels at precise execution." They propose training-free VLSR (using images for rule induction and text for rule application) and MSSC (using vision to verify text answers for cross-modal self-correction). These methods achieve an average improvement of up to 4.33% over text-only baselines on GPT-4o / Gemini-2.5-P…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - ARC-AGI
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "ARC-AGI"
+  - "Abstract Reasoning"
+  - "Vision-Language Synergy"
+  - "Modality Switching"
+  - "Self-Correction"
 date: 2026-05-08
-content_hash: 25c5771c863c8df9
+content_hash: d733023fc932d882
 ---
+
 # Think Visually, Reason Textually: Vision-Language Synergy in Abstract Reasoning
 
 **Conference**: CVPR 2026  
@@ -146,15 +151,16 @@ Self-correction comparison (Tab. 4) shows that text-only correction (TOSC) stagn
 - Value: ⭐⭐⭐⭐ (Provides a transferable "modality routing + cross-modal verification" principle for multimodal reasoning)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
-- [\[CVPR 2026\] Modeling Cross-vision Synergy for Unified Large Vision Model](modeling_cross-vision_synergy_for_unified_large_vision_model.md)
-- [\[CVPR 2025\] Seeing the Abstract: Translating the Abstract Language for Vision Language Models](../../CVPR2025/multimodal_vlm/seeing_the_abstract_translating_the_abstract_language_for_vision_language_models.md)
-- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
-- [\[CVPR 2026\] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning](select_less_reason_more_prioritizing_evidence_purity_for_video_reasoning.md)
+- [\[CVPR 2026\] DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models](deepscan_a_training-free_framework_for_visually_grounded_reasoning_in_large_visi.md)
+- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
+- [\[CVPR 2026\] Learning to Reason in 4D: Dynamic Spatial Understanding for Vision Language Models](learning_to_reason_in_4d_dynamic_spatial_understanding_for_vision_language_model.md)
+- [\[CVPR 2026\] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning](clivis_unleashing_cognitive_map_through_linguistic-visual_synergy_for_embodied_v.md)
+- [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](../../ACL2026/vlm_reasoning/can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
 
 </div>
 

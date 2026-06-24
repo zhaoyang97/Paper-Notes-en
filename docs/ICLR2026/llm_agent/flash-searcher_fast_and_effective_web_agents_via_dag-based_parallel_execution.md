@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Flash-Searcher: Fast and Effective Web Agents via DAG-Based Parallel Execution
 description: >-
-  [ICLR 2026][LLM Agent][DAG] This work rewrites the traditional "serial chain-of-thought" of web agents into a "DAG-based parallel execution graph." By allowing independent subtasks to perform retrieval and reasoning simultaneously, it achieves SOTA results on BrowseComp, xbench, GAIA, and HLE while reducing execution steps by 35% and end-to-end t
+  [ICLR 2026][LLM Agent][Parallel Inference] This work rewrites the traditional "serial chain-of-thought" of web agents into a "DAG-based parallel execution graph." By allowing independent subtasks to perform retrieval and reasoning simultaneously, it achieves SOTA results on BrowseComp, xbench, GAIA, and HLE while reducing execution steps by 35% and end-to-end time by approximately 65%.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - DAG
-  - Deep Research
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Parallel Inference"
+  - "DAG"
+  - "Tool-augmented Agent"
+  - "Deep Research"
+  - "Workflow Optimization"
+  - "Distillation"
 date: 2026-05-08
-content_hash: 374c311599d6829c
+content_hash: f337979574231cd1
 ---
+
 # Flash-Searcher: Fast and Effective Web Agents via DAG-Based Parallel Execution
 
 **Conference**: ICLR 2026  
@@ -119,16 +124,16 @@ DAG parallel execution eliminates redundant tool call loops found in serial chai
 - **Value**: ⭐⭐⭐⭐ — Breaks the efficiency-accuracy trade-off and provides open-source code/data for practical deep research implementation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution](../../AAAI2026/llm_agent/cook_and_clean_together_teaching_embodied_agents_for_paralle.md)
+- [\[ICLR 2026\] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](in-the-flow_agentic_system_optimization_for_effective_planning_and_tool_use.md)
 - [\[ICLR 2026\] Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents](agent_data_protocol_unifying_datasets_for_diverse_effective_fine-tuning_of_llm_a.md)
 - [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
 - [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
-- [\[ICLR 2026\] WALT: Web Agents that Learn Tools](walt_web_agents_that_learn_tools.md)
 
 </div>
 

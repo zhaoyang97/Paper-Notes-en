@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Text Embedding Knows How to Quantize Text-Guided Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][diffusion model quantization] This paper is the first to leverage text prompts to guide dynamic bit-width allocation for diffusion model quantization — by predicting the quality of images ge…
+  [ICCV 2025][Image Generation][diffusion model quantization] This paper is the first to leverage text prompts to guide dynamic bit-width allocation for diffusion model quantization — by predicting the quality of images generated from a given text prompt, it adaptively selects high/medium/low bit precision for different layers and timesteps, reducing computational complexity while maintaining or even improving generation quality.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "mixed precision"
   - "post-training quantization"
 date: 2026-05-08
-content_hash: 0368e6e4d0d0b754
+content_hash: b979c69c16579bb7
 ---
 
 # Text Embedding Knows How to Quantize Text-Guided Diffusion Models
@@ -166,8 +166,8 @@ QLIP reduces FAB while simultaneously improving FID/sFID, as it allocates higher
 - [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
 - [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](../../NeurIPS2025/image_generation/diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](../../NeurIPS2025/image_generation/training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
-- [\[ICCV 2025\] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction](aid_adapting_image2video_diffusion_models_for_instruction-guided_video_predictio.md)
 - [\[ICCV 2025\] DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization](dmq_dissecting_outliers_of_diffusion_models_for_post-training_quantization.md)
+- [\[ICCV 2025\] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction](aid_adapting_image2video_diffusion_models_for_instruction-guided_video_predictio.md)
 
 </div>
 

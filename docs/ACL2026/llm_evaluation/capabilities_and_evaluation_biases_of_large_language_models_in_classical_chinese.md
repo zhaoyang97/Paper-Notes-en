@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes a three-step evaluation framework (computational feature extraction + LLM-as-Judge + human expert verification) to systematically evaluate the performance of six LLMs in Tang poetry generation. It identifies a critical "echo chamber" effect: LLMs systematically overestimate machine-generated poems t
+  [ACL 2026 Findings][LLM Evaluation][Classical Chinese Poetry Generation] This paper proposes a three-step evaluation framework (computational feature extraction + LLM-as-Judge + human expert verification) to systematically evaluate the performance of six LLMs in Tang poetry generation. It identifies a critical "echo chamber" effect: LLMs systematically overestimate machine-generated poems that mimic statistical patterns but violate metrical rules…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Classical Chinese Poetry Generation"
+  - "Tang Poetry"
+  - "LLM Evaluation Bias"
+  - "Echo Chamber Effect"
+  - "Human-AI Evaluation"
 date: 2026-05-08
-content_hash: 0699a3819902ab1a
+content_hash: bea982cdf112d73d
 ---
+
 # Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry
 
 **Conference**: ACL 2026 Findings  
@@ -124,10 +130,17 @@ No model training is involved. Generation uses $T=0.4$, and all evaluations (inc
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
+- [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
+- [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
+- [\[ACL 2026\] Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language](exploring_the_capability_boundaries_of_llms_in_mastering_of_chinese_chouxiang_la.md)
+- [\[ACL 2025\] McBE: A Multi-task Chinese Bias Evaluation Benchmark for Large Language Models](../../ACL2025/llm_evaluation/mcbe_a_multi-task_chinese_bias_evaluation_benchmark_for_large_language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)

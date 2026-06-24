@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] SL2A-INR: Single-Layer Learnable Activation for Implicit Neural Representation
 description: >-
-  [3D Vision] This paper proposes SL2A-INR, a hybrid architecture combining a single-layer learnable activation block parameterized by Chebyshev polynomials with a ReLU-MLP fusion block…
+  [3D Vision] This paper proposes SL2A-INR, a hybrid architecture combining a single-layer learnable activation block parameterized by Chebyshev polynomials with a ReLU-MLP fusion block, effectively alleviating spectral bias in implicit neural representations and achieving state-of-the-art performance on image fitting, 3D shape reconstruction, and novel view synthesis.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: ea655b2462a5206f
+content_hash: 86d7a40eed98cedf
 ---
 
 # SL2A-INR: Single-Layer Learnable Activation for Implicit Neural Representation

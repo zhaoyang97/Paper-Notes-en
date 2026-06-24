@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting
 description: >-
-  [ICLR 2026][Object Detection][MLLM] WS-COC is the first framework to utilize Multimodal Large Language Models (MLLM) for weakly-supervised class-agnostic object counting. Using only image-level total counts for supervision, it activates the counting capabilities of MLLMs through three simple strategies: "Binary Dialogue Tuning + Comparative Ranking Optim
+  [ICLR2026][Object Detection][Class-agnostic counting] WS-COC is the first framework to utilize Multimodal Large Language Models (MLLM) for weakly-supervised class-agnostic object counting. Using only image-level total counts for supervision, it activates the counting capabilities of MLLMs through three simple strategies: "Binary Dialogue Tuning + Comparative Ranking Optimization + Global-Local Fusion." It approaches or even surpasses some fully-supervised methods using point-…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - MLLM
+  - "ICLR2026"
+  - "Object Detection"
+  - "Class-agnostic counting"
+  - "Weakly-supervised"
+  - "MLLM"
+  - "Conversational curriculum learning"
+  - "Ranking optimization"
 date: 2026-05-08
-content_hash: 7f847515b221eff0
+content_hash: df03835f7e91174e
 ---
+
 # Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting
 
 **Conference**: ICLR2026  

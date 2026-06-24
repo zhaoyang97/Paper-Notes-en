@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scaling Language-Centric Omnimodal Representation Learning
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][Multimodal Representation Learning] This paper proposes the LCO-Emb framework and demonstrates that Multimodal Large Language Models (MLLMs) implicitly establish cross-modal al…
+  [NeurIPS 2025][Information Retrieval & RAG][Multimodal Representation Learning] This paper proposes the LCO-Emb framework and demonstrates that Multimodal Large Language Models (MLLMs) implicitly establish cross-modal alignment during generative pretraining. Lightweight text-only contrastive fine-tuning suffices to activate full omnimodal representation capabilities. The work further identifies the Generation-Representation Scaling Law (GRSL), which establishes a positive cor…
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Modal Alignment"
   - "Generation-Representation Scaling Law"
 date: 2026-05-08
-content_hash: 4009484c4ee24902
+content_hash: c9ff98549926ba23
 ---
 
 # Scaling Language-Centric Omnimodal Representation Learning
@@ -132,11 +132,11 @@ The core mechanism of LCO-Emb is straightforward: extract the language decoder (
 
 ## Related Papers
 
+- [\[ECCV 2024\] Multi-Label Cluster Discrimination for Visual Representation Learning](../../ECCV2024/information_retrieval/multi-label_cluster_discrimination_for_visual_representation_learning.md)
 - [\[NeurIPS 2025\] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation](hypergraphrag_retrieval-augmented_generation_via_hypergraph-structured_knowledge.md)
-- [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](generalized_contrastive_learning_for_universal_multimodal_re.md)
-- [\[ICCV 2025\] ViLU: Learning Vision-Language Uncertainties for Failure Prediction](../../ICCV2025/information_retrieval/vilu_learning_vision-language_uncertainties_for_failure_prediction.md)
-- [\[AAAI 2026\] Towards Inference-Time Scaling for Continuous Space Reasoning](../../AAAI2026/information_retrieval/towards_inference-time_scaling_for_continuous_space_reasoning.md)
+- [\[NeurIPS 2025\] Learning Task-Agnostic Representations through Multi-Teacher Distillation](learning_task-agnostic_representations_through_multi-teacher_distillation.md)
 - [\[ICLR 2026\] Revela: Dense Retriever Learning via Language Modeling](../../ICLR2026/information_retrieval/revela_dense_retriever_learning_via_language_modeling.md)
+- [\[AAAI 2026\] Towards Inference-Time Scaling for Continuous Space Reasoning](../../AAAI2026/information_retrieval/towards_inference-time_scaling_for_continuous_space_reasoning.md)
 
 </div>
 

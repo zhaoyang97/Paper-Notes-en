@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Making the Classification Explanation Faithful to the Confidence Score
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] This paper proposes MHE (Metropolis-Hastings Explainer), a black-box explanation method that uses MH sampling to search for masks where "the confidence remains close to the original image after partial occlusion." This ensures the confidence of the explained region strictly approximates the model's original confidence—
+  [CVPR 2026][Interpretability][Black-box explanation] This paper proposes MHE (Metropolis-Hastings Explainer), a black-box explanation method that uses MH sampling to search for masks where "the confidence remains close to the original image after partial occlusion." This ensures the confidence of the explained region strictly approximates the model's original confidence—by simultaneously identifying both positive and negative contribution regions—thereby upgrading the explana…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Black-box explanation"
+  - "confidence faithfulness"
+  - "Metropolis-Hastings sampling"
+  - "perturbation-based explanation"
+  - "negative contribution regions"
 date: 2026-05-08
-content_hash: ceff0d655573a26a
+content_hash: 2aa389ee4d47aefc
 ---
+
 # Making the Classification Explanation Faithful to the Confidence Score
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ Where $N^c_{inc}=f_c(I\odot m_N)-f_c(I)$ and $N_{mid}=|f_c(I\odot m_{Neutral})-f
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)
+- [\[ICLR 2026\] Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment](../../ICLR2026/interpretability/towards_cognitively-faithful_decision-making_models_to_improve_ai_alignment.md)
 - [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
 - [\[NeurIPS 2025\] Distributional Autoencoders Know the Score](../../NeurIPS2025/interpretability/distributional_autoencoders_know_the_score.md)
-- [\[CVPR 2026\] HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)
-- [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
+- [\[ICLR 2026\] Learning for Highly Faithful Explainability](../../ICLR2026/interpretability/learning_for_highly_faithful_explainability.md)
+- [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](../../ICLR2026/interpretability/fame_formal_abstract_minimal_explanation_for_neural_networks.md)
 
 </div>
 

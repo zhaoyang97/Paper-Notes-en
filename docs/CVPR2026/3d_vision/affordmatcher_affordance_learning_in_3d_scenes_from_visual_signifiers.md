@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AffordMatcher: Affordance Learning in 3D Scenes from Visual Signifiers
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] AffordMatcher proposes a method for locating affordance regions in 3D scenes from visual signifiers (human interactions in RGB images). By utilizing the large-scale AffordBridge dataset and a Match-to-Match attention mechanism based on a dissimilarity matrix, it achieves a 53.4 mAP in zero-shot affordance segmentation,
+  [CVPR 2026][3D Vision][Affordance learning] AffordMatcher proposes a method for locating affordance regions in 3D scenes from visual signifiers (human interactions in RGB images). By utilizing the large-scale AffordBridge dataset and a Match-to-Match attention mechanism based on a dissimilarity matrix, it achieves a 53.4 mAP in zero-shot affordance segmentation, surpassing the second-best method by 7.8 points.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Affordance learning"
+  - "3D scene understanding"
+  - "visual signifiers"
+  - "cross-modal alignment"
+  - "zero-shot segmentation"
 date: 2026-05-08
-content_hash: 86d5c820832ca4b9
+content_hash: e8439df5f90e8219
 ---
+
 # AffordMatcher: Affordance Learning in 3D Scenes from Visual Signifiers
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ $\mathcal{L}_{\text{embed}}$ handles embedding normalization; $\mathcal{L}_{\tex
 
 ## Related Papers
 
+- [\[CVPR 2026\] Affostruction: 3D Affordance Grounding with Generative Reconstruction](affostruction_3d_affordance_grounding_with_generative_reconstruction.md)
+- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
+- [\[CVPR 2025\] GEAL: Generalizable 3D Affordance Learning with Cross-Modal Consistency](../../CVPR2025/3d_vision/geal_generalizable_3d_affordance_learning_with_cross-modal_consistency.md)
+- [\[CVPR 2026\] Geometry-Guided 3D Visual Token Pruning for Video-Language Models](geometry-guided_3d_visual_token_pruning_for_video-language_models.md)
 - [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
-- [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](dynamic_visual_slam_using_a_general_3d_prior.md)
-- [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
-- [\[CVPR 2026\] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos](funrec_reconstructing_functional_3d_scenes_from_egocentric_interaction_videos.md)
-- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
 
 </div>
 

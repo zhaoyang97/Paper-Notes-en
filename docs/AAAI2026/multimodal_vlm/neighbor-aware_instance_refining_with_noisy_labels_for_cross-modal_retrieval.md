@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Neighbor-aware Instance Refining with Noisy Labels for Cross-Modal Retrieval
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Cross-modal retrieval] This paper proposes NIRNL, a framework that enhances sample discriminability via Cross-modal Margin Preserving (CMP) and employs Neighbor-aware Instance Ref…
+  [AAAI 2026][Multimodal VLM][Cross-modal retrieval] This paper proposes NIRNL, a framework that enhances sample discriminability via Cross-modal Margin Preserving (CMP) and employs Neighbor-aware Instance Refining (NIR) to partition training data into clean, hard, and noisy subsets, each with a tailored optimization strategy. The framework unifies three paradigms—robust learning, label calibration, and instance selection—achieving state-of-the-art cross-modal retrieval perform…
 tags:
   - "AAAI 2026"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "Cross-modal retrieval"
   - "noisy labels"
   - "neighbor-aware"
   - "instance refining"
   - "robust learning"
 date: 2026-05-08
-content_hash: 87a0df37eba283f9
+content_hash: 77d8c36cd7b16044
 ---
 
 # Neighbor-aware Instance Refining with Noisy Labels for Cross-Modal Retrieval
@@ -174,11 +174,11 @@ Ablation analysis at noise rate 0.6:
 
 ## Related Papers
 
-- [\[ICML 2026\] CARE: Class-Adaptive Expert Consensus for Reliable Learning with Long-Tailed Noisy Labels](../../ICML2026/information_retrieval/care_class-adaptive_expert_consensus_for_reliable_learning_with_long-tailed_nois.md)
-- [\[AAAI 2026\] ReFeed: Retrieval Feedback-Guided Dataset Construction for Style-Aware Query Rewriting](refeed_retrieval_feedback-guided_dataset_construction_for_style-aware_query_rewr.md)
-- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
-- [\[ICML 2026\] Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation](../../ICML2026/information_retrieval/hierarchical_abstract_tree_for_cross-document_retrieval-augmented_generation.md)
-- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometry Consistency](../../ICML2026/information_retrieval/vector_linking_via_cross-model_local_isometric_consistency.md)
+- [\[CVPR 2026\] Intra-class Distribution-guided Generative Hashing with Neighbor Refinement for Cross-modal Retrieval](../../CVPR2026/multimodal_vlm/intra-class_distribution-guided_generative_hashing_with_neighbor_refinement_for_.md)
+- [\[CVPR 2025\] NeighborRetr: Balancing Hub Centrality in Cross-Modal Retrieval](../../CVPR2025/multimodal_vlm/neighborretr_balancing_hub_centrality_in_cross-modal_retrieval.md)
+- [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](aligning_the_true_semantics_constrained_decoupling_and_distr.md)
+- [\[AAAI 2026\] DEIG: Detail-Enhanced Instance Generation with Fine-Grained Semantic Control](deig_detail-enhanced_instance_generation_with_fine-grained_semantic_control.md)
+- [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
 
 </div>
 

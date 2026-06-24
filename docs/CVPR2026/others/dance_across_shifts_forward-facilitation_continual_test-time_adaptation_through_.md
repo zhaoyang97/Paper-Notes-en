@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Dance Across Shifts: Forward-Facilitation Continual Test-Time Adaptation through Dynamic Style Bridging
 description: >-
-  [CVPR 2026][Others][Diffusion Model] To address the long-standing issue of "sparse and unreliable supervision" in Continual Test-Time Adaptation (CTTA), this paper pivots from the traditional "backward-alignment" (forcing shifting test data toward static source anchors). Instead, it proposes a "forward-facilitation" approach: generating semantically pure
+  [CVPR 2026][Continual Test-Time Adaptation (CTTA)] To address the long-standing issue of "sparse and unreliable supervision" in Continual Test-Time Adaptation (CTTA), this paper pivots from the traditional "backward-alignment" (forcing shifting test data toward static source anchors). Instead, it proposes a "forward-facilitation" approach: generating semantically pure category exemplars offline via diffusion models and dynamically "coloring" them with the current target domai…
 tags:
-  - CVPR 2026
-  - Others
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Continual Test-Time Adaptation (CTTA)"
+  - "Forward-Facilitation"
+  - "Synthetic Knowledge Base"
+  - "Style Bridging"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: ca91086747c7f109
+content_hash: 5a1f793eb0c5d343
 ---
+
 # Dance Across Shifts: Forward-Facilitation Continual Test-Time Adaptation through Dynamic Style Bridging
 
 **Conference**: CVPR 2026  
@@ -126,15 +130,16 @@ The backbone is ViT-B/16. DAS is evaluated on three CTTA benchmarks (severity le
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
-- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
 - [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
-- [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
+- [\[CVPR 2026\] Basis-Oriented Low-rank Transfer for Few-Shot and Test-Time Adaptation](basis-oriented_low-rank_transfer_for_few-shot_and_test-time_adaptation.md)
+- [\[ICML 2025\] Ranked Entropy Minimization for Continual Test-Time Adaptation](../../ICML2025/others/ranked_entropy_minimization_for_continual_test-time_adaptation.md)
+- [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](../../ICLR2026/others/prior-free_tabular_test-time_adaptation.md)
 
 </div>
 

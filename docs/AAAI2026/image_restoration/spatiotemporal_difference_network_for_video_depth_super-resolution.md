@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SpatioTemporal Difference Network for Video Depth Super-Resolution
 description: >-
-  [AAAI 2026][Image Restoration][Video Depth Super-Resolution] Motivated by the statistical observation that spatially non-smooth regions and temporally varying regions in video depth super-resolution (VDSR) follow long-ta…
+  [AAAI 2026][Image Restoration][Video Depth Super-Resolution] Motivated by the statistical observation that spatially non-smooth regions and temporally varying regions in video depth super-resolution (VDSR) follow long-tail distributions, this paper proposes STDNet. The method incorporates a spatial difference branch (learning spatial difference representations for intra-frame RGB-D adaptive aggregation) and a temporal difference branch (exploiting temporal difference represen…
 tags:
   - "AAAI 2026"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Difference"
   - "Deformable Convolution"
 date: 2026-05-08
-content_hash: b013039b64f5ac14
+content_hash: 4b50379a86279e0d
 ---
 
 # SpatioTemporal Difference Network for Video Depth Super-Resolution
@@ -187,11 +187,11 @@ The long-tail distribution perspective is generalizable to other video restorati
 
 ## Related Papers
 
+- [\[CVPR 2026\] Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution](../../CVPR2026/image_restoration/dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut.md)
 - [\[AAAI 2026\] Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment](temporal_inconsistency_guidance_for_super-resolution_video_quality_assessment.md)
+- [\[ICLR 2026\] DeLiVR: Differential Spatiotemporal Lie Bias for Efficient Video Deraining](../../ICLR2026/image_restoration/delivr_differential_spatiotemporal_lie_bias_for_efficient_video_deraining.md)
 - [\[AAAI 2026\] MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model](mfmamba_a_multi-function_network_for_panchromatic_image_resolution_restoration_b.md)
-- [\[CVPR 2026\] UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution](../../CVPR2026/image_restoration/ucan_unified_convolutional_attention_lightweight_sr.md)
 - [\[AAAI 2026\] Depth-Synergized Mamba Meets Memory Experts for All-Day Image Reflection Separation](depth-synergized_mamba_meets_memory_experts_for_all-day_image_reflection_separat.md)
-- [\[AAAI 2026\] SD-PSFNet: Sequential and Dynamic Point Spread Function Network for Image Deraining](sd-psfnet_sequential_and_dynamic_point_spread_function_netwo.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLA] This paper proposes ForceVLA, which introduces 6-axis force/torque sensing as a first-class modality within the VLA framework. A Force-aware Vision-Language Mixture-of-Experts (FVLMoE)…
+  [NeurIPS 2025][Multimodal VLM][VLA] This paper proposes ForceVLA, which introduces 6-axis force/torque sensing as a first-class modality within the VLA framework. A Force-aware Vision-Language Mixture-of-Experts (FVLMoE) module dynamically fuses visual-language embeddings with real-time force feedback at the action decoding stage, achieving an average success rate improvement of 23.2% across five contact-rich manipulation tasks, with individual tasks reaching up to 80%.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "contact-rich manipulation"
   - "robot manipulation"
 date: 2026-05-08
-content_hash: ed26956da61886d0
+content_hash: 0c3d6c6f80eca4b3
 ---
 
 # ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation

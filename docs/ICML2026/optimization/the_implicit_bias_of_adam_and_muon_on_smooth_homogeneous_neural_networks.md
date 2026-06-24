@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks
 description: >-
-  [ICML 2026][Optimization & Theory][Adam] This paper proves that under the setting of smooth $L$-homogeneous models + exponential-tail loss + learning rate decay, Muon (including Muon-Signum, Muon-Adam) as a momentum-based "normalized steepest descent" converges to the KKT points of the corresponding norm max-margin problem; Adam (without the stability constan
+  [ICML 2026][Optimization][Implicit Bias] This paper proves that under the setting of smooth $L$-homogeneous models + exponential-tail loss + learning rate decay, Muon (including Muon-Signum, Muon-Adam) as a momentum-based "normalized steepest descent" converges to the KKT points of the corresponding norm max-margin problem; Adam (without the stability constant $\varepsilon$) converges to the KKT points of the $\ell_\infty$ max-margin problem. This elevates implicit bias concl…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Adam
-  - Muon
+  - "ICML 2026"
+  - "Optimization"
+  - "Implicit Bias"
+  - "Adam"
+  - "Muon"
+  - "Homogeneous Networks"
+  - "Max-margin"
+  - "Spectral Norm"
 date: 2026-05-08
-content_hash: 657d934152c888d9
+content_hash: 87b2f3e88a881617
 ---
+
 # The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks
 
 **Conference**: ICML 2026  
@@ -125,11 +130,11 @@ The optimizer is the object of analysis; no new loss is proposed. Results hold f
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](../../NeurIPS2025/optimization/the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
 - [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](../../ICLR2026/optimization/implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
+- [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](../../NeurIPS2025/optimization/the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
 - [\[NeurIPS 2025\] Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data](../../NeurIPS2025/optimization/implicit_bias_of_spectral_descent_and_muon_on_multiclass_separable_data.md)
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](limuon_light_and_fast_muon_optimizer_for_large_models.md)
-- [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](../../NeurIPS2025/optimization/understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
+- [\[ICLR 2026\] Hyperbolic Aware Minimization: Implicit Bias for Sparsity](../../ICLR2026/optimization/hyperbolic_aware_minimization_implicit_bias_for_sparsity.md)
+- [\[ICLR 2026\] Muon Outperforms Adam in Tail-End Associative Memory Learning](../../ICLR2026/optimization/muon_outperforms_adam_in_tail-end_associative_memory_learning.md)
 
 </div>
 

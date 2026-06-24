@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Repurposing Foundation Model for Generalizable Medical Time Series Classification
 description: >-
-  [ICLR 2026][Time Series][Paper Note] FORMED freezes a forecasting foundation model (TimesFM) pre-trained on general time series to serve as a feature extractor, appending a novel classification head composed of "Channel Embedding + Label Query + Shared Decoding Attention." By jointly training on multiple MedTS datasets, medical domain knowledge is consoli
+  [ICLR 2026][Time Series][Medical Time Series] FORMED freezes a forecasting foundation model (TimesFM) pre-trained on general time series to serve as a feature extractor, appending a novel classification head composed of "Channel Embedding + Label Query + Shared Decoding Attention." By jointly training on multiple MedTS datasets, medical domain knowledge is consolidated into the shared layers. This enables adaptation to new medical time series datasets with arbitrary channel c…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Medical Time Series"
+  - "Foundation Model Repurposing"
+  - "Channel Embedding"
+  - "Label Query"
+  - "Cross-dataset Generalization"
 date: 2026-05-08
-content_hash: 80eb08ba2bc70b33
+content_hash: 519ccec07de7ce4d
 ---
+
 # Repurposing Foundation Model for Generalizable Medical Time Series Classification
 
 **Conference**: ICLR 2026  

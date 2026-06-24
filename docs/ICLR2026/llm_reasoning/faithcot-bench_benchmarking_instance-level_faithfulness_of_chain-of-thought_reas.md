@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] This paper proposes FaithCoT-Bench—the first unified benchmark for **instance-level CoT unfaithfulness detection**. It formalizes the question of "whether a specific reasoning chain accurately reflects the model's internal decision-making" as a binary classification problem, supported by the FINE-CoT dataset containing
+  [ICLR 2026][Reasoning][Chain-of-Thought] This paper proposes FaithCoT-Bench—the first unified benchmark for **instance-level CoT unfaithfulness detection**. It formalizes the question of "whether a specific reasoning chain accurately reflects the model's internal decision-making" as a binary classification problem, supported by the FINE-CoT dataset containing 1,000+ expert-annotated trajectories, and systematically evaluates 11 detection methods.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - LLM-as-Judge
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "CoT Faithfulness"
+  - "Instance-level Detection"
+  - "Expert-annotated Dataset"
+  - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: f5350cc49751adfe
+content_hash: a256a0abdfff8234
 ---
+
 # FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning
 
 **Conference**: ICLR 2026  
@@ -106,10 +110,10 @@ This work is situated in the line of **CoT Interpretability/Faithfulness**: buil
 ## Related Papers
 
 - [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_reasoning_interv.md)
+- [\[ACL 2025\] Towards Better Chain-of-Thought: A Reflection on Effectiveness and Faithfulness](../../ACL2025/llm_reasoning/towards_better_chain-of-thought_a_reflection_on_effectiveness_and_faithfulness.md)
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
 - [\[ICLR 2026\] SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes](scenecot_eliciting_grounded_chain-of-thought_reasoning_in_3d_scenes.md)
-- [\[ICLR 2026\] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos](cot-rvs_zero-shot_chain-of-thought_reasoning_segmentation_for_videos.md)
-- [\[ICML 2025\] Towards Better Chain-of-Thought: A Reflection on Effectiveness and Faithfulness](../../ICML2025/llm_reasoning/towards_better_chain-of-thought_a_reflection_on_effectiveness_and_faithfulness.md)
 
 </div>
 
